@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Pricing · Gradify</title>
-  <meta name="description" content="Every Gradify course, lesson, lab and quiz is free. Gradify Pro adds generous Gradify AI for £7.99 a month or £63.99 a year.">
+  <meta name="description" content="Every Gradify course, lesson, lab and quiz is free. Gradify Pro organises and manages your learning for £10 a month. Gradify Ultra adds Gradify AI.">
   <meta property="og:title" content="Gradify pricing">
-  <meta property="og:description" content="Learn free. Go further with Gradify Pro.">
+  <meta property="og:description" content="Learn free. Go further with Gradify Ultra.">
   <meta name="theme-color" content="#000000">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,6 +30,14 @@
     .plan.plus { border: 1px solid transparent; background: linear-gradient(var(--panel-strong), var(--panel-strong)) padding-box, var(--spectrum) border-box; box-shadow: 0 30px 80px -40px rgba(240, 85, 221, .55); }
     .plan .tag { display: block; font: 600 11px/1.4 var(--sans); text-transform: uppercase; letter-spacing: .08em; color: var(--mute); }
     .plan .popular { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); white-space: nowrap; font: 600 11px var(--sans); text-transform: uppercase; letter-spacing: .08em; padding: 5px 12px; border-radius: 99px; color: #fff; background: var(--spectrum); box-shadow: 0 6px 20px -6px rgba(240, 85, 221, .6); }
+    .plan.picked { transform: translateY(-6px); box-shadow: 0 0 0 4px rgba(240, 85, 221, .2), 0 40px 100px -40px rgba(240, 85, 221, .85); }
+    .plan { scroll-margin-top: 96px; }
+    .plan.glass.picked { border-color: rgba(240, 85, 221, .6); }
+    @media (prefers-reduced-motion: no-preference) { .plan { transition: transform .3s ease, box-shadow .3s ease; } }
+    .from-note { margin: 0; padding: 10px 12px; border-radius: 12px; border: 1px solid rgba(240, 85, 221, .4); background: rgba(240, 85, 221, .08); font-size: 14px; line-height: 1.5; color: var(--fg); }
+    .from-note b { font-weight: 600; }
+    .plan .group.hit { margin: 0 -12px; padding: 12px; border-radius: 12px; background: rgba(240, 85, 221, .08); box-shadow: inset 0 0 0 1px rgba(240, 85, 221, .35); }
+    .plan .group.hit h4 { padding-top: 0; border-top: 0; color: var(--fg); }
     .plan .groups { display: grid; gap: 18px; }
     .plan .group { display: grid; gap: 10px; }
     .plan h4 { margin: 0; padding-top: 16px; border-top: 1px solid var(--line); font: 600 11px/1.4 var(--sans); text-transform: uppercase; letter-spacing: .08em; color: var(--mute); }
@@ -79,7 +87,7 @@
     .faq details p { color: var(--mute); line-height: 1.6; margin: 12px 0 0; }
     .foot { max-width: 980px; margin: 72px auto 32px; padding-top: 18px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 8px 22px; justify-content: space-between; color: var(--mute); font-size: 14px; }
     .foot a { color: inherit; }
-    @media (max-width: 1020px) { .plans { grid-template-columns: 1fr; max-width: 560px; gap: 28px; } .plan .head { min-height: 0; } }
+    @media (max-width: 1020px) { .plans { grid-template-columns: 1fr; max-width: 560px; gap: 28px; } .plan .head { min-height: 0; } .plan.picked { transform: none; } }
     @media (max-width: 760px) { .faq { grid-template-columns: 1fr; } .plan { padding: 22px; } main { padding-top: 32px; } }
   </style>
 </head>
@@ -106,7 +114,7 @@
       <div class="hero">
         <span class="badge"><span class="spark"></span> Pricing</span>
         <h1>Learn free.<br><em>Let Gradify run the rest.</em></h1>
-        <p>Free is for learning with Gradify. Gradify Plus organises, optimises and manages your learning. Gradify Pro adds Gradify AI.</p>
+        <p>Free is for learning with Gradify. Gradify Pro organises, optimises and manages your learning. Gradify Ultra adds Gradify AI.</p>
       </div>
 
       <div id="status" aria-live="polite"></div>
@@ -127,7 +135,7 @@
           <span class="popular">Most popular</span>
           <div class="head">
             <span class="tag">Gradify runs your learning</span>
-            <h2 id="plus-h">Gradify Plus <span class="current" id="plus-current" hidden>Your plan</span></h2>
+            <h2 id="plus-h">Gradify Pro <span class="current" id="plus-current" hidden>Your plan</span></h2>
           </div>
           <div class="price"><span class="amt" id="plus-amt"></span><span class="per">a month</span></div>
           <p class="price-note">Everything in Free, plus:</p>
@@ -135,13 +143,13 @@
           <div class="cta" id="plus-cta"></div>
         </article>
 
-        <article class="plan glass" aria-labelledby="pro-h">
+        <article class="plan pro glass" aria-labelledby="pro-h">
           <div class="head">
-            <span class="tag">Plus, with Gradify AI</span>
-            <h2 id="pro-h">Gradify Pro <span class="soon" id="pro-soon">Coming soon</span><span class="current" id="pro-current" hidden>Your plan</span></h2>
+            <span class="tag">Pro, with Gradify AI</span>
+            <h2 id="pro-h">Gradify Ultra <span class="soon" id="pro-soon">Coming soon</span><span class="current" id="pro-current" hidden>Your plan</span></h2>
           </div>
           <div class="price"><span class="amt" id="pro-amt"></span><span class="per">a month</span></div>
-          <p class="price-note">Everything in Plus, plus:</p>
+          <p class="price-note">Everything in Pro, plus:</p>
           <ul id="pro-list"></ul>
           <div class="cta" id="pro-cta"></div>
         </article>
@@ -152,7 +160,7 @@
         <p id="allow-lede">Uses a month, once Gradify AI launches. Allowances reset each month and don't roll over. A request that fails doesn't count.</p>
         <div class="table-wrap">
           <table>
-            <thead><tr><th scope="col">Feature</th><th scope="col">Free</th><th scope="col">Gradify Plus</th><th scope="col">Gradify Pro</th></tr></thead>
+            <thead><tr><th scope="col">Feature</th><th scope="col">Free</th><th scope="col">Gradify Pro</th><th scope="col">Gradify Ultra</th></tr></thead>
             <tbody id="allow-rows"></tbody>
           </table>
         </div>
@@ -177,7 +185,7 @@
     import { joinWaitlist, PRO_LIST, PLUS_LIST } from "/kit/data/waitlist.js";
     import { PLAN_PRICES, PLUS_ON_SALE, PRO_ON_SALE, AI_ALLOWANCES, uses, planOf, describePlan, clientStore, mySubscription, startCheckout, openPortal } from "/kit/data/billing.js";
     import { FREE } from "/kit/data/limits.js";
-    import { pounds } from "/kit/data/plan.js";
+    import { pounds, PLUS_FEATURES } from "/kit/data/plan.js";
 
     const $ = (s) => document.querySelector(s);
     const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
@@ -201,12 +209,12 @@
       li(tick, "One study device", "View your work anywhere; switch study device once a week"),
       li(spark, "A taste of Gradify AI, when it launches", AI_ALLOWANCES.map((a) => uses(a, a.free)).join(" · ") + " a month"),
     ].join("");
-    const group = (title, items) => `<div class="group"><h4>${esc(title)}</h4><ul>${items.map(([t, sub]) => li(tick, esc(t), sub ? esc(sub) : "")).join("")}</ul></div>`;
+    const group = (title, items, keys = "") => `<div class="group" data-features="${keys}"><h4>${esc(title)}</h4><ul>${items.map(([t, sub]) => li(tick, esc(t), sub ? esc(sub) : "")).join("")}</ul></div>`;
     $("#plus-list").innerHTML = [
       group("No limits", [["Every lesson in every course"], ["Unlimited flashcard sets and mind maps"], ["Every tool, as often as you like"]]),
-      group("Gradify Intelligence", [["Smart Plan autopilot", "Your week planned and kept on track"], ["Readiness forecasts"], ["Cards ordered by what's fading"], ["Adaptive revision recommendations"]]),
-      group("Exam preparation", [["Timed exams that find your weak areas"], ["The complete question bank"]]),
-      group("Calendar and devices", [["Google, Apple and Outlook calendar sync"], ["Reminders, even when Gradify is closed"], ["Automatic study-block scheduling"], ["Study on all your devices, always in sync"]]),
+      group("Gradify Intelligence", [["Smart Plan autopilot", "Your week planned and kept on track"], ["Readiness forecasts"], ["Cards ordered by what's fading"], ["Adaptive revision recommendations"]], "intelligence"),
+      group("Exam preparation", [["Timed exams that find your weak areas"], ["The complete question bank"]], "exams"),
+      group("Calendar and devices", [["Google, Apple and Outlook calendar sync"], ["Reminders, even when Gradify is closed"], ["Automatic study-block scheduling"], ["Study on all your devices, always in sync"]], "calendar sync"),
     ].join("");
     $("#pro-list").innerHTML = [
       li(spark, "Gradify AI", "Coming soon"),
@@ -216,10 +224,10 @@
     $("#allow-rows").innerHTML = AI_ALLOWANCES.map((a) => `<tr><th scope="row">${esc(a.label)}</th><td class="n">${a.free}</td><td class="n">${a.free}</td><td class="n">${a.pro}</td></tr>`).join("");
 
     const faq = [
-      ["When am I charged?", `Straight away when you subscribe, then on the same date each month: ${pounds(PLAN_PRICES.plus.month)} a month for Gradify Plus, ${pounds(PLAN_PRICES.pro.month)} a month for Gradify Pro. Your Account page shows the next renewal date.`],
-      ["Can I switch between Plus and Pro?", "Yes, from Manage billing on your Account page, once Gradify Pro opens. Stripe adjusts the price for the time left in your current month."],
+      ["When am I charged?", `Straight away when you subscribe, then on the same date each month: ${pounds(PLAN_PRICES.plus.month)} a month for Gradify Pro, ${pounds(PLAN_PRICES.pro.month)} a month for Gradify Ultra. Your Account page shows the next renewal date.`],
+      ["Can I switch between Pro and Ultra?", "Yes, from Manage billing on your Account page, once Gradify Ultra opens. Stripe adjusts the price for the time left in your current month."],
       ["How do I cancel?", "From Manage billing on your Account page, any time, in two clicks. You keep your plan until the end of the month you've already paid for, then move to Free. Nothing you've made is deleted."],
-      ["What happens when Plus ends?", "You move to Free. Every note, flashcard, mind map and bit of progress stays in your account. You study on one device again, and can choose which; the others can still open everything."],
+      ["What happens when Pro ends?", "You move to Free. Every note, flashcard, mind map and bit of progress stays in your account. You study on one device again, and can choose which; the others can still open everything."],
       ["What if a payment fails?", "Stripe tries your card again over the next few days and emails you. You keep your plan for 3 days after a renewal date while it does. Update your card in Manage billing to keep it going."],
       ["Can I change my mind after subscribing?", "Yes. You can cancel within 14 days of subscribing for a refund. If you've already used your plan in that time, the refund is reduced for the days you used. Ask from Manage billing or email hello@getgradify.com. The terms page has the details."],
       ["Is there a fair-use limit on Gradify AI?", "Yes. As well as the allowances above, each account has a monthly fair-use limit on how much Gradify AI it can use. If you reach it, Gradify AI pauses until your allowance resets; everything else keeps working."],
@@ -233,9 +241,9 @@
 
     const notifyForm = (id, what) => `<form class="notify" data-list="${esc(what)}" novalidate><label for="${id}">Opening soon. Get one email when it does:</label><div class="notify-row"><input id="${id}" type="email" autocomplete="email" placeholder="you@example.com" required><button class="btn btn-primary lg" type="submit">Notify me</button></div><p class="notify-msg" role="status" aria-live="polite">No payment, no account needed. <a href="/privacy.html#launch-lists">What we keep</a>.</p></form>`;
     function ctaFor(plan, current) {
-      const name = plan === "plus" ? "Gradify Plus" : "Gradify Pro";
+      const name = plan === "plus" ? "Gradify Pro" : "Gradify Ultra";
       if (current === plan || (current !== "free" && sub && describePlan(sub).manage)) return `<button class="btn ${plan === "plus" ? "btn-primary" : "btn-ghost"} lg" data-manage type="button">Manage billing</button><p>Change plan, update your card, see invoices or cancel.</p>`;
-      if (current === "pro" && plan === "plus") return `<p>Included in your Gradify Pro.</p>`;
+      if (current === "pro" && plan === "plus") return `<p>Included in your Gradify Ultra.</p>`;
       if (!canBuy[plan]) return notifyForm(`notify-${plan}`, plan === "plus" ? PLUS_LIST : PRO_LIST);
       if (!signedIn) return `<a class="btn ${plan === "plus" ? "btn-primary" : "btn-ghost"} lg" href="/app.html#/account">Sign in to get ${name}</a><p>Sign in first so ${name} is added to your account.</p>`;
       return `<button class="btn ${plan === "plus" ? "btn-primary" : "btn-ghost"} lg" data-buy="${plan}" type="button">Get ${name} · ${pounds(PLAN_PRICES[plan].month)} a month</button><p>Secure checkout by Stripe. Cancel any time.</p>`;
@@ -294,11 +302,27 @@
       }
       renderCta();
       const plan = planOf(sub);
-      if (plan !== "free") notice("ok", `Welcome to ${plan === "plus" ? "Gradify Plus" : "Gradify Pro"}.`, describePlan(sub).line);
+      if (plan !== "free") notice("ok", `Welcome to ${plan === "plus" ? "Gradify Pro" : "Gradify Ultra"}.`, describePlan(sub).line);
       else notice("warn", "Your payment went through, but your plan isn't showing yet.", "This can take a minute. Refresh this page shortly; if it still says Free, your receipt from Stripe is your proof of payment.");
     }
 
-    if (!canBuy.plus) notice("info", "Gradify Plus opens soon.", "Until then, everything on Gradify is free and open, including what will be part of Plus. Gradify Pro opens when Gradify AI launches. The prices shown are the launch prices.");
+    // Arriving from a locked feature (kit/data/plan.js links here with ?plan=plus&from=<feature>): pick out that plan,
+    // and the group in it the learner came for. The ids stay "plus" (Gradify Pro) and "pro" (Gradify Ultra).
+    function highlightPlan() {
+      const q = new URLSearchParams(location.search), id = q.get("plan"), from = q.get("from");
+      const card = id === "plus" || id === "pro" ? document.querySelector(`.plan.${id}`) : null;
+      if (!card) return;
+      card.classList.add("picked");
+      const feature = PLUS_FEATURES[from];
+      if (feature && id === "plus") {
+        card.querySelector(".groups").insertAdjacentHTML("beforebegin", `<p class="from-note"><b>${esc(feature.name)}</b> is part of Gradify Pro.</p>`);
+        card.querySelector(`.group[data-features~="${CSS.escape(from)}"]`)?.classList.add("hit");
+      }
+      if (matchMedia("(max-width: 1020px)").matches) card.scrollIntoView({ block: "start", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+    }
+    highlightPlan();
+
+    if (!canBuy.plus) notice("info", "Gradify Pro opens soon.", "Until then, everything on Gradify is free and open, including what will be part of Pro. Gradify Ultra opens when Gradify AI launches. The prices shown are the launch prices.");
     renderCta();
     await loadLearner();
     renderCta();

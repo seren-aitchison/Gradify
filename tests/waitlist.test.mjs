@@ -8,7 +8,7 @@ const fake = (status) => { const calls = []; return { calls, fetch: async (url, 
 test("joining the Gradify Pro list sends one insert with the email and the list name, and nothing else", async () => {
   const f = fake(201);
   const msg = await joinWaitlist("  learner@example.com ", PRO_LIST, { fetch: f.fetch, url: "https://p.supabase.co", key: "pk" });
-  assert.match(msg, /when Gradify Pro opens/);
+  assert.match(msg, /when Gradify Ultra opens/);
   assert.equal(f.calls.length, 1);
   assert.equal(f.calls[0].url, "https://p.supabase.co/rest/v1/waitlist");
   assert.equal(f.calls[0].init.method, "POST");

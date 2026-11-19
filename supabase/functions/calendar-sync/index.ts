@@ -33,10 +33,10 @@ Deno.serve(async (req) => {
   const asUser = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_ANON_KEY")!, { global: { headers: { Authorization: req.headers.get("Authorization") ?? "" } } });
   const { data: { user } } = await asUser.auth.getUser();
   if (!user) return json(req, { error: "Please sign in to sync a calendar link.", reason: "signed_out" }, 401);
-  // calendar sync is Gradify Plus once plans are enforced (plus_allowed() is true for everyone until then, and before the
+  // calendar sync is Gradify Pro once plans are enforced (plus_allowed() is true for everyone until then, and before the
   // plans migration the function doesn't exist: nobody is held back)
   const { data: allowed, error: planError } = await asUser.rpc("plus_allowed");
-  if (!planError && allowed === false) return json(req, { error: "Calendar sync comes with Gradify Plus.", reason: "plus" }, 403);
+  if (!planError && allowed === false) return json(req, { error: "Calendar sync comes with Gradify Pro.", reason: "plus" }, 403);
 
   let body: { url?: string };
   try { body = await req.json(); } catch { return json(req, { error: "Bad request." }, 400); }

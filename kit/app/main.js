@@ -66,9 +66,9 @@ const SEC_PER_CARD = 25;
 const srsOpts = () => ({ retention: Number(learnerOf(profile).intel?.retention) || 0.9, examDate: profile.exam_date || null });
 
 let store, profile, view = $("#view");
-// what this learner's plan includes (kit/data/plan.js); everything is open until Plus goes on sale
+// what this learner's plan includes (kit/data/plan.js); everything is open until Pro goes on sale
 let ACCESS = { plan: "free", enforced: false, has: () => true };
-// dashboard widgets that are Gradify Intelligence (Plus): forecasts, readiness, planning by conversation, suggestions
+// dashboard widgets that are Gradify Intelligence (Pro): forecasts, readiness, planning by conversation, suggestions
 const INTEL_WIDGETS = new Set(["s-ready", "w-forecast", "w-tell", "w-opps", "w-debt", "b-exam"]);
 
 // ---------- Toast ----------
@@ -156,14 +156,14 @@ function drawNav() {
   document.querySelector(".tabbar")?.addEventListener("click", (e) => { if (e.target.closest("a, button")) haptic("tap"); });
 }
 drawNav();
-// a small lock on the sections that need Gradify Plus, once the learner's plan is known (only while Plus is on sale)
+// a small lock on the sections that need Gradify Pro, once the learner's plan is known (only while Pro is on sale)
 const LOCKED = { intel: "intelligence" };
 function markLocks() {
   for (const a of document.querySelectorAll(".lo-side a, .tabbar a")) {
     const f = LOCKED[a.dataset.route], locked = Boolean(f && ACCESS.enforced && !ACCESS.has(f));
     a.classList.toggle("plus-locked", locked);
     a.querySelector(".nav-lock")?.remove();
-    if (locked) { a.insertAdjacentHTML("beforeend", `<span class="nav-lock" title="Gradify Plus">${icon("lock")}</span>`); a.setAttribute("aria-label", `${a.textContent.trim()} (Gradify Plus)`); }
+    if (locked) { a.insertAdjacentHTML("beforeend", `<span class="nav-lock" title="Gradify Pro">${icon("lock")}</span>`); a.setAttribute("aria-label", `${a.textContent.trim()} (Gradify Pro)`); }
   }
 }
 // the pricing page lives on getgradify.com; sub-sites served elsewhere link to it there
@@ -661,7 +661,7 @@ async function renderStudy(arg) {
   // #/study/<deck id>, or #/study/t:<topic key> for a targeted practice session on one topic
   const topicKey = arg?.startsWith("t:") ? decodeURIComponent(arg.slice(2)) : null;
   const deckId = topicKey ? topicKey.split("|")[0] : arg;
-  // Free: 5 flashcard sets in all (kit/data/limits.js), once Plus is on sale
+  // Free: 5 flashcard sets in all (kit/data/limits.js), once Pro is on sale
   const { gate, lockedHtml } = await import("../data/limits.js");
   if (!(await gate("flashcards", deckId || "due", { store, pricing: PRICING }))) { view.innerHTML = lockedHtml("flashcards", { pricing: PRICING }); return; }
   const all = await store.listCards(deckId ? { documentId: deckId } : {});
@@ -930,10 +930,10 @@ function startCourses(L, n = 6) {
 }
 function proCard(sub) {
   const plan = sub ? describePlan(sub) : null;
-  if (plan && plan.plan !== "free") return `<article class="panel glass lo-pro on"><span class="lo-pro-badge"><span class="pro-gem" aria-hidden="true"></span>${plan.plan === "plus" ? "Gradify Plus" : "Gradify Pro"}</span><p class="sub">${esc(plan.line)}</p><a class="see" href="#/account">Manage</a></article>`;
-  return `<article class="panel glass lo-pro"><span class="lo-pro-badge"><span class="pro-gem" aria-hidden="true"></span>${PLUS_ON_SALE ? "Gradify Plus" : "Gradify Plus · opening soon"}</span>
+  if (plan && plan.plan !== "free") return `<article class="panel glass lo-pro on"><span class="lo-pro-badge"><span class="pro-gem" aria-hidden="true"></span>${plan.plan === "plus" ? "Gradify Pro" : "Gradify Ultra"}</span><p class="sub">${esc(plan.line)}</p><a class="see" href="#/account">Manage</a></article>`;
+  return `<article class="panel glass lo-pro"><span class="lo-pro-badge"><span class="pro-gem" aria-hidden="true"></span>${PLUS_ON_SALE ? "Gradify Pro" : "Gradify Pro · opening soon"}</span>
     <h3>Let Gradify run your studying</h3>
-    <p class="sub">Smart Plan autopilot, readiness forecasts, exam preparation, calendar sync and every device${PLUS_ON_SALE ? "" : ". Until Plus opens, everything on Gradify is free"}.</p>
+    <p class="sub">Smart Plan autopilot, readiness forecasts, exam preparation, calendar sync and every device${PLUS_ON_SALE ? "" : ". Until Pro opens, everything on Gradify is free"}.</p>
     <a class="btn btn-ghost lg btn-sm" href="${PRICING}"><span>See plans</span></a></article>`;
 }
 
@@ -1308,7 +1308,7 @@ async function renderPlan(arg) {
   ].sort((a, b) => a.day.localeCompare(b.day)).slice(0, 8);
   const paced = (L?.courses || []).filter((c) => c.examDate && c.pace && !["done", "no-date"].includes(c.pace.status));
   view.innerHTML = `<section class="planner">
-    <div class="deck-head"><div><span class="kicker lo-kicker">${icon("calendar")}Smart Plan</span><h1>${ACCESS.has("intelligence") ? "Your plan, worked out for you" : "Your study plan"}</h1><p class="sub">${ACCESS.has("intelligence") ? `Gradify builds each day from what matters most (misconceptions, fading memory, deadlines, due cards and new material) and fits it into your free time, with breaks. <a href="#/intel">Change your hours and energy</a>.` : "Plan your study blocks for the week. With Gradify Plus, Gradify works out the plan for you."}</p></div>${ACCESS.has("intelligence") ? `<button type="button" class="btn btn-primary lg" id="autoplan"><span>Plan my week</span></button>` : ""}</div>
+    <div class="deck-head"><div><span class="kicker lo-kicker">${icon("calendar")}Smart Plan</span><h1>${ACCESS.has("intelligence") ? "Your plan, worked out for you" : "Your study plan"}</h1><p class="sub">${ACCESS.has("intelligence") ? `Gradify builds each day from what matters most (misconceptions, fading memory, deadlines, due cards and new material) and fits it into your free time, with breaks. <a href="#/intel">Change your hours and energy</a>.` : "Plan your study blocks for the week. With Gradify Pro, Gradify works out the plan for you."}</p></div>${ACCESS.has("intelligence") ? `<button type="button" class="btn btn-primary lg" id="autoplan"><span>Plan my week</span></button>` : ""}</div>
     ${ACCESS.has("intelligence") ? `${catchUpHtml(M) || rescheduleHtml(M)}
     ${tellHtml()}
     ${smartPlanHtml(M, arg)}` : plusPanelHtml("intelligence", { pricing: PRICING })}
@@ -1440,7 +1440,7 @@ async function renderAccount() {
   $("#signout")?.addEventListener("click", async () => { await store.signOut(); location.reload(); });
 }
 
-// The learner's Gradify plan on the Account page: Free or Pro, what needs doing, Manage billing, and Gradify AI used
+// The learner's Gradify plan on the Account page: Free or Ultra, what needs doing, Manage billing, and Gradify AI used
 // this month. The subscription row is the learner's own (row-level security); only the billing webhook writes it.
 async function renderBillingPlan() {
   const box = $("#plan-panel");
@@ -1456,7 +1456,7 @@ async function renderBillingPlan() {
     ? `<ul class="plan-uses">${uses.map((u) => `<li><span>${esc(AI_ALLOWANCES.find((a) => a.feature === u.feature)?.label || u.feature)}</span><b>${u.used} of ${u.allowance}</b></li>`).join("")}</ul><p class="sub">Gradify AI used this month${uses[0]?.period_end ? `, resetting on ${new Date(uses[0].period_end).toLocaleDateString("en-GB", { day: "numeric", month: "long" })}` : ""}.</p>`
     : `<p class="sub">Gradify AI isn't switched on yet. Your allowance will show here when it is.</p>`;
   box.innerHTML = `<div class="panel-head"><div><h3>Your plan: ${esc(p.title)}</h3><p class="sub plan-line ${p.tone}"><span aria-hidden="true">${tone}</span> ${esc(p.line)}</p></div>
-      <div class="row-actions">${p.manage ? `<button type="button" class="btn btn-light lg btn-sm" id="manage-billing"><span>Manage billing</span></button>` : ""}<a class="btn btn-ghost lg btn-sm" href="${pricing}"><span>${p.plan === "pro" ? "See plans" : "See Gradify Pro"}</span></a></div></div>
+      <div class="row-actions">${p.manage ? `<button type="button" class="btn btn-light lg btn-sm" id="manage-billing"><span>Manage billing</span></button>` : ""}<a class="btn btn-ghost lg btn-sm" href="${pricing}"><span>${p.plan === "pro" ? "See plans" : "See Gradify Ultra"}</span></a></div></div>
     ${usage}`;
   $("#manage-billing")?.addEventListener("click", async (e) => {
     const b = e.currentTarget; b.disabled = true; b.querySelector("span").textContent = "Opening Stripe…";
@@ -1545,7 +1545,7 @@ function showDeviceBanner(cloud, device) {
   view.insertAdjacentHTML("beforebegin", `<aside class="device-banner panel glass" role="status">
     <div><b>You're studying on another device.</b> <span class="sub">Gradify Free studies on one device at a time. Everything you've made is safe and you can look at it here, but changes are saved only on your study device.</span></div>
     <div class="row-actions">${can ? `<button class="btn btn-light btn-sm" id="device-here" type="button"><span>Study on this device instead</span></button>` : `<span class="sub">You can move here from ${esc(when(device.canSwitchAt))}.</span>`}
-      <a class="btn btn-ghost btn-sm" href="${PRICING}"><span>Every device with Plus</span></a></div>
+      <a class="btn btn-ghost btn-sm" href="${PRICING}"><span>Every device with Pro</span></a></div>
   </aside>`);
   $("#device-here")?.addEventListener("click", async (e) => {
     e.currentTarget.disabled = true;
@@ -1599,7 +1599,7 @@ async function start() {
   cloud?.onAuth((u) => { if (Boolean(u) !== Boolean(user)) location.reload(); });
   // on a sub-site, the app only sees that site's notes and progress
   if (SITE) { store = scopeToSite(store, SITE); picks.site = SITE; }
-  if (!device.active) { store = readOnly(store, "You're on Free, which studies on one device. Move your studying here, or get Gradify Plus to study on every device."); showDeviceBanner(cloud, device); }
+  if (!device.active) { store = readOnly(store, "You're on Free, which studies on one device. Move your studying here, or get Gradify Pro to study on every device."); showDeviceBanner(cloud, device); }
   ACCESS = await within(access(store), 8000, "Checking your plan").catch(() => ({ plan: "free", enforced: false, has: () => true }));
   profile = await within(store.getProfile(), 12000, "Loading your profile");
   markLocks();

@@ -1130,7 +1130,7 @@ code { font: 12px var(--mono); color: var(--mute); }
 @keyframes gd-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
 @media (prefers-reduced-motion: reduce) { .gd-art { animation: none; } }
 
-/* Free allowance banner (kit/data/limits.js): a Liquid Glass bar with the Plus offer, floating above the page */
+/* Free allowance banner (kit/data/limits.js): a Liquid Glass bar with the Pro offer, floating above the page */
 .lim-banner { position: fixed; z-index: 1200; left: 50%; bottom: max(18px, env(safe-area-inset-bottom)); transform: translate(-50%, 24px); opacity: 0;
   width: min(720px, calc(100% - 24px)); display: flex; align-items: center; gap: 14px; padding: 12px 14px 12px 12px; border-radius: 26px; color: #fff;
   background: linear-gradient(135deg, rgba(70, 65, 255, .55), rgba(240, 85, 221, .42) 55%, rgba(255, 138, 0, .38)), rgba(18, 18, 28, .55);
@@ -1169,7 +1169,7 @@ code { font: 12px var(--mono); color: var(--mute); }
 .today-head > .today-icons + .today-cta { margin-left: 0; }
 @media (max-width: 760px) { .today-icons { display: none; } .co-licon { float: none; display: block; margin: 0 0 8px; } }
 
-/* ---------- Gradify Plus: a feature that comes with Plus, and Free on a second device (kit/data/plan.js) ---------- */
+/* ---------- Gradify Pro: a feature that comes with Pro, and Free on a second device (kit/data/plan.js) ---------- */
 .plus-lock { position: relative; display: grid; gap: 8px; justify-items: start; padding: 22px; margin: 12px 0; }
 .plus-lock h3 { margin: 0; font-size: 18px; letter-spacing: -.01em; }
 .plus-lock .sub { margin: 0; max-width: 46em; }
@@ -1179,7 +1179,7 @@ code { font: 12px var(--mono); color: var(--mute); }
 .device-banner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; margin: 0 0 14px; }
 .device-banner .row-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
 
-/* the instant "get Gradify Plus" prompt (promptPlus in kit/data/plan.js) and the lock on Plus sections in the sidebar */
+/* the instant "get Gradify Pro" prompt (promptPlus in kit/data/plan.js) and the lock on Pro sections in the sidebar */
 dialog.plus-prompt { border: 0; padding: 0; background: none; color: var(--fg); max-width: min(460px, calc(100vw - 32px)); width: 100%; }
 dialog.plus-prompt::backdrop { background: rgba(var(--sink-rgb), .6); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
 .plus-prompt-card { display: grid; gap: 12px; justify-items: start; padding: 26px; border-radius: 24px; border: 1.5px solid transparent;

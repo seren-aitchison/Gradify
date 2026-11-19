@@ -5,10 +5,11 @@
 //
 //   Free   Learn with Gradify: flashcards, mind maps, basic revision and spaced repetition, standard quizzes and practice,
 //          basic progress, manual planning, on one active study device (data kept and readable on every device).
-//   Plus   Gradify organises, optimises and manages your learning: the features in PLUS_FEATURES, on every device.
-//   Pro    Everything in Plus, and Gradify AI.
+//   Pro    (id "plus") Gradify organises, optimises and manages your learning: the features in PLUS_FEATURES, on every device.
+//   Ultra  (id "pro")  Everything in Pro, and Gradify AI.
+// The ids ("plus", "pro") are what the database, Stripe and the code use; only the names shown to learners changed.
 //
-// Until Plus goes on sale (PLUS_ON_SALE in kit/data/billing.js, with the server's switches), nothing is locked:
+// Until Pro goes on sale (PLUS_ON_SALE in kit/data/billing.js, with the server's switches), nothing is locked:
 // every learner keeps every feature they have today.
 import { PLUS_ON_SALE, PLAN_PRICES, includes, money, planOf } from "./billing.js";
 
@@ -25,7 +26,7 @@ const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "
 let cached = null;
 
 /**
- * The learner's access. { plan, enforced, has(feature) }. With no account, or before Plus is on sale, everything is open.
+ * The learner's access. { plan, enforced, has(feature) }. With no account, or before Pro is on sale, everything is open.
  * @param {object} store a LocalStore or CloudStore
  */
 export async function access(store, { fresh = false } = {}) {
@@ -57,21 +58,21 @@ export function deviceId() {
   } catch { return null; }
 }
 
-/** The panel shown in place of a Plus feature. */
+/** The panel shown in place of a Pro feature. */
 export function plusPanelHtml(feature, { pricing = "/pricing.html", compact = false } = {}) {
   const f = PLUS_FEATURES[feature] || { name: "This", line: "" };
   return `<article class="panel glass plus-lock${compact ? " compact" : ""}" data-plus-lock="${esc(feature)}">
-    <span class="plus-badge">Plus</span>
+    <span class="plus-badge">Pro</span>
     <h3>${esc(f.name)}</h3>
     <p class="sub">${esc(f.line)}</p>
-    <p class="sub">Part of Gradify Plus, ${pounds(PLAN_PRICES.plus.month)} a month: Gradify organises, optimises and manages your learning.</p>
-    <a class="btn btn-light lg btn-sm" href="${esc(pricing)}"><span>See Gradify Plus</span></a>
+    <p class="sub">Part of Gradify Pro, ${pounds(PLAN_PRICES.plus.month)} a month: Gradify organises, optimises and manages your learning.</p>
+    <a class="btn btn-light lg btn-sm" href="${esc(pricing)}"><span>See Gradify Pro</span></a>
   </article>`;
 }
 
 /**
- * The instant "get Gradify Plus" prompt: a dialog shown the moment a Free learner opens a Plus screen (the screen behind
- * it shows plusPanelHtml, so closing the dialog never leaves them stuck). Does nothing while Plus isn't on sale.
+ * The instant "get Gradify Pro" prompt: a dialog shown the moment a Free learner opens a Pro screen (the screen behind
+ * it shows plusPanelHtml, so closing the dialog never leaves them stuck). Does nothing while Pro isn't on sale.
  * @returns {boolean} whether it was shown
  */
 export function promptPlus(feature, { pricing = "/pricing.html", signedIn = false } = {}) {
@@ -83,13 +84,13 @@ export function promptPlus(feature, { pricing = "/pricing.html", signedIn = fals
   d.setAttribute("aria-labelledby", "plus-prompt-title");
   const href = `${pricing}${pricing.includes("?") ? "&" : "?"}plan=plus&from=${encodeURIComponent(feature)}`;
   d.innerHTML = `<form method="dialog" class="plus-prompt-card">
-    <span class="plus-badge">Plus</span>
-    <h2 id="plus-prompt-title">${esc(f.name)} is part of Gradify Plus</h2>
+    <span class="plus-badge">Pro</span>
+    <h2 id="plus-prompt-title">${esc(f.name)} is part of Gradify Pro</h2>
     <p class="sub">${esc(f.line)}</p>
     <ul class="plus-prompt-list">${Object.values(PLUS_FEATURES).map((x) => `<li>${esc(x.name)}</li>`).join("")}</ul>
     <p class="plus-prompt-price"><b>${pounds(PLAN_PRICES.plus.month)}</b> a month. Cancel any time.</p>
     <div class="plus-prompt-actions">
-      <a class="btn btn-primary lg" href="${esc(href)}" data-plus-go><span>${signedIn ? "Get Gradify Plus" : "Sign up for Gradify Plus"}</span></a>
+      <a class="btn btn-primary lg" href="${esc(href)}" data-plus-go><span>${signedIn ? "Get Gradify Pro" : "Sign up for Gradify Pro"}</span></a>
       <button class="btn btn-ghost lg" value="later"><span>Not now</span></button>
     </div>
   </form>`;
@@ -102,7 +103,7 @@ export function promptPlus(feature, { pricing = "/pricing.html", signedIn = fals
 
 /**
  * Free on a device that isn't the active one: everything stays readable here; changes go to the active device.
- * Returns { active, canSwitchAt } (active is true for Plus and Pro, before Plus is on sale, and without an account).
+ * Returns { active, canSwitchAt } (active is true for Pro and Ultra, before Pro is on sale, and without an account).
  */
 export async function deviceStatus(store) {
   if (!PLUS_ON_SALE || store?.mode !== "cloud" || !store.db) return { active: true };

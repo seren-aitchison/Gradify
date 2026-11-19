@@ -1,7 +1,7 @@
 // Supabase Edge Function: study-pack
 // POST { mode: "pack", title, site, level, text, pdfBase64?, images?, documentId? }  → { pack, cards, stats, packId, reused? }
 //      images: up to 5 photos of notes (handwritten or printed pages), [{ data: base64, type: "image/jpeg" | "image/png" |
-//      "image/webp" }], read by Claude like a scanned PDF (Gradify Pro's photo-to-cards, kit/tools/cardmaker.js)
+//      "image/webp" }], read by Claude like a scanned PDF (Gradify Ultra's photo-to-cards, kit/tools/cardmaker.js)
 // POST { mode: "card", fact, notes, avoid, kind? }                         → { card }   (regenerate one card)
 // POST { mode: "questions", title, site, level, text, topics }              → { cards, reused? } (why and application
 //      questions for a deck made before they existed)
@@ -123,7 +123,7 @@ Use only what the fact and notes say. Front under 25 words, back under 40. Never
     const check = async (claim: { plan: string }) => {
       const { data } = await db.from("ai_plan_caps").select("pack_chars").eq("plan", claim.plan).maybeSingle();
       const limit = data?.pack_chars ?? 40_000;
-      if (text.length > limit) fail(413, `These notes are too long for one ${mode === "questions" ? "question set" : "study pack"} (${Math.round(text.length / 1000)}k characters; the ${claim.plan === "pro" ? "Pro" : "Free"} limit is ${Math.round(limit / 1000)}k). Try one lecture at a time.`, "too_long");
+      if (text.length > limit) fail(413, `These notes are too long for one ${mode === "questions" ? "question set" : "study pack"} (${Math.round(text.length / 1000)}k characters; the ${claim.plan === "pro" ? "Ultra" : "Free"} limit is ${Math.round(limit / 1000)}k). Try one lecture at a time.`, "too_long");
     };
 
     if (mode === "questions") {

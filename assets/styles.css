@@ -349,7 +349,7 @@ footer b { color: var(--fg); font-weight: 600; }
 
 /* ======================================================================
    Stage 1 homepage: hero with the real product, how it works, one Gradify,
-   Gradify Pro showcase and comparison, closing call to action.
+   Gradify Ultra showcase and comparison, closing call to action.
    ====================================================================== */
 :root { --pro: linear-gradient(120deg, #8c27ca, #f055dd 45%, #ff5600 80%, #ffc002); }
 .pro-gem { width: 14px; height: 14px; flex: none; border-radius: 4px; transform: rotate(45deg); background: var(--pro); box-shadow: 0 0 12px rgba(240, 85, 221, .55); }
@@ -417,7 +417,7 @@ footer b { color: var(--fg); font-weight: 600; }
 .eco-list li::before { content: ""; position: absolute; left: 0; top: 4px; width: 16px; height: 16px; border-radius: 5px; background: var(--spectrum); }
 .eco-list b { color: var(--fg); }
 
-/* Gradify Pro */
+/* Gradify Ultra */
 .pro { position: relative; overflow-x: clip; padding: clamp(72px, 10vw, 128px) 0 clamp(40px, 6vw, 72px); }
 .pro::before { content: ""; position: absolute; inset: 0 -10% auto; height: 420px; z-index: -1; pointer-events: none;
   background: radial-gradient(50% 60% at 50% 0%, rgba(240, 85, 221, .2), transparent 70%); }

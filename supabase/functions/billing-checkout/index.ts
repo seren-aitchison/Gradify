@@ -20,7 +20,7 @@ Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: cors(req) });
   if (req.method !== "POST") return json(req, { error: "Use POST." }, 405);
   const secret = Deno.env.get("STRIPE_SECRET_KEY");
-  if (!secret) return json(req, { error: "Gradify Pro isn't on sale yet." }, 503);
+  if (!secret) return json(req, { error: "Gradify Ultra isn't on sale yet." }, 503);
 
   const asUser = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_ANON_KEY")!, { global: { headers: { Authorization: req.headers.get("Authorization") ?? "" } } });
   const { data: { user } } = await asUser.auth.getUser();
@@ -42,7 +42,7 @@ Deno.serve(async (req) => {
       const portal = await stripe(secret, "POST", "/billing_portal/sessions", { customer: sub.stripe_customer_id, return_url: returnUrl(SITE, back) });
       return json(req, { url: portal.url, alreadySubscribed: current });
     }
-    if (!mayBuy(user.email, env, plan)) return json(req, { error: plan === "pro" ? "Gradify Pro opens when Gradify AI launches. Gradify Plus has everything else." : "Gradify Plus isn't on sale yet.", notOnSale: true }, 403);
+    if (!mayBuy(user.email, env, plan)) return json(req, { error: plan === "pro" ? "Gradify Ultra opens when Gradify AI launches. Gradify Pro has everything else." : "Gradify Pro isn't on sale yet.", notOnSale: true }, 403);
     const price = priceFor(plan, body.interval ?? "month", env);
     let customer = sub?.stripe_customer_id as string | undefined;
     if (!customer) {

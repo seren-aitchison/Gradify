@@ -48,5 +48,5 @@ export async function callFunction(store, name, payload, o = {}) {
 }
 
 /** A link to the plans after an "allowance used up" message, for learners on Free. */
-export const upgradeLink = (err, href = "/pricing.html") => (err?.upgrade ? ` <a href="${href}">See Gradify Pro</a>` : "");
+export const upgradeLink = (err, href = "/pricing.html") => (err?.upgrade ? ` <a href="${href}">See Gradify Ultra</a>` : "");
 export { MSG as FUNCTION_MESSAGES };

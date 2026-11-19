@@ -1,4 +1,4 @@
-// Launch lists: "tell me when this opens", for a Gradify site that's coming soon or for Gradify Pro.
+// Launch lists: "tell me when this opens", for a Gradify site that's coming soon or for Gradify Ultra.
 // Writes one row to public.waitlist (email + what it's for). The table is insert-only through the API: nobody,
 // including the person who joined, can read it back, and joining twice is ignored. Without accounts configured it
 // is kept in this browser only. privacy.html says what's kept and why.
@@ -6,6 +6,8 @@ import { SUPABASE_URL, SUPABASE_ANON_KEY } from "../../gradify.config.js";
 
 export const PRO_LIST = "Gradify Pro";
 export const PLUS_LIST = "Gradify Plus";
+// The lists keep the names they were stored under; the plans are now called Gradify Pro (id "plus") and Gradify Ultra (id "pro").
+const LIST_LABEL = { [PRO_LIST]: "Gradify Ultra", [PLUS_LIST]: "Gradify Pro" };
 // the same pattern as the table's check constraint, plus the longest address email allows (254 characters)
 export const validEmail = (e) => { const s = String(e ?? "").trim(); return s.length <= 254 && /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(s); };
 
@@ -14,7 +16,7 @@ export async function joinWaitlist(email, what, { fetch: f = globalThis.fetch?.b
   // one entry per address and list whatever the capitals (the table's unique key is on the exact text)
   email = String(email ?? "").trim().toLowerCase();
   if (!validEmail(email)) throw Object.assign(new Error("Please enter a valid email address."), { invalid: true });
-  const done = what === PRO_LIST || what === PLUS_LIST ? `Thanks. We'll email you once, when ${what} opens.` : `Thanks. We'll email you when ${what} launches.`;
+  const done = what === PRO_LIST || what === PLUS_LIST ? `Thanks. We'll email you once, when ${LIST_LABEL[what]} opens.` : `Thanks. We'll email you when ${what} launches.`;
   if (url && key) {
     const res = await f(`${url}/rest/v1/waitlist`, {
       method: "POST",

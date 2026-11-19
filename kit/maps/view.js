@@ -95,7 +95,7 @@ let open = null;   // the open viewer: { overlay, mind, ... }
 /** Open map `i` (0–4) of a lesson in the immersive viewer. */
 export async function openMap(L, i = 0, o = {}) {
   const r = mapsFor(L, o);
-  // Free: 5 mind maps in all (kit/data/limits.js), once Plus is on sale; opening one already opened is free
+  // Free: 5 mind maps in all (kit/data/limits.js), once Pro is on sale; opening one already opened is free
   if (!(await gate("map", `${o.id || "map"}:${i}`, { store: o.store }))) return;
   if (open) close();
   const overlay = document.createElement("div");
