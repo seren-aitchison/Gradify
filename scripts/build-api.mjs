@@ -135,5 +135,6 @@ if (process.argv[1] && new URL(`file://${process.argv[1]}`).href === import.meta
   await writeFile(new URL("stats.json", OUT), json({ api: API_VERSION, about: "What's on Gradify, counted from the courses: written lessons, five mind maps for each, their flashcards and practice questions.", ...ix.stats }));
   await mkdir(new URL("icons/", OUT), { recursive: true });
   for (const [slug, set] of Object.entries(await iconSets())) await writeFile(new URL(`icons/${slug}.json`, OUT), JSON.stringify(set));
+  await writeFile(new URL("quality.json", OUT), json(await (await import("./quality-audit.mjs")).qualityJson()));
   console.log(`api: ${cat.courses.length} courses, ${cat.courses.reduce((a, c) => a + c.lessons, 0)} lessons`);
 }

@@ -43,3 +43,44 @@
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", mount); else mount();
 })();
+
+// Reading and accessibility settings (kit/core/access-panel.js has the panel and the details). Each setting is chosen
+// on its own, never bundled by diagnosis, and applied here before the first paint as attributes on <html>, which
+// kit/styles/base.css styles: data-a-size, data-a-font, data-a-spacing, data-a-lines, data-a-measure, data-a-tint,
+// data-a-contrast, data-a-motion, data-a-links, data-a-focus. Kept on this device, like the theme.
+(function () {
+  var KEY = "gradify.access", root = document.documentElement;
+  var FONTS = { hyperlegible: "Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400", lexend: "Lexend:wght@400;500;700" };
+  function prefs() { try { return JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { return {}; } }
+  function apply() {
+    var p = prefs(), names = ["size", "font", "spacing", "lines", "measure", "tint", "contrast", "motion", "links", "focus", "readaloud"];
+    for (var i = 0; i < names.length; i++) { var v = p[names[i]]; if (v && v !== "default") root.setAttribute("data-a-" + names[i], v); else root.removeAttribute("data-a-" + names[i]); }
+    if (p.font && FONTS[p.font] && !document.getElementById("a-font-" + p.font)) {
+      var l = document.createElement("link"); l.rel = "stylesheet"; l.id = "a-font-" + p.font;
+      l.href = "https://fonts.googleapis.com/css2?family=" + FONTS[p.font] + "&display=swap"; document.head.appendChild(l);
+    }
+    try { document.dispatchEvent(new CustomEvent("gradify:access", { detail: p })); } catch (e) { /* old browser */ }
+  }
+  apply();
+  window.addEventListener("storage", function (e) { if (e.key === KEY) apply(); });
+  var base = (document.currentScript && document.currentScript.src) || "";
+  function open(from) { import(base.replace(/theme-boot\.js(\?.*)?$/, "access-panel.js")).then(function (m) { m.openAccessPanel(from); }); }
+  window.gradifyAccess = { get: prefs, apply: apply, open: open,
+    set: function (k, v) { var p = prefs(); if (v == null || v === "default") delete p[k]; else p[k] = v; try { localStorage.setItem(KEY, JSON.stringify(p)); } catch (e) { /* this page only */ } apply(); } };
+  var AA = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 19 8.5 5h1L15 19M5.2 14h7.6"/><path d="M17 10.5c.6-.9 1.6-1.4 2.6-1.2 1.1.2 1.9 1.1 1.9 2.3V19m0-4.5c-2.9 0-4.7.8-4.7 2.4 0 1.3 1 2.1 2.2 2.1 1.4 0 2.5-1 2.5-2.6"/></svg>';
+  function mount() {
+    var bar = document.querySelector("header.bar, header.sub-nav");
+    if ((bar && bar.querySelector(".access-btn")) || document.querySelector(".access-float")) return;
+    var b = document.createElement("button");
+    b.type = "button"; b.className = bar ? "icon-btn access-btn" : "icon-btn access-btn access-float"; b.innerHTML = AA;
+    b.setAttribute("aria-label", "Reading and accessibility settings"); b.title = "Reading and accessibility settings";
+    b.setAttribute("aria-haspopup", "dialog");
+    b.addEventListener("click", function () { open(b); });
+    // pages without a top bar (terms, privacy, quality…) get the button in the corner, so the settings are on every page
+    if (!bar) document.body.appendChild(b);
+    else { var t = bar.querySelector(".theme-btn"); if (t) t.parentNode.insertBefore(b, t); else { var host = bar.querySelector(".right, .sub-right"); host ? host.insertBefore(b, host.firstChild) : bar.appendChild(b); } }
+    // read aloud: select any text and a "Read aloud" button appears beside it
+    if (prefs().readaloud === "on") import(base.replace(/theme-boot\.js(\?.*)?$/, "access-panel.js")).then(function (m) { m.readAloud(); });
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", mount); else mount();
+})();

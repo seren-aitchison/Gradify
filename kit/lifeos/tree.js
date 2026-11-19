@@ -145,46 +145,60 @@ export function drawTreeFlat(el, { sites, bars, rand }) {
 }
 
 // Isometric garden of the last 12 weeks
-// The Forest: a low-poly garden on one raised plot, a tile for each of the last weeks' days (rows are days of the week,
-// columns are weeks). A day you studied grows a tree in the colour of that day's main site, and the more you did, the
-// bigger the tree: a sprout (1 to 2 activities), a round tree (3 to 4), a pine (5 to 6), a great tree with gold fruit
-// (7 or more). Days without study are bare, drier ground. Today glows. Trees grow in one after another, then sway.
+// The Forest: a soft, rounded garden plot under a daytime sky, a patch for each of the last weeks' days (rows are days
+// of the week, columns are weeks). A day you studied grows a cartoon tree in the colour of that day's main site, and the
+// more you did, the bigger it grows: a sprout (1 to 2 activities), a puffy tree (3 to 4), a pine (5 to 6), a great tree
+// in blossom (7 or more). Days without study are dry patches. Today has a glowing ring and a flag. Trees pop up one
+// after another, then sway.
 const FOREST_KINDS = [[7, "great"], [5, "pine"], [3, "round"], [1, "sprout"]];
 export const forestKind = (total) => (FOREST_KINDS.find(([n]) => total >= n) || [0, null])[1];
-// a low-poly crown: a polygon of n points, its left half lit and its right half shaded, with a highlight on top
-function crown(cx, cy, r, c, n = 7, squash = 0.86) {
-  const pts = Array.from({ length: n }, (_, i) => { const a = -Math.PI / 2 + (i / n) * Math.PI * 2; return [cx + Math.cos(a) * r, cy + Math.sin(a) * r * squash]; });
-  const left = pts.filter(([x]) => x <= cx + 0.01), right = pts.filter(([x]) => x >= cx - 0.01);
-  const poly = (ps) => ps.map(([x, y]) => `${f1(x)},${f1(y)}`).join(" ");
-  return `<polygon points="${poly(pts)}" fill="#${c}"/>
-    <polygon points="${poly([[cx, cy - r * squash], ...left.filter(([, y]) => y > cy - r * squash + 0.01), [cx, cy + r * squash * 0.95]])}" fill="${mix(c, 0.32)}"/>
-    <polygon points="${poly([[cx, cy - r * squash], ...right.filter(([, y]) => y > cy - r * squash + 0.01), [cx, cy + r * squash * 0.95]])}" fill="${shade(c, 0.28)}"/>
-    <polygon points="${f1(cx - r * 0.5)},${f1(cy - r * 0.35)} ${f1(cx)},${f1(cy - r * squash)} ${f1(cx + r * 0.15)},${f1(cy - r * 0.42)}" fill="${mix(c, 0.6)}" opacity=".85"/>`;
+// a puffy canopy: overlapping circles, each with a shaded underside and a soft highlight
+function puff(circles, c) {
+  const base = mix(c, 0.24), dark = shade(mix(c, 0.12), 0.08), light = mix(c, 0.58);
+  return circles.map(([x, y, r]) => `<circle cx="${x}" cy="${y}" r="${r}" fill="${dark}"/>`).join("")
+    + circles.map(([x, y, r]) => `<circle cx="${f1(x - r * 0.12)}" cy="${f1(y - r * 0.14)}" r="${f1(r * 0.9)}" fill="${base}"/>`).join("")
+    + circles.map(([x, y, r]) => `<ellipse cx="${f1(x - r * 0.38)}" cy="${f1(y - r * 0.45)}" rx="${f1(r * 0.32)}" ry="${f1(r * 0.2)}" fill="${light}" opacity=".9"/>`).join("");
 }
+const trunkOf = (h, w = 3) => `<rect x="${-w / 2}" y="${-h}" width="${w}" height="${h + 1}" rx="${w / 2}" fill="#9a6b47"/><rect x="0" y="${-h}" width="${w / 2}" height="${h + 1}" rx="${w / 4}" fill="#7d5538"/>`;
 function plant(kind, c, c2) {
-  const trunk = (h, w = 2.4) => `<polygon points="${-w / 2},0 ${w / 2},0 ${w * 0.32},${-h} ${-w * 0.32},${-h}" fill="#8a6142"/><polygon points="0,0 ${w / 2},0 ${w * 0.32},${-h} 0,${-h}" fill="#6b4a32"/>`;
-  if (kind === "sprout") return `<path d="M0 0 V-7" stroke="#6b4a32" stroke-width="1.3" stroke-linecap="round"/>
-    <path d="M0 -6 C-5 -9 -7 -5 -6 -3 C-3 -3 -1 -4 0 -6Z" fill="${mix(c, 0.25)}"/><path d="M0 -7 C5 -11 8 -7 6 -4 C3 -4 1 -5 0 -7Z" fill="#${c}"/>`;
-  if (kind === "round") return `${trunk(10)}${crown(0, -17, 9, c)}`;
-  if (kind === "pine") return `${trunk(6, 2.2)}${[[0, -9, 9.5, 9], [0, -15, 7.6, 8], [0, -20.5, 5.6, 7]].map(([x, y, w, h]) => `<polygon points="${-w},${y + h / 2} ${w},${y + h / 2} 0,${y - h}" fill="${mix(c, 0.22)}"/><polygon points="0,${y + h / 2} ${w},${y + h / 2} 0,${y - h}" fill="${shade(c, 0.3)}"/>`).join("")}`;
-  // a great tree: a fork of trunk, three crowns (the second in that day's second site, if any), and gold fruit
-  return `${trunk(14, 3.2)}<path d="M0 -9 L-5 -15 M0 -11 L5 -16" stroke="#6b4a32" stroke-width="1.6" stroke-linecap="round"/>
-    ${crown(-6, -19, 8, c2 || c)}${crown(6, -20, 8.5, c)}${crown(0, -27, 9.5, c, 8)}
-    <circle cx="-4" cy="-22" r="1.6" fill="#ffc23d"/><circle cx="5" cy="-25" r="1.6" fill="#ffc23d"/><circle cx="1" cy="-17" r="1.5" fill="#ffc23d"/>`;
+  if (kind === "sprout") return `<path d="M0 0 V-6" stroke="#7d5538" stroke-width="1.6" stroke-linecap="round"/>
+    <ellipse cx="-3.4" cy="-7" rx="3.8" ry="2.4" transform="rotate(-25 -3.4 -7)" fill="${mix(c, 0.3)}"/><ellipse cx="3.6" cy="-8.2" rx="4.2" ry="2.6" transform="rotate(25 3.6 -8.2)" fill="${mix(c, 0.15)}"/>`;
+  if (kind === "round") return `${trunkOf(9)}${puff([[-4, -13, 5.2], [4, -13.5, 5.4], [0, -18.5, 6.2]], c)}`;
+  if (kind === "pine") {
+    // three soft tiers in the site's colour, the right side of each a little shaded, a highlight on the left
+    const base = mix(c, 0.22), dark = shade(mix(c, 0.1), 0.2), light = mix(c, 0.55);
+    return `${trunkOf(5, 2.6)}${[[-6.5, 9, 9], [-12, 7.4, 8], [-17, 5.8, 7]].map(([y, w, h]) =>
+      `<path d="M${-w} ${y} Q0 ${y + 2.4} ${w} ${y} L0 ${y - h} Z" fill="${base}" stroke="${base}" stroke-width="2.4" stroke-linejoin="round"/>
+       <path d="M0 ${y - h} L${w} ${y} Q${w * 0.5} ${y + 1.6} 0 ${y + 1.2} Z" fill="${dark}" opacity=".55"/>
+       <path d="M${-w * 0.55} ${y - 1.4} L${-w * 0.12} ${y - h * 0.62}" stroke="${light}" stroke-width="1.3" stroke-linecap="round" opacity=".9"/>`).join("")}`;
+  }
+  // a great tree: a broad puffy crown (its lower left in the day's second site, if any) with blossom
+  return `${trunkOf(12, 4)}<path d="M0 -8 L-5 -13 M0 -10 L5 -14" stroke="#7d5538" stroke-width="1.8" stroke-linecap="round"/>
+    ${puff([[-7, -17, 6.5]], c2 || c)}${puff([[7, -18, 7], [0, -24, 8.5], [-4, -20, 5], [4.5, -25.5, 5.5]], c)}
+    ${[[-6, -22], [3, -28], [7, -19], [-1, -17], [-8, -15]].map(([x, y]) => `<circle cx="${x}" cy="${y}" r="1.25" fill="#fff4f8"/><circle cx="${x}" cy="${y}" r=".55" fill="#ffc23d"/>`).join("")}`;
+}
+// a diamond with rounded corners (the plot, seen from above); f is how far along each edge the rounding starts
+function roundDiamond(pts, f = 0.07) {
+  let d = "";
+  pts.forEach((p, i) => {
+    const prev = pts[(i + 3) % 4], next = pts[(i + 1) % 4];
+    const a = [p[0] + (prev[0] - p[0]) * f, p[1] + (prev[1] - p[1]) * f], b = [p[0] + (next[0] - p[0]) * f, p[1] + (next[1] - p[1]) * f];
+    d += `${i ? "L" : "M"}${f1(a[0])} ${f1(a[1])} Q${f1(p[0])} ${f1(p[1])} ${f1(b[0])} ${f1(b[1])} `;
+  });
+  return d + "Z";
 }
 export function drawForest(el, { days, colourOf, off }) {
   el.__drawn = null; island?.disposeIsland(el);
-  const TW = 46, TH = 23, D = 20, R = 7;
+  const TW = 46, TH = 23, D = 24, R = 7, pad = 0.55;
   const cols = Math.ceil(days.length / 7);
-  const ox = R * (TW / 2) + 28, oy = 46;
+  const ox = R * (TW / 2) + 40, oy = 56;
   const P = (c, r) => [ox + (c - r) * (TW / 2), oy + (c + r) * (TH / 2)];
-  // the plot: its two front faces in layers of turf, soil and rock
-  const [N, E, S, W] = [P(0, 0), P(cols, 0), P(cols, R), P(0, R)];
-  const face = (a, b, top, h) => `M${f1(a[0])} ${f1(a[1] + top)} L${f1(b[0])} ${f1(b[1] + top)} L${f1(b[0])} ${f1(b[1] + top + h)} L${f1(a[0])} ${f1(a[1] + top + h)} Z`;
-  let out = `<ellipse cx="${f1(S[0])}" cy="${f1(S[1] + D + 14)}" rx="${f1((E[0] - W[0]) * 0.42)}" ry="16" fill="rgba(0,0,0,.35)" filter="url(#fs-blur)"/>
-    <path d="${face(W, S, 0, 5)}" fill="#4f8a35"/><path d="${face(S, E, 0, 5)}" fill="#3e722a"/>
-    <path d="${face(W, S, 5, 9)}" fill="#7a5638"/><path d="${face(S, E, 5, 9)}" fill="#5f4129"/>
-    <path d="${face(W, S, 14, D - 14)}" fill="#5d4f47"/><path d="${face(S, E, 14, D - 14)}" fill="#463b35"/>`;
+  // the plot: grass with rounded corners on a thick, rounded base of soil (drawn as stacked layers, deepest first)
+  const corners = [P(-pad, -pad), P(cols + pad, -pad), P(cols + pad, R + pad), P(-pad, R + pad)];
+  const at = (dy) => corners.map(([x, y]) => [x, y + dy]);
+  let out = `<ellipse cx="${f1(corners[2][0])}" cy="${f1(corners[2][1] + D + 10)}" rx="${f1((corners[1][0] - corners[3][0]) * 0.4)}" ry="14" fill="rgba(60,70,110,.22)" filter="url(#fs-blur)"/>`;
+  for (let dy = D; dy > 0; dy -= 2) out += `<path d="${roundDiamond(at(dy))}" fill="${dy > 9 ? "url(#fs-soil)" : "url(#fs-turf)"}"/>`;
+  out += `<path d="${roundDiamond(at(0))}" fill="url(#fs-grass)"/>`;
   const cells = days.map((d, i) => ({ d, col: Math.floor(i / 7), row: i % 7 })).sort((a, b) => a.col + a.row - (b.col + b.row));
   let n = 0, trees = "";
   for (const { d, col, row } of cells) {
@@ -192,31 +206,28 @@ export function drawForest(el, { days, colourOf, off }) {
     const parts = Object.entries(d.counts).filter(([k]) => !off.has(k)).sort((a, b) => b[1] - a[1]);
     const total = parts.reduce((a, [, c]) => a + c, 0), kind = forestKind(total);
     const date = d.date.toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" });
-    const shadeTop = (col + row) % 2 ? 0.035 : 0;
-    const fill = kind ? shade("6fbf4a", shadeTop) : shade("8f9a5a", shadeTop);
-    out += `<path d="M${x} ${y} l${TW / 2} ${TH / 2} l${-TW / 2} ${TH / 2} l${-TW / 2} ${-TH / 2} Z" fill="${fill}" class="fs-tile${d.today ? " today" : ""}" stroke="rgba(0,0,0,.12)" stroke-width=".6"><title>${date}: ${total ? `${total} ${total === 1 ? "activity" : "activities"}${parts[0] ? `, mostly ${parts[0][0]}` : ""}` : "no study"}</title></path>`;
+    // each day's patch: a faint checker on the grass, drier where nothing was studied
+    out += `<path d="M${x} ${y + 1} l${TW / 2 - 1.5} ${TH / 2 - 0.75} l${-TW / 2 + 1.5} ${TH / 2 - 0.75} l${-TW / 2 + 1.5} ${-TH / 2 + 0.75} Z" class="fs-tile${d.today ? " today" : ""}" fill="${kind ? ((col + row) % 2 ? "rgba(255,255,255,.07)" : "rgba(0,60,0,.04)") : "rgba(214,190,120,.55)"}"><title>${date}: ${total ? `${total} ${total === 1 ? "activity" : "activities"}${parts[0] ? `, mostly ${parts[0][0]}` : ""}` : "no study"}</title></path>`;
     const bx = x, by = y + TH / 2;
-    if (!kind) {
-      // bare ground: a couple of dry tufts and a pebble
-      out += `<path d="M${f1(bx - 7)} ${f1(by + 2)} l1.2 -3 l1.2 3 M${f1(bx + 5)} ${f1(by - 1)} l1 -2.6 l1 2.6" stroke="#6d7642" stroke-width="1" fill="none"/><ellipse cx="${f1(bx + 1)}" cy="${f1(by + 4)}" rx="1.8" ry="1.1" fill="#9b9384"/>`;
-      continue;
-    }
+    if (!kind) { out += `<ellipse cx="${f1(bx + 3)}" cy="${f1(by + 2)}" rx="2" ry="1.2" fill="#c2b49a"/><ellipse cx="${f1(bx - 4)}" cy="${f1(by - 1)}" rx="1.3" ry=".8" fill="#cfc2a6"/>`; continue; }
     const c = colourOf(parts[0][0]), c2 = parts[1] ? colourOf(parts[1][0]) : null;
-    trees += `<g transform="translate(${f1(bx)} ${f1(by)})"><ellipse cx="3" cy="1.5" rx="${kind === "great" ? 12 : kind === "sprout" ? 5 : 9}" ry="${kind === "great" ? 4.5 : 3}" fill="rgba(0,0,0,.28)"/>
+    trees += `<g transform="translate(${f1(bx)} ${f1(by)})"><ellipse cx="2" cy="1.2" rx="${kind === "great" ? 13 : kind === "sprout" ? 5 : 8.5}" ry="${kind === "great" ? 4.6 : 3}" fill="rgba(40,80,30,.28)"/>
       <g class="fs-tree" style="--d:${(n++ * 0.018).toFixed(3)}s;--sw:${(2.6 + ((col * 7 + row) % 5) * 0.35).toFixed(2)}s">${plant(kind, c, c2)}</g></g>`;
   }
-  // today: a glowing ring and a little flag
   const ti = days.findIndex((d) => d.today);
-  if (ti >= 0) { const [x, y] = P(Math.floor(ti / 7), ti % 7); trees += `<g class="fs-today" transform="translate(${f1(x)} ${f1(y + TH / 2)})"><ellipse rx="${TW / 2 - 3}" ry="${TH / 2 - 2}" fill="none" stroke="#fff" stroke-width="1.6"/><path d="M14 0 V-26" stroke="#fff" stroke-width="1.2"/><path d="M14 -26 h20 l-4 5 l4 5 h-20 Z" fill="#fff"/><text x="23" y="-20.5" font-size="6.5" font-weight="800" text-anchor="middle" fill="#14151b">Today</text></g>`; }
-  const lab = (pt, t, a, dx, dy) => `<text x="${f1(pt[0] + dx)}" y="${f1(pt[1] + dy)}" font-size="9.5" font-weight="700" text-anchor="${a}" fill="rgba(255,255,255,.6)" letter-spacing=".6">${t}</text>`;
-  const w = ox + cols * (TW / 2) + 30, h = oy + (cols + R) * (TH / 2) + D + 40;
+  if (ti >= 0) { const [x, y] = P(Math.floor(ti / 7), ti % 7); trees += `<g class="fs-today" transform="translate(${f1(x)} ${f1(y + TH / 2)})"><ellipse rx="${TW / 2 - 4}" ry="${TH / 2 - 3}" fill="rgba(255,255,255,.35)" stroke="#fff" stroke-width="1.6"/><path d="M13 0 V-27" stroke="#6b4a32" stroke-width="1.3" stroke-linecap="round"/><path d="M13 -27 h21 l-4 5 l4 5 h-21 Z" fill="#ff6f61"/><text x="23" y="-21.3" font-size="6.6" font-weight="800" text-anchor="middle" fill="#fff">Today</text></g>`; }
+  const lab = (pt, t, a, dx, dy) => `<text x="${f1(pt[0] + dx)}" y="${f1(pt[1] + dy)}" font-size="9.5" font-weight="800" text-anchor="${a}" fill="#3d4a6b" letter-spacing=".8" opacity=".75">${t}</text>`;
+  const w = ox + (cols + pad) * (TW / 2) + 40, h = oy + (cols + R + 2 * pad) * (TH / 2) + D + 44;
   el.innerHTML = `<svg viewBox="0 0 ${f1(w)} ${f1(h)}" class="forest" role="img" aria-label="Forest: a tree for every day you studied in the last ${cols} weeks; the more you studied, the bigger the tree">
-    <defs><filter id="fs-blur" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="8"/></filter></defs>
-    ${out}${trees}${lab(N, `${cols} WEEKS AGO`, "middle", 0, -12)}${lab(E, "THIS WEEK", "end", -2, -12)}</svg>
+    <defs><filter id="fs-blur" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="7"/></filter>
+      <linearGradient id="fs-grass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a6e36b"/><stop offset=".55" stop-color="#86d15a"/><stop offset="1" stop-color="#6fbf4a"/></linearGradient>
+      <linearGradient id="fs-turf" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6cb845"/><stop offset="1" stop-color="#4f9a36"/></linearGradient>
+      <linearGradient id="fs-soil" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#b98a5e"/><stop offset=".5" stop-color="#a5764d"/><stop offset="1" stop-color="#8a5f3c"/></linearGradient></defs>
+    ${out}${trees}${lab(corners[0], `${cols} WEEKS AGO`, "middle", 0, -12)}${lab(corners[1], "THIS WEEK", "end", -4, -10)}</svg>
     <p class="fs-key"><span>${plantIcon("sprout")} 1–2</span><span>${plantIcon("round")} 3–4</span><span>${plantIcon("pine")} 5–6</span><span>${plantIcon("great")} 7+ activities a day</span></p>`;
 }
 // each kind framed to its own size, so even the sprout reads in the key
-const ICON_BOX = { sprout: "-8 -13 16 15", round: "-11 -28 22 30", pine: "-11 -32 22 34", great: "-16 -39 32 42" };
+const ICON_BOX = { sprout: "-9 -12 18 13", round: "-11 -26 22 28", pine: "-11 -26 22 28", great: "-15 -35 30 37" };
 const plantIcon = (k) => `<svg viewBox="${ICON_BOX[k]}" aria-hidden="true">${plant(k, "40d4b1", "8b3dff")}</svg>`;
 
 // Donut of time by site

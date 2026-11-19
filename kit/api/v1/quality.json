@@ -1,0 +1,837 @@
+{
+ "api": 1,
+ "about": "Gradify's quality audit: structural scores for every written lesson (scripts/quality-audit.mjs). Not proof that students learn; see docs/QUALITY-CONSTITUTION.md.",
+ "at": "2026-11-18",
+ "lessons": 9979,
+ "reviewed": 0,
+ "overall": 77,
+ "dims": {
+  "accuracy": 51,
+  "completeness": 84,
+  "clarity": 95,
+  "progression": 46,
+  "application": 91,
+  "assessment": 87,
+  "accessibility": 95,
+  "engagement": 78,
+  "retention": 69
+ },
+ "coverage": {
+  "verified": 0,
+  "mapped": 2,
+  "aligned": 5,
+  "gradify": 27
+ },
+ "courses": [
+  {
+   "slug": "art",
+   "name": "Art and Design",
+   "lessons": 183,
+   "overall": 81,
+   "dims": {
+    "accuracy": 60,
+    "completeness": 94,
+    "clarity": 97,
+    "progression": 43,
+    "application": 100,
+    "assessment": 90,
+    "accessibility": 94,
+    "engagement": 80,
+    "retention": 75
+   },
+   "serves": [
+    {
+     "q": null,
+     "status": "gradify"
+    }
+   ]
+  },
+  {
+   "slug": "biology",
+   "name": "Biology",
+   "lessons": 391,
+   "overall": 81,
+   "dims": {
+    "accuracy": 58,
+    "completeness": 98,
+    "clarity": 98,
+    "progression": 37,
+    "application": 97,
+    "assessment": 92,
+    "accessibility": 100,
+    "engagement": 80,
+    "retention": 75
+   },
+   "serves": [
+    {
+     "q": null,
+     "status": "gradify"
+    }
+   ]
+  },
+  {
+   "slug": "business",
+   "name": "Business and Management",
+   "lessons": 178,
+   "overall": 89,
+   "dims": {
+    "accuracy": 60,
+    "completeness": 98,
+    "clarity": 98,
+    "progression": 99,
+    "application": 100,
+    "assessment": 92,
+    "accessibility": 100,
+    "engagement": 82,
+    "retention": 75
+   },
+   "serves": [
+    {
+     "q": null,
+     "status": "gradify"
+    }
+   ]
+  },
+  {
+   "slug": "careers",
+   "name": "Careers and Employability",
+   "lessons": 145,
+   "overall": 85,
+   "dims": {
+    "accuracy": 60,
+    "completeness": 94,
+    "clarity": 94,
+    "progression": 71,
+    "application": 100,
+    "assessment": 93,
+    "accessibility": 96,
+    "engagement": 80,
+    "retention": 75
+   },
+   "serves": [
+    {
+     "q": null,
+     "status": "gradify"
+    }
+   ]
+  },
+  {
+   "slug": "chemistry",
+   "name": "Chemistry",
+   "lessons": 410,
+   "overall": 82,
+   "dims": {
+    "accuracy": 58,
+    "completeness": 97,
+    "clarity": 98,
+    "progression": 37,
+    "application": 99,
+    "assessment": 92,
+    "accessibility": 99,
+    "engagement": 81,
+    "retention": 75
+   },
+   "serves": [
+    {
+     "q": null,
+     "status": "gradify"
+    }
+   ]
+  },
+  {
+   "slug": "computing",
+   "name": "Computer Science",
+   "lessons": 96,
+   "overall": 82,
+   "dims": {
+    "accuracy": 60,
+    "completeness": 94,
+    "clarity": 97,
+    "progression": 34,
+    "application": 100,
+    "assessment": 92,
+    "accessibility": 99,
+    "engagement": 82,
+    "retention": 75
+   },
+   "serves": [
+    {
+     "q": "gcse",
+     "status": "aligned"
+    },
+    {
+     "q": "a-level",
+     "status": "aligned"
+    },
+    {
+     "q": "degree",
+     "status": "aligned"
+    }
+   ]
+  },
+  {
+   "slug": "dentistry",
+   "name": "Dentistry",
+   "lessons": 200,
+   "overall": 83,
+   "dims": {
+    "accuracy": 60,
+    "completeness": 98,
+    "clarity": 93,
+    "progression": 53,
+    "application": 100,
+    "assessment": 92,
+    "accessibility": 97,
+    "engagement": 81,
+    "retention": 75
+   },
+   "serves": [
+    {
+     "q": null,
+     "status": "gradify"
+    }
+   ]
+  },
+  {
+   "slug": "design",
+   "name": "Design Thinking and Creativity",
+   "lessons": 173,
+   "overall": 82,
+   "dims": {
+    "accuracy": 60,
+    "completeness": 96,
+    "clarity": 95,
+    "progression": 40,
+    "application": 100,
+    "assessment": 92,
+    "accessibility": 99,
+    "engagement": 81,
+    "retention": 75
+   },
+   "serves": [
+    {
+     "q": null,
+     "status": "gradify"
+    }
+   ]
+  },
+  {
+   "slug": "ecology",
+   "name": "Ecology and Environmental Science",
+   "lessons": 198,
+   "overall": 89,
+   "dims": {
+    "accuracy": 60,
+    "completeness": 97,
+    "clarity": 97,
+    "progression": 100,
+    "application": 100,
+    "assessment": 92,
+    "accessibility": 97,
+    "engagement": 83,
+    "retention": 75
+   },
+   "serves": [
+    {
+     "q": null,
+     "status": "gradify"
+    }
+   ]
+  },
+  {
+   "slug": "engineering",
+   "name": "Engineering",
+   "lessons": 191,
+   "overall": 89,
+   "dims": {
+    "accuracy": 60,
+    "completeness": 98,
+    "clarity": 94,
+    "progression": 96,
+    "application": 100,
+    "assessment": 92,
+    "accessibility": 94,
+    "engagement": 93,
+    "retention": 75
+   },
+   "serves": [
+    {
+     "q": null,
+     "status": "gradify"
+    }
+   ]
+  },
+  {
+   "slug": "finance",
+   "name": "Accounting and Finance",
+   "lessons": 202,
+   "overall": 89,
+   "dims": {
+    "accuracy": 60,
+    "completeness": 98,
+    "clarity": 96,
+    "progression": 99,
+    "application": 100,
+    "assessment": 93,
+    "accessibility": 98,
+    "engagement": 84,
+    "retention": 75
+   },
+   "serves": [
+    {
+     "q": null,
+     "status": "gradify"
+    }
+   ]
+  },
+  {
+   "slug": "gcse",
+   "name": "GCSE Core",
+   "lessons": 149,
+   "overall": 83,
+   "dims": {
+    "accuracy": 60,
+    "completeness": 96,
+    "clarity": 95,
+    "progression": 59,
+    "application": 100,
+    "assessment": 91,
+    "accessibility": 96,
+    "engagement": 79,
+    "retention": 75
+   },
+   "serves": [
+    {
+     "q": "gcse",
+     "status": "aligned"
+    }
+   ]
+  },
+  {
+   "slug": "health",
+   "name": "Health and Wellbeing",
+   "lessons": 176,
+   "overall": 89,
+   "dims": {
+    "accuracy": 60,
+    "completeness": 98,
+    "clarity": 96,
+    "progression": 97,
+    "application": 100,
+    "assessment": 92,
+    "accessibility": 99,
+    "engagement": 81,
+    "retention": 75
+   },
+   "serves": [
+    {
+     "q": null,
+     "status": "gradify"
+    }
+   ]
+  },
+  {
+   "slug": "history",
+   "name": "History",
+   "lessons": 301,
+   "overall": 81,
+   "dims": {
+    "accuracy": 60,
+    "completeness": 95,
+    "clarity": 96,
+    "progression": 34,
+    "application": 100,
+    "assessment": 92,
+    "accessibility": 100,
+    "engagement": 81,
+    "retention": 75
+   },
+   "serves": [
+    {
+     "q": null,
+     "status": "gradify"
+    }
+   ]
+  },
+  {
+   "slug": "investing",
+   "name": "Investing",
+   "lessons": 183,
+   "overall": 83,
+   "dims": {
+    "accuracy": 60,
+    "completeness": 95,
+    "clarity": 95,
+    "progression": 51,
+    "application": 100,
+    "assessment": 90,
+    "accessibility": 92,
+    "engagement": 85,
+    "retention": 75
+   },
+   "serves": [
+    {
+     "q": null,
+     "status": "gradify"
+    }
+   ]
+  },
+  {
+   "slug": "japanese",
+   "name": "Japanese",
+   "lessons": 182,
+   "overall": 81,
+   "dims": {
+    "accuracy": 60,
+    "completeness": 96,
+    "clarity": 93,
+    "progression": 35,
+    "application": 100,
+    "assessment": 93,
+    "accessibility": 100,
+    "engagement": 80,
+    "retention": 75
+   },
+   "serves": [
+    {
+     "q": null,
+     "status": "gradify"
+    }
+   ]
+  },
+  {
+   "slug": "law",
+   "name": "Law",
+   "lessons": 480,
+   "overall": 66,
+   "dims": {
+    "accuracy": 54,
+    "completeness": 97,
+    "clarity": 94,
+    "progression": 3,
+    "application": 37,
+    "assessment": 68,
+    "accessibility": 100,
+    "engagement": 55,
+    "retention": 88
+   },
+   "serves": [
+    {
+     "q": "sqe",
+     "status": "mapped"
+    },
+    {
+     "q": "degree",
+     "status": "aligned"
+    }
+   ]
+  },
+  {
+   "slug": "literature",
+   "name": "English Literature",
+   "lessons": 166,
+   "overall": 88,
+   "dims": {
+    "accuracy": 60,
+    "completeness": 95,
+    "clarity": 97,
+    "progression": 93,
+    "application": 100,
+    "assessment": 92,
+    "accessibility": 99,
+    "engagement": 79,
+    "retention": 75
+   },
+   "serves": [
+    {
+     "q": null,
+     "status": "gradify"
+    }
+   ]
+  },
+  {
+   "slug": "maths",
+   "name": "Mathematics",
+   "lessons": 1077,
+   "overall": 78,
+   "dims": {
+    "accuracy": 50,
+    "completeness": 97,
+    "clarity": 100,
+    "progression": 2,
+    "application": 99,
+    "assessment": 96,
+    "accessibility": 100,
+    "engagement": 83,
+    "retention": 75
+   },
+   "serves": [
+    {
+     "q": "gcse",
+     "status": "aligned"
+    },
+    {
+     "q": "a-level",
+     "status": "aligned"
+    },
+    {
+     "q": "degree",
+     "status": "aligned"
+    }
+   ]
+  },
+  {
+   "slug": "medicine",
+   "name": "Medicine",
+   "lessons": 234,
+   "overall": 88,
+   "dims": {
+    "accuracy": 60,
+    "completeness": 98,
+    "clarity": 96,
+    "progression": 95,
+    "application": 100,
+    "assessment": 92,
+    "accessibility": 97,
+    "engagement": 82,
+    "retention": 75
+   },
+   "serves": [
+    {
+     "q": "mla",
+     "status": "aligned"
+    },
+    {
+     "q": "degree",
+     "status": "aligned"
+    }
+   ]
+  },
+  {
+   "slug": "music",
+   "name": "Music",
+   "lessons": 201,
+   "overall": 87,
+   "dims": {
+    "accuracy": 60,
+    "completeness": 97,
+    "clarity": 97,
+    "progression": 83,
+    "application": 100,
+    "assessment": 92,
+    "accessibility": 95,
+    "engagement": 81,
+    "retention": 75
+   },
+   "serves": [
+    {
+     "q": null,
+     "status": "gradify"
+    }
+   ]
+  },
+  {
+   "slug": "nursing",
+   "name": "Nursing",
+   "lessons": 497,
+   "overall": 74,
+   "dims": {
+    "accuracy": 49,
+    "completeness": 98,
+    "clarity": 98,
+    "progression": 47,
+    "application": 50,
+    "assessment": 89,
+    "accessibility": 100,
+    "engagement": 56,
+    "retention": 75
+   },
+   "serves": [
+    {
+     "q": "nmc",
+     "status": "mapped"
+    },
+    {
+     "q": "degree",
+     "status": "aligned"
+    }
+   ]
+  },
+  {
+   "slug": "pharmacy",
+   "name": "Pharmacy",
+   "lessons": 318,
+   "overall": 72,
+   "dims": {
+    "accuracy": 51,
+    "completeness": 96,
+    "clarity": 99,
+    "progression": 8,
+    "application": 68,
+    "assessment": 81,
+    "accessibility": 100,
+    "engagement": 65,
+    "retention": 77
+   },
+   "serves": [
+    {
+     "q": "gphc",
+     "status": "aligned"
+    }
+   ]
+  },
+  {
+   "slug": "physics",
+   "name": "Physics",
+   "lessons": 1308,
+   "overall": 47,
+   "dims": {
+    "accuracy": 10,
+    "completeness": 0,
+    "clarity": 82,
+    "progression": 3,
+    "application": 82,
+    "assessment": 60,
+    "accessibility": 80,
+    "engagement": 84,
+    "retention": 25
+   },
+   "serves": [
+    {
+     "q": null,
+     "status": "gradify"
+    }
+   ]
+  },
+  {
+   "slug": "primary",
+   "name": "Primary",
+   "lessons": 167,
+   "overall": 81,
+   "dims": {
+    "accuracy": 60,
+    "completeness": 97,
+    "clarity": 97,
+    "progression": 35,
+    "application": 100,
+    "assessment": 94,
+    "accessibility": 93,
+    "engagement": 80,
+    "retention": 75
+   },
+   "serves": [
+    {
+     "q": null,
+     "status": "gradify"
+    }
+   ]
+  },
+  {
+   "slug": "professional",
+   "name": "Professional Skills",
+   "lessons": 169,
+   "overall": 85,
+   "dims": {
+    "accuracy": 60,
+    "completeness": 96,
+    "clarity": 95,
+    "progression": 75,
+    "application": 100,
+    "assessment": 93,
+    "accessibility": 96,
+    "engagement": 76,
+    "retention": 75
+   },
+   "serves": [
+    {
+     "q": null,
+     "status": "gradify"
+    }
+   ]
+  },
+  {
+   "slug": "psychology",
+   "name": "Psychology",
+   "lessons": 393,
+   "overall": 87,
+   "dims": {
+    "accuracy": 60,
+    "completeness": 97,
+    "clarity": 98,
+    "progression": 100,
+    "application": 99,
+    "assessment": 94,
+    "accessibility": 90,
+    "engagement": 74,
+    "retention": 75
+   },
+   "serves": [
+    {
+     "q": null,
+     "status": "gradify"
+    }
+   ]
+  },
+  {
+   "slug": "research",
+   "name": "Research and the Dissertation",
+   "lessons": 197,
+   "overall": 83,
+   "dims": {
+    "accuracy": 60,
+    "completeness": 97,
+    "clarity": 97,
+    "progression": 43,
+    "application": 100,
+    "assessment": 92,
+    "accessibility": 100,
+    "engagement": 80,
+    "retention": 75
+   },
+   "serves": [
+    {
+     "q": null,
+     "status": "gradify"
+    }
+   ]
+  },
+  {
+   "slug": "sociology",
+   "name": "Sociology",
+   "lessons": 438,
+   "overall": 87,
+   "dims": {
+    "accuracy": 60,
+    "completeness": 96,
+    "clarity": 97,
+    "progression": 100,
+    "application": 100,
+    "assessment": 94,
+    "accessibility": 90,
+    "engagement": 74,
+    "retention": 75
+   },
+   "serves": [
+    {
+     "q": null,
+     "status": "gradify"
+    }
+   ]
+  },
+  {
+   "slug": "spanish",
+   "name": "Spanish",
+   "lessons": 145,
+   "overall": 81,
+   "dims": {
+    "accuracy": 60,
+    "completeness": 96,
+    "clarity": 92,
+    "progression": 35,
+    "application": 100,
+    "assessment": 93,
+    "accessibility": 99,
+    "engagement": 80,
+    "retention": 75
+   },
+   "serves": [
+    {
+     "q": null,
+     "status": "gradify"
+    }
+   ]
+  },
+  {
+   "slug": "sport",
+   "name": "Sport and Exercise Science",
+   "lessons": 205,
+   "overall": 84,
+   "dims": {
+    "accuracy": 60,
+    "completeness": 97,
+    "clarity": 97,
+    "progression": 55,
+    "application": 100,
+    "assessment": 92,
+    "accessibility": 96,
+    "engagement": 80,
+    "retention": 75
+   },
+   "serves": [
+    {
+     "q": null,
+     "status": "gradify"
+    }
+   ]
+  },
+  {
+   "slug": "teaching",
+   "name": "Teaching",
+   "lessons": 228,
+   "overall": 85,
+   "dims": {
+    "accuracy": 60,
+    "completeness": 97,
+    "clarity": 95,
+    "progression": 81,
+    "application": 100,
+    "assessment": 93,
+    "accessibility": 91,
+    "engagement": 76,
+    "retention": 75
+   },
+   "serves": [
+    {
+     "q": null,
+     "status": "gradify"
+    }
+   ]
+  },
+  {
+   "slug": "university",
+   "name": "University Study Skills",
+   "lessons": 189,
+   "overall": 86,
+   "dims": {
+    "accuracy": 60,
+    "completeness": 96,
+    "clarity": 97,
+    "progression": 75,
+    "application": 100,
+    "assessment": 92,
+    "accessibility": 99,
+    "engagement": 80,
+    "retention": 75
+   },
+   "serves": [
+    {
+     "q": null,
+     "status": "gradify"
+    }
+   ]
+  },
+  {
+   "slug": "veterinary",
+   "name": "Veterinary Science",
+   "lessons": 209,
+   "overall": 85,
+   "dims": {
+    "accuracy": 60,
+    "completeness": 98,
+    "clarity": 92,
+    "progression": 64,
+    "application": 100,
+    "assessment": 93,
+    "accessibility": 98,
+    "engagement": 82,
+    "retention": 75
+   },
+   "serves": [
+    {
+     "q": null,
+     "status": "gradify"
+    }
+   ]
+  }
+ ]
+}

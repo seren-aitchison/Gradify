@@ -505,16 +505,20 @@ a.badge:hover { border-color: rgba(var(--ink-rgb), .4); }
 .tree-wrap { border-radius: 12px; overflow: hidden; background: radial-gradient(90% 80% at 50% 35%, #142224, #070a0b); }
 .tree-wrap svg { display: block; width: 100%; height: auto; max-height: 520px; }
 /* the Forest (kit/lifeos/tree.js drawForest): a garden at dusk; trees grow in one after another, then sway */
-.tree-wrap:has(.forest) { background: radial-gradient(70% 55% at 50% 40%, rgba(255, 170, 120, .16), transparent 70%), linear-gradient(180deg, #121433 0%, #2a2150 55%, #4a2d55 100%); }
+/* a soft daytime sky with a couple of drifting clouds */
+.tree-wrap:has(.forest) { position: relative;
+  background: radial-gradient(18% 9% at 18% 16%, rgba(255, 255, 255, .9), transparent 70%), radial-gradient(14% 7% at 26% 13%, rgba(255, 255, 255, .85), transparent 70%),
+    radial-gradient(16% 8% at 82% 22%, rgba(255, 255, 255, .8), transparent 70%), radial-gradient(60% 40% at 50% 100%, rgba(255, 214, 170, .55), transparent 70%),
+    linear-gradient(180deg, #bfe3ff 0%, #dcefff 45%, #fbefe4 100%); }
 .forest .fs-tree { transform-box: fill-box; transform-origin: 50% 100%; animation: fs-grow .55s cubic-bezier(.2, 1.5, .4, 1) var(--d, 0s) both, fs-sway var(--sw, 3s) ease-in-out calc(var(--d, 0s) + .6s) infinite alternate; }
 .forest .fs-tile { transition: filter .15s; }
 .forest .fs-tile:hover { filter: brightness(1.25); }
-.forest .fs-tile.today { filter: brightness(1.2) drop-shadow(0 0 6px rgba(255, 255, 255, .55)); }
+.forest .fs-tile.today { filter: drop-shadow(0 0 6px rgba(255, 255, 255, .9)); }
 .forest .fs-today ellipse { animation: fs-pulse 2.2s ease-in-out infinite; }
 @keyframes fs-grow { from { transform: scale(0); } }
 @keyframes fs-sway { from { transform: rotate(-1.6deg); } to { transform: rotate(1.6deg); } }
 @keyframes fs-pulse { 50% { opacity: .35; } }
-.fs-key { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 16px; margin: 0; padding: 4px 12px 14px; font-size: 12px; color: rgba(255, 255, 255, .7); }
+.fs-key { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 16px; margin: 0; padding: 4px 12px 14px; font-size: 12px; font-weight: 600; color: #3d4a6b; }
 .fs-key span { display: inline-flex; align-items: center; gap: 5px; }
 .fs-key svg { width: auto; height: 26px; }
 @media (prefers-reduced-motion: reduce) { .forest .fs-tree, .forest .fs-today ellipse { animation: none !important; } }
@@ -578,6 +582,11 @@ a.badge:hover { border-color: rgba(var(--ink-rgb), .4); }
 @keyframes grow { from { transform: scale(0); opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .tree-wrap svg *, .mine-tree svg * { animation: none !important; } }
 .grow-side { display: flex; flex-direction: column; gap: 14px; }
+/* the Tree's leaf key: a leaf for each lesson, flashcard session and quiz */
+.leaf-key { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 0; font-size: 12.5px; color: var(--mute); }
+.leaf-key span { display: inline-flex; align-items: center; gap: 6px; }
+.leaf-key i { width: 10px; height: 14px; border-radius: 0 70% 0 70%; transform: rotate(45deg); }
+.leaf-key .lk-lesson { background: #52d63c; } .leaf-key .lk-flashcard { background: #ffb703; } .leaf-key .lk-quiz { background: #ff4d3d; }
 .grow-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .grow-stats div { display: flex; flex-direction: column; padding: 12px; border-radius: 14px; background: var(--inset); }
 .grow-stats b { font-size: 20px; letter-spacing: -.02em; }
@@ -1185,3 +1194,65 @@ dialog.plus-prompt::backdrop { background: rgba(var(--sink-rgb), .6); -webkit-ba
 .nav-lock { margin-left: auto; display: inline-flex; color: var(--faint); }
 .nav-lock svg { width: 14px !important; height: 14px !important; }
 .tabbar .nav-lock { display: none; }
+
+/* ---------- LifeOS Today: a greeting header, four numbers with their last two weeks, and cards with depth ---------- */
+.today-hero { position: relative; overflow: hidden; display: grid; grid-template-columns: 1fr auto; gap: 18px 24px; align-items: center; padding: 26px 28px; border-radius: 24px;
+  border: 1px solid var(--line); background:
+    radial-gradient(60% 120% at 0% 0%, rgba(70, 65, 255, .28), transparent 60%), radial-gradient(50% 120% at 100% 0%, rgba(240, 85, 221, .22), transparent 60%),
+    radial-gradient(60% 100% at 70% 120%, rgba(255, 192, 2, .14), transparent 60%), rgba(var(--ink-rgb), .03); }
+.today-hero::after { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1px; pointer-events: none; background: var(--spectrum, linear-gradient(90deg, #4641ff, #f055dd, #ffc002));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0); opacity: .55; }
+.th-date { font: 600 11px var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--mute); }
+.th-main h2 { margin: 6px 0 6px; font-size: clamp(26px, 3.4vw, 38px); letter-spacing: -.035em; line-height: 1.05; }
+.th-main p { margin: 0; color: var(--mute); font-size: 15px; }
+.th-ring { position: relative; width: 96px; height: 96px; }
+.th-ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.th-ring circle { fill: none; stroke-width: 7; stroke-linecap: round; }
+.th-ring .bg { stroke: rgba(var(--ink-rgb), .1); } .th-ring .fg { stroke: url(#th-grad); transition: stroke-dashoffset .8s cubic-bezier(.2, .8, .2, 1); filter: drop-shadow(0 0 6px rgba(240, 85, 221, .45)); }
+.th-ring span { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; font-size: 11px; color: var(--mute); line-height: 1.2; }
+.th-ring b { display: block; font-size: 20px; color: var(--fg); letter-spacing: -.02em; }
+.th-stats { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.th-stat { position: relative; display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto auto; column-gap: 10px; align-items: center; padding: 14px 14px 12px; border-radius: 16px; overflow: hidden;
+  background: linear-gradient(160deg, color-mix(in srgb, var(--c) 14%, transparent), rgba(var(--ink-rgb), .02)); border: 1px solid color-mix(in srgb, var(--c) 28%, var(--line)); }
+.th-ico { grid-row: span 2; width: 34px; height: 34px; border-radius: 11px; display: grid; place-items: center; color: var(--c); background: color-mix(in srgb, var(--c) 18%, transparent); }
+.th-ico .ico { width: 17px; height: 17px; }
+.th-stat b { font-size: 22px; letter-spacing: -.02em; line-height: 1.1; }
+.th-stat small { font-size: 12px; color: var(--mute); }
+.th-stat .spark { position: absolute; right: 10px; bottom: 8px; width: 84px; height: 26px; opacity: .9; }
+@media (max-width: 900px) { .th-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .today-hero { grid-template-columns: 1fr; padding: 20px; } .th-ring { position: absolute; top: 16px; right: 16px; width: 72px; height: 72px; } .th-ring b { font-size: 16px; } .th-main { padding-right: 76px; }
+  .th-stat { padding-bottom: 8px; } .th-stat .spark { position: static; grid-column: 1 / -1; width: 100%; height: 22px; margin-top: 6px; } }
+
+/* the cards: a lift on hover and a glow in their own accent */
+#view-today .panel { transition: transform .25s cubic-bezier(.2, .8, .2, 1), box-shadow .25s, border-color .25s; }
+#view-today .panel:hover { transform: translateY(-2px); box-shadow: 0 24px 50px -30px rgba(70, 65, 255, .55); border-color: rgba(var(--ink-rgb), .18); }
+#view-today .next { background: radial-gradient(90% 90% at 100% 0%, rgba(240, 85, 221, .22), transparent 60%), radial-gradient(80% 80% at 0% 100%, rgba(70, 65, 255, .3), transparent 60%), var(--panel, rgba(var(--ink-rgb), .03)); }
+
+/* goals: a ring of progress round each icon, in the goal's colour */
+.goal-ico { position: relative; width: 34px; height: 34px; background: conic-gradient(var(--c, var(--fg)) calc(var(--p, 0) * 1%), rgba(var(--ink-rgb), .1) 0); color: var(--fg); }
+.goal-ico::before { content: ""; position: absolute; inset: 3px; border-radius: 50%; background: var(--panel-strong, var(--bg)); }
+.goal-ico .ico { position: relative; }
+.goal { grid-template-columns: 34px 1fr; }
+.goal-bar i { background: var(--c, var(--invert-bg)); }
+.goal.done .goal-ico { background: var(--c); color: #fff; } .goal.done .goal-ico::before { display: none; }
+
+/* coming up: how soon, as colour */
+.event { padding: 10px; border-radius: 14px; border: 1px solid var(--line); background: rgba(var(--ink-rgb), .02); }
+.event .date { box-shadow: inset 0 -3px 0 var(--c); }
+.event[data-soon="now"] { border-color: rgba(255, 90, 77, .55); background: rgba(255, 90, 77, .08); }
+.event[data-soon="week"] { border-color: rgba(255, 176, 0, .45); background: rgba(255, 176, 0, .06); }
+
+/* the feed: a timeline, grouped by day */
+.feed { position: relative; gap: 2px; }
+.feed::before { content: ""; position: absolute; left: 25px; top: 10px; bottom: 10px; width: 2px; border-radius: 2px; background: linear-gradient(var(--line), rgba(var(--ink-rgb), .02)); }
+.feed li { position: relative; }
+.feed li:not(.feed-day):hover { background: rgba(var(--ink-rgb), .04); }
+.feed .icon { position: relative; z-index: 1; box-shadow: 0 0 0 4px var(--panel-strong, var(--bg)), 0 6px 16px -8px var(--c); }
+.feed .feed-day { padding: 10px 8px 2px 48px; font: 600 11px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--mute); }
+.feed em { font-weight: 700; color: var(--fg); padding: 3px 9px; border-radius: 999px; background: rgba(var(--ink-rgb), .06); }
+
+/* the sidebar: a glowing bar beside the open view */
+.rail-btn { position: relative; }
+.rail-btn[aria-selected="true"]::before { content: ""; position: absolute; left: -10px; top: 8px; bottom: 8px; width: 3px; border-radius: 3px; background: linear-gradient(#4641ff, #f055dd); box-shadow: 0 0 10px #f055dd; }
+@media (max-width: 900px) { .rail-btn[aria-selected="true"]::before { left: 10px; right: 10px; top: auto; bottom: -6px; width: auto; height: 3px; background: linear-gradient(90deg, #4641ff, #f055dd); } }
+@media (prefers-reduced-motion: reduce) { #view-today .panel, .th-ring .fg { transition: none; } }

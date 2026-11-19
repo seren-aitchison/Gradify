@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Quality and coverage · Gradify</title>
+  <meta name="description" content="How Gradify holds its lessons to account: the Quality Constitution, an audit of every lesson on nine dimensions of teaching quality, and which qualifications Gradify can honestly say it covers.">
+  <meta name="theme-color" content="#000000">
+  <link rel="canonical" href="https://getgradify.com/quality.html">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="/kit/styles/base.css">
+  <script src="/kit/core/theme-boot.js"></script>
+  <style>
+    main { max-width: 880px; margin: 0 auto; padding: 48px 16px 80px; line-height: 1.6; }
+    h1 { font-size: clamp(30px, 5vw, 44px); letter-spacing: -.02em; margin: 0 0 6px; }
+    h2 { font-size: 21px; margin: 40px 0 8px; }
+    p, li, td { color: var(--mute); } b, strong, th { color: var(--fg); }
+    a { color: inherit; }
+    .note { border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; background: var(--panel); }
+    .lead { font-size: 18px; color: var(--fg); }
+    ol.const { padding-left: 22px; } ol.const li { margin: 10px 0; } ol.const b { display: block; }
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 14px 0; }
+    .stat { border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 14px; background: var(--panel); }
+    .stat b { display: block; font-size: 28px; letter-spacing: -.02em; }
+    .stat span { font-size: 13px; color: var(--mute); }
+    .dims { display: grid; gap: 8px; margin: 12px 0; }
+    .dim { display: grid; grid-template-columns: 130px 1fr 40px; gap: 10px; align-items: center; font-size: 14px; }
+    .dim i { height: 10px; border-radius: 99px; background: var(--line); position: relative; overflow: hidden; display: block; }
+    .dim i::after { content: ""; position: absolute; inset: 0 auto 0 0; width: var(--v); background: var(--spectrum); border-radius: 99px; }
+    .dim b { text-align: right; font-family: var(--mono); }
+    .scroll { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    .pill { display: inline-block; padding: 2px 9px; border-radius: 99px; border: 1px solid var(--line-strong); font-size: 12px; white-space: nowrap; }
+    .pill.mapped { border-color: #ffc002; } .pill.aligned { border-color: #3c78d8; }
+    @media (max-width: 560px) { .dim { grid-template-columns: 100px 1fr 34px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <a href="/">← Gradify</a>
+    <h1>Quality and coverage</h1>
+    <p class="lead">The quality of the learning is the product. Not the number of lessons. This page shows how Gradify holds itself to that, including what it can't yet claim.</p>
+
+    <h2 id="constitution">The Quality Constitution</h2>
+    <p>Ten standards that come before anything else, for every lesson, every feature and every one of Gradify's AI agents.</p>
+    <ol class="const" id="articles"><li>Loading…</li></ol>
+
+    <h2 id="audit">The audit of every lesson</h2>
+    <p id="audit-intro">Loading…</p>
+    <div class="stats" id="stats"></div>
+    <div class="dims" id="dims"></div>
+    <p class="note"><b>What these scores are, and aren't.</b> Each one checks that what good teaching needs is there and well formed: learning outcomes, prerequisites, worked examples, application questions, dated sources, readable sentences, flashcards for spaced review. They can't tell whether an explanation is right or whether you'll learn from it. Accuracy is capped at 60 for any lesson a subject expert hasn't yet reviewed, which is currently every lesson: each course page says so. Real evidence of learning comes from learners' own answers over time.</p>
+
+    <h2 id="coverage">Which qualifications Gradify covers</h2>
+    <p>Gradify only says it covers a qualification when it has checked its lessons against the official specification, outcome by outcome, and recorded when. Until then it says exactly how strong each claim is.</p>
+    <div class="stats" id="cov"></div>
+    <div class="scroll"><table><thead><tr><th>Course</th><th>Lessons</th><th>Serves</th><th>Claim</th><th>Audit</th></tr></thead><tbody id="courses"></tbody></table></div>
+    <p>Spotted a mistake, or something that doesn't work for you? Tell us: <a href="mailto:hello@getgradify.com?subject=Quality">hello@getgradify.com</a>. Every report is read.</p>
+  </main>
+  <script type="module">
+    import { ARTICLES } from "/kit/quality/constitution.js";
+    import { STATUS, QUALIFICATIONS } from "/kit/curriculum/coverage.js";
+    const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+    document.getElementById("articles").innerHTML = ARTICLES.map((a) => `<li><b>${esc(a.title)}</b>${esc(a.rule)}</li>`).join("");
+    const NAMES = { accuracy: "Accuracy", completeness: "Completeness", clarity: "Clarity", progression: "Progression", application: "Application", assessment: "Assessment", accessibility: "Accessibility", engagement: "Engagement", retention: "Retention" };
+    try {
+      const q = await fetch("/kit/api/v1/quality.json").then((r) => r.json());
+      const date = new Date(`${q.at}T12:00:00`).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+      document.getElementById("audit-intro").textContent = `Every one of the ${q.lessons.toLocaleString("en-GB")} written lessons is scored on nine dimensions, on every change to Gradify. A course whose score drops can't be published until it's fixed or explained. Last baseline: ${date}.`;
+      document.getElementById("stats").innerHTML = [[q.overall, "overall, out of 100"], [q.lessons.toLocaleString("en-GB"), "lessons audited"], [q.reviewed, "reviewed by a subject expert"]].map(([v, t]) => `<div class="stat"><b>${esc(v)}</b><span>${esc(t)}</span></div>`).join("");
+      document.getElementById("dims").innerHTML = Object.entries(q.dims).map(([k, v]) => `<div class="dim"><span>${NAMES[k]}</span><i style="--v:${v}%" role="img" aria-label="${NAMES[k]}: ${v} out of 100"></i><b>${v}</b></div>`).join("");
+      document.getElementById("cov").innerHTML = Object.entries(STATUS).map(([k, s]) => `<div class="stat"><b>${q.coverage[k]}</b><span>${esc(s.name)}: ${esc(s.line)}</span></div>`).join("");
+      document.getElementById("courses").innerHTML = q.courses.map((c) => `<tr><td><b>${esc(c.name)}</b></td><td>${c.lessons}</td><td>${c.serves.map((s) => esc(s.q ? QUALIFICATIONS[s.q].name : "Gradify's own curriculum")).join("<br>")}</td><td>${c.serves.map((s) => `<span class="pill ${s.status}">${esc(STATUS[s.status].name)}</span>`).join("<br>")}</td><td>${c.overall}</td></tr>`).join("");
+    } catch { document.getElementById("audit-intro").textContent = "The audit couldn't load. Try again in a moment."; }
+  </script>
+</body>
+</html>
