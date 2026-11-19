@@ -94,9 +94,10 @@ export function quests(state, opts = {}) {
   if (out.filter((q) => q.kind === "daily").length < 3) for (const id of ["questions", "goal"]) if (!out.some((q) => q.id === id) && out.filter((q) => q.kind === "daily").length < 3) mk("daily", x.day, id, DAILY[id](x));
   const wk = dayKey(x.ws);
   for (const id of ["days", "xp", "turnaround", "module", "mock"]) { if (out.filter((q) => q.kind === "weekly").length >= 3) break; mk("weekly", wk, id, WEEKLY[id](x)); }
-  // the topic quest's three steps, keyed by day, topic and step
+  // the topic quest's three steps, keyed by day, course, chapter, topic and step (two topics in one chapter never
+  // share a reward)
   const tq = topicQuest(x, state.courses || []);
-  if (tq) for (const st of tq.steps) mk("topic", `${x.day}:${tq.course}:${tq.unit}`, `topic-${st.id}`, { ...st, topic: tq.topic, lesson: { lesson: tq.lesson, course: tq.course }, quest: tq });
+  if (tq) for (const st of tq.steps) mk("topic", `${x.day}:${tq.course}:${tq.unit}:${tq.topic}`, `topic-${st.id}`, { ...st, topic: tq.topic, lesson: { lesson: tq.lesson, course: tq.course }, quest: tq });
   return out.map((q) => ({ ...q, paid: !!state.game.paid?.[q.key] }));
 }
 

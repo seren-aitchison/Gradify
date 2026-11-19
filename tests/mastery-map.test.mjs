@@ -166,3 +166,20 @@ test("a lesson with only retries isn't measured (not 0%); a genuine first-try 0%
   ]).get("L");
   assert.equal(lab.latestMean, 0);
 });
+
+test("each topic's quest steps have their own reward keys, even within one chapter", async () => {
+  const { gameState, claim } = await import("../kit/game/engine.js");
+  const { quests } = await import("../kit/game/quests.js");
+  const day = new Date(), at = (h) => { const d = new Date(day); d.setHours(h, 0, 0, 0); return +d; }, now = at(12);
+  const units = [{ id: "u01", n: 1, title: "Atoms", lessons: [{ id: "u01-01", module: "Structure" }, { id: "u01-02", module: "Bonding" }] }];
+  const S = { done: { "u01-01": at(9) }, log: [], attempts: [] };
+  const courses = [{ slug: "chemistry", site: "SciGradify", name: "Chemistry", units, S }];
+  const structure = quests(gameState(courses, {}, { now })).find((q) => q.id === "topic-understand");
+  assert.equal(structure.topic, "Structure");
+  const game = claim({}, structure, now);
+  // later the learner works on Bonding, in the same chapter: its steps are new, unpaid rewards
+  S.attempts.push({ id: "b1", lesson: "u01-02", question: { id: "b-q1", type: "sba" }, score: 1, correct: true, attempt: 1, at: new Date(at(11)).toISOString() });
+  const bonding = quests(gameState(courses, game, { now })).filter((q) => q.kind === "topic");
+  assert.equal(bonding[0].topic, "Bonding");
+  assert.ok(bonding.every((q) => !q.paid && q.key !== structure.key), "Structure's paid step doesn't mark Bonding's");
+});
