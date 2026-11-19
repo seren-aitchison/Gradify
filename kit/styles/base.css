@@ -140,23 +140,62 @@ a { color: inherit; }
 }
 .btn:hover { transform: translateY(-1px); }
 .btn:active { transform: translateY(1px) scale(.99); }
-.btn-primary.lg {
-  --glow: 255, 255, 255;
-  color: #000;
-  background: linear-gradient(180deg, #fff 0%, #f1f1f1 50%, #d9d9d9 100%);
-  border-color: rgba(var(--ink-rgb), .9);
-  box-shadow: inset 0 1px 0 #fff, inset 0 -3px 6px rgba(0, 0, 0, .12), 0 12px 28px -14px rgba(255, 255, 255, .55);
+/* ---------- Liquid glass buttons: the light is in the glass (a gloss cap over the top half, a bright rim along the
+   top edge, a soft halo in the button's --glow), not a blurred blob pooled underneath ---------- */
+.btn.lg { transition: transform .2s ease, box-shadow .25s ease, border-color .25s ease, background-color .25s ease; }
+.btn.lg::after { display: none; }
+.btn.lg::before {
+  inset: 1px 2px 48% 2px; border-radius: 999px 999px 50% 50% / 999px 999px 100% 100%;
+  background: linear-gradient(180deg, rgba(var(--ink-rgb), .24), rgba(var(--ink-rgb), .03));
 }
-.btn-primary.lg::before { background: linear-gradient(180deg, rgba(var(--ink-rgb), .9), rgba(var(--ink-rgb), 0)); }
-.btn-primary.lg::after { opacity: .18; }
-.btn-primary.lg:hover::after { opacity: .35; }
-.btn-ghost.lg { --glow: 255, 255, 255; color: var(--fg); }
-.btn-ghost.lg::after { opacity: .12; }
-.btn-light.lg {
-  --glow: var(--spot-glow, 255, 255, 255);
-  color: #17121a;
-  background: linear-gradient(180deg, #fff, #eae6ea);
-  border-color: rgba(var(--ink-rgb), .8);
+.btn.lg:focus-visible { outline: 2px solid rgba(var(--ink-rgb), .8); outline-offset: 3px; }
+
+/* bright: white in dark mode, with a soft halo */
+.btn-primary.lg, .btn-light.lg {
+  color: #000;
+  background: linear-gradient(180deg, #fff 0%, #f4f4f6 55%, #e4e4ea 100%);
+  border-color: rgba(var(--ink-rgb), .9);
+  box-shadow: inset 0 1px 0 #fff, inset 0 -1px 0 rgba(0, 0, 0, .1), 0 1px 2px rgba(0, 0, 0, .25), 0 12px 30px -14px rgba(var(--glow), .4);
+}
+.btn-primary.lg { --glow: 255, 255, 255; }
+.btn-light.lg { --glow: var(--spot-glow, 255, 255, 255); color: #17121a; }
+.btn-primary.lg::before, .btn-light.lg::before { background: linear-gradient(180deg, rgba(var(--ink-rgb), .75), rgba(var(--ink-rgb), 0)); }
+.btn-primary.lg:hover, .btn-light.lg:hover { box-shadow: inset 0 1px 0 #fff, inset 0 -1px 0 rgba(0, 0, 0, .1), 0 1px 2px rgba(0, 0, 0, .25), 0 16px 40px -14px rgba(var(--glow), .55); }
+
+/* black: thick, glossy obsidian glass. The ghost button in dark mode, the bright buttons in light mode. A dark body
+   that deepens towards the bottom, a bevelled rim (light along the top, a glint of reflected light along the bottom),
+   a crisp gloss cap over the top half, and real weight underneath */
+.btn-ghost.lg {
+  --glow: 255, 255, 255; color: var(--fg);
+  background: linear-gradient(180deg, #3b3b46 0%, #1c1c24 46%, #0b0b10 54%, #050508 100%) padding-box,
+    linear-gradient(180deg, rgba(var(--ink-rgb), .5), rgba(var(--ink-rgb), .08) 45%, rgba(var(--ink-rgb), .22)) border-box;
+  background: linear-gradient(180deg, light-dark(#f4f4f6, #3b3b46) 0%, light-dark(#ffffff, #1c1c24) 46%, light-dark(#ffffff, #0b0b10) 54%, light-dark(#ffffff, #050508) 100%) padding-box,
+    linear-gradient(180deg, rgba(var(--ink-rgb), .5), rgba(var(--ink-rgb), .08) 45%, rgba(var(--ink-rgb), .22)) border-box;
+  border: 1px solid transparent;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .28),
+    inset 0 0 0 1px rgba(255, 255, 255, .04),
+    inset 0 -6px 10px -6px rgba(255, 255, 255, .22),
+    inset 0 -2px 3px rgba(0, 0, 0, .6),
+    0 1px 1px rgba(0, 0, 0, .6),
+    0 4px 8px -2px rgba(0, 0, 0, .55),
+    0 14px 28px -14px rgba(0, 0, 0, .8);
+  -webkit-backdrop-filter: none; backdrop-filter: none;
+}
+.btn-ghost.lg::before { background: linear-gradient(180deg, rgba(var(--ink-rgb), .34) 0%, rgba(var(--ink-rgb), .12) 70%, rgba(var(--ink-rgb), .06) 100%); }
+.btn-ghost.lg:hover {
+  background: linear-gradient(180deg, #464652 0%, #24242e 46%, #101016 54%, #08080c 100%) padding-box,
+    linear-gradient(180deg, rgba(var(--ink-rgb), .62), rgba(var(--ink-rgb), .12) 45%, rgba(var(--ink-rgb), .28)) border-box;
+  background: linear-gradient(180deg, #464652 0%, light-dark(#ffffff, #24242e) 46%, light-dark(#ffffff, #101016) 54%, light-dark(#ffffff, #08080c) 100%) padding-box,
+    linear-gradient(180deg, rgba(var(--ink-rgb), .62), rgba(var(--ink-rgb), .12) 45%, rgba(var(--ink-rgb), .28)) border-box;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .34),
+    inset 0 0 0 1px rgba(255, 255, 255, .05),
+    inset 0 -6px 10px -6px rgba(255, 255, 255, .28),
+    inset 0 -2px 3px rgba(0, 0, 0, .6),
+    0 1px 1px rgba(0, 0, 0, .6),
+    0 6px 12px -2px rgba(0, 0, 0, .55),
+    0 18px 34px -14px rgba(0, 0, 0, .85);
 }
 .btn-sm { padding: 8px 16px; font-size: 14px; }
 .badge {
@@ -282,9 +321,43 @@ header.bar.glass, header.sub-nav.glass {
   color-scheme: dark; color: var(--fg);
 }
 /* the bright button: ink with white text in light mode (white with black text in dark) */
-:root[data-theme="light"] .btn-primary.lg { --glow: 70, 65, 255; color: #fff; background: linear-gradient(180deg, #2c2c3e 0%, #15151f 55%, #0d0d18 100%); border-color: rgba(22, 22, 48, .9); }
-:root[data-theme="light"] .btn-primary.lg::before { background: linear-gradient(180deg, rgba(255, 255, 255, .35), rgba(255, 255, 255, 0)); }
-:root[data-theme="light"] .btn-light.lg { --glow: 70, 65, 255; color: #fff; background: linear-gradient(180deg, #2c2c3e, #0d0d18); border-color: rgba(22, 22, 48, .9); }
+:root[data-theme="light"] :is(.btn-primary, .btn-light).lg {
+  --glow: 70, 65, 255; color: #fff;
+  background: linear-gradient(180deg, #3b3b4c 0%, #1d1d2a 46%, #0c0c16 54%, #05050c 100%) padding-box,
+    linear-gradient(180deg, rgba(255, 255, 255, .45), rgba(255, 255, 255, .06) 45%, rgba(255, 255, 255, .18)) border-box;
+  border: 1px solid transparent;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .3),
+    inset 0 -6px 10px -6px rgba(255, 255, 255, .22),
+    inset 0 -2px 3px rgba(0, 0, 0, .55),
+    0 0 0 1px rgba(10, 10, 24, .9),
+    0 1px 2px rgba(10, 10, 24, .35),
+    0 6px 12px -4px rgba(10, 10, 24, .35),
+    0 14px 30px -14px rgba(var(--glow), .5);
+}
+:root[data-theme="light"] :is(.btn-primary, .btn-light).lg::before { background: linear-gradient(180deg, rgba(255, 255, 255, .34) 0%, rgba(255, 255, 255, .12) 70%, rgba(255, 255, 255, .06) 100%); }
+:root[data-theme="light"] :is(.btn-primary, .btn-light).lg:hover {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .36),
+    inset 0 -6px 10px -6px rgba(255, 255, 255, .28),
+    inset 0 -2px 3px rgba(0, 0, 0, .55),
+    0 0 0 1px rgba(10, 10, 24, .9),
+    0 1px 2px rgba(10, 10, 24, .35),
+    0 8px 16px -4px rgba(10, 10, 24, .35),
+    0 18px 38px -14px rgba(var(--glow), .6);
+}
+/* frosted: the ghost button in light mode is clear glass, not black */
+:root[data-theme="light"] .btn-ghost.lg {
+  color: var(--fg);
+  background: linear-gradient(180deg, rgba(255, 255, 255, .95), rgba(240, 240, 248, .75)) padding-box,
+    linear-gradient(180deg, rgba(22, 22, 48, .14), rgba(22, 22, 48, .22)) border-box;
+  box-shadow: inset 0 1px 0 #fff, inset 0 -1px 0 rgba(22, 22, 48, .05), 0 1px 2px rgba(22, 22, 48, .08), 0 10px 24px -16px rgba(22, 22, 48, .3);
+  -webkit-backdrop-filter: blur(18px) saturate(180%); backdrop-filter: blur(18px) saturate(180%);
+}
+:root[data-theme="light"] .btn-ghost.lg::before { background: linear-gradient(180deg, rgba(255, 255, 255, .9), rgba(255, 255, 255, 0)); }
+:root[data-theme="light"] .btn-ghost.lg:hover {
+  background: linear-gradient(180deg, #ffffff, rgba(244, 244, 250, .85)) padding-box, linear-gradient(180deg, rgba(22, 22, 48, .2), rgba(22, 22, 48, .3)) border-box;
+  box-shadow: inset 0 1px 0 #fff, inset 0 -1px 0 rgba(22, 22, 48, .05), 0 1px 2px rgba(22, 22, 48, .1), 0 14px 30px -16px rgba(22, 22, 48, .38); }
 /* headline text faded with a gradient, and lesson pages drawn in neon for the dark: darker partners in light mode */
 :root[data-theme="light"] .sub-hero h1 .fade { background-image: linear-gradient(90deg, var(--fg) 0%, var(--fg) 45%, #9a9aae 100%); }
 :root[data-theme="light"] .mv-page { --c: #0a7f99; }
