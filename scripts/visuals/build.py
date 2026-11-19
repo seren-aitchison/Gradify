@@ -12,9 +12,13 @@ scripts), so adding one molecule doesn't re-render the rest. Renders run in para
 automated check reach step 2, and "automated checks passed" is never shown as expert review (reviews.json).
 Usage: python3 scripts/visuals/build.py [--all]      (needs RDKit, numpy and Blender 4 on the PATH)
 """
-import concurrent.futures as cf, hashlib, json, os, subprocess, sys
+import concurrent.futures as cf, hashlib, json, os, re, shutil, subprocess, sys
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
 OUT = os.path.join(HERE, "out"); PUB = os.path.join(ROOT, "kit", "visuals", "molecules")
+FRESH = os.path.join(OUT, "stills-new")   # PNG masters rendered this run, for the shared encoder
+SIZES = [960, 1920]
+# sharp for the shared encoder (scripts/blender/encode-previews.mjs): GRADIFY_SHARP, or the project's own
+SHARP = os.environ.get("GRADIFY_SHARP", "sharp")
 read = lambda f: open(os.path.join(HERE, f), encoding="utf-8").read()
 
 subprocess.run([sys.executable, os.path.join(HERE, "build_molecules.py")], check=True)
@@ -37,7 +41,7 @@ def content(d):
     return sha({k: d[k] for k in ("smiles", "formula", "atoms", "bonds", "groups", "stereocentres", "name")})
 
 def render(m):
-    r = subprocess.run(["blender", "-b", "--factory-startup", "-t", "2", "-P", os.path.join(HERE, "blender_molecule.py"), "--", os.path.join(OUT, f"{m['id']}.json"), PUB], capture_output=True, text=True)
+    r = subprocess.run(["blender", "-b", "--factory-startup", "-t", "2", "-P", os.path.join(HERE, "blender_molecule.py"), "--", os.path.join(OUT, f"{m['id']}.json"), PUB, FRESH], capture_output=True, text=True)
     if f"GRADIFY-RENDERED {m['id']}" not in r.stdout:
         raise RuntimeError(f"render {m['id']} failed\n{r.stdout[-800:]}\n{r.stderr[-800:]}")
     return m["id"]
@@ -48,8 +52,9 @@ for m in src:
     if not data["ok"]:
         print(f"skip {m['id']}: failed its checks"); continue
     fp, cfp = fingerprint(data), content(data)
-    files = {"glb": f"{m['id']}.glb", "still": f"{m['id']}.webp"}
-    fresh = old.get(m["id"], {}).get("fingerprint") == fp and all(os.path.exists(os.path.join(PUB, f)) for f in files.values())
+    files = {"glb": f"{m['id']}.glb", "still": f"{m['id']}-1920.webp", "sizes": SIZES, "formats": ["avif", "webp"]}
+    want = [files["glb"]] + [f"{m['id']}-{w}.{x}" for w in SIZES for x in files["formats"]]
+    fresh = old.get(m["id"], {}).get("fingerprint") == fp and all(os.path.exists(os.path.join(PUB, f)) for f in want)
     if not fresh or "--all" in sys.argv: todo.append(m)
     # a review counts only for the exact version reviewed: if the molecule has changed since, it's pending again
     rv = reviews.get(m["id"])
@@ -58,12 +63,17 @@ for m in src:
     index.append(data)
 
 print(f"{len(todo)} to render, {len(index) - len(todo)} unchanged")
+shutil.rmtree(FRESH, ignore_errors=True); os.makedirs(FRESH)
 with cf.ThreadPoolExecutor(max_workers=max(1, (os.cpu_count() or 2) // 2)) as pool:
     for done in pool.map(render, todo):
         print(f"rendered {done}")
-# molecules that left the library take their files with them
+if todo:
+    subprocess.run(["node", os.path.join(ROOT, "scripts", "blender", "encode-previews.mjs"), FRESH, SHARP, PUB, ",".join(map(str, SIZES))], check=True, stdout=subprocess.DEVNULL)
+# only this run's files stay: <id>.glb and <id>-<width>.<avif|webp> for the molecules in the library
+allowed = re.compile(r"^(?P<id>[a-z0-9-]+?)(?:\.glb|-(?:%s)\.(?:avif|webp))$" % "|".join(map(str, SIZES)))
+ids = {m["id"] for m in index}
 for f in os.listdir(PUB):
-    stem = f.rsplit(".", 1)[0]
-    if f != "index.json" and stem not in {m["id"] for m in index}: os.remove(os.path.join(PUB, f))
+    k = allowed.match(f)
+    if f != "index.json" and not (k and k.group("id") in ids): os.remove(os.path.join(PUB, f))
 json.dump({"about": "Molecules made by Gradify's visual pipeline (scripts/visuals/build.py): RDKit structures checked against references, rendered in Blender. Positions in ångströms.", "molecules": index}, open(old_path, "w"), separators=(",", ":"))
 print(f"published {len(index)} molecules to kit/visuals/molecules/")

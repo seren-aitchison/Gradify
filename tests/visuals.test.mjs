@@ -19,7 +19,7 @@ test("every published molecule passed every check, matches its independently wri
     assert.ok(m.ok && Object.values(m.checks).every((c) => c.ok), m.id);
     assert.deepEqual(count(m.formula), count(src.find((s) => s.id === m.id).formula), m.id);
     assert.deepEqual(m.counts, count(m.formula), `${m.id}: atoms drawn = formula`);
-    for (const f of [m.files.glb, m.files.still]) { const p = new URL(`../kit/visuals/molecules/${f}`, import.meta.url); assert.ok(existsSync(p) && statSync(p).size > 1000, f); }
+    for (const f of [m.files.glb, m.files.still, ...(m.files.sizes || []).flatMap((w) => m.files.formats.map((x) => `${m.id}-${w}.${x}`))]) { const p = new URL(`../kit/visuals/molecules/${f}`, import.meta.url); assert.ok(existsSync(p) && statSync(p).size > 1000, f); }
     assert.equal(m.review.status, "pending", "no molecule claims an expert review it hasn't had");
     for (const b of m.bonds) { const a = m.atoms[b.a], c = m.atoms[b.b]; assert.ok(Math.abs(Math.hypot(a.x - c.x, a.y - c.y, a.z - c.z) - b.length) < 0.01, `${m.id}: bond lengths are the coordinates'`); }
   }

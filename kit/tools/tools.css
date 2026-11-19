@@ -356,7 +356,8 @@
 .mv3-stage { position: relative; align-self: start; position: sticky; top: 8px; height: clamp(360px, 64vh, 640px); border-radius: 22px; overflow: hidden; background: radial-gradient(80% 80% at 50% 40%, #171a2a, #07070b); }
 .mv3-stage canvas { width: 100%; height: 100%; display: block; cursor: grab; }
 .mv3-stage canvas:focus-visible { outline: 3px solid #8b9bff; outline-offset: -3px; }
-.mv3-still { width: 100%; height: 100%; object-fit: contain; }
+.mv3-still, .mv3-still img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.mv3-still[hidden] { display: none; }
 .mv3-labels { position: absolute; inset: 0; pointer-events: none; }
 .mv3-labels span { position: absolute; transform: translate(-50%, -150%); font: 700 11px var(--mono, monospace); color: #fff; background: rgba(0, 0, 0, .55); padding: 1px 5px; border-radius: 6px; }
 .mv3-side { display: grid; gap: 10px; align-content: start; }
@@ -393,3 +394,6 @@
 .mv3-rf { display: grid; gap: 8px; }
 .mv3-rf input:not([type=checkbox]), .mv3-rf textarea { padding: 9px 12px; border-radius: 10px; border: 1px solid var(--line); background: var(--panel); color: var(--fg); font: inherit; width: 100%; box-sizing: border-box; }
 .mv3-entry { white-space: pre-wrap; font: 12px var(--mono, monospace); padding: 12px; border-radius: 12px; background: rgba(var(--sink-rgb), .4); }
+/* a search form on a glass panel stays one row: the panel's column layout would turn the input's flex basis into its height */
+.tl-search.panel { flex-direction: row; flex-wrap: wrap; align-items: center; }
+.tl-search.panel input { flex: 1 1 220px; height: auto; }

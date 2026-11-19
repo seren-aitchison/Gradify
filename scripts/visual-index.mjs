@@ -17,16 +17,21 @@ export async function visualIndex() {
   // molecules
   const molPath = new URL("kit/visuals/molecules/index.json", root);
   if (existsSync(molPath)) for (const m of JSON.parse(await readFile(molPath, "utf8")).molecules) {
-    out.push({ kind: "molecule", id: m.id, title: m.name, sub: `${m.formula} · 3D molecule, rendered in Blender from a checked structure`, keys: words(m.name, m.formula, ...m.keys), href: `#/tools/visualise/molecule/${m.id}`, still: `/kit/visuals/molecules/${m.files.still}`, review: m.review.status, checks: Object.keys(m.checks) });
+    out.push({ kind: "molecule", id: m.id, title: m.name, sub: `${m.formula} · 3D molecule, rendered in Blender from a checked structure`, keys: words(m.name, m.formula, ...m.keys), href: `#/tools/visualise/molecule/${m.id}`, still: `/kit/visuals/molecules/${m.files.sizes ? `${m.id}-960.webp` : m.files.still}`, review: m.review.status, checks: Object.keys(m.checks) });
   }
   // the sites' 3D models, a structure at a time
   const { MODELS } = await import(new URL("kit/models/index.js", root));
+  const { REVIEWS } = await import(new URL("kit/models/reviews.js", root));
   const seen = new Set();
   for (const [site, m] of Object.entries(MODELS)) {
     const d = (await import(new URL(`kit/models/${m.file}`, root))).default;
     for (const [sid, s] of Object.entries(d.structures || {})) {
       const key = `${m.file}:${sid}`; if (seen.has(key)) continue; seen.add(key);
-      out.push({ kind: "model", id: `${site}/${sid}`, title: plain(s.name), sub: `${m.title} · ${site}`, keys: words(s.name, ...(s.keys || []), d.groups?.[s.group]?.name || ""), href: `/${site.toLowerCase()}/3d.html`, review: "pending" });
+      // the site's folder, by the site's own rule (kit/core/site.js slugOf): "TechGradify · ForgeLab" → techgradify
+      const folder = site.split(" · ")[0].toLowerCase().replace(/[^a-z0-9]+/g, "");
+      // the 4K Cycles preview the 3D-model pipeline renders for each model (scripts/blender/render-previews.py)
+      const still = existsSync(new URL(`kit/models/previews/${m.file.replace(".js", "")}-960.webp`, root)) ? `/kit/models/previews/${m.file.replace(".js", "")}-960.webp` : null;
+      out.push({ kind: "model", id: `${site}/${sid}`, title: plain(s.name), sub: `${m.title} · ${site.split(" · ")[0]}`, keys: words(s.name, ...(s.keys || []), d.groups?.[s.group]?.name || "", m.title), href: `/${folder}/3d.html`, still, review: REVIEWS[m.file.replace(".js", "")] ? "reviewed" : "pending" });
     }
   }
   // interactives

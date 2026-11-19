@@ -18,6 +18,11 @@
   <link rel="stylesheet" href="../kit/styles/subsite.css">
   <link rel="stylesheet" href="../kit/styles/model.css">
   <script src="../kit/vendor/supabase/supabase.js" defer></script>
+  <!-- start the heavy downloads with the page instead of after the scripts that need them -->
+  <link rel="modulepreload" href="../kit/vendor/three/three.module.min.js">
+  <link rel="modulepreload" href="../kit/models/viewer.js">
+  <link rel="modulepreload" href="../kit/models/dog.js">
+  <link rel="preload" as="image" type="image/avif" href="../kit/models/previews/dog-1920.avif" imagesrcset="../kit/models/previews/dog-1920.avif 1920w, ../kit/models/previews/dog-3840.avif 3840w" imagesizes="100vw" fetchpriority="high">
   <script type="module">
     import { SITES, nameHtml, accentOf } from "../kit/core/site.js";
     import { icon } from "../kit/core/icons.js";
@@ -32,7 +37,7 @@
     }
     const m = modelOf(name);
     const model = (await import(`../kit/models/${m.file}`)).default;
-    mountModel(document.getElementById("model"), name, model);
+    mountModel(document.getElementById("model"), name, model, { poster: `../kit/models/previews/${m.file.replace(".js", "")}` });
   </script>
 </head>
 <body class="sub-page">

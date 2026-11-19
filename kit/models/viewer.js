@@ -18,6 +18,9 @@ import { RenderPass } from "../vendor/three/addons/RenderPass.js";
 import { UnrealBloomPass } from "../vendor/three/addons/UnrealBloomPass.js";
 import { OutputPass } from "../vendor/three/addons/OutputPass.js";
 import { RoomEnvironment } from "../vendor/three/addons/RoomEnvironment.js";
+import { GTAOPass } from "../vendor/three/addons/GTAOPass.js";
+import { qualityTier, maxPixelRatio, adaptiveResolution } from "../core/render-quality.js";
+import { reviewOf } from "./reviews.js";
 import { mergeVertices } from "../vendor/three/addons/BufferGeometryUtils.js";
 import { LocalStore, CloudStore, scopeToSite } from "../data/store.js";
 
@@ -203,7 +206,10 @@ function wrap({ a, b, r, th0, th1, side = 1, sx = 1, sz = 1, thick = 0.012, t0 =
 }
 export const helpers = { V, holo, mat, bone, glow, limb, tube, taper, blob, lathe, box, text, line, detail, slice, cut, wrap };
 
-export async function mountModel(root, siteName, model) {
+// opts.poster: the model's preview render (kit/models/previews/<name>, no extension), shown until the first frame
+export async function mountModel(root, siteName, model, opts = {}) {
+  // which model this is (for its review record, kit/models/reviews.js): from opts.file, or the preview path
+  const modelFile = opts.file || String(opts.poster || "").split("/").pop() || "";
   const G = model.groups, S = model.structures;
   const cam = { pos: [0, 1, 3.6], target: [0, 0.9, 0], min: 0.06, max: 6, fov: 32, ...model.camera };
   const sliders = [...(model.sliders || []), ...(model.explode === false ? [] : [{ key: "explode", label: "Pull apart", value: 0 }])];
@@ -215,6 +221,7 @@ export async function mountModel(root, siteName, model) {
   root.innerHTML = `
     <div class="mv-top-row">
       <div class="mv-stage">
+        ${opts.poster ? `<picture class="mv-poster" aria-hidden="true"><source type="image/avif" srcset="${opts.poster}-1920.avif 1920w, ${opts.poster}-3840.avif 3840w" sizes="100vw"><img src="${opts.poster}.webp" srcset="${opts.poster}-1920.webp 1920w, ${opts.poster}-3840.webp 3840w" sizes="100vw" alt="" fetchpriority="high" onerror="this.parentNode.remove()"></picture><span class="mv-loading">Loading the 3D model…</span>` : ""}
         <canvas class="mv-canvas" aria-label="${esc(model.title)}: a 3D model. Drag to turn, scroll or pinch to zoom, double-click to fly in, click a part to learn about it."></canvas>
         <div class="mv-labels" aria-hidden="true"></div>
         <div class="mv-tip" aria-hidden="true" hidden></div>
@@ -248,6 +255,7 @@ export async function mountModel(root, siteName, model) {
 
   // ---------- renderer: HD, with environment lighting and bloom ----------
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: "high-performance" });
+  const tier = qualityTier();
   renderer.setPixelRatio(Math.min(2, devicePixelRatio || 1));
   renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.05;
   renderer.outputColorSpace = THREE.SRGBColorSpace;
@@ -277,8 +285,9 @@ export async function mountModel(root, siteName, model) {
   const rimA = new THREE.PointLight(studio ? "#ffffff" : "#5ef0ff", studio ? 2 : 5, 8); rimA.position.set(-1.6, 1.6, -1.2); scene.add(rimA);
   const rimB = new THREE.PointLight(studio ? "#ffe8d8" : "#f055dd", studio ? 1.5 : 3, 8); rimB.position.set(1.6, 0.6, -1.4); scene.add(rimB);
   if (studio) {
-    key.castShadow = true; key.shadow.mapSize.set(2048, 2048); key.shadow.bias = -0.0004; key.shadow.normalBias = 0.01;
-    Object.assign(key.shadow.camera, { left: -1.2, right: 1.2, top: 2.2, bottom: -0.4, near: 0.5, far: 8 }); key.shadow.camera.updateProjectionMatrix();
+    key.castShadow = true; key.shadow.mapSize.setScalar(tier === "high" ? 4096 : 2048); key.shadow.bias = -0.0004; key.shadow.normalBias = 0.01;
+    // sized for a standing figure; wide, low models (a castle, a room) give their own bounds as model.shadow
+    Object.assign(key.shadow.camera, { left: -1.2, right: 1.2, top: 2.2, bottom: -0.4, near: 0.5, far: 8, ...model.shadow }); key.shadow.camera.updateProjectionMatrix();
   }
 
   // the platform: glowing rings and a faint polar grid under the model
@@ -309,8 +318,20 @@ export async function mountModel(root, siteName, model) {
     scene.add(platform);
   }
 
-  const composer = new EffectComposer(renderer);
+  // the composer draws into a multisampled target: without one, post-processing throws away the canvas's antialiasing
+  const composer = new EffectComposer(renderer, new THREE.WebGLRenderTarget(1, 1, { type: THREE.HalfFloatType, samples: tier === "high" ? 4 : 2 }));
   composer.addPass(new RenderPass(scene, camera));
+  // ambient occlusion for models that ask for it (model.ao): contact shadows in every fold, foramen and suture.
+  // Opt-in, because screen-space AO darkens wide open scenes (a landscape seen at a low angle)
+  let gtao = null;
+  if (studio && tier === "high" && model.ao) {
+    gtao = new GTAOPass(scene, camera, 1, 1);
+    const aoR = model.aoRadius ?? 0.06;
+    gtao.updateGtaoMaterial({ radius: aoR, distanceExponent: 1.5, thickness: aoR * 2, distanceFallOff: 1, scale: 1.1, samples: 16, screenSpaceRadius: false });
+    gtao.updatePdMaterial({ lumaPhi: 10, depthPhi: 2, normalPhi: 3, radius: 6, rings: 2, samples: 16 });
+    gtao.blendIntensity = 0.9;
+    composer.addPass(gtao);
+  }
   if (!studio) composer.addPass(new UnrealBloomPass(new THREE.Vector2(256, 256), model.bloom ?? 0.28, 0.5, 0.9));
   composer.addPass(new OutputPass());
 
@@ -436,7 +457,8 @@ export async function mountModel(root, siteName, model) {
   function showIntro() {
     info.style.setProperty("--c", "#5ef0ff");
     info.innerHTML = `<span class="kicker">${esc(model.kicker || "3D model")}</span><h3>${esc(model.intro?.title || model.title)}</h3><p>${rich(model.intro?.text || "Click any part to learn about it, make flashcards from it, or find it in your notes.")}</p>
-      <ul class="mv-facts">${Object.entries(G).map(([g, x]) => `<li><button type="button" class="mv-jump" data-jump="${Object.keys(S).find((id) => S[id].group === g)}" style="--c:${x.c}">${esc(x.name)} →</button></li>`).join("")}</ul>`;
+      <ul class="mv-facts">${Object.entries(G).map(([g, x]) => `<li><button type="button" class="mv-jump" data-jump="${Object.keys(S).find((id) => S[id].group === g)}" style="--c:${x.c}">${esc(x.name)} →</button></li>`).join("")}</ul>
+      ${modelFile ? `<p class="mv-review ${reviewOf(modelFile).reviewed ? "ok" : ""}">${esc(reviewOf(modelFile).line)}</p>` : ""}`;
   }
   info.addEventListener("click", async (e) => {
     const j = e.target.closest("[data-jump]"); if (j) return select(j.dataset.jump, true);
@@ -608,9 +630,12 @@ export async function mountModel(root, siteName, model) {
   const labelEls = Object.fromEntries([...labelBox.children].map((el) => [el.dataset.l, el]));
 
   // ---------- render loop ----------
+  const res = adaptiveResolution((pr) => { const r = canvas.getBoundingClientRect(); renderer.setPixelRatio(pr); composer.setPixelRatio(pr); composer.setSize(r.width, r.height); });
   function resize() {
-    const r = canvas.getBoundingClientRect(), pr = Math.min(2, devicePixelRatio || 1);
-    renderer.setSize(r.width, r.height, false); composer.setPixelRatio(pr); composer.setSize(r.width, r.height);
+    const r = canvas.getBoundingClientRect();
+    renderer.setSize(r.width, r.height, false);
+    res.ceiling = maxPixelRatio(tier, r.width, r.height);
+    composer.setPixelRatio(res.ratio); composer.setSize(r.width, r.height);
     camera.aspect = r.width / Math.max(1, r.height); camera.updateProjectionMatrix();
   }
   new ResizeObserver(resize).observe(canvas); resize();
@@ -619,8 +644,11 @@ export async function mountModel(root, siteName, model) {
   const clock = new THREE.Clock(), tmp = new THREE.Vector3(), off = new THREE.Vector3();
   let shownMotion = null;
   const holos = []; scene.traverse((o) => { if (o.material?.uniforms?.uTime) holos.push(o.material); });
-  renderer.setAnimationLoop(() => {
-    if (!onScreen) return;
+  let lastFrame = 0, shownFirst = false;
+  renderer.setAnimationLoop((now) => {
+    if (!onScreen) { lastFrame = 0; return; }
+    if (lastFrame && document.visibilityState === "visible") res.frame(now - lastFrame);
+    lastFrame = now;
     const dt = Math.min(0.05, clock.getDelta()), t = clock.elapsedTime;
     for (const m of holos) m.uniforms.uTime.value = t;
     platform.rotation.y += dt * 0.15;
@@ -643,6 +671,7 @@ export async function mountModel(root, siteName, model) {
     }
     controls.update();
     composer.render();
+    if (!shownFirst) { shownFirst = true; stage.classList.add("mv-ready"); }   // the poster fades out once the live model is drawn
     labelBox.hidden = !state.labels;
     if (state.labels) {
       const r = canvas.getBoundingClientRect();
@@ -661,6 +690,6 @@ export async function mountModel(root, siteName, model) {
     if (only && G[only]) { for (const g of Object.keys(G)) setGroup(g, g === only); state.only = only; openTab(only); }
     if (mode === "find" || mode === "name") startQuiz(mode);
   } catch { /* no URL to read */ }
-  canvas.mv = { select, focus, zoomBy, state, parts, camera, controls };
+  canvas.mv = { select, focus, zoomBy, state, parts, camera, controls, scene, body, platform };
   return canvas.mv;
 }

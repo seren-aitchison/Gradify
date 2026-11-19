@@ -1,11 +1,11 @@
 """Stage 2 of Gradify's visual pipeline: Blender builds and renders a molecule that passed stage 1's checks.
 
-    blender -b --factory-startup -P scripts/visuals/blender_molecule.py -- <molecule.json> <out-dir>
+    blender -b --factory-startup -P scripts/visuals/blender_molecule.py -- <molecule.json> <out-dir> [<stills-dir>]
 
 Makes a ball-and-stick model (CPK colours; atoms at 0.3 × their van der Waals radius so bonds stay visible; double
 and triple bonds drawn as two or three parallel sticks), then:
   <out-dir>/<id>.glb   the model for the browser (kit/visuals/viewer.js turns it, labels it and asks questions)
-  <out-dir>/<id>.webp  a studio render (Cycles), for posters, explainers, print and anywhere 3D can't run
+  <stills-dir>/<id>.png a 1920×1440 studio render (Cycles, AgX), encoded by scripts/blender/encode-previews.mjs
 Every position comes from stage 1's verified structure; Blender changes nothing about the chemistry.
 """
 import bpy, json, math, sys
@@ -14,6 +14,7 @@ from mathutils import Vector
 args = sys.argv[sys.argv.index("--") + 1:]
 mol = json.load(open(args[0]))
 out = args[1]
+stills = args[2] if len(args) > 2 else out   # where the PNG master goes (build.py encodes it)
 MID = mol["id"]
 
 # CPK-style colours (Jmol palette) and van der Waals radii (Å, Bondi / Alvarez)
@@ -85,7 +86,7 @@ half_h = max((abs(p.y) for p in pos), default=0.5) + 0.6
 extent = max(half_w, half_h * 4 / 3, 2.1)   # small molecules still have room around them
 cam = bpy.data.objects.new("cam", bpy.data.cameras.new("cam")); scene.collection.objects.link(cam)
 cam.data.lens = 50
-dist = extent / (18 / 50) * 1.08
+dist = extent / (18 / 50) * 1.2   # margin, so the tilt never crops an atom
 cam.location = Vector((dist * 0.22, -dist * 0.32, dist * 0.92))
 cam.rotation_euler = (Vector((0, 0, 0)) - cam.location).to_track_quat("-Z", "Y").to_euler()
 scene.camera = cam
@@ -96,11 +97,17 @@ for name, loc, power, size in [("key", (4, -4, 6), 900, 4), ("fill", (-5, -2, 2)
 world = bpy.data.worlds.new("w"); scene.world = world; world.use_nodes = True
 world.node_tree.nodes["Background"].inputs["Color"].default_value = (0.02, 0.02, 0.03, 1)
 world.node_tree.nodes["Background"].inputs["Strength"].default_value = 0.6
-scene.render.engine = "CYCLES"; scene.cycles.device = "CPU"; scene.cycles.samples = 96; scene.cycles.use_denoising = False   # this Blender build has no OpenImageDenoise: more samples instead
+scene.render.engine = "CYCLES"; scene.cycles.device = "CPU"; scene.cycles.samples = 64; scene.cycles.use_denoising = False   # this Blender build has no OpenImageDenoise: more samples instead
 scene.render.film_transparent = True
-scene.render.resolution_x, scene.render.resolution_y = 1200, 900
-scene.render.image_settings.file_format = "WEBP"; scene.render.image_settings.color_mode = "RGBA"; scene.render.image_settings.quality = 84
-scene.view_settings.view_transform = "Filmic" if "Filmic" in [v.identifier for v in scene.view_settings.bl_rna.properties["view_transform"].enum_items] else "Standard"
-scene.render.filepath = f"{out}/{MID}.webp"
+# a lossless 1920×1440 master; scripts/blender/encode-previews.mjs (shared with the 3D-model previews) makes the AVIF
+# and WebP sizes the site loads. AgX colour, like the 3D-model previews (scripts/blender/render-previews.py).
+scene.render.resolution_x, scene.render.resolution_y = 1920, 1440
+scene.render.image_settings.file_format = "PNG"; scene.render.image_settings.color_mode = "RGBA"
+transforms = [v.identifier for v in scene.view_settings.bl_rna.properties["view_transform"].enum_items]
+scene.view_settings.view_transform = "AgX" if "AgX" in transforms else "Filmic" if "Filmic" in transforms else "Standard"
+if scene.view_settings.view_transform == "AgX":
+    try: scene.view_settings.look = "AgX - Punchy"
+    except TypeError: pass
+scene.render.filepath = f"{stills}/{MID}.png"
 bpy.ops.render.render(write_still=True)
 print(f"GRADIFY-RENDERED {MID}")

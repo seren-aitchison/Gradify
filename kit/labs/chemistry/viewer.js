@@ -47,7 +47,7 @@ export function findGroups(m) {
 export function mount(el, ctx = {}) {
   const groupsMode = ctx.mode === "groups";
   const $ = shell(el, `<div class="lab-row top"></div><div class="lab-cols"><div class="lab-stage"></div><div class="lab-ctrl"></div></div>`);
-  const S = stage3d($(".lab-stage"), { distance: 10, aspect: 0.8 }); S.spin = 0.25;
+  const S = stage3d($(".lab-stage"), { distance: 10, aspect: 0.8, ao: true }); S.spin = 0.25;
   const ctrl = $(".lab-ctrl"), info = panel(ctrl);
   let smiles = groupsMode ? "CC(=O)Oc1ccccc1C(=O)O" : "CC(=O)O", style = "ball", focus = null, m = null;
   const st = { styles: new Set(), own: false, groups: new Set(), viewed: new Set() };

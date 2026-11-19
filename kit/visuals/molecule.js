@@ -10,6 +10,7 @@
 //   Review       #/tools/visualise/molecule/<id>/review: a chemist's checklist that produces the reviews.json entry
 // Every number shown comes from the structure the pipeline checked; nothing is typed in by hand.
 import { esc } from "../core/text.js";
+import { qualityTier, maxPixelRatio, adaptiveResolution } from "../core/render-quality.js";
 
 const here = new URL(".", import.meta.url);
 let indexP = null;
@@ -72,6 +73,13 @@ export function evidence(m) {
   return out;
 }
 
+/** The Blender still, in every size and format the pipeline published (AVIF first, WebP for older browsers). */
+export function stillHtml(m, { hidden = true, alt = `${m.name}, rendered in Blender` } = {}) {
+  const sizes = m.files.sizes || [], src = (w, x) => new URL(`molecules/${m.id}-${w}.${x}`, here).href;
+  const set = (x) => sizes.map((w) => `${src(w, x)} ${w}w`).join(", ");
+  return `<picture class="mv3-still" ${hidden ? "hidden" : ""}>${sizes.length ? `<source type="image/avif" srcset="${set("avif")}" sizes="(max-width: 860px) 100vw, 60vw">` : ""}<img src="${new URL(`molecules/${m.files.still}`, here).href}" ${sizes.length ? `srcset="${set("webp")}" sizes="(max-width: 860px) 100vw, 60vw"` : ""} alt="${esc(alt)}" loading="lazy" decoding="async"></picture>`;
+}
+
 /** Mount the viewer for molecule `id` in `el`. o.review: show the reviewer's checklist. */
 export async function mountMolecule(el, id, { speak, review = false } = {}) {
   const list = await molecules(), m = list.find((x) => x.id === id);
@@ -79,7 +87,7 @@ export async function mountMolecule(el, id, { speak, review = false } = {}) {
   const geo = m.reference?.geometry || [];
   const groups = [...new Map((m.groups || []).map((g) => [g.name, g])).keys()];
   el.innerHTML = `<div class="mv3"><div class="mv3-stage"><canvas aria-label="3D model of ${esc(m.name)}. Arrow keys turn it, plus and minus zoom. ${esc(describe(m))}" role="img" tabindex="0"></canvas><div class="mv3-labels" aria-hidden="true"></div>
-      <img class="mv3-still" src="${new URL(`molecules/${m.files.still}`, here)}" alt="${esc(m.name)}, rendered" hidden><p class="mv3-mode-note" aria-live="polite"></p></div>
+      ${stillHtml(m)}<p class="mv3-mode-note" aria-live="polite"></p></div>
     <div class="mv3-side"><span class="tl-k">Molecule · ${esc(m.formula)} · ${molarMass(m).toFixed(2)} g/mol</span><h2>${esc(m.name)}</h2><p class="mv3-desc">${esc(describe(m))}</p>
       <div class="seg-chips mv3-modes" role="radiogroup" aria-label="View">${[["ball", "Ball and stick"], ["space", "Space-filling"], ["polar", "Polarity"], ...(groups.length ? [["groups", "Functional groups"]] : [])].map(([k, t], i) => `<button type="button" class="chip" role="radio" data-mode="${k}" aria-checked="${i === 0}">${t}</button>`).join("")}</div>
       <div class="mv3-groups" hidden>${groups.map((g, i) => `<button type="button" class="tl-mini" data-group="${esc(g)}" aria-pressed="${i === 0}">${esc(g)}</button>`).join("")}</div>
@@ -100,7 +108,7 @@ export async function mountMolecule(el, id, { speak, review = false } = {}) {
 
   // ---------- the 3D model ----------
   const canvasEl = el.querySelector("canvas"), labelsEl = el.querySelector(".mv3-labels"), note = el.querySelector(".mv3-mode-note");
-  const still = () => { canvasEl.hidden = true; el.querySelector(".mv3-still").hidden = false; el.querySelector(".mv3-modes").hidden = true; };
+  const still = () => { canvasEl.hidden = true; el.querySelector(".mv3-still").hidden = false; el.querySelector(".mv3-modes").hidden = true; el.querySelector(".mv3-still img").loading = "eager"; };
   let THREE, GLTFLoader, OrbitControls, RoomEnvironment, renderer;
   try {
     THREE = await import("../vendor/three/three.module.min.js");
@@ -109,7 +117,10 @@ export async function mountMolecule(el, id, { speak, review = false } = {}) {
     ({ RoomEnvironment } = await import("../vendor/three/addons/RoomEnvironment.js"));
     renderer = new THREE.WebGLRenderer({ canvas: canvasEl, antialias: true, alpha: true });
   } catch { still(); return; }
-  renderer.setPixelRatio(Math.min(2, devicePixelRatio || 1));
+  // the same render quality as every other 3D view on Gradify (kit/core/render-quality.js): up to 4K on capable
+  // devices, and the resolution follows the frame rate so a slow GPU drops pixels, not frames
+  const tier = qualityTier();
+  const res = adaptiveResolution((pr) => { renderer.setPixelRatio(pr); renderer.setSize(canvasEl.clientWidth, canvasEl.clientHeight, false); });
   const scene = new THREE.Scene(), pmrem = new THREE.PMREMGenerator(renderer);
   scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
   const cam = new THREE.PerspectiveCamera(40, 1, 0.01, 200);
@@ -130,7 +141,7 @@ export async function mountMolecule(el, id, { speak, review = false } = {}) {
   let fitted = false, labels = false, raf = 0, picked = null, mode = "ball", mirrored = false, group = groups[0];
   const size = () => {
     const w = canvasEl.clientWidth, h = canvasEl.clientHeight; if (!w || !h) return;
-    renderer.setSize(w, h, false); cam.aspect = w / h; cam.updateProjectionMatrix();
+    res.ceiling = maxPixelRatio(tier, w, h); renderer.setSize(w, h, false); cam.aspect = w / h; cam.updateProjectionMatrix();
     // keep the learner's zoom once they've moved it; until then, keep the molecule fitted to the view
     if (!fitted) { cam.position.set(0, 0, fitDistance()); }
   };
@@ -153,7 +164,8 @@ export async function mountMolecule(el, id, { speak, review = false } = {}) {
     }
     labelsEl.innerHTML = show.join("");
   };
-  const loop = () => { if (!canvasEl.isConnected) { cancelAnimationFrame(raf); renderer.dispose(); return; } controls.update(); renderer.render(scene, cam); drawLabels(); raf = requestAnimationFrame(loop); };
+  let last = 0;
+  const loop = (now = 0) => { if (!canvasEl.isConnected) { cancelAnimationFrame(raf); renderer.dispose(); return; } if (last && document.visibilityState === "visible") res.frame(now - last); last = now; controls.update(); renderer.render(scene, cam); drawLabels(); raf = requestAnimationFrame(loop); };
   loop();
 
   // views
