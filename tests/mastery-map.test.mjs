@@ -76,7 +76,8 @@ test("the topic quest pays only for learning evidence in that topic, today", () 
   const units = [{ id: "u01", title: "Atoms", lessons: [{ id: "u01-01", module: "Structure" }, { id: "u01-02", module: "Structure" }, { id: "u01-03", module: "Bonding" }] }];
   const S = { done: { "u01-01": now - 2 * 864e5 } };
   const courses = [{ slug: "chemistry", units, S }];
-  const at = (lesson, type, score) => ({ course: "chemistry", lesson, question: { type }, score, correct: score >= 0.6 });
+  let qid = 0;
+  const at = (lesson, type, score, extra = {}) => ({ course: "chemistry", lesson, question: { id: `q${qid++}`, type }, score, correct: score >= 0.6, attempt: 1, ...extra });
   const x = (attemptsToday) => ({ day, open: [{ id: "u01-02", module: "Structure", course: "chemistry" }], attemptsToday });
   const none = topicQuest(x([]), courses);
   assert.equal(none.topic, "Structure"); assert.deepEqual(none.lessons, ["u01-01", "u01-02"]);
@@ -87,5 +88,50 @@ test("the topic quest pays only for learning evidence in that topic, today", () 
   const shaky = topicQuest(x([...Array(6)].map(() => at("u01-02", "sba", 0.5))), courses);
   assert.ok(shaky.steps[2].n < TOPIC_STEPS[2].of, "Apply needs 80%, not just answers");
   assert.equal(busy.xp, TOPIC_STEPS.reduce((t, s) => t + s.xp, 0));
+  // one question answered right five times, and options tried until right, fill nothing
+  const same = { lesson: "u01-01", course: "chemistry", question: { id: "one", type: "sba" }, score: 1, correct: true, attempt: 1 };
+  assert.equal(topicQuest(x([...Array(5)].map(() => same)), courses).steps[2].n < TOPIC_STEPS[2].of, true, "the same question five times is one question");
+  const guessed = [...Array(5)].flatMap((_, i) => [at("u01-01", "sba", 0, { question: { id: `g${i}`, type: "sba" } }), at("u01-01", "sba", 1, { question: { id: `g${i}`, type: "sba" }, attempt: 2 })]);
+  assert.ok(topicQuest(x(guessed), courses).steps[2].n < TOPIC_STEPS[2].of, "trying options until right isn't applying it");
+  const cardOnce = { lesson: "u01-02", course: "chemistry", question: { id: "card:1", type: "card" }, score: 1, correct: true, attempt: 1 };
+  assert.equal(topicQuest(x([...Array(10)].map(() => cardOnce)), courses).steps[1].n, 1, "ten recalls of one card are one card");
   void LEVEL;
+});
+
+test("mastery can't be inflated: retries don't count, and a narrow set of questions can't master a chapter", async () => {
+  const { lessonSignals, topicStatus } = await import("../kit/learning/topic-status.js");
+  const t = (i) => new Date(1e12 + i * 1000).toISOString();
+  // three questions, each wrong first and then right on the second try in the same sitting
+  const guess = [0, 1, 2].flatMap((q) => [{ lesson: "L", question: { id: `q${q}` }, score: 0, attempt: 1, at: t(q * 2) }, { lesson: "L", question: { id: `q${q}` }, score: 1, attempt: 2, at: t(q * 2 + 1) }]);
+  const sig = lessonSignals(guess).get("L");
+  assert.equal(sig.latestMean, 0, "the retries are practice, not evidence");
+  assert.notEqual(topicStatus({ done: true, visited: true, sig }), "mastered");
+  // coming back later and getting them right first time does count
+  const later = guess.concat([0, 1, 2].map((q) => ({ lesson: "L", question: { id: `q${q}` }, score: 1, attempt: 1, at: t(100 + q) })));
+  assert.equal(topicStatus({ done: true, visited: true, sig: lessonSignals(later).get("L") }), "mastered");
+  // one question answered right again and again masters nothing
+  const one = [...Array(9)].map((_, i) => ({ lesson: "L", question: { id: "q0" }, score: 1, attempt: 1, at: t(i) }));
+  assert.notEqual(topicStatus({ done: true, visited: true, sig: lessonSignals(one).get("L") }), "mastered");
+  // a chapter needs most of its lessons mastered: mastering one lesson of five doesn't master the chapter
+  assert.notEqual(chapterLevel(["mastered", "new", "new", "new", "new"]).level, "mastered");
+  assert.notEqual(chapterLevel(["mastered", "mastered", "mastered", "practised", "learned"]).level, "mastered", "3 of 5 is not most");
+});
+
+
+test("topic quest rewards use the one XP economy: paid once, through the same ledger as every quest", async () => {
+  const { gameState, claim } = await import("../kit/game/engine.js");
+  const { quests } = await import("../kit/game/quests.js");
+  const now = Date.parse("2026-11-19T15:00:00");
+  const units = [{ id: "u01", n: 1, title: "Atoms", lessons: [{ id: "u01-01", module: "Structure" }, { id: "u01-02", module: "Structure" }] }];
+  const S = { done: { "u01-01": now - 3600e3 }, log: [{ t: now - 3600e3, xp: 10, k: "lesson", id: "u01-01" }], attempts: [] };
+  const courses = [{ slug: "chemistry", site: "SciGradify", name: "Chemistry", units, S }];
+  let game = {};
+  const before = gameState(courses, game, { now });
+  const step = quests(before).find((q) => q.kind === "topic" && q.id === "topic-understand");
+  assert.ok(step?.done, "finishing a lesson in the topic today completes Understand");
+  game = claim(game, step, now);
+  const after = gameState(courses, game, { now });
+  assert.equal(after.xp - before.xp, step.xp, "the step adds exactly its reward to the learner's total");
+  assert.equal(gameState(courses, claim(game, step, now), { now }).xp, after.xp, "claiming again pays nothing");
+  assert.ok(quests(after).find((q) => q.key === step.key).paid, "and shows as claimed");
 });

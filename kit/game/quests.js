@@ -63,8 +63,11 @@ export function topicQuest(x, courses) {
   const c = courses.find((y) => y.slug === l.course), u = (c?.units || []).find((y) => y.lessons.some((z) => z.id === l.id)); if (!u) return null;
   const lessons = u.lessons.filter((z) => (z.module || null) === (l.module || null)), ids = new Set(lessons.map((z) => z.id));
   const topic = l.module || u.title, today = x.attemptsToday.filter((a) => a.course === c.slug && ids.has(a.lesson));
-  const cards = today.filter((a) => a.question?.type === "card" && a.correct).length;
-  const qs = today.filter((a) => a.question?.type !== "card"), mean = qs.length ? qs.reduce((t, a) => t + (Number(a.score) || 0), 0) / qs.length : 0;
+  // distinct cards and questions, first tries only: repeating one question, or trying options until right, fills nothing
+  const firstTries = today.filter((a) => (a.attempt ?? 1) === 1), key = (a) => a.question?.id || a.id;
+  const cards = new Set(firstTries.filter((a) => a.question?.type === "card" && a.correct).map(key)).size;
+  const latest = new Map(); for (const a of firstTries.filter((x) => x.question?.type !== "card")) latest.set(key(a), Number(a.score) || 0);
+  const qs = [...latest.values()], mean = qs.length ? qs.reduce((t, s) => t + s, 0) / qs.length : 0;
   const finished = lessons.filter((z) => c.S?.done?.[z.id] && dayKey(c.S.done[z.id]) === x.day).length;
   const allDone = lessons.every((z) => c.S?.done?.[z.id]);
   const steps = [

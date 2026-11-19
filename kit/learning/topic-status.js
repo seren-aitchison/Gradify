@@ -33,13 +33,17 @@ export function lessonSignals(attempts = []) {
     const g = by.get(a.lesson) || { answers: 0, latest: new Map(), firstAt: Infinity, lastAt: 0 };
     const at = Date.parse(a.at) || 0, prev = g.latest.get(a.question.id);
     g.answers++; g.firstAt = Math.min(g.firstAt, at); g.lastAt = Math.max(g.lastAt, at);
+    // only a first try at a question counts towards how well it's known: trying the options until one is right
+    // (attempt 2, 3… in the same sitting) is practice, never evidence of knowing it. A fresh sitting later is a new
+    // first try, so coming back and getting it right does count.
+    if ((a.attempt ?? 1) > 1) { by.set(a.lesson, g); continue; }
     if (!prev || at >= prev.at) g.latest.set(a.question.id, { at, score: Number(a.score) || 0 });
     by.set(a.lesson, g);
   }
   const out = new Map();
   for (const [id, g] of by) {
     const xs = [...g.latest.values()].map((x) => x.score);
-    out.set(id, { answers: g.answers, questions: xs.length, latestMean: xs.reduce((s, x) => s + x, 0) / xs.length, right: xs.filter((x) => x >= 0.7).length, firstAt: g.firstAt, lastAt: g.lastAt });
+    out.set(id, { answers: g.answers, questions: xs.length, latestMean: xs.length ? xs.reduce((s, x) => s + x, 0) / xs.length : 0, right: xs.filter((x) => x >= 0.7).length, firstAt: g.firstAt, lastAt: g.lastAt });
   }
   return out;
 }

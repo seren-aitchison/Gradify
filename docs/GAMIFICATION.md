@@ -87,6 +87,11 @@ Target my weaknesses had landed on `main`, and no open branch touched `kit/cours
   each course's Home and on the Journey. Nothing pays for time on the page or lessons merely opened.
 - **Mastery levels** (`kit/learning/mastery-map.js`): every chapter is Not started, Learning, Practising, Proficient or
   Mastered, from the lesson statuses in `kit/learning/topic-status.js`; slipping answers flag it Needs revision.
+- **No inflation**: only a first try at a question counts towards mastery and the topic quest (trying options until one
+  is right is practice, not evidence; a fresh sitting later is a new first try). A lesson needs right answers across
+  three or more distinct questions, a chapter needs most of its lessons mastered, and the quest counts distinct
+  questions and cards, so repeating a narrow set can't master anything. Topic quest XP goes through the same `claim`
+  ledger as every quest (`tests/mastery-map.test.mjs`).
 - **The world grows with mastery**: on a subject site's map (`kit/earth/subject-map.js` courseWorld), regions glow by the
   mean mastery of their chapters and mastered chapters become landmarks, so the world reflects learning, not time.
 
