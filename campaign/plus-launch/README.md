@@ -139,7 +139,19 @@ can't reach api.stripe.com). See "Still to verify in Stripe" below.
 
 ## Still to verify in Stripe (before sending)
 
-Use a test-mode copy of the coupon and code first, then the live ones with a real card you refund:
+`scripts/verify-offer-stripe.mjs` checks all of this. Set the key in your own terminal (never in chat or a file in
+the repo):
+
+```bash
+export STRIPE_SECRET_KEY=sk_test_...        # test mode: Stripe Dashboard → Developers → API keys, with "Test mode" on
+node scripts/verify-offer-stripe.mjs --setup-test   # once: GRADIFY48 in test mode, mirroring live
+node scripts/verify-offer-stripe.mjs --simulate     # £5 Checkout, £5 first invoice, test clock +32 days, £10 renewal, past customer refused
+export STRIPE_SECRET_KEY=rk_live_...        # a restricted LIVE key with read access to Coupons, Promotion codes, Prices, Products, Subscriptions
+node scripts/verify-offer-stripe.mjs                # read-only: the live code, coupon, prices and existing subscriptions
+unset STRIPE_SECRET_KEY
+```
+
+The checklist it covers, plus the parts only a person can do:
 
 - [ ] `GRADIFY48` (`promo_1UdWwnEOmpIuKzUMqORXVU9l`) is active, first-time customers only, `expires_at` 1795391999.
 - [ ] Coupon `kwB3RfKh`: £5 off, GBP, duration **once**, applies only to `prod_Ve3V6tEjlR4hfV` (the £10 monthly price).
@@ -149,7 +161,8 @@ Use a test-mode copy of the coupon and code first, then the live ones with a rea
 - [ ] A Pro or Ultra subscriber: Claim/Pricing opens the billing portal; their subscription is untouched.
 - [ ] Abandon Checkout: back on Pricing it says you haven't been charged; the plan stays Free.
 - [ ] Magic link and Google sign-in on a new account and on an existing Free account both show the offer afterwards.
-- [ ] Deploy `billing-checkout` (it now reads `promo`): `supabase functions deploy billing-checkout`.
+- [ ] Deploy `billing-checkout` (it now reads `promo`) and `billing-portal` (wording): `supabase functions deploy billing-checkout billing-portal`.
+  Until then the old function ignores `promo` and Checkout shows **Add promotion code**, so the offer still works by typing the code.
 
 ## Screenshots
 
