@@ -29,7 +29,7 @@ Contents:
 | The specification says | What the repository shows |
 |---|---|
 | "The existing test suite previously passed 413 tests" | `main` has **875** tests passing (`npm test`, `node:test`), and Notes (#116) brings it to 896. They include real-PostgreSQL tests through `@electric-sql/pglite` (`scripts/pg-rehearsal.mjs`) and Playwright checks |
-| "Supabase is the connected backend" | The code is ready for Supabase, but **the live site isn't connected to it**: `gradify.config.js` has an empty URL and key on every branch (`docs/BACKEND-STATUS.md`). Today every learner's data is in their own browser. **Classroom can't work without accounts**, because it's multi-user by nature, so connecting the backend is a prerequisite (§9) |
+| "Supabase is the connected backend" | **Correct.** *(This audit first said the opposite, from the out-of-date top section of `docs/BACKEND-STATUS.md`; corrected 19 November.)* `gradify.config.js` on `main` points at production project **`ezlohntrnassgsbofcfc`** with its publishable key, which is public by design. `docs/BACKEND-LOG.md` records the migrations, backups and row-level security audits up to the goals release on 10 November, when there were 7 accounts. **Migrations `20261113…` to `20261119…` have no record of being applied**, and `20261113120000_client_privileges.sql` says it isn't. **There's no staging project** (D1) |
 | The framework is uncertain (Next.js, static…) | **Static ES modules, no framework, no build step**, served by GitHub Pages from `main` (§2.1) |
 | `study-pack` and `course-tutor` not yet deployed | Still unverified (`docs/BACKEND-STATUS.md`, `docs/AI-TUTOR.md`). The code and tests are in the repository |
 
@@ -141,10 +141,10 @@ This harness is exactly what the specification's row-level security and permissi
 
 These come from the code, not from the specification. Each one needs a decision or a design response before Stage 1.
 
-**F1. The backend isn't connected.** Classroom is the first feature that *only* works with accounts. Before Classroom 1.0:
-- the Supabase project has to exist and be verified (`npm run verify:backend`, questions 2 to 5 in `BACKEND-STATUS.md`);
-- `gradify.config.js` has to be filled in;
-- the pending migrations, including #116's, have to be reviewed against the live history.
+**F1. Production is live, its migration history is behind the repository, and there's no staging project** *(corrected 19 November)*. Classroom is the first feature that *only* works with accounts, and it would be tried against real learners' data if there were nowhere else to test it. Before Classroom 1.0:
+- a **staging** project has to exist, with synthetic accounts only;
+- the live migration history has to be read (with a project-scoped credential, by the owner) and compared with the repository's 23 migrations plus #116's;
+- `docs/BACKEND-STATUS.md` has to be updated: its top section still says the site isn't connected.
 
 **F2. Course answer keys are public.** Graded classroom assessments can't use course questions as they are:
 - anyone can read the answer in the published notes file;
@@ -373,6 +373,21 @@ Every test below runs in the existing `node --test` + pglite harness. Each is a 
 | D6 | An email provider for invitations and notifications | Pick one (for example Resend or Postmark through an Edge Function). Until then: invitation links and codes, push and in-app notifications only |
 | D7 | Data roles | Gradify acts as **processor** for organisation-managed data and **controller** for personal accounts. Needs a DPA template and updates to the privacy page before the first school |
 | D8 | Multi-agent development (spec §24) | Fine within the stage plan, but **one owner for the shared schema and `has_perm()`**: domain migrations land in order, never in parallel |
+
+## 9a. Decisions made (19 November 2026)
+
+| # | Decision |
+|---|---|
+| D1 | **Separate production and staging projects.** Production is `ezlohntrnassgsbofcfc` (from `gradify.config.js` and `docs/BACKEND-LOG.md`). Staging is to be created by the owner, with synthetic accounts only. No production learner data in development, no automatic promotion of migrations, separate credentials, and explicit approval for any production change |
+| D2 | **Independent classrooms are 13+.** Under-13s only through verified organisations, with a DPIA, a data-processing agreement and safeguarding controls. Designed for, not switched on |
+| D3 | **A safeguarding review of the existing community is a prerequisite for school access**, covering: age declarations, profiles, paid tutoring listings, adult/minor contact, messaging, moderation, suspension, visibility, retention, and guardian and organisation controls. Assess the effect on current users before removing anything |
+| D4 | **Anything that contributes to an official grade is server-authoritative:** server-held banks, protected keys, server scoring, attempt records, versions, tamper-resistant submissions, teacher-released grades and an audit trail. Public quizzes stay practice |
+| D5 | **Entitlements in the foundations:** personal and organisation subscriptions, sponsored seats, individual and shared organisation AI allowances, feature entitlements and usage records. Billing later |
+| D6 | **Resend**, behind a server-side, provider-independent `EmailService`. Never from the browser |
+| D7 | **Controller or processor arrangements are set per processing activity and organisation**, not as a blanket rule. Access, retention and deletion are configurable by context. Legal review before any institutional deployment |
+| D8 | **One accountable owner** (Lead / Architect) for the shared schema, migrations, permissions and row-level security. Other agents propose |
+| D9 | **Every learning record carries its evidence class:** `self_reported`, `client_recorded`, `server_assessed`, `teacher_assessed`, `formally_verified`. Self-reported activity is never shown as a verified result |
+| D10 | **Personal learning stays personal.** Organisation membership never exposes unrelated personal history, notes, independent study or conversations. Access is scoped to authorised organisational activity |
 
 ## 10. Stage plan for the first release (Classroom 1.0)
 
