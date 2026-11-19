@@ -14,6 +14,7 @@
 // openUnits(), setOpen(id, open), search(raw), searchNotes(raw) → Promise, suggestions(), nQ(id)?, nCards(id)? }
 
 import { STATUS } from "../learning/topic-status.js";
+import { createCommandPalette } from "../ui/palette.js";
 
 /** A unit's lessons in modules: the unit's own module list when it covers every lesson, else runs of l.module. */
 export function moduleGroups(u, byId) {
@@ -98,59 +99,16 @@ export function createOutline(api) {
 }
 
 // ---------- the command palette ----------
+// the shared palette (kit/ui/palette.js), given this course's sources: the same component the hub and subject sites use
 export function createPalette(api) {
-  const { esc, ic } = api;
-  let box = null, list = null, input = null, sel = 0, hits = [], filter = "all", seq = 0, back = null;
   const KINDS = [["all", "All"], ["lesson", "Lessons"], ["topic", "Units & modules"], ["note", "In the notes"], ["lab", api.labLabel || "Labs"], ["action", "Actions"]].filter(([k]) => k !== "lab" || api.hasLabs);
-  const ICON = { lesson: "play", topic: "flag", note: "sparkles", lab: "cube", action: "bolt", recent: "clock", mark: "star", next: "play" };
-  const row = (h, i) => `<a role="option" id="cx-o${i}" href="${h.href || "#"}" class="cx-o${i === sel ? " on" : ""}" data-i="${i}" aria-selected="${i === sel}">${h.st ? dot(h.st) : `<span class="cx-oi">${ic(ICON[h.type] || "search")}</span>`}<span class="cx-ot"><b>${h.html || esc(h.t)}</b>${h.k ? `<small>${esc(h.k)}</small>` : ""}</span>${h.badge ? `<em>${esc(h.badge)}</em>` : ""}</a>`;
-  function paint(groups) {
-    hits = groups.flatMap((g) => g.items);
-    sel = Math.min(sel, Math.max(0, hits.length - 1));
-    let i = 0;
-    list.innerHTML = hits.length ? groups.filter((g) => g.items.length).map((g) => `<div class="cx-og"><p>${esc(g.title)}</p>${g.items.map((h) => row(h, i++)).join("")}</div>`).join("") : `<p class="cx-none">Nothing matches “${esc(input.value)}”. Try a key term, or fewer words.</p>`;
-    input.setAttribute("aria-activedescendant", hits.length ? `cx-o${sel}` : "");
-  }
-  function run() {
-    const raw = input.value.trim(), my = ++seq;
-    if (raw.length < 2) { paint(api.suggestions()); return; }
-    const want = (h) => filter === "all" || h.type === filter;
-    const quick = api.search(raw).filter(want);
-    const groupsOf = (xs) => [["Lessons", "lesson"], ["Units and modules", "topic"], ["In the notes", "note"], [api.labLabel || "Labs", "lab"], ["Actions", "action"]].map(([title, type]) => ({ title, items: xs.filter((h) => h.type === type).slice(0, type === "lesson" ? 8 : 6) }));
-    paint(groupsOf(quick));
-    if (filter === "all" || filter === "note") api.searchNotes(raw).then((notes) => { if (my === seq && box) paint(groupsOf([...quick, ...notes.filter(want)])); }).catch(() => {});
-  }
-  function move(d) { if (!hits.length) return; sel = (sel + d + hits.length) % hits.length; list.querySelectorAll(".cx-o").forEach((a) => { const on = Number(a.dataset.i) === sel; a.classList.toggle("on", on); a.setAttribute("aria-selected", on); if (on) a.scrollIntoView({ block: "nearest" }); }); input.setAttribute("aria-activedescendant", `cx-o${sel}`); }
-  function choose(i) { const h = hits[i]; if (!h) return; close(); if (h.run) h.run(); else if (h.href) location.hash = h.href.replace(/^#/, ""); }
-  function open(q = "") {
-    if (box) { input.focus(); return; }
-    back = document.activeElement;
-    box = document.createElement("div"); box.className = "cx-pal";
-    box.innerHTML = `<div class="cx-palbox" role="dialog" aria-modal="true" aria-label="Search ${esc(api.name)}">
-      <label class="cx-palin">${ic("search")}<input type="text" role="combobox" aria-expanded="true" aria-controls="cx-pallist" aria-autocomplete="list" autocomplete="off" spellcheck="false" placeholder="Search lessons, topics and key terms…"><kbd>Esc</kbd></label>
-      <div class="cx-palf" role="group" aria-label="Show">${KINDS.map(([k, t]) => `<button type="button" data-k="${k}" aria-pressed="${k === filter}">${t}</button>`).join("")}</div>
-      <div class="cx-pall" id="cx-pallist" role="listbox"></div>
-      <p class="cx-palfoot"><span><kbd>↑</kbd><kbd>↓</kbd> move</span><span><kbd>↵</kbd> open</span><span><kbd>/</kbd> or <kbd>${/Mac|iPhone|iPad/.test(navigator.platform) ? "⌘" : "Ctrl"}</kbd><kbd>K</kbd> from anywhere</span></p></div>`;
-    document.body.append(box); document.documentElement.classList.add("cx-lock");
-    list = box.querySelector(".cx-pall"); input = box.querySelector("input"); sel = 0;
-    input.value = q; input.focus(); run();
-    input.addEventListener("input", () => { sel = 0; run(); });
-    input.addEventListener("keydown", (e) => {
-      if (e.key === "ArrowDown") { e.preventDefault(); move(1); } else if (e.key === "ArrowUp") { e.preventDefault(); move(-1); }
-      else if (e.key === "Enter") { e.preventDefault(); choose(sel); } else if (e.key === "Escape") { e.preventDefault(); close(); }
-      else if (e.key === "Tab") { e.preventDefault(); const i = KINDS.findIndex(([k]) => k === filter); filter = KINDS[(i + (e.shiftKey ? -1 : 1) + KINDS.length) % KINDS.length][0]; box.querySelectorAll("[data-k]").forEach((b) => b.setAttribute("aria-pressed", b.dataset.k === filter)); sel = 0; run(); }
-    });
-    box.querySelectorAll("[data-k]").forEach((b) => b.addEventListener("click", () => { filter = b.dataset.k; box.querySelectorAll("[data-k]").forEach((x) => x.setAttribute("aria-pressed", x === b)); sel = 0; run(); input.focus(); }));
-    list.addEventListener("click", (e) => { const a = e.target.closest(".cx-o"); if (!a) return; e.preventDefault(); choose(Number(a.dataset.i)); });
-    list.addEventListener("mousemove", (e) => { const a = e.target.closest(".cx-o"); if (a && Number(a.dataset.i) !== sel) { sel = Number(a.dataset.i); move(0); } });
-    box.addEventListener("click", (e) => { if (e.target === box) close(); });
-  }
-  function close() { if (!box) return; box.remove(); box = null; document.documentElement.classList.remove("cx-lock"); back?.focus?.({ preventScroll: true }); }
-  // "/" or Ctrl/⌘ K anywhere, unless typing
-  addEventListener("keydown", (e) => {
-    const typing = e.target.closest?.("input, textarea, select, [contenteditable]");
-    if ((e.key === "k" || e.key === "K") && (e.metaKey || e.ctrlKey) && !e.altKey) { e.preventDefault(); box ? close() : open(); }
-    else if (e.key === "/" && !typing && !e.metaKey && !e.ctrlKey && !e.altKey && !document.querySelector(".co-modal, .gd-zoom")) { e.preventDefault(); open(); }
+  return createCommandPalette({
+    name: api.name, placeholder: "Search lessons, topics and key terms…", kinds: KINDS,
+    groups: [["Lessons", "lesson", 8], ["Units and modules", "topic", 6], ["In the notes", "note", 6], [api.labLabel || "Labs", "lab", 6], ["Actions", "action", 6]],
+    icons: { lesson: "play", topic: "flag", note: "sparkles", lab: "cube", action: "bolt", recent: "clock", mark: "star", next: "play" },
+    lead: (h) => (h.st ? dot(h.st) : ""),
+    search: api.search,
+    searchMore: (raw, filter) => (filter === "all" || filter === "note" ? api.searchNotes(raw) : null),
+    suggestions: api.suggestions,
   });
-  return { open, close, get isOpen() { return Boolean(box); } };
 }

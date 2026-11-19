@@ -1,5 +1,8 @@
 # Learning navigation and progress intelligence
 
+The interface components these use (toasts, the save indicator, the palette, shortcuts, the resource switcher, split
+screen, wayfinding) are the shared Gradify UX system: see [DESIGN-SYSTEM.md](DESIGN-SYSTEM.md).
+
 Every Gradify course (all sites that call `mountCourse`, `kit/course/course.js`) shares one navigation and progress
 system. The aim: a learner opens a course, knows where they are, sees what needs work, and is learning in one click.
 
