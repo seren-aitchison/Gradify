@@ -33,7 +33,7 @@ import { gate, lockedHtml } from "../data/limits.js";
 import { mapsSectionHtml, wireMaps } from "../maps/view.js";
 import { lessonTimer, addTime, MIN_LOG_MS, minutesPerLesson } from "./lesson-time.js";
 import { hydrate as glassIcons } from "../core/glass-icons.js";
-import { diagramsFor, diagramForCard, glassDiagram } from "../core/glass-diagrams.js";
+import { diagramsFor, diagramForCard, glassDiagram, minisFor, miniCard } from "../core/glass-diagrams.js";
 import { mountRevalidation } from "./revalidation.js";
 import { tutorEvent } from "../intel/experiments.js";
 import { scoreFeedback } from "../assess/tutor.js";
@@ -607,7 +607,11 @@ export function mountCourse(root, cfg) {
   const recapDiagrams = (N) => lessonCards(N).filter((x) => x.recap);
   const lessonDiagrams = (N) => {
     const at = new Map(); for (const x of lessonCards(N)) if (!x.recap) at.set(x.d.at, [...(at.get(x.d.at) || []), x]);
-    return lessonHtml(N, { after: (i) => (at.get(i) || []).map((x) => glassDiagram(x.d, x.opts)).join("") });
+    // and the small cards (Quick check, Numbers to know) dotted through the sections, never asking a question the
+    // Recap's Test yourself card asks too
+    const recallQs = lessonCards(N).flatMap((x) => (x.d.kind === "recall" ? x.d.items.map((it) => it.q.replace(/…$/, "")) : []));
+    const minis = new Map(); for (const m of minisFor(N, { skipQ: recallQs })) minis.set(m.at, [...(minis.get(m.at) || []), m]);
+    return lessonHtml(N, { after: (i) => (at.get(i) || []).map((x) => glassDiagram(x.d, x.opts)).join("") + (minis.get(i) || []).map(miniCard).join("") });
   };
   const recapHtml = (N) => { const xs = recapDiagrams(N); return xs.length ? `<p class="co-recapintro">Before you read the recap, see what you can remember: each card starts covered. Tap a band, or press Enter, to check yourself.</p>${xs.map((x) => glassDiagram(x.d, { ...x.opts, quiz: true })).join("")}` : ""; };
   const mapOpts = (l) => ({ id: `${cfg.slug}:${l.id}`, kicker: `${cfg.name || cfg.site} · ${l.title}`, site: cfg.site, store, labTitle: (x) => ixs.find((i) => i.id === x)?.title || x });

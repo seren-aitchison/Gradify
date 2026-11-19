@@ -104,7 +104,7 @@ export function diagramsFor(L, { max = 5, skip = [] } = {}) {
   let heading = null, headingAt = -1;
   blocks.forEach((b, i) => {
     if (b.t === "h") { heading = b.x; headingAt = i; return; }
-    if (b.t === "ex" && b.steps.length >= 2) out.push({ kind: "flow", at: i, title: cut(b.x, 90), items: b.steps.slice(0, 6).map((s) => cut(s, 240)), weight: 5 });
+    if (b.t === "ex" && b.steps.length >= 2) out.push({ kind: "flow", ex: true, at: i, title: cut(b.x, 90), items: b.steps.slice(0, 6).map((s) => cut(s, 240)), weight: 5 });
     else if (b.t === "eq" && b.rows.length && !b.rows.some(([f]) => MATHS.test(plain(f)))) out.push({ kind: "facts", at: i, title: plain(heading || "Key facts"), items: b.rows.slice(0, 4).map(([f, m]) => ({ term: cut(f, 100), def: m ? cut(m, 160) : "" })), weight: 3.4 });
     else if (b.t === "eq" && b.rows.length) out.push({ kind: "formula", at: i, title: plain(heading || "Formulas"), rows: b.rows.slice(0, 3).map(([f, m]) => ({ f: plain(f), m: m ? cut(m, 140) : "" })), formula: plain(b.rows[0][0]), more: Math.max(0, b.rows.length - 3), weight: 4.5 });
     else if (b.t === "pit") {
@@ -419,7 +419,7 @@ function bodyHub(d, { map = false, cycle = false } = {}) {
     if (map) return `<li><button type="button" class="gd-item gd-node" data-jump="co-s${i + 1}" style="--c:${c}">${num(i, c)}<span>${esc(x)}</span></button></li>`;
     const note = d.notes?.[i];
     const words = note ? `<b class="gd-k">${esc(x)}</b>${A(note, "span", "gd-sub")}` : cycle && i === 0 ? `<b class="gd-k">${esc(x)}</b>` : `<b class="gd-k">${A(x)}</b>`;
-    return `<li class="gd-item" style="--c:${c}">${cycle ? `${num(i, c)}<div>${words}</div>` : words}</li>`;
+    return `<li class="gd-item"${note ? " data-gd-row" : ""} style="--c:${c}">${cycle ? `${num(i, c)}<div>${words}</div>` : words}</li>`;
   }).join("");
   const core = cycle ? "" : `<p class="gd-core">${esc(d.title)}</p>`;
   return `<div class="gd-hub${cycle ? " gd-cyc" : ""}">${core}<${map || cycle ? "ol" : "ul"} class="gd-branches${d.items.length === 4 ? " gd-four" : ""}">${li}</${map || cycle ? "ol" : "ul"}>${cycle ? `<p class="gd-loop"><span aria-hidden="true">↻</span> then back to 1, and round again</p>` : ""}</div>`;
@@ -427,15 +427,25 @@ function bodyHub(d, { map = false, cycle = false } = {}) {
 function bodyFlow(d) {
   return `<ol class="gd-flow${d.items.length <= 3 ? " gd-row" : ""}">${d.items.map((s, i) => `<li style="--c:${ink(i)}">${num(i, ink(i))}<p class="gd-item">${A(s)}</p></li>`).join("")}</ol>`;
 }
+// the dates on a true scale: how far apart they really are, and the gap in years between each
+function timeScale(d) {
+  const ys = d.items.map((it) => Number(it.year)), lo = Math.min(...ys), hi = Math.max(...ys), span = hi - lo;
+  if (!(span > 0) || ys.length < 2) return "";
+  const at = (y) => (4 + ((y - lo) / span) * 92).toFixed(1);
+  const gaps = ys.slice(1).map((y, i) => { const g = y - ys[i]; return g > 0 && (y - ys[i]) / span > 0.14 ? `<span class="gd-gap" style="left:${((Number(at(ys[i])) + Number(at(y))) / 2).toFixed(1)}%">${g} year${g > 1 ? "s" : ""}</span>` : ""; }).join("");
+  // a date's label shows unless it would sit on top of the one before
+  const far = ys.map((y, i) => !i || (y - ys[i - 1]) / span > 0.09);
+  return `<div class="gd-scale" role="img" aria-label="${esc(`To scale: ${ys.join(", ")}, ${span} years from first to last`)}"><span class="gd-scalek" aria-hidden="true">To scale</span><i class="gd-axis2"></i>${ys.map((y, i) => `<span class="gd-tick" style="left:${at(y)}%;--c:${ink(i)}">${far[i] ? `<b>${y}</b>` : ""}</span>`).join("")}${gaps}</div>`;
+}
 function bodyTimeline(d) {
-  return `<ol class="gd-time">${d.items.map((it, i) => `<li style="--c:${ink(i)}"><b class="gd-year gd-k">${esc(it.year)}</b><i class="gd-dot" aria-hidden="true"></i>${A(it.text, "p", "gd-item")}</li>`).join("")}</ol>`;
+  return `${timeScale(d)}<ol class="gd-time">${d.items.map((it, i) => `<li style="--c:${ink(i)}"><b class="gd-year gd-k">${esc(it.year)}</b><i class="gd-dot" aria-hidden="true"></i>${A(it.text, "p", "gd-item")}</li>`).join("")}</ol>`;
 }
 function bodyFormula(d) {
   const rows = d.rows?.length ? d.rows : [{ f: d.formula, m: d.title }];
   return `<div class="gd-frows${rows.length === 1 ? " gd-one" : ""}">${rows.map((r, i) => `<div class="gd-item gd-frow" style="--c:${ink(i)}"><code class="gd-f gd-k${r.m ? " gd-a" : ""}">${esc(r.f)}</code>${r.m ? `<p class="gd-m">${esc(r.m)}</p>` : ""}</div>`).join("")}</div>${d.more ? `<p class="gd-more">+ ${d.more} more formula${d.more > 1 ? "s" : ""} in the notes</p>` : ""}`;
 }
 function bodyCompare(d) {
-  const col = (k) => `<section class="gd-item gd-col" style="--c:${ink(k)}"><b class="gd-colh">${esc(d.items[k])}</b>${d.notes?.[k] ? A(d.notes[k], "p") : ""}</section>`;
+  const col = (k) => `<section class="gd-item gd-col"${d.notes?.[k] ? " data-gd-row" : ""} style="--c:${ink(k)}"><b class="gd-colh">${esc(d.items[k])}</b>${d.notes?.[k] ? A(d.notes[k], "p") : ""}</section>`;
   return `<div class="gd-cmp">${col(0)}<span class="gd-vs" aria-hidden="true">vs</span>${col(1)}</div>`;
 }
 function bodyPath(d) {
@@ -446,14 +456,14 @@ function bodyPath(d) {
 }
 function bodyMistake(d) {
   if (!d.right) return `<div class="gd-item gd-warn" style="--c:${BAD}"><b class="gd-ph">${tick(BAD, "✗")} Watch for this</b><p>${esc(d.wrong)}</p></div>`;
-  return `<div class="gd-panels gd-two"><section class="gd-item" style="--c:${BAD}"><b class="gd-ph">${tick(BAD, "✗")} The mistake</b><p>${esc(d.wrong)}</p></section>
-    <section class="gd-item" style="--c:${GOOD}"><b class="gd-ph">${tick(GOOD)} What's true instead</b>${A(d.right, "p")}</section></div>`;
+  return `<div class="gd-panels gd-two"><section class="gd-item" data-gd-wrong style="--c:${BAD}"><b class="gd-ph">${tick(BAD, "✗")} The mistake</b><p>${esc(d.wrong)}</p></section>
+    <section class="gd-item" data-gd-right style="--c:${GOOD}"><b class="gd-ph">${tick(GOOD)} What's true instead</b>${A(d.right, "p")}</section></div>`;
 }
 function bodyPanels(d, heads, { answerFrom = 0, cols = 3 } = {}) {
   return `<div class="gd-panels gd-c${cols}">${d.items.map((t, i) => `<section class="gd-item" style="--c:${ink(i * 2)}"><b class="gd-ph">${esc(heads[i])}</b>${i >= answerFrom ? A(t, "p") : `<p>${esc(t)}</p>`}</section>`).join("")}</div>`;
 }
 function bodyDefs(d) {
-  return `<dl class="gd-defs">${d.items.map((it, i) => `<div class="gd-item" style="--c:${ink(i)}"><dt class="gd-k">${esc(it.term)}</dt>${it.def ? A(it.def, "dd") : ""}</div>`).join("")}</dl>`;
+  return `<dl class="gd-defs">${d.items.map((it, i) => `<div class="gd-item"${it.def ? " data-gd-row" : ""} style="--c:${ink(i)}"><dt class="gd-k">${esc(it.term)}</dt>${it.def ? A(it.def, "dd") : ""}</div>`).join("")}</dl>`;
 }
 function bodyRows(d, kind) {
   const EV = { established: GOOD, contested: WARN, hypothetical: "#7c3aed" }, EVL = { established: "Established", contested: "Contested", hypothetical: "Hypothetical" };
@@ -462,7 +472,7 @@ function bodyRows(d, kind) {
     const c = kind === "evidence" ? (EV[it.status] || ink(i)) : ink(i);
     if (kind === "summary") return `<li class="gd-item" style="--c:${c}">${tick(c)}<p>${cued(it)}</p></li>`;
     if (kind === "points") return `<li class="gd-item" style="--c:${c}">${num(i, c)}<p>${cued(it)}</p></li>`;
-    if (kind === "evidence") return `<li class="gd-item" style="--c:${c}"><span class="gd-pill gd-a">${esc(EVL[it.status] || it.status)}</span><p>${esc(it.text)}</p></li>`;
+    if (kind === "evidence") return `<li class="gd-item" data-status="${esc(it.status)}" style="--c:${c}"><span class="gd-pill gd-a">${esc(EVL[it.status] || it.status)}</span><p>${esc(it.text)}</p></li>`;
     return `<li class="gd-item gd-qa" style="--c:${c}">${tick(c, "?")}<div><p class="gd-q">${esc(it.q)}</p>${A(it.a, "p", "gd-k")}</div></li>`;
   }).join("")}</${tag}>`;
 }
@@ -497,6 +507,25 @@ function firstLetters(d) {
   return new Set(first).size >= Math.ceil(first.length * 0.75) ? first.join(" · ") : "";
 }
 
+// the ways to work with a card, besides reading it: each one a button in its footer
+//   quiz   Cover & recall: every answer hidden; reveal them one by one
+//   step   Step through: one step at a time, the ones still to come hidden, so you predict each next step
+//   match  Match up: the meanings shuffled into a pile; put each with its term
+//   pick   Which is true?: the mistake and the truth, side by side; choose before you see which is which
+//   rate   Rate the evidence: say how strong each claim is before you see it
+const MODE_LABEL = { quiz: "Cover & recall", step: "Step through", match: "Match up", pick: "Which is true?", rate: "Rate the evidence" };
+function modesOf(d, body) {
+  const m = [];
+  if ((d.kind === "flow" || d.kind === "cycle") && d.items?.length >= 2) m.push("step");
+  if ((body.match(/data-gd-row/g) || []).length >= 2) m.push("match");
+  if (d.kind === "mistake" && d.right) m.push("pick");
+  if (d.kind === "evidence" && d.items?.length >= 2) m.push("rate");
+  if (/class="[^"]*\bgd-a\b/.test(body)) m.push("quiz");
+  return m;
+}
+const kindName = (d) => (d.kind === "flow" && d.ex ? "Worked example" : KIND[d.kind] || "Diagram");
+const tipOf = (d) => (d.kind === "flow" && d.ex ? "Work it through yourself: step through it one step at a time, and say what comes next before you see it." : TIP[d.kind] || "");
+
 /**
  * A diagram card, as HTML: the glass look (a coloured tile behind, a rainbow edge) around the diagram as real text.
  *   size     "md" (a lesson or panel) or "sm" (a flashcard or detail panel: no header actions, no footer)
@@ -507,51 +536,217 @@ function firstLetters(d) {
 export function glassDiagram(d, { size = "md", seed = d?.title, caption = true, quiz = false, n = 0, of = 0, id = "" } = {}) {
   if (!d) return "";
   const h = hash(seed || d.kind), [a, b] = PAIRS[h % PAIRS.length], turn = ((h >> 4) % 2 ? 1 : -1) * (0.8 + ((h >> 6) % 3) * 0.4);
-  const body = cardBody(d), full = caption && size !== "sm";
-  const answers = (body.match(/class="[^"]*\bgd-a\b/g) || []).length, kind = KIND[d.kind] || "Diagram";
+  const body = cardBody(d), full = caption && size !== "sm", kind = kindName(d);
+  const modes = full ? modesOf(d, body) : [], covered = quiz && modes.includes("quiz");
+  const answers = (body.match(/class="[^"]*\bgd-a\b/g) || []).length;
   // the title, unless the card already shows it (a structure's middle, a mistake's own words) or it only repeats the kind
   const title = !d.title || d.title.toLowerCase() === kind.toLowerCase() || ["hub", "map", "mistake"].includes(d.kind) ? "" : d.title;
   const fl = full ? firstLetters(d) : "";
   const head = caption ? `<figcaption class="gd-head"><span class="gd-kind">${iconOf(d.kind)}${esc(kind)}</span>${title ? `<span class="gd-title">${esc(title)}</span>` : ""}${n && of ? `<span class="gd-num">${n} of ${of}</span>` : ""}</figcaption>` : "";
-  const foot = full ? `<div class="gd-foot"><p class="gd-tip">${esc(TIP[d.kind] || "")}${fl ? ` <span class="gd-cue">First letters: <b>${esc(fl)}</b></span>` : ""}</p>
-      <div class="gd-acts">${answers ? `<button type="button" class="gd-btn" data-gd-quiz aria-pressed="${quiz}">${quiz ? "Show all" : "Cover &amp; recall"}</button><span class="gd-score" aria-live="polite">${quiz ? `0 of ${answers} revealed` : ""}</span>` : ""}<button type="button" class="gd-btn gd-ghost" data-gd-zoom aria-label="Open this diagram full size">Expand</button></div></div>` : "";
-  let html = `<figure class="gd gd-${size}${quiz && answers && full ? " quiz" : ""}"${id ? ` id="${esc(id)}"` : ""} data-kind="${d.kind}" style="--a:${a};--b:${b};--tw:${turn.toFixed(1)}deg">
+  const btn = (m) => `<button type="button" class="gd-btn${m === modes[0] ? " gd-main" : ""}" data-gd-mode="${m}" aria-pressed="${covered && m === "quiz"}">${covered && m === "quiz" ? "Show all" : esc(MODE_LABEL[m])}</button>`;
+  const foot = full ? `<div class="gd-foot"><p class="gd-tip">${esc(tipOf(d))}${fl ? ` <span class="gd-cue">First letters: <b>${esc(fl)}</b></span>` : ""}</p>
+      <div class="gd-acts">${modes.map(btn).join("")}<button type="button" class="gd-btn gd-ghost" data-gd-zoom aria-label="Open this diagram full size">Expand</button></div>
+      <p class="gd-score" aria-live="polite">${covered ? `0 of ${answers} revealed` : ""}</p></div>` : "";
+  let html = `<figure class="gd gd-${size}${covered ? " quiz" : ""}"${covered ? ' data-mode="quiz"' : ""}${id ? ` id="${esc(id)}"` : ""} data-kind="${d.kind}" style="--a:${a};--b:${b};--tw:${turn.toFixed(1)}deg">
     <span class="gd-back" aria-hidden="true"></span><div class="gd-card">${head}<div class="gd-body">${body}</div>${foot}</div></figure>`;
   // covered from the start: each answer is a button until it's revealed
-  if (quiz && answers && full) html = html.replace(/class="([^"]*\bgd-a\b[^"]*)"/g, `role="button" tabindex="0" aria-label="Hidden answer: reveal" class="$1"`);
+  if (covered) html = html.replace(/class="([^"]*\bgd-a\b[^"]*)"/g, `role="button" tabindex="0" aria-label="Hidden answer: reveal" class="$1"`);
   return html;
 }
 
-// ---------- in the browser: Cover & recall, and full size, for every card on the page (one listener for all) ----------
-function setQuiz(fig, on) {
-  fig.classList.toggle("quiz", on);
-  fig.querySelectorAll(".gd-a").forEach((el) => {
-    el.classList.remove("seen");
-    if (on) { el.setAttribute("role", "button"); el.tabIndex = 0; el.setAttribute("aria-label", "Hidden answer: reveal"); }
-    else { el.removeAttribute("role"); el.removeAttribute("tabindex"); el.removeAttribute("aria-label"); }
-  });
-  const btn = fig.querySelector("[data-gd-quiz]");
-  if (btn) { btn.setAttribute("aria-pressed", String(on)); btn.textContent = on ? "Show all" : "Cover & recall"; }
-  score(fig);
-  if (on) fig.querySelector(".gd-a")?.focus({ preventScroll: true });
+// ---------- the small cards, dotted through the notes ----------
+// Numbers to know: the values a section turns on (a resting potential, a dose, a percentage, a year), each in its own
+// sentence from the notes, with the number covered to recall. Quick check: one of the lesson's own questions, beside
+// the section it tests. Every word is the notes' own; a section gets one at most, and a lesson four at most.
+const UNIT = "%|°C|°F|mV|µV|mmol\\/L|µmol\\/L|mmHg|kPa|Pa|mg\\/kg|mg\\/day|mg|µg|mcg|ng|g\\/L|g\\/dL|kg|g|mL\\/min|mL|ml|L|ms|s|min|minutes|hours|hrs|h|days|weeks|months|years|Hz|kHz|nm|µm|mm|cm|km|m|bpm|breaths\\/min|kcal|kJ|J|W|kW|V|A|mol|M|K|dB|units?|times|fold";
+const NUM = new RegExp(`(?<![\\w.^_/])([−–-]?\\d+(?:[.,]\\d+)?(?:\\s?(?:–|-|to)\\s?[−–-]?\\d+(?:[.,]\\d+)?)?)\\s?(${UNIT})(?![\\w/])`);
+const words = (t) => String(t).split(/\s+/).filter(Boolean);
+function numberLine(sentence) {
+  const m = sentence.match(NUM); if (!m) return null;
+  // the clause the number sits in: from the last ; or : before it, to the next ; after it (or the bracket it's in)
+  const before = sentence.slice(0, m.index).split(/[;:]\s/).pop().trim();
+  let after = sentence.slice(m.index + m[0].length).split(/;\s/)[0].trim();
+  const open = (before.match(/\(/g) || []).length > (before.match(/\)/g) || []).length;
+  if (open && after.includes(")")) after = after.slice(0, after.indexOf(")") + 1);
+  else if (!open && /\s\(/.test(after)) after = after.slice(0, after.search(/\s\(/));
+  const bw = words(before), aw = words(after), keepB = bw.slice(-9), keepA = aw.slice(0, 9);
+  return { pre: `${bw.length > 9 ? "…" : ""}${keepB.join(" ")}`, n: m[0].trim(), post: `${keepA.join(" ")}${aw.length > 9 ? "…" : ""}` };
 }
+const sectionsOf = (L) => {
+  const out = []; let cur = null;
+  (L?.blocks || []).forEach((b, i) => {
+    if (b.t === "h") { cur = { heading: b.x, blocks: [] }; out.push(cur); return; }
+    if (!cur) { cur = { heading: null, blocks: [] }; out.push(cur); }
+    cur.blocks.push(i);
+  });
+  return out.filter((s) => s.blocks.length);
+};
+const textOf = (b) => (b.t === "ul" ? b.items.join(" ") : b.t === "eq" ? b.rows.map((r) => r.join(" ")).join(" ") : b.t === "ex" ? [b.x, ...b.steps].join(" ") : b.x || "");
+const bag = (t) => new Set((plain(t).toLowerCase().match(/[a-z]{5,}/g) || []));
+
+/** The small cards for a lesson: [{ kind: "numbers" | "check", at, … }], `at` the block each sits beside. */
+export function minisFor(L, { skipQ = [], max = 4 } = {}) {
+  const secs = sectionsOf(L), cards = (L?.cards || []).filter(([q]) => !skipQ.some((x) => x && plain(q).startsWith(x)));
+  const used = new Set(), out = [];
+  secs.forEach((sec, k) => {
+    const blocks = sec.blocks.map((i) => L.blocks[i]);
+    // numbers: one line for each sentence that holds one, from the section's prose and lists
+    const lines = [], seen = new Set();
+    for (const b of blocks) {
+      if (!["p", "ul", "key"].includes(b.t)) continue;
+      for (const piece of b.t === "ul" ? b.items : [b.x]) for (const s of sentences(piece)) {
+        const l = numberLine(s); if (l && !seen.has(l.n)) { seen.add(l.n); lines.push(l); }
+      }
+    }
+    const nums = lines.length >= 2 ? { kind: "numbers", title: plain(sec.heading || L.title || ""), items: lines.slice(0, 3) } : null;
+    // a question: the lesson's card that shares most words with this section
+    const sb = bag(blocks.map(textOf).join(" "));
+    let best = -1, score = 1;
+    cards.forEach(([q, a], j) => { if (used.has(j)) return; const s = [...bag(`${q} ${a}`)].filter((w) => sb.has(w)).length; if (s > score) { score = s; best = j; } });
+    const check = best >= 0 ? { kind: "check", q: cut(cards[best][0], 200), a: cut(cards[best][1], 260), j: best } : null;
+    // one a section, taking turns, so the lesson gets a mix
+    const pickNow = (k % 2 ? [check, nums] : [nums, check]).find(Boolean);
+    if (!pickNow) return;
+    if (pickNow.kind === "check") used.add(pickNow.j);
+    // beside the section's first paragraph, so the words around it wrap round it
+    const first = sec.blocks.find((i) => L.blocks[i].t === "p") ?? sec.blocks[0];
+    const { j, ...m } = pickNow;
+    out.push({ ...m, at: first });
+  });
+  return out.slice(0, max);
+}
+const MINI_ICON = { numbers: '<path d="M5 9h14M5 15h14M10 4 8 20M16 4l-2 16"/>', check: ICON.recall };
+/** A small card, as HTML: always starts covered, so it asks before it tells. */
+export function miniCard(m) {
+  if (!m) return "";
+  const h = hash(m.q || m.title || m.kind), [a, b] = PAIRS[h % PAIRS.length], c = INK[h % INK.length];
+  const btn = (label) => `role="button" tabindex="0" aria-label="${label}"`;
+  const head = (name, extra = "") => `<figcaption class="gd-mhead"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${MINI_ICON[m.kind]}</svg><span>${name}</span>${extra}</figcaption>`;
+  if (m.kind === "check") return `<figure class="gd gd-mini quiz" data-mode="quiz" data-kind="check" style="--a:${a};--b:${b};--c:${c}">${head("Quick check")}
+    <p class="gd-mq">${esc(m.q)}</p><p class="gd-a gd-ma" ${btn("Hidden answer: reveal")}>${esc(m.a)}</p><p class="gd-mhint">Answer it in your head, then tap the band.</p></figure>`;
+  return `<figure class="gd gd-mini quiz" data-mode="quiz" data-kind="numbers" style="--a:${a};--b:${b};--c:${c}">${head("Numbers to know", `<button type="button" class="gd-mbtn" data-gd-mode="quiz" aria-pressed="true">Show all</button>`)}
+    <ul class="gd-nums">${m.items.map((l, i) => `<li style="--c:${INK[(h + i) % INK.length]}">${esc(l.pre)} <span class="gd-a gd-numa" ${btn("Hidden number: reveal")}>${esc(l.n)}</span> ${esc(l.post)}</li>`).join("")}</ul>
+    <p class="gd-mhint">What's each number? Say it, then tap to check.</p></figure>`;
+}
+
+// ---------- in the browser: the modes and full size, for every card on the page (one listener for all) ----------
+const say = (fig, t) => { const o = fig.querySelector(".gd-score"); if (o) o.textContent = t; };
+const asButton = (el, label) => { el.setAttribute("role", "button"); el.tabIndex = 0; el.setAttribute("aria-label", label); };
+const unButton = (el) => { el.removeAttribute("role"); el.removeAttribute("tabindex"); el.removeAttribute("aria-label"); };
+const cueOf = (row) => (row.querySelector("dt, .gd-colh, .gd-k")?.textContent || "").trim();
+const shuffle = (xs) => { const a = [...xs]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } if (a.length > 1 && a.every((x, i) => x === xs[i])) a.push(a.shift()); return a; };
+
 function score(fig) {
-  const out = fig.querySelector(".gd-score"); if (!out) return;
+  if (fig.dataset.mode !== "quiz") return;
   const all = fig.querySelectorAll(".gd-a").length, seen = fig.querySelectorAll(".gd-a.seen").length;
-  out.textContent = !fig.classList.contains("quiz") ? "" : seen < all ? `${seen} of ${all} revealed` : `All ${all} revealed. How many did you know?`;
+  say(fig, seen < all ? `${seen} of ${all} revealed` : `All ${all} revealed. How many did you know?`);
+}
+const MODES = {
+  quiz: {
+    on(fig) { fig.classList.add("quiz"); fig.querySelectorAll(".gd-a").forEach((el) => { el.classList.remove("seen"); asButton(el, "Hidden answer: reveal"); }); score(fig); fig.querySelector(".gd-a")?.focus({ preventScroll: true }); },
+    off(fig) { fig.classList.remove("quiz"); fig.querySelectorAll(".gd-a").forEach((el) => { el.classList.remove("seen"); unButton(el); }); },
+  },
+  step: {
+    on(fig) {
+      fig.classList.add("stepping");
+      const cyc = fig.dataset.kind === "cycle", n = steps(fig).length;
+      const ring = cyc ? `<svg class="gd-ring" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="24" class="gd-ringc"/>${Array.from({ length: n }, (_, i) => { const t = -Math.PI / 2 + (i / n) * 2 * Math.PI; return `<circle cx="${(32 + 24 * Math.cos(t)).toFixed(1)}" cy="${(32 + 24 * Math.sin(t)).toFixed(1)}" r="4.5" class="gd-ringd" data-i="${i}"/>`; }).join("")}<path d="M44 12.5a24 24 0 0 1 7 6.5" class="gd-ringa"/></svg>` : "";
+      fig.querySelector(".gd-body").insertAdjacentHTML("afterend", `<div class="gd-play gd-stepbar">${ring}<button type="button" class="gd-btn gd-ghost" data-gd-prev aria-label="Previous step">←</button><p class="gd-say" aria-live="polite"></p><button type="button" class="gd-btn gd-main" data-gd-next>Next →</button></div>`);
+      show(fig, 0); fig.querySelector("[data-gd-next]").focus({ preventScroll: true });
+    },
+    off(fig) { fig.classList.remove("stepping"); fig.querySelector(".gd-stepbar")?.remove(); steps(fig).forEach((s) => s.classList.remove("on", "done", "todo")); },
+  },
+  match: {
+    on(fig) {
+      fig.classList.add("matching"); fig.dataset.miss = "0";
+      const rows = [...fig.querySelectorAll("[data-gd-row]")];
+      rows.forEach((r, i) => { r.dataset.i = i; r.querySelector(".gd-a")?.classList.add("gd-slot"); asButton(r, `Put the meaning you picked with: ${cueOf(r)}`); });
+      const chips = shuffle(rows.map((r, i) => [i, r.querySelector(".gd-a")?.textContent.trim() || ""]));
+      fig.querySelector(".gd-body").insertAdjacentHTML("beforebegin", `<div class="gd-play gd-pool"><p class="gd-say">Pick a meaning, then the ${fig.dataset.kind === "compare" ? "side" : "term"} it belongs to.</p><div class="gd-chips">${chips.map(([i, t]) => `<button type="button" class="gd-chip" data-gd-chip="${i}" aria-pressed="false">${esc(t)}</button>`).join("")}</div></div>`);
+      say(fig, `0 of ${rows.length} matched`);
+      fig.querySelector(".gd-chip")?.focus({ preventScroll: true });
+    },
+    off(fig) { fig.classList.remove("matching"); fig.querySelector(".gd-pool")?.remove(); fig.querySelectorAll("[data-gd-row]").forEach((r) => { unButton(r); r.classList.remove("gd-ok", "gd-no"); r.querySelector(".gd-a")?.classList.remove("gd-slot"); }); },
+  },
+  pick: {
+    on(fig) {
+      fig.classList.add("picking");
+      const wrong = fig.querySelector("[data-gd-wrong] p")?.textContent.trim(), right = fig.querySelector("[data-gd-right] .gd-a")?.textContent.trim();
+      const opts = shuffle([["right", right], ["wrong", wrong]]);
+      fig.querySelector(".gd-body").insertAdjacentHTML("beforebegin", `<div class="gd-play gd-pick"><p class="gd-say">Which of these is true?</p>${opts.map(([k, t], i) => `<button type="button" class="gd-opt" data-gd-opt="${k}"><b>${"AB"[i]}</b><span>${esc(t)}</span></button>`).join("")}</div>`);
+      say(fig, ""); fig.querySelector(".gd-opt").focus({ preventScroll: true });
+    },
+    off(fig) { fig.classList.remove("picking", "picked"); fig.querySelector(".gd-pick")?.remove(); },
+  },
+  rate: {
+    on(fig) {
+      fig.classList.add("rating"); fig.dataset.right = "0";
+      fig.querySelectorAll("li[data-status]").forEach((li) => li.insertAdjacentHTML("beforeend", `<div class="gd-rate" role="group" aria-label="How strong is the evidence for this?">${["established", "contested", "hypothetical"].map((s) => `<button type="button" data-gd-rate="${s}">${s[0].toUpperCase() + s.slice(1)}</button>`).join("")}</div>`));
+      say(fig, "How strong is the evidence for each claim?");
+      fig.querySelector("[data-gd-rate]")?.focus({ preventScroll: true });
+    },
+    off(fig) { fig.classList.remove("rating"); fig.querySelectorAll(".gd-rate").forEach((g) => g.remove()); fig.querySelectorAll("li[data-status]").forEach((li) => li.classList.remove("rated")); },
+  },
+};
+function setMode(fig, mode) {
+  const cur = fig.dataset.mode;
+  if (cur) { MODES[cur].off(fig); delete fig.dataset.mode; say(fig, ""); }
+  fig.querySelectorAll("[data-gd-mode]").forEach((b) => { b.setAttribute("aria-pressed", "false"); b.textContent = MODE_LABEL[b.dataset.gdMode]; });
+  if (!mode || mode === cur) return;
+  fig.dataset.mode = mode; MODES[mode].on(fig);
+  const b = fig.querySelector(`[data-gd-mode="${mode}"]`);
+  if (b) { b.setAttribute("aria-pressed", "true"); b.textContent = mode === "quiz" ? "Show all" : "Done"; }
+}
+// Step through
+const steps = (fig) => [...fig.querySelectorAll(".gd-flow > li, .gd-cyc .gd-branches > li")];
+function show(fig, i) {
+  const ss = steps(fig), n = ss.length, cyc = fig.dataset.kind === "cycle";
+  i = cyc ? (i + n) % n : Math.max(0, Math.min(n - 1, i));
+  fig.dataset.step = i;
+  // what's come before stays; what's still to come is hidden, so you can say it before you see it
+  ss.forEach((s, k) => { s.classList.toggle("on", k === i); s.classList.toggle("done", cyc ? false : k < i); s.classList.toggle("todo", cyc ? false : k > i); });
+  fig.querySelectorAll(".gd-ringd").forEach((d) => d.classList.toggle("on", Number(d.dataset.i) === i));
+  const k = ss[i].querySelector(".gd-k"), sub = ss[i].querySelector(".gd-sub");
+  const txt = k && sub ? `${k.textContent.trim()}: ${sub.textContent.trim()}` : (ss[i].querySelector(".gd-item, div") || ss[i]).textContent.trim();
+  fig.querySelector(".gd-say").textContent = `${cyc ? "Stage" : "Step"} ${i + 1} of ${n}: ${txt}`;
+  const next = fig.querySelector("[data-gd-next]"), prev = fig.querySelector("[data-gd-prev]");
+  next.textContent = cyc ? (i === n - 1 ? "Back to 1 ↻" : "Next →") : i === n - 1 ? "Start again" : `What's step ${i + 2}? →`;
+  prev.disabled = !cyc && i === 0;
+  ss[i].scrollIntoView?.({ block: "nearest", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+}
+// Match up
+function chooseChip(fig, chip) {
+  fig.querySelectorAll(".gd-chip").forEach((c) => c.setAttribute("aria-pressed", String(c === chip && c.getAttribute("aria-pressed") !== "true")));
+  fig.querySelector(".gd-pool .gd-say").textContent = chip.getAttribute("aria-pressed") === "true" ? `Now pick the ${fig.dataset.kind === "compare" ? "side" : "term"} it belongs to.` : "Pick a meaning.";
+}
+function placeChip(fig, row) {
+  const chip = fig.querySelector('.gd-chip[aria-pressed="true"]'), poolSay = fig.querySelector(".gd-pool .gd-say");
+  if (!chip) { poolSay.textContent = "Pick a meaning first, then its term."; return; }
+  const rows = fig.querySelectorAll("[data-gd-row]");
+  if (chip.dataset.gdChip === row.dataset.i) {
+    row.classList.add("gd-ok"); row.querySelector(".gd-a")?.classList.remove("gd-slot"); unButton(row); chip.remove();
+    const done = fig.querySelectorAll("[data-gd-row].gd-ok").length, miss = Number(fig.dataset.miss);
+    poolSay.textContent = done === rows.length ? (miss ? `All matched, with ${miss} wrong try${miss > 1 ? "s" : ""}. Try again later to get them first time.` : "All matched, first time. Well done.") : `Yes: that's ${cueOf(row)}. Pick the next meaning.`;
+    say(fig, `${done} of ${rows.length} matched`);
+    fig.querySelector(".gd-chip")?.focus({ preventScroll: true });
+  } else {
+    fig.dataset.miss = String(Number(fig.dataset.miss) + 1);
+    row.classList.remove("gd-no"); void row.offsetWidth; row.classList.add("gd-no");
+    poolSay.textContent = `That one doesn't go with ${cueOf(row)}. Read it again and try another.`;
+  }
 }
 function reveal(el) {
   const fig = el.closest(".gd");
-  el.classList.add("seen"); el.removeAttribute("role"); el.removeAttribute("aria-label"); el.tabIndex = -1;
+  el.classList.add("seen"); unButton(el); el.tabIndex = -1;
   score(fig);
-  // on to the next hidden answer, so a keyboard user can go through them with Enter
-  const next = [...fig.querySelectorAll(".gd-a:not(.seen)")][0];
-  if (next && document.activeElement === el) next.focus({ preventScroll: false });
+  const next = fig.querySelector(".gd-a:not(.seen)");
+  if (next && document.activeElement === el) next.focus();
 }
 function zoom(fig) {
   const dlg = document.createElement("dialog");
   dlg.className = "gd-zoom";
   dlg.setAttribute("aria-label", fig.querySelector(".gd-head")?.textContent.trim() || "Diagram");
+  if (fig.dataset.mode) setMode(fig, null);
   const copy = fig.cloneNode(true);
   copy.removeAttribute("id"); copy.classList.replace("gd-md", "gd-lg");
   copy.querySelector("[data-gd-zoom]")?.remove();
@@ -566,16 +761,46 @@ if (typeof document !== "undefined" && !globalThis.__gdWired) {
   globalThis.__gdWired = true;
   document.addEventListener("click", (e) => {
     const t = e.target;
-    if (!(t instanceof Element)) return;
-    const q = t.closest("[data-gd-quiz]"); if (q) { const fig = q.closest(".gd"); setQuiz(fig, !fig.classList.contains("quiz")); return; }
+    if (!(t instanceof Element) || !t.closest(".gd, dialog.gd-zoom")) return;
+    const fig = t.closest(".gd");
+    const m = t.closest("[data-gd-mode]"); if (m) { setMode(fig, m.dataset.gdMode); return; }
     const a = t.closest(".gd.quiz .gd-a:not(.seen)"); if (a) { e.preventDefault(); reveal(a); return; }
-    const z = t.closest("[data-gd-zoom]"); if (z) { zoom(z.closest(".gd")); return; }
+    if (t.closest("[data-gd-next]")) { const i = Number(fig.dataset.step) + 1, n = steps(fig).length; show(fig, fig.dataset.kind !== "cycle" && i >= n ? 0 : i); return; }
+    if (t.closest("[data-gd-prev]")) { show(fig, Number(fig.dataset.step) - 1); return; }
+    const chip = t.closest(".gd-chip"); if (chip) { chooseChip(fig, chip); return; }
+    const row = t.closest(".matching [data-gd-row]:not(.gd-ok)"); if (row) { placeChip(fig, row); return; }
+    const opt = t.closest("[data-gd-opt]");
+    if (opt && !fig.classList.contains("picked")) {
+      const ok = opt.dataset.gdOpt === "right";
+      fig.classList.add("picked");
+      fig.querySelectorAll("[data-gd-opt]").forEach((o) => { o.disabled = true; o.classList.add(o.dataset.gdOpt === "right" ? "gd-ok" : "gd-no"); });
+      fig.querySelectorAll("[data-gd-opt]").forEach((o) => o.insertAdjacentHTML("beforeend", `<em>${o.dataset.gdOpt === "right" ? "✓ True" : "✗ The common mistake"}</em>`));
+      fig.querySelector(".gd-pick .gd-say").textContent = ok ? "Yes, that's true. The other one is the mistake it's easy to make." : "No: that's the common mistake. The other one is what's true, and why.";
+      say(fig, ok ? "Right first time." : "Worth another look later.");
+      return;
+    }
+    const r = t.closest("[data-gd-rate]");
+    if (r) {
+      const li = r.closest("li[data-status]"); if (li.classList.contains("rated")) return;
+      const ok = r.dataset.gdRate === li.dataset.status;
+      li.classList.add("rated");
+      li.querySelectorAll("[data-gd-rate]").forEach((b) => { b.disabled = true; if (b.dataset.gdRate === li.dataset.status) b.classList.add("gd-ok"); else if (b === r) b.classList.add("gd-no"); });
+      if (ok) fig.dataset.right = String(Number(fig.dataset.right) + 1);
+      const all = fig.querySelectorAll("li[data-status]").length, done = fig.querySelectorAll("li.rated").length;
+      say(fig, done < all ? `${ok ? "Right." : `It's ${li.dataset.status}.`} ${done} of ${all} rated` : `${fig.dataset.right} of ${all} right.`);
+      li.parentElement.querySelector("li[data-status]:not(.rated) [data-gd-rate]")?.focus({ preventScroll: true });
+      return;
+    }
+    const z = t.closest("[data-gd-zoom]"); if (z) { zoom(fig); return; }
     const dlg = t.closest("dialog.gd-zoom");
     if (dlg && (t === dlg || t.closest("[data-gd-close]"))) dlg.close();
   });
   document.addEventListener("keydown", (e) => {
-    if (e.key !== "Enter" && e.key !== " ") return;
-    const a = e.target instanceof Element && e.target.closest(".gd.quiz .gd-a[role=button]");
-    if (a) { e.preventDefault(); reveal(a); }
-  });
+    const t = e.target instanceof Element ? e.target : null, fig = t?.closest(".gd");
+    if (!fig) return;
+    // a part that acts as a button (a covered answer, a term to match): Enter or Space
+    if ((e.key === "Enter" || e.key === " ") && t.getAttribute("role") === "button") { e.preventDefault(); t.click(); return; }
+    // stepping: ← and → move through the steps (and don't change the lesson)
+    if (fig.dataset.mode === "step" && (e.key === "ArrowRight" || e.key === "ArrowLeft")) { e.preventDefault(); e.stopPropagation(); fig.querySelector(e.key === "ArrowRight" ? "[data-gd-next]" : "[data-gd-prev]").click(); }
+  }, true);
 }

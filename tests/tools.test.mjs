@@ -6,7 +6,7 @@ import { parseDeck, cardHtml, suggestCards, clozeAt, imagesIn } from "../kit/too
 import { packOf, mapOf, deckOf, chantOf, chantLines, cheatsheetOf } from "../kit/tools/convert.js";
 import { searchLessons, loadLesson, factsOf } from "../kit/tools/search.js";
 import { take, usage, FREE } from "../kit/data/limits.js";
-import { diagramsFor, diagramForNode, diagramForCard, diagramSvg, glassDiagram, label } from "../kit/core/glass-diagrams.js";
+import { diagramsFor, diagramForNode, diagramForCard, diagramSvg, glassDiagram, label, minisFor, miniCard } from "../kit/core/glass-diagrams.js";
 import { parseNotes } from "../kit/course/notes.js";
 import { SAMPLE } from "../kit/notes/studio.js";
 
@@ -133,7 +133,8 @@ test("diagram cards show every word as text, can be covered for recall, and stay
   assert.match(html, /<figcaption class="gd-head">/, "a figure named by its caption");
   assert.match(html, /2 of 5/);
   assert.match(html, /<ol class="gd-flow/, "a process is an ordered list to a screen reader");
-  assert.match(html, /data-gd-quiz aria-pressed="false"/, "Cover & recall, off to start");
+  assert.match(html, /data-gd-mode="quiz" aria-pressed="false"/, "Cover & recall, off to start");
+  assert.match(html, /data-gd-mode="step"/, "a process can be stepped through");
   assert.match(html, /data-gd-zoom/);
   assert.doesNotMatch(html, /role="button"/, "answers are plain text until covered");
   // covered from the start (the Recap): each answer is a button until revealed
@@ -150,6 +151,38 @@ test("diagram cards show every word as text, can be covered for recall, and stay
   const L = { title: "T", blocks: [{ t: "h", x: "One" }, { t: "p", x: "A first. A second." }, { t: "h", x: "Two" }, { t: "p", x: "B." }], objectives: ["Do x", "Do y"], prereq: [], terms: [], cards: [], summary: [] };
   assert.ok(!diagramsFor(L).some((d) => d.kind === "map"), "two sections: no map");
   assert.ok(diagramsFor(L).some((d) => d.kind === "path") && !diagramsFor(L, { skip: ["path"] }).some((d) => d.kind === "path"), "a kind can be left out");
+});
+
+test("each kind of card has the ways to practise that suit it, and the small cards quote the notes", async () => {
+  const modes = (d) => [...glassDiagram(d).matchAll(/data-gd-mode="(\w+)"/g)].map((m) => m[1]);
+  assert.deepEqual(modes({ kind: "terms", title: "Key terms", items: [{ term: "Osmosis", def: "water moving" }, { term: "Diffusion", def: "solutes moving" }] }), ["match", "quiz"]);
+  assert.deepEqual(modes({ kind: "mistake", title: "x", wrong: "Thinking A.", right: "B is true." }), ["pick", "quiz"]);
+  assert.deepEqual(modes({ kind: "evidence", title: "e", items: [{ status: "established", text: "a" }, { status: "contested", text: "b" }] }), ["rate", "quiz"]);
+  assert.deepEqual(modes({ kind: "cycle", title: "c", items: ["One", "Two", "Three"] }), ["step", "quiz"]);
+  assert.deepEqual(modes({ kind: "key", title: "k", text: "short idea" }), ["quiz"]);
+  // a worked example is called one; a timeline is drawn to scale, with the gaps in years
+  assert.match(glassDiagram({ kind: "flow", ex: true, title: "q", items: ["a", "b"] }), />Worked example</);
+  const tl = glassDiagram({ kind: "timeline", title: "t", items: [{ year: "1900", text: "a" }, { year: "1990", text: "b" }, { year: "2000", text: "c" }] });
+  assert.match(tl, /left:4\.0%/); assert.match(tl, /left:96\.0%/); assert.match(tl, /90 years/);
+  // the small cards: every word from the notes, at most one a section, and they start covered
+  const flat = (t) => String(t).replace(/\*\*|__|`/g, "").replace(/\^\{([^}]*)\}/g, "^$1").replace(/_\{([^}]*)\}/g, "_$1").replace(/\s+/g, " ");
+  let seen = 0;
+  for (const course of ["medicine", "biology", "physics", "history", "nursing"]) {
+    const notes = (await import(`../kit/courses/${course}/notes/u01.js`)).default, all = flat(notes);
+    for (const L of parseNotes(notes).slice(0, 6)) {
+      const ms = minisFor(L);
+      assert.ok(ms.length <= 4);
+      assert.equal(new Set(ms.map((m) => m.at)).size, ms.length, "one per place");
+      for (const m of ms) {
+        seen++;
+        assert.ok(L.blocks[m.at] && L.blocks[m.at].t !== "h");
+        const bits = m.kind === "check" ? [m.q, m.a] : m.items.flatMap((l) => [l.pre, l.n, l.post]);
+        for (const w of bits) { const bit = w.replace(/^…|…$/g, "").replace(/[.,;:]+$/, "").trim(); if (bit.length > 2) assert.ok(all.includes(bit), `${course} ${m.kind}: "${bit}" is in the notes`); }
+        assert.match(miniCard(m), /class="gd gd-mini quiz"/);
+      }
+    }
+  }
+  assert.ok(seen >= 10, "lessons get small cards");
 });
 
 test("a Gradify AI pack (as from a photo of notes) becomes cards, with its cloze cards kept as cloze", () => {

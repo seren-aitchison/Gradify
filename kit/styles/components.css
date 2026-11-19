@@ -1269,6 +1269,110 @@ dialog.gd-zoom[open] { animation: gd-zin .18s ease-out; }
   .gd.quiz .gd-a { color: inherit !important; background: none !important; }
 }
 
+/* ---------- the modes: Step through, Match up, Which is true?, Rate the evidence (kit/core/glass-diagrams.js) ---------- */
+.gd-btn.gd-main { border-color: color-mix(in srgb, var(--a) 80%, transparent); background: color-mix(in srgb, var(--a) 22%, var(--gd-bg)); }
+.gd-btn:disabled { opacity: .45; cursor: default; }
+.gd.gd .gd-card .gd-score { flex-basis: 100%; min-height: 1.2em; font-size: 13px; font-weight: 600; color: var(--gd-soft); font-variant-numeric: tabular-nums; }
+.gd.gd .gd-card .gd-score:empty { display: none; }
+.gd-play { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; padding: 12px 14px; border-radius: 14px; background: color-mix(in srgb, var(--a) 10%, var(--gd-bg)); border: 1.5px dashed color-mix(in srgb, var(--a) 55%, transparent); }
+.gd.gd .gd-card .gd-say { flex: 1 1 220px; font-weight: 650; }
+
+/* Step through: the step you're on lifts and glows; the ones before stay; the ones to come are hidden till you get there */
+.gd-flow > li, .gd-cyc .gd-branches > li { transition: opacity .25s, transform .25s, filter .25s; }
+.gd.stepping .gd-flow > li.done { opacity: .55; }
+.gd.stepping .gd-flow > li.todo .gd-item { color: transparent; background: repeating-linear-gradient(-45deg, color-mix(in srgb, var(--c) 22%, transparent) 0 7px, color-mix(in srgb, var(--c) 9%, transparent) 7px 14px); }
+.gd.stepping .gd-flow > li.todo .gd-item * { color: transparent !important; }
+.gd.stepping .gd-cyc .gd-branches > li:not(.on) { opacity: .42; filter: saturate(.6); }
+.gd.stepping :is(.gd-flow > li.on .gd-item, .gd-cyc .gd-branches > li.on) { transform: translateY(-2px); box-shadow: inset 4px 0 0 var(--c), 0 0 0 2px var(--c), 0 10px 28px -10px var(--c); }
+.gd-stepbar .gd-btn { min-width: 44px; justify-content: center; }
+.gd-ring { width: 54px; height: 54px; flex: none; }
+.gd-ringc { fill: none; stroke: var(--gd-line); stroke-width: 3; }
+.gd-ringa { fill: none; stroke: var(--a); stroke-width: 2.4; stroke-linecap: round; marker-end: none; }
+.gd-ringd { fill: var(--gd-bg); stroke: var(--gd-soft); stroke-width: 2; transition: r .2s, fill .2s; }
+.gd-ringd.on { fill: var(--a); stroke: var(--a); r: 6.5; }
+
+/* Match up: a pile of meanings, each a button; the terms wait with an empty slot */
+.gd-pool { position: sticky; top: 70px; z-index: 2; box-shadow: 0 10px 24px -16px rgba(0, 0, 0, .6); }
+.gd-chips { display: flex; flex-wrap: wrap; gap: 8px; flex-basis: 100%; }
+.gd-chip { all: unset; box-sizing: border-box; max-width: 100%; padding: 8px 12px; border-radius: 12px; cursor: pointer; font-size: 13.5px; line-height: 1.4;
+  color: var(--gd-ink); background: var(--gd-bg); border: 1.5px solid var(--gd-line); transition: border-color .15s, background .15s, transform .15s; }
+.gd-chip:hover { border-color: var(--a); }
+.gd-chip[aria-pressed="true"] { border-color: var(--a); background: color-mix(in srgb, var(--a) 20%, var(--gd-bg)); transform: translateY(-1px); box-shadow: 0 0 0 2px var(--a); }
+.gd-chip:focus-visible, .gd [data-gd-row][role="button"]:focus-visible { outline: 2px solid var(--gd-ink); outline-offset: 2px; }
+.gd.matching [data-gd-row][role="button"] { cursor: pointer; }
+.gd.matching [data-gd-row][role="button"]:hover { box-shadow: inset 4px 0 0 var(--c), 0 0 0 2px color-mix(in srgb, var(--c) 60%, transparent); }
+.gd .gd-slot { display: block; min-height: 2.2em; margin-top: 4px; border-radius: 8px; color: transparent !important; border: 1.5px dashed color-mix(in srgb, var(--c) 55%, transparent); background: color-mix(in srgb, var(--c) 6%, transparent); }
+.gd .gd-slot * { color: transparent !important; }
+.gd [data-gd-row].gd-ok { box-shadow: inset 4px 0 0 #16a34a, 0 0 0 2px #16a34a; }
+.gd [data-gd-row].gd-ok .gd-a { animation: gd-seen .35s ease-out; }
+.gd [data-gd-row].gd-no { animation: gd-shake .45s; }
+@keyframes gd-shake { 20%, 60% { transform: translateX(-5px); } 40%, 80% { transform: translateX(5px); } }
+
+/* Which is true?: two statements to choose from; the panels with the answer wait below */
+.gd.picking .gd-body { display: none; }
+.gd-opt em { display: block; margin-top: 4px; font: 800 11px/1.3 var(--mono, monospace); font-style: normal; letter-spacing: .06em; text-transform: uppercase; }
+.gd-opt.gd-ok em { color: color-mix(in oklab, #16a34a 70%, var(--gd-ink)); } .gd-opt.gd-no em { color: color-mix(in oklab, #ef4444 70%, var(--gd-ink)); }
+.gd-opt.gd-opt { display: grid; grid-template-columns: 26px minmax(0, 1fr); column-gap: 12px; row-gap: 4px; }
+.gd-opt em { grid-column: 2; margin-top: 0 !important; }
+.gd-pick { display: grid; }
+.gd-opt { all: unset; box-sizing: border-box; display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; border-radius: 12px; cursor: pointer; line-height: 1.45;
+  background: var(--gd-bg); border: 1.5px solid var(--gd-line); transition: border-color .15s; }
+.gd-opt b { display: inline-grid; place-items: center; flex: none; width: 26px; height: 26px; border-radius: 50%; font-size: 13px; color: var(--gd-ink); border: 1.5px solid var(--gd-soft); }
+.gd-opt:hover:not(:disabled) { border-color: var(--a); }
+.gd-opt:focus-visible { outline: 2px solid var(--gd-ink); outline-offset: 2px; }
+.gd-opt.gd-ok { border-color: #16a34a; background: color-mix(in srgb, #16a34a 12%, var(--gd-bg)); }
+.gd-opt.gd-ok b { background: #15803d; color: #fff; border-color: transparent; }
+.gd-opt.gd-no { border-color: #ef4444; background: color-mix(in srgb, #ef4444 10%, var(--gd-bg)); }
+.gd-opt.gd-no b { background: #b91c1c; color: #fff; border-color: transparent; }
+.gd-opt:disabled { cursor: default; }
+
+/* Rate the evidence: until a claim is rated, its colour gives nothing away */
+.gd:is(.quiz, .rating) li[data-status]:not(.rated):not(:has(.gd-a.seen)) { --c: #64748b !important; }
+.gd.rating li[data-status]:not(.rated) .gd-pill { display: none; }
+.gd.gd .gd-card li[data-status] { flex-wrap: wrap; }
+.gd-rate { display: flex; flex-wrap: wrap; gap: 6px; flex-basis: 100%; padding-left: 0; }
+.gd-rate button { font: 650 12.5px/1 var(--sans, inherit); padding: 8px 12px; min-height: 32px; border-radius: 99px; cursor: pointer; color: var(--gd-ink); background: var(--gd-bg); border: 1.5px solid var(--gd-line); }
+.gd-rate button:hover:not(:disabled) { border-color: var(--a); }
+.gd-rate button.gd-ok { border-color: #16a34a; background: color-mix(in srgb, #16a34a 16%, var(--gd-bg)); }
+.gd-rate button.gd-no { border-color: #ef4444; text-decoration: line-through; }
+.gd-rate button:disabled:not(.gd-ok):not(.gd-no) { opacity: .45; }
+
+/* the time scale: the dates as far apart as they really are, and the years between */
+.gd-scale { position: relative; height: 50px; margin: 0 6px 6px; }
+.gd-scalek { position: absolute; left: -6px; top: -2px; font: 700 10px/1 var(--mono, monospace); letter-spacing: .08em; text-transform: uppercase; color: var(--gd-soft); }
+@container gd (min-width: 560px) { .gd-scale + .gd-time::before, .gd-scale + .gd-time .gd-dot { display: none; } .gd-scale + .gd-time > li { grid-template-rows: auto 1fr; } .gd-scale + .gd-time > li > .gd-item { margin-top: 2px; } }
+.gd-axis2 { position: absolute; left: 0; right: 0; top: 30px; height: 3px !important; background: linear-gradient(90deg, var(--a), var(--b)) !important; height: 2px; border-radius: 2px; background: var(--gd-line); }
+.gd-tick { position: absolute; top: 24.5px; width: 14px; height: 14px; margin-left: -7px; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 3px var(--gd-bg); }
+.gd-tick b { position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%); font: 800 11.5px/1 var(--mono, monospace); color: var(--gd-soft); white-space: nowrap; }
+.gd-gap { position: absolute; top: 38px; transform: translateX(-50%); font-size: 11px; font-weight: 600; color: var(--gd-soft); white-space: nowrap; }
+
+/* ---------- small cards, dotted through the notes: Quick check, Numbers to know ---------- */
+.gd.gd-mini { margin: 6px 0 22px; padding: 0; container: none; font-size: 14.5px; line-height: 1.5; }
+.gd-mini { display: grid; gap: 8px; padding: 13px 15px 12px !important; border-radius: 16px; background: linear-gradient(170deg, color-mix(in srgb, var(--a) 13%, var(--gd-bg)), var(--gd-bg) 70%);
+  box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--a) 45%, transparent), 0 14px 30px -22px rgba(0, 0, 0, .6); }
+.gd-mini::before { content: ""; position: absolute; left: -1px; top: 14px; bottom: 14px; width: 4px; border-radius: 4px; background: linear-gradient(var(--a), var(--b)); }
+.gd.gd-mini.gd-mini :is(p, ul, li, figcaption) { margin: 0; padding: 0; list-style: none; font-size: inherit; line-height: inherit; color: inherit; }
+.gd.gd-mini.gd-mini .gd-mhead { display: flex; align-items: center; gap: 7px; font: 800 11px/1.3 var(--mono, monospace); letter-spacing: .08em; text-transform: uppercase; color: color-mix(in oklab, var(--a) 60%, var(--gd-ink)); }
+.gd-mhead svg { width: 15px; height: 15px; flex: none; }
+.gd-mbtn { margin-left: auto; font: 650 12px/1 var(--sans, inherit); letter-spacing: 0; text-transform: none; padding: 6px 11px; min-height: 28px; border-radius: 99px; cursor: pointer; color: var(--gd-ink); background: transparent; border: 1.5px solid var(--gd-line); }
+.gd-mbtn:focus-visible { outline: 2px solid var(--gd-ink); outline-offset: 2px; }
+.gd.gd-mini.gd-mini .gd-mq { font-weight: 700; }
+.gd.gd-mini.gd-mini .gd-ma { display: block; padding: 7px 10px; border-radius: 8px; background: color-mix(in srgb, var(--c) 9%, transparent); }
+.gd.gd-mini.gd-mini .gd-mhint { font-size: 12.5px; color: var(--gd-soft); }
+.gd.gd-mini.gd-mini .gd-nums { display: grid; gap: 7px; }
+.gd.gd-mini.gd-mini .gd-nums li { padding-left: 12px; border-left: 2.5px solid var(--c); }
+.gd-numa { font: 800 1.05em/1.3 var(--mono, monospace); padding: 0 4px; border-radius: 5px; color: color-mix(in oklab, var(--c) 62%, var(--gd-ink)); background: color-mix(in srgb, var(--c) 12%, transparent); white-space: nowrap; }
+.gd.quiz .gd-numa:not(.seen) { display: inline-block; min-width: 4.5em; }
+.gd-mini:has(.gd-a.seen) .gd-mhint, .gd-mini:not(.quiz) .gd-mhint { visibility: hidden; height: 0; }
+/* on a wide screen they sit beside the text, which wraps round them */
+@media (min-width: 1180px) {
+  .co-read .co-prose .gd.gd-mini { float: right; clear: right; width: 290px; margin: 4px -8px 16px 26px; font-size: 14px; }
+  .co-read .co-prose section::after { content: ""; display: block; clear: both; }
+  .co-read .co-prose .gd-md, .co-read .co-prose .co-ex, .co-read .co-prose .co-eq { clear: both; }
+}
+@media (prefers-reduced-motion: reduce) { .gd [data-gd-row].gd-no { animation: none; } .gd-flow > li, .gd-cyc .gd-branches > li { transition: none; } }
+@media print { .gd-play, .gd-mbtn, .gd-mhint, .gd-rate { display: none !important; } .gd .gd-slot { color: inherit !important; border: 0; } .gd.picking .gd-body { display: block !important; } }
+
 /* Free allowance banner (kit/data/limits.js): a Liquid Glass bar with the Plus offer, floating above the page */
 .lim-banner { position: fixed; z-index: 1200; left: 50%; bottom: max(18px, env(safe-area-inset-bottom)); transform: translate(-50%, 24px); opacity: 0;
   width: min(720px, calc(100% - 24px)); display: flex; align-items: center; gap: 14px; padding: 12px 14px 12px 12px; border-radius: 26px; color: #fff;
