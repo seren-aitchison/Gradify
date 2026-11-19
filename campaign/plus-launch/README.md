@@ -137,6 +137,22 @@ redirect without query string, set-up to `#/offer`, Today card, dismiss and retu
 campaign, no horizontal scroll at 390 px). Not tested here: real sign-in, and anything in Stripe (this environment
 can't reach api.stripe.com). See "Still to verify in Stripe" below.
 
+## Launch status (19 November 2026, evening)
+
+**Supabase production, checked read-only through the Management API:** `STRIPE_PRICE_PLUS_MONTH` is the £10 Gradify Pro
+price and `STRIPE_PRICE_PRO_MONTH` the £15 Ultra price (compared by SHA-256); `GRADIFY_PLUS_ON_SALE` = `on`;
+`GRADIFY_PRO_ON_SALE` not set; `billing_settings.plans_enforced` = true; latest migrations include `20261117120000`
+(plans). Deployed functions: `billing-checkout` v10 and `billing-webhook` v9 (17 Nov), `billing-portal` v7 (10 Nov),
+which predate this branch: until `billing-checkout` is redeployed, buyers type GRADIFY48 into Stripe's code field.
+
+**MailerLite:** draft campaign `204591722271868781`, "Gradify Pro launch: £5 first month (GRADIFY48)", from
+Gradify <hello@getgradify.com>, subject "Try Gradify Pro: £5 for your first month, until 22 November", HTML from
+`export/gradify-plus-launch.html` (unsubscribe tag present). Not sent, not scheduled, no audience attached. The account
+has one group, "Gradify", and one active subscriber (an @getgradify.com address added manually).
+
+**Audience:** nobody has opted in to marketing yet. Gradify's own launch list (`waitlist`, site "Gradify Plus") is empty,
+accounts have no marketing consent, and the outreach research list is not consented, so it must not be imported.
+
 ## Stripe live account (read-only check, 19 November 2026, 18:28 UTC)
 
 `node scripts/verify-offer-stripe.mjs` with a restricted live key: every row ok. Nothing was changed.
