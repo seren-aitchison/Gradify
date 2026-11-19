@@ -23,6 +23,11 @@ for o in meshes:
     # Cycles would light them up white, so keep them as alpha translucency like the viewer draws them
     for slot in o.material_slots:
         bsdf = slot.material and slot.material.node_tree and slot.material.node_tree.nodes.get("Principled BSDF")
+        # three's sheen and clearcoat are far gentler than Cycles' at the same values (glTF has no sheen strength,
+        # so the importer sets it to full): left as imported they lay a grey veil over every dark surface
+        if bsdf:
+            bsdf.inputs["Sheen Weight"].default_value = 0.0
+            bsdf.inputs["Coat Weight"].default_value *= 0.5
         if bsdf and bsdf.inputs["Transmission Weight"].default_value > 0:
             bsdf.inputs["Transmission Weight"].default_value = 0.0
             if not bsdf.inputs["Alpha"].is_linked: bsdf.inputs["Alpha"].default_value = min(bsdf.inputs["Alpha"].default_value, 0.35)
