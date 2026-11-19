@@ -14,6 +14,8 @@ const fs = require("fs"), path = require("path");
   fs.mkdirSync(out, { recursive: true });
   for (const [file, site] of Object.entries(models)) {
     if (only.length && !only.includes(file)) continue;
+    if (!only.length && fs.existsSync(path.join(out, file.replace(".js", ".glb")))) continue;   // already exported (name it to redo it)
+    try {
     const p = await (await b.newContext({ viewport: { width: 1600, height: 900 }, serviceWorkers: "block", acceptDownloads: true })).newPage();   // routes don't see requests a service worker answers
     await p.route("**/__jsm/**", (r) => r.fulfill({ body: jsm(new URL(r.request().url()).pathname.replace("/__jsm/", "")), contentType: "text/javascript" }));
     await p.addInitScript(() => { window.addEventListener("gradify:anatomy-hd", () => { window.__hd = true; }); });
@@ -44,6 +46,7 @@ const fs = require("fs"), path = require("path");
     fs.writeFileSync(path.join(out, file.replace(".js", ".json")), JSON.stringify(info));
     console.log(file, info.meshes, "meshes", (fs.statSync(target).size / 1e6).toFixed(1), "MB");
     await p.close();
+    } catch (e) { console.log("failed", file, e.message.split("\n")[0]); }   // one model failing doesn't stop the rest
   }
   await b.close();
 })();

@@ -283,7 +283,8 @@ export async function mountModel(root, siteName, model, opts = {}) {
   const rimB = new THREE.PointLight(studio ? "#ffe8d8" : "#f055dd", studio ? 1.5 : 3, 8); rimB.position.set(1.6, 0.6, -1.4); scene.add(rimB);
   if (studio) {
     key.castShadow = true; key.shadow.mapSize.setScalar(tier === "high" ? 4096 : 2048); key.shadow.bias = -0.0004; key.shadow.normalBias = 0.01;
-    Object.assign(key.shadow.camera, { left: -1.2, right: 1.2, top: 2.2, bottom: -0.4, near: 0.5, far: 8 }); key.shadow.camera.updateProjectionMatrix();
+    // sized for a standing figure; wide, low models (a castle, a room) give their own bounds as model.shadow
+    Object.assign(key.shadow.camera, { left: -1.2, right: 1.2, top: 2.2, bottom: -0.4, near: 0.5, far: 8, ...model.shadow }); key.shadow.camera.updateProjectionMatrix();
   }
 
   // the platform: glowing rings and a faint polar grid under the model
@@ -317,11 +318,13 @@ export async function mountModel(root, siteName, model, opts = {}) {
   // the composer draws into a multisampled target: without one, post-processing throws away the canvas's antialiasing
   const composer = new EffectComposer(renderer, new THREE.WebGLRenderTarget(1, 1, { type: THREE.HalfFloatType, samples: tier === "high" ? 4 : 2 }));
   composer.addPass(new RenderPass(scene, camera));
-  // ambient occlusion in the studio look: contact shadows in every fold, foramen and suture
+  // ambient occlusion for models that ask for it (model.ao): contact shadows in every fold, foramen and suture.
+  // Opt-in, because screen-space AO darkens wide open scenes (a landscape seen at a low angle)
   let gtao = null;
-  if (studio && tier === "high") {
+  if (studio && tier === "high" && model.ao) {
     gtao = new GTAOPass(scene, camera, 1, 1);
-    gtao.updateGtaoMaterial({ radius: model.aoRadius ?? 0.06, distanceExponent: 1.5, thickness: 0.6, scale: 1.1, samples: 16 });
+    const aoR = model.aoRadius ?? 0.06;
+    gtao.updateGtaoMaterial({ radius: aoR, distanceExponent: 1.5, thickness: aoR * 2, distanceFallOff: 1, scale: 1.1, samples: 16, screenSpaceRadius: false });
     gtao.updatePdMaterial({ lumaPhi: 10, depthPhi: 2, normalPhi: 3, radius: 6, rings: 2, samples: 16 });
     gtao.blendIntensity = 0.9;
     composer.addPass(gtao);

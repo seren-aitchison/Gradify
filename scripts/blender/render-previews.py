@@ -78,7 +78,7 @@ cy.use_denoising = True; cy.denoiser = "OPENIMAGEDENOISE"
 cy.max_bounces = 6; cy.transparent_max_bounces = 16; cy.caustics_reflective = cy.caustics_refractive = False
 sc.render.resolution_x, sc.render.resolution_y, sc.render.resolution_percentage = W, H, 100
 sc.render.film_transparent = False
-sc.view_settings.view_transform = "AgX"; sc.view_settings.look = "AgX - Medium High Contrast"
+sc.view_settings.view_transform = "AgX"; sc.view_settings.look = "AgX - Punchy"   # keeps tissue and paint colours saturated
 sc.render.image_settings.file_format = "PNG"; sc.render.image_settings.color_depth = "8"
 sc.render.filepath = OUT
 bpy.ops.render.render(write_still=True)
