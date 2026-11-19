@@ -50,6 +50,31 @@ export const WEEKLY = {
   mock: (x) => x.hasExams ? { title: "Complete a mock exam", of: 1, n: Math.min(1, count(x.week, "mock")), xp: 80, why: "Practise under exam conditions." } : null,
 };
 
+// the topic quest: one topic (the module the learner is in), three steps that each need real learning evidence:
+// Understand (finish a lesson in it), Remember (recall its flashcards correctly) and Apply (get its questions right).
+// Nothing pays for time spent or pages opened. One topic a day; each step pays once (its key holds the day).
+export const TOPIC_STEPS = [
+  { id: "understand", label: "Understand", xp: 25 },
+  { id: "remember", label: "Remember", xp: 35, of: 10 },
+  { id: "apply", label: "Apply", xp: 40, of: 5, mean: 0.8 },
+];
+export function topicQuest(x, courses) {
+  const l = x.open[0]; if (!l) return null;
+  const c = courses.find((y) => y.slug === l.course), u = (c?.units || []).find((y) => y.lessons.some((z) => z.id === l.id)); if (!u) return null;
+  const lessons = u.lessons.filter((z) => (z.module || null) === (l.module || null)), ids = new Set(lessons.map((z) => z.id));
+  const topic = l.module || u.title, today = x.attemptsToday.filter((a) => a.course === c.slug && ids.has(a.lesson));
+  const cards = today.filter((a) => a.question?.type === "card" && a.correct).length;
+  const qs = today.filter((a) => a.question?.type !== "card"), mean = qs.length ? qs.reduce((t, a) => t + (Number(a.score) || 0), 0) / qs.length : 0;
+  const finished = lessons.filter((z) => c.S?.done?.[z.id] && dayKey(c.S.done[z.id]) === x.day).length;
+  const allDone = lessons.every((z) => c.S?.done?.[z.id]);
+  const steps = [
+    { ...TOPIC_STEPS[0], title: `Understand: ${allDone ? "revisit" : "finish"} a lesson in ${topic}`, of: 1, n: Math.min(1, finished + (allDone && today.length ? 1 : 0)), why: "Read it, try the interactive, answer as you go." },
+    { ...TOPIC_STEPS[1], title: `Remember: recall ${TOPIC_STEPS[1].of} of its flashcards correctly`, n: Math.min(TOPIC_STEPS[1].of, cards), why: "Recall without looking: that's what makes it stay." },
+    { ...TOPIC_STEPS[2], title: `Apply: ${Math.round(TOPIC_STEPS[2].mean * 100)}% or more across ${TOPIC_STEPS[2].of} of its questions`, n: qs.length >= TOPIC_STEPS[2].of && mean >= TOPIC_STEPS[2].mean ? TOPIC_STEPS[2].of : Math.min(TOPIC_STEPS[2].of - 1, qs.length), why: qs.length ? `${qs.length} answered today, ${Math.round(mean * 100)}% right.` : "Questions you haven't seen, answered from memory." },
+  ];
+  return { topic, course: c.slug, unit: u.id, lesson: l.id, lessons: [...ids], steps, xp: steps.reduce((t, q) => t + q.xp, 0) };
+}
+
 export function quests(state, opts = {}) {
   const x = questContext(state, opts), out = [];
   const mk = (kind, period, id, q) => q && out.push({ ...q, n: q.fill ? Math.min(q.of, q.fill(x)) : q.n, id, kind, key: `quest:${period}:${id}`, done: (q.fill ? q.fill(x) : q.n) >= q.of });
@@ -59,6 +84,9 @@ export function quests(state, opts = {}) {
   if (out.filter((q) => q.kind === "daily").length < 3) for (const id of ["questions", "goal"]) if (!out.some((q) => q.id === id) && out.filter((q) => q.kind === "daily").length < 3) mk("daily", x.day, id, DAILY[id](x));
   const wk = dayKey(x.ws);
   for (const id of ["days", "xp", "turnaround", "module", "mock"]) { if (out.filter((q) => q.kind === "weekly").length >= 3) break; mk("weekly", wk, id, WEEKLY[id](x)); }
+  // the topic quest's three steps, keyed by day, topic and step
+  const tq = topicQuest(x, state.courses || []);
+  if (tq) for (const st of tq.steps) mk("topic", `${x.day}:${tq.course}:${tq.unit}`, `topic-${st.id}`, { ...st, topic: tq.topic, lesson: { lesson: tq.lesson, course: tq.course }, quest: tq });
   return out.map((q) => ({ ...q, paid: !!state.game.paid?.[q.key] }));
 }
 

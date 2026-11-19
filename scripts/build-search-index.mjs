@@ -7,9 +7,11 @@
 //
 // Shape: { v: 2, courses: [{ s: slug, n: name, site, u: url, U: unit word, T: [stage names],
 //                            units: [[id, n, title, [[lessonId, title, moduleIndex], …], [module titles], stageIndex, blurb]],
-//                            pre?: { "unitId/Module": ["unitId/Module", …] } }] }   (pre: what each topic builds on)
+//                            pre?: { "unitId/Module": ["unitId/Module", …] },   (pre: what each topic builds on)
+//                            cp: { chapterNumber: [chapterNumbers it builds on] } }] }   (the mastery map)
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { COURSES } from "../kit/learning/learner-data.js";
+import { CHAPTER_PREREQS, chapterPrereqsFromConcepts } from "../kit/learning/chapter-map.js";
 
 const OUT = new URL("../kit/data/search-index.json", import.meta.url);
 
@@ -31,6 +33,8 @@ export async function buildIndex() {
     });
     const entry = { s: slug, n: cfg.name || slug, site: cfg.site || "", u: url, U: cfg.unitWord || "Unit", T: (cfg.tracks || []).map((t) => t.name), units };
     if (cfg.concepts?.modules) entry.pre = cfg.concepts.modules;
+    // chapter prerequisites for the mastery map (kit/learning/chapter-map.js)
+    entry.cp = CHAPTER_PREREQS[slug] || chapterPrereqsFromConcepts(cfg.units || [], cfg.concepts);
     courses.push(entry);
   }
   return { v: 2, courses };

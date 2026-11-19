@@ -14,6 +14,9 @@ import { LocalStore, CloudStore, scopeToSite } from "../data/store.js";
 import { topicProfiles } from "../learning/mastery.js";
 import { matchTopics } from "../learning/topic-match.js";
 import { loadLearner, schoolTopic } from "../learning/learner-data.js";
+import { loadIndex } from "../ui/global-nav.js";
+import { courseProgress } from "../ui/explore.js";
+import { masteryMap, LEVEL } from "../learning/mastery-map.js";
 
 const $ = (s) => document.querySelector(s);
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
@@ -70,6 +73,44 @@ async function loadMine(siteName) {
   } catch (e) { console.warn("Couldn't read your notes for the map", e); return []; }
 }
 
+// ---------- the course world: a site's course as the land itself ----------
+// Each stage of the course is a region, each chapter a place in it, and the roads are what builds on what
+// (kit/learning/chapter-map.js). Regions glow brighter as their chapters' mastery rises; mastered chapters become
+// ringed landmarks; chapters not yet explored stay dim. All of it from the learner's own answers (kit/learning/
+// mastery-map.js), so the world grows with real learning, not with time spent.
+const GLOBE_STATE = { none: "new", learning: "learning", practising: "learning", proficient: "mastered", mastered: "mastered" };
+const spiral = (k) => { const a = k * 2.399, r = k ? 5 + 3.4 * Math.sqrt(k) : 0; return [Math.sin(a) * r, Math.cos(a) * r * 1.3]; };
+export function courseWorld(course, S, now = Date.now()) {
+  const prog = courseProgress(S || {});
+  const chapters = course.units.map(([id, n, title, lessons, , ti = -1]) => ({ n, id, title, ti, lessons: lessons.map((l) => l[0]) }));
+  const map = masteryMap(chapters, course.cp || {}, prog.status);
+  // stages → at most six regions (consecutive stages share one when a course has more)
+  const stages = course.T?.length ? course.T : ["Chapters"], per = Math.ceil(stages.length / 6);
+  const regionOf = (ti) => Math.min(5, Math.floor(Math.max(0, ti) / per));
+  const bare = (t) => String(t).replace(/^Stage\s+\d+\s*·\s*/i, "");
+  const names = Array.from({ length: Math.min(6, Math.ceil(stages.length / per)) }, (_, r) => { const g = stages.slice(r * per, r * per + per); return g.length > 1 ? g.map(bare).join(" & ") : g[0]; });
+  const recent = (ids) => ids.some((id) => S?.time?.[id]?.last && now - S.time[id].last < 2 * 864e5) || (S?.recent || []).some((r) => ids.includes(r.id) && now - r.t < 2 * 864e5);
+  const places = map.nodes.map((x) => {
+    const c = chapters.find((y) => y.n === x.n), state = x.revise ? "fading" : x.level === "learning" || x.level === "practising" ? (recent(c.lessons) ? "recent" : "learning") : GLOBE_STATE[x.level];
+    return { ...x, region: regionOf(c.ti), state, strength: Math.round(x.score * 100), href: `${course.u}#/learn/${x.id}` };
+  });
+  const regions = names.map((name, r) => { const ps = places.filter((p) => p.region === r); return { name, places: ps, light: ps.length ? ps.reduce((a, p) => a + p.score, 0) / ps.length : 0 }; }).filter((r) => r.places.length);
+  return { course, map, regions, places, roads: map.edges };
+}
+
+async function loadCourseWorld(siteName) {
+  try {
+    const idx = await loadIndex(), courses = (idx.courses || []).filter((c) => c.site === siteName);
+    if (!courses.length) return null;
+    const read = (slug) => { try { return JSON.parse(localStorage.getItem(`gradify.course.${slug}`) || "null"); } catch { return null; } };
+    // the course the learner is furthest into on this site (or chose last), else the first
+    const chosen = (() => { try { return sessionStorage.getItem(`gx-world:${siteName}`); } catch { return null; } })();
+    const done = (c) => Object.keys(read(c.s)?.done || {}).length;
+    const course = courses.find((c) => c.s === chosen) || [...courses].sort((a, b) => done(b) - done(a))[0];
+    return { world: courseWorld(course, read(course.s)), courses };
+  } catch (e) { console.warn("Couldn't build the course world", e); return null; }
+}
+
 export async function mountSubjectMap(siteName) {
   // shown inside LifeOS (app.html#/earth): just the map, without the site's own header and footer
   try { if (window.self !== window.top) document.body.classList.add("map-embedded"); } catch { /* cross-origin parent: leave the page as it is */ }
@@ -80,10 +121,27 @@ export async function mountSubjectMap(siteName) {
 
   // the learner's topics, sorted into the areas
   const mine = await loadMine(siteName);
-  const { placed, unplaced } = matchTopics(areas, mine);
+  const cw = await loadCourseWorld(siteName);
+  const { placed, unplaced } = cw ? { placed: [], unplaced: mine.filter((t) => !t.course) } : matchTopics(areas, mine);
   const pins = [], roads = [], info = {};
   const pinById = (id) => pins.find((p) => p.id === id);
-  areas.forEach((a, i) => {
+  if (cw) {
+    // the course's stages replace the site's example areas, and its chapters replace the example subtopics
+    const W = cw.world, U = W.course.U;
+    areas.length = 0;
+    W.regions.forEach((r, i) => areas.push({ name: r.name, desc: "", c: colours[i % colours.length], centre: CENTRES[i], ids: [], light: r.light }));
+    for (const p of W.places) {
+      const a = areas.find((x) => x.name === W.regions.find((r) => r.places.includes(p)).name), k = a.ids.length, id = `c-${p.id}`;
+      pins.push({ id, v: at(a.centre, spiral(k)), c: `#${a.c}`, name: `${p.n}. ${p.title}`, state: p.state, strength: p.strength });
+      const c = p.counts, t = p.total || 1;
+      info[id] = { area: a.name, c: a.c, course: true, href: p.href, state: p.state, strength: p.strength, level: p.level,
+        ev: [Math.round(((t - c.new - c.started) / t) * 100), Math.round(((c.practised + c.mastered + c.revise) / t) * 100), Math.round((c.mastered / t) * 100)],
+        evNames: ["Lessons done", "Lessons answered", "Lessons mastered"],
+        next: { label: p.level === "none" ? `Start ${U} ${p.n}` : p.level === "mastered" ? "Revisit it" : `Continue ${U} ${p.n}`, why: `${LEVEL[p.level].label}${p.revise ? ", and recent answers have slipped" : ""}. ${p.pre.length ? `Builds on ${U} ${p.pre.join(", ")}.` : "A starting point."}` } };
+      a.ids.push(id);
+    }
+    for (const e of W.roads) { const A = pinById(`c-${W.places.find((p) => p.n === e.from)?.id}`), B = pinById(`c-${W.places.find((p) => p.n === e.to)?.id}`); if (A && B) roads.push({ a: A.v, b: B.v, weak: ["new", "fading"].includes(B.state) }); }
+  } else areas.forEach((a, i) => {
     const here = placed.filter((p) => p.area === i);
     const bySlot = new Map(here.filter((p) => p.slot != null).map((p) => [p.slot, p.topic]));
     const extras = here.filter((p) => p.slot == null).map((p) => p.topic);
@@ -108,7 +166,8 @@ export async function mountSubjectMap(siteName) {
     });
     if (i) roads.push({ a: pinById(areas[i - 1].ids.at(-1)).v, b: pinById(a.ids[0]).v, weak: true });
   });
-  const regions = areas.map((a) => ({ v: vec(...a.centre), radius: 0.32, rgb: rgb(a.c), light: a.ids.reduce((s, id) => s + pinById(id).strength, 0) / (a.ids.length * 100) }));
+  // a region's glow is how far its chapters (or topics) have really got: it brightens as they're mastered
+  const regions = areas.map((a) => ({ v: vec(...a.centre), radius: cw ? 0.28 + Math.min(0.12, a.ids.length * 0.008) : 0.32, rgb: rgb(a.c), light: a.light ?? a.ids.reduce((s, id) => s + pinById(id).strength, 0) / (a.ids.length * 100) }));
   // topics that fit no area
   const loose = unplaced.slice(0, 8);
   loose.forEach((t, k) => {
@@ -129,7 +188,7 @@ export async function mountSubjectMap(siteName) {
 
   const canvas = $("#earth-canvas");
   const firstReal = pins.find((p) => !info[p.id].example);
-  let selected = firstReal?.id || pins.find((p) => p.state === "fading")?.id || pins[0].id, lastTopic = selected;
+  let selected = (cw && (pins.find((p) => p.state === "recent") || pins.find((p) => p.state === "learning") || pins.find((p) => p.state === "fading"))?.id) || firstReal?.id || pins.find((p) => p.state === "fading")?.id || pins[0].id, lastTopic = selected;
   const globe = createGlobe(canvas, {
     onPick: (id) => select(id),
     onHover: (id) => { const h = hubs.find((x) => x.id === id); canvas.title = h ? `${h.name}: ${h.n} studying ${site.n} now` : id ? pinById(id).name : ""; },
@@ -151,7 +210,7 @@ export async function mountSubjectMap(siteName) {
     const hub = hubs.find((h) => h.id === selected);
     if (hub) return inspectHub(hub);
     const t = info[selected], p = pinById(selected), [label, note] = STATES[t.state];
-    const evName = (i) => (i === 4 && !t.example ? (t.course ? "Lessons done" : "Cards tested") : EVIDENCE[i]);
+    const evName = (i) => (t.evNames ? t.evNames[i] : i === 4 && !t.example ? (t.course ? "Lessons done" : "Cards tested") : EVIDENCE[i]);
     const needs = t.ev.map((v, i) => [v, evName(i)]).filter(([v]) => v != null && v < 70).map(([, n]) => n.toLowerCase());
     const el = $("#inspector");
     el.style.setProperty("--c", `#${t.c}`);
@@ -162,7 +221,7 @@ export async function mountSubjectMap(siteName) {
       : `<a class="btn btn-light lg btn-sm" href="app.html#/study/t:${encodeURIComponent(t.key)}"><span>${esc(t.next?.kind === "done" ? "Practise anyway" : t.next?.label || "Practise")}${t.next?.mins ? ` · ${t.next.mins} min` : ""}</span></a>
          <a class="btn btn-ghost lg btn-sm" href="app.html#/topic/${encodeURIComponent(t.key)}"><span>Full profile</span></a>`;
     el.innerHTML = `
-      <span class="kicker">${esc(t.area)}${t.example ? " · example" : t.course ? " · your course" : " · your notes"}</span>
+      <span class="kicker">${esc(t.area)}${t.example ? " · example" : t.course ? ` · ${t.level ? esc(LEVEL[t.level].label) : "your course"}` : " · your notes"}</span>
       <b class="topic">${esc(p.name)}</b>
       <span class="state-pill ${t.state}">${label}</span>
       <p>${t.example ? note + days : esc(t.next?.why || note) + days}</p>
@@ -193,6 +252,15 @@ export async function mountSubjectMap(siteName) {
 
   // a summary above the map, and the portals as links below it
   const real = Object.values(info).filter((t) => !t.example);
+  if (cw) {
+    const W = cw.world, sm = W.map.summary, n = W.places.length;
+    $("#map-note").innerHTML = `${esc(W.course.n)}: every ${esc(W.course.U.toLowerCase())} is a place, grouped into the course's stages, with roads to what builds on it. Places light up as your answers show you know them; mastered ones become landmarks.${cw.courses.length > 1 ? ` <span class="map-courses">${cw.courses.map((c) => `<button type="button" data-world="${esc(c.s)}" aria-pressed="${c.s === W.course.s}">${esc(c.n)}</button>`).join("")}</span>` : ""}`;
+    $("#map-stats").innerHTML = `<div><b>${n}</b><span>${esc(W.course.U.toLowerCase())}s</span></div><div><b>${sm.mastered + sm.proficient}</b><span>landmarks</span></div><div><b>${sm.learning + sm.practising}</b><span>in progress</span></div><div><b>${sm.revise}</b><span>fading</span></div><a class="btn btn-ghost lg btn-sm" href="/explore.html#/course/${esc(W.course.s)}"><span>Mastery map</span></a>`;
+    $("#map-note").addEventListener("click", (e) => { const b = e.target.closest("[data-world]"); if (!b) return; try { sessionStorage.setItem(`gx-world:${siteName}`, b.dataset.world); } catch { /* private mode */ } location.reload(); });
+    $("#map-portals").innerHTML = related.length ? `<span>Portals</span>${related.map((s) => `<a href="${pathOf(s)}map.html">${nameHtml(s)} map →</a>`).join("")}` : "";
+    select(selected, true);
+    return;
+  }
   const count = (s) => real.filter((t) => t.state === s).length;
   $("#map-note").textContent = real.length
     ? `${real.length} of your topics are on the map, sorted into ${site.n}'s areas. Pins marked "example" are topics you haven't added notes on yet.`

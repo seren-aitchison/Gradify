@@ -77,3 +77,16 @@ Target my weaknesses had landed on `main`, and no open branch touched `kit/cours
    - Migration `20261107120000_game_rewards.sql` adds a unique index on `(user_id, kind)` for game rewards, so the database refuses a second payment even when two tabs sync at once.
    - The migration applies and verifies on real PostgreSQL in `tests/pg-rehearsal.test.mjs`.
    - It reaches the live database only when the owner runs the migrations (docs/BACKEND-STATUS.md).
+
+## Topic quests and the mastery system (19 November 2026)
+
+- **Topic quest** (`topicQuest` in `kit/game/quests.js`): one topic a day, the module of the learner's next open lesson,
+  in three steps that each need learning evidence from that topic today: *Understand* (finish a lesson in it, +25),
+  *Remember* (10 correct flashcard recalls, +35) and *Apply* (80% or more across 5 of its questions, +40). Keys hold
+  the day, course and unit, so each step pays once, through the same ledger as every other quest (`claim`). Shown on
+  each course's Home and on the Journey. Nothing pays for time on the page or lessons merely opened.
+- **Mastery levels** (`kit/learning/mastery-map.js`): every chapter is Not started, Learning, Practising, Proficient or
+  Mastered, from the lesson statuses in `kit/learning/topic-status.js`; slipping answers flag it Needs revision.
+- **The world grows with mastery**: on a subject site's map (`kit/earth/subject-map.js` courseWorld), regions glow by the
+  mean mastery of their chapters and mastered chapters become landmarks, so the world reflects learning, not time.
+

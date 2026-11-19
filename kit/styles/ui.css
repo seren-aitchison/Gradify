@@ -279,6 +279,8 @@ html[data-motion="reduce"] :is(.gx-toast, .gx-layer, .gx-dialog, .gx-panel, .gx-
 .gx-ex-acts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
 .gx-ex-acts .btn span { display: inline-flex; align-items: center; gap: 6px; }
 .gx-ex-acts .gx-ic { width: 15px; height: 15px; }
+.gx-ex-views { margin: 18px 0 4px; }
+.gx-ex-map { margin-top: 12px; }
 .gx-ex-stages { display: flex; gap: 6px; margin: 18px 0 6px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
 .gx-ex-stages button { flex: none; padding: 7px 13px; border-radius: 999px; border: 1px solid var(--line); background: none; color: var(--mute); font: 500 13px var(--sans); cursor: pointer; }
 .gx-ex-stages button[aria-pressed="true"] { color: var(--fg); background: rgba(var(--ink-rgb), .1); border-color: var(--line-strong); }
@@ -319,3 +321,41 @@ html[data-motion="reduce"] :is(.gx-toast, .gx-layer, .gx-dialog, .gx-panel, .gx-
   .gx-ex-cp { grid-column: 2; justify-items: start; }
   .gx-ex-topics { padding: 0 12px 12px; }
 }
+
+/* ---------- the mastery map (kit/ui/mastery-map-view.js) ---------- */
+:root { --lv-none: rgba(var(--ink-rgb), .22); --lv-learning: #60a5fa; --lv-practising: #fbbf24; --lv-proficient: #a78bfa; --lv-mastered: #34d399; --lv-revise: #fb7185; }
+:root[data-theme="light"] { --lv-learning: #2563eb; --lv-practising: #b45309; --lv-proficient: #6d28d9; --lv-mastered: #047857; --lv-revise: #be123c; }
+.gx-mm { display: grid; gap: 14px; }
+.gx-mm-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 10px 20px; }
+.gx-mm-head h3 { margin: 0; font-size: 20px; letter-spacing: -.015em; }
+.gx-mm-head p { margin: 4px 0 0; max-width: 60ch; font-size: 14px; color: var(--mute); }
+.gx-mm-legend { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 0; padding: 0; list-style: none; font-size: 12.5px; color: var(--mute); }
+.gx-mm-legend li { display: inline-flex; align-items: center; gap: 6px; }
+.gx-mm-legend b { color: var(--fg); font-weight: 600; }
+.gx-mm-legend i, .gx-mm-chip i { width: 10px; height: 10px; flex: none; border-radius: 50%; border: 2px solid var(--lv); background: var(--lvfill, transparent); }
+.lv-none { --lv: var(--lv-none); } .lv-learning { --lv: var(--lv-learning); } .lv-practising { --lv: var(--lv-practising); }
+.lv-proficient { --lv: var(--lv-proficient); --lvfill: var(--lv-proficient); } .lv-mastered { --lv: var(--lv-mastered); --lvfill: var(--lv-mastered); } .lv-revise { --lv: var(--lv-revise); }
+.gx-mm-asides { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 12px; }
+.gx-mm-asides section { display: grid; gap: 6px; align-content: start; }
+.gx-mm-chip { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 12px; border: 1px solid var(--line); background: rgba(var(--surface-rgb), .55); color: var(--fg); text-decoration: none; }
+.gx-mm-chip:hover, .gx-mm-chip:focus-visible { border-color: var(--lv); }
+.gx-mm-chip span { display: grid; min-width: 0; } .gx-mm-chip b { font-size: 13.5px; font-weight: 600; } .gx-mm-chip small { font-size: 12px; color: var(--mute); }
+.gx-mm-scroll { overflow: auto; border-radius: 18px; border: 1px solid var(--line); background: radial-gradient(90% 120% at 0% 0%, rgba(70, 65, 255, .1), transparent 60%), rgba(var(--surface-rgb), .4); overscroll-behavior-x: contain; }
+.gx-mm-canvas { position: relative; }
+.gx-mm-edges { position: absolute; inset: 0; overflow: visible; }
+.gx-mm-edges path { fill: none; stroke: rgba(var(--ink-rgb), .16); stroke-width: 1.5; transition: stroke .15s, opacity .15s; }
+.gx-mm-canvas.focus .gx-mm-edges path { opacity: .25; }
+.gx-mm-canvas.focus .gx-mm-edges path.up { opacity: 1; stroke: #8c27ca; stroke-width: 2; }
+.gx-mm-canvas.focus .gx-mm-edges path.down { opacity: 1; stroke: #4641ff; stroke-width: 2; }
+.gx-mm-node { position: absolute; display: grid; grid-template-columns: 28px minmax(0, 1fr); grid-template-rows: 1fr auto; gap: 4px 10px; align-items: center; padding: 9px 12px 9px 10px; border-radius: 14px; border: 1.5px solid var(--lv); background: light-dark(#ffffff, #121216); color: var(--fg); text-decoration: none; transition: transform .15s, opacity .15s, box-shadow .15s; }
+.gx-mm-node.revise { box-shadow: 0 0 0 3px rgba(251, 113, 133, .25); }
+.gx-mm-node:hover, .gx-mm-node:focus-visible { transform: translateY(-2px); box-shadow: 0 10px 24px -12px rgba(0, 0, 0, .6); }
+.gx-mm-canvas.focus .gx-mm-node:not(.on, .up, .down) { opacity: .35; }
+.gx-mm-node.on { box-shadow: 0 0 0 3px rgba(140, 39, 202, .35); }
+.gx-mm-n { grid-row: span 2; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 9px; font: 700 12.5px var(--sans); background: rgba(var(--ink-rgb), .08); }
+.gx-mm-node.lv-proficient .gx-mm-n, .gx-mm-node.lv-mastered .gx-mm-n { background: var(--lv); color: light-dark(#fff, #0b0b10); }
+.gx-mm-t { font-size: 12.5px; font-weight: 600; line-height: 1.25; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.gx-mm-bar { height: 4px; border-radius: 9px; background: rgba(var(--ink-rgb), .1); overflow: hidden; }
+.gx-mm-bar i { display: block; height: 100%; background: var(--lv); }
+.gx-mm-node.lv-none .gx-mm-bar i { background: transparent; }
+@media (prefers-reduced-motion: reduce) { .gx-mm-node, .gx-mm-edges path { transition: none; } }
