@@ -222,6 +222,15 @@ test("lab tries: unscored touches aren't tries, a redraw keeps the sitting, leav
   assert.equal(labTry(t, here, "ix1:B", "success"), 1);
 });
 
+test("course engine: nothing it imports is redeclared inside it (a shadowed helper only fails when called)", async () => {
+  const { readFileSync } = await import("node:fs");
+  const src = readFileSync(new URL("../kit/course/course.js", import.meta.url), "utf8");
+  const names = [...src.matchAll(/^import\s*\{([^}]*)\}\s*from/gm)].flatMap((m) => m[1].split(",").map((s) => s.trim().split(/\s+as\s+/).pop()).filter(Boolean));
+  assert.ok(names.includes("labTry") || names.includes("nextLabTry"), "the lab try helper is imported");
+  const clash = names.filter((n) => new RegExp(`(?:\\b(?:const|let|var|function)\\s+${n}\\b|,\\s*${n}\\s*=[^=>])`).test(src.replace(/^import[^;]*;/gm, "")));
+  assert.deepEqual(clash, [], `imported names redeclared in course.js: ${clash.join(", ")}`);
+});
+
 test("Remember is reachable in every topic, and unfinished lab challenges aren't Apply answers", async () => {
   const day = "2026-11-19";
   const units = [{ id: "u01", title: "Statics", lessons: [{ id: "u01-01", module: "Forces" }, { id: "u01-02", module: "Forces" }] }];

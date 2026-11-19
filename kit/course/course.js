@@ -39,7 +39,7 @@ import { tutorEvent } from "../intel/experiments.js";
 import { scoreFeedback } from "../assess/tutor.js";
 import { feedbackHtml, paras } from "../assess/tutor-view.js";
 import { mountTutorPanel, directorHtml, newConversation } from "./tutor-panel.js";
-import { readLab, labState, labTry, labLeave } from "./lab-state.js";
+import { readLab, labState, labTry as nextLabTry, labLeave } from "./lab-state.js";
 import { SUPABASE_URL } from "../../gradify.config.js";
 import { buildExam, runExam, FORMATS } from "../assess/exam.js";
 import { reviewLabel } from "./review.js";
@@ -734,7 +734,7 @@ export function mountCourse(root, cfg) {
     const xp = totalXp(), L = levelOf(xp), st = streak(), tx = todayXp(), nl = nextLesson(), c = challenge(), cw = Math.min(c.n, c.of(week()));
     const sw = syncText(storeMode), syncWarn = sw?.warn ? sw.text : null;
     const nu = nl ? byId[nl.id].unit : null, left = nu ? nu.lessons.length - unitDone(nu) : 0;
-    const ring = Math.min(1, tx / S.goal), R = 30, C = 2 * Math.PI * R;
+    const goalP = Math.min(1, tx / S.goal), R = 30, C = 2 * Math.PI * R;
     const got = new Set(earned().map((b) => b.id));
     side.innerHTML = `
       <section class="co-card co-me">
@@ -742,7 +742,7 @@ export function mountCourse(root, cfg) {
         <div><b>${xp.toLocaleString()} XP</b><div class="co-bar"><i style="width:${((xp - L.from) / (L.to - L.from)) * 100}%"></i></div><small>${(L.to - xp).toLocaleString()} XP to level ${L.n + 1}</small></div>
       </section>
       <section class="co-card co-goal">
-        <svg viewBox="0 0 76 76" class="co-ring"><circle cx="38" cy="38" r="${R}" class="bg"/><circle cx="38" cy="38" r="${R}" class="fg" stroke-dasharray="${C}" stroke-dashoffset="${C * (1 - ring)}"/></svg>
+        <svg viewBox="0 0 76 76" class="co-ring"><circle cx="38" cy="38" r="${R}" class="bg"/><circle cx="38" cy="38" r="${R}" class="fg" stroke-dasharray="${C}" stroke-dashoffset="${C * (1 - goalP)}"/></svg>
         <div><span class="co-kicker">Daily goal</span><b>${tx} / ${S.goal} XP</b>
           <small class="co-streak">${ic("flame")} ${st.n}-day streak${st.today ? "" : st.n ? " · learn today to keep it" : ""}${st.rest ? ` · ${st.rest} rest day${st.rest > 1 ? "s" : ""} banked` : ""}</small>
           <select aria-label="Daily goal">${[20, 30, 50, 100].map((g) => `<option value="${g}" ${g === S.goal ? "selected" : ""}>${g} XP a day</option>`).join("")}</select></div>
@@ -1145,7 +1145,7 @@ export function mountCourse(root, cfg) {
       const pct = Math.round(p * 100);
       if (pct !== pctShown) {
         pctShown = pct;
-        const ring = root.querySelector(".co-rail .fg"); if (ring) ring.style.strokeDashoffset = String(ring.dataset.c * (1 - p));
+        const fg = root.querySelector(".co-rail .fg"); if (fg) fg.style.strokeDashoffset = String(fg.dataset.c * (1 - p));
         const t = root.querySelector(".co-readpct"); if (t) t.textContent = `${pct}% read`;
         if (p >= 0.6) lightStep("read");
       }
@@ -2111,7 +2111,7 @@ export function mountCourse(root, cfg) {
   const labRecord = (x, task, label, outcome, extra = {}) => {
     const l = byId[x.evidence?.[task]]; if (!l) return null;
     const ok = outcome === "success" || outcome === "assisted_success";
-    const attempt = labTry(labTries, location.hash.split("/").slice(0, 3).join("/"), `${x.id}:${task}`, outcome);
+    const attempt = nextLabTry(labTries, location.hash.split("/").slice(0, 3).join("/"), `${x.id}:${task}`, outcome);
     record({ Q: { type: "lab", d: 2, objectives: [] }, key: `ix:${x.id}:${task}`, v: null, l }, "practice", x.id,
       { score: ok ? 1 : 0, correct: ok, method: "auto", status: "final" }, { attempt, response: { challenge: label || task, outcome, evidence: EXPLORE.has(`ix:${x.id}:${task}`) ? "exploration" : "practice", ...extra } });
   };
