@@ -970,3 +970,16 @@ button.rx-s { cursor: pointer; border-bottom: 1px dashed var(--line-strong); } b
   .co-pncard.prev small::after { content: "  ·  ←"; opacity: .7; }
   .co-pncard.next small::before { content: "→  ·  "; opacity: .7; }
 }
+
+/* "Explain it another way" (kit/learning/explain.js) */
+.co-anotherw { margin-top: 10px; display: grid; gap: 8px; }
+.co-way:empty { display: none; }
+.co-way { border: 1px solid var(--line); border-radius: 16px; padding: 14px; display: grid; gap: 10px; background: rgba(var(--ink-rgb), .03); }
+.co-waytabs { display: flex; flex-wrap: wrap; gap: 6px; }
+.co-waytabs .chip { padding: 6px 12px; border-radius: 99px; border: 1px solid var(--line-strong); background: transparent; color: var(--fg); font: inherit; font-size: 13px; cursor: pointer; }
+.co-waytabs .chip[aria-selected="true"] { background: var(--invert-bg); color: var(--invert-fg); border-color: var(--invert-bg); }
+.co-waybody h4 { margin: 0 0 6px; }
+.co-wstep { display: grid; grid-template-columns: 26px 1fr; gap: 8px; margin: 6px 0; }
+.co-wstep b { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--invert-bg); color: var(--invert-fg); font-size: 12px; }
+.co-reveal { margin-left: 6px; padding: 2px 10px; border-radius: 99px; border: 1px solid var(--line-strong); background: transparent; color: var(--fg); font: inherit; font-size: 12px; cursor: pointer; }
+.co-wayvis .gd { max-width: 480px; }

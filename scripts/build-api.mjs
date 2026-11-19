@@ -136,5 +136,7 @@ if (process.argv[1] && new URL(`file://${process.argv[1]}`).href === import.meta
   await mkdir(new URL("icons/", OUT), { recursive: true });
   for (const [slug, set] of Object.entries(await iconSets())) await writeFile(new URL(`icons/${slug}.json`, OUT), JSON.stringify(set));
   await writeFile(new URL("quality.json", OUT), json(await (await import("./quality-audit.mjs")).qualityJson()));
+  { const w = await import("../kit/curriculum/world.js"); await writeFile(new URL("curricula.json", OUT), json({ api: 1, about: "The world's curricula: country → education system → qualification (kit/curriculum/world.js). Listed from public information; `checked` is the date an entry was checked against its official source, or null. Listing is not a claim that Gradify covers it.", stats: w.stats(), countries: w.WORLD })); }
+  await writeFile(new URL("visuals.json", OUT), JSON.stringify(await (await import("./visual-index.mjs")).visualIndex()));
   console.log(`api: ${cat.courses.length} courses, ${cat.courses.reduce((a, c) => a + c.lessons, 0)} lessons`);
 }

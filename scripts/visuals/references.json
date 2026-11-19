@@ -1,0 +1,335 @@
+{
+  "about": "Independent reference data the pipeline checks each molecule against (scripts/visuals/build_molecules.py). inchikey: the standard InChIKey of the intended compound, stereochemistry included, so a wrong isomer fails; cip: how many stereocentres are R and how many S; geometry: experimental bond lengths (Å) and angles (degrees) from the NIST Computational Chemistry Comparison and Benchmark Database (CCCBDB, cccbdb.nist.gov, experimental geometries), checked within 0.03 Å and 3°. A molecule with no entry here is checked by its formula and structure only, and its viewer says so. coordinates: for a small molecule whose experimental structure fully fixes its shape, the measured coordinates themselves (Å, in the SMILES atom order, hydrogens last), used instead of a force field.",
+  "geometrySource": "NIST CCCBDB experimental geometry (cccbdb.nist.gov)",
+  "tolerance": {
+    "bond": 0.03,
+    "angle": 3
+  },
+  "molecules": {
+    "water": {
+      "inchikey": "XLYOFNOQVPJJNP-UHFFFAOYSA-N",
+      "geometry": [
+        {
+          "bond": [
+            "O",
+            "H",
+            1
+          ],
+          "value": 0.958
+        },
+        {
+          "angle": [
+            "H",
+            "O",
+            "H"
+          ],
+          "value": 104.5
+        }
+      ]
+    },
+    "carbon-dioxide": {
+      "inchikey": "CURLTUGMZLYLDI-UHFFFAOYSA-N",
+      "geometry": [
+        {
+          "bond": [
+            "C",
+            "O",
+            2
+          ],
+          "value": 1.162
+        },
+        {
+          "angle": [
+            "O",
+            "C",
+            "O"
+          ],
+          "value": 180
+        }
+      ],
+      "coordinates": [
+        [
+          "O",
+          -1.162,
+          0,
+          0
+        ],
+        [
+          "C",
+          0,
+          0,
+          0
+        ],
+        [
+          "O",
+          1.162,
+          0,
+          0
+        ]
+      ]
+    },
+    "methane": {
+      "inchikey": "VNWKTOKETHGBQD-UHFFFAOYSA-N",
+      "geometry": [
+        {
+          "bond": [
+            "C",
+            "H",
+            1
+          ],
+          "value": 1.087
+        },
+        {
+          "angle": [
+            "H",
+            "C",
+            "H"
+          ],
+          "value": 109.47
+        }
+      ]
+    },
+    "ammonia": {
+      "inchikey": "QGZKDVFQNNGYKY-UHFFFAOYSA-N",
+      "geometry": [
+        {
+          "bond": [
+            "N",
+            "H",
+            1
+          ],
+          "value": 1.012
+        },
+        {
+          "angle": [
+            "H",
+            "N",
+            "H"
+          ],
+          "value": 106.7
+        }
+      ]
+    },
+    "ethene": {
+      "geometry": [
+        {
+          "bond": [
+            "C",
+            "C",
+            2
+          ],
+          "value": 1.339
+        }
+      ]
+    },
+    "ethyne": {
+      "geometry": [
+        {
+          "bond": [
+            "C",
+            "C",
+            3
+          ],
+          "value": 1.203
+        },
+        {
+          "angle": [
+            "H",
+            "C",
+            "C"
+          ],
+          "value": 180
+        }
+      ]
+    },
+    "ethane": {
+      "geometry": [
+        {
+          "bond": [
+            "C",
+            "C",
+            1
+          ],
+          "value": 1.535
+        }
+      ]
+    },
+    "benzene": {
+      "inchikey": "UHOVQNZJYSORNB-UHFFFAOYSA-N",
+      "geometry": [
+        {
+          "bond": [
+            "C",
+            "C",
+            1.5
+          ],
+          "value": 1.397
+        },
+        {
+          "angle": [
+            "C",
+            "C",
+            "C"
+          ],
+          "value": 120
+        }
+      ]
+    },
+    "ethanol": {
+      "inchikey": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N"
+    },
+    "urea": {
+      "inchikey": "XSQUKJJJFZCRTK-UHFFFAOYSA-N"
+    },
+    "caffeine": {
+      "inchikey": "RYYVLZVUVIJVGH-UHFFFAOYSA-N"
+    },
+    "aspirin": {
+      "inchikey": "BSYNRYMUTXBXSQ-UHFFFAOYSA-N"
+    },
+    "paracetamol": {
+      "inchikey": "RZVAJINKPMORJF-UHFFFAOYSA-N"
+    },
+    "ibuprofen": {
+      "inchikey": "HEFNNWSXXWATRW-UHFFFAOYSA-N"
+    },
+    "glycine": {
+      "inchikey": "DHMQDGOQFOQNFH-UHFFFAOYSA-N"
+    },
+    "alanine": {
+      "inchikey": "QNAYBMKLOCPYGJ-REOHCLBHSA-N",
+      "cip": {
+        "R": 0,
+        "S": 1
+      }
+    },
+    "glucose": {
+      "inchikey": "WQZGKKKJIJFFOK-DVKNGEFBSA-N",
+      "cip": {
+        "R": 2,
+        "S": 3
+      }
+    },
+    "cholesterol": {
+      "inchikey": "HVYWMOMLDIMFJA-DPAQBDIFSA-N",
+      "cip": {
+        "R": 4,
+        "S": 4
+      }
+    },
+    "valine": {
+      "cip": {
+        "R": 0,
+        "S": 1
+      }
+    },
+    "leucine": {
+      "cip": {
+        "R": 0,
+        "S": 1
+      }
+    },
+    "isoleucine": {
+      "cip": {
+        "R": 0,
+        "S": 2
+      }
+    },
+    "proline": {
+      "cip": {
+        "R": 0,
+        "S": 1
+      }
+    },
+    "phenylalanine": {
+      "cip": {
+        "R": 0,
+        "S": 1
+      }
+    },
+    "tryptophan": {
+      "cip": {
+        "R": 0,
+        "S": 1
+      }
+    },
+    "methionine": {
+      "cip": {
+        "R": 0,
+        "S": 1
+      }
+    },
+    "serine": {
+      "cip": {
+        "R": 0,
+        "S": 1
+      }
+    },
+    "threonine": {
+      "cip": {
+        "R": 1,
+        "S": 1
+      }
+    },
+    "cysteine": {
+      "cip": {
+        "R": 1,
+        "S": 0
+      }
+    },
+    "tyrosine": {
+      "cip": {
+        "R": 0,
+        "S": 1
+      }
+    },
+    "asparagine": {
+      "cip": {
+        "R": 0,
+        "S": 1
+      }
+    },
+    "glutamine": {
+      "cip": {
+        "R": 0,
+        "S": 1
+      }
+    },
+    "aspartic-acid": {
+      "cip": {
+        "R": 0,
+        "S": 1
+      }
+    },
+    "glutamic-acid": {
+      "cip": {
+        "R": 0,
+        "S": 1
+      }
+    },
+    "lysine": {
+      "cip": {
+        "R": 0,
+        "S": 1
+      }
+    },
+    "arginine": {
+      "cip": {
+        "R": 0,
+        "S": 1
+      }
+    },
+    "histidine": {
+      "cip": {
+        "R": 0,
+        "S": 1
+      }
+    },
+    "atp": {
+      "cip": {
+        "R": 3,
+        "S": 1
+      }
+    }
+  }
+}

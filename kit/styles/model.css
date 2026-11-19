@@ -3,6 +3,13 @@
 .mv-stage { position: relative; height: min(80vh, 800px); min-height: 520px; border-radius: 16px; overflow: hidden; border: 1px solid rgba(94, 240, 255, .25); background: #03080c; background: light-dark(#ffffff, #03080c);
   box-shadow: 0 0 60px -20px rgba(94, 240, 255, .5), inset 0 0 80px rgba(94, 240, 255, .05); }
 .mv-canvas { display: block; width: 100%; height: 100%; cursor: grab; touch-action: none; }
+/* the Blender render of the model, shown while the live model loads, then faded out */
+.mv-poster, .mv-poster img { position: absolute; inset: 0; width: 100%; height: 100%; }
+.mv-poster { z-index: 1; pointer-events: none; transition: opacity .6s ease; }
+.mv-poster img { object-fit: cover; object-position: center 40%; }
+.mv-loading { position: absolute; z-index: 2; left: 50%; bottom: 72px; transform: translateX(-50%); padding: 6px 14px; border-radius: 999px; font: 600 12px var(--sans); color: #eaffff; background: rgba(0, 20, 28, .7); border: 1px solid rgba(94, 240, 255, .3); pointer-events: none; transition: opacity .4s ease; }
+.mv-ready .mv-poster, .mv-ready .mv-loading { opacity: 0; }
+@media (prefers-reduced-motion: reduce) { .mv-poster, .mv-loading { transition: none; } }
 .mv-groups { position: absolute; top: 12px; left: 12px; right: 64px; display: flex; flex-wrap: wrap; gap: 6px; }
 .mv-grp { display: inline-flex; align-items: center; gap: 7px; padding: 6px 12px; border-radius: 999px; font: 600 12.5px var(--sans); color: var(--mute); cursor: pointer; background: rgba(var(--sink-rgb), .55); border: 1px solid rgba(var(--ink-rgb), .12); backdrop-filter: blur(8px); }
 .mv-grp i { width: 8px; height: 8px; border-radius: 50%; background: var(--c); opacity: .35; }
@@ -105,3 +112,6 @@
 /* name-it quiz: the bar holds answer buttons, so it wraps */
 .mv-quizbar:has(.mv-opts) { border-radius: 16px; flex-wrap: wrap; width: min(560px, calc(100% - 24px)); justify-content: center; }
 .mv-quizbar .mv-q { min-width: 0; text-align: center; }
+/* the model's expert review status (kit/models/reviews.js) */
+.mv-review { margin: 10px 0 0; font-size: 12px; color: var(--mute); }
+.mv-review.ok { color: #1fae8c; }

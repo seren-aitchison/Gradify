@@ -19,6 +19,7 @@ export const FEATURES = [
   // learn
   { n: "Online courses", cat: "learn", i: "cap", where: "both", d: "Full courses on every Gradify site, with interim quizzes along the way and a verified credential at the end.", size: 3, live: true, href: "#find" },
   { n: "Explainer videos", cat: "learn", i: "sparkles", where: "both", d: "Short, high-quality explainers for every topic, edited to keep attention.", try: "capture", size: 2, live: true, href: "app.html#/tools/explain" },
+  { n: "3D visuals on demand", cat: "learn", i: "atom", where: "both", d: "Ask to see any concept: molecules built from checked structures and rendered in Blender, 3D models, simulations and diagrams computed from the physics.", size: 2, live: true, href: "app.html#/tools/visualise" },
   { n: "Tutorials and simulations", cat: "learn", i: "atom", where: "web", d: "Interactive tutorials and digital simulations, from a beating heart to a trading floor.", size: 2, live: true, href: "scigradify/physics/#/practice" },
   { n: "Chant podcasts", cat: "learn", i: "music", where: "both", d: "Repetition and chant episodes that make key facts stick on a walk or a commute.", try: "capture", size: 2, live: true, href: "app.html#/tools/podcast" },
   { n: "Audio questions", cat: "learn", i: "bell", where: "app", d: "Questions read aloud, a pause to answer, then the answer. Hands-free revision.", try: "capture", size: 1, live: true, href: "app.html#/tools/audio" },
