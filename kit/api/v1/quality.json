@@ -7,7 +7,7 @@
  "overall": 79,
  "dims": {
   "accuracy": 53,
-  "completeness": 87,
+  "completeness": 88,
   "clarity": 95,
   "progression": 49,
   "application": 91,
@@ -586,15 +586,15 @@
    "lessons": 1308,
    "overall": 59,
    "dims": {
-    "accuracy": 23,
-    "completeness": 25,
+    "accuracy": 24,
+    "completeness": 27,
     "clarity": 87,
-    "progression": 29,
-    "application": 86,
+    "progression": 30,
+    "application": 87,
     "assessment": 67,
     "accessibility": 85,
     "engagement": 84,
-    "retention": 42
+    "retention": 43
    },
    "serves": [
     {
