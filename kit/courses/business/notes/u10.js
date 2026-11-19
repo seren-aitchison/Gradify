@@ -41,6 +41,16 @@ M2#business-u10-01-q2@2: A manager tests how a 5% price rise would affect profit
 M3#business-u10-01-q3@3: Why do some expensive information systems fail to add value? | Processes and staff do not change to use them well | Software can never improve decision-making | Data are always too accurate to be useful | Hardware is the only part that matters | Systems create value only when combined with redesigned processes and trained people.
 MATCH2#business-u10-01-q4@2: Match each system to its main users. | Transaction processing system = Operational staff ; Management information system = Middle managers ; Decision support system = Analysts and managers ; Executive information system = Senior executives | Each type of system serves a different level of the organisation.
 SA2#business-u10-01-q5@1,3: Explain how information systems can give a business competitive advantage, and why this advantage may not last. | Systems can lower costs by automating processes, improve decisions with timely data, and create closer links with suppliers and customers, changing the value chain. However, competitors can often buy the same technology, so advantage lasts only if it is combined with hard-to-copy processes, data and skills, and systems must be updated as technology changes. | Lower costs ; Better decisions ; Value chain links ; Imitation by rivals ; Complementary assets
+Q: What does an information system do? | It collects, processes, stores and distributes information to support operations, decisions and control.
+Q: What do management information systems do? | They summarise transaction data into regular reports for middle managers.
+Q: What kind of problems do decision support systems help with? | Semi-structured problems, using models and what-if analysis.
+Q: Who uses executive information systems? | Senior managers, for high-level views of performance and the external environment.
+Q: Name three ways information systems add value. | They cut costs by automating, improve decisions with timely information, and change how a firm competes.
+Q: What did Porter and Millar argue in 1985? | That information technology transforms the value chain.
+Q: When does an information system add value? | Only when processes and people change with it.
+Q: A sale of £12 at 10:04 is recorded. Is this data or information? | Data, a raw fact.
+Q: In the supermarket example, which system produces the nightly sales and stock report? | The management information system.
+Q: What is the mistake in treating information systems as just computers? | Procedures and people are equally part of the system.
 
 ## Digital transformation
 LV: Introductory · Application
@@ -83,6 +93,16 @@ M2#business-u10-02-q2@2: Which is the most common reason transformation programm
 M3#business-u10-02-q3@3: Why are legacy systems a barrier to transformation? | They are embedded in core processes, so replacing them is costly and risky | They are always newer than cloud services | They cannot store any customer data | They are illegal under UK law | Old systems often run critical operations and are expensive to replace.
 SEQ2#business-u10-02-q4@2: Put these stages of a bank's digital journey in order. | Scan paper records ; Offer online account opening ; Rebuild services around a mobile app ; Reorganise teams around customer journeys | The journey moves from digitisation to digitalisation to full transformation.
 SA2#business-u10-02-q5@1,3: Evaluate how a traditional retailer could carry out a successful digital transformation. | The retailer should start from a clear customer-focused purpose, with commitment from senior leaders. It could build online and mobile channels, use data to personalise offers and integrate stock across stores and online. Staff need new skills and culture must change. Legacy systems may need replacing in stages, and small iterative projects reduce risk. Success depends on change management as much as technology. | Purpose and leadership ; Channels and data ; Skills and culture ; Legacy systems ; Iterative approach
+Q: What is digitalisation? | Using digital technology to improve existing processes, such as online booking.
+Q: What is digital transformation? | Changing the business model, culture and customer experience as a whole.
+Q: What is a legacy system? | An old system that is still in use and hard to replace.
+Q: What competitive pressure drives digital transformation? | Competition from digital-native start-ups and platforms.
+Q: What have consultancy surveys such as McKinsey's repeatedly reported about transformation? | Most transformation programmes fail to meet their goals.
+Q: Why does treating transformation as an IT project cause failure? | It is really a business change involving culture, skills and processes.
+Q: Name three causes of failed digital transformation. | Weak leadership, staff resistance, legacy systems and a lack of digital skills.
+Q: What do successful digital transformations do? | Set a clear purpose, lead from the top, redesign processes around customers, build skills and work in small iterative steps.
+Q: A bank rebuilds its services around a mobile app and closes branches. What is this? | Digital transformation.
+Q: How were the bank's teams reorganised during its transformation? | Around customer journeys rather than products.
 
 ## E-commerce business models
 LV: Introductory · Application
@@ -127,6 +147,16 @@ M2#business-u10-03-q2@2: Why does e-commerce often increase price competition? |
 M3#business-u10-03-q3@3: Which firm benefits most from an omnichannel strategy? | A retailer whose customers browse online but like to collect or try in store | A firm that only sells software downloads | A business with no physical premises or stock | A firm that sells only to one customer | Omnichannel joins online and physical channels for customers who use both.
 MATCH2#business-u10-03-q4@2: Match each example to its type of e-commerce. | A shopper buys from an online retailer = B2C ; A café orders stock from a wholesaler's portal = B2B ; A person sells a used bike to another person online = C2C ; A freelance designer sells logos to firms = C2B | E-commerce is classified by who sells to whom.
 SA2#business-u10-03-q5@1,3: Evaluate whether a small independent bookshop should start selling online. | Selling online would widen its market beyond the local area, add sales outside opening hours and give customer data. However, it would face strong price competition from large online retailers, delivery and returns costs, and cybersecurity risks. It might do better selling through a marketplace, or focusing online on what makes it distinctive, such as signed copies or curated recommendations, while using click and collect to support the shop. | Wider reach ; Price competition ; Costs and risks ; Differentiation ; Omnichannel
+Q: What is B2C e-commerce? | A business selling to consumers, such as an online retailer.
+Q: What is C2B e-commerce? | A consumer selling to businesses, such as a freelancer selling services to firms.
+Q: Which form of e-commerce is largest by value? | B2B, trade between businesses.
+Q: What is the commission revenue model? | A marketplace takes a cut of each sale.
+Q: What is the advertising revenue model? | Free content funded by advertisers.
+Q: Name three advantages of e-commerce. | Lower premises costs, national and global reach, 24-hour opening and rich customer data.
+Q: Name three disadvantages of e-commerce. | Price competition, delivery and returns costs, cybersecurity and fraud risks, and loss of face-to-face service.
+Q: What is omnichannel retailing? | Integrating online and physical channels into one customer experience.
+Q: Give an example of an omnichannel service. | Click and collect.
+Q: How did the clothing brand respond to high returns costs? | It introduced a small charge for returns by post.
 
 ## Platforms and network effects
 LV: Introductory · Application
@@ -169,6 +199,16 @@ M2#business-u10-04-q2@2: Why do platform markets often tip to a dominant firm? |
 M3#business-u10-04-q3@3: Which factor most weakens a dominant platform's position? | Users easily multi-homing across rival platforms | High switching costs for users | Strong indirect network effects | Exclusive deals with suppliers | If users use several platforms at once, network effects lock in less.
 TF2#business-u10-04-q4@2: Platforms only ever experience positive network effects. | false | Congestion, spam and low-quality sellers can make a platform worse as it grows.
 SA2#business-u10-04-q5@1,3: Explain how network effects can create a dominant platform, and evaluate the case for regulating it. | Direct and indirect network effects make a platform more valuable as it grows, so users and suppliers join the biggest, tipping the market. Switching costs and data advantages then protect it. Regulation may be justified because dominance can lead to high fees, self-preferencing and less innovation. But regulation may reduce benefits of scale and is hard to design, so measures such as interoperability and conduct rules aim to keep markets contestable. | Network effects ; Tipping ; Switching costs ; Harms of dominance ; Regulatory trade-offs
+Q: What is a platform? | A business that creates value by enabling interactions between two or more groups.
+Q: What are multi-sided markets? | Markets where a platform must attract every side, such as buyers and sellers, at once.
+Q: What is the chicken-and-egg problem for platforms? | At launch, each side will only join if the other side is already there.
+Q: What is a direct network effect? | A product becoming more valuable as more people use it, such as a messaging app.
+Q: Give two examples of negative network effects. | Congestion or low-quality sellers.
+Q: What does it mean for a platform market to tip? | It moves towards one dominant firm, through network effects, scale and data.
+Q: Why can users find it hard to leave a dominant platform? | They face high switching costs.
+Q: What is multi-homing? | Using several competing platforms at the same time.
+Q: What power does the Digital Markets, Competition and Consumers Act 2024 give the CMA over platforms? | To designate firms with strategic market status and impose conduct requirements.
+Q: How did the ride-hailing app solve its shortage of drivers? | It paid drivers bonuses to join, shortening waits and attracting more riders.
 
 ## Data-driven decision-making
 LV: Introductory · Application
@@ -212,6 +252,16 @@ M2#business-u10-05-q2@2: Why are A/B tests strong evidence of cause and effect? 
 M3#business-u10-05-q3@3: A call centre targets calls handled per hour, and staff start ending calls early. This illustrates | Goodhart's law | The DIKW hierarchy | Prescriptive analytics | Network effects | Once the measure became a target, behaviour changed and it stopped reflecting good service.
 NUM2#business-u10-05-q4@2: An A/B test shows conversion of 3.4% for the new page and 3.0% for the old. What is the relative increase, in %? | 13.3 | 0.2 | % | (3.4 − 3.0) ÷ 3.0 × 100 = 13.3%.
 SA2#business-u10-05-q5@1,3: Evaluate the benefits and limitations of data-driven decision-making for a retailer. | Benefits include more accurate demand forecasts, better pricing and stock decisions, testing ideas with A/B tests, and less reliance on bias or guesswork. Limitations include poor-quality or biased data, mistaking correlation for causation, Goodhart's law when metrics become targets, lack of data for new products, and questions of values that data cannot answer. Data work best combined with managers' judgement. | Better forecasts ; Testing ; Data quality and bias ; Correlation and causation ; Judgement
+Q: What is data-driven decision-making? | Using facts, metrics and analysis rather than intuition alone to guide decisions.
+Q: What does the DIKW model describe? | A hierarchy of data, information, knowledge and wisdom.
+Q: What four qualities must data have for good decisions? | Accurate, complete, timely and relevant.
+Q: What question does predictive analytics answer? | What is likely to happen?
+Q: What does prescriptive analytics do? | It recommends what to do, such as stock levels.
+Q: What is an A/B test? | Comparing two versions on randomly split customers to see which performs better.
+Q: Name three ways data can mislead. | Biased samples, mistaking correlation for causation, and measuring what is easy rather than what matters.
+Q: Why can data not settle every business decision? | They cannot decide questions of values or strategy, and new markets may lack historical data.
+Q: What should the shop check before adopting the new checkout design? | That the difference in conversion is statistically significant.
+Q: What is the mistake in assuming more data means better decisions? | Poor-quality or irrelevant data can mislead.
 
 ## Business intelligence and dashboards
 LV: Introductory · Application
@@ -253,6 +303,16 @@ M2#business-u10-06-q2@2: Why is data cleaned during ETL? | To remove errors and 
 M3#business-u10-06-q3@3: Which change would most improve a cluttered dashboard showing 40 metrics? | Reduce it to a few KPIs shown against targets | Add 3D charts for every metric | Show each metric as a large table | Update the data once a year | Focusing on a few KPIs with context makes problems stand out.
 NUM2#business-u10-06-q4@2: A hotel earns £36,000 room revenue in a night with 400 rooms available. What is revenue per available room, in £? | 90 | 0.5 | £ | 36,000 ÷ 400 = £90 per available room.
 SA2#business-u10-06-q5@1,3: Evaluate how a business intelligence dashboard could help the manager of a chain of gyms. | A dashboard could bring together membership, attendance, revenue and cancellation data, showing KPIs such as retention against target. Leading indicators like falling attendance could warn of cancellations. Drill-down would show which gyms need action. However, value depends on data quality, choosing the right few KPIs, and managers acting on what they see; too many metrics or out-of-date data would reduce its usefulness. | Integrated data ; KPIs and targets ; Leading indicators ; Data quality ; Acting on insight
+Q: What is business intelligence? | Tools and processes that gather, store and analyse business data to support decisions.
+Q: What is a data warehouse? | A central store of cleaned, integrated data for analysis.
+Q: What does drill-down mean in a dashboard? | Moving from totals to the detail behind them.
+Q: What is a leading indicator? | A metric that predicts future performance, such as website visits.
+Q: What is a lagging indicator? | A metric that records outcomes, such as quarterly profit.
+Q: What makes a good KPI? | Few in number, clearly defined, measurable and owned by someone.
+Q: How did Stephen Few define a dashboard? | A visual display of the most important information needed to achieve objectives, on one screen, monitored at a glance.
+Q: What should an effective dashboard compare KPIs against? | Targets or previous periods.
+Q: Name three common faults in dashboards. | Too many metrics, decorative charts such as 3D pies, missing context and out-of-date data.
+Q: Name two KPIs on the hotel manager's dashboard. | Occupancy, average room rate, revenue per available room and review score.
 
 ## Correlation and regression for forecasting
 LV: Introductory · Application
@@ -295,6 +355,16 @@ M2#business-u10-07-q2@2: Umbrella sales and hot drink sales are strongly correla
 M3#business-u10-07-q3@3: Which forecast is most reliable? | One within the data range with r of 0.95 from 200 observations | One far outside the data range with r of 0.95 | One within the data range with r of 0.15 | One using five observations with r of 0.6 | Strong correlation, a large sample and interpolation give the most reliable forecast.
 NUM2#business-u10-07-q4@2: A regression line is sales = 20 + 8 × temperature. What are forecast sales at 25 °C? | 220 | 0 | ice creams | 20 + 8 × 25 = 220 ice creams.
 SA2#business-u10-07-q5@1,3: Evaluate the use of regression analysis by a firm forecasting sales from advertising spending. | Regression gives a clear estimate of how much sales rise for each extra pound of advertising and allows forecasts for planned budgets. It is most useful when correlation is strong, the sample large and forecasts within the data range. However, correlation does not prove causation, other factors such as price, season and competitors also affect sales, past relationships may change, and extrapolating to much larger budgets is unreliable. | Gradient and forecasts ; Strength of correlation ; Causation ; Other variables ; Extrapolation
+Q: What does a scatter graph show? | Whether two variables are related, by plotting pairs of values.
+Q: What does a correlation coefficient near 0 mean? | No linear relationship, or only a weak one.
+Q: Why does correlation not prove causation? | A third factor may drive both variables.
+Q: What method finds the regression line of best fit? | The least squares method.
+Q: In y = a + bx, what does a represent? | The intercept.
+Q: Why is extrapolation less reliable than interpolation? | It predicts beyond the range of the observed data.
+Q: What does r squared show? | The proportion of variation in y explained by x.
+Q: When is a regression forecast most reliable? | When correlation is strong, the sample large, the relationship stable and the prediction within the data range.
+Q: What can break past relationships used in forecasts? | Changes in competition, the economy or consumer tastes.
+Q: Why is an ice cream forecast at 40 °C unreliable in the kiosk example? | It is extrapolation beyond the observed data.
 
 ## Artificial intelligence in business
 LV: Introductory · Application
@@ -338,6 +408,16 @@ M2#business-u10-08-q2@2: Why can AI recruitment tools be unfair? | They learn fr
 M3#business-u10-08-q3@3: Which approach best manages the risks of AI in loan decisions? | Human review, bias testing and a way for customers to challenge outcomes | Fully automatic decisions with no explanation | Keeping the model secret from regulators | Using AI only for rejected applications | Oversight, testing and contestability address fairness and accountability.
 TF2#business-u10-08-q4@2: A firm is not responsible for decisions made by an AI system it uses. | false | Firms remain legally and ethically responsible for decisions made with AI tools.
 SA2#business-u10-08-q5@1,3: Evaluate the opportunities and risks for a bank adopting artificial intelligence. | Opportunities include faster fraud detection, better credit scoring, chatbots for routine queries and lower costs. Risks include biased lending decisions, models that are hard to explain to customers and regulators, errors or false outputs, data privacy breaches and loss of trust. The bank should keep human oversight of important decisions, test for bias, explain decisions and comply with regulation, so benefits outweigh risks. | Efficiency gains ; Fraud and credit ; Bias ; Explainability ; Oversight
+Q: What is artificial intelligence? | Computer systems that perform tasks usually requiring human intelligence, such as recognising images or language.
+Q: What is generative AI? | AI that produces new content such as text, images or code, using large models trained on vast datasets.
+Q: How is AI used in finance? | For fraud detection and credit scoring.
+Q: How is AI used in operations? | Demand forecasting, predictive maintenance and route optimisation.
+Q: What are AI hallucinations? | Confident but false outputs from generative AI.
+Q: Why does poor explainability matter for AI? | It makes accountability difficult.
+Q: Name the principles in the UK government's 2023 AI white paper. | Safety, transparency, fairness, accountability and contestability.
+Q: When do firms usually gain most from AI? | When it augments staff rather than simply replacing them, with human oversight.
+Q: What is algorithmic bias? | Systematic unfairness in the outputs of an automated system.
+Q: How did the insurer use human oversight with its fraud model? | Flagged claims went to a human investigator rather than being rejected automatically.
 
 ## Cybersecurity for business
 LV: Introductory · Application
@@ -381,6 +461,16 @@ M2#business-u10-09-q2@2: Which control best limits the damage from ransomware? |
 M3#business-u10-09-q3@3: A director's email is used to request an urgent payment to a new account. What is the best control? | Verify payment changes through a separate, known contact route | Pay quickly to avoid upsetting the director | Turn off email filtering for directors | Allow any staff member to approve payments | Independent verification defeats business email compromise.
 MATCH2#business-u10-09-q4@2: Match each attack to the security principle it mainly threatens. | Stealing customer records = Confidentiality ; Altering invoice bank details = Integrity ; Taking a website offline = Availability ; Encrypting files for ransom = Availability | Different attacks harm different parts of the CIA triad.
 SA2#business-u10-09-q5@1,3: Evaluate how a small online retailer should manage its cyber security risks. | It faces phishing, ransomware, payment fraud and attacks on its website. It should adopt Cyber Essentials controls, multi-factor authentication, regular updates and separate backups, and train staff to spot phishing. An incident plan would reduce damage. Costs and inconvenience must be weighed against the value of customer data and sales, and insurance can transfer some risk, but no control removes risk completely. | Threats ; Technical controls ; Training ; Incident response ; Cost and residual risk
+Q: Which attack is most commonly reported in the UK Cyber Security Breaches Survey? | Phishing.
+Q: What is business email compromise? | Criminals impersonating a supplier or director to divert payments.
+Q: What is a denial of service attack? | Flooding a website with traffic to take it offline.
+Q: What is an insider threat? | Careless or malicious staff.
+Q: What does integrity mean in the CIA triad? | Information is accurate and has not been altered without authorisation.
+Q: What does availability mean in the CIA triad? | Systems and data are accessible when needed.
+Q: Which body runs the Cyber Essentials scheme? | The National Cyber Security Centre.
+Q: Why should backups be stored separately? | So they survive an attack such as ransomware and can be used to restore data.
+Q: Why should firms match security controls to the value of what they protect? | Security costs money and adds friction.
+Q: Why are small businesses often targeted by cyber attacks? | Their defences are often weaker.
 
 ## Data protection and UK GDPR
 LV: Introductory · Application
@@ -422,6 +512,16 @@ M2#business-u10-10-q2@2: An online shop processes a customer's address to delive
 M3#business-u10-10-q3@3: Why does the UK GDPR place extra conditions on health data? | It is special category data whose misuse could cause serious harm | Health data are not personal data | Health data can never be processed | It is only relevant to public bodies | Special category data carry higher risks of discrimination and harm.
 NUM2#business-u10-10-q4@2: A firm has worldwide turnover of £800m. What is the maximum fine at 4% of turnover, in £m? | 32 | 0.5 | £m | 0.04 × 800 = £32m, which is higher than £17.5m.
 SA2#business-u10-10-q5@1,3: Evaluate the impact of the UK GDPR on a small marketing business. | The firm must have a lawful basis for processing, often consent for direct marketing, keep data accurate and secure, collect only what it needs and delete it when no longer needed. It must respond to rights such as access and erasure and report serious breaches within 72 hours. This adds costs and limits some marketing, but builds customer trust, reduces risk of large fines and reputational damage, and good data practice can improve targeting. | Lawful basis ; Principles ; Individual rights ; Costs and fines ; Trust benefits
+Q: What is personal data? | Any information relating to an identified or identifiable living person.
+Q: Which laws govern data protection in the UK? | The UK GDPR and the Data Protection Act 2018.
+Q: What is a data processor? | An organisation that processes personal data on behalf of a controller.
+Q: Name the six lawful bases for processing. | Consent, contract, legal obligation, vital interests, public task and legitimate interests.
+Q: What is the storage limitation principle? | Personal data should be kept no longer than needed.
+Q: Give two examples of special category data. | Health or ethnicity.
+Q: How quickly must a subject access request normally be answered? | Within one month.
+Q: What is the maximum fine under the UK GDPR? | £17.5 million or 4% of annual worldwide turnover, whichever is higher.
+Q: Which 2025 act amended parts of the UK data protection regime? | The Data (Use and Access) Act 2025.
+Q: What lawful bases did the gym use for its data? | Contract for billing and explicit consent for health data.
 
 ## Digital ethics
 LV: Introductory · Evaluation
@@ -466,6 +566,16 @@ M2#business-u10-11-q2@2: A duty-based thinker objects to covert tracking because
 M3#business-u10-11-q3@3: Which response best reflects ethical digital practice beyond legal compliance? | Testing algorithms for bias and explaining automated decisions to users | Doing only what the law strictly requires | Collecting as much data as possible in case it is useful | Hiding data practices in long terms and conditions | Responsible firms address fairness and transparency proactively.
 TF2#business-u10-11-q4@2: If a digital practice is legal, it must also be ethical. | false | Law sets a minimum; many legal practices can still be unfair, manipulative or harmful.
 SA3#business-u10-11-q5@2,3: Evaluate whether a social media company should limit features that maximise time spent on its app by children. | Engagement features raise advertising revenue and shareholder value, so limits may cost money. However, there is concern about harm to children's wellbeing and sleep, and consequentialist and duty-based arguments support protecting vulnerable users. The Online Safety Act places legal duties on platforms. Limiting features could build trust with parents and regulators and reduce legal risk, so long-term interests may favour limits even if short-term revenue falls. | Revenue ; Harm to children ; Ethical frameworks ; Regulation ; Long-term trust
+Q: What does Shoshana Zuboff call the business model of tracking users to build profiles? | Surveillance capitalism.
+Q: What is algorithmic fairness about? | Whether automated decisions disadvantage some groups.
+Q: What environmental issues does digital ethics cover? | The energy use of data centres and electronic waste.
+Q: What question does consequentialism ask about a digital practice? | Does it produce more benefit than harm overall?
+Q: What question does virtue ethics ask about a digital practice? | Is it what an honest, fair business would do?
+Q: What is privacy by design? | Building data protection into systems from the start.
+Q: What duties does the Online Safety Act 2023 create? | Duties on platforms.
+Q: Which act strengthens protection against unfair practices such as fake reviews? | The Digital Markets, Competition and Consumers Act 2024.
+Q: What is the trade-off of ethical digital practice for a firm? | It builds trust but may cost revenue in the short run.
+Q: What happened when the subscription app simplified cancellation? | Short-term revenue dipped, but trust and reviews improved.
 
 ## Enterprise systems: ERP and CRM
 LV: Introductory · Application
@@ -507,6 +617,16 @@ M2#business-u10-12-q2@2: What is the main benefit of a single shared ERP databas
 M3#business-u10-12-q3@3: Which action most reduces the risk of an ERP implementation failure? | Phased roll-out with testing, training and leadership support | Switching all systems on at once in the busiest season | Keeping old processes unchanged | Skipping data migration checks to save time | Careful change management reduces disruption.
 SEQ2#business-u10-12-q4@2: Order these steps in an ERP sales order process. | Customer places an order ; Stock is reserved ; Goods are dispatched ; Invoice is issued | ERP links each step automatically through the shared database.
 SA2#business-u10-12-q5@1,3: Evaluate whether a growing mail-order company should invest in an ERP system. | ERP would integrate orders, stock, purchasing and accounts, reducing errors such as selling out-of-stock items, cutting duplicated work and improving reporting as the firm grows. However, it is expensive, takes time to implement and requires process change and training; poor implementation could disrupt orders. The decision depends on the firm's size, current problems, budget and ability to manage change, and cloud ERP may reduce cost. | Integration ; Fewer errors ; Cost and time ; Change management ; Scale of firm
+Q: What does an ERP system integrate? | Core processes such as finance, purchasing, inventory, production, sales and HR.
+Q: What happens when a sales order is entered in an ERP system? | It automatically updates stock, production plans and accounts.
+Q: Name three major ERP vendors. | SAP, Oracle and Microsoft.
+Q: What does a CRM system support? | Sales pipelines, targeted marketing campaigns and customer service records.
+Q: What does integrating CRM with ERP achieve? | It links customer orders to stock and invoicing.
+Q: Name three benefits of enterprise systems. | No duplicated data entry, one version of the truth, better reporting and standardised processes.
+Q: What happened when Hershey went live with a new ERP system in 1999? | Order problems caused missed deliveries during the Halloween season.
+Q: What does ERP success depend on? | Leadership support, careful data migration, testing, training and phased roll-out.
+Q: What is data migration? | Moving data from old systems into a new system.
+Q: What problem did the furniture maker have before ERP? | Separate spreadsheets meant orders were sometimes promised when stock had already run out.
 
 ## Cloud computing
 LV: Introductory · Application
@@ -548,6 +668,16 @@ M2#business-u10-13-q2@2: How does cloud computing change a firm's IT costs? | Up
 M3#business-u10-13-q3@3: Which business gains most from rapid elasticity? | One with demand that spikes sharply at certain times | One with perfectly constant demand all year | One that uses no computing at all | One that must keep all data on paper | Elasticity matches capacity to fluctuating demand.
 MATCH2#business-u10-13-q4@2: Match each example to its cloud service model. | Renting virtual servers = IaaS ; A platform to build and run apps = PaaS ; Online accounting software = SaaS ; Web-based email = SaaS | Service models differ in how much the provider manages.
 SA2#business-u10-13-q5@1,3: Evaluate whether a small accountancy firm should move its systems to the cloud. | Benefits include lower upfront costs, access to up-to-date software as a service, remote working, automatic backups and scalability. Risks include dependence on internet connections and the provider, outages, subscription costs rising over time, vendor lock-in, and duties to protect client data under the UK GDPR, including where data are stored. With careful provider choice, strong access controls and backups, the benefits are likely to outweigh the risks. | Cost ; Flexibility ; Lock-in and outages ; Data protection ; Security responsibilities
+Q: How does NIST define cloud computing? | On-demand network access to a shared pool of configurable computing resources that can be rapidly provided and released.
+Q: Name the five key features of cloud computing. | On-demand self-service, broad network access, resource pooling, rapid elasticity and measured service.
+Q: What is platform as a service? | A platform for developing and running applications.
+Q: What is infrastructure as a service? | Renting servers, storage and networks.
+Q: What is a hybrid cloud? | A combination of public and private cloud.
+Q: What is a private cloud? | Cloud infrastructure used by one organisation.
+Q: What does measured service mean in cloud computing? | Paying for what you use.
+Q: What is vendor lock-in? | Dependence on one supplier because switching is difficult or costly.
+Q: Name three risks of cloud computing. | Vendor lock-in, outages, costs growing with usage, data stored abroad and security responsibilities.
+Q: Why does a seasonal gift retailer benefit from public cloud? | It adds capacity for December peaks and releases it in January, instead of owning idle servers.
 
 ## Fintech and digital payments
 LV: Introductory · Application
@@ -589,6 +719,16 @@ M2#business-u10-14-q2@2: How can open banking help a small business? | Accountin
 M3#business-u10-14-q3@3: A café is considering going fully cashless. Which is the strongest argument against? | Some customers rely on cash and could be excluded | Card payments are always slower than cash | Card payments cannot be recorded | Cashless payments increase theft from tills | Financial inclusion matters where customers depend on cash.
 NUM2#business-u10-14-q4@2: A trader takes £12,000 in card sales a month and pays fees of 1.5%. What are the monthly fees, in £? | 180 | 0.5 | £ | 0.015 × 12,000 = £180.
 SA2#business-u10-14-q5@1,3: Evaluate the impact of fintech on small businesses in the UK. | Fintech has made payments faster and cheaper, with contactless and account-to-account payments improving cash flow. Open banking links bank data to accounting software, and online platforms offer quicker access to finance such as peer-to-peer loans and crowdfunding. However, firms face card fees, fraud and cyber risks, reliance on new providers, and the exclusion of cash-reliant customers. Overall fintech offers small firms major benefits if risks are managed. | Payments ; Open banking ; Access to finance ; Fraud and provider risk ; Inclusion
+Q: What is fintech? | The use of technology to deliver financial services in new ways.
+Q: Name four areas of fintech. | Digital payments, challenger banks, peer-to-peer lending, crowdfunding, buy now pay later, insurtech and cryptoassets.
+Q: Since when has open banking been required in the UK? | Since 2018.
+Q: What technology does open banking use to share data securely? | APIs, secure interfaces.
+Q: Name two things open banking enables. | Account-to-account payments, accounting software that pulls bank data, and quicker credit decisions.
+Q: What benefits does fintech offer businesses? | Lower transaction costs, faster payments and cash flow, easier finance and integrated accounting.
+Q: What is an authorised push payment scam an example of? | A fraud risk of fintech.
+Q: What concern has buy now, pay later raised? | Concern about consumer debt.
+Q: Where is regulatory uncertainty especially high in fintech? | Around cryptoassets.
+Q: Why did the market trader keep accepting cash after adding a card reader? | Some older customers prefer cash.
 
 ## Agile project management
 LV: Introductory · Application
@@ -631,4 +771,14 @@ M2#business-u10-15-q2@2: What is the purpose of a work in progress limit in Kanb
 M3#business-u10-15-q3@3: For which project is a waterfall approach most suitable? | Building a bridge with fixed, regulated requirements | Developing a new consumer app with uncertain features | Testing marketing messages on social media | Creating a website redesign with user feedback | Fixed requirements and physical dependencies suit sequential stages.
 SEQ2#business-u10-15-q4@2: Order these Scrum events within one sprint. | Sprint planning ; Daily scrums ; Sprint review ; Sprint retrospective | Each sprint begins with planning and ends with review and then retrospective.
 SA2#business-u10-15-q5@1,3: Evaluate whether a bank should use agile methods to develop a new mobile banking feature. | Agile would allow the bank to release features in short sprints, test them with customers and adapt to feedback, reducing the risk of building something unwanted. However, banks face strict regulation, security requirements and legacy systems, which need careful planning and documentation. A hybrid approach, with agile development inside a governance framework, may work best. Success also depends on culture, empowered teams and engaged product owners. | Iterative delivery ; Customer feedback ; Regulation and security ; Hybrid approach ; Culture
+Q: What are the stages of a waterfall project? | Requirements, design, build, test and deploy, in fixed sequence.
+Q: How does agile deliver work? | In short iterations, releasing working results often and adapting to feedback.
+Q: When was the Agile Manifesto written? | In 2001.
+Q: What four things does the Agile Manifesto value? | Individuals and interactions, working software, customer collaboration and responding to change.
+Q: What does the Scrum master do? | Removes obstacles and coaches the process.
+Q: How long is the daily scrum? | 15 minutes.
+Q: What does a Kanban board show? | Work in columns such as to do, doing and done.
+Q: Why might waterfall suit building a bridge? | It has fixed requirements, strict regulation and physical dependencies.
+Q: What is "agile in name only"? | Adopting agile ceremonies without engaged customers, empowered teams and a supportive culture.
+Q: Why is it wrong to say agile means no planning? | Agile plans continuously, in shorter cycles.
 `;

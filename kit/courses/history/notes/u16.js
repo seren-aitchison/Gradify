@@ -37,6 +37,16 @@ M2#history-u16-01-q2@2: Why did belief in purgatory shape medieval religious pra
 TF1#history-u16-01-q3@1: Jan Hus was burned as a heretic in 1415. | true | He had criticised the Church's wealth and authority.
 M3#history-u16-01-q4@3: Which judgement about papal power is best supported? | It peaked around 1200 and then declined, while the Church's hold on belief remained strong | It was never challenged by any king or emperor in the whole period | It grew steadily stronger every century until the Reformation of 1517 | It ended completely when the Investiture Controversy began in 1075 | Power and belief followed different paths.
 SA3#history-u16-01-q5@2,3: How powerful was the medieval papacy? | Popes defined belief (the Fourth Lateran Council 1215), called crusades (Urban II 1095), humbled emperors (Canossa 1077) and placed kingdoms under interdict (Innocent III). But kings controlled much of their churches, the Avignon papacy and the Great Schism (1378 to 1417) damaged authority, and critics such as Wycliffe and Hus emerged. A strong answer weighs these over time. | Explains papal claims ; Explains conflicts with rulers ; Explains the schism ; Explains criticism ; Reaches a judgement
+Q: How did the medieval Church teach that salvation came? | Through the sacraments, such as baptism, confession and the mass.
+Q: What is a sacrament? | A religious ceremony believed to give God's grace, such as baptism or the mass.
+Q: What did the Fourth Lateran Council of 1215 require of every Christian? | To confess and take communion at least once a year; it also defined transubstantiation.
+Q: Who were the friars? | New orders, the Franciscans and Dominicans, founded in the early thirteenth century to preach in towns.
+Q: What was the Investiture Controversy about? | Whether popes or emperors could appoint bishops.
+Q: How did Innocent III show papal power in England? | He placed England under an interdict.
+Q: Where did the popes live from 1309? | At Avignon, under French influence.
+Q: What ended the Great Schism? | The Council of Constance.
+Q: Which critics attacked the Church's wealth and authority? | John Wycliffe in England and Jan Hus in Bohemia.
+Q: What common mistake is made about the medieval Church? | Thinking it was unchanging and unchallenged; it was reformed repeatedly and criticised by figures such as Wycliffe and Hus.
 
 ## The European Reformation
 LV: GCSE and A level · Application
@@ -75,6 +85,16 @@ M2#history-u16-02-q2@2: Why did printing help the Reformation spread? | Pamphlet
 TF1#history-u16-02-q3@1: Luther refused to recant at the Diet of Worms in 1521. | true | He was declared an outlaw but was protected by Frederick of Saxony.
 M3#history-u16-02-q4@3: Which judgement about the Catholic Reformation is best supported? | It halted and partly reversed Protestant expansion, but could not reunite the Church | It restored a single united Western Church across Europe by 1563 | It failed to keep a single European country loyal to Rome | It was led by Luther himself after he was reconciled with the Pope | Its gains were real but limited to parts of Europe.
 SA3#history-u16-02-q5@2,3: Why did the Protestant Reformation spread so rapidly after 1517? | Luther's Ninety-Five Theses (1517) attacked indulgences and his doctrines of faith alone and scripture won followers; printing spread his pamphlets and German Bible; princes protected reformers and took control of churches, recognised at Augsburg (1555); Zwingli and Calvin extended reform. A strong answer weighs print, princes and popular belief. | Explains Luther's ideas ; Explains printing ; Explains princes ; Explains other reformers ; Reaches a judgement
+Q: What was an indulgence? | A grant from the Church reducing punishment in purgatory for sins.
+Q: Why was Johann Tetzel selling indulgences in 1517? | To raise money for St Peter's in Rome.
+Q: What did Luther argue about authority and priests? | That the Bible was the only authority and all believers were priests.
+Q: Where did Luther teach? | At Wittenberg, where he was a monk and professor.
+Q: How did princes help the Reformation spread? | They protected reformers and took control of churches in their lands.
+Q: Who led reform in Zurich and in Geneva? | Huldrych Zwingli in Zurich and John Calvin in Geneva.
+Q: Which work by Calvin shaped Reformed churches across Europe? | His Institutes, of 1536.
+Q: What did the Council of Trent do? | From 1545 to 1563 it reaffirmed Catholic doctrine and reformed the training of priests.
+Q: How did the Catholic Church try to stop Protestant ideas spreading? | Through the Inquisition and the Index of forbidden books.
+Q: What common mistake is made about Luther's aims in 1517? | Thinking he meant to split the Church; he sought reform, and division followed conflict over authority.
 
 ## Religious conflict in Europe
 LV: GCSE and A level · Application
@@ -114,6 +134,16 @@ M2#history-u16-03-q2@2: Why did Catholic France fight the Catholic Habsburgs? | 
 TF1#history-u16-03-q3@1: The Peace of Westphalia recognised Calvinism in the Empire. | true | It extended the Augsburg settlement to include Calvinism.
 M3#history-u16-03-q4@3: Which judgement about the wars of religion is best supported? | Religion and politics were inseparable; religion gave intensity, politics shaped alliances | They were caused by religious belief alone, with politics playing no part | They had nothing to do with religion and were purely about territory | They were fought only between Protestant states over trade and colonies | Both religion and politics drove the wars.
 SA3#history-u16-03-q5@2,3: How far were the European wars of religion between 1562 and 1648 caused by religion? | Religious division drove the French Wars (the St Bartholomew's Day Massacre, 1572), the Dutch Revolt (from 1568) and the Thirty Years' War (from 1618). But rulers fought for power and territory, the Dutch resisted Spanish taxation, and Catholic France fought the Habsburgs. Westphalia (1648) settled religion by territory. A strong answer weighs religion against politics. | Explains religious causes ; Explains political causes ; Uses the French alliance ; Explains Westphalia ; Reaches a judgement
+Q: Who fought in the French Wars of Religion? | Catholics and Protestant Huguenots, from 1562 to 1598.
+Q: Who were the Huguenots? | French Protestants.
+Q: What happened in the St Bartholomew's Day Massacre? | Thousands of Huguenots were killed in Paris and other cities from 24 August 1572.
+Q: When did the Dutch Revolt begin, and what drove it? | In 1568; Protestant faith combined with resistance to Spanish taxation and power.
+Q: Which powers were drawn into the Thirty Years' War? | The Habsburgs, Denmark, Sweden and Catholic France.
+Q: How badly were the German lands affected by the Thirty Years' War? | Armies and disease devastated them, and perhaps a fifth or more of the population died.
+Q: Which states' independence did the Peace of Westphalia confirm? | The Dutch Republic and Switzerland.
+Q: What principle about religion did Westphalia strengthen? | That rulers controlled religion within their territories.
+Q: What role did religion and politics each play in the wars of religion? | Religion gave the conflicts intensity, while politics shaped alliances.
+Q: What common mistake is made about the wars of religion? | Treating them as purely religious; Catholic France fought the Catholic Habsburgs for political reasons.
 
 ## The Enlightenment
 LV: GCSE and A level · Application
@@ -154,6 +184,16 @@ M2#history-u16-04-q2@2: Why are Frederick II and Catherine II called enlightened
 TF1#history-u16-04-q3@1: Mary Wollstonecraft published A Vindication of the Rights of Woman in 1792. | true | She challenged the exclusion of women from rational citizenship.
 M3#history-u16-04-q4@3: Which judgement about the Enlightenment is best supported? | It changed how Europeans argued about power and rights more than most people's lives at the time | It transformed the daily life of every European peasant | It had no influence on any later revolution | It was led by the Catholic Church | Its influence was greater in ideas than in immediate practice.
 SA3#history-u16-04-q5@2,3: How far did Enlightenment ideas change Europe in the eighteenth century? | Kant, Voltaire, Montesquieu (1748), Beccaria (1764), Smith and Hume promoted reason, tolerance and reform; the Encyclopédie, salons and coffee houses spread ideas; enlightened absolutists reformed law and education. But it was mainly elite, excluded women, as Wollstonecraft (1792) argued, and coexisted with slavery. A strong answer weighs these. | Explains ideas ; Explains spread ; Explains enlightened absolutism ; Explains limits ; Reaches a judgement
+Q: What was the Enlightenment? | The eighteenth-century movement championing reason over tradition and authority.
+Q: What did Voltaire attack? | Religious intolerance and the power of the Church.
+Q: What is the separation of powers? | Dividing government into separate legislative, executive and judicial branches.
+Q: Which Scottish thinkers wrote on economics, morality and knowledge? | Adam Smith and David Hume.
+Q: Which great book helped spread Enlightenment ideas from 1751? | Diderot's Encyclopédie.
+Q: Through which places did Enlightenment ideas spread? | Salons, coffee houses, academies and letters, as well as books.
+Q: Which rulers are known as enlightened absolutists? | Frederick II of Prussia, Catherine II of Russia and Joseph II of Austria.
+Q: How did Enlightenment ideas influence revolutions? | Ideas of rights, tolerance and reason influenced the revolutions in America and France.
+Q: What were the limits of the Enlightenment's universal claims? | Many thinkers excluded women, some, such as Hume, wrote racist views, and slavery continued.
+Q: What common mistake is made about the Enlightenment? | Treating it as one agreed programme; its thinkers disagreed about religion, politics and human nature.
 
 ## Scientific change
 LV: GCSE and A level · Application
@@ -192,6 +232,16 @@ M2#history-u16-05-q2@2: Why was Galileo tried by the Inquisition in 1633? | He s
 TF1#history-u16-05-q3@1: Isaac Newton also studied alchemy. | true | His interests show the mix of old and new ideas in the period.
 M3#history-u16-05-q4@3: Which judgement about the Scientific Revolution is best supported? | A profound transformation, gradual and rooted in earlier traditions | A sudden change in a single year | No change in understanding of nature at all | A movement that rejected every earlier idea | Historians stress both change and continuity.
 SA3#history-u16-05-q5@2,3: How far was there a Scientific Revolution between 1543 and 1687? | Copernicus (1543), Kepler, Galileo (1609, tried 1633) and Newton (1687) remade astronomy and physics; Vesalius (1543) and Harvey (1628) the study of the body; Bacon and the Royal Society (1660) promoted experiment. But change took 150 years, built on medieval and Islamic learning and mixed with religion and alchemy, as Shapin stresses. A strong answer weighs these. | Explains astronomy ; Explains the body ; Explains method ; Explains continuity ; Reaches a judgement
+Q: What did Johannes Kepler show about the planets? | That they move in ellipses.
+Q: What did Galileo see with his telescope from 1609? | The moons of Jupiter.
+Q: What did Newton's Principia explain? | The motion of planets and objects on Earth by universal gravitation.
+Q: What did Vesalius publish in 1543? | On the Fabric of the Human Body, based on his own dissections, correcting ancient errors.
+Q: What did Francis Bacon urge? | Knowledge built from observation and experiment rather than ancient authority.
+Q: What is empiricism? | Building knowledge from observation and experiment.
+Q: What is the heliocentric model? | The model in which the Earth and planets orbit the Sun.
+Q: What did Darwin's On the Origin of Species (1859) do? | It applied evidence and reasoning to the history of life itself.
+Q: Why do some historians doubt there was a Scientific Revolution? | Change took over 150 years, scientists held religious and magical beliefs, and ideas built on medieval and Islamic learning.
+Q: What common mistake is made about early scientists and religion? | Assuming they rejected religion; many, including Newton, were deeply religious.
 
 ## The development of political thought
 LV: A level · Evaluation
@@ -228,6 +278,16 @@ M2#history-u16-06-q2@2: Why did Hobbes argue for a strong sovereign? | He wrote 
 TF1#history-u16-06-q3@1: Machiavelli wrote The Prince in 1513. | true | It was published in 1532, after his death.
 M3#history-u16-06-q4@3: Which judgement about political thought is best supported? | It both responded to crises and supplied the language for later change | It had no connection with historical events | It was produced only by monarchs | It has never influenced any revolution | Ideas and events shaped each other across the centuries.
 SA3#history-u16-06-q5@2,3: How did political thought develop between 1513 and 1859? | Machiavelli (1513) separated politics from morality amid Italian wars; Hobbes (1651) argued for strong sovereignty after civil war; Locke (1689) defended consent; Burke (1790) defended tradition against Paine (1791); Mill (1859) set out the harm principle. A strong answer explains how each responded to events and judges their influence. | Explains power and order ; Explains liberty and consent ; Explains conservatism ; Links ideas to events ; Reaches a judgement
+Q: What did Machiavelli advise in The Prince? | That rulers should be feared rather than loved if they could not be both.
+Q: How did Machiavelli change political thinking? | He separated politics from conventional morality.
+Q: What crisis shaped Hobbes's Leviathan? | The English Civil War.
+Q: Which event did Locke's defence of government by consent justify? | The Glorious Revolution.
+Q: What is a sovereign? | The supreme authority in a state.
+Q: What did Burke warn in 1790? | That tearing down traditions would lead to tyranny.
+Q: What is conservatism? | A political outlook that values tradition and gradual change, founded by Burke.
+Q: How did Thomas Paine respond to Burke? | With Rights of Man (1791).
+Q: Which nineteenth-century ideology challenged private property? | Socialism, from Robert Owen to Karl Marx.
+Q: What common mistake is made in reading political thinkers? | Reading them outside their context; each responded to the crises of their own time.
 
 ## The growth of secularism
 LV: A level · Evaluation
@@ -266,6 +326,16 @@ M2#history-u16-07-q2@2: Why did industrialisation weaken religious practice? | I
 TF1#history-u16-07-q3@1: Religion remained strong in the United States while declining in Western Europe. | true | Secularisation has been uneven across the world.
 M3#history-u16-07-q4@3: Which judgement about secularisation is best supported? | Long-term pressures prepared the ground, but the sharpest decline came after 1960, mainly in Europe | Secularisation happened everywhere in the world at the same pace and time | Religion has grown steadily stronger across Western Europe since 1960 | Secularisation was caused by Darwin's book of 1859 and nothing else | Both long-term and recent factors matter.
 SA3#history-u16-07-q5@2,3: Why did religion decline in Western Europe after 1850? | The 1851 census revealed low attendance; Darwin (1859) and biblical criticism challenged literal belief; urbanisation broke parish communities; states took over education and welfare and France separated church and state (1905); affluence and individualism after 1960 brought rapid decline. Bruce stresses gradual modernisation, Brown a 1960s collapse. A strong answer weighs these. | Explains signs ; Explains ideas ; Explains social change ; Uses the debate ; Reaches a judgement
+Q: What is secularisation? | The decline of religion's influence on society and public life.
+Q: How did the Soviet Union treat religion from the 1920s? | It promoted atheism and closed churches.
+Q: When did church attendance fall sharply across Western Europe? | After 1960.
+Q: How did science challenge religion in the nineteenth century? | Darwin's theory of evolution and critical study of the Bible challenged literal readings of scripture.
+Q: How did urbanisation contribute to secularisation? | Industrialisation and urbanisation broke old parish communities.
+Q: How did the state's new roles weaken churches? | The state took over education and welfare once provided by churches.
+Q: How does Steve Bruce explain secularisation? | As a long, gradual result of modernisation.
+Q: According to Callum Brown, what change drove the 1960s collapse of religion in Britain? | Changes in women's lives and attitudes.
+Q: What is the separation of church and state? | The legal independence of government from religious institutions.
+Q: What common mistake is made about secularisation? | Assuming it is universal; religion remained strong in the United States and grew in many regions.
 
 ## Women's changing roles
 LV: GCSE and A level · Evaluation
@@ -304,6 +374,16 @@ M2#history-u16-08-q2@2: Why do historians use wills and court records to study w
 TF1#history-u16-08-q3@1: Elizabeth Garrett Anderson qualified as a doctor in 1865. | true | She was the first woman to qualify as a doctor in Britain.
 M3#history-u16-08-q4@3: Which judgement about women's changing position is best supported? | Legal position transformed by 1928, while economic and social equality came much more slowly | Complete equality in every respect achieved by the year 1870 | No change in women's legal position at any point before the year 2000 | Women lost every legal right they had once held during the nineteenth century | Legal and social change moved at different speeds.
 SA3#history-u16-08-q5@2,3: How far did women's legal and social position change between 1857 and 1928? | Coverture had denied married women property; the Matrimonial Causes Act (1857), Married Women's Property Acts (1870, 1882), the repeal of the Contagious Diseases Acts (1886), access to education (Girton 1869) and medicine, and the votes of 1918 and 1928 transformed their legal position. But unequal pay, domestic burdens and limited access to power persisted. A strong answer weighs these. | Explains coverture ; Explains legal reforms ; Explains education and work ; Explains continuity ; Reaches a judgement
+Q: How did most early modern English women work? | Within the household economy, in farming, brewing, spinning and trade, alongside their husbands.
+Q: What could a married woman not do under coverture? | Own property in her own name or make contracts.
+Q: Who made up the majority of those accused in the early modern witch trials? | Women.
+Q: What did the Matrimonial Causes Act of 1857 change? | It allowed divorce through the courts rather than by Act of Parliament.
+Q: When were the Contagious Diseases Acts repealed? | In 1886, after Josephine Butler's campaign.
+Q: When was Girton College, Cambridge, founded for women? | In 1869.
+Q: When did British women gain the parliamentary vote? | In 1918, and on equal terms with men in 1928.
+Q: How did women's history change historians' questions? | Growing rapidly from the 1970s, it changed their questions about work, family and power.
+Q: Which inequalities persisted after women's legal position was transformed? | Unequal pay, domestic responsibilities and limited access to power.
+Q: What common mistake is made about women's work before industrialisation? | Thinking women did not work; most worked in the household economy in farming, crafts and trade.
 
 ## Education and literacy
 LV: GCSE and A level · Application
@@ -344,6 +424,16 @@ M2#history-u16-09-q2@2: Why did the Reformation encourage literacy? | Protestant
 TF1#history-u16-09-q3@1: Elementary schooling in England was made free in 1891. | true | Attendance had become compulsory in 1880.
 M3#history-u16-09-q4@3: Which judgement about signature counts is best supported? | The best available measure, but showing a minimum level of literacy rather than its full extent | A completely accurate record of every person's ability to read | A measure that has no value for historians of literacy at all | A source that overstates literacy because forged signatures were common | Signatures show the minimum, not the full extent.
 SA3#history-u16-09-q5@2,3: How did literacy spread in Britain between 1500 and 1944? | Printing (Caxton from 1476), the Reformation's stress on Bible reading, grammar, charity and Sunday schools (Raikes, 1780s) spread reading; the Forster Act (1870), compulsion (1880), free schooling (1891), the Balfour Act (1902) and the Butler Act (1944) created state education. Cressy's signature counts measure progress but underestimate reading. A strong answer explains and weighs these. | Explains early causes ; Explains state education ; Explains measurement ; Explains limits of evidence ; Reaches a judgement
+Q: When did Caxton's press begin printing in England? | In 1476.
+Q: How did printing spread literacy? | It made books cheaper.
+Q: Who promoted Sunday schools from the 1780s? | Robert Raikes; they taught working children to read.
+Q: When did school attendance become compulsory in England? | In 1880.
+Q: What did the Balfour Act of 1902 do? | It gave local councils responsibility for schools.
+Q: Into which types of school did the Butler Act divide secondary education? | Grammar, secondary modern and technical schools.
+Q: How did David Cressy measure literacy? | By counting how many people could sign their names, for example in marriage registers.
+Q: What is elementary education? | Basic schooling in reading, writing and arithmetic.
+Q: What are the strengths of signature counts as evidence? | They provide large numbers of comparable records across classes and regions.
+Q: What common mistake is made about people who could not sign their names? | Assuming they could not read; reading was often taught before writing.
 
 ## The development of mass media
 LV: GCSE and A level · Application
@@ -381,6 +471,16 @@ M2#history-u16-10-q2@2: Why did the Nazi regime produce cheap radios? | To sprea
 TF1#history-u16-10-q3@1: The coronation of 1953 helped spread television ownership in Britain. | true | Millions watched the live broadcast.
 M3#history-u16-10-q4@3: Which judgement about mass media is best supported? | They widened political participation but also concentrated the power to shape opinion | They had no effect on politics or society in any country | They ended propaganda permanently after the Second World War | They were controlled entirely by audiences, never by owners or governments | Effects were both democratic and concentrating.
 SA3#history-u16-10-q5@2,3: How has mass media changed politics and society since 1890? | The Daily Mail (1896) created a mass press; the BBC (1922) and radio let leaders address the public; Goebbels's control of press, radio and film showed propaganda's power; television (1936, the 1953 coronation) and the Web (1991) transformed communication. A strong answer weighs wider participation against concentrated power and audiences' responses. | Explains the press ; Explains radio and propaganda ; Explains television and the internet ; Explains effects ; Reaches a judgement
+Q: Why did the Daily Mail matter in the history of the press? | It sold cheaply to a mass readership from 1896.
+Q: When did the BBC become a public corporation? | In 1927, under Royal Charter.
+Q: How did politicians use radio? | Roosevelt and Churchill used it to speak directly to the public.
+Q: Who controlled the media in Nazi Germany? | Joseph Goebbels's ministry controlled the press, radio and cinema.
+Q: What was the "People's Receiver"? | A cheap radio that spread the Nazi regime's message.
+Q: Did democracies use propaganda? | Yes, in both world wars.
+Q: When did BBC television begin? | In 1936.
+Q: What is public service broadcasting? | Broadcasting run to inform and educate rather than for profit.
+Q: What is a risk of mass media in democracies? | The power of press owners to shape opinion.
+Q: What common mistake is made about mass media audiences? | Assuming media simply told people what to think; audiences interpreted, ignored and resisted messages.
 
 ## Art and cultural movements
 LV: GCSE and A level · Application
@@ -419,6 +519,16 @@ M2#history-u16-11-q2@2: Why did the Medici commission works of art? | To display
 TF1#history-u16-11-q3@1: The Baroque style was encouraged by the Catholic Reformation. | true | Its drama and emotion were meant to inspire faith.
 M3#history-u16-11-q4@3: Which judgement about art as historical evidence is best supported? | Valuable evidence of beliefs and power, if its patrons, purpose and audience are considered | A completely neutral record of what life was like for everyone in the past | Useless as evidence because all art is simply decoration with no meaning | Reliable only when it was produced by governments for official use | Art must be read in the context of its making.
 SA3#history-u16-11-q5@2,3: How far can art and cultural movements tell historians about the societies that produced them? | Renaissance patronage (the Medici, Michelangelo 1504 to 1512) reveals power and piety; the Baroque the Catholic Reformation; Romanticism (1798), Impressionism (1874) and Modernism (1907) changing values; the Nazi "Degenerate Art" exhibition (1937) regime control. But art was often elite and needs interpretation. A strong answer weighs value against limits. | Explains movements ; Explains patronage ; Explains regimes and art ; Explains limits ; Reaches a judgement
+Q: Where was the Renaissance centred? | On Florence, from the fifteenth century.
+Q: When was Michelangelo's David completed? | In 1504.
+Q: What was the Baroque style designed to do? | Use drama and emotion to inspire faith, encouraged by the Catholic Reformation.
+Q: When did Wordsworth and Coleridge publish Lyrical Ballads? | In 1798.
+Q: What did the Impressionists paint? | Light and modern life.
+Q: Which painting of 1907 is an example of Modernism? | Picasso's Les Demoiselles d'Avignon.
+Q: What was Soviet Socialist Realism? | An art style that served the Soviet state.
+Q: What is patronage? | Support and payment for artists by wealthy individuals or institutions.
+Q: What are the limits of art as historical evidence? | It was often made for elites, and its meaning depends on interpretation.
+Q: What common mistake is made in using a painting as evidence? | Treating it as a neutral record; art was usually made for patrons with their own purposes.
 
 ## Social class and identity
 LV: A level · Evaluation
@@ -457,6 +567,16 @@ M2#history-u16-12-q2@2: Why did later historians criticise class-based history? 
 TF1#history-u16-12-q3@1: Medieval writers described society as three estates. | true | Those who prayed, those who fought and those who worked.
 M3#history-u16-12-q4@3: Which judgement about class as a category is best supported? | Essential for explaining inequality and conflict, but best used alongside other identities | Entirely useless, because class never existed in any society | The only identity that has ever mattered to anyone | A category invented by historians in the year 2013 | Class works best combined with other identities.
 SA3#history-u16-12-q5@2,3: How useful is class for understanding British history since 1780? | Ideas moved from estates and "sorts" to class with industrialisation; Marx (1848) defined class economically, while Thompson (1963) showed workers making a class identity between 1780 and 1832, which explains Chartism and Labour. But gender, race, religion and region also shaped identity, as Cannadine (1998) and the 2013 survey suggest. A strong answer weighs these. | Explains changing ideas of rank ; Explains Thompson ; Explains criticisms ; Uses examples ; Reaches a judgement
+Q: What were the three medieval estates? | Those who prayed, those who fought and those who worked.
+Q: How did early modern people describe social rank? | As "sorts", such as the "better sort" and the "meaner sort".
+Q: When did the language of class spread? | With industrialisation in the early nineteenth century.
+Q: How did Marx and Engels define classes? | By their relationship to the means of production.
+Q: Which groups did Thompson study becoming a working class? | Artisans, weavers and labourers between 1780 and 1832.
+Q: What is class consciousness? | Awareness of shared interests with others in the same class.
+Q: What were the three ways Cannadine said Britons understand society? | As a hierarchy, as three classes and as "us and them".
+Q: Which political movements does class help explain? | Movements such as Chartism and Labour.
+Q: What is identity? | The ways people understand who they are and where they belong.
+Q: What common mistake is made about class? | Treating it as fixed and purely economic; Thompson stressed people make class through experience and consciousness.
 
 ## Historical memory
 LV: A level · Evaluation
@@ -496,6 +616,16 @@ M2#history-u16-13-q2@2: Why do historians study memory as well as events? | How 
 TF1#history-u16-13-q3@1: Pierre Nora studied "sites of memory". | true | His project on French sites of memory was published from 1984 to 1992.
 M3#history-u16-13-q4@3: Which judgement about memory and history is best supported? | They differ in purpose, but each informs the other | Memory and history are exactly the same thing in every respect | History should always accept popular memory without any question | Memory has no value of any kind to historians studying the past | Their relationship is one of difference and dialogue.
 SA3#history-u16-13-q5@2,3: How does collective memory differ from history? | Halbwachs (1925) and Nora (from 1984) showed that groups remember through shared stories and sites of memory, shaped by present needs; the Blitz spirit, challenged by Calder (1991), and Holocaust remembrance (from 2001 in the UK) show how memory gives meaning. History tests memory against evidence but also studies it. A strong answer explains and weighs the relationship. | Explains collective memory ; Uses examples ; Explains differences ; Explains how historians use memory ; Reaches a judgement
+Q: What is collective memory? | The shared memories of a group, shaped by its present needs.
+Q: What is a site of memory? | A place, symbol or ritual through which a group remembers its past.
+Q: Why is 27 January chosen for Holocaust Memorial Day? | It is the anniversary of the liberation of Auschwitz in 1945.
+Q: How did West Germany remember the Nazi past? | Through a long process of confronting it, especially from the 1960s.
+Q: What is oral history? | History gathered from interviews with people about their own experiences.
+Q: How does memory differ from history? | Memory is selective, emotional and shaped by present needs; history tests claims against evidence.
+Q: Why are memories valuable to historians? | They are evidence of experience, and how societies remember shapes politics and identity.
+Q: What did the "Blitz spirit" become in British memory? | A story of unity and endurance.
+Q: Why is oral history urgent for some events? | Survivors' and witnesses' memories can only be collected while they are still alive.
+Q: What common mistake is made about popular memory? | Treating it as the same as history; memory is shaped by present needs and often simplifies the past.
 
 ## Commemoration and contested heritage
 LV: A level · Evaluation
@@ -535,4 +665,14 @@ M2#history-u16-14-q2@2: Why did statues of figures linked to slavery become cont
 TF1#history-u16-14-q3@1: The Rhodes Must Fall campaign began in Cape Town in 2015. | true | It led to the removal of a statue of Cecil Rhodes there.
 M3#history-u16-14-q4@3: Which judgement about contested heritage is best supported? | Decisions reflect present values, and historians can inform them by explaining context | Every statue should be removed without any public debate or discussion | No monument should ever be changed, moved or explained in any way | Heritage has nothing to do with either history or present values | Historians contribute context to decisions about values.
 SA3#history-u16-14-q5@2,3: How should societies deal with contested heritage? | First World War commemoration (the Cenotaph, the Unknown Warrior 1920, the poppy) shows how societies honour; Colston's statue (2020), Rhodes Must Fall (2015) and Confederate monuments show contest; the Benin Bronzes (looted 1897, some returned from 2022) raise restitution. A strong answer weighs removal, retaining and explaining, and return, and explains how historians can inform decisions. | Explains commemoration ; Explains contested statues ; Explains restitution ; Weighs approaches ; Reaches a judgement
+Q: What is the Cenotaph? | The national First World War memorial in Whitehall, rebuilt in stone in 1920.
+Q: When did the poppy become a symbol of remembrance? | From 1921.
+Q: How was Armistice Day marked? | With a two-minute silence.
+Q: What did local war memorials record? | The dead of towns and villages.
+Q: What happened to Edward Colston's statue in 2020? | It was pulled down in Bristol during Black Lives Matter protests and thrown into the harbour.
+Q: What did the Rhodes Must Fall campaign achieve? | The removal of a statue of Cecil Rhodes at the University of Cape Town, and protests at Oxford.
+Q: What intensified debates over Confederate monuments in the United States? | Violence at Charlottesville in 2017.
+Q: What did Germany agree in 2022? | To return many Benin Bronzes to Nigeria.
+Q: What is restitution? | Returning objects to their place or people of origin.
+Q: What common mistake is made about removing statues? | Thinking it erases history; statues are commemorations made at particular times, while history studies evidence.
 `;

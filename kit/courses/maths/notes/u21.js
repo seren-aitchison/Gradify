@@ -39,6 +39,16 @@ SRC: Hull JC, Options, Futures, and Other Derivatives (11th edn, Pearson 2021) |
 NUM1#maths-u21-01-q1@1: At a 5% annual interest rate, what is the present value in £ of £2100 received in one year? | 2000 | 0 | £ | PV = 2100/1.05 = £2000.
 M1#maths-u21-01-q2@1: Which principle says two portfolios with identical future payoffs must have the same price? | No arbitrage | The time value of money | Diversification | Compound interest | Risk aversion | If prices differed, buying the cheap one and selling the dear one would give a riskless profit.
 M2#maths-u21-01-q3@2: Why must cash flows at different dates be discounted before comparing them? | Money at different times has different value because of interest | Discounting removes all risk from the cash flows | Future cash is always worthless compared with cash now | Cash flows at all dates are always equal in value | It isn't necessary when the amounts are the same | Converting to present values puts every payment on the same footing.
+Q: What is the time value of money? | The principle that money now is worth more than the same amount later, because it can earn interest.
+Q: What does the no-arbitrage principle assume about pricing models? | That no riskless profits from price differences exist, so equal payoffs must have equal prices.
+Q: Which five main areas does financial mathematics cover? | Interest theory, valuation, portfolio theory, derivatives pricing and risk management, and actuarial mathematics.
+Q: What is the usual relationship between risk and return in finance? | Higher expected return usually comes with more risk.
+Q: What kind of risk does diversification reduce? | Risk that isn't shared across assets.
+Q: Why does financial mathematics need probability and stochastic processes? | Because risk and uncertain future prices must be modelled, for example in pricing derivatives and managing portfolios.
+Q: What is a common mistake when comparing cash flows at different dates? | Comparing them without discounting them to a common date first.
+Q: With a 4% risk-free rate, what is the present value of £1050 due in one year? | About £1009.62, since 1050/1.04 ≈ 1009.62.
+Q: How are bonds, shares and projects valued in financial mathematics? | By discounting their future cash flows to today.
+Q: Which regulatory frameworks are named as relying on financial models? | Basel and Solvency II.
 
 ## Simple Interest
 S: Simple interest is paid only on the original principal, so it grows by the same amount every period. It's used for short-term loans, some bonds and as a basis for comparing with compound growth.
@@ -75,6 +85,16 @@ SRC: Vaaler LJF, Daniel JW, Mathematical Interest Theory (3rd edn, American Math
 NUM1#maths-u21-02-q1@1: What simple interest rate (in %) turns £2000 into £2300 over 3 years? | 5 | 0 | % | I = 300 = 2000 × r × 3, so r = 300/6000 = 0.05 = 5%.
 M1#maths-u21-02-q2@1: £1200 is invested at 4% simple interest for 6 months. How much interest is earned? | £24 | £48 | £288 | £4.80 | £240 | Simple interest is I = Prt = 1200 × 0.04 × 0.5 = £24, with the 6 months written as half a year.
 M2#maths-u21-02-q3@2: Why does compound interest eventually exceed simple interest at the same rate? | It earns interest on previously added interest, giving exponential rather than linear growth | Compound interest rates are always set higher than simple rates by banks | Simple interest stops being paid after the first year of any investment | Compound interest is paid more often, so it must be at a higher rate | It doesn't: simple interest always grows faster over long periods | Each period's interest joins the principal for the next period.
+Q: What is the simple interest formula? | I = Prt, for principal P, annual rate r and time t in years.
+Q: What is the accumulated amount under simple interest? | A = P(1 + rt).
+Q: How do you find the time from simple interest, principal and rate? | t = I/(Pr).
+Q: How is a period in days converted to years for simple interest? | t = days/365, or days/360 in some money markets.
+Q: What is a common mistake with time in simple interest problems? | Using months as t without converting them to years.
+Q: How is a Treasury bill priced using simple interest discounting? | P = A/(1 + rt), the amount due divided by (1 + rt).
+Q: £5000 is lent at 6% simple interest for 9 months. What is the interest? | £225, since 5000 × 0.06 × 0.75 = 225.
+Q: How do simple and compound interest compare over exactly one period? | They are equal; compound interest pulls ahead only after the first period.
+Q: What is £1000 at 10% worth after 10 years under simple and compound interest? | £2000 with simple interest and £2593.74 with compound interest.
+Q: Name three uses of simple interest. | Short-term loans and Treasury bills, savings interest paid out rather than added, and accrued interest between bond coupon dates.
 
 ## Compound Interest
 S: Compound interest adds each period's interest to the principal, so interest earns interest. Growth is exponential, and the frequency of compounding and the effective annual rate determine how fast money grows.
@@ -114,6 +134,16 @@ NUM1#maths-u21-03-q1@1: What is £500 worth after 3 years at 4% compounded annua
 M1#maths-u21-03-q2@1: What is the effective annual rate of 12% compounded monthly? | About 12.68% | Exactly 12% | About 1% | About 144% | About 12.36% | (1 + 0.12/12)^{12} − 1 = 1.01^{12} − 1 ≈ 0.1268.
 M2#maths-u21-03-q3@2: Why does continuous compounding give the largest amount for a given nominal rate? | (1 + r/m)^{m} increases with m and tends to e^{r} as m → ∞ | Continuous compounding uses a higher rate | It adds interest only once | It removes the principal | It gives the smallest amount | More frequent compounding means interest starts earning interest sooner.
 NUM1#maths-u21-03-q4@1: £2000 earns 3% compound interest a year. What is it worth after 2 years, in £? | 2121.8 | 0.01 | £ | 2000 × 1.03^{2} = 2000 × 1.0609 = £2121.80.
+Q: What is the formula for the effective annual rate of a nominal rate r compounded m times a year? | AER = (1 + r/m)^{m} − 1.
+Q: What is the amount after t years with continuous compounding? | A = Pe^{rt}.
+Q: What is the amount after t years at rate r compounded m times a year? | A = P(1 + r/m)^{mt}.
+Q: What value does the AER approach as compounding becomes more frequent? | e^{r} − 1.
+Q: How do you solve for the time t in compound interest? | t = ln(A/P)/ln(1 + r).
+Q: How is the compound annual growth rate found from start and end values over t years? | r = (A/P)^{1/t} − 1.
+Q: What is a common mistake when comparing compound interest rates? | Comparing nominal rates with different compounding frequencies without converting them to AER.
+Q: £1000 is invested at 5% compounded annually. What is it worth after 10 years? | About £1628.89.
+Q: At 5% a year, how does the rule of 72 compare with the exact doubling time? | The rule gives 14.4 years; the exact value ln 2/ln 1.05 is about 14.2 years.
+Q: Why does compound interest grow exponentially? | Each period's interest is added to the principal, so interest itself earns interest.
 
 ## Time Value of Money
 S: The time value of money says a pound today is worth more than a pound in the future, because it can be invested. Moving cash flows forwards (accumulating) and backwards (discounting) in time is the basic operation of all valuation.
@@ -150,6 +180,16 @@ SRC: Brealey RA, Myers SC, Allen F, Principles of Corporate Finance (14th edn, M
 NUM1#maths-u21-04-q1@1: At 8% a year, what is the present value in £ of £1000 due in 2 years, to the nearest penny? | 857.34 | 0.01 | £ | 1000/1.08^{2} = 1000/1.1664 ≈ £857.34.
 M1#maths-u21-04-q2@1: Nominal interest is 6% and inflation is 6%. What is the real interest rate? | 0% | 6% | 12% | 36% | −6% | (1.06/1.06) − 1 = 0: savings only keep pace with prices.
 M2#maths-u21-04-q3@2: Why does the choice of comparison date not affect an equation of value? | Moving both sides by the same factor (1 + i)ᵏ keeps them equal | Every date gives different answers | Only the present date is valid | Interest is zero at the comparison date | It does affect it | Accumulating or discounting every cash flow by the same factor preserves equality.
+Q: What is the discount factor v at interest rate i? | v = 1/(1 + i), the present value of 1 due in one period.
+Q: What is an equation of value? | An equation setting the values of two sets of cash flows equal at a chosen comparison date.
+Q: How do you move a sum forward n periods in time? | Multiply it by (1 + i)ⁿ.
+Q: How do you move a sum back n periods in time? | Multiply it by vⁿ = (1 + i)^{−n}.
+Q: What is the approximate relationship between real and nominal rates? | Real rate ≈ nominal rate − inflation.
+Q: What is the exact formula for the real interest rate? | (1 + n)/(1 + π) − 1, for nominal rate n and inflation π.
+Q: What may be needed to solve an equation of value for an unknown interest rate? | Numerical methods, as with the IRR.
+Q: What is a common mistake when combining debts due at different dates? | Adding cash flows due at different dates without moving them to a common date.
+Q: At 5%, £1000 due now and £2000 due in 2 years are replaced by one payment at year 1. What is it? | About £2954.76: £1050 plus £1904.76.
+Q: Name three uses of the time value of money. | Loan repayments, pensions and insurance; investment appraisal by NPV and IRR; and choosing lump sums versus instalments.
 
 ## Present Value
 S: Present value is today's worth of future cash flows, found by discounting each at the appropriate interest rate. It lets investors compare payments at different times and is the foundation for pricing bonds, valuing businesses and assessing projects.
@@ -186,6 +226,16 @@ SRC: HM Treasury, The Green Book: Central Government Guidance on Appraisal and E
 NUM1#maths-u21-05-q1@1: What is the present value in £ of a perpetuity paying £60 a year at a 4% discount rate? | 1500 | 0 | £ | PV = 60/0.04 = £1500.
 M1#maths-u21-05-q2@1: Which cash flow has the lowest present value at 6%? | £1000 in 10 years | £1000 in 5 years | £1000 in 1 year | £1000 now | £1000 in 2 years | Further-off cash flows are discounted more heavily.
 M2#maths-u21-05-q3@2: Why do long-term projects' values depend so strongly on the discount rate? | Discount factors (1 + r)^{−t} change rapidly with r when t is large | Long projects have no cash flows | Discount rates are always zero for long terms | PV ignores distant cash flows | They don't depend on it | At t = 50, moving from 3% to 5% cuts the discount factor from 0.23 to 0.09.
+Q: What is the present value formula for a stream of cash flows? | PV = Σ C_{t}/(1 + r)ᵗ, the sum of the discounted future cash flows.
+Q: What is a perpetuity? | A level payment C made forever, with present value C/r.
+Q: What is the present value of a growing perpetuity? | C/(r − g), valid only when growth g is below the discount rate r.
+Q: What does the discount rate reflect? | Time preference, inflation and risk.
+Q: What is a common mistake with the growing perpetuity formula? | Using it when growth is at or above the discount rate.
+Q: What is the PV of £100 a year forever at 5%? | £2000, since 100/0.05 = 2000.
+Q: What is the PV of £100 a year growing at 2% forever, discounted at 5%? | About £3333.33, since 100/0.03 ≈ 3333.33.
+Q: What social discount rate does the UK Green Book use? | 3.5%.
+Q: How are uncertain cash flows usually discounted? | At risk-adjusted rates.
+Q: Name three uses of present value. | Bond and share prices, lease versus buy decisions, and compensation for lost earnings.
 
 ## Future Value
 S: Future value is what money or a series of payments will be worth at a later date after earning interest. It answers savers' questions: how much will I have, how much must I save, and how long will it take?
@@ -222,6 +272,16 @@ SRC: Vaaler LJF, Daniel JW, Mathematical Interest Theory (3rd edn, American Math
 NUM1#maths-u21-06-q1@1: Saving £1000 at the end of each year for 3 years at 10%, what is the future value in £? | 3310 | 0 | £ | 1000 × (1.1^{3} − 1)/0.1 = 1000 × 3.31 = £3310.
 M1#maths-u21-06-q2@1: What is £2000 worth after 2 years at 3% compounded annually? | £2121.80 | £2120.00 | £2060.00 | £2180.00 | £2000.00 | 2000 × 1.03^{2} = 2000 × 1.0609 = £2121.80.
 M2#maths-u21-06-q3@2: Why does starting to save ten years earlier make such a difference at retirement? | Early contributions compound for longer, and growth is exponential in time | Interest rates are higher for young savers than for older ones | Savings made later in life earn no interest at all | Contributions are always larger when savers are young | It makes little difference, since interest is the same each year | Each extra decade multiplies those contributions by (1 + r)^{10}.
+Q: What is the future value of a single sum after n periods? | FV = PV(1 + r)ⁿ.
+Q: What is a sinking fund? | A fund built by regular payments to meet a future target.
+Q: What payment builds a sinking fund to a target FV? | P = FV × r/((1 + r)ⁿ − 1).
+Q: How do you find the future value of a lump sum when rates vary each period? | Multiply the growth factors for each period together.
+Q: How do you express a future value in today's money? | Divide it by (1 + π)ⁿ, where π is inflation.
+Q: How long does it take regular savings P to reach a target FV? | n = ln(1 + FV r/P)/ln(1 + r).
+Q: What is a common mistake when payments are made at the start of each period? | Treating them as end-of-period payments, which understates the future value.
+Q: Saving £200 a month for 5 years at 0.5% a month gives what future value? | About £13,954.
+Q: Which spreadsheet functions are named for future value calculations? | FV, PMT and NPER.
+Q: Why does early saving matter so much? | Compounding favours time, so money saved earlier has longer to grow.
 
 ## Annuities
 S: An annuity is a series of equal payments at regular intervals, such as loan repayments, pensions or regular savings. Geometric series give neat formulas for their present and future values, the basis of most personal and corporate finance calculations.
@@ -260,6 +320,16 @@ SRC: Dickson DCM, Hardy MR, Waters HR, Actuarial Mathematics for Life Contingent
 NUM1#maths-u21-07-q1@1: What is the PV in £ of £500 at the end of each year for 2 years at 10%, to the nearest penny? | 867.77 | 0.01 | £ | 500/1.1 + 500/1.21 = 454.55 + 413.22 = £867.77.
 M1#maths-u21-07-q2@1: How does the PV of an annuity due compare with that of an annuity immediate with the same payments? | It is larger by a factor (1 + i) | It is smaller by a factor (1 + i) | They are always equal | It is larger by a factor i | It is n times larger | Each payment arrives one period earlier, so it's discounted one period less.
 M2#maths-u21-07-q3@2: Why does a 30-year annuity at 5% have a PV only a little below a perpetuity's? | Payments beyond 30 years add little because v^{30} ≈ 0.23 shrinks them heavily | Perpetuities have no value, since their payments never end | Annuities pay more each year than perpetuities of the same size | Interest rates fall to zero after 30 years, so later payments vanish | It is far below, since a perpetuity has infinitely many more payments | a₃₀ ≈ 15.37 compared with 1/0.05 = 20 for the perpetuity.
+Q: What is an annuity? | A series of equal payments at regular intervals, such as loan repayments, pensions or regular savings.
+Q: What is an annuity immediate? | An annuity with payments at the end of each period, with PV factor aₙ = (1 − vⁿ)/i.
+Q: What is an annuity due? | An annuity with payments at the start of each period, with PV factor äₙ = (1 + i)aₙ.
+Q: What is the future value of P per period for n periods? | P((1 + i)ⁿ − 1)/i.
+Q: How do you value a deferred annuity delayed by d periods? | Discount the annuity's value by v^{d}.
+Q: What is the PV formula for a growing annuity? | PV = P(1 − ((1 + g)/(1 + i))ⁿ)/(i − g).
+Q: What mathematical tool gives the neat annuity formulas? | Geometric series.
+Q: What is a common mistake with annuity timing? | Mixing up annuity-immediate and annuity-due timing.
+Q: What is the PV of £1000 a year for 10 years at 5%, paid at year ends? | About £7,722, since a₁₀ ≈ 7.722.
+Q: What do pension annuity rates depend on? | Age, health and gilt yields.
 
 ## Loan Amortisation
 S: Amortisation repays a loan with level payments that cover interest and gradually reduce the balance. An amortisation schedule shows how each payment splits between interest and principal, with interest dominating early on.
@@ -295,6 +365,16 @@ SRC: Broverman SA, Mathematics of Investment and Credit (7th edn, ACTEX 2017) | 
 NUM1#maths-u21-08-q1@1: A loan of £5000 at 2% per period is repaid with level payments of £1060.80 over 5 periods. What is the interest in the first period, in £? | 100 | 0 | £ | Interest = 0.02 × 5000 = £100; the remaining £960.80 repays capital.
 M1#maths-u21-08-q2@1: In a level-payment loan, how does the interest part of each payment change over time? | It falls as the balance falls | It rises steadily | It stays constant | It is zero until the last payment | It equals the full payment | Interest is charged on a shrinking balance.
 M2#maths-u21-08-q3@2: Why do the prospective and retrospective methods give the same outstanding balance? | Both satisfy the same equation of value between the loan and its payments | They use different interest rates, which happen to cancel | One method ignores interest, so the answers agree only by luck | They give different answers, and lenders choose the larger | Only the prospective method is valid; the other is an estimate | The loan equals the PV of all payments, so past and future sides balance.
+Q: What is an amortisation schedule? | A table showing, for each payment, the interest, the capital repaid and the remaining balance.
+Q: What is the level payment on a loan L over n periods at rate i? | P = L × i/(1 − (1 + i)^{−n}).
+Q: How is the capital repaid in a period found? | The payment minus that period's interest.
+Q: What is the prospective method for an outstanding loan balance? | The balance is the present value of the remaining payments, Bₖ = P × a_{n−k}.
+Q: What is the retrospective formula for the outstanding balance? | L(1 + i)ᵏ − P × s_{k}, which gives the same answer as the prospective method.
+Q: What is an interest-only loan? | A loan where you pay only interest each period and repay the capital at the end.
+Q: What is a common mistake about loan payments? | Assuming each payment reduces the balance by the full payment amount.
+Q: What is the monthly payment on £10,000 at 1% a month over 12 months? | About £888.49.
+Q: For a £10,000 loan at 1% a month with payment £888.49, what is the balance after month 1? | £9,211.51, since £788.49 of capital is repaid.
+Q: How do overpayments affect a loan? | They reduce the balance and the total interest paid.
 
 ## Mortgage Mathematics
 S: A mortgage is a long-term loan secured on property, repaid by monthly amortising payments over 20 to 35 years. Small differences in rates or terms change the monthly payment and total interest dramatically, which is why affordability and overpayment calculations matter.
@@ -330,6 +410,16 @@ SRC: Broverman SA, Mathematics of Investment and Credit (7th edn, ACTEX 2017) | 
 NUM1#maths-u21-09-q1@1: For the £150,000 mortgage at 6% over 25 years with payments of £966.45, what is the total interest paid, to the nearest pound? | 139935 | 1 | £ | 300 × 966.45 = £289,935, minus the £150,000 borrowed, gives £139,935 interest.
 M1#maths-u21-09-q2@1: A house worth £250,000 is bought with a £200,000 mortgage. What is the LTV? | 80% | 20% | 125% | 50% | 75% | Loan-to-value is the loan divided by the property value: 200,000/250,000 = 0.8, so an 80% LTV with a 20% deposit.
 M2#maths-u21-09-q3@2: Why do overpayments early in a mortgage save so much interest? | They cut the balance on which interest is charged for many remaining years | They reduce the interest rate charged on the rest of the mortgage | They are refunded with interest at the end of the mortgage term | They don't save interest; they only reduce the final payment | They only shorten the term, leaving total interest unchanged | Every pound repaid early avoids compound interest for the rest of the term.
+Q: What is a repayment mortgage? | A mortgage whose monthly payments repay both interest and capital over the term.
+Q: How is the monthly rate found from an annual mortgage rate on a nominal basis? | Divide the annual rate by 12.
+Q: What is the monthly payment formula for a mortgage L over n years at monthly rate j? | P = L × j/(1 − (1 + j)^{−12n}).
+Q: What is the monthly payment on £200,000 over 25 years at 5%? | About £1,169 a month.
+Q: How much does a 1 percentage point rise add to a £200,000, 25-year, 5% mortgage? | About £120 a month.
+Q: How does a lower LTV usually affect a mortgage? | It usually means a lower interest rate.
+Q: What is a common mistake when comparing mortgages? | Comparing them by monthly payment alone, ignoring the term and total interest.
+Q: What is the monthly payment on £150,000 over 25 years at 6%? | About £966.45.
+Q: Name three types of mortgage rate. | Fixed, tracker and variable rates.
+Q: What UK rules shape how much people can borrow on a mortgage? | Affordability stress tests and loan-to-income limits under FCA rules.
 
 ## Discounted Cash Flow
 S: Discounted cash flow (DCF) analysis values an investment, project or company as the present value of its expected future cash flows. It's the standard method in corporate finance, though its results depend heavily on forecasts and the chosen discount rate.
@@ -366,6 +456,16 @@ SRC: Damodaran A, Investment Valuation (3rd edn, Wiley 2012) | textbook | 2012 |
 NUM1#maths-u21-10-q1@1: In the example, what is the firm's value in £m if the discount rate rises to 10% (same £10m growing 3%), to 1 decimal place? | 142.9 | 0.1 | £m | 10/(0.10 − 0.03) = 10/0.07 ≈ £142.9m, about 14% lower.
 M1#maths-u21-10-q2@1: A firm has 60% equity costing 10% and 40% debt costing 5% before tax, with a 25% tax rate. What is its WACC? | 7.5% | 8.0% | 7.0% | 15% | 6.5% | 0.6 × 10% + 0.4 × 5% × 0.75 = 6% + 1.5% = 7.5%.
 M2#maths-u21-10-q3@2: Why can the terminal value dominate a DCF valuation? | It captures all cash flows beyond the forecast period, often most of the total value | It is always zero, so the forecast years carry all the value | Forecast years are weighted more heavily than later years | Discounting doesn't apply to it, so it stays at full size | It never dominates; the explicit forecast years always do | For growing firms, flows after year 10 can be 60–80% of the present value.
+Q: What is discounted cash flow analysis? | Valuing an investment, project or company as the present value of its expected future cash flows.
+Q: What is a terminal value in a DCF? | The value of all cash flows beyond the forecast horizon, often from a growing perpetuity.
+Q: What is the WACC formula? | WACC = (E/V)r_{E} + (D/V)r_{D}(1 − tax rate).
+Q: How is a cost of equity often estimated for a DCF? | From the CAPM.
+Q: How do you get equity value from enterprise value in a DCF? | Subtract net debt.
+Q: What are the steps of a DCF? | Forecast free cash flows, estimate a terminal value, discount all to today at a risk-appropriate rate, and sum.
+Q: What is a common mistake with terminal growth rates? | Using a terminal growth rate above long-run economic growth.
+Q: A firm's cash flow is £10m next year, growing 3% forever, at a 9% discount rate. What is it worth? | About £166.7m, since 10/(0.09 − 0.03) ≈ 166.7.
+Q: Why should DCF results be checked with scenarios and sensitivity tables? | Small changes in growth or the discount rate swing values greatly, so results depend heavily on assumptions.
+Q: What inflation error can spoil a DCF? | Inconsistent inflation assumptions between the cash flows and the discount rate.
 
 ## Net Present Value (NPV)
 S: Net present value is the present value of an investment's cash inflows minus the present value of its outflows. A positive NPV means the project earns more than the required return, so NPV is the main rule for choosing investments.
@@ -402,6 +502,16 @@ SRC: Graham JR, Harvey CR, The theory and practice of corporate finance: evidenc
 NUM1#maths-u21-11-q1@1: A project costs £2000 and pays £1210 at the end of year 2 and £1100 at the end of year 1. What is its NPV at 10%, in £? | 0 | 0.01 | £ | 1100/1.1 + 1210/1.21 = 1000 + 1000 = 2000, so NPV = 0.
 M1#maths-u21-11-q2@1: Two exclusive projects have NPVs of £500 and £800. Which should be chosen? | The £800 project | The £500 project | Both projects together | Neither project | Whichever has the shorter payback | For mutually exclusive projects, the higher NPV adds more value.
 M3#maths-u21-11-q3@2: Why is NPV preferred to the payback period? | It accounts for the time value of money and all cash flows, including those after payback | Payback uses discounting more carefully than NPV does in practice | NPV ignores risk, which makes it simpler than payback to compute | Payback measures value added in money, while NPV gives only a time | It isn't preferred: payback is the standard rule in corporate finance | Payback ignores flows after the cut-off and doesn't discount.
+Q: What is net present value? | The present value of cash inflows minus the present value of outflows, NPV = Σ C_{t}/(1 + r)ᵗ with C₀ negative.
+Q: What is the required rate of return? | The discount rate reflecting the opportunity cost of capital for the project's risk.
+Q: What is the NPV rule for single projects? | Accept projects with NPV above zero and reject those below zero.
+Q: What does value additivity mean for NPV? | NPVs add across projects.
+Q: Why is the accounting rate of return weaker than NPV? | It doesn't use all cash flows with the time value of money or measure value added in money terms.
+Q: Should opportunity costs be included in NPV? | Yes; use incremental cash flows including opportunity costs, working capital and tax.
+Q: What is the correct inflation treatment in NPV? | Use nominal cash flows with nominal rates, consistently.
+Q: A project costs £1000 and returns £600 in each of the next 2 years. What is its NPV at 10%? | About £41.32, so accept.
+Q: What can add value beyond a static NPV? | Real options.
+Q: What is a common mistake about past spending in NPV decisions? | Including sunk costs already spent.
 
 ## Internal Rate of Return (IRR)
 S: The internal rate of return is the discount rate that makes a project's NPV zero. It's popular because it gives a percentage return, but it can mislead with unconventional cash flows or when comparing projects of different sizes.
@@ -439,6 +549,16 @@ SRC: Hazen GB, A new perspective on multiple internal rates of return, The Engin
 NUM1#maths-u21-12-q1@1: A project costs £1000 and pays £1210 after 2 years. What is its IRR as a percentage? | 10 | 0 | % | (1 + r)^{2} = 1.21, so r = 10%.
 M1#maths-u21-12-q2@1: A small project has IRR 50% and NPV £100; a large one has IRR 15% and NPV £10,000. They're mutually exclusive. Which should be chosen? | The large project, since it adds more value | The small project, since its IRR is higher | Both projects together | Neither project | It's impossible to say | NPV measures value created; IRR ignores scale.
 M2#maths-u21-12-q3@2: Why can cash flows −100, +230, −132 have two IRRs? | The NPV polynomial changes sign twice, so it can have two positive roots (here 10% and 20%) | IRR is always unique for any pattern of cash flows, so it can't | These flows have no IRR at all, since the NPV is always negative | The discount rate becomes negative, creating a second spurious IRR | They have only one IRR, at 10%, since IRR is defined to be unique | Two sign changes allow up to two positive real roots by Descartes' rule.
+Q: What is the internal rate of return? | The discount rate r* that makes a project's NPV zero.
+Q: What is the modified IRR? | MIRR, which reinvests interim cash flows at a stated rate to give a single, more realistic return.
+Q: How is the IRR usually calculated? | Numerically, by bisection, Newton's method or a spreadsheet IRR function.
+Q: When should a conventional project be accepted under the IRR rule? | When its IRR exceeds the required return.
+Q: What reinvestment assumption does the IRR make? | That interim cash flows are reinvested at the IRR itself.
+Q: Why can IRR mislead when comparing projects of different sizes? | A small project can have a higher IRR but a lower NPV.
+Q: What is a common mistake when choosing between projects by IRR? | Choosing the higher-IRR project when it has the lower NPV.
+Q: A project costs £1000 and returns £1100 in one year. What is its IRR? | 10%.
+Q: Which rule relates sign changes in cash flows to the number of IRRs? | Descartes' rule of signs.
+Q: Where is IRR commonly used for reporting? | Private equity and fund performance reporting.
 
 ## Bond Pricing
 S: A bond pays fixed coupons and returns its face value at maturity. Its price is the present value of these payments, so bond prices fall when yields rise, and duration measures how sensitive the price is to interest rate changes.
@@ -475,6 +595,16 @@ SRC: Macaulay FR, Some Theoretical Problems Suggested by the Movements of Intere
 NUM1#maths-u21-13-q1@1: What is the price in £ of a zero-coupon bond paying £100 in 2 years at a 5% yield, to the nearest penny? | 90.70 | 0.01 | £ | 100/1.05^{2} = 100/1.1025 ≈ £90.70.
 M1#maths-u21-13-q2@1: A bond has modified duration 7. If yields rise by 0.5 percentage points, roughly how does its price change? | It falls by about 3.5% | It rises by about 3.5% | It falls by about 7% | It falls by about 0.5% | It doesn't change | Using ΔP/P ≈ −D_{mod}Δy = −7 × 0.005 = −0.035, the price falls by about 3.5% (convexity makes the fall slightly smaller).
 M2#maths-u21-13-q3@2: Why does a long-dated zero-coupon bond have high duration? | All its value comes from one payment far in the future, so discounting changes affect it strongly | It pays large coupons that are very sensitive to rates | Its yield is always zero, which makes its duration large | Duration falls as maturity increases, so it's actually low | It has low duration, since there's only one payment | The Macaulay duration of a zero equals its maturity.
+Q: What is a bond's yield to maturity? | The single discount rate that makes the present value of the bond's payments equal its price.
+Q: What is the price formula for a coupon bond? | P = Σ C/(1 + y)ᵗ + F/(1 + y)ⁿ, the PV of coupons plus the PV of the face value.
+Q: When does a bond trade at a discount to par? | When its yield is above its coupon rate.
+Q: How is a zero-coupon bond priced? | P = F/(1 + y)ⁿ.
+Q: What is Macaulay duration? | The weighted average time to a bond's cash flows.
+Q: How is modified duration related to Macaulay duration? | D_{mod} = D/(1 + y), and ΔP/P ≈ −D_{mod}Δy.
+Q: What does convexity add to duration? | It improves the price-change approximation for large yield changes.
+Q: Which bond features raise duration? | Longer maturity and lower coupons.
+Q: What is a common mistake about bond prices and yields? | Thinking a bond's price rises when market yields rise; prices move opposite to yields.
+Q: What is a 3-year, 5% annual coupon bond with face £100 worth at a 6% yield? | About £97.33, below par because the yield exceeds the coupon.
 
 ## Equity Valuation
 S: Equity valuation estimates what a company's shares are worth. Dividend discount models, discounted free cash flow and comparisons with similar firms' multiples give estimates that depend strongly on growth and risk assumptions.
@@ -512,6 +642,16 @@ SRC: Damodaran A, Investment Valuation (3rd edn, Wiley 2012) | textbook | 2012 |
 NUM1#maths-u21-14-q1@1: A share costs £50 and next year's dividend is £2.50 with 5% growth. What required return (in %) does the Gordon model imply? | 10 | 0 | % | r = D₁/P₀ + g = 2.5/50 + 0.05 = 0.10.
 M1#maths-u21-14-q2@1: A firm's earnings per share are £3 and its P/E is 15. What is its share price? | £45 | £5 | £18 | £12 | £0.20 | Price equals the P/E ratio times earnings per share: 15 × £3 = £45, so investors pay 15 years' current earnings.
 M2#maths-u21-14-q3@2: Why does the Gordon model break down when g approaches r? | The denominator r − g tends to zero, so the value explodes towards infinity | Dividends stop growing once g gets close to r | It gives negative values for every possible g | Growth doesn't affect value in the Gordon model | It never breaks down for any growth rate | Sustained growth at or above the discount rate would make the sum of dividends infinite.
+Q: What is the price of a share in a dividend discount model? | The present value of all its future dividends.
+Q: What condition does the Gordon growth model need? | Dividend growth g must be below the required return r.
+Q: When are multi-stage dividend models used? | For high-growth firms whose growth is not expected to stay constant.
+Q: Name three valuation multiples used to compare firms. | P/E, EV/EBITDA and price-to-book.
+Q: At what rate is free cash flow to equity discounted? | At the cost of equity.
+Q: What does the efficient markets hypothesis say about share prices? | Prices reflect available information.
+Q: Why do total payout models include share buybacks? | Buybacks return cash to shareholders just as dividends do.
+Q: A share pays £2 next year, dividends grow 4% and investors require 9%. What is it worth? | £40, since 2/(0.09 − 0.04) = 40.
+Q: What is a common mistake with the Gordon growth model? | Applying it with g close to or above r.
+Q: Name one valuation method besides dividend discounting and multiples. | Residual income models, or discounted free cash flow to equity.
 
 ## Portfolio Theory
 S: Portfolio theory studies how combining assets changes risk and return. Because asset returns don't move perfectly together, diversification lowers risk without necessarily lowering expected return, the idea behind spreading investments.
@@ -547,6 +687,16 @@ SRC: Bodie Z, Kane A, Marcus AJ, Investments (13th edn, McGraw-Hill 2023) | text
 NUM1#maths-u21-15-q1@1: Two assets with σ = 10% and correlation −1 are combined 50/50. What is the portfolio volatility in %? | 0 | 0 | % | σ_{p} = |0.5 × 10 − 0.5 × 10| = 0%: perfect negative correlation cancels the risk.
 M1#maths-u21-15-q2@1: A portfolio is 70% in an asset returning 8% and 30% in one returning 4%. What is its expected return? | 6.8% | 6.0% | 12% | 5.2% | 7.4% | Portfolio expected return is the weighted average: 0.7 × 8% + 0.3 × 4% = 5.6% + 1.2% = 6.8%.
 M2#maths-u21-15-q3@2: Why does diversification across many shares fail to remove all risk? | Shares share exposure to market-wide factors, so their covariances don't average away | Every share has zero variance, so there is nothing left to diversify | Correlations between shares are always −1, which adds risk | Diversification removes all risk once enough shares are held | It does remove all risk; only concentrated portfolios have any | As n grows, portfolio variance tends to the average covariance, not zero.
+Q: What is the variance of a two-asset portfolio? | σ_{p}^{2} = w₁^{2}σ₁^{2} + w₂^{2}σ₂^{2} + 2w₁w₂ρσ₁σ₂.
+Q: What is diversification? | Reducing risk by combining assets whose returns are not perfectly correlated.
+Q: How is a portfolio's expected return found? | As the weighted average of the assets' expected returns, E[R_{p}] = w₁μ₁ + w₂μ₂.
+Q: What correlation allows two-asset risk to be eliminated? | A correlation of −1.
+Q: How is portfolio variance written in matrix form? | σ_{p}^{2} = wᵀΣw, with covariance matrix Σ.
+Q: What does the variance of a large equally weighted portfolio approach? | The average covariance between the assets.
+Q: What happens to correlations in crises? | They rise, reducing diversification just when it is needed.
+Q: What is a common mistake when finding portfolio volatility? | Averaging the individual volatilities instead of including the covariance term.
+Q: Two assets with σ = 20% and correlation 0.5 are held 50/50. What is the portfolio risk? | About 17.3%, lower than either asset's 20%.
+Q: What keeps a portfolio at its target weights? | Rebalancing.
 
 ## Modern Portfolio Theory
 S: Modern portfolio theory, founded by Harry Markowitz in 1952, chooses portfolios that give the highest expected return for each level of risk. Adding a risk-free asset leads to the capital market line and the Sharpe ratio for comparing investments.
@@ -582,6 +732,16 @@ SRC: Sharpe WF, Mutual fund performance, Journal of Business 39(1), 119 | journa
 NUM1#maths-u21-16-q1@1: A portfolio returns 9% with volatility 14%, and the risk-free rate is 2%. What is its Sharpe ratio? | 0.5 | 0.001 |  | (9 − 2)/14 = 0.5.
 M1#maths-u21-16-q2@1: What does two-fund separation say about investors' choices? | They all hold the risk-free asset plus the same tangency portfolio, in different proportions | They all hold only cash, avoiding risky assets entirely | Each holds a unique risky portfolio matched to their tastes | They avoid the risk-free asset and hold only shares | They hold two randomly chosen shares in equal amounts | With a risk-free asset, the capital market line dominates the frontier.
 M3#maths-u21-16-q3@2: Why do mean–variance optimisers often give extreme, unstable weights? | Small errors in expected return estimates are magnified, pushing weights towards assets that look best by chance | Covariances are known exactly, so the optimiser has no uncertainty | The optimiser ignores risk and maximises expected return only | Expected returns never change, so extreme weights are correct | They give stable, moderate weights whatever the input estimates | Optimisation acts as an "error maximiser" when inputs are noisy.
+Q: What is the efficient frontier? | The set of portfolios with the highest expected return for each level of risk.
+Q: What is the Sharpe ratio formula? | (E[R] − r_{f})/σ.
+Q: What does the mean–variance problem minimise and subject to what? | It minimises wᵀΣw subject to a target expected return μᵀw and weights summing to 1.
+Q: Where does the minimum-variance portfolio sit? | At the tip of the frontier's hyperbola in (σ, μ) space.
+Q: What is the capital market line? | The best line from the risk-free asset, touching the frontier at the tangency (market) portfolio.
+Q: What does Black–Litterman do? | It blends investors' views with market equilibrium to set expected returns.
+Q: What criticism of variance as a risk measure does MPT face? | Variance treats upside and downside moves equally.
+Q: What is a common mistake with optimised portfolio weights? | Trusting them without allowing for estimation error in expected returns.
+Q: Fund A returns 10% with σ = 15% and r_{f} = 2%. What is its Sharpe ratio? | About 0.53, since (10 − 2)/15 ≈ 0.53.
+Q: What shape do combinations of a risk-free asset and a risky portfolio make in (σ, μ) space? | Straight lines.
 
 ## Capital Asset Pricing Model (CAPM)
 S: The Capital Asset Pricing Model says an asset's expected return depends only on its exposure to market risk, measured by beta. It gives the security market line used to set required returns, though empirical tests show it's incomplete.
@@ -618,6 +778,16 @@ SRC: Fama EF, French KR, The capital asset pricing model: theory and evidence, J
 NUM1#maths-u21-17-q1@1: With r_{f} = 2%, market return 7% and β = 0.8, what is the CAPM required return in %? | 6 | 0 | % | 2 + 0.8 × (7 − 2) = 2 + 4 = 6%.
 M1#maths-u21-17-q2@1: An asset has covariance 0.03 with the market, whose variance is 0.02. What is its beta? | 1.5 | 0.67 | 0.06 | 0.01 | 0.5 | Beta is the covariance with the market divided by the market variance: 0.03/0.02 = 1.5, so it amplifies market moves.
 M2#maths-u21-17-q3@2: A fund earned 12% when CAPM predicted 9%. What is its alpha? | +3% | −3% | 12% | 21% | 0% | Alpha = actual − predicted = 12 − 9 = 3 percentage points.
+Q: How is beta defined in the CAPM? | β = Cov(Rᵢ, R_{m})/Var(R_{m}), the sensitivity of an asset's return to the market.
+Q: What is the security market line? | E[Rᵢ] = r_{f} + βᵢ(E[R_{m}] − r_{f}).
+Q: Who developed the CAPM? | Sharpe (1964), Lintner and Mossin.
+Q: What does a beta above 1 mean? | The asset amplifies market moves.
+Q: What is the market risk premium? | E[R_{m}] − r_{f}, the market's expected return above the risk-free rate.
+Q: How is beta usually estimated? | By regressing the asset's returns on market returns.
+Q: What empirical finding about low-beta stocks challenges the CAPM? | Low-beta stocks earn more than the CAPM predicts.
+Q: Which model grew from size and value effects that CAPM misses? | The Fama–French three-factor model.
+Q: A share has β = 1.2, r_{f} = 3% and expected market return 8%. What is its required return? | 9%, since 3 + 1.2 × 5 = 9.
+Q: What is a common mistake when setting a CAPM required return? | Using total volatility instead of beta.
 
 ## Arbitrage Pricing Theory
 S: Arbitrage pricing theory, proposed by Stephen Ross in 1976, explains expected returns by exposure to several systematic factors, such as inflation, growth and interest rates. It rests on no-arbitrage arguments rather than investor preferences.
@@ -653,6 +823,16 @@ SRC: Fama EF, French KR, A five-factor asset pricing model, Journal of Financial
 NUM1#maths-u21-18-q1@1: With r_{f} = 2%, factor premiums 3% and 1%, and betas 1.5 and 2, what is the APT expected return in %? | 8.5 | 0.01 | % | 2 + 1.5 × 3 + 2 × 1 = 2 + 4.5 + 2 = 8.5%.
 M1#maths-u21-18-q2@1: How is CAPM related to APT? | CAPM is a special case with the market as the single factor | They are unrelated models with no common ground | APT is a special case of CAPM with one factor | CAPM uses five factors, while APT uses only one | APT ignores systematic risk, unlike CAPM | One factor (the market portfolio) recovers the security market line.
 M2#maths-u21-18-q3@2: Why should factor discoveries from back-tests be treated with caution? | Testing many candidate factors makes some look significant by chance (data mining) | Factors always persist once they've been found in past data | Back-tests are never wrong, so every factor found is genuine | No factor has ever been found that explains any returns | They need no caution: more factors always improve models | Multiple testing inflates false positives, so many published factors fail out of sample.
+Q: What is a factor model of returns? | Rᵢ = E[Rᵢ] + Σ βᵢₖFₖ + εᵢ, with factor surprises Fₖ and specific risk εᵢ.
+Q: What is a factor risk premium? | λₖ, the extra expected return per unit of exposure to factor k.
+Q: What is the APT expected-return equation? | E[Rᵢ] = r_{f} + Σ βᵢₖλₖ, approximately.
+Q: What does APT rest on instead of investor preferences? | No-arbitrage arguments.
+Q: Name three macroeconomic factors used in APT. | Industrial production, inflation surprises and the term spread.
+Q: What are statistical factors in APT? | Principal components of asset returns.
+Q: Name three characteristic-based factors. | Size, value and momentum, along with profitability and investment.
+Q: What is the factor zoo? | The hundreds of proposed factors, many of them spurious.
+Q: An asset has β = 1.0 to growth (4% premium) and 0.5 to inflation (2% premium), r_{f} = 3%. What is its expected return? | 8%, since 3 + 4 + 1 = 8.
+Q: What is a common mistake with back-tested factors? | Treating every factor found in back-tests as a genuine source of risk premium.
 
 ## Quantitative Finance
 S: Quantitative finance uses mathematical models, statistics and computation to price securities, manage risk and design trading strategies. Practitioners called "quants" work in banks, hedge funds and insurers, combining probability theory with large-scale data and numerical methods.
@@ -690,6 +870,16 @@ SRC: Meucci A, 'P' versus 'Q': differences and commonalities between the two are
 NUM1#maths-u21-19-q1@1: A stock is £80 and the risk-free rate is 4% (annual compounding). What is its risk-neutral expected price in one year, in £? | 83.2 | 0.01 | £ | E^{Q}[S₁] = 80 × 1.04 = £83.20.
 M1#maths-u21-19-q2@1: Which probability measure is used to price derivatives by no-arbitrage? | The risk-neutral measure Q | The real-world measure P | A uniform measure | The historical frequency only | Any measure chosen by the trader | Pricing relies on Q, where discounted prices are martingales.
 M2#maths-u21-19-q3@2: What is model risk in quantitative finance? | Losses from using a wrong or misapplied model, or wrong parameters | The risk that markets close unexpectedly | The risk from holding too much cash | Risk from currency changes only | It doesn't exist if the maths is correct | Even correct maths can mislead when its assumptions don't hold in the market.
+Q: What is the risk-neutral measure? | A probability measure Q under which discounted asset prices are martingales, used for pricing derivatives.
+Q: What is the real-world measure? | The probability measure P describing actual market behaviour, used for risk management and forecasting.
+Q: What work is done in the Q-world and the P-world? | Derivatives pricing and hedging in the Q-world; risk management and portfolio construction in the P-world.
+Q: Name three methods used in quantitative finance. | Stochastic calculus and PDEs, Monte Carlo simulation, and time-series statistics or machine learning.
+Q: What is calibration in quantitative finance? | Fitting a model's parameters so it matches market prices.
+Q: Name two crises that showed models can fail. | LTCM in 1998 and the 2008 financial crisis.
+Q: What complements statistical risk models under stress? | Stress testing.
+Q: A stock is £100 and r = 5%. What is its expected price in a year under Q? | £105, whatever investors actually expect under P.
+Q: What is a common mistake with risk-neutral probabilities? | Using them to forecast real-world outcomes.
+Q: Where do quants work? | In banks, hedge funds and insurers.
 
 ## Mathematical Finance
 S: Mathematical finance is the rigorous theory behind financial models: martingales, stochastic integrals and the fundamental theorems of asset pricing. It explains when prices are arbitrage-free and when markets are complete, so that every derivative can be hedged.
@@ -726,6 +916,16 @@ SRC: Shreve SE, Stochastic Calculus for Finance II: Continuous-Time Models (Spri
 NUM1#maths-u21-20-q1@1: A stock is £50 and moves to £60 or £45 in one period, with r = 0. What is the risk-neutral up probability, as a decimal to 3 places? | 0.333 | 0.001 |  | 50 = 60q + 45(1 − q) gives 15q = 5, so q = 1/3.
 M1#maths-u21-20-q2@1: What does the first fundamental theorem of asset pricing equate? | Absence of arbitrage and existence of an equivalent martingale measure | Completeness of the market and absence of all risk | Positive interest rates and the absence of arbitrage | Expected returns on assets and their volatilities | Share prices and the present value of their dividends | No-arbitrage is equivalent to a measure making discounted prices martingales.
 M3#maths-u21-20-q3@2: Why does adding stochastic volatility make a market incomplete? | Volatility risk can't be hedged with the stock and bond alone, so many martingale measures fit | It removes all arbitrage, which forces the market to become incomplete | It makes all prices deterministic, so there's nothing left to hedge | It adds more traded assets, which always makes markets incomplete | It keeps the market complete, since volatility can be traded freely | A new source of randomness without a matching traded asset leaves claims unreplicable.
+Q: What does the first fundamental theorem of asset pricing say? | A market has no arbitrage if and only if an equivalent martingale measure exists.
+Q: What is a complete market? | A market where every contingent claim can be replicated by trading available assets.
+Q: What do filtrations model in mathematical finance? | Information available over time.
+Q: How is a claim priced in an arbitrage-free market? | As the expected discounted payoff under the martingale measure Q.
+Q: Who formalised the fundamental theorems of asset pricing? | Harrison, Kreps and Pliska, in 1979 to 1981.
+Q: What happens to prices in an incomplete market? | They lie in a range, between sub-hedging and super-hedging bounds.
+Q: What features make a market incomplete? | Stochastic volatility or jumps, and also transaction costs and constraints.
+Q: A stock at £100 moves to £120 or £90 with r = 0. What is the risk-neutral up probability? | 1/3, from 100 = 120q + 90(1 − q).
+Q: What is a common mistake about risk-neutral prices? | Assuming every market model has a unique risk-neutral price.
+Q: How is a measure chosen in an incomplete market? | Using preferences or calibration.
 
 ## Financial Modelling
 S: Financial modelling builds spreadsheet or code models of a company's finances to forecast results, value it and test decisions. Good models are transparent, consistent and tested, because errors in them have cost firms and governments millions.
@@ -763,6 +963,16 @@ SRC: Panko RR, What we know about spreadsheet errors, Journal of End User Comput
 NUM1#maths-u21-21-q1@1: Fixed costs are £120,000, price £50 and variable cost £30 per unit. What is the break-even volume in units? | 6000 | 0 | units | Contribution £20 per unit, so 120,000/20 = 6,000 units.
 M1#maths-u21-21-q2@1: Which practice makes a financial model easier to audit? | Keeping assumptions in a separate, labelled input section | Typing numbers directly into formulas | Hiding rows and columns | Using different formulas across a row | Avoiding any checks | Separate inputs make every assumption visible and changeable.
 M2#maths-u21-21-q3@2: Why are sensitivity tables useful in financial models? | They show how outputs change as key inputs vary, revealing which assumptions matter most | They remove all uncertainty from the model's outputs | They replace the need for forecasts of any kind | They make the balance sheet balance automatically | They aren't useful in professional financial models | A valuation that swings widely with one input deserves scrutiny of that input.
+Q: What is a three-statement model? | Linked forecasts of the income statement, balance sheet and cash-flow statement.
+Q: What is scenario analysis? | Running a model under coherent sets of assumptions, such as base, upside and downside cases.
+Q: How should a financial model's structure be organised? | With inputs separated from calculations and outputs.
+Q: How are revenue drivers often modelled? | As volume × price, or with growth rates.
+Q: What is contribution per unit? | Price minus variable cost per unit.
+Q: When is Monte Carlo used in financial modelling? | For inputs that are uncertain.
+Q: What is a common mistake in spreadsheet formulas? | Hard-coding numbers inside formulas, which hides assumptions and causes errors.
+Q: 10,000 units sell at £20 with variable cost £12 and fixed costs £50,000. What is the profit? | £30,000, since 10,000 × 8 − 50,000 = 30,000.
+Q: Which famous spreadsheet error shows the risks of modelling? | The Reinhart–Rogoff Excel error.
+Q: Name two good practices besides consistent formulas for financial models. | Error checks with audit trails, and documentation with version control.
 
 ## Stochastic Calculus
 S: Stochastic calculus extends calculus to functions of random processes such as Brownian motion. Because Brownian paths are nowhere differentiable, ordinary rules fail, and Itô's lemma adds a crucial second-order term that underlies all continuous-time finance.
@@ -799,6 +1009,16 @@ SRC: Itô K, Stochastic integral, Proceedings of the Imperial Academy 20(8), 519
 NUM1#maths-u21-22-q1@1: What is the variance of W₄ − W₁ for standard Brownian motion? | 3 | 0 |  | Increments are N(0, t − s), so the variance is 4 − 1 = 3.
 M1#maths-u21-22-q2@1: Which multiplication rule holds in Itô calculus? | dW·dW = dt | dW·dW = 0 | dt·dt = dt | dt·dW = dW | dW·dW = dW | Quadratic variation of Brownian motion gives (dW)^{2} = dt.
 M2#maths-u21-22-q3@2: Why does Itô's lemma contain a ½σ^{2}f_{xx} term absent from ordinary calculus? | Brownian increments have size √dt, so their squares contribute at order dt | It corrects a typing convention used by early probabilists | Ordinary calculus also has this term, so nothing is new | It accounts for interest rates in the stock price model | It doesn't contain one; the chain rule is unchanged | In a Taylor expansion, (dX)^{2} ≈ σ^{2}dt survives instead of vanishing.
+Q: What is Itô's lemma? | For dX = μ dt + σ dW, df = (f_{t} + μf_{x} + ½σ^{2}f_{xx}) dt + σf_{x} dW.
+Q: What is the quadratic variation of Brownian motion? | [W]_{t} = t; squared increments accumulate deterministically.
+Q: What is the distribution of a Brownian increment W_{t} − W_{s}? | Normal, N(0, t − s), independent of the past.
+Q: Why do ordinary calculus rules fail for Brownian motion? | Brownian paths are continuous but nowhere differentiable.
+Q: How is the Itô integral evaluated, and what property does it have? | It uses left-endpoint evaluation and is a martingale.
+Q: What is the Itô isometry? | E[(∫ H dW)^{2}] = E[∫ H^{2} dt].
+Q: How does Stratonovich calculus differ from Itô calculus? | It obeys ordinary calculus rules but isn't a martingale.
+Q: What does Girsanov's theorem do? | It changes the drift of a process between probability measures.
+Q: What does Feynman–Kac link? | Partial differential equations and expectations.
+Q: What is a common mistake with functions of Brownian motion? | Applying the ordinary chain rule and missing the ½σ^{2}f_{xx} term.
 
 ## Geometric Brownian Motion
 S: Geometric Brownian motion is the standard model for stock prices: returns are normally distributed and prices stay positive with log-normal distribution. It underlies the Black–Scholes model and many simulation studies, though real returns have fatter tails.
@@ -835,6 +1055,16 @@ SRC: Hull JC, Options, Futures, and Other Derivatives (11th edn, Pearson 2021) |
 NUM1#maths-u21-23-q1@1: Under GBM with μ = 10% and σ = 30%, what is the median annual log growth rate, in %? | 5.5 | 0.01 | % | μ − ½σ^{2} = 0.10 − 0.045 = 0.055 = 5.5%.
 M1#maths-u21-23-q2@1: Which statement about GBM prices is true? | They are log-normally distributed and always positive | They are normally distributed and can be negative | They follow a uniform distribution | They never change | They are always increasing | S_{T} = S₀e^{normal} is positive and log-normal.
 M3#maths-u21-23-q3@2: Why is the median GBM price below the mean? | The log-normal distribution is right-skewed: rare large gains raise the mean above the typical outcome | The median is always zero under geometric Brownian motion | Volatility increases the median above the mean over time | They are equal, since the log-normal distribution is symmetric | The median is above the mean, since prices are bounded below | E[e^{X}] = e^{E[X] + ½Var X} exceeds e^{E[X]}, the median.
+Q: What is geometric Brownian motion? | The process dS = μS dt + σS dW, with drift μ and volatility σ.
+Q: What is the solution for S_{T} under GBM? | S_{T} = S₀ exp((μ − ½σ^{2})T + σW_{T}).
+Q: What is the median of S_{T} under GBM? | S₀e^{(μ − ½σ^{2})T}.
+Q: What is d(ln S) under GBM? | (μ − ½σ^{2}) dt + σ dW.
+Q: What is volatility drag? | The typical (median) growth rate is μ − ½σ^{2}, below the drift μ.
+Q: How is GBM simulated over a step Δt? | S_{t+Δt} = S_{t} exp((μ − ½σ^{2})Δt + σ√Δt Z), with Z standard normal.
+Q: Name two features of real returns that GBM misses. | Fat tails with volatility clustering, and jumps such as crashes.
+Q: A stock at £100 has μ = 8%. What is its expected price after one year under GBM? | About £108.33, since 100e^{0.08} ≈ 108.33.
+Q: What is a common mistake about growth under GBM? | Confusing the expected price growth μ with the median growth μ − ½σ^{2}.
+Q: What are the mean and variance of ln S_{T} under GBM? | Mean ln S₀ + (μ − ½σ^{2})T and variance σ^{2}T.
 
 ## Derivatives Pricing
 S: Derivatives are contracts whose value depends on another asset, such as forwards, futures, options and swaps. They're priced by no-arbitrage: find a replicating portfolio or a risk-neutral expectation, and the price must match.
@@ -872,6 +1102,16 @@ SRC: Wilmott P, Paul Wilmott Introduces Quantitative Finance (2nd edn, Wiley 200
 NUM1#maths-u21-24-q1@1: A European call costs £8, the stock is £100, K = £100, r = 5% and T = 1 (continuous). What should the put cost by put–call parity, in £, to 2 decimal places? | 3.12 | 0.01 | £ | P = C − S₀ + Ke^{−rT} = 8 − 100 + 100e^{−0.05} ≈ 8 − 100 + 95.12 = £3.12.
 M1#maths-u21-24-q2@1: The forward price of a stock is above S₀e^{rT}. What arbitrage is possible? | Borrow, buy the stock and sell the forward | Buy the forward and sell the stock | Do nothing, as forwards can't be mispriced | Buy both the stock and the forward | Sell the stock and lend the proceeds | Cash-and-carry locks in the difference between F and S₀e^{rT}.
 M2#maths-u21-24-q3@2: Why do derivative prices not depend on investors' expected returns for the underlying? | The derivative can be replicated by trading the underlying and cash, so its price is fixed by the replication cost | Investors all expect the same return, so it cancels out of the price | Expected returns are always zero in efficient markets, so they don't appear | Derivatives have no risk of their own, so returns don't matter to them | They do depend on them: higher expected returns always raise call prices | Hedging removes exposure to the drift, leaving only volatility and rates.
+Q: What is a derivative? | A contract whose value depends on another asset, such as a forward, future, option or swap.
+Q: What is a forward contract? | An agreement to buy an asset at a fixed price K on a future date.
+Q: What is a replicating portfolio? | A portfolio of traded assets reproducing a derivative's payoff, whose cost gives the derivative's price.
+Q: What is the forward price with a dividend yield q? | F = S₀e^{(r − q)T}.
+Q: What affects forward prices of commodities? | The cost of carry, including storage costs and convenience yield.
+Q: What is a cash-and-carry arbitrage? | When the forward price is too high, sell forward and buy the asset.
+Q: What is delta hedging? | Holding ∂V/∂S shares to offset small price moves in a derivative.
+Q: What is a swap? | An exchange of cash-flow streams, such as in an interest rate swap.
+Q: A non-dividend stock is £50 with r = 4% continuous. What is its 1-year forward price? | About £52.04, since 50e^{0.04} ≈ 52.04.
+Q: What is a common mistake in forward pricing? | Pricing a forward by the expected future spot price instead of by no-arbitrage.
 
 ## Options Pricing
 S: An option gives the right, but not the obligation, to buy (call) or sell (put) an asset at a set strike price. Its value depends on the underlying price, strike, time, volatility and interest rates, and the "Greeks" measure its sensitivity to each.
@@ -909,6 +1149,16 @@ SRC: Natenberg S, Option Volatility and Pricing (2nd edn, McGraw-Hill 2015) | te
 NUM1#maths-u21-25-q1@1: A put with strike £80 expires when the stock is £72. What is its payoff in £? | 8 | 0 | £ | max(80 − 72, 0) = £8.
 M1#maths-u21-25-q2@1: How does an increase in volatility affect the value of a call option? | It increases it | It decreases it | It has no effect | It makes it zero | It depends only on the strike | More volatility raises the chance of big payoffs while losses stay capped at the premium.
 M3#maths-u21-25-q3@2: Why is early exercise of an American call on a non-dividend-paying stock never optimal? | Selling the call is worth at least its intrinsic value plus time value, which exceeds exercising | Early exercise is forbidden by the terms of American option contracts | The call has no value before expiry, so exercising gains nothing | Interest rates are negative, so waiting always costs the holder money | It is always optimal to exercise as soon as the call is in the money | The call is worth at least S − Ke^{−r(T−t)} > S − K, so exercising gives up value.
+Q: What is a call option? | The right, but not the obligation, to buy at strike K, with payoff max(S_{T} − K, 0) at expiry.
+Q: What is implied volatility? | The volatility that makes a model's option price match the market price.
+Q: What is the payoff of a put option? | max(K − S, 0).
+Q: How is an option's value split into two parts? | Intrinsic value, the payoff if exercised now, plus time value, the rest.
+Q: How do European and American options differ? | European options can be exercised only at expiry; American options at any time.
+Q: How do higher interest rates affect calls and puts? | Calls rise in value and puts fall.
+Q: What does the gamma of an option measure? | ∂^{2}V/∂S^{2}, how fast delta changes with the underlying price.
+Q: Between what values does a call's delta lie? | Between 0 and 1.
+Q: A call with K = £50 costs £6 when the stock is £53. What is its time value? | £3, since intrinsic value is £3.
+Q: What is a common mistake about volatility and option values? | Thinking higher volatility lowers option values because of more downside.
 
 ## Binomial Options Pricing
 S: The binomial model, introduced by Cox, Ross and Rubinstein in 1979, lets a stock move up or down each step. Working backwards through the tree with risk-neutral probabilities prices European and American options and converges to Black–Scholes as steps shrink.
@@ -944,6 +1194,16 @@ SRC: Shreve SE, Stochastic Calculus for Finance I: The Binomial Asset Pricing Mo
 NUM1#maths-u21-26-q1@1: In the example (S = 100, u = 1.2, d = 0.8, r = 0), what is the one-step put price with K = 100, in £? | 10 | 0 | £ | Put payoffs are 0 (up) and 20 (down), so 0.5 × 0 + 0.5 × 20 = £10, matching put–call parity with r = 0.
 M1#maths-u21-26-q2@1: In a one-step tree with S = 100, u = 1.1, d = 0.9 and r = 0, what is q? | 0.5 | 0.55 | 0.45 | 0.9 | 1.1 | q = (1 − 0.9)/(1.1 − 0.9) = 0.1/0.2 = 0.5.
 M2#maths-u21-26-q3@2: How is early exercise handled for an American put on a binomial tree? | At each node, its value is the larger of immediate exercise and the discounted continuation value | Early exercise is ignored, since the tree only prices European options | Only the final nodes matter, so earlier exercise can't be included | The tree is solved forwards from today, checking exercise along the way | It can't be handled on a tree; a separate PDE method is needed | Backward induction compares exercising now with holding at every node.
+Q: Who introduced the binomial options model, and when? | Cox, Ross and Rubinstein, in 1979.
+Q: What is backward induction in a binomial tree? | Valuing the option at each node from the values at the next step, starting at expiry.
+Q: How many shares replicate an option in a one-step tree? | Δ = (V_{u} − V_{d})/(S(u − d)), plus cash.
+Q: What is the one-step option value in a binomial tree? | V = e^{−rΔt}(qV_{u} + (1 − q)V_{d}).
+Q: What are the CRR parameters for up and down moves? | u = e^{σ√Δt} and d = 1/u.
+Q: Why are recombining trees useful? | They keep the number of nodes manageable.
+Q: Name two features binomial trees can handle. | Dividends, early exercise and barriers.
+Q: With S = £100, u = 1.2, d = 0.8 and r = 0, what is the one-step call price for K = £100? | £10, since q = 0.5 and the up payoff is £20.
+Q: What is a common mistake when pricing on a binomial tree? | Using real-world probabilities instead of risk-neutral q.
+Q: What tree extensions are used for interest rates? | Trinomial trees and lattices.
 
 ## Black–Scholes Model
 S: The Black–Scholes model (1973) gives a closed-form price for European options assuming the stock follows geometric Brownian motion with constant volatility. It transformed financial markets, earned a Nobel prize, and its implied volatilities are still the language of options trading.
@@ -980,6 +1240,16 @@ SRC: Merton RC, Theory of rational option pricing, Bell Journal of Economics and
 NUM1#maths-u21-27-q1@1: For an at-the-money call with r = 0, the price is approximately 0.4Sσ√T. Estimate it for S = £100, σ = 25%, T = 1, in £. | 10 | 0.1 | £ | 0.4 × 100 × 0.25 × 1 = £10 (the exact value is about £9.95).
 M1#maths-u21-27-q2@1: In the Black–Scholes formula, what is d₂? | d₁ − σ√T | d₁ + σ√T | σ√T | ln(S/K) | d₁/σ | By definition d₂ = d₁ − σ√T; N(d₂) is the risk-neutral probability that the call finishes in the money.
 M3#maths-u21-27-q3@2: Why does the expected return μ drop out of the Black–Scholes equation? | A delta-hedged portfolio is riskless, so it must earn r regardless of μ | μ is always equal to r in real markets, so it cancels | Investors don't care about expected returns when trading options | The formula ignores the stock price, so μ can't appear | It doesn't drop out; it appears inside d₁ and d₂ | Continuous hedging cancels the dW terms, and with them any dependence on drift.
+Q: What is the Black–Scholes call formula? | C = S₀N(d₁) − Ke^{−rT}N(d₂).
+Q: How is d₁ defined in Black–Scholes? | d₁ = (ln(S₀/K) + (r + ½σ^{2})T)/(σ√T).
+Q: What is the Black–Scholes PDE? | V_{t} + ½σ^{2}S^{2}V_{SS} + rSV_{S} − rV = 0.
+Q: How is the Black–Scholes PDE derived? | Hedge the option with Δ = V_{S} shares to make a riskless portfolio, which must earn r by no arbitrage.
+Q: What stock model does Black–Scholes assume? | Geometric Brownian motion with constant volatility.
+Q: Name three Black–Scholes assumptions besides GBM. | Constant r, continuous trading with no transaction costs, and European exercise.
+Q: What shows that volatility isn't really constant? | Volatility smiles in implied volatilities.
+Q: What is an at-the-money call worth with S₀ = K = £100, r = 0, σ = 20%, T = 1? | About £7.97.
+Q: What is a common mistake when using the Black–Scholes formula? | Plugging the stock's expected return μ into it.
+Q: Why was Fischer Black not awarded the 1997 Nobel prize? | He had died.
 
 ## Interest Rate Models
 S: Interest rate models describe how rates evolve over time and across maturities, the yield curve. Short-rate models such as Vasicek and Hull–White, and market models such as LIBOR/SOFR models, price bonds, swaps and interest rate options.
@@ -1017,6 +1287,16 @@ SRC: Brigo D, Mercurio F, Interest Rate Models: Theory and Practice (2nd edn, Sp
 NUM1#maths-u21-28-q1@1: The 1-year spot rate is 3% and the 2-year spot rate is 4% (annual compounding). What is the 1-year forward rate starting in one year, in %, to 2 decimal places? | 5.01 | 0.01 | % | (1.04^{2}/1.03) − 1 = 1.0816/1.03 − 1 ≈ 0.0501.
 M1#maths-u21-28-q2@1: What does an inverted yield curve mean? | Short-term rates are higher than long-term rates | Long-term rates are higher than short-term rates | All rates are zero | Rates are equal at all maturities | Bonds have no yield | Inversion means the curve slopes downwards.
 M2#maths-u21-28-q3@2: Why do Hull–White models include a time-dependent long-run level b(t)? | So the model reproduces today's observed yield curve exactly | To make interest rates constant over time | To remove all randomness from the rate | To prevent any mean reversion in rates | They don't include a time-dependent level | Exact calibration to market prices is needed before pricing derivatives.
+Q: What is a yield curve? | The relationship between interest rates (yields) and time to maturity.
+Q: What is the Vasicek model? | dr = a(b − r)dt + σ dW, a mean-reverting short rate with speed a and long-run level b.
+Q: How are spot rates found from zero-coupon bond prices? | From P(0, T) = e^{−R(T)T}.
+Q: What are forward rates? | Rates agreed now for future periods.
+Q: What has often followed inverted yield curves? | Recessions.
+Q: What drawback does the Vasicek model have? | Being Gaussian, it allows rates to go negative.
+Q: What does the Heath–Jarrow–Morton framework model? | The whole forward curve.
+Q: Which rates are replacing LIBOR in market models? | Risk-free rates such as SOFR and SONIA.
+Q: In Vasicek with a = 0.5, b = 4% and r = 2%, what is the drift now? | 0.01 a year, pulling the rate up by 1% a year at first.
+Q: What is a common mistake when choosing interest rate models? | Using a model that allows negative rates without checking whether that matters for the product.
 
 ## Risk Theory
 S: Risk theory, or ruin theory, models an insurer's surplus as premiums come in and random claims go out. It asks how likely the insurer is to run out of money and how big premiums and capital must be to keep that probability small.
@@ -1052,6 +1332,16 @@ SRC: Klugman SA, Panjer HH, Willmot GE, Loss Models: From Data to Decisions (5th
 NUM1#maths-u21-29-q1@1: In the exponential-claims formula, what is ψ(0) when θ = 0.25? | 0.8 | 0.001 |  | ψ(0) = 1/(1 + θ) = 1/1.25 = 0.8.
 M1#maths-u21-29-q2@1: Claims arrive at 100 per year with mean £500 and θ = 0.2. What is the annual premium income? | £60,000 | £50,000 | £10,000 | £600 | £120,000 | Premium income is (1 + θ) × expected claims = 1.2 × 100 × £500 = £60,000 a year, including a 20% safety loading.
 M2#maths-u21-29-q3@2: Why is ruin certain if premiums equal expected claims exactly? | Random fluctuations then have no upward drift to offset them, so the surplus eventually hits zero | Claims stop arriving once premiums match expected claims exactly | Capital then grows without bound, which counts as ruin by definition | Ruin becomes impossible in that case, since income equals outgo | It isn't certain; ruin then has a probability of exactly one half | A random walk with zero drift eventually reaches any level below its start.
+Q: What is the probability of ruin? | ψ(u), the probability that an insurer starting with capital u ever has negative surplus.
+Q: What is the safety loading? | θ, the proportion by which premiums exceed expected claims, so c = (1 + θ)λE[X].
+Q: What is the surplus process in risk theory? | U(t) = u + ct − S(t), with S(t) a compound Poisson sum of claims.
+Q: What is the ruin probability for exponential claims with mean μ? | ψ(u) = (1/(1 + θ)) e^{−θu/((1 + θ)μ)}.
+Q: How do heavy-tailed claims affect ruin probabilities? | Ruin probability decays much more slowly with capital.
+Q: Name two uses of ruin theory. | Setting premiums and capital, reinsurance design, and solvency regulation.
+Q: Claims are exponential with mean £1000, θ = 0.25 and capital £5000. What is the ruin probability? | About 0.294, since 0.8 × e^{−1} ≈ 0.294.
+Q: What is a common mistake in setting insurance premiums? | Charging premiums equal to expected claims, which makes eventual ruin certain.
+Q: What is R in Lundberg's inequality? | The adjustment coefficient in the bound ψ(u) ≤ e^{−Ru}.
+Q: How are claims assumed to arrive in the classical risk model? | As a Poisson process at rate λ, with random sizes X.
 
 ## Market Risk Modelling
 S: Market risk is the risk of losses from movements in market prices: shares, interest rates, currencies and commodities. Banks model it with historical simulation, variance–covariance and Monte Carlo methods, and regulators require them to hold capital against it.
@@ -1087,6 +1377,16 @@ SRC: J.P. Morgan/Reuters, RiskMetrics: Technical Document (4th edn 1996) | repor
 NUM1#maths-u21-30-q1@1: With daily volatility 1.5%, what is the approximate 10-day volatility in %, using the square-root-of-time rule, to 2 decimal places? | 4.74 | 0.01 | % | 1.5 × √10 ≈ 1.5 × 3.162 ≈ 4.74%.
 M1#maths-u21-30-q2@1: Which market risk method uses no distributional assumption about returns? | Historical simulation | Variance–covariance | Normal parametric VaR | Delta-normal approximation | A single scenario | Historical simulation replays actual past market changes on today's portfolio, so it assumes no particular return distribution.
 M2#maths-u21-30-q3@2: Why do banks run stress tests as well as statistical risk models? | Statistical models based on recent data can miss extreme, rare scenarios | Stress tests replace backtesting | Statistical models are always too conservative | Regulators forbid statistical models | They don't run them | Scenarios like 2008 may lie outside the history window used by the model.
+Q: What is market risk? | The risk of losses from movements in market prices of shares, interest rates, currencies and commodities.
+Q: What is historical simulation? | Estimating a loss distribution by applying past daily market changes to today's portfolio.
+Q: What is backtesting a risk model? | Comparing its predicted loss thresholds with actual outcomes to check its accuracy.
+Q: What does the variance–covariance method assume? | Normal returns, with loss quantiles from volatilities and correlations.
+Q: What is the trade-off of Monte Carlo for market risk? | It is flexible but computationally costly.
+Q: What is the EWMA variance update? | σₜ^{2} = λσₜ₋₁^{2} + (1 − λ)rₜ₋₁^{2}.
+Q: What do GARCH models capture? | Volatility clustering.
+Q: What does the Basel traffic-light system judge? | The number of backtesting exceptions where losses exceed VaR.
+Q: What is a common mistake about return distributions in market risk? | Assuming normal returns, which underestimates extreme losses.
+Q: What did the Fundamental Review of the Trading Book change? | It moved market risk measurement to expected shortfall.
 
 ## Credit Risk Modelling
 S: Credit risk is the risk that a borrower fails to repay. Models estimate the probability of default, the loss given default and the exposure at default, and portfolio models capture how defaults cluster in downturns.
@@ -1124,6 +1424,16 @@ SRC: Basel Committee on Banking Supervision, An Explanatory Note on the Basel II
 NUM1#maths-u21-31-q1@1: A bond has default intensity λ = 3% a year and LGD 50%. What approximate credit spread does this imply, in %? | 1.5 | 0.01 | % | Spread ≈ λ × LGD = 0.03 × 0.5 = 1.5%.
 M1#maths-u21-31-q2@1: A £500,000 exposure has PD 1% and LGD 45%. What is the expected loss? | £2,250 | £5,000 | £225,000 | £4,500 | £2,750 | Expected loss = PD × LGD × EAD = 0.01 × 0.45 × £500,000 = £2,250.
 M3#maths-u21-31-q3@2: Why did Gaussian copula models of mortgage portfolios fail in 2008? | They underestimated how strongly defaults cluster in extreme downturns (weak tail dependence) | They overestimated default rates, making mortgage securities look too risky | They ignored interest rates but modelled default correlation perfectly | They were far too conservative, so banks held too much capital | They didn't fail; losses in 2008 matched the models' predictions | The Gaussian copula has no tail dependence, so joint extreme defaults seemed very unlikely.
+Q: What is credit risk? | The risk that a borrower fails to repay.
+Q: What is the expected loss formula for credit risk? | EL = PD × LGD × EAD.
+Q: What is the Merton model of default? | A structural model where a firm defaults if its asset value falls below its debt at maturity.
+Q: How does a reduced-form credit model treat default? | Default arrives at a random intensity λ, the hazard rate.
+Q: How is a credit spread approximated from a hazard rate? | Spread ≈ λ × LGD.
+Q: What methods are used for retail credit scoring? | Logistic regression and machine learning.
+Q: Which model underlies Basel IRB capital? | The Vasicek one-factor model.
+Q: Why are defaults correlated? | They are linked through economic cycles, clustering in downturns.
+Q: A £1m loan has PD 2% and recovery 40%. What is the expected loss? | £12,000, since 0.02 × 0.6 × 1,000,000 = 12,000.
+Q: What is a common mistake in credit portfolio risk? | Ignoring default correlation, which understates the risk of many defaults at once.
 
 ## Value at Risk (VaR)
 S: Value at Risk is the loss level that won't be exceeded with a given confidence over a given period, such as "99% one-day VaR of £1m". It's simple to communicate but says nothing about how bad losses beyond it can be.
@@ -1161,6 +1471,16 @@ SRC: Artzner P, Delbaen F, Eber JM, Heath D, Coherent measures of risk, Mathemat
 NUM1#maths-u21-32-q1@1: A £5m portfolio has daily volatility 2%. What is its 95% one-day normal VaR in £ (z = 1.645)? | 164500 | 1 | £ | 1.645 × 0.02 × 5,000,000 = £164,500.
 M1#maths-u21-32-q2@1: Which statement about VaR is correct? | It gives a loss threshold exceeded with a stated small probability | It is the largest loss that can possibly occur | It measures the average return of the portfolio | It is always subadditive across portfolios | It measures the average size of tail losses | VaR is a quantile, not a worst case or a tail average.
 M2#maths-u21-32-q3@2: Why can VaR discourage diversification? | It isn't always subadditive, so a combined portfolio can show higher VaR than the sum of its parts | It always rewards diversification, so it can't discourage it | It ignores correlations completely between portfolio positions | It is only defined for a single asset, never for portfolios | It can't: VaR always falls when positions are combined | With certain discrete or skewed losses, VaR(A + B) > VaR(A) + VaR(B).
+Q: What is Value at Risk? | The loss level that won't be exceeded with a given confidence over a given period.
+Q: What is subadditivity of a risk measure? | ρ(A + B) ≤ ρ(A) + ρ(B): combining portfolios shouldn't increase risk.
+Q: What is the parametric normal VaR formula? | VaR = z_{α}σV − μV, often with μ ≈ 0 for short horizons.
+Q: What is the z-value for 95% normal VaR? | 1.645.
+Q: How is VaR scaled to longer horizons? | By √T, if returns are independent.
+Q: What does VaR fail to tell you? | Anything about the size of losses beyond the threshold.
+Q: A £10m portfolio has 1% daily volatility. What is its 99% one-day normal VaR? | About £232,600.
+Q: What is a common mistake in reading VaR? | Treating it as the maximum possible loss.
+Q: What do regulators now prefer to VaR? | Expected shortfall.
+Q: What three choices does a VaR figure depend on? | The horizon, the confidence level and the model.
 
 ## Expected Shortfall
 S: Expected shortfall, also called conditional VaR, is the average loss in the worst (1 − α) of cases. It looks beyond the VaR threshold into the tail and is a coherent risk measure, which is why Basel trading-book rules adopted it.
@@ -1196,6 +1516,16 @@ SRC: Basel Committee on Banking Supervision, Minimum capital requirements for ma
 NUM1#maths-u21-33-q1@1: For normal losses with σ = £1m, what is 97.5% expected shortfall in £m, using ES ≈ 2.338σ? | 2.338 | 0.001 | £m | 2.338 × 1 = £2.338m, close to the 99% VaR of £2.326m.
 M1#maths-u21-33-q2@1: Which property does expected shortfall have that VaR lacks in general? | Subadditivity | Monotonicity | Translation invariance | Positive homogeneity | Being a quantile | ES is coherent, so diversification never increases it.
 M3#maths-u21-33-q3@2: Why can two portfolios with the same VaR have very different expected shortfalls? | VaR marks only the threshold, while ES averages the losses beyond it, which can differ greatly in size | VaR and ES are always equal, so they can't differ | ES ignores the tail and looks only at typical losses | VaR already measures the size of tail losses fully | They can't differ when VaR is the same at that level | A fat-tailed portfolio has far larger losses beyond the same threshold.
+Q: What is expected shortfall? | The average loss in the worst (1 − α) of cases, ES_{α} = E[loss ∣ loss ≥ VaR_{α}].
+Q: What is a coherent risk measure? | One satisfying monotonicity, subadditivity, positive homogeneity and translation invariance.
+Q: What is another name for expected shortfall? | Conditional VaR.
+Q: What is normal ES with mean 0? | ES_{α} = σ φ(z_{α})/(1 − α).
+Q: How does 97.5% normal ES compare with 99% normal VaR? | They are close: about 2.338σ versus 2.326σ.
+Q: How does expected shortfall compare in size with VaR at the same level? | It is always at least as large.
+Q: Why is expected shortfall harder to backtest than VaR? | It is not elicitable on its own.
+Q: Losses of 1 to 8, 20 and 50 are equally likely. What is the 80% expected shortfall? | 35, the average of the worst two, 20 and 50.
+Q: What is a common mistake about portfolios with equal VaR? | Assuming they have equal tail risk.
+Q: Which insurance regime uses expected shortfall? | The Swiss Solvency Test.
 
 ## Actuarial Mathematics
 S: Actuarial mathematics combines interest, probability and statistics to value future payments that depend on uncertain events such as death, illness or accidents. Actuaries use it to price insurance, set pension contributions and hold adequate reserves.
@@ -1233,6 +1563,16 @@ SRC: Bowers NL et al., Actuarial Mathematics (2nd edn, Society of Actuaries 1997
 NUM1#maths-u21-34-q1@1: A life table has l₅₀ = 95,000 and l₆₀ = 90,250. What is ₁₀p₅₀? | 0.95 | 0.001 |  | ₁₀p₅₀ = l₆₀/l₅₀ = 90,250/95,000 = 0.95.
 M1#maths-u21-34-q2@1: If q₇₀ = 0.02, what is p₇₀? | 0.98 | 0.02 | 1.02 | 0.2 | 0.5 | Survival and death probabilities over one year sum to 1.
 M2#maths-u21-34-q3@2: Why must actuaries model mortality improvement over time? | People are living longer, so using old tables underestimates annuity and pension costs | Mortality rates never change, so old tables are always correct | Mortality improvement reduces life expectancy over time | It only affects term insurance, never pensions or annuities | They needn't, since regulators set mortality assumptions | Longevity risk means payments last longer than older tables predict.
+Q: What is a life table? | A table of survivors lₓ at each age x from a starting cohort, giving probabilities such as ₜpₓ = lₓ₊ₜ/lₓ.
+Q: What is the equivalence principle? | Setting premiums so the expected present value of premiums equals that of benefits.
+Q: How is qₓ related to pₓ? | qₓ = 1 − pₓ.
+Q: What does term insurance pay? | A benefit on death within n years.
+Q: What is the formula for a whole life annuity-due value? | äₓ = Σ vᵏ ₖpₓ.
+Q: How are Aₓ and äₓ related? | Aₓ = 1 − däₓ, with d = i/(1 + i).
+Q: How is a policy reserve defined? | The EPV of future benefits minus the EPV of future premiums.
+Q: Which differential equation describes reserves? | Thiele's differential equation.
+Q: A 1-year term policy pays £10,000 if a 60-year-old dies, with q₆₀ = 0.01 and i = 5%. What is the single premium? | About £95.24.
+Q: What is a common mistake in valuing insurance benefits? | Ignoring interest and valuing benefits by probability alone.
 
 ## Insurance Mathematics
 S: Insurance mathematics prices general insurance, such as motor, home and liability cover, where claims vary in number and size. Frequency–severity models, premium principles and credibility theory set fair premiums from limited and varied data.
@@ -1270,6 +1610,16 @@ SRC: Bühlmann H, Experience rating and credibility, ASTIN Bulletin 4(3), 199 | 
 NUM1#maths-u21-35-q1@1: With Bühlmann credibility k = 10 and n = 5 years of data, what is Z, to 3 decimal places? | 0.333 | 0.001 |  | Z = n/(n + k) = 5/15 ≈ 0.333.
 M1#maths-u21-35-q2@1: Claim count averages 2 per year and claim size averages £300. What are expected aggregate claims per year? | £600 | £300 | £150 | £1200 | £302 | Expected aggregate claims are E[N] × E[X] = 2 × £300 = £600 a year, by the compound distribution formula.
 M2#maths-u21-35-q3@2: Why are Pareto distributions used for some insurance claim sizes? | They have heavy tails, matching rare but very large claims such as liability losses | They are bounded above, so claims can't exceed a limit | They have no variance, which simplifies premium setting | They model the number of claims rather than their size | They aren't used in insurance, only in economics | Large commercial and catastrophe claims follow power-law tails.
+Q: What is a compound distribution of aggregate claims? | S = X₁ + … + X_{N}, with random claim count N and claim sizes Xᵢ.
+Q: What is a credibility premium? | Z × own experience + (1 − Z) × collective mean, with Z between 0 and 1.
+Q: What is the variance of a compound distribution? | Var(S) = E[N]Var(X) + Var(N)E[X]^{2}.
+Q: Name two distributions used for claim counts. | Poisson and negative binomial.
+Q: What is the expected value premium principle? | Premium = (1 + θ)E[S].
+Q: What is the Bühlmann credibility factor? | Z = n/(n + k).
+Q: How are no-claims discounts modelled? | As Markov chains.
+Q: What method reserves for claims not yet reported? | The chain ladder.
+Q: Claims are Poisson with mean 0.1, size mean £2000 and SD £1000. What is the SD of aggregate claims? | About £707, since Var(S) = 500,000.
+Q: What is a common mistake when estimating aggregate claim variability? | Ignoring the variance of claim counts.
 
 ## Survival Models
 S: Survival models describe the time until an event such as death, failure or relapse. They use survival and hazard functions, handle incomplete (censored) data, and are central to actuarial science, medicine and reliability engineering.
@@ -1306,6 +1656,16 @@ SRC: Cox DR, Regression models and life-tables, Journal of the Royal Statistical
 NUM1#maths-u21-36-q1@1: With constant hazard λ = 0.1 per year, what is the probability of surviving 5 years, to 3 decimal places? | 0.607 | 0.001 |  | S(5) = e^{−0.5} ≈ 0.607.
 M1#maths-u21-36-q2@1: In a Cox model, a covariate has β = ln 2. What is its hazard ratio? | 2 | 0.69 | ln 2 | 0.5 | 1 | The hazard ratio is e^{β} = e^{ln 2} = 2.
 M2#maths-u21-36-q3@2: Why must censored observations be included in survival estimation? | They show the subject survived at least until censoring, and excluding them biases survival downwards | They are deaths and must be counted as events | They contain no information about survival | They should be counted as events at the censoring time | They must be excluded to avoid bias | Kaplan–Meier keeps them in the risk set until they leave.
+Q: What is a hazard function? | h(t) = f(t)/S(t), the instantaneous event rate at time t among those who have survived to t.
+Q: What is censoring in survival analysis? | Incomplete observation of survival times, such as a patient still alive when the study ends.
+Q: How is the survival function written in terms of the hazard? | S(t) = exp(−∫₀ᵗ h(u) du).
+Q: What does the Gompertz model assume about the hazard? | That it rises exponentially with age, as in human mortality.
+Q: What is the Kaplan–Meier estimator? | Ŝ(t) = Π (1 − dᵢ/nᵢ) over the event times.
+Q: What does the log-rank test do? | It compares survival between groups.
+Q: What does the Nelson–Aalen estimator estimate? | The cumulative hazard.
+Q: What is the Cox proportional hazards model? | h₀(t)e^{βᵀx} for covariates x, relating hazards to covariates.
+Q: In the Kaplan–Meier example, what is S(3) after factors 0.8 and 6/7? | About 0.686.
+Q: What is a common mistake with censored observations? | Treating them as events or dropping them.
 
 ## Pension Mathematics
 S: Pension mathematics values the promises made by pension schemes and sets the contributions needed to fund them. It combines interest, mortality, salary growth and inflation, and small changes in assumptions can move a scheme's deficit by billions.
@@ -1342,6 +1702,16 @@ SRC: The Pensions Regulator, Defined benefit funding code of practice | guidelin
 NUM1#maths-u21-37-q1@1: A scheme has assets of £900m and liabilities of £1,000m. What is its funding level in %? | 90 | 0 | % | 900/1000 = 90%, a £100m deficit.
 M1#maths-u21-37-q2@1: Under a 1/80 accrual DB scheme, what pension does 40 years' service on £40,000 final salary give? | £20,000 a year | £32,000 a year | £16,000 a year | £10,000 a year | £40,000 a year | The pension is service × accrual rate × final salary: 40/80 × £40,000 = £20,000 a year.
 M2#maths-u21-37-q3@2: Why did falling interest rates increase many DB scheme deficits? | Lower discount rates raise the present value of long-dated liabilities more than typical asset gains | Liabilities don't depend on interest rates, so assets must have fallen | Lower rates reduce promised benefits, which raises deficits | Assets always rise more than liabilities when rates fall | They decreased deficits, since lower rates cut liability values | With long durations, liability values are very sensitive to the discount rate.
+Q: What is a defined benefit scheme? | A pension promising a benefit based on salary and service, with the sponsor bearing investment and longevity risk.
+Q: What is a scheme's funding level? | Assets divided by the present value of liabilities.
+Q: How is a DB pension calculated? | Accrual rate × service × final or career-average salary.
+Q: What is a defined contribution scheme? | A pension pot built from contributions and returns, with the member bearing the risk.
+Q: How are DB pension liabilities valued? | Project benefits with salary growth and inflation, then discount at a rate based on gilt or corporate bond yields.
+Q: How much can a 0.1% fall in the discount rate raise long-duration pension liabilities? | By about 2%.
+Q: What does liability-driven investment do? | It hedges interest rate and inflation risk in pension liabilities.
+Q: A 1/60 scheme member retires after 30 years on £45,000. What is the pension? | £22,500 a year.
+Q: Who regulates UK pension schemes? | The Pensions Regulator.
+Q: What is a common mistake in valuing pension liabilities? | Ignoring how sensitive long-duration liabilities are to the discount rate.
 
 ## Mathematical Economics
 S: Mathematical economics expresses economic theory precisely with optimisation, equilibrium and fixed-point theorems. It models consumers maximising utility, firms maximising profit, and markets reaching equilibrium, and it proved the existence of general equilibrium.
@@ -1379,6 +1749,16 @@ SRC: Arrow KJ, Debreu G, Existence of an equilibrium for a competitive economy, 
 NUM1#maths-u21-38-q1@1: With u = x^{0.3}y^{0.7}, income £200 and p_{x} = £3, how many units of x are demanded, to 1 decimal place? | 20 | 0.1 | units | Spend 30% of income on x: 0.3 × 200/3 = 20 units.
 M1#maths-u21-38-q2@1: At an interior utility maximum, what equals the price ratio p_{x}/p_{y}? | The marginal rate of substitution | Total utility | Income | The quantity of x | The elasticity of demand | Tangency of the indifference curve and budget line sets MU_{x}/MU_{y} = p_{x}/p_{y}.
 M2#maths-u21-38-q3@2: Which mathematical result did Arrow and Debreu use to prove equilibrium exists? | A fixed-point theorem (Kakutani's) | The central limit theorem | The fundamental theorem of calculus | Pythagoras' theorem | Fermat's last theorem | Equilibrium prices are fixed points of an excess-demand correspondence.
+Q: What is utility maximisation? | Choosing a bundle x to maximise u(x) subject to the budget p·x ≤ m.
+Q: What is a Walrasian equilibrium? | Prices at which every market clears, with demand equal to supply for every good.
+Q: What does Cobb–Douglas utility u = x^{a}y^{1−a} imply about spending? | The consumer spends share a of income on x.
+Q: What condition holds for a profit-maximising firm hiring labour? | Marginal product × price = wage.
+Q: What does the second welfare theorem say? | Any efficient allocation can be reached as an equilibrium with transfers.
+Q: What illustrates exchange between two consumers? | An Edgeworth box.
+Q: Name two fixed-point theorems used in economics. | Brouwer's and Kakutani's.
+Q: What are comparative statics? | Studying how equilibria shift when parameters change.
+Q: With u = x^{0.5}y^{0.5}, income £100 and p_{x} = £2, how much x is demanded? | 25 units, since half the income, £50, is spent on x.
+Q: What is a common mistake about the welfare theorems? | Forgetting they need assumptions such as no externalities and complete markets.
 
 ## Econometrics
 S: Econometrics applies statistics to economic data to estimate relationships, test theories and forecast. Its central challenge is causality: economic data come from observation, not experiments, so methods must deal with confounding, endogeneity and dependence over time.
@@ -1414,6 +1794,16 @@ SRC: Angrist JD, Pischke JS, Mostly Harmless Econometrics (Princeton University 
 NUM1#maths-u21-39-q1@1: A log–log regression of quantity on price gives a coefficient −1.5. By roughly what percentage does quantity fall when price rises 10%? | 15 | 0 | % | The coefficient is an elasticity: −1.5 × 10% = −15%.
 M1#maths-u21-39-q2@1: Which problem arises when a regressor is correlated with the error term? | Endogeneity, which biases OLS estimates | Multicollinearity only | A perfect fit to the data | Heteroscedasticity only | No problem for OLS | Exogeneity E[ε ∣ X] = 0 fails, so OLS no longer estimates the causal effect.
 M2#maths-u21-39-q3@2: Why might regressing crime on police numbers suggest police increase crime? | Reverse causality: areas with more crime hire more police | Police always increase crime wherever they are deployed | The data must be wrong if this result appears | OLS is always biased upwards for any public policy data | It wouldn't suggest this; the coefficient is always negative | Simultaneity makes police numbers endogenous, so instruments are needed.
+Q: What is ordinary least squares? | Choosing coefficients to minimise the sum of squared residuals, giving β̂ = (XᵀX)^{−1}Xᵀy.
+Q: What is an instrumental variable? | A variable correlated with an endogenous regressor but not with the error, used to estimate causal effects.
+Q: When is OLS unbiased? | When the errors have zero mean given the regressors, E[ε given X] = 0.
+Q: Name three causes of endogeneity. | Omitted variables, reverse causality and measurement error.
+Q: Name three natural-experiment methods in econometrics. | Difference-in-differences, regression discontinuity and instrumental variables.
+Q: Who won the 2021 Nobel for causal methods? | Card, Angrist and Imbens.
+Q: What do robust standard errors deal with? | Heteroscedasticity.
+Q: What problem arises when regressing one trending series on another? | Spurious regression; cointegration addresses it.
+Q: A log wage regression on education gives 0.08. What does that mean? | Each extra year of education is associated with about 8% higher wages.
+Q: What is a common mistake in reading regression coefficients? | Reading them as causal without addressing confounding.
 
 ## Microeconomic Modelling
 S: Microeconomic models describe individual decisions and markets: supply and demand, consumer choice, firm behaviour and market structure. They predict prices and quantities, and show how taxes, regulation and competition change outcomes.
@@ -1450,6 +1840,16 @@ SRC: Mas-Colell A, Whinston MD, Green JR, Microeconomic Theory (Oxford Universit
 NUM1#maths-u21-40-q1@1: With demand P = 100 − Q and marginal cost 20, what quantity does a monopolist produce? | 40 | 0 | units | Revenue PQ = 100Q − Q^{2} gives MR = 100 − 2Q; setting MR = 20 gives Q = 40.
 M1#maths-u21-40-q2@1: Demand Q = 50 − P and supply Q = P − 10. What is the equilibrium price? | 30 | 20 | 40 | 10 | 25 | Setting demand equal to supply, 50 − P = P − 10 gives 2P = 60, so P = 30 and Q = 20.
 M2#maths-u21-40-q3@2: Why does a monopoly create deadweight loss? | It restricts output below the level where price equals marginal cost, losing mutually beneficial trades | It produces too much output, beyond what consumers want to buy | It charges a price equal to marginal cost, below the efficient level | It increases consumer surplus at the expense of producer surplus | It doesn't: monopoly transfers surplus without any efficiency loss | Units valued above their cost go unproduced.
+Q: What is the price elasticity of demand? | ε = (∂Q/∂P)(P/Q), the percentage change in quantity per percentage change in price.
+Q: What is consumer surplus? | The area between the demand curve and the price, measuring buyers' net benefit.
+Q: What do taxes create in a market? | A wedge between prices and a deadweight loss.
+Q: What do price ceilings and floors cause? | Shortages and surpluses respectively.
+Q: Where does a perfectly competitive firm set price? | At marginal cost.
+Q: How does monopoly compare with competition in price and output? | Monopoly gives a higher price and lower output.
+Q: With demand Q = 100 − 2P and supply Q = 3P, what is the equilibrium? | P = 20 and Q = 60.
+Q: In the Q = 100 − 2P, Q = 3P market, what is consumer surplus? | 900, since ½ × 60 × (50 − 20) = 900.
+Q: Name two uses of microeconomic models. | Competition policy and merger analysis, tax design, utility regulation, and auction design.
+Q: What is a common mistake about who bears a tax? | Assuming the party legally paying it bears all of its burden.
 
 ## Macroeconomic Modelling
 S: Macroeconomic models describe whole economies: output, inflation, unemployment and interest rates. From the IS–LM model to growth models and modern dynamic stochastic general equilibrium (DSGE) models, they guide central banks and governments.
@@ -1487,6 +1887,16 @@ SRC: Taylor JB, Discretion versus policy rules in practice, Carnegie-Rochester C
 NUM1#maths-u21-41-q1@1: In a Solow model with f(k) = √k, saving rate s = 0.2 and n + δ = 0.05, what is the steady-state capital per worker k*? | 16 | 0 |  | s√k = (n + δ)k gives √k = s/(n + δ) = 4, so k* = 16.
 M1#maths-u21-41-q2@1: According to the Taylor rule, how should rates respond when inflation rises above target? | Rise by more than the increase in inflation | Fall | Stay unchanged | Rise by exactly half the increase | Become zero | The coefficient on inflation is 1.5 in total (Taylor principle), raising real rates.
 M3#maths-u21-41-q3@2: Why does the Lucas critique matter for policy models? | People's behaviour responds to policy, so relationships estimated under old policies may break under new ones | Policy never affects how people behave, so models are stable | Models always include expectations correctly, so it's irrelevant | It only applies to microeconomics, not to macroeconomic policy | It doesn't matter for policy, only for academic forecasting | Reduced-form correlations aren't structural; models need deep parameters.
+Q: What is the Solow growth model? | A model with Y = K^{α}(AL)^{1−α} where capital accumulates by saving minus depreciation, reaching a steady state.
+Q: What is the Taylor rule? | i = r* + π + 0.5(π − π*) + 0.5(output gap), a guide for setting interest rates.
+Q: What is the Solow capital accumulation equation per effective worker? | k̇ = sf(k) − (n + δ)k.
+Q: Where is the Solow steady state? | Where saving equals break-even investment.
+Q: How do endogenous growth models explain technology? | Through ideas and R&D.
+Q: What is a New Keynesian DSGE model? | A model of optimising households and firms with sticky prices.
+Q: What is the Bank of England's central model called? | COMPASS.
+Q: What have macro models added since 2008? | Financial frictions and heterogeneous agents, as in HANK models.
+Q: With r* = 2%, π = 4%, π* = 2% and output gap 1%, what rate does the Taylor rule give? | 7.5%.
+Q: What is a common mistake with macroeconomic forecasts? | Treating them as precise despite wide uncertainty.
 
 ## Game-Theoretic Economics
 S: Game theory models strategic interaction, where each player's best choice depends on what others do. In economics it explains oligopoly pricing, auctions, bargaining and contracts, and Nash equilibrium is its central solution concept.
@@ -1523,6 +1933,16 @@ SRC: Osborne MJ, An Introduction to Game Theory (Oxford University Press 2004) |
 NUM1#maths-u21-42-q1@1: Three identical firms with zero costs face P = 120 − Q in Cournot competition. What is each firm's output? | 30 | 0 | units | With n firms, each produces (a − c)/(n + 1) = 120/4 = 30.
 M1#maths-u21-42-q2@1: In the prisoner's dilemma, what is the Nash equilibrium? | Both players defect | Both cooperate | One cooperates and one defects | There is no equilibrium | Players alternate | Defecting is a dominant strategy for each player.
 M2#maths-u21-42-q3@2: Why is bidding your true value optimal in a second-price auction? | The price you pay is set by the next-highest bid, so shading your bid can only lose auctions you'd want to win | You pay your own bid, so bidding your value avoids overpaying | Overbidding is always safe because you never pay your bid | Bids don't affect whether you win, only what you pay | It isn't optimal; shading below value always earns more | Truthful bidding is weakly dominant (Vickrey 1961).
+Q: What is a Nash equilibrium? | A strategy profile where no player can gain by changing strategy alone.
+Q: What is Cournot competition? | Firms choose quantities simultaneously, each best-responding to the others' output.
+Q: What does the prisoner's dilemma show? | Defecting dominates, though both cooperating would be better.
+Q: What did Nash prove in 1950? | That every finite game has an equilibrium in mixed strategies.
+Q: How does Cournot duopoly output compare with monopoly and competition? | It lies between monopoly and competitive output.
+Q: What does the folk theorem say about repeated games? | Repetition can sustain cooperation.
+Q: What is revenue equivalence? | Under standard assumptions, standard auction formats give the same expected revenue.
+Q: Two firms face P = 120 − Q with zero costs. What is the Cournot outcome? | Each produces 40, so total output 80 and price 40.
+Q: What tools handle asymmetric information in games? | Signalling and screening.
+Q: What is a common mistake about Nash equilibria? | Assuming a Nash equilibrium is the best outcome for the players jointly.
 
 ## Cost-Benefit Analysis
 S: Cost–benefit analysis compares the total social costs and benefits of a policy or project, expressed in money and discounted over time. Governments use it to appraise roads, health programmes and climate policy, though valuing non-market effects and choosing discount rates are contentious.
@@ -1560,6 +1980,16 @@ SRC: Boardman AE, Greenberg DH, Vining AR, Weimer DL, Cost-Benefit Analysis: Con
 NUM1#maths-u21-43-q1@1: A project's benefits have PV £15m and costs have PV £12m. What is its benefit–cost ratio? | 1.25 | 0.001 |  | BCR = 15/12 = 1.25.
 M1#maths-u21-43-q2@1: A health intervention costs £50,000 and gains 2 QALYs. What is its cost per QALY? | £25,000 | £100,000 | £50,000 | £12,500 | £2,000 | 50,000/2 = £25,000, within NICE's usual range.
 M3#maths-u21-43-q3@2: Why did the Stern and Nordhaus climate analyses reach very different conclusions? | They used very different discount rates, which hugely change the present value of damages a century away | They used different climate data only, but the same economics | One of them ignored the costs of cutting emissions entirely | They agreed closely, since both used the Green Book rate | Discounting doesn't matter for climate, so it was the damages | At 1.4% versus about 4.5%, a £1 damage in 100 years is worth roughly 25p versus 1p today.
+Q: What is cost–benefit analysis? | Comparing a project's total social costs and benefits in money, discounted over time.
+Q: What is a benefit–cost ratio? | The present value of benefits divided by the present value of costs.
+Q: What is a social discount rate? | The rate used to discount future costs and benefits to society.
+Q: How is the value of a statistical life estimated? | From willingness to pay for small risk reductions.
+Q: What are NICE's cost per QALY thresholds? | £20,000 to £30,000 per QALY.
+Q: Name two revealed preference valuation methods. | Hedonic pricing and the travel cost method.
+Q: What adjustment is suggested for long time horizons in CBA? | Declining discount rates.
+Q: A £10m scheme yields £1.2m a year for 15 years at 3.5%. What is its BCR? | About 1.38.
+Q: How should effects that can't be quantified be handled in CBA? | With qualitative treatment.
+Q: What is a common mistake in cost–benefit analysis? | Ignoring who bears costs and who receives benefits.
 
 ## Forecasting
 S: Economic and business forecasting predicts future values such as sales, inflation or demand. Methods range from simple averages and exponential smoothing to regression and judgement, and good forecasts come with honest uncertainty and are evaluated against what actually happens.
@@ -1597,6 +2027,16 @@ SRC: Makridakis S, Spiliotis E, Assimakopoulos V, The M4 Competition: 100,000 ti
 NUM1#maths-u21-44-q1@1: Actual sales were 200 and 250; forecasts were 180 and 260. What is the MAPE in %? | 7 | 0 | % | Errors are 10% and 4%, so MAPE = (10 + 4)/2 = 7%.
 M1#maths-u21-44-q2@1: Why is the naive forecast an important benchmark? | A method that can't beat it isn't adding value | It is always the most accurate | It uses the most data | It has no errors | It isn't important | Many sophisticated methods fail to beat "no change" on real data.
 M2#maths-u21-44-q3@2: Why do combined forecasts often outperform individual methods? | Different methods' errors partly cancel when averaged | Combinations use more parameters | Individual methods are always biased | They don't outperform | Averaging removes all uncertainty | Diversifying across models reduces the variance of forecast errors.
+Q: What is MAPE? | Mean absolute percentage error, (100/n) Σ |actual − forecast|/|actual|.
+Q: What is forecast combination? | Averaging forecasts from several methods, which often beats any single method.
+Q: What is the exponential smoothing formula? | ŷ_{t+1} = αy_{t} + (1 − α)ŷ_{t}.
+Q: Name three forecast error measures. | MAE, RMSE and MAPE.
+Q: What did the Makridakis M-competitions find? | Simple and combined methods often do well.
+Q: What is out-of-sample testing? | Evaluating forecasts on data not used to build them.
+Q: How should structural breaks be handled in forecasting? | With scenario analysis.
+Q: With α = 0.3, last forecast 100 and actual 110, what is the next smoothed forecast? | 103.
+Q: Why shouldn't a forecast be judged by one outcome? | Forecasts are uncertain, so accuracy must be judged over many outcomes.
+Q: What is a common mistake when choosing a forecasting method? | Judging it by its fit to past data rather than out-of-sample accuracy.
 
 ## Financial Time Series
 S: Financial time series, such as daily returns of shares or currencies, have distinctive features: little autocorrelation in returns, fat tails and volatility that clusters in calm and turbulent periods. Models like ARCH and GARCH capture these stylised facts for risk and pricing.
@@ -1634,4 +2074,14 @@ SRC: Cont R, Empirical properties of asset returns: stylized facts and statistic
 NUM1#maths-u21-45-q1@1: A GARCH(1,1) has α = 0.08 and β = 0.9. What is its persistence α + β? | 0.98 | 0.001 |  | 0.08 + 0.9 = 0.98: shocks to volatility decay slowly.
 M1#maths-u21-45-q2@1: Which feature is a stylised fact of daily equity returns? | Fat tails relative to the normal distribution | Strong positive autocorrelation of returns | Constant volatility over time | Exactly normal distributions | Positive skew always | Extreme returns occur far more often than a normal model predicts.
 M2#maths-u21-45-q3@2: Why do squared returns show autocorrelation even when returns themselves don't? | Volatility clusters, so the size of moves is predictable even though their direction isn't | Returns are perfectly predictable in both size and direction | Squaring creates fake patterns from purely random data | Markets are inefficient in direction, so signs are predictable | They don't show it; squared returns are independent too | Periods of high variance persist, which shows up in squared returns.
+Q: What is GARCH(1,1)? | σₜ^{2} = ω + αεₜ₋₁^{2} + βσₜ₋₁^{2}, a model of time-varying conditional variance.
+Q: What is the long-run variance of a GARCH(1,1)? | ω/(1 − α − β).
+Q: What is the leverage effect? | Price falls raise volatility more than price rises.
+Q: What shape do equity return distributions have? | Fat tails with high kurtosis, and negative skew.
+Q: Who introduced GARCH, and when? | Bollerslev, in 1986.
+Q: Which models capture asymmetric volatility? | EGARCH and GJR.
+Q: What is realised volatility? | Volatility measured from intraday data.
+Q: A GARCH has ω = 0.00001, α = 0.1 and β = 0.85. What is the long-run daily volatility? | About 1.41% a day.
+Q: What does near-zero return autocorrelation suggest? | Weak-form market efficiency.
+Q: What is a common mistake in modelling financial returns? | Treating them as independent normal draws with constant volatility.
 `;

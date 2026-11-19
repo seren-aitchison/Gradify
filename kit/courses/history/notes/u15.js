@@ -38,6 +38,16 @@ M2#history-u15-01-q2@2: Why do revisionists question calling the period a revolu
 TF1#history-u15-01-q3@1: Britain's first written constitution was adopted in 1653. | true | The Instrument of Government created the Protectorate.
 M3#history-u15-01-q4@3: Which judgement about the English Revolution is best supported? | A revolution in events and ideas, though not in intentions or immediate outcome | A revolution planned in detail by Parliament in 1640 | A period of complete stability with no change | A foreign invasion that replaced the monarchy | Events and ideas were revolutionary; aims and results were mixed.
 SA3#history-u15-01-q5@2,3: How far does the period from 1640 to 1660 deserve to be called the English Revolution? | The execution of Charles I (1649), the abolition of monarchy and Lords, the Instrument of Government (1653) and the radical ideas of the Putney Debates (1647) and the Levellers suggest revolution, as Hill argued. But few sought revolution in 1642, and the Restoration (1660) reversed much, as revisionists such as Morrill stress. A strong answer defines revolution and weighs these. | Defines revolution ; Explains revolutionary events ; Explains radical ideas ; Explains reversal ; Reaches a judgement
+Q: When was Charles I tried and executed? | In January 1649.
+Q: What happened to the House of Lords and the bishops after the Civil War? | The Lords were abolished in 1649, and the bishops and the Church of England's government were swept away.
+Q: What was the Instrument of Government? | Britain's first written constitution, adopted in 1653.
+Q: What were the Putney Debates? | The army's debates of October and November 1647 on the future constitution.
+Q: What did the Levellers' Agreement of the People propose? | A written constitution and wider voting rights.
+Q: What is popular sovereignty? | The idea that political authority comes from the people.
+Q: What returned at the Restoration of 1660? | The monarchy, the House of Lords and the Church of England.
+Q: Why did Christopher Hill call the period the "English Revolution"? | He stressed lasting changes in property, Parliament's power and ideas.
+Q: How did revisionists such as John Morrill see 1640 to 1660? | As a breakdown of government and a war of religion rather than a planned revolution.
+Q: Which long-term changes outlasted the Restoration? | Parliament's power and religious pluralism.
 
 ## The American Revolution
 LV: GCSE and A level · Application
@@ -76,6 +86,16 @@ M2#history-u15-02-q2@2: Why did Britain try to tax the colonies after 1763? | To
 TF1#history-u15-02-q3@1: The victory at Saratoga in 1777 helped bring France into the war. | true | France allied with the Americans in 1778.
 M3#history-u15-02-q4@3: Which judgement about the radicalism of the American Revolution is best supported? | Radical in ideas and political forms, limited in who shared its rights | A social revolution that ended slavery at once | A conservative revolt with no new ideas at all | A revolution led by enslaved people | Its ideals reached further than its practice.
 SA3#history-u15-02-q5@2,3: Why did the American colonies rebel against Britain? | After the Seven Years' War Britain taxed the colonies: the Stamp Act (1765) raised "no taxation without representation"; the Boston Massacre (1770), Tea Party (1773) and Intolerable Acts (1774) escalated conflict to war at Lexington and Concord (1775) and the Declaration (1776). Ideas of rights and self-government, as Bailyn shows, shaped resistance. A strong answer weighs economic grievances and ideas. | Explains taxation ; Explains escalation ; Explains ideas ; Explains the war ; Reaches a judgement
+Q: Why did Britain need revenue from the colonies after 1763? | To pay its debts from the Seven Years' War.
+Q: What happened in the Boston Massacre of 1770? | British troops killed five colonists.
+Q: What happened at the Boston Tea Party? | In December 1773 protesters threw tea into Boston harbour.
+Q: How did Parliament respond to the Boston Tea Party? | With the Coercive, or "Intolerable", Acts of 1774.
+Q: Where did fighting begin in the American Revolution? | At Lexington and Concord, in April 1775.
+Q: Which rights did the Declaration of Independence claim? | "Life, liberty and the pursuit of happiness", for "all men" who are "created equal".
+Q: What did the Treaty of Paris of 1783 do? | It recognised American independence.
+Q: Who were the Loyalists? | Colonists who stayed loyal to Britain; around 60,000 left.
+Q: What did the Constitution of 1787 create? | A federal government with checks and balances.
+Q: What did Gordon Wood argue about the American Revolution? | That it was radical in transforming a hierarchical society.
 
 ## The French Revolution
 LV: GCSE and A level · Application
@@ -116,6 +136,16 @@ M2#history-u15-03-q2@2: Why did the flight to Varennes radicalise the revolution
 TF1#history-u15-03-q3@1: The Declaration of the Rights of Man was adopted in August 1789. | true | It proclaimed liberty, equality before the law and popular sovereignty.
 M3#history-u15-03-q4@3: Which explanation of the revolution's radicalisation is best supported? | War and the king's betrayal, under pressure from Paris, drove it from reform to terror | The revolution aimed at terror from its first day | Radicalisation was caused only by Robespierre's personality | Foreign armies imposed the Terror on France | War, betrayal and popular pressure combined to radicalise it.
 SA3#history-u15-03-q5@2,3: Why did the French Revolution become increasingly radical between 1789 and 1794? | The reforms of 1789 (the Tennis Court Oath, the Bastille, the Rights of Man) aimed at constitutional monarchy, but the flight to Varennes (1791), war from April 1792 and invasion fears, and pressure from the sans-culottes led to the republic, the king's execution (1793) and the Terror under Robespierre. A strong answer weighs these and uses the Marxist and revisionist debate. | Explains 1789 ; Explains the king's flight ; Explains war ; Explains popular pressure ; Reaches a judgement
+Q: Why was France facing a crisis in 1789? | It was nearly bankrupt after the American war, and nobles and clergy resisted paying more tax.
+Q: What was the Estates-General? | France's representative assembly of clergy, nobles and commoners, which met in May 1789.
+Q: What did the Assembly do in August 1789? | It abolished feudal privileges and adopted the Declaration of the Rights of Man and of the Citizen.
+Q: When was the French monarchy overthrown and a republic declared? | The monarchy fell in August 1792 and a republic was declared in September.
+Q: How did war with Austria radicalise the French Revolution? | It brought invasion fears and suspicion of traitors.
+Q: Who were the sans-culottes? | Radical working people of Paris, whose pressure pushed politicians further.
+Q: About how many official executions took place in the Terror? | Around 17,000.
+Q: When did Napoleon Bonaparte seize power? | In November 1799.
+Q: How did Marxist historians such as Lefebvre and Soboul interpret the French Revolution? | As a "bourgeois revolution" in which the middle class overthrew feudalism.
+Q: What did revisionists such as Cobban and Furet argue? | That the revolutionaries were not a capitalist class and the revolution was driven by political ideas and a new political culture.
 
 ## The Haitian Revolution in comparison
 LV: A level · Evaluation
@@ -153,6 +183,16 @@ M2#history-u15-04-q2@2: Why does the Haitian Revolution test the ideals of 1776 
 TF1#history-u15-04-q3@1: France abolished slavery in its colonies in 1794. | true | The revolt in Saint-Domingue pressed France to act.
 M3#history-u15-04-q4@3: Which judgement about the Haitian Revolution in comparison is best supported? | The most radical, because it applied revolutionary ideals to those others excluded | The least radical of the Atlantic revolutions | A revolution with the same outcomes as the American one | A revolution that kept slavery in place | Its radicalism lay in who gained freedom.
 SA3#history-u15-04-q5@2,3: How far was the Haitian Revolution more radical than the American and French Revolutions? | The American Revolution proclaimed equality but kept slavery; the French declared the Rights of Man (1789) but abolished colonial slavery only in 1794, and Napoleon restored it in 1802. The Haitian Revolution, led by enslaved people, abolished slavery permanently (1805) and created an independent state (1804). Trouillot shows its long neglect. A strong answer compares aims, leaders and outcomes. | Compares aims ; Compares leadership ; Compares outcomes ; Uses Trouillot ; Reaches a judgement
+Q: How did the American Revolution fall short of its own claim of equality? | It proclaimed that "all men are created equal" but kept slavery.
+Q: Why did France abolish slavery in its colonies in 1794? | Under pressure from the revolt in Saint-Domingue.
+Q: What did Napoleon's restoration of slavery in 1802 show? | How fragile French abolition was.
+Q: What two firsts did Haiti achieve in 1804? | It became the first state founded by formerly enslaved people and the second independent republic in the Americas.
+Q: Who isolated Haiti after independence? | The slave-holding United States and European powers.
+Q: What were the Atlantic revolutions? | The linked revolutions in the Americas and Europe between about 1775 and 1825.
+Q: What are universal rights? | Rights claimed for all people, regardless of status.
+Q: Which book of 1938 insisted on the importance of the Haitian Revolution? | C. L. R. James's The Black Jacobins.
+Q: Why was the Haitian Revolution "unthinkable" to many Europeans, according to Trouillot? | It challenged their beliefs about race.
+Q: What common mistake is made about the Atlantic revolutions? | Treating them only as a story of Europe and North America; Haiti tested their ideals most radically.
 
 ## The Latin American revolutions
 LV: A level · Evaluation
@@ -191,6 +231,16 @@ M2#history-u15-05-q2@2: Why did Bolívar argue for strong central government? | 
 TF1#history-u15-05-q3@1: Landholding remained concentrated in Latin America after independence. | true | Social structures changed far less than politics.
 M3#history-u15-05-q4@3: Which judgement about Latin American independence in comparison is best supported? | A political revolution that left social structures largely intact | A social revolution more radical than Haiti's | A revolution that created stable democracies everywhere | A failure that left Spain ruling South America | Political change was greater than social change.
 SA3#history-u15-05-q5@2,3: How did the Latin American revolutions compare with the American and French Revolutions? | Like the American, they were led by colonial-born elites; unlike it, they were triggered by Napoleon's invasion of Spain (1808); like the French, they brought long wars and republics, but creoles feared popular revolt (Hidalgo 1810, the example of Haiti) and kept social structures; caudillos often ruled afterwards. A strong answer compares causes, leadership and outcomes. | Compares causes ; Compares leadership ; Compares outcomes ; Explains caudillos ; Reaches a judgement
+Q: Who mainly led the Latin American independence movements? | Colonial-born elites, the creoles.
+Q: How did the trigger for Latin American independence differ from North America's? | It was set off by a crisis in the mother country, Napoleon's invasion of Spain in 1808.
+Q: How did Brazil's independence differ from Spanish America's? | It became independent in 1822 as a monarchy, avoiding long war.
+Q: How did the Haitian Revolution influence creoles? | It made many fear independence could unleash revolts by enslaved and Indigenous people.
+Q: What did Bolívar argue in his Letter from Jamaica (1815)? | For strong central government, because he doubted the new nations were ready for full democracy.
+Q: What political problems did the new Latin American states face? | Frequent coups, caudillo rule, and changing borders and constitutions.
+Q: Which institution kept great influence in Latin America after independence? | The Catholic Church.
+Q: How did Latin American independence compare with Haiti and the United States? | Less social change than in Haiti, and less stable institutions than in the United States.
+Q: What is a creole elite? | Wealthy people of European descent born in the Americas.
+Q: What common mistake is made about Latin American independence? | Assuming it brought democracy; many new states were ruled by caudillos and elites.
 
 ## The European revolutions of 1848
 LV: A level · Evaluation
@@ -230,6 +280,16 @@ M2#history-u15-06-q2@2: Why did liberals and radicals divide in 1848? | Liberals
 TF1#history-u15-06-q3@1: Louis Napoleon made himself emperor in 1852. | true | He had been elected president in December 1848.
 M3#history-u15-06-q4@3: Which explanation of the failure of 1848 is best supported? | Revolutionaries were too divided to defeat rulers who kept their armies | The revolutionaries won everywhere and kept power | The revolutions failed only because of the weather | Monarchs gave up power willingly in 1849 | Division and military power decided the outcome.
 SA3#history-u15-06-q5@2,3: Why did the revolutions of 1848 break out, and why did they fail? | Hunger after the harvests and blight of 1845 to 1847, economic crisis, liberalism and nationalism, spread by railway and telegraph, produced revolutions in Paris, Vienna, Berlin, Hungary and Italy. But liberals feared radicals, nationalities clashed, armies stayed loyal, Frederick William IV refused the crown (1849) and Russia crushed Hungary. A strong answer weighs causes and failure. | Explains economic causes ; Explains ideas ; Explains divisions ; Explains military power ; Reaches a judgement
+Q: What happened in Paris in February 1848? | King Louis-Philippe fell and a Second Republic was declared.
+Q: What was the Frankfurt Parliament? | The assembly of 1848 to 1849 that tried to draw up a constitution for a united Germany.
+Q: Who led Hungary's bid for self-government in 1848? | Lajos Kossuth.
+Q: What economic problems helped cause the 1848 revolutions? | Bad harvests and potato blight from 1845 to 1847, and an economic crisis that brought unemployment.
+Q: What did liberals, nationalists and radicals each want in 1848? | Liberals wanted constitutions and rights; nationalists, unity or independence; radicals and socialists, social reform.
+Q: How did revolution spread so quickly in 1848? | News travelled fast by railway and telegraph.
+Q: Why did loyal armies matter to the defeat of 1848? | Armies stayed loyal to the monarchs, letting them crush the revolutions.
+Q: What happened to Louis Napoleon after 1848? | He was elected president in December 1848 and made himself emperor in 1852.
+Q: What is liberalism? | Belief in constitutions, civil rights and limited government.
+Q: What common mistake is made about the 1848 revolutions? | Calling them a complete failure; serfdom was abolished in Austria, and liberal and nationalist ideas spread.
 
 ## The Russian Revolution in comparison
 LV: A level · Evaluation
@@ -268,6 +328,16 @@ M2#history-u15-07-q2@2: Why do historians warn against relying on models of revo
 TF1#history-u15-07-q3@1: Both the French and Russian radical governments used terror. | true | France had the Terror of 1793 to 1794 and Russia the Red Terror from 1918.
 M3#history-u15-07-q4@3: Which judgement about comparing the French and Russian Revolutions is best supported? | Comparison sharpens questions, but differences matter as much as similarities | The two revolutions were identical in every respect | The two revolutions had nothing in common | Brinton's model predicts exactly what every revolution will do | Comparison is a tool for asking questions, not a verdict.
 SA3#history-u15-07-q5@2,3: How far did the Russian Revolution follow the same pattern as the French Revolution? | Both began with collapse amid war and fiscal crisis (1789, February 1917), moved from moderates to radicals (the Jacobins, the Bolsheviks) and used terror in civil war and foreign intervention, fitting Brinton's model; Trotsky saw a Soviet Thermidor. But the Bolsheviks seized power deliberately with a Marxist party, and the Soviet state lasted 74 years. A strong answer weighs similarity against difference. | Explains Brinton's model ; Explains similarities ; Explains differences ; Evaluates the model ; Reaches a judgement
+Q: Which revolutions did Brinton compare in The Anatomy of Revolution? | The English, American, French and Russian Revolutions.
+Q: What are the stages in Brinton's model of revolution? | The old regime loses authority, moderates take power, radicals overthrow them, a reign of terror and virtue, then Thermidor.
+Q: How did the French and Russian Revolutions both begin? | With the collapse of an old monarchy amid fiscal and war crisis.
+Q: Which moderates were replaced by radicals in 1789 and 1917? | The constitutional monarchists in France by the Jacobins; the Provisional Government in Russia by the Bolsheviks.
+Q: What was the Red Terror? | The Bolshevik terror from 1918, comparable to the French Terror of 1793 to 1794.
+Q: How did the Bolshevik seizure of power differ from the Jacobins' rise? | The Bolsheviks were a disciplined Marxist party that seized power deliberately; the Jacobins emerged from a revolution already under way.
+Q: How long did the Soviet state last? | 74 years.
+Q: What is comparative history? | Studying different cases side by side to identify similarities and differences.
+Q: What are the limits of Brinton's model? | It fits some cases better than others and can force different events into one shape.
+Q: Who were the Jacobins? | The radical revolutionary group in France led by Robespierre.
 
 ## The Chinese Revolution in comparison
 LV: A level · Evaluation
@@ -306,6 +376,16 @@ M2#history-u15-08-q2@2: Why did Skocpol stress structures rather than revolution
 TF1#history-u15-08-q3@1: The Russian Revolution relied mainly on peasants rather than workers. | false | Russia's seizure of power relied on urban workers and soldiers; China's relied on peasants.
 M3#history-u15-08-q4@3: Which explanation of the length of China's revolution is best supported? | China lacked a single moment of state collapse, so power had to be built from the countryside | The Communists refused to fight anyone until the Japanese surrender of 1945 | The revolution was delayed by the Russian Civil War and Soviet orders | Japan supported the Communists with weapons and money from 1927 onwards | Conditions in China differed from Russia's in 1917.
 SA3#history-u15-08-q5@2,3: How far did the Chinese Revolution follow the Russian model? | Both were led by Marxist parties, but the Bolsheviks seized the cities in October 1917 and won a short civil war, while China's Communists fought from 1927 to 1949 in the countryside, with Mao making peasants the main force and the war against Japan linking communism with nationalism. Skocpol explains both through state crisis and peasant revolt. A strong answer compares and judges. | Compares paths to power ; Explains Mao's adaptation ; Explains the war with Japan ; Uses Skocpol ; Reaches a judgement
+Q: How did the Bolsheviks take power in Russia? | They seized power in the cities in October 1917, then won a civil war lasting about three years.
+Q: Which social group did Russia's revolution rely on, compared with China's? | Russia's relied on industrial workers and soldiers; China's on peasants.
+Q: How did the war against Japan affect Chinese communism? | From 1937 it linked communism with national resistance.
+Q: Where did Marx expect revolution to come from? | The industrial working class.
+Q: What was Mao's military strategy for taking power? | Rural bases and guerrilla warfare that surrounded the cities from the countryside.
+Q: What is guerrilla warfare? | Fighting by small mobile groups using surprise and local support.
+Q: According to Skocpol, what conditions produce social revolutions? | Old regimes weakened by international pressure and war, divided elites, and peasants organised enough to revolt.
+Q: What is a social revolution? | A rapid transformation of a society's state and class structures, carried through by revolts from below.
+Q: Why were the Chinese Nationalists harder to overthrow than Russia's Provisional Government? | They were stronger in 1927 than the Provisional Government was in 1917.
+Q: What common mistake is made about communist revolutions? | Assuming all followed the Russian model; China's was rural, long and shaped by war with Japan.
 
 ## Decolonisation movements
 LV: A level · Evaluation
@@ -343,6 +423,16 @@ M2#history-u15-09-q2@2: Why did Vietnam's independence struggle become a social 
 TF1#history-u15-09-q3@1: Many post-colonial states kept colonial borders and laws. | true | Continuity was strong in negotiated transfers of power.
 M3#history-u15-09-q4@3: Which judgement about decolonisation as revolution is best supported? | A revolution in sovereignty, but only some movements were social revolutions | A social revolution that transformed class and property everywhere it happened | No change at all in who governed the former colonies | A process planned and led entirely by European governments in London and Paris | The depth of change varied from case to case.
 SA3#history-u15-09-q5@2,3: How far should decolonisation be seen as a revolution? | Power passed to new states, a revolution in sovereignty. Negotiated transfers in India (1947) and Ghana (1957) kept colonial institutions and elites, while revolutionary wars in Algeria (1954 to 1962) and Vietnam transformed society, as Fanon (1961) urged; Cuba (1959) was anti-imperial. A strong answer distinguishes political from social revolution and compares cases. | Defines revolution ; Explains negotiated transfers ; Explains revolutionary wars ; Explains Cuba ; Reaches a judgement
+Q: How did power pass in India in 1947 and Ghana in 1957? | To nationalist parties through negotiation, elections and constitutional change.
+Q: What continued after negotiated transfers of power? | Colonial institutions, laws and often elites; the state changed hands rather than shape.
+Q: How did the Algerian war differ from a negotiated transfer of power? | The National Liberation Front mobilised the population and transformed society in a war from 1954 to 1962.
+Q: How did the Viet Minh combine two kinds of revolution? | They combined national liberation with social revolution, including land reform.
+Q: What did Fanon argue violent struggle could do? | Remake the colonised themselves, not only the state.
+Q: Why was the Cuban Revolution anti-imperial though Cuba was formally independent? | It nationalised American-owned property and aligned with the Soviet Union.
+Q: What influence did the Cuban Revolution have abroad? | It inspired revolutionary movements across Latin America and Africa.
+Q: What is decolonisation? | The ending of colonial rule and the creation of independent states.
+Q: What is a transfer of power? | A negotiated handover of government from colonial rulers to nationalists.
+Q: In what sense was all decolonisation revolutionary? | It was a revolution in sovereignty, though only some movements were social revolutions.
 
 ## The Iranian Revolution
 LV: A level · Evaluation
@@ -382,6 +472,16 @@ M2#history-u15-10-q2@2: Why does the Iranian Revolution challenge structural the
 TF1#history-u15-10-q3@1: American hostages were held in Tehran for 444 days. | true | Students seized the embassy in November 1979.
 M3#history-u15-10-q4@3: Which judgement about the Iranian Revolution is best supported? | It showed that ideas and mass mobilisation can matter as much as structural crisis | It proved that defeat in a foreign war is the only cause of revolutions | It was a secular Marxist revolution led by the industrial working class | It restored the Shah's rule with the support of the clergy and the army | Its religious and urban character set it apart.
 SA3#history-u15-10-q5@2,3: Why did the Iranian Revolution of 1979 succeed? | The 1953 coup, SAVAK's repression, the disruption of the White Revolution and oil-fuelled inflation and inequality created discontent; Khomeini's leadership from exile, mass protests and strikes in 1978 (Black Friday), and a broad coalition forced the Shah out (January 1979). Its religious ideology and urban mobilisation challenge structural theories. A strong answer weighs these. | Explains long-term causes ; Explains Khomeini ; Explains the protests ; Explains the challenge to theory ; Reaches a judgement
+Q: Who led Iran as Shah before 1979? | Shah Mohammad Reza Pahlavi.
+Q: What was the White Revolution? | The Shah's programme of land reform and modernisation from 1963, which also brought disruption.
+Q: What was SAVAK? | The Shah's secret police, which repressed opponents.
+Q: What did oil wealth bring to Iran in the 1970s? | Rapid growth, inflation and inequality.
+Q: When was Khomeini exiled, and what did he attack? | In 1964; he attacked the Shah's rule and his ties to the United States.
+Q: How was Iran's Islamic Republic created? | By a referendum in April 1979.
+Q: Which groups made up the coalition against the Shah? | Clergy, students, bazaar merchants, workers and the left.
+Q: How did the Iranian Revolution differ from France, Russia and China? | The state was not defeated in war, religion inspired it and urban mass protest was central.
+Q: What is the Islamic Republic? | Iran's system of government from 1979, combining clerical authority with elections.
+Q: What common mistake is made about support for the Iranian Revolution? | Thinking only religious groups supported it; it began as a broad coalition before Khomeini's followers took control.
 
 ## Revolutionary ideologies
 LV: A level · Evaluation
@@ -420,6 +520,16 @@ M2#history-u15-11-q2@2: Why did Mao's version of Marxism differ from Marx's? | M
 TF1#history-u15-11-q3@1: Khomeini argued that Islamic jurists should rule. | true | His lectures were published as Islamic Government in 1970.
 M3#history-u15-11-q4@3: Which judgement about ideas and revolution is best supported? | Ideas rarely cause revolutions alone, but they shape what revolutions try to build | Ideas alone have caused every revolution | Ideas have no connection with revolutions | Every revolution followed the same ideology | Ideas and circumstances work together in every revolution.
 SA3#history-u15-11-q5@2,3: How important have ideas been in causing revolutions? | Locke (1689), Rousseau (1762) and Paine (1776, 1791) supplied ideas of consent and popular sovereignty; Marx and Engels (1848), Lenin and Mao ideas of class struggle and the vanguard; nationalism and Khomeini's Islamic Government (1970) others. But war, bankruptcy and state crisis usually created the opportunity, and ideas changed during revolutions. A strong answer weighs ideas against structures. | Explains liberal ideas ; Explains Marxist ideas ; Explains nationalism and religion ; Weighs structures ; Reaches a judgement
+Q: What did Rousseau mean by the "general will"? | The common interest of the people as a whole, in which sovereignty lies.
+Q: What did Thomas Paine's Common Sense urge? | American independence, in 1776.
+Q: Which work did Paine write to defend the French Revolution? | Rights of Man (1791).
+Q: What did The Communist Manifesto of 1848 argue? | That history was a struggle between classes and that workers would overthrow capitalism.
+Q: What did anarchists reject? | The state altogether.
+Q: What did nationalism claim as a revolutionary idea? | That each nation should govern itself.
+Q: What is an ideology? | A system of ideas about how society should be organised.
+Q: What is a vanguard? | A leading group that directs a revolution on behalf of a class.
+Q: What usually creates the opportunity for revolution, rather than ideas? | Structural crises, such as war and bankruptcy.
+Q: What common mistake is made about revolutionaries and their ideas? | Assuming they simply put a ready-made plan into practice; ideas changed as revolutions unfolded.
 
 ## The causes and consequences of revolution
 LV: A level · Evaluation
@@ -458,6 +568,16 @@ M2#history-u15-12-q2@2: Why do elite divisions make revolution more likely? | Ru
 TF1#history-u15-12-q3@1: Revolutions are often followed by civil war and terror. | true | France after 1792 and Russia after 1917 are examples.
 M3#history-u15-12-q4@3: Which judgement about revolutions and the state is best supported? | They usually replace a weak state with a stronger one, though not always | They always abolish the state completely | They never change the power of the state | They always create weaker and smaller governments | Tocqueville's argument fits many but not all cases.
 SA3#history-u15-12-q5@2,3: What causes revolutions? | State crisis through bankruptcy and war (France 1789, Russia 1917), elite division (England 1641), popular revolt, rising expectations (Davies's J-curve, 1962; Tocqueville, 1856) and ideas all contribute. A strong answer weighs structural explanations against expectations and ideas, using examples, and considers how causes combine. | Explains state crisis ; Explains elite division ; Explains popular revolt ; Explains expectations and ideas ; Reaches a judgement
+Q: How did state crisis contribute to the revolutions of 1789 and 1917? | Bankruptcy and defeat in war weakened the old regimes of France and Russia.
+Q: Name two examples of elite division before revolutions. | England in 1641 and France in 1789.
+Q: What role does popular revolt play in revolutions? | Peasant and urban risings turn political crisis into social revolution.
+Q: When did James Davies publish his J-curve theory? | In 1962.
+Q: What often follows revolutions? | Civil war, terror and foreign war, as in France after 1792 and Russia after 1917.
+Q: Name three strong, centralised states produced by revolutions. | Napoleon's France, Stalin's Soviet Union and Mao's China.
+Q: Which revolution deliberately limited central power? | The American Revolution, which created lasting rights and institutions such as the Constitution of 1787.
+Q: Why did Tocqueville think revolution came when conditions were improving? | Reform raised expectations.
+Q: What is centralisation? | Concentrating power in a central government.
+Q: What common mistake is made about when revolutions occur? | Expecting them when conditions are worst; Tocqueville and Davies argued they often follow improvement and then a setback.
 
 ## Comparative revolutionary history
 LV: A level · Evaluation
@@ -495,4 +615,14 @@ M2#history-u15-13-q2@2: Why must a comparison define "revolution" carefully? | H
 TF1#history-u15-13-q3@1: Good comparison pays as much attention to differences as to similarities. | true | Ignoring differences flattens each case's history.
 M3#history-u15-13-q4@3: Which judgement about comparative history is best supported? | It is most useful when it sharpens questions about each case rather than replacing their histories | It proves that every revolution is the same | It is useless and should never be attempted | It works only for revolutions in Europe | Comparison serves understanding of individual cases.
 SA3#history-u15-13-q5@2,3: How useful is comparative history for understanding revolutions? | Comparison tests explanations across cases: Brinton's stages (1938), Skocpol's structures (1979) and Goldstone's population pressure (1991) reveal patterns. But definitions of revolution differ, models can flatten context, and hindsight distorts. A strong answer uses examples, weighs strengths against limits and explains how careful method reduces the risks. | Explains comparative models ; Explains strengths ; Explains limits ; Explains good method ; Reaches a judgement
+Q: Why do historians disagree about what counts as a revolution? | Some stress speed and violence, others the depth of social change, and others a change in who holds power.
+Q: Why is the Glorious Revolution of 1688 a hard case for defining revolution? | It changed the monarch with little violence.
+Q: Why is the Industrial Revolution unusual as a "revolution"? | It was not a political event at all.
+Q: What did Crane Brinton's model argue in 1938? | That revolutions pass through stages from moderate to radical rule and then Thermidor.
+Q: What did Theda Skocpol argue in 1979? | That social revolutions follow state crisis, elite division and peasant revolt.
+Q: What is a model in comparative history? | A simplified description of how something works, used for comparison.
+Q: What is hindsight, and why is it a risk? | Knowledge of how events turned out, which can distort judgements about the past.
+Q: What makes a good historical comparison? | It defines its terms, chooses cases carefully, compares like with like and attends to differences as well as similarities.
+Q: What are the strengths of comparative history? | It tests explanations across cases and reveals patterns a single case hides.
+Q: When is comparison most useful to historians? | When it sharpens questions about each case rather than replacing their individual histories.
 `;

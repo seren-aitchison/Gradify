@@ -39,6 +39,16 @@ M2#ecology-u06-01-q2@2: Roughly how many species have been formally described? |
 M3#ecology-u06-01-q3@3: Why are estimates of total species numbers uncertain? | Many groups, especially insects, microbes and deep-sea life, are poorly sampled | All species on Earth have already been described and named | Species cannot be counted by any scientific method | Scientists agree on an exact and fixed total figure | Undersampled groups make extrapolation difficult.
 TF1#ecology-u06-01-q4@1: Biodiversity includes genetic variation within a single species. | true | The CBD definition includes diversity within species.
 SA2#ecology-u06-01-q5@2,3: Explain why biodiversity is more than a count of species. | Biodiversity includes genetic diversity within species, which allows adaptation and underpins crop and livestock breeding, species diversity, and ecosystem diversity, the variety of habitats and ecological processes. Two areas with the same number of species may differ greatly in genetic variation or ecosystem types, so all three levels are needed to understand and conserve life's variety. | Genetic level ; Species level ; Ecosystem level ; Why all matter
+Q: What is the Convention on Biological Diversity? | A 1992 international treaty on conserving and sustainably using biodiversity.
+Q: Who coined the contraction biodiversity, and for what event? | Walter Rosen, for the 1986 US National Forum on BioDiversity.
+Q: Which book did E. O. Wilson edit that popularised the term biodiversity? | BioDiversity, published in 1988.
+Q: What is a described species? | A species formally named and published by scientists.
+Q: Which is the most species-rich group of described organisms? | Insects.
+Q: Why are microbes hard to include in species counts? | They are far more diverse than other groups but hard to count.
+Q: What share of land and ocean species did Mora and colleagues' model suggest were undescribed? | Around 86% of land species and 91% of ocean species.
+Q: How long would it take to describe all species at current rates? | Centuries.
+Q: How many species had been catalogued in the database Mora and colleagues analysed? | About 1.2 million.
+Q: Why is it wrong to equate biodiversity with species number? | Biodiversity also includes genetic variation within species and the diversity of ecosystems.
 
 ## Genetic, species and ecosystem diversity
 LV: Introductory · Application
@@ -77,6 +87,16 @@ M2#ecology-u06-02-q2@2: Why did reliance on one potato variety worsen the Irish 
 M3#ecology-u06-02-q3@3: A population of 5,000 animals descends from 20 survivors of a crash. What is likely? | Low genetic diversity despite its current size | High genetic diversity because it is large | Immunity to all diseases | No effect of the bottleneck | Bottlenecks reduce genetic variation that later growth does not restore.
 MATCH1#ecology-u06-02-q4@1: Match each level of biodiversity to an example. | Genetic diversity = Different alleles for disease resistance ; Species diversity = Many species of beetle ; Ecosystem diversity = Woodland, heath and wetland ; Species evenness = Equal numbers of each species | The levels are linked but distinct.
 SA2#ecology-u06-02-q5@2,3: Explain how loss of genetic diversity can threaten a species. | Small or isolated populations lose alleles through genetic drift and inbreeding. This reduces their ability to adapt to new diseases, climate change or other pressures, and inbreeding can expose harmful recessive alleles, lowering survival and fertility. Over time, these effects can drive further decline, an extinction vortex. | Drift and inbreeding ; Reduced adaptability ; Inbreeding depression ; Extinction vortex
+Q: What is genetic diversity? | The variety of genes and alleles within a species.
+Q: How do small, isolated populations lose genetic diversity? | Through genetic drift and inbreeding.
+Q: Which potato variety did Ireland rely on in the 1840s? | The Lumper.
+Q: What were the human consequences of the Irish potato famine? | About a million people died and a million more emigrated.
+Q: Why are cheetahs a concern for conservationists? | They have very low genetic diversity, thought to result from past bottlenecks, raising disease vulnerability.
+Q: What is a population bottleneck? | A sharp reduction in population size that reduces genetic diversity.
+Q: What two parts make up species diversity? | Richness (the number of species) and evenness.
+Q: What is ecosystem diversity? | The variety of habitats, communities and ecological processes in an area.
+Q: Why do diverse landscapes matter? | They support more species and ecosystem services.
+Q: Why doesn't a large population always have high genetic diversity? | It may have passed through a bottleneck and remained genetically uniform after recovering.
 
 ## Species concepts
 LV: Introductory · Application
@@ -120,6 +140,16 @@ M2#ecology-u06-03-q2@2: Two bat populations look identical but use different cal
 M3#ecology-u06-03-q3@3: Why do hybridising plants challenge the biological species concept? | Gene flow between recognised species blurs reproductive isolation | Plants never reproduce sexually under natural conditions | Plant hybrids are always completely sterile | Plants are not counted as living organisms in biology | The concept relies on isolation, which hybrids break.
 TF1#ecology-u06-03-q4@2: In a ring species, the populations at the two ends of the ring can always interbreed. | false | The end populations do not interbreed, though neighbours along the ring do.
 SA2#ecology-u06-03-q5@3: Evaluate the biological species concept. | It focuses on gene flow, explaining why species remain distinct, and fits most sexually reproducing animals. But it cannot be applied to asexual organisms or fossils, struggles with hybridisation and ring species, and is hard to test when populations do not meet. Other concepts fill these gaps, so biologists often combine evidence. | Strengths ; Asexual and fossil limits ; Hybrids and rings ; Combined approach
+Q: What does the biological species concept focus on? | Gene flow and reproductive isolation between groups of interbreeding populations.
+Q: What is the morphological species concept? | Species defined by distinct physical features, used for fossils and museum specimens.
+Q: What is the phylogenetic species concept? | The smallest group sharing a common ancestor, recognised by shared derived characters, often using DNA.
+Q: What is the ecological species concept? | Species defined as occupying distinct ecological niches.
+Q: What is a ring species? | A chain of interbreeding populations around a ring whose end forms do not interbreed.
+Q: What are cryptic species? | Species that look alike but are genetically distinct and do not interbreed.
+Q: At what frequencies do the two British pipistrelles' echolocation calls peak? | About 45 kHz and 55 kHz.
+Q: Which two pipistrelle species were separated in the 1990s? | The common pipistrelle and the soprano pipistrelle.
+Q: How has recognising two pipistrelle species changed conservation? | Conservation plans now treat them separately.
+Q: Why is it a mistake to assume species always look different? | Cryptic species can be almost identical in appearance.
 
 ## Classification and naming
 LV: Introductory · Foundation
@@ -160,6 +190,16 @@ M2#ecology-u06-04-q2@2: Which taxonomic rank is directly above genus? | Family |
 M3#ecology-u06-04-q3@3: Why are birds classified with dinosaurs in modern phylogenetics? | They descend from dinosaur ancestors, so a monophyletic group includes them | Birds look identical to all dinosaurs | Birds lived before dinosaurs | Classification ignores ancestry | Monophyletic groups must include all descendants.
 SEQ1#ecology-u06-04-q4@1: Order the taxonomic ranks from broadest to narrowest. | Domain ; Kingdom ; Phylum ; Class ; Order ; Family ; Genus ; Species | Each rank sits within the one before.
 SA2#ecology-u06-04-q5@2,3: Explain why scientific names are used instead of common names. | Common names vary between languages and regions, and the same name may refer to different species, while one species may have many common names. Binomial scientific names are unique, internationally recognised and governed by codes of nomenclature, and the genus shows relationships. This allows precise communication in research and conservation. | Variable common names ; Uniqueness ; International rules ; Relationships
+Q: In which work did Linnaeus establish binomial naming? | The 10th edition of Systema Naturae (1758).
+Q: How should a binomial name be written? | In italics, with the genus capitalised and the specific epithet in lower case.
+Q: List the taxonomic ranks from broadest to narrowest. | Domain, kingdom, phylum, class, order, family, genus, species.
+Q: How did Woese and colleagues divide life into three domains? | Using ribosomal RNA sequences, in 1990.
+Q: How are Archaea related to other life? | Once thought to be bacteria, they are more closely related to eukaryotes in some respects.
+Q: What is the scientific name of the red fox? | Vulpes vulpes.
+Q: Which family does the red fox share with wolves and dogs? | Canidae.
+Q: What is a monophyletic group? | An ancestor and all of its descendants.
+Q: What does modern phylogenetic classification aim to reflect? | Common ancestry, shown in phylogenetic trees built from DNA and anatomy.
+Q: Why do scientists use scientific names rather than common names? | They avoid confusion between local common names in different languages.
 
 ## Variation and natural selection
 LV: Introductory · Application
@@ -202,6 +242,16 @@ M2#ecology-u06-05-q2@2: Why did dark peppered moths become more common in indust
 M3#ecology-u06-05-q3@3: After a drought, finches with deeper beaks survived better. What happened in the next generation? | Average beak depth increased, as the trait is heritable | Beak depth returned to normal immediately | All finches lost their beaks | Beak depth decreased | Selection changed the trait's average in offspring.
 SEQ1#ecology-u06-05-q4@2: Order the steps in natural selection. | Variation exists in a population ; More offspring are produced than survive ; Individuals with advantageous traits survive and reproduce more ; Advantageous alleles become more common | Selection acts over generations.
 SA2#ecology-u06-05-q5@2,3: Explain why the peppered moth is a good example of natural selection. | Moths vary in colour, a heritable trait. In polluted areas, dark moths were better camouflaged on soot-covered bark and less often eaten by birds, so they survived and reproduced more, and the dark allele increased. When pollution fell, pale moths regained the advantage and became common again. Predation experiments confirmed the mechanism. | Heritable variation ; Selective agent ; Change in frequency ; Reversal and evidence
+Q: When was On the Origin of Species published? | 1859.
+Q: What is natural selection? | Differential survival and reproduction of individuals due to heritable traits.
+Q: What is overproduction in natural selection? | Producing more offspring than can survive.
+Q: What happens to advantageous alleles over generations under natural selection? | They become more common in the population.
+Q: What is industrial melanism? | The increase of dark forms of organisms in polluted environments.
+Q: What happened to pale peppered moths after clean air laws? | Pale forms returned.
+Q: What did Michael Majerus's experiments, published in 2012, confirm? | That bird predation was the main cause of peppered moth changes.
+Q: What were the sources of variation listed for natural selection? | Mutation, sexual reproduction (crossing over, independent assortment, random fertilisation) and gene flow.
+Q: What is heritability? | The proportion of variation in a trait due to genetic differences.
+Q: What is wrong with saying organisms evolve because they need to? | Variation arises randomly; selection favours individuals that happen to be better suited.
 
 ## Adaptation and fitness
 LV: Introductory · Application
@@ -244,6 +294,16 @@ M2#ecology-u06-06-q2@2: Genotype X produces 50 surviving offspring and genotype 
 M3#ecology-u06-06-q3@3: Why is the peacock's tail an example of a trade-off? | It attracts mates but makes escaping predators harder | It has no effect on survival | It helps peacocks fly faster | It evolved only for insulation | Sexual selection benefits come with survival costs.
 NUM2#ecology-u06-06-q4@2: Genotype A produces 120 surviving seedlings and genotype B produces 80. What is B's relative fitness, to two decimal places? | 0.67 | 0.01 | ratio | Relative fitness of B = 80 ÷ 120 = 0.67.
 SA2#ecology-u06-06-q5@2,3: Explain why natural selection does not produce perfect organisms. | Selection can only act on existing variation and modify existing structures, so designs carry historical constraints. Traits involve trade-offs, such as between attracting mates and avoiding predators. Environments change, so populations may lag behind current conditions. Chance events such as genetic drift also affect evolution. Adaptations are good enough, not perfect. | Existing variation ; Historical constraints ; Trade-offs ; Changing environments and chance
+Q: What is an adaptation? | A heritable trait that evolved by natural selection because it improves survival or reproduction.
+Q: Give an example of a physiological adaptation. | Antifreeze proteins in Antarctic fish.
+Q: Give an example of a structural adaptation. | A camel's fat-storing hump.
+Q: How is relative fitness calculated? | Offspring of a genotype ÷ offspring of the fittest genotype.
+Q: What is the relative fitness of the fittest genotype? | 1.
+Q: Why is the vertebrate eye's blind spot an example of a constraint? | Evolution modifies existing structures, so designs are often imperfect.
+Q: How do time lags limit adaptation? | Environments can change faster than populations can adapt.
+Q: What is exaptation? | When a trait that evolved for one function later serves another.
+Q: Give an example of exaptation. | Feathers may first have served for insulation or display before flight.
+Q: Why is fitness not the same as physical strength? | Evolutionary fitness means leaving more surviving offspring, not being strong or fast.
 
 ## Speciation
 LV: Introductory · Application
@@ -286,6 +346,16 @@ M2#ecology-u06-07-q2@2: A plant population doubles its chromosome number and can
 M3#ecology-u06-07-q3@3: Why has murky water caused some Lake Victoria cichlids to hybridise? | Females can no longer see male colours used to choose mates | Murky water kills all males | Cichlids change species in the dark | Hybridisation is caused by warmer water | Colour-based mate choice maintained isolation.
 SEQ1#ecology-u06-07-q4@2: Order the steps in allopatric speciation. | A population is split by a geographical barrier ; The separated groups experience different selection and drift ; They diverge genetically ; They become reproductively isolated | Separation allows divergence.
 SA2#ecology-u06-07-q5@2,3: Explain how apple maggot flies illustrate possible sympatric speciation. | The flies originally used hawthorn. When apples arrived, some switched hosts. Because apples ripen earlier than hawthorn, flies on each host breed at different times, reducing gene flow. Selection on timing and host preference has led to genetically distinct host races in the same area, an early stage of speciation without geographical separation. | Host shift ; Timing isolation ; Reduced gene flow ; Host races
+Q: What is reproductive isolation? | Barriers that prevent gene flow between populations.
+Q: What are prezygotic barriers? | Barriers that prevent mating or fertilisation, such as habitat, timing, behaviour, mechanical or gametic incompatibility.
+Q: Which is the commonest mode of speciation? | Allopatric speciation.
+Q: What is sympatric speciation? | Formation of new species without geographical separation, for example by polyploidy or shifts to new hosts.
+Q: What is parapatric speciation? | Divergence of neighbouring populations across an environmental gradient with limited gene flow.
+Q: What is polyploidy? | Having more than two sets of chromosomes, a route to sympatric speciation in plants.
+Q: Why are Lake Victoria cichlids thought to have speciated very rapidly? | Geological evidence suggests the lake dried out roughly 15,000 years ago.
+Q: What helped isolate Lake Victoria cichlid populations? | Differences in feeding, habitat and male colour, with females choosing mates by colour.
+Q: Why do apple and hawthorn races of Rhagoletis breed at different times? | Apple and hawthorn fruit ripen at different times.
+Q: Does speciation always take millions of years? | No; Lake Victoria cichlids, for example, have diversified in thousands of years.
 
 ## Coevolution
 LV: Introductory · Application
@@ -326,6 +396,16 @@ M2#ecology-u06-08-q2@2: A host evolves resistance to a parasite, which then evol
 M3#ecology-u06-08-q3@3: Why did Darwin predict a long-tongued moth in Madagascar? | The orchid's very long nectar spur implied a pollinator able to reach the nectar | He had already seen the moth | Moths were unknown in Madagascar | Orchids are pollinated only by wind | He inferred a coevolved pollinator from the flower's form.
 TF1#ecology-u06-08-q4@2: Coevolution requires evolutionary change in both interacting species. | true | Change in only one species is not coevolution.
 SA2#ecology-u06-08-q5@2,3: Explain how plants and herbivorous insects can coevolve. | Plants under attack by insects evolve chemical or physical defences, such as toxins or tough leaves. Insects that can tolerate or detoxify these defences survive and reproduce better, so tolerance spreads. This in turn selects for new plant defences. Over time, this reciprocal process can produce specialised relationships and diversification of both groups. | Plant defences ; Insect counter-adaptations ; Reciprocal selection ; Diversification
+Q: What did Ehrlich and Raven describe in butterflies and plants? | Plants evolved chemical defences, and butterflies evolved ways to tolerate them.
+Q: What is an arms race in coevolution? | Escalating adaptations and counter-adaptations between species.
+Q: Give an example of a predator–prey arms race. | Faster prey select for faster predators.
+Q: Who proposed the Red Queen hypothesis, and when? | Leigh Van Valen, in 1973.
+Q: Where does the Red Queen hypothesis get its name? | From the Red Queen in Through the Looking-Glass, who must run to stay in the same place.
+Q: How might the Red Queen hypothesis explain sexual reproduction? | Sex generates variation that helps hosts resist parasites.
+Q: How long is the nectar spur of Angraecum sesquipedale? | Up to about 30 cm.
+Q: When was the moth Darwin predicted for the Madagascan orchid described? | In 1903.
+Q: Why is the orchid and hawkmoth a classic example of coevolution? | The long nectar spur matches the moth's long tongue.
+Q: Why isn't every close relationship coevolution? | Coevolution requires reciprocal evolutionary change in both species.
 
 ## The history of life and mass extinctions
 LV: Introductory · Application
@@ -371,6 +451,16 @@ M2#ecology-u06-09-q2@2: What is thought to have caused the end-Permian extinctio
 M3#ecology-u06-09-q3@3: Why do some scientists hesitate to call today's crisis a sixth mass extinction? | The proportion of species lost so far is much smaller than in the big five | Current extinction rates are below background | No species have gone extinct recently | Mass extinctions require asteroids | Rates are high, but cumulative losses are still far lower.
 SEQ1#ecology-u06-09-q4@2: Order these events in the history of life. | Earliest evidence of life ; Oxygen builds up in the atmosphere ; Cambrian explosion ; End-Cretaceous extinction | The sequence spans over 3.5 billion years.
 SA2#ecology-u06-09-q5@2,3: Explain how mass extinctions have shaped the diversity of life. | Mass extinctions removed large proportions of species, ending dominant groups and opening ecological opportunities. After the end-Cretaceous extinction, mammals and birds diversified into roles once filled by dinosaurs. Recovery of diversity took millions of years. The groups alive today largely reflect which lineages survived these events, not only gradual competition. | Loss of dominant groups ; Ecological opportunity ; Slow recovery ; Survivors shape today
+Q: When did oxygen build up in the atmosphere, and why? | About 2.4 billion years ago, after photosynthetic cyanobacteria evolved.
+Q: What was the Cambrian explosion? | The rapid diversification of animals about 540 million years ago.
+Q: What caused the end-Ordovician extinction? | Glaciation and sea-level fall, about 445 million years ago.
+Q: What is linked to the Late Devonian extinction? | Ocean anoxia, about 372 million years ago.
+Q: What share of marine species died in the end-Permian extinction? | Around 90%.
+Q: What caused the end-Triassic extinction? | Volcanism, about 201 million years ago.
+Q: Why is iridium evidence for an asteroid impact? | Iridium is rare in Earth's crust but common in asteroids.
+Q: Where is the Chicxulub crater and how wide is it? | In Mexico, about 180 km wide.
+Q: What is the background extinction rate? | The normal rate of extinction between mass extinction events.
+Q: What did Barnosky and colleagues conclude in 2011? | Current extinction rates are far above background and could produce a mass extinction within centuries.
 
 ## The latitudinal diversity gradient
 LV: Introductory · Application
@@ -412,6 +502,16 @@ M2#ecology-u06-10-q2@2: Which hypothesis links the gradient to the tropics' long
 M3#ecology-u06-10-q3@3: Why must comparisons of richness between latitudes control for area? | Larger areas usually contain more species, which could confound latitude effects | Area has no effect on species numbers | Tropical regions are always smaller | Latitude and area are the same thing | The species–area relationship can mask or exaggerate latitudinal patterns.
 TF1#ecology-u06-10-q4@1: For most groups of organisms, species richness is higher in the tropics. | true | The pattern is widespread across taxa.
 SA2#ecology-u06-10-q5@3: Evaluate the energy hypothesis for the latitudinal diversity gradient. | The tropics receive more solar energy and often more water, supporting higher productivity and larger populations, which may allow more species to coexist, and richness often correlates with energy. But energy alone cannot explain all patterns: some productive regions are species-poor, and history, area and speciation rates also differ. It is best seen as one of several interacting factors. | Mechanism ; Supporting correlations ; Exceptions ; Combined factors
+Q: What did Hillebrand's 2004 meta-analysis of nearly 600 gradients find? | The latitudinal gradient was strong and widespread, though stronger in some groups.
+Q: How does tree diversity in one Amazon hectare compare with Europe? | A single hectare can contain more tree species than all of Europe.
+Q: What is the species–energy hypothesis? | The idea that more solar energy and water support more individuals and species.
+Q: What is tropical niche conservatism? | Many groups originated in the tropics and few lineages adapted to cold climates.
+Q: How might biotic interactions explain high tropical diversity? | Intense competition, predation and disease may favour specialisation.
+Q: How might speciation and extinction rates explain the gradient? | Speciation may be faster, or extinction slower, in the tropics.
+Q: How many bird species does Colombia have compared with UK breeding birds? | Over 1,900, compared with about 200 to 250 UK breeding species.
+Q: Name groups that are more diverse at higher latitudes. | Aphids, sawflies and some seabirds.
+Q: Where does marine diversity often peak? | A little away from the equator.
+Q: Why is it a mistake to look for one cause of the latitudinal gradient? | Several mechanisms likely interact, and their importance varies among groups.
 
 ## Biodiversity hotspots
 LV: Introductory · Application
@@ -456,6 +556,16 @@ M2#ecology-u06-11-q2@2: A region has 3,000 endemic plants but has lost only 20% 
 M3#ecology-u06-11-q3@3: What is one criticism of the hotspot approach? | It may overlook intact wilderness areas and groups such as invertebrates | It focuses only on Antarctica | It ignores plants entirely | It has never influenced funding | Priorities based on plants and vertebrates leave gaps.
 NUM1#ecology-u06-11-q4@2: Myers's 25 hotspots covered 1.4% of land and held 44% of plant species as endemics. How many times their share of land is their share of endemic plants, to the nearest whole number? | 31 | 1 | times | 44 ÷ 1.4 = 31.4, so about 31 times.
 SA2#ecology-u06-11-q5@3: Evaluate biodiversity hotspots as a basis for conservation priorities. | Hotspots identify small areas where many endemic species face high threat, so investment can protect many species efficiently, and the concept has guided major funding. However, it relies mainly on plants and vertebrates, may miss areas rich in other groups or vital for ecosystem services, and focuses on degraded places rather than intact wilderness. It works best as one tool among several. | Efficiency ; Influence ; Taxonomic bias ; Complementary approaches
+Q: Who introduced biodiversity hotspots, and when? | Norman Myers, in 1988.
+Q: What share of species did Myers's 25 hotspots hold as endemics? | 44% of vascular plants and 35% of species in four vertebrate groups.
+Q: How many hotspots does Conservation International now recognise? | 36.
+Q: What is an endemic species? | A species found naturally in only one place.
+Q: Name three biodiversity hotspots. | Madagascar and the Indian Ocean islands, the Tropical Andes, the Mediterranean Basin and Sundaland.
+Q: Which areas make up Sundaland? | Borneo, Sumatra and the Malay Peninsula.
+Q: Why do hotspots matter for conservation funding? | They concentrate many endemic species in small, threatened areas, so limited funds protect many unique species.
+Q: What does the Critical Ecosystem Partnership Fund do? | It directs grants to civil society groups in hotspots.
+Q: What is conservation prioritisation? | Deciding where limited conservation resources are best spent.
+Q: Why are hotspots not simply the most species-rich places? | The criteria also require high threat, with at least 70% of vegetation lost.
 
 ## Endemism
 LV: Introductory · Application
@@ -498,6 +608,16 @@ M2#ecology-u06-12-q2@2: According to island biogeography theory, which island wo
 M3#ecology-u06-12-q3@3: Why are island endemics often vulnerable to introduced predators? | They evolved without such predators and lack defences | They are always larger than mainland species | Islands have no habitat loss | Introduced predators cannot reach islands | Applying the standard result: Naive prey have no evolved responses.
 TF1#ecology-u06-12-q4@2: Britain has relatively few endemic species because it was joined to Europe until about 8,000 years ago. | true | The short period of isolation allowed little divergence.
 SA2#ecology-u06-12-q5@2,3: Explain why islands often have high levels of endemism. | Islands isolate populations from mainland relatives, limiting gene flow. Over long periods, populations adapt to local conditions and diverge through selection and drift, forming new species. Colonists arriving on remote islands may diversify into many niches, as with Darwin's finches. The longer and more complete the isolation, the more endemic species develop. | Isolation ; Divergence ; Adaptive radiation ; Time
+Q: What are the three main causes of endemism? | Isolation, time and unique environments.
+Q: Give four types of place that isolate populations and create endemics. | Islands, mountains, lakes and caves.
+Q: What share of Madagascar's plant and animal species are endemic? | Around 90%.
+Q: In island biogeography, why do large islands hold more species? | They have lower extinction rates.
+Q: In island biogeography, why do near islands hold more species? | They have higher immigration rates from the mainland.
+Q: Beyond islands, where else does island biogeography theory apply? | To habitat fragments on land.
+Q: Name two UK endemic species. | The Scottish crossbill and several whitebeam trees on Arran.
+Q: Give an example of a distinct island subspecies in the UK. | The St Kilda wren.
+Q: Why were island species such as the dodo especially vulnerable? | They evolved without predators, so introduced predators drove them extinct.
+Q: Why might a species-poor place still have conservation value? | It may hold irreplaceable endemic species.
 
 ## Measuring biodiversity: diversity indices
 LV: Introductory · Application
@@ -538,6 +658,16 @@ M2#ecology-u06-13-q2@2: Two samples each have 3 species. Sample X has 10, 5 and 
 M3#ecology-u06-13-q3@3: One survey used 10 quadrats and another 100. Why is comparing their diversity indices risky? | Greater sampling effort usually detects more species | Quadrat number never affects results | Indices cannot be calculated from quadrats | Smaller surveys always find more species | Differences may reflect effort rather than real diversity.
 NUM3#ecology-u06-13-q4@1: A sample has 10, 5 and 5 individuals of three species. What is Simpson's index D = 1 − Σn(n − 1)/N(N − 1), to two decimal places? | 0.66 | 0.01 | index | Σn(n − 1) = 130; N(N − 1) = 380; D = 1 − 130 ÷ 380 = 0.66.
 SA2#ecology-u06-13-q5@2,3: Explain why diversity indices are more informative than species counts alone. | Species counts give richness but ignore how individuals are distributed. A community dominated by one species is less diverse than one with the same species in similar numbers. Indices such as Simpson's and Shannon's combine richness and evenness, so they better reflect the variety and balance of a community, helping detect changes such as dominance by invasive species. | Richness only ; Evenness ; Combined measure ; Use in monitoring
+Q: Why are diversity indices used instead of species counts? | Communities with the same number of species can differ greatly in evenness, and indices capture both.
+Q: What is the formula for Shannon's index? | H = −Σ p_{i} ln p_{i}, where p_{i} is the proportion of individuals in species i.
+Q: What is Simpson's index based on? | The probability that two individuals belong to different species.
+Q: What is the Shannon index of a sample with 10, 5 and 5 individuals? | 1.04.
+Q: What is the range of Simpson's index D? | From 0 to nearly 1.
+Q: Which index is more sensitive to rare species, Simpson's or Shannon's? | Shannon's; Simpson's is less sensitive to rare species.
+Q: What does a higher Shannon index value mean? | Higher diversity.
+Q: Why is monitoring the same site over time often more informative than comparing sites? | It avoids differences in method and sampling that affect index values.
+Q: Why must sampling effort be similar when comparing diversity indices? | More sampling usually finds more species, inflating diversity values.
+Q: What is evenness? | How equally individuals are spread among species.
 
 ## Biodiversity in the UK
 LV: Introductory · Application
@@ -584,6 +714,16 @@ M2#ecology-u06-14-q2@2: What is a major cause of farmland bird declines? | Loss 
 M3#ecology-u06-14-q3@3: A developer destroys a meadow but creates a new habitat of greater value elsewhere nearby. Under biodiversity net gain, what must also be ensured? | The new habitat is managed and monitored over the long term | Nothing further is required | The meadow must be paved over | The gain must be less than 10% | Gains depend on habitats being secured and maintained.
 NUM1#ecology-u06-14-q4@1: State of Nature 2023 found the average abundance of studied species had fallen by about what percentage since 1970? | 19 | 1 | % | Average abundance fell by about 19%.
 SA2#ecology-u06-14-q5@3: Evaluate biodiversity net gain as a tool for protecting nature. | It requires developers to leave biodiversity measurably better, at least 10%, encouraging nature-friendly design and funding habitat creation. But metrics may not capture the value of irreplaceable or ancient habitats, offsets may be far away or poorly managed, and success depends on long-term monitoring and enforcement. It is useful if well implemented, alongside protection of existing habitats. | Benefits ; Metric limits ; Delivery risks ; Need for enforcement
+Q: How many organisms produced the State of Nature 2023 report? | Over 60 conservation and research organisations.
+Q: How does the UK rank for nature compared with other countries? | It is among the most nature-depleted, with low biodiversity intactness.
+Q: How has agricultural intensification harmed UK wildlife? | Through loss of hedgerows, wildflower meadows and farmland birds.
+Q: How is climate change affecting UK species? | It is shifting ranges, with some species moving north.
+Q: Name three farmland birds that have declined steeply since 1970. | The turtle dove, corn bunting and grey partridge.
+Q: What causes farmland bird declines? | Loss of winter seed food, hedgerows and nesting habitat.
+Q: What is an agri-environment scheme? | Payments to farmers for managing land to benefit wildlife, such as field margins and winter stubbles.
+Q: Since when has biodiversity net gain been mandatory in England? | Since February 2024.
+Q: What is the 30 by 30 commitment? | To protect 30% of land and sea by 2030.
+Q: Why aren't designated sites enough to protect UK wildlife? | Much wildlife lives on farmland and in towns, so how wider land is managed matters greatly.
 
 ## The global state of biodiversity
 LV: Introductory · Application
@@ -625,6 +765,16 @@ M2#ecology-u06-15-q2@2: What does the Living Planet Index measure? | Average cha
 M3#ecology-u06-15-q3@3: A newspaper says "73% of the world's animals have died since 1970". What is wrong? | The index is an average change in monitored populations, not the share of all animals lost | The figure should be 100% | The index measures plants only | The index started in 2020 | The headline misinterprets an average of population trends.
 TF1#ecology-u06-15-q4@2: The Kunming–Montreal Global Biodiversity Framework includes a target to protect 30% of land and sea by 2030. | true | Target 3 is the 30 by 30 commitment.
 SA2#ecology-u06-15-q5@2,3: Explain why global biodiversity loss matters for people. | Biodiversity underpins food production, pollination, clean water, climate regulation and medicines. Losing species and ecosystems weakens these services and reduces resilience to shocks such as drought and disease. IPBES found that nature's contributions to people are declining, with the poorest communities often most affected. Loss is also often irreversible. | Ecosystem services ; Resilience ; Unequal impacts ; Irreversibility
+Q: What does IPBES stand for? | The Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services.
+Q: How many sources did the 2019 IPBES Global Assessment draw on? | Around 15,000.
+Q: What share of the land surface did IPBES say has been significantly altered? | About 75%.
+Q: What share of ocean area faces increasing cumulative impacts? | About 66%.
+Q: Who produces the Living Planet Index? | WWF and the Zoological Society of London.
+Q: What did the 2024 Living Planet Index report find? | An average 73% decline in monitored wildlife populations since 1970.
+Q: Where were the steepest Living Planet Index declines? | In Latin America and the Caribbean and in freshwater ecosystems.
+Q: Why is the Living Planet Index read alongside other measures? | It is sensitive to which populations are included.
+Q: How many targets for 2030 does the Kunming–Montreal framework include? | 23.
+Q: Besides 30 by 30, name two Kunming–Montreal targets. | Restoring 30% of degraded ecosystems and reducing harmful subsidies.
 
 ## Drivers of biodiversity loss
 LV: Introductory · Application
@@ -668,6 +818,16 @@ M2#ecology-u06-16-q2@2: How have grey squirrels affected red squirrels in the UK
 M3#ecology-u06-16-q3@3: Why might climate change harm species already in fragmented habitats more severely? | Small, isolated populations cannot easily move to suitable new areas | Fragmentation protects species from warming | Climate change only affects oceans | Fragmented habitats have no species | Applying the standard result: Drivers interact to increase risk.
 MATCH1#ecology-u06-16-q4@1: Match each example to its driver. | Draining a wetland for farming = Land use change ; Overfishing cod = Direct exploitation ; Coral bleaching = Climate change ; Rats on islands = Invasive species | These are IPBES's direct drivers.
 SA2#ecology-u06-16-q5@2,3: Explain how habitat loss and fragmentation reduce biodiversity. | Habitat loss directly removes the places species live, reducing population sizes. Fragmentation breaks remaining habitat into small, isolated patches with more edge, which may be unsuitable for interior species. Small, isolated populations lose genetic diversity, are vulnerable to chance events and cannot easily recolonise or move as the climate changes, raising extinction risk. | Loss of habitat ; Edge effects ; Small populations ; Isolation and climate
+Q: What is a direct driver of biodiversity loss? | A human activity that directly harms biodiversity, such as habitat loss.
+Q: What did IPBES rank as the second biggest direct driver? | Direct exploitation, such as overfishing, hunting, logging and wildlife trade.
+Q: List the five direct drivers in IPBES order. | Land and sea use change, direct exploitation, climate change, pollution and invasive alien species.
+Q: How does climate change harm biodiversity? | Through shifting ranges, coral bleaching and phenological mismatch.
+Q: Name four types of pollution that drive biodiversity loss. | Nutrients, pesticides, plastics, light and noise.
+Q: What is an indirect driver? | An underlying cause, such as consumption or trade, behind direct drivers.
+Q: Which introduced predators threaten ground-nesting island birds? | Rats, cats and stoats.
+Q: What happened after rats were eradicated from South Georgia? | Seabirds began to recover; eradication was declared successful in 2018.
+Q: How can drivers of biodiversity loss interact? | Fragmentation leaves populations small and vulnerable to climate change; pollution weakens species against invasive competitors.
+Q: Why is it a mistake to focus only on climate change? | Land and sea use change and exploitation are currently larger global drivers.
 
 ## Extinction risk and the IUCN Red List
 LV: Introductory · Application
@@ -710,6 +870,16 @@ M2#ecology-u06-17-q2@2: A population fell from 10,000 to 6,000 over 10 years. Un
 M3#ecology-u06-17-q3@3: Which traits make a species most vulnerable to extinction? | A small range, slow reproduction and a specialised diet | A large range and rapid reproduction | A generalist diet and high dispersal | Large populations across many continents | These traits limit recovery and increase exposure to threats.
 NUM2#ecology-u06-17-q4@2: A frog population declined from 20,000 to 7,000 adults over ten years. What is the percentage reduction? | 65 | 0 | % | (20,000 − 7,000) ÷ 20,000 × 100 = 65%.
 SA2#ecology-u06-17-q5@2,3: Explain why large, slow-reproducing species are often at high risk of extinction. | Large animals usually need large areas and plenty of food, so they are sensitive to habitat loss, and are often targeted by hunters. They reproduce slowly, with long generation times and few offspring, so populations recover slowly from losses. Their populations are often small to begin with. These factors combine to make them vulnerable. | Space and resources ; Hunting pressure ; Slow reproduction ; Small populations
+Q: What are the Red List categories below the threatened ones? | Near Threatened and Least Concern.
+Q: What is the difference between Extinct and Extinct in the Wild? | Extinct species are gone entirely; Extinct in the Wild species survive only in captivity or cultivation.
+Q: How many species on the Red List are assessed as threatened? | More than 45,000.
+Q: What are the five Red List criteria A–E? | Population reduction, small range, small and declining population, very small population, and quantitative extinction probability.
+Q: Under criterion A2, what reduction qualifies as Endangered and as Vulnerable? | At least 50% for Endangered and 30% for Vulnerable.
+Q: Over what period is decline measured under criterion A2? | 10 years or three generations.
+Q: Under criterion A2, what category does a 65% decline give? | Endangered, since it exceeds 50% but not 80%.
+Q: Besides the size of a decline, what else do Red List assessors consider? | The causes and whether the decline continues.
+Q: Which kinds of species are particularly threatened? | Island and freshwater species.
+Q: Why shouldn't Data Deficient be treated as not threatened? | Many Data Deficient species may be at risk but lack enough information.
 
 ## Why biodiversity matters
 LV: Introductory · Evaluation
@@ -750,4 +920,14 @@ M2#ecology-u06-18-q2@2: Which medicine was developed from a compound in willow b
 M3#ecology-u06-18-q3@3: A critic argues that valuing nature in money risks treating it as replaceable. Which response reflects the Dasgupta Review? | Accounting for natural capital reveals its importance, alongside non-economic values | Nature should never be considered in economic decisions | Money values replace all other values | Nature has no economic role | The Review saw economic accounting as necessary but not sufficient.
 MATCH1#ecology-u06-18-q4@1: Match each value to an example. | Intrinsic = A species' right to exist ; Instrumental = Pollination of crops ; Relational = A woodland's place in local identity ; Option value = Undiscovered medicines | Different values give different reasons to conserve.
 SA2#ecology-u06-18-q5@3: Evaluate the main arguments for conserving biodiversity. | Instrumental arguments stress food, medicines and ecosystem services, which are persuasive in policy but can imply that useless species do not matter. Intrinsic arguments hold that species have value in themselves, but may carry less weight in economic decisions. Relational values capture cultural connections. A combination of arguments is strongest, recognising both practical dependence and moral responsibility. | Instrumental strengths and limits ; Intrinsic ; Relational ; Combined case
+Q: What is instrumental value? | The benefits biodiversity provides, such as food, materials, medicines and ecosystem services.
+Q: What is relational value of biodiversity? | Its part in people's identities, cultures and relationships with places.
+Q: Who proposed the insurance hypothesis, and when? | Yachi and Loreau, in 1999.
+Q: What do experiments show about diverse communities under stress? | They often maintain productivity better.
+Q: Which compound from willow bark led to aspirin? | Salicin.
+Q: Which organism did penicillin come from? | The mould Penicillium.
+Q: Who received the 2015 Nobel Prize for discovering artemisinin? | Tu Youyou.
+Q: What is natural capital? | The stock of natural assets that provide benefits to people.
+Q: Who commissioned the Dasgupta Review, and what did it call for? | HM Treasury; it called for measures of wealth that include nature and financial flows that protect it.
+Q: Why is it a mistake to think biodiversity matters only if useful? | Many people value species for their own sake or for cultural reasons.
 `;

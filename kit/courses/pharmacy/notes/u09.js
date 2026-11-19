@@ -30,6 +30,16 @@ SRC: Trend UK and Diabetes UK, Sick day rules for people with diabetes | guidanc
 M1#pharmacy-u09-01-q1@1: Why is insulin essential in type 1 diabetes? | The pancreas makes little or no insulin | Insulin cures the condition | It replaces dietary sugar | It prevents infection | It only lowers blood pressure | Autoimmune destruction of beta cells removes insulin production.
 M2#pharmacy-u09-01-q2@2: Someone with type 1 diabetes has gastroenteritis and isn't eating. What should they do with their basal insulin? | Continue it and check glucose and ketones more often | Stop it until they eat again | Halve every dose for a week | Switch to tablets | Take it only if glucose is above 20 | Stopping basal insulin risks diabetic ketoacidosis.
 M2#pharmacy-u09-01-q3@1: What does NICE recommend offering adults with type 1 diabetes for monitoring? | Continuous glucose monitoring | Urine glucose tests only | Weekly HbA1c | Monthly finger-prick tests only | No monitoring | NG17 recommends offering CGM to adults with type 1 diabetes.
+Q: What causes type 1 diabetes? | Autoimmune destruction of the insulin-producing beta cells.
+Q: What is continuous glucose monitoring? | A sensor measuring glucose in tissue fluid continuously, with alerts.
+Q: What insulin delivery options are used in type 1 diabetes? | Multiple daily injections with a basal-bolus regimen, or an insulin pump, often with a hybrid closed-loop system.
+Q: What does structured education such as DAFNE teach? | Carbohydrate counting and insulin dose adjustment.
+Q: What HbA1c target is suggested for many adults with type 1 diabetes? | 48 mmol/mol (6.5%) or lower, individualised to avoid hypoglycaemia.
+Q: Which complications are screened for in type 1 diabetes? | Eye, kidney and foot complications, with cardiovascular risk managed.
+Q: Why does illness matter for insulin in type 1 diabetes? | Illness often raises glucose, so basal insulin is still needed even without eating.
+Q: Which sick day symptoms in type 1 diabetes need urgent help? | Vomiting, high ketones, or being unable to keep fluids down.
+Q: What should be tested as well as glucose on sick days in type 1 diabetes? | Ketones.
+Q: Why is stopping insulin during a stomach bug dangerous in type 1 diabetes? | It risks diabetic ketoacidosis.
 
 ## Insulins
 S: Insulin is a high-risk medicine: errors with type, strength, device or dose can cause severe hypoglycaemia or ketoacidosis. Knowing the types and the safety rules prevents serious harm.
@@ -60,6 +70,16 @@ SRC: NHS England, Insulin safety: the insulin passport and patient information |
 M1#pharmacy-u09-02-q1@1: Which is a rapid-acting insulin analogue? | Insulin aspart | Insulin glargine | Insulin degludec | Isophane insulin | Insulin detemir | Rapid-acting analogues are given with meals.
 M2#pharmacy-u09-02-q2@2: Why should high-strength insulin never be drawn up with a syringe? | It risks a large overdose | It damages the syringe | It loses potency | It becomes cloudy | It's only for IV use | Syringes are calibrated for 100 units/mL, so the dose would be multiplied.
 M2#pharmacy-u09-02-q3@1: What causes lipohypertrophy? | Repeatedly injecting into the same site | Storing insulin in the fridge | Using a new needle each time | Injecting into the abdomen | Taking insulin with food | Rotating sites prevents fatty lumps that impair absorption.
+Q: Name three rapid-acting insulin analogues. | Aspart, lispro and glulisine.
+Q: Name three long-acting insulin analogues. | Glargine, detemir and degludec.
+Q: What is intermediate-acting insulin called? | Isophane insulin.
+Q: When is short-acting soluble insulin used? | Before meals and for IV use in hospital.
+Q: What is premixed insulin? | A combination of short- or rapid-acting insulin with intermediate insulin.
+Q: What is high-strength insulin? | Insulin at more than 100 units/mL, such as 200 or 300 units/mL, available only in pens.
+Q: Why must an IV syringe never be used to measure insulin? | Only insulin syringes or pens should be used, to avoid dosing errors.
+Q: How should in-use insulin be stored? | At room temperature for the time the SPC states; unopened insulin goes in the fridge.
+Q: Are glargine 100 and 300 units/mL interchangeable unit for unit? | No; not without review.
+Q: What document should people on insulin carry? | An insulin passport.
 
 ## Type 2 diabetes
 S: Type 2 diabetes results from insulin resistance and reduced insulin secretion. Treatment combines lifestyle change with medicines chosen for the person's glucose, cardiovascular and kidney risks, and weight.
@@ -87,6 +107,16 @@ SRC: Joint Formulary Committee, British National Formulary: diabetes mellitus | 
 M1#pharmacy-u09-03-q1@1: What does HbA1c measure? | Average blood glucose over 2 to 3 months | Today's glucose only | Insulin levels | Kidney function | Cholesterol | Glycated haemoglobin reflects glucose over the red cell lifespan.
 M2#pharmacy-u09-03-q2@2: A person with type 2 diabetes and heart failure is on metformin. What's recommended next? | Add an SGLT2 inhibitor | Add pioglitazone | Stop metformin | Add a sulfonylurea first | Start insulin immediately | SGLT2 inhibitors reduce heart failure admissions; pioglitazone worsens heart failure.
 M3#pharmacy-u09-03-q3@1: What HbA1c target suits someone on a sulfonylurea? | 53 mmol/mol | 30 mmol/mol | 42 mmol/mol | 75 mmol/mol | 90 mmol/mol | NICE suggests 53 when drugs can cause hypoglycaemia.
+Q: What causes type 2 diabetes? | Insulin resistance and reduced insulin secretion.
+Q: What is used if standard metformin isn't tolerated? | Modified-release metformin.
+Q: How do SGLT2 inhibitors work? | They block sodium-glucose co-transporter 2 in the kidney.
+Q: Name three further drug options in type 2 diabetes after metformin. | DPP-4 inhibitors, pioglitazone, sulfonylureas, GLP-1 receptor agonists, tirzepatide and insulin.
+Q: What factors guide the choice of later type 2 diabetes drugs? | Hypoglycaemia risk, weight, cost and the person's preferences.
+Q: What HbA1c target applies to someone on lifestyle measures or metformin alone? | 48 mmol/mol.
+Q: Who should have relaxed HbA1c targets? | Older or frail people and those at risk of hypoglycaemia.
+Q: When are ACE inhibitors or ARBs used in type 2 diabetes? | Where albuminuria is present.
+Q: What non-drug measures underpin type 2 diabetes treatment? | Diet, activity, weight loss and structured education.
+Q: What is the risk of a tight HbA1c target in a frail older person? | Hypoglycaemia and falls.
 
 ## Glucose-lowering drugs
 S: Each class of glucose-lowering drug has its own benefits, risks and monitoring. Knowing them lets pharmacists choose well, counsel effectively and spot harm early.
@@ -117,6 +147,16 @@ SRC: Joint Formulary Committee, British National Formulary: drugs used in diabet
 M1#pharmacy-u09-04-q1@2: Which drug commonly causes genital fungal infections? | Dapagliflozin | Metformin | Gliclazide | Sitagliptin | Insulin | Glucose in the urine predisposes to genital infections.
 M2#pharmacy-u09-04-q2@1: Which long-term effect of metformin needs monitoring? | Vitamin B12 deficiency | Hair loss | Bone marrow suppression | Thyroid failure | Hearing loss | Long-term metformin reduces B12 absorption.
 M2#pharmacy-u09-04-q3@2: Why should pioglitazone be avoided in heart failure? | It causes fluid retention | It causes hypoglycaemia | It raises potassium | It blocks beta receptors | It prolongs the QT interval | Fluid retention can worsen heart failure.
+Q: How do GLP-1 receptor agonists work? | They mimic GLP-1, increasing insulin release and satiety.
+Q: At what eGFR is metformin stopped? | Below 30, with dose review below 45.
+Q: Name the main adverse effects of sulfonylureas such as gliclazide. | Hypoglycaemia and weight gain.
+Q: What is a rare adverse effect of DPP-4 inhibitors? | Pancreatitis.
+Q: How do DPP-4 inhibitors affect weight? | They are weight-neutral.
+Q: When should SGLT2 inhibitors be paused? | During acute illness and before surgery.
+Q: Name three risks of pioglitazone. | Weight gain, fluid retention, fractures and bladder cancer risk.
+Q: Name two serious risks of GLP-1 receptor agonists. | Pancreatitis and gallbladder disease.
+Q: Which medicines are paused under sick day guidance during dehydrating illness? | Metformin and SGLT2 inhibitors, and others such as ACE inhibitors and diuretics.
+Q: What is a rare serious genital complication of SGLT2 inhibitors? | Fournier's gangrene.
 
 ## Hypoglycaemia
 S: Hypoglycaemia is the commonest acute complication of diabetes treatment and can be dangerous. Everyone on insulin or a sulfonylurea, and their families, should know how to recognise and treat it.
@@ -143,6 +183,16 @@ SRC: Driver and Vehicle Licensing Agency, Diabetes and driving | guidance | 2025
 M1#pharmacy-u09-05-q1@1: What glucose level defines hypoglycaemia in diabetes? | Below 4 mmol/L | Below 7 mmol/L | Below 10 mmol/L | Below 1 mmol/L only | Above 11 mmol/L | In diabetes, a glucose below 4 mmol/L is treated as hypoglycaemia: "four is the floor".
 M2#pharmacy-u09-05-q2@2: After treating a hypo with glucose tablets, when should glucose be rechecked? | After 10 to 15 minutes | After 1 hour | Next morning | Immediately only | After 2 days | Recheck at 10 to 15 minutes and repeat treatment if still low.
 M3#pharmacy-u09-05-q3@2: Someone on insulin has a glucose of 4.6 mmol/L before driving. What's the advice? | Have a snack and recheck before driving | Drive as normal | Drive but slowly | Take extra insulin first | Drive only on motorways | The DVLA advises not driving below 5 mmol/L without treating it first.
+Q: What are the early symptoms of hypoglycaemia? | Shaking, sweating, hunger and palpitations.
+Q: What symptoms follow as hypoglycaemia worsens? | Confusion, irritability and drowsiness, then fits or unconsciousness.
+Q: How much fast-acting carbohydrate treats a hypo? | 15 to 20 g, such as glucose tablets or a small glass of non-diet fruit juice.
+Q: How many times can hypo treatment be repeated before seeking help? | Up to three times.
+Q: What follows fast-acting carbohydrate once a hypo resolves? | A longer-acting carbohydrate, such as a sandwich or the next meal.
+Q: What is given for hypoglycaemia in someone who can't swallow, if available and trained? | Glucagon by injection, with a 999 call.
+Q: What is hypoglycaemia unawareness? | Loss of warning symptoms of hypoglycaemia, raising the risk of severe episodes.
+Q: Name four causes of hypoglycaemia to look for. | Missed meals, exercise, alcohol, dose errors, kidney decline and weight loss.
+Q: How long should a driver wait after a hypo before driving? | At least 45 minutes after glucose returns to normal.
+Q: Why not give a sugary drink to someone unconscious from a hypo? | It risks choking; nothing should be given by mouth.
 
 ## Diabetes in special situations
 S: Illness, steroids, pregnancy, older age, fasting and surgery all change glucose control and medicine needs. Planning ahead prevents hypoglycaemia, ketoacidosis and other harm.
@@ -170,6 +220,16 @@ SRC: International Diabetes Federation and DAR International Alliance, Diabetes 
 M2#pharmacy-u09-06-q1@1: Which situation raises glucose, often later in the day? | A morning corticosteroid dose | Exercise | Fasting | Missing a meal | Taking metformin | Steroids increase glucose, peaking hours after the dose.
 M2#pharmacy-u09-06-q2@2: What should a person with diabetes planning to fast during Ramadan do? | Have a risk assessment and plan medicine changes | Stop all diabetes medicines | Fast without changes | Double their sulfonylurea | Avoid all fluids for weeks | Pre-Ramadan assessment reduces hypo and hyperglycaemia risks.
 M2#pharmacy-u09-06-q3@1: Which medicine is commonly continued or used in pregnancy with diabetes? | Insulin | Atorvastatin | Ramipril | Gliclazide | Dapagliflozin | Insulin (and metformin) are used; statins and ACE inhibitors are reviewed.
+Q: What is steroid-induced hyperglycaemia? | Raised glucose caused by corticosteroids, typically in the afternoon and evening after a morning dose.
+Q: Which medicines are stopped or reviewed when planning pregnancy with diabetes? | Statins are stopped and ACE inhibitors reviewed.
+Q: How is diabetes treatment adjusted for older and frail people? | Relaxed targets, avoiding hypoglycaemia and simpler regimens.
+Q: Which medicines especially need adjusting for Ramadan fasting? | Sulfonylureas and insulin.
+Q: When should someone with diabetes break a Ramadan fast? | If they have hypoglycaemia or high glucose.
+Q: What guides diabetes medicine changes around surgery? | Local perioperative guidance on which medicines to omit or adjust.
+Q: Why communicate diabetes medicine changes clearly at transfers of care? | Changes for special situations can otherwise be missed or continued wrongly.
+Q: What advice should go with starting prednisolone in someone with diabetes? | Monitor glucose more closely and adjust treatment during the course.
+Q: Which glucose-lowering drugs are used in pregnancy? | Metformin and insulin.
+Q: Who should be involved in planning diabetes care in special situations? | The person and their diabetes specialist team.
 
 ## Diabetic emergencies
 S: Diabetic ketoacidosis (DKA) and hyperosmolar hyperglycaemic state (HHS) are life-threatening emergencies. Recognising them early and getting the person to hospital saves lives.
@@ -198,6 +258,16 @@ SRC: Joint British Diabetes Societies, The management of the hyperosmolar hyperg
 M1#pharmacy-u09-07-q1@2: Which drug class can cause DKA with near-normal glucose? | SGLT2 inhibitors | Statins | Proton pump inhibitors | Beta-blockers | Antihistamines | Euglycaemic DKA is a recognised SGLT2 inhibitor risk.
 M2#pharmacy-u09-07-q2@1: What is the main fluid problem in HHS? | Severe dehydration | Fluid overload | Low sodium only | Pulmonary oedema | Excess saliva | Very high glucose causes osmotic diuresis and dehydration.
 M3#pharmacy-u09-07-q3@2: Someone with type 1 diabetes has vomiting and ketones of 3.5 mmol/L. What's right? | Urgent hospital assessment | Rest and drink water at home | Stop their insulin | Take an antiemetic and wait | Book a GP appointment next week | High ketones with vomiting suggest DKA, which needs urgent hospital treatment.
+Q: What causes DKA? | Insulin deficiency.
+Q: What is HHS? | An emergency with very high glucose and dehydration without significant ketoacidosis, usually in type 2 diabetes.
+Q: What is the hospital treatment for DKA? | IV fluids, a fixed-rate IV insulin infusion, potassium replacement, continuing long-acting insulin and treating the cause.
+Q: What are common triggers for DKA? | Infection or missed insulin.
+Q: How quickly does HHS develop? | Over days.
+Q: Why is VTE prophylaxis given in HHS? | HHS carries a high risk of thrombosis.
+Q: What smell may be noticed in DKA? | A ketone smell on the breath.
+Q: How is HHS treated? | Careful IV fluid replacement, insulin as needed and VTE prophylaxis.
+Q: How can pharmacists help prevent diabetic emergencies? | Teach sick day rules and ketone testing and review medicines that raise risk.
+Q: Why is it wrong to send someone with type 1 diabetes, vomiting and high ketones home to rest? | They may have DKA, which needs urgent hospital care.
 
 ## Thyroid disorders
 S: Underactive and overactive thyroid disease are common and treatable. Pharmacists support correct administration, monitoring and recognition of serious adverse effects such as agranulocytosis with antithyroid drugs.
@@ -227,6 +297,16 @@ SRC: MHRA, Drug Safety Update: carbimazole, increased risk of congenital malform
 M1#pharmacy-u09-08-q1@1: Which test monitors levothyroxine treatment? | TSH | HbA1c | INR | Creatine kinase | Serum lithium | TSH reflects whether replacement is adequate.
 M2#pharmacy-u09-08-q2@2: Someone on carbimazole has a sore throat and fever. What should happen? | Urgent blood count to check for agranulocytosis | Lozenges and rest | An antibiotic from the pharmacy | Double the carbimazole | Wait a week | Agranulocytosis is a rare but serious risk.
 M2#pharmacy-u09-08-q3@1: How should levothyroxine be taken? | On an empty stomach, before breakfast | With a calcium supplement | With a large meal | Only at bedtime with milk | With iron tablets | Food, calcium and iron reduce absorption.
+Q: How should levothyroxine be started in older people or those with heart disease? | At a lower dose.
+Q: How often is TSH checked once levothyroxine is stable? | At least yearly.
+Q: How long before breakfast or caffeine should levothyroxine be taken? | About 30 to 60 minutes.
+Q: Which products should be separated from levothyroxine by several hours? | Calcium, iron and antacids.
+Q: What are signs of levothyroxine over-replacement? | Palpitations, tremor, weight loss and insomnia.
+Q: When is propylthiouracil used instead of carbimazole? | In early pregnancy, under specialist care.
+Q: What are alternatives to antithyroid drugs for hyperthyroidism? | Radioiodine and surgery.
+Q: What relieves tremor and palpitations in hyperthyroidism? | Beta-blockers.
+Q: Why is contraception advised with carbimazole? | It can harm the fetus.
+Q: Which antiarrhythmic can cause both hypo- and hyperthyroidism? | Amiodarone.
 
 ## Adrenal insufficiency and corticosteroids
 S: Adrenal insufficiency, whether from Addison's disease or long-term steroid use, can lead to a life-threatening adrenal crisis. Steroid cards, sick day rules and emergency hydrocortisone save lives.
@@ -255,6 +335,16 @@ SRC: Society for Endocrinology, Adrenal crisis: emergency management guidance | 
 M1#pharmacy-u09-09-q1@2: What should someone with Addison's disease do during a feverish illness? | Follow sick day rules and increase hydrocortisone as advised | Stop hydrocortisone | Take paracetamol only | Halve the fludrocortisone | Nothing different | Illness increases the body's cortisol needs, so sick day rules increase the dose to prevent adrenal crisis.
 M2#pharmacy-u09-09-q2@1: Which card should people on long-term oral steroids carry? | A steroid emergency card | An anticoagulant alert card | An insulin passport | A lithium record book | A methotrexate booklet | The card alerts clinicians to the risk of adrenal crisis.
 M2#pharmacy-u09-09-q3@2: What are the features of adrenal crisis? | Vomiting, low blood pressure and collapse | High blood pressure and headache only | Rash and itch | Weight gain | Increased appetite | Adrenal crisis is a life-threatening emergency.
+Q: What is adrenal crisis? | A life-threatening emergency from cortisol deficiency, with vomiting, low blood pressure and collapse.
+Q: What causes secondary adrenal suppression? | Long-term oral steroids, and some high-dose inhaled, topical or injected steroids.
+Q: How is hydrocortisone usually given in Addison's disease? | In divided doses.
+Q: By how much is the steroid dose often increased on sick days? | It is often doubled, as advised.
+Q: What emergency medicine do people at risk of adrenal crisis carry? | Injectable hydrocortisone.
+Q: How should long-term steroids be stopped? | Tapered under medical advice, never stopped suddenly.
+Q: Who decides which people need a steroid emergency card? | National guidance, including people on longer-term oral steroids above set thresholds.
+Q: What should be done for anyone unwell on long-term steroids? | Refer them for prompt assessment.
+Q: Who should someone on long-term steroids tell about them? | All health professionals.
+Q: What is the danger of a vomiting person on long-term prednisolone missing doses? | It risks adrenal crisis.
 
 ## Osteoporosis
 S: Osteoporosis makes bones fragile, so fractures happen after minor falls. Treatment reduces fracture risk, but bisphosphonates must be taken correctly and reviewed.
@@ -285,6 +375,16 @@ SRC: MHRA, Drug Safety Update: denosumab, increased risk of multiple vertebral f
 M1#pharmacy-u09-10-q1@1: How should alendronic acid be taken? | On an empty stomach with plain water | With breakfast and coffee | At bedtime lying down | With a calcium tablet | With orange juice | Food, drinks and calcium prevent absorption.
 M2#pharmacy-u09-10-q2@2: Why must denosumab injections not be delayed? | Rebound fractures can occur | It causes kidney failure | It interacts with all foods | It loses potency in the fridge | It increases blood sugar | Stopping or delaying causes rapid bone loss and vertebral fractures.
 M2#pharmacy-u09-10-q3@1: Which rare adverse effect needs a dental check before bisphosphonates? | Osteonecrosis of the jaw | Tooth discolouration only | Gum hypertrophy | Mouth ulcers from thrush | Dry mouth | Dental work during treatment can increase the risk.
+Q: What is a fragility fracture? | A fracture from a fall from standing height or less.
+Q: What does FRAX estimate? | The 10-year probability of major osteoporotic and hip fracture.
+Q: Which scan measures bone density? | DXA.
+Q: When is IV zoledronic acid used? | Yearly, if oral bisphosphonates aren't suitable.
+Q: How often is denosumab given? | By injection every 6 months.
+Q: Which anabolic osteoporosis treatments are used for very high risk? | Teriparatide and romosozumab, under specialist care.
+Q: Which symptoms on a bisphosphonate suggest oesophageal irritation? | Swallowing difficulty or chest pain.
+Q: What symptom on a bisphosphonate may signal atypical femoral fracture? | Thigh or groin pain.
+Q: When is zoledronic acid reviewed for a drug holiday? | After about 3 years.
+Q: How do bisphosphonates work? | They inhibit osteoclast-mediated bone resorption.
 
 ## Contraception
 S: Pharmacists supply, advise on and increasingly provide contraception, including emergency contraception. Safe practice uses the UK Medical Eligibility Criteria and accurate advice on missed pills and interactions.
@@ -317,6 +417,16 @@ SRC: Faculty of Sexual and Reproductive Healthcare, Emergency contraception | gu
 M1#pharmacy-u09-11-q1@1: What is the most effective form of emergency contraception? | A copper IUD | Levonorgestrel | Ulipristal | Doubling a combined pill | A condom after the event | The copper IUD is the most effective method.
 M2#pharmacy-u09-11-q2@2: Which condition makes combined hormonal contraception UKMEC 4? | Migraine with aura | Acne | Heavy periods | Age 25 | Previous ectopic pregnancy only | Migraine with aura increases stroke risk with oestrogen.
 M3#pharmacy-u09-11-q3@1: A woman taking carbamazepine needs contraception. What's best? | A method unaffected by enzyme inducers, such as an IUD | A combined pill at standard dose | A desogestrel pill | A contraceptive patch | Condoms are never needed | Enzyme inducers reduce hormonal contraceptive levels.
+Q: What is UKMEC? | The UK Medical Eligibility Criteria, giving categories 1 to 4 for each contraceptive method and condition.
+Q: Why is LARC the most effective contraception? | It doesn't depend on daily use.
+Q: What are the forms of LARC? | Implants, intrauterine devices or systems, and injections.
+Q: What extra risks does combined hormonal contraception carry? | A small increased risk of VTE and stroke.
+Q: What is the missed-pill window for desogestrel? | 12 hours.
+Q: What is the missed-pill window for traditional progestogen-only pills? | 3 hours.
+Q: What long-term concern applies to the contraceptive injection? | It may reduce bone density with long use.
+Q: Up to when can levonorgestrel emergency contraception be used? | Up to 72 hours after unprotected sex.
+Q: What can reduce the effectiveness of ulipristal acetate? | Recent progestogen use.
+Q: Do most antibiotics affect hormonal contraception? | No; most don't, unlike enzyme inducers such as rifampicin.
 
 ## Menopause and hormone replacement therapy
 S: Menopause symptoms affect many people's health and work. Hormone replacement therapy (HRT) is the most effective treatment for many, and individualised advice on benefits and risks helps people choose.
@@ -345,6 +455,16 @@ SRC: MHRA, Drug Safety Update: hormone replacement therapy, further information 
 M1#pharmacy-u09-12-q1@1: Who needs a progestogen as part of HRT? | People with a uterus | People without a uterus | Everyone over 60 | Only smokers | People using vaginal oestrogen only | Unopposed oestrogen increases endometrial cancer risk.
 M2#pharmacy-u09-12-q2@2: Which HRT route is preferred for someone with a higher VTE risk? | Transdermal oestrogen | Oral oestrogen | Oral tibolone | High-dose oral oestrogen | Injected oestrogen | Transdermal oestrogen doesn't increase VTE risk.
 M2#pharmacy-u09-12-q3@1: Which treatment suits vaginal dryness alone? | Vaginal oestrogen | Systemic combined HRT always | An antihistamine | An SSRI | A decongestant | Local oestrogen treats genitourinary symptoms with minimal systemic absorption.
+Q: Which menopause symptoms does HRT relieve? | Hot flushes, night sweats, and mood and sleep problems.
+Q: What is genitourinary syndrome of menopause? | Vaginal dryness, discomfort and urinary symptoms from low oestrogen.
+Q: Name three forms of transdermal oestrogen. | Patch, gel and spray.
+Q: Can vaginal oestrogen be used long term? | Yes; it is very low risk.
+Q: How does breast cancer risk change with combined HRT? | It rises slightly with duration and falls after stopping.
+Q: Does oestrogen-only HRT increase breast cancer risk? | Little or not at all.
+Q: How often should HRT be reviewed? | At least annually.
+Q: Name a non-hormonal option for menopause symptoms. | Cognitive behavioural therapy, or some medicines where HRT isn't suitable.
+Q: What helps reduce HRT prescription costs in England? | An HRT prescription prepayment certificate.
+Q: How can a progestogen be given in combined HRT? | Orally or by an intrauterine system.
 
 ## Obesity and weight management
 S: Obesity increases the risk of type 2 diabetes, heart disease, some cancers and joint problems. New medicines produce substantial weight loss, but need specialist pathways, safe supply and support for lifestyle change.
@@ -373,4 +493,14 @@ SRC: General Pharmaceutical Council, Guidance for registered pharmacies providin
 M1#pharmacy-u09-13-q1@1: How is BMI calculated? | Weight in kg divided by height in metres squared | Height divided by weight | Waist divided by hip | Weight times height | Weight minus height | BMI is weight in kilograms divided by the square of height in metres.
 M2#pharmacy-u09-13-q2@2: Why are lower BMI thresholds used for some ethnic groups? | Health risks occur at lower BMI | Their scales are different | To reduce prescribing | Because BMI is irrelevant | They need higher doses | Risks of diabetes and cardiovascular disease rise at lower BMI in some groups.
 M2#pharmacy-u09-13-q3@1: Which adverse effects are common with semaglutide? | Nausea, vomiting and constipation | Hair growth | Low blood pressure only | Hearing loss | Bruising | GI effects such as nausea, vomiting and constipation are the commonest, especially when doses increase.
+Q: What BMI defines obesity in general? | 30 or above, with lower thresholds for some ethnic groups.
+Q: Which measures assess obesity besides BMI? | Waist-to-height ratio.
+Q: How does orlistat work? | It reduces fat absorption.
+Q: What happens with orlistat if the diet is high in fat? | GI side effects.
+Q: Which absorption can orlistat reduce? | Fat-soluble vitamins and some medicines.
+Q: Name two GLP-1-based weight-loss medicines. | Semaglutide and tirzepatide.
+Q: Which serious risks come with semaglutide and tirzepatide? | Gallbladder disease and pancreatitis.
+Q: What must online pharmacies supplying weight-loss medicines follow? | GPhC guidance, including identity and clinical checks.
+Q: How can GLP-1 medicines affect oral contraception? | They can reduce its effectiveness in some situations, such as with vomiting.
+Q: What surgical option exists for obesity? | Bariatric surgery for selected people.
 `;
