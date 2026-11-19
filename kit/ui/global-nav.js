@@ -64,6 +64,7 @@ const siteHits = (raw, site) => {
 function actions(site) {
   const app = site ? "app.html" : "/app.html";
   return [
+    { type: "action", t: "Explore every course", k: "Chapters, topics and lessons, with your progress", href: "/explore.html" },
     { type: "action", t: "Open the study app", k: "Your notes, flashcards and plan", href: app },
     { type: "action", t: "Review flashcards", k: "The cards that are due", href: `${app}#/study` },
     { type: "action", t: "Your Journey", k: "Level, quests and streak", href: "/journey.html" },

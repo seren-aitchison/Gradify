@@ -1429,3 +1429,18 @@ html.cx-focus .co.co-reading .co-body, html.cx-focus .co.co-reading .co-body.has
 html[data-motion="reduce"] .co-main.cx-enter { animation: none; }
 @media (max-width: 760px) { .cx-secname, .cx-lact .cx-save:not([data-tone="warn"]), .cx-lact [data-revnotes] { display: none; } }
 @media print { .cx-seclink, .cx-secname, .cx-splitpane { display: none !important; } }
+/* explore related topics (a drawer from a lesson) */
+.cx-relsec { margin: 4px 0 18px; }
+.cx-relsec h3 { margin: 0; font-size: 15px; }
+.cx-relsec > p { margin: 2px 0 8px; font-size: 13px; color: var(--mute); }
+.cx-relsec ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; }
+.cx-rel { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 8px; align-items: start; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--line); }
+.cx-rel > div:first-child { display: grid; gap: 2px; min-width: 0; }
+.cx-rel a { display: flex; align-items: center; gap: 8px; color: var(--fg); text-decoration: none; }
+.cx-rel a:hover b { text-decoration: underline; }
+.cx-rel b { font-size: 14.5px; font-weight: 600; }
+.cx-rel small { font-size: 12px; color: var(--mute); }
+.cx-peek { grid-column: 1 / -1; padding-top: 6px; border-top: 1px solid var(--line); font-size: 13.5px; line-height: 1.5; }
+.cx-peek p { margin: 4px 0; } .cx-peek ul { margin: 4px 0; padding-left: 18px; }
+.cx-peekterms { display: flex; flex-wrap: wrap; gap: 6px; } .cx-peekterms span { padding: 2px 8px; border-radius: 999px; background: rgba(var(--ink-rgb), .07); font-size: 12px; }
+.cx-relfoot { margin: 6px 0 0; }

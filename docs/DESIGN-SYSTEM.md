@@ -46,6 +46,8 @@ The aim: a learner never has to ask "Where do I find that?", "Where was I?" or "
 | Remembered preferences | `kit/ui/prefs.js` | `pref(scope, key)` / `setPref(scope, key, value)`: views, filters, tabs, open sections, outline and split screen |
 | Motion and long pages | `kit/ui/motion.js` | `transition()`, `jumpTo()`, `mountToTop()`, `copyLink()` |
 | GradifyContinueLearning, Gradify-wide search | `kit/ui/global-nav.js` | `mountGlobalNav()` (the palette over every course and lesson) and `mountYourLearning()` (pins + course cards) for the homepage and subject sites |
+| Explore | `kit/ui/explore.js` | `mountExplore(el)` on `explore.html`: every course as site → course → chapter → topic → lesson, with topic preview cards (progress from evidence, estimated time, builds on / leads to), stage filters, remembered chapters and search |
+| Feedback moments | `kit/ui/feel.js` | `feel("correct" \| "wrong" \| "complete" \| "levelup" \| "achievement" \| "select")`: a haptic and an optional short sound, set in the Aa panel (Sounds off by default, Haptics on) |
 | Storage helpers | `kit/ui/store.js` | Safe reads and writes (private windows, blocked storage), `esc`, and the stylesheet loader |
 | Everything at once | `kit/ui/index.js` | Re-exports the above |
 
@@ -97,6 +99,14 @@ Pages need no extra `<link>`: the first component used loads `kit/styles/ui.css`
 - Revision notes (**R**): what you can now do, the key ideas, key terms and the lesson's sections, made from the
   lesson's own notes.
 
+**Exploring**
+- `explore.html` (linked from the homepage, Journey and the search's quick actions): browse by stage of life, profession or
+  subject, open a course's chapters and topics, see what each topic builds on and leads to (where the course has a
+  concept graph), start or revise any topic. Nothing is locked.
+- *Explore related topics* in every lesson (**E**, and in "What would you like to do next?"): what the lesson builds on,
+  lessons named after its key terms and the rest of its topic, each previewable in the drawer. Opening one offers a
+  *Back to* link to the exact place in the lesson you left.
+
 **Premium**
 - Split screen (**S**, 1100px and wider): notes on the left; questions, flashcards, the AI tutor and the lesson's
   diagrams on the right, in tabs. The sections move across with their state (answers, the tutor conversation).
@@ -111,7 +121,7 @@ Pages need no extra `<link>`: the first component used loads `kit/styles/ui.css`
 | ? | All shortcuts |
 | ← → | Previous / next lesson |
 | N | The recommended next step |
-| B, F, S, R, O, U | Bookmark, focus mode, split screen, revision notes, outline, up to the unit |
+| B, F, S, R, E, O, U | Bookmark, focus mode, split screen, revision notes, explore related topics, outline, up to the unit |
 | G then H / S / R / P / E / B | Course home, Syllabus, Revise, Progress, Exams, back to where I was |
 | Esc | Close a menu, dialog or the search |
 

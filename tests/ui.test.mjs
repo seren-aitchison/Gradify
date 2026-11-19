@@ -151,3 +151,26 @@ test("one implementation: pages use the shared toast and palette, not copies", (
   const doc = readFileSync("docs/DESIGN-SYSTEM.md", "utf8");
   for (const f of readdirSync("kit/ui")) assert.ok(doc.includes(`kit/ui/${f}`), `docs/DESIGN-SYSTEM.md describes kit/ui/${f}`);
 });
+
+test("Explore: a course as chapters → topics → lessons, with progress, time and what each topic builds on", async () => {
+  const { courseTree, courseProgress } = await import("../kit/ui/explore.js");
+  const c = { s: "maths", U: "School", T: ["Foundations", "Calculus"], pre: { "u07/Differentiation": ["u07/Limits"] },
+    units: [["u07", 7, "Calculus", [["u07-01", "Limits", 0], ["u07-02", "One-sided limits", 0], ["u07-03", "Derivatives", 1]], ["Limits", "Differentiation"], 1, "Rates of change."]] };
+  const prog = courseProgress({ done: { "u07-01": 1, "u07-02": 2 } });
+  const [u] = courseTree(c, prog);
+  assert.equal(u.stage, "Calculus"); assert.equal(u.blurb, "Rates of change.");
+  assert.deepEqual(u.topics.map((t) => [t.name, t.lessons.length, t.done]), [["Limits", 2, 2], ["Differentiation", 1, 0]]);
+  assert.deepEqual(u.topics[1].pre, ["u07/Limits"]);
+  assert.deepEqual(u.topics[0].next, ["u07/Differentiation"], "what a topic leads to is the reverse of what builds on it");
+  assert.equal(u.done, 2); assert.equal(Math.round(u.pct * 100), 67);
+  assert.equal(u.mins, 3 * 8, "8 minutes a lesson until the learner's own pace is known");
+  assert.equal(u.topics[1].lessons[0].st, "new", "opening Explore marks nothing as studied");
+});
+
+test("feedback moments: every one has a haptic; sounds and haptics are learner settings", async () => {
+  const { MOMENTS } = await import("../kit/ui/feel.js");
+  for (const k of ["select", "correct", "wrong", "complete", "levelup", "achievement"]) assert.ok(MOMENTS[k]?.haptic, k);
+  const { SETTINGS } = await import("../kit/core/access-panel.js");
+  assert.equal(SETTINGS.find((s) => s.k === "sound").opts[0][1], "Off", "sounds are off unless turned on");
+  assert.equal(SETTINGS.find((s) => s.k === "haptics").opts[0][1], "On");
+});

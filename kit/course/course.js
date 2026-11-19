@@ -61,8 +61,9 @@ import { arriveHere, rememberScroll, backPlace, trail, pin, pinned, pins, setPin
 import { offerBack, hideBack, restoreScroll } from "../ui/wayfinding.js";
 import { resourceSwitcher, wireActions } from "../ui/resources.js";
 import { pref, setPref } from "../ui/prefs.js";
-import { openModal } from "../ui/overlay.js";
+import { openModal, openDrawer } from "../ui/overlay.js";
 import { tabsHtml, wireTabs } from "../ui/disclosure.js";
+import { feel } from "../ui/feel.js";
 
 const DAY = 864e5;
 const XP = { lesson: 10, check: 5, chest: 15, quiz: 50, perfect: 20, review: 2, problem: 5, weekly: 100 };
@@ -261,6 +262,7 @@ export function mountCourse(root, cfg) {
   function record(it, context, contextId, res, meta = {}) {
     const a = makeAttempt({ site: cfg.site, subject: cfg.slug, context, contextId, Q: it.Q, key: it.key, version: it.v, lesson: it.l?.id, module: it.l?.module, unit: it.l?.unit.id, response: meta.response, result: res, meta });
     S.attempts.push(a); if (S.attempts.length > 2000) S.attempts.splice(0, S.attempts.length - 2000);
+    if (a.question?.type !== "card") feel(a.correct ? "correct" : "wrong");
     queueAttempt(S, a.id); save();
     flushOutbox();
     return a;
@@ -342,8 +344,10 @@ export function mountCourse(root, cfg) {
     pop(`+${xp} XP`);
     store().then((s) => s.logActivity({ site: cfg.site, kind: `${cfg.slug}-${k}`, xp, detail: detail || id })).catch(() => {});
     const lvl = levelOf(totalXp()).n;
+    if (lvl > before.lvl) feel("levelup");
+    else if (k === "lesson" || k === "quiz") feel("complete");
     if (lvl > before.lvl) celebrate(`Level ${lvl}`, `You reached level ${lvl} in ${cfg.name}.`);
-    for (const b of earned()) if (!before.badges.has(b.id)) toast(`${ic("star")} Badge earned: <b>${b.name}</b>`);
+    for (const b of earned()) if (!before.badges.has(b.id)) feel("achievement"), toast(`${ic("star")} Badge earned: <b>${b.name}</b>`);
     if (!before.goal && todayXp() >= S.goal) toast(`${ic("target")} Daily goal reached: ${S.goal} XP`);
     // the weekly challenge pays out once
     const c = challenge(), wk = String(weekStart());
@@ -621,6 +625,7 @@ export function mountCourse(root, cfg) {
     { keys: "b", label: "Bookmark the lesson", group: "In a lesson", when: inLesson, run: () => toggleMark(curLesson.id) },
     { keys: "f", label: "Focus mode", group: "In a lesson", when: inLesson, run: () => setFocus(!focusOn()) },
     { keys: "s", label: "Split screen: notes beside questions", group: "In a lesson", when: () => inLesson() && splitFits(), run: () => setSplit(!splitOn()) },
+    { keys: "e", label: "Explore related topics", group: "In a lesson", when: inLesson, run: () => relatedTopics() },
     { keys: "r", label: "Revision notes for the lesson", group: "In a lesson", when: () => inLesson() && Boolean(curN), run: () => revisionNotes() },
     { keys: "o", label: "Show or hide the course outline", group: "In a lesson", when: () => !treeEl.hidden, run: toggleOutline },
     { keys: "u", label: `Up to the ${u1}`, group: "In a lesson", when: inLesson, run: () => go(`learn/${curLesson.unit.id}`) },
@@ -1215,6 +1220,38 @@ export function mountCourse(root, cfg) {
     m.box.addEventListener("click", (e) => { const b = e.target.closest("[data-rnjump]"); if (!b) return; m.close(); setTimeout(() => jumpTo(document.getElementById(b.dataset.rnjump)), 200); });
   }
 
+  // related topics: what this lesson builds on, the rest of its topic, and lessons named after its own key terms,
+  // each previewable in place; opening one keeps a way back to the exact spot in this lesson (kit/ui/wayfinding.js)
+  let returnTo = null;
+  function relatedTopics() {
+    const l = curLesson, N = curN; if (!l) return;
+    const seen = new Set([l.id]), take = (ls) => ls.filter((x) => x && !seen.has(x.id) && seen.add(x.id));
+    const pre = graph ? take(prerequisitesOfLesson(graph, l.id).modules.map((k) => graph.nodes.get(k)).filter(Boolean).sort((a, b) => a.order - b.order).map((n) => byId[n.lessons[0]])) : [];
+    const g = groupsOf(l.unit).find((x) => x.lessons.some((y) => y.id === l.id));
+    const sameTopic = take(g?.lessons || []).slice(0, 8);
+    const terms = (N?.terms || []).map(([t]) => norm(plain(t))).filter((t) => t.length > 3);
+    const byTerm = terms.length ? take(lessons.filter((x) => terms.some((t) => norm(x.title).includes(t)))).slice(0, 8) : [];
+    const row = (x) => `<li class="cx-rel"><div><a href="#/lesson/${x.id}" data-relgo="${x.id}">${dot(statusOf(x.id))}<b>${esc(x.title)}</b></a><small>${U} ${x.unit.n}: ${esc(x.unit.title)}${x.module ? ` · ${esc(x.module)}` : ""}</small></div><button type="button" class="gx-link" data-peek="${x.id}" aria-expanded="false">Preview</button><div class="cx-peek" hidden></div></li>`;
+    const sec = (title, sub, xs) => xs.length ? `<section class="cx-relsec"><h3>${title}</h3>${sub ? `<p>${sub}</p>` : ""}<ul>${xs.map(row).join("")}</ul></section>` : "";
+    const body = [
+      sec("Builds on", "Ideas this lesson relies on.", pre),
+      sec("Connected by its key terms", "Lessons about the terms this one uses.", byTerm),
+      sec(`The rest of ${g?.title ? esc(g.title) : "this topic"}`, "", sameTopic),
+    ].join("") || emptyState({ icon: "link", title: "Nothing linked yet", body: "This lesson doesn't name related lessons. The whole course is on Explore.", compact: true });
+    const d = openDrawer({ title: "Explore related topics", body: `${body}<p class="cx-relfoot"><a class="btn btn-ghost lg btn-sm" href="/explore.html#/course/${esc(cfg.slug)}/${esc(l.unit.id)}"><span>See ${esc(U)} ${l.unit.n} on Explore</span></a></p><p class="gx-note">Opening one keeps your place here: a “Back to” link returns to this exact spot.</p>` });
+    d.box.addEventListener("click", async (e) => {
+      const go = e.target.closest("[data-relgo]");
+      if (go) { returnTo = { href: resumeHref(l), title: l.title }; d.close(); return; }
+      const b = e.target.closest("[data-peek]"); if (!b) return;
+      const box = b.parentElement.querySelector(".cx-peek"), open = box.hidden;
+      box.hidden = !open; b.setAttribute("aria-expanded", String(open)); b.textContent = open ? "Hide" : "Preview";
+      if (!open || box.dataset.done) return;
+      box.innerHTML = skeleton("text", 3);
+      const M = await notesFor(byId[b.dataset.peek]).catch(() => null); box.dataset.done = "1";
+      box.innerHTML = M ? `${M.lead ? `<p>${inline(M.lead)}</p>` : ""}${M.summary.length ? `<ul>${M.summary.slice(0, 3).map((x) => `<li>${inline(x)}</li>`).join("")}</ul>` : ""}${M.terms.length ? `<p class="cx-peekterms">${M.terms.slice(0, 4).map(([t]) => `<span>${inline(t)}</span>`).join("")}</p>` : ""}` : `<p class="gx-note">The notes for this lesson aren't written yet.</p>`;
+    });
+  }
+
   // split screen (wide screens): the notes on the left; questions, flashcards, the AI tutor and the diagrams on the
   // right, in tabs. The sections themselves move across (answers and the tutor keep their state) and move back after.
   const splitFits = () => matchMedia("(min-width: 1100px)").matches;
@@ -1282,6 +1319,7 @@ export function mountCourse(root, cfg) {
       N.cards.length ? { icon: "cards", label: "Flashcards", desc: `Test your recall: ${l.title}`, meta: `${N.cards.length} card${N.cards.length > 1 ? "s" : ""}`, run: () => main.querySelector("[data-cards]")?.click() } : null,
       nQ ? { icon: "target", label: "Exam-style questions", desc: "Apply what you've just learned.", meta: `${nQ} here`, href: "#co-check", jump: "co-check", primary: prim === "check" } : null,
       { icon: "bolt", label: "Target test", desc: `Five minutes on ${g?.title || "this lesson"}, timed.`, meta: "5 min", href: `#/target/${encodeTest({ minutes: 5, scope: "lessons", lessons: (g?.lessons || [l]).map((x) => x.id) })}` },
+      { icon: "link", label: "Explore related topics", desc: "What it builds on and connects to, without losing your place.", run: () => relatedTopics() },
       { icon: "ai", label: "Ask AI to explain", desc: "Another explanation, in different words.", run: () => { const t = main.querySelector(".co-tutor"); if (!t) return; if (t.closest(".cx-splitpane")) splitTabs?.select("tutor"); jumpTo(t); setTimeout(() => t.querySelector("textarea, input")?.focus({ preventScroll: true }), 350); } },
       quizReady || quizNext ? { icon: "trophy", label: `${U} ${u.n} quiz`, desc: `Lock in ${u.title}.`, meta: S.quiz[u.id] ? `best ${pc(S.quiz[u.id].best)}` : `+${XP.quiz} XP`, href: `#/quiz/${u.id}`, primary: prim === "quiz" } : null,
       nextL && !quizNext ? { icon: "play", label: "Next lesson", desc: nextL.title, href: `#/lesson/${nextL.id}`, primary: prim === "next" } : null,
@@ -2326,6 +2364,9 @@ export function mountCourse(root, cfg) {
       const from = backPlace({ kinds: ["lesson"], within: 30 * 60e3 });
       if (from && trail().at(-2)?.href === from.href) offerBack(from, { label: "Back to" });
     }
+    // came from "Explore related topics": the way back to the exact spot in the lesson you left
+    if (returnTo && view === "lesson" && !location.hash.startsWith(returnTo.href.split("/").slice(0, 3).join("/"))) offerBack(returnTo, { label: "Back to", ms: 30000 });
+    returnTo = null;
     // a subtle entrance, so moving between views feels continuous rather than a jump cut
     main.classList.remove("cx-enter"); void main.offsetWidth; main.classList.add("cx-enter");
   }
