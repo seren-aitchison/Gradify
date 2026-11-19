@@ -28,7 +28,7 @@ Contents:
 
 | The specification says | What the repository shows |
 |---|---|
-| "The existing test suite previously passed 413 tests" | `main` has **889** tests passing (`npm test`, `node:test`), and #116 has 896. They include real-PostgreSQL tests through `@electric-sql/pglite` (`scripts/pg-rehearsal.mjs`) and Playwright checks |
+| "The existing test suite previously passed 413 tests" | `main` has **875** tests passing (`npm test`, `node:test`), and Notes (#116) brings it to 896. They include real-PostgreSQL tests through `@electric-sql/pglite` (`scripts/pg-rehearsal.mjs`) and Playwright checks |
 | "Supabase is the connected backend" | The code is ready for Supabase, but **the live site isn't connected to it**: `gradify.config.js` has an empty URL and key on every branch (`docs/BACKEND-STATUS.md`). Today every learner's data is in their own browser. **Classroom can't work without accounts**, because it's multi-user by nature, so connecting the backend is a prerequisite (§9) |
 | The framework is uncertain (Next.js, static…) | **Static ES modules, no framework, no build step**, served by GitHub Pages from `main` (§2.1) |
 | `study-pack` and `course-tutor` not yet deployed | Still unverified (`docs/BACKEND-STATUS.md`, `docs/AI-TUTOR.md`). The code and tests are in the repository |
@@ -358,7 +358,7 @@ Every test below runs in the existing `node --test` + pglite harness. Each is a 
   - `submit_answer` marks on the server and ignores any score the client sends.
 - **Audit:** every RPC writes exactly one audit row; the audit log can't be changed by any client.
 - **Notifications:** one event sends one notification (dedupe).
-- **Regression:** the existing 889/896 tests keep passing at every stage.
+- **Regression:** the existing tests (875 on `main`, 896 with #116) keep passing at every stage.
 - **End to end (Playwright):** the specification's 15-step scenario (§23), run against a local Supabase.
 
 ## 9. Decisions needed before Stage 1
