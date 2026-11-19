@@ -1,5 +1,6 @@
 // Gradify app: bring your notes, get a checked study pack, revise it, and watch your progress.
 // Every screen reads and writes the same store, so they always agree.
+import { toast as uiToast } from "../ui/feedback.js";
 import { GROUPS } from "../core/sites.js";
 import { icon } from "../core/icons.js";
 import { tile, ink } from "../core/colour.js";
@@ -72,15 +73,8 @@ let ACCESS = { plan: "free", enforced: false, has: () => true };
 const INTEL_WIDGETS = new Set(["s-ready", "w-forecast", "w-tell", "w-opps", "w-debt", "b-exam"]);
 
 // ---------- Toast ----------
-let toastTimer;
-function toast(msg) {
-  const t = $("#toast");
-  t.innerHTML = msg;
-  t.hidden = false;
-  t.classList.remove("show"); void t.offsetWidth; t.classList.add("show");
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => { t.hidden = true; }, 4500);
-}
+// the shared toast (kit/ui/feedback.js): the same on every Gradify page; opts.undo adds Undo
+function toast(msg, opts = {}) { return uiToast({ html: msg }, { timeout: 4500, ...opts }); }
 
 // ---------- Derived numbers (one place, used by every screen) ----------
 async function stats() {
