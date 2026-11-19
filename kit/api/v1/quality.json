@@ -584,17 +584,17 @@
    "slug": "physics",
    "name": "Physics",
    "lessons": 1308,
-   "overall": 58,
+   "overall": 59,
    "dims": {
-    "accuracy": 22,
-    "completeness": 24,
+    "accuracy": 23,
+    "completeness": 25,
     "clarity": 87,
-    "progression": 27,
+    "progression": 29,
     "application": 86,
     "assessment": 67,
     "accessibility": 85,
     "engagement": 84,
-    "retention": 41
+    "retention": 42
    },
    "serves": [
     {

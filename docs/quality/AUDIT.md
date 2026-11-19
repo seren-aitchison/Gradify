@@ -75,7 +75,7 @@ Run 2026-11-19 by `node scripts/quality-audit.mjs`, against the [Quality Constit
 
 | Course | Lessons | Overall | Accuracy | Completeness | Clarity | Progression | Application | Assessment | Accessibility | Engagement | Retention |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| Physics | 1308 | **58** | 22 | 24 | 87 | 27 | 86 | 67 | 85 | 84 | 41 |
+| Physics | 1308 | **59** | 23 | 25 | 87 | 29 | 86 | 67 | 85 | 84 | 42 |
 | Law | 480 | **66** | 54 | 97 | 94 | 3 | 37 | 68 | 100 | 55 | 88 |
 | Pharmacy | 318 | **72** | 51 | 96 | 99 | 8 | 68 | 81 | 100 | 65 | 77 |
 | Nursing | 497 | **74** | 49 | 98 | 98 | 47 | 50 | 89 | 100 | 56 | 75 |
@@ -115,20 +115,20 @@ Run 2026-11-19 by `node scripts/quality-audit.mjs`, against the [Quality Constit
 | Fix | Lessons |
 |---|---|
 | Add flashcards for spaced retrieval (Q:) | 9,692 |
-| Name what this builds on (PRE:) | 5,776 |
-| State the level (LV:) | 3,406 |
-| Say how strong the evidence is (EV:) | 3,122 |
-| Even out answer lengths | 3,083 |
-| Teach every objective | 2,056 |
-| Add questions that ask learners to apply it, not just recall it (M2/M3, SA:, NUM:) | 1,555 |
-| Add check questions | 1,552 |
+| Name what this builds on (PRE:) | 5,757 |
+| State the level (LV:) | 3,386 |
+| Say how strong the evidence is (EV:) | 3,102 |
+| Even out answer lengths | 3,087 |
+| Teach every objective | 2,064 |
+| Add questions that ask learners to apply it, not just recall it (M2/M3, SA:, NUM:) | 1,535 |
+| Add check questions | 1,532 |
 | Add a worked example (X:) | 1,265 |
-| Cite at least two sources (SRC:) | 1,057 |
-| Date every source, so it can be rechecked | 982 |
-| State at least two learning objectives (O:) | 982 |
-| Define the key terms (T:) | 982 |
-| End with a summary (SUM:) | 982 |
-| Define terms where they're first used (T:) | 982 |
+| Cite at least two sources (SRC:) | 1,037 |
+| Date every source, so it can be rechecked | 962 |
+| State at least two learning objectives (O:) | 962 |
+| Define the key terms (T:) | 962 |
+| End with a summary (SUM:) | 962 |
+| Define terms where they're first used (T:) | 962 |
 
 ## The 30 lessons to improve first
 
