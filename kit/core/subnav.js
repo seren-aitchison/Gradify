@@ -19,6 +19,12 @@ export function mountSubNav(doc = document) {
   const signin = right.querySelector(".signin");
   if (signin) { const s = signin.cloneNode(true); s.className = "sub-menu-signin"; menu.append(s); }
 
+  // on small phones the theme switch is hidden in the header (kit/styles/subsite.css) and offered here instead
+  const theme = doc.createElement("button");
+  theme.type = "button"; theme.className = "sub-menu-theme"; theme.textContent = "Switch light or dark theme";
+  theme.addEventListener("click", () => nav.querySelector(".theme-btn")?.click());
+  menu.append(theme);
+
   const btn = doc.createElement("button");
   btn.type = "button";
   btn.className = "icon-btn menu-btn sub-menu-btn";

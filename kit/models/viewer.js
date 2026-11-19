@@ -224,9 +224,12 @@ export async function mountModel(root, siteName, model, opts = {}) {
         <div class="mv-tip" aria-hidden="true" hidden></div>
         <div class="mv-groups" role="group" aria-label="Show or hide">${Object.entries(G).map(([k, g]) => `<button type="button" class="mv-grp${g.off ? "" : " on"}" data-grp="${k}" aria-pressed="${!g.off}" style="--c:${g.c}"><i></i>${esc(g.name)}</button>`).join("")}</div>
         <div class="mv-quizbar" hidden><span class="mv-q"></span><span class="mv-score"></span><button type="button" class="mv-quit">End quiz</button></div>
-        <div class="mv-zoom" role="group" aria-label="Zoom"><button type="button" data-zoom="in" aria-label="Zoom in">+</button><button type="button" data-zoom="out" aria-label="Zoom out">−</button><button type="button" data-zoom="reset" aria-label="Reset the view">⟲</button></div>
-        <div class="mv-views">${Object.keys(model.views || {}).map((v) => `<button type="button" data-view="${esc(v)}">${esc(v)}</button>`).join("")}</div>
-        <p class="mv-hint">Drag to turn · scroll or pinch to zoom · double-click to fly in</p>
+        <div class="mv-zoom" role="group" aria-label="Zoom"><button type="button" data-zoom="in" aria-label="Zoom in">+</button><button type="button" data-zoom="out" aria-label="Zoom out">−</button><button type="button" data-zoom="reset" aria-label="Reset the view">⟲</button><button type="button" data-zoom="full" aria-label="Full screen" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path class="mv-full-in" d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/><path class="mv-full-out" d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"/></svg></button></div>
+        <div class="mv-bottom">
+          <div class="mv-sel" hidden role="status"><i></i><span class="mv-sel-txt"><small></small><b></b></span><button type="button" data-sel="focus">Zoom in</button><button type="button" data-sel="info" class="mv-sel-more">Details</button><button type="button" data-sel="close" class="mv-sel-x" aria-label="Clear the selection">×</button></div>
+          <div class="mv-views">${Object.keys(model.views || {}).map((v) => `<button type="button" data-view="${esc(v)}">${esc(v)}</button>`).join("")}</div>
+          <p class="mv-hint">${matchMedia("(pointer: coarse)").matches ? "Drag to turn · pinch to zoom · tap a part" : "Drag to turn · scroll to zoom · click a part · double-click to fly in"}</p>
+        </div>
         ${model.credit ? `<p class="mv-credit">${esc(model.credit)} <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></p>` : ""}
       </div>
       <aside class="mv-side">
@@ -407,7 +410,7 @@ export async function mountModel(root, siteName, model, opts = {}) {
       // in the studio look, a picked part keeps its own colour and texture, lit with a soft warm glow
       if (!on || Array.isArray(m.userData.mat)) { m.material = m.userData.mat; continue; }
       const tint = (m.userData.tint ||= {});
-      tint[on] ||= (() => { const c = m.userData.mat.clone(); if (c.emissive) { c.emissive = new THREE.Color(on === "sel" ? "#ffcf8a" : "#ffe6c4"); c.emissiveIntensity = on === "sel" ? 0.45 : 0.2; } return c; })();
+      tint[on] ||= (() => { const c = m.userData.mat.clone(); if (c.emissive) { c.emissive = new THREE.Color(on === "sel" ? "#ffcf8a" : "#ffe6c4"); c.emissiveIntensity = on === "sel" ? 0.28 : 0.14; } return c; })();
       m.material = tint[on];
     }
   }
@@ -438,7 +441,7 @@ export async function mountModel(root, siteName, model, opts = {}) {
     info.style.setProperty("--c", g.c);
     info.innerHTML = `
       <span class="kicker">${esc(g.name)}</span>
-      <h3>${esc(s.name)}</h3>
+      <h3 tabindex="-1">${esc(s.name)}</h3>
       <p>${rich(s.desc)}</p>
       <ul class="mv-facts">${s.facts.map((f) => `<li>${rich(f)}</li>`).join("")}</ul>
       <div class="mv-mine"></div>
@@ -454,7 +457,8 @@ export async function mountModel(root, siteName, model, opts = {}) {
   function showIntro() {
     info.style.setProperty("--c", "#5ef0ff");
     info.innerHTML = `<span class="kicker">${esc(model.kicker || "3D model")}</span><h3>${esc(model.intro?.title || model.title)}</h3><p>${rich(model.intro?.text || "Click any part to learn about it, make flashcards from it, or find it in your notes.")}</p>
-      <ul class="mv-facts">${Object.entries(G).map(([g, x]) => `<li><button type="button" class="mv-jump" data-jump="${Object.keys(S).find((id) => S[id].group === g)}" style="--c:${x.c}">${esc(x.name)} →</button></li>`).join("")}</ul>`;
+      <ul class="mv-facts">${Object.entries(G).map(([g, x]) => `<li><button type="button" class="mv-jump" data-jump="${Object.keys(S).find((id) => S[id].group === g)}" style="--c:${x.c}">${esc(x.name)} →</button></li>`).join("")}</ul>
+      <details class="mv-index"><summary>All ${Object.keys(parts).length} parts</summary>${Object.entries(G).map(([g, x]) => `<div style="--c:${x.c}"><span>${esc(x.name)}</span>${Object.keys(S).filter((id) => S[id].group === g && parts[id]).map((id) => `<button type="button" data-jump="${id}">${esc(S[id].name)}</button>`).join("")}</div>`).join("")}</details>`;
   }
   info.addEventListener("click", async (e) => {
     const j = e.target.closest("[data-jump]"); if (j) return select(j.dataset.jump, true);
@@ -526,7 +530,7 @@ export async function mountModel(root, siteName, model, opts = {}) {
     const hit = hitAt(e), id = hit?.object.userData.id || null;
     if (hit) model.onPick?.(hit.object, id);   // e.g. a piano key plays its note
     if (state.quiz) return answer(id);
-    if (id) select(id); else { state.selected = null; paint(); showIntro(); }
+    if (id) select(id); else deselect();
   });
   // double-click: fly in to the point under the cursor
   canvas.addEventListener("dblclick", (e) => {
@@ -535,7 +539,34 @@ export async function mountModel(root, siteName, model, opts = {}) {
     const dir = camera.position.clone().sub(controls.target).normalize();
     flyTo(target.clone().add(dir.multiplyScalar(Math.max(cam.min * 1.5, d * 0.4))), target);
   });
-  function select(id, zoom) { state.selected = id; paint(); showInfo(id); if (zoom) focus(id); if (G[S[id].group] && state.tab !== S[id].group) openTab(S[id].group); }
+  function select(id, zoom) { state.selected = id; paint(); showInfo(id); showSel(id); if (zoom) focus(id); if (G[S[id].group] && state.tab !== S[id].group) openTab(S[id].group); }
+  function deselect() { if (!state.selected) return; state.selected = null; paint(); showIntro(); showSel(null); }
+  // the picked part's name on the model itself, so it's clear what was picked even when the side panel is
+  // off-screen (phones, full screen), with a way to zoom in, read about it, or let go
+  const sel = $(".mv-sel");
+  function showSel(id) {
+    sel.hidden = !id || !!state.quiz;
+    if (!id) return;
+    sel.style.setProperty("--c", G[S[id].group].c);
+    sel.querySelector("small").textContent = G[S[id].group].name; sel.querySelector("b").textContent = S[id].name;
+  }
+  sel.addEventListener("click", (e) => {
+    const a = e.target.closest("[data-sel]")?.dataset.sel; if (!a || !state.selected) return;
+    if (a === "focus") focus(state.selected);
+    if (a === "close") deselect();
+    if (a === "info") { setFull(false); info.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" }); info.querySelector("h3")?.focus({ preventScroll: true }); }
+  });
+  // full screen: the stage fills the window (CSS), which works on every phone, unlike the Fullscreen API
+  const fullBtn = $('[data-zoom="full"]');
+  function setFull(on) {
+    if (root.classList.contains("mv-full") === on) return;
+    root.classList.toggle("mv-full", on); document.documentElement.classList.toggle("mv-locked", on);
+    fullBtn.setAttribute("aria-pressed", String(on)); fullBtn.setAttribute("aria-label", on ? "Leave full screen" : "Full screen");
+  }
+  root.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+    if (root.classList.contains("mv-full")) { setFull(false); fullBtn.focus(); } else if (state.selected && !state.quiz) deselect();
+  });
 
   // ---------- camera ----------
   let tween = null;
@@ -550,7 +581,7 @@ export async function mountModel(root, siteName, model, opts = {}) {
     flyTo(controls.target.clone().add(d.setLength(len)), controls.target.clone());
   }
   const home = () => flyTo(V(...cam.pos), V(...cam.target));
-  $(".mv-zoom").addEventListener("click", (e) => { const z = e.target.closest("[data-zoom]")?.dataset.zoom; if (z === "in") zoomBy(0.55); if (z === "out") zoomBy(1.8); if (z === "reset") home(); });
+  $(".mv-zoom").addEventListener("click", (e) => { const z = e.target.closest("[data-zoom]")?.dataset.zoom; if (z === "in") zoomBy(0.55); if (z === "out") zoomBy(1.8); if (z === "reset") home(); if (z === "full") setFull(!root.classList.contains("mv-full")); });
   $(".mv-views").addEventListener("click", (e) => { const v = e.target.closest("[data-view]"); if (v) flyTo(...model.views[v.dataset.view].map((x) => V(...x))); });
 
   // ---------- controls ----------
@@ -606,7 +637,7 @@ export async function mountModel(root, siteName, model, opts = {}) {
     if (right) { q.score += q.tries === 0 ? 1 : 0; q.n++; showInfo(id); setTimeout(() => (q.n >= 10 ? endQuiz() : nextQuestion()), 900); }
     else { q.tries++; quizbar.querySelector(".mv-q").innerHTML = `That's the ${esc(S[id].name.toLowerCase())}. Find the <b>${esc(S[q.target].name.toLowerCase())}</b>`; if (q.tries >= 2) { q.n++; select(q.target, true); setTimeout(() => (q.n >= 10 ? endQuiz() : nextQuestion()), 1600); } }
   }
-  function startQuiz(mode) { state.quiz = { score: 0, n: 0, mode }; quizbar.hidden = false; root.classList.add("quizzing"); if (mode !== "name") home(); nextQuestion(); }
+  function startQuiz(mode) { state.quiz = { score: 0, n: 0, mode }; showSel(null); quizbar.hidden = false; root.classList.add("quizzing"); if (mode !== "name") home(); nextQuestion(); }
   async function endQuiz() {
     const q = state.quiz; state.quiz = null; quizbar.hidden = true; root.classList.remove("quizzing");
     info.style.setProperty("--c", "#4fe0a6");

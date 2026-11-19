@@ -91,6 +91,22 @@
   .sub-links { display: none; }
   .sub-hero { grid-template-columns: 1fr; padding-top: 48px; }
 }
+/* small phones: the header keeps the name, reading settings, Start free and the menu on one line; the theme switch
+   moves into the menu (kit/core/subnav.js), and long names end in an ellipsis rather than pushing the page sideways */
+.sub-brand { min-width: 0; }
+.sub-brand > [data-site-name] { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sub-menu .sub-menu-theme { display: none; width: 100%; margin-top: 6px; padding: 10px 14px; border: 0; border-top: 1px solid var(--line); background: none; color: var(--mute); font: inherit; font-size: 15px; text-align: left; cursor: pointer; }
+.sub-menu .sub-menu-theme:hover { color: var(--fg); }
+@media (max-width: 480px) {
+  .sub-nav { gap: 8px; padding-inline: 10px 8px; }
+  .sub-right { gap: 6px; flex: none; }
+  .sub-right .theme-btn { display: none; }
+  .sub-menu .sub-menu-theme { display: flex; }
+  .sub-right .btn-sm { padding-inline: 12px; }
+  .sub-brand { gap: 9px; font-size: 16px; }
+  .sub-brand .icon { width: 34px; height: 34px; flex: none; }
+}
+@media (max-width: 400px) { .sub-brand .icon { display: none; } }
 @media (max-width: 640px) {
   .sub-hero h1 > span { white-space: normal; }
   .sub-nav { gap: 10px; }
