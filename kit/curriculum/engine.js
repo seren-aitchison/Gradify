@@ -88,6 +88,11 @@ export function validate(kb, lessons = null) {
   }
   for (const s of kb.specs) {
     p.push(...checkSpec(s));
+    if (s.inherits) {
+      const parent = ix.spec.get(s.inherits);
+      if (!parent) p.push(`${s.id}: inherits unknown specification ${s.inherits}`);
+      else for (const o of s.outcomes) if (!parent.outcomes.some((x) => x.id === o.id)) p.push(`${s.id}#${o.id}: not an outcome of ${s.inherits}, which it inherits`);
+    }
     const sys = ix.system.get(s.system);
     if (!sys) { p.push(`${s.id}: unknown system ${s.system}`); continue; }
     if (s.qualification && !QUALIFICATIONS[s.qualification]) p.push(`${s.id}: unknown qualification ${s.qualification}`);
@@ -162,12 +167,13 @@ const RANK = { gap: 0, "no-course": 0, unmapped: 0, "below-level": 1, partial: 2
 export function coverage(kb, specId, lessons = null) {
   const ix = indexOf(kb), s = ix.spec.get(specId);
   if (!s) throw new Error(`unknown specification ${specId}`);
-  const direct = s.outcomes.flatMap((o) => ix.directByOutcome.get(okey(specId, o.id)) || []);
+  const direct = s.outcomes.flatMap((o) => ix.directByOutcome.get(okey(specId, o.id)) || (s.inherits && ix.directByOutcome.get(okey(s.inherits, o.id))) || []);
   const courses = [...new Set([...(ix.pathwaysBySpec.get(specId) || []).map((p) => p.course), ...direct.flatMap((m) => m.lessons.map((l) => l.course))])];
   const outcomes = s.outcomes.map((o) => {
     const maps = ix.mapsByOutcome.get(okey(specId, o.id)) || [];
     // an outcome with no concept mapping is resolved through its direct lesson mapping, if it has one
-    const dm = ix.directByOutcome.get(okey(specId, o.id))?.[0];
+    // a board's specification that restates a national subject content (`inherits`) takes that content's mapping
+    const dm = ix.directByOutcome.get(okey(specId, o.id))?.[0] || (s.inherits && ix.directByOutcome.get(okey(s.inherits, o.id))?.[0]);
     if (!maps.length) {
       if (!dm) return { outcome: o, concepts: [], status: "unmapped", lessons: [], note: "Not yet mapped to lessons." };
       const live = dm.lessons.filter((l) => !lessons || lessons.has(key(l.course, l.lesson)));

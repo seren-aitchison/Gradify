@@ -1,0 +1,74 @@
+{
+  "task": "spec-maths-english",
+  "on": "2026-11-19",
+  "files": [
+    "kit/curriculum/specifications/uk/dfe-gcse-maths.js",
+    "kit/curriculum/mappings/coverage/dfe-gcse-maths.js",
+    "kit/curriculum/specifications/uk/dfe-alevel-maths.js",
+    "kit/curriculum/mappings/coverage/dfe-alevel-maths.js",
+    "kit/curriculum/specifications/uk/aqa-8300-maths.js",
+    "kit/curriculum/specifications/uk/edexcel-1ma1-maths.js",
+    "kit/curriculum/specifications/uk/aqa-8700-english-language.js",
+    "kit/curriculum/mappings/coverage/aqa-8700.js"
+  ],
+  "specs": [
+    {
+      "id": "dfe-gcse-maths",
+      "outcomes": 97,
+      "sha256": "647a751b51c71d9ced1c9356aa70b15ceb1a4acb2fd5bc9af49619ead06d0ee6",
+      "url": "https://assets.publishing.service.gov.uk/media/5a7cb5b040f0b6629523b52c/GCSE_mathematics_subject_content_and_assessment_objectives.pdf",
+      "mapping": {
+        "course": "maths",
+        "covers": 60,
+        "partial": 37,
+        "gap": 0
+      }
+    },
+    {
+      "id": "dfe-alevel-maths",
+      "outcomes": 105,
+      "sha256": "65cf23ce356eb4c1dab3d336236ab35ed9189461e7c29e5c98f4315242cb575d",
+      "url": "https://assets.publishing.service.gov.uk/media/5a7f273a40f0b62305b85670/GCE_AS_and_A_level_subject_content_for_mathematics_with_appendices.pdf",
+      "mapping": {
+        "course": "maths",
+        "covers": 55,
+        "partial": 47,
+        "gap": 3
+      }
+    },
+    {
+      "id": "aqa-8300",
+      "outcomes": 97,
+      "sha256": "8476acfab0e1e3d928a58927101519287be1a0f1a3c0590c69829f2cb344ab11",
+      "url": "https://filestore.aqa.org.uk/resources/mathematics/specifications/AQA-8300-SP-2015.PDF"
+    },
+    {
+      "id": "edexcel-1ma1",
+      "outcomes": 97,
+      "sha256": "c30745f274663c5f910e3706ea836c6f7e95e0a00ff38eac860622232ed84f8b",
+      "url": "https://qualifications.pearson.com/content/dam/pdf/GCSE/mathematics/2015/specification-and-sample-assesment/gcse-maths-2015-specification.pdf"
+    },
+    {
+      "id": "aqa-8700",
+      "outcomes": 17,
+      "sha256": "261d2dbe7dc5335e1d89aafd9164c824e428d0f34742f652e71e182b068635e5",
+      "url": "https://filestore.aqa.org.uk/resources/english/specifications/AQA-8700-SP-2015.PDF",
+      "mapping": {
+        "course": "gcse",
+        "covers": 0,
+        "partial": 7,
+        "gap": 10
+      }
+    }
+  ],
+  "notes": [
+    "dfe-gcse-maths: the DfE document numbers statements 1, 2, ... within each section; refs are recorded as e.g. \"Number 1\" and ids use the N1/A1/R1/G1/P1/S1 convention that AQA and Pearson print. Tiering read from the PDF fonts (bold) and drawn underlines.",
+    "Mapping status counts use the best fit among an outcome's lessons; many partials are statements split across several lessons that together cover them (see each entry's note).",
+    "dfe-alevel-maths: mechanics (P1, Q1-Q5, R1-R6, S1) is the weakest area: only the overview lesson u28-08 and undergraduate u20-29 touch it; R5 (resultant forces, dynamics in a plane) is a gap. Also weak: graphs of a^x/e^x (F1), log graphs for y = ax^n and y = kb^x (F6), small-angle approximations (E2), change-of-sign root location (I1).",
+    "aqa-8300 (file aqa-8300-maths.js) and edexcel-1ma1 (file edexcel-1ma1-maths.js): both boards print the N1..S6 references themselves, so those are the outcomes (97 each); no coverage mappings, as they inherit dfe-gcse-maths. AQA summaries give AQA's tier columns; Pearson summaries compare its Foundation and Higher lists (11 references are Higher only: A13, A15, A16, A20, R15, G8, G10, G22, G23, P9, S3).",
+    "edexcel-1ma1: the extracted PDF is Issue 2 (June 2015); Pearson may have later issues. Pearson's own A1 reads \"algebraic manipulation\" where the DfE says \"algebraic notation\"; kept as printed.",
+    "Spec ids follow kit/curriculum/catalogue/uk.js SPEC_BY_CODE (aqa-8300, edexcel-1ma1, aqa-8700), as aqa-8461-biology.js uses id aqa-8461; file names are as the task named them.",
+    "aqa-8700: GCSE Core has no writing or spoken-language lessons, so AO5, AO6 (50% of the GCSE between them), AO7-AO9, 3.1.2, 3.1.3, both Section B writing tasks and the Spoken Language endorsement are gaps; reading AOs are only partial (literary close reading, no unseen non-fiction, 19th-century sources, summary/synthesis or comparison of viewpoints).",
+    "Not run: npm test / npm run qa (per brief). The catalogue or engine may need wiring for the new coverage files; not touched."
+  ]
+}

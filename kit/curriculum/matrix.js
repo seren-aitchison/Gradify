@@ -8,7 +8,7 @@
 //   aligned     a course claims to be written for this qualification (coverage.js or mappings/courses.js)
 //   measured    the specification is modelled and its outcomes mapped to lessons: `measure` gives the counts
 //   verified    measured, the specification checked by a person, and its mappings confirmed (none yet)
-import { ROWS, SUBJECTS, BODIES, SPEC_BY_CODE } from "./catalogue/uk.js";
+import { ROWS, SUBJECTS, BODIES, SPEC_BY_CODE, SPEC_BY_ROW } from "./catalogue/uk.js";
 import { PROFILES } from "./mappings/course-profiles.js";
 import { COURSES as CLAIMS } from "./coverage.js";
 import { coverage, indexOf } from "./engine.js";
@@ -24,7 +24,7 @@ export function resolveRow(row, kb, lessons = null, ix = indexOf(kb)) {
   const fits = (p) => p.bands.includes(row.band) && row.nations.some((n) => p.nations.includes(n));
   const teach = Object.entries(PROFILES).filter(([, p]) => fits(p) && p.subjects.includes(row.subject)).map(([c]) => c);
   const related = Object.entries(PROFILES).filter(([, p]) => fits(p) && (p.related || []).includes(row.subject)).map(([c]) => c);
-  const specId = row.spec || (row.code && SPEC_BY_CODE[`${row.body}:${row.code}`]);
+  const specId = row.spec || (row.code && SPEC_BY_CODE[`${row.body}:${row.code}`]) || SPEC_BY_ROW[`${row.body}:${row.band}:${row.subject}`] || SPEC_BY_ROW[`${row.body}:${row.band}:*`];
   const spec = specId && ix.spec.get(specId);
   const aligned = [...teach, ...related].filter((c) =>
     kb.pathways.some((p) => p.course === c && p.spec === specId) ||
@@ -45,7 +45,8 @@ export function resolveRow(row, kb, lessons = null, ix = indexOf(kb)) {
 export function matrix(kb, lessons = null) {
   const ix = indexOf(kb), resolved = ROWS.map((r) => resolveRow(r, kb, lessons, ix));
   const tally = (f) => { const m = {}; for (const r of resolved) for (const k of [].concat(f(r))) { m[k] ??= Object.fromEntries(LEVELS.map((l) => [l, 0])); m[k][r.status]++; } return m; };
-  const outcomes = resolved.filter((r) => r.measure).reduce((a, r) => ({ outcomes: a.outcomes + r.measure.outcomes, covered: a.covered + r.measure.covered, partial: a.partial + r.measure.partial, gap: a.gap + r.measure.gap, unmapped: a.unmapped + r.measure.unmapped }), { outcomes: 0, covered: 0, partial: 0, gap: 0, unmapped: 0 });
+  const seen = new Set();
+  const outcomes = resolved.filter((r) => r.measure && !seen.has(r.measure.spec) && seen.add(r.measure.spec)).reduce((a, r) => ({ outcomes: a.outcomes + r.measure.outcomes, covered: a.covered + r.measure.covered, partial: a.partial + r.measure.partial, gap: a.gap + r.measure.gap, unmapped: a.unmapped + r.measure.unmapped }), { outcomes: 0, covered: 0, partial: 0, gap: 0, unmapped: 0 });
   return {
     rows: resolved,
     byStatus: Object.fromEntries(LEVELS.map((l) => [l, resolved.filter((r) => r.status === l).length])),

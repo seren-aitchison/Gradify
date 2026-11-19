@@ -28,7 +28,7 @@ export async function loadLessons(slugs) {
   }
   return out;
 }
-export const coursesIn = (kb) => [...kb.lessonMaps.map((b) => b.course), ...kb.pathways.map((p) => p.course)];
+export const coursesIn = (kb) => [...kb.lessonMaps.map((b) => b.course), ...kb.pathways.map((p) => p.course), ...(kb.outcomeLessons || []).flatMap((m) => m.lessons.map((l) => l.course))];
 
 const STATUS = { covered: "✅ Covered", partial: "🟠 Partly covered", "above-level": "🟡 Taught above this level", "below-level": "🟠 Taught below this level", gap: "❌ Gap", "no-course": "⚪ No course offers this", unmapped: "· Not yet mapped" };
 

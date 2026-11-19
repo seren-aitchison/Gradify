@@ -238,4 +238,10 @@ export const ROWS = [
 ].map((r) => ({ ...r, id: [r.body, r.qualification || r.band, r.subject, (r.code || r.title).toLowerCase().replace(/[^a-z0-9]+/g, "-")].join(":") }));
 
 // Specification records already modelled (kit/curriculum/specifications/), by catalogue code. Added as they are made.
+// National curriculum and framework rows, by body:band:subject (every matching row shares the specification)
+export const SPEC_BY_ROW = {
+  "dfe:early:*": "dfe-eyfs", "dfe:primary:maths": "dfe-ks12-maths", "dfe:primary:english": "dfe-ks12-english", "dfe:primary:combined-science": "dfe-ks12-science",
+  "dfe:lower-secondary:combined-science": "dfe-ks3-science", "dfe:lower-secondary:maths": "dfe-ks3-maths", "dfe:lower-secondary:english": "dfe-ks3-english",
+  "dfe:lower-secondary:geography": "dfe-ks3-geography", "dfe:lower-secondary:history": "dfe-ks3-history", "dfe:lower-secondary:computer-science": "dfe-ks3-computing",
+};
 export const SPEC_BY_CODE = { "aqa:8461": "aqa-8461", "aqa:8462": "aqa-8462", "aqa:8463": "aqa-8463", "aqa:8464": "aqa-8464", "aqa:7402": "aqa-7402", "aqa:7405": "aqa-7405", "aqa:7408": "aqa-7408", "aqa:8300": "aqa-8300", "pearson:1MA1": "edexcel-1ma1", "aqa:8700": "aqa-8700" };

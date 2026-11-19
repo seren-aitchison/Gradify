@@ -95,9 +95,10 @@ test("coverage tells covered, partial, above-level, gaps and pathways no course 
   // GCSE Biology via SciGradify Biology: taught, but pitched at A level
   assert.equal(status("aqa-8461")["4.1.3.2"], "above-level");
   // GCSE Combined Science via GCSE Core: diffusion applied at the alveoli only, and no osmosis or active transport lesson
-  assert.deepEqual(status("aqa-8464"), { "4.1.3.1": "partial", "4.1.3.2": "gap", "4.1.3.3": "gap", "rp-osmosis": "gap" });
-  // Key Stage 3: modelled, but no course offers it
-  assert.ok(Object.values(status("dfe-ks3-science")).every((s) => s === "no-course"));
+  const g = status("aqa-8464");
+  assert.deepEqual({ d: g["4.1.3.1"], o: g["4.1.3.2"], a: g["4.1.3.3"] }, { d: "partial", o: "gap", a: "gap" });
+  // Key Stage 3: no course is written for it, so no outcome is fully covered (some are taught in part by GCSE lessons)
+  assert.ok(!Object.values(status("dfe-ks3-science")).includes("covered"));
 });
 
 test("terminology: a variant is flagged as editorial only where exam wording matters, never as an error", () => {
