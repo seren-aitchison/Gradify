@@ -35,6 +35,16 @@ Q: What did Woolmington v DPP establish? | The prosecution must prove guilt beyo
 Q: What are the two core elements of most offences? | Actus reus (the prohibited conduct, circumstances and result) and mens rea (the required state of mind).
 M1#law-u05-01-q1@1: Who bears the legal burden of proving the defendant's guilt? | The prosecution | The defendant | The judge | The jury foreman | The victim | Woolmington v DPP: the prosecution must prove guilt beyond reasonable doubt, subject to limited exceptions.
 M2#law-u05-01-q2@2: A defendant raises self-defence and adduces some evidence of it. What must happen next? | The prosecution must disprove it | The defendant must prove it on balance | The judge must withdraw the charge | The defendant must prove it fully | The jury must assume it succeeds | Once the evidential burden is met, the prosecution must disprove the defence beyond reasonable doubt.
+Q: What is the legal burden in criminal law? | The obligation to prove an issue to the required standard.
+Q: What are the building blocks of criminal liability? | Actus reus, mens rea and the absence of a valid defence.
+Q: Name forms of mens rea used for different offences. | Intention, recklessness, knowledge, dishonesty or negligence.
+Q: What happens when a defendant raises a defence with sufficient evidence? | The prosecution must disprove it beyond reasonable doubt.
+Q: Which defences place a legal burden on the defendant? | Insanity and some statutory defences, proved on the balance of probabilities.
+Q: Give an example of a common law offence and a statutory offence. | Murder or conspiracy to defraud (common law); theft under the Theft Act 1968 (statutory).
+Q: How do courts interpret penal statutes on mens rea? | With a presumption in favour of mens rea.
+Q: What is the method for a criminal law problem? | Identify the offence, break it into actus reus and mens rea, apply each with authority, consider causation and defences, then conclude on each charge.
+Q: What is a common mistake when answering criminal law problems? | Jumping straight to defences before establishing that the elements of the offence are made out.
+Q: What did the trial judge wrongly tell the jury in Woolmington v DPP? | That Woolmington had to prove the shooting was an accident.
 
 ## Actus reus
 S: The actus reus is the external element of an offence: the conduct, circumstances and, for result crimes, the consequences. Conduct must normally be voluntary, and liability for failing to act arises only where there is a duty.
@@ -74,6 +84,16 @@ Q: Which case concerned a duty arising from voluntary assumption of care? | R v 
 M1#law-u05-02-q1@3: In R v Pittwood, the duty to act arose from what? | His contract of employment | His family relationship | His office as a constable | A statutory provision | His creation of danger | Pittwood was a railway gatekeeper whose contract imposed a duty that protected the public.
 M2#law-u05-02-q2@3: A man drops a lit cigarette on a sofa, notices it smouldering, and walks away. The house burns. What is his position on actus reus? | He may be liable: he created the danger | No liability: it was only an omission | No liability: dropping it was an accident | Liable only if he owned the house | Liable only if someone was injured | Under R v Miller, a person who creates a dangerous situation is under a duty to take reasonable steps to counter it.
 TF1#law-u05-02-q3@2: A reflex movement caused by a bee sting while driving is not a voluntary act. | True | Hill v Baxter: acts not under the control of the mind are not the defendant's acts.
+Q: What is the actus reus of an offence? | The external element: the conduct, circumstances and, for result crimes, the consequences.
+Q: What is a conduct crime? | An offence defined by conduct regardless of result, such as perjury.
+Q: What is a result crime? | An offence requiring a consequence, such as murder.
+Q: Why must conduct be voluntary for the actus reus? | Reflex movements or acts during a seizure are not the defendant's own willed acts.
+Q: What is the general rule on criminal liability for omissions? | There is no liability for failing to act unless there is a duty to act.
+Q: What did R v Dytham decide? | A police officer who failed to intervene was liable because his office imposed a duty to act.
+Q: What did Airedale NHS Trust v Bland decide about withdrawing treatment? | Withdrawing treatment from a patient in a persistent vegetative state can be an omission, not an act.
+Q: List the ways a duty to act can arise in criminal law. | Statute, contract, relationship, voluntary assumption of care, creating a dangerous situation, and office.
+Q: Is a bystander who fails to help generally guilty of an offence? | No. Without a duty to act, there is generally no liability.
+Q: What two conditions make an omission criminal? | The defendant was under a duty to act, and the offence can be committed by omission.
 
 ## Mens rea
 S: Mens rea is the mental element of an offence. The main forms are intention and recklessness, with knowledge, belief, dishonesty and negligence for particular offences. Mens rea is judged by what the defendant actually intended or foresaw.
@@ -111,6 +131,16 @@ Q: Which case overruled Caldwell recklessness? | R v G [2003] UKHL 50.
 M1#law-u05-03-q1@3: Which case established the subjective test of recklessness that replaced Caldwell? | R v G | R v Woollin | R v Moloney | R v Cunningham | R v Latimer | R v G [2003] UKHL 50 requires the defendant to be aware of the risk.
 M2#law-u05-03-q2@2: D sets fire to a house to claim insurance, knowing a child is asleep upstairs and will almost certainly die. The child dies. Can the jury find intention to kill? | Yes, under the Woollin direction | No: D's purpose was insurance money | No: D didn't want the child to die | Only if D's motive was malicious | Only if D was reckless | Death was a virtual certainty and D appreciated it, so the jury may find oblique intention.
 M3#law-u05-03-q3@1: D throws a stone at V, misses and breaks a window behind V. Can D's intention to injure V be used for criminal damage to the window? | No: malice transfers only within the same offence | Yes: transferred malice always applies | Yes, because D acted unlawfully | No, because no one was hurt | Yes, if the window was V's | R v Pembliton (1874): intent to injure a person doesn't transfer to property damage.
+Q: What is direct intention? | Where the result is the defendant's aim or purpose.
+Q: What is oblique intention? | Where the result is a virtually certain consequence of the defendant's actions and the defendant appreciated that.
+Q: What did R v Matthews and Alleyne decide about foresight of virtual certainty? | It is evidence from which the jury may find intention, not intention itself.
+Q: Is motive relevant to intention? | No. Motive is irrelevant to intention.
+Q: State the R v G test of recklessness. | D is aware of a risk that a circumstance exists or a result will occur, and it is unreasonable, in the circumstances known to D, to take it.
+Q: What kind of test is recklessness after R v G? | Subjective: the defendant must actually foresee the risk.
+Q: What is Cunningham recklessness used for? | The same subjective approach, for offences such as those under the Offences Against the Person Act 1861.
+Q: Which test of dishonesty applies in criminal cases? | The Ivey v Genting test, applied in R v Barton and Booth [2020].
+Q: What is transferred malice? | Mens rea for one victim transfers to the unintended victim of the same kind of offence (R v Latimer).
+Q: What form of mens rea does gross negligence manslaughter use? | Negligence: falling below the standard of the reasonable person.
 
 ## Coincidence of actus reus and mens rea
 S: For most offences, the actus reus and mens rea must coincide in time. Courts have developed flexible approaches, such as the continuing act and single transaction principles, to deal with cases where they appear to be separated.
@@ -143,6 +173,16 @@ Q: What principle did Fagan v MPC apply? | The continuing act: mens rea arising 
 Q: What did Thabo Meli v R decide? | A series of acts with an initial intention to kill was one transaction, so coincidence was satisfied.
 M1#law-u05-04-q1@2: In Fagan v MPC, how was the coincidence problem solved? | The act was treated as continuing | Mens rea was treated as transferred | Strict liability was applied | The officer consented | The act was an omission only | Driving onto and staying on the foot was one continuing act, and mens rea arose during it.
 M2#law-u05-04-q2@2: D attacks V intending to kill, wrongly believes V is dead, and buries V, who dies from suffocation. Is D liable for murder? | Yes: it was a single transaction | No: there was no intent when burying | No: the attack didn't cause death | Only for manslaughter | Only for attempted murder | Thabo Meli v R: the acts form one transaction, so the initial intention suffices.
+Q: What is contemporaneity in criminal law? | The requirement that actus reus and mens rea coincide in time.
+Q: Is a guilty thought before or after the act generally enough? | No. The defendant must have mens rea at the time of the actus reus.
+Q: What is a continuing act? | An act that continues over time, during which mens rea can arise.
+Q: What is the single transaction principle? | A series of acts is treated as one, so mens rea at any point in it suffices.
+Q: How did R v Church apply the single transaction principle? | To manslaughter, where D threw V, whom he believed dead, into a river.
+Q: What happened in R v Le Brun? | D struck his wife and, while moving her, dropped her causing a fatal head injury; the acts were one sequence, giving manslaughter.
+Q: Why do courts use flexible approaches to coincidence? | To stop defendants escaping liability on technicalities when events are, in reality, one wrongful episode.
+Q: What does the coincidence principle protect against? | Liability for accidental harm.
+Q: What offence was Fagan convicted of? | Assault (battery) on a police officer.
+Q: What is a common mistake about victims believed dead? | Concluding there is no liability simply because the fatal act came after D believed V was already dead.
 
 ## Causation
 S: For result crimes, the prosecution must prove that the defendant's conduct caused the prohibited result, both in fact and in law. An intervening act can break the chain of causation, but the defendant must take the victim as they find them.
@@ -176,6 +216,16 @@ Q: What is the thin skull rule? | The defendant takes the victim as they find th
 M1#law-u05-05-q1@1: Which case shows that factual causation fails where the victim dies of an unrelated cause? | R v White | R v Blaue | R v Cheshire | R v Pagett | R v Roberts | In R v White, the mother died of a heart attack before the poison could act.
 M2#law-u05-05-q2@2: V, stabbed by D, receives negligent hospital treatment and dies. The wound was still a significant cause. What is D's position? | D is still a legal cause of death | The negligence breaks the chain | D is liable only for wounding | The hospital alone is liable | D is liable only if the treatment was competent | Cheshire: treatment breaks the chain only if it makes D's contribution insignificant.
 M3#law-u05-05-q3@3: D supplies heroin to V, a fully informed adult, who injects himself and dies. Did D cause V's death? | No: V's free, informed act broke the chain | Yes: supplying drugs always causes death | Yes, under the thin skull rule | Yes, because D was reckless | No, but only because V paid for the drugs | R v Kennedy (No 2): the victim's free, deliberate and informed self-injection broke the chain.
+Q: What two kinds of causation must the prosecution prove for result crimes? | Causation in fact and in law.
+Q: What is factual causation in criminal law? | The "but for" test: would the result have occurred but for D's conduct?
+Q: What is the legal causation test in criminal law? | D's conduct must be an operating and substantial, more than minimal, cause, not necessarily the only or main cause (R v Pagett).
+Q: When does medical treatment break the chain of causation? | Rarely: only if so independent and potent that the original injury is insignificant (R v Cheshire).
+Q: Which case is the contrast where medical treatment did break the chain? | R v Jordan (1956).
+Q: When does a victim's fright and flight response break the chain? | Only if it is so daft as to be unforeseeable (R v Roberts; R v Williams and Davis).
+Q: What did R v Kennedy (No 2) decide? | A fully informed adult's free, deliberate self-injection of drugs broke the chain from the supplier.
+Q: What happened in R v Blaue? | A stabbed Jehovah's Witness refused a blood transfusion and died; D was still the cause of death.
+Q: What common mistake is made about medical treatment and causation? | Assuming negligent medical treatment always breaks the chain of causation.
+Q: Why was D still liable in R v Smith despite poor treatment? | The stab wound was still an operating and substantial cause of death.
 
 ## Strict liability
 S: Strict liability offences require no mens rea as to at least one element of the actus reus. They are common in regulatory areas such as food safety, pollution and road traffic, but the courts presume that Parliament intends mens rea unless the statute clearly says otherwise.
@@ -210,6 +260,16 @@ Q: What is the starting presumption for criminal offences? | That mens rea is re
 Q: Which case listed factors for displacing the presumption of mens rea? | Gammon (Hong Kong) Ltd v Attorney-General of Hong Kong.
 M1#law-u05-06-q1@1: In Sweet v Parsley, why was the landlady not guilty? | Mens rea was presumed and she lacked it | The offence was strict liability | She was under 18 | The tenants consented | She had a licence | The House of Lords applied the presumption that mens rea is required.
 M2#law-u05-06-q2@2: A shop sells a lottery ticket to a 15-year-old who looked older. The statute is silent on mens rea. What is likely? | Strict liability: Harrow LBC v Shah | Not guilty: mens rea is always required | Not guilty: the buyer lied | Guilty only if the seller knew the age | Not guilty: lottery is legal | Harrow LBC v Shah held this regulatory offence was one of strict liability.
+Q: What is a strict liability offence? | One requiring no mens rea as to at least one element of the actus reus.
+Q: What is absolute liability? | Liability without mens rea and without even a requirement of voluntary conduct.
+Q: In which areas are strict liability offences common? | Regulatory areas such as food safety, pollution and road traffic.
+Q: What did B v DPP and R v K add on the presumption of mens rea? | The presumption applies strongly to serious offences.
+Q: What are the Gammon factors for displacing the presumption of mens rea? | The offence is regulatory, concerns social concern such as public safety, and strict liability would promote the statute's aims by encouraging vigilance.
+Q: What did Alphacell v Woodward concern? | The strict liability offence of causing polluted matter to enter a river.
+Q: Which cases imposed absolute liability for "being found" somewhere? | R v Larsonneur (1933) and Winzar v Chief Constable of Kent (1983).
+Q: What are the arguments for strict liability? | It protects the public, eases enforcement and encourages high standards.
+Q: What is the main argument against strict liability? | It convicts the morally blameless.
+Q: How do some statutes soften strict liability? | By including due diligence defences.
 
 ## Attempts
 S: An attempt is an inchoate offence: the defendant tries to commit an offence but doesn't complete it. Under the Criminal Attempts Act 1981, the defendant must do an act that is more than merely preparatory, with intent to commit the full offence.
@@ -248,6 +308,16 @@ Q: What mens rea is required for attempted murder? | Intention to kill.
 M1#law-u05-07-q1@1: Under which Act are attempts defined? | Criminal Attempts Act 1981 | Criminal Law Act 1977 | Serious Crime Act 2007 | Theft Act 1968 | Accessories and Abettors Act 1861 | Section 1 of the Criminal Attempts Act 1981 defines attempts.
 M2#law-u05-07-q2@1: D is arrested walking towards a bank with an imitation gun and a demand note, but hasn't entered. Is this likely an attempt? | Probably not: merely preparatory | Yes: carrying the gun is enough | Yes: the plan was complete | No: imitation guns can't be used | Yes, because intent is clear | R v Campbell: approaching the post office was merely preparatory.
 M3#law-u05-07-q3@3: D buys powder believing it is cocaine and agrees to sell it. It is harmless sugar. Is D guilty of attempting to supply? | Yes: impossibility is no defence | No: the offence was impossible | No: there was no drug | Only if D knew it was sugar | Only of fraud | R v Shivpuri: D can be guilty of attempting an offence that was impossible on the facts.
+Q: What is an inchoate offence? | An offence committed before, or without, the completion of a substantive offence.
+Q: Who decides whether an act is more than merely preparatory? | The jury, as a question of fact.
+Q: What did R v Jones decide about attempts? | Getting into a car and pointing a sawn-off shotgun at V was more than merely preparatory.
+Q: What did R v Geddes decide? | Being found in school toilets with a knife and tape was not enough for an attempt.
+Q: What mens rea does an attempt require as to the result? | Intention to commit the full offence, even where recklessness suffices for the full offence (R v Millard and Vernon).
+Q: What did R v Khan decide about attempted rape? | Recklessness as to circumstances may be enough where it suffices for the full offence.
+Q: Is intent to cause GBH enough for attempted murder? | No. Attempted murder requires intention to kill (R v Whybrow).
+Q: Which earlier case did R v Shivpuri overrule? | Anderton v Ryan.
+Q: Which subsections of the Criminal Attempts Act 1981 deal with impossibility? | Section 1(2)–(3).
+Q: Why was Gullefer not guilty of attempted theft? | His acts were merely preparatory; he had not embarked on the crime proper.
 
 ## Secondary liability
 S: A person who aids, abets, counsels or procures an offence is liable to be tried and punished as a principal. Secondary liability requires an act of assistance or encouragement and intention to assist or encourage, with knowledge of the essential facts.
@@ -282,6 +352,16 @@ Q: What four modes of participation does s 8 of the 1861 Act list? | Aiding, abe
 Q: Is mere presence at a crime enough for secondary liability? | No, unless it is intended to and does encourage the principal (R v Clarkson).
 M1#law-u05-08-q1@1: Which form of participation can occur without any agreement or consensus with the principal? | Procuring | Abetting | Counselling | Conspiring | Encouraging | Attorney-General's Reference (No 1 of 1975): spiking a drink procured the driving offence.
 M2#law-u05-08-q2@3: Before a planned burglary, A tells B "I'm out" by text, but has already given B the house keys and alarm code. Is A's withdrawal likely effective? | Probably not: A's help remains in place | Yes: the text was clear | Yes: any communication suffices | No: withdrawal is never possible | Yes, if A stays home | Becerra: withdrawal must be effective; where help has been given, more may be needed to neutralise it.
+Q: What is a principal in secondary liability? | The person who performs the actus reus of the offence.
+Q: What is an accessory? | A person who aids, abets, counsels or procures the principal.
+Q: How is an accessory tried and punished? | As a principal (Accessories and Abettors Act 1861, s 8).
+Q: What does procuring mean in secondary liability? | Bringing about an offence by endeavour, which needn't involve agreement.
+Q: What happened in Attorney-General's Reference (No 1 of 1975)? | D spiked a drink, leading to drink-driving, and was liable for procuring.
+Q: When can failing to exercise control make someone an accessory? | When they have a right of control and fail to use it (Tuck v Robson; Du Cros v Lambourne).
+Q: Must the accessory know the precise details of the crime? | No, provided it is within the range of crimes contemplated (DPP for Northern Ireland v Maxwell).
+Q: What is required for effective withdrawal from a joint plan? | Effective withdrawal communicated, so far as practicable, before the crime, depending on role and how far the plan has progressed (R v Becerra).
+Q: When may simply leaving be enough to withdraw? | In spontaneous violence (R v Mitchell and King).
+Q: What earlier approach did R v Jogee correct? | Chan Wing-Siu, which based liability on foresight that the principal might commit the crime.
 
 ## Joint enterprise
 S: "Joint enterprise" describes cases where two or more people set out to commit one crime and, in the course of it, one commits a further crime. After R v Jogee [2016] UKSC 8, the ordinary principles of secondary liability apply: foresight is evidence of intention, not a substitute for it.
@@ -313,6 +393,16 @@ Q: What did Jogee decide about foresight? | Foresight that the principal might c
 Q: When may a secondary party be convicted of manslaughter instead of murder after Jogee? | Where they took part in an unlawful act that a reasonable person would see risked some harm, but lacked intent to assist murder.
 M1#law-u05-09-q1@1: Which case first established the foresight test that Jogee overturned? | Chan Wing-Siu v R | R v Powell; R v English | R v Johnson | R v Becerra | R v Clarkson | Chan Wing-Siu introduced parasitic accessorial liability, which Jogee held to be a wrong turn.
 M2#law-u05-09-q2@2: A and B agree to rob a shop. B, unknown to A, carries a knife and stabs the owner dead. A didn't intend anyone to be seriously hurt. What is A's likely liability for the killing? | Manslaughter, if harm was foreseeable to a reasonable person | Murder, because A foresaw violence | No liability, because A didn't stab | Murder, as joint enterprise is automatic | Attempted murder | Under Jogee, without intent to assist murder, A may be guilty of manslaughter.
+Q: What does "joint enterprise" describe? | Two or more people setting out to commit one crime, where one commits a further crime in the course of it.
+Q: What was parasitic accessorial liability? | The former rule that foresight of a possible further crime was enough for liability.
+Q: What is a collateral offence in joint enterprise? | A further offence committed in the course of a joint plan.
+Q: Which cases set out the old foresight approach to joint enterprise? | Chan Wing-Siu v R [1985] and R v Powell; R v English [1999].
+Q: What mental element must the secondary party have after Jogee? | Intention to assist or encourage the commission of the further crime.
+Q: What is an overwhelming supervening act? | An act by the principal so different that nobody in the secondary party's shoes would have contemplated it, breaking the link.
+Q: Are convictions under the pre-Jogee law automatically unsafe? | No. An appeal out of time requires showing a substantial injustice (R v Johnson [2016]).
+Q: Why do weapons a secondary party knows about matter after Jogee? | They remain highly relevant evidence of intention.
+Q: What is a common mistake in joint enterprise problems? | Applying the pre-2016 foresight test from Chan Wing-Siu.
+Q: How did the Supreme Court describe the old foresight rule in Jogee? | As a wrong turn in the law.
 
 ## Corporate criminal liability
 S: Companies can commit crimes. Liability may be direct (where a statute imposes it), vicarious (for some regulatory offences), through attributing a senior person's state of mind, or through specific statutory offences such as corporate manslaughter and failure to prevent bribery or fraud.
@@ -345,6 +435,16 @@ Q: What is the defence to failure to prevent bribery under s 7 of the Bribery Ac
 Q: What must senior management's role be for corporate manslaughter? | A substantial element of the gross breach of duty.
 M1#law-u05-10-q1@1: Which case set out the "directing mind and will" test? | Tesco Supermarkets v Nattrass | R v Jogee | Salomon v Salomon | Sweet v Parsley | R v Kennedy | Tesco v Nattrass held a store manager was not the company's directing mind.
 M2#law-u05-10-q2@3: A large company's agent commits fraud to benefit the company. What new offence may the company face? | Failure to prevent fraud | Corporate manslaughter | Misconduct in public office | Conspiracy to defraud only | No offence: companies can't commit fraud | Section 199 of the 2023 Act creates the failure to prevent fraud offence, with a reasonable procedures defence.
+Q: What is the identification doctrine? | Attributing the acts and mind of a company's directing mind to the company.
+Q: Why was Tesco not liable in Tesco v Nattrass? | The store manager wasn't part of the company's directing mind and will.
+Q: What did the Economic Crime and Corporate Transparency Act 2023, s 196 change? | For economic crimes, a company is guilty if a senior manager acting within their authority commits the offence.
+Q: Who is a senior manager under the 2023 Act? | A person who plays a significant role in decision-making or management.
+Q: When is an organisation guilty of corporate manslaughter? | When the way its activities are managed or organised causes a death, amounting to a gross breach of a relevant duty of care.
+Q: Which Act created corporate manslaughter? | The Corporate Manslaughter and Corporate Homicide Act 2007.
+Q: What penalties apply for corporate manslaughter? | An unlimited fine, with publicity and remedial orders also available.
+Q: Which Act created failure to prevent facilitation of tax evasion? | The Criminal Finances Act 2017.
+Q: What defence applies to failure to prevent fraud under the ECCTA 2023, s 199? | A reasonable procedures defence.
+Q: Can a junior employee's mens rea be attributed to a company at common law? | No. Only the directing mind and will's state of mind is attributed.
 
 ## Homicide
 S: Homicide is the killing of a human being by another. Unlawful homicides are divided into murder and manslaughter, with statutory offences such as causing death by dangerous driving. The common actus reus is the unlawful killing of a human being under the King's peace.
@@ -377,6 +477,16 @@ Q: What sentence must be passed for murder? | A mandatory life sentence.
 Q: Is a foetus a "person in being" for the law of homicide? | No (Attorney-General's Reference (No 3 of 1994)).
 M1#law-u05-11-q1@1: Which partial defences reduce murder to voluntary manslaughter? | Diminished responsibility and loss of control | Self-defence and duress | Insanity and automatism | Intoxication and mistake | Consent and necessity | These partial defences, plus suicide pact, reduce murder to manslaughter.
 M2#law-u05-11-q2@2: V dies four years after being stabbed by D, from complications of the wound. Can D be prosecuted for murder? | Yes, with the Attorney General's consent | No: the year-and-a-day rule applies | No: too much time has passed | Only for wounding | Only if V consented | The 1996 Act abolished the rule but requires AG consent after three years.
+Q: What is homicide? | The killing of a human being by another.
+Q: What is the common actus reus of murder and manslaughter? | The unlawful killing of a human being under the King's peace.
+Q: What is involuntary manslaughter? | Unlawful act manslaughter, gross negligence manslaughter, and arguably reckless manslaughter.
+Q: Name some statutory homicides. | Causing death by dangerous or careless driving, infanticide and corporate manslaughter.
+Q: When is a person dead for homicide purposes? | When brain stem death has occurred (Re A (A Minor) [1992]).
+Q: What does "under the King's peace" exclude? | Killing enemy combatants in war.
+Q: Which Act abolished the year-and-a-day rule? | The Law Reform (Year and a Day Rule) Act 1996.
+Q: What consent is needed to prosecute for homicide more than three years after the injury? | The Attorney General's consent.
+Q: How is the minimum term for murder set? | By reference to Schedule 21 of the Sentencing Act 2020.
+Q: What is the maximum sentence for manslaughter? | Life, giving the judge discretion.
 
 ## Murder
 S: Murder is the unlawful killing of a human being under the King's peace with malice aforethought. Malice aforethought means intention to kill or intention to cause grievous bodily harm; no premeditation is required.
@@ -411,6 +521,16 @@ Q: What two intentions amount to malice aforethought? | Intention to kill, or in
 Q: Must murder be premeditated? | No. A sudden intention is enough.
 M1#law-u05-12-q1@2: Which case confirmed intent to cause GBH as sufficient mens rea for murder? | R v Cunningham | R v Woollin | R v Jogee | R v Kennedy | R v Golds | R v Cunningham [1982] AC 566 confirmed Vickers in the House of Lords.
 M2#law-u05-12-q2@2: D punches V hard, intending to break V's jaw. V falls, hits his head and dies. D didn't foresee death. Can D be guilty of murder? | Yes, if D intended really serious harm | No: D didn't intend to kill | No: D didn't foresee death | Only of assault | Only if D used a weapon | Intent to cause GBH (really serious harm) is sufficient for murder.
+Q: What is malice aforethought? | Intention to kill or to cause grievous bodily harm.
+Q: What is grievous bodily harm? | Really serious harm (DPP v Smith).
+Q: What is express malice? | Intention to kill.
+Q: What is implied malice? | Intention to cause grievous bodily harm.
+Q: Which case confirmed R v Vickers on implied malice? | R v Cunningham [1982] AC 566.
+Q: What was Coke's classic definition of murder? | The unlawful killing of a reasonable creature in being under the King's peace with malice aforethought, express or implied.
+Q: Which cases govern oblique intention in murder? | R v Woollin [1999] and R v Nedrick [1986].
+Q: Why is the GBH rule in murder criticised? | A person can be convicted of murder without intending or foreseeing death.
+Q: What did the Law Commission recommend for homicide in 2006? | A three-tier structure (Law Com No 304), which hasn't been implemented.
+Q: Why is the line between murder and manslaughter especially important? | Because of the mandatory life sentence for murder.
 
 ## Voluntary manslaughter
 S: Voluntary manslaughter is a killing with the mens rea of murder that is reduced to manslaughter because a partial defence applies. The partial defences are diminished responsibility, loss of control and killing in pursuance of a suicide pact.
@@ -440,6 +560,16 @@ Q: Who bears the burden of proving diminished responsibility? | The defendant, o
 Q: Which partial defence replaced provocation? | Loss of control (Coroners and Justice Act 2009).
 M1#law-u05-13-q1@1: Which is NOT a partial defence to murder? | Duress | Diminished responsibility | Loss of control | Suicide pact | None: all three listed are | Duress is not a defence to murder at all (R v Howe).
 M2#law-u05-13-q2@2: What is the main reason partial defences matter in murder trials? | Murder carries a mandatory life sentence | Manslaughter has no sentence | They guarantee an acquittal | They remove the need for mens rea | They apply only to companies | Without them, reduced culpability couldn't be reflected in sentence.
+Q: What is voluntary manslaughter? | A killing with the mens rea of murder reduced to manslaughter by a partial defence.
+Q: What is a partial defence? | A defence that reduces murder to manslaughter rather than securing an acquittal.
+Q: Which provision governs the suicide pact defence? | Homicide Act 1957, s 4.
+Q: What is a suicide pact? | An agreement between two or more people that all will die.
+Q: Which provisions set out loss of control? | Coroners and Justice Act 2009, ss 54–56.
+Q: Which section amended diminished responsibility? | Coroners and Justice Act 2009, s 52.
+Q: Who must disprove loss of control once it is raised? | The prosecution, beyond reasonable doubt.
+Q: Can diminished responsibility and loss of control be run together? | Yes. The jury needn't agree which applies, provided they agree one does.
+Q: Why do partial defences exist? | The mandatory life sentence leaves no room to reflect reduced culpability, so the verdict marks it and gives sentencing discretion.
+Q: What maximum sentence is available after voluntary manslaughter? | Up to life, at the judge's discretion.
 
 ## Diminished responsibility
 S: Diminished responsibility is a partial defence to murder under s 2 of the Homicide Act 1957, as amended. It applies where an abnormality of mental functioning from a recognised medical condition substantially impaired the defendant's ability to understand, judge or control themselves, and explains the killing.
@@ -476,6 +606,16 @@ Q: What did R v Golds decide? | "Substantially" impaired means important or weig
 M1#law-u05-14-q1@1: Which statute section governs diminished responsibility? | Homicide Act 1957, s 2 | Coroners and Justice Act 2009, s 54 | Criminal Procedure (Insanity) Act 1964, s 1 | Criminal Justice Act 1967, s 8 | Homicide Act 1957, s 4 | Section 2, as amended by s 52 of the 2009 Act, sets out the defence.
 M2#law-u05-14-q2@3: D, very drunk but with no mental disorder, kills V in a rage. Can D rely on diminished responsibility? | No: voluntary intoxication isn't a recognised condition | Yes: drunkenness impairs self-control | Yes, if D was substantially drunk | Yes, if D regrets it | No, because D intended to kill | R v Dowds: voluntary acute intoxication is not a recognised medical condition.
 M3#law-u05-14-q3@2: D has a diagnosed depressive disorder that significantly impaired her judgement and contributed to the killing, but she had also been drinking. What should the jury ask? | Whether the disorder substantially impaired her, despite the drink | Whether she was drunk at all | Whether alcohol was the main cause | Whether she intended to kill | Whether a reasonable person would have killed | Dietschmann: the jury considers whether the abnormality itself substantially impaired D notwithstanding the alcohol.
+Q: What is an abnormality of mental functioning? | A state of mind so different from that of ordinary people that a reasonable person would term it abnormal.
+Q: What is a recognised medical condition? | A condition recognised in accepted classificatory systems.
+Q: What does it mean that the abnormality must "provide an explanation"? | It was a significant contributory factor in D's acts.
+Q: Is voluntary acute intoxication a recognised medical condition? | No (R v Dowds [2012]).
+Q: Can alcohol dependence syndrome be a recognised medical condition? | Yes (R v Wood [2008]; R v Stewart [2009]).
+Q: What question did R v Dietschmann set for intoxicated defendants with an abnormality? | Whether the abnormality substantially impaired D despite the drink.
+Q: Which subsection places the burden of diminished responsibility on D? | Homicide Act 1957, s 2(2).
+Q: Who decides diminished responsibility, the experts or the jury? | The jury, though expert psychiatric evidence is in practice essential (R v Brennan).
+Q: Must the judge always define "substantially" for the jury? | No. Ordinarily the judge needn't define it (R v Golds).
+Q: List the four elements of diminished responsibility. | An abnormality of mental functioning, from a recognised medical condition, substantially impairing a relevant ability, and providing an explanation for the killing.
 
 ## Loss of control
 S: Loss of control is a partial defence to murder under ss 54–56 of the Coroners and Justice Act 2009, replacing the old defence of provocation. It applies where D lost self-control because of a qualifying trigger, and a person of D's sex and age with a normal degree of tolerance and self-restraint might have reacted in the same or a similar way.
@@ -513,6 +653,16 @@ Q: Must the loss of self-control be sudden? | No (s 54(2) of the 2009 Act).
 Q: What are the two qualifying triggers? | Fear of serious violence, and things done or said amounting to circumstances of an extremely grave character causing a justifiable sense of being seriously wronged.
 M1#law-u05-15-q1@2: Under the 2009 Act, how is sexual infidelity treated as a qualifying trigger? | It is disregarded, though it may give context | It is always a qualifying trigger | It is a complete defence | It reverses the burden of proof | It applies only to married couples | Section 55(6)(c) disregards it, but Clinton allows it as context for other triggers.
 M2#law-u05-15-q2@2: D's partner taunts him about his job. D goes home, fetches a knife, waits two hours and stabs her. Is loss of control likely to succeed? | Unlikely: considered revenge and no grave trigger | Yes: taunts are a qualifying trigger | Yes: the loss need not be sudden | Yes, if D has a short temper | Only if the jury sympathises | Planning and delay suggest a considered desire for revenge, and the taunts are unlikely to be extremely grave.
+Q: Which old defence did loss of control replace? | Provocation.
+Q: What is the fear trigger in loss of control? | D's fear of serious violence from V against D or another identified person.
+Q: What is the anger trigger in loss of control? | Things done or said amounting to circumstances of an extremely grave character, causing a justifiable sense of being seriously wronged.
+Q: Which subsection excludes considered desire for revenge? | Coroners and Justice Act 2009, s 54(4).
+Q: Can a trigger D incited be relied on? | No. A trigger D incited to provide an excuse for violence is excluded.
+Q: When does the judge leave loss of control to the jury? | Only if there is sufficient evidence on which a properly directed jury could reasonably conclude it might apply (s 54(6); R v Jewell).
+Q: What circumstances of D can be considered in the objective test? | D's circumstances, such as a history of abuse.
+Q: Which characteristics are excluded from the objective test? | Those only affecting D's general capacity for tolerance and self-restraint, such as a short temper (s 54(3)).
+Q: What is the objective standard in loss of control? | A person of D's sex and age with a normal degree of tolerance and self-restraint, in D's circumstances.
+Q: What is a common mistake about loss of control? | Requiring the loss of self-control to be sudden, a requirement the 2009 Act removed.
 
 ## Involuntary manslaughter
 S: Involuntary manslaughter is an unlawful killing where D lacked the mens rea for murder. The main forms are unlawful act (constructive) manslaughter and gross negligence manslaughter. Some argue that subjectively reckless manslaughter is a third form.
@@ -543,6 +693,16 @@ Q: What are the two main forms of involuntary manslaughter? | Unlawful act mansl
 Q: Can unlawful act manslaughter be committed by omission? | No. It requires an unlawful act (R v Lowe).
 M1#law-u05-16-q1@1: What distinguishes involuntary manslaughter from murder? | D lacks malice aforethought | D had a partial defence | D was insane | D didn't cause the death | D was a company | Involuntary manslaughter is unlawful killing without the mens rea of murder.
 M2#law-u05-16-q2@2: A parent fails to get medical help for a sick child, who dies. Which form of manslaughter fits best? | Gross negligence manslaughter | Unlawful act manslaughter | Voluntary manslaughter | Corporate manslaughter | Murder | A failure to act in breach of a duty fits gross negligence; unlawful act manslaughter needs an act.
+Q: What is constructive manslaughter? | Another name for unlawful act manslaughter.
+Q: What is gross negligence in manslaughter? | Negligence so bad that it should be judged criminal.
+Q: What is reckless manslaughter? | Killing while subjectively aware of a risk of death or serious injury (R v Lidar).
+Q: Which cases define unlawful act manslaughter? | R v Church [1966] and DPP v Newbury and Jones [1977].
+Q: Which case defines gross negligence manslaughter? | R v Adomako [1995].
+Q: What does gross negligence manslaughter require? | A breach of a duty of care creating an obvious risk of death, so bad as to be criminal.
+Q: Who chooses the form of manslaughter when facts fit both? | The prosecution.
+Q: What is the maximum sentence for involuntary manslaughter? | Life.
+Q: Why is involuntary manslaughter hard to sentence? | It covers a huge range of culpability, from near-murder to tragic accidents.
+Q: Which form of manslaughter suits a death caused by breach of duty, including omission? | Gross negligence manslaughter.
 
 ## Gross negligence manslaughter
 S: Gross negligence manslaughter applies where D owes V a duty of care, breaches it, and the breach causes death in circumstances so bad that the jury considers it criminal. It is common in medical and workplace deaths.
@@ -577,6 +737,16 @@ Q: What kind of risk must there be for gross negligence manslaughter? | A seriou
 Q: What did R v Rose decide? | Foreseeability of the risk of death is judged on the information available at the time of the breach.
 M1#law-u05-17-q1@1: Which case set out the modern test for gross negligence manslaughter? | R v Adomako | R v Church | DPP v Newbury | R v Woollin | R v Jogee | Adomako, concerning an anaesthetist, established the test.
 M2#law-u05-17-q2@2: An optometrist fails to examine the back of a child's eye. An undetected condition later kills the child. The risk of death wasn't apparent from the examination done. What is likely? | No conviction: risk of death wasn't then obvious | Conviction: any failure that causes death is enough | Conviction: hindsight shows the risk | Conviction for murder | Conviction for unlawful act manslaughter | R v Rose: the risk must have been serious and obvious at the time of the breach.
+Q: What are the five elements of gross negligence manslaughter? | A duty of care, negligent breach, a serious and obvious risk of death, causation of death, and negligence so gross as to be criminal.
+Q: Which case restated the elements of gross negligence manslaughter in 2020? | R v Broughton [2020] EWCA Crim 1093.
+Q: Is a risk of serious injury enough for gross negligence manslaughter? | No. The risk must be of death (R v Misra and Srivastava).
+Q: Who decides whether negligence is gross enough to be criminal? | The jury, in all the circumstances.
+Q: Why did Evans owe a duty in R v Evans? | She supplied heroin to her half-sister and so contributed to a life-threatening situation.
+Q: What did R v Wacker decide about duties? | A duty of care can arise despite a joint illegal enterprise.
+Q: What did Adomako fail to notice? | That a patient's oxygen tube had become disconnected, for about six minutes.
+Q: In which settings is gross negligence manslaughter common? | Medical and workplace deaths.
+Q: What mistake about hindsight should be avoided in gross negligence manslaughter? | Using hindsight to judge whether the risk of death was obvious; foreseeability is judged at the time.
+Q: Did R v Misra and Srivastava find the gross negligence test too uncertain? | No. The test is not too uncertain.
 
 ## Unlawful act manslaughter
 S: Unlawful act (constructive) manslaughter applies where D intentionally does an act that is unlawful and dangerous, and it causes death. D needs only the mens rea of the unlawful act, not any foresight of harm.
@@ -612,6 +782,16 @@ Q: What is the Church test of dangerousness? | Whether a sober and reasonable pe
 Q: Must D realise the act was dangerous? | No (DPP v Newbury and Jones).
 M1#law-u05-18-q1@2: In DPP v Newbury and Jones, what did the House of Lords decide? | D needn't foresee that the act was dangerous | The act must be aimed at the victim | D must intend serious harm | Omissions suffice | Dangerousness is subjective | The test of dangerousness is objective: D needn't foresee any harm at all.
 M3#law-u05-18-q2@2: During a burglary, D shouts at an obviously frail 87-year-old, who dies of a heart attack. Is D likely guilty of manslaughter? | Yes: a reasonable person would see the risk | No: D didn't touch him | No: D didn't know of his heart condition | Only of burglary | Only if D intended harm | R v Watson: V's frailty would have been apparent to a reasonable person during the burglary.
+Q: What is unlawful act manslaughter? | Death caused by an intentional act that is unlawful and dangerous.
+Q: Does a civil wrong count as the unlawful act? | No. It must be a criminal offence.
+Q: What is the base offence in unlawful act manslaughter? | The criminal offence forming the unlawful act.
+Q: Why was there no unlawful act in R v Lamb? | There was no assault, because neither party thought the gun would fire.
+Q: Must the risk be of serious harm for unlawful act manslaughter? | No. Some harm, albeit not serious harm, is enough.
+Q: What did R v Watson decide about dangerousness? | The reasonable person has the knowledge D had during the act; the householder's frailty became apparent during the burglary.
+Q: What did R v Dawson decide? | Fear causing a heart attack counts only if a reasonable person would have known of V's vulnerability.
+Q: What kind of harm counts for dangerousness? | Physical harm, including shock causing physical injury.
+Q: Is a drug supplier liable for unlawful act manslaughter when V freely self-injects? | No. The supplier's act doesn't cause death (R v Kennedy (No 2)).
+Q: What mens rea does D need for unlawful act manslaughter? | Only the mens rea of the unlawful act, not foresight of harm.
 
 ## Non-fatal offences
 S: The non-fatal offences against the person form a ladder of seriousness, from common assault and battery to wounding or causing GBH with intent. Most are in the Offences Against the Person Act 1861, a statute long criticised as outdated.
@@ -642,6 +822,16 @@ Q: What is a wound? | A break in the continuity of the whole skin (JCC v Eisenho
 Q: What is the maximum sentence for s 18 wounding with intent? | Life imprisonment.
 M1#law-u05-19-q1@1: Under which section are common assault and battery charged? | Criminal Justice Act 1988, s 39 | OAPA 1861, s 47 | OAPA 1861, s 20 | OAPA 1861, s 18 | Public Order Act 1986, s 4 | Section 39 makes them summary offences with a maximum of six months.
 M2#law-u05-19-q2@2: V suffers internal bleeding in the eye from an air gun pellet, but the outer skin is unbroken. Is this a wound? | No: both skin layers must be broken | Yes: any bleeding is a wound | Yes: the eye is especially sensitive | Only if V is a child | Only under s 18 | JCC v Eisenhower: a wound requires a break in the whole skin.
+Q: What is the maximum sentence for common assault? | Six months; it is summary only.
+Q: What is the maximum sentence for assault occasioning ABH under s 47? | Five years.
+Q: What is the maximum sentence for s 20 wounding or inflicting GBH? | Five years.
+Q: What is the CPS charging standard? | CPS guidance on which offence to charge for particular injuries.
+Q: What injuries usually amount to common assault under the charging standard? | Minor grazes and bruises.
+Q: What injuries may amount to ABH under the charging standard? | Loss of consciousness or broken teeth.
+Q: What injuries amount to GBH under the charging standard? | Broken limbs or serious psychiatric injury.
+Q: What did the Law Commission recommend in Law Com No 361 (2015)? | Replacing the 1861 Act with a modern statute and a clearer ladder of offences.
+Q: In which statute are most non-fatal offences found? | The Offences Against the Person Act 1861.
+Q: What is a common charging mistake with s 18? | Charging s 18 without evidence of specific intent to cause GBH.
 
 ## Assault and battery
 S: Assault and battery are the least serious offences against the person. Assault is causing V to apprehend immediate unlawful force; battery is the application of unlawful force. Both require intention or subjective recklessness.
@@ -676,6 +866,16 @@ Q: Can silence amount to an assault? | Yes, silent phone calls can (R v Ireland)
 Q: What did Haystead v Chief Constable of Derbyshire decide? | Battery can be committed indirectly.
 M1#law-u05-20-q1@1: Which case held that silent phone calls can amount to an assault? | R v Ireland | R v Venna | Collins v Wilcock | DPP v K | R v Constanza | R v Ireland [1998] AC 147: silent calls can cause apprehension of immediate force.
 M2#law-u05-20-q2@2: D hides acid in a hand-dryer, intending to remove it later. Another student uses the dryer and is burnt. Is D guilty of battery? | Yes: indirect force with recklessness | No: D didn't touch the victim | No: the victim used the dryer voluntarily | Only of criminal damage | Only if D intended to hurt that student | DPP v K: battery can be indirect, and D was reckless.
+Q: What does "immediate" mean for assault? | Imminent, not instantaneous.
+Q: What did R v Constanza decide? | Letters can cause apprehension of violence in the near future, amounting to assault.
+Q: How slight can a touching be for battery? | Any unlawful touching, however slight, with no hostility required.
+Q: What did DPP v K decide? | Acid left in a hand-dryer was a battery: force can be applied indirectly.
+Q: Can battery be committed by a continuing act? | Yes (Fagan v MPC).
+Q: What mens rea do assault and battery require? | Intention or subjective recklessness (R v Venna; R v Savage; DPP v Parmenter).
+Q: Is ordinary jostling a battery? | No. Ordinary jostling in daily life is impliedly consented to.
+Q: What is an indirect battery? | Force applied through an object or another person.
+Q: Can words negate an assault? | Yes (Tuberville v Savage).
+Q: What common mistake is made about assault? | Assuming it requires physical contact or a threat that could be carried out instantly.
 
 ## Actual bodily harm
 S: Assault occasioning actual bodily harm under s 47 of the Offences Against the Person Act 1861 requires an assault or battery that causes ABH. The mens rea is only that of the assault or battery: D needn't foresee any harm.
@@ -707,6 +907,16 @@ Q: Does ABH include psychiatric injury? | Yes, a recognised psychiatric illness,
 Q: What mens rea is required for s 47? | Only the mens rea of the assault or battery.
 M1#law-u05-21-q1@1: Which case held that cutting off a substantial amount of hair can be ABH? | DPP v Smith [2006] | R v Chan-Fook | R v Miller | R v Roberts | T v DPP | DPP v Smith: hair is part of the body, and cutting it can be ABH.
 M2#law-u05-21-q2@2: D throws a drink at V, intending only to wet her. The glass slips and cuts her. Is D guilty under s 47? | Yes: battery mens rea is enough | No: D didn't foresee injury | No: it was an accident | Only of battery | Only under s 20 | R v Savage: D intended a battery, which caused ABH; no foresight of harm is needed.
+Q: What does "occasioning" mean in s 47? | Causing.
+Q: How did R v Miller define actual bodily harm? | Any hurt or injury calculated to interfere with the health or comfort of the victim.
+Q: What did R v Donovan add to the meaning of ABH? | The harm must not be so trivial as to be wholly insignificant.
+Q: Can momentary loss of consciousness be ABH? | Yes (T v DPP [2003]).
+Q: What is a recognised psychiatric injury? | A clinically identifiable condition, not mere emotions such as fear.
+Q: What did R v Roberts decide for s 47? | V's reasonable escape attempt, jumping from a moving car, didn't break the chain of causation.
+Q: Must D foresee ABH for s 47? | No. The mens rea of assault or battery is enough.
+Q: What happened in R v Savage? | She threw beer at a woman, the glass slipped and cut the woman's wrist, and she was guilty under s 47.
+Q: What did R v Ireland decide about psychiatric injury and ABH? | Recognised psychiatric illness can be actual bodily harm.
+Q: What two things must be proved for s 47? | An assault or battery, and that it caused actual bodily harm.
 
 ## Grievous bodily harm
 S: Sections 20 and 18 of the Offences Against the Person Act 1861 cover the most serious non-fatal injuries. Section 20 requires only foresight of some harm; s 18 requires a specific intention to cause GBH (or to resist arrest), which is why it carries life imprisonment.
@@ -741,6 +951,16 @@ Q: What did R v Bollom decide about GBH? | The seriousness of harm is assessed t
 M1#law-u05-22-q1@2: Which offence carries a maximum of life imprisonment? | Section 18 wounding with intent | Section 20 wounding | Section 47 ABH | Common assault | Battery | Section 18 is the most serious non-fatal offence, with a maximum of life.
 M2#law-u05-22-q2@3: D knows he has a serious sexually transmitted infection, doesn't tell his partner and transmits it. What offence may he have committed? | Inflicting GBH under s 20 | Common assault only | No offence, as sex was consensual | Section 47 ABH only | Murder | Dica and Konzani: consent to sex isn't consent to the risk of infection.
 M3#law-u05-22-q3@2: In a fight, D kicks V's head repeatedly while V lies on the ground. V suffers a fractured skull. Which charge best fits? | Section 18: intent can be inferred | Section 20 only, as D didn't plan it | Section 47, as no weapon was used | Battery, as it was a fight | No offence: V joined the fight | Repeated kicks to the head of a prone person are strong evidence of intent to cause really serious harm.
+Q: What does "inflict" mean in s 20? | To cause; no assault is needed (R v Burstow).
+Q: What does "maliciously" mean in the 1861 Act? | Intending or foreseeing the risk of some harm.
+Q: What did R v Saunders say about the meaning of GBH? | It can be described as serious harm.
+Q: Can serious psychiatric illness be GBH? | Yes (R v Burstow).
+Q: Which cases concern reckless transmission of serious sexual infection? | R v Dica [2004] and R v Konzani [2005].
+Q: Which case set the s 20 mens rea of foresight of some harm? | R v Mowatt [1968].
+Q: What intent does s 18 require? | Intent to do GBH, or intent to resist or prevent lawful arrest.
+Q: How is foresight treated for s 18 intent to cause GBH? | As evidence of intention under the Woollin approach; nothing less than intention will do.
+Q: Why does s 18 carry life imprisonment? | Because it requires a specific intention to cause GBH or to resist arrest.
+Q: What common mistake is made about s 20 mens rea? | Requiring foresight of serious harm, when foresight of some harm is enough.
 
 ## Sexual offences
 S: The Sexual Offences Act 2003 sets out the main sexual offences, including rape, assault by penetration and sexual assault. Central to all of them is consent, defined as agreeing by choice with the freedom and capacity to make that choice.
@@ -777,6 +997,16 @@ Q: How does s 74 SOA 2003 define consent? | Agreeing by choice, with the freedom
 Q: When does a conclusive presumption of no consent arise? | Where D deceived V about the nature or purpose of the act, or impersonated someone V knew personally (s 76).
 M1#law-u05-23-q1@2: Which section of the Sexual Offences Act 2003 contains evidential presumptions about consent? | Section 75 | Section 74 | Section 76 | Section 1 | Section 3 | Section 75 sets out circumstances where V is presumed not to consent unless D adduces evidence otherwise.
 M2#law-u05-23-q2@3: V agreed to sex only if D wore a condom. D removed it without V's knowledge. What is the position? | V didn't consent to sex without a condom | V's consent covered the whole act | It is only a civil wrong | It's an offence only if V became pregnant | D is protected by V's initial agreement | Assange: consent conditional on condom use isn't consent to sex without one.
+Q: What are the elements of rape under s 1 SOA 2003? | Intentional penile penetration of the vagina, anus or mouth, without V's consent, where D doesn't reasonably believe V consents.
+Q: How is the reasonableness of D's belief in consent decided? | Having regard to all the circumstances, including any steps D took to ascertain consent (s 1(2)).
+Q: Name three sexual offences besides rape in the SOA 2003. | Assault by penetration (s 2), sexual assault (s 3), and causing sexual activity without consent (s 4).
+Q: What is an evidential presumption under s 75? | A presumption of no consent that D can rebut with evidence.
+Q: Give examples of circumstances raising s 75 presumptions. | V was subjected to violence, or was asleep or unconscious.
+Q: What did Assange v Swedish Prosecution Authority decide? | Consent conditional on condom use is not consent to sex without one.
+Q: What did R (F) v DPP decide? | Consent conditional on withdrawal before ejaculation was not consent to sex without it.
+Q: Why did a lie about a vasectomy not negate consent in R v Lawrance? | It went to the broad circumstances rather than the physical act.
+Q: Can a drunk person consent to sex? | Yes, if they still have capacity; capacity can be lost before unconsciousness (R v Bree).
+Q: What common mistake is made about consent in sexual offences? | Treating the absence of resistance or protest as evidence of consent.
 
 ## Theft
 S: Theft is defined by s 1 of the Theft Act 1968: dishonestly appropriating property belonging to another with the intention of permanently depriving the other of it. Sections 2 to 6 explain each element.
@@ -807,6 +1037,16 @@ Q: Can accepting a valid gift be an appropriation? | Yes (R v Hinks).
 M1#law-u05-24-q1@1: Which section of the Theft Act 1968 defines "appropriates"? | Section 3 | Section 2 | Section 4 | Section 5 | Section 6 | Section 3 defines appropriation as any assumption of the rights of an owner.
 M2#law-u05-24-q2@2: D takes back his own car from a garage that has repaired it, without paying. Can D be guilty of theft? | Yes: the garage had possession of it | No: you can't steal your own property | No: D had a claim of right in all cases | Only of fraud | Only if D sold the car | R v Turner (No 2): property belongs to anyone in possession or control of it.
 M3#law-u05-24-q3@2: D takes a season ticket, uses it for the whole season, then returns it. Is there intention to permanently deprive? | Yes, possibly: its goodness has gone | No: D returned it | No: borrowing is never theft | Yes, only if D sold it | No: tickets aren't property | R v Lloyd: returning a thing with its value exhausted can amount to intention to permanently deprive.
+Q: What does s 4 of the Theft Act 1968 cover? | Property: money and all other property, including things in action; land and wild plants only in limited cases.
+Q: Is confidential information property for theft? | No (Oxford v Moss).
+Q: What does s 5(3) of the Theft Act 1968 provide? | Property received under an obligation to deal with it in a particular way is treated as belonging to the other.
+Q: What does s 5(4) of the Theft Act 1968 provide? | Property got by another's mistake is treated as belonging to the other.
+Q: When is a person not dishonest under s 2(1)? | When they believe they have a legal right, believe the owner would consent, or believe the owner can't be found by reasonable steps.
+Q: What did R v Lloyd decide about borrowing? | Borrowing can be intention to permanently deprive if the thing is returned with its "goodness" gone.
+Q: What did R v Turner (No 2) decide? | An owner can steal their own property from someone in possession of it.
+Q: Which test of dishonesty did Ivey and Barton replace? | The old two-stage Ghosh test.
+Q: Can appropriation occur with the owner's consent? | Yes (R v Gomez).
+Q: Which section of the Theft Act 1968 explains intention to permanently deprive? | Section 6.
 
 ## Robbery
 S: Robbery is theft with force. Under s 8 of the Theft Act 1968, a person is guilty if they steal and, immediately before or at the time of doing so, and in order to do so, use force on any person or put or seek to put any person in fear of being then and there subjected to force.
@@ -837,6 +1077,16 @@ Q: What happens to a robbery charge if there is no theft? | It fails: robbery re
 Q: Can minimal force such as jostling be enough for robbery? | Yes; force is an ordinary word for the jury (R v Dawson and James).
 M1#law-u05-25-q1@1: What is the maximum sentence for robbery? | Life imprisonment | 7 years | 10 years | 14 years | 5 years | Robbery is indictable only, with a maximum of life.
 M2#law-u05-25-q2@2: D snatches V's phone and runs. Ten minutes later, when V catches up, D pushes V away. Is this robbery? | Probably not: force came after the theft ended | Yes: any force connected to theft is robbery | Yes: appropriation always continues | Only if V was injured | Only if D used a weapon | Force must be used immediately before or at the time of stealing; ten minutes later the theft was likely complete.
+Q: What is robbery? | Theft with force or the threat of force, used in order to steal (Theft Act 1968, s 8).
+Q: Must the force in robbery be used on the owner? | No. It can be used on any person.
+Q: What did R v Clouden decide? | Wrenching a bag from V's grip can be enough force for robbery.
+Q: What did R v Hale decide about timing in robbery? | Appropriation can be a continuing act, so tying up the householder after taking a jewellery box was robbery.
+Q: What is a continuing appropriation? | The idea that appropriation can continue while D is "on the job".
+Q: Is force used out of anger, not to steal, robbery? | No. The force must be used in order to steal.
+Q: When is a theft, and so a robbery, complete? | Once the appropriation occurs (Corcoran v Anderton).
+Q: What happened in Corcoran v Anderton? | A grabbed handbag was dropped seconds later, yet the robbery was complete.
+Q: Why might a person with a claim of right not be guilty of robbery? | They aren't dishonest, so there is no theft and therefore no robbery.
+Q: How is robbery tried? | It is indictable only.
 
 ## Burglary
 S: Burglary under s 9 of the Theft Act 1968 involves entering a building or part of a building as a trespasser, either with intent to commit certain offences (s 9(1)(a)) or then committing or attempting certain offences (s 9(1)(b)).
@@ -872,6 +1122,16 @@ Q: What are the ulterior offences for s 9(1)(a) burglary? | Stealing, inflicting
 Q: Which case held that D can be a trespasser in part of a building? | R v Walkington.
 M1#law-u05-26-q1@1: Which case decided that entry need only be "effective"? | R v Brown | R v Collins | R v Walkington | R v Ryan | R v Jones and Smith | R v Brown [1985]: leaning through a shop window was effective entry.
 M2#law-u05-26-q2@2: D is invited into a friend's house for a party, then goes into a locked bedroom and takes jewellery. Is this burglary? | Yes: D was a trespasser in that part | No: D was invited into the house | Only theft | Only if D broke the lock | No: friends can't burgle | Walkington: D entered a part of the building as a trespasser and stole.
+Q: What is a trespasser for burglary? | A person who enters without permission, or knowingly or recklessly exceeds it.
+Q: What is s 9(1)(b) burglary? | Having entered as a trespasser, stealing or attempting to steal, or inflicting or attempting to inflict GBH.
+Q: What did R v Ryan decide about entry? | Partial entry, with head and arm stuck in a window, can suffice even if D couldn't steal anything.
+Q: What did R v Brown decide about entry? | Leaning through a shop window was an effective entry.
+Q: Was a freezer container on blocks a building for burglary? | Yes (B and S v Leathley).
+Q: Were lorry trailers buildings in Norfolk Constabulary v Seekings and Gould? | No. They lacked the required permanence.
+Q: What mental element is needed as to being a trespasser? | D must know, or be reckless as to, the facts making them a trespasser (R v Collins).
+Q: What did R v Jones and Smith decide? | Entering for a purpose outside one's permission, a son taking his father's televisions, made D a trespasser.
+Q: What are the maximum sentences for burglary? | 14 years for a dwelling and 10 years for other buildings.
+Q: What is aggravated burglary? | Burglary while carrying a firearm, imitation firearm, weapon of offence or explosive (s 10), carrying life.
 
 ## Fraud
 S: The Fraud Act 2006 created a general offence of fraud, committed in one of three ways: false representation, failing to disclose information, or abuse of position. The offence is conduct-based: no one needs to be deceived and no gain or loss needs to occur.
@@ -910,6 +1170,16 @@ Q: What are the three forms of fraud under the Fraud Act 2006? | False represent
 Q: Must anyone actually be deceived for fraud? | No. It is a conduct crime.
 M1#law-u05-27-q1@1: Which section of the Fraud Act 2006 covers abuse of position? | Section 4 | Section 2 | Section 3 | Section 6 | Section 11 | Section 4 covers dishonest abuse of a position of financial trust.
 M2#law-u05-27-q2@3: D uses a found credit card to buy goods online. No person reads the order. Has D committed fraud by false representation? | Yes: representations to machines count | No: no person was deceived | No: the bank will refund the owner | Only theft of the card | Only if the goods arrive | Section 2(5) covers representations made to systems or devices.
+Q: What is fraud by failing to disclose information? | Dishonestly failing to disclose information one is under a legal duty to disclose, with intent to gain or cause loss (s 3).
+Q: Can abuse of position under s 4 be by omission? | Yes.
+Q: What can a false representation be about? | Fact, law or a person's state of mind, express or implied, by words or conduct.
+Q: Can a representation be made to a machine? | Yes (Fraud Act 2006, s 2(5)), such as entering stolen card details online.
+Q: What did R v Lambie decide about card use? | Using a card implies authority to use it.
+Q: What does R v Barnard illustrate? | Presenting oneself in a way that implies a status one doesn't have, such as wearing a college gown.
+Q: What do gain and loss mean under s 5 of the Fraud Act? | Gain or loss in money or other property, temporary or permanent.
+Q: What knowledge is needed for fraud by false representation? | That the representation is or might be untrue or misleading.
+Q: Name two related offences in the Fraud Act 2006. | Possessing or making articles for use in fraud (ss 6–7) and obtaining services dishonestly (s 11).
+Q: What is the maximum sentence for fraud? | 10 years.
 
 ## Criminal damage
 S: The Criminal Damage Act 1971 makes it an offence to destroy or damage property belonging to another, intending to or being reckless as to that result, without lawful excuse. Aggravated criminal damage and arson are more serious forms.
@@ -943,6 +1213,16 @@ Q: What did Hardman v Chief Constable of Avon decide? | Water-soluble paint that
 Q: Can D commit aggravated criminal damage to their own property? | Yes; s 1(2) applies to any property.
 M1#law-u05-28-q1@2: In Jaggard v Dickinson, why was D not guilty? | She honestly believed the owner would consent | She was too drunk to form intent | The damage was trivial | The house was hers | She acted in self-defence | Section 5(2)(a) applies to an honest belief, even if induced by intoxication.
 M2#law-u05-28-q2@3: D shoots at a window behind which V is standing. The glass shatters but V is unhurt. For aggravated damage, what is the key question? | Whether the damage itself endangered life | Whether the gunshot endangered life | Whether V was injured | Whether D owned the window | Whether D was drunk | R v Steer: the danger to life must come from the damage, not the act that caused it.
+Q: What is damage under the Criminal Damage Act 1971? | Physical harm or impairment of value or usefulness, judged as a matter of fact and degree.
+Q: What did Roe v Kingerlee decide? | Mud graffiti could be damage.
+Q: What did Morphitis v Salmon decide? | Impairing usefulness can be damage.
+Q: Which test of recklessness applies to criminal damage? | Subjective recklessness (R v G).
+Q: What is the lawful excuse in s 5(2)(b)? | Acting to protect property in immediate need of protection, believing the means were reasonable.
+Q: What did R v Hill and Hall add on s 5(2)(b)? | The act must objectively be capable of protecting property.
+Q: What did R v Steer decide about aggravated criminal damage? | The danger to life must come from the damage, not the act causing it.
+Q: What is arson? | Criminal damage by fire (s 1(3)).
+Q: What are the maximum sentences for basic and aggravated criminal damage? | Up to 10 years for basic damage; life for aggravated damage and arson.
+Q: What is a common mistake about lawful excuse and drink? | Assuming s 5 is unavailable when D's belief was induced by drink.
 
 ## Defences
 S: Criminal defences either deny an element of the offence or justify or excuse conduct that would otherwise be criminal. Some are complete defences leading to acquittal; others are partial and reduce the offence. Understanding which kind applies, and who must prove it, is essential.
@@ -976,6 +1256,16 @@ Q: What is the age of criminal responsibility in England and Wales? | 10 (Childr
 Q: Which defences place a legal burden on D? | Insanity and diminished responsibility (and some statutory defences).
 M1#law-u05-29-q1@1: Which defence is usually classified as a justification? | Self-defence | Duress by threats | Insanity | Diminished responsibility | Intoxication | Self-defence makes the use of reasonable force lawful.
 M2#law-u05-29-q2@2: D raises duress and gives evidence of threats. What must the prosecution do? | Disprove duress beyond reasonable doubt | Nothing: D must prove it | Prove D wasn't threatened on balance | Ask the judge to decide | Accept the defence | Once D discharges the evidential burden, the prosecution must disprove the defence.
+Q: What is a justification defence? | A defence that makes the conduct right in the circumstances, such as self-defence.
+Q: What is an excuse defence? | A defence accepting the conduct was wrong but excusing the person, such as duress.
+Q: What is the evidential burden? | The burden of raising enough evidence for a defence to be left to the jury.
+Q: Which defences deny mens rea or voluntariness? | Intoxication for specific intent offences, automatism and mistake.
+Q: What is the verdict when insanity succeeds? | A special verdict.
+Q: Which partial defences apply only to murder? | Diminished responsibility and loss of control.
+Q: Which cases concern reverse burdens and Article 6 ECHR? | R v Lambert [2001] and Sheldrake v DPP [2004].
+Q: What should you do before considering defences in a problem? | Establish the offence first.
+Q: What effects can a successful defence have? | Acquittal, a special verdict, or conviction of a lesser offence.
+Q: What is a common mistake about the burden for self-defence or duress? | Placing a legal burden on D, when D bears only an evidential burden.
 
 ## Self-defence
 S: Self-defence, defence of others and the prevention of crime allow the use of reasonable force. Whether force was reasonable is judged on the facts as D honestly believed them to be, under the common law and s 76 of the Criminal Justice and Immigration Act 2008.
@@ -1011,6 +1301,16 @@ Q: What is the test for force in a householder case? | It must not be grossly di
 M1#law-u05-30-q1@2: Which statute section governs the reasonableness of force in self-defence? | Criminal Justice and Immigration Act 2008, s 76 | Criminal Law Act 1967, s 1 | Homicide Act 1957, s 2 | Coroners and Justice Act 2009, s 54 | Criminal Justice Act 1988, s 39 | Section 76 clarifies the common law test.
 M3#law-u05-30-q2@2: D, drunk, wrongly thinks a man approaching is attacking him and punches him. Can D rely on self-defence? | No: the mistake was due to voluntary intoxication | Yes: honest belief is enough | Yes, if the force was small | Yes, because he felt threatened | Only if the man was a stranger | Section 76(5) and O'Grady exclude drunken mistakes.
 M3#law-u05-30-q3@3: An intruder breaks into D's home at night. D hits him once with a bat, causing serious injury. The force was more than necessary but not grossly so. What is the position? | The force may still be reasonable | It is automatically unreasonable | It is automatically reasonable | D must prove it was proportionate | Self-defence never applies at home | Collins: in a householder case, disproportionate force may be reasonable; grossly disproportionate force is not.
+Q: What is reasonable force in self-defence? | Force that is not disproportionate in the circumstances as D believed them.
+Q: Is the necessity of force judged subjectively or objectively? | Subjectively: did D genuinely believe force was necessary (Beckford v R)?
+Q: How does s 76(7) affect the reasonableness of force? | D's position in the heat of the moment is considered.
+Q: Can pre-emptive force be justified? | Yes (Attorney-General's Reference (No 2 of 1983)).
+Q: Is there a duty to retreat in self-defence? | No, but the possibility of retreat is a factor (s 76(6A)).
+Q: Which cases bar drunken mistakes in self-defence? | R v O'Grady [1987] and R v Hatton [2005].
+Q: Which case considered disproportionate force in householder cases? | R (Collins) v Secretary of State for Justice [2016].
+Q: What is the effect of successful self-defence? | Complete acquittal.
+Q: Is excessive force in self-defence a partial defence to murder? | No, though it may support loss of control based on fear of serious violence.
+Q: What is a householder case? | Force used by a person in their dwelling against a believed trespasser.
 
 ## Insanity
 S: Insanity is a defence based on the M'Naghten Rules (1843). D must prove that, at the time, they were labouring under such a defect of reason, from disease of the mind, as not to know the nature and quality of the act, or not to know it was wrong. It leads to a special verdict.
@@ -1044,6 +1344,16 @@ Q: What three elements do the M'Naghten Rules require? | A defect of reason, fro
 Q: What disposals are available after a special verdict? | A hospital order, a supervision order, or an absolute discharge.
 M1#law-u05-31-q1@1: Which case held that epilepsy can be a disease of the mind? | R v Sullivan | R v Quick | R v Windle | R v Clarke | R v Bailey | R v Sullivan [1984] AC 156: epilepsy is an internal disease of the mind in law.
 M2#law-u05-31-q2@2: D, a diabetic, forgets to take insulin and attacks V while hyperglycaemic. Which defence applies? | Insanity: the cause was internal | Non-insane automatism | Intoxication | Duress | Diminished responsibility | R v Hennessy: hyperglycaemia from the disease itself is an internal cause.
+Q: What is a disease of the mind under the M'Naghten Rules? | A legal concept covering any internal malfunction of the mind, whatever its cause.
+Q: What is a defect of reason? | Deprivation of the power to reason, not mere failure to use it.
+Q: What did R v Clarke decide about absent-mindedness? | Absent-mindedness is not a defect of reason.
+Q: Which case held arteriosclerosis can be a disease of the mind? | R v Kemp [1957].
+Q: Which case held sleepwalking can be insanity? | R v Burgess [1991].
+Q: What does "wrong" mean in the M'Naghten Rules? | Legally wrong (R v Windle; R v Johnson).
+Q: How does insanity differ from non-insane automatism? | Insanity has an internal cause; non-insane automatism has an external cause such as a blow or insulin (R v Quick).
+Q: Who bears the burden of proving insanity? | D, on the balance of probabilities.
+Q: Which Act governs disposal after a special verdict? | The Criminal Procedure (Insanity) Act 1964, as amended.
+Q: Why are the M'Naghten Rules criticised? | They date from 1843 and label conditions such as epilepsy and diabetes as insanity.
 
 ## Automatism
 S: Automatism is a defence where D's acts were involuntary because of an external factor that caused a complete loss of voluntary control. Non-insane automatism leads to a complete acquittal, but it is narrowly confined and unavailable where D was at fault in bringing it about.
@@ -1073,6 +1383,16 @@ Q: What did R v Quick decide? | Hypoglycaemia caused by an insulin injection is 
 Q: Is "driving without awareness" automatism? | No; there must be total loss of control (AG's Reference (No 2 of 1992)).
 M1#law-u05-32-q1@1: What is the outcome of a successful plea of non-insane automatism? | A complete acquittal | A special verdict | A conviction for manslaughter | A hospital order | A conditional discharge | Non-insane automatism negates voluntariness, so D is acquitted.
 M2#law-u05-32-q2@2: D, a diabetic, takes insulin and skips a meal knowing this may make him aggressive, then hits V while hypoglycaemic. Can he rely on automatism for battery? | Unlikely: he was reckless in becoming an automaton | Yes: hypoglycaemia is external | Yes: automatism is always a defence | Only insanity is available | Yes, if he regrets it | R v Bailey: self-induced automatism is no defence to a basic intent offence if D was reckless.
+Q: What is non-insane automatism? | Involuntary conduct caused by an external factor, leading to a complete acquittal.
+Q: What is self-induced automatism? | Automatism D brought about through their own fault.
+Q: Give examples of external factors for automatism. | A blow to the head, a reflex after a bee sting, or hypoglycaemia caused by an insulin injection.
+Q: How much loss of control does automatism require? | A total destruction of voluntary control; impaired or reduced awareness isn't enough.
+Q: What burden does D bear for automatism? | An evidential burden, usually supported by medical evidence.
+Q: Can self-induced automatism be a defence to a specific intent offence? | Yes, if D lacked the mens rea.
+Q: What did R v Bailey decide about self-induced automatism? | It is no defence to basic intent offences if D was reckless in becoming an automaton.
+Q: What did R v Hardie decide? | Taking a normally sedative drug such as Valium is treated differently from dangerous drugs or alcohol.
+Q: Which rules apply when automatism results from voluntary intoxication with drink or dangerous drugs? | The intoxication rules.
+Q: Is tiredness at the wheel automatism? | No. Reduced awareness isn't a total loss of control.
 
 ## Intoxication
 S: Intoxication is not a defence as such, but evidence of intoxication may show that D lacked the mens rea for an offence. The rules distinguish voluntary from involuntary intoxication, and specific intent from basic intent offences.
@@ -1107,6 +1427,16 @@ Q: Is voluntary intoxication relevant to basic intent offences? | No (DPP v Maje
 Q: What did R v Kingston decide? | Involuntary intoxication is no defence if D still formed the mens rea.
 M1#law-u05-33-q1@2: Which is a basic intent offence for the purposes of intoxication? | Assault occasioning ABH | Murder | Section 18 GBH with intent | Theft | Robbery | Section 47 is a basic intent offence, so voluntary intoxication is no defence.
 M2#law-u05-33-q2@3: D drinks heavily to build courage, then kills V as he had planned. Can intoxication reduce his liability? | No: Dutch courage is no defence | Yes: he was too drunk to intend | Yes, to manslaughter | Only if he was an alcoholic | Only if V provoked him | Attorney-General for Northern Ireland v Gallagher: D had formed the intent before drinking.
+Q: Is intoxication a defence in itself? | No, but evidence of it may show that D lacked the mens rea.
+Q: What is a specific intent offence? | One where voluntary intoxication can negate the mens rea, such as murder or s 18.
+Q: What is a basic intent offence? | One where voluntary intoxication is no defence, such as manslaughter or s 47.
+Q: Why is voluntary intoxication irrelevant to basic intent offences? | Because becoming intoxicated is itself reckless (DPP v Majewski).
+Q: Name specific intent offences for intoxication. | Murder, s 18, theft, robbery, burglary with intent and attempts.
+Q: What did R v Sheehan and Moore decide? | A drunken intent is still intent.
+Q: What did Attorney-General for Northern Ireland v Gallagher decide? | Drinking for "Dutch courage" to carry out a planned crime is no defence.
+Q: What is involuntary intoxication? | Intoxication without D's knowledge, or from a drug taken as prescribed.
+Q: Can involuntary intoxication be a defence to a basic intent offence? | Yes, if D actually lacked the mens rea.
+Q: Can a drunken mistake support lawful excuse for criminal damage? | Yes (Jaggard v Dickinson), unlike self-defence.
 
 ## Duress
 S: Duress excuses D who committed an offence because of a threat of death or serious injury. It can arise from threats by a person (duress by threats) or from circumstances (duress of circumstances). It is not available for murder or attempted murder.
@@ -1140,6 +1470,16 @@ Q: Is duress a defence to murder? | No (R v Howe), nor to attempted murder (R v 
 Q: What did R v Hasan decide about voluntary association? | Duress is unavailable if D voluntarily associated with criminals and foresaw or ought to have foreseen the risk of compulsion.
 M1#law-u05-34-q1@1: What level of threat is required for duress? | Death or serious injury | Any threat of harm | Damage to property | Financial loss | Embarrassment | Only threats of death or serious injury can found duress.
 M3#law-u05-34-q2@2: D is told by a drug dealer he joined years earlier that his family will be hurt unless he robs a shop. Can D rely on duress? | Probably not: voluntary association | Yes: the threat was to family | Yes: robbery isn't murder | Only if he robbed a small shop | Yes, if the threat was credible | Hasan: joining a criminal group with foreseeable risk of compulsion excludes duress.
+Q: What is duress by threats? | A threat of death or serious injury requiring D to commit a specific offence.
+Q: What is duress of circumstances? | Pressure from a situation threatening death or serious injury.
+Q: Whose safety can the threat in duress be directed at? | D, D's family, or a person for whom D reasonably felt responsible.
+Q: What objective question is asked in duress? | Would a sober person of reasonable firmness, sharing D's relevant characteristics, have responded the same way?
+Q: Which characteristics are relevant in duress under R v Bowen? | Age, pregnancy, serious physical disability and recognised psychiatric illness, but not vulnerability or timidity alone.
+Q: How imminent must the threat be for duress? | Expected to be carried out immediately or almost immediately, with no reasonable chance to escape or seek police protection.
+Q: What did R v Cole decide about duress? | The threat must be directed to committing the offence charged.
+Q: Which case decided duress is no defence to attempted murder? | R v Gotts [1992].
+Q: What happened in R v Martin on duress of circumstances? | D drove while disqualified to stop a suicide threat.
+Q: Which cases set the test for duress? | R v Graham [1982] and R v Hasan [2005].
 
 ## Necessity
 S: Necessity covers situations where D commits an offence to avoid a greater evil. English law recognises it narrowly: largely through duress of circumstances and, exceptionally, as a free-standing defence in medical cases. It has never been a defence to murder in ordinary circumstances.
@@ -1171,6 +1511,16 @@ Q: What did R v Dudley and Stephens decide? | Necessity is no defence to murder.
 Q: What are Brooke LJ's three requirements in Re A? | Avoiding inevitable and irreparable evil; doing no more than reasonably necessary; the evil inflicted not disproportionate to the evil avoided.
 M1#law-u05-35-q1@1: Which case refused necessity as a defence to murder on the high seas? | R v Dudley and Stephens | Re A | R v Shayler | R v Martin | Southwark LBC v Williams | The sailors' killing of the cabin boy was murder.
 M2#law-u05-35-q2@2: A homeless family occupies an empty council house and argues necessity. What is the likely outcome? | The defence fails | The defence succeeds | It reduces the offence | Necessity applies to all property crimes | Only if the house is in poor repair | Southwark LBC v Williams: homelessness doesn't justify trespass.
+Q: What is necessity in criminal law? | Committing an offence to avoid a greater harm.
+Q: What is the lesser evil idea in necessity? | The harm caused must be less than the harm avoided.
+Q: What is the doctrine of double effect? | The idea that foreseen side effects of a legitimate aim may be permissible.
+Q: Why do courts fear a general necessity defence? | It could excuse too much.
+Q: What did Southwark LBC v Williams decide? | Homelessness was no defence to squatting.
+Q: Why is Re A (Conjoined Twins) of limited authority? | The decision is limited to its unique facts.
+Q: How did the Court of Appeal treat necessity in R v Shayler? | As merging with duress of circumstances, requiring an imminent threat of death or serious injury.
+Q: What did the Court of Appeal decide on necessity in R (Nicklinson) v Ministry of Justice? | Necessity can't be a defence to voluntary euthanasia.
+Q: How is necessity used in medical cases? | To justify treating patients lacking capacity in their best interests, now largely under the Mental Capacity Act 2005.
+Q: What common mistake is made with Re A? | Relying on it as authority for a general necessity defence to killing.
 
 ## Consent
 S: Consent is a defence to assault and battery, and in limited, recognised situations to more serious harm. The general rule is that a person can't consent to actual bodily harm or worse unless the activity falls within a public interest exception.
@@ -1206,6 +1556,16 @@ Q: What did R v Brown decide? | Consent is no defence to ABH or worse inflicted 
 Q: What did R v Richardson decide? | Deception about qualifications (a suspended dentist) did not vitiate consent.
 M1#law-u05-36-q1@1: Which case recognised consensual branding by a spouse as personal adornment? | R v Wilson | R v Brown | R v BM | R v Barnes | R v Jones | R v Wilson [1997] treated it as akin to tattooing.
 M2#law-u05-36-q2@2: A rugby player breaks an opponent's jaw with a punch thrown after play had stopped. Can he rely on the opponent's consent? | Probably not: it was outside the game | Yes: rugby players consent to all contact | Yes: injuries are expected in sport | Only if the referee didn't see it | Yes, if no penalty was given | R v Barnes: off-the-ball deliberate violence is unlikely to be within implied consent.
+Q: What is the general rule on consent to harm? | A person can't consent to ABH or worse unless the activity falls within a public interest exception.
+Q: What is a public interest exception? | A recognised activity where consent to harm is valid, such as surgery or sport.
+Q: What did Attorney-General's Reference (No 6 of 1980) decide? | Consent is no defence to ABH caused in fights.
+Q: What does the Domestic Abuse Act 2021, s 71 provide? | Consent to serious harm for sexual gratification is no defence.
+Q: When is a sports player criminally liable despite consent? | When the conduct is sufficiently grave (R v Barnes [2004]).
+Q: Which cases recognise rough horseplay as an exception? | R v Jones (1986) and R v Aitken [1992].
+Q: What did R v BM decide? | Body modification beyond adornment, such as removing an ear, is not an exception.
+Q: Does consent to sex include consent to the risk of infection? | Only if informed (R v Dica; R v Konzani).
+Q: What kind of deception vitiates consent to touching? | Deception as to identity or the nature of the act (R v Tabassum).
+Q: What is implied consent? | Consent to everyday touching or contact within the rules of a game.
 
 ## Criminal attempts and inchoate offences
 S: Inchoate offences criminalise conduct before a substantive offence is completed. Besides attempts, the main inchoate offences are conspiracy and encouraging or assisting crime under the Serious Crime Act 2007. They allow the law to intervene early to prevent harm.
@@ -1240,4 +1600,14 @@ Q: Which Act created the offences of encouraging or assisting crime? | The Serio
 Q: Can spouses alone commit statutory conspiracy? | No (Criminal Law Act 1977, s 2).
 M1#law-u05-37-q1@2: Which statute governs statutory conspiracy? | Criminal Law Act 1977 | Criminal Attempts Act 1981 | Serious Crime Act 2007 | Accessories and Abettors Act 1861 | Fraud Act 2006 | Section 1 of the Criminal Law Act 1977 defines conspiracy.
 M2#law-u05-37-q2@3: D sends a message urging a friend to burn down a rival's shop. The friend ignores it. Has D committed an offence? | Yes: encouraging under s 44 | No: the shop wasn't burnt | No: the friend refused | Only conspiracy | Only attempted arson | Under s 44 SCA 2007, the anticipated offence need not be committed.
+Q: What is the purpose of inchoate offences? | To allow the law to intervene early, before a substantive offence is completed, to prevent harm.
+Q: What is a conspiracy? | An agreement between two or more people to pursue a course of conduct that will involve an offence.
+Q: Who can't be the only other party to a statutory conspiracy? | A spouse or civil partner, a child under 10, or the intended victim (s 2).
+Q: What mens rea does statutory conspiracy require? | Intention that the agreement be carried out and the offence committed, and knowledge of the facts making it an offence (s 1(2); R v Saik).
+Q: Is impossibility a defence to statutory conspiracy? | No (Criminal Law Act 1977, s 1(1)(b)).
+Q: Which common law conspiracy survives? | Conspiracy to defraud (Scott v Metropolitan Police Commissioner).
+Q: What does s 44 of the Serious Crime Act 2007 cover? | Doing an act capable of encouraging or assisting an offence, intending to encourage or assist it.
+Q: What does s 45 of the Serious Crime Act 2007 cover? | Doing such an act believing the offence will be committed and that the act will encourage or assist it.
+Q: What defence is available to encouraging or assisting crime? | Acting reasonably (Serious Crime Act 2007, s 50).
+Q: Must the anticipated offence be committed for encouraging or assisting? | No.
 `;
