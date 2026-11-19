@@ -108,8 +108,8 @@ export default {
   build(k) {
     const { THREE, V, mat, glow, limb, box, text, add, decor } = k;
     const ivory = mat("#f6f2e8", { detail: "none", roughness: 0.25, clearcoat: 1 }), ebony = mat("#16161c", { detail: "none", roughness: 0.2, clearcoat: 1 });
-    const W = 0.042, start = 48;   // C3 to B4: 14 white keys
-    const whiteNotes = [0, 2, 4, 5, 7, 9, 11], x0 = -7 * W;
+    const W = 0.042, start = 48;   // C3 to C5: 15 white keys (the top C closes the scale)
+    const whiteNotes = [0, 2, 4, 5, 7, 9, 11], x0 = -7.5 * W;
     const case_ = box(15 * W, 0.04, 0.24, mat("#2a1a14", { detail: "fibre", repeat: 2, roughness: 0.3, clearcoat: 1 }), 0.01); case_.position.set(0, -0.025, 0.02); decor(case_, "keyboard");
     const keyX = {};
     for (let o = 0; o < 2; o++) whiteNotes.forEach((n, i) => {
@@ -121,6 +121,7 @@ export default {
         const bm = midi + 1, bk = box(W * 0.55, 0.026, 0.12, ebony, 0.004); bk.position.set(x + W / 2, 0.028, 0.02); bk.userData.midi = bm; keyX[bm] = x + W / 2; add("accidentals", bk);
       }
     });
+    { const top = start + 24, x = x0 + 14.5 * W, key = box(W * 0.94, 0.02, 0.2, ivory, 0.004); key.position.set(x, 0.01, 0.06); key.userData.midi = top; keyX[top] = x; add("naturals", key); }
     const mc = text("Middle C", { size: 0.022, colour: "#ffe8a0", bg: "rgba(0,0,0,0.55)" }); mc.position.set(keyX[60], 0.04, 0.2); decor(mc, "keyboard");
     // the major scale as a staircase over the keys, with T/S labels
     const steps = new THREE.Group(), sc = [60, 62, 64, 65, 67, 69, 71, 72];

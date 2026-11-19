@@ -9,7 +9,7 @@ const fs = require("fs"), path = require("path");
   // three's examples/jsm served under /__jsm/, with "three" pointed at the site's own copy
   const jsm = (rel) => fs.readFileSync(path.join(threePkg, "examples/jsm", rel), "utf8").replace(/from 'three'/g, "from '/kit/vendor/three/three.module.min.js'");
   const index = fs.readFileSync(path.join(__dirname, "../../kit/models/index.js"), "utf8");
-  const models = {}; for (const [, site, file] of index.matchAll(/(\w+Gradify): \{ file: "(\w+\.js)"/g)) models[file] ||= site.toLowerCase();
+  const models = {}; for (const [, site, file] of index.matchAll(/(\w+Gradify)[^:{\n]*: \{ file: "(\w+\.js)"/g)) models[file] ||= site.toLowerCase();
   const b = await chromium.launch({ args: ["--use-angle=swiftshader", "--enable-unsafe-swiftshader"] });
   fs.mkdirSync(out, { recursive: true });
   for (const [file, site] of Object.entries(models)) {
@@ -34,6 +34,20 @@ const fs = require("fs"), path = require("path");
       // the whole scene graph (so parts keep their groups' transforms), minus what a Cycles still doesn't want:
       // three's lights (Blender gets its own studio), labels, points and lines
       const hidden = []; mv.scene.traverse((o) => { if (o.visible && (o.isLight || o.isSprite || o.isPoints || o.isLine)) { o.visible = false; hidden.push(o); } });
+      // glTF keeps instancing but not per-instance colours: expand colour-instanced meshes (e.g. the Munsell
+      // solid's swatches) into plain meshes sharing one geometry, one material per colour
+      const inst = []; mv.scene.traverseVisible((o) => { if (o.isInstancedMesh && o.instanceColor) inst.push(o); });
+      for (const im of inst) {
+        const Mesh = Object.getPrototypeOf(im.constructor), Object3D = Object.getPrototypeOf(Mesh);   // InstancedMesh extends Mesh extends Object3D
+        const g = new Object3D(), mats = {}, c = im.material.color.clone(), m4 = im.matrix.clone();
+        g.position.copy(im.position); g.quaternion.copy(im.quaternion); g.scale.copy(im.scale);
+        for (let i = 0; i < im.count; i++) {
+          im.getMatrixAt(i, m4); im.getColorAt(i, c); const k = c.getHexString();
+          const m = new Mesh(im.geometry, (mats[k] ||= Object.assign(im.material.clone(), { color: c.clone() })));
+          m4.decompose(m.position, m.quaternion, m.scale); g.add(m);
+        }
+        im.parent.add(g); im.visible = false; hidden.push(im);   // the copy stays; the page is closed after export
+      }
       let keep = 0; mv.scene.traverseVisible((o) => { if (o.isMesh) keep++; });
       const t0 = performance.now(), res = await new GLTFExporter().parseAsync(mv.scene, { binary: true, onlyVisible: true, maxTextureSize: 2048 });
       hidden.forEach((o) => { o.visible = true; });
