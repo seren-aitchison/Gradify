@@ -8,9 +8,20 @@
 const { chromium } = require("playwright"); const http = require("http"), fs = require("fs"), path = require("path");
 const ROOT = process.env.ROOT || require("node:path").resolve(__dirname, "..");
 const T = { ".html": "text/html", ".js": "text/javascript", ".css": "text/css", ".json": "application/json", ".svg": "image/svg+xml" };
-const srv = http.createServer((q, r) => { const u = decodeURIComponent(new URL(q.url, "http://x").pathname); let p = path.join(ROOT, u); let s = fs.statSync(p, { throwIfNoEntry: false }); if (s?.isDirectory()) { p = path.join(p, "index.html"); s = fs.statSync(p, { throwIfNoEntry: false }); } if (!s?.isFile()) { r.writeHead(404); return r.end(); } r.writeHead(200, { "content-type": T[path.extname(p)] || "application/octet-stream" }); fs.createReadStream(p).pipe(r); });
+// serves only files inside ROOT (after resolving symlinks), on loopback only
+const REAL_ROOT = fs.realpathSync(ROOT);
+const inside = (p) => p === REAL_ROOT || p.startsWith(REAL_ROOT + path.sep);
+const srv = http.createServer((q, r) => {
+  const no = () => { r.writeHead(404); r.end(); };
+  let u; try { u = decodeURIComponent(new URL(q.url, "http://x").pathname); } catch { return no(); }
+  let p = path.resolve(REAL_ROOT, "." + u); if (!inside(p)) return no();
+  let s = fs.statSync(p, { throwIfNoEntry: false }); if (s?.isDirectory()) { p = path.join(p, "index.html"); s = fs.statSync(p, { throwIfNoEntry: false }); }
+  if (!s?.isFile()) return no();
+  try { p = fs.realpathSync(p); } catch { return no(); } if (!inside(p)) return no();
+  r.writeHead(200, { "content-type": T[path.extname(p)] || "application/octet-stream" }); fs.createReadStream(p).pipe(r);
+});
 (async () => {
-  await new Promise((ok) => srv.listen(0, ok)); const base = `http://localhost:${srv.address().port}/scigradify/chemistry/`;
+  await new Promise((ok) => srv.listen(0, "127.0.0.1", ok)); const base = `http://127.0.0.1:${srv.address().port}/scigradify/chemistry/`;
   const b = await chromium.launch(); const ctx = await b.newContext({ serviceWorkers: "block" }); const p = await ctx.newPage(); const errs = []; p.on("pageerror", (e) => errs.push(e.message));
   const go = async (h, w = 1300) => { await p.evaluate((h) => { location.hash = h; }, h); await p.waitForTimeout(w); };
   await p.goto(base + "#/practice"); await p.waitForTimeout(1500);
@@ -37,6 +48,6 @@ const srv = http.createServer((q, r) => { const u = decodeURIComponent(new URL(q
   const recs = await run(`return g.attempts().filter((a) => a.question?.id === "ix:" + g.id + ":" + ${JSON.stringify(task)}).map((a) => [a.response?.outcome, a.attempt]);`);
   console.log("lab", id, "challenge", task, "→", JSON.stringify(recs), "errors:", errs.length ? errs : "none");
   const want = [["unsuccessful", 1], ["success", 2], ["success", 1]];
-  const ok = JSON.stringify(recs.map((r) => r.join())) === JSON.stringify(want.map((r) => r.join())) || JSON.stringify(recs.map((r) => r.join()).sort()) === JSON.stringify(want.map((r) => r.join()).sort());
+  const ok = JSON.stringify(recs.map((r) => r.join())) === JSON.stringify(want.map((r) => r.join()));
   console.log(ok && !errs.length ? "PASS" : "FAIL"); await b.close(); srv.close(); process.exit(ok && ok2 && !errs.length ? 0 : 1);
 })();
