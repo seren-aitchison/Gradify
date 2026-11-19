@@ -1,6 +1,7 @@
 // The Journey page (journey.html): the learner's whole Gradify progress in one place, and what to do next.
 // Reads each course's own progress from this device (kit/course/course.js keeps it under "gradify.course.<slug>"),
 // computes everything with the game engine, and keeps only its own reward ledger ("gradify.game").
+import { toast as uiToast } from "../ui/feedback.js";
 import { gameState, claim, dayKey, weekStart, DAY, unsynced, rewardKind, outsideCourses } from "./engine.js";
 import { quests, nextSteps } from "./quests.js";
 import { achievements, nextAchievement } from "./achievements.js";
@@ -191,13 +192,8 @@ export async function mountJourney(root, { embedded = false, store = null } = {}
   }
 
   // ---------- celebrations (short, dismissible, and still for reduced motion) ----------
-  function toast(html) {
-    let box = document.querySelector(".gj-toasts");
-    if (!box) { box = document.createElement("div"); box.className = "gj-toasts"; box.setAttribute("role", "status"); box.setAttribute("aria-live", "polite"); document.body.append(box); }
-    if (box.children.length >= 3) box.firstElementChild.remove();
-    const t = document.createElement("div"); t.className = "gj-toast"; t.innerHTML = html;
-    box.append(t); setTimeout(() => t.classList.add("out"), 3200); setTimeout(() => t.remove(), 3800);
-  }
+  // the shared toast (kit/ui/feedback.js): polite, at most three, never in the way
+  const toast = (html) => uiToast({ html }, { timeout: 3800 });
   function celebrate(title, text) {
     const d = document.createElement("div"); d.className = "gj-celebrate"; d.setAttribute("role", "dialog"); d.setAttribute("aria-modal", "true"); d.setAttribute("aria-label", title);
     d.innerHTML = `<div class="gj-cel-card"><div class="gj-burst${reduced() ? " still" : ""}">${ic("trophy")}</div><h2>${title}</h2><p>${text}</p><button class="gj-claim" data-close>Keep going</button></div>`;

@@ -45,6 +45,24 @@ import { buildExam, runExam, FORMATS } from "../assess/exam.js";
 import { reviewLabel } from "./review.js";
 import { REVIEWS } from "./reviews.js";
 import { FINGERPRINTS } from "./ix-manifest.js";
+import { lessonSignals, topicStatus, rollup, strengths, STATUSES, STATUS } from "../learning/topic-status.js";
+import { buildTargetTest, targetResults, encodeTest, decodeTest, FOCUS, LENGTHS, countFor } from "../assess/target-test.js";
+import { moduleGroups, createOutline, createPalette, dot, ring } from "./navigator.js";
+import { gameState, claim } from "../game/engine.js";
+import { quests } from "../game/quests.js";
+import { ICONS } from "../ui/icons.js";
+// the shared Gradify UX system (kit/ui, docs/DESIGN-SYSTEM.md): the same toasts, save indicator, shortcuts, empty
+// states, skeletons, wayfinding and resource switcher on every Gradify page
+import { toast as uiToast, mountSaveState } from "../ui/feedback.js";
+import { shortcuts, withKey } from "../ui/keys.js";
+import { emptyState, skeleton } from "../ui/states.js";
+import { mountToTop, copyLink, jumpTo } from "../ui/motion.js";
+import { arriveHere, rememberScroll, backPlace, trail, pin, pinned, pins, setPins, restoreAt, onPlacesChange } from "../ui/places.js";
+import { offerBack, hideBack, restoreScroll } from "../ui/wayfinding.js";
+import { resourceSwitcher, wireActions } from "../ui/resources.js";
+import { pref, setPref } from "../ui/prefs.js";
+import { openModal } from "../ui/overlay.js";
+import { tabsHtml, wireTabs } from "../ui/disclosure.js";
 
 const DAY = 864e5;
 const XP = { lesson: 10, check: 5, chest: 15, quiz: 50, perfect: 20, review: 2, problem: 5, weekly: 100 };
@@ -55,24 +73,8 @@ const rng = (s) => () => ((s = (s * 1664525 + 1013904223) >>> 0) / 4294967296);
 // levels get further apart: level n needs 50·n·(n+1) XP in total
 // one level curve for every course and the Journey page (kit/game/engine.js): level n needs 50·n·(n+1) XP
 export const levelOf = gameLevelOf;
-const ICON = {
-  play: '<path d="M9 6.5v11l9-5.5z" fill="currentColor"/>',
-  cube: '<path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z M4 7.5l8 4.5 8-4.5 M12 12v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>',
-  check: '<path d="M6 12.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>',
-  star: '<path d="M12 3.5l2.6 5.6 6 .7-4.5 4.1 1.2 6-5.3-3-5.3 3 1.2-6L3.4 9.8l6-.7z" fill="currentColor"/>',
-  lock: '<rect x="6" y="11" width="12" height="9" rx="2" fill="currentColor"/><path d="M8.5 11V8.5a3.5 3.5 0 017 0V11" fill="none" stroke="currentColor" stroke-width="2"/>',
-  chest: '<path d="M4 10h16v9a1 1 0 01-1 1H5a1 1 0 01-1-1z" fill="currentColor"/><path d="M4 10a4 4 0 014-4h8a4 4 0 014 4" fill="none" stroke="currentColor" stroke-width="2"/><rect x="10.5" y="11" width="3" height="4" rx="1" fill="#000" opacity=".5"/>',
-  trophy: '<path d="M7 4h10v5a5 5 0 01-10 0z" fill="currentColor"/><path d="M7 6H4a3 3 0 003 4M17 6h3a3 3 0 01-3 4M12 14v4M8 20h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
-  flame: '<path d="M12 3c1 4 5 5.5 5 10a5 5 0 01-10 0c0-2.5 1.5-3.5 2-5 .8 1.5 1.8 2 2.5 2C11 8 11 5.5 12 3z" fill="currentColor"/>',
-  bolt: '<path d="M13 3L5 14h6l-1 7 8-11h-6z" fill="currentColor"/>',
-  cards: '<rect x="3" y="7" width="13" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 4h11a2 2 0 012 2v11" fill="none" stroke="currentColor" stroke-width="2"/>',
-  save: '<path d="M6 3h9l4 4v13a1 1 0 01-1 1H6a1 1 0 01-1-1V4a1 1 0 011-1z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 3v5h7V3M8 21v-7h8v7" fill="none" stroke="currentColor" stroke-width="2"/>',
-  target: '<circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/>',
-  flag: '<path d="M6 21V4M6 4h11l-2 4 2 4H6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>',
-  clock: '<circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
-  sparkles: '<path d="M10 3.5l1.6 4.4L16 9.5l-4.4 1.6L10 15.5l-1.6-4.4L4 9.5l4.4-1.6z M17.5 13l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z" fill="currentColor"/>',
-  search: '<circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 16l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
-};
+// the icons are the shared set (kit/ui/icons.js), so an icon means the same thing on every Gradify page
+const ICON = ICONS;
 const ic = (n, cls = "") => `<svg class="co-ic ${cls}" viewBox="0 0 24 24" aria-hidden="true">${ICON[n]}</svg>`;
 
 const BADGES = [
@@ -127,12 +129,20 @@ export function mountCourse(root, cfg) {
   // the subject config spec (kit/course/spec.js): a config that doesn't fit is reported, and the course still runs
   { const problems = checkCourse(cfg); if (problems.length) console.warn(`${cfg.site} course config:`, problems); }
   const trackOf = (u) => cfg.tracks.find((t) => t.units.includes(u.n)) || cfg.tracks[0];
+  // module groups per unit (kit/course/navigator.js), worked out once
+  const gcache = {}; const groupsOf = (u) => (gcache[u.id] ||= moduleGroups(u, byId));
   let S = (() => { try { return JSON.parse(localStorage.getItem(KEY) || "null"); } catch { return null; } })() || {};
-  S = { done: {}, chests: {}, quiz: {}, solved: {}, cards: {}, log: [], goal: 30, path: null, open: [], closed: [], weekly: {}, saved: {}, mocks: {}, attempts: [], ...S };
+  S = { done: {}, chests: {}, quiz: {}, solved: {}, cards: {}, log: [], goal: 30, path: null, open: [], closed: [], weekly: {}, saved: {}, mocks: {}, attempts: [], marks: {}, recent: [], treeOpen: [], ...S };
   // saved on this device at once and, when signed in, to the account a few seconds later (kit/course/progress.js)
   let syncT = null;
-  const save = () => {
+  // the save indicator (kit/ui/feedback.js): every pill on the page shows the same state
+  let saves = [], saveNow = ["", {}];
+  const setSave = (st, d = {}) => { saveNow = [st, { waiting: (S.outbox || []).length, ...d }]; saves = saves.filter((p) => p.el.isConnected); saves.forEach((p) => p.set(...saveNow)); };
+  const addSave = (el) => { if (!el) return; const p = mountSaveState(el, { href: `${cfg.app || "app.html"}#/account` }); saves.push(p); p.set(...saveNow); };
+  // quiet: bookkeeping (where you are in a lesson) syncs too, without the indicator flickering as you scroll
+  const save = (quiet = false) => {
     S.updated = Date.now();
+    if (!quiet) setSave(storeMode === "cloud" || !storeMode ? "saving" : "local");
     try { localStorage.setItem(KEY, JSON.stringify(S)); } catch { /* private mode: progress lasts this visit */ }
     clearTimeout(syncT); syncT = setTimeout(pushProgress, 3000);
   };
@@ -141,15 +151,15 @@ export function mountCourse(root, cfg) {
   let retryT = null;
   const failed = (e) => {
     const msg = String(e?.message || e || ""), auth = /jwt|token|auth|401|sign/i.test(msg) || e?.status === 401;
-    S.sync = { ...(S.sync || {}), failedAt: Date.now(), reason: !navigator.onLine ? "offline" : auth ? "signed-out" : "error" }; keep(); paintSide();
+    S.sync = { ...(S.sync || {}), failedAt: Date.now(), reason: !navigator.onLine ? "offline" : auth ? "signed-out" : "error" }; keep(); paintSide(); setSave(S.sync.reason);
     // try again in a minute while the page is open; the next visit and coming back online also retry
     clearTimeout(retryT); retryT = setTimeout(() => { pushProgress(); flushOutbox(); }, 60000);
   };
   async function pushProgress() {
     clearTimeout(syncT); syncT = null;
     let s; try { s = await store(); } catch { return; }
-    if (s.mode !== "cloud" || !s.saveCourseProgress) return;
-    try { await s.saveCourseProgress(cfg.slug, cfg.site, cloudCopy(S)); const was = S.sync?.failedAt; S.sync = { ok: Date.now() }; keep(); if (was) paintSide(); }
+    if (s.mode !== "cloud" || !s.saveCourseProgress) { setSave("local"); return; }
+    try { await s.saveCourseProgress(cfg.slug, cfg.site, cloudCopy(S)); const was = S.sync?.failedAt; S.sync = { ok: Date.now() }; keep(); if (was) paintSide(); setSave("saved", { at: S.sync.ok }); }
     catch (e) { failed(e); }   // the device copy is kept, and nothing completed is lost: the next sync merges it
   }
   // answers waiting for the account (kit/course/progress.js outbox): sent in batches, removed only once confirmed
@@ -175,6 +185,7 @@ export function mountCourse(root, cfg) {
   addEventListener("pagehide", flushNow);
   document.addEventListener("visibilitychange", () => { if (document.visibilityState === "hidden") flushNow(); });
   addEventListener("online", () => { pushProgress(); flushOutbox(); });
+  addEventListener("offline", () => { if (storeMode === "cloud") setSave("offline"); });
   // what the learner is told about where their work is (only shown when signed in, or when something is waiting)
   function syncText(mode) {
     const waiting = (S.outbox || []).length, f = S.sync?.failedAt && (!S.sync.ok || S.sync.failedAt > S.sync.ok) ? S.sync.reason : null;
@@ -209,7 +220,10 @@ export function mountCourse(root, cfg) {
     let st;
     try { const cloud = await CloudStore.create(), user = cloud ? await cloud.user() : null; st = scopeToSite(user ? cloud : new LocalStore(), cfg.site); }
     catch { st = scopeToSite(new LocalStore(), cfg.site); }
-    storeMode = st.mode; storeNow = st; return st;
+    storeMode = st.mode; storeNow = st;
+    const f = S.sync?.failedAt && (!S.sync.ok || S.sync.failedAt > S.sync.ok) ? S.sync.reason : null;
+    setSave(st.mode !== "cloud" ? "local" : !navigator.onLine ? "offline" : f || "saved", { at: S.sync?.ok });
+    return st;
   })());
 
   // the shared learner profile (kit/data/profile.js): exam date, daily time, prior knowledge, display
@@ -252,9 +266,17 @@ export function mountCourse(root, cfg) {
     return a;
   }
   // wire practice questions in el: records every attempt; first-try success solves the question for XP
+  // answers right first time in a row, on this page: a little streak inside the lesson (no extra XP, just momentum)
+  let combo = 0, comboBest = 0;
+  function comboPop(n) {
+    const el = document.createElement("div"); el.className = "cx-combopop"; el.innerHTML = `${ic("flame")}<b>${n} in a row!</b>`; document.body.append(el);
+    setTimeout(() => el.remove(), 1600);
+    root.querySelectorAll(".cx-combo-n").forEach((x) => { x.textContent = n; x.closest(".cx-combo")?.classList.add("hot"); });
+  }
   function wirePractice(el, context, contextId, xp = XP.check) {
     wireQuestions(el, (k) => pageQs.get(k)?.Q, (Q, res, first, box, meta) => {
       const it = pageQs.get(box.dataset.key); record(it, context, contextId, res, meta);
+      if (first) { if (res.score >= 0.7) { combo++; comboBest = Math.max(comboBest, combo); if ([3, 5, 8, 12].includes(combo)) comboPop(combo); } else { combo = 0; root.querySelectorAll(".cx-combo").forEach((x) => x.classList.remove("hot")); } root.querySelectorAll(".cx-combo-n").forEach((x) => { x.textContent = combo; x.closest(".cx-combo").hidden = !combo; }); }
       if (!res.correct && !res.self && Q.options && it.l && !box.querySelector(".co-whyw")) offerDiagnosis(box, Q, it, meta.response);
       if (first && res.score >= 0.7 && !S.solved[it.key]) { S.solved[it.key] = Date.now(); save(); award(xp, "check", it.key); }
     });
@@ -274,6 +296,18 @@ export function mountCourse(root, cfg) {
       } catch (err) { out.innerHTML = err.signin ? signinLine("This", "") : `<p class="co-empty">${esc(err.message)}</p>`; e.currentTarget.disabled = false; }
     });
   }
+
+  // ---------- topic status: completion and mastery from evidence (kit/learning/topic-status.js) ----------
+  let sigKey = "", sigMap = new Map();
+  const sigs = () => { const k = `${(S.attempts || []).length}|${S.attempts?.at(-1)?.id || ""}`; if (k !== sigKey) { sigKey = k; sigMap = lessonSignals(S.attempts || []); } return sigMap; };
+  const visited = (id) => Boolean(S.time?.[id] || (S.recent || []).some((r) => r.id === id));
+  const statusOf = (id) => topicStatus({ done: Boolean(S.done[id]), visited: visited(id), sig: sigs().get(id) });
+  const roll = (ids) => rollup(ids, statusOf, sigs(), (id) => Boolean(S.done[id]));
+  const idsOf = (u) => u.lessons.map((l) => l.id);
+  const pc = (x) => `${Math.round((x || 0) * 100)}%`;
+  // the bar that shows a group's statuses side by side, mastered first
+  const ORDER = ["mastered", "practised", "learned", "started", "revise"];
+  const stack = (r) => `<span class="cx-stack" role="img" aria-label="${ORDER.filter((k) => r.counts[k]).map((k) => `${r.counts[k]} ${STATUS[k].label.toLowerCase()}`).join(", ") || "Not started"}">${ORDER.map((k) => (r.counts[k] ? `<i class="s-${k}" style="flex:${r.counts[k]}"></i>` : "")).join("")}<i class="s-new" style="flex:${r.counts.new}"></i></span>`;
 
   // ---------- XP, levels, streaks ----------
   const totalXp = () => S.log.reduce((a, r) => a + r.xp, 0);
@@ -322,11 +356,8 @@ export function mountCourse(root, cfg) {
     const el = document.createElement("div"); el.className = "co-pop"; el.textContent = text; document.body.append(el);
     setTimeout(() => el.remove(), 1400);
   }
-  function toast(html) {
-    let box = document.querySelector(".co-toasts"); if (!box) { box = document.createElement("div"); box.className = "co-toasts"; document.body.append(box); }
-    const el = document.createElement("div"); el.className = "co-toast"; el.innerHTML = html; box.append(el);
-    setTimeout(() => el.classList.add("out"), 3200); setTimeout(() => el.remove(), 3700);
-  }
+  // the shared toast (kit/ui/feedback.js): opts.undo adds Undo (and ⌘Z / Ctrl+Z while it shows)
+  const toast = (html, opts = {}) => uiToast({ html }, opts);
   function confetti() {
     if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const box = document.createElement("div"); box.className = "co-confetti";
@@ -343,22 +374,60 @@ export function mountCourse(root, cfg) {
   }
 
   // ---------- layout ----------
-  const VIEWS = [...(cfg.overview ? [["overview", "Overview"]] : []), ["learn", "Learn"], ["review", "Review"], ["paths", "Paths"], ["tracks", `${TW}s`], ["problems", "Problems"],
-    ...(cfg.authorities ? [["cases", cfg.authorities]] : []), ...(cfg.writing?.length ? [["write", "Write"]] : []), ...(cfg.revalidation ? [["revalidation", "Revalidation"]] : []), ...(cfg.exams ? [["exams", "Exams"]] : []), ...(cfg.interactives ? [["practice", PL]] : []), ...(cfg.workspace ? [[cfg.workspace.route, cfg.workspace.label]] : []),
-    ["leaderboard", "Leaderboard"], ["me", "My progress"], ["features", "Features"]];
+  // the tabs: a few that matter, always visible (Home, Syllabus, Revise, the course's own workspace, Exams, Lab,
+  // Progress), and the rest under More. Every older address (#/review, #/paths, …) still works.
+  const PRIMARY = [["home", "Home"], ["learn", "Syllabus"], ["revise", "Revise"], ...(cfg.workspace ? [[cfg.workspace.route, cfg.workspace.label]] : []), ...(cfg.exams ? [["exams", "Exams"]] : []), ...(cfg.interactives ? [["practice", PL]] : []), ["me", "Progress"]];
+  const MORE = [...(cfg.overview ? [["overview", "About this course"]] : []), ["review", "Flashcard review"], ["problems", "Problem bank"], ...(cfg.authorities ? [["cases", cfg.authorities]] : []), ...(cfg.writing?.length ? [["write", "Written practice"]] : []), ...(cfg.revalidation ? [["revalidation", "Revalidation"]] : []), ["paths", "Paths"], ["tracks", `${TW}s`], ["leaderboard", "Leaderboard"], ["features", "Features"]];
+  const VIEWS = [...PRIMARY, ...MORE];
+  // which tab a view belongs to
+  const TAB_OF = { lesson: "learn", quiz: "learn", review: "revise", target: "revise", problems: "revise", exam: "exams", overview: "home" };
   roadDefs();
   root.classList.add("co");
   if (cfg.theme) { root.classList.add("co-themed"); if (cfg.theme.spectrum) root.style.setProperty("--spectrum", cfg.theme.spectrum); if (cfg.theme.accent) root.style.setProperty("--co-accent", cfg.theme.accent); }
+  const isMac = /Mac|iPhone|iPad/.test(navigator.platform || "");
   root.innerHTML = `
     <div class="co-head">
-      <div class="co-title"><span class="co-kicker">${esc(cfg.site)} course</span><h1>${esc(cfg.name)}</h1></div>
+      <div class="co-title"><nav class="cx-crumbs" aria-label="Breadcrumb"><a href="/">Gradify</a><a href="../">${esc(cfg.site)}</a><span aria-current="page">${esc(cfg.name)}</span></nav><h1>${esc(cfg.name)}</h1><div class="cx-headrow"><span class="cx-save" hidden></span><button type="button" class="gx-link cx-pin" data-pincourse aria-pressed="false"></button></div></div>
       <div class="co-hud" aria-label="Your progress"></div>
     </div>
     ${cfg.notice ? `<p class="co-notice" role="note">${cfg.notice}</p>` : ""}
-    <nav class="co-tabs" aria-label="${esc(cfg.name)}">${VIEWS.map(([id, t]) => `<a href="#/${id}" data-v="${id}">${t}${id === "review" ? '<i class="co-due" hidden></i>' : ""}</a>`).join("")}
-      <label class="co-search">${ic("search")}<input type="search" placeholder="Search ${lessons.length.toLocaleString()} lessons" aria-label="Search lessons"></label></nav>
-    <div class="co-body"><main class="co-main"></main><aside class="co-side"></aside></div>`;
-  const main = root.querySelector(".co-main"), side = root.querySelector(".co-side"), hud = root.querySelector(".co-hud");
+    <nav class="co-tabs" aria-label="${esc(cfg.name)}">${PRIMARY.map(([id, t]) => `<a href="#/${id}" data-v="${id}">${t}${id === "revise" ? '<i class="co-due" hidden></i>' : ""}</a>`).join("")}
+      <button type="button" class="cx-morebtn" aria-haspopup="true" aria-expanded="false">More ${ic("more")}</button>
+      <label class="co-search">${ic("search")}<input type="search" placeholder="Search ${lessons.length.toLocaleString()} lessons" aria-label="Search lessons"><kbd class="cx-kbd" title="Open the search from anywhere">${isMac ? "⌘K" : "/"}</kbd></label></nav>
+    <div class="co-body"><aside class="cx-tree" aria-label="Course outline" hidden></aside><main class="co-main"></main><aside class="co-side"></aside></div>
+    <div class="cx-scrim" hidden></div>
+    <nav class="cx-dock" aria-label="${esc(cfg.name)} quick navigation"></nav>`;
+  const main = root.querySelector(".co-main"), side = root.querySelector(".co-side"), hud = root.querySelector(".co-hud"), treeEl = root.querySelector(".cx-tree"), dock = root.querySelector(".cx-dock"), scrim = root.querySelector(".cx-scrim");
+  addSave(root.querySelector(".co-head .cx-save"));
+  // pin this course to the top of the Gradify homepage and the subject site's (kit/ui/places.js); Undo, no confirm
+  const pinBtn = root.querySelector("[data-pincourse]"), courseHref = location.pathname;
+  const paintPin = () => { const on = pinned(courseHref); pinBtn.setAttribute("aria-pressed", String(on)); pinBtn.innerHTML = `${ic(on ? "pinned" : "pin")}${on ? "Pinned" : "Pin course"}`; pinBtn.title = on ? "Unpin from your Gradify home" : "Pin to the top of your Gradify home"; };
+  pinBtn.addEventListener("click", () => {
+    const r = pin({ href: courseHref, title: cfg.name, sub: `${cfg.site} · course`, kind: "course" }); paintPin();
+    toast(`${r.pinned ? "Pinned" : "Unpinned"} <b>${esc(cfg.name)}</b>${r.pinned ? " to your Gradify home" : ""}`, { icon: r.pinned ? "pinned" : "pin", key: "pin", undo: () => { setPins(r.pinned ? pins().filter((p) => p.href !== courseHref) : restoreAt(pins(), r.item, r.index)); paintPin(); } });
+  });
+  paintPin(); onPlacesChange(paintPin);
+  mountToTop();
+  // the More menu floats above the page (the tab bar scrolls sideways, which would clip it)
+  const moreBtn = root.querySelector(".cx-morebtn"), moreMenu = Object.assign(document.createElement("div"), { className: "cx-moremenu", hidden: true });
+  moreMenu.setAttribute("role", "menu");
+  moreMenu.innerHTML = MORE.map(([id, t]) => `<a role="menuitem" href="#/${id}" data-v="${id}">${esc(t)}</a>`).join("");
+  document.body.append(moreMenu);
+  const closeMore = () => { moreMenu.hidden = true; moreBtn.setAttribute("aria-expanded", "false"); };
+  moreBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    if (!moreMenu.hidden) return closeMore();
+    const r = moreBtn.getBoundingClientRect(); moreMenu.hidden = false; moreBtn.setAttribute("aria-expanded", "true");
+    moreMenu.style.top = `${Math.round(r.bottom + 8)}px`; moreMenu.style.left = `${Math.round(Math.min(r.left, innerWidth - moreMenu.offsetWidth - 8))}px`;
+    moreMenu.querySelector("a")?.focus();
+  });
+  moreMenu.addEventListener("click", closeMore);
+  moreMenu.addEventListener("keydown", (e) => {
+    const as = [...moreMenu.querySelectorAll("a")], i = as.indexOf(document.activeElement);
+    if (e.key === "Escape") { closeMore(); moreBtn.focus(); } else if (e.key === "ArrowDown") { e.preventDefault(); as[(i + 1) % as.length].focus(); } else if (e.key === "ArrowUp") { e.preventDefault(); as[(i - 1 + as.length) % as.length].focus(); }
+  });
+  document.addEventListener("click", (e) => { if (!e.target.closest(".cx-moremenu, .cx-morebtn")) closeMore(); });
+  addEventListener("scroll", closeMore, { passive: true });
 
   // search
   // the tab bar scrolls sideways when the tabs don't fit: the search shrinks to an icon, the edges fade where
@@ -409,12 +478,58 @@ export function mountCourse(root, cfg) {
     if (innerWidth <= 760 && top > innerHeight * 0.3) scrollBy({ top: top - 84, behavior: "instant" });
     placeResults();
   }, 220));
+  // ---------- search: one set of results for the tab search, the palette (/ or ⌘K) and the overview ----------
+  const ACTIONS = () => [
+    ["Home", "#/home", "launchpad continue today"], ["Syllabus", "#/learn", "outline course units lessons"], ["Revise", "#/revise", "revision"],
+    ["Review flashcards", "#/review", "cards spaced repetition", dueCards().length ? `${dueCards().length} due` : ""],
+    ["Target test", `#/target/${encodeTest({ minutes: 10, scope: weakTargets().length ? "weak" : "studied" })}`, "quiz test practice weak"],
+    ["Target my weaknesses", "#/review/weak", "weak spots gaps"], ["Revisit questions", "#/review/questions", "retrieval spaced"],
+    ["My progress", "#/me", "mastery strengths weaknesses stats"], ["Problem bank", "#/problems", "questions"],
+    ...(cfg.exams ? [["Mock exams", "#/exams", "exam timed"]] : []), ...(ixs.length ? [[`${PL}`, "#/practice", "interactive simulation"]] : []),
+    ["Paths", "#/paths", "route goal"], ["Leaderboard", "#/leaderboard", "league"],
+    ["Focus mode", null, "distraction reading", "", () => setFocus(!focusOn())],
+  ].map(([t, href, keys, badge, run]) => ({ type: "action", t, href, keys, badge, run, k: "Go to" }));
+  const searchHits = (raw) => {
+    const t = norm(raw); if (t.length < 2) return [];
+    const sc = (x) => { const n = norm(x); return n.startsWith(t) ? 0 : n.includes(` ${t}`) ? 1 : n.includes(t) ? 2 : 9; };
+    const out = [];
+    for (const u of units) {
+      const a = sc(u.title); if (a < 9) out.push({ type: "topic", href: `#/learn/${u.id}`, t: u.title, k: `${U} ${u.n} · ${u.lessons.length} lessons · ${pc(roll(idsOf(u)).coverage)} done`, st: roll(idsOf(u)).status, sc: a });
+      groupsOf(u).forEach((g, mi) => { if (!g.title) return; const b = sc(g.title); if (b < 9) { const to = g.lessons.find((l) => !S.done[l.id]) || g.lessons[0]; out.push({ type: "topic", href: `#/lesson/${to.id}`, t: g.title, k: `Module ${u.n}.${mi + 1} · ${U} ${u.n}: ${u.title}`, st: roll(g.lessons.map((l) => l.id)).status, sc: b + 0.4 }); } });
+    }
+    for (const l of lessons) { const a = sc(l.title); if (a < 9) out.push({ type: "lesson", href: `#/lesson/${l.id}`, t: l.title, k: `${U} ${l.unit.n}${l.module ? ` · ${l.module}` : ""} · ${STATUS[statusOf(l.id)].label}`, st: statusOf(l.id), sc: a }); }
+    for (const x of ixs) { const a = Math.min(sc(x.title), sc(x.kind || "") + 1); if (a < 9) out.push({ type: "lab", href: `#/practice/${x.id}`, t: x.title, k: `${PL} · ${x.kind || ""}`, sc: a }); }
+    for (const x of ACTIONS()) { const a = Math.min(sc(x.t), x.keys && norm(x.keys).includes(t) ? 3 : 9); if (a < 9) out.push({ ...x, sc: a }); }
+    return out.sort((a, b) => a.sc - b.sc);
+  };
+  // inside the notes: every section heading and key term, so a concept search lands where it's taught (loaded on first use)
+  let noteIdx = null;
+  const plain = (x) => String(x || "").replace(/\*\*|`|\$|\\\(|\\\)/g, "").trim();
+  const notesIndex = () => (noteIdx ||= allNotes().then((all) => {
+    const idx = [];
+    for (const l of lessons) {
+      const N = all[l.id]; if (!N) continue; let k = 0;
+      for (const b of N.blocks) if (b.t === "h") { k++; idx.push({ type: "note", href: `#/lesson/${l.id}/co-s${k}`, t: plain(b.x), k: `Section of ${l.title}`, n: norm(plain(b.x)) }); }
+      for (const [term] of N.terms || []) idx.push({ type: "note", href: `#/lesson/${l.id}`, t: plain(term), k: `Key term · ${l.title}`, n: norm(plain(term)) });
+    }
+    return idx;
+  }));
+  const searchNotes = async (raw) => { const t = norm(raw), idx = await notesIndex(); return idx.filter((x) => x.n.includes(t)).sort((a, b) => (a.n.startsWith(t) ? 0 : 1) - (b.n.startsWith(t) ? 0 : 1)).slice(0, 8); };
+  const hitHtml = (h) => `<a href="${h.href || "#"}" ${h.run ? `data-run="${esc(h.t)}"` : ""}>${h.st ? dot(h.st) : ""}<small>${esc(h.k)}</small>${esc(h.t)}</a>`;
   const searchHtml = (raw) => {
-    const t = norm(raw);
-    const hits = [...units.filter((u) => norm(u.title).includes(t)).map((u) => ({ href: `#/learn/${u.id}`, k: `${U} ${u.n}`, t: u.title })),
-      ...ixs.filter((x) => norm(x.title).includes(t)).map((x) => ({ href: `#/practice/${x.id}`, k: x.kind, t: x.title })),
-      ...lessons.filter((l) => norm(l.title).includes(t)).map((l) => ({ href: `#/lesson/${l.id}`, k: `${U} ${l.unit.n} · ${S.done[l.id] ? "done" : "lesson"}`, t: l.title }))].slice(0, 12);
-    return hits.length ? hits.map((h) => `<a href="${h.href}"><small>${esc(h.k)}</small>${esc(h.t)}</a>`).join("") : `<p>No lessons match.</p>`;
+    const hits = searchHits(raw).filter((h) => !h.run).slice(0, 10);
+    return (hits.length ? hits.map(hitHtml).join("") : `<p>No lessons match.</p>`) + `<button type="button" class="cx-allres" data-pal="${esc(raw)}">${ic("search")} Search inside the notes too <kbd>↵</kbd></button>`;
+  };
+  // the palette's empty state: carry on, what you looked at last, your bookmarks, and where to go
+  const suggestions = () => {
+    const cur = resumeLesson(), recent = (S.recent || []).filter((r) => byId[r.id] && r.id !== cur?.id).slice(0, 5), marks = Object.entries(S.marks || {}).filter(([id, t]) => t > 0 && byId[id]).sort((a, b) => b[1] - a[1]).slice(0, 6);
+    const L = (l, type, k) => ({ type, href: `#/lesson/${l.id}`, t: l.title, k: k || `${U} ${l.unit.n}${l.module ? ` · ${l.module}` : ""}`, st: statusOf(l.id) });
+    return [
+      { title: "Continue", items: cur ? [L(cur, "next", `${S.done[cur.id] ? "Review" : "Continue"} · ${U} ${cur.unit.n}: ${cur.unit.title}`)] : [] },
+      { title: "Recently viewed", items: recent.map((r) => L(byId[r.id], "recent")) },
+      { title: "Bookmarks", items: marks.map(([id]) => L(byId[id], "mark")) },
+      { title: "Go to", items: ACTIONS().slice(0, 7) },
+    ];
   };
   q.addEventListener("input", () => {
     if (norm(q.value).length < 2) { res.hidden = true; return; }
@@ -424,7 +539,17 @@ export function mountCourse(root, cfg) {
   });
   res.addEventListener("click", () => { res.hidden = true; q.value = ""; });
   document.addEventListener("click", (e) => { if (!e.target.closest(".co-search, .co-float")) res.hidden = true; });
-  q.addEventListener("keydown", (e) => { if (e.key === "Escape") { res.hidden = true; q.blur(); } });
+  q.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") { res.hidden = true; q.blur(); }
+    else if (e.key === "Enter" || e.key === "ArrowDown") { e.preventDefault(); const v = q.value; res.hidden = true; q.value = ""; q.blur(); palette.open(v); }
+  });
+  // the results' last row opens the full search (palette) with the same words; actions run in place
+  const runHit = (e) => {
+    const b = e.target.closest("[data-pal]"); if (b) { e.preventDefault(); palette.open(b.dataset.pal); return true; }
+    return false;
+  };
+  res.addEventListener("click", runHit, true);
+  root.querySelector(".cx-kbd").addEventListener("click", (e) => { e.preventDefault(); palette.open(q.value); });
 
   function paintHud() {
     const xp = totalXp(), L = levelOf(xp), st = streak(), due = dueCards().length;
@@ -435,14 +560,167 @@ export function mountCourse(root, cfg) {
     const dueEl = root.querySelector(".co-due"); dueEl.hidden = !due; dueEl.textContent = due;
   }
 
+  // ---------- navigation: the outline, the palette, focus mode and the phone dock (kit/course/navigator.js) ----------
+  // the lesson to pick up: the last one opened and not finished, else the next on the learner's path
+  // the section to pick a lesson up at (S.pos; older copies kept it on this device only)
+  function resumeSec(id) {
+    if (S.done[id]) return null;
+    if (S.pos?.[id]?.sec) return S.pos[id].sec;
+    try { return JSON.parse(localStorage.getItem(`gradify.reading.${cfg.slug}`) || "{}")[id] || null; } catch { return null; }
+  }
+  // "Continue learning" goes to the exact place: the lesson, at the section you were reading
+  const resumeHref = (l) => { const sec = resumeSec(l.id); return `#/lesson/${l.id}${sec ? `/${sec}/resume` : ""}`; };
+  function resumeLesson() {
+    const r = (S.recent || []).find((x) => byId[x.id] && !S.done[x.id]);
+    return r ? byId[r.id] : nextLesson();
+  }
+  // the lesson on screen, and its notes (for the outline's question and flashcard counts)
+  let curLesson = null, curN = null;
+  const navGroups = () => {
+    const path = S.path && cfg.paths.find((p) => p.id === S.path);
+    return path ? [{ name: `Your path: ${path.name}`, list: path.units.map((n) => units.find((u) => u.n === n)).filter(Boolean) }]
+      : cfg.tracks.map((t) => ({ name: t.name, list: t.units.map((n) => units.find((u) => u.n === n)).filter(Boolean) }));
+  };
+  const outline = createOutline({
+    units, byId, U, ic, esc, norm, name: cfg.name, status: statusOf, roll: (ids) => roll(ids), groups: navGroups,
+    marks: () => S.marks || {}, current: () => curLesson, quiz: (uid) => S.quiz[uid],
+    openUnits: () => S.treeOpen || [], setOpen: (id, open) => { S.treeOpen = (S.treeOpen || []).filter((x) => x !== id); if (open) S.treeOpen.push(id); keep(); },
+    nQ: (id) => (curLesson?.id === id ? curN?.items?.length || 0 : 0), nCards: (id) => (curLesson?.id === id ? curN?.cards?.length || 0 : 0),
+  });
+  let redrawTree = null;
+  const showTree = (on) => { treeEl.hidden = !on; root.querySelector(".co-body").classList.toggle("has-tree", on); if (on) redrawTree = outline.mount(treeEl); else drawer(false); };
+  // below 1280px the outline is a drawer that slides in from the left
+  function drawer(open) {
+    treeEl.classList.toggle("open", open); scrim.hidden = !open; document.documentElement.classList.toggle("cx-lock", open);
+    if (open) { treeEl.hidden = false; if (!treeEl.dataset.wired) redrawTree = outline.mount(treeEl); else redrawTree?.(); treeEl.querySelector(".cx-l.here, summary")?.focus({ preventScroll: true }); }
+  }
+  scrim.addEventListener("click", () => drawer(false));
+  // on a wide screen the outline can be put away to give the lesson more room (remembered); smaller screens use the drawer
+  const wideScreen = () => matchMedia("(min-width: 1281px)").matches;
+  const setTreeOff = (off) => { root.classList.toggle("cx-treeoff", off); setPref(cfg.slug, "outlineOff", off || null); };
+  setTreeOff(Boolean(pref(cfg.slug, "outlineOff")));
+  const toggleOutline = () => { if (wideScreen()) setTreeOff(!root.classList.contains("cx-treeoff")); else drawer(!treeEl.classList.contains("open")); };
+  root.addEventListener("click", (e) => {
+    if (e.target.closest("[data-tree-open]")) { e.preventDefault(); if (wideScreen() && root.classList.contains("cx-treeoff")) setTreeOff(false); else drawer(true); }
+    else if (e.target.closest("[data-tree-close]")) { if (treeEl.classList.contains("open")) drawer(false); else if (wideScreen()) setTreeOff(true); }
+  });
+  treeEl.addEventListener("click", (e) => {
+    if (e.target.closest("a[href^='#/']") && treeEl.classList.contains("open")) drawer(false);
+    // the outline's Flashcards button opens the lesson's own
+    if (e.target.closest("[data-cards]")) main.querySelector("[data-cards]")?.click();
+  });
+  addEventListener("keydown", (e) => { if (e.key === "Escape" && treeEl.classList.contains("open")) drawer(false); });
+  const palette = createPalette({ esc, ic, name: cfg.name, search: searchHits, searchNotes, suggestions, labLabel: PL, hasLabs: ixs.length > 0 });
+  // keyboard shortcuts (kit/ui/keys.js): one registry, so ? lists them all and every Gradify page writes them the same
+  let curPN = { prev: null, next: null };
+  const inLesson = () => Boolean(curLesson && root.dataset.view === "lesson");
+  shortcuts([
+    { keys: "ArrowLeft", label: "Previous lesson", group: "In a lesson", when: () => inLesson() && Boolean(curPN.prev), run: () => go(`lesson/${curPN.prev.id}`) },
+    { keys: "ArrowRight", label: "Next lesson", group: "In a lesson", when: () => inLesson() && Boolean(curPN.next), run: () => go(`lesson/${curPN.next.id}`) },
+    { keys: "n", label: "The recommended next step", group: "In a lesson", when: inLesson, run: () => main.querySelector(".gx-switch .gx-res.primary")?.click() },
+    { keys: "b", label: "Bookmark the lesson", group: "In a lesson", when: inLesson, run: () => toggleMark(curLesson.id) },
+    { keys: "f", label: "Focus mode", group: "In a lesson", when: inLesson, run: () => setFocus(!focusOn()) },
+    { keys: "s", label: "Split screen: notes beside questions", group: "In a lesson", when: () => inLesson() && splitFits(), run: () => setSplit(!splitOn()) },
+    { keys: "r", label: "Revision notes for the lesson", group: "In a lesson", when: () => inLesson() && Boolean(curN), run: () => revisionNotes() },
+    { keys: "o", label: "Show or hide the course outline", group: "In a lesson", when: () => !treeEl.hidden, run: toggleOutline },
+    { keys: "u", label: `Up to the ${u1}`, group: "In a lesson", when: inLesson, run: () => go(`learn/${curLesson.unit.id}`) },
+    { keys: "g h", label: "Course home", group: "Go to", run: () => go("home") },
+    { keys: "g s", label: "Syllabus", group: "Go to", run: () => go("learn") },
+    { keys: "g r", label: "Revise", group: "Go to", run: () => go("revise") },
+    { keys: "g p", label: "Progress", group: "Go to", run: () => go("me") },
+    ...(cfg.exams ? [{ keys: "g e", label: "Exams", group: "Go to", run: () => go("exams") }] : []),
+    { keys: "g b", label: "Back to where I was", group: "Go to", when: () => Boolean(backPlace({ kinds: null })), run: () => { const p = backPlace({ kinds: null }); if (p) location.hash = p.href; } },
+    { keys: "Escape", label: "Close a menu, dialog or the search", group: "General", show: true, when: () => false, run: () => {} },
+  ]);
+  // focus mode: the site's header, the outline and the rail fold away; the lesson, its progress and its next step stay
+  const FK = "gradify.focus";
+  const focusOn = () => document.documentElement.classList.contains("cx-focus");
+  function setFocus(on) {
+    document.documentElement.classList.toggle("cx-focus", on);
+    try { localStorage.setItem(FK, on ? "1" : ""); } catch { /* private mode */ }
+    document.querySelector(".cx-focusx")?.remove();
+    if (on) { const b = Object.assign(document.createElement("button"), { type: "button", className: "cx-focusx", innerHTML: `${ic("expand")}<span>Exit focus</span><kbd>F</kbd>` }); b.addEventListener("click", () => setFocus(false)); document.body.append(b); }
+    root.querySelectorAll("[data-focus]").forEach((b) => b.setAttribute("aria-pressed", String(on)));
+  }
+  // the dock along the bottom of a phone: where to go, or, in a lesson, how to move through it
+  function paintDock(view, l, prev, next) {
+    const due = dueCards().length;
+    const a = (href, icon, t, cur, extra = "") => `<a href="${href}" ${cur ? 'aria-current="page"' : ""} ${extra}>${ic(icon)}<span>${t}</span></a>`;
+    dock.innerHTML = view === "lesson" && l
+      ? `<button type="button" data-tree-open>${ic("menu")}<span>Outline</span></button>${prev ? a(`#/lesson/${prev.id}`, "left", "Previous") : `<span class="off">${ic("left")}<span>Previous</span></span>`}<button type="button" data-pal-open>${ic("search")}<span>Search</span></button>${next ? a(`#/lesson/${next.id}`, "right", "Next") : `<span class="off">${ic("right")}<span>Next</span></span>`}${a("#/home", "home", "Home")}`
+      : `${a("#/home", "home", "Home", view === "home")}${a("#/learn", "book", "Syllabus", ["learn", "quiz"].includes(view))}<button type="button" data-pal-open>${ic("search")}<span>Search</span></button>${a("#/revise", "cards", "Revise", ["revise", "review", "target", "problems"].includes(view), "")}${a("#/me", "chart", "Progress", view === "me")}`;
+    if (due) dock.querySelector('a[href="#/revise"]')?.insertAdjacentHTML("beforeend", `<i class="cx-dot">${due > 99 ? "99+" : due}</i>`);
+  }
+  root.addEventListener("click", (e) => { if (e.target.closest("[data-pal-open]")) { e.preventDefault(); palette.open(); } });
+  // bookmarks (S.marks: + time on, − time off, so the latest change wins across devices) and recently viewed lessons
+  const marked = (id) => (S.marks?.[id] || 0) > 0;
+  // a bookmark changes at once and can be undone (no "are you sure?"); the lesson's own button follows
+  function setMark(id, on) { S.marks ||= {}; S.marks[id] = on ? Date.now() : -Date.now(); save(); redrawTree?.(); main.querySelectorAll("[data-mark]").forEach((b) => { b.setAttribute("aria-pressed", String(on)); b.innerHTML = ic(on ? "bookmarked" : "bookmark"); }); }
+  function toggleMark(id) {
+    const on = !marked(id); setMark(id, on);
+    toast(`${on ? "Bookmarked" : "Bookmark removed"}: <b>${esc(byId[id].title)}</b>`, { tone: on ? "ok" : undefined, icon: on ? "bookmarked" : null, key: "mark", undo: () => setMark(id, !on) });
+    return on;
+  }
+  // every course writes its last few lessons to one list on this device, so the Gradify homepage and each subject
+  // site can offer "Continue learning" wherever the learner left off (kit/core/continue.js reads it)
+  function noteVisit(l) {
+    S.recent = [{ id: l.id, t: Date.now() }, ...(S.recent || []).filter((r) => r.id !== l.id)].slice(0, 20); keep();
+    shareProgress(l);
+  }
+  // this course on the Gradify homepage and the subject site's (kit/ui/global-nav.js, kit/core/continue.js): where the
+  // learner is, how far through, and the one most useful next step, as an intelligent course card
+  function shareProgress(l = curLesson || resumeLesson()) {
+    if (!l) return;
+    try {
+      const K = "gradify.recent", list = JSON.parse(localStorage.getItem(K) || "[]").filter((r) => !(r.slug === cfg.slug && r.site === cfg.site));
+      const u = l.unit, r = roll(idsOf(u)), all = roll(lessons.map((x) => x.id)), base = location.pathname;
+      const rec = recommendations()[0], nl = resumeLesson();
+      const mins = () => { const m = minutesPerLesson(S); return m ? Math.round(m) : null; };   // this learner's own median, once known
+      const next = rec ? { label: `${rec.t}. ${rec.d || ""}`.trim(), href: `${base}${rec.href}`, go: rec.cta, mins: rec.href.startsWith("#/target") ? 5 : rec.href.startsWith("#/review") ? 5 : null }
+        : nl ? { label: `${S.done[nl.id] ? "Next" : "Carry on with"}: ${nl.title} (${U} ${nl.unit.n}).`, href: `${base}${resumeHref(nl)}`, go: "Continue learning", mins: mins(nl) } : null;
+      list.unshift({ site: cfg.site, slug: cfg.slug, course: cfg.name, id: l.id, title: l.title, unit: `${U} ${u.n}: ${u.title}`, href: `${base}${resumeHref(l)}`, t: Date.now(), done: Boolean(S.done[l.id]),
+        course_pct: all.coverage, unit_pct: r.coverage, done_n: all.done, total: all.total, status: all.counts.revise ? "revise" : all.coverage >= 1 ? "done" : "started", next });
+      localStorage.setItem(K, JSON.stringify(list.slice(0, 12)));
+    } catch { /* private mode */ }
+  }
+
   // ---------- the sidebar ----------
   function nextLesson(scope) {
     const pool = scope || (S.path ? cfg.paths.find((p) => p.id === S.path)?.units : null);
     const list = pool ? pool.flatMap((n) => units.find((u) => u.n === n)?.lessons || []) : lessons;
     return list.find((l) => !S.done[l.id]) || null;
   }
+  // ---------- missions: today's quests for this course (kit/game/quests.js), paid into the Journey's ledger ----------
+  const GAME_KEY = "gradify.game";
+  const readGame = () => { try { return JSON.parse(localStorage.getItem(GAME_KEY) || "null") || {}; } catch { return {}; } };
+  function missions() {
+    try {
+      const st = gameState([{ slug: cfg.slug, site: cfg.site, name: cfg.name, units, S, interactives: ixs, exams: cfg.exams, exploration: cfg.exploration || null, levels: cfg.levels || null }], readGame(), { goal: S.goal });
+      return quests(st, { graphs: graph ? { [cfg.slug]: graph } : {} });
+    } catch { return []; }
+  }
+  const missionHref = (q) => q.lesson?.lesson ? `#/lesson/${q.lesson.lesson}` : { lessons: `#/lesson/${(resumeLesson() || lessons[0]).id}`, questions: `#/target/${encodeTest({ minutes: 10, scope: Object.keys(S.done).length ? "studied" : "units", units: [units[0].id] })}`, review: "#/review", lab: "#/practice", goal: `#/lesson/${(resumeLesson() || lessons[0]).id}`, mock: "#/exams", module: "#/learn" }[q.id] || "#/learn";
+  function missionsHtml(kind = "daily", compact = false) {
+    const list = missions().filter((q) => q.kind === kind); if (!list.length) return "";
+    const doneN = list.filter((q) => q.done).length;
+    return `<div class="cx-quests ${compact ? "compact" : ""}">${list.map((q) => `<div class="cx-q ${q.done ? "done" : ""}">
+        <span class="cx-qic">${q.done ? ic("check") : ring(q.n / q.of, 30, 4)}</span>
+        <div class="cx-qt"><a href="${missionHref(q)}">${esc(q.title)}</a><small>${q.done ? (q.paid ? "Claimed" : "Done!") : `${q.n} / ${q.of}`}${compact ? "" : ` · ${esc(q.why)}`}</small></div>
+        ${q.done && !q.paid ? `<button type="button" class="cx-claim" data-claim="${esc(q.key)}">Claim +${q.xp}</button>` : `<em>+${q.xp} XP</em>`}</div>`).join("")}
+      ${compact ? "" : `<p class="co-acct">${doneN} of ${list.length} done. Quest rewards count towards your level on <a href="/journey.html">your Journey</a>.</p>`}</div>`;
+  }
+  // claiming pays a quest once (its key holds the day), into the same ledger the Journey page syncs to the account
+  document.addEventListener("click", (e) => {
+    const b = e.target.closest("[data-claim]"); if (!b || !root.contains(b)) return;
+    const q = missions().find((x) => x.key === b.dataset.claim); if (!q?.done) return;
+    try { localStorage.setItem(GAME_KEY, JSON.stringify(claim(readGame(), q))); } catch { /* private mode */ }
+    confetti(); pop(`+${q.xp} XP`); toast(`${ic("trophy")} Quest complete: <b>${esc(q.title)}</b> · +${q.xp} XP on your Journey`);
+    b.outerHTML = `<em class="cx-claimed">${ic("check")} Claimed</em>`;
+  });
+
   function paintSide() {
     paintHud();
+    if (!treeEl.hidden && treeEl.dataset.wired) redrawTree?.();
     if (side.hidden) return;
     if (lessonRail) { side.innerHTML = lessonRail(); root.querySelector(".co-lesson")?.dispatchEvent(new Event("co-rail")); return; }
     const xp = totalXp(), L = levelOf(xp), st = streak(), tx = todayXp(), nl = nextLesson(), c = challenge(), cw = Math.min(c.n, c.of(week()));
@@ -462,6 +740,7 @@ export function mountCourse(root, cfg) {
           <select aria-label="Daily goal">${[20, 30, 50, 100].map((g) => `<option value="${g}" ${g === S.goal ? "selected" : ""}>${g} XP a day</option>`).join("")}</select></div>
       </section>
       ${syncWarn ? `<section class="co-card co-syncwarn" role="status"><p>${esc(syncWarn)}</p></section>` : ""}
+      ${(() => { const m = missionsHtml("daily", true); return m ? `<section class="co-card"><span class="co-kicker">${ic("target")} Today's missions</span>${m}</section>` : ""; })()}
       ${planHtml()}
       ${nl ? `<section class="co-card"><span class="co-kicker">${ic("flag")} Next milestone</span><h3>Finish ${U} ${nu.n}: ${esc(nu.title)}</h3><p>${left} lesson${left === 1 ? "" : "s"} to go, then the ${u1} quiz for +${XP.quiz} XP.</p><a class="btn btn-light lg btn-sm co-go" href="#/lesson/${nl.id}"><span>Continue: ${esc(nl.title)}</span></a></section>` : `<section class="co-card"><h3>Course complete</h3><p>Every lesson done. Keep your memory fresh in Review.</p></section>`}
       <section class="co-card"><span class="co-kicker">${ic("trophy")} Weekly challenge</span><h3>${c.name}</h3><p>${c.d}. Reward: +${XP.weekly} XP.</p><div class="co-bar warm"><i style="width:${(cw / c.n) * 100}%"></i></div><small>${cw} / ${c.n}${S.weekly[String(weekStart())] ? " · claimed" : ""} · resets Monday</small></section>
@@ -556,12 +835,17 @@ export function mountCourse(root, cfg) {
       <div class="co-bbtns"><a class="co-bbtn" href="#/quiz/${u.id}">${ic("trophy")}<span>${U} quiz</span></a>
       <button class="co-bbtn ghost" data-toggle="${u.id}" aria-expanded="${open}">${open ? "Hide path" : "Show path"}</button></div></div>`;
   }
+  // the switch between the syllabus outline and the road, at the top of both
+  const viewSwitch = () => `<div class="cx-views" role="group" aria-label="Show the syllabus as"><button type="button" data-lv="next" aria-pressed="${S.learnView === "next"}" title="Just what to do next">${ic("play")} Next up</button><button type="button" data-lv="list" aria-pressed="${!S.learnView || S.learnView === "list"}" title="The complete syllabus">${ic("menu")} Outline</button><button type="button" data-lv="road" aria-pressed="${S.learnView === "road"}">${ic("flag")} Road</button></div>`;
+  const wireSwitch = () => main.querySelectorAll("[data-lv]").forEach((b) => b.addEventListener("click", () => { S.learnView = b.dataset.lv; keep(); viewLearn(); }));
   function viewLearn(focus, keep) {
+    if (S.learnView === "next" && !focus) return viewNextUp();
+    if (S.learnView !== "road") return viewSyllabus(focus);
     const nl = nextLesson(), curUnit = nl ? byId[nl.id].unit : null, path = S.path && cfg.paths.find((p) => p.id === S.path);
     const show = new Set([curUnit?.id, focus, ...S.open].filter((id) => id && !S.closed.includes(id)));
     const unitOrder = path ? path.units.map((n) => units.find((u) => u.n === n)) : units;
     const groups = path ? [{ name: `Your path: ${path.name}`, list: unitOrder }] : cfg.tracks.map((t) => ({ name: t.name, t, list: t.units.map((n) => units.find((u) => u.n === n)).filter(Boolean) }));
-    main.innerHTML = `${path ? `<div class="co-pathnote">Following <b>${esc(path.name)}</b>. <button class="co-link" data-unpath>Show the whole course</button></div>` : ""}
+    main.innerHTML = `<div class="cx-sylbar">${viewSwitch()}</div>${path ? `<div class="co-pathnote">Following <b>${esc(path.name)}</b>. <button class="co-link" data-unpath>Show the whole course</button></div>` : ""}
       ${groups.map((g) => `<div class="co-track"><span>${esc(g.name)}</span></div>${g.list.map((u) => `<section class="co-unit" id="${u.id}">${banner(u, show.has(u.id))}${show.has(u.id) ? road(u, nl) : ""}</section>`).join("")}`).join("")}`;
     main.querySelectorAll("[data-toggle]").forEach((b) => b.addEventListener("click", () => {
       const id = b.dataset.toggle, open = b.getAttribute("aria-expanded") === "true";
@@ -570,12 +854,160 @@ export function mountCourse(root, cfg) {
       viewLearn(null, true);
     }));
     main.querySelector("[data-unpath]")?.addEventListener("click", () => { S.path = null; save(); viewLearn(); paintSide(); });
+    wireSwitch();
     main.querySelectorAll("[data-chest]").forEach((b) => b.addEventListener("click", () => { S.chests[b.dataset.chest] = Date.now(); save(); confetti(); award(XP.chest, "chest", b.dataset.chest); viewLearn(focus, true); }));
     const target = !keep && main.querySelector(focus ? `#${focus}` : ".co-node.cur");
     if (target) setTimeout(() => target.scrollIntoView({ block: focus ? "start" : "center", behavior: "instant" }), 0);
   }
   // opening a unit from elsewhere shows its path even if it was hidden
-  const openUnit = (id) => { S.closed = S.closed.filter((x) => x !== id); save(); };
+  const openUnit = (id) => { S.closed = S.closed.filter((x) => x !== id); if (!(S.treeOpen || []).includes(id)) (S.treeOpen ||= []).push(id); save(); };
+
+  // ---------- Syllabus: the whole course as a numbered outline (stage → unit → module → lesson) ----------
+  const FILTERS = [["all", "All"], ["started", "In progress"], ["revise", "Needs revision"], ["new", "Not started"], ["mastered", "Mastered"]];
+  const blurb = (u) => cfg.blurbs?.[u.n] || "";
+  function unitCardBody(u) {
+    const f = S.sylFilter || "all", want = (id) => f === "all" || statusOf(id) === f;
+    const r = roll(idsOf(u)), nl = u.lessons.find((l) => !S.done[l.id]), qz = S.quiz[u.id];
+    const mods = groupsOf(u).map((g, mi) => {
+      const ls = g.lessons.filter((l) => want(l.id)); if (!ls.length) return "";
+      const gr = roll(g.lessons.map((l) => l.id));
+      return `<div class="cx-mrow"><h4>${g.title ? `<span class="cx-n">${u.n}.${mi + 1}</span>${esc(g.title)}` : `Lessons`}<small>${gr.done}/${gr.total}${gr.mastery != null ? ` · ${pc(gr.mastery)} right` : ""}</small></h4>
+        <ol class="cx-lgrid">${ls.map((l) => { const st = statusOf(l.id); return `<li><a class="cx-lp s-${st}${l.id === resumeLesson()?.id ? " next" : ""}" href="#/lesson/${l.id}">${dot(st)}<span class="cx-lpt">${esc(l.title)}</span>${marked(l.id) ? `<b class="cx-mk" aria-label="Bookmarked">${ic("star")}</b>` : ""}<em>${STATUS[st].label}</em></a></li>`; }).join("")}</ol></div>`;
+    }).join("");
+    return `${mods || `<p class="co-empty">No lessons in this ${u1} match that filter.</p>`}
+      <div class="cx-uacts">${nl ? `<a class="btn btn-light lg btn-sm" href="#/lesson/${nl.id}"><span>${r.done ? "Continue" : "Start"}: ${esc(nl.title)}</span></a>` : ""}
+        <a class="btn btn-ghost lg btn-sm" href="#/quiz/${u.id}"><span>${ic("trophy")} ${U} quiz${qz ? ` · best ${pc(qz.best)}` : ""}</span></a>
+        ${r.done ? `<a class="btn btn-ghost lg btn-sm" href="#/target/${encodeTest({ minutes: 10, scope: "units", units: [u.id] })}"><span>${ic("target")} Target test</span></a>` : ""}</div>`;
+  }
+  // the syllabus, simplified to what this learner needs to do next: continue, then the next few lessons, what needs
+  // revision, units ready to lock in with their quiz, and cards due. Outline shows everything.
+  function viewNextUp() {
+    const nl = resumeLesson(), after = nl ? lessons.slice(lessons.indexOf(nl) + 1).filter((l) => !S.done[l.id]).slice(0, 5) : [];
+    const revise = lessons.filter((l) => statusOf(l.id) === "revise").slice(0, 8), ready = units.filter((u) => unitDone(u) === u.lessons.length && !S.quiz[u.id]?.pass), due = dueCards().length;
+    const row = (l, sub) => `<a class="cx-ll" href="${S.done[l.id] ? `#/lesson/${l.id}` : resumeHref(l)}">${dot(statusOf(l.id))}<span><b>${esc(l.title)}</b><small>${sub || `${U} ${l.unit.n}: ${esc(l.unit.title)}${l.module ? ` · ${esc(l.module)}` : ""}`}</small></span></a>`;
+    const block = (icon, title, sub, body) => `<section class="cx-panel cx-nextup"><div class="cx-sech"><h3>${ic(icon)} ${title}</h3>${sub ? `<p>${sub}</p>` : ""}</div>${body}</section>`;
+    const parts = [
+      nl ? block("play", "Continue", "", row(nl, `${U} ${nl.unit.n} · lesson ${nl.i + 1} of ${nl.unit.lessons.length}${S.time?.[nl.id]?.depth > 0.05 ? ` · ${pc(S.time[nl.id].depth)} read` : ""}`)) : "",
+      revise.length ? block("target", "Needs revision", "Your latest answers here were under 60%.", `${revise.map((l) => row(l)).join("")}<p class="co-row"><a class="btn btn-light lg btn-sm" href="#/target/${encodeTest({ minutes: 10, scope: "lessons", lessons: revise.map((l) => l.id) })}"><span>${ic("bolt")} 10-minute target test on these</span></a></p>`) : "",
+      ready.length ? block("trophy", "Ready to lock in", `Every lesson done: take the ${u1} quiz.`, ready.slice(0, 4).map((u) => `<a class="cx-ll" href="#/quiz/${u.id}">${ic("trophy")}<span><b>${U} ${u.n} quiz: ${esc(u.title)}</b><small>+${XP.quiz} XP</small></span></a>`).join("")) : "",
+      due ? block("cards", `${due} flashcard${due === 1 ? "" : "s"} due`, "A few minutes now saves relearning later.", `<p class="co-row"><a class="btn btn-ghost lg btn-sm" href="#/review"><span>Review now</span></a></p>`) : "",
+      after.length ? block("flag", "Then", "", after.map((l) => row(l)).join("")) : "",
+    ].filter(Boolean);
+    main.innerHTML = `<div class="cx-sylbar">${viewSwitch()}</div>${parts.length ? `<div class="cx-nextgrid">${parts.join("")}</div>` : emptyState({ icon: "check", title: "Nothing left to do", body: "Every lesson is complete and nothing needs revision. Push your mastery with a target test, or browse the whole syllabus.", actions: [{ label: "Target test", href: `#/target/${encodeTest({ minutes: 10, scope: "studied" })}`, primary: true }] })}`;
+    wireSwitch();
+  }
+  function viewSyllabus(focus) {
+    const path = S.path && cfg.paths.find((p) => p.id === S.path), all = roll(lessons.map((l) => l.id)), f = S.sylFilter || "all", cur = resumeLesson();
+    const open = new Set([cur?.unit.id, focus, ...(S.treeOpen || [])].filter(Boolean));
+    const unitHasMatch = (u) => f === "all" || u.lessons.some((l) => statusOf(l.id) === f);
+    main.innerHTML = `<header class="cx-sylhead">
+        <div><span class="co-kicker">Syllabus</span><h2>${esc(cfg.name)}</h2><p>${units.length} ${u1}s · ${lessons.length.toLocaleString()} lessons, in the order to learn them. Open a ${u1} to see its modules and lessons; every lesson shows where you stand.</p></div>
+        <div class="cx-sylstats">${ring(all.coverage, 64, 7)}<div><b>${pc(all.coverage)}</b><small>complete</small></div><div><b>${all.counts.mastered}</b><small>mastered</small></div><div class="${all.counts.revise ? "warn" : ""}"><b>${all.counts.revise}</b><small>to revise</small></div></div>
+      </header>
+      <div class="cx-sylbar">${viewSwitch()}<div class="cx-chips" role="group" aria-label="Show lessons">${FILTERS.map(([k, t]) => `<button type="button" data-sf="${k}" aria-pressed="${f === k}">${k === "all" ? "" : dot(k)}${t}${k === "all" ? "" : ` <small>${all.counts[k]}</small>`}</button>`).join("")}</div>
+        <button type="button" class="gx-link cx-sylall" data-sylall>${units.every((u) => open.has(u.id)) ? "Collapse all" : "Expand all"}</button>
+        <details class="cx-legend"><summary>Key</summary><ul>${STATUSES.map((x) => `<li>${dot(x.key)}<b>${x.label}</b> ${esc(x.what)}</li>`).join("")}</ul></details></div>
+      ${path ? `<div class="co-pathnote">Following <b>${esc(path.name)}</b>. <button class="co-link" data-unpath>Show the whole course</button></div>` : ""}
+      ${navGroups().map((g) => { const us = g.list.filter(unitHasMatch); if (!us.length) return ""; const gr = roll(g.list.flatMap(idsOf)); const t = g.list[0] && trackOf(g.list[0]);
+        return `<section class="cx-stage" style="--a:${t?.from};--b:${t?.to}"><header><h3>${esc(g.name)}</h3><span>${pc(gr.coverage)} · ${gr.done}/${gr.total} lessons</span><div class="co-bar"><i style="width:${gr.coverage * 100}%"></i></div></header>
+          ${us.map((u) => { const r = roll(idsOf(u)), t2 = trackOf(u), isOpen = open.has(u.id) || f !== "all", w = isWritten(u);
+            return `<details class="cx-ucard s-${r.status}" id="${u.id}" data-u="${u.id}" ${isOpen ? "open" : ""} style="--a:${t2.from};--b:${t2.to}"><summary>
+              <span class="cx-ubadge">${u.n}</span>
+              <div class="cx-uinfo"><h3>${esc(u.title)}</h3>${blurb(u) ? `<p>${esc(blurb(u))}</p>` : ""}<small>${groupsOf(u).filter((x) => x.title).length ? `${groupsOf(u).filter((x) => x.title).length} modules · ` : ""}${u.lessons.length} lessons${r.done ? ` · ${r.done} done` : ""}${r.counts.mastered ? ` · ${r.counts.mastered} mastered` : ""}${S.quiz[u.id]?.pass ? ` · quiz ${pc(S.quiz[u.id].best)}` : ""}${!w ? " · being written" : isDraft(u) ? " · draft" : ""}</small></div>
+              <div class="cx-uprog">${stack(r)}<b>${pc(r.coverage)}</b></div><span class="cx-chev" aria-hidden="true">${ic("right")}</span></summary>
+              ${isOpen ? `<div class="cx-ucontent">${unitCardBody(u)}</div>` : ""}</details>`; }).join("")}</section>`; }).join("") || `${emptyState({ icon: "flag", title: `No lessons are “${FILTERS.find(([k]) => k === f)?.[1] || f}” yet`, body: f === "revise" ? "Nothing needs revision: your latest answers are holding up." : f === "mastered" ? "Mastered comes from getting a lesson's questions right across several answers." : "Try another filter, or see every lesson." })}<p class="co-row" style="justify-content:center"><button type="button" class="btn btn-light lg btn-sm" data-sf="all"><span>Show every lesson</span></button></p>`}`;
+    main.querySelectorAll("[data-sf]").forEach((b) => b.addEventListener("click", () => { S.sylFilter = b.dataset.sf; keep(); viewSyllabus(); }));
+    // expand or collapse every unit at once (remembered, like opening them one by one)
+    main.querySelector("[data-sylall]")?.addEventListener("click", () => { const all = units.every((u) => open.has(u.id)); S.treeOpen = all ? (cur ? [cur.unit.id] : []) : units.map((u) => u.id); keep(); viewSyllabus(); });
+    main.querySelector("[data-unpath]")?.addEventListener("click", () => { S.path = null; save(); viewLearn(); paintSide(); });
+    main.addEventListener("toggle", (e) => {
+      const d = e.target.closest?.(".cx-ucard"); if (!d || !main.contains(d)) return;
+      if ((S.sylFilter || "all") === "all") { S.treeOpen = (S.treeOpen || []).filter((x) => x !== d.dataset.u); if (d.open) S.treeOpen.push(d.dataset.u); keep(); }
+      if (d.open && !d.querySelector(".cx-ucontent")) d.insertAdjacentHTML("beforeend", `<div class="cx-ucontent">${unitCardBody(units.find((u) => u.id === d.dataset.u))}</div>`);
+    }, true);
+    wireSwitch();
+    const target = focus && document.getElementById(focus);
+    if (target) setTimeout(() => scrollTo({ top: target.getBoundingClientRect().top + scrollY - 90, behavior: "instant" }), 0);
+  }
+
+  // ---------- Home: the launchpad. Where am I? What needs work? What should I do next? ----------
+  function recommendations() {
+    const out = [], w = weakTargets(), due = dueCards().length, rq = revisionQueue(S.attempts || [], { limit: 200 }).length;
+    if (w[0] && byId[w[0].lesson]) out.push({ icon: "target", tone: "warn", t: `Shore up ${byId[w[0].lesson].title}`, d: w[0].why, href: `#/target/${encodeTest({ minutes: 5, scope: "lessons", lessons: w.slice(0, 3).map((x) => x.lesson).filter((id) => byId[id]) })}`, cta: "5-minute target test", alt: [`#/lesson/${w[0].lesson}`, "Reread the lesson"] });
+    if (due) out.push({ icon: "cards", t: `${due} flashcard${due === 1 ? "" : "s"} due`, d: "Cards come back just before you'd forget them. A few minutes now saves relearning later.", href: "#/review", cta: "Review now" });
+    if (rq) out.push({ icon: "clock", t: `${rq} question${rq === 1 ? "" : "s"} to bring back`, d: "Ones you got wrong, and ones you got right a while ago. Recalling them now makes them last.", href: "#/review/questions", cta: "Revisit" });
+    const ready = units.find((u) => unitDone(u) === u.lessons.length && !S.quiz[u.id]?.pass);
+    if (ready) out.push({ icon: "trophy", tone: "good", t: `Take the ${U} ${ready.n} quiz`, d: `You've finished every lesson in ${ready.title}. Lock it in for +${XP.quiz} XP.`, href: `#/quiz/${ready.id}`, cta: "Start the quiz" });
+    for (const u of units) { const items = pathItems(u).filter((x) => x.kind === "chest"); const c = items.find((x) => x.after.every((l) => S.done[l.id]) && !S.chests[x.id]); if (c) { out.push({ icon: "chest", tone: "good", t: "A reward chest is ready", d: `On the road in ${U} ${u.n}. Open it for +${XP.chest} XP.`, href: `#/learn/${u.id}`, cta: "Open it", pre: () => { S.learnView = "road"; keep(); } }); break; } }
+    const nu = resumeLesson()?.unit; if (nu) { const left = nu.lessons.length - unitDone(nu); if (left > 0 && left <= 3) out.push({ icon: "flag", t: `${left} lesson${left === 1 ? "" : "s"} to finish ${U} ${nu.n}`, d: `${nu.title} is nearly done.`, href: `#/lesson/${resumeLesson().id}`, cta: "Keep going" }); }
+    const recent = (S.attempts || []).filter((a) => Date.now() - Date.parse(a.at) < 7 * DAY && a.question?.type !== "card");
+    if (recent.length >= 12 && recent.filter((a) => a.score >= 0.7).length / recent.length >= 0.85) out.push({ icon: "sparkles", tone: "good", t: "Ready for a stretch", d: `${pc(recent.filter((a) => a.score >= 0.7).length / recent.length)} right this week. Try harder, applied questions.`, href: `#/target/${encodeTest({ minutes: 10, focus: "application", scope: "studied" })}`, cta: "Application test" });
+    return out.slice(0, 4);
+  }
+  // how long have you got? four sessions, each resolved to one concrete thing to do now
+  function sessions() {
+    const nl = resumeLesson(), studied = Object.keys(S.done).length, w = weakTargets().length, due = dueCards().length;
+    const ready = [...units].reverse().find((u) => unitDone(u) === u.lessons.length && !S.quiz[u.id]?.pass);
+    return [
+      { t: "Quick", m: "5–10 min", icon: "bolt", d: due ? `${Math.min(due, 20)} flashcards, then a 5-question check` : studied ? "A 5-question check on what you've studied" : "Your first lesson", href: due ? "#/review" : studied ? `#/target/${encodeTest({ minutes: 5, scope: "studied", focus: "recall" })}` : nl ? `#/lesson/${nl.id}` : "#/learn" },
+      { t: "Learn", m: "15–20 min", icon: "book", d: nl ? `${S.done[nl.id] ? "Review" : "Next"}: ${nl.title}` : "Every lesson is done. Explore the syllabus.", href: nl ? `#/lesson/${nl.id}` : "#/learn" },
+      { t: "Improve", m: "20–30 min", icon: "target", d: w ? `A target test on your ${w} weakest lesson${w === 1 ? "" : "s"}` : studied ? "A target test across everything you've studied" : "Unlocks after your first lesson", href: w ? `#/target/${encodeTest({ minutes: 20, scope: "weak" })}` : studied ? `#/target/${encodeTest({ minutes: 20, scope: "studied" })}` : null },
+      { t: "Challenge", m: "30–45 min", icon: "trophy", d: ready ? `The ${U} ${ready.n} quiz: ${ready.title}` : cfg.exams?.length && studied >= 10 ? "A timed mock exam" : studied ? "A 30-minute application test" : "Unlocks after your first lesson", href: ready ? `#/quiz/${ready.id}` : cfg.exams?.length && studied >= 10 ? "#/exams" : studied ? `#/target/${encodeTest({ minutes: 30, scope: "studied", focus: "application" })}` : null },
+    ];
+  }
+  function viewHome() {
+    const st = stats(), xp = st.xp, L = levelOf(xp), sk = streak(), tx = todayXp(), all = roll(lessons.map((l) => l.id));
+    const nl = resumeLesson(), started = st.lessons > 0 || (S.recent || []).length > 0, t0 = nl ? trackOf(nl.unit) : cfg.tracks[0];
+    const g = nl && groupsOf(nl.unit).find((x) => x.lessons.some((l) => l.id === nl.id)), gi = g ? groupsOf(nl.unit).indexOf(g) : 0;
+    const depth = nl ? S.time?.[nl.id]?.depth || 0 : 0, upnext = nl ? lessons.slice(lessons.indexOf(nl) + 1).filter((l) => !S.done[l.id]).slice(0, 3) : [];
+    const { weak, strong } = strengths(sigs()), recs = recommendations(), recent = (S.recent || []).filter((r) => byId[r.id]).slice(0, 6), marks = Object.entries(S.marks || {}).filter(([id, t]) => t > 0 && byId[id]).sort((a, b) => b[1] - a[1]).slice(0, 6);
+    const lessonLink = (l, sub) => `<a class="cx-ll" href="#/lesson/${l.id}">${dot(statusOf(l.id))}<span><b>${esc(l.title)}</b><small>${sub || `${U} ${l.unit.n}${l.module ? ` · ${esc(l.module)}` : ""}`}</small></span></a>`;
+    const bar = (m) => `<span class="cx-mbar"><i style="width:${Math.round(m * 100)}%" class="${m >= 0.85 ? "hi" : m < 0.6 ? "lo" : ""}"></i></span>`;
+    const hello = (() => { const h = new Date().getHours(); return h < 12 ? "Good morning" : h < 18 ? "Good afternoon" : "Good evening"; })();
+    main.innerHTML = `<section class="cx-hero" style="--a:${t0.from};--b:${t0.to}">
+        <div class="cx-herol">
+          <span class="co-kicker">${started ? `${hello} · pick up where you left off` : `Welcome to ${esc(cfg.name)}`}</span>
+          ${nl ? `<p class="cx-path"><a href="#/learn/${nl.unit.id}">${U} ${nl.unit.n} · ${esc(nl.unit.title)}</a>${g?.title ? `<span>›</span><span>${nl.unit.n}.${gi + 1} ${esc(g.title)}</span>` : ""}</p>
+          <h2>${esc(nl.title)}</h2>
+          <p class="cx-herometa">Lesson ${nl.i + 1} of ${nl.unit.lessons.length} · ${STATUS[statusOf(nl.id)].label}${depth > 0.05 && !S.done[nl.id] ? ` · ${pc(depth)} read` : ""}</p>
+          <div class="cx-heroprog"><i style="width:${Math.round(roll(idsOf(nl.unit)).coverage * 100)}%"></i></div><small class="cx-herounit">${U} ${nl.unit.n}: ${unitDone(nl.unit)} of ${nl.unit.lessons.length} lessons done</small>
+          <div class="co-row"><a class="btn btn-light lg" href="${resumeHref(nl)}" data-autofocus><span>${ic("play")} ${started ? "Continue learning" : "Start the first lesson"}</span></a><a class="btn btn-ghost lg" href="#/learn/${nl.unit.id}"><span>See it in the syllabus</span></a></div>
+          ${upnext.length ? `<div class="cx-upnext"><span class="co-kicker">Then</span>${upnext.map((l) => `<a href="#/lesson/${l.id}">${dot(statusOf(l.id))}${esc(l.title)}</a>`).join("")}</div>` : ""}`
+          : `<h2>Course complete</h2><p class="cx-herometa">Every lesson is done. Keep it fresh with Revise, and push your mastery with target tests.</p><div class="co-row"><a class="btn btn-light lg" href="#/revise"><span>Revise</span></a></div>`}
+        </div>
+        <div class="cx-heror">
+          <div class="cx-habit"><div class="co-lvbadge"><b>${L.n}</b><small>level</small></div><div><b>${xp.toLocaleString()} XP</b><div class="co-bar"><i style="width:${((xp - L.from) / (L.to - L.from)) * 100}%"></i></div><small>${(L.to - xp).toLocaleString()} XP to level ${L.n + 1}</small></div></div>
+          <div class="cx-habit">${ring(Math.min(1, tx / S.goal), 58, 7, "goal")}<div><b>${tx} / ${S.goal} XP</b><small>${tx >= S.goal ? "Daily goal reached" : "today's goal"}</small></div></div>
+          <div class="cx-habit"><span class="cx-flame ${sk.today ? "lit" : ""}">${ic("flame")}<b>${sk.n}</b></span><div><b>${sk.n}-day streak</b><small>${sk.today ? "Kept today" : sk.n ? "Learn today to keep it" : "Start one today"}${sk.rest ? ` · ${sk.rest} rest day${sk.rest > 1 ? "s" : ""} banked` : ""}</small></div></div>
+        </div>
+      </section>
+      <section class="cx-sec"><div class="cx-sech"><h3>How long have you got?</h3><p>Pick a session and Gradify chooses the most useful thing to do with it.</p></div>
+        <div class="cx-sessions">${sessions().map((x) => x.href ? `<a class="cx-sess" href="${x.href}"><span class="cx-sessi">${ic(x.icon)}</span><b>${x.t}</b><em>${x.m}</em><small>${esc(x.d)}</small></a>` : `<div class="cx-sess off"><span class="cx-sessi">${ic(x.icon)}</span><b>${x.t}</b><em>${x.m}</em><small>${esc(x.d)}</small></div>`).join("")}</div></section>
+      <div class="cx-cols">
+        <div class="cx-col">
+          <section class="cx-panel"><div class="cx-sech"><h3>${ic("sparkles")} Recommended for you</h3></div>
+            ${recs.length ? `<ul class="cx-recs">${recs.map((r, i) => `<li class="${r.tone || ""}"><span class="cx-reci">${ic(r.icon)}</span><div><b>${esc(r.t)}</b><p>${esc(r.d)}</p><div class="co-row"><a class="btn btn-light lg btn-sm" href="${r.href}" data-rec="${i}"><span>${esc(r.cta)}</span></a>${r.alt ? `<a class="btn btn-ghost lg btn-sm" href="${r.alt[0]}"><span>${esc(r.alt[1])}</span></a>` : ""}</div></div></li>`).join("")}</ul>`
+              : `<p class="co-empty">${started ? "Nothing urgent. Carry on with your next lesson; recommendations appear as your answers show what needs work." : "Recommendations appear once you've done a lesson and answered its questions. They come from your own answers, never guesses."}</p>`}</section>
+          <section class="cx-panel"><div class="cx-sech"><h3>${ic("chart")} Strengths and weaknesses</h3><a href="#/me">Full picture →</a></div>
+            ${weak.length || strong.length ? `<div class="cx-sw"><div><span class="co-kicker">Needs work</span>${weak.length ? `<ul>${weak.slice(0, 4).filter((w2) => byId[w2.id]).map((w2) => `<li><a href="#/lesson/${w2.id}">${esc(byId[w2.id].title)}</a>${bar(w2.latestMean)}<small>${pc(w2.latestMean)} · ${w2.questions} question${w2.questions === 1 ? "" : "s"}</small></li>`).join("")}</ul><a class="btn btn-ghost btn-sm" href="#/target/${encodeTest({ minutes: 10, scope: "weak" })}"><span>${ic("target")} Practise these</span></a>` : `<p class="co-empty">Nothing measured as weak. Good.</p>`}</div>
+              <div><span class="co-kicker">Strong</span>${strong.length ? `<ul>${strong.slice(0, 4).filter((w2) => byId[w2.id]).map((w2) => `<li><a href="#/lesson/${w2.id}">${esc(byId[w2.id].title)}</a>${bar(w2.latestMean)}<small>${pc(w2.latestMean)} · ${w2.questions} questions</small></li>`).join("")}</ul>` : `<p class="co-empty">Mastery shows here once you're right across three or more questions on a lesson.</p>`}</div></div>`
+              : `<p class="co-empty">Answer the check questions in your lessons and Gradify works out, topic by topic, what you know and what needs another look.</p>`}</section>
+        </div>
+        <div class="cx-col">
+          <section class="cx-panel"><div class="cx-sech"><h3>${ic("target")} Today's missions</h3><a href="/journey.html">Journey →</a></div>${missionsHtml("daily") || `<p class="co-empty">Missions appear once you've started.</p>`}</section>
+          <section class="cx-panel"><div class="cx-sech"><h3>${ic("book")} Your course</h3><a href="#/learn">Syllabus →</a></div>
+            <div class="cx-course">${ring(all.coverage, 84, 9)}<div><b>${pc(all.coverage)}</b><small>of the course complete</small></div>
+              <dl>${[["mastered", "Mastered"], ["practised", "Practised"], ["revise", "Needs revision"]].map(([k, t]) => `<div>${dot(k)}<dt>${t}</dt><dd>${all.counts[k]}</dd></div>`).join("")}<div><i class="cx-st s-learned"></i><dt>Measured accuracy</dt><dd>${all.mastery == null ? "–" : pc(all.mastery)}</dd></div></dl></div>
+            <div class="cx-stages">${navGroups().map((gp) => { const r = roll(gp.list.flatMap(idsOf)), t = gp.list[0] && trackOf(gp.list[0]); return `<a href="#/learn/${gp.list[0]?.id || ""}" style="--a:${t?.from};--b:${t?.to}"><span>${esc(gp.name)}</span>${stack(r)}<small>${pc(r.coverage)}</small></a>`; }).join("")}</div></section>
+        </div>
+      </div>
+      ${recent.length || marks.length ? `<div class="cx-cols">
+        ${recent.length ? `<section class="cx-panel"><div class="cx-sech"><h3>${ic("clock")} Recently viewed</h3></div><div class="cx-lls">${recent.map((r) => lessonLink(byId[r.id], `${U} ${byId[r.id].unit.n} · ${ago(r.t)}`)).join("")}</div></section>` : ""}
+        ${marks.length ? `<section class="cx-panel"><div class="cx-sech"><h3>${ic("bookmarked")} Bookmarks</h3></div><div class="cx-lls">${marks.map(([id]) => lessonLink(byId[id])).join("")}</div></section>` : ""}</div>` : ""}
+      <p class="cx-tip">${ic("search")} Press <kbd>/</kbd> or <kbd>${isMac ? "⌘" : "Ctrl"} K</kbd> anywhere in the course to jump to any lesson, topic or key term.</p>`;
+    main.querySelectorAll("[data-rec]").forEach((a) => a.addEventListener("click", () => recs[a.dataset.rec].pre?.()));
+  }
+  const ago = (t) => { const m = Math.round((Date.now() - t) / 6e4); return m < 2 ? "just now" : m < 60 ? `${m} min ago` : m < 1440 ? `${Math.round(m / 60)} h ago` : `${Math.round(m / 1440)} d ago`; };
 
   // ---------- a lesson ----------
   // "Builds on": the modules this lesson's module needs, linked to their first lesson, with any the learner's own
@@ -624,9 +1056,24 @@ export function mountCourse(root, cfg) {
         <div><span class="co-kicker">On this page</span><b class="co-readpct">0% read</b>${mins ? `<small>About ${mins} min</small>` : ""}</div></div>
       <ol class="co-toc">${links.map(([href, t]) => `<li><a href="#${href}" data-jump="${href}">${inline(t)}</a></li>`).join("")}</ol>`}
       ${nQ ? `<p class="co-railq"><span class="co-checkn"></span></p>` : ""}
+      ${loopHtml(l, N, nQ)}
       <button class="btn btn-light lg btn-sm co-railgo" ${S.done[l.id] ? "disabled" : ""}><span>${S.done[l.id] ? "Completed ✓" : `Complete · +${XP.lesson} XP`}</span></button>
     </section>`;
   }
+  // the learning loop for one lesson: read it, check yourself, recall it with the flashcards, complete it. Each step
+  // lights up as it happens (reading from scroll depth, checking from right answers, recall from going through the cards)
+  const loop = { read: false, check: false, recall: false };
+  function loopHtml(l, N, nQ) {
+    const steps = [["read", "Read", "book", true], ["check", "Check", "target", nQ > 0], ["recall", "Recall", "cards", (N?.cards?.length || 0) > 0], ["done", "Complete", "check", true]].filter((x) => x[3]);
+    const on = (k) => (k === "done" ? Boolean(S.done[l.id]) : k === "recall" ? Boolean(loop.recall || S.recalled?.[l.id]) : loop[k]);
+    return `<div class="cx-loop" aria-label="Your steps in this lesson">${steps.map(([k, t, icon]) => `<span class="cx-step ${on(k) ? "on" : ""}" data-step="${k}">${ic(on(k) ? "check" : icon)}<small>${t}</small></span>`).join("")}</div>
+      <p class="cx-combo ${combo >= 3 ? "hot" : ""}" ${combo ? "" : "hidden"}>${ic("flame")}<span><b class="cx-combo-n">${combo}</b> in a row</span></p>`;
+  }
+  function lightStep(k) {
+    if (k !== "done") loop[k] = true;
+    root.querySelectorAll(`.cx-step[data-step="${k}"]`).forEach((el) => { if (el.classList.contains("on")) return; el.classList.add("on", "pop"); el.querySelector("svg").outerHTML = ic("check"); });
+  }
+
   // the lesson's key terms, explained where the notes use them: the first use of each in the notes gets a dotted
   // underline, and hovering, focusing or tapping it shows the definition from the lesson's own key terms
   function markTerms(N) {
@@ -671,13 +1118,13 @@ export function mountCourse(root, cfg) {
     const trylab = main.querySelector(".co-trylab"); if (trylab) trylab.id = "co-trylab";
     paintSide();
     // the section headings and parts the rail links to, so it can show which one you're reading
-    const targets = () => [...root.querySelectorAll(".co-toc a")].map((a) => [a, document.getElementById(a.dataset.jump)]).filter(([, el]) => el);
+    // (sections moved into the split-screen pane aren't on the page's scroll, so they don't count)
+    const targets = () => [...root.querySelectorAll(".co-toc a")].map((a) => [a, document.getElementById(a.dataset.jump)]).filter(([, el]) => el && !el.closest(".cx-splitpane"));
     let pctShown = -1, lastPlace = null;
-    // where you were in this lesson (this device): offered as "Continue" when you come back before finishing it
-    const PK = `gradify.reading.${cfg.slug}`;
-    const places = () => { try { return JSON.parse(localStorage.getItem(PK) || "{}"); } catch { return {}; } };
-    const place = (sec) => { try { const p = places(); if (S.done[id] || sec === "co-top") delete p[id]; else p[id] = sec; localStorage.setItem(PK, JSON.stringify(p)); } catch { /* private mode */ } };
-    const was = places()[id], wasLink = was && !S.done[id] && root.querySelector(`.co-toc a[data-jump="${was}"]`);
+    // where you were in this lesson (S.pos, synced with the account so another device picks up at the same section):
+    // offered as "Continue" when you come back before finishing it, and used by Continue learning everywhere
+    const place = (sec) => { S.pos ||= {}; if (S.done[id] || sec === "co-top" || sec === targets()[0]?.[0].dataset.jump) { if (!S.pos[id]) return; delete S.pos[id]; } else S.pos[id] = { sec, t: Date.now() }; save(true); };
+    const was = resumeSec(id), wasLink = was && !S.done[id] && root.querySelector(`.co-toc a[data-jump="${was}"]`);
     if (wasLink && document.getElementById(was) && was !== root.querySelector(".co-toc a")?.dataset.jump) {
       main.querySelector(".co-lhead .mv-chips")?.insertAdjacentHTML("afterbegin", `<button type="button" class="co-chip co-resume" data-jump="${esc(was)}">${ic("play")} Continue: ${esc(wasLink.textContent)}</button>`);
     }
@@ -690,16 +1137,23 @@ export function mountCourse(root, cfg) {
         pctShown = pct;
         const ring = root.querySelector(".co-rail .fg"); if (ring) ring.style.strokeDashoffset = String(ring.dataset.c * (1 - p));
         const t = root.querySelector(".co-readpct"); if (t) t.textContent = `${pct}% read`;
+        if (p >= 0.6) lightStep("read");
       }
       let cur = null; for (const [a, el] of targets()) { if (el.getBoundingClientRect().top < innerHeight * 0.3) cur = a; }
       root.querySelectorAll(".co-toc a").forEach((a) => a.classList.toggle("on", a === cur));
-      if (cur && cur.dataset.jump !== lastPlace) { lastPlace = cur.dataset.jump; place(lastPlace); }
+      if (cur && cur.dataset.jump !== lastPlace) {
+        lastPlace = cur.dataset.jump; place(lastPlace);
+        // the section you're in, kept in view in the lesson's sticky bar
+        const sn = main.querySelector(".cx-secname"); if (sn) { sn.textContent = cur.textContent; sn.hidden = false; }
+      }
+      if (!cur) { const sn = main.querySelector(".cx-secname"); if (sn) sn.hidden = true; }
     };
     // the questions: how many are right so far, in the section's header and the rail
     const count = () => {
       if (!nQ) return;
       const ok = main.querySelectorAll(".co-check .aq.solved").length;
       root.querySelectorAll(".co-checkn").forEach((el) => { el.textContent = ok ? `${ok} of ${nQ} right${ok === nQ ? " · all done" : ""}` : `${nQ} question${nQ > 1 ? "s" : ""} · none answered yet`; el.classList.toggle("all", ok === nQ); });
+      if (ok && ok >= Math.ceil(nQ / 2)) lightStep("check");
     };
     const mo = new MutationObserver(count); const chk = main.querySelector(".co-check"); if (chk) mo.observe(chk, { subtree: true, attributes: true, attributeFilter: ["class"] });
     count();
@@ -710,9 +1164,19 @@ export function mountCourse(root, cfg) {
       const a = e.target.closest("[data-jump]"); if (!a) return;
       const el = document.getElementById(a.dataset.jump); if (!el) return;
       e.preventDefault();
+      const tab = el.closest(".gx-tabpanel");
+      if (tab && el.closest(".cx-splitpane")) { splitTabs?.select(tab.id.replace("cx-split-p-", "")); el.scrollIntoView({ block: "start" }); return; }
       scrollTo({ top: el.getBoundingClientRect().top + scrollY - 90, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
     };
     root.addEventListener("click", jump);
+    // every section can be linked to directly: the link opens this lesson at that section
+    for (const [, el] of targets()) {
+      const h = el.matches("h2, h3, h4") ? el : el.querySelector("h2, h3, h4");
+      if (!/^co-s\d+$/.test(el.id) || !h || h.querySelector(".cx-seclink")) continue;
+      h.insertAdjacentHTML("beforeend", `<button type="button" class="cx-seclink" data-seclink="${el.id}" aria-label="Copy a link to this section" data-tip="Copy link to section">${ic("link")}</button>`);
+    }
+    const secLink = (e) => { const b = e.target.closest("[data-seclink]"); if (b) copyLink(`${location.pathname}#/lesson/${id}/${b.dataset.seclink}`, "Link to this section copied"); };
+    main.addEventListener("click", secLink);
     // a diagram opens full size (most useful on a phone): Escape, the close button or a click outside closes it
     const zoom = (e) => {
       const fig = e.target.closest(".co-lesson .gd"); if (!fig || e.target.closest("a, button")) return;
@@ -725,40 +1189,132 @@ export function mountCourse(root, cfg) {
     };
     main.addEventListener("click", zoom);
     main.querySelectorAll(".co-lesson .gd").forEach((f) => { f.tabIndex = 0; f.title = "Open the diagram full size"; f.addEventListener("keydown", (k) => { if (k.key === "Enter" || k.key === " ") { k.preventDefault(); zoom({ target: f }); } }); });
-    // ← and → move to the previous and next lesson (not while typing, or with a diagram open)
-    const keys = (e) => {
-      if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey || document.querySelector(".gd-zoom, .co-modal")) return;
-      if (e.target.closest?.("input, textarea, select, [contenteditable], .co-ix, .co-lab")) return;
-      const to = e.key === "ArrowLeft" ? prev : e.key === "ArrowRight" ? next : null;
-      if (to) { e.preventDefault(); location.hash = `#/lesson/${to.id}`; }
-    };
-    addEventListener("keydown", keys);
+    // ← → B F S N and the rest are registered once, with the shared shortcuts (see "keyboard shortcuts" below)
+    curPN = { prev, next };
     // the rail's Complete button does what the lesson's own does
     const railGo = (e) => { if (e.target.closest(".co-railgo")) main.querySelector(".co-finish .co-complete")?.click(); };
     side.addEventListener("click", railGo);
     addEventListener("scroll", onScroll, { passive: true }); addEventListener("resize", onScroll);
     requestAnimationFrame(onScroll);
-    readStop = () => { removeEventListener("scroll", onScroll); removeEventListener("resize", onScroll); root.removeEventListener("click", jump); main.removeEventListener("click", zoom); document.querySelector(".gd-zoom")?.remove(); removeEventListener("keydown", keys); unTerms?.(); side.removeEventListener("click", railGo); mo.disconnect(); bar.remove(); readStop = null; };
+    readStop = () => { removeEventListener("scroll", onScroll); removeEventListener("resize", onScroll); root.removeEventListener("click", jump); main.removeEventListener("click", secLink); main.removeEventListener("click", zoom); document.querySelector(".gd-zoom")?.remove(); unTerms?.(); side.removeEventListener("click", railGo); mo.disconnect(); bar.remove(); readStop = null; };
   }
+  // revision notes: the lesson's key ideas on one page (what you can now do, the summary, key terms, its sections),
+  // made from the lesson's own notes, so they're never out of step with it
+  function revisionNotes() {
+    const l = curLesson, N = curN; if (!l || !N) return;
+    const secs = [...main.querySelectorAll(".co-toc a[data-jump^='co-s']")].map((a) => [a.dataset.jump, a.textContent]);
+    const body = `<p class="co-kicker">${esc(U)} ${l.unit.n} · ${esc(l.unit.title)}</p>
+      ${N.objectives.length ? `<h3 class="cx-rn">You can now</h3><ul>${N.objectives.map((o) => `<li>${inline(o)}</li>`).join("")}</ul>` : ""}
+      ${N.summary.length ? `<h3 class="cx-rn">The key ideas</h3><ul>${N.summary.map((x) => `<li>${inline(x)}</li>`).join("")}</ul>` : N.lead ? `<h3 class="cx-rn">In a sentence</h3><p>${inline(N.lead)}</p>` : ""}
+      ${N.terms.length ? `<h3 class="cx-rn">Key terms</h3><dl class="co-terms">${N.terms.map(([t, d]) => `<dt>${inline(t)}</dt><dd>${inline(d)}</dd>`).join("")}</dl>` : ""}
+      ${secs.length ? `<h3 class="cx-rn">Jump back into the lesson</h3><div class="cx-rnsecs">${secs.map(([sid, t]) => `<button type="button" class="co-chip" data-rnjump="${esc(sid)}">${esc(t)}</button>`).join("")}</div>` : ""}`;
+    const m = openModal({ title: `Revision notes: ${l.title}`, body, size: "lg", actions: [
+      ...(N.cards.length ? [{ label: `Test me: ${N.cards.length} flashcard${N.cards.length > 1 ? "s" : ""}`, primary: true, run: () => { setTimeout(() => main.querySelector("[data-cards]")?.click(), 200); } }] : []),
+      { label: "Close", primary: !N.cards.length },
+    ] });
+    m.box.addEventListener("click", (e) => { const b = e.target.closest("[data-rnjump]"); if (!b) return; m.close(); setTimeout(() => jumpTo(document.getElementById(b.dataset.rnjump)), 200); });
+  }
+
+  // split screen (wide screens): the notes on the left; questions, flashcards, the AI tutor and the diagrams on the
+  // right, in tabs. The sections themselves move across (answers and the tutor keep their state) and move back after.
+  const splitFits = () => matchMedia("(min-width: 1100px)").matches;
+  const splitOn = () => root.classList.contains("cx-split");
+  let splitTabs = null;
+  function setSplit(on, remember = true) {
+    const art = main.querySelector(".co-lesson"), notes = art?.querySelector(".co-notes");
+    // put everything back first (switching off, or rebuilding)
+    art?.querySelectorAll("[data-split-home]").forEach((home) => { const el = document.getElementById(home.dataset.splitHome); if (el) home.replaceWith(el); else home.remove(); });
+    art?.querySelector(".cx-splitpane")?.remove(); splitTabs = null;
+    requestAnimationFrame(() => art?.dispatchEvent(new Event("co-rail")));   // the rail and reading position, recounted
+    on = Boolean(on && art && notes && splitFits());
+    root.classList.toggle("cx-split", on);
+    root.querySelectorAll("[data-split]").forEach((b) => b.setAttribute("aria-pressed", String(on)));
+    if (remember) setPref(cfg.slug, "split", on || null);
+    if (!on) return;
+    const N = curN, check = document.getElementById("co-check"), deeper = document.getElementById("co-deeper");
+    const figs = [...notes.querySelectorAll(".gd")];
+    const tabs = [
+      check ? { id: "check", label: "Questions", icon: ic("target") } : null,
+      N?.cards.length ? { id: "cards", label: "Flashcards", icon: ic("cards"), html: `<div class="cx-splitcards">${emptyState({ icon: "cards", title: `${N.cards.length} flashcard${N.cards.length > 1 ? "s" : ""} for this lesson`, body: "Recall beats rereading. Go through them while the notes stay open beside you.", actions: [{ label: "Start the flashcards", primary: true }] })}</div>` } : null,
+      deeper ? { id: "tutor", label: "AI tutor", icon: ic("ai") } : null,
+      figs.length ? { id: "figs", label: "Diagrams", icon: ic("grid"), badge: String(figs.length), html: `<div class="cx-splitfigs">${figs.map((f) => f.outerHTML).join("")}</div>` } : null,
+    ].filter(Boolean);
+    if (!tabs.length) { root.classList.remove("cx-split"); return; }
+    const pane = document.createElement("aside");
+    pane.className = "cx-splitpane"; pane.setAttribute("aria-label", "Beside the notes");
+    pane.innerHTML = tabsHtml("cx-split", tabs, pref(cfg.slug, "splitTab", tabs[0].id));
+    notes.after(pane);
+    const move = (el, tab) => { if (!el) return; const home = document.createElement("div"); home.dataset.splitHome = el.id; home.hidden = true; el.before(home); pane.querySelector(`#cx-split-p-${tab}`).append(el); };
+    move(check, "check"); move(deeper, "tutor");
+    pane.querySelector(".cx-splitcards [data-empty-act]")?.addEventListener("click", () => main.querySelector(".co-finish [data-cards], [data-cards]")?.click());
+    splitTabs = wireTabs(pane, { scope: cfg.slug, key: "splitTab" });
+  }
+  addEventListener("resize", () => { if (splitOn() && !splitFits()) setSplit(false, false); });
+
   async function viewLesson(id) {
     const l = byId[id]; if (!l) return go("learn");
+    curLesson = l; loop.read = false; loop.check = false; loop.recall = false; comboBest = 0;
+    noteVisit(l);
+    // the lesson's shape while its notes load (only if they take a moment: cached notes never flash a placeholder)
+    const skT = setTimeout(() => { if (curLesson === l) main.innerHTML = skeleton("lesson", 0, `Loading ${l.title}`); }, 120);
     // Free: 10 lessons in each course (kit/data/limits.js), once Plus is on sale
-    if (!(await gate("lesson", id, { course: cfg.slug, store }))) { main.innerHTML = lockedHtml("lesson"); return; }
+    if (!(await gate("lesson", id, { course: cfg.slug, store }))) { clearTimeout(skT); main.innerHTML = lockedHtml("lesson"); return; }
     lt.start(id);
     if (S.done[id] || S.time?.[id]?.v) ledger({ event: "lesson_revisited", concept: `${cfg.slug}:${id}`, source: "course", detail: { visits: (S.time?.[id]?.v || 0) + 1, done: Boolean(S.done[id]) } });
-    const u = l.unit, t = trackOf(u), N = await notesFor(l), prev = u.lessons[l.i - 1], next = u.lessons[l.i + 1] || units[u.n]?.lessons[0];
+    const u = l.unit, t = trackOf(u), N = await notesFor(l); clearTimeout(skT);
+    const prev = u.lessons[l.i - 1], next = u.lessons[l.i + 1] || units[u.n]?.lessons[0];
     const F = N ? lessonFrame(N) : null, nQ = N?.items?.length || 0;
+    curN = N; const openedAt = Date.now(), xpBefore = totalXp();
+    const g = groupsOf(u).find((x) => x.lessons.some((y) => y.id === id)), gi = groupsOf(u).indexOf(g);
+    const nIx = ixs.filter((x) => x.lessons?.includes(id)).length + (N ? N.blocks.filter((b) => b.t === "ix").length : 0), qz = S.quiz[u.id];
     const mins = N ? Math.max(2, Math.round(lessonText(N).split(/\s+/).length / 200 + nQ * 0.75)) : 0;
     const card = (x, dir) => (x = x && byId[x.id]) ? `<a class="co-pncard ${dir}" href="#/lesson/${x.id}"><small>${dir === "prev" ? "← Previous lesson" : "Next lesson →"}</small><b>${esc(x.title)}</b>${x.unit !== u ? `<i>${U} ${x.unit.n}: ${esc(x.unit.title)}</i>` : ""}</a>` : "<span></span>";
+    // the logical next activity, not just the next page: the last lesson of a unit leads to its quiz (until passed)
+    const lastInUnit = l.i === u.lessons.length - 1, quizNext = lastInUnit && !S.quiz[u.id]?.pass && isWritten(u);
+    const nextCard = quizNext ? `<a class="co-pncard next" href="#/quiz/${u.id}"><small>Next: the ${esc(u1)} quiz →</small><b>Lock in ${esc(u.title)}</b><i>${next ? `Then ${U} ${byId[next.id]?.unit.n}: ${esc(byId[next.id]?.unit.title || "")}` : `+${XP.quiz} XP`}</i></a>` : card(next, "next");
+    const upCard = `<a class="co-pncard up" href="#/learn/${u.id}"><small>↑ Back to ${esc(U)} ${u.n}</small><b>${esc(u.title)}</b><i>${unitDone(u)} of ${u.lessons.length} lessons done</i></a>`;
+    // "What would you like to do next?": everything for this topic, wherever it lives in Gradify, and the most useful first
+    const quizReady = !S.quiz[u.id]?.pass && u.lessons.every((x) => S.done[x.id] || x.id === id);
+    const prim = !S.done[id] && nQ ? "check" : quizReady ? "quiz" : "next";
+    const nextL = next && byId[next.id];
+    const res = N ? [
+      { icon: "notes", label: "Revision notes", desc: "The key ideas, terms and sections on one page.", meta: "2 min", run: () => revisionNotes() },
+      N.cards.length ? { icon: "cards", label: "Flashcards", desc: `Test your recall: ${l.title}`, meta: `${N.cards.length} card${N.cards.length > 1 ? "s" : ""}`, run: () => main.querySelector("[data-cards]")?.click() } : null,
+      nQ ? { icon: "target", label: "Exam-style questions", desc: "Apply what you've just learned.", meta: `${nQ} here`, href: "#co-check", jump: "co-check", primary: prim === "check" } : null,
+      { icon: "bolt", label: "Target test", desc: `Five minutes on ${g?.title || "this lesson"}, timed.`, meta: "5 min", href: `#/target/${encodeTest({ minutes: 5, scope: "lessons", lessons: (g?.lessons || [l]).map((x) => x.id) })}` },
+      { icon: "ai", label: "Ask AI to explain", desc: "Another explanation, in different words.", run: () => { const t = main.querySelector(".co-tutor"); if (!t) return; if (t.closest(".cx-splitpane")) splitTabs?.select("tutor"); jumpTo(t); setTimeout(() => t.querySelector("textarea, input")?.focus({ preventScroll: true }), 350); } },
+      quizReady || quizNext ? { icon: "trophy", label: `${U} ${u.n} quiz`, desc: `Lock in ${u.title}.`, meta: S.quiz[u.id] ? `best ${pc(S.quiz[u.id].best)}` : `+${XP.quiz} XP`, href: `#/quiz/${u.id}`, primary: prim === "quiz" } : null,
+      nextL && !quizNext ? { icon: "play", label: "Next lesson", desc: nextL.title, href: `#/lesson/${nextL.id}`, primary: prim === "next" } : null,
+    ] : [];
     main.innerHTML = `<article class="co-lesson co-read" style="--a:${t.from};--b:${t.to}">
-      <div class="co-lbar">
-        <div class="co-crumbs"><a href="#/learn/${u.id}">← ${U} ${u.n}: ${esc(u.title)}</a><span>Lesson ${l.i + 1} of ${u.lessons.length}</span></div>
+      <div class="co-lbar cx-lbar">
+        <div class="cx-lrow">
+          <button type="button" class="cx-ob" data-tree-open aria-label="Course outline">${ic("menu")}<span>Outline</span></button>
+          <nav class="cx-bc" aria-label="Breadcrumb"><a href="#/home">${esc(cfg.name)}</a><a href="#/learn/${u.id}">${U} ${u.n}<span class="cx-bcl">: ${esc(u.title)}</span></a>${g?.title ? `<a href="#/learn/${u.id}" class="cx-bcm">${u.n}.${gi + 1} ${esc(g.title)}</a>` : ""}<span aria-current="page">${esc(l.title)}</span></nav>
+          <span class="cx-secname" aria-hidden="true" hidden></span>
+          <div class="cx-lact">
+            <span class="cx-save" hidden></span>
+            <button type="button" class="cx-ib" data-mark aria-pressed="${marked(id)}" title="Bookmark (B)" aria-label="Bookmark this lesson">${ic(marked(id) ? "bookmarked" : "bookmark")}</button>
+            ${N ? `<button type="button" class="cx-ib" data-revnotes title="Revision notes (R)" aria-label="Revision notes">${ic("notes")}</button>` : ""}
+            ${N && (nQ || N.cards.length) ? `<button type="button" class="cx-ib cx-splitb" data-split aria-pressed="${splitOn()}" title="Split screen: notes beside questions (S)" aria-label="Split screen">${ic("split")}</button>` : ""}
+            <button type="button" class="cx-ib" data-focus aria-pressed="${focusOn()}" title="Focus mode (F)" aria-label="Focus mode">${ic("expand")}</button>
+            <button type="button" class="cx-ib" data-pal-open title="Search (/)" aria-label="Search the course">${ic("search")}</button>
+            <span class="cx-pn">${prev ? `<a class="cx-ib" href="#/lesson/${prev.id}" title="Previous: ${esc(prev.title)} (←)" aria-label="Previous lesson">${ic("left")}</a>` : `<span class="cx-ib off">${ic("left")}</span>`}<small>${l.i + 1} / ${u.lessons.length}</small>${next ? `<a class="cx-ib" href="#/lesson/${next.id}" title="Next: ${esc(next.title)} (→)" aria-label="Next lesson">${ic("right")}</a>` : `<span class="cx-ib off">${ic("right")}</span>`}</span>
+          </div>
+        </div>
         <div class="co-steps">${u.lessons.map((x, k) => `<a href="#/lesson/${x.id}" class="${S.done[x.id] ? "done" : ""} ${x.id === id ? "here" : ""}" title="${esc(x.title)}" aria-label="Lesson ${k + 1}: ${esc(x.title)}${S.done[x.id] ? " (done)" : ""}"></a>`).join("")}</div>
       </div>
       <div class="mv-page co-notes" style="--c:${t.from}">
         <header class="co-lhead"><span class="co-licon" data-g3d="${esc(`${l.title} ${l.module || ""} ${u.title}`)}" data-g3d-size="88"></span>
           <span class="kicker">${esc(t.name)} · ${U} ${u.n}${l.module ? ` · ${esc(l.module)}` : ""}</span><h2>${esc(l.title)}</h2>${N?.lead ? `<p class="mv-lead">${inline(N.lead)}</p>` : ""}
-          <div class="mv-chips">${S.done[id] ? `<span class="co-chip lit">${ic("check")} Completed</span>` : `<span class="co-chip">${ic("bolt")} +${XP.lesson} XP</span>`}${mins ? `<span class="co-chip">${ic("clock")} About ${mins} min</span>` : ""}${N?.level ? `<span class="co-chip">${esc(N.level)}</span>` : ""}${nQ ? `<a class="co-chip co-jump" href="#co-check" data-jump="co-check">${ic("target")} ${nQ} check question${nQ > 1 ? "s" : ""}</a>` : ""}${N?.cards.length ? `<button data-cards>${ic("cards")} Flashcards (${N.cards.length})</button>` : ""}</div></header>
+          <div class="mv-chips"><span class="co-chip cx-stchip s-${statusOf(id)}">${dot(statusOf(id))} ${STATUS[statusOf(id)].label}</span>${S.done[id] ? "" : `<span class="co-chip">${ic("bolt")} +${XP.lesson} XP</span>`}${mins ? `<span class="co-chip">${ic("clock")} About ${mins} min</span>` : ""}${N?.level ? `<span class="co-chip">${esc(N.level)}</span>` : ""}</div></header>
+        ${N ? `<nav class="cx-kit" aria-label="Everything for this topic">
+          ${nQ ? `<a class="cx-kc" href="#co-check" data-jump="co-check"><span>${ic("target")}</span><b>Check yourself</b><small>${nQ} question${nQ > 1 ? "s" : ""}</small></a>` : ""}
+          ${N.cards.length ? `<button type="button" class="cx-kc" data-cards><span>${ic("cards")}</span><b>Flashcards</b><small>${N.cards.length} card${N.cards.length > 1 ? "s" : ""}</small></button>` : ""}
+          ${nIx ? `<a class="cx-kc" href="#co-trylab" data-jump="co-trylab" data-kit-lab><span>${ic("cube")}</span><b>${PL === "Lab" ? "Interactive" : esc(PL)}</b><small>${nIx} to try</small></a>` : ""}
+          <a class="cx-kc" href="#/quiz/${u.id}"><span>${ic("trophy")}</span><b>${U} quiz</b><small>${qz ? `best ${pc(qz.best)}` : `+${XP.quiz} XP`}</small></a>
+          <a class="cx-kc" href="#/target/${encodeTest({ minutes: 5, scope: "lessons", lessons: (g?.lessons || [l]).map((x) => x.id) })}"><span>${ic("bolt")}</span><b>Target test</b><small>5 min · ${esc(g?.title || "this lesson")}</small></a>
+        </nav>` : ""}
         ${N && isDraft(u) ? `<p class="co-draft" role="note"><b>Draft.</b> This ${u1} is written but hasn't yet completed content review, source checking and expert sign-off. Use it alongside your course materials and official sources.</p>` : ""}
         ${N && cfg.reviewLine ? `<p class="co-reviewed">${reviewLine(u)}</p>` : ""}
         ${buildsOnHtml(id)}
@@ -767,9 +1323,10 @@ export function mountCourse(root, cfg) {
         ${N && cfg.anatomy3d?.lessons && id in cfg.anatomy3d.lessons ? anatomyPanel(cfg.anatomy3d.lessons[id]) : ""}
         ${nQ ? `<section class="co-check" id="co-check"><header><h3 class="co-part">${ic("target")} Check yourself</h3><span class="co-checkn" aria-live="polite"></span></header>${N.items.map((it, k) => `<div class="co-qn" data-n="${k + 1} of ${nQ}">${qHtml(it, { confidence: true })}</div>`).join("")}</section>` : ""}
         ${N ? `<section class="co-deeper" id="co-deeper"><h3 class="co-part">${ic("sparkles")} Go deeper</h3><section class="co-ask co-tutor"></section>${mapsSectionHtml(N, mapOpts(l))}</section>` : ""}
+        ${resourceSwitcher({ kicker: `${U} ${u.n} · ${u.title} · ${l.title}`, items: res, id: "co-next" })}
         ${N && F.refs ? `<section class="co-refsec" id="co-refs">${F.refs}</section>` : ""}
         <footer class="co-finish">
-          <div class="co-finish-txt"><b>${S.done[id] ? "You've finished this lesson" : N ? "Finished reading?" : "Notes coming soon"}</b><span>${S.done[id] ? "Review it any time, or carry on to the next one." : `Mark it complete for +${XP.lesson} XP${next ? " and go straight on to the next lesson" : ""}.`}</span></div>
+          <div class="co-finish-txt"><b>${S.done[id] ? "You've finished this lesson" : N ? "Finished reading?" : "Notes coming soon"}</b><span>${S.done[id] ? "Review it any time, or carry on to the next one." : `Mark it complete for +${XP.lesson} XP${next ? ", then choose what's next" : ""}.`}</span></div>
           <div class="co-finish-btns">
             <button class="btn btn-light lg co-complete" ${S.done[id] ? "disabled" : ""}><span>${S.done[id] ? "Completed ✓" : `Complete lesson · +${XP.lesson} XP`}</span></button>
             ${N?.cards.length ? `<button class="btn btn-ghost lg" data-cards><span>${ic("cards")} Flashcards</span></button>` : ""}
@@ -777,10 +1334,11 @@ export function mountCourse(root, cfg) {
           </div>
         </footer>
       </div>
-      <nav class="co-pn" aria-label="Other lessons">${card(prev, "prev")}${card(next, "next")}</nav>
+      <nav class="co-pn cx-pn3" aria-label="Other lessons">${card(prev, "prev")}${upCard}${nextCard}</nav>
     </article>`;
     // the rail beside the lesson: its sections, how far through you are, and its questions
     lessonRail = () => railHtml(l, N, nQ, mins);
+    addSave(main.querySelector(".cx-lact .cx-save"));
     scrollTo(0, 0);
     wirePractice(main, "lesson", id);
     glassIcons(main, cfg.site).catch(() => {});
@@ -793,10 +1351,19 @@ export function mountCourse(root, cfg) {
       if (linked.length && at) at.insertAdjacentHTML("beforebegin", `<section class="co-trylab"><h3>Try it yourself</h3>${shown.map((x) => `<div class="co-ixslot" data-ix="${esc(x.id)}"></div>`).join("")}${more.length ? `<p class="co-morelabs">More for this lesson: ${more.map((x) => `<a href="#/practice/${esc(x.id)}">${esc(x.title)}</a>`).join(" · ")}</p>` : ""}</section>`);
     }
     mountIxSlots(main);
+    { const lab = main.querySelector(".co-trylab, .co-lesson .co-lab"); if (lab) lab.id ||= "co-trylab"; else main.querySelector("[data-kit-lab]")?.remove(); }
+    main.querySelector("[data-mark]").addEventListener("click", () => toggleMark(id));
+    main.querySelector("[data-focus]").addEventListener("click", () => setFocus(!focusOn()));
+    paintDock("lesson", l, prev && byId[prev.id], next && byId[next.id]);
+    redrawTree?.(false);
     wireReading(id, nQ, N, prev && byId[prev.id], next && byId[next.id]);
     if (N) wireMaps(main, N, mapOpts(l));
     main.querySelectorAll("[data-cards]").forEach((b) => b.addEventListener("click", async () => { if (await gate("flashcards", `${cfg.slug}:${l.id}`, { store })) flashcards(N.cards, l, N); }));
     main.querySelector("[data-save]")?.addEventListener("click", (e) => saveLesson(l, N, e.currentTarget));
+    { const sw = main.querySelector("#co-next"); if (sw) wireActions(sw, res); }
+    main.querySelector("[data-revnotes]")?.addEventListener("click", () => revisionNotes());
+    main.querySelector("[data-split]")?.addEventListener("click", () => setSplit(!splitOn()));
+    if (splitOn() || pref(cfg.slug, "split")) setSplit(splitFits(), false);
     const tp = main.querySelector(".co-tutor");
     if (tp) mountTutorPanel(tp, {
       ask: askTutor, lesson: { id, title: l.title }, note: cfg.tutor || TUTOR_NOTE,
@@ -808,10 +1375,43 @@ export function mountCourse(root, cfg) {
       if (S.done[id]) return;
       S.done[id] = Date.now(); save(); track("lesson_complete", cfg.site);
       ledger({ event: "lesson_completed", concept: `${cfg.slug}:${id}`, source: "course", detail: { seconds: Math.round((lt.current()?.ms || 0) / 1000) + (S.time?.[id]?.s || 0) } }); e.currentTarget.disabled = true; e.currentTarget.querySelector("span").textContent = "Completed ✓";
+      const lvBefore = levelOf(totalXp());
       await award(XP.lesson, "lesson", id, `${cfg.name}: ${l.title}`);
+      lightStep("done"); shareProgress(l);
       if (unitDone(u) === u.lessons.length) celebrate(`${U} ${u.n} complete`, `${esc(u.title)}: every lesson done. Take the unit quiz for +${XP.quiz} XP.`, `<a class="btn btn-ghost lg btn-sm" href="#/quiz/${u.id}"><span>${U} quiz</span></a>`);
-      else if (next) setTimeout(() => go(`lesson/${next.id}`), 650);
+      else lessonSummary({ l, N, nQ, next: next && byId[next.id], gained: totalXp() - xpBefore, lvBefore, openedAt });
     });
+  }
+  // the moment a lesson is completed: what it earned, how the questions went, the level and the day so far, and one
+  // clear next step (Enter goes on). The learner chooses: nothing moves on by itself.
+  function lessonSummary({ l, N, nQ, next, gained, lvBefore, openedAt }) {
+    const xp = totalXp(), L = levelOf(xp), st = streak(), tx = todayXp(), right = main.querySelectorAll(".co-check .aq.solved").length;
+    const mins = Math.max(1, Math.round((Date.now() - openedAt) / 6e4)), r = roll(idsOf(l.unit)), ups = L.n > lvBefore.n;
+    const from = ups ? 0 : ((lvBefore.xp ?? xp - gained) - L.from) / (L.to - L.from), to = (xp - L.from) / (L.to - L.from);
+    const cardsLeft = N?.cards?.length && !S.recalled?.[l.id];
+    const d = document.createElement("div"); d.className = "co-modal cx-done";
+    d.innerHTML = `<div class="co-dialog cx-donebox" role="dialog" aria-modal="true" aria-labelledby="cx-doneh">
+      <div class="cx-donetop"><span class="cx-donecheck">${ic("check")}</span><span class="co-kicker">Lesson complete</span><h2 id="cx-doneh">${esc(l.title)}</h2><p class="cx-gain">+${gained} XP</p></div>
+      <div class="cx-donestats">
+        ${nQ ? `<div><b>${right}/${nQ}</b><small>questions right</small></div>` : ""}
+        <div><b>${mins} min</b><small>on this lesson</small></div>
+        <div><b>${ic("flame")} ${st.n}</b><small>day streak</small></div>
+        <div><b>${Math.min(tx, S.goal)}/${S.goal}</b><small>daily XP goal</small></div>
+      </div>
+      <div class="cx-donelv"><span>Level ${L.n}${ups ? " · level up!" : ""}</span><div class="co-bar"><i style="width:${from * 100}%"></i></div><small>${(L.to - xp).toLocaleString()} XP to level ${L.n + 1}</small></div>
+      <p class="cx-doneunit">${dot(statusOf(l.id))} ${STATUS[statusOf(l.id)].label} · ${U} ${l.unit.n}: ${r.done} of ${r.total} lessons done${comboBest >= 3 ? ` · best run ${comboBest} in a row` : ""}</p>
+      ${nQ && right < nQ ? `<p class="cx-donetip">${ic("target")} ${nQ - right} question${nQ - right === 1 ? "" : "s"} still to get right. They'll come back in Revise, or <a href="#co-check" data-close data-jump="co-check">try them now</a>.</p>` : ""}
+      <div class="co-row cx-donego">${next ? `<a class="btn btn-light lg" href="#/lesson/${next.id}" data-close><span>Next: ${esc(next.title)} →</span></a>` : `<a class="btn btn-light lg" href="#/learn" data-close><span>Back to the syllabus</span></a>`}
+        ${cardsLeft ? `<button type="button" class="btn btn-ghost lg" data-recall><span>${ic("cards")} Recall the ${N.cards.length} flashcards</span></button>` : ""}
+        <button type="button" class="btn btn-ghost lg" data-close><span>Stay here</span></button></div>
+      <small class="cx-donekeys"><kbd>↵</kbd> ${next ? "next lesson" : "syllabus"} · <kbd>Esc</kbd> stay</small></div>`;
+    const close = () => { d.remove(); removeEventListener("keydown", key, true); };
+    const key = (e) => { if (e.key === "Escape") { e.preventDefault(); close(); } };
+    d.addEventListener("click", (e) => { if (e.target === d || e.target.closest("[data-close]")) close(); if (e.target.closest("[data-recall]")) { close(); flashcards(N.cards, l, N); } });
+    addEventListener("keydown", key, true);
+    document.body.append(d); confetti();
+    d.querySelector(".cx-donego a, .cx-donego button").focus();
+    requestAnimationFrame(() => requestAnimationFrame(() => { const b = d.querySelector(".cx-donelv .co-bar i"); if (b) b.style.width = `${Math.min(1, to) * 100}%`; }));
   }
 // ---------- the AI tutor (kit/assess/tutor.js → supabase/functions/course-tutor) and written practice ----------
   // One request to the course-tutor function (kit/data/functions.js turns every failure into a clear message)
@@ -947,7 +1547,11 @@ export function mountCourse(root, cfg) {
       glassIcons(d, cfg.site).catch(() => {});
       d.querySelector(".co-card3d").onclick = () => { flipped = !flipped; d.querySelector(".co-card3d").classList.toggle("flip", flipped); };
       d.querySelector("[data-prev]").onclick = () => { i--; flipped = false; paint(); };
-      d.querySelector("[data-next]").onclick = () => { if (i < cards.length - 1) { i++; flipped = false; paint(); } else d.remove(); };
+      d.querySelector("[data-next]").onclick = () => {
+        if (i < cards.length - 1) { i++; flipped = false; paint(); return; }
+        // going through every card is the lesson's recall step
+        d.remove(); S.recalled ||= {}; if (!S.recalled[l.id]) { S.recalled[l.id] = Date.now(); keep(); } lightStep("recall"); toast(`${ic("cards")} Recall done: ${cards.length} card${cards.length === 1 ? "" : "s"} from <b>${esc(l.title)}</b>`);
+      };
       d.querySelector("[data-close]").onclick = () => d.remove();
     };
     d.addEventListener("click", (e) => { if (e.target === d) d.remove(); });
@@ -1005,7 +1609,7 @@ export function mountCourse(root, cfg) {
   async function viewRetrieval() {
     const due = revisionQueue(S.attempts || [], { limit: 10 });
     if (!due.length) { main.innerHTML = `<div class="co-panel"><span class="co-kicker">Revisit</span><h2>No questions due</h2><p>Questions you got wrong come back after a few hours, and ones you got right return after 1, 3, 7, 21 and 60 days, so that what you know lasts.</p><a class="btn btn-light lg btn-sm" href="#/review"><span>Flashcard review</span></a></div>`; return; }
-    main.innerHTML = `<div class="co-panel"><p>Loading your questions…</p></div>`;
+    main.innerHTML = `<div class="co-panel">${skeleton("list", 6, "Loading your questions")}</div>`;
     const need = new Set(due.map((q) => q.unit));
     const notes = Object.assign({}, ...(await Promise.all(units.filter((u) => need.has(u.id)).map(unitNotes))));
     const items = due.map((q) => ({ q, it: notes[q.lesson]?.items?.find((i) => i.key === q.id) })).filter((x) => x.it);
@@ -1038,7 +1642,10 @@ export function mountCourse(root, cfg) {
     const due = shuffle(dueCards()).slice(0, 30);
     const learned = Object.keys(S.cards).length, total = cardPool.length;
     if (!due.length) {
-      main.innerHTML = `<div class="co-panel"><span class="co-kicker">Review</span><h2>${total ? "All caught up" : "Nothing to review yet"}</h2><p>${total ? `You've seen ${learned} of ${total} cards. The next ones come due as their intervals pass, so come back tomorrow.` : "Complete lessons and their flashcards join your review queue. Spaced repetition brings each card back just before you'd forget it."}</p><a class="btn btn-light lg btn-sm" href="#/learn"><span>Go to the path</span></a> ${revisitLink()}</div>`;
+      const nl = resumeLesson();
+      main.innerHTML = `<div class="co-panel">${emptyState({ icon: total ? "check" : "cards", title: total ? "All caught up" : "No flashcards yet",
+        body: total ? `You've seen ${learned} of ${total} cards. The next ones come due as their intervals pass, so come back tomorrow.` : "Each lesson you study adds its flashcards here. Spaced repetition then brings every card back just before you'd forget it.",
+        actions: [nl ? { label: total ? "Continue learning" : "Study a lesson to get cards", href: `#/lesson/${nl.id}`, primary: true } : null, { label: "Open the syllabus", href: "#/learn" }].filter(Boolean) })}<p class="co-row">${revisitLink()}</p></div>`;
       return;
     }
     let k = 0, done = 0;
@@ -1057,6 +1664,117 @@ export function mountCourse(root, cfg) {
         record({ Q: { type: "card" }, key: `card:${c.id}`, l: byId[c.lesson] }, "review", "cards", { score, correct: score >= 0.6, method: "self" }, { response: b.dataset.r });
         award(XP.review, "review", c.id); step();
       }));
+    };
+    step();
+  }
+
+  // ---------- Revise: every way to revise in one place, and the Target Test builder ----------
+  async function viewRevise() {
+    await reviewPool(); paintHud();
+    const due = dueCards().length, total = cardPool.length, rq = revisionQueue(S.attempts || [], { limit: 200 }).length, w = weakTargets(), studied = Object.keys(S.done).length;
+    const ready = units.filter((u) => unitDone(u) === u.lessons.length && !S.quiz[u.id]?.pass), written = units.filter(isWritten);
+    const T = S.ttPrefs || { minutes: 10, focus: "mixed", scope: w.length ? "weak" : studied ? "studied" : "units", units: [] };
+    const card = (icon, kick, h, d, href, cta, n, off) => `<${off ? "div" : `a href="${href}"`} class="cx-rcard ${off ? "off" : ""}"><span class="cx-rci">${ic(icon)}${n ? `<i>${n}</i>` : ""}</span><span class="co-kicker">${kick}</span><b>${h}</b><p>${d}</p><span class="cx-rgo">${cta} ${off ? "" : ic("right")}</span></${off ? "div" : "a"}>`;
+    main.innerHTML = `<div class="co-intro"><span class="co-kicker">Revise</span><h2>Revise what matters most</h2><p>Learn → recall → apply → review → improve. Everything here comes from your own answers: what's due, what you got wrong, and what's slipping.</p></div>
+      <div class="cx-rgrid">
+        ${card("cards", "Spaced review", due ? `${due} flashcard${due === 1 ? "" : "s"} due` : total ? "All caught up" : "No cards yet", total ? `${Object.keys(S.cards).length} of ${total} cards seen. Each comes back just before you'd forget it.` : "Complete lessons and their flashcards join your review queue.", "#/review", due ? "Review now" : "Open", due, !due && !total)}
+        ${card("clock", "Retrieval", rq ? `${rq} question${rq === 1 ? "" : "s"} to bring back` : "Nothing due", "Wrong answers return in hours; right ones at 1, 3, 7, 21 and 60 days.", "#/review/questions", "Revisit", rq, !rq)}
+        ${card("target", "Weak spots", w.length ? `${w.length} weak lesson${w.length === 1 ? "" : "s"}` : "None measured", w.length ? esc(w.slice(0, 2).map((x) => byId[x.lesson]?.title).filter(Boolean).join(", ")) : "Only your own answers can mark something as weak. Nothing does yet.", "#/review/weak", "Practise", w.length, !w.length)}
+        ${card("trophy", `${U} quizzes`, ready.length ? `${ready.length} quiz${ready.length === 1 ? "" : "zes"} ready` : "Quizzes", ready.length ? esc(ready.slice(0, 2).map((u) => `${U} ${u.n}: ${u.title}`).join(" · ")) : `Ten questions at the end of each ${u1}. Pass with 75% for +${XP.quiz} XP.`, ready.length ? `#/quiz/${ready[0].id}` : "#/learn", ready.length ? "Take it" : "See the syllabus", ready.length)}
+      </div>
+      <section class="cx-tt" id="tt">
+        <div class="cx-tth"><span class="cx-tti">${ic("target")}</span><div><span class="co-kicker">Target test</span><h3>Build a test for exactly what you need</h3><p>Pick your time, your focus and what to cover. Gradify chooses the questions: weak lessons first, questions you got wrong, and ones you've never seen, spread across topics. Answers count towards your mastery.</p></div></div>
+        <div class="cx-ttf">
+          <fieldset><legend>How long have you got?</legend><div class="cx-chips">${LENGTHS.map((m) => `<button type="button" data-tm="${m}" aria-pressed="${T.minutes === m}">${m} min <small>${countFor(m)} questions</small></button>`).join("")}</div></fieldset>
+          <fieldset><legend>Focus</legend><div class="cx-chips">${Object.entries(FOCUS).map(([k, f]) => `<button type="button" data-tf="${k}" aria-pressed="${T.focus === k}">${f.label} <small>${f.sub}</small></button>`).join("")}</div></fieldset>
+          <fieldset><legend>Cover</legend><div class="cx-chips">
+            <button type="button" data-ts="weak" aria-pressed="${T.scope === "weak"}" ${w.length ? "" : "disabled"}>My weak topics <small>${w.length ? `${w.length} lesson${w.length === 1 ? "" : "s"}` : "none measured yet"}</small></button>
+            <button type="button" data-ts="studied" aria-pressed="${T.scope === "studied"}" ${studied ? "" : "disabled"}>Everything I've studied <small>${studied} lesson${studied === 1 ? "" : "s"}</small></button>
+            <button type="button" data-ts="units" aria-pressed="${T.scope === "units"}">Choose ${u1}s</button></div>
+            <div class="cx-ttunits" ${T.scope === "units" ? "" : "hidden"}>${written.map((u) => `<label><input type="checkbox" value="${u.id}" ${(T.units || []).includes(u.id) ? "checked" : ""}><span>${U} ${u.n}: ${esc(u.title)}</span><small>${pc(roll(idsOf(u)).coverage)}</small></label>`).join("")}</div></fieldset>
+          <div class="cx-ttgo"><button type="button" class="btn btn-light lg" data-ttstart><span>${ic("play")} Start target test</span></button><small class="cx-ttnote"></small></div>
+        </div>
+      </section>
+      <div class="cx-rmore">
+        <a class="co-feat" href="#/problems"><b>Problem bank</b><p>Every question in the course, filtered by ${u1}, level and whether you've solved it.</p></a>
+        ${cfg.exams ? `<a class="co-feat" href="#/exams"><b>Mock exams</b><p>Timed, marked at the end, with your weak areas identified.</p></a>` : ""}
+        ${cfg.writing?.length ? `<a class="co-feat" href="#/write"><b>Written practice</b><p>Write an answer, then check it against a rubric or get AI feedback.</p></a>` : ""}
+        ${cfg.authorities ? `<a class="co-feat" href="#/cases"><b>${esc(cfg.authorities)}</b><p>Every card from the lessons, searchable.</p></a>` : ""}
+        ${ixs.length ? `<a class="co-feat" href="#/practice"><b>${esc(PL)}</b><p>${ixs.length} interactives with challenges that count as application.</p></a>` : ""}
+      </div>`;
+    const tt = main.querySelector(".cx-tt"), note = tt.querySelector(".cx-ttnote");
+    const sync = () => {
+      tt.querySelectorAll("[data-tm]").forEach((b) => b.setAttribute("aria-pressed", String(Number(b.dataset.tm) === T.minutes)));
+      tt.querySelectorAll("[data-tf]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.tf === T.focus)));
+      tt.querySelectorAll("[data-ts]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.ts === T.scope)));
+      tt.querySelector(".cx-ttunits").hidden = T.scope !== "units";
+      T.units = [...tt.querySelectorAll(".cx-ttunits input:checked")].map((x) => x.value);
+      const ok = T.scope !== "units" || T.units.length;
+      tt.querySelector("[data-ttstart]").disabled = !ok;
+      note.textContent = ok ? `${countFor(T.minutes)} ${FOCUS[T.focus].label.toLowerCase()} questions, about ${T.minutes} minutes.` : `Choose at least one ${u1}.`;
+    };
+    tt.addEventListener("click", (e) => {
+      const b = e.target.closest("button"); if (!b || b.disabled) return;
+      if (b.dataset.tm) T.minutes = Number(b.dataset.tm); else if (b.dataset.tf) T.focus = b.dataset.tf; else if (b.dataset.ts) T.scope = b.dataset.ts;
+      else if ("ttstart" in b.dataset) { S.ttPrefs = { ...T }; keep(); go(`target/${encodeTest(T)}`); return; }
+      sync();
+    });
+    tt.addEventListener("change", sync);
+    if (T.scope === "weak" && !w.length) T.scope = studied ? "studied" : "units";
+    sync();
+    if (location.hash.includes("#tt")) tt.scrollIntoView();
+  }
+  async function viewTarget(code) {
+    const c = decodeTest(code), sw = strengths(sigs());
+    const ids = (c.scope === "weak" ? [...new Set([...weakTargets().map((t) => t.lesson), ...sw.weak.map((x) => x.id)])].slice(0, 8)
+      : c.scope === "studied" ? Object.keys(S.done) : c.scope === "units" ? units.filter((u) => c.units.includes(u.id)).flatMap(idsOf) : c.lessons).filter((id) => byId[id]);
+    const scopeLabel = { weak: "your weak topics", studied: "what you've studied", units: units.filter((u) => c.units.includes(u.id)).map((u) => `${U} ${u.n}`).join(", "), lessons: ids.length === 1 ? byId[ids[0]].title : `${ids.length} lessons` }[c.scope];
+    const empty = (h, d) => { main.innerHTML = `<div class="co-panel"><span class="co-kicker">Target test</span><h2>${h}</h2><p>${d}</p><div class="co-row"><a class="btn btn-light lg btn-sm" href="#/revise"><span>Build another test</span></a><a class="btn btn-ghost lg btn-sm" href="#/learn"><span>Syllabus</span></a></div></div>`; };
+    if (!ids.length) return empty("Nothing to test yet", c.scope === "weak" ? "Nothing is measured as weak yet. Try a test on everything you've studied instead." : "Complete a lesson or two first, or choose some units to cover.");
+    main.innerHTML = `<div class="co-panel"><p>Building your test…</p></div>`;
+    const need = new Set(ids.map((id) => byId[id].unit.id));
+    const notes = Object.assign({}, ...(await Promise.all(units.filter((u) => need.has(u.id)).map(unitNotes))));
+    const pool = ids.flatMap((id) => (notes[id]?.items || []).filter((it) => QTYPES[it.Q.type]?.auto));
+    const items = buildTargetTest(pool, { minutes: c.minutes, focus: c.focus, weak: c.scope === "weak" ? ids : sw.weak.map((x) => x.id), attempts: S.attempts || [] });
+    if (!items.length) return empty("No questions here yet", "These lessons don't have check questions yet. Try a different scope.");
+    const t0 = Date.now(), limit = c.minutes * 60e3, rows = [];
+    let k = 0, right = 0, run = 0, best = 0, timer = null, over = false;
+    const clock = () => { const left = Math.max(0, limit - (Date.now() - t0)), el = main.querySelector(".cx-timer"); if (el) { el.textContent = `${Math.floor(left / 6e4)}:${String(Math.floor((left % 6e4) / 1e3)).padStart(2, "0")}`; el.classList.toggle("low", left < 60e3); } if (!left && !over) { over = true; el?.classList.add("over"); const n = main.querySelector(".co-nextq"); if (n) n.querySelector("span").textContent = "Time's up · see your results"; toast(`${ic("clock")} Time's up. Finish this question, then see your results.`); } };
+    timer = setInterval(clock, 1000); routeStop = () => clearInterval(timer);
+    const step = () => {
+      if (k >= items.length || (over && k > 0 && rows.length === k)) return finish();
+      const it = items[k];
+      main.innerHTML = `<div class="co-quiz cx-ttrun"><div class="cx-tthead"><a href="#/revise">${ic("left")} Revise</a><span class="co-kicker">Target test · ${FOCUS[c.focus].label} · ${esc(scopeLabel)}</span><span class="cx-timer" aria-label="Time left"></span></div>
+        <div class="co-qbar"><i style="width:${(k / items.length) * 100}%"></i></div>
+        <div class="cx-ttmeta"><span>Question ${k + 1} of ${items.length}</span><span>${right} right</span>${run >= 2 ? `<span class="cx-combo">${ic("flame")} ${run} in a row</span>` : ""}</div>
+        <div class="co-panel">${qHtml(it)}<p class="co-from" hidden>From: <a href="#/lesson/${it.l.id}">${esc(it.l.title)}</a> · ${dot(statusOf(it.l.id))} ${STATUS[statusOf(it.l.id)].label}</p><button class="btn btn-light lg btn-sm co-nextq" hidden><span>${k < items.length - 1 && !over ? "Next question →" : "See your results"}</span></button></div></div>`;
+      clock();
+      wireQuestions(main, (key) => pageQs.get(key)?.Q, (Q, res, first, box, meta) => {
+        if (box.classList.contains("done")) return;
+        box.classList.add("done");
+        record(it, "quiz", "target", res, meta); rows.push({ lesson: it.l.id, key: it.key, score: res.score });
+        if (res.score >= 0.7) { right++; run++; best = Math.max(best, run); if ([3, 5, 8].includes(run)) comboPop(run); } else run = 0;
+        box.querySelectorAll("button:not(.co-nextq), input, select, textarea").forEach((x) => { x.disabled = true; });
+        main.querySelector(".co-from").hidden = false;
+        const nb = main.querySelector(".co-nextq"); nb.hidden = false; nb.focus();
+      });
+      main.querySelector(".co-nextq").addEventListener("click", () => { k++; step(); });
+    };
+    const finish = async () => {
+      clearInterval(timer); routeStop = null;
+      const n = rows.length, p = n ? rows.reduce((a, r) => a + r.score, 0) / n : 0, ms = Date.now() - t0, by = targetResults(rows);
+      // XP for each question solved for the first time (as in the problem bank), paid once at the end
+      let gain = 0; for (const r of rows) if (r.score >= 0.7 && !S.solved[r.key]) { S.solved[r.key] = Date.now(); gain += XP.problem; }
+      if (gain) save();
+      const weakNow = by.filter((g) => g.mean < 0.7).map((g) => g.lesson);
+      main.innerHTML = `<div class="cx-ttres">
+        <div class="cx-ttscore">${ring(p, 132, 12, p >= 0.7 ? "good" : "")}<div><b>${pc(p)}</b><small>${Math.round(right * 10) / 10} of ${n} right</small></div></div>
+        <div class="cx-ttsum"><span class="co-kicker">Target test · ${FOCUS[c.focus].label}</span><h2>${p >= 0.85 ? "Excellent." : p >= 0.7 ? "Solid work." : p >= 0.4 ? "Good practice: now you know where to look." : "That's what practice is for."}</h2>
+          <p>${Math.floor(ms / 6e4)} min ${Math.round((ms % 6e4) / 1e3)} s${best >= 3 ? ` · best run ${best} in a row` : ""}${gain ? ` · +${gain} XP for newly solved questions` : ""}. These answers count as assessment evidence in your mastery.</p>
+          <div class="co-row">${weakNow.length ? `<a class="btn btn-light lg btn-sm" href="#/target/${encodeTest({ minutes: Math.min(c.minutes, 10), focus: c.focus, scope: "lessons", lessons: weakNow })}"><span>${ic("target")} Practise the ones you missed</span></a>` : ""}<a class="btn btn-ghost lg btn-sm" href="#/revise"><span>New target test</span></a><a class="btn btn-ghost lg btn-sm" href="#/home"><span>Home</span></a></div></div></div>
+        <section class="co-panel"><h3>By topic</h3><ul class="cx-bytopic">${by.map((g) => `<li><a href="#/lesson/${g.lesson}">${dot(statusOf(g.lesson))}${esc(byId[g.lesson].title)}</a><span class="cx-mbar"><i style="width:${Math.round(g.mean * 100)}%" class="${g.mean >= 0.85 ? "hi" : g.mean < 0.6 ? "lo" : ""}"></i></span><small>${g.right}/${g.n} · now ${STATUS[statusOf(g.lesson)].label.toLowerCase()}</small>${g.mean < 0.7 ? `<a class="cx-studynext" href="#/lesson/${g.lesson}">Study next →</a>` : "<span></span>"}</li>`).join("")}</ul></section>`;
+      if (p >= 0.7) confetti();
+      if (gain) await award(gain, "problem", `target:${t0}`, `${cfg.name}: target test ${pc(p)}`);
     };
     step();
   }
@@ -1084,7 +1802,7 @@ export function mountCourse(root, cfg) {
   // ---------- problems: every check question in the course, filterable ----------
   // case and statute cards from every lesson (CASE: and LAW: lines), searchable (cfg.authorities names the tab)
   async function viewAuthorities() {
-    main.innerHTML = `<div class="co-panel"><p>Loading the cards…</p></div>`;
+    main.innerHTML = `<div class="co-panel">${skeleton("cards", 4, "Loading the cards")}</div>`;
     const all = await allNotes();
     const items = lessons.flatMap((l) => (all[l.id]?.authorities || []).map((a) => ({ a, l })));
     const sortKey = (x) => x.a.name.replace(/^(R|Re|In re)\s+(\(|v\s)?/i, "").toLowerCase();
@@ -1109,7 +1827,7 @@ export function mountCourse(root, cfg) {
   }
 
   async function viewProblems() {
-    main.innerHTML = `<div class="co-panel"><p>Loading the problem bank…</p></div>`;
+    main.innerHTML = `<div class="co-panel">${skeleton("list", 8, "Loading the problem bank")}</div>`;
     const all = await allNotes();
     const probs = lessons.flatMap((l) => (all[l.id]?.items || []).filter((it) => QTYPES[it.Q.type]?.auto).map((it) => ({ ...it, d: it.Q.d, pid: it.key })));
     const f = { unit: "", d: "", s: "" };
@@ -1206,6 +1924,18 @@ export function mountCourse(root, cfg) {
         calibration: c ? `${c.sure} answers marked sure, ${c.sureWrong} of them wrong; ${c.guessRight} guesses right` : "", weak, pace: "" } };
   }
 
+  // the topic map: every lesson as a cell, coloured by its status, unit by unit. Completion and mastery side by side.
+  function topicMapHtml() {
+    const all = roll(lessons.map((l) => l.id)), { weak, strong } = strengths(sigs());
+    return `<section class="co-panel cx-map"><h3>Topic map</h3>
+      <p class="co-acct">Finishing a lesson isn't the same as knowing it. Coverage is what you've completed; mastery is what your answers show you can do, consistently. Every square is a lesson.</p>
+      <div class="cx-maptiles">${[["Coverage", pc(all.coverage), `${all.done} of ${all.total} lessons`], ["Practised or better", all.counts.practised + all.counts.mastered, "completed and answered"], ["Mastered", all.counts.mastered, "consistently right"], ["Needs revision", all.counts.revise, "recent answers mostly wrong"], ["Accuracy", all.mastery == null ? "–" : pc(all.mastery), `latest answers, ${all.measured} lessons`]].map(([k, v, d]) => `<div><small>${k}</small><b>${v}</b><em>${d}</em></div>`).join("")}</div>
+      <ul class="cx-legendrow">${STATUSES.map((x) => `<li>${dot(x.key)}${x.label} <b>${all.counts[x.key]}</b></li>`).join("")}</ul>
+      <div class="cx-maprows">${units.map((u) => { const r = roll(idsOf(u)); return `<div class="cx-mr"><a class="cx-mrl" href="#/learn/${u.id}"><span>${u.n}</span>${esc(u.title)}</a><div class="cx-mrc">${u.lessons.map((l) => `<a href="#/lesson/${l.id}" class="s-${statusOf(l.id)}" title="${esc(l.title)}: ${STATUS[statusOf(l.id)].label}" aria-label="${esc(l.title)}: ${STATUS[statusOf(l.id)].label}"></a>`).join("")}</div><small>${pc(r.coverage)}${r.mastery != null ? ` · ${pc(r.mastery)} right` : ""}</small></div>`; }).join("")}</div>
+      ${weak.length || strong.length ? `<div class="cx-sw">${[["Needs work", weak, "lo"], ["Strongest", strong, "hi"]].map(([h, list, cls]) => `<div><span class="co-kicker">${h}</span>${list.length ? `<ul>${list.slice(0, 5).filter((w) => byId[w.id]).map((w) => `<li><a href="#/lesson/${w.id}">${esc(byId[w.id].title)}</a><span class="cx-mbar"><i class="${cls}" style="width:${Math.round(w.latestMean * 100)}%"></i></span><small>${pc(w.latestMean)} · ${w.questions} q</small></li>`).join("")}</ul>` : `<p class="co-empty">Nothing yet.</p>`}</div>`).join("")}</div>` : ""}
+      ${weak.length ? `<a class="btn btn-light lg btn-sm" href="#/target/${encodeTest({ minutes: 10, scope: "weak" })}"><span>${ic("target")} Target test on my weak topics</span></a>` : ""}</section>`;
+  }
+
   async function viewMe() {
     const st = stats(), xp = st.xp, L = levelOf(xp), sk = streak();
     const byDay = {}; for (const r of S.log) byDay[day(r.t)] = (byDay[day(r.t)] || 0) + r.xp;
@@ -1214,13 +1944,14 @@ export function mountCourse(root, cfg) {
     const last14 = Array.from({ length: 14 }, (_, i) => { const d = day(Date.now() - (13 - i) * DAY); return [d, byDay[d] || 0]; }), mx = Math.max(S.goal, ...last14.map((x) => x[1]));
     main.innerHTML = `<div class="co-intro"><span class="co-kicker">My progress</span><h2>Your ${esc(cfg.name)}</h2><p>Everything you've done here, and what's saved to your Gradify account. Your quests, achievements and progress in every subject are on <a href="/journey.html">your journey</a>.</p></div>
       <div class="co-tiles">${[["Level", L.n], ["Total XP", xp.toLocaleString()], ["Day streak", sk.n], ["Best streak", sk.best], ["Lessons", `${st.lessons} / ${lessons.length}`], ["Units cleared", st.units], ["Quizzes passed", st.quizzes], ["Problems solved", st.solved]].map(([k, v]) => `<div><small>${k}</small><b>${v}</b></div>`).join("")}</div>
+      ${topicMapHtml()}
       ${masteryHtml()}
       ${insightHtml()}
       <section class="co-panel"><h3>Activity</h3><div class="co-heat">${cells}</div><p class="co-dayinfo">Pick a day to see what you did.</p></section>
       <section class="co-panel"><h3>XP, last 14 days</h3><div class="co-bars">${last14.map(([d, v]) => `<div title="${d}: ${v} XP"><i style="height:${(v / mx) * 100}%" class="${v >= S.goal ? "hit" : ""}"></i><small>${d.slice(8)}</small></div>`).join("")}<span class="co-goalline" style="bottom:${(S.goal / mx) * 100}%">goal ${S.goal}</span></div></section>
       <section class="co-panel"><h3>${TW}s</h3><div class="co-mastery">${cfg.tracks.map((t) => { const us = t.units.map((n) => units.find((u) => u.n === n)).filter(Boolean), tot = us.reduce((a, u) => a + u.lessons.length, 0), dn = us.reduce((a, u) => a + unitDone(u), 0); return `<div style="--a:${t.from};--b:${t.to}"><span>${esc(t.name)}</span><div class="co-bar"><i style="width:${(dn / tot) * 100}%"></i></div><small>${dn}/${tot}</small></div>`; }).join("")}</div></section>
       <section class="co-panel"><h3>Badges</h3>${[["Understanding", "Earned only from what your answers show you understand and remember. XP can't buy these.", true], ["Activity", "For keeping going: lessons, streaks, reviews and XP.", false]].map(([h, sub, u]) => `<h4>${h}</h4><p class="co-acct">${sub}</p><div class="co-badgelist">${BADGES.filter((b) => !!b.understanding === u).map((b) => `<div class="${b.ok(st) ? "on" : ""}">${ic(b.ok(st) ? "star" : "lock")}<b>${b.name}</b><small>${b.d}</small></div>`).join("")}</div>`).join("")}</section>
-      <section class="co-panel co-saved"><h3>Saved to your account</h3><p class="co-empty">Loading…</p></section>`;
+      <section class="co-panel co-saved"><h3>Saved to your account</h3>${skeleton("list", 3)}</section>`;
     main.querySelector("[data-director]")?.addEventListener("click", async (e) => {
       const out = main.querySelector(".co-dirout"); e.currentTarget.disabled = true; out.innerHTML = `<p class="co-empty">Planning from your progress…</p>`;
       try { out.innerHTML = directorHtml(await askTutor(directorRequest()), { link: (lid) => `#/lesson/${lid}`, titleOf: (lid) => byId[lid]?.title || "" }); }
@@ -1416,7 +2147,7 @@ export function mountCourse(root, cfg) {
     }
     const c = list.find((x) => x.id === id);
     if (!c) { main.innerHTML = `<p class="co-empty">That case isn't here. <a href="${base}">Back to ${esc(WS.label)}</a></p>`; return; }
-    main.innerHTML = `<div class="co-crumbs"><a href="${base}">← ${esc(WS.label)}</a><span>${esc(c.kind || "")}</span></div><div class="co-ws"><p class="co-empty">Loading…</p></div>`;
+    main.innerHTML = `<div class="co-crumbs"><a href="${base}">← ${esc(WS.label)}</a><span>${esc(c.kind || "")}</span></div><div class="co-ws">${skeleton("text", 6)}</div>`;
     const el = main.querySelector(".co-ws");
     try {
       const [engine, data] = await Promise.all([WS.engine(), c.load()]);
@@ -1502,6 +2233,8 @@ export function mountCourse(root, cfg) {
         <p class="co-empty">Counts are lessons. The stages are written, technically tested, content reviewed, sources checked and expert sign-off (docs/CURRICULUM_QA.md).</p></section>` : ""}`;
     const bq = main.querySelector(".co-bigsearch input"), br = main.querySelector(".co-bigsearch .co-results");
     bq.addEventListener("input", () => { if (norm(bq.value).length < 2) { br.hidden = true; return; } br.innerHTML = searchHtml(bq.value); br.hidden = false; });
+    bq.addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); palette.open(bq.value); } });
+    br.addEventListener("click", (e) => { const b = e.target.closest("[data-pal]"); if (b) { e.preventDefault(); palette.open(b.dataset.pal); } });
     if (feat.length) mountIx(feat[0], main.querySelector(".co-herolab .co-labstage"));
   }
 
@@ -1518,22 +2251,50 @@ export function mountCourse(root, cfg) {
   for (const ev of ["pointerdown", "keydown", "touchstart"]) addEventListener(ev, () => lt.input(), { passive: true });
   document.addEventListener("visibilitychange", () => lt.visibility(document.visibilityState === "visible"));
   addEventListener("pagehide", () => lt.stop());
+  let routeStop = null;   // a view's own clean-up (the target test's timer)
   async function route() {
     unmountIx();
     lt.stop();
-    lessonRail = null; readStop?.();
-    const home = cfg.overview ? "overview" : "learn";
-    const [v0, arg] = location.hash.replace(/^#\/?/, "").split("/"), v = v0 || home;
-    const view = VIEWS.some(([id]) => id === v) || ["lesson", "quiz", "exam"].includes(v) ? v : home;
-    root.querySelectorAll(".co-tabs a").forEach((a) => a.toggleAttribute("aria-current", a.dataset.v === (view === "lesson" || view === "quiz" ? "learn" : view === "exam" ? "exams" : view)));
-    showTab();
-    const wide = ["me", "features", "leaderboard", "tracks", "paths", "exams", "exam", "practice", "overview", cfg.workspace?.route].includes(view);
+    lessonRail = null; readStop?.(); routeStop?.(); routeStop = null;
+    curLesson = null; curN = null; combo = 0;
+    // a learner who has started lands on Home; someone new lands on the course's overview when it has one
+    const started = Object.keys(S.done).length || (S.log || []).length || (S.recent || []).length;
+    const home = cfg.overview && !started ? "overview" : "home";
+    const [v0, arg, sec, how] = location.hash.replace(/^#\/?/, "").split("/"), v = v0 || home;
+    const view = VIEWS.some(([id]) => id === v) || ["lesson", "quiz", "exam", "target"].includes(v) ? v : home;
+    const tab = TAB_OF[view] || view;
+    root.querySelectorAll(".co-tabs > a").forEach((a) => a.toggleAttribute("aria-current", a.dataset.v === tab));
+    const inMore = MORE.some(([id]) => id === view) && !PRIMARY.some(([id]) => id === tab);
+    moreBtn.classList.toggle("on", inMore); moreMenu.querySelectorAll("a").forEach((a) => a.toggleAttribute("aria-current", a.dataset.v === view));
+    showTab(); closeMore(); drawer(false);
+    const wide = ["home", "me", "features", "leaderboard", "tracks", "paths", "exams", "exam", "practice", "overview", "target", cfg.workspace?.route].includes(view);
     side.hidden = wide; root.querySelector(".co-body").classList.toggle("wide", wide);
+    // the course outline stays beside a lesson or a quiz (a drawer on smaller screens)
+    showTree(view === "lesson" || view === "quiz");
     // reading a lesson: the course's header, progress and tabs fold away so the lesson starts at the top
     root.classList.toggle("co-reading", view === "lesson");
-    if (view !== "learn") scrollTo(0, 0);
+    root.dataset.view = view;
+    const fpref = (() => { try { return localStorage.getItem(FK) === "1"; } catch { return false; } })();
+    if (view === "lesson") { if (fpref !== focusOn()) setFocus(fpref); } else if (focusOn()) { document.documentElement.classList.remove("cx-focus"); document.querySelector(".cx-focusx")?.remove(); }
+    paintDock(view);
+    // the trail of places (kit/ui/places.js): coming back to the previous place puts you where you were on it
+    const arrived = arriveHere({ href: location.hash || "#/", kind: view, title: "" });
+    hideBack();
+    if (view !== "learn" && !(arrived.back && arrived.y)) scrollTo(0, 0);
     if (view === "learn") { if (arg) openUnit(arg); viewLearn(arg); }
-    else if (view === "lesson") await viewLesson(arg);
+    else if (view === "lesson") {
+      await viewLesson(arg);
+      if (sec) setTimeout(() => {
+        const el = document.getElementById(sec); if (!el) return;
+        scrollTo({ top: el.getBoundingClientRect().top + scrollY - 90, behavior: "instant" });
+        // Continue learning lands on the section you were reading, and says so (one tap back to the top)
+        const name = root.querySelector(`.co-toc a[data-jump="${sec}"]`)?.textContent || el.querySelector("h2, h3, h4")?.textContent || "";
+        if (how === "resume") toast(`Picked up where you left off${name ? `: <b>${esc(name.trim())}</b>` : ""}`, { key: "resume", icon: "play", action: { label: "Start from the top", run: () => scrollTo({ top: 0 }) } });
+      }, 60);
+    }
+    else if (view === "home") viewHome();
+    else if (view === "revise") await viewRevise();
+    else if (view === "target") await viewTarget(arg);
     else if (view === "quiz") await viewQuiz(arg);
     else if (view === "review") await (arg === "questions" ? viewRetrieval() : arg === "weak" ? viewWeak() : viewReview());
     else if (view === "paths") viewPaths();
@@ -1553,7 +2314,21 @@ export function mountCourse(root, cfg) {
     else if (view === "me") await viewMe();
     else viewFeatures();
     paintSide();
+    // what this place is called (for "Back to …"), then where to put the page
+    const title = view === "lesson" ? byId[arg]?.title : view === "quiz" ? `${U} ${units.find((u) => u.id === arg)?.n ?? ""} quiz` : (VIEWS.find(([id]) => id === view)?.[1] || main.querySelector("h2")?.textContent || cfg.name);
+    arriveHere({ href: location.hash || "#/", kind: view, title: `${title}` });
+    if (arrived.back && arrived.y && !sec) restoreScroll(arrived.y);
+    // followed a link away from a lesson to an activity (its quiz, a target test, the flashcards…): offer the way back
+    else if (!arrived.back && ["quiz", "target", "review", "practice", "exam", "problems", "cases", "write"].includes(view)) {
+      const from = backPlace({ kinds: ["lesson"], within: 30 * 60e3 });
+      if (from && trail().at(-2)?.href === from.href) offerBack(from, { label: "Back to" });
+    }
+    // a subtle entrance, so moving between views feels continuous rather than a jump cut
+    main.classList.remove("cx-enter"); void main.offsetWidth; main.classList.add("cx-enter");
   }
+  // remember how far down each place the learner was (for going back to it)
+  let scrollT = null;
+  addEventListener("scroll", () => { clearTimeout(scrollT); scrollT = setTimeout(() => rememberScroll(scrollY), 150); }, { passive: true });
   addEventListener("hashchange", route);
   pullProgress();
   route();
