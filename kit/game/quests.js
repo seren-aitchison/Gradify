@@ -59,8 +59,15 @@ export const TOPIC_STEPS = [
   { id: "apply", label: "Apply", xp: 40, of: 5, mean: 0.8 },
 ];
 export function topicQuest(x, courses) {
-  const l = x.open[0]; if (!l) return null;
+  // the day's topic is the one worked on most recently today (an answer, a card, a lesson finished), so finishing
+  // its last lesson keeps the quest and its unclaimed steps; before anything today, the next open lesson's topic
+  const worked = [
+    ...x.attemptsToday.map((a) => ({ course: a.course, id: a.lesson, t: a.ms || 0 })),
+    ...courses.flatMap((c) => Object.entries(c.S?.done || {}).filter(([, t]) => dayKey(t) === x.day).map(([id, t]) => ({ course: c.slug, id, t }))),
+  ].filter((w) => w.id).sort((a, b) => b.t - a.t)[0];
+  const l = worked || x.open[0]; if (!l) return null;
   const c = courses.find((y) => y.slug === l.course), u = (c?.units || []).find((y) => y.lessons.some((z) => z.id === l.id)); if (!u) return null;
+  Object.assign(l, { module: u.lessons.find((z) => z.id === l.id).module });
   const lessons = u.lessons.filter((z) => (z.module || null) === (l.module || null)), ids = new Set(lessons.map((z) => z.id));
   const topic = l.module || u.title, today = x.attemptsToday.filter((a) => a.course === c.slug && ids.has(a.lesson));
   // distinct cards and questions, first tries only: repeating one question, or trying options until right, fills nothing

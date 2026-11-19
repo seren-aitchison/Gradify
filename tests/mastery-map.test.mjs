@@ -28,6 +28,11 @@ test("a concept graph becomes direct chapter links, and modules that build on ea
   const units = [{ id: "u01", n: 1 }, { id: "u02", n: 2 }, { id: "u03", n: 3 }];
   const pre = chapterPrereqsFromConcepts(units, { modules: { "u02/B": ["u01/A"], "u03/C": ["u02/B", "u01/A"], "u01/A2": ["u02/B"] } });
   assert.deepEqual(pre, { 2: [1], 3: [2] });
+  // a longer loop: acyclic modules (A → C → B → D) that make chapters 1 → 3 → 2 → 1
+  const warn = console.warn; console.warn = () => {};
+  const loop = chapterPrereqsFromConcepts(units, { modules: { "u01/A": ["u03/C"], "u03/C": ["u02/B"], "u02/B": ["u01/D"] } });
+  console.warn = warn;
+  assert.deepEqual(checkPrereqs([1, 2, 3], loop), [], "no cycle reaches the map");
 });
 
 test("chapter levels come only from evidence", () => {
@@ -35,7 +40,9 @@ test("chapter levels come only from evidence", () => {
   assert.equal(chapterLevel(["started", "new"]).level, "learning", "opening a lesson is Learning at most");
   assert.equal(chapterLevel(["learned", "learned"]).level, "learning", "completed but never answered: not yet Practising");
   assert.equal(chapterLevel(["practised", "new"]).level, "practising");
-  assert.equal(chapterLevel(["practised", "learned"]).level, "proficient");
+  assert.equal(chapterLevel(["practised", "learned"], 1).level, "proficient", "every lesson done, right answers in half of them");
+  assert.equal(chapterLevel(["practised", "learned"], 0).level, "practising", "answered, but not right: not Proficient");
+  assert.equal(chapterLevel(["practised"], 0).level, "practising", "a single wrong answer doesn't reach Proficient");
   assert.equal(chapterLevel(["practised", "revise"]).level, "practising", "slipping answers block Proficient");
   assert.equal(chapterLevel(["mastered", "mastered", "mastered", "mastered", "practised"]).level, "mastered");
   assert.equal(chapterLevel(["revise"]).revise, 1);
@@ -46,7 +53,8 @@ test("the map: layers from foundations, what's within reach, what's holding the 
   const pre = { 2: [1], 3: [2], 4: [1], 5: [3, 4] };
   assert.deepEqual([...layersOf([1, 2, 3, 4, 5], pre)], [[1, 0], [2, 1], [3, 2], [4, 1], [5, 3]]);
   const st = { l1: "mastered", l2: "practised", l3: "started", l4: "revise", l5: "new" };
-  const m = masteryMap(chapters, pre, (id) => st[id]);
+  const right = new Set(["l1", "l2"]);
+  const m = masteryMap(chapters, pre, (id) => st[id], (id) => right.has(id));
   assert.equal(m.nodes.find((x) => x.n === 1).level, "mastered");
   assert.equal(m.nodes.find((x) => x.n === 2).level, "proficient", "one lesson, done and answered right: proficient");
   assert.deepEqual(m.nextUp.map((x) => x.n), [4, 3], "within reach: not yet proficient, foundations at least being practised (5's foundation 3 is only Learning)");
@@ -93,6 +101,11 @@ test("the topic quest pays only for learning evidence in that topic, today", () 
   assert.equal(topicQuest(x([...Array(5)].map(() => same)), courses).steps[2].n < TOPIC_STEPS[2].of, true, "the same question five times is one question");
   const guessed = [...Array(5)].flatMap((_, i) => [at("u01-01", "sba", 0, { question: { id: `g${i}`, type: "sba" } }), at("u01-01", "sba", 1, { question: { id: `g${i}`, type: "sba" }, attempt: 2 })]);
   assert.ok(topicQuest(x(guessed), courses).steps[2].n < TOPIC_STEPS[2].of, "trying options until right isn't applying it");
+  // finishing the topic's last lesson keeps the quest (and its unclaimed steps) for the rest of the day
+  const after = [{ slug: "chemistry", units, S: { done: { "u01-01": Date.parse(`${day}T09:00:00`), "u01-02": Date.parse(`${day}T10:00:00`) } } }];
+  const kept = topicQuest({ day, open: [{ id: "u01-03", module: "Bonding", course: "chemistry" }], attemptsToday: [] }, after);
+  assert.equal(kept.topic, "Structure", "today's topic stays after its lessons are all done");
+  assert.equal(kept.steps[0].n, 1);
   const cardOnce = { lesson: "u01-02", course: "chemistry", question: { id: "card:1", type: "card" }, score: 1, correct: true, attempt: 1 };
   assert.equal(topicQuest(x([...Array(10)].map(() => cardOnce)), courses).steps[1].n, 1, "ten recalls of one card are one card");
   void LEVEL;

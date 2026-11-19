@@ -87,7 +87,30 @@ export function chapterPrereqsFromConcepts(units, concepts) {
   // two chapters whose modules build on each other (fine for modules) become one link at chapter level: the earlier
   // chapter is the foundation
   for (const [a, set] of Object.entries(out)) for (const b of [...set]) if (out[b]?.has(Number(a)) && b > Number(a)) set.delete(b);
+  // a longer loop (1 → 3 → 2 → 1) can appear when modules are collapsed into chapters: break each one at its link from
+  // the latest chapter back to an earlier one, and say which chapters were involved, so no cycle reaches the map
+  for (;;) {
+    const cycle = findCycle(out); if (!cycle) break;
+    let cut = null; for (let i = 0; i < cycle.length - 1; i++) { const a = cycle[i], b = cycle[i + 1]; if (!cut || b > cut[1]) cut = [a, b]; }
+    out[cut[0]].delete(cut[1]);
+    console.warn(`chapter prerequisites: chapters ${cycle.join(" → ")} formed a loop; dropped ${cut[0]} building on ${cut[1]}`);
+  }
   // keep only direct links: drop B when another prerequisite of A already builds on B
   const reach = (n, seen = new Set()) => { for (const p of out[n] || []) if (!seen.has(p)) { seen.add(p); reach(p, seen); } return seen; };
   return Object.fromEntries(Object.entries(out).filter(([, set]) => set.size).map(([a, set]) => [a, [...set].filter((b) => ![...set].some((c) => c !== b && reach(c).has(b))).sort((x, y) => x - y)]));
+}
+
+/** a loop in { n: Set|Array of prerequisites }, as [a, b, …, a] (a builds on b …), or null */
+function findCycle(pre) {
+  const state = new Map(), stack = [];
+  const visit = (n) => {
+    state.set(n, 1); stack.push(n);
+    for (const p of pre[n] || []) {
+      if (state.get(p) === 1) return [...stack.slice(stack.indexOf(p)), p];
+      if (!state.get(p)) { const c = visit(p); if (c) return c; }
+    }
+    stack.pop(); state.set(n, 2); return null;
+  };
+  for (const n of Object.keys(pre).map(Number)) if (!state.get(n)) { const c = visit(n); if (c) return c; }
+  return null;
 }

@@ -39,7 +39,7 @@ const hours = (m) => (m < 60 ? `${Math.max(5, Math.round(m / 5) * 5)} min` : `${
 export function courseProgress(S = {}) {
   const sig = lessonSignals(S.attempts || []), done = S.done || {};
   const visited = (id) => Boolean(S.time?.[id] || (S.recent || []).some((r) => r.id === id));
-  return { status: (id) => topicStatus({ done: Boolean(done[id]), visited: visited(id), sig: sig.get(id) }), done: (id) => Boolean(done[id]), mins: minutesPerLesson(S) || MIN_DEFAULT };
+  return { status: (id) => topicStatus({ done: Boolean(done[id]), visited: visited(id), sig: sig.get(id) }), done: (id) => Boolean(done[id]), right: (id) => (sig.get(id)?.right || 0) > 0, mins: minutesPerLesson(S) || MIN_DEFAULT };
 }
 
 /** a course's chapters → topics (modules) → lessons, with progress; pure (tests/ui.test.mjs) */
@@ -136,7 +136,7 @@ export function mountExplore(root) {
         <div class="gx-ex-acts"><a class="btn btn-light lg btn-sm" href="${esc(lessonHref(start))}"><span>${t.done ? (t.done === t.lessons.length ? "Review" : "Continue") : "Start"}</span></a>${t.done ? `<a class="btn btn-ghost lg btn-sm" href="${esc(testHref)}"><span>5-min test</span></a>` : ""}</div>
       </article>`;
     };
-    const chapters = tree.filter((u) => stage === "all" || String(u.stageIndex) === stage);
+    const chapters = tree.filter((u) => stage === "all" || String(u.stageIndex) === stage || u.id === focusUnit);
     // the course as chapters (accordions) or as its mastery map; arriving at a chapter always shows the chapters
     const view = focusUnit ? "chapters" : pref("explore", "view", "chapters");
     root.innerHTML = `${crumbs([["Gradify", "/"], ["Explore", "#/"], ...(g ? [[g.title, "#/"]] : []), [c.site, site ? pathOf(site) : "#/"], [c.n, `#/course/${c.s}`]])}
@@ -156,9 +156,10 @@ export function mountExplore(root) {
         <summary><span class="gx-ex-n">${u.n}</span><span class="gx-ex-ct"><b>${esc(u.title)}</b>${u.blurb ? `<small>${esc(u.blurb)}</small>` : ""}<em>${u.stage ? `${esc(u.stage)} · ` : ""}${u.topics.length} topic${u.topics.length > 1 ? "s" : ""} · ${u.total} lessons · ≈ ${hours(u.mins)}${u.revise ? ` · <b class="gx-ex-warn">${u.revise} to revise</b>` : ""}</em></span>
           <span class="gx-ex-cp" title="${u.done} of ${u.total} lessons done"><span class="gx-bar"><i style="width:${u.pct * 100}%"></i></span><small>${pc(u.pct)}</small></span></summary>
         <div class="gx-ex-topics">${u.topics.map((t) => topicCard(u, t)).join("")}</div></details>`).join("")}</div>`}</div>`;
-    wireSegmented(root, (v) => { setPref("explore", "view", v); course(slug); });
+    // switching view goes back to the course-level address, so choosing a chapter afterwards always changes the URL
+    wireSegmented(root, (v) => { setPref("explore", "view", v); if (location.hash !== `#/course/${slug}`) history.replaceState(null, "", `#/course/${slug}`); course(slug); });
     if (view === "map") {
-      const map = masteryMap(tree.map((u) => ({ n: u.n, id: u.id, title: u.title, lessons: u.topics.flatMap((t) => t.lessons.map((l) => l.id)) })), c.cp || {}, prog.status);
+      const map = masteryMap(tree.map((u) => ({ n: u.n, id: u.id, title: u.title, lessons: u.topics.flatMap((t) => t.lessons.map((l) => l.id)) })), c.cp || {}, prog.status, prog.right);
       renderMasteryMap(root.querySelector(".gx-ex-map"), map, { hrefOf: (x) => `#/course/${c.s}/${x.id}`, unitWord: c.U, title: `How ${c.n} fits together`, intro: `Each ${c.U.toLowerCase()} sits to the right of what it builds on. Colours show how far your own answers have got: open any ${c.U.toLowerCase()} to start.` });
       wireSearch();
       return;

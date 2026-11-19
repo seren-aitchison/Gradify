@@ -1970,7 +1970,7 @@ export function mountCourse(root, cfg) {
   // the topic map: every lesson as a cell, coloured by its status, unit by unit. Completion and mastery side by side.
   // chapter prerequisites: authored (kit/learning/chapter-map.js), or derived from the course's concept graph
   const chapterPre = CHAPTER_PREREQS[cfg.slug] || chapterPrereqsFromConcepts(units, cfg.concepts);
-  const courseMastery = () => masteryMap(units.map((u) => ({ n: u.n, id: u.id, title: u.title, lessons: idsOf(u) })), chapterPre, statusOf);
+  const courseMastery = () => masteryMap(units.map((u) => ({ n: u.n, id: u.id, title: u.title, lessons: idsOf(u) })), chapterPre, statusOf, (id) => (sigs().get(id)?.right || 0) > 0);
   function topicMapHtml() {
     const all = roll(lessons.map((l) => l.id)), { weak, strong } = strengths(sigs());
     return `<section class="co-panel cx-map"><h3>Topic map</h3>

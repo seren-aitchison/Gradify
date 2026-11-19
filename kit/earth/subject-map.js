@@ -83,7 +83,7 @@ const spiral = (k) => { const a = k * 2.399, r = k ? 5 + 3.4 * Math.sqrt(k) : 0;
 export function courseWorld(course, S, now = Date.now()) {
   const prog = courseProgress(S || {});
   const chapters = course.units.map(([id, n, title, lessons, , ti = -1]) => ({ n, id, title, ti, lessons: lessons.map((l) => l[0]) }));
-  const map = masteryMap(chapters, course.cp || {}, prog.status);
+  const map = masteryMap(chapters, course.cp || {}, prog.status, prog.right);
   // stages → at most six regions (consecutive stages share one when a course has more)
   const stages = course.T?.length ? course.T : ["Chapters"], per = Math.ceil(stages.length / 6);
   const regionOf = (ti) => Math.min(5, Math.floor(Math.max(0, ti) / per));
@@ -184,7 +184,8 @@ export async function mountSubjectMap(siteName) {
   });
   // portals to the two most related Gradify sites
   const related = (RELATED[siteName] || []).map((n) => SITES.find((s) => s.n === n && s.built)).filter(Boolean);
-  const portals = related.map((s, k) => ({ v: at(areas[k * 3].centre, SPOTS[0]), dir: k ? [-0.35, 0.45, 0.15] : [0.3, -0.45, 0.15], c: `#${s.c}`, site: s.n }));
+  // anchored in the first and fourth areas (or the last there is: a course world can have fewer than four regions)
+  const portals = related.map((s, k) => { const a = areas[Math.min(k * 3, areas.length - 1)]; return a && { v: at(a.centre, SPOTS[0]), dir: k ? [-0.35, 0.45, 0.15] : [0.3, -0.45, 0.15], c: `#${s.c}`, site: s.n }; }).filter(Boolean);
 
   const canvas = $("#earth-canvas");
   const firstReal = pins.find((p) => !info[p.id].example);
