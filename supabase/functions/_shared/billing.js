@@ -150,19 +150,35 @@ export function cleanPromo(code) {
   return /^[A-Z0-9_-]{3,40}$/.test(c) ? c : null;
 }
 
+/** An active promotion code Stripe knows, with its coupon, or null. */
+export async function findPromo(secret, code, fetchImpl = fetch) {
+  const c = cleanPromo(code);
+  if (!c) return null;
+  const found = await stripe(secret, "GET", `/promotion_codes?code=${encodeURIComponent(c)}&active=true&limit=1`, null, fetchImpl).catch(() => null);
+  return found?.data?.[0]?.id ? found.data[0] : null;
+}
+
 /**
  * The Checkout Session's discount fields for a promotion code. Stripe doesn't allow `discounts` together with
  * `allow_promotion_codes`, so a session either has the code applied, or the "Add promotion code" field. Returns
  * { discounts } for an active code Stripe knows, else { allow_promotion_codes }. The code's own restrictions
  * (first-time customers, expiry, which product) are still checked by Stripe when the session is created.
  */
+export const discountFields = (promo) => (promo?.id ? { discounts: [{ promotion_code: promo.id }] } : { allow_promotion_codes: "true" });
 export async function promoFields(secret, code, fetchImpl = fetch) {
-  const c = cleanPromo(code);
-  const manual = { allow_promotion_codes: "true" };
-  if (!c) return manual;
-  const found = await stripe(secret, "GET", `/promotion_codes?code=${encodeURIComponent(c)}&active=true&limit=1`, null, fetchImpl).catch(() => null);
-  const promo = found?.data?.[0];
-  return promo?.id ? { discounts: [{ promotion_code: promo.id }] } : manual;
+  return discountFields(await findPromo(secret, code, fetchImpl));
+}
+
+const money = (pence) => `£${(pence / 100).toFixed(pence % 100 ? 2 : 0)}`;
+/**
+ * The line Checkout shows above its pay button, so the buyer reads what they're agreeing to: a monthly membership that
+ * renews automatically, at what price, and how to cancel. From the real price and, when applied, the coupon's amount off
+ * for the first month ("once" coupons only; any other discount gets the plain wording).
+ */
+export function renewalNote(unitAmount, coupon = null) {
+  const first = coupon?.duration === "once" && coupon.amount_off > 0 && coupon.amount_off < unitAmount ? unitAmount - coupon.amount_off : null;
+  const start = first != null ? `${money(first)} for your first month, then ${money(unitAmount)} a month` : `${money(unitAmount)} a month`;
+  return `A monthly membership: ${start} (VAT included), taken automatically each month until you cancel. Cancel any time from Manage billing on your Gradify Account page.`;
 }
 
 export function safeBack(from, fallback = "/pricing.html") {

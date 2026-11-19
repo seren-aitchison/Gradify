@@ -78,3 +78,15 @@ test("checkout applies an active code, and falls back to Stripe's code field oth
   assert.deepEqual(await promoFields("sk_test", undefined, fakeStripe([{ id: "promo_1" }])), { allow_promotion_codes: "true" });
   assert.deepEqual(await promoFields("sk_test", "GRADIFY48", async () => ({ ok: false, status: 500, json: async () => ({}) })), { allow_promotion_codes: "true" });
 });
+
+test("Checkout tells the buyer it's a monthly membership that renews automatically, and at what price", async () => {
+  const { renewalNote } = await import("../supabase/functions/_shared/billing.js");
+  assert.equal(renewalNote(1000, { duration: "once", amount_off: 500 }),
+    "A monthly membership: £5 for your first month, then £10 a month (VAT included), taken automatically each month until you cancel. Cancel any time from Manage billing on your Gradify Account page.");
+  assert.match(renewalNote(1000), /^A monthly membership: £10 a month \(VAT included\), taken automatically/);
+  assert.match(renewalNote(1500), /£15 a month/);
+  // anything but a one-off amount off gets the plain wording, never a wrong first-month price
+  assert.match(renewalNote(1000, { duration: "forever", amount_off: 500 }), /^A monthly membership: £10 a month/);
+  assert.match(renewalNote(1000, { duration: "once", percent_off: 50 }), /^A monthly membership: £10 a month/);
+  assert.ok(renewalNote(1000, { duration: "once", amount_off: 500 }).length <= 1200, "Stripe's custom_text limit");
+});

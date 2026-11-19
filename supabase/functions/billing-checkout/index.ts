@@ -8,7 +8,7 @@
 // Each plan is off sale until its switch is on; before that only GRADIFY_BILLING_TESTERS (comma-separated emails) may buy.
 // The learner is identified from their own Supabase token; their Stripe customer id is stored with the service role.
 import { createClient } from "npm:@supabase/supabase-js@2.117.0";
-import { stripe, priceFor, safeBack, returnUrl, mayBuy, promoFields } from "../_shared/billing.js";
+import { stripe, priceFor, safeBack, returnUrl, mayBuy, findPromo, discountFields, renewalNote } from "../_shared/billing.js";
 
 const SITE = (Deno.env.get("GRADIFY_SITE_URL") ?? "https://getgradify.com").replace(/\/+$/, "");
 const ALLOWED = (Deno.env.get("GRADIFY_ALLOWED_ORIGINS") ?? "https://getgradify.com,http://localhost:8080").split(",");
@@ -53,8 +53,11 @@ Deno.serve(async (req) => {
       const { error } = await admin.from("subscriptions").upsert({ user_id: user.id, stripe_customer_id: customer, status: sub?.status ?? "none", updated_at: new Date().toISOString() });
       if (error) throw error;
     }
-    const sessionFor = (discount: Record<string, unknown>) => stripe(secret, "POST", "/checkout/sessions", {
+    const promo = await findPromo(secret, body.promo);
+    const unit = (await stripe(secret, "GET", `/prices/${price}`)).unit_amount as number;
+    const sessionFor = (discount: Record<string, unknown>, coupon: unknown) => stripe(secret, "POST", "/checkout/sessions", {
       ...discount,
+      ui_mode: "hosted",
       mode: "subscription",
       customer,
       client_reference_id: user.id,
@@ -63,17 +66,25 @@ Deno.serve(async (req) => {
       metadata: { gradify_user_id: user.id, gradify_plan: plan },
       automatic_tax: Deno.env.get("STRIPE_AUTOMATIC_TAX") === "on" ? { enabled: "true" } : undefined,
       customer_update: Deno.env.get("STRIPE_AUTOMATIC_TAX") === "on" ? { address: "auto" } : undefined,
+      // Checkout Studio settings (claude/stripe-checkout-integration-rhnkax): address only when needed, no phone, always a card
+      billing_address_collection: "auto",
+      phone_number_collection: { enabled: "false" },
+      payment_method_collection: "always",
+      submit_type: "auto",
+      integration_identifier: "hosted_web_0001",
+      origin_context: "web",
+      // what the buyer agrees to, beside the pay button: monthly, renews automatically, the price after any first-month offer
+      custom_text: { submit: { message: renewalNote(unit, coupon) } },
       success_url: returnUrl(SITE, back, { checkout: "success" }),
       cancel_url: returnUrl(SITE, back, { checkout: "cancelled" }),
     });
-    const discount = await promoFields(secret, body.promo);
-    let session, promoApplied = Boolean(discount.discounts);
-    try { session = await sessionFor(discount); }
+    let session, promoApplied = Boolean(promo);
+    try { session = await sessionFor(discountFields(promo), promo?.coupon); }
     catch (e) {
       // Stripe refused the code for this learner (e.g. not their first purchase): the ordinary checkout instead
       if (!promoApplied) throw e;
       console.warn("billing-checkout: promotion code not applied", (e as Error).message);
-      session = await sessionFor({ allow_promotion_codes: "true" });
+      session = await sessionFor({ allow_promotion_codes: "true" }, null);
       promoApplied = false;
     }
     return json(req, { url: session.url, promoApplied });
