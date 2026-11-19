@@ -1,4 +1,4 @@
-# Gradify Plus launch email (code GRADIFY48)
+# Gradify Pro launch email (code GRADIFY48)
 
 The introductory email for Gradify Plus: £5 for the first month with code **GRADIFY48**, one use per person,
 ending 48 hours after launch. Nothing here has been sent. `campaign/` is left out of the published site
@@ -109,5 +109,66 @@ sending service.
 | Coupon "Gradify Pro: £5 first month" | `kwB3RfKh` | £5 off (GBP), once, only for the £10 product `prod_Ve3V6tEjlR4hfV` (still named "Gradify Plus" in Stripe), redeemable until 22 Nov 2026 23:59:59 UK |
 | Promotion code `GRADIFY48` | `promo_1UdWwnEOmpIuKzUMqORXVU9l` | first-time customers only, expires 22 Nov 2026 23:59:59 UK (`expires_at` 1795391999) |
 
-Checkout already shows **Add promotion code** (`allow_promotion_codes` in `supabase/functions/billing-checkout`).
-The email has no unsubscribe link: opting out is by replying, as its footer says.
+## The claim journey (19 November 2026)
+
+The email's button opens `pricing.html?offer=GRADIFY48&utm_campaign=pro_launch`. The offer used to be lost on the way
+to payment: magic-link and Google sign-in return to `app.html` without the query string, set-up ended on Add notes,
+and checkout only had Stripe's **Add promotion code** link. Now:
+
+1. `kit/data/offer.js` keeps the offer (from `?offer=GRADIFY48` or `utm_campaign=pro_launch`) in the browser, and once
+   the learner is signed in, in their account (`profiles.learner.offer`), so it survives sign-in, email verification
+   and set-up, and follows them to other devices. It ends with the Stripe code and is never shown on Pro or Ultra.
+2. Pricing shows a launch-offer banner and a **Get Gradify Pro · £5 first month** button; signed out, it says the
+   offer is kept through sign-in. The Account sign-in panel says the offer is saved.
+3. A new account goes through set-up, then lands on `#/offer` (the offer, with **Claim my £5 month** and **Not now**).
+   Today shows a dismissible offer card. Following the link again brings a dismissed offer back.
+4. **Claim** calls `billing-checkout` with `promo: "GRADIFY48"`. The function looks the code up in Stripe and opens
+   Checkout with it applied (`discounts`). If Stripe refuses it for that learner (not a first-time customer, expired),
+   it opens the ordinary Checkout with **Add promotion code** instead. Learners already paying go to the billing
+   portal, as before. Checkout returns to Pricing, which waits for the plan or says nothing was charged.
+
+Limit: if someone opens the sign-in email in a *different* browser from the one they clicked the campaign link in,
+before they've signed in anywhere, that browser doesn't know about the offer. The email tells them the code, and that
+Checkout's **Add promotion code** field takes it.
+
+Tested: `tests/offer.test.mjs` (9 tests: survival across the redirect, dismissal, plan gating, expiry, code cleaning,
+apply-or-fallback) and a headless-browser run of the journey on a local copy of the site in device mode (campaign link,
+redirect without query string, set-up to `#/offer`, Today card, dismiss and return, pricing banner, no offer without the
+campaign, no horizontal scroll at 390 px). Not tested here: real sign-in, and anything in Stripe (this environment
+can't reach api.stripe.com). See "Still to verify in Stripe" below.
+
+## Still to verify in Stripe (before sending)
+
+Use a test-mode copy of the coupon and code first, then the live ones with a real card you refund:
+
+- [ ] `GRADIFY48` (`promo_1UdWwnEOmpIuKzUMqORXVU9l`) is active, first-time customers only, `expires_at` 1795391999.
+- [ ] Coupon `kwB3RfKh`: £5 off, GBP, duration **once**, applies only to `prod_Ve3V6tEjlR4hfV` (the £10 monthly price).
+- [ ] A new account: Claim → Checkout shows the code applied, **£5.00 due today**, then £10.00/month.
+- [ ] The first invoice is £5.00; the upcoming invoice (`/v1/invoices/upcoming`) is £10.00 with no discount.
+- [ ] An account that has paid before: Claim opens the ordinary Checkout (code refused), not an error.
+- [ ] A Pro or Ultra subscriber: Claim/Pricing opens the billing portal; their subscription is untouched.
+- [ ] Abandon Checkout: back on Pricing it says you haven't been charged; the plan stays Free.
+- [ ] Magic link and Google sign-in on a new account and on an existing Free account both show the offer afterwards.
+- [ ] Deploy `billing-checkout` (it now reads `promo`): `supabase functions deploy billing-checkout`.
+
+## Screenshots
+
+Real Gradify screens, for the email's feature showcase. They come from a demo learner built by using the app on a local
+copy of the site: set-up as a medicine student with an exam on 18 December, the app's own sample notes (cardiac cycle)
+plus a short set of renal physiology notes turned into cards by the app, and 85 reviews over twelve simulated days.
+Pro features were open because the browser was served `kit/data/billing.js` with `PLUS_ON_SALE = false`, the
+product's own pre-launch state; nothing else was changed. The email says they're from a demo account.
+
+| File | Shows |
+| --- | --- |
+| `screenshots/pro-smart-plan.png` → `assets/email/pro-launch/pro-smart-plan.jpg` | Smart Plan: today's plan fitted to free time, with Repeated mistake and Stretch sessions and their reasons |
+| `screenshots/pro-exam-readiness.png` → `assets/email/pro-launch/pro-exam-readiness.jpg` | Intelligence: exam readiness 77%, likely 68–86%, from 85 answers, and the daily time to reach 80% |
+| `screenshots/pro-revision-queue.png` → `assets/email/pro-launch/pro-revision-queue.jpg` | Revision Centre: the ranked queue (two repeated mistakes, then a stretch task), each with a reason |
+
+The JPEGs are 1064 px wide (852 px for readiness), shown at 532 px, 54 to 96 KB each. Not used: the Smart Plan week view
+(too cramped in a crop) and Calendars (no calendar connected, so it's an empty state).
+
+## Unsubscribe
+
+The footer links to MailerLite's `{$unsubscribe}`, and the plain text has it too; `export.py` refuses to build without
+it. MailerLite fills it per recipient and adds the one-click `List-Unsubscribe` header.

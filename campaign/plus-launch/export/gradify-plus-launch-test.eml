@@ -2,13 +2,13 @@ Subject: Try Gradify Pro: =?utf-8?q?=C2=A35?= for your first month, until 22
  November
 From: Seren at Gradify <hello@getgradify.com>
 To: you@example.com
-Date: Thu, 19 Nov 2026 15:08:39 +0000
-Message-ID: <179510091911.638.8925165698752136687@getgradify.com>
+Date: Thu, 19 Nov 2026 17:26:37 +0000
+Message-ID: <179510919798.20930.1652585426905051693@getgradify.com>
 MIME-Version: 1.0
 Content-Type: multipart/alternative;
- boundary="===============6601479172215005568=="
+ boundary="===============2903713724579650583=="
 
---===============6601479172215005568==
+--===============2903713724579650583==
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: quoted-printable
 
@@ -23,36 +23,54 @@ around your exam date. I'd love you to try it.
 Most of Gradify is free, with no card needed: every course on every Gradify s=
 ite, flashcards with spaced repetition, your notes and your progress.
 
-Gradify Pro is the part that organises your learning for you, and until Sunda=
-y 22 November 2026 your first month is =C2=A35:
+Gradify Pro is the part that organises your learning for you: less time decid=
+ing what to revise, and more time revising it.
 
-- Smart Plan autopilot. Your week planned for you, and kept on track when lif=
-e gets in the way.
-- Readiness forecasts and revision recommendations. Your cards ordered by wha=
-t matters most and what you're starting to forget.
+SMART PLAN: know exactly what to do tonight
+Gradify fits each session into your free time: mistakes that keep coming back=
+ first, then what's fading, then the next step up. Miss a day and it replans,=
+ without cramming.
+
+READINESS FORECASTS: see how ready you really are
+An honest estimate with a range, built from your own answers, and how many mi=
+nutes a day it takes to reach your target by exam day.
+
+REVISION RECOMMENDATIONS: everything worth doing, best first
+Your revision ranked by how much each step will move your learning, and every=
+ recommendation tells you why it's there.
+
+Also in Pro:
 - Exam preparation. Timed exams over each part of a course and the whole cour=
 se, and the complete question bank.
 - Calendar sync and reminders. Plan around your Google, Apple or Outlook cale=
 ndar, and get reminders even when Gradify is closed.
-- Every device. Your notes, flashcards and progress up to date wherever you s=
-tudy.
+- No limits, on every device. Every lesson, flashcard set and tool, with your=
+ notes and progress up to date wherever you study.
 
 
-OFFER ENDS 22 NOVEMBER
-=C2=A35 for your first month of Gradify Pro
+OFFER ENDS SUNDAY 22 NOVEMBER
+=C2=A35 for your first month of Gradify Pro, then =C2=A310 a month. Cancel an=
+y time.
 
-Code: GRADIFY48
+Code: GRADIFY48 (applied for you when you use the link below). One use per pe=
+rson, for your first Gradify Pro subscription.
 
-Ends Sunday 22 November 2026. One use per person, for your first Gradify Pro =
-subscription.
+Claim my =C2=A35 month:
+https://getgradify.com/pricing.html?offer=3DGRADIFY48&utm_source=3Demail&utm_=
+medium=3Demail&utm_campaign=3Dpro_launch
 
-Get Gradify Pro:
-https://getgradify.com/pricing.html?utm_source=3Demail&utm_medium=3Demail&utm=
-_campaign=3Dpro_launch
+How to claim it:
+1. Open the offer with the link above. Sign in, or create your free account w=
+ith an email link or Google. No card needed for that part.
+2. Tell Gradify what you're studying. A one-minute set-up, so your plan fits =
+your subject and exam date. Your offer waits for you, and appears as soon as =
+you're done.
+3. Choose "Claim my =C2=A35 month". Stripe's secure checkout opens with GRADI=
+FY48 already applied, and shows the =C2=A35 total and the =C2=A310 renewal be=
+fore you pay.
 
-How to use the code: create a free Gradify account (or sign in), open Pricing=
- and choose "Get Gradify Pro". On the Stripe checkout page, choose "Add promo=
-tion code" and enter GRADIFY48.
+Already set up? The offer is on your Today page and on Pricing. If checkout e=
+ver opens without the code, choose "Add promotion code" and enter GRADIFY48.
 
 What you'll pay: =C2=A35 today for your first month. After that, Gradify Pro =
 renews automatically at =C2=A310 a month (VAT included) on the same date each=
@@ -69,15 +87,15 @@ Founder, Gradify
 
 ----------------------------------------------------------------------
 
-This is a one-off email from Gradify. We won't email you again unless you sig=
-n up. If you'd rather not hear from us at all, reply to this email and say so=
-, and we'll remove your address.
+This is a one-off email from Gradify about our launch offer. To stop hearing =
+from us, use the unsubscribe link below, or reply and say so.
 
+Unsubscribe: {$unsubscribe}
 Privacy: https://getgradify.com/privacy.html
 Terms: https://getgradify.com/terms.html
 Contact: hello@getgradify.com
 
---===============6601479172215005568==
+--===============2903713724579650583==
 Content-Type: text/html; charset="utf-8"
 Content-Transfer-Encoding: quoted-printable
 MIME-Version: 1.0
@@ -91,16 +109,24 @@ MIME-Version: 1.0
   <meta name=3D"color-scheme" content=3D"dark">
   <meta name=3D"supported-color-schemes" content=3D"dark">
   <title>Try Gradify Pro for =C2=A35</title>
-  <!--[if mso]><style>table,td,p,a,h1{font-family:Arial,Helvetica,sans-serif =
-!important;}</style><![endif]-->
+  <!--[if mso]><style>table,td,p,a,h1,h2{font-family:Arial,Helvetica,sans-ser=
+if !important;}</style><![endif]-->
+  <style>
+    @media only screen and (max-width:620px) {
+      .card { padding:28px 20px 24px 20px !important; }
+      .shot { width:100% !important; height:auto !important; }
+      .step-n { width:30px !important; }
+      h1 { font-size:25px !important; }
+    }
+  </style>
 </head>
 <body style=3D"margin:0;padding:0;background-color:#000000;" bgcolor=3D"#0000=
 00">
   <div style=3D"display:none;max-height:0;overflow:hidden;mso-hide:all;font-s=
-ize:1px;line-height:1px;color:#000000;">Use code GRADIFY48 by Sunday 22 Novem=
-ber 2026. Then =C2=A310 a month, cancel any time.&#8199;&#847;&#8199;&#847;&#=
-8199;&#847;&#8199;&#847;&#8199;&#847;&#8199;&#847;&#8199;&#847;&#8199;&#847;<=
-/div>
+ize:1px;line-height:1px;color:#000000;">Your first month of Gradify Pro for =
+=C2=A35, with the code applied for you. Until Sunday 22 November 2026.&#8199;=
+&#847;&#8199;&#847;&#8199;&#847;&#8199;&#847;&#8199;&#847;&#8199;&#847;&#8199=
+;&#847;&#8199;&#847;</div>
   <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cellspacing=
 =3D"0" border=3D"0" bgcolor=3D"#000000" style=3D"background-color:#000000;">
     <tr>
@@ -109,7 +135,7 @@ ber 2026. Then =C2=A310 a month, cancel any time.&#8199;&#847;&#8199;&#847;&#=
 ing=3D"0" border=3D"0" style=3D"width:100%;max-width:600px;">
 
           <!-- logo: a static PNG, not a link (SVG doesn't show in Gmail or O=
-utlook), served from the site once this is on main -->
+utlook) -->
           <tr>
             <td style=3D"padding:0 4px 20px 4px;">
               <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0=
@@ -127,10 +153,8 @@ ystem,BlinkMacSystemFont,'Segoe UI',Arial,Helvetica,sans-serif;font-size:22px=
             </td>
           </tr>
 
-          <!-- card: black Liquid Glass inside a rainbow border. The border i=
-s a 2px gradient cell around the glass;
-               Outlook on Windows shows a solid #f055dd border with square co=
-rners, and a flat #0b0b0e panel. -->
+          <!-- card: black Liquid Glass inside a rainbow border. Outlook on W=
+indows shows a solid #f055dd border and a flat #0b0b0e panel. -->
           <tr>
             <td bgcolor=3D"#f055dd" style=3D"padding:2px;border-radius:22px;b=
 ackground-color:#f055dd;background-image:linear-gradient(135deg,#4641ff 0%,#f=
@@ -138,15 +162,18 @@ ackground-color:#f055dd;background-image:linear-gradient(135deg,#4641ff 0%,#f=
               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" c=
 ellspacing=3D"0" border=3D"0">
                 <tr>
-                  <td bgcolor=3D"#0b0b0e" style=3D"background-color:#0b0b0e;b=
-ackground-image:linear-gradient(180deg,rgba(255,255,255,0.11) 0%,rgba(255,255=
-,255,0.035) 22%,rgba(255,255,255,0) 48%),radial-gradient(120% 60% at 50% 115%=
-,rgba(240,85,221,0.16) 0%,rgba(70,65,255,0.06) 55%,rgba(70,65,255,0) 80%);bor=
-der-radius:20px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.28),inset 0 0 0 1=
-px rgba(255,255,255,0.06);padding:36px 32px 32px 32px;font-family:'Geist',-ap=
-ple-system,BlinkMacSystemFont,'Segoe UI',Arial,Helvetica,sans-serif;color:#e8=
-e8ec;font-size:16px;line-height:1.6;">
+                  <td class=3D"card" bgcolor=3D"#0b0b0e" style=3D"background-=
+color:#0b0b0e;background-image:linear-gradient(180deg,rgba(255,255,255,0.11) =
+0%,rgba(255,255,255,0.035) 22%,rgba(255,255,255,0) 48%),radial-gradient(120% =
+60% at 50% 115%,rgba(240,85,221,0.16) 0%,rgba(70,65,255,0.06) 55%,rgba(70,65,=
+255,0) 80%);border-radius:20px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.28=
+),inset 0 0 0 1px rgba(255,255,255,0.06);padding:36px 32px 32px 32px;font-fam=
+ily:'Geist',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,Helvetica,sans-=
+serif;color:#e8e8ec;font-size:16px;line-height:1.6;">
 
+              <p style=3D"margin:0 0 8px 0;font-size:13px;line-height:1.4;let=
+ter-spacing:1.5px;text-transform:uppercase;color:#ffc002;font-weight:600;">La=
+unch offer =C2=B7 until 22 November</p>
               <h1 style=3D"margin:0 0 18px 0;font-size:28px;line-height:1.2;f=
 ont-weight:700;letter-spacing:-0.5px;color:#ffffff;">Try Gradify Pro for =C2=
 =A35</h1>
@@ -159,37 +186,82 @@ ainst what you wrote, and plans your revision around your exam date. I'd love=
               <p style=3D"margin:0 0 16px 0;">Most of Gradify is free, with n=
 o card needed: every course on every Gradify site, flashcards with spaced rep=
 etition, your notes and your progress.</p>
-              <p style=3D"margin:0 0 12px 0;">Gradify Pro is the part that or=
-ganises your learning for you, and until Sunday 22 November 2026 your first m=
-onth is =C2=A35:</p>
+              <p style=3D"margin:0 0 26px 0;">Gradify Pro is the part that or=
+ganises your learning for you: less time deciding what to revise, and more ti=
+me revising it. Here's what that looks like.</p>
 
+              <!-- feature showcase: real Gradify screens from a demo account=
+ (README.md, "Screenshots") -->
+              <p style=3D"margin:0 0 4px 0;font-size:13px;line-height:1.4;let=
+ter-spacing:1.5px;text-transform:uppercase;color:#f055dd;font-weight:600;">Sm=
+art Plan</p>
+              <h2 style=3D"margin:0 0 6px 0;font-size:20px;line-height:1.3;fo=
+nt-weight:700;color:#ffffff;">Know exactly what to do tonight</h2>
+              <p style=3D"margin:0 0 14px 0;font-size:15px;color:#c8c8d0;">Gr=
+adify fits each session into your free time: mistakes that keep coming back f=
+irst, then what's fading, then the next step up. Miss a day and it replans, w=
+ithout cramming.</p>
+              <img class=3D"shot" src=3D"https://getgradify.com/assets/email/=
+pro-launch/pro-smart-plan.jpg" width=3D"532" height=3D"518" alt=3D"Gradify Sm=
+art Plan: today's plan, 28 minutes of focused study fitted to free time from =
+17:00, with sessions marked Repeated mistake and Stretch, each with its reaso=
+n" style=3D"display:block;width:532px;max-width:100%;height:auto;border:1px s=
+olid #2a2a33;border-radius:14px;margin:0 0 28px 0;background-color:#141418;co=
+lor:#9a9aa4;font-size:14px;">
+
+              <p style=3D"margin:0 0 4px 0;font-size:13px;line-height:1.4;let=
+ter-spacing:1.5px;text-transform:uppercase;color:#f055dd;font-weight:600;">Re=
+adiness forecasts</p>
+              <h2 style=3D"margin:0 0 6px 0;font-size:20px;line-height:1.3;fo=
+nt-weight:700;color:#ffffff;">See how ready you really are</h2>
+              <p style=3D"margin:0 0 14px 0;font-size:15px;color:#c8c8d0;">An=
+ honest estimate with a range, built from your own answers, and how many minu=
+tes a day it takes to reach your target by exam day.</p>
+              <img class=3D"shot" src=3D"https://getgradify.com/assets/email/=
+pro-launch/pro-exam-readiness.jpg" width=3D"532" height=3D"412" alt=3D"Gradif=
+y exam readiness card: 77% ready, likely between 68% and 86%, based on 85 ans=
+wers, with the daily time needed to reach 80% by the exam" style=3D"display:b=
+lock;width:532px;max-width:100%;height:auto;border:1px solid #2a2a33;border-r=
+adius:14px;margin:0 0 28px 0;background-color:#141418;color:#9a9aa4;font-size=
+:14px;">
+
+              <p style=3D"margin:0 0 4px 0;font-size:13px;line-height:1.4;let=
+ter-spacing:1.5px;text-transform:uppercase;color:#f055dd;font-weight:600;">Re=
+vision recommendations</p>
+              <h2 style=3D"margin:0 0 6px 0;font-size:20px;line-height:1.3;fo=
+nt-weight:700;color:#ffffff;">Everything worth doing, best first</h2>
+              <p style=3D"margin:0 0 14px 0;font-size:15px;color:#c8c8d0;">Yo=
+ur revision ranked by how much each step will move your learning, and every r=
+ecommendation tells you why it's there.</p>
+              <img class=3D"shot" src=3D"https://getgradify.com/assets/email/=
+pro-launch/pro-revision-queue.jpg" width=3D"532" height=3D"538" alt=3D"Gradif=
+y Revision Centre: a ranked list starting with two repeated mistakes to fix, =
+then a stretch task, each with a reason" style=3D"display:block;width:532px;m=
+ax-width:100%;height:auto;border:1px solid #2a2a33;border-radius:14px;margin:=
+0 0 10px 0;background-color:#141418;color:#9a9aa4;font-size:14px;">
+              <p style=3D"margin:0 0 24px 0;font-size:12px;line-height:1.5;co=
+lor:#8a8a94;">Screens from a demo Gradify account studying sample medicine no=
+tes. Your plan and figures come from your own studying.</p>
+
+              <p style=3D"margin:0 0 10px 0;font-size:15px;color:#c8c8d0;"><b=
+ style=3D"color:#ffffff;">Also in Pro:</b></p>
               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" c=
-ellspacing=3D"0" border=3D"0" style=3D"margin:0 0 20px 0;">
-                <tr><td width=3D"22" valign=3D"top" style=3D"padding:6px 0;co=
-lor:#f055dd;font-size:16px;line-height:1.5;">&#10003;</td><td style=3D"paddin=
-g:6px 0;color:#e8e8ec;font-size:16px;line-height:1.5;"><b style=3D"color:#fff=
-fff;">Smart Plan autopilot.</b> Your week planned for you, and kept on track =
-when life gets in the way.</td></tr>
-                <tr><td width=3D"22" valign=3D"top" style=3D"padding:6px 0;co=
-lor:#f055dd;font-size:16px;line-height:1.5;">&#10003;</td><td style=3D"paddin=
-g:6px 0;color:#e8e8ec;font-size:16px;line-height:1.5;"><b style=3D"color:#fff=
-fff;">Readiness forecasts and revision recommendations.</b> Your cards ordere=
-d by what matters most and what you're starting to forget.</td></tr>
-                <tr><td width=3D"22" valign=3D"top" style=3D"padding:6px 0;co=
-lor:#f055dd;font-size:16px;line-height:1.5;">&#10003;</td><td style=3D"paddin=
-g:6px 0;color:#e8e8ec;font-size:16px;line-height:1.5;"><b style=3D"color:#fff=
+ellspacing=3D"0" border=3D"0" style=3D"margin:0 0 26px 0;">
+                <tr><td width=3D"22" valign=3D"top" style=3D"padding:4px 0;co=
+lor:#f055dd;font-size:15px;line-height:1.5;">&#10003;</td><td style=3D"paddin=
+g:4px 0;color:#c8c8d0;font-size:15px;line-height:1.5;"><b style=3D"color:#fff=
 fff;">Exam preparation.</b> Timed exams over each part of a course and the wh=
 ole course, and the complete question bank.</td></tr>
-                <tr><td width=3D"22" valign=3D"top" style=3D"padding:6px 0;co=
-lor:#f055dd;font-size:16px;line-height:1.5;">&#10003;</td><td style=3D"paddin=
-g:6px 0;color:#e8e8ec;font-size:16px;line-height:1.5;"><b style=3D"color:#fff=
+                <tr><td width=3D"22" valign=3D"top" style=3D"padding:4px 0;co=
+lor:#f055dd;font-size:15px;line-height:1.5;">&#10003;</td><td style=3D"paddin=
+g:4px 0;color:#c8c8d0;font-size:15px;line-height:1.5;"><b style=3D"color:#fff=
 fff;">Calendar sync and reminders.</b> Plan around your Google, Apple or Outl=
 ook calendar, and get reminders even when Gradify is closed.</td></tr>
-                <tr><td width=3D"22" valign=3D"top" style=3D"padding:6px 0;co=
-lor:#f055dd;font-size:16px;line-height:1.5;">&#10003;</td><td style=3D"paddin=
-g:6px 0;color:#e8e8ec;font-size:16px;line-height:1.5;"><b style=3D"color:#fff=
-fff;">Every device.</b> Your notes, flashcards and progress up to date wherev=
-er you study.</td></tr>
+                <tr><td width=3D"22" valign=3D"top" style=3D"padding:4px 0;co=
+lor:#f055dd;font-size:15px;line-height:1.5;">&#10003;</td><td style=3D"paddin=
+g:4px 0;color:#c8c8d0;font-size:15px;line-height:1.5;"><b style=3D"color:#fff=
+fff;">No limits, on every device.</b> Every lesson, flashcard set and tool, w=
+ith your notes and progress up to date wherever you study.</td></tr>
               </table>
 
               <!-- offer box -->
@@ -200,10 +272,13 @@ ellspacing=3D"0" border=3D"0" style=3D"margin:0 0 22px 0;">
 order:1px solid #3a3a44;border-radius:14px;padding:22px 22px 20px 22px;">
                     <p style=3D"margin:0 0 6px 0;font-size:13px;line-height:1=
 .4;letter-spacing:1.5px;text-transform:uppercase;color:#ffc002;font-weight:60=
-0;">Offer ends 22 November</p>
-                    <p style=3D"margin:0 0 14px 0;font-size:20px;line-height:=
-1.35;font-weight:700;color:#ffffff;">=C2=A35 for your first month of Gradify =
-Pro</p>
+0;">Offer ends Sunday 22 November</p>
+                    <p style=3D"margin:0 0 4px 0;font-size:40px;line-height:1=
+.1;font-weight:700;letter-spacing:-1px;color:#ffffff;">=C2=A35 <span style=3D=
+"font-size:18px;font-weight:600;letter-spacing:0;">for your first month</span=
+></p>
+                    <p style=3D"margin:0 0 14px 0;font-size:14px;line-height:=
+1.5;color:#b4b4bd;">Then =C2=A310 a month. Cancel any time.</p>
                     <table role=3D"presentation" cellpadding=3D"0" cellspacin=
 g=3D"0" border=3D"0" style=3D"margin:0 0 14px 0;">
                       <tr><td bgcolor=3D"#000000" style=3D"background-color:#=
@@ -212,42 +287,86 @@ mily:'Geist Mono',Menlo,Consolas,'Courier New',monospace;font-size:22px;font-=
 weight:700;letter-spacing:3px;color:#ffffff;">GRADIFY48</td></tr>
                     </table>
                     <p style=3D"margin:0;font-size:14px;line-height:1.55;colo=
-r:#b4b4bd;">Ends Sunday 22 November 2026. One use per person, for your first =
-Gradify Pro subscription.</p>
+r:#b4b4bd;">Applied for you when you use the button below. One use per person=
+, for your first Gradify Pro subscription.</p>
                   </td>
                 </tr>
               </table>
 
               <!-- button: bulletproof for Outlook -->
               <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0=
-" border=3D"0" style=3D"margin:0 0 18px 0;">
+" border=3D"0" style=3D"margin:0 0 26px 0;">
                 <tr>
                   <td align=3D"center" bgcolor=3D"#ffffff" style=3D"border-ra=
 dius:999px;background-color:#ffffff;">
                     <!--[if mso]><v:roundrect xmlns:v=3D"urn:schemas-microsof=
 t-com:vml" xmlns:w=3D"urn:schemas-microsoft-com:office:word" href=3D"https://=
-getgradify.com/pricing.html?utm_source=3Demail&utm_medium=3Demail&utm_campaig=
-n=3Dpro_launch" style=3D"height:48px;v-text-anchor:middle;width:240px;" arcsi=
-ze=3D"50%" stroke=3D"f" fillcolor=3D"#ffffff"><w:anchorlock/><center style=3D=
-"color:#000000;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;"=
->Get Gradify Pro</center></v:roundrect><![endif]-->
+getgradify.com/pricing.html?offer=3DGRADIFY48&utm_source=3Demail&utm_medium=
+=3Demail&utm_campaign=3Dpro_launch" style=3D"height:48px;v-text-anchor:middle=
+;width:260px;" arcsize=3D"50%" stroke=3D"f" fillcolor=3D"#ffffff"><w:anchorlo=
+ck/><center style=3D"color:#000000;font-family:Arial,sans-serif;font-size:16p=
+x;font-weight:bold;">Claim my =C2=A35 month</center></v:roundrect><![endif]-->
                     <!--[if !mso]><!--><a href=3D"https://getgradify.com/pric=
-ing.html?utm_source=3Demail&amp;utm_medium=3Demail&amp;utm_campaign=3Dpro_lau=
-nch" style=3D"display:inline-block;padding:14px 30px;font-family:'Geist',-app=
-le-system,BlinkMacSystemFont,'Segoe UI',Arial,Helvetica,sans-serif;font-size:=
-16px;font-weight:700;color:#000000;text-decoration:none;border-radius:999px;"=
->Get Gradify Pro</a><!--<![endif]-->
+ing.html?offer=3DGRADIFY48&amp;utm_source=3Demail&amp;utm_medium=3Demail&amp;=
+utm_campaign=3Dpro_launch" style=3D"display:inline-block;padding:14px 32px;fo=
+nt-family:'Geist',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,Helvetica=
+,sans-serif;font-size:16px;font-weight:700;color:#000000;text-decoration:none=
+;border-radius:999px;">Claim my =C2=A35 month</a><!--<![endif]-->
                   </td>
                 </tr>
               </table>
 
-              <p style=3D"margin:0 0 16px 0;font-size:15px;color:#c8c8d0;"><b=
- style=3D"color:#ffffff;">How to use the code:</b> create a free Gradify acco=
-unt (or sign in), open <a href=3D"https://getgradify.com/pricing.html?utm_sou=
-rce=3Demail&amp;utm_medium=3Demail&amp;utm_campaign=3Dpro_launch" style=3D"co=
-lor:#f7a8ee;text-decoration:underline;">Pricing</a> and choose <b>Get Gradify=
- Pro</b>. On the Stripe checkout page, choose <b>Add promotion code</b> and e=
-nter <b>GRADIFY48</b>.</p>
+              <!-- how to claim: the tested journey (README.md, "The claim jo=
+urney") -->
+              <p style=3D"margin:0 0 12px 0;font-size:15px;color:#ffffff;font=
+-weight:700;">How to claim it</p>
+              <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" c=
+ellspacing=3D"0" border=3D"0" style=3D"margin:0 0 22px 0;">
+                <tr>
+                  <td class=3D"step-n" width=3D"36" valign=3D"top" style=3D"p=
+adding:0 0 14px 0;"><table role=3D"presentation" cellpadding=3D"0" cellspacin=
+g=3D"0" border=3D"0"><tr><td align=3D"center" valign=3D"middle" width=3D"26" =
+height=3D"26" bgcolor=3D"#4641ff" style=3D"width:26px;height:26px;border-radi=
+us:13px;background-color:#4641ff;color:#ffffff;font-size:13px;font-weight:700=
+;line-height:26px;">1</td></tr></table></td>
+                  <td valign=3D"top" style=3D"padding:2px 0 14px 0;font-size:=
+15px;line-height:1.55;color:#c8c8d0;"><b style=3D"color:#ffffff;">Open the of=
+fer.</b> Use the button above. Sign in, or create your free account with an e=
+mail link or Google. No card needed for that part.</td>
+                </tr>
+                <tr>
+                  <td class=3D"step-n" width=3D"36" valign=3D"top" style=3D"p=
+adding:0 0 14px 0;"><table role=3D"presentation" cellpadding=3D"0" cellspacin=
+g=3D"0" border=3D"0"><tr><td align=3D"center" valign=3D"middle" width=3D"26" =
+height=3D"26" bgcolor=3D"#f055dd" style=3D"width:26px;height:26px;border-radi=
+us:13px;background-color:#f055dd;color:#ffffff;font-size:13px;font-weight:700=
+;line-height:26px;">2</td></tr></table></td>
+                  <td valign=3D"top" style=3D"padding:2px 0 14px 0;font-size:=
+15px;line-height:1.55;color:#c8c8d0;"><b style=3D"color:#ffffff;">Tell Gradif=
+y what you're studying.</b> A one-minute set-up, so your plan fits your subje=
+ct and exam date. Your offer waits for you, and appears as soon as you're don=
+e.</td>
+                </tr>
+                <tr>
+                  <td class=3D"step-n" width=3D"36" valign=3D"top" style=3D"p=
+adding:0;"><table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" b=
+order=3D"0"><tr><td align=3D"center" valign=3D"middle" width=3D"26" height=3D=
+"26" bgcolor=3D"#ff5600" style=3D"width:26px;height:26px;border-radius:13px;b=
+ackground-color:#ff5600;color:#ffffff;font-size:13px;font-weight:700;line-hei=
+ght:26px;">3</td></tr></table></td>
+                  <td valign=3D"top" style=3D"padding:2px 0 0 0;font-size:15p=
+x;line-height:1.55;color:#c8c8d0;"><b style=3D"color:#ffffff;">Choose Claim m=
+y =C2=A35 month.</b> Stripe's secure checkout opens with GRADIFY48 already ap=
+plied, and shows the =C2=A35 total and the =C2=A310 renewal before you pay.</=
+td>
+                </tr>
+              </table>
+              <p style=3D"margin:0 0 16px 0;font-size:14px;line-height:1.55;c=
+olor:#9a9aa4;">Already set up? The offer is on your Today page and on <a href=
+=3D"https://getgradify.com/pricing.html?offer=3DGRADIFY48&amp;utm_source=3Dem=
+ail&amp;utm_medium=3Demail&amp;utm_campaign=3Dpro_launch" style=3D"color:#f7a=
+8ee;text-decoration:underline;">Pricing</a>. If checkout ever opens without t=
+he code, choose <b>Add promotion code</b> and enter <b>GRADIFY48</b>.</p>
 
               <!-- renewal wording: keep the prices in step with kit/data/bil=
 ling.js -->
@@ -277,15 +396,15 @@ nt-size:14px;">Founder, Gradify</span></p>
 nkMacSystemFont,'Segoe UI',Arial,Helvetica,sans-serif;font-size:12px;line-hei=
 ght:1.6;color:#8a8a94;">
               <p style=3D"margin:0 0 10px 0;">This is a one-off email from Gr=
-adify. We won't email you again unless you sign up. If you'd rather not hear =
-from us at all, reply to this email and say so, and we'll remove your address=
-.</p>
-              <p style=3D"margin:0;"><a href=3D"https://getgradify.com/privac=
-y.html" style=3D"color:#b4b4bd;text-decoration:underline;">Privacy</a> &nbsp;=
-=C2=B7&nbsp; <a href=3D"https://getgradify.com/terms.html" style=3D"color:#b4=
-b4bd;text-decoration:underline;">Terms</a> &nbsp;=C2=B7&nbsp; <a href=3D"mail=
-to:hello@getgradify.com" style=3D"color:#b4b4bd;text-decoration:underline;">h=
-ello@getgradify.com</a></p>
+adify about our launch offer. To stop hearing from us, use the unsubscribe li=
+nk below, or reply and say so.</p>
+              <p style=3D"margin:0;"><a href=3D"{$unsubscribe}" style=3D"colo=
+r:#b4b4bd;text-decoration:underline;">Unsubscribe</a> &nbsp;=C2=B7&nbsp; <a h=
+ref=3D"https://getgradify.com/privacy.html" style=3D"color:#b4b4bd;text-decor=
+ation:underline;">Privacy</a> &nbsp;=C2=B7&nbsp; <a href=3D"https://getgradif=
+y.com/terms.html" style=3D"color:#b4b4bd;text-decoration:underline;">Terms</a=
+> &nbsp;=C2=B7&nbsp; <a href=3D"mailto:hello@getgradify.com" style=3D"color:#=
+b4b4bd;text-decoration:underline;">hello@getgradify.com</a></p>
             </td>
           </tr>
 
@@ -296,4 +415,4 @@ ello@getgradify.com</a></p>
 </body>
 </html>
 
---===============6601479172215005568==--
+--===============2903713724579650583==--

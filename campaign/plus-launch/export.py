@@ -2,7 +2,7 @@
 Run from the repo root: python3 campaign/plus-launch/export.py
 - Drops the authoring comment, and the Discord parts while there's no invite (DISCORD_URL below).
 - Fills the reason line (WHY): this is a one-off outreach email, not a reply to a sign-up.
-- Nothing is left to fill.
+- {$unsubscribe} is left for MailerLite to fill with each recipient's unsubscribe link.
 - Writes an .eml for test sends: open it in Apple Mail, then Message > Send Again."""
 import re, os
 from email.message import EmailMessage
@@ -11,8 +11,8 @@ from email.utils import formatdate, make_msgid
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "export")
 DISCORD_URL = ""  # e.g. "https://discord.gg/xxxx"; empty drops the Discord parts
-WHY = ("This is a one-off email from Gradify. We won't email you again unless you sign up. If you'd rather not "
-       "hear from us at all, reply to this email and say so, and we'll remove your address.")
+WHY = ("This is a one-off email from Gradify about our launch offer. To stop hearing from us, use the unsubscribe "
+       "link below, or reply and say so.")
 FILL = {}  # any {{PLACEHOLDER}} values to fill, e.g. {"DISCORD_URL": "https://discord.gg/xxxx"}
 SUBJECT = "Try Gradify Pro: £5 for your first month, until 22 November"
 
@@ -48,4 +48,5 @@ m.set_content(body_txt)
 m.add_alternative(html, subtype="html")
 open(os.path.join(OUT, "gradify-plus-launch-test.eml"), "w").write(m.as_string())
 left = sorted(set(re.findall(r"\{\{([A-Z_]+)\}\}", html + body_txt + sig)))
+assert "{$unsubscribe}" in html and "{$unsubscribe}" in body_txt, "the MailerLite unsubscribe link is missing"
 print("still to fill:", ", ".join(left) or "nothing")

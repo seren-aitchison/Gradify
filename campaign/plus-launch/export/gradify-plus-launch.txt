@@ -6,26 +6,37 @@ I'm Seren, and I build Gradify: a place to learn and revise that turns your note
 
 Most of Gradify is free, with no card needed: every course on every Gradify site, flashcards with spaced repetition, your notes and your progress.
 
-Gradify Pro is the part that organises your learning for you, and until Sunday 22 November 2026 your first month is £5:
+Gradify Pro is the part that organises your learning for you: less time deciding what to revise, and more time revising it.
 
-- Smart Plan autopilot. Your week planned for you, and kept on track when life gets in the way.
-- Readiness forecasts and revision recommendations. Your cards ordered by what matters most and what you're starting to forget.
+SMART PLAN: know exactly what to do tonight
+Gradify fits each session into your free time: mistakes that keep coming back first, then what's fading, then the next step up. Miss a day and it replans, without cramming.
+
+READINESS FORECASTS: see how ready you really are
+An honest estimate with a range, built from your own answers, and how many minutes a day it takes to reach your target by exam day.
+
+REVISION RECOMMENDATIONS: everything worth doing, best first
+Your revision ranked by how much each step will move your learning, and every recommendation tells you why it's there.
+
+Also in Pro:
 - Exam preparation. Timed exams over each part of a course and the whole course, and the complete question bank.
 - Calendar sync and reminders. Plan around your Google, Apple or Outlook calendar, and get reminders even when Gradify is closed.
-- Every device. Your notes, flashcards and progress up to date wherever you study.
+- No limits, on every device. Every lesson, flashcard set and tool, with your notes and progress up to date wherever you study.
 
 
-OFFER ENDS 22 NOVEMBER
-£5 for your first month of Gradify Pro
+OFFER ENDS SUNDAY 22 NOVEMBER
+£5 for your first month of Gradify Pro, then £10 a month. Cancel any time.
 
-Code: GRADIFY48
+Code: GRADIFY48 (applied for you when you use the link below). One use per person, for your first Gradify Pro subscription.
 
-Ends Sunday 22 November 2026. One use per person, for your first Gradify Pro subscription.
+Claim my £5 month:
+https://getgradify.com/pricing.html?offer=GRADIFY48&utm_source=email&utm_medium=email&utm_campaign=pro_launch
 
-Get Gradify Pro:
-https://getgradify.com/pricing.html?utm_source=email&utm_medium=email&utm_campaign=pro_launch
+How to claim it:
+1. Open the offer with the link above. Sign in, or create your free account with an email link or Google. No card needed for that part.
+2. Tell Gradify what you're studying. A one-minute set-up, so your plan fits your subject and exam date. Your offer waits for you, and appears as soon as you're done.
+3. Choose "Claim my £5 month". Stripe's secure checkout opens with GRADIFY48 already applied, and shows the £5 total and the £10 renewal before you pay.
 
-How to use the code: create a free Gradify account (or sign in), open Pricing and choose "Get Gradify Pro". On the Stripe checkout page, choose "Add promotion code" and enter GRADIFY48.
+Already set up? The offer is on your Today page and on Pricing. If checkout ever opens without the code, choose "Add promotion code" and enter GRADIFY48.
 
 What you'll pay: £5 today for your first month. After that, Gradify Pro renews automatically at £10 a month (VAT included) on the same date each month until you cancel. You can cancel any time from "Manage billing" on your Account page; you keep Pro until the end of the month you've paid for. If you change your mind within 14 days of subscribing you can cancel for a refund, reduced for any days you've already used.
 
@@ -36,8 +47,9 @@ Founder, Gradify
 
 ----------------------------------------------------------------------
 
-This is a one-off email from Gradify. We won't email you again unless you sign up. If you'd rather not hear from us at all, reply to this email and say so, and we'll remove your address.
+This is a one-off email from Gradify about our launch offer. To stop hearing from us, use the unsubscribe link below, or reply and say so.
 
+Unsubscribe: {$unsubscribe}
 Privacy: https://getgradify.com/privacy.html
 Terms: https://getgradify.com/terms.html
 Contact: hello@getgradify.com

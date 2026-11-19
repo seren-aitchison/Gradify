@@ -1021,7 +1021,7 @@ a.cp-mini:hover { border-color: var(--line-strong); transform: translateY(-2px);
 .i-why-bar i { display: block; height: 100%; border-radius: 6px; background: linear-gradient(90deg, #4641ff, #f055dd); }
 .i-why-bar i.f-urgency { background: linear-gradient(90deg, #ff8a00, #ffc002); } .i-why-bar i.f-importance { background: linear-gradient(90deg, #4641ff, #8b3dff); }
 .i-why-bar i.f-forgetting { background: linear-gradient(90deg, #f055dd, #ff5a4d); } .i-why-bar i.f-evidence { background: linear-gradient(90deg, #1fae8c, #3c78d8); }
-.r-list li > .i-why { padding: 0 16px 12px 64px; margin-top: -6px; }
+.r-list li > .i-why { padding: 0 16px 4px 64px; margin-top: 6px; }
 .debt-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
 .debt-list a { display: grid; grid-template-columns: minmax(0, auto) 24px minmax(0, 1fr) auto; grid-template-areas: "root arrow sym min" "why why why why"; gap: 8px 12px; align-items: center; padding: 14px 16px; border-radius: 16px; color: var(--fg); text-decoration: none;
   background: linear-gradient(135deg, rgba(255, 90, 77, .1), rgba(255, 138, 0, .05)); border: 1px solid rgba(255, 90, 77, .3); }
