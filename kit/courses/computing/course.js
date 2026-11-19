@@ -6,6 +6,7 @@ import { QA, WRITTEN_ON } from "./qa.js";
 import { INTERACTIVES } from "./interactives.js";
 import { QUESTIONS, LESSONS } from "./registry.js";
 import { EVIDENCE } from "./evidence.js";
+import { CONCEPTS } from "./concepts.js";
 export default {
   site: "TechGradify · ForgeLab", slug: "computing", name: "Computer Science", app: "../app.html", page: "/techgradify/course/", unitWord: "School", trackWord: "Stage",
   // who must sign a school off before it counts as published (docs/CURRICULUM_QA.md)
@@ -17,6 +18,8 @@ export default {
   theme: { accent: "#ff5a4d", spectrum: "linear-gradient(90deg, #ff5a4d, #f97316 25%, #f59e0b 50%, #f472b6 75%, #22d3ee)" },
   notice: "<b>Study material, not a qualification or legal advice.</b> ForgeLab teaches computer science for GCSE, A level and the first year of university, but it isn't an exam board resource or an accredited course: check the details of your own specification with your teacher or exam board. The lessons were drafted with AI assistance and haven't yet been reviewed by subject experts, so they may contain errors. Security lessons explain attacks so that you can defend against them: trying them on systems you don't own or have permission to test can be a criminal offence under the Computer Misuse Act 1990. The law lessons describe UK law for study; for a real data protection question, see the ICO or a qualified adviser.",
   interactives: INTERACTIVES, evidence: EVIDENCE,
+  // what each module builds on (kit/learning/concepts.js): "Builds on" in every lesson, and weak foundations flagged
+  concepts: CONCEPTS,
   practiceNote: "Code in the lessons is Python 3 unless it says otherwise: trace it by hand first, then run it yourself to check. Challenges inside interactives earn XP and count as evidence for their lesson.",
   exams: [
     ...TRACKS.map((t, i) => ({ id: `stage-${i + 1}`, title: t.name, sub: "Mixed questions from every written school in this stage.", units: t.units, format: "science", count: 20, minutes: 30, pass: 0.7 })),
