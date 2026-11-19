@@ -39,7 +39,7 @@ import { tutorEvent } from "../intel/experiments.js";
 import { scoreFeedback } from "../assess/tutor.js";
 import { feedbackHtml, paras } from "../assess/tutor-view.js";
 import { mountTutorPanel, directorHtml, newConversation } from "./tutor-panel.js";
-import { readLab, labState, labTry } from "./lab-state.js";
+import { readLab, labState, labTry, labLeave } from "./lab-state.js";
 import { SUPABASE_URL } from "../../gradify.config.js";
 import { buildExam, runExam, FORMATS } from "../assess/exam.js";
 import { reviewLabel } from "./review.js";
@@ -2308,7 +2308,10 @@ export function mountCourse(root, cfg) {
   document.addEventListener("visibilitychange", () => lt.visibility(document.visibilityState === "visible"));
   addEventListener("pagehide", () => lt.stop());
   let routeStop = null;   // a view's own clean-up (the target test's timer)
+  let routedHash = null;
   async function route() {
+    // a real change of place ends a lab sitting; a redraw of the same place (an account sync) doesn't
+    if (location.hash !== routedHash) { routedHash = location.hash; labLeave(labTries); }
     unmountIx();
     lt.stop();
     lessonRail = null; readStop?.(); routeStop?.(); routeStop = null;

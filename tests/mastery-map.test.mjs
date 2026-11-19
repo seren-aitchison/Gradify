@@ -221,3 +221,26 @@ test("lab tries: unscored touches aren't tries, a redraw keeps the sitting, leav
   labTry(t, "#/lesson/u01-01", "x", "attempted");
   assert.equal(labTry(t, here, "ix1:B", "success"), 1);
 });
+
+test("Remember is reachable in every topic, and unfinished lab challenges aren't Apply answers", async () => {
+  const day = "2026-11-19";
+  const units = [{ id: "u01", title: "Statics", lessons: [{ id: "u01-01", module: "Forces" }, { id: "u01-02", module: "Forces" }] }];
+  const courses = [{ slug: "engineering", units, S: { done: {} } }];
+  const x = (attemptsToday) => ({ day, open: [{ id: "u01-01", module: "Forces", course: "engineering" }], attemptsToday });
+  const q = topicQuest(x([]), courses);
+  assert.equal(q.steps[1].of, 4, "2 cards per lesson in a two-lesson topic (every written lesson has at least 2)");
+  const cards = [0, 1, 2, 3].map((i) => ({ course: "engineering", lesson: i < 2 ? "u01-01" : "u01-02", question: { id: `card:${i}`, type: "card" }, correct: true, score: 1, attempt: 1 }));
+  assert.equal(topicQuest(x(cards), courses).steps[1].n, 4, "so recalling each card once completes it");
+  // four right answers and an unfinished lab challenge: not five answers
+  const ans = [0, 1, 2, 3].map((i) => ({ course: "engineering", lesson: "u01-01", question: { id: `q${i}`, type: "sba" }, score: 1, attempt: 1 }));
+  const lab = { course: "engineering", lesson: "u01-01", question: { id: "ix:a", type: "lab" }, score: 0, attempt: 1, response: { outcome: "attempted" } };
+  assert.ok(topicQuest(x([...ans, lab]), courses).steps[2].n < TOPIC_STEPS[2].of);
+});
+
+test("leaving a lab and coming back starts a fresh sitting, even with no result recorded in between", async () => {
+  const { labTry, labLeave } = await import("../kit/course/lab-state.js");
+  const t = { where: null, counts: new Map() }, lab = "#/practice/ix1";
+  assert.equal(labTry(t, lab, "ix1:A", "unsuccessful"), 1);
+  labLeave(t);   // the router: the learner went Home
+  assert.equal(labTry(t, lab, "ix1:A", "success"), 1, "back at the same lab, the success is a first try");
+});

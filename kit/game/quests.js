@@ -76,15 +76,19 @@ export function topicQuest(x, courses, at = null) {
   const lessons = u.lessons.filter((z) => (z.module || null) === (l.module || null)), ids = new Set(lessons.map((z) => z.id));
   const topic = l.module || u.title, today = x.attemptsToday.filter((a) => a.course === c.slug && ids.has(a.lesson));
   // distinct cards and questions, first tries only: repeating one question, or trying options until right, fills nothing
-  const firstTries = today.filter((a) => (a.attempt ?? 1) === 1), key = (a) => a.question?.id || a.id;
+  // first tries only, and only scored answers (an unfinished lab challenge, "attempted", is engagement, not an answer)
+  const firstTries = today.filter((a) => (a.attempt ?? 1) === 1 && a.response?.outcome !== "attempted"), key = (a) => a.question?.id || a.id;
   const cards = new Set(firstTries.filter((a) => a.question?.type === "card" && a.correct).map(key)).size;
   const latest = new Map(); for (const a of firstTries.filter((x) => x.question?.type !== "card")) latest.set(key(a), Number(a.score) || 0);
   const qs = [...latest.values()], mean = qs.length ? qs.reduce((t, s) => t + s, 0) / qs.length : 0;
   const finished = lessons.filter((z) => c.S?.done?.[z.id] && dayKey(c.S.done[z.id]) === x.day).length;
   const allDone = lessons.every((z) => c.S?.done?.[z.id]);
+  // Remember asks for 2 distinct cards per lesson in the topic, up to 10: every written lesson has at least 2 cards,
+  // so it can always be done (a flat 10 couldn't in topics with fewer cards)
+  const remember = Math.min(TOPIC_STEPS[1].of, 2 * lessons.length);
   const steps = [
     { ...TOPIC_STEPS[0], title: `Understand: ${allDone ? "revisit" : "finish"} a lesson in ${topic}`, of: 1, n: Math.min(1, finished + (allDone && today.length ? 1 : 0)), why: "Read it, try the interactive, answer as you go." },
-    { ...TOPIC_STEPS[1], title: `Remember: recall ${TOPIC_STEPS[1].of} of its flashcards correctly`, n: Math.min(TOPIC_STEPS[1].of, cards), why: "Recall without looking: that's what makes it stay." },
+    { ...TOPIC_STEPS[1], of: remember, title: `Remember: recall ${remember} of its flashcards correctly`, n: Math.min(remember, cards), why: "Recall without looking: that's what makes it stay." },
     { ...TOPIC_STEPS[2], title: `Apply: ${Math.round(TOPIC_STEPS[2].mean * 100)}% or more across ${TOPIC_STEPS[2].of} of its questions`, n: qs.length >= TOPIC_STEPS[2].of && mean >= TOPIC_STEPS[2].mean ? TOPIC_STEPS[2].of : Math.min(TOPIC_STEPS[2].of - 1, qs.length), why: qs.length ? `${qs.length} answered today, ${Math.round(mean * 100)}% right.` : "Questions you haven't seen, answered from memory." },
   ];
   return { topic, course: c.slug, unit: u.id, lesson: l.id, lessons: [...ids], steps, xp: steps.reduce((t, q) => t + q.xp, 0) };

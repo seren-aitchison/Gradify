@@ -68,3 +68,6 @@ export function labTry(tries, where, key, outcome) {
   tries.counts.set(key, n);
   return n;
 }
+
+/** the learner left: the next lab result starts a fresh sitting (the router calls this on a real change of place) */
+export function labLeave(tries) { tries.where = null; tries.counts = new Map(); }
