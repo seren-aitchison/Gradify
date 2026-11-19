@@ -1294,7 +1294,7 @@ export function mountCourse(root, cfg) {
     noteVisit(l);
     // the lesson's shape while its notes load (only if they take a moment: cached notes never flash a placeholder)
     const skT = setTimeout(() => { if (curLesson === l) main.innerHTML = skeleton("lesson", 0, `Loading ${l.title}`); }, 120);
-    // Free: 10 lessons in each course (kit/data/limits.js), once Plus is on sale
+    // Free: 10 lessons in each course (kit/data/limits.js), once Pro is on sale
     if (!(await gate("lesson", id, { course: cfg.slug, store }))) { clearTimeout(skT); main.innerHTML = lockedHtml("lesson"); return; }
     lt.start(id);
     if (S.done[id] || S.time?.[id]?.v) ledger({ event: "lesson_revisited", concept: `${cfg.slug}:${id}`, source: "course", detail: { visits: (S.time?.[id]?.v || 0) + 1, done: Boolean(S.done[id]) } });
@@ -2340,7 +2340,7 @@ export function mountCourse(root, cfg) {
     else if (view === "review") await (arg === "questions" ? viewRetrieval() : arg === "weak" ? viewWeak() : viewReview());
     else if (view === "paths") viewPaths();
     else if (view === "tracks") viewTracks();
-    // exam preparation is Gradify Plus: timed exams and the complete question bank (unit quizzes and labs stay free)
+    // exam preparation is Gradify Pro: timed exams and the complete question bank (unit quizzes and labs stay free)
     else if (["problems", "exams", "exam"].includes(view) && !(await access(await store())).has("exams")) { main.innerHTML = plusPanelHtml("exams", { pricing: "/pricing.html" }); promptPlus("exams", { pricing: "/pricing.html", signedIn: (await store())?.mode === "cloud" }); }
     else if (view === "problems") await viewProblems();
     else if (view === "cases") await viewAuthorities();

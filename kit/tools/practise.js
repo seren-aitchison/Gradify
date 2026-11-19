@@ -1,7 +1,7 @@
 // Practise tools (app.html#/tools/...):
 //   feed    the flashcard feed: an endless scroll of cards from your decks and the subjects you choose, with bonus
 //           facts, study hacks and reminders mixed in; boost a card to see it more; zoom out to a board of every card
-//   quiz    quizzes from any lesson, unit, deck or notes: practice, and with Gradify Plus: timed (like the exam),
+//   quiz    quizzes from any lesson, unit, deck or notes: practice, and with Gradify Pro: timed (like the exam),
 //           adaptive (harder or easier as you go) and the question bank of every question on Gradify
 //   games   key-term games: Match, Speed round and Missing letters
 import { mountPicker } from "./pick.js";
@@ -124,7 +124,7 @@ async function quiz(view, ctx) {
   const has = () => !A.enforced || A.has("exams");
   const mode0 = location.hash.split("/")[3] || "practice";
   view.innerHTML = `<div class="tl">${head("Practise", "Quizzes and question bank", "Multiple-choice questions from any lesson, unit, your flashcards or your notes, with feedback on every answer.")}
-    <div class="seg-chips qz-modes">${[["practice", "Practice"], ["timed", "Timed quiz"], ["adaptive", "Adaptive"], ["bank", "Question bank"]].map(([k, t]) => `<a class="chip" href="#/tools/quiz/${k}" aria-pressed="${k === mode0}">${t}${k === "timed" || k === "bank" ? ' <small class="qz-plan">Plus</small>' : k === "adaptive" ? ' <small class="qz-plan">Plus</small>' : ""}</a>`).join("")}</div>
+    <div class="seg-chips qz-modes">${[["practice", "Practice"], ["timed", "Timed quiz"], ["adaptive", "Adaptive"], ["bank", "Question bank"]].map(([k, t]) => `<a class="chip" href="#/tools/quiz/${k}" aria-pressed="${k === mode0}">${t}${k === "timed" || k === "bank" ? ' <small class="qz-plan">Pro</small>' : k === "adaptive" ? ' <small class="qz-plan">Pro</small>' : ""}</a>`).join("")}</div>
     <p class="sub qz-line"></p><div class="tl-pickbox"></div><div class="tl-out"></div></div>`;
   const LINES = { practice: "Answer at your own pace. Every answer is marked, with why.", timed: "Against the clock, like the real exam: a minute a question by default. Your score and time at the end.", adaptive: "Get two right in a row and the questions get harder; get one wrong and they get easier. Your level at the end shows where you are.", bank: "Every practice question in a subject, filtered by unit and difficulty. Answer any of them, in any order." };
   view.querySelector(".qz-line").textContent = LINES[mode0] || LINES.practice;

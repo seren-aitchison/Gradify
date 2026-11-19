@@ -1,8 +1,8 @@
 // Free plan allowances, for every Gradify site: on Free a learner can open 10 lessons in each course they start,
 // 5 flashcard sets and 5 mind maps in all, and use each tool in Tools 5 times. Opening something they've already
-// opened never uses more. Plus and Pro have no limits.
+// opened never uses more. Pro and Ultra have no limits.
 //
-// Like the other Plus features (kit/data/plan.js), the limits apply only once Plus is on sale (PLUS_ON_SALE in
+// Like the other Pro features (kit/data/plan.js), the limits apply only once Pro is on sale (PLUS_ON_SALE in
 // kit/data/billing.js). Before then nothing is limited, so no learner is asked to buy something they can't buy.
 // To see them working before then, open any page with ?limits=preview (and ?limits=off to stop).
 //
@@ -44,7 +44,7 @@ export function take(kind, key, o = {}, counts = read(), save = write) {
   return { ok: true, used: list.length + 1, limit, left: limit - list.length - 1, fresh: true };
 }
 
-/** Whether limits apply to this learner now: Free, and Plus on sale (or a preview). */
+/** Whether limits apply to this learner now: Free, and Pro on sale (or a preview). */
 const storeOf = async (store) => { try { return typeof store === "function" ? await store() : await store; } catch { return null; } };
 export async function limited(store) {
   if (!PLUS_ON_SALE && !previewing()) return false;
@@ -56,7 +56,7 @@ const WHAT = {
 };
 /**
  * Open something that counts against an allowance. Returns true if the learner may open it (and counts it); false if
- * they've used their Free allowance, after showing the Plus banner. Also shows a gentle banner on the last free one.
+ * they've used their Free allowance, after showing the Pro banner. Also shows a gentle banner on the last free one.
  * @param {"lesson"|"flashcards"|"map"|"tool"} kind
  * @param {string} key   what's being opened (a lesson id, a deck id…), so opening it again is free
  * @param {{ course?: string, tool?: string, store?: object, pricing?: string }} o
@@ -86,18 +86,18 @@ export async function gate(kind, key, o = {}) {
 export const toolUsage = (tool, counts = read()) => usage("tool", { tool }, counts);
 
 const pricingUrl = (p) => p || (/(^|\.)getgradify\.com$|^localhost|^127\./.test(location.hostname) ? "/pricing.html" : "https://getgradify.com/pricing.html");
-/** The Liquid Glass banner: the Plus offer, when an allowance runs out (locked) or on its last free item. */
+/** The Liquid Glass banner: the Pro offer, when an allowance runs out (locked) or on its last free item. */
 export function banner({ kind, locked = true, pricing, tool } = {}) {
   document.querySelector(".lim-banner")?.remove();
   const what = WHAT[kind]?.(limitOf(kind), tool) || "this";
   const el = document.createElement("aside");
   el.className = `lim-banner${locked ? " locked" : ""}`;
-  el.setAttribute("role", locked ? "alertdialog" : "status"); el.setAttribute("aria-live", "polite"); el.setAttribute("aria-label", "Gradify Plus");
+  el.setAttribute("role", locked ? "alertdialog" : "status"); el.setAttribute("aria-live", "polite"); el.setAttribute("aria-label", "Gradify Pro");
   const price = `£${PLAN_PRICES.plus.month / 100}`;
   el.innerHTML = `<span class="lim-gem" aria-hidden="true"><span class="g3d-back"></span><span class="g3d-pane"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></svg></span></span>
     <div class="lim-text"><b>${locked ? `You've used Free's ${esc(what)}` : `That's the last of Free's ${esc(what)}`}</b>
-      <span>${locked ? "Gradify Plus opens every lesson, flashcard set, mind map and tool, with no limits." : "Go further with Gradify Plus: every lesson, flashcard set, mind map and tool, with no limits."} ${price} a month.</span></div>
-    <a class="lim-cta" href="${esc(pricingUrl(pricing))}">Get Gradify Plus</a>
+      <span>${locked ? "Gradify Pro opens every lesson, flashcard set, mind map and tool, with no limits." : "Go further with Gradify Pro: every lesson, flashcard set, mind map and tool, with no limits."} ${price} a month.</span></div>
+    <a class="lim-cta" href="${esc(pricingUrl(pricing))}">Get Gradify Pro</a>
     <button type="button" class="lim-x" aria-label="Close">×</button>`;
   el.querySelector(".lim-x").addEventListener("click", () => { el.classList.add("out"); setTimeout(() => el.remove(), 250); });
   document.body.append(el);
@@ -109,7 +109,7 @@ export function banner({ kind, locked = true, pricing, tool } = {}) {
 /** What to show in place of something locked (the banner is shown as well). */
 export function lockedHtml(kind, { pricing, tool } = {}) {
   const what = WHAT[kind]?.(limitOf(kind), tool) || "this";
-  return `<article class="panel glass plus-lock lim-lock"><span class="plus-badge">Plus</span><h3>You've used Free's ${esc(what)}</h3>
-    <p class="sub">Everything you've already opened stays open. Gradify Plus, £${PLAN_PRICES.plus.month / 100} a month, opens all of it with no limits.</p>
-    <a class="btn btn-light lg btn-sm" href="${esc(pricingUrl(pricing))}"><span>See Gradify Plus</span></a></article>`;
+  return `<article class="panel glass plus-lock lim-lock"><span class="plus-badge">Pro</span><h3>You've used Free's ${esc(what)}</h3>
+    <p class="sub">Everything you've already opened stays open. Gradify Pro, £${PLAN_PRICES.plus.month / 100} a month, opens all of it with no limits.</p>
+    <a class="btn btn-light lg btn-sm" href="${esc(pricingUrl(pricing))}"><span>See Gradify Pro</span></a></article>`;
 }

@@ -290,7 +290,7 @@ export function wireAsk(view, m, ctx = {}) {
       turns.push({ role: "learner", text: q }, { role: "coach", text: r.answer });
       box.innerHTML = `<span class="kicker">${icon("sparkles")}Gradify AI</span><p class="i-coach-a">${esc(r.answer)}</p>${r.actions.length ? `<ol class="i-coach-acts">${r.actions.map((a) => `<li><a href="${esc(a.item.href)}" data-haptic="tap"><b>${esc(a.item.title)}</b><em>${esc(a.why)}</em><span>${a.item.mins} min →</span></a></li>`).join("")}</ol>` : ""}<p class="small muted">Gradify AI answers only from your data above, and can't change your plan: it can only suggest what Gradify already offered.</p>`;
       box.querySelectorAll("[data-haptic]").forEach((x) => x.addEventListener("click", () => haptic("tap")));
-    }).catch((e) => { box.innerHTML = `<span class="kicker">${icon("sparkles")}Gradify AI</span><p class="small muted">${esc(e.message)}${e.upgrade ? ' <a href="/pricing.html">See Gradify Pro</a>' : ""}</p>`; });
+    }).catch((e) => { box.innerHTML = `<span class="kicker">${icon("sparkles")}Gradify AI</span><p class="small muted">${esc(e.message)}${e.upgrade ? ' <a href="/pricing.html">See Gradify Ultra</a>' : ""}</p>`; });
   };
   view.querySelector("#ask-form").addEventListener("submit", (e) => { e.preventDefault(); run(input.value.trim()); });
   view.querySelectorAll("[data-q]").forEach((b) => b.addEventListener("click", () => { input.value = b.dataset.q; run(b.dataset.q); }));

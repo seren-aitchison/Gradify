@@ -123,7 +123,7 @@ export class CloudStore {
   fresh() { this._shared.clear(); this._cp = null; }
   static async create() {
     if (!cloudConfigured() || !window.supabase) return null;
-    // once Plus is on sale, every request says which study device it's from (Free studies on one: kit/data/plan.js)
+    // once Pro is on sale, every request says which study device it's from (Free studies on one: kit/data/plan.js)
     const device = PLUS_ON_SALE ? deviceId() : null;
     const store = new CloudStore(window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, device ? { global: { headers: { "x-gradify-device": device } } } : undefined));
     // keep the current sign-in at hand, so a save can be sent while the page is closing (beaconCourseProgress)
