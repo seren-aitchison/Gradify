@@ -52,6 +52,7 @@ Deno.serve(async (req) => {
       if (error) throw error;
     }
     const session = await stripe(secret, "POST", "/checkout/sessions", {
+      ui_mode: "hosted",
       mode: "subscription",
       customer,
       client_reference_id: user.id,
@@ -61,6 +62,12 @@ Deno.serve(async (req) => {
       allow_promotion_codes: "true",
       automatic_tax: Deno.env.get("STRIPE_AUTOMATIC_TAX") === "on" ? { enabled: "true" } : undefined,
       customer_update: Deno.env.get("STRIPE_AUTOMATIC_TAX") === "on" ? { address: "auto" } : undefined,
+      billing_address_collection: "auto",
+      phone_number_collection: { enabled: "false" },
+      payment_method_collection: "always",
+      submit_type: "auto",
+      integration_identifier: "hosted_web_0001",
+      origin_context: "web",
       success_url: returnUrl(SITE, back, { checkout: "success" }),
       cancel_url: returnUrl(SITE, back, { checkout: "cancelled" }),
     });
