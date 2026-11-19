@@ -185,6 +185,12 @@ test("each kind of card has the ways to practise that suit it, and the small car
     }
   }
   assert.ok(seen >= 10, "lessons get small cards");
+  // a worked example's steps reach the card whole, however long (the picture, diagramSvg, shortens its own copy)
+  const longStep = `Work out the dose: ${"take the weight in kilograms, multiply by the dose per kilogram, and check the total against the maximum; ".repeat(7)}then round down.`;
+  const exL = { title: "t", blocks: [{ t: "h", x: "Dose" }, { t: "ex", x: "A child weighs 20 kg.", steps: [longStep, "Give it."] }], cards: [] };
+  const flowD = diagramsFor(exL).find((d) => d.kind === "flow");
+  assert.ok(longStep.length > 600 && flowD.items[0] === longStep, "the whole step, never cut");
+  assert.ok(glassDiagram(flowD).includes(longStep));
   // review fixes: a grouped number is never half-covered; a tie in dates can't be put in order; a small map has no buttons;
   // the Recap's questions are left out exactly, not by their first words
   const numL = { title: "t", blocks: [{ t: "h", x: "A" }, { t: "p", x: "The band runs from 1,000,000 Hz up. A fibre is about 25 kHz here. Another 40% now." }], cards: [] };

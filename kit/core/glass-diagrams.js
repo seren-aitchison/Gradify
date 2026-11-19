@@ -104,7 +104,7 @@ export function diagramsFor(L, { max = 5, skip = [] } = {}) {
   let heading = null, headingAt = -1;
   blocks.forEach((b, i) => {
     if (b.t === "h") { heading = b.x; headingAt = i; return; }
-    if (b.t === "ex" && b.steps.length >= 2) out.push({ kind: "flow", ex: true, at: i, title: cut(b.x, 90), items: b.steps.slice(0, 6).map((s) => cut(s, 600)), weight: 5 });
+    if (b.t === "ex" && b.steps.length >= 2) out.push({ kind: "flow", ex: true, at: i, title: cut(b.x, 90), items: b.steps.slice(0, 6).map((s) => plain(s)), weight: 5 });
     else if (b.t === "eq" && b.rows.length && !b.rows.some(([f]) => MATHS.test(plain(f)))) out.push({ kind: "facts", at: i, title: plain(heading || "Key facts"), items: b.rows.slice(0, 4).map(([f, m]) => ({ term: cut(f, 100), def: m ? cut(m, 160) : "" })), weight: 3.4 });
     else if (b.t === "eq" && b.rows.length) out.push({ kind: "formula", at: i, title: plain(heading || "Formulas"), rows: b.rows.slice(0, 3).map(([f, m]) => ({ f: plain(f), m: m ? cut(m, 140) : "" })), formula: plain(b.rows[0][0]), more: Math.max(0, b.rows.length - 3), weight: 4.5 });
     else if (b.t === "pit") {
