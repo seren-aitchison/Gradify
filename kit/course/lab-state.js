@@ -53,3 +53,18 @@ export function labState(p, max = 2000) {
   const s = out.join("\n");
   return s.length > max ? `${s.slice(0, max - 1)}…` : s;
 }
+
+/**
+ * Number a lab challenge's try within a sitting (pure; kit/course/course.js labRecord uses it). `tries` holds
+ * { where, counts: Map }. A sitting ends when the learner goes somewhere else (`where` changes), not when the page
+ * redraws in place. Only scored outcomes are tries: an unscored "attempted" (touched, not finished) isn't, so a later
+ * first success stays attempt 1. Returns the attempt number to record (0 for an unscored outcome).
+ */
+export function labTry(tries, where, key, outcome) {
+  if (tries.where !== where) { tries.where = where; tries.counts = new Map(); }
+  tries.counts ||= new Map();
+  if (outcome === "attempted") return tries.counts.get(key) || 0;
+  const n = (tries.counts.get(key) || 0) + 1;
+  tries.counts.set(key, n);
+  return n;
+}

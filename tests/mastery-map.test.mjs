@@ -201,3 +201,23 @@ test("a step earned in one topic stays claimable after moving on to another topi
   const after = quests(gameState([chem, bio], claim({}, left, now), { now })).filter((q) => q.kind === "topic");
   assert.ok(!after.some((q) => q.earlier && q.topic === "Structure"), "once claimed, it leaves the list");
 });
+
+test("lab tries: unscored touches aren't tries, a redraw keeps the sitting, leaving starts a new one", async () => {
+  const { labTry } = await import("../kit/course/lab-state.js");
+  const { lessonSignals } = await import("../kit/learning/topic-status.js");
+  const t = { where: null, counts: new Map() }, here = "#/practice/ix1";
+  // touched challenge A (fewer than five moves), switched to B, came back and succeeded at A: a first success
+  assert.equal(labTry(t, here, "ix1:A", "attempted"), 0);
+  assert.equal(labTry(t, here, "ix1:B", "unsuccessful"), 1);
+  assert.equal(labTry(t, here, "ix1:A", "success"), 1, "the first scored try at A");
+  const sig = lessonSignals([
+    { lesson: "L", question: { id: "ix:ix1:A", type: "lab" }, score: 0, attempt: 1, at: new Date(1e12).toISOString(), response: { outcome: "attempted" } },
+    { lesson: "L", question: { id: "ix:ix1:A", type: "lab" }, score: 1, attempt: 1, at: new Date(1e12 + 1).toISOString(), response: { outcome: "success" } },
+  ]).get("L");
+  assert.equal(sig.latestMean, 1, "and it counts as first-try evidence");
+  // a failure then a success in the same place (even across a redraw) is a retry
+  assert.equal(labTry(t, here, "ix1:B", "success"), 2);
+  // going somewhere else and coming back is a fresh sitting
+  labTry(t, "#/lesson/u01-01", "x", "attempted");
+  assert.equal(labTry(t, here, "ix1:B", "success"), 1);
+});

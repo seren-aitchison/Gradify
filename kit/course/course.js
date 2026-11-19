@@ -39,7 +39,7 @@ import { tutorEvent } from "../intel/experiments.js";
 import { scoreFeedback } from "../assess/tutor.js";
 import { feedbackHtml, paras } from "../assess/tutor-view.js";
 import { mountTutorPanel, directorHtml, newConversation } from "./tutor-panel.js";
-import { readLab, labState } from "./lab-state.js";
+import { readLab, labState, labTry } from "./lab-state.js";
 import { SUPABASE_URL } from "../../gradify.config.js";
 import { buildExam, runExam, FORMATS } from "../assess/exam.js";
 import { reviewLabel } from "./review.js";
@@ -2107,14 +2107,11 @@ export function mountCourse(root, cfg) {
   // first-try evidence (kit/learning/topic-status.js counts first tries only). The sitting ends when the learner goes
   // somewhere else, not when the page redraws in place (an account sync re-renders the same view). Only scored
   // outcomes are tries: touching a challenge without finishing it ("attempted") isn't.
-  const labTries = new Map(); let labWhere = null;
+  const labTries = { where: null, counts: new Map() };
   const labRecord = (x, task, label, outcome, extra = {}) => {
     const l = byId[x.evidence?.[task]]; if (!l) return null;
     const ok = outcome === "success" || outcome === "assisted_success";
-    const where = location.hash.split("/").slice(0, 3).join("/");
-    if (where !== labWhere) { labTries.clear(); labWhere = where; }
-    const k = `${x.id}:${task}`, scored = outcome !== "attempted", attempt = (labTries.get(k) || 0) + (scored ? 1 : 0);
-    if (scored) labTries.set(k, attempt);
+    const attempt = labTry(labTries, location.hash.split("/").slice(0, 3).join("/"), `${x.id}:${task}`, outcome);
     record({ Q: { type: "lab", d: 2, objectives: [] }, key: `ix:${x.id}:${task}`, v: null, l }, "practice", x.id,
       { score: ok ? 1 : 0, correct: ok, method: "auto", status: "final" }, { attempt, response: { challenge: label || task, outcome, evidence: EXPLORE.has(`ix:${x.id}:${task}`) ? "exploration" : "practice", ...extra } });
   };
