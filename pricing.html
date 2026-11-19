@@ -16,49 +16,53 @@
   <script src="/kit/core/theme-boot.js"></script>
   <style>
     main { padding: 56px 0 40px; }
-    .hero { max-width: 760px; margin: 0 auto 36px; text-align: center; }
-    .hero h1 { font-size: clamp(34px, 6vw, 60px); letter-spacing: -.035em; line-height: 1.02; margin: 14px 0 14px; }
+    .hero { max-width: 720px; margin: 0 auto 48px; text-align: center; }
+    .hero h1 { font-size: clamp(34px, 6vw, 60px); letter-spacing: -.035em; line-height: 1.06; margin: 18px 0 18px; text-wrap: balance; }
     .hero h1 em { font-style: normal; background: var(--spectrum); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .hero p { color: var(--mute); font-size: 18px; line-height: 1.55; margin: 0; }
-    .notice { max-width: 900px; margin: 0 auto 24px; padding: 14px 18px; border-radius: var(--radius); border: 1px solid var(--line-strong); background: var(--panel); display: flex; gap: 12px; align-items: flex-start; line-height: 1.5; }
+    .hero p { color: var(--mute); font-size: 18px; line-height: 1.6; margin: 0 auto; max-width: 600px; text-wrap: pretty; }
+    .notice { max-width: 1180px; margin: 0 auto 28px; padding: 14px 18px; border-radius: var(--radius); border: 1px solid var(--line-strong); background: var(--panel); display: flex; gap: 12px; align-items: flex-start; line-height: 1.5; }
     .notice b { color: var(--fg); } .notice p { margin: 0; color: var(--mute); }
     .notice .ic { flex: none; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font: 700 13px var(--sans); background: rgba(255, 255, 255, .1); }
     .notice.ok { border-color: #5fe3a166; } .notice.ok .ic { background: #5fe3a1; color: #000; }
     .notice.warn { border-color: #ffc00266; } .notice.warn .ic { background: #ffc002; color: #000; }
 
-    .plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; max-width: 1180px; margin: 0 auto; align-items: start; }
+    .plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; max-width: 1180px; margin: 0 auto; align-items: stretch; }
     .plan.plus { border: 1px solid transparent; background: linear-gradient(var(--panel-strong), var(--panel-strong)) padding-box, var(--spectrum) border-box; box-shadow: 0 30px 80px -40px rgba(240, 85, 221, .55); }
-    .plan .tag { font: 600 11px var(--sans); text-transform: uppercase; letter-spacing: .08em; color: var(--mute); }
-    .plan h4 { margin: 6px 0 -4px; font-size: 13px; letter-spacing: .02em; color: var(--fg); }
+    .plan .tag { display: block; font: 600 11px/1.4 var(--sans); text-transform: uppercase; letter-spacing: .08em; color: var(--mute); }
+    .plan .popular { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); white-space: nowrap; font: 600 11px var(--sans); text-transform: uppercase; letter-spacing: .08em; padding: 5px 12px; border-radius: 99px; color: #fff; background: var(--spectrum); box-shadow: 0 6px 20px -6px rgba(240, 85, 221, .6); }
+    .plan .groups { display: grid; gap: 18px; }
+    .plan .group { display: grid; gap: 10px; }
+    .plan h4 { margin: 0; padding-top: 16px; border-top: 1px solid var(--line); font: 600 11px/1.4 var(--sans); text-transform: uppercase; letter-spacing: .08em; color: var(--mute); }
+    .plan .group:first-child h4 { padding-top: 0; border-top: 0; }
     .plan .soon { font: 600 11px var(--sans); letter-spacing: .04em; padding: 2px 8px; border-radius: 99px; border: 1px solid var(--line-strong); color: var(--mute); }
-    .plan { position: relative; padding: 28px; border-radius: 18px; display: flex; flex-direction: column; gap: 18px; }
-    .plan h2 { margin: 0; font-size: 22px; letter-spacing: -.01em; display: flex; align-items: center; gap: 10px; }
+    .plan { position: relative; padding: 32px 28px 28px; border-radius: 18px; display: flex; flex-direction: column; gap: 20px; }
+    .plan .head { display: grid; gap: 8px; min-height: 64px; align-content: start; }
+    .plan h2 { margin: 0; font-size: 22px; line-height: 1.2; letter-spacing: -.01em; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
     .plan .for { margin: 4px 0 0; color: var(--mute); line-height: 1.5; }
-    .price { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
-    .price .amt { font-size: 46px; font-weight: 700; letter-spacing: -.03em; }
+    .price { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; line-height: 1; }
+    .price .amt { font-size: 48px; font-weight: 700; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
     .price .per { color: var(--mute); }
-    .price-note { margin: -10px 0 0; color: var(--mute); font-size: 14px; min-height: 1.5em; }
+    .price-note { margin: -8px 0 0; padding-bottom: 20px; border-bottom: 1px solid var(--line); color: var(--mute); font-size: 14px; line-height: 1.5; }
     .price-note b { color: var(--fg); }
-    .plan ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
-    .plan li { display: grid; grid-template-columns: 20px 1fr; gap: 10px; line-height: 1.45; }
+    .plan ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+    .plan li { display: grid; grid-template-columns: 18px 1fr; gap: 12px; font-size: 15px; line-height: 1.45; }
     .plan li svg { width: 18px; height: 18px; margin-top: 2px; }
-    .plan li small { display: block; color: var(--mute); }
-    .plan .cta { margin-top: auto; display: grid; gap: 8px; }
+    .plan li small { display: block; margin-top: 3px; color: var(--mute); font-size: 13px; line-height: 1.45; }
+    .plan .cta { margin-top: auto; padding-top: 8px; display: grid; gap: 10px; }
     .plan .cta .btn { width: 100%; }
     .plan .cta .btn[aria-disabled="true"] { opacity: .55; cursor: not-allowed; transform: none; }
     .plan .cta p { margin: 0; color: var(--mute); font-size: 13px; text-align: center; line-height: 1.45; }
     .notify label { display: block; font-size: 14px; color: var(--mute); margin-bottom: 8px; text-align: center; }
-    .notify-row { display: flex; gap: 8px; }
+    .notify-row { display: flex; flex-direction: column; gap: 10px; }
     .notify-row input { flex: 1; min-width: 0; padding: 12px 16px; border-radius: 999px; border: 1px solid var(--line-strong); background: var(--inset); color: var(--fg); font: 15px var(--sans); }
-    .notify-row .btn { width: auto !important; }
+    .notify-row .btn { width: 100% !important; }
     .notify p { margin: 8px 0 0; color: var(--mute); font-size: 13px; text-align: center; }
     .notify p a { color: inherit; }
-    @media (max-width: 760px) { .notify-row { flex-direction: column; } .notify-row .btn { width: 100% !important; } }
     .current { font: 600 11px var(--sans); text-transform: uppercase; letter-spacing: .08em; padding: 3px 9px; border-radius: 99px; border: 1px solid var(--line-strong); color: var(--fg); }
 
-    section.more { max-width: 980px; margin: 56px auto 0; }
-    section.more h2 { font-size: 26px; letter-spacing: -.02em; margin: 0 0 6px; }
-    section.more > p { color: var(--mute); margin: 0 0 18px; line-height: 1.55; }
+    section.more { max-width: 980px; margin: 80px auto 0; }
+    section.more h2 { font-size: 28px; line-height: 1.2; letter-spacing: -.02em; margin: 0 0 8px; }
+    section.more > p { color: var(--mute); margin: 0 0 22px; line-height: 1.6; }
     .table-wrap { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--line); background: var(--panel); }
     table { width: 100%; border-collapse: collapse; font-size: 15px; }
     th, td { text-align: left; padding: 13px 16px; border-bottom: 1px solid var(--line); }
@@ -67,12 +71,15 @@
     td.n { font-variant-numeric: tabular-nums; white-space: nowrap; }
     tbody th { font-weight: 500; }
     .faq { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-    .faq details { padding: 16px 18px; border-radius: var(--radius); }
-    .faq summary { cursor: pointer; font-weight: 600; line-height: 1.4; }
-    .faq details p { color: var(--mute); line-height: 1.55; margin: 10px 0 0; }
-    .foot { max-width: 980px; margin: 56px auto 32px; padding-top: 18px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 8px 22px; justify-content: space-between; color: var(--mute); font-size: 14px; }
+    .faq details { padding: 18px 20px; border-radius: var(--radius); }
+    .faq summary { cursor: pointer; font-weight: 600; line-height: 1.4; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; flex: none; color: var(--mute); font-weight: 400; font-size: 20px; line-height: 1; transition: transform .2s; }
+    .faq details[open] summary::after { transform: rotate(45deg); }
+    .faq details p { color: var(--mute); line-height: 1.6; margin: 12px 0 0; }
+    .foot { max-width: 980px; margin: 72px auto 32px; padding-top: 18px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 8px 22px; justify-content: space-between; color: var(--mute); font-size: 14px; }
     .foot a { color: inherit; }
-    @media (max-width: 1020px) { .plans { grid-template-columns: 1fr; max-width: 560px; } }
+    @media (max-width: 1020px) { .plans { grid-template-columns: 1fr; max-width: 560px; gap: 28px; } .plan .head { min-height: 0; } }
     @media (max-width: 760px) { .faq { grid-template-columns: 1fr; } .plan { padding: 22px; } main { padding-top: 32px; } }
   </style>
 </head>
@@ -106,7 +113,7 @@
 
       <div class="plans">
         <article class="plan glass" aria-labelledby="free-h">
-          <div>
+          <div class="head">
             <span class="tag">Learn with Gradify</span>
             <h2 id="free-h">Free <span class="current" id="free-current" hidden>Your plan</span></h2>
           </div>
@@ -117,19 +124,20 @@
         </article>
 
         <article class="plan plus" aria-labelledby="plus-h">
-          <div>
-            <span class="tag">Gradify organises, optimises and manages your learning</span>
+          <span class="popular">Most popular</span>
+          <div class="head">
+            <span class="tag">Gradify runs your learning</span>
             <h2 id="plus-h">Gradify Plus <span class="current" id="plus-current" hidden>Your plan</span></h2>
           </div>
           <div class="price"><span class="amt" id="plus-amt"></span><span class="per">a month</span></div>
           <p class="price-note">Everything in Free, plus:</p>
-          <div id="plus-list"></div>
+          <div class="groups" id="plus-list"></div>
           <div class="cta" id="plus-cta"></div>
         </article>
 
         <article class="plan glass" aria-labelledby="pro-h">
-          <div>
-            <span class="tag">Everything in Plus, with Gradify AI</span>
+          <div class="head">
+            <span class="tag">Plus, with Gradify AI</span>
             <h2 id="pro-h">Gradify Pro <span class="soon" id="pro-soon">Coming soon</span><span class="current" id="pro-current" hidden>Your plan</span></h2>
           </div>
           <div class="price"><span class="amt" id="pro-amt"></span><span class="per">a month</span></div>
@@ -190,16 +198,15 @@
       li(tick, `Tools: each ${FREE.tool} times`, "Lesson search, the mind map and flashcard creators, and the notes converter"),
       li(tick, "Basic revision and progress", "Due cards, streaks, XP and the Gradify road"),
       li(tick, "Manual study planning"),
-      li(tick, "One study device", "Your work is kept in your account and you can look at it anywhere; you study on one device at a time, and can move it once a week"),
+      li(tick, "One study device", "View your work anywhere; switch study device once a week"),
       li(spark, "A taste of Gradify AI, when it launches", AI_ALLOWANCES.map((a) => uses(a, a.free)).join(" · ") + " a month"),
     ].join("");
-    const group = (title, items) => `<h4>${esc(title)}</h4><ul>${items.map(([t, sub]) => li(tick, esc(t), sub ? esc(sub) : "")).join("")}</ul>`;
+    const group = (title, items) => `<div class="group"><h4>${esc(title)}</h4><ul>${items.map(([t, sub]) => li(tick, esc(t), sub ? esc(sub) : "")).join("")}</ul></div>`;
     $("#plus-list").innerHTML = [
-      group("No limits", [["Every lesson in every course"], ["Every flashcard set and mind map"], ["Every tool, as often as you like", "Lesson search, the mind map and flashcard creators, and the notes converter"]]),
-      group("Gradify Intelligence", [["Smart Plan autopilot", "Your week planned and kept on track for you"], ["Readiness forecasts"], ["Cards ordered by Gradify", "What matters most and is fading comes first"], ["Adaptive card suggestions and revision recommendations"]]),
-      group("Exam preparation", [["Timed exams", "Over each part of a course and the whole course, with weak areas identified"], ["The complete question bank for every course"]]),
-      group("Calendar and productivity", [["Calendar sync", "Plan around Google, Apple or Outlook calendars and your timetable, and export your plan to them"], ["Reminders, even when Gradify is closed"], ["Automatic study-block scheduling"]]),
-      group("Every device", [["Study on all your devices", "Notes, flashcards, mind maps, progress and revision history, up to date everywhere"]]),
+      group("No limits", [["Every lesson in every course"], ["Unlimited flashcard sets and mind maps"], ["Every tool, as often as you like"]]),
+      group("Gradify Intelligence", [["Smart Plan autopilot", "Your week planned and kept on track"], ["Readiness forecasts"], ["Cards ordered by what's fading"], ["Adaptive revision recommendations"]]),
+      group("Exam preparation", [["Timed exams that find your weak areas"], ["The complete question bank"]]),
+      group("Calendar and devices", [["Google, Apple and Outlook calendar sync"], ["Reminders, even when Gradify is closed"], ["Automatic study-block scheduling"], ["Study on all your devices, always in sync"]]),
     ].join("");
     $("#pro-list").innerHTML = [
       li(spark, "Gradify AI", "Coming soon"),
