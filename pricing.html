@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Pricing · Gradify</title>
-  <meta name="description" content="Every Gradify course, lesson, lab and quiz is free. Gradify Ultra adds generous Gradify AI for £7.99 a month or £63.99 a year.">
+  <meta name="description" content="Every Gradify course, lesson, lab and quiz is free. Gradify Pro organises and manages your learning for £10 a month. Gradify Ultra adds Gradify AI.">
   <meta property="og:title" content="Gradify pricing">
-  <meta property="og:description" content="Learn free. Go further with Gradify Ultra.">
+  <meta property="og:description" content="Learn free. Let Gradify Pro organise your learning.">
   <meta name="theme-color" content="#000000">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,6 +25,11 @@
     .notice .ic { flex: none; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font: 700 13px var(--sans); background: rgba(255, 255, 255, .1); }
     .notice.ok { border-color: #5fe3a166; } .notice.ok .ic { background: #5fe3a1; color: #000; }
     .notice.warn { border-color: #ffc00266; } .notice.warn .ic { background: #ffc002; color: #000; }
+    .offer-banner { max-width: 900px; margin: 0 auto 24px; padding: 2px; border-radius: 20px; background: linear-gradient(135deg, #4641ff, #f055dd 35%, #ff5600 70%, #ffc002); }
+    .offer-banner > div { border-radius: 18px; background: #0b0b0e; padding: 20px 22px; display: grid; gap: 6px; }
+    .offer-banner .k { font: 600 12px var(--sans); letter-spacing: 1.5px; text-transform: uppercase; color: #ffc002; }
+    .offer-banner h2 { margin: 0; font-size: 22px; } .offer-banner p { margin: 0; color: var(--mute); line-height: 1.5; }
+    .offer-banner code { font: 700 15px var(--mono, monospace); letter-spacing: 2px; color: #fff; border: 1px dashed #f055dd; border-radius: 8px; padding: 2px 8px; }
 
     .plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; max-width: 1180px; margin: 0 auto; align-items: start; }
     .plan.plus { border: 1px solid transparent; background: linear-gradient(var(--panel-strong), var(--panel-strong)) padding-box, var(--spectrum) border-box; box-shadow: 0 30px 80px -40px rgba(240, 85, 221, .55); }
@@ -102,6 +107,7 @@
         <p>Free is for learning with Gradify. Gradify Pro organises, optimises and manages your learning. Gradify Ultra adds Gradify AI.</p>
       </div>
 
+      <div id="offer" hidden></div>
       <div id="status" aria-live="polite"></div>
 
       <div class="plans">
@@ -170,6 +176,7 @@
     import { PLAN_PRICES, PLUS_ON_SALE, PRO_ON_SALE, AI_ALLOWANCES, uses, planOf, describePlan, clientStore, mySubscription, startCheckout, openPortal } from "/kit/data/billing.js";
     import { FREE } from "/kit/data/limits.js";
     import { pounds } from "/kit/data/plan.js";
+    import { OFFER, captureOffer, offerToShow, offerTerms } from "/kit/data/offer.js";
 
     const $ = (s) => document.querySelector(s);
     const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
@@ -179,6 +186,9 @@
     const tester = new URLSearchParams(location.search).has("tester");
     const canBuy = { plus: PLUS_ON_SALE || tester, pro: PRO_ON_SALE || tester };
     let store = null, sub = null, signedIn = false;
+    // the Pro launch offer, from the campaign link or kept from an earlier visit (kit/data/offer.js)
+    captureOffer();
+    const offer = () => offerToShow({ plan: planOf(sub), includeDismissed: true });
 
     // ---------- the parts that don't depend on the learner ----------
     $("#plus-amt").textContent = pounds(PLAN_PRICES.plus.month);
@@ -230,10 +240,18 @@
       if (current === plan || (current !== "free" && sub && describePlan(sub).manage)) return `<button class="btn ${plan === "plus" ? "btn-primary" : "btn-ghost"} lg" data-manage type="button">Manage billing</button><p>Change plan, update your card, see invoices or cancel.</p>`;
       if (current === "pro" && plan === "plus") return `<p>Included in your Gradify Ultra.</p>`;
       if (!canBuy[plan]) return notifyForm(`notify-${plan}`, plan === "plus" ? PLUS_LIST : PRO_LIST);
-      if (!signedIn) return `<a class="btn ${plan === "plus" ? "btn-primary" : "btn-ghost"} lg" href="/app.html#/account">Sign in to get ${name}</a><p>Sign in first so ${name} is added to your account.</p>`;
+      const o = plan === "plus" && offer();
+      if (!signedIn) return `<a class="btn ${plan === "plus" ? "btn-primary" : "btn-ghost"} lg" href="/app.html#/account">Sign in to get ${name}</a><p>Sign in first so ${name} is added to your account.${o ? " Your £5 offer stays with you." : ""}</p>`;
+      if (o) return `<button class="btn btn-primary lg" data-buy="plus" data-promo="${OFFER.code}" type="button">Get ${name} · £5 first month</button><p>Code ${OFFER.code} is applied at checkout. Then ${pounds(PLAN_PRICES.plus.month)} a month. Cancel any time.</p>`;
       return `<button class="btn ${plan === "plus" ? "btn-primary" : "btn-ghost"} lg" data-buy="${plan}" type="button">Get ${name} · ${pounds(PLAN_PRICES[plan].month)} a month</button><p>Secure checkout by Stripe. Cancel any time.</p>`;
     }
+    function renderOffer() {
+      const o = canBuy.plus && offer(), box = $("#offer");
+      box.hidden = !o;
+      box.innerHTML = o ? `<div class="offer-banner" role="region" aria-label="Launch offer"><div><span class="k">Launch offer · ends ${esc(OFFER.endsLabel)}</span><h2>Your first month of Gradify Pro for £5</h2><p>${esc(offerTerms(PLAN_PRICES.plus.month))} ${signedIn ? `Choose <b>Get Gradify Pro</b> below: code <code>${OFFER.code}</code> is applied for you, and Stripe shows the £5 total before you pay.` : `Sign in or create your free account first (email link or Google). Your offer is kept, and code <code>${OFFER.code}</code> is applied for you at checkout.`}</p></div></div>` : "";
+    }
     function renderCta() {
+      renderOffer();
       const plan = planOf(sub);
       $("#free-current").hidden = !signedIn || plan !== "free";
       $("#plus-current").hidden = plan !== "plus";
@@ -252,7 +270,7 @@
         catch (err) { msg.textContent = err.invalid ? err.message : "Sorry, that didn't work. Please try again in a moment."; input.focus(); }
         finally { btn.disabled = false; }
       }));
-      document.querySelectorAll("[data-buy]").forEach((b) => b.addEventListener("click", (e) => go(e.currentTarget, () => startCheckout(store, b.dataset.buy, "month", "/pricing.html"))));
+      document.querySelectorAll("[data-buy]").forEach((b) => b.addEventListener("click", (e) => go(e.currentTarget, () => startCheckout(store, b.dataset.buy, "month", "/pricing.html", b.dataset.promo))));
       document.querySelectorAll("[data-manage]").forEach((b) => b.addEventListener("click", (e) => go(e.currentTarget, () => openPortal(store, "/pricing.html"))));
     }
 

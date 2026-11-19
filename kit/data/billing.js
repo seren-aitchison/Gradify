@@ -1,4 +1,4 @@
-// Gradify Ultra in the browser: the plan's prices and allowances, the learner's current plan, and the two ways into
+// Gradify's paid plans (Pro and Ultra) in the browser: their prices and allowances, the learner's current plan, and the two ways into
 // Stripe (checkout to subscribe, the portal to manage). Used by pricing.html and the Account page (kit/app/main.js).
 // The server is the authority: public.subscriptions (written only by the billing-webhook function) and is_pro() /
 // ai_claim() in supabase/migrations/20261110120000_billing_and_ai_allowances.sql. planOf() mirrors is_pro() so the
@@ -99,9 +99,11 @@ export async function myAllowance(store) {
 }
 
 const here = () => `${location.pathname}${location.hash || ""}`.replace(/^\/\//, "/");
-/** Send the learner to Stripe Checkout for a plan ("plus" or "pro"), billed monthly. Resolves only on an error. */
-export async function startCheckout(store, plan = "plus", interval = "month", from = here()) {
-  const { url } = await callFunction(store, "billing-checkout", { plan, interval, from }, { fallback: "Checkout couldn't be started. Please try again in a minute." });
+/** Send the learner to Stripe Checkout for a plan ("plus" or "pro"), billed monthly. With a promotion code, checkout
+ *  opens with it applied when Stripe accepts it for this learner, and with "Add promotion code" otherwise.
+ *  Resolves only on an error. */
+export async function startCheckout(store, plan = "plus", interval = "month", from = here(), promo = undefined) {
+  const { url } = await callFunction(store, "billing-checkout", { plan, interval, from, ...(promo ? { promo } : {}) }, { fallback: "Checkout couldn't be started. Please try again in a minute." });
   location.assign(url);
 }
 /** Send the learner to Stripe's billing portal: card, plan, invoices, cancel. */

@@ -1,4 +1,4 @@
-// Gradify Ultra billing helpers shared by the billing-checkout, billing-portal and billing-webhook Edge Functions.
+// Gradify billing helpers (Pro and Ultra) shared by the billing-checkout, billing-portal and billing-webhook Edge Functions.
 // Plain JavaScript with Web Crypto only, so the same code runs in Deno (Supabase) and in Node (tests/billing-stripe.test.mjs).
 // Talks to Stripe's REST API directly; no SDK.
 
@@ -144,6 +144,27 @@ export async function handleStripeEvent(payload, header, deps, opts = {}) {
 }
 
 /** A return path on the Gradify site only ("/x.html#/y"), or the default; never another host. */
+/** A promotion code as a learner could type it, or null: letters, digits, - and _, up to 40 characters. */
+export function cleanPromo(code) {
+  const c = typeof code === "string" ? code.trim().toUpperCase() : "";
+  return /^[A-Z0-9_-]{3,40}$/.test(c) ? c : null;
+}
+
+/**
+ * The Checkout Session's discount fields for a promotion code. Stripe doesn't allow `discounts` together with
+ * `allow_promotion_codes`, so a session either has the code applied, or the "Add promotion code" field. Returns
+ * { discounts } for an active code Stripe knows, else { allow_promotion_codes }. The code's own restrictions
+ * (first-time customers, expiry, which product) are still checked by Stripe when the session is created.
+ */
+export async function promoFields(secret, code, fetchImpl = fetch) {
+  const c = cleanPromo(code);
+  const manual = { allow_promotion_codes: "true" };
+  if (!c) return manual;
+  const found = await stripe(secret, "GET", `/promotion_codes?code=${encodeURIComponent(c)}&active=true&limit=1`, null, fetchImpl).catch(() => null);
+  const promo = found?.data?.[0];
+  return promo?.id ? { discounts: [{ promotion_code: promo.id }] } : manual;
+}
+
 export function safeBack(from, fallback = "/pricing.html") {
   return typeof from === "string" && /^\/(?![\/\\])[^\s\\]*$/.test(from) && from.length < 300 ? from : fallback;
 }
