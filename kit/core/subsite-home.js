@@ -9,6 +9,7 @@ import { applyPrefs } from "../data/profile.js";
 import { trackView } from "./analytics.js";
 import { hydrate as glassIcons, cluster as glassCluster } from "./glass-icons.js";
 import { mountContinue } from "./continue.js";
+import { mountGlobalNav } from "../ui/global-nav.js";
 applyPrefs();
 
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
@@ -64,6 +65,8 @@ export function renderHome(el, siteName) {
     `<section class="sm-cta glass"><h2>${fill(k.ctaTitle)}</h2><p>${fill(k.ctaSub)}</p><div class="sub-ctas"><a class="btn btn-light lg" href="app.html"><span>Start free</span> <span aria-hidden="true">→</span></a><a class="btn btn-ghost lg" href="/"><span>Explore Gradify</span></a></div></section>`,
   ].join("");
   mountContinue(el.querySelector(".sm-continue"), { site: site.n });
+  // ⌘K / "/" search over every Gradify course and lesson, this site's first, with a Search button in the header
+  mountGlobalNav({ site: site.n, button: document.querySelector(".sub-nav .sub-right") });
   glassIcons(el, site.n).catch(() => {});
   glassCluster(el.querySelector(".sm-cluster"), site.n, { count: 10, size: 72 }).catch(() => {});
   el.style.setProperty("--accent", accent);

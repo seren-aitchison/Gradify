@@ -38,7 +38,13 @@
   <script type="module" src="kit/lifeos/os.js"></script>
   <script type="module" src="assets/features.js"></script>
   <script type="module" src="assets/pro.js"></script>
-  <script type="module">import { mountContinue } from "./kit/core/continue.js"; mountContinue(document.getElementById("continue"));</script>
+  <script type="module">
+    // your learning (pins and course cards) and the Gradify-wide search, ⌘K or / from anywhere (kit/ui/global-nav.js)
+    import { mountContinue } from "./kit/core/continue.js";
+    import { mountGlobalNav } from "./kit/ui/global-nav.js";
+    mountContinue(document.getElementById("continue"));
+    mountGlobalNav({ button: document.querySelector(".bar .right") });
+  </script>
 </head>
 <body>
   <div class="aurora" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
