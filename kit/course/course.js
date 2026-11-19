@@ -39,7 +39,7 @@ import { tutorEvent } from "../intel/experiments.js";
 import { scoreFeedback } from "../assess/tutor.js";
 import { feedbackHtml, paras } from "../assess/tutor-view.js";
 import { mountTutorPanel, directorHtml, newConversation } from "./tutor-panel.js";
-import { readLab, labState } from "./lab-state.js";
+import { readLab, labState, labTry as nextLabTry, labLeave } from "./lab-state.js";
 import { SUPABASE_URL } from "../../gradify.config.js";
 import { buildExam, runExam, FORMATS } from "../assess/exam.js";
 import { reviewLabel } from "./review.js";
@@ -64,6 +64,9 @@ import { pref, setPref } from "../ui/prefs.js";
 import { openModal, openDrawer } from "../ui/overlay.js";
 import { tabsHtml, wireTabs } from "../ui/disclosure.js";
 import { feel } from "../ui/feel.js";
+import { CHAPTER_PREREQS, chapterPrereqsFromConcepts } from "../learning/chapter-map.js";
+import { masteryMap } from "../learning/mastery-map.js";
+import { renderMasteryMap } from "../ui/mastery-map-view.js";
 
 const DAY = 864e5;
 const XP = { lesson: 10, check: 5, chest: 15, quiz: 50, perfect: 20, review: 2, problem: 5, weekly: 100 };
@@ -731,7 +734,7 @@ export function mountCourse(root, cfg) {
     const xp = totalXp(), L = levelOf(xp), st = streak(), tx = todayXp(), nl = nextLesson(), c = challenge(), cw = Math.min(c.n, c.of(week()));
     const sw = syncText(storeMode), syncWarn = sw?.warn ? sw.text : null;
     const nu = nl ? byId[nl.id].unit : null, left = nu ? nu.lessons.length - unitDone(nu) : 0;
-    const ring = Math.min(1, tx / S.goal), R = 30, C = 2 * Math.PI * R;
+    const goalP = Math.min(1, tx / S.goal), R = 30, C = 2 * Math.PI * R;
     const got = new Set(earned().map((b) => b.id));
     side.innerHTML = `
       <section class="co-card co-me">
@@ -739,7 +742,7 @@ export function mountCourse(root, cfg) {
         <div><b>${xp.toLocaleString()} XP</b><div class="co-bar"><i style="width:${((xp - L.from) / (L.to - L.from)) * 100}%"></i></div><small>${(L.to - xp).toLocaleString()} XP to level ${L.n + 1}</small></div>
       </section>
       <section class="co-card co-goal">
-        <svg viewBox="0 0 76 76" class="co-ring"><circle cx="38" cy="38" r="${R}" class="bg"/><circle cx="38" cy="38" r="${R}" class="fg" stroke-dasharray="${C}" stroke-dashoffset="${C * (1 - ring)}"/></svg>
+        <svg viewBox="0 0 76 76" class="co-ring"><circle cx="38" cy="38" r="${R}" class="bg"/><circle cx="38" cy="38" r="${R}" class="fg" stroke-dasharray="${C}" stroke-dashoffset="${C * (1 - goalP)}"/></svg>
         <div><span class="co-kicker">Daily goal</span><b>${tx} / ${S.goal} XP</b>
           <small class="co-streak">${ic("flame")} ${st.n}-day streak${st.today ? "" : st.n ? " · learn today to keep it" : ""}${st.rest ? ` · ${st.rest} rest day${st.rest > 1 ? "s" : ""} banked` : ""}</small>
           <select aria-label="Daily goal">${[20, 30, 50, 100].map((g) => `<option value="${g}" ${g === S.goal ? "selected" : ""}>${g} XP a day</option>`).join("")}</select></div>
@@ -999,6 +1002,8 @@ export function mountCourse(root, cfg) {
               : `<p class="co-empty">Answer the check questions in your lessons and Gradify works out, topic by topic, what you know and what needs another look.</p>`}</section>
         </div>
         <div class="cx-col">
+          ${(() => { const tq = missions().filter((q) => q.kind === "topic"); if (!tq.length) return ""; const cur = tq.filter((q) => !q.earlier), q0 = tq[0].quest, got = cur.filter((q) => q.done).length;
+            return `<section class="cx-panel cx-tquest"><div class="cx-sech"><h3>${ic("flag")} Today's topic quest</h3><span class="cx-tqxp">${got} / ${cur.length} · +${q0.xp} XP</span></div><p class="cx-tqname"><b>${esc(q0.topic)}</b> Understand it, remember it, apply it: each step pays only for learning.</p>${missionsHtml("topic", true)}</section>`; })()}
           <section class="cx-panel"><div class="cx-sech"><h3>${ic("target")} Today's missions</h3><a href="/journey.html">Journey →</a></div>${missionsHtml("daily") || `<p class="co-empty">Missions appear once you've started.</p>`}</section>
           <section class="cx-panel"><div class="cx-sech"><h3>${ic("book")} Your course</h3><a href="#/learn">Syllabus →</a></div>
             <div class="cx-course">${ring(all.coverage, 84, 9)}<div><b>${pc(all.coverage)}</b><small>of the course complete</small></div>
@@ -1140,7 +1145,7 @@ export function mountCourse(root, cfg) {
       const pct = Math.round(p * 100);
       if (pct !== pctShown) {
         pctShown = pct;
-        const ring = root.querySelector(".co-rail .fg"); if (ring) ring.style.strokeDashoffset = String(ring.dataset.c * (1 - p));
+        const fg = root.querySelector(".co-rail .fg"); if (fg) fg.style.strokeDashoffset = String(fg.dataset.c * (1 - p));
         const t = root.querySelector(".co-readpct"); if (t) t.textContent = `${pct}% read`;
         if (p >= 0.6) lightStep("read");
       }
@@ -1963,6 +1968,9 @@ export function mountCourse(root, cfg) {
   }
 
   // the topic map: every lesson as a cell, coloured by its status, unit by unit. Completion and mastery side by side.
+  // chapter prerequisites: authored (kit/learning/chapter-map.js), or derived from the course's concept graph
+  const chapterPre = CHAPTER_PREREQS[cfg.slug] || chapterPrereqsFromConcepts(units, cfg.concepts);
+  const courseMastery = () => masteryMap(units.map((u) => ({ n: u.n, id: u.id, title: u.title, lessons: idsOf(u) })), chapterPre, statusOf, (id) => (sigs().get(id)?.right || 0) > 0);
   function topicMapHtml() {
     const all = roll(lessons.map((l) => l.id)), { weak, strong } = strengths(sigs());
     return `<section class="co-panel cx-map"><h3>Topic map</h3>
@@ -1982,6 +1990,7 @@ export function mountCourse(root, cfg) {
     const last14 = Array.from({ length: 14 }, (_, i) => { const d = day(Date.now() - (13 - i) * DAY); return [d, byDay[d] || 0]; }), mx = Math.max(S.goal, ...last14.map((x) => x[1]));
     main.innerHTML = `<div class="co-intro"><span class="co-kicker">My progress</span><h2>Your ${esc(cfg.name)}</h2><p>Everything you've done here, and what's saved to your Gradify account. Your quests, achievements and progress in every subject are on <a href="/journey.html">your journey</a>.</p></div>
       <div class="co-tiles">${[["Level", L.n], ["Total XP", xp.toLocaleString()], ["Day streak", sk.n], ["Best streak", sk.best], ["Lessons", `${st.lessons} / ${lessons.length}`], ["Units cleared", st.units], ["Quizzes passed", st.quizzes], ["Problems solved", st.solved]].map(([k, v]) => `<div><small>${k}</small><b>${v}</b></div>`).join("")}</div>
+      <section class="co-panel cx-mmwrap" id="mastery-map"></section>
       ${topicMapHtml()}
       ${masteryHtml()}
       ${insightHtml()}
@@ -1990,6 +1999,9 @@ export function mountCourse(root, cfg) {
       <section class="co-panel"><h3>${TW}s</h3><div class="co-mastery">${cfg.tracks.map((t) => { const us = t.units.map((n) => units.find((u) => u.n === n)).filter(Boolean), tot = us.reduce((a, u) => a + u.lessons.length, 0), dn = us.reduce((a, u) => a + unitDone(u), 0); return `<div style="--a:${t.from};--b:${t.to}"><span>${esc(t.name)}</span><div class="co-bar"><i style="width:${(dn / tot) * 100}%"></i></div><small>${dn}/${tot}</small></div>`; }).join("")}</div></section>
       <section class="co-panel"><h3>Badges</h3>${[["Understanding", "Earned only from what your answers show you understand and remember. XP can't buy these.", true], ["Activity", "For keeping going: lessons, streaks, reviews and XP.", false]].map(([h, sub, u]) => `<h4>${h}</h4><p class="co-acct">${sub}</p><div class="co-badgelist">${BADGES.filter((b) => !!b.understanding === u).map((b) => `<div class="${b.ok(st) ? "on" : ""}">${ic(b.ok(st) ? "star" : "lock")}<b>${b.name}</b><small>${b.d}</small></div>`).join("")}</div>`).join("")}</section>
       <section class="co-panel co-saved"><h3>Saved to your account</h3>${skeleton("list", 3)}</section>`;
+    // the mastery map (kit/learning/mastery-map.js): how the course fits together, and how far your answers have got
+    renderMasteryMap(main.querySelector("#mastery-map"), courseMastery(), { hrefOf: (x) => `#/learn/${x.id}`, unitWord: U, title: "Your mastery map",
+      intro: `Each ${u1} sits to the right of what it builds on, coloured by what your own answers show. Hover or focus one to see its foundations and what it opens up.` });
     main.querySelector("[data-director]")?.addEventListener("click", async (e) => {
       const out = main.querySelector(".co-dirout"); e.currentTarget.disabled = true; out.innerHTML = `<p class="co-empty">Planning from your progress…</p>`;
       try { out.innerHTML = directorHtml(await askTutor(directorRequest()), { link: (lid) => `#/lesson/${lid}`, titleOf: (lid) => byId[lid]?.title || "" }); }
@@ -2091,11 +2103,17 @@ export function mountCourse(root, cfg) {
   const labDecl = new Map(), labMetNow = new Map(), labTouched = new Set(), labOnOpen = new Map();
   const labDeclared = (x) => labDecl.get(x.id) || labDecl.set(x.id, new Map()).get(x.id);   // kept for the page's life
   const labMet = (x) => labMetNow.get(x.id) || labMetNow.set(x.id, new Set()).get(x.id);     // met this visit
+  // tries at each lab challenge in this sitting, so a success after a failure in the same sitting is a retry, not
+  // first-try evidence (kit/learning/topic-status.js counts first tries only). The sitting ends when the learner goes
+  // somewhere else, not when the page redraws in place (an account sync re-renders the same view). Only scored
+  // outcomes are tries: touching a challenge without finishing it ("attempted") isn't.
+  const labTries = { where: null, counts: new Map() };
   const labRecord = (x, task, label, outcome, extra = {}) => {
     const l = byId[x.evidence?.[task]]; if (!l) return null;
     const ok = outcome === "success" || outcome === "assisted_success";
+    const attempt = nextLabTry(labTries, location.hash.split("/").slice(0, 3).join("/"), `${x.id}:${task}`, outcome);
     record({ Q: { type: "lab", d: 2, objectives: [] }, key: `ix:${x.id}:${task}`, v: null, l }, "practice", x.id,
-      { score: ok ? 1 : 0, correct: ok, method: "auto", status: "final" }, { response: { challenge: label || task, outcome, evidence: EXPLORE.has(`ix:${x.id}:${task}`) ? "exploration" : "practice", ...extra } });
+      { score: ok ? 1 : 0, correct: ok, method: "auto", status: "final" }, { attempt, response: { challenge: label || task, outcome, evidence: EXPLORE.has(`ix:${x.id}:${task}`) ? "exploration" : "practice", ...extra } });
   };
   const endTry = (x) => {
     const t = labTry.get(x.id); labTry.delete(x.id);
@@ -2290,7 +2308,10 @@ export function mountCourse(root, cfg) {
   document.addEventListener("visibilitychange", () => lt.visibility(document.visibilityState === "visible"));
   addEventListener("pagehide", () => lt.stop());
   let routeStop = null;   // a view's own clean-up (the target test's timer)
+  let routedHash = null;
   async function route() {
+    // a real change of place ends a lab sitting; a redraw of the same place (an account sync) doesn't
+    if (location.hash !== routedHash) { routedHash = location.hash; labLeave(labTries); }
     unmountIx();
     lt.stop();
     lessonRail = null; readStop?.(); routeStop?.(); routeStop = null;

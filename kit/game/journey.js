@@ -106,6 +106,7 @@ export async function mountJourney(root, { embedded = false, store = null } = {}
       <div class="gj-cols">
         <div>
           ${questsHtml("Today's quests", Q.filter((q) => q.kind === "daily"))}
+          ${Q.some((q) => q.kind === "topic") ? questsHtml(`Topic quest: ${Q.find((q) => q.kind === "topic").topic}`, Q.filter((q) => q.kind === "topic")) : ""}
           ${questsHtml("This week", Q.filter((q) => q.kind === "weekly"))}
           <section class="gj-card gj-challenge" id="challenge"></section>
           <section class="gj-card"><h2>Subjects</h2>${s.subjects.length ? s.subjects.map((x) => `<a class="gj-subject" href="${COURSES[x.slug]}"><div><b>${esc(x.name)}</b><span class="gj-sub">${esc(x.site)} · ${esc(x.rank.name)} · level ${x.level.n} · ${fmt(x.xp)} XP</span></div>

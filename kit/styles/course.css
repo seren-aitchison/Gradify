@@ -1444,3 +1444,7 @@ html[data-motion="reduce"] .co-main.cx-enter { animation: none; }
 .cx-peek p { margin: 4px 0; } .cx-peek ul { margin: 4px 0; padding-left: 18px; }
 .cx-peekterms { display: flex; flex-wrap: wrap; gap: 6px; } .cx-peekterms span { padding: 2px 8px; border-radius: 999px; background: rgba(var(--ink-rgb), .07); font-size: 12px; }
 .cx-relfoot { margin: 6px 0 0; }
+/* today's topic quest: one topic, three steps (kit/game/quests.js topicQuest) */
+.cx-tquest { border-color: rgba(140, 39, 202, .45); background: radial-gradient(120% 140% at 0% 0%, rgba(140, 39, 202, .14), transparent 60%), rgba(var(--surface-rgb), .5); }
+.cx-tqxp { font: 600 12px var(--mono); color: var(--mute); }
+.cx-tqname { margin: 0 0 10px; font-size: 13.5px; color: var(--mute); } .cx-tqname b { display: block; font-size: 16px; color: var(--fg); }
