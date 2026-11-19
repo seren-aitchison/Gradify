@@ -44,11 +44,16 @@ Decision: no new palette. New work uses these tokens; glass only where something
   → **Feedback moments** (`kit/ui/feel.js`) in courses, with Sounds and Haptics in the Aa panel.
 - The Journey page header lacked the G mark. → fixed.
 
+**Done in the Mastery System round**
+- Chapter prerequisites for every course; the mastery map on Explore and each course's Progress page.
+- Subject-site Earth maps show the learner's course as the world: stages as regions, chapters as places that light up
+  from mastery, mastered chapters as landmarks (instead of example pins).
+- Today's topic quest (Understand / Remember / Apply).
+
 **Incomplete (next)**
-- Concept graphs exist only for Maths; Explore's "builds on / leads to" and the related-topics drawer are richer there.
-- Mastery tree visual per course (the data exists: topic status + concept graph; the topic map is a grid, not a tree).
-- Earth / Tree progression tied to chapters and mastery (LifeOS Tree grows from real activity; Earth regions don't yet
-  develop from chapter completion).
+- Module-level concept graphs still exist only for Maths (topic cards' "builds on" in Explore); chapters are covered
+  for every course.
+- The LifeOS Earth and Tree preview still runs on example data; the subject-site maps are the real ones.
 - Social: friends, groups, private challenges. The community tables exist (`kit/app/community.js`); no learner-facing
   challenges yet. Leaderboards wait for server-side XP (`kit/README.md` known limits).
 - Pins, interface preferences and the notifications history are per device.

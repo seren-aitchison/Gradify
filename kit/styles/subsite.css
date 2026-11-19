@@ -190,6 +190,10 @@
 .map-stats > div { display: flex; align-items: baseline; gap: 8px; padding: 10px 16px; border-radius: 14px; background: rgba(var(--ink-rgb), .04); border: 1px solid var(--line); }
 .map-stats b { font-size: 20px; }
 .map-stats span { font-size: 13px; color: var(--mute); }
+/* a site with several courses: choose which course's world the map shows */
+.map-courses { display: inline-flex; flex-wrap: wrap; gap: 6px; margin-left: 6px; vertical-align: middle; }
+.map-courses button { padding: 4px 11px; border-radius: 999px; border: 1px solid var(--line); background: none; color: var(--mute); font: 500 12.5px var(--sans); cursor: pointer; }
+.map-courses button[aria-pressed="true"] { color: var(--fg); background: rgba(var(--ink-rgb), .1); border-color: var(--line-strong); }
 .map-portals { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; margin: 14px 0 0; font-size: 14px; color: var(--faint); }
 .map-portals a { color: var(--fg); text-decoration: none; }
 .map-portals a:hover { text-decoration: underline; }
