@@ -5,8 +5,9 @@
 //   node scripts/build-search-index.mjs            write kit/data/search-index.json
 //   node scripts/build-search-index.mjs --check    exit 1 if it's out of date (tests/ui.test.mjs runs the same check)
 //
-// Shape: { v: 1, courses: [{ s: slug, n: name, site, u: url, U: unit word,
-//                            units: [[id, n, title, [[lessonId, title, moduleIndex], …], [module titles]]] }] }
+// Shape: { v: 2, courses: [{ s: slug, n: name, site, u: url, U: unit word, T: [stage names],
+//                            units: [[id, n, title, [[lessonId, title, moduleIndex], …], [module titles], stageIndex, blurb]],
+//                            pre?: { "unitId/Module": ["unitId/Module", …] } }] }   (pre: what each topic builds on)
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { COURSES } from "../kit/learning/learner-data.js";
 
@@ -25,11 +26,14 @@ export async function buildIndex() {
         if (l.module) { m = mods.indexOf(l.module); if (m < 0) m = mods.push(l.module) - 1; }
         return m >= 0 ? [l.id, l.title, m] : [l.id, l.title];
       });
-      return [u.id, u.n, u.title, lessons, mods];
+      const ti = (cfg.tracks || []).findIndex((t) => t.units.includes(u.n));
+      return [u.id, u.n, u.title, lessons, mods, ti, cfg.blurbs?.[u.n] || ""];
     });
-    courses.push({ s: slug, n: cfg.name || slug, site: cfg.site || "", u: url, U: cfg.unitWord || "Unit", units });
+    const entry = { s: slug, n: cfg.name || slug, site: cfg.site || "", u: url, U: cfg.unitWord || "Unit", T: (cfg.tracks || []).map((t) => t.name), units };
+    if (cfg.concepts?.modules) entry.pre = cfg.concepts.modules;
+    courses.push(entry);
   }
-  return { v: 1, courses };
+  return { v: 2, courses };
 }
 
 export const serialise = (idx) => `${JSON.stringify(idx)}\n`;
