@@ -98,6 +98,94 @@
     "added M3, M2 and SA3"
    ],
    "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-09",
+   "action": "enhanced",
+   "changes": [
+    "LV, EV",
+    "worked example (Thornton v Shoe Lane)",
+    "added M3, M2 and SA3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-10",
+   "action": "enhanced",
+   "changes": [
+    "LV, EV",
+    "common mistake: implication needs necessity, not reasonableness",
+    "added M3, M2 and SA3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-11",
+   "action": "enhanced",
+   "changes": [
+    "LV, EV",
+    "common mistake on wrongful termination",
+    "added M2 (SGA s 15A) and SA3 (The Hansa Nord)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-12",
+   "action": "enhanced",
+   "changes": [
+    "LV, EV",
+    "worked example; common mistake on collateral contracts; paragraph on why the distinction matters",
+    "added M3, M2 and SA3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-13",
+   "action": "enhanced",
+   "changes": [
+    "LV, EV",
+    "worked example on opinion implying facts; common mistake on half-truths",
+    "added M2 and SA3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-14",
+   "action": "enhanced",
+   "changes": [
+    "LV, EV",
+    "worked example on recklessness; common mistake: carelessness is not fraud",
+    "added M3 (Smith New Court), M2 and SA3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-15",
+   "action": "enhanced",
+   "changes": [
+    "LV, EV",
+    "worked example (Howard Marine v Ogden); common mistake: s 2(1) only against the contracting party",
+    "added M3, M2 and SA3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-16",
+   "action": "enhanced",
+   "changes": [
+    "LV, EV (established and contested: s 2(2) once rescission barred)",
+    "worked example (Leaf); common mistake on s 2(2)",
+    "added M3, M2 and SA3"
+   ],
+   "findings": []
   }
  ],
  "notes": [

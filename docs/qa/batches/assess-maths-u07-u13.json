@@ -729,6 +729,73 @@
    "course": "maths",
    "action": "enhanced",
    "findings": []
+  },
+  {
+   "lesson": "u13-25",
+   "changes": [
+    "LV A level · Application; EV",
+    "added NUM3 and SA3 questions",
+    "lengthened the explanation of an existing NUM1 question (under 20 characters)"
+   ],
+   "findings": [
+    {
+     "class": "curriculum-dependent",
+     "note": "Chi-squared tests are in A level Further Mathematics statistics options, not DfE A level Mathematics; LV says A level."
+    }
+   ],
+   "course": "maths",
+   "action": "enhanced"
+  },
+  {
+   "lesson": "u13-26",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added NUM3 (hypergeometric) and SA3 (lady tasting tea) questions",
+    "lengthened the explanation of an existing NUM1 question (under 20 characters)"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-27",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-28",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added NUM2 and SA2 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-29",
+   "changes": [
+    "LV Year 2 · Application; EV",
+    "added NUM3 (H statistic) and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-30",
+   "changes": [
+    "LV Year 2 · Application; EV",
+    "added NUM2 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
   }
  ],
  "notes": [
