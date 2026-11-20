@@ -62,7 +62,7 @@ export function wireQuestions(el, lookup, onAnswer) {
       if (silent || solved) return;
       attempt++;
       const res = markQuestion(Q, response), out = box.querySelector(".aq-result");
-      out.textContent = res.self ? `Self-assessed: ${Math.round(res.score * 100)}% of the marking points (provisional).` : res.correct ? "Correct." : `Not quite${res.detail ? `: ${res.detail}` : ""}. Here's why, and you can try again.`;
+      out.textContent = res.self ? `Self-assessed: ${Math.round(res.score * 100)}% of the marking points (provisional).` : res.correct ? "Correct." : `Not quite${res.detail ? `: ${res.detail}` : ""}.${box.closest("[data-one-try]") ? " Here's why." : " Here's why, and you can try again."}`;
       out.className = `aq-result ${res.self ? "" : res.correct ? "ok" : "no"}`;
       h.paint(box, Q, response, res);
       box.querySelector(".aq-detail").innerHTML = h.feedback(Q, response, res);

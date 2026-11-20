@@ -1281,7 +1281,9 @@ export function mountCourse(root, cfg) {
     // in-page links scroll smoothly, below the sticky top bar, without changing the course's #/lesson route
     const jump = (e) => {
       const a = e.target.closest("[data-jump]"); if (!a) return;
-      const el = document.getElementById(a.dataset.jump); if (!el) return;
+      // "Check yourself" starts at the first question, which may be the quick check earlier in the lesson
+      const want = a.dataset.jump === "co-check" && document.getElementById("co-quick") ? "co-quick" : a.dataset.jump;
+      const el = document.getElementById(want); if (!el) return;
       e.preventDefault();
       if (el.matches("details")) el.open = true;   // a folded section (Sources) opens as you jump to it
       for (let d = el.closest("details"); d; d = d.parentElement?.closest("details")) d.open = true;
@@ -1398,7 +1400,7 @@ export function mountCourse(root, cfg) {
     pane.innerHTML = tabsHtml("cx-split", tabs, pref(cfg.slug, "splitTab", tabs[0].id));
     notes.after(pane);
     const move = (el, tab) => { if (!el) return; const home = document.createElement("div"); home.dataset.splitHome = el.id; home.hidden = true; el.before(home); pane.querySelector(`#cx-split-p-${tab}`).append(el); };
-    move(check, "check"); move(deeper, "tutor");
+    move(document.getElementById("co-quick"), "check"); move(check, "check"); move(deeper, "tutor");
     pane.querySelector(".cx-splitcards [data-empty-act]")?.addEventListener("click", () => main.querySelector(".co-finish [data-cards], [data-cards]")?.click());
     splitTabs = wireTabs(pane, { scope: cfg.slug, key: "splitTab" });
   }
@@ -1503,7 +1505,7 @@ export function mountCourse(root, cfg) {
       const q1 = main.querySelector("#co-check .co-qn"), secs = main.querySelectorAll(".mv-cols > section");
       if (q1 && nQ > 1 && secs.length > 2) {
         const at = secs[Math.min(1, secs.length - 1)];
-        at.insertAdjacentHTML("afterend", `<section class="co-check co-quick" aria-label="Quick check"><h3 class="co-part">${ic("bolt")} Quick check</h3></section>`);
+        at.insertAdjacentHTML("afterend", `<section class="co-check co-quick" id="co-quick" aria-label="Quick check"><h3 class="co-part">${ic("bolt")} Quick check</h3></section>`);
         at.nextElementSibling.append(q1);
       }
     }
@@ -1739,7 +1741,7 @@ export function mountCourse(root, cfg) {
     const step = () => {
       if (k >= qs.length) return finish();
       const it = qs[k];
-      main.innerHTML = `<div class="co-quiz" style="--a:${t.from};--b:${t.to}"><div class="co-crumbs"><a href="#/learn/${u.id}">← ${U} ${u.n}: ${esc(u.title)}</a><span>Question ${k + 1} of ${qs.length} · ${score} right</span></div>
+      main.innerHTML = `<div class="co-quiz" data-one-try style="--a:${t.from};--b:${t.to}"><div class="co-crumbs"><a href="#/learn/${u.id}">← ${U} ${u.n}: ${esc(u.title)}</a><span>Question ${k + 1} of ${qs.length} · ${score} right</span></div>
         <div class="co-qbar"><i style="width:${(k / qs.length) * 100}%"></i></div>
         <div class="co-panel">${qHtml(it)}<p class="co-from">From: <a href="#/lesson/${it.l.id}">${esc(it.l.title)}</a></p><button class="btn btn-light lg btn-sm co-nextq" hidden><span>${k < qs.length - 1 ? "Next question →" : "See your score"}</span></button></div></div>`;
       // one try per quiz question: the first answer counts, then the explanation and the next button show
@@ -1913,7 +1915,7 @@ export function mountCourse(root, cfg) {
     const step = () => {
       if (k >= items.length || (over && k > 0 && rows.length === k)) return finish();
       const it = items[k];
-      main.innerHTML = `<div class="co-quiz cx-ttrun"><div class="cx-tthead"><a href="#/revise">${ic("left")} Revise</a><span class="co-kicker">Target test · ${FOCUS[c.focus].label} · ${esc(scopeLabel)}</span><span class="cx-timer" aria-label="Time left"></span></div>
+      main.innerHTML = `<div class="co-quiz cx-ttrun" data-one-try><div class="cx-tthead"><a href="#/revise">${ic("left")} Revise</a><span class="co-kicker">Target test · ${FOCUS[c.focus].label} · ${esc(scopeLabel)}</span><span class="cx-timer" aria-label="Time left"></span></div>
         <div class="co-qbar"><i style="width:${(k / items.length) * 100}%"></i></div>
         <div class="cx-ttmeta"><span>Question ${k + 1} of ${items.length}</span><span>${right} right</span>${run >= 2 ? `<span class="cx-combo">${ic("flame")} ${run} in a row</span>` : ""}</div>
         <div class="co-panel">${qHtml(it)}<p class="co-from" hidden>From: <a href="#/lesson/${it.l.id}">${esc(it.l.title)}</a> · ${dot(statusOf(it.l.id))} ${STATUS[statusOf(it.l.id)].label}</p><button class="btn btn-light lg btn-sm co-nextq" hidden><span>${k < items.length - 1 && !over ? "Next question →" : "See your results"}</span></button></div></div>`;
@@ -2399,7 +2401,7 @@ export function mountCourse(root, cfg) {
     const count = (f) => units.filter(f).reduce((a, u) => a + u.lessons.length, 0);
     main.innerHTML = `<section class="co-hero" style="--a:${t0.from};--b:${cfg.tracks.at(-1).to}">
         <div class="co-herotext"><h2>${esc(O.headline || cfg.name)}</h2><p>${esc(O.intro)}</p>
-          <div class="co-row co-herogo">${nl ? `<a class="btn btn-light lg co-start1" href="#/lesson/${nl.id}"><span>${ic("play")} ${started ? `Continue: ${esc(nl.title)}` : `Start the first lesson`}</span></a>` : ""}<a class="co-link co-pathlink" href="#/paths">or choose a path</a></div>
+          <div class="co-row co-herogo">${(() => { const rl = started ? resumeLesson() || nl : nl; return rl ? `<a class="btn btn-light lg co-start1" href="${started ? resumeHref(rl) : `#/lesson/${rl.id}`}"><span>${ic("play")} ${started ? `Continue: ${esc(rl.title)}` : `Start the first lesson`}</span></a>` : ""; })()}<a class="co-link co-pathlink" href="#/paths">or choose a path</a></div>
           <p class="co-herosmall">${units.length} ${u1}s · ${lessons.length.toLocaleString()} lessons${ixs.length ? ` · ${ixs.length} interactives` : ""}${nl && !started ? ` · first lesson: ${esc(nl.title)}` : ""}</p></div>
       </section>
       <section class="co-osec co-findsec"><label class="co-bigsearch">${ic("search")}<input type="search" placeholder="Search ${lessons.length.toLocaleString()} lessons${ixs.length ? ` and ${ixs.length} interactives` : ""}" aria-label="Search ${esc(cfg.name)}"><div class="co-results" hidden></div></label></section>

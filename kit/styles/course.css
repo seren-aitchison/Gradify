@@ -2134,11 +2134,12 @@ body.has-gai .gx-totop { bottom: calc(84px + env(safe-area-inset-bottom)); }
 
 /* the progress rail on phones: a slim strip above the dock, shown while you pause; never over the text */
 @media (max-width: 1020px) {
-  .co-reading .cx-rings { top: auto; bottom: calc(86px + env(safe-area-inset-bottom)); right: 50%; translate: 50% 0; flex-direction: row; gap: 14px; padding: 6px 14px; border-radius: 99px; }
+  /* in the flow, not floating: a row of rings after the lesson, so it never sits over the text you're reading */
+  .co-reading .cx-rings { position: static; translate: none; transform: none; opacity: 1; margin: 18px auto 0; width: max-content; max-width: 100%; flex-direction: row; gap: 14px; padding: 8px 16px; border-radius: 99px; }
   .co-reading .cx-rings .cx-rri { width: 28px; height: 28px; }
   .co-reading .cx-rings .cx-rri .co-ic { width: 12px; height: 12px; }
   .co-reading .cx-rr { grid-template-columns: auto auto; align-items: center; column-gap: 6px; }
-  .co-reading .cx-rr b { font-size: 12px; } .co-reading .cx-rr small { display: none; }
+  .co-reading .cx-rr b { font-size: 12px; } .co-reading .cx-rr small { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
   .co-reading .cx-rr .cx-rri { grid-row: span 1; }
 }
 
