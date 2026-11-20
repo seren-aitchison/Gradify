@@ -644,7 +644,7 @@ Q: What is flowing rhythm? | Curving, organic repetition, like waves.
 Q: How does rhythm differ from pattern? | Pattern is about the repeated unit across a surface; rhythm is about the felt beat and the movement it creates.
 Q: What is compositional movement? | The path the eye follows through a work, steered by lines, edges, gazes, colour and contrast.
 Q: Name three ways artists suggest depicted motion. | Any three: diagonals, blur, repeated positions and lines of force.
-Q: What did Muybridge's 1878 photographs show about a galloping horse? | At one moment all four hooves are off the ground, gathered beneath the body rather than outstretched.
+Q: What did Eadweard Muybridge's photographic sequences of the 1870s–1880s show? | The successive phases of a horse's gallop.
 Q: Why is it a mistake to confuse movement with action in the subject? | A still life can have strong compositional movement, while a picture of a runner can feel static if its lines are horizontal and forms evenly spaced.
 Q: How can an architect use a break in rhythm on a façade? | A break, such as a larger central entrance among regular bays, creates emphasis.
 
