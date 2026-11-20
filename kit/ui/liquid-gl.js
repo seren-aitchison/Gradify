@@ -108,8 +108,11 @@ export function start() {
   const canvas = document.createElement("canvas");
   const gl = canvas.getContext("webgl", { antialias: false, alpha: false, powerPreference: "low-power" });
   const pref = (() => { try { return localStorage.getItem("gradify.glass"); } catch { return null; } })();
-  const ok = allowed({ webgl: gl, reducedTransparency: matchMedia("(prefers-reduced-transparency: reduce)").matches, highContrast: root.getAttribute("data-a-contrast") === "high" || matchMedia("(prefers-contrast: more)").matches, saveData: !!navigator.connection?.saveData, pref });
-  if (!ok) return null;
+  const mqT = matchMedia("(prefers-reduced-transparency: reduce)"), mqC = matchMedia("(prefers-contrast: more)");
+  // the reading-size setting zooms <body>; a canvas inside it would be scaled twice, so keep the CSS glass then
+  const zoomed = () => { const z = parseFloat(getComputedStyle(document.body).zoom); return !!z && Math.abs(z - 1) > .01; };
+  const ok = allowed({ webgl: gl, reducedTransparency: mqT.matches, highContrast: root.getAttribute("data-a-contrast") === "high" || mqC.matches, saveData: !!navigator.connection?.saveData, pref });
+  if (!ok || zoomed()) return null;
   // software rendering (no GPU: SwiftShader, llvmpipe, a VM) can't draw this smoothly: keep the CSS glass, at no cost
   const dbg = gl.getExtension("WEBGL_debug_renderer_info"), gpu = dbg ? String(gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL)) : "";
   if (pref !== "force" && softwareRenderer(gpu)) return null;
@@ -137,12 +140,12 @@ export function start() {
   root.classList.add("lgl");
 
   const DPR = () => Math.min(devicePixelRatio || 1, matchMedia("(pointer: coarse)").matches ? 1 : 1.25);
-  let els = [], light = [-0.55, -0.83], dirty = true, pending = false, busyUntil = 0, colours = null;
+  let els = [], stopped = false, raf = 0, light = [-0.55, -0.83], dirty = true, pending = false, busyUntil = 0, colours = null;
   const rects = new Float32Array(MAX * 4), props = new Float32Array(MAX * 4);
 
   // the boxes that are glass right now (cheap: re-run only when the page changes)
   const collect = () => {
-    for (const e of els) if (!e.isConnected) e.removeAttribute("data-lg");
+    const prev = els;
     // a box inside something that paints its own solid background (the app pictured on the homepage, a modal) can't
     // show the canvas behind it: it keeps its CSS glass
     const solid = (e) => { for (let a = e.parentElement; a && a !== document.body; a = a.parentElement) {
@@ -150,7 +153,9 @@ export function start() {
       const cs = getComputedStyle(a), m = cs.backgroundColor.match(/rgba?\(([^)]+)\)/), alpha = m ? (m[1].split(/[ ,/]+/)[3] ?? 1) : 0;
       if (+alpha > .6 || (cs.backgroundImage !== "none" && !/url\(/.test(cs.backgroundImage))) return true; } return false; };
     els = [...document.querySelectorAll(GLASS)].filter((e) => !e.closest(NEVER) && !e.matches(NEVER));
-    els = els.filter((e) => { const keep = !solid(e); if (!keep) e.removeAttribute("data-lg"); return keep; });
+    els = els.filter((e) => !solid(e));
+    // boxes that left the set (removed, moved under a dark island, now over a solid parent) get their CSS glass back
+    const now = new Set(els); for (const e of prev) if (!now.has(e)) { e.removeAttribute("data-lg"); e.removeAttribute("data-lg-cap"); e.querySelector(":scope > .lgl-cap")?.remove(); }
     for (const e of els) {
       e.setAttribute("data-lg", "");
       const cs = getComputedStyle(e), sticky = cs.position === "fixed" || cs.position === "sticky";
@@ -171,18 +176,21 @@ export function start() {
   };
 
   const draw = () => {
-    pending = false;
+    pending = false; raf = 0;
+    if (stopped) return;
     const dpr = DPR(), W = Math.round(innerWidth * dpr), H = Math.round(innerHeight * dpr);
     if (canvas.width !== W || canvas.height !== H) { canvas.width = W; canvas.height = H; }
     if (dirty) { collect(); readColours(); dirty = false; }
     // the surfaces on screen, outermost (and earliest) first, so nested glass draws over its parent
     let k = 0; const caps = [];
     for (const e of els) {
-      if (k >= MAX) break;
       const r = e.getBoundingClientRect();
       if (r.width < 8 || r.height < 8 || r.bottom < -40 || r.top > innerHeight + 40 || r.right < -40 || r.left > innerWidth + 40) continue;
       const cs = getComputedStyle(e);
       if (cs.visibility === "hidden" || +cs.opacity < .05) continue;
+      // past the drawing limit: this box keeps its CSS glass rather than going see-through
+      if (k >= MAX) { e.removeAttribute("data-lg"); continue; }
+      if (!e.hasAttribute("data-lg")) e.setAttribute("data-lg", "");
       const hw = r.width / 2, hh = r.height / 2, rad = Math.min(parseFloat(cs.borderTopLeftRadius) || 0, hw, hh);
       const big = r.width * r.height > innerWidth * innerHeight * .25;
       rects.set([(r.left + hw) * dpr, (r.top + hh) * dpr, hw * dpr, hh * dpr], k * 4);
@@ -206,39 +214,49 @@ export function start() {
     }
     if (performance.now() < busyUntil) kick();
   };
-  const kick = () => { if (!pending) { pending = true; requestAnimationFrame(draw); } };
+  const kick = () => { if (!pending && !stopped) { pending = true; raf = requestAnimationFrame(draw); } };
   const busy = (ms) => { busyUntil = Math.max(busyUntil, performance.now() + ms); kick(); };
 
   // too slow here (an old phone, software rendering): give the page back to the CSS glass
   let frames = 0, spent = 0;
   // a few frames, timed; one slow frame is enough to hand back to the CSS glass, so a slow device never stalls
-  const probe = () => { const t = performance.now(); draw(); gl.finish(); const ms = performance.now() - t; spent += ms; frames++;
+  const probe = () => { if (stopped) return; const t = performance.now(); draw(); gl.finish(); const ms = performance.now() - t; spent += ms; frames++;
     if (pref !== "force" && (ms > 45 || (frames >= 4 && spent / frames > 22))) return stop();
     if (frames < 4) requestAnimationFrame(probe); };
 
-  addEventListener("scroll", kick, { passive: true, capture: true });
-  addEventListener("resize", () => { dirty = true; kick(); });
-  addEventListener("hashchange", () => { dirty = true; busy(900); });
+  const ac = new AbortController(), sig = { signal: ac.signal };
+  addEventListener("scroll", kick, { passive: true, capture: true, ...sig });
+  addEventListener("resize", () => { dirty = true; kick(); }, sig);
+  addEventListener("hashchange", () => { dirty = true; busy(900); }, sig);
+  // a GPU reset or an evicted context: the CSS glass takes over again
+  canvas.addEventListener("webglcontextlost", () => stop(), sig);
   if (matchMedia("(pointer: fine)").matches) addEventListener("pointermove", (e) => {
     // the light sits towards the pointer, seen from the middle of the window
     const x = e.clientX / innerWidth - .5, y = e.clientY / innerHeight - .5, l = Math.hypot(x, y) || 1;
     light = [x / l * .85 - .15, y / l * .85 - .25]; const m = Math.hypot(...light) || 1; light = [light[0] / m, light[1] / m]; kick();
-  }, { passive: true });
+  }, { passive: true, ...sig });
   let mt = 0;
-  const mo = new MutationObserver(() => { clearTimeout(mt); mt = setTimeout(() => { dirty = true; busy(700); }, 60); });
+  const mo = new MutationObserver(() => { if (stopped) return; clearTimeout(mt); mt = setTimeout(() => { dirty = true; busy(700); }, 60); });
   mo.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["class", "open", "hidden", "style"] });
   const to = new MutationObserver(() => { dirty = true; kick(); });
   to.observe(root, { attributes: true, attributeFilter: ["data-theme", "data-a-contrast"] });
-  addEventListener("visibilitychange", () => { if (!document.hidden) kick(); });
-  // reduced transparency or high contrast chosen later: stop and hand back
-  const watch = () => { if (root.getAttribute("data-a-contrast") === "high") stop(); };
-  to.observe(root, { attributes: true, attributeFilter: ["data-a-contrast"] }); document.addEventListener("gradify:access", watch);
+  addEventListener("visibilitychange", () => { if (!document.hidden) kick(); }, sig);
+  // reduced transparency, more contrast or a bigger reading size chosen later: stop and hand back;
+  // any other reading setting moves the boxes, so measure again once it has applied
+  const watch = () => {
+    if (root.getAttribute("data-a-contrast") === "high" || mqT.matches || mqC.matches || zoomed()) return stop();
+    requestAnimationFrame(() => { dirty = true; busy(300); });
+  };
+  document.addEventListener("gradify:access", watch, sig);
+  mqT.addEventListener("change", watch, sig); mqC.addEventListener("change", watch, sig);
 
   function stop() {
-    mo.disconnect(); to.disconnect(); root.classList.remove("lgl"); canvas.remove(); style.remove();
+    if (stopped) return; stopped = true;
+    ac.abort(); mo.disconnect(); to.disconnect(); clearTimeout(mt); if (raf) cancelAnimationFrame(raf);
+    root.classList.remove("lgl"); canvas.remove(); style.remove();
     document.querySelectorAll("[data-lg]").forEach((e) => { e.removeAttribute("data-lg"); e.removeAttribute("data-lg-cap"); });
     document.querySelectorAll(".lgl-cap").forEach((c) => c.remove());
-    removeEventListener("scroll", kick, { capture: true });
+    els = [];
   }
   busy(1600);   // entrance animations move things for a moment
   requestAnimationFrame(probe);

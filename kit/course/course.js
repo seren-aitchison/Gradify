@@ -2075,8 +2075,9 @@ export function mountCourse(root, cfg) {
   async function viewMe() {
     const st = stats(), xp = st.xp, L = levelOf(xp), sk = streak();
     const byDay = {}; for (const r of S.log) byDay[day(r.t)] = (byDay[day(r.t)] || 0) + r.xp;
-    const weeks = 18, start = weekStart() - (weeks - 1) * 7 * DAY;
-    const cells = Array.from({ length: weeks * 7 }, (_, i) => { const t = start + i * DAY, d = day(t), v = byDay[d] || 0; return t > Date.now() ? "<i class=future></i>" : `<button style="--v:${Math.min(1, v / Math.max(S.goal, 1))}" data-day="${d}" title="${d}: ${v} XP"></button>`; }).join("");
+    // calendar days, not fixed 24h steps, so a clock change never shifts a day under the wrong weekday
+    const weeks = 18, start = weekStart(), at = (n) => { const d = new Date(start); d.setDate(d.getDate() + n - (weeks - 1) * 7); return d.getTime(); };
+    const cells = Array.from({ length: weeks * 7 }, (_, i) => { const t = at(i), d = day(t), v = byDay[d] || 0; return t > Date.now() ? "<i class=future></i>" : `<button style="--v:${Math.min(1, v / Math.max(S.goal, 1))}" data-day="${d}" title="${d}: ${v} XP"></button>`; }).join("");
     const last14 = Array.from({ length: 14 }, (_, i) => { const d = day(Date.now() - (13 - i) * DAY); return [d, byDay[d] || 0]; }), mx = Math.max(S.goal, ...last14.map((x) => x[1]));
     main.innerHTML = `<div class="co-intro"><span class="co-kicker">My progress</span><h2>Your ${esc(cfg.name)}</h2><p>Everything you've done here, and what's saved to your Gradify account. Your quests, achievements and progress in every subject are on <a href="/journey.html">your journey</a>.</p></div>
       <div class="co-tiles">${[["Level", L.n], ["Total XP", xp.toLocaleString()], ["Day streak", sk.n], ["Best streak", sk.best], ["Lessons", `${st.lessons} / ${lessons.length}`], ["Units cleared", st.units], ["Quizzes passed", st.quizzes], ["Problems solved", st.solved]].map(([k, v]) => `<div><small>${k}</small><b>${v}</b></div>`).join("")}</div>
@@ -2086,7 +2087,7 @@ export function mountCourse(root, cfg) {
       ${insightHtml()}
       <section class="co-panel cx-activity"><div class="cx-acth"><h3>Activity</h3><span>${Object.keys(byDay).length} day${Object.keys(byDay).length === 1 ? "" : "s"} learning · best streak ${sk.best}</span></div>
         <div class="cx-heatwrap"><div class="cx-heatwd" aria-hidden="true">${["Mon", "", "Wed", "", "Fri", "", "Sun"].map((x) => `<small>${x}</small>`).join("")}</div>
-        <div><div class="cx-heatm" aria-hidden="true">${Array.from({ length: weeks }, (_, w) => { const t = start + w * 7 * DAY, d = new Date(t), prev = new Date(t - 7 * DAY); return `<small>${w === 0 || d.getMonth() !== prev.getMonth() ? d.toLocaleDateString(undefined, { month: "short" }) : ""}</small>`; }).join("")}</div>
+        <div><div class="cx-heatm" aria-hidden="true">${Array.from({ length: weeks }, (_, w) => { const d = new Date(at(w * 7)), prev = new Date(at(w * 7 - 7)); return `<small>${w === 0 || d.getMonth() !== prev.getMonth() ? d.toLocaleDateString(undefined, { month: "short" }) : ""}</small>`; }).join("")}</div>
         <div class="co-heat">${cells}</div></div></div>
         <div class="cx-heatkey" aria-hidden="true"><small>Less</small>${[0, .25, .5, .75, 1].map((v) => `<i style="--v:${v}"></i>`).join("")}<small>Goal met</small></div>
         <p class="co-dayinfo">Pick a day to see what you did.</p></section>
