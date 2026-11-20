@@ -15,11 +15,31 @@
   <link rel="stylesheet" href="../kit/styles/base.css">
   <script src="../kit/core/theme-boot.js"></script>
   <link rel="stylesheet" href="../kit/styles/components.css">
+  <link rel="stylesheet" href="../kit/styles/subsite.css">
   <script type="module" src="../kit/lifeos/lifeos.js"></script>
   <script type="module" src="../kit/lifeos/os.js"></script>
 </head>
 <body>
   <div class="aurora" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="wrap">
+    <!-- sub-header: written by scripts/sync-headers.mjs; edit it there -->
+    <header class="sub-nav glass">
+      <a class="sub-brand" href="./"><span class="icon"></span><span data-site-name>FinanceGradify</span></a>
+      <nav class="sub-links" aria-label="FinanceGradify">
+        <a href="course/">Course</a>
+        <a href="app.html#/study">Study</a>
+        <a href="map.html">Map</a>
+        <a href="lifeos.html" aria-current="page">LifeOS</a>
+        <details class="sub-more"><summary>More</summary><div class="sub-more-list"><a href="app.html#/notes">Notes</a><a href="app.html#/progress">Progress</a><a href="app.html#/plan">Plan</a><a href="/">All Gradify sites</a></div></details>
+      </nav>
+      <div class="sub-right">
+        <a class="signin" href="app.html#/account">Sign in</a>
+        <a class="btn btn-light lg btn-sm sub-cta" href="app.html"><span>Start free</span></a>
+      </div>
+    </header>
+    <script type="module" src="../kit/core/subheader.js"></script>
+    <!-- /sub-header -->
+  </div>
   <main class="wrap">
     <section class="lifeos" id="lifeos" aria-labelledby="lifeos-title">
       <div class="life-head">

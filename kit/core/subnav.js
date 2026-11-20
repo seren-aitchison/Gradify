@@ -1,7 +1,9 @@
 // The sub-site header on phones and tablets. Below 960px the header's links are hidden (kit/styles/subsite.css),
-// and below 640px so is "Sign in", so this adds a menu button that opens the same links. The menu is built
-// from the page's own header, so every site and page keeps its own items. Mounted by kit/core/site.js, which
-// every page with a sub-site header imports.
+// and below 640px so are "Sign in", the button and the reading and theme settings, so this adds a menu button that
+// opens all of them. The menu is built from the page's own header (scripts/sync-headers.mjs writes it, the same on
+// every page of a site), including what's under "More". Mounted by kit/core/site.js, which every page with a
+// sub-site header imports.
+import { menuSettings } from "./menu-set.js";
 const BARS = '<svg class="sm-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';
 const CROSS = '<svg class="sm-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>';
 
@@ -18,6 +20,8 @@ export function mountSubNav(doc = document) {
   for (const a of links.querySelectorAll("a")) menu.append(a.cloneNode(true));
   const signin = right.querySelector(".signin");
   if (signin) { const s = signin.cloneNode(true); s.className = "sub-menu-signin"; menu.append(s); }
+  const cta = right.querySelector(".sub-cta");
+  if (cta) { const c = cta.cloneNode(true); c.classList.remove("btn-sm"); c.classList.add("sub-menu-cta"); menu.append(c); }
 
   const btn = doc.createElement("button");
   btn.type = "button";
@@ -35,6 +39,7 @@ export function mountSubNav(doc = document) {
   doc.addEventListener("keydown", (e) => { if (e.key === "Escape" && !menu.hidden) { set(false); btn.focus(); } });
   doc.addEventListener("click", (e) => { if (!menu.hidden && !e.target.closest(".sub-menu, .sub-menu-btn")) set(false); });
 
+  menuSettings(menu, { close: () => set(false), from: btn });
   right.append(btn);
   nav.append(menu);
   return { btn, menu, set };

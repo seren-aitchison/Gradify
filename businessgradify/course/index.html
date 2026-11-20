@@ -39,21 +39,23 @@
 </head>
 <body class="sub-page">
   <div class="wrap">
+    <!-- sub-header: written by scripts/sync-headers.mjs; edit it there -->
     <header class="sub-nav glass">
       <a class="sub-brand" href="../"><span class="icon"></span><span data-site-name>BusinessGradify</span></a>
       <nav class="sub-links" aria-label="BusinessGradify">
         <a href="./" aria-current="page">Course</a>
         <a href="../app.html#/study">Study</a>
-        <a href="../app.html#/notes">Notes</a>
-        <a href="../app.html#/progress">Progress</a>
         <a href="../map.html">Map</a>
-        <a href="/">Gradify</a>
+        <a href="../lifeos.html">LifeOS</a>
+        <details class="sub-more"><summary>More</summary><div class="sub-more-list"><a href="../app.html#/notes">Notes</a><a href="../app.html#/progress">Progress</a><a href="../app.html#/plan">Plan</a><a href="/">All Gradify sites</a></div></details>
       </nav>
       <div class="sub-right">
         <a class="signin" href="../app.html#/account">Sign in</a>
-        <a class="btn btn-light lg btn-sm" href="#/learn"><span>Start free</span></a>
+        <a class="btn btn-light lg btn-sm sub-cta" href="#/learn"><span>Start free</span></a>
       </div>
     </header>
+    <script type="module" src="../../kit/core/subheader.js"></script>
+    <!-- /sub-header -->
     <div id="course"></div>
     <footer class="sub-foot"><span data-site-name>BusinessGradify</span> is part of <a href="/">Gradify</a>. One Gradify account is coming to every Gradify site; until then, your progress is saved in this browser.</footer>
   </div>
