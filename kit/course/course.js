@@ -1038,9 +1038,14 @@ export function mountCourse(root, cfg) {
   // cards, evidence, recall) open its Recap instead, covered, so the Recap is a chance to recall rather than reread.
   const RECAP_KINDS = new Set(["terms", "summary", "compare", "case", "drug", "evidence", "recall"]);
   // each card's key (course, lesson, card) is how it remembers, on this device, what the learner has practised on it
+  // worked out once for a lesson's notes: the placement, the Recap and the Quick checks all use the same five
+  const cardsMemo = new WeakMap();
   const lessonCards = (N, lid) => {
+    const m = cardsMemo.get(N); if (m?.lid === lid) return m.v;
     const ds = diagramsFor(N, { skip: ["path"] });
-    return ds.map((d, k) => ({ d, recap: RECAP_KINDS.has(d.kind), opts: { n: k + 1, of: ds.length, id: `co-d${k + 1}`, key: `${cfg.slug}:${lid}:${d.id}` } }));
+    const v = ds.map((d, k) => ({ d, recap: RECAP_KINDS.has(d.kind), opts: { n: k + 1, of: ds.length, id: `co-d${k + 1}`, key: `${cfg.slug}:${lid}:${d.id}` } }));
+    cardsMemo.set(N, { lid, v });
+    return v;
   };
   const recapDiagrams = (N, lid) => lessonCards(N, lid).filter((x) => x.recap);
   const lessonDiagrams = (N, lid) => {

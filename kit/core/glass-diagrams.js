@@ -702,6 +702,8 @@ function done(fig, mode, clean) {
     localStorage.setItem(STORE, JSON.stringify(all));
   } catch { /* private window or storage off: the badge just won't stay */ }
   showBadge(fig, true);
+  // the same card shown elsewhere (the page's copy, when this is the full-size one): its badge too, nothing else
+  document.querySelectorAll(".gd[data-gd-key]").forEach((f) => { if (f !== fig && f.dataset.gdKey === key) showBadge(f); });
 }
 const VERB = { quiz: "recalled", step: "stepped through", order: "put in order", match: "matched", pick: "answered", rate: "rated" };
 function showBadge(fig, fresh = false) {
@@ -726,38 +728,39 @@ const MODES = {
       fig.querySelector(".gd-body").insertAdjacentHTML("afterend", `<div class="gd-play gd-stepbar">${ring}<button type="button" class="gd-btn gd-ghost" data-gd-prev aria-label="Previous step">←</button><p class="gd-say" aria-live="polite"></p><button type="button" class="gd-btn gd-main" data-gd-next>Next →</button></div>`);
       show(fig, 0); fig.querySelector("[data-gd-next]").focus({ preventScroll: true });
     },
-    off(fig) { fig.classList.remove("stepping"); delete fig.dataset.seen; fig.querySelectorAll(".gd-rnode").forEach((nd) => { nd.classList.remove("todo"); nd.removeAttribute("aria-label"); }); fig.querySelector(".gd-stepbar")?.remove(); steps(fig).forEach((s) => s.classList.remove("on", "done", "todo")); },
+    off(fig) { fig.classList.remove("stepping"); delete fig.dataset.seen; delete fig.dataset.stepDone; fig.querySelectorAll(".gd-rnode").forEach((nd) => { nd.classList.remove("todo"); nd.removeAttribute("aria-label"); }); fig.querySelector(".gd-stepbar")?.remove(); steps(fig).forEach((s) => s.classList.remove("on", "done", "todo")); },
   },
   match: {
     on(fig) {
       fig.classList.add("matching"); fig.dataset.miss = "0";
       const rows = [...fig.querySelectorAll("[data-gd-row]")];
-      rows.forEach((r, i) => { r.dataset.i = i; r.querySelector(".gd-a")?.classList.add("gd-slot"); asButton(r, `Put the meaning you picked with: ${cueOf(r)}`); });
+      rows.forEach((r, i) => { r.dataset.i = i; slot(r.querySelector(".gd-a"), true); asButton(r, `Put the meaning you picked with: ${cueOf(r)}`); });
       const chips = shuffle(rows.map((r, i) => [i, r.querySelector(".gd-a")?.textContent.trim() || ""]));
       fig.querySelector(".gd-body").insertAdjacentHTML("beforebegin", `<div class="gd-play gd-pool"><p class="gd-say">Pick a meaning, then the ${fig.dataset.kind === "compare" ? "side" : "term"} it belongs to.</p><div class="gd-chips">${chips.map(([i, t]) => `<button type="button" class="gd-chip" data-gd-chip="${i}" aria-pressed="false">${esc(t)}</button>`).join("")}</div></div>`);
       say(fig, `0 of ${rows.length} matched`);
       fig.querySelector(".gd-chip")?.focus({ preventScroll: true });
     },
-    off(fig) { fig.classList.remove("matching"); fig.querySelector(".gd-pool")?.remove(); fig.querySelectorAll("[data-gd-row]").forEach((r) => { unButton(r); r.classList.remove("gd-ok", "gd-no"); r.querySelector(".gd-a")?.classList.remove("gd-slot"); }); },
+    off(fig) { fig.classList.remove("matching"); fig.querySelector(".gd-pool")?.remove(); fig.querySelectorAll("[data-gd-row]").forEach((r) => { unButton(r); r.classList.remove("gd-ok", "gd-no"); slot(r.querySelector(".gd-a"), false); }); },
   },
   order: {
     on(fig) {
       fig.classList.add("ordering"); fig.dataset.miss = "0"; fig.dataset.next = "0";
       const items = orderItems(fig), tl = fig.dataset.kind === "timeline";
-      items.forEach((li) => li.querySelector(".gd-a")?.classList.add("gd-slot"));
+      items.forEach((li) => slot(li.querySelector(".gd-a"), true));
       const chips = shuffle(items.map((li, i) => [i, li.querySelector(".gd-a")?.textContent.trim() || ""]));
       fig.querySelector(".gd-body").insertAdjacentHTML("beforebegin", `<div class="gd-play gd-pool"><p class="gd-say">${tl ? `What happened in ${items[0].querySelector(".gd-year")?.textContent}? Tap it.` : "Which step comes first? Tap it."}</p><div class="gd-chips">${chips.map(([i, t]) => `<button type="button" class="gd-chip" data-gd-ochip="${i}">${esc(t)}</button>`).join("")}</div></div>`);
       items[0]?.classList.add("gd-next");
       say(fig, `0 of ${items.length} in place`);
       fig.querySelector(".gd-chip")?.focus({ preventScroll: true });
     },
-    off(fig) { fig.classList.remove("ordering"); fig.querySelector(".gd-pool")?.remove(); orderItems(fig).forEach((li) => { li.classList.remove("gd-ok", "gd-next", "gd-no"); li.querySelector(".gd-a")?.classList.remove("gd-slot"); }); },
+    off(fig) { fig.classList.remove("ordering"); fig.querySelector(".gd-pool")?.remove(); orderItems(fig).forEach((li) => { li.classList.remove("gd-ok", "gd-next", "gd-no"); slot(li.querySelector(".gd-a"), false); }); },
   },
   pick: {
     on(fig) {
       fig.classList.add("picking");
       const wrong = fig.querySelector("[data-gd-wrong] p")?.textContent.trim(), right = fig.querySelector("[data-gd-right] .gd-a")?.textContent.trim();
-      const opts = shuffle([["right", right], ["wrong", wrong]]);
+      // either way round, evenly (shuffle never keeps the first order, which would always put the truth second)
+      const opts = Math.random() < 0.5 ? [["right", right], ["wrong", wrong]] : [["wrong", wrong], ["right", right]];
       fig.querySelector(".gd-body").insertAdjacentHTML("beforebegin", `<div class="gd-play gd-pick"><p class="gd-say">Which of these is true?</p>${opts.map(([k, t], i) => `<button type="button" class="gd-opt" data-gd-opt="${k}"><b>${"AB"[i]}</b><span>${esc(t)}</span></button>`).join("")}</div>`);
       say(fig, ""); fig.querySelector(".gd-opt").focus({ preventScroll: true });
     },
@@ -810,11 +813,13 @@ function show(fig, i) {
   const ringOn = cyc && fig.querySelector(".gd-ringview") && getComputedStyle(fig.querySelector(".gd-ringview")).display !== "none";
   fig.querySelector(".gd-say").textContent = ringOn ? `Stage ${i + 1} of ${n}` : `${cyc ? "Stage" : "Step"} ${i + 1} of ${n}: ${txt}`;
   const next = fig.querySelector("[data-gd-next]"), prev = fig.querySelector("[data-gd-prev]");
-  if (i === n - 1) done(fig, "step", false);
+  if (!fig.dataset.stepDone && (cyc ? seen.size === n : i === n - 1)) { fig.dataset.stepDone = "1"; done(fig, "step", false); }
   next.textContent = cyc ? (i === n - 1 ? "Back to 1 ↻" : "Next →") : i === n - 1 ? "Start again" : `What's step ${i + 2}? →`;
   prev.disabled = !cyc && i === 0;
   ss[i].scrollIntoView?.({ block: "nearest", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
 }
+// an empty slot (Match up, Put in order): the answer's text stays in place for its size, but hidden from screen readers too
+const slot = (el, on) => { if (!el) return; el.classList.toggle("gd-slot", on); on ? el.setAttribute("aria-hidden", "true") : el.removeAttribute("aria-hidden"); };
 // a wrong try: a short shake and a red edge, then back to normal
 const flash = (el) => { el.classList.remove("gd-no"); void el.offsetWidth; el.classList.add("gd-no"); setTimeout(() => el.classList.remove("gd-no"), 700); };
 // the ring: the stage picked lights up, and the middle explains it
@@ -829,7 +834,7 @@ const orderItems = (fig) => [...fig.querySelectorAll(".gd-flow > li, .gd-time > 
 function orderTap(fig, chip) {
   const items = orderItems(fig), k = Number(fig.dataset.next), li = items[k], poolSay = fig.querySelector(".gd-pool .gd-say"), tl = fig.dataset.kind === "timeline";
   if (Number(chip.dataset.gdOchip) === k) {
-    li.classList.remove("gd-next"); li.classList.add("gd-ok"); li.querySelector(".gd-a")?.classList.remove("gd-slot"); chip.remove();
+    li.classList.remove("gd-next"); li.classList.add("gd-ok"); slot(li.querySelector(".gd-a"), false); chip.remove();
     fig.dataset.next = String(k + 1);
     const nx = items[k + 1], miss = Number(fig.dataset.miss);
     if (nx) { nx.classList.add("gd-next"); poolSay.textContent = tl ? `Yes. And in ${nx.querySelector(".gd-year")?.textContent}?` : `Yes. What comes next: step ${k + 2}?`; }
@@ -852,7 +857,7 @@ function placeChip(fig, row) {
   if (!chip) { poolSay.textContent = "Pick a meaning first, then its term."; return; }
   const rows = fig.querySelectorAll("[data-gd-row]");
   if (chip.dataset.gdChip === row.dataset.i || chip.textContent.trim() === row.querySelector(".gd-a")?.textContent.trim()) {
-    row.classList.add("gd-ok"); row.querySelector(".gd-a")?.classList.remove("gd-slot"); unButton(row); chip.remove();
+    row.classList.add("gd-ok"); slot(row.querySelector(".gd-a"), false); unButton(row); chip.remove();
     const placed = fig.querySelectorAll("[data-gd-row].gd-ok").length, miss = Number(fig.dataset.miss);
     if (placed === rows.length) done(fig, "match", !miss);
     poolSay.textContent = placed === rows.length ? (miss ? `All matched, with ${miss} wrong try${miss > 1 ? "s" : ""}. Try again later to get them first time.` : "All matched, first time. Well done.") : `Yes: that's ${cueOf(row)}. Pick the next meaning.`;
