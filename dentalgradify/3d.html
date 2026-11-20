@@ -14,6 +14,9 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
   <link rel="stylesheet" href="../kit/styles/base.css">
   <script src="../kit/core/theme-boot.js"></script>
+  <!-- the anatomy model (6 MB) starts downloading now, while the page's scripts load, not after them -->
+  <link rel="preload" href="../kit/vendor/anatomy/anatomy-male.glb" as="fetch" crossorigin>
+  <link rel="preload" href="../kit/vendor/anatomy/catalog.json" as="fetch" crossorigin>
   <link rel="stylesheet" href="../kit/styles/components.css">
   <link rel="stylesheet" href="../kit/styles/subsite.css">
   <link rel="stylesheet" href="../kit/styles/model.css">

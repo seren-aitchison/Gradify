@@ -609,19 +609,30 @@ export async function mountModel(root, siteName, model) {
 
   // ---------- render loop ----------
   function resize() {
-    const r = canvas.getBoundingClientRect(), pr = Math.min(2, devicePixelRatio || 1);
-    renderer.setSize(r.width, r.height, false); composer.setPixelRatio(pr); composer.setSize(r.width, r.height);
+    const r = canvas.getBoundingClientRect(), pr = software ? 1 : Math.min(2, devicePixelRatio || 1);
+    renderer.setPixelRatio(pr); renderer.setSize(r.width, r.height, false); composer.setPixelRatio(pr); composer.setSize(r.width, r.height);
     camera.aspect = r.width / Math.max(1, r.height); camera.updateProjectionMatrix();
   }
+  // without a GPU (SwiftShader, llvmpipe, a VM) every pixel is drawn by the CPU: draw at 1x
+  const software = (() => { try { const gl = renderer.getContext(), d = gl.getExtension("WEBGL_debug_renderer_info"); return /swiftshader|llvmpipe|softpipe|software|basic render/i.test(String(gl.getParameter(d ? d.UNMASKED_RENDERER_WEBGL : gl.RENDERER))); } catch { return false; } })();
   new ResizeObserver(resize).observe(canvas); resize();
   let onScreen = true;
-  new IntersectionObserver(([en]) => { onScreen = en.isIntersecting; }).observe(canvas);
+  // coming back on screen starts the turntable's clock afresh, so time spent off screen isn't turned all at once
+  new IntersectionObserver(([en]) => { onScreen = en.isIntersecting; if (!onScreen) last = 0; }).observe(canvas);
+  document.addEventListener("visibilitychange", () => { if (document.hidden) last = 0; });   // likewise a tab in the background
   const clock = new THREE.Clock(), tmp = new THREE.Vector3(), off = new THREE.Vector3();
   let shownMotion = null;
   const holos = []; scene.traverse((o) => { if (o.material?.uniforms?.uTime) holos.push(o.material); });
+  // pacing: a frame that costs more than ~12ms (a slow phone, no GPU) waits twice its own cost before the next one,
+  // so at least half of each second stays free for taps, scrolling and the rest of the page. Fast devices draw every frame.
+  let cost = 0, last = 0;
   renderer.setAnimationLoop(() => {
     if (!onScreen) return;
-    const dt = Math.min(0.05, clock.getDelta()), t = clock.elapsedTime;
+    const now = performance.now();
+    if (cost > 12 && now - last < Math.min(3000, cost * 2)) return;
+    const elapsed = last ? (now - last) / 1000 : 0;   // real seconds since the last frame drawn, for the turntable
+    last = now;
+    const dt = Math.min(cost > 12 ? 0.25 : 0.05, clock.getDelta()), t = clock.elapsedTime;
     for (const m of holos) m.uniforms.uTime.value = t;
     platform.rotation.y += dt * 0.15;
     for (const fn of ticks) fn(t, dt, state.motion);
@@ -641,8 +652,9 @@ export async function mountModel(root, siteName, model) {
       camera.position.lerpVectors(tween.from, tween.to, e); controls.target.lerpVectors(tween.tFrom, tween.tTo, e);
       if (tween.t >= 1) tween = null;
     }
-    controls.update();
-    composer.render();
+    controls.update(elapsed || null);   // auto-rotation by time, not per frame, so pacing doesn't slow it
+    // the glow (bloom) pass is the costliest part on the CPU: without a GPU the scene is drawn plain
+    if (software) renderer.render(scene, camera); else composer.render();
     labelBox.hidden = !state.labels;
     if (state.labels) {
       const r = canvas.getBoundingClientRect();
@@ -653,6 +665,7 @@ export async function mountModel(root, siteName, model) {
         el.style.transform = `translate(${((tmp.x + 1) / 2) * r.width}px, ${((1 - tmp.y) / 2) * r.height}px)`;
       }
     }
+    cost = cost ? cost * 0.8 + (performance.now() - now) * 0.2 : performance.now() - now;   // a running average of what a frame costs here
   });
   showIntro(); openTab(state.tab);
   // deep links from course lessons: ?system=cardiovascular shows that system alone; &quiz=find or &quiz=name starts a quiz
