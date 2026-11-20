@@ -1264,7 +1264,7 @@ export function mountCourse(root, cfg) {
         const sn = main.querySelector(".cx-secname"); if (sn) { sn.textContent = cur.textContent; sn.hidden = false; }
       }
       if (!cur) { const sn = main.querySelector(".cx-secname"); if (sn) sn.hidden = true; }
-      peekRings();
+      if (scrollY > innerHeight * .6) peekRings();
     };
     // the questions: how many are right so far, in the section's header and the rail
     const count = () => {
@@ -1274,7 +1274,7 @@ export function mountCourse(root, cfg) {
       if (ok && ok >= Math.ceil(nQ / 2)) lightStep("check");
       paintRings({ check: ok / nQ });
     };
-    const mo = new MutationObserver(count); const chk = main.querySelector(".co-check"); if (chk) mo.observe(chk, { subtree: true, attributes: true, attributeFilter: ["class"] });
+    const mo = new MutationObserver(count); main.querySelectorAll(".co-check").forEach((chk) => mo.observe(chk, { subtree: true, attributes: true, attributeFilter: ["class"] }));
     count();
     // the sidebar is redrawn now and then (XP, sync): its rail picks the reading position and question count back up
     art.addEventListener("co-rail", () => { pctShown = -1; onScroll(); count(); });
@@ -1497,6 +1497,16 @@ export function mountCourse(root, cfg) {
     lessonRail = () => railHtml(l, N, nQ, mins, { u, g, nextL, quizNext });
     addSave(main.querySelector(".cx-lact .cx-save"));
     scrollTo(0, 0);
+    // a quick check early: the first question moves up to just after the lesson's opening section, so you answer
+    // something within a screen or two instead of after the whole lesson (it still counts with the rest)
+    {
+      const q1 = main.querySelector("#co-check .co-qn"), secs = main.querySelectorAll(".mv-cols > section");
+      if (q1 && nQ > 1 && secs.length > 2) {
+        const at = secs[Math.min(1, secs.length - 1)];
+        at.insertAdjacentHTML("afterend", `<section class="co-check co-quick" aria-label="Quick check"><h3 class="co-part">${ic("bolt")} Quick check</h3></section>`);
+        at.nextElementSibling.append(q1);
+      }
+    }
     wirePractice(main, "lesson", id);
     glassIcons(main, cfg.site).catch(() => {});
     // every interactive that names this lesson is reachable from it: those not placed in its notes go at the end
@@ -1514,7 +1524,7 @@ export function mountCourse(root, cfg) {
     paintDock("lesson", l, prev && byId[prev.id], next && byId[next.id]);
     redrawTree?.(false);
     wireReading(id, nQ, N, prev && byId[prev.id], next && byId[next.id]);
-    setTimeout(() => { paintRings({ steps: stepsDone() }); peekRings(); }, 400);
+    setTimeout(() => paintRings({ steps: stepsDone() }), 400);
     if (N) wireMaps(main, N, mapOpts(l));
     main.querySelectorAll("[data-cards]").forEach((b) => b.addEventListener("click", async () => { if (await gate("flashcards", `${cfg.slug}:${l.id}`, { store })) flashcards(N.cards, l, N); }));
     main.querySelector("[data-save]")?.addEventListener("click", (e) => saveLesson(l, N, e.currentTarget));
@@ -1550,6 +1560,7 @@ export function mountCourse(root, cfg) {
     const d = document.createElement("div"); d.className = "co-modal cx-done";
     d.innerHTML = `<div class="co-dialog cx-donebox" role="dialog" aria-modal="true" aria-labelledby="cx-doneh">
       <div class="cx-donetop"><span class="cx-donecheck">${ic("check")}</span><span class="co-kicker">Lesson complete</span><h2 id="cx-doneh">${esc(l.title)}</h2><p class="cx-gain">+${gained} XP</p></div>
+      ${next ? `<a class="btn btn-light lg cx-donenext" href="#/lesson/${next.id}" data-close><span>Next: ${esc(next.title)} →</span></a>` : ""}
       <div class="cx-donestats">
         ${nQ ? `<div><b>${right}/${nQ}</b><small>questions right</small></div>` : ""}
         <div><b>${mins} min</b><small>on this lesson</small></div>
@@ -1559,7 +1570,7 @@ export function mountCourse(root, cfg) {
       <div class="cx-donelv"><span>Level ${L.n}${ups ? " · level up!" : ""}</span><div class="co-bar"><i style="width:${from * 100}%"></i></div><small>${(L.to - xp).toLocaleString()} XP to level ${L.n + 1}</small></div>
       <p class="cx-doneunit">${dot(statusOf(l.id))} ${STATUS[statusOf(l.id)].label} · ${U} ${l.unit.n}: ${r.done} of ${r.total} lessons done${comboBest >= 3 ? ` · best run ${comboBest} in a row` : ""}</p>
       ${nQ && right < nQ ? `<p class="cx-donetip">${ic("target")} ${nQ - right} question${nQ - right === 1 ? "" : "s"} still to get right. They'll come back in Revise, or <a href="#co-check" data-close data-jump="co-check">try them now</a>.</p>` : ""}
-      <div class="co-row cx-donego">${next ? `<a class="btn btn-light lg" href="#/lesson/${next.id}" data-close><span>Next: ${esc(next.title)} →</span></a>` : `<a class="btn btn-light lg" href="#/learn" data-close><span>Back to the syllabus</span></a>`}
+      <div class="co-row cx-donego">${next ? "" : `<a class="btn btn-light lg" href="#/learn" data-close><span>Back to the syllabus</span></a>`}
         ${cardsLeft ? `<button type="button" class="btn btn-ghost lg" data-recall><span>${ic("cards")} Recall the ${N.cards.length} flashcards</span></button>` : ""}
         <button type="button" class="btn btn-ghost lg" data-close><span>Stay here</span></button></div>
       <small class="cx-donekeys"><kbd>↵</kbd> ${next ? "next lesson" : "syllabus"} · <kbd>Esc</kbd> stay</small></div>`;
@@ -1568,7 +1579,7 @@ export function mountCourse(root, cfg) {
     d.addEventListener("click", (e) => { if (e.target === d || e.target.closest("[data-close]")) close(); if (e.target.closest("[data-recall]")) { close(); flashcards(N.cards, l, N); } });
     addEventListener("keydown", key, true);
     document.body.append(d); confetti();
-    d.querySelector(".cx-donego a, .cx-donego button").focus();
+    d.querySelector(".cx-donenext, .cx-donego a, .cx-donego button").focus();
     requestAnimationFrame(() => requestAnimationFrame(() => { const b = d.querySelector(".cx-donelv .co-bar i"); if (b) b.style.width = `${Math.min(1, to) * 100}%`; }));
   }
 // ---------- the AI tutor (kit/assess/tutor.js → supabase/functions/course-tutor) and written practice ----------
@@ -2387,12 +2398,12 @@ export function mountCourse(root, cfg) {
     const started = st.lessons > 0 || st.xp > 0, feat = (O.featured || []).map((id) => ixById[id]).filter(Boolean);
     const count = (f) => units.filter(f).reduce((a, u) => a + u.lessons.length, 0);
     main.innerHTML = `<section class="co-hero" style="--a:${t0.from};--b:${cfg.tracks.at(-1).to}">
-        <div class="co-herotext"><span class="co-kicker">${esc(cfg.site)} · ${esc(cfg.name)}</span><h2>${esc(O.headline || cfg.name)}</h2><p>${esc(O.intro)}</p>
-          <div class="co-herostats">${[[units.length, `${u1}s`], [mods, "modules"], [lessons.length, "lessons"], [ixs.length, "interactives"]].map(([n, k]) => `<div><b>${n.toLocaleString()}</b><small>${k}</small></div>`).join("")}</div>
-          <div class="co-row">${nl ? `<a class="btn btn-light lg" href="#/lesson/${nl.id}"><span>${started ? `Continue: ${esc(nl.title)}` : `Start with ${esc(nl.title)}`}</span></a>` : ""}<a class="btn btn-ghost lg" href="#/paths"><span>Choose a path</span></a></div>
-          <label class="co-bigsearch">${ic("search")}<input type="search" placeholder="Search ${lessons.length.toLocaleString()} lessons${ixs.length ? ` and ${ixs.length} interactives` : ""}" aria-label="Search ${esc(cfg.name)}"><div class="co-results" hidden></div></label></div>
-        ${feat.length ? `<div class="co-herolab">${ixCard(feat[0], true)}</div>` : ""}
+        <div class="co-herotext"><h2>${esc(O.headline || cfg.name)}</h2><p>${esc(O.intro)}</p>
+          <div class="co-row co-herogo">${nl ? `<a class="btn btn-light lg co-start1" href="#/lesson/${nl.id}"><span>${ic("play")} ${started ? `Continue: ${esc(nl.title)}` : `Start the first lesson`}</span></a>` : ""}<a class="co-link co-pathlink" href="#/paths">or choose a path</a></div>
+          <p class="co-herosmall">${units.length} ${u1}s · ${lessons.length.toLocaleString()} lessons${ixs.length ? ` · ${ixs.length} interactives` : ""}${nl && !started ? ` · first lesson: ${esc(nl.title)}` : ""}</p></div>
       </section>
+      <section class="co-osec co-findsec"><label class="co-bigsearch">${ic("search")}<input type="search" placeholder="Search ${lessons.length.toLocaleString()} lessons${ixs.length ? ` and ${ixs.length} interactives` : ""}" aria-label="Search ${esc(cfg.name)}"><div class="co-results" hidden></div></label></section>
+      ${feat.length ? `<section class="co-osec"><div class="co-intro"><h2>Try it</h2></div><div class="co-herolab">${ixCard(feat[0], true)}</div></section>` : ""}
       ${O.learn?.length ? `<section class="co-osec"><div class="co-intro"><span class="co-kicker">What you'll learn</span><h2>${esc(O.learnTitle || `${cfg.name} from first ideas to research`)}</h2></div><div class="co-learn">${O.learn.map(([h, d]) => `<div><b>${esc(h)}</b><p>${esc(d)}</p></div>`).join("")}</div></section>` : ""}
       <section class="co-osec"><div class="co-intro"><span class="co-kicker">Your progress</span><h2>${started ? `Level ${L.n} · ${st.xp.toLocaleString()} XP` : "Your progress will show here"}</h2><p>${started ? `${st.lessons} of ${lessons.length} lessons done, a ${sk.n}-day streak, ${st.quizzes} ${u1} quiz${st.quizzes === 1 ? "" : "zes"} passed.` : `XP, streaks, quizzes and saved notes count in your Gradify account, alongside every other Gradify course.`} <a href="#/me">See all your progress →</a></p></div>
         <div class="co-dots big">${units.map((u) => { const t = trackOf(u), p = unitDone(u) / u.lessons.length; return `<a href="#/learn/${u.id}" title="${U} ${u.n}: ${esc(u.title)} (${Math.round(p * 100)}%)" style="--a:${t.from};--b:${t.to};--p:${p}"></a>`; }).join("")}</div></section>

@@ -459,7 +459,7 @@ a.co-feat:hover { border-color: var(--line-strong); background: rgba(var(--ink-r
 /* overview */
 .co-hero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 22px; align-items: stretch; padding: clamp(20px, 3vw, 34px); border-radius: 18px; background: radial-gradient(90% 120% at 0 0, color-mix(in srgb, var(--a) 26%, transparent), transparent 60%), radial-gradient(80% 110% at 100% 100%, color-mix(in srgb, var(--b) 20%, transparent), transparent 60%), rgba(var(--ink-rgb), .02); border: 1px solid color-mix(in srgb, var(--a) 35%, var(--line)); }
 .co-hero h2 { margin: 8px 0 10px; font-size: clamp(30px, 4vw, 48px); letter-spacing: -.045em; line-height: 1.02; }
-.co-hero p { margin: 0 0 16px; font-size: 16.5px; line-height: 1.6; color: #cfd3d8; max-width: 620px; }
+.co-hero p { margin: 0 0 16px; font-size: 16.5px; line-height: 1.6; color: rgba(var(--ink-rgb), .82); max-width: 620px; }
 .co-herostats { display: flex; flex-wrap: wrap; gap: 18px; margin: 4px 0 18px; } .co-herostats b { display: block; font-size: 28px; letter-spacing: -.03em; } .co-herostats small { color: var(--mute); font-size: 12.5px; }
 .co-hero .co-row { justify-content: flex-start; flex-wrap: wrap; }
 .co-bigsearch { position: relative; display: flex; align-items: center; gap: 8px; margin-top: 18px; padding: 0 14px; border-radius: 14px; background: rgba(var(--sink-rgb), .35); border: 1px solid var(--line-strong); color: var(--mute); }
@@ -1260,7 +1260,7 @@ a.cx-sess:hover { transform: translateY(-3px); border-color: color-mix(in srgb, 
 .cx-rgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin: 18px 0; }
 .cx-rcard { display: grid; gap: 4px; align-content: start; padding: 18px; border-radius: 16px; border: 1px solid var(--line); background: rgba(var(--ink-rgb), .035); color: var(--fg); text-decoration: none; transition: transform .18s, border-color .18s; }
 a.cx-rcard:hover { transform: translateY(-3px); border-color: var(--line-strong); }
-.cx-rcard.off { opacity: .6; }
+.cx-rcard.off { opacity: 1; } .cx-rcard.off :is(b, .cx-rci) { opacity: .7; }
 .cx-rci { position: relative; display: grid; place-items: center; width: 44px; height: 44px; margin-bottom: 8px; border-radius: 13px; background: rgba(var(--ink-rgb), .07); }
 .cx-rci i { position: absolute; top: -6px; right: -8px; min-width: 20px; height: 20px; padding: 0 5px; border-radius: 10px; font: 700 11px/20px var(--sans); font-style: normal; text-align: center; color: #fff; background: #ff3d6e; }
 .cx-rcard b { font-size: 17px; } .cx-rcard p { margin: 0; font-size: 13.5px; line-height: 1.45; color: var(--mute); }
@@ -2112,3 +2112,37 @@ body.has-gai .gx-totop { bottom: calc(84px + env(safe-area-inset-bottom)); }
 @media (max-width: 640px) { .cx-books { grid-auto-columns: 124px; gap: 14px; } .cx-bcover { padding: 12px 12px 10px 17px; } .cx-bcover b { font-size: 14.5px; } }
 @media (prefers-reduced-motion: reduce) { .cx-bcover { transition: none; } .cx-book:hover .cx-bcover { transform: none; } }
 :root[data-a-contrast="high"] .cx-bcover { background: var(--a); text-shadow: none; }
+
+/* ---------- Easy in, easy on (the audit): readable labels, a calm start, a rail that never covers the text ----------
+   Labels in plain sentence case at a readable size (spaced-out capitals are the hardest style for dyslexic readers);
+   the course's first screen has one heading and one button; the lesson's progress rail sits clear of the text. */
+.co-kicker, .cx-crumbs, .co-reading .co-lhead .kicker, .mv-page .kicker { font: 600 12.5px var(--sans) !important; letter-spacing: 0 !important; text-transform: none !important; }
+.cx-tg { font: 600 12.5px var(--sans) !important; letter-spacing: 0 !important; text-transform: none !important; }
+.cx-rr small, .cx-wday small { font-family: var(--sans) !important; letter-spacing: 0 !important; text-transform: none !important; font-size: 11px !important; }
+
+/* the course's first screen: one heading, one Start, nothing that can push the page wider than the phone */
+.co-hero { grid-template-columns: minmax(0, 1fr); max-width: 100%; overflow: hidden; }
+.co-herotext { min-width: 0; max-width: 760px; }
+.co-hero h2 { overflow-wrap: anywhere; }
+.co-herogo { align-items: center; gap: 14px 18px; margin-top: 8px; }
+.co-start1 { font-size: 17px; padding: 16px 28px; }
+.co-pathlink { font-size: 15px; }
+.co-herosmall { margin: 16px 0 0 !important; font-size: 14px !important; color: var(--mute) !important; }
+.co-herolab { min-width: 0; max-width: 100%; overflow-x: auto; }
+.co-findsec { margin-top: 18px; }
+@media (max-width: 560px) { .co-start1 { width: 100%; justify-content: center; } .co-herogo { flex-direction: column; align-items: stretch; text-align: center; } }
+
+/* the progress rail on phones: a slim strip above the dock, shown while you pause; never over the text */
+@media (max-width: 1020px) {
+  .co-reading .cx-rings { top: auto; bottom: calc(86px + env(safe-area-inset-bottom)); right: 50%; translate: 50% 0; flex-direction: row; gap: 14px; padding: 6px 14px; border-radius: 99px; }
+  .co-reading .cx-rings .cx-rri { width: 28px; height: 28px; }
+  .co-reading .cx-rings .cx-rri .co-ic { width: 12px; height: 12px; }
+  .co-reading .cx-rr { grid-template-columns: auto auto; align-items: center; column-gap: 6px; }
+  .co-reading .cx-rr b { font-size: 12px; } .co-reading .cx-rr small { display: none; }
+  .co-reading .cx-rr .cx-rri { grid-row: span 1; }
+}
+
+/* lesson complete: the next lesson is the first, biggest thing */
+.cx-donenext { display: flex; width: 100%; justify-content: center; margin: 4px 0 18px; font-size: 17px; padding: 16px 22px; }
+.co-quick { margin-top: 28px; padding-top: 22px; border-top: 1px solid rgba(var(--ink-rgb), .14); }
+body:has(> .co-modal) .cx-rings { display: none !important; }
