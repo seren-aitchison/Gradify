@@ -186,7 +186,7 @@ a { color: inherit; }
 .hub-foot nav a:hover { color: var(--fg); }
 .hub-foot-base { margin-top: 22px; padding-top: 16px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 13px; color: var(--faint); }
 .hub-foot-base p { margin: 0; }
-@media (max-width: 640px) { .hub-foot { padding: 22px 18px; } .hub-foot-cols { grid-template-columns: 1fr 1fr; } .hub-foot-brand { grid-column: 1 / -1; } }
+@media (max-width: 640px) { .hub-foot { padding: 22px 18px; } .hub-foot-cols { grid-template-columns: 1fr 1fr; } .hub-foot-brand { grid-column: 1 / -1; } .hub-foot nav a { padding: 11px 0; } }
 /* ---------- Top bar ---------- */
 .bar {
   position: sticky; top: 10px; z-index: 10;

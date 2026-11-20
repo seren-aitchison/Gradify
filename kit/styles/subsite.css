@@ -102,6 +102,7 @@
 .sub-foot nav { display: flex; flex-wrap: wrap; gap: 4px 16px; }
 .sub-foot nav a { text-decoration: none; padding: 4px 0; }
 .sub-foot nav a:hover { color: var(--fg); }
+@media (max-width: 640px) { .sub-foot nav { gap: 0 18px; } .sub-foot nav a { padding: 11px 0; } }
 .sub-foot a { color: var(--mute); }
 
 @media (max-width: 960px) {
