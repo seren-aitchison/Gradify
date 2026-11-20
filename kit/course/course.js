@@ -900,7 +900,8 @@ export function mountCourse(root, cfg) {
     const here = resumeLesson(), gs = groupsOf(u), t = trackOf(u);
     const mods = gs.map((g, mi) => {
       const ls = g.lessons.filter((l) => want(l.id)); if (!ls.length) return "";
-      const gr = roll(g.lessons.map((l) => l.id)), open = f !== "all" || gs.length === 1 || g.lessons.some((l) => l.id === here?.id) || (S.folders || []).includes(`${u.id}:${mi}`);
+      const gr = roll(g.lessons.map((l) => l.id)), key = `${u.id}:${mi}`, chose = (S.folderState || {})[key];
+      const open = f !== "all" || (chose != null ? chose : gs.length === 1 || g.lessons.some((l) => l.id === here?.id));
       return `<details class="cx-mrow cx-folder${gr.done === gr.total ? " full" : ""}" data-folder="${u.id}:${mi}" style="--a:${t.from};--b:${t.to};--p:${gr.total ? gr.done / gr.total : 0}"${open ? " open" : ""}>
         <summary><span class="cx-fback" aria-hidden="true"></span><span class="cx-fpaper" aria-hidden="true"></span>
           <span class="cx-ffront"><span class="cx-fhead">${g.title ? `<span class="cx-n">${u.n}.${mi + 1}</span><b>${esc(g.title)}</b>` : `<b>Lessons</b>`}</span>
@@ -955,7 +956,7 @@ export function mountCourse(root, cfg) {
     main.querySelector("[data-unpath]")?.addEventListener("click", () => { S.path = null; save(); viewLearn(); paintSide(); });
     main.addEventListener("toggle", (e) => {
       const fo = e.target.closest?.(".cx-folder");
-      if (fo && e.target === fo) { if ((S.sylFilter || "all") === "all") { S.folders = (S.folders || []).filter((x) => x !== fo.dataset.folder); if (fo.open) S.folders.push(fo.dataset.folder); keep(); } return; }
+      if (fo && e.target === fo) { if ((S.sylFilter || "all") === "all") { (S.folderState ||= {})[fo.dataset.folder] = fo.open; keep(); } return; }
       const d = e.target.closest?.(".cx-ucard"); if (!d || !main.contains(d)) return;
       if ((S.sylFilter || "all") === "all") { S.treeOpen = (S.treeOpen || []).filter((x) => x !== d.dataset.u); if (d.open) S.treeOpen.push(d.dataset.u); keep(); }
       if (d.open && !d.querySelector(".cx-ucontent")) d.insertAdjacentHTML("beforeend", `<div class="cx-ucontent">${unitCardBody(units.find((u) => u.id === d.dataset.u))}</div>`);
@@ -2397,6 +2398,7 @@ export function mountCourse(root, cfg) {
       await viewLesson(arg);
       if (sec) setTimeout(() => {
         const el = document.getElementById(sec); if (!el) return;
+        for (let d = el.closest("details"); d; d = d.parentElement?.closest("details")) d.open = true;
         scrollTo({ top: el.getBoundingClientRect().top + scrollY - 90, behavior: "instant" });
         // Continue learning lands on the section you were reading, and says so (one tap back to the top)
         const name = root.querySelector(`.co-toc a[data-jump="${sec}"]`)?.textContent || el.querySelector("h2, h3, h4")?.textContent || "";

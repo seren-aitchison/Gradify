@@ -1778,12 +1778,13 @@ html[data-motion="reduce"] .co-main.cx-enter { animation: none; }
   .co-reading .co-read .co-notes::before { animation: none; }
   .cx-fpaper, .cx-ffront, .cx-fbtn, .cx-acc > summary .cx-chev { transition: none; }
 }
+/* the learner's settings beat every glass rule above, whatever its specificity (lens, light theme, toolbar) */
 @media (prefers-reduced-transparency: reduce) {
   .co::before, .co::after { display: none; }
-  .co-reading :is(.cx-kc, .co-pncard, .cx-w-next, .cx-dock, .cx-lbar, .cx-tree, .cx-widget), .cx-ffront { background: rgb(var(--surface-rgb)); -webkit-backdrop-filter: none; backdrop-filter: none; }
+  .co-reading :is(.cx-kc, .co-pncard, .cx-w-next, .cx-dock, .cx-lbar, .cx-tree, .cx-widget, .co-read .co-notes), .cx-ffront { background: rgb(var(--surface-rgb)) !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
 }
 :root[data-a-contrast="high"] .co::before, :root[data-a-contrast="high"] .co::after { display: none; }
-:root[data-a-contrast="high"] .co-reading :is(.cx-kc, .co-pncard, .cx-w-next, .cx-dock, .cx-lbar, .cx-tree, .cx-widget), :root[data-a-contrast="high"] .cx-ffront { background: var(--bg); -webkit-backdrop-filter: none; backdrop-filter: none; border-color: var(--fg); }
+:root[data-a-contrast="high"] .co-reading :is(.cx-kc, .co-pncard, .cx-w-next, .cx-dock, .cx-lbar, .cx-tree, .cx-widget, .co-read .co-notes), :root[data-a-contrast="high"] .cx-ffront { background: var(--bg) !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; border-color: var(--fg); }
 .co-reading .cx-tf input::placeholder { color: var(--mute); opacity: 1; }
 
 /* touch: each topic dot sits in its own 44px square, side by side, so a tap never lands on the neighbour */
@@ -1791,6 +1792,7 @@ html[data-motion="reduce"] .co-main.cx-enter { animation: none; }
   .cx-w-dots { gap: 0; }
   .cx-w-dots a { margin: 15px; }
   .cx-w-dots a::before { inset: -15px; }
+  .cx-w-dots a:hover { transform: none; }
 }
 /* narrow phones: the toolbar keeps every control on screen (the step bar under it already shows where you are) */
 @media (max-width: 420px) { .cx-lbar .cx-pn small { display: none; } }
