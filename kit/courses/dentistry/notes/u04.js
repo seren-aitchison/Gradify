@@ -427,7 +427,7 @@ M3#dentistry-u04-09-q4@3: A 12-year-old at high caries risk uses a fluoride mout
 SA3#dentistry-u04-09-q5@2,3: Discuss the evidence for fluoride varnish and toothpaste and how they are combined for children. | Systematic reviews show fluoride toothpaste of 1,000 ppm and above prevents caries with a dose–response effect, making twice-daily brushing, spit not rinse, the foundation. Cochrane reviews show varnish reduces caries in primary and permanent teeth. DBOH combines them: age-appropriate toothpaste concentration and amount for all children, varnish at least twice yearly from age 3, and more frequent varnish, prescribed higher-fluoride paste or mouthrinse for higher-risk children. Evidence quality varies, and benefit depends on regular use. | Toothpaste evidence ; Dose–response ; Varnish evidence ; DBOH combination by age ; Extra measures by risk ; Evidence caveats
 Q: What is the main reason caries declined in many countries from the 1970s? | Fluoride toothpaste.
 Q: What toothpaste concentration and amount does DBOH advise for children aged 3 to 6? | A pea-sized amount of toothpaste containing more than 1,000 ppm fluoride.
-Q: What toothpaste concentration does DBOH advise for children aged 7 and over? | 1,350 to 1,500 ppm fluoride.
+Q: What do systematic reviews show about toothpaste fluoride concentration and caries? | A dose–response effect: pastes of 1,000 ppm and above prevent caries, with greater benefit at higher concentrations.
 Q: When does DBOH advise brushing with fluoride toothpaste? | Last thing at night and on one other occasion.
 Q: From what ages can 2,800 ppm and 5,000 ppm toothpastes be prescribed? | 2,800 ppm from age 10 and 5,000 ppm from age 16, for people at high risk.
 Q: What is the typical concentration of fluoride varnish? | 22,600 ppm fluoride, as 5% sodium fluoride.
@@ -675,7 +675,7 @@ Q: At what threshold is decay usually recorded in UK child surveys? | At the den
 Q: State the formula for the care index. | Care index (%) = F ÷ DMFT × 100.
 Q: How is a survey's mean DMFT calculated? | The total DMFT divided by the number of people examined.
 Q: Which indices are used to assess fluorosis? | Dean's index and the Thylstrup–Fejerskov index.
-Q: Which index measures orthodontic treatment need? | The Index of Orthodontic Treatment Need (IOTN).
+Q: Which periodontal indices are used in UK practice and in surveys respectively? | The Basic Periodontal Examination in UK practice and the Community Periodontal Index in surveys.
 Q: Why are survey examiners trained and calibrated? | So that recording rules, such as counting only teeth missing due to caries, are applied consistently.
 Q: Why does DMF remain widely used despite its limitations? | It is simple, cheap and comparable over decades.
 Q: What does DMF measure, as opposed to current activity? | Lifetime caries experience, since the M and F components record past disease.
