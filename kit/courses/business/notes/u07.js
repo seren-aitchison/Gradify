@@ -47,7 +47,7 @@ Q: Which users of accounting information judge whether a business will survive t
 Q: What do shareholders and investors use accounts to judge? | Returns, risk and the value of their stake.
 Q: What does financial accounting report on? | The past performance and position of the whole business, for outside users.
 Q: What kind of information does management accounting produce? | Internal, forward-looking information such as budgets, costings and forecasts.
-Q: Does management accounting have a legal format? | No. It uses whatever format helps managers decide, often produced weekly or monthly.
+Q: What format and frequency does management accounting use? | Whatever format helps managers decide, with no legal format, often produced weekly or monthly.
 Q: Under the accruals basis, when are revenue and expenses recorded? | Revenue when earned and expenses when incurred, not when cash moves.
 Q: Why does buying equipment hit cash harder than profit in the year of purchase? | The cash is paid at once, but only that year's depreciation reaches the income statement.
 Q: A furniture maker delivers £200,000 of goods in March on 90-day terms. When does the cash arrive? | In June, while wages, materials and rent must still be paid in March to May.
@@ -257,7 +257,7 @@ Q: Why might a software firm and a supermarket have very different gross margins
 Q: What three benchmarks should ratios be compared with? | Previous years, competitors and industry averages.
 Q: Why should ratio results be treated with some caution? | They rely on accounting figures, which may be affected by policy choices.
 Q: Revenue is £500,000 and gross profit £200,000. What is the gross margin? | 40%.
-Q: Is a 3% margin a sign of poor performance? | It depends on industry: normal for a supermarket but poor for a consultancy.
+Q: How should a 3% profit margin be judged? | Against its industry: normal for a supermarket but poor for a consultancy.
 
 ## Liquidity and efficiency ratios
 LV: Introductory · Application
@@ -457,7 +457,7 @@ NUM2#business-u07-09-q3@2: A firm with spare capacity is offered 500 units at £
 M3#business-u07-09-q4@3: A product shows a £5,000 loss after shared overheads but a £12,000 contribution. If dropped, overheads stay the same. What happens to total profit? | It falls by £12,000 | It rises by £5,000 | It rises by £12,000 | It does not change | The lost contribution no longer covers overheads.
 SA2#business-u07-09-q5@2,3: Explain why a product that shows a loss in the accounts may still be worth keeping. | Shared fixed overheads are often allocated across products, making some appear loss-making. If the product's revenue exceeds its variable costs, it makes a positive contribution towards those overheads. Dropping it would remove that contribution, while the overheads would remain, so overall profit would fall. | Allocated overheads ; Positive contribution ; Overheads remain ; Profit falls
 Q: What is a relevant cost? | A future cash cost that differs between the options being considered.
-Q: Are fixed costs that will be paid whatever is decided relevant? | No, unavoidable fixed costs are irrelevant to the decision.
+Q: How should unavoidable fixed costs be treated in a decision? | As irrelevant, because they will be paid whatever is decided.
 Q: What is an opportunity cost, and is it relevant? | The benefit forgone by using a resource one way rather than another; yes, it is relevant.
 Q: What should be compared in a make-or-buy decision? | The supplier's price against the variable cost of making, plus fixed costs saved and the opportunity cost of capacity.
 Q: Why can dropping a loss-making product reduce total profit? | It may still make a positive contribution to shared fixed costs that remain.
@@ -571,7 +571,7 @@ Q: How is the sales volume variance calculated? | (Actual units − budgeted uni
 Q: How is the materials price variance calculated? | (Standard price − actual price) × actual quantity used.
 Q: How is the materials usage variance calculated? | (Standard quantity for actual output − actual quantity) × standard price.
 Q: What is an adverse variance? | A difference from budget that reduces profit.
-Q: Should managers investigate every variance? | No, they should investigate significant variances, not every small one.
+Q: Which variances should managers investigate? | Significant variances, not every small one.
 Q: Standard price is £5 per kg and 2,100 kg are bought at £4.80. What is the materials price variance? | £420 favourable.
 Q: What question should a manager ask about the cause of a variance? | Whether the budget was unrealistic or something went wrong.
 
