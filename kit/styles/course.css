@@ -2162,3 +2162,29 @@ body:has(> .co-modal) .cx-rings { display: none !important; }
 @media (prefers-reduced-motion: reduce) { .co-steps a::after { transition: none; } }
 /* this topic's dots, for mouse users: 24px apart (touch screens already give each a 44px square) */
 @media (pointer: fine) { .cx-w-dots { gap: 10px; } .cx-w-dots a { margin: 0; } }
+
+/* ---------- Second pass from the audit ---------- */
+/* phones: in a lesson Gradify AI is in the dock, so the floating orb doesn't sit over the text */
+@media (max-width: 760px) { body:has(.co.co-reading) .gai-fab:not([aria-expanded="true"]) { display: none; } }
+/* phones: the course header is the course's name and the tabs; the stat chips live on Progress, and saving and pinning
+   on the outline and menu */
+@media (max-width: 760px) {
+  .co-head .co-hud, .co-head .cx-headrow { display: none; }
+  .co-head h1 { margin-bottom: 8px; }
+}
+/* folded diagrams: one tidy line each, opening in place */
+.cx-fig { margin: 14px 0; border-radius: 16px; border: 1px solid rgba(var(--ink-rgb), .12); background: rgba(var(--ink-rgb), .03); }
+.cx-fig > summary { display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 10px 14px; cursor: pointer; list-style: none; font-size: 14.5px; font-weight: 600; color: var(--fg); }
+.cx-fig > summary::-webkit-details-marker { display: none; }
+.cx-fig > summary .co-ic { flex: none; width: 16px; height: 16px; color: var(--la, var(--a)); }
+.cx-fig > summary .cx-chev { margin-left: auto; transition: transform .2s; } .cx-fig[open] > summary .cx-chev { transform: rotate(90deg); }
+.cx-fig > .gd { margin: 0 12px 12px; }
+.co-read .co-deeper.cx-acc { margin-top: 40px; padding-top: 26px; border-top: 1px solid rgba(var(--ink-rgb), .14); }
+@media (prefers-reduced-motion: reduce) { .cx-fig > summary .cx-chev { transition: none; } }
+.cx-autonext { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 14px 0 0; min-height: 44px; font-size: 14px; color: var(--mute); cursor: pointer; }
+.cx-autonext input { width: 20px; height: 20px; accent-color: var(--la, var(--a)); }
+.cx-countdown { margin: 6px 0 0; text-align: center; font-weight: 600; }
+/* the completion sheet always fits: it scrolls inside itself on short screens */
+.cx-donebox { max-height: calc(100dvh - 24px); overflow-y: auto; overscroll-behavior: contain; }
+/* phones: the one button comes before the paragraph, so Start is on the first screen */
+@media (max-width: 760px) { .co-herotext { display: flex; flex-direction: column; } .co-herotext h2 { order: 1; } .co-herotext .co-herogo { order: 2; margin: 4px 0 14px; } .co-herotext > p:not(.co-herosmall) { order: 3; } .co-herotext .co-herosmall { order: 4; } }
