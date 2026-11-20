@@ -305,7 +305,7 @@ header.bar.glass, header.sub-nav.glass {
    ISLANDS in scripts/theme-tokens.mjs. */
 :root[data-theme="light"] :is(.earth-map, .tree-wrap, .isle3d, .forest, .fs-key, .mv-stage, .mv-studio, .sm-3d-art, .lab-3d, .lab-cv, .lab-svg, .co-lab, .tablet, .shot-frame,
   .vc-stage, .vc-timeline, .vc-props, .holo, .spotlight, .bi-stage, .mv-labels, .mv-tip, .mv-controls, .mv-info,
-  .i-profile, .sub-course, .notify-ask, [class*="tone-"], .k-step:not(.s0), .co-lvbadge, .r-n, .dk-teal, .ng-tile, .cp-hero, .wd-funnel .s1, .wd-funnel .s2, .wd-funnel .s3, .wd-funnel .s4) {
+  .cx-fcard, .cx-rings, .cx-wok, .i-profile, .sub-course, .notify-ask, [class*="tone-"], .k-step:not(.s0), .co-lvbadge, .r-n, .dk-teal, .ng-tile, .cp-hero, .wd-funnel .s1, .wd-funnel .s2, .wd-funnel .s3, .wd-funnel .s4) {
   --fg: #fff; --mute: rgba(255, 255, 255, .78); --faint: rgba(255, 255, 255, .62);
   --ink-rgb: 255, 255, 255; --surface-rgb: 20, 20, 20; --sink-rgb: 0, 0, 0; --invert-bg: #fff; --invert-fg: #000;
   --line: rgba(255, 255, 255, .14); --line-strong: rgba(255, 255, 255, .26); --edge: rgba(255, 255, 255, .1);

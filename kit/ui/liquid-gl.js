@@ -15,7 +15,7 @@
 
 // which boxes are glass, and which never are (controls, and the dark islands of kit/styles/base.css / scripts/theme-tokens.mjs)
 export const GLASS = [".glass", ".panel", ".plan", ".hub-foot", ".sub-foot", ".co-card", ".cx-panel", ".cx-ucard", ".cx-sylhead", ".cx-widget", ".cx-tree", ".co-pncard", ".co-read .co-notes", ".cx-lbar", ".cx-dock", ".pro-card", ".cp-card", ".course-card", ".start-card", ".goal-card", ".offer-card"].join(", ");
-export const ISLANDS = [".earth-map", ".tree-wrap", ".isle3d", ".isle-tag", ".forest", ".fs-key", ".mv-stage", ".mv-studio", ".sm-3d-art", ".lab-3d", ".lab-cv", ".lab-svg", ".co-lab", ".tablet", ".shot-frame", "[class*=\"vc-\"]", ".holo", ".sphere", ".spotlight", ".bi-stage", ".mv-labels", ".mv-tip", ".mv-controls", ".mv-info", ".gj-ring"];
+export const ISLANDS = [".earth-map", ".tree-wrap", ".isle3d", ".isle-tag", ".forest", ".fs-key", ".mv-stage", ".mv-studio", ".sm-3d-art", ".lab-3d", ".lab-cv", ".lab-svg", ".co-lab", ".tablet", ".shot-frame", "[class*=\"vc-\"]", ".holo", ".sphere", ".spotlight", ".bi-stage", ".mv-labels", ".mv-tip", ".mv-controls", ".mv-info", ".gj-ring", ".cx-fcard", ".cx-rings", ".cx-wok"];
 const NEVER = ["button", "input", "select", "textarea", ".btn", "dialog", ...ISLANDS].join(", ");
 const MAX = 32;   // surfaces drawn at once (the ones on screen, outermost first)
 
@@ -121,7 +121,7 @@ export function start() {
     html.lgl body { background: transparent !important; }
     html.lgl [data-lg][data-lg] { background: transparent !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; box-shadow: none !important; border-color: transparent !important; }
     html.lgl [data-lg-cap] { isolation: isolate; }
-    .lgl-cap { position: absolute; z-index: -1; pointer-events: none; border-radius: inherit; display: block; }
+    .lgl-cap.lgl-cap { position: absolute !important; z-index: -1 !important; pointer-events: none !important; display: block !important; margin: 0 !important; padding: 0 !important; border: 0 !important; border-radius: inherit; grid-area: auto !important; width: auto; height: auto; }
     @media print { .lgl-canvas, .lgl-cap { display: none; } html.lgl [data-lg][data-lg] { background: #fff !important; } }`;
   document.head.appendChild(style);
   document.body.appendChild(canvas);
@@ -147,7 +147,7 @@ export function start() {
       const cs = getComputedStyle(e), sticky = cs.position === "fixed" || cs.position === "sticky";
       if (sticky && !e.querySelector(":scope > .lgl-cap")) {
         const c = document.createElement("canvas"); c.className = "lgl-cap"; c.setAttribute("aria-hidden", "true");
-        const bw = parseFloat(cs.borderTopWidth) || 0; c.style.inset = `${-bw}px`;
+        const bw = parseFloat(cs.borderTopWidth) || 0; c.style.cssText = `inset:${-bw}px;width:calc(100% + ${2 * bw}px);height:calc(100% + ${2 * bw}px)`;
         e.setAttribute("data-lg-cap", ""); e.prepend(c);
       }
     }
