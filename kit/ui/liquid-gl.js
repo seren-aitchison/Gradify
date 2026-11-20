@@ -247,13 +247,17 @@ export function start() {
       }
     }
   };
+  // the floating bars' copies only change when what they show changes (see draw), so they're versioned
+  let capGen = 0;
   const readColours = () => {
     const rs = getComputedStyle(root), course = document.querySelector("#course, .co"), cs = course && getComputedStyle(course), bs = getComputedStyle(document.body);
     const lightMode = root.getAttribute("data-theme") === "light";
     const base = hexRgb(rs.getPropertyValue("--bg")) || (lightMode ? [.965, .965, .984] : [0, 0, 0]);
     const a1 = hexRgb(cs?.getPropertyValue("--la")) || hexRgb(bs.getPropertyValue("--accent")) || [.27, .25, 1];
     const a2 = hexRgb(cs?.getPropertyValue("--lb")) || [.94, .33, .87];
-    colours = { lightMode, base, a1, a2, course: !!course };
+    const next = { lightMode, base, a1, a2, course: !!course };
+    if (JSON.stringify(next) !== JSON.stringify(colours)) capGen++;   // only a real change refreshes the bars' copies
+    colours = next;
   };
 
   const draw = () => {
@@ -289,11 +293,20 @@ export function start() {
     gl.uniform1i(P.U.n, k); gl.uniform4fv(P.U.rects, rects.subarray(0, max * 4)); gl.uniform4fv(P.U.props, props.subarray(0, max * 4));
     gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
     // the bars that float over the page: their patch of the canvas, inside them, above what scrolls beneath
+    // copying the GPU canvas into a bar stalls the main thread on the GPU, so it happens only when the bar's glass looks
+    // different: the bar moved or resized, the colours, theme, tier or canvas changed, or the light moved (at most ~20
+    // times a second). A bar's glass refracts the page's light, not the cards scrolling under it, so plain scrolling
+    // with the bar stuck in place copies nothing.
+    const now = performance.now();
     for (const [e, r] of caps) {
       const c = e.querySelector(":scope > .lgl-cap"); if (!c) continue;
       const w = Math.max(1, Math.round(r.width * dpr)), h = Math.max(1, Math.round(r.height * dpr));
+      const key = `${Math.round(r.left * dpr)},${Math.round(r.top * dpr)},${w},${h},${W},${H},${capGen},${P.tier}`;
+      const lit = `${light[0].toFixed(3)},${light[1].toFixed(3)}`;
+      if (c.__key === key && (c.__lit === lit || now - (c.__at || 0) < 50)) continue;
       if (c.width !== w || c.height !== h) { c.width = w; c.height = h; }
       c.getContext("2d").drawImage(canvas, r.left * dpr, r.top * dpr, w, h, 0, 0, w, h);
+      c.__key = key; c.__lit = lit; c.__at = now;
     }
     if (probing) sample();
     if (performance.now() < busyUntil) kick();

@@ -203,13 +203,21 @@ export function review(id) {
 export function initEarth(opts) {
   onReview = opts.onReview;
   const canvas = $("#earth-canvas");
-  globe = createGlobe(canvas, {
-    onPick: (id) => select(id),
-    onHover: (id) => {
-      const hub = HUBS.find((h) => h.id === id);
-      canvas.title = hub ? `${hub.name}: ${hub.n} learners studying now` : id ? TOPICS.find((t) => t.id === id).name : "";
-    },
-  });
+  // the globe takes a few hundred milliseconds to build its land and regions, so it waits until Earth is on screen
+  // (or close to it): the page loads smoothly, and the panel's lists and controls work meanwhile
+  const make = () => {
+    if (globe) return;
+    globe = createGlobe(canvas, {
+      onPick: (id) => select(id),
+      onHover: (id) => {
+        const hub = HUBS.find((h) => h.id === id);
+        canvas.title = hub ? `${hub.name}: ${hub.n} learners studying now` : id ? TOPICS.find((t) => t.id === id).name : "";
+      },
+    });
+    select(selected, true);
+  };
+  if (typeof IntersectionObserver !== "function") make();
+  else { const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { io.disconnect(); make(); } }, { rootMargin: "300px 0px" }); io.observe(canvas); }
   // keyboard and screen-reader route to every topic, since the globe itself is a picture
   const jump = $("#earth-jump");
   jump.innerHTML = Object.entries(MODULES).map(([key, m]) => `<optgroup label="${esc(m.name)}">${TOPICS.filter((t) => t.m === key).map((t) =>
@@ -217,9 +225,9 @@ export function initEarth(opts) {
     `<optgroup label="Year 3">${TOPICS.filter((t) => !t.m).map((t) => `<option value="${t.id}">${esc(t.name)} · Locked</option>`).join("")}</optgroup>` +
     `<optgroup label="Learners studying now">${HUBS.map((h) => `<option value="${h.id}">${esc(h.name)} · ${h.n} studying</option>`).join("")}</optgroup>`;
   jump.addEventListener("change", () => select(jump.value, true));
-  $("#earth-in").addEventListener("click", () => globe.zoomBy(1.2));
-  $("#earth-out").addEventListener("click", () => globe.zoomBy(1 / 1.2));
-  $("#earth-reset").addEventListener("click", () => globe.reset());
+  $("#earth-in").addEventListener("click", () => globe?.zoomBy(1.2));
+  $("#earth-out").addEventListener("click", () => globe?.zoomBy(1 / 1.2));
+  $("#earth-reset").addEventListener("click", () => globe?.reset());
   $("#inspector").addEventListener("click", (e) => {
     if (e.target.closest("#hub-groups")) return document.dispatchEvent(new CustomEvent("lifeos:goto", { detail: "group" }));
     if (e.target.closest("#hub-back")) return select(lastTopic, true);

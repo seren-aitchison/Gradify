@@ -31,12 +31,19 @@ function taper(x0, y0, cx, cy, x1, y1, w0, w1, N = 14) {
 // flat drawing below everywhere else, and for the moment before the 3D module arrives.
 let island = null, islandP = null;
 const loadIsland = () => (islandP ||= import("./island3d.js").then((m) => (m.webglOK() ? (island = m) : null)).catch(() => null));
+// three.js and the island cost about half a second of main thread to start, so they wait until the tree is actually on
+// screen (or close to it): a tree in a hidden tab, or far down the page, stays flat until then and the page loads smoothly
+const whenSeen = (el) => new Promise((resolve) => {
+  if (typeof IntersectionObserver !== "function") return resolve();
+  const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { io.disconnect(); resolve(); } }, { rootMargin: "300px 0px" });
+  io.observe(el);
+});
 export function drawTree(el, data) {
   if (island) { el.__drawn = null; island.drawIsland(el, data); return; }
   drawTreeFlat(el, data);
-  // swap in the island once it's loaded, unless something else has been drawn here since
+  // swap in the island once it's on screen and loaded, unless something else has been drawn here since
   const mine = (el.__drawn = {});
-  loadIsland().then((m) => { if (m && el.isConnected && el.__drawn === mine) m.drawIsland(el, data); });
+  whenSeen(el).then(() => el.__drawn === mine && loadIsland()).then((m) => { if (m && el.isConnected && el.__drawn === mine) m.drawIsland(el, data); });
 }
 
 export function drawTreeFlat(el, { sites, bars, rand }) {
