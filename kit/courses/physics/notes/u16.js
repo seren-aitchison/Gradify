@@ -1,24 +1,45 @@
 // Unit 16: Electric Circuits. Format: kit/course/notes.js
 export default `
 ## Electric current
-S: Electric current is the rate of flow of charge. In metals it's carried by electrons drifting slowly through the lattice; in electrolytes and plasmas by ions too.
+S: Electric current is the rate of flow of charge. In metals it's carried by electrons drifting slowly through the lattice; in electrolytes and plasmas, ions carry it too.
+O: Define current and use I = ΔQ/Δt
+O: Use I = nAvq to calculate drift velocity
+O: Explain why a lamp lights at once although electrons drift slowly
+PRE: Electric charge
+LV: GCSE and A level · Foundation
 H: Definitions
 E: I = dQ/dt (amperes, 1 A = 1 C s^{-1})
 E: I = nAv_{d}q :: n = carrier density, v_{d} = drift velocity
 E: J = I/A = nqv_{d} :: current density
 - Conventional current flows from + to −; electrons move the opposite way.
 H: Drift velocity
-P: Electrons in copper (n ≈ 8.5 × 10^{28} m^{-3}) carrying 1 A through a 1 mm^{2} wire drift at only ~0.07 mm s^{-1}. Yet a lamp lights instantly because the electric field (the signal) travels at near the speed of light along the wire, setting all electrons moving almost at once.
+P: Electrons in copper (n ≈ 8.5 × 10^{28} m^{-3}) carrying 1 A through a 1 mm^{2} wire drift at only ~0.07 mm s^{-1}. Yet a lamp lights at once because the electric field (the signal) travels along the wire at a large fraction of the speed of light, setting electrons everywhere moving almost together.
 X: How many electrons pass a point per second for 2 A?
-> N = 2/1.6 × 10^{-19} = 1.25 × 10^{19} per second
+> N = I/e = 2/1.6 × 10^{-19} = 1.25 × 10^{19} per second
+K: Current is the same at every point in a series loop: charge is neither created nor destroyed as it flows.
 !: Current isn't "used up" in a component; the same current enters and leaves. Energy is what's transferred.
+T: Current | The rate of flow of charge past a point, I = ΔQ/Δt, in amperes
+T: Drift velocity | The small average velocity of charge carriers along a conductor, superimposed on their random motion
+SUM: I = ΔQ/Δt; 1 A is 1 C per second.
+SUM: I = nAvq: carriers drift slowly, but the field that drives them sets up almost instantly.
+EV: established | The free-electron picture of conduction and I = nAvq are standard and agree with Hall-effect measurements of n.
+SRC: OpenStax, University Physics Volume 2, section 9.1 "Electrical Current" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/9-1-electrical-current
+SRC: AQA, A-level Physics specification (7408), section 3.5.1.1 Basics of electricity | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: Define current. | The rate of flow of charge, I = dQ/dt.
 Q: Why does a lamp light immediately when drift speeds are so slow? | The electric field propagates at near the speed of light, starting electrons moving everywhere at once.
-M1: 3 A for 2 minutes transfers: | 360 C | 6 C | 1.5 C | 180 C | Q = It.
-M2: Halving a wire's cross-section at the same current makes the drift speed: | Double | Half | Unchanged | Four times | v_{d} = I/(nAq).
+M1@1: 3 A for 2 minutes transfers: | 360 C | 6 C | 1.5 C | 180 C | Q = It = 3 A × 120 s = 360 C; using 2 s instead of 120 s gives the 6 C distractor.
+M2@2: Halving a wire's cross-section at the same current makes the drift speed: | Double | Half | Unchanged | Four times | v_{d} = I/(nAq): with I, n and q fixed, halving A doubles the drift speed.
+M3@2: A copper wire (n = 8.5 × 10^{28} m^{-3}) of area 2.0 mm^{2} carries 3.4 A. The drift speed is about: | 0.13 mm s^{-1} | 1.3 m s^{-1} | 13 mm s^{-1} | 3 × 10^{8} m s^{-1} | v = I/(nAe) = 3.4/(8.5 × 10^{28} × 2.0 × 10^{-6} × 1.6 × 10^{-19}) = 1.25 × 10^{-4} m s^{-1}.
+NUM1@1: A charge of 45 C flows through a lamp in 15 s. What is the current, in A? | 3.0 | 1% | A | I = Q/t = 45/15 = 3.0 A.
+SA2@3: Explain why a light comes on almost instantly when switched on, although electrons drift at less than a millimetre per second. | The wire is already full of free electrons. Closing the switch sets up an electric field along the whole circuit, and that change travels at a large fraction of the speed of light. Electrons everywhere, including those in the filament, start drifting almost at once, so energy is transferred immediately; no electron needs to travel from the switch to the lamp. | Wire already full of free electrons ; Field travels at near light speed ; All electrons start drifting together
 
 ## Resistance and resistivity
 S: Resistance measures how much a component opposes current: the voltage needed per ampere. Resistivity is the material property behind it, independent of shape and size.
+O: Define resistance and resistivity and use R = ρL/A
+O: Describe how resistance of metals and thermistors changes with temperature
+O: Explain resistance using a microscopic model of electron scattering
+PRE: Electric current
+LV: GCSE and A level · Application
 H: Definitions
 E: R = V/I (ohms)
 E: R = ρL/A :: resistivity ρ (Ω m)
@@ -27,45 +48,75 @@ H: Temperature dependence
 E: R = R_{0}(1 + αΔT) :: metals (α ≈ 0.004 K^{-1} for copper)
 - Metals: resistance rises with T (more lattice vibrations scatter electrons).
 - Semiconductors and NTC thermistors: resistance falls with T (more carriers freed).
-- Superconductors: zero below T_{c}.
+- Superconductors: zero resistivity below a critical temperature T_{c}.
 H: Microscopic picture
-P: Electrons accelerate in the field, then scatter off vibrating ions and defects every ~10^{-14} s. Drude's model gives ρ = m/(ne^{2}τ). Impurities cause residual resistivity even at absolute zero (Matthiessen's rule).
+P: Electrons accelerate in the field, then scatter off vibrating ions and defects about every 10^{-14} s. Drude's model gives ρ = m/(ne^{2}τ). Impurities cause residual resistivity even near absolute zero (Matthiessen's rule).
 X: Resistance of 10 m of copper wire, 0.5 mm diameter?
 > A = π(0.25 × 10^{-3})^{2} = 1.96 × 10^{-7} m^{2}
 > R = 1.7 × 10^{-8} × 10/1.96 × 10^{-7} = 0.87 Ω
+K: Measure resistivity by plotting R against L for one wire: the gradient is ρ/A, so ρ = gradient × A, with A from a micrometer reading of diameter.
 !: Resistance depends on shape; resistivity doesn't. Stretching a wire to twice its length (same volume) quadruples its resistance.
+T: Resistance | The ratio of potential difference across a component to the current through it, R = V/I
+T: Resistivity | The material property ρ = RA/L, the resistance of a unit cube of the material
+SUM: R = ρL/A; resistivity depends on the material and temperature only.
+SUM: Metals' resistance rises with temperature; NTC thermistors' falls.
+EV: established | R = ρL/A and the temperature behaviour of metals and semiconductors are well established experimentally.
+SRC: OpenStax, University Physics Volume 2, section 9.3 "Resistivity and Resistance" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/9-3-resistivity-and-resistance
+SRC: AQA, A-level Physics specification (7408), section 3.5.1.3 Resistivity | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: How does resistance depend on a wire's length and area? | R = ρL/A.
 Q: Why does metal resistance rise with temperature? | Increased lattice vibrations scatter electrons more often.
-M1: Doubling a wire's diameter changes its resistance by: | ×1/4 | ×1/2 | ×2 | ×4 | A ∝ d^{2}.
-M2: A wire stretched to twice its length (constant volume) has resistance: | 4R | 2R | R/2 | R | L doubles, A halves.
+M1@1: Doubling a wire's diameter changes its resistance by: | ×1/4 | ×1/2 | ×2 | ×4 | A ∝ d^{2}, so doubling d makes the area four times larger and R = ρL/A four times smaller.
+M2@1: A wire stretched to twice its length (constant volume) has resistance: | 4R | 2R | R/2 | R | L doubles and, with volume fixed, A halves; R = ρL/A therefore rises by 2 × 2 = 4.
+M3@2: An NTC thermistor and a copper wire are both warmed from 20 °C to 60 °C. Which is correct? | The thermistor's resistance falls; the wire's rises | Both resistances rise | Both resistances fall | The thermistor's rises; the wire's falls | Heating frees more charge carriers in the semiconductor thermistor, while in copper the carrier number is fixed and extra lattice vibration increases scattering.
+NUM2@1: A 2.0 m length of wire of cross-section 5.0 × 10^{-7} m^{2} has resistance 4.4 Ω. Find its resistivity, in units of 10^{-6} Ω m. | 1.1 | 2% | × 10^{-6} Ω m | ρ = RA/L = 4.4 × 5.0 × 10^{-7}/2.0 = 1.1 × 10^{-6} Ω m, the value for nichrome.
+SA2@1: Describe how to determine the resistivity of a metal wire in the laboratory, including how the data are analysed. | Measure the wire's diameter at several points with a micrometer and calculate the mean area A = πd^{2}/4. Pass a small current and use an ammeter and voltmeter to find R = V/I for several lengths L, keeping the current low so the wire doesn't heat. Plot R against L: the gradient is ρ/A, so ρ = gradient × A. | Micrometer, several readings, A = πd^{2}/4 ; R = V/I for several lengths, small current ; Gradient of R–L graph × A gives ρ
 
 ## Ohm's law
 S: Ohm's law states that the current through a conductor is proportional to the voltage across it, at constant temperature. It holds for metals and resistors, but many components (diodes, lamps) are non-ohmic.
+O: State Ohm's law and distinguish it from the definition R = V/I
+O: Sketch and explain I–V characteristics of a resistor, filament lamp and diode
+O: Use V = IR in calculations
+PRE: Resistance and resistivity
+LV: GCSE and A level · Foundation
 H: The law
 E: V = IR, with R constant
 E: J = σE :: microscopic form
 H: I–V characteristics
 - **Ohmic resistor**: straight line through the origin.
 - **Filament lamp**: curve flattening at higher V (gets hotter, R rises).
-- **Diode**: tiny current in reverse; conducts above ~0.6 V (silicon) forward.
-- **Thermistor (NTC)**: curve bending upward (warms, R falls).
-- **LDR**: R falls with light intensity.
+- **Diode**: tiny current in reverse; conducts above ~0.6 V forward (silicon).
+- **Thermistor (NTC)**: curve bending upward (warms, R falls). **LDR**: R falls as light intensity rises.
 H: Measuring R
-P: Measure V across and I through the component at several values, plot V against I; the gradient (for an ohmic conductor) is R. For low resistances, four-wire (Kelvin) measurement removes lead resistance.
+P: Measure V across and I through the component at several values, and plot I against V. For an ohmic conductor the line is straight and R = V/I is the same at every point. For low resistances, four-wire (Kelvin) measurement removes lead resistance.
 X: A resistor has 4.5 V across it and 0.30 A through it. R? What current at 9.0 V?
-> R = 15 Ω
+> R = V/I = 4.5/0.30 = 15 Ω
 > I = 9.0/15 = 0.60 A
+K: Ohm's law is not a universal law: it is the observation that some materials keep R constant under constant physical conditions.
 !: V = IR defines resistance for any component at a point; Ohm's law is the claim that R stays constant.
 P: **Investigate with the lab.** Set up a single resistor and change the voltage, recording the current each time. Check that V/I stays constant.
 IX: circuits
+T: Ohmic conductor | A conductor whose current is proportional to the voltage across it at constant temperature
+T: I–V characteristic | A graph of current against potential difference for a component
+SUM: Ohm's law: I ∝ V under constant physical conditions.
+SUM: Lamps, diodes and thermistors are non-ohmic: their R changes with V.
+EV: established | Ohm's law holds accurately for metals at constant temperature and fails for many devices.
+SRC: OpenStax, University Physics Volume 2, section 9.4 "Ohm's Law" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/9-4-ohms-law
+SRC: AQA, A-level Physics specification (7408), section 3.5.1.2 Current–voltage characteristics | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: State Ohm's law. | For a conductor at constant temperature, current is proportional to potential difference.
 Q: Why is a filament lamp non-ohmic? | Its temperature, and so resistance, increases with current.
-M1: Which component is ohmic? | A metal resistor at constant temperature | A diode | A filament lamp | An LED | Linear I–V.
-M2: The microscopic form of Ohm's law is: | J = σE | V = IR only | P = IV | Q = CV | Current density ∝ field.
-M2: A 12 Ω resistor has 6 V across it. What current flows? | 0.5 A | 2 A | 72 A | 18 A | I = V/R = 6/12 = 0.5 A.
+M1@2: Which component is ohmic? | A metal resistor at constant temperature | A diode | A filament lamp | An LED | Only the resistor has a straight-line I–V graph through the origin; the others' resistance changes with voltage.
+M2@1: The microscopic form of Ohm's law is: | J = σE | V = IR only | P = IV | Q = CV | Current density is proportional to the local field, with the conductivity σ as the constant; V = IR follows for a uniform wire.
+M2@3: A 12 Ω resistor has 6 V across it. What current flows? | 0.5 A | 2 A | 72 A | 18 A | I = V/R = 6/12 = 0.5 A; multiplying gives the 72 A distractor.
+M3@2: A filament lamp draws 0.20 A at 2.0 V and 0.30 A at 6.0 V. Its resistance: | Rises from 10 Ω to 20 Ω | Falls from 10 Ω to 5 Ω | Stays at 10 Ω | Rises from 10 Ω to 40 Ω | R = V/I gives 2.0/0.20 = 10 Ω and 6.0/0.30 = 20 Ω: the hotter filament has higher resistance, as expected.
+SA2@2: Describe and explain the shape of the I–V characteristic of a filament lamp. | The graph passes through the origin and is symmetrical for both polarities. At low voltages it is nearly straight, but it curves, getting less steep, as the voltage increases. The larger current heats the filament, the metal ions vibrate more and scatter electrons more, so resistance rises and each extra volt produces less extra current. | Curve through origin, symmetric ; Gradient decreases at higher V ; Heating raises resistance via more lattice scattering
 
 ## Conductivity
-S: Conductivity σ is the reciprocal of resistivity: how readily a material carries current. It spans more orders of magnitude than almost any other physical property, from superconductors to the best insulators.
+S: Conductivity σ is the reciprocal of resistivity: how readily a material carries current. It spans more orders of magnitude than almost any other physical property, from the best metals to the best insulators.
+O: Relate conductivity to resistivity, carrier density and mobility
+O: Calculate carrier mobility from conductivity data
+O: Explain how doping changes semiconductor conductivity
+PRE: Resistance and resistivity
+LV: Year 1 · Application
 H: Definitions
 E: σ = 1/ρ (S m^{-1})
 E: σ = nqμ :: carrier density × charge × mobility
@@ -74,20 +125,36 @@ H: Range
 - Silver 6.3 × 10^{7} S m^{-1}; copper 6.0 × 10^{7}; seawater ~5; pure water 5.5 × 10^{-6}; glass ~10^{-12}; PTFE ~10^{-23}.
 - Over 30 orders of magnitude.
 H: Semiconductors
-P: In semiconductors both electrons and holes conduct: σ = e(nμ_{n} + pμ_{p}). Doping with one impurity atom per million can raise conductivity a million times. Mobility in silicon: electrons ~1400 cm^{2} V^{-1} s^{-1}; in graphene, up to ~10^{5} or more.
+P: In semiconductors both electrons and holes conduct: σ = e(nμ_{n} + pμ_{p}). Doping with one impurity atom per million silicon atoms can raise conductivity about a million times. Electron mobility in silicon is ~1400 cm^{2} V^{-1} s^{-1}; in clean graphene it can exceed 10^{5}.
 X: Electron mobility in copper (n = 8.5 × 10^{28} m^{-3})?
 > μ = σ/(ne) = 6 × 10^{7}/(8.5 × 10^{28} × 1.6 × 10^{-19}) = 4.4 × 10^{-3} m^{2} V^{-1} s^{-1}
+K: Conductivity is the product of how many carriers there are (n) and how easily each one moves (μ).
 !: High conductivity doesn't always mean high mobility: metals have huge carrier densities but modest mobilities.
+T: Conductivity | The reciprocal of resistivity, σ = 1/ρ, measured in siemens per metre
+T: Mobility | Drift speed per unit electric field, μ = v_{d}/E
+SUM: σ = 1/ρ = nqμ.
+SUM: Metals conduct through huge n; semiconductors' n is set by doping and temperature.
+EV: established | σ = nqμ is the standard relation and is confirmed by Hall-effect and conductivity measurements.
+SRC: OpenStax, University Physics Volume 2, section 9.2 "Model of Conduction in Metals" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/9-2-model-of-conduction-in-metals
+SRC: OpenStax, University Physics Volume 3, section 9.6 "Semiconductors and Doping" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/9-6-semiconductors-and-doping
 Q: How is conductivity related to carrier density and mobility? | σ = nqμ.
 Q: What is mobility? | Drift speed per unit electric field.
-M1: The SI unit of conductivity is: | S m^{-1} | Ω m | Ω | A | Siemens per metre.
-M2: Seawater conducts electricity mainly through: | Dissolved ions | Free electrons | Holes | Protons only | Electrolyte.
+M1@1: The SI unit of conductivity is: | S m^{-1} | Ω m | Ω | A | Conductivity is 1/ρ, and the reciprocal of Ω m is siemens per metre.
+M2@3: Seawater conducts electricity mainly through: | Dissolved ions | Free electrons | Holes | Protons only | Seawater is an electrolyte: dissolved Na^{+} and Cl^{−} ions carry the current in opposite directions.
+M3@2: Material X has twice the carrier density and one tenth the mobility of material Y. Its conductivity is: | One fifth of Y's | Twice Y's | Twenty times Y's | Equal to Y's | σ = nqμ with the same q, so σ_{X}/σ_{Y} = 2 × 0.1 = 0.2.
+NUM2@2: A semiconductor has σ = 2.0 S m^{-1} and electrons are the only carriers, with μ = 0.14 m^{2} V^{-1} s^{-1}. Find n, in units of 10^{20} m^{-3}. | 0.89 | 3% | × 10^{20} m^{-3} | n = σ/(eμ) = 2.0/(1.6 × 10^{-19} × 0.14) = 8.9 × 10^{19} m^{-3} = 0.89 × 10^{20} m^{-3}.
+SA2@3: Explain why adding a tiny amount of phosphorus to pure silicon increases its conductivity enormously. | Phosphorus has five outer electrons; four bond with neighbouring silicon atoms and the fifth is only weakly bound, so at room temperature it is freed into the conduction band. Pure silicon has very few thermally freed carriers, so even one dopant per million atoms adds far more carriers than were there, and since σ = neμ the conductivity rises by a similar factor. | Phosphorus donates a loosely bound electron ; Intrinsic carrier density is very small ; σ = neμ rises with n
 
 ## Series and parallel circuits
 S: Components in series share the same current; in parallel they share the same voltage. These two arrangements, and their rules for combining resistances, underlie every circuit.
+O: Calculate total resistance for series and parallel combinations
+O: Find currents and voltages in mixed circuits
+O: Use the potential divider equation, including with sensors
+PRE: Ohm's law
+LV: GCSE and A level · Application
 H: Series
 E: R = R_{1} + R_{2} + …
-- Same I; voltages add; V divides in proportion to R (potential divider).
+- Same I; voltages add; V divides in proportion to R.
 - One break stops all current.
 H: Parallel
 E: 1/R = 1/R_{1} + 1/R_{2} + … ; two resistors: R = R_{1}R_{2}/(R_{1} + R_{2})
@@ -99,26 +166,41 @@ E: V_{out} = V_{in}R_{2}/(R_{1} + R_{2})
 - With a sensor (LDR, thermistor) as one resistor, V_{out} responds to light or temperature.
 - Loading: connecting a load in parallel with R_{2} lowers V_{out}.
 X: 6 Ω and 3 Ω in parallel, in series with 4 Ω, across 12 V. Total current?
-> Parallel: 2 Ω; total 6 Ω
-> I = 2 A; parallel pair gets 4 V: 0.67 A through 6 Ω, 1.33 A through 3 Ω
+> Parallel: 6 × 3/(6 + 3) = 2 Ω; total 6 Ω
+> I = 12/6 = 2 A; the pair gets 4 V: 0.67 A through 6 Ω, 1.33 A through 3 Ω
+K: Series rules follow from conservation of charge (one current) and energy (voltages add); parallel rules from the same laws applied the other way round.
 !: Adding resistors in parallel decreases total resistance and increases total current drawn.
 P: **Investigate with the lab.** Wire the same three resistors in series, then in parallel. Which arrangement draws more current from the battery?
 IX: circuits
+T: Potential divider | Two or more resistors in series across a supply, giving an output voltage that is a fraction of the input
+T: Equivalent resistance | The single resistance that would draw the same current from the supply as a network
+SUM: Series: R adds, same I. Parallel: 1/R adds, same V.
+SUM: A potential divider gives V_{out} = V_{in}R_{2}/(R_{1} + R_{2}).
+EV: established | The combination rules follow from conservation of charge and energy in circuits.
+SRC: OpenStax, University Physics Volume 2, section 10.2 "Resistors in Series and Parallel" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/10-2-resistors-in-series-and-parallel
+SRC: AQA, A-level Physics specification (7408), section 3.5.1.5 Potential divider | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: How do resistors combine in parallel? | Reciprocals add: 1/R = Σ1/R_{i}.
 Q: Why are house circuits wired in parallel? | Each appliance gets the full voltage and can be switched independently.
-M1: Two 10 Ω resistors in parallel: | 5 Ω | 20 Ω | 10 Ω | 100 Ω | Halved.
-M2: A potential divider of 2 kΩ and 8 kΩ across 10 V. V across 8 kΩ: | 8 V | 2 V | 5 V | 10 V | Proportional to R.
-M2: Three equal resistors are connected first in series, then in parallel. Which draws more current? | Parallel | Series | They draw the same current | It depends on the battery | Parallel resistance is lower than any single resistor, so more current flows.
+M1@1: Two 10 Ω resistors in parallel: | 5 Ω | 20 Ω | 10 Ω | 100 Ω | 1/R = 1/10 + 1/10 = 1/5, so two equal resistors in parallel give half of one: 5 Ω.
+M2@3: A potential divider of 2 kΩ and 8 kΩ across 10 V. V across 8 kΩ: | 8 V | 2 V | 5 V | 10 V | The voltage divides in proportion to resistance: 10 × 8/(2 + 8) = 8 V.
+M2@1: Three equal resistors are connected first in series, then in parallel. Which draws more current? | Parallel | Series | They draw the same current | It depends on the battery | Parallel resistance is R/3 and series 3R, so the parallel arrangement draws nine times the current.
+M3@3: An NTC thermistor is R_{2} in a potential divider (V_{out} across it). As the room warms, V_{out}: | Falls | Rises | Stays the same | Rises then falls | Warming lowers the thermistor's resistance, so it takes a smaller share of the supply voltage.
+NUM2@2: A 4.0 Ω resistor is in series with a parallel pair of 12 Ω and 6.0 Ω, across 9.0 V. What current flows through the 12 Ω resistor, in A? | 0.375 | 2% | A | The pair is 4.0 Ω, total 8.0 Ω, I = 1.125 A; the pair has 4.5 V, so I_{12} = 4.5/12 = 0.375 A.
+SA2@3: Explain why connecting a voltmeter of resistance 10 kΩ across the lower 10 kΩ resistor of a 10 kΩ + 10 kΩ divider on 6 V gives a reading below 3 V. | The voltmeter is in parallel with the lower resistor, so together they form 5 kΩ. The divider is now 10 kΩ and 5 kΩ, and the output is 6 × 5/15 = 2 V. The meter draws current and changes the circuit it is measuring (loading); an ideal voltmeter would need infinite resistance. | Meter in parallel lowers resistance to 5 kΩ ; New output 6 × 5/15 = 2 V ; Loading effect; ideal voltmeter has infinite R
 
 ## Kirchhoff's laws
 S: Kirchhoff's laws express conservation of charge and energy in circuits. With them you can analyse any network of resistors and sources, however complicated.
+O: State Kirchhoff's junction and loop laws and the conservation laws behind them
+O: Apply sign conventions to set up loop equations
+O: Solve multi-loop circuits with simultaneous equations
+PRE: Series and parallel circuits
+LV: A level · Application
 H: The laws
 - **Junction (current) law**: ΣI_{in} = ΣI_{out} at any node (charge conservation).
 - **Loop (voltage) law**: ΣEMFs = ΣIR around any closed loop (energy conservation; ΣΔV = 0).
 H: Method
 - Label currents with assumed directions in each branch.
-- Write junction equations (nodes − 1 independent ones).
-- Write loop equations for independent loops.
+- Write junction equations (nodes − 1 independent ones) and loop equations for independent loops.
 - Solve simultaneously; negative answers mean the current flows the other way.
 H: Systematic methods
 - **Mesh analysis**: loop currents; one equation per mesh.
@@ -126,36 +208,62 @@ H: Systematic methods
 X: A 6 V cell and a 2 V cell are connected in a single loop so that they oppose each other, with 4 Ω of total resistance. Find the current.
 > Net EMF = 6 − 2 = 4 V
 > I = 4/4 = 1 A, driven by the 6 V cell
+K: The loop law holds because potential is single-valued: going round any loop returns you to the starting potential.
 !: Watch signs: going through a resistor along the current is a drop (−IR); through a cell from − to + is a rise (+ε).
 P: **Investigate with the lab.** In a mixed network, read the currents into and out of each junction and the voltages round each loop. Check both of Kirchhoff's laws.
 IX: circuits
+T: Junction | A point in a circuit where three or more conductors meet
+T: Loop | Any closed path round a circuit
+SUM: Junction law: charge conservation. Loop law: energy conservation.
+SUM: Assume directions, write equations, solve; a negative current just runs the other way.
+EV: established | Kirchhoff's laws are exact for lumped circuits without changing magnetic flux through the loops.
+SRC: OpenStax, University Physics Volume 2, section 10.3 "Kirchhoff's Rules" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/10-3-kirchhoffs-rules
+SRC: AQA, A-level Physics specification (7408), section 3.5.1.4 Circuits | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: What does Kirchhoff's junction law express? | Conservation of charge.
 Q: What does Kirchhoff's loop law express? | Conservation of energy: the sum of EMFs equals the sum of potential drops around a loop.
-M1: Currents of 3 A and 2 A enter a junction; 4 A leaves on one wire. The other wire carries: | 1 A out | 1 A in | 9 A | 5 A | Charge conservation.
-M2: Kirchhoff's loop law fails when: | Changing magnetic flux threads the loop | Resistors are in parallel | Current is large | Never | Induced EMF makes the line integral non-zero.
-M2: What does Kirchhoff's first law express? | Conservation of charge at a junction | Conservation of energy round a loop | Ohm's law for each resistor | The power in a circuit | The current into a junction equals the current out of it.
+M1@1: Currents of 3 A and 2 A enter a junction; 4 A leaves on one wire. The other wire carries: | 1 A out | 1 A in | 9 A | 5 A | Charge is conserved at the junction: 5 A in must equal 5 A out, so the other wire carries 1 A away.
+M2@1: Kirchhoff's loop law fails when: | Changing magnetic flux threads the loop | Resistors are in parallel | The current is large | Never | An induced EMF from changing flux makes ∮E·dl non-zero, so potential is no longer single-valued round the loop.
+M2@1: What does Kirchhoff's first law express? | Conservation of charge at a junction | Conservation of energy round a loop | Ohm's law for each resistor | The power in a circuit | The current into a junction equals the current out of it, because charge cannot pile up there.
+M3@2,3: Two cells, 12 V and 6 V, are in parallel (positive terminals joined) across a 4 Ω resistor. The 12 V cell has internal resistance 2 Ω; the 6 V cell has none. The current in the 4 Ω resistor is: | 1.5 A | 3 A | 4.5 A | 0 A | The 6 V cell fixes the voltage across the 4 Ω resistor at 6 V, so its current is 6/4 = 1.5 A; the 12 V cell sends (12 − 6)/2 = 3 A, of which 1.5 A charges the 6 V cell.
+NUM2@3: A 9.0 V cell drives current round a loop containing a 3.0 V opposing cell and resistors of 2.0 Ω and 4.0 Ω. Find the current, in A. | 1.0 | 1% | A | Net EMF = 9.0 − 3.0 = 6.0 V; total resistance 6.0 Ω; I = 6.0/6.0 = 1.0 A.
+SA2@1: Explain the physical basis of each of Kirchhoff's laws. | The junction law follows from conservation of charge: charge cannot build up at a junction in a steady circuit, so the current flowing in must equal the current flowing out. The loop law follows from conservation of energy: a coulomb going round a closed loop returns to the same potential, so the energy it gains from EMFs equals the energy it transfers in the components. | Junction law: charge conserved, none accumulates ; Loop law: energy conserved ; Potential is single-valued round a loop
 
 ## Electromotive force
 S: Electromotive force (EMF) is the energy a source gives each coulomb of charge passing through it. Despite the name it's not a force: it's measured in volts, like potential difference, but describes energy supplied rather than used.
+O: Define EMF and distinguish it from potential difference
+O: Use ε = W/Q and battery capacity to calculate charge and energy
+O: Name sources of EMF and the energy conversions involved
+PRE: Voltage and potential difference
+LV: A level · Foundation
 H: Definitions
 E: ε = W/Q :: energy converted to electrical per unit charge
 - Sources: chemical (batteries), electromagnetic induction (generators), photovoltaic (solar cells), thermoelectric, piezoelectric.
-- p.d. is energy transferred from electrical to other forms per coulomb.
+- p.d. is the energy transferred from electrical to other forms per coulomb.
 H: Typical EMFs
 - Alkaline cell 1.5 V; lithium-ion 3.6–3.7 V; lead–acid cell 2.0 V; silicon solar cell ~0.6 V open circuit.
 H: Batteries
-P: A battery's EMF comes from the difference in chemical potential of its electrodes' reactions: ε = −ΔG/(nF). Capacity (A h) tells how much charge it can deliver; energy = capacity × voltage. A phone battery of 4000 mA h at 3.8 V stores ~15 W h (55 kJ).
+P: A battery's EMF comes from the free-energy change of its cell reaction: ε = −ΔG/(nF). Capacity (A h) tells how much charge it can deliver; energy = capacity × voltage. A phone battery of 4000 mA h at 3.8 V stores ~15 W h (55 kJ).
 X: A 12 V battery delivers 0.5 A for 1 hour. Charge and energy supplied?
-> Q = 0.5 × 3600 = 1800 C
-> W = 12 × 1800 = 21.6 kJ
+> Q = It = 0.5 × 3600 = 1800 C
+> W = εQ = 12 × 1800 = 21.6 kJ
+K: EMF is energy put into each coulomb by the source; p.d. is energy taken out of each coulomb by a component.
 !: EMF is measured across a source when no current flows; with current, terminal p.d. is lower because of internal resistance.
 P: **Investigate with the lab.** Change the load resistance and watch the terminal voltage change while the emf stays fixed.
 IX: circuits
+T: Electromotive force | The energy converted into electrical energy per unit charge passing through a source
+T: Battery capacity | The total charge a battery can deliver, usually in ampere-hours (1 A h = 3600 C)
+SUM: ε = W/Q, in volts, for energy supplied by a source.
+SUM: Battery energy = capacity × voltage.
+EV: established | EMF as energy per unit charge supplied is the standard definition; cell EMFs follow from electrochemistry.
+SRC: OpenStax, University Physics Volume 2, section 10.1 "Electromotive Force" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/10-1-electromotive-force
+SRC: AQA, A-level Physics specification (7408), section 3.5.1.6 Electromotive force and internal resistance | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: Define EMF. | The energy converted into electrical energy per unit charge by a source.
 Q: How is a cell's EMF related to its chemistry? | ε = −ΔG/(nF), from the free energy change of the cell reaction.
-M1: EMF is measured in: | Volts | Newtons | Amperes | Joules | J C^{-1}.
-M2: A 3000 mA h battery at 3.7 V stores about: | 40 kJ | 11 J | 3 kJ | 400 kJ | 3 A × 3600 s × 3.7 V.
-M2: What is the emf of a cell? | The energy it supplies per coulomb of charge | The voltage across the external resistor | The current it can deliver | Its internal resistance | Emf is energy transferred to each unit of charge by the source.
+M1@1: EMF is measured in: | Volts | Newtons | Amperes | Joules | EMF is energy per unit charge, J C^{-1}, which is the volt, despite the word "force" in its name.
+M2@2: A 3000 mA h battery at 3.7 V stores about: | 40 kJ | 11 J | 3 kJ | 400 kJ | Charge = 3 A × 3600 s = 10 800 C; energy = 10 800 × 3.7 ≈ 40 000 J.
+M2@1: What is the emf of a cell? | The energy it supplies per coulomb of charge | The voltage across the external resistor | The current it can deliver | Its internal resistance | Emf is the energy transferred to each unit of charge by the source, before any is lost inside it.
+M3@1,3: A solar cell gives 0.60 V on open circuit and delivers 0.50 V at 2.0 A in sunlight. Which is correct? | Its EMF is 0.60 V; 0.10 V is lost inside the cell | Its EMF is 0.50 V | Its EMF rises when current flows | The light energy per coulomb is 0.50 J | The open-circuit voltage equals the EMF; with current flowing, Ir = 0.10 V is lost internally, leaving 0.50 V at the terminals.
+SA2@1: Explain the difference between EMF and potential difference in terms of energy. | EMF is the energy transferred to each coulomb of charge by a source, from chemical, mechanical or light energy into electrical energy. Potential difference across a component is the energy transferred from each coulomb into other forms, such as heat or light, in that component. Both are in J C^{-1} (volts), but they describe energy going into and out of the circuit. | EMF: energy into electrical per coulomb, at a source ; p.d.: electrical energy out per coulomb, in a component ; Both measured in volts
 
 ## Internal resistance
 S: Every real source has internal resistance, so its terminal voltage drops when it supplies current. This "lost volts" sets how much current and power a battery can deliver.

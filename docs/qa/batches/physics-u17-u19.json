@@ -1,0 +1,369 @@
+{
+ "task": "physics-u17-u19",
+ "on": "2026-11-19",
+ "files": [
+  "kit/courses/physics/notes/u17.js",
+  "kit/courses/physics/notes/u19.js"
+ ],
+ "lessons": [
+  {
+   "course": "physics",
+   "lesson": "u17-01",
+   "title": "Magnetic fields",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "clarified field-line direction inside a magnet; defined the tesla; fixed ambiguous ratio working 1.5/5 × 10^-5 to 1.5/(5 × 10^-5)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-02",
+   "title": "Magnetic forces on charges",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "corrected the electron direction question; explained Fleming's rule with conventional current"
+   ],
+   "findings": [
+    {
+     "class": "error-fixed",
+     "note": "M1 'electron moving east in a field pointing north' gave the force as up, with the explanation 'v × B is down'. East × north is up, so v × B is up and the force on the negative electron is down. Right answer changed to 'Down (into the ground)'."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-03",
+   "title": "Lorentz force",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "rewrote the relativity paragraph so the frames are stated correctly (magnetic force in the wire frame, electric force in the charge's rest frame)"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "Relativity paragraph said a charge 'at rest' beside a wire feels no force and then switched frames confusingly; rewritten."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-04",
+   "title": "Magnetic forces on current-carrying wires",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added the 2019 SI note, the AQA top-pan balance practical (RP10) as a question and SA"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-05",
+   "title": "Motion of charged particles in magnetic fields",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "explained the cyclotron dee/gap mechanism and relativistic loss of synchronism"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-06",
+   "title": "Biot–Savart law",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "coil-centre formula now shows N turns, matching the worked example; noted μ0 is measured since 2019"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-07",
+   "title": "Ampère's law",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-08",
+   "title": "Magnetic dipoles",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "Stern–Gerlach paragraph now says the 1922 result showed space quantisation, later explained by spin"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "Stern–Gerlach (1922) was originally interpreted as orbital space quantisation; spin was proposed in 1925. Wording adjusted."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-09",
+   "title": "Magnetic flux",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added the AQA search-coil practical (RP11) as an SA"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "SQUID claim 'fields as small as 10^-17 T' softened to femtotesla fields, the usual quoted sensitivity."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-10",
+   "title": "Electromagnetic induction",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added simple demonstration section (magnet and coil)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-11",
+   "title": "Faraday's law",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "noted that peak emf occurs at zero flux; Kirchhoff-loop SA"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-12",
+   "title": "Lenz's law",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added an energy-transfer step to the worked example and a pole-choosing rule of thumb"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-13",
+   "title": "Inductance",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added flyback-diode SA"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-14",
+   "title": "Self-induction and mutual induction",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "defined M and k as terms"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "Removed the specific NFC/RFID coupling range 'k ~ 0.1–0.5' (unsourced; varies widely); now 'well below 1'."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-15",
+   "title": "Energy stored in magnetic fields",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "showed where ½LI² comes from (SA derivation)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-16",
+   "title": "Magnetic materials",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-17",
+   "title": "Diamagnetism",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "stated the levitation condition as an equation; clarified Earnshaw's theorem"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "Second source is Kittel, Introduction to Solid State Physics, 8th edn (Wiley, 2005), cited without chapter; OpenStax has only one relevant section (UP2 12.7). Coordinator may want to confirm."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-18",
+   "title": "Paramagnetism",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "clarified the weak-field condition for Curie's law; expanded adiabatic demagnetisation steps"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "Second source Kittel (8th edn, 2005) cited without chapter, as for Diamagnetism."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-19",
+   "title": "Ferromagnetism",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added quantitative reason why dipole forces cannot explain ferromagnetism (M3)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-20",
+   "title": "Hysteresis",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "showed the power-loss formula step in the worked example"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "Second source Kittel (8th edn, 2005) cited without chapter."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-21",
+   "title": "Electromagnets",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added saturation as a key term and a saturation question"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-22",
+   "title": "Solenoids and toroids",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "defined a, b, h in the toroid inductance formula; ITER coil field stated as a peak value"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-23",
+   "title": "Electric motors and generators",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added load/back-emf reasoning question"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-24",
+   "title": "Maxwell's equations",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added integral forms and a MATCH question; QED described as 'one of the most precisely tested' theories"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "'QED, the most precisely tested theory in physics' softened to 'one of the most precisely tested theories'."
+    }
+   ]
+  }
+ ],
+ "notes": [
+  "Physics lesson questions keep legacy position keys: all existing M questions are kept in their original order and new questions are appended after them. tests/compat.test.mjs compares the frozen legacy parser with the current one; the legacy parser does not recognise objective links (M2@1:), so this test will fail for any standard-2 physics unit, not only these. The coordinator should update the fixture or the test.",
+  "Sources: OpenStax sections were confirmed against the live openstax.org tables of contents (2026-11-19); AQA section numbers and titles were checked in the downloaded specification PDF (filestore.aqa.org.uk AQA-7407-7408-SP-2015.PDF, sha256 32a556da85fa0928c3600f8178d1a18fe5156b2ea36d76b541df866451721e20). The magnetic-field topics are AQA 3.7.5.x, not 3.7.4 or 7.4."
+ ]
+}

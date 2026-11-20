@@ -16,6 +16,8 @@ import { norm } from "../kit/core/text.js";
 import { lessonProblems } from "./lesson-standard.mjs";
 import { KB } from "../kit/curriculum/knowledge.js";
 import { matrix, LEVELS, LEVEL_NAMES } from "../kit/curriculum/matrix.js";
+import { coverage } from "../kit/curriculum/engine.js";
+import { BODIES } from "../kit/curriculum/catalogue/uk.js";
 import { BAND_NAMES } from "../kit/curriculum/schema.js";
 import { QUALIFICATIONS } from "../kit/curriculum/coverage.js";
 import { LISTING } from "../kit/curriculum/catalogue/uk.js";
@@ -66,6 +68,10 @@ export async function progressReport(lessons = null) {
   const data = { generated: new Date().toISOString().slice(0, 10), listing: LISTING, totals: T, content, matrix: { byStatus: m.byStatus, byNation: m.byNation, byBand: m.byBand, byGroup: m.byGroup, byQualification: m.byQualification, byBody: m.byBody, outcomes: m.outcomes },
     rows: m.rows.map((r) => ({ id: r.id, body: r.bodyName, qualification: r.qualification ? QUALIFICATIONS[r.qualification]?.name : r.framework, band: r.band, nations: r.nations, subject: r.subjectName, group: r.group, code: r.code, title: r.title, status: r.status, courses: r.courses, related: r.related, measure: r.measure })),
     specs: { total: specs.length, extracted, checked, outcomes: specs.reduce((n, s) => n + s.outcomes.length, 0) },
+    specList: specs.map((s) => { const r = coverage(KB, s.id, lessons), n = (...st) => r.outcomes.filter((o) => st.includes(o.status)).length;
+      return { spec: s.id, name: `${s.body} ${QUALIFICATIONS[s.qualification]?.name || ""} ${s.title}${s.code ? ` (${s.code})` : ""}`.replace(/\s+/g, " "), band: BAND_NAMES[s.band], outcomes: r.outcomes.length,
+        covered: n("covered"), partial: n("partial", "above-level", "below-level"), gap: n("gap"), unmapped: n("unmapped", "no-course"), courses: r.courses.join(", "),
+        source: s.checked ? "Checked by a person" : s.extracted ? "Extracted from the published document" : "Paraphrased, unchecked" }; }),
     findings: { errorsFixed: fx("error-fixed"), errorsSuspected: fx("error-suspected"), gaps: fx("gap"), editorial: fx("editorial"), curriculumDependent: fx("curriculum-dependent"), needsSource: fx("needs-source") },
     batches: done.map((b) => ({ file: b.file, task: b.task, lessons: (b.lessons || []).length, specs: (b.specs || []).length, error: b.error })) };
   const nat = { "uk-eng": "England", "uk-wal": "Wales", "uk-sco": "Scotland", "uk-ni": "Northern Ireland" };
@@ -80,8 +86,8 @@ export async function progressReport(lessons = null) {
     "| Course | Written | Standard 2 | Enhanced | Generated | Reviewed | Approved |", "|---|---|---|---|---|---|---|",
     ...content.map((r) => `| ${r.site} ${r.name} | ${r.written}/${r.lessons} | ${r.valid} (${pct(r.valid, r.written)}) | ${r.enhanced} | ${r.generated} | ${r.reviewed} | ${r.approved} |`), "",
     "## Specifications", "", `${specs.length} modelled, ${data.specs.outcomes} outcomes; ${extracted} source-verified (extracted from the published document), ${checked} checked by a person.`, "",
-    "| Specification | Outcomes | Covered | Partly | Gap | Not mapped | Source |", "|---|---|---|---|---|---|---|",
-    ...m.rows.filter((r) => r.measure).map((r) => `| ${r.bodyName} ${QUALIFICATIONS[r.qualification]?.name || ""} ${r.title} ${r.code || ""} | ${r.measure.outcomes} | ${r.measure.covered} | ${r.measure.partial} | ${r.measure.gap} | ${r.measure.unmapped} | ${r.measure.checked ? "checked" : r.measure.extracted ? "source-verified" : "paraphrased, unchecked"} |`), "",
+    "| Specification | Level | Outcomes | Covered | Partly | Gap | No course or not mapped | Courses | Source |", "|---|---|---|---|---|---|---|---|---|",
+    ...data.specList.map((r) => `| ${r.name} | ${r.band} | ${r.outcomes} | ${r.covered} | ${r.partial} | ${r.gap} | ${r.unmapped} | ${r.courses || "—"} | ${r.source} |`), "",
     "## The matrix", "", `${m.rows.length} catalogue rows. A row's status is the strongest the evidence supports.`, "", "### By nation", "", head, ...Object.entries(m.byNation).map(([k, t]) => statusRow(nat[k], t)), "",
     "### By level", "", head, ...Object.entries(m.byBand).map(([k, t]) => statusRow(BAND_NAMES[k], t)), "",
     "### By subject group", "", head, ...Object.entries(m.byGroup).sort().map(([k, t]) => statusRow(k, t)), "",

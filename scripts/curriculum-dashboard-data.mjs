@@ -13,7 +13,7 @@ const catalogue = d.rows.flatMap((r) => r.nations.map((n) => ({
   taught: ["subject", "aligned", "measured", "verified"].includes(r.status) ? 1 : 0, courses: [...r.courses, ...r.related.map((c) => `${c} (related)`)].join(", "),
 })));
 const content = d.content.map((c) => ({ course: `${c.site} ${c.name}`, slug: c.course, lessons: c.lessons, written: c.written, standard2: c.valid, enhanced: c.enhanced, generated: c.generated, reviewed: c.reviewed, approved: c.approved }));
-const specs = d.rows.filter((r) => r.measure).map((r) => ({ spec: r.measure.spec, name: `${r.body} ${r.qualification || ""} ${r.title}${r.code ? ` (${r.code})` : ""}`.replace(/\s+/g, " "), outcomes: r.measure.outcomes, covered: r.measure.covered, partial: r.measure.partial, gap: r.measure.gap, unmapped: r.measure.unmapped, source: r.measure.checked ? "Checked by a person" : r.measure.extracted ? "Extracted from the published document" : "Paraphrased, unchecked" }));
+const specs = d.specList;
 await mkdir(out, { recursive: true });
 for (const [f, rows] of Object.entries({ catalogue, content, specs })) await writeFile(`${out}/${f}.json`, JSON.stringify(rows));
 console.log({ catalogue: catalogue.length, content: content.length, specs: specs.length, generated: d.generated });

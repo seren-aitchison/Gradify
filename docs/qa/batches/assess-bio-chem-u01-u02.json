@@ -1,0 +1,286 @@
+{
+ "task": "assess-bio-chem-u01-u02",
+ "on": "2026-11-19",
+ "files": [
+  "kit/courses/biology/notes/u01.js",
+  "kit/courses/biology/notes/u02.js",
+  "kit/courses/chemistry/notes/u01.js",
+  "kit/courses/chemistry/notes/u02.js"
+ ],
+ "lessons": [
+  {
+   "course": "biology",
+   "lesson": "u01-01",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"A biologist studies how the population\"",
+    "distractors lengthened to remove length bias: \"Which example best shows how biology's levels connect?\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u01-02",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"A new particle found in a hot spring\"",
+    "distractors lengthened to remove length bias: \"Which pair of observations would most strongly\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u01-03",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "second source added: OpenStax, Concepts of Biology, section 1.1 \"Themes and Concepts of Biology\"",
+    "distractors lengthened to remove length bias: \"Why can't the behaviour of an ecosystem\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u01-04",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"A sample releases CO₂ when given nutrients\"",
+    "distractors lengthened to remove length bias: \"Why did the Viking life-detection results\"",
+    "existing questions linked to objectives (@n)",
+    "new M2 question added: \"A tardigrade has been dried out for months and shows no detectable met\""
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u01-05",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Birds are now classified within the reptile clade.\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u01-06",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"What does the finding that archaeal RNA polymerase\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u01-07",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"DNA studies show fungi are more closely related\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u01-08",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"In science, a theory is…\"",
+    "distractors lengthened to remove length bias: \"In Pasteur's experiment, what was the purpose\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u01-09",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Which is a null hypothesis?\"",
+    "distractors lengthened to remove length bias: \"A student's hypothesis is that caffeine increases\"",
+    "distractors lengthened to remove length bias: \"A test gives p = 0.30\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u01-10",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "existing questions linked to objectives (@n)",
+    "new M2 question added: \"A student measures the effect of temperature on enzyme activity with o\""
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u01-11",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"A drug trial gives one group the drug\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u01-12",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Students always read a measuring cylinder from above\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u01-13",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Counting oxygen bubbles from pondweed\"",
+    "distractors lengthened to remove length bias: \"A study finds that people who drink more coffee\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u01-14",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Two organelles 50 nm apart appear as one blurred spot\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "Second source 'Royal Society of Biology, Biological Nomenclature, 4th edition (2009)' left as it is; the 2009 4th edition was issued under the Institute of Biology / Society of Biology name, so the publisher name may need checking."
+    }
+   ]
+  },
+  {
+   "course": "biology",
+   "lesson": "u01-15",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "second source added: OpenStax, College Physics 2e, section 1.2 \"Physical Quantities and Units\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u01-16",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "second source added: OpenStax, Chemistry 2e, section 1.5 \"Measurement Uncertainty, Accuracy, and Precision\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u01-17",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"A curve of product mass against time flattens\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u01-18",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u01-19",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"In a mark–release–recapture study the marks make\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u01-20",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Biological reasoning",
+    "evidence status: contested",
+    "distractors lengthened to remove length bias: \"A study wants to use blood samples collected years ago\"",
+    "existing questions linked to objectives (@n)",
+    "new M2 question added: \"A volunteer in a diet study decides halfway through that she no longer\""
+   ],
+   "findings": []
+  }
+ ],
+ "notes": [
+  "In progress: files are saved one at a time; this report lists the lessons finished so far."
+ ]
+}

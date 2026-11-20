@@ -1,0 +1,190 @@
+{
+ "task": "gcse-biology-new-schools",
+ "on": "2026-11-19",
+ "files": [
+  "kit/courses/gcse/syllabus.js",
+  "kit/courses/gcse/ids.js",
+  "kit/courses/gcse/registry.js",
+  "kit/courses/gcse/course.js",
+  "kit/courses/gcse/qa.js",
+  "kit/courses/gcse/notes/u10.js"
+ ],
+ "lessons": [
+  {
+   "course": "gcse",
+   "lesson": "u10-01",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 4.1.1.1"
+   ],
+   "findings": []
+  },
+  {
+   "course": "gcse",
+   "lesson": "u10-02",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 4.1.1.2"
+   ],
+   "findings": []
+  },
+  {
+   "course": "gcse",
+   "lesson": "u10-03",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 4.1.1.3, 4.1.1.4"
+   ],
+   "findings": []
+  },
+  {
+   "course": "gcse",
+   "lesson": "u10-04",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 4.1.1.5"
+   ],
+   "findings": []
+  },
+  {
+   "course": "gcse",
+   "lesson": "u10-05",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 4.1.2.1, 4.1.2.2"
+   ],
+   "findings": []
+  },
+  {
+   "course": "gcse",
+   "lesson": "u10-06",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 4.1.2.3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "gcse",
+   "lesson": "u10-07",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 4.1.3.1 (diffusion, factors)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "gcse",
+   "lesson": "u10-08",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 4.1.3.1 (surface area to volume ratio, exchange surfaces)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "gcse",
+   "lesson": "u10-09",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 4.1.3.2"
+   ],
+   "findings": []
+  },
+  {
+   "course": "gcse",
+   "lesson": "u10-10",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 4.1.3.3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "gcse",
+   "lesson": "u10-11",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 4.2.2.1 (enzymes, lock and key, temperature, pH, rate)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "gcse",
+   "lesson": "u10-12",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 4.2.1, 4.2.2.1 (digestive enzymes, bile)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "gcse",
+   "lesson": "u10-13",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 4.2.3.1"
+   ],
+   "findings": []
+  },
+  {
+   "course": "gcse",
+   "lesson": "u10-14",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 4.2.3.2"
+   ],
+   "findings": []
+  },
+  {
+   "course": "gcse",
+   "lesson": "u10-15",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 4.4.1.1, 4.4.1.3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "gcse",
+   "lesson": "u10-16",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 4.4.1.2 (incl. HT)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "gcse",
+   "lesson": "u10-17",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 4.4.2.1"
+   ],
+   "findings": []
+  },
+  {
+   "course": "gcse",
+   "lesson": "u10-18",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 4.4.2.2 (incl. HT)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "gcse",
+   "lesson": "u10-19",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 4.4.2.3"
+   ],
+   "findings": []
+  }
+ ],
+ "notes": [
+  "IN PROGRESS: School 10 complete and checked (0 problems); School 11 notes not yet written.",
+  "Spec: https://filestore.aqa.org.uk/resources/science/specifications/AQA-8464-SP-2016.PDF, version 1.1 (4 October 2019), sha256 d9de6e1889d675861a814c21eb5509fe1b7941452dc0c4794dfc9927e9b6c894, printed pages 20-61 and 175-179 used.",
+  "Spec refs per lesson: u10-01: 4.1.1.1; u10-02: 4.1.1.2; u10-03: 4.1.1.3, 4.1.1.4; u10-04: 4.1.1.5; u10-05: 4.1.2.1, 4.1.2.2; u10-06: 4.1.2.3; u10-07: 4.1.3.1 (diffusion, factors); u10-08: 4.1.3.1 (surface area to volume ratio, exchange surfaces); u10-09: 4.1.3.2; u10-10: 4.1.3.3; u10-11: 4.2.2.1 (enzymes, lock and key, temperature, pH, rate); u10-12: 4.2.1, 4.2.2.1 (digestive enzymes, bile); u10-13: 4.2.3.1; u10-14: 4.2.3.2; u10-15: 4.4.1.1, 4.4.1.3; u10-16: 4.4.1.2 (incl. HT); u10-17: 4.4.2.1; u10-18: 4.4.2.2 (incl. HT); u10-19: 4.4.2.3"
+ ]
+}

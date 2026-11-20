@@ -1,0 +1,336 @@
+{
+ "task": "physics-u06-u07",
+ "on": "2026-11-19",
+ "files": [
+  "kit/courses/physics/notes/u06.js",
+  "kit/courses/physics/notes/u07.js"
+ ],
+ "lessons": [
+  {
+   "course": "physics",
+   "lesson": "u06-01",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "M1 reworded to 'complete oscillations' (a swing can mean half a cycle)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u06-02",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "added the gradient link between x–t, v–t and a–t graphs (AQA 3.6.1.2)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u06-03",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u06-04",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "added the Newton's-second-law step to the derivation"
+   ],
+   "findings": [
+    {
+     "class": "error-fixed",
+     "note": "Static method said 'k = 1/gradient (load/extension)', which mixes the two graphs; now: plot extension against load, gradient = 1/k."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u06-05",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "added the small-angle derivation (sin θ ≈ θ gives ω² = g/l)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u06-06",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "described KE/PE against displacement as well as time (AQA 3.6.1.3)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u06-07",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "key point on geometric decay of peaks"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u06-08",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "stated b_c = 2√(km) = 2mω0 as an equation"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u06-09",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "added a second section heading; key point that the steady state is at the driving frequency"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u06-10",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "added a common-mistake line on microwave ovens"
+   ],
+   "findings": [
+    {
+     "class": "error-fixed",
+     "note": "Listed microwave ovens as 'useful resonance' (driving molecular rotations). Domestic microwave ovens at 2.45 GHz do not work by resonance with water; heating is by dielectric loss. Removed from the list and added as a common mistake."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u06-11",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "key point linking ringing time and bandwidth"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u06-12",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "OpenStax covers SHM and beats but not coupled pendulums or normal-mode analysis; a specialist text (e.g. a standard vibrations-and-waves textbook) should be added at review."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u06-13",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "added a three-spring two-mass mode problem"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "OpenStax sources cover string modes only; molecular mode counting (3N − 6/3N − 5) and the matrix eigenvalue method need a specialist source at review."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u06-14",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "added beat problems that use a second change (wax, tightening) to decide which frequency is higher"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u06-15",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "key point on what the quadratic, cubic and quartic terms of the potential do"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "OpenStax sections cited cover potential-energy curves and pendulums; the Morse potential and anharmonic origin of thermal expansion need a specialist source at review."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u06-16",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "key point on why a limit cycle's amplitude is set by the system"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "OpenStax has no section on Duffing/van der Pol oscillators, limit cycles or synchronisation; the cited sections support only the linear background. Add a nonlinear-dynamics text at review."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u06-17",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "key point on exponential growth and the 2ω0 condition"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "Parametric resonance and the Mathieu equation are not in OpenStax; the damping threshold h > ~2γ/ω0 should be checked against a classical mechanics text at review."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u06-18",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "added a spectrum-fault matching question and a stiffer-mount misconception question"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "Machine-fault spectrum signatures, transmissibility and Taipei 101's damper are engineering content not in OpenStax; add an engineering vibration source at review."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u06-19",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "added the decibel definition as an equation"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u06-20",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "added a common-mistake line on aliasing and the Nyquist frequency"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "FFT practice (windowing, resolution, Nyquist) is not in the cited OpenStax sections, which cover harmonics and superposition."
+    }
+   ]
+  }
+ ],
+ "notes": [
+  "in progress"
+ ]
+}
