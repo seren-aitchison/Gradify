@@ -2165,7 +2165,7 @@ body:has(> .co-modal) .cx-rings { display: none !important; }
 
 /* ---------- Second pass from the audit ---------- */
 /* phones: in a lesson Gradify AI is in the dock, so the floating orb doesn't sit over the text */
-@media (max-width: 1020px) { body:has(.co.co-reading) .gai-fab:not([aria-expanded="true"]) { display: none; } }
+@media (max-width: 760px) { body:has(.co.co-reading) .gai-fab:not([aria-expanded="true"]) { display: none; } }
 /* phones: the course header is the course's name and the tabs; the stat chips live on Progress, and saving and pinning
    on the outline and menu */
 @media (max-width: 760px) {

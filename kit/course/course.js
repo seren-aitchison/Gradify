@@ -1590,8 +1590,10 @@ export function mountCourse(root, cfg) {
       ${next ? `<label class="cx-autonext"><input type="checkbox" data-autonext ${S.autoNext ? "checked" : ""}> Go straight on to the next lesson next time</label><p class="cx-countdown" aria-live="polite" hidden></p>` : ""}
       <small class="cx-donekeys"><kbd>↵</kbd> ${next ? "next lesson" : "syllabus"} · <kbd>Esc</kbd> stay</small></div>`;
     let tick = 0;
-    const close = () => { clearInterval(tick); d.remove(); removeEventListener("keydown", key, true); };
+    const close = () => { clearInterval(tick); d.remove(); removeEventListener("keydown", key, true); routeStop = null; };
     const key = (e) => { if (e.key === "Escape") { e.preventDefault(); close(); } };
+    // navigating away (Back, a link, a new hash) removes the sheet: stop its countdown and key handler with it
+    routeStop = () => { clearInterval(tick); removeEventListener("keydown", key, true); };
     d.querySelector("[data-autonext]")?.addEventListener("change", (e) => { S.autoNext = e.target.checked; save(); if (!e.target.checked) { clearInterval(tick); const c = d.querySelector(".cx-countdown"); if (c) c.hidden = true; } });
     // chosen by the learner, and never with reduced motion: a five-second countdown they can stop with any key or tap
     const calm = matchMedia("(prefers-reduced-motion: reduce)").matches || document.documentElement.dataset.aMotion === "reduce";
