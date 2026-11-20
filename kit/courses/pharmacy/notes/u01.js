@@ -302,7 +302,7 @@ Q: What writing style helps people with low health literacy? | Plain words, shor
 Q: What format of leaflet helps people with learning disabilities? | Easy-read leaflets.
 Q: What does the Accessible Information Standard require NHS services in England to do? | Ask about and record people's communication needs.
 Q: Which is clearer: 'take two 5 mL spoonfuls' or '10 mL'? | Take two 5 mL spoonfuls.
-Q: Name three accessible formats for people with sight loss. | Large print, Braille labels and audio information.
+Q: How could a 10 mL dose be phrased more clearly for a patient? | As 'take two 5 mL spoonfuls'.
 
 ## Consent in pharmacy practice
 S: Before any examination, treatment or service, a person must give valid consent. Pharmacists seek consent for consultations, vaccinations, services and sharing information, and must recognise when someone lacks capacity.
@@ -330,7 +330,7 @@ SRC: General Pharmaceutical Council, Guidance on consent | guidance | 2018 | htt
 M1#pharmacy-u01-09-q1@2: An adult has dementia. What does the law presume about capacity? | They are presumed to have capacity unless shown otherwise | They lack capacity for all decisions | Only family can decide | They can never consent | A GP must always decide | Capacity is presumed and assessed decision by decision.
 M2#pharmacy-u01-09-q2@1: Which element makes consent "informed"? | Understanding benefits, risks and alternatives | Signing a consent form before any treatment | Having a relative present during the discussion | Being told the treatment is routine and safe | Agreeing after a short description of the service | Information on material risks and alternatives is essential.
 M3#pharmacy-u01-09-q3@2: A 15-year-old asks for emergency contraception. What applies? | Assess Gillick competence and follow the Fraser guidelines and safeguarding duties | Refuse supply until a parent or guardian attends | Supply straight away, as no questions are allowed | Contact the young person's school for permission | Refer to the GP, as pharmacies can't supply under-16s | Under-16s can consent if competent; safeguarding must also be considered.
-Q: Define valid consent. | Consent that is voluntary, informed and given by someone with capacity.
+Q: Which Act governs capacity decisions in Scotland? | The Adults with Incapacity (Scotland) Act 2000.
 Q: Define Gillick competence. | A child under 16's capacity to consent to their own treatment if they have sufficient understanding and intelligence.
 Q: What must a person understand for consent to be informed? | The purpose, benefits, risks and alternatives, including doing nothing.
 Q: Which case established the need to disclose material risks? | Montgomery v Lanarkshire Health Board [2015].
