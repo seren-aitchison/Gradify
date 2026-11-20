@@ -417,3 +417,15 @@ header.bar.glass, header.sub-nav.glass {
 /* a site's name: its accent colour, lightened for the dark bar (kit/core/site.js accentOf) and darkened for the light
    one (accentOnLight), so it reads at 5.5:1 or more on both */
 :root[data-theme="light"] .site-accent[style*="--acc-l"] { color: var(--acc-l) !important; }
+
+/* a course page before its scripts arrive (kit/course/course.js fills #course): the space the course will take, and a
+   quiet placeholder of its hero card, so the footer doesn't sit under the header and then jump away, and the page
+   doesn't look empty while it loads */
+#course:empty { min-height: 100vh; }
+#course:empty::before {
+  content: ""; display: block; height: 260px; margin-top: 24px; border-radius: 22px; border: 1px solid var(--line);
+  background: linear-gradient(100deg, rgba(var(--ink-rgb), .03) 30%, rgba(var(--ink-rgb), .08) 50%, rgba(var(--ink-rgb), .03) 70%) 0 0 / 300% 100%;
+  animation: course-wait 1.4s ease-in-out infinite;
+}
+@keyframes course-wait { from { background-position: 100% 0; } to { background-position: 0 0; } }
+@media (prefers-reduced-motion: reduce) { #course:empty::before { animation: none; } }

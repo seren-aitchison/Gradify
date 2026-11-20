@@ -466,6 +466,17 @@ a.co-feat:hover { border-color: var(--line-strong); background: rgba(var(--ink-r
 .co-bigsearch input { flex: 1; padding: 13px 0; border: 0; background: none; color: var(--fg); font: 15px var(--sans); outline: none; min-width: 0; }
 .co-bigsearch .co-results { position: absolute; top: 100%; left: 0; transform: none; margin-top: 6px; }
 .co-herolab .co-lab { height: 100%; margin: 0; }
+/* the hero's lab keeps one size from first paint: the stage (a whole periodic table can be ~1500px tall) scrolls inside
+   the card instead of stretching the hero when the interactive loads, which pushed the page down by a screen or more */
+.co-herolab .co-lab { display: flex; flex-direction: column; }
+.co-herolab .co-labstage { flex: 1 1 auto; min-height: 0; overflow: auto; overscroll-behavior: contain; }
+/* the preview shows the interactive itself; its model note and review status are on the full Lab page */
+.co-herolab .co-labnote, .co-herolab .co-labstatus { display: none; }
+@media (min-width: 901px) {
+  .co-herolab { position: relative; min-height: 600px; }   /* the text column sets the row's height, at least this tall */
+  .co-herolab .co-lab { position: absolute; inset: 0; }
+}
+@media (max-width: 900px) { .co-herolab .co-labstage { flex: none; height: min(70vh, 560px); } }
 .co-osec { margin-top: 40px; }
 .co-learn { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; }
 .co-learn div { padding: 16px; border-radius: 16px; background: rgba(var(--ink-rgb), .03); border: 1px solid var(--line); } .co-learn p { margin: 6px 0 0; color: var(--mute); font-size: 14px; line-height: 1.5; }
