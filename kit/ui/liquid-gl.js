@@ -304,8 +304,8 @@ export function start() {
   // dropped. A gap while the tab was hidden isn't counted; a slow gap is (a GPU that slow must not keep running), and
   // if the frames haven't come in by the deadline, it's too slow. Nothing waits for the GPU to finish: the page is never blocked.
   const SKIP = 3, TAKE = 20, DEADLINE = 5000;
-  let probing = false, last = 0, seen = 0, gaps = [], since = 0;
-  const probe = () => { probing = true; last = 0; seen = 0; gaps = []; since = performance.now(); busyUntil = since + DEADLINE + 1000; kick(); };   // redraws of a still page: not motion
+  let probing = false, remeasure = false, last = 0, seen = 0, gaps = [], since = 0;
+  const probe = () => { remeasure = false; probing = true; last = 0; seen = 0; gaps = []; since = performance.now(); busyUntil = since + DEADLINE + 1000; kick(); };   // redraws of a still page: not motion
   const sample = () => {
     const t = performance.now();
     if (document.hidden) { last = 0; return; }
@@ -319,6 +319,7 @@ export function start() {
     window.gradifyGlass.frameMs = Math.round(ms * 10) / 10;
     if (next === P.tier) { status(P.tier, "measured " + window.gradifyGlass.frameMs + "ms a frame"); return; }
     if (next === "css") { status("css", `too slow here (${window.gradifyGlass.frameMs}ms a frame)`); return stop(); }
+    tier = next; remeasure = true;   // a step-down in progress survives a lost context: the restore builds it and measures
     build(next).then(() => { if (stopped) return; dirty = true; status(next, `measuring (full tier was ${window.gradifyGlass.frameMs}ms a frame)`); probe(); }).catch((e) => { if (lost || gl.isContextLost()) return; status("css", "lite shader failed: " + e.message); stop(); });   // a lost context: onRestored takes over
   };
 
@@ -346,7 +347,7 @@ export function start() {
   // the same canvas and observers back when it returns
   const onLost = (e) => { e.preventDefault(); lost = true; lostCount++; P = null; root.classList.remove("lgl"); status("css", "GPU context lost; waiting for it back"); };
   // back from a lost context: rebuild the tier that last built; a speed check that was running starts afresh (downtime isn't slowness)
-  const onRestored = () => { if (stopped) return; par = gl.getExtension("KHR_parallel_shader_compile"); build(tier).then(() => { if (stopped) return; lost = false; root.classList.add("lgl"); dirty = true; status(P.tier, "GPU context restored"); if (probing) probe(); else kick(); }).catch(() => { if (!gl.isContextLost()) stop(); }); };
+  const onRestored = () => { if (stopped) return; par = gl.getExtension("KHR_parallel_shader_compile"); build(tier).then(() => { if (stopped) return; lost = false; root.classList.add("lgl"); dirty = true; status(P.tier, "GPU context restored"); if (probing || remeasure) probe(); else kick(); }).catch(() => { if (!gl.isContextLost()) stop(); }); };
 
   function stop() {
     if (stopped) return; stopped = true;
