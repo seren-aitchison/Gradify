@@ -188,6 +188,7 @@ export function start() {
     const vs = sh(gl.VERTEX_SHADER, VS), fs = sh(gl.FRAGMENT_SHADER, fragment(max, t !== "webgl", highp ? "highp" : "mediump"));
     const prog = gl.createProgram(); gl.attachShader(prog, vs); gl.attachShader(prog, fs); gl.linkProgram(prog);
     const done = () => {
+      if (stopped) return;   // stopped while compiling: install nothing
       if (gl.isContextLost()) return reject(new Error("context lost"));
       if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) return reject(new Error(gl.getShaderInfoLog(fs) || gl.getProgramInfoLog(prog) || "link failed"));
       gl.deleteShader(vs); gl.deleteShader(fs);
@@ -202,10 +203,10 @@ export function start() {
       Object.assign(P, { prog, U, max, tier: t }); tier = t; resolve();
     };
     if (!par) return done();
-    const poll = () => { if (era !== lostCount) return; if (gl.isContextLost()) return reject(new Error("context lost")); gl.getProgramParameter(prog, par.COMPLETION_STATUS_KHR) ? done() : setTimeout(poll, 30); };
+    const poll = () => { if (stopped || era !== lostCount) return; if (gl.isContextLost()) return reject(new Error("context lost")); gl.getProgramParameter(prog, par.COMPLETION_STATUS_KHR) ? done() : (pollT = setTimeout(poll, 30)); };
     poll();
   });
-  let lostCount = 0;
+  let lostCount = 0, pollT = 0;
 
   canvas.className = "lgl-canvas"; canvas.setAttribute("aria-hidden", "true");
   const style = document.createElement("style");
@@ -352,7 +353,7 @@ export function start() {
   function stop() {
     if (stopped) return; stopped = true;
     live = false; if (running === handle) running = null;   // never clear a newer instance
-    clearTimeout(mt); if (raf) cancelAnimationFrame(raf); probing = false;
+    clearTimeout(mt); clearTimeout(pollT); if (raf) cancelAnimationFrame(raf); probing = false;
     mqT.removeEventListener("change", onAccess); mqC.removeEventListener("change", onAccess);
     mo.disconnect(); to.disconnect(); root.classList.remove("lgl"); canvas.remove(); style.remove();
     document.querySelectorAll("[data-lg]").forEach((e) => { e.removeAttribute("data-lg"); e.removeAttribute("data-lg-cap"); });
@@ -367,7 +368,7 @@ export function start() {
   let stopped = false;
   const handle = running = { stop, redraw: () => { dirty = true; kick(); }, get tier() { return P ? P.tier : "css"; } };
   status("css", null, { pending: tier });   // CSS glass until the GPU program is ready
-  build(tier).catch((e) => tier === "webgl" ? build(tier = "webgl-lite") : Promise.reject(e)).then(() => {
+  build(tier).catch((e) => !stopped && tier === "webgl" ? build(tier = "webgl-lite") : Promise.reject(e)).then(() => {
     if (!running || stopped) return;
     document.head.appendChild(style); document.body.appendChild(canvas);
     canvas.addEventListener("webglcontextlost", onLost); canvas.addEventListener("webglcontextrestored", onRestored);

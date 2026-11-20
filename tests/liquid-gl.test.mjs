@@ -86,5 +86,5 @@ test("stop() cancels pending frames and timers (the cleanup is code, not swallow
   const src = await readFile(new URL("../kit/ui/liquid-gl.js", import.meta.url), "utf8");
   const body = src.slice(src.indexOf("function stop()"), src.indexOf("\n  }", src.indexOf("function stop()")));
   const code = body.split("\n").map((l) => l.replace(/\s\/\/.*$/, "")).join("\n");   // strip trailing comments
-  for (const k of ["clearTimeout(mt)", "cancelAnimationFrame(raf)", "probing = false", "mo.disconnect()", "canvas.remove()"]) assert.ok(code.includes(k), k);
+  for (const k of ["clearTimeout(mt)", "clearTimeout(pollT)", "cancelAnimationFrame(raf)", "probing = false", "mo.disconnect()", "canvas.remove()"]) assert.ok(code.includes(k), k);
 });
