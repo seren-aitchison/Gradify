@@ -51,7 +51,7 @@ Q: Why is it a mistake to think drawing must be realistic to count? | Diagrams, 
 Q: What is observational drawing? | Drawing made by looking directly at a subject, also called drawing from life.
 Q: What is annotation in a sketchbook? | Written notes alongside drawings and studies that explain observations, intentions and decisions.
 Q: What did Betty Edwards argue about observational drawing? | That it is a learnable skill of perception: seeing edges, spaces, relationships, light and shadow.
-Q: Is Betty Edwards's "right brain" explanation of drawing supported by neuroscience? | No; current neuroscience shows both hemispheres working together, though structured practice does improve drawing.
+Q: How does current neuroscience view Betty Edwards's "right brain" explanation of drawing? | It does not support it: both hemispheres work together, though structured practice does improve drawing.
 
 ## Drawing materials: graphite, charcoal, ink and pastel
 LV: Introductory · Foundation
