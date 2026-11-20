@@ -193,7 +193,7 @@ Q: How is a twelve-hue wheel painted from three primaries? | Place the primaries
 Q: Why might red and blue make a dull violet? | Real pigments are impure: a warm cadmium red with ultramarine gives dull violet, while a cool magenta gives a clean one.
 Q: What is a split primary palette? | A palette with a warm and a cool version of each primary, allowing cleaner mixtures.
 Q: Why are cyan, magenta and yellow better subtractive primaries than red, yellow and blue? | They produce a wider gamut of mixtures.
-Q: Is the RYB colour wheel a physical law? | No; it is a practical tradition rather than a physical law.
+Q: What is the status of the RYB colour wheel, according to the lesson? | It is a practical tradition rather than a physical law.
 Q: How do complementaries in Munsell's system differ from RYB? | Red's complement is closer to blue-green than green.
 Q: What is a secondary colour? | A colour made by mixing two primaries on a given colour wheel.
 
@@ -492,7 +492,7 @@ Q: How should the cast shadow of an orange on a white cloth in sunlight be paint
 Q: Why is darkening shadows only with black or brown a mistake? | Real shadows shift in temperature as well as value; ignoring this gives dull, dirty-looking painting.
 Q: What is chromostereopsis? | A visual effect in which colours of different wavelengths, such as red and blue, appear at different depths.
 Q: How do designers commonly use warm and cool palettes? | Warm for energy and appetite, such as food brands; cool for calm and trust, such as finance and health.
-Q: Are the moods linked to warm and cool palettes universal? | No; such associations are cultural and contestable.
+Q: Why should the moods linked to warm and cool palettes be treated with caution? | Such associations are cultural and contestable, not universal.
 
 ## Colour and space
 LV: Intermediate · Application
@@ -732,7 +732,7 @@ SA2#art-u03-15-q5@2,3: Evaluate the colour accessibility of a design you know an
 Q: What proportion of men and women have a colour vision deficiency? | About 8% of men and 0.5% of women of Northern European ancestry.
 Q: What is deuteranopia? | A red-green colour vision deficiency caused by absent green-sensitive cones.
 Q: What is protanopia? | A red-green colour vision deficiency involving the red-sensitive cones.
-Q: Do people with colour vision deficiency see colour? | Yes, but they confuse certain pairs, such as red and green, or red and brown.
+Q: What do people with colour vision deficiency typically confuse? | Certain pairs of colours, such as red and green, or red and brown.
 Q: What contrast ratio does WCAG AAA require for normal text? | 7 : 1.
 Q: What does WCAG success criterion 1.4.1 require? | That colour is not the only visual means of conveying information.
 Q: How can a red-green profit and loss chart be made accessible? | Add labels or plus and minus signs, and use a colour-blind-safe pair such as blue and orange that also differ in value.
