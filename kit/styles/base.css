@@ -195,7 +195,7 @@ a { color: inherit; }
   padding: 8px 8px 8px 16px; border-radius: 16px;
   margin-inline: calc(-1 * var(--bar-bleed));
 }
-.brand { display: flex; align-items: center; gap: 10px; font-weight: 600; text-decoration: none; font-size: 17px; letter-spacing: -.01em; }
+.brand { display: flex; align-items: center; gap: 10px; min-height: 44px; font-weight: 600; text-decoration: none; font-size: 17px; letter-spacing: -.01em; }
 .brand svg { width: 30px; height: 30px; }
 /* section links: plain text on the bar (no recessed track), a soft highlight on hover, and the current section in
    white with a small Gradify-gradient underline, like TechGradify's top bar */
