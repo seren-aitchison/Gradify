@@ -31,3 +31,8 @@ test("the glass copies into the floating bars only when they'd look different, n
   assert.match(gl, /capT = setTimeout\(\(\) => \{ capT = 0; kick\(\); \}/);   // a throttled highlight still lands
   assert.match(gl, /const key = `[^`]*\$\{shape\}`/);                           // the bar's shape is part of the key
 });
+
+test("a course page holds the course's space while its scripts load, so the footer doesn't jump", async () => {
+  const base = await read("kit/styles/base.css");
+  assert.match(base, /#course:empty \{ min-height: 100vh;/);
+});
