@@ -296,6 +296,96 @@
    "course": "maths",
    "action": "enhanced",
    "findings": []
+  },
+  {
+   "lesson": "u07-28",
+   "changes": [
+    "LV A level · Application; EV",
+    "added SA3 question (midpoint, left and right sums)"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-29",
+   "changes": [
+    "LV A level · Fluency; EV",
+    "added SA3 question (signed area against total area)"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-30",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-31",
+   "changes": [
+    "LV A level · Application; EV",
+    "added NUM2, NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-32",
+   "changes": [
+    "LV A level · Application; EV",
+    "added NUM2 and SA3 (cyclic parts) questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-33",
+   "changes": [
+    "LV A level · Application; EV",
+    "added NUM2, NUM3 and SA3 (repeated factor) questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-34",
+   "changes": [
+    "LV A level · Application; EV",
+    "added NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-35",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added NUM2 and SA2 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-36",
+   "changes": [
+    "LV A level · Application; EV",
+    "added NUM2 (Simpson's rule) and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
   }
  ],
  "notes": [

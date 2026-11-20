@@ -5,6 +5,8 @@ export default `
 S: Algebra uses letters to stand for numbers, so that we can describe patterns, rules and relationships that hold for many values at once. It turns "think of a number, double it and add three" into 2n + 3.
 O: Use letters to represent unknowns and variables
 O: Write and interpret simple algebraic expressions
+LV: GCSE · Fluency
+EV: established | A letter in algebra stands for a number, either a particular unknown or a variable, and obeys the same rules as numbers.
 T: Variable | A letter standing for a number that can change, such as x in y = 2x + 1
 T: Expression | A combination of numbers, letters and operations, with no equals sign, such as 3a + 2b
 H: Letters for numbers
@@ -32,11 +34,15 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 M1#maths-u03-01-q1@1: Which expression means "7 less than y"? | y − 7 | 7 − y | 7y | y ÷ 7 | y + 7 | "Less than" subtracts 7 from y, so y − 7; 7 − y is 7 minus y.
 M2#maths-u03-01-q2@2: Pens cost p pence each and a pad costs 90p. What is the cost, in pence, of 4 pens and 2 pads? | 4p + 180 | 6p + 90 | 4p + 90 | 8p | 4(p + 90) | 4 pens cost 4p and 2 pads cost 2 × 90 = 180, so 4p + 180.
 NUM1#maths-u03-01-q3@1: Find the value of 2n + 3 when n = 8.5. | 20 | 0 |  | 2 × 8.5 = 17, and 17 + 3 = 20.
+M3@2: Adult tickets cost £a and child tickets £c. A family of 2 adults and 3 children pays with a £50 note. Which expression gives their change in pounds? | 50 − 2a − 3c | 50 − 2a + 3c | 2a + 3c − 50 | 50 − 5ac | The cost is 2a + 3c, and the change is 50 minus all of it: 50 − (2a + 3c) = 50 − 2a − 3c.
+SA2@1,2: A student writes "4 less than 3 times n" as 4 − 3n. Explain the mistake, give the correct expression and check it with n = 10. | "4 less than" something means take 4 away from it, so the 4 is subtracted from 3n, not the other way round. The correct expression is 3n − 4. Check with n = 10: 3 times 10 is 30, and 4 less is 26; 3n − 4 = 26, whereas 4 − 3n = −26. | Says the 4 is subtracted from 3n ; Writes 3n − 4 ; Substitutes n = 10 to get 26 ; Shows 4 − 3n gives a different value
 
 ## Elementary Algebra
 S: Elementary algebra is the toolkit of school algebra: the rules for manipulating expressions and equations, built on the properties of numbers. Every later technique, from factorising to calculus, rests on these rules.
 O: Apply the commutative, associative and distributive laws to expressions
 O: Distinguish expressions, equations, formulae and identities
+LV: GCSE · Fluency
+EV: established | The commutative, associative and distributive laws hold for all real numbers and justify every step of algebraic manipulation.
 T: Identity | A statement true for every value of the variable, such as 2(x + 3) ≡ 2x + 6
 T: Formula | A rule linking quantities, such as v = u + at
 H: The laws
@@ -66,11 +72,16 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | secondary | 1993 | https://link.springer.com/
 M1#maths-u03-02-q1@1: Which is an identity? | 3(x + 2) ≡ 3x + 6 | 3x + 2 = 11 | y = 3x + 2 | 3x + 2 | 3x > 2 | It's true for every value of x, so it's an identity.
 M2#maths-u03-02-q2@2: Which law justifies 7 × 98 = 7 × 100 − 7 × 2? | The distributive law | The commutative law | The associative law | The law of indices | The inverse law | 7(100 − 2) = 7 × 100 − 7 × 2 multiplies across a bracket.
+TF1@2: 2(x + 3) = 2x + 3 is an identity. | false | The distributive law multiplies both terms in the bracket: 2(x + 3) = 2x + 6, so the statement is false for every x.
+M3@1: Which step uses the associative law? | (2x + 5) + 3 = 2x + (5 + 3) | 4(x + 2) = 4x + 8 | 3x + 7 = 7 + 3x | x + (−x) = 0 | Regrouping without changing order is the associative law; the others show the distributive, commutative and inverse laws.
+SA2@2: Explain the difference between an equation and an identity, giving an example of each, and describe how you could test which one a statement is. | An equation is true only for particular values: 2x + 1 = 7 holds only when x = 3. An identity is true for every value and is written with ≡: 2(x + 3) ≡ 2x + 6. To test, simplify both sides: if they become the same expression it is an identity; or substitute two or three values: if any value fails, it isn't an identity. | Defines an equation as true for particular values ; Defines an identity as true for all values (≡) ; Gives a correct example of each ; Describes a valid test
 
 ## Algebraic Expressions
 S: An algebraic expression is built from terms joined by + and −. Knowing the vocabulary (terms, coefficients, constants, like terms) and substituting values accurately are the foundations of algebraic fluency.
 O: Identify terms, coefficients and constants
 O: Substitute values, including negatives, into expressions
+LV: GCSE · Fluency
+EV: established | Substituting into an expression follows the order of operations, with negative values placed in brackets.
 T: Term | A part of an expression separated by + or −, such as 5x^{2}, −3x and 7 in 5x^{2} − 3x + 7
 T: Coefficient | The number multiplying a variable in a term: the coefficient of x in −3x is −3
 H: Vocabulary
@@ -98,11 +109,15 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 NUM1#maths-u03-03-q1@1: Evaluate 4x^{2} − 3x when x = −2. | 22 | 0 |  | 4 × (−2)^{2} = 16 and −3 × (−2) = 6, so 16 + 6 = 22.
 M1#maths-u03-03-q2@1: Which pair are like terms? | 5a^{2}b and −a^{2}b | 5ab and 5a^{2}b | 3x and 3y | 4x^{2} and 4x | 2p and 2 | Like terms have the same letters to the same powers: a^{2}b in both.
 M2#maths-u03-03-q3@2: What is the value of −x^{2} + 2x when x = −4? | −24 | 8 | −8 | 24 | 32 | −(−4)^{2} = −16 and 2 × (−4) = −8, giving −24.
+NUM3@2: Use s = ut + ½at^{2} to find s when u = −3, a = 4 and t = 5. | 35 | 0 |  | ut = −3 × 5 = −15 and ½at^{2} = ½ × 4 × 25 = 50, so s = −15 + 50 = 35.
+SA2@2: A student says that when x = −5, 3x^{2} = 225. Explain the error and find the correct value. | The student squared 3x, working out (3 × −5)^{2} = 225. By the order of operations the index applies only to x: x^{2} = (−5)^{2} = 25, then 3 × 25 = 75. | Identifies that the student squared 3x ; Says the power applies before multiplying ; Uses brackets for the negative value ; Gets 75
 
 ## Simplifying Expressions
 S: Simplifying an expression means writing it in an equivalent, shorter form by collecting like terms and using index laws. Simple expressions are easier to read, check and use.
 O: Collect like terms accurately
 O: Simplify products and quotients of algebraic terms
+LV: GCSE · Fluency
+EV: established | Only like terms combine by addition and subtraction, while products and quotients of terms simplify by the index laws.
 T: Collecting like terms | Adding or subtracting the coefficients of like terms: 5x + 3x − x = 7x
 T: Equivalent expressions | Expressions with the same value for every value of the variables
 H: Collecting like terms
@@ -130,11 +145,15 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 M1#maths-u03-04-q1@1: Simplify 7y − 3 + 2y + 8. | 9y + 5 | 9y + 11 | 14y | 5y + 5 | 9y − 11 | Collect the y terms (7y + 2y = 9y) and the numbers (−3 + 8 = 5), giving 9y + 5.
 M2#maths-u03-04-q2@2: Simplify 18a^{4}b^{2} ÷ 6ab^{2}. | 3a^{3} | 3a^{4} | 12a^{3}b | 3a^{3}b | 3a^{5}b^{4} | 18 ÷ 6 = 3, a^{4} ÷ a = a^{3}, and b^{2} ÷ b^{2} = 1.
 M3#maths-u03-04-q3@2: Which expression is equivalent to 2x^{2} + 3x − x^{2} − 3x? | x^{2} | x^{2} + 6x | 3x^{2} | x^{4} | 0 | The x^{2} terms give x^{2}; the x terms cancel to 0.
+M2@1: Simplify 3p − 5q − 7p + 2q. | −4p − 3q | 4p − 3q | −4p + 3q | −10p − 7q | The p terms give 3p − 7p = −4p and the q terms give −5q + 2q = −3q; each sign stays with its term.
+SA2@2: Explain why 2x + 3y cannot be simplified, but 2x × 3y can, and simplify 2x × 3y. | Addition only combines like terms: 2x and 3y have different letters, so 2x + 3y is already as simple as it can be (try x = 1, y = 2: it's 8, not 5xy = 10). Multiplication combines any terms: multiply the numbers and the letters, so 2x × 3y = 6xy. | Says only like terms can be added ; Says 2x and 3y are unlike ; Says products of unlike terms can be written together ; Gets 6xy
 
 ## Expanding Brackets
 S: Expanding brackets means multiplying out so that an expression is written as a sum of terms. It relies on the distributive law and is the reverse of factorising.
 O: Expand single, double and triple brackets
 O: Recognise and use the expansions of (a ± b)^{2} and (a + b)(a − b)
+LV: GCSE · Fluency
+EV: established | Expanding brackets is repeated use of the distributive law: every term in one bracket multiplies every term in the other.
 T: Expand | Multiply out brackets to remove them
 T: Difference of two squares | (a + b)(a − b) = a^{2} − b^{2}
 H: Single and double brackets
@@ -161,11 +180,15 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 M1#maths-u03-05-q1@1: Expand 4(3x − 2). | 12x − 8 | 12x − 2 | 7x − 6 | 12x + 8 | 3x − 8 | Multiply both terms by 4: 4 × 3x = 12x and 4 × (−2) = −8.
 M2#maths-u03-05-q2@2: Expand (x − 9)(x + 2). | x^{2} − 7x − 18 | x^{2} + 7x − 18 | x^{2} − 7x + 18 | x^{2} − 11x − 18 | x^{2} − 18 | x × 2 = 2x and −9 × x = −9x combine to −7x; −9 × 2 = −18.
 M3#maths-u03-05-q3@2: What is the coefficient of x in (2x − 5)^{2}? | −20 | −10 | 10 | 25 | 4 | (2x − 5)^{2} = 4x^{2} − 20x + 25: the middle term is 2 × 2x × (−5).
+NUM2@1: Expand (x + 2)(x − 1)(x + 3). What is the coefficient of x^{2}? | 4 | 0 |  | (x + 2)(x − 1) = x^{2} + x − 2; multiplying by (x + 3) gives x^{3} + 3x^{2} + x^{2} + 3x − 2x − 6 = x^{3} + 4x^{2} + x − 6.
+SA3@2: Use the difference of two squares to work out 103 × 97 without a calculator, and explain why the method works. | 103 × 97 = (100 + 3)(100 − 3). Since (a + b)(a − b) = a^{2} − ab + ab − b^{2} = a^{2} − b^{2}, the middle terms cancel, so 103 × 97 = 100^{2} − 3^{2} = 10,000 − 9 = 9,991. | Writes 103 and 97 as 100 + 3 and 100 − 3 ; Uses (a + b)(a − b) = a^{2} − b^{2} ; Explains the cross terms cancel ; Gets 9,991
 
 ## Factorisation
 S: Factorising writes an expression as a product of factors. It's the reverse of expanding and the key to solving quadratic equations, simplifying algebraic fractions and finding roots.
 O: Factorise by taking out common factors and factorising quadratics
 O: Recognise the difference of two squares and perfect squares
+LV: GCSE · Application
+EV: established | Factorising reverses expansion; a quadratic with integer roots factorises using two numbers whose product is ac and whose sum is b.
 T: Factorise | Write an expression as a product of its factors
 T: Fully factorised | Factorised so that no factor can be factorised further
 H: Common factors
@@ -195,11 +218,15 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 M1#maths-u03-06-q1@1: Factorise x^{2} − 5x + 6. | (x − 2)(x − 3) | (x + 2)(x + 3) | (x − 1)(x − 6) | (x − 2)(x + 3) | x(x − 5) + 6 | −2 and −3 multiply to 6 and add to −5, so the factors are (x − 2)(x − 3).
 M2#maths-u03-06-q2@2: Factorise fully 8x^{2} − 2. | 2(2x − 1)(2x + 1) | (8x − 2)(x + 1) | 2(4x^{2} − 1) | (4x − 1)(2x + 2) | 8(x − 1)(x + 1) | Take out 2 to get 2(4x^{2} − 1), then 4x^{2} − 1 is a difference of two squares.
 M3#maths-u03-06-q3@2: Factorise 3x^{2} − 10x − 8. | (3x + 2)(x − 4) | (3x − 2)(x + 4) | (3x − 4)(x + 2) | (3x + 4)(x − 2) | 3(x − 4)(x + 2) | ac = −24: −12 and 2 add to −10, giving 3x(x − 4) + 2(x − 4) = (3x + 2)(x − 4).
+M1@2: Which expression is a difference of two squares? | 16x^{2} − 25 | 16x^{2} + 25 | x^{2} − 10x + 25 | 4x^{2} − 25x | 16x^{2} − 25 = (4x)^{2} − 5^{2} = (4x − 5)(4x + 5). A sum of squares doesn't factorise this way, and the others aren't of the form a^{2} − b^{2}.
+SA2@1,2: Factorise 2x^{3} − 50x fully, explaining each step. | First take out the highest common factor of both terms, 2x: 2x(x^{2} − 25). Then x^{2} − 25 = x^{2} − 5^{2} is a difference of two squares, so it factorises as (x − 5)(x + 5). Fully factorised: 2x(x − 5)(x + 5). Check by expanding. | Takes out the common factor 2x ; Recognises x^{2} − 25 as a difference of two squares ; Gets 2x(x − 5)(x + 5) ; Checks or explains why it is fully factorised
 
 ## Algebraic Manipulation
 S: Algebraic manipulation is rearranging, substituting and transforming expressions and formulae while keeping them equal. It's how a formula for one quantity is turned into a formula for another, and how proofs are built.
 O: Rearrange formulae to change the subject
 O: Use algebra to prove simple general results
+LV: GCSE · Application
+EV: established | A statement about all integers is proved by algebra using general forms such as 2n and 2n + 1; examples alone don't prove it.
 T: Subject of a formula | The variable on its own on one side, such as v in v = u + at
 T: Algebraic proof | Showing a statement holds for all values using algebra, not examples
 H: Changing the subject
@@ -216,6 +243,7 @@ X: Make x the subject of y = (3x + 2)/(x − 1).
 > Factorise: x(y − 3) = y + 2, so x = (y + 2)/(y − 3)
 K: Undo operations in reverse order; if the subject appears twice, collect and factorise; prove with general expressions like 2n and 2n + 1.
 !: Checking a "proof" with a few numbers and calling it proved.
+!: Dividing by a term when the new subject appears twice: from xy − y = 3x + 2, writing x = (3x + 2 + y)/y still has x on both sides. Collect the x terms and factorise first.
 Q: Make r the subject of C = 2πr. | r = C/(2π).
 Q: How do you write a general odd number? | 2n + 1, where n is an integer.
 SUM: Rearranging keeps formulae equivalent.
@@ -224,11 +252,16 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 SRC: Department for Education, Mathematics AS and A level subject content: proof | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 M1#maths-u03-07-q1@1: Make a the subject of v^{2} = u^{2} + 2as. | a = (v^{2} − u^{2})/(2s) | a = v^{2} − u^{2} − 2s | a = (v − u)^{2}/(2s) | a = 2s/(v^{2} − u^{2}) | a = (v^{2} + u^{2})/(2s) | Subtract u^{2} from both sides to get 2as = v^{2} − u^{2}, then divide by 2s.
 M2#maths-u03-07-q2@2: Which expression shows the product of two consecutive integers is even? | n(n + 1), where one of n and n + 1 is even | 2n | 2n + 1 | n + (n + 1) | n^{2} + 1 | Of any two consecutive integers, one is even, so their product n(n + 1) has a factor of 2.
+NUM1@1: Make t the subject of v = u + at, and find t when v = 20, u = 5 and a = 3. | 5 | 0 |  | Subtract u and divide by a: t = (v − u)/a = (20 − 5)/3 = 15/3 = 5.
+M3@1: Make x the subject of y = (2x − 1)/(x + 3). | x = (1 + 3y)/(2 − y) | x = (3y − 1)/(2 − y) | x = (1 + 3y)/(y − 2) | x = (y + 1)/(2 − 3y) | y(x + 3) = 2x − 1, so xy + 3y = 2x − 1 and xy − 2x = −1 − 3y. Factorising, x(y − 2) = −(1 + 3y), so x = (1 + 3y)/(2 − y).
+SA3@2: Prove that the difference between the squares of two consecutive odd numbers is always a multiple of 8. | Let the odd numbers be 2n + 1 and 2n + 3, for an integer n. (2n + 3)^{2} − (2n + 1)^{2} = (4n^{2} + 12n + 9) − (4n^{2} + 4n + 1) = 8n + 8 = 8(n + 1). Since n + 1 is an integer, the difference is a multiple of 8 for every pair. (Example: 7^{2} − 5^{2} = 24 = 8 × 3.) | Writes consecutive odd numbers as 2n + 1 and 2n + 3 ; Expands both squares correctly ; Simplifies to 8(n + 1) ; Concludes it holds for all n
 
 ## Algebraic Fractions
 S: Algebraic fractions have expressions on the top or bottom. They follow the same rules as numerical fractions: simplify by cancelling common factors, and add or subtract over a common denominator.
 O: Simplify algebraic fractions by factorising
 O: Add, subtract, multiply and divide algebraic fractions
+LV: GCSE · Application
+EV: established | Algebraic fractions follow the rules of numerical fractions: cancel only common factors, and add over a common denominator.
 T: Algebraic fraction | A fraction whose numerator or denominator is an algebraic expression, such as (x + 2)/(x^{2} − 4)
 T: Cancelling | Dividing the numerator and denominator by a common factor
 H: Simplifying
@@ -254,6 +287,9 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 SRC: Department for Education, Mathematics AS and A level subject content: algebra and functions | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 M1#maths-u03-08-q1@1: Simplify (x^{2} − 4x)/(x^{2} − 16). | x/(x + 4) | −4x/(−16) | x/4 | 1/(x + 4) | (x − 4)/x | x(x − 4)/((x − 4)(x + 4)) cancels to x/(x + 4).
 M2#maths-u03-08-q2@2: Write 3/(x − 2) − 1/x as a single fraction. | (2x + 2)/(x(x − 2)) | 2/(x − 2) | (3x − 1)/(x(x − 2)) | 2/(2x − 2) | (2x − 2)/(x(x − 2)) | (3x − (x − 2))/(x(x − 2)) = (2x + 2)/(x(x − 2)).
+NUM2@1: Simplify (x^{2} + 5x + 6)/(x + 2), then find its value when x = 47. | 50 | 0 |  | x^{2} + 5x + 6 = (x + 2)(x + 3), so the fraction simplifies to x + 3, which is 50 when x = 47.
+M3@2: Solve 2/x + 3/(x + 1) = 2. | x = 2 or x = −1/2 | x = −2 or x = 1/2 | x = 2 only | x = 1 or x = −2 | Multiply by x(x + 1): 2(x + 1) + 3x = 2x(x + 1), so 2x^{2} − 3x − 2 = 0 = (2x + 1)(x − 2). Neither root makes a denominator zero.
+SA2@1: A student simplifies (x + 6)/6 to x + 1. Explain the error, and simplify (3x + 6)/6 correctly. | Only common factors of the whole numerator and whole denominator can be cancelled; 6 is a term in x + 6, not a factor of it, so (x + 6)/6 can't be simplified (check x = 6: it's 2, not 7). For (3x + 6)/6, factorise the top: 3(x + 2)/6 = (x + 2)/2. | Says only factors, not terms, can be cancelled ; Shows a numerical check ; Factorises 3x + 6 as 3(x + 2) ; Gets (x + 2)/2
 
 ## Linear Equations
 S: A linear equation has the unknown only to the first power, like 3x + 5 = 20. Solving it means finding the value that makes it true, by doing the same thing to both sides until the unknown is alone.

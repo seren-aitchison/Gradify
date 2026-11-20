@@ -206,6 +206,105 @@
     "extended written answer (SA) with model answer and marking points added"
    ],
    "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-17",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Fluency",
+    "evidence status: established",
+    "content added: X (An L-shape is an 8 cm by 6 cm rectangle with a 3 cm by 2 cm rectang…)",
+    "questions added: NUM3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-18",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Fluency",
+    "evidence status: established",
+    "questions added: NUM3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-19",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE and A level · Application",
+    "evidence status: established",
+    "questions added: NUM3, SA3 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-20",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Fluency",
+    "evidence status: established",
+    "content added: P (Plans and elevations are drawn without perspective. A square-based…)",
+    "questions added: TF1, M2, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-21",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Application",
+    "evidence status: established",
+    "questions added: M2, NUM3, SA3 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-22",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Application",
+    "evidence status: established",
+    "questions added: NUM3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-23",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Application",
+    "evidence status: established",
+    "questions added: NUM2, SA3 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-24",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"What does the matrix [[3, 0], [0, 3]] do to shapes?\"",
+    "questions added: M3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
   }
  ],
  "notes": []

@@ -1150,6 +1150,7 @@ SA3@1: Evaluate ∫_{0}^{3} x/√(x + 1) dx using u = x + 1, showing how the lim
 S: Integration by parts reverses the product rule. It integrates products like x e^{x} or x sin x by trading one integral for a simpler one.
 O: Integrate products using integration by parts
 O: Choose u and dv/dx well, including repeated and cyclic cases
+LV: A level · Application
 T: Integration by parts | ∫ u (dv/dx) dx = uv − ∫ v (du/dx) dx
 T: LIATE | A guide for choosing u: Logarithms, Inverse trig, Algebraic, Trigonometric, Exponential (earlier in the list first)
 H: The formula
@@ -1174,16 +1175,20 @@ Q: What is ∫ x e^{2x} dx? | ½x e^{2x} − ¼e^{2x} + c.
 Q: How do you integrate ln x by parts? | Take u = ln x and dv/dx = 1.
 SUM: Parts reverses the product rule.
 SUM: Choose u to simplify when differentiated.
+EV: established | Integration by parts, ∫ u dv = uv − ∫ v du, follows from integrating the product rule.
 SRC: Department for Education, Mathematics AS and A level subject content: integration | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 NUM1#maths-u07-32-q1@1: Evaluate ∫_{0}^{1} x e^{x} dx. | 1 | 0 |  | [x e^{x} − e^{x}]_{0}^{1} = (e − e) − (0 − 1) = 1.
 M1#maths-u07-32-q2@1: For ∫ x^{2} ln x dx, which choice of u is best? | u = ln x | u = x^{2} | u = x^{2} ln x | u = 1 | u = x | Logarithms come first in LIATE, and ln x simplifies to 1/x when differentiated.
 M3#maths-u07-32-q3@2: What is ∫ ln x dx? | x ln x − x + c | 1/x + c | x ln x + c | (ln x)^{2}/2 + c | ln x − x + c | Parts with u = ln x, dv = dx gives x ln x − ∫ 1 dx.
+NUM2@1: Evaluate ∫_{0}^{π} x sin x dx to 3 decimal places. | 3.142 | 0.001 |  | u = x, dv = sin x dx: [−x cos x]_{0}^{π} + ∫_{0}^{π} cos x dx = π + 0 = π ≈ 3.142.
+SA3@2: Find ∫ e^{x} cos x dx, explaining how the cyclic case is resolved. | Let I = ∫ e^{x} cos x dx. Parts with u = cos x, dv = e^{x} dx: I = e^{x} cos x + ∫ e^{x} sin x dx. Parts again with u = sin x: ∫ e^{x} sin x dx = e^{x} sin x − I. So I = e^{x} cos x + e^{x} sin x − I, giving 2I = e^{x}(sin x + cos x) and I = ½e^{x}(sin x + cos x) + c. The original integral reappears, so treat it as an unknown and solve. | Applies parts once correctly ; Applies parts a second time with consistent choices ; Recognises the original integral reappearing ; Solves 2I = e^{x}(sin x + cos x) ; Includes + c
 
 ## Partial Fraction Integration
 S: Rational functions are integrated by splitting them into partial fractions (School 3), each of which integrates to a logarithm or a power. It's essential for integrals like ∫ 1/(x^{2} − 1) dx.
 O: Integrate rational functions using partial fractions
 O: Handle repeated factors and improper fractions
+LV: A level · Application
 T: Partial fractions | A sum of simpler fractions equal to a rational function
 T: Improper fraction | One where the numerator's degree is at least the denominator's; divide first
 H: Method
@@ -1206,15 +1211,20 @@ Q: What is ∫ 1/(x + 3) dx? | ln|x + 3| + c.
 Q: What is ∫ 1/(x − 2)^{2} dx? | −1/(x − 2) + c.
 SUM: Partial fractions make rational integrals routine.
 SUM: Repeated factors give non-log terms.
+EV: established | A proper rational function splits into partial fractions whose integrals are logarithms, powers or arctangents.
 SRC: Department for Education, Mathematics AS and A level subject content: integration | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | secondary | 2020 | https://www.bloomsbury.com/
 M1#maths-u07-33-q1@1: What is ∫ (1/x − 1/(x + 1)) dx? | ln|x/(x + 1)| + c | ln|x(x + 1)| + c | 1/x^{2} + c | ln|x| + c | −1/(x(x + 1)) + c | ln|x| − ln|x + 1| combines to ln|x/(x + 1)|.
 M2#maths-u07-33-q2@2: What is ∫ 2/(x^{2} − 1) dx? | ln|(x − 1)/(x + 1)| + c | 2 ln|x^{2} − 1| + c | ln|x^{2} − 1| + c | 2 arctan x + c | ln|(x + 1)/(x − 1)| + c | 2/(x^{2} − 1) = 1/(x − 1) − 1/(x + 1), which integrates to ln|x − 1| − ln|x + 1|.
+NUM2@1: Evaluate ∫_{0}^{1} 1/((x + 1)(x + 2)) dx to 3 decimal places. | 0.288 | 0.001 |  | 1/((x + 1)(x + 2)) = 1/(x + 1) − 1/(x + 2), so the integral is (ln 2 − ln 3) − (0 − ln 2) = ln(4/3) ≈ 0.288.
+NUM3@2: Evaluate ∫_{2}^{3} x^{2}/(x − 1) dx to 3 decimal places. | 4.193 | 0.001 |  | Divide first: x^{2}/(x − 1) = x + 1 + 1/(x − 1). So [x^{2}/2 + x + ln|x − 1|]_{2}^{3} = (4.5 + 3 + ln 2) − 4 = 3.5 + ln 2 ≈ 4.193.
+SA3@1,2: Find ∫ (5x + 1)/((x − 1)^{2}(x + 2)) dx, showing the partial fractions. | Write (5x + 1)/((x − 1)^{2}(x + 2)) = A/(x − 1) + B/(x − 1)^{2} + C/(x + 2). Then 5x + 1 = A(x − 1)(x + 2) + B(x + 2) + C(x − 1)^{2}. x = 1: 6 = 3B, so B = 2. x = −2: −9 = 9C, so C = −1. Comparing x^{2}: A + C = 0, so A = 1. The integral is ln|x − 1| − 2/(x − 1) − ln|x + 2| + c. | Uses the form with A/(x − 1) and B/(x − 1)^{2} ; Finds B = 2 and C = −1 ; Finds A = 1 ; Integrates the repeated term to −2/(x − 1) ; Gives the log terms and + c
 
 ## Trigonometric Integration
 S: Integrating trigonometric functions uses standard results, identities to rewrite powers and products, and substitutions. Double angle formulas are the key tool for squares of sin and cos.
 O: Integrate standard trigonometric functions
 O: Use identities to integrate sin^{2} x, cos^{2} x and products
+LV: A level · Application
 T: Double angle identity | cos 2x = 1 − 2 sin^{2} x = 2 cos^{2} x − 1, used to lower powers
 T: Reverse chain rule | ∫ f′(x) g′(f(x)) dx = g(f(x)) + c
 H: Standard results
@@ -1238,16 +1248,20 @@ Q: What is ∫ sin^{2} x dx? | x/2 − (sin 2x)/4 + c.
 Q: What is ∫ cos 3x dx? | (1/3) sin 3x + c.
 SUM: Identities turn powers into integrable forms.
 SUM: Substitution handles odd powers.
+EV: established | Double angle identities lower even powers of sine and cosine, and the substitution u = cos x or u = sin x handles odd powers.
 SRC: Department for Education, Mathematics AS and A level subject content: integration | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | secondary | 2020 | https://www.bloomsbury.com/
 NUM1#maths-u07-34-q1@1: Evaluate ∫_{0}^{π} sin x dx. | 2 | 0 |  | [−cos x]_{0}^{π} = 1 − (−1) = 2.
 M1#maths-u07-34-q2@1: What is ∫ sec^{2} 2x dx? | (1/2) tan 2x + c | tan 2x + c | 2 tan 2x + c | sec 2x + c | (1/2) sec^{2} 2x + c | d/dx tan 2x = 2 sec^{2} 2x, so divide by 2.
 M2#maths-u07-34-q3@2: Which identity integrates sin^{2} x? | sin^{2} x = ½(1 − cos 2x) | sin^{2} x = 1 + cos^{2} x | sin^{2} x = 2 sin x cos x | sin^{2} x = tan^{2} x + 1 | sin^{2} x = cos 2x | The double angle formula replaces the square with a first-power cosine, which integrates directly.
+NUM3@2: Evaluate ∫_{0}^{π/2} sin^{3} x dx to 3 decimal places. | 0.667 | 0.001 |  | sin^{3} x = (1 − cos^{2} x) sin x; with u = cos x the integral is ∫_{0}^{1} (1 − u^{2}) du = 1 − 1/3 = 2/3 ≈ 0.667.
+SA3@2: Find ∫ sin^{2} x cos^{2} x dx, explaining which identities you use. | sin x cos x = ½ sin 2x, so sin^{2} x cos^{2} x = ¼ sin^{2} 2x. Then sin^{2} 2x = ½(1 − cos 4x), so the integrand is ⅛(1 − cos 4x). Integrating gives x/8 − (sin 4x)/32 + c. | Uses sin x cos x = ½ sin 2x ; Uses sin^{2} θ = ½(1 − cos 2θ) with θ = 2x ; Gets ⅛(1 − cos 4x) ; Integrates cos 4x to (sin 4x)/4 ; Gets x/8 − (sin 4x)/32 + c
 
 ## Improper Integrals
 S: An improper integral has an infinite limit or an integrand that blows up somewhere in the interval. It's defined as a limit, and it may converge to a finite value or diverge.
 O: Evaluate improper integrals with infinite limits or infinite integrands
 O: Decide whether an improper integral converges
+LV: Year 1 · Application
 T: Improper integral | ∫ with an infinite limit, or an integrand unbounded on the interval
 T: Converges | Has a finite limiting value
 H: Infinite limits
@@ -1272,16 +1286,20 @@ Q: Does ∫_{1}^{∞} 1/x^{3} dx converge? | Yes, to 1/2.
 Q: Does ∫_{1}^{∞} 1/√x dx converge? | No: p = 1/2 ≤ 1.
 SUM: Improper integrals are limits.
 SUM: They converge or diverge.
+EV: established | ∫_{1}^{∞} x^{−p} dx converges exactly when p > 1, and ∫_{0}^{1} x^{−p} dx converges exactly when p < 1.
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
 NUM1#maths-u07-35-q1@1: Evaluate ∫_{2}^{∞} 4/x^{3} dx. | 0.5 | 0.001 |  | [−2/x^{2}]_{2}^{∞} = 0 − (−2/4) = 1/2.
 M1#maths-u07-35-q2@1: Which integral diverges? | ∫_{1}^{∞} 1/x dx | ∫_{1}^{∞} 1/x^{2} dx | ∫_{0}^{∞} e^{−x} dx | ∫_{0}^{1} 1/√x dx | ∫_{1}^{∞} x^{−1.5} dx | ∫ 1/x = ln x, which grows without bound as x → ∞.
 M3#maths-u07-35-q3@2: What is wrong with computing ∫_{−1}^{1} 1/x^{2} dx = [−1/x]_{−1}^{1} = −2? | The integrand is unbounded at x = 0, and the integral diverges | Nothing: the answer is −2 | The limits should be swapped | The antiderivative should be ln|x| | It should be 2 | A positive integrand can't give a negative area; the asymptote at 0 makes it improper and divergent.
+NUM2@1: Evaluate ∫_{0}^{4} 1/√x dx. | 4 | 0 |  | The integrand is unbounded at 0: lim_{a→0⁺} [2√x]_{a}^{4} = 4 − 0 = 4, so it converges.
+SA2@2: Decide whether ∫_{1}^{∞} x^{−p} dx converges for p = 2, p = 1 and p = ½, and state the general rule. | p = 2: [−1/x]_{1}^{b} = 1 − 1/b → 1, converges. p = 1: [ln x]_{1}^{b} = ln b → ∞, diverges. p = ½: [2√x]_{1}^{b} = 2√b − 2 → ∞, diverges. For p ≠ 1 the integral is (b^{1−p} − 1)/(1 − p), which has a finite limit only when 1 − p < 0. So it converges exactly when p > 1, to 1/(p − 1). | Writes each as a limit ; Shows p = 2 converges to 1 ; Shows p = 1 and p = ½ diverge ; States convergence exactly for p > 1 ; Justifies the rule from the general antiderivative
 
 ## Numerical Integration
 S: Many integrals can't be found exactly, and data often comes as a table rather than a formula. Numerical methods (the trapezium rule, Simpson's rule) estimate definite integrals with known accuracy.
 O: Apply the trapezium rule and Simpson's rule
 O: Explain whether an estimate is an over- or underestimate and how to improve it
+LV: A level · Application
 T: Trapezium rule | ∫_{a}^{b} y dx ≈ (h/2)[y_{0} + 2(y_{1} + … + y_{n−1}) + y_{n}], with h = (b − a)/n
 T: Simpson's rule | ∫_{a}^{b} y dx ≈ (h/3)[y_{0} + 4(odd ys) + 2(even interior ys) + y_{n}], with n even
 H: The trapezium rule
@@ -1304,12 +1322,15 @@ Q: Does the trapezium rule over- or underestimate ∫ x^{2} dx? | Overestimate: 
 Q: How many strips does Simpson's rule need? | An even number.
 SUM: Numerical methods estimate definite integrals.
 SUM: Convexity decides the error's direction for the trapezium rule.
+EV: established | The trapezium rule overestimates the integral of a convex function and underestimates that of a concave one, and Simpson's rule is more accurate for smooth functions.
 SRC: Department for Education, Mathematics AS and A level subject content: numerical methods | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 SRC: Burden RL, Faires JD, Burden AM, Numerical Analysis (10th edn, Cengage 2016) | secondary | 2016 | https://www.cengage.co.uk/
 NUM1#maths-u07-36-q1@1: Use the trapezium rule with 2 strips to estimate ∫_{0}^{2} x^{2} dx. | 3 | 0 |  | h = 1; (1/2)[0 + 2(1) + 4] = 3 (exact value 8/3).
 M1#maths-u07-36-q2@1: In the trapezium rule with n strips on [a, b], what is h? | (b − a)/n | n/(b − a) | (b − a)/(n + 1) | b − a | 1/n | h is the strip width: the interval's length divided by the number of strips.
 M2#maths-u07-36-q3@2: Which rule is usually more accurate for a smooth function with the same points? | Simpson's rule | The trapezium rule | They're always equal | A left Riemann sum | A right Riemann sum | Simpson's rule fits parabolas, giving errors of order h^{4} instead of h^{2}.
 M2#maths-u07-36-q4@2: Doubling the number of strips in the midpoint rule changes the error by roughly what factor? | It divides it by about 4, since the error is O(h^{2}) | It halves it, since the error is O(h) | It doubles it, since more strips add rounding | It leaves it unchanged for smooth functions | It divides it by 16, since the error is O(h^{4}) | Halving h in a second-order rule quarters the error.
+NUM2@1: Use Simpson's rule with 4 strips to estimate ∫_{0}^{2} e^{x} dx, to 3 decimal places. | 6.391 | 0.001 |  | h = 0.5: (0.5/3)[1 + 4(1.6487 + 4.4817) + 2(2.7183) + 7.3891] ≈ 6.391, against the exact e^{2} − 1 ≈ 6.389.
+SA3@2: Use the trapezium rule with 2 strips to estimate ∫_{1}^{3} ln x dx. Is it an over- or underestimate? Explain, and say how to improve it. | h = 1: ½[ln 1 + 2 ln 2 + ln 3] ≈ ½(0 + 1.386 + 1.099) ≈ 1.242. ln x is concave (its second derivative −1/x^{2} is negative), so the chords lie below the curve and the estimate is too small; the exact value is 3 ln 3 − 2 ≈ 1.296. More strips (halving h roughly quarters the error) or Simpson's rule improve it. | Uses h = 1 and the correct ordinates ; Gets about 1.242 ; Shows ln x is concave ; Concludes underestimate ; Suggests more strips or Simpson's rule
 
 ## Arc Length and Surface Area
 S: Integration measures more than areas: the length of a curve and the surface area of a solid of revolution come from adding up tiny straight pieces. These are Further Maths and first-year university results.
