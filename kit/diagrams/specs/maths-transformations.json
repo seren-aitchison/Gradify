@@ -1,0 +1,167 @@
+{
+  "id": "maths-transformations",
+  "renderer": "graph",
+  "course": "maths",
+  "lesson": "Transformations of Functions",
+  "title": "Tracking a maximum through two transformations",
+  "caption": "Track the key point. y = 3f(x − 1): inside the bracket moves x the opposite way (1 right), outside stretches y as written (× 3): (4, 6) → (5, 18). y = f(2x) − 5: inside halves x, outside moves down 5: (4, 6) → (2, 1).",
+  "alt": "Graph of a curve y = f(x) with a maximum at (4, 6), and its transformations y = 3f(x − 1), with maximum at (5, 18), and y = f(2x) − 5, with maximum at (2, 1).",
+  "description": [
+    "Three downward parabolas on one set of axes. The original curve y = f(x) has its maximum at (4, 6).",
+    "y = 3f(x − 1) is the same shape moved 1 to the right and stretched vertically by 3: it is three times as tall and its maximum is at (5, 18).",
+    "y = f(2x) − 5 is squeezed horizontally by a factor of 1/2 and moved down 5: it is narrower and its maximum is at (2, 1).",
+    "Arrows run from (4, 6) to each new maximum."
+  ],
+  "range": {
+    "x": [
+      -1,
+      9
+    ],
+    "y": [
+      -6,
+      21
+    ]
+  },
+  "ticks": [
+    [
+      2,
+      4,
+      6,
+      8
+    ],
+    [
+      5,
+      10,
+      15,
+      20
+    ]
+  ],
+  "grid": [
+    1,
+    5
+  ],
+  "height": [
+    400,
+    360
+  ],
+  "axisLabels": [
+    "x",
+    "y"
+  ],
+  "curves": [
+    {
+      "expr": "6-0.5*(x-4)^2",
+      "colour": "a1",
+      "label": "y = f(x)",
+      "labelAt": [
+        6.6,
+        6.4
+      ]
+    },
+    {
+      "expr": "3*(6-0.5*(x-5)^2)",
+      "colour": "a2",
+      "label": "y = 3f(x − 1)",
+      "labelAt": [
+        7.2,
+        17
+      ]
+    },
+    {
+      "expr": "6-0.5*(2*x-4)^2-5",
+      "colour": "a4",
+      "label": "y = f(2x) − 5",
+      "labelAt": [
+        4.4,
+        -4.5
+      ]
+    }
+  ],
+  "arrows": [
+    {
+      "from": [
+        4.1,
+        6.5
+      ],
+      "to": [
+        4.9,
+        17.2
+      ],
+      "colour": "a2",
+      "dash": "5 4"
+    },
+    {
+      "from": [
+        3.8,
+        5.6
+      ],
+      "to": [
+        2.25,
+        1.4
+      ],
+      "colour": "a4",
+      "dash": "5 4"
+    }
+  ],
+  "points": [
+    {
+      "x": 4,
+      "y": 6,
+      "label": "(4, 6)",
+      "colour": "a1",
+      "dx": 0,
+      "dy": 20,
+      "anchor": "middle"
+    },
+    {
+      "x": 5,
+      "y": 18,
+      "label": "(5, 18)",
+      "colour": "a2"
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "label": "(2, 1)",
+      "colour": "a4",
+      "dx": 0,
+      "anchor": "middle",
+      "dy": 20
+    }
+  ],
+  "checks": [
+    {
+      "type": "max",
+      "expr": "6-0.5*(x-4)^2",
+      "domain": [
+        -1,
+        9
+      ],
+      "x": 4,
+      "y": 6,
+      "name": "f has its maximum at (4, 6), as in the worked example"
+    },
+    {
+      "type": "max",
+      "expr": "3*(6-0.5*(x-5)^2)",
+      "domain": [
+        -1,
+        9
+      ],
+      "x": 5,
+      "y": 18,
+      "name": "y = 3f(x − 1) has its maximum at (5, 18)"
+    },
+    {
+      "type": "max",
+      "expr": "6-0.5*(2*x-4)^2-5",
+      "domain": [
+        -1,
+        9
+      ],
+      "x": 2,
+      "y": 1,
+      "name": "y = f(2x) − 5 has its maximum at (2, 1)"
+    }
+  ]
+}

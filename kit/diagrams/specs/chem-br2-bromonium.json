@@ -1,0 +1,172 @@
+{
+  "id": "chem-br2-bromonium",
+  "renderer": "mechanism",
+  "course": "chemistry",
+  "lesson": "Electrophilic addition",
+  "title": "Adding Br₂ to ethene: the bromonium ion",
+  "caption": "The approaching π bond polarises Br₂. The π electrons bond to the near bromine, which uses a lone pair to bond to the other carbon, giving a three-membered bromonium ion. Bromide then opens the ring from the opposite face, which is why addition is anti.",
+  "alt": "Mechanism of bromine adding to ethene through a cyclic bromonium ion, which bromide opens from the opposite face to give 1,2-dibromoethane.",
+  "description": [
+    "Left: ethene and a bromine molecule, polarised δ+ on the near bromine and δ− on the far one. Three curly arrows: from the C=C bond to the near bromine; from a lone pair on that bromine back to the other carbon; and from the Br–Br bond to the far bromine.",
+    "Middle: a cyclic bromonium ion, a three-membered ring of two carbons and a positively charged bromine, with a bromide ion on the opposite side. A curly arrow goes from a lone pair on bromide to one ring carbon, and another from that carbon's bond to the ring bromine back onto the bromine.",
+    "Right: 1,2-dibromoethane. The two bromines arrived from opposite faces."
+  ],
+  "stages": [
+    {
+      "smiles": "[CH2:1]=[CH2:2].[Br:3][Br:4]",
+      "xy": {
+        "1": [
+          -0.65,
+          0
+        ],
+        "2": [
+          0.65,
+          0
+        ],
+        "3": [
+          0.55,
+          1.65
+        ],
+        "4": [
+          0.55,
+          3.0
+        ]
+      },
+      "charges": {
+        "3": "δ+",
+        "4": "δ−"
+      },
+      "chargeOffset": {
+        "3": [
+          28,
+          5
+        ],
+        "4": [
+          -26,
+          5
+        ]
+      },
+      "label": "ethene + Br₂",
+      "arrows": [
+        {
+          "from": {
+            "bond": [
+              1,
+              2
+            ]
+          },
+          "to": {
+            "bond": [
+              2,
+              3
+            ]
+          },
+          "toward": 3,
+          "bend": -0.6
+        },
+        {
+          "from": {
+            "lp": 3
+          },
+          "to": {
+            "bond": [
+              3,
+              1
+            ]
+          },
+          "toward": 1,
+          "lpAngle": 180,
+          "bend": 0.45
+        },
+        {
+          "from": {
+            "bond": [
+              3,
+              4
+            ]
+          },
+          "to": {
+            "atom": 4
+          },
+          "bend": -1
+        }
+      ]
+    },
+    {
+      "smiles": "[CH2:1]1[CH2:2][Br+:3]1.[Br-:4]",
+      "xy": {
+        "1": [
+          -0.6,
+          0
+        ],
+        "2": [
+          0.6,
+          0
+        ],
+        "3": [
+          0,
+          1.05
+        ],
+        "4": [
+          1.6,
+          -1.5
+        ]
+      },
+      "label": "bromonium ion",
+      "arrows": [
+        {
+          "from": {
+            "lp": 4
+          },
+          "to": {
+            "bond": [
+              4,
+              2
+            ]
+          },
+          "toward": 2,
+          "lpAngle": 200,
+          "bend": 0.5
+        },
+        {
+          "from": {
+            "bond": [
+              2,
+              3
+            ]
+          },
+          "to": {
+            "atom": 3
+          },
+          "bend": -1
+        }
+      ]
+    },
+    {
+      "smiles": "[CH2:1]([Br:3])[CH2:2][Br:4]",
+      "xy": {
+        "1": [
+          -0.6,
+          0
+        ],
+        "2": [
+          0.6,
+          0
+        ],
+        "3": [
+          -1.2,
+          1.05
+        ],
+        "4": [
+          1.2,
+          -1.05
+        ]
+      },
+      "label": "1,2-dibromoethane"
+    }
+  ],
+  "steps": [
+    {},
+    {}
+  ]
+}

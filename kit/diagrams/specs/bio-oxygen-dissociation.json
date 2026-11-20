@@ -1,0 +1,163 @@
+{
+  "id": "bio-oxygen-dissociation",
+  "renderer": "graph",
+  "course": "biology",
+  "lesson": "Oxygen transport",
+  "title": "The oxygen dissociation curve and the Bohr shift",
+  "caption": "In the lungs haemoglobin is almost fully saturated. In respiring tissue, where pO₂ is low, the steep middle of the curve means a small fall in pO₂ releases a lot of oxygen. More CO₂ shifts the curve right (lower affinity), so even more is released; fetal haemoglobin's curve lies to the left (higher affinity).",
+  "alt": "S-shaped oxygen dissociation curves of percentage saturation against partial pressure of oxygen, with the curve for high carbon dioxide shifted right and fetal haemoglobin shifted left.",
+  "description": [
+    "The horizontal axis is the partial pressure of oxygen in kilopascals, from 0 to 14. The vertical axis is percentage saturation of haemoglobin, from 0 to 100.",
+    "The adult curve is S-shaped (sigmoid): flat at low partial pressure, steep in the middle, and levelling off near 97% at the partial pressure in the lungs (about 13 kPa).",
+    "The curve at high carbon dioxide (the Bohr effect) lies to the right of it: at the same partial pressure, haemoglobin is less saturated, so it has given up more oxygen. An arrow at 4 kPa shows the extra oxygen unloaded.",
+    "The fetal haemoglobin curve lies to the left: at the same partial pressure it is more saturated, so it can take oxygen from the mother's blood.",
+    "Shaded bands mark the partial pressures typical of respiring tissue and of the lungs. Curves drawn from the Hill equation with textbook values; real values vary."
+  ],
+  "range": {
+    "x": [
+      0,
+      14
+    ],
+    "y": [
+      0,
+      105
+    ]
+  },
+  "ticks": [
+    [
+      2,
+      4,
+      6,
+      8,
+      10,
+      12,
+      14
+    ],
+    [
+      25,
+      50,
+      75,
+      100
+    ]
+  ],
+  "grid": [
+    2,
+    25
+  ],
+  "height": [
+    400,
+    360
+  ],
+  "xLabelBelow": true,
+  "axisLabels": [
+    "partial pressure of O₂ / kPa",
+    "% saturation"
+  ],
+  "bands": [
+    {
+      "x": [
+        2,
+        5.3
+      ],
+      "label": "respiring tissue",
+      "colour": "a3"
+    },
+    {
+      "x": [
+        12,
+        14
+      ],
+      "label": "lungs",
+      "colour": "a4"
+    }
+  ],
+  "curves": [
+    {
+      "expr": "100*x^2.7/(2.5^2.7+x^2.7)",
+      "colour": "a4",
+      "dash": "7 5",
+      "label": "fetal",
+      "labelAt": [
+        1.0,
+        66
+      ],
+      "width": 2.6
+    },
+    {
+      "expr": "100*x^2.7/(3.6^2.7+x^2.7)",
+      "colour": "a1",
+      "label": "adult",
+      "labelAt": [
+        6.2,
+        88
+      ]
+    },
+    {
+      "expr": "100*x^2.7/(4.8^2.7+x^2.7)",
+      "colour": "a2",
+      "dash": "7 5",
+      "label": "high CO₂ (Bohr shift)",
+      "labelAt": [
+        7.4,
+        64
+      ],
+      "width": 2.6
+    }
+  ],
+  "arrows": [
+    {
+      "from": [
+        4,
+        57
+      ],
+      "to": [
+        4,
+        39
+      ],
+      "colour": "a2",
+      "label": "extra O₂ released",
+      "labelAt": [
+        4.25,
+        30
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "type": "value",
+      "expr": "100*x^2.7/(3.6^2.7+x^2.7)",
+      "x": 13.3,
+      "between": [
+        95,
+        99
+      ],
+      "name": "adult haemoglobin is about 97% saturated at lung pO₂ (13.3 kPa)"
+    },
+    {
+      "type": "value",
+      "expr": "100*x^2.7/(3.6^2.7+x^2.7)",
+      "x": 5.3,
+      "between": [
+        70,
+        78
+      ],
+      "name": "about 75% saturated at resting venous pO₂ (5.3 kPa)"
+    },
+    {
+      "type": "order",
+      "a": "100*x^2.7/(4.8^2.7+x^2.7)",
+      "b": "100*x^2.7/(3.6^2.7+x^2.7)",
+      "x": 4,
+      "rel": "<",
+      "name": "high CO₂ curve lies to the right (lower saturation at the same pO₂)"
+    },
+    {
+      "type": "order",
+      "a": "100*x^2.7/(2.5^2.7+x^2.7)",
+      "b": "100*x^2.7/(3.6^2.7+x^2.7)",
+      "x": 4,
+      "rel": ">",
+      "name": "fetal curve lies to the left (higher affinity)"
+    }
+  ]
+}

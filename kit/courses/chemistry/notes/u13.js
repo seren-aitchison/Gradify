@@ -262,6 +262,7 @@ H: Hammond's postulate
 - In an **endothermic** step, it resembles the **products**.
 - In an **exothermic** step, it resembles the **reactants**.
 - Explains why carbocation stability affects SN1 rates.
+D: chem-sn1-sn2-profiles
 P: An SN1 profile has two humps with a carbocation in the valley between; SN2 has one hump with no intermediate. Profiles help compare mechanisms and explain selectivity, since the lower-energy pathway is usually followed.
 X: Reading an SN1 profile.
 > The first hump is ionisation, forming a carbocation.
@@ -380,6 +381,7 @@ H: Mechanism
 - Bond forming and bond breaking happen **together**.
 - The transition state has five groups around carbon, partly bonded.
 - Rate = k[R–X][Nu]: **second order**, **bimolecular**.
+D: chem-sn2-mechanism
 H: Features
 - **Inversion of configuration**, like an umbrella turning inside out (**Walden inversion**).
 - Favoured by **methyl and primary** substrates, which are uncrowded.
@@ -405,7 +407,7 @@ SRC: Hughes E. D. and Ingold C. K., "Mechanism of substitution at a saturated ca
 Q: What is the rate equation for SN2? | Rate = k[R–X][Nu].
 Q: What happens to configuration in SN2? | It is inverted.
 M1#chemistry-u13-10-q1@1: Which substrate reacts fastest by SN2? | Bromomethane, an uncrowded methyl halide | 2-bromo-2-methylpropane, a tertiary halide | 2-bromopropane, a secondary halide | 2-bromobutane, a secondary halide | Least steric hindrance allows easiest backside attack.
-M2#chemistry-u13-10-q2@2: Why do tertiary haloalkanes not react by SN2? | Three bulky groups block backside attack by the nucleophile | Tertiary carbons have no leaving group | The nucleophile is too small to react | Tertiary substrates are always gases | Steric hindrance prevents the nucleophile reaching carbon.
+M2#chemistry-u13-10-q2@2: Why do tertiary haloalkanes not react by SN2? | Three bulky groups block backside attack by the nucleophile | Tertiary carbons have no leaving group | The nucleophile is too small to react | The C–Br bond in a tertiary haloalkane is too strong to break | Steric hindrance prevents the nucleophile reaching carbon.
 MATCH1#chemistry-u13-10-q3@3: Match each feature to SN1 or SN2. | Carbocation intermediate = SN1 ; Backside attack = SN2 ; Racemisation = SN1 outcome ; Inversion = SN2 outcome | The two mechanisms differ in key ways.
 M3#chemistry-u13-10-q4@3: Why do polar aprotic solvents speed up SN2? | They do not solvate anionic nucleophiles strongly, leaving them reactive | They stabilise carbocation intermediates strongly | They donate protons directly to the nucleophile | They slow every reaction step down to a crawl | Free, poorly solvated nucleophiles attack the carbon much faster.
 SA2#chemistry-u13-10-q5@1,3: Explain the SN2 mechanism and its features. | In SN2, the nucleophile attacks carbon from the side opposite the leaving group in one concerted step, forming a five-coordinate transition state, so rate = k[R–X][Nu], second order and bimolecular. Backside attack inverts configuration, as (R)-2-bromobutane gives (S)-butan-2-ol. SN2 is fastest for methyl and primary substrates and blocked at tertiary centres by steric hindrance, and is favoured by strong nucleophiles and polar aprotic solvents. It is common in biological methylation. | Backside attack ; Concerted ; Rate equation ; Inversion ; Conditions
@@ -584,12 +586,14 @@ H: Adding HBr
 - The π electrons attack H of H–Br, which is δ+.
 - A **carbocation** forms; Br⁻ is released.
 - Br⁻ attacks the carbocation.
-- The more stable carbocation leads to the major product.
+- The more stable carbocation leads to the major product: with propene, H adds to the end carbon and Br to the middle one, giving **2-bromopropane** (Markovnikov's rule).
+D: chem-hbr-propene
 H: Adding Br₂
 - Br₂ is **polarised** as the π bond approaches.
 - A cyclic **bromonium ion** forms.
 - Br⁻ attacks from the opposite face: **anti addition**.
 - Cyclohexene gives trans-1,2-dibromocyclohexane.
+D: chem-br2-bromonium
 P: Evidence for the intermediate: bromine in the presence of chloride ions gives some products containing both Br and Cl, showing that a positive intermediate is captured by whichever anion is nearby. Hydration with steam and acid follows the HBr pathway, with water as the nucleophile.
 X: Bromine with ethene in brine.
 > Br₂ adds to form a bromonium ion.
@@ -612,7 +616,7 @@ Q: What product does cyclohexene give with bromine? | trans-1,2-dibromocyclohexa
 M1#chemistry-u13-15-q1@1: Which atom in HBr does the alkene's π bond attack first? | The δ+ hydrogen atom | The δ− bromine atom | Both atoms at the same time | Neither atom reacts | Electrons flow towards the electron-poor hydrogen.
 M2#chemistry-u13-15-q2@2: Why does bromine in sodium chloride solution give some chlorinated products? | Chloride ions capture the positive intermediate | Chlorine replaces bromine in Br₂ | Sodium ions add to the alkene | The alkene reacts with water only | A two-step mechanism lets any nearby anion attack.
 SEQ1#chemistry-u13-15-q3@2: Put the steps of bromine addition to ethene in order. | Br₂ is polarised by the π bond ; A cyclic bromonium ion forms ; Br⁻ attacks from the opposite face ; 1,2-dibromoethane forms | Two steps give anti addition.
-M3#chemistry-u13-15-q4@3: Why does bromination of cyclohexene give only the trans product? | Bromide attacks the bromonium ion from the face opposite the bridging bromine | Both bromines add together from the same face | The ring flips during reaction to give cis product | Cyclohexene contains no carbon-carbon double bond | The bridged intermediate blocks one face.
+M3#chemistry-u13-15-q4@3: Why does bromination of cyclohexene give only the trans product? | Bromide attacks the bromonium ion from the face opposite the bridging bromine | Both bromines add together from the same face | The ring flips during reaction to give cis product | A flat carbocation forms and is attacked equally from both faces | The bridged intermediate blocks one face.
 SA2#chemistry-u13-15-q5@1,3: Explain the mechanisms of electrophilic addition to alkenes. | With HBr, the π electrons attack the δ+ hydrogen, forming a carbocation and Br⁻, which then attacks; the more stable carbocation gives the major product. Steam addition with acid follows the same path with water as nucleophile. With Br₂, the approaching π bond polarises bromine and a cyclic bromonium ion forms; Br⁻ attacks from the opposite face, giving anti addition, so cyclohexene forms trans-1,2-dibromocyclohexane. Mixed products in brine show a positive intermediate is captured. | HBr mechanism ; Carbocation stability ; Bromonium ion ; Anti addition ; Evidence
 
 ## Nucleophilic addition

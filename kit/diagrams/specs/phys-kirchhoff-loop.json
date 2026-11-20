@@ -1,0 +1,17 @@
+{
+  "id": "phys-kirchhoff-loop", "renderer": "circuit", "course": "physics", "lesson": "Kirchhoff's laws",
+  "title": "Two opposing cells in one loop",
+  "caption": "Go round the loop: the 6 V cell is a rise, the 2 V cell (facing the other way) is a drop, and the resistance takes the rest. ΣEMF = ΣIR gives 6 − 2 = I × 4, so I = 1 A, driven by the 6 V cell.",
+  "alt": "Circuit with a 6 volt cell and a 2 volt cell facing opposite ways in a single loop with a 4 ohm resistor; a current of 1 amp flows clockwise.",
+  "description": [
+    "A single rectangular loop. On the top wire is a 6 V cell with its positive (long) plate on the right. On the bottom wire are a 4 ohm resistor and a 2 V cell whose positive plate is also on the right, so it pushes the other way round the loop.",
+    "Arrows on the side wires show the current flowing clockwise: down the right-hand side and up the left. The current is 1 A."
+  ],
+  "components": [
+    { "type": "cell", "label": "6 V", "emf": 6, "side": "top", "plus": "right" },
+    { "type": "resistor", "label": "4 Ω", "R": 4, "side": "bottom" },
+    { "type": "cell", "label": "2 V", "emf": 2, "side": "bottom", "plus": "right" }
+  ],
+  "note": "net EMF = 6 − 2 = 4 V;  I = 4 V ÷ 4 Ω = 1 A",
+  "expect": { "I": 1, "driver": "6 V" }
+}

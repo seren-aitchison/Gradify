@@ -1,0 +1,636 @@
+{
+ "bio-oxygen-dissociation": {
+  "title": "The oxygen dissociation curve and the Bohr shift",
+  "caption": "In the lungs haemoglobin is almost fully saturated. In respiring tissue, where pO₂ is low, the steep middle of the curve means a small fall in pO₂ releases a lot of oxygen. More CO₂ shifts the curve right (lower affinity), so even more is released; fetal haemoglobin's curve lies to the left (higher affinity).",
+  "alt": "S-shaped oxygen dissociation curves of percentage saturation against partial pressure of oxygen, with the curve for high carbon dioxide shifted right and fetal haemoglobin shifted left.",
+  "description": [
+   "The horizontal axis is the partial pressure of oxygen in kilopascals, from 0 to 14. The vertical axis is percentage saturation of haemoglobin, from 0 to 100.",
+   "The adult curve is S-shaped (sigmoid): flat at low partial pressure, steep in the middle, and levelling off near 97% at the partial pressure in the lungs (about 13 kPa).",
+   "The curve at high carbon dioxide (the Bohr effect) lies to the right of it: at the same partial pressure, haemoglobin is less saturated, so it has given up more oxygen. An arrow at 4 kPa shows the extra oxygen unloaded.",
+   "The fetal haemoglobin curve lies to the left: at the same partial pressure it is more saturated, so it can take oxygen from the mother's blood.",
+   "Shaded bands mark the partial pressures typical of respiring tissue and of the lungs. Curves drawn from the Hill equation with textbook values; real values vary."
+  ],
+  "course": "biology",
+  "lesson": "Oxygen transport",
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u07.js: Oxygen transport"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "adult haemoglobin is about 97% saturated at lung pO₂ (13.3 kPa)",
+    "ok": true,
+    "detail": "100*x^2.7/(3.6^2.7+x^2.7) at 13.3 = 97.15; expected 95–99"
+   },
+   {
+    "name": "about 75% saturated at resting venous pO₂ (5.3 kPa)",
+    "ok": true,
+    "detail": "100*x^2.7/(3.6^2.7+x^2.7) at 5.3 = 73.97; expected 70–78"
+   },
+   {
+    "name": "high CO₂ curve lies to the right (lower saturation at the same pO₂)",
+    "ok": true,
+    "detail": "37.94 < 57.06"
+   },
+   {
+    "name": "fetal curve lies to the left (higher affinity)",
+    "ok": true,
+    "detail": "78.06 > 57.06"
+   }
+  ]
+ },
+ "bus-supply-demand": {
+  "title": "Equilibrium, and what an increase in demand does",
+  "caption": "Equilibrium is where the curves cross: P = 20, Q = 60 for the worked example. Above it there is a surplus that pushes price down. If demand increases (D → D₂), price and quantity both rise, to P = 25, Q = 70.",
+  "alt": "Supply and demand diagram with price on the vertical axis and quantity on the horizontal. Demand and supply cross at price 20, quantity 60. Demand shifting right moves equilibrium to price 25, quantity 70.",
+  "description": [
+   "Price is on the vertical axis and quantity on the horizontal axis, as is conventional in economics.",
+   "The demand curve D (Qd = 100 − 2P) slopes down; the supply curve S (Qs = 20 + 2P) slopes up. They cross at the equilibrium E: price 20, quantity 60.",
+   "At a price of 30, quantity supplied (80) is greater than quantity demanded (40): a surplus of 40, shown by a double-headed arrow, which pushes the price down towards equilibrium.",
+   "A dashed curve D₂ (Qd = 120 − 2P) shows an increase in demand. It crosses supply at E₂: price 25, quantity 70. Both price and quantity have risen."
+  ],
+  "course": "business",
+  "lesson": "Supply and market equilibrium",
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/business/notes/u08.js: Supply and market equilibrium"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "D and S cross at Q = 60, P = 20, as the worked example finds",
+    "ok": true,
+    "detail": "50-x/2 → 20, (x-20)/2 → 20"
+   },
+   {
+    "name": "after demand rises, equilibrium is Q = 70, P = 25 (both higher)",
+    "ok": true,
+    "detail": "60-x/2 → 25, (x-20)/2 → 25"
+   },
+   {
+    "name": "at P = 30, quantity demanded is 40",
+    "ok": true,
+    "detail": "y(40) = 30"
+   },
+   {
+    "name": "at P = 30, quantity supplied is 80 (a surplus of 40)",
+    "ok": true,
+    "detail": "y(80) = 30"
+   }
+  ]
+ },
+ "chem-br2-bromonium": {
+  "title": "Adding Br₂ to ethene: the bromonium ion",
+  "caption": "The approaching π bond polarises Br₂. The π electrons bond to the near bromine, which uses a lone pair to bond to the other carbon, giving a three-membered bromonium ion. Bromide then opens the ring from the opposite face, which is why addition is anti.",
+  "alt": "Mechanism of bromine adding to ethene through a cyclic bromonium ion, which bromide opens from the opposite face to give 1,2-dibromoethane.",
+  "description": [
+   "Left: ethene and a bromine molecule, polarised δ+ on the near bromine and δ− on the far one. Three curly arrows: from the C=C bond to the near bromine; from a lone pair on that bromine back to the other carbon; and from the Br–Br bond to the far bromine.",
+   "Middle: a cyclic bromonium ion, a three-membered ring of two carbons and a positively charged bromine, with a bromide ion on the opposite side. A curly arrow goes from a lone pair on bromide to one ring carbon, and another from that carbon's bond to the ring bromine back onto the bromine.",
+   "Right: 1,2-dibromoethane. The two bromines arrived from opposite faces."
+  ],
+  "course": "chemistry",
+  "lesson": "Electrophilic addition",
+  "renderer": "mechanism",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u13.js: Electrophilic addition"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "stage 1 is a valid structure",
+    "ok": true,
+    "detail": "[Br:3][Br:4].[CH2:1]=[CH2:2]"
+   },
+   {
+    "name": "stage 2 is a valid structure",
+    "ok": true,
+    "detail": "[Br-:4].[CH2:1]1[CH2:2][Br+:3]1"
+   },
+   {
+    "name": "stage 3 is a valid structure",
+    "ok": true,
+    "detail": "[CH2:1]([CH2:2][Br:4])[Br:3]"
+   },
+   {
+    "name": "stages 1→2 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 0→0, implicit H 4→4"
+   },
+   {
+    "name": "curly arrows on stage 1 give stage 2",
+    "ok": true,
+    "detail": "3 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "stages 2→3 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 0→0, implicit H 4→4"
+   },
+   {
+    "name": "curly arrows on stage 2 give stage 3",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
+   }
+  ]
+ },
+ "chem-hbr-propene": {
+  "title": "Adding HBr to propene",
+  "caption": "Step 1: the π electrons attack the δ+ hydrogen and the H–Br bond breaks, leaving the more stable secondary carbocation. Step 2: bromide's lone pair bonds to the positive carbon. The major product is 2-bromopropane.",
+  "alt": "Mechanism of HBr adding to propene: the π bond attacks hydrogen to form a secondary carbocation and bromide, then bromide attacks the carbocation to give 2-bromopropane.",
+  "description": [
+   "Left: propene and hydrogen bromide, with δ+ on hydrogen and δ− on bromine. A curly arrow goes from the C=C double bond to the hydrogen. A second curly arrow goes from the H–Br bond to bromine.",
+   "Middle: a secondary carbocation (positive charge on the middle carbon, which is bonded to two other carbons) and a bromide ion. A curly arrow goes from a lone pair on bromide to the positive carbon.",
+   "Right: 2-bromopropane, the major product. Hydrogen added to the end carbon and bromine to the middle carbon."
+  ],
+  "course": "chemistry",
+  "lesson": "Electrophilic addition",
+  "renderer": "mechanism",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u13.js: Electrophilic addition"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "stage 1 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:1][CH:2]=[CH2:3].[H:4][Br:5]"
+   },
+   {
+    "name": "stage 2 is a valid structure",
+    "ok": true,
+    "detail": "[Br-:5].[CH3:1][CH+:2][CH2:3][H:4]"
+   },
+   {
+    "name": "stage 3 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:1][CH:2]([CH2:3][H:4])[Br:5]"
+   },
+   {
+    "name": "stages 1→2 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 0→0, implicit H 6→6"
+   },
+   {
+    "name": "curly arrows on stage 1 give stage 2",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "stages 2→3 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 0→0, implicit H 6→6"
+   },
+   {
+    "name": "curly arrows on stage 2 give stage 3",
+    "ok": true,
+    "detail": "1 arrow(s): electron bookkeeping matches every bond and charge"
+   }
+  ]
+ },
+ "chem-sn1-sn2-profiles": {
+  "title": "SN1 and SN2 energy profiles",
+  "caption": "SN2 has one transition state and no intermediate. SN1 has two transition states with a carbocation intermediate in the valley between them; the first barrier is the highest, so ionisation is the rate-determining step.",
+  "alt": "Two energy profiles. SN2: a single hump. SN1: two humps with a carbocation intermediate in the dip between them, the first hump higher.",
+  "description": [
+   "Left panel, SN2: energy rises from the reactants to a single transition state, marked with a double dagger, then falls to the products, which are lower in energy than the reactants. The activation energy is marked from the reactants to the top of the hump.",
+   "Right panel, SN1: energy rises to a first, higher transition state (ionisation), falls into a shallow dip holding the carbocation intermediate, rises to a second, lower transition state (nucleophile attack), then falls to the products. The activation energy of step 1 is marked; it is the largest barrier, so step 1 is rate-determining."
+  ],
+  "course": "chemistry",
+  "lesson": "Reaction energy profiles",
+  "renderer": "energy-profile",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u13.js: Reaction energy profiles"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "SN2: one step: TS is a maximum",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "SN2: one step: 1 transition state(s), 0 intermediate(s), as stated",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "SN2: one step: the highest transition state is step 1, the rate-determining step",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "SN2: one step: overall exothermic",
+    "ok": true,
+    "detail": "ΔH -20"
+   },
+   {
+    "name": "SN2: one step: \"Ea\" arrow spans from a minimum to a maximum",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "SN1: two steps: TS1 is a maximum",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "SN1: two steps: carbocation is a minimum between two maxima",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "SN1: two steps: TS2 is a maximum",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "SN1: two steps: 2 transition state(s), 1 intermediate(s), as stated",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "SN1: two steps: the highest transition state is step 1, the rate-determining step",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "SN1: two steps: overall exothermic",
+    "ok": true,
+    "detail": "ΔH -20"
+   },
+   {
+    "name": "SN1: two steps: \"Ea (step 1)\" arrow spans from a minimum to a maximum",
+    "ok": true,
+    "detail": ""
+   }
+  ]
+ },
+ "chem-sn2-mechanism": {
+  "title": "SN2: hydroxide and (R)-2-bromobutane",
+  "caption": "One concerted step. The lone pair on hydroxide attacks carbon from the side opposite bromine while the C–Br bond breaks, so the other three groups flip over like an umbrella in the wind.",
+  "alt": "SN2 mechanism: hydroxide attacks the carbon of (R)-2-bromobutane from the back, passes through a five-coordinate transition state, and gives (S)-butan-2-ol and bromide.",
+  "description": [
+   "Left: hydroxide ion and (R)-2-bromobutane. A curly arrow goes from a lone pair on the oxygen of hydroxide to the carbon bonded to bromine, approaching from the side opposite the bromine. A second curly arrow goes from the C–Br bond to the bromine atom.",
+   "Middle, in square brackets with a double dagger: the transition state. Oxygen and bromine are both partly bonded to carbon (dashed lines) on opposite sides; the methyl, ethyl and hydrogen lie flat in one plane. Oxygen and bromine each carry a partial negative charge.",
+   "Right: (S)-butan-2-ol and bromide ion. The hydroxyl group is now on the side the hydroxide came from, and the other three groups have flipped to the other side: inversion of configuration."
+  ],
+  "course": "chemistry",
+  "lesson": "SN2 mechanisms",
+  "renderer": "mechanism",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u13.js: SN2 mechanisms"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "stage 1 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:2][C@@:3]([Br:4])([CH2:5][CH3:6])[H:7].[OH-:1]"
+   },
+   {
+    "name": "stage 2 is a transition state",
+    "ok": true,
+    "detail": "drawn for illustration: partial bonds dashed, not validated as a species"
+   },
+   {
+    "name": "stage 3 is a valid structure",
+    "ok": true,
+    "detail": "[Br-:4].[OH:1][C@@:3]([CH3:2])([CH2:5][CH3:6])[H:7]"
+   },
+   {
+    "name": "stage 1 CIP labels",
+    "ok": true,
+    "detail": "as stated: atom 3 is R"
+   },
+   {
+    "name": "stage 3 CIP labels",
+    "ok": true,
+    "detail": "as stated: atom 3 is S"
+   },
+   {
+    "name": "stages 1→3 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge -1→-1, implicit H 9→9"
+   },
+   {
+    "name": "curly arrows on stage 1 give stage 3",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
+   }
+  ]
+ },
+ "law-duty-of-care": {
+  "title": "Does a duty of care exist?",
+  "caption": "After Robinson, start with precedent, not with a three-stage test. Only a genuinely novel situation calls for incremental reasoning by analogy, using the Caparo factors. Omissions and harm caused by third parties are the main exception to liability for positive acts.",
+  "alt": "Decision tree for whether a duty of care exists in negligence, following Robinson v Chief Constable of West Yorkshire Police and Caparo v Dickman.",
+  "description": [
+   "Question 1: did the defendant's own positive act cause the harm? If no (an omission, or harm done by a third party), there is generally no duty unless the defendant created the danger, assumed responsibility, or had control of the third party or the source of danger (Smith v Littlewoods; N v Poole BC).",
+   "Question 2: is the situation genuinely novel, with no established category or precedent? If no, a duty exists: apply the established category, such as road users or doctor and patient (Robinson).",
+   "Question 3: by analogy with established categories, was the damage reasonably foreseeable, and was there sufficient proximity? If no, no duty.",
+   "Question 4: is it fair, just and reasonable to impose a duty? If no, no duty. If yes, a new duty is recognised incrementally (Caparo)."
+  ],
+  "course": "law",
+  "lesson": "Duty of care",
+  "renderer": "decision-tree",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/law/notes/u04.js: Duty of care"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every path ends in an outcome",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "no unreachable nodes",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every authority cited on the diagram is in the lesson",
+    "ok": true,
+    "detail": "3 citations found in the lesson text"
+   }
+  ]
+ },
+ "maths-transformations": {
+  "title": "Tracking a maximum through two transformations",
+  "caption": "Track the key point. y = 3f(x − 1): inside the bracket moves x the opposite way (1 right), outside stretches y as written (× 3): (4, 6) → (5, 18). y = f(2x) − 5: inside halves x, outside moves down 5: (4, 6) → (2, 1).",
+  "alt": "Graph of a curve y = f(x) with a maximum at (4, 6), and its transformations y = 3f(x − 1), with maximum at (5, 18), and y = f(2x) − 5, with maximum at (2, 1).",
+  "description": [
+   "Three downward parabolas on one set of axes. The original curve y = f(x) has its maximum at (4, 6).",
+   "y = 3f(x − 1) is the same shape moved 1 to the right and stretched vertically by 3: it is three times as tall and its maximum is at (5, 18).",
+   "y = f(2x) − 5 is squeezed horizontally by a factor of 1/2 and moved down 5: it is narrower and its maximum is at (2, 1).",
+   "Arrows run from (4, 6) to each new maximum."
+  ],
+  "course": "maths",
+  "lesson": "Transformations of Functions",
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u03.js: Transformations of Functions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "f has its maximum at (4, 6), as in the worked example",
+    "ok": true,
+    "detail": "found (4, 6)"
+   },
+   {
+    "name": "y = 3f(x − 1) has its maximum at (5, 18)",
+    "ok": true,
+    "detail": "found (5, 18)"
+   },
+   {
+    "name": "y = f(2x) − 5 has its maximum at (2, 1)",
+    "ok": true,
+    "detail": "found (2, 1)"
+   }
+  ]
+ },
+ "phys-converging-lens": {
+  "title": "Ray diagrams for a converging lens",
+  "caption": "Use the ray rules: a ray parallel to the axis passes through F; a ray through the centre is undeviated; a ray through F emerges parallel. Where they meet is the image. At 2F the image is real, inverted and the same size; inside F the rays diverge and only appear to come from a virtual, upright, magnified image.",
+  "alt": "Three ray diagrams for a converging lens of focal length 10 cm: object beyond 2F, object at 2F, and object inside F.",
+  "description": [
+   "Each panel shows the principal axis, a converging lens drawn as a vertical double-headed arrow, and the focal points F and 2F on both sides. The lens has focal length 10 cm.",
+   "Object beyond 2F (30 cm away): the rays meet 15 cm beyond the lens, forming a real, inverted, diminished image.",
+   "Object at 2F (20 cm away): the rays meet at 2F on the other side, forming a real, inverted image the same size as the object.",
+   "Object inside F (6 cm away): the rays spread out after the lens. Traced backwards (dashed), they meet 15 cm in front of the lens on the object's side, forming a virtual, upright image 2.5 times larger. This is a magnifying glass."
+  ],
+  "course": "physics",
+  "lesson": "Thin lenses",
+  "renderer": "rays",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u19.js: Thin lenses"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Object beyond 2F: the drawn rays meet where the lens equation puts the image",
+    "ok": true,
+    "detail": "rays meet at 15.00 cm, -1.50; 1/v = 1/f − 1/u gives v = 15.00 cm, m = -0.50"
+   },
+   {
+    "name": "Object beyond 2F: stated as real, inverted, diminished",
+    "ok": true,
+    "detail": "computed: real, inverted, diminished"
+   },
+   {
+    "name": "Object at 2F: the drawn rays meet where the lens equation puts the image",
+    "ok": true,
+    "detail": "rays meet at 20.00 cm, -3.00; 1/v = 1/f − 1/u gives v = 20.00 cm, m = -1.00"
+   },
+   {
+    "name": "Object at 2F: stated as real, inverted, same size",
+    "ok": true,
+    "detail": "computed: real, inverted, same size"
+   },
+   {
+    "name": "Object inside F: the drawn rays meet where the lens equation puts the image",
+    "ok": true,
+    "detail": "rays meet at -15.00 cm, 5.00; 1/v = 1/f − 1/u gives v = -15.00 cm, m = 2.50"
+   },
+   {
+    "name": "Object inside F: stated as virtual, upright, magnified",
+    "ok": true,
+    "detail": "computed: virtual, upright, magnified"
+   }
+  ]
+ },
+ "phys-fbd-slope": {
+  "title": "Box pushed up a rough slope by a horizontal force",
+  "caption": "Four forces, each with a physical source. Weight acts from the centre of mass straight down; the normal force is perpendicular to the slope; friction acts down the slope, opposing the motion; the push P is horizontal. Resolving perpendicular to the slope gives N = mg cos θ + P sin θ.",
+  "alt": "Free-body diagram of a box on a slope at angle theta, with weight down, normal force perpendicular to the slope, friction down the slope and a horizontal push.",
+  "description": [
+   "A right-angled slope rising to the right at angle theta, with a box resting on it.",
+   "Weight, mg, is drawn straight down from the box's centre of mass. The normal force, N, is drawn from the contact face, perpendicular to the slope, pointing away from it. Friction, f, is drawn along the contact face, pointing down the slope. The push, P, is a horizontal arrow arriving at the box from the left.",
+   "Because P is horizontal, part of it presses the box into the slope, so the normal force is bigger than mg cos theta: N = mg cos theta + P sin theta."
+  ],
+  "course": "physics",
+  "lesson": "Free-body diagrams",
+  "renderer": "free-body",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u04.js: Free-body diagrams"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "normal force is perpendicular to the slope",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every force has a stated source",
+    "ok": true,
+    "detail": "mg: Earth's gravity; N: the slope's surface, perpendicular contact force; f: the rough slope, opposing sliding; P: whoever is pushing"
+   },
+   {
+    "name": "resolving perpendicular to the slope gives N = mg cos θ + P sin θ",
+    "ok": true,
+    "detail": "m = 2 kg, P = 15 N, θ = 25°: N = 24.12 N from components, 24.12 N from the formula"
+   },
+   {
+    "name": "the horizontal push presses the block into the slope (it adds to N)",
+    "ok": true,
+    "detail": ""
+   }
+  ]
+ },
+ "phys-kirchhoff-loop": {
+  "title": "Two opposing cells in one loop",
+  "caption": "Go round the loop: the 6 V cell is a rise, the 2 V cell (facing the other way) is a drop, and the resistance takes the rest. ΣEMF = ΣIR gives 6 − 2 = I × 4, so I = 1 A, driven by the 6 V cell.",
+  "alt": "Circuit with a 6 volt cell and a 2 volt cell facing opposite ways in a single loop with a 4 ohm resistor; a current of 1 amp flows clockwise.",
+  "description": [
+   "A single rectangular loop. On the top wire is a 6 V cell with its positive (long) plate on the right. On the bottom wire are a 4 ohm resistor and a 2 V cell whose positive plate is also on the right, so it pushes the other way round the loop.",
+   "Arrows on the side wires show the current flowing clockwise: down the right-hand side and up the left. The current is 1 A."
+  ],
+  "course": "physics",
+  "lesson": "Kirchhoff's laws",
+  "renderer": "circuit",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u16.js: Kirchhoff's laws"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "loop law: net EMF = I × total resistance",
+    "ok": true,
+    "detail": "net EMF 4 V, R 4 Ω, I = 1 A"
+   },
+   {
+    "name": "current is 1 A, as the worked example says",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the 6 V cell drives the current",
+    "ok": true,
+    "detail": ""
+   }
+  ]
+ }
+}

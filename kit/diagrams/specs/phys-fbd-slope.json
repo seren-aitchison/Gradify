@@ -1,0 +1,60 @@
+{
+  "id": "phys-fbd-slope",
+  "renderer": "free-body",
+  "course": "physics",
+  "lesson": "Free-body diagrams",
+  "title": "Box pushed up a rough slope by a horizontal force",
+  "caption": "Four forces, each with a physical source. Weight acts from the centre of mass straight down; the normal force is perpendicular to the slope; friction acts down the slope, opposing the motion; the push P is horizontal. Resolving perpendicular to the slope gives N = mg cos θ + P sin θ.",
+  "alt": "Free-body diagram of a box on a slope at angle theta, with weight down, normal force perpendicular to the slope, friction down the slope and a horizontal push.",
+  "description": [
+    "A right-angled slope rising to the right at angle theta, with a box resting on it.",
+    "Weight, mg, is drawn straight down from the box's centre of mass. The normal force, N, is drawn from the contact face, perpendicular to the slope, pointing away from it. Friction, f, is drawn along the contact face, pointing down the slope. The push, P, is a horizontal arrow arriving at the box from the left.",
+    "Because P is horizontal, part of it presses the box into the slope, so the normal force is bigger than mg cos theta: N = mg cos theta + P sin theta."
+  ],
+  "angle": 25,
+  "forces": [
+    {
+      "name": "weight",
+      "label": "mg",
+      "dir": "down",
+      "colour": "a1",
+      "len": 92,
+      "source": "Earth's gravity",
+      "lx": 0,
+      "ly": 4
+    },
+    {
+      "name": "normal",
+      "label": "N",
+      "dir": "normal",
+      "colour": "a4",
+      "len": 84,
+      "offset": 12,
+      "source": "the slope's surface, perpendicular contact force"
+    },
+    {
+      "name": "friction",
+      "label": "f",
+      "dir": "downslope",
+      "colour": "a2",
+      "len": 62,
+      "source": "the rough slope, opposing sliding",
+      "lx": 6,
+      "ly": -18
+    },
+    {
+      "name": "push",
+      "label": "P",
+      "dir": "horizontal-in",
+      "colour": "a3",
+      "len": 74,
+      "source": "whoever is pushing"
+    }
+  ],
+  "note": "acceleration is marked separately, not drawn as a force",
+  "verify": {
+    "m": 2,
+    "g": 9.81,
+    "P": 15
+  }
+}

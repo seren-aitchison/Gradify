@@ -81,6 +81,7 @@ H: Acts and omissions
 - Generally no duty to prevent harm caused by third parties or to rescue (Smith v Littlewoods [1987]; Robinson; N v Poole BC [2019] UKSC 25), unless the defendant created the danger, assumed responsibility, controlled the third party, or had special control over the source of danger.
 H: Public bodies
 - Public bodies are generally subject to the same principles as private persons: liable for positive acts that cause harm, but generally not for failing to confer a benefit (Michael v Chief Constable of South Wales [2015] UKSC 2; Robinson).
+D: law-duty-of-care
 K: First ask: is this an established category? If so, the duty exists. Only in genuinely novel situations does the incremental Caparo-style analysis come in.
 Q: What did Robinson v Chief Constable of West Yorkshire decide about Caparo? | Caparo is not a universal three-stage test; established duties apply, and novel cases develop incrementally by analogy.
 Q: Is there a general duty to rescue in English law? | No. There is generally no liability for omissions, subject to exceptions such as assumption of responsibility or creating the danger.

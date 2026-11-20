@@ -33,6 +33,7 @@ import { gate, lockedHtml } from "../data/limits.js";
 import { mapsSectionHtml, wireMaps } from "../maps/view.js";
 import { lessonTimer, addTime, MIN_LOG_MS, minutesPerLesson } from "./lesson-time.js";
 import { hydrate as glassIcons } from "../core/glass-icons.js";
+import { hydrateDiagrams } from "../diagrams/visual.js";
 import { diagramsFor, diagramForCard, glassDiagram } from "../core/glass-diagrams.js";
 import { mountRevalidation } from "./revalidation.js";
 import { tutorEvent } from "../intel/experiments.js";
@@ -1309,6 +1310,7 @@ export function mountCourse(root, cfg) {
       addEventListener("keydown", key); document.body.append(box); box.querySelector(".gd-zoomx").focus();
     };
     main.addEventListener("click", zoom);
+    hydrateDiagrams(main);
     main.querySelectorAll(".co-lesson .gd").forEach((f) => { f.tabIndex = 0; f.title = "Open the diagram full size"; f.addEventListener("keydown", (k) => { if (k.key === "Enter" || k.key === " ") { k.preventDefault(); zoom({ target: f }); } }); });
     // ← → B F S N and the rest are registered once, with the shared shortcuts (see "keyboard shortcuts" below)
     curPN = { prev, next };

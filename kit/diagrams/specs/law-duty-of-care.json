@@ -1,0 +1,24 @@
+{
+  "id": "law-duty-of-care", "renderer": "decision-tree", "course": "law", "lesson": "Duty of care",
+  "title": "Does a duty of care exist?",
+  "caption": "After Robinson, start with precedent, not with a three-stage test. Only a genuinely novel situation calls for incremental reasoning by analogy, using the Caparo factors. Omissions and harm caused by third parties are the main exception to liability for positive acts.",
+  "alt": "Decision tree for whether a duty of care exists in negligence, following Robinson v Chief Constable of West Yorkshire Police and Caparo v Dickman.",
+  "description": [
+    "Question 1: did the defendant's own positive act cause the harm? If no (an omission, or harm done by a third party), there is generally no duty unless the defendant created the danger, assumed responsibility, or had control of the third party or the source of danger (Smith v Littlewoods; N v Poole BC).",
+    "Question 2: is the situation genuinely novel, with no established category or precedent? If no, a duty exists: apply the established category, such as road users or doctor and patient (Robinson).",
+    "Question 3: by analogy with established categories, was the damage reasonably foreseeable, and was there sufficient proximity? If no, no duty.",
+    "Question 4: is it fair, just and reasonable to impose a duty? If no, no duty. If yes, a new duty is recognised incrementally (Caparo)."
+  ],
+  "start": "act",
+  "nodes": {
+    "act": { "q": "Did the defendant's own positive act cause the harm?", "yes": "novel", "no": "omit", "cite": "Robinson v Chief Constable of West Yorkshire [2018] UKSC 4" },
+    "omit": { "outcome": "Omission or third party: generally no duty, unless the defendant created the danger, assumed responsibility or had control (Smith v Littlewoods; N v Poole BC)", "tone": "warn" },
+    "novel": { "q": "Is the situation genuinely novel, with no established category or precedent?", "yes": "fp", "no": "est" },
+    "est": { "outcome": "Duty exists: apply the established category (e.g. road users, doctor and patient)", "tone": "good", "cite": "Robinson v Chief Constable of West Yorkshire [2018] UKSC 4" },
+    "fp": { "q": "By analogy: was the damage reasonably foreseeable, and was there sufficient proximity?", "yes": "fjr", "no": "none1" },
+    "none1": { "outcome": "No duty", "tone": "bad" },
+    "fjr": { "q": "Is it fair, just and reasonable to impose a duty?", "yes": "new", "no": "none2", "cite": "Caparo Industries v Dickman [1990] 2 AC 605" },
+    "none2": { "outcome": "No duty", "tone": "bad" },
+    "new": { "outcome": "A new duty is recognised, developed incrementally", "tone": "good" }
+  }
+}
