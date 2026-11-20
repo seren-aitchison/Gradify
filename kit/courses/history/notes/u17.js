@@ -38,6 +38,16 @@ M2#history-u17-01-q2@2: Why is "Why did the British Empire fall?" a weak enquiry
 TF1#history-u17-01-q3@1: A strong enquiry asks for judgement rather than description. | true | Questions such as "how far" invite an argued judgement.
 M3#history-u17-01-q4@3: Which revision best improves the enquiry "the 1832 Reform Act"? | How far was the Great Reform Act of 1832 a response to the threat of revolution? | Write everything that is known about the Reform Act of 1832 | List the dates of every Reform Act passed in the nineteenth century | Describe the life of Earl Grey from his birth to his death | A focused question with a debate demands an argued answer.
 SA3#history-u17-01-q5@2,3: How would you turn a broad topic into a strong historical enquiry? | A strong answer explains that an enquiry needs a genuine debate, a clear focus, available evidence and a demand for judgement; it narrows a topic such as the end of empire to a question such as "How far did the Second World War cause the end of British rule in India by 1947?", and checks that primary sources and historians' interpretations can be used. | Explains the features ; Narrows a topic ; Checks evidence ; Checks for debate ; Reaches a judgement
+Q: What is a historical enquiry? | A historical question that drives research and argument.
+Q: What is the non-exam assessment in A level History? | An independent investigation of 3,000 to 4,000 words.
+Q: What did Collingwood argue history advances by? | Asking questions of evidence, not collecting facts.
+Q: When was Collingwood's The Idea of History published? | In 1946, after his death.
+Q: Why must a strong enquiry address a genuine debate? | So that it asks about something historians disagree on, inviting argument rather than description.
+Q: What does a clear focus mean for an enquiry? | A defined period, place and issue.
+Q: Which kinds of evidence should a strong enquiry allow? | Both primary sources and historians' interpretations.
+Q: Which question words signal that an enquiry demands judgement? | Phrases such as "how far" or "how significant".
+Q: How could "Why did the British Empire fall?" be revised into a workable enquiry? | For example, "How far did the Second World War cause the end of British rule in India by 1947?"
+Q: What common mistake is made when starting an investigation? | Choosing a topic rather than a question, so research becomes description.
 
 ## Developing research questions
 LV: A level · Application
@@ -77,6 +87,16 @@ M2#history-u17-02-q2@2: Why should a question about "success" define its terms? 
 TF1#history-u17-02-q3@1: Research questions often change as research develops. | true | Refining a question in response to evidence is normal.
 M3#history-u17-02-q4@3: Which is the best refinement of "Was the New Deal a success?" | How far did the New Deal reduce unemployment in the United States between 1933 and 1941? | Was Franklin Roosevelt a good man or a bad man in his private life? | What did the letters of the New Deal agencies stand for in 1933? | Was the New Deal the most important event in the history of the world? | A good refinement defines success and sets a period.
 SA3#history-u17-02-q5@2,3: How can a historian refine a research question to make it effective? | A strong answer explains the difference between open and closed questions, identifies question types (causation, consequence, change, significance, interpretation), and shows refinement: from "Was Chartism a failure?" to "How far did Chartism fail to achieve its aims between 1838 and 1858?", defining terms and setting a period. | Distinguishes question types ; Explains open questions ; Demonstrates refinement ; Explains defining terms ; Reaches a judgement
+Q: Why should research questions be open? | Because open questions invite argument and judgement, while closed ones have a single factual answer.
+Q: Give an example of a closed question about Chartism. | "When did the Chartists present their first petition?", answered by 1839.
+Q: What form does a causation question take? | "Why did...?" or "How far was X the main cause of Y?"
+Q: What form does a consequence question take? | "What was the impact of...?"
+Q: What form does a change and continuity question take? | For example, "How far did X change between 1830 and 1880?"
+Q: What form does an interpretation question take? | "How far do you agree with the view that...?"
+Q: What three things do good research questions do? | Name a period, define their key terms and can be answered with the evidence found.
+Q: How might "Was the New Deal a success?" be refined? | To "How far did the New Deal reduce unemployment in the United States between 1933 and 1941?"
+Q: Why is "Was Chartism a failure?" a weak question? | "Failure" is undefined and the period is unclear.
+Q: What common mistake is made with a research question's first version? | Keeping it unchanged; questions usually need refining as evidence is found.
 
 ## Selecting primary sources
 LV: A level · Application
@@ -117,6 +137,16 @@ M2#history-u17-03-q2@2: Why should an investigation include sources that challen
 TF1#history-u17-03-q3@1: Oral history is a type of primary source. | true | Interviews with participants record their own experiences.
 M3#history-u17-03-q4@3: Which judgement about a selection of only Poor Law Commissioners' reports is best supported? | It is unbalanced, because every source comes from those who designed and ran the system | It is ideal, because official reports are always completely accurate | It is too varied to support any argument about the Poor Law | It is balanced, because the Commissioners disagreed with the law | Balance needs sources from several perspectives.
 SA3#history-u17-03-q5@2,3: How should a historian select primary sources for an investigation? | A strong answer explains types of source (official, personal, press, visual, statistical, oral), where to find them (The National Archives, local record offices, digitised collections such as the Old Bailey Online), and selection for relevance, range of perspective and type, including sources that challenge the argument, with an example such as the 1834 Poor Law. | Explains source types ; Explains where to find sources ; Explains range and balance ; Uses an example ; Reaches a judgement
+Q: What is a primary source? | Evidence created at or close to the time being studied.
+Q: Name three types of official record. | Laws, government reports, court records and parliamentary debates.
+Q: Name three types of personal source. | Letters, diaries and memoirs.
+Q: Name three kinds of statistical source. | Census returns, trade figures and election results.
+Q: What is an archive? | A collection of historical records, or the place where they are kept.
+Q: What do local record offices hold? | Parish, council and business records.
+Q: Roughly how many trials does the Old Bailey Proceedings Online contain? | Nearly 200,000 trials at London's central criminal court.
+Q: What perspectives should a strong selection of sources include? | Different perspectives, such as government and opponents, and elites and ordinary people.
+Q: Which sources would balance a study of the New Poor Law based only on commissioners' reports? | Workhouse records, critical newspapers, and accounts by paupers or their advocates.
+Q: What common mistake is made when selecting sources? | Choosing only sources that support the argument; strong investigations also use sources that challenge it.
 
 ## Evaluating provenance in depth
 LV: A level · Evaluation
@@ -157,6 +187,16 @@ M2#history-u17-04-q2@2: Why does a source's value depend on the question asked? 
 TF1#history-u17-04-q3@1: Historians now agree that the Zinoviev letter was a forgery. | true | It was nonetheless highly influential in 1924.
 M3#history-u17-04-q4@3: Which judgement about provenance is best supported? | It shows what a source can and cannot tell us, rather than making it simply reliable or unreliable | It proves that every source with a purpose is useless to historians | It matters only for sources written before the year 1900 | It can be ignored if a source's content seems interesting | Provenance guides what a source can show.
 SA3#history-u17-04-q5@2,3: How useful is the Zinoviev letter of 1924 to a historian? | A strong answer analyses its nature, origin, purpose, audience, context and tone; explains that as a forgery it is worthless as evidence of Soviet plans; and argues that its publication in the Daily Mail on 25 October 1924, days before the election, makes it valuable evidence of fears of communism and press power, as Bennett shows. | Analyses provenance ; Explains the forgery ; Explains its value for other questions ; Uses context ; Reaches a judgement
+Q: What is provenance? | The origin and history of a source: who made it, when, why and for whom.
+Q: What is utility in source evaluation? | How useful a source is for a particular enquiry.
+Q: What did the Zinoviev letter appear to urge? | British communists to prepare for revolution.
+Q: Who was Grigory Zinoviev? | Head of the Communist International.
+Q: When was the Zinoviev letter published, relative to the 1924 election? | On 25 October 1924, four days before the general election.
+Q: How did the Zinoviev letter affect British politics? | It damaged MacDonald's Labour government, which lost the election to the Conservatives.
+Q: Who traced how the Zinoviev letter reached the press? | Foreign Office historian Gill Bennett, in a 1999 study.
+Q: Why is the Zinoviev letter worthless as evidence of Soviet policy? | Because it was a forgery.
+Q: What is a forgery? | A document falsely made to appear genuine.
+Q: What common mistake is made with biased or forged sources? | Dismissing them as useless; even a forgery is valuable evidence for some questions.
 
 ## Comparing interpretations at A level
 LV: A level · Evaluation
@@ -195,6 +235,16 @@ M2#history-u17-05-q2@2: Why did revisionist interpretations emerge in the 1970s?
 TF1#history-u17-05-q3@1: Guilty Men was written after the fall of France in 1940. | true | Its context shaped its angry criticism of the appeasers.
 M3#history-u17-05-q4@3: Which explanation of changing interpretations of appeasement is best supported? | Interpretations changed as context, evidence and questions changed, and each captures part of the truth | Historians changed their minds at random over the decades | Only the first interpretation can be correct | Interpretations changed because the facts of 1938 changed | Context, evidence and questions explain change.
 SA3#history-u17-05-q5@2,3: Why have historians interpreted British appeasement in the 1930s so differently? | Guilty Men (1940) reflected anger after the fall of France; revisionists used records released under the thirty-year rule to show economic, military, imperial and public constraints; counter-revisionists such as Parker (1993) asked what alternatives existed. A strong answer explains how context, evidence and questions shape each, and tests them against evidence. | Explains Guilty Men ; Explains revisionism ; Explains counter-revisionism ; Explains why they differ ; Reaches a judgement
+Q: Who wrote Guilty Men? | Three journalists, under the name "Cato".
+Q: Which constraints on Chamberlain did revisionists stress? | Economic weakness, military unpreparedness, imperial commitments and public opinion.
+Q: What alternative did counter-revisionists say Chamberlain rejected? | An alliance with the Soviet Union, among other options.
+Q: What is revisionism? | An interpretation that challenges an established view.
+Q: What is counter-revisionism? | An interpretation that challenges revisionism, often partly restoring an older view.
+Q: What was the thirty-year rule? | The rule that most British government records were released after thirty years.
+Q: What context shaped Guilty Men? | It was written after the fall of France to attack the politicians who led Britain into an unprepared war.
+Q: Which evidence supports the revisionist view of appeasement? | British rearmament from 1936.
+Q: How does a strong comparison of interpretations work? | It tests each interpretation against evidence rather than choosing the one it likes.
+Q: What common mistake is made when explaining why historians differ? | Saying "because of bias" without explaining how context, evidence and questions shape each interpretation.
 
 ## Historiographical debate
 LV: A level · Evaluation
@@ -234,6 +284,16 @@ M2#history-u17-06-q2@2: Why was Fischer's thesis so controversial in West German
 TF1#history-u17-06-q3@1: Keith Jenkins argued that history is a form of narrative shaped by historians. | true | Richard Evans defended historical knowledge against such views in 1997.
 M3#history-u17-06-q4@3: Which judgement about historiographical approaches is best supported? | Each asks different questions, revealing some things and hiding others | Only one approach to history has ever produced valid knowledge | Approaches make no difference to historical interpretation | Historiography is simply a list of historians' names | Understanding approaches explains differing interpretations.
 SA3#history-u17-06-q5@2,3: How have different approaches to history shaped historical understanding? | A strong answer explains Whig history and Butterfield's critique (1931), Marxist history, the Annales school (Braudel 1949), social and cultural history and postmodernism (Jenkins) against Evans (1997), and uses the Fischer controversy (1961) to show how evidence, questions and context drive debate. | Explains schools ; Uses the Fischer controversy ; Explains how debates develop ; Weighs strengths and limits ; Reaches a judgement
+Q: What is historiography? | The study of how history has been written and interpreted.
+Q: What is Whig history? | History told as inevitable progress towards the present or liberty, as in Macaulay's.
+Q: How does Marxist history explain change? | Through class struggle and economic structures.
+Q: What is the longue durée? | The Annales school's focus on long-term historical structures.
+Q: Which book by Fernand Braudel exemplifies the Annales school? | His study of the Mediterranean, of 1949.
+Q: What did social and cultural history turn to? | Ordinary people, everyday life and meanings.
+Q: Who defended historical knowledge against postmodernism in 1997? | Richard Evans.
+Q: Which view did Fischer's thesis challenge? | The view, common in Germany, that all the powers had slid into war in 1914.
+Q: Why was Fischer's thesis especially sensitive? | It suggested continuity between German aims in 1914 and 1939.
+Q: What three things make historiographical debates develop? | New evidence, new questions and changes in historians' own contexts.
 
 ## Using academic literature
 LV: A level · Application
@@ -274,6 +334,16 @@ M2#history-u17-07-q2@2: Why should notes separate a historian's argument from th
 TF1#history-u17-07-q3@1: A recent survey is a good starting point for finding a debate. | true | Its footnotes and bibliography lead to key historians.
 M3#history-u17-07-q4@3: Which judgement about using academic literature is best supported? | It is a set of arguments to be evaluated, not just a source of facts | It should be copied into the investigation without comment | It is less useful than any primary source | It should be avoided in an independent investigation | Investigations engage with arguments, not just information.
 SA3#history-u17-07-q5@2,3: How should a student use academic literature in a historical investigation? | A strong answer explains types of literature (monographs, peer-reviewed articles in journals such as the English Historical Review and Past and Present, surveys, edited collections), how to find them through surveys, footnotes and databases, how to read strategically, how to record arguments separately from evidence with full references, and how to evaluate historians' arguments. | Explains types ; Explains finding literature ; Explains reading and note-taking ; Explains evaluation ; Reaches a judgement
+Q: What are journal articles in academic history? | Peer-reviewed studies in journals such as the English Historical Review and Past and Present.
+Q: What are surveys and textbooks useful for? | Broad overviews that summarise debates.
+Q: What is an edited collection? | A book of chapters by different historians on a theme.
+Q: What is a review in academic literature? | An assessment of a new book by another historian.
+Q: Where should research into the literature start? | With a recent survey, then follow its footnotes and bibliography.
+Q: What is peer review? | Assessment of work by experts before publication, a sign of academic reliability.
+Q: What is a bibliography? | A list of the sources and works used or cited.
+Q: What should notes on a historian record? | Their main claim, their evidence and their approach.
+Q: Why record full references, with page numbers, while reading? | To avoid errors later.
+Q: What common mistake is made in using historians' work? | Using historians only as a source of facts rather than evaluating their arguments.
 
 ## Constructing an argument
 LV: A level · Application
@@ -314,6 +384,16 @@ M2#history-u17-08-q2@2: Why does answering a counter-argument strengthen a thesi
 TF1#history-u17-08-q3@1: A thesis should be stated clearly at the start of an argument. | true | Readers should know the answer the argument will defend.
 M3#history-u17-08-q4@3: Which thesis on the 1832 Reform Act is best supported? | The threat of disorder explains its passage, while the Whigs' aims explain its limited content | The Act was passed for no reason that historians can identify | The Act was a revolution that gave power to the working class | The Act was forced on Parliament by a French invasion in 1832 | A qualified thesis explains both passage and content.
 SA3#history-u17-08-q5@2,3: How should a historian construct an argument in answer to a historical question? | A strong answer explains the thesis, line of argument, evidence, counter-argument and qualification, and applies them to a question such as the 1832 Reform Act: the riots of 1831 and the Days of May explain its passage, while the Whigs' aim of preserving the system explains its limits. | Explains the parts ; Applies them to an example ; Uses evidence ; Uses a counter-argument ; Reaches a judgement
+Q: What is a line of argument? | The sequence of points that supports the thesis.
+Q: What is a counter-argument? | The strongest objection to a thesis, fairly stated.
+Q: What is a rebuttal in an argument? | An explanation of why the thesis still holds despite a counter-argument.
+Q: Which events of 1831 and 1832 showed the threat of disorder before the Reform Act? | The riots of October 1831 in Bristol and Nottingham and the Days of May in 1832.
+Q: Why did riots break out in Bristol and Nottingham in October 1831? | After the Lords rejected the Reform Bill.
+Q: What counter-argument challenges the view that the Reform Act responded to revolution? | Earl Grey's government was committed to reform before the riots, and the Act aimed to preserve aristocratic government.
+Q: How can the threat of revolution and the Whigs' aims both explain the 1832 Reform Act? | The threat explains its timing and passage; the Whigs' aims explain its limits.
+Q: How do counter-arguments make a thesis better? | They force the thesis to be precise and lead to a more convincing, qualified judgement.
+Q: What do counter-arguments show about the writer? | That the writer has considered the evidence fairly.
+Q: What common mistake is made with counter-arguments? | Mentioning one and then ignoring it, instead of showing how it changes or confirms the thesis.
 
 ## Structuring an extended essay
 LV: A level · Application
@@ -351,6 +431,16 @@ M2#history-u17-09-q2@2: Why does a thematic structure often suit a "how far" que
 TF1#history-u17-09-q3@1: A conclusion should introduce important new evidence. | false | It should weigh the arguments already made and reach a judgement.
 M3#history-u17-09-q4@3: Which structure best suits "How far was the First World War responsible for the decline of the Liberal Party by 1924?" | A thematic structure ordered by importance, weighing the war against other factors | A list of every event in British politics from 1900 to 1924 in order | A biography of Lloyd George from childhood to old age | A single paragraph with no introduction or conclusion | Thematic structure supports weighing causes.
 SA3#history-u17-09-q5@2,3: How should a 4,000-word historical investigation be structured? | A strong answer explains an introduction with context, key terms, debate and line of argument; a thematic or combined structure of analytical paragraphs that make a point, use evidence from sources and historians, explain and link; and a conclusion that weighs factors and judges, using an example such as the Liberal decline (Dangerfield 1935, Wilson 1966). | Explains the introduction ; Compares structures ; Explains analytical paragraphs ; Explains the conclusion ; Reaches a judgement
+Q: What should a conclusion do? | Return to the question, weigh the factors and reach a clear, supported judgement, without new evidence.
+Q: What is a thematic structure? | Organising an essay by factors or arguments.
+Q: What is a chronological structure? | Organising an essay by the order of events.
+Q: What is the risk of a chronological structure? | It risks becoming narrative.
+Q: When does a chronological structure suit a question? | For questions about change over time.
+Q: How do many strong essays combine structures? | They use themes, with chronology inside each.
+Q: When did the Liberal Party split between Asquith and Lloyd George? | In 1916.
+Q: Which historian argued in 1966 that the war destroyed the Liberal Party? | Trevor Wilson.
+Q: Why order thematic sections by importance? | It makes weighing factors easier.
+Q: What common mistake is made in structuring an extended essay? | Writing a chronological narrative; every paragraph should make a point that answers the question.
 
 ## Citation and referencing
 LV: A level · Application
@@ -389,6 +479,16 @@ M2#history-u17-10-q2@2: Why does a paraphrase need a citation? | The words may b
 TF1#history-u17-10-q3@1: A bibliography usually divides primary and secondary sources. | true | This helps readers see the evidence base of the investigation.
 M3#history-u17-10-q4@3: Which judgement about an uncited paraphrase of a historian's argument is best supported? | It is plagiarism, because it presents someone else's idea as the student's own | It is acceptable, because the words are the student's own | It is acceptable if the historian's book is very well known | It is acceptable as long as there is a bibliography somewhere | Ideas need crediting as well as exact words.
 SA3#history-u17-10-q5@2,3: Why is accurate citation essential in a historical investigation? | A strong answer explains that citations let readers check evidence and credit historians; describes footnotes (author, title, place, publisher, year, page), primary source citations with archive references and a bibliography; and explains that quotations and paraphrases both need citations to avoid plagiarism, with an example. | Explains purposes ; Explains footnotes ; Explains primary citation ; Explains plagiarism ; Reaches a judgement
+Q: Name three reasons historians cite sources. | To let readers check evidence, to credit others' ideas and research, and to show the range of research.
+Q: What is a footnote? | A note at the foot of a page giving the source of a claim.
+Q: What should a primary source citation identify? | The document and where it is held, such as an archive reference.
+Q: What does a bibliography list? | All works used, usually divided into primary and secondary sources.
+Q: What rule applies whatever citation style is used? | It should be consistent.
+Q: What is a quotation? | A source's exact words, in quotation marks, with a citation.
+Q: What is a paraphrase? | Expressing someone else's idea in your own words, with a citation.
+Q: What is plagiarism? | Presenting another person's words or ideas as your own, treated as serious misconduct.
+Q: Who traced the history of the footnote, and in which book? | Anthony Grafton, in The Footnote (1997).
+Q: What common mistake is made about which material needs citing? | Thinking only direct quotations need citing; paraphrased ideas also need a citation.
 
 ## Avoiding anachronism
 LV: A level · Evaluation
@@ -427,6 +527,16 @@ M2#history-u17-11-q2@2: Why does hindsight distort historical understanding? | I
 TF1#history-u17-11-q3@1: Quakers condemned slavery in the 1680s. | true | This shows contemporaries could see alternatives to slavery.
 M3#history-u17-11-q4@3: Which judgement about moral judgement in history is best supported? | Historians should explain before they judge, and judge by the possibilities of the time | Historians must never make any moral judgement about anything | Historians should judge the past only by today's standards | Moral judgement is the only purpose of history | Understanding context and making judgements go together.
 SA3#history-u17-11-q5@2,3: How can historians avoid anachronism in their work? | A strong answer identifies anachronistic terms ("Protestant" before 1529, "Britain" before 1707, "Germany" before 1871), hindsight, presentism and teleology (Butterfield 1931); explains why they distort understanding (Hartley's "foreign country"); and argues that historians can still judge by contemporaries' alternatives, such as Quaker opposition to slavery in the 1680s. | Identifies forms ; Explains distortion ; Explains context ; Explains moral judgement ; Reaches a judgement
+Q: What is anachronism? | Placing something in the wrong period of time.
+Q: Why is it anachronistic to speak of "Britain" as one state before 1707? | Britain did not exist as a single state until 1707.
+Q: When did "Germany" exist as a single state? | From 1871.
+Q: What is hindsight as a form of anachronism? | Assuming people knew how events would turn out, such as treating the Second World War as inevitable in 1933.
+Q: What is teleology? | Telling the past as a story leading inevitably to a known end.
+Q: Who criticised teleological history as Whig history in 1931? | Herbert Butterfield.
+Q: How does anachronism distort our view of past people? | It makes their actions seem foolish or inevitable rather than explaining why they made sense at the time.
+Q: How can historians judge slavery without anachronism? | By noting that contemporaries opposed it, such as Quakers in the 1680s, and judging by alternatives available then.
+Q: When are moral judgements about the past strongest? | When grounded in the values and alternatives available at the time.
+Q: What common mistake is made about avoiding anachronism? | Thinking it means making no moral judgements; historians can judge using the values and alternatives of the time.
 
 ## Evaluating historical significance
 LV: A level · Evaluation
@@ -464,6 +574,16 @@ M2#history-u17-12-q2@2: Why is the Black Death "revealing" as well as important?
 TF1#history-u17-12-q3@1: Significance is the same as fame. | false | An event can be significant through its effects or what it reveals, whether or not it is famous.
 M3#history-u17-12-q4@3: Which judgement about the significance of the Black Death is best supported? | Highly significant by every major criterion, though its long-term effects combined with other causes | Insignificant, because it happened too long ago to matter | Significant only because it is often taught in schools | Significant only to historians of medicine | Criteria show its significance while noting other causes.
 SA3#history-u17-12-q5@2,3: How should historians judge the significance of an event such as the Black Death? | A strong answer explains criteria (Partington 1980; Counsell's five Rs, 2004), applies them to the Black Death of 1348 (a third to a half of the population killed, higher wages, the Statute of Labourers 1351, the Peasants' Revolt 1381, the decline of serfdom, what it reveals), and explains how judgements of significance change over time. | Explains criteria ; Applies them ; Explains effects ; Explains changing significance ; Reaches a judgement
+Q: What are Partington's criteria for significance? | Importance at the time, profundity, quantity of people affected, durability and relevance to the present.
+Q: What is historical significance? | The importance attributed to an event, person or development, judged by criteria.
+Q: What is durability as a criterion of significance? | How long the effects of an event lasted.
+Q: How many people did the Black Death kill in England? | Perhaps a third to a half of the population.
+Q: How did the Black Death affect wages? | Labour shortages raised wages.
+Q: How did the Black Death contribute to the Peasants' Revolt of 1381? | Landlords' attempts to hold wages down through the Statute of Labourers (1351) contributed to it.
+Q: What happened to serfdom after the Black Death? | It declined over the following century.
+Q: What can the Black Death reveal about medieval society? | Medieval medicine, belief and responses to catastrophe.
+Q: Why did the Black Death attract new interest from historians recently? | Historians of disease and the environment asked new questions, and the COVID-19 pandemic of 2020 renewed interest.
+Q: What common mistake is made about historical significance? | Confusing it with fame; an event can be significant for its effects or what it reveals.
 
 ## Writing a sustained historical judgement
 LV: A level · Evaluation
@@ -503,4 +623,14 @@ M2#history-u17-13-q2@2: Why should a judgement use clear criteria? | Criteria ex
 TF1#history-u17-13-q3@1: A sustained judgement should acknowledge uncertainty but still reach a conclusion. | true | Avoiding any conclusion is "sitting on the fence".
 M3#history-u17-13-q4@3: Which judgement on Chamberlain's responsibility is best supported by weighing choices and constraints? | Significantly but not solely responsible; his choices narrowed options that were already limited | Entirely responsible, with no constraints on his choices at all | Not responsible in any way, because nothing could ever have been done | Responsible only for events that happened after September 1939 | A weighed judgement balances choices against constraints.
 SA3#history-u17-13-q5@2,3: How can a historian write a sustained judgement in answer to a historical question? | A strong answer explains that a sustained judgement answers directly, stays consistent, is substantiated and weighs factors with criteria; it applies this to Chamberlain and appeasement, weighing his choices at Munich (1938) against military, economic and public constraints with the criterion of realistic alternatives, and acknowledges uncertainty (Carr 1961, Evans 1997) while concluding. | Explains a sustained judgement ; Explains criteria ; Applies to an example ; Handles uncertainty ; Reaches a judgement
+Q: What does it mean for a judgement to be substantiated? | Supported by evidence and argument, including engagement with historians.
+Q: What is a criterion when weighing factors? | A standard used to judge or weigh factors.
+Q: Name three criteria for weighing factors. | Which factor was necessary, which had the widest or longest effect, and which explains the timing.
+Q: Which criterion suits a judgement on Chamberlain's responsibility? | Whether realistic alternatives existed.
+Q: Which constraints limited Chamberlain's options? | Incomplete rearmament, reluctant dominions and public opinion that feared war.
+Q: What did Richard Evans insist on in 1997? | That evidence still limits what historians can argue.
+Q: Why must a sustained judgement be consistent? | Each section should support or refine the same overall view.
+Q: How should a sustained judgement handle uncertainty? | Acknowledge where evidence is uncertain or historians disagree, but still reach a conclusion.
+Q: What judgement on Chamberlain does weighing choices and constraints suggest? | He was significantly but not solely responsible; his choices narrowed options already limited.
+Q: What common mistake is made at the end of a historical essay? | Ending with "both sides have a point" and no judgement.
 `;

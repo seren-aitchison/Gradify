@@ -45,6 +45,16 @@ TF1#finance-u01-01-q3@2: A business's good reputation is normally recorded as an
 SEQ1#finance-u01-01-q4@2: Put the stages of the accounting process in order. | Identify the transaction ; Measure it in money ; Record it in the books ; Summarise in a trial balance ; Report in financial statements | Transactions are identified and measured, recorded, summarised and finally reported.
 M3#finance-u01-01-q5@3: Why do accounting failures such as Carillion's collapse matter beyond the company's own shareholders? | Lenders, suppliers, employees and pension schemes all rely on the accounts when dealing with the company | Only shareholders read company accounts, so the harm is limited to them | Accounting failures matter only if they involve tax evasion | They matter only because the company stops paying its auditors | Many stakeholders make decisions using published accounts; when the accounts mislead, losses spread to creditors, staff, pensioners and the public.
 SA3#finance-u01-01-q6@1,3: Explain the difference between bookkeeping and accounting, and evaluate why reliable accounting information matters to people outside a business. | Bookkeeping records transactions accurately; accounting also classifies, summarises, reports and interprets them for decisions. Outsiders such as lenders, investors, suppliers and HMRC can't see inside the business, so they depend on its accounts to judge risk, return and tax due. Unreliable accounts misallocate capital and cause losses, as corporate collapses show, though accounts can never capture every source of value. | Defines bookkeeping as recording ; Accounting adds summarising, reporting and interpreting ; Names outside users and their decisions ; Explains consequences of unreliable information ; Notes a limitation of accounting information
+Q: What are the stages of the accounting process? | Identify, measure, record, classify and summarise, report and interpret.
+Q: How is a transaction normally measured in accounting? | At its money value, normally its cost or price on the day.
+Q: Where are transactions recorded before the ledger accounts? | In the books of prime entry.
+Q: Which two main financial statements are prepared at the reporting stage? | The statement of profit or loss and the statement of financial position.
+Q: Is signing a contract to buy something next year recorded as a transaction? | No. No money value has changed hands yet, so nothing is recorded.
+Q: A café sells £84 of coffee for cash. How is it treated in the books? | It is recorded as income, a sale.
+Q: Why is a good online review not recorded in a business's accounts? | It cannot be measured reliably in money.
+Q: Why does misleading accounting information do wide damage? | Markets allocate capital using it, so investors, lenders, employees and pensioners can lose heavily.
+Q: Name two corporate collapses that led to reforms of accounting and audit. | Enron in 2001 and Carillion in 2018.
+Q: What is a common mistake about what accounts capture? | Thinking they capture everything of value; reputation, staff skill and loyalty usually appear nowhere.
 
 ## Users of accounting information
 LV: Introductory · Foundation
@@ -89,6 +99,16 @@ MATCH2#finance-u01-02-q2@2: Match each user to the question it most wants answer
 M2#finance-u01-02-q3@2: An employee representative is negotiating pay. Which figure in the accounts is most relevant? | Profit and cash generated, showing whether a rise is affordable | The number of shares in issue | The date the company was incorporated | The auditor's name | Employees want to know whether the business can afford higher pay and stay secure, so profitability and cash are the key figures.
 M3#finance-u01-02-q4@3: A company proposes paying a large dividend that would leave little cash. Whose interests are most likely to conflict with shareholders' here? | Lenders, who want cash retained to protect repayment | HMRC, who taxes dividends at the company level | Customers, who receive the dividend | Auditors, who are paid from the dividend | Paying out cash raises the risk that lenders won't be repaid in full; loan agreements often restrict dividends (covenants) for this reason.
 SA3#finance-u01-02-q5@2,3: Explain why different users need different information from the same set of accounts, and analyse one conflict between users. | Users make different decisions: shareholders judge return and risk, lenders repayment and security, suppliers short-term liquidity, employees job security and pay, HMRC tax due. A conflict: shareholders may want maximum dividends, while lenders want cash retained to protect repayment; managers' pay may depend on profit, tempting them to flatter results, which is why regulation and audit matter. | Links user groups to their decisions ; At least three users with needs ; Identifies a specific conflict ; Explains why the conflict arises ; Mentions regulation, covenants or audit as a response
+Q: What is the difference between internal and external users of accounts? | Internal users work inside and can ask for any report; external users rely on published statements.
+Q: What do owners and shareholders want to know from accounts? | Whether the business is profitable, will pay dividends, and whether to buy, hold or sell.
+Q: What do lenders such as banks want to know from accounts? | Whether interest and the loan can be repaid, and what security is offered.
+Q: What do customers want to know from a business's accounts? | Whether it will survive to honour warranties and keep supplying.
+Q: What do employees want to know from accounts? | Whether jobs are secure, a pay rise is affordable and the pension scheme is sound.
+Q: What does the government and HMRC use accounts for? | To work out tax due and see what is happening to the economy.
+Q: What common need do the primary users have? | Information on the amount, timing and uncertainty of future net cash inflows, and on stewardship.
+Q: Why does a bank want forecasts as well as past results when lending? | The loan will be repaid from future cash flows, not past ones.
+Q: How can shareholders' and lenders' interests conflict? | Shareholders may want high dividends while lenders prefer cash kept in the business as a cushion.
+Q: Why do external users value regulation and an independent audit? | Managers who prepare accounts may be tempted to present results favourably.
 
 ## Financial and management accounting
 LV: Introductory · Foundation
@@ -131,6 +151,16 @@ TF2#finance-u01-03-q3@2: A sole trader's management accounts must be prepared in
 M2#finance-u01-03-q4@2: A hotel manager wants to decide whether to open the restaurant on Mondays. Which information is most relevant? | Expected extra revenue and extra costs of Monday opening | Last year's published profit for the whole hotel | The hotel's share capital | The auditor's report | The decision needs forward-looking, specific information about the change, which management accounting provides.
 M3#finance-u01-03-q5@3: Which is the strongest argument that financial accounting still matters to managers? | Its regulated, audited records are the reliable base from which management information is built | It is always more detailed than management reports | It is the only source of forward-looking information | It lets managers ignore costs that standards don't require | Management analysis depends on accurate underlying records; financial accounting's rules and audit provide that reliability, even though it is too summarised for many decisions.
 SA3#finance-u01-03-q6@2,3: Compare financial and management accounting, and evaluate which is more useful to a business owner. | Financial accounting is regulated, historical, annual and summarised for external users; management accounting is unregulated, forward-looking, frequent and detailed for managers. For running the business, management accounting is usually more useful because it informs pricing, costing and planning; but financial accounts are required by law and tax, give a reliable overall picture and are what lenders and investors rely on, so an owner needs both. | Users compared ; Regulation compared ; Time focus and frequency compared ; Detail compared ; Judgement recognising both are needed
+Q: What statements does financial accounting prepare? | The statement of profit or loss, statement of financial position and statement of cash flows.
+Q: What regulates financial accounting for companies? | Company law and accounting standards, IFRS or UK GAAP, usually with an audit.
+Q: Give examples of management accounting outputs. | Product costs, budgets, variance reports, forecasts and project appraisals.
+Q: How often are financial statements usually prepared? | Annually, with listed companies also reporting half-yearly.
+Q: How often might management reports be produced? | Monthly, weekly or even daily.
+Q: How do financial and management accounting differ in level of detail? | Financial statements summarise the whole entity; management reports go down to products, departments and customers.
+Q: How do financial and management accounting differ on precision? | Financial accounting values verifiable accuracy; management accounting often prefers timely estimates.
+Q: Why can't a published profit statement show whether one product range is profitable? | It shows total revenue and costs for the whole business only.
+Q: Why is financial accounting trustworthy to outsiders? | Its regulation, comparability and audit.
+Q: What is a common mistake about financial and management accounting records? | Treating them as separate systems; both usually draw on the same transaction records.
 
 ## Types of business organisation
 LV: Introductory · Foundation
@@ -171,6 +201,16 @@ M2#finance-u01-04-q2@2: A shareholder bought 1,000 £1 shares, fully paid, in a 
 MS2#finance-u01-04-q3@1,2: Which are usually features of a private limited company? Choose all that apply. | Separate legal personality ; Limited liability for shareholders ; Accounts filed at Companies House | Shares offered to the general public ; Profits taxed as the owner's income | Private companies can't offer shares to the public, and their profits are subject to corporation tax rather than the owner's income tax.
 M3#finance-u01-04-q4@3: A sole trader with growing profits and a large bank loan is considering incorporation. Which is the strongest reason to hesitate? | The bank is likely to ask for a personal guarantee, so limited liability may protect less than expected | Companies can never borrow money from banks | A company cannot employ staff | Incorporation would make the business's debts disappear | Limited liability is often weakened for small companies by personal guarantees, while incorporation adds costs, filing and disclosure; the benefit must be weighed against those.
 SA3#finance-u01-04-q5@2,3: Evaluate whether a successful sole trader should convert the business into a private limited company. | Advantages: limited liability protects personal assets, the company continues if ownership changes, it may be easier to raise equity and may be tax-efficient depending on profits. Disadvantages: accounts are public at Companies House, the Companies Act imposes duties and filing, costs rise, and lenders may require personal guarantees, reducing the protection. The decision depends on the risk of the trade, profit level and growth plans. | Explains limited liability ; Continuity or raising finance ; Disclosure and regulation costs ; Personal guarantees ; Reaches a conditional judgement
+Q: What is a sole trader? | One person in business on their own account, with no separate legal existence and unlimited liability.
+Q: How does a sole trader register to start business? | With HMRC for Self Assessment.
+Q: How does the Partnership Act 1890 define a partnership? | The relation between persons carrying on a business in common with a view of profit.
+Q: What is the liability of partners in an ordinary partnership in England and Wales? | They are jointly liable for its debts without limit.
+Q: What is the limit on a shareholder's liability? | The amount unpaid on their shares.
+Q: What is the minimum allotted share capital of a plc? | £50,000.
+Q: Which Act created limited liability partnerships? | The Limited Liability Partnerships Act 2000.
+Q: How are sole traders and companies taxed differently? | Sole traders pay income tax on profits; companies pay corporation tax, with shareholders taxed on dividends.
+Q: Why might a director of a small company lose limited liability protection in practice? | Lenders often require personal guarantees.
+Q: What do not-for-profit organisations report instead of profit or loss? | A surplus or deficit.
 
 ## Accounting concepts and conventions
 LV: Introductory · Foundation
@@ -215,6 +255,16 @@ M2#finance-u01-05-q3@2: A company's main customer has gone into liquidation, and
 TF2#finance-u01-05-q4@2: Under the realisation concept, revenue is recorded when a customer places an order. | false | Revenue is recognised when it is earned, normally when goods or services are delivered, not when an order is received.
 M3#finance-u01-05-q5@3: Why did the IASB describe prudence in 2018 as supporting neutrality rather than requiring assets to be understated? | Deliberately understating assets or overstating liabilities would bias the accounts as much as overstatement | Prudence was abolished entirely by IFRS | Understatement is required for all assets under IAS 1 | Neutrality applies only to sole traders | Cautious prudence means care with estimates, not systematic pessimism; a deliberate bias in either direction misleads users and can inflate later profits.
 SA3#finance-u01-05-q6@2,3: Explain two accounting concepts and evaluate how they can conflict, using an example. | Prudence: caution under uncertainty so assets and income aren't overstated. Consistency: the same methods each period for comparability. Conflict: if circumstances suggest a more cautious inventory or depreciation method, changing improves prudence but reduces comparability; standards permit changes only if they give more relevant or reliable information, with disclosure. Similarly historical cost is reliable but may be less relevant than fair value. | Explains first concept ; Explains second concept ; Identifies a conflict ; Gives an example ; States how standards or judgement resolve it
+Q: What is the accrual basis required by IAS 1? | Recognising income and expenses when earned or incurred, not when cash moves.
+Q: What is the money measurement concept? | Only items that can be measured reliably in money are recorded.
+Q: What is the historical cost convention? | Assets are usually recorded at what they cost.
+Q: What does the consistency concept require? | The same methods from one period to the next, with changes needing good reason and disclosure.
+Q: What is prudence in accounting? | Caution under uncertainty so assets and income are not overstated and liabilities and expenses not understated.
+Q: What is the dual aspect concept? | Every transaction has two effects, the basis of double entry.
+Q: What is the realisation concept? | Revenue is recognised when earned, normally when goods or services pass to the customer.
+Q: A business buys a £12 stapler lasting five years. How is it treated and why? | Written off as an expense, because it is immaterial.
+Q: How can historical cost and fair value conflict? | Historical cost is objective but may be out of date; fair value is more relevant but needs estimates.
+Q: What is a common mistake about prudence? | Using it to understate profit deliberately; hidden reserves are as misleading as overstated assets.
 
 ## The accounting equation
 LV: Introductory · Foundation
@@ -256,6 +306,16 @@ NUM2#finance-u01-06-q3@2: Opening capital is £40,000. During the year the owner
 M2#finance-u01-06-q4@2: A business pays £3,000 owed to a supplier. What is the effect on the accounting equation? | Assets and liabilities both fall by £3,000 | Assets fall and capital falls by £3,000 | Liabilities fall and capital rises by £3,000 | No effect, because no profit is made | Paying a supplier reduces the bank (an asset) and trade payables (a liability) equally; capital is unchanged.
 M3#finance-u01-06-q5@3: A student says: "My accounting equation doesn't balance because the business made a loss." What is the best response? | A loss reduces capital and assets (or increases liabilities) equally, so the equation still balances; the error lies elsewhere | Losses do break the equation, so a balancing figure is needed | The equation only balances in profitable years | Losses are recorded as liabilities, so add the loss to liabilities | Every transaction, profitable or not, has two equal effects. A loss is a decrease in capital matched by a decrease in net assets, so an unbalanced equation signals a recording error.
 SA3#finance-u01-06-q6@1,3: Explain why the accounting equation always balances, using two transactions as examples. | Capital is defined as assets minus liabilities, and every transaction affects two items by equal amounts (dual aspect). Buying inventory on credit raises assets and liabilities by the same amount. Making a cash sale above cost raises assets (cash net of inventory) and capital (profit) by the same amount. So the totals stay equal after every transaction. | States the equation ; Dual aspect ; First example with both effects ; Second example with both effects ; Links profit or drawings to capital
+Q: What is the expanded form of the accounting equation over a period? | Assets = Opening capital + Profit − Drawings + Liabilities.
+Q: What are assets in the accounting equation? | Resources the business controls.
+Q: Why must both sides of the accounting equation always be equal? | Every asset was financed either by the owner or by someone else.
+Q: Buying a mower for £2,000 by bank transfer has what effect on the equation? | One asset rises and another falls, so totals are unchanged.
+Q: Buying £500 of plants on credit has what effect on the equation? | Inventory and payables both rise by £500.
+Q: Goods costing £300 are sold for £700 cash. What is the effect on capital? | Capital rises by the £400 profit.
+Q: How many items does every transaction change? | At least two.
+Q: What is the formula for closing capital? | Opening capital + capital introduced + profit − drawings.
+Q: Assets are £86,000 and liabilities £31,000. What is capital? | £55,000.
+Q: What is a common mistake about profit and cash? | Treating profit as cash; a credit sale raises receivables, not the bank balance.
 
 ## Assets, liabilities and capital
 LV: Introductory · Foundation
@@ -298,6 +358,16 @@ M2#finance-u01-07-q3@2: A car dealer holds 30 cars for sale and owns one car use
 TF2#finance-u01-07-q4@2: A bank loan repayable in instalments over five years is shown entirely as a non-current liability. | false | The instalment due within 12 months of the reporting date is a current liability; only the remainder is non-current.
 M3#finance-u01-07-q5@3: Why might a lender be misled if a loan due in nine months were shown as non-current? | Current liabilities would be understated, making the business look more liquid than it is | Total liabilities would be overstated | Equity would be understated, making the business look riskier | It would make no difference, as total liabilities are unchanged | Total liabilities are unchanged, but the comparison of current assets with current liabilities would look better than reality, hiding a short-term repayment pressure.
 SA3#finance-u01-07-q6@2,3: Classify four items for a builder (a cement mixer, bags of cement, a three-year van loan, amounts owed by clients) and explain why the classification matters to users. | Cement mixer: non-current asset (used over years). Cement: current asset, inventory. Van loan: split, with next year's instalments current and the rest non-current. Amounts owed by clients: current asset, receivables. Classification lets users compare current assets with current liabilities to judge liquidity, and long-term debt with equity to judge solvency and risk. | Mixer non-current ; Cement current inventory ; Loan split current and non-current ; Receivables current ; Explains liquidity or solvency use
+Q: How does the 2018 Conceptual Framework define an asset? | A present economic resource controlled by the entity as a result of past events.
+Q: What is an economic resource? | A right that has the potential to produce economic benefits.
+Q: How is equity defined? | The residual interest in the assets after deducting all liabilities.
+Q: Give examples of non-current assets. | Land and buildings, machinery, vehicles, fixtures and fittings, long-term investments and purchased software licences.
+Q: Give examples of current liabilities. | Trade payables, accruals, bank overdraft, tax due and the current portion of a loan.
+Q: Give examples of non-current liabilities. | Long-term bank loans, mortgages and debentures (loan notes).
+Q: Which standard sets the 12-month test for current items? | IAS 1.
+Q: In what order are current assets usually listed in UK-style presentations? | In increasing order of liquidity: inventory, receivables, then cash.
+Q: A five-year loan has £4,000 repayable next year. How is it shown? | £4,000 as a current liability and the rest as non-current.
+Q: What is a common mistake when classifying assets? | Classifying by what the item is, not how it is used; a van is inventory to a dealer.
 
 ## Income, expenses and drawings
 LV: Introductory · Foundation
@@ -340,6 +410,16 @@ MS2#finance-u01-08-q3@2: Which are expenses of the business? Choose all that app
 M2#finance-u01-08-q4@2: An owner takes goods costing £250 from the shop for family use. What is the correct entry? | Debit drawings £250, credit purchases £250 | Debit purchases £250, credit drawings £250 | Debit wages £250, credit bank £250 | Debit sales £250, credit inventory £250 | Goods taken are drawings at cost; crediting purchases removes them from the cost of goods the business has to sell.
 M3#finance-u01-08-q5@3: A sole trader pays themself £2,000 a month and records it as "wages". What is the effect on the accounts? | Profit is understated by £24,000 a year, though closing capital is unaffected | Profit is correct because the payments are regular | Capital is overstated by £24,000 | The accounting equation no longer balances | Wages reduce profit; drawings reduce capital directly. Either way capital ends the same, but profit, and so taxable profit, is understated by £24,000.
 SA3#finance-u01-08-q6@2,3: Explain why capital introduced, drawings and loans are excluded from profit, and show the effect of each on capital. | Profit measures what the business earns from operating. Capital introduced is the owner's investment, not earnings: it increases capital directly. Drawings are the owner's withdrawals, not costs of earning income: they reduce capital directly. Loans increase cash and liabilities equally, with no effect on capital; only interest is an expense. Including them would distort profit and mislead users about performance. | Defines profit as earned ; Capital introduced increases capital directly ; Drawings reduce capital directly ; Loans affect assets and liabilities only ; Interest is the only expense from a loan
+Q: How does the Conceptual Framework define income? | Increases in assets or decreases in liabilities that increase equity, other than contributions from equity holders.
+Q: Give examples of business income. | Sales, rent received and interest received.
+Q: What is the profit formula? | Profit = Income − Expenses, a loss when expenses exceed income.
+Q: Why is capital introduced not income? | It is not earned.
+Q: Why is receiving a loan not income? | It increases cash and liabilities equally.
+Q: How is the cost of a non-current asset charged against profit? | Spread over the asset's life as depreciation.
+Q: Income £8,000; wages £2,500, rent £900 and loan interest £400. What is profit? | £4,200, as expenses total £3,800.
+Q: How are goods taken by the owner for private use recorded? | As drawings at cost, credited to purchases.
+Q: How does profit affect the capital account? | It increases capital, because profit belongs to the owner.
+Q: What is a common mistake when a sole trader pays themself regularly? | Recording it as wages; it is drawings, deducted from capital.
 
 ## The principles of double entry
 LV: Introductory · Foundation
@@ -384,6 +464,16 @@ MATCH2#finance-u01-09-q3@2: Match each transaction to its debit. | Owner pays in
 TF1#finance-u01-09-q4@1: In double entry, total debits always equal total credits if every transaction is recorded correctly. | true | Each transaction has an equal debit and credit, so the totals across all accounts must agree.
 M3#finance-u01-09-q5@3: Why is income recorded as a credit? | Income increases capital, and capital increases on the credit side | Income always arrives as cash from the bank | Credits mean good news and debits bad news | Income is a liability until the year end | The rules follow from the accounting equation: income raises the owner's claim (capital), a credit balance; expenses lower it, so they are debits.
 SA3#finance-u01-09-q6@2,3: Explain how the rules of double entry follow from the accounting equation, using one asset and one income example. | Assets = Capital + Liabilities: assets on the left are debit balances; capital and liabilities on the right are credit balances. Buying equipment by bank transfer debits equipment (asset up) and credits bank (asset down). A cash sale debits bank (asset up) and credits sales; sales is a credit because income increases capital. Every transaction has equal debits and credits, so the equation and the trial balance stay in balance. | Links sides to the equation ; Asset example entry ; Income as credit because it raises capital ; Equal debits and credits ; Trial balance check
+Q: What is a T account? | A ledger account drawn with a left debit side and a right credit side.
+Q: Do the words debit and credit mean good or bad? | No. They simply mean left and right.
+Q: Which side of an account records an increase in a liability? | The credit (right) side.
+Q: Which side of an account records an increase in an expense? | The debit side.
+Q: Why are expenses and drawings debits? | They reduce capital, which is a credit balance.
+Q: What is the double entry when an owner pays £5,000 into the business bank? | Dr Bank £5,000, Cr Capital £5,000.
+Q: What is the double entry when a business borrows £2,000? | Dr Bank £2,000, Cr Loan £2,000.
+Q: Who described double entry in print in 1494? | Luca Pacioli.
+Q: What arithmetical check does double entry give? | Total debits always equal total credits, checked by the trial balance.
+Q: Why does a bank statement show deposits as credits? | It is the bank's record of what it owes you, the mirror image of your bank account.
 
 ## Recording cash and credit transactions
 LV: Introductory · Foundation
@@ -429,6 +519,16 @@ NUM2#finance-u01-10-q3@2: A customer bought goods on credit for £2,300, returne
 TF2#finance-u01-10-q4@1: A computer bought for use in the office is debited to the purchases account. | false | Purchases is only for goods bought for resale; a computer for use is a non-current asset with its own account.
 M3#finance-u01-10-q5@3: A firm sells most of its output on 60-day credit. What is the main financial risk compared with cash sales? | Cash is tied up in receivables and some customers may never pay | Its recorded sales will be lower | It can't record the sales until paid | It must pay VAT twice | Credit sales count as income immediately but cash arrives later, straining liquidity, and receivables carry the risk of irrecoverable debts.
 SA3#finance-u01-10-q6@2,3: Record a credit purchase, a return to the supplier and the payment of the balance, and explain why the supplier's account is used. | Credit purchase £1,000: Dr Purchases, Cr Supplier. Return £150: Dr Supplier, Cr Returns outwards. Payment £850: Dr Supplier, Cr Bank. The supplier's personal account records the amount owed to that supplier; it builds up when goods are bought on credit and clears when returns and payments are made, so the business knows exactly what it owes to whom. | Purchase entry correct ; Return entry correct ; Payment entry and amount correct ; Explains personal account as a record of the payable
+Q: What is a cash transaction? | One settled immediately, by cash, card or bank transfer.
+Q: What is a credit transaction? | One where goods change hands now and payment follows after an agreed period.
+Q: What is the double entry for a credit purchase of goods for resale? | Dr Purchases, Cr the supplier's account.
+Q: What is the double entry for a cash sale? | Dr Bank, Cr Sales.
+Q: What is the double entry for returns outwards? | Dr the supplier, Cr Returns outwards.
+Q: What is the double entry when the business pays a supplier? | Dr the supplier, Cr Bank.
+Q: Which account are goods for resale debited to? | Purchases, not inventory.
+Q: What is a trade payable? | An amount owed by the business to a credit supplier.
+Q: What does the Late Payment of Commercial Debts (Interest) Act 1998 allow? | Businesses can claim statutory interest and fixed compensation on late payments from other businesses.
+Q: What is the main risk of selling on credit? | Cash is tied up in receivables and there is a risk of bad debts.
 
 ## Balancing off accounts
 LV: Introductory · Foundation
@@ -468,6 +568,16 @@ M2#finance-u01-11-q3@2: A customer's account shows debits of £400 and credits o
 TF2#finance-u01-11-q4@2: An account with entries on both sides that total the same amount has a nil balance. | true | Equal totals leave no difference to carry down, so the account is simply totalled and ruled off.
 M3#finance-u01-11-q5@3: Why does it matter that a bank account can carry a credit balance? | A credit balance is an overdraft, a current liability, so it must be shown with liabilities rather than as a negative asset | Bank balances can only ever be debit balances | It means the business has made a profit | It shows the bank owes the business money | Reading balances correctly matters for the statement of financial position; an overdraft is a liability, which affects the view of liquidity.
 SA3#finance-u01-11-q6@1,3: Explain how to balance off a ledger account and interpret a credit balance on a supplier's account and on the bank account. | Total both sides; write the larger total on both; insert the difference as balance c/d on the smaller side; bring it down on the opposite side on the first day of the next period. A credit balance on a supplier's account is the normal position: the amount still owed to that supplier. A credit balance on the bank account means an overdraft, a liability owed to the bank. | Totals both sides ; Balance c/d on smaller side ; Balance b/d on opposite side ; Supplier credit balance is a payable ; Bank credit balance is an overdraft
+Q: What is the first step in balancing off an account? | Add up both sides of the account.
+Q: Where is the balance brought down entered? | On the opposite side to the c/d entry, the side with the larger total.
+Q: What date is a balance brought down given? | The first day of the next period.
+Q: Does an account with entries on only one side need balancing? | No. Its total is its balance.
+Q: What normal balance do assets, expenses and drawings have? | Debit balances.
+Q: What normal balance do liabilities, capital and income have? | Credit balances.
+Q: What does a credit balance on a customer's account mean? | The customer has overpaid or returned goods after paying, so the business owes them.
+Q: A bank account has debits of £7,000 and credits of £4,500. What is the balance b/d? | £2,500 debit, money in the bank.
+Q: What does an account with equal totals on both sides have? | A nil balance; it is simply ruled off.
+Q: What is a common mistake when bringing a balance down? | Putting it on the same side it was carried down on.
 
 ## The trial balance
 LV: Introductory · Foundation
@@ -510,6 +620,16 @@ M2#finance-u01-12-q3@2: Rent paid of £900 was debited to the rent account and a
 MATCH2#finance-u01-12-q4@2: Match each error to its type. | A sale to P Hall posted to P Hill's account = Commission ; Repairs to a van debited to the van account = Principle ; A £450 invoice entered as £540 on both sides = Original entry ; Cash received debited to sales and credited to bank = Complete reversal | Each of these leaves debits equal to credits.
 M3#finance-u01-12-q5@3: A manager says: "The trial balance agrees, so the accounts are correct." What is the best evaluation? | It shows only arithmetical agreement; errors such as omission or principle would still be present | It is correct, as all errors cause a difference | It is correct only if a suspense account was used | It is wrong, because trial balances never agree in practice | Agreement is necessary but not sufficient: several error types leave totals equal, so further checks such as control accounts, reconciliations and review are needed.
 SA3#finance-u01-12-q6@2,3: Explain the purpose of a trial balance and evaluate its usefulness, naming errors it cannot detect. | It lists all ledger balances to check that debits equal credits and is the base for the financial statements. It detects errors such as one-sided entries, wrong-side postings of one entry or casting errors. But it can't detect omission, commission, principle, original entry, complete reversal or compensating errors, so it is a limited check that must be supplemented by control accounts, bank reconciliations and review. | States purpose ; Base for financial statements ; Errors it detects ; At least three undetected error types ; Judgement on usefulness
+Q: What is a trial balance? | A list of all ledger balances at a date in debit and credit columns.
+Q: What is a trial balance the starting point for? | Preparing the financial statements.
+Q: What is an error of omission? | A transaction not recorded at all.
+Q: What is an error of commission? | The right amount and type of account but the wrong person's account.
+Q: What is an error of original entry? | The wrong amount used for both debit and credit, often from a wrong source document.
+Q: What is a complete reversal error? | Right accounts and amount, but the debit and credit swapped.
+Q: What are compensating errors? | Two separate errors of equal amount that cancel out.
+Q: A van is debited to motor expenses. What type of error is this? | An error of principle.
+Q: Where do income and expense balances in the trial balance go? | To the statement of profit or loss.
+Q: What does the opening inventory figure in a trial balance represent? | Last year's closing inventory.
 
 ## Books of prime entry
 LV: Introductory · Foundation
@@ -551,6 +671,16 @@ M2#finance-u01-13-q3@2: A business buys office furniture on credit from Desks Lt
 MATCH1#finance-u01-13-q4@1: Match each document to its book of prime entry. | Sales invoice copy = Sales day book ; Credit note received = Purchases returns day book ; Petty cash voucher = Petty cash book ; Bank transfer receipt = Cash book | Each source document has its own book.
 M3#finance-u01-13-q5@3: What is the main control benefit of the imprest system? | Cash plus vouchers should always equal the float, so any shortfall is visible immediately | It removes the need for any vouchers | It allows large payments to be made without approval | It means petty cash never has to be counted | The fixed float creates a simple check at any moment, and reimbursing only what vouchers support limits misuse.
 SA3#finance-u01-13-q6@1,3: Explain how sales day book totals are posted to the ledger, and evaluate the benefits of using books of prime entry. | Each invoice in the sales day book is debited to the customer's personal account; the period total is credited to the sales account in one entry. Benefits: transactions are grouped by type, the ledger has fewer entries, work can be divided among staff, totals give useful information (sales for the month) and there is an audit trail from document to ledger. Limitations: errors in the day book carry into the ledger, and the trial balance won't detect an omitted invoice. | Customer accounts debited individually ; Sales credited with the total ; Fewer ledger entries ; Division of work or audit trail ; A limitation
+Q: Which book of prime entry records credit sales? | The sales day book, from copies of sales invoices sent.
+Q: Which book records credit notes sent to customers? | The sales returns day book.
+Q: Why is the cash book special among books of prime entry? | It is both a book of prime entry and the bank and cash ledger accounts.
+Q: Which document supports entries in the petty cash book? | Petty cash vouchers.
+Q: What does each journal entry contain? | The debit, the credit and a narrative.
+Q: How is the sales day book total posted? | Credited to sales in one entry, with each invoice debited to the customer's account.
+Q: Why post day book totals rather than each item? | It saves time and reduces the number of ledger entries.
+Q: How is the petty cash float restored under the imprest system? | The cashier is reimbursed with exactly the amount spent.
+Q: Under the imprest system, what should cash plus vouchers equal? | The fixed float.
+Q: What is a common mistake with a credit purchase of equipment? | Recording it in the purchases day book; it goes through the journal.
 
 ## Sales tax in the accounts
 LV: Introductory · Application
@@ -596,6 +726,16 @@ M1#finance-u01-14-q3@1: What is the UK standard rate of VAT? | 20% | 17.5% | 15%
 M2#finance-u01-14-q4@3: A VAT-registered business buys a machine for £10,000 plus £2,000 VAT. At what cost is the machine recorded? | £10,000, with £2,000 debited to the VAT account | £12,000, because that is what was paid | £8,000, after deducting VAT twice | £10,000, with £2,000 written off as an expense | Registered businesses reclaim input VAT, so the asset is recorded net and the VAT is a receivable from HMRC.
 M3#finance-u01-14-q5@3: Why is VAT not an expense for a registered trader, though it is for an unregistered one? | The registered trader reclaims input VAT from HMRC, so bears no cost; the unregistered trader cannot | Unregistered traders pay VAT at a higher rate | Registered traders don't pay VAT on purchases at all | VAT is always an expense for everyone | Registration gives the right to deduct input VAT; without it, VAT paid is simply part of the price and is included in costs.
 SA3#finance-u01-14-q6@2,3: A registered trader buys goods for £3,000 plus VAT and sells them for £5,400 including VAT. Calculate the VAT payable and explain how the transactions are recorded. | Input VAT 3,000 × 20% = £600; output VAT 5,400 ÷ 6 = £900; net sales £4,500; VAT payable £300. Purchases debited £3,000 net, VAT account debited £600, supplier credited £3,600. Customer or bank debited £5,400, sales credited £4,500, VAT credited £900. The VAT account's credit balance of £300 is a liability to HMRC, so VAT doesn't affect profit. | Input VAT £600 ; Output VAT £900 ; VAT payable £300 ; Purchases and sales recorded net ; VAT account balance as a liability
+Q: What is VAT? | Value added tax, a tax on consumer spending collected by businesses.
+Q: What is output VAT? | VAT charged by a registered business on its sales.
+Q: How often is VAT usually paid to HMRC? | Each quarter.
+Q: What is the UK reduced rate of VAT, with an example? | 5%, for example domestic fuel and power.
+Q: Give examples of zero-rated supplies. | Most food, children's clothes and books.
+Q: Above what turnover is VAT registration compulsory from 1 April 2024? | £90,000 in a rolling 12 months.
+Q: How is VAT found from a VAT-inclusive price at 20%? | Gross × 20/120, which is gross ÷ 6.
+Q: What does a credit balance on the VAT account represent? | A current liability owed to HMRC.
+Q: Why is VAT a cost for an unregistered business? | It cannot reclaim input VAT.
+Q: What does Making Tax Digital require of VAT-registered businesses? | Digital records and returns filed using compatible software.
 
 ## Control accounts
 LV: Introductory · Application
@@ -635,6 +775,16 @@ M2#finance-u01-15-q3@2: The sales day book was undercast by £500. Which balance
 TF2#finance-u01-15-q4@2: An allowance for receivables is recorded in the receivables ledger control account. | false | The allowance is a separate account deducted from receivables on the statement of financial position; no individual debt has been written off.
 M3#finance-u01-15-q5@3: Why do control accounts help prevent fraud? | Different staff can keep the control account and the individual ledgers, so a fraud would need collusion to hide | They make it impossible to record false invoices | They remove the need for audits | They show customers' names, which deters fraud | Separating the general ledger from the subsidiary ledgers is a segregation of duties: one person's manipulation would show up as a difference.
 SA3#finance-u01-15-q6@1,3: Explain the purposes of control accounts and how a difference between the control account and the list of balances is resolved. | Purposes: arithmetical check on the subsidiary ledger, locating errors to a ledger, quick totals of receivables and payables, and fraud prevention through segregation of duties. Resolution: identify each error; errors in day book totals or entries that only go to the control account are corrected there, errors in posting to individual accounts are corrected in the list, until the two agree. | Arithmetical check ; Locates errors ; Quick totals for statements ; Segregation of duties ; Corrects each error in the right record
+Q: What is a control account? | A general ledger account recording in total the transactions in a subsidiary ledger.
+Q: What is another name for the receivables ledger? | The sales ledger.
+Q: What should a control account's balance equal? | The total of the individual ledger balances.
+Q: Name three purposes of control accounts. | Locating errors to a ledger, deterring fraud by separating duties, and giving a quick total.
+Q: Name items on the debit side of the receivables ledger control account. | Balance b/d, credit sales, dishonoured cheques, interest on overdue accounts and refunds to customers.
+Q: When does a contra entry arise? | When a customer is also a supplier and amounts owed each way are offset.
+Q: What is the normal balance on the payables ledger control account? | A credit balance.
+Q: An error in a day book total affects which record? | Only the control account.
+Q: An error posting one invoice to a customer's account affects which record? | Only the list of individual balances.
+Q: What is a common mistake about cash sales and control accounts? | Including them in the receivables control account; only credit sales create receivables.
 
 ## Bank reconciliations
 LV: Introductory · Application
@@ -673,6 +823,16 @@ M1#finance-u01-16-q2@1: What is an unpresented cheque? | A cheque written and en
 M2#finance-u01-16-q3@2: A customer's cheque for £300 is dishonoured. What is the entry in the cash book? | A credit of £300, reducing the bank balance, and the customer's account is debited | A debit of £300, increasing the bank balance | No entry; it appears only in the reconciliation | A credit to sales of £300 | The money originally recorded has not been received, so the bank is credited and the customer once again owes £300.
 M3#finance-u01-16-q4@3: Why should the person who reconciles the bank not also make payments? | Separation of duties means one person can't both make an unauthorised payment and hide it in the reconciliation | Reconciliations must be done by the bank itself | Payment staff don't understand reconciliations | It speeds up the payment process | Segregating custody of cash from checking it is a basic internal control against fraud.
 SA3#finance-u01-16-q5@2,3: Explain the two steps of a bank reconciliation and why the updated cash book balance, not the statement balance, is reported. | First update the cash book for items only the bank has recorded (charges, direct debits, standing orders, credit transfers, dishonoured cheques) and for cash book errors. Then reconcile from the statement balance: add outstanding lodgements, deduct unpresented cheques and adjust for bank errors, which should agree with the updated cash book. The updated cash book is reported because unpresented cheques and lodgements are timing differences: the transactions have already happened. | Updates cash book first ; Lists items on statement only ; Adds lodgements, deducts unpresented cheques ; Bank errors ; Explains timing differences and reported figure
+Q: What are outstanding lodgements? | Money paid in and recorded in the cash book but not yet credited by the bank.
+Q: Name items on a bank statement that may not yet be in the cash book. | Bank charges, interest, direct debits, standing orders, credit transfers and dishonoured cheques.
+Q: How should errors made by the bank be handled in a reconciliation? | Ask the bank to correct them and adjust the statement balance in the reconciliation.
+Q: What is step 1 of a bank reconciliation? | Update the cash book for items on the statement and correct cash book errors.
+Q: What is step 2 of a bank reconciliation? | Start from the statement balance, add outstanding lodgements, deduct unpresented cheques and adjust for bank errors.
+Q: How does a bank statement show a positive balance? | As a credit, because the bank owes the customer.
+Q: How does an overdraft appear in the cash book? | As a credit balance.
+Q: Why should reconciliation be done by someone independent of cash handling? | To detect errors, unauthorised payments and fraud.
+Q: A cash book shows £2,140; charges £35 and a direct debit £220 are unrecorded, and a £410 transfer is received. What is the updated balance? | £2,295.
+Q: What is a common mistake about the cash figure in the statement of financial position? | Using the bank statement balance instead of the updated cash book balance.
 
 ## Errors and the suspense account
 LV: Introductory · Application
@@ -711,4 +871,14 @@ M2#finance-u01-17-q3@2: Wages of £1,500 were correctly credited to the bank but
 TF2#finance-u01-17-q4@2: Sales of £600 to J Patel posted to the account of J Patil should be corrected through the suspense account. | false | This is an error of commission: the debit was the right amount on the right side, so it is corrected between the two customers' accounts without suspense.
 M3#finance-u01-17-q5@3: Why is it risky to write off a small unexplained suspense balance to profit? | It might be the net of larger offsetting errors that misstate individual figures | Small balances always mean large frauds | It breaks the accounting equation | HMRC forbids suspense accounts | A small net balance can hide larger errors in opposite directions; individual accounts might be materially wrong even though the totals agree.
 SA3#finance-u01-17-q6@2,3: Explain how a suspense account is used and cleared, and show how correcting two errors affects profit. | When the trial balance disagrees, the difference goes to suspense. Each error is identified and journalled; only errors that caused the imbalance involve suspense, which should end at nil. Example: discount allowed of £300 not posted, Dr Discount allowed, Cr Suspense, reduces profit by £300; a £900 printer debited to office expenses, Dr Equipment, Cr Office expenses, increases profit by £900 (before depreciation) without suspense. | Suspense holds a trial balance difference ; Journal corrections ; Only imbalance errors use suspense ; Suspense cleared to nil ; Correct profit effects of two errors
+Q: If trial balance credits exceed debits, what balance does the suspense account have? | A debit balance.
+Q: How are errors corrected when a suspense account exists? | By journal entries, until the suspense balance is nil.
+Q: Name errors that make a trial balance disagree. | One-sided entries, both entries on one side, transposition on one side, one-sided casting errors and omitted balances.
+Q: Discount allowed of £400 was credited to the customer but not debited. What is the correction? | Dr Discount allowed £400, Cr Suspense £400.
+Q: Rent of £950 was debited to rent as £590. What is the correction? | Dr Rent £360, Cr Suspense £360.
+Q: Equipment of £1,000 was debited to repairs. How does correcting it affect profit? | Profit rises by £1,000, less any depreciation on the equipment.
+Q: Do corrections between two asset or liability accounts affect profit? | No.
+Q: What is a statement of corrected profit? | A statement starting from draft profit and adjusting for each error correction.
+Q: What should happen to a tiny suspense balance that cannot be found? | It is investigated and approved for write-off, never shown as an asset.
+Q: What is a common mistake with suspense accounts at the year end? | Leaving a suspense balance in the final accounts; it means errors remain.
 `;

@@ -43,6 +43,16 @@ M2#dentistry-u04-01-q2@2: What is a non-cavitated lesion? | An early lesion with
 M3#dentistry-u04-01-q3@3: A patient has many new cavities two years after several fillings. What is the most likely explanation? | The causes, such as frequent sugar intake, were not controlled | The fillings themselves caused the new decay | Caries is a purely genetic condition | The patient brushed their teeth too often | Applying the standard result: Restorations do not cure the disease.
 TF1#dentistry-u04-01-q4@1: Early, non-cavitated caries lesions can be arrested without a filling. | true | Fluoride, diet change and plaque control can arrest them.
 SA2#dentistry-u04-01-q5@2,3: Explain why dental caries is described as a dynamic disease. | The tooth surface constantly loses and regains mineral. After sugar is eaten, plaque bacteria produce acids that dissolve mineral; saliva then neutralises the acid and, with fluoride, helps redeposit mineral. Caries develops only when demineralisation outweighs remineralisation over time, so lesions can progress, stop or partly reverse depending on diet, plaque control and fluoride. | Mineral loss and gain ; Acid from sugars ; Saliva and fluoride repair ; Balance determines outcome
+Q: How is dental caries defined today? | A biofilm-mediated, diet-modulated, multifactorial, dynamic disease causing net mineral loss from dental hard tissues.
+Q: Why is caries not simply an infection with one microbe? | Plaque bacteria ferment free sugars into acids; disease results when acid attacks outweigh repair by saliva and fluoride.
+Q: What drives mineral back into teeth? | Saliva and fluoride.
+Q: What is a moderate caries lesion? | Localised enamel breakdown or shadowing from dentine.
+Q: What is an extensive caries lesion? | A visible cavity into dentine, which may progress to the pulp.
+Q: Why is caries largely preventable? | It depends on sugar frequency, biofilm and fluoride, all of which can be controlled.
+Q: What did the Global Burden of Disease studies find about caries? | Untreated caries of permanent teeth was the most prevalent health condition worldwide.
+Q: How can a non-cavitated lesion be managed? | Non-operatively, with fluoride, diet change and plaque control.
+Q: Who needs urgent dental care through NHS 111 or emergency services? | People with dental pain and spreading facial swelling, or swelling affecting breathing, swallowing or vision.
+Q: Why doesn't a filling cure caries? | It repairs the cavity, but new lesions develop unless diet, plaque and fluoride exposure change.
 
 ## The ecological plaque hypothesis
 LV: Clinical · Foundation
@@ -86,6 +96,16 @@ M2#dentistry-u04-02-q2@2: What does the ecological plaque hypothesis propose? | 
 M3#dentistry-u04-02-q3@3: A patient's saliva flow falls after head and neck radiotherapy. Why does caries risk rise? | Loss of saliva removes buffering and encourages acid-tolerant bacteria | Saliva itself causes caries to develop directly | Radiotherapy kills all of the plaque bacteria | The teeth become harder after radiotherapy | Applying the standard result: Saliva protects against acid.
 MATCH1#dentistry-u04-02-q4@2: Match each hypothesis to its claim. | Specific = A few species cause disease ; Non-specific = Total plaque amount matters ; Ecological = Environmental shifts change the community ; Healthy microbiome = Resident microbes protect the mouth | Theories differ in emphasis.
 SA2#dentistry-u04-02-q5@2,3: Explain how the ecological plaque hypothesis changes the approach to caries prevention. | If caries results from environmental shifts in the plaque community, prevention should change the conditions that favour acid-producing bacteria rather than try to eradicate particular species. This means reducing the frequency of sugar intake, supporting saliva, removing plaque regularly and using fluoride, so that the community returns to a balance compatible with health. | Environmental cause ; Not eradication ; Changing conditions ; Restoring balance
+Q: What is a biofilm? | A structured microbial community attached to a surface, embedded in a polymer matrix.
+Q: How quickly does plaque form on a cleaned tooth? | Within hours.
+Q: What did the specific plaque hypothesis propose? | That a few species, especially Streptococcus mutans, cause caries.
+Q: What did the non-specific plaque hypothesis hold? | That the total amount of plaque mattered.
+Q: Who proposed the ecological plaque hypothesis and when? | Philip Marsh, in 1994, developed in 2003.
+Q: Why is the plaque shift in caries self-reinforcing? | Acid-tolerant bacteria produce more acid, lowering pH further and favouring themselves.
+Q: How does reduced saliva accelerate the plaque shift? | It removes a key buffer.
+Q: What does prevention target under the ecological plaque hypothesis? | The environment: reducing sugar frequency and supporting saliva and fluoride.
+Q: Why is killing all mouth bacteria the wrong aim? | A resident microbiome protects the mouth against invading pathogens; the aim is a healthy balance.
+Q: What happens to the plaque community when frequent sugar sipping stops? | It gradually shifts back towards health.
 
 ## Demineralisation and remineralisation
 LV: Clinical · Foundation
@@ -128,6 +148,16 @@ M2#dentistry-u04-03-q2@2: What does the Stephan curve show? | Plaque pH falling 
 NUM2#dentistry-u04-03-q3@2: Enamel's critical pH is about 5.5. If plaque pH falls to 4.5 after a sugary drink, by how many pH units is it below the critical pH? | 1 | 0 | pH units | 5.5 − 4.5 = 1 pH unit below the critical pH.
 M3#dentistry-u04-03-q4@3: Why does chewing sugar-free gum after meals help protect teeth? | It stimulates saliva, which buffers acid and supplies mineral | It removes enamel stains permanently from teeth | It adds extra sugar for plaque bacteria | It lowers the plaque pH even further | Applying the standard result: Saliva speeds recovery.
 SA2#dentistry-u04-03-q5@2,3: Explain why the frequency of sugar intake matters more than the total amount for caries risk. | Each time sugar is eaten, plaque bacteria produce acid and plaque pH falls below the critical pH for 30 to 60 minutes, as the Stephan curve shows. Eating sugar many times a day causes many acid attacks, leaving little time for saliva to neutralise acid and remineralise enamel. Confining sugar to mealtimes limits the number of attacks, even if the total amount is similar. | Acid attack per intake ; Stephan curve ; Little recovery time ; Mealtime advice
+Q: What is demineralisation? | Dissolving of calcium and phosphate from hydroxyapatite when acid lowers the pH.
+Q: What is remineralisation? | Redeposition of mineral when pH rises and calcium and phosphate are plentiful in saliva and plaque fluid.
+Q: What forms in remineralised enamel when fluoride is present? | Fluorapatite, which is more acid-resistant.
+Q: Who described the Stephan curve and when? | Robert Stephan, in 1944.
+Q: How long does plaque pH take to recover after sugar? | 30 to 60 minutes.
+Q: How does saliva buffer acid? | With bicarbonate.
+Q: Why does saliva supply mineral for repair? | It is supersaturated with calcium and phosphate.
+Q: What role does statherin play? | It helps control crystal formation.
+Q: Why does eating sugar in three meals carry less risk than ten snacks? | It gives three acid attacks rather than ten, leaving more time for remineralisation.
+Q: What is the mistake of focusing only on the total amount of sugar? | Frequency determines the number of acid attacks.
 
 ## Diet, sugars and caries
 LV: Clinical · Application
@@ -173,6 +203,16 @@ M2#dentistry-u04-04-q2@2: What did the Vipeholm study show? | Sugary foods eaten
 NUM2#dentistry-u04-04-q3@2: A child's daily energy intake is 1,600 kcal. What is the maximum free sugars intake in kcal under the SACN 5% recommendation? | 80 | 0 | kcal | 5% × 1,600 = 80 kcal from free sugars.
 M3#dentistry-u04-04-q4@3: Which advice best reduces caries risk for a child who snacks often? | Keep sugary foods to mealtimes and offer water between meals | Switch to fruit juice between meals | Add honey instead of sugar | Brush immediately after every snack | Applying the standard result: Frequency is key.
 SA2#dentistry-u04-04-q5@2,3: Describe dietary advice to reduce caries risk, in line with UK guidance. | Reduce free sugars towards no more than 5% of energy, as SACN recommends, and confine sugary foods and drinks to mealtimes to reduce acid attacks. Offer water or plain milk between meals, avoid sugary drinks in bottles and at bedtime, read labels for hidden sugars such as syrups and juice concentrates, and ask for sugar-free medicines. | Limit free sugars ; Mealtimes ; Safe drinks ; Labels and medicines
+Q: What are free sugars? | Sugars added to foods and drinks, plus sugars in honey, syrups and fruit juices.
+Q: Are sugars in milk counted as free sugars? | No.
+Q: What does the WHO recommend for free sugars? | Less than 10% of energy, ideally below 5%.
+Q: Why is the Vipeholm study now considered unethical? | It deliberately exposed people to sugary foods to study caries.
+Q: What dose–response finding did WHO reviews show? | A consistent relationship: more free sugars, more caries.
+Q: Name main sources of free sugars in the UK. | Sugary drinks, confectionery, biscuits, cakes, breakfast cereals and fruit juice.
+Q: What should children drink between meals to protect teeth? | Water or plain milk.
+Q: Which label ingredients are free sugars? | Glucose syrup, honey and fruit juice concentrate, for example.
+Q: What should be asked for when medicines contain sugar? | Sugar-free versions, where available.
+Q: Why is fruit juice not tooth-friendly despite being natural? | It contains free sugars and is acidic.
 
 ## Caries detection and diagnosis
 LV: Clinical · Application
@@ -216,6 +256,16 @@ M2#dentistry-u04-05-q2@2: Which radiograph is mainly used to detect approximal c
 M3#dentistry-u04-05-q3@3: A lesion is shiny, hard and dark brown. What does this suggest? | It is likely arrested | It is rapidly progressing | It must be drilled immediately | It is a filling | Applying the standard result: Arrested lesions are shiny and hard.
 MATCH1#dentistry-u04-05-q4@2: Match each ICDAS grouping to its codes. | Sound = 0 ; Initial = 1–2 ; Moderate = 3–4 ; Extensive = 5–6 | ICDAS groups severity.
 SA2#dentistry-u04-05-q5@2,3: Explain why caries diagnosis involves more than detecting lesions. | Detection identifies that a lesion exists, but diagnosis also judges its severity, for example with ICDAS, and whether it is active or arrested, from its colour, texture and the patient's history. Combining this with the patient's caries risk, from diet, fluoride and saliva, guides whether the lesion should be managed non-operatively, monitored or restored. | Detection ; Severity ; Activity ; Risk and management
+Q: How should teeth be prepared for caries detection? | Clean, dry and under good lighting, examined wet and then dried.
+Q: Why should sharp probing into lesions be avoided? | It can break the surface and spread bacteria.
+Q: How do active lesions look and feel? | Often matt, chalky and rough.
+Q: What do ICDAS codes 1–2 mean? | Visible changes in enamel, first seen after drying, then when wet.
+Q: What does ICDAS code 3 mean? | Localised enamel breakdown.
+Q: What do ICDAS codes 5–6 mean? | A distinct cavity with visible dentine, extensive at 6.
+Q: What are the limitations of radiographs for caries? | They underestimate lesion depth and expose patients to radiation.
+Q: How is bitewing frequency decided? | Radiographs are taken only when justified, at a frequency based on caries risk.
+Q: Name adjunct methods for caries detection. | Fibre-optic transillumination and fluorescence-based devices.
+Q: What does caries diagnosis combine? | Detection of lesions with assessment of activity and risk.
 
 ## Caries risk assessment
 LV: Clinical · Application
@@ -261,6 +311,16 @@ M2#dentistry-u04-06-q2@2: What range of recall intervals does NICE recommend for
 NUM2#dentistry-u04-06-q3@2: NICE allows adult recall intervals up to 24 months. How many months longer is this than the traditional 6-month recall? | 18 | 0 | months | 24 − 6 = 18 months longer for low-risk adults.
 M3#dentistry-u04-06-q4@3: A low-risk adult asks why she is now recalled every 18 months. What is the best explanation? | Recall is tailored to risk, as NICE advises | The practice is short of appointments | Adults never need checks | All patients are seen every 18 months | Applying the standard result: Risk-based recall.
 SA2#dentistry-u04-06-q5@2,3: Explain how caries risk assessment shapes a patient's care. | The clinician weighs past caries, diet, fluoride use, plaque control, saliva, medical and social factors to classify risk. High-risk patients receive enhanced prevention from Delivering Better Oral Health, such as higher-concentration fluoride toothpaste and varnish, focused diet advice and shorter recall intervals, while low-risk patients may be recalled less often. Risk is reassessed at each visit. | Risk factors ; Enhanced prevention ; Recall intervals ; Reassessment
+Q: What does caries risk assessment predict? | Who is likely to develop new lesions, guiding prevention and recall intervals.
+Q: How does saliva relate to caries risk? | Reduced flow from medicines, radiotherapy or Sjögren's syndrome raises risk.
+Q: Which social factors increase caries risk? | Deprivation and irregular attendance.
+Q: Name medical and physical factors that raise caries risk. | Disabilities affecting brushing, orthodontic appliances and exposed roots.
+Q: Which NICE guideline covers dental recall? | CG19.
+Q: What recall interval range does NICE advise for under-18s? | 3 to 12 months.
+Q: What does Delivering Better Oral Health offer people at increased risk? | Enhanced prevention, such as higher-concentration fluoride.
+Q: Which risk factors should communication focus on? | Modifiable ones such as sugar frequency and toothbrushing.
+Q: How often should caries risk be reassessed? | At each review, as circumstances change.
+Q: Why is a fixed six-month recall for everyone a mistake? | NICE advises tailoring intervals to each patient's risk.
 
 ## Root caries
 LV: Clinical · Application
@@ -304,6 +364,16 @@ M2#dentistry-u04-07-q2@2: How do many medicines increase root caries risk? | By 
 M3#dentistry-u04-07-q3@3: A carer asks what to give a resident for a dry mouth. What is the best advice? | Sips of water or sugar-free products | Boiled sweets throughout the day | Sugary fruit squash | Honey on the tongue | Applying the standard result: Avoid sugar for a dry mouth.
 TF1#dentistry-u04-07-q4@1: Root surfaces begin to demineralise at a higher pH than enamel. | true | Their critical pH is about 6.2 to 6.7, compared with about 5.5 for enamel.
 SA2#dentistry-u04-07-q5@2,3: Explain why root caries is increasing and how it can be prevented in care home residents. | More people keep their natural teeth into old age, often with gum recession, dry mouth from medicines and difficulty brushing, so exposed roots are at risk. Prevention includes high-fluoride toothpaste and varnish as Delivering Better Oral Health advises, training carers to brush residents' teeth twice daily, reducing sugary snacks and drinks, and choosing sugar-free remedies for dry mouth. | Ageing dentition ; Risk factors ; Fluoride measures ; Care and diet
+Q: How do root surfaces become exposed? | Through gum recession from periodontal disease, ageing or aggressive brushing.
+Q: Where do root caries lesions often start? | Near the gum margin, sometimes spreading around the tooth.
+Q: Why has root caries become a major problem? | More people keep their teeth into older age.
+Q: Which medicines can cause dry mouth? | Some antidepressants, antihypertensives and antihistamines.
+Q: Why do reduced dexterity and cognitive impairment raise root caries risk? | They make brushing difficult.
+Q: How can brushing be helped for people with poor dexterity? | Electric toothbrushes, adapted handles and support from carers.
+Q: How can early, soft root lesions be managed? | Arrested with fluoride and cleaning.
+Q: Which material is often used to restore cavitated root lesions? | Glass ionomer.
+Q: What does it mean when root lesions harden and darken at review? | They have arrested.
+Q: Why should sugary sweets not be used for a dry mouth? | They greatly increase root caries risk; sugar-free products or water are used instead.
 
 ## How fluoride works
 LV: Clinical · Foundation
@@ -347,6 +417,16 @@ M2#dentistry-u04-08-q2@2: How does fluoride help repair early lesions? | It prom
 M3#dentistry-u04-08-q3@3: What is the best way to reduce the risk of fluorosis in a two-year-old? | Use a smear of toothpaste and supervise brushing | Stop using fluoride toothpaste entirely | Use a large amount of adult toothpaste | Let the child swallow the toothpaste | Applying the standard result: Small amounts and supervision.
 MATCH1#dentistry-u04-08-q4@2: Match each term to its meaning. | Fluorapatite = Acid-resistant mineral ; Fluorosis = Enamel changes from excess fluoride ; Topical = Acting at the tooth surface ; Spit, don't rinse = Keeps fluoride in the mouth | Key fluoride concepts.
 SA2#dentistry-u04-08-q5@2,3: Explain why twice-daily brushing with fluoride toothpaste is more important than swallowing fluoride. | Fluoride prevents caries mainly by being present at the tooth surface during acid attacks, where it reduces demineralisation and promotes remineralisation with acid-resistant mineral. Brushing twice daily keeps low levels of fluoride in saliva and plaque, especially if the excess is spat out rather than rinsed, giving repeated topical protection throughout life, whereas swallowed fluoride contributes much less. | Topical mechanism ; Regular low-level exposure ; Spit don't rinse ; Limited systemic role
+Q: Where does fluoride mainly act? | Topically, at the tooth surface, throughout life.
+Q: What does fluoride do at higher concentrations? | Inhibits bacterial metabolism, reducing acid production.
+Q: Who described the main ways fluoride prevents caries? | Featherstone.
+Q: What older view of fluoride has evidence replaced? | That fluoride had to be swallowed during tooth development to build stronger enamel.
+Q: Why is twice-daily fluoride toothpaste so effective? | It gives frequent, low-level exposure in the mouth.
+Q: Before about what age does fluorosis develop? | Mainly before about age eight, while teeth form.
+Q: What does mild fluorosis look like? | Faint white lines or flecks, usually only cosmetic.
+Q: How much toothpaste should children aged three to six use? | A pea-sized amount.
+Q: Is severe fluorosis common in the UK? | No, it is rare.
+Q: Why is rinsing with water after brushing discouraged? | It washes away the protective fluoride.
 
 ## Fluoride toothpaste, varnish and other vehicles
 LV: Clinical · Application
@@ -391,6 +471,16 @@ M2#dentistry-u04-09-q2@2: Who may be prescribed 5,000 ppm toothpaste? | People a
 NUM2#dentistry-u04-09-q3@2: A child uses toothpaste at 1,450 ppm. By how many ppm does it exceed the 1,000 ppm minimum for young children? | 450 | 0 | ppm | 1,450 − 1,000 = 450 ppm above the minimum.
 M3#dentistry-u04-09-q4@3: A family uses a 500 ppm children's toothpaste for a four-year-old. What should the dental team advise? | Switch to a toothpaste with more than 1,000 ppm, pea-sized | Keep using it, as low fluoride is safest | Stop brushing until age seven | Use an adult mouthrinse instead | Applying the standard result: DBOH recommends over 1,000 ppm.
 SA2#dentistry-u04-09-q5@2,3: Describe how fluoride advice changes with a patient's age and risk. | Young children use a smear of at least 1,000 ppm toothpaste under three and a pea-sized amount of more than 1,000 ppm from three to six, with supervision; people aged seven and over use 1,350 to 1,500 ppm. Children over three receive varnish at least twice a year. At higher risk, varnish is more frequent and higher-strength toothpastes, 2,800 ppm from 10 and 5,000 ppm from 16, may be prescribed. | Young children ; Older children and adults ; Varnish ; High-risk measures
+Q: What is the most important fluoride vehicle? | Fluoride toothpaste.
+Q: What toothpaste should children aged three to six use? | A pea-sized amount with more than 1,000 ppm fluoride.
+Q: From what age can 2,800 ppm toothpaste be prescribed? | From age 10.
+Q: From what age can 5,000 ppm toothpaste be prescribed? | From age 16.
+Q: What did a Cochrane review find about toothpaste concentration? | Higher concentrations give greater protection.
+Q: How does fluoride varnish work? | It is painted on by a professional and releases fluoride over time.
+Q: Who may use daily fluoride mouthrinses? | People aged eight and over at higher risk, at a different time from brushing.
+Q: What is a drawback of silver diamine fluoride? | It stains lesions black.
+Q: Name other fluoride vehicles used in some countries. | Fluoridated milk and salt.
+Q: Why is a sub-1,000 ppm children's toothpaste not advised? | UK guidance recommends at least 1,000 ppm even for very young children.
 
 ## Fissure sealants
 LV: Clinical · Application
@@ -432,6 +522,16 @@ M2#dentistry-u04-10-q2@2: Why must the tooth be kept dry when placing a resin se
 M3#dentistry-u04-10-q3@3: A sealant has partly come off at review. What should happen? | It should be repaired or replaced | It should be left, as sealants never matter | The tooth should be filled immediately | The child should stop brushing that tooth | Applying the standard result: Lost sealants are restored.
 TF2#dentistry-u04-10-q4@2: Fissure sealants replace the need for fluoride toothpaste. | false | Sealants complement, rather than replace, fluoride and diet measures.
 SA2#dentistry-u04-10-q5@2,3: Explain the role of fissure sealants in preventing caries in children. | The occlusal surfaces of newly erupted permanent molars have deep fissures that trap plaque and are common sites of caries. A sealant flows into the grooves and hardens, preventing plaque collecting. For children at increased risk, DBOH recommends sealing these teeth soon after eruption, and Cochrane evidence shows reduced caries for years, alongside fluoride and dietary advice. | Fissure vulnerability ; How sealants work ; Who benefits ; Evidence and context
+Q: What does a fissure sealant do? | Flows into pits and fissures and hardens, sealing them so plaque cannot collect.
+Q: Which sites are among the commonest for caries in children? | Occlusal surfaces of newly erupted permanent molars.
+Q: How are resin sealants bonded? | To enamel that has been cleaned, acid-etched, rinsed and dried.
+Q: What advantage do glass ionomer sealants have? | They release fluoride and tolerate moisture better.
+Q: What is the drawback of glass ionomer sealants? | They are retained less well than resin.
+Q: What happens to small non-cavitated lesions sealed over? | They can arrest.
+Q: When does DBOH recommend sealants are applied? | As soon as practical after eruption, on permanent molars of children at increased risk.
+Q: What did a Cochrane review find about resin sealants? | They reduce occlusal caries on permanent molars compared with no sealant, for several years.
+Q: How do sealants relate to fluoride and diet advice? | They complement rather than replace them.
+Q: Why must a tooth be dry for a resin sealant? | Moisture prevents bonding and the sealant may be lost.
 
 ## Delivering Better Oral Health
 LV: Clinical · Application
@@ -475,6 +575,16 @@ M2#dentistry-u04-11-q2@2: Which is a universal DBOH message? | Spit, don't rinse
 M3#dentistry-u04-11-q3@3: A patient at high caries risk asks what extra help is available. Which DBOH measure fits? | More frequent fluoride varnish and prescription toothpaste | Fewer dental visits | Removing all fillings | Stopping fluoride use | Applying the standard result: Enhanced prevention for high risk.
 MATCH1#dentistry-u04-11-q4@2: Match each topic to a DBOH recommendation. | Caries = Fluoride toothpaste twice daily ; Diet = Reduce sugar frequency ; Tobacco = Very brief advice and referral ; Babies = Introduce a cup from six months | DBOH covers many areas.
 SA2#dentistry-u04-11-q5@2,3: Explain how a dental team can use Delivering Better Oral Health in everyday practice. | The team gives every patient universal advice: twice-daily fluoride toothpaste of the right strength, spit don't rinse, less frequent sugar, regular risk-based visits, and advice on tobacco and alcohol. For patients at higher risk, they add enhanced measures such as more frequent varnish, prescription toothpaste, sealants and intensive diet advice, using behaviour change techniques and recording what was done. | Universal advice ; Risk assessment ; Enhanced measures ; Behaviour change
+Q: When was Delivering Better Oral Health first published? | In 2007; the fourth edition was 2021.
+Q: Who produces Delivering Better Oral Health? | The Office for Health Improvement and Disparities and partner organisations, for England.
+Q: Which conditions does DBOH cover? | Caries, periodontal disease, oral cancer and dental erosion, plus diet, alcohol and tobacco.
+Q: How are DBOH recommendations graded? | By strength of evidence.
+Q: What does DBOH advise for babies' drinks? | Introduce a cup from six months and avoid sugar in bottles.
+Q: What does DBOH advise on tobacco and alcohol? | Don't use tobacco, and keep alcohol within lower-risk guidelines.
+Q: What is universal prevention? | Advice and measures for everyone.
+Q: Name behaviour change methods supported by DBOH. | Brief interventions and goal setting.
+Q: How might a dentist use DBOH for a smoker? | Give very brief advice and refer to the local stop smoking service.
+Q: Is DBOH only for children? | No. It covers all ages, including adults and older people.
 
 ## Minimal intervention dentistry
 LV: Clinical · Application
@@ -517,6 +627,16 @@ M2#dentistry-u04-12-q2@2: In a deep lesion, why is firm dentine near the pulp so
 M3#dentistry-u04-12-q3@3: Which approach manages a carious primary molar without drilling? | The Hall technique | Complete caries removal | A large amalgam filling | Root canal treatment | Applying the standard result: It seals the lesion under a crown.
 SEQ1#dentistry-u04-12-q4@2: Order the elements of minimal intervention care. | Detect lesions and assess risk ; Remineralise early lesions ; Operate minimally where needed ; Repair rather than replace restorations | MID moves from prevention to conservative treatment.
 SA2#dentistry-u04-12-q5@2,3: Explain how minimal intervention dentistry differs from a traditional "drill and fill" approach. | Traditional care focused on finding cavities and filling them, often replacing restorations repeatedly and removing healthy tissue each time. MID treats caries as a disease, using risk assessment, prevention and remineralisation to arrest early lesions, selective caries removal or sealing-in techniques like the Hall technique for cavities, and repair of restorations, preserving tooth tissue and breaking the restorative cycle. | Traditional approach ; Disease control ; Conservative operative care ; Breaking the cycle
+Q: What is minimal intervention dentistry? | An approach treating caries as a disease to control, preserving tooth tissue.
+Q: Name the main elements of MID in the FDI policy. | Early detection and risk assessment, remineralisation, minimally invasive operative care, and repair rather than replacement.
+Q: What is selective caries removal? | Removing soft dentine at the edges but leaving firmer dentine near the pulp, then sealing.
+Q: Why does selective caries removal work? | It reduces pulp exposure risk, and sealed bacteria become inactive.
+Q: What is atraumatic restorative treatment? | Restoring with hand instruments and glass ionomer, useful where equipment is limited.
+Q: What did trials in Scotland show about the Hall technique? | Good outcomes and acceptance by children.
+Q: Why is repair preferred to replacement of a restoration? | It preserves tooth tissue and avoids enlarging the cavity.
+Q: Why is caries removed fully at the cavity edges? | To allow a good seal.
+Q: Which lesions can silver diamine fluoride manage? | Cavitated lesions, arresting them without drilling.
+Q: Why is removing all discoloured dentine in a deep lesion a mistake? | It risks pulp exposure; selective removal near the pulp is safer.
 
 ## Epidemiology of oral disease
 LV: Clinical · Foundation
@@ -560,6 +680,16 @@ M2#dentistry-u04-13-q2@2: What is a common reason for young children in England 
 M3#dentistry-u04-13-q3@3: Why do oral diseases share prevention strategies with other non-communicable diseases? | They share risk factors such as sugar, tobacco and alcohol | They are all caused by one bacterium | They only affect older adults | They cannot be prevented | Applying the standard result: Common risk factors.
 TF1#dentistry-u04-13-q4@1: Children in deprived areas of England have higher levels of tooth decay than those in affluent areas. | true | Surveys show a strong social gradient in child decay.
 SA2#dentistry-u04-13-q5@2,3: Explain why standardised epidemiological surveys are important for dental public health. | Standardised surveys use representative samples and calibrated examiners applying the same criteria, so results can be compared across areas and over time. They show how much disease exists, who is most affected, and whether it is improving, which allows services and prevention programmes, such as supervised toothbrushing, to be targeted where need is greatest and evaluated. | Representative samples ; Calibration ; Comparisons and trends ; Planning and evaluation
+Q: When was the WHO Global Oral Health Status Report published? | 2022.
+Q: Which condition follows untreated caries in global prevalence? | Severe periodontal disease, then tooth loss.
+Q: What is oral cancer linked to? | Tobacco, alcohol and areca nut.
+Q: Which programme surveys children's teeth in England? | The National Dental Epidemiology Programme.
+Q: What proportion of five-year-olds had visible decay in England's 2022 survey? | Almost a quarter.
+Q: How does deprivation affect child tooth decay in England? | Children in the most deprived areas have much more decay.
+Q: What is a leading reason for young children's hospital admission? | Tooth decay, mainly extractions under general anaesthetic.
+Q: What is prevalence? | The proportion of a population with a condition at a given time.
+Q: What is epidemiology? | The study of the distribution and determinants of disease in populations.
+Q: Why does keeping teeth into older age increase care needs? | It raises the need for care of root caries and periodontal disease.
 
 ## Measuring oral disease: indices
 LV: Clinical · Application
@@ -605,6 +735,16 @@ M2#dentistry-u04-14-q2@2: What does a BPE code 1 mean? | Bleeding on probing wit
 NUM2#dentistry-u04-14-q3@2: A patient has 2 decayed, 3 missing because of caries and 5 filled permanent teeth. What is the DMFT? | 10 | 0 | teeth | DMFT = 2 + 3 + 5 = 10.
 M3#dentistry-u04-14-q4@3: A region's mean DMFT is low, but a small group has very high scores. Which measure highlights this? | The Significant Caries Index | The mean DMFT alone | The BPE | The number of dentists | Applying the standard result: It reports the worst-affected third.
 SA2#dentistry-u04-14-q5@2,3: Evaluate the DMFT index as a measure of caries in a population. | DMFT is simple, quick and widely used, so results can be compared between populations and over time. However, it counts a filled tooth the same as a decayed one, can misclassify teeth missing for other reasons, usually ignores early non-cavitated lesions, and as an average can mask the concentration of disease in a minority, which the Significant Caries Index addresses. | Simplicity and comparability ; Treats outcomes alike ; Misses early lesions ; Skewed distribution
+Q: Who introduced the DMFT index and when? | Klein, Palmer and Knutson, in 1938.
+Q: What is the maximum DMFT score? | 32, or 28 if third molars are excluded.
+Q: What does DMFS count? | Surfaces rather than teeth, giving more detail.
+Q: Is the BPE a diagnosis? | No. It is a screening tool.
+Q: How is a BPE sextant scored? | Each sextant is given the highest code found.
+Q: What does BPE code 2 mean? | Calculus or an overhanging restoration.
+Q: What does BPE code 3 mean? | A shallow pocket of 3.5 to 5.5 mm.
+Q: What does an asterisk mean in the BPE? | Furcation involvement.
+Q: Name limitations of DMFT. | It equates filled and decayed teeth, can misclassify missing teeth, misses early lesions and ignores quality of life.
+Q: What is the DMFT of a teenager with 3 decayed, 1 extracted for caries and 4 filled teeth? | 8.
 
 ## Oral health inequalities
 LV: Clinical · Evaluation
@@ -650,6 +790,16 @@ M2#dentistry-u04-15-q2@2: Which is an upstream approach to oral health inequalit
 M3#dentistry-u04-15-q3@3: Why is giving individual brushing advice alone unlikely to close inequalities? | Behaviours are shaped by social and commercial conditions | Brushing has no effect on caries | Deprived groups already brush most | Advice is always ignored | Applying the standard result: Root causes lie beyond individuals.
 MATCH2#dentistry-u04-15-q4@2: Match each approach to its description. | Upstream policy = Acting on sugar and fluoride at population level ; Targeted programme = Supervised toothbrushing in deprived areas ; Common risk factor approach = Tackling shared causes like sugar and tobacco ; Proportionate universalism = Universal action scaled to need | These approaches complement each other.
 SA2#dentistry-u04-15-q5@2,3: Evaluate strategies to reduce oral health inequalities in children. | Upstream measures such as sugar taxes and water fluoridation reach everyone and tend to benefit deprived groups most without relying on behaviour change. Targeted programmes such as supervised toothbrushing and fluoride varnish in nurseries in deprived areas directly reduce decay where it is highest. Individual advice helps but alone tends to widen gaps, so combined, proportionately universal approaches are most effective. | Upstream measures ; Targeted programmes ; Limits of advice ; Combined approach
+Q: How does the social gradient differ from a simple gap? | Health worsens stepwise across society, not just between the poorest and everyone else.
+Q: Who described the social gradient in health in general? | The Marmot reviews.
+Q: What are commercial determinants of oral health? | Marketing and the low price of sugary foods and drinks.
+Q: Name barriers to accessing dental care. | Cost, availability of NHS dentists, transport, language and confidence.
+Q: Why is blaming individuals for oral health inequalities not enough? | Behaviours like diet and brushing are shaped by social circumstances.
+Q: Give examples of upstream policies for oral health. | Sugar taxes, water fluoridation and restrictions on marketing.
+Q: Give an example of a targeted oral health programme. | Supervised toothbrushing and fluoride varnish in deprived areas.
+Q: Who proposed the common risk factor approach and when? | Sheiham and Watt, in 2000.
+Q: What is the common risk factor approach? | Tackling shared risk factors such as sugar and tobacco across several conditions.
+Q: Name groups that often have particularly poor oral health. | Homeless people, some minority ethnic communities, people with disabilities, care home residents and asylum seekers.
 
 ## Community water fluoridation
 LV: Clinical · Evaluation
@@ -693,6 +843,16 @@ M2#dentistry-u04-16-q2@2: What is the main recognised side effect of fluoridatio
 M3#dentistry-u04-16-q3@3: Why is fluoridation said to reduce inequalities? | It reaches everyone without relying on behaviour, benefiting deprived groups most | Only wealthy areas are fluoridated | It replaces all dental services | It costs more for deprived people | Population measures help those at highest risk.
 TF2#dentistry-u04-16-q4@2: Most studies in the 2015 Cochrane review of water fluoridation were carried out before 1975. | true | The review noted that much evidence predated widespread fluoride toothpaste.
 SA2#dentistry-u04-16-q5@2,3: Evaluate community water fluoridation as a public health measure. | Fluoridation reduces decay and hospital extractions, especially in deprived areas, reaching everyone at low cost without depending on behaviour, and its main side effect at UK levels is mild fluorosis. However, much evidence predates fluoride toothpaste, recent studies suggest smaller benefits, and critics raise concerns about consent and other possible effects at high intakes, so decisions weigh evidence, ethics and local need. | Benefits ; Equity ; Weaker modern evidence ; Ethics and consent
+Q: When did the first UK large water fluoridation scheme begin? | In Birmingham, in 1964.
+Q: When and where did the first fluoridation scheme begin? | Grand Rapids, USA, in 1945.
+Q: How many people in England receive fluoridated water? | Around one in ten, about six million.
+Q: Which law gave the Secretary of State power over fluoridation schemes? | The Health and Care Act 2022.
+Q: What did OHID monitoring find about fluoridated areas? | Five-year-olds had less decay and fewer hospital extractions, with largest benefits in deprived areas.
+Q: What did a 2024 Cumbria study suggest? | Smaller benefits now that fluoride toothpaste is widely used.
+Q: What arguments support water fluoridation? | It reaches everyone without relying on behaviour, reduces inequalities and is low cost per person.
+Q: What arguments are made against water fluoridation? | Individual consent concerns, uncertain modern benefits and calls for research at higher intakes.
+Q: What did the UK Chief Medical Officers state in 2021? | That fluoridation is an effective public health intervention.
+Q: What is a population intervention? | A measure acting on a whole community rather than individuals.
 
 ## Oral health promotion
 LV: Clinical · Application
@@ -742,6 +902,16 @@ M2#dentistry-u04-17-q2@2: Which is an example of creating a supportive environme
 M3#dentistry-u04-17-q3@3: A programme only hands out leaflets about sugar. Why might it have little effect? | Information alone rarely changes behaviour for long | Leaflets contain no information | Sugar does not affect teeth | Children cannot read | Applying the standard result: Education needs policy and environment.
 MATCH1#dentistry-u04-17-q4@2: Match each programme to an Ottawa action area. | Sugar tax = Build healthy public policy ; Water-only schools = Create supportive environments ; Toothbrushing instruction = Develop personal skills ; Prevention-focused contracts = Reorient health services | Programmes map onto action areas.
 SA2#dentistry-u04-17-q5@2,3: Explain how the Ottawa Charter can guide an oral health promotion strategy for young children. | Healthy public policy might include school food standards and fluoridation; supportive environments could mean water-only drinks in nurseries; community action would involve parents and local groups; personal skills would come from toothbrushing instruction and diet advice; and reorienting services would make dental care preventive and accessible. Combining all five is more effective than education alone. | Policy ; Environment ; Community and skills ; Services
+Q: How did the Ottawa Charter define health promotion? | "The process of enabling people to increase control over, and to improve, their health".
+Q: Give an example of building healthy public policy for oral health. | Sugar taxes, school food standards or water fluoridation.
+Q: Give an example of developing personal skills for oral health. | Toothbrushing instruction and diet advice.
+Q: What does reorienting health services mean for dentistry? | Prevention-focused dental care and contracts.
+Q: What does Childsmile combine? | Nursery toothbrushing, fluoride varnish and links to dental practices.
+Q: Since when has Childsmile been a national programme? | Since 2011.
+Q: Which NICE guidance advises local authorities on oral health programmes? | PH55.
+Q: How does health education differ from health promotion? | Education gives information; promotion combines education with policy, environmental change and services.
+Q: What makes oral health programmes effective? | Being evidence-based, targeted, sustained and evaluated.
+Q: What role do health visitors play in oral health promotion? | Giving toothbrushes and advice to families with young children.
 
 ## NHS dental services
 LV: Clinical · Foundation
@@ -786,4 +956,14 @@ M2#dentistry-u04-18-q2@2: Who receives free NHS dental treatment? | Under-18s an
 M3#dentistry-u04-18-q3@3: A non-exempt patient needs four fillings in one course of treatment. How is she charged? | One Band 2 charge for the course | Four separate Band 2 charges | A Band 3 charge per filling | Nothing at all | Applying the standard result: Charges are per course.
 MATCH1#dentistry-u04-18-q4@2: Match each organisation to its role. | General Dental Council = Registers dental professionals ; Care Quality Commission = Inspects practices in England ; Integrated care boards = Commission NHS dental services ; NHS 111 = Helps people find urgent care | Each has a distinct role.
 SA2#dentistry-u04-18-q5@2,3: Explain why access to NHS dentistry in England has become a concern. | Many people struggle to find a practice taking NHS patients. Critics argue that the UDA-based contract pays similar amounts for very different amounts of work, discouraging practices from taking new patients with high needs and doing little to reward prevention, while workforce pressures and the pandemic backlog have added strain. The 2024 recovery plan introduced new-patient payments, but wider contract reform is debated. | Difficulty finding a dentist ; UDA contract problems ; Workforce and backlog ; Reform efforts
+Q: Who commissions NHS dental contracts in England? | Integrated care boards.
+Q: Since when have NHS practices been paid by UDAs? | Since the 2006 contract.
+Q: What do community dental services provide? | Care for people who find general practices hard to use, such as some people with disabilities.
+Q: What does Band 1 cover? | Examination, diagnosis, advice, X-rays and scale and polish.
+Q: What does Band 2 cover? | Band 1 plus fillings, root canal treatment and extractions.
+Q: Who is exempt from NHS dental charges? | Under-18s, under-19s in full-time education, pregnant women and new mothers, and some benefit or HC2 holders.
+Q: What criticism is made of the UDA system? | It doesn't reward prevention or new patients with high needs.
+Q: What did the 2024 dental recovery plan introduce? | Payments for seeing new patients and other measures.
+Q: Who inspects dental practices in England? | The Care Quality Commission.
+Q: How are several fillings charged in one NHS course of treatment? | At one band fee, not per filling.
 `;
