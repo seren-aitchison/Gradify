@@ -262,13 +262,14 @@ function decorate(root) {
 }
 
 async function route() {
-  const [name, arg] = (location.hash.replace(/^#\/?/, "") || "today").split("/");
+  // #/name/arg/…: each view gets its first argument, and any further parts of the route (#/goal/edit/<id>)
+  const [name, arg, ...more] = (location.hash.replace(/^#\/?/, "") || "today").split("/");
   if (needsSetup(profile) && !["start", "account"].includes(name)) { location.replace("#/start"); return; }
   const section = name in SECTION_OF ? SECTION_OF[name] : name;
   document.querySelectorAll(".app-nav a, .tabbar a, .lo-side a").forEach((a) => a.setAttribute("aria-current", String(a.dataset.route === section)));
   document.body.classList.remove("side-open");
   view.innerHTML = '<div class="loading" aria-busy="true"></div>';
-  try { await (routes[name] || renderToday)(arg); } catch (e) { console.error(e); view.innerHTML = `<div class="panel glass"><h3>Something went wrong</h3><p class="sub">${esc(e.message)}</p></div>`; }
+  try { await (routes[name] || renderToday)(arg, more); } catch (e) { console.error(e); view.innerHTML = `<div class="panel glass"><h3>Something went wrong</h3><p class="sub">${esc(e.message)}</p></div>`; }
   decorate(view);
   tabify(name);
   sessionPill(name);
@@ -1098,8 +1099,9 @@ async function renderGoals() {
 routes.goals = renderGoals;
 
 // create or edit one goal
-async function renderGoalForm(arg) {
-  const [mode, id] = String(arg || "new").split("/").length > 1 ? String(arg).split("/") : [arg || "new"];
+async function renderGoalForm(arg, more = []) {
+  // #/goal/new, or #/goal/edit/<id> (the id arrives as the route's next part)
+  const mode = arg || "new", id = more[0] || "";
   const goals = await store.listGoals().catch(() => []);
   const g = mode === "edit" ? goals.find((x) => x.id === decodeURIComponent(id)) : null;
   if (mode === "edit" && !g) { view.innerHTML = `<article class="panel glass"><h3>That goal isn't here any more</h3><a class="see" href="#/goals">Back to your goals</a></article>`; return; }
