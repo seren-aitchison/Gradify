@@ -44,6 +44,16 @@ M2#ecology-u08-01-q2@2: Which component of the climate system includes permafros
 M3#ecology-u08-01-q3@3: A record cold day occurs in a region that is warming. What is the best interpretation? | Natural variability still produces cold extremes, but less often | The region is no longer warming | Climate change has reversed | Thermometers must be faulty | Warming shifts the distribution, making cold records rarer but not impossible.
 MATCH1#ecology-u08-01-q4@2: Match each part of the climate system to an example. | Atmosphere = Jet stream ; Hydrosphere = Gulf Stream ; Cryosphere = Greenland ice sheet ; Biosphere = Amazon rainforest | Each component stores and exchanges energy, water or carbon.
 SA2#ecology-u08-01-q5@1,3: Explain why scientists use 30-year averages rather than single years to describe climate. | Weather varies greatly from year to year because of natural variability, such as El Niño or a blocked jet stream. A single year could be unusually warm or cold. Averaging over 30 years smooths out this noise, so underlying changes in average conditions and extremes can be detected. | Natural variability ; Noise in single years ; Averaging reveals trend ; Extremes as well as means
+Q: What is weather? | The state of the atmosphere at a particular time and place, such as temperature, rainfall, wind and cloud over hours or days.
+Q: What does climate include besides averages? | Variability and extremes of weather over a long period.
+Q: What is the current WMO standard climate normal period? | 1991 to 2020.
+Q: What common phrase summarises the difference between climate and weather? | Climate is what you expect; weather is what you get.
+Q: What is the cryosphere? | Ice sheets, glaciers, sea ice, snow and permafrost.
+Q: How does the lithosphere affect climate? | The land surface affects reflectivity and releases gases from volcanoes.
+Q: What role do the oceans play in the climate system? | They store and move vast amounts of heat.
+Q: How do the parts of the climate system interact? | Through flows of energy, water and carbon, producing feedbacks over different timescales.
+Q: How does a warmer climate change the chance of record temperatures? | Record heat becomes more likely and record cold less likely, though cold spells still happen.
+Q: Why can't one cold winter disprove climate change? | Weather varies hugely from year to year; climate is judged on long-term trends and the frequency of extremes.
 
 ## The atmosphere
 LV: Introductory · Foundation
@@ -86,6 +96,16 @@ M2#ecology-u08-02-q2@2: In which layer does almost all weather occur? | The trop
 M3#ecology-u08-02-q3@3: Why are many hot deserts found near 30° north and south? | Sinking air in the Hadley cell suppresses rainfall | These latitudes receive the most sunlight | Ocean currents bring rain only to the equator | Mountains block all rain at these latitudes | Descending air warms and dries, giving high pressure and little rain.
 SEQ1#ecology-u08-02-q4@2: Order the layers of the atmosphere from the ground upwards. | Troposphere ; Stratosphere ; Mesosphere ; Thermosphere | Weather occurs in the lowest layer, ozone in the second.
 SA3#ecology-u08-02-q5@1,3: Explain how uneven heating of the Earth drives global atmospheric circulation. | The equator receives more solar energy per square metre than the poles, so air there warms and rises, creating low pressure and rain. It flows polewards aloft and sinks near 30°, forming the Hadley cell; Ferrel and polar cells complete the pattern. Together with ocean currents, this moves heat from the tropics towards the poles and sets up the major wind and rainfall belts. | Uneven heating ; Rising and sinking air ; Three cells ; Heat transport ; Climate belts
+Q: What is the composition of dry air? | About 78% nitrogen, 21% oxygen and 0.9% argon.
+Q: Which is the most abundant greenhouse gas? | Water vapour, which varies from almost none to about 4%.
+Q: How high does the troposphere extend? | From the surface to about 8 to 16 km.
+Q: How fast does temperature fall with height in the troposphere? | By about 6.5 °C per kilometre on average.
+Q: How high does the stratosphere extend, and what does it contain? | Up to about 50 km; it contains the ozone layer.
+Q: Why does the atmosphere carry heat towards the poles? | The equator receives more solar energy than the poles.
+Q: What is the Hadley cell? | The tropical circulation of rising air at the equator and sinking air near 30° latitude.
+Q: Which cells complete the global circulation pattern with the Hadley cell? | The Ferrel and polar cells.
+Q: What do jet streams do? | They form at the boundaries of circulation cells and steer weather systems, such as Atlantic depressions that bring rain to the UK.
+Q: Why does sinking air near 30° N suppress rain? | It warms as it descends, which suppresses clouds and rain.
 
 ## Earth's energy balance
 LV: Introductory · Application
@@ -127,6 +147,16 @@ M2#ecology-u08-03-q2@2: What would happen to Earth if absorbed sunlight exceeded
 M3#ecology-u08-03-q3@3: Why does losing Arctic sea ice amplify warming? | Dark ocean has a much lower albedo than ice and absorbs more sunlight | Melting ice releases carbon dioxide | Sea ice produces greenhouse gases | Open water reflects more sunlight than ice | Replacing bright ice with dark water reduces reflection and increases absorbed energy.
 MATCH1#ecology-u08-03-q4@2: Match each surface to its typical albedo. | Fresh snow = Up to about 0.9 ; Open ocean = About 0.06 ; Forest = About 0.1 to 0.2 ; Earth as a whole = About 0.3 | Brighter surfaces reflect more sunlight.
 SA3#ecology-u08-03-q5@1,3: Explain why the oceans warm more slowly than the land when Earth has an energy imbalance. | Water has a very high heat capacity, so much more energy is needed to raise its temperature. The oceans also mix heat downwards, spreading it through a large volume. They absorb over 90% of the extra energy but warm slowly, which delays surface warming and means more warming is committed even if emissions stop growing. | High heat capacity ; Mixing to depth ; Absorb most heat ; Delayed and committed warming
+Q: How much solar energy reaches the top of the atmosphere facing the Sun? | About 1361 W/m^{2}.
+Q: What is the solar input averaged over the whole globe? | About 340 W/m^{2}.
+Q: How much sunlight does Earth absorb after reflection? | Roughly 240 W/m^{2}.
+Q: How does Earth lose energy? | As infrared (longwave) radiation.
+Q: What are typical albedos of fresh snow, open ocean and forests? | Fresh snow up to about 90%, open ocean about 6%, forests about 10 to 20%.
+Q: What was Earth's energy imbalance for 2006 to 2018, according to the IPCC? | About 0.8 W/m^{2}.
+Q: Why do the oceans warm slowly? | They have a huge heat capacity.
+Q: What would Earth's temperature be without greenhouse gases? | About 255 K, or −18 °C.
+Q: What is Earth's average surface temperature? | About 288 K, or +15 °C.
+Q: Why can't the Sun explain current warming? | Solar output has shown no upward trend since the 1980s while temperatures have risen.
 
 ## The greenhouse effect
 LV: Introductory · Application
@@ -171,6 +201,16 @@ M2#ecology-u08-04-q2@2: Without the natural greenhouse effect, what would Earth'
 M3#ecology-u08-04-q3@3: Why does adding CO2 reduce outgoing radiation even if lower layers already absorb strongly? | Emission to space happens from higher, colder levels | CO2 reflects sunlight back to space | CO2 produces its own heat | CO2 destroys the ozone layer | More CO2 raises the effective emission height, where colder air radiates less energy.
 TF1#ecology-u08-04-q4@3: The enhanced greenhouse effect and the ozone hole are the same problem. | false | They are separate: ozone depletion is caused by CFCs and lets in more UV; the greenhouse effect traps infrared.
 SA3#ecology-u08-04-q5@1,2: Explain the difference between the natural and enhanced greenhouse effect. | The natural effect, from water vapour and pre-industrial levels of CO2 and other gases, keeps Earth about 33 °C warmer than without an atmosphere. The enhanced effect is extra warming from human emissions since about 1750, mainly CO2 from fossil fuels and deforestation, plus methane and nitrous oxide, which has raised concentrations and caused global warming of over 1 °C. | Natural effect ; 33 °C ; Human emissions ; Rising concentrations ; Extra warming
+Q: What is shortwave radiation? | Incoming solar radiation, mostly visible and near-infrared light.
+Q: What do greenhouse gases do with infrared radiation? | They absorb it and re-emit it in all directions, including back towards the surface.
+Q: Why must the surface warm when greenhouse gases are added? | Gases emit to space from higher, colder levels that radiate less energy, so the surface warms to restore balance.
+Q: What did Joseph Fourier reason in the 1820s? | That the atmosphere must keep Earth warmer than expected.
+Q: What did Eunice Foote show in 1856? | That air containing carbon dioxide warmed more in sunlight.
+Q: What did John Tyndall measure? | The absorption of infrared by water vapour and CO2, from 1859 onwards.
+Q: How much warmer does the natural greenhouse effect keep Earth? | About 33 °C.
+Q: By how much have human emissions raised CO2 since pre-industrial times? | By about half.
+Q: In what way is the blanket analogy for the greenhouse effect accurate? | Greenhouse gases slow the loss of energy, as a blanket slows the loss of body heat, without producing heat.
+Q: How does a real greenhouse mainly warm? | By stopping convection, not by absorbing infrared.
 
 ## Greenhouse gases
 LV: Introductory · Application
@@ -214,6 +254,16 @@ M2#ecology-u08-05-q2@2: A farm emits 10 tonnes of nitrous oxide. Using a GWP100 
 M3#ecology-u08-05-q3@3: Why can cutting methane emissions slow warming faster than cutting CO2? | Methane has a short lifetime, so its concentration falls within decades | Methane is the most abundant greenhouse gas | Methane has a lower GWP than CO2 | CO2 cannot be reduced at all | With a lifetime of about 12 years, methane concentrations respond quickly to cuts.
 MATCH2#ecology-u08-05-q4@1: Match each gas to a main source. | Carbon dioxide = Burning fossil fuels ; Methane = Livestock and landfill ; Nitrous oxide = Fertilisers ; Fluorinated gases = Refrigeration | Each gas has distinct human sources.
 SA3#ecology-u08-05-q5@2,3: Explain why warming from CO2 depends on cumulative emissions, while warming from methane depends more on the current rate of emissions. | A large fraction of emitted CO2 stays in the atmosphere for centuries to millennia, so each tonne adds to a long-lasting stock and warming tracks total emissions over time. Methane is removed within about a decade, so its concentration, and its warming effect, reflects recent emissions; steady methane emissions give a roughly steady concentration. | CO2 long-lived ; Accumulating stock ; Methane short-lived ; Concentration tracks emission rate
+Q: What are the main sources of CO2? | Burning coal, oil and gas, cement making and deforestation.
+Q: How long does emitted CO2 stay in the atmosphere? | Much is removed within a century, but a substantial fraction stays for many thousands of years.
+Q: Name four sources of methane. | Livestock, rice paddies, landfill, wetlands and fossil fuel leaks.
+Q: What is methane's atmospheric lifetime? | About 12 years.
+Q: Where does nitrous oxide come from, and how long does it last? | From fertilisers and soils; it lasts over 100 years.
+Q: Which agreements phase down many fluorinated gases? | The Montreal Protocol and its Kigali Amendment (2016).
+Q: What is global warming potential? | The warming caused by a tonne of a gas relative to a tonne of CO2 over a set period, usually 100 years.
+Q: What is methane's GWP100 in the IPCC Sixth Assessment? | About 27 to 30.
+Q: What is CO2-equivalent? | An amount of greenhouse gas expressed as the mass of CO2 with the same warming effect.
+Q: Why shouldn't GWP values be treated as exact? | They depend on the time horizon chosen and are revised as science improves.
 
 ## Radiative forcing
 LV: Introductory · Application
@@ -255,6 +305,16 @@ M2#ecology-u08-06-q2@2: Which factor gives a negative radiative forcing? | Sulfa
 M3#ecology-u08-06-q3@3: Using ΔF ≈ 5.35 ln(C/C_{0}), what forcing results from raising CO2 from 280 to 350 ppm? | About 1.2 W/m^{2} | About 3.7 W/m^{2} | About 0.1 W/m^{2} | About 5.4 W/m^{2} | 5.35 × ln(1.25) = 5.35 × 0.223 = 1.2 W/m^{2}.
 MATCH2#ecology-u08-06-q4@2: Match each forcing to its sign. | Rising CO2 = Positive ; Major volcanic eruption = Negative, short-lived ; Sulfate aerosols = Negative ; Rising methane = Positive | Forcings warm or cool depending on their effect on the energy balance.
 SA3#ecology-u08-06-q5@2,3: Explain why reducing air pollution from coal power stations could temporarily speed up warming. | Coal burning emits sulfur dioxide that forms sulfate aerosols, which reflect sunlight and brighten clouds, giving a negative forcing that masks part of greenhouse warming. Aerosols last only days to weeks, so cutting them removes this cooling quickly, while CO2 remains for centuries. Phasing out coal still reduces long-term warming because CO2 emissions also fall. | Sulfate aerosols cool ; Short lifetime ; Masking removed ; Long-term benefit from CO2 cuts
+Q: What is radiative forcing? | A change in Earth's energy balance caused by an external factor, measured in W/m^{2}.
+Q: What is effective radiative forcing? | Forcing that includes quick adjustments in the atmosphere, used by the IPCC.
+Q: What was total human effective radiative forcing in 2019 relative to 1750? | About 2.7 W/m^{2}.
+Q: What is the forcing from CO2 alone? | About 2.2 W/m^{2}.
+Q: What forcing do aerosols give? | A negative forcing of about −1.1 W/m^{2}, with large uncertainty.
+Q: How do aerosols cool the climate? | They reflect sunlight and brighten clouds.
+Q: What is the approximate formula for CO2 forcing? | ΔF ≈ 5.35 ln(C ÷ C_{0}), in W/m^{2}.
+Q: What forcing does doubling CO2 produce? | About 3.7 to 3.9 W/m^{2}.
+Q: What is equilibrium climate sensitivity? | The eventual global warming from a doubling of atmospheric CO2.
+Q: Which feedback especially affects climate sensitivity? | Feedbacks from clouds.
 
 ## The instrumental record
 LV: Introductory · Application
@@ -299,6 +359,16 @@ M2#ecology-u08-07-q2@2: Why are temperature records expressed as anomalies rathe
 M3#ecology-u08-07-q3@3: A single year exceeds 1.5 °C. Has the Paris Agreement limit been breached? | Not yet; the limit refers to a long-term average | Yes, the limit has been permanently passed | Yes, but only for that country | No, because 1.5 °C is measured in the stratosphere | The Paris limit is assessed over multi-decade averages, not a single year.
 MATCH2#ecology-u08-07-q4@2: Match each observation to its measuring method. | Ocean heat content = Argo floats ; Arctic sea ice extent = Satellites ; Sea level = Tide gauges and satellite altimetry ; Atmospheric CO2 = Mauna Loa observatory | Many independent methods give consistent evidence.
 SA3#ecology-u08-07-q5@1,3: Explain why scientists are confident that the instrumental record shows real global warming. | Several independent groups using different methods produce near-identical trends. Corrections for station moves and urbanisation are tested and make little difference globally. Oceans, rural stations and satellites all warm. Independent indicators such as sea level rise, glacier retreat, ocean heat content and earlier springs agree. | Independent datasets ; Corrections tested ; Ocean and satellite agreement ; Physical indicators
+Q: What data are combined to produce global temperature records? | Land weather station readings and sea-surface temperatures from ships, buoys and floats.
+Q: Name four groups that produce global temperature datasets. | The UK Met Office and University of East Anglia (HadCRUT), NASA, NOAA and Berkeley Earth.
+Q: What corrections are made to temperature records? | For changes in instruments, station moves and the urban heat island effect.
+Q: How much warmer was 2011 to 2020 than 1850 to 1900? | About 1.1 °C (IPCC AR6).
+Q: What did the WMO report about 2024? | It was the warmest year on record and the first calendar year more than 1.5 °C above pre-industrial.
+Q: What has happened to Arctic sea ice since 1979? | Late-summer extent has declined sharply since satellite records began.
+Q: How have temperature extremes changed? | Hot extremes have become more frequent and intense, and cold extremes less so.
+Q: What are Argo floats? | A global array of robotic floats measuring ocean temperature and salinity.
+Q: What has the recent rate of global warming been? | About 0.2 °C per decade in recent decades.
+Q: Why don't urban heat islands explain global warming? | Corrections remove urban effects, and oceans, rural stations and satellites all show warming.
 
 ## Past climates and proxies
 LV: Introductory · Application
@@ -342,6 +412,16 @@ M2#ecology-u08-08-q2@2: What role did CO2 play in past glacial cycles? | It ampl
 M3#ecology-u08-08-q3@3: How does today's CO2 concentration compare with the ice-core record? | Higher than at any time in the last 800,000 years | About the same as the last interglacial | Lower than in most glacial periods | Within the normal natural range | Ice-core CO2 ranged from about 180 to 300 ppm; today it exceeds 420 ppm.
 MATCH2#ecology-u08-08-q4@1: Match each Milankovitch cycle to its period. | Eccentricity = About 100,000 years ; Obliquity (tilt) = About 41,000 years ; Precession = About 23,000 years ; Glacial cycles = Roughly 100,000 years recently | Orbital cycles change the seasonal distribution of sunlight.
 SA3#ecology-u08-08-q5@1,3: Explain how past climates help scientists understand the likely effects of current warming. | Past changes show how temperature, ice and sea level responded to changes in forcing and CO2, helping estimate climate sensitivity. Warm periods with high CO2 show the sea levels that can follow. Rapid past carbon releases, such as the PETM, show effects on oceans and life. The past also shows today's rate of change is unusually fast. | Sensitivity estimates ; Sea-level analogues ; PETM ; Rate of change
+Q: What is a climate proxy? | A natural record, such as an ice core or tree ring, used to infer past climate.
+Q: How far back does the EPICA Dome C ice core reach? | About 800,000 years.
+Q: How do ice cores record temperature? | Through the isotopes in the ice.
+Q: What do ocean and lake sediments record? | Temperature and ice volume over millions of years, from microfossils and isotopes such as oxygen-18.
+Q: How often have glacial cycles occurred over the last 800,000 years? | Roughly every 100,000 years.
+Q: What are the periods of the three Milankovitch cycles? | Orbit shape about 100,000 years, tilt about 41,000 years and precession about 23,000 years.
+Q: What were CO2 levels in glacials and interglacials? | About 180 ppm in glacials and 280 ppm in interglacials.
+Q: How cold was the Last Glacial Maximum, and how low was sea level? | Roughly 5 to 7 °C colder, with sea level about 120 m lower, about 21,000 years ago.
+Q: What was the Palaeocene–Eocene Thermal Maximum? | An event about 56 million years ago when large carbon releases caused rapid warming and ocean acidification.
+Q: Why doesn't past natural climate change mean current change is natural? | Past changes show climate responds to forcing; today's forcing comes mainly from human emissions.
 
 ## Attribution of climate change
 LV: Introductory · Evaluation
@@ -384,6 +464,16 @@ M2#ecology-u08-09-q2@3: How is an extreme heatwave attributed to climate change?
 M3#ecology-u08-09-q3@2: What does the isotopic composition of rising CO2 show? | It comes mainly from fossil fuels | It comes mainly from volcanoes | It comes mainly from the oceans | It comes mainly from respiration by animals | Fossil carbon is depleted in carbon-13 and contains no carbon-14, matching the observed change.
 TF1#ecology-u08-09-q4@1: Models with only natural forcings can reproduce the warming since 1950. | false | Natural-only simulations show little or no warming; human forcings are needed to match observations.
 SA3#ecology-u08-09-q5@1,2: Describe three independent lines of evidence that the recent rise in global temperature is caused by human activity. | Model experiments match observed warming only when human forcings are included. Stratospheric cooling and faster night-time warming are fingerprints of greenhouse gases, not solar change. The isotopic signature of CO2 and falling atmospheric oxygen show the extra CO2 comes from burning fossil fuels. Solar output has not increased since the 1980s. | Model experiments ; Atmospheric fingerprints ; Isotopic evidence ; Solar trend
+Q: What is attribution in climate science? | Assessing the relative contributions of different causes to an observed change or event.
+Q: How much did natural factors contribute to warming from 1850 to 1900 to 2010 to 2019? | Close to zero; human activities caused essentially all of it.
+Q: How do model runs help attribute warming? | Only runs including human forcings, not natural forcings alone, reproduce observed warming since the mid-twentieth century.
+Q: What is a fingerprint in attribution? | A characteristic pattern of change that points to a particular cause.
+Q: How have nights and winters changed compared with days and summers? | Nights have warmed faster than days, and winters faster than summers, in many regions.
+Q: What is the isotopic signature of the extra CO2? | Lower carbon-13 and almost no carbon-14, showing fossil origin.
+Q: Why has atmospheric oxygen fallen? | Oxygen is used up as fossil fuel burns.
+Q: How is an individual extreme event attributed? | By comparing its chance in today's climate with its chance in a simulated world without human warming.
+Q: What did World Weather Attribution find about the UK's 40 °C in July 2022? | It would have been extremely unlikely without climate change.
+Q: How are results of event attribution expressed? | As changes in probability or intensity, not as caused by a single factor.
 
 ## Climate feedbacks
 LV: Introductory · Application
@@ -427,6 +517,16 @@ M2#ecology-u08-10-q2@2: How does thawing permafrost act as a feedback? | It rele
 M3#ecology-u08-10-q3@3: Why is the Arctic warming faster than the global average? | Sea ice loss and other feedbacks amplify warming there | The Arctic receives more sunlight than the tropics | CO2 is concentrated over the Arctic | The Arctic has no water vapour | Ice-albedo, lapse rate and other local feedbacks give Arctic amplification.
 MATCH2#ecology-u08-10-q4@1: Match each feedback to its sign. | Water vapour = Positive ; Lapse rate = Negative ; Ice-albedo = Positive ; Planck response = Negative | Positive feedbacks amplify warming; negative ones dampen it.
 SA3#ecology-u08-10-q5@2,3: Explain why low clouds and high clouds have opposite effects on climate, and why this matters for climate sensitivity. | Low clouds are bright and reflect sunlight but are warm and emit much infrared, so they cool overall. High clouds are thin and cold, letting sunlight through but trapping infrared, so they warm. How amounts and heights of cloud change with warming is uncertain, so cloud feedback contributes the largest spread in estimates of climate sensitivity. | Low clouds cool ; High clouds warm ; Uncertain response ; Sensitivity spread
+Q: What is a climate feedback? | A process in which a change causes effects that alter the original change.
+Q: What is the Planck response? | The increase in radiation to space as Earth warms, a stabilising negative feedback.
+Q: How much would doubling CO2 warm Earth without positive feedbacks? | Only about 1.2 °C, compared with about 3 °C with them.
+Q: Why is the lapse rate feedback negative? | In the tropics the upper troposphere warms more than the surface, radiating more energy to space.
+Q: How do low and high clouds differ in their climate effect? | Low clouds cool by reflecting sunlight; high clouds warm by trapping infrared.
+Q: How can the carbon cycle act as a positive feedback? | Warmer oceans absorb less CO2, permafrost releases carbon, and drought and fire turn forests into sources.
+Q: Which feedbacks act quickly and which slowly? | Water vapour acts within days; ice sheets act over centuries.
+Q: What is Arctic amplification? | Faster warming of the Arctic than the global average, driven partly by ice-albedo feedback.
+Q: How does sea ice albedo compare with open ocean? | Bare sea ice reflects about 0.5 to 0.7; open ocean about 0.06.
+Q: Does a positive feedback mean a good outcome? | No; positive means amplifying, which here means more warming.
 
 ## Tipping points
 LV: Introductory · Evaluation
@@ -469,6 +569,16 @@ M2#ecology-u08-11-q2@2: How could freshwater from melting ice affect the AMOC? |
 M3#ecology-u08-11-q3@3: Which statement about tipping points is best supported? | Several may be triggered between 1.5 and 2 °C, but thresholds are uncertain | All tipping points will occur at exactly 2 °C | Tipping points are certain to occur this decade | Tipping points cannot happen in the climate system | Assessments suggest risks rise sharply above 1.5 °C, with wide uncertainty.
 MATCH2#ecology-u08-11-q4@2: Match each tipping element to a possible consequence. | West Antarctic ice sheet = Metres of sea-level rise ; Amazon rainforest = Shift towards savanna ; Permafrost = Large carbon release ; Coral reefs = Widespread die-off | Each element has distinct impacts.
 SA3#ecology-u08-11-q5@2,3: Evaluate the argument that uncertainty about tipping points means we need not act urgently. | Uncertainty cuts both ways: thresholds could be lower as well as higher than central estimates. Impacts such as metres of sea-level rise or AMOC collapse would be severe and irreversible, so even a modest probability carries a high risk. A precautionary approach, reducing emissions to limit warming towards 1.5 °C, lowers the chance of crossing thresholds. | Uncertainty both ways ; Severity and irreversibility ; Risk as probability × impact ; Precaution
+Q: What is a tipping point? | A threshold beyond which a system changes abruptly and often irreversibly, driven by self-sustaining feedbacks.
+Q: What is a tipping element? | A large part of the Earth system that could pass a tipping point.
+Q: Who set out the tipping point concept, and when? | Timothy Lenton and colleagues, in 2008.
+Q: What could loss of the Greenland and West Antarctic ice sheets commit the world to? | Several metres of sea-level rise over centuries to millennia.
+Q: What would AMOC slowing or collapse do? | Cool north-west Europe and shift tropical rainfall.
+Q: What could turn parts of the Amazon into savanna? | Drought, warming and deforestation.
+Q: At what warming are warm-water coral reefs likely to suffer near-total die-off? | Above about 1.5 °C.
+Q: What did Armstrong McKay and colleagues suggest in 2022? | Several tipping points could be triggered between 1.5 and 2 °C.
+Q: How does the IPCC judge abrupt AMOC collapse before 2100? | Unlikely but not ruled out.
+Q: How does fresh water from melting ice weaken the AMOC? | It makes surface water less dense so it sinks less readily.
 
 ## Climate models and scenarios
 LV: Introductory · Application
@@ -513,6 +623,16 @@ M2#ecology-u08-12-q2@2: What is the IPCC best estimate of warming by 2081 to 210
 M3#ecology-u08-12-q3@3: Why does long-term warming depend on cumulative CO2 emissions? | Much emitted CO2 stays for centuries, so warming tracks the total emitted | Each year's CO2 disappears by the next year | Only methane affects long-term warming | Warming depends only on the rate of emissions | Because CO2 accumulates, total emissions over time set the long-term warming.
 MATCH2#ecology-u08-12-q4@3: Match each SSP to its best-estimate warming by 2081 to 2100. | SSP1-1.9 = About 1.4 °C ; SSP1-2.6 = About 1.8 °C ; SSP3-7.0 = About 3.6 °C ; SSP5-8.5 = About 4.4 °C | Higher emissions pathways lead to more warming.
 SA3#ecology-u08-12-q5@1,2: Explain how scientists test whether climate models can be trusted for projections. | Models are not tuned to match recent warming directly. They are checked against the observed mean climate and its variability, against past events such as twentieth-century warming, volcanic cooling after Pinatubo and the Last Glacial Maximum, and against whether earlier projections matched later observations. Agreement across many independent models adds confidence, while spread indicates uncertainty. | Mean climate and variability ; Past events ; Past projections tested ; Multi-model comparison
+Q: What is a climate model? | A computer simulation of the climate system based on physical laws.
+Q: How do global climate models represent the climate system? | They divide atmosphere, ocean, land and ice into a 3D grid and solve equations for movement of air, water, energy and moisture.
+Q: What do Earth system models add to climate models? | The carbon cycle, vegetation and chemistry.
+Q: Why are parameterisations a key source of uncertainty? | They simplify processes smaller than a grid cell, such as clouds.
+Q: Which past events are climate models tested against? | Twentieth-century warming, cooling after the 1991 Pinatubo eruption and the Last Glacial Maximum.
+Q: Are climate models fitted to recent temperatures? | No; they are tested against observations, past changes and whether earlier projections came true.
+Q: What is a Shared Socioeconomic Pathway? | A scenario combining a socioeconomic future with an emissions pathway.
+Q: What warming by 2081 to 2100 is projected under SSP1-1.9 and SSP5-8.5? | About 1.4 °C under SSP1-1.9 and 4.4 °C under SSP5-8.5.
+Q: How much CO2 remained in the 1.5 °C budget from 2020, according to the IPCC in 2021? | About 500 billion tonnes, for a 50% chance.
+Q: Why are scenarios not predictions? | They explore outcomes of different emission choices; which occurs depends on human decisions.
 
 ## Sea-level rise
 LV: Introductory · Application
@@ -557,6 +677,16 @@ M2#ecology-u08-13-q2@2: What was the approximate rate of global sea-level rise i
 M3#ecology-u08-13-q3@3: Why is relative sea-level rise faster in southern England than in northern Scotland? | Southern England is sinking while Scotland is rising after the last ice age | Southern England has warmer seas | Scotland has no coastline exposed to the Atlantic | The Gulf Stream lowers sea level in the south | Glacial isostatic adjustment makes land rise in the north and sink in the south.
 MATCH2#ecology-u08-13-q4@1: Match each process to its contribution. | Thermal expansion = Warming water expands ; Glacier melt = Land ice adds water ; Ice sheet dynamics = Faster ice flow into the sea ; Sea ice melt = Little effect on sea level | Only processes adding water or volume raise sea level.
 SA3#ecology-u08-13-q5@2,3: Explain why sea-level rise is described as a long-term commitment and what this means for coastal planning. | The ocean takes centuries to warm through its depth, and ice sheets respond slowly, so sea level continues to rise long after temperatures stabilise. Even with rapid emission cuts, some rise is locked in. Coastal planning must therefore assume continued rise beyond 2100, using adaptive approaches such as managed realignment, flood defences that can be upgraded, and avoiding new building in high-risk areas. | Slow ocean warming ; Slow ice response ; Committed rise ; Adaptive planning
+Q: What is thermal expansion? | The increase in volume of water as it warms.
+Q: How do ice sheets lose mass to the sea? | By surface melting and faster flow of ice into the sea.
+Q: How has the rate of sea-level rise changed? | It has roughly tripled, to about 3.7 mm per year in 2006 to 2018.
+Q: What sea-level rise by 2100 is likely under SSP5-8.5? | About 0.63 to 1.01 m relative to 1995 to 2014.
+Q: What sea-level rise by 2100 is likely under SSP1-1.9? | About 0.28 to 0.55 m.
+Q: Why can't rises near 2 m by 2100 be ruled out? | Ice sheet instabilities are uncertain under very high emissions.
+Q: What is relative sea level? | Sea level measured against the local land, including vertical land movement.
+Q: Why does local sea level differ from the global average? | Because of ocean currents, gravity changes as ice sheets lose mass, and vertical land movement.
+Q: What is committed sea-level rise? | Future rise that will occur even if warming stops, because of slow ocean and ice responses.
+Q: Name three impacts of higher seas. | Coastal flooding, erosion and saltwater intrusion into soils and groundwater.
 
 ## Ocean warming and acidification
 LV: Introductory · Application
@@ -600,6 +730,16 @@ M2#ecology-u08-14-q2@2: Why does ocean acidification harm oysters and corals? | 
 M3#ecology-u08-14-q3@3: If ocean pH falls from 8.1 to 7.8, by about how much does hydrogen ion concentration increase? | It roughly doubles | It rises by about 3% | It rises by about 30% | It falls by half | 10^{0.3} ≈ 2, so a 0.3 pH fall roughly doubles hydrogen ions.
 MATCH2#ecology-u08-14-q4@2: Match each ocean change to its effect. | Marine heatwave = Mass die-off of kelp and corals ; Acidification = Harder shell building ; Deoxygenation = Expanding low-oxygen zones ; Stratification = Reduced nutrient and oxygen mixing | Several stressors act on marine life together.
 SA3#ecology-u08-14-q5@2,3: Explain why ocean acidification is sometimes called "the other CO2 problem". | It is caused by the same CO2 emissions as global warming but works through chemistry rather than heat. As oceans absorb CO2, they form carbonic acid, lowering pH and carbonate ion concentration. This harms calcifying organisms and food webs regardless of temperature change, so it would occur even if warming were somehow prevented by other means such as solar geoengineering. | Same cause ; Chemical process ; Carbonate decline ; Independent of warming
+Q: How much of the excess heat have the oceans absorbed since the 1970s? | Over 90%.
+Q: How has marine heatwave frequency changed since the 1980s? | It has roughly doubled.
+Q: What is a marine heatwave? | A prolonged period of unusually high ocean temperature.
+Q: What chemical forms when CO2 dissolves in seawater? | Carbonic acid, which releases hydrogen ions.
+Q: What share of human CO2 emissions have the oceans absorbed? | Roughly a quarter to a third.
+Q: How does acidification reduce carbonate availability? | Extra hydrogen ions combine with carbonate ions.
+Q: Name four calcifying organisms. | Corals, oysters, pteropods (sea butterflies), sea urchins and some plankton.
+Q: Where is shell dissolution from acidification a particular risk? | In cold polar waters.
+Q: Which marine organisms may benefit from more CO2? | Some algae and seagrasses.
+Q: Are the oceans actually becoming acidic? | No; they remain alkaline, above pH 7, but their pH is falling towards acid.
 
 ## Phenology and mismatch
 LV: Introductory · Application
@@ -643,6 +783,16 @@ M2#ecology-u08-15-q2@2: Why might a bird fail to keep up with earlier caterpilla
 M3#ecology-u08-15-q3@3: What population effect would trophic mismatch most likely cause in great tits? | Lower fledging success when chicks miss the caterpillar peak | More chicks surviving each year | No effect, because adults eat seeds | Earlier autumn migration | Chicks hatched after the food peak receive less food, reducing survival.
 SEQ1#ecology-u08-15-q4@2: Order the links in the oak food chain from producer upwards. | Oak leaves ; Winter moth caterpillars ; Great tit chicks ; Sparrowhawks | Each level depends on the timing of the level below.
 SA3#ecology-u08-15-q5@1,3: Evaluate whether trophic mismatch will inevitably cause population declines. | Mismatch can reduce breeding success, and has been linked to declines in species such as the pied flycatcher. But populations may not decline if food is abundant for longer, if alternative food exists, or if species adjust through plasticity or evolution. Effects depend on the size of the mismatch, other pressures and density dependence, so outcomes vary between species and places. | Evidence of declines ; Buffering factors ; Plasticity and evolution ; Context dependence
+Q: Why have many spring events advanced with warming? | Many are triggered by temperature.
+Q: How fast have spring events advanced on average? | By a few days per decade.
+Q: Name two long-term UK phenology records. | Robert Marsham's Norfolk observations from 1736 and the Woodland Trust's Nature's Calendar.
+Q: How have autumn events changed? | Leaf fall and similar events have generally become later, lengthening the growing season.
+Q: What is trophic mismatch? | A loss of synchrony between a consumer's demand and the peak availability of its food.
+Q: Why can birds fall out of step with their food? | Some birds time breeding partly by day length, which doesn't change with climate.
+Q: Which migratory bird's declines in the Netherlands have been linked to mismatch? | The pied flycatcher.
+Q: How can species close a mismatch gap? | Through phenotypic plasticity or evolution over generations.
+Q: What did a large UK analysis find about secondary consumers' timing? | They have shifted less than the organisms they feed on, increasing potential mismatch.
+Q: What is phenotypic plasticity? | The ability of an individual to change traits, such as timing, in response to the environment.
 
 ## Range shifts
 LV: Introductory · Application
@@ -687,6 +837,16 @@ M2#ecology-u08-16-q2@2: Which species is least able to track a shifting climate?
 M3#ecology-u08-16-q3@3: Why might a protected area become less effective under climate change? | Its target species may shift out of it as climate changes | Protected areas are immune to warming | Species never move from protected areas | All species move into protected areas | Fixed boundaries may no longer contain suitable climate for the species they protect.
 MATCH2#ecology-u08-16-q4@1: Match each example to its type of shift. | Comma butterfly in northern England = Latitudinal shift ; Mountain ringlet = Upslope contraction ; North Sea cod = Northward and deeper movement ; Little egret = Colonisation from the south | Shifts take several forms in different habitats.
 SA3#ecology-u08-16-q5@2,3: Explain how landscape connectivity can help species respond to climate change. | Connected habitats, through corridors, stepping stones and wildlife-friendly farmland, let species disperse to newly suitable areas. Larger, better-managed sites support bigger populations that produce more dispersers. The Lawton Review's principle of more, bigger, better and joined sites aims to build this resilience. Some species may still need assisted colonisation. | Corridors and stepping stones ; Larger populations ; More, bigger, better, joined ; Assisted colonisation
+Q: What is a climate envelope? | The range of climatic conditions in which a species can survive and reproduce.
+Q: How do species ranges shift as climate warms? | Species colonise new areas at the cool edge and die out at the warm edge.
+Q: At what median rate are species moving upslope? | About 11 m per decade.
+Q: Give two UK examples of species shifting range. | The comma butterfly spreading northwards and the little egret colonising from the south.
+Q: How have many North Sea fish responded to warming? | They have shifted north or into deeper, cooler water.
+Q: Which species disperse too slowly to track climate? | Plants with heavy seeds, flightless insects and slow breeders.
+Q: What is meant by an escalator to extinction? | Mountaintop species move upslope until there is nowhere higher to go.
+Q: How can species interactions limit range shifts? | A species may need a host plant, pollinator or prey that moves at a different rate.
+Q: What has happened to the mountain ringlet butterfly? | It has disappeared from many lower-elevation sites as temperatures rose.
+Q: What consequences do range shifts have for communities? | Species reshuffle into new combinations, newcomers affect residents, and pests and diseases spread.
 
 ## Coral reefs under climate change
 LV: Introductory · Application
@@ -731,6 +891,16 @@ M2#ecology-u08-17-q2@2: Why are repeated bleaching events so damaging? | Reefs n
 M3#ecology-u08-17-q3@3: A reef experiences 6 weeks at 1.5 °C above its normal summer maximum. What are its degree heating weeks? | 9 | 6 | 1.5 | 7.5 | 6 × 1.5 = 9 °C-weeks, likely causing widespread bleaching.
 MATCH2#ecology-u08-17-q4@3: Match each threat to how it harms reefs. | Marine heatwave = Bleaching ; Acidification = Weaker skeletons ; Nutrient pollution = Algal overgrowth ; Overfishing = Loss of grazing fish | Reefs face several interacting stressors.
 SA3#ecology-u08-17-q5@2,3: Evaluate the role of local management in protecting coral reefs under climate change. | Local actions, such as improving water quality, controlling fishing to keep grazers that clear algae, and limiting coastal development, increase reef resilience and help recovery between bleaching events. Restoration can replant corals locally. But none can prevent bleaching from marine heatwaves, so without limiting global warming, local management can only delay decline. | Reduces other stressors ; Aids recovery ; Restoration limits ; Warming must be limited
+Q: What do zooxanthellae provide to corals? | Most of the coral's energy and its colour, through photosynthesis.
+Q: What is coral bleaching? | The loss of symbiotic algae from corals under stress, turning them white.
+Q: What causes coral bleaching? | Water that is unusually warm for several weeks, breaking down the symbiosis.
+Q: What happens to corals after prolonged or repeated bleaching? | Starvation, disease and death.
+Q: What are degree heating weeks? | A measure of accumulated heat stress combining how far and how long temperatures exceed normal summer maxima.
+Q: In which years did global bleaching events occur? | 1998, 2010 and 2014 to 2017, with a fourth confirmed from 2023.
+Q: How long does reef recovery typically take? | A decade or more.
+Q: What decline are reefs projected to face at 2 °C? | More than 99%.
+Q: What share of marine species do reefs support? | About a quarter.
+Q: Above what degree heating week values do bleaching and mortality occur? | Above about 4 for significant bleaching, and above about 8 for widespread bleaching and mortality.
 
 ## Climate change and extinction risk
 LV: Introductory · Evaluation
@@ -774,6 +944,16 @@ M2#ecology-u08-18-q2@2: What does the IPBES 2019 assessment estimate about speci
 M3#ecology-u08-18-q3@3: Why might climate envelope models overestimate extinction risk? | They may ignore species' capacity to adapt or persist in microclimates | They include too many species interactions | They assume species can move anywhere | They always include extreme events | Envelope models assume fixed tolerances and can miss plasticity, evolution and refuges.
 MATCH2#ecology-u08-18-q4@1: Match each mechanism to an example. | Loss of suitable climate = Mountain species running out of habitat ; Mismatch = Chicks hatching after the food peak ; Extreme event = Heatwave killing flying foxes ; Interaction with fragmentation = Species unable to cross farmland | Climate affects species through several pathways.
 SA3#ecology-u08-18-q5@2,3: Evaluate the evidence that climate change will cause large numbers of extinctions. | Many studies, synthesised by Urban, show extinction risk rising with warming, and range contractions and local losses are already observed. However, estimates vary widely; envelope models may overestimate if species adapt or underestimate by missing interactions and extremes. Data are poor for many groups. Overall the evidence supports a substantial and growing risk, smaller with lower warming. | Synthesis evidence ; Observed changes ; Model limitations ; Data gaps ; Risk rises with warming
+Q: Name four ways climate change raises extinction risk. | Loss of suitable climate, timing mismatch, extreme events and interactions with other threats.
+Q: How can extreme events drive extinction? | Heatwaves, droughts and fires can kill large numbers quickly.
+Q: What is a thermal limit? | The highest or lowest temperature a species can tolerate.
+Q: How many studies did Urban's 2015 synthesis combine? | 131.
+Q: Which regions face greater climate extinction risk, according to Urban? | South America, Australia and New Zealand.
+Q: Which mammal extinction has been attributed mainly to climate change? | The Bramble Cay melomys, a rodent on a low Torres Strait island.
+Q: Why might climate envelope models underestimate extinction risk? | They may ignore species interactions and extreme events.
+Q: Why are data on climate extinction risk poor for some groups? | Insects and tropical species are poorly studied.
+Q: What does every degree of warming avoided do for species? | It reduces the number of species at risk.
+Q: What remain the biggest drivers of extinction today? | Habitat loss and exploitation, with climate change growing in importance.
 
 ## Mitigation
 LV: Introductory · Application
@@ -819,6 +999,16 @@ M2#ecology-u08-19-q2@2: Which change has contributed most to UK emission cuts si
 M3#ecology-u08-19-q3@3: Why does warming roughly stop rising when net CO2 emissions reach zero? | Warming depends on cumulative CO2, which then stops growing | CO2 disappears immediately at net zero | The oceans release all stored heat | Methane takes over as the only driver | With no further accumulation of CO2, temperatures roughly stabilise.
 MATCH1#ecology-u08-19-q4@2: Match each sector to a mitigation option. | Electricity = Wind and solar power ; Homes = Insulation and heat pumps ; Transport = Electric vehicles and cycling ; Agriculture = Reducing methane from livestock | Every sector has mitigation options.
 SA3#ecology-u08-19-q5@2,3: Evaluate the role of carbon dioxide removal in reaching net zero. | Removals are needed to balance residual emissions from hard-to-abate sectors such as aviation, agriculture and some industry. Nature-based removals (forests, soils, peat) bring co-benefits but are limited by land and can be reversed by fire or drought. Engineered removals are expensive and not yet at scale. Relying on removals instead of cutting emissions risks overshoot, so removals should complement, not replace, deep cuts. | Residual emissions ; Nature-based limits ; Engineered removal costs ; Complement not replace
+Q: What is mitigation? | Action to reduce the sources or enhance the sinks of greenhouse gases.
+Q: What is a nationally determined contribution? | A country's pledge under the Paris Agreement to reduce emissions, updated every five years.
+Q: How much must global emissions fall by 2030 to limit warming to 1.5 °C? | About 43% from 2019 levels, with CO2 at net zero in the early 2050s.
+Q: Name four mitigation options for energy supply. | Wind, solar, hydro and nuclear power replacing fossil fuels.
+Q: What mitigation options exist for buildings? | Insulation and heat pumps.
+Q: Name three land and food mitigation options. | Halting deforestation, restoring ecosystems, reducing food waste and shifting to more plant-based diets.
+Q: Why is carbon dioxide removal needed? | To balance residual emissions that can't be eliminated.
+Q: What did the Climate Change Act 2008 do? | It made the UK the first country with a legally binding long-term emissions target, now net zero by 2050.
+Q: How much have UK territorial emissions fallen since 1990? | By about half, mainly through phasing out coal and growth in renewables.
+Q: At around 40 billion tonnes a year, how long would the 1.5 °C budget last from 2020? | Roughly 12 years.
 
 ## Adaptation
 LV: Introductory · Application
@@ -861,6 +1051,16 @@ M2#ecology-u08-20-q2@2: Which is an example of maladaptation? | A sea wall that 
 M3#ecology-u08-20-q3@3: What is a hard limit to adaptation? | A point where no adaptive options can prevent harm | A cost that is high but affordable | A policy that is unpopular | A delay in building defences | Hard limits occur when systems, such as some reefs, cannot adapt at all.
 MATCH2#ecology-u08-20-q4@1: Match each action to its type. | Raising a flood wall = Incremental adaptation ; Relocating a village inland = Transformational adaptation ; Wildlife corridor = Ecosystem adaptation ; Wind farm = Mitigation | Adaptation and mitigation are different but complementary.
 SA3#ecology-u08-20-q5@2,3: Explain why nature-friendly adaptation such as managed realignment can be better than hard defences. | Hard defences are expensive to maintain, can fail, and may increase erosion elsewhere or destroy intertidal habitat (coastal squeeze). Managed realignment lets the coast move inland, creating saltmarsh that absorbs wave energy, stores carbon and supports wildlife, and can adapt as sea level rises. It may need land and community agreement, so it is not suitable everywhere. | Hard defence costs ; Coastal squeeze ; Saltmarsh benefits ; Adapts over time ; Trade-offs
+Q: What is adaptation? | Adjustment to actual or expected climate and its effects to reduce harm or exploit opportunities.
+Q: What is incremental adaptation? | Adjusting existing systems, such as higher flood walls, drought-tolerant crops or heat-health warnings.
+Q: What is transformational adaptation? | Fundamentally changing systems, such as relocating communities or redesigning cities.
+Q: What is the difference between planned and autonomous adaptation? | Planned adaptation is by governments; autonomous adaptation is by individuals and species.
+Q: Name three adaptations for nature. | Improving connectivity, bigger and better sites, reducing other pressures, climate refuges and assisted colonisation.
+Q: What is maladaptation? | Action that increases vulnerability or emissions, or shifts harm onto others.
+Q: What is a soft limit to adaptation? | Where options exist but are unaffordable or unacceptable.
+Q: What does the Climate Change Act require on adaptation? | A Climate Change Risk Assessment every five years and a National Adaptation Programme.
+Q: What was done at Medmerry in 2013? | A new embankment was built inland and the sea let in through a breach, creating saltmarsh and mudflat.
+Q: Why can't adaptation make mitigation unnecessary? | Adaptation gets harder, more expensive and eventually impossible as warming increases.
 
 ## Nature-based solutions
 LV: Introductory · Evaluation
@@ -904,4 +1104,14 @@ M2#ecology-u08-21-q2@2: Why can planting trees on deep peat increase emissions? 
 M3#ecology-u08-21-q3@3: Which is the strongest criticism of using nature-based offsets for continued fossil fuel use? | Stored carbon can be lost while fossil CO2 lasts for centuries | Nature-based solutions never store any carbon | Ecosystems cannot be restored | Offsets always cost more than emission cuts | Ecosystem carbon is vulnerable to fire, drought and land-use change, so it is not equivalent to keeping fossil carbon in the ground.
 MATCH2#ecology-u08-21-q4@1: Match each nature-based solution to its main benefit. | Saltmarsh restoration = Coastal protection and blue carbon ; Leaky dams upstream = Lower flood peaks ; Urban trees = Cooler streets ; Peatland rewetting = Stops carbon loss | Each solution has a main benefit plus co-benefits.
 SA3#ecology-u08-21-q5@2,3: Evaluate the claim that nature-based solutions can solve climate change. | NbS can contribute meaningfully to mitigation (peat, forests, coasts) and adaptation (flood management, coastal protection, urban cooling) with large biodiversity co-benefits. But land is limited, carbon storage can be reversed by fire, drought or pests, and benefits take time. Badly designed schemes can harm biodiversity and communities. They must accompany, not replace, rapid cuts in fossil fuel emissions. | Mitigation and adaptation contributions ; Co-benefits ; Limits and reversibility ; Design risks ; Not a substitute
+Q: How does the IUCN define nature-based solutions? | Actions to protect, sustainably manage and restore ecosystems that address societal challenges while benefiting people and biodiversity.
+Q: What does the IUCN Global Standard (2020) set? | Criteria for good NbS practice, including biodiversity gains, local participation and long-term management.
+Q: How do UK peatlands compare with UK forests as carbon stores? | UK peatlands store more carbon than all the UK's forests.
+Q: How do coastal ecosystems serve as nature-based solutions? | Saltmarsh, seagrass and mangroves store blue carbon and reduce wave energy.
+Q: What is natural flood management? | Using natural processes to slow and store water and reduce flood risk.
+Q: Give three natural flood management measures. | Leaky dams, floodplain reconnection and beaver activity.
+Q: How does urban green infrastructure help with climate change? | Trees, green roofs and parks cool cities and absorb rain.
+Q: How can poorly planned plantations harm nature? | Monoculture plantations can harm biodiversity.
+Q: What is the greenwashing risk of nature-based solutions? | Offsets may be used to replace emission cuts.
+Q: Name three benefits of restoring an upland bog. | Slower carbon loss, reduced flood peaks and improved habitat for bog plants, insects and wading birds.
 `;

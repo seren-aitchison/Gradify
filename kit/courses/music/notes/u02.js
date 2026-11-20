@@ -40,6 +40,16 @@ M2#music-u02-01-q2@2: Which note is in E♭ major? | A♭ | A | G♭ | D♭ | E�
 M3#music-u02-01-q3@3: A student writes A major as A B C♯ D E F♯ G A. What is the error? | The seventh should be G♯, so that the scale ends with a semitone G♯–A | C♯ should be C natural | F♯ should be F natural, because A major has two sharps | D should be D♯, to make the fourth a tone above the third | A major has three sharps: F♯, C♯ and G♯. Without G♯ the step 7–8 is a tone.
 SEQ1#music-u02-01-q4@1: Put the notes of G major in order from the tonic. | G ; A ; B ; C ; D ; E ; F♯ ; G | G major uses each letter once with one sharp, F♯, to make the semitone F♯–G.
 SA2#music-u02-01-q5@2,3: Explain how to build a major scale on B♭ and give its notes. | Use each letter name once from B♭, then adjust accidentals to make T T S T T T S. B♭–C tone, C–D tone, D–E♭ semitone, E♭–F tone, F–G tone, G–A tone, A–B♭ semitone. B♭ major is B♭ C D E♭ F G A B♭, with two flats. | Uses each letter once ; Applies the T T S T T T S pattern ; Correct notes ; Identifies two flats
+Q: What is a scale? | A series of notes in ascending or descending order of pitch, beginning and ending on the tonic.
+Q: How many different notes does a major scale contain? | Seven, then the tonic repeated an octave higher.
+Q: Why does C major need no sharps or flats? | Its white notes already give the pattern, with semitones falling naturally at E–F and B–C.
+Q: What are the notes of D major? | D E F♯ G A B C♯ D, with two sharps.
+Q: When building D major, why must F be raised to F♯? | E–F is a semitone, but the pattern needs a tone between degrees 2 and 3.
+Q: What is the interval pattern of each tetrachord in a major scale? | Tone, tone, semitone; the two tetrachords are joined by a tone.
+Q: Why do major scales link in a chain of fifths? | The upper tetrachord of one scale, such as G A B C in C major, is the lower tetrachord of the next, G major.
+Q: Can a major scale use both sharps and flats? | No: each major scale uses either sharps or flats, never both.
+Q: What spelling rule applies to letter names in a major scale? | Each letter name appears once, in order: never skip a letter or use one twice.
+Q: What are the notes of F major? | F G A B♭ C D E F.
 
 ## Key signatures and the circle of fifths
 LV: Introductory · Foundation
@@ -82,6 +92,16 @@ M2#music-u02-02-q2@2: A signature has four flats. What major key is it? | A♭ m
 M3#music-u02-02-q3@3: Which pair of major keys are next to each other on the circle of fifths and so differ by only one accidental? | E♭ major and B♭ major | E♭ major and E major | C major and D major | A major and F major | E♭ (three flats) and B♭ (two flats) are a fifth apart. E and E♭ are far apart: four sharps against three flats.
 TF1#music-u02-02-q4@1: A sharp in a key signature on the top line of the treble stave also applies to F4 on the bottom line. | true | Key signatures apply to every note of that letter name in every octave.
 SA2#music-u02-02-q5@2,3: Explain how the circle of fifths shows which keys are closely related. | Each step round the circle moves a perfect fifth and changes the key signature by one sharp or flat, so neighbouring keys share six of their seven notes. Keys next to each other are closely related and are common destinations for modulation; keys opposite each other share few notes and are distant. | Fifths between neighbours ; One accidental difference ; Shared notes ; Neighbours are closely related
+Q: Which notes does a key signature affect? | Every note of that letter name, in every octave, unless cancelled.
+Q: What is the order of flats in key signatures? | B E A D G C F, the reverse of the order of sharps.
+Q: How do you find a major key from a sharp key signature? | The last sharp is the leading note, so the key is a semitone above it.
+Q: How do you find a major key from a flat key signature? | The second-to-last flat names the key.
+Q: Which flat key must simply be memorised? | F major, with one flat, because it has no second-to-last flat.
+Q: Which major key has four sharps? | E major: the last sharp D♯ is the leading note, a semitone below E.
+Q: What happens to the number of sharps as you go clockwise round the circle of fifths from C? | Each key is a perfect fifth higher and adds one sharp.
+Q: Which keys are enharmonic at the bottom of the circle of fifths? | F♯ major with six sharps and G♭ major with six flats.
+Q: Why are neighbouring keys on the circle of fifths closely related? | They differ by only one accidental.
+Q: Is it acceptable to write the flats of B♭ major as E♭ then B♭? | No: sharps and flats must be written in their fixed order, so B♭ comes first.
 
 ## Scale degrees and their names
 LV: Introductory · Foundation
@@ -125,6 +145,16 @@ M2#music-u02-03-q2@2: What is the subdominant of D major? | G | A | C♯ | E | D
 M3#music-u02-03-q3@3: In E♭ major, which note is the leading note and why does it pull towards the tonic? | D, because it lies a semitone below the tonic E♭ | D♭, because it lies a tone below the tonic E♭ | B♭, because it is the dominant of the key | F, because it is the note just above the tonic | The leading note is the seventh degree, D, a semitone below E♭. D♭ would be the subtonic.
 MATCH1#music-u02-03-q4@1: Match each degree number to its name. | 1 = Tonic ; 2 = Supertonic ; 5 = Dominant ; 7 = Leading note | These are the standard technical names of scale degrees.
 SA2#music-u02-03-q5@2,3: Explain why the dominant and leading note are important in tonal music. | The dominant, a fifth above the tonic, is the second most important degree and forms the chord that most strongly leads back to the tonic. The leading note, a semitone below the tonic, pulls upward to it. Together in the dominant chord they create tension that resolves in a perfect cadence, defining the key. | Dominant is a fifth above ; Leading note a semitone below ; Tension and resolution ; Link to cadences or key
+Q: What is the supertonic? | The second degree of a scale, the note above the tonic.
+Q: Why is the mediant so called? | It lies halfway between the tonic and the dominant.
+Q: Why is the subdominant so called? | It is a fifth below the tonic, the lower dominant, mirroring the dominant a fifth above.
+Q: What is the leading note? | The seventh degree, a semitone below the tonic, leading up to it.
+Q: What is the subtonic? | A flattened seventh degree a tone below the tonic, found in minor.
+Q: How are scale degrees often written in analysis? | As numbers with a caret, such as 1̂ and 5̂.
+Q: What is the mediant of A major? | C♯.
+Q: What effect does the tonic give in a key? | A sense of rest.
+Q: What effect does the dominant create? | Tension that wants to resolve to the tonic.
+Q: Which two degrees form the basis of the strongest cadences? | The dominant and the leading note.
 
 ## Natural, harmonic and melodic minor scales
 LV: Introductory · Foundation
@@ -166,6 +196,16 @@ M2#music-u02-04-q2@2: What are the notes of E harmonic minor? | E F♯ G A B C D
 M3#music-u02-04-q3@3: A melody in D minor rises B♮ C♯ D, then later falls C♮ B♭ A. Which form is used and why? | Melodic minor: 6 and 7 are raised going up and natural coming down | Harmonic minor: only the seventh is ever raised | Natural minor: no notes are altered at any point | D major: B♮ and C♯ belong to the major key | Raised 6 and 7 rising (B♮, C♯) and natural 6 and 7 falling (C, B♭) are the melodic minor pattern.
 SEQ1#music-u02-04-q4@1: Order the notes of C harmonic minor rising. | C ; D ; E♭ ; F ; G ; A♭ ; B ; C | C minor has three flats; the harmonic form raises B♭ to B♮.
 SA2#music-u02-04-q5@2,3: Explain why three forms of the minor scale developed. | The natural minor lacks a leading note, so its seventh doesn't pull strongly to the tonic and its dominant chord is minor. Raising the seventh (harmonic minor) gives a leading note and major dominant for strong cadences but creates an awkward augmented second. Raising the sixth too when rising (melodic minor) smooths the melody; falling, the natural form is used. | Natural minor lacks leading note ; Harmonic: raised 7 for harmony ; Augmented second problem ; Melodic solution rising and falling
+Q: What do all three forms of the minor scale share? | A minor third above the tonic and the same lower half; they differ in degrees 6 and 7.
+Q: What is the tone-semitone pattern of the natural minor scale? | T S T T S T T.
+Q: What are the notes of A natural minor? | A B C D E F G A.
+Q: What are the notes of A melodic minor rising? | A B C D E F♯ G♯ A.
+Q: How does the melodic minor scale descend? | In the natural minor form, with the sixth and seventh no longer raised.
+Q: Why is the pull to the tonic weak in the natural minor? | It has no leading note: the seventh is a tone below the tonic.
+Q: Why is the harmonic minor so named? | For its use in harmony: the raised seventh gives a leading note and a major dominant chord.
+Q: What is the dominant chord in A harmonic minor? | E G♯ B, a major chord.
+Q: How many semitones are in the augmented second of the harmonic minor? | Three, as from F to G♯ in A minor.
+Q: Why does the melodic minor return to the natural form when falling? | The leading note isn't needed when descending.
 
 ## Relative and tonic minor keys
 LV: Introductory · Application
@@ -205,6 +245,16 @@ M2#music-u02-05-q2@2: What is the relative major of B♭ minor? | D♭ major | B
 M3#music-u02-05-q3@3: A piece in G major ends its middle section in G minor. Which relationship is this and how do the key signatures compare? | Tonic minor: same tonic, two flats instead of one sharp | Relative minor: same signature, different tonic | Dominant: one more sharp | Subdominant: one fewer sharp | G minor shares G major's tonic but has two flats. The relative minor of G major is E minor.
 TF1#music-u02-05-q4@1: C major and C minor share the same key signature. | false | C major has no sharps or flats; C minor has three flats. A minor shares C major's signature.
 SA2#music-u02-05-q5@3: Compare the effect of moving from a major key to its relative minor and to its tonic minor. | Relative minor shares the key signature and most notes, so the move is smooth and gentle while still changing mood. Tonic minor keeps the same tonic but changes the third, sixth and seventh, so the change of colour is sudden and dramatic. Composers use the relative for structural contrast and the tonic minor for expressive surprise. | Relative: shared notes and smooth move ; Tonic minor: same tonic, altered degrees ; Effect described ; Example or use
+Q: How far below the major tonic is the relative minor's tonic? | A minor third.
+Q: On which degree of a minor scale does its relative major begin? | The third degree, a minor third above the minor tonic.
+Q: What is the relative minor of E♭ major? | C minor, which also has three flats.
+Q: What is the American term for the tonic minor? | The parallel minor.
+Q: What is a change between tonic major and minor called? | A change of mode.
+Q: Why is moving between relative keys smooth? | They share all their natural-minor notes.
+Q: Why is a change between tonic major and minor striking? | They share tonic and dominant but differ in degrees 3, 6 and 7.
+Q: Where does a minor-key piece often modulate for its second theme? | To the relative major.
+Q: Which composer often shifts between tonic major and minor for expressive contrast? | Schubert.
+Q: How do the key signatures of C major and C minor differ? | By three flats: C minor has three flats and C major none.
 
 ## Minor key signatures
 LV: Introductory · Foundation
@@ -247,6 +297,16 @@ M2#music-u02-06-q2@2: A piece has three sharps and frequent E♯ accidentals. Wh
 M3#music-u02-06-q3@3: A Baroque piece in D minor has no key signature, but B♭ appears as an accidental throughout. What best explains this? | It uses an older Dorian-style signature with one fewer flat | It must really be in C major | The composer made an error in every bar | It is in A minor with a raised sixth | Many Baroque minor-key pieces were notated with one fewer flat, the sixth supplied as an accidental, a relic of modal practice.
 MATCH1#music-u02-06-q4@1: Match each minor key to its key signature. | E minor = One sharp ; G minor = Two flats ; C♯ minor = Four sharps ; F minor = Four flats | Each minor key uses its relative major's signature: G, B♭, E and A♭ major.
 SA2#music-u02-06-q5@2,3: Explain how you would decide whether a melody with two flats is in B♭ major or G minor. | Look for F♯, the raised seventh of G minor: if present, G minor is likely. Check where the melody starts and ends: on B♭ or on G. Look at the notes it outlines, such as a G minor triad (G B♭ D) or a B♭ major triad (B♭ D F), and at the cadences. | Check for F♯ ; Start and end notes ; Triads outlined ; Cadence evidence
+Q: How do you find the key signature of a minor key? | Go up a minor third from the minor tonic to its relative major and use that signature.
+Q: What key signature does E minor have? | One sharp, the same as G major.
+Q: What key signature does G minor have? | Two flats, the same as B♭ major.
+Q: List the sharp minor keys on the inner circle of fifths in order. | A, E, B, F♯, C♯, G♯, D♯, A♯.
+Q: Why must you check whether a signature means a major key or its relative minor? | One signature serves two keys.
+Q: What evidence distinguishes a major key from its relative minor? | Accidentals raising the minor's seventh, the first and last notes and chords, and the melody's outline and cadences.
+Q: A melody with one sharp starts and ends on E and contains D♯. What key is it? | E minor: D♯ is its raised seventh.
+Q: Why is the raised seventh written as an accidental in a minor key? | Key signatures follow the natural minor, so the leading note must be added as an accidental.
+Q: What might a piece with no key signature be in, besides C major? | A minor; look for G♯ and an A tonic.
+Q: What major key shares a signature with D minor? | F major, with one flat.
 
 ## Finding the key of a melody
 LV: Intermediate · Application
@@ -291,6 +351,16 @@ M2#music-u02-07-q2@2: A melody with one sharp starts on D, outlines G B D and en
 M3#music-u02-07-q3@3: A melody in C major shows a single C♯ as a passing note between C and D, then returns to C♮. What should you conclude? | The C♯ is chromatic decoration; the key remains C major | The melody has modulated to D minor | The key is A major | The key signature must be wrong | A brief accidental that doesn't persist and isn't supported by a cadence is decorative, not a change of key.
 SEQ1#music-u02-07-q4@2: Order the steps of the key-finding method. | Read the key signature ; Look for raised sevenths ; Check first and last notes ; Find the tonic triad and cadence | Start with the broadest clue and narrow down with more specific evidence.
 SA2#music-u02-07-q5@2,3: A melody has two sharps, contains A♯ several times and ends on B. Identify the key and explain your reasoning. | Two sharps means D major or B minor. A♯ is the raised seventh of B minor (a semitone below B), and it appears repeatedly rather than as passing decoration. The melody ends on B, the tonic. The key is B minor. | Two sharps: D major or B minor ; A♯ as raised seventh ; Ends on B ; Concludes B minor
+Q: What is the first step in finding the key of a melody? | Read the key signature, which narrows the choice to a major key and its relative minor.
+Q: On which degrees do melodies usually begin and end? | They usually begin on 1, 3 or 5 and end on 1.
+Q: How can the tonic triad help identify a key? | Notes 1, 3 and 5 are often stressed, on strong beats or in arpeggios.
+Q: Which melodic moves often end the final phrase onto the tonic? | 2 to 1 or 7 to 1.
+Q: Why is no single key-finding step decisive? | A signature only narrows the choice to two keys, and a melody can start on any note of the tonic triad, so several clues must agree.
+Q: Why can the first note of a melody mislead you about its key? | Many melodies begin on the dominant, often as an anacrusis.
+Q: A melody with no signature, E A C B A G♯ A, outlines A C E and ends G♯–A. What key is it? | A minor.
+Q: What accidental often signals a move from C major to the dominant? | F♯, the raised fourth.
+Q: Do chromatic passing or neighbour notes change the key? | No: accidentals that don't persist are decoration, not modulation.
+Q: How do you find the key when there is no key signature, as in exercises? | Work from the accidentals and the tonic triad alone.
 
 ## The chromatic scale
 LV: Introductory · Foundation
@@ -333,6 +403,16 @@ M2#music-u02-08-q2@2: Which is the harmonic chromatic scale on G, rising? | G A�
 M3#music-u02-08-q3@3: Purcell's "When I am laid in earth" uses a descending chromatic bass. What does this convention most likely express? | Lament and grief, through a well-known Baroque emblem | Joy, because chromatic notes sound bright and festive | A modulation to the relative major key | Nothing, because bass lines carry no meaning | The descending chromatic tetrachord was a widely recognised Baroque symbol of lament.
 TF1#music-u02-08-q4@1: In equal temperament, all semitones in the chromatic scale are the same size. | true | Equal temperament divides the octave into twelve identical semitones of 100 cents each.
 SA2#music-u02-08-q5@2,3: Explain the difference between the melodic and harmonic conventions for writing a chromatic scale. | The melodic convention uses sharps when rising and flats when falling, making the line easy to read. The harmonic convention spells the scale the same in both directions, writing tonic and dominant once and every other letter twice, so that the spelling relates to the key's harmony. ABRSM requires the harmonic form. | Melodic: sharps up, flats down ; Harmonic: tonic and dominant once ; Harmonic: other letters twice ; Purpose or exam use
+Q: Why does the chromatic scale have no tonic of its own in equal temperament? | Every semitone is the same size, so it sounds the same starting anywhere.
+Q: What is the simple, or melodic, convention for spelling the chromatic scale? | Sharps when rising, flats when falling.
+Q: Which spelling convention does ABRSM use for the chromatic scale? | The harmonic convention: tonic and dominant once each, every other letter twice.
+Q: Is the harmonic chromatic scale spelt differently rising and falling? | No, it is the same both ways.
+Q: Write a harmonic chromatic scale on C rising. | C D♭ D E♭ E F F♯ G A♭ A B♭ B C.
+Q: Write a harmonic chromatic scale on D rising. | D E♭ E F F♯ G G♯ A B♭ B C C♯ D.
+Q: Which Wagner opera is cited for chromatic lines creating tension? | Tristan und Isolde (1865).
+Q: What is a lament bass? | A descending chromatic bass line, as in Purcell's When I am laid in earth from Dido and Aeneas.
+Q: How does twelve-tone composition use the chromatic scale? | It treats all twelve pitches equally.
+Q: Why should one spelling convention be kept throughout a chromatic scale? | A scale written with random sharps and flats is hard to read.
 
 ## Pentatonic and blues scales
 LV: Introductory · Application
@@ -375,6 +455,16 @@ M2#music-u02-09-q2@2: What are the notes of D major pentatonic? | D E F♯ A B |
 M3#music-u02-09-q3@3: A guitar solo in E uses E G A B♭ B D. Which scale is this and which note is the blue note added to the pentatonic? | E blues scale, adding B♭ as the flattened fifth | E major pentatonic, adding B♭ as the sixth degree | E harmonic minor, with B♭ as the raised seventh | E Dorian mode, with B♭ as its characteristic sixth | E minor pentatonic is E G A B D; adding B♭ (♭5) gives the blues scale.
 TF1#music-u02-09-q4@1: A major pentatonic scale contains no semitones. | true | By leaving out degrees 4 and 7, it removes both semitone steps of the major scale.
 SA2#music-u02-09-q5@2,3: Explain why pentatonic scales are easy to improvise with. | They contain no semitones, so no two notes clash sharply and almost any combination sounds consonant over the matching chords. With only five notes, patterns are easy to learn on an instrument. The minor pentatonic fits both minor and dominant seventh harmony in blues and rock. | No semitones ; Few notes and simple patterns ; Fit common harmonies ; Example or genre
+Q: What is the interval pattern of the major pentatonic? | T T T+S T T+S, with no semitones.
+Q: Why does the major pentatonic leave out degrees 4 and 7? | They are the two notes that form semitones.
+Q: Which degrees make up the minor pentatonic? | 1, ♭3, 4, 5 and ♭7 of a minor key.
+Q: What are the notes of G major pentatonic? | G A B D E.
+Q: How are C major pentatonic and A minor pentatonic related? | They share the same notes: C D E G A and A C D E G.
+Q: Which piano keys form a major pentatonic scale? | The black keys, starting on G♭: G♭ A♭ B♭ D♭ E♭.
+Q: Name three traditions where pentatonic scales are common. | Scottish and Irish folk tunes, Chinese and Japanese traditions, and West African music.
+Q: What are the notes of the blues scale on A? | A C D E♭ E G.
+Q: Which notes are called blue notes? | Usually the ♭3, ♭5 and ♭7.
+Q: How are blue notes often performed? | Bent or sung between the major and minor pitches rather than at a fixed point.
 
 ## Whole-tone and octatonic scales
 LV: Intermediate · Application
@@ -418,6 +508,16 @@ M2#music-u02-10-q2@2: Which set of notes is a whole-tone scale? | D E F♯ G♯ 
 M3#music-u02-10-q3@3: Why does Debussy's whole-tone music lack a strong sense of key? | The scale has no perfect fifths, no leading note and no note set apart as tonic | Debussy avoided all scales in his music | The scale contains every one of the twelve pitches | Whole-tone music is always written without a key signature | Equal steps make every note equivalent, removing the fifth and leading-note pull that define a tonic.
 MATCH1#music-u02-10-q4@1: Match each scale to its number of notes. | Whole-tone = Six ; Octatonic = Eight ; Pentatonic = Five ; Chromatic = Twelve | Counting distinct pitches in one octave identifies each scale type.
 SA2#music-u02-10-q5@3: Explain why Messiaen described these scales as modes of limited transposition. | Because of their internal symmetry, transposing them reproduces the same notes after only a few steps: the whole-tone scale has only two distinct transpositions and the octatonic three, compared with twelve for a major scale. This limited set gave Messiaen a recognisable, colourful harmonic language that avoids traditional tonality. | Symmetry of the scales ; Few distinct transpositions with numbers ; Comparison with major scale ; Effect on harmony or tonality
+Q: Why do whole-tone and octatonic scales count as symmetrical? | They divide the octave into equal or regularly alternating steps.
+Q: What are the notes of the whole-tone scale on C? | C D E F♯ G♯ A♯ (C).
+Q: Why does the whole-tone scale sound floating and ambiguous? | Every step is equal, so it has no natural tonic, no perfect fifths and no leading note.
+Q: How many whole-tone collections are there? | Two: one containing C, the other containing C♯.
+Q: What are the notes of the octatonic scale on C starting with a semitone? | C D♭ E♭ E F♯ G A B♭ (C).
+Q: Why did Messiaen call these scales modes of limited transposition? | Transposing them soon reproduces the same notes.
+Q: Which of Messiaen's modes are the whole-tone and octatonic scales? | The whole-tone is Mode 1 and the octatonic Mode 2.
+Q: Which Debussy piece uses the whole-tone scale almost throughout? | Voiles (1909).
+Q: Which Stravinsky work is cited for octatonic writing? | Petrushka (1911).
+Q: How do jazz musicians use the octatonic, or diminished, scale? | Over dominant and diminished chords.
 
 ## The modes
 LV: Intermediate · Application
@@ -464,6 +564,16 @@ M2#music-u02-11-q2@2: What are the notes of G Lydian? | G A B C♯ D E F♯ G | 
 M3#music-u02-11-q3@3: A tune centres on G and uses only the notes of C major. Which mode is it and what gives it its character? | G Mixolydian, whose flattened seventh (F♮) gives a major sound without a leading note | G Ionian, the plain major scale built on G | G Dorian, whose raised sixth gives a bright minor | G Lydian, whose raised fourth gives a magical sound | G with C major's notes has F♮ as its seventh: Mixolydian.
 SEQ1#music-u02-11-q4@1: Order the modes by their starting note on the white keys, from C upwards. | Ionian ; Dorian ; Phrygian ; Lydian ; Mixolydian ; Aeolian ; Locrian | The modes start on C, D, E, F, G, A and B respectively.
 SA2#music-u02-11-q5@2,3: Explain how to build any mode on any tonic, using E Phrygian and B♭ Mixolydian as examples. | Think of the mode as a major or minor scale with one characteristic note changed. Phrygian is natural minor with a flattened second: E natural minor is E F♯ G A B C D, so E Phrygian is E F G A B C D. Mixolydian is major with a flattened seventh: B♭ major with A♭, giving B♭ C D E♭ F G A♭. | Method using a characteristic note ; E Phrygian correct ; B♭ Mixolydian correct ; Explains the alteration
+Q: How can you produce the seven modes on a piano? | Play the white notes starting from each letter name.
+Q: Where do the names of the modes come from? | From ancient Greek, applied in medieval and Renaissance theory.
+Q: How does the Phrygian mode differ from the natural minor? | It has a flattened second.
+Q: Why is the Locrian mode rarely used as a home key? | Its tonic triad is diminished.
+Q: What are the notes of D Mixolydian? | D E F♯ G A B C D, the same notes as G major.
+Q: What are the notes of A Dorian? | A B C D E F♯ G A, the same notes as G major.
+Q: In which mode is Scarborough Fair often sung? | Dorian.
+Q: Which modes does Miles Davis's So What use? | D Dorian and E♭ Dorian.
+Q: Which modes are used in film and rock for bright and dark colours? | Lydian for a bright, magical sound; Phrygian for a dark, Spanish-sounding colour.
+Q: How did medieval modal theory differ from modern white-note modes? | It also used range, authentic and plagal, and characteristic melodic formulas.
 
 ## Interval number and quality
 LV: Introductory · Foundation
@@ -509,6 +619,16 @@ M2#music-u02-12-q2@2: What is the number of the interval from E♭ up to C♯? |
 M3#music-u02-12-q3@3: C to F♯ and C to G♭ sound identical on a piano. Why do they have different names? | They use different letter names, so one is a fourth and the other a fifth | They don't: both are called augmented fourths | Only C to F♯ is a real interval | Piano tuning makes them slightly different | Interval names depend on spelling. C–F♯ counts four letters (augmented fourth); C–G♭ counts five (diminished fifth).
 TF1#music-u02-12-q4@1: Adding a sharp to the upper note changes the number of an interval. | false | Number depends on letter names only; accidentals change the quality.
 SA2#music-u02-12-q5@2,3: Explain the two steps needed to name an interval fully, using C up to E♭ as an example. | First find the number by counting letter names from the lower to the upper note: C D E is three, a third. Then find the quality by comparing its size with the major-scale interval: C to E is a major third (four semitones), and E♭ is a semitone smaller, so the interval is a minor third. | Counting letter names ; Number is a third ; Comparing with the major scale ; Quality is minor
+Q: How is the number of an interval found? | By counting letter names from the lower note to the upper, including both.
+Q: What is the interval between two identical pitches called? | A unison.
+Q: Are C to E♭ and C to E♯ the same interval number? | Yes, both are thirds, because they use the letters C and E.
+Q: What does an interval's quality describe? | Its exact size in semitones.
+Q: Which interval numbers can be major or minor? | Seconds, thirds, sixths and sevenths.
+Q: What is an augmented interval? | One a semitone larger than perfect or major.
+Q: What is a diminished interval? | One a semitone smaller than perfect or minor.
+Q: What is a melodic interval? | An interval whose two notes are played one after the other.
+Q: Name the interval C to A♭. | A minor sixth: six letter names, eight semitones.
+Q: Why is C to F♯ a fourth but C to G♭ a fifth? | The number comes from letter names, not semitones: C–F spans four letters, C–G five.
 
 ## Major, minor and perfect intervals
 LV: Introductory · Foundation
@@ -548,6 +668,16 @@ M2#music-u02-13-q2@2: What is the interval from A up to F? | A minor sixth | A m
 M3#music-u02-13-q3@3: A student says B♭ to D is a minor third because both notes have accidentals in some keys. What is the interval and how should it be found? | A major third, since D is the third note of B♭ major | A minor third, because B♭ is a flat | A perfect fourth, because there are five semitones | A diminished third, because the lower note is flat | B♭ major is B♭ C D E♭ F G A; D is its third, so B♭–D is a major third (four semitones).
 MATCH1#music-u02-13-q4@1: Match each interval to its number of semitones. | Major third = 4 ; Perfect fifth = 7 ; Minor seventh = 10 ; Major second = 2 | These are the standard sizes in equal temperament.
 SA2#music-u02-13-q5@2,3: Write the note a minor seventh above D and a major sixth above E♭, explaining your method. | Use the major scale of the lower note. D major's seventh is C♯; a minor seventh is a semitone smaller, so the answer is C. E♭ major is E♭ F G A♭ B♭ C D; its sixth is C, so a major sixth above E♭ is C. | Method using the lower note's scale ; Minor seventh above D is C ; Major sixth above E♭ is C ; Reduction by a semitone explained
+Q: Measured from the tonic, what quality is every interval to a note of the major scale? | Major (2nd, 3rd, 6th, 7th) or perfect (4th, 5th, octave).
+Q: Which major scale do you imagine when naming an interval? | The major scale of the lower note.
+Q: How many semitones are in a major third? | Four.
+Q: How many semitones are in a major sixth? | Nine.
+Q: How many semitones are in a minor seventh? | Ten.
+Q: How many semitones are in a major seventh? | Eleven.
+Q: Name the interval E up to C♯. | A major sixth: C♯ is the sixth note of E major.
+Q: Name the interval E up to C♮. | A minor sixth: a semitone smaller than the major sixth E–C♯, eight semitones.
+Q: How do you write a minor seventh above G? | Find the major seventh in G major, F♯, then lower it a semitone to F♮.
+Q: What happens to a major interval made a semitone smaller with the same letter names? | It becomes minor.
 
 ## Augmented and diminished intervals
 LV: Intermediate · Application
@@ -592,6 +722,16 @@ M2#music-u02-14-q2@2: Name the interval from C up to D♯. | An augmented second
 M3#music-u02-14-q3@3: In A harmonic minor, what interval lies between G♯ and F above it? | A diminished seventh, from the leading note up to the sixth | A major sixth, because it spans nine semitones | A minor seventh, since G to F is a minor seventh | An augmented sixth, the interval of the augmented sixth chord | Count G A B C D E F: a seventh. G–F is a minor seventh (ten semitones); raising the lower note to G♯ makes it a semitone smaller, a diminished seventh of nine semitones.
 TF1#music-u02-14-q4@1: An augmented fourth and a diminished fifth are both six semitones. | true | Both are tritones; they differ only in spelling.
 SA2#music-u02-14-q5@3: Explain why the tritone is important in tonal harmony. | The tritone between degrees 4 and 7 of the major scale appears in the dominant seventh chord. Its instability creates tension: the leading note rises to the tonic and the fourth degree falls to the third, resolving the tritone. Because it divides the octave in half, the same tritone belongs to two dominant sevenths a tritone apart, the basis of tritone substitution in jazz. | Location between 4 and 7 ; Dominant seventh chord ; Resolution of each note ; Further use such as symmetry or substitution
+Q: What is a perfect interval made a semitone smaller called? | Diminished.
+Q: What is a major interval made a semitone larger called? | Augmented.
+Q: Can a major interval be made diminished in one step? | No: reduced by a semitone it becomes minor first, then diminished.
+Q: What changes when an interval is augmented or diminished? | Only the accidentals; the letter names stay the same.
+Q: Name the interval F up to B. | An augmented fourth: four letter names, a semitone larger than the perfect fourth F–B♭.
+Q: Name the interval B up to F. | A diminished fifth: five letter names, a semitone smaller than the perfect fifth B–F♯.
+Q: Between which degrees of the major scale is the tritone? | Degrees 4 and 7, at the heart of the dominant seventh chord.
+Q: Where does an augmented second occur in tonal music? | Between degrees 6 and 7 of the harmonic minor.
+Q: Which interval forms the basis of the diminished seventh chord? | The diminished seventh between the raised leading note and the flattened sixth in harmonic minor.
+Q: What decides whether a six-semitone interval is an augmented fourth or a diminished fifth? | The letter names, not the semitone count.
 
 ## Compound intervals
 LV: Introductory · Foundation
@@ -636,6 +776,16 @@ M2#music-u02-15-q2@2: What is the interval from D3 up to F4? | A minor tenth | A
 M3#music-u02-15-q3@3: A jazz chord symbol C7(♯11) asks for an F♯ above the chord. Why is it written as ♯11 rather than ♯4? | It names the note as an extension above the seventh, voiced high, rather than replacing the third | Because F♯ is always written as an eleventh | Because ♯4 is a diminished interval that can't be used | Because the chord has no fifth to measure it from | Extensions above the seventh are named 9, 11 and 13 to show they are added colour tones, usually voiced in the upper octave.
 TF1#music-u02-15-q4@1: A major tenth has the same quality as its simple form, a major third. | true | Adding an octave doesn't change quality.
 SA2#music-u02-15-q5@2,3: Explain how to name the interval from G2 up to B♭4. | Find the simple interval: G to B♭ is a minor third (G major has B♮, and B♭ is a semitone lower). G2 to B♭4 spans two octaves plus that third. Adding 7 twice gives 3 + 14 = 17, a minor seventeenth, or a compound minor third (two octaves and a minor third). | Simple interval identified ; Quality minor ; Two octaves added ; Correct compound name
+Q: What is a simple interval? | An interval of an octave or less.
+Q: How do you find the simple form of a compound interval? | Subtract 7 from its number.
+Q: Why do you subtract 7 rather than 8 to simplify a compound interval? | The octave and the simple interval share a note, which would otherwise be counted twice.
+Q: What is a tenth? | An octave plus a third.
+Q: What is an eleventh? | An octave plus a fourth.
+Q: What is a fifteenth? | A double octave: two octaves.
+Q: Does a compound interval keep the quality of its simple form? | Yes: a major tenth is an octave plus a major third.
+Q: Name C4 up to E5. | A major tenth, or compound major third.
+Q: Where do ninths, elevenths and thirteenths appear in jazz and pop? | In extended chords, naming notes added above the seventh.
+Q: Which compound interval is a common rich spacing between bass and melody in piano accompaniments? | The major tenth.
 
 ## Inverting intervals
 LV: Intermediate · Application
@@ -676,6 +826,16 @@ M2#music-u02-16-q2@2: What does an augmented fourth invert to? | A diminished fi
 M3#music-u02-16-q3@3: Name the interval from E up to D♭ using inversion. | A diminished seventh, because D♭ up to E is an augmented second | A minor seventh, because E to D is a minor seventh | A major sixth, because it spans nine semitones | An augmented sixth, because the upper note is flat | Inverting gives D♭–E: D♭ major has E♭, so E♮ makes an augmented second. Inverted back, augmented becomes diminished: a diminished seventh.
 SEQ1#music-u02-16-q4@2: Order the steps to invert a major third, C up to E. | Move C up an octave ; Count E to C: six letters ; Change major to minor ; Name the result a minor sixth | The new number is 9 − 3 and the quality swaps from major to minor.
 SA2#music-u02-16-q5@2,3: Explain the rules for inverting intervals and why the numbers add to nine. | Moving one note by an octave swaps their positions. Numbers add to nine, not eight, because the original interval and its inversion share a letter that is counted in both. Qualities swap: major and minor, augmented and diminished; perfect stays perfect. Semitones add to twelve, the size of an octave. | Moving one note an octave ; Numbers add to nine with reason ; Quality changes ; Semitones add to twelve
+Q: How do you invert an interval? | Move the lower note up an octave, or the upper note down an octave, so the notes swap places.
+Q: What do an interval's number and its inversion add up to? | Nine.
+Q: What do the semitones of an interval and its inversion add up to? | Twelve.
+Q: What happens to quality when an interval is inverted? | Major and minor swap, augmented and diminished swap, and perfect stays perfect.
+Q: What does a major third invert to? | A minor sixth: 4 + 8 semitones = 12.
+Q: Invert a major second, C up to D. | D up to C, a minor seventh.
+Q: How can inversion help name B up to A♭? | A♭ up to B is an augmented second, so B up to A♭ is a diminished seventh.
+Q: What is invertible counterpoint? | Counterpoint written so the parts can exchange register and still work.
+Q: Why must composers of invertible counterpoint watch perfect fifths? | A perfect fifth inverts to a perfect fourth, which is treated as a dissonance above the bass.
+Q: Why is it wrong to subtract from 8 when inverting? | The shared letter is counted in both intervals, so the numbers add to nine.
 
 ## Consonance and dissonance
 LV: Intermediate · Evaluation
@@ -722,6 +882,16 @@ M2#music-u02-17-q2@2: In a Palestrina-style passage, a suspended dissonance appe
 M3#music-u02-17-q3@3: The Tsimane' could tell consonant from dissonant chords but didn't prefer the consonant ones. What does this suggest? | Preference for consonance is substantially shaped by cultural exposure | Consonance has no acoustic basis at all | The Tsimane' couldn't hear the chords properly | Western listeners have damaged hearing | Distinguishing the chords shows the acoustic difference exists; lack of preference suggests liking consonance is partly learned.
 MATCH1#music-u02-17-q4@1: Match each interval to its traditional class. | Perfect fifth = Perfect consonance ; Minor sixth = Imperfect consonance ; Minor second = Dissonance ; Tritone = Dissonance | These are the classes used in counterpoint and harmony teaching.
 SA2#music-u02-17-q5@3: Evaluate whether consonance and dissonance are natural or cultural. | Acoustic evidence shows simple-ratio intervals produce less roughness and beating, giving a physical basis for the distinction. But the history of Western music shows thirds moving from dissonant to consonant and dissonance being treated ever more freely, and cross-cultural studies suggest preference for consonance is learned. The best view is that acoustics supply raw differences and culture shapes how they are heard and valued. | Acoustic basis ; Historical change ; Cross-cultural evidence ; Balanced conclusion
+Q: Which intervals are perfect consonances in traditional theory? | Unison, octave and perfect fifth, and the perfect fourth except above the bass in counterpoint.
+Q: Which intervals count as dissonances in traditional theory? | Seconds, sevenths and all augmented and diminished intervals, including the tritone.
+Q: What normally happens to a dissonance in tonal music? | It resolves to a consonance, often by step.
+Q: What is the frequency ratio of the octave? | 2:1.
+Q: What acoustic effects do dissonant intervals produce? | Beating and roughness, because their overtones don't coincide.
+Q: How much wider is an equal-tempered major third than a just one? | About 14 cents.
+Q: How were thirds treated in medieval music? | As dissonances; only fifths, fourths and octaves were stable.
+Q: How was dissonance handled in the Palestrina style? | It was strictly prepared and resolved.
+Q: What did Schoenberg's emancipation of the dissonance mean? | Treating dissonances as needing no resolution.
+Q: Why is consonance not purely physical? | Acoustics explain roughness, but which intervals feel stable and whether listeners prefer them is strongly shaped by culture.
 
 ## Transposition
 LV: Intermediate · Application
@@ -767,4 +937,14 @@ M2#music-u02-18-q2@2: A concert-pitch melody begins on F. What should a B♭ tru
 M3#music-u02-18-q3@3: A student transposes D F♯ A down a minor third and writes B D♯ F♯. What is wrong? | Nothing: D major down a minor third is B major, which needs D♯ and F♯ | D♯ should be E♭ because the direction is downward | F♯ should be F because minor thirds remove sharps | The result should be B♭ D F | Each note moves down a minor third: D→B, F♯→D♯, A→F♯. The key is B major, and the spelling is correct.
 SEQ1#music-u02-18-q4@1: Order the steps for transposing a melody. | Find the new key ; Write the new key signature ; Move each note by the interval ; Check and adjust accidentals | Working from the key first ensures letter names and accidentals come out correctly.
 SA2#music-u02-18-q5@2,3: Explain how to write a part for an F horn to sound a concert-pitch melody in D major. | An F horn sounds a perfect fifth lower than written, so the part must be written a perfect fifth higher. D major up a perfect fifth is A major, so the part is written in A major (three sharps), with every note moved up a perfect fifth, then accidentals checked. | Horn sounds a perfect fifth lower ; Write a fifth higher ; New key A major ; Move every note and check
+Q: What does transposing a melody keep the same? | Its intervals, so it keeps its shape.
+Q: What is the first step in transposing a melody? | Find the new key by moving the tonic by the interval.
+Q: Why move notes by interval number first when transposing? | It keeps the letter names, and so the spelling, correct; semitones are only a check.
+Q: Transpose G A B C D up a major second. | A B C♯ D E, in A major.
+Q: What happens to accidentals in the original when transposing? | They are adjusted by the same amount; a sharp may become a natural, a natural a flat.
+Q: What does a transposing instrument's name tell you? | The sounding pitch of its written C: on a B♭ clarinet, written C sounds B♭.
+Q: How does an F horn sound compared with its written notes? | A perfect fifth lower.
+Q: How does an E♭ alto saxophone sound compared with its written notes? | A major sixth lower.
+Q: Which instruments sound an octave from written pitch? | The piccolo sounds an octave higher; the double bass and guitar an octave lower.
+Q: To sound concert C, what does a B♭ trumpet part show? | D.
 `;

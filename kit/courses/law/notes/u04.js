@@ -33,6 +33,16 @@ Q: What is a tort? | A civil wrong, other than breach of contract, for which the
 Q: What is the limitation period for personal injury claims in tort? | Three years from the date of the cause of action or the date of knowledge, if later.
 M1#law-u04-01-q1@1: Which tort is actionable without proof of damage? | Trespass to the person | Negligence | Private nuisance | Product liability | Occupiers' liability | Trespass torts are actionable per se, vindicating rights even without loss.
 M2#law-u04-01-q2@2: A client wants to sue a surveyor they hired for a negligent report. What is the best analysis? | They may sue in contract and in tort | They can only sue the surveyor in contract | They can only sue the surveyor in tort | They can't sue a professional at all | They must bring a private prosecution | Concurrent liability lets a claimant choose the more advantageous route.
+Q: What is the general limitation period in tort under the Limitation Act 1980, s 2? | Six years from when the damage occurred.
+Q: What is the limitation period for defamation? | One year (Limitation Act 1980, s 4A).
+Q: What does "actionable per se" mean in tort? | The tort is actionable without proof of damage, as with trespass.
+Q: What is the compensation aim of tort law? | To put the claimant, as far as money can, in the position they would have been in had the tort not occurred.
+Q: What is the corrective justice aim of tort? | The wrongdoer puts right the wrong they have done.
+Q: How do tort duties differ from contract duties? | Contract duties arise from agreement and are owed to the other party; tort duties are imposed by law and owed more widely.
+Q: How does tort differ from crime in its purpose? | Crime is punishment by the state; tort is compensation for the person harmed.
+Q: Can the same facts give rise to both a crime and a tort? | Yes. The same facts can be both a crime and a tort.
+Q: Which case recognised concurrent liability in contract and tort? | Henderson v Merrett Syndicates [1995].
+Q: What order should you follow in any tort problem? | Identify the tort, then each element, then defences, then remedies.
 
 ## Negligence
 S: Negligence is the breach of a legal duty to take care, causing damage that is not too remote. It is the main tort for accidents, professional failures and many other kinds of careless harm.
@@ -61,6 +71,16 @@ Q: List the elements of negligence. | Duty of care, breach of duty, causation, r
 Q: What does res ipsa loquitur mean? | "The thing speaks for itself": where an accident wouldn't normally happen without negligence and the defendant controlled the thing, negligence may be inferred.
 M1#law-u04-02-q1@1: Which element asks whether the type of damage was reasonably foreseeable? | Remoteness | Duty | Breach | Factual causation | Volenti | Remoteness limits recovery to foreseeable kinds of damage.
 M2#law-u04-02-q2@2: Sacks of flour fall from a warehouse window onto a passer-by. No one knows how. What may help the claimant? | Res ipsa loquitur: the accident suggests negligence by the occupier in control | Volenti non fit injuria | Novus actus interveniens | The eggshell skull rule | Contributory negligence | Byrne v Boadle (1863) is the classic example.
+Q: What principle did Lord Atkin state in Donoghue v Stevenson? | The neighbour principle: take reasonable care to avoid acts or omissions you can reasonably foresee would be likely to injure your neighbour.
+Q: To what standard must a claimant prove each element of negligence? | On the balance of probabilities.
+Q: Which case is the classic illustration of res ipsa loquitur? | Scott v London and St Katherine Docks (1865).
+Q: What practical effect does res ipsa loquitur have? | It shifts the practical burden to the defendant to explain the accident.
+Q: Name the main defences to negligence. | Contributory negligence, consent (volenti non fit injuria), illegality and limitation.
+Q: What is the usual remedy in negligence? | Compensatory damages.
+Q: What happens to a negligence claim if one element is missing? | It fails. Every element must be proved, so none should be skipped.
+Q: What does the causation element of negligence ask? | Whether the breach caused the damage, in fact and in law.
+Q: What does the breach element of negligence ask? | Whether the defendant fell below the standard of care.
+Q: What kinds of damage may be actionable in negligence? | Personal injury, property damage, and in some cases psychiatric injury or economic loss.
 
 ## Duty of care
 S: A duty of care is a legal obligation to take reasonable care not to cause certain kinds of harm to others. Whether a duty exists depends first on established categories and, in novel situations, on incremental development by analogy.
@@ -86,6 +106,16 @@ Q: What did Robinson v Chief Constable of West Yorkshire decide about Caparo? | 
 Q: Is there a general duty to rescue in English law? | No. There is generally no liability for omissions, subject to exceptions such as assumption of responsibility or creating the danger.
 M1#law-u04-03-q1@1: Which is an established duty situation? | A driver to other road users | A bystander to a drowning stranger | The police to all potential victims of crime | A neighbour to stop burglars entering next door | A council to prevent all accidents | Road users owe each other a duty of care.
 M2#law-u04-03-q2@2: Police officers arresting a suspect in a busy street knock over an elderly pedestrian. Is a duty owed? | Yes: a positive act created the danger | No: the police are immune from claims | No: there is never a duty for omissions | Only if the pedestrian was the suspect | Only under the Human Rights Act 1998 | Robinson concerned exactly this situation.
+Q: What are the three Caparo factors for a duty in a novel situation? | Foreseeability of damage, proximity, and that imposing a duty is fair, just and reasonable.
+Q: Why did the auditors in Caparo v Dickman owe no duty to investors buying shares? | The accounts were prepared for shareholders to exercise their governance rights, not for investment decisions.
+Q: Give three established duty of care categories. | Road users to other road users, doctors to patients, employers to employees (also manufacturers to consumers).
+Q: What is the incremental approach to duty of care? | Developing duties in novel cases by analogy with established categories.
+Q: Why did the police owe Mrs Robinson a duty of care? | The arrest was a positive act creating a foreseeable risk of injury to her.
+Q: When may a defendant owe a duty to prevent harm caused by a third party? | Where they created the danger, assumed responsibility, controlled the third party, or had special control over the source of danger.
+Q: Are public bodies generally liable for failing to confer a benefit? | No. They are liable for positive acts causing harm but generally not for failing to confer a benefit (Michael v Chief Constable of South Wales).
+Q: What should you ask first when deciding whether a duty of care exists? | Whether the situation falls within an established category. If so, the duty exists.
+Q: Name a case showing there is generally no duty to prevent harm by third parties. | Smith v Littlewoods [1987] (also N v Poole BC [2019]).
+Q: What principles govern the negligence liability of public bodies? | Generally the same principles as apply to private persons.
 
 ## Neighbour principle
 S: Lord Atkin's neighbour principle in Donoghue v Stevenson [1932] AC 562 is the foundation of the modern law of negligence: you must take reasonable care to avoid acts or omissions you can reasonably foresee would be likely to injure your neighbour.
@@ -113,6 +143,16 @@ Q: Who is my "neighbour" in law according to Lord Atkin? | Persons so closely an
 Q: What is the narrow ratio of Donoghue v Stevenson? | A manufacturer owes a duty of reasonable care to the ultimate consumer of its products where there's no reasonable possibility of intermediate examination.
 M1#law-u04-04-q1@1: Why couldn't Mrs Donoghue sue in contract? | Her friend bought the drink, not her | The contract of sale was illegal | Contracts can't cover food and drink | She was a minor at the time | The bottle was opaque, not clear | Privity of contract barred a contractual claim.
 M2#law-u04-04-q2@2: Which later case overruled Anns v Merton and narrowed duty in negligence? | Murphy v Brentwood DC | Robinson v Chief Constable | Hedley Byrne v Heller | Bolam v Friern | Caparo v Dickman alone | Murphy v Brentwood [1991] overruled Anns.
+Q: What did Donoghue v Stevenson establish about negligence as a tort? | It established negligence as an independent tort, not dependent on contract.
+Q: Which two ideas did the neighbour principle combine as the basis of duty? | Foreseeability and proximity.
+Q: What is proximity in the law of negligence? | A sufficiently close relationship between claimant and defendant.
+Q: Which case broadened duty of care after Donoghue v Stevenson? | Anns v Merton LBC [1978].
+Q: Which cases narrowed duty of care after Anns? | Murphy v Brentwood DC [1991] and Caparo [1990].
+Q: Through which approach is the neighbour principle now applied? | Robinson's incremental approach.
+Q: Where did Donoghue v Stevenson come from, and does it apply there? | Scotland. The neighbour principle applies in Scots delict as in English tort.
+Q: What is the difference between the narrow ratio and the neighbour principle in Donoghue v Stevenson? | The narrow ratio concerns manufacturers and consumers; the neighbour principle is the general idea behind all duties of care.
+Q: Why was the opaque bottle significant in Donoghue v Stevenson? | There was no reasonable possibility of intermediate examination before the product reached the consumer.
+Q: Which court decided Donoghue v Stevenson? | The House of Lords.
 
 ## Foreseeability
 S: Reasonable foreseeability is central to negligence. It asks whether a reasonable person in the defendant's position would have foreseen a risk of harm to someone in the claimant's position. It arises at the duty, breach and remoteness stages.
@@ -138,6 +178,16 @@ Q: What did Bourhill v Young decide? | A claimant who was not a foreseeable vict
 Q: At which three stages of negligence does foreseeability matter? | Duty, breach, and remoteness of damage.
 M1#law-u04-05-q1@1: Which case shows that a very small risk may reasonably be ignored? | Bolton v Stone | Bourhill v Young | The Wagon Mound | Hughes v Lord Advocate | Donoghue v Stevenson | The risk of a ball leaving the ground and causing injury was tiny.
 M2#law-u04-05-q2@2: A driver negligently crashes. A woman 50 yards away, out of sight, hears the crash and suffers shock. Following Bourhill v Young, what is likely? | No duty: she was not within the range of foreseeable harm | A duty is owed to everyone who hears a crash | The driver is strictly liable | She must sue in contract | The driver is liable only for property damage | Bourhill v Young [1943]: the claimant was out of sight of the crash and outside the area of foreseeable danger, so no duty was owed to her.
+Q: What does reasonable foreseeability ask in negligence? | Whether a reasonable person in the defendant's position would have foreseen a risk of harm to someone in the claimant's position.
+Q: What is a foreseeable claimant? | A claimant within the class of people at risk from the defendant's carelessness.
+Q: What did Bolton v Stone show about foreseeability at the breach stage? | The likelihood of harm is a factor; a very unlikely risk may reasonably be met with no precautions.
+Q: What must be foreseeable at the remoteness stage? | The type of damage (The Wagon Mound (No 1)).
+Q: What did Hughes v Lord Advocate add on remoteness? | The precise manner or extent of the damage need not be foreseeable, only its type.
+Q: Is foreseeability enough on its own to create a duty of care? | No. It is necessary but not sufficient: proximity and policy also matter.
+Q: Why is there often no duty for omissions or pure economic loss even where harm is foreseeable? | Because foreseeability alone isn't enough; proximity and policy considerations also decide duty.
+Q: What happened to the claimant in Bourhill v Young? | A pregnant fishwife heard a motorcycle crash out of sight, later saw blood, and suffered shock and a stillbirth.
+Q: Why should you name the stage when discussing foreseeability? | Because foreseeability means slightly different things at duty, breach and remoteness.
+Q: Why was the claimant in Bourhill v Young owed no duty? | She was outside the area of foreseeable danger.
 
 ## Breach of duty
 S: Breach of duty occurs when the defendant falls below the standard of care the law requires: that of the reasonable person in the defendant's position. It is judged objectively, considering the risk and the precautions available.
@@ -167,6 +217,16 @@ Q: What standard applies to a learner driver? | That of a reasonably competent d
 Q: What did Paris v Stepney BC decide? | The seriousness of potential harm to a particular claimant (blind in one eye) raised the precautions reasonably required.
 M1#law-u04-06-q1@1: Which case concerns the cost and practicability of precautions? | Latimer v AEC | Paris v Stepney | Bolton v Stone | Nettleship v Weston | Roe v Minister of Health | The employer didn't have to close the factory after a flood.
 M2#law-u04-06-q2@2: A fire engine driver, rushing to an emergency, takes a calculated risk and a firefighter is injured by unsecured equipment. Is there likely to be a breach? | Probably not: saving life can justify the risk | Yes: emergency services are always liable | Yes: any injury on duty is a breach | No: emergency services owe no duty at all | Only if the firefighter was a volunteer | Watt v Hertfordshire CC [1954]: saving life justifies taking risks that would be unreasonable for an ordinary commercial purpose, so there was no breach.
+Q: How is breach of duty judged? | Objectively, against the reasonable person in the defendant's position.
+Q: Which case first described the reasonable person standard? | Blyth v Birmingham Waterworks (1856).
+Q: What did Roe v Minister of Health establish about breach? | Conduct is judged by what was known or ought to have been known at the time.
+Q: What did Latimer v AEC decide? | The cost and practicability of precautions matter; the employer wasn't required to close the factory.
+Q: What did Watt v Hertfordshire CC show about breach? | The social value of an activity, such as emergency services, is weighed in deciding breach.
+Q: Which statutes reflect the social value factor in breach? | The Compensation Act 2006, s 1 and the Social Action, Responsibility and Heroism Act 2015.
+Q: Is following common practice conclusive that there was no breach? | No. Common practice is evidence, but not conclusive.
+Q: How does a claimant prove breach? | By evidence such as witnesses, documents and expert opinion.
+Q: Is a relevant criminal conviction admissible to prove breach? | Yes, under the Civil Evidence Act 1968, s 11.
+Q: What balancing exercise lies at the heart of breach? | The risk weighed against the burden of guarding against it.
 
 ## Standard of care
 S: The standard of care varies with the defendant's role and the circumstances. Professionals are judged against the competent members of their profession; children against children of the same age; and the circumstances of an emergency are taken into account.
@@ -197,6 +257,16 @@ Q: State the Bolam test. | A professional is not negligent if they acted in acco
 Q: What standard applies to a 15-year-old? | That of a reasonable 15-year-old (Mullin v Richards).
 M1#law-u04-07-q1@1: Which case replaced Bolam for the disclosure of risks to patients? | Montgomery v Lanarkshire Health Board | Bolitho v City and Hackney | Wilsher v Essex AHA | Mullin v Richards | Wells v Cooper | Montgomery introduced a patient-centred test of material risk.
 M2#law-u04-07-q2@2: A homeowner fixes a door handle that later comes off, injuring a visitor. What standard applies? | A reasonably competent amateur carpenter | A qualified professional joiner | None: DIY attracts no duty of care | A reasonable child of the same age | Strict liability for all defects | Wells v Cooper set the amateur standard for such tasks.
+Q: What did Bolitho v City and Hackney HA add to the Bolam test? | The professional opinion relied on must be capable of withstanding logical analysis.
+Q: What duty about risks did Montgomery v Lanarkshire Health Board impose on doctors? | To take reasonable care to ensure the patient is aware of material risks and reasonable alternatives.
+Q: What standard applies to a junior doctor? | The standard of the post they hold (Wilsher v Essex AHA).
+Q: By what standard are specialists judged? | The standard of their specialism.
+Q: What did Wells v Cooper decide about amateur DIY work? | Someone doing skilled work such as DIY joinery is judged by the standard of an amateur doing such work.
+Q: How is the duty of care in sport judged? | In the context of the game (Condon v Basi; Caldwell v Maguire).
+Q: How do the courts treat a defendant acting in an emergency? | The "agony of the moment" is taken into account.
+Q: Why was there no negligence in Bolam? | The doctors acted in accordance with a practice accepted by a responsible body of medical opinion.
+Q: What does an objective standard of care mean? | A standard that doesn't vary with the defendant's personal ability.
+Q: What should you identify first when assessing the standard of care? | The defendant's role, since it sets the yardstick for breach.
 
 ## Causation in fact
 S: Factual causation asks whether the defendant's breach actually caused the claimant's damage. The usual test is "but for": would the damage have happened but for the breach?
@@ -227,6 +297,16 @@ Q: What is the but-for test? | Would the claimant's damage have occurred but for
 Q: What did Fairchild establish? | In mesothelioma cases, a material increase in risk is enough to establish causation.
 M1#law-u04-08-q1@1: Which case is the classic example of the but-for test failing? | Barnett v Chelsea and Kensington HMC | Fairchild v Glenhaven | Bonnington Castings v Wardlaw | Hotson v East Berkshire | Allied Maples v Simmons | The patient would have died whatever the hospital did.
 M3#law-u04-08-q2@2: A hospital negligently delays treatment; even with prompt treatment the patient had a 25% chance of a full recovery. What is the likely position in English law? | No recovery: causation isn't proved on balance | Recovery of 25% of the full damages | Full damages for the lost outcome | Recovery under the Fairchild exception | Recovery in contract instead of tort | Loss of a chance under 50% is not recoverable in clinical negligence.
+Q: What is material contribution to damage? | Where a divisible injury has several causes, a breach contributing more than negligibly is enough (Bonnington Castings v Wardlaw).
+Q: Why was the hospital not liable in Barnett v Chelsea and Kensington? | The watchman would have died of arsenic poisoning even with proper treatment.
+Q: What does the Compensation Act 2006, s 3 do in mesothelioma cases? | It makes each responsible employer liable for the whole loss.
+Q: What did Wilsher v Essex AHA decide on causation? | Where there are several possible causes and one is negligent, the claimant must prove on balance that the negligent cause was responsible.
+Q: Is loss of a chance below 50% recoverable in personal injury? | Generally no (Hotson v East Berkshire AHA; Gregg v Scott).
+Q: When may loss of a chance be recoverable? | In economic loss cases where the chance depends on a third party's actions (Allied Maples v Simmons and Simmons).
+Q: Why was a special rule needed in Fairchild? | Science couldn't show which employer's asbestos exposure caused the mesothelioma.
+Q: Which cases deal with consecutive causes of the same loss? | Baker v Willoughby [1970] and Jobling v Associated Dairies [1982].
+Q: What factor has affected the outcome in consecutive cause cases? | Whether the second event was tortious or natural.
+Q: When should you move away from the but-for test? | Only when the evidence makes but-for impossible to apply fairly.
 
 ## Legal causation
 S: Even if the breach factually caused the damage, the law may decide it was not the legal cause. Legal causation asks whether the breach was an operative cause, or whether the chain of causation was broken.
@@ -254,6 +334,16 @@ Q: When does a claimant's own conduct break the chain of causation? | When it is
 Q: What did Meadows v Khan decide? | A professional is liable only for losses within the scope of the duty they assumed (the purpose of the advice or service).
 M1#law-u04-09-q1@1: Which case found the claimant's own unreasonable act broke the chain? | McKew v Holland and Hannen and Cubitts | Reeves v Commissioner of Police | Barnett v Chelsea | Bourhill v Young | Baker v Willoughby | In McKew, the claimant chose to go down steep stairs without a handrail or help, knowing his leg might give way; that unreasonable act broke the chain.
 M3#law-u04-09-q2@2: Police negligently fail to take precautions with a prisoner known to be a suicide risk, and he takes his life. Does his act break the chain? | No: it was the very thing the duty covered | Yes: suicide always breaks the chain | Yes, provided he had full capacity | No, but the damages awarded are nil | Only if a doctor was present at the time | Reeves v Commissioner of Police (with a reduction for contributory negligence).
+Q: What does legal causation ask? | Whether the breach was an operative cause of the damage, or whether the chain of causation was broken.
+Q: What kind of intervening act may break the chain of causation? | One that is free, deliberate and informed, or so unreasonable or unforeseeable that it is the real cause.
+Q: What usually happens when a claimant's conduct is merely careless rather than unreasonable? | It usually reduces damages for contributory negligence rather than breaking the chain.
+Q: What did Reeves v Commissioner of Police decide about suicide in custody? | The suicide didn't break the chain, because preventing it was the very duty owed.
+Q: When may a natural event break the chain of causation? | When it is independent and unforeseeable (Carslogie Steamship v Royal Norwegian Government).
+Q: What did the claimant do in McKew v Holland and Hannen and Cubitts? | With a weakened leg, he descended steep stairs without a handrail and fell.
+Q: Which cases establish the scope of duty principle? | SAAMCO [1997], Manchester Building Society v Grant Thornton [2021] and Meadows v Khan [2021].
+Q: For what losses is a defendant who gives advice liable? | Only for losses within the purpose of the duty.
+Q: How does factual causation differ from legal causation? | Factual causation is about what happened; legal causation is about what the law will hold the defendant responsible for.
+Q: What are successive causes? | Separate events each contributing to the claimant's loss.
 
 ## Remoteness of damage
 S: Even where breach caused damage, the defendant is liable only for damage of a kind that was reasonably foreseeable. Unforeseeable kinds of damage are too remote.
@@ -283,6 +373,16 @@ Q: What test of remoteness did The Wagon Mound (No 1) establish? | The defendant
 Q: What is the eggshell skull rule? | A defendant must take the victim as they find them and is liable for the full extent of a foreseeable kind of injury, even if made worse by a pre-existing condition.
 M1#law-u04-10-q1@1: Which case applied the eggshell skull rule to a burn that led to cancer? | Smith v Leech Brain | Hughes v Lord Advocate | Doughty v Turner | Jolley v Sutton | The Wagon Mound | Smith v Leech Brain [1962]: a burn was foreseeable, so the employer was liable for the cancer it triggered in a pre-malignant lip: the eggshell skull rule.
 M2#law-u04-10-q2@2: A workman negligently drops a lamp down a hole; it explodes in an unforeseeable way, burning a child. Is the damage too remote? | No: burns were a foreseeable kind of harm | Yes: the explosion itself was unforeseeable | Yes: children's presence was unforeseeable | No, but only nominal damages are payable | Yes, applying the rule in Re Polemis | Foreseeability of the kind of damage is enough.
+Q: What is remoteness of damage? | The limit on liability to damage of a reasonably foreseeable kind.
+Q: Which test did The Wagon Mound (No 1) replace? | The "direct consequences" test of Re Polemis [1921].
+Q: Why was the fire damage too remote in The Wagon Mound (No 1)? | Fire was not a foreseeable kind of damage from the oil spill.
+Q: What did Jolley v Sutton LBC decide? | Children injured by a boat left on council land could recover: the kind of harm was foreseeable in broad terms.
+Q: Why did the claimant fail in Doughty v Turner Manufacturing? | An unforeseeable eruption of molten metal was a different kind of harm from a foreseeable splash.
+Q: What happened in Smith v Leech Brain? | A burn triggered cancer, and under the eggshell skull rule the defendant was liable for the full extent.
+Q: Does the eggshell skull rule extend to psychiatric vulnerability? | Yes (Page v Smith [1996]).
+Q: When does the eggshell skull rule apply? | Once some injury is foreseeable, the defendant is liable for its full extent, even if a pre-existing weakness makes it worse.
+Q: What key question decides remoteness in negligence? | Was the kind of damage foreseeable? If so, the precise manner or extent doesn't matter.
+Q: Why was the defendant liable in Hughes v Lord Advocate despite the unexpected explosion? | Burns were a foreseeable kind of harm, even though the way they happened wasn't.
 
 ## Novus actus interveniens
 S: A novus actus interveniens is a new intervening act that breaks the chain of causation between the defendant's breach and the claimant's damage, so the defendant isn't liable for the later loss.
@@ -309,6 +409,16 @@ Q: Does a rescuer's intervention break the chain of causation? | No. Rescue is a
 Q: When does a third party's deliberate act not break the chain? | When it was the very kind of act the defendant had a duty to guard against (Dorset Yacht).
 M1#law-u04-11-q1@1: Which case held that a police officer's negligent order broke the chain? | Knightley v Johns | Haynes v Harwood | Home Office v Dorset Yacht | McKew v Holland | Reeves | Knightley v Johns [1982]: the officer's negligent order to ride the wrong way through a tunnel was a new cause, so the original negligent driver wasn't liable for the later crash.
 M2#law-u04-11-q2@2: A driver negligently causes a crash; a passer-by pulls out an injured passenger and is hurt. Can the passer-by sue the driver? | Yes: rescuers are foreseeable and their act doesn't break the chain | No: the rescuer volunteered | No: rescue is a novus actus | Only if they were trained | Only in contract | Haynes v Harwood and Baker v TE Hopkins: rescue is a foreseeable response to danger created by negligence, so rescuers can recover and their act doesn't break the chain.
+Q: What is a novus actus interveniens? | A new intervening act that breaks the chain of causation between breach and damage.
+Q: What happened in Home Office v Dorset Yacht Co? | Borstal boys escaped because officers were negligent and damaged property; their acts didn't break the chain.
+Q: What decides whether a third party's negligent act breaks the chain? | Foreseeability; such acts may or may not break the chain.
+Q: What did Knightley v Johns decide? | A police officer's negligent order to ride against traffic broke the chain of causation.
+Q: Does negligent medical treatment of an injury usually break the chain? | No, unless it is grossly negligent and the real cause (compare Webb v Barclays Bank).
+Q: Why don't injured rescuers break the chain of causation? | A rescue is a foreseeable response to danger created by negligence.
+Q: Name two cases allowing rescuers to recover. | Haynes v Harwood [1935] and Baker v TE Hopkins [1959].
+Q: What questions should you ask about an intervening act? | Was it foreseeable, deliberate or wholly unreasonable, and was the defendant's duty to guard against it?
+Q: What is the chain of causation? | The link between the breach and the damage.
+Q: What usually happens when a third party's act is deliberate, free and informed? | It usually breaks the chain of causation.
 
 ## Psychiatric injury
 S: The law allows claims for a recognised psychiatric illness caused by negligence, but it restricts them, especially for "secondary victims" who witness harm to others, to limit the number of claims.
@@ -341,6 +451,16 @@ Q: What are the Alcock control mechanisms for secondary victims? | A close tie o
 Q: What did Paul v Royal Wolverhampton NHS Trust decide? | Relatives witnessing a death or injury from a medical condition caused by earlier clinical negligence generally can't recover as secondary victims.
 M1#law-u04-12-q1@1: Which case set the control mechanisms for secondary victims? | Alcock v Chief Constable of South Yorkshire | Page v Smith | McLoughlin v O'Brian | White v Chief Constable | Hatton v Sutherland | Alcock arose from the Hillsborough disaster.
 M3#law-u04-12-q2@2: A mother watches a live TV broadcast of a stadium disaster in which her son is injured, and develops PTSD. Can she recover as a secondary victim? | No: she didn't perceive it with her own senses | Yes: she has a close tie of love and affection | Yes: PTSD is a recognised psychiatric illness | Yes, provided she later visits the hospital | No: only spouses can ever recover damages | Watching on TV fails the Alcock perception requirement.
+Q: What must every psychiatric injury claimant show? | A recognised psychiatric illness, such as PTSD or clinical depression, not mere grief or distress.
+Q: Who is a primary victim? | A claimant in the zone of physical danger, or who reasonably believes themselves to be.
+Q: Who is a secondary victim? | A claimant who witnesses injury to another.
+Q: What did Page v Smith decide for primary victims? | If physical injury was foreseeable, psychiatric injury is recoverable even if no physical harm occurred.
+Q: For which relationships is a close tie of love and affection presumed? | Parents, children and spouses; others must prove it.
+Q: Which case recognised proximity to the immediate aftermath of an accident? | McLoughlin v O'Brian [1983].
+Q: Are rescuers a special category for psychiatric injury? | No. They must meet the primary or secondary victim tests (White v Chief Constable of South Yorkshire).
+Q: Can employees recover for psychiatric injury caused by work stress? | Yes, where harm was reasonably foreseeable (Hatton v Sutherland; Barber v Somerset CC).
+Q: Why did the Hillsborough relatives fail in Alcock? | Their claims lacked proximity in time, space or relationship, such as watching on TV or identifying bodies later.
+Q: Why does the law restrict psychiatric injury claims by secondary victims? | To limit the number of claims.
 
 ## Pure economic loss
 S: Pure economic loss is financial loss not consequent on physical injury to the claimant or damage to their property. English law is generally reluctant to allow recovery in negligence, except where there is an assumption of responsibility.
@@ -370,6 +490,16 @@ Q: What is pure economic loss? | Financial loss not consequent on physical injur
 Q: What did Hedley Byrne v Heller establish? | A duty of care for negligent statements can arise where there is a special relationship and an assumption of responsibility, with reasonable reliance.
 M1#law-u04-13-q1@1: Which case concerned lost profits from a power cut? | Spartan Steel v Martin | Hedley Byrne v Heller | Caparo v Dickman | Murphy v Brentwood | White v Jones | Spartan Steel v Martin [1973]: the profit on the damaged melt was consequential on property damage and recoverable; profits lost during the power cut were pure economic loss and were not.
 M3#law-u04-13-q2@2: A surveyor values a house for a mortgage lender, knowing the buyer will rely on the report. The report includes a disclaimer. The house has serious defects. Is the surveyor likely liable to the buyer? | Yes: a duty was assumed; the disclaimer is likely unreasonable | No: there is no contract between surveyor and buyer | No: disclaimers always prevent liability in tort | Only the mortgage lender is entitled to sue | No: pure economic loss is never recoverable | Smith v Eric S Bush [1990]: the surveyor knew the buyer would rely on the valuation, so assumed responsibility, and the disclaimer failed UCTA's reasonableness test.
+Q: Which case held that the cost of repairing a defective building is pure economic loss? | Murphy v Brentwood DC [1991].
+Q: What could the factory recover in Spartan Steel v Martin? | Damaged metal and the profit on that melt, but not lost profit on future melts.
+Q: What elements show an assumption of responsibility under Hedley Byrne? | Special skill, knowledge that the claimant will rely on the advice for a particular purpose, and reasonable reliance.
+Q: Why did the claimant lose in Hedley Byrne v Heller? | The bank's reference was given "without responsibility", and the disclaimer defeated the claim.
+Q: What did Smith v Eric S Bush decide? | A surveyor's disclaimer to a house buyer was unreasonable under UCTA 1977.
+Q: Which case extended Hedley Byrne to services? | Henderson v Merrett Syndicates [1995].
+Q: What did White v Jones decide? | Disappointed beneficiaries of a negligently drafted will could recover under extended Hedley Byrne.
+Q: Which case concerns liability for negligent references? | Spring v Guardian Assurance [1995].
+Q: How does consequential economic loss differ from pure economic loss? | Consequential loss is recoverable with the property damage; pure economic loss usually isn't, unless there is an assumption of responsibility.
+Q: What is the general English approach to pure economic loss in negligence? | Reluctance to allow recovery, except where there is an assumption of responsibility.
 
 ## Professional negligence
 S: Professional negligence is the failure of a professional (such as a solicitor, accountant, surveyor, architect or doctor) to exercise the skill and care of a reasonably competent member of their profession, causing loss.
@@ -399,6 +529,16 @@ Q: What standard applies to a professional? | That of a reasonably competent mem
 Q: What did Perry v Raleys Solicitors decide? | The claimant must prove on the balance of probabilities what they themselves would have done if properly advised.
 M1#law-u04-14-q1@1: Which case extended a solicitor's duty to disappointed beneficiaries of a will? | White v Jones | Hedley Byrne v Heller | Caparo v Dickman | Spring v Guardian Assurance | Bolam v Friern | White v Jones [1995]: a solicitor who negligently delayed drawing up a will owed a duty to the intended beneficiaries who lost their inheritance.
 M2#law-u04-14-q2@2: A solicitor negligently fails to issue a claim in time. The client's lost claim had a 60% chance of success. How are damages likely assessed? | On a loss of a chance basis | The full value of the lost claim | Nothing, as the claim might have failed | Only the legal fees already paid | Only nominal damages for the breach | Allied Maples-style assessment of the lost litigation.
+Q: What is professional negligence? | A professional's failure to exercise the skill and care of a reasonably competent member of their profession, causing loss.
+Q: Which statutes imply a term of reasonable care and skill in professional contracts? | The Supply of Goods and Services Act 1982, s 13 and the Consumer Rights Act 2015, s 49.
+Q: Can a professional owe a duty to third parties? | Yes, to third parties who rely on the work where responsibility is assumed (Hedley Byrne; White v Jones).
+Q: Is an error of judgement necessarily negligence? | No. A professional is not a guarantor of success.
+Q: Why was the doctor liable in Montgomery v Lanarkshire Health Board? | She failed to disclose the material risk of shoulder dystocia in vaginal birth.
+Q: When may professional negligence damages be assessed on a loss of a chance basis? | Where the outcome depends on what a third party would have done (Allied Maples).
+Q: Which pre-action protocol applies to many professional negligence claims? | The Pre-Action Protocol for Professional Negligence; clinical negligence has its own protocol.
+Q: Which limitation provisions are relevant to latent damage in professional negligence? | The Limitation Act 1980, ss 14A and 14B.
+Q: What evidence do professional negligence claims usually turn on? | Expert evidence about what a competent practitioner would have done.
+Q: Does Bolam govern a doctor's advice on risk? | No. Montgomery applies to advice about risks.
 
 ## Occupiers' liability
 S: Occupiers owe duties to people on their premises under two statutes: the Occupiers' Liability Act 1957 for lawful visitors, and the Occupiers' Liability Act 1984 for others, mainly trespassers.
@@ -431,6 +571,16 @@ Q: What is the common duty of care under the OLA 1957? | To take reasonable care
 Q: What losses can a trespasser recover under the OLA 1984? | Personal injury only, not property damage.
 M1#law-u04-15-q1@1: Which case concerned a man diving into a shallow lake despite warning signs? | Tomlinson v Congleton BC | Roles v Nathan | Glasgow Corporation v Taylor | Wheat v Lacon | Haseldine v Daw | Tomlinson: an obvious risk voluntarily run.
 M3#law-u04-15-q2@2: Two chimney sweeps die from fumes after ignoring warnings while working on a flue. Is the occupier liable? | No: skilled visitors guard against their calling's risks | Yes: occupiers are strictly liable for all visitors | Yes: warnings never discharge the common duty | No: chimney sweeps are treated as trespassers | Yes, under the Occupiers' Liability Act 1984 | Roles v Nathan: under OLA 1957, s 2(3)(b), skilled visitors are expected to guard against risks of their calling, and the warnings given discharged the duty under s 2(4)(a).
+Q: Which statute governs occupiers' duties to lawful visitors? | The Occupiers' Liability Act 1957.
+Q: Which statute governs occupiers' duties to non-visitors such as trespassers? | The Occupiers' Liability Act 1984.
+Q: Who is an occupier? | Someone with sufficient control over the premises (Wheat v E Lacon); there can be more than one.
+Q: What counts as premises under the occupiers' liability Acts? | Land, buildings, and fixed or movable structures, including vessels and vehicles.
+Q: How must an occupier treat child visitors under the OLA 1957? | Be prepared for children to be less careful than adults (s 2(3)(a)), bearing in mind allurements.
+Q: What did Phipps v Rochester Corporation decide? | Parents are expected to supervise very young children.
+Q: When does a warning discharge the OLA 1957 duty? | When it is enough to enable the visitor to be reasonably safe (s 2(4)(a)).
+Q: When is an occupier not liable for an independent contractor's faulty work? | When reasonable care was taken in choosing and checking the contractor (s 2(4)(b); Haseldine v Daw).
+Q: When does a duty arise under the OLA 1984? | If the occupier knows of the danger, knows or has reason to believe someone may come near it, and may reasonably be expected to offer protection.
+Q: What is a visitor in occupiers' liability? | A person with express or implied permission to be on the premises.
 
 ## Employers' liability
 S: Employers owe their employees a personal, non-delegable duty to take reasonable care for their safety. Breach can give rise to claims in negligence and, sometimes, for breach of statutory duty.
@@ -460,6 +610,16 @@ Q: What are the four aspects of the employer's duty from Wilsons and Clyde Coal 
 Q: What did s 69 of the Enterprise and Regulatory Reform Act 2013 change? | It removed civil liability for breach of most health and safety regulations, so claims generally proceed in negligence.
 M1#law-u04-16-q1@1: Which case concerned an employer liable for a known practical joker? | Hudson v Ridge Manufacturing | Walker v Northumberland CC | McDermid v Nash Dredging | Hatton v Sutherland | Wilsons and Clyde Coal v English | The employer failed to provide competent fellow employees.
 M2#law-u04-16-q2@2: An employee is injured by a defective tool bought from a reputable supplier. The employer wasn't at fault. What is the position? | The employer is liable under the 1969 Act | The employer isn't liable, not being negligent | Only the supplier of the tool can be sued | The employee must prove employer negligence | The defence of volenti applies to the employee | The 1969 Act deems the employer negligent for defective equipment.
+Q: What is a non-delegable duty? | A duty the employer remains responsible for even if performance is delegated.
+Q: Which case shows the employer's duty is non-delegable? | McDermid v Nash Dredging [1987].
+Q: What does the Employer's Liability (Defective Equipment) Act 1969 do? | It makes the employer liable for defective equipment supplied by a third party.
+Q: What does a safe system of work include? | The organisation and methods of work, including supervision and training (General Cleaning Contractors v Christmas).
+Q: Does the employer's duty cover psychiatric injury from work stress? | Yes, where foreseeable (Hatton v Sutherland; Walker v Northumberland CC).
+Q: How are health and safety regulations used in claims after 1 October 2013? | As evidence of the standard of care in negligence, since breach alone generally gives no civil claim.
+Q: Which Act requires employers to hold liability insurance? | The Employers' Liability (Compulsory Insurance) Act 1969.
+Q: What happened in Hudson v Ridge Manufacturing? | An employer was liable for injury caused by a known practical joker, breaching the duty to provide competent staff.
+Q: To whom do employers owe a personal duty of reasonable care for safety? | Their employees.
+Q: What can breach of the employer's duty give rise to? | Claims in negligence and, sometimes, for breach of statutory duty.
 
 ## Vicarious liability
 S: Vicarious liability makes one person (usually an employer) liable for a tort committed by another (usually an employee), without any fault of their own. It is justified by the employer's control, benefit and ability to insure.
@@ -490,6 +650,16 @@ Q: What are the two stages of vicarious liability? | A relationship of employmen
 Q: Why was Morrisons not vicariously liable for the data leak? | The employee was pursuing a personal vendetta, not acting on the employer's business.
 M1#law-u04-17-q1@1: Which case established the close connection test? | Lister v Hesley Hall | Barclays Bank v Various Claimants | Rose v Plenty | Cox v Ministry of Justice | Donoghue v Stevenson | Lister v Hesley Hall [2001]: a warden's abuse of boys in his care was so closely connected with his duties that the employer was vicariously liable.
 M2#law-u04-17-q2@2: A milk roundsman, forbidden to carry passengers, lets a boy help deliver milk; the boy is injured by his careless driving. Is the employer vicariously liable? | Yes: the act furthered the employer's business | No: the act was expressly prohibited | No: the boy was a trespasser on the float | Only if the employer knew about it | Only in contract, not in tort | A wrongful way of doing an authorised job.
+Q: What is vicarious liability? | Liability for another person's tort without any personal fault, usually an employer's liability for an employee.
+Q: What justifies vicarious liability? | The employer's control, benefit and ability to insure.
+Q: Why was Barclays Bank not vicariously liable for the doctor's assaults? | The doctor was an independent contractor in business on his own account.
+Q: Which cases recognised relationships "akin to employment"? | Various Claimants v Catholic Child Welfare Society [2012] and Cox v Ministry of Justice [2016].
+Q: Which recent case restated the approach to non-employment relationships in vicarious liability? | Trustees of the Barry Congregation of Jehovah's Witnesses v BXB [2023] UKSC 15.
+Q: What does the close connection test ask? | Whether the tort was so closely connected with what the employee was authorised to do that it is fair and just to hold the employer liable.
+Q: Can a prohibited act be within the course of employment? | Yes, if it is a wrongful way of doing an authorised job (Limpus v London General Omnibus; Rose v Plenty).
+Q: What is a "frolic of his own"? | An act entirely outside the job, for which the employer isn't vicariously liable.
+Q: What is the liability position of the employer and employee under vicarious liability? | They are jointly liable; the employer may seek contribution or indemnity from the employee, though this is rare.
+Q: Which case found an employer vicariously liable for a petrol station attendant's assault on a customer? | Mohamud v WM Morrison Supermarkets [2016] UKSC 11 applied the close connection test.
 
 ## Product liability
 S: People injured by defective products can sue under the Consumer Protection Act 1987, Part 1, which imposes strict liability on producers, or in negligence under Donoghue v Stevenson.
@@ -515,6 +685,16 @@ Q: Who can be liable under the CPA 1987? | Producers, own-branders, importers in
 Q: What is the development risks defence? | The state of scientific and technical knowledge when the product was supplied did not enable the defect to be discovered.
 M1#law-u04-18-q1@1: What is the long-stop for CPA claims? | Ten years from when the product was put into circulation | Three years from purchase | Six years from damage | Fifteen years from manufacture | There is none | Limitation Act 1980, s 11A: claims under the CPA 1987 are barred ten years after the product was put into circulation, whatever the date of injury or knowledge.
 M2#law-u04-18-q2@2: A consumer's new kettle explodes, injuring her and destroying the kettle. What can she recover under the CPA 1987? | Damages for her personal injury, but not for the kettle itself | Only the price of the kettle | Nothing without proving fault | Only property damage over £275 | Only if she bought it from the manufacturer | The CPA covers injury and other property, not the product itself.
+Q: What kind of liability does the Consumer Protection Act 1987, Part 1 impose? | Strict liability on producers, without proof of fault.
+Q: How is a defect defined under the CPA 1987, s 3? | The product's safety is not such as persons generally are entitled to expect, considering all the circumstances.
+Q: What circumstances are relevant in deciding whether a product is defective? | Marketing, instructions and warnings, and what might reasonably be expected to be done with it.
+Q: What damage is recoverable under the CPA 1987, s 5? | Death, personal injury, and damage to private property over £275, but not the product itself.
+Q: Name two defences under the CPA 1987, s 4 besides development risks. | Compliance with legal requirements, not supplying the product, or the defect not existing when supplied.
+Q: What is the limitation period for CPA claims? | Three years from damage or knowledge, with a ten-year long-stop from circulation (Limitation Act 1980, s 11A).
+Q: When is a negligence claim useful instead of the CPA for a defective product? | Where the CPA doesn't apply, such as property damage under £275 or claims outside the long-stop.
+Q: What must a claimant prove under the CPA 1987? | Defect and causation, but not fault.
+Q: Name a leading case on the meaning of defect under the CPA. | A v National Blood Authority [2001] (also Wilkes v DePuy International [2016]).
+Q: When can a supplier be liable under the CPA 1987? | When it fails to identify the producer on request.
 
 ## Defamation
 S: Defamation protects reputation. Libel is defamation in permanent form (writing, broadcasts, online posts); slander is in transient form (speech). The law in England and Wales is mainly in the Defamation Act 2013.
@@ -549,6 +729,16 @@ Q: What does s 1 of the Defamation Act 2013 require? | That the publication caus
 Q: Name three defences under the Defamation Act 2013. | Truth, honest opinion, public interest (and others such as privilege and website operators).
 M1#law-u04-19-q1@1: What is the limitation period for defamation? | One year | Three years | Six years | Twelve years | No limit | Limitation Act 1980, s 4A: defamation claims must be brought within one year, and the single publication rule stops repeat publication restarting the clock.
 M2#law-u04-19-q2@2: A reviewer writes, "In my view this restaurant's food is overpriced and bland," describing her meal. The owner sues. What is the most relevant defence? | Honest opinion | Truth | Public interest only | Absolute privilege | Innocent dissemination | A statement of opinion with its basis indicated, which an honest person could hold.
+Q: What is libel? | Defamation in permanent form, such as writing, broadcasts or online posts.
+Q: What is slander? | Defamation in transient form, such as speech.
+Q: What test of defamatory meaning comes from Sim v Stretch? | Whether the statement tends to lower the claimant in the estimation of right-thinking members of society.
+Q: What did Lachaux v Independent Print decide about serious harm? | It must be shown as a fact, by actual or likely impact, not merely from the words' tendency.
+Q: What extra requirement generally applies to slander? | Proof of special damage, with exceptions.
+Q: What is the truth defence under the Defamation Act 2013, s 2? | That the imputation conveyed is substantially true.
+Q: What are the requirements of honest opinion under s 3? | A statement of opinion, indicating its basis, which an honest person could have held on the facts.
+Q: Which occasions attract absolute privilege in defamation? | Court and parliamentary proceedings.
+Q: What does the single publication rule do in defamation? | It runs the one-year limitation period from first publication (Defamation Act 2013, s 8).
+Q: Which statute governs defamation in Scotland? | The Defamation and Malicious Publication (Scotland) Act 2021.
 
 ## Private nuisance
 S: Private nuisance is an unlawful interference with a person's use or enjoyment of land, or some right over or in connection with it. It protects the claimant's land, not the claimant personally.
@@ -585,6 +775,16 @@ Q: Who can sue in private nuisance? | A person with a proprietary interest in th
 Q: Is "coming to the nuisance" a defence? | No (Miller v Jackson; Coventry v Lawrence).
 M1#law-u04-20-q1@1: Which case held that a claimant needs a proprietary interest to sue in private nuisance? | Hunter v Canary Wharf | Sturges v Bridgman | Coventry v Lawrence | Christie v Davey | Robinson v Kilvert | Hunter v Canary Wharf [1997]: private nuisance protects interests in land, so only those with a proprietary interest (such as owners and tenants) can sue.
 M2#law-u04-20-q2@2: A neighbour bangs trays on the wall during a music teacher's lessons purely to annoy him. What makes this a nuisance? | Malice by the defendant | Nothing: noise is never a nuisance | The music teacher's sensitivity | The grant of planning permission | The time of day of the noise | Malice can make otherwise lawful noise a nuisance.
+Q: What is private nuisance? | An unlawful interference with a person's use or enjoyment of land, or some right over or in connection with it.
+Q: Name the three kinds of private nuisance. | Encroachment onto land, physical damage to land, and interference with quiet enjoyment.
+Q: What did Sturges v Bridgman say about locality? | What would be a nuisance in Belgrave Square would not necessarily be so in Bermondsey.
+Q: Does planning permission authorise a nuisance? | Not of itself (Coventry v Lawrence [2014]).
+Q: What did Robinson v Kilvert decide? | An abnormally sensitive use of land isn't protected in nuisance.
+Q: Which cases show malice can make conduct a nuisance? | Christie v Davey [1893] and Hollywood Silver Fox Farm v Emmett [1936].
+Q: When is an occupier liable for a nuisance it did not create? | When it continues or adopts it (Sedleigh-Denfield v O'Callaghan).
+Q: What did Fearn v Tate Gallery decide? | Constant visual intrusion from a viewing platform into flats was a nuisance.
+Q: What is the usual remedy for private nuisance? | An injunction; damages and abatement are also available.
+Q: How long must a nuisance continue to be acquired by prescription? | 20 years, as an easement.
 
 ## Public nuisance
 S: Public nuisance is an act or omission that endangers the life, health, property or comfort of the public, or obstructs the public in exercising rights common to all. It is both a crime and, for those suffering particular damage, a tort.
@@ -612,6 +812,16 @@ Q: What must a private individual show to sue in public nuisance? | That they su
 Q: Which Act created a statutory offence of public nuisance? | The Police, Crime, Sentencing and Courts Act 2022, s 78.
 M1#law-u04-21-q1@1: Which case defined the "class" affected by a public nuisance? | Attorney General v PYA Quarries | Hunter v Canary Wharf | Rylands v Fletcher | Christie v Davey | Coventry v Lawrence | PYA Quarries discussed the class of people affected.
 M2#law-u04-21-q2@2: A quarry's dust affects a whole village; a café owner loses most of her trade because customers stay away. Can she sue in public nuisance? | Yes, if she proves special damage | No: only the Attorney General can sue | No: she must sue in private nuisance | Yes, but only for personal injury | No: dust can never be a nuisance | The dust is a public nuisance affecting a class of people, and the café owner's loss of trade is particular damage beyond what the public suffers, giving her a private action.
+Q: What is public nuisance? | An act or omission endangering the life, health, property or comfort of the public, or obstructing the public in exercising common rights.
+Q: Is public nuisance a crime or a tort? | Both: a crime, and a tort for those suffering particular damage.
+Q: What is special damage in public nuisance? | Damage beyond that suffered by the public generally.
+Q: Give an example of special damage in public nuisance. | A business losing customers because of an obstruction, or personal injury.
+Q: Give common examples of public nuisance. | Obstructing highways, dangerous things on or near highways, and pollution affecting a community.
+Q: Must a claimant have an interest in land to sue in public nuisance? | No, unlike private nuisance.
+Q: Can personal injury be recovered in public nuisance? | Yes.
+Q: Who can seek an injunction for the public in public nuisance? | The Attorney General or a local authority.
+Q: What does the statutory offence in the PCSC Act 2022, s 78 cover? | Intentionally or recklessly causing public nuisance.
+Q: What happened in Attorney General v PYA Quarries? | Quarrying threw out stones and caused dust and vibration affecting a class of local residents.
 
 ## Trespass to the person
 S: Trespass to the person protects bodily integrity and liberty. It has three forms: assault, battery and false imprisonment. All are actionable per se (without proof of damage), and all require a direct and intentional act.
@@ -640,6 +850,16 @@ Q: What are the three forms of trespass to the person? | Assault, battery and fa
 Q: What did Letang v Cooper decide? | Unintentional (negligent) direct harm should be sued in negligence, not trespass.
 M1#law-u04-22-q1@1: Which tort covers intentionally causing psychiatric harm by a lie? | The tort in Wilkinson v Downton | Battery | Assault | False imprisonment | Private nuisance | Wilkinson v Downton, restated in Rhodes v OPO.
 M2#law-u04-22-q2@2: A driver carelessly reverses into a pedestrian. Which claim is appropriate? | Negligence, because the harm was unintentional (Letang v Cooper) | Battery | Assault | False imprisonment | Trespass to land | Unintentional harm is a matter for negligence.
+Q: Why is trespass to the person actionable per se? | It protects bodily integrity and liberty, so no proof of damage is needed.
+Q: What does directness mean in trespass to the person? | The harm must follow directly from the defendant's act, not consequentially.
+Q: What state of mind does trespass to the person require? | An intentional act (or perhaps reckless).
+Q: What is assault in tort? | Causing the claimant reasonably to apprehend the immediate infliction of force.
+Q: What is battery? | The intentional and direct application of force to another.
+Q: What is false imprisonment? | The unlawful total restraint of a person's liberty.
+Q: Which case restated the tort in Wilkinson v Downton? | Rhodes v OPO [2015] UKSC 32.
+Q: What does Rhodes v OPO require for the Wilkinson v Downton tort? | Conduct directed at the claimant, intention to cause harm, and actual harm.
+Q: Name the defences to trespass to the person. | Consent, self-defence, necessity, lawful authority, and parental discipline within the law.
+Q: How does Wales differ from England on parental discipline? | Wales abolished the reasonable punishment defence in 2022.
 
 ## Assault
 S: Assault, as a tort, is an act that causes the claimant reasonably to apprehend the immediate infliction of unlawful force on them. No contact is needed.
@@ -670,6 +890,16 @@ Q: Is physical contact required for assault? | No. Assault requires reasonable a
 Q: What did Tuberville v Savage decide? | Words can negate what would otherwise be an assault.
 M1#law-u04-23-q1@1: Which case found no assault because picketers were held back and couldn't reach the workers? | Thomas v NUM | Stephens v Myers | Tuberville v Savage | R v Ireland | Collins v Wilcock | Thomas v NUM [1986]: the picketers were held back by police and the workers were in vehicles, so there was no reasonable apprehension of immediate force.
 M2#law-u04-23-q2@2: A man raises his fist at a woman across a table and says, "If you weren't my boss, I'd hit you." Is this likely an assault? | Probably not: the words indicate he won't use force (Tuberville v Savage) | Yes: raising a fist is always assault | Yes: words are irrelevant | No: assault needs contact | Yes, if she is frightened at all | Tuberville v Savage (1669): words that make clear force won't be used can negate an apparent threat, so there is no reasonable apprehension of immediate force.
+Q: What does apprehension mean in the tort of assault? | Expectation, not fear, of imminent force.
+Q: What are the elements of assault in tort? | An act, reasonable apprehension of immediate force, and intention or recklessness to cause that apprehension.
+Q: What did Stephens v Myers decide? | Advancing with a clenched fist was an assault even though the defendant was stopped before reaching the claimant.
+Q: Can words alone amount to an assault? | Yes (R v Ireland [1998], silent phone calls, a criminal case).
+Q: Give an example of battery without assault. | Hitting someone from behind.
+Q: Give an example of assault without battery. | A threatened punch that misses.
+Q: Which Act makes harassment a civil wrong? | The Protection from Harassment Act 1997, s 3.
+Q: What remedies are available for harassment under the 1997 Act? | Damages for anxiety and financial loss, and an injunction.
+Q: How does assault differ from harassment? | A single threat can be an assault; a pattern of conduct may be harassment.
+Q: Why were the threats in Thomas v NUM not an assault? | The pickets couldn't carry them out immediately because police held them back.
 
 ## Battery
 S: Battery is the intentional and direct application of unlawful force to another person. Any touching can be a battery; no hostility or injury is required, though everyday contact is implicitly accepted.
@@ -699,6 +929,16 @@ Q: Is hostility required for battery? | No (the better view after F v West Berks
 Q: Is treating a capacitous adult without consent a battery? | Yes, even if the treatment is beneficial.
 M1#law-u04-24-q1@1: Which case found a police officer's grip on a woman's arm, without arrest, to be a battery? | Collins v Wilcock | Wilson v Pringle | Re T | F v West Berkshire | Stephens v Myers | Collins v Wilcock [1984]: holding someone's arm to stop them, without a power of arrest, goes beyond acceptable everyday contact and is a battery.
 M2#law-u04-24-q2@2: A surgeon removes a mole during an operation the patient consented to, without asking, believing it to be helpful. What is the position? | Battery: the patient didn't consent to that procedure | No tort because it was beneficial | Negligence only if harm resulted | No tort because the patient was unconscious | Lawful under the doctrine of necessity | Treatment beyond the consent given, with no emergency, is a battery.
+Q: Does battery require injury? | No. Any touching can be a battery; no hostility or injury is required.
+Q: Can indirect means count as a battery? | Yes, if immediate, such as throwing water or a missile.
+Q: What must be intended for battery? | The touching, not necessarily harm.
+Q: What makes force unlawful in battery? | The absence of consent or other lawful justification.
+Q: Give examples of everyday contact that is not battery. | Jostling in a crowd or a tap on the shoulder.
+Q: Which case suggested hostility was required for battery? | Wilson v Pringle [1987], though this has been doubted.
+Q: Which cases show treatment of a capacitous adult without consent is a battery? | Re T [1992] and Ms B v An NHS Hospital Trust [2002].
+Q: When is treatment of a person lacking capacity lawful? | When it is in their best interests, under the Mental Capacity Act 2005, s 5.
+Q: What interest does battery protect? | Bodily autonomy, so unwanted touching is actionable even if harmless or well-meant.
+Q: Name the defences to battery. | Consent (express or implied), self-defence using reasonable force, necessity and lawful authority.
 
 ## False imprisonment
 S: False imprisonment is the unlawful, total restraint of another person's freedom of movement, for however short a time. The claimant need not know at the time that they are detained.
@@ -730,6 +970,16 @@ Q: Must the claimant know they are being detained? | No (Murray v Ministry of De
 Q: What did Bird v Jones decide? | Partial obstruction, where the claimant could go another way, is not false imprisonment.
 M1#law-u04-25-q1@1: Which case found detention beyond a correctly calculated release date to be false imprisonment? | R v Governor of Brockhill Prison, ex p Evans (No 2) | Bird v Jones | Murray v MoD | Herd v Weardale Steel | Austin v Commissioner of Police | The governor had no authority for the extra days.
 M2#law-u04-25-q2@2: A store detective locks a suspected shoplifter in an office for 20 minutes without arresting her; she has taken nothing. What is the likely claim? | False imprisonment | Assault only | Battery only | No claim because 20 minutes is short | Defamation only | Total restraint without lawful authority.
+Q: What is false imprisonment? | The unlawful, total restraint of another person's freedom of movement, for however short a time.
+Q: What are the elements of false imprisonment? | Total restraint, a direct and intentional act, and no lawful authority.
+Q: Give examples of lawful authority for detention. | Lawful arrest under PACE 1984, detention under mental health legislation, and prison sentences.
+Q: What did R v Governor of Brockhill Prison, ex p Evans (No 2) decide? | Detention beyond lawful authority, past the correct release date, is false imprisonment.
+Q: What did R (Lumba) v Home Secretary decide? | Detention under an unlawful policy was false imprisonment even though the person could lawfully have been detained, with nominal damages.
+Q: Is a person held to reasonable agreed conditions for leaving falsely imprisoned? | No (Robinson v Balmain Ferry; Herd v Weardale Steel).
+Q: What did Herd v Weardale Steel concern? | A miner held to agreed conditions for leaving a mine, which wasn't false imprisonment.
+Q: Is police kettling of crowds false imprisonment? | It may be lawful where needed to prevent serious disorder (Austin v Commissioner of Police [2009]).
+Q: What should you ask when analysing false imprisonment? | Whether the restraint was total, and whether there was lawful authority for every minute of it.
+Q: Why was there no false imprisonment in Bird v Jones? | The claimant was free to go back another way, so the restraint wasn't complete.
 
 ## Trespass to land
 S: Trespass to land is the unjustified, direct and intentional interference with land in another's possession. It is actionable per se, protecting the right to exclusive possession.
@@ -762,6 +1012,16 @@ Q: Is mistaken belief that the land is yours a defence to trespass? | No: the in
 Q: What did Bernstein v Skyviews decide? | An owner's rights in airspace extend only to the height necessary for ordinary use and enjoyment, so overflight at a reasonable height isn't trespass.
 M1#law-u04-26-q1@1: Which case found that drilling for oil beneath land was a trespass? | Bocardo v Star Energy | Bernstein v Skyviews | Kelsen v Imperial Tobacco | Hunter v Canary Wharf | Rylands v Fletcher | Bocardo v Star Energy [2010] UKSC 35: the landowner owned the subsoil, so drilling diagonally beneath it without permission was a trespass (with modest damages).
 M3#law-u04-26-q2@2: A builder's crane swings over a neighbour's garden without permission. What is the likely position? | Trespass to airspace; an injunction may be sought | No trespass, as nothing touched the ground | Private nuisance only, not trespass | Lawful, because of planning permission | A public nuisance only, not a private wrong | Kelsen-type intrusion into usable airspace.
+Q: What is trespass to land? | The unjustified, direct and intentional interference with land in another's possession.
+Q: What forms can entry take in trespass to land? | Entering the land, remaining after permission ends, or placing objects on it.
+Q: Must the claimant in trespass to land be the owner? | No. The claimant must be in possession, not necessarily the owner.
+Q: What did Kelsen v Imperial Tobacco decide? | An overhanging advertising sign was a trespass to the airspace.
+Q: What did Bocardo v Star Energy decide? | Tunnelling below land, by drilling for oil, can be a trespass.
+Q: What is the implied licence in trespass? | An implied permission to approach the front door.
+Q: What are mesne profits? | Damages representing a fair price for the use of the land (user damages).
+Q: What remedies are available for trespass to land? | Damages, injunction, self-help with reasonable force, and possession proceedings under CPR Part 55.
+Q: Which criminal offence covers squatting in a residential building? | The offence in the Legal Aid, Sentencing and Punishment of Offenders Act 2012, s 144.
+Q: What is trespass ab initio? | A rule making an entrant a trespasser from the start if they abuse their authority.
 
 ## Defences
 S: Even where the elements of a tort are proved, the defendant may escape or reduce liability through a defence. Key general defences are consent, contributory negligence, illegality, necessity, statutory authority and limitation.
@@ -788,6 +1048,16 @@ Q: Name five general defences in tort. | Consent (volenti), contributory neglige
 Q: What did Henderson v Dorset Healthcare decide? | A claimant couldn't recover damages for the consequences of her own criminal act (manslaughter), even though the defendant's negligence contributed.
 M1#law-u04-27-q1@1: Which defence applies where a claimant acted in an emergency to prevent greater harm? | Necessity | Volenti | Contributory negligence | Illegality | Limitation | Necessity justifies otherwise tortious acts to prevent greater harm.
 M2#law-u04-27-q2@2: In tort, how is self-defence judged? | Honest, reasonable belief and reasonable force | The defendant's honest belief alone is enough | Any force at all is justified in self-defence | Only police officers can rely on the defence | Self-defence isn't a defence in tort at all | Ashley set a stricter test in tort than in criminal law.
+Q: What is the illegality defence called? | Ex turpi causa.
+Q: Which approach governs the illegality defence? | The policy approach of Patel v Mirza [2016], as explained for torts in Henderson v Dorset Healthcare [2020].
+Q: Which cases illustrate the necessity defence in tort? | Esso Petroleum v Southport Corp [1956] and F v West Berkshire HA [1990].
+Q: Which case illustrates the statutory authority defence? | Allen v Gulf Oil [1981].
+Q: What did Ashley v Chief Constable of Sussex decide about self-defence in tort? | The belief that force was necessary must be honest and reasonable.
+Q: What does necessity as a defence involve? | Acting to prevent greater harm.
+Q: What do the Compensation Act 2006, s 1 and the SARAH Act 2015 ask courts to consider? | Whether precautions would discourage desirable activities, and whether the defendant acted for society's benefit or in an emergency.
+Q: Which defences defeat a claim entirely? | Volenti and illegality.
+Q: Which defence only reduces damages? | Contributory negligence.
+Q: What does the limitation defence mean? | The claim was brought too late.
 
 ## Contributory negligence
 S: Contributory negligence is a partial defence: where the claimant's own failure to take reasonable care for their safety contributed to their damage, damages are reduced to the extent the court thinks just and equitable.
@@ -818,6 +1088,16 @@ Q: Which Act provides for contributory negligence? | The Law Reform (Contributor
 Q: What reductions did Froom v Butcher suggest for failing to wear a seat belt? | 25% if wearing it would have prevented the injury; 15% if it would have reduced it considerably; none if it would have made no difference.
 M1#law-u04-28-q1@1: Can contributory negligence reduce damages by 100%? | No: it is a partial defence | Yes, where the claimant was mostly at fault | Only in motoring cases | Only if the claimant was drunk | Yes, if the court thinks it just | Pitts v Hunt: a 100% reduction is inconsistent with the Act.
 M2#law-u04-28-q2@2: A passenger not wearing a seat belt suffers head injuries that a belt would have prevented. What reduction is likely? | Around 25% (Froom v Butcher) | 100% | 50% | 15% | None | Where a belt would have prevented the injury entirely, Froom v Butcher suggests 25%.
+Q: What is the test for contributory negligence? | Did the claimant fail to take reasonable care for their own safety, and did that failure contribute to the damage?
+Q: Must the claimant's fault contribute to the accident for contributory negligence? | No. It must contribute to the damage, not necessarily the accident.
+Q: Which case held a 100% reduction for contributory negligence is impossible? | Pitts v Hunt [1991].
+Q: How are children judged for contributory negligence? | By the standard of a child of their age (Gough v Thorne).
+Q: Which case allows for the "agony of the moment" in contributory negligence? | Jones v Boyce (1816).
+Q: What did Owens v Brimmell concern? | Reducing damages for accepting a lift with a driver the claimant knew was drunk.
+Q: What did Jackson v Murray decide for pedestrians? | The motorist's greater causative potency often means a lower reduction for the pedestrian.
+Q: What reduction applies for not wearing a seat belt if it would have made no difference? | None.
+Q: What is apportionment in contributory negligence? | Reducing damages according to the claimant's share of responsibility.
+Q: Is contributory negligence a complete or partial defence? | Partial: it reduces damages but never wholly defeats the claim.
 
 ## Voluntary assumption of risk
 S: Volenti non fit injuria ("to a willing person, no injury is done") is a complete defence where the claimant, with full knowledge of the nature and extent of the risk, freely and voluntarily agreed to accept it.
@@ -848,6 +1128,16 @@ Q: What does volenti non fit injuria mean? | "To a willing person, no injury is 
 Q: Why can't volenti be used against car passengers? | Road Traffic Act 1988, s 149 prevents it where insurance is compulsory.
 M1#law-u04-29-q1@1: Which case found a passenger volens for flying with a drunk pilot? | Morris v Murray | Smith v Baker | ICI v Shatwell | Haynes v Harwood | Pitts v Hunt | Morris v Murray [1991]: a passenger who helped prepare a flight with a pilot he knew was very drunk had voluntarily accepted the risk, so volenti defeated the claim.
 M3#law-u04-29-q2@2: An employee continues working near a dangerous crane, knowing the risk, because she fears losing her job. Is she volens? | No: knowing of a risk isn't accepting it | Yes: she knew of the risk from the crane | Yes, because she was paid for the work | No, because cranes are always safe | Yes, under the Road Traffic Act 1988 | Smith v Baker [1891]: knowing about a risk isn't the same as freely agreeing to bear it, and an employee working under economic pressure rarely consents.
+Q: What must the claimant know for volenti to apply? | The nature and extent of the risk.
+Q: What did Smith v Baker decide about volenti? | A quarry worker who knew of the danger of overhead stones wasn't volens: knowledge isn't agreement.
+Q: Why are employees rarely volens? | Because of economic pressure on them.
+Q: When was volenti applied to employees in ICI v Shatwell? | Where brothers deliberately breached safety rules.
+Q: Are rescuers volens? | No, if they are acting under a moral duty (Haynes v Harwood).
+Q: What risks do sports participants accept? | The ordinary risks of the game, but not deliberate or reckless foul play.
+Q: Does volenti apply where the defendant's duty was to prevent the claimant's suicide? | No (Reeves v Commissioner of Police).
+Q: What does UCTA 1977, s 2(3) say about notices and volenti? | Agreement to or awareness of a notice is not of itself evidence of voluntary acceptance of risk.
+Q: Why do courts apply volenti narrowly? | Because it is a complete defence; contributory negligence is the usual route.
+Q: Can the agreement to accept a risk be implied? | Yes. Agreement for volenti may be express or implied.
 
 ## Remedies and damages
 S: The main remedy in tort is compensatory damages, aimed at putting the claimant, as far as money can, in the position they would have been in if the tort hadn't been committed. Injunctions and other remedies supplement damages.
@@ -881,4 +1171,14 @@ Q: What are the three categories of exemplary damages in Rookes v Barnard? | Opp
 Q: Under which Act can dependants recover for a death caused by a tort? | The Fatal Accidents Act 1976.
 M1#law-u04-30-q1@1: What are general damages in personal injury for? | Pain, suffering and loss of amenity | Past loss of earnings | Medical receipts | Travel costs | Funeral costs | General damages compensate non-financial loss.
 M2#law-u04-30-q2@2: A council's officers deliberately and oppressively unlawfully evict a tenant. Which damages might be available in addition to compensation? | Exemplary damages | Only nominal damages | Only damages for property | No damages, only an injunction | Damages in contract only | Rookes v Barnard [1964]: exemplary damages are available for oppressive, arbitrary or unconstitutional action by servants of the government, which includes council officers.
+Q: What are special damages? | Quantifiable past losses, such as earnings, care and expenses.
+Q: What are nominal damages for? | Infringement of a right without loss, as in torts actionable per se.
+Q: What are aggravated damages? | Damages for injury to feelings caused by the manner of the tort.
+Q: Are vindicatory damages recognised separately in English law? | No (Lumba [2011]).
+Q: What guides general damages for pain, suffering and loss of amenity? | The Judicial College Guidelines.
+Q: How are future losses in personal injury calculated? | Using multipliers and multiplicands with the Ogden tables and the discount rate set by the Lord Chancellor.
+Q: How are certain state benefits dealt with in personal injury damages? | They are recovered from the defendant through the Compensation Recovery Unit.
+Q: What does the Law Reform (Miscellaneous Provisions) Act 1934 do? | It lets the deceased's estate keep its claim.
+Q: What can be recovered under the Fatal Accidents Act 1976? | Dependants' lost dependency, a fixed bereavement award for limited relatives, and funeral expenses.
+Q: How should damages be split in personal injury questions? | Into general (PSLA) and special (financial), past and future.
 `;

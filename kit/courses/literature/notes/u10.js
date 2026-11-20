@@ -42,6 +42,16 @@ M2#literature-u10-01-q2@2: Why should an unseen answer be organised by ideas rat
 M3#literature-u10-01-q3@3: A poem's last line is much shorter than the rest. What might a strong response say? | The broken pattern emphasises a final change or loss | The poet ran out of ideas | Line length is never worth discussing | The printer made an error | Departures from a pattern create emphasis and meaning.
 SEQ1#literature-u10-01-q4@2: Order the steps for approaching an unseen poem. | Read for overall sense ; Read again and annotate ; Underline key words in the question ; Plan three or four points ; Write with an overview first | A method saves time and improves focus.
 SA3#literature-u10-01-q5@2,3: Explain how you would analyse the structure of an unseen poem. | Look at stanza organisation and line lengths, rhyme and metre and where they change; enjambment and caesura and their effects on pace; the volta or turning point where tone or argument shifts; and how the ending relates to the opening, such as a circular structure or a twist. Always link structural choices to meaning and effect, not just labels. | Stanzas and lines ; Rhyme and metre ; Enjambment and caesura ; Volta ; Opening and ending
+Q: How many times should you read an unseen poem before writing? | At least twice: once for overall sense and once slowly with a pen.
+Q: Why should you pay attention to the title of an unseen poem? | The title often frames the poem's meaning.
+Q: What two summary sentences should you write after first reading an unseen poem? | One on what the poem seems to be about, and a second on what it might really be about.
+Q: Which language features should you annotate in an unseen poem? | Striking words, imagery, metaphors, sound patterns and changes in register.
+Q: Why should you identify the form of an unseen poem? | Each form, such as a sonnet, ballad or dramatic monologue, brings its own expectations.
+Q: Which structural features should you annotate in an unseen poem? | Stanza breaks, line lengths, enjambment, caesura, the volta or turning point, and how the ending relates to the beginning.
+Q: How many main points should you plan for an unseen poetry answer? | Three or four points that answer the question.
+Q: Why use tentative language such as "perhaps" or "this may suggest" in an unseen answer? | It shows thoughtful interpretation.
+Q: What is annotation? | Notes made on a text identifying its features and ideas.
+Q: In the "Lighthouse Keeper" example, what might a shift from "they" to "I" and a broken final line show? | The personal cost of the keeper's isolation.
 
 ## Approaching unseen prose
 LV: Intermediate · Application
@@ -85,6 +95,16 @@ M2#literature-u10-02-q2@2: What is the effect of narrowing focus from a wide lan
 M3#literature-u10-02-q3@3: Which comment shows analysis rather than retelling? | The short sentence "She waited." slows the pace and heightens tension | Then she waited for her brother to come home | She was waiting in the kitchen | The story is about a girl waiting | Analysis explains a method and its effect.
 MATCH1#literature-u10-02-q4@2: Match each feature to its likely effect. | Short sentences = Tension or emphasis ; Pathetic fallacy = Mood through weather ; Foreshadowing = Anticipation ; Dialogue = Revealing character | Methods create specific effects.
 SA3#literature-u10-02-q5@2,3: Explain how you would analyse characterisation in an unseen prose extract. | Look at what the character says and how (dialogue, tone), what they do, what they think if the narrator gives access, how they are described physically and through imagery, and how other characters react to them. Consider what the narrator withholds or emphasises, and whether the perspective is reliable. Link these to what the writer wants the reader to feel about the character. | Speech ; Actions and thoughts ; Description ; Others' reactions ; Narrative perspective
+Q: Why should you read the introduction to an unseen prose extract carefully? | It may give useful context.
+Q: Which types of narrator should you look for in an unseen prose extract? | First person, third person limited or omniscient, and whether the narrator is reliable.
+Q: What positions might an unseen prose extract occupy in its story? | An opening, a turning point or an ending.
+Q: Which features of setting and atmosphere should you analyse in prose? | Descriptive detail, imagery and pathetic fallacy.
+Q: How is characterisation revealed in a prose extract? | Through actions, speech, thoughts, how others react, and what the narrator reveals or withholds.
+Q: How should quotations be used in an unseen prose answer? | As short, embedded quotations, commenting on precise words.
+Q: What is narrative voice? | The perspective and personality of the narrator telling the story.
+Q: What is foreshadowing? | Hints of what will happen later in a story.
+Q: What is the effect of personifying the house in "it had learned to wait"? | It creates mystery and a sense of patience or menace.
+Q: What is the common mistake in answering on unseen prose? | Retelling the plot instead of explaining how and why the writer creates an effect.
 
 ## Approaching unseen drama
 LV: Intermediate · Application
@@ -127,6 +147,16 @@ M2#literature-u10-03-q2@2: What effect might a long pause in a stage direction c
 M3#literature-u10-03-q3@3: The audience knows a letter has been hidden, but the character searching for it does not. What technique is this? | Dramatic irony | Soliloquy | Aside | Pathetic fallacy | The audience's greater knowledge creates tension.
 MATCH1#literature-u10-03-q4@2: Match each technique to its effect. | Aside = Shares a character's thoughts with the audience ; Interruption = Shows conflict or power ; Sudden entrance = Raises tension ; Subtext = Reveals hidden feelings | Dramatic techniques shape audience response.
 SA3#literature-u10-03-q5@2,3: Explain how you would analyse the shifting power between two characters in an unseen scene. | Look at who speaks more, who interrupts, who asks and who answers questions, and who controls the topic. Note stage directions about movement and position, such as standing over someone or turning away. Consider status shown by register or verse and prose. Track turning points where power changes, and explain how the audience would perceive these shifts on stage. | Speech patterns ; Questions and control ; Movement and position ; Register ; Turning points
+Q: Why should unseen drama be read with the stage in mind? | Drama is written to be performed, so meaning comes from what the audience sees and hears.
+Q: What can stage directions show? | Movement, setting, sound, lighting and how lines are delivered.
+Q: Which features of dialogue reveal character in a play? | Vocabulary, sentence length, interruptions, silences and pauses.
+Q: What is a stage direction? | Written instructions in a script about action, setting or delivery.
+Q: What can changes between verse and prose signal in older plays? | Status or emotion.
+Q: Name some ways tension rises in a drama extract. | Conflict between characters, secrets, interruptions, a sudden entrance, a pause, or a final line before the scene ends.
+Q: How should you write about staging choices in an unseen drama answer? | Consider how directors might stage the moment, without inventing details that contradict the text.
+Q: What should you track about power in an unseen scene? | Who has power and how it shifts.
+Q: In the example, what might the subtext of "I only came to collect my things" be? | That he hopes she will ask him to stay.
+Q: What is the common mistake in analysing unseen drama? | Ignoring stage directions, which are part of the text and show how meaning is created in performance.
 
 ## Comparative analysis: principles
 LV: Intermediate · Application
@@ -169,6 +199,16 @@ M2#literature-u10-04-q2@2: Which is the strongest comparative point? | Both pres
 M3#literature-u10-04-q3@3: Why is integrated comparison preferred to writing about texts separately? | It keeps both texts in dialogue and shows connections throughout | It allows you to ignore one of the two texts entirely | It makes the answer shorter and quicker to write | It avoids the need to use any quotations | Integration shows sustained comparative thinking.
 MATCH1#literature-u10-04-q4@2: Match each connective to its use. | Similarly = Showing likeness ; Whereas = Showing contrast ; Both = Joint feature ; However = Introducing a difference | Connectives signal comparison.
 SA3#literature-u10-04-q5@2,3: Explain how to turn a superficial similarity into a meaningful comparison. | Begin with the similarity, such as both texts using first-person speakers, then ask why each writer made that choice and what effect it creates. Explore differences within the similarity: one speaker may be confessional, the other unreliable. Link to context or form, and support with evidence from both texts, so the point illuminates each text's meaning. | Start with similarity ; Ask why ; Differences within ; Context or form ; Evidence from both
+Q: How does comparison sharpen understanding of texts? | Seeing how two writers treat the same theme differently shows the choices each made.
+Q: What can comparison reveal besides the writers' choices? | The influence of context, form and period.
+Q: Where should you start when finding connections between texts? | With the theme or focus in the question.
+Q: What kind of differences should you look for even when texts are similar? | Subtle differences within similarities.
+Q: What do examiners reward in a comparison? | Treating both texts with similar depth and comparing throughout.
+Q: What makes a strong comparison explain why differences matter? | Linking them to form, perspective or context.
+Q: Why is "both poems have four stanzas" a weak comparative point? | It is superficial unless you explain its significance.
+Q: What is comparative analysis? | Analysing two or more texts together to illuminate both.
+Q: What is integrated comparison? | Comparison woven through an answer rather than separated.
+Q: What is the common mistake in comparative essays? | Writing about one text then the other with a single comparative sentence at the end.
 
 ## Structuring a comparison
 LV: Intermediate · Application
@@ -211,6 +251,16 @@ M2#literature-u10-05-q2@2: What should the topic sentence of a comparative parag
 M3#literature-u10-05-q3@3: What makes a comparative conclusion strong? | It weighs the texts or reflects on what the comparison reveals | It repeats every paragraph of the essay in full | It introduces a third, unrelated text for contrast | It apologises for any points not finished in time | Evaluation adds a final judgement rather than repetition.
 SEQ1#literature-u10-05-q4@2: Order the parts of an integrated comparative paragraph. | Topic sentence ; Text A evidence and analysis ; Comparative connective and text B analysis ; Evaluation | The paragraph moves from point to evidence to significance.
 SA3#literature-u10-05-q5@2,3: Plan an integrated comparative essay on how two poems present memory. | Introduction: both present memory as powerful, but one finds it consoling and the other painful. Paragraph 1: how each uses the speaker's voice to recall the past. Paragraph 2: imagery of place and time in both. Paragraph 3: form and structure, such as one poem's circular structure versus the other's broken ending. Paragraph 4: contexts shaping attitudes. Conclusion: judge which presents memory more complexly and why. | Comparative introduction ; Voice ; Imagery ; Form and structure ; Context and conclusion
+Q: What is a block structure in a comparison? | All of text A, then all of text B.
+Q: What is an alternating structure, and what is its weakness? | Paragraphs alternate between texts on each point; comparison may still be mostly in linking sentences.
+Q: What is an integrated structure? | Each paragraph addresses one point of comparison, discussing both texts within it.
+Q: What should come after the topic sentence in an integrated paragraph? | Evidence and analysis from text A, then a connective with text B's evidence and analysis, then evaluation.
+Q: What does the evaluation part of a comparative paragraph do? | It explains the significance of the similarity or difference, perhaps with context.
+Q: What should a comparative introduction contain? | A comparative overview stating the main similarity and difference you will explore.
+Q: How many comparative points should you plan before writing? | Three or four.
+Q: What is a topic sentence? | The opening sentence stating a paragraph's main point.
+Q: In the example, how does Wordsworth's comfort from nature differ from Hardy's? | Wordsworth's memory makes comfort permanent, whereas Hardy's thrush offers a hope the speaker cannot share.
+Q: How is the Wordsworth and Hardy difference linked to context in the example? | Wordsworth's Romantic confidence contrasts with Hardy's late-Victorian doubt.
 
 ## Comparing across periods
 LV: Intermediate · Evaluation
@@ -252,6 +302,16 @@ M2#literature-u10-06-q2@2: Which use of context is strongest? | Linking a specif
 M3#literature-u10-06-q3@3: Why should cross-period comparisons avoid sweeping statements about a period? | Every period contains a variety of views and debates | Historical periods had no differences | Context is never relevant | Older texts cannot be compared | Generalisations misrepresent complex contexts.
 MATCH2#literature-u10-06-q4@1: Match each pairing to the relationship. | Jane Eyre and Wide Sargasso Sea = Postcolonial rewriting ; Owen and later war poets = Response and echo ; Homer and modern retellings = Reinvention of myth ; Shakespeare and modern adaptations = Updating for new audiences | Texts speak to each other across time.
 SA3#literature-u10-06-q5@2,3: Explain how comparing a text with a later rewriting can reveal changing attitudes. | A rewriting often gives voice to marginalised characters or changes perspective, such as Wide Sargasso Sea retelling Bertha's story from a colonial, female viewpoint. Comparing them shows how attitudes to gender, race, empire or class have shifted, and what the original took for granted or silenced. It also shows the original's power, since it continues to provoke responses. | Changed perspective ; Marginalised voices ; Shifting attitudes ; Original assumptions ; Continuing influence
+Q: What does each text reflect about its own time? | The beliefs, values, language and forms available then, such as Romantic ideas about nature or Victorian anxieties about faith.
+Q: How do reading conventions change over time? | What seemed shocking once may seem tame now, and vice versa.
+Q: What role should context play in a cross-period comparison? | It should explain choices in the text, not replace analysis.
+Q: How do war poets after 1918 show dialogue between texts? | They respond to earlier poets such as Owen.
+Q: What can comparing a source with its rewriting reveal? | Changing attitudes, for example to gender, race or empire.
+Q: Why should you avoid statements such as "all Victorians were religious"? | Periods contain variety and debate, so sweeping generalisations are inaccurate.
+Q: What kind of context is most useful in a comparison? | Precise, relevant context, such as a specific event, idea or convention, linked to evidence.
+Q: What is literary tradition? | The body of earlier works and conventions that writers draw on or challenge.
+Q: What is anachronism? | Applying ideas from one period inappropriately to another.
+Q: What is the common mistake in using context in a comparison? | Using it as a list of facts instead of explaining the writer's choices and the text's meaning.
 
 ## Reading the question
 LV: Intermediate · Foundation
@@ -294,6 +354,16 @@ M2#literature-u10-07-q2@2: What is the best response to a statement-based questi
 M3#literature-u10-07-q3@3: Why should you write a one-sentence thesis before planning? | It keeps the whole essay focused on answering the question | It makes the essay shorter and quicker to finish | It replaces the need for evidence and quotation | It is required by every exam board's rules | A thesis gives the whole essay direction and focus.
 MATCH1#literature-u10-07-q4@2: Match each command to what it asks. | How = Analyse methods ; To what extent = Evaluate and judge ; Explore = Investigate in depth ; Compare = Find similarities and differences | Commands guide the type of answer.
 SA3#literature-u10-07-q5@2,3: Explain how to approach the question "'Frankenstein is a warning about science.' To what extent do you agree?" | Identify the statement and focus (science as warning) and the evaluative command. Consider evidence for: Victor's obsession and its disastrous results, his warning to Walton. Consider against or beyond: the novel's emphasis on responsibility and abandonment, nature and society's rejection. Reach a judgement, such as agreeing that it warns against science without responsibility rather than science itself. | Decode statement ; Evidence for ; Alternative readings ; Judgement ; Focused thesis
+Q: Why do many literature essays lose marks? | They answer the question the writer wanted rather than the one set.
+Q: Which two parts of an essay question should you underline? | The focus, such as a theme or character, and the command, such as "explore" or "to what extent".
+Q: What is a command word? | A word in a question that tells you what to do, such as "explore" or "evaluate".
+Q: What else should you note about the scope of an essay question? | Any specified part of the text, such as an extract, or a requirement to refer to the whole text.
+Q: How should you approach a statement such as "Lady Macbeth is more ambitious than her husband"? | As an invitation to debate: weigh evidence for and against and alternative views, then reach a clear, reasoned judgement.
+Q: Can you partly agree with a statement question? | Yes, for example "to a large extent" or "only in the first half of the play".
+Q: Where should the key words of the question appear in your essay? | In your introduction, topic sentences and conclusion.
+Q: What should you check after writing each paragraph? | Whether the paragraph answers the question.
+Q: How should context and critics be used in a focused essay? | To support your argument, not to drift away from it.
+Q: What is the common mistake when answering a literature question? | Writing everything you know about the text; only material that answers the question earns credit.
 
 ## Building an argument
 LV: Intermediate · Application
@@ -337,6 +407,16 @@ M2#literature-u10-08-q2@2: How should paragraphs in an argument relate to each o
 M3#literature-u10-08-q3@3: How should critics be used in an essay? | As voices in a debate that you respond to | As authorities whose views you copy without comment | As a replacement for your own analysis | Only in the conclusion as decoration | Engaging with critics supports independent argument.
 SEQ1#literature-u10-08-q4@2: Order the steps in building an argument. | Decode the question ; Write a thesis ; Plan linked points ; Consider counter-arguments ; Conclude with insight | Planning creates a coherent argument.
 SA3#literature-u10-08-q5@2,3: Explain the difference between an essay that lists observations and one that builds an argument. | A list of observations makes separate points, such as noting imagery or rhyme, without linking them to a central answer. An argument starts with a thesis and uses each point to support or complicate it, linking methods to meaning, ordering points logically, responding to other views and concluding with a judgement. Arguments show understanding and earn higher marks. | Separate points ; Central thesis ; Linking methods to meaning ; Logical order ; Judgement
+Q: How long should a thesis be? | One or two sentences answering the question.
+Q: Why should a thesis be specific? | It should name the ideas and methods you will discuss.
+Q: Why is "Shakespeare presents ambition in Macbeth" a weak thesis? | It is not arguable or specific; it takes no position on how ambition is presented.
+Q: How many points should each paragraph make in an argued essay? | One point that supports the thesis.
+Q: How should later paragraphs relate to earlier ones? | They should deepen or complicate earlier points rather than repeat them.
+Q: Give two ways to order paragraphs deliberately. | From the obvious to the subtle, or following the text's development.
+Q: What is a counter-argument? | An alternative view that an argument considers and responds to.
+Q: How should a conclusion relate to the thesis? | It should return to the thesis with added insight from the essay's journey.
+Q: What is a line of argument? | The logical development of ideas through an essay.
+Q: What is the common mistake when writing a thesis? | Simply restating the question instead of taking a position.
 
 ## Paragraphing: point, evidence, analysis
 LV: Intermediate · Foundation
@@ -381,6 +461,16 @@ M2#literature-u10-09-q2@2: Which comment best deepens analysis? | Exploring the 
 M3#literature-u10-09-q3@3: What is the main risk of a rigid paragraph formula? | Mechanical writing that fails to build a developing argument | It always produces the highest marks | It forbids the use of quotations | It makes essays too analytical | Over-rigid structure can make writing repetitive and disconnected.
 MATCH1#literature-u10-09-q4@2: Match each element to its purpose. | Point = States the idea ; Evidence = Supports with quotation ; Analysis = Explains methods and effects ; Link = Connects to the question | Each part has a role.
 SA3#literature-u10-09-q5@2,3: Rewrite this weak analysis as a stronger one: "Owen says 'As under a green sea, I saw him drowning.' This shows the gas is bad." | Stronger: The simile "As under a green sea" transforms the gas cloud into deep water, so the soldier appears to drown on dry land, emphasising the unnatural horror of chemical weapons. "Green" suggests sickness and poison, and the present participle "drowning" prolongs the moment, as if the speaker is trapped in the memory, linking to the trauma that recurs "In all my dreams". | Identify the method ; Explain the image ; Word-level detail ; Effect on reader ; Link to wider poem
+Q: What are the three parts of a point, evidence, analysis paragraph? | A clear topic sentence, a short precise quotation or reference, and analysis of how the writer's choices create meaning.
+Q: What do PEE, PEEL and "what, how, why" have in common? | They describe the same principle of point, evidence and analysis.
+Q: How can you zoom in on individual words in analysis? | By discussing their connotations, sounds and word class.
+Q: How can offering more than one interpretation deepen analysis? | It shows thought, as in "This could suggest... alternatively...".
+Q: What is connotation? | The associations a word carries beyond its literal meaning.
+Q: What should analysis comment on besides meaning? | The effect on the reader or audience.
+Q: How do strong writers avoid formulaic paragraphs? | They combine several quotations, weave analysis around evidence and connect paragraphs into an argument.
+Q: Which generic phrases should be avoided in analytical writing? | "This shows that..." on every line and comments such as "this makes the reader want to read on".
+Q: In the "London" example, how does "mind-forg'd" deepen the analysis of "manacles"? | It implies the chains are made in the mind, so oppression is reinforced by accepted thinking, not only by laws.
+Q: What is the common mistake in balancing evidence and analysis? | Writing more evidence than analysis; long quotations with brief comments do not show understanding.
 
 ## Embedding quotations
 LV: Intermediate · Foundation
@@ -423,6 +513,16 @@ M2#literature-u10-10-q2@2: What does an ellipsis (…) show in a quotation? | Wo
 M3#literature-u10-10-q3@3: Which sentence presents a verse quotation correctly? | Blake asks "What immortal hand or eye, / Could frame thy fearful symmetry?" | Blake asks What immortal hand or eye Could frame thy fearful symmetry | Blake asks "What immortal hand or eye. Could frame thy fearful symmetry" | Blake asks (What immortal hand or eye) Could frame | Verse quotations keep punctuation and use slashes for line breaks.
 MATCH1#literature-u10-10-q4@2: Match each mark to its use. | Slash = Line break in verse ; Square brackets = Grammatical change ; Ellipsis = Omitted words ; Colon = Introduces a longer quotation | Punctuation helps quotations fit.
 SA2#literature-u10-10-q5@2,3: Explain why embedding quotations improves analytical writing. | Embedded quotations keep the focus on precise words, make writing fluent and show control. They allow analysis to follow immediately, exploring connotations and effects, rather than separating evidence from comment. Short embedded quotations also allow several pieces of evidence in one paragraph, building a richer argument. | Precision ; Fluency ; Immediate analysis ; Multiple evidence
+Q: How long should quotations usually be in a literature essay? | Short, often a few words, containing the language you want to analyse.
+Q: What should you learn for closed-book exams? | Key quotations, including single powerful words.
+Q: What does it mean to embed a quotation? | To weave it into your own sentence so the sentence still reads grammatically.
+Q: How should you introduce a longer quotation? | With a colon.
+Q: When should analysis follow a quotation? | Immediately, zooming in on key words.
+Q: How should verse quotations of more than two or three lines be set out? | On separate indented lines without quotation marks.
+Q: Should you change the spelling or punctuation of a quotation? | No, keep the original spelling and punctuation.
+Q: What references should coursework quotations include? | Line, act and scene or page references, as your course requires.
+Q: In the Scrooge example, how does the strongest version develop "hard and sharp as flint"? | It notes that flint can strike fire, perhaps hinting at the warmth later released in Scrooge.
+Q: What is the common mistake in using quotations? | Dropping in long quotations as separate sentences instead of embedding short ones and analysing them.
 
 ## Writing about context
 LV: Intermediate · Application
@@ -465,6 +565,16 @@ M2#literature-u10-11-q2@2: Which use of context is integrated with analysis? | L
 M3#literature-u10-11-q3@3: When is biographical context most useful? | When it illuminates choices in the text relevant to the question | Always, in as much detail as possible | Never, as authors' lives are irrelevant | Only in the introduction | Biography helps only when directly relevant.
 MATCH2#literature-u10-11-q4@1: Match each example to its kind of context. | The 1834 Poor Law = Historical and social ; Owen's service in the trenches = Biographical ; Romanticism = Literary ; Feminist readings today = Reception | Context takes several forms.
 SA3#literature-u10-11-q5@2,3: Show how to integrate context into analysis of Lady Macbeth's "unsex me here". | Begin with the text: Lady Macbeth calls on spirits to remove her feminine qualities. Explain the context: Jacobean ideas of women as nurturing and subordinate, and fears of witchcraft. Link: to a Jacobean audience her rejection of femininity would seem unnatural and dangerous, aligning her with the witches. Consider reception: modern feminist readings may see her as constrained by gender roles. | Start with text ; Precise context ; Link to effect ; Audience response ; Reception
+Q: What does historical and social context include? | Events, politics, class, gender roles and religion.
+Q: What is literary context? | Genre conventions, literary movements such as Romanticism or modernism, and influences.
+Q: Where should you start when integrating context? | From the text: identify a moment, then explain how context illuminates it.
+Q: What two things can context help explain about a text? | Why a writer made a choice, and how an audience might respond.
+Q: Why is one well-chosen fact better than a paragraph of history? | Brief, precise context linked to analysis illuminates the text, while long history distracts from it.
+Q: Give a phrase that introduces context smoothly. | "For a Victorian audience..." or "Writing after Peterloo, Shelley...".
+Q: What question tests whether contextual information is relevant? | Does it help explain the text in relation to the question?
+Q: Can texts challenge the values of their own time? | Yes; avoid assuming a text simply reflects its period's values.
+Q: How can modern critical readings act as context? | Feminist or postcolonial perspectives are a context that can enrich analysis.
+Q: What is a literary movement? | A group of writers sharing ideas and styles in a period.
 
 ## Writing about writers' methods
 LV: Intermediate · Application
@@ -506,6 +616,16 @@ M2#literature-u10-12-q2@2: What turns naming a device into analysis? | Explainin
 M3#literature-u10-12-q3@3: Why might a writer choose the dramatic monologue form? | To let a speaker reveal more than intended to the reader | To include many characters speaking at once | To avoid any sense of character | To tell a story in strict chronological order | The form creates irony through self-revelation.
 MATCH2#literature-u10-12-q4@1: Match each method to its category. | Imagery = Language ; Sonnet = Form ; Juxtaposition = Structure ; Register = Language | Methods fall into language, form and structure.
 SA3#literature-u10-12-q5@2,3: Explain how form contributes to meaning in a text you have studied, such as Frankenstein. | Frankenstein is an epistolary frame narrative with nested narrators: Walton, Victor and the creature. This form gives each voice its own perspective, so readers must weigh reliability; placing the creature's eloquent account at the centre generates sympathy and challenges Victor's version. The letters create immediacy and authenticity, while Walton's frame offers a contrasting response to ambition. | Identify form ; Nested narrators ; Reliability ; Centre of sympathy ; Frame and meaning
+Q: Which features count as language in a writer's methods? | Word choice, imagery, figurative language, sound, syntax, register and dialogue.
+Q: Give examples of form in literature. | Sonnet, dramatic monologue, tragedy, epistolary novel or Bildungsroman.
+Q: Give examples of structural methods. | Openings and endings, turning points, repetition, juxtaposition and narrative perspective.
+Q: When should literary terminology be used? | Accurately, and only when it helps analysis.
+Q: Why does "This is a metaphor" earn little credit? | Naming a device is not analysis; explaining what the metaphor suggests earns more.
+Q: What question should you ask of every method in a text? | "What does this choice do?": how it shapes understanding, emotion or expectations and connects to themes.
+Q: Why should essays discuss form and structure as well as language? | Examiners often find form and structure discussed less.
+Q: What alternative should you consider when analysing a method? | Why the writer might have made this choice rather than another.
+Q: What structural method does Stevenson use in Jekyll and Hyde? | Delayed revelation through a mystery structure and multiple documents.
+Q: How does the structure of Jekyll and Hyde link to its meaning? | It mirrors the secrecy of respectable Victorian society, where truths are hidden until too late.
 
 ## Introductions and conclusions
 LV: Intermediate · Foundation
@@ -549,6 +669,16 @@ M2#literature-u10-13-q2@2: What should a conclusion avoid? | Introducing complet
 M3#literature-u10-13-q3@3: In a timed exam, why keep the introduction brief? | So most time goes on developed analysis | Because introductions earn no marks at all | Because examiners skip introductions | So the essay has no thesis | In a timed exam, close analysis of the text earns most of the available credit.
 MATCH1#literature-u10-13-q4@2: Match each element to its section. | Thesis = Introduction ; Synthesis = Conclusion ; Final judgement = Conclusion ; Signposting the argument = Introduction | Each section has distinct jobs.
 SA3#literature-u10-13-q5@2,3: Write a strong conclusion for an essay on how Shelley presents power in "Ozymandias". | Shelley exposes the emptiness of tyrannical power by framing the pharaoh's boast within the "lone and level sands" that have erased his works. The traveller's distant narration, the broken sonnet form and the ironic inscription work together to show that pride and domination cannot outlast time. Writing in an age of repression, Shelley offers a warning to tyrants that still resonates. | Restated thesis ; Synthesis of methods ; Judgement ; Context ; Significance
+Q: How long should an exam essay introduction be? | Concise: two to four sentences.
+Q: What should an introduction indicate besides the thesis? | The main lines of the argument, briefly.
+Q: How should a conclusion return to the thesis? | With added depth, perhaps a judgement on "to what extent".
+Q: What wider significance can a conclusion consider? | What the text suggests about the theme or why it still matters.
+Q: Should a conclusion introduce new evidence? | No, avoid introducing completely new evidence.
+Q: What are the common weaknesses of introductions? | Retelling the plot, giving lengthy biography or making vague statements.
+Q: What are the common weaknesses of conclusions? | Simply repeating earlier sentences or ending abruptly.
+Q: What is synthesis? | Bringing ideas together to show how they relate.
+Q: What is signposting? | Indicating the direction of an argument to the reader.
+Q: Why is "Jane Eyre is a novel by Charlotte Brontë, published in 1847" a weak opening? | It gives facts and plot without answering the question or stating a thesis.
 
 ## Academic style and register
 LV: Intermediate · Foundation
@@ -590,6 +720,16 @@ M2#literature-u10-14-q2@2: Which sentence uses the literary present correctly? |
 M3#literature-u10-14-q3@3: Which phrase best balances confidence and openness? | Arguably, Hardy's thrush represents a hope the speaker cannot share | Hardy's thrush definitely and only means hope | I think the thrush is nice | The thrush is a bird in a poem | "Arguably" commits to a reading while allowing alternatives.
 MATCH1#literature-u10-14-q4@1: Match each convention to an example. | Literary present = "Macbeth hesitates" ; Surname reference = "Dickens presents" ; Poem title = "Ozymandias" in quotation marks ; Tentative language = "may suggest" | Conventions make writing academic.
 SA2#literature-u10-14-q5@2,3: Rewrite this sentence in academic register: "Owen basically thinks war is really awful and he shows it loads in his poems." | Owen consistently presents war as horrifying and futile, using visceral imagery and irony to expose the gap between patriotic rhetoric and soldiers' suffering. The revision removes casual words, uses precise verbs and adds specific methods. | Remove informality ; Precise verbs ; Specific methods ; Literary present
+Q: What features of informal writing should academic essays avoid? | Slang, contractions and casual phrases.
+Q: Give precise verbs to use instead of "shows". | "Suggests", "implies", "evokes" or "undermines".
+Q: Why avoid "I think" in literature essays? | Your argument shows your view, so the third person is usually preferred unless your course allows it.
+Q: What is evaluative language? | Language for judgements, such as "most powerfully", "more convincingly" or "crucially".
+Q: How should you balance confidence and openness in academic writing? | Commit to an argument while acknowledging alternatives.
+Q: How should you refer to writers in an essay? | By surname, such as "Dickens", not "Charles".
+Q: How should titles of novels and plays be presented? | Italicised or underlined.
+Q: How should titles of poems and short stories be presented? | In quotation marks.
+Q: What is register? | The level of formality in language.
+Q: What is the common style mistake in literature essays? | Over-using "This shows"; varied, precise verbs make analysis sharper.
 
 ## Referencing and academic integrity
 LV: Intermediate · Application
@@ -633,6 +773,16 @@ M2#literature-u10-15-q2@2: What does MLA referencing typically include in the te
 M3#literature-u10-15-q3@3: A student wants to use an AI tool for coursework. What should they do first? | Check their school and exam board rules, and acknowledge any permitted use | Submit AI-written paragraphs as their own work | Assume all AI use is always allowed | Hide any AI use from the teacher | Unacknowledged AI use can be malpractice.
 MATCH2#literature-u10-15-q4@1: Match each term to its definition. | Plagiarism = Using others' work without credit ; Paraphrase = Restating an idea in your own words ; Works cited = List of sources ; Academic integrity = Honest, acknowledged work | Key terms in referencing.
 SA3#literature-u10-15-q5@2,3: Explain how to use a critic's interpretation responsibly in an essay. | Summarise or quote the critic briefly, reference them accurately using the required system, and then respond: agree and extend, qualify, or challenge with evidence from the text. The critic should support your own argument, not replace it. Keep records of sources to avoid accidental plagiarism, and include the full reference in the bibliography or works cited. | Brief summary or quote ; Accurate reference ; Respond with evidence ; Own argument ; Records and bibliography
+Q: What is academic integrity? | Producing honest work and acknowledging others' ideas.
+Q: Can plagiarism be accidental? | Yes; presenting others' words or ideas as your own counts whether deliberate or careless.
+Q: What can malpractice lead to? | Lost marks or disqualification.
+Q: What should be referenced in a literature essay? | Quotations from the text, with act, scene and line, chapter or page, and quotations and ideas from critics.
+Q: What does Harvard referencing include in the text? | The author and year in brackets, with a reference list.
+Q: How can you avoid accidental plagiarism while researching? | Keep notes of your sources as you go.
+Q: How should secondary sources be used in an essay? | To support your argument, not replace it: summarise, quote briefly and respond.
+Q: What does the Joint Council for Qualifications require about AI in assessed work? | Work must be the student's own; misuse of AI counts as malpractice and any permitted use must be acknowledged.
+Q: What is a works cited list? | A list of sources referenced in an essay, used in the MLA system.
+Q: Why should you check current guidance on AI tools? | Policies on AI change, so you should check current JCQ and institutional guidance.
 
 ## The coursework essay
 LV: Intermediate · Application
@@ -676,6 +826,16 @@ M2#literature-u10-16-q2@2: Why must students sign a declaration on coursework? |
 M3#literature-u10-16-q3@3: How should most of a coursework word count be used? | On developed analysis supporting the argument | On a long biography of the author | On plot summary of every chapter | On listing every critic who has written on the text | Within a word count, analysis earns the most credit, so summary and padding should be cut.
 SEQ1#literature-u10-16-q4@2: Order the coursework process. | Choose and agree a question ; Research and collect evidence ; Plan the argument ; Draft and revise ; Reference and submit with declaration | A structured process produces stronger work.
 SA3#literature-u10-16-q5@2,3: Explain how to manage a coursework essay over several weeks. | Agree a focused question early, set milestones for reading, research, planning, drafting and revising, and keep organised notes with references. Draft early to allow time for general feedback and revision. Check the word count and specification requirements, proofread carefully and complete the bibliography and declaration before the deadline. | Early question ; Milestones ; Organised notes ; Draft and feedback ; Final checks
+Q: What is non-exam assessment? | Coursework assessed outside timed exams under exam board rules.
+Q: Who should agree a coursework task with you? | Your teacher.
+Q: How should evidence be collected when researching coursework? | Reread the texts closely and collect evidence under headings.
+Q: What should a coursework plan include? | An argument with a thesis and logically ordered sections.
+Q: What should you revise for after writing a coursework draft? | Argument, evidence and style.
+Q: What is authentication in coursework? | Confirming that submitted work is the candidate's own.
+Q: What is a bibliography? | A list of all sources consulted or referenced.
+Q: Why is "Women in Jane Eyre and Wide Sargasso Sea" a weak coursework question? | It is too broad and not debatable.
+Q: What final checks should a coursework essay pass? | It keeps to the word limit, includes a bibliography, is accurately referenced and has been proofread.
+Q: What is the common mistake in choosing a coursework topic? | Choosing one that is too broad; a focused question allows depth within the word limit.
 
 ## Revising for literature exams
 LV: Intermediate · Application
@@ -719,4 +879,14 @@ M2#literature-u10-17-q2@2: How should quotations be organised for revision? | Gr
 M3#literature-u10-17-q3@3: Why practise planning answers in five minutes? | It builds the speed and focus needed in timed exams | Exams never require planning | It replaces writing practice | It guarantees full marks | Quick planning keeps answers focused under time pressure.
 MATCH1#literature-u10-17-q4@2: Match each strategy to its benefit. | Flashcards = Memorising quotations ; Past papers = Exam practice ; Mark schemes = Understanding assessment ; Mind maps = Linking themes and characters | Different strategies build different skills.
 SA3#literature-u10-17-q5@2,3: Design a revision plan for a closed-book literature exam six weeks away. | Weeks 1 and 2: reread texts and make theme and character maps; create quotation flashcards. Weeks 3 and 4: daily retrieval practice with spaced repetition; plan past questions; revise context linked to moments. Weeks 5 and 6: timed essays marked against mark schemes, unseen poetry practice and targeted review of weaknesses, with rest and sleep. | Knowledge phase ; Quotations and retrieval ; Planning practice ; Timed essays ; Review and wellbeing
+Q: What should you know about each set text when revising? | The plot, characters, themes and structure.
+Q: How can mind maps help literature revision? | By linking themes, characters and key moments.
+Q: How should context be revised for a literature exam? | Briefly, linked to specific moments in the text.
+Q: Why is retrieval practice better than rereading? | Testing yourself from memory strengthens recall more than rereading.
+Q: What is spaced repetition? | Reviewing material at increasing intervals.
+Q: What should you know about each quotation you learn? | What it means and what you could say about its methods.
+Q: How long should you spend planning past questions in practice? | Five minutes each.
+Q: What can you use to assess practice essays? | The mark scheme and examiners' reports.
+Q: What should you do in the exam itself? | Read the question carefully, plan briefly, manage time across questions and leave a few minutes to check.
+Q: What is the common revision mistake for literature exams? | Relying on rereading and highlighting alone instead of testing yourself and practising essays.
 `;

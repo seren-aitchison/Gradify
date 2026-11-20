@@ -43,6 +43,16 @@ M2#music-u04-01-q2@2: Which note is outside the usual tenor range of C3 to G4? |
 M3#music-u04-01-q3@3: A student writes a tenor part that sits on F4 and G4 for most of an exercise. What is the problem? | The tenor stays at the top of its range, which is tiring and strained | The tenor is too low and will be inaudible | Nothing: any note in range is equally comfortable | The tenor should be written on the treble staff | A part should mostly use the middle of its range; long stretches at the top strain the voice.
 MATCH1#music-u04-01-q4@2: Match each voice to its usual lowest note in exercises. | Soprano = C4 ; Alto = G3 ; Tenor = C3 ; Bass = E2 | These are the lower limits given in most harmony textbooks.
 SA2#music-u04-01-q5@1,2: Describe how a four-part chord is laid out on two staves. | The soprano and alto are written on the treble staff, with soprano stems up and alto stems down. The tenor and bass are written on the bass staff, with tenor stems up and bass stems down. Each voice stays within its range, and stem direction stays fixed so each line can be followed. | Staves ; Stem directions ; Ranges ; Readability of lines
+Q: Which voice carries the melody in SATB writing? | The soprano, the highest voice.
+Q: What is the usual alto range in exercises? | G3 to D5.
+Q: What is the usual tenor range in exercises? | C3 to G4.
+Q: What is the usual bass range in exercises? | E2 to C4.
+Q: Which two voices share the treble staff in SATB short score? | Soprano and alto.
+Q: Which way do the tenor's stems point in SATB short score? | Up; the bass's stems point down.
+Q: Does a voice change its stem direction when notes are close or the same? | No: each voice keeps its own stem direction.
+Q: Why do ranges vary between textbooks, and what is the safe approach? | They differ slightly by source; staying well inside them keeps parts singable.
+Q: What is open score? | Writing each voice on its own staff, rather than the two-stave short score.
+Q: What does writing in choral layout train the ear to hear? | Harmony as four melodies moving together, the basis of voice leading.
 
 ## Doubling and spacing
 LV: Introductory · Application
@@ -87,6 +97,16 @@ M2#music-u04-02-q2@2: Which chord note may be omitted from a root-position triad
 M3#music-u04-02-q3@3: A chord has the alto on C4 and the soprano on E5. What is wrong with the spacing? | Soprano and alto are more than an octave apart | Tenor and bass are too close together | The alto is above its range | Nothing: any spacing is acceptable | C4 to E5 is a tenth, wider than the octave limit for adjacent upper voices.
 TF1#music-u04-02-q4@1: In a diminished triad in first inversion, the third is normally doubled. | true | Doubling the third avoids emphasising the dissonant root and fifth of the diminished triad.
 SA2#music-u04-02-q5@2,3: Explain why the leading note should not be doubled in four-part writing. | The leading note has a strong tendency to rise a semitone to the tonic. If it is doubled, both voices would have to rise to the tonic, creating parallel octaves, or one would have to move elsewhere, leaving the tendency unresolved. Either way the voice leading is weakened. | Tendency to rise ; Parallel octaves ; Unresolved tendency ; Weak voice leading
+Q: Why must one note be doubled in four-part writing of triads? | There are four voices but a triad has only three notes.
+Q: Why should the leading note never be doubled? | It needs to rise to the tonic, so doubling it causes parallel octaves or a missing resolution.
+Q: What should be doubled in a first-inversion chord? | The soprano note, or a primary note of the key: tonic, subdominant or dominant.
+Q: Which note is doubled in a diminished triad, usually used in first inversion? | The third.
+Q: Which note may be omitted from a triad, and when especially? | The fifth, with the root tripled, especially in a final tonic chord.
+Q: Why should the third not be omitted from a triad? | It defines whether the chord is major or minor.
+Q: What is the maximum spacing between soprano and alto? | An octave.
+Q: What is the maximum spacing between alto and tenor? | An octave.
+Q: Why may the tenor and bass be more than an octave apart? | It mirrors the harmonic series: wide intervals sound well low down, close intervals higher up.
+Q: What is wrong with a G major chord of bass G2, tenor D3, alto D4, soprano B4? | The fifth is doubled and the root appears only in the bass; doubling the root is better.
 
 ## Parallel fifths and octaves
 LV: Introductory · Application
@@ -127,6 +147,16 @@ M2#music-u04-03-q2@2: The bass moves F3 to G3 while the alto moves C4 to D4. Wha
 M3#music-u04-03-q3@3: In IV–V in root position, how can consecutive fifths and octaves be avoided most simply? | Move the three upper voices in contrary motion to the bass | Move all four voices up by step together | Double the leading note in the V chord | Leap the bass down an octave | The bass rises a step, so the upper voices falling to the nearest notes of V avoids parallels.
 TF1#music-u04-03-q4@2: Consecutive fifths are only a fault between the soprano and bass. | false | They are a fault between any pair of the four voices.
 SA2#music-u04-03-q5@2,3: Explain the difference between consecutive and hidden octaves. | Consecutive octaves occur when two voices already an octave apart move in parallel to another octave. Hidden octaves occur when two voices, usually the outer voices, move in similar motion into an octave from a different interval, especially with a leap in the soprano. Consecutive octaves are always faults; hidden octaves are avoided mainly between the outer voices. | Consecutive definition ; Hidden definition ; Outer voices ; Severity
+Q: What are consecutive fifths? | Two voices a perfect fifth apart both moving to another perfect fifth in the same direction.
+Q: Do consecutive unisons count as a fault? | Yes, they are treated like consecutive octaves.
+Q: From C major (C3 G3 C4 E4) to D minor (D3 A3 D4 F4), what faults occur? | Consecutive fifths between bass and tenor and consecutive octaves between bass and alto.
+Q: Who codified Renaissance and Baroque counterpoint in Gradus ad Parnassum, and when? | Fux, in 1725.
+Q: What did strict counterpoint value that consecutive fifths would destroy? | The independence of each line.
+Q: What are hidden, or direct, fifths and octaves? | The outer voices moving in similar motion into a perfect fifth or octave, with a leap in the soprano.
+Q: Between which voices are hidden fifths and octaves usually avoided? | Between the outer voices.
+Q: What are contrary fifths or octaves? | Moving to a perfect fifth or octave in opposite directions; also faults in strict writing.
+Q: What interval succession is usually avoided between the bass and another voice? | A diminished fifth followed by a perfect fifth.
+Q: What is the usual cure for consecutive fifths and octaves? | Moving the upper voices in contrary motion to the bass.
 
 ## Principles of voice leading
 LV: Introductory · Application
@@ -173,6 +203,16 @@ M2#music-u04-04-q2@2: In A harmonic minor, the alto moves F to G♯. What is the
 M3#music-u04-04-q3@3: A tenor moves above the alto for one chord. What is this fault, and why is it avoided? | Voice crossing, which obscures the separate lines | Overlapping, which creates parallel fifths | Hidden octaves, which weaken cadences | Doubling, which thins the chord | Crossing makes it hard to hear which voice has which line.
 SEQ1#music-u04-04-q4@3: Order the guidelines for moving from one chord to the next. | Write the bass ; Keep any common notes in the same voice ; Move other voices to the nearest chord notes ; Check all pairs for consecutives | Starting from the bass and moving by the least motion, then checking, gives smooth results.
 SA2#music-u04-04-q5@2,3: Explain why stepwise motion is preferred in the upper voices. | Stepwise motion makes each part a smooth, singable melody and keeps the texture connected. It reduces the risk of consecutive fifths and octaves and of awkward intervals. The bass can leap more, as it carries the harmonic roots, but upper voices sound best moving to the nearest chord notes. | Singable lines ; Connected texture ; Fewer faults ; Bass as exception
+Q: What is parallel motion? | Two voices moving in the same direction by the same interval.
+Q: What is similar motion? | Two voices moving in the same direction by different intervals.
+Q: Which type of motion is the most independent? | Contrary motion.
+Q: What should happen to common notes between chords? | Keep them in the same voice where possible.
+Q: Which voice may leap more freely than the others? | The bass.
+Q: What augmented interval in a voice is a common fault in harmonic minor? | The augmented second between the sixth and the raised seventh.
+Q: What is voice overlapping? | A voice moving beyond the note just sung by the voice next to it.
+Q: When may the leading note fall instead of rising? | In an inner voice, falling to the fifth of the tonic chord to complete the chord.
+Q: What is a tendency tone? | A note with a strong pull to resolve in a particular direction.
+Q: Why is leaping in every voice to reach a chord a mistake? | The nearest available chord note usually gives the smoothest result.
 
 ## Connecting root-position chords
 LV: Intermediate · Application
@@ -215,6 +255,16 @@ M2#music-u04-05-q2@2: In C major, which chord shares two notes with I? | vi (A m
 M3#music-u04-05-q3@3: A student writes V–vi with all four voices rising by step. What fault is likely? | Consecutive fifths and octaves with the bass | Voice crossing between alto and tenor | A doubled leading note in vi | An augmented second in the soprano | Parallel motion in all voices with no common notes creates consecutives.
 SEQ1#music-u04-05-q4@2: Order the steps for connecting I to V in C major. | Write the bass C to G ; Hold G in the same voice ; Move the upper C down to B ; Move E down to D | The common note is held and the other voices move by step to the nearest chord notes.
 SA2#music-u04-05-q5@1,2: Explain how to connect two root-position chords whose roots are a fifth apart. | The chords share one note. Keep the common note in the same upper voice. Move the other two upper voices by step to the nearest notes of the new chord. The bass moves from root to root, by a fifth or a fourth. Then check for consecutives and correct doubling. | One common note ; Hold it ; Others move by step ; Check
+Q: What is a root progression? | The interval between the roots of successive chords.
+Q: How do you connect root-position chords whose roots are a fourth or fifth apart? | Keep the common note in the same voice and move the other two upper voices by step to the nearest notes.
+Q: Give examples of chords whose roots are a fourth or fifth apart. | I–V, V–I, I–IV and ii–V.
+Q: How do you connect chords whose roots are a third apart? | Keep both common notes and move the remaining voice by step.
+Q: Give examples of chords whose roots are a third apart. | I–vi and IV–ii.
+Q: How many notes do chords a step apart share? | None, as in IV–V or V–vi.
+Q: In I to V in C major, which voice holds the common note? | The voice with G, such as the tenor holding G3.
+Q: In IV to V in C major, if the bass rises F2 to G2, how do the upper voices move? | They fall: for example soprano F4 to D4, alto C4 to B3, tenor A3 to G3.
+Q: What fault almost always results from moving all voices the same way in IV–V? | Consecutive fifths and octaves.
+Q: What is a common note? | A note shared by two chords.
 
 ## Using first-inversion chords
 LV: Intermediate · Application
@@ -258,6 +308,16 @@ M2#music-u04-06-q2@2: In C major, what is the bass note of vii°6? | D | B | F |
 M3#music-u04-06-q3@3: Why is ii6–V–I often preferred to ii–V–I in root position? | The bass rises by step 4–5–1, giving a smoother, stronger approach | ii6 contains the leading note, which strengthens V | Root-position ii is not allowed in major keys | ii6 avoids any need for a cadence | The stepwise bass and subdominant function make ii6 a strong pre-dominant.
 TF1#music-u04-06-q4@2: In a first-inversion chord, the soprano note may be doubled unless it is the leading note. | true | Doubling the soprano is common, provided it is not the leading note.
 SA2#music-u04-06-q5@2,3: Explain how first-inversion chords can improve a bass line. | Root-position chords make the bass leap between roots. Using first-inversion chords places the third in the bass, letting the bass move by step, for example 1–2–3 with I–vii°6–I6 or 4–5–1 with ii6–V–I. This gives a more melodic bass, smoother voice leading and less heavy harmony within phrases. | Leaps in root position ; Third in bass ; Stepwise examples ; Melodic and lighter
+Q: Why do first-inversion chords give a smoother bass line? | They let the bass move by step instead of leaping between roots.
+Q: Why are first-inversion chords useful in the middle of phrases? | They sound less final than root position.
+Q: Which note is doubled in vii°6? | The third, which is the bass note, never the leading note.
+Q: What is the bass line of ii6–V–I? | Rising 4–5–1.
+Q: What is the bass line of I–vii°6–I6? | Rising 1–2–3, with vii°6 as a passing chord.
+Q: What is the Phrygian cadence? | iv6–V in a minor key.
+Q: Why is ii6–V stronger and smoother than ii–V in root position? | The bass rises a step instead of leaping from the second degree.
+Q: What is a passing chord? | A chord harmonising a passing note in the bass between two stronger chords.
+Q: Besides smoothness, what else do first-inversion chords add to a long series of chords? | Variety of texture.
+Q: What is the bass note of vii°6, and is it safe to double? | The second degree, which is safe to double.
 
 ## The cadential six-four
 LV: Intermediate · Application
@@ -298,6 +358,16 @@ M2#music-u04-07-q2@2: In G major, which notes form a cadential six-four over the
 M3#music-u04-07-q3@3: Why do many analysts label the cadential six-four as V6/4–5/3? | Its bass is the dominant, and the 6 and 4 decorate V | It contains the leading note | It is a type of plagal cadence | It always resolves to I directly | The chord prolongs V, with the upper notes acting as appoggiaturas.
 SEQ1#music-u04-07-q4@2: Order a typical cadential progression in C major. | ii6 (bass F) ; Ic (bass G) ; V (bass G) ; I (bass C) | A pre-dominant leads to the six-four, which resolves to V and then the tonic.
 SA2#music-u04-07-q5@2,3: Explain how to write and resolve a cadential six-four. | Write the tonic chord with the dominant in the bass, doubling the bass note, on a strong beat. Approach it from a pre-dominant such as ii6 or IV. On the next, weaker beat, keep the bass and move the sixth and fourth down by step to the fifth and third, forming V, which then resolves to I. | Bass and doubling ; Strong beat ; Pre-dominant ; Resolution to V
+Q: What is the cadential six-four? | A tonic chord in second inversion over the dominant, resolving to V at a cadence.
+Q: How is the cadential six-four's resolution described in figures? | 6/4 to 5/3: the sixth and fourth above the bass fall by step to a fifth and a third.
+Q: In a C major cadential six-four, how do the upper notes move to V? | E falls to D and C falls to B, while G is held in the bass and soprano.
+Q: Why does the cadential six-four act as a decorated dominant? | Its bass is the dominant and it delays V's arrival, with the sixth and fourth as accented non-chord notes.
+Q: What are the sixth and fourth of a cadential six-four sometimes called? | Double appoggiaturas over the dominant.
+Q: Which note is doubled in a cadential six-four? | The bass, the dominant.
+Q: How should the bass of a cadential six-four be approached? | By step or from the same note, avoiding an awkward leap.
+Q: Which progression commonly uses the cadential six-four after a predominant? | ii6–Ic–V–I.
+Q: Why must the cadential six-four fall on a stronger beat than its resolution? | It is an accented chord; on a weak beat it sounds like a passing or misplaced chord.
+Q: What is a second-inversion chord? | A chord with its fifth in the bass, figured 6/4.
 
 ## The perfect cadence
 LV: Introductory · Application
@@ -338,6 +408,16 @@ M2#music-u04-08-q2@2: A V–I cadence ends with the third of the tonic chord in 
 M3#music-u04-08-q3@3: In a perfect cadence, the leading note in the alto falls to the dominant. When is this acceptable? | When it is in an inner voice and completes the tonic chord | Never, in any voice | Only in the soprano | Only when the cadence is interrupted | An inner-voice leading note may fall to give a complete tonic chord.
 TF1#music-u04-08-q4@1: A perfect cadence always ends a phrase. | true | A cadence by definition marks the end of a phrase.
 SA2#music-u04-08-q5@2,3: Explain the voice leading of V7–I in a perfect cadence. | The leading note rises a semitone to the tonic. The seventh of V7 falls by step to the third of I. The fifth of V usually falls to the tonic, and the bass moves from the dominant to the tonic. The resulting tonic chord may lack its fifth, with the root tripled. | Leading note rises ; Seventh falls ; Bass movement ; Resulting tonic chord
+Q: What is a cadence? | A harmonic formula marking the end of a phrase.
+Q: What effect does a perfect cadence have? | It sounds final, like a full stop.
+Q: What is the strongest form of the perfect cadence? | Both chords in root position with the tonic in the soprano at the end.
+Q: What makes a V–I cadence an imperfect authentic cadence in American terms? | The soprano ends on the third or fifth, or one chord is inverted.
+Q: How do British and American cadence terms differ? | British imperfect means ending on V; American perfect and imperfect authentic both describe V–I.
+Q: In a perfect cadence in F major, how does the leading note resolve? | E rises to F.
+Q: In V7–I in F major, how does the seventh of V7 resolve? | B♭ falls to A.
+Q: Where do perfect cadences typically appear? | At the end of most pieces and sections of tonal music.
+Q: Why do composers often repeat perfect cadences? | To make the ending emphatic.
+Q: Is a V–I in the middle of a phrase a perfect cadence? | No: a cadence ends a phrase; inside a phrase it is just a progression.
 
 ## The imperfect cadence
 LV: Introductory · Application
@@ -378,6 +458,16 @@ M2#music-u04-09-q2@2: In E minor, what is the bass movement of a Phrygian cadenc
 M3#music-u04-09-q3@3: A phrase ends on V and is followed by a similar phrase ending V–I. What structure is this? | A period, with antecedent and consequent | A sonata exposition | A ternary form | A ritornello | An open imperfect cadence answered by a closed perfect cadence forms a period.
 MATCH1#music-u04-09-q4@1: Match each key to the chord ending its imperfect cadence. | C major = G major ; F major = C major ; A minor = E major ; D minor = A major | Each cadence ends on the dominant, which is major in minor keys because of the raised leading note.
 SA2#music-u04-09-q5@2,3: Explain the role of the imperfect cadence in phrase structure. | Because it ends on V, the imperfect cadence sounds unfinished and creates expectation. It often ends the first phrase (antecedent) of a period, which is answered by a second phrase (consequent) ending with a perfect cadence. This question-and-answer balance is typical of Classical melody. | Open sound ; Antecedent ; Consequent with perfect cadence ; Balance
+Q: What effect does an imperfect cadence have? | It sounds unfinished, like a comma, and usually leads to another phrase.
+Q: Which chords most often approach V in an imperfect cadence? | I, ii, IV or vi.
+Q: Can the cadential six-four form part of an imperfect cadence? | Yes: Ic–V is a common form.
+Q: In a Phrygian cadence in A minor, how does the bass move? | It falls a semitone, F to E.
+Q: Where is the Phrygian cadence common in Baroque music? | At the ends of slow movements, leading into a faster movement.
+Q: What quality is V at a Phrygian cadence in A minor? | Major, with G♯.
+Q: What is an antecedent phrase? | The first phrase of a period, often ending with an imperfect cadence.
+Q: What is a consequent phrase? | The answering phrase of a period, usually ending with a perfect cadence.
+Q: What is the basic unit of much Classical melody? | The period: an antecedent and a consequent together.
+Q: Why isn't every cadence ending on G an imperfect cadence? | It must end on the dominant of the key; G is V only in C major or C minor.
 
 ## The plagal cadence
 LV: Introductory · Application
@@ -417,6 +507,16 @@ M2#music-u04-10-q2@2: Which note is common to IV and I in D major? | D | G | A |
 M3#music-u04-10-q3@3: A film score ends with F minor to C major in C major. What is this cadence? | A minor plagal cadence, iv–I | An interrupted cadence | A perfect cadence | A Phrygian cadence | F minor is iv borrowed from C minor; iv–I is the minor plagal.
 TF1#music-u04-10-q4@2: A plagal cadence contains the leading note in the final chord. | false | IV–I has no leading note in either chord; that is why it sounds gentler than V–I.
 SA2#music-u04-10-q5@1,3: Compare the plagal and perfect cadences. | Both end on I and sound final. The perfect cadence, V–I, contains the leading note rising to the tonic, giving a strong sense of closure. The plagal cadence, IV–I, has no leading note and a common tonic note, so it sounds softer. Plagal cadences often follow a perfect cadence as an extra close, as in a hymn's Amen. | Both end on I ; Leading note in V–I ; Softer IV–I ; Typical use
+Q: Why does the plagal cadence sound gentler than a perfect cadence? | It lacks the leading note's pull to the tonic.
+Q: When does the plagal cadence often follow a perfect cadence? | As an extra close, as in the sung Amen at the end of a hymn.
+Q: What is the plagal cadence in a minor key? | iv to i.
+Q: In a G major plagal cadence, which note is held? | G, common to IV and I.
+Q: What is a minor plagal cadence? | iv–I in a major key, using the minor subdominant borrowed from the minor mode.
+Q: Where is the minor plagal cadence common? | In Romantic music and film scores.
+Q: Which chord progression is sometimes counted as a plagal variant? | ii6/5–I.
+Q: How is IV–I used in popular music? | As a common close in gospel-influenced songs.
+Q: How does the bass move in a plagal cadence? | It falls a fifth or rises a fourth, as C to G in G major.
+Q: How do you tell a plagal cadence from an imperfect cadence on IV? | A plagal cadence ends IV–I; an imperfect cadence ends IV–V.
 
 ## The interrupted cadence
 LV: Intermediate · Application
@@ -456,6 +556,16 @@ M2#music-u04-11-q2@2: In G major, which chords form an interrupted cadence? | D 
 M3#music-u04-11-q3@3: After an interrupted cadence in bar 8, a phrase continues to bar 10 and ends V–I. What has happened? | The phrase has been extended to reach a delayed perfect cadence | The key has modulated to the relative minor | The piece has ended at bar 8 | An imperfect cadence has replaced the perfect one | The interrupted cadence denies closure, so the phrase continues to a perfect cadence.
 TF1#music-u04-11-q4@2: In V–VI in a minor key, the leading note rises to the tonic. | true | The raised leading note still rises a semitone to the tonic, the third of VI.
 SA2#music-u04-11-q5@2,3: Explain why the third of vi is doubled in an interrupted cadence. | In V–vi the bass rises a step from the dominant to the submediant. The leading note must rise to the tonic, which is the third of vi. If the other voices also moved to the root or fifth in similar motion with the bass, consecutive fifths or octaves would result. Moving the other upper voices down, so the tonic is doubled, avoids this. | Bass rises a step ; Leading note to tonic ; Risk of consecutives ; Doubled third
+Q: Why does an interrupted cadence surprise the listener? | The ear expects I after V, but the music moves to vi.
+Q: What is the interrupted cadence in a minor key? | V to VI.
+Q: In V–vi, how does the leading note resolve? | It rises to the tonic, which is the third of vi.
+Q: In an interrupted cadence in C major, which note is doubled in vi? | C, the third of vi.
+Q: Why should the root of vi not be doubled in V–vi? | With the bass rising a step, it usually forces consecutives or an unresolved leading note.
+Q: What does an interrupted cadence do to the phrase? | It extends it, so the music must continue to reach a perfect cadence.
+Q: Where might an interrupted cadence appear for emotional effect? | Before the final cadence of a hymn or an aria.
+Q: What is striking about V–VI in a minor key? | It moves to a major chord.
+Q: In V–vi in C major, how do the upper voices other than the leading note move? | They fall to the nearest notes of vi, as D to C and G to E.
+Q: What are the chords of an interrupted cadence in G major? | D to E minor.
 
 ## Cadences in minor keys and the tierce de Picardie
 LV: Intermediate · Application
@@ -494,6 +604,16 @@ M2#music-u04-12-q2@2: In E minor, which melodic interval is the augmented second
 M3#music-u04-12-q3@3: A chorale in G minor ends on a G major chord. What is this device, and what effect does it have? | A tierce de Picardie, giving a bright, resolved ending | An interrupted cadence, creating surprise | A modulation to G major for the next verse | A mistake, as the piece must end on G minor | The major third on the final tonic is a Picardy third.
 NUM1#music-u04-12-q4@2: How many semitones are in an augmented second? | 3 | 0 | semitones | An augmented second, such as F to G♯, spans three semitones, the same as a minor third.
 SA2#music-u04-12-q5@1,2: Explain how to approach V from iv in a minor key without an augmented second. | In iv, the sixth degree appears (F in A minor). Moving it up to the raised seventh (G♯) would make an augmented second. Instead, move that voice down by step to the fifth degree (E), and give the raised leading note to a voice that approaches it by step from the tonic or another note. | Sixth degree in iv ; Augmented second danger ; Sixth falls to fifth ; Leading note from elsewhere
+Q: Why does the natural minor v chord make a weak cadence? | It is minor and has no leading note.
+Q: What is V in A minor with the raised leading note? | E major, E–G♯–B.
+Q: In iv–V in a minor key, how does the voice with the sixth degree usually move? | It falls to the fifth degree, as F to E in A minor, avoiding the augmented second.
+Q: What is the augmented second in A harmonic minor? | F to G♯.
+Q: In a perfect cadence in A minor, how does G♯ resolve? | It rises to A.
+Q: In which periods was the tierce de Picardie common? | The Renaissance and Baroque.
+Q: Which Bach works often end with a tierce de Picardie? | Many of his minor-key chorales and preludes.
+Q: What effect does a tierce de Picardie give? | A bright, resolved ending.
+Q: What happens if the accidental for the raised leading note is forgotten? | v stays minor and the cadence lacks its pull.
+Q: In D minor, what is V at a cadence? | A major, with C♯ as the raised leading note.
 
 ## Passing notes and auxiliary notes
 LV: Introductory · Application
@@ -537,6 +657,16 @@ M2#music-u04-13-q2@2: Over a G major chord, the melody moves G–A–G. What is 
 M3#music-u04-13-q3@3: A student adds a passing note in the tenor that creates consecutive fifths with the bass. What should they do? | Remove or move the passing note, as decorations can still create faults | Leave it, as passing notes cannot cause faults | Add another passing note in the alto to cancel it | Double the passing note in the soprano | Consecutives formed by non-chord notes are still heard and still count as faults.
 TF1#music-u04-13-q4@1: A passing note can be approached by leap. | false | A passing note is approached and left by step in the same direction.
 SA2#music-u04-13-q5@1,2: Explain the difference between accented and unaccented passing notes. | Both move by step between two chord notes. Unaccented passing notes fall on a weak beat or the weak part of a beat, so the dissonance is light. Accented passing notes fall on the beat, so the dissonance is stressed before resolving to the chord note, giving a more expressive effect. | Shared definition ; Unaccented position ; Accented position ; Effect
+Q: What job do non-chord notes do in harmony? | They add movement and colour.
+Q: In a C major chord, what is F in the soprano line E–F–G? | A passing note between the third and the fifth.
+Q: Which kind of passing note is most common? | The unaccented passing note, on a weak beat or part of a beat.
+Q: How does an accented passing note differ from an unaccented one? | It falls on the beat, creating a stronger dissonance.
+Q: How can passing notes fill a fourth? | With two passing notes, as in G–A–B–C.
+Q: What is another name for an auxiliary note? | A neighbour note.
+Q: How is a lower auxiliary often altered? | It is often chromatically raised to lie a semitone below the chord note.
+Q: How many voices should usually carry passing notes at a time in four-part writing? | One or two voices at a time, often in quavers.
+Q: How do passing notes in two voices sound best together? | In parallel thirds or sixths.
+Q: What defines how a passing note is approached and left? | By step, continuing in the same direction.
 
 ## Suspensions
 LV: Intermediate · Application
@@ -582,6 +712,16 @@ M2#music-u04-14-q2@2: Over a bass G, a held C falls to B. What type of suspensio
 M3#music-u04-14-q3@3: In a 4–3 suspension over V, the alto also sounds the leading note during the suspension. What is the problem? | The note of resolution is doubled, weakening the effect | Nothing, as doubling is always acceptable | The suspension now resolves upwards | The bass must also be suspended | Sounding the resolution note at the same time anticipates it and blurs the dissonance.
 SEQ1#music-u04-14-q4@1: Order the stages of a suspension. | Preparation as a consonance ; Note held as the harmony changes ; Dissonance on the strong beat ; Resolution down by step | The suspension grows from a prepared consonance into a dissonance, then resolves.
 SA2#music-u04-14-q5@2,3: Explain how to write a 4–3 suspension at a perfect cadence. | In the chord before V, place the tonic note in an upper voice as a consonant preparation. As the bass moves to the dominant, hold the tonic note, creating a fourth above the bass on a strong beat. On the weaker beat, resolve it down by step to the leading note, the third of V. Avoid sounding the leading note in another voice during the suspension. | Preparation ; Held fourth on strong beat ; Resolution to third ; Avoid doubling resolution
+Q: What is a suspension? | A note held over a change of harmony, becoming dissonant, then resolving down by step.
+Q: What is the preparation of a suspension? | The note sounding as a consonant chord note in the first chord.
+Q: On what kind of beat does a suspension's resolution fall? | A weaker beat.
+Q: How are suspensions named? | By the intervals above the bass at the suspension and at the resolution.
+Q: Where is the 4–3 suspension very common? | Over V at cadences.
+Q: Where do 7–6 suspensions often appear? | In chains over first-inversion chords.
+Q: What happens in a 9–8 suspension? | The ninth above the bass falls to the octave.
+Q: What is a 2–3 suspension? | A bass suspension: the bass is held, forming a second with an upper voice, and resolves as the bass falls.
+Q: What must not be doubled in another voice at the moment of suspension? | The note of resolution, except the bass in a 9–8.
+Q: What is a retardation? | A suspension that resolves upwards.
 
 ## Appoggiaturas, anticipations and pedal points
 LV: Intermediate · Application
@@ -623,6 +763,16 @@ M2#music-u04-15-q2@2: A melody leaps up to a dissonant note on the beat, then fa
 M3#music-u04-15-q3@3: Before the recapitulation of a sonata movement, the bass sustains the dominant for several bars. What is its effect? | It builds expectation of the tonic and the return of the main theme | It confirms that the piece has ended | It modulates to the subdominant | It removes all dissonance from the passage | A dominant pedal heightens tension that resolves on the tonic.
 TF1#music-u04-15-q4@2: A suspension and an appoggiatura are both prepared by the same note in the previous chord. | false | Only the suspension is prepared; the appoggiatura is approached by leap.
 SA2#music-u04-15-q5@2,3: Compare appoggiaturas and suspensions. | Both are accented dissonances that resolve by step, usually downwards, giving an expressive effect. A suspension is prepared: the same note sounds as a consonance in the previous chord and is held over. An appoggiatura is unprepared and is usually approached by leap, so its dissonance arrives more suddenly. | Shared features ; Suspension preparation ; Appoggiatura approach ; Effect
+Q: Where does the word appoggiatura come from? | The Italian appoggiare, to lean.
+Q: How does an appoggiatura differ from a suspension? | It is approached by leap without preparation; a suspension is prepared by the same note in the previous chord.
+Q: In which direction does an appoggiatura usually resolve? | By step, usually in the opposite direction to its approach.
+Q: On what kind of beat is an anticipation sounded? | A weak beat, before the chord it belongs to arrives.
+Q: Where is an anticipation common in Baroque cadences? | In the soprano, the tonic note arriving a quaver early over V.
+Q: What is a pedal point? | A note sustained or repeated, usually in the bass, while harmonies change above it.
+Q: What does a tonic pedal do? | It confirms the home key, often at the end of a piece.
+Q: Where is a dominant pedal often used? | Before a recapitulation or final cadence, building expectation of the tonic.
+Q: What is an inverted pedal? | A pedal that sits in an upper voice.
+Q: How does Bach's Prelude in C major, BWV 846, end? | Its harmonies move over a long dominant pedal on G, then a tonic pedal on C.
 
 ## Realising a figured bass
 LV: Intermediate · Application
@@ -669,6 +819,16 @@ M2#music-u04-16-q2@2: In A minor, the bass E has a sharp sign alone. Which chord
 M3#music-u04-16-q3@3: The bass B in C major is figured 6/5. Which chord is indicated? | G7 in first inversion | B diminished in root position | E minor in first inversion | D minor seventh | A third (D), fifth (F) and sixth (G) above B give G–B–D–F with B in the bass.
 MATCH1#music-u04-16-q4@1: Match each figure to its meaning. | 6 = First inversion ; 6/4 = Second inversion ; 7 = Root-position seventh ; 4/2 = Seventh chord in third inversion | Figures name the intervals above the bass, which identify the inversion.
 SA2#music-u04-16-q5@2,3: Explain the steps in realising a figured bass. | First read each bass note and its figures to identify the chord, applying the key signature and any accidentals. Then write a soprano line that moves mainly by step and reaches the tonic at cadences. Fill in the alto and tenor with correct doubling and spacing. Finally, check all pairs of voices for consecutives and make sure sevenths fall and leading notes rise. | Identify chords ; Soprano line ; Inner voices ; Checking
+Q: What was the basso continuo? | The Baroque accompaniment in which a keyboard or lute player improvised harmony above a bass line from figures.
+Q: Which treatise gives a detailed guide to figured bass? | C. P. E. Bach's Essay on the True Art of Playing Keyboard Instruments (1753–62).
+Q: What does the figure 7 under a bass note mean? | A root-position seventh chord, 7/5/3.
+Q: What do the figures 6/5, 4/3 and 4/2 indicate? | Seventh chords in first, second and third inversion.
+Q: What does a slash through a figure mean? | That the interval is raised.
+Q: What does an accidental beside a number in figured bass mean? | It alters that interval above the bass.
+Q: In C major, what chord is bass F with 6? | D minor in first inversion, ii6.
+Q: In C major, what chord is bass G with 7? | V7: G with B, D and F above.
+Q: How should the soprano line of a figured bass realisation move? | Mainly by step, ending on the tonic.
+Q: What is realisation in figured bass? | Writing or playing the full harmony indicated by the figured bass.
 
 ## Harmonising a chorale melody
 LV: Intermediate · Evaluation
@@ -713,4 +873,14 @@ M2#music-u04-17-q2@2: A chorale in G major has a phrase ending on A in the melod
 M3#music-u04-17-q3@3: A harmonisation has a bass moving in parallel tenths with the soprano throughout. What is the weakness? | The outer voices lack independence, so the bass should use more contrary motion | It creates consecutive octaves | Parallel tenths are forbidden | The soprano will be out of range | Parallel tenths are allowed, but a whole bass in parallel motion sounds weak and dependent.
 SEQ1#music-u04-17-q4@2: Order the steps in harmonising a chorale. | Identify the key and plan cadences ; Write the cadences ; Complete the bass line ; Fill in the alto and tenor ; Check for faults | Planning and the outer voices come first; inner parts and checking follow.
 SA2#music-u04-17-q5@3: Evaluate a harmonisation in which every chord is in root position. | Root-position chords give clear harmony and strong cadences, but using them throughout makes the bass leap constantly and sound heavy and static. First-inversion chords and passing notes would give a more melodic bass, smoother voice leading and greater variety, closer to Bach's style. | Strengths ; Leaping bass ; Lack of variety ; Improvements
+Q: What is a chorale? | A Lutheran hymn melody, often harmonised in four parts.
+Q: When was a collection of 371 Bach chorales published, and by whom? | By Breitkopf in 1784–87, edited by C. P. E. Bach and Kirnberger.
+Q: What should be decided at each fermata of a chorale? | The cadence: perfect, imperfect, interrupted, or one in a related key.
+Q: What should be written immediately after planning the cadences? | The bass and chords for each cadence.
+Q: How should the bass of a chorale harmonisation move? | Mainly in contrary motion to the melody, mixing steps and leaps, with first inversions for smoothness.
+Q: Roughly how often should chords change in a chorale harmonisation? | About one chord per beat.
+Q: When are passing notes added in a chorale harmonisation? | After the alto and tenor are filled in with correct doubling and spacing.
+Q: In a G major chorale, what cadence suits a phrase ending on D in the melody? | An imperfect cadence, I–V.
+Q: What device might decorate the final perfect cadence of a chorale? | A 4–3 suspension.
+Q: What should be checked when a chorale harmonisation is complete? | Consecutives in all six pairs, leading-note doubling, resolution of sevenths and leading notes, ranges, spacing and singability.
 `;

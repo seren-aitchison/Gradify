@@ -42,6 +42,16 @@ M1#nursing-u13-01-q1@1: Which 2001 strategy set principles of rights, independen
 M2#nursing-u13-01-q2@3: What training became mandatory for health and social care staff in England under the Health and Care Act 2022? | The Oliver McGowan training | Advanced life support training | Forklift safety training | Dementia awareness training only | The Oliver McGowan Mandatory Training is required for staff in regulated services.
 M2#nursing-u13-01-q3@2: Which factor is commonly found in avoidable deaths of people with learning disabilities? | Delays in recognising illness and diagnostic overshadowing | Too many reasonable adjustments | Excessive health checks | Too much involvement of families | LeDeR reports highlight delays, overshadowing and poor adjustments.
 TF2#nursing-u13-01-q4@3: People with learning disabilities die on average much younger than the general population. | True | LeDeR and other studies show a large gap in life expectancy, often from avoidable causes.
+Q: Where do learning disability nurses work? | Community teams, acute hospital liaison, inpatient units, forensic services, schools, supported living, primary care and with families.
+Q: What are the core values of learning disability nursing? | Rights, independence, choice, inclusion and person-centred practice.
+Q: Where did many people with learning disabilities live for much of the 20th century? | In large, isolated long-stay institutions.
+Q: What did Valuing People (2001) set out? | Principles of rights, independence, choice and inclusion.
+Q: Which 2019 scandal exposed abuse of people with learning disabilities in hospital? | Whorlton Hall.
+Q: What do Transforming Care and Building the Right Support aim to do? | Reduce inpatient admissions and develop community support.
+Q: What conditions allow harm to happen in services? | Closed environments, power imbalances and low expectations.
+Q: How much earlier do people with learning disabilities often die? | Often more than 20 years earlier than the general population.
+Q: Name factors common in avoidable deaths of people with learning disabilities. | Delays recognising illness, diagnostic overshadowing, poor reasonable adjustments and inappropriate DNACPR decisions.
+Q: Which law made Oliver McGowan training mandatory in England? | The Health and Care Act 2022.
 
 ## Intellectual disability
 S: Intellectual (learning) disability is a lifelong condition that affects how a person learns, understands and copes independently. Understanding its definition, causes and levels helps nurses provide the right support.
@@ -86,6 +96,16 @@ M1#nursing-u13-02-q1@1: Which is required for a diagnosis of learning disability
 M2#nursing-u13-02-q2@2: What does PMLD stand for? | Profound and multiple learning disabilities | Personal mental and learning difficulties | Physical motor learning delay | Partial moderate learning disability | PMLD describes a profound learning disability with other significant disabilities.
 M2#nursing-u13-02-q3@3: Which is a genetic cause of learning disability? | Fragile X syndrome | Dyslexia | Seasonal allergies | Iron deficiency in adulthood | Fragile X is a common inherited cause of learning disability.
 TF2#nursing-u13-02-q4@1: A learning disability is a type of mental illness. | False | It is a lifelong developmental condition, though mental health problems are more common.
+Q: What IQ is often associated with learning disability? | An IQ below about 70.
+Q: What is adaptive functioning? | The practical, social and conceptual skills needed for everyday life.
+Q: How might a person with a mild learning disability live? | Possibly independently with some support, and may not be known to services.
+Q: What support does a person with a moderate learning disability usually need? | More support with daily living and communication.
+Q: What characterises a severe learning disability? | Needing significant support, with limited verbal communication.
+Q: Name genetic syndromes that cause learning disability. | Down syndrome, fragile X, Prader-Willi, Williams and Angelman syndromes.
+Q: Name causes of learning disability before birth. | Infections such as cytomegalovirus, alcohol and some medicines.
+Q: Name causes of learning disability after birth. | Brain injury, meningitis, encephalitis and severe neglect.
+Q: Is a specific cause always found for learning disability? | No. In many people no specific cause is found.
+Q: Do "learning disability" and "intellectual disability" mean the same thing? | Yes. Learning disability is the UK health and social care term; intellectual disability is international.
 
 ## Neurodevelopmental conditions
 S: Neurodevelopmental conditions affect the development of the brain and nervous system, influencing learning, attention, communication, movement and behaviour. They often co-occur with learning disability.
@@ -127,6 +147,16 @@ M1#nursing-u13-03-q1@1: Which describes ADHD? | Persistent inattention and/or hy
 M2#nursing-u13-03-q2@2: What should be monitored in a person taking stimulant medicine for ADHD? | Appetite, sleep, heart rate and blood pressure | Only their hair growth | Nothing, as stimulants have no side effects | Only their shoe size | Stimulants can affect appetite, sleep and cardiovascular measures.
 M2#nursing-u13-03-q3@3: Which approach fits a neurodiversity-affirming practice? | Adapting environments and building on the person's strengths | Training people to hide their differences | Focusing only on deficits | Avoiding any adjustments | Neurodiversity-affirming practice values differences and adjusts environments.
 MS2#nursing-u13-03-q4@2: Which conditions commonly co-occur with learning disability? | Autism ; Epilepsy ; Sensory impairments | Seasonal hay fever only ; Short-sightedness only | These co-occur frequently and need holistic assessment.
+Q: What is a neurodevelopmental condition? | A condition affecting brain development, such as autism, ADHD or learning disability.
+Q: What is cerebral palsy? | Movement and posture disorders from early brain injury.
+Q: What conditions may occur alongside cerebral palsy? | Learning disability, epilepsy and sensory impairment.
+Q: What is another name for developmental coordination disorder? | Dyspraxia.
+Q: How is ADHD treated? | With support, environmental changes and sometimes medicine.
+Q: Why can co-occurring conditions be overlooked? | They can mask each other or be put down to a known condition (diagnostic overshadowing).
+Q: What does the neurodiversity approach recognise? | Natural variation in how brains work, valuing differences while recognising disability and support needs.
+Q: What does a strengths-based neurodiversity approach avoid? | Trying to make people appear "normal".
+Q: What nursing support helps people with neurodevelopmental conditions? | Clear, structured communication, predictable routines and environmental adjustments for attention and sensory needs.
+Q: Who should be involved in assessing neurodevelopmental conditions? | Specialists, considering the whole person.
 
 ## Autism
 S: Autism is a lifelong neurodevelopmental difference in how people communicate, interact and experience the world. Some autistic people have a learning disability; many don't. Understanding autism helps nurses make care accessible and avoid distress.
@@ -171,6 +201,16 @@ M1#nursing-u13-04-q1@1: Which is a common feature of autism? | Sensory differenc
 M2#nursing-u13-04-q2@2: An autistic man becomes very distressed in a busy, noisy waiting room. What adjustment helps most? | Offer a quiet space to wait and call him when ready | Ask him to calm down and wait his turn | Give him more forms to complete | Move him to the front of the noisy queue | Reducing sensory load prevents overwhelm.
 M2#nursing-u13-04-q3@3: An autistic woman says she copes at work by copying colleagues' expressions all day but feels exhausted. What is she describing? | Masking, which is linked to burnout and poor mental health | A sign that she is not autistic | Ordinary tiredness needing no support | A personality disorder | Masking is effortful and can lead to burnout.
 TF1#nursing-u13-04-q4@3: Pain may be expressed differently by autistic people, so behaviour and carers' knowledge help assess it. | True | Autistic people may not report pain in expected ways.
+Q: What social communication differences may autistic people have? | Difficulty interpreting non-verbal cues and literal understanding of language.
+Q: What are restricted and repetitive patterns in autism? | Repetitive behaviours, interests or activities, including a need for routine and predictability.
+Q: What proportion of people with a learning disability are autistic? | Around a third or more.
+Q: What language do many autistic people prefer? | Identity-first language, such as "autistic person"; ask the person.
+Q: How can autistic people be prepared for appointments? | Explain what will happen, who they will meet and how long it takes, using visual information.
+Q: How can sensory load be reduced in healthcare? | Quiet rooms, dimmed lights, fewer people and avoiding waits in busy areas.
+Q: What is autistic burnout? | Exhaustion and loss of skills after prolonged stress.
+Q: What is a shutdown? | Withdrawal in response to overload.
+Q: What did the Autism Act 2009 lead to? | A national autism strategy and statutory guidance for local services in England.
+Q: How can special interests help in care? | They can be calming, so respect them.
 
 ## Down syndrome
 S: Down syndrome is the most common chromosomal cause of learning disability. People with Down syndrome have particular health risks across their lives, and good health surveillance helps them live longer, healthier lives.
@@ -217,6 +257,16 @@ M1#nursing-u13-05-q1@1: Which heart problem is common in babies with Down syndro
 M2#nursing-u13-05-q2@3: A 48-year-old man with Down syndrome has become slower and less interested in activities. What should be checked first? | Treatable causes such as hypothyroidism | Nothing, as it must be dementia | Only his diet | Whether he needs a new bed | Treatable conditions can mimic dementia and must be excluded.
 M2#nursing-u13-05-q3@2: What law in England requires guidance on meeting the needs of people with Down syndrome? | The Down Syndrome Act 2022 | The Mental Health Act 1983 | The Children Act 1989 | The Autism Act 2009 | The Down Syndrome Act 2022 requires statutory guidance across services.
 MS2#nursing-u13-05-q4@1: Which conditions are more common in people with Down syndrome? | Hypothyroidism ; Hearing loss ; Obstructive sleep apnoea | Taller than average height ; Lower risk of dementia | These need regular surveillance.
+Q: What is the most common chromosomal cause of learning disability? | Down syndrome.
+Q: Apart from trisomy 21, what can cause Down syndrome? | Translocation or mosaicism.
+Q: How long do many people with Down syndrome now live? | Into their 50s and 60s.
+Q: What proportion of babies with Down syndrome have congenital heart disease? | Around half.
+Q: Which hearing and vision problems are common in Down syndrome? | Glue ear and later sensorineural loss; cataracts, refractive errors and keratoconus.
+Q: Why should neurological signs be watched for in Down syndrome? | Because of atlanto-axial instability in the neck.
+Q: When does dementia risk rise sharply in Down syndrome? | From the 40s.
+Q: How are children with Down syndrome's growth monitored? | With specialised growth charts.
+Q: How can dementia be detected earlier in Down syndrome? | Baseline assessments of skills and memory in early adulthood.
+Q: What may be early signs of dementia in Down syndrome? | Changes in personality, behaviour or daily skills, or new seizures, rather than memory loss.
 
 ## Communication needs
 S: Many people with learning disabilities communicate in ways other than speech, or understand less than they appear to. Finding and using the right communication approach is central to good care, consent and safety.
@@ -262,6 +312,16 @@ M1#nursing-u13-06-q1@1: What is Makaton? | Signs and symbols used alongside spee
 M2#nursing-u13-06-q2@3: A woman with a learning disability chats fluently but can't explain back what a procedure involves. What does this suggest? | She may understand less than she says | She fully understands and is being difficult | She has no learning disability | No further explanation is needed | Expressive language can mask limited understanding.
 M2#nursing-u13-06-q3@2: Which approach suits a man with profound learning disabilities who communicates through sounds and movements? | Intensive interaction | A written leaflet | A long verbal explanation | A telephone call | Intensive interaction builds connection through his own communication.
 MATCH1#nursing-u13-06-q4@2: Match each tool to its description. | PECS = Exchanging pictures ; Objects of reference = Objects representing activities ; Easy read = Simple words with pictures ; Talking Mats = Visual framework for views | Different tools suit different people.
+Q: Who should be asked about how a person with a learning disability communicates? | The person, their family and carers; also check communication passports.
+Q: Why should hearing and vision be considered in communication? | Impairments are common and often missed.
+Q: Which professionals advise on communication needs? | Speech and language therapists.
+Q: What is PECS? | The Picture Exchange Communication System: exchanging pictures to communicate.
+Q: What are Talking Mats? | A visual framework for expressing views.
+Q: What is easy read? | Simple words with pictures.
+Q: Who is intensive interaction usually for? | People at early stages of communication, often with profound learning disabilities or autism.
+Q: How should sentences be structured for people with learning disabilities? | Short sentences with one idea at a time, using concrete words.
+Q: How should you check understanding? | Ask the person to show or tell you, not just "Do you understand?"
+Q: Why record what communication approaches work? | So others can use them.
 
 ## Accessible healthcare
 S: People with learning disabilities often face barriers to healthcare: inaccessible information, difficult environments, communication problems and attitudes. Accessible healthcare removes these barriers so people get the care they need.
@@ -306,6 +366,16 @@ M1#nursing-u13-07-q1@1: What should follow an annual health check? | A health ac
 M2#nursing-u13-07-q2@2: A man with a learning disability is very frightened of blood tests. What approach can help? | A gradual desensitisation plan with familiar people | Holding him down to take the blood quickly | Cancelling all blood tests permanently | Telling him it won't hurt | Gradual desensitisation with familiar people, steps and rewards reduces fear over time and avoids restraint.
 M2#nursing-u13-07-q3@3: Why might a person with a learning disability miss hospital appointments? | Inaccessible letters, transport or fear of the environment | They never need healthcare | Missed appointments always mean they're well | They prefer not to be treated | Barriers often explain missed appointments; follow up and adjust.
 TF2#nursing-u13-07-q4@3: STOMP aims to reduce the inappropriate use of psychotropic medicines in people with learning disabilities and autistic people. | True | STOMP addresses over-medication with antipsychotics and other psychotropics.
+Q: Name barriers to healthcare for people with learning disabilities. | Inaccessible booking and information, noisy environments, communication difficulties, diagnostic overshadowing, low expectations and fear.
+Q: What is diagnostic overshadowing? | Attributing symptoms to the learning disability rather than investigating them.
+Q: What is a health action plan? | A personal plan of actions to improve and maintain a person's health.
+Q: What is the Reasonable Adjustment Digital Flag? | A national flag on records in England alerting staff to adjustment needs.
+Q: What do learning disability liaison nurses do? | Support people with learning disabilities in acute hospitals.
+Q: What does STAMP relate to? | Reducing inappropriate psychotropic medicines, alongside STOMP.
+Q: Which appointment times can make care more accessible? | First or last appointments, and longer appointments.
+Q: Why offer pre-visits? | To familiarise the person with the environment.
+Q: What is a desensitisation plan? | Gradual exposure and rewards to help a person cope with a frightening procedure such as a blood test.
+Q: What should happen when a person with a learning disability misses an appointment? | Follow up and explore why rather than discharging.
 
 ## Reasonable adjustments
 S: Reasonable adjustments are changes to how services are provided so that disabled people, including people with learning disabilities and autistic people, can use them as effectively as others. They are a legal duty and often simple to make.
@@ -347,6 +417,16 @@ M1#nursing-u13-08-q1@1: What does it mean that the reasonable adjustments duty i
 M3#nursing-u13-08-q2@3: A woman with a learning disability needs a dental check, a blood test and an ear examination, all of which distress her. What adjustment could help? | Combining them under one anaesthetic | Doing them on three separate busy days | Cancelling all of them | Doing them without explanation to save time | Combining procedures can reduce distress and improve access.
 M2#nursing-u13-08-q3@2: How can a service make sure adjustments happen every time? | Record them on flags and passports and share them with the team | Rely on staff to remember | Write them only on a sticky note | Ask the person to repeat them every visit | Recording and sharing ensure consistency.
 MS2#nursing-u13-08-q4@2: Which are reasonable adjustments? | Longer appointments ; Easy read letters ; A quiet waiting area | Refusing to see carers ; Shorter appointments for everyone | These reduce disadvantage for people with learning disabilities.
+Q: What is a reasonable adjustment? | A change to how a service is provided so disabled people aren't at a substantial disadvantage.
+Q: Which law requires reasonable adjustments? | The Equality Act 2010.
+Q: Is failing to make reasonable adjustments discrimination? | Yes.
+Q: Give reasonable adjustments at booking. | Easy read letters, phone reminders, flexible times and first or last appointments.
+Q: Give reasonable adjustments on arrival. | A quiet waiting area, being seen promptly and familiar staff.
+Q: How can procedures be adjusted to reduce distress? | Desensitisation, agreed sedation in best interests, or combining procedures under one anaesthetic.
+Q: What adjusted equipment may be needed in assessment? | Hoists or larger blood pressure cuffs.
+Q: Give reasonable adjustments at discharge. | Easy read discharge information, arranged follow-up and communication with community teams.
+Q: Where should reasonable adjustments be recorded? | In notes, on reasonable adjustment flags and in hospital passports.
+Q: What have LeDeR reviews found about missing adjustments? | They contributed to delayed diagnoses and avoidable deaths.
 
 ## Mental capacity
 S: Supporting people with learning disabilities to make their own decisions is central to learning disability nursing. The Mental Capacity Act provides the framework, but good practice goes beyond assessment to active support for decision-making.
@@ -389,6 +469,16 @@ M1#nursing-u13-09-q1@1: When should a person with a learning disability be consi
 M2#nursing-u13-09-q2@2: A man is deciding whether to move to supported living. Which approach best supports his decision? | A visit, pictures and trusted people | Giving him a long written contract | Deciding for him to save time | Asking only the landlord | Real experiences and accessible information support decision-making.
 M3#nursing-u13-09-q3@3: A woman with a learning disability lacks capacity to decide about a major operation and has no family. Who should be involved? | An Independent Mental Capacity Advocate | Nobody; the surgeon decides alone | Her neighbour | A police officer | An IMCA must be instructed for serious medical treatment without anyone appropriate to consult.
 TF2#nursing-u13-09-q4@3: Supporting choice in everyday decisions helps build confidence for bigger decisions. | True | Everyday choice builds skills and self-determination.
+Q: Can a person with a learning disability make an unwise decision and still have capacity? | Yes. An unwise decision alone doesn't show a lack of capacity.
+Q: What does time-specific capacity mean? | Capacity relates to a decision at a particular time and can change.
+Q: When is the best time to support a decision? | When the person is calm, alert and in a familiar setting.
+Q: Give accessible ways to present decision information. | Easy read, pictures, objects, demonstrations and real experiences such as visiting a new home.
+Q: What should be recorded in supported decision-making? | The steps taken to support the decision.
+Q: What does the best interests checklist consider? | Past and present wishes, feelings, beliefs and values, consultation with others and less restrictive options.
+Q: When is an IMCA involved? | For serious medical treatment or accommodation decisions when there is no one else appropriate to consult.
+Q: What did the Cheshire West case concern? | A man with learning disabilities, relevant to deprivation of liberty under continuous supervision and control.
+Q: Does the MCA cover 16 and 17 year olds? | Yes, most of the MCA applies to them.
+Q: Why support everyday choices such as what to wear? | It builds confidence and skills for bigger decisions.
 
 ## Consent
 S: Valid consent applies to people with learning disabilities just as it does to anyone else. Nurses must make sure people have the information and support they need to consent, and that refusals are respected where the person has capacity.
@@ -430,6 +520,16 @@ M1#nursing-u13-10-q1@2: Which question is least likely to lead to acquiescence? 
 M2#nursing-u13-10-q2@2: A man with a learning disability agrees to every suggestion, including contradictory ones. What should the nurse consider? | Acquiescence, so check understanding with open choices | That he clearly consents to everything | That he is being uncooperative | That consent isn't needed | Agreeing to contradictory options suggests acquiescence.
 M2#nursing-u13-10-q3@3: A woman with capacity refuses a mammogram after accessible explanation. What should happen? | Respect her refusal and record the discussion | Book it anyway because it is good for her | Ask her family to consent | Keep asking until she agrees | A person with capacity can refuse, even if others disagree.
 MS2#nursing-u13-10-q4@1: Which support informed consent for people with learning disabilities? | Easy read information ; Time to ask questions ; Checking understanding | Long technical leaflets ; Rushed explanations | Accessible, unhurried information supports consent.
+Q: What are the three requirements for valid consent? | Capacity, information and voluntariness.
+Q: Is consent a one-off event? | No. Consent is ongoing; check it continues during care.
+Q: What information should be given for consent? | What will happen, why, what it will feel like, the risks and alternatives, including doing nothing.
+Q: How can understanding be checked before consent? | Ask the person to explain or show back.
+Q: Why should yes/no and leading questions be avoided? | Some people acquiesce, saying yes to please or agreeing with the last option.
+Q: How can the risk of acquiescence be reduced? | Offer open choices and check consistency of answers.
+Q: Why might you speak to a person with a learning disability alone about a decision? | Family, carers or staff may unintentionally pressure them.
+Q: Why may some people with learning disabilities not feel able to refuse? | A power imbalance: they may be used to being told what to do.
+Q: Can a person with capacity refuse treatment others think they need? | Yes, even if others disagree.
+Q: When can restraint be used for a person who lacks capacity? | When it is necessary to prevent harm and proportionate, under the Mental Capacity Act.
 
 ## Advocacy
 S: Advocacy helps people speak up, be heard and have their rights respected. People with learning disabilities may rely on advocacy to challenge decisions, access services and make choices about their lives.
@@ -471,6 +571,16 @@ M1#nursing-u13-11-q1@1: Which advocate supports people detained under the Mental
 M2#nursing-u13-11-q2@2: A man's family insist he wants to move to a residential home, but he seems unhappy when it is discussed. What might help? | Independent advocacy to help him express his own views | Accepting the family's view without question | Deciding for him to avoid conflict | Ignoring his reaction | Independent advocacy helps the person's own voice be heard.
 M3#nursing-u13-11-q3@3: What is the nurse's advocacy role if a DNACPR decision seems to be based on a person's learning disability? | Challenge it and ensure the decision is individualised and lawful | Accept it, as doctors decide | Say nothing to avoid conflict | Tell the family to complain later | A learning disability alone is never a reason for DNACPR; nurses should challenge it.
 TF2#nursing-u13-11-q4@1: Self-advocacy groups help people with learning disabilities speak up for themselves. | True | They build confidence and influence over services.
+Q: What is peer advocacy? | Support from someone with similar experiences.
+Q: What is citizen advocacy? | A long-term, one-to-one relationship with a volunteer advocate.
+Q: What is independent professional advocacy? | Issue-based support from trained advocates.
+Q: Name a self-advocacy group. | People First.
+Q: Name the statutory advocates. | IMCAs, IMHAs and Care Act advocates.
+Q: When is an IMCA required? | For serious medical treatment, accommodation changes and some safeguarding decisions when a person lacks capacity and has no one appropriate to consult.
+Q: Who is a Care Act advocate for? | People with substantial difficulty taking part in assessments, care planning and safeguarding, with no appropriate person to help.
+Q: What should nurses challenge as advocates? | Discrimination, poor care, inappropriate DNACPR decisions and over-medication.
+Q: How can nurses support self-advocacy? | Encourage views, give accessible information, support participation in planning and involve self-advocacy groups.
+Q: What does self-advocacy build? | Confidence, independence and influence over services.
 
 ## Positive behavioural support
 S: Positive behaviour support (PBS) is a person-centred, evidence-based approach to understanding and reducing behaviour that challenges by improving quality of life and meeting needs. It is the recommended framework in UK learning disability services.
@@ -514,6 +624,16 @@ M1#nursing-u13-12-q1@1: What is the main aim of positive behaviour support? | Im
 M2#nursing-u13-12-q2@2: Which is a common function of behaviour that challenges? | Escaping or avoiding demands | Having no reason at all | Deliberately upsetting staff | Following a ward rule | Many behaviours serve to escape demands or gain something.
 M3#nursing-u13-12-q3@3: A woman who has never hit out before starts slapping her face and refusing food. What should be considered first? | Physical causes such as dental pain, constipation or infection | Increasing restrictions to stop the behaviour | A new antipsychotic medicine | That she is being deliberately difficult | New behaviour often signals pain or illness; check physical health first.
 MATCH2#nursing-u13-12-q4@2: Match each strategy to its type. | Meaningful daily activities = Primary ; Offering a break when early signs appear = Secondary ; Safely moving others away during an incident = Reactive | Strategies differ by when they are used.
+Q: What does behaviour that challenges usually do for the person? | It serves a function, communicating a need.
+Q: What evidence base does PBS draw on? | Applied behaviour analysis, used ethically and person-centredly.
+Q: What are setting events? | Background factors such as pain, poor sleep or illness that make behaviour more likely.
+Q: What are the two broad functions of behaviour that challenges? | To get something, or to escape or avoid something.
+Q: Which physical causes should be considered in behaviour that challenges? | Pain, constipation, infection, seizures or medication side effects.
+Q: What are primary strategies in a PBS plan? | Proactive changes to environment and support that meet needs and prevent behaviour.
+Q: Why does a PBS plan include teaching new skills? | To give alternative ways to meet the same need, such as asking for a break.
+Q: What are secondary strategies in PBS? | Responses to early warning signs, such as redirection, reducing demands or offering choices.
+Q: What are reactive strategies in PBS? | Keeping everyone safe when behaviour happens, using the least restrictive option.
+Q: What makes a PBS plan work? | Consistent use by everyone, with training, practice leadership and regular review.
 
 ## Challenging behaviour
 S: "Behaviour that challenges" describes behaviour that puts the person or others at risk or limits their quality of life. Responding well means understanding causes, protecting rights and reducing restrictive practices, not controlling people.
@@ -555,6 +675,16 @@ M1#nursing-u13-13-q1@1: Which is a restrictive practice? | Seclusion | A meaning
 M2#nursing-u13-13-q2@2: What does STOMP aim to address? | Over-use of psychotropic medicines | The use of PBS plans | Annual health checks | Easy read information | STOMP reviews and reduces inappropriate psychotropic use.
 M2#nursing-u13-13-q3@3: After an incident where restraint was used, what should happen? | Check for injury, debrief and review | Record nothing to avoid blame | Increase restraint next time | Move on without discussion | Post-incident support and review reduce future restriction.
 TF2#nursing-u13-13-q4@3: Building the Right Support aims to reduce hospital admissions for people with learning disabilities and autistic people. | True | It develops community support to prevent inappropriate admission.
+Q: How did Emerson define challenging behaviour? | Behaviour of such intensity, frequency or duration that it threatens safety or limits access to ordinary community life.
+Q: What can happen to people with behaviour that challenges without good support? | Exclusion, abuse, over-medication, restrictive practices and admission far from home.
+Q: Name factors that contribute to behaviour that challenges. | Communication difficulties, sensory needs, pain, mental health problems, trauma, poor environments and changes in routine or staff.
+Q: Name types of restrictive practice. | Physical restraint, seclusion, mechanical restraint, chemical restraint and environmental restrictions.
+Q: What is chemical restraint? | Using medicines to control behaviour rather than treat a diagnosed condition.
+Q: Why should prone restraint be avoided? | Because of the risk of death.
+Q: How should staff respond during an incident of behaviour that challenges? | Stay calm, keep everyone safe, reduce demands and stimulation, and follow the PBS plan.
+Q: Why look for patterns across incidents? | To improve the person's support plan.
+Q: What is a dynamic support register? | A tool used under Building the Right Support to help prevent inappropriate hospital admission.
+Q: What teams support Building the Right Support in the community? | Community intensive support teams.
 
 ## Physical health inequalities
 S: People with learning disabilities experience more physical health problems and die younger than the general population, often from treatable conditions. Nurses must recognise these risks and make sure people get timely, adjusted care.
@@ -601,6 +731,16 @@ M1#nursing-u13-14-q1@1: Which condition linked to swallowing problems is a leadi
 M2#nursing-u13-14-q2@2: A carer says a man with a learning disability "isn't himself" and has stopped eating. What should the nurse do? | Treat this as a possible sign of illness and assess fully | Attribute it to his learning disability | Wait for him to say he feels unwell | Ignore the carer's concern | Changes from baseline often signal illness; avoid diagnostic overshadowing.
 M3#nursing-u13-14-q3@3: A woman with a learning disability on regular clozapine hasn't opened her bowels for five days and seems uncomfortable. What should the nurse do? | Escalate for urgent review | Wait a few more days | Offer a cup of tea and observe | Record it without action | Constipation can be life-threatening, especially with clozapine.
 MS2#nursing-u13-14-q4@3: Which reduce avoidable deaths in people with learning disabilities? | Bowel monitoring ; Swallowing assessment and safe diets ; Individual DNACPR decisions | DNACPR based on learning disability alone ; Ignoring behaviour change | These measures address the leading causes of avoidable death.
+Q: Why is dysphagia dangerous? | It causes choking, aspiration and malnutrition.
+Q: Why is cancer often diagnosed later in people with learning disabilities? | Lower screening uptake.
+Q: How may people with learning disabilities show illness? | Through behaviour change, withdrawal or distress rather than reporting symptoms.
+Q: Why does a person's baseline matter in learning disability? | It helps staff recognise change, using information from carers and passports.
+Q: What are soft signs of deterioration? | Early, subtle indicators such as reduced appetite or new confusion.
+Q: Which soft signs tool is used in care homes? | RESTORE2.
+Q: How can constipation be prevented? | Bowel charts, fluid and fibre, mobility, reviewing constipating medicines and acting on changes.
+Q: How can aspiration be prevented in dysphagia? | Swallowing assessments, IDDSI-modified diets, safe positioning and supervision at meals.
+Q: Can a DNACPR decision be based on a learning disability? | Never. Decisions must be individual.
+Q: Which proactive measures reduce health inequalities? | Annual health checks, health action plans, adjusted screening, vaccination and medication reviews including STOMP.
 
 ## Epilepsy
 S: Epilepsy is much more common in people with learning disabilities than in the general population, and more so in people with more severe disabilities. It is a major cause of avoidable death, and good epilepsy care saves lives.
@@ -641,6 +781,16 @@ M1#nursing-u13-15-q1@1: Approximately what proportion of people with a learning 
 M2#nursing-u13-15-q2@2: A woman's rescue plan says to give buccal midazolam after a seizure has lasted 5 minutes. Who should give it? | Staff trained and authorised under her plan | Any visitor present | Nobody; always wait for an ambulance | The person herself during the seizure | Rescue medicine must follow the plan and be given by trained staff.
 M2#nursing-u13-15-q3@3: Which factor increases the risk of SUDEP? | Uncontrolled tonic-clonic seizures, especially at night | Well-controlled seizures with regular medicine | Regular exercise | Eating a balanced diet | Uncontrolled nocturnal tonic-clonic seizures are a key SUDEP risk.
 TF2#nursing-u13-15-q4@3: Behaviours can sometimes be mistaken for seizures, and seizures for behaviours, in people with learning disabilities. | True | Careful recording and video help distinguish them.
+Q: Is epilepsy more common in people with more severe learning disabilities? | Yes, the proportion rises in people with PMLD.
+Q: Why can seizures be hard to recognise in learning disability? | Seizures can be subtle, and behaviours and seizures can be mistaken for each other.
+Q: How can video recordings help in epilepsy? | They help diagnosis, made with consent or in best interests.
+Q: What does an epilepsy care plan describe? | The person's seizures, what to do and when to call for help.
+Q: Name a common rescue medication for prolonged seizures. | Buccal midazolam.
+Q: When should an ambulance be called for a seizure? | If it lasts 5 minutes or more without a rescue plan, rescue medicine fails, after injury, or for a first seizure.
+Q: What increases SUDEP risk? | Uncontrolled tonic-clonic seizures, especially at night.
+Q: Name measures that reduce SUDEP risk. | Optimising seizure control, consistent medicines, night-time monitoring, bathing safety and discussing risks.
+Q: Name side effects of anti-seizure medicines. | Sedation, mood changes and bone health problems.
+Q: How should safety be balanced with independence in epilepsy? | Plan activities such as supervised swimming and avoid over-protection.
 
 ## Complex needs
 S: Some people with learning disabilities have complex health needs, such as profound and multiple learning disabilities, dysphagia, postural difficulties and sensory impairments. They need skilled, coordinated care from teams who know them well.
@@ -682,6 +832,16 @@ M1#nursing-u13-16-q1@1: Who usually assesses swallowing and writes an eating and
 M2#nursing-u13-16-q2@2: Why is 24-hour postural care important for people with PMLD? | It protects body shape and breathing | It is only for appearance | It replaces all physiotherapy | It is needed only during the day | Fixed positions can cause scoliosis and other harmful changes.
 M3#nursing-u13-16-q3@3: A man with a gastrostomy still enjoys tasting food. What should the nurse consider? | Whether tasters are safe in his plan | Stopping all oral care because he is tube fed | Giving him normal meals by mouth | Nothing, as tube-fed people don't eat | Plans may allow safe tasters; oral care remains essential.
 MS2#nursing-u13-16-q4@2: Which are common health needs in people with PMLD? | Dysphagia ; Epilepsy ; Scoliosis | Excellent vision in all cases ; No need for support | Complex physical needs require coordinated care.
+Q: How may people with PMLD communicate? | Through sounds, movement, expressions and behaviour.
+Q: Name health needs common in PMLD. | Epilepsy, dysphagia, reflux, respiratory problems, scoliosis, contractures, constipation and sensory impairments.
+Q: What do IDDSI levels describe? | Modified food and drink textures.
+Q: How should a person with dysphagia be supported at meals? | Upright positioning, pacing, supervision and watching for signs of aspiration.
+Q: What is a gastrostomy? | A feeding tube placed through the abdominal wall into the stomach.
+Q: What nursing care does enteral feeding need? | Stoma care, feeding regimes, giving medicines via tubes and continued oral care.
+Q: What body shape changes can fixed positions cause? | Windswept hips and scoliosis.
+Q: How do body shape changes affect people with PMLD? | They affect breathing, eating, comfort and pain.
+Q: Who provides input to 24-hour postural care? | Physiotherapists.
+Q: What prevents gaps in care for people with complex needs? | A coordinated plan with a named lead, shared records and families as partners.
 
 ## Safeguarding
 S: People with learning disabilities are at higher risk of abuse, exploitation and neglect, and may find it harder to report it. Learning disability nurses must recognise signs, respond promptly and help create services where abuse can't hide.
@@ -723,6 +883,16 @@ M1#nursing-u13-17-q1@1: Which is a sign of financial abuse? | Missing money and 
 M2#nursing-u13-17-q2@2: A man with a learning disability says his new friends take his money every payday. What should the nurse do? | Report possible mate crime | Advise him to choose better friends | Do nothing, as he has capacity | Wait to see if it continues | This may be mate crime and needs a safeguarding response.
 M2#nursing-u13-17-q3@3: Which is a warning sign of a closed culture in a service? | High use of restraint and families discouraged from visiting | Regular advocacy visits | Open visiting and community activities | Staff supporting people's choices | Isolation and high restriction are recognised warning signs.
 TF2#nursing-u13-17-q4@1: People with learning disabilities are more likely to be victims of abuse than the general population. | True | Dependence, communication difficulties and isolation increase risk.
+Q: Why are people with learning disabilities at higher risk of abuse? | Dependence on others, communication difficulties, isolation, wanting friendships and not being believed.
+Q: Name signs of possible abuse. | Behaviour or mood changes, fear of people or places, unexplained injuries, weight loss or poor hygiene.
+Q: Name signs that may suggest sexual abuse. | Sexualised behaviour, sexually transmitted infections or pregnancy.
+Q: How should a nurse listen to a disclosure from a person with a learning disability? | Using their communication method, without investigating or promising secrecy.
+Q: When should the police be called about abuse? | If there is immediate danger or a crime.
+Q: Who should safeguarding concerns be reported to? | The safeguarding lead and local authority, following local procedures.
+Q: Name warning signs of a closed culture. | Poor leadership, isolation from families, high use of restraint and agency staff, staff seeing residents as "other", few activities and no advocacy.
+Q: Which regulator defines closed cultures? | The CQC.
+Q: What should nurses do if concerns about a closed culture aren't addressed? | Speak up, using whistleblowing routes if necessary.
+Q: Name types of abuse people with learning disabilities may face. | Financial, sexual, physical, psychological, neglect, discriminatory, modern slavery, radicalisation and cuckooing.
 
 ## Family and carer support
 S: Families and carers provide much of the support for people with learning disabilities, often for a lifetime. Learning disability nurses work in partnership with families, recognising their expertise and their own needs.
@@ -765,6 +935,16 @@ M1#nursing-u13-18-q1@1: Why should families be involved in assessment? | They of
 M3#nursing-u13-18-q2@2: An adult with a learning disability and capacity wants to move into supported living, but his parents disagree. What should the nurse do? | Support his choice and involve advocacy | Follow the parents' wishes | Tell him he can't move | Avoid the conversation | An adult with capacity has the right to decide; families are listened to and supported.
 M2#nursing-u13-18-q3@3: A mother with a learning disability has a new baby. What should services do? | Assess support needs and provide accessible, practical help | Assume she can't parent | Remove the baby immediately | Offer no support | With the right support, many parents with learning disabilities parent well.
 TF2#nursing-u13-18-q4@3: Older family carers often worry about what will happen when they can no longer care. | True | Future planning helps address this worry.
+Q: Why might families be wary of professionals? | They may have fought for services for years.
+Q: What pressures does lifelong caring bring? | Physical and emotional strain, financial pressure and social isolation.
+Q: Which law covers carers' assessments in England? | The Care Act 2014.
+Q: Name supports for family carers. | Respite or short breaks, peer support and carers' organisations.
+Q: How should tensions between a capable adult and their family be handled? | Listen to both, support the person's voice and involve independent advocacy where needed.
+Q: How should information be shared with families? | In line with the person's consent and confidentiality.
+Q: Name key transitions for people with learning disabilities. | Diagnosis, starting school, moving to adult services, leaving home, parents ageing and bereavement.
+Q: What does future planning cover? | Housing, support, finances such as trusts, and legal arrangements.
+Q: What helps parents with learning disabilities to parent well? | Easy read information, practical teaching and ongoing help.
+Q: What is a family carer? | A relative who provides unpaid care and support.
 
 ## Community learning disability services
 S: Community learning disability teams support people to stay healthy, safe and included in their local communities. They bring together nursing and other specialists to provide assessment, treatment and support, and to prevent crises and hospital admissions.
@@ -806,6 +986,16 @@ M1#nursing-u13-19-q1@1: Which team provides rapid, intensive help to prevent adm
 M2#nursing-u13-19-q2@2: What is the purpose of a Care and Treatment Review? | To check whether admission is needed and plan discharge | To decide criminal sentences | To set staff pay | To arrange holidays | C(E)TRs aim to prevent unnecessary admissions and long stays.
 M2#nursing-u13-19-q3@3: How should a community learning disability nurse support a person's cancer screening? | Help them access mainstream screening with reasonable adjustments | Carry out the screening personally at home | Advise them not to attend | Refer them to a separate disability-only service | Specialists support access to mainstream services.
 TF2#nursing-u13-19-q4@3: Mainstream health services should be accessible to people with learning disabilities, with specialist teams supporting rather than replacing them. | True | This is a core principle of inclusive care.
+Q: What does a community learning disability team support? | Health, epilepsy, dysphagia, behaviour that challenges, mental health, capacity and transitions.
+Q: How does a community learning disability nurse help people use mainstream healthcare? | By supporting annual health checks, screening and hospital appointments with reasonable adjustments.
+Q: Who do community learning disability nurses train and support? | Family carers and support staff.
+Q: Who do community learning disability nurses liaise with? | GPs, hospitals, schools and social care.
+Q: What is an intensive support team? | A team giving rapid, intensive help to people at risk of placement breakdown or admission.
+Q: What do Care (Education) and Treatment Reviews do? | Check whether admission is needed and plan discharge.
+Q: Who are keyworkers for in England's learning disability services? | Children and young people at risk of admission.
+Q: Should specialist learning disability services replace mainstream care? | No. They should support people to access mainstream services with adjustments.
+Q: Which partners does good community learning disability support depend on? | Primary care, social care, housing, education, employment services, the voluntary sector and families.
+Q: Why identify people at risk of admission early? | So support can be put in place before a crisis.
 
 ## Hospital care
 S: Hospital stays can be frightening and risky for people with learning disabilities. With the right adjustments, communication and support, hospitals can provide safe, effective care. Learning disability liaison nurses are key to making this happen.
@@ -848,6 +1038,16 @@ M1#nursing-u13-20-q1@1: Which tool helps identify distress in people with limite
 M2#nursing-u13-20-q2@2: A man with a learning disability is admitted with abdominal pain. What should the ward use to understand his needs? | His hospital passport and information from his carers | Only his age and diagnosis | A standard admission form without adjustments | Nothing until he can explain | Passports and carers provide essential information.
 M3#nursing-u13-20-q3@3: A DNACPR form lists "learning disability" as the reason. What should the nurse do? | Challenge it urgently | Accept it as a medical decision | Hide the form from the family | Ignore it until discharge | Learning disability alone is never a valid reason; escalate.
 MS2#nursing-u13-20-q4@2: Which reasonable adjustments help in hospital? | A carer staying ; A quiet side room ; Easy read information | Frequent bed moves ; Refusing visitors | Adjustments reduce distress and improve care.
+Q: Why can hospital stays be risky for people with learning disabilities? | They can be frightening, and illness, pain and needs may be missed without adjustments.
+Q: What do learning disability liaison nurses advise hospital staff on? | Communication, capacity, reasonable adjustments and behaviour.
+Q: Why are people with learning disabilities flagged on hospital systems? | So adjustments can be made from arrival.
+Q: What is a hospital passport? | A document describing a person's needs, communication and preferences for hospital staff.
+Q: How should pain be assessed in a person with limited communication in hospital? | With behavioural tools such as DisDAT and carers' knowledge.
+Q: What should be continued for a person with a learning disability in hospital? | Their eating and drinking plan and medication routines.
+Q: How must DNACPR decisions for people with learning disabilities be made? | Individually, discussed with the person and family, and recorded.
+Q: What missed care risks should be prevented in hospital? | Missed nutrition, hydration and continence needs.
+Q: How can treatment delays from difficult procedures be avoided? | By planning adjustments, for example for blood tests.
+Q: What does good hospital discharge involve for a person with a learning disability? | Early planning with community teams, easy read information, informing providers and the GP, and follow-up.
 
 ## Health promotion
 S: Health promotion for people with learning disabilities aims to reduce health inequalities by making healthy living, screening and prevention accessible. It recognises that barriers, not choices alone, shape health.
@@ -890,6 +1090,16 @@ M1#nursing-u13-21-q1@1: Which is a health promotion priority for people with lea
 M2#nursing-u13-21-q2@2: A woman with a learning disability is anxious about cervical screening. What can help? | A preparation visit and easy read guide | Telling her she must attend | Removing her from the screening list | Asking her carer to decide for her | Preparation and accessible information reduce anxiety.
 M2#nursing-u13-21-q3@3: A man with capacity chooses to eat takeaway food most days. What is the best approach? | Offer accessible information and support, respecting his choice | Lock the kitchen and remove his money | Tell his carers to refuse to buy it | Ignore it entirely | People with capacity can make lifestyle choices; support and information help.
 MS2#nursing-u13-21-q4@1: Which make health information accessible? | Easy read leaflets ; Pictures and real objects ; Short videos | Long technical documents ; Medical jargon | Accessible formats support understanding.
+Q: What shapes health for people with learning disabilities besides choices? | Barriers.
+Q: Which weight problems are more common in people with learning disabilities? | Both obesity and underweight.
+Q: How can oral health be supported? | Regular dental care, support with brushing and adjustments for treatment.
+Q: Which cancer screening programmes have lower uptake among people with learning disabilities? | Cervical, breast and bowel cancer screening.
+Q: Which vaccinations are mentioned for people with learning disabilities? | Influenza, COVID-19 and pneumococcal, often as priority groups.
+Q: How can people be prepared for screening? | Through visits, models and practice, using desensitisation.
+Q: Why are annual health checks useful for health promotion? | They are a vehicle for health promotion and health action plans.
+Q: Why should support staff be trained in healthy living? | Daily support such as shopping, cooking, activity and medicines shapes people's health.
+Q: How should best interests decisions about lifestyle respect the person? | By respecting their preferences and quality of life.
+Q: What is health promotion? | Enabling people to increase control over and improve their health.
 
 ## Independent living
 S: Independent living means people with learning disabilities having choice and control over where and how they live, who supports them and how they spend their time. It is a right and a goal of modern services.
@@ -932,6 +1142,16 @@ M1#nursing-u13-22-q1@1: Which living arrangement gives a person their own tenanc
 M2#nursing-u13-22-q2@2: What does supported employment such as job coaching provide? | Help to find and keep paid work | A guaranteed job without support | Unpaid work only | Training only for staff | Job coaching supports people into and in paid work.
 M3#nursing-u13-22-q3@3: A young woman with a learning disability wants to start a relationship. What is the best response? | Support her right, with accessible relationships education and safeguards | Forbid it to keep her safe | Tell her family to stop it | Ignore the topic | Relationships are a right; education and support reduce risk.
 TF2#nursing-u13-22-q4@3: Article 19 of the UN Convention on the Rights of Persons with Disabilities supports living independently in the community. | True | It sets out the right to choose where and with whom to live.
+Q: What does independent living mean? | Choice and control over where and how people live, who supports them and how they spend their time.
+Q: What is Shared Lives? | Living with an approved carer and their family in the community.
+Q: Where should housing for people with learning disabilities be? | In the community, close to family and friends, not in large or isolated settings.
+Q: What is a personal budget? | Money for a person's assessed care and support needs.
+Q: Name person-centred planning tools. | One-page profiles and person-centred reviews.
+Q: Name daily living skills that support independence. | Cooking, budgeting, travel training and using technology.
+Q: Are many people with learning disabilities in paid work? | No. Few are in paid work.
+Q: What rights do people with learning disabilities have about relationships? | Rights to friendships, relationships and sexual expression, with education, support and protection from abuse.
+Q: What is positive risk-taking? | Balancing safety with the person's right to live their life.
+Q: How does supported living give more control than residential care? | The person has their own tenancy, with support arranged separately.
 
 ## Multidisciplinary care
 S: People with learning disabilities often need support from many professionals. Effective multidisciplinary working, with the person and family at the centre, avoids gaps, duplication and conflicting advice.
@@ -978,6 +1198,16 @@ M1#nursing-u13-23-q1@1: Which professional mainly supports communication and swa
 M2#nursing-u13-23-q2@2: A man has separate plans from five professionals giving conflicting advice. What would help? | A single shared, person-centred plan with a named coordinator | More separate plans | Asking him to choose which advice to follow | Stopping all professional input | One shared plan prevents gaps and conflicting advice.
 M2#nursing-u13-23-q3@3: How can an MDT review be made more accessible for a woman with a learning disability? | An easy read agenda, a shorter meeting and a familiar venue | A long meeting in jargon | Holding it without her | Sending her the minutes only | Accessible meetings support participation.
 TF2#nursing-u13-23-q4@3: Psychiatrists in learning disability services contribute to STOMP medication reviews. | True | They review psychotropic medicines to reduce inappropriate use.
+Q: What do psychologists contribute to learning disability care? | Behaviour, mental health, cognitive assessment and PBS.
+Q: What do occupational therapists contribute? | Daily living skills, sensory needs and equipment.
+Q: What do physiotherapists contribute? | Mobility, posture and respiratory care.
+Q: What do dietitians contribute? | Nutrition, weight and enteral feeding.
+Q: What do social workers contribute? | Assessment, safeguarding and support arrangements.
+Q: Why use one shared person-centred plan? | To avoid gaps, duplication and conflicting advice from separate plans.
+Q: How can meetings be made accessible? | Easy read agendas, shorter meetings and preferred settings.
+Q: What helps coordinate support for adults across agencies? | Integrated care arrangements.
+Q: What can cause conflict in multidisciplinary teams? | Differences in professional language, priorities and funding.
+Q: How should MDT disagreements be resolved? | Openly, keeping the focus on the person's goals and rights.
 
 ## Rights and inclusion
 S: People with learning disabilities have the same human rights as everyone else. Learning disability nursing is rooted in protecting those rights and promoting inclusion in all areas of life.
@@ -1018,6 +1248,16 @@ M1#nursing-u13-24-q1@1: Which convention sets out the rights of disabled people 
 M2#nursing-u13-24-q2@2: Under the social model, what disables a wheelchair user who can't enter a building? | The lack of a ramp or accessible entrance | Their impairment alone | Their own lack of effort | The weather | The social model locates disability in barriers.
 M2#nursing-u13-24-q3@3: A service is redesigning its easy read leaflets. Which approach reflects co-production? | Designing them with people as equal partners | Asking only managers to approve them | Copying another service's leaflets | Using professional jargon | Co-production values the expertise of people with lived experience.
 MATCH1#nursing-u13-24-q4@1: Match each of O'Brien's accomplishments to an example. | Community presence = Using local shops and leisure centres ; Relationships = Having friends and family contact ; Choice = Deciding daily routines ; Respect = Holding valued roles | The accomplishments describe a good life.
+Q: When did the UK ratify the UNCRPD? | In 2009.
+Q: Which Human Rights Act articles are relevant to learning disability? | Articles 2 (life), 3 (degrading treatment), 5 (liberty), 8 (private and family life) and 14 (discrimination).
+Q: What does the Equality Act 2010 provide? | Protection from discrimination and the duty to make reasonable adjustments.
+Q: What is the medical model of disability? | Disability as a problem within the person to be fixed.
+Q: Which model of disability do most UK disability organisations support? | The social model.
+Q: Who developed normalisation and social role valorisation? | Wolfensberger.
+Q: What does normalisation aim for? | Supporting people to live ordinary lives and hold valued social roles.
+Q: What is co-production? | People with lived experience working as equal partners in designing and delivering services.
+Q: Which healthcare discrimination should nurses challenge? | DNACPR misuse and diagnostic overshadowing.
+Q: Under the social model, what removes disability? | Removing barriers in attitudes, environments and systems.
 
 ## Preparing for a learning disability nursing placement
 S: Learning disability placements take students into homes, communities, hospitals and specialist services. Preparation helps students communicate well, respect people's homes and lives, and learn the distinctive skills of the field.
@@ -1054,6 +1294,16 @@ M1#nursing-u13-25-q1@1: Which training is mandatory on learning disability and a
 M2#nursing-u13-25-q2@2: On a home visit, support staff answer every question for the person. What should the student do? | Address the person directly and use their communication method | Continue talking only to staff | Leave the visit | Write down only the staff's views | The person should be at the centre of the conversation.
 M2#nursing-u13-25-q3@3: Which is a suitable learning goal for a learning disability placement? | Contributing to a health action plan with a person | Prescribing medicines independently | Leading a Care and Treatment Review alone | Carrying out surgery | Goals should match the student's stage and the field.
 MS2#nursing-u13-25-q4@2: Which are good preparation for a learning disability placement? | Learning basic Makaton ; Completing safeguarding training ; Reading about the service | Assuming people can't communicate ; Ignoring people's routines | Preparation supports respectful, effective practice.
+Q: Name learning disability placement settings. | Community teams, supported living, acute liaison, inpatient units, forensic services, special schools, day services and children's services.
+Q: Which training may be required before a learning disability placement? | Oliver McGowan training, safeguarding and PBS or de-escalation training.
+Q: Why should students know how to recognise closed cultures? | So they can raise concerns about poor care.
+Q: When are placement learning goals agreed? | At the initial interview, linked to the practice assessment document.
+Q: Give a learning goal for a learning disability placement. | Using total communication, contributing to a health action plan, or joining a best interests meeting.
+Q: Why can boundaries be harder in people's homes? | Settings can feel informal.
+Q: How should students speak about people with learning disabilities? | As adults with rights, avoiding patronising language and focusing on what people can do.
+Q: Who should students address on a home visit? | The person they are there to support, not the support staff.
+Q: What is total communication? | Using every available method of communication together.
+Q: How should students process their placement experiences? | Reflect and seek supervision.
 
 ## Reflective learning and case studies in learning disability nursing
 S: Reflection and case studies help learning disability nursing students and registrants understand people's lives, link theory and law to practice, and develop values-based, person-centred care.
@@ -1097,4 +1347,14 @@ M1#nursing-u13-26-q1@1: What should a learning disability case study centre on? 
 M2#nursing-u13-26-q2@2: A student realises she assumed a man couldn't make decisions because he didn't speak. What should she do? | Reflect on the assumption | Ignore it | Avoid working with non-verbal people | Ask only his carers in future | Reflection helps challenge assumptions and improve practice.
 M2#nursing-u13-26-q3@3: Which sources should a learning disability case study use? | NICE guidance, relevant law and LeDeR findings | Only personal opinion | Social media posts | Nothing beyond the care notes | Linking care to guidance, law and LeDeR learning makes the analysis evidence-based rather than opinion.
 MATCH1#nursing-u13-26-q4@2: Match each element to its purpose. | Person's voice = Centring their perspective ; Legal framework = Showing lawful care ; Reflection = Changing future practice | Each element strengthens the case study.
+Q: Which reflective models can be used in learning disability nursing? | Gibbs, Driscoll or Johns, with supervision.
+Q: What should learning disability nurses examine about themselves in reflection? | Their own assumptions and attitudes about disability.
+Q: How should a case study describe the views of someone who communicates non-verbally? | Explain how you understood their views and who helped.
+Q: What should a learning disability case study describe about the person? | Their communication, health, support and goals.
+Q: Which laws might a learning disability case study link to? | The Mental Capacity Act and the Equality Act.
+Q: Which topics should a learning disability case study analyse? | Reasonable adjustments, capacity and best interests, and multidisciplinary working.
+Q: What is anonymisation? | Removing all details that could identify a person.
+Q: In a pneumonia case study, how might illness have been recognised? | Through soft signs and carer concern, avoiding diagnostic overshadowing.
+Q: Why might a pneumonia case study include a dysphagia assessment? | To prevent further aspiration.
+Q: What should a reflection end with? | What you learned and how your practice will change.
 `;

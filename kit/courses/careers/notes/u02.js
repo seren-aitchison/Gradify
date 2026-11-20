@@ -39,6 +39,16 @@ M2#careers-u02-01-q2@2: A job profile gives a national average salary of £38,00
 TF1#careers-u02-01-q3@1: Labour market projections tell you exactly how many jobs will exist in an occupation in ten years. | false | Projections are estimates based on assumptions, and events such as recessions or new technology can make them wrong.
 M3#careers-u02-01-q4@3: Which combination gives the most reliable picture of a career option? | Official data on pay and demand plus first-hand accounts from people in the job | A single social media post by someone who enjoys the job | One company's recruitment brochure about its own graduate scheme | A friend's opinion based on a television drama about the job | Combining independent statistics with several first-hand accounts balances breadth and depth; the others are single, partial or promotional views.
 SA3#careers-u02-01-q5@2,3: Evaluate the usefulness of labour market information for a student choosing a career. | LMI helps by showing demand, pay, entry routes and skills needs, so choices rest on evidence rather than assumption, and qualitative LMI shows what jobs are really like. Limits: figures are averages and often national, they describe the past or projections that may not hold, sources vary in reliability and date, and information alone may not change decisions without discussion. Best used critically, combining official data, first-hand accounts and guidance. | Explains what LMI can show ; Distinguishes quantitative and qualitative ; Notes averages and projections have limits ; Considers source reliability ; Recommends combining sources and guidance
+Q: What is labour market information? | Information about the world of work that helps decisions: jobs, pay, skills, demand, entry routes and how people get in.
+Q: Which CDI learning area depends on labour market information? | See the big picture.
+Q: Where does quantitative LMI mainly come from? | Official sources such as the ONS and government departments, and surveys such as the ISE's.
+Q: Where does qualitative LMI come from? | Job profiles, employer talks, informational interviews and work experience.
+Q: How do quantitative and qualitative LMI complement each other? | Numbers show the pattern; people explain it.
+Q: Name four questions LMI can answer. | Demand, pay, entry routes, skills in short supply and working conditions.
+Q: Why can a national average salary mislead? | It may hide large regional differences.
+Q: Why can labour market projections be wrong? | They can be overtaken by events such as a recession or new technology.
+Q: What is the entry route for a diagnostic radiographer? | An approved degree or degree apprenticeship and registration with the Health and Care Professions Council.
+Q: What should you check about any LMI before relying on it? | Its source and date.
 
 ## Using ONS and official labour market data
 LV: Intermediate · Application
@@ -77,6 +87,16 @@ M2#careers-u02-02-q2@2: A full-time student who is not looking for work is class
 TF1#careers-u02-02-q3@2: Nomis lets users produce local labour market tables such as employment by occupation for a local authority. | true | Nomis, run for the ONS by Durham University, provides free local labour market and census data.
 M3#careers-u02-02-q4@3: The unemployment rate falls by 0.1 percentage points in one month. What is the best interpretation? | It may be within sampling error, so look at the trend over several quarters | It proves the labour market has definitely improved for every graduate | It means about 0.1% more people in the whole country now have jobs | It shows that the vacancy survey must have risen by the same amount | Small changes in survey estimates can be noise; trends over time, alongside other sources, are more reliable.
 SA3#careers-u02-02-q5@2,3: Explain how a student could use official statistics to compare job prospects for a role in two regions, and the cautions they should apply. | Use Nomis or ONS data to compare employment in the occupation by region, ASHE for typical pay by region and occupation, and vacancy data or job board counts for current demand. Compare like with like, using the same measure and period. Cautions: survey estimates have sampling error and recent LFS quality issues; small areas have larger errors; data lag behind events; national occupation codes may not match the exact role; combine with qualitative information. | Names suitable official sources ; Uses pay and employment measures ; Compares like with like ; Notes sampling error or data quality ; Recommends combining with other information
+Q: What is the Labour Force Survey? | A household survey that is the ONS's main source of labour market statistics.
+Q: Who counts as employed in the Labour Force Survey? | People who did paid work in the reference week or have a job they are temporarily away from.
+Q: How is the employment rate calculated? | Employed people aged 16 to 64 as a share of everyone aged 16 to 64.
+Q: How is the inactivity rate calculated? | Inactive people aged 16 to 64 as a share of everyone aged 16 to 64.
+Q: Who counts as economically active? | Employed plus unemployed people.
+Q: What is HMRC's PAYE Real Time Information used for? | Data on payrolled employees and pay.
+Q: Who runs Nomis for the ONS? | Durham University.
+Q: Why should a small monthly change in survey figures be treated cautiously? | Survey estimates have sampling error, so the change may not be real.
+Q: Why has confidence in LFS estimates fallen since 2023? | Falling response rates, leading the ONS to label some as official statistics in development.
+Q: Roughly what share of 16 to 64 year olds have been employed in recent years? | Around three quarters.
 
 ## Reading job profiles: Prospects and the National Careers Service
 LV: Introductory · Application
@@ -117,6 +137,16 @@ M2#careers-u02-03-q2@2: A profile says "most entrants to this role have a master
 TF1#careers-u02-03-q3@1: The National Careers Service job profiles include apprenticeship routes into jobs. | true | Its profiles cover all levels and list routes including university, college, apprenticeships and working towards the role.
 M3#careers-u02-03-q4@3: Which is the strongest limitation of relying on job profiles alone? | They describe typical entrants and averages, not current vacancies or real day-to-day variety | They are written by employers who want to recruit as many people as they can | They never include information about pay or about how to get in | They are only available to people who pay a subscription to read them | Profiles are generic and may lag behind the market; current vacancies and people in the role add accuracy and detail.
 SA3#careers-u02-03-q5@2,3: Explain how a student could use a job profile as the start of a career research plan. | Read the profile for duties, pay, entry routes and skills, noting essential versus typical requirements and any regulator. Follow links to professional bodies and typical employers and compare with three current vacancies to confirm requirements. Identify gaps in skills or experience and set actions, such as modules, work experience or volunteering. Test the profile by speaking to someone in the job through alumni or LinkedIn, and revisit the decision with a careers adviser. | Extracts key sections of the profile ; Separates essential and typical requirements ; Checks against current vacancies ; Plans actions to fill gaps ; Tests the profile with people in the role
+Q: Which organisation runs Prospects? | Jisc.
+Q: Roughly how many job profiles does the National Careers Service publish? | Around 800, for England, covering every level.
+Q: Name four things a typical job profile covers. | Duties, salary, hours and environment, entry routes, skills, registration, prospects and typical employers.
+Q: Why should you check a job profile's date? | Salaries in profiles can lag behind the market.
+Q: Name three regulated professions. | Nursing, social work, solicitor and pharmacist.
+Q: Why should you follow a profile's links to employers and professional bodies? | They show current requirements.
+Q: How can you test whether a job profile is accurate? | Ask someone in the role.
+Q: What do social researcher entrants usually need, according to Prospects? | A 2:1 in a social science and quantitative skills.
+Q: Who recruits graduate research officers for government? | The Government Social Research profession.
+Q: Name two careers websites besides Prospects and the National Careers Service. | My World of Work, Careers Wales and professional bodies' websites.
 
 ## Skills shortages and growth areas
 LV: Intermediate · Application
@@ -155,6 +185,16 @@ M2#careers-u02-04-q2@2: An occupation is shrinking overall but many workers are 
 TF1#careers-u02-04-q3@2: The Immigration Salary List replaced the Shortage Occupation List in 2024. | true | Following Migration Advisory Committee advice, the government replaced the Shortage Occupation List with the Immigration Salary List in April 2024.
 M3#careers-u02-04-q4@3: Social care reports many hard-to-fill vacancies. What is the most important further question for a careers adviser to explore? | Whether the cause is skills, or pay and conditions | Whether the vacancies are in the private sector | Whether the jobs are advertised on social media | Whether the data was collected in the summer | Hard-to-fill vacancies driven by pay and conditions say something different about a career than a genuine shortage of skilled applicants.
 SA3#careers-u02-04-q5@2,3: Evaluate the advice "choose a career in a growing sector because jobs will be easy to get". | Growth and shortages do create openings and may raise pay, and LMI on growth areas such as health, digital and green skills is useful. But shortages are often for experienced or specialist staff, some arise from poor pay or conditions, projections are uncertain, and replacement demand means non-growing fields also recruit. Choosing a career you don't enjoy or suit risks dissatisfaction. Better to combine demand with self-assessment and check entry-level competition. | Recognises growth creates opportunities ; Notes shortages may be at experienced level ; Distinguishes shortage causes such as pay ; Mentions replacement demand or projection uncertainty ; Links to fit with the individual
+Q: What is a skills gap? | When existing staff aren't fully proficient.
+Q: Which department runs the Employer Skills Survey? | The Department for Education.
+Q: Name three indicators of skills shortage besides the Employer Skills Survey. | Migration Advisory Committee advice, rising pay and vacancies in an occupation, and sector workforce reports.
+Q: Who produces long-run labour market and skills projections for the DfE? | The Warwick Institute for Employment Research.
+Q: Name four areas where employment has been growing. | Professional roles, health and social care, digital and data, engineering and net zero skills.
+Q: Which kinds of roles have been declining? | Many routine administrative, secretarial and machine-operative roles.
+Q: Name three examples of net zero skills. | Retrofitting, heat pumps and grid work.
+Q: Which usually creates more openings, growth or replacement demand? | Replacement demand.
+Q: What four reasons might explain a shortage? | Skills, pay, conditions or location.
+Q: Why might Jordan find entry-level cybersecurity competitive despite a shortage? | The shortage is sharpest for experienced staff; many unfilled roles ask for experience.
 
 ## How sectors and industries are organised
 LV: Introductory · Foundation
@@ -193,6 +233,16 @@ M2#careers-u02-05-q2@2: A graduate wants to work in the fashion industry but has
 TF1#careers-u02-05-q3@1: The UK Standard Occupational Classification 2020 has nine major groups. | true | SOC 2020 runs from major group 1 (managers, directors and senior officials) to 9 (elementary occupations).
 M3#careers-u02-05-q4@3: Why might the same occupation, such as marketing executive, be a very different job in two industries? | Products, customers, regulation and culture differ between industries | The occupation is classified differently in SOC for each industry | Marketing is only a real occupation in the retail industry | Industries pay exactly the same for every occupation they employ | The occupation's skills transfer, but what you market, to whom, under what rules and in what culture changes with the industry.
 SA3#careers-u02-05-q5@2,3: Explain how separating industry from occupation can help a student who is interested in the environment but studying economics. | The environment is a set of industries and causes (renewable energy, water, waste, conservation, environmental consultancy, government policy), while economics points to occupations (economist, analyst, policy adviser, finance, consultant). Mapping organisations in environmental sectors and the functions they need reveals roles such as energy market analyst, environmental economist in government, sustainability finance analyst or policy researcher at a think tank. This widens options and links her interests to her skills. | Defines industry and occupation ; Maps environmental organisations ; Identifies occupations that use economics ; Gives specific example roles ; Explains how this widens options
+Q: Which classification does the UK use for industries? | The Standard Industrial Classification, SIC 2007.
+Q: How many sections does SIC 2007 have? | 21, from A to U.
+Q: Which classification does the UK use for occupations? | The Standard Occupational Classification, SOC 2020.
+Q: What are SOC major groups 1 and 9? | Managers, directors and senior officials (1) and elementary occupations (9).
+Q: What does the primary sector do? | Extracts resources.
+Q: What is the quaternary sector? | Knowledge work, research and information.
+Q: Roughly what share of UK output and employment comes from services? | Around four fifths.
+Q: Name four functions most sectors need. | Finance, HR, data, operations and marketing.
+Q: Give an example showing occupations cut across industries. | An accountant can work in a bank, hospital trust, football club or charity.
+Q: Why is data analyst a good football industry fit for Lily? | Her maths degree matches its skills.
 
 ## Public, private and third sector employers
 LV: Introductory · Application
@@ -230,6 +280,16 @@ M2#careers-u02-06-q2@2: A graduate wants a structured national pay scale and a d
 TF1#careers-u02-06-q3@1: Private companies can deliver public services under government contracts. | true | Sector boundaries blur: many public services, such as some transport, care and outsourced functions, are delivered by private firms under contract.
 M3#careers-u02-06-q4@3: Which is the strongest reason not to choose a sector based on stereotypes about it? | Pay, security and culture vary more within each sector than between them | Stereotypes about sectors are always the exact opposite of the truth | Employers in all three sectors are legally required to pay the same | Graduates cannot choose which sector they work in until their thirties | Large differences exist within sectors (a big charity versus a tiny one, a bank versus a start-up), so specific employers must be researched.
 SA3#careers-u02-06-q5@2,3: Compare working in the public and private sectors for a graduate interested in data analysis, and reach a judgement for a particular priority. | Public sector: civil service or NHS analyst roles offer structured pay bands, defined benefit pensions, flexible working and public impact, with Success Profiles recruitment and training through the Government Analysis Function. Private sector: banks, retailers and tech firms may offer higher pay and bonuses, faster progression and newer tools, but with more variation and commercial pressure. Judgement depends on priority: for security, pension and social purpose the public sector may suit; for maximum earnings potential, the private sector. Conditions vary by employer, so research specific roles. | Describes public sector features ; Describes private sector features ; Links to data analysis roles ; Reaches a judgement for a stated priority ; Notes variation within sectors
+Q: What is the public sector? | Organisations owned or funded by the state to provide public services.
+Q: Roughly what share of UK workers does the public sector employ? | About one in six.
+Q: Which is the largest employing sector in the UK? | The private sector.
+Q: Name three types of third sector organisation. | Charities, social enterprises, community groups, cooperatives and housing associations.
+Q: Give an example of blurred sector boundaries. | Private companies delivering public contracts, charities running public services, or publicly funded independent universities.
+Q: How is public sector pay usually set? | Through national pay scales and bands, such as NHS Agenda for Change or civil service grades.
+Q: What recruitment framework does the Civil Service use? | Success Profiles.
+Q: How do charities often recruit? | For specific roles, valuing volunteering experience.
+Q: What culture is typical of each sector? | Public: service and accountability; private: commercial pace and targets; third: mission and resourcefulness.
+Q: Why are sector stereotypes unreliable? | Conditions vary more within sectors than between them.
 
 ## Large employers, SMEs and start-ups
 LV: Introductory · Application
@@ -268,6 +328,16 @@ M2#careers-u02-07-q2@2: Which approach is most likely to find graduate roles in 
 TF1#careers-u02-07-q3@1: Most UK private sector businesses are SMEs. | true | Government estimates show over 99% of UK private sector businesses have fewer than 250 employees.
 M3#careers-u02-07-q4@3: Which is the strongest objection to the view that a large graduate scheme is always the best first job? | Fit, early responsibility and the role itself can matter more than employer size | Large graduate schemes never include any formal training for graduates | SMEs always pay more than large employers for every graduate role | Employers stop recognising graduate schemes after about five years | Schemes offer real benefits, but the best first job depends on the person's goals and the role; SMEs can offer breadth and impact that suit some people better.
 SA3#careers-u02-07-q5@2,3: Evaluate the advantages and disadvantages of starting a graduate career in an SME rather than a large employer. | Advantages of SMEs: broad responsibility early, visible impact, contact with senior staff and founders, flexibility, less competitive and year-round recruitment. Disadvantages: less formal training and fewer professional qualifications funded, smaller budgets, fewer internal moves and sometimes less job security or lower pay. Large employers offer structured schemes, cohorts and recognised names but narrower early roles. The judgement depends on learning style, goals and the specific role. | Gives SME advantages ; Gives SME disadvantages ; Compares with large employers ; Notes recruitment differences ; Reaches a judgement linked to individual goals
+Q: What size is a micro business in the UK? | Fewer than 10 employees.
+Q: What size is a medium business in the UK? | 50 to 249 employees.
+Q: Roughly what share of private sector employment do UK SMEs provide? | Around three fifths.
+Q: How do SMEs typically recruit graduates, compared with large employers? | One or two at a time, often without a formal scheme and at any time of year.
+Q: Name three advantages of a large employer's graduate scheme. | Formal training and qualifications, rotations, a peer cohort, a recognised name and clear grades.
+Q: Name two drawbacks of large employers for graduates. | Competitive selection, narrower early responsibility and more bureaucracy.
+Q: Name two drawbacks of working for an SME. | Less formal training, smaller budgets and fewer internal moves.
+Q: What might a start-up offer instead of high base pay? | Equity, such as shares or options.
+Q: Name three ways to find jobs in SMEs. | Local job boards, chambers of commerce, LinkedIn searches by location, speculative applications, agencies and start-up job boards.
+Q: Why might the food brand suit Femi better than the retailer's scheme? | He learns by doing and wants his own business, so early responsibility and seeing a small firm run matter most.
 
 ## Graduate destinations: what degrees lead to
 LV: Intermediate · Application
@@ -306,6 +376,16 @@ M2#careers-u02-08-q2@2: Destination data show many psychology graduates in roles
 TF1#careers-u02-08-q3@1: Many graduate employers accept applicants from any degree discipline. | true | Employers in areas such as finance, consulting, management, the civil service and marketing often recruit from all subjects.
 M3#careers-u02-08-q4@3: Why should a student be cautious about choosing a degree because its graduates have high average earnings? | Averages reflect who studies the subject and where they work, not just the degree | High earnings are only ever recorded for graduates of medicine | Earnings data are not collected for UK graduates at any stage | Average earnings for a subject never change from one year to the next | Prior attainment, background, region and choices all shape averages, so the effect of the degree itself is smaller and individual outcomes vary widely.
 SA3#careers-u02-08-q5@2,3: Using graduate destination data, evaluate whether a history degree is a good route into employment. | Data show history graduates spread across many occupations, including management, finance, law, the civil service, education, heritage and media, with a share in further study; employment rates are broadly in line with other non-vocational subjects. Many employers accept any discipline, and history develops research, analysis and writing. However, there is no single direct route, early salaries can be lower than for vocational subjects and outcomes depend on experience gained. Averages hide individual variation. Judgement: a good route if combined with experience and a clear direction. | Uses destination data ; Notes breadth of routes ; Mentions any-discipline employers or skills ; Identifies limits such as no direct route ; Reaches a judgement noting individual variation
+Q: Which organisation is HESA part of? | Jisc.
+Q: Over what periods do LEO data show graduate earnings? | One, three, five and ten years after graduation.
+Q: What do the DfE's graduate labour market statistics compare? | Graduates, postgraduates and non-graduates.
+Q: What is What Do Graduates Do? | A summary of Graduate Outcomes by subject, from Jisc's Prospects Luminate and AGCAS.
+Q: What do destination sources consistently find about graduates? | Higher employment and earnings on average than non-graduates, with wide variation.
+Q: Name four factors that cause variation in graduate outcomes. | Subject, institution, prior attainment, gender, background and region.
+Q: Give three examples of vocational degrees. | Nursing, medicine, pharmacy, teaching, social work and engineering.
+Q: Name four areas where employers often recruit from any degree discipline. | Management, finance, consulting, the civil service, marketing and HR.
+Q: Which fields often need postgraduate study for professional roles? | Psychology, law and sciences.
+Q: Why should a 15-month destination snapshot be read with care? | Many graduates are still in transition at that point.
 
 ## Job titles, job families and role descriptions
 LV: Introductory · Application
@@ -345,6 +425,16 @@ M2#careers-u02-09-q2@2: A student wants data analysis work but only searches for
 TF1#careers-u02-09-q3@1: In many graduate adverts, an "executive" job title describes an entry-level role. | true | Titles such as marketing executive or account executive are commonly entry-level roles despite sounding senior.
 M3#careers-u02-09-q4@3: Which is the most reliable way to judge whether a role suits you? | Analyse the duties and essential criteria and ask someone who does the job | Judge from the job title and the employer's logo and brand | Choose the role with the most impressive-sounding job title | Pick the advert with the longest list of desirable criteria | Duties and requirements show what the job really is; speaking to someone in the role tests how it works in practice.
 SA3#careers-u02-09-q5@2,3: Explain how a student should analyse a job advert before deciding whether to apply. | Read the job description to understand purpose, main duties and how time is spent; check who the role reports to and conditions. Read the person specification, separating essential criteria (which must be evidenced) from desirable ones. Match each essential criterion to evidence from their experience, note gaps and whether they can be filled. Look beyond the title to the job family and progression, research the employer, and if unsure, contact the recruiter or someone in the role. Apply if they can evidence most essential criteria. | Analyses duties ; Separates essential and desirable criteria ; Matches criteria to evidence ; Looks beyond the title ; Makes a reasoned decision rule
+Q: Give three meanings of the job title "consultant". | A management consultant, a senior doctor, a recruitment salesperson or an IT specialist.
+Q: Give three titles that may describe the same data work. | Data analyst, insight analyst, business intelligence analyst or reporting analyst.
+Q: How does thinking in job families help? | It shows progression and lateral moves between related roles.
+Q: Give an example of progression within a marketing job family. | Marketing assistant, marketing executive, marketing manager, head of marketing.
+Q: What does a job description list? | The role's purpose, main duties and responsibilities, who it reports to and conditions.
+Q: What must your application do about essential criteria? | Evidence each one.
+Q: How should you treat desirable criteria? | As a bonus, not a barrier.
+Q: How should you search for roles, given inconsistent titles? | By skills and duties, saving searches with several title variants.
+Q: What did Advert B's "Account Executive" role actually involve? | Target-driven sales: 60 calls a day, booking demos and monthly revenue targets with commission.
+Q: Why does reading duties matter more than the title? | The same title can describe very different jobs.
 
 ## Researching an employer
 LV: Intermediate · Application
@@ -385,6 +475,16 @@ M2#careers-u02-10-q2@2: Which is the strongest answer to "Why do you want to wor
 TF1#careers-u02-10-q3@2: Employee review sites give a fully representative picture of an organisation's culture. | false | Reviews are self-selected and may be skewed, so treat them as one source among several.
 M3#careers-u02-10-q4@3: Why do recruiters value commercial awareness in graduates? | It shows genuine interest and helps new staff contribute and make sound decisions sooner | It proves that a graduate has studied a business degree at university | It means the graduate can do the job without any training at all | It shows the graduate has read the company's recruitment brochure | Understanding the business shows motivation and lets new staff see how their work matters; it doesn't depend on the degree subject.
 SA3#careers-u02-10-q5@2,3: Explain how you would research a charity before applying for a fundraising role, and how you would use what you found. | Read the charity's website, strategy and annual report and accounts on the Charity Commission register: income sources, spending, beneficiaries and priorities. Check recent news and campaigns, its fundraising regulator status, and the sector context (cost of living pressures on giving). Speak to staff or volunteers and check LinkedIn for team backgrounds. Use it to explain specific reasons for applying, suggest how your skills could help with a current campaign, and ask informed questions at interview. | Uses the charity's own reports ; Uses the Charity Commission or independent sources ; Considers sector context ; Seeks insight from people ; Applies findings to the application or interview
+Q: Name five things to find out when researching an employer. | What it does, strategy and performance, culture and values, the role and team, and recent news.
+Q: For public and third sector bodies, what replaces "how it makes money"? | How it is funded and what it must deliver.
+Q: Why do recruiters test commercial awareness? | It shows genuine interest and helps new staff contribute faster.
+Q: What does the Charity Commission register provide? | Information on charities in England and Wales.
+Q: Where can gender pay gap reports be searched? | On gov.uk.
+Q: How can LinkedIn help employer research? | It shows employees' backgrounds, which helps you see who they hire.
+Q: What source gives the most useful insight into an employer? | Talking to current or former staff at events or through alumni networks.
+Q: What do larger companies publish alongside their accounts? | Strategic reports, in the annual report.
+Q: What makes a "Why us?" answer convincing? | Research that is specific, recent and personal.
+Q: Why is reciting an employer's values page a mistake? | Recruiters want what you found, why it matters to you and how you'd contribute.
 
 ## Informational interviews
 LV: Intermediate · Application
@@ -424,6 +524,16 @@ M2#careers-u02-11-q2@2: Which is the best way to end an informational interview?
 TF1#careers-u02-11-q3@1: You should always send a thank-you message after an informational interview. | true | Prompt thanks is professional, makes you memorable and keeps the relationship open.
 M3#careers-u02-11-q4@3: Which is the strongest evaluation of informational interviews? | Highly useful for real insight, but access depends on networks, so alumni schemes matter | Not useful, because people in jobs are never honest about what they do | Only useful for students who already have a job offer from that employer | Useful only as a way of getting jobs without having to apply for them | They give insight unavailable elsewhere and can open doors, but unequal networks mean structured alumni and mentoring schemes help widen access.
 SA3#careers-u02-11-q5@2,3: Plan an informational interview for a student exploring a career in publishing. | Identify contacts through the university alumni network, LinkedIn search for alumni in publishing, Society of Young Publishers events or a lecturer. Send a short, specific request explaining who they are and asking for 20 minutes. Research the person and publisher beforehand. Prepare open questions: typical week, how they got in, which skills and experience matter, the difference between editorial, marketing and rights roles, advice for a student. Don't ask for a job. Thank them within a day and update them later. | Identifies realistic ways to find contacts ; Writes or describes a brief specific request ; Prepares open relevant questions ; Avoids asking for a job ; Includes follow-up
+Q: Who popularised the informational interview? | Richard Bolles, in What Color Is Your Parachute?
+Q: What formats can informational interviews take? | Video, phone or over coffee.
+Q: Name three places to find people for informational interviews. | Alumni networks, LinkedIn alumni search, lecturers, family and friends' contacts, professional bodies and careers events.
+Q: What should a request for an informational interview contain? | Who you are, why you're contacting them specifically, and a request for about 20 minutes at their convenience.
+Q: How should you prepare for an informational interview? | Research the person and organisation, and prepare five or six open questions.
+Q: How quickly should you thank an informational interview contact? | Within a day.
+Q: What should you tell a contact later, after an informational interview? | What you did with their advice.
+Q: What kind of LMI do informational interviews provide? | Qualitative labour market information you can't get from websites.
+Q: Why is asking for a job in an informational interview a mistake? | It damages trust; good questions and follow-up build relationships that may lead to opportunities.
+Q: What did Imogen gain from her informational interview? | Information on planning apprenticeships and accredited master's routes, and a week's shadowing.
 
 ## Weighing options and making a career decision
 LV: Advanced · Evaluation
@@ -464,4 +574,14 @@ M2#careers-u02-12-q2@2: Option A scores 8 on pay (weight 2) and 5 on interest (w
 TF1#careers-u02-12-q3@2: In the PIC model, the prescreening stage uses your most important criteria to narrow many options to a shortlist. | true | Prescreening reduces options with key criteria before in-depth exploration of the shortlist.
 M3#careers-u02-12-q4@3: A student's matrix favours accountancy, but she feels disappointed by the result. What is the best response? | Ask what the disappointment reveals, such as a missing or misweighted criterion | Ignore the feeling, because only the matrix scores have any meaning | Abandon the matrix and decide purely on feeling from now on instead | Choose the lowest-scoring option because feelings always tell the truth | Emotion can signal a criterion the matrix missed; examining it improves the analysis rather than replacing it.
 SA3#careers-u02-12-q5@2,3: Evaluate the use of a weighted decision matrix for a career decision. | Strengths: it makes criteria and priorities explicit, reduces the influence of biases such as availability, allows comparison of very different options and can be shared with an adviser. Limits: weights and scores are subjective and may be manipulated to fit a preferred answer; it depends on good information; it ignores uncertainty and future change; and it may miss emotional or intuitive factors. It works best within a process such as PIC, with research, a gut check and a back-up plan, aiming for a good-enough choice. | Explains strengths such as explicit priorities ; Notes subjectivity of weights and scores ; Mentions information quality or uncertainty ; Considers intuition or emotion ; Reaches a balanced judgement
+Q: What happens in the prescreening stage of Gati's PIC model? | Your most important criteria reduce many options to a manageable shortlist.
+Q: What should the choice stage of PIC include besides the chosen option? | A back-up.
+Q: How does a weighted decision matrix work? | List criteria, weight each by importance, score each option and multiply.
+Q: Why do careers advisers suggest a gut check after a matrix? | If the top option feels wrong, a missing criterion may be hiding.
+Q: What is status quo bias? | Sticking with the current path because change feels risky.
+Q: What is availability bias in career decisions? | Overweighting vivid examples, such as one friend's experience or a TV portrayal.
+Q: What is confirmation bias? | Looking only for information that supports what you already prefer.
+Q: What is a satisficer? | Someone who chooses an option that is good enough against their criteria.
+Q: What was the PGCE's weighted total in Chloe's matrix? | 110, ahead of retail (86) and the master's (82).
+Q: How should sunk costs be treated in a career decision? | Ignored: decide on what each option offers from now on.
 `;

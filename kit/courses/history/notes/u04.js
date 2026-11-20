@@ -36,6 +36,16 @@ M2#history-u04-01-q2@2: Why did the English Parliament reject full union in 1607
 TF1#history-u04-01-q3@1: The Gunpowder Plot planned to kill the king at the opening of Parliament. | true | The plotters planned to blow up the House of Lords.
 M3#history-u04-01-q4@3: Which judgement about James I is best supported? | A capable king whose difficulties were partly inherited | A ruler who lost every kingdom he inherited | A king with no problems in his reign at all | A Catholic king who restored the Pope's authority | Recent work, such as Croft's, has revised older criticism of James.
 SA3#history-u04-01-q5@2,3: How successful was James I as King of England? | James united the crowns in 1603, made peace with Spain (1604), commissioned the Bible of 1611 and kept peace between his kingdoms, but Parliament rejected union in 1607, and his spending and favourites, especially Buckingham, caused quarrels. The Gunpowder Plot (1605) showed Catholic discontent. Older historians condemned him; Croft sees a capable king. A strong answer weighs these. | Explains the Union of the Crowns ; Explains successes ; Explains problems ; Uses interpretations ; Reaches a judgement
+Q: Since when had James been King of Scotland? | Since 1567, when he was one year old.
+Q: What did James bring to the English throne that Elizabeth had lacked? | Sons to succeed him, as well as experience of government and a Protestant faith.
+Q: Which three kingdoms did James rule from 1603? | England, Scotland and Ireland, each with different laws, churches and parliaments.
+Q: What did the Union Flag of 1606 combine? | The crosses of St George and St Andrew.
+Q: What was the Plantation of Ulster? | The settlement of English and Scottish Protestants on land taken from Irish lords, from 1609.
+Q: Why did Catholics turn to the Gunpowder Plot? | They had hoped James would tolerate their faith, and he did not.
+Q: Where was Guy Fawkes arrested? | In the cellar beneath the House of Lords.
+Q: What was a lasting effect of the Gunpowder Plot? | It strengthened anti-Catholic feeling for generations.
+Q: Name two successes of James I. | Peace with Spain in 1604, a Bible translation in 1611, and keeping two kingdoms at peace.
+Q: What problems marked James I's reign? | His spending, favourites such as the Duke of Buckingham, and quarrels with Parliament.
 
 ## The divine right of kings
 LV: GCSE and A level · Application
@@ -73,6 +83,16 @@ M2#history-u04-02-q2@2: Why did lawyers believe in an ancient constitution? | Th
 TF1#history-u04-02-q3@1: Sir Edward Coke was dismissed as Chief Justice in 1616. | true | He was dismissed after clashing with James over the prerogative.
 M3#history-u04-02-q4@3: Which judgement about ideas of kingship is best supported? | Ideas mattered most when attached to disputes over money and religion | Ideas about kingship played no part in any conflict | Every MP rejected the authority of the king | James I abolished the common law in 1610 | Ideas and practical disputes worked together.
 SA3#history-u04-02-q5@2,3: How far did ideas about kingship cause conflict between the Stuarts and Parliament before 1640? | James I's theory of divine right (1598, 1599, the 1610 speech) said kings answered only to God, while lawyers such as Coke defended an ancient constitution of common law and parliamentary consent to taxation. Sommerville sees real ideological division; Burgess a shared language, with conflict from practical disputes over money and religion. A strong answer weighs ideas against practical causes. | Explains divine right ; Explains the ancient constitution ; Uses historians' debate ; Links ideas to disputes ; Reaches a judgement
+Q: In which two works did James I set out divine right? | The True Law of Free Monarchies (1598) and Basilikon Doron (1599).
+Q: According to divine right, could subjects lawfully resist a king? | No. Kings were appointed by God, ruled by God's law and could not lawfully be resisted.
+Q: What was the ancient constitution? | The belief that the king ruled through the common law and with Parliament.
+Q: What did believers in the ancient constitution hold about taxation? | The king could not take property through taxation without Parliament's consent.
+Q: What is the royal prerogative? | The powers belonging to the monarch alone.
+Q: What is common law? | Law developed through the decisions of English courts over centuries.
+Q: When did divine right theory lead to conflict? | When it was used to justify actions such as raising money without Parliament.
+Q: What did Sommerville argue about ideas of kingship? | There were genuine ideological divisions between absolutist and constitutional views.
+Q: What did Burgess argue about ideas of kingship? | Most people shared a common language of law and kingship, and conflict came from practical disputes.
+Q: Did most MPs deny that the king had prerogative powers? | No. Most accepted that the king held wide prerogative powers.
 
 ## Parliament and taxation
 LV: GCSE and A level · Application
@@ -110,6 +130,16 @@ M2#history-u04-03-q2@2: Why did Charles I raise a Forced Loan in 1626? | Parliam
 TF1#history-u04-03-q3@1: Parliament granted Charles I tonnage and poundage for life in 1625. | false | It granted it for one year only, breaking with tradition.
 M3#history-u04-03-q4@3: Which judgement about the Petition of Right is best supported? | Important as a principle, but weak as a practical restraint at the time | It ended all disputes between crown and Parliament | It gave Parliament control of the army | It was rejected by Charles I and never became law | Its importance as a statement of principle grew in later crises.
 SA3#history-u04-03-q5@2,3: Why did disputes over money damage relations between the crown and Parliament between 1603 and 1629? | Inflation eroded crown income and subsidies, so the crown needed Parliament while MPs sought redress of grievances. Impositions (Bate's Case 1606), the failed Great Contract (1610), the Addled Parliament (1614), one year's tonnage and poundage (1625), the Forced Loan and the Five Knights' Case (1627) led to the Petition of Right (1628) and dissolution in 1629. A strong answer weighs financial need against constitutional principle. | Explains the crown's financial problem ; Explains disputes under James ; Explains disputes under Charles ; Explains the Petition of Right ; Reaches a judgement
+Q: How did inflation weaken the Stuart crown's finances? | It eroded the value of crown lands and fixed revenues while costs of government and war rose.
+Q: What is a subsidy? | A tax granted by Parliament to the crown.
+Q: Why were MPs reluctant to grant more money? | They wanted redress of their grievances first.
+Q: Which case upheld impositions in 1606? | Bate's Case.
+Q: What was the Great Contract of 1610? | A failed plan to exchange some royal rights for a regular income.
+Q: What was unusual about Parliament's grant of tonnage and poundage in 1625? | It was granted for one year only, instead of for life.
+Q: What did the Five Knights' Case (1627) decide? | The judges upheld Charles I's imprisonment of those who refused to pay the Forced Loan.
+Q: What happened in the Commons on 2 March 1629? | MPs held the Speaker in his chair while passing resolutions against the king's policies, and Charles dissolved Parliament.
+Q: How did Charles I respond to the Petition of Right? | He accepted it reluctantly and interpreted it narrowly.
+Q: Why is the Petition of Right seen as important despite its weakness? | It stated limits on royal power that later Parliaments returned to.
 
 ## Religious tensions under the early Stuarts
 LV: GCSE and A level · Application
@@ -146,6 +176,16 @@ M2#history-u04-04-q2@2: Why did many Protestants fear Laud's reforms? | They loo
 TF1#history-u04-04-q3@1: Henrietta Maria, Charles I's wife, was a Catholic. | true | Her open Catholic worship at court alarmed Protestants.
 M3#history-u04-04-q4@3: Which judgement about religion before 1640 is best supported? | Religion made disputes about power harder to compromise | Religion had no part in the conflicts of the period | Every English Protestant supported Laud | Catholics controlled the Church of England by 1633 | Religious stakes raised the temperature of politics.
 SA3#history-u04-04-q5@2,3: How important was religion in causing tension between Charles I and his subjects before 1640? | Puritans wanted further reform (the Millenary Petition 1603); Catholics were feared after the Gunpowder Plot (1605) and Henrietta Maria's open worship; Charles promoted Arminianism and Laud (archbishop 1633), whose altars and conformity looked Catholic, and the punishment of Prynne, Burton and Bastwick (1637) created martyrs. Tyacke sees a broken Calvinist consensus. A strong answer weighs religion against money and power. | Explains Puritans and Catholics ; Explains Arminianism and Laud ; Explains opposition ; Uses interpretations ; Reaches a judgement
+Q: What was the Millenary Petition of 1603? | A Puritan request to James I for further reform of the Church.
+Q: Why were Catholics feared in early Stuart England? | They were seen as loyal to a foreign power, a fear deepened by the Gunpowder Plot.
+Q: When did Charles I marry Henrietta Maria? | In 1625.
+Q: What did Arminians stress? | Ceremony, the sacraments and the beauty of churches.
+Q: What is predestination? | The Calvinist belief that God has already chosen who will be saved.
+Q: How did Laud enforce conformity? | Through the church courts.
+Q: Who had their ears cut off in 1637, and why? | William Prynne, Henry Burton and John Bastwick, for attacking the bishops.
+Q: What effect did the punishment of Prynne, Burton and Bastwick have? | It turned them into popular martyrs.
+Q: What did Tyacke argue about Arminianism? | Its rise broke a Calvinist consensus and was a major cause of conflict.
+Q: Why did religion make Stuart disputes harder to compromise? | It made disputes about power feel like a struggle for the soul of the nation.
 
 ## Charles I
 LV: GCSE and A level · Application
@@ -184,6 +224,16 @@ M2#history-u04-05-q2@2: Why did Charles I dissolve Parliament in 1626? | To stop
 TF1#history-u04-05-q3@1: Charles I was known for explaining his policies clearly and patiently. | false | He found it hard to explain or compromise.
 M3#history-u04-05-q4@3: Which judgement about Charles I's responsibility is best supported? | He inherited serious problems but handled them in ways that created crises | He alone created every problem of the period | He handled every problem with great skill | His problems were caused entirely by Buckingham | Inherited problems and Charles's handling of them both mattered.
 SA3#history-u04-05-q5@2,3: How far was Charles I responsible for the breakdown of relations with Parliament by 1629? | Charles, king from 1625, was devout, inflexible and loyal to Buckingham; failed expeditions to Cadiz (1625) and Île de Ré (1627), the dissolution of 1626 to protect Buckingham and the Forced Loan provoked Parliament, leading to the Petition of Right and the dissolution of 1629. But he inherited a weak financial system and religious divisions. A strong answer weighs personality against circumstances. | Explains character ; Explains Buckingham and war ; Explains finance and religion ; Weighs responsibility ; Reaches a judgement
+Q: When was Charles I born, and when did he become heir? | Born in 1600, he became heir when his elder brother Henry died in 1612.
+Q: Describe Charles I's character. | Shy, with a stammer, dignified, devout and loyal to friends, but inflexible and poor at explaining his policies.
+Q: Whose favourite had Buckingham been before Charles? | His father James I's.
+Q: What was the aim of the Île de Ré expedition in 1627? | To relieve the French Protestants at La Rochelle.
+Q: Who assassinated Buckingham, and when? | John Felton, a discontented officer, in August 1628.
+Q: How did the public react to Buckingham's assassination? | With popular rejoicing.
+Q: What poisoned relations between Charles and Parliament by 1629? | Failed wars, the Forced Loan, the Petition of Right and fears about religion.
+Q: What is a favourite? | A courtier who enjoyed the monarch's special trust and patronage.
+Q: What problems did Charles I inherit? | A weak financial position, war and religious division.
+Q: What is impeachment? | A trial by Parliament of a minister accused of serious crimes.
 
 ## The Personal Rule
 LV: GCSE and A level · Application
@@ -221,6 +271,16 @@ M2#history-u04-06-q2@2: Why did payments of Ship Money fall after Hampden's Case
 TF1#history-u04-06-q3@1: Charles I made peace with France and Spain at the start of the Personal Rule. | true | Peace reduced his need for parliamentary taxation.
 M3#history-u04-06-q4@3: Which judgement about the Personal Rule is best supported? | It worked for most of the decade but collapsed when war came | It was a tyranny that provoked a revolt in 1630 | It was illegal from the start and failed at once | It ended because Charles chose to call Parliament for no reason | Its success depended on peace, and war with Scotland ended it.
 SA3#history-u04-06-q5@2,3: How successful was Charles I's Personal Rule from 1629 to 1640? | Charles made peace (1629, 1630), revived distraint of knighthood, forest fines and monopolies, and extended Ship Money (1635), while Wentworth and Laud pursued Thorough and the prerogative courts enforced policy. Ship Money raised large sums until Hampden's Case (1637 to 1638) weakened it. Whigs saw tyranny; Sharpe sees effective rule. It collapsed when war came with Scotland. A strong answer weighs these. | Explains finance ; Explains Thorough ; Explains Ship Money ; Uses interpretations ; Reaches a judgement
+Q: When did Charles I make peace with France and Spain? | With France in 1629 and Spain in 1630.
+Q: Name three old royal rights Charles revived to raise money. | Distraint of knighthood fines, forest fines and the sale of monopolies.
+Q: Who governed Ireland as Lord Deputy from 1632? | Thomas Wentworth, later Earl of Strafford.
+Q: Name two prerogative courts used in the Personal Rule. | The Star Chamber and the Court of High Commission.
+Q: By what margin did the judges find for the king in Hampden's Case? | Only seven to five.
+Q: What was the Whig view of the Personal Rule? | An unlawful attempt to rule without Parliament and impose arbitrary taxation, the Eleven Years' Tyranny.
+Q: What did Kevin Sharpe argue about the Personal Rule? | It was a period of relative peace and effective government, and ruling without Parliament was legal.
+Q: On what did the Personal Rule depend? | Peace; it collapsed when war came with Scotland.
+Q: How successful was Ship Money at first? | It raised large sums and was paid widely at first.
+Q: Was it illegal for Charles to rule without Parliament? | No. Kings could legally choose when to summon it.
 
 ## The Bishops' Wars
 LV: GCSE and A level · Application
@@ -259,6 +319,16 @@ M2#history-u04-07-q2@2: Why did the Treaty of Ripon force Charles to summon Parl
 TF1#history-u04-07-q3@1: The First Bishops' War ended without a major battle. | true | It ended in the Pacification of Berwick in June 1639.
 M3#history-u04-07-q4@3: Which judgement about the end of the Personal Rule is best supported? | The Scots were the trigger, but English grievances made the crisis deep | English opposition alone ended the Personal Rule | Charles chose to end it after a peaceful decade | The Personal Rule ended because Laud died | Trigger and underlying causes both matter.
 SA3#history-u04-07-q5@2,3: Why did the Personal Rule come to an end in 1640? | Charles imposed a Prayer Book on Scotland (1637), provoking the National Covenant (1638) and the abolition of bishops; the First Bishops' War (1639) ended without battle; the Short Parliament (April 1640) failed; the Scots won at Newburn (August 1640), and the Treaty of Ripon forced Charles to pay them, so he called Parliament in November 1640. English grievances over Ship Money and Laud gave Parliament its agenda. A strong answer weighs these, using Russell. | Explains the Scottish crisis ; Explains the wars ; Explains English grievances ; Uses interpretations ; Reaches a judgement
+Q: Why did the Scottish Prayer Book provoke anger? | Charles ordered it without consulting the Scottish Parliament or Church assembly.
+Q: Where was the Scottish Prayer Book first used, and what happened? | At St Giles' Cathedral, Edinburgh, in July 1637, provoking a riot.
+Q: What did the Glasgow General Assembly do in late 1638? | It abolished bishops in Scotland.
+Q: How did the First Bishops' War end? | In the Pacification of Berwick in June 1639, without a major battle.
+Q: What did the Scots occupy after Newburn? | Newcastle.
+Q: What did the Treaty of Ripon (October 1640) require? | Charles had to pay the Scottish army's costs.
+Q: When did the Long Parliament first meet? | On 3 November 1640.
+Q: Who were the Covenanters? | Scots who signed and defended the National Covenant.
+Q: What did Conrad Russell see as the key cause of the breakdown? | The problem of ruling three kingdoms.
+Q: Did the Personal Rule end because of English opposition alone? | No. Defeat by the Scots forced Charles to call Parliament, though English grievances made the crisis deep.
 
 ## The Long Parliament
 LV: GCSE and A level · Application
@@ -298,6 +368,16 @@ M2#history-u04-08-q2@2: Why did the Irish rebellion of 1641 deepen the crisis? |
 TF1#history-u04-08-q3@1: The Long Parliament abolished the Star Chamber in 1641. | true | Star Chamber and High Commission were abolished in July 1641.
 M3#history-u04-08-q4@3: Which explanation of why crisis became war is best supported? | A breakdown of trust, sharpened by religion and the Irish rebellion | A single decision by Parliament to abolish the monarchy | A Scottish invasion of England in the summer of 1642 | A dispute over Ship Money alone | Several factors combined to make compromise impossible.
 SA3#history-u04-08-q5@2,3: Why did the reforms of 1641 fail to prevent civil war in 1642? | The Long Parliament executed Strafford (May 1641), passed the Triennial Act, abolished Ship Money, Star Chamber and High Commission. But the Irish rebellion (October 1641) raised the question of command, the Grand Remonstrance passed only 159 to 148, Charles's attempt on the five members (January 1642) destroyed trust, and the Militia Ordinance and Nineteen Propositions pushed further. A strong answer explains why reform divided rather than settled. | Explains the reforms ; Explains the Irish rebellion ; Explains the Grand Remonstrance ; Explains the five members ; Reaches a judgement
+Q: What is an act of attainder? | A law declaring a person guilty of a crime without a trial in the courts.
+Q: What did the Triennial Act of February 1641 require? | A Parliament at least every three years.
+Q: What did an act of May 1641 forbid? | Dissolving the Long Parliament without its own consent.
+Q: What happened to Laud in 1641? | He was imprisoned.
+Q: What happened in Ireland in October 1641? | A rebellion killed many Protestant settlers, and exaggerated reports spread fear in England.
+Q: Who drew up the Grand Remonstrance? | John Pym.
+Q: What did the close vote on the Grand Remonstrance show? | That a royalist party had formed; it passed by only 159 votes to 148.
+Q: What did the Nineteen Propositions of June 1642 demand? | Parliamentary control of ministers, the army and the Church.
+Q: What was the Militia Ordinance? | Parliament's March 1642 measure to take control of the militia.
+Q: Why did the Irish rebellion create a crisis of trust? | Neither king nor Parliament trusted the other to command an army to crush it.
 
 ## Causes of the English Civil War
 LV: A level · Evaluation
@@ -335,6 +415,16 @@ M2#history-u04-09-q2@2: Why did Russell stress the problem of multiple kingdoms?
 TF1#history-u04-09-q3@1: Whig historians saw the Civil War as a struggle for constitutional liberty. | true | Gardiner saw Parliament defending liberty against royal absolutism.
 M3#history-u04-09-q4@3: Which judgement about the causes of the Civil War is best supported? | Long-term weaknesses made war possible, and the crises of 1637 to 1642 made it happen | The war was caused only by a dispute over Ship Money in 1637 | The war had no causes before January 1642 | The war was caused only by the rise of a new social class | Long-term and short-term causes must be combined.
 SA3#history-u04-09-q5@2,3: Assess the causes of the English Civil War. | Long-term weaknesses in finance, disputes over the prerogative and religion combined with the Personal Rule, Laud and the Scottish rebellion, and the immediate crises of 1641 to 1642 (Ireland, the Grand Remonstrance, the five members). Whigs stressed liberty, Hill social change, Russell three kingdoms and short-term crisis, Morrill religion. A strong answer judges how causes interacted. | Explains long-term causes ; Explains short-term causes ; Explains immediate causes ; Uses interpretations ; Reaches a judgement
+Q: Name three long-term causes of the English Civil War. | A crown short of money, disputes over the prerogative and Parliament's rights, and religious division.
+Q: Name three short-term causes of the English Civil War. | The Personal Rule, Laud's reforms and the Scottish rebellion of 1637 to 1640.
+Q: Name the three immediate causes of the Civil War. | The Irish rebellion, the Grand Remonstrance and the attempt on the five members.
+Q: What did Whig historians such as S. R. Gardiner argue? | The war was a struggle for constitutional liberty and Puritan religion against royal absolutism.
+Q: Which historian led the revisionist approach to the Civil War? | Conrad Russell, from the 1970s.
+Q: What three long-term causes of instability did Russell identify? | Multiple kingdoms, religious division and a crown that could not pay its way.
+Q: Why did Morrill stress religion? | Religion moved people to fight when politics alone might not have.
+Q: What were the Wars of the Three Kingdoms? | The linked wars in England, Scotland and Ireland from 1639 to 1651.
+Q: How did Charles I's own choices contribute to war? | His actions, especially in 1641 to 1642, destroyed trust.
+Q: What is the weakness of listing Civil War causes? | A strong answer explains how causes combined and which mattered most.
 
 ## Royalists and Parliamentarians
 LV: GCSE and A level · Application
@@ -373,6 +463,16 @@ M2#history-u04-10-q2@2: Why did religion influence allegiance so strongly? | Fea
 TF1#history-u04-10-q3@1: London supported Parliament during the Civil War. | true | London gave Parliament money, men and the largest population.
 M3#history-u04-10-q4@3: Which explanation of Parliament's advantage is best supported? | London, the navy, the ports and new taxes gave it more resources in a long war | It controlled every county in England from the start | The king had no army of any kind | The Scots fought for the king throughout | Resources counted more as the war lengthened.
 SA3#history-u04-10-q5@2,3: Why did people support the king or Parliament in 1642? | Geography (the north, west and Wales for the king; London, the south-east and the navy for Parliament), religion (fear of popery against attachment to the Prayer Book), loyalty, local leaders and family all shaped allegiance, while many sought neutrality and Clubmen formed in 1645. A strong answer weighs religion against other factors. | Explains geography ; Explains religion ; Explains loyalty and local ties ; Explains neutrality ; Reaches a judgement
+Q: Where was royalist support strongest? | The north, the west, Wales and Cornwall.
+Q: Which areas did Parliament hold? | London, the south-east, East Anglia and most ports.
+Q: Which supporters of the Church tended to back the king? | Those who valued the Prayer Book and bishops.
+Q: Which people tended to back Parliament on religious grounds? | Those who feared popery and wanted further reform.
+Q: Besides religion, what influenced choice of side? | Loyalty to the king, local leaders and family; some families were divided.
+Q: How did nobles and gentry divide? | Many nobles backed the king, while many gentry were split.
+Q: Why did many people try to stay neutral? | To protect their communities from plunder and taxation by both armies.
+Q: What new tax did Parliament raise from 1643? | The excise.
+Q: How did control of the navy and ports help Parliament? | It gave customs revenue and access to trade.
+Q: Why did Parliament's resources matter more as the war went on? | They counted more as the war became long.
 
 ## Key campaigns and battles of the Civil War
 LV: GCSE and A level · Application
@@ -412,6 +512,16 @@ M2#history-u04-11-q2@2: Why was the Self-Denying Ordinance passed in 1645? | To 
 TF1#history-u04-11-q3@1: Edgehill, in 1642, was a decisive royalist victory. | false | Edgehill was indecisive; neither side won a clear victory.
 M3#history-u04-11-q4@3: Which explanation of Parliament's victory is best supported? | Resources and the Scots made victory possible; the New Model Army made it decisive | The king surrendered before any battle was fought | Parliament won because the navy invaded Oxford | The royalists had more money and men throughout | Several factors combined over four years.
 SA3#history-u04-11-q5@2,3: Why did Parliament win the First Civil War? | After indecisive Edgehill (October 1642) and Turnham Green, royalists did well in 1643; the Solemn League and Covenant (1643) brought the Scots, who helped win Marston Moor (July 1644); the Self-Denying Ordinance and New Model Army (1645) under Fairfax and Cromwell won Naseby (June 1645). Parliament's London, navy and taxes outlasted the royalists. A strong answer weighs these. | Explains resources ; Explains the Scottish alliance ; Explains the New Model Army ; Explains royalist weaknesses ; Reaches a judgement
+Q: When was the Battle of Edgehill? | On 23 October 1642.
+Q: What happened at Turnham Green in November 1642? | A large London force stopped the king's advance on the capital.
+Q: Where did the royalists win victories in 1643? | Especially in the north and west.
+Q: When was the Battle of Marston Moor? | On 2 July 1644.
+Q: When was the Battle of Naseby? | On 14 June 1645.
+Q: What happened at Naseby? | The New Model Army destroyed the king's main army.
+Q: To whom did Charles surrender in 1646? | To the Scots, in May 1646.
+Q: Why was the New Model Army effective? | It was professional, well paid and disciplined, with able commanders.
+Q: What were the royalists' weaknesses in the Civil War? | Divided command and fewer resources.
+Q: When did the First Civil War take place? | From 1642 to 1646.
 
 ## The trial and execution of Charles I
 LV: GCSE and A level · Evaluation
@@ -451,6 +561,16 @@ M2#history-u04-12-q2@2: Why did many in the army see Charles as a "man of blood"
 TF1#history-u04-12-q3@1: Charles I accepted the authority of the court that tried him. | false | He refused to recognise the court and would not plead.
 M3#history-u04-12-q4@3: Which judgement about the regicide is best supported? | A revolutionary act by a small group, shaping politics for generations | A decision supported by almost everyone in England | An event that changed nothing in English government | A trial ordered by the House of Lords | Its significance was great although its support was narrow.
 SA3#history-u04-12-q5@2,3: Why was Charles I executed in 1649? | After 1646 Charles negotiated with all sides, escaped to the Isle of Wight (1647), made the Engagement with the Scots and caused the Second Civil War (1648), which ended at Preston. The army saw him as a man of blood; Pride's Purge (December 1648) created a Rump that set up a court, and Charles, refusing to plead, was executed on 30 January 1649. A strong answer weighs Charles's actions against the army's radicalism. | Explains Charles's actions ; Explains the Second Civil War ; Explains the army's role ; Explains the trial ; Reaches a judgement
+Q: What did Charles do after his defeat in 1646? | He negotiated with Parliament, the army and the Scots, hoping to divide them.
+Q: Where did Charles escape to in November 1647? | The Isle of Wight.
+Q: What did Charles agree with the Scots in December 1647? | An Engagement, which led to the Second Civil War.
+Q: Where did Cromwell win the Second Civil War? | At Preston in August 1648.
+Q: Where did Charles I's trial take place, and when did it begin? | In Westminster Hall, beginning on 20 January 1649.
+Q: How did Charles I respond at his trial? | He refused to recognise the court's authority and would not plead.
+Q: How many commissioners signed Charles I's death warrant? | Fifty-nine.
+Q: What was Eikon Basilike? | A book presented as Charles's own meditations, widely read after his death, presenting him as a martyr.
+Q: What was abolished in 1649 after the regicide? | The monarchy and the House of Lords.
+Q: What is regicide? | The killing of a king, or a person who took part in it.
 
 ## The Commonwealth
 LV: GCSE and A level · Application
@@ -488,6 +608,16 @@ M2#history-u04-13-q2@2: Why did Cromwell invade Scotland in 1650? | Scotland had
 TF1#history-u04-13-q3@1: The Rump abolished the House of Lords in 1649. | true | The monarchy and the House of Lords were both abolished in 1649.
 M3#history-u04-13-q4@3: Which explanation of the Rump's dissolution is best supported? | The army lost patience with a slow and self-interested Rump | The Rump voted to restore Charles II in 1653 | Foreign armies forced the Rump to dissolve | The Rump dissolved itself after completing all reforms | The republic depended on the army's patience.
 SA3#history-u04-13-q5@2,3: How successful was the Commonwealth from 1649 to 1653? | The Rump abolished monarchy and Lords (1649) and declared a Commonwealth; it crushed the Levellers at Burford (1649), conquered Ireland (Drogheda and Wexford, 1649) and Scotland (Dunbar 1650, Worcester 1651) and passed the Navigation Act (1651). But it was narrow, depended on the army and was slow to reform, and Cromwell dissolved it in April 1653. A strong answer weighs these. | Explains government ; Explains radicals ; Explains conquest ; Explains the dissolution ; Reaches a judgement
+Q: When did England become a Commonwealth? | In May 1649, after the Rump abolished the monarchy and Lords in March.
+Q: Who ran the government of the Commonwealth? | The Rump Parliament and a Council of State.
+Q: Who led the Levellers? | John Lilburne.
+Q: Who were the Diggers? | A group led by Gerrard Winstanley who began farming common land in 1649.
+Q: Name two religious sects that grew under the Commonwealth. | The Ranters and the Quakers.
+Q: Which Irish towns did Cromwell's forces storm in 1649? | Drogheda in September and Wexford in October.
+Q: Why are Drogheda and Wexford controversial? | Cromwell's forces killed soldiers, priests and civilians.
+Q: Where did Cromwell defeat the Scots and Charles II? | At Dunbar on 3 September 1650 and Worcester on 3 September 1651.
+Q: What did the army dislike about the Rump? | It was slow to reform law and Church and seemed too concerned with its own power.
+Q: Was the Commonwealth a democracy? | No. Power lay with the Rump, a minority of MPs, backed by the army.
 
 ## Oliver Cromwell
 LV: GCSE and A level · Evaluation
@@ -527,6 +657,16 @@ M2#history-u04-14-q2@2: Why did Cromwell read military victories as significant?
 TF1#history-u04-14-q3@1: Cromwell signed Charles I's death warrant. | true | He was one of the 59 commissioners who signed it.
 M3#history-u04-14-q4@3: Which judgement about Cromwell is best supported? | A sincere believer, cautious in politics, whose aims conflicted with one another | A ruler with no religious beliefs at all | A king who founded a new royal dynasty | A Leveller who gave every man the vote | Recent work stresses sincerity and contradiction.
 SA3#history-u04-14-q5@2,3: How should Oliver Cromwell be judged? | Cromwell rose from MP (1640) to cavalry commander (Marston Moor, Naseby), regicide (1649), conqueror of Ireland and Scotland and Lord Protector (1653); he refused the crown in 1657. He believed in providence and liberty of conscience for Protestants. Royalists saw a hypocrite, Carlyle a hero, Morrill a sincere believer with conflicting aims; Ireland is widely condemned. A strong answer weighs these. | Explains career ; Explains beliefs ; Explains Ireland ; Uses interpretations ; Reaches a judgement
+Q: Where and when was Oliver Cromwell born? | In Huntingdon, in 1599.
+Q: Which seat did Cromwell represent from 1640? | Cambridge.
+Q: What were the Ironsides? | Cromwell's disciplined cavalry.
+Q: What were the Putney Debates? | Debates in 1647 between army leaders, including Cromwell, and the Levellers.
+Q: When did Cromwell die? | On 3 September 1658.
+Q: How far did Cromwell support liberty of conscience? | For Protestants, but not for Catholics or for the Prayer Book in public worship.
+Q: What did Cromwell allow in 1656 regarding Jews? | Jews were allowed to resettle in England informally.
+Q: How did Thomas Carlyle see Cromwell? | As a godly hero of liberty.
+Q: How did royalists see Cromwell? | As an ambitious hypocrite who seized power by force.
+Q: What is providence? | The belief that God guides events in the world.
 
 ## The Protectorate
 LV: GCSE and A level · Application
@@ -564,6 +704,16 @@ M2#history-u04-15-q2@2: Why were the Major-Generals unpopular? | They taxed roya
 TF1#history-u04-15-q3@1: George Monck marched south from Scotland in January 1660. | true | His march opened the way for the Restoration.
 M3#history-u04-15-q4@3: Which explanation of the Protectorate's collapse is best supported? | Without Oliver Cromwell, nothing held the army and political nation together | A royalist army defeated the Protectorate in battle | France invaded and restored the monarchy | Parliament voted to abolish the Protectorate in 1655 | The regime depended on one man's authority over the army.
 SA3#history-u04-15-q5@2,3: Why did the Protectorate fail to establish a lasting settlement? | The Instrument of Government (1653) and the Humble Petition and Advice (1657) gave the regime a written basis, but Parliaments challenged it, the Major-Generals (1655 to 1657) were unpopular, and the regime depended on the army and Cromwell. After his death (September 1658) Richard lacked authority and resigned (May 1659), and Monck's march (1660) led to Restoration. A strong answer weighs these. | Explains the constitutions ; Explains the Major-Generals ; Explains dependence on the army ; Explains the collapse ; Reaches a judgement
+Q: What did the Instrument of Government establish? | Cromwell as Lord Protector, with a Council of State and Parliaments every three years.
+Q: What happened to the First Protectorate Parliament? | It challenged the constitution, and Cromwell dissolved it.
+Q: What did the Humble Petition and Advice (1657) create? | A second chamber, and it let Cromwell name his successor.
+Q: What did the Major-Generals do? | Kept order, taxed royalists and promoted godly behaviour.
+Q: Name two entertainments suppressed by the Major-Generals. | Alehouses and horse racing.
+Q: When did the experiment of the Major-Generals end? | In 1657.
+Q: Why did Richard Cromwell fail? | He lacked support in the army and his father's authority.
+Q: What did George Monck do in 1660? | Marched from Scotland and restored the MPs excluded in 1648, opening the way for the monarchy's return.
+Q: Why did the Protectorate never become secure? | It rested on the army and Cromwell personally and never won wide support from the county gentry.
+Q: Did a royalist rising cause the Protectorate's collapse? | No. It collapsed from within, through army division after Cromwell's death.
 
 ## The Restoration
 LV: GCSE and A level · Application
@@ -601,6 +751,16 @@ M2#history-u04-16-q2@2: Why did fears of Catholicism return after 1660? | Charle
 TF1#history-u04-16-q3@1: The Star Chamber was restored with the monarchy in 1660. | false | The prerogative courts abolished in 1641 were not restored.
 M3#history-u04-16-q4@3: Which judgement about the Restoration is best supported? | It restored institutions but left the deepest questions open until 1688 | It resolved every conflict of the previous decades for good | It changed nothing compared with the Personal Rule | It made England a republic again by 1665 | Restored institutions sat alongside unresolved disputes.
 SA3#history-u04-16-q5@2,3: How far did the Restoration settlement resolve the conflicts of the period from 1640 to 1660? | Charles II returned in May 1660 after the Declaration of Breda; the Act of Indemnity pardoned most people; the prerogative courts stayed abolished and Parliament controlled taxation; the Clarendon Code restored the Church but penalised dissenters. But a Catholic heir, the Popish Plot (1678) and the Exclusion Crisis (1679 to 1681) showed that religion and royal power were unresolved. A strong answer weighs these. | Explains the Restoration ; Explains the political settlement ; Explains the religious settlement ; Explains continuing tensions ; Reaches a judgement
+Q: When did Charles II enter London? | On 29 May 1660, his thirtieth birthday.
+Q: Which Parliament invited Charles II back? | A newly elected Convention Parliament.
+Q: What did the Act of Indemnity and Oblivion (1660) do? | It pardoned most people for wartime actions, though surviving regicides were tried and several executed.
+Q: What did the Clarendon Code do? | It restored the Church of England and penalised Protestant dissenters.
+Q: How many ministers left the Church of England in 1662? | About 2,000.
+Q: What disasters struck in 1665 and 1666? | The Great Plague of 1665 and the Great Fire of London in September 1666.
+Q: Why did fears of Catholicism return under Charles II? | It became known that his brother and heir, James, was Catholic.
+Q: What was the Popish Plot? | An invented plot of 1678 that stirred fear of Catholics.
+Q: Which two political groups emerged from the Exclusion Crisis? | Whigs and Tories.
+Q: What questions did the Restoration leave unresolved? | Religion, the king's powers and a Catholic heir, until 1688.
 
 ## The Glorious Revolution
 LV: A level · Evaluation
@@ -639,6 +799,16 @@ M2#history-u04-17-q2@2: Why did the trial of the seven bishops damage James II? 
 TF1#history-u04-17-q3@1: The revolution of 1688 to 1691 was bloodless in Ireland. | false | Ireland saw serious fighting, including the Battle of the Boyne in 1690.
 M3#history-u04-17-q4@3: Which judgement about the Glorious Revolution is best supported? | Largely peaceful in England, but violent across the three kingdoms | Bloodless and peaceful in every kingdom | A Catholic revolution against a Protestant king | A Parliamentary vote with no foreign involvement | Its character differed between England, Scotland and Ireland.
 SA3#history-u04-17-q5@2,3: Why did James II lose his throne in 1688? | James's Catholic appointments, the dispensing power and the Declarations of Indulgence (1687, 1688) alarmed Protestants; the acquittal of the seven bishops (June 1688) showed opposition; the birth of a son (June 1688) promised a Catholic dynasty; seven politicians invited William, who landed at Torbay (November 1688), and James's army deserted. A strong answer weighs James's policies against William's ambitions and uses interpretations. | Explains James's policies ; Explains the birth of an heir ; Explains William's invasion ; Uses interpretations ; Reaches a judgement
+Q: When did James II become king? | In February 1685.
+Q: How did James II use the dispensing power? | To appoint Catholics as army officers and to public offices.
+Q: When were James II's Declarations of Indulgence issued? | In 1687 and 1688.
+Q: What was the outcome of the seven bishops' trial? | They were acquitted on 30 June 1688.
+Q: Who invited William of Orange to intervene? | Seven leading politicians, on 30 June 1688.
+Q: Why did James II's position collapse in 1688? | Much of his army deserted after William landed, and he fled to France in December.
+Q: When were William and Mary offered the crown? | In February 1689, with a Declaration of Rights.
+Q: What was the Scottish Claim of Right (1689)? | The Convention's declaration deposing James in Scotland.
+Q: When was the Battle of the Boyne? | In July 1690, a victory for William in Ireland.
+Q: How did Steve Pincus interpret 1688? | As the first modern revolution, transforming the state, the economy and foreign policy.
 
 ## The Bill of Rights
 LV: A level · Evaluation
@@ -677,4 +847,14 @@ M2#history-u04-18-q2@2: Why did the Mutiny Act of 1689 make Parliament meet ever
 TF1#history-u04-18-q3@1: The Bill of Rights barred Catholics from inheriting the throne. | true | It barred Catholics and anyone married to a Catholic.
 M3#history-u04-18-q4@3: Which judgement about the revolution settlement is best supported? | It made Parliament permanent and powerful, but not yet a democracy | It abolished the monarchy and created a republic | It gave every adult the right to vote | It left royal power exactly as it was under James II | Parliament's power grew while the franchise stayed narrow.
 SA3#history-u04-18-q5@2,3: How far did the revolution settlement of 1689 to 1701 establish the power of Parliament? | The Bill of Rights (1689) outlawed the suspending power, taxation and a peacetime army without consent, and Catholic succession; the Mutiny Act (1689) forced annual Parliaments, the Triennial Act (1694) regular elections and the Act of Settlement (1701) a Protestant succession; war finance and the Bank of England (1694) made Parliament essential. But monarchs still chose ministers and the vote was narrow. A strong answer weighs these. | Explains the Bill of Rights ; Explains the wider settlement ; Explains war finance ; Explains limits ; Reaches a judgement
+Q: What did the Bill of Rights say about elections and speech in Parliament? | Elections should be free, and freedom of speech in Parliament could not be questioned in any court.
+Q: What punishments did the Bill of Rights forbid? | Excessive bail and "cruel and unusual punishments".
+Q: Who could not inherit the throne under the Bill of Rights? | Any Catholic, or anyone married to a Catholic.
+Q: Who did the Toleration Act (1689) exclude? | Catholics; it allowed only Protestant dissenters to worship.
+Q: What did the Mutiny Act (1689) authorise? | The army for only a year at a time.
+Q: What did the Triennial Act of 1694 require? | Elections at least every three years.
+Q: Why did war with France from 1689 strengthen Parliament? | It needed large sums that only Parliament could grant.
+Q: When was the Bank of England founded? | In 1694.
+Q: What powers did monarchs still keep after 1689? | They still chose ministers and directed policy.
+Q: What is the suspending power? | The monarch's claimed power to set aside laws, declared illegal in 1689.
 `;

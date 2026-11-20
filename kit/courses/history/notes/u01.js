@@ -38,6 +38,16 @@ M2#history-u01-01-q2@2: Two historians use the same documents but reach differen
 TF1#history-u01-01-q3@1: Most of what happened in the past left no surviving evidence. | true | Only a fraction of past events left traces, so every history is partial.
 M3#history-u01-01-q4@3: Which is the strongest reply to the claim that history is "just facts and dates"? | Facts matter, but history selects and explains them to answer questions, which involves argument | History is mostly opinion, since every historian has a different view of events | Dates matter more than explanations, because they can't be disputed | Historians now agree on the main facts, so argument is no longer needed | Facts constrain history, but explaining and judging significance requires argument; the reply that keeps both is strongest.
 SA3#history-u01-01-q5@2,3: "History is just facts and dates." How far do you agree? | Facts such as the execution of Charles I in 1649 are essential and not open to opinion, but history is an enquiry: historians choose questions, select relevant facts and argue about causes and significance. Carr's example of Caesar crossing the Rubicon shows that a fact becomes historical when judged significant. Disagreement between historians is constrained by evidence, so history is neither mere facts nor mere opinion. | Recognises that facts matter and constrain accounts ; Explains selection and interpretation ; Uses an example such as Carr's Rubicon ; Explains that interpretations are judged by evidence ; Reaches a supported judgement
+Q: Why is every history partial? | Most of the past left no trace at all, so accounts can only be built from the evidence that survives.
+Q: What kinds of traces does the past leave for historians? | Documents, buildings, objects, images, landscapes and memories.
+Q: Why is history described as an act of enquiry? | A historian asks a question, searches for evidence, interprets it and argues for an answer.
+Q: Why can two careful historians reach different answers from the same evidence? | They weigh the evidence differently or ask slightly different questions.
+Q: When was Charles I executed? | On 30 January 1649.
+Q: In which book and year did E. H. Carr discuss the nature of historical facts? | What is History?, published in 1961.
+Q: Why, according to Carr, did Caesar's crossing of the Rubicon become a historical fact? | Historians judged it significant because it began a civil war, while millions of other crossings were ignored.
+Q: When does a fact such as "the Battle of Hastings was fought in 1066" become history? | When it is used to answer a question, with further facts selected, weighed and explained.
+Q: Does disagreement between historians mean any opinion about the past is as good as another? | No. Interpretations must be supported by evidence and can be judged by how well they account for it.
+Q: Give two reasons for studying history. | It explains how the present came to be, trains judgement about evidence and argument, and widens perspective on how people lived and thought.
 
 ## Primary and secondary sources
 LV: GCSE and A level · Foundation
@@ -79,6 +89,16 @@ TF1#history-u01-02-q3@2: Primary sources are always more reliable than secondary
 M3#history-u01-02-q4@3: Why is the Bayeux Tapestry valuable but problematic evidence for the Norman Conquest? | It is near-contemporary and detailed, but made after the events from the Norman side with a purpose | It was made long after 1066 by craftsmen who knew nothing of the battle | It shows the English view of events, made for Harold's supporters | It is detailed but contains no images of the battle itself | Its closeness to events gives value; its later making and Norman perspective mean it must be read critically.
 SA3#history-u01-02-q5@2,3: Explain why the distinction between primary and secondary sources depends on the historian's question. | A primary source comes from the time being studied and a secondary source interprets it later, so a source's category changes with the period under study. A 1965 history of the Second World War is secondary for the war but primary for 1960s memory of it. Historians therefore classify sources by their relationship to the enquiry, and judge their value by what they can show about that question. | Defines primary and secondary ; Explains that the time studied determines the category ; Gives an example of a source that changes category ; Links classification to judging value
 M2#history-u01-02-q6@1: When is a historian's book a primary source? | When the question is about how history was written at that time | When it is very old and rare | When it contains many footnotes | Never: books are always secondary | Whether a source is primary depends on the question being asked.
+Q: Give four examples of primary sources. | A letter, a diary, a law, a photograph, a census return, a building or a coin.
+Q: What is a strength and a limit of a primary source? | It gives direct contact with the past, but only from the position of whoever made it.
+Q: Give three examples of secondary sources. | A textbook, a biography, a documentary or a journal article.
+Q: What does a secondary source offer, and what does it carry? | Context and argument, but also its author's choices and the knowledge of its time.
+Q: Roughly when was the Bayeux Tapestry made, and from whose side does it tell the story? | Probably within about twenty years of 1066, from the Norman side.
+Q: Why does the Bayeux Tapestry sit awkwardly between primary and secondary? | It is treated as primary evidence for the conquest, yet it was made after the events and tells a story with a purpose.
+Q: Is a 1918 soldier's letter from the Western Front primary or secondary for the war? | Primary: it was written at the time by a participant.
+Q: When would a 2014 centenary documentary be a primary source? | For an enquiry into how Britain commemorated the First World War in 2014.
+Q: Are primary sources always more reliable than secondary ones? | No. A primary source can be mistaken, partial or propaganda, while a good secondary source may weigh hundreds of primary sources.
+Q: How do strong answers use primary and secondary sources together? | They use primary evidence to support or challenge what secondary accounts argue.
 
 ## Historical evidence
 LV: GCSE and A level · Foundation
@@ -121,6 +141,16 @@ TF1#history-u01-03-q3@1: A source can reveal things its maker never intended to 
 M3#history-u01-03-q4@2,3: Why is the absence of London from Domesday Book not evidence that London was unimportant? | Its absence reflects how the survey was compiled, not London's significance | London was too small in 1086 to be worth recording in the survey | London belonged to the Church, which the survey ignored entirely | The Normans had not yet taken control of London by 1086 | Silence in a source must be explained; other evidence shows London was England's largest town.
 SA3#history-u01-03-q5@2,3: How do historians turn a source into reliable evidence for a claim? | A source becomes evidence when used to answer a question. Historians infer from what it says or shows, including unintended information, then test the inference: they examine provenance, corroborate it with independent sources and explain contradictions or silences. The Domesday Book supports inferences about Norman landholding because it is systematic and corroborated by charters and chronicles, but it is weak for towns it omits. | Distinguishes source from evidence ; Explains inference ; Explains corroboration ; Treats silences or contradictions with care ; Uses a concrete example
 M2#history-u01-03-q6@1: What turns a source into evidence? | Using it to support or test a claim about the past | Finding it in a museum or archive | Dating it to before 1900 | Copying its words into an essay | A source becomes evidence when it is used to answer a historical question.
+Q: What is an inference? | A conclusion reasoned from what a source says or shows.
+Q: How can a monastery's accounts reveal more than their maker intended? | Kept to manage money, they also reveal diet, prices and the effects of a bad harvest.
+Q: Who ordered the Domesday survey, and when? | William I, at Christmas 1085.
+Q: What does Domesday Book record? | Landholders, ploughlands, mills, livestock and values before and after the Conquest.
+Q: What do historians infer from Domesday about landholding? | Most land had passed from English to Norman hands within twenty years of the Conquest.
+Q: What does Domesday show about royal government? | It could organise a survey on a scale unmatched in Europe at the time.
+Q: For what is Domesday Book less useful? | Towns, since London and Winchester are missing, and people who held no land.
+Q: A manor fell from £10 before 1066 to £6 in 1086. How should the inference be tested? | Check whether fighting is known in the area and whether neighbouring entries show the same pattern.
+Q: How should historians treat silence in the records? | With care: missing records may reflect loss, not absence.
+Q: Why is a single source not proof? | One source supports an inference; a claim becomes secure when several independent sources point the same way.
 
 ## Source provenance
 LV: GCSE and A level · Application
@@ -162,6 +192,16 @@ TF1#history-u01-04-q3@1: A source's provenance includes who made it and when. | 
 M2#history-u01-04-q4@2: A 1915 recruitment poster is most useful as evidence of what? | The methods used to persuade men to volunteer | The daily experience of soldiers in the trenches | The number of men killed in 1915 | The outcome of the Battle of the Somme | Its purpose was persuasion, so it shows recruitment methods and pressures, not front-line experience.
 M3#history-u01-04-q5@3: Which use of provenance is strongest in an exam answer? | Explaining how the author's position and purpose shape what the source says, and what it is still useful for | Saying the source is biased because the author had a strong opinion | Saying the source is reliable because it was written at the time | Describing everything the source shows in as much detail as possible | Strong analysis links provenance to content and to the enquiry, rather than labelling the source.
 SA3#history-u01-04-q6@2,3: Explain how the provenance of a source affects its value to a historian. | Provenance covers the source's nature, origin and purpose. Nature (private diary or public speech) affects frankness; origin (author, date, place) affects how far the author could know and whether hindsight shaped it; purpose shows what the author wanted the audience to think. These explain why the source says what it does and what it can be used for: a 1915 recruitment poster is weak on soldiers' experience but strong on methods of persuasion. | Identifies nature, origin and purpose ; Explains how each shapes content ; Links provenance to the question being asked ; Uses a specific example
+Q: What is provenance? | The origin of a source: who made it, when, where, why and for whom.
+Q: What does the nature of a source mean? | What kind of source it is, such as a diary, speech, report or cartoon.
+Q: How does a private diary differ from a public speech as a source? | A diary may be frank but limited to one view; a speech is written to persuade an audience.
+Q: Why might an official report be unreliable? | It may reflect what its authors wanted their superiors to believe.
+Q: What question about the author helps judge a source? | Was the author in a position to know: an eyewitness, a participant or someone reporting hearsay?
+Q: Why does the audience of a source matter? | It shows what the author wanted readers to think or do.
+Q: Why did a 1915 British recruitment poster appeal to shame? | The army still relied on volunteers, since conscription began only in 1916.
+Q: When did conscription begin in Britain in the First World War? | In 1916.
+Q: For what is the 1915 recruitment poster weak and strong evidence? | Weak for what soldiers experienced; strong for how recruiters tried to persuade men and the pressure to volunteer.
+Q: Why is writing "the source is biased" and stopping a weak answer? | Provenance analysis should explain how the author's position shapes content and what the source is still useful for.
 
 ## Reliability and usefulness
 LV: GCSE and A level · Application
@@ -202,6 +242,16 @@ TF1#history-u01-05-q3@1: A biased source is always useless to a historian. | fal
 M3#history-u01-05-q4@3: Which judgement about a Nazi propaganda poster's usefulness is best? | Very useful for Nazi aims, limited for ordinary people's real attitudes, which need other evidence | Useless, because propaganda never tells the truth about anything | Fully reliable, because it is a primary source from the period itself | Useful only for the history of graphic design and art | A good judgement states what the source can and cannot show and why.
 SA3#history-u01-05-q5@2,3: How useful is a Nazi propaganda poster of the Hitler Youth for studying young people in Nazi Germany? | Its content shows the ideal the regime promoted: fitness, discipline and loyalty. Its provenance, regime propaganda designed to recruit, makes it unreliable as a picture of real experience. Own knowledge adds that membership became compulsory in 1939 and that groups such as the Edelweiss Pirates resisted. So it is highly useful for Nazi aims and methods but limited on young people's actual attitudes, which need diaries, police reports and oral history. | Uses the content ; Uses provenance ; Uses relevant own knowledge ; Distinguishes reliability from usefulness ; Reaches a judgement with limits
 M2#history-u01-05-q6@1: Can an unreliable source still be useful? | Yes: it can show its maker's views and aims | No: unreliable sources must be discarded | Only if it is a government document | Only if it was written very recently | Usefulness depends on the question; even biased sources reveal attitudes.
+Q: What does a source's reliability depend on? | The author's knowledge, honesty, purpose and closeness to events.
+Q: What four things help judge a source's usefulness? | Its content, its provenance, your own knowledge and its limits.
+Q: How does own knowledge help judge usefulness? | It shows whether the source is confirmed, contradicted or needs context.
+Q: Why must a historian consider a source's limits? | To see what it leaves out and what other evidence is needed.
+Q: What does a 1936 Nazi poster of the Hitler Youth show? | The image of youth the regime promoted: fit, disciplined and loyal.
+Q: When did Hitler Youth membership become compulsory? | In 1939.
+Q: Name a group of young people who resisted the Nazi regime. | The Edelweiss Pirates.
+Q: For what is a Nazi Hitler Youth poster of limited use? | For finding out what young people actually felt.
+Q: What is another name for usefulness in source work? | Utility.
+Q: Why is a biased source often useful? | Bias reveals attitudes and intentions, so concluding that a biased source is useless is a mistake.
 
 ## Bias and perspective
 LV: GCSE and A level · Application
@@ -242,6 +292,16 @@ M2#history-u01-06-q4@2: Which piece of evidence would best test whether the Pete
 M3#history-u01-06-q5@3: What is the best way to use a biased source in an essay? | Explain how its perspective shapes it and what it reveals, then corroborate its claims | Ignore it, because biased sources can't be trusted for anything | Quote it as fact, since it was written by an eyewitness | Replace it with a modern textbook account of the same events | Bias is evidence about the author; claims about events need corroboration.
 SA3#history-u01-06-q6@2,3: Explain why accounts of the Peterloo Massacre differ, and how a historian could decide between them. | Accounts differ because of perspective and purpose: radical writers, some in the crowd, stressed a peaceful meeting attacked by soldiers; magistrates and the government, fearing revolution, described a threatening mob to justify the charge and the Six Acts. A historian identifies each perspective, examines loaded language and selection, and corroborates with independent witnesses, casualty records and the crowd's composition, which largely support the view of a peaceful crowd. | Identifies the perspectives involved ; Explains how purpose shaped each account ; Refers to loaded language or selection ; Explains corroboration ; Reaches a supported conclusion
 M2#history-u01-06-q7@1: Why was the Sadler Committee's evidence of 1832 one-sided? | Reformers chose witnesses to support factory reform | Mill owners wrote all of its reports | It was written a century after the events | It recorded only statistics, not testimony | Its purpose shaped which witnesses were called.
+Q: What is bias? | A one-sided view that distorts, through selecting convenient facts, loaded language or misrepresenting opponents.
+Q: What is the difference between deliberate and unconscious bias? | Deliberate bias is propaganda; unconscious bias comes from assumptions the author never questioned.
+Q: What is loaded language? | Words chosen to provoke a judgement rather than describe neutrally.
+Q: When did the Peterloo Massacre happen, and where? | On 16 August 1819, at St Peter's Field, Manchester.
+Q: Who was the crowd at Peterloo gathered to hear, and why? | The radical Henry Hunt, calling for parliamentary reform.
+Q: Roughly how many were killed and injured at Peterloo? | At least fifteen killed and several hundred injured.
+Q: What did Parliament pass after Peterloo? | The Six Acts, restricting meetings and the press.
+Q: How did the magistrates and government justify their actions at Peterloo? | They insisted the meeting threatened public order.
+Q: What evidence suggests the Peterloo crowd was largely peaceful? | Casualty lists, independent witnesses and the composition of the crowd, which included many women and families.
+Q: Should bias be a reason to dismiss a source? | No. Explain the perspective and ask what it reveals about the author and their world.
 
 ## Historical interpretations
 LV: GCSE and A level · Application
@@ -277,6 +337,16 @@ M2#history-u01-07-q2@2: Why might a historian writing in 1961 interpret the caus
 TF1#history-u01-07-q3@1: Christopher Clark's The Sleepwalkers stresses decisions made by several European powers in 1914. | true | Clark spreads responsibility across Vienna, St Petersburg, Paris, Belgrade and Berlin.
 M3#history-u01-07-q4@3: Which is the best way to evaluate an interpretation? | Test its claims against evidence and consider how its question and context shaped it | Accept it if the historian is famous and widely published | Reject it if it was written more than fifty years ago | Prefer whichever account tells the most dramatic story | Interpretations are judged by evidence and reasoning, informed by understanding why they were made.
 SA3#history-u01-07-q5@2,3: Explain why historians have interpreted the causes of the First World War differently. | Interpretations differ because historians use different evidence, ask different questions and write in different contexts. Fischer, using German archives in 1961, stressed German war aims; Clark in 2012, examining decision-making across Europe, spread responsibility among several powers. Earlier views ranged from Versailles' war guilt clause to the inter-war idea that the powers slithered into war. Each is evidence-based, so historians judge them by how well they explain the July Crisis evidence. | Explains reasons interpretations differ ; Uses Fischer accurately ; Uses Clark or another historian accurately ; Links interpretation to evidence or context ; Reaches a judgement
+Q: Give three examples of interpretations of the past. | A book, an article, a documentary, a museum display or a statue's inscription.
+Q: Why do historians' interpretations differ? | They ask different questions, use different evidence, write at different times and bring different perspectives and methods.
+Q: What is historiography? | The study of how history has been written and how interpretations have changed.
+Q: What did Article 231 of the Treaty of Versailles do? | The war guilt clause placed responsibility for the war on Germany and its allies.
+Q: What view of the war's causes did many interwar historians move towards? | Shared responsibility: the powers had "slithered" into war, in Lloyd George's later phrase.
+Q: What evidence did Fritz Fischer use? | German government archives and war aims.
+Q: What did Christopher Clark argue in The Sleepwalkers (2012)? | Responsibility was spread widely, with decisions in Vienna, St Petersburg, Paris and Belgrade as well as Berlin.
+Q: How did context shape Fischer's interpretation? | He wrote in a West Germany confronting its Nazi past.
+Q: Can an old interpretation become a source? | Yes, for the time when it was made.
+Q: Is the most recent interpretation always correct? | No. Each interpretation must be judged on its evidence and argument.
 
 ## Cause and consequence
 LV: GCSE and A level · Application
@@ -320,6 +390,16 @@ M2#history-u01-08-q2@2: Why did the assassination in Sarajevo lead to a general 
 TF1#history-u01-08-q3@1: Archduke Franz Ferdinand was assassinated in Sarajevo on 28 June 1914. | true | Gavrilo Princip shot him and his wife Sophie that day.
 M3#history-u01-08-q4@3: Which approach to a causation essay is strongest? | Link causes, show how they combined, and argue which mattered most | Describe each cause in a separate paragraph | Choose one cause and ignore the rest | List causes in chronological order | Explanation and judgement, not description, earn the highest credit.
 SA3#history-u01-08-q5@2,3: "The alliance system was the main cause of the First World War." How far do you agree? | Alliances explain why a Balkan crisis spread: Austria-Hungary was backed by Germany, Serbia by Russia, and Russia was allied to France. But alliances were defensive and did not compel every decision; militarism and war plans such as the Schlieffen Plan demanded rapid mobilisation, nationalism inflamed the Balkans, and the assassination and July Crisis decisions triggered war. A strong judgement weighs these and explains how they combined. | Explains the role of alliances ; Explains at least two other causes ; Links causes together ; Uses accurate detail ; Reaches a supported judgement
+Q: What is a long-term cause? | A condition that builds over years and makes an event possible.
+Q: Name four long-term causes of the First World War. | The alliance system, militarism, imperial rivalry and nationalism.
+Q: What was the short-term cause of the First World War? | The July Crisis of 1914.
+Q: What is a necessary cause? | A cause without which the event would not have happened.
+Q: How did the Schlieffen Plan help turn a Balkan crisis into a European war? | German military planning demanded speed, making escalation hard to stop.
+Q: Name four themes by which causes can be grouped. | Political, economic, social, religious, ideological and individual.
+Q: What sequence followed the assassination at Sarajevo? | The Austrian ultimatum to Serbia, then Russian mobilisation and the Schlieffen Plan turned it into a European war.
+Q: What four empires collapsed as a consequence of the First World War? | The German, Austro-Hungarian, Russian and Ottoman empires.
+Q: What kinds of consequences do historians distinguish? | Intended or unintended, short-term or long-term.
+Q: What is the mistake of listing causes? | Explanation needs causes linked and weighed by relative importance, not just listed.
 
 ## Continuity and change
 LV: GCSE and A level · Application
@@ -362,6 +442,16 @@ TF1#history-u01-09-q3@1: Change in law always produces immediate change in what 
 M3#history-u01-09-q4@3: Which judgement about the English Reformation is best supported? | Institutional change was rapid, while change in popular belief was slower and uneven | Nothing changed in English religion between 1529 and 1559 | England became fully Protestant in 1534 | Change was equally fast everywhere | The evidence shows fast change at the top and gradual change in parishes.
 SA3#history-u01-09-q5@2,3: How far was the break with Rome a turning point in English religion? | It was a decisive institutional change: royal supremacy replaced papal authority and made the Dissolution and later Protestant reforms possible. But doctrine changed little under Henry, whose Six Articles of 1539 upheld the Mass, and popular belief shifted slowly; historians such as Duffy and Haigh stress continuity in parish religion. A balanced answer sees 1534 as a political turning point, with religious change coming gradually afterwards. | Explains what changed in 1534 ; Explains elements of continuity ; Uses accurate detail ; Distinguishes types or pace of change ; Reaches a judgement
 M2#history-u01-09-q6@1: What is continuity in history? | Aspects of life that stayed the same over a period | Events happening in strict date order | Sudden revolutions in society | The study of a single year | Continuity means what persisted while other things changed.
+Q: In what ways can change vary? | It can be rapid or gradual, deep or superficial, widespread or limited to a group or place.
+Q: What is a trend? | A sustained direction of change over time.
+Q: Can change and continuity exist at the same time? | Yes. Government may change at the centre while village life carries on much as before.
+Q: When were the monasteries dissolved? | Between 1536 and 1540.
+Q: Describe the religious swings in England from Edward VI to Elizabeth I. | Protestantism under Edward VI, back to Catholicism under Mary I, then a Protestant Church under Elizabeth I.
+Q: Which historians have stressed continuity in the English Reformation? | Eamon Duffy and Christopher Haigh.
+Q: What did Duffy and Haigh argue about religion before and during the break with Rome? | Traditional Catholicism was vigorous, parishes changed only as fast as the law forced, and Protestant belief spread slowly and unevenly.
+Q: What kind of turning point was the break with Rome in 1534? | A political and institutional turning point, but not yet a doctrinal one.
+Q: What did the Act of Six Articles (1539) uphold? | The Mass and clerical celibacy.
+Q: Why is it a mistake to assume a law changed belief at once? | Change on paper and change in practice often moved at different speeds.
 
 ## Significance
 LV: GCSE and A level · Application
@@ -396,6 +486,16 @@ M2#history-u01-10-q2@2: Which criterion asks how long an event's effects lasted?
 TF1#history-u01-10-q3@1: An event's significance can change as later generations reinterpret it. | true | Magna Carta mattered more to the seventeenth century than its 1215 failure suggested.
 M3#history-u01-10-q4@3: Which is the strongest argument that the 1381 Peasants' Revolt was significant despite failing? | It revealed deep tensions over labour and taxation and no further poll tax was imposed in that period | It was the largest single event of the whole fourteenth century | It immediately abolished serfdom by an act of Parliament in 1381 | It was led by the king against the nobles who opposed him | A failed event can be significant for what it reveals and what it changed indirectly.
 SA3#history-u01-10-q5@2,3: How significant was Magna Carta? Use criteria in your answer. | Judged in 1215 its significance was limited: annulled within weeks, it led to civil war. But it was reissued in 1216, 1217 and 1225, entered English law, and was later invoked by opponents of the Stuarts and by American colonists as a symbol of the rule of law. By criteria of durability and resonance it is highly significant, though partly because of later reinterpretation rather than its original aims. | Uses explicit criteria ; Explains short-term failure ; Explains later importance ; Recognises that significance changed over time ; Reaches a judgement
+Q: What questions do historians ask when judging significance? | What an event changed, for how many people, how deeply, for how long, and what it reveals about its time.
+Q: Name three of Geoffrey Partington's criteria for significance (1980). | Importance at the time, how profoundly lives were affected, how many lives, durability of effects and relevance to the present.
+Q: What were Christine Counsell's five R criteria for significance? | Remarkable at the time, remembered, resonant, resulted in change, or revealing of the past.
+Q: What is durability in judging significance? | How long the effects of an event lasted.
+Q: Why does significance change over time? | It depends on the question and shifts as later generations look back and reinterpret events.
+Q: When did King John agree to Magna Carta? | In June 1215.
+Q: When was Magna Carta reissued? | In 1216, 1217 and 1225; the 1225 version entered English law.
+Q: Who later cited Magna Carta, and as a symbol of what? | Seventeenth-century opponents of the Stuarts and American colonists, as a symbol of the rule of law and limits on royal power.
+Q: Why did Magna Carta fail in the short term? | The Pope annulled it within weeks and civil war followed.
+Q: Is significance the same as fame or size? | No. A small, revealing event can be highly significant for a particular question.
 
 ## Chronology and periodisation
 LV: GCSE and A level · Foundation
@@ -437,6 +537,16 @@ TF1#history-u01-11-q3@1: BCE and BC dates use the same numbers. | true | Only th
 M3#history-u01-11-q4@3: Which is the best criticism of ending the Middle Ages in England in 1485? | It suits political history, but religion and society changed little that year | Nothing happened in 1485 | Bosworth was fought in 1066 | The Tudors never ruled England | A periodisation fits some questions better than others.
 SA3#history-u01-11-q5@2,3: Assess the usefulness of dividing history into periods such as "the Middle Ages". | Periods help historians organise the past and compare similar features, and some boundaries mark real breaks, such as 1485 politically. But periods are later constructions: "Middle Ages" was coined by Renaissance scholars, boundaries suit some themes and not others, and labels can hide continuity across them. Hobsbawm's long nineteenth century shows that historians choose periods to fit their arguments. Periodisation is useful if used critically. | Explains why periods are useful ; Explains that periods are constructed ; Uses an example such as 1485 or Hobsbawm ; Recognises that boundaries suit some questions more than others ; Reaches a judgement
 M2#history-u01-11-q6@1: Why is periodisation useful but risky? | It organises the past, but its boundaries are choices that can mislead | It is useful and has no risks at all | It is risky and has no uses at all | It fixes exact dates that everyone agrees on | Periods help organise history, but their start and end dates are interpretations.
+Q: What do BCE and CE stand for? | Before the common era and common era.
+Q: What is chronology? | The arrangement of events in the order they happened.
+Q: When were the Wars of the Roses, and how did they relate to the Hundred Years' War? | 1455 to 1487; they began two years after the Hundred Years' War ended in 1453, and defeat in France helped cause them.
+Q: What is periodisation? | Dividing the past into named periods with chosen boundaries.
+Q: Who coined the term "Middle Ages", and why? | Renaissance scholars, who saw their own time as a rebirth after a "middle" period.
+Q: What did Hobsbawm call 1914 to 1991? | The short twentieth century.
+Q: What is anachronism? | Placing something in the wrong period, or judging the past by later assumptions.
+Q: What is the case for ending the Middle Ages in England in 1485? | Henry VII's victory at Bosworth began the Tudor dynasty, a clear political break.
+Q: Besides order, what does chronological understanding include? | Overlap and duration of events.
+Q: Did people at the time recognise period labels like the Middle Ages? | No. Nobody in 1400 thought they lived in the Middle Ages; labels are later constructions.
 
 ## Historical argument
 LV: GCSE and A level · Application
@@ -479,6 +589,16 @@ M2#history-u01-12-q2@2: In an argument about Hastings, which is reasoning rather
 TF1#history-u01-12-q3@1: A detailed narrative of a battle is the same as an argument about why it was won. | false | An argument explains and judges; a narrative describes.
 M3#history-u01-12-q4@3: Which conclusion best handles the counter-argument about Harold's misfortune? | It made the battle closer, but Norman tactics still decided it, since the shield wall nearly held all day | Misfortune is irrelevant, since battles are decided only by tactics | Harold lost only because of bad luck, not anything William did | William would have lost on any other day, so his tactics didn't matter | The best judgement weighs the counter-argument rather than ignoring it.
 SA3#history-u01-12-q5@2,3: Why did William win the Battle of Hastings? | A strong answer weighs several factors: Harold's misfortune (the invasion of Hardrada, the march south after Stamford Bridge, a tired army); William's preparation and luck with the crossing; and Norman tactics on the day, especially cavalry, archers and feigned retreats that broke the shield wall, plus Harold's death. It argues which mattered most, for example that tactics turned a near-stalemate into victory, while acknowledging the counter-argument. | Explains several factors with accurate detail ; Distinguishes claim from evidence ; Addresses a counter-argument ; Links factors ; Reaches a supported judgement
+Q: What is a claim in a historical argument? | The point the argument sets out to prove.
+Q: What does reasoning do in a historical argument? | It explains why the evidence supports the claim.
+Q: What is a counter-argument? | The strongest objection to a claim, which a good argument addresses.
+Q: When did Harold defeat Harald Hardrada at Stamford Bridge? | On 25 September 1066.
+Q: Where and when did William land in 1066? | At Pevensey on 28 September 1066.
+Q: What Norman tactics broke Harold's shield wall at Hastings? | Cavalry, archers and feigned retreats that drew English troops off the ridge.
+Q: What luck helped William in 1066? | The wind delayed his crossing until Harold was in the north.
+Q: Which words signal a weighed judgement in an argument? | Words such as "mainly", "partly" and "decisively".
+Q: Name two signs of a strong historical argument. | It answers the question asked, every paragraph advances the claim, and it concedes what the evidence cannot settle.
+Q: Why is a narrative not an argument? | Telling the story of a battle does not explain why it ended as it did.
 
 ## Essay construction
 LV: GCSE and A level · Application
@@ -522,6 +642,16 @@ M2#history-u01-13-q2@2: Which sentence is the best opening for an analytical par
 TF1#history-u01-13-q3@1: A conclusion should introduce important new evidence. | false | A conclusion answers the question and justifies the judgement from the argument already made.
 M3#history-u01-13-q4@3: Which is the strongest line of argument for the question on the Black Death and 1381? | The Black Death created the conditions, but the 1381 poll tax was the decisive trigger | The Black Death was the only cause, so nothing else needs explaining | The Black Death had nothing to do with it, since it came decades earlier | There were many causes, and all of them were equally important | A strong line of argument distinguishes types of cause and commits to a judgement.
 SA3#history-u01-13-q5@2,3: How far was the Black Death responsible for the Peasants' Revolt of 1381? | The Black Death killed perhaps a third to a half of the population, making labour scarce and raising peasants' expectations; the Statute of Labourers and lords' attempts to reimpose services turned these into grievances. But the revolt came in 1381 because of the third poll tax, with ideas from preachers such as John Ball and leadership from Wat Tyler. A strong judgement sees the Black Death as a necessary long-term cause but not sufficient alone. | Explains the Black Death's impact ; Explains the government's response ; Explains the poll tax as trigger ; Considers other factors ; Reaches a supported judgement
+Q: What is a line of argument? | The overall answer an essay argues consistently from start to finish.
+Q: What structure should an analytical paragraph follow? | Point, evidence, explanation, link.
+Q: What should an essay conclusion do? | Answer the question directly and justify the judgement, without new material.
+Q: What proportion of England's population did the Black Death (1348 to 1349) kill? | Perhaps a third to a half.
+Q: How did the Black Death change peasants' position? | Labour became scarce and wages rose, raising peasants' expectations and bargaining power.
+Q: What did the Ordinance (1349) and Statute (1351) of Labourers try to do? | Hold wages at old levels.
+Q: Which radical preacher added to grievances before 1381? | John Ball.
+Q: Where did the Peasants' Revolt break out in 1381? | In Essex and Kent.
+Q: What is a strong line of argument on the Black Death and the 1381 revolt? | The Black Death was a necessary long-term cause but not sufficient alone; the 1381 poll tax was the decisive trigger.
+Q: What is the difference between description and analysis? | Description tells what happened; analysis explains how it answers the question.
 
 ## Evidence selection
 LV: GCSE and A level · Application
@@ -562,6 +692,16 @@ TF1#history-u01-14-q3@1: One vivid source is enough to prove a claim about all f
 M3#history-u01-14-q4@3: How should a historian use the Sadler Committee's evidence? | As vivid testimony to corroborate with inspectors' reports, noting how witnesses were chosen | As proof of the conditions in every factory in Britain at the time | Not at all, because a campaigner's report is too biased to use | Only as evidence for the history of Parliament, not of factories | Good practice uses the source while testing how representative it is.
 SA3#history-u01-14-q5@2,3: Explain how historians should select evidence when writing about child labour in early factories. | Evidence should be relevant to the question, precise, accurate and representative. The Sadler Report of 1832 is vivid and relevant, but its campaigning chairman chose supportive witnesses who were not cross-examined, so it should be corroborated with factory inspectors' reports and other sources and used to support proportionate claims, such as that many child workers faced long hours, rather than claims about all factories. | States the criteria for good evidence ; Explains the problem of representativeness ; Uses the Sadler Report accurately ; Explains corroboration ; Matches claims to evidence
 M2#history-u01-14-q6@1: What makes evidence well selected? | It is relevant to the question and from varied perspectives | It is the oldest evidence available | It all supports the same conclusion | It comes from one type of source only | Selection should be relevant and test the argument from different viewpoints.
+Q: What makes evidence relevant? | It bears directly on the question, not just the topic.
+Q: What makes evidence precise? | Specific names, dates, figures and examples, not vague generalisations.
+Q: What does sufficient evidence mean? | Enough to carry the claim, without padding.
+Q: Who chaired the 1832 committee on child labour, and what did he campaign for? | Michael Sadler, who campaigned for a ten-hour working day.
+Q: What did the Sadler Committee's witnesses describe? | Long hours, beatings and injuries among children in textile mills.
+Q: What did the Factory Act of 1833 do? | It restricted hours for children in textile mills and appointed inspectors.
+Q: What sources can test how representative the Sadler evidence was? | Other sources such as factory inspectors' reports.
+Q: What is selective evidence? | Evidence chosen to support a conclusion while ignoring evidence against it.
+Q: How should the claim "children were treated brutally in all factories" be improved? | Narrow it: many child workers in textile mills faced long hours and harsh discipline, while conditions varied between mills.
+Q: How should the strength of a claim relate to its evidence? | The claim should be no stronger than the evidence can carry.
 
 ## Evaluating historical claims
 LV: GCSE and A level · Evaluation
@@ -601,6 +741,16 @@ M2#history-u01-15-q2@2: Why do historians doubt that Vikings wore horned helmets
 TF1#history-u01-15-q3@1: A myth can be useful evidence of the attitudes of the people who spread it. | true | The cake story is evidence of revolutionary hostility to the queen.
 M3#history-u01-15-q4@3: A claim appears in fifty websites and three popular books. What should a historian check first? | Whether any independent contemporary evidence supports it | How many people have shared it | Whether the books are best-sellers | Whether the claim sounds plausible | Popularity is not evidence; the origin and contemporary support are what count.
 SA3#history-u01-15-q5@2,3: Using one example, explain how historians test a popular claim about the past. | Historians ask for contemporary evidence, trace the claim's origin and purpose, check for independent corroboration and test its fit with other knowledge. For "let them eat cake", there is no contemporary record of Marie Antoinette saying it; Rousseau attributed the phrase to an unnamed princess in the 1760s, when she was a child in Austria; and the story spread through revolutionary hostility. The claim is unsupported, but it is evidence of how her enemies portrayed her. | Lists the questions historians ask ; Applies them to a specific claim ; Uses accurate detail ; Explains the difference between repetition and corroboration ; Notes what the myth reveals
+Q: Name three questions to ask of any historical claim. | What is the evidence, who first made it and why, is it corroborated, does it fit what we know, and what would count against it?
+Q: Where does the phrase "let them eat cake" appear, and to whom was it attributed? | In Rousseau's Confessions, written in the 1760s, attributed to "a great princess".
+Q: Why could Marie Antoinette not be Rousseau's "great princess"? | She was a child in Austria when it was written and did not arrive in France until 1770.
+Q: How did the "let them eat cake" attribution spread? | Through revolutionary hostility to Marie Antoinette.
+Q: Where does the image of horned Viking helmets come from? | Nineteenth-century art and costumes in an 1876 production of Wagner's operas.
+Q: What evidence is there for horned Viking helmets? | None; no helmet with horns has been found from the Viking Age.
+Q: Why could Nero not have fiddled while Rome burned in 64 CE? | The fiddle did not exist.
+Q: What did Tacitus report about Nero and the fire of Rome? | Only a rumour that Nero sang of the fall of Troy, and that Nero was away from Rome when the fire began.
+Q: What is a contemporary source? | A source produced at the time of the events it describes.
+Q: What is a historical myth? | A widely believed claim about the past that the evidence does not support.
 
 ## Comparing interpretations
 LV: GCSE and A level · Evaluation
@@ -637,4 +787,14 @@ M2#history-u01-16-q2@2: Which is the best explanation of why two interpretations
 TF1#history-u01-16-q3@1: Comparing interpretations includes judging which is more convincing. | true | The final step is a judgement tested against evidence.
 M3#history-u01-16-q4@3: Which judgement about Elton's thesis is best supported? | The 1530s saw important changes, but "revolution" overstates their speed and planning | Nothing changed in Tudor government during the reign of Henry VIII | Elton's thesis has been accepted by historians without criticism | Cromwell ended the monarchy's control of government in the 1530s | The best judgement credits Elton's evidence while weighing his critics.
 SA3#history-u01-16-q5@2,3: Compare two interpretations of an issue you have studied, explaining why they differ and which is more convincing. | A strong answer summarises each interpretation (for example Elton's planned Tudor revolution in government against his critics' gradual and partial change), compares their emphases, explains the differences through evidence, questions, approach and context, and judges which better fits the evidence, giving reasons. | Summarises both interpretations accurately ; Identifies differences in emphasis ; Explains why they differ ; Uses evidence to judge ; Reaches a reasoned conclusion
+Q: What does comparing interpretations involve beyond content? | Explaining why they differ and judging which is more convincing.
+Q: What factors can explain differences between interpretations? | Evidence, question, approach, context and when each was written.
+Q: What did Elton argue replaced rule through the king's household? | National bureaucratic departments under a Privy Council.
+Q: In which book did Elton set out his thesis? | The Tudor Revolution in Government (1953).
+Q: In which collection did critics question Elton's thesis? | Revolution Reassessed (1986).
+Q: What did Elton's critics argue? | The changes were less planned, sudden and complete than he claimed, and the household and personal monarchy remained powerful.
+Q: Why did Elton and his critics differ? | Elton studied the new departments' records; critics looked more at household continuity and later practice.
+Q: What is revisionism? | Reinterpreting an established view in the light of new evidence or approaches.
+Q: What is emphasis in an interpretation? | What it treats as most important.
+Q: What is a balanced judgement on Elton's thesis? | The 1530s saw important changes, especially the Privy Council, but "revolution" overstates their speed and planning.
 `;

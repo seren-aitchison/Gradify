@@ -41,6 +41,16 @@ M2#ecology-u04-01-q2@2: What ultimately happens to the energy that enters an eco
 M3#ecology-u04-01-q3@3: An ecologist studying a lake includes its whole catchment. Why might this be sensible? | Water and nutrients from the catchment strongly affect the lake | Lakes are closed systems with no exchanges | Catchments contain no living organisms | It removes all exchange with the surroundings | Boundaries are often drawn where flows are weakest, such as a watershed.
 TF1#ecology-u04-01-q4@1: All ecosystems exchange energy and matter with their surroundings. | true | Ecosystems are open systems; even large ones receive sunlight and lose heat.
 SA2#ecology-u04-01-q5@2,3: Explain the difference between energy flow and nutrient cycling in an ecosystem. | Energy enters as sunlight, is captured by producers and passed along food chains, with some lost as heat at each transfer, so it flows one way and must be continually replaced. Nutrients such as carbon and nitrogen are taken up by organisms, passed along food chains, and returned to the environment by decomposition, so they are recycled. | One-way energy flow ; Heat loss ; Nutrient cycling ; Role of decomposers
+Q: What is an ecosystem? | A community of organisms together with its physical environment, interacting as a system linked by energy flow and matter cycling.
+Q: What did Lindeman's 1942 study of Cedar Bog Lake contribute to ecology? | It treated the ecosystem as a set of trophic levels through which energy passes.
+Q: What are the biotic components of an ecosystem? | Producers, consumers and decomposers.
+Q: Name four abiotic factors in an ecosystem. | Sunlight, temperature, water, soil, nutrients and atmosphere.
+Q: How does energy usually enter and leave an ecosystem? | It enters as sunlight, passes through organisms and leaves as heat.
+Q: In a pond ecosystem, which organisms are the decomposers? | Bacteria and fungi in the sediment.
+Q: How do ecologists choose ecosystem boundaries? | For the question being asked, often where flows of energy and materials are weakest, such as a watershed.
+Q: Why are all ecosystems described as open? | They all exchange energy and matter with their surroundings.
+Q: What is the mistake in saying energy is recycled in ecosystems? | Energy flows one way and is lost as heat; only matter, such as carbon and nitrogen, cycles.
+Q: Give the range of sizes an ecosystem can have. | From a rotting log to a whole ocean.
 
 ## Producers, consumers and decomposers
 LV: Introductory · Foundation
@@ -84,6 +94,16 @@ M2#ecology-u04-02-q2@2: What is the main difference between detritivores and dec
 M3#ecology-u04-02-q3@3: Communities around deep-sea vents thrive with no sunlight. What supports them? | Chemoautotrophic bacteria using energy from chemical compounds | Photosynthesis by algae in total darkness | Detritus sinking from surface waters alone | Heat from the vents converted directly into food | Bacteria oxidising compounds such as hydrogen sulfide are the producers.
 MATCH1#ecology-u04-02-q4@1: Match each organism to its role. | Grass = Producer ; Rabbit = Primary consumer ; Fox = Secondary consumer ; Fungus = Decomposer | Each organism obtains energy and nutrients in a different way.
 SA2#ecology-u04-02-q5@2,3: Explain why decomposers are essential to ecosystems. | Decomposers, mainly bacteria and fungi, break down dead organic matter and wastes, releasing inorganic nutrients such as nitrates and phosphates back into the soil or water. Producers take up these nutrients to grow. Without decomposition, nutrients would remain locked in dead material, and producers, and so all other organisms, would be starved of them. | Breakdown of dead matter ; Release of nutrients ; Uptake by producers ; Consequence without them
+Q: What is an autotroph? | An organism that makes organic compounds from inorganic sources.
+Q: What is a heterotroph? | An organism that obtains organic compounds by consuming other organisms.
+Q: What is a photoautotroph? Give examples. | A producer that uses light to make organic compounds, such as plants, algae and cyanobacteria.
+Q: What do chemoautotrophic bacteria at hydrothermal vents oxidise for energy? | Hydrogen sulfide.
+Q: What is an omnivore? | An animal that feeds at more than one trophic level.
+Q: How do decomposers obtain nutrients from dead matter? | They secrete enzymes, digest the material externally and absorb the products, releasing inorganic nutrients.
+Q: What would happen to an ecosystem without decomposers? | Nutrients would stay locked in dead material and the ecosystem would run out of them.
+Q: In an oak woodland, which organism is a tertiary consumer? | Sparrowhawks, which eat blue tits.
+Q: What do detritivores do to dead organic matter? | They eat it and break it into smaller pieces.
+Q: Why is it wrong to call every organism that eats dead matter a decomposer? | Detritivores ingest detritus; decomposers digest it externally and absorb the products.
 
 ## Food chains and food webs
 LV: Introductory · Application
@@ -122,6 +142,16 @@ M2#ecology-u04-03-q2@2: What happened when Paine removed the starfish Pisaster f
 M3#ecology-u04-03-q3@3: Sea otters are removed from a coastal area. What chain of effects is most likely? | Sea urchins increase and kelp forests decline | Kelp increases as urchins are also lost | Urchins decline and fish disappear | No change, as otters are top predators only | Fewer otters release urchins from predation, and urchins overgraze kelp.
 SEQ1#ecology-u04-03-q4@2: Order the trophic cascade after sea otters return to a coast. | Otters eat more sea urchins ; Urchin numbers fall ; Grazing on kelp declines ; Kelp forests recover | The predator's effect passes down through each lower level.
 SA2#ecology-u04-03-q5@2,3: Explain why food webs are more useful than food chains for predicting ecological change. | Food chains show only one feeding pathway, but most species eat and are eaten by several others. Food webs show these multiple links, so they reveal indirect effects, such as competitors or prey increasing when a predator is removed, and possible alternative food sources. Predictions based on a single chain can miss these effects. | Single pathway ; Multiple links ; Indirect effects ; Better predictions
+Q: What is a food chain? | A single sequence of feeding links, showing who eats whom.
+Q: What is a food web? | A network of interconnected food chains.
+Q: Who popularised the food chain idea, and in which book? | Charles Elton, in Animal Ecology (1927).
+Q: What do food webs show that single chains do not? | That most species eat, and are eaten by, several others.
+Q: In the rocky shore web, what might happen if dog whelks declined? | Mussels and barnacles might increase, and limpets graze more freely.
+Q: What is a trophic cascade? | Indirect effects of a predator spreading down through lower trophic levels.
+Q: What happened to kelp forests where sea otters were removed? | Urchins multiplied and kelp forests declined.
+Q: Who documented the sea otter, urchin and kelp cascade? | Estes and Palmisano, in 1974.
+Q: What is the common mistake when drawing food chain arrows? | Drawing them from predator to prey; they should point from the organism eaten to the one eating it.
+Q: Why can removing a keystone species reshape a whole community? | Its effects spread through the food web, triggering trophic cascades.
 
 ## Trophic levels
 LV: Introductory · Application
@@ -164,6 +194,16 @@ M2#ecology-u04-04-q2@2: Producers capture 50,000 kJ. At 10% efficiency, how much
 M3#ecology-u04-04-q3@3: Mercury concentration is far higher in tuna than in the small fish they eat. Why? | Mercury is persistent and accumulates as tuna eat many contaminated prey | Tuna absorb mercury only from seawater directly | Small fish excrete mercury faster than tuna eat it | Mercury is produced inside tuna by digestion | Persistent pollutants concentrate up food chains through biomagnification.
 NUM2#ecology-u04-04-q4@2: Producers capture 10,000 kJ m^{-2} yr^{-1}. Assuming 10% transfer at each step, how much energy reaches tertiary consumers, in kJ m^{-2} yr^{-1}? | 10 | 0 | kJ m⁻² yr⁻¹ | 10,000 → 1,000 → 100 → 10 kJ.
 SA2#ecology-u04-04-q5@2,3: Explain why food chains rarely have more than five trophic levels. | At each transfer, most energy is lost, mainly as heat from respiration, and as undigested material and parts not eaten, so only about 10% passes on. After four or five steps, the energy remaining is too small to support a population of another predator, especially one large enough to hunt the level below. | Energy loss per step ; Causes of loss ; Small remaining energy ; Population support
+Q: What is a trophic level? | An organism's position in a food chain.
+Q: What trophic level is a secondary consumer? | Level 3.
+Q: Why do ecologists sometimes give fractional trophic levels? | Because omnivores feed at several levels.
+Q: What trophic level would an animal eating half plants and half herbivores have? | About 2.5.
+Q: How much energy is lost at each trophic transfer, and mainly how? | About 90%, mainly as heat from respiration.
+Q: Why are large top predators rare and in need of large territories? | Very little energy reaches the top levels of a food chain.
+Q: If producers capture 10,000 kJ m^{-2} yr^{-1} at 10% transfer, how much reaches a fifth level? | Only 1 kJ m^{-2} yr^{-1}.
+Q: Why do persistent chemicals such as DDT and mercury biomagnify? | They are not easily broken down or excreted, and predators eat many contaminated prey.
+Q: How did DDT harm peregrine falcons? | It thinned their eggshells, contributing to population crashes in the mid-twentieth century.
+Q: Why doesn't every organism fit neatly into one trophic level? | Omnivores and many predators feed at more than one level.
 
 ## Photosynthesis and energy capture
 LV: Introductory · Application
@@ -206,6 +246,16 @@ M2#ecology-u04-05-q2@2: Why are C4 plants more efficient than C3 plants in hot, 
 M3#ecology-u04-05-q3@3: A crop captures 1% of incoming solar energy. Which factor most limits its efficiency? | Much sunlight is outside usable wavelengths, reflected or lost as heat | Plants deliberately block most sunlight to stay cool | Photosynthesis needs no light at all | Animals eat most sunlight before it reaches leaves | Physical and biochemical losses mean only a small fraction is converted.
 NUM2#ecology-u04-05-q4@2: A field receives 4,000,000 kJ m^{-2} yr^{-1} of solar radiation and plants capture 1%. How much energy is captured, in kJ m^{-2} yr^{-1}? | 40000 | 0 | kJ m⁻² yr⁻¹ | 4,000,000 × 0.01 = 40,000.
 SA2#ecology-u04-05-q5@2,3: Compare C3 and CAM photosynthesis. | C3 plants fix CO_{2} directly using Rubisco in the Calvin cycle during the day, but lose energy through photorespiration in hot, dry conditions. CAM plants, such as cacti, open their stomata at night to take in CO_{2}, store it as organic acids, and close stomata during the day, reducing water loss. CAM suits deserts but generally gives slower growth. | C3 mechanism ; Photorespiration ; CAM night uptake ; Water saving and trade-off
+Q: What is the overall equation for photosynthesis? | 6CO_{2} + 6H_{2}O → C_{6}H_{12}O_{6} + 6O_{2}, powered by light absorbed by chlorophyll.
+Q: Where do the light-dependent reactions take place, and what do they make? | In the thylakoids; they split water, release oxygen and make ATP and NADPH.
+Q: Where does the Calvin cycle take place? | In the stroma.
+Q: What wavelengths make up photosynthetically active radiation? | 400–700 nm.
+Q: What are the theoretical maximum photosynthetic efficiencies of C3 and C4 plants? | About 4.6% for C3 and 6% for C4 (Zhu, Long and Ort, 2008).
+Q: What efficiency do crops achieve in practice over a growing season? | Around 1–2%.
+Q: What is photorespiration? | A wasteful process in which Rubisco fixes oxygen instead of carbon dioxide.
+Q: How do C4 plants such as maize reduce photorespiration? | They concentrate CO_{2} around Rubisco.
+Q: How does CAM photosynthesis save water? | Plants such as cacti and pineapples open their stomata at night.
+Q: Why do plants use only a small share of the sunlight that falls on them? | Most is reflected, transmitted, lost as heat or outside usable wavelengths.
 
 ## Gross and net primary productivity
 LV: Introductory · Application
@@ -249,6 +299,16 @@ M2#ecology-u04-06-q2@2: A forest has GPP of 30,000 kJ m^{-2} yr^{-1} and produce
 M3#ecology-u04-06-q3@3: Oceans produce about half of global NPP but hold a tiny share of producer biomass. How is this possible? | Phytoplankton grow and are consumed very quickly, so turnover is high | Ocean plants are much larger than land plants | Oceans receive far more sunlight per square metre than land | Marine producers do not respire at all | High productivity with low standing biomass reflects rapid turnover.
 NUM2#ecology-u04-06-q4@2: A grassland has GPP of 20,000 kJ m^{-2} yr^{-1} and plant respiration of 12,000 kJ m^{-2} yr^{-1}. What is its NPP, in kJ m^{-2} yr^{-1}? | 8000 | 0 | kJ m⁻² yr⁻¹ | NPP = 20,000 − 12,000 = 8,000.
 SA2#ecology-u04-06-q5@2,3: Explain why NPP rather than GPP determines the energy available to consumers. | GPP is the total energy captured by photosynthesis, but producers use a large part of it in their own respiration to stay alive and grow. Only the remaining energy, the NPP, is stored as new biomass that herbivores, decomposers and other consumers can eat. So NPP sets the energy budget for the rest of the ecosystem. | GPP definition ; Producer respiration ; NPP as new biomass ; Budget for consumers
+Q: What is gross primary productivity? | The total rate of energy capture by producers through photosynthesis.
+Q: What is the equation linking NPP, GPP and respiration? | NPP = GPP − R, where R is respiration by the producers themselves.
+Q: In what units is primary productivity usually given? | kJ m^{-2} yr^{-1} or g of carbon m^{-2} yr^{-1}.
+Q: What is standing crop? | The biomass present in an area at a given time.
+Q: In the grassland example, what share of captured energy is available to the rest of the ecosystem? | 40%, because NPP is 8,000 of 20,000 kJ m^{-2} yr^{-1} GPP.
+Q: What is the harvest method of measuring productivity? | Measuring the increase in biomass over time.
+Q: Name two gas exchange methods for measuring productivity. | Light and dark bottle experiments in water and eddy covariance towers on land.
+Q: How is global NPP estimated from space? | By satellite remote sensing of vegetation greenness.
+Q: What did Field and colleagues estimate global NPP to be in 1998? | About 105 billion tonnes of carbon per year, split roughly equally between land and oceans.
+Q: Why might a young grassland match a forest's productivity despite much less biomass? | Productivity is a rate of growth, while biomass is a stock; fast growth can give high productivity from low biomass.
 
 ## Secondary productivity
 LV: Introductory · Application
@@ -289,6 +349,16 @@ M2#ecology-u04-07-q2@2: A mouse assimilates 1,000 kJ and respires 980 kJ. What i
 M3#ecology-u04-07-q3@3: Why is fish farming more energy-efficient than cattle farming per unit of feed? | Fish are ectotherms, so less energy is spent on heat production | Fish eat only sunlight, needing no feed at all | Cattle are ectotherms with low respiration | Fish do not egest any of their food | Ectotherms convert more assimilated energy into growth.
 NUM2#ecology-u04-07-q4@2: A caterpillar ingests 200 J and egests 100 J, then respires 67 J. What is its production, in J? | 33 | 0 | J | Assimilation 200 − 100 = 100 J; production 100 − 67 = 33 J.
 SA2#ecology-u04-07-q5@2,3: Explain why herbivores usually have lower assimilation efficiencies than carnivores. | Plant material contains large amounts of cellulose and lignin, which are difficult to digest, so much energy passes out in faeces. Animal tissue is mainly protein and fat, which are easily digested and absorbed. Many herbivores rely on gut microbes to break down cellulose, but they still lose more energy in faeces than carnivores do. | Cellulose and lignin ; Digestibility of animal tissue ; Microbial help ; Energy in faeces
+Q: What is secondary productivity? | The rate of biomass production by consumers, stored as growth and reproduction.
+Q: How is consumer production calculated from assimilation? | Production P = assimilation A − respiration R.
+Q: What is egestion? | Energy lost in faeces.
+Q: What is assimilation efficiency? | Assimilation divided by ingestion (A/I).
+Q: What is production efficiency? | The proportion of assimilated energy converted to new biomass (P/A).
+Q: In the caterpillar example, what is the assimilation efficiency? | 50%, because 100 J is assimilated from 200 J ingested.
+Q: Why do carnivores have higher assimilation efficiency than herbivores? | Meat is easily digested, while plant material contains cellulose and lignin.
+Q: What are typical production efficiencies for insects and for birds and mammals? | Often 10–40% in insects but only 1–3% in birds and mammals.
+Q: Why do insects and fish convert food to biomass more efficiently than mammals? | As ectotherms they don't spend most assimilated energy keeping warm.
+Q: What happens to most of the energy in food an animal eats? | Most is egested or respired; only a fraction becomes new tissue.
 
 ## Efficiency of energy transfer
 LV: Introductory · Application
@@ -330,6 +400,16 @@ M2#ecology-u04-08-q2@2: Herbivore production is 800 kJ and carnivore production 
 M3#ecology-u04-08-q3@3: Why can more people be fed per hectare on crops than on beef? | Energy is lost when crops are fed to cattle, so eating crops directly uses less land | Cattle produce energy that crops cannot | Crops need no land to grow | Beef contains more energy than the crops it ate | Each step up the food chain loses most energy.
 NUM2#ecology-u04-08-q4@2: Producers' NPP is 12,000 kJ m^{-2} yr^{-1} and herbivore production is 1,500 kJ m^{-2} yr^{-1}. What is the transfer efficiency, in %? | 12.5 | 0.5% | % | 1,500 ÷ 12,000 × 100 = 12.5%.
 SA2#ecology-u04-08-q5@3: Evaluate the "10% rule" of energy transfer. | The rule is a useful approximation showing that most energy is lost between trophic levels, explaining short food chains and the land costs of meat. But actual efficiencies vary from under 5% to over 20%, depending on whether consumers are endotherms or ectotherms, how digestible their food is, and the ecosystem. It should be used as a guide, not a fixed law. | Usefulness ; Applications ; Variation ; Guide not law
+Q: What is transfer efficiency? | The percentage of energy at one trophic level passed to the next.
+Q: What is the equation for transfer efficiency? | Production at level n + 1 ÷ production at level n × 100%.
+Q: Whose work suggested that roughly 10% of energy passes between trophic levels? | Raymond Lindeman's.
+Q: How widely do real transfer efficiencies range? | From below 5% to over 20%, depending on the organisms and ecosystem.
+Q: Give examples of plant material that is often not eaten. | Roots, bark and wood.
+Q: What happens to energy that is not eaten or is egested? | It passes to decomposers.
+Q: In the example, what is the transfer efficiency from herbivores producing 1,500 to carnivores producing 150? | 10%.
+Q: Why does eating lower in the food chain feed more people per hectare? | Energy is lost at each trophic step, so crops supply more food energy than animals fed on them.
+Q: What did Poore and Nemecek find about meat, aquaculture, eggs and dairy? | They use about 83% of farmland but provide 37% of protein and 18% of calories.
+Q: Why shouldn't the 10% rule be treated as a law? | It is only a rough average; actual transfer efficiencies vary considerably.
 
 ## Ecological pyramids
 LV: Introductory · Application
@@ -370,6 +450,16 @@ M2#ecology-u04-09-q2@2: In an open ocean, zooplankton biomass exceeds phytoplank
 M3#ecology-u04-09-q3@3: Why can no trophic level have more energy flowing through it than the level below? | It receives energy only from the level below, minus losses | Energy is created at each trophic level | Consumers photosynthesise extra energy | Decomposers return energy to the top level | Energy flow can only decrease up the levels.
 MATCH1#ecology-u04-09-q4@1: Match each pyramid to what it measures. | Numbers = Individuals at each level ; Biomass = Mass of organisms at one time ; Energy = Rate of energy flow over time ; Inverted numbers = One oak tree with many caterpillars | Stock-based pyramids can be inverted; flow-based pyramids cannot.
 SA2#ecology-u04-09-q5@2,3: Explain why a pyramid of biomass can be inverted but a pyramid of energy cannot. | A pyramid of biomass shows the standing crop at one moment. If producers, such as phytoplankton, reproduce and are eaten very quickly, a small biomass can support a larger consumer biomass. A pyramid of energy shows flow over time; each level gets energy only from the level below minus losses, so it must always be smaller. | Biomass as stock ; Fast turnover ; Energy as flow ; Losses at each level
+Q: What is a pyramid of numbers? | A diagram showing the number of individuals at each trophic level.
+Q: Who first described the pyramid of numbers? | Charles Elton, in 1927.
+Q: What units does a pyramid of biomass use? | Mass at one time, in g m^{-2}.
+Q: What units does a pyramid of energy use? | Rate of energy flow, in kJ m^{-2} yr^{-1}.
+Q: Give an example of an inverted pyramid of numbers. | A single oak tree supporting thousands of caterpillars.
+Q: What is turnover? | The rate at which biomass is replaced.
+Q: How can a small phytoplankton biomass support a larger zooplankton biomass? | Phytoplankton reproduce very fast, so a small standing crop with high turnover supports a large flow.
+Q: Which classic study illustrates a pyramid of energy? | H. T. Odum's study of Silver Springs, Florida (1957).
+Q: Why doesn't an inverted pyramid of biomass break the laws of energy? | Biomass is a stock at one moment, while energy flow is measured over time.
+Q: Why is each bar in a pyramid of energy narrower than the one below? | Energy is lost at each step between trophic levels.
 
 ## Decomposition and detritus food webs
 LV: Introductory · Application
@@ -414,6 +504,16 @@ M2#ecology-u04-10-q2@2: Which leaf litter will usually decompose fastest? | Litt
 M3#ecology-u04-10-q3@3: In a litterbag study, bags with fine mesh that exclude earthworms lose mass more slowly. What does this show? | Fragmentation by detritivores speeds decomposition | Earthworms slow down decomposition | Mesh size has no effect on decomposition | Fungi need earthworms to survive | Excluding detritivores reduces fragmentation and slows breakdown.
 SEQ1#ecology-u04-10-q4@1: Order the stages of decomposition. | Leaching of soluble compounds ; Fragmentation by detritivores ; Microbial chemical breakdown ; Release of CO_{2} and nutrients | Each stage prepares material for the next.
 SA2#ecology-u04-10-q5@2,3: Explain why decomposition is slow in tundra and peat bogs. | In tundra, low temperatures slow microbial enzyme activity. In peat bogs, waterlogging creates low-oxygen conditions that slow aerobic decomposers, and acidic conditions reduce microbial activity further. As a result, dead organic matter accumulates faster than it breaks down, storing large amounts of carbon. | Low temperature ; Waterlogging and oxygen ; Acidity ; Carbon accumulation
+Q: What is the grazing food web? | The pathway where energy passes from living plants to herbivores to carnivores.
+Q: What is the detritus food web? | The pathway where energy passes from dead organic matter to detritivores, decomposers and their predators.
+Q: In many forests, roughly what share of NPP enters the detritus food web? | Often around 90%.
+Q: What happens during leaching in decomposition? | Soluble compounds wash out of the dead material.
+Q: Why does fragmentation speed decomposition? | Detritivores shred material, increasing its surface area.
+Q: What is released during chemical breakdown of detritus? | CO_{2} and mineral nutrients.
+Q: How does temperature affect decomposition? | Warmer conditions speed microbial activity, often doubling rates for a 10 °C rise.
+Q: What is a litterbag? | A mesh bag of leaves buried and recovered at intervals to measure decomposition rates.
+Q: Why did ash leaves decompose faster than oak leaves in the litterbag example? | Ash leaves have more nitrogen and less lignin.
+Q: What is lignin? | A tough, slow-to-decompose component of plant cell walls.
 
 ## Soil ecosystems
 LV: Introductory · Application
@@ -459,6 +559,16 @@ M2#ecology-u04-11-q2@2: What does a plant give mycorrhizal fungi in exchange for
 M3#ecology-u04-11-q3@3: A grassland is ploughed for crops. What is the likely effect on soil carbon? | It falls, as disturbance speeds decomposition and releases CO_{2} | It rises sharply, as ploughing buries all carbon | It stays the same, as soils cannot lose carbon | It is converted into nitrogen | Disturbance exposes organic matter to oxygen and microbes.
 TF1#ecology-u04-11-q4@1: Soils store more organic carbon than the atmosphere and vegetation combined. | true | Around 1,500 billion tonnes of carbon are held in the top metre of soil.
 SA2#ecology-u04-11-q5@2,3: Explain the roles of earthworms in soil ecosystems. | Earthworms eat dead plant material and soil, fragmenting litter and mixing organic matter into deeper layers. Their burrows aerate the soil and improve drainage. Their casts are rich in nutrients and help form stable soil structure. Darwin showed that over time they bury surface objects and turn over large amounts of soil. | Fragmentation ; Mixing ; Aeration and drainage ; Nutrient-rich casts
+Q: What is the O horizon of a soil? | The layer of organic litter on the surface.
+Q: What is the B horizon? | The subsoil, where minerals leached from above accumulate.
+Q: What is the C horizon? | Weathered parent rock.
+Q: What four things make up soil? | Mineral particles (sand, silt and clay), organic matter, water and air.
+Q: What role do protozoa and nematodes play in the soil food web? | They graze on bacteria and fungi, releasing nutrients.
+Q: What do mites and springtails do in soil? | They shred litter and graze fungi.
+Q: What did Darwin's 1881 book on earthworms show? | How earthworms bury surface material over time.
+Q: How much organic carbon do soils hold in the top metre? | About 1,500 billion tonnes.
+Q: How do ploughing and drainage affect soil carbon? | They speed decomposition and release CO_{2}.
+Q: What is the 4 per 1000 initiative concerned with? | Protecting and increasing soil carbon as part of climate policy.
 
 ## Productivity across biomes
 LV: Introductory · Application
@@ -506,6 +616,16 @@ M2#ecology-u04-12-q2@2: What mainly limits productivity in tundra? | Low tempera
 M3#ecology-u04-12-q3@3: A biome has lower NPP per square metre than another but contributes more to global NPP. How? | It covers a much larger area | It has higher productivity per square metre | It receives no sunlight at all | It has no consumers | Total NPP equals productivity per area multiplied by area.
 NUM2#ecology-u04-12-q4@3: Rainforest NPP is about 2,200 g m^{-2} yr^{-1} and desert scrub about 90 g m^{-2} yr^{-1}. For equal areas, how many times greater is rainforest NPP, to the nearest whole number? | 24 | 1 | times | 2,200 ÷ 90 = 24.4, so about 24 times.
 SA2#ecology-u04-12-q5@2,3: Explain why tropical rainforests are more productive than temperate grasslands. | Tropical rainforests have high temperatures and abundant rainfall all year, so photosynthesis continues throughout a long growing season with no water stress. Temperate grasslands have colder winters, which shorten the growing season, and drier conditions that limit growth. Rainforests also have a multilayered canopy that captures more light. | Temperature ; Water ; Growing season ; Light capture
+Q: What is a biome? | A large region with a characteristic climate and vegetation.
+Q: What is the typical NPP of tropical rainforest according to Whittaker and Likens? | About 2,200 g of dry matter m^{-2} yr^{-1}.
+Q: What is the typical NPP of tundra? | About 140 g m^{-2} yr^{-1}.
+Q: Which non-forest ecosystem has NPP close to tropical rainforest? | Swamps and marshes, at about 2,000 g m^{-2} yr^{-1}.
+Q: How does temperature limit productivity? | It affects enzyme rates and the length of the growing season.
+Q: What mainly limits productivity in deserts? | Drought, because water is needed for photosynthesis.
+Q: Which nutrients often limit growth even where climate is favourable? | Nitrogen and phosphorus.
+Q: What is evapotranspiration? | Water lost to the atmosphere by evaporation and transpiration.
+Q: What two things determine a biome's total contribution to global NPP? | Productivity per area and the area it covers.
+Q: Why doesn't high biomass always mean high productivity? | Old forests hold large biomass but may grow slowly, while wetlands can be very productive with less standing biomass.
 
 ## Ocean productivity
 LV: Introductory · Application
@@ -547,6 +667,16 @@ M2#ecology-u04-13-q2@2: Why do upwelling zones support large fisheries? | Rising
 M3#ecology-u04-13-q3@3: Adding iron to an HNLC region triggers a phytoplankton bloom. What does this show? | Iron was the limiting factor for phytoplankton growth | Nitrate was the limiting factor | Light does not affect phytoplankton | Phytoplankton are poisoned by iron | A bloom after adding iron shows iron limited growth.
 TF1#ecology-u04-13-q4@2: Upwelling regions cover a very small fraction of the ocean but supply a large share of the fish catch. | true | Ryther estimated about 0.1% of ocean area supplied about half the catch.
 SA2#ecology-u04-13-q5@2,3: Explain why upwelling weakens during El Niño events and what the effects are. | During El Niño, the trade winds weaken and warm surface water spreads east across the Pacific, so less cold, nutrient-rich water rises off South America. Nutrient supply falls, phytoplankton productivity declines and food chains are disrupted. Fish such as anchovy decline, affecting seabirds, marine mammals and fisheries. | Weakened winds ; Reduced nutrients ; Lower productivity ; Effects on fish and fisheries
+Q: What is the photic zone? | The upper layer of water with enough light for photosynthesis, to about 200 m at most.
+Q: What is a thermocline? | A layer of rapid temperature change separating warm surface water from cold deep water.
+Q: Why is the surface of much of the open ocean starved of nutrients? | A thermocline separates it from cold, nutrient-rich deep water.
+Q: What causes upwelling off coasts such as Peru? | Winds push surface water away from the coast, drawing up nutrient-rich deep water.
+Q: Why are coastal and shelf seas productive? | They receive nutrients from rivers and mixing.
+Q: Why do temperate seas have spring blooms? | Winter mixing brings nutrients to the surface.
+Q: What did Ryther estimate about upwelling regions in 1969? | They cover about 0.1% of the ocean but supplied about half the world's fish catch.
+Q: What happens to anchovy fisheries off Peru in El Niño years? | Upwelling weakens and the fisheries collapse.
+Q: What is a high-nutrient, low-chlorophyll region? | Ocean where nitrate is plentiful but phytoplankton are scarce, as in parts of the Southern Ocean and Pacific.
+Q: Who proposed that iron limits HNLC regions, and which experiment supported it? | John Martin; iron fertilisation experiments beginning with IronEx I in 1993 triggered blooms.
 
 ## Ecosystem stability and resilience
 LV: Introductory · Evaluation
@@ -586,6 +716,16 @@ M2#ecology-u04-14-q2@2: What did Robert May's models of the 1970s suggest? | Ran
 M3#ecology-u04-14-q3@3: A lake stays clear as nutrients rise, then suddenly turns green and does not recover when nutrients fall a little. What explains this? | A regime shift to an alternative stable state | Normal seasonal variation in algae | Measurement error in the nutrient readings | A permanent increase in sunlight | Alternative stable states and tipping points mean change is sudden and hard to reverse.
 SEQ1#ecology-u04-14-q4@2: Order the stages of a coral reef regime shift. | Grazers are overfished ; Algae begin to grow more ; A bleaching event kills corals ; Algae take over and block coral recovery | Several stresses combine to tip the reef into a new state.
 SA2#ecology-u04-14-q5@3: Evaluate the claim that more diverse ecosystems are more stable. | Field experiments, such as Tilman and Downing's grassland study, show that more diverse plant communities maintain productivity better during drought, because species respond differently and compensate for each other. But May's models showed complex communities can be less stable, and individual populations may fluctuate more in diverse systems. Diversity tends to stabilise ecosystem functions rather than every population. | Supporting evidence ; Mechanism ; Theoretical challenge ; Function versus population
+Q: What is resistance in an ecosystem? | The ability to stay unchanged during a disturbance.
+Q: How did Holling (1973) extend the meaning of resilience? | To include how much disturbance a system can absorb before shifting to a different state.
+Q: What did early ecologists assume about diversity and stability? | That more diverse ecosystems were more stable.
+Q: Where did Tilman and Downing carry out their diversity and drought study? | In grassland plots at Cedar Creek, Minnesota.
+Q: What is a regime shift? | A large, persistent change in an ecosystem's structure and function.
+Q: What are the two alternative stable states of a shallow lake? | Clear and dominated by water plants, or turbid and dominated by algae.
+Q: What is a tipping point in a shallow lake? | The point where gradual nutrient enrichment suddenly flips the lake to a turbid state.
+Q: What keeps algae down on a healthy coral reef? | Grazing fish and urchins.
+Q: What is needed to reverse a coral reef regime shift? | Reductions in all the stresses, such as overfishing, pollution and bleaching, not just one.
+Q: Does diversity stabilise everything in an ecosystem? | It often stabilises ecosystem functions, though not all individual populations.
 
 ## Ecosystem services
 LV: Introductory · Application
@@ -629,6 +769,16 @@ M2#ecology-u04-15-q2@2: Which category includes nutrient cycling and soil format
 M3#ecology-u04-15-q3@3: A council values a wetland only by its flood-protection cost. What is the main weakness? | It ignores other services such as wildlife, recreation and carbon storage | It overstates the value of flood protection | It includes too many cultural services | Wetlands provide no flood protection | Replacement cost of one service gives only a partial, minimum value.
 MATCH1#ecology-u04-15-q4@1: Match each service to its category. | Fresh water = Provisioning ; Pollination = Regulating ; Recreation = Cultural ; Nutrient cycling = Supporting | These are the Millennium Ecosystem Assessment's four categories.
 SA2#ecology-u04-15-q5@3: Evaluate the case for putting economic values on ecosystem services. | Valuation makes the benefits of nature visible in decisions dominated by costs and profits, helping justify conservation, as when a wetland is valued for flood control. However, estimates are uncertain, often partial, and may miss cultural and intrinsic values. Critics warn that pricing nature can imply it is replaceable or for sale. | Visibility in decisions ; Example ; Uncertainty and omissions ; Ethical concerns
+Q: What are ecosystem services? | Benefits people obtain from ecosystems.
+Q: Which assessment grouped ecosystem services into four categories? | The Millennium Ecosystem Assessment (2005).
+Q: Give three examples of regulating services. | Climate regulation, flood control, water purification, pollination and disease control.
+Q: Give three examples of cultural services. | Recreation, spiritual value, education and inspiration.
+Q: Why are supporting services described as underpinning the others? | Soil formation, nutrient cycling and primary production make all other services possible.
+Q: What did Costanza and colleagues estimate in 1997? | The global value of ecosystem services at about US$33 trillion a year, more than global GDP then.
+Q: What did the IPBES pollinator assessment estimate in 2016? | US$235–577 billion of annual global crop output was at risk from pollinator loss.
+Q: What did the Dasgupta Review argue in 2021? | That economics must account for nature as an asset.
+Q: What is replacement cost valuation? | Valuing a service by the cost of providing it artificially, such as flood defences replacing a wetland.
+Q: What is the main argument for valuing ecosystem services? | It makes nature visible in decisions often dominated by money.
 
 ## Agricultural ecosystems
 LV: Introductory · Evaluation
@@ -673,4 +823,14 @@ M2#ecology-u04-16-q2@2: Why do monocultures often suffer pest outbreaks? | Abund
 M3#ecology-u04-16-q3@3: A farmer plants legumes in rotation with wheat. What is the main ecological benefit? | Legumes fix nitrogen, reducing the need for synthetic fertiliser | Legumes remove all nitrogen from the soil | Legumes increase pest numbers in the next crop | Rotation has no effect on soil fertility | Nitrogen-fixing bacteria in legume roots enrich the soil.
 NUM2#ecology-u04-16-q4@2: A farm produces food containing 30,000 MJ per hectare using 10,000 MJ per hectare of fossil energy. What is the energy return on fossil fuel? | 3 | 0 | ratio | Energy return = food energy ÷ fossil energy = 30,000 ÷ 10,000 = 3.
 SA2#ecology-u04-16-q5@3: Evaluate land sparing and land sharing as strategies for food and biodiversity. | Land sparing farms intensively on less land, freeing other land for nature; studies such as Phalan and colleagues' found many species do better under sparing. Land sharing uses wildlife-friendly methods on all farmland, supporting species that live alongside farming and providing services such as pollination. The best approach may depend on the region and species, and many argue for a mix. | Sparing explained ; Evidence ; Sharing explained ; Context-dependent mix
+Q: What is an agroecosystem? | An ecosystem modified and managed by people for agriculture.
+Q: Why does harvesting export nutrients from farms? | Much of the NPP is removed from the field.
+Q: What energy subsidies do farms rely on? | Fossil fuel energy for machinery, fertilisers and pesticides.
+Q: Why are pest outbreaks more likely in simplified farm food webs? | There are fewer natural enemies to control pests.
+Q: Roughly how much of the world's food production does the Haber–Bosch process support? | Roughly half.
+Q: What is eutrophication? | Nutrient enrichment of water causing excessive algal growth.
+Q: Why is nitrous oxide from fertilised soils a concern? | It is a powerful greenhouse gas.
+Q: How do intensive livestock systems compare on energy return? | They often return far less food energy than the fossil energy they use.
+Q: What is integrated pest management? | Controlling pests by using natural enemies and targeted pesticides.
+Q: What is the mistake in thinking sustainable farming means abandoning modern inputs? | Many approaches combine ecological methods with targeted, efficient use of fertilisers and technology.
 `;

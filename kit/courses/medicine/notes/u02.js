@@ -47,6 +47,16 @@ NUM2#medicine-u02-01-q2@3: A patient has smoked 30 cigarettes a day for 20 years
 M2#medicine-u02-01-q3@2: A patient says she is "allergic to amoxicillin" because it gave her loose stools. How should this be recorded? | As an intolerance (diarrhoea), not an allergy, with the reaction described | As a penicillin allergy, so all penicillins are avoided | As anaphylaxis to be safe | It needn't be recorded at all | Gastrointestinal upset is a predictable side effect, not an immune reaction. Labelling it as allergy would needlessly exclude penicillins; recording the reaction lets prescribers decide.
 M3#medicine-u02-01-q4@2,3: Which question adds the most diagnostic value in a patient with a headache? | Did it reach its maximum intensity within a minute or so? | Have you ever had a headache before? | Do you drink coffee? | Is there anyone else at home? | A thunderclap onset is a red flag for subarachnoid haemorrhage and changes management immediately. Discriminating questions shift probability; generic ones rarely do.
 SA3#medicine-u02-01-q5@2,3: Explain why asking about a patient's ideas, concerns and expectations is part of an effective history, not an optional extra. | ICE reveals what the patient thinks is wrong and what they fear, which may differ from the doctor's view and can be the real reason they came. It improves diagnostic accuracy (patients offer clues), allows explanation to address their specific worry, makes shared decisions possible, improves adherence and satisfaction, and can prevent repeat attendance. Ignoring it risks reassuring about the wrong thing. | Defines ideas, concerns and expectations ; Hidden agenda or real reason for attending ; Tailored explanation ; Shared decision-making or adherence ; Risk of missing the concern
+Q: What is the presenting complaint in a medical history? | The problem in the patient's own words.
+Q: What does ICE stand for in history-taking? | The patient's ideas about the cause, their concerns and their expectations.
+Q: What should a drug history include besides prescribed medicines? | Over-the-counter, herbal and recreational drugs, with dose, timing, adherence and allergies with the reaction.
+Q: What should the family history record? | Illness in first-degree relatives and age at onset, with a pedigree when inheritance is relevant.
+Q: What is the purpose of the systems review? | Brief screening questions about each system to catch what the patient didn't mention.
+Q: How should exploring a symptom begin? | With an open question, listening without interrupting, before focusing.
+Q: What are red flags in a history? | Features suggesting a serious cause, such as weight loss, night sweats, bleeding or new neurological deficits.
+Q: What is a pack-year? | A measure of tobacco exposure: 20 cigarettes a day for one year.
+Q: What is one UK unit of alcohol? | 10 mL (8 g) of pure alcohol.
+Q: What is the UK Chief Medical Officers' low-risk drinking advice? | Not regularly more than 14 units a week, spread over three or more days.
 
 ## Consultation models and patient-centred care
 LV: Clinical · Foundation
@@ -93,6 +103,16 @@ M2#medicine-u02-02-q2@2: A patient speaks little English and has brought her 12-
 TF1#medicine-u02-02-q3@2: Teach-back means asking the patient to explain the plan back in their own words. | true | Asking patients to restate the plan checks understanding without testing them, and lets you correct misunderstandings before they leave.
 M3#medicine-u02-02-q4@3: Which is the best criticism of applying consultation models as rigid checklists in assessments? | Students may perform the steps mechanically without genuinely responding to the patient | The models have no stages, so they can't be assessed | Consultation models were designed only for surgery | Checklists make consultations longer than they need to be in every case | The models describe skills to be used flexibly; ticking stages can produce formulaic empathy. Good assessment looks at whether the skills achieved their purpose.
 SA3#medicine-u02-02-q5@2,3: Using the biopsychosocial model, explain why two patients with the same lumbar disc prolapse may have very different outcomes. | Biologically, the lesion may be similar. But psychological factors (fear-avoidance beliefs, catastrophising, low mood) predict pain and disability, and social factors (manual work, job insecurity, compensation claims, support at home) affect return to activity. A patient with reassurance, low fear and supportive work may recover quickly, whereas another with high distress and difficult work may develop chronic disability. Management therefore addresses beliefs, mood and work as well as the spine. | Biological lesion similar ; Psychological factors named ; Social factors named ; Effect on outcome explained ; Management implication
+Q: Who developed the Calgary–Cambridge guide, and when? | Kurtz and Silverman, in 1996.
+Q: Which two threads run throughout the Calgary–Cambridge consultation? | Providing structure and building the relationship.
+Q: What question helps identify all the reasons for attending? | "Is there anything else?", asked at the start.
+Q: What is "housekeeping" in Neighbour's model? | Looking after one's own state before the next patient.
+Q: What did Engel's biopsychosocial model (1977) argue? | Illness can't be understood through biology alone: beliefs, mood, relationships, work and culture shape it.
+Q: What is a "doorknob" comment? | A concern raised as the consultation closes, often the patient's real worry.
+Q: What should safety-netting tell the patient? | What to expect, which symptoms mean they should seek help, how urgently and where, and when they'll be reviewed.
+Q: What is the "cone" of questioning? | Starting with open questions and then focusing with closed ones.
+Q: What is "chunk and check"? | Giving information in small amounts and checking understanding.
+Q: What does patient-centred care not mean? | Doing whatever the patient asks; the doctor still gives honest advice and may decline requests not in their interest.
 
 ## Communicating risk and shared decision-making
 LV: Clinical · Application
@@ -136,6 +156,16 @@ NUM2#medicine-u02-03-q2@2: A treatment lowers the 10-year risk of a heart attack
 M2#medicine-u02-03-q3@2: A drug "halves the risk" of an event whose baseline risk is 2 in 1,000 over 5 years. What is the best way to explain this to a patient? | Without it about 2 in 1,000 people have the event over 5 years, and with it about 1 in 1,000 | It cuts your risk by 50%, so it's clearly worth taking | It gives you a 50% chance of avoiding the event | It reduces your risk by a large amount | Absolute figures with a time frame and same denominator show the real benefit (ARR 0.1%, NNT 1,000), which the relative figure hides.
 M3#medicine-u02-03-q4@3: After Montgomery, which statement about disclosing a 1 in 10,000 risk of a serious complication is most accurate? | It must be disclosed if a reasonable person in the patient's position, or this patient, would attach significance to it | It never needs disclosing because it is under 1% | It needs disclosing only if a responsible body of doctors would disclose it | It is the patient's job to ask about rare risks | Materiality depends on significance to the patient, not on a percentage threshold or professional practice; serious rare risks may well be material.
 SA3#medicine-u02-03-q5@2,3: A patient asks whether to take a statin. Explain how you would present the benefit and harms to support a shared decision. | Begin with team talk: there is a real choice. Using their estimated 10-year cardiovascular risk, give absolute figures as natural frequencies with the same denominator, for example how many in 100 people like them would have a heart attack or stroke in 10 years with and without the statin, ideally with an icon array. Present harms the same way (muscle symptoms, small diabetes risk) and the option of lifestyle change alone. Avoid relative-only figures and framing bias, check understanding with teach-back, explore what matters to them and agree a decision, which they may revisit. | Team talk or acknowledgement of choice ; Absolute risks as natural frequencies with time frame ; Harms in the same format ; Alternatives including no treatment ; Explores values and checks understanding
+Q: How is absolute risk reduction calculated? | Control event rate − treatment event rate.
+Q: How is relative risk reduction calculated? | ARR ÷ control event rate.
+Q: Why should absolute figures always be given alongside relative risk? | Relative reductions sound large and stay the same whatever the baseline risk; absolute risks show the real difference.
+Q: A medicine cuts 5-year stroke risk from 4% to 3%. What is the NNT? | 100.
+Q: What are natural frequencies in risk communication? | Figures like "3 in 100 people like you", using the same denominator when comparing.
+Q: How can framing bias be avoided when describing risk? | Give both framings, such as "97 in 100 will survive" and "3 in 100 will die".
+Q: Why should vague words like "rare" be avoided? | Different people interpret them very differently.
+Q: What does NICE guideline NG197 (2021) cover? | How to embed shared decision-making, including decision aids.
+Q: What test for disclosure did Montgomery replace? | The Bolam-based test.
+Q: Is consent a signature on a form? | No: it is a dialogue in which the patient understands options, material risks and alternatives; the form only records it.
 
 ## Breaking bad news
 LV: Clinical · Application
@@ -176,6 +206,16 @@ M2#medicine-u02-04-q2@2: A son asks you not to tell his father that he has termi
 TF1#medicine-u02-04-q3@1: A warning shot is given just before the bad news itself. | true | It prepares the person for what is coming, giving them a moment to brace and to signal how much they want to hear.
 M3#medicine-u02-04-q4@3: Which is the best reason to avoid the phrase "a shadow on the scan" when telling someone they have lung cancer? | Euphemisms may be misunderstood, so the patient may leave not knowing they have cancer | It is too technical for most patients | It would breach confidentiality | It is legally prohibited | Clear words prevent misunderstanding; patients told about a "shadow" or "growth" may not realise the seriousness and so can't make informed decisions.
 SA3#medicine-u02-04-q5@2,3: Describe how you would end a consultation in which you have told a patient their biopsy shows cancer. | Check what they've understood and what they want to know now. Summarise the key points in plain language. Agree the next steps: further tests, a multidisciplinary meeting, an appointment date with a named clinician. Offer written information and support (a specialist nurse with contact numbers). Ask whether they have someone to be with them and how they'll get home. Safety-net and confirm follow-up. Then document the conversation and inform the GP and team. | Checks understanding ; Summary ; Clear plan with named contact ; Support and written information ; Documentation and communication with GP
+Q: What does the Setting step of SPIKES involve? | A private room, enough time, phone handed over, the right people present and sitting down.
+Q: What does the Invitation step of SPIKES involve? | Asking how much the patient wants to know and how.
+Q: How should news be given in the Knowledge step of SPIKES? | After a warning shot, in plain language and small chunks, checking understanding.
+Q: How should you respond to emotion after giving bad news? | Notice it, respond with empathy and allow silence before giving more facts.
+Q: What is collusion when giving bad news? | A request, usually from relatives, to keep information from the patient.
+Q: How should a relative's request not to tell the patient be handled? | Explore their fears, then explain the patient's right to information and that most people want to know.
+Q: What should happen if a patient chooses not to know details? | Their wish should be respected and recorded.
+Q: Why use words like "cancer" rather than euphemisms? | Euphemisms such as "a growth" may be misunderstood.
+Q: How should prognosis be given if a patient asks? | As ranges with honest uncertainty, not exact figures.
+Q: What should be done after breaking bad news? | Document what was said and the patient's understanding, and inform the GP and the team.
 
 ## Principles of physical examination
 LV: Clinical · Foundation
@@ -219,6 +259,16 @@ M2#medicine-u02-05-q2@2: A patient with long-standing COPD develops clubbing. Wh
 TF1#medicine-u02-05-q3@2: Central cyanosis is easier to detect in a patient with severe anaemia. | false | Cyanosis depends on the absolute amount of deoxygenated haemoglobin (about 50 g/L); with little haemoglobin, a patient can be severely hypoxic without looking blue.
 M3#medicine-u02-05-q4@3: A sign has a positive likelihood ratio of 10 and a negative likelihood ratio of 0.9. Which statement is correct? | It is useful when present but its absence barely changes the probability | It is useful to rule a diagnosis out when absent | It is useless in all circumstances | It is equally useful present or absent | An LR+ of 10 raises the probability substantially; an LR− near 1 means its absence tells you little. Many specific signs behave like this.
 SA3#medicine-u02-05-q5@2,3: Explain why examination should be guided by the history and pre-test probability rather than performed as a complete routine in every patient. | Signs vary in sensitivity, specificity and reliability, so their meaning depends on the pre-test probability set by the history. Targeted examination tests specific hypotheses and looks for signs that change management, which is more efficient and more accurate. A blind routine produces incidental and false-positive findings, which can lead to unnecessary tests, while key signs may be missed through lack of focus. A competent routine is still useful when the diagnosis is unclear or for screening. | Signs vary in reliability and accuracy ; Pre-test probability determines meaning ; Hypothesis-testing efficiency ; Risk of false positives or missed key signs ; Role for routine when unclear
+Q: What should you do before touching a patient for an examination? | Introduce yourself with name and role, confirm identity, explain what you'd like to do and why, and gain consent.
+Q: What should be recorded about a chaperone? | The offer, the chaperone's name or the patient's decision.
+Q: What positions are used for cardiovascular and abdominal examination? | About 45° for cardiovascular and respiratory; flat for the abdomen.
+Q: Why ask about pain and watch the face during palpation? | To avoid causing pain and to detect tenderness.
+Q: What sequence do most system examinations follow? | Inspection, palpation, percussion and auscultation, often from the hands upwards.
+Q: What is clubbing? | Loss of the angle between the nail plate and nail fold, with bulbous fingertips.
+Q: Above what level of deoxyhaemoglobin is central cyanosis seen? | About 50 g/L.
+Q: Which lymph node features suggest malignancy? | Hard, fixed, painless nodes.
+Q: How is inter-observer reliability of signs measured? | By the kappa statistic.
+Q: How do specific and sensitive signs help diagnosis? | A specific sign present raises probability greatly; a sensitive sign absent helps rule a diagnosis out.
 
 ## Vital signs and the early warning score (NEWS2)
 LV: Clinical · Application
@@ -263,6 +313,16 @@ NUM2#medicine-u02-06-q2@2: Calculate NEWS2: RR 22, SpO₂ 93% on 2 L/min oxygen 
 M2#medicine-u02-06-q3@2: A patient scores NEWS2 2 overall, but the nurse is worried because "he just isn't himself". What should happen? | Escalate for clinical review, because clinical concern overrides a low score | Wait until the score reaches 5 | Repeat observations in 12 hours | Reassure the nurse that a low score excludes deterioration | Early warning scores support, not replace, clinical judgement; concern from staff or relatives should prompt review.
 M3#medicine-u02-06-q4@3: Which is the strongest limitation of relying on NEWS2 alone? | Patients on beta-blockers, with chronic conditions or at the extremes of age may not mount typical physiological changes | It hasn't been validated in any adult population | It doesn't include respiratory rate | It is too complicated to calculate at the bedside | Drugs (beta-blockers blunting tachycardia), chronic disease and frailty can mask deterioration; the score also isn't validated for children or pregnancy, which use their own charts.
 SA3#medicine-u02-06-q5@2,3: Explain why respiratory rate is considered the most important vital sign for detecting deterioration, and why it is often recorded inaccurately. | Respiratory rate rises early in many forms of deterioration (sepsis, metabolic acidosis, hypoxaemia, pulmonary embolism, heart failure) as the body compensates, often before blood pressure falls. It is also scored heavily in NEWS2. It is often estimated rather than counted for a full minute, and recorded values cluster around 16–20, so early rises are missed. Counting for 60 seconds without the patient's awareness improves accuracy. | Early marker of physiological stress ; Examples of conditions ; Precedes hypotension ; Often estimated not counted ; Counting for a full minute
+Q: Who published NEWS2, and when? | The Royal College of Physicians, in 2017.
+Q: How many extra points does supplemental oxygen add in NEWS2? | 2 points.
+Q: What respiratory rate scores 0 in NEWS2? | 12–20 breaths/min.
+Q: What systolic blood pressure range scores 0 in NEWS2? | 111–219 mmHg.
+Q: What pulse range scores 0 in NEWS2? | 51–90/min.
+Q: How does new confusion score in NEWS2? | 3 points.
+Q: What response does a NEWS2 of 5–6 need? | At least hourly observations and urgent review by a clinician competent in assessing acutely ill patients.
+Q: How often should observations be done with a NEWS2 of 0? | At least 12-hourly.
+Q: Does a low NEWS2 override clinical concern? | No: staff or relatives' worry is itself a reason to escalate.
+Q: What is the danger of using SpO₂ scale 2 inappropriately? | It hides hypoxaemia; scale 2 must be prescribed by a clinician.
 
 ## The cardiovascular examination
 LV: Clinical · Application
@@ -309,6 +369,16 @@ M2#medicine-u02-07-q2@2: A pansystolic murmur at the apex radiating to the axill
 MS2#medicine-u02-07-q3@1,2: Which are peripheral signs of infective endocarditis? Choose all that apply. | Splinter haemorrhages ; Janeway lesions ; Osler's nodes | Xanthelasma ; Malar flush | Embolic and immune phenomena of endocarditis appear in the hands; xanthelasma suggests hyperlipidaemia and malar flush mitral stenosis.
 M3#medicine-u02-07-q4@3: A patient has a collapsing pulse, a wide pulse pressure (BP 170/40) and a displaced apex. Which murmur would you expect? | An early diastolic murmur at the lower left sternal edge | A mid-diastolic rumble at the apex | An ejection systolic murmur radiating to the carotids | No murmur, as these signs are normal in older people | Regurgitation back into the ventricle in diastole lowers diastolic pressure and enlarges the ventricle: aortic regurgitation.
 SA3#medicine-u02-07-q5@2,3: A patient has a raised JVP, bibasal crackles, a displaced apex beat and pitting ankle oedema. Explain what each sign indicates and what the combination suggests. | A raised JVP reflects increased right atrial pressure from fluid overload or right ventricular failure. Bibasal crackles suggest pulmonary oedema from raised left atrial and pulmonary venous pressure. A displaced apex indicates left ventricular dilatation. Pitting ankle oedema reflects raised venous pressure and salt and water retention. Together they suggest congestive (biventricular) heart failure, which needs confirmation with natriuretic peptide and echocardiography. | Raised JVP and right-sided pressure ; Crackles and pulmonary oedema ; Displaced apex and LV dilatation ; Oedema and fluid retention ; Heart failure with confirmatory tests
+Q: Which hand signs suggest infective endocarditis? | Clubbing, splinter haemorrhages, Janeway lesions and Osler's nodes.
+Q: What pulse character suggests aortic stenosis, and which aortic regurgitation? | Slow-rising in aortic stenosis; collapsing in aortic regurgitation.
+Q: What does radio-femoral delay suggest? | Coarctation of the aorta.
+Q: When should blood pressure be measured in both arms? | When aortic dissection is possible.
+Q: How is the JVP measured and what is normal? | Vertical height of the internal jugular pulsation above the sternal angle at 45°; normally up to about 3 cm.
+Q: What does a displaced apex beat suggest, and a heaving one? | Displaced suggests a dilated left ventricle; heaving suggests hypertrophy.
+Q: What does a parasternal heave suggest? | Right ventricular hypertrophy.
+Q: How do you time heart sounds? | Against the carotid pulse: S1 comes just before it and S2 after.
+Q: How is mitral stenosis best heard? | With the bell at the apex in the left lateral position: a mid-diastolic rumble.
+Q: Why is murmur loudness a poor guide to severity in aortic stenosis? | The murmur may become quieter as the valve narrows critically and cardiac output falls.
 
 ## The respiratory examination
 LV: Clinical · Application
@@ -351,6 +421,16 @@ M2#medicine-u02-08-q2@2: Which combination best fits lobar pneumonia? | Dull per
 TF1#medicine-u02-08-q3@2: A large pleural effusion pushes the trachea away from the affected side. | true | Fluid occupying the hemithorax displaces the mediastinum to the opposite side; collapse pulls it towards.
 M3#medicine-u02-08-q4@3: A patient has sudden breathlessness, hypotension, a hyper-resonant left chest with absent breath sounds and a trachea deviated to the right. What is the priority? | Immediate decompression of a suspected tension pneumothorax | A chest X-ray to confirm before any intervention | Nebulised bronchodilators | Diuretics for pulmonary oedema | Tension pneumothorax is a clinical diagnosis; haemodynamic compromise means immediate decompression without waiting for imaging.
 SA3#medicine-u02-08-q5@2,3: Explain why consolidation produces bronchial breathing and increased vocal resonance, whereas a pleural effusion reduces both. | Normal air-filled lung filters high-frequency sounds, giving soft vesicular breath sounds. Consolidated lung is solid and airless but the bronchi remain open, so it conducts the harsh sounds of airflow in the large airways and the patient's voice to the chest wall efficiently: bronchial breathing and increased vocal resonance. In an effusion, fluid separates lung from chest wall and reflects and damps sound, so breath sounds and vocal resonance are reduced. | Air-filled lung filters sound ; Solid lung conducts sound well ; Patent bronchi needed ; Fluid separates lung from chest wall ; Fluid damps transmission
+Q: Which hand signs suggest CO₂ retention or β-agonist use? | A flapping tremor suggests CO₂ retention; a fine tremor suggests β-agonists.
+Q: What does Horner's syndrome suggest in a respiratory examination? | An apical lung tumour.
+Q: How is chest expansion affected by lung pathology? | It is reduced on the side of the pathology.
+Q: Which way does the trachea move in a tension pneumothorax? | Away from the affected side.
+Q: What percussion note is heard over a pleural effusion? | Stony dull.
+Q: Why is bronchial breathing heard over consolidation? | Solid lung conducts sound from the bronchi well.
+Q: What do coarse crackles suggest? | Bronchiectasis, infection or pulmonary oedema.
+Q: What signs does pneumonia (consolidation) give? | Reduced expansion, dullness, bronchial breathing, crackles and increased vocal resonance, with a central trachea.
+Q: What investigations follow a suspected pleural effusion? | Chest X-ray and ultrasound-guided pleural aspiration for protein, LDH, pH, microbiology and cytology.
+Q: What is the common mistake with a dull lung base? | Calling every dull base an effusion; consolidation and collapse are also dull.
 
 ## The abdominal examination
 LV: Clinical · Application
@@ -392,6 +472,16 @@ M2#medicine-u02-09-q2@2: Which feature distinguishes splenomegaly from an enlarg
 TF1#medicine-u02-09-q3@1: Asterixis can occur in CO₂ retention and uraemia as well as hepatic encephalopathy. | true | A flapping tremor is a sign of metabolic encephalopathy from several causes, not only liver failure.
 M3#medicine-u02-09-q4@3: A patient lies very still with a board-like rigid abdomen and absent bowel sounds. What is the most likely process? | Generalised peritonitis, for example from a perforated viscus | Small bowel obstruction in its early stage | Irritable bowel syndrome | Constipation | Rigidity and immobility (because movement hurts), with a silent abdomen, indicate generalised peritonitis: a surgical emergency.
 SA3#medicine-u02-09-q5@2,3: A patient with alcohol-related cirrhosis has a distended abdomen. Describe how you would show that the distension is due to ascites and what other signs you would look for. | Inspect for distension with everted umbilicus and flank fullness. Percuss from the umbilicus towards the flank until the note becomes dull, mark the point, roll the patient onto the opposite side, wait about 30 seconds and re-percuss: a change from dull to resonant indicates shifting dullness, so free fluid. A fluid thrill helps if the ascites is tense. Look for other signs of portal hypertension and decompensation: caput medusae, splenomegaly, jaundice, asterixis, peripheral oedema and stigmata of chronic liver disease. Confirm with ultrasound and diagnostic paracentesis. | Inspection features ; Shifting dullness technique ; Fluid thrill for tense ascites ; Signs of portal hypertension or decompensation ; Confirmation by ultrasound or paracentesis
+Q: What does leukonychia indicate? | Hypoalbuminaemia.
+Q: What are Kayser–Fleischer rings a sign of? | Wilson's disease.
+Q: What is Troisier's sign? | An enlarged Virchow's node in the left supraclavicular fossa, a sign of gastric cancer.
+Q: How should a patient be positioned and exposed for abdominal examination? | Flat with one pillow, arms by their sides, exposed from nipples to groin while preserving dignity.
+Q: In which order should tender areas be palpated? | The tender area last, watching the patient's face.
+Q: What do light and deep palpation of the abdomen each detect? | Light palpation detects tenderness and guarding; deep palpation detects masses.
+Q: How is the liver edge felt? | Start in the right iliac fossa and move up with each breath; the edge descends to meet the hand on inspiration.
+Q: How is shifting dullness tested? | Percuss from the midline to the dull flank, keep your finger there, roll the patient towards you, wait, and percuss again.
+Q: What do bowel sounds suggest when absent, and when high-pitched and tinkling? | Absent suggests ileus or peritonitis; high-pitched and tinkling suggests obstruction.
+Q: How much ascitic fluid is roughly needed for shifting dullness to be detected? | About 500 mL or more; ultrasound detects much smaller volumes.
 
 ## The neurological examination
 LV: Clinical · Application
@@ -434,6 +524,16 @@ M2#medicine-u02-10-q2@2: Which combination indicates a lower motor neurone lesio
 MS2#medicine-u02-10-q3@2: Which are cerebellar signs? Choose all that apply. | Dysdiadochokinesia ; Intention tremor ; Nystagmus ; Ataxia | Resting tremor ; Upgoing plantar | DANISH signs are cerebellar; a resting tremor suggests parkinsonism and an upgoing plantar an upper motor neurone lesion.
 M3#medicine-u02-10-q4@3: A patient has wasting and fasciculation in the hands with brisk reflexes and upgoing plantars in the legs, and normal sensation. Which diagnosis best explains this mix? | Motor neurone disease | Multiple sclerosis | Peripheral neuropathy | Myasthenia gravis | Coexisting upper and lower motor neurone signs with no sensory loss is characteristic of motor neurone disease (cervical myelopathy with radiculopathy is the main alternative to exclude).
 SA3#medicine-u02-10-q5@2,3: A patient has left-sided weakness of arm and leg with increased tone, brisk reflexes and an upgoing left plantar, and a left homonymous hemianopia. Localise the lesion and explain your reasoning. | Unilateral arm and leg weakness with UMN signs indicates a lesion of the corticospinal tract above the arm's supply. It is on the left side of the body, so the lesion is in the right hemisphere (the tract crosses in the medulla). A left homonymous hemianopia indicates a lesion of the right optic radiation or occipital cortex, which supports a right cerebral hemisphere lesion, such as a right middle cerebral artery territory stroke. | UMN pattern identified ; Contralateral hemisphere ; Decussation explained ; Visual field defect localised ; Right hemisphere lesion with plausible cause
+Q: What is spasticity, and in which lesions is it found? | Velocity-dependent, "clasp-knife" increased tone, found in upper motor neurone lesions.
+Q: What kind of tone is found in parkinsonism? | Rigidity: "lead-pipe", or "cogwheel" with tremor.
+Q: What does MRC power grade 2 mean? | Movement with gravity eliminated.
+Q: Which sensory modalities are carried by the dorsal columns and which by the spinothalamic tract? | Dorsal columns: vibration and joint position sense; spinothalamic tract: pin prick.
+Q: Which dermatomes lie at the nipple and at the umbilicus? | T4 at the nipple and T10 at the umbilicus.
+Q: What is the pyramidal pattern of weakness? | Extensors weaker in the arms and flexors weaker in the legs.
+Q: What are the features of a neuromuscular junction disorder such as myasthenia gravis? | Fatigable weakness with normal reflexes and sensation.
+Q: What does a sudden onset over minutes suggest about a neurological lesion? | A vascular cause, such as stroke.
+Q: What does "glove and stocking" sensory loss suggest, and what are common causes? | A length-dependent peripheral neuropathy, commonly from diabetes, alcohol or vitamin B12 deficiency.
+Q: Why might tone and reflexes be reduced just after an acute upper motor neurone lesion? | Spinal or cerebral shock in the first hours to days; spasticity develops later.
 
 ## Clinical reasoning and diagnostic error
 LV: Clinical · Evaluation
@@ -480,6 +580,16 @@ M2#medicine-u02-11-q2@2: A doctor diagnoses gastritis in a patient labelled "dys
 TF1#medicine-u02-11-q3@1: Most diagnostic errors are caused by rare diseases that the doctor has never heard of. | false | Errors mostly involve common conditions and arise from cognitive processes such as premature closure, often combined with system failures.
 M3#medicine-u02-11-q4@3: Which intervention is best supported for reducing diagnostic error in a hospital? | Combining reliable systems for test-result follow-up with prompts to consider alternatives in high-risk presentations | Teaching a list of bias names once in medical school | Ordering every available test on every patient | Removing clinical judgement in favour of algorithms in all cases | Because errors are multifactorial, system fixes (closing the loop on results) and targeted cognitive prompts are more promising than bias-naming alone; blanket testing creates false positives and harm.
 SA3#medicine-u02-11-q5@2,3: A patient was discharged with "musculoskeletal back pain" and returned with a ruptured abdominal aortic aneurysm. Analyse how cognitive and system factors might have contributed and how the error could have been prevented. | Cognitive: anchoring on the common diagnosis, premature closure, availability (back pain is common), failing to consider a can't-miss diagnosis in an older man with vascular risk factors, and perhaps not examining the abdomen. System: time pressure, crowding, interruptions, lack of access to bedside ultrasound or senior review, poor safety-netting. Prevention: a differential with can't-miss diagnoses for back pain in older patients (AAA, cord compression, infection, malignancy), abdominal examination and ultrasound, a diagnostic time-out, senior review and explicit safety-netting advice about worsening pain or collapse. | Cognitive biases named and applied ; Can't-miss diagnosis omitted ; System factors ; Specific prevention steps ; Safety-netting
+Q: What is dual-process theory in clinical reasoning? | System 1 is fast, intuitive pattern recognition; System 2 is slow, deliberate analysis.
+Q: What is an illness script? | A clinician's stored mental model of a disease: who gets it, how it presents and why.
+Q: What is a problem representation? | A one-sentence summary of the case using abstract qualifiers, which helps retrieve the right illness scripts.
+Q: What does the surgical sieve VITAMIN CD stand for? | Vascular, infective, traumatic, autoimmune, metabolic, iatrogenic, neoplastic, congenital, degenerative.
+Q: Which test should you order when building a differential? | The one whose result would change your ranking of diagnoses.
+Q: What is anchoring bias? | Sticking with the first impression despite new information.
+Q: What is availability bias? | Judging likelihood by how easily cases come to mind, such as a recent memorable case.
+Q: What is confirmation bias? | Seeking evidence that supports, rather than tests, a hypothesis.
+Q: What is a diagnostic time-out? | A pause to ask "What else could this be? What doesn't fit?".
+Q: What did Graber et al. (2005) find about diagnostic errors? | Cognitive factors contributed to 74% and system factors to 65%; premature closure was the most common cognitive problem.
 
 ## Interpreting tests: sensitivity, specificity and predictive values
 LV: Clinical · Application
@@ -519,6 +629,16 @@ NUM2#medicine-u02-12-q2@2: A test was used in 1,000 people: 80 true positives, 2
 M2#medicine-u02-12-q3@2: In the same 1,000 people (80 TP, 20 FN, 60 FP, 840 TN), what is the positive predictive value? | About 57% | 80% | About 93% | About 98% | PPV = 80 ÷ (80 + 60) = 57%. Specificity is 840 ÷ 900 = 93% and NPV 840 ÷ 860 = 98%.
 M3#medicine-u02-12-q4@3: A young woman with pleuritic chest pain has a low clinical probability of pulmonary embolism and a negative D-dimer. A colleague suggests a CT pulmonary angiogram "to be safe". What is the best response? | A negative sensitive test in a low-probability patient makes PE very unlikely, and CT would add radiation and false-positive risk | CT is always needed because D-dimer is unreliable | The D-dimer should be repeated until it is positive | A positive D-dimer would have confirmed PE, so a negative one is meaningless | Low pre-test probability plus a negative highly sensitive test puts the post-test probability below the test threshold; further imaging adds harm without benefit.
 SA3#medicine-u02-12-q5@2,3: Explain why a screening test with high sensitivity and specificity can still produce more false positives than true positives, and what this means for screening programmes. | When a condition is rare in the screened population, even a small false-positive rate applied to the many people without the disease yields more false positives than the true positives from the few with it, so the PPV is low. Screening programmes therefore need tests with very high specificity, confirmatory diagnostic tests after a positive screen, clear information for participants about false positives, and targeting of groups with higher prevalence where appropriate. Harms of false positives (anxiety, invasive tests) must be weighed against benefits. | Low prevalence ; Specificity applied to many unaffected people ; Low PPV explained ; Confirmatory testing or high specificity needed ; Harms of false positives or targeting
+Q: How is specificity calculated? | TN ÷ (TN + FP).
+Q: How is the negative predictive value calculated? | TN ÷ (TN + FN).
+Q: How is the negative likelihood ratio calculated? | (1 − sensitivity) ÷ specificity.
+Q: What does SpPin mean? | A highly Specific test, when Positive, rules the disease in.
+Q: Which test properties depend on prevalence? | Predictive values; sensitivity and specificity are properties of the test.
+Q: How are post-test odds calculated? | Pre-test odds × likelihood ratio.
+Q: Which likelihood ratios change probability a lot, and which barely? | Above 10 or below 0.1 change it a lot; between 0.5 and 2 barely change it.
+Q: What are the test and treatment thresholds? | Below the test threshold, stop testing; above the treatment threshold, treat without further testing.
+Q: Why is a positive D-dimer unhelpful in a high-probability patient? | Imaging is needed anyway, so the result adds nothing.
+Q: What is spectrum bias? | Variation in sensitivity and specificity with disease severity and the population tested.
 
 ## Interpreting a full blood count and electrolytes
 LV: Clinical · Application
@@ -556,6 +676,16 @@ M2#medicine-u02-13-q2@2: A patient has Hb 100 g/L, MCV 64 fL, a normal ferritin 
 TF1#medicine-u02-13-q3@1: The eGFR is a reliable measure of kidney function during acute kidney injury. | false | eGFR assumes steady-state creatinine; in AKI creatinine lags behind the fall in filtration, so eGFR overestimates function.
 M3#medicine-u02-13-q4@3: A patient on clozapine has a neutrophil count of 0.8 × 10⁹/L and a sore throat. What is the most important concern? | Clozapine-induced neutropenia, which can progress to agranulocytosis and sepsis | Normal variation in neutrophils | A viral infection, so no action is needed | Thalassaemia trait | Clozapine can cause agranulocytosis, which is why it requires mandatory blood monitoring; a low neutrophil count with infection needs urgent action under the monitoring protocol.
 SA3#medicine-u02-13-q5@2,3: A 75-year-old has Hb 88 g/L and MCV 108 fL. Outline a structured approach to the cause. | This is a macrocytic anaemia. Check the reticulocyte count (raised in haemolysis or bleeding), vitamin B12 and folate, liver function, thyroid function and alcohol intake, and review drugs (methotrexate, hydroxycarbamide, some antiretrovirals). A blood film can show hypersegmented neutrophils (megaloblastic) or dysplastic features. If B12 is low, test for intrinsic factor antibodies (pernicious anaemia). If no cause is found, especially with other cytopenias, consider myelodysplasia and a haematology referral for marrow examination. | Identifies macrocytic anaemia ; Reticulocytes and B12 or folate ; Liver, thyroid, alcohol and drugs ; Blood film ; Myelodysplasia or haematology referral
+Q: What are approximate adult haemoglobin reference ranges? | About 130–170 g/L in men and 120–150 g/L in women.
+Q: What is the normal range for mean cell volume? | 80–100 fL.
+Q: What is the commonest cause of microcytic anaemia, and what should prompt investigation? | Iron deficiency; in an adult man or post-menopausal woman, look for gastrointestinal blood loss.
+Q: What suggests thalassaemia trait rather than iron deficiency? | Microcytosis out of proportion to the anaemia with a normal ferritin.
+Q: Give causes of normocytic anaemia. | Acute blood loss, anaemia of chronic disease, chronic kidney disease, haemolysis, marrow infiltration or mixed deficiency.
+Q: What does eosinophilia suggest? | Allergy, asthma, parasites or drug reactions.
+Q: Give causes of reactive thrombocytosis. | Inflammation, bleeding and iron deficiency.
+Q: Why can a normal ferritin be falsely reassuring? | Ferritin is an acute-phase protein that rises with inflammation, infection and liver disease.
+Q: What is the normal potassium range in adults? | About 3.5–5.3 mmol/L.
+Q: Why does a trend in results matter? | A rising trend, such as creatinine 80 to 160 µmol/L, can matter more than one value, and "normal" may be abnormal for that patient.
 
 ## Arterial blood gas interpretation
 LV: Clinical · Application
@@ -599,6 +729,16 @@ M2#medicine-u02-14-q2@2: pH 7.22, PaCO₂ 9.0 kPa, HCO₃⁻ 26 mmol/L in a pati
 M2#medicine-u02-14-q3@3: A patient on 60% oxygen has a PaO₂ of 12 kPa. Which statement is correct? | Gas exchange is severely impaired despite the normal-looking PaO₂ | Oxygenation is normal | The oxygen can be stopped | The sample must be venous | On 60% oxygen the expected PaO₂ is about 50 kPa; 12 kPa reflects a large A–a gradient.
 TF1#medicine-u02-14-q4@1: A peripheral venous blood gas can reliably assess a patient's oxygenation. | false | Venous PO₂ reflects tissue extraction, not lung function; pulse oximetry or an arterial sample is needed for oxygenation.
 SA3#medicine-u02-14-q5@2,3: A young woman with asthma has a PaCO₂ of 5.8 kPa during a severe attack. Explain why this is a worrying result. | In acute asthma, breathlessness drives hyperventilation, so the PaCO₂ is usually low. A "normal" PaCO₂ means ventilation is no longer keeping up, from exhaustion and severe airflow obstruction, and is a marker of life-threatening asthma. It may herald rising CO₂, respiratory acidosis and arrest. She needs immediate senior and critical care review alongside maximal treatment. | Expected low CO₂ from hyperventilation ; Normal CO₂ indicates tiring or severe obstruction ; Life-threatening feature ; Risk of deterioration ; Urgent senior or critical care escalation
+Q: What is the normal PaO₂ on air? | About 10–13 kPa.
+Q: Why must PaO₂ always be read with the FiO₂? | A "normal" PaO₂ on high-flow oxygen can hide severe lung disease.
+Q: What does PaCO₂ reflect? | Ventilation.
+Q: What is type 1 respiratory failure a problem of, and what causes it? | Gas exchange (V/Q mismatch or shunt): pneumonia, PE, pulmonary oedema, asthma or ARDS.
+Q: What causes type 2 respiratory failure? | Inadequate ventilation: COPD, neuromuscular weakness, chest wall disease, opioid or sedative excess, or exhaustion in severe asthma.
+Q: How does chronic hypercapnia appear on a blood gas? | Near-normal pH with a raised bicarbonate from renal compensation.
+Q: How does acute-on-chronic hypercapnia appear on a blood gas? | A raised bicarbonate with a low pH, as in a COPD exacerbation.
+Q: When should non-invasive ventilation be considered? | When acidotic hypercapnic respiratory failure persists despite treatment.
+Q: What does a normal A–a gradient with a low PaO₂ suggest? | Hypoventilation, or low inspired oxygen.
+Q: How should oxygen be given to patients at risk of hypercapnic failure? | Controlled, to a target of 88–92%, rechecking the gas; never withhold it.
 
 ## The 12-lead ECG: a systematic approach
 LV: Clinical · Application
@@ -645,6 +785,16 @@ NUM2#medicine-u02-15-q2@2: On a regular ECG at 25 mm/s, there are 4 large square
 M2#medicine-u02-15-q3@2: ST elevation is seen in V1–V4. Which artery is most likely occluded? | The left anterior descending artery | The right coronary artery | The circumflex artery | The left subclavian artery | V1–V4 face the anterior and septal walls, supplied by the left anterior descending artery.
 M3#medicine-u02-15-q4@3: A patient with renal failure has tall peaked T waves and a QRS of 0.14 s. What is the priority? | Immediate IV calcium for membrane stabilisation alongside treatment to lower potassium | Repeat the ECG tomorrow | Start a beta-blocker | Arrange outpatient echocardiography | A broad QRS with peaked T waves suggests severe hyperkalaemia with imminent arrhythmia risk; calcium protects the myocardium while insulin–glucose and other measures lower potassium.
 SA3#medicine-u02-15-q5@2,3: Explain why widespread ST elevation with PR depression in a young person with pleuritic chest pain is unlikely to be a STEMI, and what else it could be. | STEMI produces ST elevation in a coronary territory, usually with reciprocal depression, and is often convex. Acute pericarditis inflames the epicardium widely, so ST elevation is diffuse across territories, often concave (saddle-shaped), without reciprocal change except in aVR and V1, and with PR depression from atrial injury. Pleuritic pain relieved by sitting forward and a pericardial rub support it. Echocardiography for effusion and troponin (myopericarditis) help. | Territorial versus widespread elevation ; Reciprocal change ; PR depression ; Clinical features of pericarditis ; Further tests
+Q: What do the P wave, QRS and T wave represent? | Atrial depolarisation, ventricular depolarisation and ventricular repolarisation.
+Q: At 25 mm/s, how long are a small and a large ECG square? | A small square is 0.04 s; a large square is 0.2 s.
+Q: What is the normal QRS axis? | Between −30° and +90°.
+Q: What does a short PR interval with a delta wave suggest? | Pre-excitation: Wolff–Parkinson–White.
+Q: What causes a broad QRS? | Bundle branch block, a ventricular rhythm, hyperkalaemia or pacing.
+Q: What prolongs the QTc, and what is the risk? | Some antiarrhythmics, antipsychotics, macrolides, low potassium, magnesium or calcium; risk of torsades de pointes.
+Q: How does a posterior MI appear on a 12-lead ECG? | ST depression with tall R waves in V1–V3, confirmed with V7–V9.
+Q: What is the STEMI ST-elevation threshold in V2–V3 for women? | At least 1.5 mm.
+Q: What are the ECG features of hypokalaemia? | Flattened T waves, ST depression, prominent U waves and a long QT.
+Q: Which conditions mimic STEMI on the ECG? | Pericarditis, benign early repolarisation, LVH, left bundle branch block and ventricular aneurysm.
 
 ## Chest X-ray interpretation
 LV: Clinical · Application
@@ -692,6 +842,16 @@ M2#medicine-u02-16-q2@2: An erect chest X-ray shows a crescent of gas beneath th
 TF1#medicine-u02-16-q3@1: The medial ends of the clavicles should be equidistant from the spinous processes on a well-centred film. | true | Asymmetry indicates rotation, which can make the mediastinum look widened and the lung zones unequal in density.
 M3#medicine-u02-16-q4@3: A ventilated patient's X-ray shows complete opacification of the left hemithorax with the trachea and mediastinum pulled to the left. What is the most likely cause? | Collapse of the left lung, for example from a mucus plug or a misplaced endotracheal tube | A large left pleural effusion | A left tension pneumothorax | Left lower lobe pneumonia alone | Volume loss pulls the mediastinum towards the opacity; an effusion would push it away. Check the tube position (too far down the right main bronchus) and for mucus plugging.
 SA3#medicine-u02-16-q5@2,3: Describe the chest X-ray features of cardiogenic pulmonary oedema and explain the mechanism of each. | Cardiomegaly reflects a dilated failing heart. Raised pulmonary venous pressure first diverts blood to the upper lobes (upper lobe venous diversion). As pressure rises further, fluid enters the interstitium, thickening the interlobular septa (Kerley B lines) and peribronchial cuffing. Then fluid floods the alveoli, producing bilateral perihilar ("bat's wing") airspace shadowing. Raised pressures also cause pleural effusions. | Cardiomegaly ; Upper lobe diversion ; Interstitial lines from raised pressure ; Alveolar shadowing ; Pleural effusions
+Q: How do you check a chest X-ray for rotation? | The medial ends of the clavicles should be equidistant from the spinous processes.
+Q: How is adequate inspiration judged on a chest X-ray? | About 5–6 anterior or 9–10 posterior ribs above the diaphragm at the mid-clavicular line.
+Q: How is adequate penetration judged on a chest X-ray? | The vertebral bodies should just be visible behind the heart.
+Q: What is the silhouette sign? | Loss of a normal border between soft tissue and lung when adjacent lung becomes opaque.
+Q: Loss of the left heart border points to consolidation in which part of the lung? | The lingula.
+Q: What does a pneumothorax look like on a chest X-ray? | A visible lung edge with no lung markings beyond it.
+Q: Should a tension pneumothorax wait for an X-ray? | No: it is a clinical diagnosis.
+Q: What is the "sail sign" on a chest X-ray? | A sign behind the heart of left lower lobe collapse.
+Q: What are the X-ray features of pulmonary oedema? | Cardiomegaly, upper lobe venous diversion, Kerley B lines, bat's-wing shadowing and effusions.
+Q: What is "satisfaction of search"? | Stopping after the first abnormality, so a second finding is missed.
 
 ## Presenting a patient and documenting care
 LV: Clinical · Foundation
@@ -731,4 +891,14 @@ M2#medicine-u02-17-q2@2: You realise an entry you wrote yesterday contains a wro
 TF1#medicine-u02-17-q3@1: A case presentation should open with a one-sentence summary of the patient and their presenting problem. | true | The opening sentence frames the problem so the listener can interpret what follows.
 M3#medicine-u02-17-q4@3: A junior doctor calls a registrar and lists 10 minutes of observations without saying what they want. What is the main risk? | The urgency and the request are unclear, so the registrar may not attend in time | The registrar will have too much information to make a diagnosis | Observations should never be shared by phone | There is no risk if all observations are correct | Without a clear assessment and recommendation the listener has to infer the concern, and escalation can fail; SBAR puts the request explicitly.
 SA3#medicine-u02-17-q5@2,3: Write an SBAR call for a 70-year-old surgical patient with a NEWS2 of 7, suspected sepsis and falling urine output, and explain why each part matters. | Situation: "I'm Dr X, FY1 on ward 5. I'm calling about Mr Y, 70, two days after bowel resection; his NEWS2 is 7 and I think he has sepsis." Background: surgery, comorbidities, current fluids and antibiotics. Assessment: RR 26, SpO₂ 93% on air, BP 92/60, HR 118, temperature 38.6, lactate 3.2, urine output under 0.5 mL/kg/h for 3 hours, abdomen tender; likely intra-abdominal sepsis or anastomotic leak. Recommendation: "Please review him within 15 minutes; I've started the sepsis pathway; should I request a CT?" Each part frames the problem, supplies context, shares your reasoning and states an explicit, time-bound request that is read back. | Situation with concern stated ; Relevant background ; Assessment with key findings and impression ; Explicit time-bound recommendation ; Explains purpose of each part
+Q: How should a case presentation open? | With a summary sentence: age, key background, presenting problem and duration.
+Q: What should a case presentation end with? | Your assessment, with the likely diagnosis and important differentials, and your plan.
+Q: What goes in the Situation part of SBAR? | Who you are, where you are, the patient and the problem in one line.
+Q: What goes in the Assessment part of SBAR? | Your ABCDE findings and what you think is happening.
+Q: What should you do with advice given on an SBAR call? | Read it back and document it.
+Q: Why is SBAR widely used in the NHS? | It puts the request up front and reduces ambiguity across hierarchies.
+Q: What are medical records for? | Continuity of care, communication between professionals, legal protection and audit.
+Q: What is a contemporaneous record? | A record made at the time of events or as soon as possible afterwards.
+Q: Why is writing "chest clear" without examining a problem? | Records must reflect what was actually done; inaccurate notes mislead colleagues and are a probity issue.
+Q: How should a presentation's length be tailored? | Full for a new patient on a post-take ward round; a few sentences for a review.
 `;

@@ -43,6 +43,16 @@ M2#gcse-u02-13-q2@2: A student says a cereal advert that uses rhyme and allitera
 TF1#gcse-u02-13-q3@1: The word literature originally meant writing or learning in general, not only imaginative writing. | true | Its narrower modern sense as imaginative writing of artistic value developed in the late eighteenth and nineteenth centuries.
 M3#gcse-u02-13-q4@3: Which is the strongest objection to defining literature purely as "writing a culture values"? | It cannot explain why some texts reward close reading more than others, so it may make value seem arbitrary | It is wrong because cultures never change their minds about value | It excludes all poetry from the definition | It was invented by the Russian Formalists, who rejected it | A purely institutional definition captures how canons are formed, but critics argue it leaves out the qualities of texts that make readers return to them.
 SA3#gcse-u02-13-q5@1,3: Evaluate the claim that literature is simply imaginative writing. | Imaginative content is common in literature, but the definition fails both ways: non-fiction such as sermons, essays and autobiography is studied as literature, and much imaginative writing is not. Formalist accounts add special, self-conscious language; institutional accounts add cultural value. A good answer combines them: literature is writing where form is part of meaning and which a community judges worth rereading. | Notes that imaginative writing is common in literature ; Gives non-fiction counter-examples ; Gives imaginative non-literary counter-examples ; Uses the Formalist or institutional definition ; Reaches a combined, reasoned judgement
+Q: What was the oldest sense of the word literature? | Simply "writing" or learning in general, from the Latin littera, a letter.
+Q: When did the modern sense of literature as imaginative writing valued for its art become settled? | In the late eighteenth and nineteenth centuries, as Raymond Williams shows in Keywords (1976).
+Q: What is defamiliarisation? | Shklovsky's term for art's power to make the familiar seem strange so that it is perceived afresh.
+Q: What did Terry Eagleton argue about defining literature by value? | That it makes literature partly an institution rather than a fixed property of texts.
+Q: Why is "Keep calm and carry on" not usually counted as literature despite its patterning? | It is a slogan with a practical aim, showing special language alone is not a sufficient definition.
+Q: What literary features does "Keep calm and carry on" use? | Alliteration on calm and carry, and a balanced two-part rhythm.
+Q: What mistake is made by thinking literature means only novels? | Poetry, drama, essays, letters, diaries, sermons and oral forms such as ballads are all studied as literature.
+Q: What working definition of literature does the lesson offer? | Writing in which how something is said is part of what is said.
+Q: Why can paraphrase never replace a literary text? | Changing the words changes the meaning, so a paraphrase loses what the original form contributes.
+Q: What does a value-based definition of literature lead to? | The question of whose values count, which leads to debates about the canon.
 
 ## Genre and form
 LV: Introductory · Foundation
@@ -82,6 +92,16 @@ M2#gcse-u02-14-q2@2: A novel opens in a crumbling castle during a storm, with a 
 MATCH1#gcse-u02-14-q3@1: Match each term to its definition. | Genre = A category of texts sharing conventions ; Form = The shape or structure of a text ; Mode = A broad manner that crosses genres ; Convention = A feature readers expect | These four terms are often confused; essays should use them precisely.
 M3#gcse-u02-14-q4@3: Why is *Northanger Abbey* often cited in discussions of genre? | It raises Gothic expectations and then deflates them, making genre itself the novel's subject | It was the first Gothic novel ever published in English | It follows every Gothic convention without variation | It abandons genre altogether and has no recognisable conventions | Austen parodies the Gothic, showing how much readers' responses depend on genre expectations.
 SA3#gcse-u02-14-q5@2,3: Explain how a writer can create meaning by subverting genre conventions. Use one example. | Conventions set up expectations; when a writer breaks one, the gap draws attention to what the convention assumed. In Northanger Abbey, Catherine expects Gothic horrors but finds a laundry list, so Austen mocks Gothic excess and warns against reading life as fiction. The subversion produces comedy and a comment on reading itself. | Defines convention and expectation ; Gives a specific example ; Explains what the reader expects ; Explains what the writer does instead ; Explains the effect or meaning of the subversion
+Q: What is genre? | A category of texts that share recognisable conventions, such as tragedy, Gothic, pastoral or detective fiction.
+Q: What is form in literature? | The shape or structure of a text, from novel, play or poem down to sonnet, ballad or five-act structure.
+Q: Using Frankenstein, show how form, mode and genre overlap. | It is a novel (form) in the Gothic mode, partly epistolary, drawing on scientific romance and tragedy.
+Q: Give two conventions of a Gothic novel. | A remote building, secrets and the threat of the supernatural.
+Q: How did Alastair Fowler describe genres? | As families whose members share some, but not all, features.
+Q: In Northanger Abbey, what does Catherine's suspicious roll of papers turn out to be? | A laundry list.
+Q: How does Austen use genre in Northanger Abbey? | She raises Gothic expectations and deflates them, satirising the genre and readers who confuse fiction with life.
+Q: What is the common mistake when writing about genre? | Listing genre features without saying why they matter; name the convention, then explain its effect or adaptation.
+Q: Why are genres described as historical? | They change and mix over time, as when the novel absorbed romance, letters, travel writing and history.
+Q: Why are genre hybrids often the most interesting to read? | The reader must work out which set of expectations applies.
 
 ## Author, narrator and reader
 LV: Introductory · Foundation
@@ -121,6 +141,16 @@ M2#gcse-u02-15-q2@2: In a first-person story, the narrator insists he is calm an
 TF1#gcse-u02-15-q3@1: A poem written in the first person must express the poet's own feelings. | false | The speaker is a constructed voice; poets often write in personae, and even autobiographical poems shape and select experience.
 M3#gcse-u02-15-q4@3: Which statement best represents Barthes's argument in "The Death of the Author"? | Meaning is produced in reading, so the author's intention cannot be the final authority | Authors' biographies are the only reliable guide to meaning | Readers should ignore the text and focus on the writer's life | Literature died when printing replaced oral storytelling | Barthes shifted authority from the writer to the reader and to language itself, rejecting the author as the guarantee of a single meaning.
 SA3#gcse-u02-15-q5@1,3: How far should a reader rely on an author's intentions when interpreting a text? | Intentions can illuminate a text, and context makes some meanings more plausible, but they are often unknown, and a text can mean more than its author planned. Wimsatt and Beardsley called judging by intention a fallacy; Barthes moved meaning to the reader. A balanced view uses the text as the main evidence and treats known intentions as one guide among others. | Explains the case for intention ; Explains that intentions are often unknowable or exceeded ; Refers to the intentional fallacy or Barthes ; Keeps the text as the main evidence ; Reaches a balanced judgement
+Q: What is the difference between the author and the narrator? | The author is the historical person who wrote the text; the narrator or speaker is the voice inside it.
+Q: What is an unreliable narrator? | A narrator whose account the reader is invited to question.
+Q: Who introduced the term implied author, and when? | Wayne Booth, in 1961.
+Q: In A Modest Proposal, why must the speaker not be read as Swift? | Reading the speaker as Swift would make the satire disappear; the implied author plainly rejects the proposal.
+Q: What does A Modest Proposal's horror expose? | The inhumanity of treating the poor as economic units.
+Q: How should you write about "I wandered lonely as a cloud" to avoid confusing poet and speaker? | Write "the speaker describes feeling lonely", then discuss how Wordsworth presents it.
+Q: What is intentionalism? | The view that meaning is what the author intended, recoverable from the text and context.
+Q: What did Roland Barthes argue in "The Death of the Author" (1967)? | That meaning is made in the act of reading, not fixed by the writer.
+Q: What do reader-response critics such as Iser and Fish study? | How readers actively fill gaps in a text.
+Q: What do exam boards mean by "the writer's methods"? | The choices visible in the text, not speculation about the author's private motives.
 
 ## Text and context
 LV: Introductory · Application
@@ -158,6 +188,16 @@ M2#gcse-u02-16-q2@2: A student writes a paragraph on Victorian child labour and 
 MS2#gcse-u02-16-q3@2: Which would be relevant contextual points for discussing Scrooge's "Are there no prisons?"? | The Poor Law Amendment Act of 1834 ; Malthusian ideas of surplus population | The exact number of pages in the first edition ; The colour of Dickens's front door | The workhouse system and Malthusian economics directly inform Scrooge's language; the others don't explain the quotation.
 M3#gcse-u02-16-q4@3: A critic reads *The Tempest* as a play about colonialism, though the term "colonialism" postdates Shakespeare. What is the best defence of this reading? | The play was written amid early English colonial ventures and its meanings legitimately grow through later contexts of reception | Shakespeare must have intended a modern theory of colonialism | Context of reception is irrelevant, so the reading needs no defence | Any reading is equally valid whether or not the text supports it | The play responds to accounts of the 1609 Bermuda shipwreck and New World voyages, and reception history shows how later readers have seen colonial power in it.
 SA3#gcse-u02-16-q5@2,3: Using one example, explain how context can deepen the interpretation of a text, and the risk of misusing it. | Context explains why details had force: Scrooge's "surplus population" echoes Malthusian debates and the 1834 Poor Law, so Dickens turns contemporary economic language against itself. The risk is replacing analysis with history or assuming the text simply reflects its time; context should be selected because it illuminates the words on the page. | Gives a specific context ; Links it to a specific detail or quotation ; Explains how it changes or deepens meaning ; Identifies a risk such as bolted-on context ; Concludes that context must serve the analysis
+Q: What is the context of production? | The circumstances in which a text was written: when, where, by whom, and its historical, social, political and religious setting.
+Q: What is literary context? | The genres, conventions and other texts a work responds to.
+Q: Why should biographical context be used with care? | Events in the author's life can mislead if they replace analysis of the text.
+Q: Why does context matter for reading texts? | Words and ideas change over time, so context shows the force a detail had.
+Q: What law would Dickens's 1843 readers link to Scrooge's mention of workhouses? | The Poor Law Amendment Act of 1834, which made relief depend on entering harsh workhouses.
+Q: What do Scrooge's rhetorical questions about prisons and workhouses show? | His indifference: the poor are a problem for institutions, not people.
+Q: What is "bolting on" context? | Adding background, such as "In Victorian times there was lots of poverty", in a separate paragraph not linked to the text.
+Q: How has The Tempest been reread since the 1950s? | In the light of colonialism.
+Q: How did Jean Rhys respond to Jane Eyre? | Wide Sargasso Sea (1966) reread the character Bertha Mason.
+Q: What does AQA's A-level objective AO3 ask candidates to show? | Understanding of the significance and influence of the contexts in which literary texts are written and received.
 
 ## The literary canon
 LV: Introductory · Evaluation
@@ -195,6 +235,16 @@ M2#gcse-u02-17-q2@2: An exam board adds a contemporary novel by a British Asian 
 TF1#gcse-u02-17-q3@1: Aphra Behn was a Restoration writer who was neglected for a long period and later recovered by feminist scholarship. | true | Woolf praised her in 1929 and feminist critics of the 1970s and after brought her back into print and teaching.
 M3#gcse-u02-17-q4@3: Which is the best criticism of Bloom's defence of the canon on purely aesthetic grounds? | Aesthetic judgements are themselves shaped by the tastes and access of those who made them, so they are not neutral | Bloom admitted that canonical works have no aesthetic value | Aesthetic value can be measured precisely, so a canon is unnecessary | Bloom wanted to remove Shakespeare from the canon | Critics argue that taste is formed historically and socially, so excluding politics from canon formation hides the politics already present in it.
 SA3#gcse-u02-17-q5@2,3: "The literary canon is simply a list of the greatest works." Evaluate this view. | Canonical works are often richly rewarding, and Eliot and Bloom defend a tradition of excellence. But canons are made by institutions (anthologies, syllabuses, publishers) and have excluded women and non-white writers, as recovery of Behn or Equiano shows. Greatness itself is judged by people with particular tastes. A balanced view sees the canon as a changing, debated selection rather than a neutral list. | Acknowledges the case for canonical value ; Explains the role of institutions ; Gives an example of exclusion or recovery ; Questions the neutrality of aesthetic judgement ; Reaches a balanced judgement
+Q: What is the literary canon? | The body of works treated by a culture and its institutions as major and worth teaching.
+Q: What did the word canon first mean? | The books accepted as genuine scripture.
+Q: What does the GCSE subject content set by the Department for Education (2013) require students to study? | A Shakespeare play, a nineteenth-century novel, Romantic poetry and British fiction or drama since 1914.
+Q: What did T. S. Eliot argue in "Tradition and the Individual Talent" (1919)? | That each new work is understood in relation to the whole tradition.
+Q: What did Harold Bloom's The Western Canon (1994) defend? | Aesthetic value against political selection of texts.
+Q: What did postcolonial and Black critics argue about the canon? | That it centred white, Western writers.
+Q: What is recovery in literary study? | Scholarly work that brings neglected writers back into print and study.
+Q: Name three writers recovered into the canon since the 1970s. | Aphra Behn, Mary Wollstonecraft, Olaudah Equiano and Mary Seacole.
+Q: How did Virginia Woolf celebrate Aphra Behn in A Room of One's Own (1929)? | As the first Englishwoman to earn her living by writing.
+Q: Why is "canonical" not the same as "objectively best"? | It means valued and taught by particular institutions, for reasons that can be examined.
 
 ## Close reading: a method
 LV: Introductory · Application
@@ -234,6 +284,16 @@ SEQ1#gcse-u02-18-q2@1: Put the steps of the close-reading method in order. | Rea
 M2#gcse-u02-18-q3@2: Which sentence is the best close reading of "Marley was dead: to begin with"? | The blunt monosyllable "dead" and the colon create a deliberate pause, while the chatty "to begin with" adds comedy that unsettles the death | There is a colon in the sentence, which is punctuation | The sentence is short, which is a technique writers use | Dickens was sad when he wrote this because Marley was his friend | The best answer names features, explains their effect and connects them to meaning; the others feature-spot or speculate about biography.
 M3#gcse-u02-18-q4@3: A student writes: "The poet uses lots of imagery to make it interesting." What would most improve it? | Identify a specific image, say what it suggests and link it to the poem's meaning | Add more technical terms to the sentence | Replace "imagery" with "figurative language" | Remove the analysis and summarise the plot instead | Precision and explanation of effect are what turn a vague comment into analysis.
 SA3#gcse-u02-18-q5@2,3: Close read this line from Sonnet 18: "Shall I compare thee to a summer's day?" | The opening question invites the comparison while doubting it: summer is conventional praise, but the question form suggests the speaker will find it inadequate, as the sonnet goes on to argue that summer fades while the beloved, preserved in verse, will not. The regular iambic rhythm and gentle sibilance create a calm, confident tone. | Comments on the question form ; Explains the conventional comparison ; Links to the poem's argument about time or art ; Comments on rhythm or sound ; Connects technique to meaning
+Q: What is close reading? | Detailed analysis of a short passage to show how its language and form create meaning.
+Q: Besides I. A. Richards, who made close reading central to English teaching? | The American New Critics.
+Q: What is the first step of the close-reading method? | Read for the gist: what is happening, who is speaking, to whom, where and when.
+Q: What should you notice in the second step of close reading? | Striking words, images, repetitions, shifts, oddities and patterns of sound or structure.
+Q: What three questions should every close-reading observation answer? | What is the technique, what is its effect, and why does it matter to the passage's meaning?
+Q: In "Marley was dead: to begin with", what does the colon do? | It creates a pause that sets up the qualifying phrase "to begin with".
+Q: Why does the opening of A Christmas Carol insist on Marley's death? | It prepares for his ghost, mixing comedy with the supernatural.
+Q: How long should quotations be in close reading? | Short, precise fragments.
+Q: Why should you read a passage aloud when close reading? | Rhythm and sound are evidence too.
+Q: Besides language, what structural features should close reading notice? | Where a passage turns, what comes first and last, and what is repeated.
 
 ## Diction and register
 LV: Introductory · Application
@@ -269,6 +329,16 @@ M2#gcse-u02-19-q2@2: A narrator describes a house as "a hovel" rather than "a co
 TF1#gcse-u02-19-q3@1: Register refers to the level of formality and the kind of language used in a particular situation. | true | Formal, informal, technical, archaic and dialect are all registers.
 M3#gcse-u02-19-q4@3: Why is the final Latin phrase in "Dulce et Decorum Est" so effective? | Its elevated, classical register clashes with the poem's brutal physical diction, exposing patriotic rhetoric as a lie | It is the only part of the poem that rhymes | Latin was the everyday spoken language of soldiers in 1917 | It softens the poem's ending with a comforting message | The contrast between registers is the poem's argument: lofty language conceals the reality of war.
 SA3#gcse-u02-19-q5@2,3: Explain how a writer can use a shift of register to create meaning. Use one example. | A shift of register juxtaposes two kinds of language and so makes us judge one by the other. In Dulce et Decorum Est Owen moves from concrete, colloquial, ugly diction of the gas attack to the formal Latin of Horace; the clash makes the patriotic phrase sound hollow, so the shift carries the poem's anti-war argument. | Defines register ; Identifies both registers in the example ; Quotes or refers precisely ; Explains the effect of the contrast ; Links it to the text's meaning
+Q: What is diction? | A writer's choice of words.
+Q: What do "slim", "thin" and "skinny" show about connotation? | They denote similar things but connote approval, neutrality and criticism.
+Q: What key question does analysing diction ask? | Why this word and not a near-synonym?
+Q: What is lexis? | The vocabulary of a text as a whole.
+Q: How do Latinate and Anglo-Saxon words tend to differ in effect? | Latinate words such as magnificent often sound formal and abstract; Anglo-Saxon words such as bright sound plainer and more concrete.
+Q: Name three kinds of register. | Formal or informal, technical, archaic, colloquial or dialect.
+Q: Why do writers use register? | To characterise speakers and to shift tone.
+Q: What kind of diction does Owen use before the final Latin of "Dulce et Decorum Est"? | Concrete, physical and ugly, such as soldiers "Bent double, like old beggars under sacks".
+Q: What does the clash of registers in "Dulce et Decorum Est" expose? | That the elevated Latin is "the old Lie", hiding the reality the poem has shown.
+Q: What is the common mistake when writing about word choice? | Calling a word "effective" or "powerful" without saying what it connotes or why it matters.
 
 ## Imagery
 LV: Introductory · Foundation
@@ -304,6 +374,16 @@ M2#gcse-u02-20-q2@2: In a poem about a city, the speaker describes "the reek of 
 MATCH1#gcse-u02-20-q3@1: Match each image to its sense. | "the bells clanged" = Auditory ; "the sour wine" = Gustatory ; "rough bark under her palm" = Tactile ; "the scent of crushed mint" = Olfactory | Naming the sense precisely is the first step in analysing imagery.
 M3#gcse-u02-20-q4@3: Why is the development of blood imagery in *Macbeth* significant? | Its meaning shifts from heroism to guilt to madness, mapping the moral decline of the play | It shows that Shakespeare preferred violent plays to comedies | It appears only once, at the moment of the murder | It proves the play was written for children | Tracing how a recurring image changes meaning is a strong way to connect imagery to theme.
 SA3#gcse-u02-20-q5@2,3: Explain how one image pattern develops across a text you have studied and what it contributes. | In Macbeth blood first signifies valour (the captain's report), then guilt (Macbeth fears all Neptune's ocean cannot wash his hand) and finally madness (Lady Macbeth's "Out, damned spot"). The shift from her earlier "A little water clears us" to obsessive washing shows guilt she repressed returning. The pattern charts the cost of murder. | Identifies a recurring image ; Traces it at two or more points ; Quotes precisely ; Explains how its meaning develops ; Links to a theme
+Q: What is imagery? | Language that appeals to the senses, literally or figuratively.
+Q: What is the difference between literal and figurative imagery? | Literal imagery describes what is there; figurative imagery uses one thing to suggest another, as in metaphor or simile.
+Q: What is kinaesthetic imagery? | Imagery of movement or bodily tension.
+Q: What kinds of imagery dominate Keats's "To Autumn"? | Tactile and gustatory imagery, which makes the season's abundance physical.
+Q: What did Caroline Spurgeon argue in Shakespeare's Imagery (1935)? | That each Shakespeare play has dominant clusters of images.
+Q: What is an image cluster? | A group of related images recurring through a text.
+Q: Name three image clusters that recur in Macbeth. | Blood, darkness, sleep and ill-fitting clothes.
+Q: What does blood mean in Act 1 of Macbeth? | Valour, as the bleeding captain reports Macbeth's heroic slaughter.
+Q: What does Macbeth fear about "all great Neptune's ocean" after the murder? | That it will not wash his hand clean, so blood now means guilt.
+Q: What is the common mistake with the word imagery? | Using it for any description; say which sense, which image and what it connotes.
 
 ## Metaphor, simile and personification
 LV: Introductory · Application
@@ -345,6 +425,16 @@ M2#gcse-u02-21-q2@2: A poem calls grief "a heavy coat I cannot take off". What i
 TF1#gcse-u02-21-q3@1: Personification gives human qualities to something non-human. | true | Keats personifies Autumn as a friend, a reaper and a gleaner.
 M3#gcse-u02-21-q4@3: Why is Donne's compass conceit often praised? | An unlikely technical image is developed precisely, so its strangeness becomes a witty, exact argument about love and absence | It uses a simple, familiar comparison that any reader would expect | It avoids comparison and states its meaning directly | It personifies the compass as a lover who speaks | The metaphysical conceit wins its effect by making a far-fetched comparison logically exact.
 SA3#gcse-u02-21-q5@2,3: Analyse an extended metaphor or conceit you have studied, using tenor and vehicle. | In A Valediction: Forbidding Mourning the tenor is the lovers' souls and the vehicle is a pair of compasses: the fixed foot leans after the roaming one and draws it home, so distance cannot break their circle. The vehicle's precision and geometry suggest a rational, perfect love above mere physical closeness; its oddity creates metaphysical wit. | Identifies tenor ; Identifies vehicle ; Explains the ground or shared qualities ; Comments on how the comparison develops ; Evaluates its effect
+Q: What is a simile? | An explicit comparison using "like" or "as", such as "I wandered lonely as a cloud".
+Q: What is a metaphor? | An implicit comparison in which one thing is said to be another, such as "All the world's a stage".
+Q: What is personification? | Giving human qualities to a non-human thing, as when Keats makes Autumn a "close bosom-friend of the maturing sun".
+Q: What is an extended metaphor? | A comparison developed over several lines or a whole poem.
+Q: In metaphor theory, what is the ground? | What the tenor and vehicle share.
+Q: Who named the tenor and vehicle of a metaphor? | I. A. Richards, in 1936.
+Q: In Donne's compass conceit, what does the fixed foot stand for? | The woman at home, who leans as the travelling man roams and draws him back.
+Q: What does Donne's compass conceit argue? | That the lovers' love is not broken by absence, as the compasses stay connected across distance.
+Q: What did Lakoff and Johnson argue in Metaphors We Live By (1980)? | That everyday thought is structured by conceptual metaphors such as ARGUMENT IS WAR and TIME IS MONEY.
+Q: Why can literary metaphor feel both strange and right? | It often refreshes or twists the ordinary conceptual metaphors we already think with.
 
 ## Symbol and motif
 LV: Introductory · Application
@@ -380,6 +470,16 @@ M2#gcse-u02-22-q2@2: In a novel, a caged bird appears whenever the heroine feels
 TF1#gcse-u02-22-q3@1: A conventional symbol is one whose meaning is shared across a culture, such as a dove for peace. | true | Conventional symbols draw on shared associations; literary symbols build meaning within a work.
 M3#gcse-u02-22-q4@3: Which claim about a symbol is best supported? | The red-room in *Jane Eyre* suggests confinement because Jane is locked in it as a punishment and recalls it at later moments of entrapment | The red-room symbolises Victorian railways because red was a fashionable colour | The red-room has one fixed meaning that every reader must accept | The red-room is not a symbol because it really exists in the story | Supported readings link the literal object, its context in the plot and its recurrence to the suggested meaning.
 SA3#gcse-u02-22-q5@2,3: Explain how a writer uses a symbol or motif to develop a theme. | In A Christmas Carol Marley's chain, made of cash-boxes and ledgers and forged "link by link", symbolises how greed imprisons the self, and warns Scrooge that his own chain is growing. With the recurring bells and clocks that mark time running out, the motif makes the novella's moral argument concrete: character is built by choices, and change is still possible. | Identifies the symbol or motif ; Describes it literally ; Gives textual evidence for symbolic meaning ; Explains the theme it develops ; Avoids unsupported over-reading
+Q: What is a symbol? | A concrete thing in a text that also suggests a further, often abstract, meaning.
+Q: What does the red-room in Jane Eyre suggest? | Confinement, punishment and terror, while also being a real room where Jane is locked.
+Q: What is a private or literary symbol? | One that gains its meaning within a particular work or writer, such as Blake's tiger or Gatsby's green light.
+Q: Give two conventional symbols. | The cross, the dove, a journey for life, or winter for death.
+Q: How does a motif gain significance? | Through repetition across the text.
+Q: Name three motifs in A Christmas Carol. | Chains, bells and clocks.
+Q: What do bells and clocks mark in A Christmas Carol? | The time Scrooge has left to change.
+Q: What is Marley's chain made of? | Cash-boxes, keys, padlocks, ledgers and purses: the tools of business.
+Q: What is over-reading a symbol? | Declaring an object symbolises something without textual support.
+Q: What evidence shows an object carries symbolic meaning? | Repetition, emphasis and characters' reactions to it.
 
 ## Tone and mood
 LV: Introductory · Application
@@ -418,6 +518,16 @@ M2#gcse-u02-23-q2@2: A narrator describes a battlefield in short, flat sentences
 TF1#gcse-u02-23-q3@1: Tone and mood always match in a literary text. | false | A calm tone can create a disturbing mood, as in Swift's satire or understated war writing.
 M3#gcse-u02-23-q4@3: Why is the final image of "lone and level sands" important to the tone of "Ozymandias"? | Its quiet, flat language deflates the king's boast, completing the poem's ironic tone | It shows the traveller admires Ozymandias's achievements | It introduces a cheerful tone of hope for the future | It repeats the king's commanding voice to confirm his power | The movement from arrogant command to empty desert is the poem's irony: power does not last.
 SA3#gcse-u02-23-q5@2,3: Analyse how tone shifts in a text you have studied and explain the effect. | In Ozymandias the traveller's neutral description gives way to the king's imperious inscription, then to the flat "Nothing beside remains" and "lone and level sands". The shift from arrogance to emptiness, reinforced by alliteration and calm rhythm, creates irony at the tyrant's expense: the boast now proves the opposite of what it meant. | Identifies the tones before and after ; Locates the shift precisely ; Analyses language creating each tone ; Explains the effect ; Links to the text's meaning
+Q: What is tone? | The attitude of a text's voice towards its subject or reader.
+Q: What is mood? | The atmosphere or emotional effect a passage creates for the reader.
+Q: What does elegiac mean? | Mournful and reflective, in the manner of an elegy.
+Q: How can a calm narrating tone intensify horror? | The contrast between a flat tone and a horrifying event heightens the horror, as in A Modest Proposal.
+Q: How does sentence rhythm affect tone and mood? | Long, flowing sentences tend to calm; short, broken ones agitate.
+Q: How can sound create tone? | Soft consonants and long vowels contrast with harsh plosives.
+Q: What arrogant line appears on the inscription in "Ozymandias"? | "Look on my Works, ye Mighty, and despair!"
+Q: What tone results from the contrast between the boast and the desert in "Ozymandias"? | An ironic tone that mocks tyranny's claim to permanence.
+Q: Why avoid "happy" or "sad" to describe tone? | They are vague; precise terms such as nostalgic, elegiac, sardonic or indignant, backed by evidence, are better.
+Q: What should you say when tone changes in a text? | Where it changes, how it changes, and why.
 
 ## Syntax and sentence structure
 LV: Intermediate · Application
@@ -459,6 +569,16 @@ M2#gcse-u02-24-q2@2: Why does Dickens's run of verbless sentences about fog in *
 MATCH2#gcse-u02-24-q3@1: Match each feature to its example. | Inversion = Into the valley of Death rode the six hundred ; Parallelism = It was the best of times, it was the worst of times ; Minor sentence = Fog everywhere ; Asyndeton = I came, I saw, I conquered | Naming the structure precisely is the start of analysing its effect.
 M3#gcse-u02-24-q4@3: A narrator's sentences grow longer and more clause-heavy as she becomes anxious. What is the best interpretation? | Syntax mirrors her mind: accumulating clauses enact racing, uncontrolled thought | Long sentences always signal calm reflection, so she is relaxing | The change in syntax is accidental and has no effect | Long sentences are a sign the writer is less skilled | Syntax can enact a state of mind; the meaning of length depends on context.
 SA3#gcse-u02-24-q5@2,3: Explain how a writer uses syntax to create meaning in one passage you have studied. | Dickens opens A Tale of Two Cities with one long sentence built from parallel antitheses ("It was the best of times, it was the worst of times"). The repeated frame and paired opposites create balance and accumulation, presenting the revolutionary period as an age of extremes and announcing the novel's doublings of cities, classes and characters. | Identifies a syntactic feature precisely ; Quotes or refers accurately ; Explains its effect on pace or emphasis ; Links it to meaning ; Considers context of the passage
+Q: What is syntax? | The arrangement of words and phrases into sentences.
+Q: What is a simple sentence? | A sentence with one main clause, such as "Marley was dead."
+Q: What is a compound sentence? | Main clauses joined by a coordinating conjunction such as and, but or or.
+Q: What is a complex sentence? | A main clause with one or more subordinate clauses.
+Q: What is inversion? | Reversal of normal word order to emphasise a word or phrase, as in "Into the valley of Death / Rode the six hundred".
+Q: What is the difference in effect between asyndeton and polysyndeton? | Lists without conjunctions speed and accumulate; many "and"s slow and weigh.
+Q: What is parallelism? | The repetition of a grammatical structure for balance, emphasis or contrast.
+Q: What does the opening of A Tale of Two Cities suggest through parallel antitheses? | A period of extremes too large for simple judgement, preparing for a novel of doubles.
+Q: Why is it wrong to say every short sentence creates tension? | Short sentences can also create finality, bluntness, comedy or calm; context decides.
+Q: What can long sentences create? | Flow, accumulation or breathlessness.
 
 ## The sound of language
 LV: Introductory · Application
@@ -498,6 +618,16 @@ M2#gcse-u02-25-q2@2: "Only the stuttering rifles' rapid rattle" (Owen). What is 
 TF1#gcse-u02-25-q3@1: Assonance is the repetition of consonant sounds at the start of words. | false | That is alliteration; assonance repeats vowel sounds.
 M3#gcse-u02-25-q4@3: A student says the sibilance in a lullaby makes it "sinister". Why might this be weak analysis? | Sibilance has no fixed effect; in a lullaby the meaning suggests a soothing hush, not menace | Lullabies never contain sibilance, so the claim is factually wrong | Sibilance is always sinister, so the reading is the only correct one | Sound devices should never be discussed in poetry | Sound effects depend on context and meaning; assigning fixed effects to sounds is a common error.
 SA3#gcse-u02-25-q5@2,3: Analyse how sound devices reinforce meaning in a line or passage you have studied. | In Anthem for Doomed Youth Owen writes "Only the stuttering rifles' rapid rattle"; the alliterative r and clustered t sounds imitate machine-gun fire, and "stuttering" is onomatopoeic. The harsh cacophony replaces the church bells the dead will never have, so the sound enacts the poem's bitter contrast between ceremony and mechanised death. | Identifies devices precisely ; Quotes accurately ; Explains the sound effect ; Links sound to meaning ; Places it in the context of the text
+Q: What is alliteration? | Repetition of initial consonant sounds, as in "The fair breeze blew, the white foam flew".
+Q: What is assonance? | Repetition of vowel sounds in nearby words, as in "the long day wanes".
+Q: What is sibilance? | Repeated s and sh sounds.
+Q: What is onomatopoeia? | A word that imitates the sound it describes, such as buzz, crack or murmur.
+Q: What is the difference between euphony and cacophony? | Euphony is pleasant, flowing sound; cacophony is harsh, jarring sound, often from plosives.
+Q: Which consonants are plosives? | p, b, t, d, k and g.
+Q: How does Pope make the line about Ajax's rock "labour"? | Clustered consonants and stresses make the line hard to say quickly, so the words move slow.
+Q: What does "stuttering" add in "Anthem for Doomed Youth"? | It is onomatopoeic for gunfire and also suggests speech that cannot get its words out.
+Q: How does the sound of Dickens's list describing Scrooge reflect his greed? | Its harsh participles, heavy with consonant clusters, make his greed sound as grating as it is.
+Q: Why is it weak to say sibilance always sounds sinister? | The same s sounds can be soothing, whispering or hissing; the meaning of the words decides.
 
 ## Ambiguity and multiple meanings
 LV: Intermediate · Evaluation
@@ -535,6 +665,16 @@ M2#gcse-u02-26-q2@2: In a poem, "lie" appears in a line about a lover lying in b
 TF1#gcse-u02-26-q3@1: In literary analysis, ambiguity is always a weakness the writer should have avoided. | false | Literary ambiguity is often deliberate and productive, enriching meaning.
 M3#gcse-u02-26-q4@3: Two critics disagree whether a novel's ghost is real or imagined by the governess. What is the strongest essay approach? | Present the evidence for each reading and argue whether the text sustains or resolves the ambiguity | Choose one reading and ignore the other | Say the question is unanswerable and move on | Find out what the author ate while writing | Henry James's *The Turn of the Screw* (1898) is the classic case; good essays weigh evidence for both readings.
 SA3#gcse-u02-26-q5@2,3: Explain how a writer uses ambiguity in one passage, and evaluate the alternative readings. | Macbeth's "If it were done when 'tis done" plays on "done" as performed and finished: he wishes the murder could end with the act. One reading stresses practical calculation; another hears fear of moral consequence, which his later speech on judgement "here" and pity confirms. The second is stronger, but the ambiguity shows his divided mind. | Identifies the ambiguous word or element ; Explains both meanings ; Gives evidence for each ; Judges between them or explains why both stand ; Links to character or theme
+Q: What is ambiguity in literature? | The capacity of language to carry more than one meaning at once.
+Q: How does literary ambiguity differ from ambiguity in everyday writing? | In everyday writing it is a fault; in literature it is often a resource.
+Q: What is polysemy? | A word's having several related meanings.
+Q: What is a pun? | A play on words exploiting two meanings or similar sounds.
+Q: What does Mercutio's "grave man" pun achieve at his death? | It keeps his wit alive at the moment of death.
+Q: What is syntactic ambiguity? | A sentence that can be parsed in two ways.
+Q: Give an example of ambiguity of character or situation. | Whether the ghosts in a story are real or imagined, or whether a narrator is reliable.
+Q: What are the two meanings of "done" in Macbeth's "If it were done when 'tis done"? | Performed and finished: he wishes the murder could be over once committed.
+Q: How should an essay handle an ambiguity? | Present both readings with evidence, then argue which is stronger or explain why the text keeps both.
+Q: Why is "it could mean anything" not analysis? | Every reading needs support from the text; listing meanings without evidence is weak.
 
 ## Irony
 LV: Intermediate · Application
@@ -573,6 +713,16 @@ M2#gcse-u02-27-q2@2: In a play, a character boasts that nothing can harm him whi
 TF1#gcse-u02-27-q3@1: Austen's statement that a rich single man "must be in want of a wife" is meant to be taken entirely at face value. | false | The overstatement signals irony: it is families who want such men for their daughters.
 M3#gcse-u02-27-q4@3: What is the main effect of the narrator's irony at the opening of *Pride and Prejudice*? | It allies the reader with the narrator's critical view of a marriage market driven by money | It shows the narrator believes all rich men want wives | It makes the reader sympathise uncritically with Mrs Bennet | It warns that the novel will be a tragedy | The ironic opening sets up the novel's satirical perspective on marriage and money.
 SA3#gcse-u02-27-q5@2,3: Analyse how a writer uses irony to shape the audience's or reader's judgement. | In Macbeth Duncan regrets that there's "no art / To find the mind's construction in the face" just as Macbeth enters; the audience knows Macbeth's murderous thoughts, so the dramatic irony makes Duncan seem tragically trusting and Macbeth sinister. It also builds the play's theme of appearance and reality ("Fair is foul"). | Identifies the type of irony ; Explains both levels of meaning or knowledge ; Quotes or refers precisely ; Explains the effect on judgement ; Links to a theme
+Q: What is irony? | A gap between what is said and what is meant, or between what is expected and what happens.
+Q: What is verbal irony? | Saying one thing while meaning another, often the opposite.
+Q: How does sarcasm relate to verbal irony? | Sarcasm is a cruder form of verbal irony.
+Q: What is situational irony? | An outcome contrary to what was expected or intended.
+Q: What is cosmic irony? | The sense that fate or the universe mocks human hopes, common in Hardy.
+Q: What is the surface meaning of the opening line of Pride and Prejudice? | That rich single men are looking for wives.
+Q: What is the real meaning of Austen's "truth universally acknowledged"? | Families want rich single men for their daughters; the "truth" is a social fantasy.
+Q: What signals the irony in Austen's opening sentence? | The grand phrase "universally acknowledged" is too large for the trivial claim, a mock-heroic overstatement.
+Q: What three steps does analysing irony involve? | State both levels, show the signals revealing the gap, and explain what the irony makes the reader think or feel.
+Q: What is the common misuse of the word ironic? | Using it to mean merely coincidental or unfortunate, without a meaningful gap.
 
 ## Intertextuality and allusion
 LV: Intermediate · Application
@@ -611,6 +761,16 @@ M2#gcse-u02-28-q2@2: In *Frankenstein*, the creature compares himself to Satan a
 TF1#gcse-u02-28-q3@1: *Wide Sargasso Sea* retells part of the story of *Jane Eyre* from the perspective of Rochester's first wife. | true | Rhys gives Bertha Mason (Antoinette) a history and voice, changing how readers see Brontë's novel.
 M3#gcse-u02-28-q4@3: Why is reading *Wide Sargasso Sea* often said to change how we read *Jane Eyre*? | It foregrounds race, empire and Bertha's perspective, which Brontë's novel marginalises, so the earlier text looks different | It proves that Brontë based her novel on Rhys's | It shows that Jane Eyre is set entirely in the Caribbean | It removes any need to read Jane Eyre at all | Rewritings create a dialogue in which each text reframes the other.
 SA3#gcse-u02-28-q5@2,3: Explain how an allusion or rewriting changes the meaning of a text you have studied. | Frankenstein's subtitle, The Modern Prometheus, makes Victor a figure of transgressive ambition who seizes a godlike power and is punished. The creature's reading of Paradise Lost lets him cast himself as an abandoned Adam and a rebellious Satan, so the allusions build sympathy for him and turn the novel into a debate about a creator's responsibility. | Identifies the allusion or source ; Explains what it refers to ; Explains associations imported ; Shows how meaning changes ; Supports with textual detail
+Q: What is an allusion? | A brief, often indirect reference to another text, person or event.
+Q: What is parody? | Imitation that exaggerates a style or text for comic or critical effect.
+Q: What is pastiche? | Imitation of a style, often affectionate, without mockery.
+Q: What is adaptation or rewriting? | Retelling a text in a new form or from a new perspective.
+Q: What does Frankenstein's creature compare himself to after reading Paradise Lost? | Both Adam and Satan.
+Q: What did Kristeva mean by calling every text "a mosaic of quotations"? | Every text is made from other texts and the language of its culture.
+Q: How does the broad sense of intertextuality differ from the narrow one? | Broadly it is a condition of all writing; narrowly it means meaningful relations between specific texts.
+Q: Whose story does Wide Sargasso Sea tell? | That of Bertha (Antoinette) Mason, Rochester's Creole first wife, in Jamaica and Dominica.
+Q: Which questions does Wide Sargasso Sea make central to reading Jane Eyre? | Race, empire and the ownership of women's money.
+Q: What should you say when you spot an allusion? | What it refers to, what associations it imports, and how they change the passage's meaning.
 
 ## Using quotations as evidence
 LV: Introductory · Application
@@ -648,6 +808,16 @@ M2#gcse-u02-29-q2@2: A student quotes four full lines of a poem and writes "This
 SEQ1#gcse-u02-29-q3@1: Put these in the order of a strong analytical sentence. | Make a point about the text ; Embed a short quotation ; Analyse a specific word or technique ; Link to the wider argument | Point, evidence, analysis and link is the standard pattern.
 M3#gcse-u02-29-q4@3: Which analysis of "solitary as an oyster" goes furthest? | The simile suggests a hard shell sealing Scrooge off, while the pearl an oyster may hide hints at the goodness the story will reveal | The simile compares Scrooge to an oyster, which is a type of shellfish | The phrase shows that Scrooge is lonely because he is solitary | Dickens liked seafood and so used an oyster | The best answer explores connotations and links them to the arc of the novella.
 SA3#gcse-u02-29-q5@2,3: Rewrite this weak sentence into strong analysis: "Lady Macbeth is evil. 'Come, you spirits.' This shows she is evil." | Lady Macbeth's invocation "Come, you spirits / That tend on mortal thoughts, unsex me here" shows her deliberately summoning dark powers; the imperative "unsex me" reveals she believes her womanhood is an obstacle to cruelty, which suggests the play links violence with a rejection of conventional femininity. | Embeds the quotation ; Quotes accurately with line break marked ; Analyses a specific word ; Avoids repeating the point ; Links to a wider idea or theme
+Q: What kind of quotations are best in a literature essay? | Short, precise ones rich enough to analyse; a word or phrase is often better than a whole sentence.
+Q: What quotations should you memorise for closed-book exams? | Brief, flexible quotations that serve several themes.
+Q: How can you keep grammar intact when embedding a quotation? | Adjust it with square brackets, as in Macbeth admits he has "[v]aulting ambition".
+Q: What does an ellipsis mark in a quotation? | Words omitted from the quotation, without changing the meaning.
+Q: How should longer verse quotations be set out? | As indented blocks.
+Q: Why must quotations be exact? | Accuracy matters, including the original spelling and punctuation.
+Q: What does Dickens's simile "solitary as an oyster" hint at beyond loneliness? | A hard shell sealing Scrooge off, but oysters can hold pearls, hinting at hidden value inside him.
+Q: What is the "quote sandwich" mistake? | Statement, long quotation, then "this shows…" repeating the statement, with no analysis of words.
+Q: How are long quotations handled in coursework and university essays? | Set as indented blocks without quotation marks and referenced to an edition, as style guides like the MHRA's require.
+Q: Is a quotation evidence or argument? | Evidence: introduce it in your own sentence, then analyse specific words to support your point.
 
 ## From annotation to argument
 LV: Intermediate · Evaluation
@@ -685,4 +855,14 @@ M2#gcse-u02-30-q2@2: Which is the strongest thesis on "How does Shelley present 
 TF1#gcse-u02-30-q3@1: Organising an essay technique by technique is usually the best way to build an argument. | false | Technique-by-technique essays describe features; argument-led paragraphs answer the question.
 M3#gcse-u02-30-q4@3: A student's annotations fall into three groups: images of light, images of fire, images of warmth. What is the best next step? | Ask what the groups suggest together and form a thesis, perhaps that light and warmth chart a character's moral change | Write one paragraph on each image without a connecting argument | Discard two groups and focus only on light | List all the images in the introduction | Clusters become paragraphs only when a thesis explains how they combine.
 SA3#gcse-u02-30-q5@2,3: Explain how you would turn annotations on a passage into an essay plan, using an example. | Annotate for the question, recording effects and patterns. Group notes by idea, for example Scrooge's cold imagery, comic exaggeration and the contrast with Fred. Ask what they suggest together to form an arguable thesis (Dickens makes Scrooge's coldness comic so redemption feels possible). Plan a paragraph per cluster, each advancing the thesis, with a conclusion linking to the wider text. | Annotates for the question ; Groups notes by idea ; Forms a debatable thesis ; Plans paragraphs that advance the argument ; Gives a specific example
+Q: What is annotation? | Notes on a text recording features, effects, patterns and questions.
+Q: What should you write beside a feature when annotating? | Its effect, not just its name.
+Q: Why note puzzles and questions when annotating? | What is surprising or difficult is often where the best argument lies.
+Q: Why keep the essay question beside the passage when annotating? | So you annotate for the task.
+Q: What is a thesis? | A clear, debatable claim that answers the essay question and organises the essay.
+Q: How should annotations be grouped to make paragraphs? | By idea, not by technique: three or four clusters become the paragraphs.
+Q: What three questions test a thesis? | Does it answer the question, could a sensible reader disagree, and can every paragraph be tied back to it?
+Q: What is usually enough for an exam essay plan? | Three or four ideas, each with two quotations.
+Q: What should an essay's conclusion do? | Return to the thesis and say what the argument has shown, not simply repeat it.
+Q: What is wrong with a technique-by-technique essay? | It describes features but never builds an argument.
 `;

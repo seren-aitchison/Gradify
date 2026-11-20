@@ -39,6 +39,16 @@ M2#investing-u01-01-q2@3: Priya needs £5,000 for university fees in 12 months. 
 TF1#investing-u01-01-q3@2: Money kept in a savings account can lose real value even though its pound value never falls. | true | If inflation is higher than the interest rate, the same pounds buy less over time.
 M3#investing-u01-01-q4@2,3: Which is the strongest reason a 25-year-old might invest part of their pension savings in shares rather than cash? | A long horizon allows time to recover from falls, and cash has historically lost ground to inflation over decades | Shares never lose value over ten years | Cash savings are not protected in the UK | Shares pay a guaranteed dividend | Long horizons let investors ride out volatility in exchange for higher expected real returns; shares can still fall over ten years and dividends are never guaranteed.
 SA3#investing-u01-01-q5@1,3: Evaluate the advice "always invest rather than save, because returns are higher". | It ignores purpose and time horizon. Higher expected returns come with risk of loss, so money needed within five years or for emergencies should be saved. Over long horizons investing has historically beaten cash after inflation, but there is no guarantee. A sound approach saves first and invests only long-term money the person can afford to see fall. | Expected returns are higher only on average and come with risk ; Short-term and emergency money belongs in savings ; Long horizons make investing more suitable ; Past returns do not guarantee future ones ; Reaches a balanced judgement
+Q: What does saving usually involve? | Putting money aside in a form that keeps its nominal value, usually a bank or building society account.
+Q: Which assets might an investor buy? | Shares, bonds, property, or funds that hold them.
+Q: Why are saving and investing described as complements rather than rivals? | Savings meet short-term needs and emergencies, while investments are for goals at least five years away.
+Q: What is real value? | What money can buy once inflation is taken into account.
+Q: How can cash lose value even though its pound amount stays the same? | If prices rise faster than the interest earned, the real value of the savings shrinks.
+Q: Which UK scheme protects savings, and what does it not protect investments against? | The FSCS protects savings up to a limit; nothing protects investments against market falls.
+Q: Which long-run studies show UK shares beating cash on average? | The Barclays Equity Gilt Study and Dimson, Marsh and Staunton's long-run data.
+Q: Sam needs a house deposit in two years. Should it be saved or invested? | Saved, because two years is too short to recover from a large market fall.
+Q: What decides whether a pot of money should be saved or invested? | The goal and the time horizon, not the amount.
+Q: Is the historical advantage of shares over cash guaranteed to continue? | No; its future size is debated, and past returns do not guarantee future ones.
 
 ## Budgeting and cash flow
 LV: Introductory · Foundation
@@ -75,6 +85,16 @@ NUM2#investing-u01-02-q2@2: Jo takes home £1,900 a month, spends £1,200 on ess
 M2#investing-u01-02-q3@1,2: Using the 50/30/20 rule on net income of £3,000 a month, how much would go to saving and debt repayment? | £600 | £1,500 | £900 | £300 | 20% of £3,000 is £600; 50% (£1,500) is needs and 30% (£900) is wants.
 M3#investing-u01-02-q4@3: A Londoner's rent and essentials take 65% of net pay. What is the best judgement about the 50/30/20 rule for them? | Treat it as a guide and adapt the shares, still aiming to save something regularly | Follow it exactly, because the percentages are fixed | Abandon budgeting, since the rule cannot work | Borrow to keep needs at 50% | Budget rules are heuristics; circumstances such as high housing costs mean the split must flex, but the habit of regular saving still matters.
 SA3#investing-u01-02-q5@1,3: Evaluate the claim that a budget is unnecessary for anyone who never goes overdrawn. | Avoiding an overdraft shows spending stays below income but not whether money is being saved deliberately or leaking on unplanned items. A budget reveals the surplus, plans for irregular costs and lets saving and investing be set first. Some people manage informally with automated saving, so the method matters less than tracking and planning. | Not going overdrawn is not the same as saving ; A budget reveals the surplus and where money goes ; Plans for irregular costs ; Automated saving can achieve similar results ; Reaches a balanced judgement
+Q: What is a budget? | A list of money coming in and going out over a period, usually a month.
+Q: How is a monthly surplus calculated? | Surplus = net income − total outgoings.
+Q: What does a negative surplus mean? | A deficit that needs fixing before saving or investing.
+Q: Give three examples of essential costs in a budget. | Rent or mortgage, council tax, energy, food, transport to work and minimum debt repayments.
+Q: What is discretionary spending? | Spending that could be cut or postponed without affecting essential needs, such as eating out or subscriptions.
+Q: What is the 50/30/20 rule? | Roughly 50% of net income to needs, 30% to wants and 20% to saving and debt repayment.
+Q: What is a zero-based budget? | A budget that gives every pound a job until income minus allocations equals zero.
+Q: Why might the 50/30/20 rule not fit someone in a high-rent area? | Their needs alone may take more than 50% of net income.
+Q: How should irregular costs such as car insurance be handled in a monthly budget? | Divide the annual cost by twelve and include it each month.
+Q: What evidence supports automating savings? | Paying yourself first increases saving, a finding behind UK workplace pension auto-enrolment.
 
 ## The emergency fund
 LV: Introductory · Foundation
@@ -111,6 +131,16 @@ NUM2#investing-u01-03-q2@2: Essential outgoings are £1,650 a month. What is a s
 M2#investing-u01-03-q3@1,3: Which is the most suitable home for an emergency fund? | An easy-access savings account with an authorised UK bank | A global equity index fund | A five-year fixed-rate bond | A cryptocurrency exchange account | Emergency money must be instantly available and stable in value; a five-year fix locks it up, and equities and crypto can fall sharply.
 M3#investing-u01-03-q4@3: Who most needs an emergency fund at the upper end of the usual range? | A self-employed parent whose household depends on their variable income | A retired person with a guaranteed pension covering all costs | A student living at home with no bills | A couple both in secure public-sector jobs with no children | Variable income and dependants raise both the chance and the cost of a shock, so a larger buffer is justified.
 SA3#investing-u01-03-q5@1,3: Evaluate keeping a large emergency fund (say twelve months of spending) instead of investing that money. | A larger buffer gives more security and peace of mind, especially with insecure income or dependants. But cash usually earns less than inflation plus a risk premium over the long run, so holding far more than needed has an opportunity cost. The right size balances the likelihood and cost of shocks against lost long-term growth; twelve months may suit some, not most. | Larger buffer increases security ; Cash has an opportunity cost against long-term investing ; Depends on income security and dependants ; Refers to inflation eroding cash ; Reaches a justified judgement
+Q: What is an emergency fund? | Easily accessible cash kept to cover unexpected costs or a loss of income.
+Q: Give three examples of shocks an emergency fund is meant for. | A broken boiler, a vet bill, a gap between jobs or illness.
+Q: What can happen without an emergency fund when a shock hits? | You may borrow on a credit card at high interest or sell investments after a fall, turning a dip into a permanent loss.
+Q: How is an emergency fund target calculated? | Essential monthly outgoings × number of months, typically three to six.
+Q: What minimum emergency fund does MoneyHelper suggest? | At least three months of essential outgoings.
+Q: Who should aim for a larger emergency fund? | The self-employed, those on variable incomes, single earners, people with dependants and homeowners facing repairs.
+Q: What is liquidity? | How quickly and cheaply an asset can be turned into cash without losing value.
+Q: How should someone start an emergency fund if money is tight? | Start small, building £500 to £1,000 first, which covers many common shocks.
+Q: What is the FSCS deposit protection limit from 1 December 2025? | £120,000 per person per banking group; check the FSCS for the current figure.
+Q: Is three to six months a rule that suits everyone? | No; it is a rule of thumb, and the ideal size is a personal judgement.
 
 ## Debt before investing
 LV: Introductory · Foundation
@@ -147,6 +177,16 @@ M2#investing-u01-04-q2@1: Kim has a £3,000 overdraft at 39.9% and expects 6% a 
 NUM2#investing-u01-04-q3@1: How much interest, in pounds, does repaying a £1,500 balance at 24% APR save over one year, using simple interest? | 360 | 1 | £ | £1,500 × 0.24 = £360 a year (simplified; card interest is actually charged monthly).
 M3#investing-u01-04-q4@3: A homeowner has a mortgage at 2% fixed and spare money each month. Which is the best evaluation? | Investing for the long term may be reasonable, since expected returns exceed 2%, but overpaying is risk-free and suits a cautious person | They must overpay the mortgage, because all debt must be cleared before investing | They must invest, because a mortgage is always good debt | Neither, because cash is always best | Low-rate debt is a judgement call: the expected investment return is higher but uncertain, and attitude to risk, tax wrappers and early repayment charges matter.
 SA3#investing-u01-04-q5@1,3: Evaluate the rule "never invest while you have any debt". | It is right for expensive and priority debt, where repayment gives a guaranteed high return and avoids serious consequences. Applied to all debt it is too strict: low-rate mortgages and income-contingent student loans can sensibly sit alongside long-term investing, especially workplace pensions with employer contributions. The rule should depend on the rate, the type of debt and risk tolerance. | Correct for high-interest debt ; Priority debts come first ; Too strict for low-rate or income-contingent debt ; Mentions employer pension contributions or opportunity cost ; Reaches a balanced judgement
+Q: How should a debt's cost be compared with investing? | Compare the debt's interest rate with the investment's expected return after tax and charges, remembering the debt saving is certain.
+Q: What is APR? | The yearly cost of borrowing including interest and compulsory fees, used to compare credit.
+Q: What is a priority debt? | A debt whose non-payment has severe consequences such as losing your home, energy supply or liberty.
+Q: Why do priority debts come first whatever their interest rate? | The consequences of not paying, such as eviction or enforcement, are serious.
+Q: Give three examples of expensive non-priority debt. | Payday loans, credit cards, store cards and unarranged overdrafts.
+Q: Can people invest while repaying cheaper debt? | Yes; many invest while repaying a moderate-rate mortgage or low-rate car loan on schedule.
+Q: Why is overpaying an English student loan often not worthwhile? | Repayments depend on income, not the balance, and any balance is written off after a set period.
+Q: What is the risk with a 0% balance transfer? | The rate often jumps when the promotion ends, and a missed payment can end the deal early.
+Q: Where can people get free debt advice in the UK? | MoneyHelper, StepChange and Citizens Advice.
+Q: What does investing while carrying a 22% credit card balance effectively mean? | Borrowing at 22% to invest.
 
 ## Protecting your finances: insurance and resilience
 LV: Introductory · Foundation
@@ -183,6 +223,16 @@ M2#investing-u01-05-q2@1,3: A single 24-year-old renter with no dependants and g
 TF2#investing-u01-05-q3@2: Insurance is usually good value for small, frequent costs that you could easily afford to pay yourself. | false | Premiums include the insurer's costs and profit, so insuring small predictable costs usually costs more than paying them from savings.
 M3#investing-u01-05-q4@3: A parent has death-in-service cover of four times salary. Which is the best evaluation of whether they need personal life insurance? | It depends on the size of the mortgage and family needs, and the cover ends if they leave the job | They never need more, since four times salary is always enough | Death-in-service makes all insurance pointless | They should cancel it and invest instead | Employer cover is valuable but tied to the job and may not match debts and dependants' needs over many years.
 SA3#investing-u01-05-q5@1,3: Evaluate the argument that a young family should invest rather than spend money on insurance premiums. | Investing builds wealth but cannot cover a catastrophe early on, when a main earner's death or long illness would leave large debts and lost income. Insurance pools that rare, high-cost risk for a modest premium, protecting the plan. The case for cover depends on dependants, debts and existing benefits; once those are covered, surplus can be invested. | Investments are too small early on to absorb a catastrophe ; Insurance suits rare high-cost risks ; Depends on dependants, debts and existing cover ; Protection and investing are complements ; Reaches a balanced judgement
+Q: How does insurance work? | Insurers pool many people's premiums to pay the claims of the few who suffer a loss.
+Q: What is a premium? | The regular payment made to an insurer in exchange for cover.
+Q: What is term assurance? | Life insurance that pays out only if the insured dies within a set period.
+Q: Which type of life cover can match a repayment mortgage? | Decreasing term assurance.
+Q: What does critical illness cover pay? | A lump sum on diagnosis of a listed serious illness.
+Q: Which type of motor insurance is a legal requirement? | Third-party motor insurance.
+Q: What cover might an employer already provide? | Death-in-service benefit, often a multiple of salary, and sick pay.
+Q: Why is Statutory Sick Pay alone often not enough? | It is a low flat weekly amount, far below most people's earnings.
+Q: What principle lets insurance work? | Pooling independent risks across many policyholders makes losses predictable in aggregate.
+Q: Who is likely to need substantial life cover and income protection? | A parent with a mortgage and dependants.
 
 ## Interest rates: AER, APR and the base rate
 LV: Introductory · Foundation
@@ -218,6 +268,16 @@ NUM2#investing-u01-06-q2@2: A savings account pays a nominal 6% a year with inte
 M2#investing-u01-06-q3@2: Which is the fairest way to compare two credit cards? | Compare their APRs, remembering you may be offered a rate above the representative APR | Compare the monthly minimum payments | Compare the AERs | Choose the one with the bigger credit limit | APR includes interest and compulsory fees on a common annual basis; the representative APR is not guaranteed to every applicant.
 M3#investing-u01-06-q4@3: A savings account advertises 5.5% AER including a 1.5% bonus for the first 12 months. What is the best evaluation? | The rate will drop to about 4% after a year, so compare the ongoing rate and be ready to switch | 5.5% is guaranteed for as long as the account is open | AER already strips out bonuses, so 5.5% is permanent | Bonus rates always make an account the best choice | Bonus rates are temporary; the AER shows the first year's rate, so savers must check what happens afterwards.
 SA3#investing-u01-06-q5@1,3: Explain how a rise in Bank Rate is likely to affect savers and borrowers, and why the effect is uneven. | Banks usually raise savings rates and variable borrowing rates, so savers earn more and borrowers on variable rates pay more. The pass-through is partial and delayed: banks may raise savings rates slowly, and people on fixed-rate mortgages are unaffected until the fix ends, while new borrowers face higher rates straight away. | Savers tend to earn more ; Variable-rate borrowers pay more ; Pass-through is partial and lagged ; Fixed-rate borrowers affected only when deals end ; Clear explanation of uneven effects
+Q: What is Bank Rate? | The Bank of England's main policy interest rate, the rate it pays on reserves banks hold with it.
+Q: How do changes in Bank Rate affect savers and borrowers? | They pass through, partly and with a lag, to savings rates and to mortgage and loan rates.
+Q: What is a gross interest rate? | The contractual rate before tax.
+Q: How is most UK savings interest taxed? | It is paid gross and taxed, if at all, through the Personal Savings Allowance.
+Q: What is the formula for AER? | AER = (1 + r/n)^{n} − 1, where r is the nominal annual rate and n the number of payments a year.
+Q: Why is AER slightly higher than the nominal rate when interest is paid monthly? | Interest earns interest during the year.
+Q: Which law requires credit to show an APR? | The Consumer Credit Act 1974, along with FCA rules.
+Q: What is a representative APR? | The APR at least 51% of successful applicants must receive, used in credit advertising.
+Q: Why can an advertised AER overstate long-term returns? | Introductory bonuses can inflate the AER for the first year only.
+Q: Why might you be charged more than a loan's representative APR? | It need only be offered to 51% of successful applicants, so others may get a higher rate.
 
 ## Simple and compound interest
 LV: Introductory · Foundation
@@ -257,6 +317,16 @@ NUM1#investing-u01-07-q3@1: What simple interest, in pounds, does £500 earn at 
 M2#investing-u01-07-q4@2,3: Ella invests £5,000 at age 25; Ben invests £5,000 at age 35. Both earn the same 6% a year until 65 (illustrative). What follows? | Ella ends with about 1.8 times Ben's amount, because her money compounds for ten more years | They end with the same amount, as they invested the same sum | Ben ends with more, because he invested later | Ella ends with exactly £3,000 more | 1.06^{10} ≈ 1.79, so ten extra years of compounding multiplies the final value by about 1.8.
 M3#investing-u01-07-q5@3: Which change would raise a 30-year projection the most for a typical saver: starting 10 years earlier, or earning 1 percentage point more a year? | Usually starting 10 years earlier, because time enters as an exponent | Always the extra 1 percentage point | They always have identical effects | Neither, since compounding only works on large sums | At around 5%, ten extra years multiplies the result by about 1.6, whereas one point more over 30 years multiplies it by about 1.3; time usually dominates.
 SA3#investing-u01-07-q6@2,3: Evaluate the statement "compound interest means investing will always make you rich if you wait long enough". | Compounding does make long horizons powerful, and the mathematics is exact for a fixed rate. But investment returns are not fixed: they vary, can be negative for years, and are reduced by fees, tax and inflation. Wealth also depends on how much is invested. Compounding is a strong force, not a guarantee. | Compounding is powerful over long periods ; Investment returns are uncertain and variable ; Fees, tax and inflation reduce real growth ; Amount contributed matters ; Reaches a justified judgement
+Q: What is simple interest? | Interest calculated only on the original principal.
+Q: What is the principal? | The original sum invested or borrowed.
+Q: What is the simple interest formula? | FV = P(1 + rt), with P the principal, r the annual rate and t the years.
+Q: What is £1,000 worth after 20 years at 5% simple interest? | £2,000.
+Q: What is £1,000 worth after 20 years at 5% compound interest? | About £2,653; the extra £653 is interest on interest.
+Q: About what factor does £1,000 at 5% grow by each decade? | About 1.63, so later decades add far more pounds than earlier ones.
+Q: How does compounding work against borrowers? | An unpaid credit card balance compounds monthly, so debt grows on itself.
+Q: Why do earlier regular contributions matter more? | Each contribution starts its own compounding, so earlier ones compound for longer.
+Q: Why is a fixed-rate compound projection not a forecast for investments? | Investment returns vary each year, so the formula is a smooth illustration, not a promise.
+Q: Why does a 5% average return with big swings end below a steady 5%? | Uneven returns compound to less than a steady return with the same average.
 
 ## Doubling time and the rule of 72
 LV: Introductory · Foundation
@@ -293,6 +363,16 @@ NUM2#investing-u01-08-q2@2: Using the exact formula, how many years does money t
 M2#investing-u01-08-q3@1: Roughly what annual rate is needed to double money in 6 years? | 12% | 6% | 72% | 3% | Run the rule backwards: 72 ÷ 6 = 12% a year, since 1.12^{6} ≈ 1.97.
 M3#investing-u01-08-q4@3: Why is "an investment fund doubles every 10 years at 7.2%" a misleading use of the rule? | Fund returns vary year to year, so the rule describes an average path, not a guaranteed doubling | The rule only works for debt | The rule needs simple interest | 7.2% is always too high to be realistic | The rule assumes steady compounding; a volatile fund may take much more or less time, and nothing is guaranteed.
 SA3#investing-u01-08-q5@2,3: Explain how the rule of 72 can help someone understand the long-run effect of inflation on cash savings, and its limitations. | At 3% inflation prices double in about 24 years, so cash earning nothing loses about half its purchasing power over that time; this makes an abstract rate concrete. But inflation varies year to year, the rule is approximate (more so at very low or high rates), and savings may earn interest that offsets some inflation, so it is a quick estimate, not a forecast. | Uses an example such as 72 ÷ 3 = 24 ; Links doubling of prices to halving of real value ; Notes inflation varies ; Notes the rule is an approximation ; Mentions interest partly offsetting inflation
+Q: What is doubling time? | The time for a quantity growing at a constant compound rate to double.
+Q: What is the exact doubling time formula? | ln 2 ÷ ln(1 + r), with r as a decimal.
+Q: How long does money take to double at 6% a year, by the rule of 72? | About 12 years.
+Q: What rate is needed to double money in 10 years? | About 7.2% a year.
+Q: Over what range of rates is the rule of 72 most accurate? | Roughly 6% to 10%.
+Q: What number gives a closer estimate at very low rates? | 69 or 70.
+Q: How fast does an unpaid credit card balance at 24% roughly double? | In about 3 years.
+Q: At 3% inflation, roughly how long until prices double? | About 24 years (exactly about 23.4).
+Q: How can the rule of 72 show the effect of fees? | Fees compound against you; a 1% annual charge over 72 years would halve a fund.
+Q: What common mistake is made with the rule of 72? | Applying it to simple interest, or to a volatile investment as if the rate were fixed.
 
 
 ## Inflation and real returns
@@ -333,6 +413,16 @@ NUM2#investing-u01-09-q2@2: An investment returns 7% in a year when inflation is
 M2#investing-u01-09-q3@2,3: Savings earn 2% while inflation is 5%. What happens to the saver's purchasing power over the year? | It falls by about 3% | It rises by 2% | It rises by 7% | It stays the same, because the balance went up | Real return ≈ 2% − 5% = −3%: more pounds, but they buy less.
 M3#investing-u01-09-q4@3: Which holding is most exposed to an unexpected rise in inflation? | A conventional fixed-rate bond held to maturity | An index-linked gilt | A diversified fund of global shares held for 20 years | A savings account whose rate rises with Bank Rate | Fixed payments lose real value when inflation rises unexpectedly; index-linked gilts adjust and variable rates can partly respond.
 SA3#investing-u01-09-q5@1,3: Evaluate the view that a cash ISA is the safest home for a 30-year retirement savings pot. | Cash is safest in nominal terms and protected by the FSCS, with no market falls. But over 30 years inflation can erode real value, and cash has historically delivered real returns near zero, whereas diversified shares have beaten inflation on average though with volatility. "Safe" depends on whether the risk that matters is short-term loss or failing to keep up with prices. | Cash protects nominal value ; Inflation erodes real value over long horizons ; Shares historically beat inflation with volatility ; Defines which risk matters for the goal ; Reaches a justified judgement
+Q: How does the ONS measure inflation? | With price indices tracking the cost of a representative basket of goods and services.
+Q: What does CPIH add to CPI? | Owner-occupiers' housing costs.
+Q: What is RPI still used for? | Some index-linked gilts and student loans, though it is no longer a National Statistic.
+Q: What is purchasing power? | What money can buy; inflation erodes it.
+Q: How high did UK CPI inflation reach in late 2022? | Above 10%.
+Q: What is the approximate real return formula? | Real return ≈ nominal return − inflation, good for small rates.
+Q: Why does unexpected inflation hurt conventional bonds? | They pay fixed amounts, so inflation cuts their real value.
+Q: Why have shares and property tended to outpace inflation over long periods? | Company earnings and rents tend to rise with prices.
+Q: How did UK shares perform during the high inflation of the 1970s? | They fell sharply in real terms.
+Q: What is the real return on a 3% gain when inflation is 5%? | A real loss.
 
 ## The time value of money
 LV: Introductory · Foundation
@@ -369,6 +459,16 @@ NUM2#investing-u01-10-q2@2: £3,000 is invested at 5% a year compound for 8 year
 M2#investing-u01-10-q3@2: Someone saves £200 at the end of every year for 3 years at 10% a year (illustrative). What is the value just after the third payment? | £662 | £600 | £660 | £726 | £200 × (1.1^{3} − 1) ÷ 0.1 = £200 × 3.31 = £662: £242 + £220 + £200.
 M3#investing-u01-10-q4@3: You can have £1,000 now or £1,100 in two years. If you could earn a safe 6% a year, which is worth more today? | £1,000 now, because £1,100 discounted at 6% for two years is about £979 | £1,100 later, because it is a bigger number | They are equal | It cannot be decided without knowing inflation exactly | £1,100 ÷ 1.06^{2} ≈ £979, less than £1,000, so the money now is worth more at that rate.
 SA3#investing-u01-10-q5@1,3: Explain why the time value of money matters when comparing a lump sum pension payment now with a larger income spread over future years. | Future payments must be discounted to today's value at a rate reflecting opportunity cost, inflation and risk before they can be compared with a lump sum. A larger total paid later may be worth less today if the discount rate is high, or more if it is low. The choice also depends on life expectancy, security of the payer and personal needs, so specialist advice is usually needed. | Future payments must be converted to present value ; Discount rate reflects opportunity cost, inflation and risk ; Larger total later is not necessarily worth more ; Mentions risk, longevity or security of payer ; Notes regulated advice for real pension decisions
+Q: What is the time value of money? | The principle that money available now is worth more than the same amount in the future.
+Q: What is opportunity cost in the time value of money? | Money received now could be invested to earn a return.
+Q: What does a required return or discount rate compensate for? | Opportunity cost, inflation and risk.
+Q: Why can cash flows at different dates not simply be added? | Each must be adjusted for time before they are comparable.
+Q: What is future value? | What a sum invested today will be worth at a future date at a given rate.
+Q: What is an annuity in finance? | A series of equal payments at regular intervals.
+Q: What is the formula for the future value of an annuity? | FV = PMT × [(1 + r)^{n} − 1] ÷ r, for equal payments at the end of each period.
+Q: What does saving £100 a month for 10 years at 0.4% a month grow to? | About £15,365, of which £12,000 is paid in.
+Q: Why do lenders charge interest? | Because of the time value of money: opportunity cost, inflation and risk.
+Q: Which economist's 1930 work set out the time value of money? | Fisher.
 
 ## Present value and discounting
 LV: Introductory · Application
@@ -408,6 +508,16 @@ NUM3#investing-u01-11-q3@1,3: An investment costs £2,000 and pays £1,200 at th
 M2#investing-u01-11-q4@2,3: Two investments each promise £1,000 in 5 years: one from the UK government, one from a small start-up. Which should have the higher present value? | The government promise, because it should be discounted at a lower rate for its lower risk | The start-up promise, because start-ups grow faster | They are equal, because the sums are equal | It depends only on inflation | Riskier cash flows need a higher discount rate, which gives a lower present value.
 M3#investing-u01-11-q5@3: Why are the prices of long-dated bonds more sensitive to interest-rate changes than short-dated ones? | Their cash flows are further away, so a change in the discount rate compounds over more years | They pay no interest | They are not traded | Short-dated bonds are always index-linked | Present value depends on (1 + r)^n; the larger n is, the more a change in r moves the result (see Duration and interest-rate risk).
 SA3#investing-u01-11-q6@1,3: Explain why rising interest rates tend to reduce the value of shares in companies expected to make most of their profits far in the future. | A share's value is the present value of expected future cash flows. When rates rise, investors require higher returns, so discount rates rise. Cash flows far in the future are divided by (1 + r) raised to a large power, so their present value falls more than near-term cash flows. Such companies' values therefore fall more, other things equal. | Value equals present value of future cash flows ; Rising rates raise discount rates ; Distant cash flows are discounted more heavily ; Conclusion that long-duration shares fall more ; Notes other things equal or other factors
+Q: What is discounting? | Compounding in reverse, converting a future sum into its value today.
+Q: What is present value? | The value today of a future cash flow, discounted at a required rate of return.
+Q: What is the discount rate? | The rate used to convert future cash flows into present values, reflecting time and risk.
+Q: What is net present value? | The sum of the present values of an investment's cash flows minus its cost.
+Q: What is the NPV formula? | NPV = Σ CF_{t} ÷ (1 + r)^{t} − initial cost.
+Q: What is £10,000 in 10 years worth today at 5%? | About £6,139.
+Q: What happens to present value as the wait gets longer? | It falls.
+Q: What does a negative NPV mean? | The investment is expected to earn less than the required return.
+Q: Why should a risky future payment be discounted more heavily? | A higher discount rate reflects the greater chance it may not be paid.
+Q: Which assets are especially sensitive to interest-rate changes, and why? | Long-dated bonds and shares of companies with distant profits, because their cash flows are discounted over many years.
 
 ## Setting financial goals
 LV: Introductory · Foundation
@@ -443,6 +553,16 @@ NUM2#investing-u01-12-q2@2: A goal is £9,000 in 3 years. Ignoring interest, how
 M2#investing-u01-12-q3@1,3: Which goal is most suitable for investing in a diversified share fund? | A pension pot needed in 30 years | Next month's rent | A holiday in six months | A wedding deposit due in a year | Only the 30-year goal has a horizon long enough to ride out market falls.
 M3#investing-u01-12-q4@3: Someone has no emergency fund, a credit card balance at 20% and wants to start investing for retirement. Their employer matches pension contributions. What is the best order of priorities? | Contribute enough to get the employer match, build a small emergency fund, clear the card, then build savings and other investing | Invest everything in shares first | Clear the card, then think about pensions in ten years | Save twelve months of spending before doing anything else | Employer matching is an immediate return worth taking; a buffer and clearing expensive debt come next. Exact order depends on circumstances, so this is a sensible framework, not a rule.
 SA3#investing-u01-12-q5@1,3: Evaluate the claim that setting financial goals is pointless because life is unpredictable. | Life does change, so goals must be reviewed, but without goals there is no basis for deciding how much to save, for how long, or how much risk to take. Goals also make saving more likely by making it concrete. Flexibility comes from regular review and an emergency fund, not from having no goals. | Acknowledges uncertainty ; Goals set saving rate, horizon and risk ; Specific goals improve follow-through ; Review and buffers handle change ; Reaches a justified judgement
+Q: What is a financial goal? | A specific amount needed by a specific date for a stated purpose.
+Q: What does SMART stand for in goal setting? | Specific, measurable, achievable, relevant and time-bound.
+Q: What counts as a short-term goal, and where should its money go? | Under about two years, such as a car or holiday; cash savings.
+Q: What counts as a medium-term goal, and where should its money usually go? | About two to five years, such as a deposit or wedding; usually cash, possibly low-risk investments near the longer end.
+Q: Give two examples of long-term goals. | Retirement and children's education.
+Q: How do you estimate the monthly saving needed for a goal? | Divide the target by the number of months available, before growth.
+Q: How much a month is needed to save £12,000 in 4 years, ignoring interest? | £250 a month.
+Q: How does inflation affect a savings target? | It raises the real target, so the amount may need to rise.
+Q: What is the suggested order of financial priorities? | Protection and an emergency fund, then expensive debt, then goals with free money such as employer pension contributions, then other goals.
+Q: What did Locke and Latham's research find about goals? | Specific, challenging goals tend to improve performance more than vague "do your best" goals.
 
 ## Time horizon and liquidity
 LV: Introductory · Foundation
@@ -478,6 +598,16 @@ M2#investing-u01-13-q2@2,3: Tom will need £20,000 in 18 months for a deposit. W
 TF1#investing-u01-13-q3@1: A two-year fixed-rate savings account is generally less liquid than an easy-access account. | true | The money is locked in until maturity, or can be withdrawn only with a penalty, if at all.
 M3#investing-u01-13-q4@3: Why might a daily-dealing fund holding commercial property be described as having a liquidity mismatch? | Investors can ask for cash daily, but the buildings take months to sell | Property is always overvalued | Daily dealing is illegal for property | The fund holds too much cash | The fund promises more liquidity than its assets provide, which is why such funds can suspend dealing.
 SA3#investing-u01-13-q5@2,3: Evaluate the statement "shares are safe if you hold them for long enough". | Longer holding periods have historically reduced the frequency of losses, because there is time to recover and earnings grow. But long-run losses still happen, the outcome depends on start and end dates, and the size of a long-run shortfall can be large. Shares become more suitable with time, not risk-free. | Longer horizons reduce frequency of losses ; Time to recover from falls ; Long-run losses still possible ; Outcome depends on timing ; Concludes suitable but not risk-free
+Q: What is time horizon? | The length of time until money is needed.
+Q: Why can longer horizons absorb more volatility? | There is more time to recover from falls.
+Q: How has the chance of real losses on UK shares changed with holding period? | One-year losses were common; 20-year losses much rarer, though not impossible.
+Q: Why do many pension funds move into lower-risk assets near retirement? | Because a long horizon shrinks to a short one as retirement approaches.
+Q: Give three examples of very liquid assets. | Easy-access cash, money market funds, large company shares and widely traded ETFs.
+Q: Why are fixed-term savings less liquid? | Money is locked until maturity, or there is a penalty for early access.
+Q: Give three examples of illiquid assets. | A house, private company shares, unlisted investments and pensions before the minimum pension age.
+Q: What is an illiquid asset? | An asset that is slow or costly to sell, such as property or unlisted shares.
+Q: What decides a fund's liquidity? | What it ultimately holds, not how it is wrapped.
+Q: Why is it debated whether shares become less risky over long horizons? | Losses become less frequent, but can be larger when they occur.
 
 ## Attitude to risk and capacity for loss
 LV: Introductory · Application
@@ -513,6 +643,16 @@ M2#investing-u01-14-q2@1,3: A wealthy retiree whose pension income covers all sp
 M2#investing-u01-14-q3@2: Why do many investors' answers on risk questionnaires change after markets fall? | Recent experience shifts how comfortable people feel with risk | Questionnaires are illegal in falling markets | Their capacity for loss always doubles | Funds become riskless after a fall | Stated tolerance is influenced by recent returns, so willingness is less stable than people expect.
 M3#investing-u01-14-q4@3: A 30-year-old with stable income, an emergency fund and a 35-year pension horizon panics and sells after a 20% fall. Which is the best evaluation? | Her capacity for loss was high but her real attitude to risk was lower than she thought, so the investment mix should reflect how she actually behaves | She was right, because shares always keep falling after 20% drops | Capacity for loss is the only thing that matters | Her portfolio was too low-risk | A portfolio that an investor abandons in a fall can do worse than a lower-risk one held calmly; behaviour must inform the risk level.
 SA3#investing-u01-14-q5@1,3: Explain why a regulated adviser must consider capacity for loss and not just attitude to risk. | Attitude measures willingness to accept falls, but someone can be willing yet unable to afford them, for example near retirement with no other assets. FCA suitability rules (COBS 9) require consideration of the client's financial situation, including ability to bear losses, so that a recommendation does not risk harm the client cannot absorb. | Defines attitude as willingness ; Defines capacity as ability to absorb loss ; Gives an example where they differ ; Refers to FCA suitability rules ; Links to avoiding consumer harm
+Q: What is attitude to risk? | An investor's willingness to accept uncertainty and falls in value.
+Q: What is need for risk? | How much return is required to reach a goal; if low-risk assets suffice, there is little need for more.
+Q: What does capacity for loss depend on? | Income, other assets, time horizon and dependants.
+Q: Which FCA rules cover suitability of advice? | The Conduct of Business sourcebook, COBS 9.
+Q: What must a regulated adviser assess under FCA suitability rules? | Knowledge and experience, financial situation including ability to bear losses, and objectives including risk tolerance.
+Q: Why does Ravi, 58 and "adventurous", suit a cautious to moderate approach? | His capacity for loss is low: his pension is his only savings and he retires in two years.
+Q: When do people often overestimate their risk tolerance? | When markets are rising; a crash reveals the truth.
+Q: Why does thinking in pounds rather than percentages help assess risk? | It makes potential falls concrete, such as £50,000 falling to £35,000.
+Q: What does selling after a fall do to a loss? | It turns a paper loss into a real one.
+Q: What common mistake is made with risk questionnaires? | Treating the score as the whole answer; they measure willingness, not capacity for loss or need.
 
 ## Cash savings accounts
 LV: Introductory · Foundation
@@ -551,6 +691,16 @@ NUM2#investing-u01-15-q2@2: A basic-rate taxpayer earns £1,300 of savings inter
 M2#investing-u01-15-q3@2,3: Lucy has £150,000 in cash. What is the most sensible way to keep it all within FSCS protection, assuming the £120,000 limit? | Spread it between banks with separate banking licences, staying under the limit at each | Put it all in one bank in two accounts | Put it in two brands of the same banking group | Keep it all in a current account | The limit applies per person per authorised institution, so separate licences are needed.
 M3#investing-u01-15-q4@3: Which is the best evaluation of Premium Bonds for an emergency fund? | Safe and accessible, but the "return" is random prizes, so a typical saver may earn less than the advertised prize fund rate | They pay a guaranteed interest rate | They are not backed by the government | They can never be cashed in | Premium Bonds are Treasury-backed and accessible, but most holders win less than the prize fund rate in a typical year, as prizes are unevenly distributed.
 SA3#investing-u01-15-q5@1,3: Evaluate whether a basic-rate taxpayer with £10,000 in savings needs a cash ISA. | With the Personal Savings Allowance of £1,000 (2025/26), £10,000 earning, say, 4% gives £400 interest, well under the allowance, so no tax is due either way. A cash ISA may still help if savings or rates grow, or if they become a higher-rate taxpayer, and ISA status persists. They should compare rates, since the best non-ISA rate may be higher. | Applies the Personal Savings Allowance ; Calculates or estimates interest ; Notes ISA benefit if circumstances change ; Compares rates ; Reaches a justified judgement
+Q: What is a notice account? | An account requiring, say, 30 to 120 days' notice to withdraw, usually with a slightly higher rate.
+Q: What is a fixed-rate bond in savings? | An account paying a fixed rate for a set term, usually with no access before maturity.
+Q: What is a regular saver account? | An account paying higher headline rates on limited monthly deposits for a year.
+Q: What is the annual ISA allowance in 2025/26? | £20,000 across all ISAs.
+Q: How do Premium Bonds pay out? | No interest; a monthly prize draw, backed by HM Treasury.
+Q: What is the Personal Savings Allowance for higher-rate and additional-rate taxpayers? | £500 for higher-rate and none for additional-rate taxpayers.
+Q: What is the starting rate for savings? | Up to £5,000 of tax-free interest that can apply to people with low other income.
+Q: How does HMRC collect tax on savings interest? | Interest is paid gross, and HMRC collects any tax due, often through the tax code.
+Q: What was the FSCS deposit limit before 1 December 2025? | £85,000.
+Q: How much tax does a higher-rate taxpayer pay on £800 of interest outside an ISA in 2025/26? | £120: £300 above the £500 allowance, taxed at 40%.
 
 ## Investing, speculation and gambling
 LV: Introductory · Application
@@ -589,4 +739,14 @@ NUM2#investing-u01-16-q2@2: A bet costs £5 and has a 10% chance of paying £40,
 M2#investing-u01-16-q3@1,3: Which is most clearly speculation rather than investing? | Buying a leveraged CFD on a share to profit from a price move this week | Buying a share fund to hold for retirement | Buying a gilt to hold to maturity | Paying into a workplace pension | A short-term leveraged price bet relies on price movement alone and magnifies losses.
 M3#investing-u01-16-q4@3: A friend argues that buying shares is "just gambling". What is the strongest response? | Over long periods shares are claims on productive businesses with a positive expected return, unlike games with a house edge, though individual shares can fail | Shares are risk-free, so they are nothing like gambling | Gambling has a positive expected return too | There is no difference at all | The sign and source of expected return differ; the risk is real but it is compensated risk, unlike a game designed to lose on average.
 SA3#investing-u01-16-q5@1,3: Evaluate whether buying a crypto-asset can be called investing. | It depends on the asset and the intention. Most crypto-assets produce no cash flows such as profits, rent or interest, so returns depend on someone paying more later, which is speculation; they are also largely unregulated and very volatile. Some argue they have value as a scarce store of value or network asset, but this is contested. The FCA warns that investors should be prepared to lose all their money. | Investing relies on productive cash flows ; Most crypto-assets have no cash flows ; Returns depend on future buyers ; Mentions volatility, regulation or FCA warning ; Reaches a balanced judgement
+Q: Where do investment returns from shares and bonds come from? | From productive activity: business profits for shares and interest from borrowers for bonds.
+Q: Why must gamblers lose on average? | The operator takes a margin, making it a zero-sum or negative-sum game.
+Q: What is speculation? | Buying an asset mainly to profit from short-term price changes rather than from its income or underlying value.
+Q: What is leverage? | Using borrowed money or derivatives to increase exposure, magnifying both gains and losses.
+Q: Give two examples of activities that lean towards speculation. | Short-term share trading, crypto-assets with no cash flows, and leveraged products such as CFDs.
+Q: What is the expected value of a £2 raffle ticket with a 1 in 1,000 chance of £1,000? | −£1 per ticket.
+Q: What must CFD providers disclose under FCA rules? | The percentage of their retail client accounts that lose money, typically a majority.
+Q: What do studies of retail day traders find? | Most lose money after costs, as Barber, Lee, Liu and Odean found in Taiwan.
+Q: Which promises are hallmarks of scams? | Promises of quick or guaranteed profits.
+Q: What common mistake is made about frequent share trading? | Calling it investing because it uses a share-dealing account; the activity and its odds are different.
 `;

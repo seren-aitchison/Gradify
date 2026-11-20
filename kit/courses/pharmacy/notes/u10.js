@@ -29,6 +29,16 @@ SRC: Joint Formulary Committee, British National Formulary: antidepressant drugs
 M1#pharmacy-u10-01-q1@1: How soon do antidepressants usually start to work? | Within 2 to 4 weeks | Within a few hours | After 6 months | Only after a year | Immediately on the first dose | Benefit builds over weeks, so early review supports adherence.
 M2#pharmacy-u10-01-q2@2: A 22-year-old starts sertraline. When should they be reviewed? | Within about 1 week | After 3 months | Only if they ask | After 1 year | Never, if no problems | Young people are reviewed early because suicide risk can rise at the start.
 M2#pharmacy-u10-01-q3@1: Which first-line option suits less severe depression for most people? | Guided self-help or behavioural activation | Lithium | An antipsychotic | Electroconvulsive therapy | A tricyclic antidepressant | NICE NG222 favours psychological interventions first for less severe depression.
+Q: What is less severe depression in NICE terms? | Depression with fewer or milder symptoms, covering what was formerly called mild and subthreshold depression.
+Q: What is behavioural activation? | A psychological therapy helping people re-engage with meaningful activities.
+Q: Are antidepressants routinely first line for less severe depression? | No, unless the person prefers them.
+Q: What treatment is offered for more severe depression? | An antidepressant combined with CBT, or either alone, by the person's choice.
+Q: When should most adults be reviewed after starting an antidepressant? | Within 2 to 4 weeks, or about 1 week if under 25 or at higher suicide risk.
+Q: How long should antidepressants continue after remission if relapse risk is high? | Longer, for example 2 years.
+Q: When can suicide risk rise with antidepressant treatment? | Early in treatment, especially in young people.
+Q: How can overdose risk be reduced when prescribing antidepressants for someone at high risk? | Limit quantities and choose drugs safer in overdose, avoiding tricyclics.
+Q: What should happen if someone with depression is at immediate risk of harm? | Refer urgently.
+Q: Name three options for less severe depression. | Guided self-help, group CBT, behavioural activation and exercise.
 
 ## Antidepressants
 S: Antidepressant classes differ in side effects, interactions and safety in overdose. Matching the drug to the person and managing switching and stopping well are central to good care.
@@ -59,6 +69,16 @@ SRC: MHRA, Drug Safety Update: citalopram and escitalopram, QT interval prolonga
 M1#pharmacy-u10-02-q1@1: Which antidepressant is most dangerous in overdose? | Amitriptyline | Sertraline | Mirtazapine | Citalopram at standard doses | Fluoxetine | Tricyclics cause arrhythmias and seizures in overdose.
 M2#pharmacy-u10-02-q2@2: An 80-year-old on sertraline becomes confused and drowsy. What should be checked? | Serum sodium | Lithium level | INR | Thyroid function only | Vitamin D | SSRIs can cause hyponatraemia, especially in older people.
 M3#pharmacy-u10-02-q3@1: How should an SSRI usually be stopped after long-term use? | Gradually tapered over weeks or longer | Stopped abruptly | Swapped for alcohol | Halved once and stopped | Replaced with St John's wort | NICE recommends gradual tapering to reduce discontinuation symptoms.
+Q: Name three SSRIs. | Sertraline, citalopram and fluoxetine.
+Q: Which SSRIs have QT-related dose limits? | Citalopram and escitalopram, with lower limits in older people.
+Q: What effect can SNRIs have on blood pressure? | They can raise it.
+Q: When is mirtazapine a useful choice? | When sleep and appetite are poor, as it causes sedation and weight gain.
+Q: Why are low-dose tricyclics used outside depression? | For pain.
+Q: What dietary issue applies to MAOIs? | Dietary tyramine, plus many drug interactions.
+Q: Name three drugs that can cause serotonin syndrome with an SSRI. | Tramadol, triptans, St John's wort, linezolid and MAOIs.
+Q: Which antidepressants especially need slow tapering? | Paroxetine and venlafaxine.
+Q: What are discontinuation symptoms? | Symptoms on stopping or reducing an antidepressant, such as dizziness, irritability and electric shock sensations.
+Q: What should someone on mirtazapine report? | A sore throat or fever, because of rare blood disorders.
 
 ## Anxiety disorders
 S: Generalised anxiety disorder, panic disorder and related conditions are common. Psychological therapies are first line, with SSRIs as the main medicines; benzodiazepines have a very limited, short-term role.
@@ -86,6 +106,16 @@ SRC: NICE NG215, Medicines associated with dependence or withdrawal symptoms | g
 M2#pharmacy-u10-03-q1@1: Which is a first-line medicine for generalised anxiety disorder? | Sertraline | Diazepam long term | Zopiclone | Haloperidol | Promethazine | NICE recommends an SSRI, often sertraline.
 M2#pharmacy-u10-03-q2@2: Why might someone feel more anxious in the first weeks of an SSRI? | SSRIs can briefly increase anxiety when started | The SSRI isn't absorbed | It's always a sign of overdose | It means the dose is too low | SSRIs never affect anxiety | SSRIs can briefly increase anxiety early on: warn people and start at a low dose.
 M2#pharmacy-u10-03-q3@1: Which statement about pregabalin is correct? | It's a Schedule 3 controlled drug | It's sold on general sale | It has no misuse potential | It's safe with opioids in all doses | It's a benzodiazepine | Pregabalin was controlled in 2019 because of misuse and deaths.
+Q: What is generalised anxiety disorder? | Excessive, persistent worry about everyday matters for at least several months.
+Q: What is stepped care? | Offering the least intensive effective treatment first, stepping up if needed.
+Q: Name two high-intensity psychological treatments for GAD. | CBT and applied relaxation.
+Q: When is pregabalin used for GAD? | If SSRIs or SNRIs aren't suitable.
+Q: Are benzodiazepines used for panic disorder? | No.
+Q: How long can benzodiazepines be used in an anxiety crisis? | Only short term, for example a few weeks.
+Q: What risk arises when pregabalin is taken with opioids? | Respiratory depression.
+Q: How should SSRIs be started in anxiety? | At a low dose, warning the person anxiety may briefly increase.
+Q: Which NICE guideline covers reducing long-term benzodiazepines? | NICE NG215.
+Q: Who should be referred to mental health services with anxiety? | People with severe symptoms, risk to self or significant functional impairment.
 
 ## Bipolar disorder and lithium
 S: Bipolar disorder involves episodes of mania or hypomania and depression. Lithium is the most effective long-term mood stabiliser but has a narrow therapeutic index, so monitoring and counselling are essential.
@@ -115,6 +145,16 @@ SRC: MHRA, Drug Safety Update: valproate, new safety and educational materials t
 M2#pharmacy-u10-04-q1@1: Which sign suggests lithium toxicity? | Coarse tremor with vomiting and confusion | Weight loss only | Improved mood | Dry skin only | A fine tremor alone | Coarse tremor, GI upset and confusion suggest toxicity.
 M2#pharmacy-u10-04-q2@2: Someone on lithium asks for ibuprofen. What's best? | Suggest paracetamol and avoid NSAIDs | Supply ibuprofen as usual | Supply naproxen instead | Supply ibuprofen gel in large amounts daily | Advise double fluids and supply ibuprofen | NSAIDs reduce lithium excretion and raise levels.
 M3#pharmacy-u10-04-q3@2: What are the MHRA restrictions on starting valproate? | Not in new patients under 55 unless two specialists agree | No restrictions in men | Only in children | It can be started by anyone | Only if the person is pregnant | The 2024 MHRA measures restrict new starts in people under 55.
+Q: What is a mood stabiliser? | A medicine reducing the frequency and severity of mood episodes, such as lithium.
+Q: What is used to treat acute mania? | An antipsychotic such as olanzapine, quetiapine, risperidone or haloperidol.
+Q: What happens to antidepressants in acute mania? | They are stopped.
+Q: Under what condition can valproate be used in women and girls who could become pregnant? | Only if the Pregnancy Prevention Programme conditions are met.
+Q: How often are lithium levels checked after the first year? | At least every 6 months, more often in some people.
+Q: Which tests are done every 6 months on lithium? | Renal and thyroid function and calcium.
+Q: How do dehydration and low salt intake affect lithium? | They raise lithium levels.
+Q: Why prescribe lithium by brand? | Preparations differ.
+Q: What do people starting lithium receive? | A patient information pack and record book.
+Q: Name three symptoms of lithium toxicity. | Coarse tremor, vomiting, diarrhoea, confusion and ataxia, with seizures if severe.
 
 ## Schizophrenia and psychosis
 S: Psychosis involves losing touch with reality through hallucinations, delusions or disordered thinking. Early treatment with antipsychotics, psychological therapy and support improves outcomes, and physical health needs active attention.
@@ -142,6 +182,16 @@ SRC: MHRA, Drug Safety Update: clozapine, reminder of potentially fatal risk of 
 M1#pharmacy-u10-05-q1@2: Why is blood monitoring mandatory with clozapine? | Risk of neutropenia and agranulocytosis | To check lithium levels | To measure cholesterol only | To monitor INR | It isn't required | Clozapine can cause severe falls in white cells.
 M2#pharmacy-u10-05-q2@1: Which clozapine side effect can be fatal if missed? | Severe constipation leading to bowel obstruction | Mild drowsiness | Dry skin | Increased appetite only | Vivid dreams | The MHRA warns of fatal intestinal obstruction.
 M2#pharmacy-u10-05-q3@2: A person stable on clozapine stops smoking. What's the risk? | Clozapine levels rise | Clozapine stops working | No change | Blood counts improve | They need a higher dose | Smoking induces CYP1A2; stopping raises clozapine levels.
+Q: What is psychosis? | Losing touch with reality through hallucinations, delusions or disordered thinking.
+Q: What is treatment-resistant schizophrenia? | Schizophrenia not responding to adequate trials of at least two antipsychotics.
+Q: Which non-drug treatments are used in psychosis? | Family intervention and CBT, with early intervention services.
+Q: Why does physical health need attention in severe mental illness? | People die years earlier, mainly from cardiovascular disease.
+Q: How often are blood counts done on clozapine? | Weekly for 18 weeks, then fortnightly to a year, then monthly.
+Q: When is myocarditis most likely with clozapine? | Early in treatment.
+Q: Name three serious clozapine effects besides blood disorders. | Myocarditis, severe constipation, seizures, hypersalivation, and weight gain with diabetes.
+Q: What must happen before someone can be given clozapine? | Registration with a monitoring service.
+Q: Which symptoms should people on clozapine report promptly? | Sore throat, fever, constipation or chest pain.
+Q: Why might clozapine levels rise after a change in smoking? | Stopping smoking removes CYP1A2 induction.
 
 ## Antipsychotics
 S: Antipsychotics block dopamine D2 receptors and other receptors. Their effects on movement, metabolism, the heart and prolactin differ between drugs, which shapes choice and monitoring.
@@ -169,6 +219,16 @@ SRC: Taylor DM, Barnes TRE, Young AH, The Maudsley Prescribing Guidelines in Psy
 M1#pharmacy-u10-06-q1@1: Which antipsychotic is most likely to cause extrapyramidal side effects? | Haloperidol | Quetiapine | Aripiprazole | Clozapine | Olanzapine at low dose | First-generation antipsychotics cause more EPSEs.
 M2#pharmacy-u10-06-q2@2: What monitoring is needed for olanzapine? | Weight, glucose and lipids | INR only | Lithium levels | Thyroid function only | Bone density only | Olanzapine has significant metabolic effects.
 M2#pharmacy-u10-06-q3@1: Which features suggest neuroleptic malignant syndrome? | Fever, rigidity and confusion | Mild nausea only | A rash and itch | Low blood sugar | Increased appetite | Fever, rigidity and confusion suggest neuroleptic malignant syndrome, a medical emergency.
+Q: What receptor do antipsychotics block? | Dopamine D2 receptors, among others.
+Q: What are extrapyramidal side effects? | Movement effects of dopamine blockade: dystonia, parkinsonism, akathisia and tardive dyskinesia.
+Q: Which second-generation antipsychotic raises prolactin? | Risperidone.
+Q: Which antipsychotic is more metabolically neutral? | Aripiprazole.
+Q: What is neuroleptic malignant syndrome? | A rare, life-threatening reaction with fever, rigidity, confusion and autonomic instability.
+Q: What are the metabolic effects of second-generation antipsychotics? | Weight gain, diabetes and raised lipids.
+Q: When are antipsychotics used in dementia? | Only for severe distress or risk, at the lowest dose for the shortest time, with review.
+Q: How can depot antipsychotics help? | They help adherence for some people.
+Q: What effect does smoking have on olanzapine levels? | Smoking lowers them.
+Q: Name three other adverse effects of antipsychotics. | Sedation, postural hypotension, QT prolongation and antimuscarinic effects.
 
 ## Attention deficit hyperactivity disorder
 S: ADHD affects attention, impulsivity and activity from childhood, often into adulthood. Medicines, mostly controlled drugs, work well alongside support, with monitoring of growth and the heart.
@@ -196,6 +256,16 @@ SRC: Joint Formulary Committee, British National Formulary: methylphenidate hydr
 M1#pharmacy-u10-07-q1@1: What is first-line medicine for ADHD in children? | Methylphenidate | Atomoxetine | Clonidine | Melatonin | Sertraline | NICE NG87 recommends methylphenidate first.
 M2#pharmacy-u10-07-q2@2: Why must modified-release methylphenidate be prescribed by brand? | Release profiles differ between brands | Generics are illegal | All brands are identical | It's only needed for adults | To reduce costs | Different MR profiles change symptom control during the day.
 M2#pharmacy-u10-07-q3@1: Which is monitored in children on stimulants? | Height and weight | Bone density | INR | Lithium levels | Hearing | Stimulants reduce appetite and can affect growth.
+Q: How do stimulants work in ADHD? | They increase dopamine and noradrenaline.
+Q: Who diagnoses ADHD and starts medicines? | Specialists.
+Q: What is used in children if methylphenidate isn't effective? | Lisdexamfetamine.
+Q: Name two non-stimulant ADHD medicines. | Atomoxetine and guanfacine.
+Q: What is first line for ADHD in adults? | Lisdexamfetamine or methylphenidate.
+Q: Why monitor growth in children on stimulants? | Stimulants suppress appetite and can affect growth.
+Q: What should be monitored besides growth and the heart on ADHD medicines? | Sleep and mood.
+Q: What should pharmacists do during ADHD medicine shortages? | Liaise with prescribers about alternatives rather than switching brands without review.
+Q: Which legal requirements apply to methylphenidate supply? | Schedule 2 CD prescription and storage requirements.
+Q: Besides medicines, what support helps ADHD? | Environmental and behavioural support.
 
 ## Dementia
 S: Dementia causes progressive decline in memory and thinking. Medicines can modestly help some symptoms, but avoiding harmful medicines matters as much as adding new ones.
@@ -223,6 +293,16 @@ SRC: Joint Formulary Committee, British National Formulary: dementia | guidance 
 M1#pharmacy-u10-08-q1@1: Which drug is used for moderate to severe Alzheimer's disease? | Memantine | Levodopa | Lithium | Haloperidol long term | Amitriptyline | Memantine is an NMDA antagonist used in moderate to severe disease.
 M2#pharmacy-u10-08-q2@2: Which side effect of donepezil needs checking if someone falls? | Bradycardia | High blood sugar | Hair loss | Hearing loss | Rash | Cholinesterase inhibitors increase vagal tone, which can slow the heart and cause fainting.
 M2#pharmacy-u10-08-q3@1: Which medicine group worsens confusion in dementia? | Anticholinergics | Laxatives | Emollients | Vitamin D | Inhaled steroids | Antimuscarinic burden is linked to cognitive decline.
+Q: What is dementia? | A progressive decline in memory and thinking.
+Q: How do acetylcholinesterase inhibitors work? | They increase acetylcholine levels.
+Q: What is anticholinergic burden? | The cumulative antimuscarinic effect of a person's medicines, linked to cognitive decline.
+Q: When is memantine used instead of a cholinesterase inhibitor in moderate Alzheimer's? | When acetylcholinesterase inhibitors aren't tolerated.
+Q: Name three adverse effects of cholinesterase inhibitors. | Nausea, vivid dreams, bradycardia, fainting, weight loss and sleep disturbance.
+Q: Name three medicine types with anticholinergic effects to review in dementia. | Some bladder drugs, sedating antihistamines and tricyclics.
+Q: Why is oxybutynin a poor choice in someone with dementia on donepezil? | Its anticholinergic effect worsens confusion and works against donepezil.
+Q: How can adherence be supported in dementia? | With carers, simplified regimens and compliance aids where appropriate.
+Q: What legal principles should be considered when managing medicines in dementia? | Capacity and best interests.
+Q: Why is removing medicines important in dementia? | Anticholinergics and sedatives worsen confusion, so stopping them protects cognition.
 
 ## Insomnia
 S: Insomnia is common and often linked to stress, health problems or habits. Cognitive behavioural therapy for insomnia works best; hypnotics are for short-term use only.
@@ -250,6 +330,16 @@ SRC: NICE TA922, Daridorexant for treating long-term insomnia | guidance | 2023 
 M1#pharmacy-u10-09-q1@1: What is first-line treatment for chronic insomnia? | CBT for insomnia | Zopiclone nightly | Diphenhydramine nightly | Alcohol at bedtime | Diazepam long term | CBT for insomnia has the best long-term evidence and no dependence risk.
 M2#pharmacy-u10-09-q2@2: Why avoid sedating antihistamines in older people? | Confusion, falls and antimuscarinic effects | They're illegal for over-65s | They don't cause drowsiness | They raise blood sugar | They interact with all foods | Older people are more sensitive to these effects.
 M2#pharmacy-u10-09-q3@1: Which schedule are z-drugs such as zopiclone in? | Schedule 4 | Schedule 2 | Schedule 3 | Schedule 5 | Not controlled | Z-drugs are Schedule 4 (Part 1) controlled drugs.
+Q: What is CBT-I? | A structured psychological treatment for chronic insomnia, and the first-line treatment.
+Q: Name three medicines that may cause insomnia. | Some antidepressants, steroids and diuretics taken late in the day.
+Q: Name two z-drugs. | Zopiclone and zolpidem.
+Q: Why are hypnotics limited to short-term use? | Because of tolerance, dependence and falls.
+Q: Who is modified-release melatonin licensed for? | People aged 55 and over, for short-term use.
+Q: What is daridorexant? | An orexin receptor antagonist for long-term insomnia when CBT-I hasn't worked.
+Q: Name two sedating antihistamines sold as sleep aids. | Promethazine and diphenhydramine.
+Q: Which symptoms suggest sleep apnoea needing referral? | Snoring and daytime sleepiness.
+Q: Name three causes of insomnia to look for. | Pain, mood, breathing problems, caffeine, alcohol and medicines.
+Q: Why avoid sedating antihistamines when driving? | They cause drowsiness.
 
 ## Substance misuse and harm reduction
 S: Pharmacies are central to treatment and harm reduction for people who use drugs or alcohol: supervised consumption of opioid substitution therapy, needle and syringe programmes, naloxone and alcohol support.
@@ -279,6 +369,16 @@ SRC: NICE CG115, Alcohol-use disorders: diagnosis, assessment and management of 
 M1#pharmacy-u10-10-q1@2: What should a pharmacist check before supervising a methadone dose? | That the person isn't intoxicated and is who they say | Their income | Their employment | Their blood group | Nothing at all | Intoxication with other substances increases overdose risk.
 M2#pharmacy-u10-10-q2@1: Which vitamin is given to people at risk of Wernicke's encephalopathy? | Thiamine | Vitamin C | Vitamin D | Folic acid only | Vitamin K | Thiamine deficiency causes Wernicke's encephalopathy.
 M3#pharmacy-u10-10-q3@2: Someone on methadone has missed four days of doses. What should happen? | Contact the prescriber before supplying | Give the usual dose | Give a double dose | Give the missed doses at once | Stop treatment permanently | Tolerance may have fallen, so the usual dose could be dangerous.
+Q: What is opioid substitution therapy? | Treatment of opioid dependence with methadone or buprenorphine.
+Q: How can buprenorphine be given for opioid dependence? | Sublingually or as a long-acting injection.
+Q: How do supervised consumption and instalment dispensing help? | They reduce diversion and overdose.
+Q: What cardiac effect does methadone have? | It prolongs the QT interval.
+Q: When is the risk of respiratory depression with methadone highest? | Early in treatment or with other sedatives.
+Q: What harm reduction services do pharmacies offer? | Needle and syringe programmes, blood-borne virus testing and take-home naloxone with training.
+Q: What is used for alcohol withdrawal under medical supervision? | A chlordiazepoxide reducing regimen.
+Q: Name three medicines used to prevent alcohol relapse. | Acamprosate, naltrexone and disulfiram.
+Q: Why does stigma matter in substance misuse care? | It deters people from seeking care.
+Q: Who sets an individual's OST dose? | The prescriber.
 
 ## Epilepsy
 S: Epilepsy is a tendency to recurrent seizures. Antiseizure medicines control seizures for most people; choosing them safely for women and girls who could become pregnant, and responding correctly to prolonged seizures, are key.
@@ -307,6 +407,16 @@ SRC: MHRA, Drug Safety Update: topiramate, introduction of new safety measures i
 M1#pharmacy-u10-11-q1@1: Which is a first-line drug for focal seizures? | Lamotrigine | Ethosuximide | Phenobarbital | Diazepam long term | Gabapentin alone | NICE NG217 recommends lamotrigine or levetiracetam.
 M2#pharmacy-u10-11-q2@2: How long must a seizure last before calling 999? | 5 minutes or more | 30 seconds | 1 hour | Only if it happens twice | Never | Seizures of 5 minutes or more risk status epilepticus.
 M3#pharmacy-u10-11-q3@1: Which antiseizure medicine needs a pregnancy prevention programme? | Sodium valproate | Levetiracetam | Lamotrigine | Ethosuximide | Clobazam | Valproate is highly teratogenic; topiramate also now has a programme.
+Q: What is a focal seizure? | A seizure starting in one area of the brain.
+Q: What is status epilepticus? | A seizure lasting 5 minutes or more, or repeated seizures without recovery.
+Q: What is first line for generalised tonic-clonic seizures in males? | Sodium valproate.
+Q: What is first line for generalised tonic-clonic seizures in women and girls who could become pregnant? | Lamotrigine or levetiracetam.
+Q: Why do valproate and topiramate have pregnancy prevention requirements? | They cause birth defects and neurodevelopmental effects.
+Q: What emergency medicine may be given for a prolonged seizure? | Buccal midazolam, if prescribed and trained.
+Q: Apart from duration, when should you call 999 for a seizure? | If it is a first seizure or the person is injured.
+Q: What does pregnancy planning involve in epilepsy? | Higher-dose folic acid and specialist review, without stopping medicines suddenly.
+Q: What does MHRA advise for category 1 antiseizure medicines? | Keep people on the same manufacturer's product.
+Q: What should people with epilepsy check about driving? | The DVLA rules after seizures.
 
 ## Antiepileptic drugs
 S: Antiseizure medicines have narrow margins, many interactions and specific serious adverse effects. Careful titration, brand consistency and counselling prevent harm.
@@ -336,6 +446,16 @@ SRC: MHRA, Drug Safety Update: antiepileptic drugs, updated advice on switching 
 M2#pharmacy-u10-12-q1@1: Which antiseizure medicine reduces the effectiveness of hormonal contraception? | Carbamazepine | Levetiracetam | Lamotrigine | Ethosuximide | Gabapentin | Carbamazepine induces enzymes that metabolise contraceptive hormones.
 M2#pharmacy-u10-12-q2@2: Someone on lamotrigine develops a new widespread rash. What's right? | Urgent medical review | Ignore it if mild | Double the dose | Add an antihistamine and continue | Stop the contraceptive | Rash may signal Stevens-Johnson syndrome.
 M3#pharmacy-u10-12-q3@2: Which drug's levels are lowered by combined hormonal contraception? | Lamotrigine | Carbamazepine | Phenytoin | Sodium valproate | Levetiracetam | Oestrogen increases lamotrigine glucuronidation.
+Q: What is an enzyme-inducing antiseizure medicine? | A drug such as carbamazepine or phenytoin that induces liver enzymes and lowers levels of other drugs.
+Q: What is Stevens-Johnson syndrome? | A severe skin and mucosal reaction, linked to drugs such as lamotrigine and carbamazepine.
+Q: Which genetic marker raises carbamazepine rash risk in some ancestries? | HLA-B*15:02.
+Q: Name three adverse effects of carbamazepine. | Hyponatraemia, rash and blood disorders, as well as enzyme induction.
+Q: Why are phenytoin levels monitored? | It has non-linear kinetics and a narrow range.
+Q: What gum problem can phenytoin cause? | Gum hypertrophy.
+Q: When is lamotrigine titration slower still? | When taken with valproate.
+Q: What adverse effect of levetiracetam needs counselling? | Mood and behaviour changes.
+Q: Name four adverse effects of sodium valproate. | Teratogenicity, liver toxicity, pancreatitis, weight gain and tremor.
+Q: Which antiseizure medicines are MHRA category 1? | Carbamazepine, phenytoin, phenobarbital and primidone.
 
 ## Parkinson's disease
 S: Parkinson's disease causes slowness, stiffness and tremor from dopamine loss. Dopaminergic medicines control symptoms, and giving them on time, especially in hospital, is critical.
@@ -363,6 +483,16 @@ SRC: Parkinson's UK, Get It On Time: medicines in hospital | guidance | 2024 | h
 M1#pharmacy-u10-13-q1@2: Which antiemetic should be avoided in Parkinson's disease? | Metoclopramide | Domperidone | Ondansetron | Cyclizine | None need avoiding | Metoclopramide blocks central D2 receptors.
 M2#pharmacy-u10-13-q2@1: Which side effect of dopamine agonists needs counselling? | Impulse control disorders such as gambling | Hair loss | Weight loss only | Improved sleep | High blood sugar | Compulsive behaviours are a recognised risk.
 M2#pharmacy-u10-13-q3@2: How soon should a Parkinson's dose be given in hospital? | Within 30 minutes of its scheduled time | Within 4 hours | At the next drug round | When the patient asks | Once daily only | Late or missed doses cause rapid loss of mobility, swallowing problems and other complications.
+Q: What causes Parkinson's disease symptoms? | Dopamine loss, causing slowness, stiffness and tremor.
+Q: What is levodopa given with? | A decarboxylase inhibitor, as co-careldopa or co-beneldopa.
+Q: Name three dopamine agonists. | Ropinirole, pramipexole and rotigotine.
+Q: Which MAO-B inhibitor is used early in Parkinson's? | Rasagiline.
+Q: Name three adjuncts used later in Parkinson's. | COMT inhibitors, amantadine and apomorphine.
+Q: Which sleep effect of dopamine agonists affects driving? | Sudden sleep onset.
+Q: What risk follows abruptly stopping Parkinson's medicines? | A neuroleptic malignant-like syndrome.
+Q: What can be used if someone with Parkinson's is nil by mouth? | Alternatives such as a rotigotine patch, under specialist advice.
+Q: Why avoid most antipsychotics and prochlorperazine in Parkinson's? | They are dopamine antagonists and worsen symptoms.
+Q: What is an impulse control disorder? | Compulsive behaviours such as gambling or shopping, linked to dopamine agonists.
 
 ## Migraine
 S: Migraine causes disabling headaches, often with nausea and sensitivity to light. Effective acute treatment, preventing medication overuse headache and offering prophylaxis when attacks are frequent improve quality of life.
@@ -389,6 +519,16 @@ SRC: British Association for the Study of Headache, National headache management
 M1#pharmacy-u10-14-q1@1: Which is a recommended acute treatment for migraine? | A triptan with an NSAID or paracetamol | Codeine daily | Diazepam | Propranolol at onset | Antibiotics | NICE recommends combination acute treatment.
 M2#pharmacy-u10-14-q2@2: Which condition contraindicates triptans? | Coronary heart disease | Asthma | Hay fever | Mild acne | Previous appendicitis | Triptans cause vasoconstriction, so they're contraindicated in coronary heart disease.
 M3#pharmacy-u10-14-q3@1: Someone uses a triptan on 14 days a month. What's likely? | Medication overuse headache | Triptan allergy | Normal use | Migraine cure | Triptans never cause problems | Triptans on 10 or more days a month can cause overuse headache.
+Q: How do triptans work? | They are 5-HT1B/1D agonists.
+Q: What is added to acute migraine treatment if needed? | An antiemetic.
+Q: Should opioids be used for migraine? | No; they should be avoided.
+Q: Which blood pressure state contraindicates triptans? | Uncontrolled hypertension.
+Q: Name three migraine prophylaxis options. | Propranolol, amitriptyline and candesartan.
+Q: What restrictions apply to topiramate for migraine prophylaxis? | Strict pregnancy prevention requirements.
+Q: Who provides CGRP-targeting migraine treatments? | Specialists.
+Q: How often must simple analgesics be used to cause medication overuse headache? | On 15 or more days a month.
+Q: How is medication overuse headache managed? | By stopping the overused medicine with support.
+Q: Name three headache red flags besides thunderclap headache. | Fever or neck stiffness, neurological deficit, headache after head injury, or new headache over 50.
 
 ## Multiple sclerosis
 S: Multiple sclerosis is an immune-mediated condition damaging the central nervous system. Disease-modifying therapies are specialist medicines; pharmacists help with symptom management and the safety of high-risk treatments.
@@ -417,6 +557,16 @@ SRC: Joint Formulary Committee, British National Formulary: multiple sclerosis |
 M1#pharmacy-u10-15-q1@1: Who prescribes disease-modifying therapies for MS? | Specialist services | Community pharmacists alone | Dentists | Any GP without input | Physiotherapists | DMTs are started and monitored by specialists.
 M2#pharmacy-u10-15-q2@2: Which drug is used for spasticity in MS? | Baclofen | Atorvastatin | Omeprazole | Salbutamol | Levothyroxine | Baclofen is a GABA-B agonist muscle relaxant.
 M2#pharmacy-u10-15-q3@1: What should be excluded before treating an MS relapse with steroids? | Infection | Hay fever | Low vitamin D only | High cholesterol | Dehydration only | Infection can mimic or trigger a relapse.
+Q: What kind of condition is multiple sclerosis? | An immune-mediated condition damaging the central nervous system.
+Q: What is a disease-modifying therapy in MS? | A specialist medicine that reduces relapses and slows progression.
+Q: What is an MS relapse? | New or worsening symptoms lasting more than 24 hours, without infection or fever.
+Q: How are some MS relapses treated? | With high-dose corticosteroids, after excluding infection.
+Q: What checks do many MS DMTs need? | Infection screening, vaccination planning and blood monitoring.
+Q: How should MS fatigue be approached? | Address sleep, mood and medicines, with some specialist options.
+Q: Why use antimuscarinics with care for bladder symptoms in MS? | They can affect cognition.
+Q: Why check new medicines with the MS specialist team? | Because of immunosuppression and interactions with DMTs.
+Q: What advice should people on DMTs get about vaccines? | Follow the specialist team's advice on infection risks and vaccines.
+Q: What should happen when someone on an immunosuppressive DMT gets a new infection? | Refer promptly, considering their treatment.
 
 ## Pain physiology and assessment
 S: Pain is a personal experience shaped by biology, psychology and circumstances. Classifying the type of pain and assessing it properly guide the right treatment and reveal when pain signals something serious.
@@ -445,6 +595,16 @@ SRC: Faculty of Pain Medicine, Opioids Aware: pain assessment | guidance | 2024 
 M1#pharmacy-u10-16-q1@1: Which describes neuropathic pain? | Burning or shooting pain from nerve damage | Pain from a sprained ankle | Pain from inflammation only | Pain that's always acute | Pain without any cause | Nerve damage causes characteristic burning or shooting pain.
 M2#pharmacy-u10-16-q2@2: Back pain with saddle numbness and new bladder problems suggests what? | Possible cauda equina syndrome needing emergency referral | Simple muscular strain | Kidney stones only | Arthritis | Normal ageing | These are red flags for cauda equina syndrome.
 M2#pharmacy-u10-16-q3@1: How long does pain last before it's called chronic? | More than 3 months | More than 1 week | More than 1 day | More than 5 years | More than 1 hour | Pain is called chronic when it lasts or recurs for more than 3 months.
+Q: What is nociceptive pain? | Pain from tissue damage, such as injury, inflammation or arthritis.
+Q: What is nociplastic pain? | Pain from altered pain processing without clear tissue or nerve damage, such as fibromyalgia.
+Q: Give two examples of neuropathic pain. | Diabetic neuropathy, shingles pain and sciatica.
+Q: How does acute pain differ from chronic pain? | Acute pain is usually short and linked to injury; chronic pain lasts over 3 months and needs a different approach.
+Q: What does SOCRATES stand for in pain assessment? | Site, onset, character, radiation, associations, time course, exacerbating and relieving factors, and severity.
+Q: What type of scale rates pain severity? | A numerical rating scale.
+Q: What should be asked about besides pain intensity? | Function, sleep, mood and what matters to the person.
+Q: Name three back pain red flags. | Saddle numbness, bladder or bowel changes, fever, weight loss or a history of cancer.
+Q: What does saddle numbness with bladder changes suggest? | Cauda equina syndrome, needing emergency referral.
+Q: What shapes the experience of pain? | Biology, psychology and circumstances.
 
 ## Analgesic ladder and simple analgesics
 S: Paracetamol and NSAIDs are the foundation of treating acute pain, used at the right dose and duration. For chronic primary pain, though, NICE advises against starting most analgesics.
@@ -471,6 +631,16 @@ SRC: Joint Formulary Committee, British National Formulary: paracetamol and NSAI
 M1#pharmacy-u10-17-q1@1: Which simple analgesic is safest for someone with a stomach ulcer? | Paracetamol | Ibuprofen | Naproxen | Aspirin | Diclofenac | NSAIDs and aspirin reduce protective prostaglandins and can worsen ulcers; paracetamol doesn't.
 M2#pharmacy-u10-17-q2@2: What does NICE recommend for chronic primary pain? | Exercise, psychological therapy and possibly an antidepressant | Long-term opioids | Gabapentin for everyone | Benzodiazepines | Paracetamol and NSAIDs together | NG193 advises against starting most analgesics.
 M3#pharmacy-u10-17-q3@2: A customer takes paracetamol tablets and a cold remedy. What should you check? | Whether the cold remedy also contains paracetamol | Their blood group | Whether they have hay fever | Their cholesterol | Nothing | Combination products can lead to accidental overdose.
+Q: What is the WHO analgesic ladder? | A stepwise approach of non-opioid, weak opioid, then strong opioid, originally for cancer pain.
+Q: Is the WHO ladder a model for chronic non-cancer pain? | No; it was designed for cancer pain.
+Q: What is chronic primary pain? | Chronic pain without a clear underlying condition, such as fibromyalgia.
+Q: Which factors need care with paracetamol dosing? | The maximum daily dose, lower body weight, liver disease and alcohol use.
+Q: How should NSAIDs be used? | At the lowest effective dose for the shortest time.
+Q: What are the main risks of NSAIDs? | GI, renal and cardiovascular risks.
+Q: Name three situations to avoid NSAIDs. | Heart failure, renal impairment, peptic ulcer and with anticoagulants.
+Q: Which non-drug treatments does NICE offer for chronic primary pain? | Exercise, psychological therapies and acupuncture.
+Q: Which antidepressants may be considered for chronic primary pain? | Amitriptyline or duloxetine.
+Q: What should happen to existing analgesics in chronic primary pain? | Review and reduce them with the person.
 
 ## Opioids
 S: Opioids relieve severe acute and cancer pain but have limited benefit and real harms in long-term non-cancer pain. Safe prescribing, counselling and review prevent dependence, overdose and adverse effects.
@@ -500,6 +670,16 @@ SRC: MHRA, Drug Safety Update: opioids, risk of dependence and addiction | guida
 M1#pharmacy-u10-18-q1@1: What should be prescribed with regular opioids? | A laxative | An antacid | An antihistamine | A diuretic | A sleeping tablet | Tolerance doesn't develop to opioid constipation, so a regular laxative is needed.
 M2#pharmacy-u10-18-q2@2: Why is an opioid with gabapentin a concern? | Increased risk of respiratory depression | It cancels the opioid's effect | It causes high blood pressure | It worsens hay fever | No interaction | Both cause CNS and respiratory depression.
 M3#pharmacy-u10-18-q3@1: What is a typical breakthrough dose of an opioid? | About a sixth to a tenth of the 24-hour dose | The whole 24-hour dose | Half the 24-hour dose | Double the 24-hour dose | Any amount | Breakthrough doses are usually a fraction of the regular daily dose.
+Q: What is opioid-induced constipation? | Constipation caused by opioids that doesn't wear off and needs preventive laxatives.
+Q: What laxative combination is used with regular opioids? | A stimulant with a softener.
+Q: How should opioids be used in chronic non-cancer pain? | Agree goals, use low doses, review regularly and taper if goals aren't met.
+Q: What guides conversions between opioids? | Equianalgesic tables in the BNF, with caution and dose reductions.
+Q: How does heat affect fentanyl patches? | It increases absorption.
+Q: How should used fentanyl patches be disposed of? | Folded and disposed of safely.
+Q: Which drugs increase respiratory depression with opioids? | Other sedatives such as gabapentinoids, benzodiazepines and alcohol.
+Q: What driving advice goes with opioids? | It's an offence to drive impaired, so counsel about driving.
+Q: Why is morphine a concern in renal impairment? | Its active metabolite accumulates.
+Q: How should long-term opioids be stopped? | By gradual tapering.
 
 ## Neuropathic pain
 S: Neuropathic pain responds poorly to standard analgesics. Specific medicines help some people, but they need careful titration, review and attention to misuse and sedation.
@@ -529,6 +709,16 @@ SRC: MHRA, Drug Safety Update: pregabalin, risk of severe respiratory depression
 M1#pharmacy-u10-19-q1@1: Which is first-line for trigeminal neuralgia? | Carbamazepine | Morphine | Paracetamol | Ibuprofen | Sertraline | NICE recommends carbamazepine first for trigeminal neuralgia, with specialist referral if needed.
 M2#pharmacy-u10-19-q2@2: Which gabapentinoid risk is increased with opioids? | Respiratory depression | Hypertension | Hair loss | Bleeding | Weight loss | The MHRA warns of severe respiratory depression.
 M2#pharmacy-u10-19-q3@1: Which is a first-line option for neuropathic pain? | Duloxetine | Codeine | Aspirin | Diazepam | Prednisolone | Duloxetine is one of NICE's four first-line options.
+Q: What is a gabapentinoid? | Gabapentin or pregabalin, used for neuropathic pain and controlled as Schedule 3 drugs.
+Q: What is trigeminal neuralgia? | Severe attacks of facial pain.
+Q: What should happen if the first neuropathic pain medicine doesn't work? | Switch to another of the first-line options.
+Q: When is capsaicin cream used for neuropathic pain? | For localised pain in people who want to avoid oral treatment.
+Q: What role does tramadol have in neuropathic pain? | Only short-term rescue.
+Q: Why are gabapentinoid doses reduced in some people? | Doses are reduced in renal impairment.
+Q: What are the cautions with amitriptyline for neuropathic pain? | Sedation and antimuscarinic effects, caution in older people, and overdose risk.
+Q: How quickly do neuropathic pain medicines work? | Benefit may take a few weeks of titration.
+Q: What side effects are common early with neuropathic pain medicines? | Sedation and dizziness.
+Q: What should be agreed at the start of neuropathic pain treatment? | A review date.
 
 ## Palliative care symptom control
 S: In palliative and end-of-life care, the aim is comfort and dignity. Anticipatory medicines and syringe pumps let symptoms be controlled quickly at home or in hospital, and pharmacists make sure they're available.
@@ -557,4 +747,14 @@ SRC: Wilcock A, Howard P, Charlesworth S (editors), Palliative Care Formulary, 8
 M1#pharmacy-u10-20-q1@1: Which medicine is used for agitation at the end of life? | Midazolam | Metformin | Atorvastatin | Ramipril | Omeprazole | Midazolam is the usual anticipatory medicine for agitation.
 M2#pharmacy-u10-20-q2@2: What are anticipatory medicines? | Medicines prescribed in advance for likely end-of-life symptoms | Medicines taken before surgery | Medicines for travel | Vaccines | Long-term preventive medicines | Having them ready in the home allows rapid symptom control, including out of hours.
 M2#pharmacy-u10-20-q3@1: Which drug treats noisy respiratory secretions at the end of life? | Hyoscine butylbromide | Salbutamol | Furosemide only | Amoxicillin | Prednisolone | Antimuscarinics such as hyoscine butylbromide reduce respiratory secretions.
+Q: What is the aim of palliative and end-of-life care? | Comfort and dignity.
+Q: What are anticipatory medicines? | Medicines prescribed in advance for common end-of-life symptoms.
+Q: Which medicine treats pain and breathlessness at the end of life? | An opioid such as morphine.
+Q: Name three antiemetics used in palliative care. | Levomepromazine, haloperidol and cyclizine.
+Q: What decides the choice of antiemetic in palliative care? | The cause of the nausea and vomiting.
+Q: Name two medicines for respiratory secretions at the end of life. | Hyoscine butylbromide and glycopyrronium.
+Q: What must anticipatory medicine prescriptions include? | Clear doses, indications and maximum frequencies.
+Q: What should pharmacists check for syringe pumps? | Compatibility of combinations and doses for renal function.
+Q: How do pharmacies ensure anticipatory medicines are available out of hours? | Many stock a palliative care list of medicines.
+Q: What support do families need after a death at home? | Information and safe disposal of controlled drugs.
 `;

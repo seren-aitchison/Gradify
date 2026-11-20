@@ -35,6 +35,16 @@ SRC: Financial Conduct Authority, ScamSmart: avoid investment and pension scams 
 NUM1#maths-u29-01-q1@1: A card charges 1.5% interest per month. Find the annual equivalent rate as a percentage, to 1 decimal place. | 19.6 | 0.05 | % | 1.015^{12} − 1 ≈ 0.1956, about 19.6% a year.
 M1#maths-u29-01-q2@1: Which figure should you compare when choosing between two loans? | The APR and the total amount repayable | Only the monthly payment | The length of the advert | The lender's logo | The AER | APR includes fees; the total repayable shows the full cost.
 M2#maths-u29-01-q3@2: Someone has a credit card at 24% APR and savings earning 4%. What's usually wise? | Use spare savings (beyond an emergency fund) to clear the card | Keep both unchanged | Borrow more to save more | Move savings to a 2% account | Pay only the minimum | Debt at 24% costs far more than savings at 4% earn.
+Q: What does AER stand for and what is it used for? | Annual Equivalent Rate: the yearly interest on savings including compounding, used to compare savings accounts.
+Q: How do you convert a monthly savings rate r into an annual equivalent rate? | Work out (1 + r)^{12} − 1.
+Q: Which figures should you compare when choosing a loan? | The APR and the total amount repayable, not just the monthly payment.
+Q: How big an emergency fund is often suggested? | About 3 to 6 months of essential costs.
+Q: Why do pensions benefit from starting early? | They gain from long-term compounding and, for employees, from employer contributions.
+Q: What is a common mistake when choosing a loan? | Picking the lowest monthly payment without looking at the total cost.
+Q: Is buy now, pay later a form of borrowing? | Yes: buy now, pay later is still borrowing.
+Q: How can you check that a financial firm is genuine? | Check that the firm is on the FCA register.
+Q: What do credit scores reflect? | Your history of borrowing and repaying.
+Q: Account A pays 4.5% AER; account B pays 0.37% a month compounded monthly. Which is better? | B, at about 4.53% a year, if the other terms are the same.
 
 ## Personal Budgeting
 S: A personal budget plans how income is spent and saved, so that money lasts the month and goals are reached. It turns vague worries into numbers you can act on.
@@ -69,6 +79,16 @@ SRC: Warren E, Tyagi AW, All Your Worth: The Ultimate Lifetime Money Plan (Free 
 NUM1#maths-u29-02-q1@1: A coffee costs £3.20 and is bought 5 days a week. Find the yearly cost in pounds. | 832 | 0 | £ | 3.20 × 5 × 52 = £832.
 M1#maths-u29-02-q2@1: Which is a fixed expense for most people? | Rent | Groceries | Petrol | Eating out | Gifts | Rent stays the same each month; the others vary.
 M2#maths-u29-02-q3@2: Monthly take-home pay is £1,800 and spending is £1,950. What does the budget show? | A £150 monthly deficit that needs cutting back or more income | A £150 surplus | Nothing useful | A £1,950 surplus | A balanced budget | Spending of £1,950 exceeds income of £1,800, a monthly shortfall of £150 to close.
+Q: What figure should a personal budget start from? | Take-home pay, after tax and deductions.
+Q: What is a fixed expense? | A cost that's the same each month, such as rent or a phone contract.
+Q: What is a variable expense? | A cost that changes from month to month, such as food or travel.
+Q: What does a budget deficit mean you should do? | Cut back spending or increase income.
+Q: What does "pay yourself first" mean in budgeting? | Move savings out of your account on payday, before spending.
+Q: Why is multiplying a weekly cost by 4 a mistake when budgeting? | A month isn't exactly 4 weeks, so it understates the yearly cost.
+Q: How should a budget handle irregular costs such as car insurance? | Save a little each month towards them.
+Q: Using 50/30/20, how is a £2,000 take-home pay split? | £1,000 needs, £600 wants and £400 saving or debt repayment.
+Q: What is a £15-a-week subscription as a monthly cost? | £65 a month (£15 × 52 = £780 a year, ÷ 12).
+Q: Roughly what does £3.50 a day add up to over a year? | Over £1,250 a year.
 
 ## Household Budgeting
 S: Household budgeting manages shared costs: housing, energy, council tax, food and bills split between members. It needs fair ways to divide costs and an understanding of how bills are calculated.
@@ -105,6 +125,16 @@ SRC: GOV.UK, Council Tax: discounts and bands | guidance | 2025 | https://www.go
 NUM1#maths-u29-03-q1@1: Rent of £1,200 is split in proportion to incomes of £30,000 and £20,000. How much does the higher earner pay, in pounds? | 720 | 0 | £ | The ratio is 3:2, so they pay 3/5 × 1,200 = £720.
 M1#maths-u29-03-q2@1: A 100 W light bulb is on for 10 hours. How much energy does it use? | 1 kWh | 10 kWh | 100 kWh | 0.1 kWh | 1,000 kWh | 100 W is 0.1 kW, and energy = power × time = 0.1 kW × 10 h = 1 kWh.
 M2#maths-u29-03-q3@2: Gas use doubles in winter. What happens to the standing charge part of the bill? | It stays the same | It doubles | It halves | It disappears | It quadruples | The standing charge is fixed per day, regardless of use.
+Q: What is a unit rate on an energy bill? | The price per kilowatt-hour (kWh) of electricity or gas used.
+Q: What is the formula for an energy bill? | Cost = kWh used × unit rate + days × standing charge.
+Q: What does council tax depend on? | The property band and the local authority.
+Q: What council tax discount may single occupants get? | A 25% discount.
+Q: How can water be charged for a household? | Metered, paying per cubic metre, or unmetered.
+Q: What are three ways of splitting household costs? | Equal shares, in proportion to income, or by use (such as room size for rent).
+Q: When is splitting costs equally simplest and fairest? | When the members' incomes are similar.
+Q: How much energy does a 1 kW heater use in 1 hour? | 1 kWh.
+Q: What is a common mistake when estimating an energy bill? | Forgetting the standing charge, which is paid even with no use.
+Q: How do smart meters help households save money? | They show usage in real time, so expensive appliances can be spotted.
 
 ## Tax Calculations
 S: Income tax and National Insurance are taken from earnings using bands: different rates apply to different slices of income. Understanding bands explains why a pay rise is never wiped out by moving into a higher band.
@@ -140,6 +170,16 @@ SRC: HM Revenue and Customs, National Insurance rates and categories | data | 20
 NUM1#maths-u29-04-q1@1: Using 2025/26 bands, find the income tax on a salary of £60,000, in pounds. | 11432 | 0 | £ | 20% of £37,700 is £7,540, plus 40% of £9,730 is £3,892: total £11,432.
 M1#maths-u29-04-q2@1: Someone earning £50,000 gets a £1,000 rise, taking them to £51,000. How much extra income tax do they pay (2025/26)? | £346 | £400 | £200 | £20,400 | £4,000 | £270 above £50,000 stays at 20% (£54); £730 above £50,270 is at 40% (£292): £346 in total.
 M3#maths-u29-04-q3@2: What is the average income tax rate on £35,000 (tax £4,486)? | About 12.8% | 20% | 40% | 8% | About 35% | £4,486 ÷ £35,000 ≈ 0.128: well below the 20% marginal rate.
+Q: What is the personal allowance for most people in England in 2025/26? | £12,570 of tax-free income.
+Q: What is a marginal tax rate? | The tax rate on the next pound earned.
+Q: How is the average tax rate calculated? | Total tax ÷ total income.
+Q: What are the higher and additional income tax rates in England for 2025/26? | Higher rate 40% from £50,271 to £125,140; additional rate 45% above £125,140.
+Q: How does the personal allowance change for incomes over £100,000? | It shrinks by £1 for every £2 earned over £100,000.
+Q: What National Insurance do employees pay in 2025/26? | 8% on earnings between £12,570 and £50,270 a year, and 2% above that.
+Q: What is the common mistake when calculating income tax with bands? | Taxing the whole salary at the highest rate it reaches.
+Q: Why is the average tax rate always below the top marginal rate? | Lower slices of income are taxed at lower rates or not at all.
+Q: How much income tax is due on £35,000 in 2025/26? | £4,486: 20% of the £22,430 above the personal allowance.
+Q: Do the income tax bands in Scotland match those in England? | No: Scotland has different bands, so always check gov.uk.
 
 ## VAT Calculations
 S: Value Added Tax (VAT) is a tax on most goods and services in the UK. Adding it to a price, or extracting it from a price that includes it, are common calculations in shops and businesses.
@@ -174,6 +214,16 @@ SRC: HM Revenue and Customs, VAT registration | guidance | 2025 | https://www.go
 NUM1#maths-u29-05-q1@1: How much VAT is included in a £150 standard-rated price? | 25 | 0 | £ | £150 ÷ 6 = £25 (the net price is £125).
 M1#maths-u29-05-q2@1: An item costs £45 before VAT at 20%. What is the price including VAT? | £54 | £49 | £36 | £56.25 | £45.20 | Adding 20% VAT means multiplying by 1.2: £45 × 1.2 = £54.
 M2#maths-u29-05-q3@2: A bill is £105 including VAT at 5%. What is the VAT? | £5 | £5.25 | £21 | £10.50 | £0.50 | £105 ÷ 1.05 = £100, so the VAT is £5 (1/21 of £105).
+Q: What is VAT? | Value Added Tax, a tax on most goods and services in the UK.
+Q: What are the three UK VAT rates? | Standard 20%, reduced 5% (for example domestic energy) and zero 0% (such as most food and books).
+Q: How do you add 20% VAT to a price? | Multiply by 1.2.
+Q: How do you find the price before VAT from a standard-rated inclusive price? | Divide the inclusive price by 1.2.
+Q: What fraction of a 5% VAT-inclusive price is VAT? | 1/21 of it.
+Q: Why is taking 20% of a VAT-inclusive price wrong? | It overstates the VAT; the VAT is one sixth of the inclusive price.
+Q: How do VAT-registered businesses pay VAT to HMRC? | They charge VAT on sales, reclaim VAT on purchases and pay HMRC the difference.
+Q: When must a business register for VAT? | When its turnover is above a threshold (check gov.uk for the current figure).
+Q: A drill costs £84 including 20% VAT. What is the VAT? | £14 (net price £70).
+Q: What is the difference between zero-rated and exempt items for VAT? | Zero-rated items carry VAT at 0%; exempt items, such as many financial and health services, are outside VAT.
 
 ## Discounts
 S: Discounts reduce prices by a percentage, a fixed amount or a deal such as "3 for 2". Comparing them, and seeing through deals that aren't as good as they look, needs multipliers and unit prices.
@@ -211,6 +261,16 @@ SRC: Which?, Supermarket unit pricing | guidance | 2024 | https://www.which.co.u
 NUM1#maths-u29-06-q1@1: A £80 jacket has 25% off, then 10% off the sale price. Find the final price in pounds. | 54 | 0 | £ | 80 × 0.75 × 0.9 = £54.
 M1#maths-u29-06-q2@1: What percentage saving is "buy one, get one half price"? | 25% | 50% | 33.3% | 15% | 75% | You pay for 1.5 items out of 2, saving 0.5/2 = 25%.
 M3#maths-u29-06-q3@2: Shop X offers 40% off. Shop Y offers 25% off then a further 20% off. Which is cheaper? | They're the same | Shop X | Shop Y | It depends on the price | Neither is a discount | Successive discounts multiply: 0.75 × 0.8 = 0.6, exactly the same as 40% off.
+Q: What is a unit price? | The price per unit of quantity, such as per 100 g or per litre, used to compare sizes.
+Q: How do you apply a 30% discount with a multiplier? | Multiply by 0.7.
+Q: Why do successive discounts not add up? | They multiply: 30% then 10% off is 0.7 × 0.9 = 0.63, a 37% discount.
+Q: How do you find the original price from a sale price? | Divide the sale price by the multiplier.
+Q: What saving does "buy one get one half price" give? | 25%: you pay 1.5 for 2.
+Q: What percentage is £10 off £200? | 5%.
+Q: Are bigger packs always cheaper per unit? | No: often, but not always, so compare unit prices.
+Q: When is a discount from a "was" price not a real saving? | When the reference price was inflated.
+Q: Which is better value: 500 g for £2.40 or 750 g for £3.30? | The 750 g pack: 44p per 100 g against 48p.
+Q: What should you compare when buying online with a discount? | The final price you'd pay, including delivery charges.
 
 ## Profit and Loss
 S: Profit is what's left from sales after costs. Businesses track profit, margins and break-even points to set prices and decide whether a product or venture is worthwhile.
@@ -247,6 +307,16 @@ SRC: Atrill P, McLaney E, Accounting and Finance for Non-Specialists (12th edn, 
 NUM1#maths-u29-07-q1@1: A trader buys a bike for £240 and sells it for £204. Find the percentage loss. | 15 | 0 | % | Loss £36; 36/240 = 15%.
 M1#maths-u29-07-q2@1: A product costs £20 and has a 40% markup. What is its selling price? | £28 | £24 | £33.33 | £12 | £60 | Markup is a percentage of cost, so the price is £20 × 1.4 = £28.
 M2#maths-u29-07-q3@2: A 50% markup corresponds to what margin? | 33.3% | 50% | 25% | 66.7% | 150% | Cost 100, price 150: profit 50 is a third of the price.
+Q: What is markup? | Profit as a percentage of the cost price.
+Q: What is margin? | Profit as a percentage of the selling price.
+Q: How do you find a selling price from cost and markup? | Cost × (1 + markup).
+Q: What is contribution per unit? | Price − variable cost per unit.
+Q: How is the break-even quantity calculated? | Fixed costs ÷ contribution per unit.
+Q: What is the difference between fixed and variable costs? | Fixed costs, like rent, don't change with output; variable costs, like materials, are per unit.
+Q: What margin does a 50% markup give? | A 33.3% margin.
+Q: On what price is percentage profit or loss usually given? | The cost price.
+Q: Why can a profitable business still fail? | Through cash flow: bills may fall due before customers pay.
+Q: Fixed costs are £1,200 a month; items sell for £15 and cost £7. What is break-even? | 150 items a month (1,200 ÷ 8).
 
 ## Currency Conversion
 S: Currency conversion turns an amount in one currency into another using an exchange rate. Travellers and businesses also need to account for the difference between buying and selling rates and for commission.
@@ -281,6 +351,16 @@ SRC: Money and Pensions Service, MoneyHelper: travel money | guidance | 2025 | h
 NUM1#maths-u29-08-q1@1: £1 = €1.16. Convert €87 to pounds. | 75 | 0.01 | £ | 87 ÷ 1.16 = £75.
 M1#maths-u29-08-q2@1: £1 = 180 Japanese yen. How many yen is £35? | 6,300 | 5,143 | 215 | 0.19 | 63,000 | Converting pounds to yen means multiplying by the rate: 35 × 180 = 6,300 yen.
 M2#maths-u29-08-q3@2: A traveller changes £400 to euros at €1.15 and later changes all of them back at €1.20 per pound. How many pounds do they get back? | £383.33 | £400 | £416.67 | £460 | £552 | €460 ÷ 1.20 = £383.33: the spread costs £16.67.
+Q: What is an exchange rate? | How much of one currency you get for one unit of another, such as £1 = €1.16.
+Q: What is the spread in currency exchange? | The gap between a bureau's buying and selling rates, which is its profit.
+Q: How do you convert pounds to euros when £1 = €1.16? | Multiply the pounds by 1.16.
+Q: How do you convert euros back to pounds? | Divide by the exchange rate.
+Q: What quick check shows a conversion is the right way round? | If £1 buys more than €1, you should get more euros than pounds.
+Q: What is the mid-market rate? | The market rate; bureaux offer worse rates, and the difference is a hidden fee.
+Q: When paying by card abroad, which currency should you choose to pay in? | The local currency.
+Q: How should you compare two currency exchange offers? | Work out how much foreign currency each gives for the same pounds.
+Q: Where do bureaux usually offer the poorest rates? | At airports; ordering in advance often gets better rates.
+Q: With 2% commission and £1 = €1.17, how many euros does £500 buy? | €573.30 (£490 × 1.17).
 
 ## Currency and Exchange Rates
 S: Exchange rates move with trade, interest rates, inflation and confidence. A change in the rate changes the cost of imports, holidays and the value of overseas earnings, and percentage changes in rates are often misread.
@@ -314,6 +394,16 @@ SRC: Krugman PR, Obstfeld M, Melitz MJ, International Economics: Theory and Poli
 NUM1#maths-u29-09-q1@1: The rate falls from £1 = $1.30 to £1 = $1.17. By what percentage has the pound depreciated? | 10 | 0.01 | % | (1.30 − 1.17)/1.30 = 0.10, a 10% fall.
 M1#maths-u29-09-q2@1: The pound strengthens against the euro. What happens to UK holidays in Spain? | They get cheaper for UK tourists | They get more expensive | Nothing changes | Hotels close | They must be paid in pounds | A stronger pound buys more euros, so prices in Spain cost UK tourists fewer pounds.
 M3#maths-u29-09-q3@2: £1 = $1.20 and $1 = ¥150. What is £1 in yen? | ¥180 | ¥125 | ¥150 | ¥1.80 | ¥0.008 | Chain the rates: £1 buys $1.20, and each dollar buys ¥150, so £1 buys 1.20 × 150 = ¥180.
+Q: What is currency appreciation? | A rise in a currency's value against another.
+Q: What is a cross rate? | An exchange rate between two currencies worked out through a third, such as the US dollar.
+Q: What factors move exchange rates? | Trade, interest rates, inflation and confidence.
+Q: If £1 goes from $1.25 to $1.30, by how much has the pound appreciated? | By 4%.
+Q: Why aren't the pound's 4% rise and the dollar's fall the same percentage? | The percentages are measured from different bases.
+Q: How does a stronger pound affect UK exports? | They become dearer for foreign buyers.
+Q: How does a stronger pound affect a UK firm earning in dollars? | It receives fewer pounds for its dollar earnings.
+Q: How do businesses protect themselves from exchange-rate changes? | They hedge with forward contracts to fix rates.
+Q: £1 = $1.27 and €1 = $1.09. What is £1 in euros? | About €1.165 (1.27 ÷ 1.09).
+Q: A $200 import cost £160 at $1.25. What does it cost at $1.30? | About £153.85, a fall of about £6.15.
 
 ## Percent Change
 S: Percentage change measures how much a quantity has grown or shrunk relative to where it started. It's used for prices, populations, results and statistics in the news, and it's often confused with percentage points.
@@ -348,6 +438,16 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 NUM1#maths-u29-10-q1@1: A value falls from 250 to 210. Find the percentage change. | -16 | 0.01 | % | (210 − 250)/250 = −0.16, a 16% fall.
 M1#maths-u29-10-q2@1: A share price halves. What percentage rise returns it to its original price? | 100% | 50% | 200% | 25% | 150% | From half back to the whole is doubling, a 100% rise.
 M2#maths-u29-10-q3@2: Unemployment rises from 4% to 5%. Which statement is correct? | It rose by 1 percentage point, a 25% relative increase | It rose by 1% | It rose by 25 percentage points | It rose by 5% | It doubled | 5 − 4 = 1 point, and 1/4 = 25% of the starting rate.
+Q: What is the formula for percentage change? | (new − original) ÷ original × 100%.
+Q: What is a percentage point? | The arithmetic difference between two percentages.
+Q: What is the common mistake in calculating percentage change? | Dividing the change by the new value instead of the original.
+Q: Why does reversing a 15% increase not need a 15% decrease? | The base is different: the fall is measured from the larger value.
+Q: An interest rate rises from 4% to 5%. Describe the change two ways. | A 1 percentage point rise, or a 25% relative rise.
+Q: What rise is needed to recover from a 50% fall? | A 100% rise.
+Q: What is the overall effect of a 10% rise followed by another 10% rise? | A 21% rise, because changes multiply.
+Q: How is an average annual change worked out over several years? | Using the nth root of the overall multiplier.
+Q: Why is "up 200%" meaningless without the base? | From 1 case to 3 is a 200% rise but a tiny change.
+Q: What is the percentage increase from 80 to 92? | 15% (12 ÷ 80).
 
 ## Compound Growth
 S: Compound growth happens when something grows by a fixed percentage each period, so the growth itself grows. Savings, populations, prices and debts all compound, and the effect over long periods is dramatic.
@@ -383,6 +483,16 @@ SRC: Money and Pensions Service, MoneyHelper: how compound interest works | guid
 NUM1#maths-u29-11-q1@1: Using the rule of 72, roughly how many years does it take to double money at 6% a year? | 12 | 0 | years | 72 ÷ 6 = 12 years.
 M1#maths-u29-11-q2@1: A population of 2,000 grows by 3% a year. What is it after 2 years? | 2,121.8 | 2,120 | 2,060 | 2,180 | 2,006 | Compound growth multiplies each year: 2,000 × 1.03^{2} = 2,121.8.
 M2#maths-u29-11-q3@2: Why does starting a pension 10 years earlier make such a difference? | Each early pound compounds for 10 more years | Pensions only grow late | Interest is higher for young people | It doesn't matter | Taxes are lower early | The longer money compounds, the faster its growth accelerates.
+Q: What is the compound growth formula? | A = P(1 + r)^{n}.
+Q: What is CAGR? | Compound annual growth rate: the constant yearly rate giving the same overall growth, (end/start)^{1/n} − 1.
+Q: What does the rule of 72 estimate? | Doubling time: about 72 ÷ the percentage growth rate.
+Q: What formula models decay, such as depreciation? | A = P(1 − r)^{n}.
+Q: Roughly what is the multiplier for 5% growth a year for 10 years? | About 1.63 (1.05^{10}).
+Q: How does more frequent compounding affect growth at the same annual rate? | Monthly compounding gives slightly more than the same annual rate split up.
+Q: How do you solve exactly for the number of periods n in compound growth? | n = ln(A/P) ÷ ln(1 + r).
+Q: What is the common mistake in finding average growth over several years? | Dividing the total growth by the years (50% ÷ 5 = 10%) instead of using the nth root.
+Q: An investment grows from £10,000 to £15,000 in 5 years. What is its average annual growth rate? | About 8.45% a year.
+Q: Why do small differences in rates, such as fees, matter over time? | They compound into large differences over long periods.
 
 ## Inflation Calculations
 S: Inflation is the general rise in prices over time, measured in the UK mainly by the Consumer Prices Index (CPI). It erodes the value of money, so real changes in pay, savings and prices must be adjusted for it.
@@ -416,6 +526,16 @@ SRC: Bank of England, What is inflation? | guidance | 2024 | https://www.bankofe
 NUM1#maths-u29-12-q1@1: £100 is kept as cash for 2 years with 3% inflation each year. What is its value in today's money, to the nearest penny? | 94.26 | 0.01 | £ | 100 ÷ 1.03^{2} ≈ £94.26.
 M1#maths-u29-12-q2@1: A price index goes from 120 to 126. What is the inflation rate? | 5% | 6% | 4.8% | 126% | 0.05% | Inflation is the change divided by the old index: 6/120 = 0.05, which is 5%.
 M2#maths-u29-12-q3@2: A 1990 price of £50 is to be expressed in today's money. The index was 60 then and 150 now. What is it? | £125 | £20 | £90 | £75 | £150 | Scale by the ratio of index values: £50 × 150/60 = £50 × 2.5 = £125.
+Q: What is inflation? | The general rise in prices over time.
+Q: Which index is mainly used to measure UK inflation? | The Consumer Prices Index (CPI).
+Q: What is a price index? | A number showing the price level relative to a base year set at 100.
+Q: How is the inflation rate calculated from an index? | (Index this year − index last year) ÷ index last year.
+Q: What does CPIH add to CPI? | Owner-occupier housing costs.
+Q: What is a real value? | A value adjusted for inflation, showing purchasing power.
+Q: How do you express a past price in today's money? | Multiply it by (index now ÷ index then).
+Q: What happens to real pay with a 3% rise and 4% inflation? | It falls by about 1%.
+Q: How is the real interest rate approximated? | Nominal rate − inflation.
+Q: Why does inflation affect people differently? | It depends on what each person buys.
 
 ## Loan Repayments
 S: Most loans are repaid in equal monthly instalments that cover both interest and part of the balance. The amortisation formula gives the payment, and the total repaid shows the true cost of borrowing.
@@ -450,6 +570,16 @@ SRC: Financial Conduct Authority, Consumer Credit sourcebook (CONC) | standard |
 NUM1#maths-u29-13-q1@1: A credit card balance of £2,000 is charged 1.5% interest a month. How much interest is added in the first month, in pounds? | 30 | 0 | £ | 2,000 × 0.015 = £30.
 M1#maths-u29-13-q2@1: Two loans of £10,000 have the same rate; one lasts 3 years and one 5 years. Which costs more in total interest? | The 5-year loan | The 3-year loan | They cost the same | It depends on the lender's name | Neither charges interest | The balance is outstanding for longer, so more interest accrues.
 M3#maths-u29-13-q3@2: A £6,000 loan is repaid at £200 a month for 36 months. What is the total interest? | £1,200 | £7,200 | £200 | £600 | £3,600 | Total repaid £7,200 minus £6,000 borrowed.
+Q: What is amortisation? | Paying off a loan with regular payments that cover interest and reduce the balance.
+Q: What is the monthly payment formula for a loan? | M = P × r(1 + r)^{n} ÷ ((1 + r)^{n} − 1).
+Q: In the loan formula, what do P, r and n stand for? | P is the amount borrowed, r the monthly interest rate and n the number of payments.
+Q: How do you find the total interest on a loan? | Total interest = M × n − P.
+Q: What do later loan payments mostly do? | Repay the balance, rather than interest.
+Q: What is the benefit of overpaying a loan? | It reduces the interest paid, though check for early repayment charges.
+Q: Why compare loans using the APR? | The APR includes fees as well as interest.
+Q: What is the risk of paying only the minimum on a credit card? | It can take years and cost more than the original spending.
+Q: What is the common mistake when using the loan formula? | Using the annual rate as r in a monthly formula.
+Q: What is the monthly payment on £5,000 over 3 years at 6% a year? | About £152.11, with total interest of about £475.96.
 
 ## Mortgage Calculations
 S: A mortgage is a long-term loan to buy property, secured on the home. Mortgage maths covers monthly repayments, deposits and loan-to-value ratios, and the large effect of interest rates over 25 years or more.
@@ -484,6 +614,16 @@ SRC: Financial Conduct Authority, Mortgages and Home Finance: Conduct of Busines
 NUM1#maths-u29-14-q1@1: A buyer puts down £30,000 on a £200,000 home. What is the LTV, as a percentage? | 85 | 0 | % | Loan £170,000; 170,000/200,000 = 85%.
 M1#maths-u29-14-q2@1: What is the monthly interest-only payment on £240,000 at 5% a year? | £1,000 | £12,000 | £1,200 | £500 | £2,400 | Interest-only payments cover just the interest: 240,000 × 0.05 ÷ 12 = £1,000.
 M2#maths-u29-14-q3@2: Why do lower-LTV mortgages usually have lower rates? | The lender has more security if prices fall | Lenders like small loans | They're always fixed rates | Deposits earn interest | They're shorter | A larger deposit cushions the lender against losses.
+Q: What is a mortgage? | A long-term loan to buy property, secured on the home.
+Q: What is loan-to-value (LTV)? | The loan as a percentage of the property's value.
+Q: What is an interest-only mortgage? | Monthly payments cover only the interest; the full loan is repaid at the end.
+Q: What is the common mistake about interest-only mortgages? | Forgetting the whole loan must still be repaid at the end.
+Q: What LTV results from a 10% deposit on a £250,000 home? | 90%, with a loan of £225,000.
+Q: Besides the deposit, what do lenders check before lending? | Affordability: income, outgoings and a stress test at higher rates.
+Q: What is the difference between fixed and variable mortgage rates? | Fixed rates stay the same for a set period; variable or tracker rates move with the market.
+Q: What can a 1 percentage point rate rise do to a typical mortgage? | Add well over £100 a month.
+Q: What is the monthly payment on a £200,000 repayment mortgage over 25 years at 4.5%? | About £1,111.66, with about £333,500 repaid in total.
+Q: What tax may apply when buying a home in England? | Stamp Duty Land Tax (check current thresholds on gov.uk).
 
 ## Investment Returns
 S: Investment returns combine income (dividends or interest) and changes in value. Comparing investments means accounting for time, fees, risk and inflation, not just headline gains.
@@ -518,6 +658,16 @@ SRC: Bodie Z, Kane A, Marcus AJ, Investments (13th edn, McGraw-Hill 2024) | text
 NUM1#maths-u29-15-q1@1: A share bought for £60 pays a £3 dividend. Find the dividend yield. | 5 | 0 | % | 3/60 = 5%.
 M1#maths-u29-15-q2@1: £10,000 grows at 5% a year for 20 years. Roughly what is it worth? | £26,500 | £20,000 | £15,000 | £30,000 | £21,900 | Compounding gives 10,000 × 1.05^{20} ≈ 10,000 × 2.653 ≈ £26,533.
 M3#maths-u29-15-q3@2: Fund A returns 7% with a 1.5% annual fee; fund B returns 6.5% with a 0.2% fee. Which is better, assuming equal risk? | Fund B (6.3% net against 5.5%) | Fund A, because 7% is higher | They're equal | Neither: fees don't matter | Fund A over long periods | Compare returns after fees: 7 − 1.5 = 5.5% against 6.5 − 0.2 = 6.3%.
+Q: What is total return on an investment? | Income received plus the change in value, as a percentage of the amount invested.
+Q: What is diversification? | Spreading money across different investments so one failure does less harm.
+Q: How is dividend yield calculated? | Annual dividend ÷ share price.
+Q: How do you find the annualised return over n years? | (End ÷ start)^{1/n} − 1.
+Q: How much difference does a 1% fee make to £10,000 over 20 years at 5%? | It grows to about £21,900 instead of about £26,500.
+Q: What do ISAs and pensions do for investment returns in the UK? | They are tax wrappers that protect returns from tax.
+Q: How are expected return and risk usually related? | Higher expected returns usually come with more risk.
+Q: Does diversification necessarily reduce expected return? | No: it reduces risk without necessarily reducing expected return.
+Q: Does past performance guarantee future returns? | No.
+Q: £1,000 of shares pay £40 dividends and are sold for £1,100. What is the total return? | 14% (£140 on £1,000).
 
 ## Measurement
 S: Measurement assigns numbers to quantities like length, mass, time and temperature using standard units. Every measurement has limited accuracy, and knowing those limits matters as much as the reading itself.
@@ -552,6 +702,16 @@ SRC: National Physical Laboratory, Good practice guide: beginner's guide to meas
 NUM1#maths-u29-16-q1@1: A square's side is 8 cm to the nearest cm. Find the upper bound of its perimeter in cm. | 34 | 0 | cm | 4 × 8.5 = 34 cm.
 M1#maths-u29-16-q2@1: Which instrument is most suitable for measuring the diameter of a pencil? | Callipers | A metre rule | A tape measure | A trundle wheel | A measuring jug | Callipers measure small lengths to fractions of a millimetre.
 M2#maths-u29-16-q3@2: A length is 120 mm to the nearest 10 mm. What is its lower bound? | 115 mm | 119.5 mm | 110 mm | 125 mm | 120 mm | Half of 10 mm is 5 mm, so the lower bound is 120 − 5 = 115 mm.
+Q: What are SI units? | The international system: metre, kilogram, second, kelvin, ampere, mole and candela.
+Q: What are the bounds of a measurement? | The smallest and largest values a rounded measurement could be.
+Q: What are the bounds of 12 cm to the nearest cm? | From 11.5 cm up to (but not including) 12.5 cm.
+Q: How do you avoid parallax error when reading a scale? | Read at eye level.
+Q: How far out can a measurement to the nearest unit be? | Up to half a unit either way.
+Q: How can random error in measurement be reduced? | Repeat measurements and average them.
+Q: How do you convert °C to kelvin? | K = °C + 273.15.
+Q: How do you convert °C to °F? | °F = 1.8 × °C + 32.
+Q: What is the common mistake when reading a scale? | Assuming each small division is 1 without checking.
+Q: What does the prefix micro mean? | Divide by 1,000,000.
 
 ## Unit Conversion
 S: Unit conversion changes a quantity from one unit to another without changing its size: metres to centimetres, square metres to square centimetres, miles to kilometres. Errors are common with area and volume units, where factors are squared or cubed.
@@ -588,6 +748,16 @@ SRC: GOV.UK, Weights and Measures Act 1985: schedule 1 definitions of units | le
 NUM1#maths-u29-17-q1@1: Convert 5 miles to km, to 2 decimal places (1 mile = 1.609 km). | 8.05 | 0.01 | km | 5 × 1.609 = 8.045 ≈ 8.05 km.
 M1#maths-u29-17-q2@1: How many mm^{2} are in 1 cm^{2}? | 100 | 10 | 1,000 | 0.1 | 10,000 | 1 cm = 10 mm, so 1 cm^{2} = 10^{2} = 100 mm^{2}.
 M2#maths-u29-17-q3@2: A tank is 2 m × 1.5 m × 0.8 m. How many litres does it hold? | 2,400 | 240 | 24,000 | 2.4 | 4,300 | Volume 2.4 m^{3}, and 1 m^{3} = 1,000 litres.
+Q: What is a conversion factor? | The number you multiply by to change units, such as 100 cm per m.
+Q: How many cm^{2} are in 1 m^{2}? | 10,000.
+Q: How many litres are in 1 m^{3}? | 1,000 litres.
+Q: How many square metres are in a hectare? | 10,000 m^{2}.
+Q: How many centimetres are in an inch? | Exactly 2.54 cm.
+Q: Roughly how many litres are in a UK gallon? | About 4.546 litres.
+Q: How many pounds are in a stone? | 14 lb.
+Q: What is 1 m/s in km/h? | 3.6 km/h.
+Q: What happens to the number when you convert to a smaller unit? | It gets larger.
+Q: What is dimensional analysis in unit conversion? | Writing units through the calculation and cancelling them.
 
 ## Time Calculations
 S: Time calculations involve the 24-hour clock, durations, timetables, time zones and converting between hours, minutes and decimals. Base 60 makes them error-prone on calculators.
@@ -623,6 +793,16 @@ SRC: National Physical Laboratory, Time and frequency: UTC and the UK's time sca
 NUM1#maths-u29-18-q1@1: Someone works 7 hours 30 minutes at £12.60 an hour. How much do they earn, in pounds? | 94.5 | 0.01 | £ | 7.5 × 12.60 = £94.50.
 M1#maths-u29-18-q2@1: It's 15:00 in London (GMT). What time is it in Tokyo (UTC+9)? | 00:00 the next day | 06:00 | 18:00 | 09:00 | 24:00 | 15:00 + 9 hours = 24:00, which is midnight, the start of the next day.
 M2#maths-u29-18-q3@2: A film starts at 19:40 and lasts 2 hours 35 minutes. When does it end? | 22:15 | 21:75 | 22:05 | 21:15 | 22:35 | 19:40 + 2 h = 21:40, then + 35 min = 22:15.
+Q: What does the 24-hour clock avoid? | The need for a.m. and p.m.
+Q: What is a time zone? | A region with a common standard time, given as an offset from UTC.
+Q: Why is 13:20 − 11:45 not 1.75 hours? | Time works in base 60, so you can't subtract times like decimals.
+Q: Convert 3 hours 45 minutes to decimal hours. | 3.75 hours.
+Q: How many minutes is 0.4 hours? | 24 minutes.
+Q: What is the leap year rule? | Divisible by 4, except centuries not divisible by 400.
+Q: What time zones does the UK use? | GMT (UTC+0) in winter and BST (UTC+1) in summer.
+Q: How is overtime often paid? | At time and a half (× 1.5).
+Q: How should minutes on a timesheet be handled when working out pay? | Divide by 60 to convert to hours before multiplying by the rate.
+Q: How long is a train journey from 22:47 to 01:15 the next day? | 2 hours 28 minutes.
 
 ## Speed and Distance
 S: Everyday speed and distance problems include planning journeys, fuel use, running pace and stopping distances. They use the same relationship as exam problems, applied to real decisions.
@@ -657,6 +837,16 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 NUM1#maths-u29-19-q1@1: A car does 45 miles per gallon. How many litres of fuel for a 300-mile trip, to 1 decimal place (1 gallon = 4.546 litres)? | 30.3 | 0.05 | litres | 300/45 = 6.67 gallons, × 4.546 ≈ 30.3 litres.
 M1#maths-u29-19-q2@1: A 180-mile journey is driven at an average of 60 mph with a 30-minute break. How long does it take? | 3 hours 30 minutes | 3 hours | 3 hours 18 minutes | 2 hours 30 minutes | 4 hours | 180/60 = 3 hours driving, plus 30 minutes.
 M2#maths-u29-19-q3@2: According to the Highway Code, what's the typical stopping distance at 70 mph? | 96 m | 23 m | 53 m | 70 m | 140 m | Rule 126 gives 96 m at 70 mph, made up of thinking and braking distances.
+Q: What is pace in running? | Time per unit distance, such as minutes per kilometre.
+Q: What is fuel economy? | Distance per unit of fuel (such as mpg) or fuel per distance (litres per 100 km).
+Q: How do you work out fuel needed for a trip in litres from mpg? | Distance ÷ mpg gives gallons; multiply by 4.546 for litres.
+Q: How is the cost of a trip's fuel worked out? | Fuel used × price per litre.
+Q: How do real average journey speeds compare with speed limits? | They are usually well below speed limits.
+Q: What typical stopping distance does the Highway Code give at 30 mph? | 23 m.
+Q: How does braking distance grow with speed? | With the square of speed.
+Q: What is the common mistake when converting a pace of 5.25 minutes? | Writing it as 5 minutes 25 seconds instead of 5 minutes 15 seconds.
+Q: What average speed is 10 km in 52 minutes 30 seconds? | About 11.4 km/h.
+Q: What should a journey plan add to distance ÷ speed? | Time for breaks and traffic.
 
 ## Ratios in Recipes
 S: Recipes are ratios: the proportions of ingredients matter more than the amounts. Scaling a recipe up or down, converting units and using baker's percentages are everyday uses of ratio.
@@ -692,6 +882,16 @@ SRC: Ruhlman M, Ratio: The Simple Codes Behind the Craft of Everyday Cooking (Sc
 NUM1#maths-u29-20-q1@1: A smoothie recipe uses fruit and yoghurt in the ratio 3:2. How much fruit is in 750 g of smoothie, in grams? | 450 | 0 | g | 3/5 × 750 = 450 g.
 M1#maths-u29-20-q2@1: Pastry uses flour and butter in the ratio 2:1. How much butter goes with 350 g of flour? | 175 g | 700 g | 117 g | 233 g | 350 g | In a 2:1 ratio the butter is half the flour, so 350 ÷ 2 = 175 g.
 M2#maths-u29-20-q3@2: A recipe for 6 needs 450 g of rice. How much for 10 people? | 750 g | 600 g | 270 g | 4,500 g | 900 g | Find one serving first: 450 ÷ 6 = 75 g, then 75 × 10 = 750 g.
+Q: What is a scale factor for a recipe? | New servings ÷ original servings.
+Q: What is a baker's percentage? | Each ingredient as a percentage of the flour weight.
+Q: How should you scale a recipe? | Multiply every ingredient by the scale factor.
+Q: What is the common mistake when scaling a recipe? | Adding the same extra amount to every ingredient instead of multiplying.
+Q: Do cooking times scale simply with recipe size? | No: larger dishes may need longer at the same temperature.
+Q: What ratio is shortcrust pastry roughly? | 2 parts flour to 1 part fat.
+Q: How is 500 g shared in the ratio 2:3? | 200 g and 300 g.
+Q: What does 65% hydration mean for bread? | 650 g of water per 1,000 g of flour.
+Q: About what percentage of the flour weight is salt in bread? | Around 2%.
+Q: How much is a tablespoon and a teaspoon in ml? | About 15 ml and 5 ml.
 
 ## Scaling and Proportions
 S: Proportion problems appear everywhere: map scales, model sizes, best-buy comparisons, staffing and dosages. Recognising whether quantities are in direct or inverse proportion is the key step.
@@ -726,6 +926,16 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 NUM1#maths-u29-21-q1@1: On a 1:50,000 map, two villages are 7 cm apart. How far apart are they, in km? | 3.5 | 0 | km | 7 × 50,000 = 350,000 cm = 3.5 km.
 M1#maths-u29-21-q2@1: A 12-inch pizza and an 8-inch pizza are similar shapes. How many times more pizza is in the larger one? | 2.25 | 1.5 | 3.375 | 2 | 4 | The length scale factor is 1.5, so the area scale factor is 1.5^{2} = 2.25.
 M3#maths-u29-21-q3@2: A pump fills a pool in 9 hours. How long do 3 identical pumps take? | 3 hours | 27 hours | 9 hours | 6 hours | 4.5 hours | Three times the pumping rate means a third of the time.
+Q: What is direct proportion? | Two quantities increase together at the same rate: y = kx.
+Q: What is inverse proportion? | As one quantity doubles, the other halves: y = k/x.
+Q: What question helps decide between direct and inverse proportion? | If one quantity doubles, does the other double or halve?
+Q: If 5 kg costs £12, what does 8 kg cost? | £19.20 (12 × 8 ÷ 5).
+Q: What does a map scale of 1:25,000 mean? | 1 cm on the map is 25,000 cm, or 250 m, in reality, so 4 cm is 1 km.
+Q: How many cm are in 1 km? | 100,000 cm.
+Q: How do areas and volumes scale when lengths scale by k? | Areas by k^{2} and volumes by k^{3}.
+Q: How does a 1:20 model's area compare with the real object? | It has 1/400 of the real area.
+Q: Why does doubling a pizza's diameter quadruple its area? | Area scales by the square of the length scale factor.
+Q: What is the common mistake with workers-and-days problems? | Treating an inverse proportion as direct, so more workers seem to take longer.
 
 ## Area and Volume Calculations
 S: Practical area and volume calculations decide how much paint, turf, flooring, concrete or water a job needs. They combine standard formulas with composite shapes, unit conversion and allowances for waste.
@@ -761,6 +971,16 @@ SRC: Construction Industry Training Board, Construction maths: area and volume |
 NUM1#maths-u29-22-q1@1: A lawn is 6 m by 4.5 m. How many square metres of turf are needed, with no waste allowance? | 27 | 0 | m² | 6 × 4.5 = 27 m^{2}.
 M1#maths-u29-22-q2@1: A wall is 5 m by 2.4 m with a 1.2 m by 1 m window. What area needs painting? | 10.8 m^{2} | 12 m^{2} | 13.2 m^{2} | 9.6 m^{2} | 1.2 m^{2} | Subtract the window from the wall: 5 × 2.4 − 1.2 × 1 = 12 − 1.2 = 10.8 m^{2}.
 M2#maths-u29-22-q3@2: A cylindrical tank has diameter 1 m and height 2 m. What is its capacity, to the nearest litre? | 1,571 litres | 6,283 litres | 3,142 litres | 785 litres | 2,000 litres | π × 0.5^{2} × 2 ≈ 1.571 m^{3} = 1,571 litres.
+Q: What is a composite shape? | A shape made of simpler shapes, found by adding or subtracting their areas.
+Q: What is a prism and how is its volume found? | A solid with a constant cross-section; volume = cross-section area × length.
+Q: What is the volume formula for a cylinder? | πr^{2}h.
+Q: What is the volume formula for a sphere? | (4/3)πr^{3}.
+Q: How do you work out the paint needed for a wall? | Area ÷ coverage per litre × number of coats.
+Q: What waste allowance is often added for flooring and turf? | Often 5 to 10%.
+Q: Should you round material quantities up or down? | Up, to whole tins, packs or bags.
+Q: What is the commonest error in practical area and volume calculations? | Mixing centimetres and metres in the same calculation.
+Q: How do you find the mass of gravel to order from its volume? | Multiply the volume by the density.
+Q: How many litres does a circular pond of radius 1.5 m and depth 0.6 m hold? | About 4,241 litres.
 
 ## Construction Mathematics
 S: Construction mathematics turns plans into materials and measurements: setting out square corners, calculating concrete and bricks, working out roof pitches and designing stairs within building regulations.
@@ -795,6 +1015,16 @@ SRC: Construction Industry Training Board, Construction maths: area and volume |
 NUM1#maths-u29-23-q1@1: A total stair rise of 2.6 m is divided into 13 equal risers. What is each rise, in mm? | 200 | 0 | mm | 2,600 ÷ 13 = 200 mm.
 M1#maths-u29-23-q2@1: A roof rises 2 m over a horizontal run of 4 m. What is its pitch, to the nearest degree? | 27° | 30° | 45° | 63° | 22° | tan θ = 2/4, so θ = tan^{−1}(0.5) ≈ 26.6°.
 M2#maths-u29-23-q3@2: About how many bricks are needed for a single-skin wall 6 m long and 2 m high? | About 720 | About 120 | About 60 | About 1,440 | About 360 | 12 m^{2} × about 60 bricks per m^{2} ≈ 720.
+Q: What is the 3-4-5 rule in construction? | A triangle with sides 3, 4 and 5 has a right angle, used to set out square corners.
+Q: What are rise and going on a stair? | The height of each step and the horizontal depth of each tread.
+Q: How is roof pitch found? | tan θ = rise ÷ run.
+Q: How is a rafter length found? | By Pythagoras, from the rise and run.
+Q: About how many standard bricks are needed per square metre of single-skin wall? | About 60, with 10 mm mortar joints.
+Q: What are the Part K limits for rise, going and pitch of private stairs? | Maximum rise 220 mm, minimum going 220 mm, maximum pitch 42°.
+Q: What range should 2 × rise + going fall within for stairs? | Between 550 mm and 700 mm.
+Q: What is the common mistake when calculating concrete volumes? | Forgetting to convert millimetres to metres.
+Q: How much concrete should be ordered for a 4 m by 3 m slab 100 mm thick, with 10% waste? | 1.32 m^{3}.
+Q: How should the total rise of a staircase be divided? | Into equal steps.
 
 ## Surveying Mathematics
 S: Surveying measures land: distances, angles, heights and levels, for maps, building sites and roads. It relies on trigonometry, bearings and careful arithmetic with heights.
@@ -830,6 +1060,16 @@ SRC: Uren J, Price WF, Surveying for Engineers (5th edn, Palgrave Macmillan 2010
 NUM1#maths-u29-24-q1@1: From 60 m away, the top of a building is at an elevation of 25°, measured from an instrument 1.5 m high. Find the height, to 1 decimal place. | 29.5 | 0.05 | m | 60 tan 25° ≈ 27.98, plus 1.5 ≈ 29.5 m.
 M1#maths-u29-24-q2@1: A drain falls 0.5 m over 40 m. What is its gradient? | 1 in 80 | 1 in 20 | 1 in 40 | 1 in 8 | 1 in 200 | Divide the horizontal distance by the drop: 40 ÷ 0.5 = 80, so 1 in 80, or 1.25%.
 M2#maths-u29-24-q3@2: The height of instrument is 32.40 m and the foresight on a point is 1.85 m. What is the point's level? | 30.55 m | 34.25 m | 32.40 m | 1.85 m | 30.85 m | Level = height of instrument − foresight.
+Q: What is a reduced level in surveying? | The height of a point relative to a datum, such as Ordnance Datum Newlyn in Great Britain.
+Q: What is levelling? | Finding height differences using a level and staff readings (backsight and foresight).
+Q: How do you find a building's height from an angle of elevation? | Distance × tan(angle of elevation) + instrument height.
+Q: How are bearings given? | As three-figure angles measured clockwise from north.
+Q: How does triangulation locate distant points? | From a measured baseline and angles, using the sine rule.
+Q: How is the height of instrument found in levelling? | Known level + backsight.
+Q: How is a new level found from the height of instrument? | Height of instrument − foresight.
+Q: How is a levelling survey checked? | By closing the loop back to the starting benchmark.
+Q: What is a gradient of 1 in 80 as a percentage? | 1.25%: a 1 m drop over 80 m.
+Q: What is the common mistake in levelling calculations? | Adding the foresight instead of subtracting it.
 
 ## Reading Graphs
 S: Everyday graphs show energy use, prices, tariffs and conversions. Reading them well means knowing what the axes measure, what the gradient means, and where two lines cross.
@@ -864,6 +1104,16 @@ SRC: Office for National Statistics, Data visualisation style guide | guidance |
 NUM1#maths-u29-25-q1@1: Plan A costs £15 plus 20p per unit; plan B costs £5 plus 30p per unit. At how many units do they cost the same? | 100 | 0 | units | 15 + 0.2u = 5 + 0.3u gives 10 = 0.1u, so u = 100.
 M1#maths-u29-25-q2@1: On a conversion graph, 50 miles reads as 80 km. Roughly how many km is 25 miles? | 40 km | 80 km | 20 km | 50 km | 16 km | The graph is a straight line through the origin, so halve 80.
 M2#maths-u29-25-q3@2: A parcel service charges by weight band: up to 1 kg £3, up to 2 kg £5, up to 5 kg £8. What type of graph is this? | A step graph | A straight line through the origin | A curve | A scatter graph | A pie chart | Prices jump at each threshold and stay level between them.
+Q: What is a conversion graph? | A straight-line graph through the origin used to convert units, such as miles and kilometres.
+Q: On a tariff graph, what does the intercept represent? | The fixed charge.
+Q: What kind of graph shows charges that jump at thresholds? | A step graph, such as postage by weight band.
+Q: What does the crossing point of two tariff lines show? | The usage at which both cost the same.
+Q: How can the crossing point of two tariffs be found exactly? | By solving the two equations algebraically.
+Q: What is the common mistake when comparing tariffs? | Assuming the one with the lower fixed charge is always cheaper.
+Q: Why check a graph's scales before reading it? | They may not start at zero.
+Q: What can a graph covering only a few months hide? | Seasonal patterns.
+Q: Tariff A is £10 plus 5p a minute; B is £4 plus 9p a minute. When do they cost the same? | At 150 minutes.
+Q: How should you read a value that falls between gridlines? | Estimate it between the lines.
 
 ## Reading Tables
 S: Tables organise information for timetables, nutrition labels, distance charts and tax bands. Reading them accurately, and doing the arithmetic they imply, is a key practical skill.
@@ -899,6 +1149,16 @@ SRC: NHS, Food labels | guidance | 2024 | https://www.nhs.uk/live-well/eat-well/
 NUM1#maths-u29-26-q1@1: A meal contains 1.2 g of salt. What percentage of the adult reference intake (6 g) is that? | 20 | 0 | % | 1.2/6 = 0.2 = 20%.
 M1#maths-u29-26-q2@1: A label shows 12 g of fat per 100 g, and a portion is 150 g. How much fat is in a portion? | 18 g | 12 g | 8 g | 1.8 g | 180 g | Scale the per-100 g value by the portion weight: 12 × 150/100 = 18 g.
 M2#maths-u29-26-q3@2: A timetable shows a train at 08:42 with a footnote "Mondays to Fridays". Can you catch it on Saturday? | No: it runs only on weekdays | Yes | Only in summer | Yes, but it's late | It depends on the weather | The footnote restricts the service to weekdays.
+Q: What is a reference intake (RI) on a food label? | A guideline daily amount, such as 2,000 kcal energy and 6 g salt for an adult.
+Q: How do you find the amount in a portion from a per-100 g value? | Per-100 g value × portion weight ÷ 100.
+Q: How is % RI calculated? | Amount ÷ reference intake.
+Q: What are the adult reference intakes for fat and total sugars? | 70 g fat and 90 g total sugars.
+Q: What do traffic-light colours on food labels show? | Whether levels are high, medium or low.
+Q: How do you read a timetable for one service? | Read across its row; read down a column for one stop.
+Q: How do you use a distance chart? | Find the cell where one place's row meets the other's column.
+Q: What is the common mistake when comparing nutrition labels? | Comparing one product's per-portion figure with another's per-100 g figure.
+Q: Why read footnotes in a timetable? | They may say a service runs only on weekdays or needs a change of trains.
+Q: Cereal has 22.5 g sugars per 100 g. How much is in a 30 g portion? | 6.75 g, which is 7.5% of the RI.
 
 ## Risk and Probability
 S: Everyday decisions involve risk: insurance, health choices, travel, investments and weather. Understanding probabilities, expected values and how risks are presented leads to better decisions.
@@ -936,6 +1196,16 @@ NUM1#maths-u29-27-q1@1: A £1,200 bike has a 10% chance of theft each year. Insu
 M1#maths-u29-27-q2@1: Which is the clearest way to present a 0.2% risk to the public? | 2 in 1,000 people | 0.002 | 0.2% | One-fifth of a per cent | A relative risk of 1.2 | Natural frequencies are easiest to picture.
 M3#maths-u29-27-q3@2: An extended warranty on a £300 washing machine costs £90 for 3 years. The chance of a repair in that time is 15%, and a repair costs £150. Is it good value on average? | No: the expected cost is £22.50, well below £90 | Yes: £90 is less than £300 | Yes: repairs are certain | No: repairs cost nothing | It's exactly fair | 0.15 × £150 = £22.50 expected; the warranty costs four times that.
 M2#maths-u29-27-q4@2: Why can a risk estimated from a small sample be misleading? | Small samples vary a lot by chance, so the observed frequency can be far from the true probability | Small samples are always biased upwards | Probability doesn't apply to small samples | Large samples are always wrong | It can't be misleading | The law of large numbers only guarantees convergence as the sample grows.
+Q: What is a natural frequency? | A probability expressed as a count, such as "3 in 1,000 people".
+Q: What is expected cost? | Probability × cost summed over outcomes: the long-run average cost.
+Q: What is a micromort? | A one-in-a-million chance of death, used to compare activities.
+Q: How is the expected insurance payout calculated? | P(claim) × (loss − excess).
+Q: What losses is it sensible to insure? | Losses you couldn't afford, such as home or car liability.
+Q: What does a 70% chance of rain mean? | It rains on about 70% of such days.
+Q: What is the gambler's fallacy? | Believing independent events "balance out".
+Q: Why do rare events happen somewhere every day? | There are so many opportunities for them to occur.
+Q: What is the common mistake with insurance for small losses? | Buying it where premiums far exceed expected payouts for affordable losses.
+Q: What is the difference between absolute and relative risk? | Absolute risk is your chance; relative risk compares groups.
 
 ## Estimation and Mental Maths
 S: In everyday life, quick estimates check bills, budgets, tips and quantities on the spot. Rounding sensibly and a few mental strategies are enough to spot errors and make good decisions without a calculator.
@@ -970,4 +1240,14 @@ SRC: Money and Pensions Service, MoneyHelper: everyday money | guidance | 2025 |
 NUM1#maths-u29-28-q1@1: A restaurant bill is £72 with a 12.5% service charge added. Find the total, in pounds. | 81 | 0 | £ | 12.5% of 72 is 9 (7.20 + 1.80), so the total is £81.
 M1#maths-u29-28-q2@1: Which estimate is closest for £4.95 × 6? | £30 | £24 | £36 | £3 | £300 | Round £4.95 to £5: 5 × 6 = £30 (exact £29.70).
 M2#maths-u29-28-q3@2: A receipt for 3 items around £2 each shows a total of £61.40. What's the most likely problem? | An item was scanned with a misplaced decimal point or wrong quantity | The prices are correct | VAT was added twice | It's a discount | Nothing: receipts are always right | Three items around £2 should total about £6, so the receipt needs checking.
+Q: What is rounding to friendly numbers? | Choosing nearby values that are easy to work with, such as £2.99 → £3.
+Q: What is a reasonableness check? | Asking whether an answer is about the size you'd expect.
+Q: How do you find 10% of an amount mentally? | Move the decimal point one place.
+Q: How can 12.5% be found mentally? | 10% plus a quarter of 10%.
+Q: How should a shared bill be split so it is covered? | Divide the total, then round up.
+Q: What should you check on a restaurant bill before tipping? | Whether a service charge is already included.
+Q: What should you do if a quote seems too high? | Ask for a breakdown.
+Q: What is the common mistake with shop receipts? | Trusting a total without a quick estimate, so scanning errors go unnoticed.
+Q: What is a 12.5% tip on a £64 meal? | £8.00 (£6.40 + £1.60).
+Q: Why can't a 2-litre bottle contain 20 servings of 250 ml? | 20 × 250 ml is 5 litres.
 `;
