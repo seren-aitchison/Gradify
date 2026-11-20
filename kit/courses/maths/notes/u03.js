@@ -1203,7 +1203,7 @@ SUM: Functions map each input to one output.
 SUM: The vertical line test identifies functions.
 SRC: Department for Education, Mathematics AS and A level subject content: algebra and functions | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
-NUM1#maths-u03-33-q1@1: If f(x) = 2x^{2} − 3x + 1, find f(−2). | 15 | 0 |  | 2 × 4 + 6 + 1 = 15.
+NUM1#maths-u03-33-q1@1: If f(x) = 2x^{2} − 3x + 1, find f(−2). | 15 | 0 |  | Substitute x = −2 with brackets: 2 × (−2)^{2} − 3 × (−2) + 1 = 8 + 6 + 1 = 15.
 M1#maths-u03-33-q2@1: Which describes f(x) = x^{2}? | Many-to-one | One-to-one | One-to-many | Not a function | Many-to-many | f(2) = f(−2) = 4: two inputs share an output.
 M2#maths-u03-33-q3@2: For f(x) = 4x + 1, solve f(x) = f(2x − 3). | x = 3 | x = −3 | x = 1 | x = 0 | No solution | f(2x − 3) = 4(2x − 3) + 1 = 8x − 11, and 4x + 1 = 8x − 11 gives x = 3.
 M2#maths-u03-33-q4@2: Plotting y = x^{2} − 4, what is the range of the function? | y ≥ −4, since the minimum value is −4 at x = 0 | All real numbers, since parabolas go on forever | y ≥ 0, since squares are never negative | y ≤ −4, since the graph opens downwards | −2 ≤ y ≤ 2, the roots | x^{2} ≥ 0, so x^{2} − 4 ≥ −4, and every value above −4 is reached.
@@ -1234,6 +1234,7 @@ X: Find the domain and range of h(x) = 3 + √(x − 1).
 > So the range is h(x) ≥ 3
 K: Domains exclude zero denominators, negative roots and non-positive logs; ranges come from the graph over the domain.
 !: Finding the range of a quadratic on an interval from the endpoints only, missing the turning point.
+!: Forgetting that √ gives only non-negative outputs: the range of 3 + √(x − 1) is h(x) ≥ 3, not all real numbers.
 Q: What is the domain of f(x) = 1/(x^{2} − 4)? | All real x except ±2.
 Q: What is the range of f(x) = (x + 1)^{2} − 5? | f(x) ≥ −5.
 SUM: The domain is what goes in; the range is what comes out.
@@ -1415,6 +1416,7 @@ X: Find the Cartesian equation of x = 2t + 1, y = t^{2} − 3.
 > y = (x − 1)^{2}/4 − 3, a parabola
 K: Eliminate the parameter to get a Cartesian equation; use trigonometric identities for circles and ellipses.
 !: Forgetting that the parameter's range can restrict the curve to only part of the Cartesian graph.
+!: Writing x^{2} + y^{2} = r^{2} for x = a cos θ, y = b sin θ when a ≠ b: that curve is the ellipse x^{2}/a^{2} + y^{2}/b^{2} = 1.
 Q: What curve is x = 3 cos θ, y = 3 sin θ? | A circle of radius 3 centred at the origin.
 Q: For x = t^{3}, y = t^{2}, what is the Cartesian equation? | y = x^{2/3} (or y^{3} = x^{2}).
 SUM: Parameters describe both coordinates.
@@ -1449,6 +1451,7 @@ X: Find the points where x^{2} + 2y^{2} = 18 meets the line y = x.
 > Points: (√6, √6) and (−√6, −√6)
 K: Implicit equations link x and y directly; substitute to test points, find coordinates or intersections.
 !: Assuming an implicit curve gives one y for each x.
+!: Dividing by x or y when finding intersections, which can lose points such as the origin: factorise instead.
 Q: Does (1, 2) lie on x^{2} + y^{2} − 2x = 4? | No: 1 + 4 − 2 = 3, not 4.
 Q: Why might you leave a curve in implicit form? | Solving for y may be impossible or give several branches.
 SUM: Implicit equations describe curves without y as the subject.
@@ -1465,6 +1468,8 @@ SA2@1: Explain why x^{2} + y^{2} = 25 does not define y as a function of x, and 
 S: A recurrence relation defines each term of a sequence from earlier terms, like u_{n+1} = 2u_{n} + 3. Recurrences model populations, loans and algorithms, and some can be solved to give a formula for the nth term.
 O: Generate terms from a recurrence relation
 O: Describe the long-term behaviour of a sequence and find limits
+LV: A level · Application
+EV: established | A recurrence u_{n+1} = au_{n} + b converges when |a| < 1, and its limit L satisfies L = aL + b.
 T: Recurrence relation | A rule giving each term from previous ones, with starting values
 T: Limit | A value that the terms approach as n becomes large
 H: Generating and describing
@@ -1481,6 +1486,7 @@ X: A pond has 200 fish. Each year the population falls by 10% and 30 fish are ad
 > P_{1} = 0.9 × 200 + 30 = 210
 > P_{2} = 0.9 × 210 + 30 = 219
 > Limit: L = 0.9L + 30, so 0.1L = 30 and L = 300 fish
+!: Using L = b/(1 − a) when |a| ≥ 1: for u_{n+1} = 2u_{n} + 3, L = −3 is a fixed point, but a sequence starting anywhere else moves away from it.
 K: Generate terms by repeated substitution; for u_{n+1} = au_{n} + b with |a| < 1, the limit is b/(1 − a).
 !: Assuming every recurrence has a limit: u_{n+1} = 2u_{n} + 3 grows without bound.
 Q: What is u_{3} if u_{1} = 4 and u_{n+1} = 3u_{n} − 5? | u_{2} = 7, u_{3} = 16.
@@ -1492,11 +1498,15 @@ SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw Hill 2
 NUM1#maths-u03-41-q1@1: u_{1} = 2 and u_{n+1} = u_{n}^{2} − 1. Find u_{4}. | 63 | 0 |  | u_{2} = 3, u_{3} = 8, u_{4} = 63.
 M1#maths-u03-41-q2@1: Which type of sequence is u_{n+1} = −u_{n}, u_{1} = 5? | Periodic | Increasing | Decreasing | Convergent to 0 | Arithmetic | It alternates 5, −5, 5, −5, …, repeating every 2 terms.
 M2#maths-u03-41-q3@2: u_{n+1} = 0.75u_{n} + 5. What is its limit? | 20 | 5 | 6.67 | 15 | It has none | L = 0.75L + 5 gives 0.25L = 5, so L = 20.
+NUM3@1,2: A loan of £1,000 is charged 2% interest a month, and £100 is repaid at the end of each month: B_{n+1} = 1.02B_{n} − 100 with B_{0} = 1000. Find the balance after 2 months. | 838.4 | 0.01 | £ | B_{1} = 1.02 × 1000 − 100 = 920. B_{2} = 1.02 × 920 − 100 = 938.40 − 100 = £838.40.
+SA2@2: For u_{n+1} = 0.6u_{n} + 4 with u_{1} = 0, find the next three terms and the limit, and explain why the sequence converges. | u_{2} = 4, u_{3} = 6.4, u_{4} = 7.84. Since |0.6| < 1, each step shrinks the distance to the limit by a factor 0.6, so the sequence converges. The limit satisfies L = 0.6L + 4, so 0.4L = 4 and L = 10. | Gets 4, 6.4 and 7.84 ; Sets L = 0.6L + 4 ; Gets L = 10 ; Explains convergence using |a| < 1
 
 ## Intermediate Algebra
 S: Intermediate algebra bridges GCSE and A level: confident manipulation of quadratics, functions, inequalities, surds and indices together, in multi-step problems. It's where fluency becomes problem solving.
 O: Combine algebraic techniques in multi-step problems
 O: Choose an efficient method for a given problem
+LV: GCSE and A level · Problem solving
+EV: established | A line is a tangent to a quadratic curve exactly when substituting gives a quadratic with a repeated root (discriminant zero).
 T: Fluency | Carrying out standard procedures accurately and efficiently
 T: Strategy | Choosing which technique to use, and in what order
 H: Combining techniques
@@ -1511,6 +1521,7 @@ X: Find where the line y = x + 1 meets the circle x^{2} + y^{2} = 13.
 > Substitute: x^{2} + (x + 1)^{2} = 13, so 2x^{2} + 2x − 12 = 0, so x^{2} + x − 6 = 0
 > (x + 3)(x − 2) = 0, so x = −3 or x = 2
 > Points: (−3, −2) and (2, 3)
+!: Using a discriminant greater than zero for a tangent: that gives two intersection points. A tangent needs exactly zero.
 K: Chain techniques deliberately; use the discriminant for tangency; substitute linear into quadratic.
 !: Losing track of signs across several steps: check each line.
 Q: How do you show a line is a tangent to a curve? | Substitute and show the resulting quadratic has a repeated root (discriminant 0).
@@ -1521,11 +1532,16 @@ SRC: Department for Education, Mathematics AS and A level subject content: algeb
 SRC: Pólya G, How to Solve It (Princeton University Press 2004) | secondary | 2004 | https://press.princeton.edu/
 M1#maths-u03-42-q1@1: For what value of k is y = 4x + k a tangent to y = x^{2}? | −4 | 4 | 0 | 2 | −2 | x^{2} − 4x − k = 0 needs 16 + 4k = 0, so k = −4.
 M2#maths-u03-42-q2@2: Where does y = 2x meet y = x^{2} − 3? | (3, 6) and (−1, −2) | (3, 6) only | (−3, −6) and (1, 2) | (2, 4) and (0, 0) | They don't meet | Set 2x = x^{2} − 3: x^{2} − 2x − 3 = 0, so x = 3 or −1, giving (3, 6) and (−1, −2).
+NUM1@1: Evaluate √12 × 3^{1/2}. | 6 | 0 |  | 3^{1/2} = √3, so √12 × √3 = √36 = 6. Combining indices and surds gives an exact whole number.
+M3@1,2: For which values of k does the line y = x + k meet the circle x^{2} + y^{2} = 8 at two points? | −4 < k < 4 | k < −4 or k > 4 | −2√2 < k < 2√2 | k = ±4 | Substitute: 2x^{2} + 2kx + k^{2} − 8 = 0. Two points need 4k^{2} − 8(k^{2} − 8) > 0, so 64 − 4k^{2} > 0 and k^{2} < 16. k = ±4 gives tangents.
+SA3@1,2: Show that the line y = 2x − 1 is a tangent to the curve y = x^{2}, and find the point of contact. | Substitute the line into the curve: x^{2} = 2x − 1, so x^{2} − 2x + 1 = 0. The discriminant is 4 − 4 = 0, so there is exactly one (repeated) root: (x − 1)^{2} = 0, x = 1. The line meets the curve at only one point and so is a tangent; the point of contact is (1, 1). | Substitutes to form x^{2} − 2x + 1 = 0 ; Shows the discriminant is 0 ; Explains one repeated root means a tangent ; Gives the point (1, 1)
 
 ## Advanced Algebra
 S: Advanced algebra extends school methods with proof by induction, the binomial theorem for any power, series and complex roots. It's the algebra of A level Further Maths and the first year of a maths degree.
 O: Use the binomial expansion for positive integer and other powers
 O: Prove algebraic results by induction
+LV: A level · Problem solving
+EV: established | (1 + x)^{n} for non-integer or negative n is an infinite series valid only for |x| < 1, and induction proves statements for all positive integers.
 T: Binomial expansion | (a + b)^{n} = Σ nCr a^{n−r}b^{r}
 T: Proof by induction | Proving a statement for n = 1 and that truth for n = k implies truth for n = k + 1
 H: Binomial expansions
@@ -1539,6 +1555,7 @@ X: Find the first three terms of (1 − 2x)^{1/2} in ascending powers of x, and 
 > 1 + (½)(−2x) + (½)(−½)(−2x)^{2}/2
 > = 1 − x − ½x^{2} + …
 > Valid for |2x| < 1, so |x| < ½
+!: Using an infinite binomial series outside its range of validity: (1 + x)^{−1} with x = 2 gives 1 − 2 + 4 − …, which never approaches 1/3.
 K: Use nCr for whole-number powers and the general series for others (with its validity range); prove "for all n" statements by induction.
 !: Forgetting to raise the coefficient inside the bracket to the power, as in (2x)^{2} = 4x^{2}.
 Q: What is 5C2? | 10.
@@ -1550,11 +1567,15 @@ SRC: Liebeck M, A Concise Introduction to Pure Mathematics (4th edn, CRC Press 2
 NUM1#maths-u03-43-q1@1: Find the coefficient of x^{2} in (3 + 2x)^{5}. | 1080 | 0 |  | 5C2 × 3^{3} × 2^{2} = 10 × 27 × 4 = 1080.
 M1#maths-u03-43-q2@1: What is the coefficient of x in (1 + x)^{−2}? | −2 | 2 | 1 | −1 | 3 | In (1 + x)^{n} = 1 + nx + …, the coefficient of x is n, which is −2 here.
 M3#maths-u03-43-q3@2: In the inductive step for 1 + 3 + … + (2n − 1) = n^{2}, what must you show? | k^{2} + (2k + 1) = (k + 1)^{2} | k^{2} = (k + 1)^{2} | 1 = 1^{2} | 2k − 1 = k^{2} | (k + 1)^{2} − k^{2} = 1 | Adding the next odd number, 2(k + 1) − 1 = 2k + 1, to k^{2} must give (k + 1)^{2}.
+M2@1: What is the coefficient of x^{3} in the expansion of (1 − x)^{−1/2}? | 5/16 | −5/16 | 3/8 | 15/8 | With n = −1/2 and (−x) in place of x: n(n − 1)(n − 2)/3! × (−1)^{3} = (−1/2)(−3/2)(−5/2)/6 × (−1) = (15/8)/6 = 5/16.
+SA3@2: Prove by induction that 7^{n} − 1 is divisible by 6 for every integer n ≥ 1. | Base case: n = 1 gives 7 − 1 = 6, divisible by 6. Inductive step: assume 7^{k} − 1 = 6m for some integer m. Then 7^{k+1} − 1 = 7 × 7^{k} − 1 = 7(7^{k} − 1) + 6 = 42m + 6 = 6(7m + 1), which is divisible by 6. So truth for k implies truth for k + 1, and by induction it holds for all n ≥ 1. | Checks the base case n = 1 ; States the inductive assumption ; Rewrites 7^{k+1} − 1 as 7(7^{k} − 1) + 6 ; Concludes with a correct induction statement
 
 ## Complex Numbers
 S: Complex numbers extend the reals with i, where i^{2} = −1. Every polynomial has all its roots among them, and they're indispensable in electrical engineering, quantum mechanics and signal processing.
 O: Calculate with complex numbers in the form a + bi
 O: Solve quadratic equations with complex roots and represent numbers on an Argand diagram
+LV: A level · Application
+EV: established | Every quadratic with real coefficients and negative discriminant has two complex conjugate roots.
 T: Imaginary unit | i, with i^{2} = −1
 T: Complex conjugate | For z = a + bi, the conjugate is z* = a − bi
 H: Arithmetic
@@ -1587,11 +1608,14 @@ M2#maths-u03-44-q3@2: What are the roots of z^{2} + 9 = 0? | 3i and −3i | 3 an
 M3#maths-u03-44-q4@2: Simplify (5 + 5i)/(2 + i). | 3 + i | 5 + 5i/2 | 2.5 + 5i | 1 + 3i | 3 − i | Multiply by (2 − i)/(2 − i): (10 − 5i + 10i + 5)/5 = (15 + 5i)/5 = 3 + i.
 M2#maths-u03-44-q5@2: On the Argand diagram, what does multiplying a complex number by i do? | Rotates it 90° anticlockwise about the origin, keeping its modulus | Reflects it in the real axis | Doubles its modulus | Rotates it 90° clockwise | Moves it one unit up | i has modulus 1 and argument 90°, so multiplication adds 90° to the argument and leaves the modulus unchanged.
 NUM1#maths-u03-44-q6@1: What is the modulus of each solution of z^{4} = −16? | 2 | 0 |  | Each root has modulus 16^{1/4} = 2; the four roots sit at arguments 45°, 135°, 225° and 315°.
+SA2@1,2: Solve z^{2} + 2z + 5 = 0, explain why the roots form a conjugate pair, and find their modulus. | The discriminant is 4 − 20 = −16, so z = (−2 ± √−16)/2 = (−2 ± 4i)/2 = −1 ± 2i. The ± in the formula gives a + bi and a − bi, so real coefficients always give conjugate pairs; on the Argand diagram they are reflections in the real axis. Each has modulus √(1 + 4) = √5. | Finds the discriminant −16 ; Gets z = −1 ± 2i ; Explains the conjugate pair from the ± ; Gets modulus √5
 
 ## Boolean Algebra
 S: Boolean algebra is the algebra of true and false (1 and 0), with operations AND, OR and NOT. It's the mathematics of logic circuits, search queries and computer programs.
 O: Evaluate Boolean expressions and construct truth tables
 O: Simplify Boolean expressions using the laws, including De Morgan's laws
+LV: Year 1 · Application
+EV: established | Boolean algebra obeys its own laws, including absorption and De Morgan's laws, which any truth table confirms.
 T: Boolean variable | A variable taking only the values 0 (false) and 1 (true)
 T: De Morgan's laws | NOT (A AND B) = (NOT A) OR (NOT B); NOT (A OR B) = (NOT A) AND (NOT B)
 H: Operations and truth tables
@@ -1618,4 +1642,7 @@ SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw Hill 2
 SRC: Department for Education, Computer science GCSE subject content | standard | 2015 | https://www.gov.uk/government/publications/gcse-computer-science
 M1#maths-u03-45-q1@1: What is 1 AND 0? | 0 | 1 | 2 | 10 | Undefined | AND gives 1 only when both inputs are 1; here one input is 0, so the result is 0.
 M2#maths-u03-45-q2@2: Which expression equals A + A·B? | A | B | A·B | A + B | 1 | By absorption: A + A·B = A·(1 + B) = A·1 = A.
+NUM1@1: How many rows does a truth table for 4 Boolean variables need? | 16 | 0 |  | Each variable is 0 or 1, so n variables give 2^{n} combinations: 2^{4} = 16 rows.
+M3@2: Which expression equals NOT (A AND NOT B)? | Ā + B | Ā·B | A + B̄ | Ā + B̄ | By De Morgan's law, the complement of A·B̄ is Ā + (complement of B̄) = Ā + B; the double negation cancels.
+SA2@1,2: Use a truth table, and then the laws, to show that A + A·B = A. | Truth table: A = 0, B = 0: A·B = 0, A + A·B = 0. A = 0, B = 1: 0, total 0. A = 1, B = 0: 0, total 1. A = 1, B = 1: 1, total 1. The final column matches A in every row. Algebraically, A + A·B = A·1 + A·B = A·(1 + B) = A·1 = A, using annihilation (1 + B = 1). | Lists all four input combinations ; Computes A·B and A + A·B correctly ; Notes the result matches A in every row ; Gives an algebraic proof using the laws
 `;

@@ -1506,6 +1506,8 @@ SA2@1,2: Explain why the Koch snowflake has an infinite perimeter but encloses a
 S: Discrete geometry studies finite or countable sets of geometric objects: points, lines, polygons and lattices, and how they're arranged. Packing, covering, counting lattice points and arranging points are its central problems.
 O: Use Pick's theorem to find areas of lattice polygons
 O: Describe classic problems of packing and arrangement
+LV: Year 2 · Application
+EV: established | Pick's theorem gives the area of a simple lattice polygon as I + B/2 − 1, and hexagonal packing is the densest packing of equal circles in the plane.
 T: Lattice point | A point with integer coordinates
 T: Pick's theorem | For a polygon with vertices on lattice points: area = I + B/2 − 1, where I is the number of interior and B the number of boundary lattice points
 H: Pick's theorem
@@ -1517,9 +1519,10 @@ H: Packing and arrangements
 - **Erdős problems**: how many distinct distances must n points determine? Arrangements of lines and points.
 - Applications: crystallography, coding theory, wireless networks.
 X: Find the area of the triangle with vertices (0, 0), (4, 0) and (0, 3) using Pick's theorem, and check it.
-> Boundary points: 5 on the base, 4 on the vertical side, and the hypotenuse adds none besides its ends: B = 4 + 3 + 1 = 8
+> Boundary points: 5 on the base and 4 on the vertical side, sharing the origin; the hypotenuse has none between its ends: B = 5 + 4 − 1 = 8
 > Interior points: (1, 1), (2, 1), (1, 2): I = 3
 > Area = 3 + 4 − 1 = 6, matching ½ × 4 × 3 = 6
+P: Counting boundary points: the segment from (x₁, y₁) to (x₂, y₂) passes through gcd(|x₂ − x₁|, |y₂ − y₁|) + 1 lattice points, including its ends.
 K: Pick's theorem: area = I + B/2 − 1 for lattice polygons; packing problems ask for the densest arrangements.
 !: Applying Pick's theorem to a polygon whose vertices aren't lattice points.
 Q: What is the densest packing of equal circles in the plane? | The hexagonal packing (about 90.7%).
@@ -1531,11 +1534,15 @@ SRC: Hales TC et al, A formal proof of the Kepler conjecture, Forum of Mathemati
 NUM1#maths-u05-41-q1@1: A lattice polygon has 10 interior points and 6 boundary points. Find its area. | 12 | 0 |  | Pick's theorem: 10 + 6/2 − 1 = 12.
 M1#maths-u05-41-q2@1: What fraction of space do equal spheres fill in the densest packing? | About 74% | About 52% | About 90.7% | 100% | About 50% | Kepler's conjecture, proved by Hales: π/(3√2) ≈ 0.7405.
 M2#maths-u05-41-q3@2: When does Pick's theorem apply? | To polygons whose vertices are all lattice points (no holes) | To any polygon | To circles | To 3D polyhedra | Only to triangles | It needs integer-coordinate vertices and a simple polygon.
+NUM3@1: The lattice triangle with vertices (0, 0), (6, 0) and (0, 4) has area 12. How many lattice points lie strictly inside it? | 7 | 0 | points | The edges contribute gcd(6, 0) + gcd(0, 4) + gcd(6, 4) = 6 + 4 + 2 = 12 boundary points, so by Pick 12 = I + 6 − 1 and I = 7.
+SA2@2: Compare the square and hexagonal packings of equal circles in the plane, and state what is known about the densest packing of spheres in three dimensions. | In square packing each circle touches 4 others and sits in a square of side 2r, so the density is πr²/(4r²) = π/4 ≈ 78.5%. In hexagonal packing each circle touches 6 others and the gaps are smaller, giving π/(2√3) ≈ 90.7%, which is the densest possible packing of equal circles (Thue, Fejes Tóth). In three dimensions the densest packing of equal spheres has density π/(3√2) ≈ 74%, achieved by stacking hexagonal layers; this was Kepler's conjecture, proved by Hales in 1998 and formally verified in 2014. | square packing touches 4 with density π/4 ; hexagonal touches 6 with density ≈ 90.7% ; hexagonal is optimal in the plane ; 3D optimum ≈ 74% ; Kepler conjecture proved by Hales
 
 ## Convex Geometry
 S: A convex set contains the whole segment between any two of its points: discs, triangles and filled polygons are convex; crescents aren't. Convexity makes problems tractable, which is why it's central to optimisation.
 O: Decide whether a set is convex and find convex hulls
 O: State key results such as Helly's theorem
+LV: Year 2 · Application
+EV: established | Intersections of convex sets are convex, and Helly's theorem guarantees a common point when every three convex sets in a finite planar family meet.
 T: Convex set | A set containing the line segment between any two of its points
 T: Convex hull | The smallest convex set containing a given set, like a rubber band stretched around points
 H: Convex sets
@@ -1551,6 +1558,7 @@ X: Is the region {(x, y) : x^{2} + y^{2} ≤ 4 and y ≥ x} convex?
 > x^{2} + y^{2} ≤ 4 is a disc, which is convex
 > y ≥ x is a half-plane, which is convex
 > Their intersection is convex
+P: A polygon is convex exactly when every interior angle is less than 180°: going round it, every turn is in the same direction.
 K: Convex means every segment between points stays inside; intersections of convex sets are convex; convex hulls wrap points tightly.
 !: Assuming the union of two convex sets is convex.
 Q: Is a star shape convex? | No: segments between some points leave the shape.
@@ -1561,11 +1569,17 @@ SRC: Boyd S, Vandenberghe L, Convex Optimization (Cambridge University Press 200
 SRC: Matoušek J, Lectures on Discrete Geometry (Springer 2002) | secondary | 2002 | https://link.springer.com/
 M1#maths-u05-42-q1@1: Which set is convex? | A filled triangle | A crescent moon shape | An annulus (ring) | Two separate discs | A star | Any segment between two points of a triangle stays inside it.
 M2#maths-u05-42-q2@2: Which operation always preserves convexity? | Intersection | Union | Complement | Removing a point from the interior | Taking the boundary | The intersection of convex sets is convex, but unions and complements usually aren't.
+TF1@1: The union of two overlapping discs is always convex. | false | Unless one disc contains the other, a segment joining the far sides of the two discs passes outside both near the pinch where they meet.
+NUM2@1: Find the area of the convex hull of the points (0, 0), (6, 0), (3, 5), (3, 1) and (2, 2). | 15 | 0 |  | (3, 1) and (2, 2) lie inside the triangle (0, 0), (6, 0), (3, 5), so that triangle is the hull: area ½ × 6 × 5 = 15.
+M3@2: Four convex sets in the plane have the property that every three of them share a point. What follows? | All four share a common point | Only three of them must share a point | Nothing: Helly needs every pair to meet | Some pair of them must be disjoint | Helly's theorem in the plane: if every three sets of a finite family of convex sets intersect, the whole family has a common point.
+SA2@1: Prove that the intersection of two convex sets is convex, and give an example showing that the union of two convex sets need not be. | Let A and B be convex and take any two points P and Q in A ∩ B. Both points are in A, which is convex, so the segment PQ lies in A; likewise it lies in B. So PQ lies in A ∩ B, which is therefore convex. For a union, take two disjoint discs: the segment from a point of one to a point of the other passes through points in neither disc, so the union isn't convex. | takes two points in the intersection ; segment lies in A by convexity ; segment lies in B ; concludes intersection convex ; counterexample for unions
 
 ## Computational Geometry
 S: Computational geometry designs efficient algorithms for geometric problems: convex hulls, intersections, nearest neighbours, triangulations and Voronoi diagrams. It powers computer graphics, mapping, robotics and computer-aided design.
 O: Use the orientation test to decide turn direction
 O: Describe standard algorithms such as convex hulls and Voronoi diagrams
+LV: Year 2 · Application
+EV: established | The orientation test is the basic primitive of computational geometry, and convex hulls of n points can be found in O(n log n) time.
 T: Orientation test | The sign of the cross product (b − a) × (c − a) decides whether a → b → c turns left, right or is straight
 T: Voronoi diagram | The partition of the plane into regions closest to each of a set of sites
 H: Basic tools
@@ -1580,6 +1594,7 @@ X: Do the points a(0, 0), b(4, 1), c(2, 3) make a left or right turn?
 > (b_{x} − a_{x})(c_{y} − a_{y}) − (b_{y} − a_{y})(c_{x} − a_{x}) = 4 × 3 − 1 × 2
 > = 12 − 2 = 10
 > Positive, so a → b → c turns left (anticlockwise)
+P: **Point in polygon (ray casting).** Draw a ray from the point in any direction: the point is inside if the ray crosses the boundary an odd number of times.
 K: The orientation test is the basic primitive; convex hulls take O(n log n); Voronoi diagrams partition by nearest site.
 !: Using exact equality tests with floating-point coordinates.
 Q: What does a zero orientation value mean? | The three points are collinear.
@@ -1591,15 +1606,20 @@ SRC: O'Rourke J, Computational Geometry in C (2nd edn, Cambridge University Pres
 NUM1#maths-u05-43-q1@1: Use the shoelace formula to find the area of the triangle (0, 0), (5, 0), (2, 4). | 10 | 0 |  | ½|0 × 0 − 5 × 0 + 5 × 4 − 2 × 0 + 2 × 0 − 0 × 4| = ½ × 20 = 10.
 M1#maths-u05-43-q2@1: What is the time complexity of the best general convex hull algorithms? | O(n log n) | O(n^{2}) | O(n^{3}) | O(log n) | O(2^{n}) | Sorting the points is the bottleneck, giving O(n log n), which is optimal in general.
 M2#maths-u05-43-q3@2: What is the dual structure of a Voronoi diagram? | The Delaunay triangulation | The convex hull | A spanning tree | A kd-tree | A grid | Joining sites whose Voronoi regions share an edge gives the Delaunay triangulation.
+NUM2@1: Compute the orientation value (b_{x} − a_{x})(c_{y} − a_{y}) − (b_{y} − a_{y})(c_{x} − a_{x}) for a(1, 1), b(4, 2), c(2, 5). | 11 | 0 |  | (4 − 1)(5 − 1) − (2 − 1)(2 − 1) = 12 − 1 = 11, which is positive, so a → b → c turns left.
+NUM3@1: Use the shoelace formula to find the area of the quadrilateral (0, 0), (4, 0), (5, 3), (1, 4), taken in that order. | 14.5 | 0 |  | The terms x_{i}y_{i+1} − x_{i+1}y_{i} are 0, 12, 17 and 0, totalling 29, so the area is 29/2 = 14.5.
+SA2@1,2: Explain how the orientation test is used to build the convex hull of a set of points with Andrew's monotone chain algorithm, and why it takes O(n log n) time. | Sort the points by x-coordinate (then y). Build the lower hull by going left to right: add each point, and while the last three points do not make a left turn (orientation not positive), remove the middle one. Build the upper hull the same way from right to left, and join the two chains. Each point is added once and removed at most once, so the scan is O(n); the sort costs O(n log n), so the whole algorithm is O(n log n). | sorts the points ; orientation test decides left or right turns ; pops points that make a non-left turn ; lower and upper chains joined ; sorting dominates, O(n log n)
 
 ## Integral Geometry
 S: Integral geometry measures sets of geometric objects (lines, needles, planes) using integrals, often with probability. Its most famous result, Buffon's needle, estimates π by dropping needles on lined paper.
 O: Solve Buffon's needle problem
 O: Describe how integral geometry measures sets of lines
+LV: Year 3 · Application
+EV: established | A needle of length l ≤ d dropped at random on lines d apart crosses a line with probability 2l/(πd).
 T: Buffon's needle | Dropping a needle of length l on lines d apart (l ≤ d); the probability it crosses a line is 2l/(πd)
 T: Crofton formula | The length of a curve equals a constant times the measure of the set of lines meeting it, counted with multiplicity
 H: Buffon's needle
-- Comte de Buffon posed it in 1777: the answer involves π, so repeated drops estimate π.
+- Comte de Buffon posed it in 1733 and published the solution in 1777: the answer involves π, so repeated drops estimate π.
 - With l = d, the probability is 2/π ≈ 0.637.
 - Derivation: integrate over the needle's angle θ and its centre's distance from the nearest line.
 H: Measuring lines
@@ -1610,9 +1630,13 @@ X: A needle of length 1 cm is dropped on lines 2 cm apart. What is the probabili
 > P = 2l/(πd) = 2 × 1/(π × 2)
 > = 1/π
 > ≈ 0.318
+X: Derive P = 2l/(πd) for l ≤ d.
+> Let y be the distance from the needle's centre to the nearest line (uniform on 0 to d/2) and θ its angle to the lines (uniform on 0 to π/2)
+> It crosses when y ≤ (l/2) sin θ, so P = ∫ (l/2) sin θ dθ (from 0 to π/2) ÷ ((d/2)(π/2))
+> = (l/2) ÷ (πd/4) = 2l/(πd)
 K: Buffon's needle: P = 2l/(πd) for l ≤ d; integral geometry measures sets of lines, giving formulas for lengths and areas.
 !: Using Buffon's formula for needles longer than the line spacing (it changes).
-Q: Who posed the needle problem? | Georges-Louis Leclerc, Comte de Buffon (1777).
+Q: Who posed the needle problem? | Georges-Louis Leclerc, Comte de Buffon (posed 1733, published 1777).
 Q: What does stereology use integral geometry for? | Estimating 3D quantities from 2D slices.
 SUM: Integral geometry measures sets of geometric objects.
 SUM: Buffon's needle links probability and π.
@@ -1621,11 +1645,15 @@ SRC: Klain DA, Rota GC, Introduction to Geometric Probability (Cambridge Univers
 NUM1#maths-u05-44-q1@1: A needle of length 3 cm is dropped on lines 4 cm apart. Find the probability it crosses a line, to 3 decimal places. | 0.477 | 0.0005 |  | 2 × 3/(π × 4) = 6/(4π) ≈ 0.477.
 M1#maths-u05-44-q2@1: If needles equal in length to the line spacing are dropped, about what fraction cross a line? | 2/π ≈ 0.64 | 1/2 | 1/π ≈ 0.32 | π/4 ≈ 0.79 | 1 | With needle length equal to the spacing, P = 2l/(πd) = 2/π ≈ 0.64.
 M3#maths-u05-44-q3@2: In 1,000 drops with l = d, 640 needles cross a line. What is the estimate of π? | About 3.125 | About 3.2 | About 1.56 | About 0.64 | About 6.4 | The observed proportion 0.64 estimates 2/π, so π ≈ 2/0.64 = 3.125.
+NUM2@1: Needles 5 cm long are dropped on lines 10 cm apart, 2,000 times. To the nearest whole number, how many crossings would you expect? | 637 | 0.5 | crossings | P = 2 × 5/(π × 10) = 1/π ≈ 0.3183, and 2,000 × 0.3183 ≈ 637.
+SA2@1,2: Explain how Buffon's needle experiment estimates π, and why the estimate improves only slowly as more needles are dropped. | For needles of length l on lines d apart (l ≤ d), the probability of a crossing is 2l/(πd). After n drops with c crossings, the proportion c/n estimates this probability, so π ≈ 2ln/(cd). By the law of large numbers the proportion tends to the true probability, but its random error shrinks only like 1/√n: to gain one more correct decimal place in π needs about 100 times as many drops, so the method is a demonstration of geometric probability rather than a practical way to compute π. | crossing probability 2l/(πd) ; proportion of crossings estimates it ; rearranges for π ; error shrinks like 1/√n ; about 100 times more drops per extra digit
 
 ## Differential Geometry
 S: Differential geometry uses calculus to study curves and surfaces: how they bend and twist. Curvature is its central idea, and Gauss's remarkable theorem shows a surface's curvature can be measured from within it.
 O: Calculate the curvature of plane curves
 O: Describe Gaussian curvature and the Theorema Egregium
+LV: Year 2 · Application
+EV: established | Curvature measures bending, and Gauss's Theorema Egregium shows Gaussian curvature is intrinsic to a surface.
 T: Curvature of a curve | κ = |y″|/(1 + y′^{2})^{3/2}; for a circle of radius R it's 1/R
 T: Gaussian curvature | K = κ₁κ₂, the product of a surface's principal curvatures at a point
 H: Curves
@@ -1640,6 +1668,7 @@ X: Find the curvature of y = x^{2} at x = 0 and at x = 1.
 > y′ = 2x and y″ = 2
 > At x = 0: κ = 2/(1 + 0)^{3/2} = 2 (osculating circle radius ½)
 > At x = 1: κ = 2/(1 + 4)^{3/2} = 2/5^{3/2} ≈ 0.179
+P: The **radius of curvature** is ρ = 1/κ. Road and railway designers use it because a vehicle on a bend needs a sideways acceleration of v^{2}/ρ.
 K: κ = |y″|/(1 + y′^{2})^{3/2}, circle 1/R; Gaussian curvature is intrinsic, so spheres can't be mapped flat without distortion.
 !: Thinking a cylinder is curved in Gauss's sense: its Gaussian curvature is zero.
 Q: What is the curvature of a circle of radius 4? | 1/4.
@@ -1651,11 +1680,15 @@ SRC: Pressley A, Elementary Differential Geometry (2nd edn, Springer 2010) | sec
 NUM1#maths-u05-45-q1@1: What is the curvature of a circle of radius 0.25 m? | 4 | 0 | m⁻¹ | κ = 1/R = 1/0.25 = 4 m^{−1}.
 M1#maths-u05-45-q2@1: What is the Gaussian curvature of a cylinder? | Zero | Positive | Negative | Infinite | It varies | One principal curvature is zero (along the axis), so their product is zero: a cylinder can be unrolled flat.
 M2#maths-u05-45-q3@2: Which surface has negative Gaussian curvature at its centre? | A saddle (y^{2} − x^{2}) | A sphere | A plane | A cylinder | An egg | At a saddle, the surface curves up in one direction and down in the other.
+NUM3@1: Find the curvature of y = x^{3} at x = 1, to 2 decimal places. | 0.19 | 0.005 |  | y′ = 3 and y″ = 6 at x = 1, so κ = 6/(1 + 9)^{3/2} = 6/31.62 ≈ 0.19.
+SA2@2: Explain what Gauss's Theorema Egregium says, and use it to explain why a sheet of paper can be rolled into a cylinder but not wrapped smoothly round a sphere. | Gaussian curvature K is the product of the two principal curvatures at a point. The Theorema Egregium (Gauss, 1827) says K is intrinsic: it can be computed from distances measured within the surface, so any bending that doesn't stretch or tear the surface keeps K unchanged. Flat paper has K = 0. A cylinder curves in one direction but not along its axis, so K = 1/R × 0 = 0: rolling paper into it needs no stretching. A sphere has K = 1/R² > 0 everywhere, so paper (K = 0) can't be fitted to it without stretching, creasing or tearing, which is also why every flat map of the Earth distorts. | K is the product of principal curvatures ; K is intrinsic ; bending without stretching keeps K ; cylinder K = 0 ; sphere K = 1/R² so paper can't fit
 
 ## Riemannian Geometry
 S: Riemannian geometry studies curved spaces of any dimension using a metric that measures lengths and angles at every point. It's the mathematics of general relativity, where gravity is the curvature of space-time.
 O: Describe metrics, geodesics and curvature in Riemannian geometry
 O: Apply the Gauss–Bonnet theorem
+LV: Year 3 · Application
+EV: established | A Riemannian metric determines lengths, geodesics and curvature, and the Gauss–Bonnet theorem gives ∫ K dA = 2πχ for a closed surface.
 T: Riemannian metric | A smoothly varying inner product on tangent spaces, giving lengths and angles
 T: Geodesic | A locally shortest path; the generalisation of a straight line
 H: Core ideas
@@ -1670,6 +1703,7 @@ X: Verify the Gauss–Bonnet theorem for a sphere of radius 3.
 > K = 1/R^{2} = 1/9 everywhere, and area = 4π × 9 = 36π
 > ∫ K dA = (1/9) × 36π = 4π
 > A sphere has χ = 2, and 2πχ = 4π ✓
+P: **Gauss–Bonnet for triangles.** On a surface, the angle sum of a geodesic triangle is π plus the integral of K over it: this gives Girard's theorem on a sphere and the angle defect on the hyperbolic plane.
 K: A metric defines geometry; geodesics are straightest paths; Gauss–Bonnet links total curvature to topology; relativity is Riemannian geometry.
 !: Thinking total curvature depends on a surface's size: for a sphere it's always 4π.
 Q: What are the geodesics on a sphere? | Great circles.
@@ -1681,11 +1715,15 @@ SRC: Carroll SM, Spacetime and Geometry (Cambridge University Press 2019) | seco
 NUM1#maths-u05-46-q1@1: A closed surface has Euler characteristic 0 (a torus). What is its total Gaussian curvature? | 0 | 0 |  | By Gauss–Bonnet, ∫ K dA = 2πχ = 0: positive and negative curvature cancel.
 M1#maths-u05-46-q2@1: In general relativity, what do freely falling objects follow? | Geodesics of space-time | Straight lines in space | Circles | Parabolas only | Great circles on the Earth | Gravity is curvature, and free motion is along geodesics.
 M2#maths-u05-46-q3@2: What is the total Gaussian curvature of any sphere, whatever its radius? | 4π | 4πR^{2} | 2π | 1/R^{2} | 0 | Curvature 1/R^{2} times area 4πR^{2} always gives 4π.
+NUM3@2: A closed orientable surface has genus 2 (χ = 2 − 2g). Find its total Gaussian curvature as a multiple of π. | -4 | 0 | π | χ = 2 − 2 × 2 = −2, so Gauss–Bonnet gives ∫ K dA = 2πχ = −4π.
+SA2@1,2: Explain what a Riemannian metric provides, and verify the Gauss–Bonnet theorem for a sphere of any radius R, explaining why the answer doesn't depend on R. | A Riemannian metric is a smoothly varying inner product on each tangent space: it gives the length of tangent vectors and the angles between them, so lengths of curves (by integrating ds), geodesics (locally shortest paths) and curvature can all be defined. On a sphere of radius R, the Gaussian curvature is K = 1/R² everywhere and the area is 4πR², so ∫ K dA = (1/R²)(4πR²) = 4π. The sphere's Euler characteristic is 2, and 2πχ = 4π, agreeing. Enlarging the sphere lowers K by the same factor that it raises the area, so the total is fixed by the topology. | metric gives lengths and angles ; defines geodesics and curvature ; K = 1/R² and area 4πR² ; total 4π = 2π × 2 ; R cancels so total is topological
 
 ## Symplectic Geometry
 S: Symplectic geometry is the geometry of classical mechanics' phase space, where positions and momenta live together. Its structure measures oriented areas rather than lengths, and Hamiltonian flows preserve it.
 O: Describe phase space and the symplectic form
 O: Explain why Hamiltonian flows preserve phase-space area
+LV: Postgraduate · Fluency
+EV: established | Hamiltonian flows preserve the symplectic form, and so preserve phase-space area (Liouville's theorem).
 T: Phase space | The space of positions q and momenta p of a system
 T: Symplectic form | A non-degenerate, closed 2-form ω (in 2D, ω = dq ∧ dp) measuring oriented area
 H: Mechanics in phase space
@@ -1700,6 +1738,7 @@ X: Show that the map (q, p) ↦ (q + p, p) preserves area in phase space.
 > The Jacobian matrix is [[1, 1], [0, 1]]
 > Its determinant is 1 × 1 − 1 × 0 = 1
 > So it preserves oriented area: it's a symplectic map (a shear)
+P: For the oscillator H = (p^{2} + q^{2})/2, Hamilton's equations give dq/dt = p and dp/dt = −q, so the state moves clockwise round a circle of radius √(2H) in the (q, p) plane, conserving energy.
 K: Phase space pairs positions and momenta; the symplectic form measures oriented area; Hamiltonian flows preserve it.
 !: Thinking symplectic geometry measures lengths: it measures oriented areas instead.
 Q: What does Liouville's theorem say? | Hamiltonian flows preserve phase-space volume.
@@ -1710,11 +1749,16 @@ SRC: Arnold VI, Mathematical Methods of Classical Mechanics (2nd edn, Springer 1
 SRC: McDuff D, Salamon D, Introduction to Symplectic Topology (3rd edn, Oxford University Press 2017) | secondary | 2017 | https://global.oup.com/
 M1#maths-u05-47-q1@1: What does phase space combine? | Positions and momenta | Time and energy only | Mass and charge | Length and area | Velocity and acceleration only | Each point records the system's state: where it is and how it's moving.
 M3#maths-u05-47-q2@2: Which 2D linear map is symplectic? | [[2, 3], [1, 2]] | [[2, 0], [0, 2]] | [[1, 1], [1, 1]] | [[3, 0], [0, 1]] | [[0, 2], [1, 0]] | Its determinant is 4 − 3 = 1, so it preserves oriented area.
+M2@1: For a particle with H = p^{2}/(2m) + V(q), what does Hamilton's equation give for dq/dt? | p/m | −V′(q) | p^{2}/(2m) | m × p | dq/dt = ∂H/∂p = p/m, the velocity; dp/dt = −∂H/∂q = −V′(q) is the force.
+NUM2@2: The linear map with matrix [[3, 2], [k, 1]] is symplectic. Find k. | 1 | 0 |  | A 2D linear map is symplectic when its determinant is 1: 3 × 1 − 2k = 1, so k = 1.
+SA2@1,2: Explain what Liouville's theorem says, illustrate it with the harmonic oscillator H = (p^{2} + q^{2})/2, and say why it matters for statistical mechanics. | Phase space pairs positions q and momenta p. Liouville's theorem says the flow of Hamilton's equations preserves phase-space volume (in 2D, area): a region of initial states may change shape, but not its size. For the oscillator, dq/dt = p and dp/dt = −q, so every point rotates clockwise about the origin at the same rate; a region of states simply rotates rigidly, keeping its area. In statistical mechanics this means a uniform probability distribution over states of fixed energy stays uniform, which justifies treating equal phase-space volumes as equally likely. | defines phase space ; Hamiltonian flow preserves area or volume ; oscillator equations dq/dt = p, dp/dt = −q ; rigid rotation keeps area ; equal volumes equally likely in statistical mechanics
 
 ## Algebraic Geometry
 S: Algebraic geometry studies the shapes defined by polynomial equations, called varieties. It joins algebra and geometry deeply, and its ideas solved Fermat's Last Theorem and power modern cryptography.
 O: Describe algebraic varieties as solution sets of polynomials
 O: Apply Bézout's theorem to count intersections
+LV: Year 3 · Application
+EV: established | Bézout's theorem states that plane curves of degrees m and n with no common component meet in mn points counted with multiplicity in the complex projective plane.
 T: Algebraic variety | The set of common solutions of a system of polynomial equations
 T: Bézout's theorem | Two plane curves of degrees m and n with no common component meet in exactly mn points, counted with multiplicity, in the complex projective plane
 H: Varieties
@@ -1729,6 +1773,7 @@ X: At most how many points can the circle x^{2} + y^{2} = 25 and the parabola y 
 > Degrees 2 and 2, so Bézout allows at most 4
 > Substitute x^{2} = y + 5: y + 5 + y^{2} = 25, so y^{2} + y − 20 = 0 and y = 4 or −5
 > y = 4: x = ±3; y = −5: x = 0. Points (3, 4), (−3, 4) and (0, −5) (the last counts twice: a tangency)
+P: A **singular point** is where a curve isn't smooth: y^{2} = x^{3} has a cusp at the origin, and y^{2} = x^{2}(x + 1) crosses itself there (a node).
 K: Varieties are polynomial solution sets; Bézout counts intersections (mn, with multiplicity, over the complex projective plane).
 !: Expecting exactly mn real intersection points: some may be complex, at infinity or repeated.
 Q: In how many points can two conics meet? | At most 4 (exactly 4 counting complex, infinite and repeated points).
@@ -1739,11 +1784,16 @@ SRC: Reid M, Undergraduate Algebraic Geometry (Cambridge University Press 1988) 
 SRC: Hartshorne R, Algebraic Geometry (Springer 1977) | secondary | 1977 | https://link.springer.com/
 M1#maths-u05-48-q1@1: At most how many points can a line and a cubic curve share? | 3 | 2 | 1 | 6 | 9 | Bézout: degrees 1 and 3 give at most 1 × 3 = 3.
 M2#maths-u05-48-q2@2: Who proved Fermat's Last Theorem? | Andrew Wiles (with Richard Taylor) | Pierre de Fermat | Leonhard Euler | Alexander Grothendieck | Grigori Perelman | Wiles's 1995 proof used elliptic curves and modular forms.
+TF1@1: The circle x^{2} + y^{2} = 1 has infinitely many points with both coordinates rational. | true | Each Pythagorean triple a² + b² = c² gives the rational point (a/c, b/c), and there are infinitely many triples.
+M3@2: Bézout's theorem says the line y = 0 meets the cubic y = x^{3} in 3 points. How is that count reached? | x = 0 is one point counted three times, since x³ = 0 has a triple root | There are three distinct real points of intersection | Two points are real and one is complex | Two of the points lie at infinity on the line | Substituting y = 0 gives x³ = 0, whose only root x = 0 has multiplicity 3: the line is tangent at an inflection point.
+SA2@1,2: Explain what Bézout's theorem says about a line and a circle, and illustrate the role of complex points using x^{2} + y^{2} = 1 with the lines y = 0 and y = 2. | A line has degree 1 and a circle degree 2, so Bézout says they meet in exactly 1 × 2 = 2 points when complex points, points at infinity and multiplicities are counted. The line y = 0 gives x² = 1, so two real points (±1, 0). The line y = 2 gives x² = −3, so x = ±i√3: two complex points and no real ones. A tangent line such as y = 1 gives x² = 0, one point counted twice. | degrees 1 and 2 give 2 points ; counting complex, infinite and repeated points ; y = 0 gives (±1, 0) ; y = 2 gives x = ±i√3 ; tangency counts twice
 
 ## Topological Geometry
 S: Topological geometry studies the properties of shapes that survive stretching and bending without tearing or gluing. To a topologist, a coffee mug and a doughnut are the same shape, because each has one hole.
 O: Classify surfaces by their Euler characteristic and genus
 O: Distinguish topological properties from geometric ones
+LV: Year 2 · Application
+EV: established | Closed orientable surfaces are classified by their genus g, with Euler characteristic χ = 2 − 2g.
 T: Homeomorphic | Topologically equivalent: one shape can be continuously deformed into the other
 T: Genus | The number of "handles" (holes) of a closed orientable surface
 H: Topological properties
@@ -1759,6 +1809,7 @@ X: A surface is built from 16 vertices, 32 edges and 16 faces. What is its Euler
 > χ = 16 − 32 + 16 = 0
 > χ = 2 − 2g gives 0 = 2 − 2g
 > g = 1: it's a torus
+P: The Euler characteristic doesn't depend on how a surface is divided up: putting a new vertex in the middle of an edge adds one vertex and one edge, leaving V − E + F unchanged.
 K: Topology studies properties unchanged by continuous deformation; χ = 2 − 2g classifies closed orientable surfaces.
 !: Treating geometric measurements (like area) as topological properties.
 Q: What is the genus of a sphere? | 0.
@@ -1770,11 +1821,15 @@ SRC: Richeson DS, Euler's Gem: The Polyhedron Formula and the Birth of Topology 
 NUM1#maths-u05-49-q1@1: What is the Euler characteristic of a closed orientable surface of genus 3? | -4 | 0 |  | χ = 2 − 2g = 2 − 6 = −4.
 M1#maths-u05-49-q2@1: Which shape is homeomorphic to a doughnut (torus)? | A coffee mug with one handle | A sphere | A disc | A figure eight | A solid ball | Both have one hole, so one can be continuously deformed into the other.
 M2#maths-u05-49-q3@2: Which surface has only one side? | A Möbius strip | A torus | A sphere | A cylinder | A disc | A Möbius strip is non-orientable: you can travel from one "side" to the other without crossing an edge.
+M3@1,2: Treating capital letters as curves drawn with a thin line, which pair are homeomorphic? | O and D | O and B | O and P | O and X | O and D are each a single closed loop; B has two loops, P a loop with a tail and X a crossing of four ends, which no continuous deformation removes.
+SA2@1: A closed orientable surface is divided into 10 vertices, 30 edges and 16 faces. Find its Euler characteristic and genus, and explain why χ classifies such surfaces. | χ = V − E + F = 10 − 30 + 16 = −4. For a closed orientable surface χ = 2 − 2g, so −4 = 2 − 2g and g = 3: a surface with three handles. χ is a topological invariant, unchanged by subdivision or continuous deformation, and the classification theorem says every closed orientable surface is a sphere with g handles; since χ = 2 − 2g determines g, it identifies the surface. | χ = −4 ; uses χ = 2 − 2g ; genus 3 ; χ unchanged by deformation and subdivision ; classification by genus
 
 ## Knot Theory
 S: A mathematical knot is a closed loop in 3D space that can't pass through itself. Knot theory asks when two knots are the same, using invariants that don't change under deformation. It has applications in DNA biology and physics.
 O: Describe knots, diagrams and Reidemeister moves
 O: Use simple invariants such as tricolourability to distinguish knots
+LV: Year 3 · Fluency
+EV: established | Two knot diagrams represent the same knot exactly when Reidemeister moves relate them, and invariants such as tricolourability can prove knots different.
 T: Knot | A closed loop embedded in 3D space, considered up to continuous deformation without cutting
 T: Knot invariant | A quantity unchanged by deformation, used to tell knots apart
 H: Knots and diagrams
@@ -1790,6 +1845,7 @@ X: Explain why the trefoil can't be untied into the unknot.
 > The trefoil diagram can be tricoloured: its three arcs each get a different colour, and at every crossing all three colours meet
 > The unknot's diagram has one arc, so it can only use one colour: not tricolourable
 > Tricolourability is invariant under Reidemeister moves, so the trefoil isn't the unknot
+!: Thinking that a knot which can't be tricoloured must be the unknot: the figure-eight knot isn't tricolourable either, so this invariant can't separate it from the unknot.
 K: Knots are loops in 3D up to deformation; Reidemeister moves relate diagrams; invariants such as tricolourability and polynomials distinguish knots.
 !: Thinking a messy diagram must be a complicated knot: it may simplify to the unknot.
 Q: What is the crossing number of the trefoil? | 3.
@@ -1800,4 +1856,7 @@ SRC: Adams CC, The Knot Book (American Mathematical Society 2004) | secondary | 
 SRC: Lickorish WBR, An Introduction to Knot Theory (Springer 1997) | secondary | 1997 | https://link.springer.com/
 M1#maths-u05-50-q1@1: What is the simplest non-trivial knot? | The trefoil | The figure-eight knot | The unknot | The granny knot | The square knot | The trefoil, with crossing number 3, is the simplest knot that can't be untied.
 M2#maths-u05-50-q2@2: What do Reidemeister moves do? | Change a knot diagram without changing the knot | Cut and rejoin the strands | Count the crossings | Colour the arcs | Turn a knot into a link | Any two diagrams of the same knot are related by a sequence of these three local moves.
+TF1@1: Every knot diagram with exactly one crossing represents the unknot. | true | A single crossing is a twist in the loop, which a Reidemeister move of the first type removes, leaving a simple circle.
+M3@2: A knot diagram can be tricoloured. Which conclusion is justified? | The knot isn't the unknot | The knot must be the trefoil | Its crossing number is exactly 3 | Every diagram of it has three arcs | Tricolourability is invariant and the unknot isn't tricolourable, so the knot is non-trivial; many knots besides the trefoil are tricolourable.
+SA2@1,2: Explain how a knot invariant is used to prove two knots are different, using the trefoil and the unknot, and explain why an invariant can't always prove two knots are the same. | By Reidemeister's theorem, two diagrams show the same knot exactly when a sequence of the three Reidemeister moves turns one into the other. An invariant is a property unchanged by each move, so equivalent knots have the same value. The trefoil can be tricoloured (each of its three arcs a different colour, all three meeting at every crossing), but the unknot's one-arc diagram can't, so they are different knots. The converse fails: knots can share an invariant value without being equivalent, as the unknot and the figure-eight knot are both non-tricolourable, so stronger invariants such as the Jones polynomial are needed. | Reidemeister moves relate diagrams ; invariant unchanged by each move ; trefoil tricolourable ; unknot not ; equal invariants don't prove equivalence
 `;

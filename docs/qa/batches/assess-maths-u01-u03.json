@@ -820,7 +820,187 @@
     "all worked examples and numeric answers recomputed"
    ],
    "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u03-33",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE and A level · Fluency",
+    "evidence status: established",
+    "explanation of NUM 'find f(−2)' lengthened (was under 20 characters)",
+    "new questions added: M3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u03-34",
+   "action": "enhanced",
+   "changes": [
+    "level: A level · Application",
+    "evidence status: established",
+    "common mistake added: non-negative output of a square root (lesson was too thin)",
+    "new questions added: NUM1, M3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u03-35",
+   "action": "enhanced",
+   "changes": [
+    "level: A level · Application",
+    "evidence status: established",
+    "new questions added: M3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u03-36",
+   "action": "enhanced",
+   "changes": [
+    "level: A level · Application",
+    "evidence status: established",
+    "new questions added: M3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u03-37",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE and A level · Application",
+    "evidence status: established",
+    "new questions added: SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u03-38",
+   "action": "enhanced",
+   "changes": [
+    "level: A level · Application",
+    "evidence status: established",
+    "new questions added: NUM1, M3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u03-39",
+   "action": "enhanced",
+   "changes": [
+    "level: A level · Application",
+    "evidence status: established",
+    "common mistake added: circle equation used for an ellipse (lesson was too thin)",
+    "new questions added: M3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u03-40",
+   "action": "enhanced",
+   "changes": [
+    "level: A level · Application",
+    "evidence status: established",
+    "common mistake added: dividing by x or y loses intersection points (lesson was too thin)",
+    "new questions added: NUM1, M3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u03-41",
+   "action": "enhanced",
+   "changes": [
+    "level: A level · Application",
+    "evidence status: established",
+    "common mistake added: using the limit formula when |a| ≥ 1 (lesson was too thin)",
+    "new questions added: NUM3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u03-42",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE and A level · Problem solving",
+    "evidence status: established",
+    "common mistake added: discriminant > 0 used for a tangent (lesson was too thin)",
+    "new questions added: NUM1, M3, SA3 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u03-43",
+   "action": "enhanced",
+   "changes": [
+    "level: A level · Problem solving",
+    "evidence status: established",
+    "common mistake added: using a binomial series outside its range of validity (lesson was too thin)",
+    "new questions added: M2, SA3 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u03-44",
+   "action": "enhanced",
+   "changes": [
+    "level: A level · Application",
+    "evidence status: established",
+    "new questions added: SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u03-45",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "new questions added: NUM1, M3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
   }
  ],
- "notes": []
+ "notes": [
+  "All 74 lessons (u01: 29, u03: 45) now have LV, EV, at least five questions at levels 1-3 linked to objectives, and one SA; every new numeric answer and the existing worked examples were recomputed. No arithmetic errors found in existing questions; one worked-example justification tightened (u01-21).",
+  "Both files grew about 35% overall, mostly from the required SA model answers; lesson prose was only extended where the check flagged a lesson as too thin (one added common mistake or worked example each).",
+  "tests/qa-content.test.mjs fails on maths u13 (a ' | ' inside brackets in an NUM3 question), which is outside this task's files; courses and compat tests pass, and check maths --unit u01 / u03 report 0 problems."
+ ]
 }

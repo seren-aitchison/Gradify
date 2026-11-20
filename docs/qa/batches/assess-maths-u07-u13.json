@@ -609,6 +609,66 @@
    "course": "maths",
    "action": "enhanced",
    "findings": []
+  },
+  {
+   "lesson": "u13-13",
+   "changes": [
+    "LV A level · Application; EV",
+    "added NUM3 (critical region) and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-14",
+   "changes": [
+    "LV Year 1 · Application; EV (contested: reform of NHST)",
+    "added NUM2, NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-15",
+   "changes": [
+    "LV A level · Application; EV",
+    "added NUM2 and SA2 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-16",
+   "changes": [
+    "LV A level · Application; EV",
+    "added NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-17",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added NUM2 and SA2 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-18",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added NUM2 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
   }
  ],
  "notes": [

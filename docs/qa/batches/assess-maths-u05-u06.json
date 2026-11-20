@@ -506,6 +506,142 @@
     "extended written answer (SA) with model answer and marking points added"
    ],
    "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-41",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 2 · Application",
+    "evidence status: established",
+    "content added: P (Counting boundary points: the segment from (x₁, y₁) to (x₂, y₂) pas…)",
+    "worked example: boundary-point count rewritten so the arithmetic shown matches the counting (5 + 4 − 1 = 8; was written 4 + 3 + 1)",
+    "questions added: NUM3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-42",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 2 · Application",
+    "evidence status: established",
+    "content added: P (A polygon is convex exactly when every interior angle is less than…)",
+    "questions added: TF1, NUM2, M3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-43",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 2 · Application",
+    "evidence status: established",
+    "content added: P (**Point in polygon (ray casting).** Draw a ray from the point in an…)",
+    "questions added: NUM2, NUM3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-44",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 3 · Application",
+    "evidence status: established",
+    "content added: X (Derive P = 2l/(πd) for l ≤ d.…)",
+    "questions added: NUM2, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": [
+    {
+     "class": "error-fixed",
+     "note": "Buffon's needle was dated 'posed in 1777'; Buffon posed the problem in 1733 and published the solution in 1777 (Essai d'arithmétique morale). Text and flashcard corrected."
+    }
+   ]
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-45",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 2 · Application",
+    "evidence status: established",
+    "content added: P (The **radius of curvature** is ρ = 1/κ. Road and railway designers…)",
+    "questions added: NUM3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-46",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 3 · Application",
+    "evidence status: established",
+    "content added: P (**Gauss–Bonnet for triangles.** On a surface, the angle sum of a ge…)",
+    "questions added: NUM3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-47",
+   "action": "enhanced",
+   "changes": [
+    "level: Postgraduate · Fluency",
+    "evidence status: established",
+    "content added: P (For the oscillator H = (p^{2} + q^{2})/2, Hamilton's equations give…)",
+    "questions added: M2, NUM2, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-48",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 3 · Application",
+    "evidence status: established",
+    "content added: P (A **singular point** is where a curve isn't smooth: y^{2} = x^{3} h…)",
+    "questions added: TF1, M3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-49",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 2 · Application",
+    "evidence status: established",
+    "content added: P (The Euler characteristic doesn't depend on how a surface is divided…)",
+    "questions added: M3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-50",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 3 · Fluency",
+    "evidence status: established",
+    "content added: ! (Thinking that a knot which can't be tricoloured must be the unknot:…)",
+    "questions added: TF1, M3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
   }
  ],
  "notes": []

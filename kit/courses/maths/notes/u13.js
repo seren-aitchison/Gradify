@@ -474,6 +474,7 @@ SA3@1,2: For an exponential(λ) model, show that the method of moments and maxim
 S: A hypothesis test asks whether data are consistent with a claim about a population. It sets up a null hypothesis, measures how surprising the data would be if it were true, and decides whether the evidence is strong enough to reject it.
 O: Set up hypotheses and carry out a test using a critical region or p-value
 O: State conclusions in context with appropriate caution
+LV: A level · Application
 T: Null hypothesis | H₀, the default claim (no effect, no difference) tested against the data
 T: Significance level | α, the threshold probability of wrongly rejecting a true H₀, often 5%
 H: The steps
@@ -499,16 +500,20 @@ Q: What is a two-tailed test? | One where H₁ allows a difference in either dir
 Q: What does "significant at the 5% level" mean? | The p-value is below 0.05.
 SUM: Tests weigh data against a null claim.
 SUM: Conclude cautiously and in context.
+EV: established | A hypothesis test rejects H₀ when data at least as extreme as those observed would be improbable (probability at most α) if H₀ were true.
 SRC: Department for Education, Mathematics AS and A level subject content: statistics | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 SRC: Casella G, Berger RL, Statistical Inference (2nd edn, Duxbury 2002) | secondary | 2002 | https://www.cengage.com/
 NUM1#maths-u13-13-q1@1: Under H₀: p = 0.5 with n = 10, find P(X ≥ 9), to 4 decimal places. | 0.0107 | 0.0001 |  | (C(10, 9) + C(10, 10))/2^{10} = 11/1024 ≈ 0.0107.
 M1#maths-u13-13-q2@1: A test gives p = 0.12 at α = 0.05. What is the correct conclusion? | There's insufficient evidence to reject H₀ | H₀ is proved true | H₁ is proved true | Reject H₀, since 0.12 is a small probability | The test is invalid | A p-value above α means the data aren't surprising enough to reject H₀.
 M2#maths-u13-13-q3@2: For a two-tailed test at 5% using a normal statistic, what are the critical values? | ±1.96 | ±1.645 | ±2.576 | +1.96 only | ±0.05 | A two-tailed 5% test puts 2.5% in each tail, beyond ±1.96 for the standard normal.
+NUM3@1: For H₀: p = 0.5 against H₁: p > 0.5 with X ~ B(20, 0.5), the critical region at 5% is X ≥ c. Find c. | 15 | 0 |  | P(X ≥ 15) ≈ 0.0207 ≤ 0.05 but P(X ≥ 14) ≈ 0.0577 > 0.05, so the smallest c is 15 (actual significance level 2.07%).
+SA3@2: A school tests whether a new reading scheme raises the mean score from 60 and gets p = 0.09 at the 5% level. Write the conclusion in context and explain the cautions it needs. | Since 0.09 > 0.05, do not reject H₀: there is insufficient evidence at the 5% level that the scheme raises the mean score above 60. This does not show that the scheme has no effect: the sample may be too small to detect a modest gain, so report the estimated effect with a confidence interval. Changing α after seeing p would be invalid, and even a significant result would need to be judged for practical importance. | Compares p with α correctly ; States conclusion in context without "accept H₀" ; Notes failing to reject isn't proof of no effect ; Mentions sample size, power or confidence interval ; Warns against changing α afterwards or over-reading significance
 
 ## Null Hypothesis Significance Testing
 S: Null hypothesis significance testing (NHST) is the standard ritual of declaring results "significant" when p < 0.05. Its overuse and misuse contributed to the replication crisis, so modern practice adds effect sizes, intervals and better study design.
 O: Describe how NHST combines Fisher's and Neyman–Pearson's ideas
 O: Explain the main criticisms of NHST and better practices
+LV: Year 1 · Application
 T: NHST | The practice of testing a null hypothesis and calling results significant if p < α
 T: Replication crisis | The finding that many published results, especially in psychology and medicine, fail to replicate
 H: Origins
@@ -534,15 +539,20 @@ Q: What is p-hacking? | Trying multiple analyses until one gives p < 0.05.
 Q: Name one practice that reduces false positives in research. | Pre-registering hypotheses and analysis plans.
 SUM: NHST is widely used and widely misused.
 SUM: Effect sizes and design matter more.
+EV: contested | How far NHST should be reformed or replaced (by estimation, Bayesian methods or stricter thresholds) is still debated, though its misuse is widely acknowledged.
 SRC: Wasserstein RL, Lazar NA, The ASA statement on p-values: context, process, and purpose, The American Statistician 70(2), 129 | primary | 2016 | https://doi.org/10.1080/00031305.2016.1154108
 SRC: Open Science Collaboration, Estimating the reproducibility of psychological science, Science 349(6251), aac4716 | primary | 2015 | https://doi.org/10.1126/science.aac4716
 M1#maths-u13-14-q1@1: What is publication bias? | Significant results are more likely to be published than null results | Peer review rejects most studies | Results are always reported accurately | Authors cite their own work | Journals prefer to publish longer, more detailed papers | Selective publication makes the literature overstate effects.
 M2#maths-u13-14-q2@2: Why can a tiny effect be statistically significant? | With a very large sample, the standard error is tiny | Because α is too small | Because p-values are always small | Because the effect is large | It can't be | The test statistic grows with √n for any fixed non-zero effect.
+NUM2@2: A one-sample z-test finds a mean difference of 0.02 standard deviations with n = 40,000. Find the z statistic. | 4 | 0 |  | z = effect × √n = 0.02 × 200 = 4: highly significant, although an effect of 0.02 SD is negligible.
+NUM3@2: Twenty independent tests are run at α = 0.05 and every null hypothesis is true. Find the probability of at least one significant result, to 3 decimal places. | 0.642 | 0.001 |  | P(at least one) = 1 − 0.95^{20} ≈ 1 − 0.358 = 0.642: false positives are likely when many tests are run.
+SA3@2: Explain what p-hacking is, why it inflates false positives, and two practices that guard against it. | P-hacking is trying many analyses (outcomes, subgroups, covariates, stopping rules) and reporting those with p < 0.05. Each extra analysis is another chance of a false positive, so the real Type I error rate is far above 5%, while the published p-value hides this. Guards: pre-registering hypotheses and the analysis plan; reporting all analyses; correcting for multiple tests; publishing null results; and reporting effect sizes with intervals. | Defines p-hacking ; Links multiple analyses to inflated Type I error ; Notes the reported p hides the search ; Names pre-registration ; Names a second safeguard
 
 ## P-Values
 S: A p-value is the probability, assuming the null hypothesis is true, of getting data at least as extreme as those observed. It measures how surprising the data are under H₀, and it's frequently misinterpreted.
 O: Calculate p-values for one- and two-tailed tests
 O: Interpret p-values correctly, following the ASA principles
+LV: A level · Application
 T: p-value | P(data at least as extreme as observed ∣ H₀ true)
 T: One- and two-tailed p-values | One tail for a directional H₁; both tails (often doubled) for a two-sided H₁
 H: Calculating
@@ -569,16 +579,20 @@ Q: Which is larger for the same z, the one- or two-tailed p-value? | The two-tai
 Q: Does p = 0.4 show that H₀ is true? | No: it shows only that the data aren't surprising under H₀.
 SUM: A p-value measures surprise under H₀.
 SUM: It's not the probability H₀ is true.
+EV: established | A p-value is the probability, computed assuming H₀ and the model, of data at least as extreme as those observed; it is not the probability that H₀ is true.
 SRC: Wasserstein RL, Lazar NA, The ASA statement on p-values: context, process, and purpose, The American Statistician 70(2), 129 | primary | 2016 | https://doi.org/10.1080/00031305.2016.1154108
 SRC: Greenland S et al, Statistical tests, P values, confidence intervals, and power: a guide to misinterpretations, European Journal of Epidemiology 31, 337 | primary | 2016 | https://doi.org/10.1007/s10654-016-0149-3
 NUM1#maths-u13-15-q1@1: A one-tailed z-test gives z = 1.8. Find the p-value, to 4 decimal places. | 0.0359 | 0.0005 |  | P(Z ≥ 1.8) = 1 − 0.9641 = 0.0359.
 M1#maths-u13-15-q2@1: Which statement about p = 0.02 is correct? | Data this extreme would occur 2% of the time if H₀ were true | There's a 2% chance H₀ is true | There's a 98% chance H₁ is true | The effect is large | The result will replicate 98% of the time | That's the definition: a probability computed assuming H₀.
 M3#maths-u13-15-q3@2: Two studies test the same effect: A (n = 20) has p = 0.30, B (n = 2,000) has p = 0.30. Which conclusion is fairest? | Both lack evidence against H₀, but B more strongly suggests any effect is small | Both prove no effect | A proves no effect, while B is inconclusive | B shows a large effect | They contradict each other | Equal p-values with very different n mean different things about plausible effect sizes.
+NUM2@1: A two-sided z-test gives z = 1.5. Find the p-value, to 4 decimal places. | 0.1336 | 0.0005 |  | P(Z ≥ 1.5) ≈ 0.0668, and a two-sided test doubles it: p ≈ 0.1336.
+SA2@2: A report says "p = 0.04, so there is only a 4% chance the results are due to chance". Explain what is wrong and rewrite the statement correctly. | The p-value is computed assuming H₀ is true, so it cannot be the probability that H₀ (chance alone) is true; that would need prior information and Bayes' theorem. Correctly: "if there were no real effect, data at least as extreme as these would occur about 4% of the time". It says nothing about the size of the effect, so the report should add an effect size and confidence interval. | Notes the p-value assumes H₀ ; Says it isn't P(H₀ true) ; Gives a correct rewording ; Mentions Bayes or prior information ; Recommends effect size or interval
 
 ## Type I and Type II Errors
 S: Every test can go wrong in two ways: rejecting a true null hypothesis (a Type I error, a false alarm) or failing to reject a false one (a Type II error, a missed effect). Choosing a test means balancing the two.
 O: Define and calculate the probabilities of Type I and Type II errors
 O: Explain the trade-off between them in real decisions
+LV: A level · Application
 T: Type I error | Rejecting H₀ when it's true; probability α
 T: Type II error | Not rejecting H₀ when it's false; probability β
 H: The two errors
@@ -603,16 +617,20 @@ Q: What is a Type I error in a fire alarm? | The alarm sounds with no fire.
 Q: How can both α and β be reduced? | Increase the sample size.
 SUM: Tests can make false alarms or misses.
 SUM: Their balance depends on costs and sample size.
+EV: established | For a fixed sample size, lowering the Type I error rate α raises the Type II error rate β.
 SRC: Casella G, Berger RL, Statistical Inference (2nd edn, Duxbury 2002) | secondary | 2002 | https://www.cengage.com/
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
 NUM1#maths-u13-16-q1@1: A test rejects H₀: p = 0.5 if X ≥ 9 in 10 trials. What is the actual probability of a Type I error, to 4 decimal places? | 0.0107 | 0.0001 |  | P(X ≥ 9 ∣ p = 0.5) = 11/1024 ≈ 0.0107.
 M1#maths-u13-16-q2@1: A screening test misses a patient who has the disease. Which error is that, if H₀ is "no disease"? | Type II | Type I | Both | Neither | A sampling error | Failing to reject a false H₀ (missing the disease) is a Type II error.
 M2#maths-u13-16-q3@2: What happens to β if α is reduced from 5% to 1% with the same sample? | β increases | β decreases | β stays the same | β becomes 0 | β becomes 1% | A stricter rejection rule makes it harder to detect real effects.
+NUM3@1: With σ = 15, n = 25 and the rule "reject H₀: μ = 100 if x̄ > 105", find β when the true mean is 107, to 3 decimal places. | 0.252 | 0.002 |  | SE = 3, so β = P(X̄ ≤ 105 ∣ μ = 107) = P(Z ≤ −0.667) ≈ 0.252; closer alternatives are missed more often.
+SA3@2: For a screening test where H₀ is "no disease", describe each type of error and its cost, and explain how you would choose between a strict and a lenient threshold. | A Type I error is a false positive: a healthy person is told they may have the disease, causing anxiety and further tests. A Type II error is a false negative: a case is missed and treatment delayed. A lenient threshold reduces missed cases but raises false positives; a strict one does the reverse. Choose by weighing the costs: for a serious, treatable disease, missing cases is worse, so a lower threshold (higher α) is justified, with confirmatory testing; a larger sample or better test can reduce both errors. | Defines the Type I error in context ; Defines the Type II error in context ; Explains the trade-off ; Bases the choice on costs of each error ; Notes better tests or larger n reduce both
 
 ## Statistical Power
 S: Statistical power is the probability that a test detects an effect that's really there. Underpowered studies waste resources, miss real effects and, when they do find something, tend to exaggerate it.
 O: Explain what affects power
 O: Calculate the sample size needed for a target power
+LV: Year 1 · Application
 T: Power | 1 − β, the probability of rejecting H₀ when a specified alternative is true
 T: Power analysis | Calculating the sample size needed to achieve a chosen power for a chosen effect size
 H: What affects power
@@ -638,16 +656,20 @@ Q: What is the conventional target power? | 80%.
 Q: Does power increase or decrease with more variable data? | It decreases.
 SUM: Power is the chance of detecting a real effect.
 SUM: Plan sample sizes to achieve it.
+EV: established | Power increases with effect size, sample size and α and decreases with variability; underpowered studies tend to overestimate effects that reach significance.
 SRC: Cohen J, Statistical Power Analysis for the Behavioral Sciences (2nd edn, Lawrence Erlbaum 1988) | secondary | 1988 | https://www.routledge.com/
 SRC: Button KS et al, Power failure: why small sample size undermines the reliability of neuroscience, Nature Reviews Neuroscience 14, 365 | primary | 2013 | https://doi.org/10.1038/nrn3475
 NUM1#maths-u13-17-q1@1: Using n = ((z_{α/2} + z_{β})σ/δ)^{2} with z-values summing to 2.8, σ = 10 and δ = 4, find n (round up). | 49 | 0 |  | (2.8 × 10/4)^{2} = 7^{2} = 49.
 M1#maths-u13-17-q2@1: Which change increases a test's power? | A larger sample | A smaller effect size | A smaller α | More variable data | Fewer observations | More data shrink the standard error, making a fixed effect easier to detect.
 M3#maths-u13-17-q3@2: An underpowered study reports a significant effect. Why might the estimate be too large? | Only overestimates cross the significance threshold when power is low | Significant results are always exact | Significance guarantees accuracy | Power doesn't affect estimates | Small studies always overestimate every effect they measure | With low power, only the luckiest (largest) estimates reach significance: the winner's curse.
+NUM2@1: A test rejects H₀: μ = 100 if x̄ > 105, where SE = 3. Find its power when μ = 108, to 3 decimal places. | 0.841 | 0.002 |  | Power = P(X̄ > 105 ∣ μ = 108) = P(Z > −1) ≈ 0.841.
+SA2@1,2: A pilot study of 15 people finds no significant effect of a treatment. Explain why this does not show the treatment is useless, and how a power calculation would help. | With 15 people the standard error is large, so only a very large effect would reach significance: the study has low power, and a non-significant result is consistent with a worthwhile effect (the confidence interval will be wide). A power calculation chooses n so that the smallest effect worth detecting, δ, is found with, say, 80% probability at α = 5%: n = ((z_{α/2} + z_{β})σ/δ)^{2}, using σ estimated from the pilot. | Explains low power from the small sample ; Notes non-significance isn't evidence of no effect ; Mentions the wide confidence interval ; Describes choosing n for a target power ; Uses the smallest important effect δ
 
 ## Effect Sizes
 S: An effect size measures how big a difference or relationship is, independently of sample size. It answers the question that matters in practice, "how much?", which a p-value can't.
 O: Calculate Cohen's d, risk differences and numbers needed to treat
 O: Interpret effect sizes with their confidence intervals
+LV: Year 1 · Application
 T: Cohen's d | Standardised mean difference: (x̄₁ − x̄₂)/s_{pooled}
 T: Number needed to treat | NNT = 1/(absolute risk reduction), the number of people treated for one to benefit
 H: Standardised differences
@@ -672,11 +694,14 @@ Q: What is Cohen's d if the means differ by 3 and the pooled SD is 6? | 0.5.
 Q: What is the NNT if the ARR is 2%? | 50.
 SUM: Effect sizes say how big an effect is.
 SUM: NNT makes risk reductions concrete.
+EV: established | Effect sizes such as Cohen's d, risk differences and NNT measure magnitude independently of sample size, unlike p-values.
 SRC: Cohen J, Statistical Power Analysis for the Behavioral Sciences (2nd edn, Lawrence Erlbaum 1988) | secondary | 1988 | https://www.routledge.com/
 SRC: Cook RJ, Sackett DL, The number needed to treat: a clinically useful measure of treatment effect, BMJ 310, 452 | primary | 1995 | https://doi.org/10.1136/bmj.310.6977.452
 NUM1#maths-u13-18-q1@1: Control risk is 12% and treatment risk 8%. Find the NNT. | 25 | 0 |  | ARR = 0.04, so NNT = 1/0.04 = 25.
 M1#maths-u13-18-q2@1: Why report an effect size as well as a p-value? | The p-value doesn't show how large the effect is | Effect sizes replace sample sizes | p-values are always wrong | Effect sizes prove causation | Journals require two numbers | A tiny effect can be significant with enough data; the effect size shows its magnitude.
 M2#maths-u13-18-q3@2: By Cohen's rough guide, what is d = 0.8? | Large | Small | Medium | Negligible | Impossible | Cohen suggested 0.2, 0.5 and 0.8 as small, medium and large, with context mattering most.
+NUM2@1: Group means are 64 and 58 with pooled standard deviation 8. Find Cohen's d. | 0.75 | 0.001 |  | d = (64 − 58)/8 = 0.75, between "medium" and "large" on Cohen's rough guide.
+SA3@2: A drug halves the risk of a side effect from 0.2% to 0.1%. Calculate the relative risk, the absolute risk reduction and the NNT, and explain which figures a patient should be given. | RR = 0.1/0.2 = 0.5 (a 50% relative reduction). ARR = 0.2% − 0.1% = 0.1 percentage points = 0.001. NNT = 1/0.001 = 1,000: a thousand people take it to prevent one side effect. A patient should hear the absolute risks (2 in 1,000 versus 1 in 1,000) and the NNT, ideally with confidence intervals, because "halves the risk" sounds large while the absolute benefit is small. | RR = 0.5 ; ARR = 0.001 ; NNT = 1,000 ; Recommends absolute risks and NNT ; Explains why relative risk alone misleads
 
 ## Multiple Testing Correction
 S: When many hypotheses are tested, some will be "significant" by chance alone. Multiple testing corrections adjust the thresholds so that the chance of any false positive, or the proportion of them, stays under control.
