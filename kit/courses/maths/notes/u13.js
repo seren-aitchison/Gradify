@@ -2520,6 +2520,7 @@ SA2@2: Using a causal diagram, explain which variables to adjust for when estima
 S: Structural equation modelling (SEM) combines factor analysis with path analysis to test networks of relationships among observed and latent variables. It's widely used in psychology, education, marketing and the social sciences.
 O: Describe measurement and structural models in SEM
 O: Calculate direct, indirect and total effects in a path model
+LV: Year 3 · Application
 T: Path analysis | A system of regressions showing direct and indirect effects among variables, drawn as a diagram
 T: Mediation | An indirect effect: X affects M, which affects Y
 H: Components
@@ -2544,16 +2545,20 @@ Q: How is an indirect effect calculated in a path model? | Multiply the coeffici
 Q: What does a CFI above 0.95 suggest? | Good model fit (by a common rule of thumb).
 SUM: SEM tests networks of relationships.
 SUM: Fit doesn't establish causation.
+EV: established | In a linear path model the indirect effect along a path is the product of its coefficients, and the total effect is the direct effect plus all indirect effects.
 SRC: Kline RB, Principles and Practice of Structural Equation Modeling (4th edn, Guilford Press 2016) | secondary | 2016 | https://www.guilford.com/
 SRC: Hu L, Bentler PM, Cutoff criteria for fit indexes in covariance structure analysis, Structural Equation Modeling 6(1), 1 | primary | 1999 | https://doi.org/10.1080/10705519909540118
 NUM1#maths-u13-66-q1@1: Paths X → M = 0.6 and M → Y = 0.5, with direct X → Y = 0.1. Find the total effect. | 0.4 | 0.001 |  | Indirect 0.6 × 0.5 = 0.3, plus direct 0.1, gives 0.4.
 M1#maths-u13-66-q2@1: What does the measurement part of an SEM do? | Links latent variables to their observed indicators | Estimates sample size | Draws the structural paths between latent variables | Removes outliers | Estimates the sample size needed | It's a confirmatory factor model for the latent constructs.
 M2#maths-u13-66-q3@2: Two SEMs with opposite causal arrows fit the data equally well. What does that show? | Fit alone can't establish causal direction | The data are wrong | One must have a coding error | Both are proven | SEM is invalid | Equivalent models imply the same covariances, so data can't choose between them.
+NUM3@2: X affects Y directly (0.1) and through two mediators: X → M₁ = 0.4, M₁ → Y = 0.5, X → M₂ = 0.3 and M₂ → Y = −0.2. Find the total effect of X on Y. | 0.24 | 0.001 |  | Indirect effects are 0.4 × 0.5 = 0.2 and 0.3 × (−0.2) = −0.06, so the total is 0.1 + 0.2 − 0.06 = 0.24.
+SA3@1,2: A well-fitting SEM shows that stress affects sleep, which affects exam performance. Explain what is needed before calling this a causal mediation, and why good fit is not enough. | The indirect effect is causal only under strong assumptions: no unmeasured confounding of stress → sleep, sleep → performance and stress → performance, correct ordering in time (stress measured before sleep, before performance), and valid measurement of the latent constructs. Good fit only shows the model's implied covariances match the data; equivalent models with reversed or different arrows (such as performance affecting stress) can fit equally well. Longitudinal or experimental data and sensitivity analyses strengthen the claim. | States the no-unmeasured-confounding assumptions ; Mentions temporal ordering ; Mentions measurement validity ; Explains equivalent models ; Suggests longitudinal, experimental or sensitivity evidence
 
 ## Meta-Analysis
 S: Meta-analysis combines the results of several studies to estimate an overall effect more precisely and to explore why studies differ. Systematic reviews with meta-analyses sit at the top of many evidence hierarchies.
 O: Calculate a fixed-effect inverse-variance pooled estimate
 O: Interpret heterogeneity, random effects and publication bias
+LV: Year 3 · Application
 T: Inverse-variance weighting | Weighting each study by 1/SE^{2}, so more precise studies count more
 T: Heterogeneity | Variation in true effects between studies, measured by Cochran's Q, τ^{2} and I^{2}
 H: Pooling
@@ -2579,16 +2584,20 @@ Q: Which study gets more weight in inverse-variance meta-analysis? | The more pr
 Q: What might an asymmetric funnel plot indicate? | Publication bias or small-study effects.
 SUM: Meta-analysis combines studies.
 SUM: Heterogeneity and bias need checking.
+EV: established | The fixed-effect inverse-variance estimate weights each study by 1/SE^{2}, and random-effects models add between-study variance τ^{2}.
 SRC: Higgins JPT et al (eds), Cochrane Handbook for Systematic Reviews of Interventions (version 6.4, Cochrane 2023) | guidance | 2023 | https://training.cochrane.org/handbook
 SRC: DerSimonian R, Laird N, Meta-analysis in clinical trials, Controlled Clinical Trials 7(3), 177 | primary | 1986 | https://doi.org/10.1016/0197-2456(86)90046-2
 NUM1#maths-u13-67-q1@1: Cochran's Q = 20 with 5 studies (df = 4). Find I^{2} as a percentage. | 80 | 0 | % | (20 − 4)/20 = 0.8 = 80%: high heterogeneity.
 M1#maths-u13-67-q2@1: What does the diamond at the bottom of a forest plot show? | The pooled estimate and its confidence interval | The heaviest study's weight | The publication date | The largest study, drawn at its own size | The p-value only | Its centre is the pooled effect and its width the interval.
 M2#maths-u13-67-q3@2: Studies' true effects clearly differ. Which model is more appropriate? | Random effects | Fixed effect | No pooling is ever possible | Simple averaging without weights | Median of p-values | Random effects allow the true effect to vary between studies.
+NUM3@1: Three studies estimate an effect as 1 (SE 0.5), 3 (SE 1) and 2 (SE 1). Find the fixed-effect pooled estimate. | 1.5 | 0.001 |  | Weights 1/SE^{2} are 4, 1 and 1, so the pooled estimate is (4 × 1 + 3 + 2)/6 = 9/6 = 1.5.
+SA3@2: A funnel plot for a meta-analysis is asymmetric, with small studies showing larger effects than large ones. Give possible explanations and say what the analyst should do. | Possible causes: publication bias (small studies with null results went unpublished); selective outcome reporting; lower quality small studies with more bias; genuine heterogeneity (small studies in different populations or with more intensive treatment); or chance. The analyst should search for unpublished studies and trial registries, assess risk of bias, use tests for asymmetry (such as Egger's) with caution, run sensitivity analyses (for example restricting to large or low-risk studies), and interpret the pooled estimate as possibly overstated. | Names publication bias ; Names another cause such as quality or heterogeneity ; Proposes searching for unpublished studies ; Proposes sensitivity analysis or an asymmetry test ; Warns the pooled effect may be overstated
 
 ## Missing Data Analysis
 S: Almost every real data set has missing values. How they went missing determines whether simply dropping incomplete cases gives biased answers, and which methods can rescue the analysis.
 O: Classify missing data as MCAR, MAR or MNAR
 O: Explain when complete case analysis is biased
+LV: Year 2 · Application
 T: MCAR, MAR, MNAR | Missing completely at random; missing at random (given observed data); missing not at random (depends on the missing value itself)
 T: Complete case analysis | Analysing only the records with no missing values
 H: Mechanisms (Rubin, 1976)
@@ -2613,16 +2622,20 @@ Q: Under which mechanism is complete case analysis unbiased? | MCAR.
 Q: What type of missingness occurs if depressed patients skip a depression questionnaire? | Missing not at random (MNAR).
 SUM: How data go missing determines the bias.
 SUM: Principled methods need the right assumptions.
+EV: established | Complete case analysis is unbiased when data are missing completely at random but can be biased when missingness depends on observed or unobserved values.
 SRC: Little RJA, Rubin DB, Statistical Analysis with Missing Data (3rd edn, Wiley 2019) | secondary | 2019 | https://www.wiley.com/
 SRC: Rubin DB, Inference and missing data, Biometrika 63(3), 581 | primary | 1976 | https://doi.org/10.1093/biomet/63.3.581
-NUM1#maths-u13-68-q1@1: A survey has 400 respondents with complete data out of 500. What percentage of cases would complete case analysis discard? | 20 | 0 | % | 100 of 500 = 20%.
+NUM1#maths-u13-68-q1@1: A survey has 400 respondents with complete data out of 500. What percentage of cases would complete case analysis discard? | 20 | 0 | % | 500 − 400 = 100 incomplete cases are dropped, which is 100/500 = 20%.
 M1#maths-u13-68-q2@1: Blood samples are lost when a freezer fails at random. What is the missingness mechanism? | MCAR | MAR | MNAR | Censoring | Imputation | The loss is unrelated to any patient characteristic or value.
 M2#maths-u13-68-q3@2: Why is replacing missing values with the mean a poor method? | It understates variability and weakens relationships | It's too slow | It can only be used for categories | It requires MNAR | It always overestimates the mean of the variable | Every imputed value sits at the centre, shrinking the spread and diluting correlations.
+NUM3@2: Of 100 people, 60 earn £30,000 and 40 earn £70,000. If 25 of the high earners don't report income, find the complete-case mean income in £000. | 38 | 0 | £000 | (60 × 30 + 15 × 70)/75 = 2,850/75 = 38, well below the true mean of 46, because missingness depends on income.
+SA3@1: Classify each mechanism as MCAR, MAR or MNAR and justify: (a) a page of questionnaires is lost in the post; (b) older participants are less likely to answer an online question, and age is recorded; (c) people with depression are less likely to complete a depression score. | (a) MCAR: the loss is unrelated to any participant's data. (b) MAR: missingness depends on age, which is observed, so methods that use age (multiple imputation or likelihood) can correct the bias. (c) MNAR: missingness depends on the unobserved value itself; no method based only on the observed data can fully correct it, so sensitivity analyses under different assumptions are needed. | Classifies (a) as MCAR ; Classifies (b) as MAR ; Classifies (c) as MNAR ; Justifies each with what missingness depends on ; Says MNAR needs sensitivity analysis
 
 ## Imputation Methods
 S: Imputation fills in missing values so that complete-data methods can be used. Multiple imputation does this several times with random variation, then combines the results so that the uncertainty about the missing values is reflected in the final answer.
 O: Compare single imputation methods with multiple imputation
 O: Combine multiply imputed results using Rubin's rules
+LV: Year 3 · Application
 T: Multiple imputation | Creating m completed data sets with plausible random imputations, analysing each and pooling
 T: Rubin's rules | Pooled estimate Q̄ = mean of the m estimates; total variance T = W̄ + (1 + 1/m)B
 H: Single imputation
@@ -2649,16 +2662,20 @@ Q: What does the between-imputation variance B capture? | Uncertainty about the 
 Q: What does MICE stand for? | Multiple imputation by chained equations.
 SUM: Multiple imputation reflects uncertainty.
 SUM: Rubin's rules combine the results.
+EV: established | Under MAR with a suitable imputation model, multiple imputation combined by Rubin's rules gives valid estimates and standard errors.
 SRC: van Buuren S, Flexible Imputation of Missing Data (2nd edn, CRC Press 2018) | secondary | 2018 | https://stefvanbuuren.name/fimd/
 SRC: Sterne JAC et al, Multiple imputation for missing data in epidemiological and clinical research: potential and pitfalls, BMJ 338, b2393 | primary | 2009 | https://doi.org/10.1136/bmj.b2393
 NUM1#maths-u13-69-q1@1: With m = 10, W̄ = 2 and B = 1, find the total variance T. | 3.1 | 0.001 |  | T = 2 + (1 + 0.1) × 1 = 3.1.
 M1#maths-u13-69-q2@1: Why does single imputation give standard errors that are too small? | It treats imputed values as if they were observed | It drops cases | It always overestimates means | It uses too few variables in the imputation model | It ignores the sample size | No allowance is made for uncertainty in the filled-in values.
 M2#maths-u13-69-q3@2: Which variables should a multiple imputation model include? | All variables in the analysis model, including the outcome | Only complete variables | Only the outcome | None | Only the variable being imputed, alone | Omitting analysis variables (especially the outcome) biases relationships towards zero.
+NUM3@2: Five imputed analyses give estimates 4, 6, 5, 7 and 3, each with variance 1. Find the total variance T by Rubin's rules. | 4 | 0.001 |  | Q̄ = 5, W̄ = 1 and B = (1 + 1 + 0 + 4 + 4)/4 = 2.5, so T = 1 + (1 + 1/5) × 2.5 = 4.
+SA3@1,2: In a 12-month trial, some patients drop out after month 6. Compare last observation carried forward, regression imputation and multiple imputation for the missing 12-month outcomes. | LOCF uses each patient's last value, assuming no change after dropout, which is rarely true and can bias the treatment effect in either direction; it also treats imputed values as known. Regression imputation predicts the outcome from observed variables, keeping relationships but placing every value on the line, so variability is understated and standard errors are too small. Multiple imputation draws several plausible values from the predictive distribution, including random variation, analyses each data set and combines them by Rubin's rules, giving valid inference under MAR if the model includes the outcome, treatment and predictors of dropout. | Explains the LOCF no-change assumption ; Notes single methods understate uncertainty ; Explains regression imputation's problem ; Describes multiple imputation with Rubin's rules ; States the MAR condition and imputation model contents
 
 ## Survival Analysis
 S: Survival analysis studies the time until an event (death, relapse, machine failure, customer churn), allowing for censoring, where some subjects haven't had the event by the end of follow-up. Kaplan–Meier curves and Cox models are its core tools.
 O: Calculate a Kaplan–Meier survival estimate
 O: Interpret hazard ratios from a Cox proportional hazards model
+LV: Year 3 · Application
 T: Censoring | Incomplete observation of an event time: we only know the event happened after the last follow-up
 T: Hazard ratio | The ratio of instantaneous event rates between groups, assumed constant over time in the Cox model
 H: Kaplan–Meier
@@ -2684,11 +2701,14 @@ Q: What does a hazard ratio of 0.5 mean? | Half the event rate at any time.
 Q: Which test compares two Kaplan–Meier curves? | The log-rank test.
 SUM: Survival analysis handles censored times.
 SUM: KM curves and Cox models are the core tools.
+EV: established | The Kaplan–Meier estimator handles non-informative right censoring by removing censored subjects from the risk set.
 SRC: Kaplan EL, Meier P, Nonparametric estimation from incomplete observations, Journal of the American Statistical Association 53(282), 457 | primary | 1958 | https://doi.org/10.1080/01621459.1958.10501452
 SRC: Cox DR, Regression models and life-tables, Journal of the Royal Statistical Society B 34(2), 187 | primary | 1972 | https://doi.org/10.1111/j.2517-6161.1972.tb00899.x
 NUM1#maths-u13-70-q1@1: A Cox coefficient for a treatment is −0.36. Find the hazard ratio, to 2 decimal places. | 0.7 | 0.005 |  | e^{−0.36} ≈ 0.698, about 0.70: a 30% lower hazard.
 M1#maths-u13-70-q2@1: What does censoring mean in survival data? | The event hadn't occurred by the end of a subject's follow-up | The data were deleted | The subject's data were deleted for errors | The subject had the event during follow-up | The subject was excluded | We know only that the event time exceeds the last observation.
 M3#maths-u13-70-q3@2: Patients who drop out of a trial are those becoming sicker. What assumption does that violate? | Non-informative censoring | Proportional hazards | Normality | Independence of groups | Equal sample sizes | Censoring linked to prognosis biases survival estimates upwards.
+NUM2@1: Eight patients are followed: one dies at month 1, one is censored at month 2 and two die at month 4. Find S(4), to 3 decimal places. | 0.583 | 0.001 |  | S(1) = 7/8 = 0.875. After the censoring, 6 are at risk at month 4 and 2 die: S(4) = 0.875 × 4/6 ≈ 0.583.
+SA2@2: A Cox model gives a hazard ratio of 0.70 (95% CI 0.55 to 0.89) for a new treatment. Interpret this and state the key assumption you would check. | At any time, patients on the new treatment have an event rate about 30% lower than those on control, adjusted for other covariates in the model; the interval excludes 1, so the data are consistent with reductions from about 11% to 45%. The hazard ratio is not a ratio of risks or survival times. The key assumption is proportional hazards (the ratio is constant over time), checked with Schoenfeld residuals or log–log plots; censoring should also be non-informative. | Interprets 0.70 as a 30% lower hazard ; Interprets the interval excluding 1 ; Notes adjustment for covariates ; Names proportional hazards and a check ; Mentions non-informative censoring
 
 ## Spatial Statistics
 S: Spatial statistics analyses data where location matters: pollution readings, disease cases, mineral deposits, house prices. Nearby observations tend to be similar, and spatial methods use that structure to map, predict and test.

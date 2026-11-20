@@ -589,6 +589,7 @@ SA2@1,2: Compare first- and second-generation H1 antihistamines and explain why 
 S: Prostaglandins, thromboxanes and leukotrienes are lipid mediators made from arachidonic acid. They drive pain, fever, inflammation, platelet aggregation and stomach protection, which explains both the benefits and harms of NSAIDs and aspirin.
 O: Describe how eicosanoids are made and what they do
 O: Explain the benefits and adverse effects of COX inhibition
+LV: Intermediate · Application
 T: Cyclo-oxygenase (COX) | The enzyme that converts arachidonic acid to prostaglandins and thromboxane; COX-1 is constitutive and COX-2 inducible
 T: Leukotriene | An eicosanoid made by lipoxygenase, causing bronchoconstriction and inflammation
 H: The pathways
@@ -600,10 +601,16 @@ H: COX inhibitors
 - Blocking COX-1 in the stomach reduces mucosal protection (ulcers and bleeding); in the kidney it reduces blood flow (acute kidney injury, especially with ACE inhibitors and diuretics).
 - COX-2 selective inhibitors (celecoxib) cause fewer GI problems but carry cardiovascular risk, as do many NSAIDs.
 - Low-dose aspirin irreversibly blocks platelet thromboxane: an antiplatelet effect.
+P: Low-dose aspirin works through the platelet's biology: having no nucleus, a platelet can't make new COX-1, so its thromboxane production stays suppressed for its lifespan, while the cells of the vessel wall make new enzyme and keep producing prostacyclin, which opposes aggregation.
 - NSAIDs can worsen asthma in a minority of people with NSAID sensitivity.
+X: The "triple whammy".
+> A woman taking ramipril and furosemide buys ibuprofen for back pain.
+> Ramipril relaxes the efferent arteriole and furosemide lowers blood volume, both reducing filtration pressure; ibuprofen removes the prostaglandins that keep the afferent arteriole dilated.
+> Together they raise the risk of acute kidney injury: suggest an alternative such as paracetamol, and refer if needed.
 DRUG: Ibuprofen | Non-steroidal anti-inflammatory drug: reversible non-selective COX inhibitor | Pain, inflammation and fever | GI irritation, ulcers and bleeding; renal impairment; fluid retention; cardiovascular risk; may worsen asthma in sensitive people | Take with or after food; avoid or use with caution in renal impairment, heart failure, peptic ulcer and with anticoagulants; consider gastroprotection in at-risk people (check the BNF)
 K: COX inhibition relieves pain and inflammation but harms the stomach, kidneys and heart. Leukotrienes are blocked separately by montelukast.
 !: Recommending ibuprofen to someone taking an ACE inhibitor and a diuretic, raising the risk of acute kidney injury.
+EV: established | COX inhibition explains both the benefits of NSAIDs and aspirin (less pain, inflammation and platelet aggregation) and their gastric, renal and cardiovascular harms.
 Q: What does thromboxane do? | Promotes platelet aggregation and vasoconstriction.
 Q: Which drug blocks leukotriene receptors? | Montelukast.
 SUM: COX and lipoxygenase make prostaglandins, thromboxane and leukotrienes.
@@ -613,11 +620,14 @@ SRC: MHRA, Drug Safety Update: high-dose ibuprofen, cardiovascular risk | guidan
 M2#pharmacy-u02-17-q1@1: Why do NSAIDs cause stomach ulcers? | They reduce protective prostaglandins | They increase histamine release | They dissolve the stomach lining directly | They block H2 receptors | They raise stomach pH | COX-1 prostaglandins protect the gastric mucosa.
 M2#pharmacy-u02-17-q2@2: Which drug blocks leukotriene receptors in asthma? | Montelukast | Ibuprofen | Salbutamol | Cetirizine | Celecoxib | Montelukast is a leukotriene receptor antagonist.
 M3#pharmacy-u02-17-q3@2: Why are COX-2 selective NSAIDs not risk-free? | They carry cardiovascular risk | They cause more GI bleeding | They are irreversible | They block thromboxane completely | They can't relieve pain | Fewer GI effects, but cardiovascular events remain a concern.
+M1@1: Which enzyme converts arachidonic acid to prostaglandins and thromboxane? | Cyclo-oxygenase | Lipoxygenase | Phospholipase C | Adenylyl cyclase | Xanthine oxidase | COX makes prostaglandins and thromboxane; lipoxygenase makes leukotrienes from the same precursor.
+SA3@2: A 75-year-old with heart failure, taking ramipril and furosemide, asks to buy naproxen for knee pain. Explain the risks using the pharmacology of COX inhibition and advise. | Naproxen inhibits COX-1 and COX-2. Reduced gastric prostaglandins increase ulcer and bleeding risk, especially in older people. Reduced renal prostaglandins constrict the afferent arteriole; with an ACE inhibitor and a diuretic this raises the risk of acute kidney injury. NSAIDs also cause sodium and fluid retention, which can worsen heart failure, and they carry cardiovascular risk. The pharmacist should not sell it, suggest an alternative such as paracetamol or a topical option where suitable, and refer to the prescriber if pain persists. | COX inhibition mechanism ; Gastric risk ; Renal risk with ACE inhibitor and diuretic ; Heart failure and cardiovascular risk ; Safe alternative and referral
 
 ## Neurotransmitters in the brain
 S: Psychiatric and neurological medicines act on a handful of brain transmitter systems: dopamine, serotonin, noradrenaline, GABA, glutamate and acetylcholine. Their pathways explain both treatment effects and many side effects.
 O: Describe the main brain neurotransmitter systems and their roles
 O: Link CNS drug classes to the transmitters they affect
+LV: Intermediate · Application
 T: Dopamine pathways | Brain circuits (mesolimbic, nigrostriatal, tuberoinfundibular) through which dopamine affects reward, movement and prolactin
 T: Excitatory and inhibitory transmitters | Glutamate excites neurons; GABA inhibits them
 H: The main systems
@@ -626,11 +636,17 @@ H: The main systems
 - **Noradrenaline**: arousal and attention; SNRIs raise it.
 - **GABA**: the main inhibitory transmitter; benzodiazepines and some antiepileptics enhance it.
 - **Glutamate**: the main excitatory transmitter; memantine blocks NMDA receptors in dementia.
+P: Many CNS drugs act on several systems, which explains their side-effect profiles. Tricyclic antidepressants block serotonin and noradrenaline reuptake but also muscarinic, H1 and α1 receptors, giving dry mouth, sedation and postural hypotension, and they are dangerous in overdose.
 H: Side effects from pathways
 - D2 blockade in the nigrostriatal pathway causes parkinsonism and other movement disorders; in the tuberoinfundibular pathway, raised prolactin.
 - Levodopa can cause nausea and, through mesolimbic effects, hallucinations or impulse control problems.
+X: Choosing an antiemetic in Parkinson's disease.
+> A man with Parkinson's disease has nausea.
+> Metoclopramide and antipsychotic antiemetics block central D2 receptors and would worsen his movement symptoms.
+> Domperidone, which crosses into the brain poorly, is often used instead, with its cardiac (QT) risks checked; follow the BNF and specialist advice.
 K: Know the six main transmitters and which drugs act on each; pathway effects explain side effects.
 !: Giving metoclopramide or an antipsychotic to someone with Parkinson's disease: D2 blockade worsens it.
+EV: established | CNS drugs act on dopamine, serotonin, noradrenaline, GABA, glutamate and acetylcholine pathways, and pathway effects explain many side effects.
 Q: Why do antipsychotics cause parkinsonism? | They block D2 receptors in the nigrostriatal pathway.
 Q: Which receptor does memantine block? | The NMDA glutamate receptor.
 SUM: Dopamine, serotonin, noradrenaline, GABA, glutamate and acetylcholine are the main targets.
@@ -640,11 +656,15 @@ SRC: Stahl SM, Stahl's Essential Psychopharmacology, 5th edition, Cambridge Univ
 M2#pharmacy-u02-18-q1@1: Ondansetron prevents vomiting by blocking which receptor? | 5-HT3 | D2 | H1 | M3 | NMDA | It blocks serotonin 5-HT3 receptors in the gut and brainstem.
 M2#pharmacy-u02-18-q2@2: Why should metoclopramide generally be avoided in Parkinson's disease? | It blocks D2 receptors and worsens symptoms | It increases dopamine too much | It causes low blood sugar | It is an opioid | It blocks GABA | Central D2 blockade counteracts dopamine replacement.
 M2#pharmacy-u02-18-q3@1: Which transmitter do benzodiazepines enhance? | GABA | Glutamate | Dopamine | Serotonin | Acetylcholine | They increase GABA-A receptor responses to GABA.
+M1@1: What is the main inhibitory transmitter in the brain? | GABA | Glutamate | Dopamine | Noradrenaline | Acetylcholine | GABA inhibits neurons; benzodiazepines and some antiepileptics enhance its effect at GABA-A receptors.
+M3@1,2: A woman taking an antipsychotic develops galactorrhoea (milk discharge). Which mechanism explains it? | D2 block in the tuberoinfundibular pathway raises prolactin | D2 block in the nigrostriatal pathway lowers prolactin | 5-HT3 block in the gut raises oestrogen levels | GABA enhancement in the cortex raises prolactin | NMDA block in the hippocampus triggers lactation | Dopamine normally inhibits prolactin release; blocking D2 receptors in this pathway removes that brake.
+SA2@1,2: Describe the three main dopamine pathways and explain how D2 blockade by an antipsychotic produces both its benefit and its side effects. | The mesolimbic pathway is involved in reward and motivation; overactivity is linked to psychotic symptoms, so D2 blockade there is thought to give the antipsychotic effect. The nigrostriatal pathway controls movement; D2 blockade there causes parkinsonism and other movement disorders. The tuberoinfundibular pathway controls prolactin; D2 blockade raises prolactin, causing galactorrhoea, menstrual changes and sexual dysfunction. The same mechanism therefore explains both benefit and harm, and is why such drugs worsen Parkinson's disease. | Mesolimbic pathway and benefit ; Nigrostriatal pathway and movement effects ; Tuberoinfundibular pathway and prolactin ; Same mechanism for benefit and harm ; Relevance to Parkinson's disease
 
 ## Adverse drug reactions
 S: Adverse drug reactions (ADRs) are a major cause of hospital admission. Classifying them helps you predict which are dose-related and preventable, and which are idiosyncratic and need avoiding in future.
 O: Classify adverse drug reactions using the ABCDE scheme
 O: Identify risk factors for ADRs and how to reduce them
+LV: Intermediate · Application
 T: Adverse drug reaction | A harmful, unintended response to a medicine at normal doses
 T: Type A reaction | An augmented, predictable, dose-related reaction from the drug's known pharmacology
 H: Classification
@@ -653,12 +673,18 @@ H: Classification
 - **C (chronic)**: from long-term use, for example adrenal suppression with steroids.
 - **D (delayed)**: appear later, for example teratogenicity or some cancers.
 - **E (end of use)**: withdrawal effects, for example rebound after stopping a β-blocker.
+P: Many type B reactions have an immune basis and can recur with related drugs: someone with a true penicillin allergy should avoid all penicillins. The record should say what happened, when and how severe it was, so later decisions are informed.
 H: Risk factors and prevention
 - Older age, polypharmacy, renal or hepatic impairment, narrow therapeutic index drugs, previous ADRs and pregnancy.
 - Prevention: right dose for kidney function, checking interactions and allergies, monitoring, and clear counselling.
 - Report suspected ADRs through the Yellow Card scheme (School 17).
+X: Classifying three reactions.
+> A man on long-term prednisolone develops osteoporosis: type C (chronic).
+> A woman develops a widespread blistering rash after starting lamotrigine: type B, needing urgent assessment and a clear record.
+> A man has rebound tachycardia after stopping propranolol suddenly: type E (end of use).
 K: Type A reactions are common, dose-related and often preventable; type B are unpredictable and must be recorded to avoid re-exposure.
 !: Recording a type A side effect (such as nausea) as an "allergy", which can stop someone getting a useful medicine later.
+EV: established | Adverse drug reactions are a major cause of hospital admission, and many type A reactions are preventable.
 Q: Give an example of a type B reaction. | Anaphylaxis to penicillin (or Stevens-Johnson syndrome).
 Q: What type is bleeding on warfarin? | Type A: augmented and dose-related.
 SUM: ADRs are classified A to E.
@@ -668,11 +694,14 @@ SRC: Pirmohamed M and others, Adverse drug reactions as cause of admission to ho
 M1#pharmacy-u02-19-q1@1: Hypoglycaemia caused by insulin is which type of ADR? | Type A | Type B | Type C | Type D | Type E | It's a predictable, dose-related extension of insulin's action.
 M2#pharmacy-u02-19-q2@2: Which factor most increases ADR risk? | Polypharmacy in older age | Taking medicines with water | Being a non-smoker | Taking once-daily drugs | Having normal kidney function | More drugs and age-related changes increase interactions and sensitivity.
 M3#pharmacy-u02-19-q3@1: Why should nausea from a drug not be recorded as an allergy? | It's a type A side effect, not an immune reaction | Nausea is never caused by drugs | Allergies can't involve the gut | It would make the drug cheaper | It's a type B reaction | Mislabelling side effects as allergies can deny people useful treatment later.
+M2@1: Osteoporosis after years of prednisolone is which type of adverse drug reaction? | Type C | Type A | Type B | Type D | Type E | Type C (chronic) reactions come from long-term use; adrenal suppression is another example.
+SA3@1,2: Using the ABCDE classification, explain which adverse drug reactions are most preventable and describe how a pharmacist can reduce ADR risk in an older person on many medicines. | Type A reactions are augmented, dose-related extensions of a drug's pharmacology (bleeding with anticoagulants, hypoglycaemia with insulin); they are the commonest and most preventable. Type B are unpredictable, often immune (anaphylaxis); they are prevented by accurate allergy records. Types C, D and E relate to long-term use, delayed effects and stopping. Older people with polypharmacy and reduced renal function are at higher risk. The pharmacist can dose for kidney function, check interactions and allergies, deprescribe unnecessary medicines, arrange monitoring, counsel clearly and report suspected ADRs by Yellow Card. | Type A is dose-related and preventable ; Type B unpredictable, recorded to avoid re-exposure ; C, D, E described ; Risk factors in older people ; Prevention measures and Yellow Card
 
 ## Mechanisms of drug interactions
 S: Drug interactions happen when one drug changes the effect or level of another. Sorting them into pharmacokinetic and pharmacodynamic mechanisms lets you predict them, judge their importance and decide what to do.
 O: Distinguish pharmacokinetic and pharmacodynamic interactions
 O: Explain enzyme induction and inhibition and their time courses
+LV: Intermediate · Clinical reasoning
 T: Enzyme inhibition | Reduced metabolism of a drug by another drug, raising its levels, usually within days
 T: Enzyme induction | Increased metabolism caused by another drug, lowering levels, developing over one to two weeks
 H: Pharmacokinetic interactions
@@ -680,12 +709,18 @@ H: Pharmacokinetic interactions
 - **Metabolism**: CYP inhibitors (clarithromycin, fluconazole, grapefruit juice for some drugs) raise levels; inducers (rifampicin, carbamazepine, phenytoin, St John's wort) lower them.
 - **Excretion**: some drugs reduce renal clearance of lithium (NSAIDs, ACE inhibitors, thiazides), raising lithium levels.
 - **Transport**: P-glycoprotein inhibitors raise digoxin levels.
+P: Judging an interaction means asking how big the change is, how narrow the affected drug's therapeutic index is, and whether it can be managed. Many interactions are managed by monitoring, separating doses or changing a dose; a few combinations should be avoided. A pharmacokinetic interaction matters most for narrow therapeutic index drugs such as warfarin, ciclosporin and lithium.
 H: Pharmacodynamic interactions
 - **Additive or synergistic**: two sedatives together; two QT-prolonging drugs; an NSAID with an anticoagulant (bleeding).
 - **Antagonistic**: an NSAID reducing the effect of antihypertensives; a β-blocker opposing salbutamol.
 - Use the BNF interactions appendix and judge severity, evidence and the patient's circumstances.
+X: An enzyme inhibitor interaction.
+> Clarithromycin, a CYP3A4 inhibitor, is prescribed for someone taking simvastatin.
+> Simvastatin levels rise sharply within days, increasing the risk of myopathy and rhabdomyolysis.
+> The combination should be avoided, so simvastatin is usually paused during the course; check the current BNF interactions entry.
 K: Pharmacokinetic interactions change levels (absorption, metabolism, excretion, transport); pharmacodynamic ones add or oppose effects.
 !: Forgetting that enzyme induction takes one to two weeks to develop and to wear off, so effects lag behind starting or stopping the inducer.
+EV: established | Drug interactions arise by pharmacokinetic mechanisms (absorption, metabolism, excretion, transport) or pharmacodynamic ones (additive or opposing effects).
 Q: Name three enzyme inducers. | For example rifampicin, carbamazepine and St John's wort (also phenytoin).
 Q: Why do NSAIDs raise lithium levels? | They reduce renal lithium clearance.
 SUM: Pharmacokinetic interactions alter drug levels; pharmacodynamic ones alter effects.
@@ -695,11 +730,14 @@ SRC: Preston CL (editor), Stockley's Drug Interactions, Pharmaceutical Press | s
 M2#pharmacy-u02-20-q1@1: Rifampicin is started in someone on a combined oral contraceptive. What's the main risk? | Contraceptive failure from enzyme induction | Increased oestrogen side effects | Rifampicin toxicity | Lower blood pressure | No interaction | Rifampicin induces liver enzymes, lowering hormone levels.
 M2#pharmacy-u02-20-q2@2: An NSAID with warfarin raises bleeding risk mainly by what mechanism? | Pharmacodynamic: antiplatelet and GI effects add to anticoagulation | Increasing warfarin absorption | Inducing warfarin metabolism | Reducing vitamin K intake | Blocking warfarin excretion | NSAIDs impair platelets and the gastric mucosa, adding to bleeding risk.
 M3#pharmacy-u02-20-q3@2: Carbamazepine is stopped in someone also taking a CYP3A4 substrate. What happens over the next two weeks? | The substrate's levels rise as induction wears off | Levels fall immediately | Nothing changes | The substrate becomes inactive | Levels rise within an hour | Enzyme induction declines gradually, so substrate levels climb over one to two weeks.
+M1@1: Which of these is a pharmacodynamic interaction? | Two sedatives causing more drowsiness | Antacids reducing ciprofloxacin absorption | Rifampicin inducing liver enzymes | Clarithromycin inhibiting CYP3A4 | P-glycoprotein inhibition raising digoxin | Pharmacodynamic interactions add or oppose effects at the target; the others change drug levels.
+SA3@1,2: A woman taking warfarin is started on rifampicin, which is stopped after a month. Explain what happens to her warfarin control over this period and how the interaction should be managed. | Rifampicin is a potent enzyme inducer: it increases the metabolism of warfarin, a narrow therapeutic index drug, so the INR falls and the warfarin dose may need increasing. Induction develops over one to two weeks, so the effect lags behind starting rifampicin. When rifampicin stops, induction wears off over a similar period, warfarin levels rise and the INR can become dangerously high unless the dose is reduced. Management: avoid the combination if possible; otherwise monitor the INR closely when starting and for several weeks after stopping, and adjust the dose with the anticoagulation service, using the BNF. | Rifampicin is an enzyme inducer ; INR falls, dose may rise ; Induction takes one to two weeks ; Rebound rise in INR after stopping ; Close INR monitoring and dose adjustment
 
 ## Drug toxicity and overdose
 S: Toxicity can follow overdose, accumulation or interactions. Knowing the mechanisms and the antidotes for common poisonings, and where to get expert advice, is part of every pharmacist's role.
 O: Describe mechanisms of toxicity for common drugs in overdose
 O: Name antidotes for key poisonings and the role of TOXBASE
+LV: Intermediate · Clinical reasoning
 T: Antidote | A treatment that counteracts a specific poison, such as acetylcysteine for paracetamol
 T: TOXBASE | The UK National Poisons Information Service's online database for clinicians managing poisoning
 H: Important poisonings
@@ -708,11 +746,17 @@ H: Important poisonings
 - **Benzodiazepines**: sedation, worse with alcohol or opioids; flumazenil is rarely used because it can trigger seizures.
 - **Tricyclic antidepressants**: cardiac arrhythmias and seizures; dangerous in overdose.
 - **Iron, digoxin, lithium and anticoagulants** each have specific management.
+P: Toxicity isn't only from deliberate overdose. A usual dose can accumulate: digoxin, lithium and aminoglycosides build up when kidney function falls, for example during dehydration from diarrhoea and vomiting, and toxicity then develops gradually.
 H: Getting help
 - TOXBASE and the National Poisons Information Service give up-to-date management advice to healthcare professionals.
 - Members of the public with a suspected overdose need urgent medical help (999 or the emergency department; NHS 111 for advice).
+X: Recognising accumulation.
+> A woman taking lithium has had vomiting and diarrhoea for two days and now has a coarse tremor and confusion.
+> Dehydration reduces lithium clearance, so levels rise; coarse tremor and confusion suggest toxicity.
+> She needs urgent medical assessment and a lithium level; the treating team manages it using TOXBASE and the BNF.
 K: Know the mechanism and antidote for paracetamol and opioid poisoning, and use TOXBASE for management.
 !: Being reassured that someone who took a paracetamol overdose "feels fine": liver damage may not show for a day or more.
+EV: established | Toxicity follows from known mechanisms such as toxic metabolite build-up or accumulation, and specific antidotes exist for some poisonings.
 Q: What is the antidote for paracetamol poisoning? | Acetylcysteine.
 Q: What is TOXBASE? | The UK National Poisons Information Service's database for managing poisoning.
 SUM: Toxicity follows from mechanisms such as metabolite build-up or receptor overactivity.
@@ -722,11 +766,14 @@ SRC: MHRA, Drug Safety Update: paracetamol overdose, simplification of the use o
 M1#pharmacy-u02-21-q1@2: What is the antidote for opioid overdose? | Naloxone | Flumazenil | Acetylcysteine | Atropine | Vitamin K | Naloxone is a competitive opioid antagonist.
 M2#pharmacy-u02-21-q2@1: Why does paracetamol overdose damage the liver? | A toxic metabolite builds up when glutathione runs out | It blocks bile flow | It kills liver cells directly at any dose | It causes low blood sugar only | It is excreted by the liver unchanged | NAPQI accumulates once glutathione is depleted.
 M2#pharmacy-u02-21-q3@2: Someone says they took 30 paracetamol tablets an hour ago but feel well. What's right? | They need urgent medical assessment now | They can wait to see if symptoms develop | Advise rest and fluids | Suggest an antacid | Ask them to return tomorrow | Early symptoms may be absent while liver damage develops; treatment depends on time and levels.
+M3@1,2: A woman on lithium has had diarrhoea and vomiting for two days and now has a coarse tremor and confusion. What is the most appropriate action? | Arrange urgent medical assessment and a lithium level | Advise her to double her fluids and wait a week | Suggest she takes her next dose with food | Recommend loperamide and review in a month | Advise an extra lithium dose to replace losses | Dehydration reduces lithium clearance; coarse tremor and confusion suggest toxicity, which needs urgent assessment.
+SA2@1,2: Explain how paracetamol overdose damages the liver, how acetylcysteine works, and why a person who feels well after an overdose still needs urgent assessment. | Most paracetamol is conjugated safely, but a small amount is oxidised to the toxic metabolite NAPQI, which is normally detoxified by glutathione. In overdose glutathione is depleted, NAPQI builds up and damages liver cells. Acetylcysteine replenishes glutathione and is most effective given early. Treatment decisions use the time of ingestion and the plasma level, following national guidance and TOXBASE. Early symptoms may be absent while liver damage develops over a day or more, so anyone with a suspected overdose needs urgent medical assessment. | NAPQI formed ; Glutathione depletion causes liver damage ; Acetylcysteine replenishes glutathione ; Time and level guide treatment ; Delayed symptoms mean urgent assessment
 
 ## Pharmacogenomics
 S: Genetic differences change how people respond to some medicines, by altering drug-metabolising enzymes or targets, or by increasing the risk of serious reactions. A few tests are already standard in UK practice.
 O: Explain how genetic variation affects drug response
 O: Give examples of pharmacogenomic tests used in UK practice
+LV: Intermediate · Clinical reasoning
 T: Pharmacogenomics | The study of how genetic variation affects drug response
 T: Poor or ultra-rapid metaboliser | A person whose enzyme variant makes them metabolise a drug much more slowly or quickly than usual
 H: Metabolism
@@ -734,12 +781,18 @@ H: Metabolism
 - **CYP2C19**: activates clopidogrel; poor metabolisers get less antiplatelet effect.
 - **TPMT**: metabolises azathioprine and mercaptopurine. Testing before starting reduces the risk of severe bone marrow toxicity.
 - **DPD** (DPYD gene): breaks down fluorouracil and capecitabine. Testing before treatment is standard in the UK to prevent severe toxicity.
+P: Genotype is one influence among many. Age, kidney and liver function, interactions and adherence also change response, and an enzyme inhibitor can make a normal metaboliser behave like a poor one (phenoconversion): strong CYP2D6 inhibitors such as fluoxetine or paroxetine reduce the conversion of codeine to morphine.
 H: Hypersensitivity
 - **HLA-B*57:01** testing before abacavir prevents hypersensitivity reactions.
 - **HLA-B*15:02** (in people of some South-East Asian ancestry) predicts severe skin reactions to carbamazepine.
+X: Interpreting a DPYD result.
+> A man due to start capecitabine has a pre-treatment test showing partial DPD deficiency.
+> He would break down fluoropyrimidines more slowly and is at risk of severe toxicity (mucositis, diarrhoea, low blood counts).
+> The oncology team considers a reduced starting dose or another treatment, following national guidance; complete deficiency generally rules fluoropyrimidines out.
 DRUG: Codeine | Opioid analgesic prodrug, converted to morphine by CYP2D6 | Mild to moderate pain; cough (limited use) | Constipation, drowsiness, dependence; toxic morphine levels in ultra-rapid metabolisers | Contraindicated under 12 years, in breastfeeding and in ultra-rapid metabolisers; counsel on drowsiness and driving; short courses (check the BNF and MHRA advice)
 K: CYP2D6 (codeine), CYP2C19 (clopidogrel), TPMT (thiopurines), DPD (fluoropyrimidines) and HLA-B*57:01 (abacavir) are the key examples.
 !: Supplying codeine for a breastfeeding mother: ultra-rapid metabolism can expose the baby to dangerous morphine levels.
+EV: established | Variants in genes such as CYP2D6, CYP2C19, TPMT, DPYD and HLA-B change drug response, and several are tested routinely before specific drugs.
 Q: Why is DPD testing done before capecitabine? | DPD deficiency causes severe, potentially fatal toxicity.
 Q: Which test is done before abacavir? | HLA-B*57:01.
 SUM: Genetic variants affect metabolism, efficacy and serious reactions.
@@ -749,11 +802,14 @@ SRC: MHRA, Drug Safety Update: 5-fluorouracil and capecitabine, DPD testing reco
 M2#pharmacy-u02-22-q1@1: Which enzyme converts codeine to morphine? | CYP2D6 | CYP3A4 | CYP2C19 | TPMT | DPD | CYP2D6 variation explains toxicity in ultra-rapid metabolisers and poor effect in poor metabolisers.
 M2#pharmacy-u02-22-q2@2: What testing is standard before starting capecitabine? | DPD deficiency testing | TPMT testing | HLA-B*57:01 testing | CYP2D6 testing | No testing | DPD deficiency can cause severe fluoropyrimidine toxicity.
 M3#pharmacy-u02-22-q3@2: A breastfeeding mother asks for co-codamol. What's the best response? | Recommend an alternative: codeine is contraindicated in breastfeeding | Supply it with advice to feed after doses | Supply the lowest strength | Supply it for up to a week | Advise she stops feeding while taking it | MHRA advice: codeine is contraindicated in breastfeeding because of the risk to the baby.
+M1@1: What does pharmacogenomics study? | How genetic variation affects drug response | How drugs are manufactured from genes | How drugs permanently change genes | How much drugs cost to develop | How diet affects drug absorption | Variants in enzymes, transporters, targets and HLA types change efficacy and the risk of serious reactions.
+SA3@1,2: Using codeine as the example, explain how CYP2D6 genotype and interacting drugs can change the response, and why codeine is restricted in children and contraindicated in breastfeeding. | Codeine is a prodrug converted to morphine by CYP2D6. Poor metabolisers make little morphine and get little pain relief; ultra-rapid metabolisers make more morphine than expected and risk toxicity, including respiratory depression. Strong CYP2D6 inhibitors such as fluoxetine or paroxetine can make a normal metaboliser behave like a poor one. Because genotype is usually unknown, MHRA advice restricts codeine in children and young people (contraindicated under 12 years) and contraindicates it in breastfeeding, where an ultra-rapid metabolising mother can expose the baby to dangerous morphine levels. | Codeine is a CYP2D6 prodrug ; Poor metabolisers: little effect ; Ultra-rapid metabolisers: toxicity ; Interacting inhibitors (phenoconversion) ; MHRA restrictions in children and breastfeeding
 
 ## Drug development and clinical trials
 S: A new medicine takes over a decade to move from discovery to licence, through preclinical studies and phased clinical trials, then regulatory review and post-marketing surveillance. Understanding the process helps you judge the evidence for any medicine.
 O: Describe the stages of drug development and the phases of clinical trials
 O: Explain the roles of the MHRA and post-marketing surveillance
+LV: Intermediate · Application
 T: Phase III trial | A large randomised trial comparing a new drug with placebo or standard treatment for efficacy and safety
 T: Marketing authorisation | The licence from a regulator (the MHRA in the UK) to market a medicine for stated uses
 H: From discovery to licence
@@ -762,11 +818,17 @@ H: From discovery to licence
 - **Phase II**: patients with the condition: dose finding and early efficacy.
 - **Phase III**: large randomised controlled trials: efficacy and safety against comparators.
 - **Licensing**: the MHRA reviews quality, safety and efficacy and grants a marketing authorisation with the SPC.
+P: Trials have limits. They typically last months, enrol a few thousand people, and often exclude older people, pregnant women and people with several conditions or many medicines. A reaction affecting 1 in 10,000 people is unlikely to be seen before licensing.
 H: After licensing
 - **Phase IV and pharmacovigilance**: rare and long-term effects appear only in large populations. New medicines carry the black triangle (▼) for additional monitoring and Yellow Card reporting of all suspected reactions.
 - NICE appraises cost-effectiveness for NHS use in England (with the SMC in Scotland and AWTTC in Wales).
+X: How many people are needed to see a rare reaction?
+> The "rule of three": to be 95% confident of seeing at least one case of a reaction with an incidence of 1 in n, about 3n people must be exposed.
+> For 1 in 10,000, that is about 30,000 people, more than most development programmes include.
+> So rare reactions often emerge only through Yellow Card reports and other post-marketing data.
 K: Phases I to III establish safety and efficacy before licensing; pharmacovigilance continues after, especially for black triangle medicines.
 !: Treating a licence as proof that a medicine has no unknown risks: rare effects often emerge after marketing.
+EV: established | Medicines are licensed after phased trials of safety and efficacy, and rare or long-term harms are detected by post-marketing surveillance.
 Q: What is the main purpose of a phase I trial? | Safety, tolerability and pharmacokinetics, usually in small numbers of healthy volunteers.
 Q: What does the black triangle (▼) mean? | The medicine is under additional monitoring: report all suspected reactions.
 SUM: Drug development moves from preclinical work through phase I to III trials to licensing.
@@ -776,24 +838,33 @@ SRC: MHRA, Yellow Card scheme and black triangle medicines | guidance | 2026 | h
 M1#pharmacy-u02-23-q1@1: Which trial phase is mainly about dose finding in patients? | Phase II | Phase I | Phase III | Phase IV | Preclinical | Phase II studies dose and early efficacy in people with the condition.
 M2#pharmacy-u02-23-q2@2: What should you report for a black triangle medicine? | All suspected adverse reactions | Only fatal reactions | Only reactions in children | Nothing until it's fully licensed | Only reactions listed in the leaflet | Black triangle medicines are under additional monitoring.
 M2#pharmacy-u02-23-q3@1: In the UK, which body grants marketing authorisations for medicines? | The MHRA | NICE | The GPhC | The BMA | The NHS Business Services Authority | The MHRA licenses medicines; NICE appraises cost-effectiveness.
+M3@1,2: A drug's trials included 3,000 people. After launch, a serious reaction affecting about 1 in 10,000 users is reported. What is the best explanation? | The trials were too small to detect so rare a reaction | The trials must have been fraudulent | The reaction can't be caused by the drug | Phase I trials should have found it | Licensing removes all rare risks | By the rule of three, about 30,000 people would need exposure to be confident of seeing one case.
+SA2@1,2: Outline the stages a new medicine passes through from discovery to routine use in the UK, and explain why reporting suspected reactions remains important after licensing. | Discovery and preclinical studies identify a target and molecule and test activity and toxicity in the laboratory and animals. Phase I tests safety, tolerability and pharmacokinetics in small numbers of volunteers; phase II finds the dose and early efficacy in patients; phase III compares the drug with placebo or standard treatment in large randomised trials. The MHRA reviews quality, safety and efficacy and grants a marketing authorisation; NICE (with the SMC and AWMSG) appraises cost-effectiveness. Trials are too small and selective to reveal rare or long-term harms, so pharmacovigilance continues: black triangle medicines need all suspected reactions reported by Yellow Card. | Preclinical stage ; Phases I to III ; MHRA licensing ; NICE or equivalent appraisal ; Post-marketing surveillance and Yellow Card
 
 ## Biological medicines and biosimilars
 S: Biological medicines are large, complex molecules made in living cells, such as monoclonal antibodies, insulins and vaccines. Biosimilars are highly similar versions that cost less, and they have changed how many conditions are treated.
 O: Describe how biological medicines differ from small-molecule drugs
 O: Explain what biosimilars are and how they are used safely
+LV: Intermediate · Application
 T: Monoclonal antibody | A laboratory-made antibody targeting one specific molecule, named with the suffix -mab
 T: Biosimilar | A biological medicine highly similar to an approved reference biological, with no clinically meaningful differences
 H: Biologics
 - Made by living cells, so they are large, complex and inherently variable between batches; most are given by injection because they would be digested orally.
 - Examples: anti-TNF antibodies (adalimumab, infliximab) for rheumatoid arthritis and inflammatory bowel disease; insulins; erythropoietin; vaccines.
 - They can provoke immune responses (anti-drug antibodies) that reduce effect, and many increase infection risk.
+P: Biological medicines need careful handling: most are stored in a refrigerator, many must not be frozen or shaken vigorously, and each has its own storage and in-use instructions in the SPC. Pharmacists support people injecting at home with device training, sharps disposal and a plan for missed doses.
 H: Biosimilars
 - A biosimilar is shown to be highly similar in structure, function, safety and efficacy to its reference product. It isn't identical, like a generic small molecule.
 - In the UK, biologicals are prescribed by brand name so that the product given is clear and traceable for pharmacovigilance.
 - Switching to biosimilars, with clinical agreement and patient information, has produced large NHS savings.
+X: Supporting a biosimilar switch.
+> A hospital plans to switch patients from a reference adalimumab to a biosimilar.
+> The clinical team agrees the switch, patients are informed and trained on the new device, and the brand is recorded.
+> Any suspected reaction is reported by Yellow Card, naming the brand and batch.
 DRUG: Adalimumab | Monoclonal antibody against tumour necrosis factor (TNF) | Rheumatoid arthritis, psoriatic arthritis, ankylosing spondylitis, Crohn's disease, ulcerative colitis, psoriasis | Serious infections including tuberculosis reactivation; injection site reactions; rarely demyelination or heart failure worsening | Screen for TB and hepatitis B before starting; avoid live vaccines; prescribe and record by brand; report infections promptly (check the BNF and SPC)
 K: Biologics are large proteins made in living cells; biosimilars are highly similar, not identical, and are prescribed by brand.
 !: Treating a biosimilar switch as automatic substitution without the clinical team and patient being involved, or recording it without the brand.
+EV: established | Biosimilars are highly similar, not identical, to their reference biological medicines and are prescribed by brand for traceability.
 Q: Why are biological medicines prescribed by brand? | So the exact product is traceable for safety monitoring.
 Q: What does the suffix -mab indicate? | A monoclonal antibody.
 SUM: Biologics are complex, variable and usually injected.
@@ -803,4 +874,6 @@ SRC: NHS England, Commissioning framework for biological medicines (including bi
 M1#pharmacy-u02-24-q1@1: Which is a monoclonal antibody? | Adalimumab | Methotrexate | Prednisolone | Omeprazole | Metformin | The -mab suffix denotes a monoclonal antibody (here, anti-TNF).
 M2#pharmacy-u02-24-q2@2: Why are biologicals prescribed by brand name? | For traceability and pharmacovigilance | Because generics are illegal | Because brands are always cheaper | To avoid labelling | Because biosimilars are identical | Biosimilars aren't identical, so the product given must be recorded clearly.
 M2#pharmacy-u02-24-q3@2: What screening is needed before starting an anti-TNF? | Tuberculosis and hepatitis B | Thyroid function only | DPD deficiency | HLA-B*57:01 | Bone density | Anti-TNF treatment can reactivate latent TB and hepatitis B.
+M3@1,2: A patient taking adalimumab reports a persistent cough, weight loss and night sweats. What is the main concern? | Reactivation of tuberculosis | A simple viral cold | Anti-drug antibodies only | An expected injection site reaction | Low blood glucose | Anti-TNF treatment impairs defence against TB; these symptoms need urgent medical review.
+SA2@1,2: Explain how biological medicines differ from small-molecule drugs, what a biosimilar is, and how biosimilars are used safely in the NHS. | Biological medicines are large, complex molecules made in living cells, such as monoclonal antibodies, insulins and vaccines. They vary slightly between batches, are usually injected because they would be digested, can provoke anti-drug antibodies, and often increase infection risk. A biosimilar is highly similar to an approved reference biological in structure, function, safety and efficacy, with no clinically meaningful differences, but isn't identical as a generic is. Biologicals are prescribed and recorded by brand for traceability; switches are agreed by the clinical team with patient information and training, and suspected reactions are reported naming the brand and batch. | Made in living cells, large and variable ; Injected; immunogenicity and infection risk ; Definition of biosimilar ; Not identical to reference ; Brand prescribing, agreed switching and reporting
 `;

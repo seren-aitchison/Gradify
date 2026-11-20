@@ -1161,6 +1161,57 @@
    "course": "maths",
    "action": "enhanced",
    "findings": []
+  },
+  {
+   "lesson": "u13-66",
+   "changes": [
+    "LV Year 3 · Application; EV",
+    "added NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-67",
+   "changes": [
+    "LV Year 3 · Application; EV",
+    "added NUM3 and SA3 (funnel plot) questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-68",
+   "changes": [
+    "LV Year 2 · Application; EV",
+    "lengthened the explanation of NUM1#maths-u13-68-q1",
+    "added NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-69",
+   "changes": [
+    "LV Year 3 · Application; EV",
+    "added NUM3 (Rubin's rules) and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-70",
+   "changes": [
+    "LV Year 3 · Application; EV",
+    "added NUM2 (Kaplan–Meier) and SA2 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
   }
  ],
  "notes": [

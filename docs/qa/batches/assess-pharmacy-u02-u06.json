@@ -214,6 +214,102 @@
     "New questions: M3, SA2"
    ],
    "findings": []
+  },
+  {
+   "course": "pharmacy",
+   "lesson": "u02-17",
+   "action": "enhanced",
+   "changes": [
+    "Added LV and EV; linked new questions to objectives; added an SA extended answer with model answer and marking points",
+    "Added content: P (Low-dose aspirin works through the platelet's biology: having no nu...)",
+    "Added content: X (The \"triple whammy\"....)",
+    "New questions: M1, SA3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "pharmacy",
+   "lesson": "u02-18",
+   "action": "enhanced",
+   "changes": [
+    "Added LV and EV; linked new questions to objectives; added an SA extended answer with model answer and marking points",
+    "Added content: P (Many CNS drugs act on several systems, which explains their side-ef...)",
+    "Added content: X (Choosing an antiemetic in Parkinson's disease....)",
+    "New questions: M1, M3, SA2"
+   ],
+   "findings": []
+  },
+  {
+   "course": "pharmacy",
+   "lesson": "u02-19",
+   "action": "enhanced",
+   "changes": [
+    "Added LV and EV; linked new questions to objectives; added an SA extended answer with model answer and marking points",
+    "Added content: P (Many type B reactions have an immune basis and can recur with relat...)",
+    "Added content: X (Classifying three reactions....)",
+    "New questions: M2, SA3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "pharmacy",
+   "lesson": "u02-20",
+   "action": "enhanced",
+   "changes": [
+    "Added LV and EV; linked new questions to objectives; added an SA extended answer with model answer and marking points",
+    "Added content: P (Judging an interaction means asking how big the change is, how narr...)",
+    "Added content: X (An enzyme inhibitor interaction....)",
+    "New questions: M1, SA3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "pharmacy",
+   "lesson": "u02-21",
+   "action": "enhanced",
+   "changes": [
+    "Added LV and EV; linked new questions to objectives; added an SA extended answer with model answer and marking points",
+    "Added content: P (Toxicity isn't only from deliberate overdose. A usual dose can accu...)",
+    "Added content: X (Recognising accumulation....)",
+    "New questions: M3, SA2"
+   ],
+   "findings": []
+  },
+  {
+   "course": "pharmacy",
+   "lesson": "u02-22",
+   "action": "enhanced",
+   "changes": [
+    "Added LV and EV; linked new questions to objectives; added an SA extended answer with model answer and marking points",
+    "Added content: P (Genotype is one influence among many. Age, kidney and liver functio...)",
+    "Added content: X (Interpreting a DPYD result....)",
+    "New questions: M1, SA3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "pharmacy",
+   "lesson": "u02-23",
+   "action": "enhanced",
+   "changes": [
+    "Added LV and EV; linked new questions to objectives; added an SA extended answer with model answer and marking points",
+    "Added content: P (Trials have limits. They typically last months, enrol a few thousan...)",
+    "Added content: X (How many people are needed to see a rare reaction?...)",
+    "New questions: M3, SA2"
+   ],
+   "findings": []
+  },
+  {
+   "course": "pharmacy",
+   "lesson": "u02-24",
+   "action": "enhanced",
+   "changes": [
+    "Added LV and EV; linked new questions to objectives; added an SA extended answer with model answer and marking points",
+    "Added content: P (Biological medicines need careful handling: most are stored in a re...)",
+    "Added content: X (Supporting a biosimilar switch....)",
+    "New questions: M3, SA2"
+   ],
+   "findings": []
   }
  ],
  "notes": [
