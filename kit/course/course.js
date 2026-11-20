@@ -1049,7 +1049,7 @@ export function mountCourse(root, cfg) {
   const mapOpts = (l) => ({ id: `${cfg.slug}:${l.id}`, kicker: `${cfg.name || cfg.site} · ${l.title}`, site: cfg.site, store, labTitle: (x) => ixs.find((i) => i.id === x)?.title || x });
   // ---------- reading a lesson: the rail beside it ("On this page"), reading progress and the question count ----------
   let lessonRail = null, readStop = null;
-  function railHtml(l, N, nQ, mins) {
+  function railHtml(l, N, nQ, mins, ctx = {}) {
     const heads = N ? N.blocks.filter((b) => b.t === "h").map((b, k) => [`co-s${k + 1}`, b.x]) : [];
     const links = [
       ...(N && (N.objectives.length || N.prereq.length) ? [["co-top", "Before you start"]] : []),
@@ -1061,14 +1061,30 @@ export function mountCourse(root, cfg) {
       ...(main.querySelector("#co-refs") ? [["co-refs", "Sources"]] : []),
     ];
     const R = 22, C = 2 * Math.PI * R;
-    return `<section class="co-card co-rail">
-      ${!links.length ? "" : `<div class="co-railtop"><svg viewBox="0 0 56 56" class="co-ring sm" aria-hidden="true"><circle cx="28" cy="28" r="${R}" class="bg"/><circle cx="28" cy="28" r="${R}" class="fg" stroke-dasharray="${C}" stroke-dashoffset="${C}" data-c="${C}"/></svg>
+    const { u, g, nextL, quizNext } = ctx;
+    // the rail is a stack of widgets (kit/styles/course.css, "Liquid Glass lesson"): where you are on the page, your
+    // steps in this lesson, the topic it belongs to, and what comes next
+    const topic = g?.lessons?.length > 1 ? (() => {
+      const done = g.lessons.filter((x) => S.done[x.id]).length;
+      return `<section class="cx-widget cx-w-topic" aria-label="This topic">
+        <span class="co-kicker">This topic</span><b class="cx-w-title">${esc(g.title || u?.title || "")}</b>
+        <ol class="cx-w-dots">${g.lessons.map((x) => `<li><a href="#/lesson/${x.id}" class="${S.done[x.id] ? "done" : ""} ${x.id === l.id ? "here" : ""}" title="${esc(x.title)}" aria-label="${esc(x.title)}${S.done[x.id] ? " (done)" : ""}${x.id === l.id ? " (this lesson)" : ""}"></a></li>`).join("")}</ol>
+        <small>${done} of ${g.lessons.length} lessons done</small></section>`;
+    })() : "";
+    const upNext = quizNext && u ? `<a class="cx-widget cx-w-next" href="#/quiz/${u.id}"><span class="co-kicker">Up next</span><b class="cx-w-title">The ${esc(U)} ${u.n} quiz</b><small>Lock in ${esc(u.title)}</small><span class="cx-w-go" aria-hidden="true">${ic("right")}</span></a>`
+      : nextL ? `<a class="cx-widget cx-w-next" href="#/lesson/${nextL.id}"><span class="co-kicker">Up next</span><b class="cx-w-title">${esc(nextL.title)}</b><small>${esc(nextL.module || `${U} ${nextL.unit?.n}`)}</small><span class="cx-w-go" aria-hidden="true">${ic("right")}</span></a>` : "";
+    return `<div class="co-rail cx-widgets">
+      ${!links.length ? "" : `<section class="cx-widget cx-w-page" aria-label="On this page"><div class="co-railtop"><svg viewBox="0 0 56 56" class="co-ring sm" aria-hidden="true"><circle cx="28" cy="28" r="${R}" class="bg"/><circle cx="28" cy="28" r="${R}" class="fg" stroke-dasharray="${C}" stroke-dashoffset="${C}" data-c="${C}"/></svg>
         <div><span class="co-kicker">On this page</span><b class="co-readpct">0% read</b>${mins ? `<small>About ${mins} min</small>` : ""}</div></div>
-      <ol class="co-toc">${links.map(([href, t]) => `<li><a href="#${href}" data-jump="${href}">${inline(t)}</a></li>`).join("")}</ol>`}
-      ${nQ ? `<p class="co-railq"><span class="co-checkn"></span></p>` : ""}
-      ${loopHtml(l, N, nQ)}
-      <button class="btn btn-light lg btn-sm co-railgo" ${S.done[l.id] ? "disabled" : ""}><span>${S.done[l.id] ? "Completed ✓" : `Complete · +${XP.lesson} XP`}</span></button>
-    </section>`;
+      <ol class="co-toc">${links.map(([href, t]) => `<li><a href="#${href}" data-jump="${href}">${inline(t)}</a></li>`).join("")}</ol></section>`}
+      <section class="cx-widget cx-w-steps" aria-label="Your steps">
+        ${nQ ? `<p class="co-railq"><span class="co-checkn"></span></p>` : ""}
+        ${loopHtml(l, N, nQ)}
+        <button class="btn btn-light lg btn-sm co-railgo" ${S.done[l.id] ? "disabled" : ""}><span>${S.done[l.id] ? "Completed ✓" : `Complete · +${XP.lesson} XP`}</span></button>
+      </section>
+      ${topic}
+      ${upNext}
+    </div>`;
   }
   // the learning loop for one lesson: read it, check yourself, recall it with the flashcards, complete it. Each step
   // lights up as it happens (reading from scroll depth, checking from right answers, recall from going through the cards)
@@ -1329,6 +1345,8 @@ export function mountCourse(root, cfg) {
       quizReady || quizNext ? { icon: "trophy", label: `${U} ${u.n} quiz`, desc: `Lock in ${u.title}.`, meta: S.quiz[u.id] ? `best ${pc(S.quiz[u.id].best)}` : `+${XP.quiz} XP`, href: `#/quiz/${u.id}`, primary: prim === "quiz" } : null,
       nextL && !quizNext ? { icon: "play", label: "Next lesson", desc: nextL.title, href: `#/lesson/${nextL.id}`, primary: prim === "next" } : null,
     ] : [];
+    // the lesson's colours behind the glass (the ambient light in kit/styles/course.css, "Liquid Glass lesson")
+    root.style.setProperty("--la", t.from); root.style.setProperty("--lb", t.to);
     main.innerHTML = `<article class="co-lesson co-read" style="--a:${t.from};--b:${t.to}">
       <div class="co-lbar cx-lbar">
         <div class="cx-lrow">
@@ -1380,7 +1398,7 @@ export function mountCourse(root, cfg) {
       <nav class="co-pn cx-pn3" aria-label="Other lessons">${card(prev, "prev")}${upCard}${nextCard}</nav>
     </article>`;
     // the rail beside the lesson: its sections, how far through you are, and its questions
-    lessonRail = () => railHtml(l, N, nQ, mins);
+    lessonRail = () => railHtml(l, N, nQ, mins, { u, g, nextL, quizNext });
     addSave(main.querySelector(".cx-lact .cx-save"));
     scrollTo(0, 0);
     wirePractice(main, "lesson", id);
