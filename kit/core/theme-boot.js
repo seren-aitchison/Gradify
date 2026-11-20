@@ -94,3 +94,13 @@ document.addEventListener("click", function (e) {
   if (!t.hasAttribute("tabindex")) t.setAttribute("tabindex", "-1");
   t.focus({ preventScroll: true }); t.scrollIntoView({ block: "start" });
 });
+
+// Liquid Glass on the GPU (kit/ui/liquid-gl.js), on every page, once the page has loaded and gone quiet. It decides for
+// itself whether this device should run it, and the CSS glass stays wherever it doesn't.
+(function () {
+  var src = (document.currentScript && document.currentScript.src) || "";
+  if (!src || !("noModule" in HTMLScriptElement.prototype)) return;
+  var go = function () { import(src.replace(/core\/theme-boot\.js(\?.*)?$/, "ui/liquid-gl.js")).then(function (m) { m.start(); }).catch(function () { /* CSS glass stays */ }); };
+  var later = function () { "requestIdleCallback" in window ? requestIdleCallback(go, { timeout: 1500 }) : setTimeout(go, 300); };
+  if (document.readyState === "complete") later(); else addEventListener("load", later);
+})();
