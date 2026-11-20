@@ -1,0 +1,220 @@
+{
+ "id": "chem-oxidation-state-rules",
+ "renderer": "dotcross",
+ "course": "chemistry",
+ "lesson": "Oxidation states",
+ "title": "Assigning oxidation states",
+ "caption": "Give each bond's electrons to the more electronegative atom and count what each atom has gained or lost. Water: O −2, H +1. Sulfate: S +6, every O −2. Ammonium: N −3, H +1. The states add up to the overall charge.",
+ "alt": "Lewis structures of water, the sulfate ion and the ammonium ion, each atom labelled with its oxidation state.",
+ "description": [
+  "H₂O: oxygen −2, each hydrogen +1; total 0.",
+  "SO₄²⁻: sulfur +6, each oxygen −2; total −2.",
+  "NH₄⁺: nitrogen −3, each hydrogen +1; total +1."
+ ],
+ "perRow": 3,
+ "rowHeight": [
+  200,
+  180
+ ],
+ "molecules": [
+  {
+   "label": "H₂O",
+   "style": "lewis",
+   "show": "oxidation",
+   "atoms": [
+    {
+     "id": "o",
+     "el": "O",
+     "x": 0,
+     "y": 0,
+     "lone": 2,
+     "loneAt": [
+      -135,
+      -45
+     ]
+    },
+    {
+     "id": "h1",
+     "el": "H",
+     "x": -0.85,
+     "y": 0.65
+    },
+    {
+     "id": "h2",
+     "el": "H",
+     "x": 0.85,
+     "y": 0.65
+    }
+   ],
+   "bonds": [
+    {
+     "a": "o",
+     "b": "h1"
+    },
+    {
+     "a": "o",
+     "b": "h2"
+    }
+   ],
+   "claims": {
+    "oxidation": {
+     "o": -2,
+     "h1": 1,
+     "h2": 1
+    }
+   }
+  },
+  {
+   "label": "SO₄²⁻",
+   "style": "lewis",
+   "show": "oxidation",
+   "bracket": true,
+   "charge": -2,
+   "atoms": [
+    {
+     "id": "s",
+     "el": "S",
+     "x": 0,
+     "y": 0,
+     "expanded": true
+    },
+    {
+     "id": "o1",
+     "el": "O",
+     "x": 0,
+     "y": -1,
+     "lone": 2,
+     "loneAt": [
+      -150,
+      -30
+     ]
+    },
+    {
+     "id": "o2",
+     "el": "O",
+     "x": 0,
+     "y": 1,
+     "lone": 2,
+     "loneAt": [
+      150,
+      30
+     ]
+    },
+    {
+     "id": "o3",
+     "el": "O",
+     "x": -1,
+     "y": 0,
+     "lone": 3,
+     "loneAt": [
+      -90,
+      180,
+      90
+     ]
+    },
+    {
+     "id": "o4",
+     "el": "O",
+     "x": 1,
+     "y": 0,
+     "lone": 3,
+     "loneAt": [
+      -90,
+      0,
+      90
+     ]
+    }
+   ],
+   "bonds": [
+    {
+     "a": "s",
+     "b": "o1",
+     "order": 2
+    },
+    {
+     "a": "s",
+     "b": "o2",
+     "order": 2
+    },
+    {
+     "a": "s",
+     "b": "o3"
+    },
+    {
+     "a": "s",
+     "b": "o4"
+    }
+   ],
+   "claims": {
+    "oxidation": {
+     "s": 6,
+     "o1": -2,
+     "o3": -2
+    }
+   }
+  },
+  {
+   "label": "NH₄⁺",
+   "style": "lewis",
+   "show": "oxidation",
+   "bracket": true,
+   "charge": 1,
+   "atoms": [
+    {
+     "id": "n",
+     "el": "N",
+     "x": 0,
+     "y": 0
+    },
+    {
+     "id": "h1",
+     "el": "H",
+     "x": 0,
+     "y": -1
+    },
+    {
+     "id": "h2",
+     "el": "H",
+     "x": 1,
+     "y": 0
+    },
+    {
+     "id": "h3",
+     "el": "H",
+     "x": 0,
+     "y": 1
+    },
+    {
+     "id": "h4",
+     "el": "H",
+     "x": -1,
+     "y": 0
+    }
+   ],
+   "bonds": [
+    {
+     "a": "n",
+     "b": "h1"
+    },
+    {
+     "a": "n",
+     "b": "h2"
+    },
+    {
+     "a": "n",
+     "b": "h3"
+    },
+    {
+     "a": "n",
+     "b": "h4"
+    }
+   ],
+   "claims": {
+    "oxidation": {
+     "n": -3,
+     "h1": 1
+    }
+   }
+  }
+ ]
+}

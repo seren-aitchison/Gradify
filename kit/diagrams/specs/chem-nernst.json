@@ -1,0 +1,78 @@
+{
+ "id": "chem-nernst",
+ "renderer": "graph",
+ "course": "chemistry",
+ "lesson": "Nernst equation",
+ "title": "The Nernst equation",
+ "caption": "E = E° + (RT/nF) ln[Cu²⁺] = 0.34 + 0.0296 log₁₀[Cu²⁺] at 298 K. Diluting the Cu²⁺ tenfold lowers the electrode potential by 0.0296 V (59 mV divided by the 2 electrons).",
+ "alt": "Electrode potential against log of the copper(II) concentration: a straight line of gradient 0.0296, passing 0.34 V at 1 mol dm⁻³.",
+ "description": [
+  "At [Cu²⁺] = 1 mol dm⁻³ (log 0): E = E° = 0.34 V.",
+  "At 0.1 mol dm⁻³: 0.31 V.",
+  "At 0.001: 0.25 V."
+ ],
+ "range": {
+  "x": [
+   -4,
+   0.5
+  ],
+  "y": [
+   0.2,
+   0.36
+  ]
+ },
+ "ticks": [
+  [
+   -4,
+   -3,
+   -2,
+   -1,
+   0
+  ],
+  [
+   0.22,
+   0.26,
+   0.3,
+   0.34
+  ]
+ ],
+ "grid": [
+  1,
+  0.02
+ ],
+ "axisLabels": [
+  "log₁₀([Cu²⁺] / mol dm⁻³)",
+  "E / V"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "0.34+0.029580*x",
+   "colour": "a3"
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 0.34,
+   "label": "E°",
+   "dx": -10,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "slope",
+   "expr": "0.34+0.029580*x",
+   "x": -2,
+   "value": 0.02958,
+   "name": "gradient 2.303RT/2F = 0.0296 V per tenfold change"
+  },
+  {
+   "type": "point",
+   "expr": "0.34+0.029580*x",
+   "x": 0,
+   "y": 0.34
+  }
+ ]
+}

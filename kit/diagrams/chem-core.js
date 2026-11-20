@@ -38,6 +38,9 @@ export function parseFormula(raw) {
   // a charge is ^n± (Unicode superscripts become this) or a bare trailing + or −, which means 1: NH4+ is NH₄⁺
   const cm = s.match(/\^(\d*)([+-])$/) || s.match(/()([+-])$/);
   if (s === "e^-" || s === "e-") return { atoms: {}, charge: -1 };
+  // a single-element ion written without ^: the digit is the charge (Zn2+, Al3+, O2- is the oxide ion)
+  const mono = s.match(/^([A-Z][a-z]?)(\d+)([+-])$/);
+  if (mono && mono[1] in Z) return { atoms: { [mono[1]]: 1 }, charge: (mono[3] === "+" ? 1 : -1) * +mono[2] };
   if (cm && !/^[+-]$/.test(s)) {
     charge = (cm[2] === "+" ? 1 : -1) * (cm[1] ? +cm[1] : 1);
     s = s.slice(0, s.length - cm[0].length);

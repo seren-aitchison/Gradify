@@ -1,0 +1,33 @@
+{
+ "id": "chem-galvanic-cell",
+ "renderer": "cell",
+ "course": "chemistry",
+ "lesson": "Galvanic cells",
+ "title": "A magnesium–copper cell",
+ "caption": "The half-cell with the more negative E° supplies electrons. Magnesium (−2.37 V) is oxidised and copper ions (+0.34 V) are reduced; electrons flow externally from Mg to Cu, while ions in the salt bridge keep each solution neutral. E°cell = 2.71 V.",
+ "alt": "A magnesium electrode in magnesium sulfate and a copper electrode in copper sulfate, joined by a wire with a voltmeter reading 2.71 V and a salt bridge.",
+ "description": [
+  "Magnesium anode: Mg → Mg²⁺ + 2e⁻.",
+  "Copper cathode: Cu²⁺ + 2e⁻ → Cu.",
+  "E°cell = 0.34 − (−2.37) = 2.71 V."
+ ],
+ "kind": "galvanic",
+ "ecell": 2.71,
+ "net": "Mg + Cu2+ → Mg2+ + Cu",
+ "halves": [
+  {
+   "couple": "Mg2+/Mg",
+   "electrode": "Mg",
+   "solution": "MgSO4(aq)",
+   "role": "anode",
+   "half": "Mg → Mg2+ + 2e-"
+  },
+  {
+   "couple": "Cu2+/Cu",
+   "electrode": "Cu",
+   "solution": "CuSO4(aq)",
+   "role": "cathode",
+   "half": "Cu2+ + 2e- → Cu"
+  }
+ ]
+}

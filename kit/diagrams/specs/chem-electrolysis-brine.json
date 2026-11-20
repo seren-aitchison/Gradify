@@ -1,0 +1,58 @@
+{
+ "id": "chem-electrolysis-brine",
+ "renderer": "cell",
+ "course": "chemistry",
+ "lesson": "Electrolysis",
+ "title": "Electrolysis of brine",
+ "caption": "In concentrated sodium chloride solution, hydrogen forms at the cathode instead of sodium, because H⁺ from water is reduced more easily than Na⁺. Chlorine forms at the anode because chloride is concentrated. Sodium hydroxide is left in solution.",
+ "alt": "A cell of brine with a d.c. supply: hydrogen bubbles at the negative electrode, chlorine at the positive electrode.",
+ "description": [
+  "Cathode (negative): 2H₂O + 2e⁻ → H₂ + 2OH⁻.",
+  "Anode (positive): 2Cl⁻ → Cl₂ + 2e⁻.",
+  "Left in solution: Na⁺ and OH⁻, sodium hydroxide."
+ ],
+ "also": [
+  {
+   "course": "gcse",
+   "lesson": "Electrolysis"
+  }
+ ],
+ "kind": "single",
+ "supply": true,
+ "vessel": {
+  "label": "concentrated NaCl(aq)"
+ },
+ "net": "2H2O + 2Cl- → H2 + 2OH- + Cl2",
+ "rules": [
+  {
+   "type": "cathode",
+   "metal": "Na",
+   "charge": 1,
+   "product": "H2"
+  },
+  {
+   "type": "anode",
+   "halide": "Cl2",
+   "concentrated": true,
+   "product": "Cl2"
+  }
+ ],
+ "halves": [
+  {
+   "electrode": "C",
+   "label": "inert",
+   "role": "anode",
+   "half": "2Cl- → Cl2 + 2e-",
+   "product": "Cl₂(g)",
+   "ions": "Cl⁻"
+  },
+  {
+   "electrode": "C",
+   "label": "inert",
+   "role": "cathode",
+   "half": "2H2O + 2e- → H2 + 2OH-",
+   "product": "H₂(g)",
+   "ions": "H₂O"
+  }
+ ]
+}

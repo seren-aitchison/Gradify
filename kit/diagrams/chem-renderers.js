@@ -19,6 +19,7 @@ const C = { ink: "var(--vx-ink, #151826)", soft: "var(--vx-soft, #5b6275)", line
 export function fm(s) {
   // keeps state symbols; a bare charge after a formula (Na+, Cl−, e−) becomes a superscript too
   return ascii(s, true).replace(/\^([+-]\d+)/g, (_, q) => `^{${q.replace("-", "−")}}`).replace(/\^(\d*[+-])/g, (_, q) => `^{${q.replace("-", "−")}}`).replace(/\^(\d+)/g, "^{$1}")
+    .replace(/(^|[\s(+])(\d*)([A-Z][a-z]?)(\d)([+−-])(?=$|[\s(),;:])/g, (_, b, c, el, n, q) => `${b}${c}${el}^{${n}${q === "+" ? "+" : "−"}}`)
     .replace(/([A-Za-z\]])([+−-])(?=$|[\s(,;:])/g, (_, a, q) => `${a}^{${q === "+" ? "+" : "−"}}`)
     .replace(/([A-Za-z)\]])(\d+)/g, "$1_{$2}");
 }
@@ -577,7 +578,18 @@ const veqOf = (cv) => {
   return (cv.titrant.acid ? nB : nA) / cv.titrant.c;
 };
 function titration(spec, W, narrow) {
-  const H = narrow ? 340 : 360, pad = { l: 46, r: narrow ? 14 : 130, t: 26, b: 46 };
+  if (spec.panels && spec.curves.length > 1) {
+    // one small chart per curve, so curves that coincide over part of their range stay readable
+    const per = narrow ? 1 : 2, pw = W / per, ph = narrow ? 250 : 240;
+    let s = "";
+    spec.curves.forEach((cv, i) => {
+      const sub = titration({ ...spec, panels: false, curves: [{ ...cv, label: null }], marks: spec.marks, small: true }, pw, true);
+      const x = (i % per) * pw, y = Math.floor(i / per) * (ph + 30);
+      s += `<g transform="translate(${f1(x)} ${f1(y + 24)})">${sub.s}</g>` + text(x + pw / 2 + 10, y + 14, cv.label, { size: 13, weight: 700, fill: col(cv.colour || "a1") });
+    });
+    return { s, H: Math.ceil(spec.curves.length / per) * (ph + 30) };
+  }
+  const H = spec.small ? 240 : narrow ? 340 : 360, pad = { l: 46, r: narrow ? 14 : 130, t: 26, b: 46 };
   const vmax = spec.vmax, sx = (v) => pad.l + (v / vmax) * (W - pad.l - pad.r), sy = (p) => H - pad.b - (p / 14) * (H - pad.t - pad.b);
   let s = "";
   for (const ind of spec.indicators || []) {

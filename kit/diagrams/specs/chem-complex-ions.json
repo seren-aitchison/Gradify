@@ -1,0 +1,73 @@
+{
+ "id": "chem-complex-ions",
+ "renderer": "vsepr",
+ "course": "chemistry",
+ "lesson": "Complex ion equilibria",
+ "title": "Two copper(II) complexes",
+ "caption": "In water copper(II) is the blue octahedral [Cu(H₂O)₆]²⁺. Adding concentrated HCl swaps the six water ligands for four larger chloride ions, giving the yellow-green tetrahedral [CuCl₄]²⁻: the coordination number changes with the ligand.",
+ "alt": "An octahedral copper ion with six water ligands, and a tetrahedral copper ion with four chloride ligands.",
+ "description": [
+  "[Cu(H₂O)₆]²⁺: six water molecules around Cu at 90°, octahedral.",
+  "[CuCl₄]²⁻: four chloride ions at 109.5°, tetrahedral."
+ ],
+ "molecules": [
+  {
+   "label": "[Cu(H2O)6]^2+",
+   "centre": "Cu",
+   "complex": true,
+   "ligands": [
+    {
+     "el": "OH2"
+    },
+    {
+     "el": "OH2"
+    },
+    {
+     "el": "OH2"
+    },
+    {
+     "el": "OH2"
+    },
+    {
+     "el": "OH2"
+    },
+    {
+     "el": "OH2"
+    }
+   ],
+   "shape": "octahedral",
+   "angle": "90°",
+   "anglePair": [
+    0,
+    2
+   ],
+   "sub": "octahedral, blue"
+  },
+  {
+   "label": "[CuCl4]^2-",
+   "centre": "Cu",
+   "complex": true,
+   "ligands": [
+    {
+     "el": "Cl"
+    },
+    {
+     "el": "Cl"
+    },
+    {
+     "el": "Cl"
+    },
+    {
+     "el": "Cl"
+    }
+   ],
+   "shape": "tetrahedral",
+   "angle": "109.5°",
+   "anglePair": [
+    0,
+    1
+   ],
+   "sub": "tetrahedral, yellow-green"
+  }
+ ]
+}

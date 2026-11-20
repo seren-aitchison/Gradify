@@ -1,0 +1,59 @@
+{
+ "id": "chem-solubility-equilibrium",
+ "renderer": "particles",
+ "course": "chemistry",
+ "lesson": "Solubility equilibria",
+ "title": "A saturated solution is a dynamic equilibrium",
+ "caption": "In a saturated AgCl solution, ions leave the solid as fast as they rejoin it: AgCl(s) ⇌ Ag⁺(aq) + Cl⁻(aq). Ksp = [Ag⁺][Cl⁻] = 1.8 × 10⁻¹⁰ mol² dm⁻⁶ at 25 °C, so very few ions are in solution.",
+ "alt": "A beaker with a layer of solid silver chloride on the bottom and a few silver and chloride ions in the solution above.",
+ "description": [
+  "Solid AgCl at the bottom, a lattice of Ag⁺ and Cl⁻.",
+  "Only a few Ag⁺ and Cl⁻ ions dissolved in the water above, in equal numbers."
+ ],
+ "species": {
+  "Ag+": {
+   "atoms": [
+    "Ag"
+   ],
+   "charge": 1
+  },
+  "Cl-": {
+   "atoms": [
+    "Cl"
+   ],
+   "charge": -1
+  },
+  "Ag": {
+   "atoms": [
+    "Ag"
+   ]
+  }
+ },
+ "panelHeight": 200,
+ "panels": [
+  {
+   "title": "saturated AgCl(aq)",
+   "container": "beaker",
+   "arrangement": "layer",
+   "contents": [
+    [
+     "Ag+",
+     7
+    ],
+    [
+     "Cl-",
+     7
+    ]
+   ],
+   "overlay": []
+  }
+ ],
+ "claims": [
+  {
+   "type": "count",
+   "panel": 0,
+   "species": "Ag+",
+   "n": 7
+  }
+ ]
+}

@@ -1,0 +1,41 @@
+{
+ "id": "chem-rusting",
+ "renderer": "cell",
+ "course": "chemistry",
+ "lesson": "Corrosion",
+ "title": "How iron rusts",
+ "caption": "Under a drop of water, iron at the centre (where oxygen is scarce) is oxidised to Fe²⁺; electrons flow through the metal to the edge, where oxygen is reduced to OH⁻. Fe²⁺ and OH⁻ meet to form Fe(OH)₂, which oxidises further to rust, Fe₂O₃·xH₂O.",
+ "alt": "A water droplet on iron: the anode region in the middle and the cathode region at the edge, with the two half-equations.",
+ "description": [
+  "Anode (centre): Fe → Fe²⁺ + 2e⁻.",
+  "Cathode (edge, near the air): O₂ + 2H₂O + 4e⁻ → 4OH⁻.",
+  "E°cell = 0.40 − (−0.44) = 0.84 V, so the reaction is feasible."
+ ],
+ "kind": "single",
+ "compare": true,
+ "ecell": 0.84,
+ "vessel": {
+  "label": "a water droplet on iron",
+  "colour": "#e0f2fe",
+  "fill": 0.6
+ },
+ "net": "2Fe + O2 + 2H2O → 2Fe2+ + 4OH-",
+ "halves": [
+  {
+   "couple": "Fe2+/Fe",
+   "electrode": "Fe",
+   "label": "iron",
+   "role": "anode",
+   "half": "Fe → Fe2+ + 2e-",
+   "product": "Fe²⁺"
+  },
+  {
+   "couple": "O2/OH-",
+   "electrode": "Fe",
+   "label": "iron",
+   "role": "cathode",
+   "half": "O2 + 2H2O + 4e- → 4OH-",
+   "product": "OH⁻"
+  }
+ ]
+}

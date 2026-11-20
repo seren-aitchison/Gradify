@@ -11,6 +11,7 @@ H: Definitions
 - **Reduction** is loss of oxygen, **gain of electrons** or decrease in oxidation state.
 - Memory aid: **OIL RIG** (Oxidation Is Loss, Reduction Is Gain of electrons).
 - The electron definition is the most general.
+D: chem-oil-rig
 H: Redox
 - Electrons lost by one species are gained by another.
 - So oxidation and reduction occur **together**: a **redox** reaction.
@@ -175,6 +176,7 @@ H: Definition
 - Strong oxidising agents have high positive electrode potentials.
 - Examples: O₂, Cl₂, F₂, H₂O₂, MnO₄⁻ and Cr₂O₇²⁻.
 - Fluorine is the strongest common oxidising agent.
+D: chem-halogen-oxidising
 H: Colour changes and uses
 - **Acidified potassium manganate(VII)**: purple to colourless.
 - **Acidified potassium dichromate(VI)**: orange to green.
@@ -216,6 +218,7 @@ H: Definition
 - Strong reducing agents have very negative electrode potentials.
 - Examples: reactive metals, H₂, C, CO, I⁻ and S₂O₃²⁻.
 - Group 1 metals are strong reducing agents.
+D: chem-metal-reducing
 H: Uses
 - **Carbon and CO** reduce metal oxides in extraction, as in the blast furnace.
 - **Thiosulfate** reduces iodine in iodine-thiosulfate titrations.
@@ -257,6 +260,7 @@ H: Components
 - **Anode**: where oxidation occurs.
 - **Cathode**: where reduction occurs.
 - An external wire carries electrons; a **salt bridge** or membrane completes the circuit with ions.
+D: chem-daniell-cell
 H: Two types
 - **Galvanic (voltaic) cells**: spontaneous reactions produce electricity.
 - **Electrolytic cells**: electricity drives non-spontaneous reactions.
@@ -298,6 +302,7 @@ H: Construction
 - Gas half-cells use an inert **platinum** electrode, such as H₂/H⁺.
 - Ion/ion half-cells also use platinum, such as Fe³⁺/Fe²⁺.
 - A **high-resistance voltmeter** measures the cell potential.
+D: chem-galvanic-cell
 H: Notation and flow
 - Cell notation: **anode ∣ anode solution ‖ cathode solution ∣ cathode**.
 - Example: Zn(s) ∣ Zn²⁺(aq) ‖ Cu²⁺(aq) ∣ Cu(s).
@@ -339,6 +344,7 @@ H: Structure
 - The **cathode** is **negative**: cations are attracted and reduced.
 - The **anode** is **positive**: anions are attracted and oxidised.
 - The electrolyte is molten or dissolved so ions can move.
+D: chem-electrolytic-cell
 H: Comparison
 - Electrolytic cells need energy input; ΔG is positive for the reaction.
 - Galvanic cells release energy; ΔG is negative.
@@ -380,6 +386,7 @@ H: The reference
 - It consists of H₂ gas at 100 kPa bubbling over platinum in 1.00 mol dm⁻³ H⁺ at 298 K.
 - Other half-cells are measured against it.
 - Secondary references, such as the calomel electrode, are easier to use.
+D: chem-she
 H: Standard electrode potential
 - **E⦵** is the potential of a half-cell relative to the SHE under standard conditions.
 - Written as **reduction** potentials: Cu²⁺ + 2e⁻ ⇌ Cu, E⦵ = +0.34 V.
@@ -421,6 +428,7 @@ H: Calculating E⦵cell
 - The cathode is the half-cell with the more positive E⦵.
 - A positive E⦵cell means the reaction is **feasible**.
 - Half-cell potentials are not multiplied when equations are scaled.
+D: chem-cell-potential
 H: Link to thermodynamics
 - **ΔG⦵ = −nFE⦵cell**.
 - n is the number of electrons transferred; F = 96,485 C mol⁻¹.
@@ -462,6 +470,7 @@ H: The series
 - Most **negative** at one end: strongest **reducing agents** (Li, K, Na).
 - Most **positive** at the other: strongest **oxidising agents** (F₂, MnO₄⁻).
 - It reflects the reactivity series of metals.
+D: chem-electrochemical-series
 H: Predicting reactions
 - A species can oxidise any species with a **more negative** E⦵.
 - The "anticlockwise rule": the reduced form lower in the table reacts with the oxidised form higher up (depending on layout).
@@ -503,6 +512,7 @@ H: The equation
 - At 298 K: **E = E⦵ − (0.0257/n) ln Q**, or (0.0592/n) log Q.
 - For a metal ion half-cell Mⁿ⁺ + ne⁻ ⇌ M: E = E⦵ + (0.0592/n) log[Mⁿ⁺].
 - Decreasing ion concentration makes E more negative.
+D: chem-nernst
 H: Uses
 - **Concentration cells**: identical electrodes in different concentrations produce a voltage.
 - pH meters use the Nernst equation: potential changes by 0.0592 V per pH unit.
@@ -544,6 +554,7 @@ H: Molten compounds
 - Molten NaCl gives sodium and chlorine.
 - Ions must be free to move.
 - Inert electrodes such as graphite or platinum are often used.
+D: chem-electrolysis-brine
 H: Aqueous solutions
 - At the cathode: **hydrogen** forms unless the metal is less reactive than hydrogen (such as copper or silver).
 - At the anode: **oxygen** forms unless halide ions are present in reasonable concentration, giving halogens.
@@ -585,6 +596,7 @@ H: The laws
 - **Q = It**: charge (C) = current (A) × time (s).
 - One mole of electrons carries **96,485 C** (the Faraday constant).
 - Moles of electrons = Q ÷ F.
+D: chem-faraday
 H: Calculations
 - Use the half-equation to relate moles of electrons to moles of product.
 - Cu²⁺ + 2e⁻ → Cu: 2 mol electrons give 1 mol copper.
@@ -626,6 +638,7 @@ H: Types
 - **Secondary cells** are rechargeable, such as lead-acid and lithium-ion.
 - Recharging reverses the cell reaction using an external supply.
 - Battery voltage depends on the electrode potentials of the half-cells.
+D: chem-lithium-ion
 H: Common batteries
 - **Lead-acid**: Pb and PbO₂ in sulfuric acid, used in cars.
 - **Lithium-ion**: lithium ions move between a graphite anode and a metal oxide cathode, used in phones and electric vehicles.
@@ -667,6 +680,7 @@ H: How they work
 - Fuel and oxygen are supplied **continuously**.
 - In acidic fuel cells: anode H₂ → 2H⁺ + 2e⁻; cathode O₂ + 4H⁺ + 4e⁻ → 2H₂O.
 - Overall: 2H₂ + O₂ → 2H₂O.
+D: chem-fuel-cell
 H: Evaluation
 - Only product is **water**; no CO₂ at the point of use.
 - More efficient than combustion engines.
@@ -708,6 +722,7 @@ H: Rusting
 - At anodic regions: **Fe → Fe²⁺ + 2e⁻**.
 - At cathodic regions: **O₂ + 2H₂O + 4e⁻ → 4OH⁻**.
 - Fe²⁺ and OH⁻ form Fe(OH)₂, which is oxidised to hydrated iron(III) oxide, rust.
+D: chem-rusting
 H: Speeding it up
 - **Salt** increases conductivity of water, speeding corrosion.
 - **Acidic** conditions accelerate rusting.
@@ -749,6 +764,7 @@ H: Barrier methods
 - **Electroplating** with tin or chromium forms a barrier.
 - Barriers fail if scratched.
 - Tin plating can speed rusting once scratched, because iron becomes the anode.
+D: chem-sacrificial
 H: Sacrificial methods
 - **Galvanising**: coating iron with zinc.
 - Zinc is more reactive, so it corrodes **instead of** iron, even when scratched.
@@ -790,6 +806,7 @@ H: Aluminium extraction
 - Cathode: Al³⁺ + 3e⁻ → Al.
 - Anode: 2O²⁻ → O₂ + 4e⁻; oxygen burns the carbon anodes, which must be replaced.
 - Requires very large amounts of electricity.
+D: chem-aluminium-extraction
 H: Other processes
 - **Chlor-alkali**: electrolysis of brine produces chlorine, hydrogen and sodium hydroxide; membrane cells keep products separate.
 - **Electrorefining** of copper: impure copper anode, pure copper cathode.

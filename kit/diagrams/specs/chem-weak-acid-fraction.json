@@ -1,0 +1,80 @@
+{
+ "id": "chem-weak-acid-fraction",
+ "renderer": "graph",
+ "course": "chemistry",
+ "lesson": "Weak acids and bases",
+ "title": "How much of a weak acid is ionised",
+ "caption": "The fraction of ethanoic acid present as ethanoate depends on pH: 1/(1 + 10^(pKa − pH)). It is half at pH = pKa = 4.76, about 1% two units below and 99% two units above.",
+ "alt": "Fraction ionised against pH: an S-shaped curve rising from near 0 at pH 2 through 0.5 at 4.76 to near 1 at pH 7.",
+ "description": [
+  "Below pH 3: almost all molecules.",
+  "At pH 4.76: half ionised.",
+  "Above pH 7: almost all ethanoate."
+ ],
+ "range": {
+  "x": [
+   1,
+   9
+  ],
+  "y": [
+   0,
+   1.05
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8
+  ],
+  [
+   0.5,
+   1
+  ]
+ ],
+ "grid": [
+  1,
+  0.25
+ ],
+ "axisLabels": [
+  "pH",
+  "fraction ionised"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "1/(1+10^(4.76-x))",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 4.76,
+   "y": 0.5,
+   "label": "pH = pKa"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "1/(1+10^(4.76-x))",
+   "x": 4.76,
+   "y": 0.5,
+   "name": "half ionised at pH = pKa = 4.76"
+  },
+  {
+   "type": "value",
+   "expr": "1/(1+10^(4.76-x))",
+   "x": 2.76,
+   "between": [
+    0.0098,
+    0.01
+   ],
+   "name": "about 1% two units below pKa"
+  }
+ ]
+}

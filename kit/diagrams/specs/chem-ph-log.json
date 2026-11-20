@@ -1,0 +1,92 @@
+{
+ "id": "chem-ph-log",
+ "renderer": "graph",
+ "course": "chemistry",
+ "lesson": "pH",
+ "title": "pH is a logarithmic scale",
+ "caption": "pH = −log₁₀[H⁺]. A tenfold dilution of a strong acid raises the pH by exactly 1: 0.1 mol dm⁻³ HCl is pH 1, 0.01 is pH 2, 0.001 is pH 3.",
+ "alt": "pH against log₁₀[H⁺]: a straight line of gradient −1 through (−1, 1), (−2, 2) and (−3, 3).",
+ "description": [
+  "[H⁺] = 10⁻¹: pH 1.",
+  "[H⁺] = 10⁻²: pH 2.",
+  "[H⁺] = 10⁻³: pH 3: each tenfold dilution adds 1."
+ ],
+ "range": {
+  "x": [
+   -7,
+   0
+  ],
+  "y": [
+   0,
+   7.5
+  ]
+ },
+ "ticks": [
+  [
+   -7,
+   -6,
+   -5,
+   -4,
+   -3,
+   -2,
+   -1
+  ],
+  [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ]
+ ],
+ "grid": [
+  1,
+  1
+ ],
+ "axisLabels": [
+  "log₁₀([H⁺] / mol dm⁻³)",
+  "pH"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "0-x",
+   "colour": "a2"
+  }
+ ],
+ "points": [
+  {
+   "x": -1,
+   "y": 1,
+   "label": "0.1 M HCl"
+  },
+  {
+   "x": -2,
+   "y": 2,
+   "label": "0.01 M"
+  },
+  {
+   "x": -3,
+   "y": 3,
+   "label": "0.001 M"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "0-x",
+   "x": -1,
+   "y": 1,
+   "name": "0.1 mol dm⁻³ strong acid: pH 1"
+  },
+  {
+   "type": "slope",
+   "expr": "0-x",
+   "x": -3,
+   "value": -1,
+   "name": "each tenfold change in [H⁺] changes pH by 1"
+  }
+ ]
+}

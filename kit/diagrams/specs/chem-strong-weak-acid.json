@@ -1,0 +1,103 @@
+{
+ "id": "chem-strong-weak-acid",
+ "renderer": "particles",
+ "course": "chemistry",
+ "lesson": "Strong acids and bases",
+ "title": "Strong and weak acids",
+ "caption": "A strong acid such as HCl is fully ionised in water: every molecule has given its proton to water. A weak acid such as HF ionises only slightly, so most of it stays as molecules and [H₃O⁺] is much lower at the same concentration.",
+ "alt": "Two beakers: hydrochloric acid with only H₃O⁺ and Cl⁻ ions; hydrofluoric acid mostly as HF molecules with a few H₃O⁺ and F⁻ ions.",
+ "description": [
+  "Hydrochloric acid: 6 H₃O⁺ and 6 Cl⁻, no HCl molecules left.",
+  "Hydrofluoric acid: 5 HF molecules and only 1 H₃O⁺ and 1 F⁻."
+ ],
+ "species": {
+  "HCl": {
+   "atoms": [
+    "Cl",
+    "H"
+   ]
+  },
+  "HF": {
+   "atoms": [
+    "F",
+    "H"
+   ]
+  },
+  "H3O+": {
+   "atoms": [
+    "O",
+    "H",
+    "H",
+    "H"
+   ],
+   "shape": "trigonal",
+   "charge": 1
+  },
+  "Cl-": {
+   "atoms": [
+    "Cl"
+   ],
+   "charge": -1
+  },
+  "F-": {
+   "atoms": [
+    "F"
+   ],
+   "charge": -1
+  }
+ },
+ "steps": [
+  null
+ ],
+ "panelHeight": 180,
+ "panels": [
+  {
+   "title": "strong: HCl(aq)",
+   "container": "beaker",
+   "arrangement": "random",
+   "contents": [
+    [
+     "H3O+",
+     6
+    ],
+    [
+     "Cl-",
+     6
+    ]
+   ]
+  },
+  {
+   "title": "weak: HF(aq)",
+   "container": "beaker",
+   "arrangement": "random",
+   "contents": [
+    [
+     "HF",
+     5
+    ],
+    [
+     "H3O+",
+     1
+    ],
+    [
+     "F-",
+     1
+    ]
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "type": "count",
+   "panel": 0,
+   "species": "HCl",
+   "n": 0
+  },
+  {
+   "type": "count",
+   "panel": 1,
+   "species": "HF",
+   "n": 5
+  }
+ ]
+}

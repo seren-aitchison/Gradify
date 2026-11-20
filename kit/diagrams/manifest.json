@@ -9979,5 +9979,2028 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "chem-aluminium-extraction": {
+  "title": "Extracting aluminium",
+  "caption": "Aluminium oxide is dissolved in molten cryolite at about 950 °C, far below alumina's own melting point, and electrolysed. Aluminium forms at the carbon cathode lining; oxygen forms at the carbon anodes, which burn away to CO₂ and must be replaced.",
+  "alt": "An electrolysis cell of molten alumina in cryolite: carbon anodes at the top, a carbon cathode lining, aluminium collecting at the bottom.",
+  "description": [
+   "Cathode: Al³⁺ + 3e⁻ → Al, molten aluminium.",
+   "Anode: 2O²⁻ → O₂ + 4e⁻; the oxygen reacts with the carbon anodes.",
+   "Overall: 4Al³⁺ + 6O²⁻ → 4Al + 3O₂."
+  ],
+  "course": "chemistry",
+  "lesson": "Industrial electrochemistry",
+  "also": [],
+  "renderer": "cell",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u10.js: Industrial electrochemistry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "2O2- → O2 + 4e- balances",
+    "ok": true,
+    "detail": "atoms and charge balance (O; charge -4)"
+   },
+   {
+    "name": "anode: oxidation (electrons lost)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Al3+ + 3e- → Al balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Al; charge 0)"
+   },
+   {
+    "name": "cathode: reduction (electrons gained)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the half-equations add up to 4Al3+ + 6O2- → 4Al + 3O2",
+    "ok": true,
+    "detail": "6O2- + 4Al3+ → 3O2 + 4Al"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-amphoteric-al": {
+  "title": "Aluminium hydroxide dissolves in acid and in alkali",
+  "caption": "Al(OH)₃ is amphoteric. In acid it dissolves as Al³⁺(aq); in excess alkali as [Al(OH)₄]⁻(aq). In between, around pH 5 to 7, it is least soluble and precipitates. The curve is illustrative.",
+  "alt": "log solubility of aluminium hydroxide against pH: a V-shaped curve, high at low pH, a minimum near pH 5.5, rising again at high pH.",
+  "description": [
+   "Low pH: dissolves as Al³⁺.",
+   "Minimum around pH 5 to 6: precipitates.",
+   "High pH: dissolves as [Al(OH)₄]⁻."
+  ],
+  "course": "chemistry",
+  "lesson": "Amphoteric substances",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u09.js: Amphoteric substances"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "least soluble near pH 5.5, between the acid and alkali ranges (illustrative constants)",
+    "ok": true,
+    "detail": "found (5.544, -7.0308)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-bronsted-pairs": {
+  "title": "Conjugate acid–base pairs",
+  "caption": "HCl donates a proton to water. HCl and Cl⁻ are a conjugate pair, differing by one H⁺; H₂O and H₃O⁺ are the other. Water acts as a Brønsted–Lowry base here.",
+  "alt": "HCl + H₂O → Cl⁻ + H₃O⁺ drawn as structures, with the conjugate pairs labelled.",
+  "description": [
+   "HCl, the acid, gives up H⁺ and becomes Cl⁻, its conjugate base.",
+   "H₂O, the base, gains H⁺ and becomes H₃O⁺, its conjugate acid."
+  ],
+  "course": "chemistry",
+  "lesson": "Brønsted-Lowry theory",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u09.js: Brønsted-Lowry theory"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the equation balances (atoms on both sides)",
+    "ok": true,
+    "detail": "{'H': 3, 'Cl': 1, 'O': 1} → {'Cl': 1, 'H': 3, 'O': 1}"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-buffer-region": {
+  "title": "The buffer region",
+  "caption": "Titrating ethanoic acid with sodium hydroxide, the pH changes slowly over a wide range of added base: the solution contains both CH₃COOH and CH₃COO⁻ and resists change. This is the buffer region.",
+  "alt": "Titration curve of 0.1 mol dm⁻³ ethanoic acid with 0.1 mol dm⁻³ sodium hydroxide, with the flat middle section shaded as the buffer region.",
+  "description": [
+   "Start: pH about 2.9.",
+   "From about 2 to 22 cm³ the pH rises slowly from about 3.8 to 5.7: the buffer region.",
+   "A steep rise at 25 cm³, then levelling near pH 12."
+  ],
+  "course": "chemistry",
+  "lesson": "Buffers",
+  "also": [],
+  "renderer": "titration",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u09.js: Buffers"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the curve: equivalence at 25 cm³ from the moles",
+    "ok": true,
+    "detail": "computed 25.00 cm³"
+   },
+   {
+    "name": "the curve: starting pH 2.88",
+    "ok": true,
+    "detail": "pH 2.883"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-cell-potential": {
+  "title": "Calculating a cell potential",
+  "caption": "E°cell = E°(positive electrode) − E°(negative electrode). For silver and zinc: 0.80 − (−0.76) = 1.56 V. Each silver ion takes one electron, so two are needed for each zinc atom: Zn + 2Ag⁺ → Zn²⁺ + 2Ag.",
+  "alt": "A zinc half-cell and a silver half-cell joined by a salt bridge, with a voltmeter reading 1.56 V.",
+  "description": [
+   "Zinc anode: Zn → Zn²⁺ + 2e⁻ (E° −0.76 V).",
+   "Silver cathode: Ag⁺ + e⁻ → Ag (E° +0.80 V).",
+   "E°cell = 0.80 − (−0.76) = 1.56 V; overall Zn + 2Ag⁺ → Zn²⁺ + 2Ag."
+  ],
+  "course": "chemistry",
+  "lesson": "Cell potentials",
+  "also": [],
+  "renderer": "cell",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u10.js: Cell potentials"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Zn → Zn2+ + 2e- balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Zn; charge 0)"
+   },
+   {
+    "name": "anode: oxidation (electrons lost)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "E°(Zn2+/Zn) is in the data table",
+    "ok": true,
+    "detail": "-0.76 V"
+   },
+   {
+    "name": "Ag+ + e- → Ag balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Ag; charge 0)"
+   },
+   {
+    "name": "cathode: reduction (electrons gained)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "E°(Ag+/Ag) is in the data table",
+    "ok": true,
+    "detail": "0.8 V"
+   },
+   {
+    "name": "the cathode (Ag+/Ag) has the more positive E°",
+    "ok": true,
+    "detail": "0.8 V against -0.76 V"
+   },
+   {
+    "name": "E°cell = E°(cathode) − E°(anode) = 1.56 V",
+    "ok": true,
+    "detail": "1.56 V"
+   },
+   {
+    "name": "the half-equations add up to Zn + 2Ag+ → Zn2+ + 2Ag",
+    "ok": true,
+    "detail": "Zn + 2Ag+ → Zn2+ + 2Ag"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-common-ion": {
+  "title": "The common-ion effect",
+  "caption": "Adding chloride ions to a saturated AgCl solution pushes AgCl(s) ⇌ Ag⁺ + Cl⁻ to the left. Solubility in water is √Ksp = 1.3 × 10⁻⁵ mol dm⁻³; in 0.01 mol dm⁻³ NaCl it falls to Ksp/[Cl⁻] = 1.8 × 10⁻⁸, a thousand times less.",
+  "alt": "log solubility of AgCl against log chloride concentration: a straight line of gradient −1, with pure water marked at the top left.",
+  "description": [
+   "In pure water, log s = −4.87.",
+   "With added chloride, s = Ksp/[Cl⁻]: a straight line of gradient −1 on log axes.",
+   "At [Cl⁻] = 0.01 mol dm⁻³, s = 1.8 × 10⁻⁸ mol dm⁻³."
+  ],
+  "course": "chemistry",
+  "lesson": "Common-ion effect",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u09.js: Common-ion effect"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "in 0.01 mol dm⁻³ Cl⁻, s = Ksp/[Cl⁻] = 1.8 × 10⁻⁸",
+    "ok": true,
+    "detail": "y(-2) = -7.745"
+   },
+   {
+    "name": "in pure water s = [Cl⁻] = √Ksp",
+    "ok": true,
+    "detail": "y(-4.8725) = -4.8725"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-complex-ions": {
+  "title": "Two copper(II) complexes",
+  "caption": "In water copper(II) is the blue octahedral [Cu(H₂O)₆]²⁺. Adding concentrated HCl swaps the six water ligands for four larger chloride ions, giving the yellow-green tetrahedral [CuCl₄]²⁻: the coordination number changes with the ligand.",
+  "alt": "An octahedral copper ion with six water ligands, and a tetrahedral copper ion with four chloride ligands.",
+  "description": [
+   "[Cu(H₂O)₆]²⁺: six water molecules around Cu at 90°, octahedral.",
+   "[CuCl₄]²⁻: four chloride ions at 109.5°, tetrahedral."
+  ],
+  "course": "chemistry",
+  "lesson": "Complex ion equilibria",
+  "also": [],
+  "renderer": "vsepr",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u09.js: Complex ion equilibria"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "[Cu(H2O)6]^2+: shape octahedral",
+    "ok": true,
+    "detail": "VSEPR gives octahedral (octahedral electron pairs)"
+   },
+   {
+    "name": "[Cu(H2O)6]^2+: bond angle 90°",
+    "ok": true,
+    "detail": "VSEPR gives 90°"
+   },
+   {
+    "name": "[CuCl4]^2-: shape tetrahedral",
+    "ok": true,
+    "detail": "VSEPR gives tetrahedral (tetrahedral electron pairs)"
+   },
+   {
+    "name": "[CuCl4]^2-: bond angle 109.5°",
+    "ok": true,
+    "detail": "VSEPR gives 109.5°"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-daniell-cell": {
+  "title": "The Daniell cell",
+  "caption": "Zinc (E° −0.76 V) is more easily oxidised than copper (+0.34 V), so zinc is the negative electrode (anode) and copper the positive (cathode). Electrons flow through the wire from zinc to copper; the salt bridge completes the circuit. E°cell = 0.34 − (−0.76) = 1.10 V.",
+  "alt": "Two beakers: a zinc electrode in zinc sulfate and a copper electrode in copper sulfate, joined by a wire through a voltmeter reading 1.10 V and by a salt bridge.",
+  "description": [
+   "Left: zinc in Zn²⁺(aq), the anode: Zn → Zn²⁺ + 2e⁻.",
+   "Right: copper in Cu²⁺(aq), the cathode: Cu²⁺ + 2e⁻ → Cu.",
+   "Electrons flow along the wire from zinc to copper; the voltmeter reads 1.10 V.",
+   "A salt bridge of KNO₃(aq) joins the solutions."
+  ],
+  "course": "chemistry",
+  "lesson": "Electrochemical cells",
+  "also": [],
+  "renderer": "cell",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u10.js: Electrochemical cells"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Zn → Zn2+ + 2e- balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Zn; charge 0)"
+   },
+   {
+    "name": "anode: oxidation (electrons lost)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "E°(Zn2+/Zn) is in the data table",
+    "ok": true,
+    "detail": "-0.76 V"
+   },
+   {
+    "name": "Cu2+ + 2e- → Cu balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Cu; charge 0)"
+   },
+   {
+    "name": "cathode: reduction (electrons gained)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "E°(Cu2+/Cu) is in the data table",
+    "ok": true,
+    "detail": "0.34 V"
+   },
+   {
+    "name": "the cathode (Cu2+/Cu) has the more positive E°",
+    "ok": true,
+    "detail": "0.34 V against -0.76 V"
+   },
+   {
+    "name": "E°cell = E°(cathode) − E°(anode) = 1.1 V",
+    "ok": true,
+    "detail": "1.10 V"
+   },
+   {
+    "name": "the half-equations add up to Zn + Cu2+ → Zn2+ + Cu",
+    "ok": true,
+    "detail": "Zn + Cu2+ → Zn2+ + Cu"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-electrochemical-series": {
+  "title": "The electrochemical series",
+  "caption": "Couples listed by standard electrode potential. The oxidised form at the top (F₂, MnO₄⁻) is the strongest oxidising agent; the reduced form at the bottom (Li) is the strongest reducing agent. A species will oxidise anything below it on the left-hand side of the list.",
+  "alt": "A vertical scale of E° values from F₂/F⁻ at +2.87 V down to Li⁺/Li at −3.04 V, with the hydrogen electrode at 0.",
+  "description": [
+   "Top: F₂/F⁻ +2.87, MnO₄⁻/Mn²⁺ +1.51, Cl₂/Cl⁻ +1.36 V.",
+   "Middle: Ag⁺/Ag +0.80, Cu²⁺/Cu +0.34, H⁺/H₂ 0.",
+   "Bottom: Zn −0.76, Mg −2.37, Na −2.71, Li −3.04 V."
+  ],
+  "course": "chemistry",
+  "lesson": "Electrochemical series",
+  "also": [],
+  "renderer": "trend",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u10.js: Electrochemical series"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every value matches standard electrode potential (CRC Handbook of Chemistry and Physics, electrochemical series (reduction potentials at 298 K))",
+    "ok": true,
+    "detail": "16 values"
+   },
+   {
+    "name": "F2/F- has the highest value",
+    "ok": true,
+    "detail": "found F2/F-"
+   },
+   {
+    "name": "Li+/Li has the lowest value",
+    "ok": true,
+    "detail": "found Li+/Li"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-electrolysis-brine": {
+  "title": "Electrolysis of brine",
+  "caption": "In concentrated sodium chloride solution, hydrogen forms at the cathode instead of sodium, because H⁺ from water is reduced more easily than Na⁺. Chlorine forms at the anode because chloride is concentrated. Sodium hydroxide is left in solution.",
+  "alt": "A cell of brine with a d.c. supply: hydrogen bubbles at the negative electrode, chlorine at the positive electrode.",
+  "description": [
+   "Cathode (negative): 2H₂O + 2e⁻ → H₂ + 2OH⁻.",
+   "Anode (positive): 2Cl⁻ → Cl₂ + 2e⁻.",
+   "Left in solution: Na⁺ and OH⁻, sodium hydroxide."
+  ],
+  "course": "chemistry",
+  "lesson": "Electrolysis",
+  "also": [
+   {
+    "course": "gcse",
+    "lesson": "Electrolysis"
+   }
+  ],
+  "renderer": "cell",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u10.js: Electrolysis"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in gcse: Electrolysis",
+    "ok": true,
+    "detail": "kit/courses/gcse/notes/u05.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "2Cl- → Cl2 + 2e- balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Cl; charge -2)"
+   },
+   {
+    "name": "anode: oxidation (electrons lost)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "2H2O + 2e- → H2 + 2OH- balances",
+    "ok": true,
+    "detail": "atoms and charge balance (H, O; charge -2)"
+   },
+   {
+    "name": "cathode: reduction (electrons gained)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the half-equations add up to 2H2O + 2Cl- → H2 + 2OH- + Cl2",
+    "ok": true,
+    "detail": "2Cl- + 2H2O → Cl2 + H2 + 2OH-"
+   },
+   {
+    "name": "cathode product from Na^1+ solution is H2",
+    "ok": true,
+    "detail": "E°(Na) = -2.71 V"
+   },
+   {
+    "name": "anode product is Cl2",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-electrolytic-cell": {
+  "title": "Electrolysis of molten sodium chloride",
+  "caption": "An external supply forces a non-spontaneous reaction. Na⁺ ions move to the negative electrode (cathode) and gain electrons; Cl⁻ ions move to the positive electrode (anode) and lose them. Molten NaCl gives sodium metal and chlorine gas.",
+  "alt": "A vessel of molten sodium chloride with two electrodes connected to a d.c. supply; sodium forms at the negative electrode and chlorine at the positive.",
+  "description": [
+   "Negative electrode (cathode): Na⁺ + e⁻ → Na.",
+   "Positive electrode (anode): 2Cl⁻ → Cl₂ + 2e⁻.",
+   "Overall: 2Na⁺ + 2Cl⁻ → 2Na + Cl₂."
+  ],
+  "course": "chemistry",
+  "lesson": "Electrolytic cells",
+  "also": [],
+  "renderer": "cell",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u10.js: Electrolytic cells"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "2Cl- → Cl2 + 2e- balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Cl; charge -2)"
+   },
+   {
+    "name": "anode: oxidation (electrons lost)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Na+ + e- → Na balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Na; charge 0)"
+   },
+   {
+    "name": "cathode: reduction (electrons gained)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the half-equations add up to 2Na+ + 2Cl- → 2Na + Cl2",
+    "ok": true,
+    "detail": "2Cl- + 2Na+ → Cl2 + 2Na"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-equivalence-point": {
+  "title": "The equivalence point",
+  "caption": "At equivalence the acid and base have reacted in exactly the amounts in the equation. For 25.0 cm³ of 0.100 mol dm⁻³ HCl that is 2.50 × 10⁻³ mol, so 25.0 cm³ of 0.100 mol dm⁻³ NaOH; the pH there is 7 and the curve is steepest.",
+  "alt": "Strong acid–strong base titration curve with the equivalence point marked at 25.0 cm³ and pH 7.",
+  "description": [
+   "Before equivalence: pH rises slowly from 1.",
+   "At 25.0 cm³: an almost vertical jump through pH 7.",
+   "After: excess alkali, pH levels near 12.5."
+  ],
+  "course": "chemistry",
+  "lesson": "Equivalence points",
+  "also": [],
+  "renderer": "titration",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u09.js: Equivalence points"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "strong acid + strong base: equivalence at 25 cm³ from the moles",
+    "ok": true,
+    "detail": "computed 25.00 cm³"
+   },
+   {
+    "name": "strong acid + strong base: pH at equivalence = 7",
+    "ok": true,
+    "detail": "pH 7.00"
+   },
+   {
+    "name": "strong acid + strong base: starting pH 1",
+    "ok": true,
+    "detail": "pH 1.000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-faraday": {
+  "title": "Faraday's first law",
+  "caption": "The mass of copper deposited is proportional to the charge passed. One mole of electrons (96 485 C, one faraday) deposits half a mole of copper, 31.8 g, because Cu²⁺ needs two electrons per atom.",
+  "alt": "Mass of copper deposited against charge passed: a straight line through the origin, 3.18 g at 9648.5 C.",
+  "description": [
+   "A straight line through the origin: mass ∝ charge.",
+   "9648.5 C (0.1 mol of electrons) deposits 3.18 g of copper."
+  ],
+  "course": "chemistry",
+  "lesson": "Faraday's laws",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u10.js: Faraday's laws"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "0.1 F deposits 0.05 mol of copper, 3.18 g (Cu²⁺ + 2e⁻ → Cu)",
+    "ok": true,
+    "detail": "y(9648.5) = 3.1773"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-fuel-cell": {
+  "title": "The hydrogen–oxygen fuel cell",
+  "caption": "Hydrogen is oxidised at the negative electrode and oxygen reduced at the positive one, with H⁺ ions crossing the membrane. The only product is water and E°cell = 1.23 V.",
+  "alt": "A cell with hydrogen fed to the left electrode and oxygen to the right, a proton-exchange membrane between, and an external circuit.",
+  "description": [
+   "Anode: H₂ → 2H⁺ + 2e⁻.",
+   "Cathode: O₂ + 4H⁺ + 4e⁻ → 2H₂O.",
+   "Overall: 2H₂ + O₂ → 2H₂O, E°cell = 1.23 V."
+  ],
+  "course": "chemistry",
+  "lesson": "Fuel cells",
+  "also": [],
+  "renderer": "cell",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u10.js: Fuel cells"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "H2 → 2H+ + 2e- balances",
+    "ok": true,
+    "detail": "atoms and charge balance (H; charge 0)"
+   },
+   {
+    "name": "anode: oxidation (electrons lost)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "E°(H+/H2) is in the data table",
+    "ok": true,
+    "detail": "0 V"
+   },
+   {
+    "name": "O2 + 4H+ + 4e- → 2H2O balances",
+    "ok": true,
+    "detail": "atoms and charge balance (O, H; charge 0)"
+   },
+   {
+    "name": "cathode: reduction (electrons gained)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "E°(O2/H2O) is in the data table",
+    "ok": true,
+    "detail": "1.23 V"
+   },
+   {
+    "name": "the cathode (O2/H2O) has the more positive E°",
+    "ok": true,
+    "detail": "1.23 V against 0 V"
+   },
+   {
+    "name": "E°cell = E°(cathode) − E°(anode) = 1.23 V",
+    "ok": true,
+    "detail": "1.23 V"
+   },
+   {
+    "name": "the half-equations add up to 2H2 + O2 → 2H2O",
+    "ok": true,
+    "detail": "2H2 + O2 → 2H2O"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-galvanic-cell": {
+  "title": "A magnesium–copper cell",
+  "caption": "The half-cell with the more negative E° supplies electrons. Magnesium (−2.37 V) is oxidised and copper ions (+0.34 V) are reduced; electrons flow externally from Mg to Cu, while ions in the salt bridge keep each solution neutral. E°cell = 2.71 V.",
+  "alt": "A magnesium electrode in magnesium sulfate and a copper electrode in copper sulfate, joined by a wire with a voltmeter reading 2.71 V and a salt bridge.",
+  "description": [
+   "Magnesium anode: Mg → Mg²⁺ + 2e⁻.",
+   "Copper cathode: Cu²⁺ + 2e⁻ → Cu.",
+   "E°cell = 0.34 − (−2.37) = 2.71 V."
+  ],
+  "course": "chemistry",
+  "lesson": "Galvanic cells",
+  "also": [],
+  "renderer": "cell",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u10.js: Galvanic cells"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Mg → Mg2+ + 2e- balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Mg; charge 0)"
+   },
+   {
+    "name": "anode: oxidation (electrons lost)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "E°(Mg2+/Mg) is in the data table",
+    "ok": true,
+    "detail": "-2.37 V"
+   },
+   {
+    "name": "Cu2+ + 2e- → Cu balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Cu; charge 0)"
+   },
+   {
+    "name": "cathode: reduction (electrons gained)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "E°(Cu2+/Cu) is in the data table",
+    "ok": true,
+    "detail": "0.34 V"
+   },
+   {
+    "name": "the cathode (Cu2+/Cu) has the more positive E°",
+    "ok": true,
+    "detail": "0.34 V against -2.37 V"
+   },
+   {
+    "name": "E°cell = E°(cathode) − E°(anode) = 2.71 V",
+    "ok": true,
+    "detail": "2.71 V"
+   },
+   {
+    "name": "the half-equations add up to Mg + Cu2+ → Mg2+ + Cu",
+    "ok": true,
+    "detail": "Mg + Cu2+ → Mg2+ + Cu"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-half-equivalence": {
+  "title": "pH = pKa at half-neutralisation",
+  "caption": "Halfway to the equivalence point, half the ethanoic acid has become ethanoate, so [HA] = [A⁻] and pH = pKa. Reading the pH at half the equivalence volume measures pKa: 4.76.",
+  "alt": "Weak acid–strong base titration curve with dashed lines from 12.5 cm³ up to the curve and across to pH 4.76.",
+  "description": [
+   "Equivalence at 25.0 cm³.",
+   "Half of that, 12.5 cm³: the pH reads 4.76.",
+   "So pKa = 4.76 and Ka = 1.7 × 10⁻⁵."
+  ],
+  "course": "chemistry",
+  "lesson": "Henderson-Hasselbalch equation",
+  "also": [],
+  "renderer": "titration",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u09.js: Henderson-Hasselbalch equation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the curve: pH at half-equivalence is 4.76",
+    "ok": true,
+    "detail": "pH 4.760"
+   },
+   {
+    "name": "the curve: equivalence at 25 cm³ from the moles",
+    "ok": true,
+    "detail": "computed 25.00 cm³"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-halogen-oxidising": {
+  "title": "Halogens as oxidising agents",
+  "caption": "The more positive the standard electrode potential, the more strongly the halogen pulls in electrons: fluorine is the strongest oxidising agent and iodine the weakest. So chlorine displaces bromide and iodide, but iodine displaces neither.",
+  "alt": "Bar chart of E° for X₂/X⁻: F₂ +2.87, Cl₂ +1.36, Br₂ +1.09, I₂ +0.54 V.",
+  "description": [
+   "F₂/F⁻ +2.87 V.",
+   "Cl₂/Cl⁻ +1.36 V.",
+   "Br₂/Br⁻ +1.09 V.",
+   "I₂/I⁻ +0.54 V."
+  ],
+  "course": "chemistry",
+  "lesson": "Oxidising agents",
+  "also": [],
+  "renderer": "trend",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u10.js: Oxidising agents"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every value matches standard electrode potential (CRC Handbook of Chemistry and Physics, electrochemical series (reduction potentials at 298 K))",
+    "ok": true,
+    "detail": "4 values"
+   },
+   {
+    "name": "F2/F- → I2/I-: decreasing",
+    "ok": true,
+    "detail": "F2/F- 2.87, Cl2/Cl- 1.36, Br2/Br- 1.09, I2/I- 0.54"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-indicator-ranges": {
+  "title": "Choosing an indicator",
+  "caption": "An indicator changes colour over about two pH units around its pKin. It works if that change falls within the steep part of the curve. Phenolphthalein (8.3–10.0) suits a weak acid with a strong base; methyl orange (3.1–4.4) does not, because it would change colour too early.",
+  "alt": "Two titration curves, strong acid–strong base and weak acid–strong base, with the colour-change ranges of methyl orange and phenolphthalein as shaded bands.",
+  "description": [
+   "Methyl orange band, pH 3.1 to 4.4.",
+   "Phenolphthalein band, pH 8.3 to 10.0.",
+   "The strong–strong curve passes through both bands in its vertical section.",
+   "The weak acid curve's vertical section starts above the methyl orange band."
+  ],
+  "course": "chemistry",
+  "lesson": "Indicators",
+  "also": [],
+  "renderer": "titration",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u09.js: Indicators"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "phenolphthalein is suitable for HCl + NaOH: its end point (pH 9.15) lies in the steep section",
+    "ok": true,
+    "detail": "steep section pH 3.4–10.6 (V_eq ± 0.2 cm³)"
+   },
+   {
+    "name": "methyl orange is suitable for HCl + NaOH: its end point (pH 3.75) lies in the steep section",
+    "ok": true,
+    "detail": "steep section pH 3.4–10.6 (V_eq ± 0.2 cm³)"
+   },
+   {
+    "name": "phenolphthalein is suitable for CH₃COOH + NaOH: its end point (pH 9.15) lies in the steep section",
+    "ok": true,
+    "detail": "steep section pH 6.9–10.6 (V_eq ± 0.2 cm³)"
+   },
+   {
+    "name": "methyl orange is not suitable for CH₃COOH + NaOH: its end point (pH 3.75) does not lie in the steep section",
+    "ok": true,
+    "detail": "steep section pH 6.9–10.6 (V_eq ± 0.2 cm³)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-lithium-ion": {
+  "title": "A lithium-ion cell discharging",
+  "caption": "On discharge, lithium leaves the graphite negative electrode as Li⁺ and electrons; the Li⁺ crosses the electrolyte and the electrons go round the external circuit to the cobalt oxide positive electrode, where both are taken in. Charging reverses this.",
+  "alt": "A cell with a graphite electrode on the left and a lithium cobalt oxide electrode on the right; Li⁺ ions move left to right through the electrolyte and electrons through the device.",
+  "description": [
+   "Negative electrode (anode on discharge): LiC₆ → Li⁺ + C₆ + e⁻.",
+   "Positive electrode (cathode): CoO₂ + Li⁺ + e⁻ → LiCoO₂.",
+   "Overall: LiC₆ + CoO₂ → C₆ + LiCoO₂."
+  ],
+  "course": "chemistry",
+  "lesson": "Batteries",
+  "also": [],
+  "renderer": "cell",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u10.js: Batteries"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "LiC6 → Li+ + C6 + e- balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Li, C; charge 0)"
+   },
+   {
+    "name": "anode: oxidation (electrons lost)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "CoO2 + Li+ + e- → LiCoO2 balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Co, O, Li; charge 0)"
+   },
+   {
+    "name": "cathode: reduction (electrons gained)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the half-equations add up to LiC6 + CoO2 → C6 + LiCoO2",
+    "ok": true,
+    "detail": "LiC6 + CoO2 → C6 + LiCoO2"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-metal-reducing": {
+  "title": "Metals as reducing agents",
+  "caption": "The more negative a metal's electrode potential, the more readily it gives up electrons: lithium and potassium are the strongest reducing agents, gold the weakest. This is the reactivity series, measured.",
+  "alt": "A vertical scale of E° for metal ion/metal couples from Li⁺/Li at −3.04 V at the bottom to Au³⁺/Au at +1.50 V at the top.",
+  "description": [
+   "Bottom: Li −3.04, K −2.93, Ca −2.87, Na −2.71, Mg −2.37 V: most reactive.",
+   "Middle: Al −1.66, Zn −0.76, Fe −0.44, Pb −0.13, H₂ 0.00.",
+   "Top: Cu +0.34, Ag +0.80, Au +1.50 V: least reactive."
+  ],
+  "course": "chemistry",
+  "lesson": "Reducing agents",
+  "also": [
+   {
+    "course": "gcse",
+    "lesson": "Reactivity series and extraction of metals"
+   }
+  ],
+  "renderer": "trend",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u10.js: Reducing agents"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in gcse: Reactivity series and extraction of metals",
+    "ok": true,
+    "detail": "kit/courses/gcse/notes/u05.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every value matches standard electrode potential (CRC Handbook of Chemistry and Physics, electrochemical series (reduction potentials at 298 K))",
+    "ok": true,
+    "detail": "13 values"
+   },
+   {
+    "name": "Li+/Li has the lowest value",
+    "ok": true,
+    "detail": "found Li+/Li"
+   },
+   {
+    "name": "Au3+/Au has the highest value",
+    "ok": true,
+    "detail": "found Au3+/Au"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-nernst": {
+  "title": "The Nernst equation",
+  "caption": "E = E° + (RT/nF) ln[Cu²⁺] = 0.34 + 0.0296 log₁₀[Cu²⁺] at 298 K. Diluting the Cu²⁺ tenfold lowers the electrode potential by 0.0296 V (59 mV divided by the 2 electrons).",
+  "alt": "Electrode potential against log of the copper(II) concentration: a straight line of gradient 0.0296, passing 0.34 V at 1 mol dm⁻³.",
+  "description": [
+   "At [Cu²⁺] = 1 mol dm⁻³ (log 0): E = E° = 0.34 V.",
+   "At 0.1 mol dm⁻³: 0.31 V.",
+   "At 0.001: 0.25 V."
+  ],
+  "course": "chemistry",
+  "lesson": "Nernst equation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u10.js: Nernst equation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "gradient 2.303RT/2F = 0.0296 V per tenfold change",
+    "ok": true,
+    "detail": "gradient 0.0296"
+   },
+   {
+    "name": "(0, 0.34) lies on y = 0.34+0.029580*x",
+    "ok": true,
+    "detail": "y(0) = 0.34"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-oil-rig": {
+  "title": "Oxidation is loss, reduction is gain",
+  "caption": "Magnesium in copper(II) sulfate solution: each Mg atom loses two electrons (oxidised) and each Cu²⁺ gains two (reduced). The electrons lost equal the electrons gained.",
+  "alt": "Two half-equations: Mg → Mg²⁺ + 2e⁻ (oxidation) and Cu²⁺ + 2e⁻ → Cu (reduction), adding to Mg + Cu²⁺ → Mg²⁺ + Cu.",
+  "description": [
+   "Mg → Mg²⁺ + 2e⁻: electrons lost, oxidation.",
+   "Cu²⁺ + 2e⁻ → Cu: electrons gained, reduction.",
+   "Overall: Mg + Cu²⁺ → Mg²⁺ + Cu."
+  ],
+  "course": "chemistry",
+  "lesson": "Oxidation and reduction",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u10.js: Oxidation and reduction"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Mg → Mg2+ + 2e- balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Mg; charge 0)"
+   },
+   {
+    "name": "Cu2+ + 2e- → Cu balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Cu; charge 0)"
+   },
+   {
+    "name": "the steps add up to Mg + Cu2+ → Mg2+ + Cu",
+    "ok": true,
+    "detail": "Mg + Cu2+ → Mg2+ + Cu"
+   },
+   {
+    "name": "Mg → Mg2+ + 2e- balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Mg; charge 0)"
+   },
+   {
+    "name": "Cu2+ + 2e- → Cu balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Cu; charge 0)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-oxidation-state-rules": {
+  "title": "Assigning oxidation states",
+  "caption": "Give each bond's electrons to the more electronegative atom and count what each atom has gained or lost. Water: O −2, H +1. Sulfate: S +6, every O −2. Ammonium: N −3, H +1. The states add up to the overall charge.",
+  "alt": "Lewis structures of water, the sulfate ion and the ammonium ion, each atom labelled with its oxidation state.",
+  "description": [
+   "H₂O: oxygen −2, each hydrogen +1; total 0.",
+   "SO₄²⁻: sulfur +6, each oxygen −2; total −2.",
+   "NH₄⁺: nitrogen −3, each hydrogen +1; total +1."
+  ],
+  "course": "chemistry",
+  "lesson": "Oxidation states",
+  "also": [],
+  "renderer": "dotcross",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u03.js: Oxidation states"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "H₂O: 8 outer electrons drawn (valence electrons − charge)",
+    "ok": true,
+    "detail": "drawn 8"
+   },
+   {
+    "name": "H₂O: every atom has a full outer shell (octet, or two for H)",
+    "ok": true,
+    "detail": "all full"
+   },
+   {
+    "name": "H₂O: oxidation states {\"o\":-2,\"h1\":1,\"h2\":1}",
+    "ok": true,
+    "detail": "{\"o\":-2,\"h1\":1,\"h2\":1}"
+   },
+   {
+    "name": "H₂O: oxidation states add up to the charge (0)",
+    "ok": true,
+    "detail": "sum 0"
+   },
+   {
+    "name": "SO₄²⁻: 32 outer electrons drawn (valence electrons − charge)",
+    "ok": true,
+    "detail": "drawn 32"
+   },
+   {
+    "name": "SO₄²⁻: every atom has a full outer shell (octet, or two for H)",
+    "ok": true,
+    "detail": "all full"
+   },
+   {
+    "name": "SO₄²⁻: oxidation states {\"s\":6,\"o1\":-2,\"o3\":-2}",
+    "ok": true,
+    "detail": "{\"s\":6,\"o1\":-2,\"o2\":-2,\"o3\":-2,\"o4\":-2}"
+   },
+   {
+    "name": "SO₄²⁻: oxidation states add up to the charge (-2)",
+    "ok": true,
+    "detail": "sum -2"
+   },
+   {
+    "name": "NH₄⁺: 8 outer electrons drawn (valence electrons − charge)",
+    "ok": true,
+    "detail": "drawn 8"
+   },
+   {
+    "name": "NH₄⁺: every atom has a full outer shell (octet, or two for H)",
+    "ok": true,
+    "detail": "all full"
+   },
+   {
+    "name": "NH₄⁺: oxidation states {\"n\":-3,\"h1\":1}",
+    "ok": true,
+    "detail": "{\"n\":-3,\"h1\":1,\"h2\":1,\"h3\":1,\"h4\":1}"
+   },
+   {
+    "name": "NH₄⁺: oxidation states add up to the charge (1)",
+    "ok": true,
+    "detail": "sum 1"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-ph-log": {
+  "title": "pH is a logarithmic scale",
+  "caption": "pH = −log₁₀[H⁺]. A tenfold dilution of a strong acid raises the pH by exactly 1: 0.1 mol dm⁻³ HCl is pH 1, 0.01 is pH 2, 0.001 is pH 3.",
+  "alt": "pH against log₁₀[H⁺]: a straight line of gradient −1 through (−1, 1), (−2, 2) and (−3, 3).",
+  "description": [
+   "[H⁺] = 10⁻¹: pH 1.",
+   "[H⁺] = 10⁻²: pH 2.",
+   "[H⁺] = 10⁻³: pH 3: each tenfold dilution adds 1."
+  ],
+  "course": "chemistry",
+  "lesson": "pH",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u09.js: pH"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "0.1 mol dm⁻³ strong acid: pH 1",
+    "ok": true,
+    "detail": "y(-1) = 1"
+   },
+   {
+    "name": "each tenfold change in [H⁺] changes pH by 1",
+    "ok": true,
+    "detail": "gradient -1.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-ph-poh": {
+  "title": "[H⁺] and [OH⁻] in water",
+  "caption": "In any aqueous solution at 25 °C, [H⁺][OH⁻] = Kw = 1.0 × 10⁻¹⁴, so pH + pOH = 14. The two lines cross at pH 7, where [H⁺] = [OH⁻] = 10⁻⁷ mol dm⁻³: neutral.",
+  "alt": "log[H⁺] and log[OH⁻] against pH: two straight lines of opposite slope crossing at pH 7, log concentration −7.",
+  "description": [
+   "log[H⁺] = −pH: falls to the right.",
+   "log[OH⁻] = pH − 14: rises to the right.",
+   "They meet at pH 7: neutral."
+  ],
+  "course": "chemistry",
+  "lesson": "pOH",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u09.js: pOH"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "[H⁺] = [OH⁻] = 10⁻⁷ at pH 7, since Kw = 10⁻¹⁴",
+    "ok": true,
+    "detail": "0-x → -7, x-14 → -7"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-ph-scale": {
+  "title": "The pH scale",
+  "caption": "pH runs from about 0 (strongly acidic) to 14 (strongly alkaline), with 7 neutral at 25 °C. Each step of 1 is a factor of 10 in [H⁺]: stomach acid at pH 1.5 has about 300 000 times the [H⁺] of blood at pH 7.4. Typical values.",
+  "alt": "Bar chart of typical pH values from stomach acid 1.5 through pure water 7 to bleach 12.6.",
+  "description": [
+   "Acidic: stomach acid 1.5, lemon juice 2.4, vinegar 2.9, coffee 5.0.",
+   "Neutral: pure water 7.0.",
+   "Alkaline: blood 7.4, seawater 8.1, baking soda solution 8.3, household ammonia 11.6, bleach 12.6."
+  ],
+  "course": "chemistry",
+  "lesson": "Introduction to acids and bases",
+  "also": [
+   {
+    "course": "gcse",
+    "lesson": "Acids, alkalis and salts"
+   }
+  ],
+  "renderer": "trend",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u09.js: Introduction to acids and bases"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in gcse: Acids, alkalis and salts",
+    "ok": true,
+    "detail": "kit/courses/gcse/notes/u05.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "stomach acid → bleach: increasing",
+    "ok": true,
+    "detail": "stomach acid 1.5, lemon 2.4, vinegar 2.9, coffee 5, water 7, blood 7.4, seawater 8.1, baking soda 8.3, ammonia 11.6, bleach 12.6"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-polyprotic": {
+  "title": "Titrating phosphoric acid",
+  "caption": "Phosphoric acid gives up its protons one at a time, so titrating it with NaOH shows a separate rise for each: at 25 cm³ (H₂PO₄⁻) and 50 cm³ (HPO₄²⁻). The third proton (pKa 12.35) is too weak to give a visible end point in water.",
+  "alt": "Titration curve of 25 cm³ of 0.1 mol dm⁻³ H₃PO₄ with 0.1 mol dm⁻³ NaOH: steep rises at 25 and 50 cm³, then a gradual climb.",
+  "description": [
+   "First rise at 25 cm³, from about pH 3 to 6.",
+   "Second rise at 50 cm³, from about pH 8 to 11.",
+   "No third rise."
+  ],
+  "course": "chemistry",
+  "lesson": "Polyprotic acids",
+  "also": [],
+  "renderer": "titration",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u09.js: Polyprotic acids"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the curve: 2 steep rise(s)",
+    "ok": true,
+    "detail": "found at 24.9, 49.9 cm³"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-rusting": {
+  "title": "How iron rusts",
+  "caption": "Under a drop of water, iron at the centre (where oxygen is scarce) is oxidised to Fe²⁺; electrons flow through the metal to the edge, where oxygen is reduced to OH⁻. Fe²⁺ and OH⁻ meet to form Fe(OH)₂, which oxidises further to rust, Fe₂O₃·xH₂O.",
+  "alt": "A water droplet on iron: the anode region in the middle and the cathode region at the edge, with the two half-equations.",
+  "description": [
+   "Anode (centre): Fe → Fe²⁺ + 2e⁻.",
+   "Cathode (edge, near the air): O₂ + 2H₂O + 4e⁻ → 4OH⁻.",
+   "E°cell = 0.40 − (−0.44) = 0.84 V, so the reaction is feasible."
+  ],
+  "course": "chemistry",
+  "lesson": "Corrosion",
+  "also": [],
+  "renderer": "cell",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u10.js: Corrosion"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Fe → Fe2+ + 2e- balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Fe; charge 0)"
+   },
+   {
+    "name": "anode: oxidation (electrons lost)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "E°(Fe2+/Fe) is in the data table",
+    "ok": true,
+    "detail": "-0.44 V"
+   },
+   {
+    "name": "O2 + 2H2O + 4e- → 4OH- balances",
+    "ok": true,
+    "detail": "atoms and charge balance (O, H; charge -4)"
+   },
+   {
+    "name": "cathode: reduction (electrons gained)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "E°(O2/OH-) is in the data table",
+    "ok": true,
+    "detail": "0.4 V"
+   },
+   {
+    "name": "the cathode (O2/OH-) has the more positive E°",
+    "ok": true,
+    "detail": "0.4 V against -0.44 V"
+   },
+   {
+    "name": "E°cell = E°(cathode) − E°(anode) = 0.84 V",
+    "ok": true,
+    "detail": "0.84 V"
+   },
+   {
+    "name": "the half-equations add up to 2Fe + O2 + 2H2O → 2Fe2+ + 4OH-",
+    "ok": true,
+    "detail": "2Fe + O2 + 2H2O → 2Fe2+ + 4OH-"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-sacrificial": {
+  "title": "Sacrificial protection",
+  "caption": "A block of zinc bolted to an iron hull corrodes instead of the iron, because zinc (E° −0.76 V) is more easily oxidised than iron (−0.44 V). The electrons it releases flow into the iron, where oxygen is reduced, so the iron is not oxidised.",
+  "alt": "Seawater with a zinc block connected to iron: zinc is the anode and dissolves; oxygen is reduced at the iron surface.",
+  "description": [
+   "Zinc anode: Zn → Zn²⁺ + 2e⁻, the zinc corrodes.",
+   "Iron, the cathode: O₂ + 2H₂O + 4e⁻ → 4OH⁻; the iron itself is unchanged."
+  ],
+  "course": "chemistry",
+  "lesson": "Corrosion prevention",
+  "also": [],
+  "renderer": "cell",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u10.js: Corrosion prevention"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Zn → Zn2+ + 2e- balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Zn; charge 0)"
+   },
+   {
+    "name": "anode: oxidation (electrons lost)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "E°(Zn2+/Zn) is in the data table",
+    "ok": true,
+    "detail": "-0.76 V"
+   },
+   {
+    "name": "O2 + 2H2O + 4e- → 4OH- balances",
+    "ok": true,
+    "detail": "atoms and charge balance (O, H; charge -4)"
+   },
+   {
+    "name": "cathode: reduction (electrons gained)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "E°(O2/OH-) is in the data table",
+    "ok": true,
+    "detail": "0.4 V"
+   },
+   {
+    "name": "the cathode (O2/OH-) has the more positive E°",
+    "ok": true,
+    "detail": "0.4 V against -0.76 V"
+   },
+   {
+    "name": "E°cell = E°(cathode) − E°(anode) = 1.16 V",
+    "ok": true,
+    "detail": "1.16 V"
+   },
+   {
+    "name": "the half-equations add up to 2Zn + O2 + 2H2O → 2Zn2+ + 4OH-",
+    "ok": true,
+    "detail": "2Zn + O2 + 2H2O → 2Zn2+ + 4OH-"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-she": {
+  "title": "Measuring E° against the hydrogen electrode",
+  "caption": "The standard hydrogen electrode, H₂ at 100 kPa bubbling over platinum in 1 mol dm⁻³ H⁺ at 298 K, is defined as 0 V. Connected to Cu²⁺/Cu, the voltmeter reads 0.34 V with copper positive: E°(Cu²⁺/Cu) = +0.34 V.",
+  "alt": "Left: hydrogen gas bubbling over a platinum electrode in acid. Right: copper in copper sulfate. A salt bridge and a voltmeter reading 0.34 V join them.",
+  "description": [
+   "Standard hydrogen electrode: Pt, H₂ at 100 kPa, H⁺ at 1 mol dm⁻³: H₂ → 2H⁺ + 2e⁻.",
+   "Copper half-cell, 1 mol dm⁻³ Cu²⁺: Cu²⁺ + 2e⁻ → Cu.",
+   "Voltmeter: 0.34 V."
+  ],
+  "course": "chemistry",
+  "lesson": "Standard electrode potentials",
+  "also": [],
+  "renderer": "cell",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u10.js: Standard electrode potentials"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "H2 → 2H+ + 2e- balances",
+    "ok": true,
+    "detail": "atoms and charge balance (H; charge 0)"
+   },
+   {
+    "name": "anode: oxidation (electrons lost)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "E°(H+/H2) is in the data table",
+    "ok": true,
+    "detail": "0 V"
+   },
+   {
+    "name": "Cu2+ + 2e- → Cu balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Cu; charge 0)"
+   },
+   {
+    "name": "cathode: reduction (electrons gained)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "E°(Cu2+/Cu) is in the data table",
+    "ok": true,
+    "detail": "0.34 V"
+   },
+   {
+    "name": "the cathode (Cu2+/Cu) has the more positive E°",
+    "ok": true,
+    "detail": "0.34 V against 0 V"
+   },
+   {
+    "name": "E°cell = E°(cathode) − E°(anode) = 0.34 V",
+    "ok": true,
+    "detail": "0.34 V"
+   },
+   {
+    "name": "the half-equations add up to H2 + Cu2+ → 2H+ + Cu",
+    "ok": true,
+    "detail": "H2 + Cu2+ → 2H+ + Cu"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-solubility-equilibrium": {
+  "title": "A saturated solution is a dynamic equilibrium",
+  "caption": "In a saturated AgCl solution, ions leave the solid as fast as they rejoin it: AgCl(s) ⇌ Ag⁺(aq) + Cl⁻(aq). Ksp = [Ag⁺][Cl⁻] = 1.8 × 10⁻¹⁰ mol² dm⁻⁶ at 25 °C, so very few ions are in solution.",
+  "alt": "A beaker with a layer of solid silver chloride on the bottom and a few silver and chloride ions in the solution above.",
+  "description": [
+   "Solid AgCl at the bottom, a lattice of Ag⁺ and Cl⁻.",
+   "Only a few Ag⁺ and Cl⁻ ions dissolved in the water above, in equal numbers."
+  ],
+  "course": "chemistry",
+  "lesson": "Solubility equilibria",
+  "also": [],
+  "renderer": "particles",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u09.js: Solubility equilibria"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "\"saturated AgCl(aq)\" has 7 Ag+",
+    "ok": true,
+    "detail": "drawn 7"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-speciation": {
+  "title": "Ethanoic acid and ethanoate",
+  "caption": "As pH rises, CH₃COOH is converted to CH₃COO⁻. The curves cross at pH = pKa = 4.76, where the two are equal: the point of best buffering.",
+  "alt": "Fraction of ethanoic acid falling and fraction of ethanoate rising with pH, crossing at 0.5 at pH 4.76.",
+  "description": [
+   "Low pH: mainly CH₃COOH.",
+   "pH 4.76: equal amounts.",
+   "High pH: mainly CH₃COO⁻."
+  ],
+  "course": "chemistry",
+  "lesson": "Acid dissociation constants",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u09.js: Acid dissociation constants"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "equal amounts at pH = pKa = 4.76",
+    "ok": true,
+    "detail": "1-1/(1+10^(4.76-x)) → 0.5, 1/(1+10^(4.76-x)) → 0.5"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-strong-weak-acid": {
+  "title": "Strong and weak acids",
+  "caption": "A strong acid such as HCl is fully ionised in water: every molecule has given its proton to water. A weak acid such as HF ionises only slightly, so most of it stays as molecules and [H₃O⁺] is much lower at the same concentration.",
+  "alt": "Two beakers: hydrochloric acid with only H₃O⁺ and Cl⁻ ions; hydrofluoric acid mostly as HF molecules with a few H₃O⁺ and F⁻ ions.",
+  "description": [
+   "Hydrochloric acid: 6 H₃O⁺ and 6 Cl⁻, no HCl molecules left.",
+   "Hydrofluoric acid: 5 HF molecules and only 1 H₃O⁺ and 1 F⁻."
+  ],
+  "course": "chemistry",
+  "lesson": "Strong acids and bases",
+  "also": [],
+  "renderer": "particles",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u09.js: Strong acids and bases"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "\"strong: HCl(aq)\" has 0 HCl",
+    "ok": true,
+    "detail": "drawn 0"
+   },
+   {
+    "name": "\"weak: HF(aq)\" has 5 HF",
+    "ok": true,
+    "detail": "drawn 5"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-titration-curves": {
+  "title": "The four titration curves",
+  "caption": "25.0 cm³ of 0.100 mol dm⁻³ acid titrated with 0.100 mol dm⁻³ base. Every curve reaches equivalence at 25.0 cm³, but where the pH jumps, and by how much, depends on whether acid and base are strong or weak. A weak acid with a weak base gives no sharp jump.",
+  "alt": "Four titration curves: strong–strong jumps from about 3 to 11; weak acid–strong base from about 7 to 11; strong acid–weak base from about 3 to 7; weak–weak rises gradually through 7.",
+  "description": [
+   "Strong acid + strong base: starts at pH 1, vertical section from about 3.4 to 10.6, equivalence at pH 7.",
+   "Weak acid + strong base: starts near pH 3, vertical section from about 7 to 10.6, equivalence about pH 8.7.",
+   "Strong acid + weak base: starts at pH 1, vertical section from about 3.4 to 6.6, equivalence about pH 5.3.",
+   "Weak acid + weak base: no vertical section."
+  ],
+  "course": "chemistry",
+  "lesson": "Acid-base titrations",
+  "also": [],
+  "renderer": "titration",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u09.js: Acid-base titrations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "strong acid + strong base: equivalence at 25 cm³ from the moles",
+    "ok": true,
+    "detail": "computed 25.00 cm³"
+   },
+   {
+    "name": "strong acid + strong base: pH at equivalence = 7",
+    "ok": true,
+    "detail": "pH 7.00"
+   },
+   {
+    "name": "weak acid + strong base: pH at equivalence > 7",
+    "ok": true,
+    "detail": "pH 8.73"
+   },
+   {
+    "name": "strong acid + weak base: pH at equivalence < 7",
+    "ok": true,
+    "detail": "pH 5.28"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-weak-acid-fraction": {
+  "title": "How much of a weak acid is ionised",
+  "caption": "The fraction of ethanoic acid present as ethanoate depends on pH: 1/(1 + 10^(pKa − pH)). It is half at pH = pKa = 4.76, about 1% two units below and 99% two units above.",
+  "alt": "Fraction ionised against pH: an S-shaped curve rising from near 0 at pH 2 through 0.5 at 4.76 to near 1 at pH 7.",
+  "description": [
+   "Below pH 3: almost all molecules.",
+   "At pH 4.76: half ionised.",
+   "Above pH 7: almost all ethanoate."
+  ],
+  "course": "chemistry",
+  "lesson": "Weak acids and bases",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u09.js: Weak acids and bases"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "half ionised at pH = pKa = 4.76",
+    "ok": true,
+    "detail": "y(4.76) = 0.5"
+   },
+   {
+    "name": "about 1% two units below pKa",
+    "ok": true,
+    "detail": "1/(1+10^(4.76-x)) at 2.76 = 0.01; expected 0.0098–0.01"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }

@@ -1,0 +1,89 @@
+{
+ "id": "chem-ph-poh",
+ "renderer": "graph",
+ "course": "chemistry",
+ "lesson": "pOH",
+ "title": "[H⁺] and [OH⁻] in water",
+ "caption": "In any aqueous solution at 25 °C, [H⁺][OH⁻] = Kw = 1.0 × 10⁻¹⁴, so pH + pOH = 14. The two lines cross at pH 7, where [H⁺] = [OH⁻] = 10⁻⁷ mol dm⁻³: neutral.",
+ "alt": "log[H⁺] and log[OH⁻] against pH: two straight lines of opposite slope crossing at pH 7, log concentration −7.",
+ "description": [
+  "log[H⁺] = −pH: falls to the right.",
+  "log[OH⁻] = pH − 14: rises to the right.",
+  "They meet at pH 7: neutral."
+ ],
+ "range": {
+  "x": [
+   0,
+   14
+  ],
+  "y": [
+   -14,
+   0
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   4,
+   6,
+   7,
+   8,
+   10,
+   12,
+   14
+  ],
+  [
+   -14,
+   -10,
+   -7,
+   -4,
+   0
+  ]
+ ],
+ "grid": [
+  1,
+  2
+ ],
+ "axisLabels": [
+  "pH",
+  "log₁₀(concentration)"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "0-x",
+   "colour": "a2",
+   "label": "[H⁺]",
+   "labelAt": [
+    1,
+    -3
+   ]
+  },
+  {
+   "expr": "x-14",
+   "colour": "a1",
+   "label": "[OH⁻]",
+   "labelAt": [
+    12,
+    -3.5
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 7,
+   "y": -7,
+   "label": "neutral"
+  }
+ ],
+ "checks": [
+  {
+   "type": "intersect",
+   "a": "0-x",
+   "b": "x-14",
+   "x": 7,
+   "y": -7,
+   "name": "[H⁺] = [OH⁻] = 10⁻⁷ at pH 7, since Kw = 10⁻¹⁴"
+  }
+ ]
+}

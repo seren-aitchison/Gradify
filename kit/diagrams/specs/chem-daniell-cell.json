@@ -1,0 +1,34 @@
+{
+ "id": "chem-daniell-cell",
+ "renderer": "cell",
+ "course": "chemistry",
+ "lesson": "Electrochemical cells",
+ "title": "The Daniell cell",
+ "caption": "Zinc (E° −0.76 V) is more easily oxidised than copper (+0.34 V), so zinc is the negative electrode (anode) and copper the positive (cathode). Electrons flow through the wire from zinc to copper; the salt bridge completes the circuit. E°cell = 0.34 − (−0.76) = 1.10 V.",
+ "alt": "Two beakers: a zinc electrode in zinc sulfate and a copper electrode in copper sulfate, joined by a wire through a voltmeter reading 1.10 V and by a salt bridge.",
+ "description": [
+  "Left: zinc in Zn²⁺(aq), the anode: Zn → Zn²⁺ + 2e⁻.",
+  "Right: copper in Cu²⁺(aq), the cathode: Cu²⁺ + 2e⁻ → Cu.",
+  "Electrons flow along the wire from zinc to copper; the voltmeter reads 1.10 V.",
+  "A salt bridge of KNO₃(aq) joins the solutions."
+ ],
+ "kind": "galvanic",
+ "ecell": 1.1,
+ "net": "Zn + Cu2+ → Zn2+ + Cu",
+ "halves": [
+  {
+   "couple": "Zn2+/Zn",
+   "electrode": "Zn",
+   "solution": "ZnSO4(aq), 1 mol dm⁻³",
+   "role": "anode",
+   "half": "Zn → Zn2+ + 2e-"
+  },
+  {
+   "couple": "Cu2+/Cu",
+   "electrode": "Cu",
+   "solution": "CuSO4(aq), 1 mol dm⁻³",
+   "role": "cathode",
+   "half": "Cu2+ + 2e- → Cu"
+  }
+ ]
+}

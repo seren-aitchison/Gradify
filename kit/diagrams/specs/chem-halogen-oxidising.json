@@ -1,0 +1,56 @@
+{
+ "id": "chem-halogen-oxidising",
+ "renderer": "trend",
+ "course": "chemistry",
+ "lesson": "Oxidising agents",
+ "title": "Halogens as oxidising agents",
+ "caption": "The more positive the standard electrode potential, the more strongly the halogen pulls in electrons: fluorine is the strongest oxidising agent and iodine the weakest. So chlorine displaces bromide and iodide, but iodine displaces neither.",
+ "alt": "Bar chart of E° for X₂/X⁻: F₂ +2.87, Cl₂ +1.36, Br₂ +1.09, I₂ +0.54 V.",
+ "description": [
+  "F₂/F⁻ +2.87 V.",
+  "Cl₂/Cl⁻ +1.36 V.",
+  "Br₂/Br⁻ +1.09 V.",
+  "I₂/I⁻ +0.54 V."
+ ],
+ "kind": "bars",
+ "dataset": "e0",
+ "range": [
+  0,
+  3.2
+ ],
+ "ticks": [
+  0,
+  1,
+  2,
+  3
+ ],
+ "yLabel": "E° / V",
+ "colour": "a4",
+ "items": [
+  {
+   "key": "F2/F-",
+   "label": "F2",
+   "value": 2.87
+  },
+  {
+   "key": "Cl2/Cl-",
+   "label": "Cl2",
+   "value": 1.36
+  },
+  {
+   "key": "Br2/Br-",
+   "label": "Br2",
+   "value": 1.09
+  },
+  {
+   "key": "I2/I-",
+   "label": "I2",
+   "value": 0.54
+  }
+ ],
+ "claims": [
+  {
+   "type": "decreasing"
+  }
+ ]
+}

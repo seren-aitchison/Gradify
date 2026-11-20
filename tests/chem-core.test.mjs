@@ -9,6 +9,8 @@ test("formulae: brackets, hydrates, charges and Unicode", () => {
   assert.deepEqual(parseFormula("SO₄²⁻"), { atoms: { S: 1, O: 4 }, charge: -2 });
   assert.deepEqual(parseFormula("Fe^3+"), { atoms: { Fe: 1 }, charge: 3 });
   assert.deepEqual(parseFormula("NH4+"), { atoms: { N: 1, H: 4 }, charge: 1 });
+  assert.deepEqual(parseFormula("Zn2+"), { atoms: { Zn: 1 }, charge: 2 });
+  assert.deepEqual(parseFormula("O2-"), { atoms: { O: 1 }, charge: -2 });
   assert.equal(parseFormula("e⁻").charge, -1);
   assert.equal(Math.round(formulaMass("H2SO4") * 100) / 100, 98.07);
 });
@@ -18,6 +20,8 @@ test("equations: balanced, unbalanced and half-equations", () => {
   assert.ok(balanced("Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O").ok);
   assert.ok(!balanced("Fe³⁺ + 2e⁻ → Fe²⁺").ok);
   assert.ok(balanced("Na + ½Cl2 → NaCl").ok);
+  assert.ok(balanced("Zn → Zn2+ + 2e-").ok);
+  assert.ok(balanced("2O2- → O2 + 4e-").ok);
   assert.ok(balanced("C3H8(g) + 5O2(g) → 3CO2(g) + 4H2O(l)").ok);
 });
 test("net equation of a catalytic cycle cancels the catalyst", () => {

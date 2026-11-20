@@ -1,0 +1,96 @@
+{
+ "id": "chem-metal-reducing",
+ "renderer": "trend",
+ "course": "chemistry",
+ "lesson": "Reducing agents",
+ "title": "Metals as reducing agents",
+ "caption": "The more negative a metal's electrode potential, the more readily it gives up electrons: lithium and potassium are the strongest reducing agents, gold the weakest. This is the reactivity series, measured.",
+ "alt": "A vertical scale of E° for metal ion/metal couples from Li⁺/Li at −3.04 V at the bottom to Au³⁺/Au at +1.50 V at the top.",
+ "description": [
+  "Bottom: Li −3.04, K −2.93, Ca −2.87, Na −2.71, Mg −2.37 V: most reactive.",
+  "Middle: Al −1.66, Zn −0.76, Fe −0.44, Pb −0.13, H₂ 0.00.",
+  "Top: Cu +0.34, Ag +0.80, Au +1.50 V: least reactive."
+ ],
+ "also": [
+  {
+   "course": "gcse",
+   "lesson": "Reactivity series and extraction of metals"
+  }
+ ],
+ "kind": "ladder",
+ "dataset": "e0",
+ "unit": "V",
+ "topLabel": "weaker reducing agents",
+ "bottomLabel": "stronger reducing agents",
+ "height": [
+  460,
+  520
+ ],
+ "items": [
+  {
+   "key": "Li+/Li",
+   "value": -3.04
+  },
+  {
+   "key": "K+/K",
+   "value": -2.93
+  },
+  {
+   "key": "Ca2+/Ca",
+   "value": -2.87
+  },
+  {
+   "key": "Na+/Na",
+   "value": -2.71
+  },
+  {
+   "key": "Mg2+/Mg",
+   "value": -2.37
+  },
+  {
+   "key": "Al3+/Al",
+   "value": -1.66
+  },
+  {
+   "key": "Zn2+/Zn",
+   "value": -0.76
+  },
+  {
+   "key": "Fe2+/Fe",
+   "value": -0.44
+  },
+  {
+   "key": "Pb2+/Pb",
+   "value": -0.13
+  },
+  {
+   "key": "H+/H2",
+   "value": 0.0
+  },
+  {
+   "key": "Cu2+/Cu",
+   "value": 0.34
+  },
+  {
+   "key": "Ag+/Ag",
+   "value": 0.8
+  },
+  {
+   "key": "Au3+/Au",
+   "value": 1.5
+  }
+ ],
+ "highlight": {
+  "H+/H2": "a2"
+ },
+ "claims": [
+  {
+   "type": "min",
+   "key": "Li+/Li"
+  },
+  {
+   "type": "max",
+   "key": "Au3+/Au"
+  }
+ ]
+}

@@ -1,0 +1,89 @@
+{
+ "id": "chem-common-ion",
+ "renderer": "graph",
+ "course": "chemistry",
+ "lesson": "Common-ion effect",
+ "title": "The common-ion effect",
+ "caption": "Adding chloride ions to a saturated AgCl solution pushes AgCl(s) ⇌ Ag⁺ + Cl⁻ to the left. Solubility in water is √Ksp = 1.3 × 10⁻⁵ mol dm⁻³; in 0.01 mol dm⁻³ NaCl it falls to Ksp/[Cl⁻] = 1.8 × 10⁻⁸, a thousand times less.",
+ "alt": "log solubility of AgCl against log chloride concentration: a straight line of gradient −1, with pure water marked at the top left.",
+ "description": [
+  "In pure water, log s = −4.87.",
+  "With added chloride, s = Ksp/[Cl⁻]: a straight line of gradient −1 on log axes.",
+  "At [Cl⁻] = 0.01 mol dm⁻³, s = 1.8 × 10⁻⁸ mol dm⁻³."
+ ],
+ "range": {
+  "x": [
+   -5,
+   -1
+  ],
+  "y": [
+   -9,
+   -4
+  ]
+ },
+ "ticks": [
+  [
+   -5,
+   -4,
+   -3,
+   -2,
+   -1
+  ],
+  [
+   -9,
+   -8,
+   -7,
+   -6,
+   -5,
+   -4
+  ]
+ ],
+ "grid": [
+  1,
+  1
+ ],
+ "axisLabels": [
+  "log₁₀([Cl⁻] / mol dm⁻³)",
+  "log₁₀(solubility)"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "-9.745-x",
+   "domain": [
+    -4.87,
+    -1
+   ],
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": -4.872,
+   "y": -4.872,
+   "label": "pure water",
+   "dy": 14
+  },
+  {
+   "x": -2,
+   "y": -7.745,
+   "label": "0.01 M NaCl"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "-9.745-x",
+   "x": -2,
+   "y": -7.745,
+   "name": "in 0.01 mol dm⁻³ Cl⁻, s = Ksp/[Cl⁻] = 1.8 × 10⁻⁸"
+  },
+  {
+   "type": "point",
+   "expr": "-9.745-x",
+   "x": -4.8725,
+   "y": -4.8725,
+   "name": "in pure water s = [Cl⁻] = √Ksp"
+  }
+ ]
+}

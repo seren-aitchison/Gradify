@@ -1,0 +1,43 @@
+{
+ "id": "chem-fuel-cell",
+ "renderer": "cell",
+ "course": "chemistry",
+ "lesson": "Fuel cells",
+ "title": "The hydrogen–oxygen fuel cell",
+ "caption": "Hydrogen is oxidised at the negative electrode and oxygen reduced at the positive one, with H⁺ ions crossing the membrane. The only product is water and E°cell = 1.23 V.",
+ "alt": "A cell with hydrogen fed to the left electrode and oxygen to the right, a proton-exchange membrane between, and an external circuit.",
+ "description": [
+  "Anode: H₂ → 2H⁺ + 2e⁻.",
+  "Cathode: O₂ + 4H⁺ + 4e⁻ → 2H₂O.",
+  "Overall: 2H₂ + O₂ → 2H₂O, E°cell = 1.23 V."
+ ],
+ "kind": "single",
+ "load": "motor",
+ "compare": true,
+ "ecell": 1.23,
+ "membrane": "proton-exchange membrane",
+ "vessel": {
+  "label": "H⁺ conducting electrolyte",
+  "colour": "#ecfccb"
+ },
+ "net": "2H2 + O2 → 2H2O",
+ "halves": [
+  {
+   "couple": "H+/H2",
+   "electrode": "Pt",
+   "label": "Pt",
+   "role": "anode",
+   "half": "H2 → 2H+ + 2e-",
+   "product": "H₂ in",
+   "ions": "H⁺ →"
+  },
+  {
+   "couple": "O2/H2O",
+   "electrode": "Pt",
+   "label": "Pt",
+   "role": "cathode",
+   "half": "O2 + 4H+ + 4e- → 2H2O",
+   "product": "O₂ in"
+  }
+ ]
+}

@@ -1,0 +1,118 @@
+{
+ "id": "chem-electrochemical-series",
+ "renderer": "trend",
+ "course": "chemistry",
+ "lesson": "Electrochemical series",
+ "title": "The electrochemical series",
+ "caption": "Couples listed by standard electrode potential. The oxidised form at the top (F₂, MnO₄⁻) is the strongest oxidising agent; the reduced form at the bottom (Li) is the strongest reducing agent. A species will oxidise anything below it on the left-hand side of the list.",
+ "alt": "A vertical scale of E° values from F₂/F⁻ at +2.87 V down to Li⁺/Li at −3.04 V, with the hydrogen electrode at 0.",
+ "description": [
+  "Top: F₂/F⁻ +2.87, MnO₄⁻/Mn²⁺ +1.51, Cl₂/Cl⁻ +1.36 V.",
+  "Middle: Ag⁺/Ag +0.80, Cu²⁺/Cu +0.34, H⁺/H₂ 0.",
+  "Bottom: Zn −0.76, Mg −2.37, Na −2.71, Li −3.04 V."
+ ],
+ "kind": "ladder",
+ "dataset": "e0",
+ "unit": "V",
+ "topLabel": "stronger oxidising agents (left)",
+ "bottomLabel": "stronger reducing agents (right)",
+ "height": [
+  520,
+  600
+ ],
+ "items": [
+  {
+   "key": "F2/F-",
+   "value": 2.87,
+   "label": "F2/F-"
+  },
+  {
+   "key": "MnO4-/Mn2+",
+   "value": 1.51,
+   "label": "MnO4-/Mn2+"
+  },
+  {
+   "key": "Cl2/Cl-",
+   "value": 1.36,
+   "label": "Cl2/Cl-"
+  },
+  {
+   "key": "Cr2O7 2-/Cr3+",
+   "value": 1.33,
+   "label": "Cr2O7²⁻/Cr3+"
+  },
+  {
+   "key": "O2/H2O",
+   "value": 1.23,
+   "label": "O2/H2O"
+  },
+  {
+   "key": "Br2/Br-",
+   "value": 1.09,
+   "label": "Br2/Br-"
+  },
+  {
+   "key": "Ag+/Ag",
+   "value": 0.8,
+   "label": "Ag+/Ag"
+  },
+  {
+   "key": "Fe3+/Fe2+",
+   "value": 0.77,
+   "label": "Fe3+/Fe2+"
+  },
+  {
+   "key": "I2/I-",
+   "value": 0.54,
+   "label": "I2/I-"
+  },
+  {
+   "key": "Cu2+/Cu",
+   "value": 0.34,
+   "label": "Cu2+/Cu"
+  },
+  {
+   "key": "H+/H2",
+   "value": 0.0,
+   "label": "H+/H2"
+  },
+  {
+   "key": "Fe2+/Fe",
+   "value": -0.44,
+   "label": "Fe2+/Fe"
+  },
+  {
+   "key": "Zn2+/Zn",
+   "value": -0.76,
+   "label": "Zn2+/Zn"
+  },
+  {
+   "key": "Mg2+/Mg",
+   "value": -2.37,
+   "label": "Mg2+/Mg"
+  },
+  {
+   "key": "Na+/Na",
+   "value": -2.71,
+   "label": "Na+/Na"
+  },
+  {
+   "key": "Li+/Li",
+   "value": -3.04,
+   "label": "Li+/Li"
+  }
+ ],
+ "highlight": {
+  "H+/H2": "a2"
+ },
+ "claims": [
+  {
+   "type": "max",
+   "key": "F2/F-"
+  },
+  {
+   "type": "min",
+   "key": "Li+/Li"
+  }
+ ]
+}

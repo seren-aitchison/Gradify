@@ -1,0 +1,68 @@
+{
+ "id": "chem-equivalence-point",
+ "renderer": "titration",
+ "course": "chemistry",
+ "lesson": "Equivalence points",
+ "title": "The equivalence point",
+ "caption": "At equivalence the acid and base have reacted in exactly the amounts in the equation. For 25.0 cm³ of 0.100 mol dm⁻³ HCl that is 2.50 × 10⁻³ mol, so 25.0 cm³ of 0.100 mol dm⁻³ NaOH; the pH there is 7 and the curve is steepest.",
+ "alt": "Strong acid–strong base titration curve with the equivalence point marked at 25.0 cm³ and pH 7.",
+ "description": [
+  "Before equivalence: pH rises slowly from 1.",
+  "At 25.0 cm³: an almost vertical jump through pH 7.",
+  "After: excess alkali, pH levels near 12.5."
+ ],
+ "flask": {
+  "acids": [
+   {
+    "c": 0.1,
+    "strong": true
+   }
+  ],
+  "V": 25
+ },
+ "titrant": {
+  "base": true,
+  "strong": true,
+  "c": 0.1
+ },
+ "vmax": 50,
+ "curves": [
+  {
+   "label": "strong acid + strong base",
+   "flask": {
+    "acids": [
+     {
+      "c": 0.1,
+      "strong": true
+     }
+    ],
+    "V": 25
+   },
+   "titrant": {
+    "base": true,
+    "strong": true,
+    "c": 0.1
+   },
+   "colour": "a1",
+   "labelDy": -8
+  }
+ ],
+ "marks": {
+  "eq": true
+ },
+ "claims": [
+  {
+   "type": "veq",
+   "value": 25
+  },
+  {
+   "type": "phEq",
+   "rel": "=",
+   "value": 7
+  },
+  {
+   "type": "startPh",
+   "value": 1.0
+  }
+ ]
+}

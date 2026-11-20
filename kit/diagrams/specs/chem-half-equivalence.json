@@ -1,0 +1,65 @@
+{
+ "id": "chem-half-equivalence",
+ "renderer": "titration",
+ "course": "chemistry",
+ "lesson": "Henderson-Hasselbalch equation",
+ "title": "pH = pKa at half-neutralisation",
+ "caption": "Halfway to the equivalence point, half the ethanoic acid has become ethanoate, so [HA] = [A⁻] and pH = pKa. Reading the pH at half the equivalence volume measures pKa: 4.76.",
+ "alt": "Weak acid–strong base titration curve with dashed lines from 12.5 cm³ up to the curve and across to pH 4.76.",
+ "description": [
+  "Equivalence at 25.0 cm³.",
+  "Half of that, 12.5 cm³: the pH reads 4.76.",
+  "So pKa = 4.76 and Ka = 1.7 × 10⁻⁵."
+ ],
+ "flask": {
+  "acids": [
+   {
+    "c": 0.1,
+    "pKa": [
+     4.76
+    ]
+   }
+  ],
+  "V": 25
+ },
+ "titrant": {
+  "base": true,
+  "strong": true,
+  "c": 0.1
+ },
+ "vmax": 50,
+ "curves": [
+  {
+   "flask": {
+    "acids": [
+     {
+      "c": 0.1,
+      "pKa": [
+       4.76
+      ]
+     }
+    ],
+    "V": 25
+   },
+   "titrant": {
+    "base": true,
+    "strong": true,
+    "c": 0.1
+   },
+   "colour": "a1"
+  }
+ ],
+ "marks": {
+  "half": true
+ },
+ "claims": [
+  {
+   "type": "halfPh",
+   "value": 4.76
+  },
+  {
+   "type": "veq",
+   "value": 25
+  }
+ ]
+}

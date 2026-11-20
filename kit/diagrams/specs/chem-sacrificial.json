@@ -1,0 +1,38 @@
+{
+ "id": "chem-sacrificial",
+ "renderer": "cell",
+ "course": "chemistry",
+ "lesson": "Corrosion prevention",
+ "title": "Sacrificial protection",
+ "caption": "A block of zinc bolted to an iron hull corrodes instead of the iron, because zinc (E° −0.76 V) is more easily oxidised than iron (−0.44 V). The electrons it releases flow into the iron, where oxygen is reduced, so the iron is not oxidised.",
+ "alt": "Seawater with a zinc block connected to iron: zinc is the anode and dissolves; oxygen is reduced at the iron surface.",
+ "description": [
+  "Zinc anode: Zn → Zn²⁺ + 2e⁻, the zinc corrodes.",
+  "Iron, the cathode: O₂ + 2H₂O + 4e⁻ → 4OH⁻; the iron itself is unchanged."
+ ],
+ "kind": "single",
+ "compare": true,
+ "ecell": 1.16,
+ "vessel": {
+  "label": "seawater"
+ },
+ "net": "2Zn + O2 + 2H2O → 2Zn2+ + 4OH-",
+ "halves": [
+  {
+   "couple": "Zn2+/Zn",
+   "electrode": "Zn",
+   "label": "zinc block",
+   "role": "anode",
+   "half": "Zn → Zn2+ + 2e-",
+   "product": "Zn²⁺"
+  },
+  {
+   "couple": "O2/OH-",
+   "electrode": "Fe",
+   "label": "iron hull",
+   "role": "cathode",
+   "half": "O2 + 2H2O + 4e- → 4OH-",
+   "product": "OH⁻"
+  }
+ ]
+}

@@ -315,6 +315,7 @@ O: Define oxidation and reduction in terms of oxygen
 O: Explain how metals are extracted using carbon or electrolysis
 H: The reactivity series
 P: The **reactivity series** lists metals in order of how readily they react, for example: potassium, sodium, lithium, calcium, magnesium, (carbon), zinc, iron, (hydrogen), copper, silver, gold. More reactive metals lose electrons more easily to form positive ions. A more reactive metal will **displace** a less reactive metal from a solution of its compound: magnesium placed in copper sulfate solution becomes coated in copper.
+D: chem-metal-reducing
 H: Oxidation and reduction
 - **Oxidation** is the gain of oxygen; **reduction** is the loss of oxygen.
 - Higher tier: oxidation is loss of electrons, and reduction is gain of electrons ("OIL RIG").
@@ -357,6 +358,7 @@ O: Write word equations for reactions of acids
 O: Describe how to prepare a pure, dry soluble salt
 H: Acids, alkalis and pH
 P: The **pH scale** runs from 0 to 14. Solutions with pH below 7 are **acidic**, pH 7 is **neutral** and above 7 is **alkaline**. Acids produce **hydrogen ions (H⁺)** in water; alkalis produce **hydroxide ions (OH⁻)**. pH can be measured with universal indicator or a pH probe. In **neutralisation**, hydrogen ions react with hydroxide ions to form water: H⁺ + OH⁻ → H₂O.
+D: chem-ph-scale
 H: Reactions of acids
 - Acid + metal → salt + hydrogen.
 - Acid + metal oxide or hydroxide → salt + water.
@@ -401,6 +403,7 @@ O: Predict the products of electrolysis of molten and aqueous electrolytes
 O: Describe industrial uses of electrolysis
 H: How electrolysis works
 P: In **electrolysis**, an electric current is passed through an **electrolyte**, an ionic compound that is molten or dissolved so its ions can move. **Positive ions** (cations) move to the **negative electrode** (cathode), where they gain electrons. **Negative ions** (anions) move to the **positive electrode** (anode), where they lose electrons. For example, molten lead bromide forms lead at the cathode and bromine at the anode.
+D: chem-electrolysis-brine
 H: Aqueous solutions
 - Water provides H⁺ and OH⁻ ions, so products can differ.
 - At the **cathode**, hydrogen forms if the metal is more reactive than hydrogen; otherwise the metal forms.
