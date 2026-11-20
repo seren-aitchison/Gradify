@@ -1,0 +1,54 @@
+{
+ "id": "chem-tlc",
+ "renderer": "apparatus",
+ "course": "chemistry",
+ "lesson": "Thin-layer chromatography",
+ "title": "Thin-layer chromatography",
+ "caption": "On a silica plate the more polar compound sticks to the silica and moves less. Here the starting material (Rf 0.55) and the product (Rf 0.30) are clearly separated; the co-spot lane, with both applied together, shows two spots, confirming they are different.",
+ "alt": "A TLC plate with three lanes: starting material (one spot high), co-spot (two spots), reaction mixture (one spot low).",
+ "description": [
+  "Lane 1, starting material: Rf 0.55.",
+  "Lane 2, co-spot: 0.55 and 0.30.",
+  "Lane 3, reaction mixture: only 0.30: the starting material has been used up."
+ ],
+ "kind": "tlc",
+ "plate": {
+  "lanes": [
+   {
+    "label": "SM",
+    "spots": [
+     0.55
+    ],
+    "colour": "a1"
+   },
+   {
+    "label": "co",
+    "spots": [
+     0.55,
+     0.3
+    ],
+    "colour": "a5"
+   },
+   {
+    "label": "RM",
+    "spots": [
+     0.3
+    ],
+    "colour": "a2"
+   }
+  ]
+ },
+ "claims": [
+  {
+   "type": "gone",
+   "lane": "RM",
+   "rf": 0.55
+  },
+  {
+   "type": "same",
+   "a": "co",
+   "b": "SM",
+   "rf": 0.55
+  }
+ ]
+}

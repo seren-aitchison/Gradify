@@ -134,6 +134,15 @@ function trendChecks(spec) {
       out.push(check(`the largest jumps come after ${c.after.join(" and ")}`, c.after.every((k) => top.includes(k)) && ratios[c.after.length - 1][1] >= (c.factor || 1),
         ratios.slice(0, c.after.length + 1).map(([k, r]) => `after ${k}: ×${r.toFixed(2)}`).join(", ")));
     } else if (c.type === "order") out.push(check(`order ${c.keys.join(" < ")}`, c.keys.every((k, i) => !i || vals[k] > vals[c.keys[i - 1]])));
+    else if (c.type === "oxstate") {
+      // the oxidation state of one element from the formula: O −2, H +1, F and Cl −1, the rest balances the charge
+      for (const [k, f] of Object.entries(c.formulae)) {
+        const { atoms, charge } = parseFormula(f), fixed = { O: -2, H: 1, F: -1, Cl: -1 };
+        const others = Object.entries(atoms).filter(([e]) => e !== c.element).reduce((a, [e, n]) => a + (fixed[e] ?? 0) * n, 0);
+        const os = (charge - others) / atoms[c.element];
+        out.push(check(`${c.element} in ${f} is ${os > 0 ? "+" : ""}${os}`, near(os, vals[k], 1e-9), `drawn ${vals[k]}`));
+      }
+    }
   }
   return out;
 }
@@ -310,7 +319,7 @@ function atomChecks(spec) {
 //            | {type: "concentration", more: i, less: j} | {type: "equation", eq}]
 const EL = { H: ["#ffffff", 6], C: ["#3a3f4b", 9], O: ["#e0393e", 9], N: ["#3b6fe0", 9], Cl: ["#2fa84f", 10], Na: ["#8e5bd6", 9],
   Br: ["#a0522d", 10], S: ["#e0b000", 10], Mg: ["#6b8e23", 9], Cu: ["#c87533", 9], He: ["#7fd1e8", 7], Ne: ["#f08a5d", 7], Ar: ["#9a7fd1", 8],
-  Fe: ["#8a5a44", 9], I: ["#6a2c91", 11], e: ["#4f46e5", 3.2], Li: ["#c08ad8", 8], K: ["#b05bd6", 10], Ca: ["#5a9e8f", 9], Zn: ["#7d8597", 9], X: ["#9aa1b5", 9] };
+  Fe: ["#8a5a44", 9], I: ["#6a2c91", 11], e: ["#4f46e5", 3.2], Li: ["#c08ad8", 8], Sn: ["#8f9bb3", 11.5], Ag: ["#c7ccd6", 10], Si: ["#d9b38c", 10], K: ["#b05bd6", 10], Ca: ["#5a9e8f", 9], Zn: ["#7d8597", 9], X: ["#9aa1b5", 9] };
 function moleculeOffsets(sp) {
   const at = sp.atoms, k = at.length, r = (e) => (EL[e] || EL.X)[1];
   if (k === 1) return [[0, 0]];

@@ -1,0 +1,44 @@
+{
+ "id": "chem-haem",
+ "renderer": "vsepr",
+ "course": "chemistry",
+ "lesson": "Bioinorganic chemistry",
+ "title": "The iron centre of haem",
+ "caption": "In haemoglobin, Fe²⁺ sits in an octahedral site: four nitrogens of the flat porphyrin ring, one histidine nitrogen below, and O₂ bound above. Carbon monoxide binds the same site about 200 times more strongly, which is why it is poisonous.",
+ "alt": "An octahedral iron ion with four porphyrin nitrogens around it, histidine below and O₂ above.",
+ "description": [
+  "Four N of the porphyrin in the equatorial plane.",
+  "Histidine N below.",
+  "O₂ above, in the sixth position."
+ ],
+ "molecules": [
+  {
+   "label": "Fe²⁺ in oxyhaemoglobin",
+   "centre": "Fe",
+   "complex": true,
+   "shape": "octahedral",
+   "ligands": [
+    {
+     "el": "O2",
+     "colour": "a2"
+    },
+    {
+     "el": "His"
+    },
+    {
+     "el": "N"
+    },
+    {
+     "el": "N"
+    },
+    {
+     "el": "N"
+    },
+    {
+     "el": "N"
+    }
+   ],
+   "sub": "octahedral, coordination number 6"
+  }
+ ]
+}

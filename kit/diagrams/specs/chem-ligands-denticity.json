@@ -1,0 +1,53 @@
+{
+ "id": "chem-ligands-denticity",
+ "renderer": "structures",
+ "course": "chemistry",
+ "lesson": "Ligands",
+ "title": "Ligands by denticity",
+ "caption": "A ligand donates a lone pair to the metal. Ammonia donates one (monodentate); ethane-1,2-diamine and ethanedioate donate two (bidentate); EDTA⁴⁻ donates six (hexadentate), wrapping round the metal ion. Multidentate ligands form more stable complexes (the chelate effect).",
+ "alt": "Ammonia, ethane-1,2-diamine, ethanedioate and EDTA⁴⁻ with their donor atoms.",
+ "description": [
+  "NH₃: one donor nitrogen.",
+  "Ethane-1,2-diamine: two nitrogens.",
+  "Ethanedioate: two oxygens.",
+  "EDTA⁴⁻: two nitrogens and four oxygens."
+ ],
+ "perRow": [
+  4,
+  2
+ ],
+ "bond": [
+  28,
+  26
+ ],
+ "panels": [
+  {
+   "smiles": "N",
+   "label": "NH₃",
+   "sub": "monodentate",
+   "displayed": true
+  },
+  {
+   "smiles": "NCCN",
+   "label": "en",
+   "sub": "bidentate",
+   "groups": [
+    "primary amine"
+   ]
+  },
+  {
+   "smiles": "O=C([O-])C(=O)[O-]",
+   "label": "ethanedioate",
+   "sub": "bidentate",
+   "groups": [
+    "carboxylate"
+   ]
+  },
+  {
+   "smiles": "[O-]C(=O)CN(CC(=O)[O-])CCN(CC(=O)[O-])CC(=O)[O-]",
+   "label": "EDTA⁴⁻",
+   "sub": "hexadentate",
+   "formula": "C10H12N2O8"
+  }
+ ]
+}

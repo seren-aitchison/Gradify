@@ -1,0 +1,64 @@
+{
+ "id": "chem-shift-ranges",
+ "renderer": "nmr",
+ "course": "chemistry",
+ "lesson": "NMR chemical shifts",
+ "title": "Chemical shift and environment",
+ "caption": "4-Methoxybenzaldehyde shows the main ¹H regions in one spectrum: the aldehyde H at 9.9 ppm, aromatic H at 7–8 ppm, and the OCH₃ at 3.9 ppm. Hydrogens near electronegative atoms or π systems are deshielded and appear further left.",
+ "alt": "Spectrum with a singlet at 9.9 (1H), two doublets at 7.8 and 7.0 (2H each) and a singlet at 3.9 (3H).",
+ "description": [
+  "δ 9.9, 1H, singlet: H–C=O.",
+  "δ 7.8 and 7.0, 2H each, doublets: aromatic H.",
+  "δ 3.9, 3H, singlet: O–CH₃."
+ ],
+ "molecule": "COc1ccc(C=O)cc1",
+ "nucleus": "1H",
+ "range": [
+  0,
+  11
+ ],
+ "peaks": [
+  {
+   "shift": 9.9,
+   "n": 1,
+   "split": "s",
+   "atoms": [
+    6
+   ],
+   "env": "H–C=O",
+   "colour": "a2"
+  },
+  {
+   "shift": 7.8,
+   "n": 2,
+   "split": "d",
+   "atoms": [
+    4,
+    8
+   ],
+   "env": "Ar–H",
+   "colour": "a5"
+  },
+  {
+   "shift": 7.0,
+   "n": 2,
+   "split": "d",
+   "atoms": [
+    3,
+    9
+   ],
+   "env": "Ar–H",
+   "colour": "a4"
+  },
+  {
+   "shift": 3.9,
+   "n": 3,
+   "split": "s",
+   "atoms": [
+    0
+   ],
+   "env": "H–C–O",
+   "colour": "a1"
+  }
+ ]
+}

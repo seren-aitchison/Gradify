@@ -58,6 +58,7 @@ H: Inorganic tests
 - **Halides** with acidified AgNO₃: white AgCl, cream AgBr, yellow AgI.
 - **Sulfates** with acidified BaCl₂: white BaSO₄.
 - **Ammonium** with warm NaOH releases ammonia, turning damp red litmus blue.
+D: chem-qualitative-tests
 H: Organic tests
 - **Alkenes**: decolourise bromine water.
 - **Carbonyls**: orange precipitate with 2,4-DNPH.
@@ -99,6 +100,7 @@ H: Approaches
 - **Instrumental methods**: spectroscopy, chromatography and electrochemistry.
 - Instruments measure a **signal** proportional to amount.
 - Most instrumental methods need **calibration**.
+D: chem-titration-setup
 H: Performance
 - **Sensitivity**: change in signal per unit of concentration.
 - **Limit of detection (LOD)**: smallest amount reliably detected.
@@ -140,6 +142,7 @@ H: Definitions
 - **Precision**: how close repeated results are to each other.
 - **Repeatability**: same conditions, short time.
 - **Reproducibility**: different labs, operators or days.
+D: chem-accuracy-precision
 H: Errors
 - **Systematic errors** shift all results the same way, reducing accuracy.
 - **Random errors** scatter results, reducing precision.
@@ -181,6 +184,7 @@ H: Calibration curves
 - Plot signal against concentration and fit a line.
 - Read the unknown's concentration from its signal.
 - Check **linearity** with the correlation coefficient and residuals.
+D: chem-calibration
 H: Other approaches
 - **Blank**: a sample without analyte, to correct the baseline.
 - **Standard addition**: add known amounts to the sample itself, correcting matrix effects.
@@ -222,6 +226,7 @@ H: Types
 - **Redox**: such as manganate(VII) with iron(II), self-indicating.
 - **Complexometric**: EDTA with metal ions, such as water hardness.
 - **Precipitation**: silver nitrate with chloride.
+D: chem-titration-setup
 H: Technique
 - Use a **primary standard** to standardise solutions.
 - Rinse burettes and pipettes with the solution they will hold.
@@ -263,6 +268,7 @@ H: Precipitation gravimetry
 - The precipitate is **filtered**, **washed**, **dried** and weighed.
 - Example: sulfate as BaSO₄; chloride as AgCl.
 - Heating to **constant mass** ensures all water is removed.
+D: chem-gravimetric
 H: Volatilisation gravimetry
 - The sample is heated and the **mass loss** is measured.
 - Example: water of crystallisation in hydrated salts.
@@ -304,6 +310,7 @@ H: Absorption
 - Absorbing groups are called **chromophores**, such as C=C, C=O and conjugated systems.
 - More **conjugation** shifts absorption to longer wavelengths.
 - Transition metal complexes absorb through d-d transitions.
+D: chem-uv-vis
 H: Beer-Lambert law
 - **A = εcl**: absorbance = molar absorptivity × concentration × path length.
 - Absorbance has no units; l is usually 1 cm.
@@ -345,6 +352,7 @@ H: Absorptions
 - Only vibrations that change the **dipole moment** absorb IR.
 - Positions are given as **wavenumbers** in cm⁻¹.
 - Stronger bonds and lighter atoms absorb at higher wavenumbers.
+D: chem-ir-ethanoic-acid
 H: Key absorptions
 - **O–H (alcohol)**: broad, 3200–3550 cm⁻¹.
 - **O–H (acid)**: very broad, 2500–3300 cm⁻¹.
@@ -387,6 +395,7 @@ H: Principles
 - In a magnetic field, spins align **with** or **against** the field, at different energies.
 - **Radio waves** of the right frequency flip spins: **resonance**.
 - The energy gap depends on the field strength and the nucleus's environment.
+D: chem-nmr-principle
 H: Obtaining spectra
 - Samples are dissolved in **deuterated** solvents such as CDCl₃.
 - **TMS** (tetramethylsilane) is the reference at δ = 0.
@@ -428,6 +437,7 @@ H: Information in a spectrum
 - **Chemical shift (δ)**: type of environment.
 - **Integration**: relative number of hydrogens in each environment.
 - **Splitting**: number of hydrogens on neighbouring carbons.
+D: chem-h-nmr-ethanol
 H: Practical points
 - Equivalent hydrogens give one signal.
 - Integration ratios are shown as a trace or numbers.
@@ -469,6 +479,7 @@ H: Features
 - Spectra are usually **proton-decoupled**: each environment gives a single line.
 - Integration is **not** reliable in standard ¹³C spectra.
 - Chemical shifts range from about 0 to 220 ppm.
+D: chem-c13-nmr-propanol
 H: Typical shifts
 - **Alkyl C**: 5–55 ppm.
 - **C–O and C–N**: 50–90 ppm.
@@ -510,6 +521,7 @@ H: The δ scale
 - Independent of magnet strength.
 - **Upfield** (low δ): shielded; **downfield** (high δ): deshielded.
 - Most ¹H signals lie between 0 and 12 ppm.
+D: chem-shift-ranges
 H: Effects
 - **Electronegative** atoms deshield nearby protons: CH₃–O at about 3.3 ppm.
 - **π systems** deshield via ring currents: aromatic H at 6.5–8.0 ppm.
@@ -551,6 +563,7 @@ H: The n + 1 rule
 - 0 → **singlet**, 1 → **doublet**, 2 → **triplet**, 3 → **quartet**.
 - Peak intensities follow **Pascal's triangle**: triplet 1:2:1, quartet 1:3:3:1.
 - Equivalent protons do not split each other.
+D: chem-splitting-ethyl
 H: Coupling constants
 - The spacing between peaks is the **coupling constant J**, in Hz.
 - Coupled protons share the **same J**.
@@ -592,6 +605,7 @@ H: How it works
 - **Acceleration**: ions are accelerated by an electric field.
 - **Separation**: ions are separated by mass-to-charge ratio (m/z).
 - **Detection**: ions are counted to give abundance.
+D: chem-mass-spec
 H: Reading a spectrum
 - The **molecular ion** (M⁺) gives the relative molecular mass.
 - The **base peak** is the tallest, set to 100%.
@@ -639,6 +653,7 @@ H: Fragmentation
 - It breaks into a **cation** (detected) and a **radical** (not detected).
 - Stable cations give strong peaks.
 - Fragments reveal parts of the structure.
+D: chem-fragmentation-butanone
 H: Common fragments
 - m/z 15: CH₃⁺; m/z 29: C₂H₅⁺ or CHO⁺.
 - m/z 43: CH₃CO⁺ or C₃H₇⁺.
@@ -680,6 +695,7 @@ H: Accurate mass
 - Molecules with the same **nominal mass** have different **accurate masses**.
 - HRMS measures m/z to **four or more** decimal places.
 - Comparing with calculated masses identifies the formula.
+D: chem-hrms
 H: Applications
 - Identifying unknowns in drug discovery.
 - Detecting **doping** substances in sport.
@@ -721,6 +737,7 @@ H: The Raman effect
 - A tiny fraction scatters with **changed energy** (**Raman**).
 - The energy shift equals a vibrational energy.
 - Raman shifts are given in cm⁻¹, like IR.
+D: chem-raman
 H: Raman versus IR
 - IR needs a change in **dipole moment**; Raman needs a change in **polarisability**.
 - Symmetric vibrations such as N≡N and C=C are often strong in Raman.
@@ -762,6 +779,7 @@ H: Fluorescence
 - Some energy is lost as heat through vibrations.
 - It returns to the ground state by **emitting** light.
 - Emission is at **longer wavelength** than absorption (**Stokes shift**).
+D: chem-jablonski
 H: Analytical use
 - Emission intensity is proportional to concentration at low levels.
 - Fluorescence is very **sensitive**, detecting tiny amounts.
@@ -803,6 +821,7 @@ H: Diffraction
 - Planes of atoms in a crystal **diffract** X-rays.
 - Constructive interference occurs when **nλ = 2d sin θ** (Bragg's law).
 - The pattern of spots depends on the crystal structure.
+D: chem-bragg
 H: What it shows
 - **Single-crystal** diffraction gives exact atomic positions, bond lengths and angles.
 - **Powder** diffraction identifies crystalline phases.
@@ -844,6 +863,7 @@ H: Principles
 - Components separate because they interact differently with the two phases.
 - **Partition**: distribution between two liquids, or a liquid and gas.
 - **Adsorption**: sticking to a solid surface.
+D: chem-paper-chromatography
 H: Measuring separation
 - **Rf** = distance moved by spot ÷ distance moved by solvent (TLC, paper).
 - **Retention time**: time to pass through a column (GC, HPLC).
@@ -885,6 +905,8 @@ H: Method
 - Spots are applied on a **pencil** baseline above the solvent level.
 - The plate develops in a covered tank until solvent nears the top.
 - Spots are seen by **UV light**, iodine or chemical stains.
+D: chem-paper-chromatography
+D: chem-tlc
 H: Interpreting results
 - **Polar** compounds stick to silica and have **low Rf**.
 - **Less polar** compounds move further: **high Rf**.
@@ -926,6 +948,7 @@ H: The instrument
 - A long, thin **column** contains a liquid stationary phase.
 - The column is in an **oven** whose temperature can be programmed.
 - A **detector**, such as a flame ionisation detector (FID), records each component.
+D: chem-gas-chromatogram
 H: Separation and results
 - Components separate by **boiling point** and interaction with the stationary phase.
 - Each gives a **peak** at its **retention time**.
@@ -969,6 +992,7 @@ H: The system
 - The **column** is packed with tiny particles, giving high resolution.
 - A **UV detector** is most common; others include fluorescence and MS.
 - **Gradient elution** changes solvent composition during a run.
+D: chem-hplc
 H: Phases
 - **Reversed-phase**: non-polar stationary phase (C18) and polar solvent (water and methanol).
 - In reversed-phase, **polar** compounds elute **first**.
@@ -1010,6 +1034,7 @@ H: Combination
 - Each component enters the **mass spectrometer** as it elutes.
 - MS gives a **mass spectrum** for each peak.
 - Spectra are matched against **libraries** for identification.
+D: chem-gcms
 H: Advantages
 - Identifies compounds with **similar retention times**.
 - Very **sensitive** and **selective**.
@@ -1051,6 +1076,7 @@ H: Combination
 - The solvent is removed and analytes are ionised, usually by **electrospray (ESI)**.
 - ESI is a **soft** ionisation that keeps molecules intact.
 - **Tandem MS (MS/MS)** fragments selected ions for identification.
+D: chem-lcms
 H: Applications
 - **Drug metabolism** and pharmacokinetics.
 - **Proteomics** and **metabolomics**.
@@ -1092,6 +1118,7 @@ H: Evidence from each technique
 - **Degrees of unsaturation**: rings and π bonds.
 - **IR**: functional groups.
 - **¹H and ¹³C NMR**: carbon skeleton and hydrogen environments.
+D: chem-structure-elucidation
 H: Strategy
 - Start with the formula and degrees of unsaturation.
 - Identify functional groups from IR.

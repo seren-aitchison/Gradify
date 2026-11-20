@@ -1,0 +1,71 @@
+{
+ "id": "chem-nmr-principle",
+ "renderer": "levels",
+ "course": "chemistry",
+ "lesson": "Nuclear magnetic resonance",
+ "title": "Nuclear spin in a magnetic field",
+ "caption": "A ¹H nucleus has two spin states that have the same energy until a magnetic field is applied. In a field they split: aligned with the field (α) is lower, against it (β) higher. Radio waves of exactly the gap flip spins; the gap depends on the local field, which is what chemical shift measures.",
+ "alt": "Energy diagram: one level with no field, splitting into a lower α level and a higher β level in a field, with a radio-frequency arrow between them.",
+ "description": [
+  "No field: one energy for both spin states.",
+  "In field B₀: α (aligned) lower, β (opposed) higher.",
+  "Absorbing radio waves of energy ΔE flips α to β."
+ ],
+ "kind": "custom",
+ "height": [
+  260,
+  280
+ ],
+ "axisLabel": "energy",
+ "levels": [
+  {
+   "id": "z",
+   "label": "no field",
+   "E": 0.5,
+   "x0": 0.1,
+   "x1": 0.35
+  },
+  {
+   "id": "a",
+   "label": "α",
+   "E": 0,
+   "x0": 0.55,
+   "x1": 0.85,
+   "labelRight": true
+  },
+  {
+   "id": "b",
+   "label": "β",
+   "E": 1,
+   "x0": 0.55,
+   "x1": 0.85,
+   "labelRight": true
+  }
+ ],
+ "transitions": [
+  {
+   "from": "a",
+   "to": "b",
+   "x": 0.7,
+   "label": "radio waves, ΔE ∝ B",
+   "colour": "a2"
+  }
+ ],
+ "notes": [
+  {
+   "x": 0.45,
+   "E": 0.5,
+   "text": "field B₀ on →",
+   "colour": "a1",
+   "bold": true
+  }
+ ],
+ "claims": [
+  {
+   "type": "below",
+   "a": "a",
+   "b": "b",
+   "name": "the aligned (α) state is lower in energy"
+  }
+ ]
+}

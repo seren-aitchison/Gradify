@@ -1,0 +1,96 @@
+{
+ "id": "chem-bragg",
+ "renderer": "graph",
+ "course": "chemistry",
+ "lesson": "X-ray diffraction",
+ "title": "Bragg's law",
+ "caption": "nλ = 2d sin θ. With copper Kα X-rays (λ = 0.154 nm) and the 0.282 nm spacing between planes in NaCl, reflections appear at θ = 15.9° (n = 1), 33.1° (n = 2) and 55.0° (n = 3). Measuring θ gives the spacing d.",
+ "alt": "Diffraction angle θ against order n: points at 15.9°, 33.1° and 55.0° for n = 1, 2 and 3.",
+ "description": [
+  "n = 1: θ = 15.9°.",
+  "n = 2: θ = 33.1°.",
+  "n = 3: θ = 55.0°."
+ ],
+ "range": {
+  "x": [
+   0,
+   3.5
+  ],
+  "y": [
+   0,
+   70
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3
+  ],
+  [
+   20,
+   40,
+   60
+  ]
+ ],
+ "grid": [
+  1,
+  10
+ ],
+ "axisLabels": [
+  "order n",
+  "θ / °"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "asin(x*0.15406/(2*0.2820))*57.29578",
+   "domain": [
+    0,
+    3.4
+   ],
+   "colour": "a1",
+   "dash": "5 4"
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 15.85,
+   "label": "15.9°"
+  },
+  {
+   "x": 2,
+   "y": 33.11,
+   "label": "33.1°"
+  },
+  {
+   "x": 3,
+   "y": 55.03,
+   "label": "55.0°"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "asin(x*0.15406/(2*0.2820))*57.29578",
+   "x": 1,
+   "y": 15.8522,
+   "name": "n = 1: sin θ = 1 × 0.154 ÷ (2 × 0.282)"
+  },
+  {
+   "type": "point",
+   "expr": "asin(x*0.15406/(2*0.2820))*57.29578",
+   "x": 2,
+   "y": 33.1144,
+   "name": "n = 2: sin θ = 2 × 0.154 ÷ (2 × 0.282)"
+  },
+  {
+   "type": "point",
+   "expr": "asin(x*0.15406/(2*0.2820))*57.29578",
+   "x": 3,
+   "y": 55.0316,
+   "name": "n = 3: sin θ = 3 × 0.154 ÷ (2 × 0.282)"
+  }
+ ]
+}

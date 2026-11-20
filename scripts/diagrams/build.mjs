@@ -62,7 +62,11 @@ for (const f of readdirSync(SPECS).filter((f) => f.endsWith(".json")).sort()) {
     const r = spawnSync("python3", [join(ROOT, "scripts/diagrams", PY[spec.renderer]), join(SPECS, f)], { encoding: "utf8", maxBuffer: 64 << 20 });
     if (r.status !== 0) { console.error(r.stderr); out = { wide: "", narrow: "", checks: [{ name: "chemistry renderer ran", ok: false, detail: r.stderr.slice(-300) }] }; }
     else out = JSON.parse(r.stdout);
-  } else out = render(spec, { lessonText: lesson?.text || "" });
+  } else {
+    // a spec the renderer cannot draw fails on its own instead of stopping the build
+    try { out = render(spec, { lessonText: lesson?.text || "" }); }
+    catch (e) { out = { wide: "", narrow: "", checks: [{ name: "the renderer drew the spec", ok: false, detail: String(e.message || e).slice(0, 300) }] }; }
+  }
   if (!out.checks.length) out.checks.push({ name: "the renderer checked the subject", ok: false, detail: "no subject checks ran for this spec" });
   // a diagram can be placed in more than one lesson (spec.also: [{course, lesson}]), e.g. a GCSE lesson reusing it
   const places = (l) => !!l && new RegExp(`^D:\\s*${spec.id}\\s*$`, "m").test(l.text);

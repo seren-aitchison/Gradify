@@ -1,0 +1,72 @@
+{
+ "id": "chem-uv-vis",
+ "renderer": "graph",
+ "course": "chemistry",
+ "lesson": "UV-visible spectroscopy",
+ "title": "A UV–visible spectrum",
+ "caption": "Tetraamminecopper(II), [Cu(NH₃)₄(H₂O)₂]²⁺, absorbs most strongly at about 600 nm (orange), so it appears deep blue. At λmax, absorbance A = εcl (the Beer–Lambert law), which is why concentrations are measured there.",
+ "alt": "Absorbance against wavelength from 400 to 800 nm: a broad peak at 600 nm.",
+ "description": [
+  "A broad absorption band peaking at 600 nm.",
+  "Little absorption below 450 nm, which is why blue light is transmitted."
+ ],
+ "range": {
+  "x": [
+   400,
+   800
+  ],
+  "y": [
+   0,
+   1.4
+  ]
+ },
+ "ticks": [
+  [
+   400,
+   500,
+   600,
+   700,
+   800
+  ],
+  [
+   0.4,
+   0.8,
+   1.2
+  ]
+ ],
+ "grid": [
+  50,
+  0.2
+ ],
+ "axisLabels": [
+  "wavelength / nm",
+  "absorbance"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "1.2*exp(-((x-600)/70)^2)",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 600,
+   "label": "λmax 600 nm",
+   "to": 1.2
+  }
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "1.2*exp(-((x-600)/70)^2)",
+   "domain": [
+    400,
+    800
+   ],
+   "x": 600,
+   "y": 1.2,
+   "name": "λmax = 600 nm"
+  }
+ ]
+}

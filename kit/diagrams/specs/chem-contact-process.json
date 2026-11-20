@@ -1,0 +1,66 @@
+{
+ "id": "chem-contact-process",
+ "renderer": "flow",
+ "course": "chemistry",
+ "lesson": "Industrial inorganic chemistry",
+ "title": "The Contact process",
+ "caption": "Sulfur is burned to SO₂, which is oxidised to SO₃ over a vanadium(V) oxide catalyst at about 450 °C and 1–2 atm. SO₃ is absorbed in concentrated sulfuric acid (not water, which would make a mist) and then diluted.",
+ "alt": "A flow: S → SO₂ → SO₃ (V₂O₅, 450 °C) → H₂S₂O₇ (with H₂SO₄) → H₂SO₄ (with water).",
+ "description": [
+  "S + O₂ → SO₂.",
+  "2SO₂ + O₂ ⇌ 2SO₃, V₂O₅ catalyst, 450 °C.",
+  "SO₃ + H₂SO₄ → H₂S₂O₇ (oleum).",
+  "H₂S₂O₇ + H₂O → 2H₂SO₄."
+ ],
+ "layout": "line",
+ "nodes": [
+  {
+   "id": "s",
+   "label": "S"
+  },
+  {
+   "id": "a",
+   "label": "SO₂"
+  },
+  {
+   "id": "b",
+   "label": "SO₃",
+   "tone": "a3"
+  },
+  {
+   "id": "c",
+   "label": "H₂S₂O₇"
+  },
+  {
+   "id": "d",
+   "label": "H₂SO₄",
+   "tone": "a1"
+  }
+ ],
+ "edges": [
+  {
+   "from": "s",
+   "to": "a",
+   "label": "+ O₂",
+   "eq": "S + O2 → SO2"
+  },
+  {
+   "from": "a",
+   "to": "b",
+   "label": "V₂O₅, 450 °C",
+   "eq": "2SO2 + O2 → 2SO3"
+  },
+  {
+   "from": "b",
+   "to": "c",
+   "label": "+ H₂SO₄",
+   "eq": "SO3 + H2SO4 → H2S2O7"
+  },
+  {
+   "from": "c",
+   "to": "d",
+   "label": "+ H₂O",
+   "eq": "H2S2O7 + H2O → 2H2SO4"
+  }
+ ]
+}

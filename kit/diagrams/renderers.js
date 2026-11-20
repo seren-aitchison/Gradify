@@ -60,13 +60,14 @@ function textBlock(x, y, s, n, opts = {}) {
 
 // ---------- a safe expression compiler for graph specs ----------
 // numbers, x, + - * / ^ ( ), and a short list of functions; nothing else reaches Function()
-const FN = ["sin", "cos", "tan", "exp", "log", "sqrt", "abs"];
+const FN = ["sin", "cos", "tan", "asin", "exp", "log", "sqrt", "abs"];
 export function compile(expr) {
   const src = String(expr).replace(/\s+/g, "");
   const tokens = src.match(/[0-9.]+|[a-z]+|[-+*/^()]/g) || [];
   if (tokens.join("") !== src) throw new Error(`unsupported characters in ${expr}`);
   for (const t of tokens) if (/^[a-z]+$/.test(t) && t !== "x" && !FN.includes(t)) throw new Error(`unknown name ${t} in ${expr}`);
-  const js = tokens.map((t) => (FN.includes(t) ? `Math.${t}` : t === "^" ? "**" : t)).join("");
+  // a unary minus becomes "-1*", so "-(a)^2" means -(a²) instead of being a JavaScript syntax error
+  const js = tokens.map((t, i) => (FN.includes(t) ? `Math.${t}` : t === "^" ? "**" : t === "-" && (i === 0 || /^[-+*/^(]$/.test(tokens[i - 1])) ? "-1*" : t)).join("");
   return new Function("x", `return (${js});`); // eslint-disable-line no-new-func
 }
 
@@ -122,7 +123,8 @@ function graph(spec, W, H) {
   }
   for (const c of spec.curves || []) {
     const f = compile(c.expr), [d0, d1] = c.domain || [x0, x1], pts = [];
-    for (let i = 0; i <= 240; i++) { const x = d0 + ((d1 - d0) * i) / 240, y = f(x); if (Number.isFinite(y) && y > y0 - (y1 - y0) && y < y1 + (y1 - y0)) pts.push([sx(x), sy(y)]); }
+    const N = c.samples || 240;
+    for (let i = 0; i <= N; i++) { const x = d0 + ((d1 - d0) * i) / N, y = f(x); if (Number.isFinite(y) && y > y0 - (y1 - y0) && y < y1 + (y1 - y0)) pts.push([sx(x), sy(y)]); }
     s += `<path d="${pathOf(pts)}" fill="none" stroke="${col(c.colour || "a1")}" stroke-width="${c.width || 3}" stroke-linecap="round" stroke-linejoin="round"${c.dash ? ` stroke-dasharray="${c.dash}"` : ""} clip-path="url(#${clipId})"/>`;
     if (c.label) { const [lx, ly] = c.labelAt; s += text(sx(lx), sy(ly), c.label, { size: 13, weight: 700, fill: col(c.colour || "a1"), anchor: c.anchor || "start" }); }
   }
@@ -164,6 +166,19 @@ function graphChecks(spec) {
       const area = (e, from) => { const f = compile(e), n = 20000, h = (k.to - from) / n; let a = 0; for (let i = 0; i < n; i++) a += f(from + (i + 0.5) * h) * h; return a; };
       const A = area(k.a, k.fromA ?? k.from), B = area(k.b ?? k.a, k.fromB ?? k.from);
       out.push(check(k.name, A > B * (k.factor || 1), `${A.toFixed(4)} against ${B.toFixed(4)} (×${(A / B).toFixed(2)})`));
+    } else if (k.type === "stats") {
+      // repeated measurements: accurate if the mean is close to the true value, precise if the spread is small
+      const v = k.values, m = v.reduce((a, b) => a + b, 0) / v.length, sd = Math.sqrt(v.reduce((a, b) => a + (b - m) ** 2, 0) / (v.length - 1));
+      out.push(check(k.name, (Math.abs(m - k.truth) <= k.tolMean) === k.accurate && (sd <= k.tolSd) === k.precise, `mean ${m.toFixed(3)}, standard deviation ${sd.toFixed(3)}`));
+    } else if (k.type === "haberYield") {
+      // N2 + 3H2 ⇌ 2NH3 from a 1:3 feed: solve Kp for the extent at each pressure and compare with the plotted % NH3
+      const bad = [];
+      for (const [P, y] of k.points) {
+        const f = (x) => { const n = 4 - 2 * x, yN = (1 - x) / n, yH = (3 * (1 - x)) / n, yA = (2 * x) / n; return (yA * yA) / (yN * yH ** 3 * P * P) - k.Kp; };
+        let lo = 0, hi = 1 - 1e-12; for (let i = 0; i < 100; i++) { const m = (lo + hi) / 2; if (f(m) > 0) hi = m; else lo = m; }
+        const pct = (100 * 2 * lo) / (4 - 2 * lo); if (Math.abs(pct - y) > 0.05) bad.push(`${P} bar: plotted ${y}, solved ${pct.toFixed(2)}`);
+      }
+      out.push(check(k.name, !bad.length, bad.join("; ") || `${k.points.length} points match Kp = ${k.Kp.toExponential(2)} bar⁻²`));
     } else if (k.type === "slope") {
       const f = compile(k.expr), d = (f(k.x + 1e-5) - f(k.x - 1e-5)) / 2e-5;
       out.push(check(k.name || `gradient of ${k.expr} at x = ${k.x} is ${k.value}`, near(d, k.value, 1e-3), `gradient ${d.toFixed(4)}`));

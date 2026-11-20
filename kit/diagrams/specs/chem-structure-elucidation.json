@@ -1,0 +1,58 @@
+{
+ "id": "chem-structure-elucidation",
+ "renderer": "flow",
+ "course": "chemistry",
+ "lesson": "Structure elucidation",
+ "title": "Putting the evidence together",
+ "caption": "An unknown with M⁺ at 88 (C₄H₈O₂), a strong IR absorption at 1740 cm⁻¹ but no broad O–H, and ¹H NMR peaks at 1.3 (t, 3H), 2.0 (s, 3H) and 4.1 (q, 2H) is ethyl ethanoate. Each technique narrows the possibilities.",
+ "alt": "A flow: mass spectrum gives the formula, IR the functional group, NMR the arrangement, leading to the structure.",
+ "description": [
+  "MS: M⁺ 88, C₄H₈O₂.",
+  "IR: C=O at 1740 cm⁻¹, no O–H: an ester.",
+  "NMR: an ethyl group next to O and a CH₃ next to C=O.",
+  "Structure: CH₃COOCH₂CH₃."
+ ],
+ "layout": "line",
+ "nodes": [
+  {
+   "id": "a",
+   "label": "MS",
+   "sub": "M⁺ 88: C₄H₈O₂"
+  },
+  {
+   "id": "b",
+   "label": "IR",
+   "sub": "C=O 1740, no O–H: ester"
+  },
+  {
+   "id": "c",
+   "label": "¹H NMR",
+   "sub": "t 3H, s 3H, q 2H"
+  },
+  {
+   "id": "d",
+   "label": "ethyl ethanoate",
+   "tone": "a4"
+  }
+ ],
+ "edges": [
+  {
+   "from": "a",
+   "to": "b"
+  },
+  {
+   "from": "b",
+   "to": "c"
+  },
+  {
+   "from": "c",
+   "to": "d"
+  }
+ ],
+ "claims": [
+  {
+   "type": "equation",
+   "eq": "C4H8O2 → CH3COOC2H5"
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "id": "chem-ir-ethanoic-acid",
+ "renderer": "ir",
+ "course": "chemistry",
+ "lesson": "Infrared spectroscopy",
+ "title": "Infrared spectrum of ethanoic acid",
+ "caption": "The very broad O–H absorption of a carboxylic acid (2500–3000 cm⁻¹, broadened by hydrogen bonding) together with a sharp C=O near 1710 cm⁻¹ identifies the –COOH group. Below 1500 cm⁻¹ is the fingerprint region.",
+ "alt": "Transmittance against wavenumber: a very broad dip from about 2500 to 3300, a strong sharp dip at about 1710 and a dip near 1290.",
+ "description": [
+  "Broad O–H (acid) around 3000 cm⁻¹.",
+  "Strong C=O at 1710 cm⁻¹.",
+  "C–O near 1290 cm⁻¹, in the fingerprint region."
+ ],
+ "molecule": "CC(=O)O",
+ "highlight": [
+  {
+   "group": "carboxylic acid",
+   "colour": "a4"
+  }
+ ],
+ "bands": [
+  {
+   "wn": 2900,
+   "width": 600,
+   "depth": 55,
+   "label": "O–H (acid), broad",
+   "bond": "O–H (acid)"
+  },
+  {
+   "wn": 1710,
+   "width": 50,
+   "depth": 80,
+   "label": "C=O",
+   "bond": "C=O"
+  },
+  {
+   "wn": 1290,
+   "width": 60,
+   "depth": 50,
+   "label": "C–O",
+   "bond": "C–O",
+   "dy": 14
+  }
+ ],
+ "absent": [
+  "O–H (alcohol)",
+  "C≡N"
+ ]
+}

@@ -564,7 +564,7 @@ function dotcrossChecks(spec) {
     const drawn = m.atoms.reduce((t, a) => t + 2 * (a.lone || 0) + (a.single ? 1 : 0), 0) + (m.bonds || []).reduce((t, b) => t + 2 * (b.order || 1), 0);
     out.push(check(`${name}: ${total} outer electrons drawn (valence electrons − charge)`, drawn === total, `drawn ${drawn}`));
     const before = m.atoms.some((a) => a.incomplete);
-    const bad = m.atoms.filter((a) => !a.expanded && !a.incomplete && electronsAround(m, a) !== shellFull(a.el) && !(a.bracket && electronsAround(m, a) === 0) && !(a.bracket && a.charge > 0 && (a.lone || 0) === 0));
+    const bad = m.atoms.filter((a) => !a.expanded && !a.incomplete && electronsAround(m, a) !== shellFull(a.el) && !(a.bracket && electronsAround(m, a) === 0) && !(a.bracket && a.charge > 0 && (a.lone || 0) === 0) && !(a.ion && a.charge > 0 && (a.lone || 0) === 0));
     if (!before) out.push(check(`${name}: every atom has a full outer shell (octet, or two for H)`, !bad.length, bad.map((a) => `${a.el}: ${electronsAround(m, a)}`).join(", ") || "all full"));
     if (m.claims?.formal) { const f = formal(m); const wrong = Object.entries(m.claims.formal).filter(([k, v]) => f[k] !== v); out.push(check(`${name}: formal charges ${JSON.stringify(m.claims.formal)}`, !wrong.length, JSON.stringify(f))); }
     if (m.claims?.oxidation) { const o = oxStates(m); const wrong = Object.entries(m.claims.oxidation).filter(([k, v]) => o[k] !== v); out.push(check(`${name}: oxidation states ${JSON.stringify(m.claims.oxidation)}`, !wrong.length, JSON.stringify(o))); const sum = Object.values(o).reduce((a, b) => a + b, 0); out.push(check(`${name}: oxidation states add up to the charge (${charge})`, sum === charge, `sum ${sum}`)); }

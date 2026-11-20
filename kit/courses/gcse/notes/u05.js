@@ -620,6 +620,7 @@ O: Describe how to carry out paper chromatography
 O: Calculate and interpret Rf values
 H: Purity and formulations
 P: In chemistry, a **pure substance** is a single element or compound, not mixed with any other substance. Pure substances melt and boil at **specific temperatures**; impure substances melt and boil over a **range** of temperatures. In everyday language, "pure" often just means natural or unprocessed, as in "pure orange juice". A **formulation** is a mixture designed as a useful product, with measured quantities of each component; examples include paints, medicines, fuels and cleaning agents.
+D: chem-paper-chromatography
 H: Paper chromatography
 - Draw a **pencil** start line on chromatography paper and add spots of the samples.
 - Stand the paper in a **solvent** below the line, and cover the container.

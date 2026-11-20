@@ -1,0 +1,61 @@
+{
+ "id": "chem-colour-dd",
+ "renderer": "levels",
+ "course": "chemistry",
+ "lesson": "Colour in transition metal complexes",
+ "title": "Why copper(II) solutions are blue",
+ "caption": "In [Cu(H₂O)₆]²⁺ an electron is promoted from t₂g to eg by absorbing light near 800 nm (red and orange), about 150 kJ mol⁻¹. The light transmitted is the complementary colour, so the solution looks pale blue. Changing the ligand changes Δo and so the colour.",
+ "alt": "Energy diagram: t₂g and eg levels with an upward arrow labelled absorbs about 800 nm, and a note that the complementary blue is transmitted.",
+ "description": [
+  "Lower level t₂g, upper eg.",
+  "Arrow up: a photon of about 800 nm absorbed, ΔE = hc/λ ≈ 150 kJ mol⁻¹.",
+  "The remaining light looks blue."
+ ],
+ "kind": "custom",
+ "height": [
+  260,
+  280
+ ],
+ "axisLabel": "energy",
+ "levels": [
+  {
+   "id": "t",
+   "label": "t₂g",
+   "E": 0,
+   "x0": 0.2,
+   "x1": 0.5
+  },
+  {
+   "id": "e",
+   "label": "eg",
+   "E": 1,
+   "x0": 0.2,
+   "x1": 0.5
+  }
+ ],
+ "transitions": [
+  {
+   "from": "t",
+   "to": "e",
+   "x": 0.36,
+   "label": "absorbs ≈ 800 nm (red), 150 kJ mol⁻¹",
+   "colour": "a2"
+  }
+ ],
+ "notes": [
+  {
+   "x": 0.8,
+   "E": 0.5,
+   "text": "transmits blue",
+   "bold": true,
+   "colour": "a1"
+  }
+ ],
+ "claims": [
+  {
+   "type": "photon",
+   "nm": 800,
+   "kj": 149.5
+  }
+ ]
+}

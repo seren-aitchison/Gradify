@@ -44,12 +44,17 @@ function bondPath(x1, y1, x2, y2, kind, colr = C.ink) {
   if (kind === "d") { let s = ""; const L = Math.hypot(x2 - x1, y2 - y1), nx = -(y2 - y1) / L, ny = (x2 - x1) / L; for (let i = 1; i <= 7; i++) { const t = i / 7, x = x1 + (x2 - x1) * t, y = y1 + (y2 - y1) * t, w = 6 * t; s += line(x - nx * w, y - ny * w, x + nx * w, y + ny * w, { stroke: colr, w: 1.6 }); } return s; }
   return line(x1, y1, x2, y2, { stroke: colr, w: 2.4 });
 }
+// a metal complex's shape comes from its coordination geometry, not from lone pairs on the metal
+const GEOM = { linear: "2,0", tetrahedral: "4,0", "square planar": "4,2", octahedral: "6,0", "trigonal bipyramidal": "5,0" };
+// 3D directions of the template positions, for cis/trans: square planar and octahedral
+const DIR3 = { "4,2": [[-1, 0, 0], [1, 0, 0], [0, 0, 1], [0, 0, -1]], "6,0": [[0, 1, 0], [0, -1, 0], [-1, 0, 0], [1, 0, 0], [0, 0, 1], [0, 0, -1]] };
+const keyOf = (m) => (m.complex ? GEOM[m.shape] : `${m.ligands.length},${lonePairs(m)}`);
 function vsepr(spec, W, narrow) {
   const ms = spec.molecules, perRow = narrow ? (ms.length > 3 ? 2 : 1) : Math.min(ms.length, spec.perRow || 3);
   const cw = (W - 20) / perRow, ch = spec.cellHeight || (narrow && perRow === 2 ? 230 : 250), Lb = narrow && perRow === 2 ? 48 : 62;
   let s = "", H = 0;
   ms.forEach((m, i) => {
-    const lp = lonePairs(m), key = `${m.ligands.length},${lp}`, t = T[key];
+    const key = keyOf(m), t = T[key] && (m.complex ? { ...T[key], E: [] } : T[key]);
     const cx = 10 + (i % perRow) * cw + cw / 2, cy = 24 + Math.floor(i / perRow) * ch + ch / 2 - 28;
     if (!t) { s += text(cx, cy, `no template for ${key}`, { fill: col("bad") }); return; }
     t.L.forEach(([dx, dy, kind], j) => {
@@ -77,7 +82,7 @@ function vsepr(spec, W, narrow) {
     if (m.dipole) { const sx = cx + (m.dipole[0] || 0) * 0, dir = m.dipole; s += arrow(cx + dir[0] * -Lb * 0.9 + 70, cy + dir[1] * -Lb * 0.9, cx + dir[0] * Lb * 0.9 + 70, cy + dir[1] * Lb * 0.9, { stroke: col("a4"), w: 2.6, head: 10 }) + text(cx + 82, cy + 4, "net dipole", { size: 11, weight: 700, anchor: "start", fill: col("a4") }); }
     const by = cy + Lb + 32;
     s += text(cx, by, fm(m.label || ""), { size: 13.5, weight: 700 });
-    const [, shape] = VSEPR[key] || [];
+    const shape = m.complex ? m.shape : (VSEPR[key] || [])[1];
     s += text(cx, by + 18, m.sub || `${shape}${m.angle ? `, ${m.angle}` : ""}`, { size: 12, fill: C.soft });
     if (m.polar != null) s += text(cx, by + 35, m.polar ? "polar" : "non-polar", { size: 12, weight: 700, fill: m.polar ? col("a4") : C.soft });
     H = Math.max(H, by + (m.polar != null ? 44 : 28));
@@ -89,7 +94,18 @@ const fmText = (s) => esc(ascii(s)).replace(/([A-Za-z)])(\d+)/g, '$1<tspan basel
 function vseprChecks(spec) {
   const out = [];
   for (const m of spec.molecules) {
-    const lp = lonePairs(m), key = `${m.ligands.length},${lp}`, row = VSEPR[key], name = m.label || m.centre;
+    const name = m.label || m.centre;
+    if (m.complex) {
+      const key = GEOM[m.shape];
+      out.push(check(`${name}: coordination number ${m.ligands.length} fits a ${m.shape} complex`, !!key && +key.split(",")[0] === m.ligands.length));
+      if (m.isomer) {
+        const d = DIR3[key], same = m.ligands.map((l, i) => [l.el, i]).filter(([e]) => e === m.isomerLigand).map(([, i]) => d[i]);
+        const ang = Math.round((Math.acos(same[0][0] * same[1][0] + same[0][1] * same[1][1] + same[0][2] * same[1][2]) * 180) / Math.PI);
+        out.push(check(`${name}: the two ${m.isomerLigand} ligands are ${m.isomer} (${m.isomer === "cis" ? 90 : 180}° apart)`, ang === (m.isomer === "cis" ? 90 : 180), `${ang}° in the drawing`));
+      }
+      continue;
+    }
+    const lp = lonePairs(m), key = `${m.ligands.length},${lp}`, row = VSEPR[key];
     if (!m.complex) out.push(check(`${name}: ${m.ligands.length} bonding domain(s) and ${lp} lone pair(s) from the electron count`, Number.isInteger(lp) && lp >= 0 && (m.lp == null || m.lp === lp), `${m.centre} has ${VALENCE[m.centre]} outer electrons, ${m.ligands.reduce((a, l) => a + (l.order || 1), 0)} used in bonds, charge ${m.charge || 0}`));
     out.push(check(`${name}: shape ${m.shape}`, !!row && row[1] === m.shape, row ? `VSEPR gives ${row[1]} (${row[0]} electron pairs)` : `no entry for ${key}`));
     if (m.angle) out.push(check(`${name}: bond angle ${m.angle}`, !!row && row[2].replace("<", "") === m.angle.replace("<", "").replace("about ", "") || (m.angleNote && !!row), row ? `VSEPR gives ${row[2]}` : ""));
@@ -359,11 +375,11 @@ const APP = {
     for (let v = 0; v <= 50; v += 5) s += line(236, 20 + v * 5, 244, 20 + v * 5, { w: 1 }) + (v % 10 ? "" : text(250, 20 + v * 5, String(v), { size: 10, anchor: "start", fill: C.soft }));
     s += `<path d="M219 270 h12 v10 h-12 Z" fill="#94a3b8" stroke="${C.ink}" stroke-width="1.4"/><path d="M222 280 v26 h6 v-26" fill="none" stroke="${C.ink}" stroke-width="1.6"/>`;
     s += `<path d="M205 320 h40 v20 l40 60 h-120 l40 -60 Z" fill="none" stroke="${C.ink}" stroke-width="2"/><path d="M178 375 l-13 25 h120 l-13 -25 Z" fill="${spec.colour || "#fbcfe8"}" fill-opacity=".9"/>`;
-    s += lbl(214, 60, 90, 50, "burette: titrant", "end") + lbl(185, 386, 90, 390, `conical flask: ${spec.analyte || "analyte + indicator"}`, "end");
+    s += lbl(214, 60, 120, 50, "burette: titrant", "end") + text(225, 420, `conical flask: ${spec.analyte || "analyte + indicator"}`, { size: 12.5, weight: 600, fill: C.ink });
     s += lab(300, 120, `initial reading ${spec.initial.toFixed(2)} cm³`) + lab(300, 142, `final reading ${spec.final.toFixed(2)} cm³`) + lab(300, 168, `titre ${spec.titre.toFixed(2)} cm³`, { fill: col("a2") });
     s += lab(300, 196, "read the bottom of the meniscus at eye level", { fill: C.soft });
     s += `<rect x="0" y="0" width="0" height="0"/>`;
-    return { s: s.replace(/text-anchor="start"([^>]*)>read the bottom/, 'text-anchor="start"$1>read the bottom'), H: 410 };
+    return { s, H: 432 };
   },
   filtration(spec) {
     let s = `<path d="M70 60 h120 l-50 70 v60 h-20 v-60 Z" fill="none" stroke="${C.ink}" stroke-width="2"/><path d="M80 66 h100 l-50 62 Z" fill="#f8fafc" stroke="${C.soft}" stroke-width="1.2"/><path d="M98 90 h64 l-32 38 Z" fill="${spec.residueColour || "#d6c7a1"}"/>`;

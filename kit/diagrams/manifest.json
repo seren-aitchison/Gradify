@@ -10364,24 +10364,14 @@
     "ok": true
    },
    {
-    "name": "[Cu(H2O)6]^2+: shape octahedral",
+    "name": "[Cu(H2O)6]^2+: coordination number 6 fits a octahedral complex",
     "ok": true,
-    "detail": "VSEPR gives octahedral (octahedral electron pairs)"
+    "detail": ""
    },
    {
-    "name": "[Cu(H2O)6]^2+: bond angle 90°",
+    "name": "[CuCl4]^2-: coordination number 4 fits a tetrahedral complex",
     "ok": true,
-    "detail": "VSEPR gives 90°"
-   },
-   {
-    "name": "[CuCl4]^2-: shape tetrahedral",
-    "ok": true,
-    "detail": "VSEPR gives tetrahedral (tetrahedral electron pairs)"
-   },
-   {
-    "name": "[CuCl4]^2-: bond angle 109.5°",
-    "ok": true,
-    "detail": "VSEPR gives 109.5°"
+    "detail": ""
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
@@ -14494,6 +14484,2669 @@
     "name": "dimethyl disulfide: contains disulfide",
     "ok": true,
     "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-c13-nmr-propanol": {
+  "title": "¹³C NMR spectrum of propan-1-ol",
+  "caption": "Each carbon environment gives one line. Propan-1-ol has three different carbons, so three lines; the one bonded to oxygen is furthest downfield (64 ppm). Propan-2-ol, by symmetry, would give only two.",
+  "alt": "¹³C spectrum with lines at about 10, 26 and 64 ppm, and the structure of propan-1-ol.",
+  "description": [
+   "δ 10: CH₃.",
+   "δ 26: the middle CH₂.",
+   "δ 64: CH₂ bonded to oxygen."
+  ],
+  "course": "chemistry",
+  "lesson": "Carbon-13 NMR",
+  "also": [],
+  "renderer": "nmr",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u15.js: Carbon-13 NMR"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "3 peaks: 3 carbon environments by symmetry",
+    "ok": true,
+    "detail": "classes of sizes [1, 1, 1]"
+   },
+   {
+    "name": "δ 10: one carbon environment",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "δ 10 lies in the C–C range (5–40 ppm)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "δ 26: one carbon environment",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "δ 26 lies in the C–C range (5–40 ppm)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "δ 64: one carbon environment",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "δ 64 lies in the C–O range (50–90 ppm)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-h-nmr-ethanol": {
+  "title": "¹H NMR spectrum of ethanol",
+  "caption": "Ethanol has three hydrogen environments, so three peaks in a 3:2:1 ratio. The CH₃ is split into a triplet by the two neighbouring CH₂ hydrogens, the CH₂ into a quartet by the three CH₃ hydrogens, and the O–H is a singlet because it exchanges rapidly.",
+  "alt": "Spectrum with a triplet at 1.2 ppm (3H), a quartet at 3.7 ppm (2H) and a singlet at 2.6 ppm (1H), and the structure of ethanol.",
+  "description": [
+   "δ 1.2, 3H, triplet: CH₃ next to CH₂.",
+   "δ 3.7, 2H, quartet: CH₂ next to O and CH₃.",
+   "δ 2.6, 1H, singlet: O–H (its position varies)."
+  ],
+  "course": "chemistry",
+  "lesson": "Proton NMR",
+  "also": [],
+  "renderer": "nmr",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u15.js: Proton NMR"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "3 peaks: 3 hydrogen environments by symmetry",
+    "ok": true,
+    "detail": "classes of sizes [1, 2, 3]"
+   },
+   {
+    "name": "δ 1.2: 3H in one environment",
+    "ok": true,
+    "detail": "3 H in 1 class(es)"
+   },
+   {
+    "name": "δ 1.2: t by the n + 1 rule",
+    "ok": true,
+    "detail": "2 neighbouring H → t"
+   },
+   {
+    "name": "δ 1.2 lies in the R–CH3 range (0.7–1.3 ppm)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "δ 3.7: 2H in one environment",
+    "ok": true,
+    "detail": "2 H in 1 class(es)"
+   },
+   {
+    "name": "δ 3.7: q by the n + 1 rule",
+    "ok": true,
+    "detail": "3 neighbouring H → q"
+   },
+   {
+    "name": "δ 3.7 lies in the H–C–O range (3.3–4.3 ppm)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "δ 2.6: 1H in one environment",
+    "ok": true,
+    "detail": "1 H in 1 class(es)"
+   },
+   {
+    "name": "δ 2.6: s by the n + 1 rule",
+    "ok": true,
+    "detail": "0 neighbouring H → s"
+   },
+   {
+    "name": "δ 2.6 lies in the R–OH range (0.5–5.0 ppm)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "integrations add up to the 6 hydrogens in C2H6O",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-nmr-principle": {
+  "title": "Nuclear spin in a magnetic field",
+  "caption": "A ¹H nucleus has two spin states that have the same energy until a magnetic field is applied. In a field they split: aligned with the field (α) is lower, against it (β) higher. Radio waves of exactly the gap flip spins; the gap depends on the local field, which is what chemical shift measures.",
+  "alt": "Energy diagram: one level with no field, splitting into a lower α level and a higher β level in a field, with a radio-frequency arrow between them.",
+  "description": [
+   "No field: one energy for both spin states.",
+   "In field B₀: α (aligned) lower, β (opposed) higher.",
+   "Absorbing radio waves of energy ΔE flips α to β."
+  ],
+  "course": "chemistry",
+  "lesson": "Nuclear magnetic resonance",
+  "also": [],
+  "renderer": "levels",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u15.js: Nuclear magnetic resonance"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the aligned (α) state is lower in energy",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-accuracy-precision": {
+  "title": "Accuracy and precision",
+  "caption": "Four students each repeat a titration whose true titre is 25.00 cm³. Accuracy is how close the mean is to the true value; precision is how close the repeats are to each other. Precise results can still be inaccurate, from a systematic error such as a misread burette.",
+  "alt": "Four clusters of four titres around a dashed true value of 25.00 cm³: tight and on target; tight but high; spread but centred; spread and off.",
+  "description": [
+   "Student 1: 25.01, 24.99, 25.02, 25.00: accurate and precise.",
+   "Student 2: 25.40–25.43: precise but not accurate.",
+   "Student 3: 24.70–25.30: centred on 25.00 but not precise.",
+   "Student 4: spread and off target."
+  ],
+  "course": "chemistry",
+  "lesson": "Accuracy and precision",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u15.js: Accuracy and precision"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "student 1: accurate and precise",
+    "ok": true,
+    "detail": "mean 25.005, standard deviation 0.013"
+   },
+   {
+    "name": "student 2: precise, not accurate",
+    "ok": true,
+    "detail": "mean 25.415, standard deviation 0.013"
+   },
+   {
+    "name": "student 3: accurate, not precise",
+    "ok": true,
+    "detail": "mean 25.000, standard deviation 0.274"
+   },
+   {
+    "name": "student 4: neither",
+    "ok": true,
+    "detail": "mean 25.425, standard deviation 0.427"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-bragg": {
+  "title": "Bragg's law",
+  "caption": "nλ = 2d sin θ. With copper Kα X-rays (λ = 0.154 nm) and the 0.282 nm spacing between planes in NaCl, reflections appear at θ = 15.9° (n = 1), 33.1° (n = 2) and 55.0° (n = 3). Measuring θ gives the spacing d.",
+  "alt": "Diffraction angle θ against order n: points at 15.9°, 33.1° and 55.0° for n = 1, 2 and 3.",
+  "description": [
+   "n = 1: θ = 15.9°.",
+   "n = 2: θ = 33.1°.",
+   "n = 3: θ = 55.0°."
+  ],
+  "course": "chemistry",
+  "lesson": "X-ray diffraction",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u15.js: X-ray diffraction"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "n = 1: sin θ = 1 × 0.154 ÷ (2 × 0.282)",
+    "ok": true,
+    "detail": "y(1) = 15.8522"
+   },
+   {
+    "name": "n = 2: sin θ = 2 × 0.154 ÷ (2 × 0.282)",
+    "ok": true,
+    "detail": "y(2) = 33.1144"
+   },
+   {
+    "name": "n = 3: sin θ = 3 × 0.154 ÷ (2 × 0.282)",
+    "ok": true,
+    "detail": "y(3) = 55.0316"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-calibration": {
+  "title": "A calibration graph",
+  "caption": "Standards of known concentration are measured and a best-fit line drawn. The unknown's absorbance, 0.300, is read across to the line and down: 5.85 mg dm⁻³. The unknown must lie within the range of the standards.",
+  "alt": "Absorbance against concentration for six standards from 0 to 10 mg dm⁻³ with a best-fit straight line; dashed lines read an unknown absorbance of 0.300 across to the line and down to about 5.9.",
+  "description": [
+   "Six standards: absorbance rises in proportion to concentration.",
+   "Best-fit line, gradient 0.0509 dm³ mg⁻¹.",
+   "Unknown: A = 0.300, so c = 5.85 mg dm⁻³."
+  ],
+  "course": "chemistry",
+  "lesson": "Calibration",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u15.js: Calibration"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the unknown's absorbance 0.300 reads 5.85 mg dm⁻³ from the line",
+    "ok": true,
+    "detail": "y(5.8506) = 0.3"
+   },
+   {
+    "name": "the line fits the top standard (0.512)",
+    "ok": true,
+    "detail": "0.050943*x+0.001952 at 10 = 0.51; expected 0.505–0.52"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-cfs-octahedral": {
+  "title": "Splitting of the d orbitals in an octahedral complex",
+  "caption": "Six ligands approaching along the axes repel the d orbitals that point at them (eg: dz² and dx²−y²) more than those between the axes (t₂g). The gap is Δo. Ti³⁺ (d¹) puts its single electron in t₂g; absorbing light promotes it to eg.",
+  "alt": "Energy diagram: two eg orbitals above three t₂g orbitals, with the gap Δo; one electron in t₂g for Ti³⁺.",
+  "description": [
+   "Upper: eg, two orbitals.",
+   "Lower: t₂g, three orbitals, holding one electron for Ti³⁺.",
+   "The gap between them is Δo."
+  ],
+  "course": "chemistry",
+  "lesson": "Crystal field theory",
+  "also": [],
+  "renderer": "levels",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u11.js: Crystal field theory"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Ti3+ is d1",
+    "ok": true,
+    "detail": "computed d1"
+   },
+   {
+    "name": "[Ti(H₂O)₆]³⁺, d¹: 1 unpaired electrons",
+    "ok": true,
+    "detail": "computed 1"
+   },
+   {
+    "name": "spin-only moment 1.73 μB",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-cis-trans-platin": {
+  "title": "Cis-platin and trans-platin",
+  "caption": "Pt(NH₃)₂Cl₂ is square planar, so it has two isomers. In cisplatin the two chlorides are next to each other (90°); in the trans isomer they are opposite (180°). Only cisplatin is an anticancer drug: it binds two neighbouring bases on one DNA strand.",
+  "alt": "Two square planar platinum complexes: cis, with the chlorides at 90°, and trans, with them at 180°.",
+  "description": [
+   "Cisplatin: Cl and Cl on adjacent corners of the square.",
+   "Transplatin: Cl and Cl on opposite corners."
+  ],
+  "course": "chemistry",
+  "lesson": "Isomerism in complexes",
+  "also": [],
+  "renderer": "vsepr",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u11.js: Isomerism in complexes"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "cisplatin: coordination number 4 fits a square planar complex",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "cisplatin: the two Cl ligands are cis (90° apart)",
+    "ok": true,
+    "detail": "90° in the drawing"
+   },
+   {
+    "name": "transplatin: coordination number 4 fits a square planar complex",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "transplatin: the two Cl ligands are trans (180° apart)",
+    "ok": true,
+    "detail": "180° in the drawing"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-colour-dd": {
+  "title": "Why copper(II) solutions are blue",
+  "caption": "In [Cu(H₂O)₆]²⁺ an electron is promoted from t₂g to eg by absorbing light near 800 nm (red and orange), about 150 kJ mol⁻¹. The light transmitted is the complementary colour, so the solution looks pale blue. Changing the ligand changes Δo and so the colour.",
+  "alt": "Energy diagram: t₂g and eg levels with an upward arrow labelled absorbs about 800 nm, and a note that the complementary blue is transmitted.",
+  "description": [
+   "Lower level t₂g, upper eg.",
+   "Arrow up: a photon of about 800 nm absorbed, ΔE = hc/λ ≈ 150 kJ mol⁻¹.",
+   "The remaining light looks blue."
+  ],
+  "course": "chemistry",
+  "lesson": "Colour in transition metal complexes",
+  "also": [],
+  "renderer": "levels",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u11.js: Colour in transition metal complexes"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "800 nm photons carry 149.5 kJ mol⁻¹",
+    "ok": true,
+    "detail": "150 kJ mol⁻¹"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-complex-shapes": {
+  "title": "Shapes of complex ions",
+  "caption": "Six ligands give an octahedral complex (90°), four usually tetrahedral (109.5°); d⁸ ions such as Ni²⁺, Pd²⁺ and Pt²⁺ with strong-field ligands form square planar complexes (90°).",
+  "alt": "Three complexes: octahedral [Fe(H₂O)₆]²⁺, tetrahedral [CoCl₄]²⁻ and square planar [Ni(CN)₄]²⁻.",
+  "description": [
+   "[Fe(H₂O)₆]²⁺: octahedral.",
+   "[CoCl₄]²⁻: tetrahedral.",
+   "[Ni(CN)₄]²⁻: square planar."
+  ],
+  "course": "chemistry",
+  "lesson": "Coordination compounds",
+  "also": [],
+  "renderer": "vsepr",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u11.js: Coordination compounds"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "[Fe(H2O)6]^2+: coordination number 6 fits a octahedral complex",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "[CoCl4]^2-: coordination number 4 fits a tetrahedral complex",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "[Ni(CN)4]^2-: coordination number 4 fits a square planar complex",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-contact-process": {
+  "title": "The Contact process",
+  "caption": "Sulfur is burned to SO₂, which is oxidised to SO₃ over a vanadium(V) oxide catalyst at about 450 °C and 1–2 atm. SO₃ is absorbed in concentrated sulfuric acid (not water, which would make a mist) and then diluted.",
+  "alt": "A flow: S → SO₂ → SO₃ (V₂O₅, 450 °C) → H₂S₂O₇ (with H₂SO₄) → H₂SO₄ (with water).",
+  "description": [
+   "S + O₂ → SO₂.",
+   "2SO₂ + O₂ ⇌ 2SO₃, V₂O₅ catalyst, 450 °C.",
+   "SO₃ + H₂SO₄ → H₂S₂O₇ (oleum).",
+   "H₂S₂O₇ + H₂O → 2H₂SO₄."
+  ],
+  "course": "chemistry",
+  "lesson": "Industrial inorganic chemistry",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u11.js: Industrial inorganic chemistry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "S + O2 → SO2 balances",
+    "ok": true,
+    "detail": "atoms and charge balance (S, O; charge 0)"
+   },
+   {
+    "name": "2SO2 + O2 → 2SO3 balances",
+    "ok": true,
+    "detail": "atoms and charge balance (S, O; charge 0)"
+   },
+   {
+    "name": "SO3 + H2SO4 → H2S2O7 balances",
+    "ok": true,
+    "detail": "atoms and charge balance (S, O, H; charge 0)"
+   },
+   {
+    "name": "H2S2O7 + H2O → 2H2SO4 balances",
+    "ok": true,
+    "detail": "atoms and charge balance (H, S, O; charge 0)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-coordination-numbers": {
+  "title": "Coordination numbers 2, 4 and 6",
+  "caption": "The coordination number is the number of coordinate bonds to the central metal ion. Small ligands such as NH₃ and H₂O usually give 6; large ones such as Cl⁻ give 4; Ag⁺ forms linear complexes with 2, as in Tollens' reagent.",
+  "alt": "Linear [Ag(NH₃)₂]⁺, tetrahedral [CuCl₄]²⁻ and octahedral [Co(NH₃)₆]³⁺.",
+  "description": [
+   "[Ag(NH₃)₂]⁺: 2, linear.",
+   "[CuCl₄]²⁻: 4, tetrahedral.",
+   "[Co(NH₃)₆]³⁺: 6, octahedral."
+  ],
+  "course": "chemistry",
+  "lesson": "Coordination numbers",
+  "also": [],
+  "renderer": "vsepr",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u11.js: Coordination numbers"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "[Ag(NH3)2]^+: coordination number 2 fits a linear complex",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "[CuCl4]^2-: coordination number 4 fits a tetrahedral complex",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "[Co(NH3)6]^3+: coordination number 6 fits a octahedral complex",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-ellingham": {
+  "title": "An Ellingham diagram: when carbon reduces iron oxide",
+  "caption": "ΔG° per mole of O₂ against temperature. Forming CO gets more favourable as T rises (its line slopes down, ΔS > 0), while forming FeO gets less favourable. Above the crossing, about 994 K, carbon's line is lower, so carbon can reduce FeO.",
+  "alt": "Two lines of ΔG° against temperature: 2C + O₂ → 2CO falling, 2Fe + O₂ → 2FeO rising; they cross near 990 K.",
+  "description": [
+   "2C + O₂ → 2CO: ΔG° = −221 − 0.179T kJ, falling.",
+   "2Fe + O₂ → 2FeO: ΔG° = −528 + 0.130T kJ, rising.",
+   "They cross at about 994 K; above it carbon reduces FeO."
+  ],
+  "course": "chemistry",
+  "lesson": "Metal extraction",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u11.js: Metal extraction"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the lines cross at 994 K",
+    "ok": true,
+    "detail": "-221-0.179*x → -398.841, -528+0.130*x → -398.841"
+   },
+   {
+    "name": "at 1500 K the carbon line is lower: C can reduce FeO",
+    "ok": true,
+    "detail": "-489.5 < -333"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-ferrocene": {
+  "title": "The pieces of ferrocene",
+  "caption": "Ferrocene, Fe(C₅H₅)₂, is a sandwich: an iron(II) ion between two cyclopentadienide rings. Each aromatic C₅H₅⁻ ring donates six π electrons, and Fe²⁺ (d⁶) brings six, giving the stable 18-electron count.",
+  "alt": "Two cyclopentadienide anions and an iron(II) ion, the components of ferrocene.",
+  "description": [
+   "Two C₅H₅⁻ rings, each aromatic with six π electrons.",
+   "Fe²⁺ (d⁶), held between them in ferrocene: 6 + 6 + 6 = 18 electrons."
+  ],
+  "course": "chemistry",
+  "lesson": "Organometallic chemistry",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u11.js: Organometallic chemistry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "C₅H₅⁻: formula C5H5",
+    "ok": true,
+    "detail": "RDKit: C5H5-"
+   },
+   {
+    "name": "Fe²⁺: formula Fe",
+    "ok": true,
+    "detail": "RDKit: Fe+2"
+   },
+   {
+    "name": "C₅H₅⁻: formula C5H5",
+    "ok": true,
+    "detail": "RDKit: C5H5-"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-fragmentation-butanone": {
+  "title": "Fragmentation of butanone",
+  "caption": "Butanone (M⁺ at 72) breaks next to the C=O, giving acylium ions: CH₃CO⁺ at 43 (the base peak) and C₂H₅CO⁺ at 57. A peak at 29 is C₂H₅⁺. Fragments that keep the C=O are especially stable.",
+  "alt": "Mass spectrum with peaks at 29, 43 (tallest), 57 and 72.",
+  "description": [
+   "m/z 72: M⁺, C₄H₈O⁺.",
+   "m/z 57: CH₃CH₂CO⁺.",
+   "m/z 43: CH₃CO⁺, base peak.",
+   "m/z 29: C₂H₅⁺."
+  ],
+  "course": "chemistry",
+  "lesson": "Fragmentation patterns",
+  "also": [],
+  "renderer": "ms",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u15.js: Fragmentation patterns"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "m/z 72 is C4H8O",
+    "ok": true,
+    "detail": "mass 72"
+   },
+   {
+    "name": "C4H8O can come from C4H8O",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "m/z 57 is C3H5O",
+    "ok": true,
+    "detail": "mass 57"
+   },
+   {
+    "name": "C3H5O can come from C4H8O",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "m/z 43 is C2H3O",
+    "ok": true,
+    "detail": "mass 43"
+   },
+   {
+    "name": "C2H3O can come from C4H8O",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "m/z 29 is C2H5",
+    "ok": true,
+    "detail": "mass 29"
+   },
+   {
+    "name": "C2H5 can come from C4H8O",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "molecular ion at m/z 72",
+    "ok": true,
+    "detail": "C4H8O: 72"
+   },
+   {
+    "name": "base peak at m/z 43",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-gas-chromatogram": {
+  "title": "A gas chromatogram",
+  "caption": "Hexane, heptane and octane are carried through the column by the gas; the more volatile (lower boiling) the compound, the less time it spends dissolved in the stationary phase and the sooner it reaches the detector. The area under each peak is proportional to its amount.",
+  "alt": "Detector signal against time: peaks at 2.1 min (hexane), 3.4 min (heptane) and 5.2 min (octane), getting lower and wider.",
+  "description": [
+   "2.1 min: hexane (bp 69 °C).",
+   "3.4 min: heptane (bp 98 °C).",
+   "5.2 min: octane (bp 126 °C)."
+  ],
+  "course": "chemistry",
+  "lesson": "Gas chromatography",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u15.js: Gas chromatography"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "hexane (lowest bp) elutes first, 2.1 min",
+    "ok": true,
+    "detail": "found (2.1, 100)"
+   },
+   {
+    "name": "maximum of 100*exp(-((x-2.1)/0.07)^2)+70*exp(-((x-3.4)/0.09)^2)+40*exp(-((x-5.2)/0.12)^2) is at (3.4, 70)",
+    "ok": true,
+    "detail": "found (3.4, 70)"
+   },
+   {
+    "name": "octane (highest bp) elutes last, 5.2 min",
+    "ok": true,
+    "detail": "found (5.2, 40)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-gcms": {
+  "title": "GC–MS",
+  "caption": "Gas chromatography separates a mixture in time; each compound then enters the mass spectrometer, which records its spectrum. Matching the retention time and the mass spectrum against a library identifies the compound, as in drug testing and forensic analysis.",
+  "alt": "A flow: sample injected → GC column separates → each compound in turn ionised → mass spectrum → library match.",
+  "description": [
+   "Inject the vaporised sample.",
+   "The GC column separates components by retention time.",
+   "Each component is ionised and its mass spectrum recorded.",
+   "The spectrum and retention time are matched to a database."
+  ],
+  "course": "chemistry",
+  "lesson": "GC-MS",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u15.js: GC-MS"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every step is linked: no box without an arrow",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-gravimetric": {
+  "title": "Gravimetric analysis of sulfate",
+  "caption": "Sulfate is precipitated completely as barium sulfate, filtered, washed, dried and weighed until two weighings agree (constant mass). The mass of BaSO₄ gives the moles of sulfate: 0.583 g ÷ 233.4 g mol⁻¹ = 2.50 × 10⁻³ mol.",
+  "alt": "A flow: add excess BaCl₂(aq) → filter → wash → dry and weigh → repeat until constant mass.",
+  "description": [
+   "Ba²⁺ + SO₄²⁻ → BaSO₄(s), with excess barium so all the sulfate precipitates.",
+   "Filter through ashless paper and wash with water.",
+   "Dry, cool and weigh; repeat to constant mass."
+  ],
+  "course": "chemistry",
+  "lesson": "Gravimetric analysis",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u15.js: Gravimetric analysis"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Ba2+ + SO4^2- → BaSO4 balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Ba, S, O; charge 0)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-group2-solubility": {
+  "title": "Group 2 sulfates become less soluble",
+  "caption": "Down group 2 the sulfates become less soluble: Ksp falls from 4.9 × 10⁻⁵ for CaSO₄ to 1.1 × 10⁻¹⁰ for BaSO₄, which is why acidified BaCl₂ is the test for sulfate. The hydroxides show the opposite trend.",
+  "alt": "Bar chart of log₁₀ Ksp for calcium, strontium and barium sulfates, falling from −4.31 to −9.97.",
+  "description": [
+   "CaSO₄: log Ksp −4.31.",
+   "SrSO₄: −6.46.",
+   "BaSO₄: −9.97, the least soluble."
+  ],
+  "course": "chemistry",
+  "lesson": "s-block chemistry",
+  "also": [],
+  "renderer": "trend",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u11.js: s-block chemistry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every value matches log₁₀ Ksp of group 2 sulfates at 25 °C (CRC Handbook of Chemistry and Physics, solubility product constants (CaSO₄ 4.93 × 10⁻⁵, SrSO₄ 3.44 × 10⁻⁷, BaSO₄ 1.08 × 10⁻¹⁰), as log₁₀ to 2 d.p.)",
+    "ok": true,
+    "detail": "3 values"
+   },
+   {
+    "name": "CaSO4 → BaSO4: decreasing",
+    "ok": true,
+    "detail": "CaSO4 -4.31, SrSO4 -6.46, BaSO4 -9.97"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-haem": {
+  "title": "The iron centre of haem",
+  "caption": "In haemoglobin, Fe²⁺ sits in an octahedral site: four nitrogens of the flat porphyrin ring, one histidine nitrogen below, and O₂ bound above. Carbon monoxide binds the same site about 200 times more strongly, which is why it is poisonous.",
+  "alt": "An octahedral iron ion with four porphyrin nitrogens around it, histidine below and O₂ above.",
+  "description": [
+   "Four N of the porphyrin in the equatorial plane.",
+   "Histidine N below.",
+   "O₂ above, in the sixth position."
+  ],
+  "course": "chemistry",
+  "lesson": "Bioinorganic chemistry",
+  "also": [],
+  "renderer": "vsepr",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u11.js: Bioinorganic chemistry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Fe²⁺ in oxyhaemoglobin: coordination number 6 fits a octahedral complex",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-high-low-spin": {
+  "title": "High-spin and low-spin d⁶",
+  "caption": "Fe²⁺ is d⁶. With weak-field water, Δo is smaller than the energy needed to pair electrons, so they spread out: high spin, four unpaired. With strong-field cyanide, Δo is large and all six pair in t₂g: low spin, none unpaired.",
+  "alt": "Two octahedral splitting diagrams for Fe²⁺: [Fe(H₂O)₆]²⁺ high spin with four unpaired electrons, [Fe(CN)₆]⁴⁻ low spin with none.",
+  "description": [
+   "[Fe(H₂O)₆]²⁺: t₂g with one pair and two singles, eg with two singles: four unpaired.",
+   "[Fe(CN)₆]⁴⁻: t₂g fully paired, eg empty: none unpaired, diamagnetic."
+  ],
+  "course": "chemistry",
+  "lesson": "Ligand field theory",
+  "also": [],
+  "renderer": "levels",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u11.js: Ligand field theory"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Fe2+ is d6",
+    "ok": true,
+    "detail": "computed d6"
+   },
+   {
+    "name": "[Fe(H₂O)₆]²⁺ high spin: 4 unpaired electrons",
+    "ok": true,
+    "detail": "computed 4"
+   },
+   {
+    "name": "spin-only moment 4.9 μB",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Fe2+ is d6",
+    "ok": true,
+    "detail": "computed d6"
+   },
+   {
+    "name": "[Fe(CN)₆]⁴⁻ low spin: 0 unpaired electrons",
+    "ok": true,
+    "detail": "computed 0"
+   },
+   {
+    "name": "spin-only moment 0 μB",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-hplc": {
+  "title": "An HPLC chromatogram of a painkiller",
+  "caption": "Reversed-phase HPLC: the stationary phase is non-polar, so the most polar component (paracetamol) elutes first and the least polar (aspirin, here last) is retained longest. Comparing retention times with standards identifies each component; peak areas give amounts.",
+  "alt": "Detector signal against time with three peaks: paracetamol 1.6 min, caffeine 2.5 min, aspirin 4.3 min.",
+  "description": [
+   "1.6 min: paracetamol.",
+   "2.5 min: caffeine (tallest).",
+   "4.3 min: aspirin."
+  ],
+  "course": "chemistry",
+  "lesson": "High-performance liquid chromatography",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u15.js: High-performance liquid chromatography"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "maximum of 60*exp(-((x-1.6)/0.08)^2)+100*exp(-((x-2.5)/0.1)^2)+45*exp(-((x-4.3)/0.14)^2) is at (1.6, 60)",
+    "ok": true,
+    "detail": "found (1.6, 60)"
+   },
+   {
+    "name": "maximum of 60*exp(-((x-1.6)/0.08)^2)+100*exp(-((x-2.5)/0.1)^2)+45*exp(-((x-4.3)/0.14)^2) is at (2.5, 100)",
+    "ok": true,
+    "detail": "found (2.5, 100)"
+   },
+   {
+    "name": "maximum of 60*exp(-((x-1.6)/0.08)^2)+100*exp(-((x-2.5)/0.1)^2)+45*exp(-((x-4.3)/0.14)^2) is at (4.3, 45)",
+    "ok": true,
+    "detail": "found (4.3, 45)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-hrms": {
+  "title": "High-resolution mass spectrometry",
+  "caption": "CO, N₂ and C₂H₄ all have a nominal mass of 28, but their exact masses differ because isotopic masses are not whole numbers (¹²C is exactly 12, ¹H is 1.0078, ¹⁴N 14.0031, ¹⁶O 15.9949). Measured to four decimal places they are easily told apart.",
+  "alt": "Three narrow peaks near m/z 28: CO at 27.9949, N₂ at 28.0061 and C₂H₄ at 28.0313.",
+  "description": [
+   "CO: 27.9949.",
+   "N₂: 28.0061.",
+   "C₂H₄: 28.0313."
+  ],
+  "course": "chemistry",
+  "lesson": "High-resolution mass spectrometry",
+  "also": [],
+  "renderer": "ms",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u15.js: High-resolution mass spectrometry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "CO: accurate mass 27.9949",
+    "ok": true,
+    "detail": "27.9949"
+   },
+   {
+    "name": "CO: nominal mass 28",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "N2: accurate mass 28.0061",
+    "ok": true,
+    "detail": "28.0061"
+   },
+   {
+    "name": "N2: nominal mass 28",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "C2H4: accurate mass 28.0313",
+    "ok": true,
+    "detail": "28.0313"
+   },
+   {
+    "name": "C2H4: nominal mass 28",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-hydrogenation-cycle": {
+  "title": "A catalytic cycle for hydrogenation",
+  "caption": "A rhodium catalyst such as Wilkinson's adds H₂ (oxidative addition), binds the alkene, transfers a hydride to it (migratory insertion) and releases the alkane (reductive elimination), regenerating itself. [Rh] stands for the metal with its other ligands.",
+  "alt": "A four-step cycle: [Rh] + H₂ → [Rh]H₂; + C₂H₄ → alkene complex; insertion → [Rh](H)(C₂H₅); elimination of C₂H₆ returns [Rh].",
+  "description": [
+   "Oxidative addition: [Rh] + H₂ → [Rh]H₂.",
+   "Alkene binds: [Rh]H₂ + C₂H₄ → [Rh]H₂(C₂H₄).",
+   "Migratory insertion: → [Rh]H(C₂H₅).",
+   "Reductive elimination: → [Rh] + C₂H₆, the catalyst regenerated."
+  ],
+  "course": "chemistry",
+  "lesson": "Catalytic complexes",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u11.js: Catalytic complexes"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the steps add up to C2H4 + H2 → C2H6",
+    "ok": true,
+    "detail": "H2 + C2H4 → C2H6"
+   },
+   {
+    "name": "Rh + H2 → RhH2 balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Rh, H; charge 0)"
+   },
+   {
+    "name": "RhH2 + C2H4 → RhH2C2H4 balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Rh, H, C; charge 0)"
+   },
+   {
+    "name": "RhH2C2H4 → RhHC2H5 balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Rh, H, C; charge 0)"
+   },
+   {
+    "name": "RhHC2H5 → Rh + C2H6 balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Rh, H, C; charge 0)"
+   },
+   {
+    "name": "Rh is regenerated: it is not used up overall",
+    "ok": true,
+    "detail": "H2 + C2H4 → C2H6"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-ir-ethanoic-acid": {
+  "title": "Infrared spectrum of ethanoic acid",
+  "caption": "The very broad O–H absorption of a carboxylic acid (2500–3000 cm⁻¹, broadened by hydrogen bonding) together with a sharp C=O near 1710 cm⁻¹ identifies the –COOH group. Below 1500 cm⁻¹ is the fingerprint region.",
+  "alt": "Transmittance against wavenumber: a very broad dip from about 2500 to 3300, a strong sharp dip at about 1710 and a dip near 1290.",
+  "description": [
+   "Broad O–H (acid) around 3000 cm⁻¹.",
+   "Strong C=O at 1710 cm⁻¹.",
+   "C–O near 1290 cm⁻¹, in the fingerprint region."
+  ],
+  "course": "chemistry",
+  "lesson": "Infrared spectroscopy",
+  "also": [],
+  "renderer": "ir",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u15.js: Infrared spectroscopy"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "O–H (acid) at 2900 cm⁻¹ lies in 2500–3000 cm⁻¹",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the molecule has an O–H (acid) bond",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "C=O at 1710 cm⁻¹ lies in 1680–1750 cm⁻¹",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the molecule has an C=O bond",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "C–O at 1290 cm⁻¹ lies in 1000–1300 cm⁻¹",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the molecule has an C–O bond",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "no O–H (alcohol) band, and the molecule has no O–H (alcohol) bond",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "no C≡N band, and the molecule has no C≡N bond",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-jablonski": {
+  "title": "A Jablonski diagram",
+  "caption": "Absorption lifts a molecule from S₀ to an excited singlet. It quickly relaxes to the lowest level of S₁ (vibrational relaxation and internal conversion), then either emits fluorescence (nanoseconds) or crosses to the triplet T₁, which emits phosphorescence much more slowly. Emitted light has lower energy than absorbed light.",
+  "alt": "Energy levels S₀, S₁ and T₁ (T₁ below S₁): absorption up, wavy relaxation, fluorescence down from S₁, intersystem crossing to T₁, phosphorescence down from T₁.",
+  "description": [
+   "Absorption: S₀ up to a high vibrational level of S₁.",
+   "Wavy arrow: relaxation to the bottom of S₁.",
+   "Fluorescence: S₁ down to S₀.",
+   "Intersystem crossing: S₁ to T₁.",
+   "Phosphorescence: T₁ down to S₀, lowest energy."
+  ],
+  "course": "chemistry",
+  "lesson": "Fluorescence spectroscopy",
+  "also": [],
+  "renderer": "levels",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u15.js: Fluorescence spectroscopy"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "fluorescence emits less energy than was absorbed",
+    "ok": true,
+    "detail": "4.65 < 5.6"
+   },
+   {
+    "name": "T₁ lies below S₁",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "phosphorescence is lower in energy than fluorescence",
+    "ok": true,
+    "detail": "3.8 < 4.65"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-lcms": {
+  "title": "LC–MS",
+  "caption": "For compounds that are not volatile enough for GC, such as drugs and proteins, liquid chromatography separates them and electrospray ionisation gently turns each into gaseous ions (often [M+H]⁺) before mass analysis.",
+  "alt": "A flow: sample in solution → HPLC separates → electrospray ionisation → mass analyser → spectrum.",
+  "description": [
+   "HPLC separates the components.",
+   "Electrospray: the solution is sprayed through a charged needle and the solvent evaporates, leaving ions such as [M+H]⁺.",
+   "The mass analyser records m/z."
+  ],
+  "course": "chemistry",
+  "lesson": "LC-MS",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u15.js: LC-MS"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every step is linked: no box without an arrow",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-ligands-denticity": {
+  "title": "Ligands by denticity",
+  "caption": "A ligand donates a lone pair to the metal. Ammonia donates one (monodentate); ethane-1,2-diamine and ethanedioate donate two (bidentate); EDTA⁴⁻ donates six (hexadentate), wrapping round the metal ion. Multidentate ligands form more stable complexes (the chelate effect).",
+  "alt": "Ammonia, ethane-1,2-diamine, ethanedioate and EDTA⁴⁻ with their donor atoms.",
+  "description": [
+   "NH₃: one donor nitrogen.",
+   "Ethane-1,2-diamine: two nitrogens.",
+   "Ethanedioate: two oxygens.",
+   "EDTA⁴⁻: two nitrogens and four oxygens."
+  ],
+  "course": "chemistry",
+  "lesson": "Ligands",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u11.js: Ligands"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "en: contains primary amine",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethanedioate: contains carboxylate",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "EDTA⁴⁻: formula C10H12N2O8",
+    "ok": true,
+    "detail": "RDKit: C10H12N2O8-4"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-magnetism-unpaired": {
+  "title": "Unpaired electrons and magnetism",
+  "caption": "Each unpaired electron adds to the magnetic moment: the spin-only value is μ = √(n(n + 2)) μB. High-spin Mn²⁺ (d⁵) has five, μ = 5.92; Cu²⁺ (d⁹) has one, 1.73; Zn²⁺ (d¹⁰) none, so it is diamagnetic.",
+  "alt": "Three splitting diagrams: Mn²⁺ with five unpaired electrons, Cu²⁺ with one, Zn²⁺ with none.",
+  "description": [
+   "Mn²⁺ d⁵ high spin: one electron in each d orbital, μ = 5.92 μB.",
+   "Cu²⁺ d⁹: one unpaired, 1.73 μB.",
+   "Zn²⁺ d¹⁰: all paired, diamagnetic."
+  ],
+  "course": "chemistry",
+  "lesson": "Magnetic properties",
+  "also": [],
+  "renderer": "levels",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u11.js: Magnetic properties"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Mn2+ is d5",
+    "ok": true,
+    "detail": "computed d5"
+   },
+   {
+    "name": "Mn²⁺ d⁵: 5 unpaired electrons",
+    "ok": true,
+    "detail": "computed 5"
+   },
+   {
+    "name": "spin-only moment 5.92 μB",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Cu2+ is d9",
+    "ok": true,
+    "detail": "computed d9"
+   },
+   {
+    "name": "Cu²⁺ d⁹: 1 unpaired electrons",
+    "ok": true,
+    "detail": "computed 1"
+   },
+   {
+    "name": "spin-only moment 1.73 μB",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Zn2+ is d10",
+    "ok": true,
+    "detail": "computed d10"
+   },
+   {
+    "name": "Zn²⁺ d¹⁰: 0 unpaired electrons",
+    "ok": true,
+    "detail": "computed 0"
+   },
+   {
+    "name": "spin-only moment 0 μB",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-main-group-oxides": {
+  "title": "Period 3 oxides in water",
+  "caption": "Across period 3 the oxides change from basic to acidic. Na₂O and MgO give alkaline solutions; Al₂O₃ and SiO₂ do not dissolve (Al₂O₃ is amphoteric); P₄O₁₀ and SO₃ react to give strongly acidic solutions. Typical pH values.",
+  "alt": "Bar chart of the typical pH when each period 3 oxide is added to water: Na₂O 14, MgO 9, Al₂O₃ 7, SiO₂ 7, P₄O₁₀ 0, SO₃ 0.",
+  "description": [
+   "Na₂O: about pH 14 (NaOH forms).",
+   "MgO: about pH 9 (slightly soluble Mg(OH)₂).",
+   "Al₂O₃ and SiO₂: insoluble, pH 7.",
+   "P₄O₁₀ and SO₃: about pH 0 (H₃PO₄ and H₂SO₄ form)."
+  ],
+  "course": "chemistry",
+  "lesson": "Main-group chemistry",
+  "also": [],
+  "renderer": "trend",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u11.js: Main-group chemistry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "order MgO < Na2O",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "order P4O10 < Al2O3 < MgO",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-mass-spec": {
+  "title": "Mass spectrum of pentane",
+  "caption": "The molecular ion C₅H₁₂⁺ at m/z 72 gives the relative molecular mass. Breaking C–C bonds gives fragment ions at 57, 43 and 29, each 14 (CH₂) apart; the tallest peak (the base peak) at 43 is C₃H₇⁺.",
+  "alt": "Mass spectrum with peaks at m/z 29, 43 (tallest), 57 and 72.",
+  "description": [
+   "m/z 72: molecular ion C₅H₁₂⁺.",
+   "m/z 57: C₄H₉⁺.",
+   "m/z 43: C₃H₇⁺, the base peak.",
+   "m/z 29: C₂H₅⁺."
+  ],
+  "course": "chemistry",
+  "lesson": "Mass spectrometry",
+  "also": [],
+  "renderer": "ms",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u15.js: Mass spectrometry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "m/z 72 is C5H12",
+    "ok": true,
+    "detail": "mass 72"
+   },
+   {
+    "name": "C5H12 can come from C5H12",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "m/z 57 is C4H9",
+    "ok": true,
+    "detail": "mass 57"
+   },
+   {
+    "name": "C4H9 can come from C5H12",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "m/z 43 is C3H7",
+    "ok": true,
+    "detail": "mass 43"
+   },
+   {
+    "name": "C3H7 can come from C5H12",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "m/z 29 is C2H5",
+    "ok": true,
+    "detail": "mass 29"
+   },
+   {
+    "name": "C2H5 can come from C5H12",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "m/z 27 is C2H3",
+    "ok": true,
+    "detail": "mass 27"
+   },
+   {
+    "name": "C2H3 can come from C5H12",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "molecular ion at m/z 72",
+    "ok": true,
+    "detail": "C5H12: 72"
+   },
+   {
+    "name": "base peak at m/z 43",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-mn-oxidation-states": {
+  "title": "The oxidation states of manganese",
+  "caption": "Manganese shows every state from +2 to +7, because its 4s and 3d electrons are close in energy. Each compound's oxidation state follows from its formula: Mn²⁺ +2, Mn₂O₃ +3, MnO₂ +4, MnO₄²⁻ +6, MnO₄⁻ +7 (purple manganate(VII)).",
+  "alt": "Bar chart of manganese oxidation states in Mn²⁺, Mn₂O₃, MnO₂, MnO₄²⁻ and MnO₄⁻, rising from +2 to +7.",
+  "description": [
+   "Mn²⁺: +2 (pale pink).",
+   "Mn₂O₃: +3.",
+   "MnO₂: +4 (black).",
+   "MnO₄²⁻: +6 (green).",
+   "MnO₄⁻: +7 (purple)."
+  ],
+  "course": "chemistry",
+  "lesson": "Oxidation states",
+  "also": [],
+  "renderer": "trend",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u03.js: Oxidation states"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "a → e: increasing",
+    "ok": true,
+    "detail": "a 2, b 3, c 4, d 6, e 7"
+   },
+   {
+    "name": "Mn in Mn^2+ is +2",
+    "ok": true,
+    "detail": "drawn 2"
+   },
+   {
+    "name": "Mn in Mn2O3 is +3",
+    "ok": true,
+    "detail": "drawn 3"
+   },
+   {
+    "name": "Mn in MnO2 is +4",
+    "ok": true,
+    "detail": "drawn 4"
+   },
+   {
+    "name": "Mn in MnO4^2- is +6",
+    "ok": true,
+    "detail": "drawn 6"
+   },
+   {
+    "name": "Mn in MnO4^- is +7",
+    "ok": true,
+    "detail": "drawn 7"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-p-block-oxides": {
+  "title": "Two p-block oxides",
+  "caption": "Phosphorus(V) oxide, P₄O₁₀, is a cage of four tetrahedral phosphorus atoms bridged by oxygens, each also double-bonded to one oxygen. Sulfur trioxide, SO₃, is a trigonal planar molecule. Both react with water to give strong acids.",
+  "alt": "The P₄O₁₀ cage and the SO₃ molecule.",
+  "description": [
+   "P₄O₁₀: four P atoms, six bridging O atoms and four terminal P=O.",
+   "SO₃: sulfur double-bonded to three oxygens, trigonal planar."
+  ],
+  "course": "chemistry",
+  "lesson": "p-block chemistry",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u11.js: p-block chemistry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "P₄O₁₀: formula O10P4",
+    "ok": true,
+    "detail": "RDKit: O10P4"
+   },
+   {
+    "name": "SO₃: formula O3S",
+    "ok": true,
+    "detail": "RDKit: O3S"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-paper-chromatography": {
+  "title": "Paper chromatography",
+  "caption": "Spots of a food colouring and three known dyes are placed on a pencil baseline above the solvent. As the solvent rises it carries each dye a characteristic distance. The colouring contains dyes A and B (same Rf), but not C. Rf = distance moved by the spot ÷ distance moved by the solvent.",
+  "alt": "A paper chromatogram: the mixture lane has three spots; lanes A, B and C have one spot each; A and B match two of the mixture's spots.",
+  "description": [
+   "Mixture: spots at Rf 0.32, 0.61 and 0.83.",
+   "Dye A: one spot at 0.32. Dye B: 0.61. Dye C: 0.45, matching nothing in the mixture.",
+   "Rf for the B spot: 4.88 cm ÷ 8.0 cm = 0.61."
+  ],
+  "course": "chemistry",
+  "lesson": "Chromatography",
+  "also": [
+   {
+    "course": "gcse",
+    "lesson": "Chemical analysis and chromatography"
+   },
+   {
+    "course": "chemistry",
+    "lesson": "Thin-layer chromatography"
+   }
+  ],
+  "renderer": "apparatus",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u15.js: Chromatography"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in gcse: Chemical analysis and chromatography",
+    "ok": true,
+    "detail": "kit/courses/gcse/notes/u05.js"
+   },
+   {
+    "name": "also placed in chemistry: Thin-layer chromatography",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u15.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the baseline is above the solvent, so the spots do not dissolve into it",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every spot lies between the baseline and the solvent front (0 < Rf < 1)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "mixture and A share a spot at Rf 0.32",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "mixture and B share a spot at Rf 0.61",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "C: one spot (pure)",
+    "ok": true,
+    "detail": "1 spot(s)"
+   },
+   {
+    "name": "mixture: more than one spot (a mixture)",
+    "ok": true,
+    "detail": "3 spot(s)"
+   },
+   {
+    "name": "Rf = 4.88 ÷ 8 = 0.61",
+    "ok": true,
+    "detail": "0.610"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-perovskite": {
+  "title": "The perovskite structure",
+  "caption": "Calcium titanate, CaTiO₃, gives its name to the perovskite structure: Ti⁴⁺ at the cube centre surrounded octahedrally by six O²⁻ at the face centres, and Ca²⁺ at the corners with twelve oxygen neighbours. Many solar-cell materials share it.",
+  "alt": "A cubic cell with calcium at the corners, titanium at the centre and oxygen at the face centres.",
+  "description": [
+   "Ca²⁺ at the 8 corners: 1 per cell.",
+   "Ti⁴⁺ at the body centre: 1 per cell, 6 O²⁻ around it.",
+   "O²⁻ at the 6 face centres: 3 per cell. Formula CaTiO₃."
+  ],
+  "course": "chemistry",
+  "lesson": "Solid-state inorganic chemistry",
+  "also": [],
+  "renderer": "lattice",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u11.js: Solid-state inorganic chemistry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "CaTiO₃: each Ti4+ has 6 nearest neighbours",
+    "ok": true,
+    "detail": "counted 6 in the generated lattice"
+   },
+   {
+    "name": "CaTiO₃: each Ca2+ has 12 nearest neighbours",
+    "ok": true,
+    "detail": "counted 12 in the generated lattice"
+   },
+   {
+    "name": "CaTiO₃: 1 Ca2+ per unit cell",
+    "ok": true,
+    "detail": "counted 1 (corners ⅛, edges ¼, faces ½, body 1)"
+   },
+   {
+    "name": "CaTiO₃: 1 Ti4+ per unit cell",
+    "ok": true,
+    "detail": "counted 1 (corners ⅛, edges ¼, faces ½, body 1)"
+   },
+   {
+    "name": "CaTiO₃: 3 O2- per unit cell",
+    "ok": true,
+    "detail": "counted 3 (corners ⅛, edges ¼, faces ½, body 1)"
+   },
+   {
+    "name": "CaTiO₃: ratio Ca2+ 1 : Ti4+ 1 : O2- 3",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-qualitative-tests": {
+  "title": "Identifying an anion",
+  "caption": "Test in this order so earlier ions do not interfere: dilute acid first (carbonate fizzes), then acidified barium chloride (sulfate gives a white precipitate), then acidified silver nitrate (halides).",
+  "alt": "A tree: fizzing with dilute acid? carbonate. Otherwise white precipitate with BaCl₂? sulfate. Otherwise precipitate with AgNO₃: white chloride, cream bromide, yellow iodide.",
+  "description": [
+   "Add dilute HNO₃: fizzing, and the gas turns limewater milky: carbonate.",
+   "Add acidified BaCl₂: white precipitate: sulfate.",
+   "Add acidified AgNO₃: white (chloride), cream (bromide) or yellow (iodide)."
+  ],
+  "course": "chemistry",
+  "lesson": "Qualitative analysis",
+  "also": [],
+  "renderer": "classify",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u15.js: Qualitative analysis"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every path ends in a classification",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "no unreachable boxes",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "sodium bromide: no, no, no, yes leads to \"Bromide\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "sodium sulfate: no, yes leads to \"Sulfate\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-raman": {
+  "title": "Rayleigh and Raman scattering",
+  "caption": "Light briefly lifts a molecule to a short-lived virtual state. Most photons scatter with unchanged energy (Rayleigh). A few leave the molecule one vibrational level higher and come out with less energy (Stokes), or take a level's energy away and come out with more (anti-Stokes). The shifts measure vibrational energies.",
+  "alt": "Energy diagram: v = 0 and v = 1 levels and a dashed virtual level; arrows for Rayleigh, Stokes and anti-Stokes scattering.",
+  "description": [
+   "Rayleigh: up from v = 0 and back to v = 0, same energy.",
+   "Stokes: up from v = 0, down to v = 1: scattered light of lower energy.",
+   "Anti-Stokes: up from v = 1, down to v = 0: higher energy."
+  ],
+  "course": "chemistry",
+  "lesson": "Raman spectroscopy",
+  "also": [],
+  "renderer": "levels",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u15.js: Raman spectroscopy"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Stokes light has less energy than the incident light",
+    "ok": true,
+    "detail": "5 < 6"
+   },
+   {
+    "name": "anti-Stokes light has more energy than the incident light",
+    "ok": true,
+    "detail": "5 < 6"
+   },
+   {
+    "name": "Rayleigh light has the same energy as the incident light",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-shift-ranges": {
+  "title": "Chemical shift and environment",
+  "caption": "4-Methoxybenzaldehyde shows the main ¹H regions in one spectrum: the aldehyde H at 9.9 ppm, aromatic H at 7–8 ppm, and the OCH₃ at 3.9 ppm. Hydrogens near electronegative atoms or π systems are deshielded and appear further left.",
+  "alt": "Spectrum with a singlet at 9.9 (1H), two doublets at 7.8 and 7.0 (2H each) and a singlet at 3.9 (3H).",
+  "description": [
+   "δ 9.9, 1H, singlet: H–C=O.",
+   "δ 7.8 and 7.0, 2H each, doublets: aromatic H.",
+   "δ 3.9, 3H, singlet: O–CH₃."
+  ],
+  "course": "chemistry",
+  "lesson": "NMR chemical shifts",
+  "also": [],
+  "renderer": "nmr",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u15.js: NMR chemical shifts"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "4 peaks: 4 hydrogen environments by symmetry",
+    "ok": true,
+    "detail": "classes of sizes [1, 2, 2, 3]"
+   },
+   {
+    "name": "δ 9.9: 1H in one environment",
+    "ok": true,
+    "detail": "1 H in 1 class(es)"
+   },
+   {
+    "name": "δ 9.9: s by the n + 1 rule",
+    "ok": true,
+    "detail": "0 neighbouring H → s"
+   },
+   {
+    "name": "δ 9.9 lies in the H–C=O range (9.0–10.2 ppm)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "δ 7.8: 2H in one environment",
+    "ok": true,
+    "detail": "2 H in 1 class(es)"
+   },
+   {
+    "name": "δ 7.8: d by the n + 1 rule",
+    "ok": true,
+    "detail": "1 neighbouring H → d"
+   },
+   {
+    "name": "δ 7.8 lies in the Ar–H range (6.5–8.5 ppm)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "δ 7.0: 2H in one environment",
+    "ok": true,
+    "detail": "2 H in 1 class(es)"
+   },
+   {
+    "name": "δ 7.0: d by the n + 1 rule",
+    "ok": true,
+    "detail": "1 neighbouring H → d"
+   },
+   {
+    "name": "δ 7.0 lies in the Ar–H range (6.5–8.5 ppm)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "δ 3.9: 3H in one environment",
+    "ok": true,
+    "detail": "3 H in 1 class(es)"
+   },
+   {
+    "name": "δ 3.9: s by the n + 1 rule",
+    "ok": true,
+    "detail": "0 neighbouring H → s"
+   },
+   {
+    "name": "δ 3.9 lies in the H–C–O range (3.3–4.3 ppm)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "integrations add up to the 8 hydrogens in C8H8O2",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-splitting-ethyl": {
+  "title": "Spin–spin splitting in ethyl ethanoate",
+  "caption": "The n + 1 rule: a signal is split into n + 1 lines by n equivalent hydrogens on the neighbouring carbon. The ethyl group gives a quartet (CH₂, next to CH₃) and a triplet (CH₃, next to CH₂); the CH₃ attached to C=O has no neighbouring H, so it is a singlet.",
+  "alt": "Spectrum: triplet at 1.3 ppm (3H), singlet at 2.0 ppm (3H), quartet at 4.1 ppm (2H).",
+  "description": [
+   "δ 1.3, 3H, triplet.",
+   "δ 2.0, 3H, singlet: CH₃ next to C=O.",
+   "δ 4.1, 2H, quartet: CH₂ next to O."
+  ],
+  "course": "chemistry",
+  "lesson": "Spin-spin coupling",
+  "also": [],
+  "renderer": "nmr",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u15.js: Spin-spin coupling"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "3 peaks: 3 hydrogen environments by symmetry",
+    "ok": true,
+    "detail": "classes of sizes [2, 3, 3]"
+   },
+   {
+    "name": "δ 1.3: 3H in one environment",
+    "ok": true,
+    "detail": "3 H in 1 class(es)"
+   },
+   {
+    "name": "δ 1.3: t by the n + 1 rule",
+    "ok": true,
+    "detail": "2 neighbouring H → t"
+   },
+   {
+    "name": "δ 1.3 lies in the R–CH3 range (0.7–1.3 ppm)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "δ 4.1: 2H in one environment",
+    "ok": true,
+    "detail": "2 H in 1 class(es)"
+   },
+   {
+    "name": "δ 4.1: q by the n + 1 rule",
+    "ok": true,
+    "detail": "3 neighbouring H → q"
+   },
+   {
+    "name": "δ 4.1 lies in the H–C–O range (3.3–4.3 ppm)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "δ 2.0: 3H in one environment",
+    "ok": true,
+    "detail": "3 H in 1 class(es)"
+   },
+   {
+    "name": "δ 2.0: s by the n + 1 rule",
+    "ok": true,
+    "detail": "0 neighbouring H → s"
+   },
+   {
+    "name": "δ 2.0 lies in the H–C–C=O range (2.0–2.7 ppm)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "integrations add up to the 8 hydrogens in C4H8O2",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-structure-elucidation": {
+  "title": "Putting the evidence together",
+  "caption": "An unknown with M⁺ at 88 (C₄H₈O₂), a strong IR absorption at 1740 cm⁻¹ but no broad O–H, and ¹H NMR peaks at 1.3 (t, 3H), 2.0 (s, 3H) and 4.1 (q, 2H) is ethyl ethanoate. Each technique narrows the possibilities.",
+  "alt": "A flow: mass spectrum gives the formula, IR the functional group, NMR the arrangement, leading to the structure.",
+  "description": [
+   "MS: M⁺ 88, C₄H₈O₂.",
+   "IR: C=O at 1740 cm⁻¹, no O–H: an ester.",
+   "NMR: an ethyl group next to O and a CH₃ next to C=O.",
+   "Structure: CH₃COOCH₂CH₃."
+  ],
+  "course": "chemistry",
+  "lesson": "Structure elucidation",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u15.js: Structure elucidation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "C4H8O2 → CH3COOC2H5 balances",
+    "ok": true,
+    "detail": "atoms and charge balance (C, H, O; charge 0)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-titration-setup": {
+  "title": "Titration apparatus",
+  "caption": "The analyte is measured into a conical flask with a pipette and a few drops of indicator added; the titrant is added from a burette until the indicator just changes colour. The titre is the final reading minus the initial reading, read at the bottom of the meniscus.",
+  "alt": "A burette clamped above a conical flask containing the analyte and indicator; burette readings and the titre beside it.",
+  "description": [
+   "Burette: initial reading 0.50 cm³.",
+   "Final reading 24.65 cm³.",
+   "Titre 24.15 cm³."
+  ],
+  "course": "chemistry",
+  "lesson": "Titrimetry",
+  "also": [
+   {
+    "course": "chemistry",
+    "lesson": "Quantitative analysis"
+   }
+  ],
+  "renderer": "apparatus",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u15.js: Titrimetry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in chemistry: Quantitative analysis",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u15.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "titre = final − initial = 24.15 cm³",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-tlc": {
+  "title": "Thin-layer chromatography",
+  "caption": "On a silica plate the more polar compound sticks to the silica and moves less. Here the starting material (Rf 0.55) and the product (Rf 0.30) are clearly separated; the co-spot lane, with both applied together, shows two spots, confirming they are different.",
+  "alt": "A TLC plate with three lanes: starting material (one spot high), co-spot (two spots), reaction mixture (one spot low).",
+  "description": [
+   "Lane 1, starting material: Rf 0.55.",
+   "Lane 2, co-spot: 0.55 and 0.30.",
+   "Lane 3, reaction mixture: only 0.30: the starting material has been used up."
+  ],
+  "course": "chemistry",
+  "lesson": "Thin-layer chromatography",
+  "also": [],
+  "renderer": "apparatus",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u15.js: Thin-layer chromatography"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the baseline is above the solvent, so the spots do not dissolve into it",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every spot lies between the baseline and the solvent front (0 < Rf < 1)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "RM: the starting material spot (Rf 0.55) has gone",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "co and SM share a spot at Rf 0.55",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-tm-configs": {
+  "title": "The first transition series",
+  "caption": "Across the series 3d fills behind 4s². A transition metal forms at least one ion with a partly filled d sub-shell: so scandium (Sc³⁺ is d⁰) and zinc (Zn²⁺ is d¹⁰) are d-block elements but not transition metals.",
+  "alt": "Box diagrams of 3d and 4s for titanium, manganese, iron, copper and zinc.",
+  "description": [
+   "Ti [Ar] 3d² 4s².",
+   "Mn [Ar] 3d⁵ 4s²: five unpaired d electrons.",
+   "Fe [Ar] 3d⁶ 4s².",
+   "Cu [Ar] 3d¹⁰ 4s¹: the exception.",
+   "Zn [Ar] 3d¹⁰ 4s²: full 3d."
+  ],
+  "course": "chemistry",
+  "lesson": "Transition metal chemistry",
+  "also": [],
+  "renderer": "orbitals",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u11.js: Transition metal chemistry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Ti, [Ar] 3d² 4s²: 22 electrons",
+    "ok": true,
+    "detail": "1s2 2s2 2p6 3s2 3p6 3d2 4s2"
+   },
+   {
+    "name": "Ti, [Ar] 3d² 4s²: configuration [Ar] 3d2 4s2 is the ground state",
+    "ok": true,
+    "detail": "computed 1s2 2s2 2p6 3s2 3p6 3d2 4s2"
+   },
+   {
+    "name": "Ti, [Ar] 3d² 4s²: 2 unpaired electron(s) by Hund's rule",
+    "ok": true,
+    "detail": "computed 2"
+   },
+   {
+    "name": "Ti, [Ar] 3d² 4s²: every occupied sub-shell is drawn",
+    "ok": true,
+    "detail": "occupied 1s 2s 2p 3s 3p 4s 3d"
+   },
+   {
+    "name": "Mn, [Ar] 3d⁵ 4s²: 25 electrons",
+    "ok": true,
+    "detail": "1s2 2s2 2p6 3s2 3p6 3d5 4s2"
+   },
+   {
+    "name": "Mn, [Ar] 3d⁵ 4s²: configuration [Ar] 3d5 4s2 is the ground state",
+    "ok": true,
+    "detail": "computed 1s2 2s2 2p6 3s2 3p6 3d5 4s2"
+   },
+   {
+    "name": "Mn, [Ar] 3d⁵ 4s²: 5 unpaired electron(s) by Hund's rule",
+    "ok": true,
+    "detail": "computed 5"
+   },
+   {
+    "name": "Mn, [Ar] 3d⁵ 4s²: every occupied sub-shell is drawn",
+    "ok": true,
+    "detail": "occupied 1s 2s 2p 3s 3p 4s 3d"
+   },
+   {
+    "name": "Fe, [Ar] 3d⁶ 4s²: 26 electrons",
+    "ok": true,
+    "detail": "1s2 2s2 2p6 3s2 3p6 3d6 4s2"
+   },
+   {
+    "name": "Fe, [Ar] 3d⁶ 4s²: configuration [Ar] 3d6 4s2 is the ground state",
+    "ok": true,
+    "detail": "computed 1s2 2s2 2p6 3s2 3p6 3d6 4s2"
+   },
+   {
+    "name": "Fe, [Ar] 3d⁶ 4s²: 4 unpaired electron(s) by Hund's rule",
+    "ok": true,
+    "detail": "computed 4"
+   },
+   {
+    "name": "Fe, [Ar] 3d⁶ 4s²: every occupied sub-shell is drawn",
+    "ok": true,
+    "detail": "occupied 1s 2s 2p 3s 3p 4s 3d"
+   },
+   {
+    "name": "Cu, [Ar] 3d¹⁰ 4s¹: 29 electrons",
+    "ok": true,
+    "detail": "1s2 2s2 2p6 3s2 3p6 3d10 4s1"
+   },
+   {
+    "name": "Cu, [Ar] 3d¹⁰ 4s¹: configuration [Ar] 3d10 4s1 is the ground state",
+    "ok": true,
+    "detail": "computed 1s2 2s2 2p6 3s2 3p6 3d10 4s1"
+   },
+   {
+    "name": "Cu, [Ar] 3d¹⁰ 4s¹: 1 unpaired electron(s) by Hund's rule",
+    "ok": true,
+    "detail": "computed 1"
+   },
+   {
+    "name": "Cu, [Ar] 3d¹⁰ 4s¹: every occupied sub-shell is drawn",
+    "ok": true,
+    "detail": "occupied 1s 2s 2p 3s 3p 4s 3d"
+   },
+   {
+    "name": "Zn, [Ar] 3d¹⁰ 4s²: 30 electrons",
+    "ok": true,
+    "detail": "1s2 2s2 2p6 3s2 3p6 3d10 4s2"
+   },
+   {
+    "name": "Zn, [Ar] 3d¹⁰ 4s²: configuration [Ar] 3d10 4s2 is the ground state",
+    "ok": true,
+    "detail": "computed 1s2 2s2 2p6 3s2 3p6 3d10 4s2"
+   },
+   {
+    "name": "Zn, [Ar] 3d¹⁰ 4s²: 0 unpaired electron(s) by Hund's rule",
+    "ok": true,
+    "detail": "computed 0"
+   },
+   {
+    "name": "Zn, [Ar] 3d¹⁰ 4s²: every occupied sub-shell is drawn",
+    "ok": true,
+    "detail": "occupied 1s 2s 2p 3s 3p 4s 3d"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-uv-vis": {
+  "title": "A UV–visible spectrum",
+  "caption": "Tetraamminecopper(II), [Cu(NH₃)₄(H₂O)₂]²⁺, absorbs most strongly at about 600 nm (orange), so it appears deep blue. At λmax, absorbance A = εcl (the Beer–Lambert law), which is why concentrations are measured there.",
+  "alt": "Absorbance against wavelength from 400 to 800 nm: a broad peak at 600 nm.",
+  "description": [
+   "A broad absorption band peaking at 600 nm.",
+   "Little absorption below 450 nm, which is why blue light is transmitted."
+  ],
+  "course": "chemistry",
+  "lesson": "UV-visible spectroscopy",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u15.js: UV-visible spectroscopy"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "λmax = 600 nm",
+    "ok": true,
+    "detail": "found (600, 1.2)"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",

@@ -77,6 +77,11 @@ export const DATA = {
     name: "highest oxidation state", unit: "", source: "from the group number: the number of outer-shell electrons",
     values: { Na: 1, Mg: 2, Al: 3, Si: 4, P: 5, S: 6, Cl: 7 },
   },
+  logKspSulfate: {
+    name: "log₁₀ Ksp of group 2 sulfates at 25 °C", unit: "",
+    source: "CRC Handbook of Chemistry and Physics, solubility product constants (CaSO₄ 4.93 × 10⁻⁵, SrSO₄ 3.44 × 10⁻⁷, BaSO₄ 1.08 × 10⁻¹⁰), as log₁₀ to 2 d.p.",
+    values: { CaSO4: -4.31, SrSO4: -6.46, BaSO4: -9.97 },
+  },
   eFactor: {
     name: "E-factor (kg waste per kg product), upper end of the typical range", unit: "kg kg⁻¹",
     source: "Sheldon R. A., Green Chemistry 9, 1273–1283 (2007), Table 1",

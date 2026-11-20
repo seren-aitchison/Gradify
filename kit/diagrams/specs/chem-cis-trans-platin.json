@@ -1,0 +1,61 @@
+{
+ "id": "chem-cis-trans-platin",
+ "renderer": "vsepr",
+ "course": "chemistry",
+ "lesson": "Isomerism in complexes",
+ "title": "Cis-platin and trans-platin",
+ "caption": "Pt(NH₃)₂Cl₂ is square planar, so it has two isomers. In cisplatin the two chlorides are next to each other (90°); in the trans isomer they are opposite (180°). Only cisplatin is an anticancer drug: it binds two neighbouring bases on one DNA strand.",
+ "alt": "Two square planar platinum complexes: cis, with the chlorides at 90°, and trans, with them at 180°.",
+ "description": [
+  "Cisplatin: Cl and Cl on adjacent corners of the square.",
+  "Transplatin: Cl and Cl on opposite corners."
+ ],
+ "molecules": [
+  {
+   "label": "cisplatin",
+   "centre": "Pt",
+   "complex": true,
+   "shape": "square planar",
+   "isomer": "cis",
+   "isomerLigand": "Cl",
+   "ligands": [
+    {
+     "el": "Cl"
+    },
+    {
+     "el": "NH3"
+    },
+    {
+     "el": "Cl"
+    },
+    {
+     "el": "NH3"
+    }
+   ],
+   "sub": "Cl–Pt–Cl 90°"
+  },
+  {
+   "label": "transplatin",
+   "centre": "Pt",
+   "complex": true,
+   "shape": "square planar",
+   "isomer": "trans",
+   "isomerLigand": "Cl",
+   "ligands": [
+    {
+     "el": "Cl"
+    },
+    {
+     "el": "Cl"
+    },
+    {
+     "el": "NH3"
+    },
+    {
+     "el": "NH3"
+    }
+   ],
+   "sub": "Cl–Pt–Cl 180°"
+  }
+ ]
+}

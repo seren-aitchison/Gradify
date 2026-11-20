@@ -1,0 +1,79 @@
+{
+ "id": "chem-mn-oxidation-states",
+ "renderer": "trend",
+ "course": "chemistry",
+ "lesson": "Oxidation states",
+ "title": "The oxidation states of manganese",
+ "caption": "Manganese shows every state from +2 to +7, because its 4s and 3d electrons are close in energy. Each compound's oxidation state follows from its formula: Mn²⁺ +2, Mn₂O₃ +3, MnO₂ +4, MnO₄²⁻ +6, MnO₄⁻ +7 (purple manganate(VII)).",
+ "alt": "Bar chart of manganese oxidation states in Mn²⁺, Mn₂O₃, MnO₂, MnO₄²⁻ and MnO₄⁻, rising from +2 to +7.",
+ "description": [
+  "Mn²⁺: +2 (pale pink).",
+  "Mn₂O₃: +3.",
+  "MnO₂: +4 (black).",
+  "MnO₄²⁻: +6 (green).",
+  "MnO₄⁻: +7 (purple)."
+ ],
+ "kind": "bars",
+ "range": [
+  0,
+  8
+ ],
+ "ticks": [
+  0,
+  2,
+  4,
+  6,
+  8
+ ],
+ "yLabel": "oxidation state of Mn",
+ "items": [
+  {
+   "key": "a",
+   "label": "Mn^2+",
+   "value": 2
+  },
+  {
+   "key": "b",
+   "label": "Mn2O3",
+   "value": 3
+  },
+  {
+   "key": "c",
+   "label": "MnO2",
+   "value": 4
+  },
+  {
+   "key": "d",
+   "label": "MnO4^2-",
+   "value": 6
+  },
+  {
+   "key": "e",
+   "label": "MnO4^-",
+   "value": 7
+  }
+ ],
+ "highlight": {
+  "a": "#f9a8d4",
+  "b": "#a16207",
+  "c": "#3a3f4b",
+  "d": "#16a34a",
+  "e": "#7c3aed"
+ },
+ "claims": [
+  {
+   "type": "increasing"
+  },
+  {
+   "type": "oxstate",
+   "element": "Mn",
+   "formulae": {
+    "a": "Mn^2+",
+    "b": "Mn2O3",
+    "c": "MnO2",
+    "d": "MnO4^2-",
+    "e": "MnO4^-"
+   }
+  }
+ ]
+}

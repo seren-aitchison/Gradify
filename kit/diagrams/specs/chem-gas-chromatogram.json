@@ -1,0 +1,103 @@
+{
+ "id": "chem-gas-chromatogram",
+ "renderer": "graph",
+ "course": "chemistry",
+ "lesson": "Gas chromatography",
+ "title": "A gas chromatogram",
+ "caption": "Hexane, heptane and octane are carried through the column by the gas; the more volatile (lower boiling) the compound, the less time it spends dissolved in the stationary phase and the sooner it reaches the detector. The area under each peak is proportional to its amount.",
+ "alt": "Detector signal against time: peaks at 2.1 min (hexane), 3.4 min (heptane) and 5.2 min (octane), getting lower and wider.",
+ "description": [
+  "2.1 min: hexane (bp 69 °C).",
+  "3.4 min: heptane (bp 98 °C).",
+  "5.2 min: octane (bp 126 °C)."
+ ],
+ "range": {
+  "x": [
+   0,
+   7
+  ],
+  "y": [
+   0,
+   110
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ],
+  []
+ ],
+ "grid": [
+  1,
+  20
+ ],
+ "axisLabels": [
+  "retention time / min",
+  "detector signal"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "100*exp(-((x-2.1)/0.07)^2)+70*exp(-((x-3.4)/0.09)^2)+40*exp(-((x-5.2)/0.12)^2)",
+   "colour": "a1",
+   "samples": 1400
+  }
+ ],
+ "points": [
+  {
+   "x": 2.1,
+   "y": 100,
+   "label": "hexane"
+  },
+  {
+   "x": 3.4,
+   "y": 70,
+   "label": "heptane"
+  },
+  {
+   "x": 5.2,
+   "y": 40,
+   "label": "octane"
+  }
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "100*exp(-((x-2.1)/0.07)^2)+70*exp(-((x-3.4)/0.09)^2)+40*exp(-((x-5.2)/0.12)^2)",
+   "domain": [
+    1.5,
+    2.7
+   ],
+   "x": 2.1,
+   "y": 100,
+   "name": "hexane (lowest bp) elutes first, 2.1 min"
+  },
+  {
+   "type": "max",
+   "expr": "100*exp(-((x-2.1)/0.07)^2)+70*exp(-((x-3.4)/0.09)^2)+40*exp(-((x-5.2)/0.12)^2)",
+   "domain": [
+    2.8,
+    4.2
+   ],
+   "x": 3.4,
+   "y": 70
+  },
+  {
+   "type": "max",
+   "expr": "100*exp(-((x-2.1)/0.07)^2)+70*exp(-((x-3.4)/0.09)^2)+40*exp(-((x-5.2)/0.12)^2)",
+   "domain": [
+    4.4,
+    6.5
+   ],
+   "x": 5.2,
+   "y": 40,
+   "name": "octane (highest bp) elutes last, 5.2 min"
+  }
+ ]
+}

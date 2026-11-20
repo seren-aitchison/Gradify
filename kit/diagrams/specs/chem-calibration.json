@@ -1,0 +1,116 @@
+{
+ "id": "chem-calibration",
+ "renderer": "graph",
+ "course": "chemistry",
+ "lesson": "Calibration",
+ "title": "A calibration graph",
+ "caption": "Standards of known concentration are measured and a best-fit line drawn. The unknown's absorbance, 0.300, is read across to the line and down: 5.85 mg dm⁻³. The unknown must lie within the range of the standards.",
+ "alt": "Absorbance against concentration for six standards from 0 to 10 mg dm⁻³ with a best-fit straight line; dashed lines read an unknown absorbance of 0.300 across to the line and down to about 5.9.",
+ "description": [
+  "Six standards: absorbance rises in proportion to concentration.",
+  "Best-fit line, gradient 0.0509 dm³ mg⁻¹.",
+  "Unknown: A = 0.300, so c = 5.85 mg dm⁻³."
+ ],
+ "range": {
+  "x": [
+   0,
+   11
+  ],
+  "y": [
+   0,
+   0.6
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   4,
+   6,
+   8,
+   10
+  ],
+  [
+   0.1,
+   0.2,
+   0.3,
+   0.4,
+   0.5
+  ]
+ ],
+ "grid": [
+  2,
+  0.1
+ ],
+ "axisLabels": [
+  "concentration / mg dm⁻³",
+  "absorbance"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "0.050943*x+0.001952",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 0.002
+  },
+  {
+   "x": 2,
+   "y": 0.104
+  },
+  {
+   "x": 4,
+   "y": 0.205
+  },
+  {
+   "x": 6,
+   "y": 0.309
+  },
+  {
+   "x": 8,
+   "y": 0.408
+  },
+  {
+   "x": 10,
+   "y": 0.512
+  },
+  {
+   "x": 5.851,
+   "y": 0.3,
+   "label": "unknown",
+   "colour": "a2"
+  }
+ ],
+ "marks": [
+  {
+   "y": 0.3,
+   "to": 5.851
+  },
+  {
+   "x": 5.851,
+   "to": 0.3
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "0.050943*x+0.001952",
+   "x": 5.8506,
+   "y": 0.3,
+   "name": "the unknown's absorbance 0.300 reads 5.85 mg dm⁻³ from the line"
+  },
+  {
+   "type": "value",
+   "expr": "0.050943*x+0.001952",
+   "x": 10,
+   "between": [
+    0.505,
+    0.52
+   ],
+   "name": "the line fits the top standard (0.512)"
+  }
+ ]
+}

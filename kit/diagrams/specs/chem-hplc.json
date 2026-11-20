@@ -1,0 +1,100 @@
+{
+ "id": "chem-hplc",
+ "renderer": "graph",
+ "course": "chemistry",
+ "lesson": "High-performance liquid chromatography",
+ "title": "An HPLC chromatogram of a painkiller",
+ "caption": "Reversed-phase HPLC: the stationary phase is non-polar, so the most polar component (paracetamol) elutes first and the least polar (aspirin, here last) is retained longest. Comparing retention times with standards identifies each component; peak areas give amounts.",
+ "alt": "Detector signal against time with three peaks: paracetamol 1.6 min, caffeine 2.5 min, aspirin 4.3 min.",
+ "description": [
+  "1.6 min: paracetamol.",
+  "2.5 min: caffeine (tallest).",
+  "4.3 min: aspirin."
+ ],
+ "range": {
+  "x": [
+   0,
+   6
+  ],
+  "y": [
+   0,
+   110
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  []
+ ],
+ "grid": [
+  1,
+  20
+ ],
+ "axisLabels": [
+  "retention time / min",
+  "UV absorbance"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "60*exp(-((x-1.6)/0.08)^2)+100*exp(-((x-2.5)/0.1)^2)+45*exp(-((x-4.3)/0.14)^2)",
+   "colour": "a4",
+   "samples": 1200
+  }
+ ],
+ "points": [
+  {
+   "x": 1.6,
+   "y": 60,
+   "label": "paracetamol"
+  },
+  {
+   "x": 2.5,
+   "y": 100,
+   "label": "caffeine"
+  },
+  {
+   "x": 4.3,
+   "y": 45,
+   "label": "aspirin"
+  }
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "60*exp(-((x-1.6)/0.08)^2)+100*exp(-((x-2.5)/0.1)^2)+45*exp(-((x-4.3)/0.14)^2)",
+   "domain": [
+    1.2,
+    2.0
+   ],
+   "x": 1.6,
+   "y": 60
+  },
+  {
+   "type": "max",
+   "expr": "60*exp(-((x-1.6)/0.08)^2)+100*exp(-((x-2.5)/0.1)^2)+45*exp(-((x-4.3)/0.14)^2)",
+   "domain": [
+    2.1,
+    3.0
+   ],
+   "x": 2.5,
+   "y": 100
+  },
+  {
+   "type": "max",
+   "expr": "60*exp(-((x-1.6)/0.08)^2)+100*exp(-((x-2.5)/0.1)^2)+45*exp(-((x-4.3)/0.14)^2)",
+   "domain": [
+    3.5,
+    5.5
+   ],
+   "x": 4.3,
+   "y": 45
+  }
+ ]
+}

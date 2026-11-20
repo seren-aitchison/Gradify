@@ -52,6 +52,7 @@ H: Compound types
 - **Oxides**: basic ionic on the left, acidic covalent on the right.
 - **Chlorides**: ionic solids (NaCl) on the left, covalent liquids or gases (SiCl₄, PCl₃) on the right.
 - Covalent chlorides often **hydrolyse** in water, releasing HCl.
+D: chem-main-group-oxides
 H: Hypervalence
 - Period 3 and lower elements can exceed an octet, such as PCl₅, SF₆ and XeF₄.
 - Larger atoms can fit more atoms around them.
@@ -93,6 +94,7 @@ H: Oxides and peroxides
 - Larger cations stabilise larger anions.
 - Group 2 metals mainly form oxides, MO.
 - Superoxides are used in breathing apparatus to release oxygen.
+D: chem-group2-solubility
 H: Thermal stability
 - Group 2 **carbonates** become **more stable** down the group: MgCO₃ decomposes more easily than BaCO₃.
 - Small, highly charged cations **polarise** the carbonate ion, weakening it.
@@ -134,6 +136,7 @@ H: Structures
 - Clays and micas are sheet silicates; quartz and feldspars are frameworks.
 - **Boranes** such as B₂H₆ contain **three-centre two-electron bonds**.
 - **Zeolites** are framework aluminosilicates used as catalysts.
+D: chem-p-block-oxides
 H: Oxoacids and interhalogens
 - Oxoacids include H₂SO₄, HNO₃, H₃PO₄ and HClO₄.
 - Acid strength increases with more oxygen atoms on the central atom.
@@ -175,6 +178,7 @@ H: Hydroxide precipitates
 - Cr³⁺ gives a **grey-green** precipitate that dissolves in excess NaOH.
 - Fe(OH)₂ darkens in air as it is oxidised to Fe(OH)₃.
 - Precipitates identify metal ions.
+D: chem-tm-configs
 H: Ligand exchange and redox
 - Excess ammonia dissolves Cu(OH)₂, giving deep blue [Cu(NH₃)₄(H₂O)₂]²⁺.
 - Concentrated HCl turns [Cu(H₂O)₆]²⁺ into yellow-green [CuCl₄]²⁻.
@@ -216,6 +220,7 @@ H: Structure
 - The **coordination sphere** is written in square brackets.
 - **Counter-ions** balance the charge outside the brackets.
 - Example: [Co(NH₃)₆]Cl₃.
+D: chem-complex-shapes
 H: Naming
 - Ligands are named first, in alphabetical order, then the metal.
 - Prefixes show numbers: di-, tri-, tetra-, hexa-.
@@ -257,6 +262,7 @@ H: Types
 - **Bidentate**: two donor atoms, such as ethane-1,2-diamine (en) and ethanedioate (oxalate).
 - **Hexadentate**: six donor atoms, such as EDTA⁴⁻.
 - **Ambidentate** ligands can bind through different atoms, such as SCN⁻.
+D: chem-ligands-denticity
 H: Effects
 - Ligand size affects coordination number: Cl⁻ is larger than H₂O.
 - Ligands differ in field strength, affecting colour and magnetism.
@@ -298,6 +304,7 @@ H: Common numbers and shapes
 - **4**: **tetrahedral**, such as [CuCl₄]²⁻, or **square planar**, such as [Pt(NH₃)₂Cl₂].
 - **6**: **octahedral**, such as [Fe(H₂O)₆]³⁺.
 - Coordination number counts donor atoms, not ligands.
+D: chem-coordination-numbers
 H: Factors
 - **Size of ligands**: large ligands lower the number.
 - **Size and charge of the metal ion**.
@@ -339,6 +346,7 @@ H: Geometric isomerism
 - **Trans**: identical ligands opposite each other (180°).
 - Occurs in square planar complexes such as [Pt(NH₃)₂Cl₂].
 - Occurs in octahedral complexes such as [Co(NH₃)₄Cl₂]⁺.
+D: chem-cis-trans-platin
 H: Optical isomerism
 - Octahedral complexes with three bidentate ligands, such as [Ni(en)₃]²⁺, are **chiral**.
 - They exist as non-superimposable mirror images.
@@ -380,6 +388,7 @@ H: Octahedral splitting
 - d orbitals pointing at ligands (**eg**: dz², dx²−y²) are raised in energy.
 - Orbitals between the axes (**t2g**: dxy, dxz, dyz) are lowered.
 - The energy gap is **Δo** (octahedral splitting).
+D: chem-cfs-octahedral
 H: Spin states
 - If Δo is **larger** than the pairing energy, electrons pair in t2g: **low spin**.
 - If Δo is **smaller**, electrons spread out: **high spin**.
@@ -421,6 +430,7 @@ H: Beyond point charges
 - Metal and ligand orbitals overlap to form bonding and antibonding orbitals.
 - The eg* orbitals are σ-antibonding; t2g orbitals can take part in π bonding.
 - This explains why neutral ligands such as CO produce large splitting.
+D: chem-high-low-spin
 H: π effects
 - **π-donor** ligands (halides) raise t2g, **decreasing** Δo.
 - **π-acceptor** ligands (CO, CN⁻) lower t2g, **increasing** Δo.
@@ -462,6 +472,7 @@ H: Types of magnetism
 - **Diamagnetic** substances have all electrons paired and are weakly repelled.
 - **Ferromagnetic** solids, such as iron, have unpaired spins aligned across domains.
 - **Antiferromagnetic** solids have neighbouring spins aligned in opposite directions.
+D: chem-magnetism-unpaired
 H: Spin-only formula
 - μ = √(n(n + 2)) Bohr magnetons (BM), where n is the number of unpaired electrons.
 - One unpaired electron gives about 1.73 BM.
@@ -503,6 +514,7 @@ H: d-d transitions
 - The complex absorbs that colour; we see the **complementary** colour.
 - ΔE = hf links splitting to the frequency absorbed.
 - Changing ligand, oxidation state or geometry changes Δ and the colour.
+D: chem-colour-dd
 H: Colourless and intense colours
 - **d⁰** ions such as Sc³⁺ and **d¹⁰** ions such as Zn²⁺ have no d-d transitions and are colourless.
 - d-d transitions are **weak** because they are partly forbidden.
@@ -585,6 +597,7 @@ H: Bonding and counting
 - Ligands include CO, alkyls, alkenes and cyclopentadienyl (Cp).
 - The **18-electron rule**: stable complexes often have 18 valence electrons around the metal.
 - Count metal d electrons plus electrons donated by each ligand.
+D: chem-ferrocene
 H: Examples
 - **Ferrocene**, Fe(C₅H₅)₂: a "sandwich" compound.
 - **Grignard reagents**, RMgX, form C–C bonds.
@@ -626,6 +639,7 @@ H: Elementary steps
 - **Oxidative addition**: the metal inserts into a bond, raising its oxidation state by 2.
 - **Migratory insertion**: a ligand such as an alkene inserts into a metal-ligand bond.
 - **Reductive elimination**: two ligands join and leave, lowering the oxidation state by 2.
+D: chem-hydrogenation-cycle
 H: Examples
 - **Wilkinson's catalyst**, RhCl(PPh₃)₃, hydrogenates alkenes.
 - **Monsanto and Cativa processes** make ethanoic acid from methanol and CO.
@@ -667,6 +681,7 @@ H: Methods
 - **Moderately reactive** metals (Fe, Zn) are reduced by **carbon** or CO.
 - **Titanium** is reduced from TiCl₄ by magnesium or sodium (Kroll process).
 - **Unreactive** metals (Au) occur native.
+D: chem-ellingham
 H: Ellingham diagrams
 - Plot ΔG° of oxide formation against temperature.
 - A metal can reduce the oxide of any metal **above** it on the diagram.
@@ -708,6 +723,7 @@ H: Major processes
 - **Contact process**: SO₂ oxidised to SO₃ over vanadium(V) oxide, then made into H₂SO₄.
 - **Ostwald process**: ammonia oxidised over platinum-rhodium to make nitric acid.
 - **Chlor-alkali**: electrolysis of brine gives Cl₂, H₂ and NaOH.
+D: chem-contact-process
 H: Choosing conditions
 - **Compromise** conditions balance rate, yield and cost.
 - Catalysts allow lower temperatures and faster rates.
@@ -749,6 +765,7 @@ H: Roles of metals
 - **Electron transfer**: iron-sulfur proteins and cytochromes.
 - **Catalysis**: zinc in carbonic anhydrase, magnesium with ATP.
 - **Signalling and structure**: Ca²⁺ signals; Zn²⁺ in zinc fingers.
+D: chem-haem
 H: Examples
 - **Chlorophyll** contains magnesium in a porphyrin ring.
 - **Vitamin B12** contains cobalt.
@@ -790,6 +807,7 @@ H: Structure types
 - **Caesium chloride**: 8:8 coordination.
 - **Fluorite** (CaF₂): 8:4 coordination.
 - **Perovskite** (CaTiO₃): ABX₃, important in electronics and solar cells.
+D: chem-perovskite
 H: Defects
 - **Schottky** defects: missing cation-anion pairs.
 - **Frenkel** defects: an ion moved to an interstitial site.

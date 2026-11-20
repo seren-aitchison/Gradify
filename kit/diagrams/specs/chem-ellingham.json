@@ -1,0 +1,96 @@
+{
+ "id": "chem-ellingham",
+ "renderer": "graph",
+ "course": "chemistry",
+ "lesson": "Metal extraction",
+ "title": "An Ellingham diagram: when carbon reduces iron oxide",
+ "caption": "ΔG° per mole of O₂ against temperature. Forming CO gets more favourable as T rises (its line slopes down, ΔS > 0), while forming FeO gets less favourable. Above the crossing, about 994 K, carbon's line is lower, so carbon can reduce FeO.",
+ "alt": "Two lines of ΔG° against temperature: 2C + O₂ → 2CO falling, 2Fe + O₂ → 2FeO rising; they cross near 990 K.",
+ "description": [
+  "2C + O₂ → 2CO: ΔG° = −221 − 0.179T kJ, falling.",
+  "2Fe + O₂ → 2FeO: ΔG° = −528 + 0.130T kJ, rising.",
+  "They cross at about 994 K; above it carbon reduces FeO."
+ ],
+ "range": {
+  "x": [
+   300,
+   2000
+  ],
+  "y": [
+   -650,
+   -150
+  ]
+ },
+ "ticks": [
+  [
+   500,
+   1000,
+   1500,
+   2000
+  ],
+  [
+   -600,
+   -500,
+   -400,
+   -300,
+   -200
+  ]
+ ],
+ "grid": [
+  250,
+  100
+ ],
+ "axisLabels": [
+  "T / K",
+  "ΔG° / kJ per mol O₂"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "-221-0.179*x",
+   "colour": "a1",
+   "label": "2C + O₂ → 2CO",
+   "labelAt": [
+    1500,
+    -520
+   ]
+  },
+  {
+   "expr": "-528+0.130*x",
+   "colour": "a3",
+   "label": "2Fe + O₂ → 2FeO",
+   "labelAt": [
+    1450,
+    -300
+   ]
+  }
+ ],
+ "bands": [
+  {
+   "x": [
+    993.5275080906149,
+    2000
+   ],
+   "label": "carbon reduces FeO",
+   "colour": "good"
+  }
+ ],
+ "checks": [
+  {
+   "type": "intersect",
+   "a": "-221-0.179*x",
+   "b": "-528+0.130*x",
+   "x": 993.5275,
+   "y": -398.8414,
+   "name": "the lines cross at 994 K"
+  },
+  {
+   "type": "order",
+   "a": "-221-0.179*x",
+   "b": "-528+0.130*x",
+   "x": 1500,
+   "rel": "<",
+   "name": "at 1500 K the carbon line is lower: C can reduce FeO"
+  }
+ ]
+}

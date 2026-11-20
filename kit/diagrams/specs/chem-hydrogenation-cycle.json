@@ -1,0 +1,82 @@
+{
+ "id": "chem-hydrogenation-cycle",
+ "renderer": "flow",
+ "course": "chemistry",
+ "lesson": "Catalytic complexes",
+ "title": "A catalytic cycle for hydrogenation",
+ "caption": "A rhodium catalyst such as Wilkinson's adds H₂ (oxidative addition), binds the alkene, transfers a hydride to it (migratory insertion) and releases the alkane (reductive elimination), regenerating itself. [Rh] stands for the metal with its other ligands.",
+ "alt": "A four-step cycle: [Rh] + H₂ → [Rh]H₂; + C₂H₄ → alkene complex; insertion → [Rh](H)(C₂H₅); elimination of C₂H₆ returns [Rh].",
+ "description": [
+  "Oxidative addition: [Rh] + H₂ → [Rh]H₂.",
+  "Alkene binds: [Rh]H₂ + C₂H₄ → [Rh]H₂(C₂H₄).",
+  "Migratory insertion: → [Rh]H(C₂H₅).",
+  "Reductive elimination: → [Rh] + C₂H₆, the catalyst regenerated."
+ ],
+ "layout": "cycle",
+ "radius": 120,
+ "boxWidth": 110,
+ "nodes": [
+  {
+   "id": "a",
+   "label": "[Rh]",
+   "tone": "a1"
+  },
+  {
+   "id": "b",
+   "label": "[Rh]H₂"
+  },
+  {
+   "id": "c",
+   "label": "[Rh]H₂(C₂H₄)"
+  },
+  {
+   "id": "d",
+   "label": "[Rh]H(C₂H₅)"
+  }
+ ],
+ "edges": [
+  {
+   "from": "a",
+   "to": "b",
+   "label": "+ H₂"
+  },
+  {
+   "from": "b",
+   "to": "c",
+   "label": "+ C₂H₄"
+  },
+  {
+   "from": "c",
+   "to": "d",
+   "label": "insertion"
+  },
+  {
+   "from": "d",
+   "to": "a",
+   "label": "− C₂H₆"
+  }
+ ],
+ "centre": "net: C₂H₄ + H₂ → C₂H₆",
+ "claims": [
+  {
+   "type": "net",
+   "steps": [
+    "Rh + H2 → RhH2",
+    "RhH2 + C2H4 → RhH2C2H4",
+    "RhH2C2H4 → RhHC2H5",
+    "RhHC2H5 → Rh + C2H6"
+   ],
+   "net": "C2H4 + H2 → C2H6"
+  },
+  {
+   "type": "regenerated",
+   "species": "Rh",
+   "steps": [
+    "Rh + H2 → RhH2",
+    "RhH2 + C2H4 → RhH2C2H4",
+    "RhH2C2H4 → RhHC2H5",
+    "RhHC2H5 → Rh + C2H6"
+   ]
+  }
+ ]
+}

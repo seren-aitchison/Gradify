@@ -406,7 +406,7 @@ def nmr(spec, W, narrow):
             hh = hgt * c / max(pascal)
             out.append(f'<path d="M{xx:.1f} {base} L{xx:.1f} {base - hh:.1f}" stroke="{colr}" stroke-width="{2.2 if mult > 1 else 3}"/>')
         lab = p.get("label") or (f"{p['n']}H {MULT.get(mult, 'm')}" if nuc == "1H" else "")
-        out.append(text(X(p["shift"]), base - hgt - 22, f"{p['shift']:g}", 11.5, 700, fill=colr))
+        out.append(text(X(p["shift"]), base - hgt - 22, f"{p['shift']:.1f}" if nuc == "1H" else f"{p['shift']:g}", 11.5, 700, fill=colr))
         if lab:
             out.append(text(X(p["shift"]), base - hgt - 8, lab, 11, 600, fill=colr))
     H = base + 44
@@ -419,10 +419,8 @@ def nmr(spec, W, narrow):
         for a in m.GetAtoms():
             a.SetAtomMapNum(0)
         inner, w, h, pos = draw_mol(m, 30 if narrow else 34, {"atomColours": colouring, "displayed": spec.get("displayed", False)})
-        if narrow:
-            out.append(f'<g transform="translate({(W - w) / 2:.1f} {H})">{inner}</g>'); H += h + 10
-        else:
-            out.insert(0, f'<g transform="translate({spec.get("molAt", [W - w - 20, 0])[0]:.1f} {spec.get("molAt", [0, 0])[1]:.1f})">{inner}</g>')
+        # the structure below the spectrum, its atoms shaded in each peak's colour
+        out.append(f'<g transform="translate({(W - w) / 2:.1f} {H})">{inner}</g>'); H += h + 10
     return "".join(out), H
 
 
@@ -466,7 +464,7 @@ def mass_nominal(f):
 
 def ms(spec, W, narrow):
     lo, hi = spec.get("range", [0, max(p["mz"] for p in spec["peaks"]) + 10])
-    pl, pr, top, base = 46, 16, 30, 260
+    pl, pr, top, base = 46, 16, 56, 280
     X = lambda v: pl + (v - lo) / (hi - lo) * (W - pl - pr)
     Y = lambda r: base - r / 100 * (base - top)
     out = [f'<path d="M{pl} {base} L{W - pr} {base} M{pl} {base} L{pl} {top - 6}" stroke="{INK}" stroke-width="1.6" fill="none"/>']

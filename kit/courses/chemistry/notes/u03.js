@@ -976,6 +976,7 @@ H: Rules
 - The sum of oxidation states equals the overall charge.
 D: chem-max-oxidation-p3
 D: chem-oxidation-state-rules
+D: chem-mn-oxidation-states
 H: Patterns and names
 - Group 1: +1; group 2: +2; aluminium: +3.
 - Non-metals can show negative and positive states, such as chlorine from −1 to +7.
