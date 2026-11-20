@@ -675,6 +675,8 @@ S: The urinary system stores and eliminates urine through the ureters, bladder a
 O: Describe the structures of the urinary tract and their functions
 O: Explain how the bladder fills and empties (micturition)
 O: Relate urinary physiology to infection, retention and incontinence
+LV: Year 1 · Foundation
+EV: established | Micturition is a spinal reflex under voluntary control, and urine dipsticks are unreliable for diagnosing infection in people over 65.
 PRE: Renal system
 H: Structures
 - **Ureters** carry urine from the kidneys to the bladder by peristalsis.
@@ -706,12 +708,15 @@ M1#nursing-u02-17-q1@1: Why are urinary tract infections more common in women th
 M2#nursing-u02-17-q2@3: An older man has not passed urine for eight hours, has lower abdominal pain and a firm swelling above the pubic bone. What is the most likely problem? | Acute urinary retention | Stress incontinence | Normal bladder filling | Dehydration only | Inability to pass urine with a painful, palpable bladder suggests acute retention, which needs prompt assessment, often with a bladder scan.
 M3#nursing-u02-17-q3@3: An 84-year-old care home resident is newly confused. A urine dipstick is positive for leucocytes. What is the best approach? | Assess for all causes of confusion, because dipsticks are unreliable for infection in people over 65 | Diagnose a urine infection from the positive dipstick and start antibiotics | Accept the confusion as part of ageing and continue routine care | Repeat the dipstick until it is negative | Positive dipsticks are common without infection in older people; delirium needs a full assessment, including for sepsis, medicines, pain, constipation and dehydration.
 MATCH1#nursing-u02-17-q4@3: Match each type of incontinence to its feature. | Stress = Leakage on coughing or sneezing ; Urge = Sudden strong need to pass urine ; Overflow = Leakage from a bladder that doesn't empty ; Functional = Difficulty reaching the toilet in time | Identifying the type guides management.
+SA3@2,3: Mr Doyle (invented), 78, had surgery yesterday and is taking opioid analgesia. He hasn't passed urine for eight hours, feels uncomfortable low in his abdomen and is leaking small amounts. Explain what may be happening and what the nurse should do. | This suggests urinary retention with overflow leakage. Opioids, anaesthesia, pain, immobility and an enlarged prostate can all disturb the micturition reflex, so the detrusor doesn't empty the bladder and urine leaks around the full bladder. The nurse should assess him (lower abdominal swelling and tenderness, fluid balance chart), carry out a bladder scan if competent and in line with local policy, report the findings to the medical team, and support any prescribed treatment such as catheterisation by a competent practitioner, recording output afterwards. | Identifies retention with overflow ; Explains how opioids, surgery or the prostate affect micturition ; Assesses for a palpable bladder and reviews the fluid chart ; Uses a bladder scan within competence and local policy ; Reports and escalates for treatment
 
 ## Endocrine system
 S: The endocrine system uses hormones carried in the blood to regulate growth, metabolism, fluid balance, stress responses and reproduction. Hormone disorders such as diabetes and thyroid disease are common in every field of nursing.
 O: Describe the main endocrine glands and their hormones
 O: Explain hormonal control by negative feedback, including the hypothalamic-pituitary axis
 O: Relate hormone imbalances to clinical signs
+LV: Year 1 · Application
+EV: established | Most hormones are controlled by negative feedback, and long-term steroid medicines suppress the hypothalamic-pituitary-adrenal axis.
 PRE: Homeostasis
 H: How hormones work
 P: Hormones are chemical messengers released into the blood that act on cells with matching **receptors**. Their effects are slower and longer-lasting than nerve signals. Most are controlled by **negative feedback**.
@@ -743,14 +748,17 @@ Q: Which hormone raises blood calcium? | Parathyroid hormone.
 Q: Which gland releases ADH and oxytocin? | The posterior pituitary.
 M1#nursing-u02-18-q1@1: Which hormone mainly sets the body's metabolic rate? | Thyroxine | Insulin | Aldosterone | Oxytocin | Thyroid hormones (T4 and T3) regulate the metabolic rate of most cells.
 M2#nursing-u02-18-q2@2: When thyroxine levels rise, what happens to TSH release? | It falls, through negative feedback | It rises | It stays the same | It stops permanently | High thyroxine inhibits TRH and TSH release, bringing thyroxine back down.
-M3#nursing-u02-18-q3@2,3: A patient who has taken prednisolone daily for a year is nil by mouth and has missed doses. They become weak, dizzy and hypotensive. What should the nurse suspect? | Adrenal insufficiency from suppressed natural cortisol production: escalate urgently | Normal tiredness from fasting, which will settle once she eats again | Hyperthyroidism | Too much cortisol from the steroids she was taking | Long-term steroids suppress the axis; missing doses can cause adrenal crisis, an emergency.
+M3#nursing-u02-18-q3@2,3: A patient who has taken prednisolone daily for a year is nil by mouth and has missed doses. They become weak, dizzy and hypotensive. What should the nurse suspect? | Adrenal insufficiency from suppressed natural cortisol production: escalate urgently | Normal tiredness from fasting, which will settle once they eat again | Hyperthyroidism | Too much cortisol from the steroids they were taking | Long-term steroids suppress the axis; missing doses can cause adrenal crisis, an emergency.
 MATCH1#nursing-u02-18-q4@1: Match each hormone to its gland. | Insulin = Pancreas ; Cortisol = Adrenal cortex ; Thyroxine = Thyroid ; ADH = Posterior pituitary | Each gland produces specific hormones.
+SA3@2,3: Using the hypothalamic-pituitary-thyroid axis as an example, explain negative feedback, and explain why long-term steroid medicines must not be stopped suddenly. | The hypothalamus releases TRH, which makes the anterior pituitary release TSH, which makes the thyroid release thyroxine. Rising thyroxine inhibits TRH and TSH release, so production falls back towards normal: negative feedback. Cortisol is controlled the same way through CRH and ACTH. Long-term steroid medicines act like cortisol, so they switch off CRH and ACTH and the adrenal glands stop making enough cortisol of their own. If the medicine is stopped suddenly, or doses are missed, the person can develop adrenal insufficiency or crisis, an emergency. | Describes the TRH, TSH and thyroxine sequence ; Explains that rising hormone inhibits its own release ; Links steroid medicines to suppression of ACTH ; Explains reduced natural cortisol production ; Identifies adrenal crisis as the risk of sudden stopping
 
 ## Reproductive system
 S: The reproductive system produces sex cells and hormones and, in females, supports pregnancy. Nurses meet reproductive health in sexual health, maternity, fertility, gynaecology, urology and the care of every age.
 O: Describe the main structures of the female and male reproductive systems
 O: Explain the hormonal control of the menstrual cycle and spermatogenesis
 O: Relate reproductive physiology to health across the lifespan, using respectful, inclusive language
+LV: Year 1 · Foundation
+EV: established | FSH, LH, oestrogen and progesterone coordinate the menstrual cycle under hypothalamic and pituitary control.
 PRE: Endocrine system
 H: Female reproductive system
 - **Ovaries** produce eggs (ova) and the hormones oestrogen and progesterone.
@@ -785,12 +793,16 @@ M1#nursing-u02-19-q1@1: Which structure produces testosterone? | The testes | Th
 M2#nursing-u02-19-q2@2: What maintains the thickened endometrium after ovulation? | Progesterone from the corpus luteum | A fall in oestrogen | FSH from the hypothalamus | Testosterone from the ovaries | The corpus luteum produces progesterone, which keeps the lining ready for implantation.
 M2#nursing-u02-19-q3@3: An older man reports a weak stream and difficulty starting to pass urine. Which structure is most likely involved? | The prostate | The ureters | The kidneys | The seminal vesicles | The prostate surrounds the urethra; enlargement can obstruct urine flow and needs medical assessment.
 TF1#nursing-u02-19-q4@2: A menstrual cycle that is regularly 32 days long is outside the normal range. | False | Cycles of about 21 to 35 days can be normal; 28 days is only an average.
+M3@3: Alex (invented), a trans man, is admitted for unrelated surgery. Local policy requires pregnancy status to be checked before the operation for anyone who could be pregnant. What is the best approach? | Ask him privately and explain why it is asked of everyone who could be pregnant | Skip the question, because he is a man and so cannot be pregnant | Ask him at the bedside in front of the other patients to save time | Record that pregnancy is impossible based on his name and appearance | Anatomy can't be assumed from gender, name or appearance; asking privately and explaining the reason respects him and keeps him safe.
+SA3@2: Describe the hormonal control of the menstrual cycle, giving the roles of FSH, LH, oestrogen and progesterone. | FSH from the anterior pituitary makes ovarian follicles develop, and they release oestrogen, which thickens the endometrium. An LH surge mid-cycle triggers ovulation. The corpus luteum then makes progesterone to maintain the lining. Without pregnancy it breaks down, hormone levels fall and the lining is shed. | FSH stimulates follicles ; Oestrogen thickens the endometrium ; LH surge triggers ovulation ; Progesterone from the corpus luteum maintains the lining ; Falling hormones lead to menstruation
 
 ## Immune system
 S: The immune system defends the body against micro-organisms, toxins and abnormal cells. Understanding innate and adaptive immunity explains fever, inflammation, vaccination and why some patients are especially vulnerable to infection.
 O: Distinguish innate from adaptive immunity
 O: Describe the inflammatory response and fever
 O: Explain how vaccination works and recognise people with reduced immunity
+LV: Year 1 · Application
+EV: established | Innate immunity is rapid and non-specific, while adaptive immunity is specific and has memory.
 PRE: Blood and circulation
 H: Innate immunity
 - Present from birth, rapid and non-specific.
@@ -825,12 +837,15 @@ M1#nursing-u02-20-q1@1: Which is part of innate immunity? | Phagocytosis by neut
 M2#nursing-u02-20-q2@3: How does a vaccine protect against disease? | By creating immune memory without causing the disease | By killing all bacteria in the body | By replacing white blood cells | By permanently raising body temperature | Vaccines expose the immune system to a harmless antigen so memory cells respond quickly on real exposure.
 M3#nursing-u02-20-q3@2,3: A patient receiving chemotherapy feels shivery and unwell but has a temperature of 37.2°C. What is the most important consideration? | Neutropenic sepsis is possible even without a high fever: escalate urgently per local policy | The temperature is normal so infection is ruled out | Advise rest and recheck the temperature tomorrow, as chemotherapy often causes this | Give paracetamol to settle the shivering and continue routine observations | Immunosuppressed people may not mount a fever; feeling unwell after chemotherapy needs urgent assessment.
 MS2#nursing-u02-20-q4@2: Which are signs of inflammation? | Redness ; Swelling ; Heat | Pallor ; Coolness | Vasodilation and leaky vessels cause redness, heat and swelling, with pain and loss of function.
+SA3@1,3: Compare innate and adaptive immunity, and explain why a person receiving chemotherapy may have a serious infection without a fever. | Innate immunity is present from birth, rapid and non-specific: barriers such as skin, phagocytes such as neutrophils, inflammation and fever. Adaptive immunity is slower to start but specific: B lymphocytes make antibodies, T lymphocytes coordinate or kill infected cells, and memory cells give a faster response next time. Chemotherapy can cause neutropenia, so there are too few neutrophils to fight infection and drive the inflammatory response, and a fever may be absent or low. Feeling unwell after chemotherapy is therefore treated as possible neutropenic sepsis and escalated urgently in line with local policy. | Describes innate immunity as rapid and non-specific ; Describes adaptive immunity as specific with memory ; Names B and T lymphocytes or antibodies ; Explains neutropenia reducing the response and fever ; Escalates possible neutropenic sepsis urgently
 
 ## Lymphatic system
 S: The lymphatic system returns excess tissue fluid to the blood, absorbs fats from the gut and carries immune cells. It explains lymphoedema, swollen lymph nodes and the spread of some infections and cancers.
 O: Describe the structures of the lymphatic system
 O: Explain the roles of lymph in fluid return, fat absorption and immunity
 O: Relate lymphatic function to lymphoedema and lymph node assessment
+LV: Year 1 · Foundation
+EV: established | The lymphatic system returns excess tissue fluid to the blood, and impaired drainage causes lymphoedema.
 PRE: Immune system
 H: Structures
 - **Lymphatic capillaries** collect excess tissue fluid, which becomes **lymph**.
@@ -847,6 +862,7 @@ H: In practice
 - Cancer can spread through lymph, so nodes may be removed or treated, for example in breast cancer.
 - **Lymphoedema** is swelling from impaired lymph drainage, after surgery or radiotherapy that affects nodes, or from congenital causes. Skin care, compression and avoiding injury to the affected limb help; cellulitis is a common complication.
 - People without a functioning **spleen** are at higher risk of serious infection and usually need extra vaccines and sometimes antibiotics.
+P: Early lymphoedema may feel like heaviness or tightness, or rings and sleeves feeling tight, before swelling shows. Redness, heat and pain in the limb may mean cellulitis: report it promptly.
 K: Lymphatics return fluid, absorb fat and carry immune cells; damage causes lymphoedema and infection risk.
 !: Assuming a swollen limb after breast cancer treatment is a minor problem. Lymphoedema is lifelong and needs specialist management and skin care.
 T: Lymph | Excess tissue fluid collected by lymphatic vessels
@@ -863,12 +879,16 @@ M1#nursing-u02-21-q1@2: Which is a function of the lymphatic system? | Returning
 M2#nursing-u02-21-q2@3: A patient has had axillary lymph nodes removed during breast cancer surgery. What is she at risk of in that arm? | Lymphoedema | Increased lymph drainage | Low blood glucose | Bone fracture only | Removing nodes impairs drainage from the arm, which can cause lymphoedema.
 M2#nursing-u02-21-q3@3: Why do people who have had their spleen removed need extra protection against infection? | The spleen filters blood and helps fight certain bacteria | The spleen makes all antibodies | The spleen produces red blood cells in adults | The spleen controls body temperature | Loss of splenic filtering increases the risk of severe infection from encapsulated bacteria, so vaccines and sometimes antibiotics are needed.
 MATCH1#nursing-u02-21-q4@1: Match each lymphoid organ to its role. | Spleen = Filters blood and removes old red cells ; Thymus = T cell maturation ; Lymph nodes = Filter lymph ; Lacteals = Absorb fats | Each part of the lymphatic system has a distinct role.
+M3@3: Mrs Rahman (invented) has lymphoedema in her arm after axillary node removal. The arm is now red, hot and painful, and she feels shivery. What should the nurse do? | Suspect cellulitis, take full observations and escalate promptly | Apply a tighter compression sleeve and review it next week | Reassure her that this is a flare of her usual lymphoedema | Advise rest and mention it at her next clinic visit | Cellulitis is a common complication of lymphoedema, and shivering suggests spreading infection that needs prompt medical review.
+SA3@2,3: Explain how lymph returns fluid to the circulation and why removing lymph nodes can cause lifelong problems in a limb. | Lymphatic capillaries collect excess tissue fluid as lymph, and valved vessels, helped by muscle movement, carry it through the nodes to the veins near the heart. Removing or irradiating nodes, as in breast cancer treatment, blocks drainage from the limb, so fluid collects as lymphoedema. It is lifelong and raises the risk of cellulitis, so skin care, compression and specialist follow-up are needed. | Lymphatic capillaries collect excess fluid ; Valved vessels return lymph to the veins ; Node removal or radiotherapy impairs drainage ; Lymphoedema is lifelong ; Skin care, cellulitis risk or specialist management
 
 ## Fluid balance
 S: Water makes up about 60% of an adult's body weight, divided between the cells, the tissues and the blood. Keeping fluid intake and losses in balance is vital, and nurses detect and record imbalances daily.
 O: Describe the body fluid compartments and how fluid moves between them
 O: Identify sources of fluid intake and output, including insensible losses
 O: Recognise the signs of dehydration and fluid overload
+LV: Year 1 · Application
+EV: established | About two-thirds of body water is intracellular, and insensible losses rise with fever and fast breathing.
 PRE: Blood and circulation
 H: Fluid compartments
 - **Intracellular fluid** (inside cells): about two-thirds of body water.
@@ -900,12 +920,15 @@ M1#nursing-u02-22-q1@1: Which fluid compartment holds the most body water? | Int
 M2#nursing-u02-22-q2@3: Which set of findings suggests fluid overload? | Ankle oedema, crackles in the lungs and rapid weight gain | Dry mouth, low urine output and tachycardia | Thirst and concentrated urine | Sunken eyes and low blood pressure | Excess fluid shows as oedema, lung crackles and weight gain; the other options suggest dehydration.
 M3#nursing-u02-22-q3@2,3: A febrile patient breathing at 28 breaths a minute has a fluid chart showing intake equal to urine output. What should the nurse consider? | Insensible losses are increased, so the patient may be in negative balance | The patient is definitely in perfect balance | The chart shows the patient is at risk of fluid overload | Fever and fast breathing reduce fluid losses, so the patient is in positive balance | Fever and tachypnoea increase losses from the skin and lungs that the chart doesn't capture.
 TF2#nursing-u02-22-q4@2: Older adults have a reduced sense of thirst, which increases their risk of dehydration. | True | The thirst response weakens with age, so older people may not drink enough unless prompted and helped.
+SA3@2,3: Over 24 hours, Mr Ali (invented) drinks 1200 mL and receives 1000 mL of intravenous fluid. He passes 1500 mL of urine and vomits 300 mL. He has a fever and is breathing fast. Calculate his measured fluid balance and explain why it may be misleading. These numbers are illustrative. | Measured intake is 1200 + 1000 = 2200 mL. Measured output is 1500 + 300 = 1800 mL. The chart balance is 2200 - 1800 = 400 mL positive. But insensible losses from the skin and breath, about 500 to 1000 mL a day in adults, aren't on the chart, and they rise with fever and fast breathing, so his true balance may be close to zero or negative. The nurse should look at the whole picture, including observations, urine colour and volume, mouth and skin, daily weight and blood results, and report concerns. | Calculates intake of 2200 mL ; Calculates output of 1800 mL ; Gives a measured balance of 400 mL positive ; Explains unrecorded insensible losses, increased by fever and tachypnoea ; Uses other assessments such as weight and observations
 
 ## Electrolytes
 S: Electrolytes are charged particles dissolved in body fluids, such as sodium, potassium, calcium and magnesium. They control fluid distribution, nerve and muscle function and heart rhythm, so imbalances can be dangerous.
 O: Describe the main roles of sodium, potassium, calcium and magnesium
 O: State typical adult reference ranges and recognise that laboratories set their own
 O: Relate electrolyte imbalances to clinical signs and risks
+LV: Year 1 · Application
+EV: established | Hyperkalaemia can cause life-threatening arrhythmias without warning symptoms.
 PRE: Fluid balance
 H: Sodium
 - The main **extracellular** electrolyte; determines where water goes.
@@ -940,12 +963,15 @@ M1#nursing-u02-23-q1@1: Which electrolyte is found mainly inside cells? | Potass
 M2#nursing-u02-23-q2@3: A patient taking a loop diuretic develops muscle weakness and cramps. Which electrolyte imbalance is most likely? | Hypokalaemia | Hyperkalaemia | Hypernatraemia | Hypercalcaemia | Loop diuretics increase potassium loss in the urine, causing low potassium.
 M3#nursing-u02-23-q3@3: A patient with acute kidney injury has a potassium result of 6.8 mmol/L but says they feel fine. What should the nurse do? | Treat it as an emergency: inform the medical team immediately per local policy | Wait for symptoms before reporting | Repeat the blood test at the next routine round before telling anyone | Encourage oral fluids and recheck when the patient has symptoms | Severe hyperkalaemia can cause cardiac arrest without symptoms; it needs urgent review, an ECG and treatment.
 MATCH2#nursing-u02-23-q4@3: Match each imbalance to a typical sign. | Hyponatraemia = Confusion ; Hypokalaemia = Muscle weakness ; Hypocalcaemia = Tingling and muscle spasms ; Hypercalcaemia = Thirst and constipation | Recognising patterns helps you report concerns, though blood tests confirm them.
+SA3@1,3: Explain why hyperkalaemia is dangerous, give three causes, and describe what the nurse should do on receiving a potassium result well above the laboratory's reference range. | Potassium is the main intracellular ion and sets the resting membrane potential of nerve and muscle cells, including the heart, so a high level can cause arrhythmias and cardiac arrest, often without symptoms first. Causes include acute or chronic kidney injury, medicines such as ACE inhibitors and potassium-sparing diuretics, and excess potassium in fluids; a haemolysed sample can give a falsely high result, but this must not be assumed. The nurse should report the result to the medical team immediately in line with local policy, take a full set of observations, support an ECG or cardiac monitoring as requested, and review potassium-containing fluids and medicines with the prescriber. | Links potassium to heart muscle excitability and arrhythmias ; Notes that there may be no warning symptoms ; Gives three valid causes ; Reports immediately in line with local policy ; Mentions ECG or monitoring and medicine review
 
 ## Acid-base balance
 S: Acid-base balance keeps the blood pH within a narrow range, about 7.35–7.45. The lungs and kidneys work together to achieve this, and disturbances are common in serious illness.
 O: Explain pH and the role of buffers, the lungs and the kidneys
 O: Distinguish respiratory from metabolic acidosis and alkalosis
 O: Relate acid-base disturbances to clinical situations
+LV: Year 1 · Application
+EV: established | Blood pH is normally about 7.35–7.45, with the lungs controlling carbon dioxide and the kidneys controlling bicarbonate.
 PRE: Gas exchange
 H: pH and why it matters
 P: pH measures hydrogen ion concentration: a lower pH means more acid. Blood is slightly alkaline, normally about **7.35–7.45**. Outside this range, enzymes and cells don't work properly; severe acidosis depresses the heart and brain.
@@ -976,12 +1002,15 @@ M1#nursing-u02-24-q1@1: Which organ adjusts blood pH within minutes by changing 
 M2#nursing-u02-24-q2@2: A patient with opioid toxicity has a respiratory rate of 6. Which disturbance is most likely? | Respiratory acidosis | Respiratory alkalosis | Metabolic alkalosis | No acid-base change | Slow breathing retains carbon dioxide, which forms acid in the blood.
 M3#nursing-u02-24-q3@3: A patient with type 1 diabetes is breathing deeply and rapidly, has abdominal pain and ketones in the blood. Why are they breathing this way? | To blow off carbon dioxide and compensate for metabolic acidosis | Because they have a primary lung infection | To retain carbon dioxide | Because their pH is too high | Ketoacidosis is a metabolic acidosis; deep, rapid (Kussmaul) breathing is respiratory compensation. This is an emergency.
 MATCH2#nursing-u02-24-q4@2: Match each cause to the disturbance it produces. | Prolonged vomiting = Metabolic alkalosis ; Hyperventilation from anxiety = Respiratory alkalosis ; Septic shock with lactate = Metabolic acidosis ; Exhaustion in severe COPD = Respiratory acidosis | Identifying the cause shows which system started the problem.
+SA3@2,3: A patient with sepsis has a high lactate and a respiratory rate of 30, with a clear chest. Explain the acid-base disturbance and the compensation, and why the respiratory rate matters. | Poor tissue perfusion in sepsis makes cells rely on anaerobic metabolism, producing lactic acid: a metabolic acidosis. Buffers, mainly bicarbonate, take up hydrogen ions first. The respiratory centres respond to the falling pH by increasing the rate and depth of breathing to blow off carbon dioxide, which partly corrects the pH; this is respiratory compensation. The kidneys compensate more slowly. A fast respiratory rate can therefore signal a metabolic problem, not only a chest problem, and it is an early warning sign: the nurse should calculate NEWS2, follow the sepsis pathway and escalate in line with local policy. | Identifies metabolic (lactic) acidosis ; Explains anaerobic metabolism from poor perfusion ; Describes respiratory compensation by blowing off carbon dioxide ; Recognises fast breathing as a sign of metabolic disturbance ; Escalates using NEWS2 and local sepsis policy
 
 ## Temperature regulation
 S: The body keeps its core temperature close to 37°C by balancing heat production and heat loss. Temperature is a routine observation, and both high and low values can signal serious illness.
 O: Explain how the hypothalamus regulates body temperature
 O: Describe the mechanisms of heat production and heat loss
 O: Relate temperature changes to fever, hypothermia and hyperthermia and their nursing implications
+LV: Year 1 · Foundation
+EV: established | The hypothalamus balances heat production against heat loss, and a low temperature in illness can be a sign of sepsis.
 PRE: Homeostasis
 H: Control
 P: The **hypothalamus** acts as the thermostat. It receives information from temperature receptors in the skin and core and triggers responses to keep core temperature in the normal range (typically about 36.0–37.5°C, varying with the site measured, time of day, age and individual).
@@ -1012,12 +1041,16 @@ M1#nursing-u02-25-q1@2: A patient is sweating heavily. By which mechanism is hea
 M2#nursing-u02-25-q2@3: A patient with an infection is shivering, feels cold and has a rising temperature. What is happening? | The hypothalamic set point has been raised, so the body is producing and conserving heat | The patient is becoming hypothermic and needs active cooling stopped | The patient is losing heat by evaporation | The hypothalamus has stopped regulating temperature altogether | In fever, the set point rises; the body feels cold and shivers until the new set point is reached.
 M2#nursing-u02-25-q3@3: Why are newborn babies at particular risk of losing heat? | They have a large surface area relative to their body size | They have more subcutaneous fat than adults | They can't sweat at all | Their hypothalamus is set higher | A large surface area and thin skin mean rapid heat loss, so babies must be kept warm and dry.
 MS2#nursing-u02-25-q4@2: Which of these are ways the body loses heat? | Radiation ; Convection ; Evaporation | Shivering ; Vasoconstriction | Shivering and vasoconstriction produce and conserve heat rather than losing it.
+M3@3: Mrs Green (invented), 79, has a suspected chest infection. Her temperature is 35.4°C, her respiratory rate is 24 and she is newly confused. What should the nurse do? | Recognise possible sepsis, calculate NEWS2 and escalate urgently | Be reassured that she has no fever, so infection is unlikely | Warm her with blankets and recheck the observations in four hours | Put the confusion down to her age and continue routine care | Older people may not mount a fever; a low temperature with fast breathing and new confusion can signal sepsis and needs urgent escalation under local policy.
+SA3@2,3: Explain why a person with an infection shivers and feels cold while their temperature rises, then sweats as it falls. | Immune chemicals reset the hypothalamic set point higher, so the body senses itself as too cold: skin vessels constrict and the person shivers (rigors), feeling cold while the temperature climbs. When the set point falls, the body is too warm for it, so vessels dilate and the person sweats. Nurses record temperature consistently, take full observations, escalate rigors or a rising NEWS2 score, and support fluids and comfort. | Raised hypothalamic set point ; Vasoconstriction and shivering while feeling cold ; Vasodilation and sweating as the set point falls ; Consistent recording and escalation using NEWS2 ; Fluids or comfort
 
 ## Pain physiology
 S: Pain is an unpleasant sensory and emotional experience associated with actual or potential tissue damage. Understanding how pain is produced, transmitted and modulated helps nurses assess it properly and explain why different treatments work.
 O: Describe how pain signals are detected, transmitted and perceived
 O: Distinguish nociceptive, neuropathic and nociplastic pain, and acute from chronic pain
 O: Relate pain physiology to assessment and the action of analgesics
+LV: Year 1 · Application
+EV: established | Pain involves transduction, transmission, perception and modulation, and the person's own report is the best measure of it.
 PRE: Nervous system
 H: From injury to perception
 - **Transduction**: nociceptors in tissues respond to harmful heat, pressure or chemicals released by damage and inflammation (such as prostaglandins and bradykinin).
@@ -1052,12 +1085,15 @@ M1#nursing-u02-26-q1@1: Which nerve fibres carry sharp, well-localised pain quic
 M2#nursing-u02-26-q2@2: A patient with diabetes describes burning, shooting pain and numbness in both feet. What type of pain is this most likely to be? | Neuropathic | Nociceptive from a fracture | Acute post-operative | Referred cardiac pain | Burning, shooting pain with numbness suggests nerve damage, which is neuropathic pain.
 M3#nursing-u02-26-q3@3: A man with advanced dementia, who can't describe pain, grimaces and pulls away when his hip is moved. What should the nurse do? | Use an observational pain tool, treat as likely pain and reassess after analgesia | Assume he isn't in pain because he hasn't said so | Record that he is uncooperative with moving and avoid repositioning him | Wait until he can describe the pain before giving analgesia | People who can't report pain need observational assessment; grimacing and guarding are pain behaviours.
 SEQ2#nursing-u02-26-q4@1: Put the stages of pain processing in order. | Transduction ; Transmission ; Perception | Nociceptors convert the stimulus (transduction), nerves carry it (transmission), and the brain interprets it (perception); modulation can act along the way.
+SA3@2,3: Compare nociceptive and neuropathic pain, and explain why they may need different analgesics and how the nurse should assess the response. | Nociceptive pain comes from tissue damage or inflammation, such as a wound or fracture: nociceptors respond to chemicals such as prostaglandins, so NSAIDs (which reduce prostaglandins), paracetamol and opioids can help. Neuropathic pain comes from damage to the nervous system itself and is often burning, shooting or electric with numbness or tingling; it responds poorly to standard analgesics, and some antidepressants or anticonvulsants are used because they act on nerve signalling. The nurse should describe the pain's character and site, use a validated tool suited to the person, and reassess after each intervention, reporting poor relief. | Defines nociceptive pain with an example ; Defines neuropathic pain with its typical character ; Links NSAIDs to prostaglandins or opioids to receptors ; Explains why neuropathic pain needs different medicines ; Uses a validated tool and reassesses
 
 ## Age-related physiological changes
 S: The body changes across the lifespan, from infancy to older age. Knowing what is typical at each stage helps nurses interpret observations, adjust care and avoid mistaking illness for "just ageing".
 O: Describe key physiological differences in infants and children compared with adults
 O: Describe the main physiological changes with older age
 O: Distinguish normal ageing from signs of illness and adjust care accordingly
+LV: Year 1 · Application
+EV: established | Children have different normal ranges and less reserve against fluid loss, and older people have reduced reserve and atypical presentations of illness.
 PRE: Homeostasis
 H: Infants and children
 - **Higher normal heart and respiratory rates**, falling with age; children's observations are scored with age-specific charts.
@@ -1076,6 +1112,7 @@ H: Older age
 - **Immune**: reduced response, so infections may present atypically (confusion, falls, reduced mobility) and fever may be absent.
 H: Normal ageing or illness?
 P: New confusion, falls, incontinence or loss of mobility are not "just age" and need assessment for a cause, such as infection, medicines, dehydration or constipation. Frailty describes reduced reserve across systems, so minor stressors cause major decline. Medicines review is important because of altered metabolism and kidney function.
+!: Judging a child's observations against adult ranges. A heart rate that is normal in an adult may be low for an infant; use the age-specific observation chart and escalation policy for the child's age.
 K: Children have faster rates, narrower airways and less reserve against fluid loss; older people have reduced reserve and atypical presentations. Neither group should be assessed against adult norms alone.
 !: Attributing new confusion in an older person to dementia or old age. It may be delirium, which is often caused by treatable illness.
 T: Frailty | A state of reduced physiological reserve across several systems, increasing vulnerability to minor stressors
@@ -1093,12 +1130,15 @@ M1#nursing-u02-27-q1@1: Compared with adults, what is typical of normal observat
 M2#nursing-u02-27-q2@2: Why may an older person's infection present as a fall or new confusion rather than a fever? | Reduced immune and thermoregulatory responses alter how illness presents | Older people never get infections | Falls in older people are always caused by infection | Fever is more common and higher in older people | Atypical presentation is common in older age; a fall or confusion can be the first sign of infection.
 M3#nursing-u02-27-q3@3: An 88-year-old woman becomes acutely confused over a day. Her family says she was "sharp as a tack" last week. What is the most appropriate response? | Treat it as possible delirium and assess for causes such as infection, medicines, dehydration and constipation | Accept it as normal ageing | Assume she has developed dementia and refer her to a memory clinic | Give sedation to settle her and observe overnight | Acute change in cognition suggests delirium, a medical problem that needs a search for the cause.
 MATCH1#nursing-u02-27-q4@1: Match each group to a typical physiological feature. | Infant = Faster heart and respiratory rates ; Child = Narrow airways easily obstructed ; Older adult = Reduced kidney function | Each age group has features that change how you assess and care.
+SA3@2,3: Mr Hughes (invented), 86, has had two falls this week and is less mobile than usual. His family says he is "just getting old". Explain how age-related changes alter how illness presents and what the nurse should assess. | Ageing reduces reserve in every system: immune and temperature responses are weaker, so infection may present as falls, confusion or immobility without fever; stiffer arteries and reduced reflexes make postural hypotension more likely; reduced kidney function means medicines accumulate; and muscle loss (sarcopenia) reduces strength. New falls or reduced mobility are not "just age". The nurse should take a full set of observations including lying and standing blood pressure, screen for infection and delirium, review medicines with the prescriber or pharmacist, check hydration, bowels and pain, and refer for a falls assessment, escalating any abnormal findings. | Explains reduced reserve and atypical presentation ; Links falls to postural hypotension, sarcopenia or medicines ; Rejects "just ageing" as an explanation ; Assesses observations, lying and standing blood pressure and infection ; Includes a medicines review and falls assessment
 
 ## Cellular pathology
 S: Cellular pathology is the study of how cells respond to injury and disease. It explains inflammation, healing, cell death and cancer, which underlie most of the conditions nurses care for.
 O: Describe how cells adapt to stress
 O: Distinguish reversible injury, necrosis and apoptosis
 O: Explain the basic features of neoplasia and the difference between benign and malignant tumours
+LV: Year 1 · Foundation
+EV: established | Necrosis is uncontrolled, inflammatory cell death; apoptosis is programmed cell death; malignant tumours invade and metastasise.
 PRE: Cells and tissues
 H: Cell adaptations
 - **Hypertrophy**: cells enlarge (the heart muscle in long-standing high blood pressure).
@@ -1133,12 +1173,16 @@ M1#nursing-u02-28-q1@1: Enlargement of heart muscle cells in long-standing high 
 M2#nursing-u02-28-q2@2: A blocked coronary artery causes death of heart muscle cells. What type of cell death is this? | Necrosis | Apoptosis | Hyperplasia | Regeneration | Ischaemia causes uncontrolled cell death with inflammation, which is necrosis.
 M2#nursing-u02-28-q3@3: Which feature distinguishes a malignant tumour from a benign one? | It invades surrounding tissue and can metastasise | It always grows faster than any benign tumour | It is always painful | It never causes symptoms | Invasion and the ability to spread define malignancy.
 TF2#nursing-u02-28-q4@1: Metaplasia in the airways of people who smoke can be a step towards cancer. | True | Metaplasia is an adaptation, but persistent irritation can lead to further changes and cancer.
+M3@2: Mr Ward (invented) has a pressure ulcer on his heel covered by a dry, black area of dead tissue. Which process best explains this tissue? | Necrosis from ischaemia, causing uncontrolled cell death | Apoptosis, the orderly removal of old or damaged cells | Atrophy, cells shrinking because of reduced use | Metaplasia, one cell type replaced by another type | Sustained pressure cuts off the blood supply; ischaemic cells die in an uncontrolled way with inflammation, which is necrosis.
+SA3@3: Explain the difference between benign and malignant tumours, and why a benign tumour can still be serious. | Both are neoplasms: abnormal, uncontrolled growth from genetic changes. Benign tumours usually grow slowly, are well defined and don't invade or spread. Malignant tumours invade nearby tissue and can metastasise through blood or lymph; they are named by tissue of origin, such as carcinoma or sarcoma. A benign tumour can still harm by pressure, for example in the brain, where the skull can't expand. | Defines a neoplasm ; Benign tumours don't invade or spread ; Malignant tumours invade and metastasise ; Names carcinoma or sarcoma ; Explains harm from pressure
 
 ## Microbiology
 S: Microbiology is the study of micro-organisms: bacteria, viruses, fungi, protozoa and parasites, and agents such as prions. Understanding them underpins infection prevention, antimicrobial use and the care of people with infections.
 O: Describe the main types of micro-organisms and their features
 O: Explain the chain of infection and how it can be broken
 O: Explain antimicrobial resistance and the nurse's role in antimicrobial stewardship
+LV: Year 1 · Foundation
+EV: established | Breaking any link in the chain of infection prevents spread, and unnecessary antimicrobial use drives resistance.
 PRE: Immune system
 H: Types of micro-organism
 - **Bacteria**: single cells without a nucleus; described by shape and Gram staining (Gram-positive, such as *Staphylococcus aureus*; Gram-negative, such as *Escherichia coli*). Some form **spores** (such as *Clostridioides difficile*) that survive alcohol and many disinfectants.
@@ -1148,6 +1192,9 @@ H: Types of micro-organism
 - The body carries a normal **microbiome**, which protects against harmful organisms; antibiotics disturb it.
 H: The chain of infection
 P: Infection spreads through a chain: **infectious agent**, **reservoir** (where it lives), **portal of exit**, **mode of transmission** (contact, droplet, airborne, blood-borne, faecal-oral), **portal of entry**, and a **susceptible host**. Breaking any link prevents infection: hand hygiene and cleaning break transmission; aseptic technique protects portals of entry; vaccination reduces susceptibility.
+X: Breaking the chain for *C. difficile* diarrhoea.
+> Agent: spore-forming bacterium; reservoir: gut and ward surfaces; exit: faeces; transmission: hands and surfaces; entry: mouth; host: often an older person on antibiotics.
+> Actions: isolate promptly, gloves and apron, soap-and-water hand washing (alcohol doesn't kill spores), cleaning as local policy specifies, and an antibiotic review.
 H: Antimicrobial resistance
 - Micro-organisms evolve to survive antimicrobials, especially when these are overused or misused.
 - Resistant organisms include **MRSA** and Gram-negative bacteria producing enzymes that inactivate antibiotics (such as ESBL and carbapenemase producers).
@@ -1169,12 +1216,16 @@ M1#nursing-u02-29-q1@1: Which organism forms spores that survive alcohol hand ru
 M2#nursing-u02-29-q2@2: Hand hygiene breaks which link in the chain of infection? | Mode of transmission | Reservoir | Susceptible host | Infectious agent | Clean hands stop organisms being carried from one person or surface to another.
 M2#nursing-u02-29-q3@3: How can a nurse contribute to antimicrobial stewardship? | Taking cultures before the first dose where possible and prompting review at 48–72 hours | Giving antibiotics for all coughs and colds | Continuing antibiotics indefinitely to be safe | Changing the prescribed antibiotic without consultation | Stewardship relies on correct specimens, timely doses, and regular review of the need for and choice of antibiotic.
 MATCH1#nursing-u02-29-q4@1: Match each organism to its type. | Staphylococcus aureus = Bacterium ; Norovirus = Virus ; Candida = Fungus ; Plasmodium = Protozoan | Organism type affects transmission, prevention and treatment.
+M3@2,3: Mrs Price (invented), who is taking antibiotics, develops new, unexplained diarrhoea on a ward. What should the nurse do first? | Suspect infection and isolate her in line with local policy | Clean hands with alcohol rub only and continue routine care | Give an antidiarrhoeal medicine and wait 48 hours to see if it settles | Wait until she has had several more episodes before acting | New diarrhoea, especially on antibiotics, may be C. difficile or another infection; prompt isolation, gloves and aprons, soap-and-water hand hygiene and a stool sample break the chain.
+SA3@3: Explain antimicrobial resistance and describe four ways a nurse contributes to antimicrobial stewardship. | Resistance is micro-organisms surviving medicines that once killed them or stopped their growth; overuse and misuse speed it up, and resistant organisms such as MRSA are harder to treat. Nurses take specimens before the first dose where possible, give doses on time, prompt review of need, choice and route at 48 to 72 hours, explain why antibiotics don't treat viruses, and prevent infection through hand hygiene and asepsis. | Defines resistance ; Links it to overuse or misuse ; Specimens before the first dose ; Timely doses or review at 48 to 72 hours ; Education or infection prevention
 
 ## Genetics and genomics
 S: Genetics is the study of individual genes and how traits are inherited; genomics studies the whole genome and how genes interact with each other and the environment. Genomic medicine is now part of routine NHS care, and nurses need to understand its basics.
 O: Describe DNA, genes and chromosomes and how genetic information is used
 O: Explain the main patterns of inheritance
 O: Describe the uses of genomic testing in healthcare and the nurse's role, including consent and confidentiality
+LV: Year 1 · Foundation
+EV: established | Single-gene conditions follow autosomal dominant, autosomal recessive or X-linked patterns of inheritance.
 PRE: Cells and tissues
 H: DNA, genes and chromosomes
 - **DNA** is a double helix of paired bases (A with T, C with G); its sequence carries instructions for making proteins.
@@ -1209,6 +1260,7 @@ Q: How many chromosomes do humans usually have? | 46, in 23 pairs.
 Q: What is pharmacogenomics? | The study of how genetic differences affect responses to medicines.
 M1#nursing-u02-30-q1@1: What is a gene? | A section of DNA that codes for a protein or functional molecule | A whole chromosome | A type of cell | A protein made in the liver | Genes are specific DNA sequences that carry instructions for making proteins.
 M2#nursing-u02-30-q2@2: Two parents are both carriers of cystic fibrosis. What is the chance that each child will have the condition? | 1 in 4 | 1 in 2 | 1 in 10 | Certain | In autosomal recessive inheritance, each child of two carriers has a 1 in 4 chance of being affected.
-M3#nursing-u02-30-q3@3: A patient tells the nurse she has tested positive for a BRCA gene variant and asks the nurse to tell her sister. What is the most appropriate response? | Discuss the implications, support the patient to share the information herself and refer to genetic services, respecting confidentiality | Phone the sister immediately | Record the result in her notes and take no further action | Reassure her that the result is only relevant to her own health | Genomic results affect relatives, but confidentiality applies; support the patient and involve specialist genetic services.
+M3#nursing-u02-30-q3@3: A patient tells the nurse she has tested positive for a BRCA gene variant and asks the nurse to tell her sister. What is the most appropriate response? | Support her to share the result herself and refer her to genetic services | Phone her sister straight away to explain the result | Record the result in her notes and take no further action | Reassure her that the result is only relevant to her own health | Genomic results affect relatives, but confidentiality applies; support the patient and involve specialist genetic services.
 MATCH1#nursing-u02-30-q4@2: Match each condition to its inheritance pattern. | Huntington's disease = Autosomal dominant ; Sickle cell disease = Autosomal recessive ; Haemophilia A = X-linked recessive ; Down syndrome = Chromosomal | Recognising the pattern helps explain risk to families.
+SA3@2: Explain autosomal dominant and autosomal recessive inheritance, giving the chance that each child is affected in each case, and the meaning of being a carrier. | In autosomal dominant inheritance, one altered copy of the gene is enough to cause the condition, so each child of an affected parent and an unaffected parent has a 1 in 2 chance of inheriting it, as in Huntington's disease. In autosomal recessive inheritance, two altered copies are needed. A carrier has one altered copy and usually has no symptoms but can pass it on. When both parents are carriers, each child has a 1 in 4 chance of being affected, a 1 in 2 chance of being a carrier and a 1 in 4 chance of inheriting neither altered copy, as in cystic fibrosis. | States one altered copy causes a dominant condition ; Gives 1 in 2 for an affected parent ; States two altered copies are needed for a recessive condition ; Gives 1 in 4 for two carrier parents ; Explains that carriers are usually unaffected but can pass it on
 `;

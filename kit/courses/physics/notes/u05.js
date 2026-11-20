@@ -1,62 +1,127 @@
 // Unit 5: Rotational Mechanics. Format: kit/course/notes.js
 export default `
 ## Angular displacement, velocity and acceleration
-S: Rotation is described by the angle turned (angular displacement θ), its rate (angular velocity ω) and the rate of change of that (angular acceleration α). They play the roles of x, v and a for straight-line motion.
+S: Rotation is described by the angle turned (angular displacement θ), its rate (angular velocity ω) and the rate of change of that (angular acceleration α). They play the roles of x, v and a for straight-line motion, and the same constant-acceleration equations carry over.
+O: Convert between revolutions, degrees, rpm and radian measures
+O: Apply the constant-α equations to rotating bodies
+O: Explain the vector nature of ω and why finite rotations are not vectors
+PRE: Acceleration
+LV: A level · Foundation
 H: Definitions
 E: θ = s/r (radians); ω = dθ/dt; α = dω/dt
 E: ω = ω_{0} + αt; θ = ω_{0}t + ½αt^{2}; ω^{2} = ω_{0}^{2} + 2αθ :: constant α
 - Units: rad, rad s^{-1}, rad s^{-2}. 1 rev = 2π rad; rpm × 2π/60 = rad s^{-1}.
+- For steady rotation, ω = 2π/T = 2πf.
+H: Direction
 - ω is a vector along the rotation axis (right-hand rule); finite rotations aren't vectors because they don't commute.
+P: Turn a book 90° about x then 90° about y, and compare with the opposite order: it ends in different orientations. Infinitesimal rotations do commute, which is why ω and α are true vectors.
 X: A fan speeds up from rest to 1200 rpm in 4.0 s. Find α and the turns made.
 > ω = 1200 × 2π/60 = 126 rad s^{-1}; α = 126/4.0 = 31.4 rad s^{-2}
 > θ = ½αt^{2} = 251 rad = 40 turns
+K: Every linear kinematics result has a rotational twin: replace x, v, a by θ, ω, α.
 !: Rotational formulas need radians; using degrees in v = ωr or s = rθ gives wrong answers.
+T: Angular velocity | The rate of change of angular displacement, ω = dθ/dt, in rad s^{-1}
+T: Angular acceleration | The rate of change of angular velocity, α = dω/dt, in rad s^{-2}
+T: Radian | The angle subtended at the centre by an arc equal in length to the radius
+SUM: θ, ω and α are the rotational analogues of x, v and a; with constant α the suvat equations carry over directly.
+SUM: Work in radians; 1 rev = 2π rad and rpm × 2π/60 gives rad s^{-1}.
+EV: established | Rotational kinematics mirrors linear kinematics with θ, ω, α
+SRC: OpenStax, University Physics Volume 1, section 10.1 "Rotational Variables" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/10-1-rotational-variables
+SRC: OpenStax, University Physics Volume 1, section 10.2 "Rotation with Constant Angular Acceleration" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/10-2-rotation-with-constant-angular-acceleration
+SRC: AQA, A-level Physics specification (7408), section 3.11.1.3, Rotational motion | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: What are the rotational equivalents of v = u + at and s = ut + ½at^{2}? | ω = ω_{0} + αt and θ = ω_{0}t + ½αt^{2}.
 Q: Which way does the angular velocity vector point? | Along the axis, given by the right-hand rule (fingers curl with the rotation, thumb points along ω).
-M1: 300 rpm in rad s^{-1} is about: | 31.4 | 5 | 300 | 1885 | 300 × 2π/60.
-M2: A wheel decelerates uniformly from 20 rad s^{-1} to rest in 10 revolutions. α = ? | −3.2 rad s^{-2} | −2 rad s^{-2} | −20 rad s^{-2} | −1 rad s^{-2} | ω^{2} = ω_{0}^{2} + 2αθ with θ = 20π: α = −400/(40π).
+M1@1: 300 rpm in rad s^{-1} is about: | 31.4 | 5 | 300 | 1885 | Multiply by 2π/60: 300 × 2π/60 = 10π ≈ 31.4 rad s^{-1}; 5 is revolutions per second and 1885 forgets to divide by 60.
+M2@2: A wheel decelerates uniformly from 20 rad s^{-1} to rest in 10 revolutions. α = ? | −3.2 rad s^{-2} | −2 rad s^{-2} | −20 rad s^{-2} | −1 rad s^{-2} | Use ω^{2} = ω_{0}^{2} + 2αθ with θ = 10 × 2π = 20π rad: α = −400/(40π) ≈ −3.2 rad s^{-2}.
+NUM1@1: A wheel turns at a steady 5.0 revolutions per second. What is its angular velocity, in rad s^{-1}? | 31.4 | 0.2 | rad s^{-1} | ω = 2πf = 2π × 5.0 = 31.4 rad s^{-1}; one revolution is 2π radians, so multiply turns per second by 2π.
+M2@2: A turntable starts from rest with α = 0.50 rad s^{-2}. How many radians has it turned after 4.0 s? | 4.0 rad | 2.0 rad | 8.0 rad | 1.0 rad | θ = ω_{0}t + ½αt^{2} = 0 + ½ × 0.50 × 16 = 4.0 rad; 8.0 rad forgets the half.
+TF3@3: Two successive 90° rotations about different axes give the same final orientation whichever order you do them in. | false | Finite rotations do not commute, so the order matters and finite angles cannot be added as vectors; only infinitesimal rotations (and so ω) behave as vectors.
+SA2@1,2: A drill reaches 3000 rpm from rest in 2.0 s with constant α. Find α and the number of revolutions made, explaining each step. | Convert: ω = 3000 × 2π/60 = 314 rad s^{-1}. Then α = Δω/Δt = 314/2.0 = 157 rad s^{-2}. The angle is θ = ½αt^{2} = ½ × 157 × 4.0 = 314 rad, or equivalently the average ω (157 rad s^{-1}) times 2.0 s. Dividing by 2π gives 50 revolutions. | Converts rpm to rad s^{-1} ; α = 157 rad s^{-2} ; θ = 314 rad by suvat or average ω ; 50 revolutions
 
 ## Angular and linear motion relationships
 S: Each point on a rotating rigid body moves in a circle, with linear quantities equal to the angular ones times the radius. Points farther out move faster, which is why the rim of a wheel wears and the tip of a blade is the dangerous part.
+O: Use s = rθ, v = ωr and a = αr to link linear and angular quantities
+O: Find the tangential, centripetal and total acceleration of a point on a rotating body
+O: Solve gear and belt problems using equal speed at the contact
+PRE: Angular displacement, velocity and acceleration
+LV: A level · Application
 H: Links
 E: s = rθ; v = ωr; a_{t} = αr; a_{c} = ω^{2}r = v^{2}/r
 E: v = ω × r :: vector form
 - All points share θ, ω, α; v and a grow with r.
-- Total acceleration of a point: √(a_{t}^{2} + a_{c}^{2}).
+- Total acceleration of a point: √(a_{t}^{2} + a_{c}^{2}); a_{c} exists even at constant ω.
 H: Gears and belts
 P: Meshing gears and belts share the same linear speed at the contact: ω_{1}r_{1} = ω_{2}r_{2}. A small gear driving a large one reduces ω and increases torque.
 X: A bicycle's 22 cm-radius chainring (pedals at 1.5 rev s^{-1}) drives a 5.5 cm sprocket on a 34 cm wheel. Find the bike's speed.
 > Chain speed = 2π × 1.5 × 0.22 = 2.07 m s^{-1}
-> Sprocket ω = 2.07/0.055 = 37.7 rad s^{-1}; wheel rim v = 37.7 × 0.34 = 12.8 m s^{-1}
+> Sprocket ω = 2.07/0.055 = 37.7 rad s^{-1}; the wheel shares it, so rim v = 37.7 × 0.34 = 12.8 m s^{-1}
+K: Angular quantities are the same for the whole rigid body; linear ones scale with distance from the axis.
 !: For a wheel rolling along the ground, the contact point is momentarily at rest; v = ωr gives the speed of the centre, not of every point.
+T: Tangential acceleration | The component of a point's acceleration along its path, a_{t} = αr
+T: Centripetal acceleration | The component towards the axis, a_{c} = ω^{2}r, which changes the direction of v
+SUM: Multiply angular quantities by r to get linear ones: s = rθ, v = ωr, a_{t} = αr, and a_{c} = ω^{2}r.
+SUM: Belts and meshing gears share linear speed at the contact, so ω_{1}r_{1} = ω_{2}r_{2}.
+EV: established | v = ωr and a = αr follow from the definition of the radian
+SRC: OpenStax, University Physics Volume 1, section 10.3 "Relating Angular and Translational Quantities" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/10-3-relating-angular-and-translational-quantities
+SRC: AQA, A-level Physics specification (7408), section 3.6.1.1, Circular motion | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: How do the linear speeds of two meshing gears compare? | They're equal at the point of contact.
 Q: What is the tangential acceleration of a point at radius r? | a_{t} = αr.
-M1: A disc spins at 10 rad s^{-1}. A point 0.3 m from the axis moves at: | 3 m s^{-1} | 30 m s^{-1} | 0.03 m s^{-1} | 33 m s^{-1} | v = ωr.
-M2: A 10-tooth gear drives a 40-tooth gear at 400 rpm. The large gear turns at: | 100 rpm | 1600 rpm | 400 rpm | 40 rpm | Speed ratio is the inverse of the teeth ratio.
+M1@1: A disc spins at 10 rad s^{-1}. A point 0.3 m from the axis moves at: | 3 m s^{-1} | 30 m s^{-1} | 0.03 m s^{-1} | 33 m s^{-1} | v = ωr = 10 × 0.3 = 3 m s^{-1}; the other options divide instead of multiplying or misplace the decimal point.
+M2@3: A 10-tooth gear drives a 40-tooth gear at 400 rpm. The large gear turns at: | 100 rpm | 1600 rpm | 400 rpm | 40 rpm | Teeth pass the contact at the same rate, so ω is inversely proportional to the number of teeth: 400 × 10/40 = 100 rpm.
+NUM2@2: A wheel of radius 0.50 m has α = 4.0 rad s^{-2}. What is the tangential acceleration of a point on its rim, in m s^{-2}? | 2 | 0.05 | m s^{-2} | a_{t} = αr = 4.0 × 0.50 = 2.0 m s^{-2}; the radian is dimensionless, so rad s^{-2} times metres gives m s^{-2}.
+M3@2: At one instant a rim point (r = 0.20 m) has ω = 5.0 rad s^{-1} and α = 60 rad s^{-2}. Its total acceleration is: | 13 m s^{-2} | 17 m s^{-2} | 12 m s^{-2} | 5.0 m s^{-2} | a_{c} = ω^{2}r = 25 × 0.20 = 5.0 and a_{t} = αr = 12; they are perpendicular, so a = √(5.0^{2} + 12^{2}) = 13 m s^{-2}, not their sum 17.
+TF1@1: Every point of a rigid wheel spinning about its axle has the same angular velocity. | true | A rigid body turns through the same angle in the same time at every radius, so ω is shared; only the linear speed v = ωr differs.
+SA2@2,3: Explain why a point on the rim of a steadily spinning wheel accelerates even though its speed is constant, and calculate that acceleration for r = 0.30 m and ω = 20 rad s^{-1}. | Acceleration is the rate of change of velocity, a vector. At constant ω the speed v = ωr is fixed, but the direction of motion changes continuously, so there is an acceleration towards the axis: the centripetal acceleration. Its size is a_{c} = ω^{2}r = 400 × 0.30 = 120 m s^{-2}. With constant ω the tangential part αr is zero. | Velocity is a vector ; Direction changes so it accelerates ; Directed towards the axis ; a = ω²r = 120 m s⁻²
 
 ## Torque and moment of force
-S: Torque is the turning effect of a force: force times its perpendicular distance from the axis. It's what changes rotational motion, as force changes linear motion.
+S: Torque is the turning effect of a force: the force times its perpendicular distance from the axis. It changes rotational motion as force changes linear motion, and it depends both on the force and on where and in what direction it is applied.
+O: Calculate torque from τ = rF sin θ or F × perpendicular distance
+O: Describe a couple and explain why its torque is the same about every point
+O: Explain everyday uses of the moment arm
+PRE: Free-body diagrams
+LV: GCSE and A level · Foundation
 H: Definitions
 E: τ = r × F; |τ| = rF sin θ = F d_{⊥}
 - d_{⊥} is the perpendicular distance from the axis to the line of action (the moment arm).
-- A **couple**: two equal, opposite, parallel forces; zero net force, torque Fd about any point.
-- Units N m (not joules, though dimensionally the same).
+- A **couple**: two equal, opposite, parallel forces; zero net force, torque Fd about any point, where d is the separation of their lines.
+- Units N m (not joules, though dimensionally the same): torque is a vector, work a scalar.
 H: Everyday torque
-- Door handles far from hinges; long spanners; cranks and pedals (max torque when horizontal).
+- Door handles far from hinges; long spanners; cranks and pedals (maximum torque when the crank is horizontal).
 - Engines quote torque: wheel force = engine torque × gear ratio / wheel radius.
+P: A force whose line of action passes through the axis has no moment arm, so it cannot turn the body however large it is. Pushing on a door's edge towards the hinge does nothing.
 X: A 30 N force pushes a 0.25 m spanner at 60° to the handle. Find the torque.
 > τ = rF sin θ = 0.25 × 30 × sin 60° = 6.5 N m
+> Pushing at 90° would give the maximum, 7.5 N m
+K: Torque = force × perpendicular distance from the axis to the line of action; direction by the right-hand rule.
 !: Torque depends on where the axis is; always say about which point you take moments.
+T: Torque | The turning effect of a force, τ = r × F, in N m
+T: Moment arm | The perpendicular distance from the axis to the line of action of the force
+T: Couple | A pair of equal, opposite, parallel forces with separate lines of action, giving torque but no net force
+SUM: τ = rF sin θ = Fd_{⊥}; a force through the axis gives no torque.
+SUM: A couple produces pure rotation with torque Fd about any point.
+EV: established | Torque as r × F is the standard definition of the moment of a force
+SRC: OpenStax, University Physics Volume 1, section 10.6 "Torque" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/10-6-torque
+SRC: AQA, A-level Physics specification (7408), section 3.4.1.2, Moments | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: What is the moment arm? | The perpendicular distance from the axis to the line of action of the force.
 Q: What is a couple? | Two equal and opposite parallel forces with different lines of action, giving pure torque.
-M1: A 20 N force acts 0.5 m from a pivot along a line through the pivot. Torque? | 0 | 10 N m | 40 N m | 20 N m | The moment arm is zero.
-M2: Why is a door handle placed far from the hinges? | A larger moment arm gives more torque for the same force | It's easier to see | The door is lighter there | It reduces friction | τ = Fd_{⊥}.
+M1@1: A 20 N force acts 0.5 m from a pivot along a line through the pivot. Torque? | 0 | 10 N m | 40 N m | 20 N m | The line of action passes through the pivot, so the moment arm is zero and τ = 0 however large the force.
+M2@3: Why is a door handle placed far from the hinges? | A larger moment arm gives more torque for the same force | It's easier to see | The door is lighter there | It reduces friction | τ = Fd_{⊥}, so the same push far from the hinge axis gives a bigger turning effect.
+NUM2@1: A mechanic applies 80 N at right angles to a spanner, 0.30 m from the nut. What torque does she apply, in N m? | 24 | 0.5 | N m | τ = Fd_{⊥} = 80 × 0.30 = 24 N m, the largest possible for that force and distance.
+M2@2: Two 15 N forces form a couple with lines of action 0.40 m apart. The torque is: | 6.0 N m | 12 N m | 3.0 N m | 0 N m | A couple's torque is F × separation = 15 × 0.40 = 6.0 N m, the same about any point; the net force is zero.
+M3@1,3: A cyclist presses down with 400 N on a 0.17 m crank. The torque is largest when the crank is: | Horizontal | Vertical, pedal at the top | At 30° below horizontal | Vertical, pedal at the bottom | With a vertical push, d_{⊥} = 0.17 cos(angle from horizontal), greatest when horizontal: 68 N m; at top or bottom it is zero.
+SA2@1,2: Explain why torque and energy are both measured in N m yet are different quantities, and why a couple has the same torque about every point. | Torque is r × F, a vector whose r is perpendicular to F; work is F·s, a scalar with the displacement along the force, so the units coincide but the quantities differ (we write J only for energy). For a couple, forces F and −F act at r_{1} and r_{2}; the total torque about any origin is r_{1} × F − r_{2} × F = (r_{1} − r_{2}) × F, which does not depend on the origin and has size Fd. | Torque is a vector cross product ; Work is a scalar dot product ; Couple torque depends only on separation ; Magnitude Fd
 
 ## Moment of inertia
-S: Moment of inertia measures how hard it is to change an object's rotation. It depends not only on mass but on how far the mass sits from the axis, squared.
+S: Moment of inertia measures how hard it is to change an object's rotation. It depends not only on mass but on how far that mass sits from the axis, squared, so the same object has different I about different axes.
+O: Calculate I for systems of point masses
+O: Recall and compare standard moments of inertia
+O: Derive I for a simple body by integration
+PRE: Torque and moment of force
+LV: A level · Application
 H: Definition
 E: I = Σm_{i}r_{i}^{2} = ∫r^{2} dm
 E: I = Mk^{2} :: radius of gyration k
+- r is the perpendicular distance of each piece of mass from the axis. Unit kg m^{2}.
 H: Standard results (axis through the centre unless stated)
 - Point mass at r: Mr^{2}. Thin ring/hoop: MR^{2}. Solid disc or cylinder: ½MR^{2}.
 - Solid sphere: (2/5)MR^{2}. Thin spherical shell: (2/3)MR^{2}.
@@ -66,63 +131,134 @@ X: Derive I for a uniform rod of length L about one end.
 > dm = (M/L)dx; I = ∫_{0}^{L} x^{2}(M/L)dx
 > I = ML^{2}/3
 P: Flywheels put mass at the rim to maximise I for their mass; figure skaters reduce I by pulling arms in.
+K: I plays the role of mass in rotation, but mass far from the axis counts much more because of the r^{2}.
 !: I depends on the axis chosen. The same rod has I = ML^{2}/12 about its centre and ML^{2}/3 about an end.
+T: Moment of inertia | I = Σmr^{2}, the resistance of a body to changes in its rotation about a given axis
+T: Radius of gyration | The distance k at which all the mass could be placed to give the same I, I = Mk^{2}
+SUM: I = Σmr^{2} depends on mass and its distribution about a chosen axis.
+SUM: For equal M and R: hoop (MR^{2}) > shell (2/3) > disc (1/2) > solid sphere (2/5).
+EV: established | I = Σmr^{2} is the standard definition of rotational inertia
+SRC: OpenStax, University Physics Volume 1, section 10.4 "Moment of Inertia and Rotational Kinetic Energy" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/10-4-moment-of-inertia-and-rotational-kinetic-energy
+SRC: OpenStax, University Physics Volume 1, section 10.5 "Calculating Moments of Inertia" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/10-5-calculating-moments-of-inertia
+SRC: AQA, A-level Physics specification (7408), section 3.11.1.1, Concept of moment of inertia | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: What is the moment of inertia of a solid disc about its axis? | ½MR^{2}.
 Q: Why does a hoop have a larger I than a disc of the same mass and radius? | All its mass is at the maximum radius.
-M1: Which has the largest I for equal M and R? | Hoop | Solid disc | Solid sphere | Spherical shell | MR^{2} > (2/3) > ½ > (2/5).
-M2: Two 1 kg masses sit 0.5 m either side of an axis on a light rod. I = ? | 0.5 kg m^{2} | 0.25 kg m^{2} | 1 kg m^{2} | 2 kg m^{2} | 2 × 1 × 0.25.
+M1@2: Which has the largest I for equal M and R? | Hoop | Solid disc | Solid sphere | Spherical shell | The coefficients are hoop 1, shell 2/3, disc 1/2, sphere 2/5: the hoop has all its mass at the full radius.
+M2@1: Two 1 kg masses sit 0.5 m either side of an axis on a light rod. I = ? | 0.5 kg m^{2} | 0.25 kg m^{2} | 1 kg m^{2} | 2 kg m^{2} | I = Σmr^{2} = 2 × 1 × 0.5^{2} = 0.5 kg m^{2}; 0.25 counts only one mass.
+NUM1@1: A 3.0 kg point mass is 0.40 m from an axis. What is its moment of inertia, in kg m^{2}? | 0.48 | 0.01 | kg m^{2} | I = mr^{2} = 3.0 × 0.40^{2} = 3.0 × 0.16 = 0.48 kg m^{2}; remember to square the distance.
+M2@2: A solid cylinder has M = 4.0 kg and R = 0.10 m. Its I about its axis is: | 0.020 kg m^{2} | 0.040 kg m^{2} | 0.20 kg m^{2} | 0.010 kg m^{2} | I = ½MR^{2} = ½ × 4.0 × 0.010 = 0.020 kg m^{2}; 0.040 is the hoop value MR^{2}.
+M3@1,3: A rod's mass is moved so that more of it lies near the axis, keeping M fixed. Its I: | Decreases, since the r^{2} weighting favours distant mass | Stays the same, since M is unchanged | Increases, since the mass is more concentrated | Doubles, since I depends on 2r | I = ∫r^{2}dm weights each element by r^{2}, so moving mass inward lowers I even at constant total mass.
+SA3@2,3: Explain, using I = ∫r^{2}dm, why a uniform rod has a smaller moment of inertia about its centre (ML^{2}/12) than about one end (ML^{2}/3). | About the centre, the farthest mass is only L/2 away; about an end, half the rod lies between L/2 and L away. Since each element counts as r^{2}, the far half contributes much more. Integrating ∫x^{2}(M/L)dx from −L/2 to L/2 gives ML^{2}/12, while from 0 to L gives ML^{2}/3, four times larger. | Elements weighted by r squared ; Mass farther away about the end ; Integration limits differ ; Ratio of four
 
 ## Rotational kinetic energy
-S: A spinning body stores kinetic energy because each part of it moves. For rotation about a fixed axis it's ½Iω^{2}; a body that rolls has both translational and rotational energy.
+S: A spinning body stores kinetic energy because each part of it moves. For rotation about a fixed axis it's ½Iω^{2}; a body that rolls has both translational and rotational energy, and torques do work as they turn.
+O: Calculate rotational kinetic energy and the energy of a rolling body
+O: Use W = τθ and P = τω for rotational work and power
+O: Explain what limits the energy a flywheel can store
+PRE: Moment of inertia
+LV: A level · Application
 H: Formulas
 E: KE_{rot} = ½Iω^{2}
 E: KE = ½Mv_{cm}^{2} + ½I_{cm}ω^{2} :: rolling or general motion
 E: W = ∫τ dθ; P = τω :: rotational work and power
+- Derivation: sum ½m_{i}v_{i}^{2} with v_{i} = ωr_{i}, giving ½(Σm_{i}r_{i}^{2})ω^{2}.
 H: Flywheel storage
 P: Flywheels store energy as rotation: grid frequency stabilisers, KERS in racing cars, and old steam engines smoothing power strokes. Energy is limited by the material's strength: rim stress ∝ ρv^{2}, so the best flywheels use strong, light carbon fibre spun very fast.
 X: A 50 kg solid-disc flywheel of radius 0.4 m spins at 3000 rpm. Find its energy.
 > I = ½ × 50 × 0.16 = 4.0 kg m^{2}; ω = 314 rad s^{-1}
 > KE = ½ × 4.0 × 314^{2} = 197 kJ
+K: Rotational KE is ½Iω^{2}; for rolling, add the translational ½Mv^{2} of the centre of mass.
 !: For rolling objects, don't forget the rotational term; ignoring it makes them seem faster than they are.
+T: Rotational kinetic energy | The kinetic energy of rotation, ½Iω^{2}
+T: Flywheel | A heavy rotor used to store kinetic energy and smooth out changes in speed
+SUM: KE_{rot} = ½Iω^{2}, and a rolling body has ½Mv^{2} + ½Iω^{2}.
+SUM: A torque does work τθ and delivers power τω.
+EV: established | ½Iω^{2} follows from summing ½mv^{2} over a rigid body
+SRC: OpenStax, University Physics Volume 1, section 10.4 "Moment of Inertia and Rotational Kinetic Energy" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/10-4-moment-of-inertia-and-rotational-kinetic-energy
+SRC: OpenStax, University Physics Volume 1, section 10.8 "Work and Power for Rotational Motion" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/10-8-work-and-power-for-rotational-motion
+SRC: AQA, A-level Physics specification (7408), section 3.11.1.2, Rotational kinetic energy | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: What is the power delivered by a torque? | P = τω.
 Q: What is the total KE of a rolling object? | ½Mv^{2} + ½Iω^{2}.
-M1: Doubling a flywheel's ω multiplies its stored energy by: | 4 | 2 | 8 | √2 | ∝ ω^{2}.
-M2: A motor exerts 50 N m at 100 rad s^{-1}. Power? | 5 kW | 50 W | 500 W | 2 W | P = τω.
+M1@1: Doubling a flywheel's ω multiplies its stored energy by: | 4 | 2 | 8 | √2 | KE = ½Iω^{2} depends on ω squared, so doubling ω multiplies the energy by 2^{2} = 4.
+M2@2: A motor exerts 50 N m at 100 rad s^{-1}. Power? | 5 kW | 50 W | 500 W | 2 W | P = τω = 50 × 100 = 5000 W = 5 kW; power is torque times angular velocity in rad s^{-1}.
+NUM2@1: A wheel with I = 2.0 kg m^{2} spins at 10 rad s^{-1}. What is its rotational kinetic energy, in J? | 100 | 1 | J | KE = ½Iω^{2} = ½ × 2.0 × 10^{2} = 100 J; the energy grows with the square of ω.
+M2@2: A torque of 20 N m turns a capstan through 5.0 revolutions. The work done is about: | 630 J | 100 J | 31 J | 1300 J | W = τθ with θ in radians: 5.0 × 2π = 31.4 rad, so W = 20 × 31.4 ≈ 630 J; 100 J wrongly uses revolutions.
+M3@1,3: Two flywheels of equal mass and radius spin at the same ω: one a hoop, one a solid disc. Which stores more energy? | The hoop, twice as much | The disc, twice as much | They store the same | The hoop, four times as much | KE = ½Iω^{2} and I_{hoop} = MR^{2} is twice I_{disc} = ½MR^{2}, so the hoop stores twice the energy.
+SA3@1,3: Explain why flywheels for energy storage are made of strong, light materials spun very fast rather than heavy steel spun slowly. | Stored energy is ½Iω^{2}, so it grows with the square of speed but only linearly with mass. The limit is the stress in the rim, which scales as ρv^{2}: the material bursts if v is too high. Energy per unit mass therefore scales as strength/density, so a strong, low-density material such as carbon fibre can run at a high rim speed and store more energy per kilogram than steel. | Energy ∝ ω² but only ∝ mass ; Rim stress ∝ ρv² limits speed ; Energy per kg ∝ strength/density ; Carbon fibre favoured
 
 ## Angular momentum
-S: Angular momentum is the rotational counterpart of linear momentum. For a rigid body about a fixed axis it's Iω; for a particle it's r × p. Torque changes it, just as force changes linear momentum.
+S: Angular momentum is the rotational counterpart of linear momentum. For a rigid body about a fixed axis it's Iω; for a particle it's r × p. Net torque changes it, just as net force changes linear momentum.
+O: Calculate angular momentum for particles and rigid bodies
+O: Use τ = dL/dt and angular impulse τΔt = ΔL
+O: Recognise that angular momentum is quantised in quantum mechanics
+PRE: Moment of inertia
+LV: A level · Application
 H: Definitions
 E: L = r × p :: particle
 E: L = Iω :: rigid body about a symmetry axis
 E: τ = dL/dt :: rotational Newton's second law
 - Units kg m^{2} s^{-1} (or J s, the same units as Planck's constant).
 - A particle moving in a straight line has angular momentum about any point not on its line: L = mvd_{⊥}.
+- Angular impulse τΔt equals the change in L, as FΔt equals Δp.
 H: Quantum angular momentum
 P: In quantum mechanics angular momentum is quantised: orbital L = √(l(l + 1))ħ, with z-component m_{l}ħ, and particles carry intrinsic spin (½ħ for electrons). Bohr's atom started from L = nħ.
 X: Find the angular momentum of the Earth's orbit (m = 6.0 × 10^{24} kg, r = 1.5 × 10^{11} m, T = 1 year).
 > v = 2πr/T = 3.0 × 10^{4} m s^{-1}
 > L = mvr = 2.7 × 10^{40} kg m^{2} s^{-1}
+K: Angular momentum is always defined about a point or axis; torque about that same point changes it.
 !: L = Iω is only parallel to ω for rotation about a principal axis; for a lopsided body, L and ω point in different directions (see rigid-body dynamics).
+T: Angular momentum | L = r × p for a particle, Iω for a rigid body about a symmetry axis
+T: Angular impulse | The product τΔt of torque and time, equal to the change in angular momentum
+SUM: L = r × p = mvd_{⊥} for a particle and Iω for a symmetric rigid body.
+SUM: Net torque is the rate of change of L: τ = dL/dt, so τΔt = ΔL.
+EV: established | τ = dL/dt follows from Newton's laws for systems of particles
+SRC: OpenStax, University Physics Volume 1, section 11.2 "Angular Momentum" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/11-2-angular-momentum
+SRC: AQA, A-level Physics specification (7408), section 3.11.1.5, Angular momentum | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: How is torque related to angular momentum? | τ = dL/dt.
 Q: What is the angular momentum of a particle about a point? | L = r × p, magnitude mvd_{⊥}.
-M1: A 2 kg disc (r = 0.5 m) spins at 4 rad s^{-1}. L = ? | 1 kg m^{2} s^{-1} | 2 kg m^{2} s^{-1} | 4 kg m^{2} s^{-1} | 0.5 kg m^{2} s^{-1} | I = ½ × 2 × 0.25 = 0.25; L = 1.
-M2: A 10 N m torque acts for 3 s on a stationary wheel. Its angular momentum becomes: | 30 kg m^{2} s^{-1} | 3.3 kg m^{2} s^{-1} | 10 kg m^{2} s^{-1} | 0 | ΔL = τΔt.
+M1@1: A 2 kg disc (r = 0.5 m) spins at 4 rad s^{-1}. L = ? | 1 kg m^{2} s^{-1} | 2 kg m^{2} s^{-1} | 4 kg m^{2} s^{-1} | 0.5 kg m^{2} s^{-1} | For a disc I = ½MR^{2} = ½ × 2 × 0.25 = 0.25 kg m^{2}, so L = Iω = 0.25 × 4 = 1 kg m^{2} s^{-1}.
+M2@2: A 10 N m torque acts for 3 s on a stationary wheel. Its angular momentum becomes: | 30 kg m^{2} s^{-1} | 3.3 kg m^{2} s^{-1} | 10 kg m^{2} s^{-1} | 0 | Angular impulse equals the change in L: ΔL = τΔt = 10 × 3 = 30 kg m^{2} s^{-1}, whatever the wheel's I.
+NUM1@1: A 0.50 kg ball moves at 4.0 m s^{-1} along a line passing 2.0 m from point P. What is its angular momentum about P, in kg m^{2} s^{-1}? | 4 | 0.1 | kg m^{2} s^{-1} | L = mvd_{⊥} = 0.50 × 4.0 × 2.0 = 4.0 kg m^{2} s^{-1}; a body moving in a straight line still has angular momentum about a point off its line.
+TF2@1: A particle moving in a straight line at constant velocity has zero angular momentum about every point. | false | About a point off its line L = mvd_{⊥} is non-zero; it is constant, since no torque acts, but only points on the line give L = 0.
+M3@2,3: The SI unit of angular momentum is the same as the unit of: | Planck's constant | Torque | Energy | Power | kg m^{2} s^{-1} = J s, the unit of h; this is why ħ sets the natural scale of quantised angular momentum.
+SA2@1,2: A flywheel with I = 0.80 kg m^{2} is brought from rest to 50 rad s^{-1} by a constant torque in 4.0 s. Find its final angular momentum and the torque, and explain the link to linear impulse. | Final L = Iω = 0.80 × 50 = 40 kg m^{2} s^{-1}. Since τ = dL/dt and the torque is constant, τ = ΔL/Δt = 40/4.0 = 10 N m. This mirrors F = Δp/Δt: the angular impulse τΔt equals the change in angular momentum, as force times time equals the change in linear momentum. | L = 40 kg m² s⁻¹ ; τ = ΔL/Δt ; τ = 10 N m ; Analogy with linear impulse
 
 ## Conservation of angular momentum
-S: With no net external torque, a system's total angular momentum stays constant. A skater spins faster by pulling in her arms, collapsing stars become pulsars, and planets sweep equal areas in equal times, all because of this law.
+S: With no net external torque, a system's total angular momentum stays constant. A skater spins faster by pulling in her arms, collapsing stars become pulsars, and planets sweep out equal areas in equal times, all because of this law.
+O: Apply I_{1}ω_{1} = I_{2}ω_{2} to systems with no external torque
+O: Explain why kinetic energy changes when I changes
+O: Relate central forces to Kepler's second law
+PRE: Angular momentum
+LV: A level · Application
 H: Consequences
 E: I_{1}ω_{1} = I_{2}ω_{2} :: no external torque
 - Reducing I increases ω; rotational KE rises, the extra energy coming from the work done pulling mass inwards.
 - Central forces (gravity towards the Sun) exert no torque, so planetary L is constant: Kepler's second law.
 - A cat twists to land on its feet with zero total L by rotating parts of its body in opposite directions.
+- Rotational collisions (a lump dropped on a turntable) conserve L but lose kinetic energy, like inelastic linear collisions.
+H: In astronomy
+P: Contracting gas clouds spin up as they shrink, flattening into discs that form planetary systems and galaxies. In Kepler's second law, the area swept per unit time is dA/dt = L/(2m), constant because the Sun exerts no torque on a planet.
 X: A star of radius 7 × 10^{8} m rotating once per 30 days collapses to a 10 km neutron star. Estimate its new period.
-> ω ∝ 1/R^{2} for constant L (I ∝ MR^{2})
+> ω ∝ 1/R^{2} for constant L (I ∝ MR^{2}, same shape assumed)
 > T_{new} = 30 days × (10^{4}/7 × 10^{8})^{2} = 30 × 86 400 × 2.0 × 10^{-10} s ≈ 0.5 ms: a millisecond pulsar
+K: Zero external torque means L is fixed, so ω changes inversely with I.
 !: KE isn't conserved when a skater pulls in her arms; it increases. Angular momentum is the conserved quantity.
+T: Conservation of angular momentum | With zero net external torque, the total angular momentum of a system is constant
+T: Central force | A force always directed along the line to a fixed centre, which exerts no torque about it
+SUM: No external torque ⇒ I_{1}ω_{1} = I_{2}ω_{2}; reducing I raises ω.
+SUM: KE = L^{2}/(2I) rises as I falls; central forces conserve L, giving Kepler's second law.
+EV: established | Angular momentum conservation holds in every known isolated system
+SRC: OpenStax, University Physics Volume 1, section 11.3 "Conservation of Angular Momentum" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/11-3-conservation-of-angular-momentum
+SRC: OpenStax, University Physics Volume 1, section 13.5 "Kepler's Laws of Planetary Motion" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/13-5-keplers-laws-of-planetary-motion
+SRC: AQA, A-level Physics specification (7408), section 3.11.1.5, Angular momentum | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: Why do planets move faster near the Sun? | Gravity exerts no torque about the Sun, so L = mvr is constant; smaller r means larger v.
 Q: Where does the extra kinetic energy come from when a skater pulls in her arms? | The work she does pulling her arms inward.
-M1: A skater halves her moment of inertia. Her angular velocity: | Doubles | Halves | Quadruples | Stays the same | L constant.
-M2: A child jumps onto the edge of a spinning roundabout. The roundabout: | Slows down | Speeds up | Keeps the same speed | Stops | Total I increases, so ω decreases.
+M1@1: A skater halves her moment of inertia. Her angular velocity: | Doubles | Halves | Quadruples | Stays the same | With no external torque L = Iω is constant, so halving I doubles ω.
+M2@1: A child jumps onto the edge of a spinning roundabout. The roundabout: | Slows down | Speeds up | Keeps the same speed | Stops | The child adds moment of inertia while L stays the same (no external torque about the axle), so ω falls.
+NUM2@1: A turntable (I = 0.20 kg m^{2}) spins at 3.0 rad s^{-1}. A ring with I = 0.10 kg m^{2} is dropped onto it and sticks. What is the new ω, in rad s^{-1}? | 2 | 0.05 | rad s^{-1} | L is conserved: 0.20 × 3.0 = (0.20 + 0.10)ω, so ω = 0.60/0.30 = 2.0 rad s^{-1}.
+M2@2: In that turntable collision, the fraction of kinetic energy lost is: | 1/3 | 0 | 1/2 | 2/3 | KE before ½ × 0.20 × 9 = 0.90 J; after ½ × 0.30 × 4 = 0.60 J; so 0.30 J, a third, becomes heat, like an inelastic collision.
+TF3@2,3: A comet in an elliptical orbit moves fastest at its closest approach to the Sun because its angular momentum is greatest there. | false | Its angular momentum mvr is the same everywhere, since gravity is central and exerts no torque; it moves fastest where r is smallest.
+SA3@1,2: A skater spins at 2.0 rev s^{-1} with arms out (I = 4.0 kg m^{2}) and pulls them in (I = 1.6 kg m^{2}). Find her new spin rate and explain what happens to her kinetic energy. | With no external torque about the vertical axis, L is conserved: 4.0 × 2.0 = 1.6 × f, so f = 5.0 rev s^{-1}. Rotational KE = L^{2}/(2I) rises by the factor 4.0/1.6 = 2.5. The extra energy comes from the work her muscles do pulling her arms inwards against their tendency to move outward. | L conserved, no external torque ; f = 5.0 rev s⁻¹ ; KE increases by 2.5 times ; Energy from muscular work
 
 ## Rotational dynamics
 S: Rotational dynamics applies τ = Iα (for a fixed axis) to find how torques change rotation. Problems with pulleys, wheels and hinged objects combine it with F = ma for the parts that translate.

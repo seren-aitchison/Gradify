@@ -173,9 +173,97 @@
         "added SA3 on ADH and RAAS in dehydration"
       ],
       "findings": []
+    },
+    {
+      "course": "nursing",
+      "lesson": "u02-17",
+      "action": "enhanced",
+      "changes": [
+        "added LV and EV",
+        "added SA3 vignette on post-operative retention with overflow"
+      ],
+      "findings": []
+    },
+    {
+      "course": "nursing",
+      "lesson": "u02-18",
+      "action": "enhanced",
+      "changes": [
+        "added LV and EV",
+        "added SA3 on the HPT axis and steroid suppression"
+      ],
+      "findings": [
+        {
+          "class": "editorial",
+          "note": "M3 q3 stem used 'they' but two distractors used 'she'; made pronouns consistent ('they')."
+        }
+      ]
+    },
+    {
+      "course": "nursing",
+      "lesson": "u02-19",
+      "action": "enhanced",
+      "changes": [
+        "added LV and EV",
+        "added M3 vignette on inclusive pre-operative pregnancy checks",
+        "added SA3 on hormonal control of the menstrual cycle"
+      ],
+      "findings": []
+    },
+    {
+      "course": "nursing",
+      "lesson": "u02-20",
+      "action": "enhanced",
+      "changes": [
+        "added LV and EV",
+        "added SA3 on innate vs adaptive immunity and afebrile neutropenic sepsis"
+      ],
+      "findings": []
+    },
+    {
+      "course": "nursing",
+      "lesson": "u02-21",
+      "action": "enhanced",
+      "changes": [
+        "added LV and EV",
+        "was too thin (5 blocks): added paragraph on early signs of lymphoedema and cellulitis",
+        "added M3 vignette on cellulitis in a lymphoedematous arm",
+        "added SA3 on lymph drainage and lymphoedema"
+      ],
+      "findings": []
+    },
+    {
+      "course": "nursing",
+      "lesson": "u02-22",
+      "action": "enhanced",
+      "changes": [
+        "added LV and EV",
+        "added SA3 fluid balance calculation (1200 + 1000 = 2200; 1500 + 300 = 1800; balance +400 mL) with insensible losses"
+      ],
+      "findings": []
+    },
+    {
+      "course": "nursing",
+      "lesson": "u02-23",
+      "action": "enhanced",
+      "changes": [
+        "added LV and EV",
+        "added SA3 on hyperkalaemia risk, causes and reporting"
+      ],
+      "findings": []
+    },
+    {
+      "course": "nursing",
+      "lesson": "u02-24",
+      "action": "enhanced",
+      "changes": [
+        "added LV and EV",
+        "added SA3 on lactic acidosis and respiratory compensation in sepsis"
+      ],
+      "findings": []
     }
   ],
   "notes": [
-    "In progress: u02 lessons 01-16 done."
+    "In progress: u02 lessons 01-24 done."
   ]
 }

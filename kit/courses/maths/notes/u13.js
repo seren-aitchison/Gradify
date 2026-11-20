@@ -1402,6 +1402,7 @@ SA3@1,2: For x = 2, 4, 6, 8 and y = 3, 7, 8, 10, find the least squares line and
 S: Multiple linear regression models a response using several predictors at once. Each coefficient estimates the effect of one predictor with the others held fixed, which is how regression adjusts for confounders.
 O: Interpret coefficients in a multiple regression
 O: Recognise multicollinearity and use dummy variables and interactions
+LV: Year 1 · Application
 T: Multiple regression | y = β₀ + β₁x₁ + … + β_{p}x_{p} + ε, fitted by least squares: β̂ = (XᵀX)^{−1}Xᵀy
 T: Multicollinearity | Strong correlation among predictors, which inflates the standard errors of their coefficients
 H: Interpretation
@@ -1426,16 +1427,20 @@ Q: How many dummy variables represent a factor with 4 categories? | 3.
 Q: Can R^{2} decrease when a predictor is added? | No; adjusted R^{2} can.
 SUM: Multiple regression adjusts for several predictors.
 SUM: Check collinearity and overfitting.
+EV: established | Each multiple regression coefficient estimates the expected change in y per unit change in its predictor with the other predictors held fixed.
 SRC: Weisberg S, Applied Linear Regression (4th edn, Wiley 2014) | secondary | 2014 | https://www.wiley.com/
 SRC: James G, Witten D, Hastie T, Tibshirani R, An Introduction to Statistical Learning (2nd edn, Springer 2021) | secondary | 2021 | https://www.statlearning.com/
 NUM1#maths-u13-37-q1@1: Using price = 50 + 2.5 × area + 10 × bedrooms (£000), find the predicted price difference between two flats of equal size with 2 and 4 bedrooms, in £000. | 20 | 0 | £000 | Holding area fixed, 2 extra bedrooms add 2 × 10 = 20.
 M1#maths-u13-37-q2@1: What does a high variance inflation factor indicate? | A predictor is highly correlated with the others | The model fits perfectly | Residuals are non-normal | The residuals are far from normally distributed | The intercept is wrong | VIF measures how much collinearity inflates a coefficient's variance.
 M2#maths-u13-37-q3@2: In a model with an interaction x₁x₂, what does the interaction coefficient describe? | How the effect of x₁ changes with x₂ | The average of x₁ and x₂ | The correlation of x₁ and x₂ | The intercept | The residual variance | With an interaction, the slope for x₁ is β₁ + β₁₂x₂.
+NUM3@1,2: A model is ŷ = 10 + 2x₁ + 3x₂ + 0.5x₁x₂. What is the slope for x₁ when x₂ = 4? | 4 | 0 |  | With the interaction, the slope for x₁ is 2 + 0.5x₂ = 2 + 0.5 × 4 = 4.
+SA3@1: Regressing salary on age alone gives a slope of +£500 per year, but adding years of experience changes the age slope to −£50. Explain how this can happen and how to interpret each slope. | Age and experience are strongly correlated, and experience drives salary. Alone, the age slope absorbs the effect of the experience that comes with age, so older people earn more. With experience held fixed, age has little or a slightly negative association with salary: comparing people of equal experience, the older ones (who started later) earn slightly less. Each slope answers a different question; strong correlation between the predictors also inflates standard errors, so check the VIF. | Identifies correlation between age and experience ; Explains the simple slope includes experience's effect ; Interprets the adjusted slope holding experience fixed ; Says the two slopes answer different questions ; Mentions multicollinearity or VIF
 
 ## Logistic Regression
 S: Logistic regression models the probability of a binary outcome, such as disease or no disease, pass or fail, using predictors. It works on the log-odds scale, so its coefficients become odds ratios.
 O: Interpret logistic regression coefficients as odds ratios
 O: Calculate predicted probabilities from a fitted model
+LV: Year 2 · Application
 T: Logit | log(p/(1 − p)), the log-odds
 T: Logistic model | logit(p) = β₀ + β₁x₁ + … + β_{k}x_{k}, so p = 1/(1 + e^{−η})
 H: The model
@@ -1460,16 +1465,20 @@ Q: What is p when η = 0? | 0.5.
 Q: What does e^{β} represent in logistic regression? | The odds ratio for a one-unit increase in the predictor.
 SUM: Logistic regression models binary outcomes.
 SUM: Its coefficients are log odds ratios.
+EV: established | In logistic regression, e^{β} is the odds ratio for a one-unit increase in the predictor, holding the others fixed.
 SRC: Hosmer DW, Lemeshow S, Sturdivant RX, Applied Logistic Regression (3rd edn, Wiley 2013) | secondary | 2013 | https://www.wiley.com/
 SRC: Agresti A, Categorical Data Analysis (3rd edn, Wiley 2013) | secondary | 2013 | https://www.wiley.com/
 NUM1#maths-u13-38-q1@1: logit(p) = −1 + 0.2x. Find p at x = 5. | 0.5 | 0.001 |  | η = −1 + 1 = 0, so p = 1/(1 + 1) = 0.5.
 M1#maths-u13-38-q2@1: A logistic coefficient for smoking is 0.7. What is the odds ratio? | About 2.01 | 0.7 | About 1.07 | About 0.5 | About 7 | e^{0.7} ≈ 2.01: smokers have about twice the odds.
 M2#maths-u13-38-q3@2: Why is logistic regression used instead of linear regression for a binary outcome? | Linear models can predict probabilities below 0 or above 1 | Linear regression can't handle two predictors | Binary data are always normal | Logistic regression is always more accurate | There's no difference | The logit link keeps predicted probabilities between 0 and 1.
+NUM3@1,2: A model gives logit(p) = −2 + 0.8x. Find the predicted probability at x = 3, to 3 decimal places. | 0.599 | 0.001 |  | η = −2 + 2.4 = 0.4, so p = 1/(1 + e^{−0.4}) ≈ 0.599.
+SA3@1: A logistic model for heart disease has a coefficient of 0.4 for each decade of age. Interpret it, and explain why it does not mean the probability rises by 0.4 per decade. | The coefficient is on the log-odds scale: each extra decade multiplies the odds of disease by e^{0.4} ≈ 1.49, a 49% increase in odds, holding other predictors fixed. The change in probability depends on the starting probability: near p = 0.5 a log-odds change of 0.4 raises p by about 0.1, and near p = 0.05 by much less. A rise of 0.4 in probability per decade would soon exceed 1, which the logit link prevents. | Identifies the log-odds scale ; Computes the odds ratio 1.49 ; Says other predictors are held fixed ; Explains the probability change depends on baseline ; Notes probabilities are kept between 0 and 1
 
 ## Poisson Regression
 S: Poisson regression models counts, such as hospital admissions, accidents or species sightings, using a log link so predicted counts stay positive. Its coefficients become rate ratios, and an offset handles different exposure times.
 O: Interpret Poisson regression coefficients as rate ratios
 O: Use offsets and recognise overdispersion
+LV: Year 2 · Application
 T: Log-linear model | log μ = β₀ + β₁x₁ + …, so μ = e^{η}
 T: Offset | A term log(exposure) with coefficient fixed at 1, so the model describes rates per unit exposure
 H: The model
@@ -1494,16 +1503,20 @@ Q: What does an offset of log(person-years) do? | Turns the model into one for r
 Q: What should you use if count data are overdispersed? | Quasi-Poisson or negative binomial regression.
 SUM: Poisson regression models counts and rates.
 SUM: Coefficients are log rate ratios.
+EV: established | A Poisson model assumes variance equals mean, and overdispersion makes its standard errors too small.
 SRC: Agresti A, Categorical Data Analysis (3rd edn, Wiley 2013) | secondary | 2013 | https://www.wiley.com/
 SRC: Hilbe JM, Negative Binomial Regression (2nd edn, Cambridge University Press 2011) | secondary | 2011 | https://www.cambridge.org/
 NUM1#maths-u13-39-q1@1: A Poisson regression has coefficient −0.3 for a safety feature. Find the rate ratio, to 3 decimal places. | 0.741 | 0.001 |  | e^{−0.3} ≈ 0.741: about a 26% lower rate.
 M1#maths-u13-39-q2@1: Why does Poisson regression use a log link? | It keeps predicted counts positive and makes effects multiplicative | Counts are always normal | It removes the need to check overdispersion | It removes the need for data | It makes the model linear in the response y itself | μ = e^{η} is always positive, and coefficients act as rate ratios.
 M2#maths-u13-39-q3@2: Hospitals are observed for different lengths of time. How should a Poisson model account for that? | Include log(observation time) as an offset | Divide all counts by 2 to average them | Divide counts by 2 | Use logistic regression | Remove short observations | The offset turns counts into rates per unit time.
+NUM3@2: A Poisson model with an offset gives log μ = log t + 0.2 + 0.1x. Find the expected count for a hospital observed for t = 50 days with x = 3, to 2 decimal places. | 82.44 | 0.05 |  | μ = t × e^{0.2 + 0.3} = 50e^{0.5} ≈ 82.44: the offset makes e^{0.5} a rate per day.
+SA3@2: Daily admission counts have mean 4 and variance 12. Explain why a Poisson regression would be unsuitable and what to do instead. | A Poisson model forces the variance to equal the mean, but here it is three times larger: overdispersion, perhaps from unmeasured differences between days or clustering. Fitting a Poisson model would give standard errors too small and p-values too optimistic. Use a negative binomial model (or quasi-Poisson, which scales the variance), add predictors that explain the extra variation, and consider zero-inflated models if there are excess zeros. | States variance = mean for Poisson ; Identifies overdispersion ; Says standard errors would be too small ; Proposes negative binomial or quasi-Poisson ; Mentions adding predictors or other remedies
 
 ## Nonlinear Regression
 S: Nonlinear regression fits models whose parameters enter non-linearly, such as exponential growth, saturation curves and enzyme kinetics. These models often come from science and have interpretable parameters, but they're fitted iteratively and need sensible starting values.
 O: Distinguish models non-linear in parameters from those non-linear in x
 O: Describe how nonlinear least squares is fitted
+LV: Year 2 · Application
 T: Nonlinear model | A model like y = θ₁(1 − e^{−θ₂x}) that isn't linear in the parameters
 T: Gauss–Newton method | An iterative method that repeatedly linearises the model and solves a least squares problem
 H: What counts as nonlinear
@@ -1527,16 +1540,20 @@ Q: Is y = a + bx + cx^{2} a nonlinear regression model? | No: it's linear in the
 Q: What does K_{m} mean in the Michaelis–Menten model? | The substrate level at which the rate is half of V_{max}.
 SUM: Nonlinear regression fits scientific models.
 SUM: It needs iteration and good starting values.
+EV: established | Models non-linear in their parameters are fitted by iterative least squares, and linearising transformations change the error structure.
 SRC: Bates DM, Watts DG, Nonlinear Regression Analysis and Its Applications (Wiley 1988) | secondary | 1988 | https://www.wiley.com/
 SRC: Motulsky H, Christopoulos A, Fitting Models to Biological Data Using Linear and Nonlinear Regression (Oxford University Press 2004) | secondary | 2004 | https://global.oup.com/
 NUM1#maths-u13-40-q1@1: For y = 20(1 − e^{−0.5x}), find y at x = 2, to 2 decimal places. | 12.64 | 0.01 |  | 20(1 − e^{−1}) ≈ 20 × 0.6321 = 12.64.
 M1#maths-u13-40-q2@1: Which model is non-linear in its parameters? | y = ae^{bx} | y = a + bx | y = a + bx + cx^{2} | y = a + b log x | y = a + b/x | b sits inside the exponential, so least squares has no closed form.
 M2#maths-u13-40-q3@2: What is a common practical difficulty in nonlinear regression? | The fitting algorithm may need good starting values to converge | It can't produce standard errors | It needs categorical data | It can't handle more than one x | It always has a closed-form solution that is hard to compute | Iterative methods can stall or find local minima from poor starts.
+NUM3@2: A Michaelis–Menten model has V_{max} = 10 and K_{m} = 2. At what substrate concentration S is V = 8? | 8 | 0 |  | 10S/(2 + S) = 8 gives 10S = 16 + 8S, so S = 8.
+SA3@1,2: Explain why y = a + bx + cx^{2} is fitted by ordinary least squares but y = ae^{bx} is not, and what is lost by fitting log y = log a + bx instead. | The quadratic is linear in the parameters a, b and c (x^{2} is just another known predictor), so least squares has a closed-form solution. In ae^{bx} the parameter b sits inside the exponential, so least squares needs iterative methods and starting values. Taking logs gives a straight line, but if errors are additive on the original scale the log scale distorts them: it treats small values' errors as more important and estimates a geometric rather than arithmetic mean, so estimates can be biased. | Says the quadratic is linear in its parameters ; Says the exponential is non-linear in b ; Mentions iterative fitting or starting values ; Explains that logs change the error structure ; Notes the possible bias
 
 ## Robust Regression
 S: Robust regression fits lines that aren't thrown off by outliers or heavy-tailed errors. Ordinary least squares squares every residual, so a single wild point can drag the line; robust methods limit that influence.
 O: Explain why least squares is sensitive to outliers
 O: Describe M-estimation, least absolute deviations and the Theil–Sen estimator
+LV: Year 3 · Application
 T: Breakdown point | The fraction of contaminated data an estimator can handle before giving arbitrary results; 0% for least squares
 T: Huber loss | A loss that's quadratic for small residuals and linear for large ones
 H: Methods
@@ -1563,17 +1580,20 @@ Q: What is the breakdown point of ordinary least squares? | 0%: one bad point ca
 Q: How is the Theil–Sen slope calculated? | The median of the slopes between all pairs of points.
 SUM: Robust regression resists outliers.
 SUM: Big differences from least squares are a warning.
+EV: established | Least squares has breakdown point zero, whereas the Theil–Sen estimator tolerates about 29% contamination.
 SRC: Huber PJ, Ronchetti EM, Robust Statistics (2nd edn, Wiley 2009) | secondary | 2009 | https://www.wiley.com/
 SRC: Rousseeuw PJ, Leroy AM, Robust Regression and Outlier Detection (Wiley 1987) | secondary | 1987 | https://www.wiley.com/
 NUM1#maths-u13-41-q1@1: Pairwise slopes between points are 0.8, 1.1, 0.9, 1.0 and 12. Find the Theil–Sen slope. | 1 | 0 |  | The median of 0.8, 0.9, 1.0, 1.1, 12 is 1.0.
 M1#maths-u13-41-q2@1: Why is least squares sensitive to outliers? | Squaring residuals gives large errors huge weight | It ignores large residuals and fits small ones only | It uses medians | It only fits horizontal lines | It isn't sensitive | A residual of 10 contributes 100 to the sum, dominating smaller ones.
 M2#maths-u13-41-q3@2: Which estimator minimises the sum of absolute residuals? | Least absolute deviations (median regression) | Ridge regression | Ordinary least squares with weights | Logistic regression | The method of moments | LAD replaces squares with absolute values, limiting outliers' pull.
 M2#maths-u13-41-q4@2: What problem do robust regression methods address? | Least-squares fits being dragged by a few outliers | Too few data points | Perfect multicollinearity only | Non-numeric data | Negative correlations | Methods like Huber or least absolute deviations down-weight extreme residuals.
+SA3@1,2: Explain what a breakdown point is and compare least squares, least absolute deviations and Theil–Sen regression in these terms, with the five-point example. | The breakdown point is the smallest fraction of contaminated observations that can move the estimate arbitrarily far. Least squares has breakdown 0: one point, like (5, 20), can drag the slope from 1 to 4 and further. LAD limits the influence of outlying y values but can still be pulled by a high-leverage x value. Theil–Sen takes the median of pairwise slopes, resisting about 29% contamination: in the example its slope stays at 1. | Defines breakdown point ; States least squares has breakdown 0 ; Uses the example to show the pull ; Describes LAD's resistance and leverage weakness ; States Theil–Sen's 29% and slope 1
 
 ## Quantile Regression
 S: Quantile regression models how a chosen quantile of the response, such as the median or the 90th percentile, depends on predictors. It reveals effects that differ across the distribution, which mean-based regression averages away.
 O: Explain what quantile regression estimates
 O: Calculate the check (pinball) loss
+LV: Year 3 · Application
 T: Quantile regression | Estimating the τth conditional quantile of y as a linear function of x
 T: Check loss | ρ_{τ}(u) = u(τ − I(u < 0)): τ|u| for positive residuals, (1 − τ)|u| for negative ones
 H: The method
@@ -1598,16 +1618,20 @@ Q: Which quantile regression is the same as least absolute deviations? | Median 
 Q: Name one use of quantile regression. | Growth charts, value at risk or prediction intervals.
 SUM: Quantile regression models whole distributions.
 SUM: It uses an asymmetric loss.
+EV: established | Minimising the check loss with parameter τ estimates the conditional τ-quantile of the response.
 SRC: Koenker R, Bassett G, Regression quantiles, Econometrica 46(1), 33 | primary | 1978 | https://doi.org/10.2307/1913643
 SRC: Koenker R, Quantile Regression (Cambridge University Press 2005) | secondary | 2005 | https://www.cambridge.org/
 NUM1#maths-u13-42-q1@1: For τ = 0.25, find the check loss for a residual of −4. | 3 | 0 |  | Negative residual: (1 − 0.25) × 4 = 3.
 M1#maths-u13-42-q2@1: What does quantile regression with τ = 0.1 estimate? | The 10th percentile of y given x | The mean of y | The variance of y | The top 10% of x | The probability y > 0.1 | It targets the conditional 10th percentile.
 M2#maths-u13-42-q3@2: Why might a 90th-percentile regression slope differ from a median regression slope? | The predictor affects the spread as well as the centre | Quantile regression is biased at high quantiles | Quantile slopes are always flatter | They must be equal | Because of rounding | If x widens the distribution, upper quantiles rise faster than the middle.
+NUM2@2: For τ = 0.75, find the total check loss for residuals +4 and −2. | 3.5 | 0.001 |  | 0.75 × 4 = 3 for the positive residual and 0.25 × 2 = 0.5 for the negative one: total 3.5.
+SA3@1: Explain why growth charts for children's weight are better built with quantile regression than with a mean line ± 2 standard deviations. | Growth charts show percentiles (such as the 2nd, 50th and 98th) of weight at each age. Weight is right-skewed and its spread grows with age, so a symmetric band of constant width around the mean misplaces the extreme percentiles. Quantile regression estimates each percentile curve directly at every age, allowing it to fan out and be asymmetric, and is not distorted by a few extreme weights. | Says charts need percentiles ; Notes skewness ; Notes spread changes with age ; Explains quantile regression fits each percentile directly ; Mentions robustness to outliers
 
 ## Ridge Regression
 S: Ridge regression adds a penalty on the size of the coefficients to least squares. It shrinks estimates towards zero, trading a little bias for a big reduction in variance, which helps with many or highly correlated predictors.
 O: Write down the ridge objective and its solution
 O: Explain the bias–variance trade-off and choose λ by cross-validation
+LV: Year 3 · Application
 T: Ridge regression | Minimise Σ(y − Xβ)^{2} + λΣβ_{j}^{2}; solution β̂ = (XᵀX + λI)^{−1}Xᵀy
 T: Shrinkage | Pulling estimates towards zero to reduce variance
 H: How it works
@@ -1632,16 +1656,20 @@ Q: What does ridge regression become when λ = 0? | Ordinary least squares.
 Q: Can ridge regression set a coefficient exactly to zero? | No, it only shrinks towards zero.
 SUM: Ridge shrinks coefficients to cut variance.
 SUM: Cross-validation chooses λ.
+EV: established | Ridge regression shrinks coefficients towards zero, adding bias but reducing variance, and is equivalent to a normal prior centred at zero.
 SRC: Hoerl AE, Kennard RW, Ridge regression: biased estimation for nonorthogonal problems, Technometrics 12(1), 55 | primary | 1970 | https://doi.org/10.1080/00401706.1970.10488634
 SRC: Hastie T, Tibshirani R, Friedman J, The Elements of Statistical Learning (2nd edn, Springer 2009) | secondary | 2009 | https://hastie.su.domains/ElemStatLearn/
 NUM1#maths-u13-43-q1@1: With one predictor, S_{xy} = 30 and S_{xx} = 15. Find the ridge estimate with λ = 5. | 1.5 | 0.001 |  | 30/(15 + 5) = 1.5 (least squares would give 2).
 M1#maths-u13-43-q2@1: What problem does ridge regression especially help with? | Highly correlated predictors | Missing response values | Binary outcomes | Too few predictors | Non-random sampling | Collinearity makes least squares unstable; the penalty stabilises it.
 M2#maths-u13-43-q3@2: Ridge regression corresponds to which Bayesian prior on the coefficients? | Normal centred at zero | Uniform on all reals | Laplace (double exponential) | Beta | Poisson | The squared penalty is the log of a normal prior.
+NUM3@1,2: With orthonormal predictors, ridge divides each least squares estimate by 1 + λ. Find the ridge estimate for a least squares estimate of 3 with λ = 0.5. | 2 | 0 |  | XᵀX = I, so the ridge solution is b/(1 + λ) = 3/1.5 = 2: every coefficient is shrunk by the same factor, none to zero.
+SA3@2: Explain the bias–variance trade-off in ridge regression and how k-fold cross-validation chooses λ. | Shrinking the coefficients towards zero biases them, but it reduces their variance, especially when predictors are correlated; prediction error = bias^{2} + variance + noise can fall overall. Very small λ gives high variance (close to least squares); very large λ gives high bias (all coefficients near 0). In k-fold cross-validation, split the data into k folds; for each λ on a grid, fit on k − 1 folds and measure prediction error on the held-out fold, average over folds, and choose the λ with the smallest average error (or the largest within one standard error of it). | Explains shrinkage adds bias and cuts variance ; Links to prediction error ; Describes small and large λ ; Describes the fold procedure ; Chooses λ by smallest held-out error
 
 ## Lasso Regression
 S: The lasso penalises the sum of the absolute values of the coefficients. Unlike ridge, it sets some coefficients exactly to zero, so it performs variable selection and gives simpler, more interpretable models.
 O: Write down the lasso objective and explain why it gives zeros
 O: Compare the lasso, ridge and elastic net
+LV: Year 3 · Application
 T: Lasso | Minimise ½Σ(y − Xβ)^{2} + λΣ|β_{j}| (least absolute shrinkage and selection operator)
 T: Soft-thresholding | For orthonormal predictors, β̂_{j} = sign(b_{j}) max(|b_{j}| − λ, 0), where b_{j} is the least squares estimate
 H: Why zeros appear
@@ -1666,16 +1694,20 @@ Q: Which penalty can set coefficients exactly to zero, ridge or lasso? | The las
 Q: What does the elastic net combine? | The lasso and ridge penalties.
 SUM: The lasso shrinks and selects variables.
 SUM: Elastic net handles correlated groups.
+EV: established | The lasso's absolute-value penalty sets some coefficients exactly to zero, performing variable selection.
 SRC: Tibshirani R, Regression shrinkage and selection via the lasso, Journal of the Royal Statistical Society B 58(1), 267 | primary | 1996 | https://doi.org/10.1111/j.2517-6161.1996.tb02080.x
 SRC: Hastie T, Tibshirani R, Wainwright M, Statistical Learning with Sparsity: The Lasso and Generalizations (CRC Press 2015) | secondary | 2015 | https://hastie.su.domains/StatLearnSparsity/
 NUM1#maths-u13-44-q1@1: With orthonormal predictors and λ = 0.5, a least squares estimate of −2 becomes what lasso estimate? | -1.5 | 0.001 |  | Soft-thresholding: sign(−2) × (2 − 0.5) = −1.5.
 M1#maths-u13-44-q2@1: Why does the lasso produce exact zeros while ridge doesn't? | The absolute-value penalty has a corner at zero | Ridge uses absolute values of coefficients | Ridge ignores the intercept | The lasso deletes data | The lasso uses a larger λ than ridge in practice | The non-differentiable point at 0 lets the optimum sit exactly there.
 M3#maths-u13-44-q3@2: Two predictors are almost perfectly correlated and both matter. What does the plain lasso tend to do? | Keep one and drop the other, somewhat arbitrarily | Keep both with equal coefficients | Drop both | Make both negative | Fail to converge | The lasso picks one from a correlated group; the elastic net tends to keep both.
+NUM2@1: With orthonormal predictors, least squares estimates are 2.5, −1.5 and 0.4. How many lasso coefficients are non-zero for λ = 0.6? | 2 | 0 |  | Soft-thresholding by 0.6 gives 1.9, −0.9 and 0 (since |0.4| < 0.6), so two remain.
+SA2@2: A genetics study has 20,000 gene measurements, many strongly correlated, for 300 patients. Compare ridge, the lasso and the elastic net for predicting an outcome. | Least squares is impossible (p > n). Ridge keeps every gene with shrunken coefficients: it handles correlation well but gives no selection, so the model is hard to interpret. The lasso sets most coefficients to zero, giving a sparse model, but from a correlated group it tends to pick one gene arbitrarily and can select at most n genes. The elastic net mixes both penalties, selecting variables while keeping correlated groups together, so it often suits this setting. Choose penalties by cross-validation and don't treat selected genes as proven causes. | Notes p > n rules out least squares ; Describes ridge's lack of selection ; Describes the lasso's sparsity and correlated-group behaviour ; Explains the elastic net's compromise ; Mentions cross-validation or caution about selection
 
 ## Generalised Linear Models (GLMs)
 S: Generalised linear models unify linear, logistic, Poisson and other regressions in one framework: a distribution for the response, a linear predictor and a link function joining them. One theory and one fitting algorithm cover them all.
 O: Identify the three components of a GLM
 O: Choose a distribution and link for common response types
+LV: Year 2 · Application
 T: Link function | g(μ) = η, connecting the mean μ of the response to the linear predictor η = β₀ + β₁x₁ + …
 T: Deviance | A measure of lack of fit, twice the log-likelihood gap to a perfect (saturated) model
 H: The three components
@@ -1700,16 +1732,20 @@ Q: What link function does logistic regression use? | The logit.
 Q: Which distribution suits positive, right-skewed claim sizes? | The gamma.
 SUM: GLMs unify regression models.
 SUM: Choose distribution and link by response type.
+EV: established | GLMs combine an exponential-family response, a linear predictor and a link function, fitted by maximum likelihood through IRLS.
 SRC: McCullagh P, Nelder JA, Generalized Linear Models (2nd edn, Chapman & Hall 1989) | secondary | 1989 | https://www.routledge.com/
 SRC: Nelder JA, Wedderburn RWM, Generalized linear models, Journal of the Royal Statistical Society A 135(3), 370 | primary | 1972 | https://doi.org/10.2307/2344614
-NUM1#maths-u13-45-q1@1: A Poisson GLM with log link has η = 1.2 for a case. Find the predicted mean, to 3 decimal places. | 3.32 | 0.002 |  | μ = e^{1.2} ≈ 3.320.
+NUM1#maths-u13-45-q1@1: A Poisson GLM with log link has η = 1.2 for a case. Find the predicted mean, to 3 decimal places. | 3.32 | 0.002 |  | Invert the log link: μ = e^{η} = e^{1.2} ≈ 3.320.
 M1#maths-u13-45-q2@1: Which three parts make up a GLM? | A response distribution, a linear predictor and a link function | A mean, a median and a mode | A test, a p-value and an interval | Data, code and output | A prior, a likelihood and a posterior distribution | That's Nelder and Wedderburn's framework.
 M2#maths-u13-45-q3@2: How are GLMs usually fitted? | Iteratively reweighted least squares (maximum likelihood) | Ordinary least squares in one step | Ordinary least squares with no weighting | The method of moments, matched to the mean only | Bootstrap only | IRLS solves the likelihood equations by repeated weighted least squares.
+NUM2@2: A gamma GLM with log link has coefficient 0.25 for a predictor. By what percentage does the mean change per unit increase, to 1 decimal place? | 28.4 | 0.1 | % | The mean is multiplied by e^{0.25} ≈ 1.284, an increase of about 28.4%.
+SA3@2: An insurer models (a) whether a policy has a claim, (b) the number of claims per year and (c) the size of each claim. Choose a distribution and link for each and justify your choices. | (a) Binary outcome: binomial distribution with logit link, keeping probabilities in (0, 1) and giving odds ratios. (b) Counts: Poisson with log link and log(exposure) as an offset, or negative binomial if overdispersed; predictions stay positive and effects are rate ratios. (c) Claim sizes are positive and right-skewed with spread rising with the mean: gamma with log link, giving multiplicative effects. | Binomial with logit for (a) ; Poisson or negative binomial with log link for (b) ; Mentions an exposure offset or overdispersion ; Gamma with log link for (c) ; Justifies by the response type
 
 ## Mixed-Effects Models
 S: Mixed-effects (multilevel) models handle data with groups or repeated measurements: pupils in schools, patients in hospitals, measurements over time on the same person. They combine fixed effects for the questions of interest with random effects for grouping, giving honest standard errors and sensible estimates for small groups.
 O: Distinguish fixed and random effects
 O: Calculate the intraclass correlation and explain partial pooling
+LV: Year 3 · Application
 T: Random effect | A group-level term treated as drawn from a distribution, such as school intercepts u_{j} ~ N(0, σ_{u}^{2})
 T: Intraclass correlation | ICC = σ_{u}^{2}/(σ_{u}^{2} + σ_{e}^{2}), the share of variance due to groups
 H: The model
@@ -1734,20 +1770,24 @@ Q: What does an ICC of 0 mean? | Groups explain none of the variance: observatio
 Q: Which groups are shrunk most in partial pooling? | Small or noisy groups.
 SUM: Mixed models handle clustered data.
 SUM: Partial pooling borrows strength across groups.
+EV: established | Random-effects models give partially pooled estimates that shrink small groups towards the overall mean and correct standard errors for clustering.
 SRC: Gelman A, Hill J, Data Analysis Using Regression and Multilevel/Hierarchical Models (Cambridge University Press 2007) | secondary | 2007 | https://www.cambridge.org/
 SRC: Bates D, Mächler M, Bolker B, Walker S, Fitting linear mixed-effects models using lme4, Journal of Statistical Software 67(1), 1 | primary | 2015 | https://doi.org/10.18637/jss.v067.i01
-NUM1#maths-u13-46-q1@1: Find the ICC when σ_{u}^{2} = 2 and σ_{e}^{2} = 8. | 0.2 | 0.001 |  | 2/(2 + 8) = 0.2.
+NUM1#maths-u13-46-q1@1: Find the ICC when σ_{u}^{2} = 2 and σ_{e}^{2} = 8. | 0.2 | 0.001 |  | ICC = σ_{u}^{2}/(σ_{u}^{2} + σ_{e}^{2}) = 2/(2 + 8) = 0.2.
 M1#maths-u13-46-q2@1: Pupils are nested in 50 schools. Why use a mixed model rather than ordinary regression? | Pupils in the same school are correlated, so ordinary standard errors are too small | Random effects remove all bias | Mixed models need fewer data | It makes all schools equal | Ordinary regression can't handle more than 20 groups | Clustering violates independence; random effects account for it.
 M2#maths-u13-46-q3@2: How does partial pooling treat a school with only 2 sampled pupils? | Its estimate is shrunk strongly towards the overall mean | It's ignored | It's treated as exact | It gets the largest weight | It's pooled with the largest school | Little data means little evidence that the school differs, so shrinkage is strong.
+NUM3@2: σ_{u}^{2} = 9 and σ_{e}^{2} = 36. A school with 4 sampled pupils has mean 80; the overall mean is 70. Find the partially pooled estimate for the school. | 75 | 0.001 |  | w = 9/(9 + 36/4) = 0.5, so the estimate is 70 + 0.5 × (80 − 70) = 75.
+SA3@1,2: Explain why analysing pupils from 40 schools with ordinary regression understates uncertainty, and how a random-intercept model with partial pooling helps. | Pupils in the same school share teachers and intake, so their outcomes are correlated (ICC > 0). Ordinary regression treats them as independent, effectively overcounting the information, so standard errors are too small and p-values too optimistic. A random intercept u_{j} for each school models this correlation and gives honest standard errors. It also partially pools: each school's estimate is shrunk towards the overall mean, more for small schools, avoiding noisy extremes from tiny samples. | Identifies within-school correlation ; Says ordinary SEs are too small ; Describes the random intercept ; Explains partial pooling and shrinkage ; Notes stronger shrinkage for small groups
 
 ## Generalised Additive Models
 S: Generalised additive models (GAMs) replace straight-line terms in a GLM with smooth curves learned from the data. They capture non-linear relationships flexibly while staying interpretable, because each predictor's effect can be plotted on its own.
 O: Describe the structure of a GAM
 O: Interpret smooth terms and the role of the smoothing penalty
+LV: Year 3 · Application
 T: GAM | g(μ) = β₀ + f₁(x₁) + f₂(x₂) + …, with each f_{j} a smooth function
 T: Effective degrees of freedom | A measure of a smooth's complexity; about 1 means a straight line
 H: Structure
-- Each f_{j} is built from spline basis functions.
+- The model is g(μ) = β₀ + f₁(x₁) + … + f_{p}(x_{p}); each f_{j} is built from spline basis functions, and its effective degrees of freedom (edf) measure how wiggly it is.
 - A penalty on wiggliness (such as λ∫f″(x)^{2} dx) prevents overfitting.
 - λ is chosen automatically by generalised cross-validation or REML.
 - Large λ forces a straight line; small λ allows a wiggly curve.
@@ -1770,16 +1810,20 @@ Q: What does an effective degrees of freedom of about 1 suggest? | The effect is
 Q: What controls how wiggly a GAM smooth can be? | The smoothing penalty λ.
 SUM: GAMs model non-linear effects smoothly.
 SUM: Penalties keep them from overfitting.
+EV: established | Penalised regression splines estimate smooth effects whose wiggliness is controlled by a penalty chosen from the data.
 SRC: Wood SN, Generalized Additive Models: An Introduction with R (2nd edn, CRC Press 2017) | secondary | 2017 | https://www.routledge.com/
 SRC: Hastie T, Tibshirani R, Generalized additive models, Statistical Science 1(3), 297 | primary | 1986 | https://doi.org/10.1214/ss/1177013604
 NUM1#maths-u13-47-q1@1: With a log link, f(x₂) − f(x₁) = −0.2. Find the ratio of expected responses, to 3 decimal places. | 0.819 | 0.001 |  | e^{−0.2} ≈ 0.819: about 18% lower.
 M1#maths-u13-47-q2@1: What happens to a GAM smooth as the penalty λ becomes very large? | It becomes a straight line | It becomes more wiggly | It disappears | It passes through every point | It becomes a step function | The penalty on curvature forces f″ towards zero.
 M2#maths-u13-47-q3@2: What distinguishes a GAM from a GLM? | Predictors enter through smooth functions rather than straight lines | GAMs can't be plotted | GAMs only use normal data | GLMs can't have several predictors | GAMs have no link function, so responses must be normal | The additive smooth terms replace linear terms.
+NUM2@2: A Poisson GAM with log link has f(25) − f(10) = 0.15 for temperature. By what percentage are expected admissions higher at 25°C, to 1 decimal place? | 16.2 | 0.1 | % | e^{0.15} ≈ 1.162, so about 16.2% more admissions are expected at 25°C than at 10°C, other terms fixed.
+SA3@2: Explain how the smoothing penalty and the effective degrees of freedom control a GAM smooth, and why the ends of a smooth need caution. | The penalty λ∫f″(x)^{2} dx charges for curvature: large λ forces the smooth towards a straight line (edf near 1), small λ lets it follow the data closely (high edf, risk of overfitting). λ is chosen automatically by GCV or REML to balance fit and smoothness. At the edges of the data there are few points on one side, so the confidence band widens and wiggles may be noise; extrapolating beyond the data is unreliable. | Explains the curvature penalty ; Links large λ to a straight line ; Interprets edf ; Mentions automatic choice of λ ; Explains edge uncertainty and extrapolation
 
 ## Statistical Modelling
 S: Statistical modelling is the craft of building, fitting, checking and revising models that describe data and the process generating them. "All models are wrong, but some are useful": the skill is in finding one that's useful for the question.
 O: Describe the cycle of model building and checking
 O: Compare models with AIC, BIC and cross-validation
+LV: Year 2 · Application
 T: Akaike information criterion | AIC = 2k − 2 ln L; lower is better; rewards fit, penalises parameters
 T: Bayesian information criterion | BIC = k ln n − 2 ln L; a heavier penalty for large n, favouring simpler models
 H: The cycle
@@ -1805,16 +1849,20 @@ Q: Is a lower or higher AIC better? | Lower.
 Q: Which criterion penalises extra parameters more heavily for large n, AIC or BIC? | BIC.
 SUM: Modelling is an iterative craft.
 SUM: Information criteria balance fit and complexity.
+EV: established | AIC and cross-validation target predictive accuracy, while BIC penalises parameters more heavily and favours simpler models as n grows.
 SRC: Burnham KP, Anderson DR, Model Selection and Multimodel Inference (2nd edn, Springer 2002) | secondary | 2002 | https://link.springer.com/
 SRC: Breiman L, Statistical modeling: the two cultures, Statistical Science 16(3), 199 | primary | 2001 | https://doi.org/10.1214/ss/1009213726
 NUM1#maths-u13-48-q1@1: A model has 4 parameters and log-likelihood −50. Find its AIC. | 108 | 0 |  | AIC = 2 × 4 − 2 × (−50) = 8 + 100 = 108.
 M1#maths-u13-48-q2@1: What does George Box's "all models are wrong, but some are useful" mean? | Models simplify reality, and the aim is usefulness, not perfect truth | Only complex models with many parameters are useful | Statistics is useless | Models should never be used | All models are equally good | Every model leaves things out; a good one serves its purpose.
 M3#maths-u13-48-q3@2: Researchers fit 50 models and report only the one with the best fit and smallest p-value. What's the risk? | The reported fit and significance are overstated | The model will be too simple to be useful | Nothing is wrong with it | The sample becomes biased | AIC becomes negative | Searching many models capitalises on chance, so performance on new data is likely worse.
+NUM2@2: A model has 4 parameters and log-likelihood −50, fitted to n = 100 observations. Find its BIC, to 1 decimal place. | 118.4 | 0.1 |  | BIC = k ln n − 2 ln L = 4 × 4.605 + 100 ≈ 118.4, compared with AIC = 108.
+SA2@2: A hospital wants a model to predict which patients will be readmitted, and a researcher wants to know whether a new discharge policy reduces readmissions. Explain how their modelling aims differ. | The hospital needs prediction: accuracy on new patients matters most, so it can use flexible models and select by cross-validation or AIC, and coefficients need not be causal. The researcher needs explanation: an interpretable, ideally causal estimate of the policy's effect, adjusted for confounders, with honest uncertainty; the model should be fixed in advance rather than chosen by searching many variants. A model can predict well without its coefficients meaning anything causal. | Identifies prediction versus explanation ; Mentions cross-validation or AIC for prediction ; Mentions confounder adjustment for explanation ; Warns against data dredging ; Notes good prediction needn't imply causal meaning
 
 ## Multivariate Statistics
 S: Multivariate statistics studies several variables measured together, keeping track of how they relate. It uses mean vectors and covariance matrices, and generalises tests and distances to many dimensions.
 O: Describe data with mean vectors and covariance matrices
 O: Calculate a Mahalanobis distance and outline multivariate tests
+LV: Year 2 · Application
 T: Covariance matrix (sample) | S, with variances on the diagonal and covariances off it, estimated from data
 T: Mahalanobis distance | D^{2} = (x − μ)ᵀΣ^{−1}(x − μ), distance allowing for scale and correlation
 H: Describing multivariate data
@@ -1839,16 +1887,20 @@ Q: What distribution does D^{2} follow for multivariate normal data in p dimensi
 Q: What is the multivariate generalisation of the t-test? | Hotelling's T^{2}.
 SUM: Multivariate methods handle many variables at once.
 SUM: Distances must allow for scale and correlation.
+EV: established | Mahalanobis distance measures distance in units of the data's covariance, and under multivariate normality D^{2} follows a χ^{2}_{p} distribution.
 SRC: Johnson RA, Wichern DW, Applied Multivariate Statistical Analysis (6th edn, Pearson 2007) | secondary | 2007 | https://www.pearson.com/
 SRC: Mahalanobis PC, On the generalized distance in statistics, Proceedings of the National Institute of Sciences of India 2(1), 49 | primary | 1936 | https://insa.nic.in/
 NUM1#maths-u13-49-q1@1: Independent variables have variances 4 and 9. Find D^{2} for the point (2, 3) from mean (0, 0). | 2 | 0.001 |  | D^{2} = 4/4 + 9/9 = 2.
 M1#maths-u13-49-q2@1: Why is Mahalanobis distance preferred to Euclidean distance for outlier detection? | It accounts for each variable's spread and the correlations | It ignores correlation but rescales by the mean | It uses absolute rather than squared differences | It needs no covariance matrix | It works only in 1D | Scaling by Σ^{−1} measures distance in standard-deviation units along the data's shape.
 M2#maths-u13-49-q3@2: Which test compares mean vectors across three groups? | MANOVA | Paired t-test | Chi-squared goodness of fit | Fisher's exact test | Kolmogorov–Smirnov | MANOVA extends ANOVA to several response variables at once.
+NUM3@2: Two standardised variables have correlation 0.5. Find the squared Mahalanobis distance of the point (1, 1) from the mean (0, 0), to 3 decimal places. | 1.333 | 0.002 |  | Σ^{−1} = (1/0.75)[[1, −0.5], [−0.5, 1]], so D^{2} = (1 − 0.5 − 0.5 + 1)/0.75 = 1/0.75 ≈ 1.333.
+SA3@2: With the same correlation of 0.5, the point (1, −1) has squared Mahalanobis distance 4 while (1, 1) has 1.33, although their Euclidean distances are equal. Explain why. | With positive correlation, the data cloud is an ellipse stretched along the line y = x: high values of one variable usually come with high values of the other. (1, 1) lies along that main direction, so it is typical. (1, −1) goes against the correlation, along the narrow axis of the ellipse, so it is much more unusual. Mahalanobis distance uses Σ^{−1} to measure distance relative to the shape of the cloud, while Euclidean distance ignores the correlation. | Describes the elliptical cloud along y = x ; Says (1, 1) follows the correlation ; Says (1, −1) goes against it ; Explains the role of Σ^{−1} ; Notes Euclidean distance ignores correlation
 
 ## Multivariate Analysis
 S: Multivariate analysis covers techniques that find structure in many variables at once: principal components, canonical correlations, correspondence analysis and multidimensional scaling. They reduce dimension, reveal patterns and make high-dimensional data visible.
 O: Interpret principal components and the variance they explain
 O: Outline other multivariate techniques and their uses
+LV: Year 2 · Application
 T: Principal component analysis | Finding orthogonal directions (eigenvectors of the covariance matrix) of maximum variance
 T: Scree plot | A plot of eigenvalues in decreasing order, used to choose how many components to keep
 H: Principal components
@@ -1874,16 +1926,20 @@ Q: What do the eigenvalues in PCA represent? | The variance along each principal
 Q: Which method maps a contingency table's rows and columns? | Correspondence analysis.
 SUM: Multivariate analysis finds structure.
 SUM: PCA reduces dimension by variance.
+EV: established | The proportion of variance explained by each principal component is its eigenvalue divided by the sum of the eigenvalues.
 SRC: Jolliffe IT, Principal Component Analysis (2nd edn, Springer 2002) | secondary | 2002 | https://link.springer.com/
 SRC: Johnson RA, Wichern DW, Applied Multivariate Statistical Analysis (6th edn, Pearson 2007) | secondary | 2007 | https://www.pearson.com/
-NUM1#maths-u13-50-q1@1: Eigenvalues are 3, 1.5, 0.5. What percentage of variance does PC1 explain? | 60 | 0 | % | 3/5 = 60%.
+NUM1#maths-u13-50-q1@1: Eigenvalues are 3, 1.5, 0.5. What percentage of variance does PC1 explain? | 60 | 0 | % | The total is 3 + 1.5 + 0.5 = 5, so PC1 explains 3/5 = 60%.
 M1#maths-u13-50-q2@1: In PCA, why are the components chosen to be orthogonal? | So each captures new, uncorrelated variation | To make them equal | Because data are always orthogonal | So they're easier to name | They aren't | Orthogonal components avoid double-counting variance.
 M2#maths-u13-50-q3@2: Which technique places cities on a map from a table of travel times alone? | Multidimensional scaling | Logistic regression | ANOVA | Kaplan–Meier | Lasso | MDS finds coordinates whose distances reproduce the given dissimilarities.
+NUM3@1: Eigenvalues are 3.1, 1.2, 0.9, 0.5 and 0.3. How many principal components are needed to explain at least 90% of the variance? | 4 | 0 | components | The total is 6.0; cumulative shares are 51.7%, 71.7%, 86.7% and 95%, so four components are needed.
+SA3@1: Height (cm), weight (kg) and income (£) are measured for 500 people. Explain why PCA should use the correlation matrix here, and how to interpret the loadings of PC1. | The variables are in different units with very different variances: income in pounds would dominate PCA on the covariance matrix simply because its numbers are large. Using the correlation matrix standardises each variable to variance 1, so components reflect shared patterns rather than units. PC1's loadings are the weights of each standardised variable: large loadings of the same sign on height and weight would make PC1 a "body size" index, and a small income loading would show income contributes little to it. | Notes the different units and variances ; Says income would dominate ; Says the correlation matrix standardises ; Defines loadings as weights ; Interprets a plausible PC1
 
 ## Factor Analysis
 S: Factor analysis explains correlations among many observed variables by a few unobserved (latent) factors, such as general intelligence or anxiety. It's central to psychology and social science measurement.
 O: Interpret factor loadings, communalities and uniquenesses
 O: Distinguish factor analysis from PCA, and exploratory from confirmatory analysis
+LV: Year 3 · Application
 T: Factor model | x = Λf + ε: observed variables are loadings times latent factors plus unique errors
 T: Communality | The share of a variable's variance explained by the common factors; uniqueness is the rest
 H: The model
@@ -1908,16 +1964,20 @@ Q: What is the communality of a variable with loading 0.6 on one factor? | 0.36.
 Q: What does factor rotation change? | The loadings' pattern, for interpretability, not the model's fit.
 SUM: Factor analysis explains correlations with latent factors.
 SUM: It underpins questionnaire measurement.
+EV: established | In a one-factor model the correlation between two standardised variables equals the product of their loadings.
 SRC: Spearman C, "General intelligence," objectively determined and measured, American Journal of Psychology 15(2), 201 | primary | 1904 | https://doi.org/10.2307/1412107
 SRC: Fabrigar LR, Wegener DT, Exploratory Factor Analysis (Oxford University Press 2012) | secondary | 2012 | https://global.oup.com/
 NUM1#maths-u13-51-q1@1: A standardised variable has loadings 0.6 and 0.3 on two uncorrelated factors. Find its uniqueness. | 0.55 | 0.001 |  | Communality = 0.36 + 0.09 = 0.45, so uniqueness = 0.55.
 M1#maths-u13-51-q2@1: What is the main difference between factor analysis and PCA? | Factor analysis models shared variance through latent factors; PCA summarises total variance | PCA uses latent factors; factor analysis summarises variance | They give identical loadings after rotation | Factor analysis has no loadings | PCA needs rotation | FA posits underlying causes; PCA is a data reduction.
 M2#maths-u13-51-q3@2: A researcher specifies in advance which items load on which factors and tests the fit. What is this? | Confirmatory factor analysis | Exploratory factor analysis | Cluster analysis | PCA | Discriminant analysis | Confirmatory factor analysis tests a structure specified in advance, unlike exploratory analysis.
+NUM3@1: In a one-factor model, two items have correlation 0.42 and item A has loading 0.7. Find item B's loading. | 0.6 | 0.001 |  | The implied correlation is the product of loadings: 0.7 × b = 0.42, so b = 0.6 (communality 0.36).
+SA3@2: A psychologist is developing a 20-item anxiety questionnaire. Explain how exploratory and confirmatory factor analysis would each be used, and why PCA is not the same thing. | EFA on a first sample explores how many latent factors explain the items' correlations (using scree plots or parallel analysis), with rotation to aid interpretation, and identifies weak or cross-loading items to drop. CFA on a new sample tests the structure found, specifying which items load on which factors, and assesses fit. PCA only summarises the total variance of the items; factor analysis models the shared variance as caused by latent factors, separating it from each item's unique variance. | Describes EFA's exploratory role ; Mentions choosing the number of factors or rotation ; Describes CFA testing a pre-specified structure on new data ; Distinguishes total versus shared variance ; Mentions uniqueness or latent causes
 
 ## Discriminant Analysis
 S: Discriminant analysis classifies observations into known groups using their measurements, and finds the combinations of variables that best separate the groups. Fisher introduced it in 1936 with his famous iris data.
 O: Describe linear and quadratic discriminant analysis
 O: Find a classification boundary in a simple case
+LV: Year 3 · Application
 T: Linear discriminant analysis (LDA) | Classification assuming normal classes with a common covariance matrix, giving linear boundaries
 T: Quadratic discriminant analysis (QDA) | Allows each class its own covariance matrix, giving curved boundaries
 H: How it works
@@ -1942,16 +2002,20 @@ Q: What shape are LDA's decision boundaries? | Linear (straight lines or planes)
 Q: How many discriminant directions are there for 4 classes (with enough variables)? | 3.
 SUM: Discriminant analysis classifies into known groups.
 SUM: Assumptions set the boundary shape.
+EV: established | With normal classes sharing a covariance matrix, the Bayes classification boundary is linear and shifts with the prior class probabilities.
 SRC: Fisher RA, The use of multiple measurements in taxonomic problems, Annals of Eugenics 7(2), 179 | primary | 1936 | https://doi.org/10.1111/j.1469-1809.1936.tb02137.x
 SRC: Hastie T, Tibshirani R, Friedman J, The Elements of Statistical Learning (2nd edn, Springer 2009) | secondary | 2009 | https://hastie.su.domains/ElemStatLearn/
 NUM1#maths-u13-52-q1@1: Two equally likely normal classes with the same variance have means 4 and 10. Where is the LDA boundary? | 7 | 0 |  | With equal priors and variances, the boundary is the midpoint (4 + 10)/2.
 M1#maths-u13-52-q2@1: What does QDA allow that LDA doesn't? | Different covariance matrices for each class | More than two classes | Non-normal data | More than two predictor variables | Categorical predictors in place of continuous ones | Separate covariances make the boundaries quadratic.
 M2#maths-u13-52-q3@2: How should a discriminant classifier's error rate be estimated? | By cross-validation or a separate test set | On the training data used to fit the boundary | By the number of variables | It can't be estimated | From the priors alone | Training error is optimistic; held-out data give an honest estimate.
+NUM3@2: Two classes have means 10 and 16 with common σ = 2, and priors 0.2 and 0.8 respectively. Find the LDA boundary, to 2 decimal places. | 12.08 | 0.01 |  | x = 13 + σ^{2} ln(0.2/0.8)/(16 − 10) = 13 + 4 × (−1.386)/6 ≈ 12.08: the boundary moves towards the mean of the rarer class, 10.
+SA3@2: Compare linear discriminant analysis with logistic regression for classifying patients, and explain why the error rate on the training data is misleading. | LDA models each class's predictors as normal with a shared covariance and uses Bayes' theorem; when that holds it is efficient, and it gives discriminant directions for visualisation. Logistic regression models the class probability directly with fewer assumptions about the predictors, so it is more robust when they are non-normal or categorical. Both give linear boundaries. Training error is optimistic because the boundary was fitted to those same cases, including their noise; estimate the error by cross-validation or a test set. | Describes LDA's normal, shared-covariance assumption ; Notes LDA's efficiency when assumptions hold ; Says logistic regression needs fewer assumptions ; Explains training error is optimistic ; Recommends cross-validation or a test set
 
 ## Cluster Analysis
 S: Cluster analysis groups observations so that those in a cluster are more similar to each other than to those in other clusters, without any known labels. It's used for market segmentation, gene expression patterns, image segmentation and more.
 O: Carry out steps of the k-means algorithm
 O: Compare k-means, hierarchical clustering and density-based methods
+LV: Year 2 · Application
 T: k-means | Partitioning data into k clusters to minimise the within-cluster sum of squared distances to cluster centres
 T: Dendrogram | A tree diagram showing how hierarchical clustering merges observations
 H: k-means
@@ -1977,16 +2041,20 @@ Q: What does k-means minimise? | The total within-cluster sum of squared distanc
 Q: Which method can find non-spherical clusters and flag noise? | DBSCAN.
 SUM: Clustering finds groups without labels.
 SUM: Results depend on method, scale and k.
+EV: established | k-means converges to a local minimum of within-cluster sum of squares and always returns k clusters, whether or not real groups exist.
 SRC: Kaufman L, Rousseeuw PJ, Finding Groups in Data: An Introduction to Cluster Analysis (Wiley 1990) | secondary | 1990 | https://www.wiley.com/
 SRC: James G, Witten D, Hastie T, Tibshirani R, An Introduction to Statistical Learning (2nd edn, Springer 2021) | secondary | 2021 | https://www.statlearning.com/
 NUM1#maths-u13-53-q1@1: A cluster contains points 2, 4 and 9. What is its k-means centre? | 5 | 0 |  | The centre is the mean: (2 + 4 + 9)/3 = 5.
 M1#maths-u13-53-q2@1: Why run k-means from several random starts? | It can converge to different local minima | It always gives the same result | To increase k | To standardise the data | To remove outliers | The algorithm only guarantees a local optimum.
 M3#maths-u13-53-q3@2: Data are uniformly scattered with no real groups, and k-means is run with k = 3. What happens? | It still returns three clusters | It returns an error | It finds one cluster | It finds no clusters | It finds the true groups | Clustering algorithms always partition; checking stability and validity is up to you.
+NUM2@1: Points 0, 1, 5, 6, 7 are clustered by k-means with starting centres 0 and 1. After one assignment step, what is the new second centre? | 4.75 | 0.001 |  | 0 goes to the first centre; 1, 5, 6 and 7 are nearer 1, so the second centre becomes (1 + 5 + 6 + 7)/4 = 4.75.
+SA2@2: Customer data form two crescent-shaped groups plus scattered noise. Explain why k-means would do poorly and which method would suit the data better. | k-means assigns each point to the nearest centre, so it finds compact, roughly spherical clusters of similar size; it would cut the crescents with a straight boundary and force every noise point into a cluster. DBSCAN groups points in dense regions connected to each other, so it follows arbitrary shapes like crescents and labels sparse points as noise. Hierarchical clustering with single linkage can also follow chains. Standardise first and check the clusters' stability. | Explains k-means favours spherical clusters ; Notes noise points are forced into clusters ; Recommends DBSCAN or a density method ; Explains how density methods follow shapes ; Mentions standardising or stability checks
 
 ## Frequentist Statistics
 S: Frequentist statistics defines probability as long-run frequency and judges methods by how they perform over repeated samples: how often intervals cover the truth, how often tests err. It's the basis of most published science and regulatory decisions.
 O: Explain the frequentist interpretation of probability and inference
 O: Describe the strengths and limitations of frequentist methods
+LV: Year 1 · Application
 T: Frequentist probability | The limit of the relative frequency of an event in infinitely many repetitions
 T: Coverage | The proportion of repeated-sample intervals that contain the true parameter
 H: Principles
@@ -2011,16 +2079,20 @@ Q: In frequentist statistics, is a parameter random? | No: it's fixed but unknow
 Q: What does 95% coverage mean? | 95% of intervals from repeated samples contain the true value.
 SUM: Frequentism judges methods by long-run performance.
 SUM: It underpins regulatory science.
+EV: contested | Whether frequentist or Bayesian inference should be preferred is a long-running debate; in practice both are widely used.
 SRC: Neyman J, Outline of a theory of statistical estimation based on the classical theory of probability, Philosophical Transactions of the Royal Society A 236, 333 | primary | 1937 | https://doi.org/10.1098/rsta.1937.0005
 SRC: Efron B, Hastie T, Computer Age Statistical Inference (Cambridge University Press 2016) | secondary | 2016 | https://hastie.su.domains/CASI/
-NUM1#maths-u13-54-q1@1: How many of 200 independent 95% confidence intervals are expected to miss the true value? | 10 | 0 |  | 5% of 200 = 10.
+NUM1#maths-u13-54-q1@1: How many of 200 independent 95% confidence intervals are expected to miss the true value? | 10 | 0 |  | Each interval misses with probability 0.05, so 0.05 × 200 = 10 are expected to miss.
 M1#maths-u13-54-q2@1: How does a frequentist interpret "probability"? | As a long-run relative frequency | As a degree of personal belief | As a logical certainty | As a betting quote only | As a fixed constant | Frequentist probability describes repeated experiments.
 M2#maths-u13-54-q3@2: Why do regulators often favour frequentist designs for drug trials? | They give pre-specified, controllable error rates | They need no data | They always show benefit | They're cheaper | Bayesian methods are banned in regulatory submissions | Fixed α and power make decisions auditable before results are seen.
+NUM3@2: Ten independent 90% confidence intervals are computed. Find the probability that all ten contain their true values, to 3 decimal places. | 0.349 | 0.001 |  | Each covers with probability 0.9, so all ten do with probability 0.9^{10} ≈ 0.349.
+SA3@2: A trial estimates a drug's effect. Explain how a frequentist would express uncertainty about it, how a Bayesian would, and one advantage of each. | A frequentist treats the effect as fixed and gives a 95% confidence interval: a method that covers the true effect in 95% of repeated trials, with a p-value for no effect. A Bayesian treats the effect as uncertain, combines a prior with the data and gives a posterior distribution and credible interval, such as "a 95% probability the effect lies in this range", and P(effect > 0). The frequentist approach needs no prior and controls error rates, which regulators value; the Bayesian gives direct probability statements and can use prior evidence. | Describes a confidence interval correctly ; Describes the posterior or credible interval ; Notes the Bayesian gives direct probability statements ; Gives a frequentist advantage such as error control or no prior ; Gives a Bayesian advantage
 
 ## Bayesian Statistics
 S: Bayesian statistics treats unknown quantities as having probability distributions that express uncertainty. It combines prior knowledge with data through Bayes' theorem, giving direct probability statements about parameters and hypotheses.
 O: Explain the Bayesian approach and its main tools
 O: Use a Bayes factor to compare two hypotheses
+LV: Year 2 · Application
 T: Posterior distribution | The distribution of a parameter after seeing the data: posterior ∝ likelihood × prior
 T: Bayes factor | The ratio of the probabilities of the data under two hypotheses; it converts prior odds to posterior odds
 H: The approach
@@ -2046,16 +2118,20 @@ Q: How do posterior odds relate to prior odds? | Posterior odds = Bayes factor �
 Q: Can a Bayes factor provide evidence for a null hypothesis? | Yes.
 SUM: Bayesian statistics updates beliefs with data.
 SUM: It gives direct probability statements.
+EV: established | By Bayes' theorem, posterior odds equal the Bayes factor multiplied by the prior odds.
 SRC: Gelman A, Carlin JB, Stern HS, Dunson DB, Vehtari A, Rubin DB, Bayesian Data Analysis (3rd edn, CRC Press 2013) | secondary | 2013 | https://sites.stat.columbia.edu/gelman/book/
 SRC: Kass RE, Raftery AE, Bayes factors, Journal of the American Statistical Association 90(430), 773 | primary | 1995 | https://doi.org/10.1080/01621459.1995.10476572
 NUM1#maths-u13-55-q1@1: Prior odds are 1:4 for H₁ and the Bayes factor in favour of H₁ is 20. Find the posterior odds for H₁. | 5 | 0 |  | Posterior odds = 20 × 1/4 = 5 (5 to 1).
 M1#maths-u13-55-q2@1: What does a Bayesian 95% credible interval mean? | Given the model and data, the parameter lies in it with probability 0.95 | 95% of repeated intervals cover the parameter | The p-value is 0.05 | The prior is 95% certain | The data are 95% accurate | Bayesian intervals are direct probability statements about the parameter.
 M2#maths-u13-55-q3@2: What is the main criticism of Bayesian methods? | Results can depend on the choice of prior | They can't handle data | They never give intervals | They're always identical to frequentist results | They can't compare hypotheses | Priors bring judgement in, so sensitivity analysis is important.
+NUM3@2: A hypothesis has prior probability 0.2, and the data give a Bayes factor of 6 in its favour. Find its posterior probability. | 0.6 | 0.001 |  | Prior odds 0.2/0.8 = 0.25; posterior odds = 6 × 0.25 = 1.5; probability = 1.5/2.5 = 0.6.
+SA3@1,2: Compare what a p-value and a Bayes factor tell you, and explain why a Bayes factor can support the null hypothesis. | A p-value is P(data at least this extreme ∣ H₀): it measures surprise under H₀ alone and says nothing about H₁, so a large p only means "no evidence against H₀". A Bayes factor is P(data ∣ H₁)/P(data ∣ H₀): it compares how well each hypothesis predicted the data, so values below 1 favour H₀ (for example 1/10 is strong support for H₀). Combined with prior odds, it gives posterior odds, a direct statement about the hypotheses. Its value depends on how H₁ is specified (its prior). | Defines the p-value under H₀ ; Notes a p-value can't support H₀ ; Defines the Bayes factor as a ratio of likelihoods ; Explains values below 1 favour H₀ ; Mentions prior odds or dependence on H₁'s prior
 
 ## Bayesian Inference
 S: Bayesian inference is the practical process of fitting a Bayesian model: choosing a likelihood and prior, computing the posterior, summarising it and checking the model. Conjugate cases show clearly how prior and data combine.
 O: Update a normal prior with normal data
 O: Summarise a posterior and check a model with posterior predictive checks
+LV: Year 2 · Application
 T: Precision | 1/variance; in normal updating, precisions add
 T: Posterior predictive check | Comparing observed data with data simulated from the fitted model
 H: Normal–normal updating
@@ -2081,16 +2157,20 @@ Q: What happens to the prior's influence as n grows? | It shrinks: the data domi
 Q: What does a posterior predictive check compare? | Observed data with data simulated from the fitted model.
 SUM: Bayesian inference fits, summarises and checks.
 SUM: Conjugate updates show the mechanics.
+EV: established | With a normal prior and normal data of known variance, the posterior is normal, its precision is the sum of the precisions and its mean is their weighted average.
 SRC: Gelman A, Carlin JB, Stern HS, Dunson DB, Vehtari A, Rubin DB, Bayesian Data Analysis (3rd edn, CRC Press 2013) | secondary | 2013 | https://sites.stat.columbia.edu/gelman/book/
 SRC: McElreath R, Statistical Rethinking (2nd edn, CRC Press 2020) | secondary | 2020 | https://xcelab.net/rm/
 NUM1#maths-u13-56-q1@1: Prior precision is 0.02 and data precision is 0.08. Find the posterior variance. | 10 | 0 |  | Posterior precision 0.10, so variance 1/0.1 = 10.
 M1#maths-u13-56-q2@1: In normal–normal updating, which has more influence on the posterior mean? | Whichever of prior and data has the higher precision | Always the prior | Neither: they always count equally | Always the data, whatever the prior | Whichever of prior and data has the larger mean | The posterior mean weights each source by its precision.
 M3#maths-u13-56-q3@2: Doubling the number of observations in a normal model does what to the data's precision? | Doubles it | Halves it | Leaves it unchanged | Squares it | Quadruples it | Data precision is n/σ^{2}, proportional to n.
+NUM2@1: Prior μ ~ N(50, 4^{2}); 9 observations with σ = 6 have mean 56. Find the posterior mean. | 54.8 | 0.01 |  | Precisions: prior 1/16 = 0.0625, data 9/36 = 0.25. Mean = (0.0625 × 50 + 0.25 × 56)/0.3125 = 17.125/0.3125 = 54.8.
+SA2@2: Explain how a posterior predictive check works and what it can reveal about a model. | Draw parameter values from the posterior, simulate a replicated data set from the model for each, and compute a feature of interest (such as the maximum, the number of zeros or the spread) for each replicate. Compare the distribution of the feature with its value in the real data. If the real value is extreme compared with the replicates, the model fails to capture that aspect of the data (for example overdispersion or outliers), suggesting a revision. | Draws from the posterior ; Simulates replicated data ; Compares a chosen feature ; Interprets an extreme real value as misfit ; Gives an example of what it detects
 
 ## Prior and Posterior Distributions
 S: The prior expresses what is believed about a parameter before the data; the posterior expresses what is believed after. Choosing priors thoughtfully, and showing how much they matter, is central to honest Bayesian analysis.
 O: Describe types of prior and when to use them
 O: Show how prior strength affects the posterior
+LV: Year 3 · Application
 T: Informative prior | A prior that carries substantial information, such as from earlier studies
 T: Weakly informative prior | A prior that rules out absurd values while letting the data dominate
 H: Kinds of prior
@@ -2116,16 +2196,20 @@ Q: How many observations is a Beta(10, 30) prior roughly worth? | 40.
 Q: What is a weakly informative prior for? | Ruling out absurd values while letting the data dominate.
 SUM: Priors encode existing knowledge.
 SUM: Their influence should be shown, not hidden.
+EV: established | With a Beta(α, β) prior and binomial data, the posterior is Beta(α + successes, β + failures), and the prior acts like α + β earlier observations.
 SRC: Gelman A, Carlin JB, Stern HS, Dunson DB, Vehtari A, Rubin DB, Bayesian Data Analysis (3rd edn, CRC Press 2013) | secondary | 2013 | https://sites.stat.columbia.edu/gelman/book/
 SRC: O'Hagan A et al, Uncertain Judgements: Eliciting Experts' Probabilities (Wiley 2006) | secondary | 2006 | https://www.wiley.com/
 NUM1#maths-u13-57-q1@1: A Beta(4, 6) prior is updated with 6 successes in 10 trials. Find the posterior mean. | 0.5 | 0.001 |  | Posterior Beta(10, 10), mean 10/20 = 0.5.
 M1#maths-u13-57-q2@1: Which prior lets the data dominate while excluding absurd values? | A weakly informative prior | A strongly informative prior | A point-mass prior | No prior at all | An improper posterior | Weakly informative priors regularise gently without imposing strong beliefs.
 M2#maths-u13-57-q3@2: Why might a flat prior on a probability p not be "uninformative" about the odds p/(1 − p)? | A flat distribution on one scale isn't flat after transformation | Flat priors are invalid for any probability | It's always uninformative | Odds don't exist | Odds are always 1 | Non-linear transformations reshape a uniform distribution.
+NUM3@2: A Beta(3, 7) prior is updated with s successes in 40 trials, giving a posterior mean of 0.5. Find s. | 22 | 0 |  | The posterior is Beta(3 + s, 7 + 40 − s), with mean (3 + s)/50 = 0.5, so s = 22.
+SA3@1,2: In the worked example, a Beta(20, 80) prior and a Beta(1, 1) prior give posterior means of 0.33 and 0.60 from the same data. Explain why, and what an honest report should include. | Beta(20, 80) has mean 0.2 and acts like 100 earlier observations, outweighing the 50 new ones, so the posterior stays near the prior; Beta(1, 1) is flat and worth only 2 observations, so the data (30/50 = 0.6) dominate. With modest data, the prior matters. An honest report justifies the prior (for example from earlier studies), shows results under other reasonable priors (sensitivity analysis), and notes that more data would bring the posteriors together. | Identifies the prior's mean and effective sample size ; Explains why the data dominate the flat prior ; States prior choice matters with modest data ; Recommends justifying the prior ; Recommends a sensitivity analysis
 
 ## Bootstrap Methods
 S: The bootstrap estimates the uncertainty of almost any statistic by resampling the data with replacement many times and recalculating the statistic. It replaces difficult formulas with computing power and works for medians, ratios, correlations and model outputs.
 O: Carry out a bootstrap to estimate a standard error and percentile interval
 O: Recognise when the basic bootstrap fails
+LV: Year 2 · Application
 T: Bootstrap replicate | The statistic recomputed on one resample of size n drawn with replacement
 T: Percentile interval | The interval between the 2.5th and 97.5th percentiles of the bootstrap replicates
 H: Procedure
@@ -2152,16 +2236,20 @@ Q: Are bootstrap samples drawn with or without replacement? | With replacement.
 Q: What variant of the bootstrap suits time series? | The block bootstrap.
 SUM: The bootstrap estimates uncertainty by resampling.
 SUM: It has known failure cases.
+EV: established | The bootstrap estimates the sampling distribution of a statistic by resampling the observed data with replacement.
 SRC: Efron B, Bootstrap methods: another look at the jackknife, Annals of Statistics 7(1), 1 | primary | 1979 | https://doi.org/10.1214/aos/1176344552
 SRC: Efron B, Tibshirani RJ, An Introduction to the Bootstrap (Chapman & Hall 1993) | secondary | 1993 | https://www.routledge.com/
 NUM1#maths-u13-58-q1@1: For n = 10, find the probability that a particular observation is absent from a bootstrap resample, to 4 decimal places. | 0.3487 | 0.0005 |  | (1 − 1/10)^{10} = 0.9^{10} ≈ 0.3487.
 M1#maths-u13-58-q2@1: What does the standard deviation of bootstrap replicates estimate? | The standard error of the statistic | The population mean | The sample size | The p-value | The mean of the population being sampled | Replicates mimic repeated sampling, so their spread estimates the sampling SD.
 M3#maths-u13-58-q3@2: Why does the basic bootstrap work poorly for the sample maximum? | Resamples can never exceed the observed maximum, so they understate the uncertainty | It needs normally distributed data | Bootstraps only work for means | The maximum has no sampling distribution at all | Maxima can't be resampled | The replicates pile up at the observed maximum, missing the chance that the true maximum is higher.
+NUM2@1: With B = 2,000 sorted bootstrap replicates, which sorted position gives the lower limit of a 95% percentile interval? | 50 | 0 |  | 2.5% of 2,000 is 50, so the interval runs from the 50th to the 1,950th sorted value.
+SA2@1: Describe how to use the bootstrap to estimate the standard error of the correlation coefficient from 30 pairs of measurements. | Resample the 30 (x, y) pairs with replacement, keeping each pair together so the relationship is preserved, to make a new data set of 30 pairs. Compute r for it. Repeat B times (say 2,000). The standard deviation of the 2,000 values of r estimates its standard error, and the 2.5th and 97.5th percentiles give a percentile interval (or use BCa, since r's distribution is skewed). | Resamples pairs with replacement ; Keeps pairs together ; Recomputes r for each resample ; Uses the SD of replicates as the SE ; Mentions a percentile or BCa interval
 
 ## Permutation Tests
 S: A permutation test finds a p-value by shuffling group labels many times and seeing how often the shuffled data look as extreme as the real data. It needs only that labels are exchangeable under the null hypothesis, so it's exact and assumption-light.
 O: Carry out a permutation test for a difference between groups
 O: State the exchangeability assumption
+LV: Year 2 · Application
 T: Permutation distribution | The distribution of a test statistic over all (or many random) relabellings of the data
 T: Exchangeability | Under H₀, any assignment of labels to the observed values is equally likely
 H: Method
@@ -2186,16 +2274,20 @@ Q: What assumption does a permutation test need? | Exchangeability of labels und
 Q: How many ways can 6 observations be split into two groups of 3? | 20.
 SUM: Permutation tests shuffle labels.
 SUM: They give exact p-values under exchangeability.
+EV: established | Under exchangeability of the labels, the permutation distribution is the exact null distribution of any test statistic.
 SRC: Good PI, Permutation, Parametric, and Bootstrap Tests of Hypotheses (3rd edn, Springer 2005) | secondary | 2005 | https://link.springer.com/
 SRC: Fisher RA, The Design of Experiments (Oliver and Boyd 1935) | secondary | 1935 | https://archive.org/
-NUM1#maths-u13-59-q1@1: Of 2,000 random shuffles, 37 give a statistic at least as extreme as observed. Estimate the p-value, to 4 decimal places. | 0.0185 | 0.0001 |  | 37/2000 = 0.0185.
+NUM1#maths-u13-59-q1@1: Of 2,000 random shuffles, 37 give a statistic at least as extreme as observed. Estimate the p-value, to 4 decimal places. | 0.0185 | 0.0001 |  | The Monte Carlo p-value is the proportion of shuffles as extreme: 37/2000 = 0.0185.
 M1#maths-u13-59-q2@1: Why are permutation tests natural for randomised experiments? | Randomisation makes every label assignment equally likely under H₀ | They need normal data | They're always more powerful | They're faster to compute than t-tests on any data | They always reject | The random assignment itself generates the null distribution.
 M2#maths-u13-59-q3@2: What is the smallest possible exact two-sided p-value with groups of 2 and 2? | 1/3 | 1/6 | 1/24 | 0.05 | 1/12 | With 6 arrangements, the two most extreme (one in each direction) give 2/6 = 1/3.
+NUM3@1: Two groups of 3 have all six values distinct. What is the smallest possible exact one-sided permutation p-value? | 0.05 | 0.0001 |  | There are C(6, 3) = 20 ways to assign the labels, and the observed arrangement can be at most the single most extreme, so p ≥ 1/20 = 0.05.
+SA3@2: Explain the exchangeability assumption behind a permutation test, and give a situation in which it fails. | Under H₀, the labels must be exchangeable: every rearrangement of the group labels must be equally likely to produce the observed data. In a randomised experiment with no treatment effect this holds, because the outcomes would be the same whichever units were assigned. It fails if the groups differ in spread under H₀ (a test of means with very unequal variances), or if observations are dependent, such as repeated measurements on the same people or time series, where shuffling breaks the structure. | States the labels must be exchangeable under H₀ ; Links it to randomisation ; Gives unequal variances as a failure ; Gives dependence as a failure ; Explains why shuffling is then invalid
 
 ## Monte Carlo Methods
 S: Monte Carlo methods use random simulation to compute quantities that are hard to find exactly: probabilities, integrals, the behaviour of complex systems. Their error shrinks like 1/√N whatever the dimension, which makes them indispensable for high-dimensional problems.
 O: Estimate probabilities and integrals by simulation
 O: Calculate the Monte Carlo standard error and describe variance reduction
+LV: Year 2 · Application
 T: Monte Carlo estimate | The average of a function over random draws, estimating its expectation
 T: Monte Carlo standard error | σ/√N for an average of N independent simulations
 H: The basic idea
@@ -2221,11 +2313,14 @@ Q: By what factor must N grow to halve the Monte Carlo error? | 4.
 Q: Name one variance reduction technique. | Antithetic variables, control variates, importance sampling or stratification.
 SUM: Simulation estimates what algebra can't.
 SUM: Error falls as 1/√N.
+EV: established | The Monte Carlo standard error decreases in proportion to 1/√N, independently of the dimension of the problem.
 SRC: Robert CP, Casella G, Monte Carlo Statistical Methods (2nd edn, Springer 2004) | secondary | 2004 | https://link.springer.com/
 SRC: Metropolis N, Ulam S, The Monte Carlo method, Journal of the American Statistical Association 44(247), 335 | primary | 1949 | https://doi.org/10.1080/01621459.1949.10483310
 NUM1#maths-u13-60-q1@1: A simulation's single-run SD is 5. What is the Monte Carlo standard error of the average of 10,000 runs? | 0.05 | 0.0001 |  | 5/√10000 = 5/100 = 0.05.
 M1#maths-u13-60-q2@1: Why is Monte Carlo integration attractive in high dimensions? | Its error rate doesn't depend on the dimension | It's exact, with no random error at all | It needs no random numbers | Grids are always better | It has zero variance | Grid methods need exponentially many points as dimension grows; Monte Carlo doesn't.
 M2#maths-u13-60-q3@2: What does importance sampling do? | Samples more from the regions that matter most, then reweights | Removes randomness | Doubles the sample | Ignores rare events | Removes the randomness from the simulation | Concentrating draws where the integrand is large, then correcting with weights, reduces variance.
+NUM3@2: A simulation's single-run standard deviation is 5. How many runs are needed for a Monte Carlo standard error of 0.01? | 250000 | 0 | runs | SE = 5/√N = 0.01 needs √N = 500, so N = 250,000.
+SA3@1: Describe how to estimate P(the total of two fair dice is at least 10) by simulation with N = 1,000 runs, and how accurate the estimate would be. | Simulate two dice by drawing two independent integers from 1 to 6, add them and record whether the total is at least 10; repeat 1,000 times and report the proportion. The exact value is 6/36 = 1/6 ≈ 0.167. The Monte Carlo standard error is √(p(1 − p)/N) ≈ √(0.167 × 0.833/1000) ≈ 0.012, so most estimates fall within about ±0.024. Set and record the random seed so the result can be reproduced. | Describes simulating and counting ; Gives the exact value 1/6 ; Computes the SE ≈ 0.012 ; Interprets the accuracy ; Mentions recording the seed
 
 ## Markov Chain Monte Carlo (MCMC)
 S: Markov chain Monte Carlo draws samples from complicated distributions, especially Bayesian posteriors, by running a random walk designed to spend time in each region in proportion to its probability. It made realistic Bayesian models practical.

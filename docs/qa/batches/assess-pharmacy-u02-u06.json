@@ -1,0 +1,122 @@
+{
+ "task": "assess-pharmacy-u02-u06",
+ "on": "2026-11-20",
+ "files": [
+  "kit/courses/pharmacy/notes/u02.js",
+  "kit/courses/pharmacy/notes/u06.js"
+ ],
+ "lessons": [
+  {
+   "course": "pharmacy",
+   "lesson": "u02-01",
+   "action": "enhanced",
+   "changes": [
+    "Added LV and EV; linked new questions to objectives; added an SA extended answer with model answer and marking points",
+    "Added content: P (The two halves interact. A usual dose of a drug cleared by the kidn...)",
+    "Added content: X (Reasoning from mechanism: why can ibuprofen cause stomach ulcers?...)",
+    "New questions: M3, SA2"
+   ],
+   "findings": []
+  },
+  {
+   "course": "pharmacy",
+   "lesson": "u02-02",
+   "action": "enhanced",
+   "changes": [
+    "Added LV and EV; linked new questions to objectives; added an SA extended answer with model answer and marking points",
+    "Added content: P (Not every target is a human protein. Penicillins inhibit bacterial...)",
+    "Added content: X (Classifying drugs by target....)",
+    "Added second source: Alexander SPH and others, The Concise Guide to Pharmacology 2023/24, British Journal ...",
+    "New questions: M3, SA2"
+   ],
+   "findings": []
+  },
+  {
+   "course": "pharmacy",
+   "lesson": "u02-03",
+   "action": "enhanced",
+   "changes": [
+    "Added LV and EV; linked new questions to objectives; added an SA extended answer with model answer and marking points",
+    "Added content: P, X (The family also helps explain duration. A GPCR effect ends soon aft...)",
+    "New questions: M1, SA2"
+   ],
+   "findings": []
+  },
+  {
+   "course": "pharmacy",
+   "lesson": "u02-04",
+   "action": "enhanced",
+   "changes": [
+    "Added LV and EV; linked new questions to objectives; added an SA extended answer with model answer and marking points",
+    "Added content: P (A partial agonist can act as an antagonist when a full agonist is p...)",
+    "Added content: X (Competitive antagonism in practice....)",
+    "New questions: M1, SA3"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "Aspirin is listed under irreversible 'antagonists' although it is an irreversible enzyme inhibitor; the line already says '(an enzyme)'. Left as is."
+    }
+   ]
+  },
+  {
+   "course": "pharmacy",
+   "lesson": "u02-05",
+   "action": "enhanced",
+   "changes": [
+    "Added LV and EV; linked new questions to objectives; added an SA extended answer with model answer and marking points",
+    "Added content: E, X (Therapeutic index = TD50 ÷ ED50 :: the median toxic dose divided by...)",
+    "Added second source: Neubig RR and others, International Union of Pharmacology Committee on Receptor Nomen...",
+    "New questions: M3, SA2"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "New worked example uses an illustrative hyperbolic curve (effect = dose / (dose + EC50)) with round numbers; recomputed: 40/50 = 0.8, 90/100 = 0.9."
+    }
+   ]
+  },
+  {
+   "course": "pharmacy",
+   "lesson": "u02-06",
+   "action": "enhanced",
+   "changes": [
+    "Added LV and EV; linked new questions to objectives; added an SA extended answer with model answer and marking points",
+    "Added content: P (On a log concentration-response graph, a more potent drug's curve l...)",
+    "Added content: X (Comparing three drugs on one graph....)",
+    "Added second source: Neubig RR and others, International Union of Pharmacology Committee on Receptor Nomen...",
+    "New questions: M1, SA2"
+   ],
+   "findings": []
+  },
+  {
+   "course": "pharmacy",
+   "lesson": "u02-07",
+   "action": "enhanced",
+   "changes": [
+    "Added LV and EV; linked new questions to objectives; added an SA extended answer with model answer and marking points",
+    "Added content: P (Tolerance doesn't develop equally to every effect. With opioids, to...)",
+    "Added content: X (Building in a nitrate-free period....)",
+    "New questions: M1, SA3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "pharmacy",
+   "lesson": "u02-08",
+   "action": "enhanced",
+   "changes": [
+    "Added LV and EV; linked new questions to objectives; added an SA extended answer with model answer and marking points",
+    "Added content: P (The same second messenger can have different effects in different t...)",
+    "Added content: X (Tracing a signal: salbutamol....)",
+    "New questions: M1, SA2"
+   ],
+   "findings": []
+  }
+ ],
+ "notes": [
+  "Level vocabulary: the brief suggested 'MPharm Year 1'-'MPharm Year 4', but every existing pharmacy LV line (u04, u05: 43 lines) uses 'Intermediate · <difficulty>'. As instructed, I followed the course's existing convention and used 'Intermediate' for all 44 lessons. If the coordinator moves the course to MPharm years, my judgement is: u02 lessons 01-19 MPharm Year 1-2, u02 20-24 MPharm Year 2-3; u06 01-11 MPharm Year 1, u06 12-19 MPharm Year 2-3, u06-20 Foundation training.",
+  "LV lines are placed after the O: lines (as ASSESS.md says); u04/u05 put them after the ## title. The parser accepts either.",
+  "New sources added only where a lesson had one: The Concise Guide to Pharmacology 2023/24 (already cited in u02-03), Neubig et al. 2003 Pharmacological Reviews 55:597-606 (IUPHAR terms in quantitative pharmacology), the BNF, Rang and Dale 10th edition, the NPSA 2007 oral syringe alert, the Medusa Injectable Medicines Guide and the British Pharmacopoeia, all already cited elsewhere in the course except Neubig 2003."
+ ]
+}

@@ -186,6 +186,108 @@
     "added M3, M2 and SA3"
    ],
    "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-17",
+   "action": "enhanced",
+   "changes": [
+    "LV, EV",
+    "worked example (Atlas v Kafco)",
+    "added M3 (PIA v Times Travel), M2 (Barton v Armstrong) and SA3"
+   ],
+   "findings": [
+    {
+     "class": "error-fixed",
+     "note": "SRC named the case as 'Times Travel (UK) Ltd v Pakistan International Airline Corp' (the Court of Appeal title); the Supreme Court decision [2021] UKSC 40 is Pakistan International Airline Corp v Times Travel (UK) Ltd. Corrected."
+    },
+    {
+     "class": "error-fixed",
+     "note": "Question u03-17-q2 (The Atlantic Baron) said the buyer 'paid under protest', contradicting its own explanation and the facts: the buyers paid the increase without protest. Stem corrected to 'paid the extra without protest'."
+    }
+   ]
+  },
+  {
+   "course": "law",
+   "lesson": "u03-18",
+   "action": "enhanced",
+   "changes": [
+    "LV, EV",
+    "common mistake: spouses are not an irrebuttable category",
+    "added M3 (Etridge steps), M2 and SA3"
+   ],
+   "findings": [
+    {
+     "class": "error-fixed",
+     "note": "Question u03-18-q2 described a change to a will in the solicitor's favour and said the court should presume undue influence. The equitable presumption does not apply to wills (probate requires proof of actual coercion). Stem changed to a lifetime gift of savings, where the presumption does arise; explanation rewritten."
+    }
+   ]
+  },
+  {
+   "course": "law",
+   "lesson": "u03-19",
+   "action": "enhanced",
+   "changes": [
+    "LV, EV",
+    "common mistake: mistake as to quality (Bell v Lever Bros)",
+    "added M2 and SA3 on mistaken identity"
+   ],
+   "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-20",
+   "action": "enhanced",
+   "changes": [
+    "LV (Year 2), EV",
+    "worked example on restraint of trade and severance (Tillman); common mistake on the limits of Patel",
+    "added M3, M2 and SA3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-21",
+   "action": "enhanced",
+   "changes": [
+    "LV, EV",
+    "worked example on the 1999 Act; common mistake: benefits, not burdens",
+    "added M3 (Shanklin Pier), M2 and SA3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-22",
+   "action": "enhanced",
+   "changes": [
+    "LV, EV",
+    "worked example of the three steps; common mistake on Canada Steamship",
+    "added M3 (Photo Production), M2 and SA3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-23",
+   "action": "enhanced",
+   "changes": [
+    "LV (SQE1), EV",
+    "worked example on s 3 and s 11; common mistake on Schedule 2",
+    "added M3 (Watford v Sanderson), M2 and SA3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-24",
+   "action": "enhanced",
+   "changes": [
+    "LV (SQE1), EV",
+    "common mistake: CRA versus UCTA",
+    "added M2 (s 19 presumption) and SA3"
+   ],
+   "findings": []
   }
  ],
  "notes": [

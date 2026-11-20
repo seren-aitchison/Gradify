@@ -5,6 +5,8 @@ export default `
 S: A vector has both size and direction: a displacement, velocity or force. Written as a list of components, vectors let geometry be done with arithmetic, and they're the basic objects of linear algebra.
 O: Represent vectors in components and calculate magnitudes and unit vectors
 O: Add vectors and multiply them by scalars, geometrically and algebraically
+LV: GCSE and A level · Fluency
+EV: established | Vectors add componentwise and scale by multiplying every component, and the magnitude in components follows from Pythagoras' theorem.
 T: Magnitude | The length of a vector: |v| = √(v₁^{2} + v₂^{2} + v₃^{2})
 T: Unit vector | A vector of length 1, found as v/|v|
 H: Representing vectors
@@ -32,14 +34,18 @@ SUM: Vectors combine size and direction.
 SUM: Components make geometry algebraic.
 SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | secondary | 2023 | https://math.mit.edu/~gs/linearalgebra/
 SRC: Department for Education, Mathematics AS and A level subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-NUM1#maths-u11-01-q1@1: Find the magnitude of (2, −1, 2). | 3 | 0 |  | √(4 + 1 + 4) = 3.
+NUM1#maths-u11-01-q1@1: Find the magnitude of (2, −1, 2). | 3 | 0 |  | The magnitude is the square root of the sum of the squared components: √(4 + 1 + 4) = √9 = 3.
 M1#maths-u11-01-q2@1: What is the midpoint of A(2, 6) and B(8, 0)? | (5, 3) | (6, −6) | (10, 6) | (3, 5) | (4, 3) | Average the coordinates: ((2 + 8)/2, (6 + 0)/2).
 M2#maths-u11-01-q3@2: What is −2(1, −3)? | (−2, 6) | (2, −6) | (−2, −6) | (−1, 3) | (−3, 1) | Scalar multiplication scales every component: −2 × 1 = −2 and −2 × (−3) = 6.
+NUM3@1,2: A is (1, 2, 4) and B is (4, 5, 10). P lies on AB with AP:PB = 1:2. Find the distance of P from the origin. | 7 | 0 |  | AB = b − a = (3, 3, 6), so p = a + ⅓(3, 3, 6) = (2, 3, 6); its magnitude is √(4 + 9 + 36) = √49 = 7.
+SA2@1,2: Explain why the vector from A to B is b − a, and use it to show that the midpoint of AB has position vector (a + b)/2. | To go from A to B you can travel A to O and then O to B: back along a, then along b, so AB = −a + b = b − a. The midpoint M is halfway along AB, so m = a + ½(b − a) = ½a + ½b = (a + b)/2. Check: A(2, 6) and B(8, 0) give AB = (6, −6) and midpoint (5, 3). | Writes AB as AO + OB, giving b − a ; Uses m = a + ½AB ; Simplifies to (a + b)/2 ; Checks with a numerical example
 
 ## Vector Algebra
 S: Vector algebra multiplies vectors in two useful ways. The dot product gives angles and projections; the cross product gives perpendicular vectors and areas. Together they solve problems in geometry, physics and graphics.
 O: Calculate dot and cross products and use them to find angles, areas and volumes
 O: Find the projection of one vector onto another
+LV: A level · Application
+EV: established | The dot product equals the product of the lengths times cos θ, and the cross product of two 3D vectors is perpendicular to both, with length equal to the area of their parallelogram.
 T: Dot product | a · b = Σ a_{i}b_{i} = |a||b| cos θ, a scalar
 T: Cross product | a × b, a vector perpendicular to a and b with length |a||b| sin θ (in 3D)
 H: Dot product
@@ -72,11 +78,16 @@ SRC: Department for Education, AS and A level further mathematics subject conten
 NUM1#maths-u11-02-q1@1: Find the area of the parallelogram spanned by (1, 2, 0) and (3, 1, 0). | 5 | 0 |  | The cross product is (0, 0, 1 − 6) = (0, 0, −5), with length 5.
 M1#maths-u11-02-q2@1: Are (2, −1, 3) and (1, 5, 1) perpendicular? | Yes: their dot product is 0 | No: their dot product is 6 | Yes: their cross product is 0 | No: they have different lengths | It can't be decided | The dot product is 2 − 5 + 3 = 0, and a zero dot product means perpendicular.
 M2#maths-u11-02-q3@2: What does a · (b × c) = 0 tell you? | a, b and c lie in one plane | a, b and c are all perpendicular | a is a unit vector | b and c are parallel only | The vectors have equal length | Zero volume means the parallelepiped is flat: the vectors are coplanar.
+NUM2@2: Find the component of b = (4, −2, 3) in the direction of a = (2, 1, 2), that is, the scalar projection a · b divided by the length of a. | 4 | 0 |  | a · b = 8 − 2 + 6 = 12 and the length of a is √(4 + 1 + 4) = 3, so the component is 12/3 = 4.
+NUM3@1: Find the volume of the parallelepiped with edges a = (1, 0, 2), b = (0, 3, 1) and c = (2, 1, 0). | 13 | 0 |  | b × c = (3 × 0 − 1 × 1, 1 × 2 − 0 × 0, 0 × 1 − 3 × 2), which is (−1, 2, −6). Then a · (b × c) = −1 + 0 − 12 = −13, and the volume is its size, 13.
+SA2@1: Explain how the dot product gives the angle between two vectors and why a zero dot product means they are perpendicular. Illustrate with a = (1, 2, 2) and b = (2, −1, 2). | The dot product satisfies a · b = (length of a)(length of b) cos θ, so cos θ is a · b divided by the product of the lengths. For non-zero vectors, a · b = 0 forces cos θ = 0, so θ = 90°. Here a · b = 2 − 2 + 4 = 4 and both lengths are 3, so cos θ = 4/9 and θ ≈ 63.6°. | States a · b = product of lengths × cos θ ; Rearranges for cos θ ; Explains that a zero dot product gives 90° for non-zero vectors ; Computes cos θ = 4/9 and θ ≈ 63.6°
 
 ## Vector Spaces
 S: A vector space is any collection of objects that can be added and scaled following the familiar rules. Arrows, lists of numbers, polynomials, matrices and functions are all vector spaces, so one theory covers them all.
 O: Check whether a set with operations is a vector space
 O: Recognise standard examples of vector spaces
+LV: Year 1 · Fluency
+EV: established | Any set with an addition and a scalar multiplication satisfying the vector space axioms obeys every theorem of linear algebra, whatever its elements are.
 T: Vector space | A set V with addition and scalar multiplication over a field, satisfying the eight axioms (associativity, commutativity, zero, negatives, distributivity, …)
 T: Field of scalars | The numbers you can multiply by: usually ℝ or ℂ
 H: Examples
@@ -107,11 +118,15 @@ SRC: Halmos PR, Finite-Dimensional Vector Spaces (Springer 1974) | secondary | 1
 NUM1#maths-u11-03-q1@1: What is the dimension of P₃, the polynomials of degree at most 3? | 4 | 0 |  | A basis is 1, x, x^{2}, x^{3}: four elements.
 M1#maths-u11-03-q2@1: Which set is a vector space under the usual operations? | All polynomials of degree at most 4 | Polynomials of degree exactly 4 | Positive real numbers | Integer pairs over ℝ | Vectors of length 1 | Degree at most 4 is closed under addition and scaling and contains 0.
 M2#maths-u11-03-q3@2: Why aren't polynomials of degree exactly 3 a vector space? | x^{3} + (−x^{3}) = 0 isn't of degree 3, so the set isn't closed | They have too many terms | They can't be scaled | Their degree is odd | They are a vector space | Sums can drop in degree, and the zero polynomial is missing.
+M3@1: Which set is a vector space under the usual addition and scalar multiplication over ℝ? | The functions f on [0, 1] with f(0) = 0 | The functions f on [0, 1] with f(0) = 1 | The polynomials with integer coefficients | The vectors (x, y) with x ≥ 0 | The functions f with f(x) ≥ 0 for every x | If f(0) = 0 and g(0) = 0, then (f + g)(0) = 0 and (kf)(0) = 0, and the zero function is included. f(0) = 1 fails closure, integer coefficients fail under scaling by ½, and the last two fail under scaling by −1.
+SA2@1,2: Decide whether the set of 2 × 2 matrices with trace 0 is a vector space, and find its dimension. | Yes. The zero matrix has trace 0. The trace is linear, tr(A + B) = tr A + tr B and tr(kA) = k tr A, so sums and multiples of trace-zero matrices have trace zero. The set is closed under both operations inside M₂ₓ₂, so it is a vector space. A general element is [[a, b], [c, −a]] with three free entries, so a basis is [[1, 0], [0, −1]], [[0, 1], [0, 0]] and [[0, 0], [1, 0]], and the dimension is 3. | Checks that the zero matrix is in the set ; Uses linearity of the trace for closure under addition ; Shows closure under scalar multiplication ; Writes the general form and gives dimension 3
 
 ## Subspaces
 S: A subspace is a vector space sitting inside a larger one: a line or plane through the origin, or the solutions of a homogeneous linear system. Subspaces are where solutions, ranges and eigenvectors live.
 O: Test whether a subset is a subspace
 O: Describe subspaces of ℝ^{2} and ℝ^{3}
+LV: Year 1 · Application
+EV: established | A subset of a vector space is a subspace exactly when it contains the zero vector and is closed under addition and scalar multiplication.
 T: Subspace | A subset containing 0 and closed under addition and scalar multiplication
 T: Trivial subspaces | {0} and the whole space
 H: The test
@@ -142,11 +157,15 @@ SRC: Axler S, Linear Algebra Done Right (4th edn, Springer 2024) | secondary | 2
 NUM1#maths-u11-04-q1@1: What is the dimension of the plane x + 2y − z = 0 in ℝ^{3}? | 2 | 0 |  | One linear condition on three variables leaves two free parameters.
 M1#maths-u11-04-q2@1: Which subset of ℝ^{2} is a subspace? | The line y = 3x | The line y = 3x + 1 | The circle x^{2} + y^{2} = 1 | The first quadrant | The set {(1, 1)} | Only y = 3x passes through the origin and is closed under both operations.
 M3#maths-u11-04-q3@2: Why is the set of solutions of Ax = b (with b ≠ 0) never a subspace? | A·0 = 0 ≠ b, so the zero vector isn't a solution | It has too many solutions | A must be square | It's always empty | It is a subspace | Every subspace contains 0, which fails Ax = b when b ≠ 0.
+M2@1: Which subset of ℝ^{3} is a subspace? | {(x, y, z) : x = 2y and z = 0} | {(x, y, z) : x = 2y + 1} | {(x, y, z) : xyz = 0} | {(x, y, z) : x ≥ 0} | {(x, y, z) : x^{2} = y^{2}} | Two homogeneous linear conditions give a line through the origin, closed under addition and scaling. The others miss 0, fail closure under addition (xyz = 0, x^{2} = y^{2}) or fail under negative scaling.
+SA2@1,2: Show that the union of two different lines through the origin in ℝ^{2} is not a subspace, but their intersection is. | Let the lines be spanned by non-zero u and v, which aren't parallel. Both u and v lie in the union, but u + v lies on neither line: if u + v = tu, then v = (t − 1)u would lie on the first line, and similarly for the second. So the union isn't closed under addition. Two different lines through 0 meet only at 0, and {0} contains 0 and is closed under both operations, so the intersection is the trivial subspace. In general any intersection of subspaces is a subspace. | Takes u and v from the two lines ; Shows u + v is on neither line ; Concludes the union fails closure under addition ; Identifies the intersection as {0}, a subspace
 
 ## Linear Combinations
 S: A linear combination adds scalar multiples of vectors: c₁v₁ + c₂v₂ + … + c_{k}v_{k}. Asking which vectors can be built this way, and with which coefficients, is the central question behind linear systems, span and bases.
 O: Form and recognise linear combinations
 O: Find coefficients by solving a linear system
+LV: Year 1 · Fluency
+EV: established | A vector is a linear combination of given vectors exactly when the linear system with those vectors as columns is consistent.
 T: Linear combination | c₁v₁ + … + c_{k}v_{k} for scalars c_{i}
 T: Coefficient | The scalar c_{i} multiplying each vector
 H: Building vectors
@@ -176,11 +195,15 @@ SRC: Lay DC, Lay SR, McDonald JJ, Linear Algebra and Its Applications (6th edn, 
 NUM1#maths-u11-05-q1@1: Write (4, 7) = a(1, 1) + b(1, 2). Find b. | 3 | 0 |  | a + b = 4 and a + 2b = 7, so b = 3 (and a = 1).
 M1#maths-u11-05-q2@1: Which vector is a linear combination of (1, 0, 0) and (0, 1, 0)? | (3, −2, 0) | (0, 0, 1) | (1, 1, 1) | (2, 0, 5) | (0, 3, 4) | Combinations of these have third component 0.
 M2#maths-u11-05-q3@2: When does [v₁ v₂ v₃]c = b have a solution? | When b lies in the span of v₁, v₂ and v₃ | Always | Only when b = 0 | Only when the v_{i} are unit vectors | Never | Solvability means b is some combination of the columns.
+NUM3@2: Write (4, 6, 8) = a(1, 0, 1) + b(0, 1, 1) + c(1, 1, 0). Find b. | 5 | 0 |  | The components give a + c = 4, b + c = 6 and a + b = 8. Adding all three, 2(a + b + c) = 18, so a + b + c = 9; then b = 9 − 4 = 5 (and a = 3, c = 1).
+SA2@1,2: Show that (1, 2) can be written as a combination of (1, 1), (1, −1) and (2, 0) in more than one way, and explain why the coefficients are not unique. | Write a(1, 1) + b(1, −1) + c(2, 0) = (1, 2): the components give a + b + 2c = 1 and a − b = 2. With c = 0, a = 1.5 and b = −0.5. With c = 1, a + b = −1 and a − b = 2, so a = 0.5 and b = −1.5. The coefficients aren't unique because the three vectors are dependent: (2, 0) = (1, 1) + (1, −1), so two equations in three unknowns leave a free variable. | Sets up the two component equations ; Finds one solution, such as 1.5, −0.5, 0 ; Finds a second solution, such as 0.5, −1.5, 1 ; Explains non-uniqueness by the dependence or the free variable
 
 ## Span
 S: The span of a set of vectors is everything you can build from them by linear combinations. It's always a subspace: a line, a plane or more, and spanning sets describe subspaces economically.
 O: Describe the span of a set of vectors geometrically and algebraically
 O: Test whether a vector lies in a span
+LV: Year 1 · Application
+EV: established | The span of a set of vectors is the smallest subspace containing them, and b lies in it exactly when the corresponding linear system is consistent.
 T: Span | span{v₁, …, v_{k}}, the set of all linear combinations of the v_{i}
 T: Spanning set | A set whose span is the whole space (or a given subspace)
 H: Geometry
@@ -211,11 +234,15 @@ SRC: Axler S, Linear Algebra Done Right (4th edn, Springer 2024) | secondary | 2
 NUM1#maths-u11-06-q1@1: What is the dimension of span{(1, 2), (2, 4)}? | 1 | 0 |  | (2, 4) = 2(1, 2), so the span is a single line.
 M1#maths-u11-06-q2@1: What is span{(1, 0, 0), (0, 1, 0)} in ℝ^{3}? | The xy-plane | All of ℝ^{3} | The x-axis | A line through (1, 1, 0) | The z-axis | Combinations (a, b, 0) fill the plane z = 0.
 M2#maths-u11-06-q3@2: Adding a vector w to a set S doesn't change span(S). What does that tell you? | w is already a linear combination of the vectors in S | w is the zero vector only | S spans the whole space | w is perpendicular to S | Nothing | A new vector enlarges the span only if it's outside it.
+NUM3@2: For which value of k is (1, k, 5) in span{(1, 0, 1), (0, 1, 2)}? | 2 | 0 |  | a(1, 0, 1) + b(0, 1, 2) = (a, b, a + 2b). Matching gives a = 1 and b = k, and the third component needs 1 + 2k = 5, so k = 2.
+SA2@1,2: Describe span{(1, 1, 0), (0, 1, 1)} geometrically, give a single equation for it, and decide whether (2, 3, 1) lies in it. | The vectors aren't parallel, so they span a plane through the origin. A general combination is a(1, 1, 0) + b(0, 1, 1) = (a, a + b, b): the middle component is the sum of the other two, so the plane is x − y + z = 0 (its normal is the cross product (1, −1, 1)). For (2, 3, 1), 2 − 3 + 1 = 0, so it lies in the span, with a = 2 and b = 1. | Says two non-parallel vectors span a plane through the origin ; Writes the general combination (a, a + b, b) ; Gives the equation x − y + z = 0 ; Shows (2, 3, 1) is in the span with a = 2 and b = 1
 
 ## Linear Independence
 S: Vectors are linearly independent when none of them can be built from the others. Independence means no redundancy, and it's exactly what makes coordinates unique and bases efficient.
 O: Test sets of vectors for linear independence
 O: Find a dependence relation when vectors are dependent
+LV: Year 1 · Application
+EV: established | Vectors are linearly independent exactly when the only combination equal to zero is the trivial one; for n vectors in ℝⁿ this is equivalent to a non-zero determinant.
 T: Linearly independent | c₁v₁ + … + c_{k}v_{k} = 0 only when every c_{i} = 0
 T: Dependence relation | A non-trivial combination equal to 0, showing one vector depends on others
 H: Tests
@@ -246,11 +273,15 @@ SRC: Lay DC, Lay SR, McDonald JJ, Linear Algebra and Its Applications (6th edn, 
 NUM1#maths-u11-07-q1@1: Find det [[1, 3], [2, 4]], and so decide whether (1, 2) and (3, 4) are independent. | -2 | 0 |  | 1 × 4 − 3 × 2 = −2 ≠ 0, so they're independent.
 M1#maths-u11-07-q2@1: Which set is linearly dependent? | {(1, 2), (2, 4)} | {(1, 0), (0, 1)} | {(1, 1), (1, −1)} | {(2, 3), (3, 2)} | {(1, 2), (0, 5)} | (2, 4) = 2(1, 2), so one vector is a multiple of the other and the set is dependent.
 M2#maths-u11-07-q3@2: Why is any set containing the zero vector dependent? | 1 × 0 = 0 is a non-trivial combination giving 0 | The zero vector has no direction | Zero can't be scaled | It isn't dependent | Zero is always a multiple of every vector only in ℝ^{2} | A coefficient of 1 on the zero vector, 0 elsewhere, gives a non-trivial relation.
+NUM3@1,2: For which value of k are (1, 2, 1), (2, 1, 0) and (0, 3, k) linearly dependent? | 2 | 0 |  | With these as columns, expanding along the first row gives det = 1(k − 0) − 2(2k − 3) + 0, which is 6 − 3k, and it is zero when k = 2. Then (0, 3, 2) = 2(1, 2, 1) − (2, 1, 0).
+SA2@1,2: Decide whether the polynomials 1 + x, 1 − x and 1 + x^{2} are linearly independent in P₂, justifying your answer. | Suppose a(1 + x) + b(1 − x) + c(1 + x^{2}) = 0 for all x. Comparing coefficients: x^{2} gives c = 0, x gives a − b = 0, and the constant term gives a + b + c = 0. So a = b and 2a = 0, giving a = b = c = 0. Only the trivial combination is zero, so they are independent; since P₂ has dimension 3, they also form a basis. | Sets a general combination equal to the zero polynomial ; Compares the coefficients of 1, x and x^{2} ; Solves to show a = b = c = 0 ; States independence (and that they form a basis of P₂)
 
 ## Basis and Dimension
 S: A basis is an independent set that spans the space: the smallest complete set of building blocks. Every basis of a space has the same number of vectors, its dimension, which measures how many independent directions the space has.
 O: Find bases for subspaces and state their dimensions
 O: Use coordinates relative to a basis
+LV: Year 1 · Application
+EV: established | Every basis of a finite-dimensional vector space has the same number of vectors, and every vector has unique coordinates with respect to a basis.
 T: Basis | A linearly independent spanning set
 T: Dimension | The number of vectors in any basis of the space
 H: Key facts
@@ -280,11 +311,15 @@ SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Pres
 NUM1#maths-u11-08-q1@1: What is the dimension of the space of 3 × 3 matrices? | 9 | 0 |  | Nine independent entries, one basis matrix for each.
 M1#maths-u11-08-q2@1: Which set is a basis for ℝ^{2}? | {(1, 1), (1, −1)} | {(1, 2), (2, 4)} | {(1, 0)} | {(0, 0), (1, 1)} | {(1, 0), (0, 1), (1, 1)} | Two independent vectors in ℝ^{2} span it; the others are dependent or too few.
 M3#maths-u11-08-q3@2: What are the coordinates of (5, 1) relative to the basis {(1, 1), (1, −1)}? | (3, 2) | (5, 1) | (2, 3) | (6, 4) | (1, 5) | Solve a(1, 1) + b(1, −1) = (5, 1): a + b = 5 and a − b = 1 give a = 3, b = 2.
+M2@1: Which set is a basis for the plane x − y + 2z = 0 in ℝ^{3}? | {(1, 1, 0), (−2, 0, 1)} | {(1, 1, 0), (2, 2, 0)} | {(1, −1, 2)} | {(1, 1, 0), (−2, 0, 1), (0, 2, 1)} | {(1, 0, 0), (0, 1, 0)} | Both (1, 1, 0) and (−2, 0, 1) satisfy the equation and aren't parallel, and the plane has dimension 2. The other sets are dependent, too small, too large, or leave the plane.
+SA2@1,2: Find a basis for the subspace of P₂ of polynomials p with p(1) = 0, and state its dimension. | Write p = a + bx + cx^{2}. The condition p(1) = 0 gives a + b + c = 0, so a = −b − c and p = b(x − 1) + c(x^{2} − 1). So x − 1 and x^{2} − 1 span the subspace, and they are independent because they have different degrees. They form a basis, and the dimension is 2: one condition on the 3-dimensional P₂. For example, 2x^{2} − 3x + 1 = −3(x − 1) + 2(x^{2} − 1), with coordinates (−3, 2). | Uses p(1) = 0 to get a + b + c = 0 ; Eliminates one coefficient ; Gives the basis {x − 1, x^{2} − 1} or an equivalent ; Justifies independence and states dimension 2
 
 ## Matrices
 S: A matrix is a rectangular array of numbers. Matrices store data, represent systems of linear equations and describe linear transformations, so they're the main computational tool of linear algebra.
 O: Describe matrices by size and entries, and recognise special types
 O: Use matrices to represent systems and data
+LV: A level · Fluency
+EV: established | An m × n matrix can encode a system of m linear equations in n unknowns, or a linear map whose columns are the images of the basis vectors.
 T: m × n matrix | A matrix with m rows and n columns; a_{ij} is the entry in row i, column j
 T: Identity matrix | I, square with 1s on the diagonal and 0s elsewhere; AI = IA = A
 H: Special matrices
@@ -314,15 +349,19 @@ SUM: Matrices organise numbers in rows and columns.
 SUM: They represent systems, maps and data.
 SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | secondary | 2023 | https://math.mit.edu/~gs/linearalgebra/
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
-NUM1#maths-u11-09-q1@1: How many entries does a 4 × 5 matrix have? | 20 | 0 |  | 4 rows × 5 columns = 20.
+NUM1#maths-u11-09-q1@1: How many entries does a 4 × 5 matrix have? | 20 | 0 |  | A matrix has one entry for each row–column pair: 4 rows × 5 columns = 20 entries.
 M1#maths-u11-09-q2@1: Which matrix is upper triangular? | [[1, 2], [0, 3]] | [[1, 0], [2, 3]] | [[0, 1], [1, 0]] | [[1, 2], [3, 4]] | [[0, 0], [1, 0]] | Upper triangular means every entry below the main diagonal is zero, as in [[1, 2], [0, 3]].
 M2#maths-u11-09-q3@2: In [[5, 2, 7], [1, 9, 4]], what is a₂₃? | 4 | 7 | 9 | 2 | 1 | a₂₃ is the entry in row 2, column 3, which is 4.
 M2#maths-u11-09-q4@2: For the matrix [[2, 1], [0, 3]], where does the unit vector j = (0, 1) go? | To (1, 3), the second column | To (2, 0), the first column | To (0, 1), unchanged | To (3, 1) | To (2, 3) | A matrix sends each basis vector to the corresponding column.
+NUM3@2: A linear map sends i = (1, 0) to (2, 1) and j = (0, 1) to (−1, 3). Find the second component of the image of (4, 2). | 10 | 0 |  | The matrix has columns (2, 1) and (−1, 3), so (4, 2) goes to 4(2, 1) + 2(−1, 3) = (8 − 2, 4 + 6), which is (6, 10); the second component is 10.
+SA2@1,2: Explain what the size of a coefficient matrix and the entry a_{ij} tell you about a linear system, using x + 2y − z = 3, 4y + z = 1 as an example. | Rows correspond to equations and columns to unknowns, so an m × n coefficient matrix describes m equations in n unknowns, and a_{ij} is the coefficient of the j-th unknown in the i-th equation. Here A = [[1, 2, −1], [0, 4, 1]] is 2 × 3: two equations in x, y and z. a₂₁ = 0 because x doesn't appear in the second equation, and a₁₃ = −1 is the coefficient of z in the first. The system is Ax = b with b = (3, 1). | Links rows to equations and columns to unknowns ; Writes A = [[1, 2, −1], [0, 4, 1]] ; States the size 2 × 3 ; Interprets an entry such as a₂₁ = 0 and writes b = (3, 1)
 
 ## Matrix Algebra
 S: Matrix algebra has its own rules. Addition behaves like ordinary addition, but multiplication isn't commutative, products can be zero without either factor being zero, and cancellation can fail.
 O: Apply the rules of matrix algebra correctly
 O: Recognise where matrix algebra differs from number algebra
+LV: A level · Application
+EV: established | Matrix addition is commutative and multiplication is associative and distributive, but multiplication is not commutative and non-zero matrices can multiply to zero.
 T: Non-commutativity | In general AB ≠ BA
 T: Zero divisor | Non-zero matrices A and B with AB = 0
 H: Rules that hold
@@ -353,11 +392,16 @@ SRC: Horn RA, Johnson CR, Matrix Analysis (2nd edn, Cambridge University Press 2
 NUM1#maths-u11-10-q1@1: For AB = [[2, 1], [1, 1]] above, find its trace. | 3 | 0 |  | 2 + 1 = 3 (and BA has the same trace, as always).
 M1#maths-u11-10-q2@1: Which pair of non-zero matrices has product zero? | [[1, 0], [0, 0]] and [[0, 0], [0, 1]] | [[1, 0], [0, 1]] and [[1, 0], [0, 1]] | [[1, 1], [1, 1]] and [[1, 0], [0, 1]] | [[2, 0], [0, 2]] and [[1, 1], [0, 1]] | None exist | The first kills the second coordinate, the second kills the first.
 M2#maths-u11-10-q3@2: Which property holds for all compatible matrices? | A(BC) = (AB)C | AB = BA | AB = 0 implies A = 0 | AB = AC implies B = C | (AB)^{2} = A^{2}B^{2} | Associativity holds; the others fail in general.
+NUM2@1: For A = [[1, 2], [3, 4]], find the (1, 2) entry of A^{2}. | 10 | 0 |  | Row 1 of A dotted with column 2 of A gives 1 × 2 + 2 × 4 = 2 + 8 = 10; in full, A^{2} = [[7, 10], [15, 22]].
+M3@2: A and B are square matrices of the same size with AB = BA. Which identity then holds? | (A + B)(A − B) = A^{2} − B^{2} | (A + B)^{2} = A^{2} + B^{2} | AB = 0 | A = B | (AB)^{2} = AB | Expanding gives A^{2} − AB + BA − B^{2}, and the middle terms cancel exactly when AB = BA. Without commuting factors even the difference of two squares fails.
+SA2@2: Give an example showing that AB = AC does not imply B = C, and explain when cancellation is allowed. | Take A = [[1, 0], [0, 0]], B = I and C = [[1, 0], [0, 5]]. Then AB = AC = [[1, 0], [0, 0]], but B ≠ C: A wipes out the second row, so the difference between B and C is lost. Equivalently A(B − C) = 0 with B − C ≠ 0, so A is a zero divisor. Cancellation is valid when A is invertible: multiplying on the left by A^{−1} gives B = C. | Gives a valid example with AB = AC and B ≠ C ; Rewrites it as A(B − C) = 0 ; Identifies that A is singular ; States that cancellation holds when A is invertible, using A^{−1}
 
 ## Matrix Operations
 S: The basic matrix operations are addition, scalar multiplication, the trace and elementary row operations. Row operations are the engine of Gaussian elimination, used to solve systems and find inverses and ranks.
 O: Carry out addition, scalar multiplication and the trace
 O: Perform elementary row operations and understand their effects
+LV: Year 1 · Fluency
+EV: established | Elementary row operations are reversible, so they never change the solution set of a linear system, and they change a determinant in predictable ways.
 T: Trace | tr A, the sum of the diagonal entries of a square matrix
 T: Elementary row operations | Swapping two rows, multiplying a row by a non-zero scalar, adding a multiple of one row to another
 H: Entrywise operations
@@ -387,11 +431,16 @@ SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Pres
 NUM1#maths-u11-11-q1@1: Find tr(2A − B) for A = [[1, 0], [0, 3]] and B = [[2, 5], [1, 1]]. | 5 | 0 |  | 2A − B has diagonal 0 and 5, so the trace is 5.
 M1#maths-u11-11-q2@1: Which is an elementary row operation? | Adding 3 times row 1 to row 2 | Multiplying row 2 by 0 | Squaring every entry of row 1 | Swapping two columns | Adding 1 to every entry | Adding a multiple of one row to another is allowed and keeps solutions.
 M2#maths-u11-11-q3@2: Adding a multiple of one row to another changes the determinant how? | It doesn't change it | It doubles it | It changes its sign | It makes it zero | It multiplies it by the multiple | That operation's elementary matrix has determinant 1.
+NUM2@2: A 3 × 3 matrix has determinant 6. Rows 1 and 2 are swapped, row 3 is multiplied by 4, and then 2 times row 1 is added to row 2. What is the new determinant? | -24 | 0 |  | The swap changes the sign, giving −6; scaling a row by 4 multiplies by 4, giving −24; adding a multiple of one row to another leaves it at −24.
+M3@1: Which statement about traces holds for all n × n matrices A and B? | tr(AB) = tr(BA) | tr(AB) = tr A × tr B | tr(A + B) = tr A × tr B | tr(kA) = kⁿ tr A | tr(Aᵀ) = −tr A | Both tr(AB) and tr(BA) equal the double sum of a_{ij}b_{ji}. For A = B = I₂, tr(AB) = 2 but tr A × tr B = 4, and the trace scales by k, not kⁿ.
+SA2@2: Explain why elementary row operations don't change the solution set of a linear system, and use them to solve x + 2y = 4, 3x + 5y = 7. | Each new equation is a combination of the old ones, so any solution of the old system still satisfies the new one. Each operation is also reversible (swap back, scale by 1/k, subtract the multiple you added), so the converse holds and the solution set is unchanged. For the system, R₂ → R₂ − 3R₁ turns 3x + 5y = 7 into −y = −5, so y = 5, and then x = 4 − 2 × 5 = −6. | Notes that new equations are combinations of the old ones ; Explains that each operation is reversible ; Performs R₂ → R₂ − 3R₁ correctly ; Finds x = −6 and y = 5
 
 ## Matrix Multiplication
 S: Matrix multiplication combines rows of the first matrix with columns of the second. It represents composing linear maps, chaining transformations and applying systems to data, and its cost dominates scientific computing.
 O: Multiply matrices and check compatibility of sizes
 O: Interpret matrix products as composition of linear maps
+LV: A level · Fluency
+EV: established | Matrix multiplication combines rows of the first factor with columns of the second and represents composition of linear maps, so it is associative but not commutative.
 T: Matrix product | (AB)_{ij} = Σ_{k} a_{ik}b_{kj}, the dot product of row i of A with column j of B
 T: Compatibility | AB is defined when A is m × n and B is n × p; the result is m × p
 H: Computing
@@ -418,14 +467,18 @@ SUM: Multiply rows by columns.
 SUM: Products compose linear maps.
 SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | secondary | 2023 | https://math.mit.edu/~gs/linearalgebra/
 SRC: Strassen V, Gaussian elimination is not optimal, Numerische Mathematik 13, 354 | primary | 1969 | https://doi.org/10.1007/BF02165411
-NUM1#maths-u11-12-q1@1: In [[1, 2], [3, 4]][[5, 6], [7, 8]], what is the (2, 2) entry? | 50 | 0 |  | 3 × 6 + 4 × 8 = 18 + 32 = 50.
+NUM1#maths-u11-12-q1@1: In [[1, 2], [3, 4]][[5, 6], [7, 8]], what is the (2, 2) entry? | 50 | 0 |  | The (2, 2) entry is row 2 of the first matrix dotted with column 2 of the second: 3 × 6 + 4 × 8 = 18 + 32 = 50.
 M1#maths-u11-12-q2@1: Which product is defined? | (2 × 3)(3 × 5) | (2 × 3)(2 × 3) | (4 × 1)(4 × 1) | (3 × 2)(3 × 2) | (5 × 2)(3 × 5) | Only (2 × 3)(3 × 5) has matching inner sizes.
 M2#maths-u11-12-q3@2: R rotates by 90° and F reflects in the x-axis. What does the product FR do to a vector? | Rotates it, then reflects it | Reflects it, then rotates it | Only rotates it | Only reflects it | Nothing | In FRv the matrix nearest v acts first, so R rotates and then F reflects.
+NUM3@1: A = [[1, 0, 2], [−1, 3, 1]] and B = [[3, 1], [2, 1], [1, 0]]. Find the trace of AB. | 7 | 0 |  | AB is 2 × 2. Its diagonal entries are 1 × 3 + 0 × 2 + 2 × 1 = 5 and −1 × 1 + 3 × 1 + 1 × 0 = 2, so the trace is 5 + 2 = 7 (the 3 × 3 matrix BA has the same trace).
+SA2@2: Explain why, if matrix A represents a map S and B represents a map T, the product AB means "apply T, then S". Use the rotation R = [[0, −1], [1, 0]] and the reflection F = [[1, 0], [0, −1]] to show that FR ≠ RF. | By associativity (AB)x = A(Bx): B acts on x first and A acts on the result, so AB is T followed by S. Here FR = [[0, −1], [−1, 0]], which reflects in the line y = −x, while RF = [[0, 1], [1, 0]], which reflects in y = x. They differ, so the order of transformations matters. | Uses (AB)x = A(Bx) ; States that B acts first ; Computes FR = [[0, −1], [−1, 0]] ; Computes RF = [[0, 1], [1, 0]] and concludes FR ≠ RF
 
 ## Matrix Transposition
 S: The transpose of a matrix swaps its rows and columns. It turns column vectors into row vectors, defines symmetric matrices, and appears everywhere from dot products to least squares.
 O: Calculate transposes and use the rules for transposes of products
 O: Recognise symmetric and skew-symmetric matrices
+LV: Year 1 · Fluency
+EV: established | Transposition reverses the order of products, (AB)ᵀ = BᵀAᵀ, and AᵀA is symmetric for every matrix A.
 T: Transpose | Aᵀ with (Aᵀ)_{ij} = a_{ji}
 T: Symmetric matrix | A square matrix with Aᵀ = A
 H: Rules
@@ -444,8 +497,8 @@ X: For A = [[1, 2, 3], [4, 5, 6]], find Aᵀ and the size of AᵀA.
 > AᵀA is symmetric, as always
 - Example: x = (1, 2) and y = (3, 4) give xᵀy = 11, a 1 × 1 matrix.
 - Orthogonal matrices satisfy Qᵀ = Q^{−1}.
-- Transposing turns a row of data into a column for matrix calculations.
-- For complex data the conjugate transpose plays the same role in inner products.
+
+
 K: Transpose swaps rows and columns; (AB)ᵀ = BᵀAᵀ; x · y = xᵀy; AᵀA is symmetric; symmetric means Aᵀ = A.
 !: Writing (AB)ᵀ = AᵀBᵀ, which usually isn't even defined.
 Q: What is (ABC)ᵀ? | CᵀBᵀAᵀ.
@@ -454,14 +507,18 @@ SUM: Transposes swap rows and columns.
 SUM: Products transpose in reverse order.
 SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | secondary | 2023 | https://math.mit.edu/~gs/linearalgebra/
 SRC: Horn RA, Johnson CR, Matrix Analysis (2nd edn, Cambridge University Press 2013) | secondary | 2013 | https://www.cambridge.org/
-NUM1#maths-u11-13-q1@1: A is 3 × 5. How many entries does AᵀA have? | 25 | 0 |  | AᵀA is 5 × 5.
+NUM1#maths-u11-13-q1@1: A is 3 × 5. How many entries does AᵀA have? | 25 | 0 |  | Aᵀ is 5 × 3, so AᵀA is the 5 × 5 product of a 5 × 3 and a 3 × 5 matrix, with 25 entries.
 M1#maths-u11-13-q2@1: Which matrix is symmetric? | [[2, 7], [7, 3]] | [[2, 7], [−7, 3]] | [[1, 2], [3, 4]] | [[0, 1], [0, 0]] | [[1, 2, 3]] | A symmetric matrix equals its transpose: the entries above and below the diagonal match.
 M2#maths-u11-13-q3@2: What is the symmetric part of A = [[1, 4], [2, 3]]? | [[1, 3], [3, 3]] | [[1, 4], [4, 3]] | [[0, 1], [−1, 0]] | [[1, 2], [4, 3]] | [[2, 6], [6, 6]] | The symmetric part is (A + Aᵀ)/2 = [[2, 6], [6, 6]]/2 = [[1, 3], [3, 3]].
+M3@1: A is 2 × 3 and B is 3 × 4. Which product equals (AB)ᵀ? | BᵀAᵀ, a 4 × 2 matrix | AᵀBᵀ, a 3 × 3 matrix | BᵀAᵀ, a 2 × 4 matrix | AᵀBᵀ, a 4 × 2 matrix | AB itself, a 2 × 4 matrix | AB is 2 × 4, so (AB)ᵀ is 4 × 2. Bᵀ is 4 × 3 and Aᵀ is 3 × 2, so BᵀAᵀ is defined and 4 × 2, while AᵀBᵀ isn't even defined.
+SA2@1,2: Prove that AᵀA is symmetric for any matrix A, and explain why xᵀAᵀAx is never negative. | Using (XY)ᵀ = YᵀXᵀ and (Aᵀ)ᵀ = A, (AᵀA)ᵀ = Aᵀ(Aᵀ)ᵀ = AᵀA, so AᵀA equals its own transpose. Also xᵀAᵀAx = (Ax)ᵀ(Ax), the dot product of Ax with itself, which is the squared length of Ax and so never negative. So AᵀA is symmetric and positive semi-definite. | Applies (XY)ᵀ = YᵀXᵀ ; Uses (Aᵀ)ᵀ = A to conclude symmetry ; Rewrites xᵀAᵀAx as (Ax)ᵀ(Ax) ; Identifies it as a squared length, so at least 0
 
 ## Matrix Inversion
 S: The inverse of a square matrix undoes it: A^{−1}A = I. Inverses exist exactly when the determinant is non-zero, and they express solutions of linear systems, though in practice systems are solved without forming the inverse.
 O: Find inverses of 2 × 2 matrices and by Gauss–Jordan elimination
 O: Use the rules for inverses and know when inverses exist
+LV: A level · Application
+EV: established | A square matrix has an inverse exactly when its determinant is non-zero, and then (AB)^{−1} = B^{−1}A^{−1}.
 T: Inverse matrix | A^{−1} with AA^{−1} = A^{−1}A = I
 T: Singular matrix | A square matrix with determinant 0, which has no inverse
 H: Finding inverses
@@ -490,15 +547,18 @@ SUM: Inverses undo matrices.
 SUM: They exist only for non-zero determinants.
 SRC: Lay DC, Lay SR, McDonald JJ, Linear Algebra and Its Applications (6th edn, Pearson 2021) | secondary | 2021 | https://www.pearson.com/
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
-NUM1#maths-u11-14-q1@1: A has determinant 4. Find det(A^{−1}). | 0.25 | 0.0001 |  | det(A^{−1}) = 1/det A = ¼.
+NUM1#maths-u11-14-q1@1: A has determinant 4. Find det(A^{−1}). | 0.25 | 0.0001 |  | Since AA^{−1} = I, det A × det(A^{−1}) = 1, so det(A^{−1}) = 1/det A = ¼ = 0.25.
 M1#maths-u11-14-q2@1: Which matrix is singular? | [[2, 4], [1, 2]] | [[1, 2], [3, 4]] | [[1, 0], [0, 1]] | [[0, 1], [1, 0]] | [[3, 1], [1, 3]] | det [[2, 4], [1, 2]] = 2 × 2 − 4 × 1 = 0, so it has no inverse.
 M3#maths-u11-14-q3@2: Why is solving Ax = b by computing A^{−1}b usually avoided numerically? | Elimination is cheaper and less sensitive to rounding | Inverses never exist | It gives the wrong answer exactly | It needs complex numbers | It isn't avoided | Forming A^{−1} costs more and amplifies rounding errors.
 M2#maths-u11-14-q4@2: Why does a matrix with determinant 0 have no inverse? | Different inputs land on the same output, so the map can't be undone | All of its entries must be zero, so there is nothing to invert | Determinants have no bearing on whether a matrix is invertible | Every square matrix has an inverse, including singular ones | Its inverse is the zero matrix, which undoes nothing useful | Area collapses to zero, so the map isn't one-to-one.
+SA2@1,2: Find the inverse of A = [[3, 2], [4, 3]], check it, and use it to solve 3x + 2y = 5, 4x + 3y = 6. | det A = 3 × 3 − 2 × 4 = 1, so the inverse is [[3, −2], [−4, 3]]: swap the diagonal, negate the off-diagonal and divide by 1. Check: A times this matrix is [[9 − 8, −6 + 6], [12 − 12, −8 + 9]], which is I. Then (x, y) = A^{−1}(5, 6) = (15 − 12, −20 + 18), so x = 3 and y = −2. Check in the equations: 9 − 4 = 5 and 12 − 6 = 6. | Computes det A = 1 ; Writes the inverse [[3, −2], [−4, 3]] ; Checks that the product is I ; Solves to get x = 3 and y = −2
 
 ## Determinants
 S: The determinant of a square matrix is a single number that tells you whether the matrix is invertible and how it scales area or volume. It appears in inverses, eigenvalues, changes of variables and Cramer's rule.
 O: Calculate 2 × 2 and 3 × 3 determinants
 O: Use properties of determinants and interpret them geometrically
+LV: A level · Application
+EV: established | The determinant is multiplicative, det(AB) = det A det B, it is non-zero exactly when the matrix is invertible, and its absolute value is the volume scale factor.
 T: Determinant | det A; for 2 × 2, ad − bc; in general a signed sum over permutations, computed by cofactor expansion or elimination
 T: Cofactor expansion | Expanding along a row or column: det A = Σ (−1)^{i+j}a_{ij}M_{ij}, with M_{ij} the minor
 H: Calculating
@@ -529,15 +589,19 @@ SUM: Determinants test invertibility.
 SUM: They measure volume scaling.
 SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | secondary | 2023 | https://math.mit.edu/~gs/linearalgebra/
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
-NUM1#maths-u11-15-q1@1: A is 3 × 3 with det A = 5. Find det(2A). | 40 | 0 |  | det(2A) = 2^{3} × 5 = 40.
+NUM1#maths-u11-15-q1@1: A is 3 × 3 with det A = 5. Find det(2A). | 40 | 0 |  | Doubling A doubles each of its 3 rows, and each row scaling doubles the determinant: det(2A) = 2^{3} × 5 = 40.
 M1#maths-u11-15-q2@1: What is det [[4, 7], [2, 3]]? | −2 | 2 | 26 | −26 | 12 | For a 2 × 2 matrix det = ad − bc = 4 × 3 − 7 × 2 = 12 − 14 = −2.
 M2#maths-u11-15-q3@2: A linear map of the plane has determinant −3. What does it do to areas and orientation? | Triples areas and reverses orientation | Triples areas and keeps orientation | Divides areas by 3 | Leaves areas unchanged | Collapses the plane | |det| = 3 scales area; the negative sign flips orientation.
 NUM1#maths-u11-15-q4@1: What area does [[3, 1], [1, 2]] give the image of the unit square? | 5 | 0 |  | The determinant is 3 × 2 − 1 × 1 = 5, which is the area scale factor.
+NUM3@2: A and B are 3 × 3 with det A = 2 and det B = −3. Find det(2A^{−1}Bᵀ). | -12 | 0 |  | det(2M) = 2^{3} det M for a 3 × 3 matrix, det(A^{−1}) = 1/2 and det Bᵀ = det B = −3, so the determinant is 8 × 0.5 × (−3) = −12.
+SA2@1,2: Find det [[1, 2, 1], [2, 5, 3], [1, 3, 4]] in two ways, by row reduction and by cofactor expansion, and interpret the result. | Row reduction: R₂ → R₂ − 2R₁ gives (0, 1, 1), R₃ → R₃ − R₁ gives (0, 1, 3), and R₃ → R₃ − R₂ gives (0, 0, 2). Adding multiples of rows leaves the determinant unchanged, and the triangular result has determinant 1 × 1 × 2 = 2. Cofactors along row 1: 1(20 − 9) − 2(8 − 3) + 1(6 − 5) = 11 − 10 + 1 = 2. As det ≠ 0 the matrix is invertible, and the map scales volumes by 2 and keeps orientation. | Uses row operations that leave the determinant unchanged ; Multiplies the diagonal of the triangular form to get 2 ; Expands by cofactors with the correct alternating signs ; Interprets det = 2 (invertible, volume factor 2, orientation kept)
 
 ## Rank of a Matrix
 S: The rank of a matrix is the number of independent rows (or columns), equal to the number of pivots after row reduction. It measures how much information a matrix carries and decides whether systems have solutions.
 O: Find the rank of a matrix by row reduction
 O: Apply the rank–nullity theorem
+LV: Year 1 · Application
+EV: established | Row rank equals column rank, and for an m × n matrix rank + nullity = n.
 T: Rank | The dimension of the column space (equal to the dimension of the row space)
 T: Rank–nullity theorem | For an m × n matrix, rank + nullity = n, the number of columns
 H: Computing rank
@@ -567,10 +631,12 @@ SUM: Rank counts independent rows and columns.
 SUM: Rank and nullity add to the number of columns.
 SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | secondary | 2023 | https://math.mit.edu/~gs/linearalgebra/
 SRC: Lay DC, Lay SR, McDonald JJ, Linear Algebra and Its Applications (6th edn, Pearson 2021) | secondary | 2021 | https://www.pearson.com/
-NUM1#maths-u11-16-q1@1: A 3 × 5 matrix has rank 3. What is its nullity? | 2 | 0 |  | Nullity = 5 − 3 = 2.
+NUM1#maths-u11-16-q1@1: A 3 × 5 matrix has rank 3. What is its nullity? | 2 | 0 |  | By rank–nullity, rank + nullity equals the number of columns, so nullity = 5 − 3 = 2.
 M1#maths-u11-16-q2@1: What is the rank of [[1, 1], [1, 1]]? | 1 | 2 | 0 | 4 | 3 | The rows are equal, so only one is independent.
 M3#maths-u11-16-q3@2: A 5 × 5 matrix has rank 4. Which statement is true? | Ax = 0 has non-zero solutions | A is invertible | det A ≠ 0 | Ax = b always has a unique solution | The columns are independent | Nullity 1 means a one-dimensional space of solutions to Ax = 0.
 NUM1#maths-u11-16-q4@1: What is the rank of [[1, 2], [2, 4]]? | 1 | 0 |  | The second column is twice the first, so the image is a line: rank 1.
+NUM2@1: Find the rank of [[1, 2, 1], [2, 4, 3], [3, 6, 4]]. | 2 | 0 |  | R₂ − 2R₁ and R₃ − 3R₁ both give (0, 0, 1), so after R₃ − R₂ only two non-zero rows remain: the rank is 2 (row 3 is the sum of rows 1 and 2).
+SA2@1,2: For which k does the system x + y + z = 1, x + 2y + 3z = 2, 2x + 3y + 4z = k have solutions, and how many? Use rank to explain. | The coefficient rows satisfy R₃ = R₁ + R₂, so rank A = 2. Applying R₃ − R₁ − R₂ to the augmented matrix gives the row [0 0 0 ∣ k − 3]. If k ≠ 3, rank [A ∣ b] = 3 is larger than rank A, so there is no solution. If k = 3, both ranks are 2, the system is consistent, and the nullity is 3 − 2 = 1: infinitely many solutions forming a line. | Finds rank A = 2 ; Reduces the augmented matrix to expose k − 3 ; States there is no solution for k ≠ 3 ; For k = 3, uses nullity 1 to give infinitely many solutions on a line
 
 ## Column Space
 S: The column space of a matrix is the span of its columns: every vector Ax can produce. It answers the question "for which b does Ax = b have a solution?", and its dimension is the rank.

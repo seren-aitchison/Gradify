@@ -6,19 +6,26 @@ export default `
 S: Pharmacology is the study of how drugs affect the body and how the body handles drugs. It connects the chemistry of a molecule to what happens in a patient, which is why it sits at the centre of pharmacy.
 O: Define pharmacology, pharmacodynamics and pharmacokinetics
 O: Explain how pharmacology connects to safe medicines use
+LV: Intermediate · Foundation
 T: Pharmacodynamics | What a drug does to the body: its targets, mechanisms and effects
 T: Pharmacokinetics | What the body does to a drug: absorption, distribution, metabolism and excretion
 H: Two halves of the subject
 - **Pharmacodynamics** asks where a drug acts and what follows: a receptor is activated or blocked, an enzyme inhibited, a channel opened.
 - **Pharmacokinetics** (School 3) asks how much drug reaches its target, for how long, and how it's removed.
 - Together they explain the dose, the timing, the effects and the side effects of every medicine.
+P: The two halves interact. A usual dose of a drug cleared by the kidneys gives higher levels when kidney function falls (a pharmacokinetic change), and the extra drug at the target produces more effect and more side effects (a pharmacodynamic consequence). This is why the same dose can suit one person and harm another.
 H: Why it matters in practice
 - Mechanisms predict effects: blocking β2 receptors can cause bronchospasm, so non-selective β-blockers are avoided in asthma.
 - Mechanisms predict interactions: two drugs that both prolong the QT interval add their risks.
 - Mechanisms explain adverse reactions and help you counsel people about what to expect.
 - Most drugs act on proteins: receptors, enzymes, ion channels and transporters. A few act by physical or chemical means (antacids, osmotic laxatives, chelating agents).
+X: Reasoning from mechanism: why can ibuprofen cause stomach ulcers?
+> Ibuprofen inhibits cyclo-oxygenase (COX), its pharmacodynamic target.
+> COX makes prostaglandins that protect the stomach lining, so that protection is reduced.
+> The harm is predictable, and the risk rises with higher doses, longer use and other drugs that harm the gut or impair clotting.
 K: Pharmacodynamics is what the drug does to the body; pharmacokinetics is what the body does to the drug. Both decide what a dose achieves.
 !: Learning drugs as lists of names and doses without their mechanisms: mechanisms are what let you predict effects, interactions and harms.
+EV: established | A drug's effect follows from its action at a target (pharmacodynamics) and the exposure that reaches it (pharmacokinetics).
 Q: Define pharmacodynamics. | The study of what a drug does to the body: its targets, mechanisms and effects.
 Q: Name the four main kinds of protein drug target. | Receptors, enzymes, ion channels and transporters.
 SUM: Pharmacology links a drug's molecular action to its effects in a patient.
@@ -28,11 +35,14 @@ SRC: Joint Formulary Committee, British National Formulary | guidance | 2026 | h
 M1#pharmacy-u02-01-q1@1: What does pharmacokinetics describe? | What the body does to a drug | What a drug does to the body | How drugs are manufactured | How drugs are licensed | How drugs are priced | Pharmacokinetics covers absorption, distribution, metabolism and excretion.
 M2#pharmacy-u02-01-q2@2: Why are non-selective β-blockers avoided in asthma? | Blocking β2 receptors can cause bronchospasm | They raise blood glucose sharply | They cause asthma to develop | They block histamine release | They stimulate airway mucus glands | β2 receptors mediate bronchodilation, so blocking them can trigger bronchospasm.
 M2#pharmacy-u02-01-q3@1: Which drug acts by a physical or chemical means, not a protein target? | An antacid | Salbutamol | Omeprazole | Sertraline | Propranolol | Antacids neutralise acid chemically; the others act on receptors, enzymes or transporters.
+M3@1,2: A person with reduced kidney function gets more side effects from a usual dose of a renally excreted drug. What best explains this? | Lower clearance raises levels, so the effect at the target increases | The drug's receptors change shape in kidney disease | The drug becomes more potent in the kidneys | Kidney disease turns antagonists into agonists | The drug is absorbed faster from the gut | A pharmacokinetic change (less elimination, higher levels) produces a pharmacodynamic consequence (more effect at the same target).
+SA2@1,2: Explain the difference between pharmacodynamics and pharmacokinetics, and why a pharmacist needs both to use medicines safely. | Pharmacodynamics is what the drug does to the body: its target, mechanism and effects. Pharmacokinetics is what the body does to the drug: absorption, distribution, metabolism and excretion, which decide how much reaches the target and for how long. Mechanisms predict effects, side effects and pharmacodynamic interactions (for example two QT-prolonging drugs); pharmacokinetics explains why kidney or liver impairment, or an interacting drug, changes the level. Together they explain why a dose suits one person and harms another. | Defines pharmacodynamics ; Defines pharmacokinetics (ADME) ; Mechanism predicts effects and interactions ; Exposure explains effect of organ function or interactions ; Links both to safe dosing
 
 ## Drug targets
 S: Most drugs work by binding to a protein in the body and changing what it does. Knowing the four families of drug target lets you group medicines by mechanism and reason about new ones.
 O: Describe the four main classes of protein drug target
 O: Give an example of a medicine acting on each
+LV: Intermediate · Foundation
 T: Drug target | The molecule (usually a protein) a drug binds to in order to produce its effect
 T: Selectivity | A drug's preference for one target over others, which is relative and often lost at high doses
 H: The four families
@@ -40,25 +50,35 @@ H: The four families
 - **Enzymes**: proteins that catalyse reactions. Omeprazole inhibits the proton pump; ibuprofen inhibits cyclo-oxygenase.
 - **Ion channels**: pores that let ions cross membranes. Amlodipine blocks L-type calcium channels; local anaesthetics block sodium channels.
 - **Transporters**: carriers that move molecules across membranes. Sertraline blocks the serotonin transporter; digoxin inhibits the Na⁺/K⁺-ATPase pump.
+P: Not every target is a human protein. Penicillins inhibit bacterial enzymes (penicillin-binding proteins) that build the cell wall, and their selective toxicity comes from acting on something the bacterium has and human cells lack. Some cytotoxic drugs act directly on DNA.
 H: Selectivity and side effects
 - No drug is perfectly selective. At higher doses it binds other targets, which explains many side effects.
 - Side effects can come from the same target in another tissue: β2 agonists cause tremor because skeletal muscle has β2 receptors too.
 - The 3D drug-target model shows these families in a cell membrane.
+X: Classifying drugs by target.
+> Ramipril blocks angiotensin-converting enzyme: an enzyme target.
+> Lidocaine blocks voltage-gated sodium channels: an ion channel target.
+> Fluoxetine blocks the serotonin transporter: a transporter target, so expect class effects similar to sertraline's.
 K: Group drugs by target: receptor, enzyme, ion channel or transporter. Side effects often come from the same target elsewhere, or other targets at higher doses.
 !: Assuming a "selective" drug has no effect on other targets: selectivity is a matter of degree.
+EV: established | Most medicines act by binding to receptors, enzymes, ion channels or transporters, and selectivity between targets is relative.
 Q: Which family of target does amlodipine act on? | Ion channels (L-type calcium channels).
 Q: Why does salbutamol cause tremor? | Skeletal muscle has β2 receptors as well as the airways.
 SUM: Receptors, enzymes, ion channels and transporters are the main drug targets.
 SUM: Selectivity is relative; many side effects follow from it.
 SRC: Ritter JM and others, Rang and Dale's Pharmacology, 10th edition, Elsevier | secondary | 2023
+SRC: Alexander SPH and others, The Concise Guide to Pharmacology 2023/24, British Journal of Pharmacology | primary | 2023
 M1#pharmacy-u02-02-q1@2: Which drug inhibits an enzyme? | Omeprazole | Salbutamol | Amlodipine | Sertraline | Atropine | Omeprazole inhibits the H⁺/K⁺-ATPase (proton pump), an enzyme.
 M2#pharmacy-u02-02-q2@2: Sertraline acts mainly on which kind of target? | A transporter | An ion channel | A nuclear receptor | An enzyme in the gut | A cell-surface antibody | It blocks the serotonin reuptake transporter (SERT).
 M2#pharmacy-u02-02-q3@1: Why can a selective drug cause side effects in other tissues? | Its target exists in those tissues too | Selective drugs have no side effects | It changes into a different drug | It always binds DNA | It's only absorbed by the liver | The same receptor in another tissue produces another effect, such as β2-mediated tremor.
+M3@1,2: Salbutamol is selective for β2 receptors, yet high doses cause a fast heart rate. What is the best explanation? | Selectivity is relative: high doses also act on cardiac β receptors | Salbutamol is converted to adrenaline in the liver | It blocks cardiac potassium channels at high doses | It irreversibly inhibits an enzyme in heart muscle | It acts on nuclear receptors in the heart | β2 selectivity is a matter of degree; high doses stimulate β receptors in the heart, and β2-mediated vasodilation adds a reflex rise in rate.
+SA2@1,2: Describe the four main families of protein drug target, giving a medicine that acts on each, and explain why selectivity matters for side effects. | Receptors respond to the body's signalling molecules (salbutamol activates β2 receptors). Enzymes catalyse reactions (omeprazole inhibits the proton pump; ibuprofen inhibits COX). Ion channels let ions cross membranes (amlodipine blocks L-type calcium channels). Transporters move molecules across membranes (sertraline blocks the serotonin transporter). No drug is perfectly selective: side effects come from the same target in other tissues (β2 tremor) or from other targets at higher doses. | Receptors with example ; Enzymes with example ; Ion channels with example ; Transporters with example ; Selectivity is relative and explains side effects
 
 ## Receptors and receptor families
 S: Receptors are the body's sensors for its own signals, such as hormones and neurotransmitters. Drugs that mimic or block those signals act through four structural families, which differ in how fast and how they work.
 O: Describe the four receptor families and how quickly each acts
 O: Classify common drugs by the receptor family they act on
+LV: Intermediate · Foundation
 T: Receptor | A protein that recognises a signalling molecule and converts binding into a cellular response
 T: Ligand | Any molecule that binds to a receptor, whether it activates it or not
 H: The four families
@@ -70,8 +90,14 @@ H: Why the family matters
 - The family predicts the speed of the response: a neuromuscular blocker acts in seconds; a corticosteroid's anti-inflammatory effect takes hours.
 - It predicts how drugs can be designed: kinase inhibitors block the enzyme part of kinase-linked receptors (for example in some cancers).
 - Receptors have subtypes (β1, β2, β3; M1 to M5), which are the basis of selectivity.
+P: The family also helps explain duration. A GPCR effect ends soon after the drug leaves the receptor, but a nuclear receptor effect depends on new proteins being made and can outlast the drug in the plasma: once-daily prednisolone controls inflammation through the day although its plasma half-life is only a few hours.
+X: Matching drugs to receptor families.
+> Insulin binds a receptor with tyrosine kinase activity: kinase-linked, acting over minutes to hours.
+> Ondansetron blocks 5-HT3 receptors, which are ligand-gated ion channels.
+> Salbutamol activates β2 adrenoceptors, which are GPCRs, so it relieves bronchospasm within minutes.
 K: Ion channel receptors act in milliseconds, GPCRs in seconds, kinase-linked receptors in minutes to hours, and nuclear receptors in hours.
 !: Expecting an oral corticosteroid to work as quickly as an inhaled bronchodilator: nuclear receptor effects take hours.
+EV: established | Receptors fall into four structural families that differ in signalling mechanism and in the speed of the response.
 Q: Where do benzodiazepines act? | The GABA-A receptor, a ligand-gated ion channel.
 Q: Which receptor family do corticosteroids act on? | Nuclear receptors.
 SUM: The four families differ in mechanism and speed.
@@ -81,24 +107,33 @@ SRC: Alexander SPH and others, The Concise Guide to Pharmacology 2023/24, Britis
 M2#pharmacy-u02-03-q1@1: Which receptor family acts fastest? | Ligand-gated ion channels | G protein-coupled receptors | Kinase-linked receptors | Nuclear receptors | They all act equally fast | Ligand-gated channels open within milliseconds of binding.
 M2#pharmacy-u02-03-q2@2: Opioid receptors belong to which family? | G protein-coupled receptors | Ligand-gated ion channels | Kinase-linked receptors | Nuclear receptors | Transporters | μ, δ and κ opioid receptors are G protein-coupled receptors, signalling mainly through Gi/Go.
 M3#pharmacy-u02-03-q3@1: Why does prednisolone take hours to reduce inflammation? | It acts on nuclear receptors to change gene transcription | It must first be converted to insulin | It only works after it's excreted | It blocks ion channels slowly | It needs to reach the bone marrow first | Nuclear receptor effects depend on new gene transcription and protein synthesis.
+M1@2: Which receptor family does insulin act on? | Kinase-linked receptors | Ligand-gated ion channels | G protein-coupled receptors | Nuclear receptors | Membrane transporters | The insulin receptor has intrinsic tyrosine kinase activity, so it is a kinase-linked receptor.
+SA2@1,2: Describe the four receptor families, how quickly each produces a response, and give a drug acting on each. | Ligand-gated ion channels open when the ligand binds and act in milliseconds (benzodiazepines at GABA-A). G protein-coupled receptors activate G proteins and second messengers over seconds (salbutamol at β2). Kinase-linked receptors activate enzyme activity over minutes to hours (insulin). Nuclear receptors change gene transcription over hours (prednisolone, levothyroxine). The family predicts how fast a drug works and how long its effect lasts. | Ion channels: milliseconds, example ; GPCRs: seconds, example ; Kinase-linked: minutes to hours, example ; Nuclear: hours, example ; Speed and duration follow from mechanism
 
 ## Agonists and antagonists
 S: A drug that binds a receptor either activates it (an agonist) or prevents activation (an antagonist). Partial agonists and inverse agonists sit between, and the kind of antagonism decides whether it can be overcome.
 O: Distinguish full, partial and inverse agonists and antagonists
 O: Explain competitive and non-competitive antagonism and their clinical consequences
+LV: Intermediate · Foundation
 T: Agonist | A drug that binds a receptor and activates it
 T: Antagonist | A drug that binds a receptor without activating it, blocking agonists
 H: Agonists
 - **Full agonist**: produces the maximum response (morphine at μ-opioid receptors).
 - **Partial agonist**: produces less than the maximum even at full occupancy, and can reduce the effect of a full agonist (buprenorphine at μ receptors).
 - **Inverse agonist**: reduces a receptor's background (constitutive) activity.
+P: A partial agonist can act as an antagonist when a full agonist is present. Buprenorphine binds μ receptors tightly; given to someone with high levels of a full agonist such as heroin or methadone, it displaces it, and its lower activation can precipitate withdrawal. That is why buprenorphine is started once withdrawal has begun.
 H: Antagonists
 - **Competitive (reversible)**: competes with the agonist for the same site; enough agonist overcomes it, shifting the dose-response curve to the right. Naloxone at opioid receptors.
 - **Irreversible or non-competitive**: can't be overcome by more agonist, reducing the maximum response. Aspirin irreversibly acetylates cyclo-oxygenase (an enzyme), so its antiplatelet effect lasts the platelet's lifetime.
 - Naloxone's action is shorter than many opioids', so repeated doses or an infusion may be needed after overdose.
+X: Competitive antagonism in practice.
+> Naloxone competes with morphine for μ receptors.
+> Enough naloxone displaces the opioid, and breathing and consciousness improve: the block is surmountable and reversible.
+> As naloxone is cleared, opioid still in the body re-occupies the receptors, so the person is monitored and doses repeated if needed.
 DRUG: Naloxone | Competitive opioid receptor antagonist, mainly at μ receptors | Reversal of opioid overdose and opioid-induced respiratory depression | Precipitates acute withdrawal in dependent people; short duration, so opioid effects can return | Monitor breathing and consciousness after the dose wears off; take-home naloxone supplied with training; repeat doses may be needed (check the BNF)
 K: Agonists activate; antagonists block. Competitive antagonism can be overcome by more agonist; irreversible antagonism can't.
 !: Assuming one dose of naloxone is enough after a long-acting opioid overdose: its effect can wear off first.
+EV: established | Agonists activate receptors and antagonists block them; competitive antagonism is surmountable and irreversible antagonism is not.
 Q: What is a partial agonist? | A drug that activates a receptor but can't produce the full maximum response.
 Q: How does a competitive antagonist change the agonist dose-response curve? | It shifts it to the right without lowering the maximum.
 SUM: Full, partial and inverse agonists differ in how much they activate a receptor.
@@ -108,61 +143,84 @@ SRC: Joint Formulary Committee, British National Formulary: naloxone hydrochlori
 M2#pharmacy-u02-04-q1@1: Buprenorphine at μ-opioid receptors is best described as what? | A partial agonist | A full agonist | A competitive antagonist | An inverse agonist | An enzyme inhibitor | It activates μ receptors but with a lower maximum effect than full agonists.
 M2#pharmacy-u02-04-q2@2: Why might naloxone need repeating after an overdose of a long-acting opioid? | Its effect can wear off before the opioid's | It becomes an agonist after an hour | It is excreted unchanged in seconds | It only works on the second dose | It destroys opioid receptors | Naloxone acts for a shorter time than many opioids, so respiratory depression can return.
 M3#pharmacy-u02-04-q3@2: Aspirin's antiplatelet effect lasts for days after a single dose. Why? | It irreversibly inhibits platelet cyclo-oxygenase | It is stored in fat for weeks | It is a competitive antagonist | It is renally cleared slowly | It activates thromboxane receptors | Platelets have no nucleus to make new COX, so the effect lasts their lifespan (about 7 to 10 days).
+M1@1: What does an antagonist do at a receptor? | Binds without activating it, blocking agonists | Activates it to the maximum response | Activates it partly, below the maximum | Destroys the receptor permanently | Increases the number of receptors | Antagonists have affinity but no efficacy: they occupy the receptor and stop agonists acting.
+SA3@1,2: A man taking methadone is given a first dose of buprenorphine and develops withdrawal symptoms. Later, a woman treated with naloxone for an overdose becomes drowsy again. Explain both events. | Buprenorphine is a high-affinity partial agonist at μ receptors. It displaces methadone, a full agonist, and produces less activation, so the net opioid effect falls and withdrawal is precipitated. Naloxone is a competitive antagonist with a shorter duration than many opioids: as it is cleared, the opioid still present re-occupies the receptors and respiratory depression and drowsiness return, so monitoring and repeat doses may be needed. | Buprenorphine is a partial agonist with high affinity ; Displacing a full agonist lowers net activation ; Naloxone is a competitive antagonist ; Naloxone wears off before many opioids ; Monitoring and repeat doses
 
 ## Dose-response relationships
 S: As the dose of a drug increases, the response increases until it reaches a maximum. The shape of this relationship explains why doubling a dose rarely doubles the benefit but can increase harm.
 O: Interpret graded and quantal dose-response curves
 O: Explain the therapeutic index and its clinical importance
+LV: Intermediate · Foundation
 T: EC50 | The concentration that produces 50% of the maximum response
 T: Therapeutic index | The ratio between the dose causing toxicity and the dose producing the wanted effect
 H: Dose-response curves
 - **Graded** curves plot the size of a response against concentration in one person or tissue. Plotted against log concentration they are S-shaped (sigmoid).
 - At the top of the curve, extra drug adds little effect: the response is near its maximum.
 - **Quantal** curves plot the proportion of a population showing an all-or-nothing response (for example, relief of a headache) against dose.
+E: Therapeutic index = TD50 ÷ ED50 :: the median toxic dose divided by the median effective dose, both read from quantal curves
+X: Why doubling a dose near the top adds little.
+> An illustrative drug gives half its maximum effect at 10 mg, and its effect follows dose ÷ (dose plus 10).
+> At 40 mg the effect is 40 ÷ 50, which is 80% of the maximum.
+> At 90 mg it is 90 ÷ 100, which is 90%: more than doubling the dose adds only 10 percentage points, while dose-related side effects keep rising.
 H: Therapeutic index
 - The therapeutic index compares the toxic dose with the effective dose. A narrow therapeutic index means the two are close.
 - Narrow therapeutic index drugs include digoxin, lithium, warfarin, phenytoin, theophylline, aminoglycosides and ciclosporin: they need careful dosing and often monitoring of levels.
 - For these drugs, small changes in absorption, interactions or kidney function can cause toxicity or loss of effect.
 K: The dose-response curve flattens near the maximum, so higher doses add more harm than benefit. Narrow therapeutic index drugs need monitoring.
 !: Increasing a dose that's already near the top of its dose-response curve and expecting more benefit.
+EV: established | Responses rise with concentration towards a maximum, and the therapeutic index describes the margin between effective and toxic doses.
 Q: What does EC50 mean? | The concentration producing half the maximum response.
 Q: Name three narrow therapeutic index drugs. | For example digoxin, lithium and warfarin (also phenytoin, theophylline, aminoglycosides).
 SUM: Graded curves are sigmoid on a log scale; quantal curves describe populations.
 SUM: Narrow therapeutic index drugs have toxic doses close to effective ones.
 SRC: Ritter JM and others, Rang and Dale's Pharmacology, 10th edition, Elsevier | secondary | 2023
+SRC: Neubig RR and others, International Union of Pharmacology Committee on Receptor Nomenclature and Drug Classification XXXVIII: update on terms and symbols in quantitative pharmacology, Pharmacological Reviews 55: 597–606 | standard | 2003
 M1#pharmacy-u02-05-q1@2: Which drug has a narrow therapeutic index? | Lithium | Paracetamol at usual doses | Amoxicillin | Cetirizine | Simvastatin | Lithium's toxic levels are close to its therapeutic range, so levels are monitored.
 M2#pharmacy-u02-05-q2@1: Near the top of a dose-response curve, what does a higher dose mostly add? | Little extra effect but more risk | A proportional extra effect | A completely new effect | Lower toxicity | A shorter half-life | The response is close to its maximum, so extra drug mainly increases side effects.
 M2#pharmacy-u02-05-q3@2: Why is a narrow therapeutic index clinically important? | Small changes in level can cause harm or failure | It means the drug acts very quickly | It means the drug can't be overdosed | It makes the drug safe in pregnancy | It removes the need for monitoring | When toxic and effective levels are close, interactions or kidney changes matter.
+M3@1: An illustrative drug's effect follows dose ÷ (dose plus 10 mg). What happens to the effect when the dose rises from 40 mg to 90 mg? | It rises from 80% to 90% of the maximum | It more than doubles, from 40% to 90% | It rises from 80% to 100% of the maximum | It stays at 50% of the maximum | It falls because of receptor tolerance | 40 ÷ 50 is 0.8 and 90 ÷ 100 is 0.9: near the top of the curve a large dose increase adds little effect.
+SA2@1,2: Explain what the therapeutic index is and why drugs with a narrow therapeutic index need careful dosing and monitoring. Give two examples. | The therapeutic index compares the dose (or concentration) causing toxicity with the dose producing the wanted effect, for example TD50 ÷ ED50. When it is narrow, effective and toxic levels are close, so small changes in absorption, kidney function or interacting drugs can cause toxicity or loss of effect. Such drugs, for example lithium, digoxin, warfarin, phenytoin and aminoglycosides, are dosed carefully and often monitored with blood levels or clinical tests. | Defines therapeutic index ; Narrow means toxic and effective levels are close ; Small changes cause harm or failure ; Need monitoring or levels ; Two correct examples
 
 ## Affinity, efficacy and potency
 S: Three terms describe how a drug interacts with its receptor: affinity (how well it binds), efficacy (how well it activates) and potency (how much is needed). They are often confused, and the difference matters when comparing drugs.
 O: Define affinity, efficacy and potency
 O: Explain why a more potent drug isn't necessarily a better one
+LV: Intermediate · Application
 T: Affinity | How strongly a drug binds to its receptor
 T: Efficacy | The ability of a bound drug to activate the receptor and produce a response
 H: Three different properties
 - **Affinity** is binding strength. Antagonists have affinity but no efficacy.
 - **Efficacy** is how much response a drug can produce once bound. Full agonists have high efficacy; partial agonists lower.
 - **Potency** is the amount needed for a given effect (often measured as EC50). It depends on both affinity and efficacy.
+P: On a log concentration-response graph, a more potent drug's curve lies further to the left (a lower EC50), and a drug with greater efficacy reaches a higher plateau. A partial agonist's curve levels off below a full agonist's, however much is given.
 H: Potency in practice
 - A more potent drug needs a smaller dose, but that doesn't make it more effective: if both reach the same maximum, they're equally effective at appropriate doses.
 - The maximum achievable effect (Emax) reflects efficacy. Loop diuretics produce a greater maximum diuresis than thiazides, whatever the dose of thiazide.
 - High potency can increase risk when doses are small and easily confused (for example fentanyl compared with morphine).
+X: Comparing three drugs on one graph.
+> Drug P gives half its maximum effect at 1 mg and drug Q at 10 mg; both reach the same plateau.
+> P is ten times more potent, but the two are equally efficacious: at suitable doses both give the same maximum.
+> Drug R levels off at 60% of that maximum: lower efficacy, as with a partial agonist, whatever its potency.
 K: Potency is about dose size; efficacy is about the maximum effect. A more potent drug isn't automatically more effective.
 !: Assuming "stronger" (more potent) means "works better": a less potent drug at an adequate dose can work just as well.
+EV: established | Affinity, efficacy and potency are distinct properties: potency sets the dose needed, efficacy sets the maximum achievable effect.
 Q: Which property do antagonists have: affinity or efficacy? | Affinity (they bind) but no efficacy.
 Q: What does Emax reflect? | The drug's efficacy: its maximum achievable effect.
 SUM: Affinity, efficacy and potency are distinct.
 SUM: Potency determines the dose; efficacy determines the maximum effect.
 SRC: Ritter JM and others, Rang and Dale's Pharmacology, 10th edition, Elsevier | secondary | 2023
+SRC: Neubig RR and others, International Union of Pharmacology Committee on Receptor Nomenclature and Drug Classification XXXVIII: update on terms and symbols in quantitative pharmacology, Pharmacological Reviews 55: 597–606 | standard | 2003
 M2#pharmacy-u02-06-q1@1: Antagonists have which property? | Affinity without efficacy | Efficacy without affinity | Both high affinity and efficacy | Neither property | Only potency | They bind the receptor but don't activate it.
 M2#pharmacy-u02-06-q2@2: Drug A needs 1 mg and drug B 10 mg for the same maximum effect. What follows? | A is more potent; both are equally effective | A is more effective than B | B is more potent than A | A has lower affinity than B | B can't reach the maximum | Potency concerns dose, not the size of the maximum effect.
 M3#pharmacy-u02-06-q3@1: Why do loop diuretics produce more diuresis than thiazides at any dose? | Loop diuretics have greater efficacy | Thiazides are more potent | Loop diuretics have lower affinity | Thiazides are partial antagonists | Loop diuretics are taken more often | Their maximum effect (Emax) is higher, which reflects efficacy, not potency.
+M1@1: What does potency describe? | The amount of drug needed for a given effect | The maximum effect a drug can produce | How long a drug's effect lasts | How quickly a drug is absorbed | How safe a drug is in overdose | Potency is about dose size (often shown by EC50); the maximum effect reflects efficacy instead.
+SA2@1,2: A colleague says fentanyl is "better" than morphine because it is more potent. Explain affinity, efficacy and potency, and why the claim is misleading. | Affinity is how strongly a drug binds its receptor; efficacy is how well the bound drug activates it; potency is the amount needed for a given effect and depends on both. Fentanyl is more potent, so smaller doses are used, but potency doesn't mean a greater maximum effect: equally efficacious drugs reach the same maximum at appropriate doses. High potency can add risk, because small doses are easily confused and errors are larger in effect. | Defines affinity ; Defines efficacy ; Defines potency ; Potency is not maximum effect ; High potency adds dosing risk
 
 ## Tolerance, desensitisation and dependence
 S: Repeated exposure to a drug can reduce its effect (tolerance) and lead the body to adapt so that stopping causes withdrawal (dependence). These processes shape how drugs such as opioids, benzodiazepines and nitrates are used.
 O: Explain the mechanisms of tolerance and desensitisation
 O: Distinguish physical dependence, withdrawal and addiction
+LV: Intermediate · Foundation
 T: Tolerance | A reduced response to a drug after repeated use, so a higher dose is needed for the same effect
 T: Dependence | An adaptation in which stopping the drug causes a withdrawal syndrome
 H: Mechanisms
@@ -170,12 +228,18 @@ H: Mechanisms
 - **Pharmacokinetic tolerance**: the body clears the drug faster, for example through enzyme induction.
 - **Physiological adaptation**: opposing mechanisms come into play.
 - Nitrate tolerance develops within a day of continuous exposure, so a nitrate-free period is built into dosing schedules.
+P: Tolerance doesn't develop equally to every effect. With opioids, tolerance to sedation, euphoria and respiratory depression develops, but little develops to constipation or pupil constriction, so laxatives are usually needed throughout long-term use. A person whose tolerance has fallen, for example after a period of abstinence or a hospital stay, is at high risk of overdose if they return to their previous dose.
 H: Dependence and withdrawal
 - **Physical dependence** is an expected adaptation: stopping causes withdrawal (opioids, benzodiazepines, alcohol, some antidepressants, corticosteroids).
 - **Addiction** is a behavioural pattern of compulsive use despite harm. Dependence can exist without addiction.
 - Stopping dependence-producing drugs needs a gradual, agreed reduction plan.
+X: Building in a nitrate-free period.
+> Continuous nitrate exposure causes tolerance within about a day.
+> Standard-release isosorbide mononitrate taken twice daily is therefore given at asymmetric times (for example morning and early afternoon), leaving a low-nitrate period overnight.
+> Once-daily modified-release products achieve the same thing; check the BNF for each product's regimen.
 K: Tolerance needs more drug for the same effect; dependence means stopping causes withdrawal. Neither is the same as addiction.
 !: Stopping a benzodiazepine, opioid or long-term corticosteroid abruptly, which can cause dangerous withdrawal.
+EV: established | Repeated exposure can cause tolerance and physical dependence, which are distinct from addiction.
 Q: Why do nitrate regimens include a nitrate-free period? | To prevent nitrate tolerance.
 Q: Can dependence occur without addiction? | Yes: physical dependence is an expected adaptation, distinct from compulsive use.
 SUM: Tolerance and desensitisation reduce a drug's effect over time.
@@ -185,23 +249,32 @@ SRC: NICE NG215, Medicines associated with dependence or withdrawal symptoms: sa
 M2#pharmacy-u02-07-q1@1: Why do isosorbide mononitrate regimens include a nitrate-free period? | To prevent tolerance | To reduce the cost | To avoid kidney damage | To allow sleep | To improve absorption | Continuous nitrate exposure causes tolerance within about a day.
 M2#pharmacy-u02-07-q2@2: Which statement about dependence is correct? | It can occur without addiction | It always means addiction | It only happens with illegal drugs | It never causes withdrawal | It prevents tolerance | Physical dependence is an adaptation; addiction is compulsive use despite harm.
 M2#pharmacy-u02-07-q3@2: What is the safest way to stop a long-term benzodiazepine? | A gradual, agreed dose reduction | Stopping it immediately | Swapping to alcohol | Doubling the dose then stopping | Missing alternate days | Abrupt withdrawal can cause rebound anxiety, insomnia and seizures; NICE NG215 advises planned tapering.
+M1@1: What is tolerance? | A reduced response to repeated doses of a drug | An allergic reaction to a drug | A withdrawal syndrome on stopping a drug | Compulsive drug use despite harm | An increased response to each dose | With tolerance, a higher dose is needed for the same effect, through desensitisation, faster clearance or adaptation.
+SA3@1,2: A man has taken high-dose opioids for years. He stops for a month while in hospital and is then discharged. Explain the risks using the ideas of tolerance, dependence and addiction. | Long-term use produces tolerance (less sedation and respiratory depression per dose) and physical dependence (withdrawal if stopped abruptly). Dependence is an expected adaptation and differs from addiction, which is compulsive use despite harm. After a month without opioids his tolerance has fallen, so returning to his previous dose could cause dangerous respiratory depression. Tolerance to constipation is limited, so laxatives remain relevant. Discharge planning should address dose, overdose risk and take-home naloxone where appropriate. | Tolerance explained ; Dependence and withdrawal explained ; Addiction distinguished ; Loss of tolerance raises overdose risk ; Practical safety step such as naloxone or dose review
 
 ## G protein-coupled receptors and second messengers
 S: G protein-coupled receptors (GPCRs) are the largest family of drug targets. Binding switches on a G protein, which changes the level of a second messenger inside the cell and amplifies the signal.
 O: Describe how GPCRs signal through G proteins and second messengers
 O: Link major G protein types to drug effects
+LV: Intermediate · Application
 T: G protein | A protein inside the cell that is switched on by an activated GPCR and passes on the signal
 T: Second messenger | A small molecule inside the cell (such as cAMP or calcium) that carries a receptor's signal onwards
 H: Three main G protein pathways
 - **Gs** stimulates adenylyl cyclase, raising cAMP. β-adrenoceptors use Gs: in airway smooth muscle, more cAMP causes relaxation (bronchodilation).
 - **Gi** inhibits adenylyl cyclase, lowering cAMP. Opioid and α2 receptors use Gi.
 - **Gq** activates phospholipase C, producing IP3 (which releases calcium) and DAG. α1-adrenoceptors and M3 muscarinic receptors use Gq, causing smooth muscle contraction and gland secretion.
+P: The same second messenger can have different effects in different tissues because the downstream machinery differs. Raised cAMP relaxes airway smooth muscle (β2) but increases rate and force in the heart (β1), so the pathway together with the tissue predicts the response.
 H: Amplification and drug design
 - One activated receptor activates many G proteins, and each enzyme makes many second messenger molecules, so a small signal has a large effect.
 - Drugs can also act downstream: phosphodiesterase inhibitors (such as sildenafil) slow the breakdown of cyclic nucleotides.
 - Around a third of medicines act on GPCRs, including β-blockers, antihistamines, opioids and many antipsychotics.
+X: Tracing a signal: salbutamol.
+> Salbutamol binds β2 adrenoceptors on airway smooth muscle.
+> The receptor activates Gs, which stimulates adenylyl cyclase and raises cAMP.
+> cAMP activates protein kinase A, which relaxes the muscle: bronchodilation within minutes.
 K: Gs raises cAMP, Gi lowers it, Gq raises calcium via IP3. The pathway explains the tissue response.
 !: Assuming every GPCR increases cAMP: Gi-coupled receptors lower it and Gq-coupled ones act through calcium.
+EV: established | GPCRs signal through Gs, Gi and Gq proteins and second messengers, amplifying the signal.
 Q: Which G protein do β-adrenoceptors use? | Gs, which raises cAMP.
 Q: What does Gq signalling produce? | IP3 and DAG, raising intracellular calcium.
 SUM: GPCRs act through G proteins and second messengers, amplifying signals.
@@ -211,6 +284,8 @@ SRC: Alexander SPH and others, The Concise Guide to Pharmacology 2023/24: G prot
 M2#pharmacy-u02-08-q1@1: Activating β2 receptors in airway muscle raises which second messenger? | cAMP | IP3 | cGMP | Diacylglycerol | Nitric oxide | β2 receptors couple to Gs, which stimulates adenylyl cyclase to make cAMP.
 M2#pharmacy-u02-08-q2@2: M3 muscarinic receptors on glands increase secretion through which G protein? | Gq | Gs | Gi | No G protein | A kinase-linked pathway | M3 receptors couple to Gq, raising calcium via IP3.
 M3#pharmacy-u02-08-q3@1: Opioid receptors reduce neuronal excitability partly by doing what? | Lowering cAMP via Gi | Raising cAMP via Gs | Opening sodium channels | Activating nuclear receptors | Inhibiting the proton pump | Opioid receptors couple to Gi/Go, which inhibit adenylyl cyclase and open potassium channels.
+M1@1: What is a second messenger? | An intracellular molecule relaying the signal | A hormone released by a second gland | A receptor found on the nucleus | A drug given after the first one | An enzyme circulating in the blood | Second messengers such as cAMP, IP3 and calcium carry a receptor's signal inside the cell and amplify it.
+SA2@1,2: Explain how a GPCR signals, comparing the Gs, Gi and Gq pathways with a drug or receptor example for each. | An agonist binds the GPCR, which activates a G protein inside the cell; the G protein changes the activity of an enzyme and the level of a second messenger, amplifying the signal. Gs stimulates adenylyl cyclase and raises cAMP (β-adrenoceptors: bronchodilation in the airways). Gi inhibits adenylyl cyclase and lowers cAMP (opioid and α2 receptors). Gq activates phospholipase C, producing IP3 and DAG and raising calcium (α1 and M3 receptors: smooth muscle contraction and secretion). | Receptor activates a G protein ; Second messenger and amplification ; Gs and cAMP with example ; Gi with example ; Gq, IP3 and calcium with example
 
 ## Ion channels as drug targets
 S: Ion channels control the electrical activity of nerves, muscle and the heart. Drugs that open, block or modulate them treat epilepsy, arrhythmias, hypertension and pain, and also cause some of the most serious adverse effects.

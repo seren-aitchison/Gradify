@@ -545,6 +545,8 @@ SA2@1,2: The depth of water in a harbour is d = 6 + 2.5 sin(πt/6) metres, t hou
 S: Cosecant is the reciprocal of sine: cosec θ = 1/sin θ. It appears in identities, calculus and some physics formulas, and its graph has asymptotes wherever sin θ = 0.
 O: Evaluate cosec θ and sketch its graph
 O: Solve equations involving cosec θ
+LV: A level · Fluency
+EV: established | cosec θ = 1/sin θ, so it is undefined where sin θ = 0 and never takes values strictly between −1 and 1.
 T: Cosecant | cosec θ = 1/sin θ (also written csc θ)
 T: Reciprocal function | 1/f(x), large where f is small, with asymptotes where f = 0
 H: Properties
@@ -574,11 +576,16 @@ SRC: Department for Education, Mathematics AS and A level subject content: trigo
 SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | secondary | 2020 | https://www.bloomsbury.com/
 M1#maths-u06-15-q1@1: What is the exact value of cosec 30°? | 2 | 1/2 | √3 | 2/√3 | √2 | Cosecant is the reciprocal of sine; sin 30° = 1/2, so cosec 30° = 2.
 M2#maths-u06-15-q2@2: Which value can cosec θ never take? | 0.5 | 1 | −1 | 2 | −3 | |sin θ| ≤ 1, so |cosec θ| ≥ 1: values strictly between −1 and 1 are impossible.
+M3@1: What is the exact value of cosec 240°? | −2/√3 | 2/√3 | −2 | −√3/2 | 2 | sin 240° = −sin 60° = −√3/2 (third quadrant), and its reciprocal is −2/√3.
+NUM2@2: Solve cosec x = 4 for 90° ≤ x ≤ 180°, to 1 decimal place. | 165.5 | 0.05 | ° | sin x = 1/4 gives the principal value 14.5°, and sin(180° − θ) = sin θ gives 180 − 14.5 = 165.5° in the range.
+SA2@1,2: Explain how to sketch y = cosec x from the graph of y = sin x for 0° < x < 360°, and solve cosec x = √2 in that range. | Take reciprocals of the sine graph. Where sin x = 0 (at 0°, 180°, 360°) cosec x is undefined, so there are vertical asymptotes. Where sin x = 1 (90°) or −1 (270°), cosec x is also 1 or −1, and these are the turning points. As sin x gets small, cosec x grows large, so between 0° and 180° there is a U-shaped branch above y = 1 and between 180° and 360° an upside-down U below y = −1. For cosec x = √2, sin x = 1/√2, so x = 45° or x = 180° − 45° = 135°. | asymptotes where sin x = 0 ; turning points at ±1 where sin x = ±1 ; branches outside −1 < y < 1 ; converts to sin x = 1/√2 ; 45° and 135°
 
 ## Secant
 S: Secant is the reciprocal of cosine: sec θ = 1/cos θ. It's essential in calculus, where d/dx tan x = sec^{2} x, and in identities linking tan and sec.
 O: Evaluate sec θ and sketch its graph
 O: Use the identity 1 + tan^{2} θ = sec^{2} θ
+LV: A level · Application
+EV: established | sec θ = 1/cos θ, and dividing sin²θ + cos²θ = 1 by cos²θ gives 1 + tan²θ = sec²θ.
 T: Secant | sec θ = 1/cos θ
 T: Pythagorean identity for secant | 1 + tan^{2} θ = sec^{2} θ
 H: Properties
@@ -608,11 +615,15 @@ SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | s
 NUM1#maths-u06-16-q1@1: If tan θ = 3/4, find sec^{2} θ. | 1.5625 | 0.0001 |  | sec^{2} θ = 1 + tan^{2} θ = 1 + 9/16 = 25/16 = 1.5625.
 M1#maths-u06-16-q2@1: What is d/dx (tan x)? | sec^{2} x | sec x tan x | cos^{2} x | −cosec^{2} x | 1/(1 + x^{2}) | By the quotient rule, (cos^{2} x + sin^{2} x)/cos^{2} x = 1/cos^{2} x = sec^{2} x.
 M3#maths-u06-16-q3@2: Solve sec x = 2 for 0 ≤ x < 2π. | x = π/3 or x = 5π/3 | x = π/6 or 5π/6 | x = π/3 only | x = 2π/3 or 4π/3 | x = π/4 or 7π/4 | cos x = 1/2 gives π/3 and 2π − π/3 = 5π/3.
+M2@2: θ is acute and sec θ = 3. What is tan θ? | 2√2 | √10 | 2 | 1/3 | 3√2 | tan^{2} θ = sec^{2} θ − 1 = 9 − 1 = 8, and tan θ is positive for an acute angle, so tan θ = √8 = 2√2.
+SA3@2: Prove that 1 + tan^{2} θ = sec^{2} θ, then solve sec^{2} x = 2 tan x for 0° ≤ x < 360°. | Divide sin²θ + cos²θ = 1 by cos²θ (where cos θ ≠ 0): sin²θ/cos²θ + 1 = 1/cos²θ, which is tan²θ + 1 = sec²θ. Substituting into the equation: 1 + tan²x = 2 tan x, so tan²x − 2 tan x + 1 = 0, which is (tan x − 1)² = 0. So tan x = 1, giving x = 45° or x = 45° + 180° = 225°. | divides by cos²θ ; reaches 1 + tan²θ = sec²θ ; forms the quadratic in tan x ; (tan x − 1)² = 0 ; 45° and 225°
 
 ## Cotangent
 S: Cotangent is the reciprocal of tangent: cot θ = cos θ/sin θ. It's the gradient of the radius measured from the y-axis, and it completes the set of six trigonometric functions.
 O: Evaluate cot θ and sketch its graph
 O: Use the identity 1 + cot^{2} θ = cosec^{2} θ
+LV: A level · Fluency
+EV: established | cot θ = cos θ/sin θ, with period 180°, and 1 + cot²θ = cosec²θ.
 T: Cotangent | cot θ = 1/tan θ = cos θ/sin θ
 T: Complementary angle | 90° − θ; cot θ = tan(90° − θ)
 H: Properties
@@ -642,11 +653,16 @@ SRC: Department for Education, Mathematics AS and A level subject content: trigo
 SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | secondary | 2020 | https://www.bloomsbury.com/
 M1#maths-u06-17-q1@1: What is cot 30°? | √3 | 1/√3 | 1/2 | 2 | √3/2 | Cotangent is the reciprocal of tangent; tan 30° = 1/√3, so cot 30° = √3.
 M2#maths-u06-17-q2@2: Which identity is correct? | 1 + cot^{2} θ = cosec^{2} θ | 1 + cot^{2} θ = sec^{2} θ | cot^{2} θ − 1 = cosec^{2} θ | cot^{2} θ + sec^{2} θ = 1 | cot θ + tan θ = 1 | Dividing sin^{2} θ + cos^{2} θ = 1 by sin^{2} θ gives 1 + cot^{2} θ = cosec^{2} θ.
+TF1@1: cot 90° = 0. | true | cot 90° = cos 90°/sin 90° = 0/1 = 0, even though tan 90° is undefined.
+NUM3@2: Solve cot x = 0.5 for 180° ≤ x < 360°, to 1 decimal place. | 243.4 | 0.05 | ° | tan x = 1/0.5 = 2 gives 63.4°; the tangent repeats every 180°, so the solution in the range is 243.4°.
+SA3@2: Solve cosec^{2} x = 3 + cot x for 0° ≤ x < 360°, giving answers to 1 decimal place where needed. | Use 1 + cot²x = cosec²x: 1 + cot²x = 3 + cot x, so cot²x − cot x − 2 = 0, which factorises as (cot x − 2)(cot x + 1) = 0. If cot x = 2, tan x = ½, so x ≈ 26.6° or 206.6°. If cot x = −1, tan x = −1, so x = 135° or 315°. The solutions are 26.6°, 135°, 206.6° and 315°. | uses 1 + cot²x = cosec²x ; quadratic cot²x − cot x − 2 = 0 ; factorises ; tan x = ½ gives 26.6° and 206.6° ; tan x = −1 gives 135° and 315°
 
 ## Inverse Trigonometric Functions
 S: The inverse trigonometric functions arcsin, arccos and arctan give an angle from a ratio. Because sine and the others aren't one-to-one, their inverses use restricted ranges called principal values.
 O: State the domains and ranges of arcsin, arccos and arctan
 O: Evaluate inverse trig functions and use them in calculus
+LV: A level · Application
+EV: established | arcsin, arccos and arctan are defined on restricted ranges so that each returns a single principal value.
 T: Principal value | The single value an inverse function returns, from its restricted range
 T: Arcsin | sin^{−1} x: the angle in [−π/2, π/2] whose sine is x
 H: Domains and ranges
@@ -675,11 +691,16 @@ SRC: Department for Education, Mathematics AS and A level subject content: trigo
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 M1#maths-u06-18-q1@1: What is arcsin(1)? | π/2 | π | 0 | π/4 | 1 | sin(π/2) = 1, and π/2 lies in arcsin's range.
 M3#maths-u06-18-q2@2: What is arccos(cos(5π/3))? | π/3 | 5π/3 | −π/3 | 2π/3 | 4π/3 | cos(5π/3) = 1/2, and arccos returns the value in [0, π], which is π/3.
+M2@1: What is the domain of arccos x? | −1 ≤ x ≤ 1 | 0 ≤ x ≤ π | All real numbers | −π/2 ≤ x ≤ π/2 | The inputs to arccos are cosine values, which lie between −1 and 1; [0, π] is its range, not its domain.
+NUM2@2: Evaluate the integral of 1/(1 + x^{2}) from 0 to √3, to 4 decimal places. | 1.0472 | 0.0005 |  | The integral is arctan x, so the value is arctan √3 − arctan 0 = π/3 ≈ 1.0472.
+SA2@1,2: Explain why the inverse trigonometric functions need restricted ranges, and find the exact value of tan(arccos(−3/5)). | Sine, cosine and tangent are periodic, so each output comes from infinitely many angles and the functions aren't one-to-one; an inverse must choose one angle, so the original is restricted to an interval where it is one-to-one and takes every value once. arccos uses [0, π]. Let θ = arccos(−3/5): cos θ = −3/5 with θ in [0, π], so θ is in the second quadrant, where sin θ ≥ 0. sin θ = √(1 − 9/25) = 4/5, so tan θ = (4/5)/(−3/5) = −4/3. | periodic functions aren't one-to-one ; inverse needs a restricted range ; arccos range [0, π] ; sin θ = 4/5 ; tan θ = −4/3
 
 ## Sinusoidal Modelling
 S: Sinusoidal models y = A sin(B(t − C)) + D describe repeating real-world patterns: tides, daylight hours, temperatures, sound and populations. Fitting one means reading off amplitude, period, phase and midline from data.
 O: Build a sinusoidal model from maximum, minimum and period
 O: Use a model to make predictions and interpret its parameters
+LV: A level · Application
+EV: established | A repeating pattern can be modelled by y = A sin(B(t − C)) + D, with amplitude half the range, midline the mean of maximum and minimum and B = 2π/period.
 T: Midline | The horizontal centre line of the wave, y = D = (max + min)/2
 T: Phase | The horizontal position of a wave: where in its cycle it is at t = 0
 H: Building a model
@@ -695,6 +716,7 @@ X: A Ferris wheel of diameter 40 m has its centre 22 m above the ground and turn
 > Amplitude 20, midline 22, period 10, so B = 2π/10 = π/5
 > At t = 0 the rider is at the minimum, so use −cos
 > h(t) = 22 − 20 cos(πt/5) metres
+P: **Checking a model.** Substitute a point you know: h(t) = 22 − 20 cos(πt/5) gives h(0) = 2 m, the bottom of the wheel, as it should.
 K: Amplitude is half the range, the midline is the average of max and min, B = 2π/period; choose sin or cos to match the start.
 !: Using the full range (max − min) as the amplitude instead of half of it.
 Q: A wave varies between 3 and 11. What are its amplitude and midline? | Amplitude 4, midline y = 7.
@@ -706,11 +728,15 @@ SRC: HM Nautical Almanac Office, Sunrise and sunset times | data | 2025 | https:
 NUM1#maths-u06-19-q1@1: For h(t) = 22 − 20 cos(πt/5), what is the height at t = 5 minutes? | 42 | 0 | m | cos(π) = −1, so h = 22 + 20 = 42 m: the top of the wheel.
 M1#maths-u06-19-q2@1: Temperature varies from 4°C to 20°C over a year. What is the amplitude of a sinusoidal model? | 8°C | 16°C | 12°C | 4°C | 20°C | The amplitude is half the range between maximum and minimum: (20 − 4)/2 = 8°C.
 M2#maths-u06-19-q3@2: Which function starts at its maximum when t = 0? | y = 3 cos(2t) + 1 | y = 3 sin(2t) + 1 | y = −3 cos(2t) + 1 | y = 3 sin(2t − π) | y = −3 sin(2t) | cos(0) = 1, so y = 3 cos 2t + 1 starts at its maximum of 4.
+NUM3@2: For h(t) = 22 − 20 cos(πt/5), when does the rider first reach a height of 32 m? Give t in minutes to 2 decimal places. | 3.33 | 0.01 | minutes | 22 − 20 cos(πt/5) = 32 gives cos(πt/5) = −0.5, first at πt/5 = 2π/3, so t = 10/3 ≈ 3.33 minutes.
+SA2@1,2: A town's average monthly temperature varies between 4°C (in January) and 20°C (in July). Build a cosine model T(t) with t in months (t = 1 for January), and use it to predict April's average. | Amplitude A = (20 − 4)/2 = 8 and midline D = (20 + 4)/2 = 12. The period is 12 months, so B = 2π/12 = π/6. The maximum is in July (t = 7), so use cosine shifted to peak there: T(t) = 12 + 8 cos(π(t − 7)/6). Check: t = 1 gives 12 + 8 cos(−π) = 4°C, the January minimum. For April, t = 4: T = 12 + 8 cos(−π/2) = 12°C, the midline, halfway between the extremes. | amplitude 8 ; midline 12 ; B = π/6 ; phase chosen for a July maximum ; April prediction 12°C
 
 ## Harmonic Functions
 S: Harmonic motion is motion described by sines and cosines: springs, pendulums, vibrating strings and AC circuits. Combining waves of the same frequency always gives another wave of that frequency, written R sin(x + α).
 O: Express a sin x + b cos x as R sin(x + α)
 O: Use the harmonic form to find maxima and solve equations
+LV: A level · Application
+EV: established | a sin x + b cos x = R sin(x + α) with R = √(a² + b²), so a combination of sines and cosines of one frequency is a single wave of that frequency.
 T: Harmonic form | a sin x + b cos x = R sin(x + α), with R = √(a^{2} + b^{2}) and tan α = b/a
 T: Simple harmonic motion | Motion with acceleration proportional and opposite to displacement: x = A cos(ωt + φ)
 H: The R form
@@ -735,9 +761,11 @@ SUM: Waves of one frequency combine into one wave.
 SUM: The R form gives maxima and solves equations.
 SRC: Department for Education, Mathematics AS and A level subject content: trigonometry | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | secondary | 2020 | https://www.bloomsbury.com/
-NUM1#maths-u06-20-q1@1: Find R when 8 sin x − 6 cos x is written as R sin(x − α). | 10 | 0 |  | R = √(64 + 36) = 10.
+NUM1#maths-u06-20-q1@1: Find R when 8 sin x − 6 cos x is written as R sin(x − α). | 10 | 0 |  | R = √(a^{2} + b^{2}) = √(64 + 36) = √100 = 10; the sign of the cosine term only affects α.
 M1#maths-u06-20-q2@1: What is the minimum value of 7 sin x + 24 cos x? | −25 | −31 | −7 | 0 | −24 | R = √(49 + 576) = 25, so the minimum is −25.
 M2#maths-u06-20-q3@2: What is the period of x = 3 cos(4t + 1)? | π/2 | 4 | 2π | π/4 | 8π | For cos(ωt + φ) the period is 2π/ω; here ω = 4, so the period is π/2.
+NUM3@2: Write 2 sin x + 2√3 cos x as R sin(x + α). For what smallest positive x, in degrees, is the expression at its maximum? | 30 | 0 | ° | R = √(4 + 12) = 4 and tan α = 2√3/2 = √3, so α = 60°; the maximum 4 is at x + 60° = 90°, so x = 30°.
+SA3@1,2: Express 5 cos x − 12 sin x as R cos(x + α) with 0° < α < 90°, state its maximum and where it occurs in 0° ≤ x < 360°, and solve 5 cos x − 12 sin x = 6.5 in that range. | R cos(x + α) = R cos α cos x − R sin α sin x, so R cos α = 5 and R sin α = 12. Then R = √(25 + 144) = 13 and tan α = 12/5, α ≈ 67.4°. The maximum 13 occurs when x + 67.4° = 360°, so x ≈ 292.6°. For the equation, cos(x + 67.4°) = 0.5, with x + 67.4° between 67.4° and 427.4°: x + 67.4° = 300° or 420°, so x ≈ 232.6° or x ≈ 352.6°. | matches coefficients ; R = 13 ; α ≈ 67.4° ; maximum 13 at x ≈ 292.6° ; solutions 232.6° and 352.6°
 
 ## Trigonometric Identities
 S: Trigonometric identities are equations true for every angle. They simplify expressions, prove results and turn hard equations into solvable ones, and they're essential for integration.

@@ -1,0 +1,120 @@
+{
+ "task": "physics-u01-u05",
+ "on": "2026-11-20",
+ "files": [
+  "kit/courses/physics/notes/u01.js",
+  "kit/courses/physics/notes/u05.js"
+ ],
+ "lessons": [
+  {
+   "course": "physics",
+   "lesson": "Angular displacement, velocity and acceleration",
+   "unit": "u05",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite (where not a starting point), level, key terms, summary, evidence status and confirmed sources",
+    "added key point and common mistake where missing",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added questions after the existing ones to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer",
+    "added a paragraph showing why finite rotations do not commute"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Angular and linear motion relationships",
+   "unit": "u05",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite (where not a starting point), level, key terms, summary, evidence status and confirmed sources",
+    "added key point and common mistake where missing",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added questions after the existing ones to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer",
+    "noted that centripetal acceleration exists even at constant ω"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Torque and moment of force",
+   "unit": "u05",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite (where not a starting point), level, key terms, summary, evidence status and confirmed sources",
+    "added key point and common mistake where missing",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added questions after the existing ones to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer",
+    "added why a force through the axis gives no torque; distinguished torque (vector) from work (scalar)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Moment of inertia",
+   "unit": "u05",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite (where not a starting point), level, key terms, summary, evidence status and confirmed sources",
+    "added key point and common mistake where missing",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added questions after the existing ones to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Rotational kinetic energy",
+   "unit": "u05",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite (where not a starting point), level, key terms, summary, evidence status and confirmed sources",
+    "added key point and common mistake where missing",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added questions after the existing ones to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Angular momentum",
+   "unit": "u05",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite (where not a starting point), level, key terms, summary, evidence status and confirmed sources",
+    "added key point and common mistake where missing",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added questions after the existing ones to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Conservation of angular momentum",
+   "unit": "u05",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite (where not a starting point), level, key terms, summary, evidence status and confirmed sources",
+    "added key point and common mistake where missing",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added questions after the existing ones to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer",
+    "added rotational-collision energy loss and an astronomy section (disc formation, Kepler's areal velocity L/2m)"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "Neutron-star spin-up estimate assumes the same shape (I ∝ MR²) before and after collapse; stated this assumption."
+    }
+   ]
+  }
+ ],
+ "notes": [
+  "Physics questions have no ids: all new questions were appended after the existing ones; existing questions keep their slots, types and levels."
+ ]
+}

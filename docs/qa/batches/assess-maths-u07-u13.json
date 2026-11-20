@@ -858,6 +858,257 @@
    "course": "maths",
    "action": "enhanced",
    "findings": []
+  },
+  {
+   "lesson": "u13-37",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added NUM3 (interaction slope) and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-38",
+   "changes": [
+    "LV Year 2 · Application; EV",
+    "added NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-39",
+   "changes": [
+    "LV Year 2 · Application; EV",
+    "added NUM3 (offset) and SA3 (overdispersion) questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-40",
+   "changes": [
+    "LV Year 2 · Application; EV",
+    "added NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-41",
+   "changes": [
+    "LV Year 3 · Application; EV",
+    "added SA3 (breakdown point) question"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-42",
+   "changes": [
+    "LV Year 3 · Application; EV",
+    "added NUM2 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-43",
+   "changes": [
+    "LV Year 3 · Application; EV",
+    "added NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-44",
+   "changes": [
+    "LV Year 3 · Application; EV",
+    "added NUM2 and SA2 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-45",
+   "changes": [
+    "LV Year 2 · Application; EV",
+    "lengthened the explanation of NUM1#maths-u13-45-q1",
+    "added NUM2 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-46",
+   "changes": [
+    "LV Year 3 · Application; EV",
+    "lengthened the explanation of NUM1#maths-u13-46-q1",
+    "added NUM3 (partial pooling) and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-47",
+   "changes": [
+    "LV Year 3 · Application; EV",
+    "stated the GAM model equation and defined edf (the key point used edf without defining it)",
+    "added NUM2 and SA3 questions"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "The lesson referred to f_{j} and edf without defining them; added the model g(μ) = β₀ + Σ f_{j}(x_{j}) and a definition of edf."
+    }
+   ],
+   "course": "maths",
+   "action": "enhanced"
+  },
+  {
+   "lesson": "u13-48",
+   "changes": [
+    "LV Year 2 · Application; EV",
+    "added NUM2 (BIC) and SA2 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-49",
+   "changes": [
+    "LV Year 2 · Application; EV",
+    "added NUM3 (correlated Mahalanobis) and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-50",
+   "changes": [
+    "LV Year 2 · Application; EV",
+    "lengthened the explanation of NUM1#maths-u13-50-q1",
+    "added NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-51",
+   "changes": [
+    "LV Year 3 · Application; EV",
+    "added NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-52",
+   "changes": [
+    "LV Year 3 · Application; EV",
+    "added NUM3 (boundary with unequal priors) and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-53",
+   "changes": [
+    "LV Year 2 · Application; EV",
+    "added NUM2 and SA2 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-54",
+   "changes": [
+    "LV Year 1 · Application; EV (contested: frequentist versus Bayesian)",
+    "lengthened the explanation of NUM1#maths-u13-54-q1",
+    "added NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-55",
+   "changes": [
+    "LV Year 2 · Application; EV",
+    "added NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-56",
+   "changes": [
+    "LV Year 2 · Application; EV",
+    "added NUM2 and SA2 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-57",
+   "changes": [
+    "LV Year 3 · Application; EV",
+    "added NUM3 and SA3 (prior sensitivity) questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-58",
+   "changes": [
+    "LV Year 2 · Application; EV",
+    "added NUM2 and SA2 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-59",
+   "changes": [
+    "LV Year 2 · Application; EV",
+    "lengthened the explanation of NUM1#maths-u13-59-q1",
+    "added NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-60",
+   "changes": [
+    "LV Year 2 · Application; EV",
+    "added NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
   }
  ],
  "notes": [
