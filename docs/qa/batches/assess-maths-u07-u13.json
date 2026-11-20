@@ -1,0 +1,86 @@
+{
+ "task": "assess-maths-u07-u13",
+ "on": "2026-11-20",
+ "files": [
+  "kit/courses/maths/notes/u07.js",
+  "kit/courses/maths/notes/u13.js"
+ ],
+ "lessons": [
+  {
+   "lesson": "u07-01",
+   "changes": [
+    "LV GCSE and A level · Fluency; EV",
+    "added common mistake on splitting multi-term denominators",
+    "added NUM2, M3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-02",
+   "changes": [
+    "LV A level · Fluency; EV",
+    "added paragraph linking the ring argument to the fundamental theorem",
+    "added NUM2, M3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-03",
+   "changes": [
+    "LV A level · Application; EV",
+    "added SA3 question (conjugate limit)"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-04",
+   "changes": [
+    "LV A level · Application; EV",
+    "added paragraph on continuity on an interval",
+    "added NUM2, NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-05",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added NUM3 and SA2 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-06",
+   "changes": [
+    "LV GCSE and A level · Fluency; EV",
+    "added NUM2 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-07",
+   "changes": [
+    "LV A level · Fluency; EV",
+    "added NUM2 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  }
+ ],
+ "notes": [
+  "NUM answers must use an ASCII hyphen-minus for negatives: Number() rejects the Unicode minus sign, and the question then silently fails to parse."
+ ]
+}

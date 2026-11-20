@@ -2,102 +2,190 @@
 export default `
 ## Position, displacement, distance and time
 S: Position locates an object relative to an origin; displacement is the change in position (a vector); distance is the total path length travelled (a scalar). Kinematics describes motion in these terms before asking what causes it.
+O: Distinguish distance from displacement and calculate each
+O: Use a sign convention to describe one-dimensional positions and displacements
+O: Interpret the gradient of a position–time graph
+PRE: Scalar and vector quantities
+LV: GCSE and A level · Foundation
 H: Definitions
 E: Δr = r_{2} − r_{1} :: displacement: depends only on start and end points
-- Distance ≥ |displacement|; equal only for straight-line motion without reversing.
+- Distance ≥ size of displacement; they are equal only for straight-line motion without reversing.
 - Time is measured from a chosen zero; intervals Δt are what physics uses.
 - A sign convention (e.g. right and up positive) turns 1D vectors into signed numbers.
 H: Graphs
 - Position–time graph: gradient = velocity.
 - A horizontal line means at rest; a curve means changing velocity.
+P: In two dimensions, combine perpendicular displacements with Pythagoras and give a direction (an angle or a bearing); distance just adds the lengths of each leg.
 X: A runner completes one lap of a 400 m track in 80 s.
 > Distance = 400 m; displacement = 0 (same start and end)
 > Average speed = 5 m s^{-1}; average velocity = 0
+K: Displacement is a vector from start to finish; distance is the scalar length of the actual path.
 !: Displacement can be zero or negative even when an object has moved a long way.
+T: Displacement | The change in position, a vector from the start point to the end point
+T: Distance | The total length of the path travelled, a scalar
+SUM: Displacement depends only on start and end; distance counts the whole path.
+SUM: With a sign convention, 1D displacements are signed numbers; the gradient of x–t is velocity.
+EV: established | Displacement and distance are standard kinematic definitions
+SRC: OpenStax, University Physics Volume 1, section 3.1 "Position, Displacement, and Average Velocity" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/3-1-position-displacement-and-average-velocity
+SRC: AQA, A-level Physics specification (7408), section 3.4.1.3, Motion along a straight line | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: What is the difference between distance and displacement? | Distance is total path length (scalar); displacement is the straight-line change in position with direction (vector).
 Q: What does the gradient of a position–time graph give? | Velocity.
-M1: A car drives 3 km east then 4 km north. What is the size of its displacement? | 5 km | 7 km | 1 km | 12 km | √(3^{2} + 4^{2}) = 5 km, at 53° north of east; the distance travelled is 7 km.
-M2: An object moves from x = +4 m to x = −2 m. Its displacement is: | −6 m | 6 m | 2 m | −2 m | Δx = −2 − 4.
+M1@1: A car drives 3 km east then 4 km north. What is the size of its displacement? | 5 km | 7 km | 1 km | 12 km | √(3^{2} + 4^{2}) = 5 km, at 53° north of east; the distance travelled is 7 km.
+M2@2: An object moves from x = +4 m to x = −2 m. Its displacement is: | −6 m | 6 m | 2 m | −2 m | Δx = x_{final} − x_{initial} = −2 − 4 = −6 m: 6 m in the negative direction.
+NUM1@1: A ball is thrown 5.0 m straight up and caught at the same height. What is the distance it travels, in metres? | 10 | 0 | m | It goes up 5.0 m and down 5.0 m: distance 10 m, while the displacement is zero.
+M3@2,3: An x–t graph rises steeply, flattens, then falls back to x = 0. Which describes the motion? | Moves away fast, stops, returns to the start | Speeds up, then slows down, never reversing | Moves at constant velocity throughout | Falls freely, then bounces to rest | Positive gradient means moving away, zero gradient means at rest, negative gradient means returning.
+SA1@1,2: A dog runs 30 m east, then 50 m west. Find the distance and displacement, and explain why they differ. | Distance = 30 + 50 = 80 m. Taking east as positive, displacement = +30 − 50 = −20 m, i.e. 20 m west. Distance counts every metre of the path and is a scalar; displacement only compares start and end positions and has a direction, so reversing makes them differ. | Distance 80 m ; Displacement 20 m west with sign convention ; Scalar versus vector ; Reversal explains the difference
 
 ## Speed and velocity
 S: Speed is the rate of change of distance; velocity is the rate of change of displacement, with direction. Instantaneous velocity is the derivative of position, and it is always tangent to the path.
+O: Calculate average speed and average velocity for a journey
+O: Define instantaneous velocity as the gradient of a position–time graph
+O: Explain why constant speed need not mean constant velocity
+PRE: Position, displacement, distance and time
+LV: GCSE and A level · Foundation
 H: Definitions
 E: v̄ = Δr/Δt :: average velocity
 E: v = dr/dt :: instantaneous velocity
-E: speed = |v|
-- Average speed = total distance / total time; not the magnitude of average velocity in general.
+E: speed = magnitude of v
+- Average speed = total distance / total time; it is not in general the size of the average velocity.
 - Velocity changes if either speed or direction changes: uniform circular motion has constant speed but changing velocity.
 H: Average speeds over legs
-P: For equal distances at speeds v_{1} and v_{2}, the average is the harmonic mean 2v_{1}v_{2}/(v_{1} + v_{2}), not the arithmetic mean; you spend longer at the lower speed.
+P: For equal distances at speeds v_{1} and v_{2}, the average is the harmonic mean 2v_{1}v_{2}/(v_{1} + v_{2}), not the arithmetic mean: you spend longer at the lower speed.
 X: A cyclist rides 10 km at 20 km h^{-1} and returns at 30 km h^{-1}. Average speed?
 > Times: 0.5 h and 0.333 h; total 0.833 h for 20 km
 > Average speed = 24 km h^{-1}, not 25
+K: Instantaneous velocity is the gradient of the tangent to the x–t graph at that moment.
 !: Speedometers show speed, not velocity: a car going round a bend at a steady 50 km h^{-1} is accelerating.
+T: Velocity | The rate of change of displacement, a vector
+T: Speed | The rate of change of distance, a scalar
+T: Instantaneous velocity | The velocity at one moment, v = dr/dt
+SUM: Average velocity = displacement/time; average speed = distance/time.
+SUM: Instantaneous velocity is the tangent gradient on an x–t graph; for equal distances average speed is the harmonic mean.
+EV: established | These are the standard definitions of speed and velocity
+SRC: OpenStax, University Physics Volume 1, section 3.2 "Instantaneous Velocity and Speed" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/3-2-instantaneous-velocity-and-speed
+SRC: AQA, A-level Physics specification (7408), section 3.4.1.3, Motion along a straight line | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: How is instantaneous velocity defined? | v = dr/dt, the derivative of position with respect to time.
 Q: Can an object have constant speed but changing velocity? | Yes: in circular motion the direction changes.
-M1: Which is a vector? | Velocity | Speed | Distance | Time | Velocity has direction.
-M2: The average speed for equal distances at 40 and 60 km h^{-1} is: | 48 km h^{-1} | 50 km h^{-1} | 45 km h^{-1} | 52 km h^{-1} | 2 × 40 × 60/100 = 48.
+M1@3: Which of these motion quantities is a vector? | Velocity | Speed | Distance | Time | Velocity has both magnitude and direction; speed, distance and time are scalars.
+M2@1: The average speed for equal distances at 40 and 60 km h^{-1} is: | 48 km h^{-1} | 50 km h^{-1} | 45 km h^{-1} | 52 km h^{-1} | Harmonic mean: 2 × 40 × 60/(40 + 60) = 4800/100 = 48 km h^{-1}.
+NUM2@2: Position is x = 3t^{2} m. What is the instantaneous velocity at t = 2.0 s, in m s^{-1}? | 12 | 0.1 | m s^{-1} | v = dx/dt = 6t = 6 × 2.0 = 12 m s^{-1}.
+M3@1: A walker goes 400 m north in 200 s, then 300 m east in 300 s. What is her average velocity? | 1.0 m s^{-1} | 1.4 m s^{-1} | 0.7 m s^{-1} | 2.0 m s^{-1} | Displacement = √(400^{2} + 300^{2}) = 500 m in 500 s, so 1.0 m s^{-1}; her average speed is 700/500 = 1.4 m s^{-1}.
+SA2@1,3: Explain why a car travelling round a roundabout at a steady 30 km h^{-1} has a changing velocity, and how its average speed and average velocity differ after one full lap. | Velocity is a vector; going round, its direction changes continuously even though its size stays 30 km h^{-1}, so velocity changes and the car accelerates towards the centre. After a full lap the displacement is zero, so average velocity is zero, but the average speed is still 30 km h^{-1} because distance is the full circumference. | Velocity is a vector ; Direction changes so velocity changes ; Average velocity zero after a lap ; Average speed equals 30 km per hour
 
 ## Acceleration
 S: Acceleration is the rate of change of velocity. It can change an object's speed, its direction, or both, and by Newton's second law it is always caused by a net force.
+O: Calculate acceleration from changes in velocity, including vector changes
+O: Interpret gradients and areas of velocity–time graphs
+O: Distinguish tangential and centripetal components of acceleration
+PRE: Speed and velocity
+LV: GCSE and A level · Foundation
 H: Definitions
 E: a = dv/dt = d^{2}r/dt^{2}
 - Velocity–time graph: gradient = acceleration; area = displacement.
 - In 2D, acceleration has tangential (changes speed) and normal (changes direction) components: a_{t} = dv/dt, a_{n} = v^{2}/r.
-- Deceleration usually means acceleration opposite to velocity, not negative acceleration.
+- Deceleration usually means acceleration opposite to velocity, not simply negative acceleration.
 H: Typical sizes
-- g = 9.81 m s^{-2}; sports car 0–100 km h^{-1} in 3 s ≈ 9 m s^{-2}; fighter pilots tolerate ~9g briefly; car crash ~50–100g.
+- g = 9.81 m s^{-2}; sports car 0–100 km h^{-1} in 3 s ≈ 9 m s^{-2}; fighter pilots tolerate about 9g briefly; car crashes reach about 50–100g.
 X: A car slows from 30 m s^{-1} to rest in 5.0 s. Find its acceleration.
 > a = (0 − 30)/5.0 = −6.0 m s^{-2}
 > Magnitude 6.0 m s^{-2}, opposite to the motion (about 0.6g)
+K: Acceleration measures how fast velocity changes, in size or direction.
 !: Zero velocity doesn't mean zero acceleration: a ball at the top of its flight has v = 0 but a = g downward.
+T: Acceleration | The rate of change of velocity, a vector, in m s^{-2}
+T: Deceleration | Acceleration directed opposite to the velocity, so the speed falls
+SUM: a = Δv/Δt; on a v–t graph the gradient is a and the area is displacement.
+SUM: Tangential acceleration changes speed; centripetal acceleration v^{2}/r changes direction.
+EV: established | Acceleration as the derivative of velocity is the standard kinematic definition
+SRC: OpenStax, University Physics Volume 1, section 3.3 "Average and Instantaneous Acceleration" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/3-3-average-and-instantaneous-acceleration
+SRC: AQA, A-level Physics specification (7408), section 3.4.1.3, Motion along a straight line | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: What does the area under a velocity–time graph represent? | Displacement.
 Q: What are the tangential and normal components of acceleration? | Tangential dv/dt changes speed; normal v^{2}/r changes direction.
-M1: At the top of a vertical throw, the ball's acceleration is: | 9.8 m s^{-2} downward | Zero | 9.8 m s^{-2} upward | Undefined | Gravity still acts.
-M2: An object's velocity changes from (3, 0) to (0, 4) m s^{-1} in 2 s. Average acceleration magnitude? | 2.5 m s^{-2} | 0.5 m s^{-2} | 3.5 m s^{-2} | 1 m s^{-2} | Δv = (−3, 4), |Δv| = 5, divided by 2.
+M1@1: At the top of a vertical throw, the ball's acceleration is: | 9.8 m s^{-2} downward | Zero | 9.8 m s^{-2} upward | Undefined | Gravity still acts at the top, so the acceleration is g downward even though v = 0 for an instant.
+M2@1,3: An object's velocity changes from (3, 0) to (0, 4) m s^{-1} in 2 s. Average acceleration magnitude? | 2.5 m s^{-2} | 0.5 m s^{-2} | 3.5 m s^{-2} | 1 m s^{-2} | Δv = (−3, 4) m s^{-1}, of size 5 m s^{-1}; dividing by 2 s gives 2.5 m s^{-2}.
+NUM1@1: A train speeds up from 12 m s^{-1} to 20 m s^{-1} in 16 s. What is its acceleration, in m s^{-2}? | 0.5 | 0.01 | m s^{-2} | a = Δv/Δt = (20 − 12)/16 = 0.50 m s^{-2}.
+M3@2: A v–t graph is a straight line from 10 m s^{-1} down to −10 m s^{-1} over 4 s. What is the displacement over the 4 s? | 0 m | 20 m | 40 m | −20 m | The positive area (first 2 s) and negative area (last 2 s) are equal, so displacement is zero though the distance is 20 m.
+SA2@1,2: A ball is thrown straight up and caught. Sketch in words the velocity–time graph and explain what its gradient and area show. | Taking up as positive, v starts positive and falls in a straight line through zero at the top to an equal negative value when caught. The constant negative gradient is the acceleration, −g, throughout, including at the top. The area above the axis equals the area below, so the total displacement is zero, while their sum is the distance travelled. | Straight line from +u to −u ; Gradient is −g throughout ; Zero velocity at top but a not zero ; Areas cancel for displacement
 
 ## Motion in one dimension
 S: Straight-line motion is described by signed position, velocity and acceleration along one axis. With calculus you can get any of x(t), v(t), a(t) from another, and graphs make the relationships visible.
+O: Differentiate and integrate to move between x(t), v(t) and a(t)
+O: Find when an object reverses and calculate distance as well as displacement
+O: Use a = v dv/dx when acceleration depends on position
+PRE: Differentiation
+LV: Year 1 · Application
 H: Calculus links
 E: v = dx/dt, a = dv/dt; x = x_{0} + ∫v dt, v = v_{0} + ∫a dt
 E: a = v dv/dx :: useful when acceleration depends on position
 H: Reading graphs
 - x–t: gradient = v. v–t: gradient = a, area = Δx. a–t: area = Δv.
-- Where v–t crosses zero, the object reverses.
+- Where the v–t graph crosses zero, the object reverses.
 - Displacement is the signed area; distance is the total unsigned area.
 X: v(t) = 6 − 2t m s^{-1} from t = 0 to 5 s. Find the displacement and distance.
 > x(t) = 6t − t^{2}; displacement at 5 s = 30 − 25 = 5 m
 > Reverses at t = 3 s (x = 9 m), then back to 5 m: distance = 9 + 4 = 13 m
+K: Differentiate to go from x to v to a; integrate, adding the initial value, to go back.
 !: Area under the time axis on a v–t graph is negative displacement; add magnitudes only when you want distance.
+P: When acceleration isn't constant (springs, drag), the suvat equations fail and these calculus relations are the tools to use.
+T: Kinematics | The description of motion without reference to its causes
+T: Signed area | Area counted positive above the time axis and negative below it
+SUM: v = dx/dt and a = dv/dt; integrate with initial conditions to go back.
+SUM: Split the motion where v = 0 to find distance; a = v dv/dx handles position-dependent forces.
+EV: established | The calculus relations between position, velocity and acceleration are exact
+SRC: OpenStax, University Physics Volume 1, section 3.6 "Finding Velocity and Displacement from Acceleration" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/3-6-finding-velocity-and-displacement-from-acceleration
+SRC: OpenStax, College Physics 2e, section 2.8 "Graphical Analysis of One-Dimensional Motion" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/2-8-graphical-analysis-of-one-dimensional-motion
 Q: When is a = v dv/dx useful? | When acceleration is given as a function of position rather than time.
 Q: How do you find when an object reverses direction? | Find when v = 0 (and changes sign).
-M1: The area under an acceleration–time graph gives: | Change in velocity | Displacement | Speed | Jerk | ∫a dt = Δv.
-M2: x = t^{3} − 3t. When is the object momentarily at rest? | t = 1 s | t = 0 | t = 3 s | t = √3 s | v = 3t^{2} − 3 = 0.
+M1@1: The area under an acceleration–time graph gives: | Change in velocity | Displacement | Speed | Jerk | Integrating a over time gives Δv, the change in velocity over the interval.
+M2@2: x = t^{3} − 3t. When is the object momentarily at rest? | t = 1 s | t = 0 | t = 3 s | t = √3 s | v = dx/dt = 3t^{2} − 3, which is zero at t = 1 s (for t > 0).
+NUM2@1: An object starts from rest at the origin with a = 6t m s^{-2}. What is its position at t = 2.0 s, in metres? | 8 | 0.1 | m | v = 3t^{2} and x = t^{3}, so x(2) = 8 m.
+M3@2: v(t) = 4 − 2t m s^{-1} for 0–4 s. What distance is travelled? | 8 m | 0 m | 4 m | 16 m | It moves +4 m until reversing at t = 2 s, then −4 m back: displacement 0, distance 8 m.
+SA3@1,3: A particle's acceleration is a = −kx (k > 0). Use a = v dv/dx to find how its speed depends on position if it has speed v_{0} at x = 0. | Write v dv/dx = −kx and integrate: ∫v dv = −k∫x dx, giving ½v^{2} = ½v_{0}^{2} − ½kx^{2}, so v = √(v_{0}^{2} − kx^{2}). The speed is greatest at x = 0 and the particle stops at x = ±v_{0}/√k, which is simple harmonic motion. | Uses v dv/dx form ; Separates and integrates ; Correct result for v ; Interprets turning points
 
 ## Motion in two and three dimensions
 S: In two and three dimensions position, velocity and acceleration are vectors. The key insight is that perpendicular components evolve independently, so a 2D problem is two 1D problems linked by time.
+O: Differentiate a position vector to find velocity and acceleration
+O: Treat perpendicular components of motion independently, linked by time
+O: Describe the direction of acceleration on a curved path
+PRE: Motion in one dimension
+LV: A level · Application
 H: Vector kinematics
 E: r(t) = x(t)i + y(t)j + z(t)k; v = dr/dt; a = dv/dt
 - Each component obeys its own 1D equations; they share the same t.
 - Velocity is tangent to the trajectory; acceleration points towards the inside of a curve (plus any speeding up).
 H: Examples
 - Projectile: constant a = (0, −g); a parabola.
-- Uniform circular motion: |v| constant, a = v^{2}/r towards the centre.
-- Helical motion of a charge in a magnetic field: circular in the plane ⊥ B, uniform along B.
+- Uniform circular motion: constant speed, a = v^{2}/r towards the centre.
+- Helical motion of a charge in a magnetic field: circular in the plane perpendicular to B, uniform along B.
 X: r(t) = (3t, 4t − 5t^{2}) m. Find v and a at t = 1 s.
 > v = (3, 4 − 10t) = (3, −6) m s^{-1}, speed 6.7 m s^{-1}
 > a = (0, −10) m s^{-2}: constant, like a projectile
+K: Split vectors into perpendicular components, solve each as a 1D problem, and link them through the shared time.
 !: You can't add speeds in different directions as numbers; add velocity vectors component by component.
 P: **Investigate with the lab.** Watch the velocity arrows during a drag-free flight: the horizontal part stays constant while the vertical part changes steadily. Then compare a throw on Earth with the same throw on the Moon.
 IX: projectile
+T: Position vector | A vector r from the origin to the object's position
+T: Component | The part of a vector along one chosen axis
+SUM: Differentiate r(t) component by component to get v and a.
+SUM: Perpendicular components are independent, sharing only time; acceleration on a curve points inwards.
+EV: established | Independence of perpendicular components follows from vector form of Newton's laws
+SRC: OpenStax, University Physics Volume 1, section 4.1 "Displacement and Velocity Vectors" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/4-1-displacement-and-velocity-vectors
+SRC: OpenStax, University Physics Volume 1, section 4.2 "Acceleration Vector" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/4-2-acceleration-vector
 Q: Why can perpendicular components of motion be treated separately? | They obey independent equations of motion linked only by time.
 Q: Which way does acceleration point on a curved path at constant speed? | Towards the centre of curvature, perpendicular to the velocity.
-M1: r(t) = (2t^{2}, 3t). What is the acceleration? | (4, 0) | (4t, 3) | (2, 3) | (0, 0) | Differentiate twice.
-M2: A particle moves in a circle at constant speed. Which is true? | Velocity changes, speed doesn't | Velocity is constant | Acceleration is zero | Acceleration is tangential | The direction keeps changing.
-M2: In drag-free projectile motion, which part of the velocity stays constant? | The horizontal component | The vertical component | The speed | Both components | Gravity acts only vertically, so with no air resistance nothing changes the horizontal velocity.
+M1@1: r(t) = (2t^{2}, 3t). What is the acceleration? | (4, 0) | (4t, 3) | (2, 3) | (0, 0) | Differentiate twice: v = (4t, 3), then a = (4, 0).
+M2@3: A particle moves in a circle at constant speed. Which is true? | Velocity changes, speed doesn't | Velocity is constant | Acceleration is zero | Acceleration is tangential | The direction of velocity keeps changing, so there is an acceleration towards the centre, while the speed stays fixed.
+M2@2: In drag-free projectile motion, which part of the velocity stays constant? | The horizontal component | The vertical component | The speed | Both components | Gravity acts only vertically, so with no air resistance nothing changes the horizontal velocity.
+NUM2@1: r(t) = (2t, t^{2}) m. What is the speed at t = 2.0 s, in m s^{-1}? | 4.5 | 0.1 | m s^{-1} | v = (2, 2t) = (2, 4) m s^{-1}; speed = √(4 + 16) = 4.47 m s^{-1}.
+M3@2,3: A boat moves north at 3 m s^{-1} while accelerating east at 1 m s^{-2} from zero east speed. What is its speed after 4 s? | 5 m s^{-1} | 7 m s^{-1} | 3 m s^{-1} | 4 m s^{-1} | The components are independent: north 3, east 1 × 4 = 4 m s^{-1}; speed = √(9 + 16) = 5 m s^{-1}.
+SA2@2,3: Explain, using components, why a ball rolled off a table and a ball dropped at the same moment from the same height land together. | Vertically both start with zero velocity and have the same acceleration g, so their vertical positions are identical at every instant and they reach the floor at the same time. The rolled ball's horizontal velocity is constant and independent of the vertical motion; it only changes where the ball lands, not when. | Vertical motions identical ; Same initial vertical velocity and acceleration ; Horizontal motion independent ; Affects landing point not time
 
 ## Kinematic equations
 S: For constant acceleration, five quantities (s, u, v, a, t) are linked by the suvat equations. Each equation leaves out one quantity, so pick the one missing the variable you neither know nor need.
+O: Select and apply the appropriate constant-acceleration equation
+O: Derive the suvat equations from constant acceleration
+O: Recognise when the equations don't apply
+PRE: Acceleration
+LV: GCSE and A level · Application
 H: The equations
 E: v = u + at :: no s
 E: s = ut + ½at^{2} :: no v
@@ -113,17 +201,33 @@ X: A car at 25 m s^{-1} brakes at 5.0 m s^{-2}. Find the stopping distance.
 > s = 625/10 = 62.5 m
 H: Derivation
 P: From a = constant, integrate: v = u + at; integrate again: s = ut + ½at^{2}. Eliminate t to get v^{2} = u^{2} + 2as. The "no a" equation says the average velocity is the mean of u and v, true only when a is constant.
+K: List what you know and what you want; the equation missing the remaining quantity solves the problem in one step.
 !: Don't use suvat for non-constant acceleration (drag, springs): use calculus or energy instead.
 P: **Investigate with the lab.** With air resistance off, launch horizontally from a height and time the flight. Check the time against h = ½gt² for the vertical motion alone.
 IX: projectile
+T: Uniform acceleration | Acceleration that is constant in size and direction
+T: suvat equations | The five equations linking s, u, v, a and t for uniform acceleration
+SUM: Five equations, each missing one of s, u, v, a, t; valid only for constant acceleration.
+SUM: Choose a positive direction, sign every vector, and interpret both roots of a quadratic.
+EV: established | The suvat equations follow exactly from constant acceleration
+SRC: OpenStax, University Physics Volume 1, section 3.4 "Motion with Constant Acceleration" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/3-4-motion-with-constant-acceleration
+SRC: AQA, A-level Physics specification (7408), section 3.4.1.3, Motion along a straight line | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: Which suvat equation has no time? | v^{2} = u^{2} + 2as.
 Q: When are the suvat equations valid? | Only for constant acceleration.
-M1: A stone dropped from rest falls for 3.0 s (g = 9.8). How far? | 44 m | 29 m | 88 m | 15 m | s = ½ × 9.8 × 9.
-M2: Stopping distance at speed u with fixed deceleration scales as: | u^{2} | u | √u | u^{3} | s = u^{2}/(2a): double speed, four times the distance.
-M2: A ball is thrown horizontally from a 20 m cliff (g = 9.8 m/s²). Roughly how long is it in the air? | About 2.0 s | About 4.1 s | About 1.0 s | It depends on the throwing speed | Vertical motion is independent: t = √(2h/g) = √(40/9.8) ≈ 2.0 s.
+M1@1: A stone dropped from rest falls for 3.0 s (g = 9.8). How far? | 44 m | 29 m | 88 m | 15 m | s = ut + ½at^{2} = 0 + ½ × 9.8 × 3.0^{2} = 44.1 m.
+M2@1: Stopping distance at speed u with fixed deceleration scales as: | u^{2} | u | √u | u^{3} | From v^{2} = u^{2} + 2as with v = 0, s = u^{2}/(2a): double the speed, four times the distance.
+M2@1: A ball is thrown horizontally from a 20 m cliff (g = 9.8 m/s²). Roughly how long is it in the air? | About 2.0 s | About 4.1 s | About 1.0 s | It depends on the throwing speed | Vertical motion is independent: t = √(2h/g) = √(40/9.8) ≈ 2.0 s.
+NUM2@1: A ball is thrown upwards at 15 m s^{-1} (g = 9.8 m s^{-2}). How high does it rise, in metres? | 11.5 | 0.1 | m | At the top v = 0: s = u^{2}/(2g) = 225/19.6 = 11.5 m.
+M3@1,3: A ball thrown up at 10 m s^{-1} from a 15 m high roof (g = 10). When does it hit the ground? | 3 s | 1 s | 2 s | 1.5 s | Up positive: −15 = 10t − 5t^{2}, so t^{2} − 2t − 3 = 0, t = 3 s (the root t = −1 s is unphysical).
+SA2@2,3: Derive v^{2} = u^{2} + 2as from v = u + at and s = ½(u + v)t, and state when it may be used. | From v = u + at, t = (v − u)/a. Substitute into s = ½(u + v)t: s = (u + v)(v − u)/(2a) = (v^{2} − u^{2})/(2a), so v^{2} = u^{2} + 2as. It applies only when the acceleration is constant, in straight-line motion with consistent signs. | Eliminate t ; Correct algebra ; Final result ; Condition of constant acceleration
 
 ## Projectile motion
 S: A projectile moves under gravity alone: constant velocity horizontally and constant acceleration g vertically. The path is a parabola, and range, height and time of flight all follow from separating the components.
+O: Resolve a launch velocity and solve horizontal and vertical motion separately
+O: Calculate time of flight, maximum height and range
+O: Describe qualitatively how air resistance changes a trajectory
+PRE: Kinematic equations
+LV: GCSE and A level · Application
 H: Results (launch speed u at angle θ, level ground, no drag)
 E: x = u cos θ t; y = u sin θ t − ½gt^{2}
 E: T = 2u sin θ/g :: time of flight
@@ -133,38 +237,65 @@ E: y = x tan θ − gx^{2}/(2u^{2}cos^{2}θ) :: the parabolic path
 - Complementary angles (30° and 60°) give the same range.
 - At the top, v is horizontal: u cos θ.
 H: With air resistance
-P: Drag shortens range and height, makes the descent steeper than the ascent, and lowers the optimum angle below 45° (around 30–40° for a golf ball, but backspin lift changes things).
+P: Drag shortens range and height, makes the descent steeper than the ascent, and lowers the best launch angle below 45°. Spinning balls also feel lift: backspin keeps a golf ball up, so drives are launched at much lower angles.
 X: A ball is kicked at 20 m s^{-1} at 30° (g = 9.8). Find its range and maximum height.
 > R = 400 × sin 60°/9.8 = 35 m
 > H = 400 × 0.25/19.6 = 5.1 m
+K: Horizontally, constant velocity; vertically, constant acceleration g; time links the two.
 !: The horizontal velocity doesn't change during flight (no drag); only the vertical component is affected by g.
 P: **Investigate with the lab.** Turn air resistance off and launch at several angles at the same speed. Find the angle that gives the greatest range, then check that 30° and 60° land in the same place.
 IX: projectile
+T: Projectile | An object moving under gravity alone after launch
+T: Range | The horizontal distance travelled before returning to the launch height
+T: Time of flight | The time a projectile spends in the air
+SUM: Resolve u into u cos θ and u sin θ; use suvat vertically and distance = speed × time horizontally.
+SUM: On level ground with no drag the range peaks at 45°; drag lowers range, height and the best angle.
+EV: established | Drag-free projectile motion is an exact consequence of uniform gravity
+SRC: OpenStax, University Physics Volume 1, section 4.3 "Projectile Motion" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/4-3-projectile-motion
+SRC: AQA, A-level Physics specification (7408), section 3.4.1.4, Projectile motion | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: What angle gives maximum range on level ground (no drag)? | 45°.
 Q: What is the velocity at the top of the trajectory? | Horizontal, equal to u cos θ.
-M1: A ball rolls off a 1.25 m high table at 2.0 m s^{-1} (g = 10). How far from the table does it land? | 1.0 m | 0.5 m | 2.0 m | 2.5 m | Fall time 0.5 s; 2.0 × 0.5 = 1.0 m.
-M2: Two projectiles are launched at the same speed at 20° and 70°. Which lands farther? | Same range | 20° | 70° | Depends on mass | sin 40° = sin 140°.
-M3: A monkey drops from a branch at the instant a dart is fired straight at it. The dart: | Hits the monkey (both fall the same distance in the same time) | Passes above | Passes below | Hits only if fired at 45° | Gravity deflects both equally.
-M2: Without air resistance, which pair of launch angles gives the same range at the same speed? | 30° and 60° | 30° and 45° | 20° and 40° | 45° and 90° | Range depends on sin 2θ, and sin 60° = sin 120°, so complementary angles give equal ranges.
+M1@1: A ball rolls off a 1.25 m high table at 2.0 m s^{-1} (g = 10). How far from the table does it land? | 1.0 m | 0.5 m | 2.0 m | 2.5 m | Fall time t = √(2h/g) = √0.25 = 0.5 s; horizontal distance = 2.0 × 0.5 = 1.0 m.
+M2@2: Two projectiles are launched at the same speed at 20° and 70°. Which lands farther? | Same range | 20° | 70° | Depends on mass | R ∝ sin 2θ and sin 40° = sin 140°, so complementary angles give equal ranges.
+M3@1: A monkey drops from a branch at the instant a dart is fired straight at it. The dart: | Hits the monkey (both fall the same distance in the same time) | Passes above the monkey's head | Passes below the monkey's feet | Hits only if it is fired at 45° | Gravity makes both fall the same distance below their straight-line paths in the same time, so the aim stays true.
+M2@2: Without air resistance, which pair of launch angles gives the same range at the same speed? | 30° and 60° | 30° and 45° | 20° and 40° | 45° and 90° | Range depends on sin 2θ, and sin 60° = sin 120°, so complementary angles give equal ranges.
+NUM2@2: A ball is launched at 25 m s^{-1} at 53° (sin 53° = 0.80, g = 10). What is its time of flight on level ground, in seconds? | 4 | 0.05 | s | Vertical component 25 × 0.80 = 20 m s^{-1}; T = 2u sin θ/g = 40/10 = 4.0 s.
+SA2@1,3: A shot-putter wants maximum range. Explain why the ideal angle in drag-free theory is 45° and give reasons why the best real angle is lower. | With no drag and launch and landing at the same height, R = u^{2}sin 2θ/g, which is greatest when 2θ = 90°, so θ = 45°. In reality the shot is released above the ground, which favours a flatter launch; athletes can also throw faster at lower angles; and drag slightly reduces long, high flights. So the best angle is below 45°, typically under 40°. | Range formula and maximum at 45 degrees ; Release height lowers optimum ; Speed depends on angle for a person ; Drag reduces range of high flights
 
 ## Relative motion
-S: Velocities are measured relative to a frame. The velocity of A relative to C equals A relative to B plus B relative to C, the Galilean addition rule, valid when speeds are much less than c.
+S: Velocities are measured relative to a frame. The velocity of A relative to C equals A relative to B plus B relative to C: the Galilean addition rule, valid when speeds are much less than c.
+O: Apply Galilean velocity addition in one and two dimensions
+O: Solve river-crossing and crosswind problems
+O: State the limits of Galilean addition
+PRE: Motion in two and three dimensions
+LV: A level · Application
 H: The rule
 E: v_{AC} = v_{AB} + v_{BC}; v_{AB} = −v_{BA}
 - Relative velocity of A seen from B: v_{A} − v_{B}.
 - Accelerations are the same in all frames moving at constant velocity relative to each other.
 H: Classic problems
 - **River crossing**: aim upstream so the resultant is straight across: sin θ = v_{river}/v_{boat}.
-- **Aircraft in wind**: heading vs track.
+- **Aircraft in wind**: heading versus track.
 - **Closest approach**: work in the frame of one object; the other moves in a straight line.
 X: A swimmer (1.5 m s^{-1} in still water) crosses a 60 m river flowing at 0.9 m s^{-1}. Aiming straight across, where does she land, and how long does it take?
 > Time = 60/1.5 = 40 s (the current doesn't change the across-component)
 > Drift = 0.9 × 40 = 36 m downstream
+K: Velocities add as vectors: velocity relative to the ground = velocity relative to the medium + velocity of the medium.
 !: Galilean addition fails near c: no object can be seen moving faster than light. Use relativistic velocity addition there.
+T: Relative velocity | The velocity of one object as measured by an observer moving with another
+T: Galilean velocity addition | The rule v_{AC} = v_{AB} + v_{BC}, valid at speeds much less than c
+SUM: Relative velocities add as vectors; v_{AB} = v_{A} − v_{B}.
+SUM: Aim straight across for the shortest time, upstream for the shortest path.
+EV: established | Galilean addition is accurate at everyday speeds; relativity corrects it near c
+SRC: OpenStax, University Physics Volume 1, section 4.5 "Relative Motion in One and Two Dimensions" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/4-5-relative-motion-in-one-and-two-dimensions
+SRC: OpenStax, College Physics 2e, section 3.5 "Addition of Velocities" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/3-5-addition-of-velocities
 Q: State the Galilean velocity addition rule. | v_{AC} = v_{AB} + v_{BC}.
 Q: To cross a river in the shortest time, which way should you aim? | Straight across (perpendicular to the bank).
-M1: Two cars approach each other at 20 and 30 m s^{-1}. Their relative speed is: | 50 m s^{-1} | 10 m s^{-1} | 25 m s^{-1} | 600 m s^{-1} | Opposite directions add.
-M2: A plane flies at 200 m s^{-1} relative to air in a 50 m s^{-1} crosswind. Its ground speed (heading perpendicular to wind) is: | 206 m s^{-1} | 250 m s^{-1} | 150 m s^{-1} | 200 m s^{-1} | √(200^{2} + 50^{2}).
+M1@1: Two cars approach each other at 20 and 30 m s^{-1}. Their relative speed is: | 50 m s^{-1} | 10 m s^{-1} | 25 m s^{-1} | 600 m s^{-1} | Moving in opposite directions, v_{A} − v_{B} = 20 − (−30) = 50 m s^{-1}.
+M2@2: A plane flies at 200 m s^{-1} relative to air in a 50 m s^{-1} crosswind. Its ground speed (heading perpendicular to wind) is: | 206 m s^{-1} | 250 m s^{-1} | 150 m s^{-1} | 200 m s^{-1} | The velocities are perpendicular: √(200^{2} + 50^{2}) = 206 m s^{-1}.
+NUM3@2: A boat moves at 2.0 m s^{-1} through water in a river flowing at 1.0 m s^{-1}. At what angle upstream from straight across must it aim to land directly opposite, in degrees? | 30 | 1 | ° | sin θ = v_{river}/v_{boat} = 1.0/2.0 = 0.5, so θ = 30° upstream.
+M3@1,3: Rain falls vertically at 8 m s^{-1}. A cyclist rides at 6 m s^{-1}. What speed does the rain have relative to her? | 10 m s^{-1} | 14 m s^{-1} | 2 m s^{-1} | 8 m s^{-1} | v_{rain,cyclist} = v_{rain} − v_{cyclist}: perpendicular components 8 and 6, so √(64 + 36) = 10 m s^{-1}, slanting towards her.
+SA2@1,2: A pilot wants to fly due north at an airspeed of 100 m s^{-1} with a 30 m s^{-1} wind blowing from the west. Explain how she must head and find her ground speed. | Ground velocity = air velocity + wind velocity. The wind pushes east, so she must head west of north so that her westward component cancels the 30 m s^{-1} wind: sin θ = 30/100, θ ≈ 17° west of north. Her northward ground speed is then √(100^{2} − 30^{2}) ≈ 95 m s^{-1}. | Vector addition of air and wind velocities ; Head into the wind, west of north ; Angle from sine ratio ; Ground speed about 95 m per second
 
 ## Reference frames
 S: A reference frame is a viewpoint with its own clocks and rulers from which motion is measured. Choosing a convenient frame (the centre of mass, a moving train, a rotating Earth) can make a problem far simpler, as long as you account correctly for the frame's own motion.

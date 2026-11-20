@@ -12,20 +12,22 @@
 //   checked   { conceptVersion, lessonHash, on, by }: by is null until a named person has confirmed the binding
 //
 // Current hashes: node scripts/curriculum.mjs hash <course>/<lesson>.
+// 2026-11-20: Biology u02-17 to u02-23 re-recorded after the assessment upgrade (questions, LV, EV, SRC only; the
+// teaching text was checked unchanged), so the bindings still hold.
 
 const B = (course, lesson, concept, role, band, lessonHash, extra = {}) =>
   ({ course, lesson, concept, role, band, ...extra, checked: { conceptVersion: 1, lessonHash, on: "2026-11-19", by: null } });
 
 export const LESSON_MAPS = [
   // SciGradify Biology, School 2: membranes and transport. Pitched at A level and first-year undergraduate.
-  B("biology", "u02-17", "BIO-CELL-MEMBRANE-001", "teaches", "post-16", "b45cb985322f"),
-  B("biology", "u02-18", "BIO-CELL-MEMBRANE-001", "teaches", "post-16", "3a0007ef3c76"),
-  B("biology", "u02-19", "BIO-CELL-DIFFUSION-001", "applies", "post-16", "86f4c6940796"),
-  B("biology", "u02-19", "BIO-CELL-ACTIVE-TRANSPORT-001", "applies", "post-16", "86f4c6940796"),
-  B("biology", "u02-20", "BIO-CELL-DIFFUSION-001", "teaches", "post-16", "738810f1da73"),
-  B("biology", "u02-21", "BIO-CELL-OSMOSIS-001", "teaches", "post-16", "5d37fba1dbda"),
-  B("biology", "u02-22", "BIO-CELL-DIFFUSION-001", "teaches", "post-16", "927724283c1b"),
-  B("biology", "u02-23", "BIO-CELL-ACTIVE-TRANSPORT-001", "teaches", "post-16", "c9bfa9944675"),
+  B("biology", "u02-17", "BIO-CELL-MEMBRANE-001", "teaches", "post-16", "63f2fcd7a94d"),
+  B("biology", "u02-18", "BIO-CELL-MEMBRANE-001", "teaches", "post-16", "8a87609db147"),
+  B("biology", "u02-19", "BIO-CELL-DIFFUSION-001", "applies", "post-16", "c7e91536e571"),
+  B("biology", "u02-19", "BIO-CELL-ACTIVE-TRANSPORT-001", "applies", "post-16", "c7e91536e571"),
+  B("biology", "u02-20", "BIO-CELL-DIFFUSION-001", "teaches", "post-16", "6cc1bc3607ac"),
+  B("biology", "u02-21", "BIO-CELL-OSMOSIS-001", "teaches", "post-16", "caca6b0002ea"),
+  B("biology", "u02-22", "BIO-CELL-DIFFUSION-001", "teaches", "post-16", "bf55e00c3cfc"),
+  B("biology", "u02-23", "BIO-CELL-ACTIVE-TRANSPORT-001", "teaches", "post-16", "629a7003204d"),
   // YouthGradify GCSE Core, School 4 (The Human Body): diffusion applied at the alveoli
   B("gcse", "u04-34", "BIO-CELL-DIFFUSION-001", "applies", "upper-secondary", "39a15204e421"),
   // School 10 (Cells and Bioenergetics), written on 2026-11-19 for AQA 8464 section 4.1.3

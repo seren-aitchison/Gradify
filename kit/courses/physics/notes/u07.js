@@ -2,26 +2,49 @@
 export default `
 ## Newton's law of universal gravitation
 S: Every pair of masses attracts with a force proportional to the product of their masses and inversely proportional to the square of their separation. Newton's law unified falling apples and orbiting moons under one rule.
+O: State and use Newton's law of gravitation, F = Gm_{1}m_{2}/r^{2}
+O: Apply the inverse-square dependence to changes in separation
+O: Explain how Newton's Moon test linked falling bodies to orbits
+PRE: Newton's laws of motion
+PRE: Centripetal acceleration and force
+LV: A level · Foundation
 H: The law
 E: F = Gm_{1}m_{2}/r^{2}, G = 6.674 × 10^{-11} N m^{2} kg^{-2}
 - Acts along the line joining the centres; always attractive.
 - Spherically symmetric bodies act as if all their mass were at the centre (Newton's shell theorem).
 - Gravity is the weakest fundamental force (~10^{-36} of electromagnetism between two protons) but dominates at large scales because mass has only one sign.
 H: Newton's Moon test
-P: The Moon is 60 Earth radii away, so gravity there should be g/3600 = 2.7 × 10^{-3} m s^{-2}. The Moon's centripetal acceleration (4π^{2}r/T^{2}, with T = 27.3 days) is exactly that, showing the same force governs both.
+P: The Moon is 60 Earth radii away, so gravity there should be g/3600 = 2.7 × 10^{-3} m s^{-2}. The Moon's centripetal acceleration (4π^{2}r/T^{2}, with T = 27.3 days) is very nearly that, showing the same force governs both.
 X: Find the force between two 1000 kg cars 2 m apart.
 > F = 6.67 × 10^{-11} × 10^{6}/4 = 1.7 × 10^{-5} N: utterly negligible
+K: Gravity is universal and inverse-square: double the separation and the force falls to a quarter; double either mass and it doubles.
 !: r is measured between centres, not between surfaces.
 P: **Investigate with the lab.** Launch the planet from different distances and watch its acceleration change. Check that doubling the distance makes the pull four times weaker.
 IX: orbits
+T: Gravitational constant | G = 6.674 × 10^{-11} N m^{2} kg^{-2}, the constant in Newton's law of gravitation
+T: Inverse-square law | A law in which a quantity falls as 1/r^{2} with distance from its source
+T: Shell theorem | A spherically symmetric body attracts outside masses as if its mass were at its centre, and a hollow shell exerts no net force inside
+SUM: F = Gm_{1}m_{2}/r^{2}, attractive, between centres.
+SUM: The same inverse-square force explains falling apples and the Moon's orbit.
+EV: established | Newton's inverse-square law of gravitation describes gravitational forces accurately wherever fields are weak and speeds are much less than c
+SRC: OpenStax, University Physics Volume 1, section 13.1 "Newton's Law of Universal Gravitation" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/13-1-newtons-law-of-universal-gravitation
+SRC: AQA, A-level Physics specification (7408), section 3.7.2.1 | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: State Newton's law of gravitation. | F = Gm_{1}m_{2}/r^{2}, attractive, along the line between centres.
 Q: What does the shell theorem say? | A spherically symmetric mass attracts outside bodies as if all its mass were at its centre (and exerts no net force inside a hollow shell).
-M1: If the distance between two masses triples, the force: | Falls to 1/9 | Falls to 1/3 | Triples | Is unchanged | Inverse square.
-M2: Who first measured G in the laboratory? | Cavendish (1798) | Newton | Kepler | Einstein | Using a torsion balance.
-M2: The distance between two masses is doubled. What happens to the gravitational force? | It falls to a quarter | It halves | It doubles | It stays the same | Newton's law is an inverse square law: F ∝ 1/r².
+M1@2: If the distance between two masses triples, the force: | Falls to 1/9 | Falls to 1/3 | Triples | Is unchanged | F ∝ 1/r^{2}, so tripling r divides the force by 3^{2} = 9; 1/3 would be an inverse (not inverse-square) law.
+M2@1: Who first measured G in the laboratory? | Cavendish (1798) | Newton (1687) | Kepler (1609) | Einstein (1915) | Cavendish's torsion balance measured the tiny attraction between lead spheres; Newton never knew G's value, only GM for the Sun and Earth.
+M2@2: The distance between two masses is doubled. What happens to the gravitational force? | It falls to a quarter | It halves | It doubles | It stays the same | Newton's law is an inverse square law: F ∝ 1/r², so doubling r quarters the force.
+NUM2@1: Find the gravitational force between the Earth (6.0 × 10^{24} kg) and the Moon (7.35 × 10^{22} kg), 3.84 × 10^{8} m apart, in units of 10^{20} N. | 2.0 | 3% | × 10^{20} N | F = 6.67 × 10^{-11} × 6.0 × 10^{24} × 7.35 × 10^{22}/(3.84 × 10^{8})^{2} = 2.94 × 10^{37}/1.47 × 10^{17} = 2.0 × 10^{20} N.
+M3@3: The Moon is about 60 Earth radii from Earth's centre. What centripetal acceleration should it have if gravity is inverse-square? | About 2.7 × 10^{-3} m s^{-2} | About 0.16 m s^{-2} | About 9.8 m s^{-2} | About 1.6 m s^{-2} | g falls by 60^{2} = 3600, so 9.8/3600 = 2.7 × 10^{-3} m s^{-2}, matching 4π^{2}r/T^{2} for the Moon; 1.6 m s^{-2} is the Moon's own surface gravity.
+SA2@1,3: Explain how Newton used the Moon's orbit to test the idea that the force making an apple fall also holds the Moon in orbit. | If gravity falls as 1/r^{2}, then at the Moon, about 60 Earth radii away, the acceleration due to Earth's gravity should be g/60^{2} = 9.8/3600 ≈ 2.7 × 10^{-3} m s^{-2}. The Moon's actual centripetal acceleration can be found from its orbital radius and period, a = 4π^{2}r/T^{2}, which gives the same value. The agreement shows one inverse-square force explains both. | Inverse square predicts g/3600 at 60 Earth radii ; Centripetal acceleration from 4π^{2}r/T^{2} ; The two values agree ; One force explains falling and orbiting
 
 ## Gravitational fields
 S: A gravitational field is the region around a mass where other masses feel a force. Field lines show its direction; their density shows its strength. It replaces "action at a distance" with a local property of space.
+O: Draw and interpret field-line patterns for radial and uniform fields
+O: Describe how g varies inside and outside a uniform sphere
+O: Use Gauss's law for gravity with spherical symmetry
+PRE: Newton's law of universal gravitation
+LV: A level · Application
 H: Field patterns
 - Point or spherical mass: radial lines pointing inward; field ∝ 1/r^{2}.
 - Near the Earth's surface: nearly uniform parallel lines (g ≈ constant).
@@ -32,14 +55,31 @@ E: ∯g·dA = −4πGM_{enc}
 P: The same law as electrostatics with a sign change (masses attract). It gives the shell theorem in one line and generalises to ∇·g = −4πGρ.
 X: Find g at half the Earth's radius (uniform density assumed).
 > g = g_{0} × (r/R) = 9.8/2 = 4.9 N kg^{-1}
+K: Outside a spherical mass only the total mass matters; inside, only the mass closer to the centre than you pulls you overall.
 !: The real Earth isn't uniform: its dense core makes g increase slightly with depth at first, peaking at the core–mantle boundary.
+T: Gravitational field | A region in which a mass experiences a force because of other masses
+T: Field line | A line showing the direction of the force on a test mass; closer lines mean a stronger field
+T: Uniform field | A field with the same strength and direction everywhere, shown by parallel, evenly spaced lines
+SUM: Radial fields fall as 1/r^{2} outside a sphere; inside a uniform sphere g ∝ r.
+SUM: Gauss's law, flux of g = −4πGM_{enc}, gives these results directly.
+EV: established | Outside a spherically symmetric mass the gravitational field is GM/r^{2}, and inside a uniform sphere it grows linearly from zero at the centre
+SRC: OpenStax, University Physics Volume 1, section 13.2 "Gravitation Near Earth's Surface" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/13-2-gravitation-near-earths-surface
+SRC: AQA, A-level Physics specification (7408), section 3.7.2.2 | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: How does g vary inside a uniform solid sphere? | Proportionally to distance from the centre.
 Q: What is the gravitational field inside a hollow spherical shell? | Zero.
-M1: Gravitational field lines near Earth's surface are: | Nearly parallel and evenly spaced | Circular | Radiating outward | Absent | A small region of a radial field looks uniform.
-M2: Gauss's law for gravity has a minus sign because: | Gravity attracts, so the field points inward | G is negative | Mass is negative | It's a convention only | Field lines end on masses.
+M1@1: Gravitational field lines near Earth's surface are: | Nearly parallel and evenly spaced | Circular loops around the Earth | Radiating outward from the surface | Absent at ground level | Over a small region a radial field looks uniform, so the lines are drawn parallel, evenly spaced and pointing down.
+M2@3: Gauss's law for gravity has a minus sign because: | Gravity attracts, so the field points inward | G is a negative constant | Mass can be negative | It's an arbitrary convention only | Field lines point towards masses, so the outward flux through a surface around a mass is negative: the minus sign expresses attraction.
+NUM2@2: Assuming uniform density, what is g at a depth of 1600 km inside the Earth (R = 6400 km, g_{0} = 9.8 N kg^{-1})? | 7.35 | 2% | N kg^{-1} | Inside a uniform sphere g ∝ r, and r = 4800 km = 0.75R, so g = 0.75 × 9.8 = 7.35 N kg^{-1}.
+M3@2: A hollow spherical shell of mass M and radius R. What is the field at r = R/2 and at r = 2R? | 0 and GM/(4R^{2}) | GM/R^{2} and GM/(4R^{2}) | 4GM/R^{2} and GM/(4R^{2}) | 0 and 0 | Inside a shell the pulls from all parts cancel, so g = 0; outside it acts as a point mass: GM/(2R)^{2} = GM/(4R^{2}).
+SA2@1,2: Sketch in words a graph of g against distance r from the centre of a uniform planet of radius R, from r = 0 to r = 3R, and explain its shape. | g rises linearly from zero at the centre to a maximum GM/R^{2} at the surface, because inside only the mass within radius r (∝ r^{3}) pulls, giving g ∝ r^{3}/r^{2} = r. Outside, all the mass acts as if at the centre, so g = GM/r^{2} falls as an inverse square: to a quarter of the surface value at 2R and a ninth at 3R. | Zero at the centre ; Linear rise to GM/R^{2} at the surface ; Enclosed mass ∝ r^{3} explains the inside ; Inverse-square fall outside: g/4 at 2R, g/9 at 3R
 
 ## Gravitational field strength
 S: Gravitational field strength g is the force per unit mass at a point. Near the Earth's surface it's about 9.81 N kg^{-1}, numerically equal to the free-fall acceleration in m s^{-2}.
+O: Define g as force per unit mass and calculate it for a planet
+O: Calculate how g changes with height above a planet
+O: Explain weightlessness in orbit
+PRE: Gravitational fields
+LV: A level · Foundation
 H: Definition
 E: g = F/m = GM/r^{2}
 - Units N kg^{-1} ≡ m s^{-2}.
@@ -52,55 +92,108 @@ H: Gravimetry
 P: Sensitive gravimeters (precision ~10^{-9}g) map density variations underground: oil fields, ore bodies, cavities, magma chambers. The GRACE satellites mapped changes in ice and groundwater from tiny changes in Earth's field.
 X: Find g on Mars (M = 6.42 × 10^{23} kg, R = 3.39 × 10^{6} m).
 > g = 6.67 × 10^{-11} × 6.42 × 10^{23}/(3.39 × 10^{6})^{2} = 3.7 N kg^{-1}
+K: g is a property of the place, not of the object: every mass at that point feels F = mg and falls with acceleration g.
 !: Weightlessness in orbit doesn't mean zero g; it means everything around you falls with the same acceleration.
+T: Gravitational field strength | The gravitational force per unit mass at a point, g = F/m, in N kg^{-1}
+T: Weightlessness | The sensation when a body and its surroundings fall freely together, so no support force acts
+SUM: g = GM/r^{2}; surface g ∝ M/R^{2}.
+SUM: g falls with height as 1/(R + h)^{2}; orbiting astronauts are in free fall, not out of gravity.
+EV: established | The gravitational field strength at distance r from a spherical mass M is GM/r^{2}
+SRC: OpenStax, University Physics Volume 1, section 13.2 "Gravitation Near Earth's Surface" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/13-2-gravitation-near-earths-surface
+SRC: AQA, A-level Physics specification (7408), section 3.7.2.2 | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: Why are astronauts on the ISS weightless? | They and the station are in free fall together; g there is still about 90% of surface g.
 Q: Where on Earth's surface is g largest? | At the poles.
-M1: At a height equal to Earth's radius, g is: | g_{0}/4 | g_{0}/2 | g_{0} | 0 | Distance from centre doubles.
-M2: A planet has twice Earth's mass and twice its radius. Surface g is: | g_{0}/2 | 2g_{0} | g_{0} | g_{0}/4 | g ∝ M/R^{2} = 2/4.
+M1@2: At a height equal to Earth's radius, g is: | g_{0}/4 | g_{0}/2 | g_{0} | 0 | At height R the distance from the centre is 2R, and g ∝ 1/r^{2}, so g = g_{0}/4.
+M2@1: A planet has twice Earth's mass and twice its radius. Surface g is: | g_{0}/2 | 2g_{0} | g_{0} | g_{0}/4 | g ∝ M/R^{2}, so the factor is 2/2^{2} = 1/2: doubling the radius outweighs doubling the mass.
+NUM2@2: What is g at the altitude of a geostationary satellite, r = 4.22 × 10^{7} m from Earth's centre (GM = 3.99 × 10^{14} m^{3} s^{-2})? | 0.224 | 3% | N kg^{-1} | g = GM/r^{2} = 3.99 × 10^{14}/(1.78 × 10^{15}) = 0.224 N kg^{-1}, about 2% of surface g.
+TF1@3: Astronauts on the International Space Station float because there is almost no gravity at its altitude. | false | At 400 km g is still about 8.7 N kg^{-1}, roughly 90% of its surface value; they float because they and the station are falling freely together.
+M3@1: A spring balance reads the weight of a 1.000 kg mass as 9.83 N at the North Pole. At the equator it would read about: | 9.78 N | 9.83 N | 9.81 N exactly | 9.92 N | The equator is further from the centre (Earth bulges) and part of gravity supplies the centripetal force of Earth's rotation, so the reading drops to about 9.78 N.
+SA2@2,3: Explain why an astronaut in the International Space Station feels weightless even though g there is about 8.7 N kg^{-1}. | The astronaut's weight, mg, is still about 90% of its surface value, and it is the only force acting. Both the astronaut and the station are in orbit, falling towards Earth with the same acceleration g while moving sideways fast enough to keep missing it. Because they fall together, the floor exerts no support (normal) force on the astronaut, and it is that support force we feel as weight. | g at the ISS is still about 90% of surface g ; Astronaut and station fall with the same acceleration ; No normal (support) force acts ; The felt weight is the support force, so it is zero
 
 ## Gravitational potential and potential energy
 S: Gravitational potential is the work done per unit mass to bring a mass from infinity to a point. It's negative everywhere (zero at infinity), and differences in potential give the energy needed to move between places.
+O: Define gravitational potential and explain why it is negative
+O: Calculate the work done moving a mass between two points, ΔW = mΔV
+O: Relate field strength to the potential gradient, g = −dV/dr
+PRE: Gravitational field strength
+PRE: Work and energy
+LV: A level · Application
 H: Definitions
 E: V = −GM/r :: potential (J kg^{-1})
 E: U = −GMm/r :: potential energy of mass m
 E: g = −dV/dr :: field is minus the potential gradient
+E: ΔW = mΔV :: work done moving mass m through a potential difference ΔV
 - Equipotentials are spheres around a planet; no work is done moving along one.
+- ΔV is also the area under a graph of g against r.
 - Near the surface, ΔU = mgh is a good approximation to the difference of −GMm/r values.
 H: Potential wells
 P: A planet sits in a potential well. To escape you must climb out: at Earth's surface V = −62.5 MJ kg^{-1}. Low orbit is about half way out in energy terms; that's why "getting to orbit is halfway to anywhere".
 X: How much energy lifts a 1000 kg satellite from the surface to 400 km?
 > ΔU = GMm(1/R − 1/(R + h)) = 6.67 × 10^{-11} × 6 × 10^{24} × 1000 × (1/6.37 × 10^{6} − 1/6.77 × 10^{6})
 > ≈ 3.7 × 10^{9} J (mgh with g = 9.8 would give 3.9 × 10^{9} J)
+K: Only differences in potential matter physically; choosing V = 0 at infinity makes every bound point negative.
 !: Potential is negative and becomes less negative (increases) with height. "Higher potential" means closer to zero.
+T: Gravitational potential | The work done per unit mass in bringing a small mass from infinity to a point, V = −GM/r
+T: Equipotential | A surface on which the potential is the same everywhere, so no work is done moving along it
+SUM: V = −GM/r, zero at infinity; the work to move m is mΔV.
+SUM: g = −dV/dr, and equipotentials are perpendicular to field lines.
+EV: established | The gravitational potential outside a spherical mass is −GM/r with the zero taken at infinity
+SRC: OpenStax, University Physics Volume 1, section 13.3 "Gravitational Potential Energy and Total Energy" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/13-3-gravitational-potential-energy-and-total-energy
+SRC: AQA, A-level Physics specification (7408), section 3.7.2.3 | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: Why is gravitational potential negative? | Zero is defined at infinity, and gravity is attractive, so work must be done to move away.
 Q: How is field related to potential? | g = −dV/dr: the field points down the potential gradient.
-M1: Earth's surface potential is about −62.5 MJ kg^{-1}. The energy to fully escape for 1 kg is: | 62.5 MJ | 9.8 J | 0 | 125 MJ | You must raise V to zero.
-M2: Moving a mass along an equipotential requires: | No work | Positive work | Negative work | Infinite work | ΔV = 0.
+M1@2: Earth's surface potential is about −62.5 MJ kg^{-1}. The energy to fully escape for 1 kg is: | 62.5 MJ | 9.8 J | 0 | 125 MJ | To escape you must raise V from −62.5 MJ kg^{-1} to zero at infinity, so 1 kg needs 62.5 MJ.
+M2@2: Moving a mass along an equipotential requires: | No work | Positive work | Negative work | Infinite work | Work done is mΔV, and ΔV = 0 along an equipotential, so no work is needed (ignoring friction).
+NUM2@2: How much work is needed to move a 500 kg probe from Earth's surface (V = −62.5 MJ kg^{-1}) to a point where V = −15.6 MJ kg^{-1}? In GJ. | 23.5 | 2% | GJ | ΔW = mΔV = 500 × (−15.6 − (−62.5)) × 10^{6} = 500 × 46.9 × 10^{6} = 2.35 × 10^{10} J = 23.5 GJ.
+M3@3: The potential at distance r from a planet is −40 MJ kg^{-1}. What is it at 2r? | −20 MJ kg^{-1} | −10 MJ kg^{-1} | −80 MJ kg^{-1} | −160 MJ kg^{-1} | V ∝ −1/r, so doubling r halves the magnitude: −20 MJ kg^{-1}. −10 would be the inverse-square law that applies to g, not V.
+SA3@1,3: Explain the significance of the negative sign in V = −GM/r, and how g can be found from a graph of V against r. | V is defined as the work done per unit mass bringing a mass from infinity, where V = 0. Gravity is attractive, so the field does work on the mass as it comes in and an external agent does negative work: V is negative everywhere at finite r and rises towards zero as r increases. The field strength is minus the gradient, g = −dV/dr, so the steepness of the V–r graph at a point gives the size of g, which is greatest close to the planet where the curve is steepest. | Zero of potential at infinity ; Attraction makes V negative, rising towards zero with r ; g = −dV/dr ; Gradient of the V–r graph gives g
 
 ## Escape velocity
 S: Escape velocity is the minimum launch speed for an unpowered object to escape a body's gravity completely. It's set by making kinetic energy equal to the depth of the potential well.
+O: Derive v_{esc} = √(2GM/R) from energy conservation
+O: Calculate escape velocities and compare them with orbital speeds
+O: Explain why some bodies keep atmospheres and others lose them
+PRE: Gravitational potential and potential energy
+LV: A level · Application
 H: Derivation
 E: ½mv_{esc}^{2} = GMm/R ⇒ v_{esc} = √(2GM/R) = √(2gR)
 - Independent of the projectile's mass and launch direction (ignoring the atmosphere and obstacles).
 - Earth: 11.2 km s^{-1}; Moon: 2.4; Mars: 5.0; Jupiter: 59.5; Sun's surface: 618 km s^{-1}.
 H: Atmospheres
-P: A gas molecule's thermal speed ~√(3kT/m). If a significant fraction of molecules exceed ~1/6 of v_{esc}, the gas leaks away over billions of years. That's why the Moon has no atmosphere and Earth has lost most of its hydrogen and helium.
+P: A gas molecule's thermal speed ~√(3kT/m). If the typical thermal speed of a gas is more than about one sixth of v_{esc}, enough molecules in the fast tail escape for the gas to leak away over billions of years. That's why the Moon has no atmosphere and Earth has lost most of its hydrogen and helium.
 H: Black holes
 E: R_{s} = 2GM/c^{2} :: radius where v_{esc} would equal c (exact result in general relativity)
 - Earth compressed to ~9 mm; the Sun to ~3 km.
 X: Find the escape velocity from the Moon (M = 7.35 × 10^{22} kg, R = 1.74 × 10^{6} m).
 > v = √(2 × 6.67 × 10^{-11} × 7.35 × 10^{22}/1.74 × 10^{6}) = 2.4 km s^{-1}
+K: Escape needs total energy of at least zero: kinetic energy equal to the depth of the potential well, GMm/R.
 !: Rockets don't need to reach escape velocity at launch; with continuous thrust they can climb slowly. v_{esc} applies to an unpowered launch.
 P: **Investigate with the lab.** Increase the launch speed until the planet never comes back. Compare that speed with the circular orbital speed at the same distance: it is √2 times larger.
 IX: orbits
+T: Escape velocity | The minimum speed an unpowered object needs to reach infinity, v_{esc} = √(2GM/r)
+T: Schwarzschild radius | R_{s} = 2GM/c^{2}, the radius of the event horizon of a non-rotating black hole
+SUM: v_{esc} = √(2GM/R), independent of the projectile's mass and direction.
+SUM: v_{esc} = √2 × circular orbital speed; low v_{esc} relative to thermal speeds means a planet loses its atmosphere.
+EV: established | An unpowered projectile escapes a spherical body if its kinetic energy at least equals GMm/R, giving v_{esc} = √(2GM/R)
+SRC: OpenStax, University Physics Volume 1, section 13.3 "Gravitational Potential Energy and Total Energy" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/13-3-gravitational-potential-energy-and-total-energy
+SRC: AQA, A-level Physics specification (7408), section 3.7.2.4 | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: What is the escape velocity from Earth's surface? | About 11.2 km s^{-1}.
 Q: What is the Schwarzschild radius? | R_{s} = 2GM/c^{2}, the radius at which escape speed equals c.
-M1: Escape velocity depends on the projectile's: | Nothing about the projectile | Mass | Shape | Charge | v_{esc} = √(2GM/R).
-M2: A planet has the same density as Earth but twice its radius. Its escape velocity: | Doubles | Is the same | Halves | Quadruples | M ∝ R^{3}, so √(M/R) ∝ R.
-M2: How does escape velocity compare with circular orbital speed at the same distance? | It is √2 times larger | It is the same | It is twice as large | It is half as large | v_esc = √(2GM/r) and v_orb = √(GM/r), so v_esc = √2 × v_orb.
+M1@1: Escape velocity depends on the projectile's: | Nothing about the projectile | Mass, because heavier objects need more speed | Shape, because of air resistance in space | Charge, because of the planet's magnetic field | Mass cancels in ½mv^{2} = GMm/R, so v_{esc} = √(2GM/R) depends only on the planet and the launch radius.
+M2@2: A planet has the same density as Earth but twice its radius. Its escape velocity: | Doubles | Is the same | Halves | Quadruples | With fixed density M ∝ R^{3}, so v_{esc} ∝ √(M/R) ∝ √(R^{2}) = R: twice the radius gives twice the escape speed.
+M2@2: How does escape velocity compare with circular orbital speed at the same distance? | It is √2 times larger | It is the same | It is twice as large | It is half as large | v_esc = √(2GM/r) and v_orb = √(GM/r), so v_esc = √2 × v_orb.
+NUM2@2: Find the escape velocity from Mars (M = 6.42 × 10^{23} kg, R = 3.39 × 10^{6} m) in km s^{-1}. | 5.03 | 2% | km s^{-1} | v = √(2GM/R) = √(2 × 6.67 × 10^{-11} × 6.42 × 10^{23}/3.39 × 10^{6}) = √(2.53 × 10^{7}) = 5.0 km s^{-1}.
+M3@3: Why has the Moon lost any atmosphere it had, while Earth kept nitrogen and oxygen? | Its escape speed is low compared with gas molecules' thermal speeds | It is too far from the Sun to hold gas | Its weak magnetic field lets the gas be pulled away by Earth | Its surface is too cold for any gas to exist | v_{esc} on the Moon is 2.4 km s^{-1}, so a significant fraction of molecules in the fast tail of the thermal distribution escape over geological time; Earth's 11.2 km s^{-1} retains heavier gases.
+SA3@1: Derive the escape velocity from a planet of mass M and radius R, stating the assumptions. | Assume no air resistance, no thrust after launch and a non-rotating planet. The object must reach infinity with at least zero kinetic energy, where its potential energy is zero, so its total energy at launch must be at least zero: ½mv^{2} − GMm/R ≥ 0. The minimum speed is when this equals zero, giving v_{esc} = √(2GM/R) = √(2gR), independent of m. | Assumptions: no drag, no thrust, unpowered ; Total energy at least zero to reach infinity ; ½mv^{2} = GMm/R ; v_{esc} = √(2GM/R), independent of m
 
 ## Orbital velocity
 S: A satellite in a circular orbit falls continuously around the planet: gravity supplies exactly the centripetal force needed at its speed. Orbital speed falls with distance, and is 1/√2 of the escape speed at the same radius.
+O: Derive and use v = √(GM/r) and T = 2π√(r^{3}/GM)
+O: Calculate the radius of a geostationary orbit
+O: Explain why higher orbits are slower
+PRE: Centripetal acceleration and force
+PRE: Gravitational field strength
+LV: A level · Application
 H: Circular orbits
 E: GMm/r^{2} = mv^{2}/r ⇒ v = √(GM/r)
 E: T = 2π√(r^{3}/GM)
@@ -112,14 +205,25 @@ P: Fire a cannonball horizontally from a mountain faster and faster: it lands fa
 X: Find the altitude of a geostationary satellite.
 > r^{3} = GMT^{2}/4π^{2} = 3.99 × 10^{14} × (86 164)^{2}/39.5 = 7.5 × 10^{22} m^{3}
 > r = 4.22 × 10^{7} m; altitude ≈ 35 800 km
+K: In a circular orbit gravity is the centripetal force; the satellite's mass cancels, so every object at the same radius orbits at the same speed.
 !: Higher orbits are slower, though they have more total energy. To catch up with a spacecraft ahead of you in orbit, you first slow down to drop lower.
 P: **Investigate with the lab.** Put the planet in a circular orbit (eccentricity below 0.02). Then start it further out and find the circular speed again: it is lower.
 IX: orbits
+T: Orbital speed | The speed of a body in a circular orbit, v = √(GM/r)
+T: Geostationary orbit | An equatorial circular orbit with a period of one sidereal day, so the satellite stays above one point
+SUM: v = √(GM/r) and T^{2} = 4π^{2}r^{3}/GM; neither depends on the satellite's mass.
+SUM: Higher orbits are slower and longer; a geostationary orbit is at r = 42 200 km.
+EV: established | A body in a circular orbit of radius r about a mass M moves at v = √(GM/r) whatever its own mass
+SRC: OpenStax, University Physics Volume 1, section 13.4 "Satellite Orbits and Energy" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/13-4-satellite-orbits-and-energy
+SRC: AQA, A-level Physics specification (7408), section 3.7.2.4 | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: What is the orbital speed of a circular orbit of radius r? | v = √(GM/r).
 Q: How do orbital and escape speeds at the same radius compare? | v_{esc} = √2 v_{orb}.
-M1: A satellite moves to an orbit 4 times larger in radius. Its speed: | Halves | Doubles | Quarters | Stays the same | v ∝ 1/√r.
-M2: The period of a geostationary orbit is: | One sidereal day (23 h 56 min) | 24 h exactly | 12 h | 90 min | It matches Earth's rotation relative to the stars.
-M2: How does circular orbital speed change with distance from the star? | It decreases as 1/√r | It increases as √r | It is the same at every distance | It increases as r² | v = √(GM/r), so more distant orbits are slower.
+M1@3: A satellite moves to an orbit 4 times larger in radius. Its speed: | Halves | Doubles | Quarters | Stays the same | v = √(GM/r) ∝ 1/√r, so four times the radius gives half the speed.
+M2@2: The period of a geostationary orbit is: | One sidereal day (23 h 56 min) | One solar day, 24 h exactly | Half a day, 12 h | About 90 min, like the ISS | It must match Earth's rotation relative to the stars, which takes 23 h 56 min; the 24 h solar day includes Earth's motion around the Sun.
+M2@3: How does circular orbital speed change with distance from the star? | It decreases as 1/√r | It increases as √r | It is the same at every distance | It increases as r² | v = √(GM/r), so more distant orbits are slower.
+NUM2@1: What is the orbital period, in minutes, of a satellite in a circular orbit 600 km above Earth (R = 6370 km, GM = 3.99 × 10^{14} m^{3} s^{-2})? | 96.5 | 2% | min | r = 6.97 × 10^{6} m; T = 2π√(r^{3}/GM) = 2π√(3.386 × 10^{20}/3.99 × 10^{14}) = 2π × 921 = 5790 s = 96.5 min.
+M3@1: Two satellites share a circular orbit; one has ten times the mass of the other. Compared with the light one, the heavy one moves: | At the same speed | √10 times faster | Ten times slower | √10 times slower | The satellite's mass cancels in GMm/r^{2} = mv^{2}/r, so all bodies at one radius move at √(GM/r).
+SA2@1,2: Show that the period of a circular orbit is proportional to r^{3/2}, and use this to explain why there is only one possible radius for a geostationary orbit. | Gravity provides the centripetal force: GMm/r^{2} = mv^{2}/r, and v = 2πr/T, so GM/r^{2} = 4π^{2}r/T^{2}, giving T^{2} = 4π^{2}r^{3}/GM and T ∝ r^{3/2}. A geostationary satellite must have T equal to one sidereal day, and since T fixes r uniquely, r = (GMT^{2}/4π^{2})^{1/3} = 4.22 × 10^{7} m; it must also orbit over the equator in the direction of Earth's rotation. | Equate gravitational and centripetal force ; Substitute v = 2πr/T ; T^{2} = 4π^{2}r^{3}/GM so T ∝ r^{3/2} ; A fixed period fixes a single radius ; Equatorial and in the direction of rotation
 
 ## Circular and elliptical orbits
 S: Bound orbits under an inverse-square force are ellipses with the central body at one focus; a circle is the special case of zero eccentricity. Unbound orbits are parabolas or hyperbolas.

@@ -484,6 +484,483 @@
      "note": "Removed the muon g − 2 anomaly as an example of new physics: since the 2025 Standard Model update with lattice calculations it is no longer a clear discrepancy."
     }
    ]
+  },
+  {
+   "course": "physics",
+   "lesson": "Position, displacement, distance and time",
+   "unit": "u04",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summary, evidence status and two confirmed sources",
+    "added key point (and common mistake where missing)",
+    "linked all questions to objectives, lengthened explanations to 40+ characters",
+    "added questions to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Speed and velocity",
+   "unit": "u04",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summary, evidence status and two confirmed sources",
+    "added key point (and common mistake where missing)",
+    "linked all questions to objectives, lengthened explanations to 40+ characters",
+    "added questions to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Acceleration",
+   "unit": "u04",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summary, evidence status and two confirmed sources",
+    "added key point (and common mistake where missing)",
+    "linked all questions to objectives, lengthened explanations to 40+ characters",
+    "added questions to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "Removed |Δv| notation from an explanation to keep pipe characters out of question lines."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "Motion in one dimension",
+   "unit": "u04",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summary, evidence status and two confirmed sources",
+    "added key point (and common mistake where missing)",
+    "linked all questions to objectives, lengthened explanations to 40+ characters",
+    "added questions to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Motion in two and three dimensions",
+   "unit": "u04",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summary, evidence status and two confirmed sources",
+    "added key point (and common mistake where missing)",
+    "linked all questions to objectives, lengthened explanations to 40+ characters",
+    "added questions to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Kinematic equations",
+   "unit": "u04",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summary, evidence status and two confirmed sources",
+    "added key point (and common mistake where missing)",
+    "linked all questions to objectives, lengthened explanations to 40+ characters",
+    "added questions to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Projectile motion",
+   "unit": "u04",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summary, evidence status and two confirmed sources",
+    "added key point (and common mistake where missing)",
+    "linked all questions to objectives, lengthened explanations to 40+ characters",
+    "added questions to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": [
+    {
+     "class": "error-fixed",
+     "note": "Said the optimum angle with drag is \"around 30–40° for a golf ball\"; golf drives launch far lower because of backspin lift. Reworded to say drag lowers the optimum below 45° and spin lift changes it further."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "Relative motion",
+   "unit": "u04",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summary, evidence status and two confirmed sources",
+    "added key point (and common mistake where missing)",
+    "linked all questions to objectives, lengthened explanations to 40+ characters",
+    "added questions to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Reference frames",
+   "unit": "u04",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summary, evidence status and two confirmed sources",
+    "added key point (and common mistake where missing)",
+    "linked all questions to objectives, lengthened explanations to 40+ characters",
+    "added questions to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Newton's laws of motion",
+   "unit": "u04",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summary, evidence status and two confirmed sources",
+    "added key point (and common mistake where missing)",
+    "linked all questions to objectives, lengthened explanations to 40+ characters",
+    "added questions to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Inertial and non-inertial frames",
+   "unit": "u04",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summary, evidence status and two confirmed sources",
+    "added key point (and common mistake where missing)",
+    "linked all questions to objectives, lengthened explanations to 40+ characters",
+    "added questions to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Free-body diagrams",
+   "unit": "u04",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summary, evidence status and two confirmed sources",
+    "added key point (and common mistake where missing)",
+    "linked all questions to objectives, lengthened explanations to 40+ characters",
+    "added questions to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Normal force and tension",
+   "unit": "u04",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summary, evidence status and two confirmed sources",
+    "added key point (and common mistake where missing)",
+    "linked all questions to objectives, lengthened explanations to 40+ characters",
+    "added questions to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Friction and drag",
+   "unit": "u04",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summary, evidence status and two confirmed sources",
+    "added key point (and common mistake where missing)",
+    "linked all questions to objectives, lengthened explanations to 40+ characters",
+    "added questions to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": [
+    {
+     "class": "error-fixed",
+     "note": "Flashcard said ABS stops cars faster; ABS mainly preserves steering and usually shortens stopping on firm surfaces but can lengthen it on loose gravel or snow. Card reworded."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "Inclined planes",
+   "unit": "u04",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summary, evidence status and two confirmed sources",
+    "added key point (and common mistake where missing)",
+    "linked all questions to objectives, lengthened explanations to 40+ characters",
+    "added questions to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Circular motion",
+   "unit": "u04",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summary, evidence status and two confirmed sources",
+    "added key point (and common mistake where missing)",
+    "linked all questions to objectives, lengthened explanations to 40+ characters",
+    "added questions to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Centripetal acceleration and force",
+   "unit": "u04",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summary, evidence status and two confirmed sources",
+    "added key point (and common mistake where missing)",
+    "linked all questions to objectives, lengthened explanations to 40+ characters",
+    "added questions to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Work and energy",
+   "unit": "u04",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summary, evidence status and two confirmed sources",
+    "added key point (and common mistake where missing)",
+    "linked all questions to objectives, lengthened explanations to 40+ characters",
+    "added questions to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Kinetic and potential energy",
+   "unit": "u04",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summary, evidence status and two confirmed sources",
+    "added key point (and common mistake where missing)",
+    "linked all questions to objectives, lengthened explanations to 40+ characters",
+    "added questions to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Conservative and non-conservative forces",
+   "unit": "u04",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summary, evidence status and two confirmed sources",
+    "added key point (and common mistake where missing)",
+    "linked all questions to objectives, lengthened explanations to 40+ characters",
+    "added questions to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Power and efficiency",
+   "unit": "u04",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summary, evidence status and two confirmed sources",
+    "added key point (and common mistake where missing)",
+    "linked all questions to objectives, lengthened explanations to 40+ characters",
+    "added questions to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Momentum and impulse",
+   "unit": "u04",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summary, evidence status and two confirmed sources",
+    "added key point (and common mistake where missing)",
+    "linked all questions to objectives, lengthened explanations to 40+ characters",
+    "added questions to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Conservation of momentum",
+   "unit": "u04",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summary, evidence status and two confirmed sources",
+    "added key point (and common mistake where missing)",
+    "linked all questions to objectives, lengthened explanations to 40+ characters",
+    "added questions to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Collisions and explosions",
+   "unit": "u04",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summary, evidence status and two confirmed sources",
+    "added key point (and common mistake where missing)",
+    "linked all questions to objectives, lengthened explanations to 40+ characters",
+    "added questions to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Elastic and inelastic collisions",
+   "unit": "u04",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summary, evidence status and two confirmed sources",
+    "added key point (and common mistake where missing)",
+    "linked all questions to objectives, lengthened explanations to 40+ characters",
+    "added questions to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Centre of mass",
+   "unit": "u04",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summary, evidence status and two confirmed sources",
+    "added key point (and common mistake where missing)",
+    "linked all questions to objectives, lengthened explanations to 40+ characters",
+    "added questions to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Systems of particles",
+   "unit": "u04",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summary, evidence status and two confirmed sources",
+    "added key point (and common mistake where missing)",
+    "linked all questions to objectives, lengthened explanations to 40+ characters",
+    "added questions to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Variable-mass systems",
+   "unit": "u04",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summary, evidence status and two confirmed sources",
+    "added key point (and common mistake where missing)",
+    "linked all questions to objectives, lengthened explanations to 40+ characters",
+    "added questions to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Motion under resistive forces",
+   "unit": "u04",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summary, evidence status and two confirmed sources",
+    "added key point (and common mistake where missing)",
+    "linked all questions to objectives, lengthened explanations to 40+ characters",
+    "added questions to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Terminal velocity",
+   "unit": "u04",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summary, evidence status and two confirmed sources",
+    "added key point (and common mistake where missing)",
+    "linked all questions to objectives, lengthened explanations to 40+ characters",
+    "added questions to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Equilibrium and statics",
+   "unit": "u04",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summary, evidence status and two confirmed sources",
+    "added key point (and common mistake where missing)",
+    "linked all questions to objectives, lengthened explanations to 40+ characters",
+    "added questions to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Mechanical advantage",
+   "unit": "u04",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summary, evidence status and two confirmed sources",
+    "added key point (and common mistake where missing)",
+    "linked all questions to objectives, lengthened explanations to 40+ characters",
+    "added questions to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Simple machines",
+   "unit": "u04",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summary, evidence status and two confirmed sources",
+    "added key point (and common mistake where missing)",
+    "linked all questions to objectives, lengthened explanations to 40+ characters",
+    "added questions to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
   }
  ],
  "notes": [

@@ -1,0 +1,113 @@
+{
+ "task": "assess-maths-u05-u06",
+ "on": "2026-11-19",
+ "files": [
+  "kit/courses/maths/notes/u05.js"
+ ],
+ "lessons": [
+  {
+   "course": "maths",
+   "lesson": "u05-01",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Application",
+    "evidence status: established",
+    "content added: X (Prove that vertically opposite angles are equal.…)",
+    "questions added: NUM2, M3, TF1, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-02",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Fluency",
+    "evidence status: established",
+    "content added: P (Shapes are named by their vertices in order round the shape: quadri…)",
+    "questions added: TF1, M2, NUM3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-03",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Fluency",
+    "evidence status: established",
+    "content added: P (**Coplanar** points lie in one plane. Any three points are coplanar…)",
+    "questions added: TF1, NUM2, M3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-04",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Fluency",
+    "evidence status: established",
+    "questions added: M3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-05",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE and A level · Application",
+    "evidence status: established",
+    "content added: X (Show that y = 2x + 3 and x + 2y = 8 are perpendicular.…)",
+    "questions added: TF1, M2, NUM3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-06",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Fluency",
+    "evidence status: established",
+    "content added: X (Two sides of a triangle are 7 cm and 10 cm. What lengths are possib…)",
+    "questions added: NUM2, M3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-07",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Application",
+    "evidence status: established",
+    "content added: ! (Pairing the wrong sides: list vertices in matching order (triangle…)",
+    "questions added: M2, NUM2, SA3 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-08",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Fluency",
+    "evidence status: established",
+    "content added: X (In a parallelogram, one angle is 3x and the next angle round is x +…)",
+    "questions added: M1, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  }
+ ],
+ "notes": []
+}

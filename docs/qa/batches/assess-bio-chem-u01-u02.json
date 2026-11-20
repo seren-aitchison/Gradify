@@ -197,7 +197,7 @@
    ],
    "findings": [
     {
-     "class": "needs-source",
+     "class": "editorial",
      "note": "Second source 'Royal Society of Biology, Biological Nomenclature, 4th edition (2009)' left as it is; the 2009 4th edition was issued under the Institute of Biology / Society of Biology name, so the publisher name may need checking."
     }
    ]
@@ -276,6 +276,477 @@
     "distractors lengthened to remove length bias: \"A study wants to use blood samples collected years ago\"",
     "existing questions linked to objectives (@n)",
     "new M2 question added: \"A volunteer in a diet study decides halfway through that she no longer\""
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-01",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"A student says a light microscope at ×2000\"",
+    "distractors lengthened to remove length bias: \"Which observation would most directly challenge the third principle\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-02",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "second source added: OpenStax, Biology 2e, section 22.2 \"Structure of Prokaryotes: Bacteria and Archaea\"",
+    "distractors lengthened to remove length bias: \"Why are prokaryotic cells almost never larger\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-03",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"An organism is single-celled, has a nucleus\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-04",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"A cell secretes large amounts of protein hormone.\"",
+    "distractors lengthened to remove length bias: \"White blood cells can engulf bacteria but plant cells cannot.\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-05",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "second source added: OpenStax, Concepts of Biology, section 3.3 \"Eukaryotic Cells\"",
+    "distractors lengthened to remove length bias: \"A cell from a carrot root has a cell wall\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-06",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "second source added: OpenStax, Microbiology, section 5.3 \"Fungi\"",
+    "distractors lengthened to remove length bias: \"Why does a mycelium suit a fungus's way of feeding?\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-07",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"A bacterium stains pink after a Gram stain.\"",
+    "distractors lengthened to remove length bias: \"Penicillin kills actively dividing bacteria but has little effect\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": [
+    {
+     "class": "error-fixed",
+     "note": "OpenStax source link was broken (404): .../pages/22-2-structure-of-prokaryotes; corrected to .../pages/22-2-structure-of-prokaryotes-bacteria-and-archaea and the section title to \"Structure of Prokaryotes: Bacteria and Archaea\" (checked on openstax.org)."
+    }
+   ]
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-08",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "second source added: OpenStax, Concepts of Biology, section 3.3 \"Eukaryotic Cells\"",
+    "distractors lengthened to remove length bias: \"Cells lining the stomach secrete a lot of enzyme\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-09",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"What are histones?\"",
+    "distractors lengthened to remove length bias: \"Why does a mature mammalian red blood cell have a limited lifespan\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "M2#biology-u02-09-q5 (\"What is made in the nucleolus?\") duplicates a flashcard in the same lesson; left unchanged."
+    }
+   ]
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-10",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"A poison blocks the electron transport chain.\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-11",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "second source added: OpenStax, Biology 2e, section 8.2 \"The Light-Dependent Reactions of Photosynthesis\"",
+    "distractors lengthened to remove length bias: \"Where do the light-dependent reactions of photosynthesis take place?\"",
+    "distractors lengthened to remove length bias: \"Palisade cells have far more chloroplasts\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "M2#biology-u02-11-q5 (\"In which part of a chloroplast are the light-dependent reactions?\") asks the same thing as M1#biology-u02-11-q1; left in place because ids are permanent, but one could be reworded to test a different point."
+    }
+   ]
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-12",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Tetracycline binds to the 30S ribosomal subunit.\"",
+    "distractors lengthened to remove length bias: \"Some antibiotics that act on bacterial ribosomes cause side effects\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-13",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "second source added: Alberts B. et al., Molecular Biology of the Cell, 6th edition, chapter 12 \"Intracellular Compartments and Protein Sorting\"",
+    "distractors lengthened to remove length bias: \"Which cell would have the most smooth ER?\"",
+    "distractors lengthened to remove length bias: \"Regular heavy drinking increases the amount of smooth ER\"",
+    "distractors lengthened to remove length bias: \"A mutation causes a secreted protein to fold incorrectly.\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-14",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"What is the main function of the Golgi apparatus?\"",
+    "distractors lengthened to remove length bias: \"In I-cell disease, lysosomal enzymes are found in the blood\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-15",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"What is autophagy?\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-16",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "second source added: Alberts B. et al., Molecular Biology of the Cell, 6th edition, chapter 16 \"The Cytoskeleton\"",
+    "distractors lengthened to remove length bias: \"People with primary ciliary dyskinesia\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-17",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "second source added: Alberts B. et al., Molecular Biology of the Cell, 6th edition, chapter 10 \"Membrane Structure\"",
+    "distractors lengthened to remove length bias: \"Why can a mitochondrion make ATP only when its inner membrane\"",
+    "distractors lengthened to remove length bias: \"A cell is placed in a solution containing a dye\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": [
+    {
+     "class": "curriculum-dependent",
+     "note": "Bound in kit/curriculum/mappings/lessons.js (u02-17 to u02-23): assessment added and a second source, teaching content unchanged; the content hash will change and needs re-confirmation."
+    }
+   ]
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-18",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"In a famous experiment, a mouse cell and a human cell were fused\"",
+    "distractors lengthened to remove length bias: \"Bacteria grown at low temperature make membranes\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": [
+    {
+     "class": "curriculum-dependent",
+     "note": "Bound in kit/curriculum/mappings/lessons.js (u02-17 to u02-23): assessment added and a second source, teaching content unchanged; the content hash will change and needs re-confirmation."
+    }
+   ]
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-19",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "second source added: Alberts B. et al., Molecular Biology of the Cell, 6th edition, chapter 11 \"Membrane Transport of Small Molecules and the Electrical Properties of Membranes\"",
+    "distractors lengthened to remove length bias: \"Steroid hormones such as testosterone act on receptors inside cells\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": [
+    {
+     "class": "curriculum-dependent",
+     "note": "Bound in kit/curriculum/mappings/lessons.js (u02-17 to u02-23): assessment added and a second source, teaching content unchanged; the content hash will change and needs re-confirmation."
+    }
+   ]
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-20",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "second source added: OpenStax, Biology 2e, section 39.1 \"Systems of Gas Exchange\"",
+    "distractors lengthened to remove length bias: \"In emphysema, alveolar walls break down\"",
+    "distractors lengthened to remove length bias: \"Why are single-celled organisms able to rely on diffusion\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": [
+    {
+     "class": "curriculum-dependent",
+     "note": "Bound in kit/curriculum/mappings/lessons.js (u02-17 to u02-23): assessment added and a second source, teaching content unchanged; the content hash will change and needs re-confirmation."
+    }
+   ]
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-21",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Intravenous drips use saline of about 0.9%\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": [
+    {
+     "class": "curriculum-dependent",
+     "note": "Bound in kit/curriculum/mappings/lessons.js (u02-17 to u02-23): assessment added and a second source, teaching content unchanged; the content hash will change and needs re-confirmation."
+    }
+   ]
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-22",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "second source added: Alberts B. et al., Molecular Biology of the Cell, 6th edition, chapter 11 \"Membrane Transport of Small Molecules and the Electrical Properties of Membranes\"",
+    "distractors lengthened to remove length bias: \"Which statement about facilitated diffusion is correct?\"",
+    "distractors lengthened to remove length bias: \"A graph of uptake rate against external glucose concentration\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": [
+    {
+     "class": "curriculum-dependent",
+     "note": "Bound in kit/curriculum/mappings/lessons.js (u02-17 to u02-23): assessment added and a second source, teaching content unchanged; the content hash will change and needs re-confirmation."
+    }
+   ]
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-23",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Root hair cells absorb nitrate ions from soil\"",
+    "distractors lengthened to remove length bias: \"Ouabain blocks the Na⁺/K⁺ pump.\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": [
+    {
+     "class": "curriculum-dependent",
+     "note": "Bound in kit/curriculum/mappings/lessons.js (u02-17 to u02-23): assessment added and a second source, teaching content unchanged; the content hash will change and needs re-confirmation."
+    }
+   ]
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-24",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"People with familial hypercholesterolaemia\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-25",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "second source added: OpenStax, Biology 2e, section 30.1 \"The Plant Body\"",
+    "distractors lengthened to remove length bias: \"Cells lining the small intestine have microvilli\"",
+    "distractors lengthened to remove length bias: \"Why can severe damage to the brain's neurons leave lasting effects\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-26",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Biological reasoning",
+    "evidence status: contested",
+    "distractors lengthened to remove length bias: \"Which cells are pluripotent?\"",
+    "distractors lengthened to remove length bias: \"Why does a bone marrow transplant restore all types of blood cell?\"",
+    "distractors lengthened to remove length bias: \"What is the main advantage of iPSCs over embryonic stem cells\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-27",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Biological reasoning",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"A nucleus from a frog's intestinal cell\"",
+    "distractors lengthened to remove length bias: \"Mature B lymphocytes are an exception\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-28",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Biological reasoning",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"One molecule of adrenaline can lead to the release\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-29",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "second source added: Alberts B. et al., Molecular Biology of the Cell, 6th edition, chapter 19 \"Cell Junctions and the Extracellular Matrix\"",
+    "distractors lengthened to remove length bias: \"Why does the blood–brain barrier depend especially on tight junctions?\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-30",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Why can't a large animal rely on diffusion across its skin\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
    ],
    "findings": []
   }

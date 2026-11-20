@@ -1,7 +1,7 @@
 {
  "task": "physics-u10-u12",
  "on": "2026-11-19",
- "status": "in progress: u10 complete (25 lessons, check 0 problems); u12 not started",
+ "status": "in progress: u10 complete; u12 lessons 1-16 enhanced (check clean for those)",
  "files": [
   "kit/courses/physics/notes/u10.js",
   "kit/courses/physics/notes/u12.js"

@@ -1,1 +1,388 @@
-{ "task": "physics-u21-u23", "on": "2026-11-19", "status": "in progress: u21 lessons 1-16 enhanced", "files": ["kit/courses/physics/notes/u21.js", "kit/courses/physics/notes/u23.js"], "lessons": [], "notes": [] }
+{
+  "task": "physics-u21-u23",
+  "on": "2026-11-20",
+  "status": "u21 complete (0 problems); u23 lessons 1-8 enhanced",
+  "files": [
+    "kit/courses/physics/notes/u21.js",
+    "kit/courses/physics/notes/u23.js"
+  ],
+  "lessons": [
+    {
+      "course": "physics",
+      "lesson": "u21-01",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions to reach levels 1-3 and an SA extended answer",
+        "tightened stability paragraph; added Bohr radius value"
+      ],
+      "findings": []
+    },
+    {
+      "course": "physics",
+      "lesson": "u21-02",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions to reach levels 1-3 and an SA extended answer",
+        "added plum-pudding prediction and 1.44 MeV fm shortcut; lengthened distractors (length bias)"
+      ],
+      "findings": []
+    },
+    {
+      "course": "physics",
+      "lesson": "u21-03",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions to reach levels 1-3 and an SA extended answer"
+      ],
+      "findings": [
+        {
+          "class": "editorial",
+          "note": "'predicts nonzero ground-state angular momentum' made explicit: Bohr gives ħ for n = 1, quantum mechanics gives zero."
+        }
+      ]
+    },
+    {
+      "course": "physics",
+      "lesson": "u21-04",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions to reach levels 1-3 and an SA extended answer"
+      ],
+      "findings": []
+    },
+    {
+      "course": "physics",
+      "lesson": "u21-05",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions to reach levels 1-3 and an SA extended answer",
+        "added 2l + 1 and n^2 orbital counts"
+      ],
+      "findings": []
+    },
+    {
+      "course": "physics",
+      "lesson": "u21-06",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions to reach levels 1-3 and an SA extended answer",
+        "lengthened distractors on the copper question (length bias)"
+      ],
+      "findings": []
+    },
+    {
+      "course": "physics",
+      "lesson": "u21-07",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions to reach levels 1-3 and an SA extended answer",
+        "added energy-level diagram paragraph and electron-collision excitation (AQA 3.2.2.2/3.2.2.3)"
+      ],
+      "findings": []
+    },
+    {
+      "course": "physics",
+      "lesson": "u21-08",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions to reach levels 1-3 and an SA extended answer",
+        "muon mass/orbit ratio stated as ~207 and ~186; lengthened distractors"
+      ],
+      "findings": [
+        {
+          "class": "editorial",
+          "note": "'muon ~200 times heavier, orbiting ~200 times closer' sharpened to 207 times heavier, ~186 times closer (reduced mass)."
+        }
+      ]
+    },
+    {
+      "course": "physics",
+      "lesson": "u21-09",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions to reach levels 1-3 and an SA extended answer",
+        "explained exchange via antisymmetric spatial wavefunction; lengthened distractors"
+      ],
+      "findings": []
+    },
+    {
+      "course": "physics",
+      "lesson": "u21-10",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions to reach levels 1-3 and an SA extended answer",
+        "lengthened distractors"
+      ],
+      "findings": [
+        {
+          "class": "error-fixed",
+          "note": "Anomaly written 'a/2π ≈ α/2π'; correct form is a = (g − 2)/2 ≈ α/(2π). 'Predicted to 12 digits' restated as agreement to about one part in 10^12."
+        },
+        {
+          "class": "editorial",
+          "note": "Spin quantum number written as lower-case s = ½ (was S)."
+        }
+      ]
+    },
+    {
+      "course": "physics",
+      "lesson": "u21-11",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions to reach levels 1-3 and an SA extended answer"
+      ],
+      "findings": []
+    },
+    {
+      "course": "physics",
+      "lesson": "u21-12",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions to reach levels 1-3 and an SA extended answer",
+        "added allowed range of F"
+      ],
+      "findings": []
+    },
+    {
+      "course": "physics",
+      "lesson": "u21-13",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions to reach levels 1-3 and an SA extended answer",
+        "removed speculative 'proposed Majorana qubits' from materials list"
+      ],
+      "findings": []
+    },
+    {
+      "course": "physics",
+      "lesson": "u21-14",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions to reach levels 1-3 and an SA extended answer",
+        "lengthened distractors on both existing questions (length bias)"
+      ],
+      "findings": []
+    },
+    {
+      "course": "physics",
+      "lesson": "u21-15",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions to reach levels 1-3 and an SA extended answer",
+        "explained why non-degenerate states have no linear shift"
+      ],
+      "findings": [
+        {
+          "class": "needs-source",
+          "note": "No OpenStax section treats the Stark effect directly; the SRC lines cite the closest confirmed sections. A specialist source (e.g. a review or Nobel lecture) should be added after checking."
+        }
+      ]
+    },
+    {
+      "course": "physics",
+      "lesson": "u21-16",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions to reach levels 1-3 and an SA extended answer",
+        "added Rydberg constant value and Lyman/Paschen series"
+      ],
+      "findings": []
+    },
+    {
+      "course": "physics",
+      "lesson": "u21-17",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions to reach levels 1-3 and an SA extended answer",
+        "lengthened distractors (length bias)"
+      ],
+      "findings": [
+        {
+          "class": "error-suspected",
+          "note": "Sr 698 nm clock-state lifetime given as ~150 s; literature values for 87Sr 3P0 are of order 100-160 s. Rewritten as '~100 s'; a specialist should confirm."
+        }
+      ]
+    },
+    {
+      "course": "physics",
+      "lesson": "u21-18",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions to reach levels 1-3 and an SA extended answer",
+        "lengthened distractors (length bias); clarified inversion condition"
+      ],
+      "findings": []
+    },
+    {
+      "course": "physics",
+      "lesson": "u21-19",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions to reach levels 1-3 and an SA extended answer",
+        "lengthened distractors (length bias); renamed a duplicate stem shared with u44-08"
+      ],
+      "findings": [
+        {
+          "class": "error-fixed",
+          "note": "Sodium D Doppler width at 500 K given as ≈1.5 GHz (150 × natural width); recomputed f√(8kT ln2/mc²) = 1.7 GHz, about 170 times the 10 MHz natural width."
+        }
+      ]
+    },
+    {
+      "course": "physics",
+      "lesson": "u21-20",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions to reach levels 1-3 and an SA extended answer",
+        "explained helium's role (near-resonant metastable levels)"
+      ],
+      "findings": []
+    },
+    {
+      "course": "physics",
+      "lesson": "u21-21",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions to reach levels 1-3 and an SA extended answer",
+        "lengthened distractors"
+      ],
+      "findings": [
+        {
+          "class": "error-fixed",
+          "note": "Optical/microwave frequency ratio given as ~10^5; 429 THz/9.19 GHz ≈ 5 × 10^4, now '~10^4–10^5'."
+        },
+        {
+          "class": "curriculum-dependent",
+          "note": "'Redefinition of the second around 2030 is planned' softened to 'under discussion' (date-sensitive CGPM decision)."
+        },
+        {
+          "class": "needs-source",
+          "note": "No OpenStax section treats atomic clocks directly; the SRC lines cite the closest confirmed sections. A specialist source (e.g. a review or Nobel lecture) should be added after checking."
+        }
+      ]
+    },
+    {
+      "course": "physics",
+      "lesson": "u21-22",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions to reach levels 1-3 and an SA extended answer",
+        "lengthened distractors (length bias)"
+      ],
+      "findings": [
+        {
+          "class": "error-fixed",
+          "note": "Doppler limit for sodium given as ~140 μK; ħΓ/(2k_B) with Γ/2π = 9.8 MHz gives ~240 μK (~140-150 μK is rubidium's)."
+        },
+        {
+          "class": "needs-source",
+          "note": "No OpenStax section treats laser cooling directly; the SRC lines cite the closest confirmed sections. A specialist source (e.g. a review or Nobel lecture) should be added after checking."
+        }
+      ]
+    },
+    {
+      "course": "physics",
+      "lesson": "u21-23",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions to reach levels 1-3 and an SA extended answer",
+        "lengthened distractors (length bias)"
+      ],
+      "findings": [
+        {
+          "class": "needs-source",
+          "note": "No OpenStax section treats magneto-optical trapping directly; the SRC lines cite the closest confirmed sections. A specialist source (e.g. a review or Nobel lecture) should be added after checking."
+        }
+      ]
+    },
+    {
+      "course": "physics",
+      "lesson": "u21-24",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions to reach levels 1-3 and an SA extended answer",
+        "defined thermal de Broglie wavelength; lengthened distractors"
+      ],
+      "findings": [
+        {
+          "class": "error-fixed",
+          "note": "'~100 nK at ~10^20 m^-3' is inconsistent: for Rb-87 at 10^20 m^-3, T_c ≈ 0.4 μK. Restated as 0.1–1 μK at 10^19–10^20 m^-3."
+        },
+        {
+          "class": "needs-source",
+          "note": "No OpenStax section treats Bose–Einstein condensation in atomic gases directly; the SRC lines cite the closest confirmed sections. A specialist source (e.g. a review or Nobel lecture) should be added after checking."
+        }
+      ]
+    },
+    {
+      "course": "physics",
+      "lesson": "u21-25",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions to reach levels 1-3 and an SA extended answer",
+        "lengthened distractors (length bias)"
+      ],
+      "findings": [
+        {
+          "class": "needs-source",
+          "note": "No OpenStax section treats precision spectroscopy directly; the SRC lines cite the closest confirmed sections. A specialist source (e.g. a review or Nobel lecture) should be added after checking."
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Sources used: OpenStax University Physics Vol 1-3 (2016) and College Physics 2e (2022) sections, each URL fetched and its page title confirmed on 2026-11-19; AQA 7408 specification sections confirmed in the PDF (sha256 32a556da85fa0928c3600f8178d1a18fe5156b2ea36d76b541df866451721e20).",
+    "Existing check questions are kept first and in their original order, but they now carry @n objective links and (in some) lengthened distractors, so tests/compat.test.mjs (legacy parser, which doesn't read @n tags) will report changed question counts for these units. That test needs updating for any physics standard-2 work.",
+    "Lessons average about 5 KB in u21, above the 2-3.5 KB guide, mostly because the required metadata, five-plus questions and SA model answers add ~2.5 KB to a ~2 KB lesson."
+  ]
+}

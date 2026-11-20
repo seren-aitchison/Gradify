@@ -360,6 +360,204 @@
      "note": "'QED, the most precisely tested theory in physics' softened to 'one of the most precisely tested theories'."
     }
    ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-25",
+   "title": "Displacement current",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added the field-inside-capacitor question (B ∝ r)"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "Second source is Griffiths, Introduction to Electrodynamics, 4th edn (CUP 2017), chapter 7; not an OpenStax/AQA source, cited at chapter level."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-26",
+   "title": "Electromagnetic potentials",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "explained why two Maxwell equations are automatic; Aharonov–Bohm wording (predicted 1959, confirmed 1986)"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "No OpenStax section covers potentials; sources are Griffiths (4th edn, 2017) ch. 10 and Jackson (3rd edn, Wiley 1999) ch. 6, cited at chapter level."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-27",
+   "title": "Gauge transformations",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "'guarantees charge conservation and a massless photon' softened to 'tied to'"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "Sources Griffiths ch. 10 and Jackson ch. 6 (no OpenStax coverage)."
+    },
+    {
+     "class": "editorial",
+     "note": "Gauge invariance does not by itself 'guarantee' charge conservation in every formulation; reworded as 'tied to'."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-28",
+   "title": "Electromagnetic boundary conditions",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "stated the direction of n̂ and how each condition is derived (pillbox/loop); perfect conductor interior fields"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "Sources Griffiths ch. 7 and Jackson, Introduction (no OpenStax coverage)."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-29",
+   "title": "Electromagnetic momentum and energy",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added solar-sail calculation and Poynting-vector resistor SA (VI = I²R check)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-01",
+   "title": "Geometrical optics",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "Fermat's principle linked to least time; lengthened distractors"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-02",
+   "title": "Reflection and refraction",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added n = c/v, the 4% normal-incidence figure and a diamond reflectance question"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-03",
+   "title": "Snell's law",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "worked example now compares Perspex (1.49) and crown glass explicitly"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-04",
+   "title": "Total internal reflection",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added prism-in-water question (critical angle rises to 62°)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-05",
+   "title": "Mirrors and image formation",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "stated meaning of negative m in the real-is-positive convention"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-06",
+   "title": "Thin lenses",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "stated the radius sign convention for the lensmaker's equation; lens-in-water calculation"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-07",
+   "title": "Lens equations",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "magnification written as |m| = v/u to match the convention; added two-lens question"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "Mirror lesson used m = −v/u and lens lesson m = v/u in the same real-is-positive convention; lens lesson now states |m| = v/u."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-08",
+   "title": "Optical instruments",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added near-point correcting-lens calculation and myopia SA"
+   ],
+   "findings": []
   }
  ],
  "notes": [

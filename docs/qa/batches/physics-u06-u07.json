@@ -328,6 +328,96 @@
      "note": "FFT practice (windowing, resolution, Nyquist) is not in the cited OpenStax sections, which cover harmonics and superposition."
     }
    ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u07-01",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "Moon test: 'exactly that' softened to 'very nearly that'",
+    "Cavendish question distractors lengthened (length bias)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u07-02",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "field-line question distractors lengthened (length bias)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u07-03",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "key point that g is a property of the place"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u07-04",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "added ΔW = mΔV and the area under the g–r graph (AQA 3.7.2.3)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u07-05",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "escape-velocity M1 distractors lengthened (length bias)"
+   ],
+   "findings": [
+    {
+     "class": "error-fixed",
+     "note": "Atmosphere retention was stated as 'if a significant fraction of molecules exceed ~1/6 of v_esc'. The rule of thumb is that a gas leaks away if its typical thermal speed exceeds about 1/6 of v_esc; reworded."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u07-06",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "geostationary-period distractors lengthened (length bias)"
+   ],
+   "findings": []
   }
  ],
  "notes": [

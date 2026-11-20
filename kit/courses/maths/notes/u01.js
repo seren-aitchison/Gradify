@@ -5,6 +5,8 @@ export default `
 S: Arithmetic is calculating with numbers: adding, subtracting, multiplying and dividing. Fluent, accurate arithmetic, with written methods you trust and the habit of checking, underpins every other part of mathematics.
 O: Use written methods for the four operations accurately
 O: Check answers using inverse operations and estimation
+LV: GCSE · Fluency
+EV: established | The four operations follow fixed laws (commutative, associative, distributive), and inverse operations and estimates check a result.
 T: Inverse operation | An operation that undoes another: subtraction undoes addition, division undoes multiplication
 T: Commutative | An operation where order doesn't matter: a + b = b + a and a × b = b × a, but not for subtraction or division
 H: The four operations
@@ -21,6 +23,10 @@ X: Work out 37 × 24 using long multiplication.
 > 37 × 4 = 148
 > 37 × 20 = 740
 > 148 + 740 = 888. Check: 37 × 24 ≈ 40 × 25 = 1,000, so 888 is sensible, and it ends in 8 as 7 × 4 ends in 8.
+X: Work out 1,035 ÷ 23 by long division.
+> 23 goes into 103 four times (92), remainder 11
+> Bring down the 5: 115 ÷ 23 = 5 exactly
+> So 1,035 ÷ 23 = 45. Check: 45 × 23 = 900 + 135 = 1,035
 K: Use written methods that keep place value, and check every answer with an inverse operation or an estimate.
 !: Treating subtraction as commutative: 3 − 7 isn't the same as 7 − 3.
 Q: Why is 7 × 23 = 7 × 20 + 7 × 3? | Multiplication distributes over addition: 7 × (20 + 3) = 7 × 20 + 7 × 3.
@@ -32,11 +38,15 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 NUM1#maths-u01-01-q1@1: Work out 468 ÷ 18. | 26 | 0 |  | 18 × 26 = 468 (18 × 25 = 450, plus 18), so 468 ÷ 18 = 26.
 M1#maths-u01-01-q2@1: Which operation is commutative? | Multiplication | Subtraction | Division | Finding a remainder | Raising to a power | 6 × 4 = 4 × 6, but 6 − 4 ≠ 4 − 6 and 6 ÷ 4 ≠ 4 ÷ 6.
 M2#maths-u01-01-q3@2: Which check best shows that 52 × 19 = 988 is plausible? | 52 × 19 ≈ 50 × 20 = 1,000 | 52 + 19 = 71 | 988 is even | 988 has three digits | 19 is prime | Estimating by rounding each number shows the answer should be close to 1,000.
+NUM3@1: A school buys 27 boxes of 144 pencils and shares them equally between 36 classes. How many pencils does each class get? | 108 | 0 |  | 27 × 144 = 3,888 pencils, and 3,888 ÷ 36 = 108. Check: 108 × 36 = 3,888.
+SA2@2: Describe two different ways to check that 23 × 47 = 1,081 is correct. | Estimate by rounding: 20 × 50 = 1,000, so an answer near 1,000 is sensible. Use the inverse: 1,081 ÷ 23 should give 47 (23 × 40 = 920, 23 × 7 = 161, 920 + 161 = 1,081). Check the last digit: 3 × 7 = 21 ends in 1, and so does 1,081. | Gives an estimate by rounding both numbers ; Uses an inverse operation (division) correctly ; Uses a last-digit or other independent check ; States that the checks agree with 1,081
 
 ## Order of Operations
 S: When a calculation has several operations, the order you do them in changes the answer. A single agreed convention (brackets, then indices, then division and multiplication, then addition and subtraction) means everyone gets the same result.
 O: Apply the order of operations, including with brackets and powers
 O: Recognise and avoid common order-of-operations errors
+LV: GCSE · Fluency
+EV: established | Brackets, then indices, then multiplication and division left to right, then addition and subtraction left to right, is the agreed convention.
 T: BIDMAS | Brackets, Indices, Division and Multiplication, Addition and Subtraction: the order for evaluating a calculation
 T: Index | A power, such as the 2 in 3^{2}
 H: The convention
@@ -66,11 +76,15 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 NUM1#maths-u01-02-q1@1: Evaluate 6 + 18 ÷ 3 × 2 − 4. | 14 | 0 |  | 18 ÷ 3 = 6, then 6 × 2 = 12 (left to right), so 6 + 12 − 4 = 14.
 M2#maths-u01-02-q2@2: What is 2 × 3^{2}? | 18 | 36 | 12 | 81 | 9 | Indices first: 3^{2} = 9, then 2 × 9 = 18. (2 × 3)^{2} would be 36.
 M3#maths-u01-02-q3@2: A student types 10 + 6 ÷ 2 into a calculator wanting (10 + 6) ÷ 2. What do they get? | 13 | 8 | 16 | 3 | 5 | The calculator divides first: 6 ÷ 2 = 3, then adds 10. Brackets are needed to get 8.
+M1@1: In 4 + 5 × 2^{2}, which part is worked out first? | The power 2^{2} | The addition 4 + 5 | The product 5 × 2 | Whatever is furthest left | Indices come before multiplication and addition: 2^{2} = 4, then 5 × 4 = 20, then 4 + 20 = 24.
+SA2@2: A student writes 24 ÷ 4 × 2 = 3. Explain the mistake and give the correct value. | Division and multiplication have equal priority, so they are done from left to right. The student multiplied first (4 × 2 = 8, then 24 ÷ 8 = 3). Correctly, 24 ÷ 4 = 6, then 6 × 2 = 12. | Says division and multiplication have equal priority ; Says equal-priority operations go left to right ; Identifies that the student multiplied first ; Gives the correct value 12
 
 ## Number Systems
 S: A number system is a way of representing numbers with symbols. Our everyday system is decimal and positional, but others (Roman numerals, binary, base 60 for time) show that the symbols are a choice, while the numbers themselves are the same.
 O: Explain what makes a number system positional
 O: Compare the decimal system with other number systems
+LV: GCSE · Fluency
+EV: established | In a positional system each place is worth the base times the place to its right, and zero holds empty places.
 T: Positional system | A system where a digit's value depends on its position, such as hundreds, tens and units
 T: Base | The number of different digits a positional system uses, and the multiplier between neighbouring places
 H: Positional systems
@@ -95,11 +109,16 @@ SRC: Courant R, Robbins H, What Is Mathematics? (2nd edn, Oxford University Pres
 SRC: Department for Education, Mathematics programmes of study: key stage 3 | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study
 M1#maths-u01-03-q1@1: What is the value of the digit 4 in 64,215? | 4,000 | 4 | 40 | 400 | 40,000 | The 4 is in the thousands place, so it's worth 4 × 1,000 = 4,000.
 M2#maths-u01-03-q2@2: Why are written calculations hard with Roman numerals? | They aren't positional and have no zero | They use letters instead of digits only | They only go up to 100 | They can't show odd numbers | They're base 2 | Positional notation lets column methods work; Roman numerals don't line up by place value.
+NUM2@2: Write the Roman numeral MCMXCIV as an ordinary number. | 1994 | 0 |  | M = 1000, CM = 900, XC = 90 and IV = 4: a smaller symbol before a larger one is subtracted. 1000 + 900 + 90 + 4 = 1,994.
+NUM3@1: Time uses base 60 for minutes and seconds. How many seconds are in 2 hours 5 minutes 30 seconds? | 7530 | 0 | s | Each place is 60 times the next: 2 × 60 × 60 = 7,200, 5 × 60 = 300, plus 30 gives 7,530 seconds.
+SA2@1,2: Explain why zero is essential in our decimal system but Roman numerals manage without one. | In a positional system a digit's value depends on its place, so an empty place must be shown: 3,507 has no tens, and without the 0 it would read 357. Roman numerals are additive: each symbol has a fixed value (X is always 10), so nothing marks an empty place and no zero is needed, but this is why column arithmetic doesn't work with them. | Says decimal is positional: value depends on place ; Gives an example of zero as a placeholder ; Says Roman symbols have fixed values and are added or subtracted ; Links the lack of place value to harder written arithmetic
 
 ## Natural Numbers
 S: The natural numbers are the counting numbers 1, 2, 3, … (and, in many university courses, 0 as well). They're the starting point for all other numbers and the setting for primes, divisibility and induction.
 O: Define the natural numbers and their properties
 O: Identify which operations keep you within the natural numbers
+LV: GCSE · Application
+EV: established | ℕ is closed under addition and multiplication but not subtraction or division; whether 0 belongs to ℕ is a convention.
 T: Natural numbers | The counting numbers 1, 2, 3, …, written ℕ; some definitions include 0
 T: Closed | A set is closed under an operation if applying it to members always gives a member
 H: Properties
@@ -113,6 +132,7 @@ X: Is the set of natural numbers closed under the operation "find the difference
 > For any natural numbers a and b with a > b, a − b is natural (for example 9 − 4 = 5).
 > But if a = b, a − b = 0, which is natural only if your convention includes 0.
 > So the answer depends on the convention: yes if 0 ∈ ℕ, no otherwise.
+!: Thinking one example proves closure: 9 − 4 = 5 is natural, but a single counterexample (3 − 5) is enough to show ℕ isn't closed under subtraction.
 K: The natural numbers are the counting numbers; they're closed under addition and multiplication but not subtraction or division.
 !: Assuming everyone agrees whether 0 is a natural number.
 Q: Is ℕ closed under subtraction? | No: for example 3 − 5 = −2 isn't natural.
@@ -123,11 +143,16 @@ SRC: Courant R, Robbins H, What Is Mathematics? (2nd edn, Oxford University Pres
 SRC: Liebeck M, A Concise Introduction to Pure Mathematics (4th edn, CRC Press 2015) | secondary | 2015 | https://www.routledge.com/
 M1#maths-u01-04-q1@1: Which of these is a natural number in every convention? | 7 | 0 | −2 | 1/2 | 0.5 | 7 is a counting number; 0 depends on the convention.
 M2#maths-u01-04-q2@2: Under which operation is ℕ closed? | Multiplication | Subtraction | Division | Taking square roots | Halving | The product of two natural numbers is always natural.
+TF1@1: There is a largest natural number. | false | For any natural number n, n + 1 is also natural and bigger, so the natural numbers never end.
+M3@2: Taking ℕ = {1, 2, 3, …}, under which operation is ℕ closed? | Raising a to the power b | Taking the mean of a and b | Subtracting b from a | Dividing a by b | a^{b} is a product of b copies of a, so it is natural. The mean of 1 and 2 is 1.5, 1 − 2 = −1 and 1 ÷ 2 = 0.5, none natural.
+SA2@2: Use the idea of closure to explain why mathematicians extend the natural numbers to the integers and then to the rationals. | ℕ is closed under addition and multiplication, but not subtraction: 3 − 5 = −2 is not natural, so the integers add zero and the negatives. The integers are closed under subtraction but not division: 3 ÷ 5 is not an integer, so the rationals (fractions of integers) are added, which are closed under division by any non-zero number. | Defines or uses closure correctly ; Gives a subtraction that leaves ℕ ; Says the integers fix subtraction ; Gives a division that leaves ℤ and says the rationals fix it
 
 ## Integers
 S: The integers extend the natural numbers to include zero and the negatives: …, −2, −1, 0, 1, 2, …. They let us subtract freely and describe temperatures, debts and directions.
 O: Calculate with negative numbers
 O: Order integers and use them in context
+LV: GCSE · Fluency
+EV: established | Adding a negative subtracts, subtracting a negative adds, and the product of two numbers with the same sign is positive.
 T: Integers | The whole numbers, positive, negative and zero, written ℤ
 T: Absolute value | The distance of a number from zero, written |x|, so |−5| = 5
 H: Calculating with negatives
@@ -156,11 +181,15 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 NUM1#maths-u01-05-q1@1: Work out (−6) × (−7) − 50. | -8 | 0 |  | (−6) × (−7) = 42 (same signs give a positive), and 42 − 50 = −8.
 M1#maths-u01-05-q2@1: What is −3 − 5? | −8 | 2 | −2 | 8 | 15 | Starting at −3 and moving 5 to the left reaches −8.
 M2#maths-u01-05-q3@2: What is (−24) ÷ (−6) × (−2)? | −8 | 8 | 2 | −2 | −12 | Left to right: (−24) ÷ (−6) = 4, then 4 × (−2) = −8.
+NUM3@2: A diver is 18 m below the surface (−18 m). She rises 7 m, then descends twice as far as she rose. What is her new position? | -25 | 0 | m | −18 + 7 = −11 m; twice 7 m is 14 m down, so −11 − 14 = −25 m.
+SA2@1: Use a pattern to explain why (−3) × (−4) = 12. | Multiply −3 by 2, 1, 0, −1, …: −6, −3, 0, 3, … Each time the multiplier falls by 1, the answer rises by 3. Continuing the pattern, (−3) × (−2) = 6, (−3) × (−3) = 9 and (−3) × (−4) = 12. So a negative times a negative is positive. | Sets up a sequence of products with a decreasing multiplier ; Notices the answers go up by 3 each step ; Continues the pattern past zero ; Concludes (−3) × (−4) = 12
 
 ## Rational Numbers
 S: Rational numbers are numbers that can be written as a fraction of two integers, p/q with q not zero. They include all integers, fractions and terminating or recurring decimals, and they're closed under all four operations (except dividing by zero).
 O: Identify rational numbers in different forms
 O: Convert recurring decimals to fractions
+LV: GCSE · Application
+EV: established | Every rational number has a terminating or recurring decimal, and every recurring decimal is rational.
 T: Rational number | A number that can be written as p/q, where p and q are integers and q ≠ 0, written ℚ
 T: Recurring decimal | A decimal with a repeating block of digits, such as 0.272727… = 0.\\dot{2}\\dot{7}
 H: Forms of rational numbers
@@ -185,11 +214,15 @@ SRC: Liebeck M, A Concise Introduction to Pure Mathematics (4th edn, CRC Press 2
 M1#maths-u01-06-q1@1: Which number is rational? | 0.454545… | √2 | π | √3 | e | Any recurring decimal is rational: 0.4545… = 5/11.
 M2#maths-u01-06-q2@2: Which fraction gives a terminating decimal? | 7/40 | 1/3 | 2/7 | 5/6 | 4/9 | 40 = 2^{3} × 5, so 7/40 = 0.175 terminates.
 M3#maths-u01-06-q3@2: What is 0.\\dot{1}\\dot{8} as a fraction in its simplest form? | 2/11 | 18/100 | 9/50 | 1/8 | 18/90 | Let x = 0.1818…; then 100x − x = 18, so x = 18/99, which simplifies to 2/11.
+M2@2: What is 0.3777… (only the 7 recurring) as a fraction in its simplest form? | 17/45 | 37/99 | 37/90 | 34/99 | Let x = 0.3777…; 100x = 37.777… and 10x = 3.777…, so 90x = 34 and x = 34/90 = 17/45.
+SA3@1,2: Show that 0.999… = 1, and explain why this is an exact equality, not a rounding. | Let x = 0.999…; then 10x = 9.999…, and subtracting gives 9x = 9, so x = 1. Another way: 1/3 = 0.333…, and 3 × 1/3 = 1 while 3 × 0.333… = 0.999…. There is no number between 0.999… and 1 (any gap would have to be smaller than every 0.000…01), so they are the same number written two ways. | Sets x = 0.999… and multiplies by 10 ; Subtracts to get 9x = 9 and x = 1 ; Gives a second argument, such as 3 × 1/3 ; Explains that no number lies between them, so it is exact
 
 ## Irrational Numbers
 S: An irrational number can't be written as a fraction of two integers. Its decimal goes on forever without repeating. Famous examples are √2, π and e, and there are, in a precise sense, far more irrationals than rationals.
 O: Identify irrational numbers
 O: Follow the proof that √2 is irrational
+LV: GCSE and A level · Problem solving
+EV: established | √2 is irrational, as the classical proof by contradiction shows; √n is irrational for every natural n that is not a perfect square.
 T: Irrational number | A real number that can't be written as p/q with integers p and q
 T: Proof by contradiction | A proof that assumes the opposite of what you want, and shows it leads to something impossible
 H: Examples
@@ -203,6 +236,7 @@ X: Is √50 rational or irrational? Simplify it.
 > 5 is rational and √2 is irrational, and a non-zero rational times an irrational is irrational
 > So √50 = 5√2 is irrational
 K: Irrationals can't be written as fractions; their decimals never end or repeat; √2 is irrational by contradiction.
+!: Assuming every square root is irrational: √49 = 7 and √(9/4) = 3/2 are rational. Only roots of non-square numbers are irrational.
 !: Thinking 22/7 equals π: it's only an approximation (π is irrational).
 Q: Why must p be even if p^{2} is even? | If p were odd, p^{2} would be odd.
 Q: Can two irrational numbers add up to a rational number? | Yes: for example √2 + (−√2) = 0.
@@ -213,11 +247,15 @@ SRC: Department for Education, Mathematics AS and A level subject content: proof
 M1#maths-u01-07-q1@1: Which number is irrational? | √7 | √49 | 0.25 | 3/11 | −4 | 7 isn't a perfect square, so √7 is irrational.
 M2#maths-u01-07-q2@2: In the proof that √2 is irrational, what gives the contradiction? | Both p and q turn out to be even, though p/q was in lowest terms | p turns out to be negative | q turns out to be zero | √2 turns out to equal 1 | p^{2} turns out to be odd | Lowest terms means p and q share no common factor, but both are even.
 M3#maths-u01-07-q3@2: Which product is rational? | √8 × √2 | √2 × √3 | π × 2 | √5 × 3 | e × e | √8 × √2 = √16 = 4, a whole number, so it's rational; the others are irrational.
+M2@1: Which of these sums is irrational? | 3 + √2 | √2 + (2 − √2) | √9 + 1 | 0.5 + 0.25 | A rational plus an irrational is irrational. √2 + (2 − √2) = 2, √9 + 1 = 4 and 0.5 + 0.25 = 0.75 are all rational.
+SA3@2: Prove that √3 is irrational. | Suppose √3 = p/q with integers p, q in lowest terms. Then p^{2} = 3q^{2}, so 3 divides p^{2}, and since 3 is prime, 3 divides p: write p = 3k. Then 9k^{2} = 3q^{2}, so q^{2} = 3k^{2} and 3 divides q too. So p and q share the factor 3, contradicting lowest terms. Hence √3 is irrational. | Assumes √3 = p/q in lowest terms ; Derives p^{2} = 3q^{2} and deduces 3 divides p ; Substitutes p = 3k and deduces 3 divides q ; States the contradiction and the conclusion
 
 ## Real Numbers
 S: The real numbers are all the rational and irrational numbers together: every point on the number line. They're the numbers of measurement and calculus.
 O: Classify numbers as natural, integer, rational, irrational or real
 O: Describe the real number line and intervals
+LV: GCSE · Application
+EV: established | ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ, and the real numbers, rational and irrational together, fill the number line.
 T: Real numbers | All rational and irrational numbers, written ℝ
 T: Interval | A set of real numbers between two endpoints, such as [2, 5) = {x : 2 ≤ x < 5}
 H: Classifying numbers
@@ -244,11 +282,16 @@ SRC: Liebeck M, A Concise Introduction to Pure Mathematics (4th edn, CRC Press 2
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
 M1#maths-u01-08-q1@1: Which set contains π? | The real numbers | The integers | The rational numbers | The natural numbers | None of them | π is irrational, so it's real but not rational.
 M2#maths-u01-08-q2@2: Which inequality matches the interval [−2, 3)? | −2 ≤ x < 3 | −2 < x ≤ 3 | −2 < x < 3 | −2 ≤ x ≤ 3 | x < −2 or x ≥ 3 | The square bracket includes −2; the round bracket excludes 3.
+TF1@2: The interval (3, 7] contains the number 3. | false | A round bracket excludes its endpoint, so (3, 7] means 3 < x ≤ 7: it contains 7 but not 3.
+M3@1: Which statement about number sets is true? | Every integer is a rational number | Every real number is a rational number | π is rational because π ≈ 22/7 | √16 is an irrational number | Any integer n equals n/1. Real numbers include irrationals, 22/7 only approximates π, and √16 = 4.
+SA2@1: Classify 0.333…, −√16, √12 and 22/7, giving a reason for each. | 0.333… = 1/3 is rational (and real), because it recurs. −√16 = −4 is an integer, so also rational and real, but not natural. √12 = 2√3 is irrational (12 isn't a perfect square), and real. 22/7 is a fraction of integers, so rational and real; it is not π. | 0.333… rational as a recurring decimal ; −√16 = −4, an integer and rational ; √12 irrational because 12 isn't a perfect square ; 22/7 rational, not equal to π ; Says all four are real
 
 ## Factors and Multiples
 S: A factor of a number divides it exactly; a multiple is the result of multiplying it by a whole number. Factors and multiples are the language of divisibility, fractions and primes.
 O: List all the factors of a number systematically
 O: Identify multiples and common factors and multiples
+LV: GCSE · Fluency
+EV: established | Factors of n come in pairs that meet at √n, so listing pairs up to √n finds every factor.
 T: Factor | A whole number that divides another exactly: the factors of 12 are 1, 2, 3, 4, 6, 12
 T: Multiple | The product of a number and a whole number: multiples of 7 are 7, 14, 21, …
 H: Finding factors
@@ -279,11 +322,15 @@ NUM1#maths-u01-09-q1@1: How many factors does 48 have? | 10 | 0 |  | 1×48, 2×2
 M1#maths-u01-09-q2@1: Which number is a multiple of 8? | 72 | 4 | 20 | 36 | 50 | 72 = 8 × 9, so 72 is in the 8 times table; the others aren't.
 M2#maths-u01-09-q3@2: Which number has an odd number of factors? | 49 | 50 | 30 | 12 | 18 | 49 is a square number (7 × 7), so one factor pair repeats.
 M2#maths-u01-09-q4@2: When the sieve crosses out the multiples of 5, which number is crossed out first? | 25, since 10, 15 and 20 were already crossed out by 2 or 3 | 5, since every prime crosses itself out | 10, the first multiple after 5 | 15, the first odd multiple | 35, the first multiple not divisible by 2 or 3 | Smaller multiples of 5 have a smaller prime factor, so 5 × 5 = 25 is the first new number it removes.
+NUM3@1: What is the smallest whole number with exactly 6 factors? | 12 | 0 |  | 12 has factors 1, 2, 3, 4, 6 and 12. Every smaller number has fewer: 6, 8 and 10 have four each.
+SA2@1: Find all the factors of 84 and explain why your method cannot miss one. | Work in pairs from 1: 1 × 84, 2 × 42, 3 × 28, 4 × 21, 6 × 14, 7 × 12; 5, 8 and 9 don't divide 84. √84 ≈ 9.2, and beyond it the pairs would repeat in reverse, so the list is complete: 1, 2, 3, 4, 6, 7, 12, 14, 21, 28, 42, 84 (12 factors). | Lists factor pairs systematically from 1 ; Gets all six pairs ; Explains stopping at √84 ; Gives the complete list of 12 factors
 
 ## Divisibility
 S: Divisibility tests tell you whether one number divides another without doing the division. They speed up factorising, simplifying fractions and spotting primes.
 O: Apply divisibility tests for 2, 3, 4, 5, 6, 8, 9 and 10
 O: Explain why the digit-sum test for 3 and 9 works
+LV: GCSE · Application
+EV: established | Because every power of 10 leaves remainder 1 on division by 9 (and 3), a number and its digit sum leave the same remainder.
 T: Divisible | a is divisible by b if a ÷ b is a whole number, written b | a
 T: Digit sum | The total of a number's digits
 H: The tests
@@ -310,11 +357,15 @@ SRC: Department for Education, Mathematics programmes of study: key stage 3 | st
 M1#maths-u01-10-q1@1: Which number is divisible by 9? | 5,814 | 5,813 | 5,812 | 5,810 | 5,815 | 5 + 8 + 1 + 4 = 18, which is divisible by 9.
 M2#maths-u01-10-q2@2: Which number is divisible by 6? | 2,334 | 2,335 | 1,334 | 2,333 | 1,331 | 2,334 is even and its digit sum 12 is divisible by 3.
 M3#maths-u01-10-q3@2: Which test shows 3,512 is divisible by 8? | 512 = 8 × 64 | 3 + 5 + 1 + 2 = 11 | 12 is divisible by 4 | It ends in 2 | 35 is odd | Divisibility by 8 depends on the last three digits.
+NUM2@2: Without dividing, find the remainder when 83,416 is divided by 9. | 4 | 0 |  | The digit sum is 8 + 3 + 4 + 1 + 6 = 22, and 22 leaves remainder 4 on division by 9, so 83,416 does too (9 × 9,268 = 83,412).
+SA3@2: For a three-digit number with digits a, b and c, show why it is divisible by 3 exactly when a + b + c is. | The number is 100a + 10b + c = 99a + 9b + (a + b + c). 99a + 9b = 3(33a + 3b) is always a multiple of 3, so the number and a + b + c differ by a multiple of 3. So one is divisible by 3 exactly when the other is. The same argument works for 9, since 99 and 9 are multiples of 9. | Writes the number as 100a + 10b + c ; Splits it as 99a + 9b + (a + b + c) ; Shows 99a + 9b is a multiple of 3 ; Concludes the number and its digit sum share divisibility by 3
 
 ## Prime Numbers
 S: A prime number has exactly two factors: 1 and itself. Primes are the building blocks of the whole numbers, and their mysteries drive both number theory and modern cryptography.
 O: Identify prime numbers and explain why 1 isn't prime
 O: Use a sieve and trial division to find primes
+LV: GCSE · Application
+EV: established | There are infinitely many primes (Euclid), and a number with no prime factor up to √n is prime.
 T: Prime number | A natural number greater than 1 whose only factors are 1 and itself
 T: Sieve of Eratosthenes | A method for listing primes by crossing out multiples of each prime in turn
 H: Recognising primes
@@ -343,11 +394,15 @@ M1#maths-u01-11-q1@1: Which number is prime? | 37 | 39 | 51 | 57 | 91 | 37 has n
 M2#maths-u01-11-q2@2: To test whether 199 is prime, which primes must you try? | 2, 3, 5, 7, 11 and 13 | All primes up to 199 | Only 2 and 3 | All odd numbers up to 100 | 2, 3 and 5 only | √199 ≈ 14.1, so primes up to 13 are enough.
 NUM1#maths-u01-11-q3@2: What is the sum of the prime numbers between 20 and 40? | 120 | 0 |  | The primes are 23, 29, 31 and 37, which add to 120.
 NUM1#maths-u01-11-q4@1: Using the sieve, how many primes are there below 200? | 46 | 0 |  | The sieve leaves 46 numbers uncrossed below 200, from 2 up to 199.
+M3@1,2: In Euclid's argument, N = 2 × 3 × 5 × 7 × 11 × 13 + 1 = 30,031. Which is true? | N isn't prime, but none of 2 to 13 divides it | N is prime, as Euclid's proof shows | N is divisible by 13, the largest prime used | N is divisible by 7 as 30,031 ends in 1 | N leaves remainder 1 on division by 2 to 13, but it is composite: 30,031 = 59 × 509. Euclid's proof only needs a new prime factor, not N itself to be prime.
+SA2@1,2: Explain why 1 is not counted as prime, and why testing divisors up to √n is enough to decide whether n is prime. | A prime has exactly two factors, but 1 has only one; including it would also spoil unique factorisation (6 = 2 × 3 = 1 × 2 × 3). If n = a × b with both a and b bigger than √n, then a × b would be bigger than n, impossible. So any composite n has a factor, and hence a prime factor, no bigger than √n. | Uses the two-factor definition for 1 ; Mentions unique factorisation ; Argues that factors pair up across √n ; Concludes a composite has a prime factor at most √n
 
 ## Composite Numbers
 S: A composite number is a natural number greater than 1 that isn't prime: it has at least one factor other than 1 and itself. Every composite number breaks down into primes.
 O: Distinguish prime, composite and neither
 O: Find a factor pair that shows a number is composite
+LV: GCSE · Application
+EV: established | Every composite number has a proper factor, and runs of consecutive composite numbers can be as long as you like.
 T: Composite number | A natural number greater than 1 with more than two factors
 T: Proper factor | A factor other than 1 and the number itself
 H: Classifying
@@ -376,11 +431,16 @@ SRC: Department for Education, Mathematics programmes of study: key stage 3 | st
 M1#maths-u01-12-q1@1: Which number is composite? | 119 | 113 | 109 | 107 | 103 | 119 = 7 × 17, so it has factors other than 1 and itself; the others are prime.
 M2#maths-u01-12-q2@2: Why is 6! + 4 composite? | It's divisible by 4 | It's even and greater than 2 only by coincidence | It's a square number | It's divisible by 7 | 6! is prime | 6! = 720 is divisible by 4, so 720 + 4 is too.
 M2#maths-u01-12-q3@2: In the sieve, which prime first crosses out 91? | 7, since 91 = 7 × 13 and 7 is its smallest prime factor | 13, since 91 = 7 × 13 and 13 is larger | 3, since 9 + 1 = 10 isn't prime | 91 is never crossed out because it's prime | 2, since every composite is even | A composite number is first crossed out by its smallest prime factor, which for 91 = 7 × 13 is 7.
+NUM1@1: How many composite numbers are there from 20 to 30 inclusive? | 9 | 0 |  | There are 11 numbers from 20 to 30; only 23 and 29 are prime, so 9 are composite.
+M3@2: Which factor pair proves that 391 is composite? | 17 × 23 | 13 × 31 | 19 × 21 | 7 × 57 | 17 × 23 = 340 + 51 = 391. The others give 403, 399 and 399, so they don't show anything about 391.
+SA3@1,2: Explain how to write down 100 consecutive composite numbers. | Take 101! = 1 × 2 × … × 101. For each k from 2 to 101, 101! is divisible by k, so 101! + k is divisible by k and bigger than k: it is composite. So 101! + 2, 101! + 3, …, 101! + 101 are 100 consecutive composite numbers. | Uses a factorial such as 101! ; Shows k divides 101! + k for k from 2 to 101 ; Notes 101! + k is bigger than k, so composite ; Counts that the run has 100 numbers
 
 ## Prime Factorisation
 S: Every whole number greater than 1 can be written as a product of primes in exactly one way, apart from order. This "fundamental theorem of arithmetic" makes prime factorisation a powerful tool for HCFs, LCMs, roots and fractions.
 O: Write a number as a product of prime factors using index notation
 O: Use prime factorisation to test for squares and cubes
+LV: GCSE · Application
+EV: established | Every integer greater than 1 has exactly one prime factorisation, apart from order (the fundamental theorem of arithmetic).
 T: Prime factorisation | Writing a number as a product of primes, such as 360 = 2^{3} × 3^{2} × 5
 T: Fundamental theorem of arithmetic | Every integer greater than 1 has a unique prime factorisation, up to order
 H: Finding the factorisation
@@ -410,11 +470,15 @@ M1#maths-u01-13-q1@1: What is 84 as a product of prime factors? | 2^{2} × 3 × 
 M2#maths-u01-13-q2@2: What is the smallest number you can multiply 2^{3} × 3 × 5^{2} by to make a square? | 6 | 2 | 3 | 5 | 30 | Multiplying by 2 × 3 makes the powers 2^{4} × 3^{2} × 5^{2}, all even.
 NUM1#maths-u01-13-q3@2: 2^{a} × 3^{b} = 648. What is a + b? | 7 | 0 |  | 648 = 8 × 81 = 2^{3} × 3^{4}, so a + b = 3 + 4 = 7.
 NUM1#maths-u01-13-q4@1: How many prime factors, counted with repeats, does 192 have? | 7 | 0 |  | 192 = 2^{6} × 3, so it has six 2s and one 3: seven prime factors in all.
+NUM3@2: What is the smallest whole number k for which 540k is a cube number? | 50 | 0 |  | 540 = 2^{2} × 3^{3} × 5. For a cube every power must be a multiple of 3, so multiply by 2 × 5^{2} = 50: 540 × 50 = 27,000 = 30^{3}.
+SA2@1,2: Write 2,025 as a product of prime factors and use it to find √2,025, explaining your reasoning. | 2,025 = 25 × 81 = 5^{2} × 3^{4}. Every power is even, so 2,025 is a square, and halving each power gives the root: √2,025 = 5 × 3^{2} = 45. Check: 45^{2} = 2,025. | Finds 2,025 = 3^{4} × 5^{2} ; Says even powers mean a square ; Halves the powers to get 45 ; Checks by squaring
 
 ## Greatest Common Divisor (GCD)
 S: The greatest common divisor (GCD), called the highest common factor (HCF) at GCSE, is the largest number that divides two numbers exactly. It simplifies fractions and solves sharing and tiling problems.
 O: Find the HCF by listing, by prime factorisation and by Euclid's algorithm
 O: Use the HCF to solve problems
+LV: GCSE · Application
+EV: established | The HCF is the product of the common primes to their lowest powers, and Euclid's algorithm finds it by repeated remainders.
 T: Highest common factor (HCF) | The largest number that is a factor of two or more numbers; also called the greatest common divisor
 T: Co-prime | Two numbers whose HCF is 1, such as 8 and 15
 H: Three methods
@@ -441,11 +505,15 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 NUM1#maths-u01-14-q1@1: Find the HCF of 84 and 126. | 42 | 0 |  | 84 = 2^{2} × 3 × 7 and 126 = 2 × 3^{2} × 7, so HCF = 2 × 3 × 7 = 42.
 M1#maths-u01-14-q2@1: Which pair of numbers is co-prime? | 9 and 16 | 6 and 15 | 8 and 12 | 14 and 21 | 10 and 25 | 9 = 3^{2} and 16 = 2^{4} share no prime factors.
 M2#maths-u01-14-q3@2: A 48 cm by 60 cm board is covered exactly with the largest possible identical square tiles. How wide is each tile? | 12 cm | 6 cm | 4 cm | 24 cm | 240 cm | The tile width must divide both 48 and 60: the largest such number is the HCF, 12.
+NUM3@2: Rods of 84 cm, 120 cm and 156 cm are cut into pieces all of the same length, as long as possible, with nothing left over. How many pieces are there in total? | 30 | 0 |  | The piece length is HCF(84, 120, 156) = 12 cm (each is 2^{2} × 3 × another factor). 84 ÷ 12 + 120 ÷ 12 + 156 ÷ 12 = 7 + 10 + 13 = 30.
+SA2@1: Use Euclid's algorithm to find the HCF of 391 and 299, showing each step. | 391 = 1 × 299 + 92; 299 = 3 × 92 + 23; 92 = 4 × 23 + 0. The last non-zero remainder is 23, so HCF(391, 299) = 23. Check: 391 = 17 × 23 and 299 = 13 × 23, and 17 and 13 are co-prime. | Divides 391 by 299 to get remainder 92 ; Continues with 299 and 92 to get 23 ; Stops at remainder 0 and gives HCF 23 ; Checks the answer
 
 ## Least Common Multiple (LCM)
 S: The least common multiple (LCM), called the lowest common multiple at GCSE, is the smallest number that is a multiple of two numbers. It finds common denominators and solves "when do they coincide again?" problems.
 O: Find the LCM by listing and by prime factorisation
 O: Use HCF × LCM = product for two numbers
+LV: GCSE · Application
+EV: established | The LCM is the product of every prime to its highest power, and for two numbers HCF × LCM equals their product.
 T: Lowest common multiple (LCM) | The smallest positive number that is a multiple of two or more numbers
 T: Common denominator | A shared denominator for adding or subtracting fractions, usually the LCM of the denominators
 H: Methods
@@ -475,11 +543,15 @@ NUM1#maths-u01-15-q1@1: Find the LCM of 18 and 30. | 90 | 0 |  | 18 = 2 × 3^{2}
 M1#maths-u01-15-q2@1: What is the LCM of 9 and 12? | 36 | 108 | 3 | 72 | 21 | 9 = 3^{2}, 12 = 2^{2} × 3, so the LCM is 2^{2} × 3^{2} = 36.
 M3#maths-u01-15-q3@2: Two numbers have HCF 6 and LCM 72. One is 18. What is the other? | 24 | 12 | 36 | 4 | 54 | For two numbers, HCF × LCM = their product: 6 × 72 = 432, and 432 ÷ 18 = 24.
 NUM1#maths-u01-15-q4@1: Using prime factorisations, what is the LCM of 12 and 18? | 36 | 0 |  | 12 = 2^{2} × 3 and 18 = 2 × 3^{2}, so the LCM is 2^{2} × 3^{2} = 36.
+M2@1: Using prime factors, what is the LCM of 24 and 90? | 360 | 180 | 720 | 2,160 | 24 = 2^{3} × 3 and 90 = 2 × 3^{2} × 5; each prime to its highest power gives 2^{3} × 3^{2} × 5 = 360. 2,160 is the product 24 × 90.
+SA2@1,2: Two lights flash every 28 s and every 42 s, starting together. A student says they next flash together after 28 × 42 = 1,176 s. Explain the error and find the correct time. | They coincide at the lowest common multiple, not the product. 28 = 2^{2} × 7 and 42 = 2 × 3 × 7, so LCM = 2^{2} × 3 × 7 = 84 s. The product is too big because 28 and 42 share the factor HCF = 14: 1,176 ÷ 14 = 84, consistent with HCF × LCM = product. | Says the answer is the LCM ; Finds the prime factorisations ; Gives LCM 84 s ; Explains the product overcounts the common factor 14
 
 ## Fractions
 S: A fraction represents part of a whole, or a division: 3/4 means 3 ÷ 4. Understanding equivalent fractions and simplifying is the key to calculating with them.
 O: Find equivalent fractions and simplify fractions
 O: Convert between improper fractions and mixed numbers, and compare fractions
+LV: GCSE · Fluency
+EV: established | Multiplying or dividing the numerator and denominator by the same non-zero number gives an equivalent fraction.
 T: Equivalent fractions | Fractions with the same value, such as 2/3 = 8/12
 T: Improper fraction | A fraction whose numerator is greater than or equal to its denominator, such as 7/4 = 1¾
 H: Meaning and equivalence
@@ -510,6 +582,8 @@ M1#maths-u01-16-q1@1: Which fraction is equivalent to 3/8? | 15/40 | 6/24 | 5/10
 M2#maths-u01-16-q2@2: Which fraction is largest? | 4/5 | 7/9 | 11/15 | 3/4 | 5/7 | As decimals: 0.8, 0.778, 0.733, 0.75, 0.714.
 NUM1#maths-u01-16-q3@1: What is 3/8 of 96? | 36 | 0 |  | 96 ÷ 8 = 12, and 12 × 3 = 36.
 NUM1#maths-u01-16-q4@1: As in the practice set, give 2/3 + 3/4 as a decimal to 3 decimal places. | 1.417 | 0.001 |  | 2/3 + 3/4 = 8/12 + 9/12 = 17/12 ≈ 1.417.
+M3@2: Which fraction lies between 3/5 and 2/3? | 7/11 | 5/9 | 9/13 | 4/7 | 3/5 = 0.6 and 2/3 ≈ 0.667. 7/11 ≈ 0.636 lies between; 5/9 ≈ 0.556 and 4/7 ≈ 0.571 are too small, 9/13 ≈ 0.692 too big.
+SA2@2: A student says 3/7 is bigger than 3/5 because 7 is bigger than 5. Explain the mistake and compare the fractions properly. | With the same numerator, a bigger denominator means the whole is cut into more, smaller parts, so each part is smaller. Over a common denominator 35: 3/7 = 15/35 and 3/5 = 21/35, so 3/5 is bigger. | Says a bigger denominator means smaller parts ; Uses a common denominator or decimals ; Shows 3/7 = 15/35 and 3/5 = 21/35 ; Concludes 3/5 is bigger
 
 ## Decimals
 S: Decimals extend place value to the right of the units: tenths, hundredths, thousandths. They're how measurements and money are written, and calculators show results as decimals.

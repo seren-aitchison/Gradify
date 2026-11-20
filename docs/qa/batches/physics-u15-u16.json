@@ -1,2 +1,2 @@
-{ "task": "physics-u15-u16", "on": "2026-11-19", "status": "in progress: u15 lessons 1-17 enhanced",
+{ "task": "physics-u15-u16", "on": "2026-11-20", "status": "in progress: u15 complete (24/24); u16 lessons 1-21 enhanced",
   "files": ["kit/courses/physics/notes/u15.js", "kit/courses/physics/notes/u16.js"], "lessons": [], "notes": [] }

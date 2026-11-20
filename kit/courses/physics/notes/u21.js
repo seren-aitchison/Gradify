@@ -655,29 +655,53 @@ M3@3: A galaxy's calcium K line (393.4 nm) is observed at 397.3 nm. What is its 
 SA2@1,3: Explain how astronomers can tell what a distant star is made of and how fast it is moving away. | Light from the star's hot interior passes through cooler outer gas, which absorbs at wavelengths set by its atoms' energy levels, giving dark lines. Each element has a unique pattern of lines, so matching the pattern to laboratory spectra identifies the elements present. If the whole pattern is shifted to longer wavelengths, the star is receding; the redshift z = Δλ/λ gives its speed, v ≈ zc for small z. | Absorption by cooler outer gas ; Lines set by energy levels ; Unique pattern identifies elements ; Shift of whole pattern indicates motion ; Speed from z = Δλ/λ, v ≈ zc
 
 ## Selection rules
-S: Selection rules state which transitions between atomic states can occur by emitting or absorbing a photon. They follow from conservation of angular momentum and parity, and they explain why some spectral lines are bright, some faint and some missing.
+S: Selection rules state which transitions between atomic states can occur by emitting or absorbing a photon. They follow from conservation of angular momentum and parity, and explain why some spectral lines are bright, some faint and some missing.
+O: State the electric dipole selection rules and justify them from photon angular momentum and parity
+O: Decide whether a given transition is allowed
+O: Explain what "forbidden" transitions are and where they are observed
+PRE: Atomic spectra
+LV: Year 2 · Application
 H: Electric dipole (E1) rules
-E: Δl = ±1; Δm_{l} = 0, ±1; ΔS = 0; ΔJ = 0, ±1 (not 0 → 0)
-- Photon carries one unit of angular momentum and odd parity.
-- Parity must change.
+E: Δl = ±1; Δm_{l} = 0, ±1; ΔS = 0; ΔJ = 0, ±1 (not J = 0 → 0)
+- The photon carries one unit of angular momentum and odd parity.
+- So the atom's parity must change.
 H: Forbidden transitions
-- Not truly forbidden: much slower (magnetic dipole M1, electric quadrupole E2, two-photon).
-- Lifetimes from milliseconds to years (vs nanoseconds for allowed lines).
-- Seen in low-density astrophysical gas where collisions don't de-excite atoms first: the green [O III] lines of nebulae (once attributed to a new element, "nebulium").
+- Not truly forbidden, just much slower: magnetic dipole (M1), electric quadrupole (E2) or two-photon decays.
+- Lifetimes from milliseconds to years, against nanoseconds for allowed lines.
+- Seen in low-density astrophysical gas where collisions don't de-excite atoms first: the green [O III] lines of nebulae, once attributed to a new element, "nebulium".
 - 2s → 1s in hydrogen decays by two photons, lifetime 0.12 s.
 H: Uses
-P: Ultra-narrow forbidden transitions make the best clocks: strontium's 698 nm line (lifetime ~150 s, linewidth ~mHz) in optical lattice clocks; ytterbium's octupole transition in ions.
+P: Ultra-narrow forbidden transitions make the best clocks: strontium's 698 nm line (excited-state lifetime ~100 s, natural linewidth ~mHz) in optical lattice clocks, and an octupole transition in ytterbium ions.
 X: Can hydrogen go 3d → 1s by electric dipole emission?
 > Δl = −2: forbidden for E1
-> It goes 3d → 2p → 1s instead
-!: "Forbidden" means suppressed by orders of magnitude, not impossible.
+> It cascades 3d → 2p → 1s instead, each step with Δl = −1
+K: Allowed (E1) transitions change l by exactly one and change parity; everything else is orders of magnitude slower.
+!: "Forbidden" means suppressed by many orders of magnitude, not impossible.
+T: Selection rule | A condition on quantum numbers that must hold for a transition to occur at a significant rate
+T: Forbidden transition | A transition not allowed as electric dipole, occurring only by much slower processes
+T: Parity | The behaviour of a wavefunction under inversion r → −r; (−1)^{l} for an orbital
+SUM: E1 rules: Δl = ±1, Δm_{l} = 0, ±1, ΔS = 0, ΔJ = 0, ±1 (not 0 → 0).
+SUM: They follow from the photon's spin 1 and odd parity.
+SUM: Forbidden lines are slow and narrow: seen in nebulae, used in clocks.
+EV: established | Electric dipole selection rules follow from angular momentum and parity conservation and match the observed pattern of atomic lines
+SRC: OpenStax, University Physics Volume 3, section 8.5 "Atomic Spectra and X-rays" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/8-5-atomic-spectra-and-x-rays
+SRC: OpenStax, College Physics 2e, section 30.8 "Quantum Numbers and Rules" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/30-8-quantum-numbers-and-rules
 Q: What is the Δl selection rule for electric dipole transitions? | Δl = ±1.
 Q: Why are forbidden lines seen in nebulae but not in the lab? | Low densities let long-lived states decay radiatively before collisions de-excite them.
-M1: Which transition is electric-dipole allowed? | 2p → 1s | 2s → 1s | 3d → 1s | 3s → 2s | Δl = ±1.
-M2: Forbidden transitions have: | Long lifetimes and narrow lines | Short lifetimes | Broad lines | No emission ever | Small transition rates.
+M1@2: Which transition is electric-dipole allowed? | 2p → 1s | 2s → 1s | 3d → 1s | 3s → 2s | Only 2p → 1s has Δl = −1; the others have Δl = 0 or −2 and so are forbidden for E1.
+M2@3: Forbidden transitions have: | Long lifetimes and narrow lines | Short lifetimes and broad lines | Very large emission rates | No emission under any conditions | Their tiny transition rates mean long-lived upper states and, since Δf = 1/(2πτ), very narrow natural linewidths.
+TF1@1: An electric dipole transition must change the parity of the atomic state. | true | The photon carries odd parity, so the initial and final atomic states must have opposite parity, which is why Δl = ±1.
+MS2@2: Which of these hydrogen transitions are electric-dipole allowed? | 3p → 1s ; 3s → 2p ; 4d → 2p | 3d → 2s ; 4f → 2p | Allowed transitions have Δl = ±1: p → s, s → p and d → p qualify; d → s and f → p have Δl = 2.
+M3@1,3: A J = 0 → J = 0 transition is strictly forbidden for single-photon emission. Why? | A photon must carry away at least one unit of angular momentum | Both states have the same energy | Parity cannot change between them | The electron would have to leave the atom | A real photon has spin 1 and no J = 0 state; with J = 0 at both ends, angular momentum can't be conserved by one photon.
+SA3@1,3: Explain why the 2s state of hydrogen lives for about 0.12 s while the 2p state lives for only about 1.6 ns. | Both lie at the same energy above 1s. The 2p → 1s transition has Δl = −1 and changes parity, so it is electric-dipole allowed and fast. The 2s → 1s transition has Δl = 0 and no parity change, so it is forbidden for single-photon electric dipole emission; the photon's angular momentum and odd parity can't be supplied. 2s must decay by a much slower process, mainly emission of two photons, giving a lifetime about 10^{8} times longer: the state is metastable. | 2p → 1s allowed, Δl = −1 ; 2s → 1s has Δl = 0 ; Parity and angular momentum argument ; Decays by two-photon emission ; Lifetime ratio or metastability stated
 
 ## Spontaneous and stimulated emission
 S: An excited atom can emit a photon spontaneously at a random time, or be stimulated to emit by an incoming photon, producing an identical copy. Einstein (1917) showed both must exist, laying the foundation for lasers.
+O: Describe absorption, spontaneous emission and stimulated emission using Einstein coefficients
+O: Explain why population inversion gives light amplification
+O: Explain how the spontaneous rate depends on frequency and environment
+PRE: Blackbody radiation
+LV: Year 2 · Application
 H: Einstein's coefficients
 - Absorption rate: B_{12}ρ(f)N_{1}.
 - Stimulated emission rate: B_{21}ρ(f)N_{2}.
@@ -687,169 +711,316 @@ E: g_{1}B_{12} = g_{2}B_{21}; A_{21} = (8πhf^{3}/c^{3})B_{21}
 H: Spontaneous emission
 E: τ = 1/A; A ∝ f^{3}|d_{12}|^{2}
 - Allowed visible transitions: τ ~ 10 ns.
-- Not truly spontaneous: triggered by vacuum fluctuations of the EM field (QED); can be enhanced or suppressed in cavities (Purcell effect).
+- Not truly spontaneous: in QED it is driven by vacuum fluctuations of the field, and it can be enhanced or suppressed in cavities (the Purcell effect).
 H: Stimulated emission
-P: The stimulated photon has the same frequency, direction, phase and polarisation. With population inversion, stimulated emission exceeds absorption, so light is amplified: the principle of masers (1954) and lasers (1960).
+P: The stimulated photon has the same frequency, direction, phase and polarisation as the one that triggered it. Normally N_{1} > N_{2}, so absorption wins. With population inversion (N_{2} > N_{1} for equal degeneracies), stimulated emission exceeds absorption and light is amplified: the principle of masers (1954) and lasers (1960).
 X: Why are X-ray lasers hard to build?
-> A ∝ f^{3}: spontaneous emission at X-ray frequencies is ~10^{9} times faster than in the visible
+> A ∝ f^{3}: at X-ray frequencies (~10^{3} times visible) spontaneous emission is ~10^{9} times faster
 > Inversion decays almost instantly; free-electron lasers avoid this by not using atomic transitions
-!: Spontaneous emission is random in direction and phase; it's the background noise from which lasers build coherent light.
+K: Stimulated emission copies photons; amplification needs more atoms in the upper level than the lower.
+!: Spontaneous emission is random in direction and phase; it's the noise from which a laser builds coherent light, not the lasing process itself.
+T: Stimulated emission | Emission of a photon triggered by an incident photon of the same frequency, giving an identical copy
+T: Population inversion | A state in which more atoms occupy the upper level of a transition than the lower
+T: Einstein A coefficient | The probability per unit time of spontaneous emission from an excited level
+SUM: Three processes: absorption, spontaneous emission (rate A), stimulated emission (rate Bρ).
+SUM: Einstein's relations follow from thermal equilibrium with Planck radiation.
+SUM: Inversion makes stimulated emission win: the basis of lasers.
+EV: established | Einstein's A and B coefficients and stimulated emission are confirmed by the operation of every maser and laser
+SRC: OpenStax, University Physics Volume 3, section 8.6 "Lasers" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/8-6-lasers
+SRC: OpenStax, College Physics 2e, section 30.5 "Applications of Atomic Excitations and De-Excitations" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/30-5-applications-of-atomic-excitations-and-de-excitations
 Q: Why is stimulated emission necessary to explain Planck's law? | Einstein showed equilibrium with radiation requires both spontaneous and stimulated emission.
 Q: How does spontaneous emission rate depend on frequency? | As f^{3}.
-M1: A stimulated photon is: | Identical to the stimulating photon | Random in phase | Lower in energy | Opposite in direction | Coherent.
-M2: The Purcell effect shows spontaneous emission can be: | Changed by the surrounding optical environment | Never changed | Only stimulated | Instant | Cavity QED.
+M1@1: A stimulated photon is: | Identical to the stimulating photon | Random in phase | Lower in energy | Opposite in direction | It matches the incident photon in frequency, phase, direction and polarisation, which is why laser light is coherent.
+M2@3: The Purcell effect shows spontaneous emission can be: | Changed by the surrounding optical environment | Never altered by any surroundings | Converted fully into absorption | Made instantaneous by heating | An optical cavity changes the density of field modes the atom can emit into, enhancing or suppressing the spontaneous rate.
+NUM2@3: A transition has a spontaneous lifetime of 10 ns at 600 nm. Assuming the same dipole moment, what would the lifetime be, in ns, at 300 nm? | 1.25 | 0.05 | ns | A ∝ f^{3}; halving λ doubles f, so A rises 8 times and τ falls to 10/8 = 1.25 ns.
+TF1@2: In thermal equilibrium at room temperature, more atoms are in the upper level of a visible transition than the lower. | false | The Boltzmann factor e^{−ΔE/kT} is tiny for eV gaps at kT ≈ 0.025 eV, so the lower level dominates; inversion needs pumping.
+M3@2: Why can't a simple two-level system be pumped optically into population inversion? | Pumping also stimulates emission, so populations at most equalise | Two-level atoms can't absorb light | Their spontaneous emission is too slow | The upper level is always forbidden | With absorption and stimulated emission equally likely per atom, strong pumping drives N_{2} towards N_{1} but never past it (saturation).
+SA2@1,2: Explain the difference between spontaneous and stimulated emission and why a laser needs population inversion. | In spontaneous emission an excited atom decays at a random time, emitting a photon in a random direction and phase, at rate A. In stimulated emission an incoming photon of the right frequency causes the excited atom to emit a second photon identical in frequency, phase, direction and polarisation, at rate proportional to the radiation density. Light passing through a medium is absorbed by lower-level atoms and amplified by upper-level atoms; for net gain, stimulated emission must exceed absorption, which needs more atoms in the upper level than the lower: population inversion. | Spontaneous: random time, direction and phase ; Stimulated: triggered, identical photon ; Absorption competes with stimulated emission ; Net gain needs N_{2} > N_{1} ; Inversion must be maintained by pumping
 
 ## Atomic transitions
 S: An atomic transition is a jump between energy levels, absorbing or emitting energy. Its frequency, strength, width and shape tell physicists about the atom and its environment.
+O: Calculate natural and Doppler linewidths
+O: Identify the broadening mechanisms and the line shape each produces
+O: Describe Rabi oscillations and the effect of π and π/2 pulses
+PRE: Spontaneous and stimulated emission
+LV: Year 3 · Application
 H: Line properties
 E: hf = E_{upper} − E_{lower}
-- **Strength**: oscillator strength f or transition dipole moment.
+- **Strength**: oscillator strength or transition dipole moment.
 - **Natural linewidth**: Δf = 1/(2πτ).
 - **Doppler broadening**: Δf/f ≈ √(8k_{B}T ln 2/(mc^{2})); dominates for gases at room temperature (~GHz).
-- **Pressure (collision) broadening**: proportional to collision rate.
-- **Power broadening**: strong driving fields.
+- **Pressure (collision) broadening**: proportional to the collision rate.
+- **Power broadening**: from strong driving fields.
 H: Line shapes
-- Lorentzian (natural, collisional), Gaussian (Doppler), Voigt (both).
+- Lorentzian (natural, collisional), Gaussian (Doppler), Voigt (a convolution of both).
 H: Driving transitions
-P: A resonant field drives Rabi oscillations: the population sloshes between the two levels at the Rabi frequency Ω = dE/ħ. A π pulse flips the atom; a π/2 pulse creates an equal superposition. These are the basic operations of NMR, atomic clocks and qubits.
+P: A resonant field drives Rabi oscillations: the population swings between the two levels at the Rabi frequency Ω = dE/ħ (d the transition dipole, E the field amplitude). A π pulse flips the atom completely; a π/2 pulse creates an equal superposition. These are the basic operations of NMR, atomic clocks and qubits.
 X: Natural linewidth of a transition with τ = 16 ns (sodium D)?
-> Δf = 1/(2π × 16 × 10^{-9}) = 10 MHz
-> Doppler width at 500 K ≈ 1.5 GHz, 150 times larger
+> Δf = 1/(2π × 16 × 10^{-9} s) = 10 MHz
+> Doppler width at 500 K ≈ 1.7 GHz, about 170 times larger
+K: A line's width has a floor set by the lifetime, Δf = 1/(2πτ); in gases, Doppler broadening usually dominates.
 !: Doppler broadening hides natural linewidths in gases; saturation spectroscopy and cold atoms remove it.
+T: Natural linewidth | The minimum linewidth set by the excited state's lifetime, Δf = 1/(2πτ)
+T: Doppler broadening | Line broadening from the spread of atomic velocities along the line of sight
+T: Rabi oscillation | Periodic exchange of population between two levels driven by a resonant field
+SUM: Natural width Δf = 1/(2πτ); Doppler width ∝ f√(T/m).
+SUM: Lorentzian, Gaussian and Voigt shapes reveal the broadening mechanisms.
+SUM: π and π/2 pulses flip or split a two-level atom.
+EV: established | Linewidths and shapes follow from lifetimes, thermal motion and collisions, as confirmed by laser spectroscopy
+SRC: OpenStax, University Physics Volume 3, section 8.5 "Atomic Spectra and X-rays" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/8-5-atomic-spectra-and-x-rays
+SRC: OpenStax, University Physics Volume 2, section 2.4 "Distribution of Molecular Speeds" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/2-4-distribution-of-molecular-speeds
 Q: What is natural linewidth? | The minimum linewidth set by the excited state's lifetime, Δf = 1/(2πτ).
 Q: What is a Rabi oscillation? | Periodic exchange of population between two levels driven by a resonant field.
-M1: Doppler broadening increases with: | Temperature | Atomic mass | Density only | Lifetime | ∝ √(T/m).
-M2: A π pulse on a two-level atom: | Fully transfers population to the other level | Does nothing | Creates superposition | Ionises it | Half a Rabi cycle.
+M1@2: The Doppler width of an atomic line increases with: | Temperature | Atomic mass | Excited-state lifetime | Laser power | The Doppler width scales as √(T/m): hotter atoms move faster, while heavier atoms move more slowly and give narrower lines.
+M2@3: A π pulse on a two-level atom: | Fully transfers population to the other level | Leaves the populations unchanged | Ionises the atom completely | Puts the atom into a 50:50 superposition | A π pulse is half a Rabi cycle, taking ground to excited (or back); a π/2 pulse gives the equal superposition.
+NUM1@1: An excited state lives 25 ns. What is the natural linewidth, in MHz? | 6.4 | 0.1 | MHz | Δf = 1/(2π × 25 × 10^{-9}) = 6.4 × 10^{6} Hz.
+TF2@2: Natural broadening gives a Gaussian line shape. | false | Exponential decay of the excited state gives a Lorentzian shape; the Gaussian comes from the Maxwell distribution of velocities (Doppler).
+M3@1,2: A gas is cooled from 400 K to 100 K. By what factor does its Doppler width change? | It halves | It quarters | It doubles | It stays the same | The Doppler width is proportional to √T, and √(100/400) = 1/2, so the width halves.
+SA3@2,3: Explain why the observed width of a spectral line from a gas is usually much larger than its natural width, and describe one way to recover the natural width. | The natural width is set by the lifetime, Δf = 1/(2πτ), about 10 MHz for an allowed visible line. Atoms in a gas move with a Maxwell distribution of velocities; each sees the light Doppler-shifted by its velocity component, so the line is smeared into a Gaussian of width ~f√(8kT ln 2/(mc^{2})), around 1 GHz at room temperature, plus collisional broadening at higher pressure. The natural width can be recovered by Doppler-free methods: saturated absorption or counter-propagating two-photon spectroscopy, or by laser-cooling the atoms so their velocity spread is tiny. | Natural width from lifetime with value ; Velocity distribution causes Doppler shifts ; Doppler width typically ~GHz ; Collisional broadening mentioned ; A valid Doppler-free method
 
 ## Lasers and atomic transitions
 S: Lasers depend on atomic (or molecular, or semiconductor) transitions arranged so that population inversion can be maintained. The choice of transition sets a laser's wavelength, efficiency and whether it runs continuously or in pulses.
+O: Compare three-level and four-level laser schemes
+O: Describe common pumping methods, including energy transfer in the HeNe laser
+O: Explain how the gain bandwidth depends on the transition
+PRE: Spontaneous and stimulated emission
+LV: Year 2 · Application
 H: Level schemes
-- **Three-level** (ruby, 694 nm): pump to a high level, fast decay to a metastable upper laser level, emit to the ground state; needs > 50% of atoms excited.
-- **Four-level** (Nd:YAG at 1064 nm, HeNe at 633 nm): lower laser level empties quickly; inversion is easy.
-- **Semiconductor**: conduction band to valence band across a p–n junction.
+- **Three-level** (ruby, 694 nm): pump to a high level, fast decay to a metastable upper laser level, emission to the ground state; more than half the atoms must be excited.
+- **Four-level** (Nd:YAG at 1064 nm, HeNe at 633 nm): the lower laser level empties quickly, so inversion is easy.
+- **Semiconductor**: conduction band to valence band across a forward-biased p–n junction.
 H: Pumping
 - Optical (flashlamps, diode lasers), electrical discharge (gas lasers), current injection (diodes), chemical reactions.
-- Helium–neon: helium atoms excited by discharge transfer energy to neon by collisions (energy-level match).
+- Helium–neon: helium atoms excited in the discharge transfer energy to neon in collisions, because their metastable levels nearly match neon's upper laser levels.
 H: Wavelength and gain
-P: The gain bandwidth is set by the transition's linewidth: narrow for gases, broad for dyes and Ti:sapphire (650–1100 nm), which can be tuned or mode-locked for femtosecond pulses. Quantum cascade lasers engineer transitions between subbands in quantum wells for mid-infrared light.
+P: The gain bandwidth is set by the transition's linewidth: narrow for gases, broad for dyes and Ti:sapphire (650–1100 nm), which can be tuned or mode-locked for femtosecond pulses. Quantum cascade lasers engineer transitions between subbands in quantum wells to emit mid-infrared light.
 X: Why is the HeNe laser four-level?
 > Neon's lower laser level (3p) empties quickly to 3s
-> Inversion between 5s and 3p is maintained even with modest pumping
-!: Ruby was the first laser (Maiman, 1960) despite being three-level, because its long-lived metastable level helped.
+> Inversion between 5s and 3p is kept even with modest pumping
+K: A long-lived upper level and a quickly emptied lower level make inversion easy; that is why most lasers are four-level.
+!: Ruby was the first laser (Maiman, 1960) despite being three-level, because its long-lived metastable level and intense flashlamp pumping made inversion possible.
+T: Metastable level | An excited level with a long lifetime, usually because decay from it is forbidden
+T: Four-level laser | A laser whose lower laser level lies above the ground state and empties rapidly
+T: Gain bandwidth | The range of frequencies over which the laser medium amplifies light
+SUM: Three-level lasers need over half the atoms excited; four-level lasers don't.
+SUM: Pumping is optical, electrical or chemical; HeNe uses collisional energy transfer.
+SUM: Broad transitions give tunable and ultrashort-pulse lasers.
+EV: established | Laser operation follows from population inversion between suitable atomic or solid-state levels
+SRC: OpenStax, University Physics Volume 3, section 8.6 "Lasers" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/8-6-lasers
+SRC: OpenStax, College Physics 2e, section 30.5 "Applications of Atomic Excitations and De-Excitations" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/30-5-applications-of-atomic-excitations-and-de-excitations
 Q: Why are four-level lasers more efficient than three-level? | The lower laser level isn't the ground state, so it empties quickly and inversion is easy.
 Q: What sets a laser's gain bandwidth? | The linewidth of its gain transition.
-M1: The first laser used: | Ruby | HeNe | CO_{2} | Semiconductor | Maiman 1960.
-M2: Quantum cascade lasers emit in the: | Mid-infrared | Ultraviolet | X-ray | Microwave only | Intersubband transitions.
+M1@1: The first laser used: | Ruby | Helium–neon | Carbon dioxide | A semiconductor | Maiman's 1960 laser was a flashlamp-pumped ruby crystal emitting at 694 nm.
+M2@3: Quantum cascade lasers emit in the: | Mid-infrared | Ultraviolet | X-ray region | Microwave band only | They use transitions between engineered subbands in quantum wells, whose small spacings correspond to mid-infrared wavelengths.
+NUM2@2: A Nd:YAG laser emits 1064 nm photons. What is the photon energy, in eV? | 1.17 | 0.01 | eV | E = 1240 eV nm/1064 nm = 1.17 eV.
+TF1@1: In a three-level laser, the lower laser level is the ground state. | true | That is why more than half of all the atoms must be pumped out of the ground state before there is inversion.
+M3@2: In the HeNe laser, why is helium included? | Its metastable levels transfer energy to neon's upper laser levels in collisions | Helium atoms emit the 633 nm light | Helium absorbs the unwanted infrared lines | Helium cools the tube walls | Discharge electrons excite long-lived helium levels; these nearly coincide with neon levels, so collisions pass the energy on and pump neon selectively.
+SA2@1,3: Compare three-level and four-level lasers, explaining why four-level schemes reach threshold more easily. | In a three-level laser atoms are pumped to a high level, fall quickly to a metastable upper laser level and lase down to the ground state. Because the lower laser level is the ground state, which starts full, more than half of all atoms must be moved out of it before inversion exists. In a four-level laser the lower laser level lies above the ground state, is almost empty at room temperature, and empties rapidly, so even a small upper-level population gives inversion. Four-level lasers therefore need far less pump power and run continuously more easily. | Three-level scheme described ; Lower level is ground state ; Need more than half the atoms excited ; Four-level lower level empty and fast-decaying ; Lower threshold or easier CW operation
 
 ## Atomic clocks
-S: Atomic clocks keep time by locking an oscillator to an atomic transition frequency. They're the most precise instruments ever made: the best now lose less than a second in the age of the universe.
+S: Atomic clocks keep time by locking an oscillator to an atomic transition frequency. They're the most precise instruments ever made: the best would gain or lose less than a second over the age of the universe.
+O: Explain how an atomic clock locks an oscillator to a transition
+O: State what limits clock stability and why optical clocks outperform microwave clocks
+O: Describe applications that depend on atomic clocks
+PRE: Hyperfine structure
+LV: Year 2 · Application
 H: How they work
-- An oscillator (microwave or laser) probes atoms; feedback keeps it on resonance.
+- An oscillator (microwave or laser) probes the atoms; feedback keeps it on resonance.
 - Stability improves with higher frequency, narrower lines, more atoms and longer interrogation.
 E: σ ∝ Δf/(f√N) :: fractional instability scaling
 H: Generations
-- **Caesium beam and fountain clocks**: 9.19 GHz hyperfine transition; define the SI second; ~10^{-16}.
+- **Caesium beam and fountain clocks**: 9.19 GHz hyperfine transition; realise the SI second; ~10^{-16}.
 - **Hydrogen masers**: excellent short-term stability.
-- **Rubidium**: compact; GPS satellites, telecom.
-- **Optical clocks**: strontium or ytterbium in optical lattices, aluminium or ytterbium ions: ~10^{-18}–10^{-19}; a redefinition of the second around 2030 is planned.
+- **Rubidium**: compact; satellite navigation, telecoms.
+- **Optical clocks**: strontium or ytterbium atoms in optical lattices, aluminium or ytterbium ions: ~10^{-18}; a redefinition of the second in terms of an optical transition is under discussion.
 H: Applications
-P: GPS positioning, internet and power grid synchronisation, VLBI astronomy, tests of relativity (optical clocks detect gravitational time dilation from a height change of 1 cm), searches for dark matter and variations of fundamental constants, and relativistic geodesy.
-X: A clock with fractional uncertainty 10^{-18}. Error over the age of the universe (4.3 × 10^{17} s)?
-> 4.3 × 10^{17} × 10^{-18} ≈ 0.4 s
-!: Atomic clocks don't count radioactive decays; they're oscillators locked to atomic transition frequencies.
+P: Satellite navigation, network and power-grid synchronisation, VLBI astronomy, tests of relativity (optical clocks detect gravitational time dilation from a height change of about 1 cm), searches for dark matter and for variation of fundamental constants, and relativistic geodesy.
+X: A clock has fractional uncertainty 10^{-18}. Error over the age of the universe (4.3 × 10^{17} s)?
+> Δt = 4.3 × 10^{17} s × 10^{-18}
+> ≈ 0.4 s
+K: A clock's precision scales with f/Δf: optical transitions are ~10^{4}–10^{5} times higher in frequency than microwave ones, with very narrow lines.
+!: Atomic clocks don't count radioactive decays; they are oscillators locked to atomic transition frequencies.
+T: Fractional frequency uncertainty | The uncertainty in a clock's frequency divided by the frequency itself
+T: Optical lattice clock | A clock using many neutral atoms held in a standing-wave laser trap, probed on a narrow optical transition
+SUM: Clocks lock an oscillator to an atomic resonance.
+SUM: Caesium defines the second; optical clocks reach ~10^{-18}.
+SUM: They underpin navigation and test gravity and fundamental constants.
+EV: established | Optical atomic clocks have reached fractional uncertainties near 10^{-18} and measure gravitational time dilation over centimetre heights
+SRC: OpenStax, University Physics Volume 3, section 8.3 "Electron Spin" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/8-3-electron-spin
+SRC: OpenStax, University Physics Volume 3, section 8.5 "Atomic Spectra and X-rays" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/8-5-atomic-spectra-and-x-rays
 Q: Which transition defines the SI second? | The caesium-133 ground-state hyperfine transition, 9 192 631 770 Hz.
-Q: Why are optical clocks more precise than microwave clocks? | Their transition frequencies are ~10^{5} times higher, with very narrow lines.
-M1: Optical lattice clocks commonly use: | Strontium | Caesium | Hydrogen | Uranium | 698 nm transition.
-M2: Optical clocks can detect height differences of about: | 1 cm | 1 km | 1 m | 1 mm only in space | Gravitational redshift ~10^{-18}.
+Q: Why are optical clocks more precise than microwave clocks? | Their transition frequencies are ~10^{4}–10^{5} times higher, with very narrow lines.
+M1@2: Optical lattice clocks commonly use: | Strontium | Caesium | Hydrogen | Uranium | Strontium's narrow 698 nm transition, probed on thousands of trapped atoms at once, is a leading optical clock standard.
+M2@3: Optical clocks can detect height differences of about: | 1 cm | 1 km | 10 m | 1 mm only in space | Gravitational time dilation is gΔh/c^{2} ≈ 10^{-18} per centimetre, within reach of the best clocks.
+NUM2@3: What is the fractional frequency shift gΔh/c^{2} for a height change of 1.0 m? Give it in units of 10^{-16}. (g = 9.8 m s^{-2}) | 1.09 | 0.02 | × 10^{-16} | 9.8 × 1.0/(3.0 × 10^{8})^{2} = 1.09 × 10^{-16}.
+TF1@1: An atomic clock works by counting radioactive decays. | false | It locks an oscillator to the frequency of an atomic transition; radioactivity plays no part.
+M3@2: Why does probing more atoms at once improve a clock's stability? | Quantum projection noise falls as 1/√N | More atoms give a higher transition frequency | More atoms narrow the natural linewidth | Atoms shield each other from magnetic fields | Each measurement on N independent atoms averages their random projection outcomes, reducing the frequency noise as 1/√N.
+SA2@1,3: Explain how an atomic clock works and why its "ticking" is so much more reliable than a quartz oscillator's. | A local oscillator, a quartz-referenced microwave source or a stabilised laser, is tuned near an atomic transition. Atoms are probed, the fraction excited is measured, and a feedback loop steers the oscillator to the centre of the resonance; counting its cycles gives time. The atomic frequency is set by fundamental constants, the same for every atom of the isotope, and barely affected by temperature or ageing, whereas a quartz crystal's frequency depends on its cut, temperature and wear. Narrow lines at high frequency, many atoms and long probe times make the lock very precise. | Oscillator probes atoms ; Feedback locks to resonance ; Counting cycles gives time ; Atomic frequency identical and fundamental ; Quartz drifts with temperature and ageing
 
 ## Laser cooling
 S: Laser cooling slows atoms using the momentum of photons. Tuning lasers slightly below an atomic resonance makes atoms moving towards the light absorb more, so they're always pushed back: temperatures fall to microkelvin.
+O: Explain Doppler cooling and the role of red detuning
+O: Calculate photon recoil velocities and the Doppler limit
+O: Describe sub-Doppler and further cooling methods
+PRE: Doppler effect
+LV: Year 3 · Physical reasoning
 H: Doppler cooling
-- Laser red-detuned (below resonance).
-- Atoms moving towards a beam see it Doppler-shifted up to resonance: absorb, get a kick opposing motion.
-- Spontaneous emission is random in direction: no net kick on average.
+- The laser is red-detuned (below resonance).
+- An atom moving towards a beam sees it Doppler-shifted up towards resonance, absorbs, and gets a kick opposing its motion.
+- Spontaneous emission is random in direction, so it gives no net kick on average.
 - Six beams make an "optical molasses" that damps motion in 3D.
-E: T_{D} = ħΓ/(2k_{B}) :: Doppler limit (~140 μK for sodium)
+E: T_{D} = ħΓ/(2k_{B}) :: Doppler limit (~240 μK for sodium, ~150 μK for rubidium)
 H: Sub-Doppler cooling
-- Polarisation gradient (Sisyphus) cooling: atoms climb light-shift potential hills and lose energy; reaches ~10 μK, below the Doppler limit.
+- Polarisation-gradient (Sisyphus) cooling: atoms climb light-shift hills and lose energy; it reaches ~10 μK, below the Doppler limit.
 - Raman and evaporative cooling reach nanokelvin.
 H: Recognition
 P: Chu, Cohen-Tannoudji and Phillips shared the 1997 Nobel Prize for laser cooling. It underlies atomic clocks, atom interferometers, Bose–Einstein condensates and many quantum computers.
 X: Recoil velocity of a sodium atom absorbing a 589 nm photon?
 > v = h/(mλ) = 6.63 × 10^{-34}/(3.8 × 10^{-26} × 5.89 × 10^{-7}) = 3 cm s^{-1}
 > Stopping a 500 m s^{-1} atom takes ~17 000 photons, absorbed in milliseconds
+K: Red-detuned light makes the scattering force depend on velocity, so it acts like friction; random spontaneous emission sets the Doppler limit.
 !: Laser cooling works only for atoms with suitable closed transitions; molecules are much harder (though now achieved for some).
+T: Red detuning | Tuning a laser to a frequency slightly below the atomic resonance
+T: Optical molasses | Counter-propagating red-detuned beams that produce a viscous damping force on atoms
+T: Doppler limit | The lowest temperature reachable by Doppler cooling, k_{B}T = ħΓ/2
+SUM: Red-detuned light preferentially kicks atoms moving towards it.
+SUM: Each photon changes velocity by ħk/m, a few cm s^{-1}.
+SUM: Doppler limit ħΓ/(2k_{B}); sub-Doppler methods go lower.
+EV: established | Laser cooling routinely produces atomic gases at microkelvin temperatures, below the Doppler limit with polarisation-gradient cooling
+SRC: OpenStax, University Physics Volume 2, section 16.4 "Momentum and Radiation Pressure" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/16-4-momentum-and-radiation-pressure
+SRC: OpenStax, University Physics Volume 1, section 17.7 "The Doppler Effect" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/17-7-the-doppler-effect
 Q: How does Doppler cooling slow atoms? | Red-detuned light is absorbed preferentially by atoms moving towards it, giving momentum kicks that oppose motion.
 Q: What is the Doppler cooling limit? | T = ħΓ/(2k_{B}), set by heating from random spontaneous emission.
-M1: Laser cooling beams are tuned: | Slightly below resonance | Exactly on resonance | Far above | To any frequency | Red detuning.
-M2: Optical molasses refers to: | Damping of atomic motion by counter-propagating beams | Sticky lasers | A type of BEC | Laser cutting | Viscous-like force.
+M1@1: Laser cooling beams are tuned: | Slightly below resonance | Exactly on resonance | Far above resonance | To any frequency at all | Red detuning means only atoms moving towards a beam are Doppler-shifted into resonance, so the force always opposes motion.
+M2@1: Optical molasses refers to: | Damping of atomic motion by counter-propagating beams | Atoms stuck to a cold surface | A type of Bose–Einstein condensate | Using lasers to cut metals | The velocity-dependent scattering force acts like a viscous drag, slowing atoms in every direction where beams cross.
+NUM2@2: What is the recoil velocity, in mm s^{-1}, of a rubidium-87 atom (m = 1.44 × 10^{-25} kg) absorbing a 780 nm photon? | 5.9 | 0.1 | mm s^{-1} | v = h/(mλ) = 6.63 × 10^{-34}/(1.44 × 10^{-25} × 7.80 × 10^{-7}) = 5.9 × 10^{-3} m s^{-1}.
+TF1@3: Sisyphus cooling can cool atoms below the Doppler limit. | true | Polarisation-gradient cooling relies on light shifts and optical pumping, not just Doppler shifts, and reaches about 10 μK in alkali atoms.
+M3@2: A transition has natural linewidth Γ/2π = 6.0 MHz. What is its Doppler limit? (ħ = 1.05 × 10^{-34} J s, k_{B} = 1.38 × 10^{-23} J K^{-1}) | About 140 μK | About 14 μK | About 1.4 mK | About 280 μK | Γ = 3.8 × 10^{7} s^{-1}; T = ħΓ/(2k_{B}) = 1.05 × 10^{-34} × 3.8 × 10^{7}/(2.76 × 10^{-23}) ≈ 1.4 × 10^{-4} K.
+SA3@1,2: Explain how laser light, which carries energy into an atom, can cool a gas. | Each absorbed photon gives the atom momentum ħk along the beam; the re-emitted photon goes in a random direction, so over many cycles the emission kicks average to zero. If the laser is tuned slightly below resonance, an atom moving towards the beam sees it Doppler-shifted up into resonance and scatters many photons, each slowing it, while an atom moving away sees it shifted further from resonance and scatters few. With beams from all directions, the net force opposes velocity, like friction, so the spread of velocities, and hence the temperature, falls. The energy is carried off by the scattered photons, which are on average slightly bluer than those absorbed. | Photon momentum kick ħk ; Random spontaneous emission averages out ; Red detuning plus Doppler shift ; Velocity-dependent force from opposing beams ; Energy removed by scattered light
 
 ## Magneto-optical trapping
 S: A magneto-optical trap (MOT) combines laser cooling with a magnetic field gradient so the light both cools atoms and pushes them to the centre. It's the standard starting point for cold-atom experiments.
+O: Explain how a MOT produces a position-dependent restoring force
+O: Describe the beam polarisations and field geometry of a MOT
+O: Outline what happens to atoms after the MOT stage
+PRE: Laser cooling
+LV: Year 3 · Physical reasoning
 H: How it works
-- Six circularly polarised beams in three axes, red-detuned.
-- An anti-Helmholtz coil pair makes a quadrupole field, zero at the centre.
-- Zeeman shifts bring the beam pushing an atom back towards the centre closer to resonance: position-dependent force.
-- Captures atoms from a vapour or slowed beam; holds ~10^{6}–10^{10} atoms at ~100 μK.
+- Six circularly polarised, red-detuned beams along three axes.
+- An anti-Helmholtz coil pair makes a quadrupole field, zero at the centre and growing linearly outwards.
+- Zeeman shifts bring the beam that pushes an atom back towards the centre closer to resonance: a position-dependent force.
+- It captures atoms from a vapour or a slowed beam, holding ~10^{6}–10^{10} atoms at ~100 μK.
 H: After the MOT
 - Optical molasses for sub-Doppler cooling.
 - Transfer to magnetic traps or optical dipole traps (focused far-detuned lasers).
 - Evaporative cooling to reach quantum degeneracy.
 - Optical lattices and tweezer arrays position individual atoms for quantum simulation and computing.
 H: Beyond atoms
-P: MOTs now trap some molecules (SrF, CaF), enabling ultracold chemistry and precision tests like the electron's electric dipole moment. Antihydrogen has been laser-cooled at CERN (2021).
+P: MOTs now trap some molecules (SrF, CaF), enabling ultracold chemistry and precision tests such as searches for the electron's electric dipole moment. Antihydrogen has been laser-cooled at CERN (2021).
 X: Why does the field gradient need circular polarisation?
 > Zeeman-shifted sublevels absorb σ^{+} or σ^{−} light preferentially
 > Matching each beam's polarisation to the field direction makes the force always point towards the centre
+K: In a MOT the magnetic gradient makes the radiation pressure depend on position, so the light both cools and traps.
 !: The magnetic field alone doesn't trap atoms in a MOT; it makes the radiation pressure position-dependent.
+T: Magneto-optical trap | A trap combining red-detuned circularly polarised beams with a quadrupole magnetic field to cool and confine atoms
+T: Quadrupole field | A magnetic field that is zero at a point and grows linearly in every direction from it
+T: Anti-Helmholtz coils | Two coils carrying opposite currents, producing a quadrupole field
+SUM: A MOT = optical molasses + quadrupole field + circular polarisation.
+SUM: Zeeman shifts make the force point to the field zero.
+SUM: MOTs load traps, lattices and tweezers for further cooling and quantum control.
+EV: established | Magneto-optical traps reliably cool and confine millions to billions of atoms at about 100 μK
+SRC: OpenStax, University Physics Volume 3, section 8.2 "Orbital Magnetic Dipole Moment of the Electron" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/8-2-orbital-magnetic-dipole-moment-of-the-electron
+SRC: OpenStax, University Physics Volume 2, section 16.4 "Momentum and Radiation Pressure" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/16-4-momentum-and-radiation-pressure
 Q: What does the magnetic field do in a MOT? | It Zeeman-shifts transitions so radiation pressure pushes atoms towards the trap centre.
 Q: How many atoms does a typical MOT hold? | About a million to ten billion.
-M1: A MOT's magnetic field is: | Zero at the centre, increasing linearly | Uniform | Oscillating | Absent | Quadrupole field.
-M2: Optical tweezer arrays are used for: | Arranging individual atoms for quantum computing | Cutting atoms | Heating atoms | Measuring magnetic fields only | Programmable atom arrays.
+M1@2: A MOT's magnetic field is: | Zero at the centre, increasing linearly | Uniform throughout the trap | Oscillating at radio frequency | Absent during trapping | Anti-Helmholtz coils give a quadrupole field with a zero at the centre, so Zeeman shifts grow with distance from it.
+M2@3: Optical tweezer arrays are used for: | Arranging individual atoms for quantum computing | Cutting atoms into fragments | Heating atoms above room temperature | Measuring magnetic fields only | Tightly focused beams each hold one atom, and can be moved to build programmable arrays for quantum simulation.
+TF1@1: Switching off the coils of a MOT leaves an optical molasses that cools atoms but no longer confines them. | true | Without the field gradient the force depends only on velocity, so atoms are slowed but slowly diffuse away.
+NUM2@1: A MOT holds 10^{8} sodium atoms (m = 3.8 × 10^{-26} kg). What is the total mass, in units of 10^{-18} kg? | 3.8 | 0.1 | × 10^{-18} kg | 10^{8} × 3.8 × 10^{-26} kg = 3.8 × 10^{-18} kg: a few femtograms.
+M3@1,2: An atom sits to the right of the MOT centre. Which beam does the Zeeman shift bring closer to resonance? | The beam travelling to the left, pushing it back | The beam travelling to the right | Both beams equally | Neither: the shift moves both away | The field and polarisations are arranged so that, off-centre, the beam directed back towards the centre is shifted towards resonance and scatters more.
+SA3@1,2: Explain how a magneto-optical trap confines atoms as well as cooling them. | Red-detuned counter-propagating beams in three directions give a velocity-dependent force that cools the atoms (optical molasses). Adding a quadrupole field, zero at the centre and increasing linearly, makes the Zeeman shifts of the atomic sublevels grow with displacement. The beams are circularly polarised so that, for an atom displaced from the centre, the sublevel shifted towards resonance is the one driven by the beam pointing back towards the centre. That beam then scatters more photons, giving a restoring force proportional to displacement, so atoms are both slowed and pushed to the centre. | Molasses gives velocity damping ; Quadrupole field zero at centre ; Zeeman shift grows with displacement ; Circular polarisation selects the restoring beam ; Restoring force ∝ displacement
 
 ## Bose–Einstein condensation in atomic gases
 S: When a dilute gas of bosonic atoms is cooled to nanokelvin temperatures, a large fraction collapses into the lowest quantum state, forming a Bose–Einstein condensate: a macroscopic matter wave. First made in 1995, BECs are laboratories for quantum physics.
+O: State the condition for Bose–Einstein condensation in terms of phase-space density
+O: Describe how BECs are made and observed
+O: Explain the coherence and superfluid properties of BECs
+PRE: Bose–Einstein statistics
+LV: Year 3 · Physical reasoning
 H: Making a BEC
-- Laser cool in a MOT, then load a magnetic or optical trap.
-- **Evaporative cooling**: remove the hottest atoms; the rest rethermalise colder.
-- Condensation when nλ^{3} ≈ 2.6, typically ~100 nK at ~10^{20} m^{-3}.
-- Observed by releasing the cloud: a sharp peak in the velocity distribution appears.
+- Laser-cool in a MOT, then load a magnetic or optical trap.
+- **Evaporative cooling**: remove the most energetic atoms; the rest rethermalise colder.
+- Condensation when nλ_{dB}^{3} ≈ 2.6, with λ_{dB} the thermal de Broglie wavelength; typically 0.1–1 μK at densities of 10^{19}–10^{20} m^{-3}.
+- Observed by releasing the cloud: a sharp peak appears in the velocity distribution.
 H: Properties
 - Coherent: two BECs interfere (Ketterle, 1997).
 - Superfluid: quantised vortices form in rotating condensates.
-- Interactions tunable with Feshbach resonances: from repulsive to attractive (collapse, "Bosenova").
+- Interactions tunable with Feshbach resonances, from repulsive to attractive (collapse: the "Bosenova").
 - Atom lasers: coherent beams of atoms.
 H: Uses
-P: BECs simulate condensed matter (Mott insulator transition in optical lattices), analogue black holes (sonic horizons with Hawking-like radiation), and serve as ultra-sensitive sensors. Cornell, Wieman and Ketterle received the 2001 Nobel Prize. NASA's Cold Atom Lab makes BECs on the ISS.
-X: Why evaporative cooling works: remove atoms with energy > 4k_{B}T.
-> The removed atoms carry above-average energy
-> After collisions, the remaining atoms have a lower average energy: lower T
+P: BECs simulate condensed matter (the Mott insulator transition in optical lattices) and analogue black holes (sonic horizons), and serve as very sensitive sensors. Cornell, Wieman and Ketterle received the 2001 Nobel Prize. NASA's Cold Atom Lab makes BECs on the International Space Station.
+X: Why evaporative cooling works: remove atoms with energy above 4k_{B}T.
+> The removed atoms carry well above the average energy
+> After collisions the remaining atoms share a lower average energy: lower T
+K: Condensation happens when the atoms' de Broglie wavelength becomes comparable to their spacing, so their wavefunctions overlap.
 !: A BEC isn't a solid or liquid; it's an extremely dilute gas whose atoms share one quantum state.
+T: Bose–Einstein condensate | A state in which a macroscopic fraction of bosons occupies the single lowest quantum state
+T: Thermal de Broglie wavelength | λ_{dB} = h/√(2πmk_{B}T), the typical quantum wavelength of an atom at temperature T
+T: Evaporative cooling | Removing the most energetic atoms so the remainder rethermalise at a lower temperature
+SUM: BEC forms when nλ_{dB}^{3} ≈ 2.6, at ~100 nK for dilute alkali gases.
+SUM: Laser cooling plus evaporative cooling reaches it.
+SUM: BECs are coherent, superfluid and tunable quantum simulators.
+EV: established | Dilute atomic gases form Bose–Einstein condensates at sub-microkelvin temperatures, first achieved in rubidium and sodium in 1995
+SRC: OpenStax, University Physics Volume 3, section 8.4 "The Exclusion Principle and the Periodic Table" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/8-4-the-exclusion-principle-and-the-periodic-table
+SRC: OpenStax, University Physics Volume 3, section 6.5 "De Broglie's Matter Waves" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/6-5-de-broglies-matter-waves
 Q: What is evaporative cooling? | Removing the most energetic atoms so the remainder rethermalise at lower temperature.
 Q: How was BEC first observed? | As a sharp peak in the atoms' velocity distribution after release from the trap.
-M1: BECs are made from: | Bosonic atoms | Fermionic atoms only | Photons only | Electrons | Integer spin.
-M2: Two overlapping BECs produce: | Interference fringes | Nothing | A solid | Heat only | Coherent matter waves.
+M1@1: BECs are made from: | Bosonic atoms | Fermionic atoms only | Free electrons | Neutrinos | Only bosons (integer total spin, such as rubidium-87) can share a single quantum state; fermions are blocked by the Pauli principle.
+M2@3: Two overlapping BECs produce: | Interference fringes | No measurable effect | A solid crystal | Only extra heat | Each condensate is a single coherent matter wave, so where they overlap their amplitudes add, giving fringes as Ketterle's group saw in 1997.
+NUM2@1: Condensation needs nλ_{dB}^{3} ≈ 2.6. If λ_{dB} = 0.30 μm, what density, in units of 10^{19} m^{-3}, is needed? | 9.6 | 0.3 | × 10^{19} m^{-3} | n = 2.6/(3.0 × 10^{-7})^{3} = 2.6/2.7 × 10^{-20} = 9.6 × 10^{19} m^{-3}.
+TF1@2: Cooling a gas lengthens its atoms' thermal de Broglie wavelength. | true | λ_{dB} = h/√(2πmk_{B}T) grows as 1/√T, so cold atoms have long wavelengths that overlap.
+M3@2,3: Why must evaporative cooling be done slowly enough for collisions to occur? | Collisions refill the high-energy tail so more hot atoms can be removed | Collisions add energy that is needed for condensation | Collisions turn fermions into bosons | Fast evaporation would heat the trap coils | Without rethermalisation the distribution isn't Maxwellian and no new hot atoms appear to be cut off, so cooling stalls.
+SA3@1,2: Explain why Bose–Einstein condensation in atomic gases requires such low temperatures, and how they are reached. | Condensation occurs when the thermal de Broglie wavelength, which grows as 1/√T, becomes comparable to the spacing between atoms, so nλ_{dB}^{3} ≈ 2.6. Atomic gases must be very dilute (10^{19}–10^{20} m^{-3}) to avoid forming molecules or solids, so the spacing is large and the temperature must be tiny, around 0.1–1 μK. Atoms are first laser-cooled in a MOT to ~100 μK, then held in a magnetic or optical trap and evaporatively cooled: the most energetic atoms are removed and the rest rethermalise colder, until the phase-space density passes the threshold. | Phase-space density condition ; Wavelength comparable to spacing ; Dilute gas means very low T needed ; Laser cooling stage ; Evaporative cooling stage
 
 ## Precision spectroscopy
-S: Precision spectroscopy measures atomic and molecular transition frequencies to extraordinary accuracy, testing fundamental physics: QED, the constancy of nature's constants, and the symmetry between matter and antimatter.
+S: Precision spectroscopy measures atomic and molecular transition frequencies with extraordinary accuracy, testing fundamental physics: QED, the constancy of nature's constants, and the symmetry between matter and antimatter.
+O: Describe Doppler-free techniques and the role of frequency combs
+O: Explain how precision measurements test QED, CPT symmetry and constant constants
+O: Evaluate why table-top measurements can probe physics beyond the Standard Model
+PRE: Atomic transitions
+LV: Postgraduate · Physical reasoning
 H: Techniques
 - **Doppler-free methods**: saturated absorption, two-photon spectroscopy with counter-propagating beams.
 - **Cold atoms and trapped ions**: long interrogation times.
-- **Frequency combs** (Hänsch and Hall, Nobel 2005): directly link optical frequencies to microwave standards.
+- **Frequency combs** (Hänsch and Hall, Nobel 2005): link optical frequencies directly to microwave standards.
 - **Ramsey interferometry**: separated oscillatory fields narrow resonances (Nobel 1989).
 H: Landmark measurements
-- Hydrogen 1s–2s at 2 466 061 413 187 kHz with ~10 Hz uncertainty: Rydberg constant and proton radius.
-- Antihydrogen 1s–2s agrees with hydrogen to ~2 parts per trillion (ALPHA, CERN).
-- Electron magnetic moment to 0.1 ppt: α to 0.1 ppb.
-- Electron EDM limits (< 10^{-29} e cm) constrain new physics far beyond collider reach.
+- Hydrogen 1s–2s at 2 466 061 413 187 kHz with ~10 Hz uncertainty: the Rydberg constant and the proton radius.
+- Antihydrogen 1s–2s agrees with hydrogen to ~2 parts in 10^{12} (ALPHA, CERN).
+- Electron magnetic moment to ~0.1 parts per trillion, giving α to ~0.1 parts per billion.
+- Electron electric dipole moment limits (below 10^{-29} e cm) constrain new physics at energies beyond collider reach.
 H: Fundamental constants
-P: Comparing different atomic clocks over years limits any drift of α or the proton-to-electron mass ratio to < 10^{-17} per year. Molecular spectroscopy tests whether the proton mass varies. Precision measurements are a complementary route to new physics alongside particle colliders.
+P: Comparing different atomic clocks over years limits any present-day drift of α or of the proton-to-electron mass ratio to below ~10^{-17} per year. Precision measurements are a complementary route to new physics alongside particle colliders: a heavy new particle would shift energies slightly through virtual effects.
 X: Why does two-photon spectroscopy with counter-propagating beams cancel Doppler broadening?
 > An atom moving at v sees one beam shifted by +kv and the other by −kv
-> Absorbing one photon from each, the shifts cancel: total energy 2ħω independent of v
-!: Precision isn't just more digits; it lets tiny effects (QED corrections, possible new forces) become visible.
+> Absorbing one photon from each, the shifts cancel: the total energy 2ħω is independent of v
+K: Precision lets tiny effects (QED corrections, symmetry violations, possible new forces) become visible in atomic energies.
+!: Precision isn't just more digits; a disagreement with theory at the 12th digit is as significant as a new particle seen at a collider.
+T: Frequency comb | A mode-locked laser whose spectrum is a ruler of evenly spaced optical frequencies linked to a microwave standard
+T: CPT symmetry | The combined symmetry of charge conjugation, parity and time reversal, predicting identical spectra for matter and antimatter
+T: Electric dipole moment (EDM) | A separation of charge along a particle's spin; a nonzero electron EDM would violate time-reversal symmetry
+SUM: Doppler-free methods, cold atoms and combs give frequencies to ~10^{-15} or better.
+SUM: Hydrogen, antihydrogen and electron g-2 measurements test QED and CPT.
+SUM: EDM searches and clock comparisons probe physics beyond the Standard Model.
+EV: established | Precision spectroscopy confirms QED and CPT symmetry at the parts-per-trillion level; no electron EDM or drift of constants has been found
+SRC: OpenStax, University Physics Volume 3, section 8.5 "Atomic Spectra and X-rays" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/8-5-atomic-spectra-and-x-rays
+SRC: OpenStax, University Physics Volume 3, section 8.6 "Lasers" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/8-6-lasers
 Q: How does a frequency comb help precision spectroscopy? | It provides a ruler of evenly spaced optical frequencies linked to a microwave standard.
 Q: What did comparing hydrogen and antihydrogen spectra test? | CPT symmetry between matter and antimatter.
-M1: Doppler-free spectroscopy techniques include: | Saturated absorption | Simple absorption at room temperature | X-ray diffraction | Flame tests | Velocity-selective.
-M2: Limits on the electron's electric dipole moment test: | Physics beyond the Standard Model | Gravity directly | Nuclear fission | Chemical bonding | Time-reversal violation.
+M1@1: Doppler-free spectroscopy techniques include: | Saturated absorption | Absorption in a hot vapour cell | X-ray diffraction | Flame tests | Saturated absorption uses a strong pump and weak probe that interact only with atoms of near-zero velocity along the beam.
+M2@3: Limits on the electron's electric dipole moment test: | Physics beyond the Standard Model | Newtonian gravity directly | Rates of nuclear fission | Models of chemical bonding | The Standard Model predicts an EDM far below current limits; new time-reversal-violating particles would give a larger one.
+NUM3@1: Two-photon spectroscopy of hydrogen 1s–2s uses 243 nm light. What is the total energy, in eV, of the two absorbed photons? | 10.2 | 0.05 | eV | Each photon has 1240/243 = 5.10 eV; two give 10.2 eV, the 1s–2s gap (13.6 × 3/4).
+TF1@2: In counter-propagating two-photon absorption, an atom's first-order Doppler shifts from the two beams cancel. | true | The shifts +kv and −kv add to zero, so all velocity classes absorb at the same frequency.
+M3@2,3: A proposed new particle couples very weakly to electrons and has a mass far beyond collider energies. How could atomic spectroscopy detect it? | Virtual effects could slightly shift energies or induce an electron EDM | It would emit visible light in atomic vapours | It would ionise atoms in the laboratory | It would change atomic masses by several per cent | Heavy particles appear in quantum loops, producing tiny energy shifts or symmetry-violating moments that precision measurements can resolve.
+SA3@2,3: Explain how precision atomic spectroscopy tests fundamental physics, giving two examples. | Theory, mainly QED with known constants, predicts atomic energies to many significant figures, so comparing a measured transition frequency with prediction tests the theory and determines constants. Hydrogen's 1s–2s frequency, measured to about 10 Hz in 2.5 × 10^{15} Hz, gives the Rydberg constant and, with the Lamb shift, the proton radius. The antihydrogen 1s–2s frequency matching hydrogen's to about 2 parts in 10^{12} tests CPT symmetry. Electron EDM searches test time-reversal violation predicted by many extensions of the Standard Model, and comparisons of clocks limit drifts of α. | Measurement compared with precise theory ; Hydrogen 1s–2s or electron g-factor example ; Antihydrogen and CPT ; EDM or varying constants as beyond-Standard-Model test ; Explains why high precision matters
 `;

@@ -972,110 +972,199 @@ M3@2: Why could the speed of light be predicted from electrical measurements alo
 SA3@1,2: Explain qualitatively how Maxwell's equations allow an electromagnetic wave to travel through empty space without charges or currents. | In empty space ρ = 0 and J = 0, but Faraday's law says a changing magnetic field produces a curling electric field, and the Ampère–Maxwell law says a changing electric field (the displacement current term) produces a curling magnetic field. So a disturbance in E generates B, which in turn regenerates E further along, and the pair propagate together, at right angles to each other and to the direction of travel. Combining the curl equations gives a wave equation with speed 1/√(μ_{0}ε_{0}) = 3.0 × 10^{8} m s^{-1}, the speed of light. | No charges or currents needed ; Changing B gives E (Faraday) ; Changing E gives B (displacement current) ; Mutual regeneration propagates; E ⊥ B ⊥ direction ; Wave equation speed 1/√(μ_{0}ε_{0}) = c
 
 ## Displacement current
-S: Displacement current is Maxwell's addition to Ampère's law: a changing electric field produces a magnetic field just as a real current does. It made electromagnetism consistent and predicted electromagnetic waves.
+S: Displacement current is Maxwell's addition to Ampère's law: a changing electric field produces a magnetic field just as a real current does. It made electromagnetism consistent with charge conservation and predicted electromagnetic waves.
+O: Define displacement current and calculate it for a capacitor
+O: Explain how displacement current resolves the charging-capacitor paradox
+O: Explain why displacement current is needed for electromagnetic waves
+PRE: Ampère's law
+LV: Year 2 · Application
 H: Definition
 E: I_{d} = ε_{0} dΦ_{E}/dt
 E: ∮B·dl = μ_{0}(I + I_{d})
+- For a parallel-plate capacitor, Φ_{E} = EA, so I_{d} = ε_{0}A dE/dt.
 H: The capacitor paradox
-P: Charging a capacitor, current flows in the wires but not across the gap. Ampère's law gives different answers for a surface pierced by the wire and one passing between the plates. The changing field between the plates supplies exactly I_{d} = I, restoring consistency and charge conservation.
+P: While a capacitor charges, current flows in the wires but not across the gap. Ampère's law gives different answers for a surface pierced by the wire and one passing between the plates. The changing field between the plates supplies exactly I_{d} = I, restoring consistency and charge conservation.
 H: Consequences
 - Magnetic fields exist between charging capacitor plates (measurable).
 - Electromagnetic waves: changing E fields in empty space create B.
-- Needed for ∇·(∇ × B) = 0 to agree with charge conservation.
-X: A parallel-plate capacitor (A = 0.01 m^{2}) has field changing at 10^{12} V m^{-1} s^{-1}. Displacement current?
-> I_{d} = ε_{0}A dE/dt = 8.85 × 10^{-12} × 0.01 × 10^{12} = 0.089 A
+- Needed so that ∇·(∇ × B) = 0 agrees with the continuity equation for charge.
+X: A parallel-plate capacitor (A = 0.01 m^{2}) has a field changing at 10^{12} V m^{-1} s^{-1}. What is the displacement current?
+> I_{d} = ε_{0}A dE/dt = 8.85 × 10^{-12} × 0.01 × 10^{12}
+> I_{d} = 0.089 A
+K: A changing electric flux acts as a source of magnetic field, with I_{d} = ε_{0}dΦ_{E}/dt playing the part of a current.
 !: Displacement current isn't a flow of charge; it's a changing electric field that acts as a source of magnetic field.
+T: Displacement current | ε_{0} times the rate of change of electric flux, which produces a magnetic field as a conduction current does
+T: Continuity equation | ∂ρ/∂t + ∇·J = 0: charge is conserved locally
+SUM: I_{d} = ε_{0}dΦ_{E}/dt; between capacitor plates it equals the current in the wires.
+SUM: It makes Ampère's law consistent with charge conservation.
+SUM: Without it there would be no self-sustaining electromagnetic waves.
+EV: established | A changing electric field produces a magnetic field, as Maxwell's displacement current describes
+SRC: OpenStax, University Physics Volume 2, section 16.1 "Maxwell’s Equations and Electromagnetic Waves" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/16-1-maxwells-equations-and-electromagnetic-waves
+SRC: Griffiths D. J., Introduction to Electrodynamics, 4th edn, Cambridge University Press, chapter 7 "Electrodynamics" | secondary | 2017
 Q: What is displacement current? | ε_{0} times the rate of change of electric flux; it produces magnetic fields like a real current.
 Q: Why did Maxwell add displacement current? | To make Ampère's law consistent with charge conservation (the capacitor paradox).
-M1: Displacement current between capacitor plates equals: | The conduction current in the wires | Zero | Twice the current | The charge | Continuity.
-M2: Displacement current was essential for predicting: | Electromagnetic waves | Electrostatics | Ohm's law | Coulomb's law | Changing E creates B in vacuum.
+M1@2: Displacement current between capacitor plates equals: | The conduction current in the wires | Zero | Twice the current | The charge on the plates | I_{d} = ε_{0}A dE/dt = dQ/dt, exactly the current flowing into the plate: the "current" is continuous through the gap.
+M2@3: Displacement current was essential for predicting: | Electromagnetic waves | Electrostatics | Ohm's law | Coulomb's law | Only with the term ε_{0}∂E/∂t can a changing E in empty space generate B, so that E and B sustain each other as a wave.
+NUM2@1: A capacitor with plates of area 0.020 m^{2} is charged by a current of 0.50 A. At what rate does the field between the plates change, in units of 10^{12} V m^{-1} s^{-1}? | 2.8 | 3% | × 10^{12} V m^{-1} s^{-1} | I_{d} = I, so dE/dt = I/(ε_{0}A) = 0.50/(8.85 × 10^{-12} × 0.020) = 2.8 × 10^{12} V m^{-1} s^{-1}.
+M3@1,2: Between the circular plates of a charging capacitor, the magnetic field at radius r inside the plates (radius R): | Grows in proportion to r | Is zero everywhere | Is uniform across the gap | Falls as 1/r | A loop of radius r < R encloses displacement current I r^{2}/R^{2}, so B·2πr = μ_{0}I r^{2}/R^{2} and B ∝ r.
+SA3@2: Explain the charging-capacitor paradox in Ampère's original law and how Maxwell resolved it. | Take a loop round the wire leading to a charging capacitor. Ampère's law ∮B·dl = μ_{0}I_{enc} should give the same answer for any surface bounded by the loop. A flat surface cut by the wire encloses current I, but a surface bulging between the plates is crossed by no charge, giving zero: a contradiction. Maxwell added the displacement current ε_{0}dΦ_{E}/dt. Between the plates the electric flux grows at dΦ_{E}/dt = I/ε_{0}, so the bulging surface encloses I_{d} = I, and both surfaces agree. The correction also makes the law consistent with charge conservation. | Law must hold for any surface on the loop ; Flat surface gives I, bulging surface gives 0 ; Contradiction ; Added term ε_{0}dΦ_{E}/dt ; Between plates I_{d} = I, so both agree; consistent with charge conservation
 
 ## Electromagnetic potentials
 S: Instead of working with E and B directly, electromagnetism can be written in terms of a scalar potential V and a vector potential A. The potentials simplify calculations, are essential in quantum mechanics, and combine into a relativistic four-vector.
+O: Write E and B in terms of the potentials V and A
+O: Explain why two of Maxwell's equations are satisfied automatically by the potentials
+O: Describe the Aharonov–Bohm effect and what it shows about potentials
+PRE: Electric potential
+LV: Year 3 · Physical reasoning
 H: Definitions
 E: B = ∇ × A
 E: E = −∇V − ∂A/∂t
-- Two of Maxwell's equations (∇·B = 0, Faraday) are then automatic.
+- Two of Maxwell's equations (∇·B = 0 and Faraday's law) are then automatic, because the divergence of a curl and the curl of a gradient are zero.
+- In electrostatics A drops out of E and V is the familiar electric potential.
 H: Wave equations (Lorenz gauge)
 E: ∇^{2}V − (1/c^{2})∂^{2}V/∂t^{2} = −ρ/ε_{0}
 E: ∇^{2}A − (1/c^{2})∂^{2}A/∂t^{2} = −μ_{0}J
-- Solutions: retarded potentials, with sources evaluated at the earlier time when the signal set out.
+- Solutions are retarded potentials, with each source evaluated at the earlier time when its signal set out at speed c.
 H: Physical reality of A
-P: In quantum mechanics, a charge's wavefunction picks up a phase (q/ħ)∮A·dl. The Aharonov–Bohm effect (1959; confirmed by Tonomura, 1986): electrons passing either side of a shielded solenoid, through regions where B = 0, show an interference shift set by the enclosed flux. Potentials (or at least their loop integrals) are physically meaningful.
-X: Vector potential outside a long solenoid of flux Φ?
-> B = 0 outside, but ∮A·dl = Φ
+P: In quantum mechanics a charge's wavefunction picks up a phase (q/ħ)∮A·dl. In the Aharonov–Bohm effect (predicted 1959; confirmed by Tonomura's group, 1986), electrons passing either side of a shielded solenoid, through regions where B = 0, show an interference shift set by the enclosed flux. Potentials, or at least their loop integrals, are physically meaningful.
+X: What is the vector potential outside a long solenoid carrying flux Φ?
+> B = 0 outside, but by Stokes' theorem ∮A·dl = Φ for any loop round the solenoid
 > A = Φ/(2πr), circling the solenoid
+K: Writing B = ∇ × A and E = −∇V − ∂A/∂t builds in two Maxwell equations; the other two become wave equations for V and A.
 !: V and A aren't unique; only gauge-invariant combinations (E, B, loop integrals) are measurable.
+T: Vector potential (A) | A vector field whose curl is the magnetic field, B = ∇ × A
+T: Retarded potential | A potential computed from sources at the earlier time t − r/c, accounting for the finite speed of propagation
+SUM: B = ∇ × A and E = −∇V − ∂A/∂t.
+SUM: In the Lorenz gauge V and A obey wave equations with retarded solutions.
+SUM: The Aharonov–Bohm effect shows potentials affect charges even where the fields vanish.
+EV: established | Charged particles respond to the loop integral of A even where B = 0 (Aharonov–Bohm effect)
+SRC: Griffiths D. J., Introduction to Electrodynamics, 4th edn, Cambridge University Press, chapter 10 "Potentials and Fields" | secondary | 2017
+SRC: Jackson J. D., Classical Electrodynamics, 3rd edn, Wiley, chapter 6 | secondary | 1999
 Q: How are E and B obtained from the potentials? | B = ∇ × A; E = −∇V − ∂A/∂t.
 Q: What is the Aharonov–Bohm effect? | Charged particles are affected by electromagnetic potentials even in regions with zero field.
-M1: The vector potential outside an ideal solenoid is: | Non-zero, circulating | Zero | Radial | Uniform | ∮A·dl = Φ.
-M2: Retarded potentials account for: | The finite speed of propagation | Gauge freedom | Static charges only | Magnetic monopoles | Signals travel at c.
+M1@3: The vector potential outside an ideal solenoid is: | Non-zero, circulating | Zero | Radial | Uniform | ∮A·dl equals the enclosed flux, which is not zero, so A circulates as Φ/(2πr) even though B = 0 there.
+M2@1: Retarded potentials account for: | The finite speed of propagation | The freedom to choose a gauge | Static charges only | Magnetic monopoles | Each source contributes as it was at time t − r/c, because changes in the fields travel at c.
+M2@2: Why does writing B = ∇ × A guarantee that ∇·B = 0? | The divergence of any curl is zero | A is always zero in a vacuum | A is chosen to be divergence-free | The magnetic field has no sources only in static cases | ∇·(∇ × A) = 0 is an identity, so no magnetic monopoles can appear whatever A is.
+M3@3: In the Aharonov–Bohm experiment, what changes the electron interference pattern? | The magnetic flux enclosed between the two paths | The magnetic field along the electrons' paths | The electric field of the solenoid | The electrons' speed through the solenoid | The fields on the paths are zero; the phase difference is (e/ħ)Φ, set by the flux the paths enclose.
+SA3@1,2: Show how the potentials V and A automatically satisfy two of Maxwell's equations. | Define B = ∇ × A. Then ∇·B = ∇·(∇ × A) = 0, because the divergence of a curl vanishes, so there are no monopoles. Faraday's law is ∇ × E = −∂B/∂t = −∇ × (∂A/∂t), so ∇ × (E + ∂A/∂t) = 0. A field with zero curl is the gradient of a scalar, so E + ∂A/∂t = −∇V, giving E = −∇V − ∂A/∂t. These definitions satisfy both homogeneous equations identically; Gauss's and the Ampère–Maxwell laws then fix V and A from the sources. | B = ∇ × A gives ∇·B = 0 (div curl = 0) ; Faraday: ∇ × (E + ∂A/∂t) = 0 ; Curl-free field is a gradient ; E = −∇V − ∂A/∂t ; Remaining two equations determine the potentials from ρ and J
 
 ## Gauge transformations
 S: The electromagnetic potentials can be changed by a gauge transformation without altering the physical fields. This freedom, gauge symmetry, turns out to be the organising principle behind all the fundamental forces.
+O: Show that a gauge transformation leaves E and B unchanged
+O: Compare the Coulomb, Lorenz and temporal gauges and when each is useful
+O: Explain the link between gauge symmetry, charge conservation and the Standard Model
+PRE: Electromagnetic potentials
+LV: Year 3 · Physical reasoning
 H: The transformation
 E: A → A + ∇χ; V → V − ∂χ/∂t
-- E and B are unchanged for any function χ.
-- In quantum mechanics: ψ → e^{iqχ/ħ}ψ at the same time.
+- E and B are unchanged for any function χ(r, t).
+- In quantum mechanics the wavefunction changes at the same time: ψ → e^{iqχ/ħ}ψ.
 H: Common gauges
-- **Coulomb gauge**: ∇·A = 0; V given by instantaneous Coulomb potential. Useful in radiation and condensed matter.
-- **Lorenz gauge**: ∇·A + (1/c^{2})∂V/∂t = 0; manifestly Lorentz invariant.
+- **Coulomb gauge**: ∇·A = 0; V is the instantaneous Coulomb potential of the charges. Useful in radiation problems and condensed matter.
+- **Lorenz gauge**: ∇·A + (1/c^{2})∂V/∂t = 0; manifestly Lorentz invariant and gives simple wave equations.
 - **Temporal gauge**: V = 0.
 H: Gauge theories
-P: Requiring that the laws stay the same under local phase changes of charged fields forces the existence of the electromagnetic field (U(1) gauge theory). Generalising to SU(2) and SU(3) gives the weak and strong forces: the Standard Model is a gauge theory. Gauge invariance also guarantees charge conservation and a massless photon.
-X: Show B is unchanged under A → A + ∇χ.
+P: Requiring the laws to stay the same under local phase changes of charged fields forces the existence of the electromagnetic field (a U(1) gauge theory). Generalising to SU(2) and SU(3) gives the weak and strong forces: the Standard Model is a gauge theory. Gauge invariance is tied to charge conservation and to the photon being massless.
+X: Show that B is unchanged under A → A + ∇χ.
 > ∇ × (A + ∇χ) = ∇ × A + ∇ × ∇χ
 > The curl of a gradient is zero, so B is unchanged
+K: Many different pairs (V, A) describe the same E and B; choosing a gauge is choosing a convenient member of that family.
 !: Choosing a gauge is a calculational convenience; physical predictions must not depend on it.
+T: Gauge transformation | A change A → A + ∇χ, V → V − ∂χ/∂t of the potentials that leaves E and B unchanged
+T: Lorenz gauge | The condition ∇·A + (1/c^{2})∂V/∂t = 0, which is the same in every inertial frame
+SUM: Potentials are fixed only up to a gauge function χ.
+SUM: Coulomb, Lorenz and temporal gauges are common choices for different problems.
+SUM: Local gauge symmetry underlies electromagnetism and the whole Standard Model.
+EV: established | Physical predictions of electromagnetism are unchanged by gauge transformations of the potentials
+SRC: Griffiths D. J., Introduction to Electrodynamics, 4th edn, Cambridge University Press, chapter 10 "Potentials and Fields" | secondary | 2017
+SRC: Jackson J. D., Classical Electrodynamics, 3rd edn, Wiley, chapter 6 | secondary | 1999
 Q: What is a gauge transformation? | A change of the potentials (A → A + ∇χ, V → V − ∂χ/∂t) that leaves E and B unchanged.
 Q: Which gauge is manifestly Lorentz invariant? | The Lorenz gauge.
-M1: Gauge symmetry of electromagnetism is related to conservation of: | Charge | Energy | Momentum | Mass | Noether's theorem.
-M2: The strong force is described by a gauge theory based on: | SU(3) | U(1) | SU(2) | SO(3) | Quantum chromodynamics.
+M1@3: Gauge symmetry of electromagnetism is related to conservation of: | Charge | Energy | Momentum | Mass | By Noether's theorem the U(1) phase symmetry corresponds to conserved electric charge; energy and momentum come from time and space symmetry.
+M2@3: The strong force is described by a gauge theory based on: | SU(3) | U(1) | SU(2) | SO(3) | Quantum chromodynamics is an SU(3) gauge theory of colour; U(1) is electromagnetism and SU(2) enters the electroweak theory.
+M2@1: Under A → A + ∇χ, V must change to V − ∂χ/∂t so that: | E stays the same | B stays the same | A stays divergence-free | Charge is conserved | E = −∇V − ∂A/∂t gains −∇(∂χ/∂t) from A, which the change in V exactly cancels; B is unchanged anyway.
+M3@2: Starting from potentials in the Coulomb gauge, a transformation with χ = ct x (c a constant) is applied. Which gauge condition still holds? | The Coulomb condition ∇·A = 0 still holds | The temporal gauge V = 0 | Neither A nor V changes | The fields E and B both change | ∇χ = ct x̂ has zero divergence (∇^{2}χ = 0), so ∇·A stays zero; V changes by −cx, and E and B are untouched.
+SA3@1,3: Explain what a gauge transformation is, show that it leaves the electric field unchanged, and say why gauge symmetry matters beyond electromagnetism. | A gauge transformation changes the potentials by an arbitrary function χ: A' = A + ∇χ and V' = V − ∂χ/∂t. Then E' = −∇V' − ∂A'/∂t = −∇V + ∇(∂χ/∂t) − ∂A/∂t − ∂(∇χ)/∂t = E, since the χ terms cancel; B' = B because the curl of a gradient is zero. So the potentials carry redundant information. In quantum theory, demanding invariance under local phase changes of charged fields requires such a gauge field, which is how electromagnetism arises; the same principle with SU(2) and SU(3) produces the weak and strong forces of the Standard Model. | Definition of A' and V' with arbitrary χ ; Substitution shows the χ terms cancel in E ; B unchanged since curl grad = 0 ; Potentials not unique; only fields measurable ; Local gauge invariance generates the forces (U(1), SU(2), SU(3))
 
 ## Electromagnetic boundary conditions
-S: At the boundary between two materials, Maxwell's equations require particular components of E, D, B and H to match. These conditions determine reflection and refraction of light, waveguide modes and how fields behave at conductor surfaces.
+S: At the boundary between two materials, Maxwell's equations require particular components of E, D, B and H to match. These conditions determine the reflection and refraction of light, waveguide modes and how fields behave at conductor surfaces.
+O: State the four boundary conditions and which components are continuous
+O: Apply the conditions at a perfect conductor and calculate the skin depth of a real conductor
+O: Explain how the boundary conditions lead to reflection and refraction
+PRE: Boundary conditions for electric fields
+LV: Year 2 · Physical reasoning
 H: The four conditions
 E: D_{1⊥} − D_{2⊥} = σ_{free}
 E: B_{1⊥} = B_{2⊥}
 E: E_{1∥} = E_{2∥}
-E: H_{1∥} − H_{2∥} = K_{free} × n̂ :: surface current K
+E: H_{1∥} − H_{2∥} = K_{free} × n̂ :: surface current K; n̂ points from medium 2 into medium 1
+P: Each follows from an integral form of Maxwell's equations applied to a thin pillbox (for the normal components) or a thin rectangular loop (for the tangential components) straddling the boundary.
 H: Perfect conductors
-- E_{∥} = 0 and B_{⊥} = 0 at the surface.
-- Fields don't penetrate; surface charges and currents adjust.
+- E_{∥} = 0 and B_{⊥} = 0 at the surface; inside, E = 0 and (for changing fields) B = 0.
+- Surface charges and currents adjust to cancel the fields inside.
 - Real conductors: fields penetrate a skin depth δ = √(2/(μσω)) (copper at 50 Hz: ~9 mm; at 1 GHz: ~2 μm).
 H: Consequences
 P: Applying the conditions to an incident light wave gives Fresnel's reflection and transmission coefficients, Brewster's angle and total internal reflection. In waveguides they allow only certain modes, each with a cut-off frequency.
-X: Skin depth of copper (σ = 6 × 10^{7} S m^{-1}) at 1 MHz?
-> δ = √(2/(4π × 10^{-7} × 6 × 10^{7} × 2π × 10^{6}))
-> ≈ 65 μm: why RF conductors are often hollow or silver-plated
+X: What is the skin depth of copper (σ = 6 × 10^{7} S m^{-1}) at 1 MHz?
+> δ = √(2/(μ_{0}σω)) = √(2/(4π × 10^{-7} × 6 × 10^{7} × 2π × 10^{6}))
+> δ ≈ 65 μm: why RF conductors are often hollow or silver-plated
+K: Tangential E and normal B are always continuous; normal D and tangential H jump only by free surface charge and current.
 !: The normal component of B and tangential E are always continuous; D_{⊥} and H_{∥} jump only with free surface charge or current.
+T: Skin depth | The depth at which an AC field in a conductor falls to 1/e of its surface value: δ = √(2/(μσω))
+T: Surface current density (K) | Current per unit width flowing in a thin sheet at a boundary, in A m^{-1}
+SUM: Normal B and tangential E are continuous at every boundary.
+SUM: Normal D and tangential H jump by free surface charge and current.
+SUM: At conductors fields vanish inside or penetrate a skin depth; the conditions also yield Fresnel's equations.
+EV: established | Field components at an interface obey boundary conditions derived from Maxwell's equations
+SRC: Griffiths D. J., Introduction to Electrodynamics, 4th edn, Cambridge University Press, chapter 7 "Electrodynamics" | secondary | 2017
+SRC: Jackson J. D., Classical Electrodynamics, 3rd edn, Wiley, Introduction | secondary | 1999
 Q: What is the skin depth? | The depth at which an AC field in a conductor falls to 1/e: δ = √(2/(μσω)).
 Q: Which field components are continuous across any boundary? | Normal B and tangential E.
-M1: At a perfect conductor surface, tangential E is: | Zero | Maximum | Equal to normal E | Infinite | Charges cancel it.
-M2: Skin depth decreases when frequency: | Increases | Decreases | Is constant | It doesn't depend on frequency | δ ∝ 1/√f.
+M1@2: At a perfect conductor surface, tangential E is: | Zero | Maximum | Equal to normal E | Infinite | Any tangential E would drive an infinite current in a perfect conductor, so surface charges rearrange until E_{∥} = 0.
+M2@2: Skin depth decreases when frequency: | Increases | Decreases | Is held constant | Is irrelevant, as δ is fixed by the metal | δ = √(2/(μσω)) ∝ 1/√f, so higher frequencies are confined to a thinner surface layer.
+NUM2@2: Using δ ∝ 1/√f and δ = 9.2 mm for copper at 50 Hz, what is its skin depth at 5.0 kHz, in mm? | 0.92 | 3% | mm | Frequency rises 100 times, so δ falls by √100 = 10: 9.2/10 = 0.92 mm.
+M3@1: A uniform field B_{1} crosses into a material at an angle. Which statement must hold at the interface? | The normal component of B is the same on both sides | The tangential component of B is the same on both sides | B has the same magnitude on both sides | B has the same direction on both sides | ∇·B = 0 applied to a pillbox gives continuous B_{⊥}; it is H_{∥} (not B_{∥}) that is continuous without surface current, so B bends.
+SA3@1,3: Derive the condition E_{1∥} = E_{2∥} from Faraday's law and explain why it leads to reflection when light meets glass. | Take a thin rectangular loop with long sides of length l parallel to the interface, one in each medium, and short sides of negligible height. Faraday's law ∮E·dl = −dΦ_{B}/dt: as the height shrinks the enclosed flux goes to zero, and the short sides contribute nothing, so (E_{1∥} − E_{2∥})l = 0 and tangential E is continuous. For light meeting glass, a single incident wave and a transmitted wave of the different amplitude required by the glass's index cannot satisfy this together with the condition on H; a reflected wave is also needed, and solving the conditions gives Fresnel's reflection coefficients. | Rectangular loop straddling boundary ; Flux through vanishing area tends to zero ; Short sides negligible ; Gives E_{1∥} = E_{2∥} ; Matching E and H needs a reflected wave; leads to Fresnel coefficients
 
 ## Electromagnetic momentum and energy
-S: Electromagnetic fields carry energy and momentum. The Poynting vector gives the energy flow, and light exerts pressure when absorbed or reflected; conservation laws must include the fields as well as the charges.
+S: Electromagnetic fields carry energy and momentum. The Poynting vector gives the energy flow, light exerts pressure when absorbed or reflected, and conservation laws must include the fields as well as the charges.
+O: Calculate field energy density and the Poynting vector
+O: Calculate radiation pressure for absorbing and reflecting surfaces
+O: Explain how energy flows through the fields in a circuit
+PRE: Maxwell's equations
+LV: Year 2 · Application
 H: Energy
 E: u = ½(ε_{0}E^{2} + B^{2}/μ_{0}) :: energy density
 E: S = (1/μ_{0})E × B :: Poynting vector: energy flux (W m^{-2})
 E: ∂u/∂t + ∇·S = −J·E :: Poynting's theorem: energy conservation
-- In a plane wave, electric and magnetic energies are equal; intensity I = ⟨S⟩ = ½cε_{0}E_{0}^{2}.
+- In a plane wave the electric and magnetic energies are equal; intensity I = ⟨S⟩ = ½cε_{0}E_{0}^{2}.
 H: Momentum
 E: g = S/c^{2} :: momentum density
-E: p_{rad} = I/c (absorbed), 2I/c (reflected) :: radiation pressure
-- Sunlight at Earth: ~4.6 μPa (absorbed).
+E: p_{rad} = I/c (absorbed), 2I/c (reflected) :: radiation pressure at normal incidence
+- Sunlight at Earth: about 4.6 μPa on an absorber.
 - Solar sails (IKAROS, LightSail 2) use it for propulsion.
 - Optical tweezers trap cells and molecules with focused laser light.
-- Comet dust tails point away from the Sun partly due to radiation pressure.
+- Comet dust tails point away from the Sun partly because of radiation pressure.
 H: Angular momentum
 P: Circularly polarised light carries spin angular momentum (±ħ per photon), and beams with twisted wavefronts carry orbital angular momentum. Beth (1936) measured the torque on a wave plate from circularly polarised light.
 X: Energy flows from a battery into a resistor. Where does the Poynting vector point?
-> E along the wire, B circling it: S points radially into the resistor from the surrounding space
+> E is along the wire, B circles it: S = E × B/μ_{0} points radially into the resistor from the surrounding space
 > Energy travels through the fields, not inside the wire
+K: Fields carry energy flux S = E × B/μ_{0} and momentum S/c^{2}, so light pushes on whatever absorbs or reflects it.
 !: Energy in circuits flows through the fields around the wires, not as electrons carrying it.
+T: Poynting vector | S = (1/μ_{0})E × B, the rate of energy flow per unit area in an electromagnetic field
+T: Radiation pressure | The force per unit area exerted by electromagnetic radiation: I/c if absorbed, 2I/c if reflected at normal incidence
+SUM: Field energy density is ½(ε_{0}E^{2} + B^{2}/μ_{0}); its flow is the Poynting vector.
+SUM: Light carries momentum, giving radiation pressure I/c or 2I/c.
+SUM: Fields also carry angular momentum, measured by Beth in 1936.
+EV: established | Electromagnetic fields carry energy, momentum and angular momentum
+SRC: OpenStax, University Physics Volume 2, section 16.3 "Energy Carried by Electromagnetic Waves" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/16-3-energy-carried-by-electromagnetic-waves
+SRC: OpenStax, University Physics Volume 2, section 16.4 "Momentum and Radiation Pressure" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/16-4-momentum-and-radiation-pressure
 Q: What does the Poynting vector represent? | The rate of energy flow per unit area in an electromagnetic field.
 Q: What is the radiation pressure of light on a perfect reflector? | 2I/c.
-M1: The Poynting vector is: | (1/μ_{0})E × B | E·B | ε_{0}E^{2} | qE | Energy flux.
-M2: Optical tweezers hold particles using: | Radiation pressure and gradient forces of light | Magnetism | Electrostatics | Sound | Focused laser beams.
+M1@1: The Poynting vector is: | (1/μ_{0})E × B | E·B | ε_{0}E^{2} | qE | S = E × B/μ_{0} points along the energy flow; E·B is a scalar, ε_{0}E^{2} an energy density and qE a force.
+M2@2: Optical tweezers hold particles using: | Radiation pressure and gradient forces of light | Magnetic forces on the particles | Electrostatic charges on the particles | Sound waves | A tightly focused laser beam pulls a transparent bead towards its focus by gradient forces, while radiation pressure pushes along the beam.
+NUM2@2: Sunlight of intensity 1360 W m^{-2} falls at normal incidence on a perfectly reflecting solar sail of area 100 m^{2}. What force does it exert, in mN? | 0.91 | 3% | mN | p = 2I/c = 2 × 1360/(3.0 × 10^{8}) = 9.1 × 10^{-6} Pa; F = pA = 9.1 × 10^{-4} N = 0.91 mN.
+M3@2,3: A laser beam is switched from an absorbing target to a mirror at normal incidence. The force on the target: | Doubles, because the light's momentum is reversed | Halves, because less light is absorbed | Stays the same, as the power is unchanged | Falls to zero, because no energy is absorbed | Absorption removes the momentum I/c per unit area per second; reflection reverses it, a change of 2I/c, so the force doubles.
+SA2@1,3: A long cylindrical resistor carries a steady current. Use the Poynting vector to describe how energy enters it, and check the result against I^{2}R. | Inside the resistor E points along the axis (E = V/L) and B circles the axis with B = μ_{0}I/(2πa) at its surface of radius a. S = E × B/μ_{0} points radially inwards, with magnitude EB/μ_{0} = (V/L)I/(2πa). Multiplying by the surface area 2πaL gives a total inward energy flow of VI = I^{2}R, exactly the rate of heating. So the energy dissipated arrives through the surrounding fields, not along the wire. | E along the axis, B circling it ; S points radially inwards ; |S| = (V/L)I/(2πa) ; Times area 2πaL gives VI = I^{2}R ; Energy enters through the fields
 `;

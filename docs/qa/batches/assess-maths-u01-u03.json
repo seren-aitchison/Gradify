@@ -1,0 +1,222 @@
+{
+ "task": "assess-maths-u01-u03",
+ "on": "2026-11-20",
+ "files": [
+  "kit/courses/maths/notes/u01.js",
+  "kit/courses/maths/notes/u03.js"
+ ],
+ "lessons": [
+  {
+   "course": "maths",
+   "lesson": "u01-01",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Fluency",
+    "evidence status: established",
+    "second worked example added: 1,035 ÷ 23 by long division (lesson was too thin)",
+    "new questions added: NUM3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u01-02",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Fluency",
+    "evidence status: established",
+    "new questions added: M1, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u01-03",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Fluency",
+    "evidence status: established",
+    "new questions added: NUM2, NUM3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u01-04",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Application",
+    "evidence status: established",
+    "common mistake added: one example does not prove closure (lesson was too thin)",
+    "new questions added: TF1, M3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u01-05",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Fluency",
+    "evidence status: established",
+    "new questions added: NUM3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u01-06",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Application",
+    "evidence status: established",
+    "new questions added: M2, SA3 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u01-07",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE and A level · Problem solving",
+    "evidence status: established",
+    "common mistake added: not every square root is irrational (lesson was too thin)",
+    "new questions added: M2, SA3 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u01-08",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Application",
+    "evidence status: established",
+    "new questions added: TF1, M3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u01-09",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Fluency",
+    "evidence status: established",
+    "new questions added: NUM3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u01-10",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Application",
+    "evidence status: established",
+    "new questions added: NUM2, SA3 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u01-11",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Application",
+    "evidence status: established",
+    "new questions added: M3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u01-12",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Application",
+    "evidence status: established",
+    "new questions added: NUM1, M3, SA3 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u01-13",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Application",
+    "evidence status: established",
+    "new questions added: NUM3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u01-14",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Application",
+    "evidence status: established",
+    "new questions added: NUM3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u01-15",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Application",
+    "evidence status: established",
+    "new questions added: M2, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u01-16",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Fluency",
+    "evidence status: established",
+    "new questions added: M3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  }
+ ],
+ "notes": []
+}

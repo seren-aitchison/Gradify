@@ -5,6 +5,7 @@ export default `
 S: Precalculus is the toolkit you need before calculus: functions and their graphs, algebraic manipulation, exponentials, logarithms and trigonometry. Most errors in calculus are really precalculus errors, so these skills repay practice.
 O: Identify the precalculus skills that calculus relies on
 O: Rewrite expressions in forms ready for differentiation and integration
+LV: GCSE and A level · Fluency
 T: Index form | Writing roots and reciprocals as powers, such as 1/√x = x^{−1/2}, so the power rule applies
 T: Standard functions | The functions calculus works with most: polynomials, powers, e^{x}, ln x, sin x, cos x and tan x
 H: The skills calculus uses
@@ -21,21 +22,27 @@ X: Write (3x^{2} − 2√x + 5)/x in index form, ready to differentiate.
 > Split into separate terms: 3x^{2}/x − 2x^{1/2}/x + 5/x
 > Subtract powers: 3x − 2x^{−1/2} + 5x^{−1}
 > Each term is now a power of x, so the power rule applies to each
+!: Splitting a fraction whose denominator has several terms: (x + 1)/(x^{2} + x) can't be split term by term. Factorise first: (x + 1)/(x(x + 1)) = 1/x = x^{−1}.
 K: Calculus rests on algebra, indices, functions, logs and radian trigonometry; rewrite expressions as sums of powers first.
 !: Using degrees in calculus: d/dx (sin x) = cos x only when x is in radians.
 Q: Write 4/√x in index form. | 4x^{−1/2}.
 Q: Why must trigonometric calculus use radians? | The derivative formulas (such as d/dx sin x = cos x) only hold in radians.
 SUM: Calculus builds on precalculus skills.
 SUM: Index form makes differentiation and integration routine.
+EV: established | Differentiation and integration rules act on powers of x, so expressions must first be written as sums of terms in index form.
 SRC: Department for Education, Mathematics AS and A level subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-01-q1@1: Which is 5/x^{3} in index form? | 5x^{−3} | 5x^{3} | x^{−15} | 5^{−3}x | (5x)^{−3} | Dividing by x^{3} is multiplying by x^{−3}, and the 5 stays as a coefficient.
 M2#maths-u07-01-q2@2: Which is (x^{2} + 3)/√x in index form? | x^{3/2} + 3x^{−1/2} | x^{2} + 3x^{−1/2} | x^{3/2} + 3 | x + 3x^{1/2} | x^{5/2} + 3x^{−1/2} | x^{2}/x^{1/2} = x^{3/2} and 3/x^{1/2} = 3x^{−1/2}: divide each term separately.
+NUM2@2: Write (6x^{4} + 2x)/(2√x) as a sum of powers of x. What is the larger power? | 3.5 | 0.001 |  | 6x^{4}/(2x^{1/2}) = 3x^{7/2} and 2x/(2x^{1/2}) = x^{1/2}, so the larger power is 7/2 = 3.5.
+M3@2: Which is (√x + 1)^{2}/x in index form? | 1 + 2x^{−1/2} + x^{−1} | 1 + 2x^{1/2} + x^{−1} | 1 + x^{−1} | x^{−1/2} + 1 + x^{−1} | 1 + 2x^{−1/2} + x | Expand first: (√x + 1)^{2} = x + 2x^{1/2} + 1. Dividing each term by x gives 1 + 2x^{−1/2} + x^{−1}; squaring term by term would miss the middle term.
+SA3@1,2: Explain how you would prepare y = (x^{3} − 2√x)/x^{2} for differentiation, then differentiate it. | Split the single-term denominator: y = x^{3}/x^{2} − 2x^{1/2}/x^{2} = x − 2x^{−3/2}. Each term is now a power of x, so the power rule gives dy/dx = 1 + 3x^{−5/2}. Writing roots as fractional powers and subtracting indices correctly is the precalculus step; an index slip here makes the derivative wrong however well the rule is applied. | Splits the fraction into separate terms ; Writes √x as x^{1/2} ; Subtracts indices to get x − 2x^{−3/2} ; Applies the power rule to get 1 + 3x^{−5/2} ; Explains why index form is needed
 
 ## Infinitesimal Calculus
 S: Calculus began with the idea of infinitely small changes, the "infinitesimals" of Newton and Leibniz in the 17th century. Their methods worked brilliantly, but it took until the 19th century to put them on a rigorous footing with limits.
 O: Describe the historical development of calculus
 O: Explain the ideas of a derivative and an integral informally
+LV: A level · Fluency
 T: Infinitesimal | An informally "infinitely small" quantity; made rigorous later by limits, and in the 20th century by non-standard analysis
 T: Leibniz notation | dy/dx for derivatives and ∫ f(x) dx for integrals, suggesting ratios and sums of tiny quantities
 H: Two big ideas
@@ -51,21 +58,27 @@ X: Explain informally why the area of a circle is πr^{2}, using thin rings.
 > Split the disc into thin rings of radius x and width dx; each has area about circumference × width = 2πx dx
 > Add them all from x = 0 to x = r: ∫ 2πx dx
 > = πr^{2}: the integral adds up infinitely many thin pieces
+P: The ring argument is the integral A = ∫_{0}^{r} 2πx dx. Differentiating the area πr^{2} with respect to r gives the circumference 2πr: an early glimpse of the fundamental theorem.
 K: Differentiation finds rates, integration finds accumulations, and they're inverses; limits made the infinitesimal ideas rigorous.
 !: Treating dy/dx as an ordinary fraction in every situation: it's a limit, though it often behaves like a fraction.
 Q: Who independently invented calculus? | Isaac Newton and Gottfried Leibniz.
 Q: What does integration measure? | Accumulation, such as area under a curve or total distance.
 SUM: Calculus studies change and accumulation.
 SUM: Limits gave calculus its rigorous foundation.
+EV: established | Newton and Leibniz developed calculus independently in the late 17th century, and Cauchy and Weierstrass later grounded it in limits.
 SRC: Boyer CB, The History of the Calculus and Its Conceptual Development (Dover 1959) | secondary | 1959 | https://store.doverpublications.com/
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-02-q1@1: Whose notation, dy/dx and ∫, do we use today? | Leibniz | Newton | Euler | Archimedes | Cauchy | Leibniz introduced dy/dx and the integral sign; Newton used dots and "fluxions".
 M2#maths-u07-02-q2@2: What made calculus rigorous in the 19th century? | The precise definition of a limit | The invention of computers | Euclid's axioms | Decimal notation | The discovery of π | Cauchy and Weierstrass defined limits precisely, replacing vague infinitesimals.
+NUM2@2: Using thin rings, the area of a disc of radius r is ∫_{0}^{r} 2πx dx. Evaluate it for r = 3, to 2 decimal places. | 28.27 | 0.01 |  | The integral is [πx^{2}] from 0 to 3 = 9π ≈ 28.27, matching the formula πr^{2}.
+M3@1,2: Why was Bishop Berkeley's 1734 criticism of the early calculus fair? | It divided by a small increment and then set the increment to zero | Its results for areas and tangents were often numerically wrong | Newton and Leibniz refused to publish their methods | It contradicted the theorems of Euclidean geometry | It relied on decimal approximations to π | The method treated the increment as non-zero (to divide by it) and then as zero (to discard it); limits removed that inconsistency.
+SA3@1,2: Outline how calculus developed from Archimedes to Weierstrass, and explain why the limit concept was needed. | Archimedes found areas by exhaustion; Fermat and Barrow found tangents; Newton and Leibniz independently built a general calculus of derivatives and integrals, linked as inverse processes, using infinitesimals. Berkeley showed that infinitesimals were used inconsistently. Cauchy and Weierstrass defined limits precisely (ε–δ), so derivatives and integrals became limits of ordinary quantities and the results were rigorous. | Mentions Archimedes' method of exhaustion ; Credits Newton and Leibniz independently ; Explains differentiation and integration as inverse ; Explains the inconsistency in infinitesimals ; Says Cauchy and Weierstrass made it rigorous with limits
 
 ## Limits
 S: A limit describes the value a function approaches as its input approaches some value. Limits underpin every idea in calculus: derivatives, integrals, continuity and infinite series are all defined by them.
 O: Evaluate limits by substitution, factorising and standard results
 O: Interpret one-sided limits and limits at infinity
+LV: A level · Application
 T: Limit | lim_{x→a} f(x) = L means f(x) gets arbitrarily close to L as x gets close to a (but not equal to a)
 T: Indeterminate form | An expression like 0/0 or ∞/∞ whose value can't be decided without further work
 H: Evaluating limits
@@ -90,17 +103,20 @@ Q: What is lim_{x→1} (x^{2} − 1)/(x − 1)? | 2.
 Q: When does lim_{x→a} f(x) exist? | When the left and right limits exist and are equal.
 SUM: Limits describe approaching behaviour.
 SUM: Indeterminate forms need algebraic work.
+EV: established | Derivatives, integrals and the sums of infinite series are all defined as limits.
 SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | secondary | 2008 | https://www.publishorperish.com/
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 NUM1#maths-u07-03-q1@1: Find lim_{x→2} (x^{3} − 8)/(x − 2). | 12 | 0 |  | x^{3} − 8 = (x − 2)(x^{2} + 2x + 4), so the limit is 4 + 4 + 4 = 12.
 M1#maths-u07-03-q2@1: What is lim_{x→∞} (5x + 2)/(2x − 1)? | 5/2 | 0 | ∞ | −2 | 5 | Divide top and bottom by x: (5 + 2/x)/(2 − 1/x) → 5/2.
 M3#maths-u07-03-q3@2: What is lim_{x→0} (sin 3x)/x? | 3 | 1 | 0 | 1/3 | It doesn't exist | (sin 3x)/x = 3 × (sin 3x)/(3x), and (sin u)/u → 1 as u → 0.
 M2#maths-u07-03-q4@2: For f(x) = |x| at x = 0, what do the secant gradients from the right and left approach? | +1 from the right and −1 from the left, so the limit doesn't exist | 0 from both sides, since the graph touches the axis there | +1 from both sides, since |x| = x near 0 | Both grow without bound, since the corner is infinitely steep | −1 from the right and +1 from the left, so the limit is 0 | The one-sided limits differ, so the difference quotient has no limit at 0.
+SA3@1,2: Find lim_{x→0} (√(1 + x) − 1)/x, explaining each step and why direct substitution fails. | Substituting x = 0 gives 0/0, an indeterminate form, so more work is needed. Multiply top and bottom by the conjugate √(1 + x) + 1: the numerator becomes (1 + x) − 1 = x, so the expression is 1/(√(1 + x) + 1) for x ≠ 0. This is continuous at 0, so the limit is 1/(1 + 1) = 1/2. | Identifies the 0/0 indeterminate form ; Multiplies by the conjugate ; Simplifies to 1/(√(1 + x) + 1) ; Cancels only for x ≠ 0 ; Gets the limit 1/2
 
 ## Continuity
 S: A function is continuous at a point if its graph has no break there: you could draw it without lifting your pen. Continuity is what lets us find roots by sign changes and guarantees that many calculus theorems apply.
 O: Test whether a function is continuous at a point
 O: Apply the intermediate value theorem to locate roots
+LV: A level · Application
 T: Continuous at a | lim_{x→a} f(x) exists and equals f(a)
 T: Intermediate value theorem | If f is continuous on [a, b] and k lies between f(a) and f(b), then f(c) = k for some c in [a, b]
 H: Testing continuity
@@ -115,21 +131,27 @@ X: Show that x^{5} + 3x = 7 has a solution between 1 and 2.
 > Let f(x) = x^{5} + 3x − 7, which is continuous (a polynomial)
 > f(1) = 1 + 3 − 7 = −3 < 0 and f(2) = 32 + 6 − 7 = 31 > 0
 > f changes sign, so by the intermediate value theorem there's a root between 1 and 2
+P: Continuity on an interval means continuity at every point of it. At an endpoint only the one-sided limit is needed, so √x is continuous on [0, ∞).
 K: Continuous means the limit equals the value; a sign change of a continuous function guarantees a root.
 !: Using a sign change to claim a root when the function has an asymptote in the interval.
 Q: Is f(x) = 1/(x − 2) continuous at x = 2? | No: it isn't defined there (an infinite discontinuity).
 Q: What does the intermediate value theorem need? | A function continuous on a closed interval.
 SUM: Continuity means no breaks.
 SUM: Sign changes locate roots of continuous functions.
+EV: established | The intermediate value theorem guarantees a root wherever a continuous function changes sign on a closed interval.
 SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | secondary | 2008 | https://www.publishorperish.com/
 SRC: Department for Education, Mathematics AS and A level subject content: numerical methods | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 M1#maths-u07-04-q1@1: Which function is continuous for all real x? | sin x + x^{2} | 1/x | ln x | tan x | 1/(x^{2} − 1) | Sums of continuous functions are continuous, and sin x and x^{2} are both continuous everywhere.
 M2#maths-u07-04-q2@2: f(x) = x^{2} + k for x < 1 and 3x for x ≥ 1 is continuous. What is k? | 2 | 3 | 1 | 0 | 4 | At x = 1 the pieces must agree: 1 + k = 3, so k = 2.
+NUM2@1: f(x) = (x^{2} − 9)/(x − 3) for x ≠ 3 and f(3) = k. What value of k makes f continuous at x = 3? | 6 | 0 |  | For x ≠ 3, f(x) = x + 3, which tends to 6; continuity needs f(3) to equal this limit, so k = 6.
+NUM3@2: Evaluating f(x) = x^{3} − 4x + 1 at the integers from −3 to 3, how many roots does the intermediate value theorem guarantee? | 3 | 0 |  | The values are −14, 1, 4, 1, −2, 1, 16: signs change on (−3, −2), (0, 1) and (1, 2), so there are at least three roots, and a cubic has at most three.
+SA3@2: Explain why a sign change of f(x) = 1/(x − 1.5) between x = 1 and x = 2 does not show a root, and state what the intermediate value theorem needs. | f(1) = −2 and f(2) = 2, so the sign changes, but f has a vertical asymptote at x = 1.5 and is not defined or continuous there; the sign changes by jumping through infinity, and 1/(x − 1.5) is never zero. The theorem needs f to be continuous on the whole closed interval [a, b]. | Computes f(1) = −2 and f(2) = 2 ; Identifies the asymptote at x = 1.5 ; Notes that f is never zero ; States the continuity condition on [a, b]
 
 ## Differentiability
 S: A function is differentiable at a point if it has a well-defined tangent there: a single slope. Differentiable functions are smooth; corners, cusps, jumps and vertical tangents break differentiability.
 O: Decide whether a function is differentiable at a point
 O: Explain the relationship between continuity and differentiability
+LV: Year 1 · Application
 T: Differentiable at a | The limit lim_{h→0} (f(a + h) − f(a))/h exists
 T: Cusp | A sharp point where the slopes from either side approach ±∞ in opposite directions
 H: When derivatives fail to exist
@@ -154,16 +176,20 @@ Q: Is |x − 3| differentiable at x = 3? | No: it has a corner there.
 Q: Does differentiability imply continuity? | Yes.
 SUM: Differentiable functions are smooth.
 SUM: Continuity is necessary but not sufficient.
+EV: established | Differentiability at a point implies continuity there, but continuity does not imply differentiability.
 SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | secondary | 2008 | https://www.publishorperish.com/
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-05-q1@1: Where is f(x) = |x + 2| not differentiable? | At x = −2 | At x = 0 | At x = 2 | Nowhere | Everywhere | The graph has a corner where x + 2 = 0, so the slope jumps from −1 to 1.
 M2#maths-u07-05-q2@2: Which statement about continuity and differentiability is true? | Every differentiable function is continuous | Every continuous function is differentiable | |x| is differentiable at 0 | A jump discontinuity can still be differentiable | ∛x has derivative 0 at x = 0 | Differentiability at a point forces continuity there; the converse fails, as |x| shows.
 M2#maths-u07-05-q3@2: Why is |x| continuous but not differentiable at 0? | Its graph has no gap, but the gradient jumps from −1 to +1 at a corner | Its graph has a gap at 0, so neither property holds | Its gradient is infinite at 0, like a vertical tangent | It isn't defined at 0, so it can't be differentiated | It is differentiable at 0, with derivative 0 there | Continuity needs no break; differentiability needs a single tangent, which a corner lacks.
+NUM3@1: f(x) = x^{2} + 1 for x ≤ 2 and ax + b for x > 2 is differentiable at x = 2. Find b. | -3 | 0 |  | The slopes must match: a = 2 × 2 = 4. The values must match: 5 = 2a + b = 8 + b, so b = −3.
+SA2@2: Explain, with an example of each, the difference between a function that is continuous but not differentiable at a point and one that is neither. | |x| at 0 is continuous (no break, the limit equals the value 0) but not differentiable, because the gradient is −1 on the left and +1 on the right. A step function with a jump at 0 is not continuous there, and so cannot be differentiable, because differentiability implies continuity. | Gives a valid corner example such as |x| ; Explains the unequal one-sided gradients ; Gives a valid jump example ; States that differentiable implies continuous
 
 ## Differential Calculus
 S: Differential calculus studies how quantities change. The derivative measures the instantaneous rate of change of a function, which is the gradient of its graph at a point.
 O: Interpret the derivative as a gradient and a rate of change
 O: Estimate gradients using chords
+LV: GCSE and A level · Fluency
 T: Derivative | The instantaneous rate of change of a function, dy/dx or f′(x)
 T: Chord | A straight line joining two points on a curve; its gradient approximates the tangent's
 H: Gradients of curves
@@ -187,17 +213,21 @@ Q: What does dy/dx = 0 mean graphically? | The tangent is horizontal: a stationa
 Q: If s is displacement and t is time, what is ds/dt? | Velocity.
 SUM: The derivative measures instantaneous rate of change.
 SUM: Chord gradients approach it as h → 0.
+EV: established | The derivative is the limit of chord gradients and measures the instantaneous rate of change.
 SRC: Department for Education, Mathematics AS and A level subject content: differentiation | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 NUM1#maths-u07-06-q1@1: Find the gradient of the chord of y = x^{3} from x = 1 to x = 2. | 7 | 0 |  | (8 − 1)/(2 − 1) = 7. (The tangent gradients at the ends are 3 and 12.)
 M1#maths-u07-06-q2@1: What does a negative derivative tell you about a function? | It's decreasing at that point | It's negative at that point | It has a maximum | It's increasing | It's zero | The derivative is the gradient: negative gradient means the function is going down.
 M2#maths-u07-06-q3@2: A chord of y = f(x) from x = 2 to x = 2 + h has gradient 5 + 3h. What is f′(2)? | 5 | 8 | 3 | 5 + 3h | 0 | The derivative is the limit as h → 0: 5 + 3h → 5.
 M2#maths-u07-06-q4@2: What does the derivative measure at a point? | The instantaneous rate of change: the limit of secant gradients as h → 0 | The area under the curve up to that point | The average value of the function over an interval | The value of the function itself at the point | The distance from the point to the x-axis | The derivative is defined as the limit of the difference quotient.
+NUM2@2: Estimate the gradient of y = x^{3} at x = 2 using a chord with h = 0.1. | 12.61 | 0.001 |  | (2.1^{3} − 8)/0.1 = (9.261 − 8)/0.1 = 12.61, close to the exact gradient 3x^{2} = 12.
+SA3@1,2: A car's displacement is s = t^{2} metres after t seconds. Explain how chord gradients from t = 3 lead to its velocity at t = 3, and interpret the answer. | The chord from t = 3 to t = 3 + h has gradient ((3 + h)^{2} − 9)/h = (6h + h^{2})/h = 6 + h, the average velocity over that interval. As h → 0 this tends to 6, so the instantaneous velocity at t = 3 is 6 m/s: the gradient of the tangent to the s–t graph there. | Writes the chord gradient as a difference quotient ; Simplifies to 6 + h ; Takes the limit h → 0 ; Gives 6 m/s with units ; Interprets as the tangent gradient or instantaneous velocity
 
 ## Derivatives
 S: A derivative is defined as the limit of the gradient of a chord, and computed in practice with rules. Differentiating from first principles shows where the rules come from.
 O: Differentiate simple functions from first principles
 O: State the derivatives of standard functions
+LV: A level · Fluency
 T: First principles | Finding f′(x) directly from the limit definition
 T: Power rule | d/dx (x^{n}) = nx^{n−1}
 H: First principles
@@ -225,17 +255,21 @@ Q: Differentiate 4x^{5}. | 20x^{4}.
 Q: What is the derivative of cos x? | −sin x.
 SUM: Derivatives come from a limit.
 SUM: Standard results make differentiation fast.
+EV: established | Differentiating from first principles gives d/dx (x^{n}) = nx^{n−1}, the basis of the standard rules.
 SRC: Department for Education, Mathematics AS and A level subject content: differentiation | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | secondary | 2008 | https://www.publishorperish.com/
 M1#maths-u07-07-q1@1: What is d/dx (6x^{3} − 2x + 9)? | 18x^{2} − 2 | 18x^{2} − 2x | 6x^{2} − 2 | 18x^{3} − 2 | 2x^{2} − 2 + 9 | Multiply by the power and reduce it by one; the constant 9 differentiates to 0.
 M2#maths-u07-07-q2@2: What is d/dx (4/x)? | −4/x^{2} | 4 | 4/x^{2} | −4x | 4 ln x | 4/x = 4x^{−1}, which differentiates to −4x^{−2}.
 NUM1#maths-u07-07-q3@1: Differentiate 4x^{3} − 2x and evaluate at x = 1. | 10 | 0 |  | The derivative is 12x^{2} − 2, which is 10 at x = 1.
 NUM1#maths-u07-07-q4@1: For f(x) = x^{2} at x = 3 with h = 0.01, what is the secant gradient (f(3 + h) − f(3))/h? | 6.01 | 0.0001 |  | (9.0601 − 9)/0.01 = 6.01, approaching the derivative 6.
+NUM2@2: For f(x) = 6√x + 2 ln x, find f′(4). | 2 | 0 |  | f′(x) = 3x^{−1/2} + 2/x, so f′(4) = 3/2 + 1/2 = 2.
+SA3@1: Differentiate f(x) = 2x^{3} from first principles, showing each step. | f(x + h) − f(x) = 2(x + h)^{3} − 2x^{3} = 6x^{2}h + 6xh^{2} + 2h^{3}. Dividing by h gives 6x^{2} + 6xh + 2h^{2}. As h → 0 the terms in h vanish, so f′(x) = 6x^{2}. | Writes the difference quotient (f(x + h) − f(x))/h ; Expands (x + h)^{3} correctly ; Divides by h ; Takes the limit h → 0 ; Gets 6x^{2}
 
 ## First Derivatives
 S: The first derivative f′(x) tells you the gradient of a curve everywhere: where it rises, falls and levels off. It finds tangents and normals, and stationary points where the gradient is zero.
 O: Use the first derivative to find gradients, tangents and normals
 O: Determine where a function is increasing or decreasing
+LV: A level · Fluency
 T: Tangent | The straight line touching a curve at a point with the same gradient as the curve there
 T: Normal | The line through a point on a curve perpendicular to the tangent; its gradient is −1/m
 H: Tangents and normals
@@ -259,17 +293,21 @@ Q: What is the gradient of the normal if the tangent's gradient is 4? | −1/4.
 Q: Where is f(x) = x^{2} − 6x increasing? | For x > 3.
 SUM: f′ gives tangents, normals and monotonicity.
 SUM: Normals are perpendicular to tangents.
+EV: established | The tangent at x = a has gradient f′(a), the normal has gradient −1/f′(a), and the sign of f′ shows where a function increases or decreases.
 SRC: Department for Education, Mathematics AS and A level subject content: differentiation | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 NUM1#maths-u07-08-q1@1: Find the gradient of y = x^{3} − 4x^{2} + 2 at x = 3. | 3 | 0 |  | dy/dx = 3x^{2} − 8x = 27 − 24 = 3.
 M1#maths-u07-08-q2@1: What is the tangent to y = x^{2} at (3, 9)? | y = 6x − 9 | y = 6x + 9 | y = 2x + 3 | y = 9x − 18 | y = 3x | The gradient is 2x = 6, so y − 9 = 6(x − 3), giving y = 6x − 9.
 M2#maths-u07-08-q3@2: For which x is f(x) = 2x^{3} − 6x decreasing? | −1 < x < 1 | x > 1 | x < −1 | x > 0 | All x | f′(x) = 6x^{2} − 6 = 6(x − 1)(x + 1) is negative between −1 and 1.
 NUM1#maths-u07-08-q4@1: Where is the tangent to y = x^{2} − 6x horizontal (give x)? | 3 | 0 |  | dy/dx = 2x − 6 = 0 at x = 3.
+NUM3@1: The normal to y = x^{2} at (1, 1) meets the curve again. Find the x-coordinate of the second intersection. | -1.5 | 0.001 |  | The normal has gradient −1/2: y = −x/2 + 3/2. Setting x^{2} = −x/2 + 3/2 gives 2x^{2} + x − 3 = (2x + 3)(x − 1) = 0, so x = −1.5.
+SA3@2: Find where f(x) = x^{3} − 12x + 5 is increasing and where it is decreasing, explaining your method. | Differentiate: f′(x) = 3x^{2} − 12 = 3(x − 2)(x + 2). f is increasing where f′(x) > 0, which is x < −2 or x > 2, and decreasing where f′(x) < 0, which is −2 < x < 2. At x = ±2 the gradient is zero (stationary points). | Differentiates correctly ; Factorises f′(x) ; Uses f′ > 0 for increasing and f′ < 0 for decreasing ; States x < −2 or x > 2 increasing ; States −2 < x < 2 decreasing
 
 ## Higher-Order Derivatives
 S: Differentiating a derivative gives the second derivative, and so on. The second derivative measures how the gradient changes: acceleration for motion, and concavity for graphs.
 O: Find second and higher derivatives
 O: Interpret the second derivative physically and graphically
+LV: A level · Fluency
 T: Second derivative | f″(x) or d^{2}y/dx^{2}: the derivative of the derivative
 T: nth derivative | f^{(n)}(x): the result of differentiating n times
 H: Finding them
@@ -284,22 +322,27 @@ X: A particle's displacement is s = t^{3} − 6t^{2} + 9t metres. Find its accel
 > v = ds/dt = 3t^{2} − 12t + 9 = 3(t − 1)(t − 3), so v = 0 first at t = 1
 > a = dv/dt = 6t − 12
 > At t = 1: a = −6 m s^{−2}
+P: Patterns give any derivative directly: the nth derivative of e^{kx} is k^{n}e^{kx}, and differentiating x^{m} n times gives m(m − 1)…(m − n + 1)x^{m−n}.
 K: Differentiate repeatedly; f″ is the rate of change of the gradient: acceleration, or concavity.
 !: Confusing f″(x) with (f′(x))^{2}.
 Q: What is the second derivative of x^{5}? | 20x^{3}.
 Q: What is d^{2}s/dt^{2} for motion? | Acceleration.
 SUM: Higher derivatives differentiate repeatedly.
 SUM: The second derivative measures changing gradient.
+EV: established | The second derivative measures how the gradient changes: acceleration in motion and concavity on a graph.
 SRC: Department for Education, Mathematics AS and A level subject content: differentiation | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 NUM1#maths-u07-09-q1@1: f(x) = 2x^{4} − x^{3}. Find f″(1). | 18 | 0 |  | f′(x) = 8x^{3} − 3x^{2}, f″(x) = 24x^{2} − 6x, so f″(1) = 18.
 M1#maths-u07-09-q2@1: What is the 4th derivative of sin x? | sin x | cos x | −sin x | −cos x | 0 | Derivatives of sin x cycle cos x, −sin x, −cos x, sin x, so the 4th returns to sin x.
 M2#maths-u07-09-q3@2: What is d^{2}/dx^{2} (e^{3x})? | 9e^{3x} | 3e^{3x} | e^{3x} | 6e^{3x} | e^{9x} | Each differentiation multiplies by 3, so twice gives 9e^{3x}.
+NUM3@2: A particle has displacement s = t^{3} − 6t^{2} + 9t metres. Find its acceleration, in m s^{−2}, when its velocity is zero for the second time. | 6 | 0 | m s^{−2} | v = 3(t − 1)(t − 3) is zero at t = 1 and t = 3. The acceleration a = 6t − 12 is 6 m s^{−2} at t = 3.
+SA2@2: At a point, f′(x) > 0 and f″(x) < 0. Describe the graph there and give an interpretation for motion, where f is displacement. | The function is increasing (positive gradient) but the gradient is decreasing, so the graph is concave down: rising and levelling off. For motion, the velocity is positive (moving forwards) and the acceleration is negative, so the object is moving forwards but slowing down. | Increasing because f′ > 0 ; Gradient decreasing because f″ < 0 ; Concave down ; Positive velocity with negative acceleration ; Moving forwards but slowing
 
 ## Chain Rule
 S: The chain rule differentiates composite functions, functions of functions like (3x + 1)^{5} or e^{sin x}. Multiply the derivative of the outer function by the derivative of the inner one.
 O: Differentiate composite functions with the chain rule
 O: Recognise the inner and outer functions in an expression
+LV: A level · Application
 T: Chain rule | dy/dx = dy/du × du/dx, where y is a function of u and u a function of x
 T: Inner function | The function applied first, such as u = 3x + 1 in (3x + 1)^{5}
 H: The rule
@@ -323,16 +366,20 @@ Q: Differentiate (2x − 7)^{4}. | 8(2x − 7)^{3}.
 Q: Differentiate ln(3x^{2} + 1). | 6x/(3x^{2} + 1).
 SUM: The chain rule handles functions of functions.
 SUM: Multiply the outer derivative by the inner derivative.
+EV: established | The derivative of a composite function is the outer derivative, evaluated at the inner function, times the inner derivative.
 SRC: Department for Education, Mathematics AS and A level subject content: differentiation | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-10-q1@1: What is d/dx (e^{4x})? | 4e^{4x} | e^{4x} | 4xe^{4x−1} | e^{4} | 4e^{x} | The inner function 4x has derivative 4, which multiplies e^{4x}.
 M2#maths-u07-10-q2@2: What is d/dx sin(x^{2})? | 2x cos(x^{2}) | cos(x^{2}) | 2x cos(2x) | −2x cos(x^{2}) | 2 cos(x) | Outer cos(x^{2}) times inner derivative 2x.
 M3#maths-u07-10-q3@2: What is d/dx (1/(2x + 3)^{2})? | −4/(2x + 3)^{3} | −2/(2x + 3)^{3} | 1/(2(2x + 3)) | −4/(2x + 3)^{2} | 4/(2x + 3)^{3} | (2x + 3)^{−2} gives −2(2x + 3)^{−3} × 2 = −4(2x + 3)^{−3}.
+NUM2@1: Differentiate y = (x^{2} + 1)^{3} and evaluate dy/dx at x = 1. | 24 | 0 |  | dy/dx = 3(x^{2} + 1)^{2} × 2x; at x = 1 this is 3 × 4 × 2 = 24.
+SA3@1,2: Differentiate y = e^{sin 2x}, naming each layer of the composite function. | There are three layers: the outer function e^{u}, the middle u = sin v and the inner v = 2x. Differentiate from the outside in: e^{sin 2x} × cos 2x × 2, so dy/dx = 2cos(2x)e^{sin 2x}. | Identifies e^{u} as the outer function ; Identifies sin and 2x as further layers ; Keeps the inside unchanged when differentiating each layer ; Multiplies by cos 2x and by 2 ; Gets 2cos(2x)e^{sin 2x}
 
 ## Product Rule
 S: The product rule differentiates a product of two functions. The derivative of uv isn't u′v′: it's u′v + uv′.
 O: Differentiate products using the product rule
 O: Combine the product rule with the chain rule
+LV: A level · Application
 T: Product rule | d/dx (uv) = u′v + uv′
 T: Factorising a derivative | Taking out common factors after using the product rule, to simplify and solve f′(x) = 0
 H: The rule
@@ -359,15 +406,20 @@ Q: Differentiate x e^{2x}. | e^{2x} + 2xe^{2x} = e^{2x}(1 + 2x).
 Q: Differentiate x^{2} cos x. | 2x cos x − x^{2} sin x.
 SUM: Products need the product rule.
 SUM: Factorise to simplify.
+EV: established | The derivative of a product uv is u′v + uv′, not u′v′.
 SRC: Department for Education, Mathematics AS and A level subject content: differentiation | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-11-q1@1: What is d/dx (x ln x)? | ln x + 1 | 1/x | ln x | x/x | 1 | u = x and v = ln x: 1 × ln x + x × 1/x = ln x + 1.
 M2#maths-u07-11-q2@2: What is d/dx (x^{3}e^{2x})? | x^{2}e^{2x}(3 + 2x) | 3x^{2}e^{2x} | 6x^{2}e^{2x} | x^{3}e^{2x}(3 + 2x) | 3x^{2} + 2e^{2x} | 3x^{2}e^{2x} + 2x^{3}e^{2x} = x^{2}e^{2x}(3 + 2x).
+NUM2@1: Differentiate y = x^{2} ln x and evaluate dy/dx at x = e, to 3 decimal places. | 8.155 | 0.01 |  | dy/dx = 2x ln x + x; at x = e this is 2e + e = 3e ≈ 8.155.
+M3@2: What are the x-coordinates of the stationary points of y = x(x − 3)^{4}? | x = 3 and x = 0.6 | x = 3 only | x = 0 and x = 3 | x = 0.6 only | x = −3 and x = 0.6 | dy/dx = (x − 3)^{4} + 4x(x − 3)^{3} = (x − 3)^{3}(5x − 3), which is zero at x = 3 and x = 3/5.
+SA3@1,2: Differentiate y = x^{2}(3x − 1)^{5}, factorising your answer, and explain why (uv)′ is not u′v′. | With u = x^{2} and v = (3x − 1)^{5}: u′ = 2x and, by the chain rule, v′ = 15(3x − 1)^{4}. So dy/dx = 2x(3x − 1)^{5} + 15x^{2}(3x − 1)^{4} = x(3x − 1)^{4}(21x − 2). u′v′ fails: for x^{2} × x^{3} = x^{5} it gives 6x^{3}, but the derivative is 5x^{4}. | Identifies u and v ; Uses the chain rule for v′ ; Applies u′v + uv′ ; Factorises to x(3x − 1)^{4}(21x − 2) ; Gives a counterexample to u′v′
 
 ## Quotient Rule
 S: The quotient rule differentiates one function divided by another. It's a combination of the product and chain rules, and it's needed for functions like tan x and rational functions.
 O: Differentiate quotients using the quotient rule
 O: Derive the derivative of tan x
+LV: A level · Application
 T: Quotient rule | d/dx (u/v) = (u′v − uv′)/v^{2}
 T: Rational function | A quotient of polynomials, such as (2x + 1)/(x − 3)
 H: The rule
@@ -390,15 +442,20 @@ Q: Differentiate x/(x + 1). | 1/(x + 1)^{2}.
 Q: What is d/dx tan x? | sec^{2} x.
 SUM: Quotients need the quotient rule.
 SUM: Order matters in the numerator.
+EV: established | The derivative of u/v is (vu′ − uv′)/v^{2}, from which d/dx tan x = sec^{2} x follows.
 SRC: Department for Education, Mathematics AS and A level subject content: differentiation | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-12-q1@1: What is d/dx (1/x^{2}) by any method? | −2/x^{3} | −2/x | 2/x^{3} | −1/x^{3} | 1/(2x) | x^{−2} differentiates to −2x^{−3}; the quotient rule gives the same answer.
 M2#maths-u07-12-q2@2: What is d/dx ((x − 1)/(x + 1))? | 2/(x + 1)^{2} | −2/(x + 1)^{2} | 1 | 2x/(x + 1)^{2} | 0 | ((x + 1) − (x − 1))/(x + 1)^{2} = 2/(x + 1)^{2}.
+NUM2@1: For f(x) = 3x/(x^{2} + 1), find f′(2). | -0.36 | 0.001 |  | f′(x) = (3(x^{2} + 1) − 3x × 2x)/(x^{2} + 1)^{2} = (3 − 3x^{2})/(x^{2} + 1)^{2}, so f′(2) = −9/25 = −0.36.
+M3@1: What is d/dx ((ln x)/x)? | (1 − ln x)/x^{2} | (ln x − 1)/x^{2} | (1 + ln x)/x^{2} | (1 − ln x)/x | 1/x^{2} | With u = ln x and v = x: (x × 1/x − ln x × 1)/x^{2} = (1 − ln x)/x^{2}; reversing the numerator flips the sign.
+SA3@2: Use the quotient rule to show that d/dx tan x = sec^{2} x, and hence find d/dx cot x. | tan x = sin x/cos x, so d/dx tan x = (cos x × cos x − sin x × (−sin x))/cos^{2} x = (cos^{2} x + sin^{2} x)/cos^{2} x = 1/cos^{2} x = sec^{2} x. Similarly cot x = cos x/sin x gives (sin x × (−sin x) − cos x × cos x)/sin^{2} x = −1/sin^{2} x = −cosec^{2} x. | Writes tan x as sin x/cos x ; Applies the quotient rule in the right order ; Uses sin^{2} x + cos^{2} x = 1 ; Gets sec^{2} x ; Gets −cosec^{2} x for cot x
 
 ## Implicit Differentiation
 S: Implicit differentiation finds dy/dx when y isn't the subject, as on the circle x^{2} + y^{2} = 25. Differentiate every term with respect to x, using the chain rule on terms in y, then solve for dy/dx.
 O: Differentiate implicit equations
 O: Find tangents to implicitly defined curves
+LV: A level · Application
 T: Implicit differentiation | Differentiating both sides of an equation in x and y with respect to x, treating y as a function of x
 T: d/dx (y^{n}) | ny^{n−1} dy/dx, by the chain rule
 H: Method
@@ -421,15 +478,20 @@ Q: What is d/dx (y^{3})? | 3y^{2} dy/dx.
 Q: What is d/dx (xy)? | y + x dy/dx.
 SUM: Implicit differentiation needs no rearranging.
 SUM: The chain rule supplies the dy/dx factors.
+EV: established | Differentiating an equation term by term, with the chain rule giving dy/dx on each term in y, finds gradients without rearranging.
 SRC: Department for Education, Mathematics AS and A level subject content: differentiation | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-13-q1@1: For x^{2} + y^{2} = 13, what is dy/dx at (2, 3)? | −2/3 | 2/3 | −3/2 | 3/2 | 0 | Differentiating gives 2x + 2y dy/dx = 0, so dy/dx = −x/y = −2/3 at (2, 3).
 M2#maths-u07-13-q2@2: What is dy/dx for y^{2} = 4x? | 2/y | 4 | 2y | 4/y^{2} | y/2 | Differentiating y^{2} implicitly gives 2y dy/dx = 4, so dy/dx = 2/y.
+NUM2@2: Find the gradient of the curve x^{3} + y^{3} = 9 at the point (1, 2). | -0.25 | 0.001 |  | 3x^{2} + 3y^{2} dy/dx = 0, so dy/dx = −x^{2}/y^{2} = −1/4 at (1, 2).
+NUM3@2: The tangent to x^{2} + y^{2} = 25 at (3, 4) meets the x-axis at (k, 0). Find k to 2 decimal places. | 8.33 | 0.01 |  | dy/dx = −x/y = −3/4, so the tangent is y − 4 = −3/4(x − 3). Setting y = 0 gives x − 3 = 16/3, so k = 25/3 ≈ 8.33.
+SA3@1,2: Show by implicit differentiation that d/dx (arcsin x) = 1/√(1 − x^{2}), explaining why the positive square root is taken. | Let y = arcsin x, so sin y = x. Differentiating with respect to x gives cos y dy/dx = 1, so dy/dx = 1/cos y. Since sin^{2} y + cos^{2} y = 1, cos y = ±√(1 − x^{2}). The range of arcsin is −π/2 ≤ y ≤ π/2, where cos y ≥ 0, so dy/dx = 1/√(1 − x^{2}). | Rewrites as sin y = x ; Differentiates implicitly to get cos y dy/dx = 1 ; Uses sin^{2} y + cos^{2} y = 1 ; Justifies the positive root from the range of arcsin ; States the result
 
 ## Logarithmic Differentiation
 S: Logarithmic differentiation takes the log of both sides before differentiating. It turns products, quotients and powers into sums, making messy derivatives manageable, and handles variable powers like x^{x}.
 O: Use logarithmic differentiation for products, quotients and powers
 O: Differentiate functions with variable exponents
+LV: A level · Problem solving
 T: Logarithmic differentiation | Taking ln of both sides, simplifying with log laws, then differentiating implicitly
 T: Variable exponent | A power where both base and exponent depend on x, such as x^{x}
 H: Method
@@ -453,17 +515,20 @@ Q: What is d/dx (3^{x})? | 3^{x} ln 3.
 Q: What is d/dx (x^{x})? | x^{x}(ln x + 1).
 SUM: Logs turn products and powers into sums.
 SUM: They handle variable exponents.
+EV: established | Taking logarithms turns products, quotients and powers into sums, and is the standard way to differentiate variable powers such as x^{x}.
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 SRC: Department for Education, Mathematics AS and A level subject content: differentiation | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 NUM1#maths-u07-14-q1@1: For y = x^{x}, find dy/dx at x = 1. | 1 | 0 |  | dy/dx = x^{x}(ln x + 1) = 1 × (0 + 1) = 1.
 M1#maths-u07-14-q2@1: What is d/dx (2^{x})? | 2^{x} ln 2 | x2^{x−1} | 2^{x} | 2^{x}/ln 2 | ln 2 | ln y = x ln 2, so dy/dx = y ln 2 = 2^{x} ln 2.
 M3#maths-u07-14-q3@2: Why can't the power rule differentiate x^{x}? | The exponent isn't a constant | x^{x} isn't continuous | It has no derivative | The base is negative | It's an exponential with constant base | The power rule needs x^{n} with n constant; here the exponent varies with x.
-
+NUM2@2: For y = x^{x}, find dy/dx at x = 2, to 2 decimal places. | 6.77 | 0.01 |  | dy/dx = x^{x}(ln x + 1) = 4(ln 2 + 1) ≈ 4 × 1.693 = 6.77.
+SA2@1: Use logarithmic differentiation to find dy/dx for y = x^{2}e^{3x}/(x + 1), x > 0. | Take logs: ln y = 2 ln x + 3x − ln(x + 1). Differentiate implicitly: (1/y) dy/dx = 2/x + 3 − 1/(x + 1). Multiply by y: dy/dx = (x^{2}e^{3x}/(x + 1))(2/x + 3 − 1/(x + 1)). | Takes ln of both sides ; Expands using the log laws ; Differentiates ln y as (1/y) dy/dx ; Differentiates each term correctly ; Multiplies back by y
 
 ## Parametric Differentiation
 S: When a curve is given parametrically, x = f(t) and y = g(t), its gradient comes from the chain rule: dy/dx = (dy/dt)/(dx/dt). There's no need to find the Cartesian equation first.
 O: Find gradients of parametric curves
 O: Find tangents, normals and stationary points of parametric curves
+LV: A level · Application
 T: Parametric derivative | dy/dx = (dy/dt) ÷ (dx/dt), provided dx/dt ≠ 0
 T: Vertical tangent | Where dx/dt = 0 but dy/dt ≠ 0, so the gradient is infinite
 H: Method
@@ -487,11 +552,14 @@ Q: For x = 3t, y = t^{2}, what is dy/dx? | 2t/3.
 Q: Where does a parametric curve have a vertical tangent? | Where dx/dt = 0 and dy/dt ≠ 0.
 SUM: The chain rule gives parametric gradients.
 SUM: Use the parameter value at the point.
+EV: established | For a parametric curve, dy/dx = (dy/dt)/(dx/dt) wherever dx/dt ≠ 0.
 SRC: Department for Education, Mathematics AS and A level subject content: differentiation | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 NUM1#maths-u07-15-q1@1: For x = t^{2} + 1, y = 4t, find dy/dx at t = 2. | 1 | 0 |  | dx/dt = 2t = 4 and dy/dt = 4, so dy/dx = 4/4 = 1.
 M1#maths-u07-15-q2@1: For x = 5 cos t, y = 5 sin t, what is dy/dx? | −cot t | tan t | −tan t | cot t | 5 | dy/dt = 5 cos t and dx/dt = −5 sin t, so dy/dx = −cos t/sin t.
 M2#maths-u07-15-q3@2: For x = t^{3} − 3t, y = t^{2}, where are the vertical tangents? | t = ±1 | t = 0 | t = ±3 | t = 3 | None | dx/dt = 3t^{2} − 3 = 0 at t = ±1, where dy/dt = 2t ≠ 0.
+NUM3@2: The curve x = t^{2}, y = t^{3} − 3t has two horizontal tangents. Find the y-coordinate of the one with t > 0. | -2 | 0 |  | dy/dt = 3t^{2} − 3 = 0 at t = ±1, where dx/dt = 2t ≠ 0. At t = 1, y = 1 − 3 = −2.
+SA3@2: For the curve x = t^{2} − 4t, y = t^{3} − 3t, find the points with horizontal and vertical tangents, explaining your method. | dx/dt = 2t − 4 and dy/dt = 3t^{2} − 3. Horizontal tangents need dy/dt = 0 with dx/dt ≠ 0: t = ±1, giving (−3, −2) and (5, 2). Vertical tangents need dx/dt = 0 with dy/dt ≠ 0: t = 2, where dy/dt = 9, giving (−4, 2). | Finds dx/dt and dy/dt ; Uses dy/dt = 0 for horizontal tangents ; Checks dx/dt ≠ 0 there ; Uses dx/dt = 0 for vertical tangents ; Gives (−3, −2), (5, 2) and (−4, 2)
 
 ## Rates of Change
 S: Derivatives measure how fast one quantity changes with another. In science, economics and everyday life, "rate of change" problems ask how fast something is growing, shrinking or moving at an instant.

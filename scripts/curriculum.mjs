@@ -64,7 +64,7 @@ export function report(kb, lessons) {
   return { md: md.join("\n"), problems, summary: s };
 }
 
-if (import.meta.url === pathToFileURL(process.argv[1]).href) {
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   const [cmd = "report", arg] = process.argv.slice(2);
   const lessons = await loadLessons(coursesIn(KB));
   if (cmd === "hash") {
