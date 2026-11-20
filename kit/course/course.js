@@ -1528,7 +1528,7 @@ export function mountCourse(root, cfg) {
     {
       const placed = new Set([...main.querySelectorAll(".co-ixslot")].map((s) => s.dataset.ix));
       const linked = ixs.filter((x) => x.lessons?.includes(id) && !placed.has(x.id)), shown = linked.slice(0, 2), more = linked.slice(2);
-      const at = main.querySelector(".co-tutor") || main.querySelector(".co-notes > footer");
+      const at = main.querySelector("#co-deeper") || main.querySelector(".co-notes > footer");   // before the folded Go deeper, so it shows
       if (linked.length && at) at.insertAdjacentHTML("beforebegin", `<section class="co-trylab"><h3>Try it yourself</h3>${shown.map((x) => `<div class="co-ixslot" data-ix="${esc(x.id)}"></div>`).join("")}${more.length ? `<p class="co-morelabs">More for this lesson: ${more.map((x) => `<a href="#/practice/${esc(x.id)}">${esc(x.title)}</a>`).join(" · ")}</p>` : ""}</section>`);
     }
     mountIxSlots(main);
