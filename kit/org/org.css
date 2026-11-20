@@ -1,0 +1,57 @@
+/* Organisations, invitations, the inbox and the workspace switcher (kit/org). The kit's tokens, so both themes work. */
+.org { display: flex; flex-direction: column; gap: 16px; max-width: 1100px; min-width: 0; }
+.org .deck-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; }
+.org-verified { color: #1fae8c; }
+.org-tabs { display: flex; gap: 4px; flex-wrap: wrap; border-bottom: 1px solid var(--line); padding-bottom: 8px; }
+.org-tabs a { padding: 7px 12px; border-radius: 10px; color: var(--mute); text-decoration: none; font-size: 14px; font-weight: 500; }
+.org-tabs a:hover { color: var(--fg); background: rgba(var(--ink-rgb), .05); }
+.org-tabs a[aria-current="page"] { color: var(--fg); background: rgba(var(--ink-rgb), .1); }
+#org-body { display: flex; flex-direction: column; gap: 16px; }
+.org-two { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.org-card { text-decoration: none; color: var(--fg); gap: 4px; }
+.org-empty { max-width: 640px; }
+.org-form label { display: flex; flex-direction: column; gap: 4px; font-size: 13.5px; color: var(--mute); }
+.org-form label em { font-style: normal; font-size: 12px; color: var(--faint); }
+.org-form label.check { flex-direction: row; align-items: center; gap: 8px; color: var(--fg); }
+.org-form input:not([type=checkbox]), .org-form select, .org-bar input, .org-table select, .org-table input, .org-copy input, .org-row select, .org-row input {
+  font: 15px var(--sans); color: var(--fg); background: var(--inset); border: 1px solid var(--line-strong); border-radius: 10px; padding: 9px 11px; min-width: 0; }
+.org-table select, .org-table input { padding: 6px 8px; font-size: 14px; }
+.org-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: flex-end; }
+.org-row label { flex: 1 1 140px; }
+.org-bar { display: flex; gap: 8px; flex-wrap: wrap; }
+.org-bar input { flex: 1; min-width: 200px; }
+.org-table { border-collapse: collapse; width: 100%; font-size: 14px; }
+.org-table th { text-align: left; font-weight: 600; color: var(--mute); padding: 8px 10px; border-bottom: 1px solid var(--line-strong); white-space: nowrap; }
+.org-table td { padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+.org-table tr.dim td { color: var(--faint); }
+.org-table code { font: 12.5px var(--mono); }
+.org-acts { white-space: nowrap; display: flex; gap: 4px; }
+.org-list { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; line-height: 1.5; }
+.org-tree { list-style: none; margin: 0; padding-left: 16px; border-left: 1px solid var(--line); display: flex; flex-direction: column; gap: 6px; }
+.panel > .org-tree { border-left: 0; padding-left: 0; }
+.org-unit { display: inline-flex; gap: 8px; align-items: baseline; padding: 2px 0; }
+.org-invites { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.org-invites li { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: center; padding: 10px 0; border-top: 1px solid var(--line); }
+.org-invites li > span:first-child { flex: 1 1 220px; }
+.org-copy { display: flex; gap: 8px; }
+.org-copy input { flex: 1; font-family: var(--mono); font-size: 12.5px; }
+.org-note { margin: 0; padding: 10px 14px; border-radius: 12px; background: rgba(255, 138, 0, .1); border: 1px solid rgba(255, 138, 0, .35); font-size: 14px; display: flex; gap: 8px; align-items: flex-start; }
+.org-note svg { width: 16px; height: 16px; flex: none; margin-top: 2px; }
+.org-stats { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+.org-stats .panel { gap: 4px; padding: 14px 16px; }
+.org-stats b { font-size: 24px; letter-spacing: -.02em; }
+.org-tablewrap { overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; }
+.org-x { border: 0; background: none; color: var(--faint); cursor: pointer; font-size: 18px; line-height: 1; padding: 0 4px; }
+.org-inbox { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.org-inbox li { display: flex; gap: 8px; align-items: flex-start; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--line); }
+.org-inbox li.unread { border-color: var(--line-strong); background: rgba(var(--ink-rgb), .04); }
+.org-inbox li.unread b::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #4641ff; margin-right: 8px; vertical-align: middle; }
+.org-inbox a { flex: 1; display: flex; flex-direction: column; gap: 2px; color: var(--fg); text-decoration: none; }
+.org-inbox a span { color: var(--mute); font-size: 14px; }
+.org-inbox a em { font-style: normal; color: var(--faint); font-size: 12px; }
+/* the workspace switcher, at the top of the LifeOS sidebar */
+.lo-ws { display: flex; flex-direction: column; gap: 4px; padding: 4px 4px 10px; margin-bottom: 6px; border-bottom: 1px solid var(--line); }
+.lo-ws label { font-size: 11px; text-transform: uppercase; letter-spacing: .12em; color: var(--faint); padding: 0 8px; }
+.lo-ws select { font: 500 14px var(--sans); color: var(--fg); background: var(--inset); border: 1px solid var(--line-strong); border-radius: 10px; padding: 8px 10px; width: 100%; }
+.lo-side a .lo-count { margin-left: auto; font-size: 11px; font-weight: 600; background: var(--invert-bg); color: var(--invert-fg); border-radius: 99px; padding: 1px 7px; }
+@media (max-width: 860px) { .org-acts { flex-wrap: wrap; } .lo-ws { grid-column: 1 / -1; } }

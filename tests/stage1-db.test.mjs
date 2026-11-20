@@ -116,6 +116,11 @@ test("an organisation and its structure: owners, units, and permissions that app
   const seen = await t.as(U.teacher, `select user_id from public.org_members where org_id = '${s.org}'`);
   assert.deepEqual(seen.map((r) => r.user_id).sort(), [U.student, U.teacher].sort(), "the teacher sees Biology's members only");
   assert.deepEqual((await t.as(U.student, `select user_id from public.org_members`)).map((r) => r.user_id), [U.student], "a student sees only their own membership");
+  // the member list with emails follows exactly the same rule
+  assert.deepEqual((await t.as(U.teacher, `select email from public.org_member_list('${s.org}')`)).map((r) => r.email).sort(), [EMAIL("student"), EMAIL("teacher")]);
+  assert.deepEqual((await t.as(U.student, `select email from public.org_member_list('${s.org}')`)).map((r) => r.email), [EMAIL("student")]);
+  assert.equal((await t.as(U.owner, `select email from public.org_member_list('${s.org}')`)).length, 6, "the owner sees everyone");
+  assert.equal((await t.as(U.other, `select email from public.org_member_list('${s.org}')`)).length, 0, "another organisation sees no one");
   await t.d.close();
 });
 

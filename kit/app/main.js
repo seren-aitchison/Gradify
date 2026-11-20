@@ -135,6 +135,7 @@ const NAV = [
 const TABS = ["today", "study", "notes", "plan"];
 // screens that belong to a section without being one
 const SECTION_OF = { deck: "notes", new: "notes", topic: "progress", start: null, goal: "goals", session: "today" };
+const personalSide = (extra = "") => `<span class="lo-side-title">LifeOS</span>${NAV.map(([r, label, , ic]) => `<a href="#/${r}" data-route="${r}">${icon(ic)}<span>${label}</span></a>`).join("")}${extra}`;
 function drawNav() {
   // the LifeOS sidebar (wide screens) and, inside it, every section; the top bar keeps the brand and account
   let side = document.querySelector(".lo-side");
@@ -144,7 +145,7 @@ function drawNav() {
     document.querySelector("#view")?.before(side);
     document.querySelector("#view")?.parentElement.classList.add("lo-shell");
   }
-  side.innerHTML = `<span class="lo-side-title">LifeOS</span>${NAV.map(([r, label, , ic]) => `<a href="#/${r}" data-route="${r}">${icon(ic)}<span>${label}</span></a>`).join("")}`;
+  side.innerHTML = personalSide();
   // the top bar's middle holds the open section's tabs (tabify, after each screen renders)
   for (const nav of document.querySelectorAll(".tabbar")) {
     nav.innerHTML = NAV.filter(([r]) => TABS.includes(r)).map(([r, , short, ic]) => `<a href="#/${r}" data-route="${r}">${icon(ic)}<span>${short}</span></a>`).join("")
@@ -171,6 +172,42 @@ const PRICING = /(^|\.)getgradify\.com$|^localhost/.test(location.hostname) ? "/
 
 // ---------- Router ----------
 const routes = { today: renderToday, start: renderStart, new: renderNew, deck: renderDeck, study: renderStudy, topic: renderTopic, progress: renderProgress, plan: renderPlan, account: renderAccount };
+// ---------- Workspaces (kit/org/workspace.js) ----------
+// One account, several workspaces: personal Gradify, and each organisation the learner belongs to. Organisation calls
+// use the signed-in account directly (not a site-scoped or read-only study store: they aren't study data). Until the
+// database has the organisation functions, nothing here shows, so the app is exactly as before.
+let orgStore = null, orgContexts = null, orgMissing = false;
+const orgCtx = () => ({ store: orgStore || { mode: "local" }, toast, rerender, onWorkspace: () => drawWorkspace({ refresh: true }) });
+async function drawWorkspace({ refresh = false } = {}) {
+  const side = document.querySelector(".lo-side");
+  if (!side || !orgStore || orgMissing) return;
+  const [W, A] = await Promise.all([import("../org/workspace.js"), import("../org/api.js")]);
+  if (refresh || !orgContexts) {
+    try { orgContexts = await A.contexts(orgStore); }
+    catch (e) { if (e.missing) { orgMissing = true; return; } if (!orgContexts) return; }
+  }
+  const unread = await A.unreadCount(orgStore).catch(() => 0);
+  const ws = W.readWorkspace(), org = W.orgOf(orgContexts, ws);
+  if (!org && ws !== W.PERSONAL) W.writeWorkspace(W.PERSONAL);
+  const orgs = orgContexts.organisations || [];
+  const picker = `<div class="lo-ws"><label for="lo-ws">Workspace</label><select id="lo-ws"><option value="${W.PERSONAL}">Personal Gradify</option>${orgs.map((o) => `<option value="${esc(o.id)}" ${org?.id === o.id ? "selected" : ""}>${esc(o.name)}</option>`).join("")}${orgs.length ? "" : '<option value="new">Create or join an organisation…</option>'}</select></div>`;
+  const inbox = `<a href="#/inbox" data-route="inbox">${icon("bell")}<span>Inbox</span>${unread ? `<b class="lo-count">${unread > 99 ? "99+" : unread}</b>` : ""}</a>`;
+  side.innerHTML = picker + (org
+    ? `<span class="lo-side-title">${esc(org.name)}</span>${W.orgNav(org).map((n) => `<a href="${n.href}" data-ws-href="${n.href}">${icon(n.icon)}<span>${esc(n.label)}</span></a>`).join("")}${inbox}`
+    : personalSide(`${inbox}<a href="#/org" data-route="org">${icon("building")}<span>Organisations</span></a>`));
+  const here = location.hash.replace(/\/$/, "");
+  side.querySelectorAll("a[data-ws-href]").forEach((a) => a.setAttribute("aria-current", String(here === a.dataset.wsHref)));
+  const name = (location.hash.replace(/^#\/?/, "") || "today").split("/")[0], section = name in SECTION_OF ? SECTION_OF[name] : name;
+  side.querySelectorAll("a[data-route]").forEach((a) => a.setAttribute("aria-current", String(a.dataset.route === section)));
+  side.querySelector("#lo-ws").addEventListener("change", (e) => {
+    const v = e.target.value;
+    if (v === "new") { location.hash = "#/org"; return; }
+    W.writeWorkspace(v);
+    location.hash = v === W.PERSONAL ? "#/today" : `#/org/${v}`;
+  });
+  markLocks();
+}
+
 // ---------- Section tabs: each LifeOS section's own top bar ----------
 // Every section's page is split into a few panes, shown one at a time from tabs in the top bar (white labels, a
 // rainbow line under the one that's open), so each is a short scroll. A pane is an element marked data-pane="id", or
@@ -183,7 +220,7 @@ const SECTION_TABS = {
   revise: [["queue", "Queue", ".seg-chips, .r-list, .revise-page > article.panel:not([data-pane])"], ["breakdown", "Break it down", ""], ["ease", "Ease off", ""]],
   knowledge: [["stages", "Stages", ".k-funnel, .k-grid, .knowledge-page > article.panel:not([data-pane])"], ["debt", "Knowledge debt", ""], ["courses", "Courses", ""]],
   progress: [["year", "Your year", ".today > article.panel, section > article.panel:first-of-type"], ["mastery", "Mastery", ".prog-grid"], ["journey", "Level and quests", ".lo-journey"]],
-  account: [["account", "Account", "#plan-panel, article:has(#signin), article:has(#signout), article:has(.signin)"], ["learning", "Your learning", "form.setup-form"], ["prefs", "Preferences", ".notify, article:has(#haptics)"], ["data", "Your data", "article:has(#export)"]],
+  account: [["account", "Account", "#plan-panel, #teach-panel, article:has(#signin), article:has(#signout), article:has(.signin)"], ["learning", "Your learning", "form.setup-form"], ["prefs", "Preferences", ".notify, article:has(#haptics)"], ["data", "Your data", "article:has(#export)"]],
   ai: [["ask", "Ask Gradify", ".i-ask"], ["features", "Gradify AI", ".ai-allow, .ai-tools, .ai-route > p.sub:last-child"]],
 };
 const activeTab = new Map();
@@ -266,13 +303,14 @@ function decorate(root) {
 
 async function route() {
   const [name, arg] = (location.hash.replace(/^#\/?/, "") || "today").split("/");
-  if (needsSetup(profile) && !["start", "account"].includes(name)) { location.replace("#/start"); return; }
+  if (needsSetup(profile) && !["start", "account", "join"].includes(name)) { location.replace("#/start"); return; }
   const section = name in SECTION_OF ? SECTION_OF[name] : name;
   document.querySelectorAll(".app-nav a, .tabbar a, .lo-side a").forEach((a) => a.setAttribute("aria-current", String(a.dataset.route === section)));
   document.body.classList.remove("side-open");
   view.innerHTML = '<div class="loading" aria-busy="true"></div>';
   try { await (routes[name] || renderToday)(arg); } catch (e) { console.error(e); view.innerHTML = `<div class="panel glass"><h3>Something went wrong</h3><p class="sub">${esc(e.message)}</p></div>`; }
   decorate(view);
+  drawWorkspace().catch(() => {});
   tabify(name);
   sessionPill(name);
   // 3D glass icons from the learner's subject set (kit/core/glass-icons.js), matched to each card, pack and lesson
@@ -650,6 +688,10 @@ async function renderNotes() {
   </section>`;
 }
 routes.notes = renderNotes;
+// Organisations, invitations and the inbox (kit/org): Stage 1 of blended learning. Hidden until the database has them.
+routes.org = async () => (await import("../org/views.js")).renderOrg(view, orgCtx());
+routes.join = async (token) => (await import("../org/views.js")).renderJoin(view, orgCtx(), token ? decodeURIComponent(token) : null);
+routes.inbox = async () => (await import("../org/views.js")).renderInbox(view, orgCtx());
 // Tools (kit/tools): the lesson search, mind map creator, flashcard creator and notes converter, loaded when opened
 routes.tools = async () => (await import("../tools/tools.js")).renderTools(view, { store, toast, site: profile.site || "Gradify", pricing: PRICING });
 
@@ -1387,6 +1429,7 @@ async function renderAccount() {
         : `<h3>Saved on this device</h3><p class="sub">Gradify accounts aren't switched on yet, so your notes and progress are saved in this browser${store.persistent ? "" : " for this visit only (this browser is blocking storage)"}. Export a copy below to keep it safe.</p>`}
     </article>
     ${user ? `<article class="panel glass plan-panel" id="plan-panel" aria-live="polite"><h3>Your plan</h3><p class="sub">Checking your plan…</p></article>` : ""}
+    ${user ? `<article class="panel glass" id="teach-panel" aria-live="polite"></article>` : ""}
     <form class="panel glass setup-form" id="prefs">
       <h3>Your learning</h3>
       <label><span>Goal</span><select name="goal">${GOALS.map((g) => `<option value="${g.id}" ${profile.goal === g.id ? "selected" : ""}>${g.t}</option>`).join("")}</select></label>
@@ -1438,6 +1481,8 @@ async function renderAccount() {
   });
   $("#google")?.addEventListener("click", () => store.signInWithGoogle().catch((err) => toast(esc(err.message))));
   $("#signout")?.addEventListener("click", async () => { await store.signOut(); location.reload(); });
+  // Teach on Gradify (kit/org): removes itself until the database has teaching
+  if ($("#teach-panel")) import("../org/views.js").then((m) => m.teachPanel($("#teach-panel"), orgCtx())).catch(() => $("#teach-panel")?.remove());
 }
 
 // The learner's Gradify plan on the Account page: Free or Pro, what needs doing, Manage billing, and Gradify AI used
@@ -1618,6 +1663,7 @@ async function start() {
     document.title = SITE;
   }
   $("#mode").innerHTML = user ? `${icon("check")}<span>${esc(user.email)}</span>` : `${icon("lock")}<span>On this device</span>`;
+  orgStore = user ? cloud : null;
   addEventListener("hashchange", route);
   route();
   // a returning learner is offered the Gradify app on the App Store (once the listing is live; dismissing it keeps it away for three weeks)

@@ -386,6 +386,17 @@ create function public.my_contexts() returns jsonb language sql stable security 
     ), '[]'::jsonb));
 $$;
 
+-- the members the caller may see (the same rule as the org_members policy, row by row), with the email address
+-- each joined with, so organisations can recognise their people. Nothing else about the person is shown.
+create function public.org_member_list(p_org uuid) returns table (id uuid, user_id uuid, email text, unit_id uuid, role text, status text, created_at timestamptz) language sql stable security definer set search_path = public as $$
+  select m.id, m.user_id, u.email::text, m.unit_id, m.role, m.status, m.created_at
+  from public.org_members m join auth.users u on u.id = m.user_id
+  where m.org_id = p_org and (m.user_id = auth.uid() or public.has_perm('members.read', m.org_id, m.unit_id))
+  order by m.created_at;
+$$;
+revoke all on function public.org_member_list(uuid) from public, anon;
+grant execute on function public.org_member_list(uuid) to authenticated;
+
 revoke all on function public.create_organisation(text, text) from public, anon;
 revoke all on function public.rename_organisation(uuid, text) from public, anon;
 revoke all on function public.archive_organisation(uuid) from public, anon;

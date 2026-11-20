@@ -28,7 +28,7 @@ flowchart LR
   subgraph NEW["New in Stage 1"]
     OR[organisations · org_units · org_members · org_invitations · role_permissions · org_data_policies]
     TP[teacher_profiles]
-    HP[has_perm · my_contexts · workflow RPCs]
+    HP[has_perm · is_org_member · my_contexts · org_member_list · workflow RPCs]
     AL[audit_log]
     NO[notifications · notification_prefs · email_outbox]
     EN[org_subscriptions · org_seats · org_ai_pools · org_ai_usage · sponsored_plan_of · effective_plan_of]
@@ -62,8 +62,9 @@ Nothing in Stage 1 writes to, alters or adds a policy to any existing table or f
 | Subscriptions and plans | `subscriptions`, `plan_of()`, `is_pro()`, `plus_allowed_for()`, `may_write()` | none. `effective_plan_of()` is new and **not yet used** by any existing check | test: `plan_of()` is unchanged; for every user without a seat, `effective_plan_of()` = `plan_of()` |
 | AI allowances | `ai_claim_for()`, `ai_settle_for()`, `ai_limits` | none. Organisation pools are tables and read functions only, not yet used when an AI request is counted | catalogue snapshot identical |
 | Push notifications | `push_subscriptions`, `push-send` | none. In-app notifications are a new table | — |
-| The app (browser) | `kit/app/main.js` (`NAV`, `routes`), Settings | **additive:** a workspace switcher, `#/org…`, `#/join/…` and `#/inbox` routes, and "Teach on Gradify" in Settings. Personal mode looks and works exactly as now | the existing app tests and browser journeys |
-| Offline shell | `sw.js` | new files added to `SHELL`, `CACHE` bumped | `tests/offline.test.mjs` |
+| The app (browser) | `kit/app/main.js` (`NAV`, `routes`, `route()`, Settings) | **additive:**<br>• a workspace switcher, `#/org…`, `#/join/…` and `#/inbox` routes<br>• "Teach on Gradify" in Settings<br>• `#/join` allowed before set-up<br><br>Personal mode looks and works exactly as now. **Until the database has the Stage 1 functions, none of it shows**: the code reads "function not found" as "switched off" | the existing app tests; browser checks (signed out, signed in before the migration, signed in after) |
+| Offline shell | `sw.js` | `kit/org/*` added to `SHELL`, `CACHE` bumped to v92. #116 also bumps to v92, so whichever merges second needs a one-line bump | `tests/offline.test.mjs` |
+| Email | `push_subscriptions`, `push-send` untouched | new `send-email` function and `_shared/email.js` (EmailService, Resend). **Not deployed** | `tests/email.test.mjs` |
 
 **Regression guard.** `tests/stage1-db.test.mjs` takes a snapshot of every existing table's columns, policies and grants, and every existing function's definition and grants. It does this after all the earlier migrations and again after Stage 1, and fails on any difference.
 

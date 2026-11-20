@@ -44,7 +44,8 @@ test("the site config holds only the public project URL and anon key", async () 
 // The AI functions use it only for the Gradify AI usage ledger (ai_claim_for / ai_settle_for / the response cache), which
 // learners must not be able to write: everything else they do (sign-in, saved packs) uses the learner's own token.
 const SERVICE_ROLE_ALLOWED = new Set(["supabase/functions/billing-webhook/index.ts", "supabase/functions/billing-checkout/index.ts",
-  "supabase/functions/course-tutor/index.ts", "supabase/functions/study-pack/index.ts", "supabase/functions/push-send/index.ts"]);
+  "supabase/functions/course-tutor/index.ts", "supabase/functions/study-pack/index.ts", "supabase/functions/push-send/index.ts",
+  "supabase/functions/send-email/index.ts"]);
 
 test("server functions act as the signed-in learner, never with the service role (billing writes excepted)", async () => {
   for (const f of files.filter((x) => x.startsWith("supabase/functions/") && /\.(ts|js)$/.test(x))) {
@@ -68,6 +69,18 @@ test("server functions act as the signed-in learner, never with the service role
       // the one function it may call: plus_allowed_for(), a read-only check that the learner's plan includes reminders
       assert.doesNotMatch(src.replace(/\.rpc\("plus_allowed_for", \{ uid: userId \}\)/g, ""), /\.insert\(|\.upsert\(|\.rpc\(/, `${f} must not add rows or call functions`);
       for (const m of src.matchAll(/\.from\("(\w+)"\)\.(update|delete)\(/g)) assert.equal(m[1], "push_subscriptions", `${f} may only change push_subscriptions`);
+    }
+    // send-email runs on a schedule, with no learner signed in: it must check the scheduler's secret before connecting,
+    // read no table at all, and call only the two outbox functions (claim_email_batch, finish_email), through drainOutbox
+    if (f.includes("send-email")) {
+      const body = src.slice(src.indexOf("Deno.serve"));
+      assert.ok(body.indexOf("x-cron-secret") > -1 && body.indexOf("x-cron-secret") < body.indexOf("createClient"), `${f} must check x-cron-secret before connecting`);
+      assert.match(body, /if \(!secret \|\|/, `${f} must refuse every request when no secret is configured`);
+      assert.doesNotMatch(src, /\.from\(/, `${f} must not read or write tables directly`);
+      const calls = [...src.matchAll(/\.rpc\(([^)]*)\)/g)].map((m) => m[1]);
+      assert.deepEqual(calls, ["name, args"], `${f} may call functions only through drainOutbox's rpc`);
+      const shared = await readFile(new URL("supabase/functions/_shared/email.js", root), "utf8");
+      assert.deepEqual([...shared.matchAll(/rpc\("(\w+)"/g)].map((m) => m[1]).sort(), ["claim_email_batch", "finish_email"], "drainOutbox calls only the outbox functions");
     }
     if (f.includes("tutor") || f.includes("study-pack")) {
       assert.match(src, /auth\.getUser\(\)/, `${f} must identify the learner from their token`);
