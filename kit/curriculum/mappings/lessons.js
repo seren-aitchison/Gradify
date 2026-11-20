@@ -26,9 +26,17 @@ export const LESSON_MAPS = [
   B("biology", "u02-21", "BIO-CELL-OSMOSIS-001", "teaches", "post-16", "5d37fba1dbda"),
   B("biology", "u02-22", "BIO-CELL-DIFFUSION-001", "teaches", "post-16", "927724283c1b"),
   B("biology", "u02-23", "BIO-CELL-ACTIVE-TRANSPORT-001", "teaches", "post-16", "c9bfa9944675"),
-  // YouthGradify GCSE Core, School 4 (The Human Body): diffusion applied at the alveoli. GCSE Core has no lesson that
-  // teaches diffusion, osmosis or active transport as topics (its old one, u04-04, was retired unwritten)
+  // YouthGradify GCSE Core, School 4 (The Human Body): diffusion applied at the alveoli
   B("gcse", "u04-34", "BIO-CELL-DIFFUSION-001", "applies", "upper-secondary", "39a15204e421"),
+  // School 10 (Cells and Bioenergetics), written on 2026-11-19 for AQA 8464 section 4.1.3
+  B("gcse", "u10-01", "BIO-CELL-MEMBRANE-001", "applies", "upper-secondary", "178e0eb69cf4"),
+  B("gcse", "u10-07", "BIO-CELL-DIFFUSION-001", "teaches", "upper-secondary", "16c4994f2f72"),
+  B("gcse", "u10-08", "BIO-CELL-DIFFUSION-001", "applies", "upper-secondary", "51fd68a30b06"),
+  B("gcse", "u10-09", "BIO-CELL-OSMOSIS-001", "teaches", "upper-secondary", "132bde2742da"),
+  B("gcse", "u10-02", "BIO-CELL-MEMBRANE-001", "teaches", "upper-secondary", "80bfc65aac57"),
+  B("gcse", "u10-10", "BIO-CELL-ACTIVE-TRANSPORT-001", "teaches", "upper-secondary", "af32ec633915"),
+  // School 11: the biology required practicals, including the osmosis practical (AQA 8464 required practical 2)
+  B("gcse", "u11-20", "BIO-CELL-OSMOSIS-001", "applies", "upper-secondary", "2ecb3fedfbcb", { covers: ["practical"] }),
   // SciGradify Chemistry: osmosis as a colligative property, and diffusion
   B("chemistry", "u05-17", "BIO-CELL-OSMOSIS-001", "applies", "undergraduate", "dd322eede48b"),
   B("chemistry", "u05-18", "BIO-CELL-DIFFUSION-001", "applies", "undergraduate", "4c8c2138fff2"),

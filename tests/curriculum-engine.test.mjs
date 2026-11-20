@@ -42,7 +42,7 @@ test("ACCEPTANCE 1: one canonical osmosis record serves several pathways without
   assert.deepEqual([...quals].sort(), ["a-level", "gcse"]);
   assert.deepEqual([...bands].sort(), ["post-16", "upper-secondary"]);
   // and the lessons of three courses, each in its own words, point at it
-  assert.deepEqual([...new Set(lessonsFor(KB, OSMOSIS).map((b) => b.course))].sort(), ["biology", "chemistry", "physics"]);
+  assert.deepEqual([...new Set(lessonsFor(KB, OSMOSIS).map((b) => b.course))].sort(), ["biology", "chemistry", "gcse", "physics"]);
   // the depth differs by band: GCSE works with dilute and concentrated solutions, water potential is beyond it
   const c = KB.concepts.find((x) => x.id === OSMOSIS);
   assert.ok(c.levels["upper-secondary"].beyond.includes("water potential"));
@@ -62,7 +62,7 @@ test("ACCEPTANCE 2: improving the canonical concept flags every affected lesson 
   assert.deepEqual(validate(kb, lessons), []);
   const im = impact(kb, OSMOSIS, lessons);
   // every osmosis lesson needs review, with the reason and the change
-  assert.deepEqual(im.lessons.map((l) => `${l.course}/${l.lesson}`).sort(), ["biology/u02-21", "chemistry/u05-17", "physics/u34-05"]);
+  assert.deepEqual(im.lessons.map((l) => `${l.course}/${l.lesson}`).sort(), ["biology/u02-21", "chemistry/u05-17", "gcse/u10-09", "gcse/u11-20", "physics/u34-05"]);
   for (const l of im.lessons) {
     assert.equal(l.state, "concept-changed");
     assert.match(l.reasons[0], /version 1 → 2/);
@@ -76,7 +76,7 @@ test("ACCEPTANCE 2: improving the canonical concept flags every affected lesson 
   // nothing was overwritten: the bindings and the lessons are exactly as they were (and kb was frozen throughout)
   assert.deepEqual(KB.lessonMaps, before);
   for (const [k, v] of lessons) assert.deepEqual(v, lessonSnapshot.get(k));
-  assert.equal(summary(kb, lessons).bindingsNeedReview, 3);
+  assert.equal(summary(kb, lessons).bindingsNeedReview, 5);
 });
 
 test("a lesson edited after its binding was checked is flagged for re-confirmation", () => {
@@ -94,9 +94,10 @@ test("coverage tells covered, partial, above-level, gaps and pathways no course 
   assert.equal(a["rp-water-potential"], "gap");
   // GCSE Biology via SciGradify Biology: taught, but pitched at A level
   assert.equal(status("aqa-8461")["4.1.3.2"], "above-level");
-  // GCSE Combined Science via GCSE Core: diffusion applied at the alveoli only, and no osmosis or active transport lesson
+  // GCSE Combined Science via GCSE Core: School 10 (written 2026-11-19) teaches all three at GCSE level; the osmosis
+  // practical is one of seven in a single lesson, so only partly covered
   const g = status("aqa-8464");
-  assert.deepEqual({ d: g["4.1.3.1"], o: g["4.1.3.2"], a: g["4.1.3.3"] }, { d: "partial", o: "gap", a: "gap" });
+  assert.deepEqual({ d: g["4.1.3.1"], o: g["4.1.3.2"], a: g["4.1.3.3"], rp: g["rp-osmosis"] }, { d: "covered", o: "covered", a: "covered", rp: "partial" });
   // Key Stage 3: no course is written for it, so no outcome is fully covered (some are taught in part by GCSE lessons)
   assert.ok(!Object.values(status("dfe-ks3-science")).includes("covered"));
 });

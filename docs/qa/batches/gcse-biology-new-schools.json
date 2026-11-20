@@ -7,7 +7,8 @@
   "kit/courses/gcse/registry.js",
   "kit/courses/gcse/course.js",
   "kit/courses/gcse/qa.js",
-  "kit/courses/gcse/notes/u10.js"
+  "kit/courses/gcse/notes/u10.js",
+  "kit/courses/gcse/notes/u11.js"
  ],
  "lessons": [
   {
@@ -180,11 +181,200 @@
     "new lesson written to standard 2 against AQA 8464 4.4.2.3"
    ],
    "findings": []
+  },
+  {
+   "course": "gcse",
+   "lesson": "u11-01",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 4.3.1.1"
+   ],
+   "findings": []
+  },
+  {
+   "course": "gcse",
+   "lesson": "u11-02",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 4.3.1.2, 4.3.1.3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "gcse",
+   "lesson": "u11-03",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 4.3.1.4, 4.3.1.5"
+   ],
+   "findings": []
+  },
+  {
+   "course": "gcse",
+   "lesson": "u11-04",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 4.3.1.6"
+   ],
+   "findings": []
+  },
+  {
+   "course": "gcse",
+   "lesson": "u11-05",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 4.3.1.7"
+   ],
+   "findings": []
+  },
+  {
+   "course": "gcse",
+   "lesson": "u11-06",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 4.3.1.8"
+   ],
+   "findings": []
+  },
+  {
+   "course": "gcse",
+   "lesson": "u11-07",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 4.3.1.9"
+   ],
+   "findings": []
+  },
+  {
+   "course": "gcse",
+   "lesson": "u11-08",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 4.6.1.1, 4.6.1.2"
+   ],
+   "findings": []
+  },
+  {
+   "course": "gcse",
+   "lesson": "u11-09",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 4.6.1.3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "gcse",
+   "lesson": "u11-10",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 4.6.1.4 (incl. HT)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "gcse",
+   "lesson": "u11-11",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 4.6.1.5"
+   ],
+   "findings": []
+  },
+  {
+   "course": "gcse",
+   "lesson": "u11-12",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 4.6.1.6"
+   ],
+   "findings": []
+  },
+  {
+   "course": "gcse",
+   "lesson": "u11-13",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 4.6.2.1"
+   ],
+   "findings": []
+  },
+  {
+   "course": "gcse",
+   "lesson": "u11-14",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 4.6.2.2, 4.6.3.1"
+   ],
+   "findings": []
+  },
+  {
+   "course": "gcse",
+   "lesson": "u11-15",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 4.6.2.3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "gcse",
+   "lesson": "u11-16",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 4.6.2.4 (incl. HT)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "gcse",
+   "lesson": "u11-17",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 4.6.3.2, 4.6.3.3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "gcse",
+   "lesson": "u11-18",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 4.6.3.4"
+   ],
+   "findings": []
+  },
+  {
+   "course": "gcse",
+   "lesson": "u11-19",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 4.6.4"
+   ],
+   "findings": []
+  },
+  {
+   "course": "gcse",
+   "lesson": "u11-20",
+   "action": "generated",
+   "changes": [
+    "new lesson written to standard 2 against AQA 8464 10.2.1-10.2.7, required practical activities 1-7 (rp-1..rp-7); RP6 links 4.5.2, RP7 links 4.7.2.1"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "No AQA required practicals handbook cited: not fetched/confirmed. Food-test details (Benedict's water bath ~75 \u00b0C for ~5 min; Sudan III or ethanol emulsion for lipids) are common practice, worth checking against the AQA practical handbook."
+    }
+   ]
   }
  ],
  "notes": [
-  "IN PROGRESS: School 10 complete and checked (0 problems); School 11 notes not yet written.",
   "Spec: https://filestore.aqa.org.uk/resources/science/specifications/AQA-8464-SP-2016.PDF, version 1.1 (4 October 2019), sha256 d9de6e1889d675861a814c21eb5509fe1b7941452dc0c4794dfc9927e9b6c894, printed pages 20-61 and 175-179 used.",
-  "Spec refs per lesson: u10-01: 4.1.1.1; u10-02: 4.1.1.2; u10-03: 4.1.1.3, 4.1.1.4; u10-04: 4.1.1.5; u10-05: 4.1.2.1, 4.1.2.2; u10-06: 4.1.2.3; u10-07: 4.1.3.1 (diffusion, factors); u10-08: 4.1.3.1 (surface area to volume ratio, exchange surfaces); u10-09: 4.1.3.2; u10-10: 4.1.3.3; u10-11: 4.2.2.1 (enzymes, lock and key, temperature, pH, rate); u10-12: 4.2.1, 4.2.2.1 (digestive enzymes, bile); u10-13: 4.2.3.1; u10-14: 4.2.3.2; u10-15: 4.4.1.1, 4.4.1.3; u10-16: 4.4.1.2 (incl. HT); u10-17: 4.4.2.1; u10-18: 4.4.2.2 (incl. HT); u10-19: 4.4.2.3"
+  "Both schools complete: u10 19 lessons/95 questions, u11 20 lessons/100 questions; check gcse --unit u10 and --unit u11 report 0 problems, length bias OK; node --test tests/new-courses.test.mjs tests/courses.test.mjs: 239/239 pass.",
+  "Spec refs, u10: u10-01: 4.1.1.1; u10-02: 4.1.1.2; u10-03: 4.1.1.3, 4.1.1.4; u10-04: 4.1.1.5; u10-05: 4.1.2.1, 4.1.2.2; u10-06: 4.1.2.3; u10-07: 4.1.3.1 (diffusion, factors); u10-08: 4.1.3.1 (surface area to volume ratio, exchange surfaces); u10-09: 4.1.3.2; u10-10: 4.1.3.3; u10-11: 4.2.2.1 (enzymes, lock and key, temperature, pH, rate); u10-12: 4.2.1, 4.2.2.1 (digestive enzymes, bile); u10-13: 4.2.3.1; u10-14: 4.2.3.2; u10-15: 4.4.1.1, 4.4.1.3; u10-16: 4.4.1.2 (incl. HT); u10-17: 4.4.2.1; u10-18: 4.4.2.2 (incl. HT); u10-19: 4.4.2.3",
+  "Spec refs, u11: u11-01: 4.3.1.1; u11-02: 4.3.1.2, 4.3.1.3; u11-03: 4.3.1.4, 4.3.1.5; u11-04: 4.3.1.6; u11-05: 4.3.1.7; u11-06: 4.3.1.8; u11-07: 4.3.1.9; u11-08: 4.6.1.1, 4.6.1.2; u11-09: 4.6.1.3; u11-10: 4.6.1.4 (incl. HT); u11-11: 4.6.1.5; u11-12: 4.6.1.6; u11-13: 4.6.2.1; u11-14: 4.6.2.2, 4.6.3.1; u11-15: 4.6.2.3; u11-16: 4.6.2.4 (incl. HT); u11-17: 4.6.3.2, 4.6.3.3; u11-18: 4.6.3.4; u11-19: 4.6.4; u11-20: 10.2.1-10.2.7, required practical activities 1-7 (rp-1..rp-7); RP6 links 4.5.2, RP7 links 4.7.2.1",
+  "Gap: 4.2.2.2-4.2.2.7 (heart and blood vessels, blood, CHD treatment with stents/statins/valves/transplants, health issues, lifestyle risk factors, cancer) are not in schools 10/11; School 4 covers heart, vessels and blood at a different level but not stents/statins, risk-factor data or benign/malignant tumours. 4.5 and 4.7 are left to Schools 4 and 7 (RP6 and RP7 are taught in u11-20).",
+  "syllabus.js: schools 10 and 11 added; Stage 3 Combined Science = [4,10,11,5,6]; paths core, science and year11 include 10 and 11; blurbs 10 and 11 added; header comment now says 11 schools.",
+  "OpenStax Biology 2e sections cited were confirmed by fetching each page title on openstax.org."
  ]
 }
