@@ -617,7 +617,9 @@ export async function mountModel(root, siteName, model) {
   const software = (() => { try { const gl = renderer.getContext(), d = gl.getExtension("WEBGL_debug_renderer_info"); return /swiftshader|llvmpipe|softpipe|software|basic render/i.test(String(gl.getParameter(d ? d.UNMASKED_RENDERER_WEBGL : gl.RENDERER))); } catch { return false; } })();
   new ResizeObserver(resize).observe(canvas); resize();
   let onScreen = true;
-  new IntersectionObserver(([en]) => { onScreen = en.isIntersecting; }).observe(canvas);
+  // coming back on screen starts the turntable's clock afresh, so time spent off screen isn't turned all at once
+  new IntersectionObserver(([en]) => { onScreen = en.isIntersecting; if (!onScreen) last = 0; }).observe(canvas);
+  document.addEventListener("visibilitychange", () => { if (document.hidden) last = 0; });   // likewise a tab in the background
   const clock = new THREE.Clock(), tmp = new THREE.Vector3(), off = new THREE.Vector3();
   let shownMotion = null;
   const holos = []; scene.traverse((o) => { if (o.material?.uniforms?.uTime) holos.push(o.material); });
@@ -628,7 +630,7 @@ export async function mountModel(root, siteName, model) {
     if (!onScreen) return;
     const now = performance.now();
     if (cost > 12 && now - last < Math.min(3000, cost * 2)) return;
-    const elapsed = last ? Math.min(0.5, (now - last) / 1000) : 0;   // real seconds since the last frame drawn (capped, so returning on screen doesn't jump), for the turntable
+    const elapsed = last ? (now - last) / 1000 : 0;   // real seconds since the last frame drawn, for the turntable
     last = now;
     const dt = Math.min(cost > 12 ? 0.25 : 0.05, clock.getDelta()), t = clock.elapsedTime;
     for (const m of holos) m.uniforms.uTime.value = t;
