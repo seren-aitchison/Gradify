@@ -6,7 +6,9 @@
 // Models:
 //   gradify-dimension  the Six-dimension profile's value for the dimension the question tests
 //                      (kit/learning/mastery.js: evidenceFromAttempts → sixProfile), 50% when there's no evidence
-//   gradify-mastery    the profile's overall mastery (null until two dimensions are measured → 50%)
+//   gradify-mastery    what the app predicts for the next answer: the profile's BKT model with the app's fitted
+//                      parameters (kit/learning/bkt.js, bkt-params.js, fitted on a different seed), 50% with no answers
+//   gradify-blend      the old overall mastery, a weighted average of the dimensions (null until two are measured → 50%)
 //   running-accuracy   baseline: share right so far on this lesson, Laplace-smoothed
 //   bkt                Bayesian Knowledge Tracing, fitted on the training learners (scripts/bench/bkt.mjs)
 //   bkt-forget         the same with a forgetting parameter
@@ -20,7 +22,7 @@ import { score, intervalCoverage } from "./metrics.mjs";
 import { bktTrace, fitBkt } from "./bkt.mjs";
 import { simulateCourse, rng, DAY, T0 } from "./simulate.mjs";
 
-export const MASTERY_MODELS = ["gradify-dimension", "gradify-mastery", "running-accuracy", "bkt", "bkt-forget"];
+export const MASTERY_MODELS = ["gradify-dimension", "gradify-mastery", "gradify-blend", "running-accuracy", "bkt", "bkt-forget"];
 
 const sequences = (attempts) => {
   const by = new Map();
@@ -51,7 +53,8 @@ export function masteryBenchmark(attempts, { trainShare = 0.7 } = {}) {
       const prof = i ? sixProfile(evidenceFromAttempts(seq.slice(0, i)), { now: at }) : null;
       const dim = dimensionOf(a);
       preds["gradify-dimension"].push(prof?.dims[dim]?.value ?? 0.5);
-      preds["gradify-mastery"].push(prof?.mastery ?? 0.5);
+      preds["gradify-mastery"].push(prof?.knows?.next ?? 0.5);
+      preds["gradify-blend"].push(prof?.blend ?? 0.5);
       preds["running-accuracy"].push((right + 1) / (i + 2));
       preds.bkt.push(b[i]);
       preds["bkt-forget"].push(bf[i]);

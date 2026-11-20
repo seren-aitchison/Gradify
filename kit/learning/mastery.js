@@ -3,6 +3,7 @@
 // ranked answer to "what should I practise next, and why?". No browser APIs, so Node can test it.
 import { evidenceClass, explorationIds, EVIDENCE_CLASSES } from "./evidence-class.js";
 import { recallNow } from "./srs.js";
+import { knows as bktKnows } from "./bkt.js";
 const DAY = 864e5;
 
 // What each card type is evidence of. Recall-style cards test remembering; "why" cards test
@@ -29,10 +30,12 @@ export const LEVELS = {
 };
 
 // The chance of recalling a card right now, from its FSRS memory model (kit/learning/srs.js): retrievability falls
-// along a power curve from the last review, at a pace set by the card's stability. A card just answered wrong reads 30%.
+// along a power curve from the last review, at a pace set by the card's stability. This is the scheduler's own
+// recallNow, so retention, the forgetting forecast and practice order always agree with when a card comes back.
+// (A card answered wrong reads 30% only while it's being relearned, that first day; it used to read 30% for ever,
+// which the recall benchmark showed was worse on every measure.)
 export function recallProbability(card, now = Date.now()) {
   if (!card.reps) return null;
-  if (card.last_rating === "again") return 0.3;
   return recallNow(card, now);
 }
 
@@ -297,11 +300,16 @@ export function sixProfile(evidence, { now = Date.now() } = {}) {
   const rated = evidence.filter((e) => e.confidence && e.dim !== "retention" && e.dim !== "transfer");
   const sure = rated.filter((e) => e.confidence === 3), sureWrong = sure.filter((e) => e.score < 0.5).length;
   const calibration = rated.length >= ENOUGH ? { rated: rated.length, sure: sure.length, sureWrong, guessRight: rated.filter((e) => e.confidence === 1 && e.score >= 0.7).length, accuracyWhenSure: sure.length ? 1 - sureWrong / sure.length : null } : null;
-  // overall mastery only from dimensions with enough evidence; null until there are at least two
+  // Overall mastery is the probability the learner knows this (Bayesian Knowledge Tracing, kit/learning/bkt.js, with
+  // fitted parameters): it predicts their next answer better than an average of the dimensions did. It's still
+  // reported only once at least two dimensions have enough evidence, so a thin record never reads as a measurement;
+  // the six dimensions say *how* they know it. (blend: the old dimension average, kept for comparison.)
   const W = { recognition: 0.1, recall: 0.2, explain: 0.15, apply: 0.2, transfer: 0.15, retention: 0.2 };
   const measured = SIX.filter(({ key }) => dims[key].certainty !== "none" && dims[key].certainty !== "insufficient");
   const ws = measured.reduce((a, { key }) => a + W[key], 0);
-  const mastery = measured.length >= 2 ? measured.reduce((a, { key }) => a + dims[key].value * W[key], 0) / ws : null;
+  const blend = measured.length >= 2 ? measured.reduce((a, { key }) => a + dims[key].value * W[key], 0) / ws : null;
+  const knows = bktKnows(evidence);
+  const mastery = measured.length >= 2 ? (knows ? knows.p : blend) : null;
   const missing = SIX.filter((d) => !measured.includes(d)).map((d) => d.key);
   const weakest = measured.slice().sort((a, b) => dims[a.key].value - dims[b.key].value)[0]?.key || null;
   // Is understanding slipping? Unaided answers in the last two weeks against those before, weighted as above.
@@ -311,7 +319,7 @@ export function sixProfile(evidence, { now = Date.now() } = {}) {
   const mean = (xs) => xs.reduce((a, e) => a + e.score * e.w, 0) / xs.reduce((a, e) => a + e.w, 0);
   const late = own.filter((e) => e.at > cut), early = own.filter((e) => e.at <= cut);
   const trend = late.length >= ENOUGH && early.length >= ENOUGH ? { recent: mean(late), earlier: mean(early), declining: mean(early) - mean(late) >= 0.2 } : null;
-  return { dims, mastery, measured: measured.map((d) => d.key), missing, weakest, trend, calibration, answers: evidence.filter((e) => e.dim !== "retention" && e.dim !== "transfer").length, misconceptionRisk: calibration ? sureWrong / Math.max(1, sure.length) : null };
+  return { dims, mastery, knows, blend, measured: measured.map((d) => d.key), missing, weakest, trend, calibration, answers: evidence.filter((e) => e.dim !== "retention" && e.dim !== "transfer").length, misconceptionRisk: calibration ? sureWrong / Math.max(1, sure.length) : null };
 }
 
 // profiles for every group (lesson by default) plus the whole set
