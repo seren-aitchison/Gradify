@@ -288,6 +288,77 @@
     "added M2 (s 19 presumption) and SA3"
    ],
    "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-25",
+   "action": "enhanced",
+   "changes": [
+    "LV, EV",
+    "worked example contrasting substantial performance and abandonment; common mistake",
+    "added M3 (Bolton v Mahadeva), M2 and SA3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-26",
+   "action": "enhanced",
+   "changes": [
+    "LV, EV",
+    "worked example on the election; common mistake: wrongful termination is itself repudiation",
+    "added M3 (Vitol v Norelf), M2 and SA3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-27",
+   "action": "enhanced",
+   "changes": [
+    "LV, EV",
+    "worked example on accepting versus affirming; common mistake on mitigation",
+    "added M3 (The Golden Victory), M2 and SA3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-28",
+   "action": "enhanced",
+   "changes": [
+    "LV, EV",
+    "worked example on the 1943 Act; common mistake: frustration versus force majeure",
+    "added M2 (Herne Bay) and SA3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-29",
+   "action": "enhanced",
+   "changes": [
+    "LV (SQE1), EV",
+    "worked example on the action for the price; common mistake on penalties; paragraph on combining remedies",
+    "added M3 (Makdessi), M2 and SA3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-30",
+   "action": "enhanced",
+   "changes": [
+    "LV, EV (established and contested: The Achilleas)",
+    "worked numerical example (£15,000 recoverable); common mistake on mitigation",
+    "added M2 (Jarvis) and SA3"
+   ],
+   "findings": [
+    {
+     "class": "error-fixed",
+     "note": "Question u03-30-q3 said the pool in Ruxley v Forsyth was built 18 inches too shallow; the lesson body and the case give 9 inches (deep end 6 ft 9 in instead of 7 ft 6 in). Corrected to 9 inches."
+    }
+   ]
   }
  ],
  "notes": [

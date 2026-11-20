@@ -2326,6 +2326,7 @@ SA3@1: Describe how to estimate P(the total of two fair dice is at least 10) by 
 S: Markov chain Monte Carlo draws samples from complicated distributions, especially Bayesian posteriors, by running a random walk designed to spend time in each region in proportion to its probability. It made realistic Bayesian models practical.
 O: Explain how a Metropolis–Hastings sampler works
 O: Diagnose convergence and mixing
+LV: Year 3 · Application
 T: Metropolis–Hastings | Propose a move from x to y; accept with probability min(1, π(y)q(x ∣ y)/(π(x)q(y ∣ x))), else stay
 T: Effective sample size | The number of independent draws that the autocorrelated chain is worth
 H: Algorithms
@@ -2351,16 +2352,20 @@ Q: Why doesn't Metropolis–Hastings need the posterior's normalising constant? 
 Q: What does an R̂ close to 1 suggest? | Multiple chains agree: likely convergence.
 SUM: MCMC samples from complex distributions.
 SUM: Diagnostics check that it worked.
+EV: established | A Metropolis–Hastings chain has the target as its stationary distribution and needs the target density only up to a normalising constant.
 SRC: Metropolis N et al, Equation of state calculations by fast computing machines, Journal of Chemical Physics 21(6), 1087 | primary | 1953 | https://doi.org/10.1063/1.1699114
 SRC: Gelman A, Carlin JB, Stern HS, Dunson DB, Vehtari A, Rubin DB, Bayesian Data Analysis (3rd edn, CRC Press 2013) | secondary | 2013 | https://sites.stat.columbia.edu/gelman/book/
 NUM1#maths-u13-61-q1@1: With a symmetric proposal, π(current) = 0.08 and π(proposed) = 0.02. Find the acceptance probability. | 0.25 | 0.001 |  | min(1, 0.02/0.08) = 0.25.
 M1#maths-u13-61-q2@1: What is burn-in in MCMC? | Early draws discarded before the chain settles into its target distribution | A diagnostic statistic computed at the end | The proposal distribution | The thinning interval | The final draws, kept as the main sample | Starting values may be unrepresentative, so initial draws are dropped.
 M2#maths-u13-61-q3@2: Which sampler updates each parameter in turn from its full conditional distribution? | Gibbs sampling | Rejection sampling | Bootstrap | Importance sampling | k-means | Gibbs cycles through conditionals, a special case of Metropolis–Hastings with acceptance 1.
+NUM3@2: A chain of 10,000 MCMC draws has lag-1 autocorrelation 0.9, behaving like an AR(1) process. Using ESS ≈ N(1 − ρ)/(1 + ρ), estimate its effective sample size to the nearest whole number. | 526 | 1 | draws | 10,000 × 0.1/1.9 ≈ 526: strongly autocorrelated draws carry far less information than 10,000 independent ones.
+SA3@1,2: Explain why the Metropolis algorithm does not need the posterior's normalising constant, and how you would tell whether a chain has converged and mixed well. | The acceptance probability is min(1, π(y)/π(x)); the posterior is likelihood × prior ÷ a constant, and the constant cancels in the ratio, so only the unnormalised density is needed. To check convergence, run several chains from dispersed starting values, discard warm-up draws and inspect trace plots (they should overlap and look stationary); R̂ should be close to 1 (below about 1.01). For mixing, check autocorrelation plots and the effective sample size; high autocorrelation or a low acceptance rate signals poor mixing, suggesting a better proposal or sampler. | Writes the acceptance ratio ; Explains the constant cancels ; Describes multiple chains and trace plots ; Uses R̂ near 1 ; Uses autocorrelation or ESS for mixing
 
 ## Statistical Computing
 S: Statistical computing is the software, algorithms and numerical care that turn statistical ideas into reliable results. Floating-point pitfalls, random number generation and reproducible workflows matter as much as the formulas.
 O: Recognise numerical pitfalls and stable alternatives
 O: Describe reproducible statistical workflows and common tools
+LV: Year 2 · Application
 T: Catastrophic cancellation | Loss of precision when subtracting nearly equal floating-point numbers
 T: Reproducibility | Being able to rerun an analysis and get the same results, from the same data and code
 H: Numerical care
@@ -2385,16 +2390,20 @@ Q: Why work with log-likelihoods instead of likelihoods? | Products of many smal
 Q: What makes a simulation reproducible? | Recording the random seed, code and software versions.
 SUM: Numerical care prevents silent errors.
 SUM: Scripts and seeds make analyses reproducible.
+EV: established | Mathematically equivalent formulas can differ greatly in floating-point accuracy, so stable algorithms such as log-sum-exp and centring are needed.
 SRC: R Core Team, R: A language and environment for statistical computing (R Foundation for Statistical Computing 2025) | software | 2025 | https://www.r-project.org/
 SRC: Higham NJ, Accuracy and Stability of Numerical Algorithms (2nd edn, SIAM 2002) | secondary | 2002 | https://epubs.siam.org/
 NUM1#maths-u13-62-q1@1: Find the population variance of 1,000,000,001, 1,000,000,002 and 1,000,000,003 by subtracting 1,000,000,000 first, to 4 decimal places. | 0.6667 | 0.0005 |  | The shifted values 1, 2, 3 have variance 2/3; shifting doesn't change variance.
 M1#maths-u13-62-q2@1: What is the log-sum-exp trick for? | Adding exponentials without overflow or underflow | Speeding up sorting | Sorting a list quickly | Inverting matrices | Generating random numbers on a log scale | Factoring out the maximum keeps the exponents in a safe range.
 M2#maths-u13-62-q3@2: Why should a simulation study record its random seed? | So the exact results can be reproduced | To make results more random | Seeds improve accuracy | It's required by law | To speed up the code | Pseudo-random numbers are deterministic given the seed.
+NUM3@1: Use the log-sum-exp trick to compute log(e^{−1000} + e^{−1001}), to 3 decimal places. | -999.687 | 0.001 |  | With m = −1000: m + log(1 + e^{−1}) = −1000 + 0.313 ≈ −999.687; computing e^{−1000} directly would underflow to 0.
+SA3@2: Describe a reproducible workflow for a statistical analysis and explain why each part matters. | Keep raw data read-only and do all cleaning and analysis in scripts, not by hand, so every step can be rerun. Use version control (Git) to track changes. Set and record random seeds. Record software and package versions (for example in a lock file or container). Write the report as a literate document (Quarto, R Markdown, Jupyter) that regenerates tables and figures from the code. Check data and test functions. Together these let others, and your future self, reproduce and audit the results. | Scripts rather than manual steps ; Version control ; Recorded seeds ; Recorded software versions ; Literate documents or code sharing
 
 ## Experimental Design
 S: Experimental design plans how to collect data so that the comparisons of interest are fair and precise. Fisher's principles of randomisation, replication and blocking are still the foundation of agricultural trials, clinical trials and A/B tests.
 O: Explain randomisation, replication, blocking and control
 O: Choose an appropriate design for a simple experiment
+LV: Year 1 · Application
 T: Randomisation | Allocating treatments by chance, so that unknown factors balance on average
 T: Blocking | Grouping similar units and comparing treatments within each group to remove known variation
 H: Fisher's principles
@@ -2420,16 +2429,20 @@ Q: What is the purpose of blocking? | To remove known sources of variation from 
 Q: What is allocation concealment? | Hiding the upcoming treatment assignments from those enrolling participants.
 SUM: Design makes comparisons fair and precise.
 SUM: Randomise, replicate, block.
+EV: established | Randomisation balances unknown confounders on average and justifies the analysis, replication estimates variability, and blocking removes known sources of variation.
 SRC: Fisher RA, The Design of Experiments (Oliver and Boyd 1935) | secondary | 1935 | https://archive.org/
 SRC: Schulz KF, Altman DG, Moher D, CONSORT 2010 statement, BMJ 340, c332 | primary | 2010 | https://doi.org/10.1136/bmj.c332
-NUM1#maths-u13-63-q1@1: In how many ways can 3 treatments be randomly ordered within one block? | 6 | 0 |  | 3! = 6 orderings.
+NUM1#maths-u13-63-q1@1: In how many ways can 3 treatments be randomly ordered within one block? | 6 | 0 |  | Three treatments can be arranged in 3! = 3 × 2 × 1 = 6 orders.
 M1#maths-u13-63-q2@1: Why does randomisation matter in an experiment? | It balances unknown confounders on average between groups | It makes groups identical | It makes the groups identical in every respect | It removes the need for analysis | It guarantees significance | Chance allocation prevents systematic differences other than the treatment.
 M2#maths-u13-63-q3@2: Which design gives each participant every treatment in sequence? | Crossover | Completely randomised | Cluster randomised | Case–control | Cross-sectional | Each person acts as their own control, with washout between periods.
+NUM2@2: Six units are split at random into two groups of 3 for a completely randomised design. How many allocations are possible? | 20 | 0 | allocations | Choosing which 3 units get treatment A gives C(6, 3) = 20 allocations.
+SA3@2: Outline the design of a trial comparing a new painkiller with the standard one, explaining how it guards against bias. | Define the population and a pre-registered primary outcome (such as pain score at 24 hours). Randomly allocate participants to new or standard drug, with allocation concealed so recruiters can't predict assignments. Use identical-looking tablets so participants and assessors are blinded, avoiding expectation and assessment bias. Choose the sample size by a power calculation, perhaps stratify or block by a strong predictor such as baseline pain, analyse by intention to treat, and report following CONSORT. | Uses random allocation ; Conceals allocation ; Blinds participants and assessors ; Pre-specifies outcome and sample size ; Mentions blocking, intention to treat or CONSORT
 
 ## Design of Experiments
 S: Design of experiments (DoE) studies many factors at once efficiently. Factorial designs estimate main effects and interactions together, and fractional factorials and response surface methods make industrial and scientific optimisation fast.
 O: Calculate main effects and interactions in a 2^{2} factorial design
 O: Explain fractional factorial and response surface designs
+LV: Year 2 · Application
 T: Factorial design | An experiment testing every combination of factor levels
 T: Interaction | When the effect of one factor depends on the level of another
 H: Two-level factorials
@@ -2455,16 +2468,20 @@ Q: How many runs does a full 2^{4} factorial need? | 16.
 Q: What is aliasing in a fractional factorial? | Two effects being estimated by the same contrast, so they can't be separated.
 SUM: Factorial designs study many factors efficiently.
 SUM: They reveal interactions.
+EV: established | Two-level factorial designs estimate all main effects and interactions from the same runs, which one-factor-at-a-time experiments cannot.
 SRC: Montgomery DC, Design and Analysis of Experiments (9th edn, Wiley 2017) | secondary | 2017 | https://www.wiley.com/
 SRC: Box GEP, Hunter JS, Hunter WG, Statistics for Experimenters (2nd edn, Wiley 2005) | secondary | 2005 | https://www.wiley.com/
-NUM1#maths-u13-64-q1@1: How many runs does a half fraction of a 2^{6} factorial need? | 32 | 0 |  | 2^{6−1} = 32.
+NUM1#maths-u13-64-q1@1: How many runs does a half fraction of a 2^{6} factorial need? | 32 | 0 |  | The full design has 2^{6} = 64 runs, and a half fraction uses 2^{6−1} = 32.
 M1#maths-u13-64-q2@1: Why are factorial designs better than changing one factor at a time? | They estimate interactions and use every run for every effect | They need fewer runs because they ignore interactions | They ignore interactions | They're only for two factors | They need no randomisation | Each run contributes to every main effect estimate, and interactions become visible.
 M2#maths-u13-64-q3@2: In a 2^{2} design, A's effect is 8 when B is high and 2 when B is low. What is the AB interaction? | 3 | 5 | 6 | 10 | 0 | The interaction is half the difference between A's effects at the two levels of B: (8 − 2)/2 = 3.
+NUM3@1: A 2^{2} experiment gives (A−, B−) 30, (A+, B−) 36, (A−, B+) 28 and (A+, B+) 44. Find the AB interaction. | 5 | 0 |  | A's effect is 44 − 28 = 16 at B+ and 36 − 30 = 6 at B−, so AB = (16 − 6)/2 = 5. (The main effects are A = 11 and B = 3.)
+SA3@2: A 2^{3−1} fractional factorial uses the defining relation I = ABC. Explain which effects are aliased and when the design is suitable. | With I = ABC, each effect is aliased with its product with ABC: A with BC, B with AC and C with AB. So the 4 runs cannot separate a main effect from the two-factor interaction of the other factors; each estimate is the sum of the pair. This is a resolution III design: suitable for screening many factors cheaply when two-factor interactions are expected to be small, but follow-up runs are needed if interactions might matter. | Derives aliases by multiplying by ABC ; States A = BC, B = AC, C = AB ; Explains aliased effects can't be separated ; Names resolution III ; Explains when the design is suitable
 
 ## Causal Inference
 S: Causal inference asks whether, and how much, one thing causes another, not just whether they're associated. Randomised experiments answer it directly; with observational data, careful designs and assumptions are needed.
 O: Define causal effects using potential outcomes
 O: Describe methods for estimating causal effects from observational data
+LV: Year 3 · Application
 T: Potential outcomes | Y(1) and Y(0): a unit's outcome with and without treatment; the causal effect is their difference
 T: Confounder | A variable that affects both the treatment and the outcome, creating a spurious association
 H: The framework
@@ -2490,11 +2507,14 @@ Q: What is the fundamental problem of causal inference? | Only one potential out
 Q: What key assumption does difference-in-differences make? | Parallel trends: without treatment, both groups would have changed equally.
 SUM: Causation needs more than correlation.
 SUM: Designs and assumptions make it estimable.
+EV: established | Randomisation identifies average causal effects, whereas observational estimates rely on untestable assumptions such as no unmeasured confounding.
 SRC: Hernán MA, Robins JM, Causal Inference: What If (CRC Press 2020) | secondary | 2020 | https://miguelhernan.org/whatifbook
 SRC: Pearl J, Glymour M, Jewell NP, Causal Inference in Statistics: A Primer (Wiley 2016) | secondary | 2016 | https://www.wiley.com/
 NUM1#maths-u13-65-q1@1: Treated outcomes go from 20 to 26; control outcomes from 18 to 21. Find the difference-in-differences estimate. | 3 | 0 |  | (26 − 20) − (21 − 18) = 6 − 3 = 3.
 M1#maths-u13-65-q2@1: Why do randomised experiments estimate causal effects directly? | Randomisation balances confounders between groups on average | They use larger samples | They don't need statistics | They measure both potential outcomes for each person | They avoid all bias in measurement | Chance assignment makes the groups comparable except for treatment.
 M3#maths-u13-65-q3@2: Hospitalised patients show a negative association between two diseases that are unrelated in the population. What's the likely cause? | Conditioning on a collider (hospitalisation) | Reverse causation between the two diseases | Confounding by age among the hospitalised patients | Measurement error | Random chance only | Both diseases cause hospitalisation; selecting on it induces a spurious association (Berkson's bias).
+NUM2@1: In a randomised trial the mean outcome is 12.4 in the treated group and 10.1 in the control group. Estimate the average treatment effect. | 2.3 | 0.001 |  | Randomisation makes the groups comparable, so the difference in means, 12.4 − 10.1 = 2.3, estimates the ATE.
+SA2@2: Using a causal diagram, explain which variables to adjust for when estimating the total effect of exercise on blood pressure from observational data, if age affects both, and exercise lowers weight, which lowers blood pressure. | Age is a confounder: it causes both exercise and blood pressure, opening a back-door path, so adjust for it. Weight is a mediator on the path exercise → weight → blood pressure; adjusting for it would remove part of the effect we want, so leave it out for the total effect. Also avoid adjusting for colliders (common effects of exercise and blood pressure). The estimate is causal only if there is no unmeasured confounding, so a sensitivity analysis is advisable. | Identifies age as a confounder to adjust for ; Identifies weight as a mediator ; Explains why not to adjust for the mediator ; Mentions avoiding colliders ; Notes the no-unmeasured-confounding assumption
 
 ## Structural Equation Modelling
 S: Structural equation modelling (SEM) combines factor analysis with path analysis to test networks of relationships among observed and latent variables. It's widely used in psychology, education, marketing and the social sciences.

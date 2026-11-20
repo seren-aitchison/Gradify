@@ -291,6 +291,7 @@ SA2@1,2: Explain how a GPCR signals, comparing the Gs, Gi and Gq pathways with a
 S: Ion channels control the electrical activity of nerves, muscle and the heart. Drugs that open, block or modulate them treat epilepsy, arrhythmias, hypertension and pain, and also cause some of the most serious adverse effects.
 O: Describe how drugs act on voltage-gated and ligand-gated ion channels
 O: Give clinical examples of ion channel drugs and their risks
+LV: Intermediate · Application
 T: Voltage-gated channel | An ion channel that opens or closes when the membrane voltage changes
 T: Use-dependent block | A block that increases when the channel opens more often, as in rapidly firing nerves
 H: Channels and drugs
@@ -298,11 +299,17 @@ H: Channels and drugs
 - **Calcium channels**: amlodipine (vascular) and verapamil and diltiazem (heart as well) block L-type channels, lowering blood pressure or heart rate.
 - **Potassium channels**: sulfonylureas close ATP-sensitive potassium channels in pancreatic β cells, releasing insulin; some antiarrhythmics block cardiac potassium channels.
 - **Ligand-gated channels**: benzodiazepines enhance GABA-A receptor chloride currents.
+P: Use-dependence is an advantage in treatment: carbamazepine and lidocaine act most on neurons that are firing repeatedly, as in a seizure focus or a pain pathway, and least on normally active tissue.
 H: Risks
 - Blocking the cardiac hERG potassium channel prolongs the QT interval and can cause torsades de pointes. Many drugs do this (some antipsychotics, macrolides, methadone, citalopram).
 - Combining QT-prolonging drugs, or giving them with low potassium or magnesium, adds risk.
+X: Checking a QT combination.
+> A woman taking citalopram is prescribed clarithromycin, and her recent potassium was low.
+> Both drugs block hERG channels and prolong the QT interval, and low potassium adds to the risk.
+> Contact the prescriber to discuss an alternative antibiotic, checking the BNF interactions entry and the MHRA advice.
 K: Ion channel drugs alter electrical activity; hERG potassium channel block prolongs the QT interval, a key interaction to check.
 !: Missing an additive QT-prolonging combination, for example a macrolide with citalopram, in someone with low potassium.
+EV: established | Drugs that block or open sodium, calcium and potassium channels alter electrical activity, and hERG block prolongs the QT interval.
 Q: Why do local anaesthetics affect rapidly firing nerves most? | Their sodium channel block is use-dependent.
 Q: Which cardiac channel is linked to QT prolongation? | The hERG potassium channel.
 SUM: Sodium, calcium and potassium channels and ligand-gated channels are important drug targets.
@@ -312,11 +319,14 @@ SRC: MHRA, Drug Safety Update: citalopram and escitalopram, QT interval prolonga
 M2#pharmacy-u02-09-q1@1: Sulfonylureas increase insulin secretion by acting on which channel? | ATP-sensitive potassium channels | L-type calcium channels | Voltage-gated sodium channels | GABA-A chloride channels | hERG potassium channels | They close K-ATP channels in β cells, depolarising them and releasing insulin.
 M2#pharmacy-u02-09-q2@2: Which combination most raises the risk of QT prolongation? | Clarithromycin with citalopram | Paracetamol with ibuprofen | Amlodipine with atorvastatin | Omeprazole with metformin | Amoxicillin with paracetamol | Both prolong the QT interval, so their effects add.
 M3#pharmacy-u02-09-q3@1: Why do verapamil and amlodipine have different main effects? | Verapamil acts more on the heart; amlodipine on blood vessels | Amlodipine blocks sodium channels | Verapamil is a β-blocker | Amlodipine only acts in the gut | They act on different receptor families | Both block L-type channels, but with different tissue selectivity.
+M1@1: Which ion channels do local anaesthetics such as lidocaine block? | Voltage-gated sodium channels | L-type calcium channels | ATP-sensitive potassium channels | GABA-A chloride channels | hERG potassium channels | Blocking sodium channels stops action potentials passing along the nerve, so pain signals don't reach the brain.
+SA3@1,2: Explain how drugs can prolong the QT interval, which factors add to the risk, and what a pharmacist should do when a combination is found. | Many drugs block the cardiac hERG potassium channel, slowing repolarisation and prolonging the QT interval, which can lead to torsades de pointes. Examples include some antipsychotics, macrolides, methadone and citalopram. Risk adds up when two QT-prolonging drugs are combined and rises with low potassium or magnesium, existing heart disease or an inhibitor raising drug levels. The pharmacist checks the BNF and MHRA advice, contacts the prescriber to consider an alternative or monitoring (such as an ECG and electrolytes), and records the decision. | hERG block slows repolarisation ; Torsades de pointes risk ; Examples of QT-prolonging drugs ; Additive and electrolyte risk factors ; Action: check references, contact prescriber, monitor
 
 ## Enzymes as drug targets
 S: Many medicines work by inhibiting an enzyme, stopping the production of a harmful product or the breakdown of a useful one. Whether inhibition is reversible decides how long the effect lasts.
 O: Explain reversible and irreversible enzyme inhibition
 O: Describe major enzyme-inhibiting medicines and their effects
+LV: Intermediate · Application
 T: Enzyme inhibitor | A drug that reduces an enzyme's activity
 T: Irreversible inhibition | Permanent inactivation of an enzyme, so the effect lasts until new enzyme is made
 H: Examples
@@ -326,11 +336,17 @@ H: Examples
 - **Proton pump (H⁺/K⁺-ATPase)**: PPIs irreversibly inhibit it in the parietal cell, so a single daily dose works for about a day.
 - **Acetylcholinesterase**: donepezil (in dementia) and pyridostigmine (in myasthenia gravis) increase acetylcholine.
 - **Xanthine oxidase**: allopurinol lowers uric acid.
+P: Inhibiting an enzyme also lets its other substrates build up, which explains some adverse effects. ACE also breaks down bradykinin, so ACE inhibitors raise bradykinin, which is thought to cause their dry cough and, rarely, angioedema; angiotensin receptor blockers act further along the pathway and cause cough much less often.
 H: Reversibility and duration
 - Reversible inhibitors work while the drug is present; irreversible ones last until the body makes new enzyme, however short the drug's half-life.
+X: Predicting how long an effect lasts after stopping.
+> A person stops ibuprofen (a reversible COX inhibitor) and aspirin (an irreversible one).
+> Ibuprofen's antiplatelet effect wanes as the drug is cleared, within about a day.
+> Aspirin's effect fades only as new platelets are made, over their lifespan of about 7 to 10 days.
 DRUG: Omeprazole | Proton pump inhibitor: irreversibly inhibits the gastric H⁺/K⁺-ATPase | Gastro-oesophageal reflux, peptic ulcer, Helicobacter pylori eradication, protection against NSAID ulcers | Headache, diarrhoea; with long-term use, Clostridioides difficile infection risk, low magnesium and fracture risk | Review long-term need and step down where possible; taken before food; interacts with clopidogrel through CYP2C19 (check the BNF)
 K: Irreversible inhibitors (aspirin, PPIs) act long after the drug has gone; reversible ones act while the drug is present.
 !: Continuing a PPI indefinitely without review: long-term use has risks, so the need should be reviewed regularly.
+EV: established | Enzyme inhibitors reduce product formation or substrate breakdown; irreversible inhibition lasts until new enzyme is made.
 Q: Why does a once-daily PPI work all day? | It irreversibly inhibits proton pumps, which must be replaced.
 Q: Which enzyme do statins inhibit? | HMG-CoA reductase.
 SUM: Many drugs act by inhibiting enzymes.
@@ -340,24 +356,33 @@ SRC: Joint Formulary Committee, British National Formulary: omeprazole | guidanc
 M1#pharmacy-u02-10-q1@2: Which enzyme does allopurinol inhibit? | Xanthine oxidase | Cyclo-oxygenase | HMG-CoA reductase | Angiotensin-converting enzyme | Acetylcholinesterase | Inhibiting xanthine oxidase reduces uric acid production.
 M2#pharmacy-u02-10-q2@1: Why does aspirin's effect on platelets outlast the drug? | It irreversibly inhibits COX | It's stored in red cells | It has a half-life of a week | It reversibly blocks receptors | It's converted to warfarin | Irreversible acetylation of COX lasts until new platelets are made.
 M2#pharmacy-u02-10-q3@2: Donepezil helps in Alzheimer's disease by inhibiting which enzyme? | Acetylcholinesterase | Monoamine oxidase | Dopa decarboxylase | Cyclo-oxygenase | Xanthine oxidase | Less acetylcholine breakdown increases cholinergic transmission.
+M3@1,2: A patient taking ramipril develops a persistent dry cough. What best explains it? | Bradykinin builds up because ACE also breaks it down | Angiotensin II builds up in the airways | Ramipril irreversibly inhibits cyclo-oxygenase | Ramipril blocks β2 receptors in the airways | It is an immune, type B allergic reaction | ACE inactivates bradykinin; inhibiting it raises bradykinin, which is linked to cough and, rarely, angioedema.
+SA2@1,2: Compare reversible and irreversible enzyme inhibition, using two medicines as examples, and explain how this affects the duration of action. | A reversible inhibitor binds the enzyme while the drug is present, so its effect falls as the drug is cleared: NSAIDs such as ibuprofen inhibit COX reversibly. An irreversible inhibitor permanently inactivates the enzyme, so the effect lasts until new enzyme is made, however short the drug's half-life: aspirin acetylates platelet COX for the platelet's lifetime, and PPIs inactivate proton pumps, so once-daily dosing works. | Reversible inhibition explained ; Reversible example ; Irreversible inhibition explained ; Irreversible example ; Duration depends on enzyme turnover
 
 ## Transporters as drug targets
 S: Transporters carry ions and molecules across membranes, against gradients if they use energy. Drugs that block them treat depression, heart failure, diabetes and oedema, and transporters also shape how drugs are absorbed and excreted.
 O: Describe how drugs act on membrane transporters
 O: Give examples of transporter-targeting medicines and their effects
+LV: Intermediate · Application
 T: Reuptake transporter | A transporter that clears a neurotransmitter from the synapse back into the neuron
 T: Na⁺/K⁺-ATPase | The pump that moves sodium out of and potassium into cells, using ATP
 H: Examples
 - **Monoamine reuptake**: SSRIs (sertraline, fluoxetine) block the serotonin transporter; some antidepressants also block noradrenaline reuptake.
 - **Na⁺/K⁺-ATPase**: digoxin inhibits it in heart muscle, increasing intracellular calcium and contractility and slowing AV conduction.
 - **Kidney transporters**: loop diuretics block the Na⁺/K⁺/2Cl⁻ cotransporter; thiazides block the Na⁺/Cl⁻ cotransporter; SGLT2 inhibitors (dapagliflozin) block glucose reabsorption.
+P: SSRIs block reuptake within hours, yet their antidepressant effect takes weeks. The delay is thought to reflect slower adaptive changes, such as altered receptor sensitivity, which is why people are encouraged to continue treatment even when early benefit is small.
 H: Transporters and drug handling
 - Transporters such as P-glycoprotein pump drugs out of cells, affecting absorption and excretion; inhibiting them causes interactions (for example raising digoxin levels).
 - Low potassium increases digoxin binding and toxicity, so diuretics that lower potassium raise the risk.
+X: Following a transporter interaction.
+> A man taking digoxin and furosemide has a low potassium.
+> Furosemide blocks the Na⁺/K⁺/2Cl⁻ cotransporter and increases potassium loss in the urine.
+> With less potassium competing at the Na⁺/K⁺-ATPase, digoxin binds more and toxicity is more likely: check his potassium, symptoms and whether a level is needed.
 DRUG: Digoxin | Cardiac glycoside: inhibits the Na⁺/K⁺-ATPase, increasing contractility and slowing AV conduction | Rate control in atrial fibrillation; heart failure | Narrow therapeutic index; toxicity causes nausea, visual disturbance, confusion and arrhythmias; risk rises with low potassium and renal impairment | Monitor pulse, renal function, potassium and levels where toxicity is suspected; check interactions (for example amiodarone and P-glycoprotein inhibitors) in the BNF
 DRUG: Sertraline | Selective serotonin reuptake inhibitor (blocks the serotonin transporter) | Depression and anxiety disorders, including panic disorder, OCD and PTSD | Nausea and GI upset; low sodium in older people; increased bleeding risk with NSAIDs or anticoagulants; serotonin syndrome with other serotonergic drugs | Effect takes weeks; don't stop abruptly; monitor mood and suicidal thoughts early on, especially in young people; check sodium if symptoms suggest it
 K: Many important drugs block transporters: SSRIs, digoxin, loop and thiazide diuretics, SGLT2 inhibitors.
 !: Overlooking low potassium in a patient on digoxin and a loop diuretic, which increases digoxin toxicity.
+EV: established | Blocking membrane transporters is the mechanism of SSRIs, digoxin, loop and thiazide diuretics and SGLT2 inhibitors.
 Q: Which transporter do loop diuretics block? | The Na⁺/K⁺/2Cl⁻ cotransporter in the loop of Henle.
 Q: Why does low potassium increase digoxin toxicity? | Digoxin competes with potassium at the Na⁺/K⁺-ATPase, so it binds more when potassium is low.
 SUM: Transporters are targets for antidepressants, digoxin, diuretics and SGLT2 inhibitors.
@@ -367,11 +392,14 @@ SRC: Joint Formulary Committee, British National Formulary: digoxin and sertrali
 M2#pharmacy-u02-11-q1@1: Dapagliflozin lowers blood glucose by blocking which transporter? | SGLT2 in the kidney | The serotonin transporter | The Na⁺/K⁺-ATPase | GLUT4 in muscle | P-glycoprotein in the gut | It reduces glucose reabsorption so more glucose is excreted in urine.
 M2#pharmacy-u02-11-q2@2: A patient on digoxin starts a loop diuretic. What should you watch for? | Low potassium increasing toxicity | Higher blood sugar | Lower digoxin absorption | Increased appetite | Hair loss | Loop diuretics can lower potassium, which increases digoxin's effect and toxicity.
 M3#pharmacy-u02-11-q3@2: Why can amiodarone raise digoxin levels? | It inhibits P-glycoprotein and reduces digoxin clearance | It induces liver enzymes | It is a potassium supplement | It speeds up kidney excretion | It blocks digoxin absorption | Inhibiting P-gp transport reduces digoxin excretion, so levels rise; the dose may need reducing (check the BNF).
+M1@1: Which transporter do SSRIs such as sertraline block? | The serotonin transporter | The Na⁺/K⁺-ATPase pump | The SGLT2 cotransporter | P-glycoprotein in the gut | The Na⁺/K⁺/2Cl⁻ cotransporter | SSRIs block serotonin reuptake into the neuron, raising its level in the synapse.
+SA3@2: An 80-year-old taking digoxin is started on furosemide and, a week later, amiodarone. Explain how each change could increase the risk of digoxin toxicity and what should be monitored. | Furosemide blocks the Na⁺/K⁺/2Cl⁻ cotransporter and increases potassium loss; low potassium increases digoxin binding to the Na⁺/K⁺-ATPase and so its toxicity. Amiodarone inhibits P-glycoprotein and reduces digoxin clearance, raising levels, so the digoxin dose may need reducing (check the BNF). Older age and reduced renal function add to accumulation. Monitor potassium, renal function, pulse, symptoms such as nausea, visual disturbance and confusion, and a digoxin level if toxicity is suspected. | Furosemide lowers potassium ; Low potassium increases digoxin toxicity ; Amiodarone inhibits P-glycoprotein and raises levels ; Age and renal function ; Monitoring of potassium, renal function, symptoms and levels
 
 ## Nuclear receptors
 S: Nuclear receptors sit inside the cell and act as transcription factors when a hormone or drug binds. They mediate the effects of corticosteroids, thyroid hormones, sex hormones and some diabetes and lipid drugs.
 O: Explain how nuclear receptors change gene expression
 O: Describe the medicines that act through nuclear receptors and their time course
+LV: Intermediate · Application
 T: Nuclear receptor | A receptor inside the cell that, when bound, regulates the transcription of genes
 T: Glucocorticoid | A steroid (such as prednisolone) acting on glucocorticoid receptors, with anti-inflammatory and metabolic effects
 H: How they work
@@ -385,9 +413,14 @@ H: Medicines
 H: Corticosteroid safety
 - Long-term use suppresses the body's own cortisol production, so stopping suddenly after more than about three weeks (or repeated courses) risks adrenal crisis.
 - People on long-term steroids need a steroid card and sick-day guidance.
+X: Explaining the time course to a patient.
+> Prednisolone is started for an asthma attack alongside salbutamol.
+> Salbutamol, acting on GPCRs, relieves bronchospasm within minutes.
+> Prednisolone, acting on nuclear receptors, reduces airway inflammation over hours as new proteins are made, so both are needed and neither replaces the other.
 DRUG: Prednisolone | Glucocorticoid: agonist at glucocorticoid (nuclear) receptors | Inflammatory and autoimmune conditions, asthma and COPD exacerbations | High glucose, mood change, infection risk, osteoporosis and adrenal suppression with prolonged use | Take in the morning with food; carry a steroid card if on long-term or repeated courses; don't stop abruptly after prolonged use; consider bone protection (check the BNF)
 K: Nuclear receptor drugs change gene expression: effects take hours and long-term corticosteroids suppress the adrenal axis.
 !: Stopping long-term prednisolone abruptly, risking adrenal crisis.
+EV: established | Nuclear receptors act as ligand-activated transcription factors, so their effects develop over hours.
 Q: Why do glucocorticoid effects take hours? | They act by changing gene transcription.
 Q: Name a drug acting on PPAR-γ. | Pioglitazone.
 SUM: Nuclear receptors are transcription factors activated by hormones and drugs.
@@ -397,11 +430,14 @@ SRC: NHS England and Society for Endocrinology, National Patient Safety Alert: s
 M2#pharmacy-u02-12-q1@1: Which drug acts through a nuclear receptor? | Levothyroxine | Salbutamol | Omeprazole | Lidocaine | Sertraline | Thyroid hormone acts on intracellular thyroid receptors that regulate gene transcription.
 M2#pharmacy-u02-12-q2@2: What is the main risk of stopping prednisolone suddenly after months of use? | Adrenal crisis | Low blood glucose only | A rash | Bronchospasm | Raised potassium only | The adrenal glands are suppressed and can't respond to stress at once.
 M3#pharmacy-u02-12-q3@1: Pioglitazone and fibrates have what in common? | Both act on PPAR nuclear receptors | Both block ion channels | Both inhibit HMG-CoA reductase | Both block β-receptors | Both are insulin analogues | Pioglitazone is a PPAR-γ agonist and fibrates are PPAR-α agonists.
+M1@1: Where are nuclear receptors found? | Inside the cell, in the cytoplasm or nucleus | In the cell membrane, linked to G proteins | On nerve endings at the synapse | On the outer surface of red cells | Only in the lining of the stomach | Their lipid-soluble ligands cross the cell membrane and bind the receptor inside the cell.
+SA2@2: Explain why someone who has taken prednisolone for several months must not stop it suddenly, and what support they need. | Prednisolone acts on glucocorticoid (nuclear) receptors. Long-term use suppresses the hypothalamic-pituitary-adrenal axis, so the adrenal glands make less cortisol. Stopping suddenly after more than about three weeks, or after repeated courses, risks adrenal crisis because the adrenals can't respond to stress at once. The dose is withdrawn gradually according to the BNF and the prescriber. People on long-term steroids need a steroid emergency card and sick-day guidance, and bone protection may be considered. | Acts on nuclear receptors ; Suppresses the adrenal axis ; Abrupt stopping risks adrenal crisis ; Gradual withdrawal ; Steroid card and sick-day guidance
 
 ## The autonomic nervous system
 S: The autonomic nervous system controls involuntary functions: heart rate, blood pressure, airways, gut, bladder and glands. Many common drugs act on its two branches, so knowing its receptors predicts their effects and side effects.
 O: Describe the sympathetic and parasympathetic systems and their transmitters
 O: Predict drug effects from autonomic receptor actions
+LV: Intermediate · Foundation
 T: Sympathetic nervous system | The "fight or flight" branch; its post-ganglionic transmitter is mainly noradrenaline
 T: Parasympathetic nervous system | The "rest and digest" branch; its post-ganglionic transmitter is acetylcholine
 H: Organisation
@@ -410,39 +446,55 @@ H: Organisation
 - Sympathetic nerves release noradrenaline onto **adrenoceptors** (α and β); the adrenal medulla releases adrenaline into the blood.
 - Exception: sympathetic nerves to sweat glands use acetylcholine.
 H: Effects on organs
+P: In each line below, the sympathetic effect and its receptor come first, then the parasympathetic one. Most organs receive both branches, and the balance sets the resting state: at rest, vagal (parasympathetic) tone keeps the heart rate below the pacemaker's intrinsic rate. Most blood vessels are controlled by sympathetic tone alone.
 - Heart: faster and stronger (β1); slower (M2).
 - Airways: dilate (β2); constrict and secrete (M3).
 - Blood vessels: most constrict (α1).
-- Gut: reduced motility; increased motility and secretion.
+- Gut: reduced motility (sympathetic); increased motility and secretion (M3).
 - Bladder: relaxes the detrusor (β3) and contracts the sphincter (α1); contracts the detrusor (M3).
 - Eye: pupil dilates (α1); pupil constricts (M3).
+X: Predicting an antimuscarinic's side effects from the receptor map.
+> Oxybutynin blocks muscarinic receptors to relax the bladder's detrusor muscle (M3).
+> The same block elsewhere gives a dry mouth (salivary glands), constipation (gut), blurred vision (eye) and a faster heart rate (M2).
+> So its side effects follow directly from where muscarinic receptors are.
 K: Parasympathetic: acetylcholine on muscarinic receptors. Sympathetic: noradrenaline on α and β receptors. Predict effects from the receptor.
 !: Forgetting that blocking one branch unmasks the other: an antimuscarinic causes tachycardia because sympathetic tone is unopposed.
+EV: established | The sympathetic and parasympathetic systems act through adrenoceptors and muscarinic receptors whose distribution predicts drug effects.
 Q: What transmitter acts on organs in the parasympathetic system? | Acetylcholine, on muscarinic receptors.
 Q: What does β1 stimulation do to the heart? | Increases heart rate and force.
 SUM: Two branches, two transmitters, distinct receptors on each organ.
 SUM: Drug effects and side effects follow from which receptors they act on.
 SRC: Ritter JM and others, Rang and Dale's Pharmacology, 10th edition, Elsevier | secondary | 2023
+SRC: Joint Formulary Committee, British National Formulary | guidance | 2026 | https://bnf.nice.org.uk/
 M1#pharmacy-u02-13-q1@1: Which receptor mediates parasympathetic slowing of the heart? | M2 muscarinic | β1 adrenoceptor | α1 adrenoceptor | Nicotinic | H2 histamine | Acetylcholine acting on M2 receptors in the heart slows the rate.
 M2#pharmacy-u02-13-q2@2: An antimuscarinic drug is given. What happens to heart rate? | It rises | It falls | It stops | No change | It becomes irregular only | Blocking parasympathetic (M2) tone leaves sympathetic drive unopposed.
 M2#pharmacy-u02-13-q3@2: Which receptor relaxes the bladder's detrusor muscle? | β3 adrenoceptor | M3 muscarinic | α1 adrenoceptor | Nicotinic | H1 histamine | Mirabegron, a β3 agonist, relaxes the detrusor in overactive bladder.
+M3@1,2: A man takes doxazosin for prostate symptoms and a β-blocker for angina. He feels faint when he stands up. What best explains this? | α1 block lowers vascular tone and β1 block blunts the reflex rise in rate | Both drugs stimulate muscarinic receptors in blood vessels | The β-blocker causes bronchospasm that lowers oxygen | α1 block raises his heart rate too much on standing | Doxazosin blocks nicotinic receptors in the ganglia | Standing needs α1 vasoconstriction and a β1-driven rise in heart rate; blocking both leaves postural hypotension.
+SA2@1,2: Describe the transmitters and receptors of the sympathetic and parasympathetic systems, and use them to predict the effects of a β2 agonist and an antimuscarinic. | Both branches use acetylcholine at nicotinic receptors in the ganglia. Parasympathetic nerves release acetylcholine onto muscarinic receptors on organs; sympathetic nerves release noradrenaline onto α and β adrenoceptors (sweat glands are an exception), and the adrenal medulla releases adrenaline. A β2 agonist dilates the airways and can cause tremor and tachycardia. An antimuscarinic causes dry mouth, constipation, urinary retention, blurred vision and tachycardia, because parasympathetic tone is blocked and sympathetic tone is unopposed. | Ganglionic nicotinic transmission ; Parasympathetic: acetylcholine on muscarinic receptors ; Sympathetic: noradrenaline on adrenoceptors ; β2 agonist effects ; Antimuscarinic effects
 
 ## Cholinergic pharmacology
 S: Drugs that mimic, block or prolong acetylcholine treat conditions from overactive bladder to myasthenia gravis and dementia. Their side effects follow directly from the muscarinic and nicotinic receptors they affect.
 O: Describe muscarinic agonists, antagonists and anticholinesterases
 O: Recognise antimuscarinic side effects and anticholinergic burden
+LV: Intermediate · Application
 T: Antimuscarinic | A drug that blocks muscarinic acetylcholine receptors
 T: Anticholinergic burden | The cumulative antimuscarinic effect of all a person's medicines, linked to confusion and falls in older people
 H: Drug groups
 - **Antimuscarinics**: atropine (bradycardia), hyoscine (secretions, motion sickness), oxybutynin and solifenacin (overactive bladder), ipratropium and tiotropium (airways).
 - **Anticholinesterases**: donepezil, rivastigmine and galantamine (dementia); pyridostigmine (myasthenia gravis); neostigmine (reversal of neuromuscular block).
 - **Neuromuscular blockers** act on nicotinic receptors at the neuromuscular junction during anaesthesia.
+P: Anticholinesterases raise acetylcholine at muscarinic and nicotinic sites, so their side effects mirror antimuscarinic ones: nausea, diarrhoea, sweating, increased secretions and a slow heart rate. Bradycardia is why donepezil needs care in people with cardiac conduction problems.
 H: Antimuscarinic effects
 - "Dry as a bone, red as a beet, blind as a bat, mad as a hatter": dry mouth, flushing, blurred vision, confusion, plus constipation, urinary retention and tachycardia.
 - Many drugs have antimuscarinic activity (tricyclic antidepressants, some antihistamines, antipsychotics). Their burden adds up and is linked to cognitive decline and falls in older people.
+X: Spotting anticholinergic burden in a medicines review.
+> An 82-year-old takes amitriptyline for nerve pain, oxybutynin for bladder symptoms and chlorphenamine at night.
+> All three have antimuscarinic activity, so their effects add up.
+> Review whether each is still needed and whether alternatives with less antimuscarinic activity exist, and ask about confusion, constipation, urinary retention and falls.
 DRUG: Atropine | Muscarinic receptor antagonist | Symptomatic bradycardia; organophosphate poisoning; reducing secretions | Dry mouth, tachycardia, blurred vision, urinary retention, constipation, confusion (especially in older people) | Monitor heart rate and rhythm; care in glaucoma, prostatic enlargement and older people; doses vary by indication (check the BNF)
 K: Antimuscarinics cause dry mouth, blurred vision, constipation, retention, tachycardia and confusion. Add up the burden in older people.
 !: Starting an antimuscarinic for overactive bladder in someone with dementia already on a cholinesterase inhibitor: the two work against each other and burden rises.
+EV: established | Antimuscarinic effects of different medicines add up, and anticholinergic burden is associated with confusion and falls in older people.
 Q: Name three antimuscarinic side effects. | For example dry mouth, constipation and urinary retention (also blurred vision, tachycardia, confusion).
 Q: Which drug reverses non-depolarising neuromuscular block? | Neostigmine (an anticholinesterase).
 SUM: Cholinergic drugs mimic, block or prolong acetylcholine.
@@ -452,11 +504,14 @@ SRC: NICE NG97, Dementia: assessment, management and support | guidance | 2018 |
 M2#pharmacy-u02-14-q1@1: Which drug is an anticholinesterase used in myasthenia gravis? | Pyridostigmine | Oxybutynin | Atropine | Ipratropium | Hyoscine | Pyridostigmine increases acetylcholine at the neuromuscular junction.
 M2#pharmacy-u02-14-q2@2: Why is anticholinergic burden a concern in older people? | It's linked to confusion, falls and cognitive decline | It only affects heart rate | It lowers blood pressure safely | It improves memory | It causes weight gain only | The combined antimuscarinic effect of several drugs worsens cognition and increases falls.
 M3#pharmacy-u02-14-q3@2: A man with dementia on donepezil starts oxybutynin. What's the problem? | They have opposing actions and burden increases | Oxybutynin increases donepezil absorption | They both cause diarrhoea only | Donepezil blocks oxybutynin's metabolism | There's no concern | Donepezil boosts acetylcholine while oxybutynin blocks it, and antimuscarinics can worsen confusion.
+M1@1: Which drug is an antimuscarinic used for overactive bladder? | Oxybutynin | Donepezil | Pyridostigmine | Neostigmine | Rivastigmine | Oxybutynin blocks M3 receptors on the detrusor muscle; the other options are anticholinesterases.
+SA3@2: An 84-year-old with dementia taking donepezil is prescribed oxybutynin and already takes amitriptyline. Explain the pharmacological problems and what the pharmacist should recommend. | Donepezil inhibits acetylcholinesterase to raise acetylcholine and support cognition. Oxybutynin and amitriptyline block muscarinic receptors, opposing donepezil and adding to anticholinergic burden. In older people this burden is linked to confusion, cognitive decline, falls, constipation and urinary retention. The pharmacist should raise the combination with the prescriber, review whether each drug is needed, consider alternatives with less antimuscarinic activity (or non-drug measures for bladder symptoms), and agree monitoring. | Donepezil raises acetylcholine ; Oxybutynin and amitriptyline are antimuscarinic and oppose it ; Burden adds up ; Harms in older people ; Recommend review and alternatives
 
 ## Adrenergic pharmacology
 S: Adrenoceptors (α1, α2, β1, β2, β3) respond to noradrenaline and adrenaline. Drugs that stimulate or block them are used for asthma, hypertension, heart failure, anaphylaxis and prostate symptoms.
 O: Describe the adrenoceptor subtypes and the drugs acting on them
 O: Predict effects and risks of adrenergic agonists and antagonists
+LV: Intermediate · Application
 T: β-blocker | A drug that blocks β-adrenoceptors (some selective for β1)
 T: Cardioselective | Relatively selective for β1 receptors in the heart, such as bisoprolol and atenolol
 H: Receptors and drugs
@@ -465,14 +520,20 @@ H: Receptors and drugs
 - **β1**: heart rate and force; cardioselective blockers (bisoprolol) treat angina, heart failure and AF.
 - **β2**: bronchodilation; agonists (salbutamol, formoterol) treat asthma and COPD.
 - **Adrenaline** acts on α and β receptors: the first-line treatment of anaphylaxis, given intramuscularly.
+P: Adrenaline is the drug of choice in anaphylaxis because it acts on several receptors at once: α1 vasoconstriction raises blood pressure and reduces swelling, β1 supports the heart, and β2 relaxes the airways and reduces mediator release from mast cells.
 H: β-blocker cautions
 - Non-selective β-blockers (propranolol) can cause bronchospasm and are avoided in asthma; even cardioselective ones need care.
 - β-blockers can mask the warning signs of hypoglycaemia (tremor, palpitations) and cause bradycardia, fatigue and cold extremities.
 - Don't stop them abruptly in angina: rebound can worsen symptoms.
+X: Counselling on a β-blocker in diabetes.
+> A woman with type 1 diabetes is started on propranolol.
+> β-blockade blunts tremor and palpitations, two adrenergic warning signs of hypoglycaemia; sweating, which is sympathetic but cholinergic, is less affected.
+> Advise her that hypoglycaemia may feel different and to check her glucose more often.
 DRUG: Salbutamol | Short-acting β2-adrenoceptor agonist | Relief of bronchospasm in asthma and COPD | Tremor, palpitations, tachycardia; low potassium at high doses | Check inhaler technique; frequent use signals poor control needing review; use with a spacer where appropriate
 DRUG: Propranolol | Non-selective β-blocker | Angina, arrhythmias, migraine prophylaxis, physical symptoms of anxiety, thyrotoxicosis | Bronchospasm (avoid in asthma), bradycardia, fatigue, cold extremities; masks hypoglycaemia; toxic in overdose | Monitor pulse and blood pressure; don't stop abruptly; take care with verapamil and diltiazem (check the BNF)
 K: β1 is the heart, β2 the airways, α1 vessels and prostate. Non-selective β-blockers risk bronchospasm; all can mask hypoglycaemia.
 !: Supplying propranolol to someone with asthma: non-selective β-blockade can trigger severe bronchospasm.
+EV: established | Adrenoceptor subtypes have distinct tissue effects that predict the benefits and risks of adrenergic agonists and antagonists.
 Q: Which adrenoceptor do tamsulosin and doxazosin block? | α1.
 Q: Which β-blocker side effect matters for people with diabetes? | Masking the warning signs of hypoglycaemia.
 SUM: α1, α2, β1, β2 and β3 receptors have distinct effects and drugs.
@@ -482,17 +543,21 @@ SRC: Joint Formulary Committee, British National Formulary: beta-adrenoceptor bl
 M1#pharmacy-u02-15-q1@1: Which receptor does salbutamol stimulate? | β2 | β1 | α1 | α2 | M3 | Salbutamol is a β2 agonist, relaxing airway smooth muscle.
 M2#pharmacy-u02-15-q2@2: What is a common problem with α1-blockers such as doxazosin? | Postural hypotension | Bronchospasm | Hyperkalaemia | Weight loss | Diarrhoea | Blocking α1 vasoconstriction can cause dizziness on standing, especially after the first dose.
 M3#pharmacy-u02-15-q3@2: A man with asthma is prescribed propranolol for migraine. What should the pharmacist do? | Contact the prescriber: it's contraindicated | Supply it with a spacer | Supply it and advise rest | Halve the dose | Swap to salbutamol | Non-selective β-blockade can cause life-threatening bronchospasm in asthma.
+M2@2: Why does adrenaline treat both low blood pressure and wheeze in anaphylaxis? | It acts on α1, β1 and β2 receptors | It is a selective β2 agonist only | It blocks histamine H1 receptors | It is an α1 receptor antagonist | It acts on nuclear steroid receptors | α1 effects raise blood pressure and reduce swelling, β1 supports the heart and β2 relaxes the airways.
+SA2@1,2: Describe the main adrenoceptor subtypes with a drug acting on each, and explain the cautions needed with β-blockers. | α1 receptors cause vasoconstriction and prostate smooth muscle contraction (blocked by doxazosin and tamsulosin, which can cause postural hypotension). α2 receptors inhibit noradrenaline release (clonidine). β1 receptors increase heart rate and force (blocked by bisoprolol). β2 receptors relax the airways (salbutamol). β-blockers, especially non-selective ones such as propranolol, can cause bronchospasm and are avoided in asthma; they mask hypoglycaemia warning signs, cause bradycardia and fatigue, and shouldn't be stopped abruptly in angina. | α1 with example ; α2 or β3 with example ; β1 with example ; β2 with example ; β-blocker cautions
 
 ## Histamine and its antagonists
 S: Histamine is released from mast cells in allergy and from stomach cells to drive acid secretion. Antihistamines that block H1 receptors treat allergic conditions; H2 antagonists once dominated acid suppression.
 O: Describe histamine's actions at H1 and H2 receptors
 O: Compare first- and second-generation H1 antihistamines
+LV: Intermediate · Application
 T: H1 antihistamine | A drug that blocks H1 receptors, reducing allergic symptoms
 T: Sedating antihistamine | An older (first-generation) H1 antihistamine that crosses into the brain, such as chlorphenamine
 H: Histamine's actions
 - **H1 receptors**: itch, sneezing, vasodilation, increased capillary permeability (swelling, wheals) and bronchoconstriction.
 - **H2 receptors**: gastric acid secretion.
 - H3 and H4 receptors have roles in the brain and immune cells.
+P: H1 antihistamines block receptors rather than reverse effects already under way, so they work best taken before exposure; in seasonal allergic rhinitis, regular daily use through the pollen season usually controls symptoms better than occasional doses.
 H: Antihistamines
 - **First-generation H1** (chlorphenamine, promethazine): sedating and antimuscarinic; useful at night, risky for driving and in older people.
 - **Second-generation H1** (cetirizine, loratadine, fexofenadine): less sedating, once daily; first choice for allergic rhinitis and urticaria.
@@ -500,9 +565,14 @@ H: Antihistamines
 - Antihistamines aren't the treatment for anaphylaxis: adrenaline is.
 - Some sedating antihistamines (such as promethazine) are also sold for short-term sleeplessness; they're unsuitable for regular use and for older people because of next-day drowsiness and antimuscarinic effects.
 - Antihistamines can be used in pregnancy only after checking the BNF and specialist sources; loratadine and cetirizine are commonly chosen when needed.
+X: Choosing an antihistamine for a driver.
+> A lorry driver with hay fever asks for an antihistamine.
+> Chlorphenamine crosses into the brain and can cause sedation and impaired driving.
+> A less sedating second-generation option such as fexofenadine or loratadine suits him better; still advise him not to drive if he feels drowsy.
 DRUG: Cetirizine | Second-generation H1-receptor antagonist | Allergic rhinitis, urticaria and itch | Less sedating than older antihistamines but can cause drowsiness; headache, dry mouth | Counsel about drowsiness, driving and alcohol; dose adjustment in renal impairment (check the BNF)
 K: H1 blockers treat allergy (second-generation first line); H2 blockers reduce acid. Adrenaline, not an antihistamine, treats anaphylaxis.
 !: Treating suspected anaphylaxis with an oral antihistamine instead of giving adrenaline and calling for help.
+EV: established | H1 receptors mediate allergic symptoms and H2 receptors gastric acid secretion; adrenaline, not an antihistamine, treats anaphylaxis.
 Q: Which receptor mediates gastric acid secretion? | H2.
 Q: Why are first-generation antihistamines sedating? | They cross into the brain and block central H1 receptors.
 SUM: H1 mediates allergy symptoms; H2 mediates acid secretion.
@@ -512,6 +582,8 @@ SRC: Resuscitation Council UK, Emergency treatment of anaphylaxis: guidelines fo
 M1#pharmacy-u02-16-q1@1: Which receptor does famotidine block? | H2 | H1 | β2 | M3 | 5-HT3 | Famotidine is an H2 antagonist that reduces gastric acid.
 M2#pharmacy-u02-16-q2@2: Which antihistamine is least likely to cause drowsiness? | Fexofenadine | Chlorphenamine | Promethazine | Hydroxyzine | Diphenhydramine | Fexofenadine is a second-generation antihistamine with little central penetration.
 M2#pharmacy-u02-16-q3@2: What is the first-line drug treatment for anaphylaxis? | Intramuscular adrenaline | Oral cetirizine | IV chlorphenamine | Oral prednisolone | Inhaled salbutamol | Adrenaline reverses the life-threatening features; antihistamines are not first line.
+M3@2: An 80-year-old wants to take promethazine every night for sleep. What is the best response? | Advise against regular use: sedation and antimuscarinic effects | Supply it, as it is ideal for long-term use | Recommend taking a double dose at night | Suggest adding chlorphenamine for effect | Advise taking it with a small alcoholic drink | Sedating antihistamines cause next-day drowsiness and antimuscarinic harms (confusion, falls), so they are unsuitable for regular use in older people.
+SA2@1,2: Compare first- and second-generation H1 antihistamines and explain why an antihistamine is not the first-line treatment for anaphylaxis. | Histamine at H1 receptors causes itch, sneezing, vasodilation, swelling and bronchoconstriction; at H2 receptors it drives acid secretion. First-generation H1 antihistamines (chlorphenamine, promethazine) cross into the brain, so they sedate, and they have antimuscarinic effects; they are risky for driving and in older people. Second-generation ones (cetirizine, loratadine, fexofenadine) are less sedating and taken once daily, so they are first choice for allergic rhinitis and urticaria. Anaphylaxis needs intramuscular adrenaline, which reverses airway, circulatory and swelling effects; antihistamines act too slowly and don't treat shock or bronchospasm adequately. | H1 actions ; First generation sedating and antimuscarinic ; Second generation less sedating, first choice ; Anaphylaxis needs adrenaline ; Why antihistamines are inadequate
 
 ## Eicosanoids and inflammation
 S: Prostaglandins, thromboxanes and leukotrienes are lipid mediators made from arachidonic acid. They drive pain, fever, inflammation, platelet aggregation and stomach protection, which explains both the benefits and harms of NSAIDs and aspirin.

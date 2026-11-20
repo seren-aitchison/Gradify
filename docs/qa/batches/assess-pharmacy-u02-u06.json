@@ -112,6 +112,108 @@
     "New questions: M1, SA2"
    ],
    "findings": []
+  },
+  {
+   "course": "pharmacy",
+   "lesson": "u02-09",
+   "action": "enhanced",
+   "changes": [
+    "Added LV and EV; linked new questions to objectives; added an SA extended answer with model answer and marking points",
+    "Added content: P (Use-dependence is an advantage in treatment: carbamazepine and lido...)",
+    "Added content: X (Checking a QT combination....)",
+    "New questions: M1, SA3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "pharmacy",
+   "lesson": "u02-10",
+   "action": "enhanced",
+   "changes": [
+    "Added LV and EV; linked new questions to objectives; added an SA extended answer with model answer and marking points",
+    "Added content: P (Inhibiting an enzyme also lets its other substrates build up, which...)",
+    "Added content: X (Predicting how long an effect lasts after stopping....)",
+    "New questions: M3, SA2"
+   ],
+   "findings": []
+  },
+  {
+   "course": "pharmacy",
+   "lesson": "u02-11",
+   "action": "enhanced",
+   "changes": [
+    "Added LV and EV; linked new questions to objectives; added an SA extended answer with model answer and marking points",
+    "Added content: P (SSRIs block reuptake within hours, yet their antidepressant effect...)",
+    "Added content: X (Following a transporter interaction....)",
+    "New questions: M1, SA3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "pharmacy",
+   "lesson": "u02-12",
+   "action": "enhanced",
+   "changes": [
+    "Added LV and EV; linked new questions to objectives; added an SA extended answer with model answer and marking points",
+    "Added content: X (Explaining the time course to a patient....)",
+    "New questions: M1, SA2"
+   ],
+   "findings": []
+  },
+  {
+   "course": "pharmacy",
+   "lesson": "u02-13",
+   "action": "enhanced",
+   "changes": [
+    "Added LV and EV; linked new questions to objectives; added an SA extended answer with model answer and marking points",
+    "Added content: P (In each line below, the sympathetic effect and its receptor come fi...)",
+    "Added content: X (Predicting an antimuscarinic's side effects from the receptor map....)",
+    "Added second source: Joint Formulary Committee, British National Formulary | guidance | 2026 | https://bnf...",
+    "New questions: M3, SA2",
+    "Clarified the organ-effects list: the gut line gave no receptor or branch labels; now reads sympathetic first, then parasympathetic (M3), with a P: explaining the order"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "Gut line in the autonomic effects list was ambiguous (no branch labels); clarified."
+    }
+   ]
+  },
+  {
+   "course": "pharmacy",
+   "lesson": "u02-14",
+   "action": "enhanced",
+   "changes": [
+    "Added LV and EV; linked new questions to objectives; added an SA extended answer with model answer and marking points",
+    "Added content: P (Anticholinesterases raise acetylcholine at muscarinic and nicotinic...)",
+    "Added content: X (Spotting anticholinergic burden in a medicines review....)",
+    "New questions: M1, SA3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "pharmacy",
+   "lesson": "u02-15",
+   "action": "enhanced",
+   "changes": [
+    "Added LV and EV; linked new questions to objectives; added an SA extended answer with model answer and marking points",
+    "Added content: P (Adrenaline is the drug of choice in anaphylaxis because it acts on...)",
+    "Added content: X (Counselling on a β-blocker in diabetes....)",
+    "New questions: M2, SA2"
+   ],
+   "findings": []
+  },
+  {
+   "course": "pharmacy",
+   "lesson": "u02-16",
+   "action": "enhanced",
+   "changes": [
+    "Added LV and EV; linked new questions to objectives; added an SA extended answer with model answer and marking points",
+    "Added content: P (H1 antihistamines block receptors rather than reverse effects alrea...)",
+    "Added content: X (Choosing an antihistamine for a driver....)",
+    "New questions: M3, SA2"
+   ],
+   "findings": []
   }
  ],
  "notes": [

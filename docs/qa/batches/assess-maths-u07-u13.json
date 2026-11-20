@@ -1109,6 +1109,58 @@
    "course": "maths",
    "action": "enhanced",
    "findings": []
+  },
+  {
+   "lesson": "u13-61",
+   "changes": [
+    "LV Year 3 · Application; EV",
+    "added NUM3 (effective sample size) and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-62",
+   "changes": [
+    "LV Year 2 · Application; EV",
+    "added NUM3 (log-sum-exp) and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-63",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "lengthened the explanation of NUM1#maths-u13-63-q1",
+    "added NUM2 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-64",
+   "changes": [
+    "LV Year 2 · Application; EV",
+    "lengthened the explanation of NUM1#maths-u13-64-q1",
+    "added NUM3 and SA3 (aliasing) questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-65",
+   "changes": [
+    "LV Year 3 · Application; EV",
+    "added NUM2 and SA2 (DAG adjustment) questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
   }
  ],
  "notes": [

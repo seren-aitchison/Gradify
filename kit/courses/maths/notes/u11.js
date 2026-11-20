@@ -497,8 +497,6 @@ X: For A = [[1, 2, 3], [4, 5, 6]], find Aᵀ and the size of AᵀA.
 > AᵀA is symmetric, as always
 - Example: x = (1, 2) and y = (3, 4) give xᵀy = 11, a 1 × 1 matrix.
 - Orthogonal matrices satisfy Qᵀ = Q^{−1}.
-
-
 K: Transpose swaps rows and columns; (AB)ᵀ = BᵀAᵀ; x · y = xᵀy; AᵀA is symmetric; symmetric means Aᵀ = A.
 !: Writing (AB)ᵀ = AᵀBᵀ, which usually isn't even defined.
 Q: What is (ABC)ᵀ? | CᵀBᵀAᵀ.

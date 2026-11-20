@@ -771,6 +771,8 @@ SA3@1,2: Express 5 cos x − 12 sin x as R cos(x + α) with 0° < α < 90°, sta
 S: Trigonometric identities are equations true for every angle. They simplify expressions, prove results and turn hard equations into solvable ones, and they're essential for integration.
 O: Use the fundamental identities to simplify and prove
 O: Write clear identity proofs working from one side
+LV: A level · Fluency
+EV: established | tan θ ≡ sin θ/cos θ and sin²θ + cos²θ ≡ 1 hold for every angle, and the other Pythagorean identities follow by division.
 T: Identity | An equation true for all values of the variable, written with ≡
 T: Pythagorean identity | sin^{2} θ + cos^{2} θ ≡ 1
 H: The fundamentals
@@ -796,11 +798,16 @@ SRC: Department for Education, Mathematics AS and A level subject content: trigo
 SRC: Maor E, Trigonometric Delights (Princeton University Press 2013) | secondary | 2013 | https://press.princeton.edu/
 M1#maths-u06-21-q1@1: Simplify sin θ/tan θ. | cos θ | sin^{2} θ | 1 | tan θ | sec θ | Dividing by tan θ means multiplying by cos θ/sin θ: sin θ × cos θ/sin θ = cos θ.
 M2#maths-u06-21-q2@2: Simplify (1 − sin^{2} θ)/cos θ. | cos θ | sin θ | 1 | sec θ | tan θ | 1 − sin^{2} θ = cos^{2} θ, and cos^{2} θ/cos θ = cos θ.
+TF1@1: sin^{2} θ + cos^{2} θ = 1 holds only for acute angles. | false | It holds for every angle, because the point (cos θ, sin θ) always lies on the unit circle x² + y² = 1.
+M3@1,2: Which expression is identical to (1 − cos θ)(1 + cos θ)/(sin θ cos θ)? | tan θ | cot θ | sin θ | sec θ | 1 | The numerator is 1 − cos^{2} θ = sin^{2} θ, and sin^{2} θ/(sin θ cos θ) = sin θ/cos θ = tan θ.
+SA2@1,2: Prove that 1/cos θ − cos θ ≡ sin θ tan θ, setting out the proof correctly. | Start from the left-hand side, the more complicated one. Write it as a single fraction: 1/cos θ − cos θ = (1 − cos²θ)/cos θ. By the Pythagorean identity, 1 − cos²θ = sin²θ, so this is sin²θ/cos θ = sin θ × (sin θ/cos θ) = sin θ tan θ, which is the right-hand side. The proof works from one side to the other and never treats the identity as an equation to solve. | starts from one side ; combines into one fraction ; uses 1 − cos²θ = sin²θ ; splits into sin θ × tan θ ; works one-sidedly to the RHS
 
 ## Compound Angle Formulas
 S: The compound angle formulas give the sine, cosine and tangent of a sum or difference of angles. They derive exact values like sin 75° and underlie the double angle and harmonic forms.
 O: State and use the addition formulas
 O: Find exact values of non-standard angles
+LV: A level · Application
+EV: established | sin(A ± B) = sin A cos B ± cos A sin B and cos(A ± B) = cos A cos B ∓ sin A sin B hold for all angles A and B.
 T: Compound angle | An angle written as a sum or difference, such as A + B
 T: Addition formulas | sin(A ± B), cos(A ± B) and tan(A ± B) in terms of A and B
 H: The formulas
@@ -832,11 +839,16 @@ SRC: Department for Education, Mathematics AS and A level subject content: trigo
 SRC: Maor E, Trigonometric Delights (Princeton University Press 2013) | secondary | 2013 | https://press.princeton.edu/
 M1#maths-u06-22-q1@1: Which is the correct expansion of sin(A − B)? | sin A cos B − cos A sin B | sin A cos B + cos A sin B | cos A cos B − sin A sin B | sin A − sin B | sin A sin B − cos A cos B | The sine formula keeps the sign of the compound angle.
 M3#maths-u06-22-q2@2: If tan A = 1/2 and tan B = 1/3, what is A + B (for acute A and B)? | 45° | 30° | 60° | 90° | 75° | tan(A + B) = (½ + ⅓)/(1 − ⅙) = (5/6)/(5/6) = 1, so A + B = 45°.
+M2@2: What is the exact value of sin 15°? | (√6 − √2)/4 | (√6 + √2)/4 | (√3 − 1)/2 | (√2 − √6)/4 | √3/4 | sin(45° − 30°) = (√2/2)(√3/2) − (√2/2)(½) = (√6 − √2)/4, which is positive as it should be.
+NUM2@1: A and B are acute with sin A = 3/5 and cos B = 5/13. Find sin(A + B), to 4 decimal places. | 0.9692 | 0.0005 |  | cos A = 4/5 and sin B = 12/13, so sin(A + B) = (3/5)(5/13) + (4/5)(12/13) = 15/65 + 48/65 = 63/65 ≈ 0.9692.
+SA3@1,2: Derive the formula for tan(A − B) from the sine and cosine formulas, and use it to find the exact value of tan 15°. | tan(A − B) = sin(A − B)/cos(A − B) = (sin A cos B − cos A sin B)/(cos A cos B + sin A sin B). Divide every term by cos A cos B: (tan A − tan B)/(1 + tan A tan B). With A = 45° and B = 30°: tan 15° = (1 − 1/√3)/(1 + 1/√3) = (√3 − 1)/(√3 + 1). Multiplying top and bottom by √3 − 1: (√3 − 1)²/2 = (4 − 2√3)/2 = 2 − √3. | writes tan as sin over cos ; expands both formulas ; divides by cos A cos B ; substitutes 45° and 30° ; rationalises to 2 − √3
 
 ## Double Angle Formulas
 S: The double angle formulas express sin 2A, cos 2A and tan 2A in terms of A. They come straight from the addition formulas, and they're vital for solving equations and integrating sin^{2} x and cos^{2} x.
 O: State and derive the double angle formulas
 O: Use them to solve equations and rewrite powers
+LV: A level · Application
+EV: established | Setting B = A in the addition formulas gives sin 2A = 2 sin A cos A and cos 2A = cos²A − sin²A = 2cos²A − 1 = 1 − 2sin²A.
 T: Double angle formula | A formula for a trig function of 2A in terms of A
 T: Power-reduction | Writing sin^{2} A or cos^{2} A in terms of cos 2A
 H: The formulas
@@ -865,11 +877,15 @@ SRC: Maor E, Trigonometric Delights (Princeton University Press 2013) | secondar
 NUM1#maths-u06-23-q1@1: If sin A = 3/5 and A is acute, find sin 2A. | 0.96 | 0.001 |  | cos A = 4/5, so sin 2A = 2 × 3/5 × 4/5 = 24/25 = 0.96.
 M1#maths-u06-23-q2@1: Which expression equals cos^{2} x − sin^{2} x? | cos 2x | sin 2x | 1 | 2 cos x | cos^{2} 2x | This is one form of the double angle formula for cosine.
 M2#maths-u06-23-q3@2: Which launch angle maximises a projectile's range on level ground? | 45° | 30° | 60° | 90° | 15° | R = u^{2} sin 2θ/g is largest when sin 2θ = 1, at 2θ = 90°.
+NUM3@1: tan A = 2. Find cos 2A. | -0.6 | 0 |  | cos^{2} A = 1/(1 + tan^{2} A) = 1/5, so cos 2A = 2cos^{2} A − 1 = 2/5 − 1 = −3/5 = −0.6 (the same for every angle with tan A = 2).
+SA2@2: Solve sin 2x = sin x for 0° ≤ x < 360°, and explain why dividing both sides by sin x would be a mistake. | Write sin 2x = 2 sin x cos x: 2 sin x cos x − sin x = 0, so sin x(2 cos x − 1) = 0. Either sin x = 0, giving x = 0° or 180°, or cos x = ½, giving x = 60° or 300°. The solutions are 0°, 60°, 180° and 300°. Dividing by sin x assumes sin x ≠ 0 and throws away the solutions 0° and 180°; factorising keeps them. | uses sin 2x = 2 sin x cos x ; factorises sin x(2 cos x − 1) ; sin x = 0 gives 0° and 180° ; cos x = ½ gives 60° and 300° ; dividing loses solutions
 
 ## Half Angle Formulas
 S: The half angle formulas give the trig functions of A/2 in terms of A. They follow from the double angle formulas and provide exact values such as sin 22.5°, plus the useful "t-substitution".
 O: Derive and use the half angle formulas
 O: Use the t = tan(x/2) substitution
+LV: A level · Problem solving
+EV: established | The half angle formulas follow from cos A = 1 − 2sin²(A/2) = 2cos²(A/2) − 1, with the sign fixed by the quadrant of A/2.
 T: Half angle formula | A formula for sin(A/2), cos(A/2) or tan(A/2) in terms of A
 T: t-formulae | With t = tan(x/2): sin x = 2t/(1 + t^{2}), cos x = (1 − t^{2})/(1 + t^{2})
 H: The formulas
@@ -896,11 +912,16 @@ SRC: Maor E, Trigonometric Delights (Princeton University Press 2013) | secondar
 SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | secondary | 2020 | https://www.bloomsbury.com/
 M1#maths-u06-24-q1@1: Which formula gives cos^{2}(A/2)? | (1 + cos A)/2 | (1 − cos A)/2 | 2 cos^{2} A − 1 | 1 − 2 sin^{2} A | cos A/2 | Rearranging the double angle formula cos A = 2 cos^{2}(A/2) − 1 gives (1 + cos A)/2.
 M2#maths-u06-24-q2@2: With t = tan(x/2), what is sin x? | 2t/(1 + t^{2}) | (1 − t^{2})/(1 + t^{2}) | 2t/(1 − t^{2}) | t/(1 + t) | 1/(1 + t^{2}) | sin x = 2 sin(x/2) cos(x/2) = 2 tan(x/2) cos^{2}(x/2) = 2t/(1 + t^{2}).
+NUM2@1: Use tan(A/2) = sin A/(1 + cos A) with A = 30° to find tan 15°, to 4 decimal places. | 0.2679 | 0.0005 |  | tan 15° = (½)/(1 + √3/2) = 1/(2 + √3) = 2 − √3 ≈ 0.2679.
+M3@1: cos A = −7/25 and 180° < A < 270°. What is sin(A/2)? | 4/5 | −4/5 | 3/5 | −3/5 | 16/25 | sin^{2}(A/2) = (1 − cos A)/2 = (32/25)/2 = 16/25; A/2 is between 90° and 135°, where sine is positive, so 4/5.
+SA3@2: Use the substitution t = tan(x/2) to solve 3 cos x + 4 sin x = 2 for 0° ≤ x < 360°, giving answers to 1 decimal place, and check for a solution the substitution can miss. | With sin x = 2t/(1 + t²) and cos x = (1 − t²)/(1 + t²), multiply through by 1 + t²: 3(1 − t²) + 8t = 2(1 + t²), so 5t² − 8t − 1 = 0 and t = (8 ± √84)/10, giving t ≈ 1.7165 or t ≈ −0.1165. Then x/2 ≈ 59.8° or x/2 ≈ 180° − 6.6° = 173.4° (taking x/2 in 0° to 180°), so x ≈ 119.6° or x ≈ 346.7°. The substitution fails at x = 180°, where tan(x/2) is undefined, so check it: 3 cos 180° + 4 sin 180° = −3 ≠ 2, so it isn't a solution. | substitutes the t-formulae ; quadratic 5t² − 8t − 1 = 0 ; two values of t ; x ≈ 119.6° and 346.7° ; checks x = 180° separately
 
 ## Trigonometric Equations
 S: Trigonometric equations usually have many solutions, because trig functions repeat. Solving them means finding every solution in a given interval, using identities, factorising and the symmetry of the graphs.
 O: Solve trigonometric equations in a given interval
 O: Solve equations involving multiple angles and identities
+LV: A level · Problem solving
+EV: established | Because trigonometric functions are periodic, an equation usually has several solutions in an interval, found from a principal value and the function's symmetries.
 T: General solution | A formula for all solutions: for sin x = k, x = θ + 360°n or 180° − θ + 360°n
 T: Multiple angle | An angle like 2x or 3x, giving more solutions in a fixed interval
 H: Strategy
@@ -916,6 +937,7 @@ X: Solve 2 cos^{2} x + 3 sin x = 3 for 0° ≤ x < 360°.
 > Replace cos^{2} x: 2(1 − sin^{2} x) + 3 sin x = 3, so 2 sin^{2} x − 3 sin x + 1 = 0
 > (2 sin x − 1)(sin x − 1) = 0, so sin x = ½ or sin x = 1
 > x = 30°, 90° or 150°
+!: Squaring both sides (for example of sin x = cos x) can add false solutions: check every answer in the original equation.
 K: Reduce to one function of one angle, factorise, find all solutions in the interval; adjust the interval for multiple angles.
 !: Solving sin 2x = k and halving only the first solution, missing the others.
 Q: How many solutions does sin 3x = 0.2 have in 0° ≤ x < 360°? | 6.
@@ -926,11 +948,16 @@ SRC: Department for Education, Mathematics AS and A level subject content: trigo
 SRC: Maor E, Trigonometric Delights (Princeton University Press 2013) | secondary | 2013 | https://press.princeton.edu/
 M1#maths-u06-25-q1@1: How many solutions does tan x = 2 have for 0° ≤ x < 360°? | 2 | 1 | 4 | 0 | 3 | tan has period 180°, so there are two solutions in 360°.
 M3#maths-u06-25-q2@2: Solve sin x cos x = 0 for 0° ≤ x < 360°. How many solutions are there? | 4 | 2 | 3 | 1 | 6 | sin x = 0 gives 0° and 180°; cos x = 0 gives 90° and 270°.
+NUM2@1: Solve cos(x − 30°) = 0.5 for 0° ≤ x < 360°. Give the larger solution. | 330 | 0 | ° | Let u = x − 30°, so −30° ≤ u < 330°; cos u = 0.5 gives u = 60° or 300°, so x = 90° or 330°.
+NUM3@2: Solve 6 sin^{2} x + cos x = 5 for 0° ≤ x < 360°. Give the smallest solution greater than 90°, to 1 decimal place. | 109.5 | 0.05 | ° | 6(1 − cos^{2} x) + cos x = 5 gives 6cos^{2} x − cos x − 1 = 0, so (3 cos x + 1)(2 cos x − 1) = 0; cos x = −⅓ gives 109.5° and 250.5°, cos x = ½ gives 60° and 300°.
+SA2@1,2: Solve tan 2x = √3 for 0° ≤ x < 360°, explaining how the interval is adjusted for the multiple angle. | If 0° ≤ x < 360°, then 0° ≤ 2x < 720°, so solve for 2x over two full turns. tan 2x = √3 gives a principal value of 60°, and tangent repeats every 180°, so 2x = 60°, 240°, 420° or 600°. Halving: x = 30°, 120°, 210° or 300°. Solving only over 0° to 360° for 2x would give just half the solutions. | doubles the interval to 0° ≤ 2x < 720° ; principal value 60° ; adds multiples of 180° ; four values of 2x ; x = 30°, 120°, 210°, 300°
 
 ## Trigonometric Inequalities
 S: Trigonometric inequalities ask where a trig function is above or below a value. Solve the matching equation for the boundary points, then use the graph to choose the intervals.
 O: Solve trigonometric inequalities using graphs
 O: Write solution sets as intervals
+LV: A level · Application
+EV: established | A trigonometric inequality changes truth value only at solutions of the matching equation (or at asymptotes), so the graph between boundary points decides the intervals.
 T: Boundary points | The solutions of the corresponding equation, where the inequality switches
 T: Interval notation | Writing a set of values as (a, b), [a, b] and so on
 H: Method
@@ -958,11 +985,16 @@ SRC: Department for Education, Mathematics AS and A level subject content: trigo
 SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | secondary | 2020 | https://www.bloomsbury.com/
 M1#maths-u06-26-q1@1: For 0° ≤ x < 360°, where is sin x < 0? | 180° < x < 360° | 0° < x < 180° | 90° < x < 270° | 0° < x < 90° | Everywhere | Sine is negative in the third and fourth quadrants.
 M2#maths-u06-26-q2@2: Solve 2 sin x ≥ √3 for 0° ≤ x < 360°. | 60° ≤ x ≤ 120° | 0° ≤ x ≤ 60° | 120° ≤ x ≤ 240° | 60° ≤ x ≤ 300° | x = 60° only | sin x ≥ √3/2 between the boundaries 60° and 120°.
+TF1@1: For 0° ≤ x < 360°, cos x > 0.5 exactly when 0° ≤ x < 60° or 300° < x < 360°. | true | The boundaries of cos x = 0.5 are 60° and 300°, and the cosine graph is above 0.5 near 0° and 360°, outside that pair.
+M3@1,2: Solve 3 sin x + 4 cos x > 4 for 0° ≤ x < 360°. | 0° < x < 73.7° | 53.1° < x < 126.9° | 0° < x < 53.1° | 73.7° < x < 360° | Write 5 sin(x + 53.1°) > 4, so sin(x + 53.1°) > 0.8; that needs 53.1° < x + 53.1° < 126.9°, so 0° < x < 73.7°.
+SA2@1,2: Solve cos 2x ≤ 0 for 0° ≤ x < 180°, explaining your method, and write the answer in interval notation. | Let u = 2x, so 0° ≤ u < 360°. The boundary points come from cos u = 0, at u = 90° and u = 270°. The cosine graph is at or below zero between them, so 90° ≤ u ≤ 270°, and the boundaries are included because the inequality is ≤. Halving: 45° ≤ x ≤ 135°, which in interval notation is [45°, 135°]. | substitutes u = 2x and doubles the interval ; boundaries at 90° and 270° ; graph below zero between them ; includes the boundaries for ≤ ; [45°, 135°]
 
 ## Hyperbolic Functions
 S: The hyperbolic functions sinh, cosh and tanh are built from exponentials. They behave like trig functions in many ways, describe hanging cables (catenaries), and appear in relativity and engineering.
 O: Define sinh, cosh and tanh and sketch their graphs
 O: Use hyperbolic identities, including Osborn's rule
+LV: A level · Application
+EV: established | sinh x = (eˣ − e⁻ˣ)/2 and cosh x = (eˣ + e⁻ˣ)/2 satisfy cosh²x − sinh²x = 1, and their identities follow trigonometric ones by Osborn's rule.
 T: Hyperbolic sine and cosine | sinh x = (e^{x} − e^{−x})/2; cosh x = (e^{x} + e^{−x})/2
 T: Osborn's rule | Turn a trig identity into a hyperbolic one by replacing each function and changing the sign of any product of two sines
 H: Definitions and graphs
@@ -990,11 +1022,15 @@ SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | s
 NUM1#maths-u06-27-q1@1: Find sinh(ln 3). | 1.3333 | 0.0001 |  | (3 − 1/3)/2 = (8/3)/2 = 4/3 ≈ 1.333.
 M1#maths-u06-27-q2@1: Which identity holds for hyperbolic functions? | cosh^{2} x − sinh^{2} x = 1 | cosh^{2} x + sinh^{2} x = 1 | sinh^{2} x − cosh^{2} x = 1 | tanh^{2} x + 1 = sech^{2} x | cosh x − sinh x = 1 | Expanding the exponentials gives cosh^{2} x − sinh^{2} x = 1.
 M2#maths-u06-27-q3@2: What shape does a uniform cable hanging under its own weight form? | A catenary (a cosh curve) | A parabola | A circle | A sine wave | A hyperbola | Galileo thought it was a parabola; it's y = a cosh(x/a).
+NUM3@1,2: Solve sinh x = 2, to 3 decimal places. | 1.444 | 0.0005 |  | e^{x} − e^{−x} = 4 gives u^{2} − 4u − 1 = 0 with u = e^{x} > 0, so u = 2 + √5 and x = ln(2 + √5) ≈ 1.444.
+SA2@1,2: Prove from the definitions that cosh^{2} x − sinh^{2} x = 1, and use Osborn's rule to turn cos 2x = 1 − 2 sin^{2} x into a hyperbolic identity. | cosh²x = (e²ˣ + 2 + e⁻²ˣ)/4 and sinh²x = (e²ˣ − 2 + e⁻²ˣ)/4. Subtracting, cosh²x − sinh²x = 4/4 = 1. Osborn's rule replaces each trigonometric function by its hyperbolic version and changes the sign of every term containing a product of two sines. sin²x is such a product, so cos 2x = 1 − 2 sin²x becomes cosh 2x = 1 + 2 sinh²x (which agrees with cosh 2x = cosh²x + sinh²x). | expands cosh²x ; expands sinh²x ; difference is 1 ; states Osborn's sign change ; cosh 2x = 1 + 2 sinh²x
 
 ## Inverse Hyperbolic Functions
 S: The inverse hyperbolic functions arsinh, arcosh and artanh undo sinh, cosh and tanh. Because hyperbolic functions are made of exponentials, their inverses are logarithms, and they appear as standard integrals.
 O: Express inverse hyperbolic functions as logarithms
 O: Use them to evaluate integrals
+LV: A level · Application
+EV: established | Because hyperbolic functions are built from exponentials, their inverses are logarithms, such as arsinh x = ln(x + √(x² + 1)).
 T: Arsinh | sinh^{−1} x = ln(x + √(x^{2} + 1)), defined for all x
 T: Arcosh | cosh^{−1} x = ln(x + √(x^{2} − 1)), for x ≥ 1 (the principal, non-negative value)
 H: Logarithmic forms
@@ -1024,11 +1060,15 @@ SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | s
 NUM1#maths-u06-28-q1@1: Find arcosh(5/4) as a decimal, to 3 decimal places. | 0.693 | 0.0005 |  | ln(5/4 + √(25/16 − 1)) = ln(5/4 + 3/4) = ln 2 ≈ 0.693.
 M1#maths-u06-28-q2@1: What is the domain of arcosh x? | x ≥ 1 | All real x | −1 < x < 1 | x > 0 | x ≤ 1 | cosh x ≥ 1, so its inverse is only defined for x ≥ 1.
 M2#maths-u06-28-q3@2: What is d/dx (artanh x)? | 1/(1 − x^{2}) | 1/(1 + x^{2}) | 1/√(1 − x^{2}) | −1/(1 − x^{2}) | sech^{2} x | Differentiating ½ ln((1 + x)/(1 − x)) gives ½(1/(1 + x) + 1/(1 − x)) = 1/(1 − x^{2}).
+NUM3@2: Evaluate the integral of 1/√(x^{2} + 9) from 0 to 4, to 4 decimal places. | 1.0986 | 0.0005 |  | The integral is arsinh(x/3), so the value is arsinh(4/3) = ln(4/3 + 5/3) = ln 3 ≈ 1.0986.
+SA2@1: Show that arcosh x = ln(x + √(x^{2} − 1)) for x ≥ 1, explaining the choice of sign. | Let y = arcosh x, with y ≥ 0, so x = cosh y = (eʸ + e⁻ʸ)/2. Multiply by 2eʸ: e²ʸ − 2x eʸ + 1 = 0, a quadratic in eʸ, so eʸ = x ± √(x² − 1). The two roots multiply to 1, so one is at least 1 and the other at most 1. The principal value y ≥ 0 needs eʸ ≥ 1, which is the root with the plus sign. So y = ln(x + √(x² − 1)). | writes x = cosh y ; quadratic in eʸ ; two roots x ± √(x² − 1) ; roots multiply to 1 ; principal value y ≥ 0 takes the plus sign
 
 ## Fourier Series
 S: A Fourier series writes a periodic function as a sum of sines and cosines of increasing frequencies. Almost any repeating signal (square waves, sound, heat patterns) can be built from simple waves.
 O: Calculate Fourier coefficients for simple functions
 O: Interpret a Fourier series as a sum of harmonics
+LV: Year 2 · Application
+EV: established | A 2π-periodic function can be written as a sum of sines and cosines whose coefficients are found by integrating against cos nx and sin nx.
 T: Fourier series | f(x) = a₀/2 + Σ (a_{n} cos nx + b_{n} sin nx) for a 2π-periodic function
 T: Fourier coefficients | a_{n} = (1/π) ∫_{−π}^{π} f(x) cos nx dx and b_{n} = (1/π) ∫_{−π}^{π} f(x) sin nx dx
 H: Computing coefficients
@@ -1045,6 +1085,7 @@ X: For f(x) = x on (−π, π), find b₁.
 > b₁ = (1/π) ∫_{−π}^{π} x sin x dx; by parts, ∫ x sin x dx = −x cos x + sin x
 > [−x cos x + sin x]_{−π}^{π} = (π + 0) − (−π + 0) = 2π
 > So b₁ = 2π/π = 2
+P: Setting x = π/2 in the square-wave series gives 1 = (4/π)(1 − 1/3 + 1/5 − …), which is Leibniz's series π/4 = 1 − 1/3 + 1/5 − ….
 K: Coefficients come from integrals against cos nx and sin nx; even functions give cosines, odd functions sines; partial sums converge except for overshoot at jumps.
 !: Integrating over the wrong interval or forgetting the 1/π factor.
 Q: Which terms appear in the Fourier series of an odd function? | Only sine terms.
@@ -1055,11 +1096,16 @@ SRC: Kreyszig E, Advanced Engineering Mathematics (10th edn, Wiley 2011) | secon
 SRC: Körner TW, Fourier Analysis (Cambridge University Press 1988) | secondary | 1988 | https://www.cambridge.org/
 M1#maths-u06-29-q1@1: Which terms does the Fourier series of an even function contain? | Cosines (and a constant) only | Sines only | Both sines and cosines always | Exponentials only | No terms | Even functions are symmetric, matching the even cosine terms.
 M2#maths-u06-29-q2@2: In the square wave series (4/π)(sin x + sin 3x/3 + sin 5x/5 + …), what is the coefficient of sin 5x? | 4/(5π) | 1/5 | 4/π | 5 | 0 | Each term is (4/π) × sin(nx)/n for odd n, so n = 5 gives 4/(5π).
+NUM2@1: For f(x) = x on (−π, π), the sine coefficients are b_{n} = 2(−1)^{n+1}/n. Find b₃, to 4 decimal places. | 0.6667 | 0.001 |  | With n = 3, (−1)^{4} = 1, so b₃ = 2/3 ≈ 0.6667; the harmonics shrink like 1/n.
+M3@1,2: f(x) = x^{2} on (−π, π), repeated with period 2π. Which statement about its Fourier series is true? | It has only cosine terms and a constant | It has only sine terms | It has both sine and cosine terms | It has no constant term | x^{2} is even, so every b_{n} integral is zero; its average value π^{2}/3 is non-zero, so there is a constant term.
+SA2@1,2: For f(x) = |x| on (−π, π), repeated with period 2π, explain which Fourier coefficients are zero, find a₀, and interpret the constant term a₀/2. | |x| is even and sin nx is odd, so f(x) sin nx is odd and every b_n = (1/π)∫ f(x) sin nx dx over (−π, π) is zero: the series has only cosines and a constant. a₀ = (1/π)∫ |x| dx from −π to π = (1/π) × 2 × (π²/2) = π. The constant term is a₀/2 = π/2, the average value of |x| over one period, about which the cosine harmonics oscillate. | evenness gives b_n = 0 ; integral set up for a₀ ; a₀ = π ; constant term π/2 ; interprets it as the mean value
 
 ## Fourier Analysis
 S: Fourier analysis decomposes signals into their frequencies. Extending Fourier series to non-periodic functions gives the Fourier transform, the foundation of signal processing, image compression, MRI and quantum mechanics.
 O: Describe the Fourier transform and frequency spectrum
 O: Explain applications of Fourier analysis
+LV: Year 2 · Application
+EV: established | The Fourier transform decomposes a signal into frequencies, and the fast Fourier transform computes discrete spectra in O(n log n) time.
 T: Fourier transform | F(ω) = ∫ f(t)e^{−iωt} dt, giving the amount of each frequency ω in a signal
 T: Spectrum | The distribution of a signal's energy across frequencies
 H: From series to transforms
@@ -1075,6 +1121,7 @@ X: A signal is s(t) = 3 sin(2π × 50t) + sin(2π × 120t). Describe its spectru
 > It's a sum of two pure sine waves
 > One at 50 Hz with amplitude 3 and one at 120 Hz with amplitude 1
 > The spectrum has two spikes, at 50 Hz and 120 Hz, the first three times as tall
+P: **Sampling.** To capture a frequency f digitally you must sample at more than 2f, the Nyquist rate: CD audio samples at 44.1 kHz to record frequencies up to about 22 kHz.
 K: Fourier analysis decomposes signals into frequencies; the FFT computes spectra fast; it underpins signal processing and imaging.
 !: Expecting a short pulse to have a narrow spectrum: short in time means wide in frequency.
 Q: What does the FFT compute? | The discrete Fourier transform, in O(n log n) time.
@@ -1085,4 +1132,7 @@ SRC: Körner TW, Fourier Analysis (Cambridge University Press 1988) | secondary 
 SRC: Cooley JW, Tukey JW, An algorithm for the machine calculation of complex Fourier series, Mathematics of Computation 19(90) 297 | primary | 1965 | https://doi.org/10.1090/S0025-5718-1965-0178586-1
 M1#maths-u06-30-q1@1: What does the spectrum of a pure 440 Hz tone look like? | A single spike at 440 Hz | Spikes at every frequency | A flat line | A spike at 0 Hz | A spike at 220 Hz | A pure sine wave contains only its own frequency.
 M2#maths-u06-30-q2@2: Which technology relies on the Fourier transform to build images? | MRI scanning | Barcode reading | Thermometers | Mechanical clocks | Abacuses | MRI measures spatial frequency data and reconstructs the image with an inverse Fourier transform.
+NUM2@1: A signal is s(t) = 2 sin(2π × 60t) + 5 cos(2π × 25t). At what frequency, in Hz, is the tallest spike in its spectrum? | 25 | 0 | Hz | The 25 Hz component has amplitude 5 and the 60 Hz component amplitude 2, so the tallest spike is at 25 Hz.
+M3@2: A recording must capture tones up to 8 kHz. What sampling rate is needed? | More than 16 kHz | Exactly 8 kHz | About 4 kHz | Exactly 44.1 kHz, always | The Nyquist rate is twice the highest frequency, so sampling must exceed 16 kHz; slower sampling makes high tones alias to false lower ones.
+SA2@1,2: Explain why the fast Fourier transform matters, comparing the work needed for a direct discrete Fourier transform and the FFT on n = 2^{20} (about a million) samples. | A direct discrete Fourier transform computes each of n frequency values as a sum over all n samples, about n² operations. The FFT (Cooley and Tukey, 1965) splits the problem recursively into halves, needing about n log₂ n operations. For n = 2²⁰ ≈ 1.05 million, n² ≈ 1.1 × 10¹² while n log₂ n ≈ 2.1 × 10⁷, about 50,000 times less work. This is what makes real-time audio processing, image compression and MRI reconstruction practical. | direct DFT about n² operations ; FFT about n log n ; recursive halving idea ; numbers for n = 2²⁰ and a ratio near 50,000 ; names a practical application
 `;

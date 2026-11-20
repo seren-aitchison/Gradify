@@ -261,9 +261,80 @@
         "added SA3 on lactic acidosis and respiratory compensation in sepsis"
       ],
       "findings": []
+    },
+    {
+      "course": "nursing",
+      "lesson": "u02-25",
+      "action": "enhanced",
+      "changes": [
+        "added LV and EV",
+        "added M3 vignette on hypothermia as a sign of sepsis in an older person",
+        "added SA3 on fever, rigors and sweating"
+      ],
+      "findings": []
+    },
+    {
+      "course": "nursing",
+      "lesson": "u02-26",
+      "action": "enhanced",
+      "changes": [
+        "added LV and EV",
+        "added SA3 comparing nociceptive and neuropathic pain and their treatment"
+      ],
+      "findings": []
+    },
+    {
+      "course": "nursing",
+      "lesson": "u02-27",
+      "action": "enhanced",
+      "changes": [
+        "added LV and EV",
+        "was too thin (5 blocks): added common mistake on judging children against adult ranges",
+        "added SA3 vignette on falls and atypical presentation in older age"
+      ],
+      "findings": []
+    },
+    {
+      "course": "nursing",
+      "lesson": "u02-28",
+      "action": "enhanced",
+      "changes": [
+        "added LV and EV",
+        "added M3 vignette on necrosis in a heel pressure ulcer",
+        "added SA3 on benign versus malignant tumours"
+      ],
+      "findings": []
+    },
+    {
+      "course": "nursing",
+      "lesson": "u02-29",
+      "action": "enhanced",
+      "changes": [
+        "added LV and EV",
+        "was too thin (5 blocks): added worked example breaking the chain of infection for C. difficile",
+        "added M3 vignette on new diarrhoea on antibiotics",
+        "added SA3 on antimicrobial resistance and stewardship"
+      ],
+      "findings": []
+    },
+    {
+      "course": "nursing",
+      "lesson": "u02-30",
+      "action": "enhanced",
+      "changes": [
+        "added LV and EV",
+        "added SA3 on dominant and recessive inheritance (1 in 2; 1 in 4)"
+      ],
+      "findings": [
+        {
+          "class": "editorial",
+          "note": "M3 q3 right answer was over twice the length of every distractor (length cue); shortened it and lengthened one distractor without changing the keyed answer."
+        }
+      ]
     }
   ],
   "notes": [
-    "In progress: u02 lessons 01-24 done."
+    "u02 complete (30 lessons, 0 problems). u04 in progress.",
+    "u02-21 and u02-29 grew about 34% because they were too thin and needed an extra content block; all other u02 lessons are within about 31%."
   ]
 }

@@ -883,11 +883,141 @@
    "changes": [
     "level: A level · Application",
     "evidence status: established",
+    "explanation of the existing NUM question \"Find R when 8 sin x − 6 cos x …\" lengthened",
     "questions added: NUM3, SA3 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u06-21",
+   "action": "enhanced",
+   "changes": [
+    "level: A level · Fluency",
+    "evidence status: established",
+    "questions added: TF1, M3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u06-22",
+   "action": "enhanced",
+   "changes": [
+    "level: A level · Application",
+    "evidence status: established",
+    "questions added: M2, NUM2, SA3 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u06-23",
+   "action": "enhanced",
+   "changes": [
+    "level: A level · Application",
+    "evidence status: established",
+    "questions added: NUM3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u06-24",
+   "action": "enhanced",
+   "changes": [
+    "level: A level · Problem solving",
+    "evidence status: established",
+    "questions added: NUM2, M3, SA3 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u06-25",
+   "action": "enhanced",
+   "changes": [
+    "level: A level · Problem solving",
+    "evidence status: established",
+    "content added: ! (Squaring both sides (for example of sin x = cos x) can add false so…)",
+    "questions added: NUM2, NUM3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u06-26",
+   "action": "enhanced",
+   "changes": [
+    "level: A level · Application",
+    "evidence status: established",
+    "questions added: TF1, M3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u06-27",
+   "action": "enhanced",
+   "changes": [
+    "level: A level · Application",
+    "evidence status: established",
+    "questions added: NUM3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u06-28",
+   "action": "enhanced",
+   "changes": [
+    "level: A level · Application",
+    "evidence status: established",
+    "questions added: NUM3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u06-29",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 2 · Application",
+    "evidence status: established",
+    "content added: P (Setting x = π/2 in the square-wave series gives 1 = (4/π)(1 − 1/3 +…)",
+    "questions added: NUM2, M3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u06-30",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 2 · Application",
+    "evidence status: established",
+    "content added: P (**Sampling.** To capture a frequency f digitally you must sample at…)",
+    "questions added: NUM2, M3, SA2 (all linked to objectives)",
     "extended written answer (SA) with model answer and marking points added"
    ],
    "findings": []
   }
  ],
- "notes": []
+ "notes": [
+  "All 80 lessons (u05 50, u06 30) now have LV, EV, at least five questions at levels 1-3 linked to objectives, an SA extended answer, and at least six content blocks.",
+  "Levels follow the DfE GCSE/A level coverage mappings: mapped to both specs = 'GCSE and A level'; Further Maths topics (conics, hyperbolic functions) = 'A level'; beyond A level judged from content (Year 2/3; Symplectic Geometry = Postgraduate).",
+  "Every new numeric answer and worked example was recomputed (Python); NUM answers use ASCII minus.",
+  "Whole files grew by about 52% (u05) and 46% (u06) in bytes, above the ~30% guideline. Nearly all of the growth is assessment lines (SA model answers and marking points, plus the new questions); teaching prose grew by one block per thin lesson. Thin lessons gained one block each.",
+  "No SRC lines were added or changed."
+ ]
 }

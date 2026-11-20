@@ -261,116 +261,226 @@ TF3@2,3: A comet in an elliptical orbit moves fastest at its closest approach to
 SA3@1,2: A skater spins at 2.0 rev s^{-1} with arms out (I = 4.0 kg m^{2}) and pulls them in (I = 1.6 kg m^{2}). Find her new spin rate and explain what happens to her kinetic energy. | With no external torque about the vertical axis, L is conserved: 4.0 × 2.0 = 1.6 × f, so f = 5.0 rev s^{-1}. Rotational KE = L^{2}/(2I) rises by the factor 4.0/1.6 = 2.5. The extra energy comes from the work her muscles do pulling her arms inwards against their tendency to move outward. | L conserved, no external torque ; f = 5.0 rev s⁻¹ ; KE increases by 2.5 times ; Energy from muscular work
 
 ## Rotational dynamics
-S: Rotational dynamics applies τ = Iα (for a fixed axis) to find how torques change rotation. Problems with pulleys, wheels and hinged objects combine it with F = ma for the parts that translate.
+S: Rotational dynamics applies Στ = Iα (for a fixed axis) to find how torques change rotation. Problems with pulleys, wheels and hinged objects combine it with F = ma for the parts that translate, linked by a constraint such as a = αR.
+O: Apply Στ = Iα to bodies rotating about a fixed axis
+O: Combine rotational and translational equations through constraints
+O: Explain why tensions differ either side of a massive pulley
+PRE: Moment of inertia
+LV: A level · Application
 H: The laws
 E: Στ = Iα :: fixed axis
 E: ΣF = Ma_{cm} :: for translation of the centre of mass
 - Link equations through constraints: a = αr for a string unwinding without slipping.
+- Draw a separate free-body diagram for each body; choose a positive sense of rotation consistent with the direction of motion.
 H: Massive pulley (Atwood machine with a real pulley)
 E: a = (m_{1} − m_{2})g/(m_{1} + m_{2} + I/R^{2})
-P: The pulley's inertia appears as an extra effective mass I/R^{2}; tensions on either side now differ, since a net torque is needed to spin it up.
+P: The pulley's inertia appears as an extra effective mass I/R^{2}; tensions on either side now differ, since a net torque (T_{1} − T_{2})R is needed to spin it up.
 X: A 2.0 kg mass hangs from a string wrapped round a 4.0 kg solid cylinder (R = 0.1 m) on a fixed axle. Find a.
 > mg − T = ma; TR = (½MR^{2})(a/R) ⇒ T = ½Ma
-> a = mg/(m + M/2) = 19.6/4 = 4.9 m s^{-2}
+> a = mg/(m + M/2) = 19.6/4 = 4.9 m s^{-2}; T = ½ × 4.0 × 4.9 = 9.8 N
+K: Torque causes angular acceleration as force causes linear acceleration: Στ = Iα.
 !: With a massive pulley, the tension isn't the same on both sides; treating it as equal ignores the pulley's inertia.
+T: Newton's second law for rotation | Net torque about a fixed axis equals moment of inertia times angular acceleration, Στ = Iα
+T: Constraint | A geometric condition linking motions, such as a = αR for a string that does not slip
+SUM: Στ = Iα for rotation and ΣF = Ma for translation, joined by a = αR.
+SUM: A massive pulley adds I/R^{2} to the effective mass and needs unequal tensions.
+EV: established | Στ = Iα follows from Newton's second law applied to every particle of a rigid body
+SRC: OpenStax, University Physics Volume 1, section 10.7 "Newton's Second Law for Rotation" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/10-7-newtons-second-law-for-rotation
+SRC: AQA, A-level Physics specification (7408), section 3.11.1.4, Torque and angular acceleration | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: What is Newton's second law for rotation about a fixed axis? | Στ = Iα.
 Q: How does a pulley's inertia enter an Atwood machine? | As an extra effective mass I/R^{2} in the denominator.
-M1: A 6 N m torque acts on a body with I = 2 kg m^{2}. α = ? | 3 rad s^{-2} | 12 rad s^{-2} | 0.33 rad s^{-2} | 6 rad s^{-2} | α = τ/I.
-M2: A yo-yo released from rest falls with acceleration: | Less than g | Equal to g | Greater than g | Zero | Some energy goes into rotation; tension acts upward.
+M1@1: A 6 N m torque acts on a body with I = 2 kg m^{2}. α = ? | 3 rad s^{-2} | 12 rad s^{-2} | 0.33 rad s^{-2} | 6 rad s^{-2} | From Στ = Iα, α = τ/I = 6/2 = 3 rad s^{-2}; 12 multiplies instead of dividing.
+M2@2: A yo-yo released from rest falls with acceleration: | Less than g | Equal to g | Greater than g | Zero | The string's upward tension both reduces the net downward force and provides the torque that spins the yo-yo, so a < g.
+NUM2@1: A grinding wheel with I = 0.50 kg m^{2} must reach α = 8.0 rad s^{-2}. What net torque is needed, in N m? | 4 | 0.1 | N m | Στ = Iα = 0.50 × 8.0 = 4.0 N m; the torque is proportional to both the inertia and the required angular acceleration.
+M2@2,3: In an Atwood machine with a massive pulley, the heavier side's string tension compared with the lighter side's is: | Larger | Smaller | Equal | Zero | The net torque (T_{heavy} − T_{light})R must accelerate the pulley's rotation, so the tension on the heavier side is larger.
+M3@2: A solid cylinder (I = ½MR^{2}) rolls down without slipping, unwound by a string fixed at the top like a yo-yo. Its acceleration is: | 2g/3 | g/2 | g/3 | g | Mg − T = Ma and TR = ½MR^{2}(a/R) give T = ½Ma, so Mg = 3Ma/2 and a = 2g/3.
+SA2@2,3: A 1.0 kg mass hangs from a light string wound on a pulley of radius 0.20 m and I = 0.040 kg m^{2}. Set up the equations and find the acceleration, using g = 9.8 m s^{-2}. | For the mass: mg − T = ma. For the pulley: TR = Iα with α = a/R, so T = Ia/R^{2} = 0.040a/0.040 = 1.0a. Adding: mg = (m + I/R^{2})a, so a = 9.8/(1.0 + 1.0) = 4.9 m s^{-2}, and T = 4.9 N. The pulley behaves as an extra 1.0 kg of effective mass. | Equation for the mass ; Torque equation for the pulley ; Constraint a = αR ; a = 4.9 m s⁻²
 
 ## Rolling without slipping
-S: When a wheel rolls without slipping, its contact point is momentarily at rest, linking translation and rotation by v = ωR. Objects rolling down a slope accelerate at a rate set by how their mass is distributed.
+S: When a wheel rolls without slipping, its contact point is momentarily at rest, linking translation and rotation by v = ωR. Objects rolling down a slope accelerate at a rate set only by how their mass is distributed, not by their mass or size.
+O: Use the rolling condition v = ωR and the speed of points on a wheel
+O: Calculate the acceleration and final speed of bodies rolling down a slope
+O: Explain the role of static friction in rolling
+PRE: Rotational kinetic energy
+LV: A level · Application
 H: The constraint
 E: v_{cm} = ωR; a_{cm} = αR
 - Top of the wheel moves at 2v; contact point at 0.
 - Static friction acts at the contact point; it does no work when there's no slipping.
+- Rolling is equivalent to pure rotation about the instantaneous contact point.
 H: Rolling down a slope
 E: a = g sin θ/(1 + I/MR^{2})
 E: v = √(2gh/(1 + I/MR^{2})) :: speed after descending height h
 - Race down a slope: solid sphere (I/MR^{2} = 0.4) beats solid cylinder (0.5) beats hoop (1). Mass and radius don't matter, only shape.
 X: A solid ball rolls from rest down a 1.0 m high ramp. Find its speed at the bottom.
-> v = √(2 × 9.8 × 1.0/1.4) = 3.7 m s^{-1}
+> mgh = ½mv^{2}(1 + 2/5), so v = √(2 × 9.8 × 1.0/1.4) = 3.7 m s^{-1}
 > A frictionless sliding block would reach 4.4 m s^{-1}
+K: The fraction of energy that goes into spin, set by I/MR^{2}, decides how fast a body rolls.
 !: Friction is needed for rolling, but for pure rolling it's static and wastes no energy. (Rolling resistance from deformation is a separate effect.)
+T: Rolling without slipping | Motion in which the contact point is instantaneously at rest, so v_{cm} = ωR
+T: Instantaneous axis | The line through the contact point about which a rolling body is momentarily in pure rotation
+SUM: Rolling without slipping means v = ωR; the top moves at 2v and the contact point is at rest.
+SUM: Down a slope a = g sin θ/(1 + I/MR^{2}): sphere beats cylinder beats hoop, whatever their masses.
+EV: established | Rolling dynamics follows from combining F = ma and τ = Iα with v = ωR
+SRC: OpenStax, University Physics Volume 1, section 11.1 "Rolling Motion" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/11-1-rolling-motion
+SRC: AQA, A-level Physics specification (7408), section 3.11.1.2, Rotational kinetic energy | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: Which reaches the bottom of a slope first: a solid sphere or a hoop? | The solid sphere (smaller I/MR^{2}).
 Q: How fast does the top of a rolling wheel move? | 2v, twice the speed of the centre.
-M1: For a hoop rolling down a slope, a = ? | ½g sin θ | g sin θ | (5/7)g sin θ | (2/3)g sin θ | I/MR^{2} = 1.
-M2: What fraction of a rolling solid cylinder's KE is rotational? | 1/3 | 1/2 | 2/5 | 2/7 | Rotational ¼Mv^{2}, total ¾Mv^{2}.
+M1@2: For a hoop rolling down a slope, a = ? | ½g sin θ | g sin θ | (5/7)g sin θ | (2/3)g sin θ | For a hoop I/MR^{2} = 1, so a = g sin θ/(1 + 1) = ½g sin θ; (5/7) is the solid sphere and (2/3) the solid cylinder.
+M2@2: What fraction of a rolling solid cylinder's KE is rotational? | 1/3 | 1/2 | 2/5 | 2/7 | Rotational ½(½MR^{2})(v/R)^{2} = ¼Mv^{2}; total ½Mv^{2} + ¼Mv^{2} = ¾Mv^{2}; so the fraction is 1/3.
+NUM2@2: A solid cylinder rolls from rest down a slope, dropping 0.60 m. What is its speed at the bottom, in m s^{-1}? (g = 9.8 m s^{-2}) | 2.8 | 0.1 | m s^{-1} | v = √(2gh/(1 + ½)) = √(4gh/3) = √(4 × 9.8 × 0.60/3) = √7.84 = 2.8 m s^{-1}.
+TF1@1: For a wheel rolling without slipping, the point touching the ground is momentarily at rest. | true | The centre moves forward at v and the bottom point moves backward at ωR = v relative to the centre, so its ground speed is zero.
+M3@2,3: A heavy solid sphere and a light solid sphere of different radii roll down the same slope from rest. Which reaches the bottom first? | They arrive together | The heavy sphere | The light sphere | The larger sphere | a = g sin θ/(1 + I/MR^{2}) and I/MR^{2} = 2/5 for every solid sphere, so mass and radius cancel out.
+SA3@2,3: Explain why a hoop rolls down a slope more slowly than a solid sphere, and why the friction that makes them roll does not waste energy. | Released from the same height, each converts the same gpe per kilogram into kinetic energy, split between translation and rotation in the ratio set by I/MR^{2}. The hoop (1) puts half into spin, the sphere (0.4) only 2/7, so the sphere has more translational KE and moves faster at every height. Static friction acts at the contact point, which is momentarily at rest, so it does no work and dissipates nothing; it only transfers energy between translation and rotation. | Same energy per kg available ; Split set by I/MR² ; Hoop puts more into rotation ; Static friction does no work since contact point is at rest
 
 ## Rotational equilibrium
 S: A body is in rotational equilibrium when the net torque on it is zero about every point. Combined with zero net force, this lets you solve for unknown forces in beams, ladders, cranes and limbs.
+O: State and apply the two conditions for static equilibrium
+O: Choose a pivot that eliminates unknown forces
+O: Solve ladder, beam and lever problems including friction
+PRE: Equilibrium and statics
+LV: GCSE and A level · Application
 H: Method
 - Draw a free-body diagram with forces at their points of action.
 - Choose a pivot point that eliminates unknowns (torque of a force through that point is zero).
-- Sum clockwise and anticlockwise moments: Στ = 0.
+- Sum clockwise and anticlockwise moments: Στ = 0 (the principle of moments).
 - Add force balance in x and y as needed.
+P: Three non-parallel forces in equilibrium must pass through one point: otherwise one of them would have a moment about the intersection of the other two. This is a quick check on ladder and hinge diagrams.
 H: Centre of gravity
-P: The weight of a body can be taken to act at its centre of gravity. To find it experimentally, hang the body from two points; the plumb lines cross at the CG.
+P: The weight of a body can be taken to act at its centre of gravity. To find it experimentally, hang the body from two points; the plumb lines cross at the CG. A body resting on a base is stable while the vertical line through its CG falls inside the base.
 X: A uniform ladder (length 5 m, weight 200 N) leans against a smooth wall at 60° to the ground. Find the minimum friction coefficient at the floor.
 > Floor: N = 200 N, friction f. Wall: horizontal force R = f
 > Moments about the foot: R × 5 sin 60° = 200 × 2.5 cos 60° ⇒ R = 57.7 N
 > μ ≥ 57.7/200 = 0.29
+K: Equilibrium needs both ΣF = 0 and Στ = 0; either alone is not enough.
 !: In equilibrium, net torque is zero about every point, so pick whichever point makes the algebra easiest.
+T: Principle of moments | For a body in equilibrium, the sum of clockwise moments about any point equals the sum of anticlockwise moments
+T: Centre of gravity | The point through which the whole weight of a body can be taken to act
+SUM: Static equilibrium: ΣF = 0 and Στ = 0 about any point.
+SUM: Take moments about the point where unknown forces act to remove them from the equation.
+EV: established | The two conditions for equilibrium follow from Newton's second law for translation and rotation
+SRC: OpenStax, University Physics Volume 1, section 12.1 "Conditions for Static Equilibrium" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/12-1-conditions-for-static-equilibrium
+SRC: OpenStax, University Physics Volume 1, section 12.2 "Examples of Static Equilibrium" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/12-2-examples-of-static-equilibrium
+SRC: AQA, A-level Physics specification (7408), section 3.4.1.2, Moments | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: Why can you choose any point as the pivot in an equilibrium problem? | If net force and net torque are zero, the torque is zero about every point.
 Q: How can you find the centre of gravity of an irregular sheet? | Hang it from two points; the vertical lines through the suspension points cross at the CG.
-M1: A 1 m metre rule balances at 50 cm. A 100 g mass at 10 cm needs what mass at 90 cm to balance? | 100 g | 50 g | 200 g | 10 g | Equal arms.
-M2: In the forearm, the biceps attaches 4 cm from the elbow; a 30 N load is held 35 cm away. Biceps force (ignoring the arm's weight)? | 262 N | 30 N | 3.4 N | 1050 N | 30 × 35/4.
+M1@3: A 1 m metre rule balances at 50 cm. A 100 g mass at 10 cm needs what mass at 90 cm to balance? | 100 g | 50 g | 200 g | 10 g | Both masses are 40 cm from the pivot, so equal moments need equal masses: 100 g × 40 cm = m × 40 cm.
+M2@3: In the forearm, the biceps attaches 4 cm from the elbow; a 30 N load is held 35 cm away. Biceps force (ignoring the arm's weight)? | 262 N | 30 N | 3.4 N | 1050 N | Moments about the elbow: F × 4 = 30 × 35, so F = 262 N; the short moment arm makes muscles exert large forces.
+NUM2@3: A uniform 4.0 m plank of weight 300 N rests on supports at its two ends. A 500 N person stands 1.0 m from the left end. What is the force from the right-hand support, in N? | 275 | 1 | N | Moments about the left end: R × 4.0 = 300 × 2.0 + 500 × 1.0 = 1100, so R = 275 N (and the left support gives 525 N).
+TF1@1: An object with zero net force on it must be in equilibrium. | false | A couple gives zero net force but a non-zero torque, so the body would start rotating; equilibrium needs both ΣF = 0 and Στ = 0.
+M3@2,3: In the ladder problem, which pivot removes two unknown forces at once? | The foot of the ladder | The top of the ladder | The ladder's midpoint | Any point on the wall | Both the normal force and friction act at the foot, so taking moments there leaves only the wall force and the weight.
+SA3@1,3: A uniform 2.0 m shelf of weight 40 N is hinged to a wall at one end and held horizontal by a vertical string at the other end. A 20 N box sits 0.50 m from the wall. Find the string tension and the hinge force, explaining your method. | Take moments about the hinge to remove its unknown force: T × 2.0 = 40 × 1.0 + 20 × 0.50 = 50, so T = 25 N. Vertical force balance then gives the hinge force: H + 25 = 40 + 20, so H = 35 N upwards. Both conditions, Στ = 0 and ΣF = 0, are needed. | Moments about the hinge ; T = 25 N ; Force balance for hinge ; H = 35 N up
 
 ## Parallel-axis theorem
 S: The parallel-axis theorem gives the moment of inertia about any axis from the moment about a parallel axis through the centre of mass. It saves redoing integrals for pendulums, hinged doors and offset wheels.
+O: State and apply I = I_{cm} + Md^{2}
+O: Explain why I is smallest about an axis through the centre of mass
+O: Use the theorem to find the period of a physical pendulum
+PRE: Moment of inertia
+LV: A level · Application
 H: The theorem
 E: I = I_{cm} + Md^{2} :: d is the distance between the parallel axes
 - I is always smallest about an axis through the centre of mass.
 - Only works from the CM axis; to shift between two non-CM axes, go via the CM.
+P: Proof sketch: write each mass element's position as r = d + r′, measured from the CM axis. Then Σmr^{2} = Σmr′^{2} + Md^{2} + 2d·Σmr′, and the last term vanishes because Σmr′ = 0 about the centre of mass.
 H: Physical pendulum
 E: T = 2π√(I/(Mgd)) :: d = distance from pivot to CM
 P: A rod swinging from one end has I = ML^{2}/12 + M(L/2)^{2} = ML^{2}/3 and d = L/2, giving T = 2π√(2L/3g): shorter than a simple pendulum of length L.
 X: Find I for a solid disc (M = 2 kg, R = 0.2 m) about an axis through its rim, perpendicular to the disc.
 > I = ½MR^{2} + MR^{2} = 1.5MR^{2}
 > = 1.5 × 2 × 0.04 = 0.12 kg m^{2}
+K: Shifting an axis a distance d from the centre of mass always adds Md^{2}.
 !: The theorem needs one of the two axes to pass through the centre of mass.
+T: Parallel-axis theorem | I about any axis equals I about a parallel axis through the centre of mass plus Md^{2}
+T: Physical pendulum | A rigid body swinging about a pivot, with period 2π√(I/Mgd)
+SUM: I = I_{cm} + Md^{2}, valid only when one axis passes through the CM.
+SUM: It gives the moment of inertia of offset bodies and the period of physical pendulums.
+EV: established | The parallel-axis theorem is an exact result of the definition of the centre of mass
+SRC: OpenStax, University Physics Volume 1, section 10.5 "Calculating Moments of Inertia" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/10-5-calculating-moments-of-inertia
+SRC: OpenStax, University Physics Volume 1, section 15.4 "Pendulums" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/15-4-pendulums
 Q: State the parallel-axis theorem. | I = I_{cm} + Md^{2}.
 Q: About which of a family of parallel axes is I smallest? | The one through the centre of mass.
-M1: A rod's I about its centre is ML^{2}/12. About its end: | ML^{2}/3 | ML^{2}/4 | ML^{2}/12 | ML^{2} | Add M(L/2)^{2}.
-M2: A solid sphere's I about a tangent axis is: | (7/5)MR^{2} | (2/5)MR^{2} | MR^{2} | (3/5)MR^{2} | (2/5) + 1.
+M1@1: A rod's I about its centre is ML^{2}/12. About its end: | ML^{2}/3 | ML^{2}/4 | ML^{2}/12 | ML^{2} | The end is d = L/2 from the centre, so I = ML^{2}/12 + M(L/2)^{2} = ML^{2}/12 + 3ML^{2}/12 = ML^{2}/3.
+M2@1: A solid sphere's I about a tangent axis is: | (7/5)MR^{2} | (2/5)MR^{2} | MR^{2} | (3/5)MR^{2} | A tangent axis is d = R from the centre: I = (2/5)MR^{2} + MR^{2} = (7/5)MR^{2}.
+NUM2@1: A hoop of mass 0.50 kg and radius 0.20 m hangs on a nail through its rim. What is its I about the nail (axis perpendicular to the hoop), in kg m^{2}? | 0.04 | 0.001 | kg m^{2} | I = I_{cm} + Md^{2} = MR^{2} + MR^{2} = 2 × 0.50 × 0.040 = 0.040 kg m^{2}.
+TF2@2: A body's moment of inertia about an axis 1 m from its centre of mass can be smaller than about the parallel axis through the centre of mass. | false | The theorem adds Md^{2}, which is always positive, so the CM axis gives the smallest I of any family of parallel axes.
+M3@3: A uniform metre rule swings from one end. Its period is about: | 1.6 s | 2.0 s | 1.0 s | 2.8 s | T = 2π√(2L/3g) = 2π√(2 × 1.0/(3 × 9.8)) = 2π × 0.26 ≈ 1.6 s; a simple pendulum of 1 m would take 2.0 s.
+SA3@1,3: Explain, using the parallel-axis theorem, why a uniform rod swinging from one end has a shorter period than a simple pendulum of the same length. | For the rod about its end, I = ML^{2}/12 + M(L/2)^{2} = ML^{2}/3, and the CM is d = L/2 below the pivot, so T = 2π√(I/Mgd) = 2π√(2L/3g). A simple pendulum has T = 2π√(L/g). The rod's mass is spread along its length, much of it nearer the pivot, so its equivalent length is only 2L/3 and it swings faster. | Uses I = I_cm + Md² to get ML²/3 ; d = L/2 ; T = 2π√(2L/3g) ; Equivalent length 2L/3 is shorter
 
 ## Perpendicular-axis theorem
 S: For a flat (planar) object, the moment of inertia about an axis perpendicular to its plane equals the sum of the moments about two perpendicular axes lying in the plane and crossing at the same point.
+O: State the perpendicular-axis theorem and its condition of validity
+O: Use it with symmetry to find in-plane moments of inertia
+O: Combine it with the parallel-axis theorem
+PRE: Parallel-axis theorem
+LV: Year 1 · Application
 H: The theorem
 E: I_{z} = I_{x} + I_{y} :: lamina in the xy-plane
 - Only valid for thin flat objects (laminae).
 - Combined with symmetry it finds in-plane moments quickly.
+P: Proof: I_{z} = ∫(x^{2} + y^{2})dm = ∫x^{2}dm + ∫y^{2}dm = I_{y} + I_{x}, because for a lamina z = 0.
+H: Worked results
 X: Find I for a thin ring about a diameter.
 > About its axis, I_{z} = MR^{2}
 > By symmetry I_{x} = I_{y}, so I_{x} = MR^{2}/2
 X: A thin disc about a diameter.
 > I_{z} = ½MR^{2}, so I_{diameter} = ¼MR^{2}
-P: Proof: I_{z} = ∫(x^{2} + y^{2})dm = ∫x^{2}dm + ∫y^{2}dm = I_{y} + I_{x}, because for a lamina z = 0.
+- Square plate of side a: I_{z} = Ma^{2}/6, so each in-plane axis through the centre gives Ma^{2}/12.
+K: For a lamina, the perpendicular-axis moment is the sum of the two in-plane moments through the same point.
 !: Don't apply the perpendicular-axis theorem to 3D bodies like spheres or thick cylinders; it fails because z ≠ 0.
+T: Lamina | A thin flat body whose thickness is negligible compared with its other dimensions
+T: Perpendicular-axis theorem | For a lamina, I_{z} = I_{x} + I_{y} for perpendicular axes meeting at a point
+SUM: For a lamina only, I_{z} = I_{x} + I_{y}.
+SUM: With symmetry (I_{x} = I_{y}) it gives in-plane moments as half the perpendicular one.
+EV: established | The theorem follows exactly from r^{2} = x^{2} + y^{2} for a planar body
+SRC: OpenStax, University Physics Volume 1, section 10.5 "Calculating Moments of Inertia" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/10-5-calculating-moments-of-inertia
+SRC: OpenStax, University Physics Volume 1, section 10.4 "Moment of Inertia and Rotational Kinetic Energy" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/10-4-moment-of-inertia-and-rotational-kinetic-energy
 Q: State the perpendicular-axis theorem. | For a lamina, I_{z} = I_{x} + I_{y} about perpendicular axes meeting at a point, with z perpendicular to the plane.
 Q: What is the moment of inertia of a thin disc about a diameter? | ¼MR^{2}.
-M1: A square plate has I = A about each in-plane axis through its centre parallel to the sides. About the perpendicular axis: | 2A | A | A/2 | 4A | I_{z} = I_{x} + I_{y}.
-M2: The perpendicular-axis theorem applies to: | Thin flat objects | Any solid | Spheres only | Rods only | It requires the mass to lie in a plane.
+M1@2: A square plate has I = A about each in-plane axis through its centre parallel to the sides. About the perpendicular axis: | 2A | A | A/2 | 4A | By the perpendicular-axis theorem I_{z} = I_{x} + I_{y} = A + A = 2A for this flat plate.
+M2@1: The perpendicular-axis theorem applies to: | Thin flat objects | Any solid | Spheres only | Rods only | The proof needs z = 0 for every mass element, so the mass must lie in a plane (a lamina).
+NUM2@2: A thin disc has M = 2.0 kg and R = 0.30 m. What is its I about a diameter, in kg m^{2}? | 0.045 | 0.001 | kg m^{2} | I_{z} = ½MR^{2} = 0.090 kg m^{2}; by symmetry each diameter gets half: ¼MR^{2} = 0.045 kg m^{2}.
+TF1@1: The perpendicular-axis theorem gives I for a solid sphere about a diameter from its value about another diameter. | false | A sphere is not a lamina: its mass has z ≠ 0, so I_{z} ≠ I_{x} + I_{y}; in fact all three diameters give (2/5)MR^{2}.
+M3@3: A thin ring (mass M, radius R) swings about a tangent line lying in its plane. Its I is: | (3/2)MR^{2} | 2MR^{2} | ½MR^{2} | MR^{2} | About a diameter I = ½MR^{2} (perpendicular-axis theorem); the parallel tangent is R away, so I = ½MR^{2} + MR^{2} = (3/2)MR^{2}.
+SA2@1,2: Show how the perpendicular-axis theorem gives the moment of inertia of a thin disc about a diameter, and state why it could not be used for a thick cylinder. | For the disc lying in the xy-plane, I_{z} = ½MR^{2} about the central axis. Symmetry makes every diameter equivalent, so I_{x} = I_{y}, and I_{z} = I_{x} + I_{y} = 2I_{x} gives I_{x} = ¼MR^{2}. The theorem relies on r^{2} = x^{2} + y^{2}, which holds only if all mass has z = 0; a thick cylinder has mass spread along z, so its moments do not add this way. | I_z = ½MR² ; Symmetry gives I_x = I_y ; I_diameter = ¼MR² ; Needs z = 0, fails for thick body
 
 ## Gyroscopic motion
 S: A spinning gyroscope resists changes in the direction of its axis. A torque doesn't tip it over; instead the axis swings sideways (precesses), because torque changes angular momentum in the direction of the torque.
+O: Explain precession using τ = dL/dt
+O: Explain spin stabilisation in terms of large angular momentum
+O: Describe practical uses of gyroscopes
+PRE: Angular momentum
+LV: Year 1 · Physical reasoning
 H: How it works
 E: τ = dL/dt :: torque adds angular momentum in its own direction, perpendicular to L
 - A fast-spinning wheel has large L; a small torque changes its direction slowly.
+- For a gyroscope supported at one end, gravity's torque is horizontal, so L swings round horizontally instead of tipping down.
 - Spin stabilisation: rifle bullets, frisbees, spinning satellites keep their orientation.
 H: Uses
-- Gyrocompasses align with the Earth's rotation axis.
+- Gyrocompasses align with the Earth's rotation axis, so they point to true north.
 - Inertial navigation (with accelerometers) in aircraft, submarines and spacecraft.
 - Control moment gyros turn the ISS and space telescopes without fuel.
 - MEMS vibrating gyroscopes in phones measure rotation via the Coriolis effect.
 X: Why is a moving bicycle easier to balance than a stationary one?
 > Spinning wheels' gyroscopic effects contribute, but the main stabiliser is steering geometry (trail) that turns the wheel into a lean
 > Experiments with counter-rotating wheels show bicycles balance even without net gyroscopic effects
+K: A torque perpendicular to L changes its direction, not its size: the axis precesses.
 !: A gyroscope doesn't defy gravity; gravity's torque is what drives the precession, and friction eventually lets it fall.
+T: Gyroscope | A rapidly spinning rotor whose large angular momentum resists changes in the direction of its axis
+T: Precession | The rotation of a spinning body's axis caused by a torque perpendicular to its angular momentum
+SUM: τ = dL/dt: a torque at right angles to L rotates L rather than lengthening it.
+SUM: Large spin L makes orientation hard to change, which is used for stabilisation and navigation.
+EV: established | Gyroscopic precession follows from τ = dL/dt
+SRC: OpenStax, University Physics Volume 1, section 11.4 "Precession of a Gyroscope" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/11-4-precession-of-a-gyroscope
+SRC: OpenStax, College Physics 2e, section 10.7 "Gyroscopic Effects: Vector Aspects of Angular Momentum" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/10-7-gyroscopic-effects-vector-aspects-of-angular-momentum
 Q: Why does a torque on a spinning gyroscope cause precession rather than toppling? | The torque changes L in its own direction, which is perpendicular to L, so L rotates sideways.
 Q: Name two uses of gyroscopes. | Inertial navigation, gyrocompasses, spacecraft attitude control, phone motion sensing.
-M1: Spinning a bullet makes it: | Stable in direction | Faster | Heavier | Less affected by gravity | Its angular momentum resists tumbling.
-M2: How do phones measure rotation? | MEMS gyroscopes sensing Coriolis forces on vibrating masses | Tiny spinning wheels | GPS | Magnetometers only | Vibrating structures deflect under rotation.
+M1@2: Spinning a bullet makes it: | Stable in direction | Faster | Heavier | Less affected by gravity | Its spin angular momentum means aerodynamic torques only make the axis precess slightly, so it resists tumbling.
+M2@3: How do phones measure rotation? | MEMS gyroscopes sensing Coriolis forces on vibrating masses | Tiny spinning wheels | GPS | Magnetometers only | A vibrating micro-structure is deflected sideways by the Coriolis effect when the phone rotates, and the deflection is measured.
+TF1@1: A torque applied to a fast-spinning gyroscope changes mainly the direction of its angular momentum, not its size. | true | When τ is perpendicular to L, dL is perpendicular to L, so L turns without growing; this sideways turning is precession.
+M2@1: A gyroscope's axle is horizontal and supported at one end. Gravity's torque on it points: | Horizontally, perpendicular to the axle | Vertically downwards | Along the axle | Vertically upwards | τ = r × F with r along the horizontal axle and F downward gives a horizontal torque at right angles to the axle, so L swings round horizontally.
+M3@1,2: The same torque is applied to two identical gyroscopes, one spinning twice as fast. The faster one: | Precesses at half the rate | Precesses twice as fast | Topples more quickly | Precesses at the same rate | The precession rate is τ/L, and doubling the spin doubles L, so the axis turns half as fast.
+SA2@1,2: A gyroscope spins with its axle horizontal, supported at one end. Explain why it precesses around the support instead of falling. | Gravity acting at the centre of mass gives a torque about the support, τ = r × mg, which is horizontal and perpendicular to the axle. Since τ = dL/dt, in a short time L gains a small horizontal piece at right angles to itself, so L (and the axle) turns sideways rather than tipping. Repeated, this makes the axle sweep round in a horizontal circle: precession. It falls only once friction has slowed the spin. | Gravity gives a horizontal torque ; τ = dL/dt adds dL perpendicular to L ; L turns rather than tips ; Continuous turning is precession
 
 ## Precession and nutation
 S: Precession is the slow circling of a spinning body's axis under a torque; nutation is a nodding wobble superimposed on it. Both appear in tops, gyroscopes, the Earth's axis and spinning nuclei in MRI.
