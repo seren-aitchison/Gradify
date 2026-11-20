@@ -476,7 +476,7 @@ Q: When did the BBC become a public corporation? | In 1927, under Royal Charter.
 Q: How did politicians use radio? | Roosevelt and Churchill used it to speak directly to the public.
 Q: Who controlled the media in Nazi Germany? | Joseph Goebbels's ministry controlled the press, radio and cinema.
 Q: What was the "People's Receiver"? | A cheap radio that spread the Nazi regime's message.
-Q: Did democracies use propaganda? | Yes, in both world wars.
+Q: Besides totalitarian states, which states used propaganda, and when? | Democracies, in both world wars.
 Q: When did BBC television begin? | In 1936.
 Q: What is public service broadcasting? | Broadcasting run to inform and educate rather than for profit.
 Q: What is a risk of mass media in democracies? | The power of press owners to shape opinion.
