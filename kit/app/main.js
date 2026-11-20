@@ -5,6 +5,7 @@ import { GROUPS } from "../core/sites.js";
 import { icon } from "../core/icons.js";
 import { tile, ink } from "../core/colour.js";
 import { SAMPLE, readFile } from "../notes/studio.js";
+import { renderJot, jotStripHtml, wireJotStrip, takePackDraft } from "../notes/jot.js";
 import { LocalStore, CloudStore, cloudConfigured, scopeToSite, authProviders } from "../data/store.js";
 import { describePlan, mySubscription, myAllowance, openPortal, startCheckout, AI_ALLOWANCES, PLAN_PRICES } from "../data/billing.js";
 import { OFFER, captureOffer, offerToShow, storedOffer, dismissOffer, offerForAccount, offerTerms } from "../data/offer.js";
@@ -131,7 +132,7 @@ const NAV = [
 // the phone tab bar has room for five: the rest are under More
 const TABS = ["today", "study", "notes", "plan"];
 // screens that belong to a section without being one
-const SECTION_OF = { deck: "notes", new: "notes", topic: "progress", start: null, goal: "goals", session: "today" };
+const SECTION_OF = { deck: "notes", new: "notes", jot: "notes", topic: "progress", start: null, goal: "goals", session: "today" };
 function drawNav() {
   // the LifeOS sidebar (wide screens) and, inside it, every section; the top bar keeps the brand and account
   let side = document.querySelector(".lo-side");
@@ -511,6 +512,8 @@ async function renderNew(arg) {
   drop.addEventListener("drop", (e) => { e.preventDefault(); drop.classList.remove("over"); take(e.dataTransfer.files[0]); });
   $("#sample").addEventListener("click", () => { $("#text").value = SAMPLE; $("#title").value = "Cardiac cycle"; status.textContent = "Sample notes added. Press “Make my study pack”."; });
   if (arg === "sample") $("#sample").click();
+  // a quick note sent here to become flashcards (kit/notes/jot.js)
+  { const d = takePackDraft(); if (d) { $("#text").value = d.text; $("#title").value = d.title; status.textContent = "Your note is ready. Press “Make my study pack”."; } }
   $("#upload").addEventListener("submit", async (e) => {
     e.preventDefault();
     const text = $("#text").value.trim();
@@ -696,6 +699,7 @@ async function renderNotes() {
   const masteryOf = (docId) => { const ts = topics.filter((t) => t.documentId === docId), n = ts.reduce((a, t) => a + t.cards, 0); return n ? ts.reduce((a, t) => a + t.mastery * t.cards, 0) / n : 0; };
   view.innerHTML = `<section class="notes">
     <div class="deck-head"><div><span class="kicker lo-kicker">${icon("layers")}Library</span><h1>Your library</h1><p class="sub">Your own notes and their flashcards, and the flashcards and questions you're revising in each Gradify course.</p></div><a class="btn btn-primary lg" href="#/new"><span>+ Add notes</span></a></div>
+    ${jotStripHtml()}
     ${courseCards.length ? `<h2 class="lo-h">From your courses</h2><div class="lo-grid">${courseCards.map((c) => `<article class="panel glass course-card"><div class="cc-top"><span class="cc-site">${esc(c.site)}</span></div><h3>${esc(c.name)}</h3>
       <p class="sub">${c.cards} flashcard${c.cards === 1 ? "" : "s"}${c.dueCards ? ` · ${c.dueCards} due` : " · nothing due"}${c.revisit ? ` · ${c.revisit} question${c.revisit === 1 ? "" : "s"} to revisit` : ""}</p>
       <div class="row-actions">${c.href && (c.dueCards || c.revisit) ? `<a class="btn btn-light lg btn-sm" href="${c.href}#/review"><span>Review now</span></a>` : ""}${c.href ? `<a class="btn btn-ghost lg btn-sm" href="${c.href}"><span>Open course</span></a>` : ""}</div></article>`).join("")}</div>
@@ -707,10 +711,12 @@ async function renderNotes() {
       const m = masteryOf(d.id);
       return `<a class="doc panel glass" href="#/deck/${d.id}" style="--c:#${s.c};--tile:${tile(s.c)};--ink:${ink(s.c)}"><span class="doc-g3d" data-g3d="${esc(d.title)}" data-g3d-size="52" data-g3d-site="${esc(d.site || profile.site || "Gradify")}" data-g3d-unique></span><b>${esc(d.title)}</b>
         <span class="sub">${cs.length} cards · ${due ? `${due} due` : "nothing due"} · ${fmtDate(d.created_at)}</span><span class="goal-bar" title="${Math.round(m * 100)}% mastery"><i style="width:${Math.round(m * 100)}%"></i></span></a>`;
-    }).join("")}</div>` : `<div class="empty-state panel glass">${icon("upload")}<h3>No notes yet</h3><p class="sub">Add your first set of notes and Gradify will make flashcards from them.</p><a class="btn btn-primary lg" href="#/new"><span>Add notes</span></a></div>`}
+    }).join("")}</div>` : `<div class="empty-state panel glass">${icon("upload")}<h3>No study packs yet</h3><p class="sub">Add a PDF or paste your notes, or turn a quick note into one, and Gradify makes flashcards from them.</p><a class="btn btn-primary lg" href="#/new"><span>Add notes</span></a></div>`}
   </section>`;
+  wireJotStrip(view);
 }
 routes.notes = renderNotes;
+routes.jot = (arg) => renderJot(view, arg, { toast });
 // Tools (kit/tools): the lesson search, mind map creator, flashcard creator and notes converter, loaded when opened
 routes.tools = async () => (await import("../tools/tools.js")).renderTools(view, { store, toast, site: profile.site || "Gradify", pricing: PRICING });
 
