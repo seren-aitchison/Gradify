@@ -597,7 +597,7 @@ Q: Who set out the French hierarchy of genres in 1667? | André Félibien.
 Q: How did Cézanne's still lifes lead towards Cubism? | His apples became studies of form and multiple viewpoints, with tilted tabletops and objects seen from different angles.
 Q: What did Giorgio Morandi paint? | The same bottles and boxes for decades in muted tones.
 Q: Why is lining objects up evenly with flat lighting a mistake in still life? | It looks flat and static; overlap, varied heights, a dominant object and directional light make it work.
-Q: Does every Dutch still life carry moral symbolism? | It is debated; some historians stress the display of wealth, skill and trade over hidden meanings.
+Q: What do some historians stress instead of hidden moral symbolism in Dutch still life? | The display of wealth, skill and trade.
 
 ## Landscape painting
 LV: Introductory · Application
