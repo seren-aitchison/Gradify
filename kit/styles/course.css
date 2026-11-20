@@ -1452,3 +1452,24 @@ html[data-motion="reduce"] .co-main.cx-enter { animation: none; }
 .cx-tquest { border-color: rgba(140, 39, 202, .45); background: radial-gradient(120% 140% at 0% 0%, rgba(140, 39, 202, .14), transparent 60%), rgba(var(--surface-rgb), .5); }
 .cx-tqxp { font: 600 12px var(--mono); color: var(--mute); }
 .cx-tqname { margin: 0 0 10px; font-size: 13.5px; color: var(--mute); } .cx-tqname b { display: block; font-size: 16px; color: var(--fg); }
+
+/* ---------- Touch: tap targets at least 44px (WCAG 2.5.5) ----------
+   Only on touch screens (pointer: coarse), so mouse layouts are unchanged. Inline links grow an invisible margin of
+   tap area (padding taken back by a negative margin), so nothing on the page moves. */
+@media (pointer: coarse) {
+  .cx-crumbs a, .cx-upnext a, .cx-sech a, .cx-qt a { padding-block: 14px; margin-block: -14px; }
+  .cx-stages a { min-height: 44px; }
+  .co-tabs > a, .cx-morebtn { min-height: 44px; display: inline-flex; align-items: center; }
+  .cx-pin { min-height: 44px; padding-block: 8px; }
+  .cx-ib { width: 44px; height: 44px; }
+  .cx-ob { min-height: 44px; min-width: 44px; justify-content: center; }
+  .co-askform input, .co-askform .btn, .co-dirbox .btn { min-height: 44px; }
+  .co-tmodes button, .aq .btn { min-height: 44px; }
+  .cx-mrl { min-height: 44px; }
+  /* the mastery grid's cells (one per lesson, 12px) are too dense to tap one by one: on a touch screen the row's
+     chapter link is the target, and the cells are its picture */
+  .cx-mrc a { pointer-events: none; }
+  /* the activity heatmap: each day is a 30px tap (above WCAG's 24px minimum); the grid scrolls sideways */
+  .co-heat { grid-auto-columns: 30px; grid-template-rows: repeat(7, 30px); }
+  .co-heat > * { width: 30px; height: 30px; }
+}
