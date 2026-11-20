@@ -24,6 +24,9 @@ export async function transition(update) {
 
 export function jumpTo(el, offset = 90) {
   if (!el) return;
+  // a place inside a closed accordion opens it first, so jumping there always shows something
+  if (el.matches("details")) el.open = true;
+  for (let d = el.closest("details"); d; d = d.parentElement?.closest("details")) d.open = true;
   scrollTo({ top: el.getBoundingClientRect().top + scrollY - offset, behavior: reduced() ? "auto" : "smooth" });
 }
 
