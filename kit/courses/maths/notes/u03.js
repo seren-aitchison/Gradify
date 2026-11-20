@@ -889,6 +889,8 @@ SA2@1,2: Explain why 2^{x} and √x + 1 are not polynomials, and describe the gr
 S: Polynomial algebra is adding, subtracting and multiplying polynomials, and comparing their coefficients. Equating coefficients is a powerful tool for finding unknown constants.
 O: Add, subtract and multiply polynomials
 O: Use equating coefficients to find unknowns in identities
+LV: A level · Application
+EV: established | Two polynomials are identical exactly when the coefficients of each power are equal.
 T: Equating coefficients | If two polynomials are identical, their coefficients of each power are equal
 T: Like powers | Terms with the same power of the variable
 H: Operations
@@ -916,11 +918,15 @@ SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | secondary | 1993 | https:/
 NUM1#maths-u03-25-q1@1: Find the coefficient of x in (3x^{2} − 2x + 5)(x − 4). | 13 | 0 |  | The x terms are −2x × (−4) = 8x and 5 × x = 5x, giving 13x.
 M2#maths-u03-25-q2@2: If 2x^{2} + 9x + 7 ≡ (2x + a)(x + b), what are a and b? | a = 7, b = 1 | a = 1, b = 7 | a = 2, b = 7 | a = 9, b = 7 | a = 7, b = 2 | Expanding (2x + 7)(x + 1) gives 2x^{2} + 2x + 7x + 7 = 2x^{2} + 9x + 7.
 M3#maths-u03-25-q3@2: What is the degree of (x^{4} − 1)(x^{3} + x) − x^{7}? | 5 | 7 | 4 | 12 | 3 | The x^{7} terms cancel, leaving x^{5} − x^{3} − x: degree 5.
+M2@1: Simplify (2x^{3} − x + 4) − (x^{3} + 3x^{2} − 2x + 1). | x^{3} − 3x^{2} + x + 3 | x^{3} + 3x^{2} − 3x + 5 | x^{3} − 3x^{2} − 3x + 3 | 3x^{3} − 3x^{2} + x + 3 | Subtract like powers, changing every sign in the second bracket: x^{3} − 3x^{2} + (−x + 2x) + (4 − 1) = x^{3} − 3x^{2} + x + 3.
+SA3@2: Find A, B and C such that 2x^{2} − 3x + 5 ≡ A(x − 1)^{2} + B(x − 1) + C, explaining your method. | Expand: A(x^{2} − 2x + 1) + B(x − 1) + C = Ax^{2} + (B − 2A)x + (A − B + C). Equate coefficients: x^{2}: A = 2; x: B − 2A = −3, so B = 1; constants: A − B + C = 5, so C = 4. (Or substitute x = 1 to get C = 4 at once.) Check with x = 0: 2 − 1 + 4 = 5 ✓. | Expands the right-hand side ; Equates the x^{2} coefficients to get A = 2 ; Equates x coefficients to get B = 1 ; Finds C = 4 and checks
 
 ## Polynomial Division
 S: Polynomials can be divided like numbers, giving a quotient and a remainder. Division finds the other factors once one is known and is essential for solving cubics and simplifying rational expressions.
 O: Divide a polynomial by a linear expression using long division or synthetic division
 O: Interpret the quotient and remainder
+LV: A level · Application
+EV: established | Any polynomial p(x) can be written as d(x)q(x) + r(x), with the remainder's degree less than the divisor's.
 T: Quotient | The result of the division (the polynomial part)
 T: Remainder | What's left over: for division by a linear expression, a constant
 H: Long division
@@ -937,6 +943,7 @@ X: Divide x^{3} + 2x^{2} − 5x − 6 by (x + 1).
 > −6x ÷ x = −6; −6(x + 1) = −6x − 6; subtract: 0. Quotient x^{2} + x − 6 = (x + 3)(x − 2), remainder 0
 K: Divide leading terms, multiply back, subtract and repeat; include zero coefficients for missing powers.
 !: Leaving out missing powers, which misaligns the columns.
+!: Subtracting only the first term of each product: (x^{2} − 5x) − (x^{2} + x) is −6x, not −4x. Change every sign of the line being subtracted.
 Q: What is the remainder when x^{2} + 1 is divided by x − 1? | 2.
 Q: How do you handle x^{3} − 8 in long division? | Write it as x^{3} + 0x^{2} + 0x − 8.
 SUM: Polynomial division works like number division.
@@ -945,11 +952,16 @@ SRC: Department for Education, Mathematics AS and A level subject content: algeb
 SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | secondary | 1993 | https://link.springer.com/
 M1#maths-u03-26-q1@1: What is (x^{2} + 5x + 6) ÷ (x + 2)? | x + 3 | x + 2 | x − 3 | x + 6 | x^{2} + 3 | x^{2} + 5x + 6 factorises as (x + 2)(x + 3), so dividing by (x + 2) leaves x + 3.
 M2#maths-u03-26-q2@2: What is the quotient when x^{3} − 1 is divided by x − 1? | x^{2} + x + 1 | x^{2} − 1 | x^{2} − x + 1 | x^{2} + 1 | x + 1 | (x − 1)(x^{2} + x + 1) = x^{3} − 1 (difference of two cubes).
+NUM2@2: Find the remainder when x^{3} + 2x^{2} − x + 5 is divided by (x − 2). | 19 | 0 |  | Long division leaves a constant remainder, which equals the value at x = 2: 8 + 8 − 2 + 5 = 19.
+M3@1: What is the quotient when 2x^{3} + x^{2} − 13x + 6 is divided by (x − 2)? | 2x^{2} + 5x − 3 | 2x^{2} − 3x − 7 | 2x^{2} + 5x + 3 | 2x^{2} − 5x − 3 | 2x^{3} ÷ x = 2x^{2}; subtract 2x^{3} − 4x^{2} to leave 5x^{2} − 13x; then 5x, leaving −3x + 6; then −3, remainder 0.
+SA2@1,2: Divide x^{3} − 8 by (x − 2), showing your working, and explain what the result tells you. | Write x^{3} + 0x^{2} + 0x − 8 so the columns line up. x^{3} ÷ x = x^{2}; subtract x^{3} − 2x^{2} to leave 2x^{2} + 0x. 2x^{2} ÷ x = 2x; subtract 2x^{2} − 4x to leave 4x − 8. 4x ÷ x = 4; subtract 4x − 8 to leave 0. So x^{3} − 8 = (x − 2)(x^{2} + 2x + 4): the remainder 0 means (x − 2) is a factor. | Inserts zero coefficients ; Carries out each division step correctly ; Gets quotient x^{2} + 2x + 4 and remainder 0 ; Interprets remainder 0 as a factor
 
 ## Remainder Theorem
 S: The remainder theorem gives the remainder of dividing a polynomial by (x − a) without doing the division: it's simply f(a). It's a quick, powerful check.
 O: Use the remainder theorem to find remainders
 O: Find unknown coefficients from given remainders
+LV: A level · Application
+EV: established | The remainder when f(x) is divided by (x − a) is f(a), because f(x) = (x − a)q(x) + r.
 T: Remainder theorem | The remainder when f(x) is divided by (x − a) is f(a)
 T: Divisor | The expression you divide by
 H: Why it works
@@ -978,11 +990,15 @@ SRC: Department for Education, AS and A level further mathematics subject conten
 NUM1#maths-u03-27-q1@1: Find the remainder when x^{3} − 4x^{2} + 2x + 7 is divided by (x − 3). | 4 | 0 |  | f(3) = 27 − 36 + 6 + 7 = 4.
 M1#maths-u03-27-q2@1: What is the remainder when x^{2} + 3x − 1 is divided by (x + 1)? | −3 | 3 | 1 | −1 | 5 | By the remainder theorem, substitute x = −1: f(−1) = 1 − 3 − 1 = −3.
 M2#maths-u03-27-q3@2: x^{3} + kx + 2 leaves remainder 0 when divided by (x − 1). What is k? | −3 | 3 | −1 | 0 | 2 | A zero remainder means f(1) = 0: 1 + k + 2 = 0, so k = −3.
+NUM3@2: Find the remainder when f(x) = 4x^{3} − 2x + 7 is divided by (2x − 1). | 6.5 | 0 |  | 2x − 1 = 0 when x = 1/2, so the remainder is f(1/2) = 4 × 1/8 − 1 + 7 = 0.5 − 1 + 7 = 6.5.
+SA2@2: Explain why the remainder theorem works, and use it to find the remainder when x^{100} + 1 is divided by (x + 1). | Dividing by (x − a) gives f(x) = (x − a)q(x) + r, where r is a constant. Substituting x = a makes the first term zero, so f(a) = r. For (x + 1), a = −1: the remainder is (−1)^{100} + 1 = 1 + 1 = 2, found without any division. | Writes f(x) = (x − a)q(x) + r ; Explains why substituting x = a leaves r ; Uses a = −1 for (x + 1) ; Gets remainder 2
 
 ## Factor Theorem
 S: The factor theorem is the remainder theorem with remainder zero: (x − a) is a factor of f(x) exactly when f(a) = 0. It's how we find the first factor of a cubic or quartic.
 O: Use the factor theorem to test and find factors
 O: Factorise cubics completely
+LV: A level · Application
+EV: established | (x − a) is a factor of a polynomial f(x) if and only if f(a) = 0.
 T: Factor theorem | (x − a) is a factor of f(x) if and only if f(a) = 0
 T: Rational root test | Any rational root p/q of a polynomial with integer coefficients has p dividing the constant term and q dividing the leading coefficient
 H: Testing for factors
@@ -1009,11 +1025,15 @@ SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | secondary | 1993 | https:/
 M1#maths-u03-28-q1@1: Which is a factor of x^{3} − 4x^{2} + x + 6? | x − 2 | x + 2 | x − 1 | x + 3 | x − 6 | By the factor theorem, f(2) = 8 − 16 + 2 + 6 = 0, so (x − 2) is a factor.
 M2#maths-u03-28-q2@2: (x − 3) is a factor of x^{3} − 2x^{2} + kx − 6. What is k? | −1 | 1 | −3 | 3 | 6 | f(3) = 27 − 18 + 3k − 6 = 0 gives 3k = −3, so k = −1.
 M3#maths-u03-28-q3@2: Factorise x^{3} + x^{2} − 10x + 8 completely. | (x − 1)(x − 2)(x + 4) | (x + 1)(x + 2)(x − 4) | (x − 1)(x + 2)(x − 4) | (x − 2)^{2}(x + 2) | (x − 1)(x^{2} + 2x − 8) | f(1) = 0, and x^{2} + 2x − 8 = (x − 2)(x + 4).
+NUM2@1: (x − 1) is a factor of x^{3} + ax^{2} + bx − 6. What is a + b? | 5 | 0 |  | By the factor theorem f(1) = 0: 1 + a + b − 6 = 0, so a + b = 5.
+SA3@1,2: Show that (2x − 1) is a factor of 2x^{3} + 3x^{2} − 8x + 3, and factorise it completely. | (2x − 1) is zero at x = 1/2. f(1/2) = 2 × 1/8 + 3 × 1/4 − 4 + 3 = 0.25 + 0.75 − 1 = 0, so it is a factor. Dividing (or equating coefficients): 2x^{3} + 3x^{2} − 8x + 3 = (2x − 1)(x^{2} + 2x − 3) = (2x − 1)(x + 3)(x − 1). | Substitutes x = 1/2 ; Shows f(1/2) = 0 ; Finds the quadratic factor x^{2} + 2x − 3 ; Factorises completely
 
 ## Roots of Polynomials
 S: The roots of a polynomial are the values that make it zero. Their number, nature and position tell you a lot about the polynomial and its graph, and every polynomial's roots exist in the complex numbers.
 O: Relate roots, factors and graphs of polynomials
 O: Describe repeated and complex roots
+LV: A level · Application
+EV: established | Every polynomial of degree n has exactly n complex roots counted with multiplicity, and non-real roots of real polynomials come in conjugate pairs.
 T: Multiplicity | How many times a root is repeated: in (x − 2)^{3}, the root 2 has multiplicity 3
 T: Fundamental theorem of algebra | Every polynomial of degree n ≥ 1 has exactly n complex roots, counted with multiplicity
 H: Roots and factors
@@ -1041,11 +1061,15 @@ SRC: Stewart I, Galois Theory (5th edn, CRC Press 2022) | secondary | 2022 | htt
 M1#maths-u03-29-q1@1: What happens to the graph of y = (x − 3)^{2}(x + 1) at x = 3? | It touches the x-axis and turns | It crosses the x-axis | It has an asymptote | It has a gap | It crosses with a flat point | A double root means the graph touches the axis there.
 M2#maths-u03-29-q2@2: A real quartic has roots 2i and 1 (single). How many real roots does it have in total? | 2 | 1 | 3 | 4 | 0 | 2i and −2i account for two roots, leaving two real ones: 1 and one more.
 M2#maths-u03-29-q3@2: Where does y = (x − 2)(x + 3)(x + 1) cross the x-axis? | At x = 2, −3 and −1 | At x = −2, 3 and 1 | At x = 2, 3 and 1 | Only at x = 2 | At x = 6 | Each linear factor (x − r) is zero at x = r.
+M3@2: A cubic with real coefficients and leading coefficient 1 has roots 3 and 1 + 2i. What is it? | x^{3} − 5x^{2} + 11x − 15 | x^{3} − 5x^{2} + 7x − 15 | x^{3} + 5x^{2} + 11x + 15 | x^{3} − 2x^{2} + 5x − 15 | 1 − 2i must also be a root, giving the factor x^{2} − 2x + 5. Then (x − 3)(x^{2} − 2x + 5) = x^{3} − 5x^{2} + 11x − 15.
+SA2@1: Show that f(x) = x^{3} − 3x + 1 has a root between 1 and 2, and explain why your argument needs f to be continuous. | f(1) = 1 − 3 + 1 = −1 and f(2) = 8 − 6 + 1 = 3. The sign changes, and f is a polynomial, so it is continuous: its graph can't get from below the axis to above it without crossing. So there is a root between 1 and 2. A function with a jump (such as 1/x near 0) can change sign without a root. | Evaluates f(1) = −1 ; Evaluates f(2) = 3 ; Uses the sign change to conclude ; Explains the role of continuity
 
 ## Vieta's Formulas
 S: Vieta's formulas link the roots of a polynomial to its coefficients: for example, the roots of x^{2} + bx + c add to −b and multiply to c. They let you work with roots without finding them.
 O: State Vieta's formulas for quadratics and cubics
 O: Use them to find expressions in the roots and to form new equations
+LV: A level · Problem solving
+EV: established | The sums and products of a polynomial's roots are fixed by its coefficients, as comparing coefficients of a(x − α)(x − β)… shows.
 T: Sum of roots | For ax^{2} + bx + c = 0, α + β = −b/a
 T: Product of roots | For ax^{2} + bx + c = 0, αβ = c/a
 H: Quadratics and cubics
@@ -1075,11 +1099,15 @@ SRC: Stewart I, Galois Theory (5th edn, CRC Press 2022) | secondary | 2022 | htt
 NUM1#maths-u03-30-q1@1: The roots of x^{2} + 5x − 3 = 0 are α and β. Find 1/α + 1/β. | 1.6667 | 0.001 |  | (α + β)/(αβ) = (−5)/(−3) = 5/3 ≈ 1.667.
 M1#maths-u03-30-q2@1: What is the product of the roots of 3x^{2} − 4x − 12 = 0? | −4 | 4 | 4/3 | −12 | 12 | By Vieta's formulas the product of the roots is c/a = −12/3 = −4.
 M3#maths-u03-30-q3@2: The roots of x^{2} − 3x + 1 = 0 are α and β. Which equation has roots α + 1 and β + 1? | x^{2} − 5x + 5 = 0 | x^{2} − 3x + 2 = 0 | x^{2} − 4x + 2 = 0 | x^{2} − 5x + 2 = 0 | x^{2} + 5x + 5 = 0 | New sum = 3 + 2 = 5; new product = αβ + (α + β) + 1 = 1 + 3 + 1 = 5.
+M2@1: The roots of 2x^{3} − 5x^{2} + 3x + 7 = 0 are α, β and γ. What is αβγ? | −7/2 | 7/2 | 5/2 | 3/2 | For a cubic, αβγ = −d/a = −7/2. The sum of the roots is 5/2 and the sum of pairs is 3/2.
+SA3@2: The roots of x^{2} − 4x + 2 = 0 are α and β. Find a quadratic equation with roots α^{2} and β^{2}, without solving the equation. | α + β = 4 and αβ = 2. New sum: α^{2} + β^{2} = (α + β)^{2} − 2αβ = 16 − 4 = 12. New product: α^{2}β^{2} = (αβ)^{2} = 4. So the equation is x^{2} − 12x + 4 = 0. | Finds α + β = 4 and αβ = 2 ; Uses (α + β)^{2} − 2αβ for the new sum ; Finds the new product 4 ; Writes x^{2} − 12x + 4 = 0
 
 ## Symmetric Polynomials
 S: A symmetric polynomial is unchanged when its variables are swapped, like x + y or x^{2} + y^{2}. Every symmetric polynomial can be written in terms of a few basic ones, which is why Vieta's formulas are so powerful.
 O: Recognise symmetric polynomials
 O: Express symmetric polynomials in terms of elementary symmetric polynomials
+LV: A level · Problem solving
+EV: established | Every symmetric polynomial can be written as a polynomial in the elementary symmetric polynomials (the fundamental theorem of symmetric polynomials).
 T: Symmetric polynomial | A polynomial unchanged by any permutation of its variables
 T: Elementary symmetric polynomials | In two variables, e₁ = x + y and e₂ = xy; in three, x + y + z, xy + yz + zx and xyz
 H: Recognising symmetry
@@ -1105,11 +1133,15 @@ SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | secondary | 1993 | https:/
 NUM1#maths-u03-31-q1@1: If x + y = 4 and xy = 1, find (x − y)^{2}. | 12 | 0 |  | (x − y)^{2} = (x + y)^{2} − 4xy = 16 − 4 = 12.
 M1#maths-u03-31-q2@1: Which polynomial is symmetric in x and y? | x^{2} + 3xy + y^{2} | x^{2} − y^{2} | x + 2y | x^{3}y | x − y | Swapping x and y leaves x^{2} + 3xy + y^{2} unchanged.
 M2#maths-u03-31-q3@2: If a + b = 3 and ab = −2, what is a^{2} + b^{2}? | 13 | 5 | 9 | 7 | 1 | Use a^{2} + b^{2} = (a + b)^{2} − 2ab = 9 − 2(−2) = 9 + 4 = 13.
+NUM3@2: If x + y = 5 and xy = 3, find x^{4} + y^{4}. | 343 | 0 |  | x^{2} + y^{2} = 25 − 6 = 19. Then x^{4} + y^{4} = (x^{2} + y^{2})^{2} − 2(xy)^{2} = 361 − 18 = 343.
+SA2@1,2: The roots of x^{2} − 6x + 4 = 0 are α and β. Explain why α − β is not symmetric but (α − β)^{2} is, and use this to find |α − β|. | Swapping α and β turns α − β into β − α = −(α − β), so it changes; squaring removes the sign, so (α − β)^{2} is symmetric. (α − β)^{2} = (α + β)^{2} − 4αβ = 36 − 16 = 20, so |α − β| = √20 = 2√5. Check: the roots are 3 ± √5, which differ by 2√5. | Shows swapping changes the sign of α − β ; Explains why the square is symmetric ; Uses (α + β)^{2} − 4αβ = 20 ; Gets 2√5
 
 ## Partial Fractions
 S: Partial fractions split a complicated algebraic fraction into a sum of simpler ones. This is the reverse of adding fractions, and it's essential for integrating rational functions and for binomial expansions at A level.
 O: Decompose fractions with distinct linear and repeated linear factors
 O: Handle improper fractions by dividing first
+LV: A level · Application
+EV: established | A proper rational function whose denominator factorises into linear factors can be written uniquely as a sum of partial fractions.
 T: Partial fractions | Writing a rational expression as a sum of fractions with simpler denominators
 T: Improper algebraic fraction | One where the numerator's degree is at least the denominator's
 H: Forms
@@ -1134,11 +1166,16 @@ SRC: Department for Education, Mathematics AS and A level subject content: algeb
 SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | secondary | 2020 | https://www.bloomsbury.com/
 M1#maths-u03-32-q1@1: Which is the correct form for (3x + 1)/((x − 2)(x + 5))? | A/(x − 2) + B/(x + 5) | A/(x − 2)(x + 5) | (Ax + B)/(x − 2) | A/(x − 2)^{2} + B/(x + 5) | A + B/(x + 5) | Two distinct linear factors give two simple fractions.
 M2#maths-u03-32-q2@2: If 4/((x − 1)(x + 1)) ≡ A/(x − 1) + B/(x + 1), what is A? | 2 | −2 | 4 | 1 | 1/2 | 4 ≡ A(x + 1) + B(x − 1); with x = 1, 4 = 2A, so A = 2.
+NUM1@1: (5x + 4)/((x − 1)(x + 2)) ≡ A/(x − 1) + B/(x + 2). Find B. | 2 | 0 |  | 5x + 4 ≡ A(x + 2) + B(x − 1). Put x = −2: −6 = −3B, so B = 2 (and x = 1 gives A = 3).
+M3@1,2: Express (x^{2} + 1)/((x − 1)(x + 1)) in partial fractions. | 1 + 1/(x − 1) − 1/(x + 1) | 1/(x − 1) − 1/(x + 1) | 1 − 1/(x − 1) + 1/(x + 1) | 1 + 2/(x − 1) − 2/(x + 1) | It is improper: (x^{2} + 1)/(x^{2} − 1) = 1 + 2/(x^{2} − 1). Then 2 ≡ A(x + 1) + B(x − 1) gives A = 1, B = −1.
+SA2@1: Express 3/(x(x + 3)) in partial fractions, explaining each step. | The denominator has distinct linear factors, so write 3/(x(x + 3)) ≡ A/x + B/(x + 3). Multiply by x(x + 3): 3 ≡ A(x + 3) + Bx. Put x = 0: 3 = 3A, so A = 1. Put x = −3: 3 = −3B, so B = −1. So 3/(x(x + 3)) = 1/x − 1/(x + 3). | Chooses the form A/x + B/(x + 3) ; Multiplies through by the denominator ; Substitutes x = 0 and x = −3 ; Gets 1/x − 1/(x + 3)
 
 ## Functions
 S: A function is a rule that takes each input and gives exactly one output. Functions are the central idea of modern mathematics: graphs, calculus and modelling are all about functions.
 O: Use function notation and evaluate functions
 O: Distinguish functions from relations that aren't functions
+LV: GCSE and A level · Fluency
+EV: established | A function assigns exactly one output to each input in its domain; many-to-one rules are functions, one-to-many rules are not.
 T: Function | A rule assigning exactly one output to each input in its domain, written f(x) or f: x ↦ …
 T: Mapping | The correspondence between inputs and outputs; one-to-one, many-to-one or one-to-many
 H: Notation
@@ -1170,11 +1207,15 @@ NUM1#maths-u03-33-q1@1: If f(x) = 2x^{2} − 3x + 1, find f(−2). | 15 | 0 |  |
 M1#maths-u03-33-q2@1: Which describes f(x) = x^{2}? | Many-to-one | One-to-one | One-to-many | Not a function | Many-to-many | f(2) = f(−2) = 4: two inputs share an output.
 M2#maths-u03-33-q3@2: For f(x) = 4x + 1, solve f(x) = f(2x − 3). | x = 3 | x = −3 | x = 1 | x = 0 | No solution | f(2x − 3) = 4(2x − 3) + 1 = 8x − 11, and 4x + 1 = 8x − 11 gives x = 3.
 M2#maths-u03-33-q4@2: Plotting y = x^{2} − 4, what is the range of the function? | y ≥ −4, since the minimum value is −4 at x = 0 | All real numbers, since parabolas go on forever | y ≥ 0, since squares are never negative | y ≤ −4, since the graph opens downwards | −2 ≤ y ≤ 2, the roots | x^{2} ≥ 0, so x^{2} − 4 ≥ −4, and every value above −4 is reached.
+M3@1: f(x) = x^{2} − 3x. For which values of a is f(a) = f(2a)? | a = 0 or a = 1 | a = 1 only | a = 0 or a = 3 | a = −1 or a = 0 | a^{2} − 3a = 4a^{2} − 6a gives 3a^{2} − 3a = 0, so 3a(a − 1) = 0 and a = 0 or 1. Check a = 1: f(1) = −2 = f(2).
+SA2@2: Use the vertical line test to decide whether x^{2} + y^{2} = 9 defines y as a function of x, and explain how to make a function from it. | The graph is a circle of radius 3. A vertical line such as x = 0 meets it twice, at (0, 3) and (0, −3), so one input gives two outputs and it is not a function of x. Restricting to the upper half, y ≥ 0, gives the function y = √(9 − x^{2}) with domain −3 ≤ x ≤ 3. | Identifies the circle ; Applies the vertical line test with an example ; Concludes it is not a function ; Restricts to one branch and gives y = √(9 − x^{2})
 
 ## Domain and Range
 S: The domain of a function is the set of inputs it accepts; the range is the set of outputs it actually produces. Getting these right avoids dividing by zero, square-rooting negatives, and makes inverse functions possible.
 O: Find the natural domain of a function
 O: Find the range of a function on a given domain
+LV: A level · Application
+EV: established | A function's natural domain excludes inputs giving zero denominators, negative square-root arguments or non-positive log arguments.
 T: Domain | The set of allowed inputs of a function
 T: Range | The set of all outputs the function produces
 H: Domains
@@ -1201,11 +1242,16 @@ SRC: Department for Education, Mathematics AS and A level subject content: algeb
 SRC: Liebeck M, A Concise Introduction to Pure Mathematics (4th edn, CRC Press 2015) | secondary | 2015 | https://www.routledge.com/
 M1#maths-u03-34-q1@1: What is the domain of f(x) = √(4 − x)? | x ≤ 4 | x ≥ 4 | x > 4 | x ≥ 0 | All real x | The square root needs 4 − x ≥ 0, so the domain is x ≤ 4.
 M2#maths-u03-34-q2@2: What is the range of f(x) = x^{2} − 2x for −1 ≤ x ≤ 4? | −1 ≤ f(x) ≤ 8 | 3 ≤ f(x) ≤ 8 | 0 ≤ f(x) ≤ 8 | f(x) ≥ −1 | −1 ≤ f(x) ≤ 3 | (x − 1)^{2} − 1 has minimum −1 at x = 1 and maximum 8 at x = 4.
+NUM1@1: What is the smallest integer in the domain of f(x) = √(2x − 7)? | 4 | 0 |  | The square root needs 2x − 7 ≥ 0, so x ≥ 3.5; the smallest integer in that set is 4.
+M3@2: What is the range of f(x) = 5 − (x − 2)^{2} for 0 ≤ x ≤ 5? | −4 ≤ f(x) ≤ 5 | 1 ≤ f(x) ≤ 5 | −4 ≤ f(x) ≤ 1 | f(x) ≤ 5 | The maximum is 5 at x = 2, inside the interval. At the ends f(0) = 1 and f(5) = −4, so the least value is −4.
+SA2@1,2: Find the domain and range of f(x) = 1/(x^{2} + 1), explaining your reasoning. | x^{2} + 1 ≥ 1 for every real x, so the denominator is never zero and the domain is all real numbers. Because x^{2} + 1 ≥ 1, the fraction is at most 1, reached at x = 0; it is always positive and gets close to 0 as x grows, but never reaches it. So the range is 0 < f(x) ≤ 1. | Shows the denominator is never zero ; Gives the domain as all real x ; Finds the maximum 1 at x = 0 ; States the range 0 < f(x) ≤ 1 with 0 excluded
 
 ## Composite Functions
 S: A composite function applies one function and then another: fg(x) means "do g, then f". Composition builds complicated functions from simple ones and is the idea behind the chain rule.
 O: Form and evaluate composite functions
 O: Find domains of composites and solve equations involving them
+LV: A level · Application
+EV: established | fg(x) = f(g(x)) applies g first, exists only where g(x) lies in the domain of f, and in general differs from gf(x).
 T: Composite function | fg(x) = f(g(x)): apply g first, then f
 T: Order of composition | fg and gf are usually different
 H: Forming composites
@@ -1233,11 +1279,15 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 NUM1#maths-u03-35-q1@1: f(x) = x^{2} − 1 and g(x) = 3x + 2. Find fg(−1). | 0 | 0 |  | g(−1) = −1, and f(−1) = 1 − 1 = 0.
 M1#maths-u03-35-q2@1: f(x) = 2x and g(x) = x + 5. What is fg(x)? | 2x + 10 | 2x + 5 | 2x^{2} + 10x | x + 10 | 2x + 52 | Apply g first: fg(x) = f(x + 5) = 2(x + 5) = 2x + 10.
 M2#maths-u03-35-q3@2: f(x) = x^{2} and g(x) = x − 3. Solve gf(x) = fg(x). | x = 2 | x = 3 | x = 0 | No solution | x = −2 | gf(x) = x^{2} − 3 and fg(x) = (x − 3)^{2} = x^{2} − 6x + 9, so −3 = −6x + 9 and x = 2.
+M3@2: f(x) = √x and g(x) = 4 − x^{2}. What is the domain of fg(x)? | −2 ≤ x ≤ 2 | x ≥ 0 | x ≤ 4 | x ≤ −2 or x ≥ 2 | fg(x) = √(4 − x^{2}) needs g(x) in the domain of f: 4 − x^{2} ≥ 0, so x^{2} ≤ 4 and −2 ≤ x ≤ 2.
+SA2@1: f(x) = x + 3 and g(x) = x^{2}. Show that fg and gf are different, and find any x for which fg(x) = gf(x). | fg(x) = f(x^{2}) = x^{2} + 3, while gf(x) = g(x + 3) = (x + 3)^{2} = x^{2} + 6x + 9; these differ (for example at x = 0: 3 and 9). Setting them equal: x^{2} + 3 = x^{2} + 6x + 9, so 6x = −6 and x = −1 (both give 4). | Forms fg(x) = x^{2} + 3 ; Forms gf(x) = (x + 3)^{2} ; Shows they differ ; Solves to x = −1
 
 ## Inverse Functions
 S: An inverse function undoes a function: if f takes 3 to 11, then f^{−1} takes 11 back to 3. Only one-to-one functions have inverses, and the graph of an inverse is the reflection of the original in the line y = x.
 O: Find the inverse of a one-to-one function
 O: State the domain and range of an inverse and sketch it
+LV: A level · Application
+EV: established | Only one-to-one functions have inverses; the domain of f^{−1} is the range of f, and its graph is the reflection of y = f(x) in y = x.
 T: Inverse function | f^{−1}, where f^{−1}(f(x)) = x for every x in the domain of f
 T: Self-inverse | A function that is its own inverse, such as f(x) = 1/x or f(x) = 5 − x
 H: Finding an inverse
@@ -1266,11 +1316,15 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 NUM1#maths-u03-36-q1@1: f(x) = (x + 4)/3. Find f^{−1}(5). | 11 | 0 |  | f^{−1}(x) = 3x − 4, so f^{−1}(5) = 11 (check: f(11) = 15/3 = 5).
 M1#maths-u03-36-q2@1: What is the inverse of f(x) = x^{3} + 1? | f^{−1}(x) = ∛(x − 1) | f^{−1}(x) = ∛x − 1 | f^{−1}(x) = 1/(x^{3} + 1) | f^{−1}(x) = x^{3} − 1 | f^{−1}(x) = (x − 1)^{3} | Swap and rearrange: x = y^{3} + 1, so y = ∛(x − 1).
 M2#maths-u03-36-q3@2: f(x) = e^{x} + 2. What is the domain of f^{−1}? | x > 2 | x > 0 | All real x | x ≥ 2 | x < 2 | The range of f is f(x) > 2, which becomes the domain of f^{−1}.
+M3@1: f(x) = (3x + 1)/(x − 2), x ≠ 2. What is f^{−1}(x)? | (2x + 1)/(x − 3) | (x − 2)/(3x + 1) | (2x − 1)/(x − 3) | (x + 1)/(3x − 2) | Swap: x = (3y + 1)/(y − 2), so xy − 2x = 3y + 1 and y(x − 3) = 2x + 1. The reciprocal (x − 2)/(3x + 1) is a common wrong answer.
+SA2@2: Explain why f(x) = (x − 1)^{2} for all real x has no inverse, and find an inverse on a suitable restricted domain, stating its domain. | f is many-to-one: f(0) = f(2) = 1, so an output can't be traced back to one input. Restrict to x ≥ 1, where f is one-to-one with range f(x) ≥ 0. Swap and solve: x = (y − 1)^{2}, so y − 1 = √x (positive root, since y ≥ 1) and f^{−1}(x) = 1 + √x, with domain x ≥ 0. | Shows f is many-to-one with an example ; Restricts the domain to x ≥ 1 (or x ≤ 1) ; Finds f^{−1}(x) = 1 + √x with the right root ; States the domain of f^{−1} as the range of f
 
 ## Transformations of Functions
 S: Transformations move, stretch and reflect graphs. Knowing how f(x) + a, f(x + a), af(x) and f(ax) change a graph lets you sketch whole families of functions from one you know.
 O: Describe the effect of translations, stretches and reflections on graphs
 O: Combine transformations and find equations of transformed graphs
+LV: GCSE and A level · Application
+EV: established | f(x) + a and af(x) act vertically as written, while f(x + a) and f(ax) act horizontally in the opposite sense.
 T: Translation | A shift of a graph without changing its shape, described by a vector
 T: Stretch | Scaling a graph parallel to an axis by a scale factor
 H: The four basic transformations
@@ -1301,11 +1355,14 @@ M1#maths-u03-37-q1@1: Which transformation maps y = x^{2} to y = (x + 5)^{2}? | 
 M2#maths-u03-37-q2@2: (3, −2) lies on y = f(x). Which point lies on y = −f(x) + 4? | (3, 6) | (3, 2) | (−3, 6) | (3, −6) | (7, 2) | Reflecting gives (3, 2), then up 4 gives (3, 6).
 M3#maths-u03-37-q3@2: Which describes y = f(2x + 6) compared with y = f(x)? | Translate 6 left, then stretch by 1/2 parallel to the x-axis | Stretch by 1/2, then translate 6 left | Translate 3 right | Stretch by 2, then translate 6 right | Translate 6 right, then stretch by 1/2 | f(2x + 6) = f(2(x + 3)): it's also "stretch by ½, then translate 3 left"; translating 6 left first, then stretching, gives the same graph.
 M2#maths-u03-37-q4@2: Compared with y = x^{2}, how is y = −2(x + 1)^{2} + 4 transformed? | Shifted 1 left and 4 up, stretched by 2 vertically and reflected in the x-axis | Shifted 1 right and 4 up, then reflected | Shifted 1 left and 4 down, stretched horizontally by 2 | Only reflected in the y-axis | Shifted 2 left and 4 up | The vertex moves to (−1, 4), and the factor −2 stretches by 2 and flips the curve.
+SA2@1,2: The point (2, 5) lies on y = f(x). Describe how y = 3 − 2f(x + 1) is obtained from y = f(x), and find the image of (2, 5). | Work inside the bracket first: f(x + 1) translates 1 left, so (2, 5) → (1, 5). Multiplying by 2 stretches vertically by scale factor 2: (1, 10). The minus sign reflects in the x-axis: (1, −10). Adding 3 translates up 3: (1, −7). | Translates 1 left for x + 1 ; Stretches vertically by 2 ; Reflects in the x-axis ; Translates up 3 and gets (1, −7)
 
 ## Piecewise Functions
 S: A piecewise function uses different rules on different parts of its domain, like a tax system with bands or a phone tariff. They model real situations and test careful reading of where each rule applies.
 O: Evaluate and sketch piecewise functions
 O: Check continuity at the boundaries between pieces
+LV: A level · Application
+EV: established | A piecewise function is continuous at a boundary exactly when its pieces give the same value there.
 T: Piecewise function | A function defined by different formulae on different intervals
 T: Continuous | Having no jumps: at each boundary the pieces meet
 H: Evaluating and sketching
@@ -1331,11 +1388,16 @@ SRC: Department for Education, Mathematics AS and A level subject content: algeb
 SRC: Liebeck M, A Concise Introduction to Pure Mathematics (4th edn, CRC Press 2015) | secondary | 2015 | https://www.routledge.com/
 M1#maths-u03-38-q1@1: f(x) = x + 4 for x < 0 and 4 − x^{2} for x ≥ 0. What is f(−1) + f(2)? | 3 | 0 | 6 | 7 | −1 | −1 uses the first rule: f(−1) = 3; 2 uses the second: f(2) = 4 − 4 = 0. Total 3.
 M2#maths-u03-38-q2@2: Is f(x) = 2x for x < 1 and x + 2 for x ≥ 1 continuous at x = 1? | No: the pieces give 2 and 3 | Yes | Yes: both pieces are linear | No: f(1) is undefined | Only from the right | The left piece approaches 2 but the right piece gives 3: a jump.
+NUM1@1: f(x) = 3x for x < 2 and x^{2} + 1 for x ≥ 2. Find f(1) + f(3). | 13 | 0 |  | 1 < 2 uses the first rule: f(1) = 3. 3 ≥ 2 uses the second: f(3) = 10. The total is 13.
+M3@2: f(x) = ax + 3 for x < 2 and x^{2} − a for x ≥ 2. Which value of a makes f continuous? | a = 1/3 | a = 1 | a = −1/3 | a = 7/3 | At x = 2 the pieces must agree: 2a + 3 = 4 − a, so 3a = 1 and a = 1/3 (both pieces then give 11/3).
+SA2@1: A phone plan costs £10 a month for up to 100 minutes, then 5p for each extra minute. Write the monthly cost C(m) in pounds as a piecewise function of the minutes m, find C(160) and say whether C is continuous. | C(m) = 10 for 0 ≤ m ≤ 100, and C(m) = 10 + 0.05(m − 100) for m > 100. C(160) = 10 + 0.05 × 60 = £13. At m = 100 both pieces give £10, so C is continuous there: no jump in cost. | Gives the flat piece for m ≤ 100 ; Gives 10 + 0.05(m − 100) for m > 100 ; Gets C(160) = £13 ; Checks continuity at m = 100
 
 ## Parametric Equations
 S: Parametric equations describe a curve using a third variable, the parameter, for both coordinates: x = t^{2}, y = 2t. They're natural for motion, where t is time, and describe curves that aren't functions, like circles.
 O: Convert between parametric and Cartesian forms
 O: Sketch and interpret parametric curves
+LV: A level · Application
+EV: established | A parametric curve can be converted to Cartesian form by eliminating the parameter, using an identity such as cos^{2} θ + sin^{2} θ = 1 where needed.
 T: Parameter | An extra variable, often t or θ, on which both x and y depend
 T: Cartesian equation | An equation linking x and y directly
 H: Working with parameters
@@ -1362,11 +1424,15 @@ SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | s
 NUM1#maths-u03-39-q1@1: A curve has x = 3t − 1, y = t^{2}. Find y when x = 5. | 4 | 0 |  | 3t − 1 = 5 gives t = 2, so y = 4.
 M1#maths-u03-39-q2@1: Which Cartesian equation matches x = t + 1, y = 2t? | y = 2x − 2 | y = 2x + 2 | y = x + 1 | y = 2x | y = x/2 − 1 | From x = t + 1, t = x − 1; substituting gives y = 2(x − 1) = 2x − 2.
 M2#maths-u03-39-q3@2: Which curve is x = 4 cos t, y = 2 sin t? | An ellipse | A circle | A parabola | A hyperbola | A straight line | x^{2}/16 + y^{2}/4 = cos^{2} t + sin^{2} t = 1.
+M3@2: Where does the curve x = t^{2}, y = 2t meet the line y = x − 3? | (9, 6) and (1, −2) | (3, 6) and (−1, −2) | (9, 6) only | (1, 2) and (9, −6) | Substitute: 2t = t^{2} − 3, so t^{2} − 2t − 3 = 0 and t = 3 or −1. Then t = 3 gives (9, 6) and t = −1 gives (1, −2).
+SA2@1: Show that x = 3 + 2 cos θ, y = −1 + 2 sin θ describes a circle, and give its centre and radius. | Rearrange: cos θ = (x − 3)/2 and sin θ = (y + 1)/2. Since cos^{2} θ + sin^{2} θ = 1, (x − 3)^{2}/4 + (y + 1)^{2}/4 = 1, so (x − 3)^{2} + (y + 1)^{2} = 4. This is a circle with centre (3, −1) and radius 2. | Isolates cos θ and sin θ ; Uses cos^{2} θ + sin^{2} θ = 1 ; Gets (x − 3)^{2} + (y + 1)^{2} = 4 ; States centre (3, −1) and radius 2
 
 ## Implicit Equations
 S: An implicit equation links x and y without making y the subject, like x^{2} + y^{2} = 25 or x^{3} + y^{3} = 6xy. Many important curves can only be written this way, and they're differentiated implicitly.
 O: Interpret and sketch curves given implicitly
 O: Find points on implicit curves and test whether points lie on them
+LV: A level · Application
+EV: established | Points on an implicit curve are exactly the (x, y) pairs satisfying its equation; one x can give several y values.
 T: Implicit equation | An equation in x and y where y isn't given explicitly as a function of x
 T: Explicit equation | An equation with y as the subject, such as y = 3x^{2}
 H: Working with implicit curves
@@ -1391,6 +1457,9 @@ SRC: Department for Education, Mathematics AS and A level subject content: diffe
 SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | secondary | 2020 | https://www.bloomsbury.com/
 M1#maths-u03-40-q1@1: Which point lies on x^{2} − y^{2} = 16? | (5, 3) | (4, 1) | (3, 5) | (5, 4) | (2, 2) | Substituting (5, 3): 5^{2} − 3^{2} = 25 − 9 = 16, so the point lies on the curve.
 M2#maths-u03-40-q2@2: On x^{2} + xy + y^{2} = 7, what are the y-values when x = 1? | 2 and −3 | 3 and −2 | 2 only | ±√6 | 7 and −1 | 1 + y + y^{2} = 7 gives (y + 3)(y − 2) = 0.
+NUM1@2: The point (2, k) lies on x^{2} + y^{2} − 4y = 1. Find the larger possible value of k. | 3 | 0 |  | Substitute x = 2: 4 + k^{2} − 4k = 1, so k^{2} − 4k + 3 = 0 = (k − 1)(k − 3). k = 1 or 3; the larger is 3.
+M3@2: Where does the curve x^{2} + y^{2} = 10 meet the line y = 3x? | (1, 3) and (−1, −3) | (1, 3) only | (3, 1) and (−3, −1) | (1, −3) and (−1, 3) | Substitute y = 3x: x^{2} + 9x^{2} = 10, so x^{2} = 1 and x = ±1, giving y = ±3 with the same sign as x.
+SA2@1: Explain why x^{2} + y^{2} = 25 does not define y as a function of x, and describe two symmetries of the curve, justifying each from the equation. | For most x between −5 and 5 there are two y values (x = 3 gives y = ±4), so y isn't a function of x. Replacing y with −y leaves the equation unchanged, so the curve is symmetric in the x-axis; replacing x with −x also leaves it unchanged, so it is symmetric in the y-axis. (Swapping x and y shows symmetry in y = x too.) | Gives an x with two y values ; Concludes y isn't a function of x ; Justifies symmetry in the x-axis by y → −y ; Justifies another symmetry
 
 ## Recurrence Relations
 S: A recurrence relation defines each term of a sequence from earlier terms, like u_{n+1} = 2u_{n} + 3. Recurrences model populations, loans and algorithms, and some can be solved to give a formula for the nth term.

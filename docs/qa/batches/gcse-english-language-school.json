@@ -1,6 +1,10 @@
 {
   "task": "gcse-english-language-school",
   "on": "2026-11-20",
-  "status": "in progress: lessons u12-01 to u12-05 written",
-  "files": ["kit/courses/gcse/syllabus.js", "kit/courses/gcse/ids.js", "kit/courses/gcse/notes/u12.js"]
+  "status": "in progress: lessons u12-01 to u12-15 written",
+  "files": [
+    "kit/courses/gcse/syllabus.js",
+    "kit/courses/gcse/ids.js",
+    "kit/courses/gcse/notes/u12.js"
+  ]
 }

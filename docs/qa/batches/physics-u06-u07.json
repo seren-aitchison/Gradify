@@ -421,6 +421,90 @@
   },
   {
    "course": "physics",
+   "lesson": "u07-07",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "key point that a fixes energy and e fixes shape"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u07-08",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "key point linking each law to the physics behind it; Io/Jupiter mass calculation"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u07-09",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "GPS-orbit distractors lengthened (length bias)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u07-10",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "added a rendezvous (catch-up) extended answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u07-11",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "added binary mass-ratio and exoplanet reflex-motion questions"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u07-12",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "stated why the tidal term goes as 1/r^3 (difference of two 1/r^2 values)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
    "lesson": "u07-13",
    "action": "enhanced",
    "changes": [

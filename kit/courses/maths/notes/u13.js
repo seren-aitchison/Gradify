@@ -241,6 +241,7 @@ SA3@1: Explain why the sample variance divides by n − 1, and whether the sampl
 S: Sampling theory designs ways to choose samples so that they represent the population and give precise estimates for a given cost. The design decides what conclusions are possible before any data arrive.
 O: Describe the main sampling methods and their uses
 O: Calculate the sample size needed for a given margin of error
+LV: A level · Application
 T: Sampling frame | The list from which a sample is drawn, ideally covering the whole population
 T: Stratified sampling | Dividing the population into groups (strata) and sampling randomly within each
 H: Methods
@@ -268,16 +269,20 @@ Q: What must you do to halve a margin of error? | Quadruple the sample size.
 Q: Why use stratified sampling? | To guarantee each subgroup is represented and improve precision.
 SUM: Sampling design decides what we can learn.
 SUM: Sample size sets precision.
+EV: established | For a proportion, the sample size needed for a 95% margin of error E is about 1.96^{2}p(1 − p)/E^{2}, almost independent of population size.
 SRC: Lohr SL, Sampling: Design and Analysis (3rd edn, CRC Press 2021) | secondary | 2021 | https://www.routledge.com/
 SRC: Cochran WG, Sampling Techniques (3rd edn, Wiley 1977) | secondary | 1977 | https://www.wiley.com/
 NUM1#maths-u13-07-q1@1: Find the minimum sample size for a 95% margin of error of 5 points (use p = 0.5). | 385 | 0 |  | 0.9604/0.0025 = 384.2, rounded up to 385.
 M1#maths-u13-07-q2@1: A survey picks 20 schools at random and tests every pupil in them. What design is that? | Cluster sampling | Stratified sampling | Systematic sampling | Quota sampling | Simple random sampling of pupils | Whole groups (clusters) are sampled, not individuals.
 M3#maths-u13-07-q3@2: A national poll and a city poll each use 1,000 random respondents. How do their margins of error compare? | About the same | The national poll's is much larger | The city poll's is much larger | It depends only on population size | The national poll's is 100 times larger | Precision depends on the sample size, not the population size, when the sample is a small fraction.
+NUM2@2: Find the minimum sample size for a 95% margin of error of 2 percentage points, using p = 0.5. | 2401 | 0 |  | n = 1.96^{2} × 0.25/0.02^{2} = 0.9604/0.0004 = 2,401 exactly.
+SA2@1: A school of 1,200 pupils in six year groups wants a sample of 120 for a survey. Describe how to take a stratified sample and why it may beat a simple random sample. | Stratify by year group and sample each year in proportion to its size (10% of each): a year of 240 pupils gives 24 pupils, chosen at random from that year's list. This guarantees every year is represented in the right proportion. If views differ between years, stratifying removes the between-year variation from the sampling error, so the estimate is more precise than a simple random sample of 120. | Uses year groups as strata ; Allocates in proportion to size ; Selects randomly within each stratum ; Says it guarantees coverage of every year ; Explains the gain in precision
 
 ## Sampling Distributions
 S: A sampling distribution is the distribution of a statistic over all possible samples. It tells us how much an estimate would vary from sample to sample, which is the basis for standard errors, confidence intervals and tests.
 O: Describe the sampling distributions of the mean and a proportion
 O: Calculate probabilities for sample means using the standard error
+LV: A level · Application
 T: Sampling distribution | The probability distribution of a statistic, such as x̄, across repeated samples
 T: Standard error | The standard deviation of a sampling distribution, such as σ/√n for x̄
 H: The sample mean
@@ -303,17 +308,20 @@ Q: What is the standard error of x̄ for σ = 10 and n = 25? | 2.
 Q: What does a sampling distribution describe? | How a statistic varies across repeated samples.
 SUM: Statistics vary from sample to sample.
 SUM: The standard error measures that variation.
+EV: established | The sample mean has mean μ and standard error σ/√n, and is approximately normal for large n by the central limit theorem.
 SRC: Wasserman L, All of Statistics: A Concise Course in Statistical Inference (Springer 2004) | secondary | 2004 | https://link.springer.com/
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
 NUM1#maths-u13-08-q1@1: For p = 0.3 and n = 84, find the standard error of p̂, to 3 decimal places. | 0.05 | 0.001 |  | √(0.3 × 0.7/84) = √0.0025 = 0.05.
 M1#maths-u13-08-q2@1: How does the standard error of the mean change if n increases from 25 to 100? | It halves | It quarters | It doubles | It stays the same | It falls by 75 | The standard error is proportional to 1/√n; quadrupling n divides it by √4 = 2.
 M2#maths-u13-08-q3@2: When is the sampling distribution of X̄ exactly normal for any n? | When the population itself is normal | Never | Only when n > 30 | When the population is uniform | When σ is unknown | Linear combinations of normal variables are normal at every sample size.
 NUM1#maths-u13-08-q4@1: Quadrupling the sample size changes the standard error of the mean by what factor? | 0.5 | 0 |  | The standard error is σ/√n, so 4n gives σ/(2√n): half as large.
+SA3@1,2: IQ scores have μ = 100 and σ = 15. Find P(X̄ > 106) for samples of 25, compare it with the chance that one person scores above 106, and explain the difference. | SE = 15/√25 = 3, so z = (106 − 100)/3 = 2 and P(X̄ > 106) ≈ 0.023. For one person, z = 6/15 = 0.4 and P(X > 106) ≈ 0.345. Averaging cancels out individual high and low values, so means vary much less than individuals: the sampling distribution has standard deviation σ/√n, five times smaller here. | Computes SE = 3 ; Gets P(X̄ > 106) ≈ 0.023 ; Gets P(X > 106) ≈ 0.345 ; Explains that averaging reduces variability ; States SD of the mean is σ/√n
 
 ## Sampling Bias
 S: Sampling bias happens when the way a sample is chosen makes it unrepresentative. Unlike random error, bias doesn't shrink with a larger sample, and a huge biased sample can be confidently wrong.
 O: Identify common sources of sampling bias
 O: Explain why larger samples don't fix bias
+LV: GCSE and A level · Fluency
 T: Selection bias | Systematic differences between those sampled and the population
 T: Non-response bias | Bias arising because people who respond differ from those who don't
 H: Sources
@@ -340,16 +348,20 @@ Q: Does doubling a biased sample remove the bias? | No: it only reduces random e
 Q: What is survivorship bias? | Drawing conclusions only from cases that survived some selection.
 SUM: Bias is systematic error from selection.
 SUM: Large samples don't cure it.
+EV: established | Selection bias does not shrink as the sample grows, so a very large biased sample can be confidently wrong.
 SRC: Squire P, Why the 1936 Literary Digest poll failed, Public Opinion Quarterly 52(1), 125 | primary | 1988 | https://doi.org/10.1086/269085
 SRC: Sturgis P et al, Report of the inquiry into the 2015 British general election opinion polls (British Polling Council and Market Research Society 2016) | secondary | 2016 | https://www.britishpollingcouncil.org/
 NUM1#maths-u13-09-q1@1: 300 of 500 people respond; 50% of respondents agree. What is the lowest possible agreement rate among all 500, in per cent? | 30 | 0 | % | 150 agree; if all 200 non-respondents disagree, 150/500 = 30%.
 M1#maths-u13-09-q2@1: A radio phone-in asks listeners to call with views on a policy. What's the main problem? | Voluntary response bias | Too small a sample | Stratification | Random error only | No problem | Those who choose to call tend to hold stronger views than typical listeners.
 M2#maths-u13-09-q3@2: Why did Wald recommend armouring the parts of returning aircraft with no bullet holes? | Planes hit there didn't return | Those parts were heaviest | Holes were random | Pilots asked for it | The engines had holes | The returning sample was biased towards survivable hits: survivorship bias.
+NUM3@2: 2,000 customers are surveyed and 800 respond; 75% of respondents are satisfied. What is the highest possible satisfaction rate among all 2,000, in per cent? | 90 | 0 | % | 600 respondents are satisfied; if all 1,200 non-respondents are also satisfied, 1,800/2,000 = 90%.
+SA3@2: The 1936 Literary Digest poll had about 2.4 million replies and wrongly predicted that Landon would beat Roosevelt. Explain why its size did not save it, and what would have done better. | Its sample came largely from lists such as car owners and telephone subscribers, which in 1936 over-represented wealthier voters, and only those who chose to reply were counted (voluntary response). These are biases in selection, which do not shrink as n grows: millions of unrepresentative replies give a precise estimate of the wrong quantity. A much smaller random (or carefully designed) sample from the whole electorate, with follow-up of non-responders, would have been more accurate. | Names undercoverage from the sampling frame ; Names non-response or voluntary response ; States bias doesn't shrink with sample size ; Distinguishes precision from accuracy ; Recommends a random, representative sample
 
 ## Confidence Intervals
 S: A confidence interval gives a range of plausible values for a parameter, with a stated confidence level. It shows both the estimate and its uncertainty, and it's more informative than a yes-or-no test.
 O: Construct confidence intervals for means and proportions
 O: Interpret a confidence interval correctly
+LV: Year 1 · Application
 T: Confidence interval | An interval, calculated from data, that would contain the parameter in a stated proportion (such as 95%) of repeated samples
 T: Confidence level | The long-run proportion of such intervals that contain the parameter
 H: Construction
@@ -373,16 +385,20 @@ Q: Which critical value is used for a 99% normal interval? | 2.576.
 Q: What happens to an interval's width when n is multiplied by 4? | It halves.
 SUM: Intervals show estimates with uncertainty.
 SUM: Confidence describes the method.
+EV: established | A 95% confidence interval comes from a method that captures the true parameter in 95% of repeated samples.
 SRC: Altman DG, Machin D, Bryant TN, Gardner MJ, Statistics with Confidence (2nd edn, BMJ Books 2000) | secondary | 2000 | https://www.wiley.com/
 SRC: Wasserman L, All of Statistics: A Concise Course in Statistical Inference (Springer 2004) | secondary | 2004 | https://link.springer.com/
 NUM1#maths-u13-10-q1@1: A 95% interval for a mean is (18.2, 21.8). What is the point estimate? | 20 | 0 |  | The interval is symmetric about the estimate: (18.2 + 21.8)/2 = 20.
 M1#maths-u13-10-q2@1: Which change makes a confidence interval narrower? | Increasing the sample size | Raising the confidence level to 99% | Using a smaller sample | Having more variable data | Using t instead of z for small n | Width is proportional to σ/√n, so more data narrows it.
 M2#maths-u13-10-q3@2: A 95% interval for a difference in means is (−1.2, 3.4). What does a two-sided 5% test of "no difference" conclude? | Don't reject: 0 is inside the interval | Reject: the interval is wide | Reject: the upper limit is positive | Accept that the difference is exactly 0 | Nothing can be said | Values inside the 95% interval are not rejected at the 5% level.
+NUM2@1: A sample of 64 has x̄ = 50 and known σ = 8. Find the upper limit of the 95% confidence interval for μ. | 51.96 | 0.01 |  | SE = 8/√64 = 1, so the interval is 50 ± 1.96 and the upper limit is 51.96.
+SA3@2: A study reports a 95% confidence interval for a mean weight loss of (2.1, 4.5) kg. Explain what "95%" means here and give two common misinterpretations. | The interval comes from a method that, in repeated samples, would capture the true mean in 95% of cases; we are 95% confident in the method, and the data are consistent with true mean losses from about 2.1 to 4.5 kg (all positive, so a real loss is plausible). Misreadings: that there is a 95% probability the true mean lies in this particular interval (in the frequentist view it either does or doesn't); and that 95% of individuals lost between 2.1 and 4.5 kg (the interval is about the mean, not individuals). | Explains the repeated-sampling meaning ; Interprets the range of plausible values ; Notes the interval excludes 0 ; Rejects the 95%-probability-for-this-interval reading ; Rejects the 95%-of-individuals reading
 
 ## Maximum Likelihood Estimation
 S: Maximum likelihood estimation chooses the parameter values that make the observed data most probable. It's the most widely used estimation method, with excellent large-sample properties, and it underlies regression, GLMs and much of machine learning.
 O: Write down a likelihood and find the maximum likelihood estimate
 O: State the main properties of maximum likelihood estimators
+LV: Year 2 · Application
 T: Likelihood | L(θ) = Π f(x_{i}; θ), the probability (or density) of the data as a function of θ
 T: Maximum likelihood estimate (MLE) | The θ̂ that maximises L(θ), usually found by setting the derivative of ln L to zero
 H: Method
@@ -408,16 +424,20 @@ Q: What is the MLE of p after 7 successes in 20 trials? | 0.35.
 Q: What does the invariance property say? | The MLE of g(θ) is g(θ̂).
 SUM: MLE picks the parameter that best explains the data.
 SUM: It's efficient in large samples.
+EV: established | Maximum likelihood estimators are consistent, asymptotically normal and efficient under regularity conditions, and invariant under reparameterisation.
 SRC: Casella G, Berger RL, Statistical Inference (2nd edn, Duxbury 2002) | secondary | 2002 | https://www.cengage.com/
 SRC: Fisher RA, On the mathematical foundations of theoretical statistics, Philosophical Transactions of the Royal Society A 222, 309 | primary | 1922 | https://doi.org/10.1098/rsta.1922.0009
 NUM1#maths-u13-11-q1@1: Counts of 2, 5, 3 and 6 are modelled as Poisson(λ). Find the MLE of λ. | 4 | 0 |  | For the Poisson, λ̂ = x̄ = 16/4 = 4.
 M1#maths-u13-11-q2@1: Why do we usually maximise the log-likelihood rather than the likelihood? | Logs turn products into sums with the same maximum | The log-likelihood is always larger | Likelihoods can't be maximised | Logs remove the parameter | It gives a different, better answer | ln is increasing, so the maximiser is unchanged and the algebra is simpler.
 M3#maths-u13-11-q3@2: The MLE of a normal σ^{2} is 9. What is the MLE of σ? | 3 | 9 | 81 | 4.5 | It must be found separately | By invariance, the MLE of √(σ^{2}) is √9 = 3.
+NUM2@1: In 40 independent trials there are 14 successes. Find the maximum likelihood estimate of p. | 0.35 | 0.001 |  | For a binomial, p̂ = x/n = 14/40 = 0.35.
+SA2@1: Derive the maximum likelihood estimator of p for x successes in n binomial trials. | L(p) = C p^{x}(1 − p)^{n−x}, so ln L = const + x ln p + (n − x) ln(1 − p). Differentiating: x/p − (n − x)/(1 − p) = 0, so x(1 − p) = (n − x)p and p̂ = x/n. The second derivative −x/p^{2} − (n − x)/(1 − p)^{2} is negative, so this is a maximum. | Writes the likelihood ; Takes logs ; Differentiates and sets to zero ; Solves to get x/n ; Checks it is a maximum
 
 ## Method of Moments
 S: The method of moments estimates parameters by matching the sample's moments (mean, variance, …) to the model's theoretical moments. It's simple and often gives closed-form answers, though usually less efficient than maximum likelihood.
 O: Find method of moments estimators for common distributions
 O: Compare method of moments with maximum likelihood
+LV: Year 2 · Application
 T: Method of moments | Set E(X^{k}) = (1/n)Σx_{i}^{k} for k = 1, 2, … and solve for the parameters
 T: Sample moment | (1/n)Σx_{i}^{k}, the sample version of E(X^{k})
 H: Method
@@ -441,11 +461,14 @@ Q: What is the method of moments estimator of θ for Uniform(0, θ)? | 2x̄.
 Q: Who introduced the method of moments? | Karl Pearson (1894).
 SUM: Match moments, solve for parameters.
 SUM: Quick but often less efficient.
+EV: established | Method of moments estimators are simple and consistent but usually less efficient than maximum likelihood estimators.
 SRC: Casella G, Berger RL, Statistical Inference (2nd edn, Duxbury 2002) | secondary | 2002 | https://www.cengage.com/
 SRC: Hansen LP, Large sample properties of generalized method of moments estimators, Econometrica 50(4), 1029 | primary | 1982 | https://doi.org/10.2307/1912775
 NUM1#maths-u13-12-q1@1: Data have mean 6 and variance 12 and are modelled as Gamma(k, λ). Find the method of moments estimate of k. | 3 | 0 |  | k̂ = x̄^{2}/s^{2} = 36/12 = 3 (and λ̂ = 6/12 = 0.5).
 M1#maths-u13-12-q2@1: How many moment equations do you need for a two-parameter model? | Two | One | Three | As many as data points | None | Each unknown parameter needs its own equation.
 M2#maths-u13-12-q3@2: Compared with maximum likelihood, the method of moments is usually… | simpler but less efficient | always more accurate | impossible for the normal | identical in every case | slower to compute | It gives easy closed forms, but MLE typically has smaller variance.
+NUM3@2: Data 1, 2 and 9 are modelled as Uniform(0, θ). Find the method of moments estimate of θ. | 8 | 0 |  | x̄ = 4 and E(X) = θ/2, so θ̂ = 8. This is impossible, since an observation (9) exceeds it; the MLE, the maximum 9, can't make that mistake.
+SA3@1,2: For an exponential(λ) model, show that the method of moments and maximum likelihood give the same estimate, and explain why the two methods can differ for Uniform(0, θ). | Moments: E(X) = 1/λ, so matching x̄ gives λ̂ = 1/x̄. Likelihood: ln L = n ln λ − λΣx, so n/λ − Σx = 0 and λ̂ = n/Σx = 1/x̄: the same. For Uniform(0, θ), moments give 2x̄, but the likelihood θ^{−n} (for θ ≥ max x) is largest at θ̂ = max x. The methods use different information, and here the MLE uses the sufficient statistic, the maximum. | Matches the mean to get 1/x̄ ; Derives the MLE 1/x̄ ; Gives the uniform moments estimate 2x̄ ; Gives the uniform MLE max x ; Explains why they differ
 
 ## Hypothesis Testing
 S: A hypothesis test asks whether data are consistent with a claim about a population. It sets up a null hypothesis, measures how surprising the data would be if it were true, and decides whether the evidence is strong enough to reject it.

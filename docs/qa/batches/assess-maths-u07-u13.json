@@ -549,6 +549,66 @@
    "course": "maths",
    "action": "enhanced",
    "findings": []
+  },
+  {
+   "lesson": "u13-07",
+   "changes": [
+    "LV A level · Application; EV",
+    "added NUM2 and SA2 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-08",
+   "changes": [
+    "LV A level · Application; EV",
+    "added SA3 question"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-09",
+   "changes": [
+    "LV GCSE and A level · Fluency; EV",
+    "added NUM3 and SA3 (Literary Digest) questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-10",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added NUM2 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-11",
+   "changes": [
+    "LV Year 2 · Application; EV",
+    "added NUM2 and SA2 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-12",
+   "changes": [
+    "LV Year 2 · Application; EV",
+    "added NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
   }
  ],
  "notes": [

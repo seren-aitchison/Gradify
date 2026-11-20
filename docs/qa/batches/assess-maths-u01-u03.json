@@ -715,6 +715,111 @@
     "all worked examples and numeric answers recomputed"
    ],
    "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u03-25",
+   "action": "enhanced",
+   "changes": [
+    "level: A level · Application",
+    "evidence status: established",
+    "new questions added: M2, SA3 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u03-26",
+   "action": "enhanced",
+   "changes": [
+    "level: A level · Application",
+    "evidence status: established",
+    "common mistake added: subtracting only the first term of each product (lesson was too thin)",
+    "new questions added: NUM2, M3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u03-27",
+   "action": "enhanced",
+   "changes": [
+    "level: A level · Application",
+    "evidence status: established",
+    "new questions added: NUM3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u03-28",
+   "action": "enhanced",
+   "changes": [
+    "level: A level · Application",
+    "evidence status: established",
+    "new questions added: NUM2, SA3 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u03-29",
+   "action": "enhanced",
+   "changes": [
+    "level: A level · Application",
+    "evidence status: established",
+    "new questions added: M3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u03-30",
+   "action": "enhanced",
+   "changes": [
+    "level: A level · Problem solving",
+    "evidence status: established",
+    "new questions added: M2, SA3 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u03-31",
+   "action": "enhanced",
+   "changes": [
+    "level: A level · Problem solving",
+    "evidence status: established",
+    "new questions added: NUM3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u03-32",
+   "action": "enhanced",
+   "changes": [
+    "level: A level · Application",
+    "evidence status: established",
+    "new questions added: NUM1, M3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
   }
  ],
  "notes": []
