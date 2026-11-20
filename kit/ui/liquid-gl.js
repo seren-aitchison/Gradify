@@ -9,15 +9,25 @@
 // Bars that stay on screen as you scroll (the header, the course toolbar and dock) get a small copy of their patch of
 // the canvas inside them, so the page scrolling underneath stays behind the glass.
 //
-// It only runs where it can run well: WebGL available, transparency and contrast at their defaults, no data saver, and
-// the first frames fast enough; otherwise the CSS glass (kit/styles/base.css) stays, unchanged. Turn it off on a device
-// with localStorage "gradify.glass" = "off" ("force" skips the speed check, for testing). Loaded by kit/core/theme-boot.js.
+// Three tiers, so the glass never costs the lesson its responsiveness:
+//   "webgl"       the full material, up to 32 surfaces, at up to 1.25x pixels
+//   "webgl-lite"  the same look, cheaper: no colour split, fewer surfaces, fewer pixels (phones, small GPUs, or a
+//                 full tier that measured slow)
+//   "css"         the CSS glass (kit/styles/base.css), unchanged: no WebGL, software rendering, reduced transparency,
+//                 high contrast, data saver, a lost GPU context, or the lite tier measured slow too
+// Software rendering is spotted two ways: the browser itself (a context asked for with failIfMajorPerformanceCaveat
+// isn't given when there's no GPU behind it, or the GPU is blocklisted) and the renderer's name. Speed is then measured
+// from the frame rate over a couple of dozen frames, after the shaders have finished compiling and the first frames
+// (which still carry driver work) are discarded; the page is never blocked waiting for the GPU.
+// What happened is on <html data-glass="..."> and in window.gradifyGlass (tier, reason, renderer, frame time).
+// localStorage "gradify.glass": "off" turns it off, "lite" asks for the lite tier, "force" skips the GPU and speed checks.
+// Loaded by kit/core/theme-boot.js.
 
 // which boxes are glass, and which never are (controls, and the dark islands of kit/styles/base.css / scripts/theme-tokens.mjs)
 export const GLASS = [".glass", ".panel", ".plan", ".hub-foot", ".sub-foot", ".co-card", ".cx-panel", ".cx-ucard", ".cx-sylhead", ".cx-widget", ".cx-tree", ".co-pncard", ".co-read .co-notes", ".cx-lbar", ".cx-dock", ".co-tabs", ".pro-card", ".cp-card", ".course-card", ".start-card", ".goal-card", ".offer-card"].join(", ");
 export const ISLANDS = [".earth-map", ".tree-wrap", ".isle3d", ".isle-tag", ".forest", ".fs-key", ".mv-stage", ".mv-studio", ".sm-3d-art", ".lab-3d", ".lab-cv", ".lab-svg", ".co-lab", ".tablet", ".shot-frame", "[class*=\"vc-\"]", ".holo", ".sphere", ".spotlight", ".bi-stage", ".mv-labels", ".mv-tip", ".mv-controls", ".mv-info", ".gj-ring", ".cx-fcard", ".cx-rings", ".cx-wok"];
 const NEVER = ["button", "input", "select", "textarea", ".btn", "dialog", ...ISLANDS].join(", ");
-const MAX = 32;   // surfaces drawn at once (the ones on screen, outermost first)
+const MAX = 32, MAX_LITE = 12;   // surfaces drawn at once (the ones on screen, outermost first)
 
 // a renderer string that means there's no GPU behind WebGL
 export const softwareRenderer = (name) => /swiftshader|llvmpipe|softpipe|software|basic render|microsoft basic/i.test(name || "");
@@ -25,9 +35,26 @@ export const softwareRenderer = (name) => /swiftshader|llvmpipe|softpipe|softwar
 export function allowed({ webgl, reducedTransparency, highContrast, saveData, pref }) {
   return !!webgl && !reducedTransparency && !highContrast && !saveData && pref !== "off";
 }
+// the tier to start at, before anything is measured
+export function startTier({ caveat, renderer, pref, coarse, memory, cores, highp, uniforms }) {
+  if (pref === "force") return highp && uniforms >= 16 + 2 * MAX ? "webgl" : "webgl-lite";
+  if (caveat || softwareRenderer(renderer)) return "css";
+  if (uniforms < 16 + 2 * MAX_LITE) return "css";
+  if (pref === "lite" || !highp || uniforms < 16 + 2 * MAX) return "webgl-lite";
+  if (coarse && ((memory && memory <= 4) || (cores && cores <= 4))) return "webgl-lite";
+  return "webgl";
+}
+// after measuring: the median time between frames (ms) decides whether to step down. 34ms is below ~30fps.
+export const SLOW_MS = 34;
+export function nextTier(tier, medianMs, pref) {
+  if (pref === "force" || !(medianMs > SLOW_MS)) return tier;
+  // far too slow for the full tier: the lite one (roughly half the work) won't rescue it, so don't make the lesson wait
+  return tier === "webgl" && medianMs <= 3 * SLOW_MS ? "webgl-lite" : "css";
+}
+export const median = (xs) => { const a = [...xs].sort((x, y) => x - y), m = a.length >> 1; return a.length ? (a.length % 2 ? a[m] : (a[m - 1] + a[m]) / 2) : 0; };
 
 const VS = "attribute vec2 p; void main(){ gl_Position = vec4(p, 0., 1.); }";
-const FS = `precision highp float;
+const fragment = (MAX, lite, precision) => `precision ${precision} float;
 uniform vec2 res; uniform vec2 light; uniform float lightMode; uniform float dpr;
 uniform vec3 base; uniform vec3 acc1; uniform vec3 acc2; uniform float accentRim;
 uniform int n; uniform vec4 rects[${MAX}]; uniform vec4 props[${MAX}];
@@ -73,7 +100,7 @@ void main(){
     float h = sqrt(max(1. - (1. - t) * (1. - t), 0.)), bend = 1. - h;      // a circular bevel
     vec2 off = -nrm * bend * bez * 1.1 - p * .04;                            // refraction at the edge, a slight lens inside
     vec2 disp = nrm * bend * 5. * dpr;                                       // colours part at the rim
-    vec3 c = vec3(scene(fc + off - disp).r, scene(fc + off).g, scene(fc + off + disp).b);
+    ${lite ? "vec3 c = scene(fc + off);" : "vec3 c = vec3(scene(fc + off - disp).r, scene(fc + off).g, scene(fc + off + disp).b);"}
     float tint = props[i].z;
     c = mix(c, lightMode > .5 ? vec3(1.) : vec3(.045, .045, .07), tint);
     vec3 N = normalize(vec3(nrm * bend * 1.8, h + .02)), L = normalize(vec3(light, .8)), H = normalize(L + vec3(0., 0., 1.));
@@ -102,42 +129,77 @@ const hexRgb = (s) => {
   return null;
 };
 
+let running = null;   // one renderer per page
+
 export function start() {
   const root = document.documentElement;
-  if (root.classList.contains("lgl") || window.top !== window) return null;
-  const canvas = document.createElement("canvas");
-  const gl = canvas.getContext("webgl", { antialias: false, alpha: false, powerPreference: "low-power" });
+  if (running || window.top !== window) return running;
+  const status = (tier, why, extra) => {
+    root.dataset.glass = tier;
+    window.gradifyGlass = Object.assign(window.gradifyGlass || {}, { tier, why }, extra);
+    if (tier === "css" && why) console.info(`Liquid Glass: CSS glass (${why})`);
+  };
   const pref = (() => { try { return localStorage.getItem("gradify.glass"); } catch { return null; } })();
+  const canvas = document.createElement("canvas");
+  const opts = { antialias: false, alpha: false, depth: false, stencil: false, powerPreference: "default" };
+  // the browser's own answer to "is there a real GPU here?": no context with this flag on software rendering
+  let gl = pref === "force" ? null : canvas.getContext("webgl", { ...opts, failIfMajorPerformanceCaveat: true });
+  const caveat = !gl && pref !== "force";
+  if (!gl) gl = canvas.getContext("webgl", opts);
   const ok = allowed({ webgl: gl, reducedTransparency: matchMedia("(prefers-reduced-transparency: reduce)").matches, highContrast: root.getAttribute("data-a-contrast") === "high" || matchMedia("(prefers-contrast: more)").matches, saveData: !!navigator.connection?.saveData, pref });
-  if (!ok) return null;
-  // software rendering (no GPU: SwiftShader, llvmpipe, a VM) can't draw this smoothly: keep the CSS glass, at no cost
-  const dbg = gl.getExtension("WEBGL_debug_renderer_info"), gpu = dbg ? String(gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL)) : "";
-  if (pref !== "force" && softwareRenderer(gpu)) return null;
+  if (!ok) { status("css", !gl ? "no WebGL" : pref === "off" ? "turned off" : "accessibility or data-saver setting"); return null; }
+  const dbg = gl.getExtension("WEBGL_debug_renderer_info");
+  const renderer = String(dbg ? gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL) : gl.getParameter(gl.RENDERER));
+  const highp = (gl.getShaderPrecisionFormat(gl.FRAGMENT_SHADER, gl.HIGH_FLOAT)?.precision || 0) > 0;
+  const uniforms = gl.getParameter(gl.MAX_FRAGMENT_UNIFORM_VECTORS) || 0;
+  const coarse = matchMedia("(pointer: coarse)").matches;
+  let tier = startTier({ caveat, renderer, pref, coarse, memory: navigator.deviceMemory, cores: navigator.hardwareConcurrency, highp, uniforms });
+  window.gradifyGlass = { renderer, highp, uniforms };
+  if (tier === "css") { status("css", caveat ? "software rendering (browser reported)" : uniforms < 16 + 2 * MAX_LITE ? "GPU too small" : "software rendering: " + renderer); return null; }
+  const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+  const par = gl.getExtension("KHR_parallel_shader_compile");
 
-  const sh = (t, s) => { const o = gl.createShader(t); gl.shaderSource(o, s); gl.compileShader(o); if (!gl.getShaderParameter(o, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(o)); return o; };
-  let prog;
-  try { prog = gl.createProgram(); gl.attachShader(prog, sh(gl.VERTEX_SHADER, VS)); gl.attachShader(prog, sh(gl.FRAGMENT_SHADER, FS)); gl.linkProgram(prog); if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(prog)); }
-  catch (e) { console.warn("Liquid Glass: falling back to CSS glass", e); return null; }
-  gl.useProgram(prog);
-  const buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf); gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
-  const loc = gl.getAttribLocation(prog, "p"); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
-  const U = {}; for (const k of ["res", "light", "lightMode", "dpr", "base", "acc1", "acc2", "accentRim", "n", "rects", "props"]) U[k] = gl.getUniformLocation(prog, k);
+  // the GPU program for a tier; compiled in the background where the browser can, so the page never waits on it
+  let P = null, lost = false;
+  const build = (t) => new Promise((resolve, reject) => {
+    const max = t === "webgl" ? MAX : MAX_LITE;
+    const sh = (type, src) => { const o = gl.createShader(type); gl.shaderSource(o, src); gl.compileShader(o); return o; };
+    const vs = sh(gl.VERTEX_SHADER, VS), fs = sh(gl.FRAGMENT_SHADER, fragment(max, t !== "webgl", highp ? "highp" : "mediump"));
+    const prog = gl.createProgram(); gl.attachShader(prog, vs); gl.attachShader(prog, fs); gl.linkProgram(prog);
+    const done = () => {
+      if (gl.isContextLost()) return reject(new Error("context lost"));
+      if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) return reject(new Error(gl.getShaderInfoLog(fs) || gl.getProgramInfoLog(prog) || "link failed"));
+      gl.deleteShader(vs); gl.deleteShader(fs);
+      if (P) gl.deleteProgram(P.prog);
+      gl.useProgram(prog);
+      if (!P || !P.buf || P.lostAt !== lostCount) {
+        const buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf); gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+        P = { buf, lostAt: lostCount };
+      }
+      const loc = gl.getAttribLocation(prog, "p"); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+      const U = {}; for (const k of ["res", "light", "lightMode", "dpr", "base", "acc1", "acc2", "accentRim", "n", "rects", "props"]) U[k] = gl.getUniformLocation(prog, k);
+      Object.assign(P, { prog, U, max, tier: t }); resolve();
+    };
+    if (!par) return done();
+    const poll = () => { if (gl.isContextLost()) return reject(new Error("context lost")); gl.getProgramParameter(prog, par.COMPLETION_STATUS_KHR) ? done() : setTimeout(poll, 30); };
+    poll();
+  });
+  let lostCount = 0;
 
   canvas.className = "lgl-canvas"; canvas.setAttribute("aria-hidden", "true");
   const style = document.createElement("style");
   style.textContent = `
     .lgl-canvas { position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none; }
+    html:not(.lgl) .lgl-canvas, html:not(.lgl) .lgl-cap { display: none !important; }
     html.lgl body { background: transparent !important; }
     html.lgl [data-lg][data-lg] { background: transparent !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; box-shadow: none !important; border-color: transparent !important; }
     html.lgl [data-lg-cap] { isolation: isolate; }
     .lgl-cap.lgl-cap { position: absolute !important; z-index: -1 !important; pointer-events: none !important; display: block !important; margin: 0 !important; padding: 0 !important; border: 0 !important; border-radius: inherit; grid-area: auto !important; width: auto; height: auto; }
     @media print { .lgl-canvas, .lgl-cap { display: none; } html.lgl [data-lg][data-lg] { background: #fff !important; } }`;
-  document.head.appendChild(style);
-  document.body.appendChild(canvas);
-  root.classList.add("lgl");
 
-  const DPR = () => Math.min(devicePixelRatio || 1, matchMedia("(pointer: coarse)").matches ? 1 : 1.25);
-  let els = [], light = [-0.55, -0.83], dirty = true, pending = false, busyUntil = 0, colours = null;
+  // pixels drawn: the lite tier draws fewer and lets the browser scale them up
+  const DPR = () => { const d = Math.min(devicePixelRatio || 1, coarse ? 1 : 1.25); return P && P.tier !== "webgl" ? Math.max(.5, d * .7) : d; };
+  let els = [], light = [-0.55, -0.83], dirty = true, pending = false, busyUntil = 0, colours = null, live = false;
   const rects = new Float32Array(MAX * 4), props = new Float32Array(MAX * 4);
 
   // the boxes that are glass right now (cheap: re-run only when the page changes)
@@ -172,13 +234,14 @@ export function start() {
 
   const draw = () => {
     pending = false;
-    const dpr = DPR(), W = Math.round(innerWidth * dpr), H = Math.round(innerHeight * dpr);
+    if (!live || lost || !P) return;
+    const dpr = DPR(), W = Math.round(innerWidth * dpr), H = Math.round(innerHeight * dpr), max = P.max;
     if (canvas.width !== W || canvas.height !== H) { canvas.width = W; canvas.height = H; }
     if (dirty) { collect(); readColours(); dirty = false; }
     // the surfaces on screen, outermost (and earliest) first, so nested glass draws over its parent
     let k = 0; const caps = [];
     for (const e of els) {
-      if (k >= MAX) break;
+      if (k >= max) break;
       const r = e.getBoundingClientRect();
       if (r.width < 8 || r.height < 8 || r.bottom < -40 || r.top > innerHeight + 40 || r.right < -40 || r.left > innerWidth + 40) continue;
       const cs = getComputedStyle(e);
@@ -193,9 +256,9 @@ export function start() {
       k++;
     }
     gl.viewport(0, 0, W, H);
-    gl.uniform2f(U.res, W, H); gl.uniform2f(U.light, light[0], light[1]); gl.uniform1f(U.lightMode, colours.lightMode ? 1 : 0); gl.uniform1f(U.dpr, dpr);
-    gl.uniform1f(U.accentRim, colours.course ? 1 : 0); gl.uniform3fv(U.base, colours.base); gl.uniform3fv(U.acc1, colours.a1); gl.uniform3fv(U.acc2, colours.a2);
-    gl.uniform1i(U.n, k); gl.uniform4fv(U.rects, rects); gl.uniform4fv(U.props, props);
+    gl.uniform2f(P.U.res, W, H); gl.uniform2f(P.U.light, light[0], light[1]); gl.uniform1f(P.U.lightMode, colours.lightMode ? 1 : 0); gl.uniform1f(P.U.dpr, dpr);
+    gl.uniform1f(P.U.accentRim, colours.course ? 1 : 0); gl.uniform3fv(P.U.base, colours.base); gl.uniform3fv(P.U.acc1, colours.a1); gl.uniform3fv(P.U.acc2, colours.a2);
+    gl.uniform1i(P.U.n, k); gl.uniform4fv(P.U.rects, rects.subarray(0, max * 4)); gl.uniform4fv(P.U.props, props.subarray(0, max * 4));
     gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
     // the bars that float over the page: their patch of the canvas, inside them, above what scrolls beneath
     for (const [e, r] of caps) {
@@ -204,43 +267,78 @@ export function start() {
       if (c.width !== w || c.height !== h) { c.width = w; c.height = h; }
       c.getContext("2d").drawImage(canvas, r.left * dpr, r.top * dpr, w, h, 0, 0, w, h);
     }
+    if (probing) sample();
     if (performance.now() < busyUntil) kick();
   };
-  const kick = () => { if (!pending) { pending = true; requestAnimationFrame(draw); } };
-  const busy = (ms) => { busyUntil = Math.max(busyUntil, performance.now() + ms); kick(); };
+  const kick = () => { if (!pending && live) { pending = true; requestAnimationFrame(draw); } };
+  const busy = (ms) => { busyUntil = Math.max(busyUntil, performance.now() + (reducedMotion.matches ? Math.min(ms, 120) : ms)); kick(); };
 
-  // too slow here (an old phone, software rendering): give the page back to the CSS glass
-  let frames = 0, spent = 0;
-  // a few frames, timed; one slow frame is enough to hand back to the CSS glass, so a slow device never stalls
-  const probe = () => { const t = performance.now(); draw(); gl.finish(); const ms = performance.now() - t; spent += ms; frames++;
-    if (pref !== "force" && (ms > 45 || (frames >= 4 && spent / frames > 22))) return stop();
-    if (frames < 4) requestAnimationFrame(probe); };
+  // the speed check: the time between frames while drawing every frame, after the first few (driver warm-up) are
+  // dropped. A gap while the tab was hidden isn't counted; a slow gap is (a GPU that slow must not keep running), and
+  // if the frames haven't come in by the deadline, it's too slow. Nothing waits for the GPU to finish: the page is never blocked.
+  const SKIP = 3, TAKE = 20, DEADLINE = 5000;
+  let probing = false, last = 0, seen = 0, gaps = [], since = 0;
+  const probe = () => { probing = true; last = 0; seen = 0; gaps = []; since = performance.now(); busyUntil = since + DEADLINE + 1000; kick(); };   // redraws of a still page: not motion
+  const sample = () => {
+    const t = performance.now();
+    if (document.hidden) { last = 0; return; }
+    if (last && ++seen > SKIP) gaps.push(t - last);
+    last = t;
+    // three very slow frames in a row: no need to wait for the rest, the lesson shouldn't feel it any longer
+    const stalled = gaps.length >= 3 && gaps.slice(-3).every((g) => g > 3 * SLOW_MS);
+    if (!stalled && gaps.length < TAKE && t - since < DEADLINE) return;
+    probing = false;
+    const ms = gaps.length >= 3 ? median(gaps) : Infinity, next = nextTier(P.tier, ms, pref);
+    window.gradifyGlass.frameMs = Math.round(ms * 10) / 10;
+    if (next === P.tier) { status(P.tier, "measured " + window.gradifyGlass.frameMs + "ms a frame"); return; }
+    if (next === "css") { status("css", `too slow here (${window.gradifyGlass.frameMs}ms a frame)`); return stop(); }
+    build(next).then(() => { dirty = true; status(next, `measuring (full tier was ${window.gradifyGlass.frameMs}ms a frame)`); probe(); }).catch((e) => { status("css", "lite shader failed: " + e.message); stop(); });
+  };
 
-  addEventListener("scroll", kick, { passive: true, capture: true });
-  addEventListener("resize", () => { dirty = true; kick(); });
-  addEventListener("hashchange", () => { dirty = true; busy(900); });
-  if (matchMedia("(pointer: fine)").matches) addEventListener("pointermove", (e) => {
+  const onScroll = () => kick();
+  const onResize = () => { dirty = true; kick(); };
+  const onHash = () => { dirty = true; busy(900); };
+  const onMove = (e) => {
+    if (reducedMotion.matches) return;   // the light stays put
     // the light sits towards the pointer, seen from the middle of the window
     const x = e.clientX / innerWidth - .5, y = e.clientY / innerHeight - .5, l = Math.hypot(x, y) || 1;
     light = [x / l * .85 - .15, y / l * .85 - .25]; const m = Math.hypot(...light) || 1; light = [light[0] / m, light[1] / m]; kick();
-  }, { passive: true });
+  };
+  const onVis = () => { if (document.hidden) return; if (probing) probe(); else kick(); };
   let mt = 0;
   const mo = new MutationObserver(() => { clearTimeout(mt); mt = setTimeout(() => { dirty = true; busy(700); }, 60); });
-  mo.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["class", "open", "hidden", "style"] });
-  const to = new MutationObserver(() => { dirty = true; kick(); });
-  to.observe(root, { attributes: true, attributeFilter: ["data-theme", "data-a-contrast"] });
-  addEventListener("visibilitychange", () => { if (!document.hidden) kick(); });
-  // reduced transparency or high contrast chosen later: stop and hand back
-  const watch = () => { if (root.getAttribute("data-a-contrast") === "high") stop(); };
-  to.observe(root, { attributes: true, attributeFilter: ["data-a-contrast"] }); document.addEventListener("gradify:access", watch);
+  const to = new MutationObserver(() => { dirty = true; if (root.getAttribute("data-a-contrast") === "high") { status("css", "high contrast"); stop(); } else kick(); });
+  const onAccess = () => { if (root.getAttribute("data-a-contrast") === "high") { status("css", "high contrast"); stop(); } };
+
+  // the GPU can be taken away (a driver reset, too many contexts, the OS reclaiming memory): CSS glass meanwhile,
+  // the same canvas and observers back when it returns
+  const onLost = (e) => { e.preventDefault(); lost = true; lostCount++; P = null; root.classList.remove("lgl"); status("css", "GPU context lost; waiting for it back"); };
+  const onRestored = () => { build(tier).then(() => { lost = false; root.classList.add("lgl"); dirty = true; status(P.tier, "GPU context restored"); kick(); }).catch(() => stop()); };
 
   function stop() {
+    live = false; running = null;
     mo.disconnect(); to.disconnect(); root.classList.remove("lgl"); canvas.remove(); style.remove();
     document.querySelectorAll("[data-lg]").forEach((e) => { e.removeAttribute("data-lg"); e.removeAttribute("data-lg-cap"); });
     document.querySelectorAll(".lgl-cap").forEach((c) => c.remove());
-    removeEventListener("scroll", kick, { capture: true });
+    removeEventListener("scroll", onScroll, { capture: true }); removeEventListener("resize", onResize); removeEventListener("hashchange", onHash);
+    removeEventListener("pointermove", onMove); removeEventListener("visibilitychange", onVis); document.removeEventListener("gradify:access", onAccess);
+    canvas.removeEventListener("webglcontextlost", onLost); canvas.removeEventListener("webglcontextrestored", onRestored);
+    if (root.dataset.glass !== "css") status("css", "stopped");
   }
-  busy(1600);   // entrance animations move things for a moment
-  requestAnimationFrame(probe);
-  return { stop, redraw: () => { dirty = true; kick(); } };
+
+  running = { stop, redraw: () => { dirty = true; kick(); }, get tier() { return P ? P.tier : "css"; } };
+  status("css", null, { pending: tier });   // CSS glass until the GPU program is ready
+  build(tier).catch((e) => tier === "webgl" ? build(tier = "webgl-lite") : Promise.reject(e)).then(() => {
+    if (!running) return;
+    document.head.appendChild(style); document.body.appendChild(canvas);
+    canvas.addEventListener("webglcontextlost", onLost); canvas.addEventListener("webglcontextrestored", onRestored);
+    addEventListener("scroll", onScroll, { passive: true, capture: true }); addEventListener("resize", onResize); addEventListener("hashchange", onHash);
+    if (matchMedia("(pointer: fine)").matches) addEventListener("pointermove", onMove, { passive: true });
+    addEventListener("visibilitychange", onVis); document.addEventListener("gradify:access", onAccess);
+    mo.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["class", "open", "hidden", "style"] });
+    to.observe(root, { attributes: true, attributeFilter: ["data-theme", "data-a-contrast"] });
+    live = true; root.classList.add("lgl"); status(P.tier, "measuring");
+    probe();   // entrance animations move things for a moment, and the speed check runs over the same frames
+  }).catch((e) => { console.warn("Liquid Glass: falling back to CSS glass", e); status("css", "shader failed: " + e.message); running = null; });
+  return running;
 }
