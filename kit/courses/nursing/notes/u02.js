@@ -8,6 +8,8 @@ S: Anatomical terminology is the shared, precise language health professionals u
 O: Describe the anatomical position and use directional terms correctly
 O: Name the body planes, cavities and abdominal regions and quadrants
 O: Use anatomical terms accurately in a nursing record or handover
+LV: Year 1 · Foundation
+EV: established | Directional terms are defined from the anatomical position and always use the patient's own left and right.
 H: The anatomical position
 P: Every directional term assumes the **anatomical position**: standing upright, facing forward, arms at the sides with palms facing forward, feet together. "Left" and "right" always mean the patient's left and right, not yours, whichever way the person is lying.
 H: Directional terms
@@ -43,12 +45,16 @@ M1#nursing-u02-01-q1@1: The wrist is ___ to the elbow. | Distal | Proximal | Med
 M2#nursing-u02-01-q2@2: A patient has pain just below the right ribs, lateral to the midline. Which quadrant is this? | Right upper quadrant | Left upper quadrant | Right lower quadrant | Epigastric region | Below the right costal margin and lateral to the midline is the right upper quadrant, which contains the liver and gallbladder.
 M2#nursing-u02-01-q3@3: A patient lying face down on a theatre table has a lesion on the side nearest you as you stand on their left. How should it be documented? | On the patient's left side | On the right, because it is on your right | On the side nearest the nurse | On the dorsal surface only | Left and right always refer to the patient's own sides, whatever their position or yours.
 MATCH1#nursing-u02-01-q4@2: Match each plane to how it divides the body. | Sagittal = Left and right parts ; Coronal = Anterior and posterior parts ; Transverse = Superior and inferior parts | The three planes are at right angles to each other.
+M3@1,3: Mr Hall (invented) is lying on his back. The nurse finds a wound on the back of his lower leg, below the knee, on the outer side. Which record is most precise? | Posterior lower leg, distal to the knee, lateral aspect | Anterior lower leg, distal to the knee, lateral aspect | Posterior thigh, proximal to the knee, lateral aspect | Posterior lower leg, distal to the knee, medial aspect | The back is posterior whatever position he lies in, below the knee is distal, and the outer side is lateral (away from the midline).
+SA3@3: At handover a nurse says a patient has "a sore on her bottom and pain on her side". Rewrite this using anatomical terms and explain why the change matters for safe care. | For example: "Pressure damage over the sacrum, and pain in the right flank (lateral abdomen), confirmed with the patient." Precise terms tell the next nurse exactly where to look, let a wound or pain be compared over time, make the record accurate, and reduce wrong-site errors, which is why the side is always confirmed with the person and the records. | Names a specific site such as the sacrum ; Uses the patient's own left or right ; Uses a standard region, quadrant or directional term ; Explains that precision allows comparison and continuity of care ; Links precision to safety such as preventing wrong-site errors
 
 ## Cells and tissues
 S: Cells are the basic units of life, and tissues are groups of similar cells working together. Understanding them explains how the body grows, repairs itself and fails in disease.
 O: Describe the main structures of a human cell and their functions
 O: Explain how substances move across cell membranes
 O: Describe the four basic tissue types and give examples
+LV: Year 1 · Foundation
+EV: established | Cells keep their internal environment stable by controlling transport across the plasma membrane.
 PRE: Anatomical terminology
 H: Cell structure
 - **Plasma membrane**: a phospholipid bilayer with proteins; controls what enters and leaves the cell.
@@ -86,12 +92,15 @@ M1#nursing-u02-02-q1@1: What is the main function of ribosomes? | Making protein
 M2#nursing-u02-02-q2@2: Which process keeps potassium concentrated inside cells? | Active transport by the sodium-potassium pump | Simple diffusion | Osmosis | Facilitated diffusion down a gradient | Keeping potassium high inside cells means moving it against its gradient, which needs energy: the sodium-potassium pump uses ATP.
 M3#nursing-u02-02-q3@2,3: Red blood cells are placed in a solution with a much lower solute concentration than their cytoplasm. What happens? | Water enters by osmosis and the cells swell and may burst | Water leaves and the cells shrink | Solutes leave the cells by active transport | Nothing, because the membrane blocks water | Water moves towards the higher solute concentration, which is inside the cells, so they swell and can lyse.
 MATCH1#nursing-u02-02-q4@3: Match each tissue type to an example. | Epithelial = Lining of the gut ; Connective = Bone ; Muscle = Myocardium ; Nervous = Spinal cord | Each tissue type has a characteristic structure and role.
+SA3@2,3: Using osmosis, explain why the solute concentration of an intravenous fluid matters. | Intravenous fluids are chosen to have about the same solute concentration as plasma (isotonic), such as 0.9% sodium chloride, so that little water moves into or out of cells. A fluid much more dilute than plasma would let water enter red cells by osmosis, so they swell and can burst (haemolysis); a much more concentrated fluid would draw water out and shrink them. This is why pure water is never given intravenously and why fluids are prescribed and checked with care. | Defines osmosis as water moving towards the higher solute concentration ; Describes isotonic fluid causing little net movement ; Explains swelling or haemolysis with a dilute fluid ; Explains shrinkage with a concentrated fluid ; Links this to prescribing and checking fluids
 
 ## Homeostasis
 S: Homeostasis is the body's ability to keep its internal environment within narrow limits despite changes outside and inside. Much of nursing assessment is detecting when homeostasis is failing.
 O: Explain negative feedback using a physiological example
 O: Distinguish negative from positive feedback
 O: Relate changes in observations to homeostatic responses and their failure
+LV: Year 1 · Foundation
+EV: established | Negative feedback keeps controlled variables near a set point, and early compensation can mask serious illness.
 PRE: Cells and tissues
 H: The idea of homeostasis
 P: Cells only work within narrow ranges of temperature, pH, water, glucose, oxygen and electrolytes. Homeostasis keeps these **controlled variables** close to a **set point**. Illness often shows first as the body working hard to compensate, before the controlled variable itself changes.
@@ -119,12 +128,16 @@ Q: Give an example of positive feedback in normal physiology. | Oxytocin release
 M1#nursing-u02-03-q1@2: Which is an example of positive feedback? | Oxytocin increasing uterine contractions during labour | Insulin lowering blood glucose | Sweating when body temperature rises | Baroreceptors raising heart rate when blood pressure falls | Positive feedback amplifies a change until an end point (delivery); the other options reverse a change.
 M2#nursing-u02-03-q2@1: A person's core temperature falls in a cold room. Which response is part of negative feedback? | Shivering and peripheral vasoconstriction | Peripheral vasodilation to warm the skin | Sweating | A fall in metabolic rate to save energy | Shivering produces heat and vasoconstriction reduces heat loss, reversing the fall in temperature.
 M3#nursing-u02-03-q3@3: A post-operative patient has a heart rate of 118, respiratory rate of 24 and blood pressure of 124/78. What is the best interpretation? | The body may be compensating for a problem such as bleeding or sepsis, so this needs escalation | The normal blood pressure shows the circulation is stable, so routine observations are enough | Only the blood pressure matters for assessing shock | Post-operative pain fully explains the pattern, so analgesia alone is needed | Tachycardia and tachypnoea can maintain blood pressure early in shock; the pattern needs escalating per the early warning score and local policy.
+M2@1: After a meal, a person's blood glucose rises. Which response brings it back towards the set point? | The pancreas releases insulin and cells take up glucose | The pancreas releases glucagon and the liver releases glucose | The hypothalamus triggers shivering to use up glucose | The kidneys excrete all the excess glucose in urine | Insulin reverses the rise: cells take up glucose and the liver stores it as glycogen. Glucagon does the opposite, raising glucose.
+SA3@1,3: A patient two days after surgery has a heart rate of 112, a respiratory rate of 22 and a normal blood pressure. Explain what this may show about homeostasis and what the nurse should do. | The fast heart and breathing rates may be compensation: negative feedback responses, such as baroreceptors raising heart rate, keeping blood pressure and oxygen delivery normal despite a problem such as bleeding, sepsis, dehydration or pain. A normal blood pressure doesn't rule out shock, because it often falls only when compensation fails. The nurse should complete a full set of observations, calculate the NEWS2 score, look for a cause, increase monitoring and escalate in line with the score and local escalation policy. | Identifies tachycardia and tachypnoea as possible compensation ; Links this to a negative feedback mechanism ; Names a likely cause such as bleeding or sepsis ; Explains that normal blood pressure doesn't exclude shock ; Escalates using NEWS2 and the local escalation policy
 
 ## The integumentary system
 S: The integumentary system is the skin and its appendages: hair, nails and glands. It is the body's largest organ and its first line of defence, and nurses assess it every day.
 O: Describe the layers of the skin and their functions
 O: Explain the skin's roles in protection, temperature regulation and sensation
 O: Relate skin structure to pressure damage, wound healing and assessment across skin tones
+LV: Year 1 · Foundation
+EV: established | The skin protects, regulates temperature and senses, and early pressure damage must be assessed by touch as well as sight.
 PRE: Cells and tissues
 H: Structure
 - **Epidermis**: stratified squamous epithelium with no blood vessels; cells are made in the basal layer and move up to form a tough, waterproof layer of keratin. Contains melanocytes (pigment) and Langerhans cells (immunity).
@@ -158,12 +171,16 @@ M1#nursing-u02-04-q1@1: Which layer of the skin contains blood vessels and nerve
 M2#nursing-u02-04-q2@2: On a hot day, which change helps lower body temperature? | Dilation of dermal blood vessels and sweating | Constriction of dermal blood vessels | Shivering | Piloerection | Vasodilation brings warm blood to the surface to lose heat, and evaporation of sweat cools the skin.
 M2#nursing-u02-04-q3@3: How can early pressure damage be detected on a person with darkly pigmented skin? | Compare warmth, firmness and colour with the surrounding skin and ask about pain | Look only for redness that doesn't blanch | Wait until the skin breaks before recording any damage | Rely on the same visual check for redness as on lighter skin | Erythema may not be visible; changes in temperature, texture, colour compared with the person's usual skin, and the person's report help detect damage.
 MS2#nursing-u02-04-q4@2: Which are functions of the skin? | Barrier against micro-organisms ; Temperature regulation ; Vitamin D synthesis | Producing red blood cells ; Producing insulin | The skin protects, regulates temperature, senses and makes vitamin D; it doesn't produce blood cells or insulin.
+M3@3: Mrs Adeyemi (invented), who has darkly pigmented skin, has been in bed for two days. The skin over her sacrum looks unchanged in colour but feels warmer and firmer than the skin around it, and she says it is sore. What should the nurse do? | Treat it as possible early pressure damage, reposition her, record and report it | Record the skin as intact because there is no visible redness | Reassess once the skin looks red or has broken down | Rub the area firmly to improve its blood supply | Warmth, firmness and pain compared with surrounding skin can be the first signs of pressure damage on darker skin; waiting for redness or a break delays care, and rubbing can damage tissue further.
+SA3@1,2: Explain how the structure of the skin allows it to protect the body and regulate temperature. | The epidermis is a tough, waterproof layer of keratinised cells that blocks micro-organisms and chemicals and limits water loss, helped by an acid surface and Langerhans immune cells. The dermis contains blood vessels and sweat glands: when the body is hot, vessels dilate and sweat evaporates to lose heat; when it is cold, vessels constrict to conserve heat. The hypodermis's fat insulates and cushions. Sensory receptors in the dermis detect pain, pressure and temperature. | Describes the epidermis as a keratinised waterproof barrier ; Mentions immune or acid-surface protection ; Explains vasodilation and sweating to lose heat ; Explains vasoconstriction to conserve heat ; Describes the insulating hypodermis or sensory receptors
 
 ## Skeletal system
 S: The skeletal system is the bones, joints, cartilage and ligaments that support the body, protect organs and allow movement. Nurses need it to understand fractures, falls, mobility and osteoporosis.
 O: Describe the functions of the skeleton and the structure of bone
 O: Classify joints and give examples
 O: Explain bone remodelling and relate it to fractures, healing and osteoporosis
+LV: Year 1 · Foundation
+EV: established | Bone is continually remodelled by osteoblasts and osteoclasts; in osteoporosis resorption exceeds formation.
 PRE: Cells and tissues
 H: Functions
 - **Support** and shape; **protection** (skull for the brain, ribs for the heart and lungs).
@@ -197,12 +214,15 @@ M1#nursing-u02-05-q1@2: Which type of joint is the hip? | Ball and socket synovi
 M1#nursing-u02-05-q2@1: Which bones form part of the axial skeleton? | The skull, vertebral column, ribs and sternum | The bones of the arms and legs | The pelvis and shoulder girdles only | The hands and feet | The axial skeleton is the central axis; the limbs and their girdles form the appendicular skeleton.
 M2#nursing-u02-05-q3@3: An 82-year-old woman falls from standing and fractures her hip. What does this suggest? | A fragility fracture, which may indicate osteoporosis | That the fall must have been high-energy | That bone density is normal | That the fracture will heal within a week | A fracture from a standing-height fall is a fragility fracture; NICE recommends fracture risk assessment.
 M3#nursing-u02-05-q4@3: Why does prolonged bed rest weaken bones? | Without weight-bearing, osteoclast breakdown exceeds osteoblast formation | Bed rest increases calcium absorption from the gut | Immobility increases oestrogen | Muscles stop using ATP | Mechanical loading stimulates bone formation; without it, resorption dominates and bone mass falls.
+SA3@1,3: Mrs Price (invented), 80, has taken long-term oral steroids and fractures her wrist in a fall from standing. Explain, using bone remodelling, why this happened and what it means for her nursing care. | Bone is remodelled continuously by osteoblasts building and osteoclasts resorbing it. Ageing, low oestrogen after the menopause and long-term steroids tip the balance towards resorption, so bone mass falls (osteoporosis) and a fall from standing height can break it: a fragility fracture. Care includes recognising this as a fragility fracture so that fracture risk assessment and bone health review happen (NICE CG146), a falls assessment, pain relief, and supporting safe mobility, because immobility itself causes further bone loss. | Explains the osteoblast and osteoclast balance ; Links age, menopause or steroids to bone loss ; Names it a fragility fracture ; Mentions fracture risk or bone health assessment ; Includes falls assessment or supporting mobility
 
 ## Muscular system
 S: Muscle tissue moves the body, pumps blood, moves food along the gut and generates heat. Knowing how muscles work helps nurses understand mobility, falls, cramps and the effects of immobility.
 O: Compare skeletal, cardiac and smooth muscle
 O: Explain how a skeletal muscle contracts
 O: Relate muscle physiology to immobility, sarcopenia and safe movement
+LV: Year 1 · Foundation
+EV: established | Skeletal muscle contraction depends on acetylcholine, calcium, actin, myosin and ATP, and muscle wastes rapidly with disuse.
 PRE: Skeletal system
 H: Three types of muscle
 - **Skeletal**: striated, voluntary, attached to bones by tendons; moves the skeleton and maintains posture.
@@ -233,12 +253,16 @@ M1#nursing-u02-06-q1@1: Which type of muscle is found in the walls of blood vess
 M2#nursing-u02-06-q2@2: Which neurotransmitter is released at the neuromuscular junction of skeletal muscle? | Acetylcholine | Noradrenaline | Dopamine | Serotonin | Motor neurones release acetylcholine, which binds to receptors on the muscle fibre and triggers contraction.
 M2#nursing-u02-06-q3@3: Why does prolonged immobility increase the risk of deep vein thrombosis? | The calf muscle pump that helps venous return is not working | Muscles produce clotting factors when still | Bed rest raises the heart rate | Immobile muscles absorb more oxygen | Contracting calf muscles squeeze the deep veins and push blood back to the heart; without it, blood pools and clots more easily.
 TF1#nursing-u02-06-q4@3: An older person can lose noticeable leg muscle strength within days of bed rest. | True | Muscle wastes rapidly with disuse, especially in older people, which is why early mobilisation matters.
+M3@2: In a condition where antibodies block acetylcholine receptors at the neuromuscular junction, what would you expect to see? | Skeletal muscle weakness, because fibres are poorly stimulated | Stronger contractions, because more calcium is released | Weakness of cardiac muscle only, with normal limbs | Loss of sensation in the limbs with normal strength | Acetylcholine must bind receptors on the muscle fibre to trigger the action potential and calcium release; blocked receptors mean weak voluntary muscles.
+SA3@3: Mr Evans (invented), 84, has been in bed for five days with a chest infection. Explain the effects of this immobility on his muscles and circulation and how nursing care can reduce them. | Disuse wastes skeletal muscle quickly, especially in older people with sarcopenia, so leg strength and balance fall and falls risk rises. The calf muscle pump that pushes venous blood back to the heart is not working, so blood pools and the risk of deep vein thrombosis rises. Care includes early, safe mobilisation with physiotherapy, encouraging movement and exercises in bed, adequate nutrition including protein, a falls risk assessment, and venous thromboembolism assessment and prevention in line with local policy. | Explains rapid muscle wasting with disuse ; Links weakness to falls risk or sarcopenia ; Explains loss of the calf muscle pump and DVT risk ; Describes early mobilisation or physiotherapy ; Mentions nutrition, falls or VTE assessment
 
 ## Nervous system
 S: The nervous system detects changes, processes information and coordinates the body's responses through electrical and chemical signals. It underpins consciousness, movement, sensation and the control of every other system.
 O: Describe the organisation of the central and peripheral nervous systems
 O: Explain how a nerve impulse is generated and transmitted across a synapse
 O: Relate nervous system function to neurological observations
+LV: Year 1 · Foundation
+EV: established | Nerve impulses travel as action potentials and cross synapses by chemical neurotransmitters.
 PRE: Cells and tissues
 H: Organisation
 - **Central nervous system (CNS)**: the brain and spinal cord.
@@ -271,12 +295,16 @@ M1#nursing-u02-07-q1@1: Which structures make up the central nervous system? | T
 M2#nursing-u02-07-q2@2: Which event causes depolarisation during an action potential? | Sodium ions entering the neurone | Potassium ions entering the neurone | Calcium leaving the neurone | Chloride leaving the neurone | Opening of sodium channels lets sodium flood in, making the inside of the cell positive.
 M2#nursing-u02-07-q3@3: Why is myelin damage, as in multiple sclerosis, associated with weakness and altered sensation? | Impulses are slowed or blocked along demyelinated axons | Neurotransmitters can no longer be made | Muscles lose their blood supply | The sodium-potassium pump stops completely | Myelin speeds conduction; where it is damaged, signals travel slowly or fail, causing motor and sensory symptoms.
 SEQ2#nursing-u02-07-q4@2: Put the parts of a reflex arc in order. | Receptor ; Sensory neurone ; Spinal cord ; Motor neurone ; Effector | A reflex travels from receptor to the spinal cord and straight back to the effector, without waiting for the brain.
+M3@3: Mr Singh (invented) is on neurological observations. Over an hour his Glasgow Coma Scale score falls from 15 to 12 and one pupil becomes slower to react. What should the nurse do first? | Escalate immediately as an emergency, following local policy | Repeat the neurological observations in four hours | Let him sleep undisturbed and recheck in the morning | Document the change and mention it at the next handover | A falling conscious level with a new pupil change suggests a serious, possibly life-threatening neurological deterioration that needs urgent medical review.
+SA3@2: Describe how a nerve impulse is generated and passed on to the next cell, and give one example of a medicine that acts on this process. | At rest the inside of the neurone is negative, maintained by the sodium-potassium pump. A stimulus opens sodium channels and sodium rushes in (depolarisation), then potassium leaves (repolarisation): this action potential travels along the axon, faster where it is myelinated. At the synapse it causes release of a neurotransmitter, such as acetylcholine or serotonin, which crosses the gap and binds receptors on the next cell. Many medicines act at synapses, for example opioids, antidepressants or antipsychotics. | Describes the resting membrane potential ; Explains sodium entry and potassium exit ; States that the action potential travels along the axon ; Describes neurotransmitter release and binding at the synapse ; Gives a medicine that acts at synapses
 
 ## Brain and spinal cord
 S: The brain and spinal cord make up the central nervous system. Knowing what each region does helps nurses understand the effects of stroke, head injury, raised intracranial pressure and spinal cord injury.
 O: Describe the main regions of the brain and their functions
 O: Explain the protection of the CNS by the skull, meninges and cerebrospinal fluid
 O: Describe the spinal cord's structure and relate level of injury to loss of function
+LV: Year 1 · Application
+EV: established | Each cerebral hemisphere mainly controls the opposite side of the body, and the level of spinal cord injury determines the loss of function.
 PRE: Nervous system
 H: Regions of the brain
 - **Cerebrum**: two hemispheres, each with frontal (planning, personality, voluntary movement), parietal (sensation, spatial awareness), temporal (hearing, memory, language comprehension in most people on the left) and occipital (vision) lobes.
@@ -310,6 +338,7 @@ M1#nursing-u02-08-q1@1: Which part of the brain controls breathing and heart rat
 M2#nursing-u02-08-q2@1: A patient has had a stroke affecting the left cerebral hemisphere. Which problem is most likely? | Weakness of the right side of the body and difficulty with language | Weakness of the left side of the body with normal speech | Loss of vision in both eyes only | Loss of balance and coordination with no weakness | Each hemisphere controls the opposite side, and in most people language is in the left hemisphere.
 M3#nursing-u02-08-q3@2: A patient with a head injury becomes more drowsy, and one pupil is larger and slower to react than before. What is the most likely explanation and response? | Rising intracranial pressure: escalate immediately as an emergency | Normal tiredness after injury: recheck in four hours | A side effect of paracetamol: document only | Dehydration: give a drink and observe | Falling consciousness with a new pupil change suggests rising intracranial pressure and brain compression, which is an emergency.
 MATCH2#nursing-u02-08-q4@1: Match each lobe to a main function. | Frontal = Planning and voluntary movement ; Parietal = Sensation ; Temporal = Hearing and memory ; Occipital = Vision | The lobes have specialised, though interconnected, roles.
+SA3@3: Explain why a spinal cord injury in the neck can affect breathing and all four limbs, while an injury in the lower back mainly affects the legs, bladder and bowel. | Ascending and descending tracts run through the cord and spinal nerves leave it at each level, so damage interrupts signals to and from everything below the injury. A neck injury lies above the nerves to the arms and the intercostal muscles and, if high enough, the phrenic nerve (C3 to C5) that supplies the diaphragm, so breathing and all four limbs can be affected. A lower injury spares the arms and breathing but affects the nerves to the legs, bladder and bowel. After a neck injury, nurses therefore monitor breathing closely and escalate any deterioration. | Explains that function below the level of injury is lost ; Mentions ascending and descending tracts or spinal nerves ; Links a neck injury to the arms and breathing muscles ; Names the diaphragm or phrenic nerve ; Links a lower injury to the legs, bladder and bowel
 
 ## Autonomic nervous system
 S: The autonomic nervous system controls involuntary functions such as heart rate, blood pressure, breathing, digestion and bladder emptying. It explains the body's response to stress and the effects of many medicines.

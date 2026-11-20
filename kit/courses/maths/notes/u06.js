@@ -5,6 +5,8 @@ export default `
 S: Trigonometry studies the relationships between the angles and sides of triangles. It began with astronomy and surveying, and today it underpins navigation, engineering, physics, music and signal processing.
 O: Label the sides of a right-angled triangle relative to an angle
 O: Explain what trigonometry is used for
+LV: GCSE · Fluency
+EV: established | In a right-angled triangle the hypotenuse, opposite and adjacent sides are named relative to the chosen acute angle, and trigonometry links that angle to ratios of these sides.
 T: Hypotenuse | The longest side of a right-angled triangle, opposite the right angle
 T: Opposite and adjacent | The side across from the angle θ, and the side next to θ (not the hypotenuse)
 H: Labelling
@@ -21,6 +23,7 @@ X: In triangle ABC, the right angle is at C, AB = 13, BC = 5 and AC = 12. For th
 > The hypotenuse is opposite the right angle: AB = 13
 > Opposite angle A is side BC = 5
 > Adjacent to angle A (not the hypotenuse) is AC = 12
+P: **Choosing a ratio.** Once the sides are labelled, the pair you know or need picks the ratio: opposite and hypotenuse use sine, adjacent and hypotenuse cosine, opposite and adjacent tangent.
 K: Label H, O and A relative to the chosen angle; trigonometry links angles to ratios of sides.
 !: Labelling sides before choosing the angle, or calling the hypotenuse the adjacent side.
 Q: Which side is always the longest in a right-angled triangle? | The hypotenuse.
@@ -31,11 +34,16 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 SRC: Maor E, Trigonometric Delights (Princeton University Press 2013) | secondary | 2013 | https://press.princeton.edu/
 M1#maths-u06-01-q1@1: In a right-angled triangle, which side is opposite the right angle? | The hypotenuse | The adjacent | The opposite | The base | The shortest side | The hypotenuse is always opposite the right angle and is the longest side.
 M2#maths-u06-01-q2@2: For the other acute angle of the same triangle, what does the "opposite" side become? | The adjacent side | The hypotenuse | It stays the opposite | It disappears | The shortest side always | Swapping the acute angle swaps which leg is opposite and which is adjacent.
+TF1@1: The adjacent side can be the longest side of a right-angled triangle. | false | The hypotenuse, opposite the right angle, is always the longest side; the adjacent is one of the two shorter legs.
+M3@1: In triangle PQR the right angle is at Q. For the angle at R, which side is the opposite? | PQ | QR | PR | None: R has no opposite side | The opposite side is the one that doesn't touch R, which is PQ; PR is the hypotenuse and QR the adjacent.
+SA2@1,2: Explain how to label the sides of a right-angled triangle for a chosen angle, why the labels change if you choose the other acute angle, and give one practical use of trigonometry. | First mark the right angle: the side opposite it is the hypotenuse, the longest side. Then, for the chosen acute angle θ, the opposite is the side across from θ (not touching it) and the adjacent is the side next to θ that isn't the hypotenuse. The two legs swap roles for the other acute angle, because the leg across from one angle is next to the other. Trigonometry then lets us find unknown lengths or angles from these ratios, for example the height of a building from its distance and the angle of elevation of its top. | hypotenuse opposite the right angle ; opposite is across from θ ; adjacent is next to θ, not the hypotenuse ; legs swap for the other angle ; a valid practical use
 
 ## Trigonometric Ratios
 S: The trigonometric ratios sine, cosine and tangent compare pairs of sides in a right-angled triangle. Because similar triangles have equal ratios, each ratio depends only on the angle.
 O: Use sin, cos and tan to find missing sides and angles
 O: Recall exact values for 0°, 30°, 45°, 60° and 90°
+LV: GCSE · Fluency
+EV: established | Because similar right-angled triangles have equal side ratios, sin, cos and tan depend only on the angle.
 T: SOHCAHTOA | sin = opposite/hypotenuse, cos = adjacent/hypotenuse, tan = opposite/adjacent
 T: Inverse ratio | Using sin^{−1}, cos^{−1} or tan^{−1} to find an angle from a ratio
 H: Using the ratios
@@ -67,11 +75,16 @@ NUM1#maths-u06-02-q1@1: A ladder 5 m long makes an angle of 70° with the ground
 M1#maths-u06-02-q2@1: What is tan 45°? | 1 | 0 | √2/2 | √3 | 1/2 | In an isosceles right-angled triangle the opposite and adjacent sides are equal, so their ratio is 1.
 M2#maths-u06-02-q3@2: In a right-angled triangle, the adjacent side is 9 and the hypotenuse is 15. What is the angle? | About 53.1° | About 36.9° | About 31.0° | About 59.0° | About 0.6° | cos θ = 9/15 = 0.6, so θ = cos^{−1}(0.6) ≈ 53.1°.
 NUM1#maths-u06-02-q4@1: In a right-angled triangle the side opposite 30° is 4 cm. How long is the hypotenuse in cm? | 8 | 0 | cm | sin 30° = 4/h, so h = 4/0.5 = 8 cm.
+NUM3@1: From a point 25 m from the foot of a tree, the angle of elevation of the top is 38°, measured from an eye level 1.6 m above the ground. Find the tree's height, to 1 decimal place. | 21.1 | 0.05 | m | The height above eye level is 25 tan 38° ≈ 19.53 m; adding 1.6 m gives about 21.1 m.
+M3@2: What is the exact value of sin 60° × cos 30° + tan 45°? | 7/4 | 3/2 | 5/4 | 1 + √3/2 | √3 | sin 60° × cos 30° = (√3/2)(√3/2) = 3/4, and tan 45° = 1, so the total is 7/4.
+SA2@2: Use an equilateral triangle of side 2 to derive the exact values of sin, cos and tan for 30° and 60°. | Cut the equilateral triangle in half with a perpendicular from one vertex: this gives a right-angled triangle with hypotenuse 2, short side 1 and angles 30°, 60° and 90°. By Pythagoras the third side is √(4 − 1) = √3. Opposite 30° is 1 and adjacent √3, so sin 30° = ½, cos 30° = √3/2, tan 30° = 1/√3. Opposite 60° is √3 and adjacent 1, so sin 60° = √3/2, cos 60° = ½ and tan 60° = √3. | halves the equilateral triangle ; sides 1, 2 and √3 by Pythagoras ; values for 30° ; values for 60° ; angles 30° and 60° identified correctly
 
 ## Sine
 S: The sine of an angle starts as a ratio in a right-angled triangle and becomes a function defined for every angle, using the unit circle. Its smooth repeating graph describes waves, oscillations and anything periodic.
 O: Define sine for any angle using the unit circle
 O: Use the symmetry of sine to find angles with the same sine
+LV: GCSE and A level · Application
+EV: established | On the unit circle sin θ is the y-coordinate of the point at angle θ, so it has period 360° and satisfies sin(180° − θ) = sin θ.
 T: Sine function | sin θ, the y-coordinate of the point at angle θ on the unit circle
 T: Amplitude | The maximum distance of a wave from its centre line; for sin θ it's 1
 H: Beyond right angles
@@ -101,11 +114,16 @@ SRC: Department for Education, Mathematics AS and A level subject content: trigo
 SRC: Maor E, Trigonometric Delights (Princeton University Press 2013) | secondary | 2013 | https://press.princeton.edu/
 M1#maths-u06-03-q1@1: What is the maximum value of 5 sin x? | 5 | 1 | 0 | 10 | 5π | sin x is at most 1, so 5 sin x is at most 5: the amplitude is 5.
 M2#maths-u06-03-q2@2: Which angle between 0° and 360° has the same sine as 40°? | 140° | 220° | 320° | 50° | 400° | sin(180° − θ) = sin θ, so sin 140° = sin 40°.
+NUM2@2: Solve sin x = 0.8 for 90° ≤ x ≤ 180°, to 1 decimal place. | 126.9 | 0.05 | ° | The principal value is sin⁻¹(0.8) ≈ 53.1°, and sin(180° − θ) = sin θ gives 180 − 53.1 = 126.9° in the range.
+M3@1,2: How many solutions does sin 2x = 0.5 have for 0° ≤ x < 360°? | 4 | 2 | 8 | 1 | 3 | 2x runs over 0° to 720°, two periods: 2x = 30°, 150°, 390° or 510°, so x = 15°, 75°, 195° or 255°.
+SA2@1,2: Use the unit circle to explain why sin(180° − θ) = sin θ, and solve sin x = −0.5 for 0° ≤ x < 360°. | The point at angle θ on the unit circle is (cos θ, sin θ). The point at 180° − θ is its reflection in the y-axis, which keeps the y-coordinate and changes the sign of x, so sin(180° − θ) = sin θ. For sin x = −0.5 the reference angle is 30°. Sine is negative where the point is below the x-axis, in the third and fourth quadrants, so x = 180° + 30° = 210° or x = 360° − 30° = 330°. | sine as the y-coordinate ; reflection in the y-axis keeps y ; reference angle 30° ; negative in quadrants 3 and 4 ; 210° and 330°
 
 ## Cosine
 S: The cosine is the x-coordinate of the point at angle θ on the unit circle. It's the sine shifted by 90°, and it describes horizontal positions in circular motion and the phase of waves.
 O: Define cosine for any angle using the unit circle
 O: Use the symmetry of cosine to solve equations
+LV: GCSE and A level · Application
+EV: established | On the unit circle cos θ is the x-coordinate of the point at angle θ, so cosine is even and cos(360° − θ) = cos θ.
 T: Cosine function | cos θ, the x-coordinate of the point at angle θ on the unit circle
 T: Even function | A function with f(−x) = f(x); cosine is even
 H: Properties
@@ -136,11 +154,16 @@ SRC: Department for Education, Mathematics AS and A level subject content: trigo
 SRC: Maor E, Trigonometric Delights (Princeton University Press 2013) | secondary | 2013 | https://press.princeton.edu/
 M1#maths-u06-04-q1@1: What is cos 300°? | 1/2 | −1/2 | √3/2 | −√3/2 | 0 | cos 300° = cos(360° − 60°) = cos 60° = 1/2.
 M3#maths-u06-04-q2@2: How many solutions does cos x = 0.3 have for 0° ≤ x < 720°? | 4 | 2 | 1 | 3 | 8 | Two solutions per 360° period, over two periods, gives four.
+M2@1: The point at angle θ on the unit circle is (−0.6, 0.8). What is cos θ? | −0.6 | 0.8 | 0.6 | −0.8 | −0.75 | cos θ is the x-coordinate of the point, −0.6; the y-coordinate 0.8 is sin θ, and θ is in the second quadrant.
+NUM2@2: Solve 5 cos x = 2 for 0° ≤ x < 360°. Give the larger solution, to 1 decimal place. | 293.6 | 0.05 | ° | cos x = 0.4 gives x ≈ 66.4°, and cos(360° − θ) = cos θ gives the second solution 360 − 66.4 = 293.6°.
+SA2@1,2: Explain why cos x = k (with −1 < k < 1) has two solutions in each 360° cycle, and solve 2 cos x = √3 for 0° ≤ x < 360°. | cos x is the x-coordinate of the point at angle x on the unit circle. A vertical line x = k with −1 < k < 1 cuts the circle at two points, symmetric in the x-axis, at angles x and 360° − x, so there are two solutions per turn. For 2 cos x = √3, cos x = √3/2, whose reference angle is 30°. Cosine is positive in the first and fourth quadrants, so x = 30° or x = 360° − 30° = 330°. | cosine as the x-coordinate ; vertical line meets the circle twice ; symmetry gives 360° − x ; cos x = √3/2 ; 30° and 330°
 
 ## Tangent
 S: The tangent of an angle is sin θ/cos θ, the gradient of the line at angle θ to the horizontal. Unlike sine and cosine, it's unbounded, with asymptotes where cos θ = 0, and it repeats every 180°.
 O: Define tangent as sin θ/cos θ and interpret it as a gradient
 O: Sketch tan θ and solve tangent equations
+LV: GCSE and A level · Application
+EV: established | tan θ = sin θ/cos θ is the gradient of the radius at angle θ, with period 180° and asymptotes where cos θ = 0.
 T: Tangent function | tan θ = sin θ/cos θ, undefined where cos θ = 0
 T: Asymptote | A line the graph approaches but never reaches; tan θ has asymptotes at 90°, 270°, …
 H: Properties
@@ -170,11 +193,16 @@ SRC: Department for Education, Mathematics AS and A level subject content: trigo
 SRC: Maor E, Trigonometric Delights (Princeton University Press 2013) | secondary | 2013 | https://press.princeton.edu/
 M1#maths-u06-05-q1@1: What is the gradient of a line at 60° to the positive x-axis? | √3 | 1/2 | √3/2 | 1/√3 | 60 | The gradient of a line equals the tangent of its angle to the x-axis: tan 60° = √3 ≈ 1.73.
 M2#maths-u06-05-q2@2: Solve tan x = −1 for 0° ≤ x < 360°. | 135° and 315° | 45° and 225° | 135° only | 225° and 315° | −45° | Tangent is negative in the second and fourth quadrants: 180° − 45° and 360° − 45°.
+TF1@1: tan 90° is undefined. | true | tan 90° = sin 90°/cos 90° = 1/0, and division by zero is undefined: the graph has an asymptote there.
+NUM3@2: Solve 2 sin x = 5 cos x for 0° ≤ x < 360°. Give the larger solution, to 1 decimal place. | 248.2 | 0.05 | ° | Dividing by cos x gives tan x = 2.5, so x ≈ 68.2°; adding the period 180° gives 248.2°.
+SA2@1,2: Explain why tan θ = sin θ/cos θ, why the tangent repeats every 180°, and solve tan x = −√3 for 0° ≤ x < 360°. | On the unit circle the radius to the point (cos θ, sin θ) has gradient sin θ/cos θ, which matches opposite/adjacent for acute angles, so tan θ = sin θ/cos θ. Adding 180° moves the point to (−cos θ, −sin θ): both coordinates change sign, so their ratio, the gradient, is unchanged; the period is 180°. For tan x = −√3 the reference angle is 60°, and tangent is negative in the second and fourth quadrants, so x = 120° or x = 300° (120° + 180°). | tangent as the gradient sin θ/cos θ ; adding 180° negates both coordinates ; ratio unchanged so period 180° ; reference angle 60° ; 120° and 300°
 
 ## Radians and Degrees
 S: Radians measure angles by arc length: one radian is the angle subtended by an arc equal to the radius. They make calculus formulas simple, so they're the standard unit at A level and beyond.
 O: Convert between radians and degrees
 O: Explain why radians are used in calculus
+LV: A level · Fluency
+EV: established | One radian is the angle subtended by an arc equal to the radius, so π radians = 180°, and the standard calculus results for trigonometric functions hold only in radians.
 T: Radian | The angle at the centre of a circle subtended by an arc equal in length to the radius
 T: Exact radian values | Angles written as multiples of π, such as π/6 = 30°
 H: Converting
@@ -207,11 +235,15 @@ SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cen
 NUM1#maths-u06-06-q1@1: Convert 3π/4 radians to degrees. | 135 | 0 | ° | 3π/4 × 180/π = 135°.
 M1#maths-u06-06-q2@1: What is 270° in radians? | 3π/2 | 3π/4 | 2π/3 | 3π | π/2 | Multiply degrees by π/180: 270 × π/180 = 3π/2, three quarters of a full turn.
 M2#maths-u06-06-q3@2: Why is d/dx sin x = cos x only true in radians? | In degrees the derivative gains a factor of π/180 | It's true in any unit | Degrees aren't real angles | Sine isn't differentiable in degrees | Calculators require it | The limit (sin x)/x = 1 as x → 0 holds only when x is measured in radians.
+NUM3@2: Use the small-angle approximations to estimate (sin 0.1 × tan 0.1)/(1 − cos 0.1), with the angle in radians. | 2 | 0.05 |  | sin x ≈ x, tan x ≈ x and 1 − cos x ≈ x^{2}/2, so the expression ≈ x^{2}/(x^{2}/2) = 2 (the exact value is about 2.004).
+SA2@2: Explain why d/dx sin x = cos x holds only when x is in radians, and find the derivative of sin x when x is measured in degrees. | The derivative of sin x at 0 is the limit of (sin h)/h as h → 0. In radians, for a small angle h the arc of the unit circle (length h) and the height sin h are almost equal, so the limit is 1, and the general result d/dx sin x = cos x follows from this. If x is in degrees, sin x° = sin(πx/180), and by the chain rule its derivative is (π/180) cos x°: an awkward extra factor. Radians remove it. | derivative depends on the limit of (sin h)/h ; arc length equals the angle in radians ; limit is 1 in radians ; degrees: sin x° = sin(πx/180) ; derivative (π/180) cos x°
 
 ## Unit Circle
 S: The unit circle (radius 1, centred at the origin) defines sine and cosine for every angle: the point at angle θ is (cos θ, sin θ). It explains signs, symmetries and identities at a glance.
 O: Use the unit circle to define trigonometric functions for any angle
 O: Determine signs and exact values in each quadrant
+LV: A level · Application
+EV: established | The point at angle θ on the unit circle is (cos θ, sin θ), so cos²θ + sin²θ = 1 and the quadrant fixes each function's sign.
 T: Unit circle | The circle x^{2} + y^{2} = 1
 T: Quadrant | One of four regions of the plane divided by the axes
 H: Definitions
@@ -239,11 +271,16 @@ SRC: Department for Education, Mathematics AS and A level subject content: trigo
 SRC: Maor E, Trigonometric Delights (Princeton University Press 2013) | secondary | 2013 | https://press.princeton.edu/
 M1#maths-u06-07-q1@1: Which point on the unit circle corresponds to 180°? | (−1, 0) | (1, 0) | (0, −1) | (0, 1) | (−1, −1) | Half a turn from (1, 0) reaches (−1, 0): cos 180° = −1 and sin 180° = 0.
 M3#maths-u06-07-q2@2: What is the exact value of cos 330°? | √3/2 | −√3/2 | 1/2 | −1/2 | √2/2 | 330° is in the fourth quadrant, where cosine is positive, with reference angle 30°.
+M2@2: What is the exact value of tan 150°? | −1/√3 | 1/√3 | −√3 | √3 | −1/2 | 150° is in the second quadrant with reference angle 30°, where tangent is negative: tan 150° = −tan 30° = −1/√3.
+NUM2@1: The point at angle θ on the unit circle lies in the second quadrant and has y-coordinate 0.6. Find its x-coordinate. | -0.8 | 0 |  | x^{2} + 0.6^{2} = 1 gives x^{2} = 0.64, and x is negative in the second quadrant, so x = cos θ = −0.8.
+SA2@1,2: Explain how the unit circle shows that cos^{2} θ + sin^{2} θ = 1, and find the exact values of sin 315° and cos 315°. | The point at angle θ on the unit circle has coordinates (cos θ, sin θ), and every point on the circle satisfies x² + y² = 1, so cos²θ + sin²θ = 1 for every angle. 315° is in the fourth quadrant with reference angle 360 − 315 = 45°. There cosine is positive and sine negative, so cos 315° = √2/2 and sin 315° = −√2/2. | point is (cos θ, sin θ) ; circle equation x² + y² = 1 ; identity holds for all θ ; reference angle 45° in the fourth quadrant ; cos 315° = √2/2 and sin 315° = −√2/2
 
 ## Trigonometric Geometry
 S: Trigonometry solves geometric problems: heights, distances, angles of elevation and depression, and 3D problems such as the angle between a line and a plane. It's how surveyors and engineers measure what they can't reach.
 O: Solve problems with angles of elevation and depression
 O: Use trigonometry in three-dimensional problems
+LV: GCSE and A level · Application
+EV: established | Heights, distances and angles in two and three dimensions can be found by reducing a problem to right-angled triangles.
 T: Angle of elevation | The angle above the horizontal from an observer to an object
 T: Angle of depression | The angle below the horizontal from an observer to an object
 H: Elevation and depression
@@ -258,6 +295,7 @@ X: A cuboid is 6 cm by 8 cm by 5 cm tall. Find the angle between a space diagona
 > The base diagonal is √(36 + 64) = 10 cm
 > The space diagonal rises 5 cm over 10 cm horizontally: tan θ = 5/10
 > θ = tan^{−1}(0.5) ≈ 26.6°
+P: **Two observations.** When the elevation of a tower's top is measured from two points in line with it, write the height in both right-angled triangles and eliminate the unknown distance.
 K: Draw the horizontal and the right angle; depression from A to B equals elevation from B to A; in 3D, find the right-angled triangle with the projection.
 !: Measuring the angle of depression from the vertical instead of the horizontal.
 Q: How are angles of elevation and depression between two points related? | They're equal (alternate angles).
@@ -269,6 +307,8 @@ SRC: Ordnance Survey, A guide to coordinate systems in Great Britain | guidance 
 NUM1#maths-u06-08-q1@1: From a cliff 80 m high, a boat is at an angle of depression of 15°. How far is it from the foot of the cliff, to the nearest metre? | 299 | 1 | m | tan 15° = 80/d, so d = 80/tan 15° ≈ 298.6 m.
 M1#maths-u06-08-q2@1: A kite string 50 m long makes 40° with the ground. How high is the kite (ignoring sag)? | About 32.1 m | About 38.3 m | About 42.0 m | About 59.6 m | About 30.0 m | The string is the hypotenuse and the height is opposite 40°: 50 sin 40° ≈ 32.1 m.
 M2#maths-u06-08-q3@2: The angle of elevation from A to B is 25°. What is the angle of depression from B to A? | 25° | 65° | 155° | 115° | 50° | They're alternate angles between parallel horizontal lines, so they're equal.
+NUM3@1: From A, the top of a tower is at an angle of elevation of 30°. After walking 50 m straight towards the tower, to B, the angle is 45°. Find the tower's height, to 1 decimal place. | 68.3 | 0.1 | m | Let d be B's distance: h = d tan 45° = d and h = (d + 50) tan 30°, so d√3 = d + 50, d = 50/(√3 − 1) ≈ 68.3 m = h.
+SA3@2: A square-based pyramid has base edges of 6 cm and vertical height 4 cm. Find the angle between a sloping edge and the base, explaining each step. | The sloping edge runs from a base corner to the apex, which is directly above the centre of the base. Its projection onto the base is the line from the corner to the centre: half the base diagonal. The base diagonal is √(6² + 6²) = 6√2, so half is 3√2 ≈ 4.24 cm. In the right-angled triangle formed with the vertical height, tan θ = 4/(3√2) ≈ 0.943, so θ ≈ 43.3°. | apex above the centre of the base ; projection is half the diagonal ; half-diagonal 3√2 ; tan θ = 4/(3√2) ; θ ≈ 43.3°
 
 ## Sine Rule
 S: The sine rule relates the sides of any triangle to the sines of their opposite angles. It finds missing sides and angles when you know an angle and its opposite side, and it has an "ambiguous case" to watch.
