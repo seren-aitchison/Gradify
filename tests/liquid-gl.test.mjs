@@ -72,3 +72,12 @@ test("it handles a lost GPU context, respects reduced motion, and never blocks o
   assert.match(src, /KHR_parallel_shader_compile/);
   assert.doesNotMatch(src, /gl\.finish\(/);
 });
+
+test("floating bars draw last, so cards scrolling under the header never cut its edge; the edge is pastel", async () => {
+  const src = await readFile(new URL("../kit/ui/liquid-gl.js", import.meta.url), "utf8");
+  assert.match(src, /order = \[\.\.\.els\.filter\(\(e\) => !e\.hasAttribute\("data-lg-cap"\)\), \.\.\.floating\]/);
+  const css = await readFile(new URL("../kit/styles/base.css", import.meta.url), "utf8");
+  const stops = css.match(/--bar-rainbow: linear-gradient\(90deg,([^;]+)\);/)[1].match(/#[0-9a-f]{6}/gi);
+  // pastel: every stop light (no channel below 0x90)
+  for (const h of stops) assert.ok([1, 3, 5].every((i) => parseInt(h.slice(i, i + 2), 16) >= 0x90), h);
+});

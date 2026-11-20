@@ -286,8 +286,11 @@ header.bar.glass, header.sub-nav.glass {
   border: 1px solid transparent !important;
   background: linear-gradient(var(--bar-bg), var(--bar-bg)) padding-box, var(--bar-rainbow) border-box !important;
 }
-/* the full rainbow, end to end, so the bar reads the same on the web, the installed app and every sub-site */
-:root { --bar-rainbow: linear-gradient(90deg, #ff3b4d, #ff8a00 14%, #ffc002 28%, #34c759 43%, #1fc8c8 57%, #3c78d8 71%, #4641ff 80%, #8b3dff 90%, #f055dd); }
+/* the full rainbow, end to end, in pastel (soft, not primary), so the bar reads the same on the web, the installed app
+   and every sub-site; light mode a touch deeper so the 1px edge still shows on white. kit/ui/liquid-gl.js draws the same
+   pastel edge on the GPU */
+:root { --bar-rainbow: linear-gradient(90deg, #ffb3bd, #ffcfa3 14%, #ffe8a3 28%, #b8ebc4 43%, #a8e8e6 57%, #b0cdf5 71%, #bdbaff 80%, #d7bcff 90%, #f7bdec); }
+:root[data-theme="light"] { --bar-rainbow: linear-gradient(90deg, #ff9aa8, #ffbc85 14%, #ffd97a 28%, #94ddaa 43%, #85d9d6 57%, #93b8ef 71%, #a5a1ff 80%, #c5a3ff 90%, #f2a3e2); }
 
 
 /* light and dark switch, added to every top bar by kit/core/theme-boot.js */

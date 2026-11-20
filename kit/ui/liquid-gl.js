@@ -111,7 +111,7 @@ void main(){
     float lit = .5 + .5 * dot(nrm, light);
     vec3 rimc = accentRim > .5 ? mix(acc1, vec3(1.), .25 + .45 * lit) : vec3(1.);   // the course's colour, or white light
     if (props[i].y > .5) { float a = atan(p.y, p.x) / 6.2832 + .5;          // the Gradify bar: a rainbow edge
-      rimc = clamp(abs(mod(a * 6. + vec3(0., 4., 2.), 6.) - 3.) - 1., 0., 1.); rimc = mix(rimc, vec3(1.), .15); }
+      rimc = clamp(abs(mod(a * 6. + vec3(0., 4., 2.), 6.) - 3.) - 1., 0., 1.); rimc = mix(rimc, vec3(1.), lightMode > .5 ? .42 : .55); }   // pastel, not primary
     float gloss = (1. - smoothstep(-r.w, -r.w + min(70. * dpr, r.w * .7), p.y)) * (lightMode > .5 ? .22 : .1);   // a glossy sheet across the top
     vec3 glass = c + fres + spec + gloss;
     glass = mix(glass, rimc, rim * (props[i].y > .5 ? .95 : (accentRim > .5 ? .85 : .55 + .35 * lit)));
@@ -238,10 +238,13 @@ export function start() {
     const dpr = DPR(), W = Math.round(innerWidth * dpr), H = Math.round(innerHeight * dpr), max = P.max;
     if (canvas.width !== W || canvas.height !== H) { canvas.width = W; canvas.height = H; }
     if (dirty) { collect(); readColours(); dirty = false; }
-    // the surfaces on screen, outermost (and earliest) first, so nested glass draws over its parent
+    // the surfaces on screen, outermost (and earliest) first, so nested glass draws over its parent; the bars that float
+    // over the page (header, toolbar, dock) last, so cards scrolling underneath never paint over them (or their edge)
     let k = 0; const caps = [];
-    for (const e of els) {
+    const floating = els.filter((e) => e.hasAttribute("data-lg-cap")), order = [...els.filter((e) => !e.hasAttribute("data-lg-cap")), ...floating];
+    for (const e of order) {
       if (k >= max) break;
+      if (k >= max - floating.length && !e.hasAttribute("data-lg-cap")) continue;   // room kept for the bars
       const r = e.getBoundingClientRect();
       if (r.width < 8 || r.height < 8 || r.bottom < -40 || r.top > innerHeight + 40 || r.right < -40 || r.left > innerWidth + 40) continue;
       const cs = getComputedStyle(e);
