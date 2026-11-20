@@ -398,6 +398,9 @@ footer b { color: var(--fg); font-weight: 600; }
 .shot-bar i { width: 10px; height: 10px; border-radius: 50%; background: rgba(var(--ink-rgb), .16); }
 .shot-bar span { margin-left: 10px; font: 12px var(--mono); color: var(--faint); }
 .shot-frame img { display: block; width: 100%; height: auto; }
+/* the screenshots are <picture>s (WebP, with the JPEG as a fallback): the wrapper takes the image's place in the layout */
+.shot-frame picture { display: block; }
+.how-step picture { display: block; margin-top: auto; }
 .hero-shot figcaption, .example-note { margin-top: 12px; font-size: 13px; color: var(--faint); text-align: center; }
 
 /* how it works */

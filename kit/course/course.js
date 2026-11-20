@@ -39,6 +39,7 @@ import { tutorEvent } from "../intel/experiments.js";
 import { scoreFeedback } from "../assess/tutor.js";
 import { feedbackHtml, paras } from "../assess/tutor-view.js";
 import { mountTutorPanel, directorHtml, newConversation } from "./tutor-panel.js";
+import { mountAssistant } from "./assistant.js";
 import { readLab, labState, labTry as nextLabTry, labLeave } from "./lab-state.js";
 import { SUPABASE_URL } from "../../gradify.config.js";
 import { buildExam, runExam, FORMATS } from "../assess/exam.js";
@@ -892,23 +893,31 @@ export function mountCourse(root, cfg) {
   const openUnit = (id) => { S.closed = S.closed.filter((x) => x !== id); if (!(S.treeOpen || []).includes(id)) (S.treeOpen ||= []).push(id); save(); };
 
   // ---------- Syllabus: the whole course as a numbered outline (stage → unit → module → lesson) ----------
+  let shelvesWired = false;   // the shelves' one click handler on <main>, which outlives every view
   const FILTERS = [["all", "All"], ["started", "In progress"], ["revise", "Needs revision"], ["new", "Not started"], ["mastered", "Mastered"]];
   const blurb = (u) => cfg.blurbs?.[u.n] || "";
   function unitCardBody(u) {
     const f = S.sylFilter || "all", want = (id) => f === "all" || statusOf(id) === f;
     const r = roll(idsOf(u)), nl = u.lessons.find((l) => !S.done[l.id]), qz = S.quiz[u.id];
     const here = resumeLesson(), gs = groupsOf(u), t = trackOf(u);
+    // the modules stand on frosted-glass shelves, a few to a shelf; taking a folder off a shelf spreads its lessons
+    // out beneath that shelf (several can be open at once, and each one remembers)
     const mods = gs.map((g, mi) => {
-      const ls = g.lessons.filter((l) => want(l.id)); if (!ls.length) return "";
+      const ls = g.lessons.filter((l) => want(l.id)); if (!ls.length) return null;
       const gr = roll(g.lessons.map((l) => l.id)), key = `${u.id}:${mi}`, chose = (S.folderState || {})[key];
       const open = f !== "all" || (chose != null ? chose : gs.length === 1 || g.lessons.some((l) => l.id === here?.id));
-      return `<details class="cx-mrow cx-folder${gr.done === gr.total ? " full" : ""}" data-folder="${u.id}:${mi}" style="--a:${t.from};--b:${t.to};--p:${gr.total ? gr.done / gr.total : 0}"${open ? " open" : ""}>
-        <summary><span class="cx-fback" aria-hidden="true"></span><span class="cx-fpaper" aria-hidden="true"></span>
+      const pid = `fp-${u.id}-${mi}`.replace(/[^\w-]/g, "_"), name = g.title ? `${u.n}.${mi + 1} ${g.title}` : "Lessons";
+      const folder = `<div class="cx-folder${gr.done === gr.total ? " full" : ""}${open ? " open" : ""}" data-folder="${key}" style="--a:${t.from};--b:${t.to};--p:${gr.total ? gr.done / gr.total : 0}">
+        <button type="button" class="cx-fsum" aria-expanded="${open}" aria-controls="${pid}"><span class="cx-fback" aria-hidden="true"></span><span class="cx-fpaper" aria-hidden="true"></span>
           <span class="cx-ffront"><span class="cx-fhead">${g.title ? `<span class="cx-n">${u.n}.${mi + 1}</span><b>${esc(g.title)}</b>` : `<b>Lessons</b>`}</span>
-            <span class="cx-fmeta"><small>${gr.done} of ${gr.total} done${gr.mastery != null ? ` · ${pc(gr.mastery)} right` : ""}</small><span class="cx-fbar"><i></i></span><span class="cx-fbtn" aria-hidden="true">${ic("right")}</span></span></span></summary>
-        <ol class="cx-lgrid">${ls.map((l) => { const st = statusOf(l.id); return `<li><a class="cx-lp s-${st}${l.id === resumeLesson()?.id ? " next" : ""}" href="#/lesson/${l.id}">${dot(st)}<span class="cx-lpt">${esc(l.title)}</span>${marked(l.id) ? `<b class="cx-mk" aria-label="Bookmarked">${ic("star")}</b>` : ""}<em>${STATUS[st].label}</em></a></li>`; }).join("")}</ol></details>`;
-    }).join("");
-    return `${mods ? `<div class="cx-folders">${mods}</div>` : `<p class="co-empty">No lessons in this ${u1} match that filter.</p>`}
+            <span class="cx-fmeta"><small>${gr.done} of ${gr.total} done${gr.mastery != null ? ` · ${pc(gr.mastery)} right` : ""}</small><span class="cx-fbar"><i></i></span><span class="cx-fbtn" aria-hidden="true">${ic("right")}</span></span></span></button></div>`;
+      const panel = `<section class="cx-fpanel" id="${pid}" style="--a:${t.from};--b:${t.to}" aria-label="${esc(name)}"${open ? "" : " hidden"}><header><b>${esc(name)}</b><small>${gr.done} of ${gr.total} done</small><button type="button" class="cx-fclose" data-fclose="${key}" aria-label="Put ${esc(name)} back on the shelf">${ic("close")}</button></header>
+        <ol class="cx-lgrid">${ls.map((l) => { const st = statusOf(l.id); return `<li><a class="cx-lp s-${st}${l.id === here?.id ? " next" : ""}" href="#/lesson/${l.id}">${dot(st)}<span class="cx-lpt">${esc(l.title)}</span>${marked(l.id) ? `<b class="cx-mk" aria-label="Bookmarked">${ic("star")}</b>` : ""}<em>${STATUS[st].label}</em></a></li>`; }).join("")}</ol></section>`;
+      return { folder, panel };
+    }).filter(Boolean);
+    const per = innerWidth < 640 ? 2 : 3, shelves = [];
+    for (let i = 0; i < mods.length; i += per) { const m = mods.slice(i, i + per); shelves.push(`<div class="cx-shelf" style="--n:${per}"><div class="cx-shelfrow">${m.map((x) => x.folder).join("")}</div><div class="cx-plank" aria-hidden="true"></div>${m.map((x) => x.panel).join("")}</div>`); }
+    return `${shelves.length ? `<div class="cx-folders cx-shelves">${shelves.join("")}</div>` : `<p class="co-empty">No lessons in this ${u1} match that filter.</p>`}
       <div class="cx-uacts">${nl ? `<a class="btn btn-light lg btn-sm" href="#/lesson/${nl.id}"><span>${r.done ? "Continue" : "Start"}: ${esc(nl.title)}</span></a>` : ""}
         <a class="btn btn-ghost lg btn-sm" href="#/quiz/${u.id}"><span>${ic("trophy")} ${U} quiz${qz ? ` · best ${pc(qz.best)}` : ""}</span></a>
         ${r.done ? `<a class="btn btn-ghost lg btn-sm" href="#/target/${encodeTest({ minutes: 10, scope: "units", units: [u.id] })}"><span>${ic("target")} Target test</span></a>` : ""}</div>`;
@@ -954,9 +963,17 @@ export function mountCourse(root, cfg) {
     // expand or collapse every unit at once (remembered, like opening them one by one)
     main.querySelector("[data-sylall]")?.addEventListener("click", () => { const all = units.every((u) => open.has(u.id)); S.treeOpen = all ? (cur ? [cur.unit.id] : []) : units.map((u) => u.id); keep(); viewSyllabus(); });
     main.querySelector("[data-unpath]")?.addEventListener("click", () => { S.path = null; save(); viewLearn(); paintSide(); });
+    // a folder off the shelf (or back on it): its lessons open beneath the shelf, and the choice is remembered
+    if (!shelvesWired) { shelvesWired = true; main.addEventListener("click", (e) => {
+      const b = e.target.closest?.(".cx-fsum, [data-fclose]"); if (!b || !main.contains(b)) return;
+      const fo = b.matches("[data-fclose]") ? main.querySelector(`.cx-folder[data-folder="${CSS.escape(b.dataset.fclose)}"]`) : b.closest(".cx-folder"); if (!fo) return;
+      const sum = fo.querySelector(".cx-fsum"), panel = document.getElementById(sum.getAttribute("aria-controls")), open = !fo.classList.contains("open");
+      fo.classList.toggle("open", open); sum.setAttribute("aria-expanded", String(open)); if (panel) panel.hidden = !open;
+      if ((S.sylFilter || "all") === "all") { (S.folderState ||= {})[fo.dataset.folder] = open; keep(); }
+      if (open && panel) { const r = panel.getBoundingClientRect(); if (r.bottom > innerHeight) panel.scrollIntoView({ block: "nearest", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" }); }
+      else if (b.matches("[data-fclose]")) sum.focus();
+    }); }
     main.addEventListener("toggle", (e) => {
-      const fo = e.target.closest?.(".cx-folder");
-      if (fo && e.target === fo) { if ((S.sylFilter || "all") === "all") { (S.folderState ||= {})[fo.dataset.folder] = fo.open; keep(); } return; }
       const d = e.target.closest?.(".cx-ucard"); if (!d || !main.contains(d)) return;
       if ((S.sylFilter || "all") === "all") { S.treeOpen = (S.treeOpen || []).filter((x) => x !== d.dataset.u); if (d.open) S.treeOpen.push(d.dataset.u); keep(); }
       if (d.open && !d.querySelector(".cx-ucontent")) d.insertAdjacentHTML("beforeend", `<div class="cx-ucontent">${unitCardBody(units.find((u) => u.id === d.dataset.u))}</div>`);
@@ -1008,7 +1025,7 @@ export function mountCourse(root, cfg) {
     const nl = resumeLesson(), started = st.lessons > 0 || (S.recent || []).length > 0, t0 = nl ? trackOf(nl.unit) : cfg.tracks[0];
     const g = nl && groupsOf(nl.unit).find((x) => x.lessons.some((l) => l.id === nl.id)), gi = g ? groupsOf(nl.unit).indexOf(g) : 0;
     const depth = nl ? S.time?.[nl.id]?.depth || 0 : 0, upnext = nl ? lessons.slice(lessons.indexOf(nl) + 1).filter((l) => !S.done[l.id]).slice(0, 3) : [];
-    const { weak, strong } = strengths(sigs()), recs = recommendations(), recent = (S.recent || []).filter((r) => byId[r.id]).slice(0, 6), marks = Object.entries(S.marks || {}).filter(([id, t]) => t > 0 && byId[id]).sort((a, b) => b[1] - a[1]).slice(0, 6);
+    const { weak, strong } = strengths(sigs()), recs = recommendations(), marks = Object.entries(S.marks || {}).filter(([id, t]) => t > 0 && byId[id]).sort((a, b) => b[1] - a[1]).slice(0, 6);
     const lessonLink = (l, sub) => `<a class="cx-ll" href="#/lesson/${l.id}">${dot(statusOf(l.id))}<span><b>${esc(l.title)}</b><small>${sub || `${U} ${l.unit.n}${l.module ? ` · ${esc(l.module)}` : ""}`}</small></span></a>`;
     const bar = (m) => `<span class="cx-mbar"><i style="width:${Math.round(m * 100)}%" class="${m >= 0.85 ? "hi" : m < 0.6 ? "lo" : ""}"></i></span>`;
     const hello = (() => { const h = new Date().getHours(); return h < 12 ? "Good morning" : h < 18 ? "Good afternoon" : "Good evening"; })();
@@ -1024,6 +1041,14 @@ export function mountCourse(root, cfg) {
       <div class="cx-flowwrap"><button type="button" class="cx-flowbtn prev" data-flow="-1" aria-label="Previous lessons">${ic("left")}</button>
       <div class="cx-flow" tabindex="0" aria-label="Your next lessons">${flowList.map((l, k) => { const t = trackOf(l.unit); return `<a class="cx-fcard" href="${k === 0 ? resumeHref(l) : `#/lesson/${l.id}`}" style="--a:${t.from};--b:${t.to}"><span class="co-kicker">${k === 0 ? "Next" : `Then · ${k}`}</span><b>${esc(l.title)}</b><small>${U} ${l.unit.n} · ${esc(l.module || l.unit.title)}</small><span class="cx-fstat">${dot(statusOf(l.id))}${STATUS[statusOf(l.id)].label}</span></a>`; }).join("")}</div>
       <button type="button" class="cx-flowbtn next" data-flow="1" aria-label="Next lessons">${ic("right")}</button></div></section>` : "";
+    // "Continue reading": the lessons you've opened lately as books on a shelf, Kindle-style, each with how far
+    // you've read. Big covers, one tap to carry on from where you stopped.
+    const books = (S.recent || []).filter((r) => byId[r.id]).slice(0, 12);
+    const booksHtml = books.length ? `<section class="cx-sec cx-readsec"><div class="cx-sech"><h3>${ic("book")} Continue reading</h3><a href="#/learn">All lessons →</a></div>
+      <ul class="cx-books">${books.map((r) => { const l = byId[r.id], t = trackOf(l.unit), fin = !!S.done[l.id], d = fin ? 1 : Math.min(1, S.time?.[l.id]?.depth || 0), pct = Math.round(d * 100);
+        return `<li><a class="cx-book" href="${fin ? `#/lesson/${l.id}` : resumeHref(l)}" style="--a:${t.from};--b:${t.to};--p:${d}" aria-label="${esc(l.title)}, ${fin ? "finished" : `${pct}% read`}, opened ${ago(r.t)}">
+          <span class="cx-bcover" aria-hidden="true"><small>${U} ${l.unit.n}${l.module ? ` · ${esc(l.module)}` : ""}</small><b>${esc(l.title)}</b><em>${esc(cfg.name)}</em>${fin ? `<span class="cx-bdone">${ic("check")}</span>` : ""}</span>
+          <span class="cx-bmeta" aria-hidden="true"><span class="cx-bbar"><i></i></span><small><b>${fin ? "Finished" : `${pct}%`}</b> · ${ago(r.t)}</small></span></a></li>`; }).join("")}</ul></section>` : "";
     main.innerHTML = `${weekHtml}<section class="cx-hero" style="--a:${t0.from};--b:${t0.to}">
         <div class="cx-herol">
           <span class="co-kicker">${started ? `${hello} · pick up where you left off` : `Welcome to ${esc(cfg.name)}`}</span>
@@ -1041,6 +1066,7 @@ export function mountCourse(root, cfg) {
           <div class="cx-habit"><span class="cx-flame ${sk.today ? "lit" : ""}">${ic("flame")}<b>${sk.n}</b></span><div><b>${sk.n}-day streak</b><small>${sk.today ? "Kept today" : sk.n ? "Learn today to keep it" : "Start one today"}${sk.rest ? ` · ${sk.rest} rest day${sk.rest > 1 ? "s" : ""} banked` : ""}</small></div></div>
         </div>
       </section>
+      ${booksHtml}
       ${flowHtml}
       <section class="cx-sec"><div class="cx-sech"><h3>How long have you got?</h3><p>Pick a session and Gradify chooses the most useful thing to do with it.</p></div>
         <div class="cx-sessions">${sessions().map((x) => x.href ? `<a class="cx-sess" href="${x.href}"><span class="cx-sessi">${ic(x.icon)}</span><b>${x.t}</b><em>${x.m}</em><small>${esc(x.d)}</small></a>` : `<div class="cx-sess off"><span class="cx-sessi">${ic(x.icon)}</span><b>${x.t}</b><em>${x.m}</em><small>${esc(x.d)}</small></div>`).join("")}</div></section>
@@ -1064,9 +1090,8 @@ export function mountCourse(root, cfg) {
             <div class="cx-stages">${navGroups().map((gp) => { const r = roll(gp.list.flatMap(idsOf)), t = gp.list[0] && trackOf(gp.list[0]); return `<a href="#/learn/${gp.list[0]?.id || ""}" style="--a:${t?.from};--b:${t?.to}"><span>${esc(gp.name)}</span>${stack(r)}<small>${pc(r.coverage)}</small></a>`; }).join("")}</div></section>
         </div>
       </div>
-      ${recent.length || marks.length ? `<div class="cx-cols">
-        ${recent.length ? `<section class="cx-panel"><div class="cx-sech"><h3>${ic("clock")} Recently viewed</h3></div><div class="cx-lls">${recent.map((r) => lessonLink(byId[r.id], `${U} ${byId[r.id].unit.n} · ${ago(r.t)}`)).join("")}</div></section>` : ""}
-        ${marks.length ? `<section class="cx-panel"><div class="cx-sech"><h3>${ic("bookmarked")} Bookmarks</h3></div><div class="cx-lls">${marks.map(([id]) => lessonLink(byId[id])).join("")}</div></section>` : ""}</div>` : ""}
+      ${marks.length ? `<div class="cx-cols">
+        <section class="cx-panel"><div class="cx-sech"><h3>${ic("bookmarked")} Bookmarks</h3></div><div class="cx-lls">${marks.map(([id]) => lessonLink(byId[id])).join("")}</div></section></div>` : ""}
       <p class="cx-tip">${ic("search")} Press <kbd>/</kbd> or <kbd>${isMac ? "⌘" : "Ctrl"} K</kbd> anywhere in the course to jump to any lesson, topic or key term.</p>`;
     main.querySelectorAll("[data-rec]").forEach((a) => a.addEventListener("click", () => recs[a.dataset.rec].pre?.()));
     wireFlow(main.querySelector(".cx-flow"));
@@ -2075,8 +2100,9 @@ export function mountCourse(root, cfg) {
   async function viewMe() {
     const st = stats(), xp = st.xp, L = levelOf(xp), sk = streak();
     const byDay = {}; for (const r of S.log) byDay[day(r.t)] = (byDay[day(r.t)] || 0) + r.xp;
-    const weeks = 18, start = weekStart() - (weeks - 1) * 7 * DAY;
-    const cells = Array.from({ length: weeks * 7 }, (_, i) => { const t = start + i * DAY, d = day(t), v = byDay[d] || 0; return t > Date.now() ? "<i class=future></i>" : `<button style="--v:${Math.min(1, v / Math.max(S.goal, 1))}" data-day="${d}" title="${d}: ${v} XP"></button>`; }).join("");
+    // calendar days, not fixed 24h steps, so a clock change never shifts a day under the wrong weekday
+    const weeks = 18, start = weekStart(), at = (n) => { const d = new Date(start); d.setDate(d.getDate() + n - (weeks - 1) * 7); return d.getTime(); };
+    const cells = Array.from({ length: weeks * 7 }, (_, i) => { const t = at(i), d = day(t), v = byDay[d] || 0; return t > Date.now() ? "<i class=future></i>" : `<button style="--v:${Math.min(1, v / Math.max(S.goal, 1))}" data-day="${d}" title="${d}: ${v} XP"></button>`; }).join("");
     const last14 = Array.from({ length: 14 }, (_, i) => { const d = day(Date.now() - (13 - i) * DAY); return [d, byDay[d] || 0]; }), mx = Math.max(S.goal, ...last14.map((x) => x[1]));
     main.innerHTML = `<div class="co-intro"><span class="co-kicker">My progress</span><h2>Your ${esc(cfg.name)}</h2><p>Everything you've done here, and what's saved to your Gradify account. Your quests, achievements and progress in every subject are on <a href="/journey.html">your journey</a>.</p></div>
       <div class="co-tiles">${[["Level", L.n], ["Total XP", xp.toLocaleString()], ["Day streak", sk.n], ["Best streak", sk.best], ["Lessons", `${st.lessons} / ${lessons.length}`], ["Units cleared", st.units], ["Quizzes passed", st.quizzes], ["Problems solved", st.solved]].map(([k, v]) => `<div><small>${k}</small><b>${v}</b></div>`).join("")}</div>
@@ -2086,7 +2112,7 @@ export function mountCourse(root, cfg) {
       ${insightHtml()}
       <section class="co-panel cx-activity"><div class="cx-acth"><h3>Activity</h3><span>${Object.keys(byDay).length} day${Object.keys(byDay).length === 1 ? "" : "s"} learning · best streak ${sk.best}</span></div>
         <div class="cx-heatwrap"><div class="cx-heatwd" aria-hidden="true">${["Mon", "", "Wed", "", "Fri", "", "Sun"].map((x) => `<small>${x}</small>`).join("")}</div>
-        <div><div class="cx-heatm" aria-hidden="true">${Array.from({ length: weeks }, (_, w) => { const t = start + w * 7 * DAY, d = new Date(t), prev = new Date(t - 7 * DAY); return `<small>${w === 0 || d.getMonth() !== prev.getMonth() ? d.toLocaleDateString(undefined, { month: "short" }) : ""}</small>`; }).join("")}</div>
+        <div><div class="cx-heatm" aria-hidden="true">${Array.from({ length: weeks }, (_, w) => { const d = new Date(at(w * 7)), prev = new Date(at(w * 7 - 7)); return `<small>${w === 0 || d.getMonth() !== prev.getMonth() ? d.toLocaleDateString(undefined, { month: "short" }) : ""}</small>`; }).join("")}</div>
         <div class="co-heat">${cells}</div></div></div>
         <div class="cx-heatkey" aria-hidden="true"><small>Less</small>${[0, .25, .5, .75, 1].map((v) => `<i style="--v:${v}"></i>`).join("")}<small>Goal met</small></div>
         <p class="co-dayinfo">Pick a day to see what you did.</p></section>
@@ -2495,6 +2521,19 @@ export function mountCourse(root, cfg) {
   addEventListener("hashchange", route);
   pullProgress();
   route();
+  // Gradify AI in the corner of every course page (kit/course/assistant.js)
+  mountAssistant({
+    ask: askTutor, course: cfg.name, pricing: "/pricing.html",
+    lesson: () => (curLesson ? { id: curLesson.id, title: curLesson.title } : null),
+    director: directorRequest, link: (lid) => `#/lesson/${lid}`, titleOf: (lid) => byId[lid]?.title || "",
+    resume: () => { const l = resumeLesson(); return l ? { title: l.title, href: resumeHref(l) } : null; },
+    due: () => dueCards().length, reviewHref: "#/review",
+    find: (q) => { const words = q.toLowerCase().split(/\s+/).filter((w) => w.length > 1); if (!words.length) return [];
+      const hay = (l) => `${l.title} ${l.module || ""} ${l.unit.title}`.toLowerCase();
+      return lessons.filter((l) => words.every((w) => hay(l).includes(w))).sort((a, b) => Number(!a.title.toLowerCase().includes(words[0])) - Number(!b.title.toLowerCase().includes(words[0])))
+        .slice(0, 6).map((l) => ({ title: l.title, href: `#/lesson/${l.id}`, sub: `${U} ${l.unit.n}: ${l.unit.title}${l.module ? ` · ${l.module}` : ""}` })); },
+    unavailable: (what) => signinLine(what, ""), lab: () => (curLesson ? labFor(labLast) : null),
+  });
   reviewPool().then(paintHud);
   return { state: () => S, lessons, units };
 }
