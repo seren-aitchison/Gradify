@@ -610,7 +610,7 @@ export async function mountModel(root, siteName, model) {
   // ---------- render loop ----------
   function resize() {
     const r = canvas.getBoundingClientRect(), pr = software ? 1 : Math.min(2, devicePixelRatio || 1);
-    renderer.setSize(r.width, r.height, false); composer.setPixelRatio(pr); composer.setSize(r.width, r.height);
+    renderer.setPixelRatio(pr); renderer.setSize(r.width, r.height, false); composer.setPixelRatio(pr); composer.setSize(r.width, r.height);
     camera.aspect = r.width / Math.max(1, r.height); camera.updateProjectionMatrix();
   }
   // without a GPU (SwiftShader, llvmpipe, a VM) every pixel is drawn by the CPU: draw at 1x
@@ -628,6 +628,7 @@ export async function mountModel(root, siteName, model) {
     if (!onScreen) return;
     const now = performance.now();
     if (cost > 12 && now - last < Math.min(3000, cost * 2)) return;
+    const elapsed = last ? Math.min(0.5, (now - last) / 1000) : 0;   // real seconds since the last frame drawn (capped, so returning on screen doesn't jump), for the turntable
     last = now;
     const dt = Math.min(cost > 12 ? 0.25 : 0.05, clock.getDelta()), t = clock.elapsedTime;
     for (const m of holos) m.uniforms.uTime.value = t;
@@ -649,7 +650,7 @@ export async function mountModel(root, siteName, model) {
       camera.position.lerpVectors(tween.from, tween.to, e); controls.target.lerpVectors(tween.tFrom, tween.tTo, e);
       if (tween.t >= 1) tween = null;
     }
-    controls.update();
+    controls.update(elapsed || null);   // auto-rotation by time, not per frame, so pacing doesn't slow it
     // the glow (bloom) pass is the costliest part on the CPU: without a GPU the scene is drawn plain
     if (software) renderer.render(scene, camera); else composer.render();
     labelBox.hidden = !state.labels;
