@@ -27,5 +27,7 @@ test("the homepage only loads the LifeOS tour's scripts when the tour is shown",
 
 test("the glass copies into the floating bars only when they'd look different, not on every scroll frame", async () => {
   const gl = await read("kit/ui/liquid-gl.js");
-  assert.match(gl, /if \(c\.__key === key && \(c\.__lit === lit \|\| now - \(c\.__at \|\| 0\) < 50\)\) continue;/);
+  assert.match(gl, /if \(c\.__key === key && c\.__lit === lit\) continue;/);
+  assert.match(gl, /capT = setTimeout\(\(\) => \{ capT = 0; kick\(\); \}/);   // a throttled highlight still lands
+  assert.match(gl, /const key = `[^`]*\$\{shape\}`/);                           // the bar's shape is part of the key
 });

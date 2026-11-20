@@ -248,7 +248,7 @@ export function start() {
     }
   };
   // the floating bars' copies only change when what they show changes (see draw), so they're versioned
-  let capGen = 0;
+  let capGen = 0, capT = 0;
   const readColours = () => {
     const rs = getComputedStyle(root), course = document.querySelector("#course, .co"), cs = course && getComputedStyle(course), bs = getComputedStyle(document.body);
     const lightMode = root.getAttribute("data-theme") === "light";
@@ -284,7 +284,7 @@ export function start() {
       const rainbow = e.matches("header.bar, header.sub-nav") ? 1 : 0;
       const tint = (colours.lightMode ? (big ? .62 : .46) : (big ? .56 : .42)) * (rainbow ? .7 : 1);   // light mode: clear glass, not milk   // the bar: clearer, so it magnifies what's behind
       props.set([rad * dpr, rainbow, tint, Math.min(rainbow ? 30 : big ? 16 : 22, rainbow ? hh * .85 : rad * .9 + 6, hw, hh) * dpr], k * 4);
-      if (e.hasAttribute("data-lg-cap")) caps.push([e, r]);
+      if (e.hasAttribute("data-lg-cap")) caps.push([e, r, k]);
       k++;
     }
     gl.viewport(0, 0, W, H);
@@ -298,12 +298,16 @@ export function start() {
     // times a second). A bar's glass refracts the page's light, not the cards scrolling under it, so plain scrolling
     // with the bar stuck in place copies nothing.
     const now = performance.now();
-    for (const [e, r] of caps) {
+    for (const [e, r, i] of caps) {
       const c = e.querySelector(":scope > .lgl-cap"); if (!c) continue;
       const w = Math.max(1, Math.round(r.width * dpr)), h = Math.max(1, Math.round(r.height * dpr));
-      const key = `${Math.round(r.left * dpr)},${Math.round(r.top * dpr)},${w},${h},${W},${H},${capGen},${P.tier}`;
+      const shape = Array.from(props.subarray(i * 4, i * 4 + 4), (v) => v.toFixed(2)).join(",");   // radius, rainbow, tint, bevel
+      const key = `${Math.round(r.left * dpr)},${Math.round(r.top * dpr)},${w},${h},${W},${H},${capGen},${P.tier},${shape}`;
       const lit = `${light[0].toFixed(3)},${light[1].toFixed(3)}`;
-      if (c.__key === key && (c.__lit === lit || now - (c.__at || 0) < 50)) continue;
+      if (c.__key === key && c.__lit === lit) continue;
+      // the light moved again within 50ms: skip this frame, but come back once the 50ms are up, so a bar never keeps a
+      // stale highlight when the pointer stops
+      if (c.__key === key && now - (c.__at || 0) < 50) { if (!capT) capT = setTimeout(() => { capT = 0; kick(); }, 50 - (now - c.__at) + 1); continue; }
       if (c.width !== w || c.height !== h) { c.width = w; c.height = h; }
       c.getContext("2d").drawImage(canvas, r.left * dpr, r.top * dpr, w, h, 0, 0, w, h);
       c.__key = key; c.__lit = lit; c.__at = now;
@@ -366,7 +370,7 @@ export function start() {
   function stop() {
     if (stopped) return; stopped = true;
     live = false; if (running === handle) running = null;   // never clear a newer instance
-    clearTimeout(mt); clearTimeout(pollT); if (raf) cancelAnimationFrame(raf); probing = false;
+    clearTimeout(mt); clearTimeout(pollT); clearTimeout(capT); if (raf) cancelAnimationFrame(raf); probing = false;
     mqT.removeEventListener("change", onAccess); mqC.removeEventListener("change", onAccess);
     mo.disconnect(); to.disconnect(); root.classList.remove("lgl"); canvas.remove(); style.remove();
     document.querySelectorAll("[data-lg]").forEach((e) => { e.removeAttribute("data-lg"); e.removeAttribute("data-lg-cap"); });

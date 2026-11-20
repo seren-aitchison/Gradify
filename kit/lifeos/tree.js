@@ -39,11 +39,11 @@ const whenSeen = (el) => new Promise((resolve) => {
   io.observe(el);
 });
 export function drawTree(el, data) {
-  if (island) { el.__drawn = null; island.drawIsland(el, data); return; }
   drawTreeFlat(el, data);
-  // swap in the island once it's on screen and loaded, unless something else has been drawn here since
+  // swap in the island once it's on screen (even when the module is already loaded: building a renderer for a hidden
+  // tree is the expensive part) and loaded, unless something else has been drawn here since
   const mine = (el.__drawn = {});
-  whenSeen(el).then(() => el.__drawn === mine && loadIsland()).then((m) => { if (m && el.isConnected && el.__drawn === mine) m.drawIsland(el, data); });
+  whenSeen(el).then(() => el.__drawn === mine && (island || loadIsland())).then((m) => { if (m && el.isConnected && el.__drawn === mine) m.drawIsland(el, data); });
 }
 
 export function drawTreeFlat(el, { sites, bars, rand }) {
