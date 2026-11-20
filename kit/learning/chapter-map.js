@@ -8,7 +8,9 @@
 // These are teaching dependencies (what you need to follow a chapter well), not a locked order: every chapter stays
 // open. A course with a module-level concept graph (cfg.concepts, kit/learning/concepts.js) has its chapter links
 // derived from that instead (chapterPrereqsFromConcepts), so they can never disagree.
-// tests/mastery-map.test.mjs checks every number refers to a real chapter and that no course has a cycle.
+// tests/mastery-map.test.mjs checks every number refers to a real chapter and that no course has a cycle. Where a course
+// also has a module-level concept graph that isn't the source of its chapter links (Biology, Chemistry, Computer Science), the
+// two must agree: tests/concepts.test.mjs checks every module's prerequisites are in chapters its chapter builds on.
 
 export const CHAPTER_PREREQS = {
   physics: {
@@ -20,12 +22,12 @@ export const CHAPTER_PREREQS = {
     54: [3],
   },
   biology: {
-    2: [1], 3: [1], 4: [2, 3], 5: [4], 6: [4], 7: [2, 3], 8: [2, 3], 9: [4], 10: [7, 9], 11: [6], 12: [9], 13: [4],
-    14: [1],
+    2: [1], 3: [1], 4: [2, 3], 5: [4], 6: [4], 7: [2, 3], 8: [2, 3], 9: [4], 10: [7, 9, 5], 11: [6], 12: [9], 13: [6],
+    14: [4],
   },
   chemistry: {
-    2: [1], 3: [2], 4: [3], 5: [4], 6: [5], 7: [6], 8: [6], 9: [8], 10: [9], 11: [10], 12: [4], 13: [12], 14: [13],
-    15: [12], 16: [7], 17: [11, 14], 18: [14, 15], 19: [14, 15], 20: [16],
+    2: [1], 3: [2], 4: [3], 5: [4], 6: [5], 7: [6], 8: [6], 9: [8], 10: [9], 11: [10, 7], 12: [4], 13: [12, 7, 10], 14: [13],
+    15: [12, 9], 16: [7], 17: [11, 14], 18: [14, 15], 19: [14, 15], 20: [16, 12],
   },
   law: {
     2: [1], 3: [1], 4: [3], 5: [1], 6: [5], 7: [1], 8: [7, 3], 9: [7], 10: [9], 11: [3], 12: [4], 13: [2], 14: [2],
@@ -73,7 +75,7 @@ export const CHAPTER_PREREQS = {
   spanish: { 2: [1], 3: [2], 4: [3], 5: [4], 6: [5], 7: [6], 8: [7], 9: [3], 10: [5] },
   gcse: { 3: [2] },
   primary: { 2: [1], 3: [2], 4: [2], 6: [5], 7: [5], 10: [9] },
-  computing: { 2: [1], 3: [2], 4: [2], 5: [3, 4], 7: [6], 8: [7], 9: [8], 10: [3], 11: [5], 12: [9] },
+  computing: { 2: [1], 3: [2], 4: [3], 5: [4], 7: [6, 1], 8: [7], 9: [8], 10: [3], 11: [5], 12: [9, 10] },
   japanese: { 2: [1], 3: [2], 4: [3], 5: [4], 6: [5], 7: [5], 8: [7], 9: [7], 10: [2], 12: [6, 9] },
 };
 

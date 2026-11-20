@@ -52,6 +52,23 @@ test("every built site's learning map has three subtopics for each of its six to
   }
 });
 
+test("every site with a learning map page has the content, places and related sites the map needs", async () => {
+  // kit/earth/subject-map.js draws nothing (silently) for a site missing from any of these, as TechGradify was
+  const { SITES } = await import("../kit/core/site.js");
+  const { SITES_CONTENT, RELATED } = await import("../kit/core/site-content.js");
+  const { SITE_MAPS } = await import("../kit/core/site-maps.js");
+  const { existsSync, readFileSync } = await import("node:fs");
+  const pages = SITES.map((s) => ({ s, page: new URL(`../${s.n.toLowerCase().split(" ")[0]}/map.html`, import.meta.url) })).filter((x) => existsSync(x.page));
+  assert.ok(pages.length >= 20, `found ${pages.length} map pages`);
+  for (const { s, page } of pages) {
+    const named = readFileSync(page, "utf8").match(/<meta name="gradify-site" content="([^"]+)"/)?.[1];
+    assert.equal(named, s.n, `${s.n}: map.html names its site exactly as kit/core/sites.js does`);
+    assert.ok(SITES_CONTENT[s.n], `${s.n} has map content`);
+    assert.equal(SITE_MAPS[s.n]?.length, 6, `${s.n} has map places`);
+    assert.ok(RELATED[s.n]?.length, `${s.n} has related sites`);
+  }
+});
+
 test("your own topics are sorted into the subject's areas, following their deck when unsure", async () => {
   const { matchTopics } = await import("../kit/learning/topic-match.js");
   const areas = [{ name: "Anatomy", subs: ["Thorax", "Abdomen", "Neuroanatomy"] }, { name: "Physiology", desc: "How each system works", subs: ["Cardiac cycle", "Renal function", "Respiration"] }];

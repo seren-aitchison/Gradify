@@ -50,10 +50,28 @@ Decision: no new palette. New work uses these tokens; glass only where something
   from mastery, mastered chapters as landmarks (instead of example pins).
 - Today's topic quest (Understand / Remember / Apply).
 
+**Done in the follow-up round (19 November 2026)**
+- TechGradify's learning map loads: the site had no map content, places or related sites (`kit/core/site-content.js`,
+  `kit/core/site-maps.js`), so the map (and the shared sections of its homepage) drew nothing. `tests/site.test.mjs` now
+  checks every site with a `map.html`.
+- The globe is about four times faster on a slow CPU (4× throttle: 3–4 fps → 11–17 fps) and faster at full quality too:
+  the view's rotation is worked out once a frame, the backdrop is cached, land dots are filled in batches, and motion
+  is timed rather than per frame. Slow devices switch to a lite tier on their own (`kit/earth/globe.js`).
+- Maths Schools 28 and 29 sit after Algebra and Geometry, not after Probability and Calculus: their exam and everyday
+  probability lessons teach what they use (`kit/courses/maths/concepts.js`).
+- On a subject site, the LifeOS tour's Earth opens on the learner's own learning map (`kit/lifeos/my-map.js`); Alex's
+  globe follows it, labelled as the example.
+- Module-level concept graphs for Biology, Chemistry and Computer Science as well as Maths: "Builds on" in every lesson,
+  checked against each course's chapter links (`tests/concepts.test.mjs`), which gained the links the graphs showed
+  were missing.
+- All of a course's labs are reachable from their lessons: the check had been stopped by the Free allowance after ten
+  lessons (`scripts/check-interactives.cjs`); in the courses it reached, every lab passes.
+
 **Incomplete (next)**
-- Module-level concept graphs still exist only for Maths (topic cards' "builds on" in Explore); chapters are covered
-  for every course.
-- The LifeOS Earth and Tree preview still runs on example data; the subject-site maps are the real ones.
+- Module-level concept graphs for the other 30 courses (1,401 modules); Physics has no modules yet, so its graph would
+  be lesson-level. Chapters are covered for every course.
+- The rest of the LifeOS tour (Tree, community, calendar, assistant) still runs on Alex's example data.
+- On phones, the header of every subject site is a little wider than the screen (the right-hand buttons).
 - Social: friends, groups, private challenges. The community tables exist (`kit/app/community.js`); no learner-facing
   challenges yet. Leaderboards wait for server-side XP (`kit/README.md` known limits).
 - Pins, interface preferences and the notifications history are per device.

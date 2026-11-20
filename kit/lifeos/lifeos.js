@@ -17,6 +17,7 @@ applyPrefs();
 trackView("Gradify LifeOS");
 import { drawTree, drawForest, drawDonut } from "./tree.js";
 import { mountMine } from "./mine.js";
+import { mountMyMap } from "./my-map.js";
 
 const $ = (s, el = document) => el.querySelector(s);
 const esc = (s) => String(s).replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[ch]);
@@ -672,6 +673,8 @@ renderPath();
 renderCreds();
 // the learner's own LifeOS, above the tour, when they have real progress
 mountMine();
+// on a subject site, Earth opens on the learner's own learning map; Alex's example globe follows it
+mountMyMap();
 // phones: start the heatmap at the most recent weeks whenever Progress opens
 document.addEventListener("lifeos:view", (e) => {
   if (e.detail === "progress") requestAnimationFrame(() => { const sc = $("#heat-scroll"); sc.scrollLeft = sc.scrollWidth; });

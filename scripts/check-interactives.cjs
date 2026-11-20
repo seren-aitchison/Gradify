@@ -45,7 +45,11 @@ function serve(dir) {
   const courses = Object.entries(PAGES).filter(([slug]) => !args.course || args.course === slug);
 
   async function checkCourse([slug, page]) {
-    const cfg = (await import(path.resolve(__dirname, "..", "kit/courses", slug, "course.js"))).default;
+    // a course listed in kit/learning/learner-data.js without a folder of its own (the language courses share one engine
+    // page) has no interactives of its own to check
+    const file = path.resolve(__dirname, "..", "kit/courses", slug, "course.js");
+    if (!fs.existsSync(file)) { console.log(`${slug}: no course folder, skipped`); return; }
+    const cfg = (await import(file)).default;
     const ctx = await browser.newContext({ viewport: { width: 1200, height: 900 }, serviceWorkers: "block" });
     const phone = await browser.newContext({ ...devices["iPhone 13"], serviceWorkers: "block" });
     const p = await ctx.newPage(), ph = await phone.newPage(), errs = [], perrs = [];
@@ -95,7 +99,10 @@ function serve(dir) {
         const got = recs.map((r) => r.o), lessonsOk = recs.every((r) => r.l === lesson), triesOk = recs.every((r) => r.n === TRIES[r.o]);
         if (JSON.stringify(got) === JSON.stringify(want) && lessonsOk && triesOk) results[slug].outcomes++; else fail(`outcomes ${JSON.stringify(got)} (expected ${JSON.stringify(want)})${lessonsOk ? "" : `, lesson ${recs.map((r) => r.l)} not ${lesson}`}${triesOk ? "" : `, tries ${JSON.stringify(recs.map((r) => r.n))} (expected ${JSON.stringify(recs.map((r) => TRIES[r.o]))})`}`);
       }
-      // reachable from its first lesson
+      // reachable from its first lesson. The check opens one lesson per interactive in one browser, so after ten it
+      // would be on the Free allowance's Plus panel (kit/data/limits.js, live since Plus went on sale) rather than the
+      // lesson: the browser's count of opened lessons is cleared first, as a learner with Plus would see it
+      await p.evaluate(() => { try { localStorage.removeItem("gradify.limits"); } catch { /* no storage */ } });
       await go(p, `#/lesson/${x.lessons[0]}`, 1200);
       const reach = await p.evaluate((id) => Boolean(document.querySelector(`.co-lab[data-ix="${id}"], .co-ixslot[data-ix="${id}"], .co-morelabs a[href="#/practice/${id}"]`)), x.id);
       if (reach) results[slug].lesson++; else fail(`not reachable from its lesson ${x.lessons[0]}`);
@@ -105,7 +112,9 @@ function serve(dir) {
       if (perrs.length > pe0) fail(`phone: script error: ${perrs.at(-1).slice(0, 120)}`); else if (wide > 8) fail(`phone: scrolls sideways by ${wide}px`); else results[slug].phone++;
     }
     await ctx.close(); await phone.close();
-    // offline: the first interactive, opened online and then again with the network off
+    // offline: the first interactive, opened online and then again with the network off (a course with no
+    // interactives has nothing to open)
+    if (!cfg.interactives?.length) { results[slug].offline = "none"; return; }
     const off = await browser.newContext({ viewport: { width: 1200, height: 900 } }), op = await off.newPage(), x0 = cfg.interactives[0];
     try {
       await op.goto(`${base}/${page}`, { waitUntil: "load" });
@@ -126,7 +135,7 @@ function serve(dir) {
   const queue = [...courses]; await Promise.all([0, 1, 2].map(async () => { while (queue.length) await checkCourse(queue.shift()); }));
   await browser.close(); server?.close();
   const total = Object.values(results).reduce((a, r) => { for (const k of ["interactives", "loads", "mapped", "outcomes", "lesson", "phone"]) a[k] = (a[k] || 0) + r[k]; return a; }, {});
-  console.log(`\nAll: ${total.interactives} interactives · loads ${total.loads} · mapped ${total.mapped} · four outcomes recorded ${total.outcomes} · reachable from a lesson ${total.lesson} · phone ${total.phone} · offline ${Object.values(results).filter((r) => r.offline === "ok").length} of ${Object.keys(results).length} courses`);
+  console.log(`\nAll: ${total.interactives} interactives · loads ${total.loads} · mapped ${total.mapped} · four outcomes recorded ${total.outcomes} · reachable from a lesson ${total.lesson} · phone ${total.phone} · offline ${Object.values(results).filter((r) => r.offline === "ok").length} of ${Object.values(results).filter((r) => r.offline !== "none").length} courses with interactives`);
   if (args.declared) fs.writeFileSync(args.declared, JSON.stringify(declaredOut, null, 1));
   if (args.report) fs.writeFileSync(args.report, JSON.stringify({ base, at: new Date().toISOString(), results, problems }, null, 2));
   console.log(problems.length ? `${problems.length} problem(s):\n- ${problems.join("\n- ")}` : "No problems.");
