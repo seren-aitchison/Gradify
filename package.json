@@ -9,6 +9,7 @@
     "serve": "python3 -m http.server 8080",
     "build:dashboard": "node scripts/build-dashboard-function.mjs",
     "sync": "node scripts/sync-kit.mjs",
+    "preload": "node scripts/preload-modules.mjs",
     "new-site": "node scripts/new-site.mjs",
     "add-3d": "node scripts/add-3d.mjs",
     "qa": "node scripts/qa-courses.mjs && node scripts/qa-content-run.mjs && node scripts/lab-coverage.mjs && node scripts/concept-map.mjs && node scripts/subject-spec-doc.mjs",
