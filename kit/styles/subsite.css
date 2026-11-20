@@ -25,7 +25,9 @@
 .sub-right .signin { font-size: 15px; color: var(--mute); text-decoration: none; }
 .sub-right .signin:hover { color: var(--fg); }
 /* the phone and tablet menu (kit/core/subnav.js): the same links, opened from a button */
-.sub-nav { position: relative; z-index: 30; }   /* above the page, so the open menu is never covered */
+.sub-nav { position: relative; z-index: 30; }
+.sub-nav { box-sizing: border-box; height: 62px; }   /* fixed: buttons added after first paint don't move the page */
+@media (max-width: 960px) { .sub-nav { height: 60px; } }   /* above the page, so the open menu is never covered */
 .sub-menu-btn .sm-close, .sub-menu-btn[aria-expanded="true"] .sm-open { display: none; }
 .sub-menu-btn[aria-expanded="true"] .sm-close { display: block; }
 /* the open menu sits above everything fixed on the page (a course's phone dock, the Gradify AI orb): its bar is
@@ -36,7 +38,10 @@
 .sub-menu .sub-menu-signin { margin-top: 6px; padding: 10px 14px; border-top: 1px solid var(--line); border-radius: 0 0 12px 12px; text-decoration: none; font-size: 15px; color: var(--mute); }
 .sub-menu .sub-menu-cta { justify-content: center; margin: 8px 4px 2px; }
 @media (min-width: 641px) { .sub-menu .sub-menu-signin, .sub-menu .sub-menu-cta, .sub-menu .menu-set { display: none; } }
-@media (min-width: 961px) { .sub-menu { display: none !important; } }
+/* the full row of links needs about 1150px: below 1200px they move into the menu, instead of wrapping ("Cell / 3D")
+   and pushing search off the edge */
+@media (min-width: 1200px) { .sub-menu { display: none !important; } }
+@media (max-width: 1199px) { .sub-links { display: none; } .sub-nav .menu-btn { display: grid; } }
 /* "More" in the header (scripts/sync-headers.mjs): Notes, Progress, Plan and all Gradify sites, in a small menu */
 .sub-more { position: relative; }
 .sub-more > summary { list-style: none; cursor: pointer; padding: 8px 12px; border-radius: 999px; font-size: 15px; color: var(--mute); display: inline-flex; align-items: center; gap: 6px; }

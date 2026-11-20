@@ -33,9 +33,15 @@
   <link rel="stylesheet" href="assets/styles.css">
   <script type="module" src="assets/app.js"></script>
   <script type="module" src="assets/proof.js"></script>
-  <script type="module" src="kit/lifeos/lifeos.js"></script>
   <script type="module" src="assets/nav.js"></script>
-  <script type="module" src="kit/lifeos/os.js"></script>
+  <!-- the LifeOS tour (#lifeos) is hidden on the homepage: its scripts (the studio, planner, calendar, globe, 3D island)
+       only load when it's shown, so the homepage doesn't spend a second of main thread on something nobody sees -->
+  <script type="module">
+    const os = document.getElementById("lifeos");
+    const go = () => { import("./kit/lifeos/lifeos.js"); import("./kit/lifeos/os.js"); };
+    if (os && !os.hidden) go();
+    else if (os) new MutationObserver((_, mo) => { if (!os.hidden) { mo.disconnect(); go(); } }).observe(os, { attributes: true, attributeFilter: ["hidden"] });
+  </script>
   <script type="module" src="assets/features.js"></script>
   <script type="module" src="assets/pro.js"></script>
   <script type="module">
