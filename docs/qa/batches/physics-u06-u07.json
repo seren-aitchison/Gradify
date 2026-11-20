@@ -507,9 +507,95 @@
     "key point that both burns are tangential and prograde; launch-phase question"
    ],
    "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u07-18",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "added a section on how J2 precession makes sun-synchronous orbits",
+    "Laplace resonance stated as a period ratio"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u07-19",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "key point that only exact inverse-square forces give closed orbits; Earth GR-precession calculation added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u07-20",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "atomic-clock height sensitivity reworded to optical clocks at about a centimetre",
+    "light-bending question distractors lengthened (length bias)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u07-21",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "Bullet Cluster explanation expanded",
+    "added a lensing-regime matching question"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u07-22",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "added merger-signal ordering and quadrupole questions"
+   ],
+   "findings": [
+    {
+     "class": "error-fixed",
+     "note": "Worked example said a 4 × 10^-18 m arm change is 'about 1/1000 of a proton's diameter'; a proton is about 1.7 × 10^-15 m across, so it is about 1/400. Corrected; the properties list now gives the same 4 × 10^-18 m instead of 10^-18 m."
+    },
+    {
+     "class": "error-fixed",
+     "note": "'Binary pulsars spiral together at exactly GR's predicted rate' overstated; now 'to within about 0.2%'."
+    }
+   ]
   }
  ],
  "notes": [
-  "in progress"
+  "All 42 lessons (u06 20, u07 22) enhanced to standard 2; new-course check: 0 problems in both units; course, compat and qa-content tests pass (16/16).",
+  "New questions were appended after the existing ones in every lesson; existing questions kept in their slots (wording/explanations improved, @n links added). NUM answers are plain ASCII numbers.",
+  "Sources: OpenStax University Physics Vol 1/2, College Physics 2e and AQA 7408 (sections 3.6.1.2–3.6.1.4, 3.7.2.1–3.7.2.4, checked against the downloaded spec). Where those did not cover a topic I used OpenStax Astronomy 2e (2022), every section URL fetched and confirmed (3.5, 3.6, 4.6, 12.5, 24.3, 24.4, 24.7, 28.4). Flag if Astronomy 2e is not acceptable.",
+  "Several advanced lessons are logged needs-source: OpenStax supports only their background.",
+  "Lessons run about 4–6 KB in UTF-8 bytes (many multi-byte symbols), above the 2–3.5 KB guide; content was not padded but a reviewer may wish to trim."
  ]
 }

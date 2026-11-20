@@ -405,6 +405,107 @@
     "extended written answer (SA) with model answer and marking points added"
    ],
    "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-33",
+   "action": "enhanced",
+   "changes": [
+    "level: A level · Application",
+    "evidence status: established",
+    "questions added: NUM3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-34",
+   "action": "enhanced",
+   "changes": [
+    "level: A level · Application",
+    "evidence status: established",
+    "questions added: M3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-35",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 2 · Fluency",
+    "evidence status: established",
+    "content added: ! (Thinking spherical geometry changes only the parallel postulate: on…)",
+    "questions added: TF1, NUM2, M3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-36",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 2 · Application",
+    "evidence status: established",
+    "questions added: NUM3, SA3 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-37",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 3 · Application",
+    "evidence status: established",
+    "content added: ! (Using Euclidean area formulas such as ½ab sin C on a hyperbolic tri…)",
+    "questions added: NUM3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-38",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 2 · Application",
+    "evidence status: established",
+    "content added: X (Find the image of the triangle (0, 0), (1, 0), (0, 1) under (x, y)…)",
+    "questions added: M2, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-39",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 2 · Application",
+    "evidence status: established",
+    "content added: P (**Duality.** Swap the words point and line in a theorem of the proj…)",
+    "questions added: TF1, NUM2, M3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-40",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 2 · Application",
+    "evidence status: established",
+    "content added: X (What fraction of the original triangle's area remains after 5 steps…)",
+    "questions added: NUM3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
   }
  ],
  "notes": []

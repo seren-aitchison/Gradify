@@ -665,6 +665,8 @@ H: Main perturbations
 - **Resonances**: repeated tugs at the same orbital phase build up effects (Kirkwood gaps, Laplace resonance of Io, Europa, Ganymede, whose periods are in the ratio 1:2:4).
 H: Neptune
 P: In 1846 Le Verrier and Adams used unexplained perturbations of Uranus to predict an unseen planet; Galle found Neptune within 1° of the prediction. Today, perturbations of distant Kuiper belt objects motivate searches for a hypothetical "Planet Nine".
+H: Sun-synchronous orbits
+P: Earth's bulge makes a satellite's orbital plane swing round (nodal precession) at a rate set by altitude and inclination. Choosing them so the plane turns 360° a year keeps it at a fixed angle to the Sun.
 X: How do you choose a sun-synchronous orbit's inclination?
 > The J_{2} nodal precession rate depends on inclination and altitude
 > At ~800 km, an inclination of ~98.6° (slightly retrograde) gives 360° per year, matching Earth's orbit around the Sun

@@ -1211,6 +1211,8 @@ SA3@1,2: Using the focus–directrix definition, derive the equation of the para
 S: An ellipse is a stretched circle: the set of points whose distances to two foci add to a constant. Planets, comets and satellites travel in ellipses, as Kepler discovered.
 O: Use the standard equation of an ellipse
 O: Find the foci and eccentricity of an ellipse
+LV: A level · Application
+EV: established | An ellipse is the locus of points whose distances to two foci sum to 2a, with c² = a² − b² and eccentricity c/a between 0 and 1.
 T: Foci | The two fixed points of an ellipse; the sum of distances to them is constant (2a)
 T: Semi-major axis | Half the longest diameter, a
 H: The standard ellipse
@@ -1238,11 +1240,15 @@ SRC: NASA, Planetary fact sheet | data | 2024 | https://nssdc.gsfc.nasa.gov/plan
 NUM1#maths-u05-33-q1@1: For x^{2}/100 + y^{2}/36 = 1, find the distance from the centre to each focus. | 8 | 0 |  | c^{2} = 100 − 36 = 64, so c = 8.
 M1#maths-u05-33-q2@1: What is the sum of the distances from any point on x^{2}/49 + y^{2}/24 = 1 to its foci? | 14 | 7 | 10 | 49 | 2√24 | The sum of the distances to the foci is 2a, and a = √49 = 7, so 14.
 M2#maths-u05-33-q3@2: Which orbit is most nearly circular? | Eccentricity 0.02 | Eccentricity 0.5 | Eccentricity 0.9 | Eccentricity 0.97 | Eccentricity 1 | Eccentricity close to 0 means close to a circle.
+NUM3@1,2: An ellipse centred at the origin has foci (±3, 0) and passes through (5, 0). Find b, the length of its semi-minor axis. | 4 | 0 |  | The vertex (5, 0) gives a = 5, and c = 3, so b^{2} = a^{2} − c^{2} = 25 − 9 = 16 and b = 4.
+SA2@1,2: Explain why a string of length 2a with its ends pinned at the foci draws an ellipse, and find the foci and eccentricity of x^{2}/169 + y^{2}/144 = 1. | Keeping the string taut with a pencil, the pencil's distances to the two pins always add to the string's length, 2a, which is exactly the defining property of an ellipse with those foci. For x²/169 + y²/144 = 1, a = 13 and b = 12, so c² = a² − b² = 169 − 144 = 25 and c = 5: the foci are (±5, 0). The eccentricity is e = c/a = 5/13 ≈ 0.385. | distances to the foci sum to the string length ; sum is 2a ; a = 13, b = 12 ; c = 5 and foci (±5, 0) ; e = 5/13
 
 ## Hyperbolas
 S: A hyperbola is the set of points whose distances to two foci differ by a constant. It has two branches and two asymptotes, and appears in navigation systems, the paths of fast-moving comets and the graph of y = 1/x.
 O: Use the standard equation of a hyperbola
 O: Find foci, asymptotes and eccentricity
+LV: A level · Application
+EV: established | A hyperbola is the locus of points whose distances to two foci differ by 2a, with c² = a² + b², asymptotes y = ±(b/a)x and eccentricity above 1.
 T: Asymptote of a hyperbola | A line the branches approach: y = ±(b/a)x for x^{2}/a^{2} − y^{2}/b^{2} = 1
 T: Rectangular hyperbola | A hyperbola with perpendicular asymptotes, such as xy = c^{2}
 H: The standard hyperbola
@@ -1270,11 +1276,15 @@ SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | secondary | 1
 NUM1#maths-u05-34-q1@1: For x^{2}/9 − y^{2}/16 = 1, find c, the distance from the centre to each focus. | 5 | 0 |  | c^{2} = a^{2} + b^{2} = 9 + 16 = 25, so c = 5.
 M1#maths-u05-34-q2@1: Which equation is a hyperbola? | x^{2}/4 − y^{2}/9 = 1 | x^{2}/4 + y^{2}/9 = 1 | y = x^{2} | x^{2} + y^{2} = 9 | y = 2x + 1 | A hyperbola has x^{2} and y^{2} terms with opposite signs, as in the first option.
 M2#maths-u05-34-q3@2: What is the eccentricity of x^{2}/16 − y^{2}/9 = 1? | 5/4 | 4/5 | 3/4 | 5/3 | 1 | c^{2} = 16 + 9 = 25, so c = 5 and a = 4, giving e = c/a = 5/4.
+M3@2: A hyperbola centred at the origin has vertices (±3, 0) and asymptotes y = ±2x. What is its equation? | x^{2}/9 − y^{2}/36 = 1 | x^{2}/9 − y^{2}/4 = 1 | x^{2}/36 − y^{2}/9 = 1 | x^{2}/9 + y^{2}/36 = 1 | x^{2}/3 − y^{2}/6 = 1 | a = 3 and the asymptote gradient is b/a = 2, so b = 6 and b^{2} = 36.
+SA2@1,2: Compare the ellipse x^{2}/25 + y^{2}/16 = 1 and the hyperbola x^{2}/4 − y^{2}/5 = 1: state each curve's defining property, find their foci and eccentricities, and comment on the result. | An ellipse is the set of points whose distances to the foci add to 2a; a hyperbola the set whose distances differ by 2a. For the ellipse, a = 5 and c² = a² − b² = 25 − 16 = 9, so the foci are (±3, 0) and e = 3/5 = 0.6 (less than 1). For the hyperbola, a = 2 and c² = a² + b² = 4 + 5 = 9, so the foci are also (±3, 0) and e = 3/2 = 1.5 (greater than 1). The two curves share their foci: they are confocal. | sum versus difference of distances ; ellipse uses c² = a² − b² ; hyperbola uses c² = a² + b² ; both have foci (±3, 0) ; e = 0.6 and e = 1.5
 
 ## Non-Euclidean Geometry
 S: Non-Euclidean geometries keep Euclid's first four postulates but replace the parallel postulate. Discovered in the 1800s, they showed that more than one consistent geometry exists, and one of them describes the curved space-time of general relativity.
 O: Explain how non-Euclidean geometries differ from Euclidean geometry
 O: Compare the three classical geometries by curvature and angle sum
+LV: Year 2 · Fluency
+EV: established | Hyperbolic and elliptic geometries are as consistent as Euclidean geometry, and the parallel postulate cannot be proved from the other axioms.
 T: Curvature | A measure of how a space bends: zero (flat), positive (sphere-like) or negative (saddle-like)
 T: Model | A concrete space in which a geometry's axioms hold, such as the sphere or the Poincaré disc
 H: Three geometries
@@ -1290,6 +1300,7 @@ X: A triangle drawn on a sphere has angles 90°, 90° and 50°. Which geometry i
 > The angle sum is 230°, more than 180°
 > So the geometry is spherical (positive curvature)
 > The excess is 230 − 180 = 50° (proportional to the triangle's area)
+!: Thinking spherical geometry changes only the parallel postulate: on a sphere, great-circle lines are finite and antipodal points lie on infinitely many of them, so other axioms change too. Hyperbolic geometry is the one that keeps the first four postulates exactly.
 K: Changing the parallel postulate gives spherical (angle sum > 180°) and hyperbolic (< 180°) geometries, distinguished by curvature.
 !: Thinking non-Euclidean geometry is "wrong" geometry: it's equally consistent, and describes curved spaces.
 Q: How many parallels through a point does hyperbolic geometry allow? | Infinitely many.
@@ -1300,11 +1311,17 @@ SRC: Greenberg MJ, Euclidean and Non-Euclidean Geometries (4th edn, WH Freeman 2
 SRC: Hartshorne R, Geometry: Euclid and Beyond (Springer 2000) | secondary | 2000 | https://link.springer.com/
 M1#maths-u05-35-q1@1: In which geometry do triangles have angle sums less than 180°? | Hyperbolic | Spherical | Euclidean | Projective | Affine | Negative curvature makes triangles "thin", with angle sums below 180°.
 M2#maths-u05-35-q2@2: Who independently developed hyperbolic geometry in the 1820s and 1830s? | Bolyai and Lobachevsky (and Gauss, unpublished) | Euclid and Archimedes | Newton and Leibniz | Descartes and Fermat | Einstein and Minkowski | Bolyai and Lobachevsky published; Gauss had the ideas but didn't publish them.
+TF1@1: In spherical geometry, any two distinct lines (great circles) meet. | true | Two great circles lie in planes through the centre, which meet in a diameter, so the circles cross at two antipodal points: there are no parallels.
+NUM2@2: A triangle on a sphere has angles 80°, 75° and 95°. What is its angle excess, in degrees? | 70 | 0 | ° | The angle sum is 250°, so the excess over a flat triangle's 180° is 70°.
+M3@1,2: Why does flat Euclidean geometry work well when surveying a field on the curved Earth? | Small regions are nearly flat, so the angle excess is tiny | The Earth's surface is exactly flat on scales under a kilometre | Surveyors correct every measured angle by adding 180° | The parallel postulate holds on a sphere for short lines | A triangle's angle excess is proportional to its area, so a field-sized triangle on the Earth differs from 180° by far less than any instrument can measure.
+SA2@2: Compare Euclidean, spherical and hyperbolic geometry by curvature, number of parallels through a point and triangle angle sum, naming a model of each. | Euclidean geometry has zero curvature: through a point not on a line there is exactly one parallel, and triangle angles add to exactly 180°; the flat plane is its model. Spherical (elliptic) geometry has positive curvature: there are no parallels, since all lines meet, and angle sums exceed 180°; the sphere with great circles as lines is its model. Hyperbolic geometry has negative curvature: there are infinitely many parallels, and angle sums are below 180°; the Poincaré disc or a saddle shape models it. | curvature zero, positive, negative ; parallels one, none, infinitely many ; angle sums equal, more, less than 180° ; a model for each ; links angle sum to curvature
 
 ## Spherical Geometry
 S: Spherical geometry is geometry on the surface of a sphere, where the "straight lines" are great circles. It's the geometry of navigation, flight paths and astronomy, and its triangles have angle sums greater than 180°.
 O: Identify great circles as the geodesics of a sphere
 O: Use the angle excess to find areas of spherical triangles
+LV: Year 2 · Application
+EV: established | On a sphere the geodesics are great circles, and a triangle's area equals R² times its angle excess (Girard's theorem).
 T: Great circle | The intersection of a sphere with a plane through its centre; the shortest path between two points lies along one
 T: Angle excess | The amount by which a spherical triangle's angles exceed 180° (π radians)
 H: Lines, distances and triangles
@@ -1331,11 +1348,15 @@ SRC: Todhunter I, Spherical Trigonometry (Macmillan 1886) | secondary | 1886 | h
 NUM1#maths-u05-36-q1@1: A spherical triangle on a unit sphere has angles 100°, 80° and 90°. What is its area, as a multiple of π? | 0.5 | 0.001 | π | The excess is 270 − 180 = 90° = π/2, so the area is π/2 = 0.5π.
 M1#maths-u05-36-q2@1: Which of these is a great circle on the Earth? | The equator | The Arctic Circle | The Tropic of Cancer | Latitude 51.5°N | The Tropic of Capricorn | Only the equator, among lines of latitude, has its centre at the Earth's centre.
 M2#maths-u05-36-q3@2: How many points do two distinct great circles share? | Two (antipodal points) | None | One | Infinitely many | Four | Two planes through the centre meet in a line through the centre, which hits the sphere twice.
+NUM3@1: Two towns lie on the same line of longitude, one at 50°N and one at 20°S. Taking R = 6,371 km, how far apart are they along the meridian, to the nearest km? | 7784 | 1 | km | The central angle is 50 + 20 = 70° = 1.2217 radians, so the distance is Rθ ≈ 6,371 × 1.2217 ≈ 7,784 km.
+SA3@1,2: Explain why only one line of latitude is a great circle, and use Girard's theorem to find the area of a spherical triangle with angles 120°, 90° and 60° on a sphere of radius 10 cm. | A great circle is cut by a plane through the sphere's centre. The equator's plane passes through the centre, but every other line of latitude lies in a parallel plane that misses the centre, so it is a smaller circle and not a geodesic. For the triangle, the angle sum is 270°, so the excess is 90° = π/2 radians. Girard's theorem gives area = R² × excess = 100 × π/2 = 50π ≈ 157 cm². | great circle plane through the centre ; only the equator qualifies ; angle excess 90° ; converts to π/2 radians ; area 50π ≈ 157 cm²
 
 ## Hyperbolic Geometry
 S: Hyperbolic geometry has constant negative curvature: through a point not on a line there are infinitely many parallels, and triangles are "thin", with angle sums less than 180°. It's visualised with models such as the Poincaré disc.
 O: Describe the main features of hyperbolic geometry
 O: Use the angle defect to find areas of hyperbolic triangles
+LV: Year 3 · Application
+EV: established | The hyperbolic plane has constant negative curvature, and a triangle's area equals its angle defect when the curvature is −1.
 T: Poincaré disc | A model of the hyperbolic plane inside a disc, where lines are arcs meeting the boundary at right angles
 T: Angle defect | π minus the angle sum of a triangle; in curvature −1 it equals the area
 H: Features
@@ -1351,6 +1372,7 @@ X: A hyperbolic triangle (curvature −1) has angles π/4, π/6 and π/12. Find 
 > Angle sum = π/4 + π/6 + π/12 = 3π/12 + 2π/12 + π/12 = π/2
 > Defect = π − π/2 = π/2
 > Area = π/2 ≈ 1.57
+!: Using Euclidean area formulas such as ½ab sin C on a hyperbolic triangle: with curvature −1 the area comes from the angle defect alone.
 K: Hyperbolic geometry has many parallels and angle sums below 180°; area equals the angle defect (curvature −1).
 !: Picturing hyperbolic lines in the Poincaré disc as straight chords: they're arcs at right angles to the boundary (except diameters).
 Q: What is the largest possible area of a hyperbolic triangle (curvature −1)? | π (an ideal triangle).
@@ -1362,11 +1384,15 @@ SRC: Anderson JW, Hyperbolic Geometry (2nd edn, Springer 2005) | secondary | 200
 NUM1#maths-u05-37-q1@1: A hyperbolic triangle (curvature −1) has angles π/3, π/4 and π/6. Find its area as a multiple of π. | 0.25 | 0.001 | π | The angles sum to 3π/4, so the defect and area are π/4 = 0.25π.
 M1#maths-u05-37-q2@1: What do lines look like in the Poincaré disc model? | Arcs meeting the boundary at right angles, or diameters | Straight chords only | Concentric circles | Spirals | Points | Hyperbolic lines are represented by circular arcs orthogonal to the boundary circle.
 M2#maths-u05-37-q3@2: How does a circle's circumference grow in the hyperbolic plane compared with 2πr? | Faster (exponentially) | Slower | The same | It shrinks | It's constant | Negative curvature makes space "spread out", so circumference grows exponentially with radius.
+NUM3@2: A hyperbolic triangle (curvature −1) has area 0.5 and two angles of 0.8 and 1.0 radians. Find the third angle in radians, to 2 decimal places. | 0.84 | 0.01 | rad | Area = π − (sum of angles), so the angles sum to π − 0.5 ≈ 2.642; the third is 2.642 − 1.8 ≈ 0.84 radians.
+SA2@1,2: Explain why no triangle in the hyperbolic plane (curvature −1) has area greater than π, and describe a triangle that reaches this bound. | With curvature −1, a triangle's area equals its angle defect, π − (A + B + C). Angles can't be negative, so the defect, and hence the area, is at most π, however long the sides are. The bound is reached by an ideal triangle, whose three vertices lie on the boundary of the Poincaré disc (at infinity): its sides are arcs meeting the boundary at right angles, all three angles are 0, and its area is exactly π. | area equals the angle defect ; angles are non-negative ; area at most π ; ideal triangle with vertices on the boundary ; angles 0 and area π
 
 ## Affine Geometry
 S: Affine geometry studies the properties preserved by affine transformations: those that keep straight lines straight and parallel lines parallel, though not lengths or angles. It's the geometry of shears, stretches and perspective-free drawing.
 O: Identify properties preserved by affine transformations
 O: Apply affine maps in coordinates
+LV: Year 2 · Application
+EV: established | Affine maps preserve straight lines, parallelism and ratios along lines, and scale every area by |det A|.
 T: Affine transformation | A map x ↦ Ax + b, with A an invertible matrix and b a vector
 T: Affine invariant | A property unchanged by affine maps, such as parallelism or ratios of lengths along a line
 H: What's preserved
@@ -1381,6 +1407,10 @@ X: An affine map sends (x, y) to (2x + y, y + 3). Find the image of the midpoint
 > Midpoint of AB is (2, 1), which maps to (5, 4)
 > A maps to (0, 3) and B maps to (10, 5); their midpoint is (5, 4)
 > They agree: affine maps preserve midpoints
+X: Find the image of the triangle (0, 0), (1, 0), (0, 1) under (x, y) ↦ (3x + y, 2y), and its area.
+> The vertices map to (0, 0), (3, 0) and (1, 2)
+> The image has base 3 and height 2, so area 3
+> The original area is ½ and det A = 3 × 2 = 6: ½ × 6 = 3 ✓
 K: Affine maps preserve lines, parallelism and ratios along lines, but not lengths or angles; area scales by |det A|.
 !: Assuming affine maps preserve angles or circles.
 Q: Do affine maps preserve parallel lines? | Yes.
@@ -1392,11 +1422,15 @@ SRC: Brannan DA, Esplen MF, Gray JJ, Geometry (2nd edn, Cambridge University Pre
 NUM1#maths-u05-38-q1@1: An affine map has matrix A = [[3, 1], [0, 2]]. By what factor does it scale areas? | 6 | 0 |  | The area scale factor is |det A| = 3 × 2 − 1 × 0 = 6.
 M1#maths-u05-38-q2@1: Which property is preserved by every affine transformation? | Parallelism | Lengths | Angles | Circles | Perpendicularity | Affine maps keep parallel lines parallel but can change lengths and angles.
 M3#maths-u05-38-q3@2: Why can a ratio theorem proved for an equilateral triangle be applied to every triangle? | Any triangle is the affine image of an equilateral triangle, and ratios along lines are preserved | All triangles are similar | All triangles are congruent | Angles are preserved | It can't | Affine maps carry any triangle to any other while keeping ratios along lines.
+M2@2: What does the shear (x, y) ↦ (x + 2y, y) do to the unit square with vertices (0, 0), (1, 0), (1, 1) and (0, 1)? | Makes a parallelogram with the same area | Makes a larger square with double the area | Makes a rectangle with double the area | Makes a kite with the same area | The vertices go to (0, 0), (1, 0), (3, 1) and (2, 1): opposite sides stay parallel, and det = 1 × 1 − 2 × 0 = 1 keeps the area.
+SA2@1: Explain which properties of a square survive the map (x, y) ↦ (x + y, y) and which don't, and why this means a circle can become an ellipse. | The map is affine with matrix [[1, 1], [0, 1]], so it keeps straight lines straight, keeps parallel sides parallel and keeps ratios along lines (midpoints go to midpoints). The unit square becomes a parallelogram with vertices (0, 0), (1, 0), (2, 1), (1, 1), with the same area since det = 1. But its right angles become 45° and 135°, and a diagonal changes length, so angles and lengths aren't preserved. Because distances in different directions are stretched by different amounts, a circle (all points the same distance from the centre) is mapped to an ellipse. | lines and parallels preserved ; ratios along lines preserved ; square becomes a parallelogram ; angles and lengths change ; unequal stretching turns circles into ellipses
 
 ## Projective Geometry
 S: Projective geometry is the geometry of perspective: what stays the same when a scene is projected onto a canvas or a camera. Parallel lines meet "at infinity", and every two lines meet in exactly one point.
 O: Describe points at infinity and homogeneous coordinates
 O: Identify projective invariants such as incidence and the cross-ratio
+LV: Year 2 · Application
+EV: established | Projections preserve incidence and the cross-ratio, and in the projective plane every two distinct lines meet in exactly one point.
 T: Point at infinity | An ideal point where parallel lines meet, added to the plane to form the projective plane
 T: Cross-ratio | (A, B; C, D) = (AC × BD)/(BC × AD), a ratio preserved by projections
 H: The projective plane
@@ -1412,6 +1446,7 @@ X: Points A, B, C, D on a line have coordinates 0, 1, 3 and 4. Find the cross-ra
 > AC = 3, BD = 3, BC = 2, AD = 4
 > (A, B; C, D) = (3 × 3)/(2 × 4)
 > = 9/8 (and any projection of the line keeps this value)
+P: **Duality.** Swap the words point and line in a theorem of the projective plane and you get another theorem: Brianchon's theorem is the dual of Pascal's.
 K: The projective plane adds points at infinity so any two lines meet; projections preserve incidence and the cross-ratio.
 !: Expecting projections to preserve ratios of lengths: only the cross-ratio survives.
 Q: Where do parallel lines meet in the projective plane? | At a point at infinity.
@@ -1422,11 +1457,17 @@ SRC: Coxeter HSM, Projective Geometry (2nd edn, Springer 1987) | secondary | 198
 SRC: Brannan DA, Esplen MF, Gray JJ, Geometry (2nd edn, Cambridge University Press 2011) | secondary | 2011 | https://www.cambridge.org/
 M1#maths-u05-39-q1@1: In the projective plane, how many points do two distinct lines share? | Exactly one | None or one | Two | Infinitely many | It depends | Parallel lines meet at a point at infinity, so every pair of distinct lines meets exactly once.
 M2#maths-u05-39-q2@2: What are the homogeneous coordinates of the Euclidean point (3, 5)? | [3 : 5 : 1] (or any multiple) | [3 : 5 : 0] | [1 : 3 : 5] | [5 : 3 : 1] | [0 : 3 : 5] | Append 1; any non-zero multiple, such as [6 : 10 : 2], is the same point.
+TF1@1: In homogeneous coordinates, [2 : 4 : 2] and [1 : 2 : 1] are the same point. | true | Homogeneous coordinates are defined up to a non-zero multiple; both represent the Euclidean point (1, 2).
+NUM2@2: Points A, B, C and D on a line have coordinates 0, 2, 3 and 6. Find the cross-ratio (A, B; C, D) = (AC × BD)/(BC × AD). | 2 | 0 |  | AC = 3, BD = 4, BC = 1 and AD = 6, so the cross-ratio is (3 × 4)/(1 × 6) = 2.
+M3@1: In the projective plane, where do the parallel lines y = 2x + 1 and y = 2x − 3 meet? | At the point [1 : 2 : 0] | At the point [2 : 1 : 0] | At the point [0 : 0 : 1] | At the point [1 : 2 : 1] | They never meet | Homogenised, 2x − y + z = 0 and 2x − y − 3z = 0 force z = 0 and y = 2x: the point at infinity in direction (1, 2).
+SA2@1,2: Explain why parallel railway lines appear to meet in a photograph, and how the projective plane models this. | A camera projects the scene from a single point onto a flat image. Parallel rails heading away from the camera have images that converge to one vanishing point on the horizon, because points further away are projected closer together. Projection preserves straight lines and incidence but not parallelism, lengths or angles. The projective plane adds a point at infinity for each direction, where all lines with that direction meet; the vanishing point in the photograph is the image of the rails' point at infinity, so in projective geometry every two lines meet. | central projection from one point ; images of parallel lines converge ; parallelism and lengths not preserved ; point at infinity for each direction ; vanishing point is the image of that point
 
 ## Fractal Geometry
 S: Fractals are shapes with detail at every scale, often self-similar: zoom in and you see copies of the whole. Coastlines, ferns, clouds and blood vessels are fractal-like, and fractals have dimensions that aren't whole numbers.
 O: Describe self-similarity and construct simple fractals
 O: Calculate similarity dimensions
+LV: Year 2 · Application
+EV: established | Self-similar fractals have similarity dimension log N / log(1/r), which is often not a whole number.
 T: Self-similar | Made of smaller copies of itself
 T: Similarity dimension | D = log N / log(1/r), for a shape made of N copies scaled by r
 H: Classic fractals
@@ -1443,6 +1484,10 @@ X: Find the similarity dimension of the Cantor set.
 > Each step keeps N = 2 pieces, each scaled by r = 1/3
 > D = log 2 / log 3
 > ≈ 0.631: less than a line, more than a point
+X: What fraction of the original triangle's area remains after 5 steps of the Sierpiński construction?
+> Each step removes the middle quarter of every triangle, keeping 3/4 of the area
+> After 5 steps: (3/4)^{5} = 243/1024
+> ≈ 0.237: the area tends to 0 as the steps continue
 K: Fractals repeat their structure at every scale; similarity dimension D = log N / log(1/r) is often not a whole number.
 !: Assuming every irregular shape is a fractal: fractals have structure repeating across scales.
 Q: What is the dimension of the Koch curve? | log 4/log 3 ≈ 1.26.
@@ -1454,6 +1499,8 @@ SRC: Falconer K, Fractal Geometry: Mathematical Foundations and Applications (3r
 NUM1#maths-u05-40-q1@1: A fractal is made of 8 copies of itself, each scaled by 1/2. Find its similarity dimension. | 3 | 0 |  | D = log 8/log 2 = 3 (like a solid cube made of 8 half-size cubes).
 M1#maths-u05-40-q2@1: What is the similarity dimension of the Sierpiński triangle? | log 3/log 2 ≈ 1.58 | 2 | 1 | log 2/log 3 ≈ 0.63 | 3/2 exactly | It's made of N = 3 copies scaled by r = 1/2.
 M2#maths-u05-40-q3@2: After each step of the Koch construction, the curve's length is multiplied by: | 4/3 | 3/4 | 2 | 1/3 | 3 | Each segment is replaced by 4 segments each a third as long.
+NUM3@2: A square is divided into 9 equal smaller squares and only the 4 corner squares and the centre square are kept; this is repeated for ever. Find the similarity dimension, to 2 decimal places. | 1.46 | 0.01 |  | N = 5 copies scaled by r = 1/3, so D = log 5/log 3 ≈ 1.46.
+SA2@1,2: Explain why the Koch snowflake has an infinite perimeter but encloses a finite area, and find the similarity dimension of its boundary. | Each step replaces every segment by 4 segments a third as long, multiplying the perimeter by 4/3. After n steps the perimeter is (4/3)ⁿ times the original, which grows without limit. But every added triangle lies near the original triangle, so the whole snowflake stays inside a fixed circle and its area is bounded (it tends to 8/5 of the original triangle's area). The boundary is made of N = 4 copies scaled by r = 1/3, so D = log 4/log 3 ≈ 1.26. | length multiplied by 4/3 each step ; (4/3)ⁿ grows without limit ; snowflake stays in a bounded region ; area finite (8/5 of the triangle) ; dimension log 4/log 3 ≈ 1.26
 
 ## Discrete Geometry
 S: Discrete geometry studies finite or countable sets of geometric objects: points, lines, polygons and lattices, and how they're arranged. Packing, covering, counting lattice points and arranging points are its central problems.

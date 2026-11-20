@@ -484,6 +484,71 @@
    ],
    "course": "maths",
    "action": "enhanced"
+  },
+  {
+   "lesson": "u13-01",
+   "changes": [
+    "LV GCSE and A level · Fluency; EV",
+    "added NUM2 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-02",
+   "changes": [
+    "LV GCSE and A level · Application; EV",
+    "added SA3 question (confounding)"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "M3#maths-u13-02-q3 and M2#maths-u13-02-q4 test the same idea (r = 0 for points on y = x^{2}); consider retiring one at review."
+    }
+   ],
+   "course": "maths",
+   "action": "enhanced"
+  },
+  {
+   "lesson": "u13-03",
+   "changes": [
+    "LV GCSE and A level · Application; EV",
+    "added NUM3 (number needed to treat) and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-04",
+   "changes": [
+    "LV GCSE and A level · Application; EV",
+    "added NUM2 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-05",
+   "changes": [
+    "LV A level · Fluency; EV",
+    "added NUM2 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-06",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added NUM2 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
   }
  ],
  "notes": [
