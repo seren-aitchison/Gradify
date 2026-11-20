@@ -59,7 +59,7 @@ uniform vec2 res; uniform vec2 light; uniform float lightMode; uniform float dpr
 uniform vec3 base; uniform vec3 acc1; uniform vec3 acc2; uniform float accentRim;
 uniform int n; uniform vec4 rects[${MAX}]; uniform vec4 props[${MAX}];
 float sdBox(vec2 p, vec2 b, float r){ vec2 q = abs(p) - b + r; return length(max(q, 0.)) + min(max(q.x, q.y), 0.) - r; }
-float hash(vec2 p){ p = mod(p, 256.); return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453); }   // wrapped: finite in mediump too
+float hash(vec2 p){ return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453); }
 vec3 hue(float a){ return clamp(abs(mod(a * 6. + vec3(0., 4., 2.), 6.) - 3.) - 1., 0., 1.); }
 float blob(vec2 uv, vec2 c, float r){ vec2 d = (uv - c) * vec2(res.x / res.y, 1.); return exp(-dot(d, d) / (r * r)); }
 // the page's light: the theme, colour at the edges (the course or site, and the Gradify spectrum), a bright (light) or
@@ -75,7 +75,7 @@ vec3 scene(vec2 px){
   c = mix(c, vec3(.27, .25, 1.), s * .8 * blob(uv, vec2(.96, 1.06), .36));
   float core = blob(uv, vec2(.5, .46), .62);
   c = mix(c, lightMode > .5 ? vec3(1.) : base, (lightMode > .5 ? .9 : .7) * core);
-  return c + (hash(px) - .5) / 255.;   // a whisper of grain: no banding in the gradients
+  return c${precision === "highp" ? " + (hash(px) - .5) / 255." : ""};   // a whisper of grain against banding (highp only: mediump can't hash safely)
 }
 void main(){
   vec2 fc = vec2(gl_FragCoord.x, res.y - gl_FragCoord.y);
@@ -182,6 +182,7 @@ export function start() {
   // the GPU program for a tier; compiled in the background where the browser can, so the page never waits on it
   let P = null, lost = false;
   const build = (t) => new Promise((resolve, reject) => {
+    const era = lostCount;   // a build from before a lost context goes quiet: its program no longer exists
     const max = t === "webgl" ? MAX : MAX_LITE;
     const sh = (type, src) => { const o = gl.createShader(type); gl.shaderSource(o, src); gl.compileShader(o); return o; };
     const vs = sh(gl.VERTEX_SHADER, VS), fs = sh(gl.FRAGMENT_SHADER, fragment(max, t !== "webgl", highp ? "highp" : "mediump"));
@@ -201,7 +202,7 @@ export function start() {
       Object.assign(P, { prog, U, max, tier: t }); tier = t; resolve();
     };
     if (!par) return done();
-    const poll = () => { if (gl.isContextLost()) return reject(new Error("context lost")); gl.getProgramParameter(prog, par.COMPLETION_STATUS_KHR) ? done() : setTimeout(poll, 30); };
+    const poll = () => { if (era !== lostCount) return; if (gl.isContextLost()) return reject(new Error("context lost")); gl.getProgramParameter(prog, par.COMPLETION_STATUS_KHR) ? done() : setTimeout(poll, 30); };
     poll();
   });
   let lostCount = 0;
