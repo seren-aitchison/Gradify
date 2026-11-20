@@ -10,6 +10,12 @@
   "Left and centre: the two Kekulé structures, double bonds in alternate positions.",
   "Right: the hexagon with a circle, all bonds equal at 0.139 nm."
  ],
+ "also": [
+  {
+   "course": "chemistry",
+   "lesson": "Delocalisation"
+  }
+ ],
  "between": [
   "↔",
   "="

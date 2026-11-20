@@ -1,0 +1,53 @@
+{
+ "id": "chem-group17-bp",
+ "renderer": "trend",
+ "course": "chemistry",
+ "lesson": "Group 17",
+ "title": "Halogen boiling points",
+ "caption": "Halogen molecules get larger down the group, with more electrons, so London forces between them strengthen and boiling points rise: fluorine and chlorine are gases, bromine a liquid and iodine a solid at room temperature.",
+ "alt": "Bar chart of boiling points: F₂ −188, Cl₂ −34, Br₂ 59, I₂ 184 °C.",
+ "description": [
+  "F₂ −188 °C.",
+  "Cl₂ −34 °C.",
+  "Br₂ 59 °C.",
+  "I₂ 184 °C."
+ ],
+ "kind": "bars",
+ "dataset": "bpHalogens",
+ "range": [
+  -200,
+  200
+ ],
+ "ticks": [
+  -200,
+  -100,
+  0,
+  100,
+  200
+ ],
+ "yLabel": "boiling point / °C",
+ "colour": "a4",
+ "items": [
+  {
+   "key": "F2",
+   "value": -188
+  },
+  {
+   "key": "Cl2",
+   "value": -34
+  },
+  {
+   "key": "Br2",
+   "value": 59
+  },
+  {
+   "key": "I2",
+   "value": 184
+  }
+ ],
+ "claims": [
+  {
+   "type": "increasing"
+  }
+ ]
+}

@@ -2302,7 +2302,12 @@
   ],
   "course": "chemistry",
   "lesson": "Benzene structure",
-  "also": [],
+  "also": [
+   {
+    "course": "chemistry",
+    "lesson": "Delocalisation"
+   }
+  ],
   "renderer": "structures",
   "status": "validated",
   "review": null,
@@ -2315,6 +2320,11 @@
    {
     "name": "the lesson places this diagram (D: line)",
     "ok": true
+   },
+   {
+    "name": "also placed in chemistry: Delocalisation",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u04.js"
    },
    {
     "name": "has alt text, a caption and a step-by-step description",
@@ -3370,6 +3380,3329 @@
     "name": "ethanol, methoxymethane: same formula, different compounds",
     "ok": true,
     "detail": "formulae ['C2H6O']; 2 distinct structures"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-ar-chlorine": {
+  "title": "Chlorine's isotopes and its relative atomic mass",
+  "caption": "A mass spectrum of chlorine atoms shows ³⁵Cl (75.8%) and ³⁷Cl (24.2%). The weighted mean, (34.97 × 75.8 + 36.97 × 24.2) ÷ 100, is 35.45, the relative atomic mass in the periodic table.",
+  "alt": "Mass spectrum with two lines: m/z 35 at 75.8% and m/z 37 at 24.2%.",
+  "description": [
+   "A tall line at m/z 35, abundance 75.8%.",
+   "A shorter line at m/z 37, abundance 24.2%.",
+   "Ar = (34.97 × 75.8 + 36.97 × 24.2) ÷ 100 = 35.45."
+  ],
+  "course": "chemistry",
+  "lesson": "Relative atomic mass",
+  "also": [],
+  "renderer": "ms",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u01.js: Relative atomic mass"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Ar = Σ(mass × abundance) ÷ Σ abundance = 35.45",
+    "ok": true,
+    "detail": "35.452"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-balancing": {
+  "title": "Balancing by counting atoms",
+  "caption": "H₂ + O₂ → H₂O leaves an oxygen atom unaccounted for. Putting 2 in front of H₂O balances oxygen, and 2 in front of H₂ then balances hydrogen: 2H₂ + O₂ → 2H₂O. Only the numbers in front change, never the formulae.",
+  "alt": "Before: two hydrogen molecules and one oxygen molecule. After: two water molecules.",
+  "description": [
+   "Left side: 2H₂ and O₂, so 4 hydrogen and 2 oxygen atoms.",
+   "Right side: 2H₂O, 4 hydrogen and 2 oxygen atoms. Balanced."
+  ],
+  "course": "chemistry",
+  "lesson": "Balancing equations",
+  "also": [],
+  "renderer": "particles",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u01.js: Balancing equations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "atoms of each element are the same before and after (H, O)",
+    "ok": true,
+    "detail": "H 4→4, O 2→2"
+   },
+   {
+    "name": "2H2 + O2 → 2H2O balances",
+    "ok": true,
+    "detail": "atoms and charge balance (H, O; charge 0)"
+   },
+   {
+    "name": "the particles drawn match the equation's proportions",
+    "ok": true,
+    "detail": "[{\"H2\":2,\"O2\":1},{\"H2O\":2}]"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-classify-matter": {
+  "title": "Classifying matter",
+  "caption": "A pure substance has a fixed composition: an element (one kind of atom) or a compound (elements chemically joined in fixed proportions). A mixture can be separated by physical means and may be uniform throughout (homogeneous) or not (heterogeneous).",
+  "alt": "A tree: is the sample one substance? Yes leads to: can it be broken down chemically? Yes, compound; no, element. No leads to: is it uniform throughout? Yes, homogeneous mixture; no, heterogeneous mixture.",
+  "description": [
+   "Is it a single pure substance with fixed composition?",
+   "If yes: can chemical reactions break it into simpler substances? Yes, a compound such as water or sodium chloride; no, an element such as oxygen or iron.",
+   "If no, it is a mixture: uniform throughout is homogeneous, such as salt water or air; otherwise heterogeneous, such as sand in water."
+  ],
+  "course": "chemistry",
+  "lesson": "Matter and its classification",
+  "also": [],
+  "renderer": "classify",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u01.js: Matter and its classification"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every path ends in a classification",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "no unreachable boxes",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every example under \"Compound\" is a compound",
+    "ok": true,
+    "detail": "H2O, NaCl, CO2"
+   },
+   {
+    "name": "every example under \"Element\" is an element",
+    "ok": true,
+    "detail": "O2, Fe, He"
+   },
+   {
+    "name": "every example under \"Homogeneous mixture\" is a mixture",
+    "ok": true,
+    "detail": "salt + water, air (N2, O2, Ar)"
+   },
+   {
+    "name": "every example under \"Heterogeneous mixture\" is a mixture",
+    "ok": true,
+    "detail": "sand + water"
+   },
+   {
+    "name": "water: yes, yes leads to \"Compound\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "air: no, yes leads to \"Homogeneous mixture\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-concentration": {
+  "title": "Concentration: solute per volume",
+  "caption": "Both beakers hold the same volume of solution, but the right one has twice as many dissolved particles, so it is twice as concentrated. Concentration = amount of solute ÷ volume of solution.",
+  "alt": "Two beakers filled to the same level; the left has five dissolved copper ions, the right ten.",
+  "description": [
+   "Left: same volume, 5 solute particles.",
+   "Right: same volume, 10 solute particles, twice the concentration."
+  ],
+  "course": "chemistry",
+  "lesson": "Concentration",
+  "also": [
+   {
+    "course": "gcse",
+    "lesson": "Moles and concentration"
+   }
+  ],
+  "renderer": "particles",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u01.js: Concentration"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in gcse: Moles and concentration",
+    "ok": true,
+    "detail": "kit/courses/gcse/notes/u05.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "\"concentrated\" is more concentrated than \"dilute\"",
+    "ok": true,
+    "detail": "12.50 against 6.25 particles per unit volume"
+   },
+   {
+    "name": "concentration ratio 2",
+    "ok": true,
+    "detail": "2.000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-dilution": {
+  "title": "Dilution keeps the moles, spreads the volume",
+  "caption": "Adding water doubles the volume but adds no solute. The eight solute particles are now spread through twice the volume, so the concentration halves: c₁V₁ = c₂V₂.",
+  "alt": "Left: a beaker half full with eight solute particles. Right: the beaker full to twice the volume, still eight particles.",
+  "description": [
+   "Before: 8 solute particles in volume V.",
+   "After adding water: the same 8 particles in volume 2V, half the concentration."
+  ],
+  "course": "chemistry",
+  "lesson": "Dilutions",
+  "also": [],
+  "renderer": "particles",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u01.js: Dilutions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "\"after: volume 2V\" has 8 Cu2+",
+    "ok": true,
+    "detail": "drawn 8"
+   },
+   {
+    "name": "\"before: volume V\" is more concentrated than \"after: volume 2V\"",
+    "ok": true,
+    "detail": "8.00 against 4.00 particles per unit volume"
+   },
+   {
+    "name": "concentration ratio 2",
+    "ok": true,
+    "detail": "2.000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-elements-compounds": {
+  "title": "Elements, compounds and mixtures as particles",
+  "caption": "Helium is an element made of single atoms; oxygen is an element made of O₂ molecules; water is a compound, every molecule the same H₂O; air is a mixture of different substances.",
+  "alt": "Four boxes of particles: separate helium atoms; O₂ molecules; H₂O molecules; and a mixture of N₂ and O₂ molecules with an argon atom.",
+  "description": [
+   "Helium: single atoms, one kind only, so an element.",
+   "Oxygen: pairs of identical atoms (O₂), an element.",
+   "Water: every molecule one O and two H, a compound.",
+   "Air: N₂, O₂ and argon mixed, a mixture."
+  ],
+  "course": "chemistry",
+  "lesson": "Elements and compounds",
+  "also": [],
+  "renderer": "particles",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u01.js: Elements and compounds"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "\"element (atoms)\" is a element",
+    "ok": true,
+    "detail": "contents make it a element"
+   },
+   {
+    "name": "\"element (molecules)\" is a element",
+    "ok": true,
+    "detail": "contents make it a element"
+   },
+   {
+    "name": "\"compound\" is a compound",
+    "ok": true,
+    "detail": "contents make it a compound"
+   },
+   {
+    "name": "\"mixture\" is a mixture",
+    "ok": true,
+    "detail": "contents make it a mixture"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-equation-particles": {
+  "title": "An equation as particles",
+  "caption": "CH₄ + 2O₂ → CO₂ + 2H₂O: one methane molecule and two oxygen molecules become one carbon dioxide and two water molecules. Count the atoms: 1 C, 4 H and 4 O on each side, so mass is conserved.",
+  "alt": "Before: one methane and two oxygen molecules. After: one carbon dioxide and two water molecules.",
+  "description": [
+   "Before: CH₄ and two O₂, holding 1 carbon, 4 hydrogen and 4 oxygen atoms.",
+   "After: CO₂ and two H₂O, again 1 carbon, 4 hydrogen and 4 oxygen atoms."
+  ],
+  "course": "chemistry",
+  "lesson": "Chemical equations",
+  "also": [
+   {
+    "course": "gcse",
+    "lesson": "Conservation of mass and relative formula mass"
+   }
+  ],
+  "renderer": "particles",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u01.js: Chemical equations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in gcse: Conservation of mass and relative formula mass",
+    "ok": true,
+    "detail": "kit/courses/gcse/notes/u05.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "atoms of each element are the same before and after (C, H, O)",
+    "ok": true,
+    "detail": "C 1→1, H 4→4, O 4→4"
+   },
+   {
+    "name": "CH4 + 2O2 → CO2 + 2H2O balances",
+    "ok": true,
+    "detail": "atoms and charge balance (C, H, O; charge 0)"
+   },
+   {
+    "name": "the particles drawn match the equation's proportions",
+    "ok": true,
+    "detail": "[{\"CH4\":1,\"O2\":2},{\"CO2\":1,\"H2O\":2}]"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-limiting-reagent": {
+  "title": "The limiting reagent",
+  "caption": "Six H₂ molecules and two O₂ molecules: by 2H₂ + O₂ → 2H₂O the two O₂ can use only four H₂, making four H₂O. Oxygen runs out first, so it is limiting; two H₂ are left over.",
+  "alt": "Before: six hydrogen molecules and two oxygen molecules. After: four water molecules and two leftover hydrogen molecules.",
+  "description": [
+   "Before: 6 H₂ and 2 O₂.",
+   "After: 4 H₂O and 2 unreacted H₂. Oxygen was used up, so it was the limiting reagent."
+  ],
+  "course": "chemistry",
+  "lesson": "Limiting reagents",
+  "also": [],
+  "renderer": "particles",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u01.js: Limiting reagents"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "atoms of each element are the same before and after (H, O)",
+    "ok": true,
+    "detail": "H 12→12, O 4→4"
+   },
+   {
+    "name": "2H2 + O2 → 2H2O balances",
+    "ok": true,
+    "detail": "atoms and charge balance (H, O; charge 0)"
+   },
+   {
+    "name": "the particles drawn match the equation's proportions",
+    "ok": true,
+    "detail": "[{\"H2\":6,\"O2\":2},{\"H2O\":4,\"H2\":2}]"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-mixtures": {
+  "title": "A mixture keeps its components",
+  "caption": "Mixing hydrogen, oxygen and water vapour makes a mixture: each substance keeps its own particles and properties, the proportions can vary, and they can be separated by physical means.",
+  "alt": "One box containing H₂ molecules, O₂ molecules and H₂O molecules mixed together.",
+  "description": [
+   "Hydrogen molecules (H₂), oxygen molecules (O₂) and water molecules (H₂O) moving freely among each other.",
+   "No new substance has formed."
+  ],
+  "course": "chemistry",
+  "lesson": "Mixtures",
+  "also": [],
+  "renderer": "particles",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u01.js: Mixtures"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "\"a mixture of three substances\" is a mixture",
+    "ok": true,
+    "detail": "contents make it a mixture"
+   },
+   {
+    "name": "\"a mixture of three substances\" has 4 H2O",
+    "ok": true,
+    "detail": "drawn 4"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-physical-chemical-change": {
+  "title": "Physical and chemical change",
+  "caption": "Melting ice is a physical change: the same H₂O molecules, now free to move. Burning hydrogen is a chemical change: atoms rearrange into a new substance, 2H₂ + O₂ → 2H₂O. In both, every atom is still there.",
+  "alt": "Top: ice as an ordered grid of water molecules becoming liquid water, the same molecules disordered. Bottom: hydrogen and oxygen molecules becoming water molecules.",
+  "description": [
+   "Ice: water molecules in a regular arrangement.",
+   "Water: the same nine molecules, close together but disordered.",
+   "Hydrogen and oxygen: four H₂ and two O₂ molecules.",
+   "After burning: four H₂O molecules, the same atoms rearranged."
+  ],
+  "course": "chemistry",
+  "lesson": "Physical and chemical changes",
+  "also": [],
+  "renderer": "particles",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u01.js: Physical and chemical changes"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "atoms of each element are the same before and after (O, H)",
+    "ok": true,
+    "detail": "O 9→9, H 18→18"
+   },
+   {
+    "name": "atoms of each element are the same before and after (H, O)",
+    "ok": true,
+    "detail": "H 8→8, O 4→4"
+   },
+   {
+    "name": "2H2 + O2 → 2H2O balances",
+    "ok": true,
+    "detail": "atoms and charge balance (H, O; charge 0)"
+   },
+   {
+    "name": "the particles drawn match the equation's proportions",
+    "ok": true,
+    "detail": "[{\"H2\":4,\"O2\":2},{\"H2O\":4}]"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-states-of-matter": {
+  "title": "Solid, liquid and gas",
+  "caption": "In a solid the particles are packed in a regular pattern and vibrate in place. In a liquid they are still touching but move past each other. In a gas they are far apart and move quickly in all directions.",
+  "alt": "Three boxes: water molecules in a regular grid (solid), close but disordered (liquid), and widely spaced with motion arrows (gas).",
+  "description": [
+   "Solid: particles in fixed, regular positions.",
+   "Liquid: particles close together, irregular, sliding past each other.",
+   "Gas: particles far apart, moving randomly."
+  ],
+  "course": "chemistry",
+  "lesson": "States of matter",
+  "also": [
+   {
+    "course": "gcse",
+    "lesson": "Structure and properties of substances"
+   }
+  ],
+  "renderer": "particles",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u01.js: States of matter"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in gcse: Structure and properties of substances",
+    "ok": true,
+    "detail": "kit/courses/gcse/notes/u05.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "\"solid\" is drawn as a solid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "\"liquid\" is drawn as a liquid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "\"gas\" is drawn as a gas",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-atomic-radius": {
+  "title": "Atomic radius across period 3",
+  "caption": "Across period 3 the nuclear charge rises by one each step while the electrons go into the same shell with similar shielding, so the outer electrons are pulled closer and the atoms shrink from sodium (186 pm) to chlorine (99 pm).",
+  "alt": "Bar chart of atomic radius falling across period 3: Na 186, Mg 160, Al 143, Si 117, P 110, S 104, Cl 99 pm.",
+  "description": [
+   "Na 186 pm, Mg 160, Al 143, Si 117, P 110, S 104, Cl 99."
+  ],
+  "course": "chemistry",
+  "lesson": "Atomic radius",
+  "also": [],
+  "renderer": "trend",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u03.js: Atomic radius"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every value matches atomic radius (metallic radius for metals, covalent radius for non-metals) (Royal Society of Chemistry periodic table data, as used in A level data booklets)",
+    "ok": true,
+    "detail": "7 values"
+   },
+   {
+    "name": "Na → Cl: decreasing",
+    "ok": true,
+    "detail": "Na 186, Mg 160, Al 143, Si 117, P 110, S 104, Cl 99"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-d-block-fill": {
+  "title": "d-block elements: filling 3d",
+  "caption": "Across the first transition series the 3d sub-shell fills behind a 4s² pair: scandium 3d¹, iron 3d⁶, zinc 3d¹⁰. Chromium and copper are the exceptions with 4s¹.",
+  "alt": "Box diagrams of 3d and 4s for scandium, iron and zinc.",
+  "description": [
+   "Scandium, [Ar] 3d¹ 4s².",
+   "Iron, [Ar] 3d⁶ 4s²: one 3d pair and four singles.",
+   "Zinc, [Ar] 3d¹⁰ 4s²: every box paired."
+  ],
+  "course": "chemistry",
+  "lesson": "d-block elements",
+  "also": [],
+  "renderer": "orbitals",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u03.js: d-block elements"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Scandium, [Ar] 3d¹ 4s²: 21 electrons",
+    "ok": true,
+    "detail": "1s2 2s2 2p6 3s2 3p6 3d1 4s2"
+   },
+   {
+    "name": "Scandium, [Ar] 3d¹ 4s²: configuration [Ar] 3d1 4s2 is the ground state",
+    "ok": true,
+    "detail": "computed 1s2 2s2 2p6 3s2 3p6 3d1 4s2"
+   },
+   {
+    "name": "Scandium, [Ar] 3d¹ 4s²: 1 unpaired electron(s) by Hund's rule",
+    "ok": true,
+    "detail": "computed 1"
+   },
+   {
+    "name": "Scandium, [Ar] 3d¹ 4s²: every occupied sub-shell is drawn",
+    "ok": true,
+    "detail": "occupied 1s 2s 2p 3s 3p 4s 3d"
+   },
+   {
+    "name": "Iron, [Ar] 3d⁶ 4s²: 26 electrons",
+    "ok": true,
+    "detail": "1s2 2s2 2p6 3s2 3p6 3d6 4s2"
+   },
+   {
+    "name": "Iron, [Ar] 3d⁶ 4s²: configuration [Ar] 3d6 4s2 is the ground state",
+    "ok": true,
+    "detail": "computed 1s2 2s2 2p6 3s2 3p6 3d6 4s2"
+   },
+   {
+    "name": "Iron, [Ar] 3d⁶ 4s²: 4 unpaired electron(s) by Hund's rule",
+    "ok": true,
+    "detail": "computed 4"
+   },
+   {
+    "name": "Iron, [Ar] 3d⁶ 4s²: every occupied sub-shell is drawn",
+    "ok": true,
+    "detail": "occupied 1s 2s 2p 3s 3p 4s 3d"
+   },
+   {
+    "name": "Zinc, [Ar] 3d¹⁰ 4s²: 30 electrons",
+    "ok": true,
+    "detail": "1s2 2s2 2p6 3s2 3p6 3d10 4s2"
+   },
+   {
+    "name": "Zinc, [Ar] 3d¹⁰ 4s²: configuration [Ar] 3d10 4s2 is the ground state",
+    "ok": true,
+    "detail": "computed 1s2 2s2 2p6 3s2 3p6 3d10 4s2"
+   },
+   {
+    "name": "Zinc, [Ar] 3d¹⁰ 4s²: 0 unpaired electron(s) by Hund's rule",
+    "ok": true,
+    "detail": "computed 0"
+   },
+   {
+    "name": "Zinc, [Ar] 3d¹⁰ 4s²: every occupied sub-shell is drawn",
+    "ok": true,
+    "detail": "occupied 1s 2s 2p 3s 3p 4s 3d"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-diagonal-relationships": {
+  "title": "Diagonal relationships",
+  "caption": "Lithium resembles magnesium, beryllium resembles aluminium and boron resembles silicon. Moving right raises charge density and electronegativity; moving down lowers them, so a diagonal step roughly cancels.",
+  "alt": "The periodic table with arrows from Li to Mg, Be to Al and B to Si.",
+  "description": [
+   "Arrow from lithium (period 2, group 1) to magnesium (period 3, group 2).",
+   "Arrow from beryllium to aluminium.",
+   "Arrow from boron to silicon."
+  ],
+  "course": "chemistry",
+  "lesson": "Periodic relationships",
+  "also": [],
+  "renderer": "table",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u03.js: Periodic relationships"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every element sits in its period and group (computed from Z)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Li and Mg are diagonal neighbours",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Be and Al are diagonal neighbours",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "B and Si are diagonal neighbours",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-diamond-cell": {
+  "title": "Diamond: each carbon bonded to four",
+  "caption": "In diamond every carbon atom is covalently bonded to four others in a tetrahedral giant lattice, which is why it is so hard and has a very high melting point. The cubic cell holds eight carbon atoms.",
+  "alt": "A cubic unit cell of diamond: atoms at the corners and face centres, and four more inside the cell.",
+  "description": [
+   "Carbon atoms on the eight corners and six face centres of a cube.",
+   "Four more atoms inside, each bonded tetrahedrally to four neighbours."
+  ],
+  "course": "chemistry",
+  "lesson": "Group 14",
+  "also": [],
+  "renderer": "lattice",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u03.js: Group 14"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "diamond: each C has 4 nearest neighbours",
+    "ok": true,
+    "detail": "counted 4 in the generated lattice"
+   },
+   {
+    "name": "diamond: 8 C per unit cell",
+    "ok": true,
+    "detail": "counted 8 (corners ⅛, edges ¼, faces ½, body 1)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-electronegativity-trend": {
+  "title": "Electronegativity across period 3",
+  "caption": "Electronegativity rises across a period as nuclear charge increases and atomic radius falls, so a bonding pair is held more tightly: from sodium (0.93) to chlorine (3.16) on the Pauling scale.",
+  "alt": "Bar chart of Pauling electronegativity rising across period 3 from Na 0.93 to Cl 3.16.",
+  "description": [
+   "Na 0.93, Mg 1.31, Al 1.61, Si 1.90, P 2.19, S 2.58, Cl 3.16."
+  ],
+  "course": "chemistry",
+  "lesson": "Electronegativity",
+  "also": [],
+  "renderer": "trend",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u03.js: Electronegativity"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every value matches Pauling electronegativity (CRC Handbook of Chemistry and Physics, Pauling electronegativities)",
+    "ok": true,
+    "detail": "7 values"
+   },
+   {
+    "name": "Na → Cl: increasing",
+    "ok": true,
+    "detail": "Na 0.93, Mg 1.31, Al 1.61, Si 1.9, P 2.19, S 2.58, Cl 3.16"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-group1-ie-reactivity": {
+  "title": "Group 1: ionisation energy and reactivity",
+  "caption": "Down group 1 the outer s electron is further out and more shielded, so first ionisation energy falls from 520 to 376 kJ mol⁻¹. The electron is lost more easily, so reactivity with water rises from lithium to caesium.",
+  "alt": "Bar chart of first ionisation energies of Li 520, Na 496, K 419, Rb 403, Cs 376 kJ/mol, falling down the group.",
+  "description": [
+   "Li 520, Na 496, K 419, Rb 403, Cs 376 kJ mol⁻¹: each lower, each more reactive."
+  ],
+  "course": "chemistry",
+  "lesson": "Reactivity trends",
+  "also": [],
+  "renderer": "trend",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u03.js: Reactivity trends"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every value matches first ionisation energy (NIST Atomic Spectra Database ionisation energies, converted from eV and rounded to 1 kJ mol⁻¹ (beryllium, 899.50, is quoted as 899 as in the lessons))",
+    "ok": true,
+    "detail": "5 values"
+   },
+   {
+    "name": "Li → Cs: decreasing",
+    "ok": true,
+    "detail": "Li 520, Na 496, K 419, Rb 403, Cs 376"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-group1-mp": {
+  "title": "Group 1 melting points",
+  "caption": "Down group 1 the atoms get larger, so the delocalised electrons are further from the cations and metallic bonding weakens: melting points fall from lithium (181 °C) to caesium (29 °C).",
+  "alt": "Bar chart of melting points falling down group 1: Li 180.5, Na 97.8, K 63.5, Rb 39.3, Cs 28.5 °C.",
+  "description": [
+   "Lithium 180.5 °C.",
+   "Sodium 97.8 °C.",
+   "Potassium 63.5 °C.",
+   "Rubidium 39.3 °C.",
+   "Caesium 28.5 °C."
+  ],
+  "course": "chemistry",
+  "lesson": "Group 1",
+  "also": [],
+  "renderer": "trend",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u03.js: Group 1"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every value matches melting point (CRC Handbook of Chemistry and Physics, physical constants of the elements)",
+    "ok": true,
+    "detail": "5 values"
+   },
+   {
+    "name": "Li → Cs: decreasing",
+    "ok": true,
+    "detail": "Li 180.5, Na 97.8, K 63.5, Rb 39.3, Cs 28.5"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-group17-bp": {
+  "title": "Halogen boiling points",
+  "caption": "Halogen molecules get larger down the group, with more electrons, so London forces between them strengthen and boiling points rise: fluorine and chlorine are gases, bromine a liquid and iodine a solid at room temperature.",
+  "alt": "Bar chart of boiling points: F₂ −188, Cl₂ −34, Br₂ 59, I₂ 184 °C.",
+  "description": [
+   "F₂ −188 °C.",
+   "Cl₂ −34 °C.",
+   "Br₂ 59 °C.",
+   "I₂ 184 °C."
+  ],
+  "course": "chemistry",
+  "lesson": "Group 17",
+  "also": [],
+  "renderer": "trend",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u03.js: Group 17"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every value matches boiling point (CRC Handbook of Chemistry and Physics, rounded to 1 °C)",
+    "ok": true,
+    "detail": "4 values"
+   },
+   {
+    "name": "F2 → I2: increasing",
+    "ok": true,
+    "detail": "F2 -188, Cl2 -34, Br2 59, I2 184"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-group18-bp": {
+  "title": "Noble gas boiling points",
+  "caption": "Noble gases exist as single atoms held together only by London forces. Larger atoms with more electrons are more polarisable, so boiling points rise down the group.",
+  "alt": "Bar chart of noble gas boiling points from helium −269 to radon −62 °C.",
+  "description": [
+   "He −269, Ne −246, Ar −186, Kr −153, Xe −108, Rn −62 °C."
+  ],
+  "course": "chemistry",
+  "lesson": "Group 18",
+  "also": [],
+  "renderer": "trend",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u03.js: Group 18"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every value matches boiling point (CRC Handbook of Chemistry and Physics, rounded to 1 °C)",
+    "ok": true,
+    "detail": "6 values"
+   },
+   {
+    "name": "He → Rn: increasing",
+    "ok": true,
+    "detail": "He -269, Ne -246, Ar -186, Kr -153, Xe -108, Rn -62"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-group2-ie": {
+  "title": "Group 2 first ionisation energies",
+  "caption": "Down group 2 the outer s electrons are further from the nucleus and better shielded, so less energy is needed to remove them and reactivity increases.",
+  "alt": "Bar chart of first ionisation energies: Be 899, Mg 738, Ca 590, Sr 550, Ba 503 kJ/mol.",
+  "description": [
+   "Beryllium 899 kJ mol⁻¹.",
+   "Magnesium 738.",
+   "Calcium 590.",
+   "Strontium 550.",
+   "Barium 503."
+  ],
+  "course": "chemistry",
+  "lesson": "Group 2",
+  "also": [],
+  "renderer": "trend",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u03.js: Group 2"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every value matches first ionisation energy (NIST Atomic Spectra Database ionisation energies, converted from eV and rounded to 1 kJ mol⁻¹ (beryllium, 899.50, is quoted as 899 as in the lessons))",
+    "ok": true,
+    "detail": "5 values"
+   },
+   {
+    "name": "Be → Ba: decreasing",
+    "ok": true,
+    "detail": "Be 899, Mg 738, Ca 590, Sr 550, Ba 503"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-ie-trend-table": {
+  "title": "First ionisation energy, hydrogen to calcium",
+  "caption": "Peaks at the noble gases, troughs at the alkali metals: the pattern repeats each period, the evidence for shells. Each period starts lower than the last because the outer electron is in a new, more shielded shell.",
+  "alt": "Line graph of first ionisation energy for elements 1 to 20, with peaks at He, Ne and Ar and troughs at Li, Na and K.",
+  "description": [
+   "Helium is the highest, 2372 kJ mol⁻¹.",
+   "Lithium, sodium and potassium are troughs at 520, 496 and 419.",
+   "Neon (2081) and argon (1521) are peaks."
+  ],
+  "course": "chemistry",
+  "lesson": "Ionisation energy trends",
+  "also": [],
+  "renderer": "trend",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u03.js: Ionisation energy trends"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every value matches first ionisation energy (NIST Atomic Spectra Database ionisation energies, converted from eV and rounded to 1 kJ mol⁻¹ (beryllium, 899.50, is quoted as 899 as in the lessons))",
+    "ok": true,
+    "detail": "20 values"
+   },
+   {
+    "name": "He has the highest value",
+    "ok": true,
+    "detail": "found He"
+   },
+   {
+    "name": "Li is lower than He before it",
+    "ok": true,
+    "detail": "He 2372, Li 520"
+   },
+   {
+    "name": "Na is lower than Ne before it",
+    "ok": true,
+    "detail": "Ne 2081, Na 496"
+   },
+   {
+    "name": "K is lower than Ar before it",
+    "ok": true,
+    "detail": "Ar 1521, K 419"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-ionic-radius": {
+  "title": "Isoelectronic ions",
+  "caption": "O²⁻, F⁻, Na⁺, Mg²⁺ and Al³⁺ all have the neon configuration, ten electrons. The nuclear charge rises from 8 to 13, pulling the same electrons closer, so the ions shrink from 140 to 54 pm.",
+  "alt": "Bar chart of six-coordinate ionic radii: O²⁻ 140, F⁻ 133, Na⁺ 102, Mg²⁺ 72, Al³⁺ 54 pm.",
+  "description": [
+   "O²⁻ 140 pm (8 protons).",
+   "F⁻ 133 pm (9).",
+   "Na⁺ 102 pm (11).",
+   "Mg²⁺ 72 pm (12).",
+   "Al³⁺ 54 pm (13)."
+  ],
+  "course": "chemistry",
+  "lesson": "Ionic radius",
+  "also": [],
+  "renderer": "trend",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u03.js: Ionic radius"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every value matches ionic radius, six-coordinate (Shannon R. D., Acta Crystallographica A32, 751–767 (1976), six-coordinate radii rounded to 1 pm)",
+    "ok": true,
+    "detail": "5 values"
+   },
+   {
+    "name": "O2- → Al3+: decreasing",
+    "ok": true,
+    "detail": "O2- 140, F- 133, Na+ 102, Mg2+ 72, Al3+ 54"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-lanthanide-contraction": {
+  "title": "The lanthanide contraction",
+  "caption": "Across the lanthanides each extra proton is poorly shielded by the added 4f electron, so the Ln³⁺ ions shrink steadily from La³⁺ (103 pm) to Lu³⁺ (86 pm). This makes the lanthanides chemically very similar and hard to separate.",
+  "alt": "Line graph of Ln³⁺ six-coordinate ionic radius falling steadily from lanthanum 103.2 pm to lutetium 86.1 pm.",
+  "description": [
+   "La³⁺ 103.2 pm, Ce³⁺ 101, Pr³⁺ 99, falling steadily.",
+   "Gd³⁺ 93.8 pm in the middle.",
+   "Lu³⁺ 86.1 pm at the end."
+  ],
+  "course": "chemistry",
+  "lesson": "Lanthanides",
+  "also": [
+   {
+    "course": "chemistry",
+    "lesson": "Lanthanide chemistry"
+   }
+  ],
+  "renderer": "trend",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u03.js: Lanthanides"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in chemistry: Lanthanide chemistry",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u11.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every value matches Ln³⁺ ionic radius, six-coordinate (Shannon R. D., Acta Crystallographica A32, 751–767 (1976), six-coordinate radii)",
+    "ok": true,
+    "detail": "15 values"
+   },
+   {
+    "name": "La → Lu: decreasing",
+    "ok": true,
+    "detail": "La 103.2, Ce 101, Pr 99, Nd 98.3, Pm 97, Sm 95.8, Eu 94.7, Gd 93.8, Tb 92.3, Dy 91.2, Ho 90.1, Er 89, Tm 88, Yb 86.8, Lu 86.1"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-max-oxidation-p3": {
+  "title": "Highest oxidation states across period 3",
+  "caption": "The highest oxidation state equals the number of outer-shell electrons an element can use: +1 for sodium rising to +7 for chlorine (as in Cl₂O₇ and ClO₄⁻).",
+  "alt": "Bar chart of the highest oxidation state rising from +1 at sodium to +7 at chlorine.",
+  "description": [
+   "Na +1, Mg +2, Al +3, Si +4, P +5, S +6, Cl +7."
+  ],
+  "course": "chemistry",
+  "lesson": "Oxidation states",
+  "also": [],
+  "renderer": "trend",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u03.js: Oxidation states"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every value matches highest oxidation state (from the group number: the number of outer-shell electrons)",
+    "ok": true,
+    "detail": "7 values"
+   },
+   {
+    "name": "Na → Cl: increasing",
+    "ok": true,
+    "detail": "Na 1, Mg 2, Al 3, Si 4, P 5, S 6, Cl 7"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-p-block-config": {
+  "title": "p-block elements: filling 2p",
+  "caption": "Across period 2 from carbon to fluorine the 2p sub-shell fills: 2p², 2p³, 2p⁴, 2p⁵. Electrons occupy separate orbitals before pairing.",
+  "alt": "Box diagrams of 2s and 2p for carbon, nitrogen, oxygen and fluorine.",
+  "description": [
+   "Carbon, 2s² 2p²: two single 2p electrons.",
+   "Nitrogen, 2s² 2p³: three single 2p electrons.",
+   "Oxygen, 2s² 2p⁴: one pair and two singles.",
+   "Fluorine, 2s² 2p⁵: two pairs and one single."
+  ],
+  "course": "chemistry",
+  "lesson": "p-block elements",
+  "also": [],
+  "renderer": "orbitals",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u03.js: p-block elements"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Carbon, [He] 2s² 2p²: 6 electrons",
+    "ok": true,
+    "detail": "1s2 2s2 2p2"
+   },
+   {
+    "name": "Carbon, [He] 2s² 2p²: configuration 1s2 2s2 2p2 is the ground state",
+    "ok": true,
+    "detail": "computed 1s2 2s2 2p2"
+   },
+   {
+    "name": "Carbon, [He] 2s² 2p²: 2 unpaired electron(s) by Hund's rule",
+    "ok": true,
+    "detail": "computed 2"
+   },
+   {
+    "name": "Carbon, [He] 2s² 2p²: every occupied sub-shell is drawn",
+    "ok": true,
+    "detail": "occupied 1s 2s 2p"
+   },
+   {
+    "name": "Nitrogen, [He] 2s² 2p³: 7 electrons",
+    "ok": true,
+    "detail": "1s2 2s2 2p3"
+   },
+   {
+    "name": "Nitrogen, [He] 2s² 2p³: configuration 1s2 2s2 2p3 is the ground state",
+    "ok": true,
+    "detail": "computed 1s2 2s2 2p3"
+   },
+   {
+    "name": "Nitrogen, [He] 2s² 2p³: 3 unpaired electron(s) by Hund's rule",
+    "ok": true,
+    "detail": "computed 3"
+   },
+   {
+    "name": "Nitrogen, [He] 2s² 2p³: every occupied sub-shell is drawn",
+    "ok": true,
+    "detail": "occupied 1s 2s 2p"
+   },
+   {
+    "name": "Oxygen, [He] 2s² 2p⁴: 8 electrons",
+    "ok": true,
+    "detail": "1s2 2s2 2p4"
+   },
+   {
+    "name": "Oxygen, [He] 2s² 2p⁴: configuration 1s2 2s2 2p4 is the ground state",
+    "ok": true,
+    "detail": "computed 1s2 2s2 2p4"
+   },
+   {
+    "name": "Oxygen, [He] 2s² 2p⁴: 2 unpaired electron(s) by Hund's rule",
+    "ok": true,
+    "detail": "computed 2"
+   },
+   {
+    "name": "Oxygen, [He] 2s² 2p⁴: every occupied sub-shell is drawn",
+    "ok": true,
+    "detail": "occupied 1s 2s 2p"
+   },
+   {
+    "name": "Fluorine, [He] 2s² 2p⁵: 9 electrons",
+    "ok": true,
+    "detail": "1s2 2s2 2p5"
+   },
+   {
+    "name": "Fluorine, [He] 2s² 2p⁵: configuration 1s2 2s2 2p5 is the ground state",
+    "ok": true,
+    "detail": "computed 1s2 2s2 2p5"
+   },
+   {
+    "name": "Fluorine, [He] 2s² 2p⁵: 1 unpaired electron(s) by Hund's rule",
+    "ok": true,
+    "detail": "computed 1"
+   },
+   {
+    "name": "Fluorine, [He] 2s² 2p⁵: every occupied sub-shell is drawn",
+    "ok": true,
+    "detail": "occupied 1s 2s 2p"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-s-block-config": {
+  "title": "s-block elements: outer s electrons",
+  "caption": "Sodium (3s¹) and magnesium (3s²) have their outer electrons in an s sub-shell, which they lose to form Na⁺ and Mg²⁺ ions with the neon configuration.",
+  "alt": "Box diagrams for sodium, [Ne] 3s¹, and magnesium, [Ne] 3s².",
+  "description": [
+   "Sodium: one electron in 3s.",
+   "Magnesium: two paired electrons in 3s."
+  ],
+  "course": "chemistry",
+  "lesson": "s-block elements",
+  "also": [],
+  "renderer": "orbitals",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u03.js: s-block elements"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Sodium, [Ne] 3s¹: 11 electrons",
+    "ok": true,
+    "detail": "1s2 2s2 2p6 3s1"
+   },
+   {
+    "name": "Sodium, [Ne] 3s¹: configuration [Ne] 3s1 is the ground state",
+    "ok": true,
+    "detail": "computed 1s2 2s2 2p6 3s1"
+   },
+   {
+    "name": "Sodium, [Ne] 3s¹: every occupied sub-shell is drawn",
+    "ok": true,
+    "detail": "occupied 1s 2s 2p 3s"
+   },
+   {
+    "name": "Magnesium, [Ne] 3s²: 12 electrons",
+    "ok": true,
+    "detail": "1s2 2s2 2p6 3s2"
+   },
+   {
+    "name": "Magnesium, [Ne] 3s²: configuration [Ne] 3s2 is the ground state",
+    "ok": true,
+    "detail": "computed 1s2 2s2 2p6 3s2"
+   },
+   {
+    "name": "Magnesium, [Ne] 3s²: every occupied sub-shell is drawn",
+    "ok": true,
+    "detail": "occupied 1s 2s 2p 3s"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-table-blocks": {
+  "title": "The periodic table by block",
+  "caption": "The block is the sub-shell that the last electron enters: s for groups 1 and 2 (and helium), p for groups 13 to 18, d for the transition series, f for the lanthanides and actinides.",
+  "alt": "The periodic table coloured by block: s block on the left, d block in the middle, p block on the right, f block below.",
+  "description": [
+   "Groups 1 and 2, with hydrogen and helium: the s block.",
+   "Groups 3 to 12: the d block.",
+   "Groups 13 to 18: the p block.",
+   "The two rows below the table, lanthanides and actinides: the f block."
+  ],
+  "course": "chemistry",
+  "lesson": "Modern periodic law",
+  "also": [],
+  "renderer": "table",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u03.js: Modern periodic law"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every element sits in its period and group (computed from Z)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Li, Na, K, Mg, Ca, Ba are in the s block",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "B, C, N, O, F, Cl, Ar are in the p block",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Sc, Fe, Cu, Zn, Ag, Pt are in the d block",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Ce, Nd, Gd, U, Pu are in the f block",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-table-f-block": {
+  "title": "The f block",
+  "caption": "The lanthanides (cerium to lutetium) and actinides (thorium to lawrencium) fill 4f and 5f. They belong in periods 6 and 7 but are drawn below the table so it fits on a page.",
+  "alt": "The periodic table with the lanthanide and actinide rows highlighted below the main table.",
+  "description": [
+   "The main table, dimmed.",
+   "Below it, two highlighted rows: the lanthanides (period 6) and the actinides (period 7)."
+  ],
+  "course": "chemistry",
+  "lesson": "f-block elements",
+  "also": [],
+  "renderer": "table",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u03.js: f-block elements"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every element sits in its period and group (computed from Z)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Ce, Pr, Nd, Pm, Sm, Eu, Gd, Tb, Dy, Ho, Er, Tm, Yb, Lu, Th, Pa, U, Np, Pu, Am, Cm, Bk, Cf, Es, Fm, Md, No, Lr are in the f block",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-table-periods-groups": {
+  "title": "Periods and groups",
+  "caption": "Rows are periods: the period number is the number of occupied electron shells. Columns are groups: elements in a group share their outer electron configuration, so they react alike. Group 1, group 17 and group 18 are highlighted.",
+  "alt": "The periodic table with groups 1 to 18 numbered across the top and periods 1 to 7 down the side; groups 1, 17 and 18 highlighted.",
+  "description": [
+   "Group numbers 1 to 18 across the top, period numbers 1 to 7 down the left.",
+   "Group 1 (the alkali metals) highlighted on the left.",
+   "Group 17 (the halogens) and group 18 (the noble gases) highlighted on the right."
+  ],
+  "course": "chemistry",
+  "lesson": "Periods and groups",
+  "also": [
+   {
+    "course": "gcse",
+    "lesson": "The periodic table and groups"
+   }
+  ],
+  "renderer": "table",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u03.js: Periods and groups"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in gcse: The periodic table and groups",
+    "ok": true,
+    "detail": "kit/courses/gcse/notes/u05.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every element sits in its period and group (computed from Z)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Na is in group 1, period 3",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Cl is in group 17, period 3",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Kr is in group 18, period 4",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-transition-ions": {
+  "title": "Iron ions lose 4s before 3d",
+  "caption": "Although 4s fills before 3d, once 3d is occupied the 4s electrons are the outermost and are removed first. Fe²⁺ is [Ar] 3d⁶ and Fe³⁺ is [Ar] 3d⁵, a half-filled sub-shell.",
+  "alt": "Box diagrams for Fe, [Ar] 3d⁶ 4s²; Fe²⁺, [Ar] 3d⁶ with 4s empty; Fe³⁺, [Ar] 3d⁵.",
+  "description": [
+   "Fe: 3d⁶ 4s².",
+   "Fe²⁺: both 4s electrons removed; 3d⁶ unchanged.",
+   "Fe³⁺: one 3d electron removed as well, leaving five single 3d electrons."
+  ],
+  "course": "chemistry",
+  "lesson": "Transition metals",
+  "also": [],
+  "renderer": "orbitals",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u03.js: Transition metals"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Fe, [Ar] 3d⁶ 4s²: 26 electrons",
+    "ok": true,
+    "detail": "1s2 2s2 2p6 3s2 3p6 3d6 4s2"
+   },
+   {
+    "name": "Fe, [Ar] 3d⁶ 4s²: configuration [Ar] 3d6 4s2 is the ground state",
+    "ok": true,
+    "detail": "computed 1s2 2s2 2p6 3s2 3p6 3d6 4s2"
+   },
+   {
+    "name": "Fe, [Ar] 3d⁶ 4s²: 4 unpaired electron(s) by Hund's rule",
+    "ok": true,
+    "detail": "computed 4"
+   },
+   {
+    "name": "Fe, [Ar] 3d⁶ 4s²: every occupied sub-shell is drawn",
+    "ok": true,
+    "detail": "occupied 1s 2s 2p 3s 3p 4s 3d"
+   },
+   {
+    "name": "Fe²⁺, [Ar] 3d⁶: 24 electrons",
+    "ok": true,
+    "detail": "1s2 2s2 2p6 3s2 3p6 3d6"
+   },
+   {
+    "name": "Fe²⁺, [Ar] 3d⁶: configuration [Ar] 3d6 is the ground state",
+    "ok": true,
+    "detail": "computed 1s2 2s2 2p6 3s2 3p6 3d6"
+   },
+   {
+    "name": "Fe²⁺, [Ar] 3d⁶: 4 unpaired electron(s) by Hund's rule",
+    "ok": true,
+    "detail": "computed 4"
+   },
+   {
+    "name": "Fe²⁺, [Ar] 3d⁶: every occupied sub-shell is drawn",
+    "ok": true,
+    "detail": "occupied 1s 2s 2p 3s 3p 3d"
+   },
+   {
+    "name": "Fe³⁺, [Ar] 3d⁵: 23 electrons",
+    "ok": true,
+    "detail": "1s2 2s2 2p6 3s2 3p6 3d5"
+   },
+   {
+    "name": "Fe³⁺, [Ar] 3d⁵: configuration [Ar] 3d5 is the ground state",
+    "ok": true,
+    "detail": "computed 1s2 2s2 2p6 3s2 3p6 3d5"
+   },
+   {
+    "name": "Fe³⁺, [Ar] 3d⁵: 5 unpaired electron(s) by Hund's rule",
+    "ok": true,
+    "detail": "computed 5"
+   },
+   {
+    "name": "Fe³⁺, [Ar] 3d⁵: every occupied sub-shell is drawn",
+    "ok": true,
+    "detail": "occupied 1s 2s 2p 3s 3p 3d"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-alkane-bp": {
+  "title": "London forces grow with chain length",
+  "caption": "Each extra CH₂ adds electrons and surface contact, so London forces between alkane molecules grow and boiling points rise: methane to butane are gases at room temperature, pentane to octane are liquids.",
+  "alt": "Line graph of alkane boiling points rising from methane −162 °C to octane 126 °C.",
+  "description": [
+   "Methane −162 °C, ethane −89, propane −42, butane −1.",
+   "Pentane 36, hexane 69, heptane 98, octane 126 °C."
+  ],
+  "course": "chemistry",
+  "lesson": "London dispersion forces",
+  "also": [],
+  "renderer": "trend",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u04.js: London dispersion forces"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every value matches boiling point (CRC Handbook of Chemistry and Physics, rounded to 1 °C)",
+    "ok": true,
+    "detail": "8 values"
+   },
+   {
+    "name": "methane → octane: increasing",
+    "ok": true,
+    "detail": "methane -162, ethane -89, propane -42, butane -1, pentane 36, hexane 69, heptane 98, octane 126"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-bond-enthalpy-methane": {
+  "title": "Bond enthalpies: burning methane",
+  "caption": "Breaking every bond in CH₄ + 2O₂ to make free atoms takes 2648 kJ; forming the bonds in CO₂ + 2H₂O releases 3466 kJ. ΔH = 2648 − 3466 = −818 kJ mol⁻¹, from mean bond enthalpies.",
+  "alt": "Enthalpy diagram: reactants, then up 2648 kJ to separate atoms, then down 3466 kJ to products, which lie 818 kJ below the reactants.",
+  "description": [
+   "Reactants CH₄ + 2O₂ at the start.",
+   "Up 2648 kJ to C + 4H + 4O: bonds broken, 4 C–H and 2 O=O.",
+   "Down 3466 kJ to CO₂ + 2H₂O: bonds made, 2 C=O and 4 O–H.",
+   "Net ΔH = −818 kJ mol⁻¹."
+  ],
+  "course": "chemistry",
+  "lesson": "Bond enthalpy",
+  "also": [],
+  "renderer": "cycle",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u04.js: Bond enthalpy"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Hess's law: every route between two states gives the same enthalpy change",
+    "ok": true,
+    "detail": "2 steps consistent"
+   },
+   {
+    "name": "every state's enthalpy is fixed by the steps",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ΔH = -818 kJ mol⁻¹ from the cycle",
+    "ok": true,
+    "detail": "cycle gives -818"
+   },
+   {
+    "name": "bonds broken: 4 × C–H (413) + 2 × O=O (498) = 2648",
+    "ok": true,
+    "detail": "step drawn as 2648"
+   },
+   {
+    "name": "bonds made: 2 × C=O (805) + 4 × O–H (464) = -3466",
+    "ok": true,
+    "detail": "step drawn as -3466"
+   },
+   {
+    "name": "CH4 + 2O2 → CO2 + 2H2O balances",
+    "ok": true,
+    "detail": "atoms and charge balance (C, H, O; charge 0)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-bond-polarity": {
+  "title": "Polar bonds",
+  "caption": "Chlorine (3.16) and fluorine (3.98) are more electronegative than hydrogen (2.20), so they pull the shared pair towards themselves and become δ−, leaving hydrogen δ+.",
+  "alt": "Lewis structures of HCl and HF with δ+ on hydrogen and δ− on the halogen.",
+  "description": [
+   "H–Cl: hydrogen δ+, chlorine δ−, with three lone pairs on chlorine.",
+   "H–F: hydrogen δ+, fluorine δ−, a more polar bond."
+  ],
+  "course": "chemistry",
+  "lesson": "Bond polarity",
+  "also": [],
+  "renderer": "dotcross",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u04.js: Bond polarity"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "HCl: 8 outer electrons drawn (valence electrons − charge)",
+    "ok": true,
+    "detail": "drawn 8"
+   },
+   {
+    "name": "HCl: every atom has a full outer shell (octet, or two for H)",
+    "ok": true,
+    "detail": "all full"
+   },
+   {
+    "name": "HCl: H is δ+ (electronegativity 2.2)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "HCl: Cl is δ- (electronegativity 3.16)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "HF: 8 outer electrons drawn (valence electrons − charge)",
+    "ok": true,
+    "detail": "drawn 8"
+   },
+   {
+    "name": "HF: every atom has a full outer shell (octet, or two for H)",
+    "ok": true,
+    "detail": "all full"
+   },
+   {
+    "name": "HF: H is δ+ (electronegativity 2.2)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "HF: F is δ- (electronegativity 3.98)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-bond-type": {
+  "title": "Which kind of bond?",
+  "caption": "A metal with a non-metal transfers electrons: ionic bonding. Metal atoms alone share a sea of delocalised electrons: metallic bonding. Non-metals share pairs of electrons: covalent bonding.",
+  "alt": "A tree: is there a metal and a non-metal? Yes, ionic. No: only metals? Yes, metallic; no, covalent.",
+  "description": [
+   "Metal and non-metal, such as NaCl or MgO: ionic.",
+   "Only metals, such as Cu or Fe: metallic.",
+   "Only non-metals, such as H₂O or CO₂: covalent."
+  ],
+  "course": "chemistry",
+  "lesson": "Introduction to chemical bonding",
+  "also": [],
+  "renderer": "classify",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u04.js: Introduction to chemical bonding"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every path ends in a classification",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "no unreachable boxes",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every example under \"Ionic\" is an ionic",
+    "ok": true,
+    "detail": "NaCl, MgO, CaF2"
+   },
+   {
+    "name": "every example under \"Metallic\" is a metallic",
+    "ok": true,
+    "detail": "Cu, Fe, Na"
+   },
+   {
+    "name": "every example under \"Covalent\" is a covalent",
+    "ok": true,
+    "detail": "H2O, CO2, CH4"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-born-haber-nacl": {
+  "title": "The Born–Haber cycle for sodium chloride",
+  "caption": "From the elements, sodium and chlorine are atomised (+107, +122), sodium is ionised (+496) and chlorine gains an electron (−349). The gaseous ions then form the lattice. Since the two routes to NaCl(s) must agree, −411 = 107 + 122 + 496 − 349 + ΔlattH, so ΔlattH = −787 kJ mol⁻¹.",
+  "alt": "Enthalpy level diagram rising from Na(s) + ½Cl₂(g) through atomisation and ionisation, falling for the electron affinity, then a long downward arrow for lattice formation to NaCl(s), which is 411 below the start.",
+  "description": [
+   "Start: Na(s) + ½Cl₂(g) at zero.",
+   "Up +107 to Na(g); up +122 to Na(g) + Cl(g); up +496 to Na⁺(g) + e⁻ + Cl(g).",
+   "Down −349 to Na⁺(g) + Cl⁻(g).",
+   "Down by the lattice enthalpy to NaCl(s), which is −411 below the start (the enthalpy of formation).",
+   "So the lattice enthalpy is −787 kJ mol⁻¹."
+  ],
+  "course": "chemistry",
+  "lesson": "Born-Haber cycles",
+  "also": [],
+  "renderer": "cycle",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u04.js: Born-Haber cycles"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Hess's law: every route between two states gives the same enthalpy change",
+    "ok": true,
+    "detail": "5 steps consistent"
+   },
+   {
+    "name": "every state's enthalpy is fixed by the steps",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ΔlattH = -787 kJ mol⁻¹ from the cycle",
+    "ok": true,
+    "detail": "cycle gives -787"
+   },
+   {
+    "name": "Na + ½Cl2 → NaCl balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Na, Cl; charge 0)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-coordinate-ammonium": {
+  "title": "A coordinate bond: ammonium",
+  "caption": "Ammonia's lone pair on nitrogen is donated to an H⁺ ion, which has no electrons. Once formed, the coordinate bond is identical to the other three N–H bonds; the ion carries a +1 charge.",
+  "alt": "Dot-and-cross diagram of the ammonium ion in brackets with a + charge: four shared pairs around nitrogen, one of them two nitrogen electrons.",
+  "description": [
+   "Nitrogen in the centre with four hydrogens.",
+   "Three N–H bonds each share a dot (N) and a cross (H).",
+   "The fourth bond's pair is two dots, both from nitrogen: the coordinate bond.",
+   "Square brackets with a + charge."
+  ],
+  "course": "chemistry",
+  "lesson": "Coordinate bonding",
+  "also": [],
+  "renderer": "dotcross",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u04.js: Coordinate bonding"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "NH₄⁺: 8 outer electrons drawn (valence electrons − charge)",
+    "ok": true,
+    "detail": "drawn 8"
+   },
+   {
+    "name": "NH₄⁺: every atom has a full outer shell (octet, or two for H)",
+    "ok": true,
+    "detail": "all full"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-covalent-water": {
+  "title": "Covalent bonding in water and carbon dioxide",
+  "caption": "Each bond is a shared pair, one electron from each atom. Water has two O–H bonds and two lone pairs on oxygen; carbon dioxide has two C=O double bonds, each sharing two pairs. Every atom ends with a full outer shell.",
+  "alt": "Dot-and-cross diagrams of water (two shared pairs and two lone pairs on oxygen) and carbon dioxide (two double bonds, two lone pairs on each oxygen).",
+  "description": [
+   "Water: oxygen shares one pair with each hydrogen and keeps two lone pairs: eight around oxygen, two around each hydrogen.",
+   "Carbon dioxide: carbon shares two pairs with each oxygen; each oxygen keeps two lone pairs."
+  ],
+  "course": "chemistry",
+  "lesson": "Covalent bonding",
+  "also": [],
+  "renderer": "dotcross",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u04.js: Covalent bonding"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "H₂O: 8 outer electrons drawn (valence electrons − charge)",
+    "ok": true,
+    "detail": "drawn 8"
+   },
+   {
+    "name": "H₂O: every atom has a full outer shell (octet, or two for H)",
+    "ok": true,
+    "detail": "all full"
+   },
+   {
+    "name": "CO₂: 16 outer electrons drawn (valence electrons − charge)",
+    "ok": true,
+    "detail": "drawn 16"
+   },
+   {
+    "name": "CO₂: every atom has a full outer shell (octet, or two for H)",
+    "ok": true,
+    "detail": "all full"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-dipole-dipole": {
+  "title": "Permanent dipole–dipole forces",
+  "caption": "Each HCl molecule has a permanent dipole, H δ+ and Cl δ−. Neighbouring molecules line up so the δ+ end of one is near the δ− end of the next, an attraction on top of the London forces.",
+  "alt": "Three HCl molecules in a row, δ+ hydrogen next to δ− chlorine of the next, joined by dashed attractions.",
+  "description": [
+   "Three H–Cl molecules, each with δ+ on H and δ− on Cl.",
+   "Dashed lines between the H of one and the Cl of the next."
+  ],
+  "course": "chemistry",
+  "lesson": "Dipole-dipole interactions",
+  "also": [],
+  "renderer": "dotcross",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u04.js: Dipole-dipole interactions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "structure: 24 outer electrons drawn (valence electrons − charge)",
+    "ok": true,
+    "detail": "drawn 24"
+   },
+   {
+    "name": "structure: every atom has a full outer shell (octet, or two for H)",
+    "ok": true,
+    "detail": "all full"
+   },
+   {
+    "name": "structure: H is δ+ (electronegativity 2.2)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "structure: Cl is δ- (electronegativity 3.16)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-electronegativity-p2": {
+  "title": "Electronegativity across period 2",
+  "caption": "Electronegativity rises across period 2 from lithium (0.98) to fluorine (3.98), the most electronegative element. A large difference between two bonded atoms gives a polar or ionic bond.",
+  "alt": "Bar chart of Pauling electronegativity from lithium 0.98 to fluorine 3.98.",
+  "description": [
+   "Li 0.98, Be 1.57, B 2.04, C 2.55, N 3.04, O 3.44, F 3.98."
+  ],
+  "course": "chemistry",
+  "lesson": "Electronegativity",
+  "also": [],
+  "renderer": "trend",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u03.js: Electronegativity"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every value matches Pauling electronegativity (CRC Handbook of Chemistry and Physics, Pauling electronegativities)",
+    "ok": true,
+    "detail": "7 values"
+   },
+   {
+    "name": "Li → F: increasing",
+    "ok": true,
+    "detail": "Li 0.98, Be 1.57, B 2.04, C 2.55, N 3.04, O 3.44, F 3.98"
+   },
+   {
+    "name": "F has the highest value",
+    "ok": true,
+    "detail": "found F"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-formal-charge-co2": {
+  "title": "Choosing a Lewis structure by formal charge",
+  "caption": "Formal charge = valence electrons − lone-pair electrons − ½ bonding electrons. O=C=O gives every atom zero. The alternative O≡C–O gives +1 and −1, so it is less favoured: the best structure keeps formal charges smallest.",
+  "alt": "Two Lewis structures of CO₂: O=C=O with all formal charges zero, and O≡C–O with +1 on the triply bonded oxygen and −1 on the singly bonded one.",
+  "description": [
+   "O=C=O: each oxygen has two lone pairs and a double bond: formal charges 0, 0, 0.",
+   "O≡C–O: the triply bonded O has one lone pair (+1); the singly bonded O has three (−1)."
+  ],
+  "course": "chemistry",
+  "lesson": "Formal charge",
+  "also": [],
+  "renderer": "dotcross",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u04.js: Formal charge"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "O=C=O (preferred): 16 outer electrons drawn (valence electrons − charge)",
+    "ok": true,
+    "detail": "drawn 16"
+   },
+   {
+    "name": "O=C=O (preferred): every atom has a full outer shell (octet, or two for H)",
+    "ok": true,
+    "detail": "all full"
+   },
+   {
+    "name": "O=C=O (preferred): formal charges {\"o1\":0,\"c\":0,\"o2\":0}",
+    "ok": true,
+    "detail": "{\"o1\":0,\"c\":0,\"o2\":0}"
+   },
+   {
+    "name": "O≡C–O: 16 outer electrons drawn (valence electrons − charge)",
+    "ok": true,
+    "detail": "drawn 16"
+   },
+   {
+    "name": "O≡C–O: every atom has a full outer shell (octet, or two for H)",
+    "ok": true,
+    "detail": "all full"
+   },
+   {
+    "name": "O≡C–O: formal charges {\"o1\":1,\"c\":0,\"o2\":-1}",
+    "ok": true,
+    "detail": "{\"o1\":1,\"c\":0,\"o2\":-1}"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-hybridisation-sp3": {
+  "title": "sp³ hybridisation in carbon",
+  "caption": "Carbon's 2s and three 2p orbitals mix into four equivalent sp³ hybrids of equal energy, each holding one electron, which point to the corners of a tetrahedron and form four identical bonds, as in methane.",
+  "alt": "Energy diagram: one 2s level and three higher 2p levels on the left; four equal sp³ levels between them on the right.",
+  "description": [
+   "Left: 2s lower, three 2p orbitals higher.",
+   "Right: four sp³ orbitals at one energy in between.",
+   "Four orbitals in, four out."
+  ],
+  "course": "chemistry",
+  "lesson": "Hybridisation",
+  "also": [],
+  "renderer": "levels",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u04.js: Hybridisation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "four atomic orbitals (one 2s, three 2p) give four hybrids",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-hydrogen-bond-water": {
+  "title": "Hydrogen bonds between water molecules",
+  "caption": "A hydrogen bonded to oxygen is strongly δ+ and is attracted to a lone pair on the oxygen of another molecule. The O–H···O arrangement is close to straight (180°). Each water molecule can make up to four hydrogen bonds.",
+  "alt": "Three water molecules: a δ+ hydrogen of one points at a lone pair on the oxygen of the next, joined by dashed hydrogen bonds.",
+  "description": [
+   "Left water molecule: one O–H points right towards the middle molecule's oxygen lone pair.",
+   "Middle molecule: one O–H points to the right-hand molecule.",
+   "Dashed lines mark the hydrogen bonds."
+  ],
+  "course": "chemistry",
+  "lesson": "Hydrogen bonding",
+  "also": [],
+  "renderer": "dotcross",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u04.js: Hydrogen bonding"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "structure: 24 outer electrons drawn (valence electrons − charge)",
+    "ok": true,
+    "detail": "drawn 24"
+   },
+   {
+    "name": "structure: every atom has a full outer shell (octet, or two for H)",
+    "ok": true,
+    "detail": "all full"
+   },
+   {
+    "name": "structure: H on O to a lone pair on O is a hydrogen bond",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "structure: H on O to a lone pair on O is a hydrogen bond",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-imf-bp": {
+  "title": "Hydrogen bonding raises boiling points",
+  "caption": "Boiling points of the hydrides usually rise down a group as London forces grow. NH₃, H₂O and HF break the pattern: hydrogen bonding makes them boil far higher than the next hydride down. Water is highest of all, with two hydrogen bonds per molecule.",
+  "alt": "Line graph of hydride boiling points for groups 14 to 17 against period; the group 14 line rises steadily, while groups 15, 16 and 17 start high at NH₃, H₂O and HF before dropping.",
+  "description": [
+   "Group 14: CH₄ −162, SiH₄ −112, GeH₄ −88, SnH₄ −52 °C, rising steadily.",
+   "Group 15: NH₃ −33, then PH₃ −88, AsH₃ −62, SbH₃ −17.",
+   "Group 16: H₂O 100, then H₂S −60, H₂Se −41, H₂Te −2.",
+   "Group 17: HF 20, then HCl −85, HBr −67, HI −35."
+  ],
+  "course": "chemistry",
+  "lesson": "Intermolecular forces",
+  "also": [],
+  "renderer": "trend",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u04.js: Intermolecular forces"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every value matches boiling point (CRC Handbook of Chemistry and Physics, rounded to 1 °C)",
+    "ok": true,
+    "detail": "16 values"
+   },
+   {
+    "name": "H2O has the highest value",
+    "ok": true,
+    "detail": "found H2O"
+   },
+   {
+    "name": "order PH3 < NH3",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "order H2S < H2O",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "order HCl < HF",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "CH4 → SnH4: increasing",
+    "ok": true,
+    "detail": "CH4 -162, SiH4 -112, GeH4 -88, SnH4 -52"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-ionic-nacl": {
+  "title": "Ionic bonding in sodium chloride",
+  "caption": "Sodium's single outer electron (cross) transfers to chlorine, which has seven (dots). Both ions end with full outer shells: Na⁺ (2, 8) and Cl⁻ (2, 8, 8). Only the outer shells are drawn.",
+  "alt": "Dot-and-cross diagram: a sodium atom with one outer electron and a chlorine atom with seven, then the ions in brackets: Na⁺ with an empty outer shell, Cl⁻ with eight outer electrons, one of them a cross.",
+  "description": [
+   "Before: Na with one cross in its outer shell; Cl with seven dots.",
+   "After: [Na]⁺ with no outer electrons shown, and [Cl]⁻ with eight, seven dots and one cross."
+  ],
+  "course": "chemistry",
+  "lesson": "Ionic bonding",
+  "also": [
+   {
+    "course": "gcse",
+    "lesson": "Ionic, covalent and metallic bonding"
+   }
+  ],
+  "renderer": "dotcross",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u04.js: Ionic bonding"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in gcse: Ionic, covalent and metallic bonding",
+    "ok": true,
+    "detail": "kit/courses/gcse/notes/u05.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Na + Cl: 8 outer electrons drawn (valence electrons − charge)",
+    "ok": true,
+    "detail": "drawn 8"
+   },
+   {
+    "name": "Na⁺ Cl⁻: 8 outer electrons drawn (valence electrons − charge)",
+    "ok": true,
+    "detail": "drawn 8"
+   },
+   {
+    "name": "Na⁺ Cl⁻: every atom has a full outer shell (octet, or two for H)",
+    "ok": true,
+    "detail": "all full"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-lattice-enthalpy-ions": {
+  "title": "Lattice enthalpy and ion size",
+  "caption": "Lattice enthalpy becomes less exothermic from NaF to NaI: the halide ions get larger, so the oppositely charged ions are further apart and attract less. Charge matters even more: MgO, with 2+ and 2− ions, is −3791 kJ mol⁻¹.",
+  "alt": "Bar chart of lattice enthalpies: NaF −923, NaCl −787, NaBr −747, NaI −704 kJ/mol.",
+  "description": [
+   "NaF −923 kJ mol⁻¹.",
+   "NaCl −787.",
+   "NaBr −747.",
+   "NaI −704: the largest anion, the least exothermic."
+  ],
+  "course": "chemistry",
+  "lesson": "Lattice enthalpy",
+  "also": [],
+  "renderer": "trend",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u04.js: Lattice enthalpy"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every value matches lattice enthalpy (formation of the lattice from gaseous ions) (CRC Handbook of Chemistry and Physics, lattice energies from Born–Haber cycles (NaCl as the lesson's own Born–Haber cycle gives it, −787; CRC −786))",
+    "ok": true,
+    "detail": "4 values"
+   },
+   {
+    "name": "NaF → NaI: increasing",
+    "ok": true,
+    "detail": "NaF -923, NaCl -787, NaBr -747, NaI -704"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-lewis-examples": {
+  "title": "Lewis structures",
+  "caption": "Lines are bonding pairs and dots lone pairs. NH₃ has three bonds and one lone pair on N; CO₂ two double bonds; HCN a single and a triple bond. Every atom except hydrogen has an octet.",
+  "alt": "Lewis structures of ammonia, carbon dioxide and hydrogen cyanide.",
+  "description": [
+   "NH₃: three N–H bonds and one lone pair on nitrogen.",
+   "CO₂: O=C=O with two lone pairs on each oxygen.",
+   "HCN: H–C≡N with one lone pair on nitrogen."
+  ],
+  "course": "chemistry",
+  "lesson": "Lewis structures",
+  "also": [],
+  "renderer": "dotcross",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u04.js: Lewis structures"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "NH₃: 8 outer electrons drawn (valence electrons − charge)",
+    "ok": true,
+    "detail": "drawn 8"
+   },
+   {
+    "name": "NH₃: every atom has a full outer shell (octet, or two for H)",
+    "ok": true,
+    "detail": "all full"
+   },
+   {
+    "name": "CO₂: 16 outer electrons drawn (valence electrons − charge)",
+    "ok": true,
+    "detail": "drawn 16"
+   },
+   {
+    "name": "CO₂: every atom has a full outer shell (octet, or two for H)",
+    "ok": true,
+    "detail": "all full"
+   },
+   {
+    "name": "HCN: 10 outer electrons drawn (valence electrons − charge)",
+    "ok": true,
+    "detail": "drawn 10"
+   },
+   {
+    "name": "HCN: every atom has a full outer shell (octet, or two for H)",
+    "ok": true,
+    "detail": "all full"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-metallic-bonding": {
+  "title": "Metallic bonding",
+  "caption": "A metal is a lattice of positive ions in a sea of delocalised electrons. The attraction between the ions and the electrons is the metallic bond; the mobile electrons carry charge and heat, and layers can slide without breaking it.",
+  "alt": "A grid of sodium ions with free electrons scattered between them.",
+  "description": [
+   "Rows of Na⁺ ions in a regular lattice.",
+   "Small dots between them: the delocalised electrons, free to move."
+  ],
+  "course": "chemistry",
+  "lesson": "Metallic bonding",
+  "also": [],
+  "renderer": "particles",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u04.js: Metallic bonding"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "\"sodium: Na⁺ ions and delocalised electrons\" has 24 Na+",
+    "ok": true,
+    "detail": "drawn 24"
+   },
+   {
+    "name": "\"sodium: Na⁺ ions and delocalised electrons\" is a element",
+    "ok": true,
+    "detail": "contents make it a element"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-mo-o2": {
+  "title": "Molecular orbitals of oxygen",
+  "caption": "Filling the molecular orbitals of O₂ in order puts the last two electrons singly in the two π*2p orbitals. Bond order = (bonding − antibonding) ÷ 2 = 2, a double bond, and the two unpaired electrons make oxygen paramagnetic, which a Lewis structure cannot explain.",
+  "alt": "MO diagram: 2s and 2p atomic orbitals of two oxygen atoms on each side; in the middle σ2s, σ*2s, σ2p, π2p (two), π*2p (two, each with one electron) and σ*2p empty.",
+  "description": [
+   "σ2s and σ*2s: both full.",
+   "σ2p full, then both π2p orbitals full.",
+   "π*2p: one electron in each of the two orbitals, parallel spins.",
+   "σ*2p empty. Bond order 2; two unpaired electrons."
+  ],
+  "course": "chemistry",
+  "lesson": "Molecular orbital theory",
+  "also": [],
+  "renderer": "levels",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u04.js: Molecular orbital theory"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "O2: bond order 2",
+    "ok": true,
+    "detail": "computed 2"
+   },
+   {
+    "name": "O2: 2 unpaired electron(s), paramagnetic",
+    "ok": true,
+    "detail": "computed 2"
+   },
+   {
+    "name": "O2: 16 electrons placed",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-molecular-polarity": {
+  "title": "When bond dipoles cancel",
+  "caption": "CO₂ and BF₃ have polar bonds, but their symmetrical shapes make the dipoles cancel: non-polar. In bent H₂O and pyramidal NH₃ the dipoles do not cancel, so the molecules are polar.",
+  "alt": "Four shapes: CO₂ linear and BF₃ trigonal planar (non-polar); H₂O bent and NH₃ pyramidal (polar).",
+  "description": [
+   "CO₂: linear, non-polar.",
+   "BF₃: trigonal planar, non-polar.",
+   "H₂O: bent, polar, δ− oxygen.",
+   "NH₃: trigonal pyramidal, polar."
+  ],
+  "course": "chemistry",
+  "lesson": "Molecular polarity",
+  "also": [],
+  "renderer": "vsepr",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u04.js: Molecular polarity"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "CO2: 2 bonding domain(s) and 0 lone pair(s) from the electron count",
+    "ok": true,
+    "detail": "C has 4 outer electrons, 4 used in bonds, charge 0"
+   },
+   {
+    "name": "CO2: shape linear",
+    "ok": true,
+    "detail": "VSEPR gives linear (linear electron pairs)"
+   },
+   {
+    "name": "CO2: non-polar",
+    "ok": true,
+    "detail": "symmetry and electronegativity give non-polar"
+   },
+   {
+    "name": "BF3: 3 bonding domain(s) and 0 lone pair(s) from the electron count",
+    "ok": true,
+    "detail": "B has 3 outer electrons, 3 used in bonds, charge 0"
+   },
+   {
+    "name": "BF3: shape trigonal planar",
+    "ok": true,
+    "detail": "VSEPR gives trigonal planar (trigonal planar electron pairs)"
+   },
+   {
+    "name": "BF3: non-polar",
+    "ok": true,
+    "detail": "symmetry and electronegativity give non-polar"
+   },
+   {
+    "name": "H2O: 2 bonding domain(s) and 2 lone pair(s) from the electron count",
+    "ok": true,
+    "detail": "O has 6 outer electrons, 2 used in bonds, charge 0"
+   },
+   {
+    "name": "H2O: shape bent",
+    "ok": true,
+    "detail": "VSEPR gives bent (tetrahedral electron pairs)"
+   },
+   {
+    "name": "H2O: polar",
+    "ok": true,
+    "detail": "symmetry and electronegativity give polar"
+   },
+   {
+    "name": "NH3: 3 bonding domain(s) and 1 lone pair(s) from the electron count",
+    "ok": true,
+    "detail": "N has 5 outer electrons, 3 used in bonds, charge 0"
+   },
+   {
+    "name": "NH3: shape trigonal pyramidal",
+    "ok": true,
+    "detail": "VSEPR gives trigonal pyramidal (tetrahedral electron pairs)"
+   },
+   {
+    "name": "NH3: polar",
+    "ok": true,
+    "detail": "symmetry and electronegativity give polar"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-nacl-lattice": {
+  "title": "Ionic lattices: sodium chloride and caesium chloride",
+  "caption": "In NaCl each ion has six nearest neighbours of the opposite charge (6:6), and the cubic cell holds four of each. The larger Cs⁺ fits eight Cl⁻ around it in CsCl (8:8). The cation-to-anion size ratio decides the structure.",
+  "alt": "Two unit cells: sodium chloride, with alternating Na⁺ and Cl⁻ at every half-step; caesium chloride, with Cl⁻ at the corners and Cs⁺ at the centre.",
+  "description": [
+   "Sodium chloride: ions alternate along every edge; each has six nearest neighbours of the other kind.",
+   "Caesium chloride: one Cs⁺ at the body centre surrounded by eight Cl⁻ at the corners."
+  ],
+  "course": "chemistry",
+  "lesson": "Crystal structures",
+  "also": [],
+  "renderer": "lattice",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u04.js: Crystal structures"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "sodium chloride (6:6): each Na+ has 6 nearest neighbours",
+    "ok": true,
+    "detail": "counted 6 in the generated lattice"
+   },
+   {
+    "name": "sodium chloride (6:6): each Cl- has 6 nearest neighbours",
+    "ok": true,
+    "detail": "counted 6 in the generated lattice"
+   },
+   {
+    "name": "sodium chloride (6:6): 4 Na+ per unit cell",
+    "ok": true,
+    "detail": "counted 4 (corners ⅛, edges ¼, faces ½, body 1)"
+   },
+   {
+    "name": "sodium chloride (6:6): 4 Cl- per unit cell",
+    "ok": true,
+    "detail": "counted 4 (corners ⅛, edges ¼, faces ½, body 1)"
+   },
+   {
+    "name": "sodium chloride (6:6): ratio Na+ 1 : Cl- 1",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "caesium chloride (8:8): each Cs+ has 8 nearest neighbours",
+    "ok": true,
+    "detail": "counted 8 in the generated lattice"
+   },
+   {
+    "name": "caesium chloride (8:8): each Cl- has 8 nearest neighbours",
+    "ok": true,
+    "detail": "counted 8 in the generated lattice"
+   },
+   {
+    "name": "caesium chloride (8:8): 1 Cs+ per unit cell",
+    "ok": true,
+    "detail": "counted 1 (corners ⅛, edges ¼, faces ½, body 1)"
+   },
+   {
+    "name": "caesium chloride (8:8): 1 Cl- per unit cell",
+    "ok": true,
+    "detail": "counted 1 (corners ⅛, edges ¼, faces ½, body 1)"
+   },
+   {
+    "name": "caesium chloride (8:8): ratio Cs+ 1 : Cl- 1",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-resonance-carbonate": {
+  "title": "Resonance in the carbonate ion",
+  "caption": "Three equivalent Lewis structures differ only in which oxygen carries the double bond. The real ion is a hybrid: the two negative charges and the π electrons are spread over all three C–O bonds, which are identical in length.",
+  "alt": "Three structures of carbonate, each with the C=O to a different oxygen, joined by double-headed resonance arrows.",
+  "description": [
+   "Each structure: carbon bonded to three oxygens, one by a double bond, two singly bonded oxygens each carrying a negative charge.",
+   "The double bond is to a different oxygen in each."
+  ],
+  "course": "chemistry",
+  "lesson": "Resonance",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u04.js: Resonance"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "O=C([O-])[O-]: formula CO3-2",
+    "ok": true,
+    "detail": "RDKit: CO3-2"
+   },
+   {
+    "name": "the resonance forms have the same atoms joined the same way",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "and so do the second and third",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-sigma-pi": {
+  "title": "σ and π bonds in ethene",
+  "caption": "The C=C in ethene is one σ bond, from end-on overlap along the axis, and one π bond, from sideways overlap of the two p orbitals above and below the plane. The π bond is weaker and stops rotation about the double bond.",
+  "alt": "Two carbon atoms joined by a σ bond along the axis, each with a vertical p orbital; the p orbitals overlap above and below to form the π bond.",
+  "description": [
+   "The σ bond: a line along the C–C axis.",
+   "Each carbon also has two bonds to hydrogen, in the plane.",
+   "Above and below: the two p orbitals overlapping sideways to form the π bond."
+  ],
+  "course": "chemistry",
+  "lesson": "Sigma and pi bonding",
+  "also": [],
+  "renderer": "lobes",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u04.js: Sigma and pi bonding"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "ethene's C=C is one σ and one π bond (2 bonds, order 2)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-solid-types": {
+  "title": "Classifying solids by bonding",
+  "caption": "Ionic solids are metal with non-metal; metallic solids are metals. Non-metal solids are either giant covalent networks (diamond, silicon dioxide), with very high melting points, or simple molecular solids (ice, iodine), where only weak forces between molecules have to be overcome.",
+  "alt": "A tree: contains a metal and a non-metal? Ionic. Only metal? Metallic. Otherwise: one giant network of covalent bonds? Giant covalent; if not, simple molecular.",
+  "description": [
+   "Metal and non-metal: ionic, such as NaCl.",
+   "Metal only: metallic, such as Cu.",
+   "Non-metals in a continuous network: giant covalent, such as diamond (C) and SiO₂.",
+   "Non-metals as separate molecules: simple molecular, such as H₂O and I₂."
+  ],
+  "course": "chemistry",
+  "lesson": "Solid-state bonding",
+  "also": [],
+  "renderer": "classify",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u04.js: Solid-state bonding"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every path ends in a classification",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "no unreachable boxes",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every example under \"Ionic lattice\" is an ionic",
+    "ok": true,
+    "detail": "NaCl, MgO"
+   },
+   {
+    "name": "every example under \"Metallic lattice\" is a metallic",
+    "ok": true,
+    "detail": "Cu, Fe"
+   },
+   {
+    "name": "every example under \"Giant covalent\" is a covalent",
+    "ok": true,
+    "detail": "C, SiO2"
+   },
+   {
+    "name": "every example under \"Simple molecular\" is a covalent",
+    "ok": true,
+    "detail": "H2O, I2, CO2"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-vsepr-domains": {
+  "title": "Electron domains and shapes",
+  "caption": "Electron pairs repel and spread out as far as possible. With no lone pairs the shape follows the number of bonding domains: 2 linear (180°), 3 trigonal planar (120°), 4 tetrahedral (109.5°), 5 trigonal bipyramidal (90° and 120°), 6 octahedral (90°).",
+  "alt": "Five molecules: BeCl₂ linear, BF₃ trigonal planar, CH₄ tetrahedral, PCl₅ trigonal bipyramidal and SF₆ octahedral.",
+  "description": [
+   "BeCl₂: linear, 180°.",
+   "BF₃: trigonal planar, 120°.",
+   "CH₄: tetrahedral, 109.5°.",
+   "PCl₅: trigonal bipyramidal, 90° and 120°.",
+   "SF₆: octahedral, 90°."
+  ],
+  "course": "chemistry",
+  "lesson": "VSEPR theory",
+  "also": [],
+  "renderer": "vsepr",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u04.js: VSEPR theory"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "BeCl2: 2 bonding domain(s) and 0 lone pair(s) from the electron count",
+    "ok": true,
+    "detail": "Be has 2 outer electrons, 2 used in bonds, charge 0"
+   },
+   {
+    "name": "BeCl2: shape linear",
+    "ok": true,
+    "detail": "VSEPR gives linear (linear electron pairs)"
+   },
+   {
+    "name": "BeCl2: bond angle 180°",
+    "ok": true,
+    "detail": "VSEPR gives 180°"
+   },
+   {
+    "name": "BF3: 3 bonding domain(s) and 0 lone pair(s) from the electron count",
+    "ok": true,
+    "detail": "B has 3 outer electrons, 3 used in bonds, charge 0"
+   },
+   {
+    "name": "BF3: shape trigonal planar",
+    "ok": true,
+    "detail": "VSEPR gives trigonal planar (trigonal planar electron pairs)"
+   },
+   {
+    "name": "BF3: bond angle 120°",
+    "ok": true,
+    "detail": "VSEPR gives 120°"
+   },
+   {
+    "name": "CH4: 4 bonding domain(s) and 0 lone pair(s) from the electron count",
+    "ok": true,
+    "detail": "C has 4 outer electrons, 4 used in bonds, charge 0"
+   },
+   {
+    "name": "CH4: shape tetrahedral",
+    "ok": true,
+    "detail": "VSEPR gives tetrahedral (tetrahedral electron pairs)"
+   },
+   {
+    "name": "CH4: bond angle 109.5°",
+    "ok": true,
+    "detail": "VSEPR gives 109.5°"
+   },
+   {
+    "name": "PCl5: 5 bonding domain(s) and 0 lone pair(s) from the electron count",
+    "ok": true,
+    "detail": "P has 5 outer electrons, 5 used in bonds, charge 0"
+   },
+   {
+    "name": "PCl5: shape trigonal bipyramidal",
+    "ok": true,
+    "detail": "VSEPR gives trigonal bipyramidal (trigonal bipyramidal electron pairs)"
+   },
+   {
+    "name": "PCl5: bond angle 90° and 120°",
+    "ok": true,
+    "detail": "VSEPR gives 90° and 120°"
+   },
+   {
+    "name": "SF6: 6 bonding domain(s) and 0 lone pair(s) from the electron count",
+    "ok": true,
+    "detail": "S has 6 outer electrons, 6 used in bonds, charge 0"
+   },
+   {
+    "name": "SF6: shape octahedral",
+    "ok": true,
+    "detail": "VSEPR gives octahedral (octahedral electron pairs)"
+   },
+   {
+    "name": "SF6: bond angle 90°",
+    "ok": true,
+    "detail": "VSEPR gives 90°"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-vsepr-lone-pairs": {
+  "title": "Lone pairs close the bond angle",
+  "caption": "Methane, ammonia and water all have four electron pairs arranged tetrahedrally. Lone pairs repel more strongly than bonding pairs, so each lone pair squeezes the bond angle by about 2.5°: 109.5° in CH₄, 107° in NH₃, 104.5° in H₂O.",
+  "alt": "CH₄ tetrahedral at 109.5°, NH₃ trigonal pyramidal at 107° with one lone pair, H₂O bent at 104.5° with two lone pairs.",
+  "description": [
+   "CH₄: four bonding pairs, tetrahedral, 109.5°.",
+   "NH₃: three bonding pairs and one lone pair, trigonal pyramidal, 107°.",
+   "H₂O: two bonding pairs and two lone pairs, bent, 104.5°."
+  ],
+  "course": "chemistry",
+  "lesson": "Molecular geometry",
+  "also": [],
+  "renderer": "vsepr",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u04.js: Molecular geometry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "CH4: 4 bonding domain(s) and 0 lone pair(s) from the electron count",
+    "ok": true,
+    "detail": "C has 4 outer electrons, 4 used in bonds, charge 0"
+   },
+   {
+    "name": "CH4: shape tetrahedral",
+    "ok": true,
+    "detail": "VSEPR gives tetrahedral (tetrahedral electron pairs)"
+   },
+   {
+    "name": "CH4: bond angle 109.5°",
+    "ok": true,
+    "detail": "VSEPR gives 109.5°"
+   },
+   {
+    "name": "NH3: 3 bonding domain(s) and 1 lone pair(s) from the electron count",
+    "ok": true,
+    "detail": "N has 5 outer electrons, 3 used in bonds, charge 0"
+   },
+   {
+    "name": "NH3: shape trigonal pyramidal",
+    "ok": true,
+    "detail": "VSEPR gives trigonal pyramidal (tetrahedral electron pairs)"
+   },
+   {
+    "name": "NH3: bond angle 107°",
+    "ok": true,
+    "detail": "VSEPR gives 107°"
+   },
+   {
+    "name": "H2O: 2 bonding domain(s) and 2 lone pair(s) from the electron count",
+    "ok": true,
+    "detail": "O has 6 outer electrons, 2 used in bonds, charge 0"
+   },
+   {
+    "name": "H2O: shape bent",
+    "ok": true,
+    "detail": "VSEPR gives bent (tetrahedral electron pairs)"
+   },
+   {
+    "name": "H2O: bond angle 104.5°",
+    "ok": true,
+    "detail": "VSEPR gives 104.5°"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",

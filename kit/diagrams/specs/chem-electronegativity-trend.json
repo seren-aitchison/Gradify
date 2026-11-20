@@ -1,0 +1,61 @@
+{
+ "id": "chem-electronegativity-trend",
+ "renderer": "trend",
+ "course": "chemistry",
+ "lesson": "Electronegativity",
+ "title": "Electronegativity across period 3",
+ "caption": "Electronegativity rises across a period as nuclear charge increases and atomic radius falls, so a bonding pair is held more tightly: from sodium (0.93) to chlorine (3.16) on the Pauling scale.",
+ "alt": "Bar chart of Pauling electronegativity rising across period 3 from Na 0.93 to Cl 3.16.",
+ "description": [
+  "Na 0.93, Mg 1.31, Al 1.61, Si 1.90, P 2.19, S 2.58, Cl 3.16."
+ ],
+ "kind": "bars",
+ "dataset": "enPauling",
+ "range": [
+  0,
+  3.5
+ ],
+ "ticks": [
+  0,
+  1,
+  2,
+  3
+ ],
+ "yLabel": "Pauling electronegativity",
+ "colour": "a1",
+ "items": [
+  {
+   "key": "Na",
+   "value": 0.93
+  },
+  {
+   "key": "Mg",
+   "value": 1.31
+  },
+  {
+   "key": "Al",
+   "value": 1.61
+  },
+  {
+   "key": "Si",
+   "value": 1.9
+  },
+  {
+   "key": "P",
+   "value": 2.19
+  },
+  {
+   "key": "S",
+   "value": 2.58
+  },
+  {
+   "key": "Cl",
+   "value": 3.16
+  }
+ ],
+ "claims": [
+  {
+   "type": "increasing"
+  }
+ ]
+}

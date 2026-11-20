@@ -1,0 +1,121 @@
+{
+ "id": "chem-elements-compounds",
+ "renderer": "particles",
+ "course": "chemistry",
+ "lesson": "Elements and compounds",
+ "title": "Elements, compounds and mixtures as particles",
+ "caption": "Helium is an element made of single atoms; oxygen is an element made of O₂ molecules; water is a compound, every molecule the same H₂O; air is a mixture of different substances.",
+ "alt": "Four boxes of particles: separate helium atoms; O₂ molecules; H₂O molecules; and a mixture of N₂ and O₂ molecules with an argon atom.",
+ "description": [
+  "Helium: single atoms, one kind only, so an element.",
+  "Oxygen: pairs of identical atoms (O₂), an element.",
+  "Water: every molecule one O and two H, a compound.",
+  "Air: N₂, O₂ and argon mixed, a mixture."
+ ],
+ "perRow": 4,
+ "panelHeight": 150,
+ "species": {
+  "He": {
+   "atoms": [
+    "He"
+   ]
+  },
+  "O2": {
+   "atoms": [
+    "O",
+    "O"
+   ]
+  },
+  "H2O": {
+   "atoms": [
+    "O",
+    "H",
+    "H"
+   ],
+   "shape": "bent"
+  },
+  "N2": {
+   "atoms": [
+    "N",
+    "N"
+   ]
+  },
+  "Ar": {
+   "atoms": [
+    "Ar"
+   ]
+  }
+ },
+ "panels": [
+  {
+   "title": "element (atoms)",
+   "arrangement": "gas",
+   "contents": [
+    [
+     "He",
+     7
+    ]
+   ]
+  },
+  {
+   "title": "element (molecules)",
+   "arrangement": "gas",
+   "contents": [
+    [
+     "O2",
+     6
+    ]
+   ]
+  },
+  {
+   "title": "compound",
+   "arrangement": "gas",
+   "contents": [
+    [
+     "H2O",
+     6
+    ]
+   ]
+  },
+  {
+   "title": "mixture",
+   "arrangement": "gas",
+   "contents": [
+    [
+     "N2",
+     4
+    ],
+    [
+     "O2",
+     2
+    ],
+    [
+     "Ar",
+     1
+    ]
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "type": "classify",
+   "panel": 0,
+   "as": "element"
+  },
+  {
+   "type": "classify",
+   "panel": 1,
+   "as": "element"
+  },
+  {
+   "type": "classify",
+   "panel": 2,
+   "as": "compound"
+  },
+  {
+   "type": "classify",
+   "panel": 3,
+   "as": "mixture"
+  }
+ ]
+}

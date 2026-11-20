@@ -1,0 +1,51 @@
+{
+ "id": "chem-group1-mp",
+ "renderer": "trend",
+ "course": "chemistry",
+ "lesson": "Group 1",
+ "title": "Group 1 melting points",
+ "caption": "Down group 1 the atoms get larger, so the delocalised electrons are further from the cations and metallic bonding weakens: melting points fall from lithium (181 °C) to caesium (29 °C).",
+ "alt": "Bar chart of melting points falling down group 1: Li 180.5, Na 97.8, K 63.5, Rb 39.3, Cs 28.5 °C.",
+ "description": [
+  "Lithium 180.5 °C.",
+  "Sodium 97.8 °C.",
+  "Potassium 63.5 °C.",
+  "Rubidium 39.3 °C.",
+  "Caesium 28.5 °C."
+ ],
+ "kind": "bars",
+ "dataset": "mpGroup1",
+ "range": [
+  0,
+  200
+ ],
+ "yLabel": "melting point / °C",
+ "colour": "a3",
+ "items": [
+  {
+   "key": "Li",
+   "value": 180.5
+  },
+  {
+   "key": "Na",
+   "value": 97.8
+  },
+  {
+   "key": "K",
+   "value": 63.5
+  },
+  {
+   "key": "Rb",
+   "value": 39.3
+  },
+  {
+   "key": "Cs",
+   "value": 28.5
+  }
+ ],
+ "claims": [
+  {
+   "type": "decreasing"
+  }
+ ]
+}

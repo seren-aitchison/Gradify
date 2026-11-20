@@ -1,0 +1,62 @@
+{
+ "id": "chem-max-oxidation-p3",
+ "renderer": "trend",
+ "course": "chemistry",
+ "lesson": "Oxidation states",
+ "title": "Highest oxidation states across period 3",
+ "caption": "The highest oxidation state equals the number of outer-shell electrons an element can use: +1 for sodium rising to +7 for chlorine (as in Cl₂O₇ and ClO₄⁻).",
+ "alt": "Bar chart of the highest oxidation state rising from +1 at sodium to +7 at chlorine.",
+ "description": [
+  "Na +1, Mg +2, Al +3, Si +4, P +5, S +6, Cl +7."
+ ],
+ "kind": "bars",
+ "dataset": "maxOxP3",
+ "range": [
+  0,
+  8
+ ],
+ "ticks": [
+  0,
+  2,
+  4,
+  6,
+  8
+ ],
+ "yLabel": "highest oxidation state",
+ "colour": "a4",
+ "items": [
+  {
+   "key": "Na",
+   "value": 1
+  },
+  {
+   "key": "Mg",
+   "value": 2
+  },
+  {
+   "key": "Al",
+   "value": 3
+  },
+  {
+   "key": "Si",
+   "value": 4
+  },
+  {
+   "key": "P",
+   "value": 5
+  },
+  {
+   "key": "S",
+   "value": 6
+  },
+  {
+   "key": "Cl",
+   "value": 7
+  }
+ ],
+ "claims": [
+  {
+   "type": "increasing"
+  }
+ ]
+}

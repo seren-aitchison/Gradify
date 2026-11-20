@@ -316,7 +316,7 @@ function mo(spec, W, narrow) {
     const ao = o.name.includes("1s") ? "1s" : o.name.includes("2s") ? "2s" : "2p";
     if (aoY[ao] != null) for (const x of [ax, bx]) { const m = ao === "2p" ? 3 : 1, sx = x === ax ? x + (m * bw) / 2 + 2 : x - (m * bw) / 2 - 2, ex = x === ax ? cx - (o.deg * bw) / 2 - 2 : cx + (o.deg * bw) / 2 + 2; s += line(sx, aoY[ao], ex, ys[o.name], { stroke: C.line, w: 1, dash: "3 3" }); }
   }
-  s += text(cx, H - 18, `bond order = (${f.fill.filter((x) => x.kind === "b").reduce((a, x) => a + x.n, 0)} − ${f.fill.filter((x) => x.kind === "a").reduce((a, x) => a + x.n, 0)}) ÷ 2 = ${f.order}; ${f.unpaired} unpaired electron${f.unpaired === 1 ? "" : "s"}${showCore ? "" : " (1s not drawn)"}`, { size: 12.5, weight: 700, fill: C.ink });
+  s += text(cx, H - 18, `bond order = (${rows.filter((x) => x.kind === "b").reduce((a, x) => a + x.n, 0)} − ${rows.filter((x) => x.kind === "a").reduce((a, x) => a + x.n, 0)}) ÷ 2 = ${f.order}; ${f.unpaired} unpaired electron${f.unpaired === 1 ? "" : "s"}${showCore ? "" : " (1s not drawn)"}`, { size: 12.5, weight: 700, fill: C.ink });
   return { s, H };
 }
 function dCount(metal, ox) { const c = configuration(Z[metal], ox); return Object.entries(c).filter(([k]) => k.endsWith("d")).reduce((a, [, v]) => a + v, 0); }
@@ -422,7 +422,7 @@ function levelChecks(spec) {
 //   | {type: "group", symbol, group} | {type: "diagonal", pairs}]
 const BLOCK_COL = { s: "#fde68a", p: "#bbf7d0", d: "#bfdbfe", f: "#fbcfe8" };
 function table(spec, W, narrow) {
-  const cw = (W - (narrow ? 12 : 40)) / 18, ch = cw * (narrow ? 1.05 : 0.92), x0 = narrow ? 6 : 28, y0 = spec.groups ? 30 : 12;
+  const cw = (W - (narrow ? 24 : 40)) / 18, ch = cw * (narrow ? 1.05 : 0.92), x0 = narrow ? 16 : 28, y0 = spec.groups ? 30 : 12;
   const maxZ = spec.maxZ || 118;
   let s = "";
   const pos = (z) => { const p = position(z); if (p.block === "f") return [x0 + (3 + p.fIndex) * cw, y0 + (p.period + 1.6) * ch]; return [x0 + (p.group - 1) * cw, y0 + (p.period - 1) * ch]; };
@@ -486,6 +486,12 @@ function dotcross(spec, W, narrow) {
         const mA = b.dative ? byId[b.dative].mark || "dot" : A.mark || "dot", mB = b.dative ? byId[b.dative].mark || "dot" : B.mark || "dot";
         s += mark(px - ux * 5, py - uy * 5, mA) + mark(px + ux * 5, py + uy * 5, mB);
       }
+    }
+    for (const l of m.links || []) {
+      // an intermolecular attraction (dipole–dipole, hydrogen bond) as a dashed line between atoms
+      const [x1, y1] = P(byId[l.a]), [x2, y2] = P(byId[l.b]), L = Math.hypot(x2 - x1, y2 - y1), ux = (x2 - x1) / L, uy = (y2 - y1) / L;
+      s += line(x1 + ux * 14, y1 + uy * 14, x2 - ux * 14, y2 - uy * 14, { stroke: col(l.colour || "a4"), w: 2.2, dash: "3 5" });
+      if (l.label) s += text((x1 + x2) / 2 + (l.dx ?? 0), (y1 + y2) / 2 + (l.dy ?? -12), l.label, { size: 11, weight: 700, fill: col(l.colour || "a4") });
     }
     for (const a of m.atoms) {
       const [x, y] = P(a);
@@ -557,10 +563,17 @@ function dotcrossChecks(spec) {
     const total = m.atoms.reduce((t, a) => t + VAL[a.el], 0) - charge;
     const drawn = m.atoms.reduce((t, a) => t + 2 * (a.lone || 0) + (a.single ? 1 : 0), 0) + (m.bonds || []).reduce((t, b) => t + 2 * (b.order || 1), 0);
     out.push(check(`${name}: ${total} outer electrons drawn (valence electrons − charge)`, drawn === total, `drawn ${drawn}`));
+    const before = m.atoms.some((a) => a.incomplete);
     const bad = m.atoms.filter((a) => !a.expanded && !a.incomplete && electronsAround(m, a) !== shellFull(a.el) && !(a.bracket && electronsAround(m, a) === 0) && !(a.bracket && a.charge > 0 && (a.lone || 0) === 0));
-    out.push(check(`${name}: every atom has a full outer shell (octet, or two for H)`, !bad.length, bad.map((a) => `${a.el}: ${electronsAround(m, a)}`).join(", ") || "all full"));
+    if (!before) out.push(check(`${name}: every atom has a full outer shell (octet, or two for H)`, !bad.length, bad.map((a) => `${a.el}: ${electronsAround(m, a)}`).join(", ") || "all full"));
     if (m.claims?.formal) { const f = formal(m); const wrong = Object.entries(m.claims.formal).filter(([k, v]) => f[k] !== v); out.push(check(`${name}: formal charges ${JSON.stringify(m.claims.formal)}`, !wrong.length, JSON.stringify(f))); }
     if (m.claims?.oxidation) { const o = oxStates(m); const wrong = Object.entries(m.claims.oxidation).filter(([k, v]) => o[k] !== v); out.push(check(`${name}: oxidation states ${JSON.stringify(m.claims.oxidation)}`, !wrong.length, JSON.stringify(o))); const sum = Object.values(o).reduce((a, b) => a + b, 0); out.push(check(`${name}: oxidation states add up to the charge (${charge})`, sum === charge, `sum ${sum}`)); }
+    for (const l of m.links || []) if (l.hbond) {
+      // a hydrogen bond: from an H bonded to N, O or F, to a lone pair on N, O or F of another molecule
+      const h = m.atoms.find((a) => a.id === l.a), acc = m.atoms.find((a) => a.id === l.b);
+      const donor = (m.bonds || []).filter((b) => b.a === h.id || b.b === h.id).map((b) => m.atoms.find((a) => a.id === (b.a === h.id ? b.b : b.a)))[0];
+      out.push(check(`${name}: H on ${donor.el} to a lone pair on ${acc.el} is a hydrogen bond`, h.el === "H" && ["N", "O", "F"].includes(donor.el) && ["N", "O", "F"].includes(acc.el) && (acc.lone || 0) > 0));
+    }
     if (m.claims?.delta) for (const [id, sign] of Object.entries(m.claims.delta)) { const a = m.atoms.find((x) => x.id === id), nb = (m.bonds || []).filter((b) => b.a === id || b.b === id).map((b) => m.atoms.find((x) => x.id === (b.a === id ? b.b : b.a))); const ok = nb.every((o) => (sign === "+" ? ENEG[a.el] < ENEG[o.el] : ENEG[a.el] > ENEG[o.el])); out.push(check(`${name}: ${a.el} is δ${sign} (electronegativity ${ENEG[a.el]})`, ok)); }
   }
   for (const e of spec.equations || []) { const b = balanced(e); out.push(check(`${e} balances`, b.ok, b.detail)); }

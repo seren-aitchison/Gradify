@@ -1,0 +1,75 @@
+{
+ "id": "chem-alkane-bp",
+ "renderer": "trend",
+ "course": "chemistry",
+ "lesson": "London dispersion forces",
+ "title": "London forces grow with chain length",
+ "caption": "Each extra CH₂ adds electrons and surface contact, so London forces between alkane molecules grow and boiling points rise: methane to butane are gases at room temperature, pentane to octane are liquids.",
+ "alt": "Line graph of alkane boiling points rising from methane −162 °C to octane 126 °C.",
+ "description": [
+  "Methane −162 °C, ethane −89, propane −42, butane −1.",
+  "Pentane 36, hexane 69, heptane 98, octane 126 °C."
+ ],
+ "kind": "line",
+ "dataset": "bpAlkanes",
+ "range": [
+  -200,
+  150
+ ],
+ "ticks": [
+  -200,
+  -100,
+  0,
+  100
+ ],
+ "yLabel": "boiling point / °C",
+ "colour": "a4",
+ "items": [
+  {
+   "key": "methane",
+   "label": "C1",
+   "value": -162
+  },
+  {
+   "key": "ethane",
+   "label": "C2",
+   "value": -89
+  },
+  {
+   "key": "propane",
+   "label": "C3",
+   "value": -42
+  },
+  {
+   "key": "butane",
+   "label": "C4",
+   "value": -1
+  },
+  {
+   "key": "pentane",
+   "label": "C5",
+   "value": 36
+  },
+  {
+   "key": "hexane",
+   "label": "C6",
+   "value": 69
+  },
+  {
+   "key": "heptane",
+   "label": "C7",
+   "value": 98
+  },
+  {
+   "key": "octane",
+   "label": "C8",
+   "value": 126
+  }
+ ],
+ "xTitle": "carbon atoms in the chain",
+ "claims": [
+  {
+   "type": "increasing"
+  }
+ ]
+}

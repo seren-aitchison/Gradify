@@ -1,0 +1,114 @@
+{
+ "id": "chem-physical-chemical-change",
+ "renderer": "particles",
+ "course": "chemistry",
+ "lesson": "Physical and chemical changes",
+ "title": "Physical and chemical change",
+ "caption": "Melting ice is a physical change: the same H₂O molecules, now free to move. Burning hydrogen is a chemical change: atoms rearrange into a new substance, 2H₂ + O₂ → 2H₂O. In both, every atom is still there.",
+ "alt": "Top: ice as an ordered grid of water molecules becoming liquid water, the same molecules disordered. Bottom: hydrogen and oxygen molecules becoming water molecules.",
+ "description": [
+  "Ice: water molecules in a regular arrangement.",
+  "Water: the same nine molecules, close together but disordered.",
+  "Hydrogen and oxygen: four H₂ and two O₂ molecules.",
+  "After burning: four H₂O molecules, the same atoms rearranged."
+ ],
+ "perRow": 4,
+ "panelHeight": 150,
+ "species": {
+  "H2O": {
+   "atoms": [
+    "O",
+    "H",
+    "H"
+   ],
+   "shape": "bent"
+  },
+  "H2": {
+   "atoms": [
+    "H",
+    "H"
+   ]
+  },
+  "O2": {
+   "atoms": [
+    "O",
+    "O"
+   ]
+  }
+ },
+ "steps": [
+  "melting: physical",
+  null,
+  "burning: chemical"
+ ],
+ "panels": [
+  {
+   "title": "ice",
+   "arrangement": "lattice",
+   "contents": [
+    [
+     "H2O",
+     9
+    ]
+   ]
+  },
+  {
+   "title": "liquid water",
+   "arrangement": "liquid",
+   "contents": [
+    [
+     "H2O",
+     9
+    ]
+   ]
+  },
+  {
+   "title": "hydrogen + oxygen",
+   "arrangement": "gas",
+   "contents": [
+    [
+     "H2",
+     4
+    ],
+    [
+     "O2",
+     2
+    ]
+   ]
+  },
+  {
+   "title": "water",
+   "arrangement": "gas",
+   "contents": [
+    [
+     "H2O",
+     4
+    ]
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "type": "conserved",
+   "panels": [
+    0,
+    1
+   ]
+  },
+  {
+   "type": "conserved",
+   "panels": [
+    2,
+    3
+   ]
+  },
+  {
+   "type": "equation",
+   "eq": "2H2 + O2 → 2H2O",
+   "panels": [
+    2,
+    3
+   ]
+  }
+ ]
+}

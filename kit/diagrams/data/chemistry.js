@@ -62,8 +62,8 @@ export const DATA = {
   },
   latticeNaX: {
     name: "lattice enthalpy (formation of the lattice from gaseous ions)", unit: "kJ mol⁻¹",
-    source: "CRC Handbook of Chemistry and Physics, lattice energies from Born–Haber cycles",
-    values: { NaF: -923, NaCl: -786, NaBr: -747, NaI: -704 },
+    source: "CRC Handbook of Chemistry and Physics, lattice energies from Born–Haber cycles (NaCl as the lesson's own Born–Haber cycle gives it, −787; CRC −786)",
+    values: { NaF: -923, NaCl: -787, NaBr: -747, NaI: -704 },
   },
   e0: {
     name: "standard electrode potential", unit: "V",

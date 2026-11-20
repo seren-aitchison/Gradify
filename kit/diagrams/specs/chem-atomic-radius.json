@@ -1,0 +1,55 @@
+{
+ "id": "chem-atomic-radius",
+ "renderer": "trend",
+ "course": "chemistry",
+ "lesson": "Atomic radius",
+ "title": "Atomic radius across period 3",
+ "caption": "Across period 3 the nuclear charge rises by one each step while the electrons go into the same shell with similar shielding, so the outer electrons are pulled closer and the atoms shrink from sodium (186 pm) to chlorine (99 pm).",
+ "alt": "Bar chart of atomic radius falling across period 3: Na 186, Mg 160, Al 143, Si 117, P 110, S 104, Cl 99 pm.",
+ "description": [
+  "Na 186 pm, Mg 160, Al 143, Si 117, P 110, S 104, Cl 99."
+ ],
+ "kind": "bars",
+ "dataset": "radiusAtomic",
+ "range": [
+  0,
+  200
+ ],
+ "yLabel": "atomic radius / pm",
+ "colour": "a4",
+ "items": [
+  {
+   "key": "Na",
+   "value": 186
+  },
+  {
+   "key": "Mg",
+   "value": 160
+  },
+  {
+   "key": "Al",
+   "value": 143
+  },
+  {
+   "key": "Si",
+   "value": 117
+  },
+  {
+   "key": "P",
+   "value": 110
+  },
+  {
+   "key": "S",
+   "value": 104
+  },
+  {
+   "key": "Cl",
+   "value": 99
+  }
+ ],
+ "claims": [
+  {
+   "type": "decreasing"
+  }
+ ]
+}

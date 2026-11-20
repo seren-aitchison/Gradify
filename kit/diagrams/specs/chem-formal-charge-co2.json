@@ -1,0 +1,128 @@
+{
+ "id": "chem-formal-charge-co2",
+ "renderer": "dotcross",
+ "course": "chemistry",
+ "lesson": "Formal charge",
+ "title": "Choosing a Lewis structure by formal charge",
+ "caption": "Formal charge = valence electrons − lone-pair electrons − ½ bonding electrons. O=C=O gives every atom zero. The alternative O≡C–O gives +1 and −1, so it is less favoured: the best structure keeps formal charges smallest.",
+ "alt": "Two Lewis structures of CO₂: O=C=O with all formal charges zero, and O≡C–O with +1 on the triply bonded oxygen and −1 on the singly bonded one.",
+ "description": [
+  "O=C=O: each oxygen has two lone pairs and a double bond: formal charges 0, 0, 0.",
+  "O≡C–O: the triply bonded O has one lone pair (+1); the singly bonded O has three (−1)."
+ ],
+ "perRow": 2,
+ "rowHeight": [
+  170,
+  150
+ ],
+ "molecules": [
+  {
+   "label": "O=C=O (preferred)",
+   "style": "lewis",
+   "show": "formal",
+   "atoms": [
+    {
+     "id": "o1",
+     "el": "O",
+     "x": -1,
+     "y": 0,
+     "lone": 2,
+     "loneAt": [
+      -90,
+      90
+     ]
+    },
+    {
+     "id": "c",
+     "el": "C",
+     "x": 0,
+     "y": 0
+    },
+    {
+     "id": "o2",
+     "el": "O",
+     "x": 1,
+     "y": 0,
+     "lone": 2,
+     "loneAt": [
+      -90,
+      90
+     ]
+    }
+   ],
+   "bonds": [
+    {
+     "a": "o1",
+     "b": "c",
+     "order": 2
+    },
+    {
+     "a": "c",
+     "b": "o2",
+     "order": 2
+    }
+   ],
+   "claims": {
+    "formal": {
+     "o1": 0,
+     "c": 0,
+     "o2": 0
+    }
+   }
+  },
+  {
+   "label": "O≡C–O",
+   "style": "lewis",
+   "show": "formal",
+   "atoms": [
+    {
+     "id": "o1",
+     "el": "O",
+     "x": -1,
+     "y": 0,
+     "lone": 1,
+     "loneAt": [
+      180
+     ]
+    },
+    {
+     "id": "c",
+     "el": "C",
+     "x": 0,
+     "y": 0
+    },
+    {
+     "id": "o2",
+     "el": "O",
+     "x": 1,
+     "y": 0,
+     "lone": 3,
+     "loneAt": [
+      -90,
+      0,
+      90
+     ]
+    }
+   ],
+   "bonds": [
+    {
+     "a": "o1",
+     "b": "c",
+     "order": 3
+    },
+    {
+     "a": "c",
+     "b": "o2",
+     "order": 1
+    }
+   ],
+   "claims": {
+    "formal": {
+     "o1": 1,
+     "c": 0,
+     "o2": -1
+    }
+   }
+  }
+ ]
+}

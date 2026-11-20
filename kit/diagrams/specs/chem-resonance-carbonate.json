@@ -1,0 +1,53 @@
+{
+ "id": "chem-resonance-carbonate",
+ "renderer": "structures",
+ "course": "chemistry",
+ "lesson": "Resonance",
+ "title": "Resonance in the carbonate ion",
+ "caption": "Three equivalent Lewis structures differ only in which oxygen carries the double bond. The real ion is a hybrid: the two negative charges and the π electrons are spread over all three C–O bonds, which are identical in length.",
+ "alt": "Three structures of carbonate, each with the C=O to a different oxygen, joined by double-headed resonance arrows.",
+ "description": [
+  "Each structure: carbon bonded to three oxygens, one by a double bond, two singly bonded oxygens each carrying a negative charge.",
+  "The double bond is to a different oxygen in each."
+ ],
+ "between": [
+  "↔",
+  "↔"
+ ],
+ "panels": [
+  {
+   "smiles": "O=C([O-])[O-]",
+   "label": "",
+   "formula": "CO3-2"
+  },
+  {
+   "smiles": "O=C([O-])[O-]",
+   "label": "",
+   "rotate": 120
+  },
+  {
+   "smiles": "O=C([O-])[O-]",
+   "label": "",
+   "rotate": 240
+  }
+ ],
+ "note": "The real ion is the average: each C–O bond is 1⅓ bonds and each O carries −⅔.",
+ "claims": [
+  {
+   "type": "same",
+   "panels": [
+    0,
+    1
+   ],
+   "name": "the resonance forms have the same atoms joined the same way"
+  },
+  {
+   "type": "same",
+   "panels": [
+    1,
+    2
+   ],
+   "name": "and so do the second and third"
+  }
+ ]
+}

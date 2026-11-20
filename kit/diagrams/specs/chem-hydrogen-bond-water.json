@@ -1,0 +1,147 @@
+{
+ "id": "chem-hydrogen-bond-water",
+ "renderer": "dotcross",
+ "course": "chemistry",
+ "lesson": "Hydrogen bonding",
+ "title": "Hydrogen bonds between water molecules",
+ "caption": "A hydrogen bonded to oxygen is strongly δ+ and is attracted to a lone pair on the oxygen of another molecule. The O–H···O arrangement is close to straight (180°). Each water molecule can make up to four hydrogen bonds.",
+ "alt": "Three water molecules: a δ+ hydrogen of one points at a lone pair on the oxygen of the next, joined by dashed hydrogen bonds.",
+ "description": [
+  "Left water molecule: one O–H points right towards the middle molecule's oxygen lone pair.",
+  "Middle molecule: one O–H points to the right-hand molecule.",
+  "Dashed lines mark the hydrogen bonds."
+ ],
+ "rowHeight": [
+  200,
+  200
+ ],
+ "scale": [
+  1,
+  0.62
+ ],
+ "molecules": [
+  {
+   "label": "",
+   "style": "lewis",
+   "atoms": [
+    {
+     "id": "o1",
+     "el": "O",
+     "x": -2.6,
+     "y": 0,
+     "lone": 2,
+     "loneAt": [
+      -130,
+      130
+     ]
+    },
+    {
+     "id": "h1a",
+     "el": "H",
+     "x": -1.8,
+     "y": 0
+    },
+    {
+     "id": "h1b",
+     "el": "H",
+     "x": -2.95,
+     "y": -0.85
+    },
+    {
+     "id": "o2",
+     "el": "O",
+     "x": -0.5,
+     "y": 0,
+     "lone": 2,
+     "loneAt": [
+      180,
+      120
+     ]
+    },
+    {
+     "id": "h2a",
+     "el": "H",
+     "x": 0.3,
+     "y": 0
+    },
+    {
+     "id": "h2b",
+     "el": "H",
+     "x": -0.5,
+     "y": -0.95
+    },
+    {
+     "id": "o3",
+     "el": "O",
+     "x": 1.6,
+     "y": 0,
+     "lone": 2,
+     "loneAt": [
+      180,
+      120
+     ]
+    },
+    {
+     "id": "h3a",
+     "el": "H",
+     "x": 2.35,
+     "y": -0.45
+    },
+    {
+     "id": "h3b",
+     "el": "H",
+     "x": 1.6,
+     "y": -0.95
+    }
+   ],
+   "bonds": [
+    {
+     "a": "o1",
+     "b": "h1a",
+     "order": 1
+    },
+    {
+     "a": "o1",
+     "b": "h1b",
+     "order": 1
+    },
+    {
+     "a": "o2",
+     "b": "h2a",
+     "order": 1
+    },
+    {
+     "a": "o2",
+     "b": "h2b",
+     "order": 1
+    },
+    {
+     "a": "o3",
+     "b": "h3a",
+     "order": 1
+    },
+    {
+     "a": "o3",
+     "b": "h3b",
+     "order": 1
+    }
+   ],
+   "links": [
+    {
+     "a": "h1a",
+     "b": "o2",
+     "hbond": true,
+     "label": "H bond",
+     "dy": 20
+    },
+    {
+     "a": "h2a",
+     "b": "o3",
+     "hbond": true,
+     "label": "H bond",
+     "dy": 20
+    }
+   ]
+  }
+ ]
+}

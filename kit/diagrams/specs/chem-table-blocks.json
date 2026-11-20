@@ -1,0 +1,68 @@
+{
+ "id": "chem-table-blocks",
+ "renderer": "table",
+ "course": "chemistry",
+ "lesson": "Modern periodic law",
+ "title": "The periodic table by block",
+ "caption": "The block is the sub-shell that the last electron enters: s for groups 1 and 2 (and helium), p for groups 13 to 18, d for the transition series, f for the lanthanides and actinides.",
+ "alt": "The periodic table coloured by block: s block on the left, d block in the middle, p block on the right, f block below.",
+ "description": [
+  "Groups 1 and 2, with hydrogen and helium: the s block.",
+  "Groups 3 to 12: the d block.",
+  "Groups 13 to 18: the p block.",
+  "The two rows below the table, lanthanides and actinides: the f block."
+ ],
+ "colour": "block",
+ "groups": true,
+ "periods": true,
+ "claims": [
+  {
+   "type": "block",
+   "symbols": [
+    "Li",
+    "Na",
+    "K",
+    "Mg",
+    "Ca",
+    "Ba"
+   ],
+   "block": "s"
+  },
+  {
+   "type": "block",
+   "symbols": [
+    "B",
+    "C",
+    "N",
+    "O",
+    "F",
+    "Cl",
+    "Ar"
+   ],
+   "block": "p"
+  },
+  {
+   "type": "block",
+   "symbols": [
+    "Sc",
+    "Fe",
+    "Cu",
+    "Zn",
+    "Ag",
+    "Pt"
+   ],
+   "block": "d"
+  },
+  {
+   "type": "block",
+   "symbols": [
+    "Ce",
+    "Nd",
+    "Gd",
+    "U",
+    "Pu"
+   ],
+   "block": "f"
+  }
+ ]
+}

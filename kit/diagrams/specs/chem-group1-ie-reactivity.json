@@ -1,0 +1,47 @@
+{
+ "id": "chem-group1-ie-reactivity",
+ "renderer": "trend",
+ "course": "chemistry",
+ "lesson": "Reactivity trends",
+ "title": "Group 1: ionisation energy and reactivity",
+ "caption": "Down group 1 the outer s electron is further out and more shielded, so first ionisation energy falls from 520 to 376 kJ mol⁻¹. The electron is lost more easily, so reactivity with water rises from lithium to caesium.",
+ "alt": "Bar chart of first ionisation energies of Li 520, Na 496, K 419, Rb 403, Cs 376 kJ/mol, falling down the group.",
+ "description": [
+  "Li 520, Na 496, K 419, Rb 403, Cs 376 kJ mol⁻¹: each lower, each more reactive."
+ ],
+ "kind": "bars",
+ "dataset": "ie1",
+ "range": [
+  0,
+  600
+ ],
+ "yLabel": "first ionisation energy / kJ mol⁻¹",
+ "colour": "a3",
+ "items": [
+  {
+   "key": "Li",
+   "value": 520
+  },
+  {
+   "key": "Na",
+   "value": 496
+  },
+  {
+   "key": "K",
+   "value": 419
+  },
+  {
+   "key": "Rb",
+   "value": 403
+  },
+  {
+   "key": "Cs",
+   "value": 376
+  }
+ ],
+ "claims": [
+  {
+   "type": "decreasing"
+  }
+ ]
+}

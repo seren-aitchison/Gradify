@@ -831,6 +831,7 @@ H: Properties
 - The common oxidation state is **+3**; Ce⁴⁺ and Eu²⁺ also occur.
 - 4f orbitals are **buried** inside, so ligand effects are small.
 - Complexes are mainly **ionic** with high coordination numbers (8–12).
+D: chem-lanthanide-contraction
 H: Lanthanide contraction
 - Ionic radii **decrease** steadily from La³⁺ to Lu³⁺.
 - 4f electrons shield the rising nuclear charge poorly.

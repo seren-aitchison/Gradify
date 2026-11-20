@@ -1,0 +1,158 @@
+{
+ "id": "chem-imf-bp",
+ "renderer": "trend",
+ "course": "chemistry",
+ "lesson": "Intermolecular forces",
+ "title": "Hydrogen bonding raises boiling points",
+ "caption": "Boiling points of the hydrides usually rise down a group as London forces grow. NH₃, H₂O and HF break the pattern: hydrogen bonding makes them boil far higher than the next hydride down. Water is highest of all, with two hydrogen bonds per molecule.",
+ "alt": "Line graph of hydride boiling points for groups 14 to 17 against period; the group 14 line rises steadily, while groups 15, 16 and 17 start high at NH₃, H₂O and HF before dropping.",
+ "description": [
+  "Group 14: CH₄ −162, SiH₄ −112, GeH₄ −88, SnH₄ −52 °C, rising steadily.",
+  "Group 15: NH₃ −33, then PH₃ −88, AsH₃ −62, SbH₃ −17.",
+  "Group 16: H₂O 100, then H₂S −60, H₂Se −41, H₂Te −2.",
+  "Group 17: HF 20, then HCl −85, HBr −67, HI −35."
+ ],
+ "kind": "series",
+ "dataset": "bpHydrides",
+ "range": [
+  -180,
+  120
+ ],
+ "ticks": [
+  -150,
+  -100,
+  -50,
+  0,
+  50,
+  100
+ ],
+ "yLabel": "boiling point / °C",
+ "xLabels": [
+  "period 2",
+  "period 3",
+  "period 4",
+  "period 5"
+ ],
+ "series": [
+  {
+   "label": "group 14",
+   "keys": [
+    "CH4",
+    "SiH4",
+    "GeH4",
+    "SnH4"
+   ],
+   "colour": "a5",
+   "values": {
+    "CH4": -162,
+    "SiH4": -112,
+    "GeH4": -88,
+    "SnH4": -52
+   }
+  },
+  {
+   "label": "group 15",
+   "keys": [
+    "NH3",
+    "PH3",
+    "AsH3",
+    "SbH3"
+   ],
+   "colour": "a4",
+   "values": {
+    "NH3": -33,
+    "PH3": -88,
+    "AsH3": -62,
+    "SbH3": -17
+   },
+   "labelDy": 10
+  },
+  {
+   "label": "group 16",
+   "keys": [
+    "H2O",
+    "H2S",
+    "H2Se",
+    "H2Te"
+   ],
+   "colour": "a1",
+   "values": {
+    "H2O": 100,
+    "H2S": -60,
+    "H2Se": -41,
+    "H2Te": -2
+   }
+  },
+  {
+   "label": "group 17",
+   "keys": [
+    "HF",
+    "HCl",
+    "HBr",
+    "HI"
+   ],
+   "colour": "a2",
+   "values": {
+    "HF": 20,
+    "HCl": -85,
+    "HBr": -67,
+    "HI": -35
+   }
+  }
+ ],
+ "pointLabels": true,
+ "claims": [
+  {
+   "type": "max",
+   "key": "H2O",
+   "keys": [
+    "CH4",
+    "SiH4",
+    "GeH4",
+    "SnH4",
+    "NH3",
+    "PH3",
+    "AsH3",
+    "SbH3",
+    "H2O",
+    "H2S",
+    "H2Se",
+    "H2Te",
+    "HF",
+    "HCl",
+    "HBr",
+    "HI"
+   ]
+  },
+  {
+   "type": "order",
+   "keys": [
+    "PH3",
+    "NH3"
+   ]
+  },
+  {
+   "type": "order",
+   "keys": [
+    "H2S",
+    "H2O"
+   ]
+  },
+  {
+   "type": "order",
+   "keys": [
+    "HCl",
+    "HF"
+   ]
+  },
+  {
+   "type": "increasing",
+   "keys": [
+    "CH4",
+    "SiH4",
+    "GeH4",
+    "SnH4"
+   ]
+  }
+ ]
+}

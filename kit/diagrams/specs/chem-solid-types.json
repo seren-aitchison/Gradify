@@ -1,0 +1,71 @@
+{
+ "id": "chem-solid-types",
+ "renderer": "classify",
+ "course": "chemistry",
+ "lesson": "Solid-state bonding",
+ "title": "Classifying solids by bonding",
+ "caption": "Ionic solids are metal with non-metal; metallic solids are metals. Non-metal solids are either giant covalent networks (diamond, silicon dioxide), with very high melting points, or simple molecular solids (ice, iodine), where only weak forces between molecules have to be overcome.",
+ "alt": "A tree: contains a metal and a non-metal? Ionic. Only metal? Metallic. Otherwise: one giant network of covalent bonds? Giant covalent; if not, simple molecular.",
+ "description": [
+  "Metal and non-metal: ionic, such as NaCl.",
+  "Metal only: metallic, such as Cu.",
+  "Non-metals in a continuous network: giant covalent, such as diamond (C) and SiO₂.",
+  "Non-metals as separate molecules: simple molecular, such as H₂O and I₂."
+ ],
+ "start": "q1",
+ "rowHeight": 100,
+ "nodes": {
+  "q1": {
+   "q": "Metal and non-metal together?",
+   "yes": "ion",
+   "no": "q2"
+  },
+  "ion": {
+   "leaf": "Ionic lattice",
+   "examples": [
+    "NaCl",
+    "MgO"
+   ],
+   "kind": "ionic",
+   "tone": "a3"
+  },
+  "q2": {
+   "q": "Metal atoms only?",
+   "yes": "met",
+   "no": "q3"
+  },
+  "met": {
+   "leaf": "Metallic lattice",
+   "examples": [
+    "Cu",
+    "Fe"
+   ],
+   "kind": "metallic",
+   "tone": "a1"
+  },
+  "q3": {
+   "q": "One continuous network of covalent bonds?",
+   "yes": "gc",
+   "no": "sm"
+  },
+  "gc": {
+   "leaf": "Giant covalent",
+   "examples": [
+    "C",
+    "SiO2"
+   ],
+   "kind": "covalent",
+   "tone": "a5"
+  },
+  "sm": {
+   "leaf": "Simple molecular",
+   "examples": [
+    "H2O",
+    "I2",
+    "CO2"
+   ],
+   "kind": "covalent",
+   "tone": "a4"
+  }
+ }
+}

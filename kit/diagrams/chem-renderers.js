@@ -17,7 +17,10 @@ import { parseFormula, balanced, configuration, readConfig, sameConfig, configTe
 const C = { ink: "var(--vx-ink, #151826)", soft: "var(--vx-soft, #5b6275)", line: "var(--vx-line, #8a92a8)", grid: "var(--vx-grid, #e6e8f0)", panel: "var(--vx-panel, #f4f5fb)" };
 // subscript digits in formulae and superscript charges, written in the text() markup: H2O → H_{2}O, SO4^2- → SO_{4}^{2−}
 export function fm(s) {
-  return ascii(s).replace(/\^(\d*[+-])/g, (_, q) => `^{${q.replace("-", "−")}}`).replace(/\^(\d+)/g, "^{$1}").replace(/([A-Za-z)\]])(\d+)/g, "$1_{$2}");
+  // keeps state symbols; a bare charge after a formula (Na+, Cl−, e−) becomes a superscript too
+  return ascii(s, true).replace(/\^(\d*[+-])/g, (_, q) => `^{${q.replace("-", "−")}}`).replace(/\^(\d+)/g, "^{$1}")
+    .replace(/([A-Za-z\]])([+−-])(?=$|[\s(,;:])/g, (_, a, q) => `${a}^{${q === "+" ? "+" : "−"}}`)
+    .replace(/([A-Za-z)\]])(\d+)/g, "$1_{$2}");
 }
 const rng = (seed) => { let h = 2166136261; for (const c of String(seed)) h = Math.imul(h ^ c.charCodeAt(0), 16777619); return () => { h ^= h << 13; h ^= h >>> 17; h ^= h << 5; return ((h >>> 0) % 100000) / 100000; }; };
 
@@ -306,7 +309,7 @@ function atomChecks(spec) {
 //            | {type: "concentration", more: i, less: j} | {type: "equation", eq}]
 const EL = { H: ["#ffffff", 6], C: ["#3a3f4b", 9], O: ["#e0393e", 9], N: ["#3b6fe0", 9], Cl: ["#2fa84f", 10], Na: ["#8e5bd6", 9],
   Br: ["#a0522d", 10], S: ["#e0b000", 10], Mg: ["#6b8e23", 9], Cu: ["#c87533", 9], He: ["#7fd1e8", 7], Ne: ["#f08a5d", 7], Ar: ["#9a7fd1", 8],
-  Fe: ["#8a5a44", 9], I: ["#6a2c91", 11], K: ["#b05bd6", 10], Ca: ["#5a9e8f", 9], Zn: ["#7d8597", 9], X: ["#9aa1b5", 9] };
+  Fe: ["#8a5a44", 9], I: ["#6a2c91", 11], e: ["#4f46e5", 3.2], Li: ["#c08ad8", 8], K: ["#b05bd6", 10], Ca: ["#5a9e8f", 9], Zn: ["#7d8597", 9], X: ["#9aa1b5", 9] };
 function moleculeOffsets(sp) {
   const at = sp.atoms, k = at.length, r = (e) => (EL[e] || EL.X)[1];
   if (k === 1) return [[0, 0]];
@@ -324,13 +327,13 @@ function drawSpecies(spec, key, x, y, scale = 1) {
     const [c, r] = EL[sp.atoms[i]] || EL.X;
     s += `<circle cx="${f1(x + off[i][0] * scale)}" cy="${f1(y + off[i][1] * scale)}" r="${f1(r * scale)}" fill="${c}" stroke="#151826" stroke-width="1.1"/>`;
   }
-  if (sp.charge) s += text(x + (EL[sp.atoms[0]] || EL.X)[1] * scale + 3, y - (EL[sp.atoms[0]] || EL.X)[1] * scale, sp.charge > 0 ? "+" : "−", { size: 12, weight: 800, fill: C.ink });
+  if (sp.charge) s += text(x + (EL[sp.atoms[0]] || EL.X)[1] * scale + 3, y - (EL[sp.atoms[0]] || EL.X)[1] * scale, `${Math.abs(sp.charge) > 1 ? Math.abs(sp.charge) : ""}${sp.charge > 0 ? "+" : "−"}`, { size: 11, weight: 800, anchor: "start", fill: C.ink });
   return s;
 }
 function speciesRadius(sp) { const off = moleculeOffsets(sp); return Math.max(...off.map(([x, y], i) => Math.hypot(x, y) + (EL[sp.atoms[i]] || EL.X)[1])); }
 function particles(spec, W, narrow) {
   const n = spec.panels.length, perRow = narrow ? 1 : Math.min(n, spec.perRow || n);
-  const gap = narrow ? 0 : 44, pw = narrow ? Math.min(W - 40, 300) : (W - 20 - (perRow - 1) * gap) / perRow, ph = spec.panelHeight || (narrow ? 200 : Math.min(200, pw * 0.9));
+  const gap = narrow ? 0 : spec.steps?.some(Boolean) ? 76 : 44, pw = narrow ? Math.min(W - 40, 300) : (W - 20 - (perRow - 1) * gap) / perRow, ph = spec.panelHeight || (narrow ? 200 : Math.min(200, pw * 0.9));
   let s = "", H = 0;
   const R = rng(spec.id);
   spec.panels.forEach((p, i) => {
@@ -353,15 +356,17 @@ function particles(spec, W, narrow) {
     const maxR = Math.max(...list.map((k) => speciesRadius(spec.species[k])), 8);
     const pts = place(list.length, p.arrangement, bx, by, bw, bh, maxR, R, p);
     if (p.arrangement !== "lattice" && p.arrangement !== "layer") list.sort(() => R() - 0.5);
-    list.forEach((k, q) => { if (pts[q]) s += drawSpecies(spec, k, pts[q][0], pts[q][1], p.scale || 1); });
+    list.forEach((k, q) => { if (pts[q]) s += drawSpecies(spec, k, pts[q][0], pts[q][1], (p.scale || 1) * (pts.scale || 1)); });
+    if (p.overlay) { const R2 = rng(`${spec.id}${i}o`); for (const [k, c] of p.overlay) for (let q = 0; q < c; q++) s += drawSpecies(spec, k, bx + 6 + R2() * (bw - 12), by + 6 + R2() * (bh - 12)); }
     if (p.motion) pts.slice(0, Math.min(pts.length, 6)).forEach(([px, py], q) => { const a = R() * Math.PI * 2; s += arrow(px + Math.cos(a) * (maxR + 3), py + Math.sin(a) * (maxR + 3), px + Math.cos(a) * (maxR + 20), py + Math.sin(a) * (maxR + 20), { stroke: C.soft, w: 1.4, head: 6 }); });
     if (p.note) s += text(x + pw / 2, y + ph + 20, p.note, { size: 12, fill: C.soft });
-    if (i < n - 1) {
+    if (i < n - 1 && spec.steps?.[i] !== null) {
       const lab = spec.steps?.[i] || "";
       if (narrow || colI === perRow - 1) { if (narrow) { s += arrow(W / 2, y + ph + 30, W / 2, y + ph + 70, { w: 2.2, head: 9 }); if (lab) s += text(W / 2 + 12, y + ph + 50, lab, { size: 12, weight: 600, anchor: "start", fill: C.soft }); } }
-      else { s += arrow(x + pw + 8, y + ph / 2, x + pw + gap - 8, y + ph / 2, { w: 2.2, head: 9, both: !!spec.reversible?.[i] }); if (lab) s += textWrap(x + pw + gap / 2, y + ph / 2 - 22, lab, 9, { size: 11, weight: 600, fill: C.soft }); }
+      else { s += arrow(x + pw + 8, y + ph / 2, x + pw + gap - 8, y + ph / 2, { w: 2.2, head: 9, both: !!spec.reversible?.[i] }); if (lab) s += textWrap(x + pw + gap / 2, y + ph / 2 - 14 - 15 * (Math.ceil(lab.length / 11) - 1), lab, 11, { size: 11, weight: 600, fill: C.soft }); }
     }
     H = Math.max(H, y + ph + (p.note ? 34 : 16) + (narrow && i < n - 1 ? 66 : 0));
+    if (narrow && i < n - 1 && spec.steps?.[i] === null) H -= 30;
   });
   // a key to the atoms used
   const els = [...new Set(Object.values(spec.species).flatMap((sp) => sp.atoms))];
@@ -372,11 +377,15 @@ function particles(spec, W, narrow) {
 function place(k, arr, x, y, w, h, r, R, p) {
   const pts = [];
   if (arr === "lattice" || arr === "liquid" || arr === "layer") {
-    const d = 2 * r + (arr === "lattice" ? 3 : 6), cols = Math.max(1, Math.floor(w / d)), rows = Math.ceil(k / cols);
+    // shrink the spacing (and so the particles) until the grid fits the box
+    const d0 = 2 * r + (arr === "lattice" ? 3 : 6);
+    let d = d0; while (Math.ceil(k / Math.max(1, Math.floor(w / d))) * d > h * (arr === "liquid" ? 0.92 : 1) && d > 10) d *= 0.94;
+    pts.scale = d / d0;
+    const cols = Math.max(1, Math.floor(w / d)), rows = Math.ceil(k / cols);
     const ox = x + (w - cols * d) / 2 + d / 2, oy = arr === "layer" ? y + h - rows * d + d / 2 : y + (h - rows * d) / 2 + d / 2;
     for (let i = 0; i < k; i++) {
       const cx = ox + (i % cols) * d, cy = oy + Math.floor(i / cols) * d;
-      pts.push(arr === "liquid" ? [cx + (R() - 0.5) * 7, cy + (R() - 0.5) * 7 + h * 0.12] : [cx, cy]);
+      pts.push(arr === "liquid" ? [cx + (R() - 0.5) * 7 * pts.scale, cy + (R() - 0.5) * 7 * pts.scale + Math.max(0, h - rows * d) * 0.3] : [cx, cy]);
     }
     return pts;
   }

@@ -1,0 +1,69 @@
+{
+ "id": "chem-transition-ions",
+ "renderer": "orbitals",
+ "course": "chemistry",
+ "lesson": "Transition metals",
+ "title": "Iron ions lose 4s before 3d",
+ "caption": "Although 4s fills before 3d, once 3d is occupied the 4s electrons are the outermost and are removed first. Fe²⁺ is [Ar] 3d⁶ and Fe³⁺ is [Ar] 3d⁵, a half-filled sub-shell.",
+ "alt": "Box diagrams for Fe, [Ar] 3d⁶ 4s²; Fe²⁺, [Ar] 3d⁶ with 4s empty; Fe³⁺, [Ar] 3d⁵.",
+ "description": [
+  "Fe: 3d⁶ 4s².",
+  "Fe²⁺: both 4s electrons removed; 3d⁶ unchanged.",
+  "Fe³⁺: one 3d electron removed as well, leaving five single 3d electrons."
+ ],
+ "rows": [
+  {
+   "symbol": "Fe",
+   "label": "Fe, [Ar] 3d⁶ 4s²",
+   "config": "[Ar] 3d6 4s2",
+   "show": [
+    "3d",
+    "4s"
+   ],
+   "core": [
+    "1s",
+    "2s",
+    "2p",
+    "3s",
+    "3p"
+   ],
+   "unpaired": 4
+  },
+  {
+   "symbol": "Fe",
+   "charge": 2,
+   "label": "Fe²⁺, [Ar] 3d⁶",
+   "config": "[Ar] 3d6",
+   "show": [
+    "3d",
+    "4s"
+   ],
+   "core": [
+    "1s",
+    "2s",
+    "2p",
+    "3s",
+    "3p"
+   ],
+   "unpaired": 4
+  },
+  {
+   "symbol": "Fe",
+   "charge": 3,
+   "label": "Fe³⁺, [Ar] 3d⁵",
+   "config": "[Ar] 3d5",
+   "show": [
+    "3d",
+    "4s"
+   ],
+   "core": [
+    "1s",
+    "2s",
+    "2p",
+    "3s",
+    "3p"
+   ],
+   "unpaired": 5
+  }
+ ]
+}

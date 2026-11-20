@@ -1,0 +1,68 @@
+{
+ "id": "chem-dilution",
+ "renderer": "particles",
+ "course": "chemistry",
+ "lesson": "Dilutions",
+ "title": "Dilution keeps the moles, spreads the volume",
+ "caption": "Adding water doubles the volume but adds no solute. The eight solute particles are now spread through twice the volume, so the concentration halves: c₁V₁ = c₂V₂.",
+ "alt": "Left: a beaker half full with eight solute particles. Right: the beaker full to twice the volume, still eight particles.",
+ "description": [
+  "Before: 8 solute particles in volume V.",
+  "After adding water: the same 8 particles in volume 2V, half the concentration."
+ ],
+ "species": {
+  "Cu2+": {
+   "atoms": [
+    "Cu"
+   ],
+   "charge": 2
+  }
+ },
+ "steps": [
+  "add water"
+ ],
+ "panelHeight": 190,
+ "panels": [
+  {
+   "title": "before: volume V",
+   "container": "beaker",
+   "arrangement": "random",
+   "contents": [
+    [
+     "Cu2+",
+     8
+    ]
+   ],
+   "fill": 0.42,
+   "volume": 1
+  },
+  {
+   "title": "after: volume 2V",
+   "container": "beaker",
+   "arrangement": "random",
+   "contents": [
+    [
+     "Cu2+",
+     8
+    ]
+   ],
+   "fill": 0.84,
+   "volume": 2
+  }
+ ],
+ "claims": [
+  {
+   "type": "count",
+   "panel": 1,
+   "species": "Cu2+",
+   "n": 8
+  },
+  {
+   "type": "concentration",
+   "solute": "Cu2+",
+   "more": 0,
+   "less": 1,
+   "ratio": 2
+  }
+ ]
+}

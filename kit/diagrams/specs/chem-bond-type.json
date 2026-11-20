@@ -1,0 +1,58 @@
+{
+ "id": "chem-bond-type",
+ "renderer": "classify",
+ "course": "chemistry",
+ "lesson": "Introduction to chemical bonding",
+ "title": "Which kind of bond?",
+ "caption": "A metal with a non-metal transfers electrons: ionic bonding. Metal atoms alone share a sea of delocalised electrons: metallic bonding. Non-metals share pairs of electrons: covalent bonding.",
+ "alt": "A tree: is there a metal and a non-metal? Yes, ionic. No: only metals? Yes, metallic; no, covalent.",
+ "description": [
+  "Metal and non-metal, such as NaCl or MgO: ionic.",
+  "Only metals, such as Cu or Fe: metallic.",
+  "Only non-metals, such as H₂O or CO₂: covalent."
+ ],
+ "start": "q1",
+ "rowHeight": 104,
+ "nodes": {
+  "q1": {
+   "q": "Does it contain a metal and a non-metal?",
+   "yes": "ionic",
+   "no": "q2"
+  },
+  "ionic": {
+   "leaf": "Ionic",
+   "examples": [
+    "NaCl",
+    "MgO",
+    "CaF2"
+   ],
+   "kind": "ionic",
+   "tone": "a3"
+  },
+  "q2": {
+   "q": "Is it only metal atoms?",
+   "yes": "met",
+   "no": "cov"
+  },
+  "met": {
+   "leaf": "Metallic",
+   "examples": [
+    "Cu",
+    "Fe",
+    "Na"
+   ],
+   "kind": "metallic",
+   "tone": "a1"
+  },
+  "cov": {
+   "leaf": "Covalent",
+   "examples": [
+    "H2O",
+    "CO2",
+    "CH4"
+   ],
+   "kind": "covalent",
+   "tone": "a4"
+  }
+ }
+}

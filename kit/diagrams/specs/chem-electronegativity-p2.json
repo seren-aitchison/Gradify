@@ -1,0 +1,69 @@
+{
+ "id": "chem-electronegativity-p2",
+ "renderer": "trend",
+ "course": "chemistry",
+ "lesson": "Electronegativity",
+ "title": "Electronegativity across period 2",
+ "caption": "Electronegativity rises across period 2 from lithium (0.98) to fluorine (3.98), the most electronegative element. A large difference between two bonded atoms gives a polar or ionic bond.",
+ "alt": "Bar chart of Pauling electronegativity from lithium 0.98 to fluorine 3.98.",
+ "description": [
+  "Li 0.98, Be 1.57, B 2.04, C 2.55, N 3.04, O 3.44, F 3.98."
+ ],
+ "kind": "bars",
+ "dataset": "enPauling",
+ "range": [
+  0,
+  4.2
+ ],
+ "ticks": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "yLabel": "Pauling electronegativity",
+ "colour": "a1",
+ "items": [
+  {
+   "key": "Li",
+   "value": 0.98
+  },
+  {
+   "key": "Be",
+   "value": 1.57
+  },
+  {
+   "key": "B",
+   "value": 2.04
+  },
+  {
+   "key": "C",
+   "value": 2.55
+  },
+  {
+   "key": "N",
+   "value": 3.04
+  },
+  {
+   "key": "O",
+   "value": 3.44
+  },
+  {
+   "key": "F",
+   "value": 3.98
+  }
+ ],
+ "highlight": {
+  "F": "a2"
+ },
+ "claims": [
+  {
+   "type": "increasing"
+  },
+  {
+   "type": "max",
+   "key": "F"
+  }
+ ]
+}

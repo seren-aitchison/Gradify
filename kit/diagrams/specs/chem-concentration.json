@@ -1,0 +1,63 @@
+{
+ "id": "chem-concentration",
+ "renderer": "particles",
+ "course": "chemistry",
+ "lesson": "Concentration",
+ "title": "Concentration: solute per volume",
+ "caption": "Both beakers hold the same volume of solution, but the right one has twice as many dissolved particles, so it is twice as concentrated. Concentration = amount of solute ÷ volume of solution.",
+ "alt": "Two beakers filled to the same level; the left has five dissolved copper ions, the right ten.",
+ "description": [
+  "Left: same volume, 5 solute particles.",
+  "Right: same volume, 10 solute particles, twice the concentration."
+ ],
+ "also": [
+  {
+   "course": "gcse",
+   "lesson": "Moles and concentration"
+  }
+ ],
+ "species": {
+  "Cu2+": {
+   "atoms": [
+    "Cu"
+   ],
+   "charge": 2
+  }
+ },
+ "panelHeight": 180,
+ "panels": [
+  {
+   "title": "dilute",
+   "container": "beaker",
+   "arrangement": "random",
+   "contents": [
+    [
+     "Cu2+",
+     5
+    ]
+   ],
+   "fill": 0.8
+  },
+  {
+   "title": "concentrated",
+   "container": "beaker",
+   "arrangement": "random",
+   "contents": [
+    [
+     "Cu2+",
+     10
+    ]
+   ],
+   "fill": 0.8
+  }
+ ],
+ "claims": [
+  {
+   "type": "concentration",
+   "solute": "Cu2+",
+   "more": 1,
+   "less": 0,
+   "ratio": 2
+  }
+ ]
+}

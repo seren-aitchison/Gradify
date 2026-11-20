@@ -1,0 +1,75 @@
+{
+ "id": "chem-nacl-lattice",
+ "renderer": "lattice",
+ "course": "chemistry",
+ "lesson": "Crystal structures",
+ "title": "Ionic lattices: sodium chloride and caesium chloride",
+ "caption": "In NaCl each ion has six nearest neighbours of the opposite charge (6:6), and the cubic cell holds four of each. The larger Cs⁺ fits eight Cl⁻ around it in CsCl (8:8). The cation-to-anion size ratio decides the structure.",
+ "alt": "Two unit cells: sodium chloride, with alternating Na⁺ and Cl⁻ at every half-step; caesium chloride, with Cl⁻ at the corners and Cs⁺ at the centre.",
+ "description": [
+  "Sodium chloride: ions alternate along every edge; each has six nearest neighbours of the other kind.",
+  "Caesium chloride: one Cs⁺ at the body centre surrounded by eight Cl⁻ at the corners."
+ ],
+ "cells": [
+  {
+   "kind": "nacl",
+   "label": "sodium chloride (6:6)",
+   "species": {
+    "A": {
+     "label": "Na+",
+     "colour": "#8e5bd6",
+     "r": 8
+    },
+    "B": {
+     "label": "Cl-",
+     "colour": "#2fa84f",
+     "r": 12
+    }
+   },
+   "claims": {
+    "coordination": {
+     "A": 6,
+     "B": 6
+    },
+    "perCell": {
+     "A": 4,
+     "B": 4
+    },
+    "formula": {
+     "A": 1,
+     "B": 1
+    }
+   }
+  },
+  {
+   "kind": "cscl",
+   "label": "caesium chloride (8:8)",
+   "species": {
+    "A": {
+     "label": "Cs+",
+     "colour": "#b05bd6",
+     "r": 13
+    },
+    "B": {
+     "label": "Cl-",
+     "colour": "#2fa84f",
+     "r": 11
+    }
+   },
+   "claims": {
+    "coordination": {
+     "A": 8,
+     "B": 8
+    },
+    "perCell": {
+     "A": 1,
+     "B": 1
+    },
+    "formula": {
+     "A": 1,
+     "B": 1
+    }
+   }
+  }
+ ]
+}

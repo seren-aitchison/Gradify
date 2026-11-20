@@ -116,19 +116,25 @@ function sites(kind) {
   if (kind === "fcc") { corners.forEach((p) => P.push([...p, "A"])); faces.forEach((p) => P.push([...p, "A"])); }
   if (kind === "nacl") { corners.forEach((p) => P.push([...p, "B"])); faces.forEach((p) => P.push([...p, "B"])); edges.forEach((p) => P.push([...p, "A"])); body.forEach((p) => P.push([...p, "A"])); }
   if (kind === "cscl") { corners.forEach((p) => P.push([...p, "B"])); body.forEach((p) => P.push([...p, "A"])); }
+  if (kind === "diamond") { corners.forEach((p) => P.push([...p, "A"])); faces.forEach((p) => P.push([...p, "A"])); for (const q of [[0.25, 0.25, 0.25], [0.75, 0.75, 0.25], [0.75, 0.25, 0.75], [0.25, 0.75, 0.75]]) P.push([...q, "A"]); }
   if (kind === "perovskite") { corners.forEach((p) => P.push([...p, "A"])); body.forEach((p) => P.push([...p, "B"])); faces.forEach((p) => P.push([...p, "X"])); }
   return P;
 }
 function lattice(spec, W, narrow) {
-  const cells = spec.cells, perRow = narrow ? 1 : Math.min(cells.length, 3), cw = (W - 20) / perRow, size = narrow ? 150 : Math.min(150, cw * 0.62), ch = size * 1.45 + 70;
+  const cells = spec.cells, perRow = narrow ? 1 : Math.min(cells.length, 3), cw = (W - 20) / perRow, size = narrow ? 150 : Math.min(150, cw * 0.5), ch = size * 1.6 + 80;
   let s = "", H = 0;
   cells.forEach((c, i) => {
-    const ox = 10 + (i % perRow) * cw + cw / 2 - size * 0.62, oy = 30 + Math.floor(i / perRow) * ch + size * 1.08;
+    const ox = 10 + (i % perRow) * cw + cw / 2 - size * 0.62, oy = 22 + Math.floor(i / perRow) * ch + size * 1.32;
     const P = ([x, y, z]) => [ox + x * size + z * size * 0.42, oy - y * size - z * size * 0.3];
     // cube edges, back ones dashed
     const E = [[[0, 0, 0], [1, 0, 0]], [[0, 0, 0], [0, 1, 0]], [[0, 0, 0], [0, 0, 1]], [[1, 1, 1], [0, 1, 1]], [[1, 1, 1], [1, 0, 1]], [[1, 1, 1], [1, 1, 0]], [[1, 0, 0], [1, 1, 0]], [[1, 0, 0], [1, 0, 1]], [[0, 1, 0], [1, 1, 0]], [[0, 1, 0], [0, 1, 1]], [[0, 0, 1], [1, 0, 1]], [[0, 0, 1], [0, 1, 1]]];
     for (const [a, b] of E) { const back = a.every((v, k) => v === [0, 0, 1][k]) || b.every((v, k) => v === [0, 0, 1][k]); const [x1, y1] = P(a), [x2, y2] = P(b); s += line(x1, y1, x2, y2, { stroke: C.line, w: 1.4, dash: back ? "4 4" : "" }); }
     const pts = sites(c.kind).sort((a, b) => b[2] - a[2]);
+    if (c.bonds) {
+      // bonds between nearest neighbours drawn in the cell (diamond's tetrahedral network)
+      const d = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1], a[2] - b[2]), m = Math.min(...pts.flatMap((a, i) => pts.slice(i + 1).map((b) => d(a, b))));
+      pts.forEach((a, i) => pts.slice(i + 1).forEach((b) => { if (Math.abs(d(a, b) - m) < 1e-6) { const [x1, y1] = P(a), [x2, y2] = P(b); s += line(x1, y1, x2, y2, { stroke: "#151826", w: 2.4 }); } }));
+    }
     for (const [x, y, z, sp] of pts) {
       const st = c.species[sp] || { colour: "a1", r: 11 }, [px, py] = P([x, y, z]), r = (st.r || 11) * (narrow ? 0.9 : 1) * (1 - z * 0.12);
       s += `<circle cx="${f1(px)}" cy="${f1(py)}" r="${f1(r)}" fill="${col(st.colour)}" stroke="#151826" stroke-width="1"/><circle cx="${f1(px - r * 0.3)}" cy="${f1(py - r * 0.3)}" r="${f1(r * 0.28)}" fill="#fff" fill-opacity=".55"/>`;
@@ -136,8 +142,13 @@ function lattice(spec, W, narrow) {
     const bx = 10 + (i % perRow) * cw + cw / 2, by = oy + 34;
     s += text(bx, by, c.label, { size: 13.5, weight: 700 });
     const cn = coordination(c.kind), pc = perCell(c.kind);
-    s += text(bx, by + 18, c.sub || Object.keys(c.species).map((k) => `${c.species[k].label}: ${pc[k]} per cell, ${cn[k]} nearest neighbours`).join("; "), { size: 11.5, fill: C.soft });
-    let ly = by + 36; if (Object.keys(c.species).length > 1 || spec.key) for (const [k, st] of Object.entries(c.species)) { s += `<circle cx="${bx - 60}" cy="${ly}" r="6" fill="${col(st.colour)}" stroke="#151826"/>` + text(bx - 48, ly, fm(st.label), { size: 12, weight: 600, anchor: "start" }); ly += 18; }
+    // one line per species: its key colour, how many per cell and its nearest neighbours
+    let ly = by + 20;
+    for (const [k, st] of Object.entries(c.species)) {
+      const t = `${pc[k]} per cell, ${cn[k]} nearest neighbours`, w = (fm(st.label).replace(/[_^]\{|\}/g, "").length + t.length) * 6.4 + 24;
+      s += `<circle cx="${f1(bx - w / 2 + 6)}" cy="${ly}" r="6" fill="${col(st.colour)}" stroke="#151826"/>` + text(bx - w / 2 + 16, ly, `${fm(st.label)}: ${t}`, { size: 11.5, anchor: "start", fill: C.soft });
+      ly += 18;
+    }
     H = Math.max(H, ly);
   });
   return { s, H: H + 4 };

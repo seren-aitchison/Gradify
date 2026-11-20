@@ -45,6 +45,7 @@ H: Pure substances and mixtures
 - **Element**: contains only one type of atom (iron, oxygen gas O₂).
 - **Compound**: two or more elements chemically combined in a fixed ratio (water H₂O, sodium chloride NaCl).
 - **Mixture**: two or more substances not chemically combined; the composition can vary and the parts keep their own properties (air, sea water).
+D: chem-classify-matter
 H: Kinds of mixture
 P: A **homogeneous** mixture has the same composition throughout (a solution such as salt water, or an alloy such as brass). A **heterogeneous** mixture has visibly different parts (sand in water, granite).
 H: Particle diagrams
@@ -78,6 +79,7 @@ O: Describe how compounds can be broken down
 PRE: Matter and its classification
 H: Elements
 P: An element is a substance made of atoms with the same number of protons (the same atomic number). Elements can't be broken down into simpler substances by chemical means. About 90 occur naturally; the rest have been made in laboratories.
+D: chem-elements-compounds
 H: Compounds
 P: In a compound, atoms of different elements are held together by chemical bonds in a fixed ratio. Sodium is a reactive metal that fizzes in water and chlorine is a toxic green gas, but sodium chloride is a stable white solid that we eat. New bonds give new properties.
 H: Fixed composition
@@ -116,6 +118,7 @@ H: Separation methods
 - **Fractional distillation**: separates miscible liquids with different boiling points (ethanol from water; crude oil into fractions).
 - **Chromatography**: separates dissolved substances that move at different rates through a stationary phase (dyes in ink).
 - **Separating funnel**: separates immiscible liquids (oil and water).
+D: chem-mixtures
 H: Chromatography
 P: A mobile phase (solvent) moves through a stationary phase (paper or silica). Substances more attracted to the mobile phase travel further. The **Rf value** is fixed for a substance in given conditions, so it can help identify it.
 E: Rf = distance moved by spot / distance moved by solvent front
@@ -147,6 +150,7 @@ O: Explain both kinds of change at the particle level
 PRE: Matter and its classification
 H: Physical changes
 P: Changes of state (melting, boiling, condensing), dissolving and changes of shape are physical changes. The particles are the same before and after; only their arrangement, spacing or movement changes. Physical changes are usually easy to reverse.
+D: chem-physical-chemical-change
 H: Chemical changes
 P: In a chemical change, bonds are broken and new bonds are made, so atoms are rearranged into new substances. Burning, rusting, cooking and digestion are chemical changes. They are often hard to reverse.
 H: Evidence of a reaction
@@ -185,6 +189,7 @@ H: The particle model
 - **Solid**: particles closely packed in a regular arrangement, vibrating about fixed positions; fixed shape and volume.
 - **Liquid**: particles close together but randomly arranged and moving past each other; fixed volume, takes the shape of its container.
 - **Gas**: particles far apart, moving fast and randomly in all directions; fills its container and is easily compressed.
+D: chem-states-of-matter
 H: Changing state
 P: Melting, boiling and sublimation need energy to overcome the forces between particles. Freezing and condensing release energy as forces form. During a change of state the temperature stays constant: the energy goes into separating (or is released by bringing together) particles, not into making them move faster.
 H: Heating curves
@@ -317,6 +322,7 @@ O: Write ionic equations by removing spectator ions
 PRE: Chemical formulae
 H: Word and symbol equations
 P: Word equation: magnesium + oxygen → magnesium oxide. Symbol equation: 2Mg(s) + O₂(g) → 2MgO(s). The arrow means "react to form". State symbols: (s) solid, (l) liquid, (g) gas, (aq) aqueous, dissolved in water.
+D: chem-equation-particles
 H: Coefficients
 P: The large numbers in front of formulae are coefficients. They count particles (or moles) and must make the numbers of each atom equal on both sides, because atoms are neither created nor destroyed. Changing a subscript would change the substance; only coefficients can be changed.
 H: Ionic equations
@@ -348,6 +354,7 @@ O: Balance equations with polyatomic ions and odd numbers of atoms
 PRE: Chemical equations
 H: Conservation of mass
 P: In a chemical reaction atoms are rearranged, not created or destroyed, so the total mass of the products equals the total mass of the reactants (Lavoisier, 1789). In an open container, mass can seem to change when a gas escapes or is absorbed.
+D: chem-balancing
 H: A method
 - Write the correct formulae; never change them while balancing.
 - Count the atoms of each element on each side.
@@ -389,6 +396,7 @@ E: Ar = Σ (isotopic mass × abundance) / Σ abundances
 X: Chlorine is 75.78% ³⁵Cl (mass 34.969) and 24.22% ³⁷Cl (mass 36.966). Calculate Ar.
 > Ar = (34.969 × 75.78 + 36.966 × 24.22) ÷ 100.
 > = (2,650.0 + 895.3) ÷ 100 = 35.45.
+D: chem-ar-chlorine
 H: Why not whole numbers?
 P: Ar values are averages of several isotopes, so they are rarely whole numbers (chlorine 35.45). Even single isotopes don't have exactly whole-number masses (except carbon-12 by definition), because of the binding energy of the nucleus and the slightly different masses of protons and neutrons. IUPAC gives some atomic weights as ranges, because isotope abundances vary between natural sources.
 P: **Investigate with the lab.** Build the two common isotopes of chlorine, chlorine-35 and chlorine-37, and think about why the relative atomic mass isn't a whole number.
@@ -583,6 +591,7 @@ O: Calculate the amount of excess reagent left over
 PRE: Stoichiometry
 H: The idea
 P: To make cheese sandwiches you need two slices of bread per slice of cheese. With 10 slices of bread and 3 of cheese, you can make only 3 sandwiches: cheese is limiting and 4 slices of bread are left over. Reactions work the same way, but by moles.
+D: chem-limiting-reagent
 H: Method
 - Convert each reactant to moles.
 - Divide each by its coefficient in the balanced equation.
@@ -690,6 +699,7 @@ X: 4.00 g of sodium hydroxide (M 40.0) is dissolved to make 250 cm³ of solution
 > n = 4.00 ÷ 40.0 = 0.100 mol.
 > V = 250 ÷ 1,000 = 0.250 dm³.
 > c = 0.100 ÷ 0.250 = 0.400 mol/dm³ (16.0 g/dm³).
+D: chem-concentration
 H: Making a standard solution
 P: A standard solution has an accurately known concentration. Weigh the solid accurately, dissolve it in a beaker, transfer it with washings to a volumetric flask, make up to the mark with the bottom of the meniscus on the line, then invert to mix.
 K: c = n/V with V in dm³; always convert cm³ ÷ 1,000.
@@ -721,6 +731,7 @@ E: c_{1}V_{1} = c_{2}V_{2}
 X: What volume of 2.00 mol/dm³ sulfuric acid is needed to make 250 cm³ of 0.100 mol/dm³ acid?
 > V₁ = c₂V₂ ÷ c₁ = 0.100 × 250 ÷ 2.00 = 12.5 cm³.
 > Measure 12.5 cm³ with a burette or pipette, add to a 250 cm³ volumetric flask (adding acid to water, never water to concentrated acid) and make up to the mark.
+D: chem-dilution
 H: Serial dilution
 P: A serial dilution repeats the same dilution several times, giving concentrations that fall by a constant factor. Diluting 1 cm³ into 9 cm³ of water (a 1 in 10 dilution) five times gives concentrations of 10⁻¹ to 10⁻⁵ of the original. Serial dilutions are used to make calibration standards and to count bacteria.
 H: Dilution factor

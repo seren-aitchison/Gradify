@@ -1,0 +1,17 @@
+{
+ "id": "chem-sigma-pi",
+ "renderer": "lobes",
+ "course": "chemistry",
+ "lesson": "Sigma and pi bonding",
+ "title": "σ and π bonds in ethene",
+ "caption": "The C=C in ethene is one σ bond, from end-on overlap along the axis, and one π bond, from sideways overlap of the two p orbitals above and below the plane. The π bond is weaker and stops rotation about the double bond.",
+ "alt": "Two carbon atoms joined by a σ bond along the axis, each with a vertical p orbital; the p orbitals overlap above and below to form the π bond.",
+ "description": [
+  "The σ bond: a line along the C–C axis.",
+  "Each carbon also has two bonds to hydrogen, in the plane.",
+  "Above and below: the two p orbitals overlapping sideways to form the π bond."
+ ],
+ "kind": "sigma-pi",
+ "sigma": 1,
+ "pi": 1
+}

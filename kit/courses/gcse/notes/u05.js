@@ -97,6 +97,7 @@ O: Explain Mendeleev's contribution to the modern table
 O: Explain trends in reactivity in Groups 1 and 7
 H: Arrangement
 P: The modern periodic table arranges elements in order of **atomic number**. **Rows** are called **periods** and **columns** are **groups**. Elements in the same group have the same number of electrons in their outer shell, so they have similar chemical properties. Metals are on the left and in the centre; non-metals are on the right. In 1869, **Dmitri Mendeleev** arranged elements by atomic weight but left gaps for undiscovered elements and predicted their properties; elements such as gallium and germanium were later found to fit.
+D: chem-table-periods-groups
 H: Groups 1 and 0
 - **Group 1**, the **alkali metals**, have one outer electron.
 - They react with water to form a metal hydroxide and hydrogen.
@@ -141,6 +142,7 @@ O: Predict the type of bonding between elements
 O: Represent bonding using dot and cross diagrams
 H: Ionic bonding
 P: **Ionic bonding** occurs between **metals and non-metals**. Metal atoms **lose** electrons to form positive ions; non-metal atoms **gain** electrons to form negative ions, so both achieve full outer shells. The oppositely charged ions are held together by strong **electrostatic forces** in a giant lattice. For example, sodium loses one electron to form Na⁺ and chlorine gains one to form Cl⁻, giving sodium chloride.
+D: chem-ionic-nacl
 H: Covalent bonding
 - **Covalent bonding** occurs between **non-metal atoms**.
 - Atoms **share pairs of electrons** to complete their outer shells.
@@ -183,6 +185,7 @@ O: Explain the properties of giant covalent structures, including forms of carbo
 O: Explain the properties of metals and alloys
 H: Ionic and simple molecular substances
 P: **Ionic compounds** have high melting and boiling points because strong electrostatic forces act in all directions in the lattice. They conduct electricity when **melted or dissolved**, because the ions can move, but not when solid. **Small molecules**, such as water and carbon dioxide, have low melting and boiling points because only weak **intermolecular forces** must be overcome, not the covalent bonds. They do not conduct electricity because they have no overall charge.
+D: chem-states-of-matter
 H: Giant covalent structures and carbon
 - **Diamond**: each carbon forms four covalent bonds; very hard with a very high melting point; does not conduct.
 - **Graphite**: each carbon forms three bonds in layers; layers slide, making it soft and slippery; delocalised electrons let it conduct.
@@ -226,6 +229,7 @@ O: Balance symbol equations
 O: Calculate relative formula masses
 H: Conservation of mass
 P: The **law of conservation of mass** states that no atoms are lost or made during a chemical reaction, so the **mass of the products equals the mass of the reactants**. If a reaction appears to change mass, a gas is usually involved: mass may seem to **increase** when a gas, such as oxygen, is taken in, or **decrease** when a gas, such as carbon dioxide, escapes from an open container.
+D: chem-equation-particles
 H: Balancing equations
 - Symbol equations show the formulae of reactants and products.
 - Balance by placing **numbers in front** of formulae, never by changing the formulae.
@@ -268,6 +272,7 @@ O: Calculate moles from mass and use them in reacting masses
 O: Calculate the concentration of solutions
 H: The mole
 P: A **mole** is the amount of substance containing **6.02 × 10²³** particles, the **Avogadro constant**. One mole of a substance has a mass in grams equal to its relative formula mass: for example, one mole of carbon (Ar 12) has a mass of 12 g, and one mole of water (Mr 18) has a mass of 18 g. The key equation is: **moles = mass (g) ÷ Mr**.
+D: chem-concentration
 H: Reacting masses
 - Balanced equations show the ratio of moles that react.
 - To find a product mass: calculate moles of a reactant, use the ratio from the equation, then multiply by the product's Mr.

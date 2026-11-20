@@ -1,0 +1,58 @@
+{
+ "id": "chem-metallic-bonding",
+ "renderer": "particles",
+ "course": "chemistry",
+ "lesson": "Metallic bonding",
+ "title": "Metallic bonding",
+ "caption": "A metal is a lattice of positive ions in a sea of delocalised electrons. The attraction between the ions and the electrons is the metallic bond; the mobile electrons carry charge and heat, and layers can slide without breaking it.",
+ "alt": "A grid of sodium ions with free electrons scattered between them.",
+ "description": [
+  "Rows of Na⁺ ions in a regular lattice.",
+  "Small dots between them: the delocalised electrons, free to move."
+ ],
+ "species": {
+  "Na+": {
+   "atoms": [
+    "Na"
+   ],
+   "charge": 1
+  },
+  "e-": {
+   "atoms": [
+    "e"
+   ]
+  }
+ },
+ "panelHeight": 200,
+ "panels": [
+  {
+   "title": "sodium: Na⁺ ions and delocalised electrons",
+   "arrangement": "lattice",
+   "contents": [
+    [
+     "Na+",
+     24
+    ]
+   ],
+   "overlay": [
+    [
+     "e-",
+     24
+    ]
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "type": "count",
+   "panel": 0,
+   "species": "Na+",
+   "n": 24
+  },
+  {
+   "type": "classify",
+   "panel": 0,
+   "as": "element"
+  }
+ ]
+}

@@ -20,7 +20,7 @@ export const MONO = { H: 1.007825, C: 12.000000, N: 14.003074, O: 15.994915, F: 
 const SUB = { "₀": "0", "₁": "1", "₂": "2", "₃": "3", "₄": "4", "₅": "5", "₆": "6", "₇": "7", "₈": "8", "₉": "9" };
 const SUP = { "⁰": "0", "¹": "1", "²": "2", "³": "3", "⁴": "4", "⁵": "5", "⁶": "6", "⁷": "7", "⁸": "8", "⁹": "9", "⁺": "+", "⁻": "-" };
 /** Plain ASCII: H₂O → H2O, SO₄²⁻ → SO4^2-, e⁻ → e^-; state symbols removed. */
-export function ascii(s) {
+export function ascii(s, keepStates = false) {
   let out = "", sup = "";
   for (const ch of String(s).replace(/−/g, "-")) {
     if (SUP[ch]) { sup += SUP[ch]; continue; }
@@ -28,7 +28,7 @@ export function ascii(s) {
     out += SUB[ch] ?? ch;
   }
   if (sup) out += `^${sup}`;
-  return out.replace(/\((s|l|g|aq)\)/g, "").trim();
+  return (keepStates ? out : out.replace(/\((s|l|g|aq)\)/g, "")).trim();
 }
 
 /** Parse one species: atoms {El: n} and charge. Handles brackets, hydrates (·), charges written ^2-, 2-, + and -. */

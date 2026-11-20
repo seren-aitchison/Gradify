@@ -67,7 +67,7 @@ mk("u12-08", "chem-benzene-structure", "structures", "Kekulé and delocalised be
    "Kekulé's structure has alternating single (0.154 nm) and double (0.134 nm) bonds. X-ray diffraction finds every C–C bond 0.139 nm, so the six π electrons are delocalised round the ring, drawn as a circle.",
    "Two Kekulé structures of benzene with a double-headed arrow between them, and the delocalised structure with a circle in the ring.",
    ["Left and centre: the two Kekulé structures, double bonds in alternate positions.", "Right: the hexagon with a circle, all bonds equal at 0.139 nm."],
-   between=["↔", "="], betweenLabels=["", ""],
+   also=["chemistry:u04-24"], between=["↔", "="], betweenLabels=["", ""],
    panels=[P("C1=CC=CC=C1", "Kekulé form", formula="C6H6"), P("C1C=CC=CC=1", "Kekulé form", formula="C6H6"), P("c1ccccc1", "delocalised", formula="C6H6", sub="all C–C 0.139 nm")],
    claims=[{"type": "same", "panels": [0, 2], "name": "each Kekulé form is benzene"}])
 

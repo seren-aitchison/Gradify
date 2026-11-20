@@ -52,6 +52,7 @@ H: Moseley's work
 - The square root of the frequency increased steadily with position in the table.
 - This showed each element has a whole-number **atomic number**, equal to its number of protons.
 - It revealed gaps for undiscovered elements, such as 43 and 61.
+D: chem-table-blocks
 H: The periodic law
 - **Modern periodic law**: properties of elements are periodic functions of their atomic number.
 - Ordering by atomic number puts tellurium (52) before iodine (53) naturally.
@@ -93,6 +94,7 @@ H: Periods and groups
 - **Groups** are vertical columns; elements in a group have similar outer electron arrangements.
 - Groups are numbered 1–18.
 - Main group elements have outer electrons equal to the group number (or group − 10 for groups 13–18).
+D: chem-table-periods-groups
 H: Blocks
 - **s-block**: groups 1 and 2, outer electrons in s orbitals.
 - **p-block**: groups 13–18.
@@ -134,6 +136,7 @@ H: Features
 - They are **metals** with low ionisation energies.
 - They form ions with charges **+1** (group 1) and **+2** (group 2).
 - Their compounds are mostly **ionic** and white or colourless.
+D: chem-s-block-config
 H: Reactivity
 - Group 1 metals are more reactive than group 2 metals in the same period.
 - Reactivity increases down each group.
@@ -175,6 +178,7 @@ H: Variety
 - Includes **metals** (aluminium, tin, lead), **metalloids** (silicon, germanium) and **non-metals** (carbon, nitrogen, oxygen, halogens, noble gases).
 - Metallic character increases **down** and decreases **across** the block.
 - A diagonal staircase line separates metals and non-metals.
+D: chem-p-block-config
 H: Oxidation states
 - Elements often show oxidation states equal to the group number of outer electrons.
 - Heavier elements also show states two lower due to the **inert pair effect**.
@@ -216,6 +220,7 @@ H: Configurations
 - In period 4, 4s fills before 3d but **4s electrons are lost first** when forming ions.
 - **Chromium** is [Ar] 3d⁵ 4s¹ and **copper** is [Ar] 3d¹⁰ 4s¹.
 - Half-filled and full d subshells give extra stability.
+D: chem-d-block-fill
 H: Properties
 - Hard, dense metals with high melting points.
 - **Variable oxidation states**.
@@ -257,6 +262,7 @@ H: Structure
 - They are usually shown below the main table to keep it compact.
 - Lanthanides commonly form **+3 ions**.
 - Their chemical properties are very similar, making them hard to separate.
+D: chem-table-f-block
 H: Properties and uses
 - **Lanthanide contraction**: atomic and ionic radii decrease across the lanthanides because 4f electrons shield poorly.
 - Lanthanides are used in strong **magnets** (neodymium), phosphors and catalysts.
@@ -298,6 +304,7 @@ H: Properties
 - Soft metals that can be cut with a knife, with low densities and melting points.
 - Shiny when freshly cut but tarnish quickly in air.
 - Melting points decrease down the group.
+D: chem-group1-mp
 H: Reactions
 - With water: **2M + 2H₂O → 2MOH + H₂**.
 - Lithium fizzes steadily, sodium melts into a ball, potassium ignites with a lilac flame.
@@ -339,6 +346,7 @@ H: Reactions
 - Outer configuration ns²; they form **M²⁺** ions.
 - With water: **M + 2H₂O → M(OH)₂ + H₂**; magnesium reacts with steam to give MgO.
 - Reactivity increases down the group.
+D: chem-group2-ie
 H: Solubility and uses
 - **Hydroxides** become **more soluble** down the group.
 - **Sulfates** become **less soluble** down the group; barium sulfate is insoluble.
@@ -421,6 +429,7 @@ H: Elements
 - Outer configuration **ns² np²**.
 - Carbon forms **catenated** chains and rings, the basis of organic chemistry.
 - Carbon has allotropes: diamond, graphite, graphene and fullerenes.
+D: chem-diamond-cell
 H: Oxides and oxidation states
 - CO₂ is a gas of small molecules; SiO₂ is a **giant covalent** solid.
 - CO₂ and SiO₂ are acidic oxides; PbO is amphoteric.
@@ -544,6 +553,7 @@ H: Properties
 - Exist as **diatomic molecules**: F₂, Cl₂, Br₂, I₂.
 - At room temperature: F₂ and Cl₂ are gases, Br₂ a liquid and I₂ a solid.
 - Colour darkens and boiling point increases down the group.
+D: chem-group17-bp
 H: Reactivity
 - Halogens gain one electron to form **halide ions** (X⁻).
 - **Reactivity decreases down the group**.
@@ -585,6 +595,7 @@ H: Properties
 - **Full outer shells**: helium 1s², others ns² np⁶.
 - Exist as single atoms (**monatomic**).
 - Very high ionisation energies and low boiling points.
+D: chem-group18-bp
 H: Uses and compounds
 - Helium: balloons and cooling MRI magnets.
 - Neon: advertising signs; argon: inert atmosphere for welding and in light bulbs.
@@ -626,6 +637,7 @@ H: Complex ions
 - Ligands donate lone pairs, such as H₂O, NH₃ and Cl⁻.
 - **Coordination number** is the number of dative bonds, often 6 (octahedral) or 4 (tetrahedral or square planar).
 - Example: [Cu(H₂O)₆]²⁺ is pale blue.
+D: chem-transition-ions
 H: Colour and catalysis
 - Ligands split d orbitals into different energy levels.
 - Electrons absorb visible light to move between them; the **complementary colour** is seen.
@@ -667,6 +679,7 @@ H: Chemistry
 - The 4f orbitals are buried inside, so they hardly take part in bonding.
 - The common oxidation state is **+3**; some show +2 or +4, such as Eu²⁺ and Ce⁴⁺.
 - Ionic radii decrease steadily across the series.
+D: chem-lanthanide-contraction
 H: Separation and uses
 - Very similar chemistry makes separation difficult.
 - **Solvent extraction** and **ion exchange** exploit small differences in size.
@@ -749,6 +762,7 @@ H: Definition
 - **Covalent radius** applies to covalently bonded atoms; **metallic radius** to metals.
 - Measured in picometres (pm).
 - Noble gas radii are measured differently and are often left out of comparisons.
+D: chem-atomic-radius
 H: Trends
 - **Across a period**: radius decreases, because nuclear charge increases while shielding stays similar.
 - **Down a group**: radius increases, because extra shells are added.
@@ -790,6 +804,7 @@ H: Cations and anions
 - **Anions** are larger than their atoms: extra electrons increase repulsion with the same nuclear charge.
 - Na (186 pm) → Na⁺ (102 pm); Cl (99 pm) → Cl⁻ (181 pm).
 - Ionic radii increase down a group.
+D: chem-ionic-radius
 H: Isoelectronic series
 - **Isoelectronic** ions have the same number of electrons.
 - Example: O²⁻, F⁻, Na⁺, Mg²⁺ and Al³⁺ all have 10 electrons.
@@ -831,6 +846,7 @@ H: General trends
 - It **decreases down a group**, as the outer electron is further away and more shielded.
 - Noble gases have the highest values in each period.
 - Group 1 metals have the lowest.
+D: chem-ie-trend-table
 H: Exceptions and successive values
 - **Group 2 → 13 dip**: the electron in group 13 is removed from a higher-energy p orbital, as in Mg to Al.
 - **Group 15 → 16 dip**: in group 16, one p orbital holds a pair, and repulsion makes it easier to remove, as in P to S.
@@ -872,6 +888,8 @@ H: Definition and trends
 - Measured on the **Pauling scale**; fluorine is highest at 4.0.
 - Increases **across a period** and **decreases down a group**.
 - Nitrogen, oxygen and fluorine are especially electronegative.
+D: chem-electronegativity-trend
+D: chem-electronegativity-p2
 H: Bond type
 - Equal electronegativity: **non-polar covalent** bond, such as Cl–Cl.
 - Small difference: **polar covalent** bond, with partial charges δ+ and δ−.
@@ -913,6 +931,7 @@ H: Metals and non-metals
 - **Non-metals** react by gaining electrons; reactivity **decreases down** groups and **increases across** periods.
 - The most reactive metals are bottom left; the most reactive non-metals top right (excluding noble gases).
 - Reactivity is linked to ionisation energy and electron affinity.
+D: chem-group1-ie-reactivity
 H: Period 3
 - Sodium reacts vigorously with water; magnesium slowly; aluminium is protected by oxide.
 - Oxides change from **basic** (Na₂O, MgO) through **amphoteric** (Al₂O₃) to **acidic** (SiO₂, P₄O₁₀, SO₂).
@@ -955,6 +974,7 @@ H: Rules
 - Oxygen is usually **−2** (−1 in peroxides); hydrogen usually **+1** (−1 in metal hydrides).
 - Fluorine is always **−1**.
 - The sum of oxidation states equals the overall charge.
+D: chem-max-oxidation-p3
 H: Patterns and names
 - Group 1: +1; group 2: +2; aluminium: +3.
 - Non-metals can show negative and positive states, such as chlorine from −1 to +7.
@@ -996,6 +1016,7 @@ H: Special relationships
 - Similar charge density explains these resemblances.
 - **First-element anomaly**: the first element of a group often differs from the rest, because it is small, highly electronegative and lacks d orbitals.
 - Examples: lithium compounds are more covalent; fluorine forms only −1; carbon forms strong multiple bonds.
+D: chem-diagonal-relationships
 H: Prediction
 - Properties can be estimated from neighbours in groups and periods.
 - **Interpolation** estimates a value between known elements.

@@ -1,0 +1,56 @@
+{
+ "id": "chem-ionic-radius",
+ "renderer": "trend",
+ "course": "chemistry",
+ "lesson": "Ionic radius",
+ "title": "Isoelectronic ions",
+ "caption": "O²⁻, F⁻, Na⁺, Mg²⁺ and Al³⁺ all have the neon configuration, ten electrons. The nuclear charge rises from 8 to 13, pulling the same electrons closer, so the ions shrink from 140 to 54 pm.",
+ "alt": "Bar chart of six-coordinate ionic radii: O²⁻ 140, F⁻ 133, Na⁺ 102, Mg²⁺ 72, Al³⁺ 54 pm.",
+ "description": [
+  "O²⁻ 140 pm (8 protons).",
+  "F⁻ 133 pm (9).",
+  "Na⁺ 102 pm (11).",
+  "Mg²⁺ 72 pm (12).",
+  "Al³⁺ 54 pm (13)."
+ ],
+ "kind": "bars",
+ "dataset": "radiusIonic",
+ "range": [
+  0,
+  160
+ ],
+ "yLabel": "ionic radius / pm",
+ "colour": "a2",
+ "items": [
+  {
+   "key": "O2-",
+   "label": "O^2-",
+   "value": 140
+  },
+  {
+   "key": "F-",
+   "label": "F^-",
+   "value": 133
+  },
+  {
+   "key": "Na+",
+   "label": "Na^+",
+   "value": 102
+  },
+  {
+   "key": "Mg2+",
+   "label": "Mg^2+",
+   "value": 72
+  },
+  {
+   "key": "Al3+",
+   "label": "Al^3+",
+   "value": 54
+  }
+ ],
+ "claims": [
+  {
+   "type": "decreasing"
+  }
+ ]
+}
