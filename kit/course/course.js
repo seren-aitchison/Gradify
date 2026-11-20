@@ -991,6 +991,18 @@ export function mountCourse(root, cfg) {
       { t: "Challenge", m: "30–45 min", icon: "trophy", d: ready ? `The ${U} ${ready.n} quiz: ${ready.title}` : cfg.exams?.length && studied >= 10 ? "A timed mock exam" : studied ? "A 30-minute application test" : "Unlocks after your first lesson", href: ready ? `#/quiz/${ready.id}` : cfg.exams?.length && studied >= 10 ? "#/exams" : studied ? `#/target/${encodeTest({ minutes: 30, scope: "studied", focus: "application" })}` : null },
     ];
   }
+  // cover-flow: each card leans back and shrinks with its distance from the middle of the row; arrows and keys step by a card
+  function wireFlow(flow) {
+    if (!flow) return;
+    const cards = [...flow.querySelectorAll(".cx-fcard")];
+    const paint = () => { const r = flow.getBoundingClientRect(), mid = r.left + r.width / 2;
+      for (const c of cards) { const b = c.getBoundingClientRect(), d = Math.max(-1.6, Math.min(1.6, (b.left + b.width / 2 - mid) / b.width)); c.style.setProperty("--d", d.toFixed(3)); c.style.zIndex = String(10 - Math.round(Math.abs(d) * 3)); } };
+    let raf = 0; flow.addEventListener("scroll", () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(paint); }, { passive: true });
+    const step = (dir) => { const w = cards[0]?.getBoundingClientRect().width || 240; flow.scrollBy({ left: dir * (w + 16), behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }); };
+    flow.parentElement.querySelectorAll("[data-flow]").forEach((b) => b.addEventListener("click", () => step(+b.dataset.flow)));
+    flow.addEventListener("keydown", (e) => { if (e.key === "ArrowRight" || e.key === "ArrowLeft") { e.preventDefault(); step(e.key === "ArrowRight" ? 1 : -1); } });
+    new ResizeObserver(paint).observe(flow); paint();
+  }
   function viewHome() {
     const st = stats(), xp = st.xp, L = levelOf(xp), sk = streak(), tx = todayXp(), all = roll(lessons.map((l) => l.id));
     const nl = resumeLesson(), started = st.lessons > 0 || (S.recent || []).length > 0, t0 = nl ? trackOf(nl.unit) : cfg.tracks[0];
@@ -1000,7 +1012,19 @@ export function mountCourse(root, cfg) {
     const lessonLink = (l, sub) => `<a class="cx-ll" href="#/lesson/${l.id}">${dot(statusOf(l.id))}<span><b>${esc(l.title)}</b><small>${sub || `${U} ${l.unit.n}${l.module ? ` · ${esc(l.module)}` : ""}`}</small></span></a>`;
     const bar = (m) => `<span class="cx-mbar"><i style="width:${Math.round(m * 100)}%" class="${m >= 0.85 ? "hi" : m < 0.6 ? "lo" : ""}"></i></span>`;
     const hello = (() => { const h = new Date().getHours(); return h < 12 ? "Good morning" : h < 18 ? "Good afternoon" : "Good evening"; })();
-    main.innerHTML = `<section class="cx-hero" style="--a:${t0.from};--b:${t0.to}">
+    // this week as a row of bubbles: each day's XP against your daily goal, today the biggest
+    const byDay = {}; for (const r of S.log) byDay[day(r.t)] = (byDay[day(r.t)] || 0) + r.xp;
+    const ws = weekStart(), today = day();
+    const week7 = Array.from({ length: 7 }, (_, i) => { const t = ws + i * DAY, d = day(t), v = byDay[d] || 0; return { t, d, v, p: Math.min(1, v / Math.max(1, S.goal)), future: d > today, today: d === today }; });
+    const weekHtml = `<nav class="cx-week" aria-label="This week">${week7.map((w) => { const dt = new Date(w.t), wd = dt.toLocaleDateString(undefined, { weekday: "short" });
+      return `<a class="cx-wday${w.today ? " today" : ""}${w.future ? " future" : ""}${w.p >= 1 ? " met" : ""}" href="#/me" style="--p:${w.p}" aria-label="${dt.toLocaleDateString(undefined, { weekday: "long", day: "numeric", month: "long" })}: ${w.v} XP${w.p >= 1 ? ", daily goal reached" : ""}"><small>${w.today ? "Today" : esc(wd)}</small><b>${dt.getDate()}</b><em>${w.future ? "" : `${w.v} XP`}</em>${w.p >= 1 ? `<i class="cx-wok" aria-hidden="true">${ic("check")}</i>` : ""}</a>`; }).join("")}</nav>`;
+    // what's next, as a row of cards you can flick through (cover-flow): the one in the middle stands forward
+    const flowList = nl ? [nl, ...lessons.slice(lessons.indexOf(nl) + 1).filter((l) => !S.done[l.id]).slice(0, 9)] : [];
+    const flowHtml = flowList.length > 1 ? `<section class="cx-sec cx-flowsec"><div class="cx-sech"><h3>${ic("play")} Up next</h3><p>Swipe or use the arrows: the card in the middle is the next lesson.</p></div>
+      <div class="cx-flowwrap"><button type="button" class="cx-flowbtn prev" data-flow="-1" aria-label="Previous lessons">${ic("left")}</button>
+      <div class="cx-flow" tabindex="0" aria-label="Your next lessons">${flowList.map((l, k) => { const t = trackOf(l.unit); return `<a class="cx-fcard" href="${k === 0 ? resumeHref(l) : `#/lesson/${l.id}`}" style="--a:${t.from};--b:${t.to}"><span class="co-kicker">${k === 0 ? "Next" : `Then · ${k}`}</span><b>${esc(l.title)}</b><small>${U} ${l.unit.n} · ${esc(l.module || l.unit.title)}</small><span class="cx-fstat">${dot(statusOf(l.id))}${STATUS[statusOf(l.id)].label}</span></a>`; }).join("")}</div>
+      <button type="button" class="cx-flowbtn next" data-flow="1" aria-label="Next lessons">${ic("right")}</button></div></section>` : "";
+    main.innerHTML = `${weekHtml}<section class="cx-hero" style="--a:${t0.from};--b:${t0.to}">
         <div class="cx-herol">
           <span class="co-kicker">${started ? `${hello} · pick up where you left off` : `Welcome to ${esc(cfg.name)}`}</span>
           ${nl ? `<p class="cx-path"><a href="#/learn/${nl.unit.id}">${U} ${nl.unit.n} · ${esc(nl.unit.title)}</a>${g?.title ? `<span>›</span><span>${nl.unit.n}.${gi + 1} ${esc(g.title)}</span>` : ""}</p>
@@ -1008,7 +1032,7 @@ export function mountCourse(root, cfg) {
           <p class="cx-herometa">Lesson ${nl.i + 1} of ${nl.unit.lessons.length} · ${STATUS[statusOf(nl.id)].label}${depth > 0.05 && !S.done[nl.id] ? ` · ${pc(depth)} read` : ""}</p>
           <div class="cx-heroprog"><i style="width:${Math.round(roll(idsOf(nl.unit)).coverage * 100)}%"></i></div><small class="cx-herounit">${U} ${nl.unit.n}: ${unitDone(nl.unit)} of ${nl.unit.lessons.length} lessons done</small>
           <div class="co-row"><a class="btn btn-light lg" href="${resumeHref(nl)}" data-autofocus><span>${ic("play")} ${started ? "Continue learning" : "Start the first lesson"}</span></a><a class="btn btn-ghost lg" href="#/learn/${nl.unit.id}"><span>See it in the syllabus</span></a></div>
-          ${upnext.length ? `<div class="cx-upnext"><span class="co-kicker">Then</span>${upnext.map((l) => `<a href="#/lesson/${l.id}">${dot(statusOf(l.id))}${esc(l.title)}</a>`).join("")}</div>` : ""}`
+          ${upnext.length && !flowHtml ? `<div class="cx-upnext"><span class="co-kicker">Then</span>${upnext.map((l) => `<a href="#/lesson/${l.id}">${dot(statusOf(l.id))}${esc(l.title)}</a>`).join("")}</div>` : ""}`
           : `<h2>Course complete</h2><p class="cx-herometa">Every lesson is done. Keep it fresh with Revise, and push your mastery with target tests.</p><div class="co-row"><a class="btn btn-light lg" href="#/revise"><span>Revise</span></a></div>`}
         </div>
         <div class="cx-heror">
@@ -1017,6 +1041,7 @@ export function mountCourse(root, cfg) {
           <div class="cx-habit"><span class="cx-flame ${sk.today ? "lit" : ""}">${ic("flame")}<b>${sk.n}</b></span><div><b>${sk.n}-day streak</b><small>${sk.today ? "Kept today" : sk.n ? "Learn today to keep it" : "Start one today"}${sk.rest ? ` · ${sk.rest} rest day${sk.rest > 1 ? "s" : ""} banked` : ""}</small></div></div>
         </div>
       </section>
+      ${flowHtml}
       <section class="cx-sec"><div class="cx-sech"><h3>How long have you got?</h3><p>Pick a session and Gradify chooses the most useful thing to do with it.</p></div>
         <div class="cx-sessions">${sessions().map((x) => x.href ? `<a class="cx-sess" href="${x.href}"><span class="cx-sessi">${ic(x.icon)}</span><b>${x.t}</b><em>${x.m}</em><small>${esc(x.d)}</small></a>` : `<div class="cx-sess off"><span class="cx-sessi">${ic(x.icon)}</span><b>${x.t}</b><em>${x.m}</em><small>${esc(x.d)}</small></div>`).join("")}</div></section>
       <div class="cx-cols">
@@ -1044,6 +1069,7 @@ export function mountCourse(root, cfg) {
         ${marks.length ? `<section class="cx-panel"><div class="cx-sech"><h3>${ic("bookmarked")} Bookmarks</h3></div><div class="cx-lls">${marks.map(([id]) => lessonLink(byId[id])).join("")}</div></section>` : ""}</div>` : ""}
       <p class="cx-tip">${ic("search")} Press <kbd>/</kbd> or <kbd>${isMac ? "⌘" : "Ctrl"} K</kbd> anywhere in the course to jump to any lesson, topic or key term.</p>`;
     main.querySelectorAll("[data-rec]").forEach((a) => a.addEventListener("click", () => recs[a.dataset.rec].pre?.()));
+    wireFlow(main.querySelector(".cx-flow"));
   }
   const ago = (t) => { const m = Math.round((Date.now() - t) / 6e4); return m < 2 ? "just now" : m < 60 ? `${m} min ago` : m < 1440 ? `${Math.round(m / 60)} h ago` : `${Math.round(m / 1440)} d ago`; };
 
@@ -1123,8 +1149,19 @@ export function mountCourse(root, cfg) {
     return `<div class="cx-loop" aria-label="Your steps in this lesson">${steps.map(([k, t, icon]) => `<span class="cx-step ${on(k) ? "on" : ""}" data-step="${k}">${ic(on(k) ? "check" : icon)}<small>${t}</small></span>`).join("")}</div>
       <p class="cx-combo ${combo >= 3 ? "hot" : ""}" ${combo ? "" : "hidden"}>${ic("flame")}<span><b class="cx-combo-n">${combo}</b> in a row</span></p>`;
   }
+  // the ring rail (a lesson's progress at a glance): read, questions right, steps done
+  function paintRings(vals) {
+    for (const [k, v] of Object.entries(vals)) root.querySelectorAll(`.cx-rr[data-ring="${k}"]`).forEach((el) => {
+      const p = Math.max(0, Math.min(1, v)); el.querySelector(".fg").style.strokeDashoffset = String(100 - p * 100); el.querySelector("b").textContent = `${Math.round(p * 100)}%`; el.classList.toggle("full", p >= 1);
+    });
+  }
+  const stepsDone = () => { const all = root.querySelectorAll(".cx-w-steps .cx-step"), on = root.querySelectorAll(".cx-w-steps .cx-step.on"); return all.length ? on.length / all.length : 0; };
+  // the rail shows itself for a moment whenever you stop scrolling, and never stands in the way of a tap
+  let ringsT = 0;
+  const peekRings = () => { const r = root.querySelector(".cx-rings"); if (!r) return; r.classList.add("peek"); clearTimeout(ringsT); ringsT = setTimeout(() => r.classList.remove("peek"), 2600); };
   function lightStep(k) {
     if (k !== "done") loop[k] = true;
+    setTimeout(() => paintRings({ steps: stepsDone() }), 0);
     root.querySelectorAll(`.cx-step[data-step="${k}"]`).forEach((el) => { if (el.classList.contains("on")) return; el.classList.add("on", "pop"); el.querySelector("svg").outerHTML = ic("check"); });
   }
 
@@ -1191,6 +1228,7 @@ export function mountCourse(root, cfg) {
         pctShown = pct;
         const fg = root.querySelector(".co-rail .fg"); if (fg) fg.style.strokeDashoffset = String(fg.dataset.c * (1 - p));
         const t = root.querySelector(".co-readpct"); if (t) t.textContent = `${pct}% read`;
+        paintRings({ read: p });
         if (p >= 0.6) lightStep("read");
       }
       let cur = null; for (const [a, el] of targets()) { if (el.getBoundingClientRect().top < innerHeight * 0.3) cur = a; }
@@ -1201,6 +1239,7 @@ export function mountCourse(root, cfg) {
         const sn = main.querySelector(".cx-secname"); if (sn) { sn.textContent = cur.textContent; sn.hidden = false; }
       }
       if (!cur) { const sn = main.querySelector(".cx-secname"); if (sn) sn.hidden = true; }
+      peekRings();
     };
     // the questions: how many are right so far, in the section's header and the rail
     const count = () => {
@@ -1208,6 +1247,7 @@ export function mountCourse(root, cfg) {
       const ok = main.querySelectorAll(".co-check .aq.solved").length;
       root.querySelectorAll(".co-checkn").forEach((el) => { el.textContent = ok ? `${ok} of ${nQ} right${ok === nQ ? " · all done" : ""}` : `${nQ} question${nQ > 1 ? "s" : ""} · none answered yet`; el.classList.toggle("all", ok === nQ); });
       if (ok && ok >= Math.ceil(nQ / 2)) lightStep("check");
+      paintRings({ check: ok / nQ });
     };
     const mo = new MutationObserver(count); const chk = main.querySelector(".co-check"); if (chk) mo.observe(chk, { subtree: true, attributes: true, attributeFilter: ["class"] });
     count();
@@ -1401,7 +1441,7 @@ export function mountCourse(root, cfg) {
           <div class="mv-chips"><span class="co-chip cx-stchip s-${statusOf(id)}">${dot(statusOf(id))} ${STATUS[statusOf(id)].label}</span>${S.done[id] ? "" : `<span class="co-chip">${ic("bolt")} +${XP.lesson} XP</span>`}${mins ? `<span class="co-chip">${ic("clock")} About ${mins} min</span>` : ""}${N?.level ? `<span class="co-chip">${esc(N.level)}</span>` : ""}</div></header>
         ${N ? `<nav class="cx-kit" aria-label="Everything for this topic">
           ${nQ ? `<a class="cx-kc" href="#co-check" data-jump="co-check"><span>${ic("target")}</span><b>Check yourself</b><small>${nQ} question${nQ > 1 ? "s" : ""}</small></a>` : ""}
-          ${N.cards.length ? `<button type="button" class="cx-kc" data-cards><span>${ic("cards")}</span><b>Flashcards</b><small>${N.cards.length} card${N.cards.length > 1 ? "s" : ""}</small></button>` : ""}
+          ${N.cards.length ? `<button type="button" class="cx-kc cx-deck" data-cards style="--n:${Math.min(3, N.cards.length - 1)}"><span>${ic("cards")}</span><b>Flashcards</b><small>${N.cards.length} card${N.cards.length > 1 ? "s" : ""}</small></button>` : ""}
           ${nIx ? `<a class="cx-kc" href="#co-trylab" data-jump="co-trylab" data-kit-lab><span>${ic("cube")}</span><b>${PL === "Lab" ? "Interactive" : esc(PL)}</b><small>${nIx} to try</small></a>` : ""}
           <a class="cx-kc" href="#/quiz/${u.id}"><span>${ic("trophy")}</span><b>${U} quiz</b><small>${qz ? `best ${pc(qz.best)}` : `+${XP.quiz} XP`}</small></a>
           <a class="cx-kc" href="#/target/${encodeTest({ minutes: 5, scope: "lessons", lessons: (g?.lessons || [l]).map((x) => x.id) })}"><span>${ic("bolt")}</span><b>Target test</b><small>5 min · ${esc(g?.title || "this lesson")}</small></a>
@@ -1426,6 +1466,7 @@ export function mountCourse(root, cfg) {
         </footer>
       </div>
       <nav class="co-pn cx-pn3" aria-label="Other lessons">${card(prev, "prev")}${upCard}${nextCard}</nav>
+      <aside class="cx-rings" aria-label="Your progress in this lesson">${[["read", "Read", "book"], ...(nQ ? [["check", "Checks", "target"]] : []), ["steps", "Steps", "check"]].map(([k, t, icn]) => `<div class="cx-rr" data-ring="${k}"><span class="cx-rri">${icn ? ic(icn) : ""}<svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="15.5" class="bg"/><circle cx="18" cy="18" r="15.5" class="fg" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/></svg></span><b>0%</b><small>${t}</small></div>`).join("")}</aside>
     </article>`;
     // the rail beside the lesson: its sections, how far through you are, and its questions
     lessonRail = () => railHtml(l, N, nQ, mins, { u, g, nextL, quizNext });
@@ -1448,6 +1489,7 @@ export function mountCourse(root, cfg) {
     paintDock("lesson", l, prev && byId[prev.id], next && byId[next.id]);
     redrawTree?.(false);
     wireReading(id, nQ, N, prev && byId[prev.id], next && byId[next.id]);
+    setTimeout(() => { paintRings({ steps: stepsDone() }); peekRings(); }, 400);
     if (N) wireMaps(main, N, mapOpts(l));
     main.querySelectorAll("[data-cards]").forEach((b) => b.addEventListener("click", async () => { if (await gate("flashcards", `${cfg.slug}:${l.id}`, { store })) flashcards(N.cards, l, N); }));
     main.querySelector("[data-save]")?.addEventListener("click", (e) => saveLesson(l, N, e.currentTarget));
@@ -1765,7 +1807,7 @@ export function mountCourse(root, cfg) {
     const due = dueCards().length, total = cardPool.length, rq = revisionQueue(S.attempts || [], { limit: 200 }).length, w = weakTargets(), studied = Object.keys(S.done).length;
     const ready = units.filter((u) => unitDone(u) === u.lessons.length && !S.quiz[u.id]?.pass), written = units.filter(isWritten);
     const T = S.ttPrefs || { minutes: 10, focus: "mixed", scope: w.length ? "weak" : studied ? "studied" : "units", units: [] };
-    const card = (icon, kick, h, d, href, cta, n, off) => `<${off ? "div" : `a href="${href}"`} class="cx-rcard ${off ? "off" : ""}"><span class="cx-rci">${ic(icon)}${n ? `<i>${n}</i>` : ""}</span><span class="co-kicker">${kick}</span><b>${h}</b><p>${d}</p><span class="cx-rgo">${cta} ${off ? "" : ic("right")}</span></${off ? "div" : "a"}>`;
+    const card = (icon, kick, h, d, href, cta, n, off) => `<${off ? "div" : `a href="${href}"`} class="cx-rcard ${off ? "off" : ""}${icon === "cards" && n ? " cx-deck" : ""}" style="--n:${Math.min(3, Math.max(0, (n || 0) - 1))}"><span class="cx-rci">${ic(icon)}${n ? `<i>${n}</i>` : ""}</span><span class="co-kicker">${kick}</span><b>${h}</b><p>${d}</p><span class="cx-rgo">${cta} ${off ? "" : ic("right")}</span></${off ? "div" : "a"}>`;
     main.innerHTML = `<div class="co-intro"><span class="co-kicker">Revise</span><h2>Revise what matters most</h2><p>Learn → recall → apply → review → improve. Everything here comes from your own answers: what's due, what you got wrong, and what's slipping.</p></div>
       <div class="cx-rgrid">
         ${card("cards", "Spaced review", due ? `${due} flashcard${due === 1 ? "" : "s"} due` : total ? "All caught up" : "No cards yet", total ? `${Object.keys(S.cards).length} of ${total} cards seen. Each comes back just before you'd forget it.` : "Complete lessons and their flashcards join your review queue.", "#/review", due ? "Review now" : "Open", due, !due && !total)}
@@ -2042,8 +2084,13 @@ export function mountCourse(root, cfg) {
       ${topicMapHtml()}
       ${masteryHtml()}
       ${insightHtml()}
-      <section class="co-panel"><h3>Activity</h3><div class="co-heat">${cells}</div><p class="co-dayinfo">Pick a day to see what you did.</p></section>
-      <section class="co-panel"><h3>XP, last 14 days</h3><div class="co-bars">${last14.map(([d, v]) => `<div title="${d}: ${v} XP"><i style="height:${(v / mx) * 100}%" class="${v >= S.goal ? "hit" : ""}"></i><small>${d.slice(8)}</small></div>`).join("")}<span class="co-goalline" style="bottom:${(S.goal / mx) * 100}%">goal ${S.goal}</span></div></section>
+      <section class="co-panel cx-activity"><div class="cx-acth"><h3>Activity</h3><span>${Object.keys(byDay).length} day${Object.keys(byDay).length === 1 ? "" : "s"} learning · best streak ${sk.best}</span></div>
+        <div class="cx-heatwrap"><div class="cx-heatwd" aria-hidden="true">${["Mon", "", "Wed", "", "Fri", "", "Sun"].map((x) => `<small>${x}</small>`).join("")}</div>
+        <div><div class="cx-heatm" aria-hidden="true">${Array.from({ length: weeks }, (_, w) => { const t = start + w * 7 * DAY, d = new Date(t), prev = new Date(t - 7 * DAY); return `<small>${w === 0 || d.getMonth() !== prev.getMonth() ? d.toLocaleDateString(undefined, { month: "short" }) : ""}</small>`; }).join("")}</div>
+        <div class="co-heat">${cells}</div></div></div>
+        <div class="cx-heatkey" aria-hidden="true"><small>Less</small>${[0, .25, .5, .75, 1].map((v) => `<i style="--v:${v}"></i>`).join("")}<small>Goal met</small></div>
+        <p class="co-dayinfo">Pick a day to see what you did.</p></section>
+      <section class="co-panel cx-capsules"><div class="cx-acth"><h3>XP, last 14 days</h3><span>${last14.reduce((a, x) => a + x[1], 0).toLocaleString()} XP · goal ${S.goal} a day</span></div><div class="co-bars">${last14.map(([d, v]) => `<div title="${d}: ${v} XP"><span class="cx-cap"><i style="height:${Math.max(v ? 8 : 0, (v / mx) * 100)}%" class="${v >= S.goal ? "hit" : ""}"></i></span><small>${new Date(d + "T12:00").toLocaleDateString(undefined, { weekday: "narrow" })}</small></div>`).join("")}<span class="co-goalline" style="bottom:${(S.goal / mx) * 100}%">goal ${S.goal}</span></div></section>
       <section class="co-panel"><h3>${TW}s</h3><div class="co-mastery">${cfg.tracks.map((t) => { const us = t.units.map((n) => units.find((u) => u.n === n)).filter(Boolean), tot = us.reduce((a, u) => a + u.lessons.length, 0), dn = us.reduce((a, u) => a + unitDone(u), 0); return `<div style="--a:${t.from};--b:${t.to}"><span>${esc(t.name)}</span><div class="co-bar"><i style="width:${(dn / tot) * 100}%"></i></div><small>${dn}/${tot}</small></div>`; }).join("")}</div></section>
       <section class="co-panel"><h3>Badges</h3>${[["Understanding", "Earned only from what your answers show you understand and remember. XP can't buy these.", true], ["Activity", "For keeping going: lessons, streaks, reviews and XP.", false]].map(([h, sub, u]) => `<h4>${h}</h4><p class="co-acct">${sub}</p><div class="co-badgelist">${BADGES.filter((b) => !!b.understanding === u).map((b) => `<div class="${b.ok(st) ? "on" : ""}">${ic(b.ok(st) ? "star" : "lock")}<b>${b.name}</b><small>${b.d}</small></div>`).join("")}</div>`).join("")}</section>
       <section class="co-panel co-saved"><h3>Saved to your account</h3>${skeleton("list", 3)}</section>`;

@@ -1426,7 +1426,7 @@ section[data-tab] { gap: 16px; }
 .offer-page > .sub { margin: 0; }
 .offer-perks { list-style: none; margin: 6px 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
 .offer-perks li { display: flex; gap: 12px; align-items: flex-start; padding: 16px; }
-.offer-perks li > svg { flex: none; width: 22px; height: 22px; color: #f055dd; }
+.offer-perks li > svg { flex: none; width: 22px; height: 22px; color: #f055dd; color: light-dark(#b2069d, #f055dd); }
 .offer-perks b { display: block; margin-bottom: 2px; }
 .offer-perks span { color: var(--mute); font-size: 14px; line-height: 1.45; }
 .offer-box { display: grid; gap: 8px; border: 1px solid transparent; background: linear-gradient(var(--panel-strong), var(--panel-strong)) padding-box, linear-gradient(135deg, #4641ff, #f055dd 35%, #ff5600 70%, #ffc002) border-box; }

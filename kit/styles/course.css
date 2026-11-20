@@ -1732,7 +1732,7 @@ html[data-motion="reduce"] .co-main.cx-enter { animation: none; }
 .cx-fback::before { content: ""; position: absolute; right: 0; top: -16px; width: 48%; height: 34px; border-radius: 14px 22px 0 0; background: linear-gradient(90deg, color-mix(in srgb, var(--a) 35%, var(--b)), var(--b)); box-shadow: inset 0 1px 0 rgba(var(--spec-rgb), .45); }
 .cx-fback::after { content: ""; position: absolute; right: calc(48% - 12px); top: -16px; width: 26px; height: 18px; background: color-mix(in srgb, var(--a) 35%, var(--b)); clip-path: polygon(100% 0, 100% 100%, 0 100%); }
 /* a sheet of paper inside, peeking out, which lifts as you hover or open the folder */
-.cx-fpaper { position: absolute; left: 9%; right: 9%; top: 24px; height: 46px; border-radius: 10px; background: repeating-linear-gradient(180deg, transparent 0 9px, rgba(22, 22, 48, .08) 9px 10px), linear-gradient(#fff, #f1f1f6); box-shadow: 0 -2px 8px rgba(0, 0, 0, .14); transition: transform .35s cubic-bezier(.2, .9, .3, 1.3); }
+.cx-fpaper { position: absolute; left: 9%; right: 9%; top: 24px; height: 46px; border-radius: 10px; background: repeating-linear-gradient(180deg, transparent 0 9px, rgba(22, 22, 48, .08) 9px 10px), linear-gradient(#fff, #f1f1f6); background: repeating-linear-gradient(180deg, transparent 0 9px, light-dark(rgba(241, 241, 249, .08), rgba(22, 22, 48, .08)) 9px 10px), linear-gradient(#fff, #f1f1f6); box-shadow: 0 -2px 8px rgba(0, 0, 0, .14); transition: transform .35s cubic-bezier(.2, .9, .3, 1.3); }
 /* the front: frosted glass over the colour, with the module's name and progress */
 .cx-ffront { position: absolute; inset: 52px 0 0; z-index: 1; display: flex; flex-direction: column; justify-content: space-between; gap: 6px; padding: 14px 14px 12px 16px; border-radius: 22px;
   background: var(--grain), linear-gradient(180deg, rgba(var(--spec-rgb), .14), rgba(var(--spec-rgb), .02)), rgba(var(--surface-rgb), .58);
@@ -1797,3 +1797,139 @@ html[data-motion="reduce"] .co-main.cx-enter { animation: none; }
 /* narrow phones: the toolbar keeps every control on screen (the step bar under it already shows where you are) */
 @media (max-width: 420px) { .cx-lbar .cx-pn small { display: none; } }
 @media (max-width: 350px) { .cx-lbar [data-focus] { display: none; } }
+
+
+/* ---------- From the reference boards: day bubbles, cover-flow, a ring rail, stacked decks, an activity board ---------- */
+/* this week, as bubbles: each fills with the course's colours as the day's XP reaches the goal; today stands larger */
+.cx-week { display: flex; gap: 10px; margin: 0 0 18px; padding: 4px 2px 8px; overflow-x: auto; scrollbar-width: none; }
+.cx-week::-webkit-scrollbar { display: none; }
+.cx-wday { position: relative; flex: none; display: grid; place-items: center; align-content: center; gap: 1px; width: 74px; height: 74px; border-radius: 50%; text-decoration: none; color: var(--fg);
+  background: radial-gradient(70% 50% at 35% 18%, rgba(var(--spec-rgb), .35), transparent 70%), conic-gradient(from -90deg, var(--a, #4641ff) 0, var(--b, #40d4b1) calc(var(--p) * 360deg), rgba(var(--ink-rgb), .07) 0);
+  box-shadow: inset 0 1.5px 0 rgba(var(--spec-rgb), .6), inset 0 0 0 1px rgba(var(--ink-rgb), .1), 0 12px 24px -16px rgba(0, 0, 0, .5); transition: transform .2s; }
+.cx-wday::before { content: ""; position: absolute; inset: 5px; border-radius: 50%; z-index: 0; background: rgba(var(--surface-rgb), .78); box-shadow: inset 0 1px 0 rgba(var(--spec-rgb), .35); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.cx-wday > * { position: relative; z-index: 1; }
+.cx-wday small { font: 600 10.5px var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--mute); }
+.cx-wday b { font-size: 21px; line-height: 1; letter-spacing: -.03em; }
+.cx-wday em { font: 500 10.5px var(--sans); font-style: normal; color: var(--mute); }
+.cx-wday.today { width: 92px; height: 92px; }
+.cx-wday.today b { font-size: 27px; }
+.cx-wday.today::before { background: rgba(var(--surface-rgb), .6); }
+.cx-wday.met::before { background: linear-gradient(140deg, color-mix(in srgb, var(--a, #4641ff) 40%, rgba(var(--surface-rgb), .7)), color-mix(in srgb, var(--b, #40d4b1) 40%, rgba(var(--surface-rgb), .7))); }
+.cx-wday.future { opacity: .45; }
+.cx-wday:hover { transform: translateY(-3px); }
+.cx-wok { position: absolute; z-index: 2; right: 2px; top: 2px; display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: var(--s-mastered); color: #fff; }
+.cx-wok .co-ic { width: 13px; height: 13px; }
+.cx-week { align-items: center; }
+.co .cx-week { --a: var(--la); --b: var(--lb); }
+
+/* up next, as cover-flow: cards snap to the middle; the middle one stands forward, the rest lean away */
+.cx-flowwrap { position: relative; }
+.cx-flow { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 26px calc(50% - 130px) 30px; perspective: 1100px; scrollbar-width: none; outline: none; }
+.cx-flow::-webkit-scrollbar { display: none; }
+.cx-flow:focus-visible { box-shadow: 0 0 0 2px var(--fg); border-radius: 24px; }
+.cx-fcard { --d: 0; flex: none; scroll-snap-align: center; position: relative; display: flex; flex-direction: column; gap: 6px; width: 260px; min-height: 200px; padding: 20px; border-radius: 28px; color: #fff; text-decoration: none; overflow: hidden;
+  background: radial-gradient(80% 60% at 20% 10%, rgba(255, 255, 255, .35), transparent 60%), radial-gradient(90% 90% at 90% 100%, rgba(0, 0, 0, .35), transparent 60%), linear-gradient(140deg, var(--a), var(--b));
+  box-shadow: inset 0 1.5px 0 rgba(255, 255, 255, .55), inset 0 0 0 1px rgba(255, 255, 255, .18), 0 24px 44px -24px color-mix(in srgb, var(--a) 80%, transparent);
+  transform: rotateY(calc(var(--d) * -28deg)) scale(calc(1 - min(abs(var(--d)), 1.4) * .14)) translateZ(0); transition: transform .12s linear, filter .2s; filter: saturate(calc(1 - min(abs(var(--d)), 1) * .35)) brightness(calc(1 - min(abs(var(--d)), 1) * .12)); }
+.cx-fcard .co-kicker { color: rgba(255, 255, 255, .85); }
+.cx-fcard b { font-size: 21px; line-height: 1.2; letter-spacing: -.02em; text-shadow: 0 1px 12px rgba(0, 0, 0, .25); }
+.cx-fcard small { color: rgba(255, 255, 255, .85); font-size: 13px; }
+.cx-fstat { margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 99px; font: 600 12px var(--sans); background: rgba(var(--sink-rgb), .25); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3); }
+.cx-flowbtn { position: absolute; top: 50%; z-index: 20; translate: 0 -50%; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(var(--ink-rgb), .14); background: rgba(var(--surface-rgb), .7); color: var(--fg); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); box-shadow: inset 0 1px 0 rgba(var(--spec-rgb), .4), 0 10px 22px -12px rgba(0, 0, 0, .6); cursor: pointer; }
+.cx-flowbtn.prev { left: 4px; } .cx-flowbtn.next { right: 4px; }
+.cx-flowbtn .co-ic { width: 18px; height: 18px; }
+@media (max-width: 760px) { .cx-flow { padding-inline: calc(50% - 115px); } .cx-fcard { width: 230px; } .cx-flowbtn { display: none; } }
+
+/* the ring rail: a dark capsule at the window's edge with your progress in this lesson, shown while you pause */
+.cx-rings { position: fixed; right: max(8px, env(safe-area-inset-right)); top: 50%; z-index: 120; translate: 0 -50%; display: none; flex-direction: column; gap: 14px; padding: 16px 9px; border-radius: 40px; pointer-events: none;
+  background: #050507; color: #fff; box-shadow: 0 18px 40px -16px rgba(0, 0, 0, .7), inset 0 1px 0 rgba(255, 255, 255, .14); opacity: 0; transform: translateX(16px); transition: opacity .35s, transform .35s; }
+.cx-rings.peek { opacity: 1; transform: none; }
+@media (max-width: 1020px) { .co-reading .cx-rings { display: flex; } }
+html.cx-focus .cx-rings { display: none !important; }
+.cx-rr { display: grid; justify-items: center; gap: 2px; }
+.cx-rri { position: relative; display: grid; place-items: center; width: 40px; height: 40px; }
+.cx-rri > svg:not(.co-ic) { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-90deg); }
+.cx-rri .co-ic { width: 16px; height: 16px; }
+.cx-rri circle { fill: none; stroke-width: 3.2; }
+.cx-rri .bg { stroke: rgba(var(--ink-rgb), .16); }
+.cx-rri .fg { stroke-linecap: round; stroke: var(--la, #40d4b1); transition: stroke-dashoffset .4s; }
+.cx-rr[data-ring="check"] .fg { stroke: #34d399; } .cx-rr[data-ring="steps"] .fg { stroke: #ffc002; }
+.cx-rr b { font: 600 11px var(--sans); } .cx-rr small { font: 500 9.5px var(--mono); letter-spacing: .04em; color: rgba(var(--ink-rgb), .6); }
+.cx-rr.full .cx-rri { filter: drop-shadow(0 0 6px currentColor); }
+
+/* stacked decks: a set of flashcards looks like one, with cards fanned behind it */
+.cx-deck { --n: 2; --deck: color-mix(in srgb, var(--la, var(--a, #4641ff)) 40%, rgba(var(--surface-rgb), .9)); }
+.co-reading .cx-kc.cx-deck, .cx-rcard.cx-deck { box-shadow: 0 -7px 0 -3px var(--deck), 0 -13px 0 -6px color-mix(in srgb, var(--deck) 70%, transparent), 0 14px 26px -18px rgba(0, 0, 0, .6) !important; transition: box-shadow .25s, transform .25s; }
+.co-reading .cx-kc.cx-deck:hover, .cx-rcard.cx-deck:hover { transform: translateY(-3px); box-shadow: 0 -11px 0 -3px var(--deck), 0 -21px 0 -6px color-mix(in srgb, var(--deck) 70%, transparent), 0 18px 30px -18px rgba(0, 0, 0, .6) !important; }
+
+/* the activity board: round days in rows, with months and weekdays; capsule bars for the last two weeks */
+.cx-acth { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 12px; margin-bottom: 14px; }
+.cx-acth h3 { margin: 0; } .cx-acth span { font-size: 13px; color: var(--mute); }
+.cx-activity, .cx-capsules { border-radius: 28px; }
+.cx-heatwrap { display: grid; grid-template-columns: auto 1fr; gap: 8px; overflow-x: auto; }
+.cx-heatwd { display: grid; grid-template-rows: 18px repeat(7, 1fr); gap: 5px; }
+.cx-heatwd::before { content: ""; }
+.cx-heatwd small, .cx-heatm small { font: 500 10.5px var(--mono); color: var(--mute); line-height: 1; align-self: center; }
+.cx-heatm { display: grid; grid-auto-flow: column; grid-auto-columns: 17px; gap: 5px; height: 18px; margin-bottom: 0; }
+.cx-heatm small { white-space: nowrap; overflow: visible; }
+.cx-activity .co-heat { gap: 5px; grid-auto-columns: 17px; }
+.cx-activity .co-heat > * { width: 17px; height: 17px; border-radius: 50%; }
+.cx-activity .co-heat button { background: radial-gradient(circle at 35% 30%, rgba(var(--spec-rgb), calc(var(--v) * .55)), transparent 60%), color-mix(in srgb, #40d4b1 calc(var(--v) * 100%), rgba(var(--ink-rgb), .08)); box-shadow: 0 0 calc(var(--v) * 10px) color-mix(in srgb, #40d4b1 calc(var(--v) * 70%), transparent); }
+.cx-heatkey { display: flex; align-items: center; gap: 5px; margin-top: 12px; }
+.cx-heatkey i { width: 13px; height: 13px; border-radius: 50%; background: color-mix(in srgb, #40d4b1 calc(var(--v) * 100%), rgba(var(--ink-rgb), .08)); }
+.cx-heatkey small { font: 500 11px var(--sans); color: var(--mute); margin: 0 4px; }
+.cx-capsules .co-bars { gap: 8px; height: 190px; padding-bottom: 24px; }
+.cx-capsules .co-bars div { justify-content: flex-end; }
+.cx-cap { position: relative; display: flex; align-items: flex-end; width: 100%; max-width: 30px; height: 100%; border-radius: 99px; overflow: hidden; background: rgba(var(--ink-rgb), .08); box-shadow: inset 0 1px 2px rgba(0, 0, 0, .15); }
+.cx-cap i { width: 100%; border-radius: 99px; background: linear-gradient(0deg, rgba(var(--ink-rgb), .35), rgba(var(--ink-rgb), .6)); box-shadow: inset 0 1.5px 0 rgba(var(--spec-rgb), .6); }
+.cx-cap i.hit { background: linear-gradient(0deg, var(--la, #4641ff), var(--lb, #40d4b1)); }
+.cx-capsules .co-bars small { position: static; margin-top: 6px; }
+@media (prefers-reduced-motion: reduce) { .cx-fcard, .cx-rings, .cx-wday, .cx-deck { transition: none !important; } }
+/* touch: the activity board's days stay 30px, like the rest of the course's touch targets */
+@media (pointer: coarse) { .cx-activity .co-heat { grid-auto-columns: 30px; grid-template-rows: repeat(7, 30px); } .cx-activity .co-heat > * { width: 30px; height: 30px; } .cx-heatm { grid-auto-columns: 30px; } .cx-heatwd { grid-template-rows: 18px repeat(7, 30px); } }
+
+/* ---------- Calmer lessons, steadier widgets, an easier outline ----------
+   Less on the lesson's first screen: its facts as one quiet line, what it builds on as plain links, the draft note
+   in a line, the topic's tools in a grid that wraps instead of cutting words off, and the notes in one reading
+   column. Widgets share one padding; the outline's rows are bigger, wrap instead of truncating, and show focus. */
+.co-reading .co-lhead .mv-chips { gap: 4px 0; margin-top: 18px; }
+.co-reading .co-lhead .mv-chips > *, :root[data-theme="light"] .co-reading .co-lhead .mv-chips > * {
+  padding: 0 !important; border: 0 !important; background: none !important; box-shadow: none !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important;
+  font: 500 13.5px var(--sans); color: var(--mute); }
+.co-reading .co-lhead .mv-chips > *::after { display: none !important; }
+.co-reading .co-lhead .mv-chips > * + *::before { content: "·"; margin: 0 10px; color: rgba(var(--ink-rgb), .3); }
+.co-reading .co-lhead .mv-chips .co-ic { width: 14px; height: 14px; }
+.co-reading .co-builds { display: block; font-size: 13.5px; color: var(--mute); line-height: 1.7; }
+.co-reading .co-builds a { display: inline; padding: 0; border: 0; background: none; box-shadow: none; border-radius: 0; color: var(--fg); text-decoration: underline; text-decoration-color: rgba(var(--ink-rgb), .25); text-underline-offset: 3px; }
+.co-reading .co-builds a + a::before { content: ", "; color: var(--mute); display: inline-block; text-decoration: none; }
+.co-reading .co-builds a i { font-style: normal; color: var(--mute); font-size: 12px; }
+.co-reading .co-draft { padding: 10px 14px; font-size: 13px; line-height: 1.5; border-style: solid; border-color: rgba(var(--ink-rgb), .12); }
+.co-reading .cx-kit { grid-template-columns: repeat(auto-fill, minmax(176px, 1fr)); gap: 12px; margin: 26px 0 14px; }
+.co-reading .cx-kc { min-height: 64px; padding: 12px 14px; grid-template-columns: 38px minmax(0, 1fr); column-gap: 12px; }
+.co-reading .cx-kc b { font-size: 14.5px; line-height: 1.25; }
+.co-reading .cx-kc small { white-space: normal; overflow: visible; line-height: 1.35; }
+.co-reading .co-read .mv-cols { columns: 1; max-width: 70ch; }
+.co-reading .co-read .mv-cols p, .co-reading .co-read .mv-cols ul { font-size: 16.5px; line-height: 1.75; }
+.co-reading .co-read .mv-cols section { margin-bottom: 34px; }
+
+/* the rail's widgets: one padding, and nothing spills */
+.co-reading .cx-widget { padding: 18px 18px 20px; gap: 12px; overflow: hidden; }
+.co-reading .cx-widget :is(b, small, p, a) { overflow-wrap: anywhere; }
+.co-reading .co-railq .co-checkn { padding: 10px 12px; font: 500 13px var(--sans); letter-spacing: 0; text-transform: none; }
+.co-reading .cx-loop { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 4px 0; }
+.co-reading .cx-step { display: flex; align-items: center; gap: 8px; min-height: 40px; padding: 8px 10px; border-radius: 14px; font-size: 13px; }
+.co-reading .cx-step small { font: 600 12.5px var(--sans); white-space: nowrap; }
+.co-reading .cx-step .co-ic { flex: none; width: 16px; height: 16px; }
+
+/* the outline: bigger rows, two lines before an ellipsis, sticky stage headings, visible focus */
+.co-reading .cx-tree { --row: 40px; }
+.co-reading .cx-tf { margin: 0 14px 10px; min-height: 42px; border-radius: 14px; }
+.co-reading .cx-tf input { font-size: 14px; padding: 10px 0; }
+.co-reading .cx-tb { padding: 0 10px 14px; }
+.co-reading .cx-tg { position: sticky; top: 0; z-index: 2; margin: 10px 0 4px; padding: 8px 8px 6px; background: rgb(var(--surface-rgb)); border-radius: 10px; box-shadow: 0 6px 10px -6px rgba(var(--surface-rgb), 1); }
+.co-reading .cx-unit > summary { min-height: var(--row); padding: 8px 10px; font-size: 14px; grid-template-columns: 28px minmax(0, 1fr) auto; }
+.co-reading .cx-ut { white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; line-height: 1.3; }
+.co-reading .cx-l { min-height: 36px; padding: 8px 10px; font-size: 13.5px; border-radius: 12px; }
+.co-reading .cx-l.here { box-shadow: inset 4px 0 0 var(--la, var(--a)), inset 0 1px 0 rgba(var(--spec-rgb), .25); }
+.co-reading .cx-mt { margin: 12px 8px 4px; font-size: 13px; }
+.co-reading .cx-tree :is(a, summary, button, input):focus-visible { outline: 2px solid var(--la, var(--fg)); outline-offset: 2px; }
