@@ -15,11 +15,11 @@
       "mastery-card": {
         "n": 6951,
         "base": 0.8525,
-        "logLoss": 0.5392,
-        "brier": 0.1818,
-        "auc": 0.5458,
-        "ece": 0.1193,
-        "rmseBins": 0.238
+        "logLoss": 0.4753,
+        "brier": 0.1521,
+        "auc": 0.5514,
+        "ece": 0.0678,
+        "rmseBins": 0.1686
       },
       "learner-mean": {
         "n": 6951,
@@ -73,6 +73,15 @@
       "gradify-mastery": {
         "n": 2673,
         "base": 0.5672,
+        "logLoss": 0.6559,
+        "brier": 0.2316,
+        "auc": 0.6418,
+        "ece": 0.0292,
+        "rmseBins": 0.0353
+      },
+      "gradify-blend": {
+        "n": 2673,
+        "base": 0.5672,
         "logLoss": 0.6903,
         "brier": 0.2471,
         "auc": 0.5752,
@@ -124,15 +133,15 @@
       "gradify": {
         "n": 852,
         "base": 0.5246,
-        "logLoss": 0.7192,
-        "brier": 0.256,
-        "auc": 0.6444,
-        "ece": 0.1424,
-        "rmseBins": 0.1569,
-        "meanAbsError": 0.1636,
-        "bias": -0.1193,
-        "interval80": 0.8556,
-        "intervalWidth": 0.4874
+        "logLoss": 0.6666,
+        "brier": 0.236,
+        "auc": 0.6458,
+        "ece": 0.0425,
+        "rmseBins": 0.061,
+        "meanAbsError": 0.1267,
+        "bias": -0.0121,
+        "interval80": 0.8016,
+        "intervalWidth": 0.4069
       },
       "beta-no-forgetting": {
         "n": 852,
@@ -154,14 +163,14 @@
     "good": 28,
     "flawed": 26,
     "detection": {
-      "blocked": 0.231,
+      "blocked": 0.154,
       "flagged": 0.577
     },
     "falseRejection": {
-      "blocked": 0.071,
-      "flagged": 0.071
+      "blocked": 0,
+      "flagged": 0
     },
-    "goodRewritten": 0.036,
+    "goodRewritten": 0,
     "byDefect": {
       "ambiguous": {
         "n": 3,
@@ -185,7 +194,7 @@
       },
       "trivial": {
         "n": 1,
-        "blocked": 1,
+        "blocked": 0,
         "flagged": 1
       },
       "ungrounded": {
@@ -205,7 +214,7 @@
       },
       "wrong": {
         "n": 7,
-        "blocked": 0.143,
+        "blocked": 0,
         "flagged": 0.286
       },
       "yes-no": {
