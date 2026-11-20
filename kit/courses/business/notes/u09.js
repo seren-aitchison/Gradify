@@ -95,7 +95,7 @@ M2#business-u09-02-q2@2: Why are people with industry experience more likely to 
 M3#business-u09-02-q3@3: An entrepreneur has a clever product idea but no evidence anyone will pay. What should she do first? | Test demand cheaply with potential customers | Rent premises and hire staff | Borrow a large bank loan | Launch a national advertising campaign | Testing demand before committing resources reduces risk.
 MATCH1#business-u09-02-q4@2: Match each change to the opportunity it might create. | Ageing population = Home care services ; Stricter recycling rules = Waste-reduction products ; Remote working = Collaboration software ; Rising energy prices = Insulation services | Change creates new needs.
 SA3#business-u09-02-q5@2,3: Evaluate the claim that entrepreneurs are born, not made. | Some traits, such as tolerance of uncertainty and proactivity, are associated with entrepreneurship and may be partly innate. But evidence on traits predicting success is mixed, and many entrepreneurial skills, such as opportunity testing, networking, financial planning and resilience, can be learned through education and experience. Context, resources and networks also shape who becomes an entrepreneur. | Traits evidence ; Mixed findings ; Learnable skills ; Context and resources
-Q: Name four of Drucker's sources of innovation. | Unexpected events, incongruities, process needs, industry structure changes, demographic change, changes in perception and new knowledge.
+Q: When does an idea become an opportunity? | Only when customers will pay and the venture can deliver profitably.
 Q: Besides Drucker's sources, what else creates openings for entrepreneurs? | Technological change, regulation, social trends such as sustainability, and customer frustrations.
 Q: How do people commonly recognise opportunities? | Through prior knowledge of a market or problem, and through networks.
 Q: What is prior knowledge in opportunity recognition? | Existing understanding of a market or problem that helps someone see an opportunity.
@@ -373,7 +373,7 @@ Q: What does a registered design protect, and for how long? | A product's appear
 Q: How long does copyright generally last for literary works? | The author's life plus 70 years.
 Q: How are trade secrets protected? | By confidentiality agreements and the law of confidence, for as long as they stay secret.
 Q: Which body grants registered IP rights in the UK? | The Intellectual Property Office.
-Q: Is UK IP protection valid abroad? | No; protection is territorial, so separate applications are needed abroad.
+Q: Why is UK IP protection not enough for selling abroad? | Protection is territorial, so separate applications are needed abroad.
 Q: Name three ways a start-up can earn value from its IP. | It can attract investors, be licensed for income or be sold.
 Q: Why might some firms not rely on patents? | They can be expensive to obtain and enforce, so firms use secrecy, speed to market or strong brands.
 
@@ -687,7 +687,7 @@ Q: When did the Design Council introduce the Double Diamond? | In 2005.
 Q: What does the first diamond of the Double Diamond aim to find? | The right problem, through discover and define.
 Q: What does the second diamond aim to find? | The right solution, through develop and deliver.
 Q: What do diverge and converge mean in the Double Diamond? | Diverging opens up possibilities; converging narrows them down.
-Q: Are design thinking stages strictly linear? | No, teams loop back as they learn.
+Q: How do teams move through the stages of design thinking? | Not strictly in a line: they loop back as they learn.
 Q: What is a prototype? | An early, simple model of a solution used to test ideas.
 Q: Name two criticisms of design thinking. | It can be applied superficially as workshops, and can neglect technical, organisational and commercial constraints.
 Q: What problem was defined in the hospital waiting example? | Anxious patients do not know how long they will wait or what will happen next.
@@ -795,5 +795,5 @@ Q: What is B Corp certification? | A private label for companies meeting standar
 Q: What is the double bottom line? | The need to earn enough to survive while delivering a social mission.
 Q: What is social return on investment? | An estimate of the social value created per pound invested.
 Q: Why must SROI figures be treated with care? | They rely on assumptions.
-Q: Can social enterprises make a profit? | Yes, they can and must make surpluses, but reinvest them mainly in their mission.
+Q: What do social enterprises do with their surpluses? | They must make surpluses but reinvest them mainly in their mission.
 `;
