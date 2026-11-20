@@ -1,0 +1,92 @@
+{
+ "id": "chem-catalysed-profile",
+ "renderer": "energy-profile",
+ "course": "chemistry",
+ "lesson": "Catalysts",
+ "title": "A catalyst lowers the activation energy",
+ "caption": "A catalyst provides an alternative route with a lower activation energy. The reactants and products, and so ΔH, are unchanged; more collisions now have enough energy, so the reaction is faster.",
+ "alt": "Two profiles with the same start and end: uncatalysed with a high peak, catalysed with a lower peak.",
+ "description": [
+  "Uncatalysed: a high activation energy.",
+  "Catalysed: the same reactants and products, a lower barrier.",
+  "ΔH is the same for both."
+ ],
+ "profiles": [
+  {
+   "title": "uncatalysed",
+   "colour": "a1",
+   "points": [
+    {
+     "x": 0,
+     "e": 50,
+     "kind": "start",
+     "label": "reactants"
+    },
+    {
+     "x": 0.5,
+     "e": 130,
+     "kind": "ts",
+     "label": "TS"
+    },
+    {
+     "x": 1,
+     "e": 10,
+     "kind": "end",
+     "label": "products"
+    }
+   ],
+   "expect": {
+    "ts": 1,
+    "int": 0,
+    "dh": "exothermic"
+   },
+   "ea": [
+    {
+     "from": 0,
+     "to": 1,
+     "label": "Ea",
+     "dx": 0,
+     "anchor": "start"
+    }
+   ]
+  },
+  {
+   "title": "catalysed",
+   "colour": "a4",
+   "points": [
+    {
+     "x": 0,
+     "e": 50,
+     "kind": "start",
+     "label": "reactants"
+    },
+    {
+     "x": 0.5,
+     "e": 85,
+     "kind": "ts",
+     "label": "TS"
+    },
+    {
+     "x": 1,
+     "e": 10,
+     "kind": "end",
+     "label": "products"
+    }
+   ],
+   "expect": {
+    "ts": 1,
+    "int": 0,
+    "dh": "exothermic"
+   },
+   "ea": [
+    {
+     "from": 0,
+     "to": 1,
+     "label": "Ea",
+     "dx": 0,
+     "anchor": "start"
+    }
+   ]
+  }
+ ]
+}

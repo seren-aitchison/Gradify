@@ -6710,5 +6710,3274 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "chem-activation-energy": {
+  "title": "Activation energy",
+  "caption": "The activation energy is the minimum energy colliding particles need to react: the height of the barrier from the reactants to the transition state. It is the same whether the reaction is exothermic or endothermic overall.",
+  "alt": "A reaction profile with the activation energy arrow from the reactants up to the transition state.",
+  "description": [
+   "Reactants at the left.",
+   "The curve rises to the transition state; the arrow Ea spans this rise.",
+   "It falls to the products, lower here: exothermic."
+  ],
+  "course": "chemistry",
+  "lesson": "Activation energy",
+  "also": [],
+  "renderer": "energy-profile",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u07.js: Activation energy"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "an exothermic reaction: TS is a maximum",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "an exothermic reaction: 1 transition state(s), 0 intermediate(s), as stated",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "an exothermic reaction: overall exothermic",
+    "ok": true,
+    "detail": "ΔH -40"
+   },
+   {
+    "name": "an exothermic reaction: \"Ea\" arrow spans from a minimum to a maximum",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "760px wide, shown at 93% (labels 14.0px)"
+   }
+  ]
+ },
+ "chem-arrhenius-plot": {
+  "title": "The Arrhenius plot",
+  "caption": "ln k = ln A − Ea/RT, so plotting ln k against 1/T gives a straight line of gradient −Ea/R. Here the gradient is −6.01 × 10³ K, so Ea = 6.01 × 10³ × 8.314 = 50 kJ mol⁻¹.",
+  "alt": "ln k against 1/T (in units of 10⁻³ K⁻¹): a straight line falling with gradient −6.01.",
+  "description": [
+   "x-axis: 1/T from 2.6 to 3.6 × 10⁻³ K⁻¹.",
+   "Gradient −Ea/R = −6.01 × 10³ K.",
+   "Intercept (at 1/T = 0) ln A = 20."
+  ],
+  "course": "chemistry",
+  "lesson": "Arrhenius equation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u07.js: Arrhenius equation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "gradient = −Ea/R; with Ea = 50 kJ mol⁻¹ that is −6.01 × 10³ K",
+    "ok": true,
+    "detail": "gradient -6.0140"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-bond-enthalpy-cycle": {
+  "title": "Hydrogen and chlorine from bond enthalpies",
+  "caption": "H₂ + Cl₂ → 2HCl: breaking H–H (436) and Cl–Cl (243) takes 679 kJ; making two H–Cl (2 × 432) releases 864 kJ. ΔH = 679 − 864 = −185 kJ mol⁻¹.",
+  "alt": "Enthalpy diagram: H₂ + Cl₂, up 679 kJ to 2H + 2Cl, down 864 kJ to 2HCl, 185 kJ below the start.",
+  "description": [
+   "Up 679 kJ: bonds broken.",
+   "Down 864 kJ: bonds made.",
+   "Net −185 kJ mol⁻¹."
+  ],
+  "course": "chemistry",
+  "lesson": "Bond enthalpies",
+  "also": [],
+  "renderer": "cycle",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u06.js: Bond enthalpies"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Hess's law: every route between two states gives the same enthalpy change",
+    "ok": true,
+    "detail": "2 steps consistent"
+   },
+   {
+    "name": "every state's enthalpy is fixed by the steps",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ΔH = -185 kJ mol⁻¹ from the cycle",
+    "ok": true,
+    "detail": "cycle gives -185"
+   },
+   {
+    "name": "bonds broken: 1 × H–H (436) + 1 × Cl–Cl (243) = 679",
+    "ok": true,
+    "detail": "step drawn as 679"
+   },
+   {
+    "name": "bonds made: 2 × H–Cl (432) = -864",
+    "ok": true,
+    "detail": "step drawn as -864"
+   },
+   {
+    "name": "H2 + Cl2 → 2HCl balances",
+    "ok": true,
+    "detail": "atoms and charge balance (H, Cl; charge 0)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-boyle": {
+  "title": "Boyle's law",
+  "caption": "At constant temperature, pressure is inversely proportional to volume: pV is constant, so halving the volume doubles the pressure. A higher temperature gives a larger constant and a curve further out.",
+  "alt": "Two hyperbolas of pressure against volume: pV = 100 and, at a higher temperature, pV = 150.",
+  "description": [
+   "At the lower temperature, pV = 100 kPa dm³: 50 kPa at 2 dm³, 25 kPa at 4 dm³.",
+   "At the higher temperature, pV = 150 kPa dm³: the curve lies above."
+  ],
+  "course": "chemistry",
+  "lesson": "Gas laws",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u05.js: Gas laws"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "halving V from 4 to 2 dm³ doubles p from 25 to 50 kPa",
+    "ok": true,
+    "detail": "y(2) = 50"
+   },
+   {
+    "name": "(4, 25) lies on y = 100/x",
+    "ok": true,
+    "detail": "y(4) = 25"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-calorimetry-cooling": {
+  "title": "Correcting for heat loss",
+  "caption": "The solution is mixed at 3 minutes. Because the cup loses heat while the reaction happens, the highest reading underestimates the rise. Extrapolating the cooling line back to the moment of mixing gives the true maximum, 27.0 °C: ΔT = 7.0 °C.",
+  "alt": "Temperature against time: steady at 20 °C for 3 minutes, a sharp rise, then a straight cooling line; the cooling line is extended back to 3 minutes, meeting 27 °C.",
+  "description": [
+   "0–3 min: steady at 20.0 °C.",
+   "Mixed at 3 min.",
+   "From 4 min: cooling in a straight line, 0.25 °C per minute.",
+   "Extended back to 3 min: 27.0 °C, so ΔT = 7.0 °C."
+  ],
+  "course": "chemistry",
+  "lesson": "Calorimetry",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u06.js: Calorimetry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the cooling line extrapolated to the time of mixing gives 27.0 °C",
+    "ok": true,
+    "detail": "y(3) = 27"
+   },
+   {
+    "name": "cooling at 0.25 °C per minute",
+    "ok": true,
+    "detail": "gradient -0.2500"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-catalysed-profile": {
+  "title": "A catalyst lowers the activation energy",
+  "caption": "A catalyst provides an alternative route with a lower activation energy. The reactants and products, and so ΔH, are unchanged; more collisions now have enough energy, so the reaction is faster.",
+  "alt": "Two profiles with the same start and end: uncatalysed with a high peak, catalysed with a lower peak.",
+  "description": [
+   "Uncatalysed: a high activation energy.",
+   "Catalysed: the same reactants and products, a lower barrier.",
+   "ΔH is the same for both."
+  ],
+  "course": "chemistry",
+  "lesson": "Catalysts",
+  "also": [],
+  "renderer": "energy-profile",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u07.js: Catalysts"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "uncatalysed: TS is a maximum",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "uncatalysed: 1 transition state(s), 0 intermediate(s), as stated",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "uncatalysed: overall exothermic",
+    "ok": true,
+    "detail": "ΔH -40"
+   },
+   {
+    "name": "uncatalysed: \"Ea\" arrow spans from a minimum to a maximum",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "catalysed: TS is a maximum",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "catalysed: 1 transition state(s), 0 intermediate(s), as stated",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "catalysed: overall exothermic",
+    "ok": true,
+    "detail": "ΔH -40"
+   },
+   {
+    "name": "catalysed: \"Ea\" arrow spans from a minimum to a maximum",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "760px wide, shown at 93% (labels 14.0px)"
+   }
+  ]
+ },
+ "chem-catalyst-distribution": {
+  "title": "Why a catalyst speeds a reaction",
+  "caption": "With a catalyst the activation energy falls from Ea to Ea(cat). The distribution of energies is unchanged, but a much larger fraction of molecules now has enough energy: here about 3.7 times as many.",
+  "alt": "One Maxwell–Boltzmann distribution with two thresholds: Ea, and a lower Ea(cat); the area beyond Ea(cat) is much larger.",
+  "description": [
+   "The same energy distribution: the temperature has not changed.",
+   "Uncatalysed: only molecules beyond Ea react.",
+   "Catalysed: everything beyond the lower Ea(cat) can react."
+  ],
+  "course": "chemistry",
+  "lesson": "Homogeneous catalysis",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u07.js: Homogeneous catalysis"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "lowering Ea from 4.5 to 3 (units of kT) more than triples the fraction able to react",
+    "ok": true,
+    "detail": "0.1116 against 0.0293 (×3.81)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-charles": {
+  "title": "Charles's law",
+  "caption": "At constant pressure, the volume of a gas is proportional to its absolute temperature. One mole of ideal gas at 1 atm occupies 22.4 dm³ at 273 K; extending the line back reaches zero volume at 0 K (−273 °C).",
+  "alt": "Straight line of volume against temperature in kelvin through the origin, dashed below 200 K, passing 22.4 dm³ at 273 K.",
+  "description": [
+   "Volume rises in proportion to kelvin temperature.",
+   "At 273 K, 22.4 dm³ for one mole at 1 atm.",
+   "Dashed extrapolation to the origin: zero volume at absolute zero."
+  ],
+  "course": "chemistry",
+  "lesson": "Ideal gas equation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u05.js: Ideal gas equation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "1 mol at 1 atm and 273 K occupies 22.4 dm³ (V = nRT/p)",
+    "ok": true,
+    "detail": "y(273.15) = 22.4139"
+   },
+   {
+    "name": "zero volume at 0 K",
+    "ok": true,
+    "detail": "y(0) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-chemical-potential": {
+  "title": "Chemical potential of a gas",
+  "caption": "For an ideal gas μ = μ° + RT ln(p/p°): the chemical potential rises with pressure, logarithmically. At the standard pressure (1 bar) μ = μ°; matter flows from high μ to low.",
+  "alt": "μ − μ° against pressure in bar at 298 K: a logarithmic curve through zero at 1 bar.",
+  "description": [
+   "Below 1 bar, μ is below μ°.",
+   "At 1 bar, μ = μ°.",
+   "Above 1 bar, μ rises ever more slowly: RT ln p."
+  ],
+  "course": "chemistry",
+  "lesson": "Chemical potential",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u06.js: Chemical potential"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "μ = μ° at the standard pressure",
+    "ok": true,
+    "detail": "y(1) = 0"
+   },
+   {
+    "name": "RT ln e = RT = 2.48 kJ mol⁻¹ at 298 K",
+    "ok": true,
+    "detail": "2.4776*log(x) at 2.718282 = 2.48; expected 2.47–2.49"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-colligative": {
+  "title": "A solute lowers the freezing point and raises the boiling point",
+  "caption": "Dissolving a non-volatile solute lowers the solvent's vapour pressure, shifting the liquid–gas line down (boiling point up) and the solid–liquid line left (freezing point down). For 1 mol of NaCl in 1 kg of water (2 mol of ions) ΔTb = 1.02 K and ΔTf = 3.72 K. Not to scale.",
+  "alt": "The phase diagram of water with the solution's boundaries dashed: the liquid region widens at both ends.",
+  "description": [
+   "Solid lines: pure water.",
+   "Dashed lines: the solution. Its liquid–gas line lies lower and to the right, its solid–liquid line to the left.",
+   "So the solution boils above 100 °C and freezes below 0 °C."
+  ],
+  "course": "chemistry",
+  "lesson": "Colligative properties",
+  "also": [],
+  "renderer": "phase",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u05.js: Colligative properties"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "solid–liquid line slopes negative: the solid is less dense than the liquid",
+    "ok": true,
+    "detail": "solid 0.917, liquid 1 g cm⁻³"
+   },
+   {
+    "name": "ΔTb = 0.512 × 2 = 1.02 K",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ΔTf = 1.86 × 2 = 3.72 K",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "chem-collision-ea": {
+  "title": "The activation energy on the energy distribution",
+  "caption": "Only collisions with at least the activation energy Ea lead to reaction. The shaded area beyond Ea is the fraction of molecules energetic enough to react: a small part of the whole.",
+  "alt": "Maxwell–Boltzmann distribution of molecular energies starting at zero, rising to a peak and falling slowly; the tail beyond Ea is shaded.",
+  "description": [
+   "The curve starts at the origin: no molecules have zero energy.",
+   "It peaks at the most probable energy and tails off; it never quite reaches the axis.",
+   "Beyond Ea (shaded): the molecules that can react."
+  ],
+  "course": "chemistry",
+  "lesson": "Collision theory",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u07.js: Collision theory"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the area under the curve is all the molecules (normalised to 1)",
+    "ok": true,
+    "detail": "area 1.0000"
+   },
+   {
+    "name": "the most probable energy is ½kT",
+    "ok": true,
+    "detail": "found (0.5, 0.484)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-combustion-cycle": {
+  "title": "ΔfH from enthalpies of combustion",
+  "caption": "Methane cannot be made directly from carbon and hydrogen, but both it and its elements burn to CO₂ and H₂O. ΔfH(CH₄) = [ΔcH(C) + 2ΔcH(H₂)] − ΔcH(CH₄) = (−394 − 572) − (−890) = −76 kJ mol⁻¹ with these rounded values (data books: −75).",
+  "alt": "A Hess triangle: elements C + 2H₂ top left, CH₄ top right, CO₂ + 2H₂O at the bottom; arrows down from each top corner.",
+  "description": [
+   "Top left: C(s) + 2H₂(g).",
+   "Top right: CH₄(g); the arrow between them is ΔfH, unknown.",
+   "Down from the elements: −394 + 2 × (−286) = −966 kJ mol⁻¹.",
+   "Down from CH₄: −890 kJ mol⁻¹.",
+   "So ΔfH = −966 + 890 = −76 kJ mol⁻¹."
+  ],
+  "course": "chemistry",
+  "lesson": "Enthalpy of combustion",
+  "also": [],
+  "renderer": "cycle",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u06.js: Enthalpy of combustion"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Hess's law: every route between two states gives the same enthalpy change",
+    "ok": true,
+    "detail": "2 steps consistent"
+   },
+   {
+    "name": "every state's enthalpy is fixed by the steps",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ΔfH = -76 kJ mol⁻¹ from the cycle",
+    "ok": true,
+    "detail": "cycle gives -76"
+   },
+   {
+    "name": "C + 2H2 + 2O2 → CO2 + 2H2O balances",
+    "ok": true,
+    "detail": "atoms and charge balance (C, H, O; charge 0)"
+   },
+   {
+    "name": "CH4 + 2O2 → CO2 + 2H2O balances",
+    "ok": true,
+    "detail": "atoms and charge balance (C, H, O; charge 0)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-conc-change": {
+  "title": "Removing a product",
+  "caption": "A ⇌ B at equilibrium, Kc = 1.5. At 5 s some B is removed: [B] drops from 0.6 to 0.2. The system makes more B from A until the ratio is 1.5 again, at [A] = 0.24 and [B] = 0.36. This is why removing a product drives a reaction on.",
+  "alt": "Concentration against time: steady, then [B] drops at 5 s and recovers partway while [A] falls.",
+  "description": [
+   "Before 5 s: [A] 0.4, [B] 0.6.",
+   "At 5 s: [B] drops to 0.2.",
+   "After: [B] rises to 0.36, [A] falls to 0.24."
+  ],
+  "course": "chemistry",
+  "lesson": "Concentration and equilibrium",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u08.js: Concentration and equilibrium"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the new equilibrium has the same Kc = 1.5",
+    "ok": true,
+    "detail": "(0.36-0.16*exp(-0.6*(x-5)))/(0.24+0.16*exp(-0.6*(x-5))) at 60 = 1.5; expected 1.499–1.501"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-crystalline-amorphous": {
+  "title": "Crystalline and amorphous solids",
+  "caption": "A crystalline solid such as quartz has its particles in a regular, repeating arrangement and a sharp melting point. An amorphous solid such as glass has the same close packing but no long-range order, and softens over a range of temperatures.",
+  "alt": "Two boxes of the same particles: a regular grid (crystalline) and a disordered close packing (amorphous).",
+  "description": [
+   "Crystalline: rows and columns repeating.",
+   "Amorphous: just as close together, but disordered."
+  ],
+  "course": "chemistry",
+  "lesson": "Amorphous solids",
+  "also": [],
+  "renderer": "particles",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u05.js: Amorphous solids"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "\"crystalline\" is drawn as a solid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "\"amorphous (glass)\" has 12 SiO2",
+    "ok": true,
+    "detail": "drawn 12"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-cubic-cells": {
+  "title": "Cubic unit cells",
+  "caption": "Counting shared atoms: a corner atom is shared by 8 cells, a face atom by 2. Simple cubic holds 1 atom per cell (coordination 6), body-centred cubic 2 (coordination 8) and face-centred cubic 4 (coordination 12), the closest packing.",
+  "alt": "Simple cubic, body-centred cubic and face-centred cubic unit cells.",
+  "description": [
+   "Simple cubic: 8 corners × ⅛ = 1 atom; 6 neighbours.",
+   "Body-centred: 1 + 1 = 2 atoms; 8 neighbours.",
+   "Face-centred: 1 + 6 × ½ = 4 atoms; 12 neighbours."
+  ],
+  "course": "chemistry",
+  "lesson": "Crystalline solids",
+  "also": [],
+  "renderer": "lattice",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u05.js: Crystalline solids"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "simple cubic: each atom has 6 nearest neighbours",
+    "ok": true,
+    "detail": "counted 6 in the generated lattice"
+   },
+   {
+    "name": "simple cubic: 1 atom per unit cell",
+    "ok": true,
+    "detail": "counted 1 (corners ⅛, edges ¼, faces ½, body 1)"
+   },
+   {
+    "name": "body-centred cubic: each atom has 8 nearest neighbours",
+    "ok": true,
+    "detail": "counted 8 in the generated lattice"
+   },
+   {
+    "name": "body-centred cubic: 2 atom per unit cell",
+    "ok": true,
+    "detail": "counted 2 (corners ⅛, edges ¼, faces ½, body 1)"
+   },
+   {
+    "name": "face-centred cubic: each atom has 12 nearest neighbours",
+    "ok": true,
+    "detail": "counted 12 in the generated lattice"
+   },
+   {
+    "name": "face-centred cubic: 4 atom per unit cell",
+    "ok": true,
+    "detail": "counted 4 (corners ⅛, edges ¼, faces ½, body 1)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-dg-lnk": {
+  "title": "ΔG° and K",
+  "caption": "ΔG° = −RT ln K. At 298 K, every 5.7 kJ mol⁻¹ more negative multiplies K by 10. A negative ΔG° means K > 1 (products favoured); a positive ΔG° means K < 1.",
+  "alt": "log₁₀ K against ΔG° at 298 K: a straight line falling through 0 at ΔG° = 0, gradient −1/5.71.",
+  "description": [
+   "ΔG° = 0: K = 1.",
+   "ΔG° = −5.71 kJ mol⁻¹: K = 10.",
+   "ΔG° = +5.71: K = 0.1."
+  ],
+  "course": "chemistry",
+  "lesson": "Thermodynamic interpretation",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u08.js: Thermodynamic interpretation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "ΔG° = −2.303RT = −5.71 kJ mol⁻¹ gives K = 10",
+    "ok": true,
+    "detail": "y(-5.7048) = 1"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-diffusion": {
+  "title": "Diffusion",
+  "caption": "Particles move randomly, so a gas released in one corner spreads until it is evenly mixed: there is a net movement from high to low concentration even though no single particle aims anywhere.",
+  "alt": "Before: bromine molecules crowded on the left of a box of air. After: bromine spread evenly through the box.",
+  "description": [
+   "Before: bromine (brown) only in the left half.",
+   "After a while: bromine everywhere, mixed with the air."
+  ],
+  "course": "chemistry",
+  "lesson": "Diffusion",
+  "also": [],
+  "renderer": "particles",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u05.js: Diffusion"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "atoms of each element are the same before and after (Br)",
+    "ok": true,
+    "detail": "Br 12→12"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-dissolving": {
+  "title": "Sodium chloride dissolving",
+  "caption": "Water molecules surround the ions at the edge of the lattice: the δ− oxygens face Na⁺ and the δ+ hydrogens face Cl⁻. The energy released by hydration pulls the ions into solution.",
+  "alt": "Left: a sodium chloride lattice in water. Right: separate Na⁺ and Cl⁻ ions spread through the water.",
+  "description": [
+   "Before: an ordered lattice of alternating Na⁺ and Cl⁻.",
+   "After: the same ions, now separate and spread through the solution, each surrounded by water."
+  ],
+  "course": "chemistry",
+  "lesson": "Solutions",
+  "also": [],
+  "renderer": "particles",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u05.js: Solutions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "atoms of each element are the same before and after (Na, Cl)",
+    "ok": true,
+    "detail": "Na 8→8, Cl 8→8"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-dynamic-equilibrium": {
+  "title": "Concentrations reaching equilibrium",
+  "caption": "For A ⇌ B starting from pure A, [A] falls and [B] rises until both stop changing. They need not be equal: here [B]/[A] = 0.6/0.4 = 1.5 = Kc. Both reactions are still going, at equal rates.",
+  "alt": "Concentration against time: [A] falling from 1.0 to 0.4, [B] rising from 0 to 0.6, both levelling.",
+  "description": [
+   "[A] from 1.0 down to 0.4.",
+   "[B] from 0 up to 0.6.",
+   "Then constant: Kc = 0.6 ÷ 0.4 = 1.5."
+  ],
+  "course": "chemistry",
+  "lesson": "Dynamic equilibrium",
+  "also": [
+   {
+    "course": "gcse",
+    "lesson": "Reversible reactions and equilibrium"
+   }
+  ],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u08.js: Dynamic equilibrium"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in gcse: Reversible reactions and equilibrium",
+    "ok": true,
+    "detail": "kit/courses/gcse/notes/u05.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "at equilibrium [B]/[A] = Kc = 1.5",
+    "ok": true,
+    "detail": "(0.6*(1-exp(-0.3*x)))/(0.4+0.6*exp(-0.3*x)) at 60 = 1.5; expected 1.499–1.501"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-endothermic-decomposition": {
+  "title": "Decomposing calcium carbonate",
+  "caption": "CaCO₃ → CaO + CO₂, ΔH = +178 kJ mol⁻¹. The products are higher in energy than the reactants, so energy must be supplied continuously: limestone is heated to about 900 °C in a lime kiln.",
+  "alt": "Reaction profile with CaCO₃ at the bottom, a high hump, and CaO + CO₂ at a higher level than the start.",
+  "description": [
+   "Reactant CaCO₃.",
+   "A large activation energy.",
+   "Products CaO + CO₂, 178 kJ mol⁻¹ higher."
+  ],
+  "course": "chemistry",
+  "lesson": "Endothermic reactions",
+  "also": [],
+  "renderer": "energy-profile",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u06.js: Endothermic reactions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "CaCO₃ → CaO + CO₂: TS is a maximum",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "CaCO₃ → CaO + CO₂: 1 transition state(s), 0 intermediate(s), as stated",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "CaCO₃ → CaO + CO₂: overall endothermic",
+    "ok": true,
+    "detail": "ΔH 60"
+   },
+   {
+    "name": "CaCO₃ → CaO + CO₂: \"Ea\" arrow spans from a minimum to a maximum",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "760px wide, shown at 93% (labels 14.0px)"
+   }
+  ]
+ },
+ "chem-enthalpy-levels": {
+  "title": "An enthalpy level diagram",
+  "caption": "Neutralisation: H⁺(aq) + OH⁻(aq) → H₂O(l), ΔH = −57.1 kJ mol⁻¹. The products sit below the reactants on the enthalpy scale and the arrow points down: exothermic.",
+  "alt": "Two levels: H⁺(aq) + OH⁻(aq) above, H₂O(l) below, with a downward arrow labelled ΔH = −57.1 kJ mol⁻¹.",
+  "description": [
+   "Upper level: H⁺(aq) + OH⁻(aq).",
+   "Lower level: H₂O(l).",
+   "Arrow down: ΔH = −57.1 kJ mol⁻¹."
+  ],
+  "course": "chemistry",
+  "lesson": "Enthalpy",
+  "also": [],
+  "renderer": "cycle",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u06.js: Enthalpy"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Hess's law: every route between two states gives the same enthalpy change",
+    "ok": true,
+    "detail": "1 steps consistent"
+   },
+   {
+    "name": "every state's enthalpy is fixed by the steps",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "H+ + OH- → H2O balances",
+    "ok": true,
+    "detail": "atoms and charge balance (H, O; charge 0)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-entropy-states": {
+  "title": "Entropy increases from solid to gas",
+  "caption": "Entropy measures the number of ways particles and their energy can be arranged. A solid's particles are fixed in place (low entropy); a liquid's can move past each other; a gas's are free to be almost anywhere (high entropy). S(H₂O): ice 41, water 70, steam 189 J K⁻¹ mol⁻¹.",
+  "alt": "Three boxes of water molecules: ordered solid, disordered liquid and widely scattered gas.",
+  "description": [
+   "Ice: ordered, S about 41 J K⁻¹ mol⁻¹.",
+   "Liquid water: disordered, about 70.",
+   "Steam: spread out, 189."
+  ],
+  "course": "chemistry",
+  "lesson": "Entropy",
+  "also": [],
+  "renderer": "particles",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u06.js: Entropy"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "\"ice, S = 41\" is drawn as a solid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "\"water, S = 70\" is drawn as a liquid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "\"steam, S = 189\" is drawn as a gas",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-exo-endo-profiles": {
+  "title": "Exothermic and endothermic reactions",
+  "caption": "In an exothermic reaction the products are lower in energy than the reactants and the difference is released to the surroundings (ΔH negative). In an endothermic reaction the products are higher and energy is taken in (ΔH positive). Both must first climb the activation energy.",
+  "alt": "Two reaction profiles: exothermic, with products below reactants; endothermic, with products above reactants; both with an activation energy hump.",
+  "description": [
+   "Exothermic: rises to a peak, then falls below the starting level; ΔH negative.",
+   "Endothermic: rises to a peak, then falls to a level above the start; ΔH positive."
+  ],
+  "course": "chemistry",
+  "lesson": "Energy in chemical systems",
+  "also": [
+   {
+    "course": "gcse",
+    "lesson": "Exothermic and endothermic reactions"
+   }
+  ],
+  "renderer": "energy-profile",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u06.js: Energy in chemical systems"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in gcse: Exothermic and endothermic reactions",
+    "ok": true,
+    "detail": "kit/courses/gcse/notes/u05.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "exothermic: TS is a maximum",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "exothermic: 1 transition state(s), 0 intermediate(s), as stated",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "exothermic: overall exothermic",
+    "ok": true,
+    "detail": "ΔH -50"
+   },
+   {
+    "name": "exothermic: \"Ea\" arrow spans from a minimum to a maximum",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "endothermic: TS is a maximum",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "endothermic: 1 transition state(s), 0 intermediate(s), as stated",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "endothermic: overall endothermic",
+    "ok": true,
+    "detail": "ΔH 50"
+   },
+   {
+    "name": "endothermic: \"Ea\" arrow spans from a minimum to a maximum",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "760px wide, shown at 93% (labels 14.0px)"
+   }
+  ]
+ },
+ "chem-exothermic-combustion": {
+  "title": "Burning methane",
+  "caption": "CH₄ + 2O₂ → CO₂ + 2H₂O, ΔcH = −890 kJ mol⁻¹. The products are far lower in energy than the reactants; a spark supplies the activation energy, after which the energy released keeps the reaction going.",
+  "alt": "Reaction profile with reactants CH₄ + 2O₂, a small hump, then products CO₂ + 2H₂O far below.",
+  "description": [
+   "Reactants CH₄ + 2O₂.",
+   "A hump: the activation energy.",
+   "Products CO₂ + 2H₂O, 890 kJ mol⁻¹ lower."
+  ],
+  "course": "chemistry",
+  "lesson": "Exothermic reactions",
+  "also": [],
+  "renderer": "energy-profile",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u06.js: Exothermic reactions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "CH₄ + 2O₂ → CO₂ + 2H₂O: TS is a maximum",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "CH₄ + 2O₂ → CO₂ + 2H₂O: 1 transition state(s), 0 intermediate(s), as stated",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "CH₄ + 2O₂ → CO₂ + 2H₂O: overall exothermic",
+    "ok": true,
+    "detail": "ΔH -100"
+   },
+   {
+    "name": "CH₄ + 2O₂ → CO₂ + 2H₂O: \"Ea\" arrow spans from a minimum to a maximum",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "760px wide, shown at 93% (labels 14.0px)"
+   }
+  ]
+ },
+ "chem-first-order-decay": {
+  "title": "First-order decay: constant half-lives",
+  "caption": "A first-order reaction loses the same fraction in each equal time: the half-life is constant, here 6 s, whatever the starting concentration. t½ = ln 2 ÷ k, so k = 0.116 s⁻¹.",
+  "alt": "[A] against time from 1.0, halving to 0.5 at 6 s, 0.25 at 12 s and 0.125 at 18 s.",
+  "description": [
+   "1.0 at 0 s.",
+   "0.5 at 6 s.",
+   "0.25 at 12 s.",
+   "0.125 at 18 s: three equal half-lives."
+  ],
+  "course": "chemistry",
+  "lesson": "First-order reactions",
+  "also": [
+   {
+    "course": "chemistry",
+    "lesson": "Half-life"
+   }
+  ],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u07.js: First-order reactions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in chemistry: Half-life",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u07.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(6, 0.5) lies on y = exp(-0.115525*x)",
+    "ok": true,
+    "detail": "y(6) = 0.5"
+   },
+   {
+    "name": "(12, 0.25) lies on y = exp(-0.115525*x)",
+    "ok": true,
+    "detail": "y(12) = 0.25"
+   },
+   {
+    "name": "three half-lives of 6 s: 1 → ½ → ¼ → ⅛",
+    "ok": true,
+    "detail": "y(18) = 0.125"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-formation-cycle": {
+  "title": "ΔrH from enthalpies of formation",
+  "caption": "For C₂H₄ + H₂ → C₂H₆, both routes from the elements must give the same total: ΔrH = ΣΔfH(products) − ΣΔfH(reactants) = −84 − (+52) = −136 kJ mol⁻¹.",
+  "alt": "A Hess triangle: reactants C₂H₄ + H₂ top left, product C₂H₆ top right, elements 2C + 3H₂ at the bottom; arrows from the elements up to each side.",
+  "description": [
+   "Elements 2C(s) + 3H₂(g) at the bottom.",
+   "Up to C₂H₄ + H₂: ΔfH = +52 kJ mol⁻¹ (H₂ is an element, 0).",
+   "Up to C₂H₆: ΔfH = −84 kJ mol⁻¹.",
+   "So ΔrH = −84 − 52 = −136 kJ mol⁻¹."
+  ],
+  "course": "chemistry",
+  "lesson": "Enthalpy of formation",
+  "also": [],
+  "renderer": "cycle",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u06.js: Enthalpy of formation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Hess's law: every route between two states gives the same enthalpy change",
+    "ok": true,
+    "detail": "2 steps consistent"
+   },
+   {
+    "name": "every state's enthalpy is fixed by the steps",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ΔrH = -136 kJ mol⁻¹ from the cycle",
+    "ok": true,
+    "detail": "cycle gives -136"
+   },
+   {
+    "name": "C2H4 + H2 → C2H6 balances",
+    "ok": true,
+    "detail": "atoms and charge balance (C, H; charge 0)"
+   },
+   {
+    "name": "2C + 2H2 → C2H4 balances",
+    "ok": true,
+    "detail": "atoms and charge balance (C, H; charge 0)"
+   },
+   {
+    "name": "2C + 3H2 → C2H6 balances",
+    "ok": true,
+    "detail": "atoms and charge balance (C, H; charge 0)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-gas-particles": {
+  "title": "Gas particles",
+  "caption": "Gas particles are far apart compared with their size and move fast in straight lines in random directions, colliding with each other and with the walls. Collisions with the walls cause the gas's pressure.",
+  "alt": "A box of air: nitrogen and oxygen molecules widely spaced, with arrows showing random motion.",
+  "description": [
+   "Nitrogen and oxygen molecules spread through the box.",
+   "Arrows: each moving in a different direction."
+  ],
+  "course": "chemistry",
+  "lesson": "Gases",
+  "also": [],
+  "renderer": "particles",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u05.js: Gases"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "\"air in a container\" is a mixture",
+    "ok": true,
+    "detail": "contents make it a mixture"
+   },
+   {
+    "name": "\"air in a container\" is drawn as a gas",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-gibbs-T-lines": {
+  "title": "ΔG against temperature for each sign case",
+  "caption": "ΔG = ΔH − TΔS is a straight line with intercept ΔH and gradient −ΔS. Two cases never change sign; the other two cross zero at T = ΔH/ΔS, here 500 K.",
+  "alt": "Four lines of ΔG against T: always negative, always positive, negative only below 500 K, and negative only above 500 K.",
+  "description": [
+   "ΔH −50, ΔS +0.1: always negative.",
+   "ΔH +50, ΔS −0.1: always positive.",
+   "ΔH −50, ΔS −0.1: negative below 500 K.",
+   "ΔH +50, ΔS +0.1: negative above 500 K."
+  ],
+  "course": "chemistry",
+  "lesson": "Temperature dependence",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u06.js: Temperature dependence"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "ΔH < 0, ΔS < 0: ΔG = 0 at 500 K",
+    "ok": true,
+    "detail": "y(500) = 0"
+   },
+   {
+    "name": "ΔH > 0, ΔS > 0: ΔG = 0 at 500 K",
+    "ok": true,
+    "detail": "y(500) = 0"
+   },
+   {
+    "name": "ΔH < 0, ΔS > 0 stays negative",
+    "ok": true,
+    "detail": "-50-0.1*x at 1000 = -150; expected -1000–-1"
+   },
+   {
+    "name": "ΔH > 0, ΔS < 0 stays positive",
+    "ok": true,
+    "detail": "50+0.1*x at 0 = 50; expected 1–1000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-gibbs-T": {
+  "title": "When does limestone decompose?",
+  "caption": "For CaCO₃ → CaO + CO₂, ΔH = +178 kJ mol⁻¹ and ΔS = +161 J K⁻¹ mol⁻¹. ΔG = ΔH − TΔS falls as T rises and becomes negative above T = ΔH ÷ ΔS = 1106 K (about 833 °C): the reaction becomes feasible.",
+  "alt": "ΔG against temperature: a straight line falling from +178 kJ/mol at 0 K, crossing zero near 1106 K.",
+  "description": [
+   "At 0 K, ΔG = ΔH = +178 kJ mol⁻¹.",
+   "The line falls with gradient −ΔS.",
+   "It crosses zero at 1106 K: above this ΔG is negative."
+  ],
+  "course": "chemistry",
+  "lesson": "Gibbs free energy",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u06.js: Gibbs free energy"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "ΔG = 0 at T = ΔH/ΔS = 1106 K",
+    "ok": true,
+    "detail": "y(1105.5901) = 0"
+   },
+   {
+    "name": "gradient −ΔS = −0.161 kJ K⁻¹ mol⁻¹",
+    "ok": true,
+    "detail": "gradient -0.1610"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-gibbs-extent": {
+  "title": "Equilibrium is the minimum of G",
+  "caption": "As a reaction A ⇌ B proceeds, the Gibbs energy of the mixture falls to a minimum and then rises. The minimum is the equilibrium position. With ΔG° = −5 kJ mol⁻¹ at 298 K it lies at 0.88 of the way to products, where K = 7.5.",
+  "alt": "Gibbs energy of the mixture against extent of reaction from pure A (0) to pure B (1): a curve with a minimum at about 0.88.",
+  "description": [
+   "At 0, pure A; at 1, pure B, 5 kJ mol⁻¹ lower.",
+   "Mixing lowers G, so the curve dips below both ends.",
+   "The minimum, at 0.88, is equilibrium; the reaction moves downhill to it from either side."
+  ],
+  "course": "chemistry",
+  "lesson": "Thermodynamic equilibrium",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u06.js: Thermodynamic equilibrium"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "G is lowest at extent 0.883, where B/A = K = exp(−ΔG°/RT) = 7.52",
+    "ok": true,
+    "detail": "found (0.883, -5.3092)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-heating-curve": {
+  "title": "Heating curve of water",
+  "caption": "Heating one mole of ice from −20 °C at a steady rate. The temperature stops rising while the ice melts (6.01 kJ) and while the water boils (40.7 kJ): the energy separates particles instead of speeding them up. Boiling takes far more energy because the molecules separate completely.",
+  "alt": "Temperature against energy supplied: a short rise to 0 °C, a short flat stretch (melting), a rise to 100 °C, a long flat stretch (boiling), then a short rise.",
+  "description": [
+   "Ice warms from −20 to 0 °C.",
+   "Flat at 0 °C while melting: 6.01 kJ.",
+   "Water warms to 100 °C.",
+   "Flat at 100 °C while boiling: 40.7 kJ, nearly seven times as long.",
+   "Steam warms above 100 °C."
+  ],
+  "course": "chemistry",
+  "lesson": "Boiling and melting",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u05.js: Boiling and melting"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the temperature is constant while water boils",
+    "ok": true,
+    "detail": "100 at 30 = 100; expected 100–100"
+   },
+   {
+    "name": "liquid water reaches 100 °C after 18 g × 4.18 J g⁻¹ K⁻¹ × 100 K = 7.52 kJ",
+    "ok": true,
+    "detail": "y(14.2864) = 100"
+   },
+   {
+    "name": "boiling takes about 6.8 times the energy of melting (40.7 ÷ 6.01)",
+    "ok": true,
+    "detail": "40.7000/6.0100 at 0 = 6.77; expected 6.5–7"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-hess-law": {
+  "title": "Hess's law",
+  "caption": "The enthalpy change depends only on the start and finish, not the route. Burning carbon straight to CO₂ releases 394 kJ mol⁻¹; going via CO (−111, then −283) gives the same total.",
+  "alt": "Hess triangle: C + O₂ top left, CO₂ top right, CO + ½O₂ at the bottom; direct route −394, indirect route −111 then −283.",
+  "description": [
+   "Direct: C + O₂ → CO₂, ΔH = −394 kJ mol⁻¹.",
+   "Indirect: C + ½O₂ → CO, −111; then CO + ½O₂ → CO₂, −283.",
+   "−111 + (−283) = −394: the same."
+  ],
+  "course": "chemistry",
+  "lesson": "Hess's law",
+  "also": [],
+  "renderer": "cycle",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u06.js: Hess's law"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Hess's law: every route between two states gives the same enthalpy change",
+    "ok": true,
+    "detail": "2 steps consistent"
+   },
+   {
+    "name": "every state's enthalpy is fixed by the steps",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ΔH₁ = -394 kJ mol⁻¹ from the cycle",
+    "ok": true,
+    "detail": "cycle gives -394"
+   },
+   {
+    "name": "C + O2 → CO2 balances",
+    "ok": true,
+    "detail": "atoms and charge balance (C, O; charge 0)"
+   },
+   {
+    "name": "C + ½O2 → CO balances",
+    "ok": true,
+    "detail": "atoms and charge balance (C, O; charge 0)"
+   },
+   {
+    "name": "CO + ½O2 → CO2 balances",
+    "ok": true,
+    "detail": "atoms and charge balance (C, O; charge 0)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-initial-rates": {
+  "title": "Measuring an initial rate",
+  "caption": "The initial rate is the gradient of the concentration–time curve at t = 0. Draw the tangent at the start and measure its gradient: here 0.2 mol dm⁻³ min⁻¹. Repeating with different starting concentrations gives the orders.",
+  "alt": "Product concentration against time, a curve levelling at 0.8, with a dashed tangent at the origin of gradient 0.2.",
+  "description": [
+   "The curve rises and levels off at 0.8 mol dm⁻³.",
+   "The tangent at t = 0 rises 0.4 in 2 min: initial rate 0.2 mol dm⁻³ min⁻¹."
+  ],
+  "course": "chemistry",
+  "lesson": "Experimental kinetics",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u07.js: Experimental kinetics"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the curve's gradient at t = 0 is 0.2 mol dm⁻³ min⁻¹",
+    "ok": true,
+    "detail": "gradient 0.2000"
+   },
+   {
+    "name": "and the tangent drawn has that gradient",
+    "ok": true,
+    "detail": "gradient 0.2000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-k-large-small": {
+  "title": "The size of K and the position of equilibrium",
+  "caption": "For A ⇌ B the fraction converted to B at equilibrium is K/(1 + K). K = 1 gives half; each factor of 10 pushes it further: K = 1000 is 99.9% products, K = 0.001 almost none.",
+  "alt": "Fraction of B at equilibrium against log K: an S-shaped curve through 0.5 at log K = 0.",
+  "description": [
+   "log K = −3: almost all A.",
+   "log K = 0 (K = 1): half and half.",
+   "log K = +3: almost all B."
+  ],
+  "course": "chemistry",
+  "lesson": "Equilibrium constants",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u08.js: Equilibrium constants"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "K = 1: half converted",
+    "ok": true,
+    "detail": "y(0) = 0.5"
+   },
+   {
+    "name": "K = 1000: 99.9% converted",
+    "ok": true,
+    "detail": "10^x/(1+10^x) at 3 = 1; expected 0.998–0.9995"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-k-temperature": {
+  "title": "How K changes with temperature",
+  "caption": "Raising the temperature favours the endothermic direction. For the exothermic Haber process (ΔH = −92 kJ mol⁻¹) K falls as T rises; for the endothermic N₂O₄ ⇌ 2NO₂ (ΔH = +57 kJ mol⁻¹) K rises. Shown as ln(K/K₂₉₈) from the van 't Hoff equation.",
+  "alt": "ln(K/K at 298 K) against temperature from 298 to 500 K: a falling curve for the exothermic reaction and a rising one for the endothermic reaction.",
+  "description": [
+   "Both start at zero at 298 K.",
+   "Exothermic (Haber): ln(K/K₂₉₈) falls to about −15 by 500 K.",
+   "Endothermic (N₂O₄): rises to about +9."
+  ],
+  "course": "chemistry",
+  "lesson": "Temperature and equilibrium",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u08.js: Temperature and equilibrium"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "exothermic: K at 400 K is smaller than at 298 K",
+    "ok": true,
+    "detail": "-9.51 < 0"
+   },
+   {
+    "name": "endothermic: K at 400 K is larger",
+    "ok": true,
+    "detail": "5.89 > 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-le-chatelier-conc": {
+  "title": "Adding a reactant",
+  "caption": "A ⇌ B at equilibrium, Kc = 1.5. At 5 s extra A is added: [A] jumps from 0.4 to 0.8. The system responds by converting some A to B until [B]/[A] is 1.5 again, now at [A] = 0.56 and [B] = 0.84.",
+  "alt": "Concentration against time: steady [A] = 0.4 and [B] = 0.6; at 5 s [A] jumps to 0.8, then falls to 0.56 while [B] rises to 0.84.",
+  "description": [
+   "Before 5 s: equilibrium, [A] 0.4, [B] 0.6.",
+   "At 5 s: [A] jumps to 0.8.",
+   "After: [A] falls to 0.56 and [B] rises to 0.84; the ratio returns to 1.5."
+  ],
+  "course": "chemistry",
+  "lesson": "Le Chatelier's principle",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u08.js: Le Chatelier's principle"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the new equilibrium has the same Kc = 1.5",
+    "ok": true,
+    "detail": "(0.84-0.24*exp(-0.6*(x-5)))/(0.56+0.24*exp(-0.6*(x-5))) at 60 = 1.5; expected 1.499–1.501"
+   },
+   {
+    "name": "A + B is conserved after the addition (0.8 + 0.6 = 1.4)",
+    "ok": true,
+    "detail": "0.56+0.24*exp(-0.6*(x-5))+0.84-0.24*exp(-0.6*(x-5)) at 7 = 1.4; expected 1.3999–1.4001"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-liquid-particles": {
+  "title": "Liquid particles",
+  "caption": "In a liquid the particles touch, as in a solid, but are disordered and keep moving past one another, so a liquid flows and takes the shape of its container but is hardly compressible.",
+  "alt": "A box of water molecules packed closely but irregularly.",
+  "description": [
+   "Water molecules close together.",
+   "No regular pattern; gaps move as molecules slide past each other."
+  ],
+  "course": "chemistry",
+  "lesson": "Liquids",
+  "also": [],
+  "renderer": "particles",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u05.js: Liquids"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "\"water\" is drawn as a liquid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-ln-first-order": {
+  "title": "ln[A] against time is a straight line for first order",
+  "caption": "Taking logs of [A] = [A]₀e^(−kt) gives ln[A] = ln[A]₀ − kt: a straight line whose gradient is −k. Here k = 0.116 s⁻¹ (half-life 6 s).",
+  "alt": "ln[A] against time: a straight line falling from 0 with gradient −0.116.",
+  "description": [
+   "Intercept ln[A]₀ = ln 1 = 0.",
+   "Gradient −k = −0.116 s⁻¹.",
+   "Straight, so the reaction is first order."
+  ],
+  "course": "chemistry",
+  "lesson": "Integrated rate laws",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u07.js: Integrated rate laws"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "gradient −k = −ln 2 ÷ 6 s = −0.116 s⁻¹",
+    "ok": true,
+    "detail": "gradient -0.1155"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-maxwell-boltzmann-T": {
+  "title": "Molecular speeds at two temperatures",
+  "caption": "Nitrogen molecules have a spread of speeds. At 300 K the most probable speed is about 422 m s⁻¹; at 600 K the curve flattens and shifts right to about 597 m s⁻¹. The area under each curve, the total number of molecules, is the same.",
+  "alt": "Two Maxwell–Boltzmann speed distributions for nitrogen: a taller, narrower curve peaking near 420 m/s at 300 K and a lower, broader curve peaking near 600 m/s at 600 K.",
+  "description": [
+   "300 K: a peak at about 422 m s⁻¹.",
+   "600 K: lower, broader, peaking at about 597 m s⁻¹.",
+   "Both start at zero, and both curves enclose the same area."
+  ],
+  "course": "chemistry",
+  "lesson": "Kinetic molecular theory",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u05.js: Kinetic molecular theory"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "300 K: most probable speed √(2RT/M) = 422 m s⁻¹",
+    "ok": true,
+    "detail": "found (4.221, 0.197)"
+   },
+   {
+    "name": "600 K: most probable speed 597 m s⁻¹",
+    "ok": true,
+    "detail": "found (5.969, 0.139)"
+   },
+   {
+    "name": "300 K: area 1 (all the molecules)",
+    "ok": true,
+    "detail": "area 1.0000"
+   },
+   {
+    "name": "600 K: the same area",
+    "ok": true,
+    "detail": "area 1.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-maxwell-boltzmann-ea": {
+  "title": "Why a small temperature rise speeds reactions so much",
+  "caption": "At the higher temperature the distribution flattens and shifts to higher energy. The area beyond Ea, the molecules that can react, grows far more than the shift suggests: here it more than doubles.",
+  "alt": "Two Maxwell–Boltzmann energy distributions, T₁ and a higher T₂, with the area beyond Ea shaded for each; the T₂ tail is much larger.",
+  "description": [
+   "T₁: taller, narrower, peak further left.",
+   "T₂: lower, broader, peak further right.",
+   "Both enclose the same area.",
+   "Beyond Ea: the T₂ curve lies well above the T₁ curve."
+  ],
+  "course": "chemistry",
+  "lesson": "Temperature effects",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u07.js: Temperature effects"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "beyond Ea, T₂ has more than twice as many molecules as T₁",
+    "ok": true,
+    "detail": "0.0658 against 0.0293 (×2.25)"
+   },
+   {
+    "name": "T₂: the same total area",
+    "ok": true,
+    "detail": "area 1.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-mechanism-profile": {
+  "title": "A three-step mechanism",
+  "caption": "Each step has its own transition state, with an intermediate between steps. The step with the highest transition state, here the second, is rate-determining.",
+  "alt": "Profile with three humps and two intermediates; the second hump is highest.",
+  "description": [
+   "Step 1: a low barrier to intermediate 1.",
+   "Step 2: the highest transition state, rate-determining.",
+   "Step 3: a small barrier to the products."
+  ],
+  "course": "chemistry",
+  "lesson": "Reaction mechanisms",
+  "also": [],
+  "renderer": "energy-profile",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u07.js: Reaction mechanisms"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "three steps: TS1 is a maximum",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "three steps: I₁ is a minimum between two maxima",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "three steps: TS2 is a maximum",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "three steps: I₂ is a minimum between two maxima",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "three steps: TS3 is a maximum",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "three steps: 3 transition state(s), 2 intermediate(s), as stated",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "three steps: the highest transition state is step 2, the rate-determining step",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "three steps: overall exothermic",
+    "ok": true,
+    "detail": "ΔH -25"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "760px wide, shown at 93% (labels 14.0px)"
+   }
+  ]
+ },
+ "chem-michaelis-menten": {
+  "title": "Enzyme kinetics",
+  "caption": "At low substrate concentration the rate rises almost in proportion. As the enzyme's active sites fill, the rate levels towards Vmax. The Michaelis constant Km is the concentration that gives half of Vmax.",
+  "alt": "Rate against substrate concentration: rising steeply, then levelling towards Vmax = 10, with half Vmax reached at [S] = Km = 2.",
+  "description": [
+   "At low [S]: rate roughly proportional to [S].",
+   "At high [S]: rate approaches Vmax, the enzyme saturated.",
+   "At [S] = Km = 2, rate = 5 = Vmax ÷ 2."
+  ],
+  "course": "chemistry",
+  "lesson": "Enzyme catalysis",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u07.js: Enzyme catalysis"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "at [S] = Km the rate is Vmax/2",
+    "ok": true,
+    "detail": "y(2) = 5"
+   },
+   {
+    "name": "the rate approaches Vmax = 10",
+    "ok": true,
+    "detail": "10*x/(2+x) at 1000 = 9.98; expected 9.9–10"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-neutralisation-calorimeter": {
+  "title": "Measuring an enthalpy of neutralisation",
+  "caption": "50 cm³ of 1.0 mol dm⁻³ HCl and 50 cm³ of 1.0 mol dm⁻³ NaOH in a polystyrene cup rise by 6.8 °C. q = mcΔT = 100 × 4.18 × 6.8 = 2842 J for 0.050 mol of water formed, so ΔH = −2.84 ÷ 0.050 = −56.8 kJ mol⁻¹.",
+  "alt": "A polystyrene cup with a lid and a thermometer, containing the mixture; the calculation beside it.",
+  "description": [
+   "A polystyrene cup insulates the mixture; a lid reduces heat loss.",
+   "The thermometer reads to 0.1 °C.",
+   "m = 100 g, ΔT = 6.8 °C, q = 2842 J, n = 0.050 mol, ΔH = −56.8 kJ mol⁻¹."
+  ],
+  "course": "chemistry",
+  "lesson": "Enthalpy of neutralisation",
+  "also": [],
+  "renderer": "apparatus",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u06.js: Enthalpy of neutralisation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "q = mcΔT = 2842 J",
+    "ok": true,
+    "detail": "2842.4 J"
+   },
+   {
+    "name": "ΔH = −q ÷ n = -56.8 kJ mol⁻¹",
+    "ok": true,
+    "detail": "-56.85"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-orders-conc-time": {
+  "title": "Concentration against time for each order",
+  "caption": "From the same start, a zero-order reaction falls in a straight line, a first-order one decays exponentially with a constant half-life, and a second-order one starts as fast but slows more, with half-lives that double.",
+  "alt": "[A] against time from 1.0: a straight line to zero (zero order), an exponential curve (first order) and a curve that flattens more (second order).",
+  "description": [
+   "Zero order: [A] falls by the same amount each second.",
+   "First order: [A] halves every 3 s.",
+   "Second order: the first half-life is 3 s, the next 6 s."
+  ],
+  "course": "chemistry",
+  "lesson": "Reaction order",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u07.js: Reaction order"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "first order: half-life 3 s",
+    "ok": true,
+    "detail": "y(3) = 0.5"
+   },
+   {
+    "name": "first order: the next half-life is also 3 s",
+    "ok": true,
+    "detail": "y(6) = 0.25"
+   },
+   {
+    "name": "second order: 0.5 → 0.25 takes 6 s, twice the first half-life",
+    "ok": true,
+    "detail": "y(9) = 0.25"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-osmosis": {
+  "title": "Osmosis",
+  "caption": "A partially permeable membrane lets water molecules through but not the larger solute particles. Water moves overall from the dilute side (more free water) to the concentrated side until the pressures balance.",
+  "alt": "A box divided by a dashed membrane: left side mostly water, right side water with many sugar molecules; an arrow shows net water flow to the right.",
+  "description": [
+   "Left: pure water.",
+   "Right: a concentrated sugar solution.",
+   "Water crosses the membrane from left to right; sugar cannot."
+  ],
+  "course": "chemistry",
+  "lesson": "Osmosis",
+  "also": [],
+  "renderer": "particles",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u05.js: Osmosis"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "\"dilute | membrane | concentrated\": every sugar is on the right side",
+    "ok": true,
+    "detail": "right"
+   },
+   {
+    "name": "\"dilute | membrane | concentrated\" has 5 sugar",
+    "ok": true,
+    "detail": "drawn 5"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-phase-water": {
+  "title": "Phase diagram of water",
+  "caption": "Each region is a single phase; along each line two phases coexist, and at the triple point all three. Water's solid–liquid line slopes backwards because ice is less dense than liquid water, so pressure melts ice. Not to scale.",
+  "alt": "Pressure against temperature: solid at low temperature and high pressure, liquid in the middle, gas at low pressure; three lines meet at the triple point; the liquid–gas line ends at the critical point; the solid–liquid line leans left.",
+  "description": [
+   "Solid region upper left, liquid region upper middle, gas region at the bottom right.",
+   "The three boundaries meet at the triple point, 0.01 °C and 0.006 atm.",
+   "The liquid–gas line ends at the critical point, 374 °C and 218 atm.",
+   "At 1 atm the line crosses melting at 0 °C and boiling at 100 °C."
+  ],
+  "course": "chemistry",
+  "lesson": "Phase diagrams",
+  "also": [],
+  "renderer": "phase",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u05.js: Phase diagrams"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "solid–liquid line slopes negative: the solid is less dense than the liquid",
+    "ok": true,
+    "detail": "solid 0.917, liquid 1 g cm⁻³"
+   },
+   {
+    "name": "melts at 1 atm: the triple point is below 1 atm",
+    "ok": true,
+    "detail": "0.00604 atm"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "chem-pressure-equilibrium": {
+  "title": "Pressure and equilibrium",
+  "caption": "N₂O₄ ⇌ 2NO₂. Squeezing the mixture into a smaller volume raises the pressure; the equilibrium shifts towards the side with fewer gas molecules, N₂O₄, partly relieving the change. The atoms are the same; only their grouping changes.",
+  "alt": "Left: a box with N₂O₄ and NO₂ molecules. Right: the compressed mixture, now with more N₂O₄ and fewer NO₂.",
+  "description": [
+   "Before: 2 N₂O₄ and 6 NO₂.",
+   "After compression: 4 N₂O₄ and 2 NO₂, fewer molecules overall (6 against 8)."
+  ],
+  "course": "chemistry",
+  "lesson": "Pressure and equilibrium",
+  "also": [],
+  "renderer": "particles",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u08.js: Pressure and equilibrium"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "atoms of each element are the same before and after (N, O)",
+    "ok": true,
+    "detail": "N 10→10, O 20→20"
+   },
+   {
+    "name": "\"higher pressure\" has 4 N2O4",
+    "ok": true,
+    "detail": "drawn 4"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-q-vs-k": {
+  "title": "Comparing Q with K",
+  "caption": "The reaction quotient Q has the same form as K but uses the current concentrations. ΔG = RT ln(Q/K): if Q < K, ΔG is negative and the reaction moves forward; if Q > K it moves back; at Q = K it is at equilibrium. Here K = 100.",
+  "alt": "ΔG against log Q at 298 K for K = 100: a straight line crossing zero at log Q = 2.",
+  "description": [
+   "Left of log Q = 2 (Q < K): ΔG negative, forward reaction.",
+   "At Q = K: ΔG = 0, equilibrium.",
+   "Right (Q > K): ΔG positive, reverse reaction."
+  ],
+  "course": "chemistry",
+  "lesson": "Reaction quotients",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u08.js: Reaction quotients"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "ΔG = 0 when Q = K = 100",
+    "ok": true,
+    "detail": "y(2) = 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-rate-constant-T": {
+  "title": "How k changes with temperature",
+  "caption": "For a reaction with Ea = 50 kJ mol⁻¹, the Arrhenius equation predicts k nearly doubles for each 10 K rise near room temperature (×1.91 from 300 to 310 K) and rises ever faster.",
+  "alt": "k relative to its value at 300 K against temperature from 290 to 360 K, rising in an accelerating curve; at 310 K it is about 1.9.",
+  "description": [
+   "At 300 K, k is 1 (the reference).",
+   "At 310 K, about 1.9.",
+   "At 360 K, about 28."
+  ],
+  "course": "chemistry",
+  "lesson": "Rate constants",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u07.js: Rate constants"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "k rises by a factor of about 1.9 from 300 to 310 K (Ea = 50 kJ mol⁻¹)",
+    "ok": true,
+    "detail": "exp(6013.95*(1/300-1/x)) at 310 = 1.91; expected 1.85–1.95"
+   },
+   {
+    "name": "(300, 1) lies on y = exp(6013.95*(1/300-1/x))",
+    "ok": true,
+    "detail": "y(300) = 1"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-rate-curve": {
+  "title": "Following the rate of a reaction",
+  "caption": "The volume of gas produced rises fastest at the start, when the reactants are most concentrated, and levels off as they are used up. The rate at any moment is the gradient of the curve.",
+  "alt": "Volume of gas against time: a curve rising steeply at first and levelling off at 60 cm³.",
+  "description": [
+   "Steep at the start: fast reaction.",
+   "Less steep as the reactants are used up.",
+   "Flat at 60 cm³: the reaction has finished."
+  ],
+  "course": "chemistry",
+  "lesson": "Introduction to reaction rates",
+  "also": [
+   {
+    "course": "gcse",
+    "lesson": "Rates of reaction"
+   }
+  ],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u07.js: Introduction to reaction rates"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in gcse: Rates of reaction",
+    "ok": true,
+    "detail": "kit/courses/gcse/notes/u05.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "initial rate 2.4 cm³ s⁻¹ (the gradient at t = 0)",
+    "ok": true,
+    "detail": "gradient 2.4000"
+   },
+   {
+    "name": "levels off at 60 cm³",
+    "ok": true,
+    "detail": "60*(1-exp(-0.04*x)) at 120 = 59.51; expected 59–60"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-rate-vs-conc-orders": {
+  "title": "Rate against concentration for each order",
+  "caption": "Zero order: the rate does not change with [A]. First order: rate ∝ [A], a straight line through the origin. Second order: rate ∝ [A]², a curve, so doubling [A] quadruples the rate.",
+  "alt": "Rate against [A]: a horizontal line (zero order), a straight line through the origin (first), and an upward curve (second).",
+  "description": [
+   "Zero order: flat.",
+   "First order: rate doubles when [A] doubles.",
+   "Second order: rate × 4 when [A] doubles."
+  ],
+  "course": "chemistry",
+  "lesson": "Rate equations",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u07.js: Rate equations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "first order: doubling [A] from 0.8 to 1.6 doubles the rate",
+    "ok": true,
+    "detail": "y(1.6) = 0.8"
+   },
+   {
+    "name": "second order: doubling [A] from 0.8 (0.32) to 1.6 (1.28) quadruples the rate",
+    "ok": true,
+    "detail": "y(1.6) = 1.28"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-rds-profile": {
+  "title": "The rate-determining step",
+  "caption": "In a two-step reaction the slower step is the one with the higher transition state. Here the first step is fast and the second slow, so the second step is rate-determining and the rate equation reflects the species in it.",
+  "alt": "Profile with two humps; the second is higher.",
+  "description": [
+   "Step 1: a low barrier, fast, forming the intermediate.",
+   "Step 2: the higher barrier, slow: rate-determining."
+  ],
+  "course": "chemistry",
+  "lesson": "Rate-determining steps",
+  "also": [],
+  "renderer": "energy-profile",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u07.js: Rate-determining steps"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "slow second step: TS1 is a maximum",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "slow second step: intermediate is a minimum between two maxima",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "slow second step: TS2 is a maximum",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "slow second step: 2 transition state(s), 1 intermediate(s), as stated",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "slow second step: the highest transition state is step 2, the rate-determining step",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "slow second step: overall exothermic",
+    "ok": true,
+    "detail": "ΔH -30"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "760px wide, shown at 93% (labels 14.0px)"
+   }
+  ]
+ },
+ "chem-reaction-profile-steps": {
+  "title": "A two-step reaction",
+  "caption": "A reaction with an intermediate has two transition states with the intermediate in the valley between. The higher barrier, here the first, controls the overall rate.",
+  "alt": "Reaction profile: reactants, a high first hump, a valley with the intermediate, a lower second hump, products.",
+  "description": [
+   "First, higher transition state.",
+   "The intermediate in the dip.",
+   "Second, lower transition state.",
+   "Products below the reactants."
+  ],
+  "course": "chemistry",
+  "lesson": "Reaction profiles",
+  "also": [],
+  "renderer": "energy-profile",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u07.js: Reaction profiles"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "two steps: TS1 is a maximum",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "two steps: intermediate is a minimum between two maxima",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "two steps: TS2 is a maximum",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "two steps: 2 transition state(s), 1 intermediate(s), as stated",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "two steps: the highest transition state is step 1, the rate-determining step",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "two steps: overall exothermic",
+    "ok": true,
+    "detail": "ΔH -30"
+   },
+   {
+    "name": "two steps: \"Ea\" arrow spans from a minimum to a maximum",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "760px wide, shown at 93% (labels 14.0px)"
+   }
+  ]
+ },
+ "chem-real-gas-z": {
+  "title": "Real gases are not quite ideal",
+  "caption": "The compression factor Z = pV/nRT is exactly 1 for an ideal gas. For a real gas such as methane, attractions pull Z below 1 at moderate pressure; at high pressure the molecules' own volume pushes it above 1. The curve is illustrative.",
+  "alt": "Z against pressure: a flat line at 1 for an ideal gas; a real-gas curve dipping to about 0.8 near 250 atm and rising above 1 beyond about 500 atm.",
+  "description": [
+   "Ideal gas: Z = 1 at every pressure.",
+   "Real gas: Z falls below 1 (attractions dominate), reaches a minimum, then rises above 1 (molecular volume dominates)."
+  ],
+  "course": "chemistry",
+  "lesson": "Real gases",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u05.js: Real gases"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "real gas: Z falls below 1, a minimum near 250 atm (attractions)",
+    "ok": true,
+    "detail": "found (250.005, 0.8)"
+   },
+   {
+    "name": "real gas: Z above 1 at high pressure (molecular volume)",
+    "ok": true,
+    "detail": "1-0.0016*x+0.0000032*x^2 at 650 = 1.31; expected 1.01–2"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-reversible-approach": {
+  "title": "Rates of the forward and reverse reactions",
+  "caption": "Starting with reactants only, the forward rate is high and falls as they are used up; the reverse rate starts at zero and rises as products form. When the two rates are equal, the system is at dynamic equilibrium.",
+  "alt": "Rate against time: a forward-rate curve falling and a reverse-rate curve rising until both level at the same value.",
+  "description": [
+   "Forward rate: starts high, falls.",
+   "Reverse rate: starts at zero, rises.",
+   "From about 10 s they are equal: equilibrium."
+  ],
+  "course": "chemistry",
+  "lesson": "Reversible reactions",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u08.js: Reversible reactions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the two rates become equal (0.3)",
+    "ok": true,
+    "detail": "0.3+0.7*exp(-0.4*x) → 0.3, 0.3*(1-exp(-0.4*x)) → 0.3"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-second-law": {
+  "title": "Why gases spread out",
+  "caption": "Removing the partition lets the gas spread into the empty half. Of all the ways to arrange the particles, almost all have them spread through the whole box, so the gas spreads and never gathers back on its own: entropy increases.",
+  "alt": "Before: gas particles on the left of a partition, the right empty. After: particles spread through the whole box.",
+  "description": [
+   "Before: all the particles in the left half.",
+   "After: spread evenly; the reverse never happens by chance for any real number of particles."
+  ],
+  "course": "chemistry",
+  "lesson": "Second law of thermodynamics",
+  "also": [],
+  "renderer": "particles",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u06.js: Second law of thermodynamics"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "atoms of each element are the same before and after (N)",
+    "ok": true,
+    "detail": "N 16→16"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-second-order-inverse": {
+  "title": "Recognising second order",
+  "caption": "For a second-order reaction 1/[A] = 1/[A]₀ + kt, so a plot of 1/[A] against time is a straight line with gradient k. Here k = 0.5 dm³ mol⁻¹ s⁻¹.",
+  "alt": "1/[A] against time: a straight line from 1 at 0 s rising with gradient 0.5.",
+  "description": [
+   "Intercept 1/[A]₀ = 1 dm³ mol⁻¹.",
+   "Gradient k = 0.5 dm³ mol⁻¹ s⁻¹.",
+   "A straight line confirms second order."
+  ],
+  "course": "chemistry",
+  "lesson": "Second-order reactions",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u07.js: Second-order reactions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "gradient = k = 0.5 dm³ mol⁻¹ s⁻¹",
+    "ok": true,
+    "detail": "gradient 0.5000"
+   },
+   {
+    "name": "intercept 1/[A]₀ = 1",
+    "ok": true,
+    "detail": "y(0) = 1"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-solid-types-lattice": {
+  "title": "Three crystalline solids",
+  "caption": "Sodium chloride is an ionic lattice (6:6), copper a face-centred cubic metal in which each atom touches twelve others, and iron a body-centred cubic metal with eight neighbours.",
+  "alt": "Three unit cells: sodium chloride, copper (face-centred cubic) and iron (body-centred cubic).",
+  "description": [
+   "Sodium chloride: alternating Na⁺ and Cl⁻.",
+   "Copper: atoms at corners and face centres, coordination 12.",
+   "Iron: atoms at corners and the body centre, coordination 8."
+  ],
+  "course": "chemistry",
+  "lesson": "Solids",
+  "also": [],
+  "renderer": "lattice",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u05.js: Solids"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "NaCl (ionic): each Na+ has 6 nearest neighbours",
+    "ok": true,
+    "detail": "counted 6 in the generated lattice"
+   },
+   {
+    "name": "NaCl (ionic): 4 Na+ per unit cell",
+    "ok": true,
+    "detail": "counted 4 (corners ⅛, edges ¼, faces ½, body 1)"
+   },
+   {
+    "name": "NaCl (ionic): 4 Cl- per unit cell",
+    "ok": true,
+    "detail": "counted 4 (corners ⅛, edges ¼, faces ½, body 1)"
+   },
+   {
+    "name": "Cu (fcc metal): each Cu has 12 nearest neighbours",
+    "ok": true,
+    "detail": "counted 12 in the generated lattice"
+   },
+   {
+    "name": "Cu (fcc metal): 4 Cu per unit cell",
+    "ok": true,
+    "detail": "counted 4 (corners ⅛, edges ¼, faces ½, body 1)"
+   },
+   {
+    "name": "Fe (bcc metal): each Fe has 8 nearest neighbours",
+    "ok": true,
+    "detail": "counted 8 in the generated lattice"
+   },
+   {
+    "name": "Fe (bcc metal): 2 Fe per unit cell",
+    "ok": true,
+    "detail": "counted 2 (corners ⅛, edges ¼, faces ½, body 1)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-solubility-curve": {
+  "title": "Solubility curves",
+  "caption": "Potassium nitrate's solubility rises steeply with temperature; sodium chloride's barely changes. Cooling a saturated KNO₃ solution from 80 °C to 20 °C crystallises out about 137 g per 100 g of water, which is why it can be purified by recrystallisation and NaCl cannot.",
+  "alt": "Solubility in g per 100 g water against temperature: KNO₃ rising from 13 to 246; NaCl almost flat from 36 to 40.",
+  "description": [
+   "KNO₃: 13.3 g at 0 °C, 31.6 at 20 °C, 110 at 60 °C, 246 at 100 °C.",
+   "NaCl: 35.7 at 0 °C rising only to 39.8 at 100 °C.",
+   "The curves cross near 22 °C."
+  ],
+  "course": "chemistry",
+  "lesson": "Solubility",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u05.js: Solubility"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "KNO₃: about 31.6 g at 20 °C (data)",
+    "ok": true,
+    "detail": "0.00002002*x^3+0.0148671*x^2+0.639530*x+13.13730 at 20 = 32.03; expected 29–34"
+   },
+   {
+    "name": "KNO₃: about 169 g at 80 °C (data)",
+    "ok": true,
+    "detail": "0.00002002*x^3+0.0148671*x^2+0.639530*x+13.13730 at 80 = 169.7; expected 164–174"
+   },
+   {
+    "name": "NaCl: 37.3 g at 60 °C (data)",
+    "ok": true,
+    "detail": "0.00033482*x^2+0.0070893*x+35.71786 at 60 = 37.35; expected 37–37.6"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-spontaneity-signs": {
+  "title": "Is the reaction feasible?",
+  "caption": "ΔG = ΔH − TΔS must be negative. The signs of ΔH and ΔS decide whether that depends on temperature.",
+  "alt": "A tree: is ΔH negative? Then: is ΔS positive? Feasible at all temperatures; otherwise only at low temperatures. If ΔH is positive: is ΔS positive? Feasible at high temperatures; otherwise never.",
+  "description": [
+   "ΔH negative and ΔS positive: always feasible, such as combustion.",
+   "ΔH negative and ΔS negative: feasible below T = ΔH/ΔS, such as the Haber process.",
+   "ΔH positive and ΔS positive: feasible above T = ΔH/ΔS, such as decomposing CaCO₃.",
+   "ΔH positive and ΔS negative: never feasible."
+  ],
+  "course": "chemistry",
+  "lesson": "Spontaneity",
+  "also": [],
+  "renderer": "classify",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u06.js: Spontaneity"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every path ends in a classification",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "no unreachable boxes",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the Haber process (ΔH −92, ΔS −199): yes, no leads to \"Feasible at low T only\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "decomposing CaCO₃ (ΔH +178, ΔS +161): no, yes leads to \"Feasible at high T only\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-surface-tension": {
+  "title": "Surface tension",
+  "caption": "Molecules inside a liquid are pulled equally in all directions by their neighbours; molecules at the surface are pulled only sideways and inwards. The surface behaves like a stretched skin, strongest in water because of hydrogen bonding.",
+  "alt": "Water molecules in a beaker; those at the surface have neighbours only beside and below them.",
+  "description": [
+   "Molecules in the bulk are surrounded on every side.",
+   "Surface molecules have no neighbours above, so they are pulled inwards."
+  ],
+  "course": "chemistry",
+  "lesson": "Surface tension",
+  "also": [],
+  "renderer": "particles",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u05.js: Surface tension"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "\"water\" is drawn as a liquid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-thermo-cycle-dissolution": {
+  "title": "Dissolving sodium chloride",
+  "caption": "ΔsolH = −ΔlattH(formation) + ΔhydH(Na⁺) + ΔhydH(Cl⁻) = +787 − 406 − 364 = +17 kJ mol⁻¹ with these values (data books give about +4). Separating the lattice costs almost exactly what hydrating the ions returns, so NaCl dissolves with a small enthalpy change, driven by entropy.",
+  "alt": "Enthalpy diagram: NaCl(s) low; up 787 to the gaseous ions; down 406 and 364 for hydration to Na⁺(aq) + Cl⁻(aq), just above NaCl(s).",
+  "description": [
+   "NaCl(s) at the start.",
+   "Up +787 kJ mol⁻¹ to Na⁺(g) + Cl⁻(g): breaking up the lattice.",
+   "Down −406 kJ mol⁻¹: hydrating Na⁺.",
+   "Down −364 kJ mol⁻¹: hydrating Cl⁻, ending 17 kJ mol⁻¹ above the start."
+  ],
+  "course": "chemistry",
+  "lesson": "Thermodynamic cycles",
+  "also": [],
+  "renderer": "cycle",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u06.js: Thermodynamic cycles"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Hess's law: every route between two states gives the same enthalpy change",
+    "ok": true,
+    "detail": "3 steps consistent"
+   },
+   {
+    "name": "every state's enthalpy is fixed by the steps",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ΔsolH = 17 kJ mol⁻¹ from the cycle",
+    "ok": true,
+    "detail": "cycle gives 17"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-vapour-pressure": {
+  "title": "Vapour pressure of water",
+  "caption": "Vapour pressure rises steeply with temperature. A liquid boils when its vapour pressure equals the pressure above it: 101.3 kPa at 100 °C for water at sea level, lower on a mountain, so water boils at a lower temperature there.",
+  "alt": "Vapour pressure of water against temperature, a curve rising steeply to 101.3 kPa at 100 °C, with a dashed line marking atmospheric pressure.",
+  "description": [
+   "Vapour pressure is small at 20 °C (about 2.3 kPa).",
+   "It rises ever more steeply.",
+   "It reaches 101.3 kPa, atmospheric pressure, at 100 °C: the normal boiling point."
+  ],
+  "course": "chemistry",
+  "lesson": "Vapour pressure",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u05.js: Vapour pressure"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "vapour pressure reaches 1 atm at 100 °C (Antoine equation)",
+    "ok": true,
+    "detail": "0.133322*10^(8.07131-1730.63/(233.426+x)) at 100 = 101.34; expected 100.8–101.8"
+   },
+   {
+    "name": "about 2.3 kPa at 20 °C",
+    "ok": true,
+    "detail": "0.133322*10^(8.07131-1730.63/(233.426+x)) at 20 = 2.33; expected 2.2–2.45"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-zero-order": {
+  "title": "A zero-order reaction",
+  "caption": "The concentration falls at a constant rate, so the graph is a straight line whose gradient is −k. Here k = 0.05 mol dm⁻³ s⁻¹: the half-life, [A]₀/2k = 10 s, gets shorter as the reaction goes on.",
+  "alt": "[A] against time: a straight line from 1.0 mol dm⁻³ at 0 s to zero at 20 s.",
+  "description": [
+   "A straight line: the rate does not depend on [A].",
+   "Gradient −0.05 mol dm⁻³ s⁻¹ = −k.",
+   "Half the reactant is gone at 10 s."
+  ],
+  "course": "chemistry",
+  "lesson": "Zero-order reactions",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u07.js: Zero-order reactions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "gradient = −k = −0.05 mol dm⁻³ s⁻¹",
+    "ok": true,
+    "detail": "gradient -0.0500"
+   },
+   {
+    "name": "t½ = [A]₀/2k = 10 s",
+    "ok": true,
+    "detail": "y(10) = 0.5"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }

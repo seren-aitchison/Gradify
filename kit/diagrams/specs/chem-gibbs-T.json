@@ -1,0 +1,88 @@
+{
+ "id": "chem-gibbs-T",
+ "renderer": "graph",
+ "course": "chemistry",
+ "lesson": "Gibbs free energy",
+ "title": "When does limestone decompose?",
+ "caption": "For CaCO₃ → CaO + CO₂, ΔH = +178 kJ mol⁻¹ and ΔS = +161 J K⁻¹ mol⁻¹. ΔG = ΔH − TΔS falls as T rises and becomes negative above T = ΔH ÷ ΔS = 1106 K (about 833 °C): the reaction becomes feasible.",
+ "alt": "ΔG against temperature: a straight line falling from +178 kJ/mol at 0 K, crossing zero near 1106 K.",
+ "description": [
+  "At 0 K, ΔG = ΔH = +178 kJ mol⁻¹.",
+  "The line falls with gradient −ΔS.",
+  "It crosses zero at 1106 K: above this ΔG is negative."
+ ],
+ "range": {
+  "x": [
+   0,
+   1600
+  ],
+  "y": [
+   -80,
+   200
+  ]
+ },
+ "ticks": [
+  [
+   400,
+   800,
+   1200,
+   1600
+  ],
+  [
+   -50,
+   0,
+   50,
+   100,
+   150
+  ]
+ ],
+ "grid": [
+  200,
+  50
+ ],
+ "axisLabels": [
+  "T / K",
+  "ΔG / kJ mol⁻¹"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "178-0.161*x",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 1105.59,
+   "y": 0,
+   "label": "ΔG = 0 at 1106 K",
+   "dy": -16
+  }
+ ],
+ "bands": [
+  {
+   "x": [
+    1105.5900621118012,
+    1600
+   ],
+   "label": "feasible",
+   "colour": "good"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "178-0.161*x",
+   "x": 1105.5901,
+   "y": 0,
+   "name": "ΔG = 0 at T = ΔH/ΔS = 1106 K"
+  },
+  {
+   "type": "slope",
+   "expr": "178-0.161*x",
+   "x": 500,
+   "value": -0.161,
+   "name": "gradient −ΔS = −0.161 kJ K⁻¹ mol⁻¹"
+  }
+ ]
+}

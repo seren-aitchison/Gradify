@@ -1,0 +1,73 @@
+{
+ "id": "chem-cubic-cells",
+ "renderer": "lattice",
+ "course": "chemistry",
+ "lesson": "Crystalline solids",
+ "title": "Cubic unit cells",
+ "caption": "Counting shared atoms: a corner atom is shared by 8 cells, a face atom by 2. Simple cubic holds 1 atom per cell (coordination 6), body-centred cubic 2 (coordination 8) and face-centred cubic 4 (coordination 12), the closest packing.",
+ "alt": "Simple cubic, body-centred cubic and face-centred cubic unit cells.",
+ "description": [
+  "Simple cubic: 8 corners × ⅛ = 1 atom; 6 neighbours.",
+  "Body-centred: 1 + 1 = 2 atoms; 8 neighbours.",
+  "Face-centred: 1 + 6 × ½ = 4 atoms; 12 neighbours."
+ ],
+ "cells": [
+  {
+   "kind": "sc",
+   "label": "simple cubic",
+   "species": {
+    "A": {
+     "label": "atom",
+     "colour": "a1",
+     "r": 10
+    }
+   },
+   "claims": {
+    "coordination": {
+     "A": 6
+    },
+    "perCell": {
+     "A": 1
+    }
+   }
+  },
+  {
+   "kind": "bcc",
+   "label": "body-centred cubic",
+   "species": {
+    "A": {
+     "label": "atom",
+     "colour": "a1",
+     "r": 10
+    }
+   },
+   "claims": {
+    "coordination": {
+     "A": 8
+    },
+    "perCell": {
+     "A": 2
+    }
+   }
+  },
+  {
+   "kind": "fcc",
+   "label": "face-centred cubic",
+   "species": {
+    "A": {
+     "label": "atom",
+     "colour": "a1",
+     "r": 10
+    }
+   },
+   "claims": {
+    "coordination": {
+     "A": 12
+    },
+    "perCell": {
+     "A": 4
+    }
+   }
+  }
+ ]
+}

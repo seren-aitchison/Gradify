@@ -1,0 +1,87 @@
+{
+ "id": "chem-real-gas-z",
+ "renderer": "graph",
+ "course": "chemistry",
+ "lesson": "Real gases",
+ "title": "Real gases are not quite ideal",
+ "caption": "The compression factor Z = pV/nRT is exactly 1 for an ideal gas. For a real gas such as methane, attractions pull Z below 1 at moderate pressure; at high pressure the molecules' own volume pushes it above 1. The curve is illustrative.",
+ "alt": "Z against pressure: a flat line at 1 for an ideal gas; a real-gas curve dipping to about 0.8 near 250 atm and rising above 1 beyond about 500 atm.",
+ "description": [
+  "Ideal gas: Z = 1 at every pressure.",
+  "Real gas: Z falls below 1 (attractions dominate), reaches a minimum, then rises above 1 (molecular volume dominates)."
+ ],
+ "range": {
+  "x": [
+   0,
+   700
+  ],
+  "y": [
+   0.6,
+   1.4
+  ]
+ },
+ "ticks": [
+  [
+   200,
+   400,
+   600
+  ],
+  [
+   0.8,
+   1.0,
+   1.2
+  ]
+ ],
+ "grid": [
+  100,
+  0.1
+ ],
+ "axisLabels": [
+  "p / atm",
+  "Z = pV/nRT"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "1",
+   "colour": "soft",
+   "dash": "6 5",
+   "label": "ideal gas",
+   "labelAt": [
+    560,
+    1.03
+   ]
+  },
+  {
+   "expr": "1-0.0016*x+0.0000032*x^2",
+   "colour": "a2",
+   "label": "real gas (illustrative)",
+   "labelAt": [
+    380,
+    0.74
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "min",
+   "expr": "1-0.0016*x+0.0000032*x^2",
+   "domain": [
+    0,
+    700
+   ],
+   "x": 250,
+   "name": "real gas: Z falls below 1, a minimum near 250 atm (attractions)"
+  },
+  {
+   "type": "value",
+   "expr": "1-0.0016*x+0.0000032*x^2",
+   "x": 650,
+   "between": [
+    1.01,
+    2
+   ],
+   "name": "real gas: Z above 1 at high pressure (molecular volume)"
+  }
+ ]
+}

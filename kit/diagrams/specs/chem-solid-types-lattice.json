@@ -1,0 +1,79 @@
+{
+ "id": "chem-solid-types-lattice",
+ "renderer": "lattice",
+ "course": "chemistry",
+ "lesson": "Solids",
+ "title": "Three crystalline solids",
+ "caption": "Sodium chloride is an ionic lattice (6:6), copper a face-centred cubic metal in which each atom touches twelve others, and iron a body-centred cubic metal with eight neighbours.",
+ "alt": "Three unit cells: sodium chloride, copper (face-centred cubic) and iron (body-centred cubic).",
+ "description": [
+  "Sodium chloride: alternating Na⁺ and Cl⁻.",
+  "Copper: atoms at corners and face centres, coordination 12.",
+  "Iron: atoms at corners and the body centre, coordination 8."
+ ],
+ "cells": [
+  {
+   "kind": "nacl",
+   "label": "NaCl (ionic)",
+   "species": {
+    "A": {
+     "label": "Na+",
+     "colour": "#8e5bd6",
+     "r": 7
+    },
+    "B": {
+     "label": "Cl-",
+     "colour": "#2fa84f",
+     "r": 10
+    }
+   },
+   "claims": {
+    "coordination": {
+     "A": 6
+    },
+    "perCell": {
+     "A": 4,
+     "B": 4
+    }
+   }
+  },
+  {
+   "kind": "fcc",
+   "label": "Cu (fcc metal)",
+   "species": {
+    "A": {
+     "label": "Cu",
+     "colour": "#c87533",
+     "r": 10
+    }
+   },
+   "claims": {
+    "coordination": {
+     "A": 12
+    },
+    "perCell": {
+     "A": 4
+    }
+   }
+  },
+  {
+   "kind": "bcc",
+   "label": "Fe (bcc metal)",
+   "species": {
+    "A": {
+     "label": "Fe",
+     "colour": "#8a5a44",
+     "r": 11
+    }
+   },
+   "claims": {
+    "coordination": {
+     "A": 8
+    },
+    "perCell": {
+     "A": 2
+    }
+   }
+  }
+ ]
+}

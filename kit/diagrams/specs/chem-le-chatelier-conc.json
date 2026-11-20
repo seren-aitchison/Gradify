@@ -1,0 +1,120 @@
+{
+ "id": "chem-le-chatelier-conc",
+ "renderer": "graph",
+ "course": "chemistry",
+ "lesson": "Le Chatelier's principle",
+ "title": "Adding a reactant",
+ "caption": "A ⇌ B at equilibrium, Kc = 1.5. At 5 s extra A is added: [A] jumps from 0.4 to 0.8. The system responds by converting some A to B until [B]/[A] is 1.5 again, now at [A] = 0.56 and [B] = 0.84.",
+ "alt": "Concentration against time: steady [A] = 0.4 and [B] = 0.6; at 5 s [A] jumps to 0.8, then falls to 0.56 while [B] rises to 0.84.",
+ "description": [
+  "Before 5 s: equilibrium, [A] 0.4, [B] 0.6.",
+  "At 5 s: [A] jumps to 0.8.",
+  "After: [A] falls to 0.56 and [B] rises to 0.84; the ratio returns to 1.5."
+ ],
+ "range": {
+  "x": [
+   0,
+   20
+  ],
+  "y": [
+   0,
+   1
+  ]
+ },
+ "ticks": [
+  [
+   5,
+   10,
+   15,
+   20
+  ],
+  [
+   0.2,
+   0.4,
+   0.6,
+   0.8
+  ]
+ ],
+ "grid": [
+  5,
+  0.2
+ ],
+ "axisLabels": [
+  "time / s",
+  "concentration / mol dm⁻³"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "0.4",
+   "domain": [
+    0,
+    5
+   ],
+   "colour": "a1"
+  },
+  {
+   "expr": "0.56+0.24*exp(-0.6*(x-5))",
+   "domain": [
+    5,
+    20
+   ],
+   "colour": "a1",
+   "label": "[A]",
+   "labelAt": [
+    18,
+    0.5
+   ]
+  },
+  {
+   "expr": "0.6",
+   "domain": [
+    0,
+    5
+   ],
+   "colour": "a2"
+  },
+  {
+   "expr": "0.84-0.24*exp(-0.6*(x-5))",
+   "domain": [
+    5,
+    20
+   ],
+   "colour": "a2",
+   "label": "[B]",
+   "labelAt": [
+    18,
+    0.9
+   ]
+  }
+ ],
+ "marks": [
+  {
+   "x": 5,
+   "label": "A added",
+   "to": 0.85
+  }
+ ],
+ "checks": [
+  {
+   "type": "value",
+   "expr": "(0.84-0.24*exp(-0.6*(x-5)))/(0.56+0.24*exp(-0.6*(x-5)))",
+   "x": 60,
+   "between": [
+    1.499,
+    1.501
+   ],
+   "name": "the new equilibrium has the same Kc = 1.5"
+  },
+  {
+   "type": "value",
+   "expr": "0.56+0.24*exp(-0.6*(x-5))+0.84-0.24*exp(-0.6*(x-5))",
+   "x": 7,
+   "between": [
+    1.3999,
+    1.4001
+   ],
+   "name": "A + B is conserved after the addition (0.8 + 0.6 = 1.4)"
+  }
+ ]
+}

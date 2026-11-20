@@ -1,0 +1,78 @@
+{
+ "id": "chem-collision-ea",
+ "renderer": "graph",
+ "course": "chemistry",
+ "lesson": "Collision theory",
+ "title": "The activation energy on the energy distribution",
+ "caption": "Only collisions with at least the activation energy Ea lead to reaction. The shaded area beyond Ea is the fraction of molecules energetic enough to react: a small part of the whole.",
+ "alt": "Maxwell–Boltzmann distribution of molecular energies starting at zero, rising to a peak and falling slowly; the tail beyond Ea is shaded.",
+ "description": [
+  "The curve starts at the origin: no molecules have zero energy.",
+  "It peaks at the most probable energy and tails off; it never quite reaches the axis.",
+  "Beyond Ea (shaded): the molecules that can react."
+ ],
+ "range": {
+  "x": [
+   0,
+   9
+  ],
+  "y": [
+   0,
+   0.5
+  ]
+ },
+ "ticks": [
+  [],
+  []
+ ],
+ "axisLabels": [
+  "energy",
+  "number of molecules"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "1.128379*sqrt(x)*exp(-x/1.0)",
+   "domain": [
+    0,
+    9
+   ],
+   "colour": "a1"
+  }
+ ],
+ "areas": [
+  {
+   "expr": "1.128379*sqrt(x)*exp(-x/1.0)",
+   "from": 4,
+   "to": 9
+  }
+ ],
+ "marks": [
+  {
+   "x": 4,
+   "label": "Ea",
+   "to": 0.2
+  }
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "expr": "1.128379*sqrt(x)*exp(-x/1.0)",
+   "from": 0,
+   "to": 60,
+   "value": 1,
+   "name": "the area under the curve is all the molecules (normalised to 1)"
+  },
+  {
+   "type": "max",
+   "expr": "1.128379*sqrt(x)*exp(-x/1.0)",
+   "domain": [
+    0.01,
+    9
+   ],
+   "x": 0.5,
+   "y": 0.48394,
+   "name": "the most probable energy is ½kT"
+  }
+ ]
+}

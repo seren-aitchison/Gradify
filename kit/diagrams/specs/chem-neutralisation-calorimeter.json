@@ -1,0 +1,21 @@
+{
+ "id": "chem-neutralisation-calorimeter",
+ "renderer": "apparatus",
+ "course": "chemistry",
+ "lesson": "Enthalpy of neutralisation",
+ "title": "Measuring an enthalpy of neutralisation",
+ "caption": "50 cm³ of 1.0 mol dm⁻³ HCl and 50 cm³ of 1.0 mol dm⁻³ NaOH in a polystyrene cup rise by 6.8 °C. q = mcΔT = 100 × 4.18 × 6.8 = 2842 J for 0.050 mol of water formed, so ΔH = −2.84 ÷ 0.050 = −56.8 kJ mol⁻¹.",
+ "alt": "A polystyrene cup with a lid and a thermometer, containing the mixture; the calculation beside it.",
+ "description": [
+  "A polystyrene cup insulates the mixture; a lid reduces heat loss.",
+  "The thermometer reads to 0.1 °C.",
+  "m = 100 g, ΔT = 6.8 °C, q = 2842 J, n = 0.050 mol, ΔH = −56.8 kJ mol⁻¹."
+ ],
+ "kind": "calorimeter",
+ "mixture": "50 cm³ HCl + 50 cm³ NaOH",
+ "mass": 100,
+ "dT": 6.8,
+ "q": 2842,
+ "moles": 0.05,
+ "dH": -56.8
+}

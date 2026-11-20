@@ -1,0 +1,85 @@
+{
+ "id": "chem-reversible-approach",
+ "renderer": "graph",
+ "course": "chemistry",
+ "lesson": "Reversible reactions",
+ "title": "Rates of the forward and reverse reactions",
+ "caption": "Starting with reactants only, the forward rate is high and falls as they are used up; the reverse rate starts at zero and rises as products form. When the two rates are equal, the system is at dynamic equilibrium.",
+ "alt": "Rate against time: a forward-rate curve falling and a reverse-rate curve rising until both level at the same value.",
+ "description": [
+  "Forward rate: starts high, falls.",
+  "Reverse rate: starts at zero, rises.",
+  "From about 10 s they are equal: equilibrium."
+ ],
+ "range": {
+  "x": [
+   0,
+   15
+  ],
+  "y": [
+   0,
+   1.1
+  ]
+ },
+ "ticks": [
+  [
+   5,
+   10,
+   15
+  ],
+  [
+   0.3,
+   0.5,
+   1
+  ]
+ ],
+ "grid": [
+  5,
+  0.25
+ ],
+ "axisLabels": [
+  "time / s",
+  "rate"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "0.3+0.7*exp(-0.4*x)",
+   "colour": "a1",
+   "label": "forward",
+   "labelAt": [
+    1.2,
+    0.85
+   ]
+  },
+  {
+   "expr": "0.3*(1-exp(-0.4*x))",
+   "colour": "a2",
+   "label": "reverse",
+   "labelAt": [
+    1.2,
+    0.05
+   ]
+  }
+ ],
+ "bands": [
+  {
+   "x": [
+    10,
+    15
+   ],
+   "label": "equilibrium",
+   "colour": "a4"
+  }
+ ],
+ "checks": [
+  {
+   "type": "intersect",
+   "a": "0.3+0.7*exp(-0.4*x)",
+   "b": "0.3*(1-exp(-0.4*x))",
+   "x": 40,
+   "y": 0.3,
+   "name": "the two rates become equal (0.3)"
+  }
+ ]
+}

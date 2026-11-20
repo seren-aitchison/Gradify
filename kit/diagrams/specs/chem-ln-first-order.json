@@ -1,0 +1,62 @@
+{
+ "id": "chem-ln-first-order",
+ "renderer": "graph",
+ "course": "chemistry",
+ "lesson": "Integrated rate laws",
+ "title": "ln[A] against time is a straight line for first order",
+ "caption": "Taking logs of [A] = [A]₀e^(−kt) gives ln[A] = ln[A]₀ − kt: a straight line whose gradient is −k. Here k = 0.116 s⁻¹ (half-life 6 s).",
+ "alt": "ln[A] against time: a straight line falling from 0 with gradient −0.116.",
+ "description": [
+  "Intercept ln[A]₀ = ln 1 = 0.",
+  "Gradient −k = −0.116 s⁻¹.",
+  "Straight, so the reaction is first order."
+ ],
+ "range": {
+  "x": [
+   0,
+   24
+  ],
+  "y": [
+   -3.2,
+   0.4
+  ]
+ },
+ "ticks": [
+  [
+   6,
+   12,
+   18,
+   24
+  ],
+  [
+   -3,
+   -2,
+   -1,
+   0
+  ]
+ ],
+ "grid": [
+  6,
+  1
+ ],
+ "axisLabels": [
+  "time / s",
+  "ln([A] / mol dm⁻³)"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "-0.115525*x",
+   "colour": "a1"
+  }
+ ],
+ "checks": [
+  {
+   "type": "slope",
+   "expr": "-0.115525*x",
+   "x": 10,
+   "value": -0.115525,
+   "name": "gradient −k = −ln 2 ÷ 6 s = −0.116 s⁻¹"
+  }
+ ]
+}

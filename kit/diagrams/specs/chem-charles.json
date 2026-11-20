@@ -1,0 +1,90 @@
+{
+ "id": "chem-charles",
+ "renderer": "graph",
+ "course": "chemistry",
+ "lesson": "Ideal gas equation",
+ "title": "Charles's law",
+ "caption": "At constant pressure, the volume of a gas is proportional to its absolute temperature. One mole of ideal gas at 1 atm occupies 22.4 dm³ at 273 K; extending the line back reaches zero volume at 0 K (−273 °C).",
+ "alt": "Straight line of volume against temperature in kelvin through the origin, dashed below 200 K, passing 22.4 dm³ at 273 K.",
+ "description": [
+  "Volume rises in proportion to kelvin temperature.",
+  "At 273 K, 22.4 dm³ for one mole at 1 atm.",
+  "Dashed extrapolation to the origin: zero volume at absolute zero."
+ ],
+ "range": {
+  "x": [
+   0,
+   420
+  ],
+  "y": [
+   0,
+   36
+  ]
+ },
+ "ticks": [
+  [
+   100,
+   200,
+   273,
+   400
+  ],
+  [
+   10,
+   20,
+   30
+  ]
+ ],
+ "grid": [
+  100,
+  10
+ ],
+ "axisLabels": [
+  "T / K",
+  "V / dm³"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "0.082057*x",
+   "domain": [
+    0,
+    200
+   ],
+   "colour": "a1",
+   "dash": "6 5"
+  },
+  {
+   "expr": "0.082057*x",
+   "domain": [
+    200,
+    410
+   ],
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 273.15,
+   "y": 22.414,
+   "label": "273 K, 22.4 dm³",
+   "dx": -10,
+   "anchor": "end"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "0.082057*x",
+   "x": 273.15,
+   "y": 22.414,
+   "name": "1 mol at 1 atm and 273 K occupies 22.4 dm³ (V = nRT/p)"
+  },
+  {
+   "type": "point",
+   "expr": "0.082057*x",
+   "x": 0,
+   "y": 0,
+   "name": "zero volume at 0 K"
+  }
+ ]
+}

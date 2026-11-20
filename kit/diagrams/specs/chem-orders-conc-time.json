@@ -1,0 +1,112 @@
+{
+ "id": "chem-orders-conc-time",
+ "renderer": "graph",
+ "course": "chemistry",
+ "lesson": "Reaction order",
+ "title": "Concentration against time for each order",
+ "caption": "From the same start, a zero-order reaction falls in a straight line, a first-order one decays exponentially with a constant half-life, and a second-order one starts as fast but slows more, with half-lives that double.",
+ "alt": "[A] against time from 1.0: a straight line to zero (zero order), an exponential curve (first order) and a curve that flattens more (second order).",
+ "description": [
+  "Zero order: [A] falls by the same amount each second.",
+  "First order: [A] halves every 3 s.",
+  "Second order: the first half-life is 3 s, the next 6 s."
+ ],
+ "range": {
+  "x": [
+   0,
+   15
+  ],
+  "y": [
+   0,
+   1.1
+  ]
+ },
+ "ticks": [
+  [
+   3,
+   6,
+   9,
+   12,
+   15
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "grid": [
+  3,
+  0.25
+ ],
+ "axisLabels": [
+  "time / s",
+  "[A] / mol dm⁻³"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "1-x/6",
+   "domain": [
+    0,
+    6
+   ],
+   "colour": "a5",
+   "label": "zero",
+   "labelAt": [
+    4.2,
+    0.18
+   ]
+  },
+  {
+   "expr": "0",
+   "domain": [
+    6,
+    15
+   ],
+   "colour": "a5"
+  },
+  {
+   "expr": "exp(-0.231049*x)",
+   "colour": "a1",
+   "label": "first",
+   "labelAt": [
+    9.3,
+    0.17
+   ]
+  },
+  {
+   "expr": "1/(1+x/3)",
+   "colour": "a2",
+   "label": "second",
+   "labelAt": [
+    11,
+    0.3
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "exp(-0.231049*x)",
+   "x": 3,
+   "y": 0.5,
+   "name": "first order: half-life 3 s"
+  },
+  {
+   "type": "point",
+   "expr": "exp(-0.231049*x)",
+   "x": 6,
+   "y": 0.25,
+   "name": "first order: the next half-life is also 3 s"
+  },
+  {
+   "type": "point",
+   "expr": "1/(1+x/3)",
+   "x": 9,
+   "y": 0.25,
+   "name": "second order: 0.5 → 0.25 takes 6 s, twice the first half-life"
+  }
+ ]
+}

@@ -1,0 +1,84 @@
+{
+ "id": "chem-chemical-potential",
+ "renderer": "graph",
+ "course": "chemistry",
+ "lesson": "Chemical potential",
+ "title": "Chemical potential of a gas",
+ "caption": "For an ideal gas μ = μ° + RT ln(p/p°): the chemical potential rises with pressure, logarithmically. At the standard pressure (1 bar) μ = μ°; matter flows from high μ to low.",
+ "alt": "μ − μ° against pressure in bar at 298 K: a logarithmic curve through zero at 1 bar.",
+ "description": [
+  "Below 1 bar, μ is below μ°.",
+  "At 1 bar, μ = μ°.",
+  "Above 1 bar, μ rises ever more slowly: RT ln p."
+ ],
+ "range": {
+  "x": [
+   0,
+   5
+  ],
+  "y": [
+   -8,
+   5
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  [
+   -6,
+   -3,
+   0,
+   3
+  ]
+ ],
+ "grid": [
+  1,
+  3
+ ],
+ "axisLabels": [
+  "p / bar",
+  "μ − μ° / kJ mol⁻¹"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "2.4776*log(x)",
+   "domain": [
+    0.04,
+    5
+   ],
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 0,
+   "label": "standard state"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "2.4776*log(x)",
+   "x": 1,
+   "y": 0,
+   "name": "μ = μ° at the standard pressure"
+  },
+  {
+   "type": "value",
+   "expr": "2.4776*log(x)",
+   "x": 2.718282,
+   "between": [
+    2.47,
+    2.49
+   ],
+   "name": "RT ln e = RT = 2.48 kJ mol⁻¹ at 298 K"
+  }
+ ]
+}

@@ -145,7 +145,7 @@ function lattice(spec, W, narrow) {
     // one line per species: its key colour, how many per cell and its nearest neighbours
     let ly = by + 20;
     for (const [k, st] of Object.entries(c.species)) {
-      const t = `${pc[k]} per cell, ${cn[k]} nearest neighbours`, w = (fm(st.label).replace(/[_^]\{|\}/g, "").length + t.length) * 6.4 + 24;
+      const t = `${pc[k]} per cell, ${cn[k]} neighbours`, w = (fm(st.label).replace(/[_^]\{|\}/g, "").length + t.length) * 6.4 + 24;
       s += `<circle cx="${f1(bx - w / 2 + 6)}" cy="${ly}" r="6" fill="${col(st.colour)}" stroke="#151826"/>` + text(bx - w / 2 + 16, ly, `${fm(st.label)}: ${t}`, { size: 11.5, anchor: "start", fill: C.soft });
       ly += 18;
     }
@@ -382,7 +382,7 @@ const APP = {
     s += lab(330, 150, spec.mixture || "acid + alkali");
     const q = spec.mass * 4.18 * spec.dT;
     s += lab(330, 190, `m = ${spec.mass} g, ΔT = ${spec.dT} °C`) + lab(330, 212, `q = mcΔT = ${spec.mass} × 4.18 × ${spec.dT}`) + lab(330, 234, `= ${Math.round(q)} J`, { fill: col("a2") });
-    if (spec.moles) s += lab(330, 262, `ΔH = −${(q / 1000).toFixed(2)} ÷ ${spec.moles}`) + lab(330, 284, `= ${(-q / 1000 / spec.moles).toFixed(1)} kJ mol⁻¹`, { fill: col("a2") });
+    if (spec.moles) s += lab(330, 262, `ΔH = −${(q / 1000).toFixed(2)} ÷ ${spec.moles}`) + lab(330, 284, `= −${(q / 1000 / spec.moles).toFixed(1)} kJ mol⁻¹`, { fill: col("a2") });
     return { s, H: 340 };
   },
   fractionating(spec) {
@@ -463,7 +463,7 @@ function phase(spec, W, narrow) {
   if (water) {
     const mpU = tp[0] + slope * 0.05 * ((atm - tp[1]) / (1 - tp[1])), bpU = lg.find(([, v]) => v >= atm)[0];
     s += `<circle cx="${f1(X(mpU))}" cy="${f1(Y(atm))}" r="4" fill="${C.ink}"/><circle cx="${f1(X(bpU))}" cy="${f1(Y(atm))}" r="4" fill="${C.ink}"/>`;
-    s += text(X(mpU) - 4, Y(atm) - 12, "0 °C", { size: 11, weight: 700, anchor: "end" }) + text(X(bpU) + 6, Y(atm) - 12, "100 °C", { size: 11, weight: 700, anchor: "start" });
+    s += text(X(mpU) - 6, Y(atm) - 12, "0 °C", { size: 11, weight: 700, anchor: "end" }) + text(X(bpU) - 8, Y(atm) - 14, "100 °C", { size: 11, weight: 700, anchor: "end" });
     if (spec.solution) {
       const sh = 0.07, lg2 = lg.map(([u, v]) => [u + sh * (0.4 + 0.6 * (v - tp[1]) / (cp[1] - tp[1])), v * 0.97]).filter(([u]) => u <= 0.98), sl2 = [[tp[0] - 0.06, tp[1] * 0.93], [tp[0] - 0.06 + slope * 0.05, 1]];
       s += curve(lg2, col("a2"), 2.2, "7 5") + curve(sl2, col("a2"), 2.2, "7 5");

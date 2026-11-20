@@ -1,0 +1,87 @@
+{
+ "id": "chem-q-vs-k",
+ "renderer": "graph",
+ "course": "chemistry",
+ "lesson": "Reaction quotients",
+ "title": "Comparing Q with K",
+ "caption": "The reaction quotient Q has the same form as K but uses the current concentrations. ΔG = RT ln(Q/K): if Q < K, ΔG is negative and the reaction moves forward; if Q > K it moves back; at Q = K it is at equilibrium. Here K = 100.",
+ "alt": "ΔG against log Q at 298 K for K = 100: a straight line crossing zero at log Q = 2.",
+ "description": [
+  "Left of log Q = 2 (Q < K): ΔG negative, forward reaction.",
+  "At Q = K: ΔG = 0, equilibrium.",
+  "Right (Q > K): ΔG positive, reverse reaction."
+ ],
+ "range": {
+  "x": [
+   -1,
+   5
+  ],
+  "y": [
+   -20,
+   20
+  ]
+ },
+ "ticks": [
+  [
+   0,
+   1,
+   2,
+   3,
+   4
+  ],
+  [
+   -15,
+   0,
+   15
+  ]
+ ],
+ "grid": [
+  1,
+  5
+ ],
+ "axisLabels": [
+  "log₁₀ Q",
+  "ΔG / kJ mol⁻¹"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "5.70482*(x-2)",
+   "colour": "a1"
+  }
+ ],
+ "bands": [
+  {
+   "x": [
+    -1,
+    2
+   ],
+   "label": "Q < K: forward",
+   "colour": "good"
+  },
+  {
+   "x": [
+    2,
+    5
+   ],
+   "label": "Q > K: reverse",
+   "colour": "bad"
+  }
+ ],
+ "points": [
+  {
+   "x": 2,
+   "y": 0,
+   "label": "Q = K"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "5.70482*(x-2)",
+   "x": 2,
+   "y": 0,
+   "name": "ΔG = 0 when Q = K = 100"
+  }
+ ]
+}

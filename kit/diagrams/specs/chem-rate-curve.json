@@ -1,0 +1,85 @@
+{
+ "id": "chem-rate-curve",
+ "renderer": "graph",
+ "course": "chemistry",
+ "lesson": "Introduction to reaction rates",
+ "title": "Following the rate of a reaction",
+ "caption": "The volume of gas produced rises fastest at the start, when the reactants are most concentrated, and levels off as they are used up. The rate at any moment is the gradient of the curve.",
+ "alt": "Volume of gas against time: a curve rising steeply at first and levelling off at 60 cm³.",
+ "description": [
+  "Steep at the start: fast reaction.",
+  "Less steep as the reactants are used up.",
+  "Flat at 60 cm³: the reaction has finished."
+ ],
+ "also": [
+  {
+   "course": "gcse",
+   "lesson": "Rates of reaction"
+  }
+ ],
+ "range": {
+  "x": [
+   0,
+   120
+  ],
+  "y": [
+   0,
+   70
+  ]
+ },
+ "ticks": [
+  [
+   20,
+   40,
+   60,
+   80,
+   100,
+   120
+  ],
+  [
+   20,
+   40,
+   60
+  ]
+ ],
+ "grid": [
+  20,
+  10
+ ],
+ "axisLabels": [
+  "time / s",
+  "volume of gas / cm³"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "60*(1-exp(-0.04*x))",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "y": 60,
+   "label": "reaction complete"
+  }
+ ],
+ "checks": [
+  {
+   "type": "slope",
+   "expr": "60*(1-exp(-0.04*x))",
+   "x": 0,
+   "value": 2.4,
+   "name": "initial rate 2.4 cm³ s⁻¹ (the gradient at t = 0)"
+  },
+  {
+   "type": "value",
+   "expr": "60*(1-exp(-0.04*x))",
+   "x": 120,
+   "between": [
+    59,
+    60
+   ],
+   "name": "levels off at 60 cm³"
+  }
+ ]
+}

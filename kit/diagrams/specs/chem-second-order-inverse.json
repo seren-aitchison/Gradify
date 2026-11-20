@@ -1,0 +1,72 @@
+{
+ "id": "chem-second-order-inverse",
+ "renderer": "graph",
+ "course": "chemistry",
+ "lesson": "Second-order reactions",
+ "title": "Recognising second order",
+ "caption": "For a second-order reaction 1/[A] = 1/[A]₀ + kt, so a plot of 1/[A] against time is a straight line with gradient k. Here k = 0.5 dm³ mol⁻¹ s⁻¹.",
+ "alt": "1/[A] against time: a straight line from 1 at 0 s rising with gradient 0.5.",
+ "description": [
+  "Intercept 1/[A]₀ = 1 dm³ mol⁻¹.",
+  "Gradient k = 0.5 dm³ mol⁻¹ s⁻¹.",
+  "A straight line confirms second order."
+ ],
+ "range": {
+  "x": [
+   0,
+   10
+  ],
+  "y": [
+   0,
+   7
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   4,
+   6,
+   8,
+   10
+  ],
+  [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ]
+ ],
+ "grid": [
+  2,
+  1
+ ],
+ "axisLabels": [
+  "time / s",
+  "1/[A] / dm³ mol⁻¹"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "1+0.5*x",
+   "colour": "a2"
+  }
+ ],
+ "checks": [
+  {
+   "type": "slope",
+   "expr": "1+0.5*x",
+   "x": 5,
+   "value": 0.5,
+   "name": "gradient = k = 0.5 dm³ mol⁻¹ s⁻¹"
+  },
+  {
+   "type": "point",
+   "expr": "1+0.5*x",
+   "x": 0,
+   "y": 1,
+   "name": "intercept 1/[A]₀ = 1"
+  }
+ ]
+}

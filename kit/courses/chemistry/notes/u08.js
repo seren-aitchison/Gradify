@@ -11,6 +11,7 @@ H: Reversibility
 - Shown by the symbol **⇌**.
 - Products can react to re-form the reactants.
 - In a closed system, neither reaction goes to completion.
+D: chem-reversible-approach
 H: Examples and energy
 - Heating hydrated copper(II) sulfate (blue) gives anhydrous copper(II) sulfate (white) and water; adding water reverses it.
 - Ammonium chloride decomposes on heating and re-forms on cooling.
@@ -52,6 +53,7 @@ H: Features
 - Concentrations of reactants and products stay **constant** (not equal).
 - Reactions continue at the molecular level: it is **dynamic**.
 - Equilibrium requires a **closed system**.
+D: chem-dynamic-equilibrium
 H: Reaching equilibrium
 - Initially the forward rate is high and the reverse rate is zero.
 - As products build up, the reverse rate increases.
@@ -93,6 +95,7 @@ H: The equilibrium law
 - Products on top, reactants below, each raised to its coefficient.
 - Concentrations are equilibrium values.
 - Pure solids and liquids are left out.
+D: chem-k-large-small
 H: Magnitude and changes
 - **K ≫ 1**: products favoured at equilibrium.
 - **K ≪ 1**: reactants favoured.
@@ -216,6 +219,7 @@ H: The reaction quotient
 - At equilibrium, Q = K.
 - Q can be calculated for any mixture.
 - It shows how far a mixture is from equilibrium.
+D: chem-q-vs-k
 H: Predicting direction
 - **Q < K**: too few products; the reaction moves **forward**.
 - **Q > K**: too many products; the reaction moves **backward**.
@@ -257,6 +261,7 @@ H: The principle
 - Changes include concentration, pressure and temperature.
 - The system partially counteracts, but does not fully undo, the change.
 - Catalysts do not shift equilibrium.
+D: chem-le-chatelier-conc
 H: Applying it
 - Add reactant: shifts **right**.
 - Remove product: shifts **right**.
@@ -298,6 +303,7 @@ H: Effect of temperature
 - Lowering temperature shifts it in the **exothermic** direction.
 - For an exothermic forward reaction, raising temperature **decreases K**.
 - For an endothermic forward reaction, raising temperature **increases K**.
+D: chem-k-temperature
 H: Examples
 - 2NO₂ (brown) ⇌ N₂O₄ (colourless), ΔH negative: heating makes it browner.
 - The Haber process is exothermic, so lower temperatures give higher yield.
@@ -339,6 +345,7 @@ H: Effect of pressure
 - Decreasing pressure favours the side with **more gas molecules**.
 - If both sides have equal gas molecules, pressure has no effect on position.
 - K is unchanged by pressure.
+D: chem-pressure-equilibrium
 H: Industry
 - Haber: N₂ + 3H₂ ⇌ 2NH₃ (4 → 2 molecules), so high pressure increases yield.
 - High pressure also increases rate.
@@ -380,6 +387,7 @@ H: Effect of concentration
 - Adding a product shifts it **left**.
 - Removing a product shifts it **right**, increasing yield.
 - K remains constant; only the position changes.
+D: chem-conc-change
 H: Using concentration
 - Industry often uses an **excess** of a cheaper reactant.
 - Removing products continuously drives reactions forward.
@@ -585,6 +593,7 @@ H: Linking K and ΔG⦵
 - Combined with ΔG⦵ = ΔH⦵ − TΔS⦵: ln K = −ΔH⦵/RT + ΔS⦵/R.
 - Plotting ln K against 1/T gives gradient −ΔH⦵/R (the van 't Hoff plot).
 - Intercept gives ΔS⦵/R.
+D: chem-dg-lnk
 H: Interpreting
 - Large negative ΔG⦵ means K is large.
 - ΔG⦵ of about −6 kJ mol⁻¹ at 298 K gives K of about 10.

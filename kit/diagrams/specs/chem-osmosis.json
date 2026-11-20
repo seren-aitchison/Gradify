@@ -1,0 +1,74 @@
+{
+ "id": "chem-osmosis",
+ "renderer": "particles",
+ "course": "chemistry",
+ "lesson": "Osmosis",
+ "title": "Osmosis",
+ "caption": "A partially permeable membrane lets water molecules through but not the larger solute particles. Water moves overall from the dilute side (more free water) to the concentrated side until the pressures balance.",
+ "alt": "A box divided by a dashed membrane: left side mostly water, right side water with many sugar molecules; an arrow shows net water flow to the right.",
+ "description": [
+  "Left: pure water.",
+  "Right: a concentrated sugar solution.",
+  "Water crosses the membrane from left to right; sugar cannot."
+ ],
+ "species": {
+  "H2O": {
+   "atoms": [
+    "O",
+    "H",
+    "H"
+   ],
+   "shape": "bent"
+  },
+  "sugar": {
+   "atoms": [
+    "C",
+    "O",
+    "O",
+    "O",
+    "O"
+   ],
+   "shape": "tetra"
+  }
+ },
+ "panelHeight": 200,
+ "panels": [
+  {
+   "title": "dilute | membrane | concentrated",
+   "arrangement": "random",
+   "contents": [
+    [
+     "H2O",
+     10,
+     "left"
+    ],
+    [
+     "H2O",
+     5,
+     "right"
+    ],
+    [
+     "sugar",
+     5,
+     "right"
+    ]
+   ],
+   "membrane": true,
+   "note": "net flow of water: left → right"
+  }
+ ],
+ "claims": [
+  {
+   "type": "region",
+   "panel": 0,
+   "species": "sugar",
+   "region": "right"
+  },
+  {
+   "type": "count",
+   "panel": 0,
+   "species": "sugar",
+   "n": 5
+  }
+ ]
+}

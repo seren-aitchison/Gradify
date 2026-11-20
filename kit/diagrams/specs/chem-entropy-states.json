@@ -1,0 +1,78 @@
+{
+ "id": "chem-entropy-states",
+ "renderer": "particles",
+ "course": "chemistry",
+ "lesson": "Entropy",
+ "title": "Entropy increases from solid to gas",
+ "caption": "Entropy measures the number of ways particles and their energy can be arranged. A solid's particles are fixed in place (low entropy); a liquid's can move past each other; a gas's are free to be almost anywhere (high entropy). S(H₂O): ice 41, water 70, steam 189 J K⁻¹ mol⁻¹.",
+ "alt": "Three boxes of water molecules: ordered solid, disordered liquid and widely scattered gas.",
+ "description": [
+  "Ice: ordered, S about 41 J K⁻¹ mol⁻¹.",
+  "Liquid water: disordered, about 70.",
+  "Steam: spread out, 189."
+ ],
+ "species": {
+  "H2O": {
+   "atoms": [
+    "O",
+    "H",
+    "H"
+   ],
+   "shape": "bent"
+  }
+ },
+ "steps": [
+  "S rises",
+  "S rises"
+ ],
+ "panels": [
+  {
+   "title": "ice, S = 41",
+   "arrangement": "lattice",
+   "contents": [
+    [
+     "H2O",
+     12
+    ]
+   ]
+  },
+  {
+   "title": "water, S = 70",
+   "arrangement": "liquid",
+   "contents": [
+    [
+     "H2O",
+     12
+    ]
+   ]
+  },
+  {
+   "title": "steam, S = 189",
+   "arrangement": "gas",
+   "contents": [
+    [
+     "H2O",
+     6
+    ]
+   ],
+   "motion": true
+  }
+ ],
+ "claims": [
+  {
+   "type": "states",
+   "panel": 0,
+   "as": "solid"
+  },
+  {
+   "type": "states",
+   "panel": 1,
+   "as": "liquid"
+  },
+  {
+   "type": "states",
+   "panel": 2,
+   "as": "gas"
+  }
+ ]
+}

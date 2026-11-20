@@ -1,0 +1,86 @@
+{
+ "id": "chem-dynamic-equilibrium",
+ "renderer": "graph",
+ "course": "chemistry",
+ "lesson": "Dynamic equilibrium",
+ "title": "Concentrations reaching equilibrium",
+ "caption": "For A ⇌ B starting from pure A, [A] falls and [B] rises until both stop changing. They need not be equal: here [B]/[A] = 0.6/0.4 = 1.5 = Kc. Both reactions are still going, at equal rates.",
+ "alt": "Concentration against time: [A] falling from 1.0 to 0.4, [B] rising from 0 to 0.6, both levelling.",
+ "description": [
+  "[A] from 1.0 down to 0.4.",
+  "[B] from 0 up to 0.6.",
+  "Then constant: Kc = 0.6 ÷ 0.4 = 1.5."
+ ],
+ "also": [
+  {
+   "course": "gcse",
+   "lesson": "Reversible reactions and equilibrium"
+  }
+ ],
+ "range": {
+  "x": [
+   0,
+   20
+  ],
+  "y": [
+   0,
+   1.1
+  ]
+ },
+ "ticks": [
+  [
+   5,
+   10,
+   15,
+   20
+  ],
+  [
+   0.2,
+   0.4,
+   0.6,
+   0.8,
+   1
+  ]
+ ],
+ "grid": [
+  5,
+  0.2
+ ],
+ "axisLabels": [
+  "time / s",
+  "concentration / mol dm⁻³"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "0.4+0.6*exp(-0.3*x)",
+   "colour": "a1",
+   "label": "[A]",
+   "labelAt": [
+    18,
+    0.46
+   ]
+  },
+  {
+   "expr": "0.6*(1-exp(-0.3*x))",
+   "colour": "a2",
+   "label": "[B]",
+   "labelAt": [
+    18,
+    0.66
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "value",
+   "expr": "(0.6*(1-exp(-0.3*x)))/(0.4+0.6*exp(-0.3*x))",
+   "x": 60,
+   "between": [
+    1.499,
+    1.501
+   ],
+   "name": "at equilibrium [B]/[A] = Kc = 1.5"
+  }
+ ]
+}

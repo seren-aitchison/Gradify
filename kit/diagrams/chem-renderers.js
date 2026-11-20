@@ -18,7 +18,7 @@ const C = { ink: "var(--vx-ink, #151826)", soft: "var(--vx-soft, #5b6275)", line
 // subscript digits in formulae and superscript charges, written in the text() markup: H2O → H_{2}O, SO4^2- → SO_{4}^{2−}
 export function fm(s) {
   // keeps state symbols; a bare charge after a formula (Na+, Cl−, e−) becomes a superscript too
-  return ascii(s, true).replace(/\^(\d*[+-])/g, (_, q) => `^{${q.replace("-", "−")}}`).replace(/\^(\d+)/g, "^{$1}")
+  return ascii(s, true).replace(/\^([+-]\d+)/g, (_, q) => `^{${q.replace("-", "−")}}`).replace(/\^(\d*[+-])/g, (_, q) => `^{${q.replace("-", "−")}}`).replace(/\^(\d+)/g, "^{$1}")
     .replace(/([A-Za-z\]])([+−-])(?=$|[\s(,;:])/g, (_, a, q) => `${a}^{${q === "+" ? "+" : "−"}}`)
     .replace(/([A-Za-z)\]])(\d+)/g, "$1_{$2}");
 }
@@ -317,6 +317,12 @@ function moleculeOffsets(sp) {
   const c = at[0];
   const dirs = { linear: [0, 180], bent: [-52, 232], trigonal: [-90, 30, 150], tetra: [-45, 45, 135, 225], diatomic: [0] }[sp.shape || (k === 2 ? "diatomic" : k === 3 ? "linear" : k === 4 ? "trigonal" : "tetra")];
   if (k === 2) { const L = d(at[0], at[1]); return [[-L / 2, 0], [L / 2, 0]]; }
+  if (sp.shape === "dimer" && k === 6) {
+    // X2Y4 (N2O4): two bonded centres, each carrying two outer atoms
+    const L = d(at[0], at[1]), M = d(at[0], at[2]);
+    return [[-L / 2, 0], [L / 2, 0], [-L / 2 - M * 0.6, -M * 0.75], [-L / 2 - M * 0.6, M * 0.75], [L / 2 + M * 0.6, -M * 0.75], [L / 2 + M * 0.6, M * 0.75]];
+  }
+  if (k > 5) { const L = d(at[0], at[1]); return at.map((_, i) => (i ? [Math.cos((i * 2 * Math.PI) / (k - 1)) * L, Math.sin((i * 2 * Math.PI) / (k - 1)) * L] : [0, 0])); }
   return [[0, 0], ...at.slice(1).map((e, i) => { const a = (dirs[i] * Math.PI) / 180, L = d(c, e); return [Math.cos(a) * L, Math.sin(a) * L]; })];
 }
 function drawSpecies(spec, key, x, y, scale = 1) {
@@ -354,8 +360,22 @@ function particles(spec, W, narrow) {
     if (p.arrangement === "lattice" && p.contents.length === 2 && p.contents[0][1] === p.contents[1][1] && p.alternate !== false) for (let k = 0; k < p.contents[0][1]; k++) list.push(p.contents[0][0], p.contents[1][0]);
     else for (const [k, c] of p.contents) for (let q = 0; q < c; q++) list.push(k);
     const maxR = Math.max(...list.map((k) => speciesRadius(spec.species[k])), 8);
-    const pts = place(list.length, p.arrangement, bx, by, bw, bh, maxR, R, p);
-    if (p.arrangement !== "lattice" && p.arrangement !== "layer") list.sort(() => R() - 0.5);
+    let pts;
+    if (p.contents.some((c) => c[2])) {
+      // items placed in their own region (each side of a membrane): all regions' particles avoid each other
+      pts = [];
+      list.length = 0;
+      for (const region of ["left", "right", undefined]) {
+        const items = []; for (const [k, c, rg] of p.contents) if (rg === region) for (let q = 0; q < c; q++) items.push(k);
+        if (!items.length) continue;
+        items.sort(() => R() - 0.5);
+        const got = place(items.length, p.arrangement, bx, by, bw, bh, maxR, R, { ...p, region, avoid: pts });
+        items.forEach((k, q) => { list.push(k); pts.push(got[q]); });
+      }
+    } else {
+      pts = place(list.length, p.arrangement, bx, by, bw, bh, maxR, R, p);
+      if (p.arrangement !== "lattice" && p.arrangement !== "layer") list.sort(() => R() - 0.5);
+    }
     list.forEach((k, q) => { if (pts[q]) s += drawSpecies(spec, k, pts[q][0], pts[q][1], (p.scale || 1) * (pts.scale || 1)); });
     if (p.overlay) { const R2 = rng(`${spec.id}${i}o`); for (const [k, c] of p.overlay) for (let q = 0; q < c; q++) s += drawSpecies(spec, k, bx + 6 + R2() * (bw - 12), by + 6 + R2() * (bh - 12)); }
     if (p.motion) pts.slice(0, Math.min(pts.length, 6)).forEach(([px, py], q) => { const a = R() * Math.PI * 2; s += arrow(px + Math.cos(a) * (maxR + 3), py + Math.sin(a) * (maxR + 3), px + Math.cos(a) * (maxR + 20), py + Math.sin(a) * (maxR + 20), { stroke: C.soft, w: 1.4, head: 6 }); });
@@ -394,7 +414,7 @@ function place(k, arr, x, y, w, h, r, R, p) {
   if (p.region === "left") x1 = x + w / 2 - r - 6; if (p.region === "right") x0 = x + w / 2 + r + 6;
   for (let i = 0, tries = 0; i < k && tries < 20000; tries++) {
     const c = [x0 + R() * (x1 - x0), y + r + 2 + R() * (h - 2 * r - 4)];
-    if (pts.every((q) => Math.hypot(q[0] - c[0], q[1] - c[1]) > 2 * r + (p.spacing ?? 6))) { pts.push(c); i++; }
+    if ([...pts, ...(p.avoid || [])].every((q) => q && Math.hypot(q[0] - c[0], q[1] - c[1]) > 2 * r + (p.spacing ?? 6))) { pts.push(c); i++; }
   }
   return pts;
 }
@@ -429,6 +449,9 @@ function particleChecks(spec) {
         const tot = (i) => Object.fromEntries(spec.panels[i].contents.map(([k, n]) => [k, n]));
         out.push(check("the particles drawn match the equation's proportions", eqMatches(c.eq, tot(c.panels[0]), tot(c.panels[1]), c.leftover || {}), JSON.stringify([tot(c.panels[0]), tot(c.panels[1])])));
       }
+    } else if (c.type === "region") {
+      const p = spec.panels[c.panel], where = p.contents.filter(([k]) => k === c.species).map(([, , rg]) => rg);
+      out.push(check(`"${p.title}": every ${c.species} is on the ${c.region} side`, where.length > 0 && where.every((rg) => rg === c.region), where.join(", ")));
     } else if (c.type === "states") {
       out.push(check(`"${spec.panels[c.panel].title}" is drawn as a ${c.as}`, ({ solid: "lattice", liquid: "liquid", gas: "gas" })[c.as] === spec.panels[c.panel].arrangement));
     }

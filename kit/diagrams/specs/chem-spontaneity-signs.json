@@ -1,0 +1,82 @@
+{
+ "id": "chem-spontaneity-signs",
+ "renderer": "classify",
+ "course": "chemistry",
+ "lesson": "Spontaneity",
+ "title": "Is the reaction feasible?",
+ "caption": "ΔG = ΔH − TΔS must be negative. The signs of ΔH and ΔS decide whether that depends on temperature.",
+ "alt": "A tree: is ΔH negative? Then: is ΔS positive? Feasible at all temperatures; otherwise only at low temperatures. If ΔH is positive: is ΔS positive? Feasible at high temperatures; otherwise never.",
+ "description": [
+  "ΔH negative and ΔS positive: always feasible, such as combustion.",
+  "ΔH negative and ΔS negative: feasible below T = ΔH/ΔS, such as the Haber process.",
+  "ΔH positive and ΔS positive: feasible above T = ΔH/ΔS, such as decomposing CaCO₃.",
+  "ΔH positive and ΔS negative: never feasible."
+ ],
+ "start": "q1",
+ "rowHeight": 100,
+ "nodes": {
+  "q1": {
+   "q": "Is ΔH negative (exothermic)?",
+   "yes": "q2",
+   "no": "q3"
+  },
+  "q2": {
+   "q": "Is ΔS positive?",
+   "yes": "all",
+   "no": "low"
+  },
+  "all": {
+   "leaf": "Feasible at every temperature",
+   "examples": [
+    "burning methane"
+   ],
+   "tone": "good"
+  },
+  "low": {
+   "leaf": "Feasible at low T only",
+   "examples": [
+    "N2 + 3H2 → 2NH3"
+   ],
+   "tone": "a1"
+  },
+  "q3": {
+   "q": "Is ΔS positive?",
+   "yes": "high",
+   "no": "never"
+  },
+  "high": {
+   "leaf": "Feasible at high T only",
+   "examples": [
+    "CaCO3 → CaO + CO2"
+   ],
+   "tone": "a3"
+  },
+  "never": {
+   "leaf": "Never feasible",
+   "examples": [
+    "3O2 → 2O3"
+   ],
+   "tone": "bad"
+  }
+ },
+ "claims": [
+  {
+   "type": "path",
+   "substance": "the Haber process (ΔH −92, ΔS −199)",
+   "answers": [
+    "yes",
+    "no"
+   ],
+   "leaf": "Feasible at low T only"
+  },
+  {
+   "type": "path",
+   "substance": "decomposing CaCO₃ (ΔH +178, ΔS +161)",
+   "answers": [
+    "no",
+    "yes"
+   ],
+   "leaf": "Feasible at high T only"
+  }
+ ]
+}

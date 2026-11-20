@@ -1,0 +1,82 @@
+{
+ "id": "chem-pressure-equilibrium",
+ "renderer": "particles",
+ "course": "chemistry",
+ "lesson": "Pressure and equilibrium",
+ "title": "Pressure and equilibrium",
+ "caption": "N₂O₄ ⇌ 2NO₂. Squeezing the mixture into a smaller volume raises the pressure; the equilibrium shifts towards the side with fewer gas molecules, N₂O₄, partly relieving the change. The atoms are the same; only their grouping changes.",
+ "alt": "Left: a box with N₂O₄ and NO₂ molecules. Right: the compressed mixture, now with more N₂O₄ and fewer NO₂.",
+ "description": [
+  "Before: 2 N₂O₄ and 6 NO₂.",
+  "After compression: 4 N₂O₄ and 2 NO₂, fewer molecules overall (6 against 8)."
+ ],
+ "species": {
+  "N2O4": {
+   "atoms": [
+    "N",
+    "N",
+    "O",
+    "O",
+    "O",
+    "O"
+   ],
+   "shape": "dimer"
+  },
+  "NO2": {
+   "atoms": [
+    "N",
+    "O",
+    "O"
+   ],
+   "shape": "bent"
+  }
+ },
+ "steps": [
+  "pressure raised"
+ ],
+ "panels": [
+  {
+   "title": "lower pressure",
+   "arrangement": "gas",
+   "contents": [
+    [
+     "N2O4",
+     2
+    ],
+    [
+     "NO2",
+     6
+    ]
+   ]
+  },
+  {
+   "title": "higher pressure",
+   "arrangement": "gas",
+   "contents": [
+    [
+     "N2O4",
+     4
+    ],
+    [
+     "NO2",
+     2
+    ]
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "type": "conserved",
+   "panels": [
+    0,
+    1
+   ]
+  },
+  {
+   "type": "count",
+   "panel": 1,
+   "species": "N2O4",
+   "n": 4
+  }
+ ]
+}

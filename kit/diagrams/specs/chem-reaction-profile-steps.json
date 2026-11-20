@@ -1,0 +1,68 @@
+{
+ "id": "chem-reaction-profile-steps",
+ "renderer": "energy-profile",
+ "course": "chemistry",
+ "lesson": "Reaction profiles",
+ "title": "A two-step reaction",
+ "caption": "A reaction with an intermediate has two transition states with the intermediate in the valley between. The higher barrier, here the first, controls the overall rate.",
+ "alt": "Reaction profile: reactants, a high first hump, a valley with the intermediate, a lower second hump, products.",
+ "description": [
+  "First, higher transition state.",
+  "The intermediate in the dip.",
+  "Second, lower transition state.",
+  "Products below the reactants."
+ ],
+ "profiles": [
+  {
+   "title": "two steps",
+   "colour": "a1",
+   "points": [
+    {
+     "x": 0,
+     "e": 40,
+     "kind": "start",
+     "label": "reactants"
+    },
+    {
+     "x": 0.3,
+     "e": 120,
+     "kind": "ts",
+     "label": "TS1"
+    },
+    {
+     "x": 0.55,
+     "e": 70,
+     "kind": "int",
+     "label": "intermediate"
+    },
+    {
+     "x": 0.75,
+     "e": 95,
+     "kind": "ts",
+     "label": "TS2"
+    },
+    {
+     "x": 1,
+     "e": 10,
+     "kind": "end",
+     "label": "products"
+    }
+   ],
+   "ea": [
+    {
+     "from": 0,
+     "to": 1,
+     "label": "Ea",
+     "dx": -30,
+     "anchor": "end"
+    }
+   ],
+   "expect": {
+    "ts": 2,
+    "int": 1,
+    "rds": 1,
+    "dh": "exothermic"
+   }
+  }
+ ]
+}

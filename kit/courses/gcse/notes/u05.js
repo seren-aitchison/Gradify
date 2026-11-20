@@ -443,6 +443,7 @@ O: Interpret reaction profiles
 O: Calculate energy changes from bond energies
 H: Energy transfers
 P: Energy is conserved in reactions. In an **exothermic** reaction, energy is transferred **to** the surroundings, so the temperature rises; examples include combustion, neutralisation and most oxidation reactions. In an **endothermic** reaction, energy is taken **in** from the surroundings, so the temperature falls; examples include thermal decomposition and the reaction of citric acid with sodium hydrogencarbonate. Exothermic reactions are used in hand warmers and self-heating cans; endothermic reactions in some sports injury packs.
+D: chem-exo-endo-profiles
 H: Reaction profiles
 - A **reaction profile** shows the energy of reactants and products.
 - In exothermic reactions, products are **lower** in energy than reactants.
@@ -485,6 +486,7 @@ O: Describe the factors that affect rates of reaction
 O: Explain these effects using collision theory
 H: Measuring rate
 P: The **rate of reaction** is how quickly reactants are used up or products are formed. **Mean rate** = quantity of reactant used or product formed ÷ time taken. Rates can be measured by recording the volume of gas produced, the loss in mass as gas escapes, or the time for a solution to turn cloudy. On a graph of product against time, the **gradient** shows the rate; a steeper line means a faster reaction, and the line levels off when the reaction stops.
+D: chem-rate-curve
 H: Factors affecting rate
 - **Temperature**: higher temperature increases rate.
 - **Concentration** of solutions, or **pressure** of gases: higher increases rate.
@@ -527,6 +529,7 @@ O: Explain dynamic equilibrium
 O: Predict the effect of changing conditions on an equilibrium
 H: Reversible reactions
 P: In a **reversible reaction**, the products can react to form the original reactants, shown by the symbol ⇌. For example, heating blue **hydrated copper sulfate** produces white anhydrous copper sulfate and water; adding water reverses the change. If a reaction is exothermic in one direction, it is **endothermic** by the same amount in the other. Ammonium chloride decomposing on heating and re-forming on cooling is another example.
+D: chem-dynamic-equilibrium
 H: Dynamic equilibrium
 - In a **closed system**, a reversible reaction reaches **equilibrium**.
 - At equilibrium, the forward and reverse reactions happen at the **same rate**.

@@ -1,0 +1,68 @@
+{
+ "id": "chem-thermo-cycle-dissolution",
+ "renderer": "cycle",
+ "course": "chemistry",
+ "lesson": "Thermodynamic cycles",
+ "title": "Dissolving sodium chloride",
+ "caption": "ΔsolH = −ΔlattH(formation) + ΔhydH(Na⁺) + ΔhydH(Cl⁻) = +787 − 406 − 364 = +17 kJ mol⁻¹ with these values (data books give about +4). Separating the lattice costs almost exactly what hydrating the ions returns, so NaCl dissolves with a small enthalpy change, driven by entropy.",
+ "alt": "Enthalpy diagram: NaCl(s) low; up 787 to the gaseous ions; down 406 and 364 for hydration to Na⁺(aq) + Cl⁻(aq), just above NaCl(s).",
+ "description": [
+  "NaCl(s) at the start.",
+  "Up +787 kJ mol⁻¹ to Na⁺(g) + Cl⁻(g): breaking up the lattice.",
+  "Down −406 kJ mol⁻¹: hydrating Na⁺.",
+  "Down −364 kJ mol⁻¹: hydrating Cl⁻, ending 17 kJ mol⁻¹ above the start."
+ ],
+ "kind": "levels",
+ "states": [
+  {
+   "id": "s",
+   "label": "NaCl(s)"
+  },
+  {
+   "id": "g",
+   "label": "Na+(g) + Cl−(g)"
+  },
+  {
+   "id": "h",
+   "label": "Na+(aq) + Cl−(g)"
+  },
+  {
+   "id": "aq",
+   "label": "Na+(aq) + Cl−(aq)"
+  }
+ ],
+ "steps": [
+  {
+   "from": "s",
+   "to": "g",
+   "dh": 787,
+   "label": "−ΔlattH",
+   "col": 0
+  },
+  {
+   "from": "g",
+   "to": "h",
+   "dh": -406,
+   "label": "ΔhydH(Na⁺)",
+   "col": 1
+  },
+  {
+   "from": "h",
+   "to": "aq",
+   "dh": -364,
+   "label": "ΔhydH(Cl⁻)",
+   "col": 1
+  },
+  {
+   "from": "s",
+   "to": "aq",
+   "dh": null,
+   "label": "ΔsolH",
+   "col": 2
+  }
+ ],
+ "find": {
+  "step": 3,
+  "value": 17
+ }
+}

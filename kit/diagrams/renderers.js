@@ -108,7 +108,19 @@ function graph(spec, W, H) {
     if (m.x != null) s += line(sx(m.x), sy(y0), sx(m.x), sy(m.to ?? y1), { stroke: C.line, w: 1.4, dash: "5 5" }) + (m.label ? text(sx(m.x) + (m.dx || 0), sy(m.to ?? y1) - 10, m.label, { size: 12, fill: C.soft }) : "");
     if (m.y != null) s += line(sx(x0), sy(m.y), sx(m.to ?? x1), sy(m.y), { stroke: C.line, w: 1.4, dash: "5 5" }) + (m.label ? text(sx(x0) + 6, sy(m.y) - 10, m.label, { size: 12, fill: C.soft, anchor: "start" }) : "");
   }
-  for (const c of spec.curves) {
+  // shaded areas under a curve between two x values (a Maxwell–Boltzmann tail beyond Ea)
+  for (const a of spec.areas || []) {
+    const f = compile(a.expr), pts = [];
+    for (let i = 0; i <= 120; i++) { const x = a.from + ((a.to - a.from) * i) / 120; pts.push([sx(x), sy(Math.max(y0, Math.min(y1, f(x))))]); }
+    s += `<path d="M${f1(sx(a.from))} ${f1(sy(Math.max(y0, 0)))} ${pts.map(([x, y]) => `L${f1(x)} ${f1(y)}`).join(" ")} L${f1(sx(a.to))} ${f1(sy(Math.max(y0, 0)))} Z" fill="${col(a.colour || "a2")}" fill-opacity="${a.opacity ?? 0.22}" clip-path="url(#${clipId})"/>`;
+  }
+  // plotted data (measured points joined by straight lines)
+  for (const sr of spec.series || []) {
+    s += `<path d="${pathOf(sr.points.map(([x, y]) => [sx(x), sy(y)]))}" fill="none" stroke="${col(sr.colour || "a1")}" stroke-width="${sr.width || 2.6}" stroke-linejoin="round"${sr.dash ? ` stroke-dasharray="${sr.dash}"` : ""} clip-path="url(#${clipId})"/>`;
+    if (sr.dots) for (const [x, y] of sr.points) s += `<circle cx="${f1(sx(x))}" cy="${f1(sy(y))}" r="3.5" fill="${col(sr.colour || "a1")}"/>`;
+    if (sr.label) { const [lx, ly] = sr.labelAt || sr.points.at(-1); s += text(sx(lx) + 6, sy(ly), sr.label, { size: 12.5, weight: 700, anchor: sr.anchor || "start", fill: col(sr.colour || "a1") }); }
+  }
+  for (const c of spec.curves || []) {
     const f = compile(c.expr), [d0, d1] = c.domain || [x0, x1], pts = [];
     for (let i = 0; i <= 240; i++) { const x = d0 + ((d1 - d0) * i) / 240, y = f(x); if (Number.isFinite(y) && y > y0 - (y1 - y0) && y < y1 + (y1 - y0)) pts.push([sx(x), sy(y)]); }
     s += `<path d="${pathOf(pts)}" fill="none" stroke="${col(c.colour || "a1")}" stroke-width="${c.width || 3}" stroke-linecap="round" stroke-linejoin="round"${c.dash ? ` stroke-dasharray="${c.dash}"` : ""} clip-path="url(#${clipId})"/>`;
@@ -138,6 +150,23 @@ function graphChecks(spec) {
       const f = compile(k.expr); let bx = k.domain[0], by = -Infinity;
       for (let i = 0; i <= 20000; i++) { const x = k.domain[0] + ((k.domain[1] - k.domain[0]) * i) / 20000, y = f(x); if (y > by) { by = y; bx = x; } }
       out.push(check(k.name || `maximum of ${k.expr} is at (${k.x}, ${k.y})`, Math.abs(bx - k.x) < 1e-2 && near(by, k.y, 1e-3), `found (${+bx.toFixed(3)}, ${+by.toFixed(3)})`));
+    } else if (k.type === "min") {
+      const f = compile(k.expr); let bx = k.domain[0], by = Infinity;
+      for (let i = 0; i <= 20000; i++) { const x = k.domain[0] + ((k.domain[1] - k.domain[0]) * i) / 20000, y = f(x); if (y < by) { by = y; bx = x; } }
+      out.push(check(k.name || `minimum of ${k.expr} is at x = ${k.x}`, Math.abs(bx - k.x) <= (k.tol ?? 1e-2) && (k.y == null || near(by, k.y, 1e-3)), `found (${+bx.toFixed(3)}, ${+by.toFixed(4)})`));
+    } else if (k.type === "area") {
+      // the area under a curve between two limits (a normalised distribution has area 1)
+      const f = compile(k.expr), n = 20000, h = (k.to - k.from) / n; let a = 0;
+      for (let i = 0; i < n; i++) a += f(k.from + (i + 0.5) * h) * h;
+      out.push(check(k.name, Math.abs(a - k.value) <= (k.tol ?? 0.005), `area ${a.toFixed(4)}`));
+    } else if (k.type === "tail") {
+      // which curve, or which threshold, leaves more area beyond it: the fraction of molecules with E ≥ Ea
+      const area = (e, from) => { const f = compile(e), n = 20000, h = (k.to - from) / n; let a = 0; for (let i = 0; i < n; i++) a += f(from + (i + 0.5) * h) * h; return a; };
+      const A = area(k.a, k.fromA ?? k.from), B = area(k.b ?? k.a, k.fromB ?? k.from);
+      out.push(check(k.name, A > B * (k.factor || 1), `${A.toFixed(4)} against ${B.toFixed(4)} (×${(A / B).toFixed(2)})`));
+    } else if (k.type === "slope") {
+      const f = compile(k.expr), d = (f(k.x + 1e-5) - f(k.x - 1e-5)) / 2e-5;
+      out.push(check(k.name || `gradient of ${k.expr} at x = ${k.x} is ${k.value}`, near(d, k.value, 1e-3), `gradient ${d.toFixed(4)}`));
     } else if (k.type === "value") {
       const y = compile(k.expr)(k.x);
       out.push(check(k.name, y >= k.between[0] && y <= k.between[1], `${k.expr} at ${k.x} = ${+y.toFixed(2)}; expected ${k.between[0]}–${k.between[1]}`));

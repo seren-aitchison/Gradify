@@ -1,0 +1,104 @@
+{
+ "id": "chem-maxwell-boltzmann-ea",
+ "renderer": "graph",
+ "course": "chemistry",
+ "lesson": "Temperature effects",
+ "title": "Why a small temperature rise speeds reactions so much",
+ "caption": "At the higher temperature the distribution flattens and shifts to higher energy. The area beyond Ea, the molecules that can react, grows far more than the shift suggests: here it more than doubles.",
+ "alt": "Two Maxwell–Boltzmann energy distributions, T₁ and a higher T₂, with the area beyond Ea shaded for each; the T₂ tail is much larger.",
+ "description": [
+  "T₁: taller, narrower, peak further left.",
+  "T₂: lower, broader, peak further right.",
+  "Both enclose the same area.",
+  "Beyond Ea: the T₂ curve lies well above the T₁ curve."
+ ],
+ "range": {
+  "x": [
+   0,
+   9
+  ],
+  "y": [
+   0,
+   0.5
+  ]
+ },
+ "ticks": [
+  [],
+  []
+ ],
+ "axisLabels": [
+  "energy",
+  "number of molecules"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "1.128379*sqrt(x)*exp(-x/1.0)",
+   "domain": [
+    0,
+    9
+   ],
+   "colour": "a1",
+   "label": "T₁",
+   "labelAt": [
+    0.9,
+    0.45
+   ]
+  },
+  {
+   "expr": "0.807402*sqrt(x)*exp(-x/1.25)",
+   "domain": [
+    0,
+    9
+   ],
+   "colour": "a3",
+   "label": "T₂ > T₁",
+   "labelAt": [
+    1.6,
+    0.34
+   ]
+  }
+ ],
+ "areas": [
+  {
+   "expr": "0.807402*sqrt(x)*exp(-x/1.25)",
+   "from": 4.5,
+   "to": 9,
+   "colour": "a3",
+   "opacity": 0.25
+  },
+  {
+   "expr": "1.128379*sqrt(x)*exp(-x/1.0)",
+   "from": 4.5,
+   "to": 9,
+   "colour": "a1",
+   "opacity": 0.35
+  }
+ ],
+ "marks": [
+  {
+   "x": 4.5,
+   "label": "Ea",
+   "to": 0.2
+  }
+ ],
+ "checks": [
+  {
+   "type": "tail",
+   "a": "0.807402*sqrt(x)*exp(-x/1.25)",
+   "b": "1.128379*sqrt(x)*exp(-x/1.0)",
+   "from": 4.5,
+   "to": 60,
+   "factor": 2,
+   "name": "beyond Ea, T₂ has more than twice as many molecules as T₁"
+  },
+  {
+   "type": "area",
+   "expr": "0.807402*sqrt(x)*exp(-x/1.25)",
+   "from": 0,
+   "to": 80,
+   "value": 1,
+   "name": "T₂: the same total area"
+  }
+ ]
+}

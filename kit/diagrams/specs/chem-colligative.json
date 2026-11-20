@@ -1,0 +1,24 @@
+{
+ "id": "chem-colligative",
+ "renderer": "phase",
+ "course": "chemistry",
+ "lesson": "Colligative properties",
+ "title": "A solute lowers the freezing point and raises the boiling point",
+ "caption": "Dissolving a non-volatile solute lowers the solvent's vapour pressure, shifting the liquid–gas line down (boiling point up) and the solid–liquid line left (freezing point down). For 1 mol of NaCl in 1 kg of water (2 mol of ions) ΔTb = 1.02 K and ΔTf = 3.72 K. Not to scale.",
+ "alt": "The phase diagram of water with the solution's boundaries dashed: the liquid region widens at both ends.",
+ "description": [
+  "Solid lines: pure water.",
+  "Dashed lines: the solution. Its liquid–gas line lies lower and to the right, its solid–liquid line to the left.",
+  "So the solution boils above 100 °C and freezes below 0 °C."
+ ],
+ "substance": "water",
+ "solution": {
+  "molality": 1,
+  "i": 2
+ },
+ "claims": {
+  "slope": "negative",
+  "dTb": 1.02,
+  "dTf": 3.72
+ }
+}

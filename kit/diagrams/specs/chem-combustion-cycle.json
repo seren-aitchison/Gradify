@@ -1,0 +1,59 @@
+{
+ "id": "chem-combustion-cycle",
+ "renderer": "cycle",
+ "course": "chemistry",
+ "lesson": "Enthalpy of combustion",
+ "title": "ΔfH from enthalpies of combustion",
+ "caption": "Methane cannot be made directly from carbon and hydrogen, but both it and its elements burn to CO₂ and H₂O. ΔfH(CH₄) = [ΔcH(C) + 2ΔcH(H₂)] − ΔcH(CH₄) = (−394 − 572) − (−890) = −76 kJ mol⁻¹ with these rounded values (data books: −75).",
+ "alt": "A Hess triangle: elements C + 2H₂ top left, CH₄ top right, CO₂ + 2H₂O at the bottom; arrows down from each top corner.",
+ "description": [
+  "Top left: C(s) + 2H₂(g).",
+  "Top right: CH₄(g); the arrow between them is ΔfH, unknown.",
+  "Down from the elements: −394 + 2 × (−286) = −966 kJ mol⁻¹.",
+  "Down from CH₄: −890 kJ mol⁻¹.",
+  "So ΔfH = −966 + 890 = −76 kJ mol⁻¹."
+ ],
+ "kind": "triangle",
+ "states": [
+  {
+   "id": "e",
+   "label": "C + 2H2 (+ 2O2)"
+  },
+  {
+   "id": "m",
+   "label": "CH4 (+ 2O2)"
+  },
+  {
+   "id": "c",
+   "label": "CO2 + 2H2O"
+  }
+ ],
+ "steps": [
+  {
+   "from": "e",
+   "to": "m",
+   "dh": null,
+   "label": "ΔfH"
+  },
+  {
+   "from": "e",
+   "to": "c",
+   "dh": -966,
+   "label": "ΣΔcH"
+  },
+  {
+   "from": "m",
+   "to": "c",
+   "dh": -890,
+   "label": "ΔcH"
+  }
+ ],
+ "find": {
+  "step": 0,
+  "value": -76
+ },
+ "equations": [
+  "C + 2H2 + 2O2 → CO2 + 2H2O",
+  "CH4 + 2O2 → CO2 + 2H2O"
+ ]
+}
