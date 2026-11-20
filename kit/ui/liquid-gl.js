@@ -98,24 +98,28 @@ void main(){
     vec2 nrm = normalize(g + 1e-6);
     float bez = props[i].w, t = clamp(-d / bez, 0., 1.);
     float h = sqrt(max(1. - (1. - t) * (1. - t), 0.)), bend = 1. - h;      // a circular bevel
-    vec2 off = -nrm * bend * bez * 1.1 - p * .04;                            // refraction at the edge, a slight lens inside
+    float wet = props[i].y;                                                  // the Gradify bar: thicker, wetter, magnifying
+    vec2 off = -nrm * bend * bez * (1.1 + .9 * wet) - p * (.04 + .14 * wet);   // refraction at the edge, a lens inside (1.2x on the bar)
     vec2 disp = nrm * bend * 5. * dpr;                                       // colours part at the rim
     ${lite ? "vec3 c = scene(fc + off);" : "vec3 c = vec3(scene(fc + off - disp).r, scene(fc + off).g, scene(fc + off + disp).b);"}
     float tint = props[i].z;
     c = mix(c, lightMode > .5 ? vec3(1.) : vec3(.045, .045, .07), tint);
     vec3 N = normalize(vec3(nrm * bend * 1.8, h + .02)), L = normalize(vec3(light, .8)), H = normalize(L + vec3(0., 0., 1.));
     float ndh = max(dot(N, H), 0.);
-    float spec = pow(ndh, 90.) * (lightMode > .5 ? .9 : 1.3) + pow(ndh, 12.) * .08;
+    float spec = pow(ndh, 90. - 30. * wet) * (lightMode > .5 ? .9 : 1.3) * (1. + .7 * wet) + pow(ndh, 12.) * (.08 + .1 * wet);
     float fres = pow(1. - h, 3.) * (lightMode > .5 ? .55 : .5);
     float rim = smoothstep(-3. * dpr, -.6 * dpr, d) * (1. - smoothstep(-.5, 1., d));   // a definite edge
     float lit = .5 + .5 * dot(nrm, light);
     vec3 rimc = accentRim > .5 ? mix(acc1, vec3(1.), .25 + .45 * lit) : vec3(1.);   // the course's colour, or white light
     if (props[i].y > .5) { float a = atan(p.y, p.x) / 6.2832 + .5;          // the Gradify bar: a rainbow edge
       rimc = clamp(abs(mod(a * 6. + vec3(0., 4., 2.), 6.) - 3.) - 1., 0., 1.); rimc = mix(rimc, vec3(1.), lightMode > .5 ? .42 : .55); }   // pastel, not primary
-    float gloss = (1. - smoothstep(-r.w, -r.w + min(70. * dpr, r.w * .7), p.y)) * (lightMode > .5 ? .22 : .1);   // a glossy sheet across the top
-    vec3 glass = c + fres + spec + gloss;
+    float gloss = (1. - smoothstep(-r.w, -r.w + min(70. * dpr, r.w * (.7 - .25 * wet)), p.y)) * (lightMode > .5 ? .22 : .1) * (1. + 1.2 * wet);   // a glossy sheet across the top
+    // wet: a bright arc where the bevel turns to the light, and light gathered along the bottom edge inside (a caustic)
+    float arc = wet * bend * pow(max(dot(nrm, light), 0.), 3.) * (lightMode > .5 ? .35 : .5);
+    float caustic = wet * smoothstep(.2, 1., nrm.y) * bend * (lightMode > .5 ? .18 : .32);
+    vec3 glass = c + fres * (1. + .6 * wet) + spec + gloss + arc + caustic;
     glass = mix(glass, rimc, rim * (props[i].y > .5 ? .95 : (accentRim > .5 ? .85 : .55 + .35 * lit)));
-    glass *= 1. - .14 * bend * max(dot(nrm, -light), 0.);
+    glass *= 1. - (.14 + (lightMode > .5 ? .22 : .12) * wet) * bend * max(dot(nrm, -light), 0.);   // the edge away from the light, in shade (deeper on the bar)
     col = mix(col, glass, aa);
   }
   gl_FragColor = vec4(col, 1.);
@@ -146,8 +150,11 @@ export function start() {
   let gl = pref === "force" ? null : canvas.getContext("webgl", { ...opts, failIfMajorPerformanceCaveat: true });
   const caveat = !gl && pref !== "force";
   if (!gl) gl = canvas.getContext("webgl", opts);
-  const ok = allowed({ webgl: gl, reducedTransparency: matchMedia("(prefers-reduced-transparency: reduce)").matches, highContrast: root.getAttribute("data-a-contrast") === "high" || matchMedia("(prefers-contrast: more)").matches, saveData: !!navigator.connection?.saveData, pref });
-  if (!ok) { status("css", !gl ? "no WebGL" : pref === "off" ? "turned off" : "accessibility or data-saver setting"); return null; }
+  const mqT = matchMedia("(prefers-reduced-transparency: reduce)"), mqC = matchMedia("(prefers-contrast: more)");
+  // the reading-size setting zooms <body>; a canvas inside it would be scaled twice, so keep the CSS glass then
+  const zoomed = () => { const z = parseFloat(getComputedStyle(document.body).zoom); return !!z && Math.abs(z - 1) > .01; };
+  const ok = allowed({ webgl: gl, reducedTransparency: mqT.matches, highContrast: root.getAttribute("data-a-contrast") === "high" || mqC.matches, saveData: !!navigator.connection?.saveData, pref });
+  if (!ok || zoomed()) { status("css", !gl ? "no WebGL" : pref === "off" ? "turned off" : zoomed() ? "larger reading size" : "accessibility or data-saver setting"); return null; }
   const dbg = gl.getExtension("WEBGL_debug_renderer_info");
   const renderer = String(dbg ? gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL) : gl.getParameter(gl.RENDERER));
   const highp = (gl.getShaderPrecisionFormat(gl.FRAGMENT_SHADER, gl.HIGH_FLOAT)?.precision || 0) > 0;
@@ -199,12 +206,12 @@ export function start() {
 
   // pixels drawn: the lite tier draws fewer and lets the browser scale them up
   const DPR = () => { const d = Math.min(devicePixelRatio || 1, coarse ? 1 : 1.25); return P && P.tier !== "webgl" ? Math.max(.5, d * .7) : d; };
-  let els = [], light = [-0.55, -0.83], dirty = true, pending = false, busyUntil = 0, colours = null, live = false;
+  let els = [], light = [-0.55, -0.83], dirty = true, pending = false, raf = 0, busyUntil = 0, colours = null, live = false;
   const rects = new Float32Array(MAX * 4), props = new Float32Array(MAX * 4);
 
   // the boxes that are glass right now (cheap: re-run only when the page changes)
   const collect = () => {
-    for (const e of els) if (!e.isConnected) e.removeAttribute("data-lg");
+    const prev = els;
     // a box inside something that paints its own solid background (the app pictured on the homepage, a modal) can't
     // show the canvas behind it: it keeps its CSS glass
     const solid = (e) => { for (let a = e.parentElement; a && a !== document.body; a = a.parentElement) {
@@ -212,7 +219,9 @@ export function start() {
       const cs = getComputedStyle(a), m = cs.backgroundColor.match(/rgba?\(([^)]+)\)/), alpha = m ? (m[1].split(/[ ,/]+/)[3] ?? 1) : 0;
       if (+alpha > .6 || (cs.backgroundImage !== "none" && !/url\(/.test(cs.backgroundImage))) return true; } return false; };
     els = [...document.querySelectorAll(GLASS)].filter((e) => !e.closest(NEVER) && !e.matches(NEVER));
-    els = els.filter((e) => { const keep = !solid(e); if (!keep) e.removeAttribute("data-lg"); return keep; });
+    els = els.filter((e) => !solid(e));
+    // boxes that left the set (removed, moved under a dark island, now over a solid parent) get their CSS glass back
+    const now = new Set(els); for (const e of prev) if (!now.has(e)) { e.removeAttribute("data-lg"); e.removeAttribute("data-lg-cap"); e.querySelector(":scope > .lgl-cap")?.remove(); }
     for (const e of els) {
       e.setAttribute("data-lg", "");
       const cs = getComputedStyle(e), sticky = cs.position === "fixed" || cs.position === "sticky";
@@ -233,7 +242,7 @@ export function start() {
   };
 
   const draw = () => {
-    pending = false;
+    pending = false; raf = 0;
     if (!live || lost || !P) return;
     const dpr = DPR(), W = Math.round(innerWidth * dpr), H = Math.round(innerHeight * dpr), max = P.max;
     if (canvas.width !== W || canvas.height !== H) { canvas.width = W; canvas.height = H; }
@@ -243,18 +252,19 @@ export function start() {
     let k = 0; const caps = [];
     const floating = els.filter((e) => e.hasAttribute("data-lg-cap")), order = [...els.filter((e) => !e.hasAttribute("data-lg-cap")), ...floating];
     for (const e of order) {
-      if (k >= max) break;
-      if (k >= max - floating.length && !e.hasAttribute("data-lg-cap")) continue;   // room kept for the bars
       const r = e.getBoundingClientRect();
       if (r.width < 8 || r.height < 8 || r.bottom < -40 || r.top > innerHeight + 40 || r.right < -40 || r.left > innerWidth + 40) continue;
       const cs = getComputedStyle(e);
       if (cs.visibility === "hidden" || +cs.opacity < .05) continue;
+      // past the drawing limit (room is kept for the bars): this box keeps its CSS glass rather than going see-through
+      if (k >= max || (k >= max - floating.length && !e.hasAttribute("data-lg-cap"))) { e.removeAttribute("data-lg"); continue; }
+      if (!e.hasAttribute("data-lg")) e.setAttribute("data-lg", "");
       const hw = r.width / 2, hh = r.height / 2, rad = Math.min(parseFloat(cs.borderTopLeftRadius) || 0, hw, hh);
       const big = r.width * r.height > innerWidth * innerHeight * .25;
       rects.set([(r.left + hw) * dpr, (r.top + hh) * dpr, hw * dpr, hh * dpr], k * 4);
       const rainbow = e.matches("header.bar, header.sub-nav") ? 1 : 0;
-      const tint = colours.lightMode ? (big ? .8 : .66) : (big ? .56 : .42);
-      props.set([rad * dpr, rainbow, tint, Math.min(big ? 16 : 22, rad * .9 + 6, hw, hh) * dpr], k * 4);
+      const tint = (colours.lightMode ? (big ? .8 : .66) : (big ? .56 : .42)) * (rainbow ? .7 : 1);   // the bar: clearer, so it magnifies what's behind
+      props.set([rad * dpr, rainbow, tint, Math.min(rainbow ? 30 : big ? 16 : 22, rainbow ? hh * .85 : rad * .9 + 6, hw, hh) * dpr], k * 4);
       if (e.hasAttribute("data-lg-cap")) caps.push([e, r]);
       k++;
     }
@@ -273,7 +283,7 @@ export function start() {
     if (probing) sample();
     if (performance.now() < busyUntil) kick();
   };
-  const kick = () => { if (!pending && live) { pending = true; requestAnimationFrame(draw); } };
+  const kick = () => { if (!pending && live) { pending = true; raf = requestAnimationFrame(draw); } };
   const busy = (ms) => { busyUntil = Math.max(busyUntil, performance.now() + (reducedMotion.matches ? Math.min(ms, 120) : ms)); kick(); };
 
   // the speed check: the time between frames while drawing every frame, after the first few (driver warm-up) are
@@ -295,7 +305,7 @@ export function start() {
     window.gradifyGlass.frameMs = Math.round(ms * 10) / 10;
     if (next === P.tier) { status(P.tier, "measured " + window.gradifyGlass.frameMs + "ms a frame"); return; }
     if (next === "css") { status("css", `too slow here (${window.gradifyGlass.frameMs}ms a frame)`); return stop(); }
-    build(next).then(() => { dirty = true; status(next, `measuring (full tier was ${window.gradifyGlass.frameMs}ms a frame)`); probe(); }).catch((e) => { status("css", "lite shader failed: " + e.message); stop(); });
+    build(next).then(() => { if (stopped) return; dirty = true; status(next, `measuring (full tier was ${window.gradifyGlass.frameMs}ms a frame)`); probe(); }).catch((e) => { status("css", "lite shader failed: " + e.message); stop(); });
   };
 
   const onScroll = () => kick();
@@ -309,35 +319,45 @@ export function start() {
   };
   const onVis = () => { if (document.hidden) return; if (probing) probe(); else kick(); };
   let mt = 0;
-  const mo = new MutationObserver(() => { clearTimeout(mt); mt = setTimeout(() => { dirty = true; busy(700); }, 60); });
+  const mo = new MutationObserver(() => { if (!live) return; clearTimeout(mt); mt = setTimeout(() => { dirty = true; busy(700); }, 60); });
   const to = new MutationObserver(() => { dirty = true; if (root.getAttribute("data-a-contrast") === "high") { status("css", "high contrast"); stop(); } else kick(); });
-  const onAccess = () => { if (root.getAttribute("data-a-contrast") === "high") { status("css", "high contrast"); stop(); } };
+  // reduced transparency, more contrast or a bigger reading size chosen later: stop and hand back; any other reading
+  // setting moves the boxes, so measure again once it has applied
+  const onAccess = () => {
+    if (root.getAttribute("data-a-contrast") === "high" || mqT.matches || mqC.matches || zoomed()) { status("css", "accessibility setting changed"); return stop(); }
+    requestAnimationFrame(() => { dirty = true; busy(300); });
+  };
 
   // the GPU can be taken away (a driver reset, too many contexts, the OS reclaiming memory): CSS glass meanwhile,
   // the same canvas and observers back when it returns
   const onLost = (e) => { e.preventDefault(); lost = true; lostCount++; P = null; root.classList.remove("lgl"); status("css", "GPU context lost; waiting for it back"); };
-  const onRestored = () => { build(tier).then(() => { lost = false; root.classList.add("lgl"); dirty = true; status(P.tier, "GPU context restored"); kick(); }).catch(() => stop()); };
+  const onRestored = () => { if (stopped) return; build(tier).then(() => { if (stopped) return; lost = false; root.classList.add("lgl"); dirty = true; status(P.tier, "GPU context restored"); kick(); }).catch(() => stop()); };
 
   function stop() {
-    live = false; running = null;
+    if (stopped) return; stopped = true;
+    live = false; running = null; clearTimeout(mt); if (raf) cancelAnimationFrame(raf); probing = false;
+    mqT.removeEventListener("change", onAccess); mqC.removeEventListener("change", onAccess);
     mo.disconnect(); to.disconnect(); root.classList.remove("lgl"); canvas.remove(); style.remove();
     document.querySelectorAll("[data-lg]").forEach((e) => { e.removeAttribute("data-lg"); e.removeAttribute("data-lg-cap"); });
     document.querySelectorAll(".lgl-cap").forEach((c) => c.remove());
     removeEventListener("scroll", onScroll, { capture: true }); removeEventListener("resize", onResize); removeEventListener("hashchange", onHash);
     removeEventListener("pointermove", onMove); removeEventListener("visibilitychange", onVis); document.removeEventListener("gradify:access", onAccess);
     canvas.removeEventListener("webglcontextlost", onLost); canvas.removeEventListener("webglcontextrestored", onRestored);
+    els = [];
     if (root.dataset.glass !== "css") status("css", "stopped");
   }
 
+  let stopped = false;
   running = { stop, redraw: () => { dirty = true; kick(); }, get tier() { return P ? P.tier : "css"; } };
   status("css", null, { pending: tier });   // CSS glass until the GPU program is ready
   build(tier).catch((e) => tier === "webgl" ? build(tier = "webgl-lite") : Promise.reject(e)).then(() => {
-    if (!running) return;
+    if (!running || stopped) return;
     document.head.appendChild(style); document.body.appendChild(canvas);
     canvas.addEventListener("webglcontextlost", onLost); canvas.addEventListener("webglcontextrestored", onRestored);
     addEventListener("scroll", onScroll, { passive: true, capture: true }); addEventListener("resize", onResize); addEventListener("hashchange", onHash);
     if (matchMedia("(pointer: fine)").matches) addEventListener("pointermove", onMove, { passive: true });
     addEventListener("visibilitychange", onVis); document.addEventListener("gradify:access", onAccess);
+    mqT.addEventListener("change", onAccess); mqC.addEventListener("change", onAccess);
     mo.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["class", "open", "hidden", "style"] });
     to.observe(root, { attributes: true, attributeFilter: ["data-theme", "data-a-contrast"] });
     live = true; root.classList.add("lgl"); status(P.tier, "measuring");
