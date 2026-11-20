@@ -195,7 +195,7 @@ a { color: inherit; }
   padding: 8px 8px 8px 16px; border-radius: 16px;
   margin-inline: calc(-1 * var(--bar-bleed));
 }
-.brand { display: flex; align-items: center; gap: 10px; font-weight: 600; text-decoration: none; font-size: 17px; letter-spacing: -.01em; }
+.brand { display: flex; align-items: center; gap: 10px; min-height: 44px; font-weight: 600; text-decoration: none; font-size: 17px; letter-spacing: -.01em; }
 .brand svg { width: 30px; height: 30px; }
 /* section links: plain text on the bar (no recessed track), a soft highlight on hover, and the current section in
    white with a small Gradify-gradient underline, like TechGradify's top bar */
@@ -215,6 +215,12 @@ a { color: inherit; }
 .bar .sections a.active::after { opacity: 1; transform: scaleX(1); }
 .bar .sections a:focus-visible { outline-offset: 1px; border-radius: 10px; }
 .bar .right { margin-left: auto; display: flex; align-items: center; gap: 14px; }
+/* a fixed height, so buttons added by scripts after first paint (search, reading settings, theme, account) never push
+   the page down and back up while it loads */
+.bar { box-sizing: border-box; height: 58px; }
+.bar .right { flex-wrap: nowrap; min-width: 0; }
+.bar .right > * { flex: none; }
+@media (max-width: 960px) { .bar { height: 56px; } }
 .bar .right .link { font-size: 14px; color: var(--mute); text-decoration: none; }
 .bar .right .link:hover { color: var(--fg); }
 .icon-btn {
@@ -411,3 +417,20 @@ header.bar.glass, header.sub-nav.glass {
 /* a site's name: its accent colour, lightened for the dark bar (kit/core/site.js accentOf) and darkened for the light
    one (accentOnLight), so it reads at 5.5:1 or more on both */
 :root[data-theme="light"] .site-accent[style*="--acc-l"] { color: var(--acc-l) !important; }
+
+/* a course page before its scripts arrive (kit/course/course.js fills #course): the space the course will take, and a
+   quiet placeholder of its hero card, so the footer doesn't sit under the header and then jump away, and the page
+   doesn't look empty while it loads */
+#course:empty { min-height: 100vh; }
+#course:empty::before {
+  content: ""; display: block; height: 260px; margin-top: 24px; border-radius: 22px; border: 1px solid var(--line);
+  background: linear-gradient(100deg, rgba(var(--ink-rgb), .03) 30%, rgba(var(--ink-rgb), .08) 50%, rgba(var(--ink-rgb), .03) 70%) 0 0 / 300% 100%;
+  animation: course-wait 1.4s ease-in-out infinite;
+}
+@keyframes course-wait { from { background-position: 100% 0; } to { background-position: 0 0; } }
+@media (prefers-reduced-motion: reduce) { #course:empty::before { animation: none; } }
+
+/* the reading-settings button, named until it's first opened (kit/core/theme-boot.js) */
+.access-btn.access-named { width: auto !important; gap: 6px; padding: 0 12px 0 9px; border-radius: 999px; display: inline-flex; align-items: center; }
+.access-name { font: 600 13.5px var(--sans); }
+@media (max-width: 760px) { .access-btn.access-named { width: 36px !important; padding: 0; justify-content: center; } .access-name { display: none; } }

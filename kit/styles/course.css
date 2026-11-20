@@ -60,7 +60,7 @@
 .co-ring { width: 76px; height: 76px; flex: none; transform: rotate(-90deg); }
 .co-ring circle { fill: none; stroke-width: 8; stroke-linecap: round; }
 .co-ring .bg { stroke: rgba(var(--ink-rgb), .08); } .co-ring .fg { stroke: #40d4b1; transition: stroke-dashoffset .6s; filter: drop-shadow(0 0 6px rgba(64, 212, 177, .6)); }
-.co-dots { display: grid; grid-template-columns: repeat(auto-fill, minmax(16px, 1fr)); gap: 5px; margin-top: 10px; }
+.co-dots { display: grid; grid-template-columns: repeat(auto-fill, minmax(18px, 1fr)); gap: 6px; margin-top: 10px; }
 .co-dots a { aspect-ratio: 1; border-radius: 5px; background: linear-gradient(0deg, var(--a) calc(var(--p) * 100%), rgba(var(--ink-rgb), .07) calc(var(--p) * 100%)); border: 1px solid color-mix(in srgb, var(--a) 40%, transparent); }
 .co-dots a:hover { outline: 2px solid var(--fg); }
 .co-badges { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-top: 10px; }
@@ -459,13 +459,24 @@ a.co-feat:hover { border-color: var(--line-strong); background: rgba(var(--ink-r
 /* overview */
 .co-hero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 22px; align-items: stretch; padding: clamp(20px, 3vw, 34px); border-radius: 18px; background: radial-gradient(90% 120% at 0 0, color-mix(in srgb, var(--a) 26%, transparent), transparent 60%), radial-gradient(80% 110% at 100% 100%, color-mix(in srgb, var(--b) 20%, transparent), transparent 60%), rgba(var(--ink-rgb), .02); border: 1px solid color-mix(in srgb, var(--a) 35%, var(--line)); }
 .co-hero h2 { margin: 8px 0 10px; font-size: clamp(30px, 4vw, 48px); letter-spacing: -.045em; line-height: 1.02; }
-.co-hero p { margin: 0 0 16px; font-size: 16.5px; line-height: 1.6; color: #cfd3d8; max-width: 620px; }
+.co-hero p { margin: 0 0 16px; font-size: 16.5px; line-height: 1.6; color: rgba(var(--ink-rgb), .82); max-width: 620px; }
 .co-herostats { display: flex; flex-wrap: wrap; gap: 18px; margin: 4px 0 18px; } .co-herostats b { display: block; font-size: 28px; letter-spacing: -.03em; } .co-herostats small { color: var(--mute); font-size: 12.5px; }
 .co-hero .co-row { justify-content: flex-start; flex-wrap: wrap; }
 .co-bigsearch { position: relative; display: flex; align-items: center; gap: 8px; margin-top: 18px; padding: 0 14px; border-radius: 14px; background: rgba(var(--sink-rgb), .35); border: 1px solid var(--line-strong); color: var(--mute); }
 .co-bigsearch input { flex: 1; padding: 13px 0; border: 0; background: none; color: var(--fg); font: 15px var(--sans); outline: none; min-width: 0; }
 .co-bigsearch .co-results { position: absolute; top: 100%; left: 0; transform: none; margin-top: 6px; }
 .co-herolab .co-lab { height: 100%; margin: 0; }
+/* the hero's lab keeps one size from first paint: the stage (a whole periodic table can be ~1500px tall) scrolls inside
+   the card instead of stretching the hero when the interactive loads, which pushed the page down by a screen or more */
+.co-herolab .co-lab { display: flex; flex-direction: column; }
+.co-herolab .co-labstage { flex: 1 1 auto; min-height: 0; overflow: auto; overscroll-behavior: contain; }
+/* the preview shows the interactive itself; its model note and review status are on the full Lab page */
+.co-herolab .co-labnote, .co-herolab .co-labstatus { display: none; }
+@media (min-width: 901px) {
+  .co-herolab { position: relative; min-height: 600px; }   /* the text column sets the row's height, at least this tall */
+  .co-herolab .co-lab { position: absolute; inset: 0; }
+}
+@media (max-width: 900px) { .co-herolab .co-labstage { flex: none; height: min(70vh, 560px); } }
 .co-osec { margin-top: 40px; }
 .co-learn { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; }
 .co-learn div { padding: 16px; border-radius: 16px; background: rgba(var(--ink-rgb), .03); border: 1px solid var(--line); } .co-learn p { margin: 6px 0 0; color: var(--mute); font-size: 14px; line-height: 1.5; }
@@ -1249,7 +1260,7 @@ a.cx-sess:hover { transform: translateY(-3px); border-color: color-mix(in srgb, 
 .cx-rgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin: 18px 0; }
 .cx-rcard { display: grid; gap: 4px; align-content: start; padding: 18px; border-radius: 16px; border: 1px solid var(--line); background: rgba(var(--ink-rgb), .035); color: var(--fg); text-decoration: none; transition: transform .18s, border-color .18s; }
 a.cx-rcard:hover { transform: translateY(-3px); border-color: var(--line-strong); }
-.cx-rcard.off { opacity: .6; }
+.cx-rcard.off { opacity: 1; } .cx-rcard.off :is(b, .cx-rci) { opacity: .7; }
 .cx-rci { position: relative; display: grid; place-items: center; width: 44px; height: 44px; margin-bottom: 8px; border-radius: 13px; background: rgba(var(--ink-rgb), .07); }
 .cx-rci i { position: absolute; top: -6px; right: -8px; min-width: 20px; height: 20px; padding: 0 5px; border-radius: 10px; font: 700 11px/20px var(--sans); font-style: normal; text-align: center; color: #fff; background: #ff3d6e; }
 .cx-rcard b { font-size: 17px; } .cx-rcard p { margin: 0; font-size: 13.5px; line-height: 1.45; color: var(--mute); }
@@ -2101,3 +2112,79 @@ body.has-gai .gx-totop { bottom: calc(84px + env(safe-area-inset-bottom)); }
 @media (max-width: 640px) { .cx-books { grid-auto-columns: 124px; gap: 14px; } .cx-bcover { padding: 12px 12px 10px 17px; } .cx-bcover b { font-size: 14.5px; } }
 @media (prefers-reduced-motion: reduce) { .cx-bcover { transition: none; } .cx-book:hover .cx-bcover { transform: none; } }
 :root[data-a-contrast="high"] .cx-bcover { background: var(--a); text-shadow: none; }
+
+/* ---------- Easy in, easy on (the audit): readable labels, a calm start, a rail that never covers the text ----------
+   Labels in plain sentence case at a readable size (spaced-out capitals are the hardest style for dyslexic readers);
+   the course's first screen has one heading and one button; the lesson's progress rail sits clear of the text. */
+.co-kicker, .cx-crumbs, .co-reading .co-lhead .kicker, .mv-page .kicker { font: 600 12.5px var(--sans) !important; letter-spacing: 0 !important; text-transform: none !important; }
+.cx-tg { font: 600 12.5px var(--sans) !important; letter-spacing: 0 !important; text-transform: none !important; }
+.cx-rr small, .cx-wday small { font-family: var(--sans) !important; letter-spacing: 0 !important; text-transform: none !important; font-size: 11px !important; }
+
+/* the course's first screen: one heading, one Start, nothing that can push the page wider than the phone */
+.co-hero { grid-template-columns: minmax(0, 1fr); max-width: 100%; overflow: hidden; }
+.co-herotext { min-width: 0; max-width: 760px; }
+.co-hero h2 { overflow-wrap: anywhere; }
+.co-herogo { align-items: center; gap: 14px 18px; margin-top: 8px; }
+.co-start1 { font-size: 17px; padding: 16px 28px; }
+.co-pathlink { font-size: 15px; }
+.co-herosmall { margin: 16px 0 0 !important; font-size: 14px !important; color: var(--mute) !important; }
+.co-herolab { min-width: 0; max-width: 100%; overflow-x: auto; }
+.co-findsec { margin-top: 18px; }
+@media (max-width: 560px) { .co-start1 { width: 100%; justify-content: center; } .co-herogo { flex-direction: column; align-items: stretch; text-align: center; } }
+
+/* the progress rail on phones: a slim strip above the dock, shown while you pause; never over the text */
+@media (max-width: 1020px) {
+  /* in the flow, not floating: a row of rings after the lesson, so it never sits over the text you're reading */
+  .co-reading .cx-rings { position: static; translate: none; transform: none; opacity: 1; margin: 18px auto 0; width: max-content; max-width: 100%; flex-direction: row; gap: 14px; padding: 8px 16px; border-radius: 99px; }
+  .co-reading .cx-rings .cx-rri { width: 28px; height: 28px; }
+  .co-reading .cx-rings .cx-rri .co-ic { width: 12px; height: 12px; }
+  .co-reading .cx-rr { grid-template-columns: auto auto; align-items: center; column-gap: 6px; }
+  .co-reading .cx-rr b { font-size: 12px; } .co-reading .cx-rr small { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .co-reading .cx-rr .cx-rri { grid-row: span 1; }
+}
+
+/* lesson complete: the next lesson is the first, biggest thing */
+.cx-donenext { display: flex; width: 100%; justify-content: center; margin: 4px 0 18px; font-size: 17px; padding: 16px 22px; }
+.co-quick { margin-top: 28px; padding-top: 22px; border-top: 1px solid rgba(var(--ink-rgb), .14); }
+body:has(> .co-modal) .cx-rings { display: none !important; }
+/* mouse and trackpad: the dense grids keep 24px between neighbours' centres (WCAG 2.5.8 target spacing) */
+.cx-mrc { gap: 6px; } .cx-mrc a { width: 18px; height: 18px; border-radius: 5px; }
+.cx-activity .co-heat { gap: 7px; } .cx-heatm { gap: 7px; } .cx-heatwd { gap: 7px; }
+/* the lesson step bars: a 24px-tall target each, with the 5px bar drawn inside it, so pointer users have room too */
+.co-read .co-steps { margin: 0; }
+.co-steps a, .co-read .co-steps a { --bar: rgba(var(--ink-rgb), .1); height: 24px; background: none !important; box-shadow: none !important; transform: none !important; }
+.co-steps a::before { inset: 0; }
+.co-steps a::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 5px; translate: 0 -50%; border-radius: 99px; background: var(--bar); transition: transform .15s; }
+.co-steps a.done { --bar: linear-gradient(90deg, var(--a), var(--b)); }
+.co-steps a.here { --bar: var(--invert-bg); }
+.co-steps a.here::after { box-shadow: 0 0 10px rgba(var(--spec-rgb), .6); }
+.co-steps a:hover::after { transform: scaleY(1.8); }
+@media (prefers-reduced-motion: reduce) { .co-steps a::after { transition: none; } }
+/* this topic's dots, for mouse users: 24px apart (touch screens already give each a 44px square) */
+@media (pointer: fine) { .cx-w-dots { gap: 10px; } .cx-w-dots a { margin: 0; } }
+
+/* ---------- Second pass from the audit ---------- */
+/* phones: in a lesson Gradify AI is in the dock, so the floating orb doesn't sit over the text */
+@media (max-width: 760px) { body:has(.co.co-reading) .gai-fab:not([aria-expanded="true"]) { display: none; } }
+/* phones: the course header is the course's name and the tabs; the stat chips live on Progress, and saving and pinning
+   on the outline and menu */
+@media (max-width: 760px) {
+  .co-head .co-hud, .co-head .cx-headrow { display: none; }
+  .co-head h1 { margin-bottom: 8px; }
+}
+/* folded diagrams: one tidy line each, opening in place */
+.cx-fig { margin: 14px 0; border-radius: 16px; border: 1px solid rgba(var(--ink-rgb), .12); background: rgba(var(--ink-rgb), .03); }
+.cx-fig > summary { display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 10px 14px; cursor: pointer; list-style: none; font-size: 14.5px; font-weight: 600; color: var(--fg); }
+.cx-fig > summary::-webkit-details-marker { display: none; }
+.cx-fig > summary .co-ic { flex: none; width: 16px; height: 16px; color: var(--la, var(--a)); }
+.cx-fig > summary .cx-chev { margin-left: auto; transition: transform .2s; } .cx-fig[open] > summary .cx-chev { transform: rotate(90deg); }
+.cx-fig > .gd { margin: 0 12px 12px; }
+.co-read .co-deeper.cx-acc { margin-top: 40px; padding-top: 26px; border-top: 1px solid rgba(var(--ink-rgb), .14); }
+@media (prefers-reduced-motion: reduce) { .cx-fig > summary .cx-chev { transition: none; } }
+.cx-autonext { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 14px 0 0; min-height: 44px; font-size: 14px; color: var(--mute); cursor: pointer; }
+.cx-autonext input { width: 20px; height: 20px; accent-color: var(--la, var(--a)); }
+.cx-countdown { margin: 6px 0 0; text-align: center; font-weight: 600; }
+/* the completion sheet always fits: it scrolls inside itself on short screens */
+.cx-donebox { max-height: calc(100dvh - 24px); overflow-y: auto; overscroll-behavior: contain; }
+/* phones: the one button comes before the paragraph, so Start is on the first screen */
+@media (max-width: 760px) { .co-herotext { display: flex; flex-direction: column; } .co-herotext h2 { order: 1; } .co-herotext .co-herogo { order: 2; margin: 4px 0 14px; } .co-herotext > p:not(.co-herosmall) { order: 3; } .co-herotext .co-herosmall { order: 4; } }
