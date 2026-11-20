@@ -1,0 +1,51 @@
+{
+ "id": "chem-carbocation-stability",
+ "renderer": "structures",
+ "course": "chemistry",
+ "lesson": "Carbocations",
+ "title": "Carbocation stability",
+ "caption": "Alkyl groups push electron density towards a positive carbon (a positive inductive effect), spreading its charge. So the more alkyl groups on C⁺, the more stable it is: tertiary > secondary > primary > methyl. This decides Markovnikov products and SN1 rates.",
+ "alt": "Four carbocations in order of increasing stability: methyl, ethyl (primary), propan-2-yl (secondary), 2-methylpropan-2-yl (tertiary).",
+ "description": [
+  "Methyl, CH₃⁺: no alkyl groups, least stable.",
+  "Primary: one alkyl group.",
+  "Secondary: two.",
+  "Tertiary: three alkyl groups, most stable."
+ ],
+ "between": [
+  "<",
+  "<",
+  "<"
+ ],
+ "perRow": [
+  4,
+  2
+ ],
+ "bond": [
+  32,
+  30
+ ],
+ "panels": [
+  {
+   "smiles": "[CH3+]",
+   "label": "methyl",
+   "formula": "CH3",
+   "displayed": true
+  },
+  {
+   "smiles": "C[CH2+]",
+   "label": "primary",
+   "formula": "C2H5"
+  },
+  {
+   "smiles": "C[CH+]C",
+   "label": "secondary",
+   "formula": "C3H7"
+  },
+  {
+   "smiles": "C[C+](C)C",
+   "label": "tertiary",
+   "formula": "C4H9"
+  }
+ ]
+}

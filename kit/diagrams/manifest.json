@@ -12865,5 +12865,1641 @@
     "detail": "486px wide, shown at 145% (labels 21.8px)"
    }
   ]
+ },
+ "chem-alcohol-classes": {
+  "title": "Primary, secondary and tertiary alcohols",
+  "caption": "The class depends on how many carbons are attached to the carbon bearing –OH: one (primary), two (secondary) or three (tertiary). The class decides what oxidation gives: aldehyde then acid, ketone, or no reaction.",
+  "alt": "Butan-1-ol, butan-2-ol and 2-methylpropan-2-ol, all C₄H₁₀O, with the carbon bearing OH shaded.",
+  "description": [
+   "Butan-1-ol: the C–OH carbon has one carbon attached: primary.",
+   "Butan-2-ol: two: secondary.",
+   "2-Methylpropan-2-ol: three: tertiary."
+  ],
+  "course": "chemistry",
+  "lesson": "Alcohols",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u14.js: Alcohols"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "butan-1-ol: contains primary alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "butan-1-ol: contains primary alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "butan-2-ol: contains secondary alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "butan-2-ol: contains secondary alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "2-methylpropan-2-ol: contains tertiary alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "2-methylpropan-2-ol: contains tertiary alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "butan-1-ol, butan-2-ol, 2-methylpropan-2-ol: same formula, different compounds",
+    "ok": true,
+    "detail": "formulae ['C4H10O']; 3 distinct structures"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-aldehydes": {
+  "title": "Aldehydes",
+  "caption": "In an aldehyde the C=O is at the end of a chain, with at least one hydrogen on the carbonyl carbon. That hydrogen is why aldehydes are easily oxidised (Tollens' and Fehling's tests) when ketones are not.",
+  "alt": "Methanal, ethanal and benzaldehyde with the CHO group shaded.",
+  "description": [
+   "Methanal, HCHO.",
+   "Ethanal, CH₃CHO.",
+   "Benzaldehyde, C₆H₅CHO."
+  ],
+  "course": "chemistry",
+  "lesson": "Aldehydes",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u14.js: Aldehydes"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "methanal: contains aldehyde",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "methanal: contains aldehyde",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethanal: contains aldehyde",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethanal: contains aldehyde",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "benzaldehyde: contains aldehyde",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "benzaldehyde: contains aldehyde",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-amides": {
+  "title": "Amides and the peptide link",
+  "caption": "Amides contain C(=O)–N. Replacing the N–H hydrogens with carbon groups gives secondary and tertiary amides. The amide bond joining amino acids in proteins is called the peptide link.",
+  "alt": "Ethanamide, N-methylethanamide, N,N-dimethylethanamide, and the dipeptide glycylalanine with its peptide link shaded.",
+  "description": [
+   "Primary amide: ethanamide, CH₃CONH₂.",
+   "Secondary: N-methylethanamide.",
+   "Tertiary: N,N-dimethylethanamide.",
+   "Glycylalanine: two amino acids joined by a peptide link, –CO–NH–."
+  ],
+  "course": "chemistry",
+  "lesson": "Amides",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u14.js: Amides"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "ethanamide: contains amide",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethanamide: contains amide",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "N-methylethanamide: contains amide",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "N-methylethanamide: contains amide",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "N,N-dimethylethanamide: contains amide",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "N,N-dimethylethanamide: contains amide",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "glycylalanine: contains peptide link",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "glycylalanine: contains peptide link",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-amine-classes": {
+  "title": "Classes of amine",
+  "caption": "Amines are named by how many carbon groups are bonded to nitrogen: one (primary), two (secondary) or three (tertiary). A fourth gives a quaternary ammonium ion, which has no lone pair left and is no longer a base.",
+  "alt": "Methylamine, dimethylamine, trimethylamine and the tetramethylammonium ion.",
+  "description": [
+   "Primary: CH₃NH₂.",
+   "Secondary: (CH₃)₂NH.",
+   "Tertiary: (CH₃)₃N.",
+   "Quaternary: (CH₃)₄N⁺."
+  ],
+  "course": "chemistry",
+  "lesson": "Amines",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u14.js: Amines"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "methylamine: contains primary amine",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "dimethylamine: contains secondary amine",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "trimethylamine: contains tertiary amine",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "tetramethylammonium: contains quaternary ammonium",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-anhydride-acylation": {
+  "title": "Making aspirin with an acid anhydride",
+  "caption": "Ethanoic anhydride acylates the phenol –OH of salicylic acid, forming the ester in aspirin and ethanoic acid. Industry uses the anhydride rather than ethanoyl chloride because it is cheaper, less corrosive, reacts less violently and gives no HCl.",
+  "alt": "Salicylic acid plus ethanoic anhydride gives aspirin plus ethanoic acid.",
+  "description": [
+   "Salicylic acid: a phenol and a carboxylic acid on a benzene ring.",
+   "Ethanoic anhydride.",
+   "Aspirin (2-ethanoyloxybenzoic acid): the phenol is now an ester.",
+   "Ethanoic acid."
+  ],
+  "course": "chemistry",
+  "lesson": "Acid anhydrides",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u14.js: Acid anhydrides"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "salicylic acid: contains phenol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "salicylic acid: contains carboxylic acid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethanoic anhydride: contains acid anhydride",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "aspirin: contains ester",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "aspirin: contains carboxylic acid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "aspirin: contains ester",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the equation balances (atoms on both sides)",
+    "ok": true,
+    "detail": "{'C': 11, 'H': 12, 'O': 6} → {'C': 11, 'H': 12, 'O': 6}"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-carbanions": {
+  "title": "A stabilised carbanion: the enolate",
+  "caption": "A carbanion is a negatively charged carbon. Most are very reactive, but one next to a C=O is stabilised because its charge is delocalised onto the oxygen. The two resonance forms of propanone's enolate differ only in where the electrons are drawn.",
+  "alt": "Two resonance structures of the propanone enolate joined by a double-headed arrow: charge on carbon, and charge on oxygen.",
+  "description": [
+   "Left: the negative charge on the CH₂ carbon next to C=O.",
+   "Right: the same ion with C=C and the negative charge on oxygen, the more important form."
+  ],
+  "course": "chemistry",
+  "lesson": "Carbanions",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u13.js: Carbanions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "carbanion form: formula C3H5O",
+    "ok": true,
+    "detail": "RDKit: C3H5O-"
+   },
+   {
+    "name": "enolate form: formula C3H5O",
+    "ok": true,
+    "detail": "RDKit: C3H5O-"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-carbocation-stability": {
+  "title": "Carbocation stability",
+  "caption": "Alkyl groups push electron density towards a positive carbon (a positive inductive effect), spreading its charge. So the more alkyl groups on C⁺, the more stable it is: tertiary > secondary > primary > methyl. This decides Markovnikov products and SN1 rates.",
+  "alt": "Four carbocations in order of increasing stability: methyl, ethyl (primary), propan-2-yl (secondary), 2-methylpropan-2-yl (tertiary).",
+  "description": [
+   "Methyl, CH₃⁺: no alkyl groups, least stable.",
+   "Primary: one alkyl group.",
+   "Secondary: two.",
+   "Tertiary: three alkyl groups, most stable."
+  ],
+  "course": "chemistry",
+  "lesson": "Carbocations",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u13.js: Carbocations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "methyl: formula CH3",
+    "ok": true,
+    "detail": "RDKit: CH3+"
+   },
+   {
+    "name": "primary: formula C2H5",
+    "ok": true,
+    "detail": "RDKit: C2H5+"
+   },
+   {
+    "name": "secondary: formula C3H7",
+    "ok": true,
+    "detail": "RDKit: C3H7+"
+   },
+   {
+    "name": "tertiary: formula C4H9",
+    "ok": true,
+    "detail": "RDKit: C4H9+"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-carbonyl-reactivity": {
+  "title": "Reactivity of carboxylic acid derivatives",
+  "caption": "Towards nucleophiles: acyl chlorides > acid anhydrides > esters > amides. The better the leaving group (Cl⁻ best, NH₂⁻ worst) and the less the lone pair next to C=O feeds into it, the more reactive the derivative.",
+  "alt": "Ethanoyl chloride, ethanoic anhydride, methyl ethanoate and ethanamide in order of decreasing reactivity.",
+  "description": [
+   "Ethanoyl chloride: most reactive.",
+   "Ethanoic anhydride.",
+   "Methyl ethanoate.",
+   "Ethanamide: least reactive."
+  ],
+  "course": "chemistry",
+  "lesson": "Carbonyl chemistry",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u14.js: Carbonyl chemistry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "acyl chloride: contains acyl chloride",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "anhydride: contains acid anhydride",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ester: contains ester",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "amide: contains amide",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-carboxylate-resonance": {
+  "title": "Why carboxylic acids are acidic",
+  "caption": "Losing H⁺ from ethanoic acid gives ethanoate, whose negative charge is shared equally between the two oxygens. The two resonance forms are equivalent and both C–O bonds are the same length (0.127 nm), which stabilises the ion.",
+  "alt": "Two resonance structures of ethanoate joined by a double-headed arrow.",
+  "description": [
+   "Left: the double bond to the upper oxygen, the charge on the lower.",
+   "Right: the reverse. The real ion is halfway between."
+  ],
+  "course": "chemistry",
+  "lesson": "Carboxylic acids",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u14.js: Carboxylic acids"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "CC(=O)[O-]: formula C2H3O2",
+    "ok": true,
+    "detail": "RDKit: C2H3O2-"
+   },
+   {
+    "name": "CC(=O)[O-]: contains carboxylate",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "CC(=O)[O-]: formula C2H3O2",
+    "ok": true,
+    "detail": "RDKit: C2H3O2-"
+   },
+   {
+    "name": "both forms have the same atoms and connections",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-chemoselectivity": {
+  "title": "Chemoselectivity: NaBH₄ reduces a ketone, not an ester",
+  "caption": "Sodium borohydride is a mild hydride donor: it reduces the ketone of methyl 4-oxopentanoate to a secondary alcohol but leaves the less electrophilic ester untouched. LiAlH₄ would reduce both.",
+  "alt": "Methyl 4-oxopentanoate, an arrow labelled NaBH₄, and methyl 4-hydroxypentanoate; the ketone and the new alcohol are shaded, the ester unchanged.",
+  "description": [
+   "Starting material: a ketone and an ester in one molecule.",
+   "After NaBH₄: the ketone has become a secondary alcohol; the ester is unchanged."
+  ],
+  "course": "chemistry",
+  "lesson": "Chemoselectivity",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u13.js: Chemoselectivity"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "methyl 4-oxopentanoate: contains ketone",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "methyl 4-oxopentanoate: contains ester",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "methyl 4-oxopentanoate: contains ketone",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "methyl 4-oxopentanoate: contains ester",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "methyl 4-hydroxypentanoate: contains secondary alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "methyl 4-hydroxypentanoate: contains ester",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "methyl 4-hydroxypentanoate: contains secondary alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "methyl 4-hydroxypentanoate: contains ester",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "methyl 4-hydroxypentanoate: has no ketone",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-condensation-ester": {
+  "title": "A condensation reaction: making an ester",
+  "caption": "Ethanoic acid and ethanol join, losing a molecule of water, to give ethyl ethanoate. With a concentrated sulfuric acid catalyst this is an equilibrium; removing water or the ester pushes it forward.",
+  "alt": "Ethanoic acid plus ethanol, an equilibrium arrow, ethyl ethanoate plus water.",
+  "description": [
+   "Ethanoic acid + ethanol.",
+   "⇌ (H⁺ catalyst, heat).",
+   "Ethyl ethanoate + water."
+  ],
+  "course": "chemistry",
+  "lesson": "Condensation reactions",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u13.js: Condensation reactions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "ethanoic acid: contains carboxylic acid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethanol: contains alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethyl ethanoate: contains ester",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethyl ethanoate: contains ester",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the equation balances (atoms on both sides)",
+    "ok": true,
+    "detail": "{'C': 4, 'H': 10, 'O': 3} → {'C': 4, 'H': 10, 'O': 3}"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-electrophiles-nucleophiles": {
+  "title": "Nucleophiles and electrophiles",
+  "caption": "Nucleophiles (top row) have a lone pair and often a negative charge, and attack electron-poor carbon. Electrophiles (bottom row) are electron-poor: a δ+ carbon next to an electronegative atom, or a cation such as NO₂⁺, and are attacked by electron-rich species.",
+  "alt": "Top row: hydroxide, ammonia, cyanide and water. Bottom row: bromomethane, methanal and the nitronium ion.",
+  "description": [
+   "Nucleophiles: OH⁻, NH₃, CN⁻ and H₂O, each with a lone pair to donate.",
+   "Electrophiles: bromomethane (δ+ carbon), methanal (δ+ carbonyl carbon) and NO₂⁺."
+  ],
+  "course": "chemistry",
+  "lesson": "Electrophiles and nucleophiles",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u13.js: Electrophiles and nucleophiles"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "CH₃Br: contains halogenoalkane",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "HCHO: contains aldehyde",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-esters": {
+  "title": "Esters",
+  "caption": "Esters, R–COO–R′, are named from the alcohol part then the acid part. Many smell fruity: ethyl ethanoate (nail varnish remover), ethyl butanoate (pineapple), 3-methylbutyl ethanoate (pear drops, banana).",
+  "alt": "Ethyl ethanoate, ethyl butanoate and 3-methylbutyl ethanoate with the ester group shaded.",
+  "description": [
+   "Ethyl ethanoate, CH₃COOC₂H₅.",
+   "Ethyl butanoate.",
+   "3-Methylbutyl ethanoate."
+  ],
+  "course": "chemistry",
+  "lesson": "Esters",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u14.js: Esters"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "ethyl ethanoate: contains ester",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethyl ethanoate: contains ester",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethyl butanoate: contains ester",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethyl butanoate: contains ester",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "3-methylbutyl ethanoate: contains ester",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "3-methylbutyl ethanoate: contains ester",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-ethers": {
+  "title": "Ethers",
+  "caption": "An ether has an oxygen bonded to two carbons, C–O–C. With no O–H, ethers cannot hydrogen bond to each other, so they boil far lower than alcohols of similar mass. Epoxides are three-membered cyclic ethers, strained and reactive.",
+  "alt": "Methoxymethane, ethoxyethane and epoxyethane, with the C–O–C shaded.",
+  "description": [
+   "Methoxymethane, CH₃OCH₃.",
+   "Ethoxyethane, C₂H₅OC₂H₅, the old anaesthetic 'ether'.",
+   "Epoxyethane: a three-membered ring of two carbons and an oxygen."
+  ],
+  "course": "chemistry",
+  "lesson": "Ethers",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u14.js: Ethers"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "methoxymethane: contains ether",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "methoxymethane: contains ether",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethoxyethane: contains ether",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethoxyethane: contains ether",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "epoxyethane: contains epoxide",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-heterocycles": {
+  "title": "Aromatic heterocycles",
+  "caption": "A heteroatom in an aromatic ring. Pyridine's nitrogen lone pair lies outside the π system, so it is basic. In pyrrole, furan and thiophene a lone pair on N, O or S is part of the 6-electron aromatic system.",
+  "alt": "Pyridine, pyrrole, furan and thiophene.",
+  "description": [
+   "Pyridine, C₅H₅N: a six-membered ring.",
+   "Pyrrole, C₄H₅N.",
+   "Furan, C₄H₄O.",
+   "Thiophene, C₄H₄S."
+  ],
+  "course": "chemistry",
+  "lesson": "Heterocyclic compounds",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u14.js: Heterocyclic compounds"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "pyridine: formula C5H5N",
+    "ok": true,
+    "detail": "RDKit: C5H5N"
+   },
+   {
+    "name": "pyrrole: formula C4H5N",
+    "ok": true,
+    "detail": "RDKit: C4H5N"
+   },
+   {
+    "name": "furan: formula C4H4O",
+    "ok": true,
+    "detail": "RDKit: C4H4O"
+   },
+   {
+    "name": "thiophene: formula C4H4S",
+    "ok": true,
+    "detail": "RDKit: C4H4S"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-ketones": {
+  "title": "Ketones",
+  "caption": "In a ketone the C=O is within the chain, with a carbon on each side, so there is no hydrogen on the carbonyl carbon to oxidise. Propanone is the simplest; ketones are named with -one.",
+  "alt": "Propanone, butanone and cyclohexanone with the C=O shaded.",
+  "description": [
+   "Propanone, CH₃COCH₃.",
+   "Butanone, CH₃COCH₂CH₃.",
+   "Cyclohexanone: the C=O in a six-membered ring."
+  ],
+  "course": "chemistry",
+  "lesson": "Ketones",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u14.js: Ketones"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "propanone: contains ketone",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "propanone: contains ketone",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "butanone: contains ketone",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "butanone: contains ketone",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "cyclohexanone: contains ketone",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "cyclohexanone: contains ketone",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-multistep-route": {
+  "title": "Two steps: benzene to phenylamine",
+  "caption": "No single reaction puts –NH₂ on benzene. Nitration (concentrated HNO₃ and H₂SO₄, below 55 °C) gives nitrobenzene; reduction with tin and HCl, then NaOH, gives phenylamine.",
+  "alt": "Benzene, arrow (conc. HNO₃, conc. H₂SO₄, 55 °C), nitrobenzene, arrow (Sn, HCl; then NaOH), phenylamine.",
+  "description": [
+   "Step 1: C₆H₆ + HNO₃ → C₆H₅NO₂ + H₂O.",
+   "Step 2: C₆H₅NO₂ + 6[H] → C₆H₅NH₂ + 2H₂O, the [H] from tin and acid."
+  ],
+  "course": "chemistry",
+  "lesson": "Multi-step synthesis",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u14.js: Multi-step synthesis"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "C6H6 + HNO3 → C6H5NO2 + H2O balances",
+    "ok": true,
+    "detail": "atoms and charge balance (C, H, N, O; charge 0)"
+   },
+   {
+    "name": "C6H5NO2 + 3H2 → C6H5NH2 + 2H2O balances",
+    "ok": true,
+    "detail": "atoms and charge balance (C, H, N, O; charge 0)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-nitriles": {
+  "title": "What nitriles become",
+  "caption": "A nitrile carries the C≡N group, which adds a carbon to a chain. Hydrolysis with acid turns it into a carboxylic acid; reduction with LiAlH₄ (or H₂ over Ni) turns it into a primary amine.",
+  "alt": "Ethanoic acid on the left, ethanenitrile in the middle, ethylamine on the right, with arrows from the nitrile to each.",
+  "description": [
+   "Middle: ethanenitrile, CH₃C≡N.",
+   "Left: hydrolysis (H⁺(aq), heat) gives ethanoic acid.",
+   "Right: reduction (LiAlH₄) gives ethylamine."
+  ],
+  "course": "chemistry",
+  "lesson": "Nitriles",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u14.js: Nitriles"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "ethanoic acid: contains carboxylic acid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethanenitrile: contains nitrile",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethanenitrile: contains nitrile",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethylamine: contains primary amine",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-nitro-reduction": {
+  "title": "Reducing nitrobenzene to phenylamine",
+  "caption": "Tin and concentrated hydrochloric acid reduce the nitro group to –NH₂ (as the phenylammonium salt; adding NaOH frees the amine). Phenylamine is the starting point for azo dyes.",
+  "alt": "Nitrobenzene, an arrow labelled Sn / conc. HCl then NaOH, and phenylamine.",
+  "description": [
+   "Nitrobenzene, C₆H₅NO₂.",
+   "Phenylamine, C₆H₅NH₂."
+  ],
+  "course": "chemistry",
+  "lesson": "Nitro compounds",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u14.js: Nitro compounds"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "nitrobenzene: contains nitro",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "nitrobenzene: contains nitro",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "phenylamine: contains primary amine",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "phenylamine: contains primary amine",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-organohalogens": {
+  "title": "Organohalogen compounds",
+  "caption": "CFCs such as dichlorodifluoromethane and trichlorofluoromethane were ideal refrigerants and propellants (unreactive, non-toxic) but carry chlorine to the stratosphere, where it destroys ozone. Halothane is an inhaled anaesthetic.",
+  "alt": "Dichlorodifluoromethane, trichlorofluoromethane and halothane.",
+  "description": [
+   "CCl₂F₂ (CFC-12).",
+   "CCl₃F (CFC-11).",
+   "Halothane, CF₃CHBrCl."
+  ],
+  "course": "chemistry",
+  "lesson": "Organohalogen compounds",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u14.js: Organohalogen compounds"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "CFC-12: formula CCl2F2",
+    "ok": true,
+    "detail": "RDKit: CCl2F2"
+   },
+   {
+    "name": "CFC-12: contains halogenoalkane",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "CFC-11: formula CCl3F",
+    "ok": true,
+    "detail": "RDKit: CCl3F"
+   },
+   {
+    "name": "CFC-11: contains halogenoalkane",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "halothane: formula C2HBrClF3",
+    "ok": true,
+    "detail": "RDKit: C2HBrClF3"
+   },
+   {
+    "name": "halothane: contains halogenoalkane",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-oxidation-alcohols": {
+  "title": "Oxidising alcohols",
+  "caption": "With acidified potassium dichromate (orange to green), a primary alcohol is oxidised to an aldehyde (distil it off as it forms) and then to a carboxylic acid (reflux). A secondary alcohol gives a ketone. A tertiary alcohol is not oxidised.",
+  "alt": "Top row: ethanol to ethanal to ethanoic acid. Bottom row: propan-2-ol to propanone. Each arrow is labelled [O].",
+  "description": [
+   "Ethanol (primary) → ethanal (aldehyde) → ethanoic acid (carboxylic acid).",
+   "Propan-2-ol (secondary) → propanone (ketone)."
+  ],
+  "course": "chemistry",
+  "lesson": "Oxidation reactions",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u13.js: Oxidation reactions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "ethanol: contains primary alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethanol: contains primary alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethanal: contains aldehyde",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethanal: contains aldehyde",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethanoic acid: contains carboxylic acid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethanoic acid: contains carboxylic acid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "propan-2-ol: contains secondary alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "propan-2-ol: contains secondary alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "propanone: contains ketone",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "propanone: contains ketone",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-phenol-acidity": {
+  "title": "Why phenol is more acidic than ethanol",
+  "caption": "Phenol (pKa 10.0) loses H⁺ far more readily than ethanol (pKa about 16) because the phenoxide ion's charge is delocalised into the benzene ring. Ethoxide has nowhere to spread its charge.",
+  "alt": "Phenol in equilibrium with phenoxide, compared with ethanol in equilibrium with ethoxide.",
+  "description": [
+   "Phenol ⇌ phenoxide + H⁺: pKa 10.0, charge spread into the ring.",
+   "Ethanol ⇌ ethoxide + H⁺: pKa about 16, charge on oxygen only."
+  ],
+  "course": "chemistry",
+  "lesson": "Phenols",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u14.js: Phenols"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "phenol: contains phenol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethanol: contains alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-regioselectivity": {
+  "title": "Regioselectivity: adding HBr to propene",
+  "caption": "HBr can add to propene two ways. The major product, 2-bromopropane, forms via the more stable secondary carbocation (Markovnikov's rule); 1-bromopropane, via a primary carbocation, is minor. The two products are position isomers.",
+  "alt": "Propene with an arrow to 2-bromopropane (major) and 1-bromopropane (minor).",
+  "description": [
+   "Propene + HBr.",
+   "Major: 2-bromopropane, Br on the middle carbon.",
+   "Minor: 1-bromopropane, Br on the end carbon."
+  ],
+  "course": "chemistry",
+  "lesson": "Regioselectivity",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u13.js: Regioselectivity"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "propene: contains alkene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "2-bromopropane: contains halogenoalkane",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "1-bromopropane: contains halogenoalkane",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "2-bromopropane, 1-bromopropane: same formula, different compounds",
+    "ok": true,
+    "detail": "formulae ['C3H7Br']; 2 distinct structures"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-selectivity-overview": {
+  "title": "Which kind of selectivity?",
+  "caption": "When a reaction could give more than one product, ask what the products differ in. Reaction at one functional group rather than another is chemoselectivity; at one position rather than another, regioselectivity; one stereoisomer rather than another, stereoselectivity.",
+  "alt": "A tree: do the possible products differ in which functional group reacted? Chemoselective. If not, in where on the molecule? Regioselective. Otherwise in 3D arrangement: stereoselective.",
+  "description": [
+   "Different functional group reacted: chemoselective, such as NaBH₄ reducing a ketone but not an ester.",
+   "Same group, different position: regioselective, such as HBr giving 2-bromopropane from propene.",
+   "Same connections, different 3D arrangement: stereoselective, such as anti addition of Br₂."
+  ],
+  "course": "chemistry",
+  "lesson": "Reaction selectivity",
+  "also": [],
+  "renderer": "classify",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u13.js: Reaction selectivity"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every path ends in a classification",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "no unreachable boxes",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-stereoselectivity": {
+  "title": "Stereoselectivity: anti addition of bromine",
+  "caption": "Bromine adds to cyclohexene through a bromonium ion, which bromide opens from the opposite face. Only trans-1,2-dibromocyclohexane forms, as a racemic mixture of the (R,R) and (S,S) enantiomers; the cis isomer does not form.",
+  "alt": "Cyclohexene, an arrow labelled Br₂, and the two enantiomers of trans-1,2-dibromocyclohexane.",
+  "description": [
+   "Cyclohexene + Br₂.",
+   "Products: (1R,2R)- and (1S,2S)-1,2-dibromocyclohexane, the bromines on opposite faces (trans)."
+  ],
+  "course": "chemistry",
+  "lesson": "Stereoselectivity",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u13.js: Stereoselectivity"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "cyclohexene: contains alkene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "(1R,2R)-trans: atom 1 is R",
+    "ok": true,
+    "detail": "RDKit CIP: R"
+   },
+   {
+    "name": "(1R,2R)-trans: atom 2 is R",
+    "ok": true,
+    "detail": "RDKit CIP: R"
+   },
+   {
+    "name": "(1S,2S)-trans: atom 1 is S",
+    "ok": true,
+    "detail": "RDKit CIP: S"
+   },
+   {
+    "name": "(1S,2S)-trans: atom 2 is S",
+    "ok": true,
+    "detail": "RDKit CIP: S"
+   },
+   {
+    "name": "the two are enantiomers: same structure, every stereocentre inverted",
+    "ok": true,
+    "detail": "['R', 'R'] against ['S', 'S']"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-synthesis-map": {
+  "title": "A synthesis map from bromoethane",
+  "caption": "From one halogenoalkane: aqueous hydroxide gives an alcohol, excess ammonia an amine, and cyanide in ethanol a nitrile with one more carbon, which hydrolyses to a carboxylic acid. Oxidising the alcohol gives ethanoic acid.",
+  "alt": "A map with bromoethane at the centre and arrows to ethanol, ethylamine and propanenitrile; propanenitrile on to propanoic acid; ethanol on to ethanoic acid.",
+  "description": [
+   "Bromoethane + NaOH(aq), heat → ethanol.",
+   "Bromoethane + excess NH₃ (in ethanol, sealed tube) → ethylamine.",
+   "Bromoethane + KCN in ethanol → propanenitrile (one more carbon).",
+   "Propanenitrile + H⁺(aq), heat → propanoic acid.",
+   "Ethanol + K₂Cr₂O₇/H⁺, reflux → ethanoic acid."
+  ],
+  "course": "chemistry",
+  "lesson": "Functional group synthesis",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u14.js: Functional group synthesis"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "C2H5Br + OH- → C2H5OH + Br- balances",
+    "ok": true,
+    "detail": "atoms and charge balance (C, H, Br, O; charge -1)"
+   },
+   {
+    "name": "C2H5Br + 2NH3 → C2H5NH2 + NH4Br balances",
+    "ok": true,
+    "detail": "atoms and charge balance (C, H, Br, N; charge 0)"
+   },
+   {
+    "name": "C2H5Br + CN- → C2H5CN + Br- balances",
+    "ok": true,
+    "detail": "atoms and charge balance (C, H, Br, N; charge -1)"
+   },
+   {
+    "name": "C2H5CN + 2H2O + H+ → C2H5COOH + NH4+ balances",
+    "ok": true,
+    "detail": "atoms and charge balance (C, H, N, O; charge 1)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-thiols": {
+  "title": "Thiols, sulfides and disulfides",
+  "caption": "Sulfur sits below oxygen in group 16, giving thiols (R–SH), sulfides (R–S–R) and disulfides (R–S–S–R). Thiols smell strongly. Two cysteine thiols can be oxidised to a disulfide bridge, which holds protein chains in shape.",
+  "alt": "Ethanethiol, dimethyl sulfide and dimethyl disulfide.",
+  "description": [
+   "Ethanethiol, CH₃CH₂SH.",
+   "Dimethyl sulfide, CH₃SCH₃.",
+   "Dimethyl disulfide, CH₃SSCH₃: the S–S link."
+  ],
+  "course": "chemistry",
+  "lesson": "Thiols and sulfides",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u14.js: Thiols and sulfides"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "ethanethiol: contains thiol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethanethiol: contains thiol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "dimethyl sulfide: contains sulfide",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "dimethyl sulfide: contains sulfide",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "dimethyl disulfide: contains disulfide",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "dimethyl disulfide: contains disulfide",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }

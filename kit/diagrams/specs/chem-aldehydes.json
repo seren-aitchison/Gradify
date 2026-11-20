@@ -1,0 +1,55 @@
+{
+ "id": "chem-aldehydes",
+ "renderer": "structures",
+ "course": "chemistry",
+ "lesson": "Aldehydes",
+ "title": "Aldehydes",
+ "caption": "In an aldehyde the C=O is at the end of a chain, with at least one hydrogen on the carbonyl carbon. That hydrogen is why aldehydes are easily oxidised (Tollens' and Fehling's tests) when ketones are not.",
+ "alt": "Methanal, ethanal and benzaldehyde with the CHO group shaded.",
+ "description": [
+  "Methanal, HCHO.",
+  "Ethanal, CH₃CHO.",
+  "Benzaldehyde, C₆H₅CHO."
+ ],
+ "panels": [
+  {
+   "smiles": "C=O",
+   "label": "methanal",
+   "groups": [
+    "aldehyde"
+   ],
+   "highlight": [
+    {
+     "group": "aldehyde",
+     "colour": "a2"
+    }
+   ]
+  },
+  {
+   "smiles": "CC=O",
+   "label": "ethanal",
+   "groups": [
+    "aldehyde"
+   ],
+   "highlight": [
+    {
+     "group": "aldehyde",
+     "colour": "a2"
+    }
+   ]
+  },
+  {
+   "smiles": "O=Cc1ccccc1",
+   "label": "benzaldehyde",
+   "groups": [
+    "aldehyde"
+   ],
+   "highlight": [
+    {
+     "group": "aldehyde",
+     "colour": "a2"
+    }
+   ]
+  }
+ ]
+}

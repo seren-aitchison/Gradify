@@ -1,0 +1,77 @@
+{
+ "id": "chem-amides",
+ "renderer": "structures",
+ "course": "chemistry",
+ "lesson": "Amides",
+ "title": "Amides and the peptide link",
+ "caption": "Amides contain C(=O)–N. Replacing the N–H hydrogens with carbon groups gives secondary and tertiary amides. The amide bond joining amino acids in proteins is called the peptide link.",
+ "alt": "Ethanamide, N-methylethanamide, N,N-dimethylethanamide, and the dipeptide glycylalanine with its peptide link shaded.",
+ "description": [
+  "Primary amide: ethanamide, CH₃CONH₂.",
+  "Secondary: N-methylethanamide.",
+  "Tertiary: N,N-dimethylethanamide.",
+  "Glycylalanine: two amino acids joined by a peptide link, –CO–NH–."
+ ],
+ "perRow": [
+  4,
+  2
+ ],
+ "bond": [
+  30,
+  26
+ ],
+ "panels": [
+  {
+   "smiles": "CC(N)=O",
+   "label": "ethanamide",
+   "groups": [
+    "amide"
+   ],
+   "highlight": [
+    {
+     "group": "amide",
+     "colour": "a3"
+    }
+   ]
+  },
+  {
+   "smiles": "CNC(C)=O",
+   "label": "N-methylethanamide",
+   "groups": [
+    "amide"
+   ],
+   "highlight": [
+    {
+     "group": "amide",
+     "colour": "a3"
+    }
+   ]
+  },
+  {
+   "smiles": "CN(C)C(C)=O",
+   "label": "N,N-dimethylethanamide",
+   "groups": [
+    "amide"
+   ],
+   "highlight": [
+    {
+     "group": "amide",
+     "colour": "a3"
+    }
+   ]
+  },
+  {
+   "smiles": "NCC(=O)N[C@@H](C)C(=O)O",
+   "label": "glycylalanine",
+   "groups": [
+    "peptide link"
+   ],
+   "highlight": [
+    {
+     "group": "peptide link",
+     "colour": "a3"
+    }
+   ]
+  }
+ ]
+}

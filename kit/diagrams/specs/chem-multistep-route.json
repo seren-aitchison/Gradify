@@ -1,0 +1,47 @@
+{
+ "id": "chem-multistep-route",
+ "renderer": "flow",
+ "course": "chemistry",
+ "lesson": "Multi-step synthesis",
+ "title": "Two steps: benzene to phenylamine",
+ "caption": "No single reaction puts –NH₂ on benzene. Nitration (concentrated HNO₃ and H₂SO₄, below 55 °C) gives nitrobenzene; reduction with tin and HCl, then NaOH, gives phenylamine.",
+ "alt": "Benzene, arrow (conc. HNO₃, conc. H₂SO₄, 55 °C), nitrobenzene, arrow (Sn, HCl; then NaOH), phenylamine.",
+ "description": [
+  "Step 1: C₆H₆ + HNO₃ → C₆H₅NO₂ + H₂O.",
+  "Step 2: C₆H₅NO₂ + 6[H] → C₆H₅NH₂ + 2H₂O, the [H] from tin and acid."
+ ],
+ "layout": "line",
+ "nodes": [
+  {
+   "id": "a",
+   "label": "benzene",
+   "sub": "C₆H₆"
+  },
+  {
+   "id": "b",
+   "label": "nitrobenzene",
+   "sub": "C₆H₅NO₂",
+   "tone": "a1"
+  },
+  {
+   "id": "c",
+   "label": "phenylamine",
+   "sub": "C₆H₅NH₂",
+   "tone": "a4"
+  }
+ ],
+ "edges": [
+  {
+   "from": "a",
+   "to": "b",
+   "label": "HNO₃/H₂SO₄, 55 °C",
+   "eq": "C6H6 + HNO3 → C6H5NO2 + H2O"
+  },
+  {
+   "from": "b",
+   "to": "c",
+   "label": "Sn/HCl, then NaOH",
+   "eq": "C6H5NO2 + 3H2 → C6H5NH2 + 2H2O"
+  }
+ ]
+}

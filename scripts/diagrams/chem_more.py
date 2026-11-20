@@ -219,7 +219,9 @@ def structures(spec, W, narrow):
             if sep and k < len(r) - 1:
                 sym = sep[i] if i < len(sep) else ""
                 cx = x + lw + gap / 2
-                if sym in ("→", "⇌", "↔"):
+                if sym == "←":
+                    out.append(arrow(cx + 16, y + hmax / 2, cx - 16, y + hmax / 2))
+                elif sym in ("→", "⇌", "↔"):
                     out.append(arrow(cx - 16, y + hmax / 2, cx + 16, y + hmax / 2, both=(sym == "↔")))
                     if sym == "⇌":
                         out.append(arrow(cx + 16, y + hmax / 2 + 7, cx - 16, y + hmax / 2 + 7))

@@ -1,0 +1,60 @@
+{
+ "id": "chem-chemoselectivity",
+ "renderer": "structures",
+ "course": "chemistry",
+ "lesson": "Chemoselectivity",
+ "title": "Chemoselectivity: NaBH₄ reduces a ketone, not an ester",
+ "caption": "Sodium borohydride is a mild hydride donor: it reduces the ketone of methyl 4-oxopentanoate to a secondary alcohol but leaves the less electrophilic ester untouched. LiAlH₄ would reduce both.",
+ "alt": "Methyl 4-oxopentanoate, an arrow labelled NaBH₄, and methyl 4-hydroxypentanoate; the ketone and the new alcohol are shaded, the ester unchanged.",
+ "description": [
+  "Starting material: a ketone and an ester in one molecule.",
+  "After NaBH₄: the ketone has become a secondary alcohol; the ester is unchanged."
+ ],
+ "between": [
+  "→"
+ ],
+ "betweenLabels": [
+  "NaBH₄"
+ ],
+ "panels": [
+  {
+   "smiles": "COC(=O)CCC(C)=O",
+   "label": "methyl 4-oxopentanoate",
+   "groups": [
+    "ketone",
+    "ester"
+   ],
+   "highlight": [
+    {
+     "group": "ketone",
+     "colour": "a2"
+    },
+    {
+     "group": "ester",
+     "colour": "a4"
+    }
+   ]
+  },
+  {
+   "smiles": "COC(=O)CCC(C)O",
+   "label": "methyl 4-hydroxypentanoate",
+   "groups": [
+    "secondary alcohol",
+    "ester"
+   ],
+   "notGroups": [
+    "ketone"
+   ],
+   "highlight": [
+    {
+     "group": "secondary alcohol",
+     "colour": "a1"
+    },
+    {
+     "group": "ester",
+     "colour": "a4"
+    }
+   ]
+  }
+ ]
+}

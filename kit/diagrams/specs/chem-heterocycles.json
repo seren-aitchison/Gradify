@@ -1,0 +1,41 @@
+{
+ "id": "chem-heterocycles",
+ "renderer": "structures",
+ "course": "chemistry",
+ "lesson": "Heterocyclic compounds",
+ "title": "Aromatic heterocycles",
+ "caption": "A heteroatom in an aromatic ring. Pyridine's nitrogen lone pair lies outside the π system, so it is basic. In pyrrole, furan and thiophene a lone pair on N, O or S is part of the 6-electron aromatic system.",
+ "alt": "Pyridine, pyrrole, furan and thiophene.",
+ "description": [
+  "Pyridine, C₅H₅N: a six-membered ring.",
+  "Pyrrole, C₄H₅N.",
+  "Furan, C₄H₄O.",
+  "Thiophene, C₄H₄S."
+ ],
+ "perRow": [
+  4,
+  2
+ ],
+ "panels": [
+  {
+   "smiles": "c1ccncc1",
+   "label": "pyridine",
+   "formula": "C5H5N"
+  },
+  {
+   "smiles": "c1cc[nH]c1",
+   "label": "pyrrole",
+   "formula": "C4H5N"
+  },
+  {
+   "smiles": "c1ccoc1",
+   "label": "furan",
+   "formula": "C4H4O"
+  },
+  {
+   "smiles": "c1ccsc1",
+   "label": "thiophene",
+   "formula": "C4H4S"
+  }
+ ]
+}

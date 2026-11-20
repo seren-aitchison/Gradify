@@ -1,0 +1,66 @@
+{
+ "id": "chem-electrophiles-nucleophiles",
+ "renderer": "structures",
+ "course": "chemistry",
+ "lesson": "Electrophiles and nucleophiles",
+ "title": "Nucleophiles and electrophiles",
+ "caption": "Nucleophiles (top row) have a lone pair and often a negative charge, and attack electron-poor carbon. Electrophiles (bottom row) are electron-poor: a δ+ carbon next to an electronegative atom, or a cation such as NO₂⁺, and are attacked by electron-rich species.",
+ "alt": "Top row: hydroxide, ammonia, cyanide and water. Bottom row: bromomethane, methanal and the nitronium ion.",
+ "description": [
+  "Nucleophiles: OH⁻, NH₃, CN⁻ and H₂O, each with a lone pair to donate.",
+  "Electrophiles: bromomethane (δ+ carbon), methanal (δ+ carbonyl carbon) and NO₂⁺."
+ ],
+ "perRow": [
+  4,
+  2
+ ],
+ "bond": [
+  32,
+  30
+ ],
+ "panels": [
+  {
+   "smiles": "[OH-]",
+   "label": "OH⁻",
+   "sub": "nucleophile"
+  },
+  {
+   "smiles": "N",
+   "label": "NH₃",
+   "sub": "nucleophile",
+   "displayed": true
+  },
+  {
+   "smiles": "[C-]#N",
+   "label": "CN⁻",
+   "sub": "nucleophile"
+  },
+  {
+   "smiles": "O",
+   "label": "H₂O",
+   "sub": "nucleophile",
+   "displayed": true
+  },
+  {
+   "smiles": "CBr",
+   "label": "CH₃Br",
+   "sub": "electrophile: δ+ C",
+   "groups": [
+    "halogenoalkane"
+   ]
+  },
+  {
+   "smiles": "C=O",
+   "label": "HCHO",
+   "sub": "electrophile: δ+ C",
+   "groups": [
+    "aldehyde"
+   ]
+  },
+  {
+   "smiles": "O=[N+]=O",
+   "label": "NO₂⁺",
+   "sub": "electrophile"
+  }
+ ]
+}

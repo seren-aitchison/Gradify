@@ -214,10 +214,11 @@ function flow(spec, W, narrow) {
     const clip = (d, ux2, uy2) => Math.min(Math.abs(ux2) > 1e-6 ? d.w / 2 / Math.abs(ux2) : 1e9, Math.abs(uy2) > 1e-6 ? d.h / 2 / Math.abs(uy2) : 1e9) + 5;
     const a = clip(A, ux, uy), b = clip(B, ux, uy);
     if (spec.layout === "cycle") {
-      const cx = W / 2, cy = (spec.layout === "cycle" ? (narrow ? 125 : spec.radius || 140) + 60 : 0), mx = (x1 + x2) / 2, my = (y1 + y2) / 2, ox = (mx - cx) * 0.22, oy = (my - cy) * 0.22;
+      // each step bows outwards to its own side (perpendicular to its direction), so even a two-step cycle reads as a loop
+      const R0 = narrow ? 125 : spec.radius || 140, mx = (x1 + x2) / 2, my = (y1 + y2) / 2, bow = N.length === 2 ? 0.55 : 0.18, ox = -uy * R0 * bow, oy = ux * R0 * bow;
       s += `<path d="M${f1(x1 + ux * a)} ${f1(y1 + uy * a)} Q${f1(mx + ox)} ${f1(my + oy)} ${f1(x2 - ux * b)} ${f1(y2 - uy * b)}" fill="none" stroke="${C.ink}" stroke-width="2"/>`;
       s += arrow(x2 - ux * (b + 10) + ox * 0.1, y2 - uy * (b + 10) + oy * 0.1, x2 - ux * b, y2 - uy * b, { w: 2, head: 9 });
-      if (e.label) s += textWrap(mx + ox * 2.6, my + oy * 2.6, fm(e.label), narrow ? 16 : 22, { size: 11.5, weight: 700, fill: col(e.colour || "a2") });
+      if (e.label) s += textWrap(mx + ox * 1.25 + (ox > 0 ? 10 : ox < 0 ? -10 : 0), my + oy * 1.25, fm(e.label), narrow ? 14 : 22, { size: 11.5, weight: 700, anchor: ox > 1 ? "start" : ox < -1 ? "end" : "middle", fill: col(e.colour || "a2") });
     } else {
       s += arrow(x1 + ux * a, y1 + uy * a, x2 - ux * b, y2 - uy * b, { w: 2, head: 9, dash: e.dashed ? "6 5" : "" });
       if (e.label) {

@@ -1,0 +1,75 @@
+{
+ "id": "chem-condensation-ester",
+ "renderer": "structures",
+ "course": "chemistry",
+ "lesson": "Condensation reactions",
+ "title": "A condensation reaction: making an ester",
+ "caption": "Ethanoic acid and ethanol join, losing a molecule of water, to give ethyl ethanoate. With a concentrated sulfuric acid catalyst this is an equilibrium; removing water or the ester pushes it forward.",
+ "alt": "Ethanoic acid plus ethanol, an equilibrium arrow, ethyl ethanoate plus water.",
+ "description": [
+  "Ethanoic acid + ethanol.",
+  "⇌ (H⁺ catalyst, heat).",
+  "Ethyl ethanoate + water."
+ ],
+ "between": [
+  "+",
+  "⇌",
+  "+"
+ ],
+ "betweenLabels": [
+  "",
+  "H⁺",
+  ""
+ ],
+ "bond": [
+  30,
+  26
+ ],
+ "panels": [
+  {
+   "smiles": "CC(=O)O",
+   "label": "ethanoic acid",
+   "groups": [
+    "carboxylic acid"
+   ]
+  },
+  {
+   "smiles": "CCO",
+   "label": "ethanol",
+   "groups": [
+    "alcohol"
+   ]
+  },
+  {
+   "smiles": "CCOC(C)=O",
+   "label": "ethyl ethanoate",
+   "groups": [
+    "ester"
+   ],
+   "highlight": [
+    {
+     "group": "ester",
+     "colour": "a5"
+    }
+   ]
+  },
+  {
+   "smiles": "O",
+   "label": "water",
+   "displayed": true
+  }
+ ],
+ "claims": [
+  {
+   "type": "reaction",
+   "left": [
+    0,
+    1
+   ],
+   "right": [
+    2,
+    3
+   ]
+  }
+ ]
+}

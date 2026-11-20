@@ -106,7 +106,7 @@ mk("u12-12", "chem-stereoisomers", "structures", "Two kinds of stereoisomer",
    perRow=[4, 2],
    panels=[P("C/[CH:1]=[CH:2]/C", "E-but-2-ene", ez={"1-2": "E"}), P("C/[CH:1]=[CH:2]\\C", "Z-but-2-ene", ez={"1-2": "Z"}),
            P("CC[C@@H:1](C)O", "(R)-butan-2-ol", cip={"1": "R"}), P("CC[C@H:1](C)O", "(S)-butan-2-ol", cip={"1": "S"})],
-   claims=[{"type": "diastereomers", "panels": [0, 1]} if False else {"type": "isomers", "panels": [0, 1]}, {"type": "enantiomers", "panels": [2, 3]}])
+   claims=[{"type": "isomers", "panels": [0, 1]}, {"type": "enantiomers", "panels": [2, 3]}])
 
 mk("u12-13", "chem-constitutional-c3h8o", "structures", "The constitutional isomers of C₃H₈O",
    "Three different connections of the same atoms: two alcohols and an ether. Their properties differ: propan-1-ol boils at 97 °C, propan-2-ol at 82 °C and methoxyethane at 7 °C, which has no O–H to hydrogen bond.",

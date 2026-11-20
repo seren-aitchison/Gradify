@@ -1,0 +1,43 @@
+{
+ "id": "chem-carboxylate-resonance",
+ "renderer": "structures",
+ "course": "chemistry",
+ "lesson": "Carboxylic acids",
+ "title": "Why carboxylic acids are acidic",
+ "caption": "Losing H⁺ from ethanoic acid gives ethanoate, whose negative charge is shared equally between the two oxygens. The two resonance forms are equivalent and both C–O bonds are the same length (0.127 nm), which stabilises the ion.",
+ "alt": "Two resonance structures of ethanoate joined by a double-headed arrow.",
+ "description": [
+  "Left: the double bond to the upper oxygen, the charge on the lower.",
+  "Right: the reverse. The real ion is halfway between."
+ ],
+ "between": [
+  "↔"
+ ],
+ "panels": [
+  {
+   "smiles": "CC(=O)[O-]",
+   "label": "",
+   "formula": "C2H3O2",
+   "groups": [
+    "carboxylate"
+   ]
+  },
+  {
+   "smiles": "CC(=O)[O-]",
+   "label": "",
+   "rotate": 180,
+   "formula": "C2H3O2"
+  }
+ ],
+ "note": "Both C–O bonds 0.127 nm, between C=O (0.123) and C–O (0.143)",
+ "claims": [
+  {
+   "type": "same",
+   "panels": [
+    0,
+    1
+   ],
+   "name": "both forms have the same atoms and connections"
+  }
+ ]
+}

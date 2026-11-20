@@ -1,0 +1,89 @@
+{
+ "id": "chem-synthesis-map",
+ "renderer": "flow",
+ "course": "chemistry",
+ "lesson": "Functional group synthesis",
+ "title": "A synthesis map from bromoethane",
+ "caption": "From one halogenoalkane: aqueous hydroxide gives an alcohol, excess ammonia an amine, and cyanide in ethanol a nitrile with one more carbon, which hydrolyses to a carboxylic acid. Oxidising the alcohol gives ethanoic acid.",
+ "alt": "A map with bromoethane at the centre and arrows to ethanol, ethylamine and propanenitrile; propanenitrile on to propanoic acid; ethanol on to ethanoic acid.",
+ "description": [
+  "Bromoethane + NaOH(aq), heat → ethanol.",
+  "Bromoethane + excess NH₃ (in ethanol, sealed tube) → ethylamine.",
+  "Bromoethane + KCN in ethanol → propanenitrile (one more carbon).",
+  "Propanenitrile + H⁺(aq), heat → propanoic acid.",
+  "Ethanol + K₂Cr₂O₇/H⁺, reflux → ethanoic acid."
+ ],
+ "layout": "grid",
+ "rowHeight": 104,
+ "boxWidth": 104,
+ "nodes": [
+  {
+   "id": "br",
+   "label": "bromoethane",
+   "col": 1,
+   "row": 1,
+   "tone": "a3"
+  },
+  {
+   "id": "oh",
+   "label": "ethanol",
+   "col": 0,
+   "row": 0
+  },
+  {
+   "id": "acid1",
+   "label": "ethanoic acid",
+   "col": 0,
+   "row": 2
+  },
+  {
+   "id": "nh2",
+   "label": "ethylamine",
+   "col": 2,
+   "row": 0
+  },
+  {
+   "id": "cn",
+   "label": "propanenitrile",
+   "col": 2,
+   "row": 2
+  },
+  {
+   "id": "acid2",
+   "label": "propanoic acid",
+   "col": 3,
+   "row": 2
+  }
+ ],
+ "edges": [
+  {
+   "from": "br",
+   "to": "oh",
+   "label": "NaOH(aq), heat",
+   "eq": "C2H5Br + OH- → C2H5OH + Br-"
+  },
+  {
+   "from": "br",
+   "to": "nh2",
+   "label": "excess NH₃",
+   "eq": "C2H5Br + 2NH3 → C2H5NH2 + NH4Br"
+  },
+  {
+   "from": "br",
+   "to": "cn",
+   "label": "KCN, ethanol",
+   "eq": "C2H5Br + CN- → C2H5CN + Br-"
+  },
+  {
+   "from": "cn",
+   "to": "acid2",
+   "label": "H⁺(aq), heat",
+   "eq": "C2H5CN + 2H2O + H+ → C2H5COOH + NH4+"
+  },
+  {
+   "from": "oh",
+   "to": "acid1",
+   "label": "K₂Cr₂O₇/H⁺"
+  }
+ ]
+}

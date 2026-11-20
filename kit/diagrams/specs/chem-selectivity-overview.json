@@ -1,0 +1,49 @@
+{
+ "id": "chem-selectivity-overview",
+ "renderer": "classify",
+ "course": "chemistry",
+ "lesson": "Reaction selectivity",
+ "title": "Which kind of selectivity?",
+ "caption": "When a reaction could give more than one product, ask what the products differ in. Reaction at one functional group rather than another is chemoselectivity; at one position rather than another, regioselectivity; one stereoisomer rather than another, stereoselectivity.",
+ "alt": "A tree: do the possible products differ in which functional group reacted? Chemoselective. If not, in where on the molecule? Regioselective. Otherwise in 3D arrangement: stereoselective.",
+ "description": [
+  "Different functional group reacted: chemoselective, such as NaBH₄ reducing a ketone but not an ester.",
+  "Same group, different position: regioselective, such as HBr giving 2-bromopropane from propene.",
+  "Same connections, different 3D arrangement: stereoselective, such as anti addition of Br₂."
+ ],
+ "start": "q1",
+ "rowHeight": 100,
+ "nodes": {
+  "q1": {
+   "q": "Do the products differ in which functional group reacted?",
+   "yes": "chemo",
+   "no": "q2"
+  },
+  "chemo": {
+   "leaf": "Chemoselective",
+   "examples": [
+    "NaBH₄: ketone, not ester"
+   ],
+   "tone": "a1"
+  },
+  "q2": {
+   "q": "Do they differ in where on the molecule?",
+   "yes": "regio",
+   "no": "stereo"
+  },
+  "regio": {
+   "leaf": "Regioselective",
+   "examples": [
+    "Markovnikov addition"
+   ],
+   "tone": "a4"
+  },
+  "stereo": {
+   "leaf": "Stereoselective",
+   "examples": [
+    "anti addition of Br₂"
+   ],
+   "tone": "a5"
+  }
+ }
+}

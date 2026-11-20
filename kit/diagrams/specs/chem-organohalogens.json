@@ -1,0 +1,40 @@
+{
+ "id": "chem-organohalogens",
+ "renderer": "structures",
+ "course": "chemistry",
+ "lesson": "Organohalogen compounds",
+ "title": "Organohalogen compounds",
+ "caption": "CFCs such as dichlorodifluoromethane and trichlorofluoromethane were ideal refrigerants and propellants (unreactive, non-toxic) but carry chlorine to the stratosphere, where it destroys ozone. Halothane is an inhaled anaesthetic.",
+ "alt": "Dichlorodifluoromethane, trichlorofluoromethane and halothane.",
+ "description": [
+  "CCl₂F₂ (CFC-12).",
+  "CCl₃F (CFC-11).",
+  "Halothane, CF₃CHBrCl."
+ ],
+ "panels": [
+  {
+   "smiles": "FC(F)(Cl)Cl",
+   "label": "CFC-12",
+   "formula": "CCl2F2",
+   "groups": [
+    "halogenoalkane"
+   ]
+  },
+  {
+   "smiles": "FC(Cl)(Cl)Cl",
+   "label": "CFC-11",
+   "formula": "CCl3F",
+   "groups": [
+    "halogenoalkane"
+   ]
+  },
+  {
+   "smiles": "FC(F)(F)C(Cl)Br",
+   "label": "halothane",
+   "formula": "C2HBrClF3",
+   "groups": [
+    "halogenoalkane"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,53 @@
+{
+ "id": "chem-amine-classes",
+ "renderer": "structures",
+ "course": "chemistry",
+ "lesson": "Amines",
+ "title": "Classes of amine",
+ "caption": "Amines are named by how many carbon groups are bonded to nitrogen: one (primary), two (secondary) or three (tertiary). A fourth gives a quaternary ammonium ion, which has no lone pair left and is no longer a base.",
+ "alt": "Methylamine, dimethylamine, trimethylamine and the tetramethylammonium ion.",
+ "description": [
+  "Primary: CH₃NH₂.",
+  "Secondary: (CH₃)₂NH.",
+  "Tertiary: (CH₃)₃N.",
+  "Quaternary: (CH₃)₄N⁺."
+ ],
+ "perRow": [
+  4,
+  2
+ ],
+ "panels": [
+  {
+   "smiles": "CN",
+   "label": "methylamine",
+   "sub": "primary",
+   "groups": [
+    "primary amine"
+   ]
+  },
+  {
+   "smiles": "CNC",
+   "label": "dimethylamine",
+   "sub": "secondary",
+   "groups": [
+    "secondary amine"
+   ]
+  },
+  {
+   "smiles": "CN(C)C",
+   "label": "trimethylamine",
+   "sub": "tertiary",
+   "groups": [
+    "tertiary amine"
+   ]
+  },
+  {
+   "smiles": "C[N+](C)(C)C",
+   "label": "tetramethylammonium",
+   "sub": "quaternary ion",
+   "groups": [
+    "quaternary ammonium"
+   ]
+  }
+ ]
+}

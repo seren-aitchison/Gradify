@@ -1,0 +1,63 @@
+{
+ "id": "chem-alcohol-classes",
+ "renderer": "structures",
+ "course": "chemistry",
+ "lesson": "Alcohols",
+ "title": "Primary, secondary and tertiary alcohols",
+ "caption": "The class depends on how many carbons are attached to the carbon bearing –OH: one (primary), two (secondary) or three (tertiary). The class decides what oxidation gives: aldehyde then acid, ketone, or no reaction.",
+ "alt": "Butan-1-ol, butan-2-ol and 2-methylpropan-2-ol, all C₄H₁₀O, with the carbon bearing OH shaded.",
+ "description": [
+  "Butan-1-ol: the C–OH carbon has one carbon attached: primary.",
+  "Butan-2-ol: two: secondary.",
+  "2-Methylpropan-2-ol: three: tertiary."
+ ],
+ "panels": [
+  {
+   "smiles": "CCCCO",
+   "label": "butan-1-ol",
+   "sub": "primary",
+   "groups": [
+    "primary alcohol"
+   ],
+   "highlight": [
+    {
+     "group": "primary alcohol",
+     "colour": "a1"
+    }
+   ]
+  },
+  {
+   "smiles": "CCC(C)O",
+   "label": "butan-2-ol",
+   "sub": "secondary",
+   "groups": [
+    "secondary alcohol"
+   ],
+   "highlight": [
+    {
+     "group": "secondary alcohol",
+     "colour": "a4"
+    }
+   ]
+  },
+  {
+   "smiles": "CC(C)(C)O",
+   "label": "2-methylpropan-2-ol",
+   "sub": "tertiary",
+   "groups": [
+    "tertiary alcohol"
+   ],
+   "highlight": [
+    {
+     "group": "tertiary alcohol",
+     "colour": "a5"
+    }
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "type": "isomers"
+  }
+ ]
+}

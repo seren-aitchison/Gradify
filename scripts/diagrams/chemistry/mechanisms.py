@@ -142,7 +142,7 @@ mk("u13-06", "chem-radical-chlorination", "flow", "Free-radical chlorination of 
    "A cycle: Cl• reacts with CH₄ to give CH₃• and HCl; CH₃• reacts with Cl₂ to give CH₃Cl and Cl•, which returns to the start. Initiation and termination are shown beside it.",
    ["Initiation: Cl₂ → 2Cl• in UV light.", "Propagation 1: Cl• + CH₄ → CH₃• + HCl.", "Propagation 2: CH₃• + Cl₂ → CH₃Cl + Cl•.", "Termination: for example Cl• + CH₃• → CH₃Cl, or 2Cl• → Cl₂."],
    layout="cycle", radius=110,
-   nodes=[{"id": "cl", "label": "Cl•", "tone": "a2", "sub": "from Cl₂ → 2Cl• (UV)"}, {"id": "me", "label": "CH₃•", "tone": "a5", "sub": "+ HCl"}],
+   nodes=[{"id": "cl", "label": "Cl•", "tone": "a2", "sub": "from Cl₂ → 2Cl• (UV)"}, {"id": "me", "label": "CH₃•", "tone": "a5", "sub": "methyl radical"}],
    edges=[{"from": "cl", "to": "me", "label": "+ CH₄ → CH₃• + HCl", "eq": "Cl• + CH4 → CH3• + HCl"}, {"from": "me", "to": "cl", "label": "+ Cl₂ → CH₃Cl + Cl•", "eq": "CH3• + Cl2 → CH3Cl + Cl•"}],
    centre="propagation", notes=["Termination: Cl• + CH₃• → CH₃Cl; 2Cl• → Cl₂; 2CH₃• → C₂H₆"],
    claims=[{"type": "net", "steps": ["Cl• + CH4 → CH3• + HCl", "CH3• + Cl2 → CH3Cl + Cl•"], "net": "CH4 + Cl2 → CH3Cl + HCl"}, {"type": "regenerated", "species": "Cl•", "steps": ["Cl• + CH4 → CH3• + HCl", "CH3• + Cl2 → CH3Cl + Cl•"]},

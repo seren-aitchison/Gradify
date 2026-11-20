@@ -53,6 +53,7 @@ H: Nucleophiles
 - Strength rises with **negative charge**: OH⁻ is stronger than H₂O.
 - Less electronegative donor atoms are often stronger: NH₃ outdoes H₂O.
 - Bulky nucleophiles react more slowly at crowded carbons.
+D: chem-electrophiles-nucleophiles
 H: Electrophiles
 - Have an **empty orbital** or a **δ+** atom.
 - Carbonyl carbons and carbons bonded to halogens are δ+.
@@ -136,6 +137,7 @@ H: Structure
 - It is **sp²** and **trigonal planar**, with an empty p orbital.
 - Nucleophiles can attack from either face.
 - Carbocations are strong electrophiles.
+D: chem-carbocation-stability
 H: Stability
 - **Tertiary > secondary > primary > methyl**.
 - Alkyl groups donate electron density by **inductive effects** and **hyperconjugation**.
@@ -177,6 +179,7 @@ H: Structure and stability
 - Simple carbanions are roughly **pyramidal** (sp³).
 - Stability order is the **reverse** of carbocations: methyl > primary > secondary > tertiary.
 - **Electron-withdrawing groups** and **resonance** stabilise carbanions, as in enolates.
+D: chem-carbanions
 H: In synthesis
 - Carbanions are strong **nucleophiles** and **bases**.
 - **Grignard** and **organolithium** reagents behave like carbanions.
@@ -765,6 +768,7 @@ H: Recognising oxidation
 - Alcohol → aldehyde/ketone → carboxylic acid is an oxidation sequence.
 - Tertiary alcohols resist oxidation: no H on the carbinol carbon.
 - Shown with [O] in simplified equations.
+D: chem-oxidation-alcohols
 H: Reagents and tests
 - **Acidified dichromate**: orange to green.
 - **Tollens' reagent**: silver mirror with aldehydes, not ketones.
@@ -853,6 +857,7 @@ H: Small-molecule condensations
 - **Esterification**: acid + alcohol ⇌ ester + water (acid catalyst).
 - **Amide formation**: acyl chloride + amine → amide + HCl.
 - **Aldol condensation**: two carbonyls join and lose water, forming C=C.
+D: chem-condensation-ester
 H: Polymers
 - **Polyesters**: diacid + diol, such as PET.
 - **Polyamides**: diacid or diacyl chloride + diamine, such as nylon-6,6.
@@ -978,6 +983,7 @@ H: Types of selectivity
 - **Regioselectivity**: which position or orientation is favoured.
 - **Stereoselectivity**: which stereoisomer forms.
 - Selective reactions reduce waste and purification.
+D: chem-selectivity-overview
 H: Kinetic versus thermodynamic control
 - **Kinetic product** forms fastest, through the lowest barrier.
 - **Thermodynamic product** is most stable.
@@ -1019,6 +1025,7 @@ H: Reagent control
 - NaBH₄ reduces aldehydes and ketones but not esters or acids.
 - Hydrogen with Lindlar's catalyst reduces alkynes but not alkenes.
 - Reactivity order of carbonyls: acyl chlorides > aldehydes > ketones > esters > amides.
+D: chem-chemoselectivity
 H: Protecting groups
 - A **protecting group** temporarily masks a reactive group.
 - Ketones and aldehydes are protected as **acetals**.
@@ -1060,6 +1067,7 @@ H: Additions
 - **Anti-Markovnikov**: HBr with peroxides adds by a radical route, putting Br on the less substituted carbon.
 - **Hydroboration-oxidation** gives anti-Markovnikov alcohols.
 - Regioselectivity follows the most stable intermediate.
+D: chem-regioselectivity
 H: Eliminations and arenes
 - **Zaitsev**: more substituted alkene from small bases.
 - **Hofmann**: less substituted alkene from bulky bases.
@@ -1101,6 +1109,7 @@ H: Definitions
 - **Stereospecific**: different stereoisomers of reactant give different stereoisomers of product.
 - SN2 (inversion) and E2 (anti-periplanar) are stereospecific.
 - Bromine addition (anti) is stereospecific.
+D: chem-stereoselectivity
 H: Asymmetric synthesis
 - **Chiral catalysts** favour one enantiomer, measured by **ee**.
 - **Chiral auxiliaries** are temporary chiral groups that guide reactions.
