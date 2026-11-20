@@ -48,6 +48,16 @@ SEQ1#health-u02-01-q2@2: Put the levels of organisation in order, from smallest 
 M2#health-u02-01-q3@2: Blood is classed as which type of tissue? | Connective | Epithelial | Muscle | Nervous | Blood is a connective tissue: cells in a fluid matrix (plasma), like bone and cartilage, which have cells in a solid matrix.
 M3#health-u02-01-q4@3: Why does damage to the small blood vessels in diabetes cause problems in so many different organs? | Every organ depends on small vessels for its supply, so damage at the tissue level affects eyes, kidneys and nerves alike | Diabetes infects each organ separately | Insulin is made in every organ | Small vessels exist only in the eyes and kidneys | The endothelium lines vessels throughout the body; when it is damaged, organs with dense small-vessel networks show the effects first.
 SA3#health-u02-01-q5@1,3: Explain how the structure of a red blood cell suits its function, and why changes at the cell level can affect the whole body. | A red blood cell has no nucleus, leaving more room for haemoglobin; its biconcave shape gives a large surface area for diffusion of oxygen and lets it bend through capillaries. If cells are too few or contain too little haemoglobin (anaemia), tissues receive less oxygen, causing tiredness, breathlessness and a faster heart rate: a cell-level change affecting several systems. | No nucleus, more haemoglobin ; Biconcave shape or large surface area ; Flexible for capillaries ; Anaemia or a cell-level change ; Effects on tissues and whole body
+Q: What is a tissue? | A group of similar cells working together to perform a particular function.
+Q: What is an organ? | A structure made of two or more tissue types that performs a specific function.
+Q: Why does each level of body organisation have properties the level below lacks? | A single heart muscle cell contracts, but only the whole heart pumps blood.
+Q: What does the nucleus of a cell do? | It contains DNA in chromosomes and controls the cell's activities.
+Q: What is the role of ribosomes, and where do many sit? | They make proteins; many sit on the rough endoplasmic reticulum.
+Q: What does the Golgi apparatus do? | It modifies and packages proteins for secretion.
+Q: What is a stem cell? | An unspecialised cell that can divide and develop into specialised cell types.
+Q: Where do stem cells replace cells in adults? | In the blood, skin and gut lining.
+Q: How does the stomach show all four tissue types? | Epithelial lining, connective tissue, smooth muscle that churns food, and nerves that control it.
+Q: Why is it wrong to think each organ belongs to only one system? | The pancreas is in both the digestive and endocrine systems, and the kidneys also control blood pressure and make a hormone.
 
 ## Homeostasis
 LV: Level 3 · Foundation
@@ -89,6 +99,16 @@ MATCH1#health-u02-02-q2@2: Match each part of the temperature control system to 
 M2#health-u02-02-q3@2: During labour, oxytocin strengthens contractions, which push the baby against the cervix and release more oxytocin. What type of control is this? | Positive feedback | Negative feedback | A reflex arc only | Homeostatic balance | The response amplifies the original change until the end point, the birth, is reached.
 M3#health-u02-02-q4@3: Why are older adults at greater risk during heatwaves? | Their homeostatic responses, such as sweating and thirst, are weaker and they often have conditions or medicines that impair them | Their set point for temperature is 40 °C | They have more sweat glands than younger adults | Heat has no effect on younger people | Reduced sweating, thirst and cardiovascular reserve, plus medicines such as diuretics, impair heat loss and fluid balance.
 SA3#health-u02-02-q5@2,3: Using a named example, explain how negative feedback maintains homeostasis, and evaluate the statement that "disease is a failure of homeostasis". | Example: rising blood glucose detected by pancreatic beta cells, which release insulin; liver and muscle take up glucose and store glycogen; glucose falls and insulin release falls. Many diseases fit the statement: type 1 diabetes (no insulin), hypertension, CKD. But some diseases begin outside homeostasis, such as infections, injuries or cancers, although they may then disrupt it; so the statement is useful but incomplete. | Receptor in example ; Control centre or hormone ; Effector and response ; Change reversed ; Supporting disease examples ; Counter-example and judgement
+Q: What is homeostasis? | Maintenance of a relatively stable internal environment within narrow limits.
+Q: Who coined the term homeostasis, and when? | Walter Cannon in 1926, building on Claude Bernard's idea of the milieu intérieur.
+Q: Why do cells need a stable internal environment? | Enzymes work best within narrow ranges of temperature and pH.
+Q: What is negative feedback? | A control mechanism in which a change triggers responses that reverse it.
+Q: Which part of the brain is often the control centre in homeostasis? | The hypothalamus.
+Q: What happens to insulin release once blood glucose falls back to normal after a meal? | It falls, because the change has been reversed.
+Q: When is positive feedback useful in the body? | When it has a clear end point, for processes that must be completed quickly.
+Q: Why is severe heatstroke an example of dangerous positive feedback? | A rising temperature damages the mechanisms that would lower it.
+Q: Name three diseases that are failures of homeostasis. | Diabetes, hypertension, chronic kidney disease and hypothyroidism.
+Q: Does homeostasis keep variables at one exact value? | No. Variables fluctuate within a normal range around a set point, and some set points change, as in fever.
 
 ## Body temperature regulation
 LV: Level 3 · Application
@@ -131,6 +151,16 @@ M2#health-u02-03-q2@2: Why is a hot, humid day more dangerous than a hot, dry da
 TF2#health-u02-03-q3@2: During the shivering phase of a fever, the hypothalamus has raised its set point. | true | Pyrogens raise the set point, so the body feels cold relative to it and generates heat until the new level is reached.
 M3#health-u02-03-q4@3: Which group is generally at greatest risk of harm during a heatwave? | Isolated older adults with long-term conditions | Healthy young adults who stay indoors | Teenagers who drink water regularly | People living in cool climates | Older adults have weaker thermoregulation and thirst, often take medicines that affect fluid balance, and may not be checked on.
 SA3#health-u02-03-q5@2,3: Explain how the body responds to overheating and evaluate why some groups are more vulnerable to heat illness. | The hypothalamus detects rising temperature and triggers sweating (evaporative cooling), skin vasodilation (radiative heat loss) and behavioural responses. Older people sweat less, sense thirst less, have reduced cardiovascular reserve and may take diuretics; babies have a high surface area and depend on others; people with heart, lung or kidney disease, outdoor workers and people who are homeless or isolated are also at risk. Humidity, overheating homes and lack of cooling worsen risk, so public health plans target these groups. | Hypothalamus as control centre ; Sweating and evaporation ; Vasodilation ; Physiological reason for vulnerability ; Social reason for vulnerability ; Public health response or judgement
+Q: Which organs produce most body heat? | The liver, heart, brain and active muscles, through metabolism.
+Q: Name the four ways heat is lost from the skin. | Radiation, conduction, convection and evaporation of sweat.
+Q: When is evaporation the only way to lose heat? | When the air is hotter than the skin.
+Q: What is the typical range of normal core temperature? | About 36.5 to 37.5 °C, lowest in the early morning and highest in the late afternoon.
+Q: How does vasodilation help cool the body? | Widened skin arterioles let more blood flow near the surface and lose heat.
+Q: How does shivering warm the body? | Rapid muscle contractions generate heat.
+Q: What is hypothermia? | A core body temperature below 35 °C.
+Q: What are the signs of hypothermia? | Shivering, confusion and slowed breathing, progressing to unconsciousness.
+Q: What is heatstroke? | A medical emergency in which core temperature rises above about 40 °C and the person may become confused or lose consciousness.
+Q: Why does a person with a rising fever feel cold and shiver? | Pyrogens raise the hypothalamic set point, so the body heats up until the new temperature is reached.
 
 ## Blood glucose regulation
 LV: Level 3 · Application
@@ -170,6 +200,16 @@ M2#health-u02-04-q2@2: An adult without symptoms has an HbA1c of 44 mmol/mol. Ho
 TF1#health-u02-04-q3@1: Glucose appears in the urine when blood glucose exceeds the kidneys' capacity to reabsorb it. | true | The kidney's glucose transporters saturate at high concentrations, so excess glucose is excreted with water.
 M3#health-u02-04-q4@3: Why do people with type 1 diabetes need insulin while many people with type 2 can be treated at first with lifestyle change and tablets? | In type 1 the beta cells are destroyed so no insulin is made, whereas in type 2 insulin is made but cells resist it | Type 2 diabetes is caused by eating sugar only | Type 1 diabetes is caused by being overweight | Tablets contain insulin | Type 1 is an absolute insulin deficiency; in type 2, improving insulin sensitivity and supporting insulin release can be enough at first.
 SA3#health-u02-04-q5@1,3: Explain how blood glucose is regulated after a meal and during fasting, and explain how type 2 diabetes disrupts this. | After a meal, rising glucose is detected by beta cells, which release insulin; muscle and fat take up glucose and the liver stores glycogen, so glucose falls. During fasting, alpha cells release glucagon; the liver breaks down glycogen and makes glucose, so glucose rises. In type 2 diabetes, cells become insulin-resistant and beta cells can't release enough insulin to compensate, so glucose stays high, damaging blood vessels and nerves. | Insulin from beta cells after a meal ; Uptake and glycogen storage ; Glucagon from alpha cells during fasting ; Glycogen breakdown or gluconeogenesis ; Insulin resistance in type 2 ; Beta-cell failure or consequence of high glucose
+Q: How does insulin lower blood glucose? | It helps muscle and fat cells take up glucose and stimulates the liver and muscles to store it as glycogen.
+Q: How does glucagon raise blood glucose? | It stimulates the liver to break down glycogen and make new glucose.
+Q: Which two stress hormones also raise blood glucose? | Adrenaline and cortisol.
+Q: What is the usual blood glucose range in people without diabetes? | About 4 to 7.8 mmol/L.
+Q: Why does HbA1c reflect glucose over two to three months? | Glucose binds to haemoglobin over a red cell's roughly 120-day life.
+Q: What UK thresholds diagnose type 2 diabetes? | HbA1c of 48 mmol/mol (6.5%) or more, or fasting plasma glucose of 7.0 mmol/L or more.
+Q: Why does very high blood glucose cause thirst and passing lots of urine? | Glucose exceeds the kidneys' reabsorption capacity, appears in urine and pulls water with it.
+Q: What happens in type 1 diabetes? | The immune system destroys the beta cells, so little or no insulin is made and insulin is needed for life.
+Q: What happens in type 2 diabetes? | Cells become resistant to insulin and beta cells gradually cannot make enough to compensate.
+Q: Is insulin an enzyme that breaks glucose down? | No. Insulin is a signal causing cells to take up and store glucose.
 
 ## The nervous system
 LV: Level 3 · Foundation
@@ -208,6 +248,16 @@ SEQ1#health-u02-05-q2@2: Put the parts of a reflex arc in order. | Receptor ; Se
 M2#health-u02-05-q3@2: A person's face droops on one side and they can't lift one arm. What should be done? | Call 999 immediately, as these are signs of stroke | Wait to see if it improves overnight | Give them a large meal | Book a routine GP appointment next week | FAST signs indicate a possible stroke; emergency treatment is time-critical.
 M3#health-u02-05-q4@3: Which explains why many medicines for anxiety, pain and depression act at synapses? | Synapses are where neurotransmitters carry signals, so drugs can increase, block or mimic their effects | Synapses are the only part of a neurone that contains DNA | Drugs can't cross into neurones at any other point | Synapses carry electrical impulses without chemicals | The chemical step at synapses offers targets: receptors, release, reuptake and breakdown of neurotransmitters.
 SA3#health-u02-05-q5@2,3: Explain why the response to touching something hot is fast, and why speed matters in treating a stroke. | The withdrawal reflex uses a short pathway: receptor, sensory neurone, relay neurone in the spinal cord, motor neurone, muscle, without waiting for conscious processing; myelinated neurones conduct fast. In stroke, brain cells deprived of blood die within minutes; the sooner a clot is removed or dissolved, the more tissue is saved, so FAST recognition and calling 999 improve outcomes. | Reflex arc components ; Spinal cord not brain ; Myelin or few synapses ; Brain cells die without blood supply ; Time-critical treatment ; FAST
+Q: What is the peripheral nervous system? | The nerves that connect the central nervous system to the rest of the body.
+Q: What does the somatic division of the PNS control? | Voluntary movement of skeletal muscle, and it carries sensation.
+Q: What does the sympathetic nervous system do? | Fight or flight: raises heart rate, dilates pupils and diverts blood to muscles.
+Q: What are the roles of sensory, relay and motor neurones? | Sensory carry impulses to the CNS, relay connect neurones within it, motor carry impulses to effectors.
+Q: What does the myelin sheath do? | It speeds conduction of impulses along the axon.
+Q: How does a signal cross a synapse? | A neurotransmitter is released, diffuses across the gap and binds to receptors on the next cell.
+Q: Why do you pull your hand from a hot pan before feeling pain? | It is a spinal reflex; the impulse reaches the brain a fraction later.
+Q: What are the two types of stroke? | Ischaemic, caused by a clot (about 85%), and haemorrhagic, caused by a bleed.
+Q: Why does speed matter in treating a stroke? | Brain cells die within minutes once their blood supply is cut off.
+Q: What goes wrong in multiple sclerosis and Parkinson's disease? | Multiple sclerosis damages myelin; Parkinson's involves loss of dopamine-producing neurones.
 
 ## The endocrine system
 LV: Level 3 · Foundation
@@ -252,6 +302,16 @@ MATCH1#health-u02-06-q2@1: Match each gland to a hormone it secretes. | Pancreas
 M2#health-u02-06-q3@2: A blood test shows high TSH and low thyroxine. What does this suggest? | An underactive thyroid (hypothyroidism) | An overactive thyroid (hyperthyroidism) | Type 1 diabetes | A normal result | Low thyroxine removes negative feedback, so the pituitary releases more TSH to stimulate the failing thyroid.
 M3#health-u02-06-q4@3: Which is the best comparison of nervous and hormonal control? | Nervous control is fast and precisely targeted; hormonal control is slower, longer-lasting and can affect many tissues | Hormonal control is always faster than nervous control | Nervous control uses the blood to carry signals | Hormones affect every cell in the body equally | Neurones carry rapid electrical signals to specific cells; hormones travel in blood and act wherever there are receptors.
 SA3#health-u02-06-q5@2,3: Explain how the body responds to a sudden stressor through both nervous and hormonal pathways, and evaluate why long-term activation may harm health. | The sympathetic nervous system activates the adrenal medulla to release adrenaline within seconds: heart rate, blood pressure and blood glucose rise and blood is diverted to muscles. The HPA axis releases CRH, then ACTH, then cortisol, which raises glucose and suppresses inflammation; cortisol feeds back to switch the axis off. Chronic activation may contribute to high blood pressure, raised glucose and reduced immunity, but evidence is mixed and behaviour (smoking, poor sleep) also links stress with illness. | Sympathetic and adrenaline ; Effects of adrenaline ; HPA axis sequence ; Cortisol and negative feedback ; Possible harms of chronic activation ; Evaluates strength of evidence
+Q: What is a hormone? | A chemical messenger secreted into the blood by an endocrine gland and acting on target cells.
+Q: What is a target cell? | A cell with receptors for a particular hormone.
+Q: What role does the hypothalamus play in the endocrine system? | It links the nervous and endocrine systems and controls the pituitary.
+Q: Which hormones does the posterior pituitary release? | ADH (antidiuretic hormone) and oxytocin.
+Q: Which hormones does the adrenal cortex make? | Cortisol and aldosterone.
+Q: How does nervous control differ from hormonal control? | Nervous signals are fast, short-lived and precisely targeted; hormonal signals are slower, longer-lasting and affect many tissues.
+Q: How is thyroxine kept stable by negative feedback? | TRH from the hypothalamus triggers TSH, which triggers thyroxine; thyroxine then inhibits TRH and TSH release.
+Q: What are the symptoms and treatment of hypothyroidism? | Tiredness, feeling cold and weight gain; treated with replacement levothyroxine.
+Q: What are Addison's disease and Cushing's syndrome? | Addison's is too little cortisol; Cushing's is too much cortisol, often from long-term steroid medicines.
+Q: What health effects are linked to long-term raised cortisol from chronic stress? | Raised blood pressure, raised blood glucose and suppressed immunity.
 
 ## The heart
 LV: Level 3 · Foundation
@@ -291,6 +351,16 @@ NUM2#health-u02-07-q2@3: A person's heart rate is 80 beats per minute and their 
 M2#health-u02-07-q3@2: Why is there a short delay at the atrioventricular node? | So the atria finish emptying into the ventricles before the ventricles contract | To let the heart muscle rest between beats | To allow the valves to grow | To make the ventricles contract from the top down | The delay ensures ventricular filling is complete before ventricular systole.
 M3#health-u02-07-q4@3: Why does atrial fibrillation increase the risk of stroke? | Blood pools in the poorly contracting atria and can form clots that travel to the brain | It raises blood glucose | It destroys the coronary arteries | It stops the lungs from working | Ineffective atrial contraction lets blood stagnate, especially in the left atrial appendage; clots can reach the brain.
 SA3#health-u02-07-q5@2,3: Describe the sequence of events in one cardiac cycle and explain how cardiac output increases during exercise. | The SAN fires; atria contract and push blood into the ventricles; the impulse is delayed at the AVN and then travels down the bundle of His and Purkinje fibres; ventricles contract from the apex, AV valves close and semilunar valves open, ejecting blood into the aorta and pulmonary artery; in diastole the heart relaxes and refills and semilunar valves close. In exercise, sympathetic stimulation and adrenaline raise heart rate and the force of contraction, increasing stroke volume; cardiac output = HR × SV can rise several-fold. | SAN and atrial systole ; AVN delay ; Bundle of His or Purkinje fibres and ventricular systole ; Valve actions ; Diastole and filling ; Cardiac output = HR × SV with sympathetic control
+Q: Which side of the heart pumps blood to the lungs? | The right side, through the pulmonary artery, in the pulmonary circulation.
+Q: Which vessel carries blood from the left ventricle to the body? | The aorta, in the systemic circulation.
+Q: Which valves lie between the atria and ventricles? | The tricuspid and mitral (bicuspid) valves.
+Q: What supplies the heart muscle itself with blood? | The coronary arteries.
+Q: What causes the "lub" and "dub" heart sounds? | "Lub" is the atrioventricular valves closing in ventricular systole; "dub" is the exit valves closing in diastole.
+Q: How does the heartbeat impulse travel after the AVN? | Down the bundle of His and Purkinje fibres, so the ventricles contract from the bottom up.
+Q: What is the equation for cardiac output? | Cardiac output = heart rate × stroke volume.
+Q: What causes a heart attack? | A plaque ruptures and a clot blocks a coronary artery, so heart muscle dies.
+Q: What is heart failure? | The heart can't pump enough blood for the body's needs, causing breathlessness and swollen ankles.
+Q: Is it true that all arteries carry oxygenated blood? | No. Arteries carry blood away from the heart; the pulmonary artery carries deoxygenated blood to the lungs.
 
 ## Blood vessels and blood pressure
 LV: Level 3 · Application
@@ -332,6 +402,16 @@ M2#health-u02-08-q2@2: A clinic reading is 162/104 mmHg, and home monitoring ave
 TF2#health-u02-08-q3@2: High blood pressure usually causes obvious symptoms, so people know when they have it. | false | Hypertension is usually symptomless, which is why measurement is the only way to find it.
 M3#health-u02-08-q4@3: Why does NICE recommend ambulatory or home monitoring to confirm hypertension? | Clinic readings can be raised by anxiety and vary, so averaging many readings avoids misdiagnosis | Clinic machines are always inaccurate | Home monitoring is cheaper than any clinic reading | It removes the need for any treatment | Many readings over normal activities give a truer average, reducing overdiagnosis from the white-coat effect.
 SA3#health-u02-08-q5@2,3: Explain why high blood pressure is called a "silent killer" and evaluate approaches to reducing it in the population. | It usually has no symptoms yet damages arteries over years, increasing stroke, heart attack, heart failure, kidney disease and dementia. Approaches: detection through NHS Health Checks and pharmacy checks; treatment with medicines, effective but requiring diagnosis and adherence; lifestyle measures; and population measures such as salt reduction in processed foods, which reach everyone without relying on individuals. A combination is needed, with population salt reduction among the most cost-effective. | No symptoms ; Damage to arteries and named consequences ; Detection or screening ; Medication ; Lifestyle measures ; Population measures with judgement
+Q: Why do arteries have thick muscular, elastic walls? | They carry blood at high pressure and stretch and recoil with each beat, giving the pulse.
+Q: Why are capillary walls one cell thick? | So substances can be exchanged between blood and tissues.
+Q: How do skeletal muscles help veins? | Their contraction helps push blood back to the heart, especially from the legs.
+Q: What does the NHS describe as an ideal blood pressure? | Between 90/60 and 120/80 mmHg.
+Q: What is the equation for blood pressure? | Blood pressure = cardiac output × peripheral resistance.
+Q: What systems control blood pressure? | The autonomic nervous system, hormones including the renin–angiotensin–aldosterone system, and the kidneys' control of blood volume.
+Q: What is stage 2 hypertension under NICE NG136? | A clinic reading of 160/100 or more, or a home or ambulatory average of 150/95 or more.
+Q: What is the white-coat effect? | Blood pressure readings raised in the clinic, which is why NICE requires confirmation by monitoring.
+Q: Name four conditions high blood pressure increases the risk of. | Stroke, heart attack, heart failure, chronic kidney disease and vascular dementia.
+Q: Name three lifestyle measures that lower blood pressure. | Reducing salt, keeping a healthy weight, being active, drinking less alcohol and not smoking.
 
 ## Blood
 LV: Level 3 · Foundation
@@ -373,6 +453,16 @@ M2#health-u02-09-q2@2: A woman with heavy periods feels tired and breathless on 
 MS2#health-u02-09-q3@3: A patient is group AB positive. Which red cell groups could they receive? Choose all that apply. | AB+ ; A− ; O+ ; B+ | None, because AB can't receive blood ; Only O− | AB has no anti-A or anti-B antibodies and is RhD positive, so it can receive red cells of any ABO group, positive or negative.
 M3#health-u02-09-q4@3: Why are O negative blood donors particularly valuable to the NHS? | Their red cells lack A, B and RhD antigens, so they can be given in emergencies before the patient's group is known | Their plasma can be given to every patient | O negative is the most common blood group | O negative blood clots faster | Without the main antigens, O negative red cells are unlikely to trigger a reaction in most recipients.
 SA3#health-u02-09-q5@1,3: Describe the structure and function of red blood cells and explain the effects of anaemia on the body. | Red cells are biconcave discs without a nucleus, packed with haemoglobin, which binds oxygen in the lungs and releases it in tissues; they live about 120 days and are made in bone marrow under the control of erythropoietin. In anaemia, less haemoglobin means less oxygen delivery, causing tiredness, breathlessness, pallor and a faster heart rate as the heart tries to compensate. | Biconcave and no nucleus ; Haemoglobin binds oxygen ; Made in bone marrow or lifespan ; Reduced oxygen delivery ; Symptoms of anaemia ; Compensation such as faster heart rate
+Q: How much blood does an adult have? | About 5 litres.
+Q: What does plasma carry? | Glucose, amino acids, hormones, carbon dioxide, urea, salts and plasma proteins such as albumin and clotting factors.
+Q: How long do red blood cells live, and where are they made? | About 120 days; they are made in red bone marrow, stimulated by erythropoietin from the kidneys.
+Q: What do phagocytes and lymphocytes do? | Phagocytes engulf pathogens; lymphocytes make antibodies or kill infected cells.
+Q: How does a blood clot form? | Platelets form a plug, and clotting factors convert soluble fibrinogen into insoluble fibrin threads that trap cells.
+Q: Which vitamin is needed to make several clotting factors? | Vitamin K.
+Q: What is the danger of deep vein thrombosis? | The clot can travel to the lungs, causing a pulmonary embolism.
+Q: Name three symptoms of anaemia. | Tiredness, breathlessness, pale skin and palpitations.
+Q: What antigens and antibodies does group A blood have? | A antigens on red cells and anti-B antibodies in the plasma.
+Q: Why can O negative red cells be given to almost anyone in an emergency? | They have no A, B or RhD antigens to trigger a reaction.
 
 ## The respiratory system
 LV: Level 3 · Foundation
@@ -412,6 +502,16 @@ NUM2#health-u02-10-q3@2: A patient has an FEV₁ of 2.8 L and an FVC of 3.5 L. W
 M2#health-u02-10-q4@2: Why do smokers often cough up mucus in the mornings? | Smoke damages the cilia, so mucus builds up and must be cleared by coughing | Smoking increases the number of alveoli | Smoke makes the trachea collapse | Nicotine kills goblet cells | With cilia paralysed or destroyed, the mucociliary escalator fails and coughing becomes the main clearance mechanism.
 M3#health-u02-10-q5@3: A person with breathlessness has an FEV₁/FVC of 0.55, which improves markedly after an inhaled bronchodilator. Which condition does this suggest more than COPD? | Asthma, because its airway narrowing is largely reversible | Pneumonia | Anaemia | Lung cancer | Large reversibility is typical of asthma; obstruction in COPD is persistent and improves little.
 SA3#health-u02-10-q6@2,3: Explain how cigarette smoking damages the respiratory system. | Smoke paralyses and destroys cilia and increases mucus from goblet cells, so the mucociliary escalator fails, causing a chronic cough and more infections. Chronic inflammation narrows airways (chronic bronchitis) and enzymes released by inflammatory cells destroy alveolar walls (emphysema), reducing the surface area for gas exchange; together these are COPD, shown by a low FEV₁/FVC. Carcinogens in smoke damage DNA in airway cells, causing lung cancer. | Cilia damaged ; More mucus or chronic cough ; Airway inflammation or bronchitis ; Alveolar destruction or emphysema ; Reduced gas exchange or obstruction ; Lung cancer from carcinogens
+Q: What does the nose do to incoming air? | It warms, moistens and filters it.
+Q: What separates the chest from the abdomen? | The diaphragm, a dome-shaped muscle.
+Q: What do goblet cells do in the airways? | They make mucus that traps dust and microbes.
+Q: How does cigarette smoke affect the airways' defences? | It paralyses and destroys cilia and increases mucus, so smokers cough to clear their airways.
+Q: What do FVC and FEV₁ measure? | FVC is the total volume breathed out forcefully after a full breath; FEV₁ is the volume breathed out in the first second.
+Q: What is a peak flow meter used for? | Measuring the fastest rate of breathing out, to monitor asthma at home.
+Q: What is a normal adult resting breathing rate? | About 12 to 20 breaths a minute.
+Q: What is asthma? | Chronic airway inflammation with episodes of narrowing, causing wheeze, cough and breathlessness.
+Q: What does COPD include, and what mostly causes it? | Chronic bronchitis and emphysema; it is mostly caused by smoking.
+Q: Do the lungs contain muscle that pumps air? | No. The lungs are passive; breathing is driven by the diaphragm and intercostal muscles.
 
 ## Gas exchange and breathing
 LV: Level 3 · Application
@@ -454,6 +554,16 @@ MS2#health-u02-11-q2@2: Which features make alveoli efficient for gas exchange? 
 M2#health-u02-11-q3@2: A person with severe COPD who retains carbon dioxide is given oxygen in hospital. What SpO₂ target range does the BTS guideline usually recommend? | 88 to 92% | 94 to 98% | 100% | 75 to 80% | In people at risk of hypercapnic respiratory failure, high-concentration oxygen can worsen CO₂ retention, so a lower target is used.
 M3#health-u02-11-q4@3: Why does holding your breath eventually become impossible to sustain? | Rising carbon dioxide stimulates chemoreceptors, and the respiratory centre drives breathing | Oxygen in the blood rises too high | The diaphragm stops working | The alveoli collapse after a few seconds | CO₂ accumulates and acidifies the blood; chemoreceptors trigger an overwhelming urge to breathe.
 SA3#health-u02-11-q5@2,3: Explain how the structure of the alveoli and the mechanism of breathing together maintain efficient gas exchange, and how emphysema disrupts this. | Breathing (diaphragm and intercostals changing chest volume and pressure) replaces alveolar air, keeping oxygen high and carbon dioxide low; blood flow removes oxygen and brings carbon dioxide, maintaining steep gradients. The alveoli provide a huge surface area, one-cell-thick walls and a moist lining for fast diffusion. In emphysema, alveolar walls are destroyed, reducing surface area, and loss of elastic recoil traps air, making expiration harder, so gas exchange falls and breathlessness results. | Ventilation maintains gradient ; Blood flow maintains gradient ; Large surface area ; Short diffusion distance ; Emphysema reduces surface area ; Loss of elastic recoil or trapped air
+Q: What do the external intercostal muscles do during inspiration? | They pull the ribs up and out, increasing chest volume.
+Q: Why does air flow into the lungs during inspiration? | Chest volume rises, so pressure in the lungs falls below atmospheric pressure and air flows in.
+Q: Is quiet expiration active or passive? | Passive: the muscles relax and elastic recoil returns the lungs and chest to resting size.
+Q: Which muscles are used in forced expiration? | The internal intercostal and abdominal muscles.
+Q: About how large is the total surface area of the alveoli? | Roughly 70 square metres, from hundreds of millions of alveoli.
+Q: How is a steep concentration gradient kept up in the alveoli? | By ventilation and by blood flow through a dense capillary network.
+Q: What does surfactant do in the alveoli? | It stops the alveoli collapsing.
+Q: Why does emphysema cause breathlessness? | It destroys walls between alveoli, reducing the surface area, so less oxygen enters the blood per breath.
+Q: Where is the respiratory centre, and what is its main stimulus? | In the medulla oblongata; the main stimulus is rising blood carbon dioxide, which makes the blood more acidic.
+Q: What does a pulse oximeter measure? | Oxygen saturation (SpO₂): the percentage of haemoglobin carrying oxygen.
 
 ## The digestive system
 LV: Level 3 · Foundation
@@ -497,6 +607,16 @@ MATCH2#health-u02-12-q2@2: Match each enzyme group to its products. | Carbohydra
 M2#health-u02-12-q3@2: After having their gallbladder removed, a patient is advised to avoid very fatty meals at first. Why? | Bile is no longer stored and released in large amounts, so large fatty meals are harder to emulsify | The stomach can no longer make acid | Amylase is no longer produced | The small intestine loses its villi | Bile still flows from the liver but isn't concentrated and stored, so big fat loads are emulsified less well.
 M3#health-u02-12-q4@3: Why does damage to the villi in coeliac disease cause such a wide range of symptoms? | It reduces absorption of many different nutrients, affecting blood, bones, energy and growth | It stops the stomach making acid | It blocks the oesophagus | It only affects absorption of gluten | Loss of absorptive surface affects iron, folate, calcium, vitamins and energy, so symptoms appear across several systems.
 SA3#health-u02-12-q5@1,2: Describe how a meal containing starch, protein and fat is digested and absorbed. | Starch: salivary amylase in the mouth and pancreatic amylase in the small intestine produce maltose, then glucose. Protein: pepsin in the acidic stomach and pancreatic proteases in the small intestine produce amino acids. Fat: bile emulsifies it, lipase produces fatty acids and glycerol. Products are absorbed by the villi, which have a large surface area and a thin epithelium: glucose and amino acids into capillaries, fats into lacteals. | Amylase and starch ; Protease or pepsin and stomach acid ; Bile emulsifies ; Lipase products ; Villi and surface area ; Capillaries and lacteals
+Q: What is peristalsis? | Waves of muscle contraction that move food along the gut.
+Q: What does hydrochloric acid do in the stomach? | It kills microbes and provides acidic conditions for pepsin, which begins digesting protein.
+Q: Where is bile made and stored? | Made in the liver and stored in the gallbladder.
+Q: What are the three parts of the small intestine? | The duodenum, jejunum and ileum.
+Q: What does the large intestine do? | Absorbs water and salts; bacteria ferment fibre; faeces are stored and egested.
+Q: What do proteases and lipases produce? | Proteases make amino acids; lipases make fatty acids and glycerol.
+Q: What is an enzyme? | A biological catalyst that speeds up a chemical reaction without being used up.
+Q: What are the features of a villus? | A thin epithelium with microvilli, a rich capillary network for sugars and amino acids, and a lacteal for fats.
+Q: Why does coeliac disease cause anaemia and weight loss? | An autoimmune reaction to gluten flattens the villi, so iron, folate, calcium and other nutrients are poorly absorbed.
+Q: What does the gut microbiome do? | It ferments fibre into short-chain fatty acids, makes some vitamins and helps train the immune system.
 
 ## The liver
 LV: Level 3 · Foundation
@@ -540,6 +660,16 @@ M2#health-u02-13-q2@2: Someone took too much paracetamol an hour ago but feels f
 TF2#health-u02-13-q3@2: Hepatitis C can now be cured in most people with antiviral tablets. | true | Direct-acting antivirals cure the large majority of hepatitis C infections, which is why testing matters.
 M3#health-u02-13-q4@3: Why is liver disease often diagnosed late? | The liver has large reserve and can regenerate, so symptoms appear only when damage is advanced | Liver tests are not available in the UK | Liver disease always causes severe pain early | It affects only older people | Reserve capacity hides early damage; symptoms such as jaundice and ascites appear late.
 SA3#health-u02-13-q5@2,3: Evaluate how far liver disease in the UK is preventable. | Most liver disease has preventable causes: alcohol (reduced by drinking within 14 units a week and by population policies such as pricing), MASLD linked to obesity and diabetes (reduced by weight management and activity) and viral hepatitis (prevented by hepatitis B vaccination, safer injecting and blood screening; hepatitis C is curable). Because disease is silent, testing people at risk catches it early. Some causes, such as genetic and autoimmune liver disease, are not preventable, and prevention depends on wider determinants such as alcohol availability and food environments. | Alcohol and prevention ; Obesity-related disease and prevention ; Viral hepatitis prevention or cure ; Early detection ; Non-preventable causes ; Judgement
+Q: Which two vessels supply the liver with blood? | The hepatic artery (oxygen-rich) and the hepatic portal vein (nutrient-rich, from the gut).
+Q: Why does everything absorbed from the gut pass through the liver first? | The hepatic portal vein carries blood directly from the gut to the liver.
+Q: What proteins does the liver make? | Plasma proteins such as albumin and clotting factors, plus cholesterol and lipoproteins.
+Q: What is bilirubin? | A waste product from old red cells, carried in bile.
+Q: What does the liver store? | Glycogen, iron and vitamins A, D and B12.
+Q: What does the liver first convert alcohol into? | Acetaldehyde, a toxic chemical, then acetate.
+Q: What are the stages of alcohol-related liver damage? | Fatty liver, then alcoholic hepatitis, then cirrhosis.
+Q: What is cirrhosis? | Permanent scarring of the liver that disrupts its structure and function.
+Q: Why is a paracetamol overdose dangerous even if the person feels well? | Glutathione is used up, so a toxic product kills liver cells and liver failure can develop over days.
+Q: What is the antidote for paracetamol overdose? | Acetylcysteine.
 
 ## The kidneys and fluid balance
 LV: Level 3 · Application
@@ -581,6 +711,16 @@ M2#health-u02-14-q2@2: Someone drinks a large volume of water. What happens to A
 TF1#health-u02-14-q3@1: Protein is normally found in large amounts in urine. | false | Proteins are too large to pass through the glomerular filter; albumin in urine is a sign of kidney damage.
 M3#health-u02-14-q4@3: A person has an eGFR of 45 mL/min/1.73 m² on tests three months apart and long-standing type 2 diabetes. What is the most likely interpretation? | Chronic kidney disease (stage G3a or G3b range), probably related to diabetes | Normal kidney function | Acute dehydration only | Kidney failure needing immediate dialysis | A persistent eGFR below 60 for over three months indicates CKD; 45 lies at the boundary of G3a and G3b, and diabetes is a leading cause.
 SA3#health-u02-14-q5@2,3: Explain how the kidneys maintain water balance on a hot day and evaluate why chronic kidney disease is often found late. | Sweating makes the blood more concentrated; osmoreceptors in the hypothalamus detect it; the pituitary releases more ADH; collecting ducts become more permeable and reabsorb more water; urine is concentrated, and thirst increases intake. Negative feedback returns concentration to normal. CKD is often found late because the kidneys have reserve and there are few symptoms until function is badly reduced; it is detected by blood (eGFR) and urine (albumin) tests, so people with diabetes and hypertension are checked regularly. | Osmoreceptors in hypothalamus ; ADH from pituitary ; Collecting duct water reabsorption ; Negative feedback or thirst ; Few symptoms until advanced ; Testing those at risk
+Q: What carries urine from the kidneys, and where is it stored? | Ureters carry it to the bladder, where it is stored; it leaves through the urethra.
+Q: What is a nephron? | The functional unit of the kidney, where blood is filtered and urine formed.
+Q: How much blood do the kidneys filter each day? | About 180 litres, a glomerular filtration rate of about 125 mL a minute.
+Q: What stays in the blood during ultrafiltration? | Cells and large proteins.
+Q: How much urine is produced a day? | About 1.5 litres.
+Q: What detects that the blood has become too concentrated? | Osmoreceptors in the hypothalamus.
+Q: What does dark urine usually mean? | The kidneys are conserving water because you are dehydrated, not kidney disease.
+Q: Name three roles of the kidneys besides making urine. | Controlling blood pressure, making erythropoietin, activating vitamin D, and keeping pH and potassium in limits.
+Q: What is eGFR? | Estimated glomerular filtration rate, calculated from blood creatinine, used to measure kidney function.
+Q: What eGFR indicates chronic kidney disease? | Below 60 mL/min/1.73 m² for more than three months.
 
 ## The immune system
 LV: Level 3 · Application
@@ -625,6 +765,16 @@ MATCH2#health-u02-15-q2@2: Match each example to the type of immunity. | Recover
 M2#health-u02-15-q3@2: Why does a second exposure to the same virus usually cause no illness? | Memory cells produce a faster, larger antibody response that clears the virus before symptoms develop | The virus can't enter the body a second time | Antibodies from the first infection last unchanged for life | The innate response becomes specific | Immunological memory is the basis of both natural immunity and vaccination.
 M3#health-u02-15-q4@3: Why do people with anaphylaxis carry adrenaline auto-injectors rather than relying on antihistamines alone? | Adrenaline rapidly reverses airway narrowing and the collapse of blood pressure, which antihistamines can't do quickly enough | Antihistamines make allergy worse | Adrenaline cures the allergy permanently | Anaphylaxis is caused by too little adrenaline | Adrenaline constricts blood vessels and opens the airways within minutes; it is the first-line emergency treatment.
 SA3#health-u02-15-q5@2,3: Compare the primary and secondary immune responses and explain how this difference is used in vaccination. | Primary response: on first exposure, B and T cells specific to the antigen must be selected and multiply, so antibody levels rise slowly over days and peak low; the person may become ill. Memory cells form. Secondary response: memory cells respond within a day or two, antibody levels rise faster and higher (mainly IgG), so the pathogen is cleared before illness. Vaccines present antigens (weakened, inactivated, protein or mRNA instructions) so that the primary response and memory occur without the disease; boosters strengthen memory. | Primary slow and small ; Illness possible in primary ; Memory cells form ; Secondary fast and large ; Vaccine contains antigen without disease ; Boosters or herd protection
+Q: Name four non-specific barriers to infection. | Intact skin, mucus and cilia in the airways, stomach acid, lysozyme in tears and saliva, and harmless surface bacteria.
+Q: What are the signs of inflammation? | Redness, heat, swelling and pain, as blood flow and vessel leakiness increase.
+Q: Which phagocytes engulf and digest pathogens? | Neutrophils and macrophages.
+Q: What is an antigen? | A molecule, usually on a pathogen's surface, that the immune system recognises as foreign.
+Q: What do helper T cells and cytotoxic T cells do? | Helper T cells coordinate the response; cytotoxic T cells kill infected body cells.
+Q: Why might a person become ill at first exposure to a pathogen? | The primary response takes days to make enough antibodies.
+Q: Why is a shingles vaccine offered to older adults in the UK? | Chickenpox virus stays dormant in nerves and can later reactivate as shingles.
+Q: Give an example of natural passive immunity. | Receiving antibodies from the mother across the placenta or in breast milk.
+Q: What is anaphylaxis, and how is it treated? | A life-threatening allergic response to a harmless antigen, treated with adrenaline.
+Q: Do antibodies kill pathogens by themselves? | No. They mainly bind, neutralise and label pathogens so phagocytes and other immune parts destroy them.
 
 ## The musculoskeletal system
 LV: Level 3 · Foundation
@@ -664,6 +814,16 @@ M2#health-u02-16-q2@2: When you straighten your arm, what happens to the biceps 
 MS2#health-u02-16-q3@3: Which measures help reduce the risk of osteoporosis? Choose all that apply. | Weight-bearing exercise ; Adequate vitamin D and calcium ; Not smoking | Long periods of bed rest ; Heavy alcohol use | Loading bones stimulates bone formation; vitamin D and calcium are needed for mineralisation; smoking, heavy drinking and inactivity increase bone loss.
 M3#health-u02-16-q4@3: Why are post-menopausal women at higher risk of osteoporosis than men of the same age? | The fall in oestrogen speeds bone loss, and women reach a lower peak bone mass | Women have fewer bones | Men don't lose bone with age | Oestrogen damages bones | Oestrogen restrains bone breakdown; after the menopause, loss accelerates from a lower peak.
 SA3#health-u02-16-q5@2,3: Compare osteoporosis and osteoarthritis and evaluate the role of physical activity in preventing or managing each. | Osteoporosis: loss of bone density and strength, no symptoms until a fragility fracture; risk factors include age, menopause, steroids and smoking. Osteoarthritis: degeneration of joint cartilage and surrounding structures, causing pain and stiffness; risk factors include age, injury and excess weight. Weight-bearing and strengthening activity builds and maintains bone and improves balance, reducing falls and fractures; for osteoarthritis, exercise is a NICE core treatment, reducing pain and improving function. Activity must be adapted to pain and fracture risk. | Defines osteoporosis ; Defines osteoarthritis ; A risk factor for each ; Activity and bone or falls ; Exercise as core treatment for OA ; Evaluates with a limitation
+Q: How many bones are in the adult skeleton? | 206.
+Q: Which cells break down and rebuild bone? | Osteoclasts break bone down; osteoblasts rebuild it.
+Q: Why does bone thin faster in women after the menopause? | Oestrogen falls.
+Q: What is a synovial joint? | A freely movable joint with cartilage-covered bone ends, a capsule and lubricating synovial fluid.
+Q: How do hinge and ball-and-socket joints differ? | Hinge joints such as the knee move in one plane; ball-and-socket joints such as the hip move in many directions.
+Q: Name the three types of muscle. | Skeletal (voluntary), cardiac (heart) and smooth (in walls of gut, blood vessels and airways).
+Q: Why do skeletal muscles work in antagonistic pairs? | Muscles can only pull, so one contracts while the other relaxes to move a joint both ways.
+Q: What happens to the biceps and triceps when you bend your arm? | The biceps contracts and the triceps relaxes.
+Q: What is a fragility fracture, and where is it most common? | A break after a minor fall due to osteoporosis, most often in the wrist, hip and spine.
+Q: What is osteoarthritis, and what does NICE recommend as core treatment? | Wear of joint cartilage causing pain and stiffness; exercise and, if needed, weight loss.
 
 ## The skin
 LV: Level 3 · Foundation
@@ -707,4 +867,14 @@ SEQ2#health-u02-17-q2@2: Put the stages of wound healing in order. | Haemostasis
 M2#health-u02-17-q3@2: Why does the UK advise vitamin D supplements in autumn and winter? | UVB sunlight is too weak from October to March for the skin to make enough vitamin D | Vitamin D is destroyed by cold weather | People eat more vitamin D in summer only | Sunscreen is not available in winter | At UK latitudes, winter sunlight lacks enough UVB for skin synthesis.
 M3#health-u02-17-q4@3: An older man in a care home spends most of the day in one chair. Which action best prevents a pressure ulcer? | A risk assessment with a plan for regular repositioning and pressure-relieving equipment | Massaging reddened skin vigorously | Keeping him in the same position to avoid disturbing him | Applying sunscreen | Relieving sustained pressure restores blood flow; NICE advises against massaging at-risk skin.
 SA3#health-u02-17-q5@2,3: Explain the functions of the skin and evaluate public health approaches to preventing skin cancer in the UK. | The skin protects against pathogens, UV and water loss; controls temperature through sweating and blood flow; senses touch, pain and temperature; and makes vitamin D in UVB light. Skin cancer prevention: individual advice (SPF 30, 4-star UVA, shade, covering up), the ban on under-18s using sunbeds (Sunbeds (Regulation) Act 2010), and shade in schools. Advice must be balanced with vitamin D needs; awareness campaigns reach some groups more than others, and checking moles enables early detection. | Protection ; Temperature control ; Sensation or vitamin D ; Individual sun advice ; Policy measure such as sunbed law ; Evaluates balance or limitation
+Q: What forms the skin's waterproof barrier? | Dead, flattened outer epidermal cells filled with the tough protein keratin.
+Q: What does the dermis contain? | Blood vessels, nerve endings, sweat glands, hair follicles, sebaceous glands, and collagen and elastic fibres.
+Q: What does the hypodermis do? | It is mainly fat, which insulates and stores energy.
+Q: How does the skin make vitamin D? | UVB light converts a cholesterol derivative in the skin into vitamin D.
+Q: Which type of skin cancer is less common but more dangerous? | Melanoma.
+Q: What causes most skin cancers? | UV exposure from the sun and sunbeds; childhood sunburn increases the risk.
+Q: What changes in a mole should be checked by a GP? | A new mole, or one that changes in size, shape or colour.
+Q: Why do pressure ulcers form over bony points? | Pressure squeezes skin blood vessels, so cells lack oxygen and begin to die within hours.
+Q: Name three ways to prevent pressure ulcers. | Risk assessment, regular repositioning, pressure-relieving mattresses, keeping skin clean and dry, and good nutrition and hydration.
+Q: What slows wound healing? | Poor circulation, diabetes, infection, smoking and malnutrition.
 `;

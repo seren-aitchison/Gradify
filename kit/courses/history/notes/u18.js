@@ -37,6 +37,16 @@ M2#history-u18-01-q2@2: Why should contextual knowledge be used in a source answ
 TF1#history-u18-01-q3@1: A source's usefulness depends on the question being asked. | true | The same source can be very useful for one question and limited for another.
 M3#history-u18-01-q4@3: Which judgement about the Kitchener image is best supported? | Useful evidence of recruitment methods, less useful as evidence of why men joined | Useless, because all propaganda is biased and should be ignored | Complete proof that the poster alone caused every man to enlist | Reliable only because it was printed in a magazine | Usefulness depends on the question asked.
 SA3#history-u18-01-q5@2,3: How useful is the Kitchener recruitment image of 1914 for studying why men volunteered for the army? | A strong answer analyses content (a direct personal appeal from a famous general), provenance (Leete, London Opinion, September 1914, designed to persuade) and context (over a million volunteers by the end of 1914, with patriotism, peer pressure and unemployment as other motives), and judges it useful for recruitment methods but limited for men's motives. | Analyses content ; Analyses provenance ; Uses context ; Explains limits ; Reaches a judgement
+Q: What does "content" mean in source analysis? | What the source shows or says that is relevant to the question.
+Q: What does "provenance" cover in source analysis? | Who made the source, when, why and for whom.
+Q: What is contextual knowledge? | What you know about the period that helps interpret a source.
+Q: What is usefulness in source analysis? | How far a source helps answer a specific historical question.
+Q: Where did Alfred Leete's Kitchener image first appear? | On the cover of the magazine London Opinion, in September 1914.
+Q: How many men had volunteered for the army by the end of 1914? | Over a million.
+Q: Which factors besides posters may have driven enlistment in 1914? | Patriotism, peer pressure and unemployment.
+Q: What is the Kitchener image less useful for? | Showing why individual men enlisted.
+Q: What do weak source answers typically do? | Describe the source without linking it to the question, dismiss it as "biased" or ignore its provenance.
+Q: What common mistake is made about biased sources? | Writing "the source is biased so it is not useful"; a biased source is useful evidence of its maker's aims and methods.
 
 ## Interpretation analysis questions
 LV: GCSE and A level · Application
@@ -74,6 +84,16 @@ M2#history-u18-02-q2@2: Why do Clark's and Sheffield's views of Haig differ? | T
 TF1#history-u18-02-q3@1: An interpretation answer should explain why the interpretation was formed. | true | Explaining its context and evidence is part of evaluating it.
 M3#history-u18-02-q4@3: Which judgement about the "learning curve" interpretation is best supported? | Convincing about military improvement, less so as a defence of every decision | Completely wrong, because the British army never changed its tactics | Completely right, because no mistakes were made in 1916 | Irrelevant, because the war ended in 1916 | Evaluation weighs what it explains against what it overlooks.
 SA3#history-u18-02-q5@2,3: How convincing is the interpretation that Haig led a "learning army" on the Western Front? | A strong answer identifies the view (Sheffield), contrasts it with Clark's The Donkeys (1961), explains how context and evidence shape each, and tests the learning curve against evidence: about 57,000 casualties on 1 July 1916, improvements in artillery and coordination, and victory in 1918. A strong answer reaches a qualified judgement. | Identifies the interpretation ; Explains its formation ; Tests it against evidence ; Compares a rival view ; Reaches a judgement
+Q: What is an interpretation? | A deliberate view of the past constructed by a historian or other writer.
+Q: How many British soldiers were killed on the first day of the Somme? | Around 19,000, among about 57,000 casualties.
+Q: When was the first day of the Battle of the Somme? | 1 July 1916.
+Q: Which historian argued the Somme was part of a "learning curve"? | Gary Sheffield.
+Q: What context shaped Alan Clark's The Donkeys? | He wrote in the early 1960s as a new generation questioned the war's leaders, focusing on the first day's losses.
+Q: Why did Sheffield reach a different view from Clark? | He wrote decades later with more access to military records and looked at the whole war and the eventual victory.
+Q: What evidence supports the "learning curve" view? | Tactics, artillery and coordination improved, contributing to victory in 1918.
+Q: What challenges the "learning curve" view? | The cost of learning was enormous, and some mistakes were repeated.
+Q: How convincing is the "learning curve" interpretation overall? | Convincing as an explanation of military improvement, less so as a defence of every decision.
+Q: What common mistake is made in interpretation questions? | Simply agreeing or disagreeing; explain why the interpretation says what it does, then test it.
 
 ## Causation questions
 LV: GCSE and A level · Application
@@ -113,6 +133,16 @@ M2#history-u18-03-q2@2: Why does the trigger alone not explain the war? | It exp
 TF1#history-u18-03-q3@1: Linking causes is better than listing them separately. | true | Linked causes show how the event came about.
 M3#history-u18-03-q4@3: Which judgement about the causes of war in 1914 is best supported? | Leaders made decisions within a system of alliances and war plans that made escalation likely | The war was caused by the assassination alone, with no other factors | The war had no causes before July 1914 | The war was caused only by economic competition for colonies | Decisions and structures together explain the war.
 SA3#history-u18-03-q5@2,3: Explain why the First World War broke out in 1914. | A strong answer explains long-term causes (alliances, the naval race, militarism), short-term causes (the Balkan crises of 1912 to 1913) and the trigger (28 June 1914), links them through the blank cheque, the ultimatum, Russian mobilisation and the Schlieffen Plan (Britain at war on 4 August), and prioritises with criteria. | Explains long-term causes ; Explains the trigger ; Links causes ; Prioritises ; Reaches a judgement
+Q: What is a long-term cause? | A condition that built up over many years, such as the alliance system and the naval race.
+Q: What were the short-term causes of the First World War? | Developments shortly before it, such as the Balkan crises of 1912 to 1913.
+Q: What does it mean to prioritise causes? | To rank them in order of importance, using criteria.
+Q: What was Germany's "blank cheque" of July 1914? | Germany's backing for Austria-Hungary, which then issued an ultimatum to Serbia.
+Q: Why did Germany's Schlieffen Plan widen the war? | It required an attack on France through Belgium, which brought Britain in.
+Q: Which thematic groups can causes be sorted into? | Political, economic, military, social or ideological.
+Q: Which criteria help judge which cause mattered most? | Which was necessary, which explains the timing, and which turned a local crisis into a general war.
+Q: Where was Archduke Franz Ferdinand assassinated? | In Sarajevo.
+Q: Why does the assassination of Franz Ferdinand not fully explain the First World War? | It explains the timing but not why a local crisis became a general war.
+Q: What common mistake is made in causation answers? | Listing causes in separate paragraphs without linking them.
 
 ## Consequence questions
 LV: GCSE and A level · Application
@@ -152,6 +182,16 @@ M2#history-u18-04-q2@2: Why did the treaty destabilise the Weimar Republic? | It
 TF1#history-u18-04-q3@1: Reparations were set in 1921 at 132 billion gold marks. | true | The sum was fixed by the Reparations Commission.
 M3#history-u18-04-q4@3: Which judgement about the consequences of Versailles is best supported? | Its political consequences mattered more than its military ones, but it did not make war inevitable | It had no consequences for Germany at all | It caused the Second World War directly and by itself | It strengthened the Weimar Republic permanently | Weighing consequences requires attention to later events.
 SA3#history-u18-04-q5@2,3: What were the consequences of the Treaty of Versailles for Germany? | A strong answer explains short-term consequences (loss of about 13% of European territory, a 100,000 army, Article 231, reparations set in 1921), long-term consequences (resentment and the destabilisation of Weimar, exploited by Hitler), intended and unintended effects, and weighs them against the Depression. | Explains short-term effects ; Explains long-term effects ; Distinguishes intended and unintended ; Weighs against other causes ; Reaches a judgement
+Q: What is a short-term consequence? | An immediate effect, such as Germany's loss of territory in 1919.
+Q: What is an intended consequence? | What the decision-makers aimed for, such as weakening Germany's ability to wage war.
+Q: How much of Germany's European territory did the Treaty of Versailles take? | About 13%.
+Q: Which weapons did the Treaty of Versailles ban Germany from having? | An air force and tanks.
+Q: What are reparations? | Payments demanded from a defeated country for war damage.
+Q: How did the Treaty of Versailles affect the Weimar Republic? | It humiliated Germany and destabilised Weimar, whose leaders were blamed for signing it.
+Q: What was the long-term consequence of resentment of the "diktat"? | It helped Hitler win support.
+Q: What mattered more than Versailles to the Nazis' rise? | The Depression after 1929.
+Q: Which consequences of Versailles mattered more, military or political? | Its political consequences.
+Q: What common mistake is made about the Treaty of Versailles? | Assuming it alone caused the Second World War; many later events, including the Depression, intervened.
 
 ## Change and continuity questions
 LV: GCSE and A level · Application
@@ -192,6 +232,16 @@ M2#history-u18-05-q2@2: Why might 1875 be seen as a turning point? | It made pub
 TF1#history-u18-05-q3@1: Poor housing continued in British towns after 1875. | true | Continuity sat alongside change in public health.
 M3#history-u18-05-q4@3: Which judgement about public health between 1800 and 1900 is best supported? | Substantial change in law and infrastructure, coming late and unevenly | No change at all in public health during the century | Complete transformation of all towns by the year 1850 | Change that made public health steadily worse | Extent and pace both shape the judgement.
 SA3#history-u18-05-q5@2,3: How far did public health in Britain change between 1800 and 1900? | A strong answer analyses extent (laws, sewers, water, medical officers), pace (slow before the 1850s, faster after the Great Stink of 1858 and the Act of 1875), direction and continuity (poor housing, high urban death rates), argues for a turning point (1848, 1858 or 1875) and reaches a judgement. | Analyses extent ; Analyses pace ; Identifies a turning point ; Recognises continuity ; Reaches a judgement
+Q: What is the extent of change? | How much something changed.
+Q: What is the direction of change? | Whether change was progress, decline or neither.
+Q: What is continuity? | What stayed the same.
+Q: Why was the Public Health Act of 1848 limited? | It was permissive rather than compulsory.
+Q: How was John Snow's cholera work received in 1854? | It was not widely accepted at first.
+Q: What did the Great Stink of 1858 lead to? | The building of London's sewers.
+Q: What changes in public health had happened by the 1870s? | New laws, sewers, clean water and medical officers.
+Q: How should a strong answer handle competing turning points? | Argue for one, using criteria such as how far it changed what happened next.
+Q: What continuities persisted in British public health by 1900? | Poor housing and high urban death rates.
+Q: What common mistake is made in change and continuity answers? | Describing events in order without analysing extent, pace and direction.
 
 ## Significance questions
 LV: GCSE and A level · Application
@@ -230,6 +280,16 @@ M2#history-u18-06-q2@2: Why was the Battle of Britain politically significant? |
 TF1#history-u18-06-q3@1: Significance answers should explain why an event mattered, not just describe it. | true | Criteria turn description into an argument about importance.
 M3#history-u18-06-q4@3: Which judgement about the Battle of Britain is best supported? | Highly significant for Britain's survival, though the war was decided mainly elsewhere | Insignificant, because Germany invaded Britain anyway in 1941 | The single event that won the whole Second World War | Significant only because of Churchill's speeches | Significance can be great but limited in scope.
 SA3#history-u18-06-q5@2,3: Explain the significance of the Battle of Britain. | A strong answer uses criteria to explain military significance (Sea Lion postponed in September 1940), political significance (Britain stayed in the war and gained American confidence), long-term significance (a base for 1944) and significance in memory ("the few"), and weighs it against the Royal Navy's role and the Eastern Front. | Uses criteria ; Explains military significance ; Explains political significance ; Explains long-term significance ; Reaches a judgement
+Q: What is significance? | Why an event, person or development mattered, judged by criteria.
+Q: What is air superiority? | Control of the skies, preventing the enemy's air force from operating effectively.
+Q: Who fought in the Battle of Britain? | The Royal Air Force and the Luftwaffe.
+Q: What was Operation Sea Lion? | Germany's planned invasion of Britain.
+Q: How was the Battle of Britain significant in the long term? | Britain remained a base for later operations, including the D-Day landings of 1944.
+Q: How did the Battle of Britain affect the United States' view of Britain? | It helped persuade the United States that Britain could survive.
+Q: How did Churchill make the Battle of Britain a national symbol? | Through his tribute to "the few".
+Q: What does the Battle of Britain reveal? | The importance of radar and air power.
+Q: Where was the Second World War mainly decided? | On the Eastern Front and by American power.
+Q: What common mistake is made in significance answers? | Writing only about what happened, rather than explaining why it mattered using criteria.
 
 ## Comparison questions
 LV: GCSE and A level · Application
@@ -267,6 +327,16 @@ M2#history-u18-07-q2@2: Why did Nazi and Soviet economic systems differ? | Sovie
 TF1#history-u18-07-q3@1: Both Nazi Germany and the Soviet Union used secret police. | true | The Gestapo and SS in Germany, the NKVD in the USSR.
 M3#history-u18-07-q4@3: Which judgement about Nazi and Soviet control is best supported? | Similar in methods of political control, different in aims and economic structure | Identical in every respect, including their economic systems | Completely different, with no similarities of method at all | Similar only because both were democracies | Comparison reveals both similarity and difference.
 SA3#history-u18-07-q5@2,3: Compare the methods of control used in Nazi Germany and the Soviet Union in the 1930s. | A strong answer compares point by point: terror (the Gestapo and SS and the NKVD; the Night of the Long Knives, 1934, and the Great Purge, 1936 to 1938, much larger in scale), propaganda and leader cults, and economic control (state ownership against private ownership under direction), explains differences by ideology and circumstances, and judges overall similarity. | Compares terror ; Compares propaganda ; Compares economies ; Explains differences ; Reaches a judgement
+Q: Which criteria can structure a comparison of Nazi and Soviet control? | Themes such as terror, propaganda and control of the economy.
+Q: Which secret police did Nazi Germany use? | The Gestapo and the SS.
+Q: Which secret police did Stalin's Soviet Union use? | The NKVD.
+Q: When did Stalin's Great Purge take place? | From 1936 to 1938.
+Q: How did the scale of Nazi and Soviet terror differ before 1939? | Stalin's terror against ordinary citizens was far larger.
+Q: How did both Nazi and Soviet regimes use propaganda? | Both built cults of the leader and controlled the media.
+Q: How did Nazi and Soviet ideology differ? | Soviet communism aimed to abolish private property; Nazism was based on racial ideology and allied with big business.
+Q: Why was the Soviet regime using terror against much of its own population? | It was consolidating a revolution against groups including the peasantry.
+Q: What is totalitarianism? | A system in which the state seeks total control over society.
+Q: What common mistake is made in comparison answers? | Describing one case and then the other instead of comparing both on each point.
 
 ## Evidence-based essays
 LV: GCSE and A level · Application
@@ -304,6 +374,16 @@ M2#history-u18-08-q2@2: Why does precise evidence make an explanation more convi
 TF1#history-u18-08-q3@1: Evidence earns credit only when it is used to answer the question. | true | Unlinked facts are description, not argument.
 M3#history-u18-08-q4@3: Which sentence best integrates evidence? | Hyperinflation destroyed savings, as a loaf cost around 200 billion marks by November 1923, leaving many distrustful of Weimar | Hyperinflation happened in Germany in the 1920s and it was very bad for everyone there | In 1923 there was the Ruhr occupation and also hyperinflation and Stresemann | Germany had a lot of economic problems in the period between the two world wars | Point, evidence and explanation together answer the question.
 SA3#history-u18-08-q5@2,3: How can evidence be used effectively in a history essay? | A strong answer explains precise evidence (dates, figures, names, quotations), shows how to integrate it by making a point, giving evidence and explaining it, uses an example such as hyperinflation (the Ruhr occupation of January 1923; a loaf at around 200 billion marks by November 1923), and contrasts using evidence with listing facts. | Explains precise evidence ; Explains integration ; Uses an example ; Contrasts listing ; Reaches a judgement
+Q: Why should dates in an essay be precise? | Precise dates, such as "November 1923" rather than "the 1920s", make evidence convincing.
+Q: What is precise evidence? | Specific dates, figures, names and quotations that support a point.
+Q: What is hyperinflation? | Extremely rapid and out-of-control rises in prices.
+Q: Why did the German government print money in 1923? | To pay workers striking against the French and Belgian occupation of the Ruhr.
+Q: How much did a loaf of bread cost in Berlin by November 1923? | Around 200 billion marks.
+Q: How did hyperinflation affect the German middle class? | It destroyed their savings, leaving many distrustful of the Weimar Republic.
+Q: What role do figures play as evidence? | Statistics show the scale of a development.
+Q: How should quotations be used as evidence? | As short, accurate phrases from sources or historians.
+Q: What is the difference between listing facts and using evidence? | Using evidence means a point supported by precise evidence, explained and linked to the question.
+Q: What common mistake is made with evidence in essays? | Packing paragraphs with facts not linked to the question.
 
 ## Extended historical arguments
 LV: A level · Evaluation
@@ -342,6 +422,16 @@ M2#history-u18-09-q2@2: Why did Lenin's slogans work in 1917? | The Provisional 
 TF1#history-u18-09-q3@1: Weighing means explaining how factors relate as well as which mattered most. | true | Relationships between factors show why one outweighs another.
 M3#history-u18-09-q4@3: Which line of argument on October 1917 is best supported? | Government failures created the opportunity, and Bolshevik leadership and organisation seized it | The Bolsheviks won because the tsar asked them to take power | The October Revolution had only one cause, the weather in Petrograd | The Bolsheviks won an election held across Russia in September | A strong line combines opportunity and organisation.
 SA3#history-u18-09-q5@2,3: Assess the reasons for the Bolsheviks' seizure of power in October 1917. | A strong answer weighs the Provisional Government's failures (the war, land, delayed elections), the Kornilov affair (August 1917), Lenin's leadership and the April Theses, and Trotsky's Military Revolutionary Committee, explains how they relate, and reaches a substantiated judgement on which mattered most. | Explains government failures ; Explains the Kornilov affair ; Explains leadership and organisation ; Weighs factors ; Reaches a judgement
+Q: What is a line of argument? | The consistent answer an essay develops from start to finish.
+Q: How did the Provisional Government's failures help the Bolsheviks? | It kept Russia in the war and delayed land reform, creating the opportunity.
+Q: How did the Kornilov affair help the Bolsheviks? | It armed the Red Guards and boosted Bolshevik support in August and September 1917.
+Q: What was Lenin's contribution to the October seizure of power? | His leadership and the April Theses.
+Q: What were Lenin's slogans in 1917? | "Peace, land and bread".
+Q: What role did Trotsky play in October 1917? | He organised the seizure of power through the Military Revolutionary Committee.
+Q: What strong line of argument explains October 1917? | The Provisional Government's weakness created the opportunity; Bolshevik leadership and organisation explain why they seized it.
+Q: What criteria help weigh factors? | Which factors were necessary and which explain the timing.
+Q: What should each analytical paragraph in an extended argument do? | Make a point that advances the argument.
+Q: What common mistake is made in extended arguments? | Explaining each factor in turn without comparing them.
 
 ## Planning examination answers
 LV: GCSE and A level · Application
@@ -380,6 +470,16 @@ M2#history-u18-10-q2@2: Why does a question's end date matter? | Material after 
 TF1#history-u18-10-q3@1: "How far" questions require a judgement. | true | They ask you to weigh the named factor against others.
 M3#history-u18-10-q4@3: Which plan best answers the question on Versailles and Hitler's rise? | Weigh Versailles against the Depression, Nazi organisation and elite intrigue, deciding the judgement first | Describe the terms of the Treaty of Versailles in as much detail as possible | Write about the Second World War from 1939 to 1945 | Write a biography of Hitler from his childhood onwards | A good plan weighs the named factor against others.
 SA3#history-u18-10-q5@2,3: How should a student plan an answer to "How far was the Treaty of Versailles responsible for Hitler's rise to power by January 1933?" | A strong answer decodes the command ("how far"), focus (Versailles), dates (to 30 January 1933) and key terms; lists factors (Versailles, the Depression after 1929, Nazi propaganda and organisation, Weimar's weaknesses, elite intrigue); decides a judgement; and orders paragraphs to build towards it. | Decodes the question ; Lists factors ; Decides a judgement ; Orders paragraphs ; Reaches a judgement
+Q: Which command words demand analysis and judgement? | "Explain", "assess", "how far" and "to what extent".
+Q: What is a command word? | The instruction in a question, such as "explain" or "assess".
+Q: What is the focus of a question? | The factor or issue the question names.
+Q: Why should key terms such as "responsible" be identified? | They need defining for the answer.
+Q: Which factors belong in a plan on Hitler's rise by January 1933? | Versailles, the Depression, Nazi propaganda and organisation, Weimar's constitutional weakness and elite intrigue.
+Q: When did the Nazis become the largest party in the Reichstag? | In July 1932.
+Q: What explains Hitler's appointment as chancellor itself? | Backstairs elite intrigue that led Hindenburg to appoint him.
+Q: How does a plan help order paragraphs? | It orders factors by importance to build towards the judgement.
+Q: Why is planning worth the time in an exam? | A few minutes of planning usually gains more marks than it costs.
+Q: What common mistake is made at the start of an exam answer? | Starting to write immediately, so answers drift from the question and lack a consistent argument.
 
 ## Time management
 LV: GCSE and A level · Application
@@ -419,6 +519,16 @@ M2#history-u18-11-q2@2: Why is practice testing effective? | Retrieving informat
 TF1#history-u18-11-q3@1: A missing answer in an exam scores no marks. | true | Moving on from a stuck question protects time for others.
 M3#history-u18-11-q4@3: Which judgement about reading notes once the week before an exam is best supported? | It uses the least effective methods; spaced self-testing would be far better | It is the most effective method, according to research | It is effective as long as notes are highlighted in colour | It is better than practising any exam questions | Spacing and testing improve on cramming and rereading.
 SA3#history-u18-11-q5@2,3: How should a history student manage time in revision and in the examination? | A strong answer explains dividing exam time by marks, reading the paper, planning, moving on and checking; and revision using practice testing and distributed practice (Dunlosky and colleagues, 2013) rather than rereading and highlighting, with timed practice papers, and evaluates a weak plan. | Explains exam timing ; Explains revision research ; Applies it to history ; Evaluates a plan ; Reaches a judgement
+Q: Why read the whole paper first in an exam? | To note which questions to answer.
+Q: Why leave time at the end of an exam? | To check answers.
+Q: What should you do if a short question is taking too long? | Move on, because a missing answer scores nothing.
+Q: What is practice testing? | Testing yourself from memory to strengthen learning.
+Q: What is distributed practice? | Spreading study over time rather than cramming.
+Q: Which revision methods were rated much less useful by Dunlosky? | Rereading and highlighting.
+Q: How should topics be organised in a good revision plan? | Spread over weeks and mixed rather than studied one at a time.
+Q: Why should revision include timed practice papers? | To practise answering exam questions under timed conditions.
+Q: Why is reading notes once the week before an exam ineffective? | It has no spacing and no testing of what is remembered.
+Q: What common mistake is made with timing in exams? | Spending too long on early, low-mark questions.
 
 ## Mark-scheme interpretation
 LV: GCSE and A level · Application
@@ -457,6 +567,16 @@ M2#history-u18-12-q2@2: Why does listing more facts not guarantee a higher level
 TF1#history-u18-12-q3@1: Most history answers are marked by levels using best fit. | true | Examiners judge the overall quality of the answer.
 M3#history-u18-12-q4@3: Which judgement about moving up the levels is best supported? | Quality of argument, supported by precise knowledge, moves answers up | Writing as much as possible always reaches the top level | Copying the question several times earns extra marks | Answers move up only by including more dates | Analysis and judgement distinguish higher levels.
 SA3#history-u18-12-q5@2,3: How can understanding mark schemes help a student improve their history answers? | A strong answer explains levels-based, best-fit marking; the assessment objectives set out in the Department for Education's subject content (2014), AO1 to AO4 at GCSE and AO1 to AO3 at A level; and how answers move from description to explanation, analysis and substantiated judgement, with an example. | Explains levels marking ; Explains assessment objectives ; Explains moving up levels ; Uses an example ; Reaches a judgement
+Q: What is levels-based marking? | Placing an answer in the level whose description best fits its overall quality.
+Q: What is an assessment objective? | A skill that an examination is designed to assess.
+Q: What does AO1 assess at GCSE History? | Knowledge and understanding.
+Q: What does AO2 assess at GCSE History? | Explaining and analysing using concepts such as causation and significance.
+Q: What does AO1 assess at A level History? | Analysing and evaluating historical knowledge to reach substantiated judgements.
+Q: What does AO3 assess at A level History? | Analysing and evaluating interpretations.
+Q: Who set the subject content for GCSE and A level History in England? | The Department for Education, in 2014.
+Q: What usually distinguishes lower, middle and higher level answers? | Lower levels describe, middle levels explain, and higher levels analyse, weigh and judge.
+Q: What moves an answer from explanation to analysis? | Linking and weighing factors.
+Q: What common mistake is made about earning marks? | Thinking more facts automatically earn more marks; levels reward explanation, analysis and judgement.
 
 ## GCSE practice examinations
 LV: GCSE · Application
@@ -495,6 +615,16 @@ M2#history-u18-13-q2@2: Why must an answer match the command word? | Different c
 TF1#history-u18-13-q3@1: A self-assessment checklist helps improve practice answers. | true | Checking against success criteria shows what to improve.
 M3#history-u18-13-q4@3: Which answer to "The weather was the main reason for the Armada's defeat. How far do you agree?" is best supported? | The weather caused most losses, but fireships and Gravelines had already defeated the plan | The weather was the only reason, and nothing else mattered | The Armada was not defeated, so the question is wrong | The English navy sank every ship in a single battle | A strong answer weighs the weather against other factors.
 SA3#history-u18-13-q5@2,3: How far do you agree that the weather was the main reason for the defeat of the Spanish Armada in 1588? | A strong answer explains the weather (storms around Scotland and Ireland caused most losses), English tactics (fireships on 7 August, Gravelines on 8 August) and Spanish weaknesses (no deep-water port to meet Parma), weighs them and reaches a clear judgement on "how far". | Explains the weather ; Explains English tactics ; Explains Spanish weaknesses ; Weighs factors ; Reaches a judgement
+Q: Who commanded the Spanish Armada in 1588? | The Duke of Medina Sidonia.
+Q: About how many ships were in the Spanish Armada? | About 130.
+Q: What was the Armada meant to do? | Escort the Duke of Parma's army from the Netherlands.
+Q: Why was the Armada's plan flawed? | It had to meet Parma without a deep-water port.
+Q: What happened at Gravelines on 8 August 1588? | English tactics damaged the Armada.
+Q: Where did storms hit the Armada? | Around Scotland and Ireland.
+Q: How might the weather be weighed against English tactics in the Armada's defeat? | The weather caused most losses, but the fireships and Gravelines had already defeated the plan.
+Q: What are success criteria? | The features a strong answer must show.
+Q: What does a strong "explain" answer about the Armada do? | Explains two or three causes with evidence and shows how they combined.
+Q: What common mistake is made with command words? | Explaining when asked to describe, or describing when asked to explain.
 
 ## A level practice examinations
 LV: A level · Evaluation
@@ -533,4 +663,14 @@ M2#history-u18-14-q2@2: Why must the April Theses be evaluated in context? | Len
 TF1#history-u18-14-q3@1: At A level, interpretations should be tested with knowledge, not just described. | true | AO3 rewards analysis and evaluation of interpretations.
 M3#history-u18-14-q4@3: Which judgement on the success of the Personal Rule is best supported? | Successful in England in its own terms until war with Scotland exposed its dependence on peace | A complete failure from its first day in 1629 | A success that continued long after 1640 | Irrelevant, because Charles never ruled without Parliament | Defining success makes the judgement precise.
 SA3#history-u18-14-q5@2,3: Assess the view that the Personal Rule of 1629 to 1640 was a success. | A strong answer defines success, weighs evidence (peace with France and Spain, revived revenues, Ship Money from 1635 until Hampden's Case of 1637 to 1638, Laud's reforms and opposition, the Scottish rebellion from 1637), uses the debate between the "Eleven Years' Tyranny" view and Sharpe, and reaches a substantiated judgement. | Defines success ; Explains finance ; Explains religion and opposition ; Uses interpretations ; Reaches a judgement
+Q: What is an extract in an A level exam? | A passage from a historian's work set for analysis.
+Q: What did Lenin's April Theses call for? | No support for the Provisional Government, peace, land and "all power to the soviets".
+Q: Why must the April Theses be read in context? | The party was divided at first, and Lenin's aims shifted with events.
+Q: What was the purpose of the April Theses? | Lenin's programme on returning from exile, written to win the party to his line.
+Q: What was the older view of Charles I's Personal Rule? | That it was an "Eleven Years' Tyranny".
+Q: Which knowledge can test interpretations of the Personal Rule? | Ship Money's extension in 1635 and the narrow verdict in Hampden's Case.
+Q: How long did Ship Money work during the Personal Rule? | Until 1637.
+Q: What ended Charles I's Personal Rule? | The Scottish rebellion of 1637 and the war that followed.
+Q: What balanced judgement can be reached on the Personal Rule's success? | Successful in England in its own terms until war with Scotland exposed its dependence on peace.
+Q: What is a substantiated judgement? | A conclusion supported by evidence and argument.
 `;
