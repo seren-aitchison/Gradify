@@ -322,7 +322,7 @@ Q: What is tacit collusion? | Firms following a price leader without any agreeme
 Q: What does game theory study? | Decisions where outcomes depend on others' choices.
 Q: In the prisoner's dilemma, why do firms both cut prices? | Each does better individually by cutting whatever the rival does, though both end up worse off.
 Q: What is a dominant strategy in the pricing example? | Pricing low, which is best for each firm whatever its rival does.
-Q: Are cartels legal in the UK? | No, they are illegal in the UK and EU.
+Q: What is the legal status of cartels in the UK and EU? | They are illegal in both the UK and the EU.
 
 ## Competition policy
 LV: Introductory · Application
