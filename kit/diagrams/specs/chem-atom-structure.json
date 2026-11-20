@@ -1,0 +1,37 @@
+{
+ "id": "chem-atom-structure",
+ "renderer": "atom",
+ "course": "chemistry",
+ "lesson": "Structure of the atom",
+ "title": "The nuclear atom: carbon-12",
+ "caption": "Six protons and six neutrons make a tiny nucleus; six electrons occupy shells around it, two in the first and four in the second. Not to scale: the nucleus is about 100 000 times smaller than the atom.",
+ "alt": "A carbon atom: a nucleus labelled 6 protons and 6 neutrons, with two electrons in the inner shell and four in the outer shell.",
+ "description": [
+  "A small central nucleus labelled 6 p and 6 n.",
+  "Two circles around it are the shells: two electrons on the inner shell, four on the outer shell.",
+  "Below: carbon, 6 protons, 6 neutrons, 6 electrons."
+ ],
+ "also": [
+  {
+   "course": "gcse",
+   "lesson": "The development of the atomic model"
+  }
+ ],
+ "big": true,
+ "atoms": [
+  {
+   "symbol": "C",
+   "A": 12,
+   "label": "carbon-12",
+   "claims": {
+    "protons": 6,
+    "neutrons": 6,
+    "electrons": 6,
+    "shells": [
+     2,
+     4
+    ]
+   }
+  }
+ ]
+}

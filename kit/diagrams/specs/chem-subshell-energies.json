@@ -1,0 +1,24 @@
+{
+ "id": "chem-subshell-energies",
+ "renderer": "orbitals",
+ "course": "chemistry",
+ "lesson": "Atomic orbitals",
+ "title": "Sub-shell energies up to 4p",
+ "caption": "Each box is an orbital: one per s, three per p, five per d. Energy rises up the page (not to scale). The 4s sub-shell lies just below 3d, so it fills first.",
+ "alt": "An energy ladder of empty orbital boxes: 1s at the bottom, then 2s, 2p, 3s, 3p, 4s, 3d and 4p at the top.",
+ "description": [
+  "From the bottom: 1s (one box), 2s (one), 2p (three), 3s (one), 3p (three), 4s (one), 3d (five), 4p (three).",
+  "4s is drawn below 3d, the first place the energy order differs from the shell order."
+ ],
+ "kind": "energy",
+ "subshells": [
+  "1s",
+  "2s",
+  "2p",
+  "3s",
+  "3p",
+  "4s",
+  "3d",
+  "4p"
+ ]
+}

@@ -1,0 +1,65 @@
+{
+ "id": "chem-config-cr-cu",
+ "renderer": "orbitals",
+ "course": "chemistry",
+ "lesson": "Electron configurations",
+ "title": "Chlorine, chromium and copper in boxes",
+ "caption": "Chlorine follows the filling order. Chromium and copper do not: one 4s electron moves into 3d to give a half-filled 3d⁵ or a full 3d¹⁰, so chromium is [Ar] 3d⁵ 4s¹ and copper is [Ar] 3d¹⁰ 4s¹.",
+ "alt": "Orbital box diagrams of the outer sub-shells: chlorine 3s² 3p⁵; chromium 3d⁵ 4s¹ with five single 3d electrons; copper 3d¹⁰ 4s¹.",
+ "description": [
+  "Chlorine, [Ne] 3s² 3p⁵: 3s paired, 3p with two pairs and one single electron.",
+  "Chromium, [Ar] 3d⁵ 4s¹: five single 3d electrons, all spin up, and one 4s electron.",
+  "Copper, [Ar] 3d¹⁰ 4s¹: five paired 3d orbitals and one 4s electron."
+ ],
+ "rows": [
+  {
+   "symbol": "Cl",
+   "label": "Chlorine, [Ne] 3s² 3p⁵",
+   "config": "[Ne] 3s2 3p5",
+   "show": [
+    "3s",
+    "3p"
+   ],
+   "core": [
+    "1s",
+    "2s",
+    "2p"
+   ],
+   "unpaired": 1
+  },
+  {
+   "symbol": "Cr",
+   "label": "Chromium, [Ar] 3d⁵ 4s¹",
+   "config": "[Ar] 3d5 4s1",
+   "show": [
+    "3d",
+    "4s"
+   ],
+   "core": [
+    "1s",
+    "2s",
+    "2p",
+    "3s",
+    "3p"
+   ],
+   "unpaired": 6
+  },
+  {
+   "symbol": "Cu",
+   "label": "Copper, [Ar] 3d¹⁰ 4s¹",
+   "config": "[Ar] 3d10 4s1",
+   "show": [
+    "3d",
+    "4s"
+   ],
+   "core": [
+    "1s",
+    "2s",
+    "2p",
+    "3s",
+    "3p"
+   ],
+   "unpaired": 1
+  }
+ ]
+}

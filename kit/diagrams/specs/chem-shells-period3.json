@@ -1,0 +1,62 @@
+{
+ "id": "chem-shells-period3",
+ "renderer": "atom",
+ "course": "chemistry",
+ "lesson": "Electron shells",
+ "title": "Electron shells across period 3",
+ "caption": "For the first 20 elements the shells fill 2, then 8, then 8. Sodium to argon all have full first and second shells; the third shell gains one electron per element, which is why they sit in groups 1, 2, 17 and 18.",
+ "alt": "Four atoms: sodium 2, 8, 1; magnesium 2, 8, 2; chlorine 2, 8, 7; argon 2, 8, 8.",
+ "description": [
+  "Sodium: shells 2, 8, 1.",
+  "Magnesium: shells 2, 8, 2.",
+  "Chlorine: shells 2, 8, 7.",
+  "Argon: shells 2, 8, 8, a full outer shell."
+ ],
+ "perRow": 2,
+ "atoms": [
+  {
+   "symbol": "Na",
+   "A": 23,
+   "claims": {
+    "shells": [
+     2,
+     8,
+     1
+    ]
+   }
+  },
+  {
+   "symbol": "Mg",
+   "A": 24,
+   "claims": {
+    "shells": [
+     2,
+     8,
+     2
+    ]
+   }
+  },
+  {
+   "symbol": "Cl",
+   "A": 35,
+   "claims": {
+    "shells": [
+     2,
+     8,
+     7
+    ]
+   }
+  },
+  {
+   "symbol": "Ar",
+   "A": 40,
+   "claims": {
+    "shells": [
+     2,
+     8,
+     8
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "id": "chem-aufbau-order",
+ "renderer": "orbitals",
+ "course": "chemistry",
+ "lesson": "Aufbau principle",
+ "title": "The order of filling",
+ "caption": "Write the sub-shells in rows by shell and follow the diagonals from upper right to lower left: this is the n + l rule. Sub-shells fill in order of increasing n + l, the lower n first when n + l is equal, which puts 4s before 3d and 5s before 4d.",
+ "alt": "A grid of sub-shell labels 1s to 7s with diagonal arrows; reading along the arrows gives 1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p, 5s and onwards.",
+ "description": [
+  "Rows: 1s; 2s 2p; 3s 3p 3d; 4s 4p 4d 4f; and so on to 7s.",
+  "Diagonal arrows run from upper right to lower left.",
+  "Reading them in turn gives the filling order 1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p, 5s, 4d, 5p, 6s, 4f, 5d, 6p, 7s, 5f, 6d, 7p."
+ ],
+ "kind": "diagonal"
+}

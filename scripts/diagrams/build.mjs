@@ -18,6 +18,8 @@ import { readFileSync, writeFileSync, readdirSync, mkdirSync, existsSync } from 
 import { spawnSync } from "node:child_process";
 import { join } from "node:path";
 import { render } from "../../kit/diagrams/renderers.js";
+import "../../kit/diagrams/chem-renderers.js"; // registers the chemistry renderers
+import "../../kit/diagrams/chem-renderers-2.js";
 
 const ROOT = new URL("../../", import.meta.url).pathname;
 const SPECS = join(ROOT, "kit/diagrams/specs"), OUT = join(ROOT, "kit/diagrams/svg"), MANIFEST = join(ROOT, "kit/diagrams/manifest.json");
@@ -59,9 +61,14 @@ for (const f of readdirSync(SPECS).filter((f) => f.endsWith(".json")).sort()) {
     if (r.status !== 0) { console.error(r.stderr); out = { wide: "", narrow: "", checks: [{ name: "chemistry renderer ran", ok: false, detail: r.stderr.slice(-300) }] }; }
     else out = JSON.parse(r.stdout);
   } else out = render(spec, { lessonText: lesson?.text || "" });
+  if (!out.checks.length) out.checks.push({ name: "the renderer checked the subject", ok: false, detail: "no subject checks ran for this spec" });
+  // a diagram can be placed in more than one lesson (spec.also: [{course, lesson}]), e.g. a GCSE lesson reusing it
+  const places = (l) => !!l && new RegExp(`^D:\\s*${spec.id}\\s*$`, "m").test(l.text);
+  const extra = (spec.also || []).map((a) => ({ ...a, src: lessonSource(a.course, a.lesson) }));
   const checks = [
     { name: "the lesson exists", ok: !!lesson, detail: lesson ? `${lesson.file}: ${spec.lesson}` : `${spec.course}: ${spec.lesson} not found` },
-    { name: "the lesson places this diagram (D: line)", ok: !!lesson && new RegExp(`^D:\\s*${spec.id}\\s*$`, "m").test(lesson.text) },
+    { name: "the lesson places this diagram (D: line)", ok: places(lesson) },
+    ...extra.map((a) => ({ name: `also placed in ${a.course}: ${a.lesson}`, ok: places(a.src), detail: a.src ? a.src.file : "lesson not found" })),
     { name: "has alt text, a caption and a step-by-step description", ok: !!(spec.alt && spec.caption && spec.description?.length) },
     ...out.checks,
     legible(out.wide),
@@ -72,7 +79,7 @@ for (const f of readdirSync(SPECS).filter((f) => f.endsWith(".json")).sort()) {
   const status = !ok ? "failed" : spec.review?.status === "approved" && spec.review.by ? "approved" : spec.review?.status === "ai-reviewed" ? "ai-reviewed" : "validated";
   manifest[spec.id] = {
     title: spec.title, caption: spec.caption, alt: spec.alt, description: spec.description,
-    course: spec.course, lesson: spec.lesson, renderer: spec.renderer, status,
+    course: spec.course, lesson: spec.lesson, also: spec.also || [], renderer: spec.renderer, status,
     review: spec.review || null, checks,
   };
   failed += ok ? 0 : 1;

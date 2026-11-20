@@ -8,6 +8,7 @@ O: Use atomic and mass numbers to work out numbers of particles
 O: Calculate relative atomic mass from isotope abundances
 H: Inside the atom
 P: An atom has a tiny central **nucleus** containing **protons** and **neutrons**, surrounded by **electrons** in shells (energy levels). Atoms are about 0.1 nm across, and the nucleus is around 10,000 times smaller than the atom, yet it contains almost all the mass. Atoms have no overall charge because the number of electrons equals the number of protons.
+D: chem-isotopes-chlorine
 H: Subatomic particles
 - **Proton**: relative mass 1, relative charge +1, in the nucleus.
 - **Neutron**: relative mass 1, charge 0, in the nucleus.
@@ -51,6 +52,7 @@ O: Explain how the alpha scattering experiment changed the model
 O: Evaluate how scientific models change in response to evidence
 H: Early models
 P: In the early 1800s, **John Dalton** described atoms as tiny solid spheres that could not be divided. In 1897, **J. J. Thomson** discovered the **electron**, showing atoms contained smaller charged particles. His **plum pudding model** pictured a ball of positive charge with negative electrons embedded in it. Each model explained the evidence available at the time.
+D: chem-atom-structure
 H: The nuclear model
 - In 1909, **Geiger and Marsden**, working with **Ernest Rutherford**, fired alpha particles at thin gold foil.
 - Most passed straight through, but a few were deflected through large angles and some bounced back.

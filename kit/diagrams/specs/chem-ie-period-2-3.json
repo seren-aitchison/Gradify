@@ -1,0 +1,131 @@
+{
+ "id": "chem-ie-period-2-3",
+ "renderer": "trend",
+ "course": "chemistry",
+ "lesson": "Periodic trends",
+ "title": "First ionisation energy, lithium to argon",
+ "caption": "Ionisation energy rises across each period as nuclear charge grows with similar shielding, and falls sharply at each new period. The small dips at boron and aluminium (a new p sub-shell) and at oxygen and sulfur (the first paired p electron) are evidence for sub-shells.",
+ "alt": "Line graph of first ionisation energy for elements 3 to 18, rising across period 2 to neon, dropping to sodium, rising again to argon, with dips at B, O, Al and S.",
+ "description": [
+  "Period 2: lithium 520 rising to neon 2081 kJ mol⁻¹, with dips at boron (801, below beryllium 899) and oxygen (1314, below nitrogen 1402).",
+  "Sodium drops to 496: a new shell.",
+  "Period 3 repeats the pattern, with dips at aluminium (578) and sulfur (1000), up to argon 1521."
+ ],
+ "kind": "line",
+ "dataset": "ie1",
+ "range": [
+  0,
+  2400
+ ],
+ "ticks": [
+  0,
+  500,
+  1000,
+  1500,
+  2000
+ ],
+ "yLabel": "first ionisation energy / kJ mol⁻¹",
+ "items": [
+  {
+   "key": "Li",
+   "value": 520
+  },
+  {
+   "key": "Be",
+   "value": 899
+  },
+  {
+   "key": "B",
+   "value": 801
+  },
+  {
+   "key": "C",
+   "value": 1086
+  },
+  {
+   "key": "N",
+   "value": 1402
+  },
+  {
+   "key": "O",
+   "value": 1314
+  },
+  {
+   "key": "F",
+   "value": 1681
+  },
+  {
+   "key": "Ne",
+   "value": 2081
+  },
+  {
+   "key": "Na",
+   "value": 496
+  },
+  {
+   "key": "Mg",
+   "value": 738
+  },
+  {
+   "key": "Al",
+   "value": 578
+  },
+  {
+   "key": "Si",
+   "value": 787
+  },
+  {
+   "key": "P",
+   "value": 1012
+  },
+  {
+   "key": "S",
+   "value": 1000
+  },
+  {
+   "key": "Cl",
+   "value": 1251
+  },
+  {
+   "key": "Ar",
+   "value": 1521
+  }
+ ],
+ "highlight": {
+  "B": "a2",
+  "O": "a2",
+  "Al": "a2",
+  "S": "a2"
+ },
+ "claims": [
+  {
+   "type": "dip",
+   "key": "B",
+   "after": "Be"
+  },
+  {
+   "type": "dip",
+   "key": "O",
+   "after": "N"
+  },
+  {
+   "type": "dip",
+   "key": "Al",
+   "after": "Mg"
+  },
+  {
+   "type": "dip",
+   "key": "S",
+   "after": "P"
+  },
+  {
+   "type": "max",
+   "key": "Ne"
+  },
+  {
+   "type": "dip",
+   "key": "Na",
+   "after": "Ne"
+  }
+ ]
+}

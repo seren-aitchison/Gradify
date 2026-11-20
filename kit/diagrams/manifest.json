@@ -12,6 +12,7 @@
   ],
   "course": "biology",
   "lesson": "Oxygen transport",
+  "also": [],
   "renderer": "graph",
   "status": "approved",
   "review": {
@@ -74,6 +75,7 @@
   ],
   "course": "business",
   "lesson": "Supply and market equilibrium",
+  "also": [],
   "renderer": "graph",
   "status": "approved",
   "review": {
@@ -135,6 +137,7 @@
   ],
   "course": "chemistry",
   "lesson": "Electrophilic addition",
+  "also": [],
   "renderer": "mechanism",
   "status": "approved",
   "review": {
@@ -216,6 +219,7 @@
   ],
   "course": "chemistry",
   "lesson": "Electrophilic addition",
+  "also": [],
   "renderer": "mechanism",
   "status": "approved",
   "review": {
@@ -291,6 +295,7 @@
   ],
   "course": "chemistry",
   "lesson": "Reaction energy profiles",
+  "also": [],
   "renderer": "energy-profile",
   "status": "approved",
   "review": {
@@ -392,6 +397,7 @@
   ],
   "course": "chemistry",
   "lesson": "SN2 mechanisms",
+  "also": [],
   "renderer": "mechanism",
   "status": "approved",
   "review": {
@@ -478,6 +484,7 @@
   ],
   "course": "law",
   "lesson": "Duty of care",
+  "also": [],
   "renderer": "decision-tree",
   "status": "approved",
   "review": {
@@ -535,6 +542,7 @@
   ],
   "course": "maths",
   "lesson": "Transformations of Functions",
+  "also": [],
   "renderer": "graph",
   "status": "approved",
   "review": {
@@ -592,6 +600,7 @@
   ],
   "course": "physics",
   "lesson": "Thin lenses",
+  "also": [],
   "renderer": "rays",
   "status": "approved",
   "review": {
@@ -663,6 +672,7 @@
   ],
   "course": "physics",
   "lesson": "Free-body diagrams",
+  "also": [],
   "renderer": "free-body",
   "status": "approved",
   "review": {
@@ -724,6 +734,7 @@
   ],
   "course": "physics",
   "lesson": "Kirchhoff's laws",
+  "also": [],
   "renderer": "circuit",
   "status": "approved",
   "review": {
@@ -780,6 +791,7 @@
   ],
   "course": "chemistry",
   "lesson": "E2 mechanisms",
+  "also": [],
   "renderer": "mechanism",
   "status": "ai-reviewed",
   "review": {
@@ -841,6 +853,7 @@
   ],
   "course": "chemistry",
   "lesson": "Electrophilic aromatic substitution",
+  "also": [],
   "renderer": "mechanism",
   "status": "ai-reviewed",
   "review": {
@@ -917,6 +930,7 @@
   ],
   "course": "chemistry",
   "lesson": "Nucleophilic addition",
+  "also": [],
   "renderer": "mechanism",
   "status": "ai-reviewed",
   "review": {
@@ -994,6 +1008,7 @@
   ],
   "course": "chemistry",
   "lesson": "SN1 mechanisms",
+  "also": [],
   "renderer": "mechanism",
   "status": "ai-reviewed",
   "review": {
@@ -1071,6 +1086,960 @@
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
     "ok": true,
     "detail": "842px wide, shown at 84% (labels 12.6px)"
+   }
+  ]
+ },
+ "chem-atom-sodium-ion": {
+  "title": "A sodium atom and a sodium ion",
+  "caption": "Na and Na⁺ have the same nucleus, 11 protons and 12 neutrons. The ion has lost its single outer electron, so 11 positive charges and 10 negative ones leave a charge of +1.",
+  "alt": "Sodium atom with shells 2, 8, 1 beside the sodium ion with shells 2, 8; both nuclei have 11 protons and 12 neutrons.",
+  "description": [
+   "Left: sodium atom, nucleus 11 p and 12 n, electrons 2, 8, 1.",
+   "Right: sodium ion Na⁺, the same nucleus, electrons 2, 8; charge 11 − 10 = +1."
+  ],
+  "course": "chemistry",
+  "lesson": "Protons, neutrons and electrons",
+  "also": [],
+  "renderer": "atom",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u02.js: Protons, neutrons and electrons"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Na: 11 protons, 12 neutrons, 11 electrons from Z = 11, A = 23",
+    "ok": true,
+    "detail": "{\"protons\":11,\"neutrons\":12,\"electrons\":11,\"shells\":[2,8,1]}"
+   },
+   {
+    "name": "Na: shells 2, 8, 1",
+    "ok": true,
+    "detail": "stated 2, 8, 1"
+   },
+   {
+    "name": "Na (+1): 11 protons, 12 neutrons, 10 electrons from Z = 11, A = 23",
+    "ok": true,
+    "detail": "{\"electrons\":10,\"shells\":[2,8]}"
+   },
+   {
+    "name": "Na: shells 2, 8",
+    "ok": true,
+    "detail": "stated 2, 8"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-atom-structure": {
+  "title": "The nuclear atom: carbon-12",
+  "caption": "Six protons and six neutrons make a tiny nucleus; six electrons occupy shells around it, two in the first and four in the second. Not to scale: the nucleus is about 100 000 times smaller than the atom.",
+  "alt": "A carbon atom: a nucleus labelled 6 protons and 6 neutrons, with two electrons in the inner shell and four in the outer shell.",
+  "description": [
+   "A small central nucleus labelled 6 p and 6 n.",
+   "Two circles around it are the shells: two electrons on the inner shell, four on the outer shell.",
+   "Below: carbon, 6 protons, 6 neutrons, 6 electrons."
+  ],
+  "course": "chemistry",
+  "lesson": "Structure of the atom",
+  "also": [
+   {
+    "course": "gcse",
+    "lesson": "The development of the atomic model"
+   }
+  ],
+  "renderer": "atom",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u02.js: Structure of the atom"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in gcse: The development of the atomic model",
+    "ok": true,
+    "detail": "kit/courses/gcse/notes/u05.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "C: 6 protons, 6 neutrons, 6 electrons from Z = 6, A = 12",
+    "ok": true,
+    "detail": "{\"protons\":6,\"neutrons\":6,\"electrons\":6,\"shells\":[2,4]}"
+   },
+   {
+    "name": "C: shells 2, 4",
+    "ok": true,
+    "detail": "stated 2, 4"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-aufbau-order": {
+  "title": "The order of filling",
+  "caption": "Write the sub-shells in rows by shell and follow the diagonals from upper right to lower left: this is the n + l rule. Sub-shells fill in order of increasing n + l, the lower n first when n + l is equal, which puts 4s before 3d and 5s before 4d.",
+  "alt": "A grid of sub-shell labels 1s to 7s with diagonal arrows; reading along the arrows gives 1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p, 5s and onwards.",
+  "description": [
+   "Rows: 1s; 2s 2p; 3s 3p 3d; 4s 4p 4d 4f; and so on to 7s.",
+   "Diagonal arrows run from upper right to lower left.",
+   "Reading them in turn gives the filling order 1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p, 5s, 4d, 5p, 6s, 4f, 5d, 6p, 7s, 5f, 6d, 7p."
+  ],
+  "course": "chemistry",
+  "lesson": "Aufbau principle",
+  "also": [],
+  "renderer": "orbitals",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u02.js: Aufbau principle"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the n + l (Madelung) rule gives the filling order drawn",
+    "ok": true,
+    "detail": "1s 2s 2p 3s 3p 4s 3d 4p 5s 4d 5p 6s 4f 5d 6p 7s 5f 6d 7p"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-config-cr-cu": {
+  "title": "Chlorine, chromium and copper in boxes",
+  "caption": "Chlorine follows the filling order. Chromium and copper do not: one 4s electron moves into 3d to give a half-filled 3d⁵ or a full 3d¹⁰, so chromium is [Ar] 3d⁵ 4s¹ and copper is [Ar] 3d¹⁰ 4s¹.",
+  "alt": "Orbital box diagrams of the outer sub-shells: chlorine 3s² 3p⁵; chromium 3d⁵ 4s¹ with five single 3d electrons; copper 3d¹⁰ 4s¹.",
+  "description": [
+   "Chlorine, [Ne] 3s² 3p⁵: 3s paired, 3p with two pairs and one single electron.",
+   "Chromium, [Ar] 3d⁵ 4s¹: five single 3d electrons, all spin up, and one 4s electron.",
+   "Copper, [Ar] 3d¹⁰ 4s¹: five paired 3d orbitals and one 4s electron."
+  ],
+  "course": "chemistry",
+  "lesson": "Electron configurations",
+  "also": [],
+  "renderer": "orbitals",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u02.js: Electron configurations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Chlorine, [Ne] 3s² 3p⁵: 17 electrons",
+    "ok": true,
+    "detail": "1s2 2s2 2p6 3s2 3p5"
+   },
+   {
+    "name": "Chlorine, [Ne] 3s² 3p⁵: configuration [Ne] 3s2 3p5 is the ground state",
+    "ok": true,
+    "detail": "computed 1s2 2s2 2p6 3s2 3p5"
+   },
+   {
+    "name": "Chlorine, [Ne] 3s² 3p⁵: 1 unpaired electron(s) by Hund's rule",
+    "ok": true,
+    "detail": "computed 1"
+   },
+   {
+    "name": "Chlorine, [Ne] 3s² 3p⁵: every occupied sub-shell is drawn",
+    "ok": true,
+    "detail": "occupied 1s 2s 2p 3s 3p"
+   },
+   {
+    "name": "Chromium, [Ar] 3d⁵ 4s¹: 24 electrons",
+    "ok": true,
+    "detail": "1s2 2s2 2p6 3s2 3p6 3d5 4s1"
+   },
+   {
+    "name": "Chromium, [Ar] 3d⁵ 4s¹: configuration [Ar] 3d5 4s1 is the ground state",
+    "ok": true,
+    "detail": "computed 1s2 2s2 2p6 3s2 3p6 3d5 4s1"
+   },
+   {
+    "name": "Chromium, [Ar] 3d⁵ 4s¹: 6 unpaired electron(s) by Hund's rule",
+    "ok": true,
+    "detail": "computed 6"
+   },
+   {
+    "name": "Chromium, [Ar] 3d⁵ 4s¹: every occupied sub-shell is drawn",
+    "ok": true,
+    "detail": "occupied 1s 2s 2p 3s 3p 4s 3d"
+   },
+   {
+    "name": "Copper, [Ar] 3d¹⁰ 4s¹: 29 electrons",
+    "ok": true,
+    "detail": "1s2 2s2 2p6 3s2 3p6 3d10 4s1"
+   },
+   {
+    "name": "Copper, [Ar] 3d¹⁰ 4s¹: configuration [Ar] 3d10 4s1 is the ground state",
+    "ok": true,
+    "detail": "computed 1s2 2s2 2p6 3s2 3p6 3d10 4s1"
+   },
+   {
+    "name": "Copper, [Ar] 3d¹⁰ 4s¹: 1 unpaired electron(s) by Hund's rule",
+    "ok": true,
+    "detail": "computed 1"
+   },
+   {
+    "name": "Copper, [Ar] 3d¹⁰ 4s¹: every occupied sub-shell is drawn",
+    "ok": true,
+    "detail": "occupied 1s 2s 2p 3s 3p 4s 3d"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-config-reactivity": {
+  "title": "Why sodium loses and chlorine gains",
+  "caption": "Sodium has one 3s electron outside a full shell; losing it leaves the neon configuration. Chlorine is one electron short of filling 3p; gaining one gives the argon configuration. The ions Na⁺ and Cl⁻ both have full outer sub-shells.",
+  "alt": "Box diagrams for Na, 3s¹, and Na⁺ with nothing in shell 3; Cl, 3s² 3p⁵, and Cl⁻, 3s² 3p⁶.",
+  "description": [
+   "Na: one electron in 3s.",
+   "Na⁺: the 3s box is empty; 2p is full.",
+   "Cl: 3s² 3p⁵, one 3p box singly occupied.",
+   "Cl⁻: 3s² 3p⁶, every box paired."
+  ],
+  "course": "chemistry",
+  "lesson": "Electronic structure and chemical properties",
+  "also": [],
+  "renderer": "orbitals",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u02.js: Electronic structure and chemical properties"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Na, [Ne] 3s¹: 11 electrons",
+    "ok": true,
+    "detail": "1s2 2s2 2p6 3s1"
+   },
+   {
+    "name": "Na, [Ne] 3s¹: configuration [Ne] 3s1 is the ground state",
+    "ok": true,
+    "detail": "computed 1s2 2s2 2p6 3s1"
+   },
+   {
+    "name": "Na, [Ne] 3s¹: every occupied sub-shell is drawn",
+    "ok": true,
+    "detail": "occupied 1s 2s 2p 3s"
+   },
+   {
+    "name": "Na⁺, [Ne]: 10 electrons",
+    "ok": true,
+    "detail": "1s2 2s2 2p6"
+   },
+   {
+    "name": "Na⁺, [Ne]: configuration 1s2 2s2 2p6 is the ground state",
+    "ok": true,
+    "detail": "computed 1s2 2s2 2p6"
+   },
+   {
+    "name": "Na⁺, [Ne]: every occupied sub-shell is drawn",
+    "ok": true,
+    "detail": "occupied 1s 2s 2p"
+   },
+   {
+    "name": "Cl, [Ne] 3s² 3p⁵: 17 electrons",
+    "ok": true,
+    "detail": "1s2 2s2 2p6 3s2 3p5"
+   },
+   {
+    "name": "Cl, [Ne] 3s² 3p⁵: configuration [Ne] 3s2 3p5 is the ground state",
+    "ok": true,
+    "detail": "computed 1s2 2s2 2p6 3s2 3p5"
+   },
+   {
+    "name": "Cl, [Ne] 3s² 3p⁵: every occupied sub-shell is drawn",
+    "ok": true,
+    "detail": "occupied 1s 2s 2p 3s 3p"
+   },
+   {
+    "name": "Cl⁻, [Ne] 3s² 3p⁶: 18 electrons",
+    "ok": true,
+    "detail": "1s2 2s2 2p6 3s2 3p6"
+   },
+   {
+    "name": "Cl⁻, [Ne] 3s² 3p⁶: configuration [Ne] 3s2 3p6 is the ground state",
+    "ok": true,
+    "detail": "computed 1s2 2s2 2p6 3s2 3p6"
+   },
+   {
+    "name": "Cl⁻, [Ne] 3s² 3p⁶: every occupied sub-shell is drawn",
+    "ok": true,
+    "detail": "occupied 1s 2s 2p 3s 3p"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-electron-affinity-p3": {
+  "title": "First electron affinities across period 3",
+  "caption": "Gaining an electron releases energy for these atoms, most of all for chlorine, whose extra electron completes the 3p sub-shell. Phosphorus (3p³, half-filled) releases less than silicon: its value is less negative. Magnesium and argon form no stable 1− ion and are left out.",
+  "alt": "Bar chart of first electron affinities, all negative: sodium −53, aluminium −42, silicon −134, phosphorus −72, sulfur −200, chlorine −349 kJ mol⁻¹.",
+  "description": [
+   "Sodium −53, aluminium −42 and silicon −134 kJ mol⁻¹.",
+   "Phosphorus −72, smaller than silicon because its 3p is half filled.",
+   "Sulfur −200 and chlorine −349, the most exothermic."
+  ],
+  "course": "chemistry",
+  "lesson": "Electron affinity",
+  "also": [],
+  "renderer": "trend",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u02.js: Electron affinity"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every value matches first electron affinity (enthalpy change) (CRC Handbook of Chemistry and Physics, electron affinities, as enthalpy changes rounded to 1 kJ mol⁻¹)",
+    "ok": true,
+    "detail": "6 values"
+   },
+   {
+    "name": "Cl has the lowest value",
+    "ok": true,
+    "detail": "found Cl"
+   },
+   {
+    "name": "order Si < P",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-hund-np": {
+  "title": "Hund's rule: nitrogen and oxygen",
+  "caption": "In nitrogen the three 2p electrons occupy separate orbitals with parallel spins. Oxygen's fourth 2p electron must pair, and the repulsion within that pair makes it easier to remove: oxygen's first ionisation energy (1314 kJ mol⁻¹) is below nitrogen's (1402).",
+  "alt": "2s and 2p boxes for nitrogen, three single parallel electrons in 2p, and oxygen, one paired and two single 2p electrons.",
+  "description": [
+   "Nitrogen, 2s² 2p³: three 2p boxes each with one up arrow.",
+   "Oxygen, 2s² 2p⁴: the first 2p box paired, the other two singly occupied."
+  ],
+  "course": "chemistry",
+  "lesson": "Hund's rule",
+  "also": [],
+  "renderer": "orbitals",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u02.js: Hund's rule"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Nitrogen, [He] 2s² 2p³: 7 electrons",
+    "ok": true,
+    "detail": "1s2 2s2 2p3"
+   },
+   {
+    "name": "Nitrogen, [He] 2s² 2p³: configuration 1s2 2s2 2p3 is the ground state",
+    "ok": true,
+    "detail": "computed 1s2 2s2 2p3"
+   },
+   {
+    "name": "Nitrogen, [He] 2s² 2p³: 3 unpaired electron(s) by Hund's rule",
+    "ok": true,
+    "detail": "computed 3"
+   },
+   {
+    "name": "Nitrogen, [He] 2s² 2p³: every occupied sub-shell is drawn",
+    "ok": true,
+    "detail": "occupied 1s 2s 2p"
+   },
+   {
+    "name": "Oxygen, [He] 2s² 2p⁴: 8 electrons",
+    "ok": true,
+    "detail": "1s2 2s2 2p4"
+   },
+   {
+    "name": "Oxygen, [He] 2s² 2p⁴: configuration 1s2 2s2 2p4 is the ground state",
+    "ok": true,
+    "detail": "computed 1s2 2s2 2p4"
+   },
+   {
+    "name": "Oxygen, [He] 2s² 2p⁴: 2 unpaired electron(s) by Hund's rule",
+    "ok": true,
+    "detail": "computed 2"
+   },
+   {
+    "name": "Oxygen, [He] 2s² 2p⁴: every occupied sub-shell is drawn",
+    "ok": true,
+    "detail": "occupied 1s 2s 2p"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-ie-period-2-3": {
+  "title": "First ionisation energy, lithium to argon",
+  "caption": "Ionisation energy rises across each period as nuclear charge grows with similar shielding, and falls sharply at each new period. The small dips at boron and aluminium (a new p sub-shell) and at oxygen and sulfur (the first paired p electron) are evidence for sub-shells.",
+  "alt": "Line graph of first ionisation energy for elements 3 to 18, rising across period 2 to neon, dropping to sodium, rising again to argon, with dips at B, O, Al and S.",
+  "description": [
+   "Period 2: lithium 520 rising to neon 2081 kJ mol⁻¹, with dips at boron (801, below beryllium 899) and oxygen (1314, below nitrogen 1402).",
+   "Sodium drops to 496: a new shell.",
+   "Period 3 repeats the pattern, with dips at aluminium (578) and sulfur (1000), up to argon 1521."
+  ],
+  "course": "chemistry",
+  "lesson": "Periodic trends",
+  "also": [],
+  "renderer": "trend",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u02.js: Periodic trends"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every value matches first ionisation energy (NIST Atomic Spectra Database ionisation energies, converted from eV and rounded to 1 kJ mol⁻¹ (beryllium, 899.50, is quoted as 899 as in the lessons))",
+    "ok": true,
+    "detail": "16 values"
+   },
+   {
+    "name": "B is lower than Be before it",
+    "ok": true,
+    "detail": "Be 899, B 801"
+   },
+   {
+    "name": "O is lower than N before it",
+    "ok": true,
+    "detail": "N 1402, O 1314"
+   },
+   {
+    "name": "Al is lower than Mg before it",
+    "ok": true,
+    "detail": "Mg 738, Al 578"
+   },
+   {
+    "name": "S is lower than P before it",
+    "ok": true,
+    "detail": "P 1012, S 1000"
+   },
+   {
+    "name": "Ne has the highest value",
+    "ok": true,
+    "detail": "found Ne"
+   },
+   {
+    "name": "Na is lower than Ne before it",
+    "ok": true,
+    "detail": "Ne 2081, Na 496"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-isotopes-chlorine": {
+  "title": "Isotopes of chlorine",
+  "caption": "Chlorine-35 and chlorine-37 both have 17 protons and 17 electrons arranged 2, 8, 7, so they react the same way. Only the neutrons differ: 18 against 20.",
+  "alt": "Two chlorine atoms side by side with identical electron shells 2, 8, 7; one nucleus has 17 protons and 18 neutrons, the other 17 protons and 20 neutrons.",
+  "description": [
+   "Left: chlorine-35, nucleus 17 p and 18 n, electrons 2, 8, 7.",
+   "Right: chlorine-37, nucleus 17 p and 20 n, electrons 2, 8, 7.",
+   "Nuclide symbols above each: ³⁵₁₇Cl and ³⁷₁₇Cl."
+  ],
+  "course": "chemistry",
+  "lesson": "Isotopes",
+  "also": [
+   {
+    "course": "gcse",
+    "lesson": "Atomic structure and isotopes"
+   }
+  ],
+  "renderer": "atom",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u02.js: Isotopes"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in gcse: Atomic structure and isotopes",
+    "ok": true,
+    "detail": "kit/courses/gcse/notes/u05.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Cl: 17 protons, 18 neutrons, 17 electrons from Z = 17, A = 35",
+    "ok": true,
+    "detail": "{\"protons\":17,\"neutrons\":18,\"electrons\":17}"
+   },
+   {
+    "name": "Cl: shells 2, 8, 7",
+    "ok": true,
+    "detail": "drawn from the configuration"
+   },
+   {
+    "name": "Cl: 17 protons, 20 neutrons, 17 electrons from Z = 17, A = 37",
+    "ok": true,
+    "detail": "{\"protons\":17,\"neutrons\":20,\"electrons\":17}"
+   },
+   {
+    "name": "Cl: shells 2, 8, 7",
+    "ok": true,
+    "detail": "drawn from the configuration"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-nuclide-notation": {
+  "title": "Nuclide notation in a beta decay",
+  "caption": "The mass number A (protons + neutrons) is written top left and the atomic number Z (protons) bottom left. In ¹⁴₆C → ¹⁴₇N + ⁰₋₁e a neutron becomes a proton: A stays 14 and Z rises from 6 to 7, so the element changes from carbon to nitrogen.",
+  "alt": "Carbon-14 with 6 protons and 8 neutrons beside nitrogen-14 with 7 protons and 7 neutrons, each with its nuclide symbol.",
+  "description": [
+   "Left: ¹⁴₆C, nucleus 6 p and 8 n, electrons 2, 4.",
+   "Right: ¹⁴₇N, nucleus 7 p and 7 n, electrons 2, 5.",
+   "Both have mass number 14; the atomic number has risen by one."
+  ],
+  "course": "chemistry",
+  "lesson": "Atomic number and mass number",
+  "also": [],
+  "renderer": "atom",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u02.js: Atomic number and mass number"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "C: 6 protons, 8 neutrons, 6 electrons from Z = 6, A = 14",
+    "ok": true,
+    "detail": "{\"protons\":6,\"neutrons\":8}"
+   },
+   {
+    "name": "C: shells 2, 4",
+    "ok": true,
+    "detail": "drawn from the configuration"
+   },
+   {
+    "name": "N: 7 protons, 7 neutrons, 7 electrons from Z = 7, A = 14",
+    "ok": true,
+    "detail": "{\"protons\":7,\"neutrons\":7}"
+   },
+   {
+    "name": "N: shells 2, 5",
+    "ok": true,
+    "detail": "drawn from the configuration"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-pauli": {
+  "title": "Two electrons per orbital, opposite spins",
+  "caption": "Helium's two electrons share 1s with opposite spins. Lithium's third electron cannot enter 1s, which is full, so it starts 2s. Nitrogen's 2p electrons are each in their own box.",
+  "alt": "Box diagrams: helium 1s²; lithium 1s² 2s¹; nitrogen 1s² 2s² 2p³ with three single 2p electrons.",
+  "description": [
+   "Helium: one 1s box with an up and a down arrow.",
+   "Lithium: 1s paired, 2s with a single up arrow.",
+   "Nitrogen: 1s and 2s paired, three 2p boxes each with one up arrow."
+  ],
+  "course": "chemistry",
+  "lesson": "Pauli exclusion principle",
+  "also": [],
+  "renderer": "orbitals",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u02.js: Pauli exclusion principle"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Helium, 1s²: 2 electrons",
+    "ok": true,
+    "detail": "1s2"
+   },
+   {
+    "name": "Helium, 1s²: configuration 1s2 is the ground state",
+    "ok": true,
+    "detail": "computed 1s2"
+   },
+   {
+    "name": "Lithium, 1s² 2s¹: 3 electrons",
+    "ok": true,
+    "detail": "1s2 2s1"
+   },
+   {
+    "name": "Lithium, 1s² 2s¹: configuration 1s2 2s1 is the ground state",
+    "ok": true,
+    "detail": "computed 1s2 2s1"
+   },
+   {
+    "name": "Nitrogen, 1s² 2s² 2p³: 7 electrons",
+    "ok": true,
+    "detail": "1s2 2s2 2p3"
+   },
+   {
+    "name": "Nitrogen, 1s² 2s² 2p³: configuration 1s2 2s2 2p3 is the ground state",
+    "ok": true,
+    "detail": "computed 1s2 2s2 2p3"
+   },
+   {
+    "name": "Nitrogen, 1s² 2s² 2p³: 3 unpaired electron(s) by Hund's rule",
+    "ok": true,
+    "detail": "computed 3"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-quantum-numbers": {
+  "title": "Quantum numbers in the second shell: neon",
+  "caption": "n = 2 holds one 2s orbital (l = 0) and three 2p orbitals (l = 1, mₗ = −1, 0, +1). Each orbital holds two electrons of opposite spin, mₛ = +½ (up) and −½ (down): eight electrons in all, 2n².",
+  "alt": "Orbital boxes for neon: 1s, 2s and three 2p boxes labelled with mₗ = −1, 0 and +1, each holding an up and a down arrow.",
+  "description": [
+   "1s: one box with a pair of electrons.",
+   "2s: one box with a pair.",
+   "2p: three boxes labelled mₗ −1, 0, +1, each with a pair: up for mₛ = +½, down for −½."
+  ],
+  "course": "chemistry",
+  "lesson": "Quantum numbers",
+  "also": [],
+  "renderer": "orbitals",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u02.js: Quantum numbers"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Neon, 1s² 2s² 2p⁶: 10 electrons",
+    "ok": true,
+    "detail": "1s2 2s2 2p6"
+   },
+   {
+    "name": "Neon, 1s² 2s² 2p⁶: configuration 1s2 2s2 2p6 is the ground state",
+    "ok": true,
+    "detail": "computed 1s2 2s2 2p6"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-shells-period3": {
+  "title": "Electron shells across period 3",
+  "caption": "For the first 20 elements the shells fill 2, then 8, then 8. Sodium to argon all have full first and second shells; the third shell gains one electron per element, which is why they sit in groups 1, 2, 17 and 18.",
+  "alt": "Four atoms: sodium 2, 8, 1; magnesium 2, 8, 2; chlorine 2, 8, 7; argon 2, 8, 8.",
+  "description": [
+   "Sodium: shells 2, 8, 1.",
+   "Magnesium: shells 2, 8, 2.",
+   "Chlorine: shells 2, 8, 7.",
+   "Argon: shells 2, 8, 8, a full outer shell."
+  ],
+  "course": "chemistry",
+  "lesson": "Electron shells",
+  "also": [],
+  "renderer": "atom",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u02.js: Electron shells"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Na: 11 protons, 12 neutrons, 11 electrons from Z = 11, A = 23",
+    "ok": true,
+    "detail": "{\"shells\":[2,8,1]}"
+   },
+   {
+    "name": "Na: shells 2, 8, 1",
+    "ok": true,
+    "detail": "stated 2, 8, 1"
+   },
+   {
+    "name": "Mg: 12 protons, 12 neutrons, 12 electrons from Z = 12, A = 24",
+    "ok": true,
+    "detail": "{\"shells\":[2,8,2]}"
+   },
+   {
+    "name": "Mg: shells 2, 8, 2",
+    "ok": true,
+    "detail": "stated 2, 8, 2"
+   },
+   {
+    "name": "Cl: 17 protons, 18 neutrons, 17 electrons from Z = 17, A = 35",
+    "ok": true,
+    "detail": "{\"shells\":[2,8,7]}"
+   },
+   {
+    "name": "Cl: shells 2, 8, 7",
+    "ok": true,
+    "detail": "stated 2, 8, 7"
+   },
+   {
+    "name": "Ar: 18 protons, 22 neutrons, 18 electrons from Z = 18, A = 40",
+    "ok": true,
+    "detail": "{\"shells\":[2,8,8]}"
+   },
+   {
+    "name": "Ar: shells 2, 8, 8",
+    "ok": true,
+    "detail": "stated 2, 8, 8"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-subshell-energies": {
+  "title": "Sub-shell energies up to 4p",
+  "caption": "Each box is an orbital: one per s, three per p, five per d. Energy rises up the page (not to scale). The 4s sub-shell lies just below 3d, so it fills first.",
+  "alt": "An energy ladder of empty orbital boxes: 1s at the bottom, then 2s, 2p, 3s, 3p, 4s, 3d and 4p at the top.",
+  "description": [
+   "From the bottom: 1s (one box), 2s (one), 2p (three), 3s (one), 3p (three), 4s (one), 3d (five), 4p (three).",
+   "4s is drawn below 3d, the first place the energy order differs from the shell order."
+  ],
+  "course": "chemistry",
+  "lesson": "Atomic orbitals",
+  "also": [],
+  "renderer": "orbitals",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u02.js: Atomic orbitals"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the n + l (Madelung) rule gives the filling order drawn",
+    "ok": true,
+    "detail": "1s 2s 2p 3s 3p 4s 3d 4p 5s 4d 5p 6s 4f 5d 6p 7s 5f 6d 7p"
+   },
+   {
+    "name": "sub-shells are drawn in increasing energy (Aufbau) order",
+    "ok": true,
+    "detail": "1s 2s 2p 3s 3p 4s 3d 4p"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-successive-ie-al": {
+  "title": "Successive ionisation energies of aluminium",
+  "caption": "On a log scale each ionisation is a little harder than the last, with two large jumps: after the 3rd electron (the next comes from the second shell) and after the 11th (the next comes from the first). Three outer electrons put aluminium in group 13.",
+  "alt": "Line graph of the 13 successive ionisation energies of aluminium on a logarithmic axis, rising gradually with big jumps between the 3rd and 4th and between the 11th and 12th.",
+  "description": [
+   "Ionisations 1 to 3: 578, 1817 and 2745 kJ mol⁻¹, the three outer electrons.",
+   "Ionisation 4 jumps to 11 577 kJ mol⁻¹: the electron comes from the second shell.",
+   "Ionisations 4 to 11 rise steadily to 42 647; ionisations 12 and 13 jump to about 201 000 and 222 000, the first shell."
+  ],
+  "course": "chemistry",
+  "lesson": "Ionisation energy",
+  "also": [],
+  "renderer": "trend",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u02.js: Ionisation energy"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every value matches successive ionisation energies of aluminium (CRC Handbook of Chemistry and Physics, ionisation energies of the elements, rounded to 1 kJ mol⁻¹)",
+    "ok": true,
+    "detail": "13 values"
+   },
+   {
+    "name": "1 → 13: increasing",
+    "ok": true,
+    "detail": "1 578, 2 1817, 3 2745, 4 11577, 5 14842, 6 18379, 7 23326, 8 27465, 9 31853, 10 38473, 11 42647, 12 201266, 13 222316"
+   },
+   {
+    "name": "the largest jumps come after 3 and 11",
+    "ok": true,
+    "detail": "after 11: ×4.72, after 3: ×4.22, after 1: ×3.14"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  }

@@ -1,0 +1,22 @@
+{
+ "id": "chem-quantum-numbers",
+ "renderer": "orbitals",
+ "course": "chemistry",
+ "lesson": "Quantum numbers",
+ "title": "Quantum numbers in the second shell: neon",
+ "caption": "n = 2 holds one 2s orbital (l = 0) and three 2p orbitals (l = 1, mₗ = −1, 0, +1). Each orbital holds two electrons of opposite spin, mₛ = +½ (up) and −½ (down): eight electrons in all, 2n².",
+ "alt": "Orbital boxes for neon: 1s, 2s and three 2p boxes labelled with mₗ = −1, 0 and +1, each holding an up and a down arrow.",
+ "description": [
+  "1s: one box with a pair of electrons.",
+  "2s: one box with a pair.",
+  "2p: three boxes labelled mₗ −1, 0, +1, each with a pair: up for mₛ = +½, down for −½."
+ ],
+ "rows": [
+  {
+   "symbol": "Ne",
+   "label": "Neon, 1s² 2s² 2p⁶",
+   "config": "1s2 2s2 2p6",
+   "ml": true
+  }
+ ]
+}

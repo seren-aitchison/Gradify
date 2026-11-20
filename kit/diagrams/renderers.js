@@ -453,3 +453,8 @@ export function render(spec, { lessonText = "" } = {}) {
     checks: R.checks(spec, lessonText),
   };
 }
+
+// ---------- for the subject modules (kit/diagrams/chem-renderers.js) ----------
+export { svg, text, line, arrow, legend, wrap, textBlock, axes, pathOf, col, f1, esc, near, check, graph, graphChecks };
+/** Add renderers from a subject module. */
+export function register(map) { Object.assign(RENDERERS, map); }
