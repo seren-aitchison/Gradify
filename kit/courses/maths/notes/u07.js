@@ -1336,6 +1336,7 @@ SA3@2: Use the trapezium rule with 2 strips to estimate ∫_{1}^{3} ln x dx. Is 
 S: Integration measures more than areas: the length of a curve and the surface area of a solid of revolution come from adding up tiny straight pieces. These are Further Maths and first-year university results.
 O: Calculate arc lengths of curves
 O: Calculate surface areas of revolution
+LV: Year 1 · Application
 T: Arc length | The length of a curve between two points
 T: Surface of revolution | The surface made by rotating a curve about an axis
 H: Arc length
@@ -1358,16 +1359,20 @@ Q: What is the arc length element? | ds = √(1 + (dy/dx)^{2}) dx.
 Q: What is the surface area of a sphere of radius r? | 4πr^{2}.
 SUM: Arc length sums tiny hypotenuses.
 SUM: Surface area sums bands of circumference 2πy.
+EV: established | Arc length is ∫ √(1 + (dy/dx)^{2}) dx, and the area of a surface of revolution about the x-axis is 2π ∫ y √(1 + (dy/dx)^{2}) dx.
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 NUM1#maths-u07-37-q1@1: Find the length of the line y = 3x/4 from x = 0 to x = 4. | 5 | 0 |  | √(1 + 9/16) = 5/4, and ∫_{0}^{4} 5/4 dx = 5 (a 3-4-5 triangle).
 M1#maths-u07-37-q2@1: Which integral gives the arc length of y = x^{2} from 0 to 1? | ∫_{0}^{1} √(1 + 4x^{2}) dx | ∫_{0}^{1} √(1 + x^{4}) dx | ∫_{0}^{1} (1 + 2x) dx | ∫_{0}^{1} 2πx^{2} dx | ∫_{0}^{1} √(1 + 2x) dx | dy/dx = 2x, so (dy/dx)^{2} = 4x^{2} goes under the root.
 M2#maths-u07-37-q3@2: Rotating y = x from x = 0 to x = 1 about the x-axis gives a cone. What is its curved surface area? | π√2 | 2π | π | 2π√2 | π/√2 | S = 2π ∫_{0}^{1} x√2 dx = 2π√2 × ½ = π√2, matching πrl with r = 1, l = √2.
+NUM3@1: Find the arc length of y = (2/3)x^{3/2} from x = 0 to x = 3, to 3 decimal places. | 4.667 | 0.001 |  | dy/dx = √x, so L = ∫_{0}^{3} √(1 + x) dx = (2/3)[(1 + x)^{3/2}]_{0}^{3} = (2/3)(8 − 1) = 14/3 ≈ 4.667.
+SA3@2: Show that rotating y = √(r^{2} − x^{2}), −r ≤ x ≤ r, about the x-axis gives a surface area of 4πr^{2}. | dy/dx = −x/√(r^{2} − x^{2}) = −x/y, so 1 + (dy/dx)^{2} = (y^{2} + x^{2})/y^{2} = r^{2}/y^{2}. Then y√(1 + (dy/dx)^{2}) = y × r/y = r. So S = 2π ∫_{−r}^{r} r dx = 2πr × 2r = 4πr^{2}. | Differentiates y correctly ; Simplifies 1 + (dy/dx)^{2} to r^{2}/y^{2} ; Shows the integrand reduces to r ; Uses limits −r to r ; Gets 4πr^{2}
 
 ## Volumes of Revolution
 S: Rotating a region around an axis creates a solid of revolution. Its volume comes from adding up thin circular discs: ∫ πy^{2} dx. This finds the volumes of vases, nose cones and other curved shapes.
 O: Find volumes of revolution about the x- and y-axes
 O: Find volumes for regions between two curves
+LV: A level · Application
 T: Solid of revolution | A solid formed by rotating a region about an axis
 T: Disc method | Summing circular cross-sections: V = π ∫ y^{2} dx
 H: The disc method
@@ -1389,16 +1394,20 @@ Q: What is the volume when y = 2 from x = 0 to 3 is rotated about the x-axis? | 
 Q: What's the formula for the volume about the y-axis? | V = π ∫ x^{2} dy.
 SUM: Discs sum to volumes.
 SUM: Washers handle hollow solids.
+EV: established | The volume of a solid of revolution about the x-axis is π ∫ y^{2} dx, with washers subtracting the inner radius squared.
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 NUM1#maths-u07-38-q1@1: Find the volume when y = x is rotated about the x-axis from x = 0 to x = 3, as a multiple of π. | 9 | 0 | π | π ∫_{0}^{3} x^{2} dx = π × 9: a cone of radius 3 and height 3.
 M1#maths-u07-38-q2@1: Rotating y = √x from 0 to 2 about the x-axis gives a volume of: | 2π | 4π | π | 8π/3 | √2π | V = π ∫ y^{2} dx = π ∫_{0}^{2} x dx = π × [x^{2}/2]_{0}^{2} = 2π.
 M3#maths-u07-38-q3@2: Which integral gives the volume between y = 3 and y = x^{2} + 1 (from x = −√2 to √2) rotated about the x-axis? | π ∫ (9 − (x^{2} + 1)^{2}) dx | π ∫ (3 − x^{2} − 1)^{2} dx | π ∫ (x^{2} + 1)^{2} dx | 2π ∫ x(2 − x^{2}) dx | π ∫ 9 dx | Washers: outer radius 3 and inner radius x^{2} + 1, so subtract the squares.
+NUM2@1: The curve y = x^{2} for 0 ≤ y ≤ 4 is rotated about the y-axis. Find the volume as a multiple of π. | 8 | 0 | π | About the y-axis V = π ∫ x^{2} dy = π ∫_{0}^{4} y dy = π[y^{2}/2]_{0}^{4} = 8π.
+SA2@2: The region between y = x and y = x^{2} is rotated about the x-axis. Find the volume and explain why π ∫ (x − x^{2})^{2} dx is wrong. | The curves meet at x = 0 and x = 1, with y = x outside. Washers: V = π ∫_{0}^{1} (x^{2} − x^{4}) dx = π(1/3 − 1/5) = 2π/15. Each cross-section is a ring of area π(R^{2} − r^{2}), not π(R − r)^{2}; the wrong integral gives π(1/3 − 1/2 + 1/5) = π/30, the volume of a solid whose radius is the gap between the curves. | Finds the limits 0 and 1 ; Identifies outer and inner radii ; Sets up π ∫ (x^{2} − x^{4}) dx ; Gets 2π/15 ; Explains that ring area is π(R^{2} − r^{2})
 
 ## Sequences and Series
 S: A sequence is a list of numbers; a series is their sum. Arithmetic and geometric series have neat formulas, and sums of sequences lead naturally to infinite series and calculus.
 O: Find sums of arithmetic and geometric series
 O: Use sigma notation
+LV: A level · Fluency
 T: Series | The sum of the terms of a sequence
 T: Sigma notation | Σ_{r=1}^{n} f(r) means f(1) + f(2) + … + f(n)
 H: Arithmetic and geometric series
@@ -1415,7 +1424,7 @@ X: Find Σ_{r=1}^{10} (2r^{2} − 3).
 > Σ 3 over 10 terms = 30
 > 770 − 30 = 740
 - Geometric series grow or decay quickly: compound interest and loan repayments are geometric series.
-- The sum of a series can be found from its partial sums S_{n} by u_{n} = S_{n} − S_{n−1}.
+- The terms can be recovered from the partial sums: u_{n} = S_{n} − S_{n−1}.
 P: **Investigate with the lab.** Choose the Geometric series topic and work through 10 problems. Check that |r| < 1 before using S∞ = a ÷ (1 − r), and read the worked method on any you get wrong.
 IX: practice
 K: Use S_{n} formulas for arithmetic and geometric series, standard sums for Σ r, Σ r^{2}, Σ r^{3}, and telescoping where terms cancel.
@@ -1424,16 +1433,20 @@ Q: What is 1 + 2 + … + 50? | 1,275.
 Q: What is the sum of the first 5 terms of 1, 2, 4, 8, …? | 31.
 SUM: Series sum sequences.
 SUM: Standard formulas and telescoping evaluate them.
+EV: established | Arithmetic and geometric series have closed-form sums, and Σ r, Σ r^{2} and Σ r^{3} have standard formulas.
 SRC: Department for Education, Mathematics AS and A level subject content: sequences and series | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
 NUM1#maths-u07-39-q1@1: Find the sum of the arithmetic series 5 + 8 + 11 + … + 62. | 670 | 0 |  | There are 20 terms ((62 − 5)/3 + 1), so S = 20 × (5 + 62)/2 = 670.
 M1#maths-u07-39-q2@1: What is Σ_{r=1}^{4} r^{2}? | 30 | 16 | 10 | 100 | 20 | Square each of 1 to 4 and add: 1 + 4 + 9 + 16 = 30.
 M2#maths-u07-39-q3@2: What is Σ_{r=1}^{n} 1/(r(r + 1))? | 1 − 1/(n + 1) | 1/(n + 1) | n | 1/n | ln n | It telescopes: (1 − ½) + (½ − ⅓) + … + (1/n − 1/(n + 1)).
+NUM3@1: What is the least number of terms of 3 + 6 + 12 + … whose sum exceeds 1,000? | 9 | 0 | terms | S_{n} = 3(2^{n} − 1) > 1000 needs 2^{n} > 334.3: S_{8} = 765 and S_{9} = 1,533, so n = 9.
+SA3@2: Use the standard sums to show that Σ_{r=1}^{n} r(r + 1) = n(n + 1)(n + 2)/3, and check your result for n = 2. | Σ r(r + 1) = Σ r^{2} + Σ r = n(n + 1)(2n + 1)/6 + n(n + 1)/2 = n(n + 1)[(2n + 1) + 3]/6 = n(n + 1)(2n + 4)/6 = n(n + 1)(n + 2)/3. Check: for n = 2 the sum is 1 × 2 + 2 × 3 = 8, and 2 × 3 × 4/3 = 8. | Splits into Σ r^{2} + Σ r ; Uses both standard formulas ; Takes out the common factor n(n + 1)/6 ; Simplifies to n(n + 1)(n + 2)/3 ; Checks a small case
 
 ## Infinite Series
 S: An infinite series adds infinitely many terms. Some add up to a finite number, like ½ + ¼ + ⅛ + … = 1, and some grow without limit. Infinite series define functions like e^{x} and sin x.
 O: Find the sum to infinity of a convergent geometric series
 O: Explain what it means for an infinite series to have a sum
+LV: A level · Application
 T: Sum to infinity | The limit of the partial sums S_{n} as n → ∞, if it exists
 T: Partial sum | S_{n}, the sum of the first n terms
 H: Geometric series
@@ -1458,16 +1471,20 @@ Q: What is the sum to infinity of 8 + 4 + 2 + …? | 16.
 Q: Does the harmonic series converge? | No: it diverges.
 SUM: Some infinite series have finite sums.
 SUM: Geometric series converge when |r| < 1.
+EV: established | A geometric series converges to a/(1 − r) exactly when |r| < 1, and the harmonic series diverges.
 SRC: Department for Education, Mathematics AS and A level subject content: sequences and series | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | secondary | 2008 | https://www.publishorperish.com/
 NUM1#maths-u07-40-q1@1: Find the sum to infinity of 27 − 9 + 3 − 1 + …. | 20.25 | 0.001 |  | a = 27 and r = −1/3, so S = 27/(4/3) = 20.25.
 M1#maths-u07-40-q2@1: For which r does a geometric series converge? | |r| < 1 | r > 1 | r = 1 | r < 0 | All r | The terms shrink to zero fast enough only when |r| < 1.
 M3#maths-u07-40-q3@2: Why does 1 + 1/2 + 1/3 + 1/4 + … diverge although its terms tend to 0? | Its partial sums grow without bound (like ln n) | It doesn't: it converges to 2 | Its terms are negative | It's a geometric series with r = 1 | It converges to π^{2}/6 | Grouping terms shows each block of terms adds at least ½, so the sum is unbounded.
+NUM2@1: A geometric series has first term 12 and second term 9. Find its sum to infinity. | 48 | 0 |  | r = 9/12 = 0.75, which satisfies |r| < 1, so S_{∞} = 12/(1 − 0.75) = 48.
+SA2@2: Explain, using partial sums, why 0.999… = 1. | 0.999… means 9/10 + 9/100 + 9/1000 + …, a geometric series with a = 9/10 and r = 1/10. The partial sum S_{n} = 1 − (1/10)^{n}, which gets as close to 1 as we like, so the limit of the partial sums is 1. The sum to infinity a/(1 − r) = (9/10)/(9/10) = 1 confirms it. The value of an infinite series is defined as that limit, so 0.999… equals 1 exactly. | Writes the decimal as a geometric series ; Identifies a = 9/10 and r = 1/10 ; Gives S_{n} = 1 − 10^{−n} ; Takes the limit ; Explains that the sum is defined as the limit
 
 ## Convergence and Divergence
 S: Deciding whether an infinite series converges is a central question in analysis. Convergence tests (comparison, ratio, integral and alternating series tests) answer it without finding the sum.
 O: Apply standard convergence tests
 O: Distinguish absolute and conditional convergence
+LV: Year 1 · Application
 T: Convergent series | A series whose partial sums approach a finite limit
 T: Absolute convergence | Σ |a_{n}| converges; it implies Σ a_{n} converges
 H: The tests
@@ -1483,21 +1500,27 @@ X: Does Σ_{n=1}^{∞} n/2^{n} converge?
 > Ratio: (n + 1)/2^{n+1} ÷ n/2^{n} = (n + 1)/(2n)
 > As n → ∞ this tends to ½
 > ½ < 1, so the series converges (its sum is 2)
+!: Using the ratio test on a p-series: for Σ 1/n^{p} the ratio tends to 1 for every p, so it says nothing. Use the p-series, comparison or integral test instead.
 K: Check the divergence test first; then compare with p-series or geometric series, or use the ratio or integral test.
 !: Concluding a series converges because its terms tend to zero.
 Q: Does Σ 1/n^{3} converge? | Yes: it's a p-series with p = 3 > 1.
 Q: What does the ratio test conclude if L = 1? | Nothing: it's inconclusive.
 SUM: Convergence tests decide behaviour without summing.
 SUM: Absolute convergence is the safer kind.
+EV: established | Σ 1/n^{p} converges exactly when p > 1, and a ratio limit below 1 guarantees convergence.
 SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | secondary | 2008 | https://www.publishorperish.com/
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-41-q1@1: Which series converges? | Σ 1/n^{2} | Σ 1/n | Σ 1/√n | Σ 1 | Σ n | A p-series with p = 2 > 1 converges (to π^{2}/6).
 M2#maths-u07-41-q2@2: The ratio test gives L = 3 for a series. What follows? | It diverges | It converges | It's inconclusive | It converges absolutely | It sums to 3 | L > 1 means the terms eventually grow, so the series diverges.
+NUM2@1: What limit L does the ratio test give for Σ n^{2}/3^{n}? Give 3 decimal places. | 0.333 | 0.001 |  | a_{n+1}/a_{n} = (n + 1)^{2}/(3n^{2}) → 1/3, and 1/3 < 1, so the series converges.
+M3@2: Which series converges conditionally but not absolutely? | Σ (−1)^{n}/√n | Σ (−1)^{n}/n^{2} | Σ (−1)^{n} | Σ 1/√n | Σ (−1)^{n}/2^{n} | The alternating series test gives convergence, but Σ 1/√n is a p-series with p = ½ ≤ 1, which diverges; the n^{2} and 2^{n} series converge absolutely.
+SA3@1: Decide whether Σ 1/(n^{2} + 1) and Σ n/(n + 1) converge, naming the test you use each time. | Σ 1/(n^{2} + 1): 0 < 1/(n^{2} + 1) < 1/n^{2}, and Σ 1/n^{2} converges (p = 2 > 1), so by comparison it converges. Σ n/(n + 1): the terms tend to 1, not 0, so it diverges by the divergence test. | Uses comparison with 1/n^{2} ; States the p-series result ; Concludes the first converges ; Shows the terms of the second tend to 1 ; Concludes the second diverges by the divergence test
 
 ## Power Series
 S: A power series is an infinite polynomial, Σ a_{n}(x − c)^{n}. Inside its interval of convergence it behaves like a function you can differentiate and integrate term by term.
 O: Find the radius and interval of convergence of a power series
 O: Differentiate and integrate power series term by term
+LV: Year 1 · Application
 T: Power series | Σ_{n=0}^{∞} a_{n}(x − c)^{n}, centred at c
 T: Radius of convergence | R such that the series converges for |x − c| < R and diverges for |x − c| > R
 H: Convergence
@@ -1520,16 +1543,20 @@ Q: What is the radius of convergence of Σ x^{n}/n!? | Infinite.
 Q: What function is 1 + x + x^{2} + … for |x| < 1? | 1/(1 − x).
 SUM: Power series are infinite polynomials.
 SUM: They converge within a radius.
+EV: established | A power series converges inside its radius of convergence, where it can be differentiated and integrated term by term.
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | secondary | 2008 | https://www.publishorperish.com/
 NUM1#maths-u07-42-q1@1: What is the radius of convergence of Σ x^{n}/3^{n}? | 3 | 0 |  | It's geometric with ratio x/3, converging when |x/3| < 1, so R = 3.
 M1#maths-u07-42-q2@1: Which function has the power series x − x^{3}/3 + x^{5}/5 − …? | arctan x | sin x | ln(1 + x) | e^{−x} | tan x | Integrating 1/(1 + x^{2}) = 1 − x^{2} + x^{4} − … term by term gives arctan x.
 M2#maths-u07-42-q3@2: For Σ x^{n}/n, what is the interval of convergence? | −1 ≤ x < 1 | −1 < x < 1 | −1 ≤ x ≤ 1 | x < 1 | All real x | R = 1; at x = −1 it's the alternating harmonic series (converges), at x = 1 the harmonic series (diverges).
+NUM3@1: Σ_{n=1}^{∞} (x − 2)^{n}/(n × 5^{n}) converges on an interval whose left endpoint is included. What is that endpoint? | -3 | 0 |  | The ratio test gives |x − 2|/5 < 1, so R = 5 and the interval runs from −3 to 7. At x = −3 the series is Σ (−1)^{n}/n, which converges; at x = 7 it is the harmonic series, which diverges.
+SA3@2: Starting from 1/(1 − x) = Σ x^{n}, find a power series for x/(1 − x)^{2} and use it to find Σ_{n=1}^{∞} n/2^{n}. | Differentiate term by term for |x| < 1: 1/(1 − x)^{2} = Σ_{n=1}^{∞} n x^{n−1}. Multiply by x: x/(1 − x)^{2} = Σ_{n=1}^{∞} n x^{n}. At x = ½, inside the radius, Σ n/2^{n} = (½)/(¼) = 2. | Differentiates the geometric series term by term ; Gets Σ n x^{n−1} = 1/(1 − x)^{2} ; Multiplies by x ; Checks x = ½ is inside the radius ; Gets 2
 
 ## Taylor Series
 S: A Taylor series represents a function as a power series built from its derivatives at one point. Truncating it gives Taylor polynomials, the best polynomial approximations near that point, used in physics, engineering and computing.
 O: Find Taylor series and polynomials about a point
 O: Use Taylor polynomials to approximate values and understand the error
+LV: Year 1 · Application
 T: Taylor series | f(x) = Σ f^{(n)}(a)(x − a)^{n}/n!
 T: Taylor polynomial | The series truncated after the (x − a)^{n} term, an approximation of degree n
 H: The formula
@@ -1550,15 +1577,20 @@ Q: What is the first-order Taylor polynomial of f about a? | f(a) + f′(a)(x �
 Q: Why is sin θ ≈ θ for small θ? | It's the first term of the Taylor (Maclaurin) series of sin.
 SUM: Taylor series build functions from derivatives.
 SUM: Truncations give accurate local approximations.
+EV: established | A Taylor polynomial of degree n approximates f near a, with error given by Taylor's remainder term.
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | secondary | 2008 | https://www.publishorperish.com/
 M1#maths-u07-43-q1@1: What is the coefficient of (x − a)^{2} in a Taylor series? | f″(a)/2 | f″(a) | 2f″(a) | f′(a)/2 | f(a)/2 | Each term is f^{(n)}(a)(x − a)^{n}/n!, so the x^{2} term has f″(a)/2! = f″(a)/2.
 M2#maths-u07-43-q2@2: The linear approximation of e^{x} about x = 0 gives e^{0.1} ≈ | 1.1 | 1.0 | 1.105 | 0.9 | 1.01 | e^{x} ≈ 1 + x near 0, so e^{0.1} ≈ 1.1 (true value 1.105…).
+NUM2@2: Use the degree-2 Taylor polynomial of ln x about x = 1 to estimate ln 1.2. | 0.18 | 0.0005 |  | ln x ≈ (x − 1) − (x − 1)^{2}/2, so ln 1.2 ≈ 0.2 − 0.02 = 0.18 (true value 0.1823…).
+NUM3@1: Find the coefficient of (x − 1)^{3} in the Taylor series of e^{x} about x = 1, to 3 decimal places. | 0.453 | 0.001 |  | Every derivative of e^{x} at 1 is e, so the coefficient is e/3! = e/6 ≈ 0.453.
+SA3@2: Use sin x ≈ x − x^{3}/6 to estimate sin 0.5 and bound the error with Taylor's theorem. | sin 0.5 ≈ 0.5 − 0.125/6 ≈ 0.479167. The x^{4} term of the series is zero, so the polynomial is also the degree-4 one, and the remainder is f^{(5)}(ξ)x^{5}/5! with |f^{(5)}| = |cos ξ| ≤ 1. So the error is at most 0.5^{5}/120 ≈ 0.00026. The true value 0.479426 differs by 0.000259, within the bound. | Computes the estimate 0.4792 ; Uses the remainder f^{(n+1)}(ξ)x^{n+1}/(n + 1)! ; Bounds the derivative by 1 ; Gets an error bound of about 0.00026 ; Compares with the true value
 
 ## Maclaurin Series
 S: A Maclaurin series is a Taylor series about x = 0. The Maclaurin series of e^{x}, sin x, cos x and ln(1 + x) are among the most important formulas in mathematics, and combine to give Euler's formula.
 O: State and derive the standard Maclaurin series
 O: Combine standard series by substitution, multiplication and differentiation
+LV: A level · Application
 T: Maclaurin series | f(x) = Σ f^{(n)}(0) x^{n}/n!
 T: Euler's formula | e^{iθ} = cos θ + i sin θ, which follows from the series
 H: The standard series
@@ -1575,15 +1607,19 @@ X: Find the Maclaurin series of e^{2x} cos x up to the x^{2} term.
 > e^{2x} = 1 + 2x + 2x^{2} + …; cos x = 1 − x^{2}/2 + …
 > Multiply, keeping terms up to x^{2}: 1 + 2x + 2x^{2} − x^{2}/2
 > = 1 + 2x + (3/2)x^{2} + …
+P: Series also evaluate integrals with no elementary antiderivative: integrating e^{−x^{2}} term by term gives ∫_{0}^{1} e^{−x^{2}} dx ≈ 1 − 1/3 + 1/10 − 1/42 ≈ 0.743 (true value 0.747 to 3 d.p.).
 K: Learn the series for e^{x}, sin x, cos x, ln(1 + x) and (1 + x)^{n}, with their validity, and combine them algebraically.
 !: Using ln(1 + x) or (1 + x)^{n} series outside their ranges of validity.
 Q: What is the Maclaurin series of cos x up to x^{4}? | 1 − x^{2}/2 + x^{4}/24.
 Q: For which x is the series for ln(1 + x) valid? | −1 < x ≤ 1.
 SUM: Maclaurin series expand functions about 0.
 SUM: The standard series combine to give many more.
+EV: established | e^{x}, sin x and cos x equal their Maclaurin series for all x, and ln(1 + x) for −1 < x ≤ 1.
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 NUM1#maths-u07-44-q1@1: Use the first three terms of the series for e^{x} to estimate e^{0.2}, to 3 decimal places. | 1.22 | 0.0005 |  | 1 + 0.2 + 0.04/2 = 1.22 (true value 1.2214…).
 M1#maths-u07-44-q2@1: What is the coefficient of x^{3} in the Maclaurin series of sin x? | −1/6 | 1/6 | 1/3 | −1/3 | 0 | sin x = x − x^{3}/3! + x^{5}/5! − …, and 3! = 6, so the coefficient is −1/6.
 M3#maths-u07-44-q3@2: What is the Maclaurin series of e^{−x^{2}} up to x^{4}? | 1 − x^{2} + x^{4}/2 | 1 − x^{2} + x^{4} | 1 + x^{2} + x^{4}/2 | 1 − 2x + 2x^{2} | 1 − x^{2}/2 + x^{4}/24 | Substitute −x^{2} into e^{u} = 1 + u + u^{2}/2: 1 − x^{2} + x^{4}/2.
+NUM2@2: Using Maclaurin series, find lim_{x→0} (x − sin x)/x^{3}, to 3 decimal places. | 0.167 | 0.001 |  | x − sin x = x^{3}/6 − x^{5}/120 + …, so dividing by x^{3} gives 1/6 − x^{2}/120 + … → 1/6 ≈ 0.167.
+SA2@1,2: Derive the Maclaurin series of ln(1 + x) up to x^{3} from its derivatives, state where it is valid, and use it to estimate ln 1.1. | f(0) = 0; f′(x) = 1/(1 + x), so f′(0) = 1; f″(x) = −1/(1 + x)^{2}, so f″(0) = −1; f‴(x) = 2/(1 + x)^{3}, so f‴(0) = 2. The series is x − x^{2}/2 + 2x^{3}/3! = x − x^{2}/2 + x^{3}/3, valid for −1 < x ≤ 1. With x = 0.1: 0.1 − 0.005 + 0.000333 ≈ 0.09533 (true 0.09531). | Finds f(0), f′(0), f″(0) and f‴(0) ; Divides by the factorials ; Gets x − x^{2}/2 + x^{3}/3 ; States −1 < x ≤ 1 ; Estimates ln 1.1 ≈ 0.0953
 `;

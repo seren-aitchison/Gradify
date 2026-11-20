@@ -752,10 +752,171 @@
     "defined p- and s-polarisation; water-to-glass Brewster calculation"
    ],
    "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-22",
+   "title": "Birefringence",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "quarter-wave plate condition (input at 45°) stated; half-wave rotation question"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-23",
+   "title": "Optical activity",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added D/L-versus-rotation common mistake; Faraday-rotation contrast moved into a question; polarimeter SA"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "'Sugars right-handed (D)' implied D means dextrorotatory; clarified that D/L is configuration (D-fructose is laevorotatory)."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-24",
+   "title": "Lasers",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added laser-safety line, four-level vs three-level question and inversion SA"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-25",
+   "title": "Optical cavities",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added diode-laser mode spacing and stability calculations"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "Second source Saleh & Teich, Fundamentals of Photonics, 2nd edn (Wiley 2007), cited without chapter."
+    },
+    {
+     "class": "editorial",
+     "note": "'Detects trace gases at parts per trillion' softened to 'very low concentrations' (instrument-dependent)."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-26",
+   "title": "Fibre optics",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "explained the role of the cladding; NA and modal-delay calculations; dB rule"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-27",
+   "title": "Nonlinear optics",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "explained why χ(2) vanishes in centrosymmetric media; sum-frequency calculation"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "No OpenStax coverage; sources Boyd, Nonlinear Optics, 3rd edn (Academic Press 2008) and Saleh & Teich (2007), cited without chapter."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-28",
+   "title": "Ultrafast optics",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added scale paragraph, time–bandwidth calculation; reworded M1 stem that duplicated a u36 question"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "Attosecond pulse durations '~50–100 as' changed to 'tens to hundreds of attoseconds'; typical HHG pulses are a few hundred as, records about 43 as."
+    },
+    {
+     "class": "needs-source",
+     "note": "No OpenStax coverage; sources Weiner, Ultrafast Optics (Wiley 2009) and Saleh & Teich (2007)."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-29",
+   "title": "Integrated photonics",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added Si/SiO2 critical-angle calculation and Mach–Zehnder SA"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "Sources Saleh & Teich (2007) and OpenStax UP3 1.4 (TIR, the guiding principle); no OpenStax section on integrated photonics."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-30",
+   "title": "Adaptive optics",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "seeing-limit calculation; why IR is easier (r0 ∝ λ^6/5)"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "'Proved a supermassive black hole' changed to 'showed a supermassive compact object' in the notes (the M question keeps the standard wording)."
+    },
+    {
+     "class": "needs-source",
+     "note": "Second source Hardy, Adaptive Optics for Astronomical Telescopes (OUP 1998)."
+    }
+   ]
   }
  ],
  "notes": [
   "Physics lesson questions keep legacy position keys: all existing M questions and flashcards are kept in their original slots; new questions are appended after them. node --test tests/compat.test.mjs and tests/qa-content.test.mjs pass.",
-  "Sources: OpenStax sections were confirmed against the live openstax.org tables of contents (2026-11-19); AQA section numbers and titles were checked in the downloaded specification PDF (filestore.aqa.org.uk AQA-7407-7408-SP-2015.PDF, sha256 32a556da85fa0928c3600f8178d1a18fe5156b2ea36d76b541df866451721e20). The magnetic-field topics are AQA 3.7.5.x, not 3.7.4 or 7.4."
+  "Sources: OpenStax sections were confirmed against the live openstax.org tables of contents (2026-11-19); AQA section numbers and titles were checked in the downloaded specification PDF (filestore.aqa.org.uk AQA-7407-7408-SP-2015.PDF, sha256 32a556da85fa0928c3600f8178d1a18fe5156b2ea36d76b541df866451721e20). The magnetic-field topics are AQA 3.7.5.x, not 3.7.4 or 7.4.",
+  "Checks on 2026-11-20: node scripts/new-course.mjs check physics --unit u17 and --unit u19 both report 0 problems, length bias OK; node --test tests/qa-content.test.mjs tests/compat.test.mjs tests/course.test.mjs: 16 pass, 0 fail.",
+  "Textbook sources outside OpenStax/AQA (Griffiths 2017, Jackson 1999, Kittel 2005, Hecht 2017, Saleh & Teich 2007, Boyd 2008, Weiner 2009, Hardy 1998) are well-known works cited at book or chapter level only, used where OpenStax has no section; each is logged as needs-source for confirmation."
  ]
 }

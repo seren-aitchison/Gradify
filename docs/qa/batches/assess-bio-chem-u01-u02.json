@@ -1094,9 +1094,299 @@
     "extended written answer (SA) with model answer and marking points added"
    ],
    "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-01",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"What did the large-angle deflection of a few alpha particles show?\"",
+    "distractors lengthened to remove length bias: \"Why do heavy stable nuclei such as lead-208\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-02",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Why is the radius of Na⁺ (about 102 pm) much smaller\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-03",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Heavy water (D₂O) can be separated from ordinary water\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-04",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Thorium-234 (Z = 90) undergoes beta-minus decay.\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-05",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "second source added: Housecroft C.E. and Sharpe A.G., Inorganic Chemistry, 5th edition, chapter 1 \"Basic concepts: atoms\"",
+    "distractors lengthened to remove length bias: \"Potassium is more reactive than sodium, though both\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-06",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "second source added: OpenStax, Chemistry: Atoms First 2e, section 3.3 \"Development of Quantum Theory\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-07",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Why does each orbital hold at most two electrons?\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-08",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "second source added: OpenStax, Chemistry: Atoms First 2e, section 3.4 \"Electronic Structure of Atoms (Electron Configurations)\"",
+    "distractors lengthened to remove length bias: \"Why is chromium's configuration [Ar] 3d⁵ 4s¹\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-09",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Why does a 4s electron in potassium have lower energy\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-10",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Why can an orbital hold only two electrons?\"",
+    "distractors lengthened to remove length bias: \"Liquid oxygen is attracted to a magnet but liquid nitrogen\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "M2#chemistry-u02-10-q5 (What does the Pauli exclusion principle state?) duplicates a flashcard or another question in the same lesson; left unchanged because ids are permanent, but could be reworded to test a different point."
+    }
+   ]
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-11",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Why is the first ionisation energy of oxygen lower\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "M2#chemistry-u02-11-q5 (How many unpaired electrons does a nitrogen atom have?) duplicates a flashcard or another question in the same lesson; left unchanged because ids are permanent, but could be reworded to test a different point."
+    }
+   ]
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-12",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Why is boron's first ionisation energy (801 kJ mol⁻¹)\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-13",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Which group has the most exothermic first electron affinities?\"",
+    "distractors lengthened to remove length bias: \"Why is fluorine's first electron affinity less exothermic\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-14",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"What happens when an electron moves from a higher to a lower energy level?\"",
+    "distractors lengthened to remove length bias: \"Why do the lines in each hydrogen series get closer together\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-15",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Why do the emission and absorption lines of an element occur\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-16",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Chemical reasoning",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Why can electron diffraction be used to study crystal structures\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-17",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Chemical reasoning",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"What does an orbital represent in the quantum mechanical model?\"",
+    "distractors lengthened to remove length bias: \"Why can't we say exactly where an electron in an atom is\"",
+    "distractors lengthened to remove length bias: \"How does the quantum mechanical model explain why electron energies\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "M2#chemistry-u02-17-q6 (How does the quantum mechanical model describe an electron location?) overlaps M1#chemistry-u02-17-q2 and duplicates a flashcard or another question in the same lesson; left unchanged because ids are permanent, but could be reworded to test a different point."
+    }
+   ]
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-18",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Why is there zero probability of finding a 2p electron at the nucleus\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-19",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Caesium's nucleus has 55 protons and sodium's 11\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-20",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Chemical reasoning",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Chlorine water is added to potassium bromide solution\"",
+    "distractors lengthened to remove length bias: \"Scandium is in the d-block, but Sc³⁺ compounds are white\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
   }
  ],
  "notes": [
-  "In progress: files are saved one at a time; this report lists the lessons finished so far."
+  "All 95 lessons in biology u01-u02 and chemistry u01-u02 now pass content standard 2: node scripts/new-course.mjs check gives 0 problems and length bias OK for each unit.",
+  "Every lesson got LV (Year 1 · Foundation/Application/Biological or Chemical reasoning), EV, @n objective links on every existing question (ids untouched) and one new SA extended answer with model answer and marking points; lessons that already had an SA got a new M2 instead. New questions are appended after existing ones and carry no #id.",
+  "Length bias was fixed by rewriting distractors only (right answers and explanations unchanged) on 121 questions (biology u01 23, u02 48; chemistry u01 24, u02 26).",
+  "25 second sources added, all OpenStax sections confirmed on openstax.org on 2026-11-20, or Alberts et al., Molecular Biology of the Cell 6th edition chapters, or Housecroft and Sharpe Inorganic Chemistry 5th edition (both already cited elsewhere in these files). All 53 OpenStax links in the four files were checked: one was broken and has been fixed (biology u02-07).",
+  "Biology u02-17 to u02-23 (bound in mappings/lessons.js) changed only in metadata, questions and a second source; teaching text unchanged.",
+  "Several lessons grew by 30 to 39% (mostly short lessons that gained a source and an SA); totals: biology u01 +25%, u02 +28%, chemistry u01 +28%, u02 +25%.",
+  "Checks: node --test tests/sciences.test.mjs tests/qa-content.test.mjs tests/compat.test.mjs tests/courses.test.mjs: 62 pass, 0 fail."
  ]
 }

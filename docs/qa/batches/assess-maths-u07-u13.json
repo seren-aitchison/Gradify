@@ -386,10 +386,109 @@
    "course": "maths",
    "action": "enhanced",
    "findings": []
+  },
+  {
+   "lesson": "u07-37",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added NUM3 and SA3 (sphere surface area) questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-38",
+   "changes": [
+    "LV A level · Application; EV",
+    "added NUM2 (about the y-axis) and SA2 (washers) questions"
+   ],
+   "findings": [
+    {
+     "class": "curriculum-dependent",
+     "note": "Volumes of revolution are in A level Further Mathematics, not the DfE A level Mathematics content; LV says A level."
+    }
+   ],
+   "course": "maths",
+   "action": "enhanced"
+  },
+  {
+   "lesson": "u07-39",
+   "changes": [
+    "LV A level · Fluency; EV",
+    "reworded a bullet that said the sum of a series is found from u_{n} = S_{n} − S_{n−1} (that formula recovers the terms, not the sum)",
+    "added NUM3 and SA3 questions"
+   ],
+   "findings": [
+    {
+     "class": "error-fixed",
+     "note": "Bullet claimed 'the sum of a series can be found from its partial sums by u_{n} = S_{n} − S_{n−1}'; corrected to 'the terms can be recovered from the partial sums'."
+    }
+   ],
+   "course": "maths",
+   "action": "enhanced"
+  },
+  {
+   "lesson": "u07-40",
+   "changes": [
+    "LV A level · Application; EV",
+    "added NUM2 and SA2 (0.999… = 1) questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-41",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added common mistake on the ratio test for p-series",
+    "added NUM2, M3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-42",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added NUM3 (interval endpoint) and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-43",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added NUM2, NUM3 and SA3 (remainder bound) questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-44",
+   "changes": [
+    "LV A level · Application; EV",
+    "added paragraph on integrating e^{−x^{2}} by series",
+    "added NUM2 and SA2 questions"
+   ],
+   "findings": [
+    {
+     "class": "curriculum-dependent",
+     "note": "Maclaurin series are A level Further Mathematics content; LV says A level."
+    }
+   ],
+   "course": "maths",
+   "action": "enhanced"
   }
  ],
  "notes": [
   "NUM answers must use an ASCII hyphen-minus for negatives: Number() rejects the Unicode minus sign, and the question then silently fails to parse.",
-  "new-course check briefly failed with 'Invalid or unexpected token' once, apparently while another worker was writing a maths notes file it also loads; a rerun was clean."
+  "new-course check briefly failed with 'Invalid or unexpected token' once, apparently while another worker was writing a maths notes file it also loads; a rerun was clean.",
+  "u07: every lesson needed 2–3 new questions including a long SA model answer, so lessons grew by a median of about 35% (most for lessons that had only two questions), above the ~30% guide. No existing content was removed to compensate."
  ]
 }

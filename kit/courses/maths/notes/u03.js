@@ -295,6 +295,8 @@ SA2@1: A student simplifies (x + 6)/6 to x + 1. Explain the error, and simplify 
 S: A linear equation has the unknown only to the first power, like 3x + 5 = 20. Solving it means finding the value that makes it true, by doing the same thing to both sides until the unknown is alone.
 O: Solve linear equations, including with brackets, fractions and unknowns on both sides
 O: Form and solve linear equations from problems
+LV: GCSE · Fluency
+EV: established | A linear equation is solved by applying the same operation to both sides until the unknown stands alone; it has one solution, none or infinitely many.
 T: Linear equation | An equation in which the unknown appears only to the power 1
 T: Solution | A value of the unknown that makes the equation true
 H: Solving
@@ -322,12 +324,16 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 NUM1#maths-u03-09-q1@1: Solve 3(2x − 4) = 2(x + 6). | 6 | 0 |  | 6x − 12 = 2x + 12, so 4x = 24 and x = 6.
 M1#maths-u03-09-q2@1: Solve 7 − 2x = 15. | x = −4 | x = 4 | x = 11 | x = −11 | x = 8 | Subtract 7 from both sides: −2x = 8. Divide by −2: x = −4.
 M2#maths-u03-09-q3@2: Three consecutive integers add up to 141. What is the largest? | 48 | 47 | 46 | 49 | 45 | n + (n + 1) + (n + 2) = 141 gives 3n + 3 = 141, n = 46, so the largest is 48.
-NUM1#maths-u03-09-q4@1: Solve 5x − 7 = 2x + 8. | 5 | 0 |  | 3x = 15, so x = 5.
+NUM1#maths-u03-09-q4@1: Solve 5x − 7 = 2x + 8. | 5 | 0 |  | Subtract 2x and add 7 to both sides: 3x = 15, so x = 5. Check: 5 × 5 − 7 = 18 = 2 × 5 + 8.
+NUM3@2: Ann is three times as old as Ben. In 10 years' time she will be twice as old as him. How old is Ben now? | 10 | 0 | years | Let Ben be b: Ann is 3b. In 10 years, 3b + 10 = 2(b + 10) = 2b + 20, so b = 10 (Ann is 30; in 10 years 40 = 2 × 20).
+SA2@1: Solve (x + 3)/4 − (x − 1)/6 = 2, explaining each step. | Multiply every term by 12, the LCM of 4 and 6: 3(x + 3) − 2(x − 1) = 24. Expand, taking care with the minus sign: 3x + 9 − 2x + 2 = 24. Collect terms: x + 11 = 24, so x = 13. Check: 16/4 − 12/6 = 4 − 2 = 2. | Multiplies every term by 12 ; Expands the second bracket with the correct sign ; Gets x = 13 ; Checks by substitution
 
 ## Simultaneous Equations
 S: Simultaneous equations are two or more equations that must be true at the same time. With two unknowns you need two equations, and the solution is where their graphs meet.
 O: Solve linear simultaneous equations by elimination and substitution
 O: Interpret solutions graphically and form equations from problems
+LV: GCSE and A level · Application
+EV: established | Two linear equations in two unknowns have one solution, none (parallel lines) or infinitely many (the same line).
 T: Elimination | Adding or subtracting equations to remove one unknown
 T: Substitution | Rearranging one equation and substituting it into the other
 H: Elimination
@@ -356,11 +362,15 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 M1#maths-u03-10-q1@1: Solve x + y = 10 and x − y = 4. | x = 7, y = 3 | x = 3, y = 7 | x = 6, y = 4 | x = 5, y = 5 | x = 14, y = −4 | Adding gives 2x = 14, so x = 7 and y = 3.
 M2#maths-u03-10-q2@2: Solve 2x + 3y = 12 and 4x − y = 10. | x = 3, y = 2 | x = 2, y = 3 | x = 4, y = 6 | x = 1.5, y = 3 | x = 3, y = −2 | From the second, y = 4x − 10; then 2x + 12x − 30 = 12 gives x = 3 and y = 2.
 NUM1#maths-u03-10-q3@1: Solve x + y = 7 and x − y = 3. What is x? | 5 | 0 |  | Adding the equations gives 2x = 10, so x = 5 (and y = 2).
+M3@1: Solve 3x + 4y = 18 and 5x − 6y = −8. | x = 2, y = 3 | x = 3, y = 2 | x = −2, y = 6 | x = 2, y = −3 | Multiply by 3 and by 2: 9x + 12y = 54 and 10x − 12y = −16. Adding gives 19x = 38, so x = 2 and 4y = 12, y = 3. (−2, 6) fits only the first equation.
+SA2@2: Explain, algebraically and graphically, why 2x + y = 5 and 4x + 2y = 7 have no solution. | Doubling the first equation gives 4x + 2y = 10, but the second says 4x + 2y = 7; the same expression can't equal both, so there is no solution. Graphically, the lines are y = 5 − 2x and y = 3.5 − 2x: both have gradient −2 but different intercepts, so they are parallel and never meet. | Shows the left-hand sides match after doubling ; Notes 10 ≠ 7 ; Rearranges both to y = mx + c with gradient −2 ; Concludes parallel lines don't intersect
 
 ## Quadratic Equations
 S: A quadratic equation has the unknown squared, like x^{2} − 5x + 6 = 0. It can have two, one or no real solutions, found by factorising, completing the square or the quadratic formula.
 O: Solve quadratic equations by factorising
 O: Interpret the solutions as roots of a graph
+LV: GCSE and A level · Application
+EV: established | If a product is zero, one of its factors is zero, so a factorised quadratic gives its roots directly.
 T: Quadratic equation | An equation of the form ax^{2} + bx + c = 0 with a ≠ 0
 T: Root | A solution of an equation; the x-coordinate where a graph crosses the x-axis
 H: Solving by factorising
@@ -392,11 +402,14 @@ M1#maths-u03-11-q1@1: Solve x^{2} + 2x − 15 = 0. | x = 3 or x = −5 | x = −
 M2#maths-u03-11-q2@2: Solve 2x^{2} = 18. | x = 3 or x = −3 | x = 3 | x = 9 | x = ±9 | x = 4.5 | Divide by 2 to get x^{2} = 9, so x = ±3: both the positive and negative roots count.
 M3#maths-u03-11-q3@2: Why is it wrong to solve x^{2} = 5x by dividing both sides by x? | It loses the solution x = 0 | It gives the wrong positive root | Division isn't allowed in equations | It makes the equation linear | It doubles the solutions | Dividing by x assumes x ≠ 0, but x = 0 is a solution.
 NUM1#maths-u03-11-q4@1: What is the larger root of x^{2} − x − 12 = 0? | 4 | 0 |  | (x − 4)(x + 3) = 0 gives x = 4 or x = −3.
+SA2@1,2: A ball's height in metres after t seconds is h = 20t − 5t^{2}. Find when it is 15 m high, and explain why there are two answers. | Set 20t − 5t^{2} = 15, so 5t^{2} − 20t + 15 = 0 and t^{2} − 4t + 3 = 0. Factorise: (t − 1)(t − 3) = 0, so t = 1 or t = 3. Both make sense: the ball passes 15 m on the way up at 1 s and on the way down at 3 s; the graph of h is a parabola crossing the line h = 15 twice. | Forms 5t^{2} − 20t + 15 = 0 ; Divides by 5 and factorises ; Gets t = 1 and t = 3 ; Interprets both as up and down
 
 ## Completing the Square
 S: Completing the square rewrites x^{2} + bx + c as (x + p)^{2} + q. It solves any quadratic, gives the turning point of a parabola, and is how the quadratic formula is derived.
 O: Write a quadratic in completed-square form
 O: Use completed-square form to solve equations and find turning points
+LV: GCSE and A level · Application
+EV: established | Any quadratic ax^{2} + bx + c can be written as a(x + p)^{2} + q, which gives its turning point (−p, q).
 T: Completed-square form | A quadratic written as a(x + p)^{2} + q
 T: Turning point | The minimum or maximum point of a parabola; for (x + p)^{2} + q it's (−p, q)
 H: The method
@@ -424,11 +437,16 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 SRC: Department for Education, Mathematics AS and A level subject content: algebra and functions | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 M1#maths-u03-12-q1@1: Write x^{2} − 4x + 9 in the form (x + p)^{2} + q. | (x − 2)^{2} + 5 | (x − 2)^{2} + 9 | (x − 4)^{2} − 7 | (x + 2)^{2} + 5 | (x − 2)^{2} − 5 | (x − 2)^{2} = x^{2} − 4x + 4, so add 5 to reach 9.
 M2#maths-u03-12-q2@2: What is the minimum value of x^{2} + 6x + 14? | 5 | 14 | −3 | 3 | 9 | (x + 3)^{2} + 5 is smallest when the square is zero, giving 5.
+NUM1@2: What is the x-coordinate of the turning point of y = x^{2} − 10x + 3? | 5 | 0 |  | x^{2} − 10x + 3 = (x − 5)^{2} − 22, so the minimum is at (5, −22).
+M3@1: Write 3x^{2} + 12x − 1 in the form a(x + p)^{2} + q. | 3(x + 2)^{2} − 13 | 3(x + 2)^{2} − 5 | 3(x + 6)^{2} − 37 | (3x + 2)^{2} − 5 | 3(x^{2} + 4x) − 1 = 3((x + 2)^{2} − 4) − 1 = 3(x + 2)^{2} − 12 − 1. Forgetting to multiply the −4 by 3 gives −5.
+SA3@1,2: Solve 2x^{2} + 8x − 3 = 0 by completing the square, giving exact answers. | Factor 2 from the x terms: 2(x^{2} + 4x) − 3 = 2((x + 2)^{2} − 4) − 3 = 2(x + 2)^{2} − 11. So 2(x + 2)^{2} = 11 and (x + 2)^{2} = 11/2. Taking both roots, x + 2 = ±√(11/2), so x = −2 ± √(11/2) = −2 ± √22/2. | Takes out the factor 2 correctly ; Completes the square to 2(x + 2)^{2} − 11 ; Rearranges to (x + 2)^{2} = 11/2 ; Gives both roots exactly
 
 ## The Quadratic Formula
 S: The quadratic formula gives the solutions of any quadratic equation directly from its coefficients. The discriminant inside it tells you how many real solutions there are before you calculate them.
 O: Solve quadratic equations using the formula
 O: Use the discriminant to find the number of real roots
+LV: GCSE and A level · Application
+EV: established | The roots of ax^{2} + bx + c = 0 are (−b ± √(b^{2} − 4ac))/(2a), and the sign of b^{2} − 4ac gives the number of real roots.
 T: Quadratic formula | x = (−b ± √(b^{2} − 4ac))/(2a) for ax^{2} + bx + c = 0
 T: Discriminant | b^{2} − 4ac, which decides the nature of the roots
 H: Using the formula
@@ -458,11 +476,15 @@ SRC: Department for Education, Mathematics AS and A level subject content: algeb
 NUM1#maths-u03-13-q1@1: What is the discriminant of 2x^{2} − 7x + 3 = 0? | 25 | 0 |  | b^{2} − 4ac = 49 − 24 = 25, so there are two distinct real roots.
 M1#maths-u03-13-q2@1: How many real roots does x^{2} − 6x + 9 = 0 have? | One (repeated) | Two | None | Three | Infinitely many | b^{2} − 4ac = 36 − 36 = 0, so there's one repeated root, x = 3.
 M3#maths-u03-13-q3@2: For which value of k does x^{2} + 4x + k = 0 have no real roots? | k = 5 | k = 4 | k = 3 | k = 0 | k = −1 | No real roots needs 16 − 4k < 0, so k > 4; only k = 5 works.
+M2@1: Solve x^{2} − 4x − 1 = 0, giving exact answers. | x = 2 ± √5 | x = −2 ± √5 | x = 4 ± √5 | x = 2 ± √3 | a = 1, b = −4, c = −1: x = (4 ± √(16 + 4))/2 = (4 ± √20)/2 = (4 ± 2√5)/2 = 2 ± √5.
+SA3@2: Find the values of k for which kx^{2} + 6x + k = 0 has two distinct real roots. | It's a quadratic only if k ≠ 0. Two distinct real roots need b^{2} − 4ac > 0: 36 − 4k^{2} > 0, so k^{2} < 9 and −3 < k < 3. Excluding k = 0 (which gives the linear equation 6x = 0 with one root), the answer is −3 < k < 3, k ≠ 0. | Uses the discriminant condition b^{2} − 4ac > 0 ; Forms 36 − 4k^{2} > 0 ; Solves to −3 < k < 3 ; Excludes k = 0 with a reason
 
 ## Cubic Equations
 S: A cubic equation has the unknown cubed, like x^{3} − 6x^{2} + 11x − 6 = 0. Every cubic has at least one real root, and once one root is found, the rest come from a quadratic.
 O: Solve cubic equations using the factor theorem
 O: Sketch cubic graphs from their roots
+LV: GCSE and A level · Application
+EV: established | Every cubic with real coefficients has at least one real root, and a root a gives a factor (x − a) by the factor theorem.
 T: Cubic | A polynomial of degree 3: ax^{3} + bx^{2} + cx + d with a ≠ 0
 T: Degree | The highest power of the variable in a polynomial
 H: Solving cubics
@@ -480,6 +502,7 @@ X: Solve x^{3} − 6x^{2} + 11x − 6 = 0.
 > Roots: x = 1, 2, 3
 K: Take out common factors; find one root with the factor theorem; divide to a quadratic; sketch from the roots and the sign of a.
 !: Assuming a cubic with a positive constant has no negative roots: test negative divisors too.
+!: Dividing through by x to simplify x^{3} − 4x = 0: that loses the root x = 0. Factorise x out instead.
 Q: How many real roots must a cubic have? | At least one.
 Q: What does a squared factor (x − a)^{2} mean for the graph? | It touches the x-axis at x = a.
 SUM: Cubics factorise once one root is found.
@@ -488,11 +511,16 @@ SRC: Department for Education, Mathematics AS and A level subject content: algeb
 SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | secondary | 1993 | https://link.springer.com/
 M1#maths-u03-14-q1@1: What are the roots of x(x − 4)(x + 1) = 0? | 0, 4 and −1 | 4 and −1 only | 0, −4 and 1 | 4 only | 0 only | Each factor gives a root: x = 0, x = 4, x = −1.
 M2#maths-u03-14-q2@2: Which value is a root of x^{3} − 2x^{2} − 5x + 6? | x = 1 | x = −1 | x = 2 | x = −2 | x = 6 | Substituting gives f(1) = 1 − 2 − 5 + 6 = 0, so x = 1 is a root.
+NUM2@1: x = 2 is a root of x^{3} − 3x^{2} − 4x + 12 = 0. What is the sum of the other two roots? | 1 | 0 |  | Dividing by (x − 2) leaves x^{2} − x − 6 = (x − 3)(x + 2), so the other roots are 3 and −2, which add to 1.
+M3@2: Which curve touches the x-axis at x = 2, crosses it at x = −1 and meets the y-axis at (0, 4)? | y = (x − 2)^{2}(x + 1) | y = (x + 2)^{2}(x − 1) | y = (x − 2)(x + 1)^{2} | y = −(x − 2)^{2}(x + 1) | A touch at x = 2 needs the squared factor (x − 2)^{2}, a crossing at −1 needs (x + 1), and x = 0 gives 4 × 1 = 4. The negative version meets the y-axis at −4.
+SA2@1: Solve x^{3} + 2x^{2} − 5x − 6 = 0, showing how you find the first root. | Try divisors of −6: f(1) = −8, but f(−1) = −1 + 2 + 5 − 6 = 0, so (x + 1) is a factor. Dividing gives x^{3} + 2x^{2} − 5x − 6 = (x + 1)(x^{2} + x − 6) = (x + 1)(x + 3)(x − 2). The roots are x = −1, x = −3 and x = 2. | Tests divisors of the constant term ; Finds f(−1) = 0 ; Divides to get x^{2} + x − 6 ; Gives all three roots
 
 ## Polynomial Equations
 S: Polynomial equations of any degree arise in modelling and science. Low-degree ones can be solved exactly; for higher degrees we factorise where possible and otherwise solve numerically or graphically.
 O: Solve polynomial equations by factorising and substitution
 O: Recognise when numerical or graphical methods are needed
+LV: A level · Application
+EV: established | A polynomial of degree n has at most n real roots, and there is no general formula in radicals for degree 5 or more (Abel–Ruffini).
 T: Polynomial equation | An equation p(x) = 0 where p is a polynomial
 T: Hidden quadratic | An equation like x^{4} − 5x^{2} + 4 = 0 that becomes quadratic with a substitution (u = x^{2})
 H: Exact methods
@@ -519,11 +547,15 @@ SRC: Stewart I, Galois Theory (5th edn, CRC Press 2022) | secondary | 2022 | htt
 NUM1#maths-u03-15-q1@2: How many real solutions does x^{4} − 10x^{2} + 9 = 0 have? | 4 | 0 |  | u^{2} − 10u + 9 = 0 gives u = 1 or 9, so x = ±1 or ±3: four solutions.
 M1#maths-u03-15-q2@1: What is the maximum number of real roots a degree 4 polynomial can have? | 4 | 2 | 3 | 5 | 8 | A polynomial of degree n has at most n real roots.
 M2#maths-u03-15-q3@2: What are the real solutions of x^{4} − 81 = 0? | x = 3 or x = −3 | x = 3 only | x = ±9 | x = ±3 and ±3i as real roots | x = 81 | (x^{2} − 9)(x^{2} + 9) = 0; x^{2} + 9 = 0 has no real roots.
+M3@1: Solve 2^{2x} − 5 × 2^{x} + 4 = 0. | x = 0 or x = 2 | x = 1 or x = 4 | x = 0 or x = 4 | x = 2 only | Let u = 2^{x}: u^{2} − 5u + 4 = 0, so u = 1 or u = 4. Then 2^{x} = 1 gives x = 0 and 2^{x} = 4 gives x = 2. 1 and 4 are values of u, not x.
+SA2@2: Explain how you would show that x^{5} + x − 1 = 0 has a root between 0 and 1, and narrow it down, and why you can't just use a formula. | No general formula in radicals exists for degree 5 (Abel–Ruffini), so use a sign change. f(0) = −1 and f(1) = 1; f is continuous, so a root lies between 0 and 1. Bisect: f(0.5) ≈ −0.47 and f(0.75) ≈ −0.01, while f(0.8) ≈ 0.13, so the root is between 0.75 and 0.8. Repeat to the accuracy needed. | Says there's no general quintic formula ; Shows the sign change from f(0) to f(1) ; Mentions continuity ; Narrows the interval with correct values
 
 ## Inequalities
 S: An inequality compares two quantities using <, >, ≤ or ≥. Solving one gives a range of values rather than a single answer, shown on a number line or in set or interval notation.
 O: Solve linear and quadratic inequalities
 O: Represent solution sets on number lines and in set notation
+LV: GCSE and A level · Application
+EV: established | Multiplying or dividing an inequality by a negative number reverses it, and a quadratic inequality is solved from its critical values and a sketch.
 T: Inequality | A statement that one quantity is less than, greater than, or at most or at least another
 T: Critical values | The values where the two sides of an inequality are equal; for a quadratic inequality, the roots
 H: Linear inequalities
@@ -541,6 +573,7 @@ X: Solve 2x^{2} − 5x − 3 ≥ 0.
 > x ≤ −1/2 or x ≥ 3
 K: Reverse the inequality when multiplying or dividing by a negative; for quadratics, find the roots and sketch.
 !: Writing −2 > x > 3 for "x < −2 or x > 3": no number satisfies it.
+!: Forgetting to reverse the sign: from −3x < 12, writing x < −4 instead of x > −4 (test x = 0: −3 × 0 < 12 is true, so 0 must be a solution).
 Q: Solve 5 − 2x > 1. | x < 2.
 Q: Solve x^{2} < 16. | −4 < x < 4.
 SUM: Inequalities have ranges of solutions.
@@ -550,11 +583,15 @@ SRC: Department for Education, Mathematics AS and A level subject content: algeb
 M1#maths-u03-16-q1@1: Solve −4x ≥ 20. | x ≤ −5 | x ≥ −5 | x ≤ 5 | x ≥ 5 | x ≤ −80 | Dividing by −4 reverses the inequality: x ≤ −5.
 M2#maths-u03-16-q2@2: Solve x^{2} − 9 > 0. | x < −3 or x > 3 | −3 < x < 3 | x > 3 | x > ±3 | x > 9 | The parabola is above the axis outside its roots, ±3.
 M3#maths-u03-16-q3@2: How many integers satisfy −3 ≤ 2x + 1 < 8? | 6 | 5 | 7 | 4 | 11 | −4 ≤ 2x < 7 gives −2 ≤ x < 3.5: the integers −2, −1, 0, 1, 2, 3.
+NUM1@1: What is the smallest integer x that satisfies 3x − 7 > 11? | 7 | 0 |  | 3x > 18, so x > 6. The inequality is strict, so 6 itself doesn't work and the smallest integer is 7.
+SA2@1,2: Solve x^{2} + 2x − 15 ≤ 0, explaining how a sketch helps, and give the answer in set notation. | Critical values: (x + 5)(x − 3) = 0, so x = −5 or x = 3. The parabola y = x^{2} + 2x − 15 opens upwards, so it is on or below the x-axis between its roots. So −5 ≤ x ≤ 3 (inclusive, because of ≤). In set notation: {x : −5 ≤ x ≤ 3}. | Finds the critical values −5 and 3 ; Uses an upward parabola to choose the region between the roots ; Includes the endpoints for ≤ ; Writes correct set notation
 
 ## Simultaneous Inequalities
 S: Simultaneous inequalities are several conditions that must all hold at once. In two variables, each inequality is a region of the plane, and the solution set is where all the regions overlap: the basis of linear programming.
 O: Solve simultaneous inequalities in one variable
 O: Represent and find regions defined by inequalities in two variables
+LV: GCSE and A level · Application
+EV: established | The solution of several inequalities is the overlap of their separate solution sets; in two variables it is a region of the plane.
 T: Feasible region | The set of points satisfying all the inequalities at once
 T: Boundary line | The line where an inequality becomes an equation: solid for ≤ or ≥, dashed for < or >
 H: One variable
@@ -572,6 +609,7 @@ X: List the integer points (x, y) satisfying x ≥ 1, y > x and x + y ≤ 6.
 > Points: (1, 2), (1, 3), (1, 4), (1, 5), (2, 3), (2, 4)
 K: Find the overlap of all conditions; in 2D, draw boundaries (solid or dashed) and test a point to choose the side.
 !: Drawing y > x with a solid line, which includes points on the line.
+!: Testing a point that lies on the boundary itself, such as (0, 0) for y > 2x: it tells you nothing. Choose a point clearly on one side, such as (0, 1).
 Q: What does a dashed boundary line mean? | Points on the line aren't included (strict inequality).
 Q: Solve x > 3 and x < 1 together. | No solution.
 SUM: Simultaneous inequalities overlap.
@@ -580,11 +618,16 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 SRC: Department for Education, Mathematics AS and A level subject content: algebra and functions | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 M1#maths-u03-17-q1@1: Which values satisfy x > −2 and x ≤ 3? | −2 < x ≤ 3 | x ≤ −2 | x > 3 | −2 ≤ x < 3 | Any real number | The overlap of x > −2 and x ≤ 3 is −2 < x ≤ 3.
 M2#maths-u03-17-q2@2: Which point lies in the region y < 2x, y > 1? | (2, 3) | (1, 3) | (0, 0) | (3, 0) | (1, 2) | For (2, 3): 3 < 4 and 3 > 1, so both hold.
+NUM2@2: How many points with whole-number coordinates satisfy x ≥ 0, y ≥ 0 and x + y ≤ 3? | 10 | 0 |  | Count by x: x = 0 gives y = 0 to 3 (4 points), x = 1 gives 3, x = 2 gives 2 and x = 3 gives 1: 4 + 3 + 2 + 1 = 10.
+M3@2: Which inequalities describe the triangle with vertices (0, 0), (4, 0) and (0, 2), including its edges? | x ≥ 0, y ≥ 0, x + 2y ≤ 4 | x ≥ 0, y ≥ 0, 2x + y ≤ 4 | x ≥ 0, y ≥ 0, x + y ≤ 4 | x ≥ 0, y ≥ 0, x + 2y ≥ 4 | The line through (4, 0) and (0, 2) is x + 2y = 4, and the origin satisfies x + 2y ≤ 4, so the triangle is on that side.
+SA2@1: Solve 3x − 2 > 7 and 2x + 1 ≤ 15 together, and list the integers that satisfy both. | Solve each: 3x > 9 gives x > 3; 2x ≤ 14 gives x ≤ 7. Both must hold, so take the overlap: 3 < x ≤ 7. The integers are 4, 5, 6 and 7 (3 is excluded by the strict inequality, 7 is included). | Solves 3x − 2 > 7 to x > 3 ; Solves 2x + 1 ≤ 15 to x ≤ 7 ; Combines as 3 < x ≤ 7 ; Lists 4, 5, 6, 7 with the endpoints handled correctly
 
 ## Absolute Value Equations
 S: The absolute value (modulus) |x| is the distance of x from zero, so it's never negative. Equations and inequalities with absolute values usually split into two cases.
 O: Solve equations and inequalities involving |x|
 O: Sketch graphs of y = |f(x)|
+LV: A level · Application
+EV: established | |x − a| = b means x − a = b or x − a = −b, and case solutions must be checked in the original equation.
 T: Modulus | The absolute value |x|: x if x ≥ 0 and −x if x < 0
 T: Case analysis | Splitting a problem into separate cases, such as the inside of a modulus being positive or negative
 H: Equations
@@ -611,11 +654,16 @@ SRC: Department for Education, Mathematics AS and A level subject content: algeb
 SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | secondary | 1993 | https://link.springer.com/
 M1#maths-u03-18-q1@1: Solve |2x| = 10. | x = 5 or x = −5 | x = 5 | x = 20 | x = ±20 | x = −5 | The modulus is 10 when 2x = 10 or 2x = −10, giving x = 5 or x = −5.
 M2#maths-u03-18-q2@2: Which describes |x − 1| ≥ 4? | x ≤ −3 or x ≥ 5 | −3 ≤ x ≤ 5 | x ≥ 5 | x ≥ 3 | x ≤ −5 or x ≥ 3 | The distance from 1 is at least 4: x ≤ 1 − 4 or x ≥ 1 + 4.
+NUM1@1: What is the larger solution of |3x − 6| = 9? | 5 | 0 |  | 3x − 6 = 9 gives x = 5, and 3x − 6 = −9 gives x = −1. The larger is 5.
+M3@1: Solve |x + 1| = 2x − 4. | x = 5 only | x = 5 or x = 1 | x = 1 only | No solution | If x + 1 ≥ 0: x + 1 = 2x − 4 gives x = 5, valid. If x + 1 < 0: −x − 1 = 2x − 4 gives x = 1, but 1 + 1 isn't negative, so reject it (|2| = 2, but 2 × 1 − 4 = −2).
+SA2@2: Describe the graph of y = |2x − 4| and use it to solve |2x − 4| < 6. | The graph is a V with its vertex on the x-axis at (2, 0), meeting the y-axis at (0, 4); the part of y = 2x − 4 below the axis is reflected upwards. |2x − 4| < 6 where the V is below the line y = 6: −6 < 2x − 4 < 6, so −2 < 2x < 10 and −1 < x < 5. | Gives the vertex (2, 0) and V shape ; Explains the reflection of the negative part ; Writes −6 < 2x − 4 < 6 ; Gets −1 < x < 5
 
 ## Rational Equations
 S: A rational equation contains algebraic fractions, like 2/x + 3/(x + 1) = 1. Clearing the denominators turns it into a polynomial equation, but any solution that makes a denominator zero must be rejected.
 O: Solve equations involving algebraic fractions
 O: Identify and reject extraneous solutions
+LV: A level · Application
+EV: established | Multiplying through by the common denominator can introduce extraneous solutions, so values making a denominator zero must be rejected.
 T: Rational expression | A quotient of two polynomials
 T: Extraneous solution | A value produced by the algebra that doesn't satisfy the original equation
 H: Method
@@ -642,12 +690,16 @@ SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | secondary | 1993 | https:/
 NUM1#maths-u03-19-q1@1: Solve 6/x + 1 = 4. | 2 | 0 |  | 6/x = 3, so x = 2 (which isn't excluded).
 M2#maths-u03-19-q2@2: How many solutions does (x^{2} − 9)/(x − 3) = 6 have? | None | One | Two | Three | Infinitely many | It simplifies to x + 3 = 6, so x = 3, but x = 3 is excluded: no solutions.
 M3#maths-u03-19-q3@2: Solve 1/x + 1/(x + 1) = 5/6. | x = 2 or x = −3/5 | x = 2 only | x = 3 | x = −2 or x = 3/5 | x = 6 | 6(x + 1) + 6x = 5x(x + 1) gives 5x^{2} − 7x − 6 = 0, so (5x + 3)(x − 2) = 0.
+M1@2: Which values of x are excluded when solving 3/(x − 2) + 1/(x + 5) = 1? | x = 2 and x = −5 | x = −2 and x = 5 | x = 2 only | x = 0 and x = 1 | A value is excluded when it makes a denominator zero: x − 2 = 0 at x = 2 and x + 5 = 0 at x = −5.
+SA2@1,2: One pipe fills a tank in 4 hours and another in 6 hours. Set up a rational equation for the time t hours they take together, solve it, and explain the method. | In one hour the pipes fill 1/4 and 1/6 of the tank, and together 1/t. So 1/4 + 1/6 = 1/t. Multiply by 12t: 3t + 2t = 12, so t = 12/5 = 2.4 hours, which is 2 hours 24 minutes. t = 0 is excluded, and 2.4 is less than either time alone, which makes sense. | Uses rates 1/4 and 1/6 per hour ; Forms 1/4 + 1/6 = 1/t ; Clears denominators to get t = 2.4 ; Converts to 2 h 24 min or checks sense
 
 
 ## Surds
 S: A surd is a root that can't be simplified to a rational number, such as √2 or √12. Leaving answers in surd form keeps them exact, which matters in geometry, trigonometry and exact A level answers.
 O: Simplify surds and calculate with them
 O: Rationalise denominators
+LV: GCSE and A level · Application
+EV: established | √(ab) = √a × √b for non-negative a and b, and multiplying by the conjugate rationalises a denominator of the form a + √b.
 T: Surd | An irrational root, such as √3 or ∛5, left in root form to keep it exact
 T: Rationalise the denominator | Rewrite a fraction so its denominator has no surds
 H: Rules
@@ -677,11 +729,15 @@ SRC: Department for Education, Mathematics AS and A level subject content: algeb
 M1#maths-u03-20-q1@1: Simplify √75. | 5√3 | 3√5 | 25√3 | 15√5 | 75√1 | 75 = 25 × 3 and 25 is a square number with √25 = 5, so √75 = 5√3.
 M2#maths-u03-20-q2@2: Rationalise 10/√5. | 2√5 | 10√5 | 5√2 | 2 | √50/5 | Multiply top and bottom by √5: 10√5/5, which simplifies to 2√5.
 M3#maths-u03-20-q3@2: Expand (2 + √3)^{2}. | 7 + 4√3 | 7 | 4 + 3 | 7 + 2√3 | 13 | 4 + 4√3 + 3 = 7 + 4√3: the middle term is 2 × 2 × √3.
+NUM2@1: √50 + √18 = √n. Find n. | 128 | 0 |  | √50 = 5√2 and √18 = 3√2, so the sum is 8√2 = √(64 × 2) = √128.
+SA3@2: Rationalise the denominator of (1 + √3)/(2 − √3), simplifying fully, and explain why the method works. | Multiply top and bottom by the conjugate 2 + √3. The denominator becomes (2 − √3)(2 + √3) = 4 − 3 = 1, a difference of two squares with no surd. The numerator is (1 + √3)(2 + √3) = 2 + √3 + 2√3 + 3 = 5 + 3√3. So the answer is 5 + 3√3. | Multiplies by the conjugate 2 + √3 ; Explains the difference of two squares removes the surd ; Expands the numerator correctly ; Gets 5 + 3√3
 
 ## Logarithms
 S: A logarithm answers the question "what power?": log_{2} 8 = 3 because 2^{3} = 8. Logarithms turn multiplication into addition and powers into multiplication, which is why they solve exponential equations and compress huge ranges of values.
 O: Convert between exponential and logarithmic forms
 O: Use the laws of logarithms
+LV: A level · Application
+EV: established | log_{a} x is the inverse of a^{x}, and the product, quotient and power laws follow from the index laws.
 T: Logarithm | log_{a} x is the power to which a must be raised to give x
 T: Natural logarithm | ln x = log_{e} x, the logarithm to base e ≈ 2.718
 H: Definition
@@ -715,11 +771,15 @@ NUM1#maths-u03-21-q1@1: Evaluate log_{3} 81 + log_{2} (1/4). | 2 | 0 |  | log_{3
 M1#maths-u03-21-q2@1: Which statement is equivalent to log_{5} 125 = 3? | 5^{3} = 125 | 3^{5} = 125 | 125^{3} = 5 | 5 × 3 = 125 | 125^{5} = 3 | The logarithm is the power: 5 raised to 3 gives 125.
 M2#maths-u03-21-q3@2: Which equals log 12? | log 3 + log 4 | log 3 × log 4 | log 6 + log 6 | 12 log 1 | log 24 − log 12 | The log of a product is the sum of the logs: log(3 × 4) = log 3 + log 4.
 NUM1#maths-u03-21-q4@1: Solve log₂ x = 5. | 32 | 0 |  | log₂ x = 5 means x = 2^{5} = 32.
+M3@2: Given log 2 = p and log 3 = q, which expression equals log 72? | 3p + 2q | 2p + 3q | 6pq | 3p × 2q | 72 = 2^{3} × 3^{2}, so log 72 = log 2^{3} + log 3^{2} = 3 log 2 + 2 log 3 = 3p + 2q.
+SA2@1,2: Explain why log(x + y) is not equal to log x + log y, using an example, and state what log x + log y does equal. | The product law says log x + log y = log(xy), because adding powers corresponds to multiplying numbers. There is no law for a sum. Example in base 10: log 10 + log 10 = 1 + 1 = 2 = log 100, but log(10 + 10) = log 20 ≈ 1.30. | States log x + log y = log(xy) ; Links it to adding indices ; Gives a numerical counterexample ; Concludes there is no law for log of a sum
 
 ## Exponential Equations
 S: In an exponential equation the unknown is in a power, like 3^{x} = 20. Taking logarithms brings the unknown down, and equations in disguise (like 4^{x} − 2^{x+1} = 8) become quadratics.
 O: Solve exponential equations using logarithms
 O: Solve exponential equations that reduce to quadratics
+LV: A level · Application
+EV: established | Taking logarithms of both sides solves a^{x} = b as x = ln b/ln a, and a^{x} > 0 for every real x.
 T: Exponential equation | An equation with the unknown in an exponent
 T: Exponential function | A function such as f(x) = a^{x} or e^{kx}, where the variable is the power
 H: Using logarithms
@@ -747,11 +807,15 @@ SRC: Courant R, Robbins H, What Is Mathematics? (2nd edn, Oxford University Pres
 NUM1#maths-u03-22-q1@1: Solve 2^{x} = 50, to 3 significant figures. | 5.64 | 0.01 |  | x = ln 50/ln 2 ≈ 5.644, which is 5.64 to 3 significant figures.
 M1#maths-u03-22-q2@1: Solve 8^{x} = 32. | x = 5/3 | x = 4 | x = 1/4 | x = 3/5 | x = 2 | Write both as powers of 2: 2^{3x} = 2^{5}, so 3x = 5 and x = 5/3.
 M3#maths-u03-22-q3@2: Solve 9^{x} − 4 × 3^{x} + 3 = 0. | x = 0 or x = 1 | x = 1 or x = 3 | x = 0 only | x = 3 only | x = −1 or x = 1 | With u = 3^{x}: u^{2} − 4u + 3 = 0, so u = 1 or 3, giving x = 0 or 1.
+NUM2@1: Solve 5^{x + 1} = 12, giving x to 3 significant figures. | 0.544 | 0.001 |  | (x + 1) ln 5 = ln 12, so x + 1 = ln 12/ln 5 ≈ 1.544 and x ≈ 0.544.
+SA2@2: A substance halves every 6 hours. Find how long it takes to fall to 10% of its starting amount, explaining each step. | After t hours the fraction left is (1/2)^{t/6}. Set (1/2)^{t/6} = 0.1. Take logs: (t/6) ln 0.5 = ln 0.1, so t = 6 ln 0.1/ln 0.5 = 6 ln 10/ln 2 ≈ 19.9 hours. Check: three halvings (18 h) leave 12.5%, four (24 h) leave 6.25%, so about 20 h is sensible. | Models the amount as (1/2)^{t/6} ; Sets it equal to 0.1 ; Takes logarithms to solve for t ; Gets about 19.9 hours with a check
 
 ## Logarithmic Equations
 S: Logarithmic equations have the unknown inside a logarithm. Combine the logs into one using the laws, convert to exponential form, and check that every solution keeps the arguments of the logs positive.
 O: Solve equations involving logarithms
 O: Check solutions against the domain of the logarithm
+LV: A level · Application
+EV: established | A logarithm is defined only for a positive argument, so solutions that make any argument zero or negative are rejected.
 T: Argument | The input of a function: in log(x − 2), the argument is x − 2, which must be positive
 T: Domain | The set of allowed inputs
 H: Method
@@ -782,11 +846,15 @@ SRC: Courant R, Robbins H, What Is Mathematics? (2nd edn, Oxford University Pres
 NUM1#maths-u03-23-q1@1: Solve log_{2} (3x − 1) = 5. | 11 | 0 |  | 3x − 1 = 2^{5} = 32, so 3x = 33 and x = 11.
 M1#maths-u03-23-q2@1: Solve log_{10} x = −2. | x = 0.01 | x = −100 | x = 100 | x = −0.01 | No solution | Convert to exponential form: x = 10^{−2} = 0.01, which is positive, so it's valid.
 M2#maths-u03-23-q3@2: Solve log x + log (x − 3) = log 10. | x = 5 | x = −2 or x = 5 | x = −2 | x = 13 | x = 10 | x(x − 3) = 10 gives x = 5 or −2; x = −2 makes log x undefined.
+M3@2: Solve log_{2} x + log_{2} (x + 6) = 4. | x = 2 | x = 2 or x = −8 | x = −8 | x = 10 | Combine: x(x + 6) = 2^{4} = 16, so x^{2} + 6x − 16 = 0 = (x + 8)(x − 2). x = −8 makes log_{2} x undefined, so only x = 2.
+SA2@1,2: Solve 2 log_{3} x − log_{3} (x − 2) = 2, checking your solutions. | Use the power and quotient laws: log_{3} (x^{2}/(x − 2)) = 2. Exponential form: x^{2}/(x − 2) = 9, so x^{2} = 9x − 18 and x^{2} − 9x + 18 = 0, giving (x − 3)(x − 6) = 0. Both x = 3 and x = 6 make x and x − 2 positive, so both are valid. | Uses the power law to write log_{3} x^{2} ; Combines with the quotient law ; Forms and solves x^{2} − 9x + 18 = 0 ; Checks both roots against the domain
 
 ## Polynomials
 S: A polynomial is a sum of terms each made of a number times a whole-number power of the variable, like 3x^{4} − 2x + 7. Polynomials are the simplest functions, and much of algebra is about understanding them.
 O: Identify the degree, leading coefficient and constant term of a polynomial
 O: Describe the graph shapes of polynomials
+LV: A level · Fluency
+EV: established | A polynomial of degree n has at most n real roots and at most n − 1 turning points, and its end behaviour is set by the degree and leading coefficient.
 T: Polynomial | An expression a_{n}x^{n} + … + a_{1}x + a_{0} with whole-number powers
 T: Leading coefficient | The coefficient of the highest power, a_{n}
 H: Vocabulary
@@ -804,6 +872,7 @@ X: Describe the graph of y = −2x^{3} + 5x^{2} − x + 4.
 > It crosses the y-axis at (0, 4)
 K: Degree and leading coefficient set the end behaviour; the constant term is the y-intercept; at most n roots.
 !: Calling 3/x^{2} + 1 a polynomial: negative powers aren't allowed.
+!: Reading end behaviour from the first term written rather than the highest power: in 5 − x^{3} + 2x^{6}, the x^{6} term decides it (both ends up).
 Q: What is the degree of 5 − x^{3} + 2x^{6}? | 6.
 Q: How many turning points can a quartic have at most? | 3.
 SUM: Polynomials use whole-number powers.
@@ -812,6 +881,9 @@ SRC: Department for Education, Mathematics AS and A level subject content: algeb
 SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | secondary | 1993 | https://link.springer.com/
 M1#maths-u03-24-q1@1: Which is a polynomial? | 4x^{3} − x + 2 | 2/x + 1 | √x + 3 | 3^{x} | x^{−2} | Every power of x is a whole number in 4x^{3} − x + 2.
 M2#maths-u03-24-q2@2: What is the end behaviour of y = −x^{4} + 3x? | Both ends go down | Both ends go up | Down on the left, up on the right | Up on the left, down on the right | It levels off | Even degree with a negative leading coefficient: both ends go down.
+NUM1@2: What is the greatest number of turning points the graph of a degree 7 polynomial can have? | 6 | 0 |  | A degree n polynomial has at most n − 1 turning points, so a degree 7 polynomial has at most 6.
+M3@2: A polynomial's graph has both ends going up and exactly 3 turning points. Which could be its degree and leading coefficient? | Degree 4, positive | Degree 3, positive | Degree 4, negative | Degree 5, positive | Both ends up needs even degree and a positive leading coefficient, and 3 turning points needs degree at least 4. Odd degrees have ends going opposite ways.
+SA2@1,2: Explain why 2^{x} and √x + 1 are not polynomials, and describe the graph of y = x^{4} − 5x^{2} + 4. | A polynomial has only whole-number powers of x: 2^{x} has x in the power and √x = x^{1/2} has a fractional power. y = x^{4} − 5x^{2} + 4 = (x^{2} − 1)(x^{2} − 4) = (x − 1)(x + 1)(x − 2)(x + 2), so it crosses the x-axis at ±1 and ±2. It's even degree with positive leading coefficient, so both ends go up; it meets the y-axis at 4 and has 3 turning points. | Explains why 2^{x} isn't a polynomial ; Explains why √x isn't ; Factorises to find roots ±1, ±2 ; Describes end behaviour and y-intercept
 
 ## Polynomial Algebra
 S: Polynomial algebra is adding, subtracting and multiplying polynomials, and comparing their coefficients. Equating coefficients is a powerful tool for finding unknown constants.

@@ -882,165 +882,299 @@ M3@2,3: Light at Brewster's angle meets a glass surface. If the incoming light i
 SA2@2,3: Explain how Brewster windows make a gas laser's output polarised. | The laser tube is closed by windows tilted at Brewster's angle. Light polarised in the plane of incidence (p) passes through with no reflection loss, while s-polarised light loses some energy at every pass by reflection out of the beam. Light makes many round trips between the mirrors, so these losses grow and s-light cannot build up enough gain to lase. The p-polarisation dominates and the output is linearly polarised. | Windows tilted at Brewster's angle ; No reflection loss for p-polarisation ; s-light reflected out at each pass ; Many round trips make the loss decisive ; Output linearly polarised in p direction
 
 ## Birefringence
-S: Birefringent crystals have two refractive indices depending on the polarisation of light. A ray entering them splits in two, and the different speeds for the two polarisations let engineers build wave plates and polarisers.
+S: Birefringent crystals have two refractive indices depending on the polarisation of light. A ray entering them can split in two, and the different speeds for the two polarisations let engineers build wave plates and polarisers.
+O: Describe ordinary and extraordinary rays and the optic axis in a uniaxial crystal
+O: Calculate the retardation of a wave plate and its required thickness
+O: Explain how quarter-wave and half-wave plates change polarisation
+PRE: Polarisation
+LV: Year 2 · Application
 H: Description
-- Uniaxial crystals (calcite, quartz): ordinary ray (n_{o}) and extraordinary ray (n_{e} depends on direction).
-- Calcite: n_{o} = 1.658, n_{e} = 1.486; very strong birefringence; double images through a crystal.
+- Uniaxial crystals (calcite, quartz): ordinary ray (index n_{o}) and extraordinary ray (index n_{e}, which depends on direction).
+- Calcite: n_{o} = 1.658, n_{e} = 1.486; very strong birefringence gives double images through a crystal.
 - Optic axis: light travelling along it sees no birefringence.
-E: Δφ = 2π(n_{e} − n_{o})d/λ :: retardation
+E: Δφ = 2π(n_{e} − n_{o})d/λ :: retardation of a plate of thickness d
 H: Devices
-- **Quarter-wave plate** (Δφ = π/2): linear ↔ circular.
-- **Half-wave plate** (Δφ = π): rotates linear polarisation by 2θ.
+- **Quarter-wave plate** (Δφ = π/2): turns linear polarisation at 45° to its axes into circular, and back.
+- **Half-wave plate** (Δφ = π): rotates linear polarisation by 2θ, where θ is the angle to the fast axis.
 - **Polarising prisms** (Glan–Thompson, Wollaston): separate polarisations cleanly.
-- **Electro-optic modulators** (Pockels cells): voltage changes birefringence, switching light in nanoseconds.
+- **Electro-optic modulators** (Pockels cells): a voltage changes the birefringence, switching light in nanoseconds.
 H: Induced birefringence
-P: Stress (photoelasticity), electric fields (Kerr, Pockels effects) and magnetic fields (Cotton–Mouton) induce birefringence. Liquid crystals are strongly birefringent fluids whose axis can be turned by voltage, the basis of LCDs.
-X: Thickness of a quartz quarter-wave plate (n_{e} − n_{o} = 0.0092) at 633 nm?
-> d = λ/(4Δn) = 633/(4 × 0.0092) nm = 17 μm (first order)
+P: Stress (photoelasticity), electric fields (Kerr and Pockels effects) and magnetic fields (Cotton–Mouton effect) induce birefringence. Liquid crystals are strongly birefringent fluids whose axis can be turned by a voltage, the basis of LCDs.
+X: How thick is a quartz quarter-wave plate (n_{e} − n_{o} = 0.0092) for 633 nm?
+> Need Δn × d = λ/4
+> d = 633 nm/(4 × 0.0092) = 17 μm (zero order)
+K: Two polarisations travel at different speeds in a birefringent crystal, so a plate of the right thickness sets a chosen phase delay between them.
 !: A wave plate works properly only at its design wavelength; at other wavelengths its retardation is wrong.
+T: Birefringence | The property of having different refractive indices for two perpendicular polarisations of light
+T: Optic axis | The direction in a uniaxial crystal along which both polarisations travel at the same speed
+SUM: Uniaxial crystals have n_{o} and n_{e}; light along the optic axis is unaffected.
+SUM: Retardation Δφ = 2πΔn d/λ; quarter-wave plates make circular light, half-wave plates rotate linear light.
+SUM: Stress, electric fields and liquid crystals give controllable birefringence.
+EV: established | Anisotropic crystals have polarisation-dependent refractive indices
+SRC: OpenStax, University Physics Volume 3, section 1.7 "Polarization" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/1-7-polarization
+SRC: OpenStax, College Physics 2e, section 27.8 "Polarization" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/27-8-polarization
 Q: What is birefringence? | Having different refractive indices for two polarisations of light.
 Q: What does a half-wave plate do to linear polarisation? | Rotates it by twice the angle between the polarisation and the plate's axis.
-M1: Calcite produces: | Double images | No refraction | Total reflection | Fluorescence | Two rays.
-M2: A Pockels cell changes birefringence using: | An electric field | Heat | Pressure only | Magnetism only | Electro-optic effect.
+M1@1: Calcite produces: | Double images | No refraction at all | Total reflection of all light | Fluorescence | Unpolarised light splits into ordinary and extraordinary rays with different refraction, so objects seen through calcite appear doubled.
+M2@3: A Pockels cell changes birefringence using: | An electric field | Heat | Pressure only | Magnetism only | In the linear electro-optic (Pockels) effect the induced birefringence is proportional to the applied electric field.
+NUM2@2: A calcite plate (|n_{e} − n_{o}| = 0.172) is to act as a half-wave plate at 590 nm. What is the smallest thickness, in μm? | 1.72 | 2% | μm | Δn × d = λ/2, so d = 590 nm/(2 × 0.172) = 1715 nm ≈ 1.72 μm; calcite's large Δn makes zero-order plates impractically thin.
+M3@3: Vertically polarised light passes through a half-wave plate whose fast axis is at 30° to the vertical. The emerging light is: | Linearly polarised at 60° to the vertical | Circularly polarised | Linearly polarised at 30° to the vertical | Unpolarised | A half-wave plate reflects the polarisation about its fast axis, rotating it by 2 × 30° = 60°.
+SA2@1,3: Explain how a quarter-wave plate turns linearly polarised light into circularly polarised light. | Align the plate so the incoming linear polarisation is at 45° to its fast and slow axes. The field then splits into two equal components along the axes. These travel at different speeds, and the plate's thickness is chosen so the slow component emerges a quarter of a wavelength (π/2 in phase) behind the fast one. Two equal perpendicular oscillations a quarter-cycle out of step add to a field of constant size whose direction rotates: circular polarisation. | Input at 45° to axes ; Equal components along fast and slow axes ; Plate gives λ/4 (π/2) retardation ; Equal perpendicular components 90° out of phase ; Resultant rotates at constant magnitude: circular
 
 ## Optical activity
 S: Optically active materials rotate the plane of polarised light as it passes through. Many biological molecules are chiral (handed), so optical activity identifies and measures them, from sugars to drugs.
+O: Use θ = [α]lc to find concentrations or rotations
+O: Explain optical activity as circular birefringence in chiral media
+O: Distinguish optical activity from Faraday rotation
+PRE: Birefringence
+LV: Year 2 · Foundation
 H: Description
-E: θ = [α]lc :: rotation = specific rotation × path length × concentration
+E: θ = [α]lc :: rotation = specific rotation × path length (dm) × concentration (g mL^{-1})
 - Dextrorotatory (+, clockwise looking towards the source) and laevorotatory (−).
 - Origin: different refractive indices for left and right circular polarisation (circular birefringence) in chiral media.
 H: Examples
 - Quartz crystals (left- and right-handed forms).
 - Sucrose (+66.5°), glucose (+52.7°), fructose (−92°) in solution.
-- Amino acids in life are left-handed (L); sugars right-handed (D): biological homochirality, whose origin is still debated.
+- Amino acids in living things are almost all the L form and sugars the D form: biological homochirality, whose origin is still debated.
 H: Uses
 - Polarimeters measure sugar concentration in the food industry.
-- Pharmaceuticals: enantiomers can have very different effects (thalidomide's tragic history); chiral analysis is required.
+- Pharmaceuticals: enantiomers can have very different effects (thalidomide's tragic history), so chiral analysis is required.
 - Circular dichroism spectroscopy reveals protein secondary structure.
-X: A 20 cm tube of sucrose solution rotates light by 13.3°. Concentration ([α] = 66.5° dm^{-1} (g/mL)^{-1})?
-> c = 13.3/(66.5 × 2) = 0.10 g mL^{-1}
-!: Faraday rotation (magnetic) and optical activity both rotate polarisation, but Faraday rotation doubles on reflection back through the medium while optical activity cancels.
+X: A 20 cm tube of sucrose solution rotates light by 13.3°. What is the concentration ([α] = 66.5° dm^{-1} (g/mL)^{-1})?
+> l = 20 cm = 2 dm
+> c = θ/([α]l) = 13.3/(66.5 × 2) = 0.10 g mL^{-1}
+K: Chiral molecules slow left and right circular light differently, which turns the plane of linear polarisation in proportion to path length and concentration.
+!: D and L describe a molecule's configuration, not its direction of rotation: D-fructose is laevorotatory.
+T: Optical activity | Rotation of the plane of polarisation of light by a chiral material
+T: Specific rotation | The rotation produced per unit path length per unit concentration, [α], at a stated wavelength and temperature
+SUM: θ = [α]lc for solutions.
+SUM: Optical activity is circular birefringence of chiral molecules.
+SUM: Polarimetry measures sugars and checks the chirality of drugs.
+EV: established | Chiral substances rotate the plane of polarised light by an amount proportional to path length and concentration
+SRC: OpenStax, University Physics Volume 3, section 1.7 "Polarization" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/1-7-polarization
+SRC: OpenStax, College Physics 2e, section 27.8 "Polarization" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/27-8-polarization
 Q: What causes optical activity? | Chiral molecules with different refractive indices for left- and right-circular polarisation.
 Q: How is optical activity used in industry? | Polarimeters measure concentrations of sugars and check the chirality of drugs.
-M1: Optical activity requires: | Chiral molecules or structures | Magnetic fields | Metals | Lasers | Handedness.
-M2: Rotation angle is proportional to: | Path length and concentration | Only temperature | Wavelength only | Intensity | θ = [α]lc.
+M1@2: Optical activity requires: | Chiral molecules or structures | An applied magnetic field | A metallic sample | Laser light | Only handed (chiral) structures distinguish left from right circular polarisation; an achiral molecule cannot rotate the plane.
+M2@1: Rotation angle is proportional to: | Path length and concentration | Only the temperature | Only the wavelength | The light intensity | θ = [α]lc: doubling the tube length or the concentration doubles the rotation.
+NUM2@1: Glucose ([α] = 52.7° dm^{-1} (g/mL)^{-1}) at 0.15 g mL^{-1} fills a 10 cm tube. What rotation does it produce, in degrees? | 7.9 | 2% | ° | θ = [α]lc = 52.7 × 1.0 × 0.15 = 7.9°, clockwise as seen looking towards the source.
+M3@3: Light passes through a sample, reflects from a mirror and passes back. For a sugar solution and for Faraday rotation in a magnetised glass, the net rotation is: | Zero for the sugar; doubled for the glass | Doubled for both | Zero for both | Doubled for the sugar; zero for the glass | Optical activity reverses with the direction of travel, so it cancels on return; Faraday rotation depends on the field direction, not travel, so it adds.
+SA2@1,2: Describe how a polarimeter is used to find the concentration of a sugar solution. | Monochromatic light (often the sodium line) passes through a polariser, then a tube of known length containing the solution, then an analyser. With the tube filled with water, the analyser is set for minimum transmission. The sugar solution rotates the plane of polarisation, so the analyser must be turned through θ to restore the minimum. The concentration follows from c = θ/([α]l), using the specific rotation for that sugar, wavelength and temperature. | Monochromatic light, polariser, sample tube, analyser ; Zero set with water or empty tube ; Analyser turned to find new minimum ; Rotation θ measured ; c = θ/([α]l)
 
 ## Lasers
 S: A laser produces intense, coherent, highly directional, nearly monochromatic light by stimulated emission in a gain medium inside an optical cavity. Since 1960 lasers have transformed communications, medicine, manufacturing and science.
+O: Explain stimulated emission, population inversion and the role of the cavity
+O: Explain why a laser needs three or more energy levels
+O: Calculate photon energies and photon rates for a laser beam
+PRE: Interference and coherence
+LV: Year 2 · Application
 H: How it works
-- **Stimulated emission**: an incoming photon triggers an excited atom to emit an identical photon (same frequency, phase, direction, polarisation).
+- **Stimulated emission**: an incoming photon triggers an excited atom to emit an identical photon (same frequency, phase, direction and polarisation).
 - **Population inversion**: more atoms in the upper level than the lower, achieved by pumping (electrical, optical, chemical); requires three- or four-level systems.
 - **Optical cavity**: mirrors feed light back for repeated amplification; one partially transmits the output beam.
 E: B_{12} = B_{21} (equal degeneracies); A_{21}/B_{21} = 8πhf^{3}/c^{3} :: Einstein coefficients
 H: Types
-- Gas (HeNe, CO_{2} at 10.6 μm), solid-state (Nd:YAG, Ti:sapphire), fibre (Er, Yb), semiconductor diodes (most common; phones, DVD, telecoms), dye, free-electron lasers (X-rays).
+- Gas (HeNe, CO_{2} at 10.6 μm), solid-state (Nd:YAG, Ti:sapphire), fibre (Er, Yb), semiconductor diodes (the most common: phones, optical drives, telecoms), dye and free-electron lasers (up to X-rays).
 H: Properties and uses
-- Coherence (holography, interferometry), directionality (LIDAR, rangefinding, the lunar laser ranging retroreflectors), brightness (cutting, welding), short pulses (surgery, micromachining).
-X: How many photons per second from a 1 W, 1064 nm laser?
-> E = 1240/1064 = 1.17 eV = 1.87 × 10^{-19} J
-> N = 5.4 × 10^{18} s^{-1}
+- Coherence (holography, interferometry), directionality (lidar, rangefinding, lunar laser ranging), brightness (cutting, welding), short pulses (surgery, micromachining).
+- Safety: even milliwatt beams can damage the retina; never look into a beam or its reflections.
+X: How many photons per second come from a 1 W, 1064 nm laser?
+> E = hc/λ = 1240 eV nm/1064 nm = 1.17 eV = 1.87 × 10^{-19} J
+> N = P/E = 1/1.87 × 10^{-19} = 5.4 × 10^{18} s^{-1}
+K: Light is amplified only when stimulated emission beats absorption, which needs a population inversion; the cavity turns amplification into a coherent beam.
 !: Laser light isn't necessarily very powerful; its distinctive features are coherence, directionality and spectral purity.
+T: Stimulated emission | Emission of a photon by an excited atom, triggered by an incoming photon, producing an identical copy of it
+T: Population inversion | A state with more atoms in a higher energy level than in a lower one, needed for net optical gain
+SUM: Stimulated emission copies photons exactly.
+SUM: Pumping creates a population inversion (three or four levels needed).
+SUM: The cavity provides feedback and shapes the output beam.
+EV: established | Lasers amplify light by stimulated emission from a population-inverted medium
+SRC: OpenStax, University Physics Volume 3, section 8.6 "Lasers" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/8-6-lasers
+SRC: OpenStax, College Physics 2e, section 30.5 "Applications of Atomic Excitations and De-Excitations" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/30-5-applications-of-atomic-excitations-and-de-excitations
 Q: What is population inversion? | A state with more atoms in a higher energy level than a lower one, needed for net stimulated emission.
 Q: Why can't a two-level system lase? | Pumping can at best equalise the populations; inversion needs three or more levels.
-M1: LASER stands for: | Light Amplification by Stimulated Emission of Radiation | Light Absorption by Spontaneous Emission | Linear Amplified Source | None | Acronym.
-M2: Stimulated emission produces a photon that is: | Identical to the stimulating photon | Random in phase | Lower in frequency | Opposite in direction | Coherent copy.
+M1@1: LASER stands for: | Light Amplification by Stimulated Emission of Radiation | Light Absorption by Spontaneous Emission of Radiation | Linear Amplified Source of Energetic Rays | Luminous Array of Synchronised Electron Resonances | The acronym names the key process: amplification of light by stimulated emission.
+M2@1: Stimulated emission produces a photon that is: | Identical to the stimulating photon | Random in phase | Lower in frequency | Opposite in direction | The emitted photon matches the stimulating one in frequency, phase, direction and polarisation, which is why laser light is coherent.
+NUM2@3: A 5.0 mW green laser pointer emits at 532 nm. How many photons does it emit per second, in units of 10^{16}? | 1.34 | 3% | × 10^{16} s^{-1} | E = hc/λ = 6.63 × 10^{-34} × 3.0 × 10^{8}/532 × 10^{-9} = 3.74 × 10^{-19} J; N = 5.0 × 10^{-3}/3.74 × 10^{-19} = 1.34 × 10^{16} s^{-1}.
+M3@2: In a four-level laser, why is inversion easier than in a three-level laser? | The lower laser level empties quickly, so only a few atoms need be excited | The upper level has a longer wavelength | Four-level lasers need no pumping | The ground state is the lower laser level | In a four-level scheme the lower laser level lies above the ground state and drains fast, so inversion is reached as soon as any atoms are in the upper level; in a three-level laser over half the ground-state atoms must be pumped.
+SA3@1,2: Explain why a population inversion is needed for laser action and how a three-level system achieves it. | An incoming photon at the transition frequency can be absorbed by an atom in the lower level or stimulate emission from one in the upper level, with equal probability per atom (B_{12} = B_{21}). Net amplification therefore needs more atoms in the upper level than the lower: a population inversion. In thermal equilibrium the lower level is always more populated, and pumping two levels directly can at best equalise them. In a three-level system atoms are pumped from the ground state to a short-lived high level, decay quickly to a long-lived (metastable) upper laser level and accumulate there, so its population can exceed that of the ground state, the lower laser level. | Absorption and stimulated emission equally likely per atom ; Gain needs more atoms in upper level ; Equilibrium and two-level pumping cannot invert ; Pump to high level, fast decay to metastable level ; Accumulation in metastable level gives inversion relative to ground state
 
 ## Optical cavities
-S: An optical cavity (resonator) traps light between mirrors so it circulates many times. It determines a laser's frequencies (modes), beam shape and linewidth, and high-quality cavities enable ultra-precise measurements.
+S: An optical cavity (resonator) traps light between mirrors so that it circulates many times. It determines a laser's frequencies (modes), beam shape and linewidth, and high-quality cavities enable ultra-precise measurements.
+O: Calculate longitudinal mode spacing and the number of modes under a gain curve
+O: Apply the cavity stability condition and describe transverse modes
+O: Relate quality factor to photon lifetime and give uses of high-Q cavities
+PRE: Lasers
+LV: Year 3 · Physical reasoning
 H: Modes
-E: f_{q} = qc/(2nL) :: longitudinal modes, spacing c/(2nL)
-- Transverse modes (TEM_{mn}): Gaussian TEM_{00} is the cleanest beam.
+E: f_{q} = qc/(2nL) :: longitudinal modes, spaced by c/(2nL)
+- Transverse modes (TEM_{mn}): the Gaussian TEM_{00} gives the cleanest beam.
 - Cavity stability: 0 ≤ (1 − L/R_{1})(1 − L/R_{2}) ≤ 1.
 H: Quality
-E: Q = 2πf × (energy stored)/(power lost) ; photon lifetime τ = Q/(2πf)
+E: Q = 2πf × (energy stored)/(power lost); photon lifetime τ = Q/(2πf)
 - Ultra-high-finesse cavities (finesse ~10^{5}–10^{6}) store light for microseconds to milliseconds.
 - Whispering-gallery microresonators (microspheres, rings) reach Q > 10^{9}.
 H: Applications
 - Laser resonators; mode-locking for ultrashort pulses.
-- Stabilising lasers to sub-Hz linewidths for optical clocks.
+- Stabilising lasers to sub-hertz linewidths for optical clocks.
 - Cavity QED: single atoms and photons interacting strongly.
-- Cavity ring-down spectroscopy detects trace gases at parts per trillion.
-X: A 30 cm HeNe laser cavity. Longitudinal mode spacing? How many modes fit in the 1.5 GHz gain bandwidth?
-> Δf = 3 × 10^{8}/0.6 = 500 MHz
-> About 3 modes
+- Cavity ring-down spectroscopy detects trace gases at very low concentrations.
+X: A HeNe laser cavity is 30 cm long. What is the longitudinal mode spacing, and how many modes fit in the 1.5 GHz gain bandwidth?
+> Δf = c/(2L) = 3 × 10^{8}/0.6 = 500 MHz
+> 1.5 GHz/0.5 GHz: about 3 modes
+K: Only frequencies that fit a whole number of half-wavelengths in the round trip resonate; the cavity length sets their spacing.
 !: A laser's linewidth is much narrower than its gain medium's bandwidth because the cavity selects discrete modes.
+T: Longitudinal mode | A standing-wave resonance of the cavity along its axis, at f_{q} = qc/(2nL)
+T: Quality factor (Q) | 2π × stored energy/energy lost per cycle; high Q means long photon lifetime and narrow resonances
+SUM: Mode spacing c/(2nL); the gain bandwidth decides how many modes lase.
+SUM: Stability needs 0 ≤ g_{1}g_{2} ≤ 1; TEM_{00} is the cleanest transverse mode.
+SUM: High-Q cavities stabilise lasers and sense trace gases.
+EV: established | Optical resonators support discrete modes set by their length and mirror curvatures
+SRC: OpenStax, University Physics Volume 3, section 8.6 "Lasers" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/8-6-lasers
+SRC: Saleh B. E. A. and Teich M. C., Fundamentals of Photonics, 2nd edn, Wiley | secondary | 2007
 Q: What sets the frequency spacing of longitudinal modes? | The cavity length: c/(2nL).
 Q: What is cavity ring-down spectroscopy? | Measuring how fast light leaks from a high-finesse cavity; absorbing gases shorten the ring-down time.
-M1: Doubling cavity length makes mode spacing: | Half | Double | Unchanged | Quadruple | ∝ 1/L.
-M2: The cleanest laser beam profile is: | TEM_{00} Gaussian | TEM_{11} | Multimode | Top-hat | Lowest-order mode.
+M1@1: Doubling cavity length makes mode spacing: | Half as large | Twice as large | Unchanged | Four times as large | Spacing c/(2nL) is inversely proportional to L.
+M2@2: The cleanest laser beam profile is: | TEM_{00} Gaussian | TEM_{11} | Multimode | Top-hat | The lowest-order transverse mode has a smooth Gaussian profile that focuses to the smallest spot and spreads least.
+NUM2@1: A diode laser chip 0.50 mm long has refractive index 3.5. What is its longitudinal mode spacing, in GHz? | 86 | 2% | GHz | Δf = c/(2nL) = 3.0 × 10^{8}/(2 × 3.5 × 5.0 × 10^{-4}) = 8.6 × 10^{10} Hz = 86 GHz.
+M3@2: A cavity has two mirrors each of radius 1.0 m. For which length is it unstable? | 2.5 m | 0.5 m | 1.0 m | 1.8 m | g = 1 − L/R; for L = 2.5 m, g = −1.5 and g^{2} = 2.25 > 1, so rays walk out; the other lengths give g^{2} ≤ 1.
+SA3@1,3: Explain why a laser with a broad gain curve can still have a very narrow output linewidth, and how single-mode operation can be achieved. | The gain medium amplifies over a range of frequencies, but the cavity only supports standing waves whose round trip is a whole number of wavelengths, at f_{q} = qc/(2nL). Light at other frequencies interferes destructively over many round trips. So the output consists of one or more discrete modes, each much narrower than the gain curve because light circulates many times (high Q). For a single mode, shorten the cavity so the mode spacing exceeds the gain bandwidth, or insert a Fabry–Pérot etalon so only one mode has low enough loss to lase. | Gain curve broad ; Cavity selects discrete modes qc/(2nL) ; Each mode narrow due to many round trips ; Short cavity widens spacing ; Etalon or other filter selects one mode
 
 ## Fibre optics
 S: Optical fibres guide light along thin glass strands by total internal reflection. They carry almost all long-distance internet traffic, and also illuminate, sense and image in medicine and industry.
+O: Explain how a step-index fibre guides light and calculate its numerical aperture
+O: Compare single-mode and multimode fibres and explain dispersion
+O: Calculate fibre losses in decibels
+PRE: Total internal reflection
+LV: A level · Application
 H: Structure and guiding
-E: NA = √(n_{core}^{2} − n_{clad}^{2}) = sin θ_{acceptance}
+E: NA = √(n_{core}^{2} − n_{clad}^{2}) = sin θ_{acceptance} :: launching from air
+- The cladding has a slightly lower index than the core, so rays at shallow angles are totally reflected; it also protects the core surface.
 - Single-mode: ~9 μm core, one mode, long distance.
-- Multimode: 50–62.5 μm core; modal dispersion limits bandwidth–distance.
+- Multimode: 50–62.5 μm core; modal dispersion limits the bandwidth–distance product.
 - Graded-index fibres reduce modal dispersion.
 H: Losses and windows
-- Rayleigh scattering (∝ 1/λ^{4}) and infrared absorption give a minimum ~0.2 dB km^{-1} at 1550 nm.
+- Rayleigh scattering (∝ 1/λ^{4}) and infrared absorption give a minimum of about 0.2 dB km^{-1} near 1550 nm.
 - Windows at 850, 1310 and 1550 nm.
 - Erbium-doped fibre amplifiers boost signals optically.
 H: Capacity
-P: Wavelength-division multiplexing puts ~100 channels on one fibre, each carrying hundreds of Gb s^{-1}; a single fibre pair can carry > 100 Tb s^{-1}. Charles Kao (Nobel 2009) showed in 1966 that purifying glass could make long-distance fibre communication practical.
+P: Wavelength-division multiplexing puts ~100 channels on one fibre, each carrying hundreds of Gb s^{-1}; a single fibre can carry more than 100 Tb s^{-1}. Charles Kao (Nobel 2009) showed in 1966 that purifying glass could make long-distance fibre communication practical.
 H: Other uses
 - Endoscopes (bundles of fibres), fibre lasers (industrial cutting), fibre sensors (strain, temperature, distributed acoustic sensing for earthquakes), gyroscopes.
-X: A 100 km link at 0.2 dB km^{-1}. Fraction of power received?
-> Loss = 20 dB ⇒ 1% received
+X: A 100 km link has loss 0.2 dB km^{-1}. What fraction of the power is received?
+> Loss = 100 × 0.2 = 20 dB
+> Fraction = 10^{-20/10} = 0.01, so 1% is received
+K: A fibre traps rays that meet the core–cladding boundary above the critical angle; the cladding keeps that boundary clean and limits pulse spreading.
 !: Bending a fibre too tightly lets light escape: TIR fails when the angle drops below critical.
 P: **Investigate with the lab.** Find the critical angle for light leaving glass and push beyond it to trap the light by total internal reflection.
 IX: optics
+T: Numerical aperture | NA = √(n_{core}^{2} − n_{clad}^{2}), the sine of the largest acceptance angle from air
+T: Modal dispersion | Spreading of a pulse because rays (modes) travel different path lengths along a multimode fibre
+SUM: Fibres guide by TIR at the core–cladding boundary; NA = √(n_{1}^{2} − n_{2}^{2}).
+SUM: Single-mode fibres avoid modal dispersion; losses are about 0.2 dB km^{-1} at 1550 nm.
+SUM: Loss in dB is 10 log_{10}(P_{in}/P_{out}).
+EV: established | Optical fibres guide light by total internal reflection with low loss near 1550 nm
+SRC: OpenStax, University Physics Volume 3, section 1.4 "Total Internal Reflection" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/1-4-total-internal-reflection
+SRC: OpenStax, College Physics 2e, section 25.4 "Total Internal Reflection" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/25-4-total-internal-reflection
+SRC: AQA, A-level Physics specification (7408), section 3.3.2.3 "Refraction at a plane surface" | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: What limits the distance of multimode fibres? | Modal dispersion: different modes travel different path lengths.
 Q: Why is 1550 nm used for long-haul fibre? | It's the lowest-loss window, where erbium amplifiers work.
-M1: Optical fibres guide light by: | Total internal reflection | Mirrors | Diffraction | Absorption | Core n > cladding n.
-M2: A 30 dB loss means the power received is: | 0.1% | 1% | 3% | 30% | 10^{-3}.
-M2: Why does light stay inside an optical fibre? | Total internal reflection at the core's boundary | Refraction out of the fibre at each bend | Absorption by the cladding | The fibre is a mirror | Light hits the boundary above the critical angle, so it is totally reflected.
+M1@1: Optical fibres guide light by: | Total internal reflection | Silvered mirror coatings | Diffraction | Absorption and re-emission | The core's index exceeds the cladding's, so rays above the critical angle are totally reflected at the boundary.
+M2@3: A 30 dB loss means the power received is: | 0.1% | 1% | 3% | 30% | 30 dB is a factor 10^{3}, so 10^{-3} = 0.1% of the power arrives.
+M2@1: Why does light stay inside an optical fibre? | Total internal reflection at the core's boundary | Refraction out of the fibre at each bend | Absorption by the cladding | The fibre is coated with a mirror | Light hits the boundary above the critical angle, so it is totally reflected.
+NUM2@1: A fibre has core index 1.48 and cladding index 1.46. What is its numerical aperture? | 0.242 | 2% |  | NA = √(1.48^{2} − 1.46^{2}) = √(2.1904 − 2.1316) = √0.0588 = 0.242, an acceptance half-angle of 14° in air.
+M3@2: In a 1 km step-index multimode fibre (n_{core} = 1.48, n_{clad} = 1.46), roughly how much longer does the steepest guided ray take than the axial ray? | About 70 ns | About 70 ps | About 7 μs | No delay: all rays arrive together | Δt ≈ (Ln_{1}/c)(n_{1}/n_{2} − 1) = (1000 × 1.48/3 × 10^{8}) × 0.0137 ≈ 68 ns, which limits the pulse rate.
+SA2@1,2: Explain the purpose of the cladding in a step-index optical fibre and why single-mode fibre is used for long-distance links. | The cladding has a slightly lower refractive index than the core, so light meeting the core boundary above the critical angle is totally internally reflected and stays in the core. It also protects the core surface from scratches and contamination that would scatter light out, and prevents light crossing between touching fibres. In multimode fibre, rays at different angles travel different distances, so pulses spread (modal dispersion) and overlap after long distances. A single-mode fibre has a core only a few wavelengths wide, so only one mode propagates, modal dispersion disappears, and very high data rates can be sent over long distances. | Cladding index lower than core, enabling TIR ; Protects core and prevents crossover ; Multimode: different paths spread pulses ; Pulse overlap limits data rate over distance ; Single-mode: one path, no modal dispersion
 
 ## Nonlinear optics
-S: At high intensities, a material's response to light is no longer proportional to the field. New frequencies appear and light can control light: the field of nonlinear optics, made possible by lasers.
+S: At high intensities a material's response to light is no longer proportional to the field. New frequencies appear and light can control light: the field of nonlinear optics, made possible by lasers.
+O: Describe the nonlinear polarisation and the difference between second- and third-order effects
+O: Calculate the output wavelengths of harmonic generation and frequency mixing
+O: Explain why phase matching is needed
+PRE: Lasers
+LV: Year 3 · Physical reasoning
 H: The nonlinear polarisation
 E: P = ε_{0}(χ^{(1)}E + χ^{(2)}E^{2} + χ^{(3)}E^{3} + …)
+- The higher terms matter only when E approaches the fields inside atoms, which needs laser intensities.
 H: Second-order effects (χ^{(2)}, non-centrosymmetric crystals)
 - Second-harmonic generation (SHG): 1064 nm → 532 nm green (green laser pointers).
 - Sum- and difference-frequency generation; optical parametric oscillators (tunable sources).
 - Pockels effect (electro-optic modulation).
-- Phase matching (birefringence or periodic poling) is needed for efficient conversion.
+- Phase matching (using birefringence or periodic poling) is needed for efficient conversion.
 H: Third-order effects (χ^{(3)}, all materials)
 - Kerr effect: n = n_{0} + n_{2}I: self-focusing, self-phase modulation.
 - Four-wave mixing; third-harmonic generation.
-- Supercontinuum generation: a white-light "laser" from a fibre.
+- Supercontinuum generation: broadband "white-light laser" output from a fibre.
 - Optical solitons in fibres.
 H: Quantum uses
-P: Spontaneous parametric down-conversion splits one photon into two entangled photons: the workhorse source for quantum optics experiments, including the Bell tests recognised by the 2022 Nobel Prize.
-X: SHG from a 1550 nm telecom laser gives what wavelength?
-> λ/2 = 775 nm
+P: Spontaneous parametric down-conversion splits one photon into two entangled photons: the workhorse source for quantum optics experiments, including Bell tests recognised by the 2022 Nobel Prize.
+X: Second-harmonic generation is applied to a 1550 nm telecom laser. What wavelength results?
+> Frequency doubles, so wavelength halves
+> λ = 1550/2 = 775 nm
+K: Nonlinear terms let light waves mix: frequencies add and subtract, and the refractive index depends on intensity.
 !: Nonlinear effects need high intensity and phase matching; ordinary light is far too weak to show them.
+T: Second-harmonic generation | Conversion of light at frequency ω into light at 2ω in a χ^{(2)} medium
+T: Phase matching | Making the generated and driving waves travel in step, so that contributions from along the crystal add constructively
+SUM: P contains terms in E^{2}, E^{3}… that matter at high intensity.
+SUM: χ^{(2)} gives harmonics and mixing in non-centrosymmetric crystals; χ^{(3)} gives the Kerr effect in all materials.
+SUM: Down-conversion makes entangled photon pairs.
+EV: established | At high intensity, optical materials respond nonlinearly and generate new frequencies
+SRC: Boyd R. W., Nonlinear Optics, 3rd edn, Academic Press | secondary | 2008
+SRC: Saleh B. E. A. and Teich M. C., Fundamentals of Photonics, 2nd edn, Wiley | secondary | 2007
 Q: What is second-harmonic generation? | Conversion of light at frequency ω into light at 2ω in a nonlinear crystal.
 Q: Why is phase matching needed? | So that light generated along the crystal adds in phase instead of cancelling.
-M1: Green laser pointers usually use: | Frequency doubling of infrared light | Green diodes only | Fluorescence | Filters | 1064 → 532 nm.
-M2: Entangled photon pairs are commonly made by: | Spontaneous parametric down-conversion | Lasers directly | Fluorescent lamps | Mirrors | χ^{(2)} process.
+M1@2: Green laser pointers usually use: | Frequency doubling of infrared light | Green laser diodes only | Fluorescence of a dye | Filters on a white lamp | A 1064 nm (or 808 nm-pumped) infrared laser is frequency-doubled in a nonlinear crystal to 532 nm.
+M2@1: Entangled photon pairs are commonly made by: | Spontaneous parametric down-conversion | Lasers emitting directly | Fluorescent lamps | Mirrors splitting beams | In a χ^{(2)} crystal a pump photon splits into two lower-energy photons whose properties are correlated.
+NUM2@2: Light at 800 nm and 1200 nm is combined by sum-frequency generation. What wavelength is produced, in nm? | 480 | 1% | nm | Frequencies add: 1/λ = 1/800 + 1/1200 = 1/480, so λ = 480 nm.
+M3@1: Why is second-harmonic generation absent in glass but present in crystals such as KDP or lithium niobate? | Glass is centrosymmetric on average, so χ^{(2)} vanishes | Glass absorbs all infrared light | Glass has too high a refractive index | Second harmonics need a magnetic field | In a medium with inversion symmetry, P must reverse when E reverses, which forbids even-order terms like χ^{(2)}E^{2}.
+SA3@1,3: Explain why the efficiency of second-harmonic generation in a crystal depends on phase matching. | The fundamental wave generates second-harmonic light at every point along the crystal. Because of dispersion, the fundamental and harmonic usually travel at different speeds, so light generated at different depths drifts out of phase. After a coherence length the newly generated light cancels what was made earlier, and the output oscillates instead of growing. Phase matching makes the two waves travel in step (n(ω) = n(2ω)), for example by using a birefringent crystal at a chosen angle or periodic poling, so all contributions add constructively and the harmonic power grows along the whole crystal. | Harmonic generated all along the crystal ; Dispersion makes waves travel at different speeds ; Contributions drift out of phase and cancel ; Matching n(ω) = n(2ω) keeps them in step ; Methods: birefringence angle or periodic poling
 
 ## Ultrafast optics
-S: Ultrafast optics creates and uses light pulses lasting femtoseconds to attoseconds. These pulses freeze the motion of molecules and electrons, cut materials with precision and reach extreme peak powers.
+S: Ultrafast optics creates and uses light pulses lasting femtoseconds to attoseconds. These pulses freeze the motion of molecules and electrons, machine materials precisely and reach extreme peak powers.
+O: Use the time–bandwidth product to relate pulse duration and spectral width
+O: Explain mode-locking and chirped pulse amplification
+O: Calculate peak power and describe applications of ultrashort pulses
+PRE: Optical cavities
+LV: Year 3 · Application
 H: Making short pulses
-- **Mode-locking**: many cavity modes locked in phase; pulses ~5–100 fs (Ti:sapphire, fibre lasers).
-- Δt Δf ≳ 0.44 (Gaussian): a 10 fs pulse at 800 nm needs ~94 nm bandwidth.
+- **Mode-locking**: many cavity modes locked in phase; pulses of ~5–100 fs (Ti:sapphire and fibre lasers).
+- Δt Δf ≳ 0.44 (Gaussian pulses): a 10 fs pulse at 800 nm needs about 94 nm of bandwidth.
 - **Chirped pulse amplification** (Strickland and Mourou, Nobel 2018): stretch, amplify, compress; petawatt peak powers.
-- **Attosecond pulses** (Agostini, Krausz, L'Huillier, Nobel 2023): high-harmonic generation in gases gives pulses ~50–100 as.
+- **Attosecond pulses** (Agostini, Krausz, L'Huillier, Nobel 2023): high-harmonic generation in gases gives pulses of tens to hundreds of attoseconds.
+P: A femtosecond is to a second roughly as a second is to 30 million years; in 10 fs light travels only 3 μm, so such pulses can follow atoms moving within molecules.
 H: Applications
-- Pump–probe spectroscopy: films of chemical reactions (femtochemistry, Zewail, Nobel 1999).
-- Eye surgery (femtosecond LASIK), micromachining glass without heat damage.
+- Pump–probe spectroscopy: films of chemical reactions (femtochemistry; Zewail, Nobel 1999).
+- Eye surgery (femtosecond lasers in LASIK), micromachining glass without heat damage.
 - Frequency combs (Hall and Hänsch, Nobel 2005): rulers for light frequencies; optical clocks.
 - Laser wakefield acceleration of electrons.
-X: Peak power of a 1 mJ, 30 fs pulse?
-> P = 10^{-3}/3 × 10^{-14} = 3.3 × 10^{10} W (33 GW)
+X: What is the peak power of a 1 mJ, 30 fs pulse?
+> P ≈ E/Δt = 10^{-3}/(3 × 10^{-14})
+> P = 3.3 × 10^{10} W (33 GW)
+K: Short pulses need broad spectra (Δt Δf ≳ 0.44), and concentrating modest energy in femtoseconds gives enormous peak power.
 !: Short pulses can't be monochromatic: the shorter the pulse, the broader its spectrum.
+T: Mode-locking | Fixing the phases of many laser cavity modes so they add into a train of ultrashort pulses
+T: Chirped pulse amplification | Stretching a pulse in time, amplifying it, then recompressing it, so the amplifier is not damaged by high peak power
+SUM: Δt Δf ≳ 0.44: femtosecond pulses span tens of nanometres.
+SUM: Mode-locking makes short pulses; CPA amplifies them safely.
+SUM: Uses include femtochemistry, precision machining, frequency combs and attosecond physics.
+EV: established | Mode-locked lasers produce femtosecond pulses whose duration is limited by their bandwidth
+SRC: Weiner A. M., Ultrafast Optics, Wiley | secondary | 2009
+SRC: Saleh B. E. A. and Teich M. C., Fundamentals of Photonics, 2nd edn, Wiley | secondary | 2007
 Q: What is mode-locking? | Fixing the phases of many laser cavity modes so they add into a train of ultrashort pulses.
 Q: What is chirped pulse amplification? | Stretching a pulse in time, amplifying it, then compressing it, avoiding damage from high peak powers.
-M1: Attosecond pulses are made by: | High-harmonic generation | Mode-locked diodes only | LEDs | Q-switching | Nobel 2023.
-M2: A frequency comb is used to: | Measure optical frequencies precisely | Comb hair | Amplify radio | Heat samples | Optical ruler.
+M1@2: Attosecond light pulses are usually produced by: | High-harmonic generation | Mode-locked diodes only | LEDs | Q-switching | Intense femtosecond pulses drive electrons in a gas to emit high harmonics as bursts of tens to hundreds of attoseconds (Nobel 2023).
+M2@3: A frequency comb is used to: | Measure optical frequencies precisely | Separate hairs in a microscope image | Amplify radio signals | Heat samples evenly | The comb's evenly spaced lines, linked to a microwave standard, act as a ruler for optical frequencies, enabling optical clocks.
+NUM2@1: What is the minimum duration of a Gaussian pulse with a bandwidth of 10 THz, in fs? | 44 | 3% | fs | Δt ≈ 0.44/Δf = 0.44/(1.0 × 10^{13}) = 4.4 × 10^{-14} s = 44 fs.
+M3@2: Why can't a mode-locked laser simply be amplified to petawatt peak power directly? | The intense pulse would damage the amplifier and distort through nonlinear effects | Amplifiers cannot amplify short pulses at all | Amplification would lengthen the wavelength | Petawatt pulses need a cavity kilometres long | CPA solves this: stretching lowers the peak intensity in the amplifier, avoiding damage and self-focusing, before recompression.
+SA2@1,2: Explain how mode-locking produces a train of ultrashort pulses, and why a broad gain bandwidth is needed. | A laser cavity supports many longitudinal modes spaced by c/(2L). If they oscillate with random phases the output is noisy and nearly constant. Mode-locking fixes their relative phases, so the modes add constructively at one instant and cancel elsewhere: a short pulse circulates in the cavity, emitting a pulse every round-trip time 2L/c. The more modes locked, the shorter the pulse: Δt ≈ 1/(N × mode spacing) ≈ 1/(total bandwidth). So a gain medium with a very broad bandwidth, such as Ti:sapphire, is needed for femtosecond pulses. | Many modes spaced c/(2L) ; Random phases give noisy continuous output ; Locked phases add to a short pulse ; Repetition every round trip 2L/c ; Duration ≈ 1/bandwidth, so broad gain needed
 
 ## Integrated photonics
-S: Integrated photonics puts optical components (waveguides, modulators, detectors, lasers) on chips, as electronics did for circuits. It's transforming data centres, sensing and quantum computing.
+S: Integrated photonics puts optical components (waveguides, modulators, detectors and lasers) on chips, as electronics did for circuits. It is transforming data centres, sensing and quantum computing.
+O: Explain how high index contrast allows compact waveguides
+O: Describe the main platforms and components of photonic chips
+O: Explain how a Mach–Zehnder modulator switches light
+PRE: Fibre optics
+LV: Year 3 · Application
 H: Platforms
 - **Silicon photonics**: uses CMOS fabrication; high index contrast (Si 3.48 vs SiO_{2} 1.44) allows tight bends; needs bonded or external lasers.
 - **Indium phosphide**: integrates lasers and amplifiers.
@@ -1049,33 +1183,62 @@ H: Platforms
 H: Components
 - Waveguides, splitters, directional couplers, Mach–Zehnder interferometers (switches and modulators), ring resonators (filters, sensors), grating couplers, germanium photodetectors, arrayed waveguide gratings (WDM).
 H: Applications
-P: Data-centre transceivers move terabits per second between servers with lower power than copper. Photonic chips are being developed for LIDAR, biosensing, optical neural-network accelerators, and photonic quantum computers that process single photons.
+P: Data-centre transceivers move terabits per second between servers with lower power than copper. Photonic chips are being developed for lidar, biosensing, optical neural-network accelerators and photonic quantum computers that process single photons.
 X: Why can silicon waveguides bend in a few micrometres while fibres need centimetres?
-> Silicon–oxide index contrast (~2) is huge vs fibre's (~0.01)
-> Light stays confined by TIR even in tight bends
+> The silicon–oxide index contrast (~2) is huge compared with a fibre's (~0.01)
+> So the critical angle is small and light stays confined by TIR even in tight bends
+K: The larger the index step between core and surroundings, the tighter the light is confined and the smaller the components can be.
 !: Silicon doesn't emit light efficiently (indirect band gap), so silicon photonics usually integrates lasers made of III–V semiconductors.
+T: Waveguide | A structure of higher refractive index surrounded by lower index that confines and guides light
+T: Mach–Zehnder modulator | An interferometer in which a controllable phase shift in one arm switches light between output states
+SUM: High index contrast allows micrometre-scale waveguides and bends.
+SUM: Silicon, InP, silicon nitride and lithium niobate each suit different components.
+SUM: Chips combine waveguides, modulators, filters and detectors for data and sensing.
+EV: established | High-index-contrast waveguides confine light tightly, enabling dense photonic integrated circuits
+SRC: Saleh B. E. A. and Teich M. C., Fundamentals of Photonics, 2nd edn, Wiley | secondary | 2007
+SRC: OpenStax, University Physics Volume 3, section 1.4 "Total Internal Reflection" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/1-4-total-internal-reflection
 Q: Why is silicon photonics attractive? | It uses existing CMOS fabrication for large-scale, low-cost optical chips.
 Q: What is a Mach–Zehnder modulator? | An interferometer where a phase shift in one arm switches light between output states.
-M1: Silicon photonics usually operates at: | 1.3–1.55 μm | 400 nm | 10 μm | 1 mm | Silicon transparent in near-IR.
-M2: Ring resonators on chips act as: | Wavelength-selective filters | Lasers only | Detectors | Polarisers | Resonant at particular wavelengths.
+M1@2: Silicon photonics usually operates at: | 1.3–1.55 μm | 400 nm | 10 μm | 1 mm | Silicon absorbs visible light but is transparent beyond about 1.1 μm, matching the telecom bands.
+M2@2: Ring resonators on chips act as: | Wavelength-selective filters | Lasers only | Photodetectors | Polarisers | Light couples into the ring only at wavelengths whose round trip is a whole number of wavelengths, so the ring filters those out of the bus waveguide.
+NUM2@1: What is the critical angle (in degrees) at a silicon (n = 3.48) to silica (n = 1.44) boundary? | 24.4 | 2% | ° | sin θ_{c} = 1.44/3.48 = 0.414, so θ_{c} = 24.4°, compared with about 80° for a typical fibre.
+M3@3: In a Mach–Zehnder modulator, what phase difference between the arms switches the output from fully on to fully off? | π | 2π | π/2 | π/4 | With equal arms the beams recombine in phase (on); a π shift makes them recombine out of phase and cancel (off).
+SA2@1,3: Explain how a Mach–Zehnder interferometer on a chip can encode data onto light. | Light in a waveguide is split equally into two arms and recombined at a second coupler. If both arms have the same optical path, the light recombines in phase and exits the output. An electric field applied to one arm (by the electro-optic effect in lithium niobate, or by injecting carriers or heating in silicon) changes its refractive index and so its phase. A phase difference of π makes the beams cancel at the output. Switching the voltage between two values therefore turns the light on and off (or sets intermediate levels), encoding bits at tens of gigahertz. | Split into two arms and recombine ; Equal path: constructive, light out ; Voltage changes index and phase in one arm ; π phase difference gives cancellation ; Switching voltage encodes data as intensity
 
 ## Adaptive optics
-S: Adaptive optics corrects in real time for distortions in light, mainly from atmospheric turbulence, using a deformable mirror controlled by a wavefront sensor. It lets ground-based telescopes see nearly as sharply as space telescopes.
+S: Adaptive optics corrects distortions in light in real time, mainly from atmospheric turbulence, using a deformable mirror controlled by a wavefront sensor. It lets ground-based telescopes see nearly as sharply as space telescopes.
+O: Explain why atmospheric turbulence limits telescope resolution
+O: Describe the parts of an adaptive-optics system and how they work together
+O: Compare seeing-limited and diffraction-limited resolution
+PRE: Microscopes and telescopes
+LV: Year 3 · Application
 H: The problem
 - Turbulent air has cells of varying refractive index (Fried parameter r_{0} ~ 10–20 cm in visible light).
 - Without correction, resolution is limited to ~λ/r_{0} (~0.5–1″) however large the telescope.
 H: The system
-- **Wavefront sensor** (Shack–Hartmann lenslet array) measures distortions.
-- **Deformable mirror** with hundreds to thousands of actuators corrects them, updating ~1000 times per second.
+- **Wavefront sensor** (Shack–Hartmann lenslet array) measures the distortion.
+- **Deformable mirror** with hundreds to thousands of actuators corrects it, updating about 1000 times per second.
 - **Guide stars**: a bright natural star, or an artificial one made by a laser exciting sodium atoms at ~90 km.
 H: Beyond astronomy
-P: Adaptive optics images individual photoreceptor cells in the living eye, sharpens microscopy deep in tissue, corrects laser beams for fusion and free-space optical communication, and was originally developed for military imaging. Andrea Ghez's and Reinhard Genzel's adaptive-optics tracking of stars around Sgr A* proved a supermassive black hole sits at our galaxy's centre (Nobel 2020).
-X: Diffraction limit of an 8 m telescope at 2.2 μm vs typical seeing (0.6″)?
+P: Adaptive optics images individual photoreceptor cells in the living eye, sharpens microscopy deep in tissue, corrects laser beams for fusion and free-space optical communication, and was first developed largely for military imaging. Andrea Ghez's and Reinhard Genzel's adaptive-optics tracking of stars around Sgr A* showed a supermassive compact object at our galaxy's centre (Nobel 2020).
+X: What is the diffraction limit of an 8 m telescope at 2.2 μm, compared with typical seeing of 0.6″?
 > θ = 1.22 × 2.2 × 10^{-6}/8 = 3.4 × 10^{-7} rad ≈ 0.07″
-> Adaptive optics can improve resolution ~9 times
+> Adaptive optics can improve resolution about 9 times
+K: The atmosphere, not the mirror, sets ground-based resolution unless a deformable mirror cancels the wavefront errors faster than they change.
 !: Adaptive optics works best at longer (infrared) wavelengths; visible correction needs many more actuators and faster updates.
+T: Seeing | The blurring of astronomical images by atmospheric turbulence, measured as an angle in arcseconds
+T: Wavefront sensor | A device that measures the shape of an incoming wavefront, for example from the spot shifts behind a lenslet array
+SUM: Turbulence limits resolution to about λ/r_{0}, under 1″.
+SUM: A wavefront sensor drives a deformable mirror about 1000 times a second, using a natural or laser guide star.
+SUM: Corrected large telescopes approach their diffraction limit, 1.22λ/D.
+EV: established | Adaptive optics restores near diffraction-limited imaging through atmospheric turbulence
+SRC: OpenStax, University Physics Volume 3, section 4.5 "Circular Apertures and Resolution" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/4-5-circular-apertures-and-resolution
+SRC: Hardy J. W., Adaptive Optics for Astronomical Telescopes, Oxford University Press | secondary | 1998
 Q: What limits ground-based telescope resolution without adaptive optics? | Atmospheric turbulence (seeing).
 Q: What is a laser guide star? | An artificial reference star made by a laser exciting atoms high in the atmosphere.
-M1: The device that corrects the wavefront is: | A deformable mirror | A prism | A grating | A filter | Hundreds of actuators.
-M2: Adaptive optics helped prove: | A supermassive black hole at the Milky Way's centre | Dark energy | Exoplanet atmospheres only | Cosmic inflation | Stellar orbits around Sgr A*.
+M1@2: The device that corrects the wavefront is: | A deformable mirror | A prism | A grating | A filter | Hundreds of actuators reshape a thin mirror to cancel the measured wavefront errors.
+M2@3: Adaptive optics helped prove: | A supermassive black hole at the Milky Way's centre | The existence of dark energy | The composition of exoplanet atmospheres | Cosmic inflation | Sharp images let astronomers track stars orbiting Sgr A*, revealing about four million solar masses in a tiny region.
+NUM2@3: Seeing-limited resolution is about λ/r_{0}. For λ = 500 nm and r_{0} = 0.10 m, what is it in arcseconds? (1 rad = 206 265″) | 1.03 | 3% | ″ | θ = 5.0 × 10^{-7}/0.10 = 5.0 × 10^{-6} rad = 1.03″, the same as a 10 cm telescope's diffraction limit.
+M3@1,3: Why do adaptive-optics systems work better in the infrared than in visible light? | r_{0} grows with wavelength, so fewer, slower corrections are needed | Infrared light is not refracted by air | Deformable mirrors reflect only infrared light | Guide stars are invisible in visible light | r_{0} ∝ λ^{6/5}: turbulence cells are effectively larger and slower at longer wavelengths, so fewer actuators and slower updates suffice.
+SA2@2,3: Describe how an adaptive-optics system on a large telescope corrects for atmospheric turbulence. | Light from a guide star (a bright natural star near the target, or a laser guide star created by exciting sodium atoms at about 90 km) passes through the same turbulence as the target. A beam splitter sends it to a wavefront sensor, such as a Shack–Hartmann lenslet array, whose spot positions reveal the local tilt of the wavefront. A computer calculates the correction and drives actuators on a deformable mirror, about 1000 times a second, to give the mirror the opposite shape. The corrected light forms images close to the diffraction limit 1.22λ/D instead of the seeing limit. | Guide star samples the turbulence ; Wavefront sensor measures distortion ; Computer drives deformable mirror actuators ; Updates about 1000 times per second ; Near diffraction-limited images
 `;

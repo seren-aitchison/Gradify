@@ -914,6 +914,8 @@ SA2@1: Triangle P has vertices (1, 1), (3, 1) and (1, 2); triangle Q has vertice
 S: A shape has symmetry if a transformation maps it onto itself. Line (reflection) and rotational symmetry describe the shapes of letters, logos, crystals and molecules, and lead to group theory.
 O: Identify lines of symmetry and the order of rotational symmetry
 O: Connect symmetry with transformations
+LV: GCSE · Fluency
+EV: established | A shape's symmetries are the transformations that map it onto itself, and they form a group.
 T: Line of symmetry | A mirror line that reflects a shape onto itself
 T: Order of rotational symmetry | The number of times a shape fits onto itself in one full turn
 H: Types of symmetry
@@ -928,6 +930,7 @@ X: State the lines of symmetry and order of rotational symmetry of a regular hex
 > It has 6 lines of symmetry: 3 through opposite vertices and 3 through midpoints of opposite sides
 > It fits onto itself after rotations of 60°, 120°, …, 360°
 > Order of rotational symmetry 6
+P: Capital letters show the two kinds separately: H has 2 lines of symmetry and rotational symmetry of order 2; S has no lines of symmetry but order 2; A has 1 line and order 1.
 K: Count mirror lines and the turns that map a shape onto itself; a regular n-gon has n of each.
 !: Saying a parallelogram has lines of symmetry: it has rotational symmetry of order 2 but no mirror lines (unless it's a rhombus or rectangle).
 Q: What is the order of rotational symmetry of an equilateral triangle? | 3.
@@ -938,11 +941,17 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 SRC: Armstrong MA, Groups and Symmetry (Springer 1988) | secondary | 1988 | https://link.springer.com/
 M1#maths-u05-25-q1@1: How many lines of symmetry does a regular pentagon have? | 5 | 1 | 2 | 10 | 0 | A regular n-sided polygon has n lines of symmetry.
 M2#maths-u05-25-q2@2: Which shape has rotational symmetry of order 2 but no lines of symmetry? | A (non-rectangular, non-rhombus) parallelogram | A square | A kite | An isosceles trapezium | An equilateral triangle | A general parallelogram looks the same after a half turn, but no mirror line maps it onto itself.
+TF1@1: A shape with no rotational symmetry is said to have rotational symmetry of order 1. | true | Every shape fits onto itself once in a full turn (the 360° turn), so order 1 means no rotational symmetry.
+NUM2@1: A regular polygon fits onto itself after every turn of 40°. How many lines of symmetry does it have? | 9 | 0 | lines | It has 360 ÷ 40 = 9 rotations, so it is a regular 9-gon, and a regular n-gon has n lines of symmetry.
+M3@2: Counting rotations and reflections together (including the identity), how many symmetries does a regular hexagon have? | 12 | 6 | 8 | 18 | 24 | It has 6 rotations (including the 360° turn) and 6 reflections, so 12 symmetries: the dihedral group of order 12.
+SA2@1,2: Explain how line symmetry and rotational symmetry relate to reflections and rotations, and list all the symmetries of a (non-square) rectangle. | A line of symmetry is a mirror line for a reflection that maps the shape onto itself; rotational symmetry means a rotation about the centre maps it onto itself, and the order counts these rotations in one full turn. A rectangle that isn't a square has two lines of symmetry (through the midpoints of opposite sides) and rotational symmetry of order 2 (a half turn and the full turn). Its symmetries are therefore four: the identity (full turn), the half turn about the centre, and the two reflections. | lines of symmetry as reflections ; rotational symmetry as rotations ; rectangle has 2 lines ; order 2 ; four symmetries listed
 
 ## Tessellations
 S: A tessellation is a pattern of shapes covering a plane with no gaps or overlaps. Tessellations appear in tiling, brickwork, honeycombs and art, and their mathematics explains which shapes can tile.
 O: Determine which regular polygons tessellate
 O: Explain tessellation using angles at a vertex
+LV: GCSE · Application
+EV: established | A tessellation needs the angles at each vertex to total 360°, so only equilateral triangles, squares and regular hexagons tile alone among regular polygons.
 T: Tessellation | A tiling of the plane by shapes with no gaps or overlaps
 T: Regular tessellation | A tessellation using one regular polygon, with the same arrangement at every vertex
 H: Which shapes tessellate?
@@ -958,6 +967,10 @@ X: Can regular octagons tessellate on their own? Can they with squares?
 > Each interior angle of a regular octagon is 135°; 360/135 isn't a whole number, so not alone
 > Two octagons and a square at a vertex: 135 + 135 + 90 = 360
 > So octagons tessellate with squares (as on many bathroom floors)
+X: Show that any triangle tessellates.
+> Let its angles be a, b and c, with a + b + c = 180°
+> Rotate copies by 180° about the midpoints of the sides: six copies meet at each vertex, two of each angle
+> 2(a + b + c) = 360°, so they fit with no gaps or overlaps
 K: Angles at each vertex must total 360°; only equilateral triangles, squares and regular hexagons tile alone among regular polygons.
 !: Assuming every regular polygon tessellates.
 Q: Why don't regular pentagons tessellate? | Their 108° angles can't add to exactly 360° at a vertex.
@@ -968,11 +981,16 @@ SRC: Grünbaum B, Shephard GC, Tilings and Patterns (2nd edn, Dover 2016) | seco
 SRC: Smith D, Myers JS, Kaplan CS, Goodman-Strauss C, An aperiodic monotile, Combinatorial Theory 4(1) | primary | 2024 | https://doi.org/10.5070/C64163843
 M1#maths-u05-26-q1@1: Which regular polygon tessellates on its own? | Hexagon | Pentagon | Octagon | Heptagon | Decagon | Three hexagons meet at a vertex: 3 × 120° = 360°.
 M2#maths-u05-26-q2@2: Which combination of regular polygons fits exactly around a vertex? | Two octagons and a square | Two pentagons and a square | Three pentagons | Two hexagons and a square | An octagon and two triangles | The angles at the vertex must total 360°: 135° + 135° + 90° = 360°.
+TF1@1: Every quadrilateral, even one with a reflex angle, tessellates. | true | Rotating copies by 180° about side midpoints puts all four angles, which add to 360°, round each vertex, whatever the shape.
+M3@2: Two regular dodecagons (12-gons) meet at a vertex. Which regular polygon fills the gap exactly? | An equilateral triangle | A square | A regular hexagon | A regular pentagon | A regular octagon | Each dodecagon angle is 180 − 360/12 = 150°; 2 × 150 = 300, leaving 60°, the angle of an equilateral triangle.
+SA3@1,2: Explain why exactly three regular polygons tessellate on their own. | At each vertex the angles must total 360°, so the interior angle must divide 360 exactly, with at least three polygons meeting. Equilateral triangles (60°, six at a vertex), squares (90°, four) and regular hexagons (120°, three) work. A regular pentagon's 108° doesn't divide 360. For seven or more sides the interior angle is between 120° and 180°, so fewer than three fit round a point but two leave a gap: none can tile alone. | angles at a vertex total 360° ; at least three polygons meet ; triangle, square and hexagon cases ; pentagon 108° fails ; angles over 120° fail for n ≥ 7
 
 ## Coordinate Geometry
 S: Coordinate geometry describes points, lines and shapes with numbers, so geometric problems can be solved with algebra. It was Descartes' great idea, and it underlies graphs, computer graphics and GPS.
 O: Find midpoints, distances and gradients of line segments
 O: Find and use equations of straight lines
+LV: GCSE and A level · Fluency
+EV: established | Gradients, midpoints, distances and line equations follow from coordinates, letting geometric problems be solved with algebra.
 T: Gradient | The steepness of a line: change in y ÷ change in x
 T: Midpoint | The point halfway between two points: ((x₁ + x₂)/2, (y₁ + y₂)/2)
 H: Points and segments
@@ -1001,11 +1019,15 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 NUM1#maths-u05-27-q1@1: Find the gradient of the line through (−1, 4) and (3, −8). | -3 | 0 |  | (−8 − 4)/(3 − (−1)) = −12/4 = −3.
 M1#maths-u05-27-q2@1: Which line passes through (2, 7) with gradient 3? | y = 3x + 1 | y = 3x + 7 | y = 2x + 3 | y = 3x − 1 | y = 7x + 2 | Use y − y₁ = m(x − x₁): y − 7 = 3(x − 2), which gives y = 3x + 1.
 M2#maths-u05-27-q3@2: Where do y = 2x + 1 and y = −x + 7 meet? | (2, 5) | (1, 3) | (3, 4) | (2, 3) | (6, 13) | Set the expressions equal: 2x + 1 = −x + 7 gives x = 2, so y = 5.
+NUM3@2: The line through A(1, 2) perpendicular to y = 3x − 5 crosses the x-axis at (k, 0). Find k. | 7 | 0 |  | The perpendicular gradient is −1/3: y − 2 = −⅓(x − 1). At y = 0, x − 1 = 6, so k = 7.
+SA2@1,2: Show that A(1, 1), B(4, 5) and C(7, 9) are collinear, and find the length of AC and the midpoint of AC. | The gradient of AB is (5 − 1)/(4 − 1) = 4/3 and the gradient of BC is (9 − 5)/(7 − 4) = 4/3. The segments have equal gradients and share point B, so A, B and C lie on one line. AC = √((7 − 1)² + (9 − 1)²) = √(36 + 64) = 10. The midpoint of AC is ((1 + 7)/2, (1 + 9)/2) = (4, 5), which is B. | gradient of AB 4/3 ; gradient of BC 4/3 ; shared point B so collinear ; AC = 10 ; midpoint (4, 5)
 
 ## Analytic Geometry
 S: Analytic geometry studies curves through their equations: lines, circles and the conics, in two and three dimensions. It answers geometric questions (tangents, intersections, distances) with algebra.
 O: Use the equation of a circle and find tangents and intersections
 O: Find the distance from a point to a line
+LV: GCSE and A level · Application
+EV: established | Circles are described by (x − a)² + (y − b)² = r², and line–circle intersections are decided by the discriminant of the resulting quadratic.
 T: Analytic geometry | Geometry using coordinates and equations, also called Cartesian geometry
 T: Locus equation | The equation satisfied by all points of a locus
 H: Circles
@@ -1032,11 +1054,15 @@ SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | secondary | 1
 NUM1#maths-u05-28-q1@1: What is the radius of x^{2} + y^{2} + 8x − 2y − 8 = 0? | 5 | 0 |  | (x + 4)^{2} + (y − 1)^{2} = 8 + 16 + 1 = 25, so r = 5.
 M1#maths-u05-28-q2@1: What is the centre of (x + 2)^{2} + (y − 5)^{2} = 9? | (−2, 5) | (2, −5) | (2, 5) | (−2, −5) | (5, −2) | (x − a)^{2} + (y − b)^{2}: here a = −2 and b = 5.
 M3#maths-u05-28-q3@2: Does the line y = x + 5 meet the circle x^{2} + y^{2} = 4? | No | Yes, twice | Yes, once (tangent) | Only at the origin | It lies inside | Substituting gives 2x^{2} + 10x + 21 = 0, with discriminant 100 − 168 < 0.
+NUM2@2: Find the distance from the point (1, −2) to the line 5x − 12y + 4 = 0, to 2 decimal places. | 2.54 | 0.01 |  | |5(1) − 12(−2) + 4| = 33 and √(25 + 144) = 13, so the distance is 33/13 ≈ 2.54.
+SA3@1: Find the values of k for which the line y = x + k is a tangent to the circle x^{2} + y^{2} = 8, explaining the method. | Substitute y = x + k: x² + (x + k)² = 8, so 2x² + 2kx + k² − 8 = 0. A tangent meets the circle once, so this quadratic has a repeated root and its discriminant is zero: (2k)² − 4 × 2 × (k² − 8) = 64 − 4k² = 0, giving k = 4 or k = −4. Check: the distance from the centre (0, 0) to x − y + k = 0 is |k|/√2 = 4/√2 = √8, the radius. | substitutes the line ; forms the quadratic ; discriminant zero for a tangent ; k = ±4 ; checks or interprets with the radius
 
 ## Vectors in Geometry
 S: Vectors have size and direction, and they make geometric proofs remarkably clean. Representing points and directions as vectors turns geometry into algebra with arrows.
 O: Add, subtract and scale vectors, and find magnitudes
 O: Use vectors to prove geometric results such as parallel lines and ratios
+LV: GCSE and A level · Application
+EV: established | Parallel vectors are scalar multiples of each other, so vector algebra proves parallel and collinear results.
 T: Vector | A quantity with magnitude and direction, written a, AB or as a column (x, y)
 T: Position vector | The vector from the origin to a point
 H: Vector arithmetic
@@ -1066,11 +1092,15 @@ SRC: Department for Education, Mathematics AS and A level subject content: vecto
 NUM1#maths-u05-29-q1@1: Find the magnitude of the vector (6, 8). | 10 | 0 |  | √(36 + 64) = √100 = 10.
 M1#maths-u05-29-q2@1: A = (2, 1) and B = (5, 5). What is the vector AB? | (3, 4) | (−3, −4) | (7, 6) | (5, 5) | (2.5, 3) | AB = b − a: subtract A's coordinates from B's to get (5 − 2, 5 − 1) = (3, 4).
 M2#maths-u05-29-q3@2: Which vector is parallel to (2, −3)? | (−4, 6) | (3, −2) | (2, 3) | (−2, −2) | (6, 4) | Parallel vectors are scalar multiples, and (−4, 6) = −2 × (2, −3).
+M3@1,2: OA = a and OB = b. P lies on AB with AP : PB = 1 : 3. What is OP? | ¾a + ¼b | ¼a + ¾b | ⅓a + ⅔b | ⅔a + ⅓b | a + ¼b | OP = a + ¼AB = a + ¼(b − a) = ¾a + ¼b; P is nearer A, so a has the larger weight.
+SA3@2: OA = a, OB = b and OC = 3b − 2a. Prove that A, B and C are collinear and find the ratio AB : BC. | AB = b − a. BC = OC − OB = 3b − 2a − b = 2b − 2a = 2(b − a). So BC = 2AB: the vectors are parallel, and they share the point B, so A, B and C lie on one straight line. Since BC is twice AB, AB : BC = 1 : 2. | AB = b − a ; BC = 2b − 2a ; BC is a scalar multiple of AB ; shared point B gives collinearity ; ratio 1 : 2
 
 ## 3D Coordinate Geometry
 S: 3D coordinate geometry extends coordinates to (x, y, z). Distances, midpoints, lines and planes in space describe everything from molecular structures to flight paths and video game worlds.
 O: Find distances and midpoints in three dimensions
 O: Write vector equations of lines and planes in 3D
+LV: A level · Application
+EV: established | Distance, midpoint and scalar-product formulas extend to three dimensions, where lines are r = a + λd and planes are fixed by a normal vector.
 T: Vector equation of a line | r = a + λd: a point a plus multiples of a direction d
 T: Normal vector | A vector perpendicular to a plane
 H: Points in 3D
@@ -1099,11 +1129,16 @@ SRC: Department for Education, AS and A level further mathematics subject conten
 SRC: Anton H, Rorres C, Elementary Linear Algebra (12th edn, Wiley 2019) | secondary | 2019 | https://www.wiley.com/
 M1#maths-u05-30-q1@1: What is the distance from the origin to (2, 3, 6)? | 7 | 11 | 5 | √11 | 49 | The 3D distance formula gives √(2^{2} + 3^{2} + 6^{2}) = √49 = 7.
 M2#maths-u05-30-q2@2: Which point lies on the line r = (1, 0, 2) + λ(1, 2, −1)? | (3, 4, 0) | (2, 2, 3) | (1, 2, 1) | (0, 0, 0) | (3, 4, 4) | λ = 2 gives (1 + 2, 0 + 4, 2 − 2) = (3, 4, 0).
+NUM2@1: Find the distance between (1, 2, −1) and (3, −1, 5). | 7 | 0 |  | The differences are 2, −3 and 6, so the distance is √(4 + 9 + 36) = √49 = 7.
+M3@2: What is the angle between lines with directions (1, 0, 1) and (0, 1, 1)? | 60° | 45° | 30° | 90° | 120° | The scalar product is 0 + 0 + 1 = 1 and each magnitude is √2, so cos θ = 1/2 and θ = 60°.
+SA3@2: Decide whether the lines r = (1, 0, 0) + λ(1, 1, 0) and r = (0, 0, 1) + μ(1, 0, 1) intersect, are parallel or are skew. Show your working. | The directions (1, 1, 0) and (1, 0, 1) aren't scalar multiples, so the lines aren't parallel. Points on them are (1 + λ, λ, 0) and (μ, 0, 1 + μ). Equating z: 0 = 1 + μ, so μ = −1. Equating x: 1 + λ = −1, so λ = −2. Then the y-coordinates are λ = −2 and 0, which don't agree, so there is no common point. The lines are neither parallel nor intersecting: they are skew. | directions not parallel ; general points on each line ; solves two equations for λ and μ ; third equation fails ; concludes skew
 
 ## Conic Sections
 S: Conic sections are the curves formed by slicing a double cone with a plane: circles, ellipses, parabolas and hyperbolas. Studied since ancient Greece, they describe planetary orbits, satellite dishes and the paths of comets.
 O: Identify the conic sections and how they arise
 O: Classify conics from their equations
+LV: A level · Fluency
+EV: established | Plane sections of a double cone give circles, ellipses, parabolas and hyperbolas, classified by eccentricity.
 T: Conic section | A curve formed by the intersection of a plane with a double cone
 T: Eccentricity | A number e describing a conic's shape: circle e = 0, ellipse 0 < e < 1, parabola e = 1, hyperbola e > 1
 H: The family
@@ -1120,6 +1155,7 @@ X: Classify the conic 4x^{2} − 9y^{2} = 36.
 > Divide by 36: x^{2}/9 − y^{2}/4 = 1
 > The x^{2} and y^{2} terms have opposite signs
 > It's a hyperbola, with vertices at (±3, 0)
+P: A circle is a special ellipse with equal axes. For the ellipse x^{2}/a^{2} + y^{2}/b^{2} = 1 with a > b, the eccentricity is e = √(1 − b^{2}/a^{2}): the flatter the ellipse, the nearer e is to 1.
 K: Slicing a cone gives circles, ellipses, parabolas and hyperbolas; eccentricity and the signs of the squared terms classify them.
 !: Confusing a parabola (one squared term) with a hyperbola (two squared terms of opposite sign).
 Q: What is the eccentricity of a circle? | 0.
@@ -1130,11 +1166,17 @@ SRC: Department for Education, AS and A level further mathematics subject conten
 SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | secondary | 1989 | https://www.wiley.com/
 M1#maths-u05-31-q1@1: Which conic is x^{2}/25 + y^{2}/9 = 1? | An ellipse | A hyperbola | A parabola | A circle | Two lines | Both squared terms are positive with different denominators: an ellipse.
 M2#maths-u05-31-q2@2: What eccentricity does a parabola have? | 1 | 0 | Between 0 and 1 | Greater than 1 | Infinite | A parabola is the boundary case between ellipses (e < 1) and hyperbolas (e > 1).
+TF1@1: A hyperbola arises when the cutting plane meets both halves of the double cone. | true | Only a hyperbola has two separate branches, one from each half of the double cone.
+M2@2: Which equation describes a hyperbola? | x^{2} − 4y^{2} + 2x = 3 | x^{2} + 4y^{2} + 2x = 3 | x^{2} + 4y + 2x = 3 | x^{2} + y^{2} + 2x = 3 | With no xy term, opposite signs on the x^{2} and y^{2} terms give a hyperbola; same signs an ellipse or circle; one squared term a parabola.
+NUM3@2: Find the eccentricity of the ellipse x^{2}/25 + y^{2}/9 = 1. | 0.8 | 0 |  | e = √(1 − b^{2}/a^{2}) = √(1 − 9/25) = √(16/25) = 0.8, between 0 and 1 as an ellipse's must be.
+SA2@1,2: Describe how each of the four conics is obtained by slicing a double cone, and classify 9x^{2} + 4y^{2} = 36, y = x^{2} and x^{2} − y^{2} = 1. | A plane perpendicular to the axis gives a circle; tilted so it cuts right across one cone, an ellipse; parallel to a slanted side of the cone, a parabola; steep enough to cut both halves, a hyperbola. 9x² + 4y² = 36 has both squared terms positive with different coefficients, so it is an ellipse (x²/4 + y²/9 = 1). y = x² has one squared term, so it is a parabola. x² − y² = 1 has squared terms of opposite signs, so it is a hyperbola. | circle and ellipse slices ; parabola parallel to a side ; hyperbola cuts both halves ; ellipse identified ; parabola and hyperbola identified
 
 ## Parabolas
 S: A parabola is the set of points equidistant from a point (the focus) and a line (the directrix). Every quadratic graph is a parabola, and its reflective property is why satellite dishes and car headlights are parabolic.
 O: Use the focus–directrix definition of a parabola
 O: Find the focus and directrix of y^{2} = 4ax
+LV: A level · Application
+EV: established | A parabola is the locus of points equidistant from a focus and a directrix, and y² = 4ax has focus (a, 0) and directrix x = −a.
 T: Focus | The fixed point in the focus–directrix definition
 T: Directrix | The fixed line in the focus–directrix definition
 H: Equations
@@ -1150,6 +1192,7 @@ X: Find the focus and directrix of y^{2} = 12x, and check that (3, 6) is equidis
 > 4a = 12, so a = 3: focus (3, 0), directrix x = −3
 > Distance from (3, 6) to the focus is √(0 + 36) = 6
 > Distance to the directrix is 3 − (−3) = 6 ✓
+!: Using the y^{2} = 4ax results for x^{2} = 4ay without swapping the axes: for x^{2} = 4ay the focus is (0, a) and the directrix is y = −a.
 K: y^{2} = 4ax has focus (a, 0) and directrix x = −a; parabolas reflect parallel rays to the focus.
 !: Mixing up a and 4a when reading the focus from y^{2} = 4ax.
 Q: What is the focus of y^{2} = 8x? | (2, 0).
@@ -1161,6 +1204,8 @@ SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | secondary | 1
 NUM1#maths-u05-32-q1@1: The parabola y^{2} = 4ax has focus (5, 0). What is a? | 5 | 0 |  | The focus of y^{2} = 4ax is (a, 0), so a = 5 (the equation is y^{2} = 20x).
 M1#maths-u05-32-q2@1: What is the directrix of y^{2} = 16x? | x = −4 | x = 4 | y = −4 | x = −16 | y = 4 | 4a = 16 gives a = 4, and the directrix is x = −a.
 M2#maths-u05-32-q3@2: Where should a bulb be placed in a parabolic headlight to make a parallel beam? | At the focus | At the vertex | On the directrix | At the rim | Anywhere on the axis | Rays from the focus reflect off the parabola parallel to its axis.
+NUM3@1,2: A point P on the parabola y^{2} = 12x is 10 units from the focus. Find the x-coordinate of P. | 7 | 0 |  | The directrix is x = −3, and P is as far from the directrix as from the focus: x + 3 = 10, so x = 7.
+SA3@1,2: Using the focus–directrix definition, derive the equation of the parabola with focus (a, 0) and directrix x = −a. | For a point (x, y) on the parabola, the distance to the focus equals the distance to the directrix: √((x − a)² + y²) = x + a. Squaring both sides: x² − 2ax + a² + y² = x² + 2ax + a². Cancelling x² and a² leaves y² − 2ax = 2ax, so y² = 4ax. | sets the two distances equal ; distance to the directrix is x + a ; squares both sides ; expands and cancels ; reaches y² = 4ax
 
 ## Ellipses
 S: An ellipse is a stretched circle: the set of points whose distances to two foci add to a constant. Planets, comets and satellites travel in ellipses, as Kepler discovered.

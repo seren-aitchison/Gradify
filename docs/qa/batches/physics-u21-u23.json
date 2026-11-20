@@ -1,7 +1,7 @@
 {
   "task": "physics-u21-u23",
   "on": "2026-11-20",
-  "status": "u21 complete (0 problems); u23 lessons 1-16 enhanced (0 problems in those); 17-25 in progress",
+  "status": "complete: u21 and u23, 50 lessons enhanced; new-course check 0 problems in both; course, compat and qa-content tests pass",
   "files": [
     "kit/courses/physics/notes/u21.js",
     "kit/courses/physics/notes/u23.js"
@@ -376,6 +376,358 @@
         {
           "class": "needs-source",
           "note": "No OpenStax section treats precision spectroscopy directly; the SRC lines cite the closest confirmed sections. A specialist source (e.g. a review or Nobel lecture) should be added after checking."
+        }
+      ]
+    },
+    {
+      "course": "physics",
+      "lesson": "u23-01",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions after the existing ones to reach levels 1-3 and an SA extended answer",
+        "lengthened distractors (length bias)"
+      ],
+      "findings": [
+        {
+          "class": "editorial",
+          "note": "'halo nuclei ... as large as lead nuclei' hedged to 'comparable in size to much heavier nuclei' (matter radius of Li-11 ~3.2 fm against ~5.5 fm for Pb-208)."
+        }
+      ]
+    },
+    {
+      "course": "physics",
+      "lesson": "u23-02",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions after the existing ones to reach levels 1-3 and an SA extended answer",
+        "added charges in coulombs and quark charge sums (AQA 3.2.1.1)"
+      ],
+      "findings": []
+    },
+    {
+      "course": "physics",
+      "lesson": "u23-03",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions after the existing ones to reach levels 1-3 and an SA extended answer",
+        "lengthened distractors (length bias)",
+        "added electron-diffraction minimum relation (AQA 3.8.1.5)"
+      ],
+      "findings": []
+    },
+    {
+      "course": "physics",
+      "lesson": "u23-04",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions after the existing ones to reach levels 1-3 and an SA extended answer",
+        "lengthened distractors (length bias)"
+      ],
+      "findings": [
+        {
+          "class": "editorial",
+          "note": "Worked example listed m_p and m_n alongside atomic masses; now uses m(1H) consistently. Supernova sentence clarified: fusion beyond the iron group absorbs energy."
+        }
+      ]
+    },
+    {
+      "course": "physics",
+      "lesson": "u23-05",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions after the existing ones to reach levels 1-3 and an SA extended answer",
+        "added kg value of 1 u and the atomic-mass electron cancellation explanation"
+      ],
+      "findings": []
+    },
+    {
+      "course": "physics",
+      "lesson": "u23-06",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions after the existing ones to reach levels 1-3 and an SA extended answer"
+      ],
+      "findings": []
+    },
+    {
+      "course": "physics",
+      "lesson": "u23-07",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions after the existing ones to reach levels 1-3 and an SA extended answer",
+        "lengthened distractors (length bias)"
+      ],
+      "findings": [
+        {
+          "class": "error-fixed",
+          "note": "M1 asked for the heaviest element with a 'practically stable' isotope, answer Lead, with 'Bismuth (very long-lived)' as a distractor; bismuth-209 (t½ ≈ 2 × 10^19 y) is practically stable, so the key was arguable. Stem now asks for no decay ever observed; answer Lead."
+        }
+      ]
+    },
+    {
+      "course": "physics",
+      "lesson": "u23-08",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions after the existing ones to reach levels 1-3 and an SA extended answer",
+        "lengthened distractors (length bias)",
+        "added Poisson √N uncertainty"
+      ],
+      "findings": []
+    },
+    {
+      "course": "physics",
+      "lesson": "u23-09",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions after the existing ones to reach levels 1-3 and an SA extended answer",
+        "lengthened distractors (length bias)"
+      ],
+      "findings": []
+    },
+    {
+      "course": "physics",
+      "lesson": "u23-10",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions after the existing ones to reach levels 1-3 and an SA extended answer",
+        "stated the 8 alpha + 6 beta make-up of the U-238 series"
+      ],
+      "findings": []
+    },
+    {
+      "course": "physics",
+      "lesson": "u23-11",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions after the existing ones to reach levels 1-3 and an SA extended answer",
+        "lengthened distractors (length bias)",
+        "explained why the threshold exceeds |Q|"
+      ],
+      "findings": []
+    },
+    {
+      "course": "physics",
+      "lesson": "u23-12",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions after the existing ones to reach levels 1-3 and an SA extended answer",
+        "lengthened distractors (length bias)"
+      ],
+      "findings": [
+        {
+          "class": "needs-source",
+          "note": "No OpenStax section treats nuclear cross-sections directly; the SRC lines cite the closest confirmed sections. A specialist source should be added after checking."
+        }
+      ]
+    },
+    {
+      "course": "physics",
+      "lesson": "u23-13",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions after the existing ones to reach levels 1-3 and an SA extended answer"
+      ],
+      "findings": [
+        {
+          "class": "needs-source",
+          "note": "No OpenStax section treats form factors and the optical model directly; the SRC lines cite the closest confirmed sections. A specialist source should be added after checking."
+        }
+      ]
+    },
+    {
+      "course": "physics",
+      "lesson": "u23-14",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions after the existing ones to reach levels 1-3 and an SA extended answer",
+        "lengthened distractors (length bias)"
+      ],
+      "findings": []
+    },
+    {
+      "course": "physics",
+      "lesson": "u23-15",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions after the existing ones to reach levels 1-3 and an SA extended answer"
+      ],
+      "findings": [
+        {
+          "class": "editorial",
+          "note": "NIF 'ignition' defined as fusion yield exceeding laser energy delivered to the target (not wall-plug energy); 26.7 MeV for the pp chain noted as including positron annihilation."
+        }
+      ]
+    },
+    {
+      "course": "physics",
+      "lesson": "u23-16",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions after the existing ones to reach levels 1-3 and an SA extended answer"
+      ],
+      "findings": []
+    },
+    {
+      "course": "physics",
+      "lesson": "u23-17",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions after the existing ones to reach levels 1-3 and an SA extended answer",
+        "lengthened distractors (length bias)"
+      ],
+      "findings": []
+    },
+    {
+      "course": "physics",
+      "lesson": "u23-18",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions after the existing ones to reach levels 1-3 and an SA extended answer"
+      ],
+      "findings": [
+        {
+          "class": "editorial",
+          "note": "Graphite drawback 'fire risk' stated as 'can burn if overheated in air'."
+        }
+      ]
+    },
+    {
+      "course": "physics",
+      "lesson": "u23-19",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions after the existing ones to reach levels 1-3 and an SA extended answer",
+        "lengthened distractors (length bias)"
+      ],
+      "findings": [
+        {
+          "class": "error-fixed",
+          "note": "RTGs were listed as nuclear (fission) power for spacecraft; RTGs use radioactive decay heat, not fission. Text now separates fission propulsion (submarines, icebreakers) from RTGs."
+        },
+        {
+          "class": "editorial",
+          "note": "'25-30 t of fuel per year' for 1 GW broadened to 'roughly 20-30 t'."
+        }
+      ]
+    },
+    {
+      "course": "physics",
+      "lesson": "u23-20",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions after the existing ones to reach levels 1-3 and an SA extended answer",
+        "lengthened distractors (length bias)"
+      ],
+      "findings": []
+    },
+    {
+      "course": "physics",
+      "lesson": "u23-21",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions after the existing ones to reach levels 1-3 and an SA extended answer",
+        "lengthened distractors (length bias)",
+        "added inverse square law (AQA 3.8.1.2)"
+      ],
+      "findings": []
+    },
+    {
+      "course": "physics",
+      "lesson": "u23-22",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions after the existing ones to reach levels 1-3 and an SA extended answer"
+      ],
+      "findings": []
+    },
+    {
+      "course": "physics",
+      "lesson": "u23-23",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions after the existing ones to reach levels 1-3 and an SA extended answer",
+        "lengthened distractors (length bias)"
+      ],
+      "findings": []
+    },
+    {
+      "course": "physics",
+      "lesson": "u23-24",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions after the existing ones to reach levels 1-3 and an SA extended answer",
+        "lengthened distractors (length bias)"
+      ],
+      "findings": []
+    },
+    {
+      "course": "physics",
+      "lesson": "u23-25",
+      "action": "enhanced",
+      "changes": [
+        "added O/PRE/LV, K, T, SUM, EV and two confirmed SRC lines",
+        "linked questions to objectives; lengthened explanations to 40+ characters",
+        "added questions after the existing ones to reach levels 1-3 and an SA extended answer",
+        "lengthened distractors (length bias)",
+        "added intermediate-level waste description"
+      ],
+      "findings": [
+        {
+          "class": "curriculum-dependent",
+          "note": "Onkalo status is date-sensitive: written as 'set to be the first in operation, from the mid-2020s'; check the current status at review."
+        },
+        {
+          "class": "editorial",
+          "note": "EV marked contested for the linear no-threshold model at low doses."
         }
       ]
     }

@@ -418,6 +418,95 @@
     "geostationary-period distractors lengthened (length bias)"
    ],
    "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u07-13",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "key point on tidal stretching against self-gravity"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "The Roche-limit coefficients 2.44 (fluid) and 1.26 (rigid) are not in the cited OpenStax sections, which cover tides and rings qualitatively; confirm against a specialist text at review."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u07-14",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "key point on why a body at a Lagrange point keeps pace"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "OpenStax has no section on Lagrange points; the cited sections cover orbits and many-body gravity generally. Add a celestial-mechanics source at review."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u07-15",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "Jacobi-constant sign convention stated (U_eff written as a positive quantity)"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "C = 2U_eff − v² was ambiguous about the sign of U_eff; clarified that U_eff here is the positive pseudo-potential."
+    },
+    {
+     "class": "needs-source",
+     "note": "Jacobi constant, zero-velocity curves and low-energy transfers are beyond OpenStax; add a celestial-mechanics source at review."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u07-16",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "added the rocket equation, which the lead's 'grows exponentially' relied on"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u07-17",
+   "action": "enhanced",
+   "changes": [
+    "objectives, prerequisite, level",
+    "key point, key terms, summary, evidence status",
+    "two confirmed sources",
+    "explanations lengthened to 40+ characters and linked to objectives",
+    "new questions added at all three levels, including an extended answer",
+    "key point that both burns are tangential and prograde; launch-phase question"
+   ],
+   "findings": []
   }
  ],
  "notes": [

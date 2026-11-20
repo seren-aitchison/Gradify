@@ -305,6 +305,106 @@
     "extended written answer (SA) with model answer and marking points added"
    ],
    "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-25",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Fluency",
+    "evidence status: established",
+    "content added: P (Capital letters show the two kinds separately: H has 2 lines of sym…)",
+    "questions added: TF1, NUM2, M3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-26",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Application",
+    "evidence status: established",
+    "content added: X (Show that any triangle tessellates.…)",
+    "questions added: TF1, M3, SA3 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-27",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE and A level · Fluency",
+    "evidence status: established",
+    "questions added: NUM3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-28",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE and A level · Application",
+    "evidence status: established",
+    "questions added: NUM2, SA3 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-29",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE and A level · Application",
+    "evidence status: established",
+    "questions added: M3, SA3 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-30",
+   "action": "enhanced",
+   "changes": [
+    "level: A level · Application",
+    "evidence status: established",
+    "questions added: NUM2, M3, SA3 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-31",
+   "action": "enhanced",
+   "changes": [
+    "level: A level · Fluency",
+    "evidence status: established",
+    "content added: P (A circle is a special ellipse with equal axes. For the ellipse x^{2…)",
+    "questions added: TF1, M2, NUM3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-32",
+   "action": "enhanced",
+   "changes": [
+    "level: A level · Application",
+    "evidence status: established",
+    "content added: ! (Using the y^{2} = 4ax results for x^{2} = 4ay without swapping the…)",
+    "questions added: NUM3, SA3 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
   }
  ],
  "notes": []

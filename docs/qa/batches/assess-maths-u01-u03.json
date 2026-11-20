@@ -502,6 +502,219 @@
     "all worked examples and numeric answers recomputed"
    ],
    "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u03-09",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Fluency",
+    "evidence status: established",
+    "explanation of NUM 'Solve 5x − 7 = 2x + 8' lengthened (was under 20 characters)",
+    "new questions added: NUM3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u03-10",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE and A level · Application",
+    "evidence status: established",
+    "new questions added: M3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u03-11",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE and A level · Application",
+    "evidence status: established",
+    "new questions added: SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u03-12",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE and A level · Application",
+    "evidence status: established",
+    "new questions added: NUM1, M3, SA3 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u03-13",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE and A level · Application",
+    "evidence status: established",
+    "new questions added: M2, SA3 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u03-14",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE and A level · Application",
+    "evidence status: established",
+    "common mistake added: dividing by x loses the root 0 (lesson was too thin)",
+    "new questions added: NUM2, M3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u03-15",
+   "action": "enhanced",
+   "changes": [
+    "level: A level · Application",
+    "evidence status: established",
+    "new questions added: M3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u03-16",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE and A level · Application",
+    "evidence status: established",
+    "common mistake added: forgetting to reverse the sign, with a test value (lesson was too thin)",
+    "new questions added: NUM1, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u03-17",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE and A level · Application",
+    "evidence status: established",
+    "common mistake added: testing a point on the boundary (lesson was too thin)",
+    "new questions added: NUM2, M3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u03-18",
+   "action": "enhanced",
+   "changes": [
+    "level: A level · Application",
+    "evidence status: established",
+    "new questions added: NUM1, M3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u03-19",
+   "action": "enhanced",
+   "changes": [
+    "level: A level · Application",
+    "evidence status: established",
+    "new questions added: M1, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u03-20",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE and A level · Application",
+    "evidence status: established",
+    "new questions added: NUM2, SA3 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u03-21",
+   "action": "enhanced",
+   "changes": [
+    "level: A level · Application",
+    "evidence status: established",
+    "new questions added: M3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u03-22",
+   "action": "enhanced",
+   "changes": [
+    "level: A level · Application",
+    "evidence status: established",
+    "new questions added: NUM2, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u03-23",
+   "action": "enhanced",
+   "changes": [
+    "level: A level · Application",
+    "evidence status: established",
+    "new questions added: M3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u03-24",
+   "action": "enhanced",
+   "changes": [
+    "level: A level · Fluency",
+    "evidence status: established",
+    "common mistake added: reading end behaviour from the first term written (lesson was too thin)",
+    "new questions added: NUM1, M3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
   }
  ],
  "notes": []

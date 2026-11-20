@@ -660,126 +660,227 @@ SA2@1,3: Explain the meaning of the multiplication factor k and how a reactor is
 
 ## Nuclear reactors
 S: A nuclear reactor sustains a controlled fission chain reaction, using the heat to make steam and generate electricity. Its core contains fuel, a moderator, control rods and coolant, surrounded by shielding and containment.
+O: Describe the function of fuel, moderator, control rods, coolant and containment
+O: Compare the main reactor types
+O: Explain the key safety features and the role of decay heat
+PRE: Chain reactions
+LV: A level · Application
 H: Components
-- **Fuel**: uranium oxide enriched to 3–5% U-235 (or natural uranium in CANDU; MOX).
+- **Fuel**: uranium oxide enriched to 3–5% U-235 (natural uranium in CANDU; mixed-oxide MOX).
 - **Moderator**: slows neutrons (water, heavy water, graphite).
 - **Control rods**: absorb neutrons (boron carbide, cadmium, hafnium).
 - **Coolant**: removes heat (water, CO_{2}, liquid sodium, helium, molten salt).
-- **Containment**: steel and concrete structures.
+- **Containment**: steel and concrete structures that hold in radioactive material.
 H: Reactor types
-- **PWR**: pressurised water (most common); secondary loop makes steam.
+- **PWR**: pressurised water (most common); a secondary loop makes steam.
 - **BWR**: water boils in the core.
 - **CANDU**: heavy water, natural uranium.
 - **Fast breeders**: no moderator; convert U-238 into Pu-239.
-- **Generation IV and SMRs**: molten salt, high-temperature gas, small modular designs.
+- **Generation IV and SMRs**: molten salt, high-temperature gas and small modular designs.
 H: Safety
-P: Reactors are designed with negative temperature coefficients: heating reduces reactivity. Decay heat (~7% of power just after shutdown, falling over days) must always be removed; losing cooling caused Three Mile Island (1979) and Fukushima (2011). Chernobyl (1986) combined a positive void coefficient with unsafe testing.
+P: Reactors are designed with negative temperature coefficients: heating reduces reactivity. Decay heat (~7% of full power just after shutdown, falling over days) must always be removed; losing cooling caused the Three Mile Island (1979) and Fukushima (2011) accidents. Chernobyl (1986) combined a positive void coefficient with an unsafe test.
 X: A 1 GW(e) reactor at 33% efficiency. Fissions per second?
-> Thermal power 3 GW = 3 × 10^{9} J s^{-1}
-> 200 MeV = 3.2 × 10^{-11} J ⇒ 9.4 × 10^{19} fissions per second
-!: A reactor can't explode like a nuclear bomb; fuel enrichment is far too low. The hazards are overheating, steam or hydrogen explosions and radioactive release.
+> Thermal power = 1 GW/0.33 = 3 × 10^{9} J s^{-1}
+> 200 MeV = 3.2 × 10^{-11} J ⇒ 3 × 10^{9}/3.2 × 10^{-11} = 9.4 × 10^{19} fissions per second
+K: A reactor converts fission energy to heat at a steady k = 1; moderator, control rods and coolant each have a distinct job.
+!: A reactor can't explode like a nuclear bomb; its fuel enrichment is far too low. The hazards are overheating, steam or hydrogen explosions and release of radioactivity.
+T: Moderator | A material of light nuclei that slows fast neutrons to thermal energies
+T: Control rod | A rod of neutron-absorbing material moved in or out of the core to adjust k
+T: Decay heat | Heat produced by radioactive fission products after a reactor has shut down
+SUM: Fuel, moderator, control rods, coolant and containment each have a role.
+SUM: PWRs dominate; CANDU, breeders and new designs differ in moderator and coolant.
+SUM: Cooling must continue after shutdown because of decay heat.
+EV: established | Thermal fission reactors operate safely when reactivity feedback is negative and decay heat removal is assured; the major accidents involved failures of these
+SRC: OpenStax, University Physics Volume 3, section 10.5 "Fission" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/10-5-fission
+SRC: AQA, A-level Physics specification (7408), section 3.8.1.7 Induced fission | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: What does a moderator do? | Slows fast neutrons to thermal energies where U-235 fission is likely.
 Q: Why must cooling continue after shutdown? | Radioactive fission products keep producing decay heat.
-M1: Most commercial reactors are: | Pressurised water reactors | Fast breeders | Fusion reactors | Molten salt | PWRs.
-M2: Control rods contain: | Neutron absorbers like boron | Uranium | Water | Graphite | Absorb neutrons.
+M1@2: Most commercial reactors are: | Pressurised water reactors | Fast breeder reactors | Fusion reactors | Molten salt reactors | PWRs make up the large majority of the world's power reactors, using ordinary water as moderator and coolant.
+M2@1: Control rods contain: | Neutron absorbers such as boron | Enriched uranium fuel | Ordinary water | Graphite moderator | Boron, cadmium or hafnium have large neutron-capture cross-sections, so inserting rods lowers k.
+NUM2@1: A reactor produces 3.0 GW of heat. How many fissions occur per second, in units of 10^{19}? (200 MeV = 3.2 × 10^{-11} J) | 9.4 | 0.1 | × 10^{19} s^{-1} | 3.0 × 10^{9}/3.2 × 10^{-11} = 9.4 × 10^{19} fissions per second.
+TF1@3: A negative temperature coefficient means a reactor's reactivity falls as it heats up. | true | Rising temperature then reduces k automatically, a built-in stabilising feedback.
+M3@1,3: Why was Chernobyl's positive void coefficient dangerous? | Steam bubbles in the coolant increased reactivity, so heating raised power further | Steam absorbed all neutrons, stopping the reactor | Voids made the control rods melt directly | Bubbles slowed neutrons too much to cause fission | In that design water absorbed more neutrons than it moderated; boiling removed absorber, raising k in a runaway loop.
+SA2@1,3: Describe the roles of the moderator, control rods and coolant in a thermal fission reactor, and explain why a reactor must still be cooled after it is shut down. | The moderator (water, heavy water or graphite) slows fast fission neutrons by elastic collisions with light nuclei, so they are likely to cause further U-235 fission. Control rods of boron or cadmium absorb neutrons; moving them in or out keeps k = 1 or shuts the reactor down. The coolant carries heat from the fuel to the steam generator or turbine. After shutdown, the radioactive fission products continue to decay, releasing about 7% of full power at first, so if cooling stops the fuel can overheat and melt. | Moderator slows neutrons for U-235 fission ; Control rods absorb neutrons to control k ; Coolant removes heat ; Decay heat from fission products ; Consequence of losing cooling
 
 ## Neutron moderation
-S: Fission neutrons are born fast (~2 MeV) but U-235 fissions far more readily with slow (thermal, ~0.025 eV) neutrons. A moderator slows them through elastic collisions with light nuclei.
+S: Fission neutrons are born fast (~2 MeV), but U-235 fissions far more readily with slow (thermal, ~0.025 eV) neutrons. A moderator slows them through elastic collisions with light nuclei.
+O: Calculate the energy lost by a neutron in elastic collisions with nuclei of mass number A
+O: Estimate the number of collisions needed to thermalise a neutron
+O: Compare moderators using slowing power and absorption
+PRE: Elastic and inelastic collisions
+LV: Year 2 · Physical reasoning
 H: Physics of slowing
-E: average logarithmic energy loss per collision: ξ ≈ 2/(A + 2/3)
+E: ξ ≈ 2/(A + 2/3) :: average logarithmic energy loss per collision
 E: collisions to thermalise ≈ ln(2 MeV/0.025 eV)/ξ = 18.2/ξ
 - Hydrogen (A = 1): ξ = 1: ~18 collisions.
 - Deuterium: ~25; carbon: ~115; uranium: ~2000 (useless).
 H: Moderating ratio
 - A good moderator must slow neutrons (high ξΣ_{s}) without absorbing them (low Σ_{a}).
-- Light water: excellent slowing but absorbs (needs enriched fuel).
-- Heavy water: excellent ratio; allows natural uranium.
-- Graphite: low absorption, large size needed; fire risk.
+- Light water: excellent slowing but absorbs some neutrons, so it needs enriched fuel.
+- Heavy water: the best ratio; allows natural uranium.
+- Graphite: low absorption but needs a large volume; it can burn if overheated in air.
 H: Thermal neutrons
-P: Thermalised neutrons follow a Maxwell distribution at the moderator temperature (most probable speed ~2200 m s^{-1} at 20 °C). Their wavelengths (~0.18 nm) suit diffraction: research reactors provide neutron beams for materials science.
+P: Thermalised neutrons follow a Maxwell distribution at the moderator temperature (a characteristic speed of 2200 m s^{-1} at 20 °C). Their wavelengths (~0.18 nm) suit diffraction, so research reactors provide neutron beams for materials science.
 X: Maximum fractional energy a neutron can lose hitting a carbon-12 nucleus head-on?
-> Energy remaining ratio α = ((A − 1)/(A + 1))^{2} = (11/13)^{2} = 0.716
+> Fraction of energy kept α = ((A − 1)/(A + 1))^{2} = (11/13)^{2} = 0.716
 > Maximum loss 28%
+K: Energy transfer in an elastic collision is greatest when the masses are equal, so light nuclei moderate best.
 !: Heavy nuclei make poor moderators: a neutron bounces off them like a ball off a wall, losing little energy.
+T: Thermal neutron | A neutron in thermal equilibrium with its surroundings, about 0.025 eV at room temperature
+T: Moderating ratio | A moderator's slowing-down power divided by its absorption, ξΣ_{s}/Σ_{a}
+SUM: Fission neutrons must fall from ~2 MeV to ~0.025 eV.
+SUM: Hydrogen needs ~18 collisions, carbon ~115.
+SUM: Heavy water has the best moderating ratio; light water needs enriched fuel.
+EV: established | Elastic-collision kinematics explain the effectiveness of water, heavy water and graphite as moderators
+SRC: OpenStax, College Physics 2e, section 32.6 "Fission" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/32-6-fission
+SRC: AQA, A-level Physics specification (7408), section 3.8.1.7 Induced fission | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: Why are light nuclei good moderators? | Elastic collisions with similar-mass nuclei transfer the most energy.
 Q: Why can heavy-water reactors use natural uranium? | Heavy water absorbs very few neutrons while still moderating well.
-M1: The best slowing per collision is with: | Hydrogen | Carbon | Lead | Uranium | Equal masses.
-M2: Thermal neutrons at room temperature have energy about: | 0.025 eV | 2 MeV | 1 keV | 1 eV | k_{B}T.
+M1@1: The best slowing per collision is with: | Hydrogen | Carbon | Lead | Uranium | A neutron and a proton have almost equal masses, so a head-on collision can transfer all the neutron's energy.
+M2@2: Thermal neutrons at room temperature have energy about: | 0.025 eV | 2 MeV | 1 keV | 1 eV | Thermal energies are of order k_{B}T, and at 293 K k_{B}T ≈ 0.025 eV; 2 MeV is the typical fission-neutron energy.
+NUM2@1: Using α = ((A − 1)/(A + 1))^{2}, what fraction of its energy does a neutron keep after a head-on collision with deuterium (A = 2)? | 0.111 | 0.002 | (fraction) | α = (1/3)^{2} = 0.111: up to 89% of the energy can be lost in one collision.
+TF1@3: Graphite needs more collisions than water to thermalise neutrons but absorbs fewer of them. | true | Carbon (A = 12) takes ~115 collisions against ~18 for hydrogen, but its tiny capture cross-section lets natural-uranium graphite reactors work.
+M3@1,2: Roughly how many head-on collisions with hydrogen would stop a neutron completely, and why is the real number ~18? | One; real collisions are mostly glancing, losing on average half the energy | Two; neutrons bounce back with half their speed | 18 always, since energy is shared equally each time | None; neutrons can't lose all their energy to protons | Equal masses allow full transfer head-on, but averaged over angles the energy halves per collision: ln(8 × 10^{7})/1 ≈ 18 steps.
+SA3@1,3: Explain why water, heavy water and graphite are all used as moderators, and the advantages and drawbacks of each. | A moderator must slow neutrons in few collisions, which needs light nuclei (energy transfer is greatest for equal masses), and must absorb few neutrons. Light water's hydrogen slows neutrons in ~18 collisions, so cores are compact, but hydrogen captures some neutrons, so fuel must be enriched. Heavy water's deuterium needs ~25 collisions but hardly absorbs, giving the best moderating ratio and allowing natural uranium, at the cost of expensive D_{2}O. Graphite needs ~115 collisions, so cores are large, but its low absorption also allows natural uranium; it can burn if overheated in air. | Light nuclei slow most per collision ; Low absorption needed ; Light water: compact, needs enrichment ; Heavy water: best ratio, natural uranium, costly ; Graphite: low absorption, large, fire risk
 
 ## Nuclear energy and power
 S: Nuclear power generates about 10% of the world's electricity with very low carbon emissions. Its strengths are reliability and energy density; its challenges are cost, waste, proliferation and public perception.
+O: Compare the energy density of nuclear fuel with fossil fuels
+O: Describe the nuclear fuel cycle
+O: Evaluate the advantages and disadvantages of nuclear power
+PRE: Nuclear reactors
+LV: GCSE and A level · Application
 H: Energy density
-- 1 kg of U-235 fissioned ≈ 8 × 10^{13} J ≈ 3 million kg of coal.
-- A 1 GW reactor uses ~25–30 t of fuel per year (low-enriched).
+- 1 kg of U-235 fissioned ≈ 8 × 10^{13} J ≈ the energy of about 3 million kg of coal.
+- A 1 GW reactor uses roughly 20–30 t of low-enriched fuel per year.
 H: Fuel cycle
 - Mining → conversion → enrichment (centrifuges) → fuel fabrication → reactor (3–6 years) → spent fuel (cooling ponds, dry casks) → reprocessing (some countries) or disposal.
 H: Comparisons
 - Lifecycle emissions ~5–15 g CO_{2} per kWh (similar to wind; coal ~1000).
 - Deaths per TWh among the lowest of all energy sources, including accidents.
-- High capacity factor (~90%): steady baseload.
+- High capacity factor (~90%): steady output.
 - Long construction times and high capital costs in many countries.
 H: Future
-P: Small modular reactors aim for factory-built, cheaper, safer units. Thorium cycles, fast reactors that burn long-lived waste, and fusion are longer-term options. Nuclear also powers submarines, icebreakers and spacecraft (RTGs).
-X: A 1 GW(e) reactor running at 90% for a year produces how much electricity?
-> E = 1 × 0.9 × 8760 h = 7.9 TWh
-!: Radiation risk from normally operating plants is tiny compared with natural background; the debate centres on accidents, waste and cost.
+P: Small modular reactors aim for factory-built, cheaper units. Thorium fuel cycles, fast reactors that burn long-lived waste, and fusion are longer-term options. Fission also powers submarines and icebreakers; radioisotope thermoelectric generators (RTGs), using decay heat, power deep-space probes.
+X: A 1 GW(e) reactor running at 90% capacity factor for a year produces how much electricity?
+> E = 1 GW × 0.9 × 8760 h
+> E = 7.9 TWh
+K: Nuclear fuel stores about a million times more energy per kilogram than fossil fuel, with low lifecycle carbon emissions; its costs and waste are the main debate.
+!: Radiation dose to the public from normally operating plants is tiny compared with natural background; the debate centres on accidents, waste, cost and proliferation.
+T: Capacity factor | Actual energy generated divided by the energy at full power over the same time
+T: Enrichment | Raising the proportion of U-235 above its natural 0.7%
+T: Lifecycle emissions | Greenhouse gases emitted over a plant's whole life, including construction, fuel and decommissioning
+SUM: Nuclear fuel energy density ~10^{6} times chemical fuels.
+SUM: Low carbon and steady output; high capital cost, waste and proliferation concerns.
+SUM: SMRs, fast reactors and fusion are possible futures.
+EV: established | Nuclear power's lifecycle emissions are comparable with wind and its mortality rate per unit energy is among the lowest; its costs and future role are contested
+SRC: OpenStax, University Physics Volume 3, section 10.5 "Fission" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/10-5-fission
+SRC: OpenStax, College Physics 2e, section 32.6 "Fission" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/32-6-fission
 Q: Why is nuclear power low-carbon? | Fission produces no CO_{2}; lifecycle emissions come mainly from construction and mining.
 Q: What fraction of world electricity is nuclear? | About 10%.
-M1: Uranium enrichment increases the fraction of: | U-235 | U-238 | Pu-239 | Thorium | 0.7% → 3–5%.
-M2: A key advantage of nuclear power is: | High energy density and steady output | Zero waste | Low capital cost | Instant construction | Baseload.
+M1@2: Uranium enrichment increases the fraction of: | U-235 | U-238 | Pu-239 | Thorium-232 | Natural uranium is 0.7% U-235; enrichment raises it to 3–5% for light-water reactors.
+M2@3: A key advantage of nuclear power is: | High energy density and steady output | It produces no waste of any kind | Its capital cost is very low | Plants can be built within months | A small fuel mass gives continuous output at ~90% capacity factor, with low carbon emissions.
+NUM2@1: How many joules are released by fissioning 1.0 g of U-235 at 200 MeV per fission? Give the answer in units of 10^{10} J. (N_{A} = 6.02 × 10^{23} mol^{-1}) | 8.2 | 0.1 | × 10^{10} J | N = 6.02 × 10^{23}/235 = 2.56 × 10^{21}; E = 2.56 × 10^{21} × 3.2 × 10^{-11} J = 8.2 × 10^{10} J.
+TF1@1: Burning coal and fissioning uranium release similar amounts of energy per kilogram of fuel. | false | Fission releases about 8 × 10^{13} J kg^{-1}, coal about 3 × 10^{7} J kg^{-1}: a ratio of a few million.
+M3@3: Which is the strongest argument AGAINST relying on new large nuclear plants to cut emissions quickly? | Long construction times and high capital costs | High lifecycle carbon emissions | Low energy density of uranium | Large routine radiation doses to the public | Lifecycle emissions are low and routine doses tiny; the strongest practical objection is that large plants take a decade or more and cost a great deal.
+SA3@1,3: Evaluate the case for nuclear power as part of a low-carbon electricity supply. | For: fission emits no CO_{2}, lifecycle emissions are about 5–15 g per kWh, similar to wind; the fuel's energy density is about a million times that of coal, so little fuel and land are needed; output is steady with a capacity factor around 90%, complementing variable renewables; its death rate per TWh is among the lowest. Against: high capital cost and long construction; long-lived high-level waste needing geological disposal; accident risk and public concern; links between enrichment or reprocessing and weapons proliferation. A balanced judgement weighs these, for example accepting nuclear for steady supply if costs and waste are managed. | Low carbon emissions with figures ; Energy density or reliability ; Cost and construction time ; Waste, accidents or proliferation ; Reasoned overall judgement
 
 ## Radiation detection
 S: Radiation detectors turn invisible ionising radiation into measurable signals by collecting the charge or light it produces. Different detectors suit different radiations, energies and purposes, from Geiger counters to giant neutrino observatories.
+O: Describe how gas-filled, scintillation and semiconductor detectors work
+O: Choose a suitable detector for a given measurement
+O: Correct count rates for background and dead time
+PRE: Alpha, beta and gamma decay
+LV: Year 1 · Application
 H: Gas detectors
-- **Ionisation chambers**: collect ion pairs; measure dose rates.
-- **Proportional counters**: gas gain; energy information.
-- **Geiger–Müller tubes**: avalanche discharge; count particles, no energy information; dead time ~100 μs.
+- **Ionisation chambers**: collect the ion pairs directly; measure dose rates.
+- **Proportional counters**: gas multiplication proportional to the deposited energy, so they give energy information.
+- **Geiger–Müller tubes**: every event triggers a full avalanche discharge; they count particles but give no energy information; dead time ~100 μs.
 H: Scintillators
-- NaI(Tl), CsI, plastic: light flashes detected by photomultipliers or SiPMs.
-- Gamma spectroscopy, PET scanners, particle physics calorimeters.
+- NaI(Tl), CsI, plastic: light flashes detected by photomultipliers or silicon photomultipliers.
+- Used for gamma spectroscopy, PET scanners and calorimeters in particle physics.
 H: Semiconductor detectors
-- Silicon: tracking of charged particles (μm precision in LHC trackers).
+- Silicon: tracking charged particles to μm precision (LHC trackers); alpha spectroscopy.
 - High-purity germanium: excellent gamma energy resolution (~0.15% at 1.3 MeV); cooled to 77 K.
 - CdTe/CZT: room-temperature gamma detection.
 H: Other
-- Film badges and TLDs (thermoluminescent dosimeters) for personal dose.
+- Film badges and thermoluminescent dosimeters (TLDs) for personal dose.
 - Cloud and bubble chambers (historic track imaging); Cherenkov detectors (Super-Kamiokande); neutron detectors (He-3, BF_{3}, Li-6).
 X: A Geiger counter registers 4500 counts per minute with dead time 100 μs. True rate?
-> Measured n = 75 s^{-1}; true N = n/(1 − nτ) = 75/(1 − 0.0075) ≈ 75.6 s^{-1}
-> Small correction at this rate
-!: A Geiger counter counts events but can't tell their energy or type without additional shielding tests.
+> Measured n = 75 s^{-1}; true N = n/(1 − nτ) = 75/(1 − 0.0075)
+> N ≈ 75.6 s^{-1}: a small correction at this rate
+K: Every detector works by collecting the ionisation or light that radiation produces; the choice depends on whether you need counts, energy or position.
+!: A Geiger counter counts events but can't tell their energy or type without extra absorber tests.
+T: Dead time | The time after each detected event during which a detector cannot record another
+T: Background radiation | Radiation from natural and artificial sources present without the source under study
+T: Scintillator | A material that emits a flash of light when ionising radiation deposits energy in it
+SUM: Gas detectors: ionisation chamber, proportional counter, Geiger–Müller tube.
+SUM: Scintillators and germanium detectors measure gamma energies.
+SUM: Subtract background and correct for dead time.
+EV: established | Gas, scintillation and semiconductor detectors are standard, well-characterised tools for counting and spectroscopy of ionising radiation
+SRC: OpenStax, College Physics 2e, section 31.2 "Radiation Detection and Detectors" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/31-2-radiation-detection-and-detectors
+SRC: AQA, A-level Physics specification (7408), section 3.8.1.2 α, β and γ radiation | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: Why can't a Geiger counter measure particle energy? | Every event triggers a full avalanche of the same size.
 Q: Which detector gives the best gamma-ray energy resolution? | High-purity germanium.
-M1: Scintillators detect radiation by: | Emitting light when excited | Collecting gas ions | Changing colour permanently | Heating | Fluorescence.
-M2: Background radiation should be measured because: | It must be subtracted from source counts | It's zero | It's dangerous | It calibrates energy | Correction.
+M1@1: Scintillators detect radiation by: | Emitting light when excited | Collecting ions in a gas | Changing colour permanently | Heating up measurably | Energy deposited in the crystal or plastic excites it, and the de-excitation light is turned into an electrical pulse.
+M2@3: Background radiation should be measured because: | It must be subtracted from the source count | It is zero in a laboratory | It is the main hazard in an experiment | It calibrates the detector's energy scale | Counts from rocks, radon, cosmic rays and so on add to every measurement, so the background rate is measured separately and subtracted.
+NUM2@3: A Geiger counter records 240 counts in 60 s with a source present and 30 counts in 60 s without it. What is the corrected count rate of the source, in s^{-1}? | 3.5 | 0.01 | s^{-1} | Source counts = 240 − 30 = 210 in 60 s, giving 3.5 s^{-1}.
+TF1@2: A proportional counter can distinguish particles of different energies, but a Geiger–Müller tube cannot. | true | In a proportional counter the pulse size is proportional to the ionisation, whereas a G–M discharge is the same size for any event.
+M3@2: Which detector is best for identifying gamma-emitting isotopes in a mixed sample? | A high-purity germanium detector | A Geiger–Müller tube | A cloud chamber | A film badge | Germanium's ~1–2 keV resolution separates closely spaced gamma lines, so peaks identify each isotope.
+SA2@1,2: Compare a Geiger–Müller tube and a germanium detector, explaining which you would choose to identify an unknown gamma source and why. | A G–M tube is a gas-filled tube with a high voltage; any ionising event triggers a full avalanche, so it counts events cheaply and robustly but every pulse is the same size, giving no energy information, and it has a dead time of ~100 μs. A germanium detector is a semiconductor in which gamma rays create electron–hole pairs in proportion to the energy deposited; cooled to 77 K, it measures energies with ~0.15% resolution. To identify an unknown source, choose germanium: the energies of the photopeaks are characteristic of each isotope (e.g. 662 keV for Cs-137). | G–M avalanche, same pulse size ; G–M gives counts only, dead time ; Germanium: charge proportional to energy ; High resolution, cooled ; Choice justified by identifying peak energies
 
 ## Radiation shielding
 S: Shielding reduces radiation exposure by placing material between the source and people. The right material depends on the radiation: thin layers stop alphas and betas, dense materials attenuate gamma rays, and hydrogen-rich materials slow neutrons.
+O: Choose appropriate shielding for alpha, beta, gamma and neutron radiation
+O: Use the exponential attenuation law and half-value thickness
+O: Apply the inverse square law and the principles of time, distance and shielding
+PRE: Alpha, beta and gamma decay
+LV: A level · Application
 H: By radiation type
 - **Alpha**: paper or skin; hazardous only if inhaled or ingested.
-- **Beta**: few mm of plastic or aluminium; avoid high-Z materials, which produce bremsstrahlung X-rays.
-- **Gamma/X-ray**: lead, tungsten, concrete, water; exponential attenuation.
-- **Neutrons**: hydrogen-rich materials (water, polyethylene, concrete) to slow them, plus absorbers (boron, cadmium, lithium) and gamma shielding for capture gammas.
+- **Beta**: a few mm of plastic or aluminium; avoid high-Z materials, which produce bremsstrahlung X-rays.
+- **Gamma and X-ray**: lead, tungsten, concrete, water; exponential attenuation.
+- **Neutrons**: hydrogen-rich materials (water, polyethylene, concrete) to slow them, absorbers (boron, cadmium, lithium), and gamma shielding for capture gammas.
 H: Attenuation
 E: I = I_{0}e^{−μx}; HVL = ln 2/μ
-- Half-value layer for 1 MeV gamma: lead ~9 mm, concrete ~5 cm, water ~10 cm.
+E: I = k/x^{2} :: inverse square law for a point gamma source
+- Half-value layer for 1 MeV gamma rays: lead ~9 mm, concrete ~5 cm, water ~10 cm.
 - Build-up factors account for scattered photons.
 H: Time, distance, shielding
-P: Radiation protection relies on minimising time near sources, maximising distance (inverse square law for point sources), and shielding. The ALARA principle: keep doses As Low As Reasonably Achievable.
+P: Radiation protection minimises time near sources, maximises distance (dose rate from a point source falls as 1/r^{2}), and uses shielding. The ALARA principle: keep doses As Low As Reasonably Achievable.
 X: How much lead (HVL 9 mm) cuts a gamma dose rate by a factor of 1000?
 > 1000 ≈ 2^{10}: 10 half-value layers
-> 9 cm of lead
+> 10 × 9 mm = 9 cm of lead
+K: Charged particles have a definite range and can be stopped; gamma rays and neutrons are only attenuated exponentially.
 !: Shielding beta emitters with lead can increase dose by generating bremsstrahlung X-rays; use plastic first.
+T: Half-value layer | The thickness of a material that halves the intensity of a beam, ln 2/μ
+T: Linear attenuation coefficient (μ) | The fraction of a beam removed per unit thickness, in I = I_{0}e^{−μx}
+T: ALARA | The principle that doses should be kept As Low As Reasonably Achievable
+SUM: α: paper; β: plastic or aluminium; γ: lead or concrete; n: hydrogen-rich material plus absorber.
+SUM: I = I_{0}e^{−μx}; HVL = ln 2/μ.
+SUM: Time, distance (1/r^{2}) and shielding under ALARA.
+EV: established | Gamma attenuation is exponential with tabulated coefficients, and the inverse square law holds for point sources in air
+SRC: AQA, A-level Physics specification (7408), section 3.8.1.2 α, β and γ radiation | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
+SRC: OpenStax, College Physics 2e, section 32.2 "Biological Effects of Ionizing Radiation" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/32-2-biological-effects-of-ionizing-radiation
 Q: What are the three principles of radiation protection? | Time, distance and shielding (under ALARA).
 Q: Why are hydrogen-rich materials used for neutron shielding? | Hydrogen nuclei slow neutrons efficiently by elastic collisions.
-M1: The best shield for alpha particles is: | Paper | Lead | Concrete | Water | Short range.
-M2: Doubling distance from a point source reduces dose rate by: | 4 | 2 | 8 | 1 | Inverse square.
+M1@1: The best shield for alpha particles is: | Paper | Lead | Concrete | Water | Alphas are so strongly ionising that a sheet of paper or the dead outer layer of skin stops them.
+M2@3: Doubling distance from a point source reduces dose rate by a factor of: | 4 | 2 | 8 | 1 | The inverse square law: intensity spreads over an area ∝ r^{2}, so doubling r quarters the dose rate.
+NUM2@2: A gamma beam passes through 27 mm of lead with HVL 9.0 mm. What fraction of the intensity is transmitted? | 0.125 | 0.002 | (fraction) | 27 mm is three half-value layers: (1/2)^{3} = 0.125.
+TF1@1: Lead is the best first shield for a strong beta source. | false | Betas decelerating in high-Z lead emit bremsstrahlung X-rays; a plastic or aluminium layer first, then lead if needed, is better.
+M3@2,3: A worker is 1.0 m from a gamma source and receives 40 μSv h^{-1}. Which change reduces the dose rate most? | Moving to 4.0 m | Adding one half-value layer of shielding | Moving to 2.0 m | Working half as long at 1.0 m | At 4 m the rate falls 16-fold to 2.5 μSv h^{-1}; one HVL or 2 m gives only a factor of 2 or 4, and less time doesn't change the rate.
+SA2@1,3: Explain how you would protect people from a sealed source that emits both beta particles and gamma rays. | Apply time, distance and shielding. Minimise time near the source and handle it with tongs so that distance is large, since dose rate from a point source falls as 1/r^{2}. Surround it first with a few mm of plastic or aluminium to stop the betas without producing much bremsstrahlung, then with lead or concrete to attenuate the gammas exponentially; the thickness follows from the half-value layer needed for the required reduction. Monitor doses with dosimeters and keep them ALARA. | Time minimised ; Distance with inverse square law ; Low-Z shield for beta first ; Lead or concrete for gamma, exponential ; Monitoring or ALARA
 
 ## Nuclear spectroscopy
 S: Nuclear spectroscopy measures the energies of radiation emitted by nuclei to map their energy levels, spins and shapes. It identifies isotopes in everything from reactor fuel to meteorites and reveals how nuclear structure changes far from stability.
+O: Identify isotopes from characteristic gamma-ray energies
+O: Explain how coincidence measurements build nuclear level schemes
+O: Describe applications such as neutron activation analysis
+PRE: Radiation detection
+LV: Year 2 · Application
 H: Gamma-ray spectroscopy
-- Germanium detectors resolve lines to ~1 keV; peaks identify isotopes (Cs-137 662 keV, Co-60 1173 and 1332 keV, K-40 1461 keV).
-- Coincidence measurements build level schemes.
+- Germanium detectors resolve lines to ~1–2 keV; peaks identify isotopes (Cs-137 662 keV, Co-60 1173 and 1332 keV, K-40 1461 keV).
+- Coincidence measurements (gammas detected together) show which transitions form cascades, building level schemes.
 - Large arrays (GRETA, AGATA) track gamma interactions for high efficiency.
 H: Other probes
 - Alpha spectroscopy (silicon detectors) for actinides.
@@ -787,84 +888,157 @@ H: Other probes
 - Mass spectrometry (Penning traps, storage rings) for nuclear masses.
 - Laser spectroscopy for charge radii and moments (isotope shifts, hyperfine structure).
 H: Applications
-P: Nuclear spectroscopy finds trace elements via neutron activation analysis, monitors fallout and nuclear materials, identifies elements on planetary surfaces (gamma-ray spectrometers on Mars and lunar orbiters), and tests nuclear models for stellar nucleosynthesis.
+P: Neutron activation analysis finds trace elements; spectroscopy monitors fallout and nuclear materials, maps elements on planetary surfaces (gamma-ray spectrometers on Mars and lunar orbiters), and tests nuclear models for stellar nucleosynthesis.
 X: A spectrum shows peaks at 1173 and 1332 keV. Source?
-> These are the cobalt-60 gamma lines
+> These two lines in cascade are the signature of cobalt-60
+> Their sum, 2505 keV, may also appear as a coincidence (sum) peak
+K: A gamma line's energy identifies the transition and so the isotope; its intensity, once corrected for efficiency, gives the amount.
 !: A gamma peak's energy identifies the transition, but its intensity depends on detector efficiency and geometry, which must be calibrated.
+T: Photopeak | The peak in a gamma spectrum from photons that deposit all their energy in the detector
+T: Level scheme | A diagram of a nucleus's excited states with their energies, spins and connecting transitions
+T: Neutron activation analysis | Irradiating a sample with neutrons and identifying elements from the gamma rays of the isotopes produced
+SUM: Gamma energies fingerprint isotopes; germanium gives keV resolution.
+SUM: Coincidences reveal cascades and level schemes.
+SUM: Applications range from forensics and safeguards to planetary science.
+EV: established | Gamma-ray energies of radionuclides are known to high precision and are routinely used to identify and quantify isotopes
+SRC: OpenStax, College Physics 2e, section 31.2 "Radiation Detection and Detectors" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/31-2-radiation-detection-and-detectors
+SRC: OpenStax, University Physics Volume 3, section 10.3 "Radioactive Decay" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/10-3-radioactive-decay
 Q: Why are germanium detectors used in gamma spectroscopy? | Their excellent energy resolution separates closely spaced lines.
 Q: What is neutron activation analysis? | Irradiating a sample with neutrons and identifying elements from the gamma rays of the resulting isotopes.
-M1: The 662 keV gamma line identifies: | Caesium-137 | Cobalt-60 | Potassium-40 | Radium-226 | Common calibration source.
-M2: Coincidence measurements help: | Build nuclear level schemes | Reduce resolution | Measure half-life only | Detect alphas | Cascades.
+M1@1: The 662 keV gamma line identifies: | Caesium-137 | Cobalt-60 | Potassium-40 | Radium-226 | Cs-137 decays to an excited state of Ba-137 that emits 662 keV, a common calibration and fallout line.
+M2@2: Coincidence measurements help: | Build nuclear level schemes | Worsen the energy resolution | Measure only half-lives | Detect alpha particles | Gammas emitted together in a cascade are recorded in coincidence, showing which transitions connect which levels.
+NUM2@1: A nucleus has levels at 0, 1173 and 2505 keV and decays in a cascade. What is the energy, in keV, of the upper gamma ray? | 1332 | 1 | keV | 2505 − 1173 = 1332 keV: with the 1173 keV line, the cobalt-60 (nickel-60) cascade.
+TF1@3: Gamma-ray spectrometers on spacecraft can map elements such as potassium and thorium on planetary surfaces. | true | Natural radioactivity and cosmic-ray-induced gammas have element-specific energies, measured from orbit.
+M3@1,3: A sample's spectrum shows a strong 1461 keV peak in every measurement, even with no sample. The likely cause is: | Potassium-40 in the surroundings | Caesium-137 in the detector crystal | Cobalt-60 in the sample | A fault in the electronics | 1461 keV is the K-40 line, present in concrete, glass and people; it is part of the background to subtract.
+SA3@1,2: Explain how gamma-ray spectroscopy can be used to identify the radioactive isotopes in a sample of contaminated soil. | The soil is placed by a calibrated high-purity germanium detector, shielded with lead to reduce background. Each gamma ray depositing all its energy adds a count to a photopeak; the detector's ~0.15% resolution separates lines a few keV apart. The energies of the peaks are compared with tabulated gamma energies (e.g. Cs-137 at 662 keV, Co-60 at 1173 and 1332 keV), with the background spectrum (K-40, radon daughters) subtracted. Peak areas, corrected for detector efficiency at each energy and for branching ratios, give each isotope's activity. | Germanium detector, shielding ; Photopeaks at characteristic energies ; Comparison with known lines ; Background subtraction ; Efficiency calibration gives activities
 
 ## Nuclear magnetic resonance
 S: Nuclei with spin behave like tiny magnets that precess in a magnetic field. NMR detects radio waves absorbed and emitted as they flip, revealing molecular structure in chemistry and creating detailed images of the body in MRI.
+O: Calculate Larmor frequencies from the gyromagnetic ratio and field
+O: Explain T_{1} and T_{2} relaxation and chemical shift
+O: Explain how MRI locates signals in space
+PRE: Magnetic dipoles
+LV: Year 2 · Application
 H: Principles
 E: f = γB/(2π) :: Larmor frequency (proton: 42.58 MHz T^{-1})
-- Spin-½ nuclei: ¹H, ¹³C, ¹⁵N, ¹⁹F, ³¹P.
-- A radiofrequency pulse tips magnetisation; it precesses and induces a signal (free induction decay).
-- Relaxation: T_{1} (spin–lattice, return to equilibrium) and T_{2} (spin–spin, dephasing).
+- Spin-½ nuclei: ^{1}H, ^{13}C, ^{15}N, ^{19}F, ^{31}P.
+- A radiofrequency pulse tips the magnetisation; it precesses and induces a signal (the free induction decay).
+- Relaxation: T_{1} (spin–lattice, return of longitudinal magnetisation) and T_{2} (spin–spin, loss of phase coherence).
 H: NMR spectroscopy
-- **Chemical shift**: electrons shield nuclei slightly (ppm), depending on chemical environment.
+- **Chemical shift**: electrons shield nuclei slightly (parts per million), depending on chemical environment.
 - **J-coupling**: splitting from neighbouring spins.
-- Determines organic molecular structures and protein structures in solution (Nobel prizes: Bloch and Purcell 1952, Ernst 1991, Wüthrich 2002).
+- Determines organic and protein structures in solution (Nobel prizes: Bloch and Purcell 1952, Ernst 1991, Wüthrich 2002).
 H: MRI
 P: Magnetic field gradients make the Larmor frequency depend on position, so the signal encodes location (Lauterbur and Mansfield, Nobel 2003). Contrast comes from differences in T_{1}, T_{2} and proton density between tissues. Functional MRI tracks blood oxygenation to map brain activity. No ionising radiation is involved.
 X: Proton Larmor frequency in a 3 T MRI scanner?
-> f = 42.58 × 3 = 128 MHz
-!: MRI signal comes mainly from hydrogen nuclei in water and fat, not from electrons or ionising radiation.
+> f = 42.58 MHz T^{-1} × 3 T
+> f ≈ 128 MHz
+K: Resonance frequency ∝ field: small shifts in the local field reveal chemistry (NMR), and deliberate gradients reveal position (MRI).
+!: The MRI signal comes mainly from hydrogen nuclei in water and fat, not from electrons or ionising radiation.
+T: Larmor frequency | The precession frequency of nuclear spins in a field, f = γB/(2π)
+T: T_{1} relaxation | Recovery of magnetisation along the field as spins give energy to their surroundings
+T: T_{2} relaxation | Decay of transverse magnetisation as precessing spins lose phase coherence
+SUM: f = γB/2π: 42.58 MHz per tesla for protons.
+SUM: T_{1}, T_{2} and chemical shift carry chemical and tissue information.
+SUM: Gradients turn frequency into position in MRI.
+EV: established | NMR frequencies follow f = γB/(2π); MRI contrast from relaxation times is the basis of routine clinical imaging
+SRC: OpenStax, College Physics 2e, section 32.1 "Diagnostics and Medical Imaging" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/32-1-diagnostics-and-medical-imaging
+SRC: OpenStax, University Physics Volume 3, section 10.7 "Medical Applications and Biological Effects of Nuclear Radiation" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/10-7-medical-applications-and-biological-effects-of-nuclear-radiation
 Q: What is the Larmor frequency? | The precession frequency of nuclear spins in a field, f = γB/(2π).
 Q: How does MRI locate signals in space? | Magnetic field gradients make the resonance frequency depend on position.
-M1: T_{2} relaxation describes: | Loss of phase coherence among spins | Return of longitudinal magnetisation | Heating | Field strength | Spin–spin dephasing.
-M2: Chemical shifts in NMR come from: | Electron shielding of nuclei | Nuclear mass | Temperature | Gravity | Local electronic environment.
+M1@2: T_{2} relaxation describes: | Loss of phase coherence among spins | Return of longitudinal magnetisation | Heating of tissue by radio waves | A change in the main field strength | T_{2} is the decay of transverse magnetisation as spins precess at slightly different rates and dephase; T_{1} is the return along the field.
+M2@2: Chemical shifts in NMR come from: | Electron shielding of nuclei | The mass of the nucleus | The sample's temperature alone | The gravitational field | Surrounding electrons produce a small opposing field that depends on bonding, shifting each nucleus's resonance by parts per million.
+NUM2@1: What is the proton Larmor frequency, in MHz, in a 1.5 T scanner? | 63.9 | 0.2 | MHz | f = 42.58 × 1.5 = 63.9 MHz, in the radio band.
+TF1@3: MRI exposes patients to ionising radiation. | false | MRI uses static and gradient magnetic fields and radio-frequency pulses, none of which ionise atoms.
+M3@1,3: A gradient of 10 mT m^{-1} is applied along x. By how much do proton frequencies differ between two points 1.0 cm apart? | About 4.3 kHz | About 43 MHz | About 0.43 Hz | They don't differ | ΔB = 0.010 × 0.010 = 1.0 × 10^{-4} T; Δf = 42.58 MHz T^{-1} × 10^{-4} T ≈ 4.3 kHz, enough to separate the two positions.
+SA2@1,3: Explain how MRI produces an image and why different tissues appear with different brightness. | The patient lies in a strong field, so hydrogen nuclei precess at the Larmor frequency f = γB/2π (about 64 MHz at 1.5 T). A radio-frequency pulse tips their magnetisation, and as it precesses it induces a signal in receiver coils. Magnetic field gradients make the frequency (and phase) depend on position, so the signal can be decoded into an image by Fourier transform. Brightness depends on proton density and on the relaxation times T_{1} and T_{2}, which differ between fat, water and tissue types; pulse timings are chosen to weight the image towards one of these. | Precession at Larmor frequency in strong field ; RF pulse and induced signal ; Gradients encode position ; Fourier reconstruction ; Contrast from proton density, T_{1}, T_{2}
 
 ## Nuclear astrophysics
 S: Nuclear astrophysics explains how stars shine and how the chemical elements were made. Hydrogen and helium came from the Big Bang; heavier elements were forged in stars, supernovae and neutron-star mergers.
+O: Describe Big Bang nucleosynthesis and its products
+O: Outline the stages of stellar burning, including the pp chain, CNO cycle and triple-alpha process
+O: Explain how elements heavier than iron are made by neutron capture
+PRE: Nuclear fusion
+LV: Year 2 · Application
 H: Big Bang nucleosynthesis
-- First ~3 minutes: ~75% H, ~25% He-4 by mass, traces of D, He-3, Li-7.
+- In the first few minutes: ~75% hydrogen and ~25% helium-4 by mass, with traces of D, He-3 and Li-7.
 - Predicted abundances match observations; the deuterium abundance measures the density of ordinary matter.
 H: Stellar burning
-- **pp chain** (Sun) and **CNO cycle** (heavier stars): hydrogen to helium.
-- **Triple-alpha**: 3 ⁴He → ¹²C (via a resonance predicted by Hoyle); then oxygen, neon, magnesium, silicon burning up to iron-group elements.
-- Each stage faster: silicon burning lasts about a day in a massive star.
+- **pp chain** (the Sun) and **CNO cycle** (heavier stars): hydrogen to helium.
+- **Triple-alpha**: 3 ^{4}He → ^{12}C (via a resonance predicted by Hoyle); then oxygen, neon, magnesium and silicon burning up to iron-group elements.
+- Each stage is faster: silicon burning lasts about a day in a massive star.
 H: Beyond iron
-- **s-process** (slow neutron capture) in asymptotic giant branch stars: half of heavy elements (barium, lead).
+- **s-process** (slow neutron capture) in asymptotic giant branch stars: about half of the heavy elements (e.g. barium, lead).
 - **r-process** (rapid neutron capture) in neutron-star mergers (confirmed by GW170817's kilonova) and possibly some supernovae: gold, platinum, uranium.
 - **p-process** for proton-rich isotopes.
 H: Laboratory challenges
-P: Many key reactions occur at energies too low to measure directly (tiny cross-sections); underground labs (LUNA) shield from cosmic rays. Rare isotope facilities (FRIB) make the neutron-rich nuclei of the r-process.
-X: Why do the Sun's core reactions need 15 million K but bombs need different conditions?
-> Stellar fusion relies on huge masses, densities and long times with slow tunnelling rates
-> The Sun's power density is only ~280 W m^{-3} in the core: less than a compost heap
-!: Stars can't make elements heavier than iron by fusion for energy; heavier elements need neutron capture.
+P: Many key reactions occur at energies too low to measure directly (tiny cross-sections); underground laboratories (LUNA) shield experiments from cosmic rays. Rare-isotope facilities (FRIB) make the neutron-rich nuclei of the r-process.
+X: The Sun's core reaches 15 million K. Why is its power density so low?
+> Fusion relies on rare tunnelling, so the rate per proton is tiny
+> The core's power density is only ~280 W m^{-3}, less than a compost heap; the Sun's luminosity comes from its enormous volume
+K: Fusion builds elements up to iron; heavier elements need neutron capture, because fusing beyond iron absorbs energy.
+!: Stars can't make elements heavier than iron by energy-releasing fusion; heavier elements need neutron capture.
+T: Nucleosynthesis | The formation of atomic nuclei in the Big Bang, stars and stellar explosions
+T: s-process | Slow neutron capture, with beta decays between captures, in giant stars
+T: r-process | Rapid neutron capture in extreme neutron-rich environments such as neutron-star mergers
+SUM: Big Bang: H, He-4 and traces of D, He-3, Li-7.
+SUM: Stars fuse H → He → C, O … up to iron.
+SUM: s- and r-processes make the heavy elements.
+EV: established | Big Bang and stellar nucleosynthesis explain the observed abundances; the share of r-process elements from mergers versus supernovae is still debated
+SRC: OpenStax, University Physics Volume 3, section 10.6 "Nuclear Fusion" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/10-6-nuclear-fusion
+SRC: OpenStax, College Physics 2e, section 32.5 "Fusion" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/32-5-fusion
 Q: Where were most elements heavier than iron made? | By neutron capture: the s-process in giant stars and the r-process in neutron-star mergers and some supernovae.
 Q: What did Big Bang nucleosynthesis produce? | Mostly hydrogen and helium-4, with traces of deuterium, helium-3 and lithium-7.
-M1: The triple-alpha process produces: | Carbon-12 | Iron-56 | Gold | Helium-4 | 3 ⁴He → ¹²C.
-M2: GW170817 confirmed that neutron-star mergers make: | r-process elements like gold | Helium only | Hydrogen | Nothing | Kilonova.
+M1@2: The triple-alpha process produces: | Carbon-12 | Iron-56 | Gold-197 | Helium-4 | Three helium-4 nuclei fuse (via unstable beryllium-8 and Hoyle's resonance) into carbon-12.
+M2@3: GW170817 confirmed that neutron-star mergers make: | r-process elements such as gold | Only helium | Hydrogen | No new elements | The merger's kilonova glow matched the radioactive decay of freshly made heavy r-process nuclei.
+NUM2@2: Four protons (1.007 276 u each) fuse to helium-4 (nucleus 4.001 506 u). What fraction of the mass is converted to energy, in per cent? (Ignore positrons and neutrinos.) | 0.68 | 0.02 | % | Δm = 4.029 104 − 4.001 506 = 0.027 598 u; 0.027 598/4.029 104 = 0.0068, so about 0.7% of the mass becomes energy.
+TF1@1: Most of the gold on Earth was made by fusion in the Sun. | false | The Sun can't fuse beyond iron, and has not reached that stage; gold comes from r-process neutron capture in earlier events.
+M3@2,3: Why does a massive star's core collapse when it has made iron? | Fusing iron absorbs energy, so no further burning can support the core | Iron is radioactive and decays rapidly | Iron emits neutrinos that push outwards | Iron atoms are too large to fit in the core | Iron is near the peak of binding energy per nucleon, so further fusion takes energy; pressure support fails and the core collapses.
+SA3@1,3: Outline how the elements found on Earth were made. | Hydrogen and most helium formed in the first few minutes after the Big Bang, with traces of deuterium and lithium. Stars fuse hydrogen to helium (pp chain or CNO cycle), then helium to carbon by the triple-alpha process, and massive stars go on to oxygen, neon, magnesium and silicon up to iron-group elements. Beyond iron, fusion absorbs energy, so heavier elements come from neutron capture: the slow s-process in giant stars and the rapid r-process in neutron-star mergers and perhaps some supernovae. These materials are spread by stellar winds, supernovae and mergers into the gas from which the Sun and Earth formed. | Big Bang gives H, He, traces ; Stellar fusion up to iron ; Triple-alpha or named stages ; Neutron capture s- and r-process for heavy elements ; Dispersal into later stars and planets
 
 ## Nuclear waste and radiation safety
 S: Nuclear technology produces radioactive waste and exposes people to radiation, so it's governed by strict safety principles. Understanding doses, risks and waste management lets these be weighed honestly against the benefits.
+O: Distinguish absorbed, equivalent and effective dose and calculate equivalent dose
+O: Compare typical doses and explain stochastic and deterministic risks
+O: Describe the categories of radioactive waste and how each is managed
+PRE: Radiation shielding
+LV: A level · Application
 H: Dose quantities
-E: absorbed dose (Gy) = J kg^{-1}
-E: equivalent dose (Sv) = absorbed dose × radiation weighting (alpha 20, gamma/beta 1, neutrons 2.5–20)
+E: absorbed dose (Gy) = energy absorbed/mass :: 1 Gy = 1 J kg^{-1}
+E: equivalent dose (Sv) = absorbed dose × radiation weighting factor :: alpha 20; gamma, X-ray, beta 1; neutrons 2.5–20
 E: effective dose (Sv) = Σ tissue weighting × equivalent dose
-- Natural background: ~2.4 mSv per year worldwide (radon ~half).
-- Chest X-ray ~0.02 mSv; CT scan ~2–10 mSv; occupational limit 20 mSv per year.
-- Acute ~4–5 Sv is lethal to about half without treatment.
+- Natural background: ~2.4 mSv per year worldwide (about half from radon).
+- Chest X-ray ~0.02 mSv; CT scan ~2–10 mSv; occupational limit 20 mSv per year (averaged).
+- An acute whole-body dose of ~4–5 Sv kills about half of those exposed without treatment.
 H: Risk
-- Linear no-threshold model (used for protection): ~5% extra lifetime cancer risk per sievert.
-- Deterministic effects (burns, radiation sickness) above thresholds (~0.5–1 Sv).
+- Linear no-threshold model (used for protection): about 5% extra lifetime cancer risk per sievert.
+- Deterministic effects (burns, radiation sickness) appear above thresholds (~0.5–1 Sv).
 H: Waste
-- Low-level (gloves, tools): most volume, little activity.
-- Intermediate.
-- High-level (spent fuel): ~3% of volume, ~95% of radioactivity; needs isolation for ~10^{4}–10^{5} years.
-- Deep geological repositories: Finland's Onkalo is the first, opening in the mid-2020s.
+- Low-level (gloves, tools): most of the volume, little activity.
+- Intermediate-level (reactor components, resins): needs shielding.
+- High-level (spent fuel and reprocessing waste): ~3% of volume, ~95% of radioactivity; needs isolation for ~10^{4}–10^{5} years.
+- Deep geological repositories: Finland's Onkalo is set to be the first in operation, from the mid-2020s.
 - Reprocessing recovers uranium and plutonium; fast reactors could burn long-lived actinides.
 X: A worker receives 0.5 mGy from gamma rays and 0.05 mGy from alphas. Equivalent dose?
-> Gamma: 0.5 mSv; alpha: 0.05 × 20 = 1.0 mSv
+> Gamma: 0.5 × 1 = 0.5 mSv; alpha: 0.05 × 20 = 1.0 mSv
 > Total 1.5 mSv
+K: Grays measure energy absorbed; sieverts weight it for biological harm, so a small alpha dose can matter more than a larger gamma dose.
 !: Becquerels (activity) and sieverts (dose) measure different things; a high-activity source may give little dose if shielded or distant.
+T: Absorbed dose | Energy deposited by radiation per kilogram of tissue, in grays
+T: Equivalent dose | Absorbed dose multiplied by a radiation weighting factor, in sieverts
+T: Linear no-threshold model | The assumption, used for protection, that cancer risk is proportional to dose with no safe threshold
+SUM: Gy = J kg^{-1}; Sv = Gy × weighting factor.
+SUM: Background ~2.4 mSv per year; risk ~5% per Sv; deterministic effects above ~0.5 Sv.
+SUM: High-level waste is small in volume but needs geological isolation.
+EV: contested | The linear no-threshold model is used for radiation protection; whether it describes the true risk at very low doses is debated
+SRC: OpenStax, College Physics 2e, section 32.2 "Biological Effects of Ionizing Radiation" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/32-2-biological-effects-of-ionizing-radiation
+SRC: AQA, A-level Physics specification (7408), section 3.8.1.8 Safety aspects | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: What is the difference between gray and sievert? | Gray measures absorbed energy per kg; sievert weights it for biological effect.
 Q: How is high-level waste to be disposed of long term? | Deep geological repositories that isolate it for tens of thousands of years.
-M1: Typical annual natural background dose is about: | 2–3 mSv | 2 Sv | 0.02 mSv | 200 mSv | Radon dominates.
-M2: Alpha radiation has a high weighting factor because: | It deposits energy densely, damaging DNA heavily | It penetrates deeply | It's a photon | It's uncharged | High LET.
+M1@2: Typical annual natural background dose is about: | 2–3 mSv | 2 Sv | 0.02 mSv | 200 mSv | The worldwide average is about 2.4 mSv per year, roughly half of it from radon; 0.02 mSv is one chest X-ray.
+M2@1: Alpha radiation has a high weighting factor because: | It deposits energy densely, damaging DNA heavily | It penetrates deep into the body | It is a high-energy photon | It carries no electric charge | Alphas have high linear energy transfer, causing clustered damage that cells repair poorly, hence a weighting of 20.
+NUM2@1: A tissue absorbs 2.0 mGy of neutrons with weighting factor 10. What is the equivalent dose, in mSv? | 20 | 0.1 | mSv | H = D × w_{R} = 2.0 mGy × 10 = 20 mSv.
+TF1@3: High-level waste makes up most of the volume of radioactive waste. | false | It is only about 3% of the volume but carries about 95% of the radioactivity; low-level waste is most of the volume.
+M3@2,3: Using 5% per sievert, estimate the extra lifetime cancer risk from one 10 mSv CT scan. | About 0.05% | About 5% | About 0.5% | About 0.0005% | 0.010 Sv × 0.05 Sv^{-1} = 5 × 10^{-4}, or about 1 in 2000, under the linear no-threshold assumption.
+SA3@1,3: Explain why an alpha emitter is relatively harmless outside the body but very dangerous if inhaled or swallowed. | Alpha particles are strongly ionising and have a range of only a few cm in air and tens of μm in tissue, so outside the body they are stopped by air or the dead outer layer of skin and give almost no dose. Inside the body, as in the lungs, every alpha deposits all its energy in nearby living cells. Because alphas deposit energy densely (high linear energy transfer) and cause clustered DNA damage, their radiation weighting factor is 20, so a small absorbed dose gives a large equivalent dose and cancer risk. Radon and its daughters are the main example. | Short range, stopped by skin or air ; No dose from outside ; Inside, all energy into living cells ; High LET, clustered damage ; Weighting factor 20 or radon example
 `;

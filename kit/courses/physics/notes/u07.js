@@ -460,6 +460,11 @@ SA3@2,3: Explain why the Earth has two tidal bulges, one facing the Moon and one
 
 ## Roche limits
 S: The Roche limit is the distance within which a body held together only by its own gravity is torn apart by a planet's tides. It explains why Saturn's rings are rings and not a moon.
+O: Explain the Roche limit as a balance between tidal stretching and self-gravity
+O: Estimate a Roche limit from the planet's radius and the two densities
+O: Explain why rings, comet break-ups and ordinary objects behave as they do near a planet
+PRE: Tidal forces
+LV: Year 2 · Application
 H: The estimate
 E: d ≈ 2.44 R_{p}(ρ_{p}/ρ_{s})^{1/3} :: fluid satellite
 E: d ≈ 1.26 R_{p}(ρ_{p}/ρ_{s})^{1/3} :: rigid satellite
@@ -472,14 +477,32 @@ H: Examples
 X: Estimate the fluid Roche limit for an icy moon (ρ = 1000 kg m^{-3}) around Saturn (R = 58 000 km, ρ = 690 kg m^{-3}).
 > d ≈ 2.44 × 58 000 × (0.69)^{1/3} = 2.44 × 58 000 × 0.88 ≈ 125 000 km
 > Saturn's bright rings end at ~137 000 km: about right
+K: Inside the Roche limit the planet's tidal stretching across a loose body exceeds the body's own gravity holding it together, so it cannot form or stay whole.
 !: The Roche limit applies to gravitationally bound bodies; your body falling towards Earth isn't torn apart, because chemical bonds are far stronger than its self-gravity.
+T: Roche limit | The orbital distance inside which a body held together only by its own gravity is pulled apart by tidal forces
+T: Rubble pile | A body made of loosely bound fragments held together mainly by self-gravity
+SUM: The Roche limit is about 2.44 R_{p}(ρ_{p}/ρ_{s})^{1/3} for a fluid body.
+SUM: It explains planetary rings and tidal break-ups; strong solid objects can survive inside it.
+EV: established | A self-gravitating body orbiting closer than about 2.4 planetary radii (for similar densities) is disrupted by tidal forces
+SRC: OpenStax, University Physics Volume 1, section 13.6 "Tidal Forces" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/13-6-tidal-forces
+SRC: OpenStax, Astronomy 2e, section 12.5 "Planetary Rings (and Enceladus)" | secondary | 2022 | https://openstax.org/books/astronomy-2e/pages/12-5-planetary-rings-and-enceladus
 Q: What is the Roche limit? | The distance inside which tidal forces disrupt a body held together by its own gravity.
 Q: Why can't Saturn's rings form a moon? | They lie inside the Roche limit, where tides prevent clumping.
-M1: A denser satellite's Roche limit is: | Closer to the planet | Farther from the planet | The same | Undefined | d ∝ (ρ_{p}/ρ_{s})^{1/3}.
-M2: Shoemaker–Levy 9 broke apart because: | It passed inside Jupiter's Roche limit | It hit an asteroid | Solar heating | Its rotation was too fast | Tidal disruption.
+M1@2: A denser satellite's Roche limit is: | Closer to the planet | Farther from the planet | The same | Undefined | d ∝ (ρ_{p}/ρ_{s})^{1/3}, so a denser satellite, with stronger self-gravity for its size, can survive closer in.
+M2@3: Shoemaker–Levy 9 broke apart because: | It passed inside Jupiter's Roche limit | It collided with an asteroid | Solar heating boiled it apart | It was spinning too fast | In 1992 the comet, a loosely bound body, passed inside Jupiter's Roche limit and tidal forces pulled it into about 21 fragments.
+NUM2@2: Estimate the fluid Roche limit, in km, for a rocky body (ρ = 3000 kg m^{-3}) approaching Earth (R = 6370 km, ρ = 5500 kg m^{-3}). | 19000 | 5% | km | d ≈ 2.44 × 6370 × (5500/3000)^{1/3} = 2.44 × 6370 × 1.22 ≈ 1.9 × 10^{4} km, about 3 Earth radii.
+TF1@3: An astronaut orbiting inside Earth's Roche limit, like everyone on the ISS, is in danger of being pulled apart by tides. | false | The Roche limit applies only to bodies held together by gravity; an astronaut is held together by chemical bonds billions of times stronger than the tidal stretching.
+M3@1: If a moon's density is doubled while the planet stays the same, its fluid Roche limit changes by a factor of: | 1/2^{1/3} ≈ 0.79 | 1/2 | 1/4 | 2^{1/3} ≈ 1.26 | d ∝ ρ_{s}^{-1/3}, so doubling ρ_{s} multiplies d by 2^{-1/3} = 0.79: the limit moves only a little closer.
+SA3@1,3: Explain why a loose cloud of ice particles orbiting close to Saturn forms a ring rather than gathering into a moon. | For particles to clump into a moon, their mutual gravity must hold them together. Saturn's gravity is stronger on the side of a would-be clump nearer the planet than on the far side, and this tidal difference stretches the clump apart. Inside the Roche limit (about 2.4 Saturn radii for icy material) the tidal stretching exceeds the clump's self-gravity, so particles cannot stay together and remain spread in orbit around the planet as a ring. | Clumping needs self-gravity to bind particles ; Tidal force stretches a clump along the line to the planet ; Inside the Roche limit tides exceed self-gravity ; Material stays spread out as a ring
 
 ## Lagrange points
 S: In a system of two orbiting masses there are five points where a small third body can orbit in step with them, the gravitational and centrifugal forces balancing in the rotating frame. Spacecraft and asteroids use them.
+O: Locate the five Lagrange points of a two-body system
+O: Estimate the distance of L1 and L2 from the smaller body
+O: Explain which Lagrange points are stable and how spacecraft use the unstable ones
+PRE: Two-body gravitational problem
+PRE: Rotating reference frames
+LV: Year 2 · Physical reasoning
 H: The five points
 - **L1**: between the bodies (Sun–Earth L1, 1.5 million km sunward: SOHO, DSCOVR solar monitors).
 - **L2**: beyond the smaller body (Sun–Earth L2: JWST, Gaia, Planck).
@@ -491,17 +514,35 @@ P: L1, L2 and L3 are unstable (saddle points of the effective potential); spacec
 X: Find the distance of Sun–Earth L2 from Earth.
 > r ≈ 1.5 × 10^{11} × (3 × 10^{-6}/3)^{1/3} = 1.5 × 10^{11} × 0.01 = 1.5 × 10^{9} m
 > 1.5 million km
+K: At a Lagrange point a small body has exactly the angular speed needed to orbit with the two large bodies, because their combined pull supplies its centripetal force at that radius.
 !: Lagrange points are equilibria in the rotating frame; in an inertial frame objects there are orbiting the larger body.
+T: Lagrange point | One of five positions where a small body can stay fixed relative to two larger orbiting bodies
+T: Halo orbit | A periodic orbit around an unstable Lagrange point, maintained by small station-keeping burns
+T: Trojan | An asteroid sharing a planet's orbit near its L4 or L5 point
+SUM: L1–L3 lie on the line through the two bodies and are unstable; L4 and L5 form equilateral triangles and can be stable.
+SUM: L1 and L2 lie about R(m/3M)^{1/3} from the smaller body: 1.5 million km for Sun–Earth.
+EV: established | A two-body system in circular orbit has five equilibrium points in the rotating frame, of which L4 and L5 are stable when the mass ratio exceeds about 25
+SRC: OpenStax, University Physics Volume 1, section 13.5 "Kepler's Laws of Planetary Motion" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/13-5-keplers-laws-of-planetary-motion
+SRC: OpenStax, Astronomy 2e, section 3.6 "Gravity with More Than Two Bodies" | secondary | 2022 | https://openstax.org/books/astronomy-2e/pages/3-6-gravity-with-more-than-two-bodies
 Q: Why is JWST at L2? | It keeps Sun, Earth and Moon on one side for shielding and cooling, with constant geometry and continuous communications.
 Q: Which Lagrange points are stable? | L4 and L5 (when the mass ratio exceeds about 25).
-M1: The Trojan asteroids are at Jupiter's: | L4 and L5 | L1 | L2 | L3 | Stable triangle points.
-M2: Spacecraft at L1 need station-keeping because: | L1 is an unstable equilibrium | Drag is large there | The Sun's gravity is zero there | It's inside Earth's atmosphere | Small displacements grow.
+M1@1: The Trojan asteroids are at Jupiter's: | L4 and L5 points | L1 point, sunward | L2 point, beyond Jupiter | L3 point, across the Sun | Trojans gather 60° ahead of and behind Jupiter, at the stable triangular points L4 and L5.
+M2@3: Spacecraft at L1 need station-keeping because: | L1 is an unstable equilibrium | Drag is large there | The Sun's gravity is zero there | It's inside Earth's atmosphere | L1 is a saddle point of the effective potential, so a small displacement grows; regular small burns keep a spacecraft in a halo orbit around it.
+NUM2@2: Estimate the distance, in km, of the Earth–Moon L1 point from the Moon (separation 3.84 × 10^{5} km, m/M = 0.0123). | 61500 | 5% | km | r ≈ R(m/3M)^{1/3} = 3.84 × 10^{5} × (0.0041)^{1/3} = 3.84 × 10^{5} × 0.160 ≈ 6.1 × 10^{4} km.
+M3@3: A Trojan asteroid is nudged slightly away from Jupiter's L4 point. What happens next? | It oscillates around L4 while sharing Jupiter's orbit | It drifts steadily further from Jupiter's orbit | It falls inwards and collides with Jupiter | It moves along the orbit to settle at L1 | Jupiter's L4 is stable because the Sun–Jupiter mass ratio (about 1000) exceeds 25: the Coriolis effect in the rotating frame turns the drift into a slow oscillation (libration) around the point.
+TF2@1: The Sun–Earth L2 point lies about 1.5 million km from Earth on the side away from the Sun. | true | r ≈ R(m/3M)^{1/3} = 1.5 × 10^{11} m × 0.01 = 1.5 × 10^{9} m, in the Earth's shadow direction, where JWST orbits.
+SA3@1,3: Explain why a spacecraft placed at the Sun–Earth L2 point can orbit the Sun with the same period as Earth, even though it is further from the Sun. | Further out, the Sun's pull alone would give a longer period. At L2 the spacecraft is pulled by both the Sun and Earth in the same direction (towards the Sun), so the combined force supplies the extra centripetal force needed to keep pace with Earth. The point is unstable, so the spacecraft follows a halo orbit around it with small correcting burns. | Further from the Sun normally means a longer period ; Sun and Earth pull in the same direction at L2 ; Combined pull gives the centripetal force for Earth's period ; Unstable, so station-keeping in a halo orbit
 
 ## Restricted three-body problem
 S: The general three-body problem has no closed-form solution and can be chaotic. The restricted version, a tiny mass moving in the field of two massive bodies in circular orbits, is solvable enough to reveal Lagrange points, zero-velocity curves and low-energy transfer routes.
+O: State the assumptions of the circular restricted three-body problem
+O: Explain the Jacobi constant and zero-velocity curves
+O: Describe how chaos and resonances shape orbits and mission design
+PRE: Lagrange points
+LV: Year 3 · Physical reasoning
 H: Setup
 - Two primaries in circular orbit; a test mass doesn't affect them.
-- In the rotating frame there's a conserved quantity, the **Jacobi constant**: C = 2U_{eff} − v^{2}.
+- In the rotating frame there's a conserved quantity, the **Jacobi constant**: C = 2U_{eff} − v^{2}, with U_{eff} the effective potential written as a positive quantity (gravitational plus centrifugal).
 - Zero-velocity curves bound the regions the test mass can reach for a given C.
 H: Chaos and its uses
 P: Poincaré discovered chaos studying this problem (1890): tiny changes in starting conditions lead to wildly different paths. Mission designers exploit it: the "interplanetary transport network" uses manifolds through Lagrange points to move spacecraft with very little fuel (Genesis, Japan's Hiten).
@@ -511,15 +552,35 @@ H: Other results
 X: Why can a comet be captured temporarily by Jupiter?
 > With a Jacobi constant just allowing passage through L1 or L2, it enters Jupiter's region
 > It can loop chaotically before leaving: Shoemaker–Levy 9 was such a temporary capture
+K: The Jacobi constant is the rotating-frame energy: because v^{2} cannot be negative, it marks out forbidden regions, and the necks at L1 and L2 are the gates between them.
 !: The restricted problem assumes the small body has negligible mass; for comparable masses (three stars) the full problem is needed.
+T: Jacobi constant | The conserved energy-like quantity of the circular restricted three-body problem in the rotating frame
+T: Zero-velocity curve | The boundary where a test body's speed in the rotating frame would be zero for its Jacobi constant
+T: Chaos | Deterministic motion so sensitive to initial conditions that long-term prediction is impossible in practice
+SUM: The restricted problem has one conserved quantity, the Jacobi constant, which fences the test body into allowed regions.
+SUM: Its motion can be chaotic; resonances and Lagrange-point gateways shape asteroid belts and low-fuel trajectories.
+EV: established | The general three-body problem has no general closed-form solution and its motion can be chaotic
+SRC: OpenStax, Astronomy 2e, section 3.6 "Gravity with More Than Two Bodies" | secondary | 2022 | https://openstax.org/books/astronomy-2e/pages/3-6-gravity-with-more-than-two-bodies
+SRC: OpenStax, University Physics Volume 1, section 13.5 "Kepler's Laws of Planetary Motion" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/13-5-keplers-laws-of-planetary-motion
 Q: What is the Jacobi constant? | The conserved energy-like quantity of the circular restricted three-body problem in the rotating frame.
 Q: Who discovered chaos while studying the three-body problem? | Henri Poincaré.
-M1: The general three-body problem: | Has no general closed-form solution | Is always periodic | Reduces to Kepler's laws | Was solved by Newton | It can be chaotic.
-M2: Kirkwood gaps in the asteroid belt are due to: | Orbital resonances with Jupiter | Collisions | Solar radiation | Mars's gravity | Resonant perturbations clear orbits.
+M1@3: The general three-body problem: | Has no general closed-form solution | Is always periodic in the long run | Reduces exactly to Kepler's laws | Was solved in closed form by Newton | Apart from special cases, three mutually gravitating bodies have no general formula for their motion, and their orbits can be chaotic.
+M2@3: Kirkwood gaps in the asteroid belt are due to: | Orbital resonances with Jupiter | Collisions between asteroids | Pressure of solar radiation | The gravity of Mars | Asteroids whose periods are simple fractions of Jupiter's receive repeated tugs at the same point of their orbit, which pump their eccentricity and clear those orbits.
+TF1@1: In the restricted three-body problem the small body's gravity is assumed to have no effect on the two large bodies. | true | That assumption is what makes it "restricted": the two primaries move on fixed circular orbits, and only the test body's motion has to be found.
+NUM2@3: An asteroid in the 3:1 Kirkwood gap completes three orbits for every one of Jupiter's (11.86 years). What is its orbital radius in AU? | 2.5 | 2% | AU | T = 11.86/3 = 3.95 years; a = T^{2/3} = 3.95^{0.667} = 2.50 AU.
+M3@2: A spacecraft's Jacobi constant is too large for the "neck" at L1 to be open. What does this mean? | It cannot pass between the regions around the two bodies | It must crash into the larger body | It will escape to infinity | It moves on a circular orbit | A large Jacobi constant means low rotating-frame energy: the zero-velocity curves close off the L1 gateway, trapping the spacecraft in its current region.
+SA2@1,3: Explain how mission designers can move spacecraft between the Earth and Moon regions using very little fuel, and what the trade-off is. | In the restricted three-body problem, a spacecraft with a Jacobi constant just low enough for the necks at L1 or L2 to open can drift through these gateways. The dynamics near the Lagrange points are chaotic, so small, precisely timed burns divert the spacecraft along paths (invariant manifolds) that carry it from one region to another with little propellant. The trade-off is time and precision: such transfers take weeks or months instead of days, and need careful navigation. | Jacobi constant chosen so the L1 or L2 neck is open ; Chaotic dynamics near Lagrange points ; Small burns redirect along low-energy paths ; Trade-off: long transfer times and precise control
 
 ## Orbital transfers
 S: Changing orbit means changing velocity with rocket burns (Δv). Mission design minimises total Δv because fuel needed grows exponentially with it. Burn direction and position decide the new orbit.
+O: Predict how prograde, retrograde and plane-change burns alter an orbit
+O: Calculate the Δv for a plane change
+O: Explain gravity assists and low-thrust propulsion
+PRE: Orbital energy and angular momentum
+PRE: Variable-mass systems
+LV: Year 2 · Application
 H: Basic manoeuvres
+E: Δv = v_{e} ln(m_{0}/m_{f}) :: rocket equation: fuel needed grows exponentially with Δv
 - **Prograde burn** (along velocity): raises the opposite side of the orbit.
 - **Retrograde burn**: lowers the opposite side (used for de-orbiting).
 - **Plane change**: Δv = 2v sin(Δi/2), very costly at high speed, so done at the slowest point.
@@ -531,29 +592,62 @@ H: Δv budgets
 X: How much Δv to change a 7.7 km s^{-1} circular orbit's inclination by 10°?
 > Δv = 2 × 7.7 × sin 5° = 1.34 km s^{-1}
 > That's why launch sites near the equator help geostationary missions
+K: A burn changes the orbit most at the opposite side: speeding up at one point raises the far point, slowing down lowers it.
 !: A gravity assist doesn't break energy conservation: the spacecraft gains energy from the planet, which slows imperceptibly in its orbit.
+T: Delta-v | The total change of velocity a manoeuvre needs, the currency of mission design
+T: Gravity assist | A planetary flyby that changes a spacecraft's velocity relative to the Sun by exchanging momentum with the planet
+T: Specific impulse | A measure of propellant efficiency, proportional to exhaust speed
+SUM: Prograde burns raise the far side of an orbit, retrograde burns lower it; plane changes cost 2v sin(Δi/2).
+SUM: Gravity assists borrow a planet's orbital energy; high exhaust speed means more Δv per kilogram of propellant.
+EV: established | An orbit is changed by a velocity change at a point, and the propellant needed rises exponentially with the total Δv
+SRC: OpenStax, University Physics Volume 1, section 13.5 "Kepler's Laws of Planetary Motion" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/13-5-keplers-laws-of-planetary-motion
+SRC: OpenStax, Astronomy 2e, section 3.5 "Motions of Satellites and Spacecraft" | secondary | 2022 | https://openstax.org/books/astronomy-2e/pages/3-5-motions-of-satellites-and-spacecraft
 Q: Why are plane changes expensive? | They need a velocity change proportional to orbital speed: Δv = 2v sin(Δi/2).
 Q: How does a gravity assist work? | Flying past a moving planet, the spacecraft's velocity in the Sun's frame changes while its speed relative to the planet is unchanged.
-M1: Firing a rocket prograde at periapsis raises: | Apoapsis | Periapsis | Inclination | Nothing | It raises the far side of the orbit.
-M2: Ion engines are efficient because: | Their exhaust speed is very high | Their thrust is very large | They use no propellant | They work only in atmospheres | High exhaust velocity means more Δv per kg of propellant.
+M1@1: Firing a rocket prograde at periapsis raises: | Apoapsis | Periapsis | Inclination | Nothing | Adding speed at periapsis increases the orbit's energy and semi-major axis; the orbit still passes through the burn point, so the opposite side, apoapsis, rises.
+M2@3: Ion engines are efficient because: | Their exhaust speed is very high | Their thrust is very large | They use no propellant at all | They need an atmosphere to push on | The rocket equation gives Δv = v_{e} ln(m_{0}/m_{f}), so a very high exhaust speed gives more Δv per kilogram of propellant, though the thrust is tiny.
+NUM2@2: What Δv is needed to change the inclination of a 3.07 km s^{-1} geostationary-speed orbit by 28.5°? In km s^{-1}. | 1.51 | 2% | km s^{-1} | Δv = 2v sin(Δi/2) = 2 × 3.07 × sin 14.25° = 6.14 × 0.246 = 1.51 km s^{-1}.
+M3@2: A spacecraft's engine has exhaust speed 3.0 km s^{-1}. To gain Δv = 6.0 km s^{-1}, its initial mass must be what multiple of its final mass? | About 7.4 | About 2 | About 3 | About 20 | m_{0}/m_{f} = e^{Δv/v_{e}} = e^{2} = 7.4: about 86% of the launch mass must be propellant, which is why Δv is so precious.
+SEQ2@1: Put the stages of de-orbiting a satellite from a circular orbit in order. | Turn to face backwards along the orbit ; Fire a retrograde burn ; Coast on an ellipse whose periapsis is now lower ; Enter the dense atmosphere near periapsis ; Drag slows it further until it re-enters | Slowing at one point lowers the opposite side of the orbit; once periapsis is in the atmosphere, drag completes the descent.
+SA3@3: Explain how a gravity assist can increase a spacecraft's speed relative to the Sun without breaking conservation of energy. | In the planet's frame the flyby is like an elastic collision: the spacecraft arrives and leaves with the same speed, only its direction changes. But the planet is moving around the Sun, so in the Sun's frame the spacecraft's velocity is its velocity relative to the planet plus the planet's velocity. Turning the relative velocity towards the planet's direction of motion increases the heliocentric speed. The energy comes from the planet, which loses an imperceptible amount of orbital energy, so total energy and momentum are conserved. | Same speed relative to the planet before and after ; Direction changed by the flyby ; Add the planet's orbital velocity in the Sun's frame ; Planet loses a tiny amount of energy
 
 ## Hohmann transfers
 S: A Hohmann transfer moves a spacecraft between two circular orbits using two burns and half an elliptical orbit that touches both. It's the most fuel-efficient two-burn transfer for most orbit ratios.
+O: Find the semi-major axis and duration of a Hohmann transfer
+O: Calculate the two burns of a Hohmann transfer
+O: Explain launch windows and when other transfers do better
+PRE: Orbital transfers
+PRE: Kepler's laws
+LV: Year 2 · Application
 H: The transfer
 E: a_{t} = (r_{1} + r_{2})/2
 E: Δv_{1} = √(GM/r_{1})(√(2r_{2}/(r_{1} + r_{2})) − 1)
 E: Δv_{2} = √(GM/r_{2})(1 − √(2r_{1}/(r_{1} + r_{2})))
 E: t = π√(a_{t}^{3}/GM) :: half the transfer orbit's period
+- Burn 1 (prograde at r_{1}) puts the spacecraft on the transfer ellipse; burn 2 (prograde at r_{2}) circularises.
+- Total Δv = Δv_{1} + Δv_{2}; LEO to GEO this is about 3.9 km s^{-1} before any plane change.
 H: Launch windows
 P: For an interplanetary Hohmann transfer the target must arrive at the meeting point when the spacecraft does, so launches happen only at particular planetary alignments: every ~26 months for Mars. Earth to Mars takes about 8.5 months.
 X: Earth (1 AU) to Mars (1.52 AU) transfer time.
 > a_{t} = 1.26 AU; T = a^{3/2} = 1.41 years
 > Transfer = T/2 = 0.71 years ≈ 259 days
+K: Both burns are prograde and tangential, where they change the orbit most efficiently: the first raises the far side to the target orbit, the second circularises there.
 !: Hohmann transfers are efficient but slow; when r_{2}/r_{1} > ~11.9, a three-burn bi-elliptic transfer uses less Δv.
+T: Hohmann transfer | A two-burn transfer between circular coplanar orbits along half of an ellipse tangent to both
+T: Launch window | The period when the planets' positions allow a transfer to arrive at the target
+T: Synodic period | The time between repeats of the same alignment of two orbiting bodies, as seen from the central body
+SUM: The transfer ellipse has a = (r_{1} + r_{2})/2 and takes half its period.
+SUM: Two tangential prograde burns; launches wait for the right alignment (every ~26 months for Mars).
+EV: established | For most pairs of coplanar circular orbits the Hohmann transfer needs the least Δv of any two-burn transfer
+SRC: OpenStax, University Physics Volume 1, section 13.5 "Kepler's Laws of Planetary Motion" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/13-5-keplers-laws-of-planetary-motion
+SRC: OpenStax, Astronomy 2e, section 3.5 "Motions of Satellites and Spacecraft" | secondary | 2022 | https://openstax.org/books/astronomy-2e/pages/3-5-motions-of-satellites-and-spacecraft
 Q: What is a Hohmann transfer orbit? | An ellipse tangent to both the initial and final circular orbits, needing one burn at each.
 Q: How often do Earth–Mars Hohmann launch windows occur? | About every 26 months (the synodic period).
-M1: The semi-major axis of a Hohmann transfer from r_{1} to r_{2} is: | (r_{1} + r_{2})/2 | r_{2} − r_{1} | √(r_{1}r_{2}) | r_{1}r_{2} | Periapsis r_{1}, apoapsis r_{2}.
-M2: An Earth–Mars Hohmann transfer takes about: | 8.5 months | 3 days | 3 years | 1 month | Half the period of the transfer ellipse.
+M1@1: The semi-major axis of a Hohmann transfer from r_{1} to r_{2} is: | (r_{1} + r_{2})/2 | r_{2} − r_{1} | √(r_{1}r_{2}) | r_{1}r_{2} | The transfer ellipse has periapsis r_{1} and apoapsis r_{2}, and its major axis is their sum, so a = (r_{1} + r_{2})/2.
+M2@1: An Earth–Mars Hohmann transfer takes about: | 8.5 months | 3 days | 3 years | 1 month | The transfer lasts half the period of an ellipse with a = 1.26 AU: 0.71 years, about 8.5 months.
+NUM2@2: For a Hohmann transfer from LEO (r = 6700 km) to GEO (r = 42 200 km) about Earth (GM = 3.99 × 10^{14} m^{3} s^{-2}), what is the first burn Δv_{1} in km s^{-1}? | 2.42 | 3% | km s^{-1} | √(GM/r_{1}) = 7.72 km s^{-1}; √(2r_{2}/(r_{1} + r_{2})) = √(84 400/48 900) = 1.314; Δv_{1} = 7.72 × 0.314 = 2.42 km s^{-1}.
+M3@3: Mission planners must launch an Earth–Mars Hohmann transfer when Mars is about 44° ahead of Earth. Why? | Mars must reach the transfer's far point when the spacecraft does | The spacecraft must avoid crossing Mars's orbit early | Earth's rotation must point the launch site at Mars | The Sun's glare blocks launches at other angles | During the 259-day transfer Mars moves about 136° along its orbit; the spacecraft covers 180°, so Mars must start about 44° ahead to meet it.
+SA3@2,3: Describe a Hohmann transfer from a low circular orbit to a higher one, explaining what each burn does and why the spacecraft ends up moving more slowly than it started. | The first burn, prograde at the lower orbit, adds speed so the orbit becomes an ellipse with periapsis at r_{1} and apoapsis at r_{2}. The spacecraft coasts for half an orbit, slowing as it climbs and trades kinetic for potential energy. At apoapsis it is moving slower than the circular speed there, so a second prograde burn raises the periapsis and circularises the orbit at r_{2}. Its final speed √(GM/r_{2}) is lower than the initial √(GM/r_{1}) because higher circular orbits are slower, even though energy was added. | First prograde burn at r_{1} creates the transfer ellipse ; Coast half an orbit, slowing as it climbs ; Second prograde burn at apoapsis circularises ; Final circular speed lower: higher orbits are slower
 
 ## Gravitational perturbations
 S: Real orbits are perturbed by other bodies, by the non-spherical shapes of planets, by drag and by radiation pressure. Perturbation theory treats these as small corrections that slowly change the orbital elements.

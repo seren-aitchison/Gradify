@@ -68,7 +68,7 @@ Q: How is instantaneous velocity defined? | v = dr/dt, the derivative of positio
 Q: Can an object have constant speed but changing velocity? | Yes: in circular motion the direction changes.
 M1@3: Which of these motion quantities is a vector? | Velocity | Speed | Distance | Time | Velocity has both magnitude and direction; speed, distance and time are scalars.
 M2@1: The average speed for equal distances at 40 and 60 km h^{-1} is: | 48 km h^{-1} | 50 km h^{-1} | 45 km h^{-1} | 52 km h^{-1} | Harmonic mean: 2 × 40 × 60/(40 + 60) = 4800/100 = 48 km h^{-1}.
-NUM2@2: Position is x = 3t^{2} m. What is the instantaneous velocity at t = 2.0 s, in m s^{-1}? | 12 | 0.1 | m s^{-1} | v = dx/dt = 6t = 6 × 2.0 = 12 m s^{-1}.
+NUM2@2: Position is x = 3t^{2} m. What is the instantaneous velocity at t = 2.0 s, in m s^{-1}? | 12 | 0.1 | m s^{-1} | Differentiate: v = dx/dt = 6t = 6 × 2.0 = 12 m s^{-1}.
 M3@1: A walker goes 400 m north in 200 s, then 300 m east in 300 s. What is her average velocity? | 1.0 m s^{-1} | 1.4 m s^{-1} | 0.7 m s^{-1} | 2.0 m s^{-1} | Displacement = √(400^{2} + 300^{2}) = 500 m in 500 s, so 1.0 m s^{-1}; her average speed is 700/500 = 1.4 m s^{-1}.
 SA2@1,3: Explain why a car travelling round a roundabout at a steady 30 km h^{-1} has a changing velocity, and how its average speed and average velocity differ after one full lap. | Velocity is a vector; going round, its direction changes continuously even though its size stays 30 km h^{-1}, so velocity changes and the car accelerates towards the centre. After a full lap the displacement is zero, so average velocity is zero, but the average speed is still 30 km h^{-1} because distance is the full circumference. | Velocity is a vector ; Direction changes so velocity changes ; Average velocity zero after a lap ; Average speed equals 30 km per hour
 
@@ -137,7 +137,7 @@ Q: When is a = v dv/dx useful? | When acceleration is given as a function of pos
 Q: How do you find when an object reverses direction? | Find when v = 0 (and changes sign).
 M1@1: The area under an acceleration–time graph gives: | Change in velocity | Displacement | Speed | Jerk | Integrating a over time gives Δv, the change in velocity over the interval.
 M2@2: x = t^{3} − 3t. When is the object momentarily at rest? | t = 1 s | t = 0 | t = 3 s | t = √3 s | v = dx/dt = 3t^{2} − 3, which is zero at t = 1 s (for t > 0).
-NUM2@1: An object starts from rest at the origin with a = 6t m s^{-2}. What is its position at t = 2.0 s, in metres? | 8 | 0.1 | m | v = 3t^{2} and x = t^{3}, so x(2) = 8 m.
+NUM2@1: An object starts from rest at the origin with a = 6t m s^{-2}. What is its position at t = 2.0 s, in metres? | 8 | 0.1 | m | Integrate twice from rest at the origin: v = 3t^{2} and x = t^{3}, so x(2) = 8 m.
 M3@2: v(t) = 4 − 2t m s^{-1} for 0–4 s. What distance is travelled? | 8 m | 0 m | 4 m | 16 m | It moves +4 m until reversing at t = 2 s, then −4 m back: displacement 0, distance 8 m.
 SA3@1,3: A particle's acceleration is a = −kx (k > 0). Use a = v dv/dx to find how its speed depends on position if it has speed v_{0} at x = 0. | Write v dv/dx = −kx and integrate: ∫v dv = −k∫x dx, giving ½v^{2} = ½v_{0}^{2} − ½kx^{2}, so v = √(v_{0}^{2} − kx^{2}). The speed is greatest at x = 0 and the particle stops at x = ±v_{0}/√k, which is simple harmonic motion. | Uses v dv/dx form ; Separates and integrates ; Correct result for v ; Interprets turning points
 
@@ -847,10 +847,15 @@ SA2@2,3: Explain, using Newton's laws, why the total momentum of two colliding t
 
 ## Collisions and explosions
 S: In collisions and explosions, large internal forces act for a short time, so momentum is conserved. Kinetic energy may be conserved (elastic), partly lost (inelastic) or created from stored energy (explosions).
+O: Classify collisions as elastic, inelastic or perfectly inelastic
+O: Solve explosions from rest using momentum and energy
+O: Explain how kinetic energy is shared between fragments
+PRE: Conservation of momentum
+LV: GCSE and A level · Application
 H: Types
 - **Elastic**: KE conserved (atomic collisions, ideal billiard balls).
-- **Inelastic**: KE not conserved, some converted to heat, sound, deformation.
-- **Perfectly inelastic**: bodies stick together; maximum KE loss consistent with momentum.
+- **Inelastic**: KE not conserved; some becomes heat, sound or deformation.
+- **Perfectly inelastic**: bodies stick together; the maximum KE loss consistent with momentum.
 - **Explosion**: stored chemical or elastic energy becomes KE; total momentum stays the same (zero if initially at rest).
 H: Explosions from rest
 E: m_{1}v_{1} = −m_{2}v_{2}; KE_{1}/KE_{2} = m_{2}/m_{1}
@@ -858,17 +863,34 @@ P: The lighter fragment gets more of the kinetic energy. In alpha decay the alph
 X: A 3.0 kg shell at rest explodes into 1.0 kg and 2.0 kg pieces, releasing 600 J. Find their speeds.
 > 1.0v_{1} = 2.0v_{2}; ½(1.0)v_{1}^{2} + ½(2.0)v_{2}^{2} = 600
 > v_{1} = 2v_{2}: 2v_{2}^{2} + v_{2}^{2} = 600 ⇒ v_{2} = 14.1 m s^{-1}, v_{1} = 28.3 m s^{-1}
+K: Momentum is always conserved; kinetic energy is conserved only in elastic collisions.
 !: Momentum is conserved in every type of collision; only kinetic energy behaves differently between types.
 P: **Investigate with the lab.** Start both gliders at rest and set off the explosion. Check that total momentum stays zero while kinetic energy appears from nowhere in the lab's bookkeeping.
 IX: collisions
+T: Elastic collision | A collision in which total kinetic energy is conserved
+T: Perfectly inelastic collision | A collision in which the bodies stick together, losing the most kinetic energy allowed
+T: Explosion | A process in which stored energy pushes parts of a system apart, creating kinetic energy
+SUM: All collisions and explosions conserve momentum; elastic ones also conserve KE.
+SUM: From rest, fragments have equal and opposite momenta and the lighter one takes more KE.
+EV: established | Momentum conservation in collisions and explosions is exact for isolated systems
+SRC: OpenStax, University Physics Volume 1, section 9.4 "Types of Collisions" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/9-4-types-of-collisions
+SRC: AQA, A-level Physics specification (7408), section 3.4.1.6, Momentum | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: In an explosion from rest, which fragment gets more kinetic energy? | The lighter one.
 Q: What is a perfectly inelastic collision? | One in which the bodies stick together, losing the maximum kinetic energy.
-M1: In which type of collision is KE conserved? | Elastic | Inelastic | Perfectly inelastic | Explosion | By definition.
-M2: A uranium-238 nucleus at rest emits an alpha particle (mass 4). The daughter's KE is roughly what fraction of the total? | 2% | 50% | 98% | 0 | KE ratio = mass ratio inverted: 4/234 of the alpha's.
-M2: Two gliders at rest push apart. Glider A (1 kg) moves at 3 m/s. How fast does glider B (2 kg) move? | 1.5 m/s the other way | 3 m/s the other way | 6 m/s the other way | 1.5 m/s the same way | Total momentum stays zero: 1 × 3 = 2 × v, so v = 1.5 m/s in the opposite direction.
+M1@1: In which type of collision is KE conserved? | Elastic | Inelastic | Perfectly inelastic | Explosion | An elastic collision is defined as one in which total kinetic energy is the same before and after.
+M2@3: A uranium-238 nucleus at rest emits an alpha particle (mass 4). The daughter's KE is roughly what fraction of the total? | 2% | 50% | 98% | 0 | KE shares inversely with mass: the daughter (mass 234) gets about 4/238 ≈ 2% and the alpha about 98%.
+M2@2: Two gliders at rest push apart. Glider A (1 kg) moves at 3 m/s. How fast does glider B (2 kg) move? | 1.5 m/s the other way | 3 m/s the other way | 6 m/s the other way | 1.5 m/s the same way | Total momentum stays zero: 1 × 3 = 2 × v, so v = 1.5 m/s in the opposite direction.
+NUM2@1: A 1.0 kg ball at 4.0 m s^{-1} hits a stationary 1.0 kg ball and they stick together. How much kinetic energy is lost, in joules? | 4 | 0.05 | J | Final speed 2.0 m s^{-1}; KE falls from 8.0 J to ½ × 2.0 × 2.0^{2} = 4.0 J, so 4.0 J is lost.
+M3@2,3: A firework at rest bursts into two pieces of 0.20 kg and 0.30 kg; the lighter moves at 30 m s^{-1}. How much energy was released as kinetic energy? | 150 J | 90 J | 60 J | 225 J | The heavier moves at 0.20 × 30/0.30 = 20 m s^{-1}; KE = ½ × 0.20 × 900 + ½ × 0.30 × 400 = 90 + 60 = 150 J.
+SA2@1,2: A gun fires a bullet. Explain why the bullet and gun have equal and opposite momenta but very different kinetic energies. | Before firing the total momentum is zero, and the expanding gases are internal forces, so afterwards the momenta are equal in size and opposite in direction: m_{b}v_{b} = m_{g}v_{g}. Kinetic energy is p^{2}/(2m), so for the same p it is inversely proportional to mass. The light bullet therefore carries almost all of the kinetic energy while the heavy gun recoils slowly with little. | Total momentum zero before and after ; Equal and opposite momenta ; KE = p squared over 2m ; Lighter body gets most KE
 
 ## Elastic and inelastic collisions
 S: The coefficient of restitution e measures how bouncy a collision is: e = 1 for elastic, 0 for perfectly inelastic. Combined with momentum conservation it gives final velocities in 1D collisions.
+O: Calculate the coefficient of restitution from speeds or bounce heights
+O: Use the 1D elastic collision formulas and their limiting cases
+O: Find the kinetic energy lost in an inelastic collision
+PRE: Collisions and explosions
+LV: A level · Application
 H: Coefficient of restitution
 E: e = (v_{2} − v_{1})/(u_{1} − u_{2}) :: separation speed / approach speed
 E: h_{bounce} = e^{2}h_{drop} :: dropped ball on a fixed surface
@@ -876,81 +898,145 @@ H: 1D elastic collision formulas
 E: v_{1} = [(m_{1} − m_{2})u_{1} + 2m_{2}u_{2}]/(m_{1} + m_{2})
 E: v_{2} = [(m_{2} − m_{1})u_{2} + 2m_{1}u_{1}]/(m_{1} + m_{2})
 - Equal masses, target at rest: they swap velocities (Newton's cradle).
-- Heavy hits light at rest: light one leaves at ~2u.
-- Light hits heavy: bounces back at ~u.
+- Heavy hits light at rest: the light one leaves at about 2u.
+- Light hits heavy: it bounces back at about u.
 H: Glancing collisions
 P: Two equal masses in an elastic glancing collision (one at rest) move off at 90° to each other: snooker players rely on this.
 X: A tennis ball dropped from 2.0 m rebounds to 1.3 m. Find e.
 > e = √(1.3/2.0) = 0.81
+K: Momentum gives one equation; restitution (or energy for an elastic collision) gives the second.
 !: The kinetic energy that can be lost in a collision is only the part relative to the centre of mass, ½μ(u_{1} − u_{2})^{2} with μ = m_{1}m_{2}/(m_{1} + m_{2}); the centre-of-mass motion must carry on.
 P: **Investigate with the lab.** Set restitution to 1, then to 0, with the same starting velocities. Compare the kinetic energy after each collision with the energy before.
 IX: collisions
+T: Coefficient of restitution | The ratio of relative speed of separation to relative speed of approach
+T: Glancing collision | A collision that is not head-on, so the bodies move off at angles
+SUM: e = 1 elastic, 0 < e < 1 inelastic, e = 0 sticking; bounce height ∝ e^{2}.
+SUM: Equal masses swap velocities in a head-on elastic collision; light bodies bounce off heavy ones.
+EV: established | The restitution model is a good empirical description of 1D collisions
+SRC: OpenStax, University Physics Volume 1, section 9.4 "Types of Collisions" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/9-4-types-of-collisions
+SRC: OpenStax, University Physics Volume 1, section 9.5 "Collisions in Multiple Dimensions" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/9-5-collisions-in-multiple-dimensions
 Q: What is the coefficient of restitution? | The ratio of relative speed of separation to relative speed of approach.
 Q: What happens when equal masses collide elastically, one at rest? | They exchange velocities.
-M1: A ball with e = 0.5 is dropped from 4 m. It rebounds to: | 1 m | 2 m | 0.5 m | 3 m | h = e^{2} × 4.
-M2: A neutron collides elastically head-on with a stationary carbon-12 nucleus. What fraction of its speed does it keep? | 11/13 | 1/12 | 1/2 | 0 | v_{1} = (1 − 12)/(1 + 12) u: magnitude 11/13. This is why moderators use light nuclei.
-M2: What is conserved in a perfectly inelastic collision? | Momentum, but not kinetic energy | Kinetic energy, but not momentum | Both momentum and kinetic energy | Neither momentum nor kinetic energy | Momentum is always conserved; when objects stick, the most kinetic energy possible is lost.
+M1@1: A ball with e = 0.5 is dropped from 4 m. It rebounds to: | 1 m | 2 m | 0.5 m | 3 m | Rebound height = e^{2} × drop height = 0.25 × 4 m = 1 m.
+M2@2: A neutron collides elastically head-on with a stationary carbon-12 nucleus. What fraction of its speed does it keep? | 11/13 | 1/12 | 1/2 | 0 | v_{1} = (1 − 12)/(1 + 12) u: magnitude 11/13. This is why moderators use light nuclei.
+M2@3: What is conserved in a perfectly inelastic collision? | Momentum, but not kinetic energy | Kinetic energy, but not momentum | Both momentum and kinetic energy | Neither momentum nor kinetic energy | Momentum is always conserved; when objects stick, the most kinetic energy possible is lost.
+NUM2@1: A ball hits a wall at 8.0 m s^{-1} and rebounds at 6.0 m s^{-1}. What is the coefficient of restitution? | 0.75 | 0.01 | – | e = separation speed/approach speed = 6.0/8.0 = 0.75.
+M3@2,3: A 2.0 kg ball at 3.0 m s^{-1} hits a stationary 1.0 kg ball elastically. What are the final velocities? | 1.0 and 4.0 m s^{-1} | 0 and 6.0 m s^{-1} | 2.0 and 2.0 m s^{-1} | 1.5 and 3.0 m s^{-1} | v_{1} = (2 − 1)/3 × 3.0 = 1.0 m s^{-1}; v_{2} = 2 × 2/3 × 3.0 = 4.0 m s^{-1}; check momentum 6 = 2 + 4.
+SA3@2,3: Explain why a nuclear reactor uses light nuclei such as hydrogen or carbon to slow neutrons, using elastic collision results. | In a head-on elastic collision with a stationary nucleus the neutron keeps a fraction (m_{1} − m_{2})/(m_{1} + m_{2}) of its velocity. If the target is very heavy the neutron bounces back with nearly its full speed and loses little energy. If the target has a similar mass (hydrogen) it can lose almost all its energy in one collision; carbon (12 times heavier) keeps 11/13 of its speed per head-on hit. So light nuclei slow neutrons in far fewer collisions. | Elastic formula for final velocity ; Heavy target: little energy transferred ; Similar mass: most energy transferred ; Fewer collisions needed
 
 ## Centre of mass
 S: The centre of mass is the mass-weighted average position of a system. It moves as if all the mass were concentrated there and all external forces acted on it, whatever happens internally.
+O: Calculate the centre of mass of a system of point masses
+O: Use MA_{cm} = ΣF_{ext} to predict the motion of the centre of mass
+O: Relate the centre of mass to stability
+PRE: Conservation of momentum
+LV: A level · Application
 H: Definition
 E: R = Σm_{i}r_{i}/M or R = (1/M)∫r dm
 E: MA_{cm} = ΣF_{ext}
 - Uniform symmetric bodies: CM at the geometric centre.
-- CM can lie outside the material (a ring, a boomerang, a high jumper's Fosbury flop).
-- In a uniform gravitational field, CM = centre of gravity.
+- The CM can lie outside the material (a ring, a boomerang, a high jumper in a Fosbury flop).
+- In a uniform gravitational field, the CM is also the centre of gravity.
 H: Stability
 P: An object resting on a base is stable if a vertical line through its CM falls inside the base. Lowering the CM or widening the base increases stability (racing cars, wide-stance tripods).
 X: Find the CM of a 2 kg mass at x = 0 and a 3 kg mass at x = 5 m.
-> X = (0 + 15)/5 = 3 m
+> X = (2 × 0 + 3 × 5)/5 = 3 m
+K: Internal forces can't move the centre of mass; only external forces accelerate it.
 !: The centre of mass of a fragmenting projectile keeps following the original parabola, until a fragment hits the ground.
 P: **Investigate with the lab.** Watch the centre-of-mass marker during an explosion and a sticky collision. However the gliders move, the centre of mass carries on at constant velocity.
 IX: collisions
+T: Centre of mass | The mass-weighted average position of a system, which moves as if all its mass were there
+T: Centre of gravity | The point through which the resultant weight acts; equal to the CM in a uniform field
+SUM: R = Σm_{i}r_{i}/M; its acceleration depends only on external forces.
+SUM: A body is stable while the vertical through its CM stays inside its base.
+EV: established | The centre-of-mass theorem follows from Newton's laws for any system
+SRC: OpenStax, University Physics Volume 1, section 9.6 "Center of Mass" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/9-6-center-of-mass
+SRC: AQA, A-level Physics specification (7408), section 3.4.1.2, Moments | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: How does the centre of mass of a system move? | As if all the mass were there and all external forces acted there.
 Q: When is an object resting on a base stable? | When the vertical line through its centre of mass passes within its base.
-M1: A uniform 4 m plank has a 20 kg child at one end; the plank is 10 kg. CM from that end? | 0.67 m | 2 m | 1 m | 1.33 m | (20 × 0 + 10 × 2)/30.
-M2: A firework explodes mid-air. The CM of the fragments: | Continues on the original trajectory | Stops | Moves straight down | Moves upward | Only external forces (gravity) affect CM motion.
-M2: Two gliders collide on a frictionless track. What happens to the velocity of their centre of mass? | It stays the same throughout | It drops to zero at the moment of impact | It reverses direction after the collision | It doubles during the collision | With no external force, the centre of mass moves at constant velocity.
+M1@1: A uniform 4 m plank has a 20 kg child at one end; the plank is 10 kg. CM from that end? | 0.67 m | 2 m | 1 m | 1.33 m | The plank's own CM is at 2 m: X = (20 × 0 + 10 × 2)/30 = 0.67 m.
+M2@2: A firework explodes mid-air. The CM of the fragments: | Continues on the original trajectory | Stops | Moves straight down | Moves upward | The explosion forces are internal; only gravity acts externally, so the CM follows the original parabola.
+M2@2: Two gliders collide on a frictionless track. What happens to the velocity of their centre of mass? | It stays the same throughout | It drops to zero at the moment of impact | It reverses direction after the collision | It doubles during the collision | With no external force, the centre of mass moves at constant velocity.
+NUM2@1: Masses of 1.0 kg at x = 0, 2.0 kg at x = 3.0 m and 3.0 kg at x = 6.0 m lie on a line. Where is the centre of mass, in metres? | 4 | 0.05 | m | X = Σmx/M = (0 + 6.0 + 18.0)/6.0 = 24/6.0 = 4.0 m.
+M3@3: A box 0.40 m wide has its centre of mass 0.60 m above the ground on its centre line. About what tilt angle makes it topple? | 18° | 34° | 45° | 56° | It topples when the CM passes over the edge: tan θ = 0.20/0.60, θ ≈ 18°.
+SA2@2,3: Explain why a racing car is built low and wide, using the idea of the centre of mass. | A body tips over when the vertical line through its centre of mass passes outside its base, or on a bend when the resultant of weight and the cornering force passes outside the wheels. A low centre of mass and a wide track mean a much larger tilt or sideways force is needed before this happens, so the car can corner hard without rolling. | Toppling condition ; Low CM increases angle needed ; Wide base increases angle needed ; Applies to cornering forces
 
 ## Systems of particles
 S: Treating many particles as a system, internal forces cancel in pairs, so the system's total momentum responds only to external forces. Energy and angular momentum can be split into motion of the centre of mass plus motion relative to it.
+O: Relate total momentum to centre-of-mass velocity
+O: Split kinetic energy into centre-of-mass and internal parts
+O: Use reduced mass for a two-body problem
+PRE: Centre of mass
+LV: Year 1 · Physical reasoning
 H: Key results
 E: P = Σp_{i} = MV_{cm}; dP/dt = F_{ext}
 E: KE = ½MV_{cm}^{2} + Σ½m_{i}v_{i}′^{2} :: KE of CM + KE relative to CM
 E: L = R × MV_{cm} + L_{about cm}
 - Internal forces can change internal energy (and KE) but not total momentum.
-- The reduced mass μ = m_{1}m_{2}/(m_{1} + m_{2}) turns a two-body problem into one body.
+- The reduced mass μ = m_{1}m_{2}/(m_{1} + m_{2}) turns a two-body problem into a one-body problem.
 X: Two skaters (60 kg and 40 kg) push apart from rest; the lighter moves at 3 m s^{-1}. Where's the CM afterwards, and what's the total KE?
-> CM stays at rest
-> v_{heavy} = 2 m s^{-1}; KE = ½(40)(9) + ½(60)(4) = 300 J from their muscles
+> The CM stays at rest
+> v_{heavy} = 2 m s^{-1}; KE = ½(40)(9) + ½(60)(4) = 300 J, from their muscles
 H: Two-body problems
 P: Earth and Moon orbit their common CM (about 4700 km from Earth's centre, inside the Earth). Exoplanets are found from the wobble of their star around the system's CM.
+K: Total momentum belongs to the centre of mass; kinetic energy has a centre-of-mass part and an internal part.
 !: Kinetic energy isn't just ½MV_{cm}^{2}; the internal part (rotation, vibration, relative motion) can be most of it.
+T: Reduced mass | μ = m_{1}m_{2}/(m_{1} + m_{2}), the effective mass for relative motion of two bodies
+T: Internal force | A force between parts of the system, which cancels in pairs in the total
+SUM: P = MV_{cm}, changed only by external forces.
+SUM: KE = KE of the CM + KE relative to the CM; internal forces can change the second.
+EV: established | The decomposition into centre-of-mass and relative motion is exact in Newtonian mechanics
+SRC: OpenStax, University Physics Volume 1, section 9.6 "Center of Mass" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/9-6-center-of-mass
+SRC: OpenStax, University Physics Volume 1, section 9.3 "Conservation of Linear Momentum" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/9-3-conservation-of-linear-momentum
 Q: What is the reduced mass of two bodies? | μ = m_{1}m_{2}/(m_{1} + m_{2}).
 Q: Can internal forces change a system's total momentum? | No, only external forces can.
-M1: A system's internal forces can change its: | Kinetic energy | Total momentum | Centre-of-mass velocity | Total mass | Explosions create KE without changing P.
-M2: The Earth–Moon CM lies: | Inside the Earth, ~4700 km from its centre | At the Earth's centre | Halfway between them | At the Moon | Mass ratio ~81:1 over 384 000 km.
+M1@1,2: A system's internal forces can change its: | Kinetic energy | Total momentum | Centre-of-mass velocity | Total mass | Explosions create KE from stored energy without changing the total momentum.
+M2@3: The Earth–Moon CM lies: | Inside the Earth, ~4700 km from its centre | At the Earth's centre | Halfway between them | At the Moon | With a mass ratio of about 81:1 over 384 000 km, the CM is 384 000/82 ≈ 4700 km from Earth's centre.
+NUM2@3: What is the reduced mass of a 2.0 kg and a 3.0 kg body, in kilograms? | 1.2 | 0.01 | kg | μ = (2.0 × 3.0)/(2.0 + 3.0) = 6.0/5.0 = 1.2 kg.
+M3@2: Two 1.0 kg carts approach each other at 2.0 m s^{-1} each. What is their kinetic energy in the centre-of-mass frame? | 4.0 J, all of it | 0 J | 2.0 J | 8.0 J | The CM is at rest, so all 4.0 J is internal and could all be lost if the carts stick together.
+SA2@1,2: Two skaters at rest push apart. Explain what happens to the system's momentum, centre of mass and kinetic energy. | The pushing forces are internal and equal and opposite, so total momentum stays zero: the skaters move off with equal and opposite momenta, the lighter one faster. The centre of mass therefore stays at rest. Kinetic energy increases from zero, supplied by chemical energy in their muscles: internal forces can change kinetic energy even though they can't change momentum. | Momentum stays zero ; Equal and opposite momenta ; CM stays at rest ; KE comes from internal energy
 
 ## Variable-mass systems
-S: When a system gains or loses mass, as rockets, conveyor belts and raindrops do, F = ma isn't enough. Apply momentum conservation to everything including the mass being added or ejected.
+S: When a system gains or loses mass, as rockets, conveyor belts and raindrops do, F = ma isn't enough. Apply momentum conservation to everything, including the mass being added or ejected.
+O: Calculate rocket thrust from exhaust speed and mass flow rate
+O: Apply the Tsiolkovsky rocket equation
+O: Explain why rockets use stages
+PRE: Conservation of momentum
+LV: Year 1 · Physical reasoning
 H: The rocket equation
 E: M dv/dt = u dm/dt (thrust = u × mass flow rate) :: u = exhaust speed relative to the rocket
 E: Δv = u ln(m_{0}/m_{f}) :: Tsiolkovsky rocket equation
-- To double Δv you must square the mass ratio: why rockets are mostly fuel and use stages.
+- To double Δv you must square the mass ratio: that is why rockets are mostly fuel and use stages.
 - Thrust in space doesn't need anything to "push against".
 H: Other examples
-- Conveyor belt with sand dropped on: extra force F = v dm/dt needed to keep speed constant (and half the work goes into heating as the sand skids).
-- Falling raindrop gathering mass, chains falling off tables.
+- Conveyor belt with sand dropped on: an extra force F = v dm/dt is needed to keep its speed constant (and half the work goes into heating as the sand skids).
+- A falling raindrop gathering mass; a chain falling off a table.
 X: A rocket with u = 3000 m s^{-1} burns from 100 t to 25 t. Find Δv (no gravity).
 > Δv = 3000 ln 4 = 4160 m s^{-1}
+K: Rockets push exhaust backwards and the exhaust pushes the rocket forwards: momentum conservation, not pushing on air.
 !: F = d(mv)/dt = m dv/dt + v dm/dt only applies when the added or lost mass is at rest in your frame; in general, use momentum conservation directly.
+T: Thrust | The forward force on a rocket, equal to exhaust speed times mass flow rate
+T: Mass ratio | The ratio of a rocket's initial mass to its final mass, m_{0}/m_{f}
+SUM: Thrust = u dm/dt; Δv = u ln(m_{0}/m_{f}).
+SUM: Δv grows only logarithmically with mass ratio, so staging sheds dead mass.
+EV: established | The Tsiolkovsky equation follows from momentum conservation
+SRC: OpenStax, University Physics Volume 1, section 9.7 "Rocket Propulsion" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/9-7-rocket-propulsion
+SRC: OpenStax, College Physics 2e, section 8.7 "Introduction to Rocket Propulsion" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/8-7-introduction-to-rocket-propulsion
 Q: State the Tsiolkovsky rocket equation. | Δv = u ln(m_{0}/m_{f}).
 Q: What is rocket thrust? | Exhaust speed (relative to the rocket) times mass flow rate.
-M1: Rocket exhaust speed 2500 m s^{-1}, mass flow 400 kg s^{-1}. Thrust? | 1.0 MN | 10 kN | 6.25 kN | 100 kN | 2500 × 400.
-M2: Why do rockets use stages? | Dropping empty tanks improves the mass ratio of later stages | Each stage burns faster | To reduce drag only | Engines can't run long | Less dead mass to accelerate.
+M1@1: Rocket exhaust speed 2500 m s^{-1}, mass flow 400 kg s^{-1}. Thrust? | 1.0 MN | 10 kN | 6.25 kN | 100 kN | Thrust = u × dm/dt = 2500 × 400 = 1.0 × 10^{6} N = 1.0 MN.
+M2@3: Why do rockets use stages? | Dropping empty tanks improves the mass ratio of later stages | Each stage burns its fuel faster | To reduce air drag only | Engines can't run for long | Discarding dead mass means later stages accelerate less useless structure, raising the total Δv.
+NUM2@2: A rocket with exhaust speed 2000 m s^{-1} has a mass ratio of 3.0. What Δv can it reach in deep space, in m s^{-1}? | 2197 | 10 | m s^{-1} | Δv = u ln(m_{0}/m_{f}) = 2000 × ln 3.0 = 2000 × 1.0986 = 2197 m s^{-1}.
+M3@1,2: A rocket of mass 5.0 × 10^{5} kg on the launch pad ejects exhaust at 3.0 × 10^{3} m s^{-1}. What mass flow rate is needed just to lift off (g = 9.8)? | About 1600 kg s^{-1} | About 170 kg s^{-1} | About 16 000 kg s^{-1} | About 5000 kg s^{-1} | Thrust must exceed weight: dm/dt = Mg/u = 4.9 × 10^{6}/3.0 × 10^{3} ≈ 1600 kg s^{-1}.
+SA3@2,3: Explain why a rocket can accelerate in the vacuum of space and why reaching orbit needs a mass ratio of about 10 or more even with good engines. | The rocket and its exhaust form an isolated system, so total momentum is conserved: ejecting exhaust backwards gives the rocket forward momentum without anything to push against. The rocket equation Δv = u ln(m_{0}/m_{f}) shows Δv grows only with the logarithm of the mass ratio. Orbit needs about 9–10 km s^{-1} including losses, while chemical exhausts are about 3–4.5 km s^{-1}, so ln(m_{0}/m_{f}) must be about 2–3: mass ratios of roughly 10, which in practice needs staging. | Momentum conservation, no need to push on air ; Rocket equation ; Logarithmic dependence ; Numbers give large mass ratio and staging
 
 ## Motion under resistive forces
 S: Real objects move against drag and friction, which depend on speed. Newton's second law then becomes a differential equation, and motion approaches a steady state rather than accelerating forever.
+O: Solve the equation of motion with linear drag
+O: Describe motion with quadratic drag
+O: Use the Reynolds number to choose a drag model
+PRE: Friction and drag
+LV: Year 1 · Physical reasoning
 H: Linear drag (F = −bv)
 E: m dv/dt = mg − bv ⇒ v = v_{t}(1 − e^{−t/τ}), v_{t} = mg/b, τ = m/b
 - Horizontal motion with linear drag: v = v_{0}e^{−t/τ}, coasting distance v_{0}τ.
@@ -958,41 +1044,73 @@ H: Quadratic drag (F = −cv^{2})
 E: v(t) = v_{t} tanh(gt/v_{t}), v_{t} = √(mg/c) :: falling from rest
 - Coasting: v = v_{0}/(1 + cv_{0}t/m); no finite stopping time.
 - Projectiles with drag need numerical solution; trajectories become asymmetric.
-X: A 10 μm water droplet falls in air (η = 1.8 × 10^{-5} Pa s). Find its terminal speed using linear (Stokes) drag.
+X: A 10 μm radius water droplet falls in air (η = 1.8 × 10^{-5} Pa s). Find its terminal speed using linear (Stokes) drag.
 > m = (4/3)π(10^{-5})^{3} × 1000 = 4.2 × 10^{-12} kg; b = 6πηr = 3.4 × 10^{-9} kg s^{-1}
 > v_{t} = mg/b = 1.2 cm s^{-1}; τ = m/b = 1.2 ms
-> Check: Re = ρ_{air}v(2r)/η ≈ 0.016 ≪ 1, so linear drag is right. That's why clouds float.
+> Check: Re = ρ_{air}v(2r)/η ≈ 0.016, far below 1, so linear drag is right. That's why clouds float.
+K: With speed-dependent drag the speed approaches a terminal value; the approach is exponential for linear drag.
 !: Assuming linear drag outside its regime can be wildly wrong; check the Reynolds number.
 P: **Investigate with the lab.** Launch with drag on and watch the horizontal velocity fall during the flight. Compare the shape of the path: it is no longer a symmetric parabola.
 IX: projectile
+T: Linear drag | A resistive force proportional to speed, F = −bv, valid at low Reynolds number
+T: Quadratic drag | A resistive force proportional to speed squared, F = −cv^{2}, valid at high Reynolds number
+SUM: Linear drag: v = v_{t}(1 − e^{−t/τ}) with τ = m/b; quadratic drag: v = v_{t} tanh(gt/v_{t}).
+SUM: Check Re first: small droplets obey Stokes' law; balls and people need quadratic drag.
+EV: established | The linear and quadratic drag models are good approximations in their own regimes
+SRC: OpenStax, University Physics Volume 1, section 6.4 "Drag Force and Terminal Speed" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/6-4-drag-force-and-terminal-speed
+SRC: OpenStax, College Physics 2e, section 5.2 "Drag Forces" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/5-2-drag-forces
 Q: What is the time constant for linear drag? | τ = m/b.
 Q: Does a body coasting under quadratic drag ever stop? | Not in finite time in the ideal model; its speed falls as 1/t.
-M1: With linear drag, after one time constant a falling object reaches: | 63% of terminal velocity | 37% | 100% | 50% | 1 − 1/e.
-M2: Terminal velocity under quadratic drag scales with mass as: | √m | m | m^{2} | 1/m | v_{t} = √(mg/c).
-M2: With quadratic drag, how does the descending half of a trajectory compare with the rising half? | It is steeper, because the ball has lost horizontal speed | It is a mirror image, as in drag-free motion | It is flatter, because drag pushes the ball forward | It is identical, since drag cancels out over a flight | Drag steadily removes horizontal speed, so the ball falls more steeply than it rose.
+M1@1: With linear drag, after one time constant a falling object reaches: | 63% of terminal velocity | 37% of terminal velocity | 100% of terminal velocity | 50% of terminal velocity | v/v_{t} = 1 − e^{−1} = 0.63 after one time constant.
+M2@2: Terminal velocity under quadratic drag scales with mass as: | √m | m | m^{2} | 1/m | At terminal velocity mg = cv_{t}^{2}, so v_{t} = √(mg/c) ∝ √m.
+M2@2: With quadratic drag, how does the descending half of a trajectory compare with the rising half? | It is steeper, because the ball has lost horizontal speed | It is a mirror image, as in drag-free motion | It is flatter, because drag pushes the ball forward | It is identical, since drag cancels out over a flight | Drag steadily removes horizontal speed, so the ball falls more steeply than it rose.
+NUM2@1: A puck sliding at 4.0 m s^{-1} experiences linear drag with τ = 2.5 s. How far does it coast in total, in metres? | 10 | 0.1 | m | With v = v_{0}e^{−t/τ}, the total distance is v_{0}τ = 4.0 × 2.5 = 10 m.
+M3@3: A 2 mm raindrop falls at about 6 m s^{-1} in air. Which drag model applies? | Quadratic, because Re is in the hundreds | Linear, because the drop is small | Linear, because water is a liquid | Neither, because drops don't feel drag | Re = ρvL/η ≈ 1.2 × 6 × 0.002/1.8 × 10^{-5} ≈ 800, far above 1, so drag is ∝ v^{2}.
+SA3@1,3: Derive the speed of an object falling from rest with linear drag, and describe its motion. | m dv/dt = mg − bv. Separate variables: dv/(mg/b − v) = (b/m)dt. Integrating from v = 0 at t = 0 gives v = (mg/b)(1 − e^{−bt/m}) = v_{t}(1 − e^{−t/τ}), with v_{t} = mg/b and τ = m/b. The object starts with acceleration g, which falls exponentially; the speed approaches v_{t}, reaching 63% after τ and over 99% after 5τ. | Equation of motion ; Separation and integration ; Result with v_t and tau ; Description of approach to terminal speed
 
 ## Terminal velocity
 S: A falling object accelerates until drag equals its weight; then the net force is zero and it falls at constant terminal velocity. Size, shape, mass and the fluid's density and viscosity set its value.
+O: State the condition for terminal velocity and explain how it is reached
+O: Calculate terminal velocity using quadratic drag or Stokes' law
+O: Describe how terminal velocity is used to measure viscosity and charge
+PRE: Motion under resistive forces
+LV: A level · Application
 H: Balance of forces
 E: mg = ½ρC_{d}Av_{t}^{2} ⇒ v_{t} = √(2mg/(ρC_{d}A)) :: high Re
 E: v_{t} = 2r^{2}(ρ_{s} − ρ_{f})g/(9η) :: Stokes (small sphere, low Re, with buoyancy)
-- Skydiver belly-down: ~55 m s^{-1}; head-down: ~80 m s^{-1}; with parachute ~5 m s^{-1}.
+- Skydiver belly-down: about 55 m s^{-1}; head-down: about 80 m s^{-1}; with parachute about 5 m s^{-1}.
 - Large animals fall faster than small ones: v_{t} ∝ √(size) for similar shapes.
 H: Millikan and viscometers
 P: Millikan measured oil drops' terminal speeds to find their radii (Stokes' law), then balanced them with an electric field to find the charge: always a multiple of e. Falling-ball viscometers use the same law to measure η.
-X: A steel ball (r = 1.0 mm, ρ = 7800 kg m^{-3}) falls in glycerol (ρ = 1260, η = 1.4 Pa s). Find v_{t}.
+X: A steel ball (r = 1.0 mm, ρ = 7800 kg m^{-3}) falls in glycerol (ρ = 1260 kg m^{-3}, η = 1.4 Pa s). Find v_{t}.
 > v_{t} = 2 × 10^{-6} × 6540 × 9.8/(9 × 1.4) = 0.010 m s^{-1}
+K: At terminal velocity the forces balance: weight = drag (+ upthrust), so acceleration is zero but speed is not.
 !: At terminal velocity the object still moves; it's the acceleration that's zero.
 P: **Investigate with the lab.** Launch straight down from a height with drag on and watch the vertical speed level off. Compare the terminal speed on Earth and on Jupiter.
 IX: projectile
+T: Terminal velocity | The constant velocity reached when the resistive forces balance the weight
+T: Upthrust | The upward buoyant force from a fluid, equal to the weight of fluid displaced
+SUM: Terminal velocity: weight = drag + upthrust, so a = 0.
+SUM: v_{t} ∝ √(m/A) for quadratic drag; ∝ r^{2} for Stokes' law.
+EV: established | Terminal velocity follows from Newton's second law with a speed-dependent drag
+SRC: OpenStax, University Physics Volume 1, section 6.4 "Drag Force and Terminal Speed" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/6-4-drag-force-and-terminal-speed
+SRC: AQA, A-level Physics specification (7408), section 3.4.1.4, Projectile motion | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: What is the condition for terminal velocity? | Drag (plus buoyancy) balances weight, so the net force is zero.
 Q: How did Millikan use terminal velocity? | Stokes' law gave each drop's radius and hence mass from its terminal speed.
-M1: At terminal velocity, a skydiver's acceleration is: | Zero | g | g/2 | Increasing | Forces balance.
-M2: Under Stokes' law, doubling a sphere's radius changes v_{t} by: | ×4 | ×2 | ×8 | ×√2 | v_{t} ∝ r^{2}.
-M2: What happens at terminal velocity? | Drag equals weight, so the acceleration is zero | The ball stops accelerating because gravity switches off | The speed keeps rising at a constant rate | Drag becomes larger than weight forever | When drag balances weight, the resultant force and so the acceleration are zero.
+M1@1: At terminal velocity, a skydiver's acceleration is: | Zero | g | g/2 | Increasing | Drag equals weight, so the resultant force, and therefore the acceleration, is zero.
+M2@2: Under Stokes' law, doubling a sphere's radius changes v_{t} by: | ×4 | ×2 | ×8 | ×√2 | v_{t} = 2r^{2}(ρ_{s} − ρ_{f})g/(9η) ∝ r^{2}, so doubling r multiplies v_{t} by 4.
+M2@1: What happens at terminal velocity? | Drag equals weight, so the acceleration is zero | The ball stops accelerating because gravity switches off | The speed keeps rising at a constant rate | Drag becomes larger than weight forever | When drag balances weight, the resultant force and so the acceleration are zero.
+NUM2@2: A 0.50 kg ball has drag F = 0.020v^{2} (F in N, v in m s^{-1}). What is its terminal velocity (g = 9.8), in m s^{-1}? | 15.7 | 0.2 | m s^{-1} | mg = cv_{t}^{2}: v_{t} = √(4.9/0.020) = √245 = 15.7 m s^{-1}.
+M3@1,3: A skydiver opens her parachute at terminal velocity. What happens next? | She decelerates until a new, lower terminal velocity is reached | She rises upwards for several seconds | She stops falling and hovers | She keeps her speed, because forces were balanced | Drag suddenly exceeds weight, giving an upward net force; she slows until the smaller drag at lower speed again balances her weight.
+SA2@1,3: Describe and explain the motion of a skydiver from leaving the aircraft until landing with a parachute. | At first the only significant force is weight, so she accelerates at about g. As speed rises, drag rises (∝ v^{2}), so the resultant force and acceleration fall until drag equals weight at terminal velocity (about 55 m s^{-1}). Opening the parachute greatly increases area and drag, which now exceeds weight, so she decelerates; drag falls with speed until it again equals weight at a low terminal velocity (about 5 m s^{-1}) for landing. | Initial acceleration g ; Drag rises with speed until balance ; Parachute: drag exceeds weight, deceleration ; New lower terminal velocity
 
 ## Equilibrium and statics
 S: A body is in static equilibrium when it neither translates nor rotates: the net force and net torque on it are both zero. Statics underpins the design of bridges, buildings, cranes and the human skeleton.
+O: State the two conditions for equilibrium
+O: Use the principle of moments to find unknown forces
+O: Classify equilibrium as stable, unstable or neutral
+PRE: Free-body diagrams
+LV: GCSE and A level · Application
 H: Conditions
 E: ΣF = 0 :: translational equilibrium (each component)
 E: Στ = 0 about any point :: rotational equilibrium
@@ -1004,14 +1122,31 @@ H: Types of equilibrium
 X: A 4.0 m uniform beam (200 N) rests on supports at its ends. A 600 N person stands 1.0 m from the left end. Find the support forces.
 > Moments about left: R_{R} × 4 = 600 × 1 + 200 × 2 ⇒ R_{R} = 250 N
 > R_{L} = 800 − 250 = 550 N
+K: Equilibrium needs both zero net force and zero net moment about any point.
 !: Zero net force isn't enough: a couple (two equal, opposite, offset forces) has zero net force but makes things rotate.
+T: Moment | The turning effect of a force: force × perpendicular distance from the pivot to its line of action
+T: Principle of moments | In equilibrium, the sum of clockwise moments about any point equals the sum of anticlockwise moments
+T: Couple | Two equal, opposite, parallel forces not in line, producing rotation without translation
+SUM: Equilibrium: ΣF = 0 and Στ = 0 about any point.
+SUM: Take moments about an unknown force to eliminate it; stable equilibria are at potential minima.
+EV: established | The conditions for static equilibrium follow from Newton's laws for rigid bodies
+SRC: OpenStax, University Physics Volume 1, section 12.1 "Conditions for Static Equilibrium" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/12-1-conditions-for-static-equilibrium
+SRC: AQA, A-level Physics specification (7408), section 3.4.1.2, Moments | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: What are the two conditions for static equilibrium? | Zero net force and zero net torque.
 Q: Why take moments about an unknown force's point of action? | Its moment is zero there, eliminating it from the equation.
-M1: A uniform 2 m seesaw pivoted at its centre has a 30 kg child 0.8 m from the pivot. Where must a 40 kg child sit? | 0.6 m on the other side | 0.8 m | 1.07 m | 0.4 m | 30 × 0.8 = 40 × d.
-M2: A ladder leaning on a smooth wall slips at the floor. Which force prevents slipping? | Friction at the floor | Friction at the wall | The weight | The normal force at the wall | The smooth wall exerts only a horizontal normal force.
+M1@2: A uniform 2 m seesaw pivoted at its centre has a 30 kg child 0.8 m from the pivot. Where must a 40 kg child sit? | 0.6 m on the other side | 0.8 m | 1.07 m | 0.4 m | Principle of moments: 30 × 0.8 = 40 × d, so d = 0.6 m on the opposite side.
+M2@1,2: A ladder leaning on a smooth wall slips at the floor. Which force prevents slipping? | Friction at the floor | Friction at the wall | The weight | The normal force at the wall | The smooth wall gives only a horizontal push, which must be balanced by friction at the floor.
+NUM2@2: A 3.0 m uniform plank weighing 150 N rests on supports at each end; a 450 N load is 1.0 m from the left end. What is the force from the right support, in newtons? | 225 | 1 | N | Moments about the left end: R × 3.0 = 450 × 1.0 + 150 × 1.5 = 675, so R = 225 N.
+M3@3: A cone rests on its base, on its point, and on its side. Which list matches these to stable, unstable and neutral equilibrium? | Base: stable; point: unstable; side: neutral | Base: neutral; point: stable; side: unstable | Base: unstable; point: neutral; side: stable | All three are stable while at rest | Tilting from its base raises the CM (stable); from its point lowers it (unstable); rolling on its side keeps it level (neutral).
+SA2@1,2: A uniform shelf is held by two brackets. Explain how to find the force from each bracket when a heavy object is placed near one end. | The shelf is in equilibrium, so the upward bracket forces must add to the total weight (shelf plus object), and the moments must balance. Take moments about one bracket to eliminate its force: the other bracket's force × separation equals the sum of the moments of the shelf's weight (acting at its centre) and the object's weight. Then the first force is the total weight minus the second. The bracket nearer the object carries more. | Sum of forces equals total weight ; Moments about one bracket ; Weight of uniform shelf at its centre ; Bracket nearer the load carries more
 
 ## Mechanical advantage
 S: Mechanical advantage (MA) is the ratio of the output force a machine delivers to the input force you apply. Machines trade force for distance; they can't create energy.
+O: Calculate mechanical advantage, velocity ratio and efficiency
+O: Find the velocity ratio of levers, pulleys and hydraulic systems
+O: Explain why MA is less than VR in real machines
+PRE: Work and energy
+LV: GCSE and A level · Foundation
 H: Definitions
 E: MA = F_{out}/F_{in} :: actual (force) mechanical advantage
 E: VR = d_{in}/d_{out} :: velocity ratio (ideal MA)
@@ -1021,34 +1156,63 @@ E: η = MA/VR :: efficiency
 H: Examples
 - Lever: VR = effort arm/load arm.
 - Pulley system with n supporting ropes: VR = n.
-- Gear train: VR = ratio of teeth (driven/driver for torque gain).
+- Gear train: VR = ratio of teeth (driven/driver for a gain in torque).
 - Hydraulic press: VR = A_{2}/A_{1}.
 X: A 4-rope pulley system lifts 800 N with an effort of 250 N. Find MA and efficiency.
 > MA = 800/250 = 3.2; VR = 4
 > η = 3.2/4 = 80%
-!: A large mechanical advantage means you move the effort through a large distance; the work is never less than the useful work out.
+K: A machine multiplies force only by moving the effort further; the work out can never exceed the work in.
+!: A large mechanical advantage means you move the effort through a large distance; the work you do is never less than the useful work out.
+T: Mechanical advantage | Output (load) force divided by input (effort) force
+T: Velocity ratio | Distance moved by the effort divided by distance moved by the load
+SUM: MA = F_{out}/F_{in}; VR = d_{in}/d_{out}; η = MA/VR.
+SUM: Friction and moving parts make MA less than VR in real machines.
+EV: established | Mechanical advantage follows from conservation of energy
+SRC: OpenStax, College Physics 2e, section 9.5 "Simple Machines" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/9-5-simple-machines
+SRC: AQA, A-level Physics specification (7408), section 3.4.1.2, Moments | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: What is velocity ratio? | Distance moved by the effort divided by distance moved by the load.
 Q: How are MA, VR and efficiency related? | η = MA/VR.
-M1: A lever has effort arm 1.5 m and load arm 0.3 m. Ideal MA? | 5 | 0.2 | 1.8 | 4.5 | 1.5/0.3.
-M2: A hydraulic jack has pistons of area 2 cm^{2} and 100 cm^{2}. A 50 N push gives: | 2500 N | 50 N | 1 N | 5000 N | Pressure is equal: force scales with area ratio 50.
+M1@2: A lever has effort arm 1.5 m and load arm 0.3 m. Ideal MA? | 5 | 0.2 | 1.8 | 4.5 | Ideal MA = VR = effort arm/load arm = 1.5/0.3 = 5.
+M2@2: A hydraulic jack has pistons of area 2 cm^{2} and 100 cm^{2}. A 50 N push gives: | 2500 N | 50 N | 1 N | 5000 N | Pressure is the same throughout the fluid, so force scales with area: 50 × 100/2 = 2500 N.
+NUM2@1: A machine lifts a 600 N load with a 150 N effort; its velocity ratio is 5. What is its efficiency, in percent? | 80 | 0.5 | % | MA = 600/150 = 4.0; η = MA/VR = 4.0/5 = 0.80 = 80%.
+M3@3: A pulley system with VR = 6 lifts a load 0.50 m. How far must the effort move? | 3.0 m | 0.08 m | 0.50 m | 6.0 m | VR = d_{in}/d_{out}, so d_{in} = 6 × 0.50 = 3.0 m, whatever the efficiency.
+SA2@1,3: Explain why a block-and-tackle with four supporting ropes can't lift a 1000 N load with a 250 N effort in practice. | Ideally the four ropes share the load, so VR = 4 and an effort of 250 N would balance 1000 N. But real pulleys have friction in their bearings, and the lower pulley block and ropes have weight that must also be lifted. Some of the work input is therefore wasted, so MA < VR and efficiency is below 100%: an effort greater than 250 N is needed. | Ideal VR = 4 ; Friction in pulleys ; Weight of moving block and ropes ; MA less than VR so more effort needed
 
 ## Simple machines
 S: The six classical simple machines (lever, wheel and axle, pulley, inclined plane, wedge, screw) all trade force against distance. Every complex machine is built from them.
+O: Name the six simple machines and give their velocity ratios
+O: Classify levers into the three classes
+O: Explain why some machines are self-locking
+PRE: Mechanical advantage
+LV: GCSE and A level · Foundation
 H: The six
-- **Lever**: rigid bar on a pivot. First class (pivot between: seesaw, crowbar), second (load between: wheelbarrow), third (effort between: tweezers, your forearm).
+- **Lever**: a rigid bar on a pivot. First class (pivot between: seesaw, crowbar), second (load between: wheelbarrow), third (effort between: tweezers, your forearm).
 - **Wheel and axle**: VR = R/r (steering wheel, screwdriver).
 - **Pulley**: fixed (changes direction), movable and block-and-tackle (VR = number of supporting ropes).
 - **Inclined plane**: VR = length/height.
 - **Wedge**: a moving inclined plane (axe, knife).
 - **Screw**: an inclined plane wrapped around a cylinder; VR = 2πR/pitch, enormous for fine threads.
+P: Compound machines combine these: a bicycle uses a wheel and axle (pedal crank), a chain drive between sprockets and levers in its brakes; the overall VR is the product of the stages.
 X: A car jack's screw has a 2 mm pitch, turned by a 0.25 m handle. Find VR.
 > VR = 2π × 0.25/0.002 ≈ 785
-> With 50% efficiency, a 20 N effort lifts ~7.9 kN
+> With 50% efficiency, a 20 N effort lifts about 7.9 kN
 H: Friction as a feature
 P: Screws and wedges usually have efficiency below 50%, which makes them self-locking: the load can't drive them backwards. That's why a car jack stays up when you let go.
+K: Every simple machine obeys work in = work out + losses: force is gained only at the cost of distance.
 !: Third-class levers (like your forearm, where the biceps attaches near the elbow) have MA < 1; they trade force for speed and range of movement.
+T: Simple machine | A basic device that changes the size or direction of a force: lever, wheel and axle, pulley, inclined plane, wedge or screw
+T: Pitch | The distance a screw advances in one complete turn
+SUM: Six simple machines, each with a VR from geometry.
+SUM: Lever classes depend on where the pivot, load and effort sit; low-efficiency screws are self-locking.
+EV: established | The simple machines and their velocity ratios are classical mechanics
+SRC: OpenStax, College Physics 2e, section 9.5 "Simple Machines" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/9-5-simple-machines
+SRC: OpenStax, University Physics Volume 1, section 10.6 "Torque" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/10-6-torque
 Q: Name the six simple machines. | Lever, wheel and axle, pulley, inclined plane, wedge, screw.
 Q: Why is a screw jack self-locking? | Its efficiency is below 50%, so friction prevents the load driving it backwards.
-M1: A ramp is 6 m long and rises 1.5 m. Ideal MA? | 4 | 1.5 | 6 | 0.25 | Length/height.
-M2: Your forearm is a lever of which class? | Third | First | Second | It's not a lever | The effort (biceps) is between the pivot (elbow) and the load (hand).
+M1@1: A ramp is 6 m long and rises 1.5 m. Ideal MA? | 4 | 1.5 | 6 | 0.25 | For an inclined plane VR = length/height = 6/1.5 = 4.
+M2@2: Your forearm is a lever of which class? | Third | First | Second | It's not a lever | The effort (biceps) is between the pivot (elbow) and the load (hand).
+NUM2@1: A screwdriver handle has radius 15 mm and its blade turns a screw of radius 3 mm (as a wheel and axle). What is the velocity ratio? | 5 | 0 | – | For a wheel and axle VR = R/r = 15 mm/3 mm = 5, so the effort moves five times as far.
+MATCH1@2: Match each tool to its lever class. | Seesaw = first class ; Wheelbarrow = second class ; Tweezers = third class | In the seesaw the pivot is in the middle, in the wheelbarrow the load is between, and in tweezers the effort is between.
+M3@3: A screw jack has VR = 600 and efficiency 30%. What load can a 40 N effort lift? | 7.2 kN | 24 kN | 1.2 kN | 72 kN | MA = η × VR = 0.30 × 600 = 180; load = 180 × 40 N = 7200 N.
+SA2@1,3: Explain how a screw jack can lift a car with a small effort, and why it doesn't run back down when released. | The screw is an inclined plane wrapped round a cylinder: one turn of the handle (circumference 2πR) raises the load by only the pitch, so VR = 2πR/pitch can be hundreds, and a small effort lifts a large load at the cost of many turns. Friction in the thread is large, giving an efficiency below 50%; then the friction is more than enough to stop the load driving the screw backwards, so the jack is self-locking. | Screw as inclined plane ; VR = 2 pi R over pitch is large ; Trade-off: many turns ; Efficiency below 50% gives self-locking
 `;
