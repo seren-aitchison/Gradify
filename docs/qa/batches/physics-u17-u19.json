@@ -558,6 +558,102 @@
     "added near-point correcting-lens calculation and myopia SA"
    ],
    "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-09",
+   "title": "Microscopes and telescopes",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "defined normal adjustment and numerical aperture; added focal-length deduction question"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-10",
+   "title": "Aberrations",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "explained the doublet (converging crown + weaker diverging flint); added aperture trade-off question"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-11",
+   "title": "Dispersion and prisms",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added thin-prism and two-colour minimum-deviation calculations; rainbow SA"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-12",
+   "title": "Physical optics",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "clarified that Poisson derived the spot and Arago observed it; added optical-path phase calculation"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-13",
+   "title": "Young's double-slit experiment",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "fringe spacing written w = λD/d with the AQA notation (s) noted; added laser-safety and wavelength-measurement SA (AQA RP2)"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "Existing M2 explanation used w and s while the lesson used x and d; notation reconciled."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-14",
+   "title": "Interference and coherence",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added visibility and coherence-width calculations"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-15",
+   "title": "Diffraction",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "defined Airy disc and Rayleigh criterion as terms; Fresnel-number far-field condition; headlight-resolution question"
+   ],
+   "findings": []
   }
  ],
  "notes": [

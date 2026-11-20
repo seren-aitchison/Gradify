@@ -216,6 +216,187 @@
     "all worked examples and numeric answers recomputed"
    ],
    "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u01-17",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Fluency",
+    "evidence status: established",
+    "new questions added: NUM2, M3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u01-18",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Fluency",
+    "evidence status: established",
+    "explanation of NUM 'What is 35% of 260?' lengthened (was under 20 characters)",
+    "new questions added: M3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u01-29",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Application",
+    "evidence status: established",
+    "new M2 added so all three levels are present",
+    "new questions added: SA3 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u01-20",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE and A level · Fluency",
+    "evidence status: established",
+    "new questions added: M3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u01-21",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Fluency",
+    "evidence status: established",
+    "worked example for √90 tightened: added 9.45^{2} = 89.3025 step, which is what justifies rounding to 9.5",
+    "new questions added: M2, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "√90 estimate rounded to 9.5 without showing √90 > 9.45; step added"
+    }
+   ]
+  },
+  {
+   "course": "maths",
+   "lesson": "u01-22",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Fluency",
+    "evidence status: established",
+    "new questions added: NUM3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u01-23",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Fluency",
+    "evidence status: established",
+    "new questions added: M3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u01-24",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Fluency",
+    "evidence status: established",
+    "new questions added: M3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u01-25",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Fluency",
+    "evidence status: established",
+    "explanation of NUM 'What is the 40th term…' lengthened (was under 20 characters)",
+    "new questions added: M3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u01-26",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Application",
+    "evidence status: established",
+    "common mistake added: halving the second difference (lesson was too thin)",
+    "explanation of NUM '12th triangular number' lengthened",
+    "new questions added: M2, SA3 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u01-27",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Application",
+    "evidence status: established",
+    "new questions added: NUM3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u01-28",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Application",
+    "evidence status: established",
+    "new questions added: M3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u01-19",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Fluency",
+    "evidence status: established",
+    "common mistake added: treating inverse proportion as direct (lesson was too thin)",
+    "new questions added: NUM3, SA2 (linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added",
+    "all worked examples and numeric answers recomputed"
+   ],
+   "findings": []
   }
  ],
  "notes": []

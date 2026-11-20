@@ -2,7 +2,8 @@
  "task": "assess-maths-u05-u06",
  "on": "2026-11-19",
  "files": [
-  "kit/courses/maths/notes/u05.js"
+  "kit/courses/maths/notes/u05.js",
+  "kit/courses/maths/notes/u06.js"
  ],
  "lessons": [
   {
@@ -104,6 +105,104 @@
     "evidence status: established",
     "content added: X (In a parallelogram, one angle is 3x and the next angle round is x +…)",
     "questions added: M1, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-09",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Fluency",
+    "evidence status: established",
+    "questions added: M2, NUM2, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-10",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Fluency",
+    "evidence status: established",
+    "questions added: NUM2, M2, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-11",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Fluency",
+    "evidence status: established",
+    "questions added: NUM3, M3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-12",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE and A level · Application",
+    "evidence status: established",
+    "questions added: M3, NUM3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-13",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE and A level · Problem solving",
+    "evidence status: established",
+    "questions added: M2, NUM2, SA3 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-14",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Fluency",
+    "evidence status: established",
+    "content added: ! (Setting the compasses to less than half of AB when bisecting it: th…)",
+    "questions added: TF1, SEQ2, M3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-15",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Application",
+    "evidence status: established",
+    "content added: ! (Using the wrong boundary: \"closer to A than to B\" is the region on…)",
+    "questions added: TF1, NUM3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u05-16",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE · Application",
+    "evidence status: established",
+    "questions added: NUM3, SA2 (all linked to objectives)",
     "extended written answer (SA) with model answer and marking points added"
    ],
    "findings": []

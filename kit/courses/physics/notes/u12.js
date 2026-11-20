@@ -622,6 +622,11 @@ SA2@1,2: Show that if the Clausius statement were false, the Kelvin–Planck sta
 
 ## Entropy
 S: Entropy measures how many microscopic arrangements correspond to a system's macroscopic state, or equivalently how much energy is dispersed and unavailable for work. Isolated systems evolve towards maximum entropy.
+O: Define entropy thermodynamically (dS = δQ_{rev}/T) and statistically (S = k_{B} ln Ω)
+O: Calculate entropy changes for heating, phase changes, ideal-gas changes and heat flow
+O: Explain the link between entropy and information
+PRE: Second law of thermodynamics
+LV: Year 1 · Application
 H: Definitions
 E: dS = δQ_{rev}/T :: Clausius (thermodynamic)
 E: S = k_{B} ln Ω :: Boltzmann (statistical)
@@ -635,15 +640,33 @@ H: Calculating ΔS
 H: Entropy and information
 P: Shannon's information entropy has the same form as Gibbs'. Landauer's principle: erasing one bit of information dissipates at least k_{B}T ln 2 of heat. This resolved the paradox of Maxwell's demon: the demon must erase its memory, generating the entropy it seemed to remove.
 X: 1 kg of ice melts at 273 K. Entropy change?
-> ΔS = 334 000/273 = 1220 J K^{-1}
+> ΔS = mL/T = 334 000/273 = 1220 J K^{-1}
+K: Entropy counts microstates; heat added at low temperature raises it more than the same heat at high temperature.
 !: "Disorder" is a loose description; the precise meaning is the number of accessible microstates (or spread of energy).
+T: Entropy | A state function measuring the number of microstates compatible with a macrostate, S = k_{B} ln Ω; changes are dS = δQ_{rev}/T
+T: Microstate | One complete specification of the state of every particle in a system
+T: Landauer's principle | Erasing one bit of information must dissipate at least k_{B}T ln 2 of heat
+SUM: dS = δQ_{rev}/T and S = k_{B} ln Ω describe the same quantity.
+SUM: ΔS = mc ln(T_{2}/T_{1}) for heating, mL/T for phase changes; heat flow from hot to cold raises total entropy.
+EV: established | The thermodynamic entropy of Clausius and the statistical entropy k_{B} ln Ω are the same quantity
+SRC: OpenStax, University Physics Volume 2, section 4.6 "Entropy" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/4-6-entropy
+SRC: OpenStax, University Physics Volume 2, section 4.7 "Entropy on a Microscopic Scale" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/4-7-entropy-on-a-microscopic-scale
 Q: State Boltzmann's entropy formula. | S = k_{B} ln Ω.
 Q: What is Landauer's principle? | Erasing a bit of information dissipates at least k_{B}T ln 2 of heat.
-M1: Heat Q flows from a hot body at T_{h} to a cold body at T_{c}. Total entropy change: | Q/T_{c} − Q/T_{h} > 0 | Zero | Negative | Q/T_{h} | The cold body gains more entropy than the hot loses.
-M2: The entropy change when 2 mol of ideal gas double their volume isothermally: | 2R ln 2 | R ln 2 | 0 | 2R | nR ln(V_{2}/V_{1}).
+M1@2: Heat Q flows from a hot body at T_{h} to a cold body at T_{c}. Total entropy change: | Q/T_{c} − Q/T_{h} > 0 | Exactly zero, as energy is conserved | Q/T_{h} − Q/T_{c} < 0 | Q/T_{h} for the hot body only | The cold body gains Q/T_{c} and the hot loses Q/T_{h}; since T_{c} < T_{h} the gain is larger and the total rises.
+M2@2: The entropy change when 2 mol of ideal gas double their volume isothermally: | 2R ln 2 | R ln 2 | 0 | 2R | ΔS = nR ln(V_{2}/V_{1}) = 2R ln 2 ≈ 11.5 J K^{-1}; temperature is constant, so only the volume term contributes.
+M3@1,2: 1.0 kg of water is heated from 20 °C to 80 °C. What is its entropy change? (c = 4180 J kg^{-1} K^{-1}) | 779 J K^{-1} | 3135 J K^{-1} | 857 J K^{-1} | 12 540 J K^{-1} | ΔS = mc ln(T_{2}/T_{1}) = 4180 × ln(353/293) = 4180 × 0.1863 = 779 J K^{-1}; Q/T with Celsius gives nonsense.
+TF1@1: A system's entropy can decrease, provided the entropy of its surroundings increases by at least as much. | true | The second law constrains the total; fridges and living things lower their own entropy by exporting more to their surroundings.
+NUM2@2: 0.50 kg of water boils at 373 K (L = 2.26 × 10^{6} J kg^{-1}). What is its entropy change in J K^{-1}? Give three significant figures. | 3030 | 20 | J K^{-1} | ΔS = mL/T = 0.50 × 2.26 × 10^{6}/373 = 3.03 × 10^{3} J K^{-1}.
+SA2@1,3: Explain what entropy measures, using the example of a gas spreading into an empty half of a box. | Entropy measures the number of microscopic arrangements (microstates) consistent with what we observe, S = k_{B} ln Ω. When the partition is removed, each molecule can be anywhere in twice the volume, so the number of microstates rises by 2^{N} and S rises by Nk_{B} ln 2. Arrangements with the gas spread out vastly outnumber those with it all in one half, so the gas spreads and never spontaneously returns. | Entropy counts microstates, S = k_{B} ln Ω ; Doubling volume multiplies microstates by 2^{N} ; ΔS = Nk_{B} ln 2 = nR ln 2 ; Spread-out states are overwhelmingly more probable ; Process is irreversible in practice
 
 ## Reversible and irreversible processes
 S: A reversible process can be undone exactly, leaving no change anywhere; it happens through a sequence of equilibrium states and creates no entropy. All real processes are irreversible to some degree.
+O: State the conditions for a process to be reversible
+O: Identify the sources of irreversibility in real processes
+O: Calculate entropy changes for irreversible processes using a reversible path
+PRE: Entropy
+LV: Year 1 · Physical reasoning
 H: Reversibility requires
 - Quasi-static change (infinitely slow).
 - No friction or other dissipation.
@@ -659,14 +682,31 @@ P: They're ideal limits: they give maximum work from engines and minimum work fo
 X: Find the entropy change of a gas in free expansion from V to 2V (1 mol).
 > Free expansion is irreversible (no heat flows), but S is a state function
 > Use a reversible isothermal path: ΔS = R ln 2 = 5.8 J K^{-1}
+K: Reversible processes create no entropy and set the limits of performance; any dissipation makes a process irreversible.
 !: Q = 0 doesn't imply ΔS = 0 for an irreversible process; dS = δQ/T only holds for reversible heat.
+T: Reversible process | An idealised process through equilibrium states that can be reversed exactly, leaving no change in system or surroundings
+T: Quasi-static process | A process carried out so slowly that the system is always arbitrarily close to equilibrium
+SUM: Reversible processes are quasi-static, frictionless and use infinitesimal temperature differences.
+SUM: Real processes generate entropy; ΔS is found along any reversible path between the same states.
+EV: established | All real macroscopic processes generate entropy; reversible processes are a limiting ideal
+SRC: OpenStax, University Physics Volume 2, section 4.1 "Reversible and Irreversible Processes" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/4-1-reversible-and-irreversible-processes
+SRC: OpenStax, University Physics Volume 2, section 4.6 "Entropy" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/4-6-entropy
 Q: What makes a process reversible? | It proceeds through equilibrium states with no dissipation, so it can be undone with no net change anywhere.
 Q: How do you calculate ΔS for an irreversible process? | Use any reversible path between the same initial and final states.
-M1: Which is irreversible? | Friction heating a block | Very slow isothermal expansion | An ideal Carnot cycle | Infinitely slow compression | Dissipation.
-M2: In a reversible process, total entropy of system plus surroundings: | Stays constant | Increases | Decreases | Is undefined | No entropy generated.
+M1@2: Which is irreversible? | Friction heating a block | Very slow isothermal expansion | An ideal Carnot cycle | Infinitely slow compression | Friction dissipates work into internal energy, creating entropy that cannot be removed without other changes.
+M2@1: In a reversible process, total entropy of system plus surroundings: | Stays constant | Increases | Decreases | Is undefined | A reversible process generates no entropy: any entropy the system gains, the surroundings lose.
+M3@3: 2.0 mol of ideal gas undergo a free expansion from 10 L to 40 L. What is the entropy change of the gas? | 23 J K^{-1} | 0 J K^{-1} | 11.5 J K^{-1} | −23 J K^{-1} | Use a reversible isothermal path between the same states: ΔS = nR ln 4 = 2.0 × 8.31 × 1.386 = 23 J K^{-1}.
+TF1@1: Heat flowing from a hot body to a cold one through a finite temperature difference is a reversible process. | false | It creates entropy Q(1/T_{c} − 1/T_{h}) > 0; only flow across an infinitesimal difference is reversible.
+NUM2@3: 1.0 mol of ideal gas expands freely into a vacuum, doubling its volume. What is its entropy change in J K^{-1}? (R = 8.31) | 5.76 | 0.05 | J K^{-1} | Along a reversible isothermal path, ΔS = R ln 2 = 8.31 × 0.693 = 5.76 J K^{-1}, though no heat flowed.
+SA2@1,2: Explain why stirring a liquid with a paddle, which warms it, is irreversible, and how you could find its entropy change. | The work done by the paddle is dissipated by viscosity into internal energy of the liquid. Reversing the paddle doesn't cool the liquid back, and no process can turn that internal energy back into the same work without other changes, so entropy has been created. To find ΔS, imagine warming the liquid reversibly by heat at each temperature: ΔS = mc ln(T_{2}/T_{1}). | Work dissipated by viscosity/friction ; Cannot be undone without other changes ; Entropy is generated ; S is a state function, so use a reversible heating path ; ΔS = mc ln(T_{2}/T_{1})
 
 ## Carnot cycle
 S: The Carnot cycle is the ideal reversible engine: two isothermal and two adiabatic steps between a hot and a cold reservoir. No engine working between the same temperatures can be more efficient.
+O: Describe the four stages of the Carnot cycle and draw it on p–V and T–S diagrams
+O: Derive and use η = 1 − T_{c}/T_{h}
+O: State Carnot's theorem and explain why it follows from the second law
+PRE: Second law of thermodynamics
+LV: A level · Application
 H: The four steps
 - Isothermal expansion at T_{h}: absorb Q_{h}.
 - Adiabatic expansion: cool from T_{h} to T_{c}.
@@ -674,18 +714,37 @@ H: The four steps
 - Adiabatic compression: warm back to T_{h}.
 E: Q_{c}/Q_{h} = T_{c}/T_{h}
 E: η_{Carnot} = 1 − T_{c}/T_{h}
+P: On a T–S diagram the cycle is a rectangle: heat is absorbed at T_{h} with entropy rise ΔS and rejected at T_{c} with the same entropy fall, so Q_{h} = T_{h}ΔS and Q_{c} = T_{c}ΔS.
 H: Carnot's theorem
 P: All reversible engines between the same two reservoirs have the same efficiency, and no engine is more efficient. If one were, running it with a reversed Carnot engine would move heat from cold to hot for free. This lets us define the thermodynamic temperature scale independent of any substance.
 X: Maximum efficiency of an engine between 500 °C and 20 °C?
 > η = 1 − 293/773 = 62%
+K: The Carnot efficiency depends only on the two reservoir temperatures in kelvin.
 !: Use kelvin, not Celsius, in Carnot's formula.
+T: Carnot cycle | A reversible cycle of two isothermal and two adiabatic processes between two reservoirs
+T: Carnot's theorem | No engine between two reservoirs is more efficient than a reversible one, and all reversible engines between them have the same efficiency
+SUM: Carnot: two isotherms and two adiabats; Q_{c}/Q_{h} = T_{c}/T_{h}.
+SUM: η_{Carnot} = 1 − T_{c}/T_{h} is the upper limit for any engine.
+EV: established | No heat engine operating between two reservoirs can exceed the Carnot efficiency 1 − T_{c}/T_{h}
+SRC: OpenStax, University Physics Volume 2, section 4.5 "The Carnot Cycle" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/4-5-the-carnot-cycle
+SRC: OpenStax, College Physics 2e, section 15.4 "Carnot's Perfect Heat Engine: The Second Law of Thermodynamics Restated" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/15-4-carnots-perfect-heat-engine-the-second-law-of-thermodynamics-restated
+SRC: AQA, A-level Physics specification (7408), section 3.11.2 | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: What are the four steps of the Carnot cycle? | Isothermal expansion, adiabatic expansion, isothermal compression, adiabatic compression.
 Q: State Carnot's theorem. | No engine operating between two reservoirs can be more efficient than a reversible one, and all reversible engines between them are equally efficient.
-M1: Carnot efficiency between 400 K and 300 K: | 25% | 75% | 33% | 100% | 1 − 300/400.
-M2: To reach 100% Carnot efficiency you'd need: | A cold reservoir at 0 K | Infinite T_{h} only | No friction only | A larger engine | 1 − T_{c}/T_{h} = 1 requires T_{c} = 0.
+M1@2: Carnot efficiency between 400 K and 300 K: | 25% | 75% | 33% | 100% | η = 1 − T_{c}/T_{h} = 1 − 300/400 = 0.25; 75% is the fraction of heat rejected.
+M2@2: To reach 100% Carnot efficiency you'd need: | A cold reservoir at 0 K | An infinitely large engine | No friction anywhere in the engine | A perfectly insulated cylinder | 1 − T_{c}/T_{h} = 1 only if T_{c} = 0, which the third law makes unattainable.
+M3@2,3: A Carnot engine absorbs 2000 J per cycle at 600 K and rejects heat at 300 K. How much work does it do per cycle, and how much heat does it reject? | 1000 J of work, 1000 J rejected | 2000 J of work, none rejected | 500 J of work, 1500 J rejected | 1500 J of work, 500 J rejected | Q_{c} = Q_{h}T_{c}/T_{h} = 2000 × 300/600 = 1000 J, so W = 2000 − 1000 = 1000 J.
+TF1@3: An engine claimed to reach 70% efficiency between 527 °C and 27 °C is possible in principle. | false | The Carnot limit is 1 − 300/800 = 62.5%, so a 70% claim breaks the second law.
+NUM2@2: What is the Carnot efficiency between 1200 K and 300 K, in percent? | 75 | 0.5 | % | η = 1 − 300/1200 = 0.75 = 75%.
+SA2@1,3: Describe the four stages of a Carnot cycle and explain why no real engine can match its efficiency. | 1: isothermal expansion at T_{h}, absorbing Q_{h}. 2: adiabatic expansion, cooling to T_{c}. 3: isothermal compression at T_{c}, rejecting Q_{c}. 4: adiabatic compression back to T_{h}. Every step is reversible, so it creates no entropy, giving Q_{c}/Q_{h} = T_{c}/T_{h} and the highest possible efficiency. Real engines transfer heat across finite temperature differences at finite speed and have friction, so they generate entropy and must reject more heat. | Isothermal expansion at T_{h} (absorb Q_{h}) ; Adiabatic expansion to T_{c} ; Isothermal compression at T_{c} (reject Q_{c}) ; Adiabatic compression to T_{h} ; Real engines are irreversible, generate entropy, so less efficient
 
 ## Thermodynamic potentials
 S: Thermodynamic potentials (U, H, F, G) are energy-like state functions, each natural for different controlled conditions. The right potential tells you the useful work available and the direction of spontaneous change.
+O: Define U, H, F and G and write their differentials in natural variables
+O: State which potential is minimised at equilibrium under given constraints
+O: Obtain quantities such as p, S and V as partial derivatives of a potential
+PRE: Partial derivatives
+LV: Year 2 · Application
 H: The four potentials
 E: U :: dU = T dS − p dV (natural variables S, V)
 E: H = U + pV :: dH = T dS + V dp (S, p)
@@ -701,17 +760,35 @@ H: Uses
 - Statistical mechanics connects them to the partition function: F = −k_{B}T ln Z.
 X: From F = −k_{B}T ln Z, how do you get pressure?
 > p = −(∂F/∂V)_{T} = k_{B}T (∂ln Z/∂V)_{T}
-> For an ideal gas Z ∝ V^{N}, giving pV = Nk_{B}T
+> For an ideal gas Z ∝ V^{N}, giving p = Nk_{B}T/V: pV = Nk_{B}T
+K: Pick the potential whose natural variables are the ones you control; it is minimised at equilibrium.
 !: Each potential is useful only with its natural variables held fixed; using G for a constant-volume process gives the wrong criterion.
+T: Thermodynamic potential | An energy-like state function (U, H, F or G) whose minimum gives equilibrium under particular constraints
+T: Legendre transform | A change of variables that replaces a variable by its conjugate, such as F = U − TS replacing S by T
+T: Natural variables | The variables in which a potential's differential takes its simple form, such as T and p for G
+SUM: H = U + pV, F = U − TS, G = H − TS, linked by Legendre transforms.
+SUM: At fixed T, V equilibrium minimises F; at fixed T, p it minimises G.
+EV: established | At constant temperature and pressure, a closed system reaches equilibrium at the minimum of its Gibbs free energy
+SRC: OpenStax, University Physics Volume 2, section 3.3 "First Law of Thermodynamics" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/3-3-first-law-of-thermodynamics
+SRC: OpenStax, University Physics Volume 2, section 4.6 "Entropy" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/4-6-entropy
 Q: Which potential is minimised at constant temperature and pressure? | The Gibbs free energy G.
 Q: How are the potentials related mathematically? | By Legendre transformations.
-M1: Helmholtz free energy is: | U − TS | H − TS | U + pV | U − pV | Definition.
-M2: The partition function gives F through: | F = −k_{B}T ln Z | F = k_{B}T Z | F = ln Z | F = −Z/k_{B}T | Bridge between statistical and thermal physics.
+M1@1: Helmholtz free energy is: | U − TS | H − TS | U + pV | U − pV | F = U − TS by definition; H − TS is the Gibbs energy and U + pV the enthalpy.
+M2@3: The partition function gives F through: | F = −k_{B}T ln Z | F = k_{B}T Z | F = ln Z | F = −Z/k_{B}T | F = −k_{B}T ln Z is the bridge between the microscopic partition function and macroscopic thermodynamics.
+M3@1,3: Starting from dG = −S dT + V dp, which result follows? | (∂G/∂p)_{T} = V | (∂G/∂T)_{p} = S | (∂G/∂V)_{T} = −p | (∂G/∂S)_{p} = T | Comparing with dG = (∂G/∂T)_{p}dT + (∂G/∂p)_{T}dp gives (∂G/∂p)_{T} = V and (∂G/∂T)_{p} = −S.
+TF1@2: For a system held at fixed temperature and volume, the equilibrium state is the one with the lowest Helmholtz free energy. | true | Combining the second law with the first at fixed T and V gives dF ≤ 0, so F falls until it reaches its minimum.
+NUM2@3: For an ideal gas, F = −Nk_{B}T ln V + (terms independent of V). For N = 2.4 × 10^{22} molecules at 300 K in V = 1.0 × 10^{-3} m^{3}, what is p = −(∂F/∂V)_{T} in kPa? (k_{B} = 1.38 × 10^{-23} J K^{-1}) | 99.4 | 1 | kPa | p = Nk_{B}T/V = 2.4 × 10^{22} × 1.38 × 10^{-23} × 300/10^{-3} = 9.94 × 10^{4} Pa = 99.4 kPa.
+SA3@1,2: Explain why chemists use the Gibbs free energy rather than the internal energy to decide whether a reaction will go. | Internal energy is minimised only at fixed entropy and volume, which a reaction in an open beaker does not have. Reactions usually happen at constant temperature (in contact with the surroundings) and constant pressure (open to the atmosphere). Under these constraints the second law for system plus surroundings becomes dG ≤ 0 for the system, so G = H − TS decreases in a spontaneous change and is minimised at equilibrium. It includes both the energy change (ΔH) and the entropy change (−TΔS). | U is minimised only at fixed S and V ; Reactions are usually at fixed T and p ; Second law plus heat exchange gives dG ≤ 0 at fixed T, p ; G = H − TS balances energy and entropy ; Spontaneous if ΔG < 0, equilibrium at minimum G
 
 ## Enthalpy
 S: Enthalpy H = U + pV is the energy-like quantity whose change equals the heat absorbed at constant pressure. Chemists use it for reaction heats, engineers for flowing fluids in turbines and refrigerators.
+O: Define enthalpy and show that ΔH = Q_{p}
+O: Apply the steady-flow energy equation and explain why throttling is isenthalpic
+O: Describe the Joule–Thomson effect and its use in liquefying gases
+PRE: First law of thermodynamics
+LV: Year 1 · Application
 H: Properties
-E: ΔH = Q_{p} :: heat at constant pressure
+E: ΔH = Q_{p} :: heat at constant pressure, with only pV work
 E: dH = T dS + V dp
 E: C_{p} = (∂H/∂T)_{p}
 - Negative ΔH: exothermic; positive: endothermic.
@@ -721,16 +798,34 @@ P: For steady flow through a device (turbine, compressor, nozzle, valve), energy
 H: Joule–Thomson effect
 P: Throttling a real gas changes its temperature at constant enthalpy. Below the inversion temperature (nitrogen ~620 K; hydrogen ~200 K; helium ~40 K), gases cool on expansion, which is how air and nitrogen are liquefied (Linde process).
 X: Combustion of methane: ΔH = −890 kJ mol^{-1}. Heat from burning 1 kg?
-> 1000/16 = 62.5 mol
-> 62.5 × 890 = 55.6 MJ
+> n = 1000/16 = 62.5 mol
+> 62.5 × 890 = 55.6 MJ released
+K: At constant pressure the heat absorbed equals ΔH, because H includes the work pV done pushing back the atmosphere.
 !: Enthalpy isn't "heat content"; ΔH equals heat only for constant-pressure processes with only pV work.
+T: Enthalpy | H = U + pV, a state function whose change equals the heat absorbed at constant pressure
+T: Throttling | Expansion of a fluid through a valve or porous plug with no heat or shaft work, at constant enthalpy
+T: Inversion temperature | The temperature below which a gas cools on Joule–Thomson expansion
+SUM: H = U + pV; ΔH = Q at constant pressure; C_{p} = (∂H/∂T)_{p}.
+SUM: Throttling conserves h; below the inversion temperature gases cool, allowing liquefaction.
+EV: established | The heat absorbed by a system at constant pressure, with only pV work, equals its change in enthalpy
+SRC: OpenStax, University Physics Volume 2, section 3.5 "Heat Capacities of an Ideal Gas" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/3-5-heat-capacities-of-an-ideal-gas
+SRC: OpenStax, University Physics Volume 2, section 3.3 "First Law of Thermodynamics" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/3-3-first-law-of-thermodynamics
 Q: What is enthalpy? | H = U + pV; its change equals the heat absorbed at constant pressure.
 Q: What is conserved in a throttling process? | Enthalpy.
-M1: An exothermic reaction has: | ΔH < 0 | ΔH > 0 | ΔH = 0 | ΔS = 0 | Heat released.
-M2: Helium only cools on Joule–Thomson expansion below about: | 40 K | 300 K | 620 K | 4 K | Its inversion temperature is low.
+M1@1: An exothermic reaction has: | ΔH < 0 | ΔH > 0 | ΔH = 0 | ΔS = 0 | Exothermic reactions release heat to the surroundings at constant pressure, so the system's enthalpy falls.
+M2@3: Helium only cools on Joule–Thomson expansion below about: | 40 K | 300 K | 620 K | 4 K | Helium's attractive forces are so weak that its inversion temperature is only about 40 K; it must be precooled before throttling.
+M3@1: 2.0 mol of ideal gas are heated at constant pressure from 300 K to 400 K, with C_{p} = (5/2)R. What is ΔH? | 4.2 kJ | 2.5 kJ | 1.7 kJ | 6.2 kJ | ΔH = nC_{p}ΔT = 2.0 × 2.5 × 8.31 × 100 = 4155 J ≈ 4.2 kJ, equal to the heat supplied.
+TF1@2: In an ideal gas, throttling through a valve causes no change in temperature. | true | For an ideal gas H depends only on T, so constant H means constant T; cooling needs intermolecular forces.
+NUM2@2: Steam enters a turbine with specific enthalpy 3200 kJ kg^{-1} and leaves at 2400 kJ kg^{-1}. Ignoring heat loss and kinetic energy changes, what is the shaft work per kg, in kJ? | 800 | 5 | kJ | Steady-flow energy: w_{shaft} = h_{in} − h_{out} = 3200 − 2400 = 800 kJ kg^{-1}.
+SA2@1,2: Explain why the heat needed to boil a kilogram of water in an open pan equals its enthalpy change rather than its internal-energy change. | The pan is open, so the pressure is constant (atmospheric). As water turns to steam its volume increases greatly and it does work pΔV pushing back the atmosphere. By the first law Q = ΔU + pΔV = Δ(U + pV) = ΔH at constant pressure. So the heat supplied covers both the internal-energy increase and the expansion work, which is exactly the enthalpy change (the latent heat). | Open pan: constant pressure ; Steam's volume increase does work pΔV ; First law: Q = ΔU + pΔV ; At constant p this is ΔH ; Latent heat of vaporisation is an enthalpy change
 
 ## Helmholtz free energy
 S: The Helmholtz free energy F = U − TS is the maximum work a system can do at constant temperature. At fixed temperature and volume, systems evolve to minimise F, balancing low energy against high entropy.
+O: Define F and use W_{max} = −ΔF for isothermal processes
+O: Explain how the competition between U and TS decides phase behaviour
+O: Explain entropic elasticity in rubber using F
+PRE: Thermodynamic potentials
+LV: Year 2 · Physical reasoning
 H: Properties
 E: F = U − TS; dF = −S dT − p dV
 E: W_{max} = −ΔF :: isothermal process
@@ -744,14 +839,31 @@ H: Applications
 X: Why does a stretched rubber band contract when heated (unlike most materials)?
 > Rubber's tension is mostly entropic: f ≈ −T(∂S/∂L)_{T}
 > Higher T increases the tension, so a loaded band shortens
+K: F = U − TS: low temperature favours low energy, high temperature favours high entropy.
 !: "Free" means available for work, not costless.
+T: Helmholtz free energy | F = U − TS, the potential minimised at equilibrium at constant temperature and volume
+T: Entropic force | A force that arises because a system's entropy depends on a coordinate, as in a stretched rubber band
+SUM: F = U − TS; at constant T the maximum work available is −ΔF.
+SUM: Order wins at low T and entropy at high T; rubber's tension is entropic.
+EV: established | The tension of rubber is mainly entropic, so it increases with temperature at fixed extension
+SRC: OpenStax, University Physics Volume 2, section 4.6 "Entropy" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/4-6-entropy
+SRC: OpenStax, University Physics Volume 2, section 4.7 "Entropy on a Microscopic Scale" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/4-7-entropy-on-a-microscopic-scale
 Q: What does −ΔF represent at constant temperature? | The maximum work obtainable from the system.
 Q: Why does a rubber band's tension increase with temperature? | Its elasticity is entropic: tension ∝ T.
-M1: At fixed T and V, equilibrium minimises: | F | G | H | S | Helmholtz.
-M2: High temperature favours states with: | High entropy | Low entropy | Low energy only | Zero energy | −TS dominates.
+M1@1: At fixed T and V, equilibrium minimises: | F | G | H | S | At constant temperature and volume the Helmholtz free energy F = U − TS falls to a minimum; G applies at fixed pressure.
+M2@2: High temperature favours states with: | High entropy | Low entropy | Low energy only | Zero energy | In F = U − TS the −TS term grows with T, so at high temperature high-entropy states have the lowest F.
+M3@1,3: 1.0 mol of ideal gas expands isothermally and reversibly at 300 K from 10 L to 20 L. What is ΔF, and what does it tell you? | −1.73 kJ: up to 1.73 kJ of work is available | +1.73 kJ: 1.73 kJ of work must be supplied | 0: no work is available, since U is constant | −3.46 kJ: twice the heat absorbed | For an ideal gas ΔU = 0, so ΔF = −TΔS = −300 × 8.31 ln 2 = −1.73 kJ; W_{max} = −ΔF = 1.73 kJ.
+TF1@3: A rubber band held at fixed length pulls harder when it is warmed. | true | Its tension is mostly entropic, f ≈ −T(∂S/∂L)_{T}, so at fixed length the tension grows roughly in proportion to T.
+NUM2@2: A system at 400 K has ΔU = −2.0 kJ and ΔS = +5.0 J K^{-1} in a process at constant temperature and volume. What is ΔF, in kJ? | -4 | 0.05 | kJ | ΔF = ΔU − TΔS = −2000 − 400 × 5.0 = −4000 J = −4.0 kJ, so the process is spontaneous.
+SA3@2,3: Using F = U − TS, explain why a crystal melts when it is heated above a certain temperature. | The crystal has lower internal energy than the liquid because its bonds are better satisfied, but lower entropy because its atoms are ordered. At low T the U term dominates, so the crystal has lower F and is stable. As T rises the −TS term grows; above the melting temperature the liquid's larger entropy makes its F lower. The system moves to the lower-F phase, so it melts; at the melting point the two F values are equal. | Crystal: lower U, lower S ; Liquid: higher U, higher S ; Low T: U dominates, crystal has lower F ; High T: −TS dominates, liquid has lower F ; Melting point where the F values are equal
 
 ## Gibbs free energy
 S: The Gibbs free energy G = H − TS decides whether a process happens spontaneously at constant temperature and pressure, the conditions of most chemistry and biology. Reactions go downhill in G.
+O: Use ΔG = ΔH − TΔS to predict spontaneity and find transition temperatures
+O: Relate ΔG to the equilibrium constant and to electrical work in cells
+O: Explain how cells drive unfavourable reactions by coupling
+PRE: Thermodynamic potentials
+LV: Year 2 · Application
 H: Properties
 E: G = H − TS; dG = −S dT + V dp
 E: ΔG = ΔH − TΔS
@@ -767,14 +879,31 @@ H: Life
 P: Cells drive unfavourable reactions (building proteins, ΔG > 0) by coupling them to ATP hydrolysis (ΔG ≈ −50 kJ mol^{-1} in the cell). Batteries and fuel cells turn ΔG directly into electrical work.
 X: At what temperature does ice melt, given ΔH = 6.01 kJ mol^{-1}, ΔS = 22.0 J mol^{-1} K^{-1}?
 > ΔG = 0 ⇒ T = ΔH/ΔS = 6010/22.0 = 273 K
+K: ΔG = ΔH − TΔS: a process at fixed T and p goes if it lowers G, whether by releasing heat, raising entropy or both.
 !: ΔG < 0 tells you a reaction can happen, not how fast. Diamond turning into graphite is spontaneous but immeasurably slow.
+T: Gibbs free energy | G = H − TS, the potential minimised at equilibrium at constant temperature and pressure
+T: Spontaneous process | A process that can occur without outside work at the given conditions; at fixed T and p, one with ΔG < 0
+SUM: ΔG = ΔH − TΔS; ΔG < 0 means spontaneous at constant T and p.
+SUM: ΔG° = −RT ln K and ΔG = −nFE link G to equilibrium and cell voltage.
+EV: established | At constant temperature and pressure a process is thermodynamically spontaneous when it lowers the Gibbs free energy
+SRC: OpenStax, University Physics Volume 2, section 4.6 "Entropy" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/4-6-entropy
+SRC: OpenStax, College Physics 2e, section 15.6 "Entropy and the Second Law of Thermodynamics: Disorder and the Unavailability of Energy" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/15-6-entropy-and-the-second-law-of-thermodynamics-disorder-and-the-unavailability-of-energy
 Q: What sign of ΔG means a reaction is spontaneous? | Negative.
 Q: How is ΔG related to cell voltage? | ΔG = −nFE.
-M1: A reaction with ΔH > 0 and ΔS > 0 is spontaneous: | At high temperature | At low temperature | Never | Always | −TΔS must outweigh ΔH.
-M2: ΔG° = −RT ln K. If K > 1, ΔG° is: | Negative | Positive | Zero | Undefined | Products favoured.
+M1@1: A reaction with ΔH > 0 and ΔS > 0 is spontaneous: | At high temperature | At low temperature | Never | Always | ΔG = ΔH − TΔS becomes negative only when TΔS exceeds ΔH, which happens above T = ΔH/ΔS.
+M2@2: ΔG° = −RT ln K. If K > 1, ΔG° is: | Negative | Positive | Zero | Undefined | ln K > 0 when K > 1, so ΔG° is negative and products are favoured at equilibrium.
+M3@1: A reaction has ΔH = −40 kJ mol^{-1} and ΔS = −100 J mol^{-1} K^{-1}. Above what temperature does it stop being spontaneous? | 400 K | 0.4 K | 4000 K | 140 K | ΔG = 0 at T = ΔH/ΔS = 40 000/100 = 400 K; above this −TΔS (positive) outweighs ΔH.
+TF1@3: A reaction with a large negative ΔG must happen quickly. | false | ΔG tells you only that a reaction can proceed; its rate depends on the activation barrier, as diamond turning into graphite shows.
+NUM2@2: A cell reaction transfers n = 2 mol of electrons per mole and has ΔG = −212 kJ mol^{-1}. What is the cell's emf in volts? (F = 96 500 C mol^{-1}) | 1.1 | 0.01 | V | E = −ΔG/(nF) = 212 000/(2 × 96 500) = 1.10 V.
+SA2@1,2: Explain, using ΔG = ΔH − TΔS, why water freezes below 0 °C and melts above it at atmospheric pressure. | For freezing, ΔH is negative (latent heat is released) and ΔS is negative (the liquid becomes ordered). ΔG = ΔH − TΔS is negative only when |ΔH| exceeds T|ΔS|, which is true at low temperature. Above 273 K the −TΔS term (positive for freezing) wins, so freezing has ΔG > 0 and the reverse, melting, has ΔG < 0. At 273 K, ΔG = 0 and ice and water coexist. | Freezing: ΔH < 0 and ΔS < 0 ; Low T: ΔH term dominates, ΔG < 0, freezing spontaneous ; High T: −TΔS term dominates, melting spontaneous ; ΔG = 0 at T = ΔH/ΔS = 273 K ; Ice and water coexist at the melting point
 
 ## Chemical and phase equilibrium
 S: At equilibrium, matter has no tendency to move between phases or react further: each species has the same chemical potential everywhere it can go. This sets boiling points, solubility, osmotic pressure and reaction yields.
+O: Define chemical potential and state the conditions for phase and chemical equilibrium
+O: Apply the Gibbs phase rule
+O: Explain colligative properties and calculate osmotic pressure
+PRE: Gibbs free energy
+LV: Year 2 · Application
 H: Chemical potential
 E: μ_{i} = (∂G/∂n_{i})_{T,p}
 - Matter flows from high μ to low μ, as heat flows from high T to low T.
@@ -782,17 +911,30 @@ E: μ_{i} = (∂G/∂n_{i})_{T,p}
 H: Phase rule
 E: F = C − P + 2 :: Gibbs phase rule: degrees of freedom F, components C, phases P
 - Pure water: at a triple point, F = 1 − 3 + 2 = 0: fixed T and p (273.16 K, 611.657 Pa).
+- Two phases of a pure substance (F = 1): fixing T fixes p, giving a coexistence line such as the boiling curve.
 H: Colligative properties
 - Dissolved solute lowers the solvent's μ: boiling point rises, freezing point falls (salt on roads), osmotic pressure Π = cRT (van 't Hoff).
 - Le Chatelier's principle: a system at equilibrium shifts to counter imposed changes.
 X: Osmotic pressure of 0.15 mol L^{-1} NaCl (two ions) at 310 K?
-> c = 300 mol m^{-3} of particles
-> Π = 300 × 8.31 × 310 ≈ 7.7 × 10^{5} Pa (~7.6 atm): why red blood cells burst in pure water
+> c = 0.30 mol L^{-1} of particles = 300 mol m^{-3}
+> Π = cRT = 300 × 8.31 × 310 ≈ 7.7 × 10^{5} Pa (~7.6 atm): why red blood cells burst in pure water
+K: At equilibrium each species has equal chemical potential in every phase it can enter.
 !: Equilibrium is dynamic: molecules still cross between phases, at equal rates.
+T: Chemical potential | μ = (∂G/∂n)_{T,p}, the change in Gibbs energy per mole of a species added
+T: Colligative property | A property of a solution, such as freezing-point depression or osmotic pressure, that depends on the number of solute particles, not their kind
+SUM: Matter moves from high to low μ; equilibrium means equal μ everywhere.
+SUM: F = C − P + 2; solutes raise boiling points, lower freezing points and create osmotic pressure Π = cRT.
+EV: established | At phase equilibrium the chemical potential of each component is equal in every phase present
+SRC: OpenStax, University Physics Volume 2, section 1.5 "Phase Changes" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/1-5-phase-changes
+SRC: OpenStax, College Physics 2e, section 13.5 "Phase Changes" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/13-5-phase-changes
 Q: What is chemical potential? | The change in Gibbs free energy per mole of a species added, at constant T and p.
 Q: State the Gibbs phase rule. | F = C − P + 2.
-M1: At water's triple point, the degrees of freedom are: | 0 | 1 | 2 | 3 | Fixed T and p.
-M2: Salt is spread on icy roads because it: | Lowers the freezing point of water | Raises it | Absorbs heat | Reacts with ice | Colligative effect.
+M1@2: At water's triple point, the degrees of freedom are: | 0 | 1 | 2 | 3 | F = C − P + 2 = 1 − 3 + 2 = 0: the triple point has one fixed temperature and pressure.
+M2@3: Salt is spread on icy roads because it: | Lowers the freezing point of water | Raises the freezing point of water | Absorbs heat from the passing traffic | Reacts chemically to destroy the ice | Dissolved ions lower the chemical potential of the liquid water, so ice melts at temperatures below 0 °C.
+M3@3: Glucose solution (0.30 mol L^{-1}, glucose does not dissociate) is at 310 K. What is its osmotic pressure? | 7.7 × 10^{5} Pa | 3.9 × 10^{5} Pa | 7.7 × 10^{2} Pa | 1.5 × 10^{6} Pa | Π = cRT = 300 mol m^{-3} × 8.31 × 310 = 7.7 × 10^{5} Pa, the same as 0.15 mol L^{-1} NaCl because it has the same particle concentration.
+TF1@1: In a sealed bottle of water at equilibrium, evaporation and condensation have both stopped. | false | Equilibrium is dynamic: molecules evaporate and condense at equal rates, so the vapour pressure stays constant.
+NUM2@2: How many degrees of freedom does a pure substance have where liquid and vapour coexist? | 1 | 0 |  | F = C − P + 2 = 1 − 2 + 2 = 1: choose the temperature and the pressure is fixed (the vapour-pressure curve).
+SA2@1,3: Explain why a red blood cell placed in pure water swells and may burst. | The cell's contents are a solution, so the water inside has a lower chemical potential than pure water outside. The membrane lets water through but not most solutes. Water therefore moves from high to low chemical potential, into the cell (osmosis). The pressure needed to stop this, the osmotic pressure Π = cRT, is several atmospheres, far more than the cell membrane can withstand, so it swells and bursts. | Solutes lower water's chemical potential inside the cell ; Membrane is permeable to water, not solutes ; Water moves from high to low μ (osmosis) ; Osmotic pressure Π = cRT is several atmospheres ; Cell swells and bursts
 
 ## Maxwell relations
 S: Maxwell relations are equalities between partial derivatives of thermodynamic variables, following from the potentials being state functions. They let you calculate hard-to-measure quantities, like entropy changes, from easy ones like p, V and T.

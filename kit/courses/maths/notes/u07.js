@@ -34,9 +34,9 @@ SRC: Department for Education, Mathematics AS and A level subject content | stan
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-01-q1@1: Which is 5/x^{3} in index form? | 5x^{−3} | 5x^{3} | x^{−15} | 5^{−3}x | (5x)^{−3} | Dividing by x^{3} is multiplying by x^{−3}, and the 5 stays as a coefficient.
 M2#maths-u07-01-q2@2: Which is (x^{2} + 3)/√x in index form? | x^{3/2} + 3x^{−1/2} | x^{2} + 3x^{−1/2} | x^{3/2} + 3 | x + 3x^{1/2} | x^{5/2} + 3x^{−1/2} | x^{2}/x^{1/2} = x^{3/2} and 3/x^{1/2} = 3x^{−1/2}: divide each term separately.
-NUM2@2: Write (6x^{4} + 2x)/(2√x) as a sum of powers of x. What is the larger power? | 3.5 | 0.001 |  | 6x^{4}/(2x^{1/2}) = 3x^{7/2} and 2x/(2x^{1/2}) = x^{1/2}, so the larger power is 7/2 = 3.5.
-M3@2: Which is (√x + 1)^{2}/x in index form? | 1 + 2x^{−1/2} + x^{−1} | 1 + 2x^{1/2} + x^{−1} | 1 + x^{−1} | x^{−1/2} + 1 + x^{−1} | 1 + 2x^{−1/2} + x | Expand first: (√x + 1)^{2} = x + 2x^{1/2} + 1. Dividing each term by x gives 1 + 2x^{−1/2} + x^{−1}; squaring term by term would miss the middle term.
-SA3@1,2: Explain how you would prepare y = (x^{3} − 2√x)/x^{2} for differentiation, then differentiate it. | Split the single-term denominator: y = x^{3}/x^{2} − 2x^{1/2}/x^{2} = x − 2x^{−3/2}. Each term is now a power of x, so the power rule gives dy/dx = 1 + 3x^{−5/2}. Writing roots as fractional powers and subtracting indices correctly is the precalculus step; an index slip here makes the derivative wrong however well the rule is applied. | Splits the fraction into separate terms ; Writes √x as x^{1/2} ; Subtracts indices to get x − 2x^{−3/2} ; Applies the power rule to get 1 + 3x^{−5/2} ; Explains why index form is needed
+NUM2#maths-u07-01-q3@2: Write (6x^{4} + 2x)/(2√x) as a sum of powers of x. What is the larger power? | 3.5 | 0.001 |  | 6x^{4}/(2x^{1/2}) = 3x^{7/2} and 2x/(2x^{1/2}) = x^{1/2}, so the larger power is 7/2 = 3.5.
+M3#maths-u07-01-q4@2: Which is (√x + 1)^{2}/x in index form? | 1 + 2x^{−1/2} + x^{−1} | 1 + 2x^{1/2} + x^{−1} | 1 + x^{−1} | x^{−1/2} + 1 + x^{−1} | 1 + 2x^{−1/2} + x | Expand first: (√x + 1)^{2} = x + 2x^{1/2} + 1. Dividing each term by x gives 1 + 2x^{−1/2} + x^{−1}; squaring term by term would miss the middle term.
+SA3#maths-u07-01-q5@1,2: Explain how you would prepare y = (x^{3} − 2√x)/x^{2} for differentiation, then differentiate it. | Split the single-term denominator: y = x^{3}/x^{2} − 2x^{1/2}/x^{2} = x − 2x^{−3/2}. Each term is now a power of x, so the power rule gives dy/dx = 1 + 3x^{−5/2}. Writing roots as fractional powers and subtracting indices correctly is the precalculus step; an index slip here makes the derivative wrong however well the rule is applied. | Splits the fraction into separate terms ; Writes √x as x^{1/2} ; Subtracts indices to get x − 2x^{−3/2} ; Applies the power rule to get 1 + 3x^{−5/2} ; Explains why index form is needed
 
 ## Infinitesimal Calculus
 S: Calculus began with the idea of infinitely small changes, the "infinitesimals" of Newton and Leibniz in the 17th century. Their methods worked brilliantly, but it took until the 19th century to put them on a rigorous footing with limits.
@@ -70,9 +70,9 @@ SRC: Boyer CB, The History of the Calculus and Its Conceptual Development (Dover
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-02-q1@1: Whose notation, dy/dx and ∫, do we use today? | Leibniz | Newton | Euler | Archimedes | Cauchy | Leibniz introduced dy/dx and the integral sign; Newton used dots and "fluxions".
 M2#maths-u07-02-q2@2: What made calculus rigorous in the 19th century? | The precise definition of a limit | The invention of computers | Euclid's axioms | Decimal notation | The discovery of π | Cauchy and Weierstrass defined limits precisely, replacing vague infinitesimals.
-NUM2@2: Using thin rings, the area of a disc of radius r is ∫_{0}^{r} 2πx dx. Evaluate it for r = 3, to 2 decimal places. | 28.27 | 0.01 |  | The integral is [πx^{2}] from 0 to 3 = 9π ≈ 28.27, matching the formula πr^{2}.
-M3@1,2: Why was Bishop Berkeley's 1734 criticism of the early calculus fair? | It divided by a small increment and then set the increment to zero | Its results for areas and tangents were often numerically wrong | Newton and Leibniz refused to publish their methods | It contradicted the theorems of Euclidean geometry | It relied on decimal approximations to π | The method treated the increment as non-zero (to divide by it) and then as zero (to discard it); limits removed that inconsistency.
-SA3@1,2: Outline how calculus developed from Archimedes to Weierstrass, and explain why the limit concept was needed. | Archimedes found areas by exhaustion; Fermat and Barrow found tangents; Newton and Leibniz independently built a general calculus of derivatives and integrals, linked as inverse processes, using infinitesimals. Berkeley showed that infinitesimals were used inconsistently. Cauchy and Weierstrass defined limits precisely (ε–δ), so derivatives and integrals became limits of ordinary quantities and the results were rigorous. | Mentions Archimedes' method of exhaustion ; Credits Newton and Leibniz independently ; Explains differentiation and integration as inverse ; Explains the inconsistency in infinitesimals ; Says Cauchy and Weierstrass made it rigorous with limits
+NUM2#maths-u07-02-q3@2: Using thin rings, the area of a disc of radius r is ∫_{0}^{r} 2πx dx. Evaluate it for r = 3, to 2 decimal places. | 28.27 | 0.01 |  | The integral is [πx^{2}] from 0 to 3 = 9π ≈ 28.27, matching the formula πr^{2}.
+M3#maths-u07-02-q4@1,2: Why was Bishop Berkeley's 1734 criticism of the early calculus fair? | It divided by a small increment and then set the increment to zero | Its results for areas and tangents were often numerically wrong | Newton and Leibniz refused to publish their methods | It contradicted the theorems of Euclidean geometry | It relied on decimal approximations to π | The method treated the increment as non-zero (to divide by it) and then as zero (to discard it); limits removed that inconsistency.
+SA3#maths-u07-02-q5@1,2: Outline how calculus developed from Archimedes to Weierstrass, and explain why the limit concept was needed. | Archimedes found areas by exhaustion; Fermat and Barrow found tangents; Newton and Leibniz independently built a general calculus of derivatives and integrals, linked as inverse processes, using infinitesimals. Berkeley showed that infinitesimals were used inconsistently. Cauchy and Weierstrass defined limits precisely (ε–δ), so derivatives and integrals became limits of ordinary quantities and the results were rigorous. | Mentions Archimedes' method of exhaustion ; Credits Newton and Leibniz independently ; Explains differentiation and integration as inverse ; Explains the inconsistency in infinitesimals ; Says Cauchy and Weierstrass made it rigorous with limits
 
 ## Limits
 S: A limit describes the value a function approaches as its input approaches some value. Limits underpin every idea in calculus: derivatives, integrals, continuity and infinite series are all defined by them.
@@ -110,7 +110,7 @@ NUM1#maths-u07-03-q1@1: Find lim_{x→2} (x^{3} − 8)/(x − 2). | 12 | 0 |  | 
 M1#maths-u07-03-q2@1: What is lim_{x→∞} (5x + 2)/(2x − 1)? | 5/2 | 0 | ∞ | −2 | 5 | Divide top and bottom by x: (5 + 2/x)/(2 − 1/x) → 5/2.
 M3#maths-u07-03-q3@2: What is lim_{x→0} (sin 3x)/x? | 3 | 1 | 0 | 1/3 | It doesn't exist | (sin 3x)/x = 3 × (sin 3x)/(3x), and (sin u)/u → 1 as u → 0.
 M2#maths-u07-03-q4@2: For f(x) = |x| at x = 0, what do the secant gradients from the right and left approach? | +1 from the right and −1 from the left, so the limit doesn't exist | 0 from both sides, since the graph touches the axis there | +1 from both sides, since |x| = x near 0 | Both grow without bound, since the corner is infinitely steep | −1 from the right and +1 from the left, so the limit is 0 | The one-sided limits differ, so the difference quotient has no limit at 0.
-SA3@1,2: Find lim_{x→0} (√(1 + x) − 1)/x, explaining each step and why direct substitution fails. | Substituting x = 0 gives 0/0, an indeterminate form, so more work is needed. Multiply top and bottom by the conjugate √(1 + x) + 1: the numerator becomes (1 + x) − 1 = x, so the expression is 1/(√(1 + x) + 1) for x ≠ 0. This is continuous at 0, so the limit is 1/(1 + 1) = 1/2. | Identifies the 0/0 indeterminate form ; Multiplies by the conjugate ; Simplifies to 1/(√(1 + x) + 1) ; Cancels only for x ≠ 0 ; Gets the limit 1/2
+SA3#maths-u07-03-q5@1,2: Find lim_{x→0} (√(1 + x) − 1)/x, explaining each step and why direct substitution fails. | Substituting x = 0 gives 0/0, an indeterminate form, so more work is needed. Multiply top and bottom by the conjugate √(1 + x) + 1: the numerator becomes (1 + x) − 1 = x, so the expression is 1/(√(1 + x) + 1) for x ≠ 0. This is continuous at 0, so the limit is 1/(1 + 1) = 1/2. | Identifies the 0/0 indeterminate form ; Multiplies by the conjugate ; Simplifies to 1/(√(1 + x) + 1) ; Cancels only for x ≠ 0 ; Gets the limit 1/2
 
 ## Continuity
 S: A function is continuous at a point if its graph has no break there: you could draw it without lifting your pen. Continuity is what lets us find roots by sign changes and guarantees that many calculus theorems apply.
@@ -143,9 +143,9 @@ SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | secondary | 2008 | h
 SRC: Department for Education, Mathematics AS and A level subject content: numerical methods | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 M1#maths-u07-04-q1@1: Which function is continuous for all real x? | sin x + x^{2} | 1/x | ln x | tan x | 1/(x^{2} − 1) | Sums of continuous functions are continuous, and sin x and x^{2} are both continuous everywhere.
 M2#maths-u07-04-q2@2: f(x) = x^{2} + k for x < 1 and 3x for x ≥ 1 is continuous. What is k? | 2 | 3 | 1 | 0 | 4 | At x = 1 the pieces must agree: 1 + k = 3, so k = 2.
-NUM2@1: f(x) = (x^{2} − 9)/(x − 3) for x ≠ 3 and f(3) = k. What value of k makes f continuous at x = 3? | 6 | 0 |  | For x ≠ 3, f(x) = x + 3, which tends to 6; continuity needs f(3) to equal this limit, so k = 6.
-NUM3@2: Evaluating f(x) = x^{3} − 4x + 1 at the integers from −3 to 3, how many roots does the intermediate value theorem guarantee? | 3 | 0 |  | The values are −14, 1, 4, 1, −2, 1, 16: signs change on (−3, −2), (0, 1) and (1, 2), so there are at least three roots, and a cubic has at most three.
-SA3@2: Explain why a sign change of f(x) = 1/(x − 1.5) between x = 1 and x = 2 does not show a root, and state what the intermediate value theorem needs. | f(1) = −2 and f(2) = 2, so the sign changes, but f has a vertical asymptote at x = 1.5 and is not defined or continuous there; the sign changes by jumping through infinity, and 1/(x − 1.5) is never zero. The theorem needs f to be continuous on the whole closed interval [a, b]. | Computes f(1) = −2 and f(2) = 2 ; Identifies the asymptote at x = 1.5 ; Notes that f is never zero ; States the continuity condition on [a, b]
+NUM2#maths-u07-04-q3@1: f(x) = (x^{2} − 9)/(x − 3) for x ≠ 3 and f(3) = k. What value of k makes f continuous at x = 3? | 6 | 0 |  | For x ≠ 3, f(x) = x + 3, which tends to 6; continuity needs f(3) to equal this limit, so k = 6.
+NUM3#maths-u07-04-q4@2: Evaluating f(x) = x^{3} − 4x + 1 at the integers from −3 to 3, how many roots does the intermediate value theorem guarantee? | 3 | 0 |  | The values are −14, 1, 4, 1, −2, 1, 16: signs change on (−3, −2), (0, 1) and (1, 2), so there are at least three roots, and a cubic has at most three.
+SA3#maths-u07-04-q5@2: Explain why a sign change of f(x) = 1/(x − 1.5) between x = 1 and x = 2 does not show a root, and state what the intermediate value theorem needs. | f(1) = −2 and f(2) = 2, so the sign changes, but f has a vertical asymptote at x = 1.5 and is not defined or continuous there; the sign changes by jumping through infinity, and 1/(x − 1.5) is never zero. The theorem needs f to be continuous on the whole closed interval [a, b]. | Computes f(1) = −2 and f(2) = 2 ; Identifies the asymptote at x = 1.5 ; Notes that f is never zero ; States the continuity condition on [a, b]
 
 ## Differentiability
 S: A function is differentiable at a point if it has a well-defined tangent there: a single slope. Differentiable functions are smooth; corners, cusps, jumps and vertical tangents break differentiability.
@@ -182,8 +182,8 @@ SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cen
 M1#maths-u07-05-q1@1: Where is f(x) = |x + 2| not differentiable? | At x = −2 | At x = 0 | At x = 2 | Nowhere | Everywhere | The graph has a corner where x + 2 = 0, so the slope jumps from −1 to 1.
 M2#maths-u07-05-q2@2: Which statement about continuity and differentiability is true? | Every differentiable function is continuous | Every continuous function is differentiable | |x| is differentiable at 0 | A jump discontinuity can still be differentiable | ∛x has derivative 0 at x = 0 | Differentiability at a point forces continuity there; the converse fails, as |x| shows.
 M2#maths-u07-05-q3@2: Why is |x| continuous but not differentiable at 0? | Its graph has no gap, but the gradient jumps from −1 to +1 at a corner | Its graph has a gap at 0, so neither property holds | Its gradient is infinite at 0, like a vertical tangent | It isn't defined at 0, so it can't be differentiated | It is differentiable at 0, with derivative 0 there | Continuity needs no break; differentiability needs a single tangent, which a corner lacks.
-NUM3@1: f(x) = x^{2} + 1 for x ≤ 2 and ax + b for x > 2 is differentiable at x = 2. Find b. | -3 | 0 |  | The slopes must match: a = 2 × 2 = 4. The values must match: 5 = 2a + b = 8 + b, so b = −3.
-SA2@2: Explain, with an example of each, the difference between a function that is continuous but not differentiable at a point and one that is neither. | |x| at 0 is continuous (no break, the limit equals the value 0) but not differentiable, because the gradient is −1 on the left and +1 on the right. A step function with a jump at 0 is not continuous there, and so cannot be differentiable, because differentiability implies continuity. | Gives a valid corner example such as |x| ; Explains the unequal one-sided gradients ; Gives a valid jump example ; States that differentiable implies continuous
+NUM3#maths-u07-05-q4@1: f(x) = x^{2} + 1 for x ≤ 2 and ax + b for x > 2 is differentiable at x = 2. Find b. | -3 | 0 |  | The slopes must match: a = 2 × 2 = 4. The values must match: 5 = 2a + b = 8 + b, so b = −3.
+SA2#maths-u07-05-q5@2: Explain, with an example of each, the difference between a function that is continuous but not differentiable at a point and one that is neither. | |x| at 0 is continuous (no break, the limit equals the value 0) but not differentiable, because the gradient is −1 on the left and +1 on the right. A step function with a jump at 0 is not continuous there, and so cannot be differentiable, because differentiability implies continuity. | Gives a valid corner example such as |x| ; Explains the unequal one-sided gradients ; Gives a valid jump example ; States that differentiable implies continuous
 
 ## Differential Calculus
 S: Differential calculus studies how quantities change. The derivative measures the instantaneous rate of change of a function, which is the gradient of its graph at a point.
@@ -220,8 +220,8 @@ NUM1#maths-u07-06-q1@1: Find the gradient of the chord of y = x^{3} from x = 1 t
 M1#maths-u07-06-q2@1: What does a negative derivative tell you about a function? | It's decreasing at that point | It's negative at that point | It has a maximum | It's increasing | It's zero | The derivative is the gradient: negative gradient means the function is going down.
 M2#maths-u07-06-q3@2: A chord of y = f(x) from x = 2 to x = 2 + h has gradient 5 + 3h. What is f′(2)? | 5 | 8 | 3 | 5 + 3h | 0 | The derivative is the limit as h → 0: 5 + 3h → 5.
 M2#maths-u07-06-q4@2: What does the derivative measure at a point? | The instantaneous rate of change: the limit of secant gradients as h → 0 | The area under the curve up to that point | The average value of the function over an interval | The value of the function itself at the point | The distance from the point to the x-axis | The derivative is defined as the limit of the difference quotient.
-NUM2@2: Estimate the gradient of y = x^{3} at x = 2 using a chord with h = 0.1. | 12.61 | 0.001 |  | (2.1^{3} − 8)/0.1 = (9.261 − 8)/0.1 = 12.61, close to the exact gradient 3x^{2} = 12.
-SA3@1,2: A car's displacement is s = t^{2} metres after t seconds. Explain how chord gradients from t = 3 lead to its velocity at t = 3, and interpret the answer. | The chord from t = 3 to t = 3 + h has gradient ((3 + h)^{2} − 9)/h = (6h + h^{2})/h = 6 + h, the average velocity over that interval. As h → 0 this tends to 6, so the instantaneous velocity at t = 3 is 6 m/s: the gradient of the tangent to the s–t graph there. | Writes the chord gradient as a difference quotient ; Simplifies to 6 + h ; Takes the limit h → 0 ; Gives 6 m/s with units ; Interprets as the tangent gradient or instantaneous velocity
+NUM2#maths-u07-06-q5@2: Estimate the gradient of y = x^{3} at x = 2 using a chord with h = 0.1. | 12.61 | 0.001 |  | (2.1^{3} − 8)/0.1 = (9.261 − 8)/0.1 = 12.61, close to the exact gradient 3x^{2} = 12.
+SA3#maths-u07-06-q6@1,2: A car's displacement is s = t^{2} metres after t seconds. Explain how chord gradients from t = 3 lead to its velocity at t = 3, and interpret the answer. | The chord from t = 3 to t = 3 + h has gradient ((3 + h)^{2} − 9)/h = (6h + h^{2})/h = 6 + h, the average velocity over that interval. As h → 0 this tends to 6, so the instantaneous velocity at t = 3 is 6 m/s: the gradient of the tangent to the s–t graph there. | Writes the chord gradient as a difference quotient ; Simplifies to 6 + h ; Takes the limit h → 0 ; Gives 6 m/s with units ; Interprets as the tangent gradient or instantaneous velocity
 
 ## Derivatives
 S: A derivative is defined as the limit of the gradient of a chord, and computed in practice with rules. Differentiating from first principles shows where the rules come from.
@@ -262,8 +262,8 @@ M1#maths-u07-07-q1@1: What is d/dx (6x^{3} − 2x + 9)? | 18x^{2} − 2 | 18x^{2
 M2#maths-u07-07-q2@2: What is d/dx (4/x)? | −4/x^{2} | 4 | 4/x^{2} | −4x | 4 ln x | 4/x = 4x^{−1}, which differentiates to −4x^{−2}.
 NUM1#maths-u07-07-q3@1: Differentiate 4x^{3} − 2x and evaluate at x = 1. | 10 | 0 |  | The derivative is 12x^{2} − 2, which is 10 at x = 1.
 NUM1#maths-u07-07-q4@1: For f(x) = x^{2} at x = 3 with h = 0.01, what is the secant gradient (f(3 + h) − f(3))/h? | 6.01 | 0.0001 |  | (9.0601 − 9)/0.01 = 6.01, approaching the derivative 6.
-NUM2@2: For f(x) = 6√x + 2 ln x, find f′(4). | 2 | 0 |  | f′(x) = 3x^{−1/2} + 2/x, so f′(4) = 3/2 + 1/2 = 2.
-SA3@1: Differentiate f(x) = 2x^{3} from first principles, showing each step. | f(x + h) − f(x) = 2(x + h)^{3} − 2x^{3} = 6x^{2}h + 6xh^{2} + 2h^{3}. Dividing by h gives 6x^{2} + 6xh + 2h^{2}. As h → 0 the terms in h vanish, so f′(x) = 6x^{2}. | Writes the difference quotient (f(x + h) − f(x))/h ; Expands (x + h)^{3} correctly ; Divides by h ; Takes the limit h → 0 ; Gets 6x^{2}
+NUM2#maths-u07-07-q5@2: For f(x) = 6√x + 2 ln x, find f′(4). | 2 | 0 |  | f′(x) = 3x^{−1/2} + 2/x, so f′(4) = 3/2 + 1/2 = 2.
+SA3#maths-u07-07-q6@1: Differentiate f(x) = 2x^{3} from first principles, showing each step. | f(x + h) − f(x) = 2(x + h)^{3} − 2x^{3} = 6x^{2}h + 6xh^{2} + 2h^{3}. Dividing by h gives 6x^{2} + 6xh + 2h^{2}. As h → 0 the terms in h vanish, so f′(x) = 6x^{2}. | Writes the difference quotient (f(x + h) − f(x))/h ; Expands (x + h)^{3} correctly ; Divides by h ; Takes the limit h → 0 ; Gets 6x^{2}
 
 ## First Derivatives
 S: The first derivative f′(x) tells you the gradient of a curve everywhere: where it rises, falls and levels off. It finds tangents and normals, and stationary points where the gradient is zero.
@@ -300,8 +300,8 @@ NUM1#maths-u07-08-q1@1: Find the gradient of y = x^{3} − 4x^{2} + 2 at x = 3. 
 M1#maths-u07-08-q2@1: What is the tangent to y = x^{2} at (3, 9)? | y = 6x − 9 | y = 6x + 9 | y = 2x + 3 | y = 9x − 18 | y = 3x | The gradient is 2x = 6, so y − 9 = 6(x − 3), giving y = 6x − 9.
 M2#maths-u07-08-q3@2: For which x is f(x) = 2x^{3} − 6x decreasing? | −1 < x < 1 | x > 1 | x < −1 | x > 0 | All x | f′(x) = 6x^{2} − 6 = 6(x − 1)(x + 1) is negative between −1 and 1.
 NUM1#maths-u07-08-q4@1: Where is the tangent to y = x^{2} − 6x horizontal (give x)? | 3 | 0 |  | dy/dx = 2x − 6 = 0 at x = 3.
-NUM3@1: The normal to y = x^{2} at (1, 1) meets the curve again. Find the x-coordinate of the second intersection. | -1.5 | 0.001 |  | The normal has gradient −1/2: y = −x/2 + 3/2. Setting x^{2} = −x/2 + 3/2 gives 2x^{2} + x − 3 = (2x + 3)(x − 1) = 0, so x = −1.5.
-SA3@2: Find where f(x) = x^{3} − 12x + 5 is increasing and where it is decreasing, explaining your method. | Differentiate: f′(x) = 3x^{2} − 12 = 3(x − 2)(x + 2). f is increasing where f′(x) > 0, which is x < −2 or x > 2, and decreasing where f′(x) < 0, which is −2 < x < 2. At x = ±2 the gradient is zero (stationary points). | Differentiates correctly ; Factorises f′(x) ; Uses f′ > 0 for increasing and f′ < 0 for decreasing ; States x < −2 or x > 2 increasing ; States −2 < x < 2 decreasing
+NUM3#maths-u07-08-q5@1: The normal to y = x^{2} at (1, 1) meets the curve again. Find the x-coordinate of the second intersection. | -1.5 | 0.001 |  | The normal has gradient −1/2: y = −x/2 + 3/2. Setting x^{2} = −x/2 + 3/2 gives 2x^{2} + x − 3 = (2x + 3)(x − 1) = 0, so x = −1.5.
+SA3#maths-u07-08-q6@2: Find where f(x) = x^{3} − 12x + 5 is increasing and where it is decreasing, explaining your method. | Differentiate: f′(x) = 3x^{2} − 12 = 3(x − 2)(x + 2). f is increasing where f′(x) > 0, which is x < −2 or x > 2, and decreasing where f′(x) < 0, which is −2 < x < 2. At x = ±2 the gradient is zero (stationary points). | Differentiates correctly ; Factorises f′(x) ; Uses f′ > 0 for increasing and f′ < 0 for decreasing ; States x < −2 or x > 2 increasing ; States −2 < x < 2 decreasing
 
 ## Higher-Order Derivatives
 S: Differentiating a derivative gives the second derivative, and so on. The second derivative measures how the gradient changes: acceleration for motion, and concavity for graphs.
@@ -335,8 +335,8 @@ SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cen
 NUM1#maths-u07-09-q1@1: f(x) = 2x^{4} − x^{3}. Find f″(1). | 18 | 0 |  | f′(x) = 8x^{3} − 3x^{2}, f″(x) = 24x^{2} − 6x, so f″(1) = 18.
 M1#maths-u07-09-q2@1: What is the 4th derivative of sin x? | sin x | cos x | −sin x | −cos x | 0 | Derivatives of sin x cycle cos x, −sin x, −cos x, sin x, so the 4th returns to sin x.
 M2#maths-u07-09-q3@2: What is d^{2}/dx^{2} (e^{3x})? | 9e^{3x} | 3e^{3x} | e^{3x} | 6e^{3x} | e^{9x} | Each differentiation multiplies by 3, so twice gives 9e^{3x}.
-NUM3@2: A particle has displacement s = t^{3} − 6t^{2} + 9t metres. Find its acceleration, in m s^{−2}, when its velocity is zero for the second time. | 6 | 0 | m s^{−2} | v = 3(t − 1)(t − 3) is zero at t = 1 and t = 3. The acceleration a = 6t − 12 is 6 m s^{−2} at t = 3.
-SA2@2: At a point, f′(x) > 0 and f″(x) < 0. Describe the graph there and give an interpretation for motion, where f is displacement. | The function is increasing (positive gradient) but the gradient is decreasing, so the graph is concave down: rising and levelling off. For motion, the velocity is positive (moving forwards) and the acceleration is negative, so the object is moving forwards but slowing down. | Increasing because f′ > 0 ; Gradient decreasing because f″ < 0 ; Concave down ; Positive velocity with negative acceleration ; Moving forwards but slowing
+NUM3#maths-u07-09-q4@2: A particle has displacement s = t^{3} − 6t^{2} + 9t metres. Find its acceleration, in m s^{−2}, when its velocity is zero for the second time. | 6 | 0 | m s^{−2} | v = 3(t − 1)(t − 3) is zero at t = 1 and t = 3. The acceleration a = 6t − 12 is 6 m s^{−2} at t = 3.
+SA2#maths-u07-09-q5@2: At a point, f′(x) > 0 and f″(x) < 0. Describe the graph there and give an interpretation for motion, where f is displacement. | The function is increasing (positive gradient) but the gradient is decreasing, so the graph is concave down: rising and levelling off. For motion, the velocity is positive (moving forwards) and the acceleration is negative, so the object is moving forwards but slowing down. | Increasing because f′ > 0 ; Gradient decreasing because f″ < 0 ; Concave down ; Positive velocity with negative acceleration ; Moving forwards but slowing
 
 ## Chain Rule
 S: The chain rule differentiates composite functions, functions of functions like (3x + 1)^{5} or e^{sin x}. Multiply the derivative of the outer function by the derivative of the inner one.
@@ -372,8 +372,8 @@ SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cen
 M1#maths-u07-10-q1@1: What is d/dx (e^{4x})? | 4e^{4x} | e^{4x} | 4xe^{4x−1} | e^{4} | 4e^{x} | The inner function 4x has derivative 4, which multiplies e^{4x}.
 M2#maths-u07-10-q2@2: What is d/dx sin(x^{2})? | 2x cos(x^{2}) | cos(x^{2}) | 2x cos(2x) | −2x cos(x^{2}) | 2 cos(x) | Outer cos(x^{2}) times inner derivative 2x.
 M3#maths-u07-10-q3@2: What is d/dx (1/(2x + 3)^{2})? | −4/(2x + 3)^{3} | −2/(2x + 3)^{3} | 1/(2(2x + 3)) | −4/(2x + 3)^{2} | 4/(2x + 3)^{3} | (2x + 3)^{−2} gives −2(2x + 3)^{−3} × 2 = −4(2x + 3)^{−3}.
-NUM2@1: Differentiate y = (x^{2} + 1)^{3} and evaluate dy/dx at x = 1. | 24 | 0 |  | dy/dx = 3(x^{2} + 1)^{2} × 2x; at x = 1 this is 3 × 4 × 2 = 24.
-SA3@1,2: Differentiate y = e^{sin 2x}, naming each layer of the composite function. | There are three layers: the outer function e^{u}, the middle u = sin v and the inner v = 2x. Differentiate from the outside in: e^{sin 2x} × cos 2x × 2, so dy/dx = 2cos(2x)e^{sin 2x}. | Identifies e^{u} as the outer function ; Identifies sin and 2x as further layers ; Keeps the inside unchanged when differentiating each layer ; Multiplies by cos 2x and by 2 ; Gets 2cos(2x)e^{sin 2x}
+NUM2#maths-u07-10-q4@1: Differentiate y = (x^{2} + 1)^{3} and evaluate dy/dx at x = 1. | 24 | 0 |  | dy/dx = 3(x^{2} + 1)^{2} × 2x; at x = 1 this is 3 × 4 × 2 = 24.
+SA3#maths-u07-10-q5@1,2: Differentiate y = e^{sin 2x}, naming each layer of the composite function. | There are three layers: the outer function e^{u}, the middle u = sin v and the inner v = 2x. Differentiate from the outside in: e^{sin 2x} × cos 2x × 2, so dy/dx = 2cos(2x)e^{sin 2x}. | Identifies e^{u} as the outer function ; Identifies sin and 2x as further layers ; Keeps the inside unchanged when differentiating each layer ; Multiplies by cos 2x and by 2 ; Gets 2cos(2x)e^{sin 2x}
 
 ## Product Rule
 S: The product rule differentiates a product of two functions. The derivative of uv isn't u′v′: it's u′v + uv′.
@@ -411,9 +411,9 @@ SRC: Department for Education, Mathematics AS and A level subject content: diffe
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-11-q1@1: What is d/dx (x ln x)? | ln x + 1 | 1/x | ln x | x/x | 1 | u = x and v = ln x: 1 × ln x + x × 1/x = ln x + 1.
 M2#maths-u07-11-q2@2: What is d/dx (x^{3}e^{2x})? | x^{2}e^{2x}(3 + 2x) | 3x^{2}e^{2x} | 6x^{2}e^{2x} | x^{3}e^{2x}(3 + 2x) | 3x^{2} + 2e^{2x} | 3x^{2}e^{2x} + 2x^{3}e^{2x} = x^{2}e^{2x}(3 + 2x).
-NUM2@1: Differentiate y = x^{2} ln x and evaluate dy/dx at x = e, to 3 decimal places. | 8.155 | 0.01 |  | dy/dx = 2x ln x + x; at x = e this is 2e + e = 3e ≈ 8.155.
-M3@2: What are the x-coordinates of the stationary points of y = x(x − 3)^{4}? | x = 3 and x = 0.6 | x = 3 only | x = 0 and x = 3 | x = 0.6 only | x = −3 and x = 0.6 | dy/dx = (x − 3)^{4} + 4x(x − 3)^{3} = (x − 3)^{3}(5x − 3), which is zero at x = 3 and x = 3/5.
-SA3@1,2: Differentiate y = x^{2}(3x − 1)^{5}, factorising your answer, and explain why (uv)′ is not u′v′. | With u = x^{2} and v = (3x − 1)^{5}: u′ = 2x and, by the chain rule, v′ = 15(3x − 1)^{4}. So dy/dx = 2x(3x − 1)^{5} + 15x^{2}(3x − 1)^{4} = x(3x − 1)^{4}(21x − 2). u′v′ fails: for x^{2} × x^{3} = x^{5} it gives 6x^{3}, but the derivative is 5x^{4}. | Identifies u and v ; Uses the chain rule for v′ ; Applies u′v + uv′ ; Factorises to x(3x − 1)^{4}(21x − 2) ; Gives a counterexample to u′v′
+NUM2#maths-u07-11-q3@1: Differentiate y = x^{2} ln x and evaluate dy/dx at x = e, to 3 decimal places. | 8.155 | 0.01 |  | dy/dx = 2x ln x + x; at x = e this is 2e + e = 3e ≈ 8.155.
+M3#maths-u07-11-q4@2: What are the x-coordinates of the stationary points of y = x(x − 3)^{4}? | x = 3 and x = 0.6 | x = 3 only | x = 0 and x = 3 | x = 0.6 only | x = −3 and x = 0.6 | dy/dx = (x − 3)^{4} + 4x(x − 3)^{3} = (x − 3)^{3}(5x − 3), which is zero at x = 3 and x = 3/5.
+SA3#maths-u07-11-q5@1,2: Differentiate y = x^{2}(3x − 1)^{5}, factorising your answer, and explain why (uv)′ is not u′v′. | With u = x^{2} and v = (3x − 1)^{5}: u′ = 2x and, by the chain rule, v′ = 15(3x − 1)^{4}. So dy/dx = 2x(3x − 1)^{5} + 15x^{2}(3x − 1)^{4} = x(3x − 1)^{4}(21x − 2). u′v′ fails: for x^{2} × x^{3} = x^{5} it gives 6x^{3}, but the derivative is 5x^{4}. | Identifies u and v ; Uses the chain rule for v′ ; Applies u′v + uv′ ; Factorises to x(3x − 1)^{4}(21x − 2) ; Gives a counterexample to u′v′
 
 ## Quotient Rule
 S: The quotient rule differentiates one function divided by another. It's a combination of the product and chain rules, and it's needed for functions like tan x and rational functions.
@@ -447,9 +447,9 @@ SRC: Department for Education, Mathematics AS and A level subject content: diffe
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-12-q1@1: What is d/dx (1/x^{2}) by any method? | −2/x^{3} | −2/x | 2/x^{3} | −1/x^{3} | 1/(2x) | x^{−2} differentiates to −2x^{−3}; the quotient rule gives the same answer.
 M2#maths-u07-12-q2@2: What is d/dx ((x − 1)/(x + 1))? | 2/(x + 1)^{2} | −2/(x + 1)^{2} | 1 | 2x/(x + 1)^{2} | 0 | ((x + 1) − (x − 1))/(x + 1)^{2} = 2/(x + 1)^{2}.
-NUM2@1: For f(x) = 3x/(x^{2} + 1), find f′(2). | -0.36 | 0.001 |  | f′(x) = (3(x^{2} + 1) − 3x × 2x)/(x^{2} + 1)^{2} = (3 − 3x^{2})/(x^{2} + 1)^{2}, so f′(2) = −9/25 = −0.36.
-M3@1: What is d/dx ((ln x)/x)? | (1 − ln x)/x^{2} | (ln x − 1)/x^{2} | (1 + ln x)/x^{2} | (1 − ln x)/x | 1/x^{2} | With u = ln x and v = x: (x × 1/x − ln x × 1)/x^{2} = (1 − ln x)/x^{2}; reversing the numerator flips the sign.
-SA3@2: Use the quotient rule to show that d/dx tan x = sec^{2} x, and hence find d/dx cot x. | tan x = sin x/cos x, so d/dx tan x = (cos x × cos x − sin x × (−sin x))/cos^{2} x = (cos^{2} x + sin^{2} x)/cos^{2} x = 1/cos^{2} x = sec^{2} x. Similarly cot x = cos x/sin x gives (sin x × (−sin x) − cos x × cos x)/sin^{2} x = −1/sin^{2} x = −cosec^{2} x. | Writes tan x as sin x/cos x ; Applies the quotient rule in the right order ; Uses sin^{2} x + cos^{2} x = 1 ; Gets sec^{2} x ; Gets −cosec^{2} x for cot x
+NUM2#maths-u07-12-q3@1: For f(x) = 3x/(x^{2} + 1), find f′(2). | -0.36 | 0.001 |  | f′(x) = (3(x^{2} + 1) − 3x × 2x)/(x^{2} + 1)^{2} = (3 − 3x^{2})/(x^{2} + 1)^{2}, so f′(2) = −9/25 = −0.36.
+M3#maths-u07-12-q4@1: What is d/dx ((ln x)/x)? | (1 − ln x)/x^{2} | (ln x − 1)/x^{2} | (1 + ln x)/x^{2} | (1 − ln x)/x | 1/x^{2} | With u = ln x and v = x: (x × 1/x − ln x × 1)/x^{2} = (1 − ln x)/x^{2}; reversing the numerator flips the sign.
+SA3#maths-u07-12-q5@2: Use the quotient rule to show that d/dx tan x = sec^{2} x, and hence find d/dx cot x. | tan x = sin x/cos x, so d/dx tan x = (cos x × cos x − sin x × (−sin x))/cos^{2} x = (cos^{2} x + sin^{2} x)/cos^{2} x = 1/cos^{2} x = sec^{2} x. Similarly cot x = cos x/sin x gives (sin x × (−sin x) − cos x × cos x)/sin^{2} x = −1/sin^{2} x = −cosec^{2} x. | Writes tan x as sin x/cos x ; Applies the quotient rule in the right order ; Uses sin^{2} x + cos^{2} x = 1 ; Gets sec^{2} x ; Gets −cosec^{2} x for cot x
 
 ## Implicit Differentiation
 S: Implicit differentiation finds dy/dx when y isn't the subject, as on the circle x^{2} + y^{2} = 25. Differentiate every term with respect to x, using the chain rule on terms in y, then solve for dy/dx.
@@ -483,9 +483,9 @@ SRC: Department for Education, Mathematics AS and A level subject content: diffe
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-13-q1@1: For x^{2} + y^{2} = 13, what is dy/dx at (2, 3)? | −2/3 | 2/3 | −3/2 | 3/2 | 0 | Differentiating gives 2x + 2y dy/dx = 0, so dy/dx = −x/y = −2/3 at (2, 3).
 M2#maths-u07-13-q2@2: What is dy/dx for y^{2} = 4x? | 2/y | 4 | 2y | 4/y^{2} | y/2 | Differentiating y^{2} implicitly gives 2y dy/dx = 4, so dy/dx = 2/y.
-NUM2@2: Find the gradient of the curve x^{3} + y^{3} = 9 at the point (1, 2). | -0.25 | 0.001 |  | 3x^{2} + 3y^{2} dy/dx = 0, so dy/dx = −x^{2}/y^{2} = −1/4 at (1, 2).
-NUM3@2: The tangent to x^{2} + y^{2} = 25 at (3, 4) meets the x-axis at (k, 0). Find k to 2 decimal places. | 8.33 | 0.01 |  | dy/dx = −x/y = −3/4, so the tangent is y − 4 = −3/4(x − 3). Setting y = 0 gives x − 3 = 16/3, so k = 25/3 ≈ 8.33.
-SA3@1,2: Show by implicit differentiation that d/dx (arcsin x) = 1/√(1 − x^{2}), explaining why the positive square root is taken. | Let y = arcsin x, so sin y = x. Differentiating with respect to x gives cos y dy/dx = 1, so dy/dx = 1/cos y. Since sin^{2} y + cos^{2} y = 1, cos y = ±√(1 − x^{2}). The range of arcsin is −π/2 ≤ y ≤ π/2, where cos y ≥ 0, so dy/dx = 1/√(1 − x^{2}). | Rewrites as sin y = x ; Differentiates implicitly to get cos y dy/dx = 1 ; Uses sin^{2} y + cos^{2} y = 1 ; Justifies the positive root from the range of arcsin ; States the result
+NUM2#maths-u07-13-q3@2: Find the gradient of the curve x^{3} + y^{3} = 9 at the point (1, 2). | -0.25 | 0.001 |  | 3x^{2} + 3y^{2} dy/dx = 0, so dy/dx = −x^{2}/y^{2} = −1/4 at (1, 2).
+NUM3#maths-u07-13-q4@2: The tangent to x^{2} + y^{2} = 25 at (3, 4) meets the x-axis at (k, 0). Find k to 2 decimal places. | 8.33 | 0.01 |  | dy/dx = −x/y = −3/4, so the tangent is y − 4 = −3/4(x − 3). Setting y = 0 gives x − 3 = 16/3, so k = 25/3 ≈ 8.33.
+SA3#maths-u07-13-q5@1,2: Show by implicit differentiation that d/dx (arcsin x) = 1/√(1 − x^{2}), explaining why the positive square root is taken. | Let y = arcsin x, so sin y = x. Differentiating with respect to x gives cos y dy/dx = 1, so dy/dx = 1/cos y. Since sin^{2} y + cos^{2} y = 1, cos y = ±√(1 − x^{2}). The range of arcsin is −π/2 ≤ y ≤ π/2, where cos y ≥ 0, so dy/dx = 1/√(1 − x^{2}). | Rewrites as sin y = x ; Differentiates implicitly to get cos y dy/dx = 1 ; Uses sin^{2} y + cos^{2} y = 1 ; Justifies the positive root from the range of arcsin ; States the result
 
 ## Logarithmic Differentiation
 S: Logarithmic differentiation takes the log of both sides before differentiating. It turns products, quotients and powers into sums, making messy derivatives manageable, and handles variable powers like x^{x}.
@@ -521,8 +521,8 @@ SRC: Department for Education, Mathematics AS and A level subject content: diffe
 NUM1#maths-u07-14-q1@1: For y = x^{x}, find dy/dx at x = 1. | 1 | 0 |  | dy/dx = x^{x}(ln x + 1) = 1 × (0 + 1) = 1.
 M1#maths-u07-14-q2@1: What is d/dx (2^{x})? | 2^{x} ln 2 | x2^{x−1} | 2^{x} | 2^{x}/ln 2 | ln 2 | ln y = x ln 2, so dy/dx = y ln 2 = 2^{x} ln 2.
 M3#maths-u07-14-q3@2: Why can't the power rule differentiate x^{x}? | The exponent isn't a constant | x^{x} isn't continuous | It has no derivative | The base is negative | It's an exponential with constant base | The power rule needs x^{n} with n constant; here the exponent varies with x.
-NUM2@2: For y = x^{x}, find dy/dx at x = 2, to 2 decimal places. | 6.77 | 0.01 |  | dy/dx = x^{x}(ln x + 1) = 4(ln 2 + 1) ≈ 4 × 1.693 = 6.77.
-SA2@1: Use logarithmic differentiation to find dy/dx for y = x^{2}e^{3x}/(x + 1), x > 0. | Take logs: ln y = 2 ln x + 3x − ln(x + 1). Differentiate implicitly: (1/y) dy/dx = 2/x + 3 − 1/(x + 1). Multiply by y: dy/dx = (x^{2}e^{3x}/(x + 1))(2/x + 3 − 1/(x + 1)). | Takes ln of both sides ; Expands using the log laws ; Differentiates ln y as (1/y) dy/dx ; Differentiates each term correctly ; Multiplies back by y
+NUM2#maths-u07-14-q4@2: For y = x^{x}, find dy/dx at x = 2, to 2 decimal places. | 6.77 | 0.01 |  | dy/dx = x^{x}(ln x + 1) = 4(ln 2 + 1) ≈ 4 × 1.693 = 6.77.
+SA2#maths-u07-14-q5@1: Use logarithmic differentiation to find dy/dx for y = x^{2}e^{3x}/(x + 1), x > 0. | Take logs: ln y = 2 ln x + 3x − ln(x + 1). Differentiate implicitly: (1/y) dy/dx = 2/x + 3 − 1/(x + 1). Multiply by y: dy/dx = (x^{2}e^{3x}/(x + 1))(2/x + 3 − 1/(x + 1)). | Takes ln of both sides ; Expands using the log laws ; Differentiates ln y as (1/y) dy/dx ; Differentiates each term correctly ; Multiplies back by y
 
 ## Parametric Differentiation
 S: When a curve is given parametrically, x = f(t) and y = g(t), its gradient comes from the chain rule: dy/dx = (dy/dt)/(dx/dt). There's no need to find the Cartesian equation first.
@@ -558,13 +558,14 @@ SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cen
 NUM1#maths-u07-15-q1@1: For x = t^{2} + 1, y = 4t, find dy/dx at t = 2. | 1 | 0 |  | dx/dt = 2t = 4 and dy/dt = 4, so dy/dx = 4/4 = 1.
 M1#maths-u07-15-q2@1: For x = 5 cos t, y = 5 sin t, what is dy/dx? | −cot t | tan t | −tan t | cot t | 5 | dy/dt = 5 cos t and dx/dt = −5 sin t, so dy/dx = −cos t/sin t.
 M2#maths-u07-15-q3@2: For x = t^{3} − 3t, y = t^{2}, where are the vertical tangents? | t = ±1 | t = 0 | t = ±3 | t = 3 | None | dx/dt = 3t^{2} − 3 = 0 at t = ±1, where dy/dt = 2t ≠ 0.
-NUM3@2: The curve x = t^{2}, y = t^{3} − 3t has two horizontal tangents. Find the y-coordinate of the one with t > 0. | -2 | 0 |  | dy/dt = 3t^{2} − 3 = 0 at t = ±1, where dx/dt = 2t ≠ 0. At t = 1, y = 1 − 3 = −2.
-SA3@2: For the curve x = t^{2} − 4t, y = t^{3} − 3t, find the points with horizontal and vertical tangents, explaining your method. | dx/dt = 2t − 4 and dy/dt = 3t^{2} − 3. Horizontal tangents need dy/dt = 0 with dx/dt ≠ 0: t = ±1, giving (−3, −2) and (5, 2). Vertical tangents need dx/dt = 0 with dy/dt ≠ 0: t = 2, where dy/dt = 9, giving (−4, 2). | Finds dx/dt and dy/dt ; Uses dy/dt = 0 for horizontal tangents ; Checks dx/dt ≠ 0 there ; Uses dx/dt = 0 for vertical tangents ; Gives (−3, −2), (5, 2) and (−4, 2)
+NUM3#maths-u07-15-q4@2: The curve x = t^{2}, y = t^{3} − 3t has two horizontal tangents. Find the y-coordinate of the one with t > 0. | -2 | 0 |  | dy/dt = 3t^{2} − 3 = 0 at t = ±1, where dx/dt = 2t ≠ 0. At t = 1, y = 1 − 3 = −2.
+SA3#maths-u07-15-q5@2: For the curve x = t^{2} − 4t, y = t^{3} − 3t, find the points with horizontal and vertical tangents, explaining your method. | dx/dt = 2t − 4 and dy/dt = 3t^{2} − 3. Horizontal tangents need dy/dt = 0 with dx/dt ≠ 0: t = ±1, giving (−3, −2) and (5, 2). Vertical tangents need dx/dt = 0 with dy/dt ≠ 0: t = 2, where dy/dt = 9, giving (−4, 2). | Finds dx/dt and dy/dt ; Uses dy/dt = 0 for horizontal tangents ; Checks dx/dt ≠ 0 there ; Uses dx/dt = 0 for vertical tangents ; Gives (−3, −2), (5, 2) and (−4, 2)
 
 ## Rates of Change
 S: Derivatives measure how fast one quantity changes with another. In science, economics and everyday life, "rate of change" problems ask how fast something is growing, shrinking or moving at an instant.
 O: Interpret derivatives as rates of change in context
 O: Solve problems involving velocity, growth and marginal change
+LV: GCSE and A level · Application
 T: Rate of change | The derivative of a quantity with respect to another, usually time
 T: Marginal | In economics, the rate of change with respect to quantity: marginal cost dC/dq
 H: Examples
@@ -580,22 +581,27 @@ X: Water drains so the depth is h = (10 − 0.5t)^{2} cm after t minutes (0 ≤ 
 > dh/dt = 2(10 − 0.5t) × (−0.5) = −(10 − 0.5t)
 > At t = 6: dh/dt = −7
 > The depth is falling at 7 cm per minute
+!: Confusing an average rate with an instantaneous one: for s = 20t − 5t^{2}, the average velocity over 0 ≤ t ≤ 2 is 20/2 = 10 m s^{−1}, but the velocity at t = 2 is 0.
 K: A rate of change is a derivative; check its units and sign, and distinguish average from instantaneous rates.
 !: Giving a rate without units, or with the wrong sign for a decrease.
 Q: What are the units of dV/dt if V is in cm^{3} and t in seconds? | cm^{3} s^{−1}.
 Q: What is the marginal cost if C(q) = 3q^{2} + 50? | C′(q) = 6q.
 SUM: Derivatives model rates of change.
 SUM: Units and signs carry meaning.
+EV: established | A rate of change is a derivative, with units of output per unit input and a sign showing increase or decrease.
 SRC: Department for Education, Mathematics AS and A level subject content: differentiation | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 NUM1#maths-u07-16-q1@1: A ball's height is h = 30t − 4.9t^{2} m. Find its velocity at t = 2 s. | 10.4 | 0.01 | m/s | dh/dt = 30 − 9.8t = 30 − 19.6 = 10.4 m s^{−1}.
 M1#maths-u07-16-q2@1: P = 200e^{0.05t}. What is dP/dt when P = 400? | 20 | 10 | 400 | 0.05 | 200 | dP/dt = 0.05P, so 0.05 × 400 = 20 per unit time.
 M2#maths-u07-16-q3@2: The volume of a cube of side x is V = x^{3}. What is dV/dx when x = 4? | 48 | 64 | 12 | 16 | 3 | dV/dx = 3x^{2} = 48: the volume grows by about 48 units^{3} per unit of side.
+NUM3#maths-u07-16-q4@2: For C(q) = 0.01q^{2} + 4q + 200 (pounds), find the actual cost of the 101st unit, C(101) − C(100). | 6.01 | 0.001 | £ | C(101) − C(100) = 0.01(10201 − 10000) + 4 = 6.01, close to the marginal cost C′(100) = £6, which estimates it.
+SA3#maths-u07-16-q5@1,2: A population is P = 500e^{0.03t} after t years. Explain what dP/dt means, find it at t = 10 and interpret your answer. | dP/dt is the instantaneous growth rate in people per year. dP/dt = 500 × 0.03e^{0.03t} = 15e^{0.03t}; at t = 10 it is 15e^{0.3} ≈ 20.2 people per year. Since P(10) ≈ 675, the population is growing at 3% of its current size, as it does at every moment for exponential growth. | Interprets dP/dt as a rate with units ; Differentiates to 15e^{0.03t} ; Evaluates about 20.2 at t = 10 ; Gives units of people per year ; Notes the rate is 3% of P
 
 ## Related Rates
 S: Related rates problems connect the rates of change of several linked quantities. If a balloon's radius grows at a known rate, how fast is its volume growing? The chain rule links them.
 O: Use the chain rule to connect rates of change
 O: Solve related rates problems step by step
+LV: A level · Problem solving
 T: Related rates | Rates of change of quantities that are connected by an equation
 T: Connected rates | dy/dt = dy/dx × dx/dt
 H: Method
@@ -611,22 +617,27 @@ X: A 5 m ladder leans against a wall. Its foot slides away at 0.3 m s^{−1}. Ho
 > x^{2} + y^{2} = 25, so 2x dx/dt + 2y dy/dt = 0
 > When x = 3, y = 4; so 2(3)(0.3) + 2(4) dy/dt = 0
 > dy/dt = −1.8/8 = −0.225: the top slides down at 0.225 m s^{−1}
+P: For a cone filling with water, the radius and depth are linked by similar triangles. Use that ratio to write the volume in terms of the depth alone before differentiating.
 K: Link the variables with an equation, differentiate with respect to t, then substitute the instant's values.
 !: Substituting numbers before differentiating, which freezes quantities that are changing.
 Q: What links dA/dt and dr/dt for a circle? | dA/dt = 2πr dr/dt.
 Q: When should you substitute the given values? | After differentiating.
 SUM: Related rates use the chain rule in time.
 SUM: Substitute values at the end.
+EV: established | Rates of linked quantities are connected by differentiating their relationship with respect to time, using the chain rule.
 SRC: Department for Education, Mathematics AS and A level subject content: differentiation | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 NUM1#maths-u07-17-q1@1: A circle's radius grows at 2 cm/s. How fast is its area growing when r = 10 cm? Give the answer to 1 decimal place. | 125.7 | 0.1 | cm²/s | dA/dt = 2πr dr/dt = 2π × 10 × 2 = 40π ≈ 125.7 cm^{2} s^{−1}.
 M1#maths-u07-17-q2@1: For a cube of side x, dx/dt = 0.1 cm/s. What is dV/dt when x = 10 cm? | 30 cm³/s | 300 cm³/s | 3 cm³/s | 100 cm³/s | 0.3 cm³/s | By the chain rule dV/dt = 3x^{2} × dx/dt = 300 × 0.1 = 30 cm^{3} s^{−1}.
 M2#maths-u07-17-q3@2: A sphere's volume increases at 36π cm³/s. What is dr/dt when r = 3 cm? | 1 cm/s | 3 cm/s | 1/3 cm/s | 9 cm/s | 4 cm/s | dV/dt = 4πr^{2} dr/dt: 36π = 36π dr/dt, so dr/dt = 1.
+NUM3#maths-u07-17-q4@2: An inverted cone of radius 3 m and height 6 m fills with water at 2 m³/min. How fast is the depth rising when it is 4 m? Give 3 decimal places. | 0.159 | 0.002 | m/min | Similar triangles give r = h/2, so V = πh^{3}/12 and dV/dt = (πh^{2}/4) dh/dt. At h = 4: 2 = 4π dh/dt, so dh/dt = 1/(2π) ≈ 0.159 m/min.
+SA3#maths-u07-17-q5@2: A 10 m ladder leans against a wall and its foot slides away at 0.5 m/s. Explain each step to find how fast the top slides down when the foot is 6 m from the wall. | Let x be the distance of the foot from the wall and y the height of the top: x^{2} + y^{2} = 100. Differentiate with respect to t: 2x dx/dt + 2y dy/dt = 0. Only now substitute: x = 6 gives y = 8, so 2(6)(0.5) + 2(8) dy/dt = 0 and dy/dt = −0.375. The top slides down at 0.375 m/s. | Names variables and writes x^{2} + y^{2} = 100 ; Differentiates with respect to time ; Substitutes only after differentiating ; Finds y = 8 ; Gets 0.375 m/s downwards
 
 ## L'Hôpital's Rule
 S: L'Hôpital's rule evaluates limits of the indeterminate forms 0/0 and ∞/∞ by differentiating the top and bottom separately. It's quick and powerful, but only applies to those forms.
 O: Apply L'Hôpital's rule to 0/0 and ∞/∞ limits
 O: Convert other indeterminate forms to ones the rule handles
+LV: Year 1 · Application
 T: L'Hôpital's rule | If f(x)/g(x) → 0/0 or ∞/∞ as x → a, then lim f/g = lim f′/g′ (if the latter exists)
 T: Indeterminate forms | 0/0, ∞/∞, 0 × ∞, ∞ − ∞, 1^{∞}, 0^{0} and ∞^{0}
 H: Using the rule
@@ -650,16 +661,20 @@ Q: What is lim_{x→0} (e^{3x} − 1)/x? | 3.
 Q: Does L'Hôpital's rule use the quotient rule? | No: differentiate the top and bottom separately.
 SUM: L'Hôpital's rule handles 0/0 and ∞/∞.
 SUM: Other indeterminate forms must be rewritten first.
+EV: established | For the indeterminate forms 0/0 and ∞/∞, the limit of f/g equals the limit of f′/g′ when the latter exists.
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | secondary | 2008 | https://www.publishorperish.com/
 NUM1#maths-u07-18-q1@1: Find lim_{x→0} (sin 4x)/(2x). | 2 | 0 |  | 0/0, so differentiate: 4 cos 4x/2 → 4/2 = 2.
 M1#maths-u07-18-q2@1: What is lim_{x→∞} ln x/x? | 0 | 1 | ∞ | e | −1 | ∞/∞, so (1/x)/1 → 0: logarithms grow more slowly than x.
 M3#maths-u07-18-q3@2: Why can't L'Hôpital's rule be used for lim_{x→1} (x^{2} + 1)/(x + 1)? | It isn't an indeterminate form: the limit is simply 1 | The functions aren't differentiable | The limit is infinite | x → 1 isn't allowed | It gives the same answer anyway | Substitution gives 2/2 = 1; the rule only applies to 0/0 or ∞/∞.
+NUM2#maths-u07-18-q4@1: Find lim_{x→0} (1 − cos 2x)/x^{2}. | 2 | 0 |  | 0/0, so differentiate: 2 sin 2x/(2x), still 0/0; again: 4 cos 2x/2 → 2.
+SA2#maths-u07-18-q5@2: Find lim_{x→0⁺} x^{x}, explaining how you convert the indeterminate form. | x^{x} → 0^{0}, an indeterminate form. Take logs: ln y = x ln x, a 0 × ∞ form. Rewrite as ln x/(1/x), which is −∞/∞, and apply L'Hôpital's rule: (1/x)/(−1/x^{2}) = −x → 0. So ln y → 0 and y → e^{0} = 1. | Recognises the 0^{0} form ; Takes logarithms ; Rewrites x ln x as a quotient ; Applies the rule correctly ; Concludes the limit is 1
 
 ## Stationary Points
 S: Stationary points are where a curve's gradient is zero: maxima, minima and stationary points of inflection. Finding and classifying them is one of the most useful skills in calculus.
 O: Find stationary points by solving f′(x) = 0
 O: Classify stationary points using the second derivative or the gradient either side
+LV: A level · Fluency
 T: Stationary point | A point where dy/dx = 0
 T: Point of inflection | A point where the concavity changes; a stationary one has zero gradient too
 H: Finding them
@@ -673,22 +688,27 @@ X: Find and classify the stationary points of y = x^{3} − 12x.
 > dy/dx = 3x^{2} − 12 = 0 gives x = ±2, so points (2, −16) and (−2, 16)
 > d^{2}y/dx^{2} = 6x: at x = 2 it's 12 > 0, a minimum; at x = −2 it's −12 < 0, a maximum
 > Minimum (2, −16), maximum (−2, 16)
+P: In context, check that a stationary point makes sense: the greatest height of a projectile is where its vertical velocity is zero, and a negative length or time is rejected.
 K: Solve f′ = 0; classify with f″ (positive: minimum, negative: maximum), or by the gradient's sign either side if f″ = 0.
 !: Concluding that f″ = 0 means a point of inflection: x^{4} has a minimum where f″ = 0.
 Q: What does f″(a) < 0 at a stationary point mean? | A local maximum.
 Q: What is a stationary point of inflection? | A stationary point where the gradient has the same sign on both sides.
 SUM: Stationary points have zero gradient.
 SUM: The second derivative usually classifies them.
+EV: established | Stationary points occur where f′(x) = 0 and are classified by the sign of f″ or of f′ either side.
 SRC: Department for Education, Mathematics AS and A level subject content: differentiation | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 NUM1#maths-u07-19-q1@1: Find the x-coordinate of the stationary point of y = x^{2} − 10x + 3. | 5 | 0 |  | dy/dx = 2x − 10 = 0 gives x = 5 (a minimum, since d^{2}y/dx^{2} = 2 > 0).
 M1#maths-u07-19-q2@1: At a stationary point, f″(x) = 4. What kind of point is it? | A minimum | A maximum | An inflection | Not stationary | It can't be decided | A positive second derivative means the curve is concave up, so it's a minimum.
 M2#maths-u07-19-q3@2: What kind of stationary point does y = x^{3} have at the origin? | A stationary point of inflection | A maximum | A minimum | It has none | A corner | The gradient 3x^{2} is positive on both sides of 0, so it's an inflection, not a turning point.
+NUM3#maths-u07-19-q4@1: The curve y = x^{3} + kx^{2} has a stationary point at x = 4. Find k. | -6 | 0 |  | dy/dx = 3x^{2} + 2kx = 0 at x = 4: 48 + 8k = 0, so k = −6.
+SA3#maths-u07-19-q5@1,2: Find and classify the stationary points of y = x^{4} − 2x^{2}, and explain what you would do if the second derivative test gave zero. | dy/dx = 4x^{3} − 4x = 4x(x − 1)(x + 1) = 0 at x = 0, ±1. d^{2}y/dx^{2} = 12x^{2} − 4: at x = 0 it is −4 < 0, a maximum (0, 0); at x = ±1 it is 8 > 0, minima at (1, −1) and (−1, −1). If f″ were zero, check the sign of f′ just either side of the point instead. | Differentiates and factorises ; Finds x = 0, 1 and −1 ; Finds the y-coordinates ; Classifies with f″ correctly ; Describes the first derivative test as the fallback
 
 ## Critical Points
 S: Critical points are where a function's derivative is zero or doesn't exist. They're the only candidates for local maxima and minima, so finding them is the first step in any optimisation problem.
 O: Identify critical points where f′ = 0 or f′ is undefined
 O: Use critical points to locate extrema
+LV: Year 1 · Application
 T: Critical point | A point in the domain where f′(x) = 0 or f′(x) doesn't exist
 T: Fermat's theorem | If f has a local extremum at an interior point c and f′(c) exists, then f′(c) = 0
 H: Finding critical points
@@ -703,21 +723,27 @@ X: Find the critical points of f(x) = x^{2/3}(x − 5).
 > f(x) = x^{5/3} − 5x^{2/3}, so f′(x) = (5/3)x^{2/3} − (10/3)x^{−1/3} = (5/3)x^{−1/3}(x − 2)
 > f′ = 0 at x = 2
 > f′ is undefined at x = 0 (in the domain), so the critical points are x = 0 and x = 2
+!: Counting a point outside the domain: f′ for f(x) = 1/x is undefined at 0, but 0 isn't in the domain, so it isn't a critical point.
 K: Critical points are where f′ = 0 or f′ is undefined; every interior extremum is at one, but not every one is an extremum.
 !: Ignoring points where the derivative doesn't exist, such as corners and cusps.
 Q: Is x = 0 a critical point of f(x) = |x|? | Yes: the derivative doesn't exist there (and it's a minimum).
 Q: Does every critical point give a maximum or minimum? | No: x^{3} at 0 is a counterexample.
 SUM: Critical points are candidates for extrema.
 SUM: Include points where f′ doesn't exist.
+EV: established | Every interior local extremum of a function occurs at a critical point, where f′ is zero or undefined, but not every critical point is an extremum.
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | secondary | 2008 | https://www.publishorperish.com/
 M1#maths-u07-20-q1@1: Which is a critical point of f(x) = x^{2} − 4x? | x = 2 | x = 0 | x = 4 | x = −2 | x = 1 | Critical points are where f′(x) = 0: here 2x − 4 = 0, so x = 2.
 M2#maths-u07-20-q2@2: Where are the critical points of f(x) = √(x)(x − 3) for x ≥ 0? | x = 0 and x = 1 | x = 3 only | x = 1 only | x = 0 and x = 3 | x = 3/2 | f′(x) = (3x − 3)/(2√x): zero at x = 1, undefined at x = 0 (an endpoint where f is defined).
+NUM2#maths-u07-20-q3@1: Find the positive critical point of f(x) = x^{4} − 8x^{2}. | 2 | 0 |  | f′(x) = 4x^{3} − 16x = 4x(x^{2} − 4), which is zero at x = 0 and x = ±2, so the positive one is 2.
+NUM3#maths-u07-20-q4@2: f(x) = x^{2/3}(x − 5) has a local minimum at one of its critical points. Find the minimum value to 2 decimal places. | -4.76 | 0.01 |  | f′ = (5/3)x^{−1/3}(x − 2) changes from − to + at x = 2, so the minimum is f(2) = 2^{2/3} × (−3) ≈ −4.76. (x = 0 is a local maximum, at a cusp.)
+SA3#maths-u07-20-q5@1,2: Explain why x = 0 is a critical point of f(x) = x^{2/3}, and decide whether it is an extremum. | f′(x) = (2/3)x^{−1/3}, which is undefined at x = 0, although f(0) = 0 is defined; so x = 0 is a critical point where the derivative does not exist (a cusp). Since x^{2/3} = (∛x)^{2} ≥ 0 = f(0) for every x, it is a minimum (in fact the global minimum). f′ is negative for x < 0 and positive for x > 0, confirming this. | Finds f′(x) = (2/3)x^{−1/3} ; Notes f′ is undefined at 0 while f is defined ; Calls it a critical point ; Shows it is a minimum ; Uses the sign of f′ or f ≥ 0
 
 ## Local Maxima and Minima
 S: A local maximum is higher than all nearby points; a local minimum is lower. Local extrema are "peaks and valleys" of a graph, not necessarily the highest or lowest overall.
 O: Distinguish local and global extrema
 O: Classify local extrema with the first and second derivative tests
+LV: A level · Application
 T: Local maximum | f(c) ≥ f(x) for all x near c
 T: First derivative test | If f′ changes from + to − at c, f has a local maximum; from − to +, a local minimum
 H: The two tests
@@ -731,21 +757,27 @@ X: Classify the stationary points of f(x) = x^{4} − 4x^{3}.
 > f′(x) = 4x^{3} − 12x^{2} = 4x^{2}(x − 3) = 0 at x = 0 and x = 3
 > Near x = 0: f′ is negative on both sides, so no extremum (a stationary inflection)
 > Near x = 3: f′ goes from − to +, so a local minimum at (3, −27)
+P: The second derivative test is quicker when f″ is easy to find; the first derivative test is safer, because it also classifies points where f″ = 0 or f′ doesn't exist.
 K: + to − is a maximum, − to + a minimum; local extrema needn't be global.
 !: Assuming a local maximum is the largest value of the function.
 Q: What does the first derivative test check? | Whether f′ changes sign at the point, and how.
 Q: Can a local minimum be higher than a local maximum? | Yes.
 SUM: Local extrema are peaks and valleys.
 SUM: The first derivative test always works.
+EV: established | A sign change of f′ from + to − marks a local maximum and from − to + a local minimum; local extrema need not be global.
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 SRC: Department for Education, Mathematics AS and A level subject content: differentiation | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 M1#maths-u07-21-q1@1: f′ changes from positive to negative at x = 2. What is at x = 2? | A local maximum | A local minimum | A point of inflection | An asymptote | Nothing | The function rises then falls, so x = 2 is a peak.
 M2#maths-u07-21-q2@2: What is the local minimum value of f(x) = x^{3} − 3x? | −2 | 2 | 0 | −1 | 1 | f′(x) = 3x^{2} − 3 = 0 at x = ±1; f″(1) = 6 > 0, and f(1) = −2.
+NUM2#maths-u07-21-q3@2: Find the local maximum value of f(x) = 2x^{3} − 3x^{2} − 12x. | 7 | 0 |  | f′(x) = 6(x − 2)(x + 1); f″(x) = 12x − 6 is −18 at x = −1, a maximum: f(−1) = −2 − 3 + 12 = 7.
+M3#maths-u07-21-q4@1: f(x) = x^{3} − 3x has a local maximum of 2 at x = −1. Which statement is true? | f(3) = 18, so on [−2, 3] the local maximum isn't the global one | 2 is the greatest value f takes for any real x | f has a global maximum on the whole real line | The local minimum −2 is the least value f takes for all x | A local maximum is always above every local minimum | Local means only "higher than nearby points"; the cubic exceeds 2 for x > 2 and has no global extrema on the real line.
+SA3#maths-u07-21-q5@2: Find and classify the stationary points of f(x) = x^{5} − 5x^{4}, explaining why the second derivative test is not enough. | f′(x) = 5x^{4} − 20x^{3} = 5x^{3}(x − 4) = 0 at x = 0 and x = 4. f″(x) = 20x^{3} − 60x^{2}: f″(4) = 320 > 0, a local minimum at (4, −256). f″(0) = 0, so the test fails. The first derivative test: f′ > 0 just left of 0 and f′ < 0 just right, so (0, 0) is a local maximum. | Factorises f′ as 5x^{3}(x − 4) ; Finds x = 0 and x = 4 ; Classifies x = 4 as a minimum at (4, −256) ; Notes f″(0) = 0 is inconclusive ; Uses sign of f′ to show (0, 0) is a maximum
 
 ## Global Optimisation
 S: Global optimisation finds the absolute largest or smallest value of a function, often under constraints. It answers practical questions: the cheapest design, the maximum profit, the shortest route.
 O: Find absolute extrema on closed intervals
 O: Solve optimisation problems from contexts
+LV: A level · Problem solving
 T: Global (absolute) maximum | The largest value of f over its whole domain
 T: Extreme value theorem | A continuous function on a closed interval [a, b] attains a maximum and a minimum
 H: Closed intervals
@@ -759,22 +791,27 @@ X: A farmer has 200 m of fencing to make a rectangular pen against a wall (three
 > Let the sides perpendicular to the wall be x: the third side is 200 − 2x, so A = x(200 − 2x) = 200x − 2x^{2}
 > A′ = 200 − 4x = 0 at x = 50; A″ = −4 < 0, a maximum
 > Largest area = 50 × 100 = 5,000 m^{2}
+P: State the domain the context allows before optimising: in the box problem 0 < x < 15, so the critical point x = 15 (zero volume) is rejected and only x = 5 remains.
 K: Check critical points and endpoints; in modelling, build a one-variable function from the constraint first.
 !: Forgetting the endpoints of a closed interval, where the global extremum may lie.
 Q: Where can the global maximum of a continuous function on [a, b] occur? | At a critical point or an endpoint.
 Q: What does the extreme value theorem guarantee? | A continuous function on a closed interval has a maximum and a minimum.
 SUM: Global extrema compare critical points and endpoints.
 SUM: Modelling needs a one-variable function.
+EV: established | A continuous function on a closed interval attains its maximum and minimum, each at a critical point or an endpoint.
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 SRC: Department for Education, Mathematics AS and A level subject content: differentiation | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 NUM1#maths-u07-22-q1@1: Find the maximum value of f(x) = 12x − x^{3} on 0 ≤ x ≤ 3. | 16 | 0 |  | f′ = 12 − 3x^{2} = 0 at x = 2, f(2) = 16; f(0) = 0 and f(3) = 9, so the maximum is 16.
 M1#maths-u07-22-q2@1: Two positive numbers add to 20. What is the largest possible product? | 100 | 96 | 400 | 200 | 99 | P = x(20 − x), P′ = 20 − 2x = 0 at x = 10, giving 10 × 10 = 100.
 M3#maths-u07-22-q3@2: What is the minimum of f(x) = x^{2} − 6x on 4 ≤ x ≤ 7? | −8 | −9 | 0 | 7 | −5 | The critical point x = 3 is outside the interval; f(4) = −8 and f(7) = 7, so the minimum is −8 at the endpoint.
+NUM2#maths-u07-22-q4@2: An open box is made from a 24 cm square sheet by cutting x cm squares from each corner. Find the maximum volume. | 1024 | 0 | cm³ | V = x(24 − 2x)^{2}, V′ = (24 − 2x)(24 − 6x) = 0 at x = 4 (x = 12 gives V = 0), so V = 4 × 16^{2} = 1,024 cm^{3}.
+SA3#maths-u07-22-q5@2: A closed cylinder must hold 500 cm³. Find the radius that minimises its surface area, justifying that it is a minimum. | Volume πr^{2}h = 500 gives h = 500/(πr^{2}). Surface area A = 2πr^{2} + 2πrh = 2πr^{2} + 1000/r. A′ = 4πr − 1000/r^{2} = 0 gives r^{3} = 250/π, so r ≈ 4.30 cm (and h ≈ 8.60 cm = 2r). A″ = 4π + 2000/r^{3} > 0, so this is a minimum, and it is the only critical point for r > 0. | Uses the volume constraint to eliminate h ; Writes A = 2πr^{2} + 1000/r ; Differentiates and solves A′ = 0 ; Gets r ≈ 4.30 cm ; Justifies the minimum with A″ or the sign of A′
 
 ## Concavity and Convexity
 S: Concavity describes how a graph bends: concave up (convex), like a cup, or concave down (concave), like a cap. The second derivative measures it, and convexity is central to optimisation and economics.
 O: Determine intervals of concavity using f″
 O: Explain the importance of convex functions in optimisation
+LV: A level · Application
 T: Convex (concave up) | A function whose graph lies below its chords; f″ ≥ 0 for twice-differentiable functions
 T: Concave (concave down) | A function whose graph lies above its chords; f″ ≤ 0
 H: Using the second derivative
@@ -791,21 +828,27 @@ X: Find where f(x) = x^{4} − 6x^{2} is convex.
 > f′(x) = 4x^{3} − 12x, f″(x) = 12x^{2} − 12 = 12(x − 1)(x + 1)
 > f″ > 0 when x < −1 or x > 1
 > f is convex for x < −1 and x > 1, and concave for −1 < x < 1
+P: Geometrically, f is convex on an interval when every chord lies on or above the graph. For twice-differentiable functions this is equivalent to f″ ≥ 0, the test used in practice.
 K: Convex where f″ > 0, concave where f″ < 0; convex functions have only global minima.
 !: Confusing "concave" with "decreasing": a concave function can be increasing.
 Q: Is e^{x} convex or concave? | Convex everywhere.
 Q: What does convexity guarantee about minima? | Any local minimum is a global minimum.
 SUM: The second derivative measures bending.
 SUM: Convexity makes optimisation reliable.
+EV: established | A twice-differentiable function is convex where f″ ≥ 0 and concave where f″ ≤ 0, and a local minimum of a convex function is global.
 SRC: Department for Education, Mathematics AS and A level subject content: differentiation | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 SRC: Boyd S, Vandenberghe L, Convex Optimization (Cambridge University Press 2004) | secondary | 2004 | https://web.stanford.edu/~boyd/cvxbook/
 M1#maths-u07-23-q1@1: On which interval is f(x) = x^{3} − 3x^{2} concave? | x < 1 | x > 1 | x < 0 | x > 3 | All x | The curve is concave where f″(x) < 0: f″(x) = 6x − 6 < 0 when x < 1.
 M2#maths-u07-23-q2@2: Which function is convex for all real x? | x^{2} + e^{x} | ln x | −x^{2} | sin x | x^{3} | Both x^{2} and e^{x} have positive second derivatives, so their sum does too.
+NUM2#maths-u07-23-q3@1: f(x) = x^{3} − 9x^{2} + 4 is convex exactly for x > a. Find a. | 3 | 0 |  | f″(x) = 6x − 18, which is positive for x > 3, so a = 3.
+M3#maths-u07-23-q4@2: For the convex function f(x) = x^{2}, which comparison holds for the values x = 1 and x = 5? | f(3) < (f(1) + f(5))/2, since 9 < 13 | f(3) = (f(1) + f(5))/2, since both are 13 | f(3) > (f(1) + f(5))/2, since 25 > 13 | f(3) < f(1), since the graph bends upwards | Jensen's inequality for convex f: the value at the average, f(3) = 9, is at most the average of the values, (1 + 25)/2 = 13.
+SA3#maths-u07-23-q5@1,2: Explain why a local minimum of a convex function must be a global minimum, and illustrate with f(x) = e^{x} + e^{−x}. | Suppose x₀ is a local minimum but some x₁ has f(x₁) < f(x₀). The chord from x₀ to x₁ lies on or above the graph, and it slopes down from x₀, so points of the graph just beside x₀ are below f(x₀): a contradiction. For f(x) = e^{x} + e^{−x}, f″(x) = e^{x} + e^{−x} > 0, so f is convex; f′(x) = e^{x} − e^{−x} = 0 only at x = 0, so f(0) = 2 is the global minimum. | Uses the chord-above-graph property ; Argues by contradiction from a lower point ; Shows f″ > 0 for the example ; Solves f′ = 0 to get x = 0 ; States the global minimum value 2
 
 ## Points of Inflection
 S: A point of inflection is where a curve changes concavity, from bending one way to bending the other. At such a point the second derivative changes sign, and the tangent crosses the curve.
 O: Find points of inflection using the second derivative
 O: Distinguish stationary and non-stationary inflections
+LV: A level · Application
 T: Point of inflection | A point where the graph changes from convex to concave or vice versa
 T: Non-stationary inflection | An inflection where the gradient isn't zero
 H: Finding them
@@ -827,16 +870,20 @@ Q: What happens to f″ at a point of inflection? | It changes sign.
 Q: Does y = x^{4} have an inflection at x = 0? | No: f″ = 12x^{2} doesn't change sign.
 SUM: Inflections change concavity.
 SUM: Check the sign change of f″.
+EV: established | A point of inflection is where f″ changes sign; f″ = 0 alone is not sufficient.
 SRC: Department for Education, Mathematics AS and A level subject content: differentiation | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 NUM1#maths-u07-24-q1@1: Find the x-coordinate of the point of inflection of y = x^{3} + 3x^{2} − 9x. | -1 | 0 |  | y″ = 6x + 6 = 0 at x = −1, where y″ changes sign.
 M1#maths-u07-24-q2@1: Which curve has a point of inflection at the origin? | y = x^{3} | y = x^{2} | y = x^{4} | y = |x| | y = e^{x} | y″ = 6x changes sign at 0; for x^{4}, y″ = 12x^{2} doesn't.
 M2#maths-u07-24-q3@2: For y = sin x on 0 < x < 2π, where is the inflection? | x = π | x = π/2 | x = 3π/2 | x = π/4 | There isn't one | y″ = −sin x is zero at x = π and changes sign there, so it's an inflection.
+NUM3#maths-u07-24-q4@1,2: y = x^{4} − 4x^{3} has two points where y″ = 0. Give the x-coordinate of the non-stationary inflection. | 2 | 0 |  | y″ = 12x^{2} − 24x = 12x(x − 2) changes sign at 0 and 2. At x = 0, y′ = 0 (stationary); at x = 2, y′ = 32 − 48 = −16 ≠ 0, so x = 2 is non-stationary.
+SA2#maths-u07-24-q5@1,2: Show that y = x^{3} − 3x^{2} + 3x has a stationary point of inflection, and find it. | y′ = 3x^{2} − 6x + 3 = 3(x − 1)^{2}, which is zero only at x = 1, so there is one stationary point, at (1, 1). y″ = 6(x − 1) changes from negative to positive at x = 1, so the concavity changes. The point is both stationary and an inflection: y′ ≥ 0 on both sides, so it isn't a turning point. | Differentiates to 3(x − 1)^{2} ; Finds the stationary point (1, 1) ; Shows y″ changes sign ; Notes the gradient keeps the same sign either side ; Concludes it is a stationary inflection
 
 ## Curve Sketching
 S: Curve sketching uses calculus and algebra together to draw an accurate picture of a function: its intercepts, asymptotes, stationary points, inflections and end behaviour. A good sketch shows the key features, not exact plotting.
 O: Combine intercepts, asymptotes and derivatives to sketch curves
 O: Label key features accurately
+LV: A level · Problem solving
 T: Asymptote | A line a curve approaches but doesn't reach (vertical, horizontal or oblique)
 T: End behaviour | What the function does as x → ±∞
 H: A checklist
@@ -861,16 +908,20 @@ Q: Where are the vertical asymptotes of y = 1/(x^{2} − 9)? | x = 3 and x = −
 Q: What is the horizontal asymptote of y = (2x + 1)/(x − 5)? | y = 2.
 SUM: Sketches show key features.
 SUM: Calculus finds turning points; algebra finds intercepts and asymptotes.
+EV: established | Intercepts, asymptotes, stationary points and end behaviour together determine the shape of a graph.
 SRC: Department for Education, Mathematics AS and A level subject content: algebra and functions | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-25-q1@1: What is the vertical asymptote of y = 3/(x + 4)? | x = −4 | x = 4 | y = 0 | x = 3 | y = 3 | The denominator is zero at x = −4, where y grows without bound.
 M2#maths-u07-25-q2@2: What is the horizontal asymptote of y = (6x^{2} + 1)/(3x^{2} − 2)? | y = 2 | y = 6 | y = 0 | y = 1/2 | None | As x → ∞, the leading terms dominate: 6x^{2}/3x^{2} = 2.
 M2#maths-u07-25-q3@2: Where are the asymptotes of y = 2/(x − 1) + 1? | x = 1 and y = 1 | x = −1 and y = 1 | x = 2 and y = 1 | x = 1 and y = 2 | There are none | The denominator is zero at x = 1, and the curve approaches y = 1 as x grows.
+NUM3#maths-u07-25-q4@1: Dividing shows that y = (x^{2} − 4)/(x − 1) has an oblique asymptote y = x + k. Find k. | 1 | 0 |  | x^{2} − 4 = (x − 1)(x + 1) − 3, so y = x + 1 − 3/(x − 1), and the last term tends to 0: the asymptote is y = x + 1.
+SA3#maths-u07-25-q5@1,2: Describe how to sketch y = x^{2}/(x − 1), stating its asymptotes, intercepts and stationary points. | Vertical asymptote x = 1 (denominator zero). Division gives y = x + 1 + 1/(x − 1), so the oblique asymptote is y = x + 1. The only intercept is the origin. y′ = x(x − 2)/(x − 1)^{2}, zero at x = 0 and x = 2: f′ goes + to − at 0, a local maximum (0, 0), and − to + at 2, a local minimum (2, 4). The left branch lies below both asymptotes and the right branch above. | Vertical asymptote x = 1 ; Oblique asymptote y = x + 1 by division ; Intercept at the origin ; Maximum (0, 0) and minimum (2, 4) ; Describes the two branches correctly
 
 ## Integral Calculus
 S: Integral calculus is the mathematics of accumulation: adding up infinitely many small pieces to find areas, volumes, distances and totals. It's also the reverse of differentiation.
 O: Describe integration as anti-differentiation and as accumulated area
 O: Distinguish definite and indefinite integrals
+LV: A level · Fluency
 T: Integral | Either an antiderivative (indefinite integral) or an accumulated total over an interval (definite integral)
 T: Integrand | The function being integrated, f(x) in ∫ f(x) dx
 H: Two views of integration
@@ -895,17 +946,20 @@ Q: What is the integrand in ∫ (x^{2} + 1) dx? | x^{2} + 1.
 Q: How do you find distance from a velocity function? | Integrate the velocity over the time interval.
 SUM: Integration accumulates.
 SUM: It reverses differentiation.
+EV: established | Integration both reverses differentiation and accumulates quantities, and the definite integral of a function is a signed area.
 SRC: Department for Education, Mathematics AS and A level subject content: integration | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 NUM1#maths-u07-26-q1@1: A tap's flow rate is r(t) = 2t litres per minute. How many litres flow in the first 5 minutes? | 25 | 0 | litres | ∫_{0}^{5} 2t dt = [t^{2}]_{0}^{5} = 25 litres.
 M1#maths-u07-26-q2@1: Which quantity is found by integrating acceleration with respect to time? | Velocity | Displacement | Force | Jerk | Mass | Acceleration is the derivative of velocity, so integrating it gives velocity.
 M2#maths-u07-26-q3@2: What does ∫_{a}^{b} f(x) dx represent if f is positive? | The area between the curve and the x-axis from a to b | The gradient at b | The average of f(a) and f(b) | The length of the curve | f(b) − f(a) | For a positive function, the definite integral is the area under the curve.
 M2#maths-u07-26-q4@2: Which rule usually gives the smallest error for a smooth function with the same number of strips? | The midpoint rule (with the trapezium close behind) | The left rectangle rule, using each strip's start | The right rectangle rule, using each strip's end | All four rules give exactly the same error | Whichever rule uses the fewest strips | Midpoint and trapezium rules have O(h^{2}) error, while left and right rules are O(h).
+SA3#maths-u07-26-q5@1,2: A particle moves with velocity v = 6 − 2t m/s. Explain the difference between ∫ v dt and ∫_{0}^{5} v dt, and find the total distance travelled from t = 0 to t = 5. | ∫ v dt = 6t − t^{2} + c is an indefinite integral: a family of displacement functions. ∫_{0}^{5} v dt = 30 − 25 = 5 m is a definite integral: the net displacement. Since v < 0 after t = 3, the particle turns back, so distance needs the two parts separately: ∫_{0}^{3} v dt = 9 and ∫_{3}^{5} v dt = −4, giving 9 + 4 = 13 m. | Gives the indefinite integral with + c ; Calls it a family of functions ; Evaluates the definite integral as 5 m ; Notes v changes sign at t = 3 ; Gets total distance 13 m
 
 ## Indefinite Integrals
 S: An indefinite integral is the family of all antiderivatives of a function. Because constants differentiate to zero, every indefinite integral includes "+ c".
 O: Integrate powers of x and standard functions
 O: Use a boundary condition to find the constant of integration
+LV: A level · Fluency
 T: Antiderivative | A function F with F′(x) = f(x)
 T: Constant of integration | The arbitrary constant c in an indefinite integral
 H: Standard integrals
@@ -931,11 +985,14 @@ Q: What is ∫ 5x^{4} dx? | x^{5} + c.
 Q: What is ∫ e^{2x} dx? | ½e^{2x} + c.
 SUM: Indefinite integrals are families of antiderivatives.
 SUM: Boundary conditions fix the constant.
+EV: established | Indefinite integrals are families of antiderivatives differing by a constant, fixed by a boundary condition.
 SRC: Department for Education, Mathematics AS and A level subject content: integration | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-27-q1@1: What is ∫ (4x − 1) dx? | 2x^{2} − x + c | 4 + c | 2x^{2} − 1 + c | 4x^{2} − x + c | x^{2} − x + c | 4x integrates to 2x^{2}, −1 integrates to −x, plus the constant c.
 M2#maths-u07-27-q2@2: dy/dx = 2x and y = 7 when x = 2. What is y? | x^{2} + 3 | x^{2} + 7 | x^{2} − 3 | 2x^{2} − 1 | x^{2} | y = x^{2} + c, and 7 = 4 + c gives c = 3.
 M3#maths-u07-27-q3@2: What is ∫ 1/(3x) dx? | (1/3) ln|x| + c | ln|3x|/3x + c | 3 ln|x| + c | x^{0}/0 + c | ln|x|/x + c | 1/(3x) = (1/3) × 1/x, and ∫ 1/x dx = ln|x|.
+NUM2#maths-u07-27-q4@2: dy/dx = 6x^{2} − 4 and the curve passes through (1, 5). Find y when x = 2. | 15 | 0 |  | y = 2x^{3} − 4x + c; 5 = 2 − 4 + c gives c = 7, so y(2) = 16 − 8 + 7 = 15.
+SA2#maths-u07-27-q5@1: Find ∫ (2√x − 3/x^{2} + e^{2x}) dx, showing how you prepare each term. | Write in index form: 2x^{1/2} − 3x^{−2} + e^{2x}. Integrate term by term: 2x^{3/2}/(3/2) = (4/3)x^{3/2}; −3x^{−1}/(−1) = 3/x; e^{2x}/2. So the integral is (4/3)x^{3/2} + 3/x + ½e^{2x} + c. Check by differentiating. | Rewrites roots and reciprocals as powers ; Integrates 2x^{1/2} to (4/3)x^{3/2} ; Integrates −3x^{−2} to 3/x ; Integrates e^{2x} to ½e^{2x} ; Includes + c
 
 ## Riemann Sums
 S: A Riemann sum approximates the area under a curve by adding up the areas of thin rectangles. As the rectangles get thinner, the sum approaches the definite integral, which is how integration is defined.

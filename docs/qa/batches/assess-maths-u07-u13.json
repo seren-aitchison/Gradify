@@ -164,9 +164,86 @@
    "course": "maths",
    "action": "enhanced",
    "findings": []
+  },
+  {
+   "lesson": "u07-16",
+   "changes": [
+    "LV GCSE and A level · Application; EV",
+    "added common mistake on average versus instantaneous rate",
+    "added NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-17",
+   "changes": [
+    "LV A level · Problem solving; EV",
+    "added paragraph on cones and similar triangles",
+    "added NUM3 (cone filling) and SA3 (ladder) questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-18",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added NUM2 and SA2 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-19",
+   "changes": [
+    "LV A level · Fluency; EV",
+    "added paragraph on checking stationary points in context",
+    "added NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-20",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added common mistake on points outside the domain",
+    "added NUM2, NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-21",
+   "changes": [
+    "LV A level · Application; EV",
+    "added paragraph comparing the two tests",
+    "added NUM2, M3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-22",
+   "changes": [
+    "LV A level · Problem solving; EV",
+    "added paragraph on the context's domain",
+    "added NUM2 (box volume) and SA3 (cylinder) questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
   }
  ],
  "notes": [
-  "NUM answers must use an ASCII hyphen-minus for negatives: Number() rejects the Unicode minus sign, and the question then silently fails to parse."
+  "NUM answers must use an ASCII hyphen-minus for negatives: Number() rejects the Unicode minus sign, and the question then silently fails to parse.",
+  "new-course check briefly failed with 'Invalid or unexpected token' once, apparently while another worker was writing a maths notes file it also loads; a rerun was clean."
  ]
 }

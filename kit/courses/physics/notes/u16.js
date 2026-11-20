@@ -816,27 +816,48 @@ SA3@2,3: Explain how a transformer steps down voltage and name two ways its ener
 
 ## Rectification
 S: Rectification converts AC into DC using diodes, which conduct one way only. With smoothing capacitors and regulators, it turns mains power into the steady low-voltage DC that electronics need.
+O: Describe half-wave and full-wave (bridge) rectifier circuits
+O: Explain smoothing and estimate ripple voltage
+O: Account for diode voltage drops and the role of regulators
+PRE: Alternating current
+LV: A level · Application
 H: Circuits
 - **Half-wave**: one diode; passes one half of each cycle; ripple at f.
 - **Full-wave (bridge)**: four diodes; both halves pass with the same polarity; ripple at 2f.
 - **Centre-tapped**: two diodes and a centre-tapped transformer.
 H: Smoothing
 E: ΔV ≈ I/(fC) (half-wave), I/(2fC) (full-wave) :: ripple voltage
-- A large capacitor charges at peaks and supplies current between them.
+- A large capacitor charges at the peaks and supplies the load between them.
 - Larger C or higher frequency (switch-mode supplies at tens of kHz) means less ripple and smaller components.
 H: Regulation
 - Zener diodes or linear regulator chips give a stable output despite ripple and load changes.
 - Switch-mode power supplies are much more efficient (phone chargers ~90%).
 X: Full-wave rectified 50 Hz supply delivers 0.5 A; smoothing capacitor 2200 μF. Ripple?
-> ΔV = 0.5/(2 × 50 × 2.2 × 10^{-3}) = 2.3 V
+> ΔV = I/(2fC) = 0.5/(2 × 50 × 2.2 × 10^{-3}) = 2.3 V
+K: The smoothing capacitor discharges through the load between peaks; ripple is small when the time constant RC is much longer than the time between peaks.
 !: Each silicon diode in the conducting path drops ~0.7 V; a bridge loses ~1.4 V from the peak.
+T: Rectifier | A circuit of diodes that converts alternating current into current flowing in one direction
+T: Ripple | The residual variation in a rectified and smoothed DC output
+SUM: Half-wave passes one half-cycle; a bridge passes both, giving ripple at 2f.
+SUM: Ripple ≈ I/(2fC) for full-wave; regulators remove what remains.
+EV: established | Diode rectification and capacitor smoothing are standard and well understood.
+SRC: OpenStax, University Physics Volume 3, section 9.7 "Semiconductor Devices" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/9-7-semiconductor-devices
+SRC: OpenStax, University Physics Volume 2, section 15.1 "AC Sources" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/15-1-ac-sources
 Q: Why does full-wave rectification give less ripple than half-wave? | The capacitor is recharged twice per cycle (ripple at 2f).
 Q: What does a smoothing capacitor do? | Stores charge at the peaks and supplies current between them, reducing ripple.
-M1: A bridge rectifier uses: | Four diodes | One diode | Two transistors | A capacitor only | Full-wave.
-M2: Increasing the smoothing capacitance: | Reduces ripple | Increases ripple | Has no effect | Lowers DC level to zero | ΔV ∝ 1/C.
+M1@1: A bridge rectifier uses: | Four diodes | One diode | Two transistors | A capacitor only | Four diodes steer both half-cycles through the load in the same direction, giving full-wave rectification.
+M2@2: Increasing the smoothing capacitance: | Reduces ripple | Increases ripple | Has no effect | Lowers the DC level to zero | ΔV ≈ I/(2fC): a larger capacitor loses a smaller fraction of its voltage while supplying the load between peaks.
+M3@2,3: A 12 V rms transformer feeds a silicon bridge rectifier with a large smoothing capacitor and a light load. The DC output is about: | 15.6 V | 12 V | 17 V | 10.6 V | The peak is 12√2 = 17.0 V, and two diodes conduct at a time, dropping about 1.4 V, leaving about 15.6 V.
+NUM2@2: A half-wave rectifier on a 50 Hz supply feeds 0.20 A with a 1000 μF smoothing capacitor. Estimate the ripple, in V. | 4.0 | 2% | V | ΔV ≈ I/(fC) = 0.20/(50 × 1.0 × 10^{-3}) = 4.0 V.
+SA2@1,2: Explain how a bridge rectifier and smoothing capacitor turn AC into nearly steady DC. | In each half-cycle, two of the four diodes are forward-biased and conduct, steering current through the load in the same direction, so the output is a series of positive humps at twice the supply frequency. The capacitor across the load charges to near the peak voltage, then, as the input falls, the diodes switch off and the capacitor supplies the load, its voltage falling only slightly before the next peak recharges it. | Two diodes conduct each half-cycle, same direction through load ; Capacitor charges at peaks ; Discharges slowly through load between peaks: small ripple
 
 ## Filters and frequency response
 S: Filters pass some frequencies and block others. Built from resistors, capacitors, inductors and amplifiers, they clean up signals, separate audio bands, select radio stations and remove noise.
+O: Classify low-pass, high-pass, band-pass and band-stop filters
+O: Express gain in decibels and use roll-off rates
+O: Compare passive, active and digital filters and classic designs
+PRE: RC circuits
+LV: Year 2 · Application
 H: Types
 - **Low-pass**: passes below f_{c} (anti-aliasing, smoothing).
 - **High-pass**: passes above f_{c} (removing DC offsets, rumble).
@@ -845,42 +866,74 @@ H: Types
 H: Characteristics
 E: H(ω) = V_{out}/V_{in}; gain in dB = 20 log_{10}|H|
 - Order: each reactive element adds −20 dB per decade of roll-off.
-- Passive filters (R, L, C) can't amplify; active filters (with op-amps) can, and avoid inductors.
-- Classic designs: Butterworth (flattest passband), Chebyshev (steeper, ripple), Bessel (best phase/pulse response).
+- Passive filters (R, L, C) can't amplify; active filters (with op-amps) can, and avoid bulky inductors.
+- Classic designs: Butterworth (flattest passband), Chebyshev (steeper, with passband ripple), Bessel (best phase and pulse response).
 H: Digital filters
-P: Most filtering now happens in software on sampled signals: FIR and IIR filters in phones, audio processing and communications. Analogue filters remain essential before sampling (anti-aliasing) and in RF front ends.
+P: Most filtering now happens in software on sampled signals: FIR and IIR filters in phones, audio processing and communications. Analogue filters remain essential before sampling (anti-aliasing) and in radio front ends.
 X: A second-order Butterworth low-pass at 1 kHz. Attenuation at 10 kHz?
-> −40 dB per decade beyond f_{c}
+> Roll-off is −40 dB per decade beyond f_{c}
 > About −40 dB (a factor of 100 in amplitude)
+K: −3 dB marks the cut-off (amplitude 1/√2, half power); every −20 dB is a further factor of 10 in amplitude.
 !: Every real filter shifts phase as well as amplitude; that matters for audio and control systems.
+T: Decibel gain | 20 log_{10}(V_{out}/V_{in}), a logarithmic measure of amplitude ratio
+T: Roll-off | The rate at which a filter's gain falls beyond cut-off, in dB per decade
+SUM: Filters are classified by which band they pass.
+SUM: An nth-order filter rolls off at about 20n dB per decade.
+EV: established | Filter responses follow from linear circuit theory; design families such as Butterworth are standard.
+SRC: OpenStax, University Physics Volume 2, section 15.3 "RLC Series Circuits with AC" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/15-3-rlc-series-circuits-with-ac
+SRC: AQA, A-level Physics specification (7408), section 3.13.3.1 LC resonance filters | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: What is a notch filter used for? | Removing a narrow band of frequencies, like mains hum.
 Q: How steeply does an nth-order filter roll off? | About 20n dB per decade.
-M1: A Butterworth filter is designed for: | A maximally flat passband | The steepest roll-off | Perfect phase | Amplification only | Flat response.
-M2: Gain of −6 dB corresponds to an amplitude ratio of about: | 0.5 | 0.25 | 0.1 | 0.7 | 20 log 0.5.
+M1@3: A Butterworth filter is designed for: | A maximally flat passband | The steepest possible roll-off | Perfect phase response | Amplification only | Butterworth filters have no ripple in the passband; Chebyshev trades ripple for steepness and Bessel optimises phase.
+M2@2: Gain of −6 dB corresponds to an amplitude ratio of about: | 0.5 | 0.25 | 0.1 | 0.7 | 20 log_{10}(0.5) = −6.0 dB; 0.7 is −3 dB and 0.1 is −20 dB.
+M3@1,2: To remove 50 Hz mains hum from an ECG signal while keeping 1–40 Hz and 60–100 Hz content, the best choice is: | A band-stop (notch) filter at 50 Hz | A low-pass filter at 50 Hz | A high-pass filter at 50 Hz | A band-pass filter at 50 Hz | Only a notch removes the narrow band at 50 Hz while passing the useful frequencies on both sides.
+NUM2@2: A filter's output amplitude is 0.010 of its input at some frequency. What is its gain, in dB? | -40 | 1% | dB | Gain = 20 log_{10}(0.010) = 20 × (−2) = −40 dB.
+SA2@3: Explain why an anti-aliasing low-pass filter must be analogue and placed before an analogue-to-digital converter. | Sampling at rate f_{s} cannot distinguish frequencies above f_{s}/2 from lower ones: they fold back (alias) into the band and corrupt the signal. Once sampled, aliased components are indistinguishable from real ones, so no digital filter can remove them. An analogue low-pass filter before the converter removes content above f_{s}/2 first. | Frequencies above f_{s}/2 alias on sampling ; Aliases can't be separated after sampling ; Analogue filter removes them before the ADC
 
 ## Electrical measurement
 S: Measuring voltage, current and resistance accurately means choosing the right instrument and connecting it so it disturbs the circuit as little as possible.
+O: Connect ammeters, voltmeters and ohmmeters correctly and state their ideal resistances
+O: Calculate loading errors caused by real meters
+O: Describe null and four-wire methods and quantum electrical standards
+PRE: Measurement instruments and calibration
+LV: A level · Application
 H: Meters
 - **Ammeter**: in series; ideally zero resistance.
 - **Voltmeter**: in parallel; ideally infinite resistance (digital meters ~10 MΩ).
-- **Ohmmeter**: passes a known current; measure with power off.
+- **Ohmmeter**: passes a known current; measure with the circuit's power off.
 - **Multimeters** combine all three; **clamp meters** measure current by its magnetic field without breaking the circuit.
 H: Loading errors
-P: A 10 MΩ voltmeter across a 1 MΩ resistor forms a parallel combination of 0.91 MΩ, changing the very voltage it measures. For low resistances, lead resistance dominates; four-wire (Kelvin) measurement separates current-carrying and voltage-sensing leads.
+P: A 10 MΩ voltmeter across a 1 MΩ resistor forms a parallel combination of 0.91 MΩ, changing the very voltage it measures. For low resistances, lead resistance dominates; four-wire (Kelvin) measurement uses separate leads to carry current and sense voltage.
 H: Precision methods
-- Potentiometers and bridges compare against standards with null detection (no current drawn).
+- Potentiometers and bridges compare against standards by null detection (no current drawn at balance).
 - Standards: the volt from the Josephson effect; the ohm from the quantum Hall effect.
 X: A voltmeter (R_{V} = 100 kΩ) reads across 100 kΩ in a divider with another 100 kΩ on 10 V. Reading?
 > Parallel 100 kΩ ∥ 100 kΩ = 50 kΩ
 > V = 10 × 50/150 = 3.3 V instead of 5 V
+K: A meter is part of the circuit it measures; a good meter changes the circuit's currents and voltages negligibly.
 !: Never connect an ammeter in parallel across a voltage source: its tiny resistance draws a huge current.
+T: Loading error | The change in a measured quantity caused by connecting the measuring instrument
+T: Null method | A measurement made by adjusting a circuit until a detector reads zero, so no current is drawn from what is measured
+SUM: Ammeters in series (R ≈ 0); voltmeters in parallel (R ≈ ∞).
+SUM: Meter resistance comparable with the circuit causes loading errors.
+EV: established | Ideal-meter rules and loading corrections follow from circuit theory; quantum standards define SI electrical units in practice.
+SRC: OpenStax, University Physics Volume 2, section 10.4 "Electrical Measuring Instruments" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/10-4-electrical-measuring-instruments
+SRC: AQA, A-level Physics specification (7408), section 3.5.1.2 Current–voltage characteristics | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: Why should voltmeters have high resistance? | To draw negligible current and not change the circuit's voltages.
 Q: What is four-wire measurement? | Separate leads carry current and sense voltage, eliminating lead resistance errors.
-M1: An ammeter is connected: | In series | In parallel | Either | Across the supply | Same current flows through.
-M2: Today the volt is realised using: | The Josephson effect | A standard cell | A thermocouple | A capacitor | Quantum standard.
+M1@1: An ammeter is connected: | In series | In parallel | Either way | Across the supply | The ammeter must carry the same current as the component, so it goes in series, with as little resistance as possible.
+M2@3: Today the volt is realised using: | The Josephson effect | A standard cell | A thermocouple | A capacitor | A Josephson junction irradiated with microwaves gives voltage steps fixed by frequency and the constants h and e.
+M3@2: A 20 kΩ voltmeter is placed across one of two 20 kΩ resistors in series on 12 V. It reads: | 4 V | 6 V | 3 V | 12 V | The meter and resistor together are 10 kΩ, so the divider is 20 kΩ and 10 kΩ, giving 12 × 10/30 = 4 V instead of 6 V.
+NUM2@2: An ammeter of resistance 0.50 Ω is put in series with a 2.0 Ω resistor on an ideal 5.0 V supply. What current does it read, in A? | 2.0 | 1% | A | I = 5.0/(2.0 + 0.50) = 2.0 A, against 2.5 A without the meter: a 20% loading error.
+SA2@1,2: Explain why an ideal voltmeter has infinite resistance and an ideal ammeter zero resistance. | A voltmeter is connected in parallel; if its resistance were finite it would draw current and lower the combined resistance, changing the voltage it is measuring. Infinite resistance means it draws no current. An ammeter is connected in series; any resistance would add to the circuit and reduce the current. Zero resistance means it drops no voltage and leaves the current unchanged. | Voltmeter in parallel: must draw no current ; Ammeter in series: must add no resistance ; Either way the meter must not change the circuit
 
 ## Circuit analysis methods
-S: Beyond series and parallel rules, systematic methods solve any linear circuit: nodal and mesh analysis, superposition, and source transformations. They're how engineers and circuit simulators handle complex networks.
+S: Beyond series and parallel rules, systematic methods solve any linear circuit: nodal and mesh analysis, superposition and source transformations. They're how engineers and circuit simulators handle complex networks.
+O: Apply nodal and mesh analysis to linear circuits
+O: Use superposition with voltage and current sources
+O: Convert between voltage-source and current-source forms
+PRE: Kirchhoff's laws
+LV: Year 1 · Application
 H: Methods
 - **Nodal analysis**: unknown node voltages; KCL at each node. Best when there are many parallel branches.
 - **Mesh analysis**: unknown loop currents; KVL in each mesh. Best for planar circuits with many series elements.
@@ -888,22 +941,38 @@ H: Methods
 - **Source transformation**: a voltage source ε with series R ↔ a current source ε/R with parallel R.
 H: AC circuits
 - The same methods work with complex impedances and phasors.
-- Circuit simulators (SPICE) build a nodal admittance matrix and solve it, including nonlinear components by iteration.
-X: Superposition: 10 V source with 2 Ω, and a 2 A current source, both feeding a 3 Ω load in parallel arrangement. Current in 3 Ω?
+- Circuit simulators (SPICE) build a nodal admittance matrix and solve it, handling nonlinear components by iteration.
+X: Superposition: a 10 V source with 2 Ω in series, and a 2 A current source, both feed one 3 Ω load connected across the same two nodes. Current in 3 Ω?
 > Voltage source alone (current source open): 10/(2 + 3) = 2 A
 > Current source alone (voltage source shorted): 2 × 2/(2 + 3) = 0.8 A
-> Total 2.8 A
+> Total 2.8 A (both in the same direction)
+K: Turning a source off means replacing an ideal voltage source by a short circuit and an ideal current source by an open circuit.
 !: Superposition works for currents and voltages in linear circuits but not for power (power is quadratic).
 P: **Investigate with the lab.** Balance the Wheatstone bridge so the meter reads zero (below 1 mA). Use the balance condition to find the unknown resistor.
 IX: circuits
+T: Superposition theorem | In a linear circuit, the response to several sources is the sum of the responses to each acting alone
+T: Node | A point where two or more components connect, at a single potential
+SUM: Nodal (KCL) and mesh (KVL) analysis solve any linear network.
+SUM: Superposition: one source at a time, others turned off, then add.
+EV: established | These methods are exact consequences of Kirchhoff's laws for linear components.
+SRC: OpenStax, University Physics Volume 2, section 10.3 "Kirchhoff's Rules" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/10-3-kirchhoffs-rules
+SRC: OpenStax, University Physics Volume 2, section 10.2 "Resistors in Series and Parallel" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/10-2-resistors-in-series-and-parallel
 Q: What is the principle of superposition in circuits? | In a linear circuit, the response to several sources equals the sum of responses to each source acting alone.
 Q: When is nodal analysis preferable? | When the circuit has fewer nodes than meshes, often with many parallel branches.
-M1: In superposition, an inactive voltage source is replaced by: | A short circuit | An open circuit | A resistor of 1 Ω | A capacitor | Ideal source has zero internal resistance.
-M2: Can superposition be applied directly to power? | No, power isn't linear in current | Yes, always | Only in AC | Only for resistors | P ∝ I^{2}.
-M2: When a Wheatstone bridge is balanced, what is true? | No current flows through the meter | The current through every resistor is equal | All four resistors are equal | The battery supplies no current | At balance, the two midpoints are at the same potential, so the meter reads zero.
+M1@2: In superposition, an inactive voltage source is replaced by: | A short circuit | An open circuit | A 1 Ω resistor | A capacitor | An ideal voltage source has zero internal resistance, so with its EMF set to zero it is just a wire.
+M2@2: Can superposition be applied directly to power? | No, power isn't linear in current | Yes, always | Only in AC circuits | Only for resistors | P = I^{2}R: (I_{1} + I_{2})^{2} ≠ I_{1}^{2} + I_{2}^{2}, so add the currents first, then find the power.
+M2@1: When a Wheatstone bridge is balanced, what is true? | No current flows through the meter | The current through every resistor is equal | All four resistors are equal | The battery supplies no current | At balance, the two midpoints are at the same potential, so the meter reads zero.
+M3@3: A 12 V source with 3 Ω series resistance is converted to a current-source form. The equivalent is: | 4 A in parallel with 3 Ω | 4 A in series with 3 Ω | 36 A in parallel with 3 Ω | 12 A in parallel with 3 Ω | The current source equals the short-circuit current ε/R = 12/3 = 4 A, with the same 3 Ω placed in parallel.
+NUM2@1,2: In the superposition example, what is the voltage across the 3 Ω load, in V? | 8.4 | 1% | V | V = IR = 2.8 A × 3 Ω = 8.4 V; it can also be found by adding the voltages 6 V and 2.4 V from each source.
+SA3@1: Describe the steps of nodal analysis for a resistor network with voltage sources. | Choose one node as the reference (0 V) and label the unknown voltages of the other nodes. At each unknown node write Kirchhoff's current law, expressing each branch current as the voltage difference across it divided by its resistance. Nodes fixed by voltage sources give known voltages. Solve the simultaneous equations for the node voltages, then find any branch current from them. | Reference node and unknown node voltages ; KCL at each node with currents (V_{a} − V_{b})/R ; Solve simultaneous equations, then branch currents
 
 ## Thevenin and Norton equivalents
 S: Any linear network seen from two terminals behaves like a single voltage source with a series resistance (Thevenin) or a current source with a parallel resistance (Norton). This simplifies analysing how a network drives different loads.
+O: Find the Thevenin equivalent of a network
+O: Convert between Thevenin and Norton equivalents
+O: Use equivalents to find load currents and maximum power transfer
+PRE: Circuit analysis methods
+LV: Year 1 · Application
 H: Thevenin equivalent
 E: V_{Th} = open-circuit voltage at the terminals
 E: R_{Th} = resistance seen with sources turned off (or V_{oc}/I_{sc})
@@ -911,62 +980,106 @@ H: Norton equivalent
 E: I_{N} = short-circuit current; R_{N} = R_{Th}
 E: V_{Th} = I_{N}R_{Th}
 H: Uses
-- Find load current for many different loads quickly: I = V_{Th}/(R_{Th} + R_{L}).
+- Find the load current for many different loads quickly: I = V_{Th}/(R_{Th} + R_{L}).
 - Maximum power transfer: R_{L} = R_{Th}.
-- Model sensors, batteries and amplifier outputs.
+- Model sensors, batteries and amplifier outputs; a cell's EMF and internal resistance are its Thevenin equivalent.
 X: A 12 V source with a 4 Ω and 6 Ω potential divider; output across the 6 Ω. Thevenin equivalent?
 > V_{Th} = 12 × 6/10 = 7.2 V
 > R_{Th} = 4 ∥ 6 = 2.4 Ω
+K: Two measurements fix the equivalent: the open-circuit voltage and the short-circuit current.
 !: Thevenin equivalents only describe behaviour at the terminals; they don't tell you the power dissipated inside the original network.
+T: Thevenin equivalent | An ideal voltage source V_{Th} in series with R_{Th} that behaves like a network at two terminals
+T: Norton equivalent | An ideal current source I_{N} in parallel with R_{N} = R_{Th}, equivalent at two terminals
+SUM: V_{Th} = V_{oc}, R_{Th} = V_{oc}/I_{sc}, I_{N} = I_{sc}.
+SUM: Load current I = V_{Th}/(R_{Th} + R_{L}); maximum power when R_{L} = R_{Th}.
+EV: established | Thevenin's and Norton's theorems hold exactly for linear networks.
+SRC: OpenStax, University Physics Volume 2, section 10.1 "Electromotive Force" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/10-1-electromotive-force
+SRC: OpenStax, University Physics Volume 2, section 10.3 "Kirchhoff's Rules" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/10-3-kirchhoffs-rules
 Q: How do you find the Thevenin resistance? | Turn off all independent sources and find the resistance between the terminals (or V_{oc}/I_{sc}).
 Q: How are Thevenin and Norton equivalents related? | Same resistance; V_{Th} = I_{N}R_{Th}.
-M1: A network's open-circuit voltage is 10 V and short-circuit current 2 A. R_{Th} = ? | 5 Ω | 20 Ω | 10 Ω | 0.2 Ω | V_{oc}/I_{sc}.
-M2: Maximum power is delivered to a load when R_{L} equals: | R_{Th} | 0 | Infinity | 2R_{Th} | Matching.
+M1@2: A network's open-circuit voltage is 10 V and short-circuit current 2 A. R_{Th} = ? | 5 Ω | 20 Ω | 10 Ω | 0.2 Ω | R_{Th} = V_{oc}/I_{sc} = 10/2 = 5 Ω; multiplying gives the 20 Ω distractor.
+M2@3: Maximum power is delivered to a load when R_{L} equals: | R_{Th} | 0 | Infinity | 2R_{Th} | Matching the load to the Thevenin resistance maximises V_{Th}^{2}R_{L}/(R_{Th} + R_{L})^{2}.
+M3@1,3: A network has V_{Th} = 9.0 V and R_{Th} = 3.0 Ω. A 6.0 Ω load is connected. The load current and power are: | 1.0 A and 6.0 W | 1.5 A and 13.5 W | 3.0 A and 54 W | 1.0 A and 9.0 W | I = 9.0/(3.0 + 6.0) = 1.0 A, so P = I^{2}R_{L} = 6.0 W; the 9.0 W option uses the total resistance.
+NUM2@2: A Thevenin source has V_{Th} = 6.0 V and R_{Th} = 1.5 Ω. What is its Norton current, in A? | 4.0 | 1% | A | I_{N} = V_{Th}/R_{Th} = 6.0/1.5 = 4.0 A, in parallel with 1.5 Ω.
+SA2@1: Explain how to find the Thevenin equivalent of a potential divider made of R_{1} (top) and R_{2} (bottom) on a supply V, with output across R_{2}. | The Thevenin voltage is the open-circuit output, V_{Th} = VR_{2}/(R_{1} + R_{2}). To find R_{Th}, replace the ideal supply by a short circuit; looking back into the terminals, R_{1} and R_{2} are then in parallel, so R_{Th} = R_{1}R_{2}/(R_{1} + R_{2}). The divider then behaves like V_{Th} in series with R_{Th}. | V_{Th} = open-circuit divider output ; Short the supply to find R_{Th} ; R_{1} and R_{2} in parallel
 
 ## Operational amplifiers
 S: An operational amplifier (op-amp) is a high-gain differential amplifier on a chip. With negative feedback, simple resistor networks make it amplify, add, subtract, integrate, differentiate and filter signals precisely.
+O: State the properties of an ideal op-amp and the virtual-earth rule
+O: Calculate the gain of inverting, non-inverting and summing amplifiers
+O: Describe the limitations of real op-amps, including gain–bandwidth product
+PRE: Circuit analysis methods
+LV: A level · Application
 H: Ideal op-amp rules (with negative feedback)
 - Open-loop gain → ∞; input currents → 0; output adjusts so V_{+} = V_{−} (virtual short).
+- In the inverting amplifier V_{+} is earthed, so V_{−} sits at 0 V: a virtual earth.
 H: Standard circuits
 E: G = −R_{f}/R_{in} :: inverting amplifier
 E: G = 1 + R_{f}/R_{1} :: non-inverting amplifier
 E: V_{out} = −R_{f}(V_{1}/R_{1} + V_{2}/R_{2} + …) :: summing amplifier
 E: V_{out} = −(1/RC)∫V_{in}dt :: integrator
 - Voltage follower (G = 1): buffers a high-impedance source.
-- Comparator (no feedback): output saturates high or low.
+- Comparator (no feedback): V_{out} = A_{OL}(V_{+} − V_{−}) saturates high or low.
 H: Real limitations
-- Gain–bandwidth product (e.g. 1 MHz): gain of 100 only up to 10 kHz.
-- Slew rate, offset voltage, bias currents, output swing limited by supply rails.
+- Gain–bandwidth product (e.g. 1 MHz): a gain of 100 only up to 10 kHz.
+- Slew rate, offset voltage, bias currents, output swing limited by the supply rails.
 X: Non-inverting amplifier with R_{f} = 90 kΩ, R_{1} = 10 kΩ, input 0.2 V. Output?
-> G = 1 + 9 = 10
-> V_{out} = 2.0 V
+> G = 1 + 90/10 = 10
+> V_{out} = 10 × 0.2 = 2.0 V
+K: With negative feedback, the gain depends only on the resistors, not on the op-amp's large and variable open-loop gain.
 !: The "virtual short" rule only holds with negative feedback and when the output isn't saturated.
+T: Open-loop gain | The op-amp's gain with no feedback, A_{OL}, typically 10^{5} or more
+T: Virtual earth | The inverting input held at 0 V by feedback when the non-inverting input is earthed
+SUM: Inverting G = −R_{f}/R_{in}; non-inverting G = 1 + R_{f}/R_{1}.
+SUM: Real op-amps trade gain for bandwidth and are limited by their supply rails.
+EV: established | Ideal op-amp analysis is accurate when the open-loop gain greatly exceeds the closed-loop gain.
+SRC: AQA, A-level Physics specification (7408), section 3.13.3.2 The ideal operational amplifier | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
+SRC: AQA, A-level Physics specification (7408), section 3.13.4 Operational amplifier in inverting, non-inverting and summing configurations | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: What is the gain of an inverting amplifier? | −R_{f}/R_{in}.
 Q: What is a voltage follower used for? | Buffering: high input impedance, low output impedance, gain 1.
-M1: An inverting amplifier with R_{f} = 50 kΩ, R_{in} = 5 kΩ has gain: | −10 | 10 | −11 | 11 | −R_{f}/R_{in}.
-M2: An op-amp with a 1 MHz gain–bandwidth product set to gain 50 has bandwidth: | 20 kHz | 50 MHz | 1 MHz | 50 kHz | GBP/G.
+M1@2: An inverting amplifier with R_{f} = 50 kΩ, R_{in} = 5 kΩ has gain: | −10 | 10 | −11 | 11 | G = −R_{f}/R_{in} = −50/5 = −10; the minus sign means the output is inverted, and 11 is the non-inverting formula.
+M2@3: An op-amp with a 1 MHz gain–bandwidth product set to gain 50 has bandwidth: | 20 kHz | 50 MHz | 1 MHz | 50 kHz | Gain × bandwidth is constant: 10^{6}/50 = 2 × 10^{4} Hz.
+M3@2: An inverting amplifier has R_{in} = 10 kΩ, R_{f} = 100 kΩ and ±12 V supplies. For an input of +2.0 V the output is about: | −12 V (saturated) | −20 V | +20 V | −0.2 V | The ideal output −10 × 2.0 = −20 V is beyond the supply rail, so the op-amp saturates near −12 V.
+NUM2@2: A summing amplifier has R_{f} = 20 kΩ, R_{1} = 10 kΩ and R_{2} = 40 kΩ, with inputs V_{1} = 0.5 V and V_{2} = 2.0 V. Find V_{out}, in V. | -2.0 | 1% | V | V_{out} = −20 × (0.5/10 + 2.0/40) = −20 × (0.05 + 0.05) = −2.0 V.
+SA3@1,2: Derive the gain of an inverting amplifier using the virtual-earth idea. | The non-inverting input is earthed, and negative feedback keeps the inverting input at the same potential, 0 V (virtual earth). The current through R_{in} is V_{in}/R_{in}. The ideal op-amp draws no input current, so the same current flows through R_{f}, giving 0 − V_{out} = (V_{in}/R_{in})R_{f}. Hence V_{out}/V_{in} = −R_{f}/R_{in}. | Inverting input at 0 V (virtual earth) ; No current into the op-amp: same current through R_{in} and R_{f} ; Gain −R_{f}/R_{in}
 
 ## Semiconductor circuit fundamentals
 S: Semiconductor devices, chiefly diodes and transistors, control current in ways resistors can't: one-way flow, amplification and switching. Billions of transistors make every modern processor.
+O: Describe diode behaviour, including forward voltage and Zener breakdown
+O: Calculate series resistors for LEDs and use I_{C} = βI_{B}
+O: Explain how MOSFETs and CMOS logic act as switches
+PRE: Conductivity
+LV: Year 1 · Application
 H: Diodes
 E: I = I_{s}(e^{V/(nV_{T})} − 1), V_{T} = k_{B}T/e ≈ 26 mV :: Shockley equation
 - Forward drop ~0.6–0.7 V (silicon); ~0.3 V (Schottky); LEDs 1.8–3.5 V depending on colour.
 - Zener diodes break down at a set reverse voltage: voltage references.
 H: Bipolar transistors (BJT)
-- Small base current controls large collector current: I_{C} = βI_{B} (β ~ 100).
+- A small base current controls a large collector current: I_{C} = βI_{B} (β ~ 100).
 - Used as amplifiers (common emitter) and switches.
 H: MOSFETs
-- Gate voltage controls a channel; almost no gate current.
+- Gate voltage controls a channel; almost no gate current flows.
 - Switch on above the threshold voltage (~0.5–2 V).
-- CMOS logic pairs n- and p-type MOSFETs: power only drawn when switching.
+- CMOS logic pairs n- and p-type MOSFETs, so power is drawn mainly when switching.
 - Power MOSFETs switch hundreds of amps in electric vehicles.
 H: Switching circuits
-P: As a switch, a transistor is either fully off or saturated on. Logic gates, memory and microprocessors are built from CMOS switches. Moore's law: transistor counts doubled roughly every two years, from 2300 in 1971 to over 100 billion today.
+P: As a switch, a transistor is either fully off or fully on. Logic gates, memory and microprocessors are built from CMOS switches. Moore's law: transistor counts doubled roughly every two years, from 2300 in the Intel 4004 (1971) to over 100 billion in the largest chips today.
 X: An LED (2.0 V, 20 mA) from 5 V. Series resistor?
 > R = (5 − 2.0)/0.020 = 150 Ω
+K: A diode's current rises exponentially with forward voltage, so it must be fed through a resistor that sets the current.
 !: Always use a current-limiting resistor with an LED; its current rises steeply with voltage and it will burn out.
+T: Forward voltage | The p.d. across a conducting diode, about 0.7 V for silicon
+T: Threshold voltage | The gate–source voltage above which a MOSFET's channel conducts
+SUM: Diodes conduct one way; Zeners hold a fixed reverse voltage.
+SUM: BJTs: I_{C} = βI_{B}; MOSFETs are voltage-controlled switches with almost no gate current.
+EV: established | The behaviour of diodes and transistors is well described by semiconductor band theory and the Shockley model.
+SRC: OpenStax, University Physics Volume 3, section 9.7 "Semiconductor Devices" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/9-7-semiconductor-devices
+SRC: AQA, A-level Physics specification (7408), section 3.13.1 Discrete semiconductor devices | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: What is the forward voltage of a silicon diode? | About 0.6–0.7 V.
 Q: Why does CMOS logic use little power when idle? | Only one of each complementary transistor pair conducts, so there's no static current path.
-M1: In a BJT, collector current is controlled by: | Base current | Collector voltage only | Emitter resistance | Temperature only | I_{C} = βI_{B}.
-M2: A MOSFET's gate draws: | Almost no current | Large current | The same as the drain | Negative current | Insulated gate.
+M1@2: In a BJT, collector current is controlled by: | Base current | Collector voltage only | Emitter resistance | Temperature only | In the active region I_{C} = βI_{B}: a small base current controls a collector current about a hundred times larger.
+M2@3: A MOSFET's gate draws: | Almost no current | A large current | The same current as the drain | A negative current | The gate is insulated from the channel by a thin oxide layer, so it draws essentially no steady current.
+M3@2: A transistor with β = 120 must switch a 240 mA lamp. The minimum base current is: | 2.0 mA | 0.5 mA | 28.8 A | 120 mA | I_{B} = I_{C}/β = 240/120 = 2.0 mA; in practice more is supplied to drive the transistor fully on.
+NUM2@2: A red LED (1.8 V, 15 mA) runs from a 9.0 V battery. What series resistor is needed, in Ω? | 480 | 1% | Ω | R = (9.0 − 1.8)/0.015 = 480 Ω; the nearest standard value above is 510 Ω.
+SA2@1,3: Explain why a Zener diode can hold a voltage constant, and why it needs a series resistor. | In reverse bias a Zener diode conducts sharply once the voltage reaches its breakdown value, and over a wide range of current its voltage hardly changes. Connected in reverse across a load, it holds the load voltage at the Zener voltage while the supply varies. A series resistor takes up the difference between supply and Zener voltage and limits the current; without it the current would rise enough to destroy the diode. | Sharp reverse breakdown at fixed voltage ; Voltage nearly constant over a range of current ; Series resistor drops the excess and limits current
 `;

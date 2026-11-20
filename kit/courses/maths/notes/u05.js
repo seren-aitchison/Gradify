@@ -35,10 +35,10 @@ SRC: Heath TL (trans.), Euclid: The Thirteen Books of the Elements (Dover 1956) 
 SRC: Hartshorne R, Geometry: Euclid and Beyond (Springer 2000) | secondary | 2000 | https://link.springer.com/
 M1#maths-u05-01-q1@1: Around when did Euclid write the Elements? | About 300 BCE | About 1600 CE | About 1000 BCE | About 1900 CE | About 500 CE | Euclid worked in Alexandria around 300 BCE.
 M2#maths-u05-01-q2@2: Which result depends on the parallel postulate? | The angles in a triangle add to 180° | All right angles are equal | A circle can be drawn with any centre | A line can be extended | A point has no part | The angle sum proof uses a parallel line and alternate angles, which rely on the parallel postulate.
-NUM2@2: In triangle ABC, angle A = 52° and angle B is 18° larger than angle C. Find angle C. | 55 | 0 | ° | B + C = 180 − 52 = 128 and B = C + 18, so 2C + 18 = 128 and C = 55°.
-M3@1,2: A student claims to have proved the parallel postulate from Euclid's first four postulates. What follows? | The proof has an error: hyperbolic geometry obeys the first four but not the fifth | The proof is right, since the fifth postulate was always a theorem of the other four | Nobody had tried before, so it would be the first proof of its kind | Postulates can't be tested, so the proof can be neither right nor wrong | Hyperbolic geometry is a consistent model of the first four postulates in which the fifth fails, so the fifth can't follow from them.
-TF1@1: An axiom is a statement accepted without proof as a starting point for reasoning. | true | Axioms (Euclid's postulates and common notions) are assumed; everything else is deduced from them.
-SA2@1,2: Explain what an axiomatic system is, using Euclid's Elements, and show where the parallel postulate is used in proving that the angles of a triangle add to 180°. | An axiomatic system starts from definitions and axioms accepted without proof, and deduces every other result by logical steps, each justified by an axiom, a definition or an earlier theorem. Euclid began with definitions, five postulates and common notions and proved 465 propositions. To prove the angle sum, draw a line through A parallel to BC; the parallel postulate guarantees this line exists and is unique, and alternate angles on parallel lines are equal, so the two angles beside A equal B and C; with A they form a straight line, so A + B + C = 180°. | defines axioms as unproved starting points ; theorems deduced step by step with reasons ; Euclid's definitions, postulates and common notions ; parallel line through A uses the parallel postulate ; alternate angles and straight line give 180°
+NUM2#maths-u05-01-q3@2: In triangle ABC, angle A = 52° and angle B is 18° larger than angle C. Find angle C. | 55 | 0 | ° | B + C = 180 − 52 = 128 and B = C + 18, so 2C + 18 = 128 and C = 55°.
+M3#maths-u05-01-q4@1,2: A student claims to have proved the parallel postulate from Euclid's first four postulates. What follows? | The proof has an error: hyperbolic geometry obeys the first four but not the fifth | The proof is right, since the fifth postulate was always a theorem of the other four | Nobody had tried before, so it would be the first proof of its kind | Postulates can't be tested, so the proof can be neither right nor wrong | Hyperbolic geometry is a consistent model of the first four postulates in which the fifth fails, so the fifth can't follow from them.
+TF1#maths-u05-01-q5@1: An axiom is a statement accepted without proof as a starting point for reasoning. | true | Axioms (Euclid's postulates and common notions) are assumed; everything else is deduced from them.
+SA2#maths-u05-01-q6@1,2: Explain what an axiomatic system is, using Euclid's Elements, and show where the parallel postulate is used in proving that the angles of a triangle add to 180°. | An axiomatic system starts from definitions and axioms accepted without proof, and deduces every other result by logical steps, each justified by an axiom, a definition or an earlier theorem. Euclid began with definitions, five postulates and common notions and proved 465 propositions. To prove the angle sum, draw a line through A parallel to BC; the parallel postulate guarantees this line exists and is unique, and alternate angles on parallel lines are equal, so the two angles beside A equal B and C; with A they form a straight line, so A + B + C = 180°. | defines axioms as unproved starting points ; theorems deduced step by step with reasons ; Euclid's definitions, postulates and common notions ; parallel line through A uses the parallel postulate ; alternate angles and straight line give 180°
 
 ## Plane Geometry
 S: Plane geometry studies two-dimensional figures (points, lines, angles, polygons and circles) and their measurements. It's the geometry of GCSE, drawing, design and architecture.
@@ -73,10 +73,10 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 SRC: Hartshorne R, Geometry: Euclid and Beyond (Springer 2000) | secondary | 2000 | https://link.springer.com/
 M1#maths-u05-02-q1@1: An isosceles triangle has an apex angle of 50°. What is each base angle? | 65° | 50° | 130° | 75° | 40° | The base angles share 180 − 50 = 130°, so each is 65°.
 M2#maths-u05-02-q2@2: Which shape always has exactly one pair of parallel sides? | A trapezium | A rectangle | A rhombus | A parallelogram | A kite | A trapezium has exactly one pair (in the UK definition); the others have two or none.
-TF1@1: A square is a regular polygon. | true | A square has all four sides equal and all four angles equal (90°), which is exactly the definition of a regular polygon.
-M2@2: Two angles of a triangle are 35° and 75°. What is the exterior angle at the third vertex? | 110° | 70° | 145° | 105° | 250° | The third angle is 180 − 35 − 75 = 70°, and the exterior angle on a straight line with it is 180 − 70 = 110°.
-NUM3@2: In triangle ABC, AB = AC, angle A = x + 20 and angle B = 2x + 10. Find angle A. | 48 | 0 | ° | Base angles B and C are equal, so (x + 20) + 2(2x + 10) = 180, giving 5x = 140, x = 28 and A = 48°.
-SA2@1,2: An isosceles triangle has an apex angle of 40°. Find the base angles, explaining each step, and say why a diagram alone isn't a reason. | The angles in a triangle add to 180°, so the two base angles share 180 − 40 = 140°. An isosceles triangle has equal base angles, so each is 140 ÷ 2 = 70°. A diagram may not be drawn to scale, so sides or angles that look equal can't be assumed equal; each step must cite a property, such as 'angles in a triangle add to 180°' or 'base angles of an isosceles triangle are equal'. | angle sum 180° stated ; 140° shared between base angles ; base angles equal gives 70° ; diagrams may not be to scale ; each step needs a named property
+TF1#maths-u05-02-q3@1: A square is a regular polygon. | true | A square has all four sides equal and all four angles equal (90°), which is exactly the definition of a regular polygon.
+M2#maths-u05-02-q4@2: Two angles of a triangle are 35° and 75°. What is the exterior angle at the third vertex? | 110° | 70° | 145° | 105° | 250° | The third angle is 180 − 35 − 75 = 70°, and the exterior angle on a straight line with it is 180 − 70 = 110°.
+NUM3#maths-u05-02-q5@2: In triangle ABC, AB = AC, angle A = x + 20 and angle B = 2x + 10. Find angle A. | 48 | 0 | ° | Base angles B and C are equal, so (x + 20) + 2(2x + 10) = 180, giving 5x = 140, x = 28 and A = 48°.
+SA2#maths-u05-02-q6@1,2: An isosceles triangle has an apex angle of 40°. Find the base angles, explaining each step, and say why a diagram alone isn't a reason. | The angles in a triangle add to 180°, so the two base angles share 180 − 40 = 140°. An isosceles triangle has equal base angles, so each is 140 ÷ 2 = 70°. A diagram may not be drawn to scale, so sides or angles that look equal can't be assumed equal; each step must cite a property, such as 'angles in a triangle add to 180°' or 'base angles of an isosceles triangle are equal'. | angle sum 180° stated ; 140° shared between base angles ; base angles equal gives 70° ; diagrams may not be to scale ; each step needs a named property
 
 ## Points, Lines and Planes
 S: Points, lines and planes are the basic undefined objects of geometry. Everything else (angles, shapes, solids) is built from them, and their relationships (intersecting, parallel, skew) structure 2D and 3D space.
@@ -111,10 +111,10 @@ SRC: Hartshorne R, Geometry: Euclid and Beyond (Springer 2000) | secondary | 200
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
 M1#maths-u05-03-q1@1: What are points that lie on the same straight line called? | Collinear | Coplanar | Concurrent | Skew | Parallel | Collinear means on one line; coplanar means on one plane.
 M2#maths-u05-03-q2@2: Two distinct planes that aren't parallel meet in: | A line | A point | A plane | Two points | Nothing | Two non-parallel planes always intersect along a straight line, like the pages of a book along the spine.
-TF1@1: Three non-collinear points always determine exactly one plane. | true | Three points not on one line fix a unique plane, which is why a three-legged stool never wobbles.
-NUM2@1: Five points lie in a plane with no three collinear. How many different straight lines pass through two of them? | 10 | 0 | lines | Each pair of points fixes one line, and there are 5 × 4 ÷ 2 = 10 pairs.
-M3@2: Cube ABCDEFGH has base ABCD and top EFGH, with E above A, F above B, G above C and H above D. Which pair of edges is skew? | AE and BC | AB and DC | AE and CG | AB and EF | BC and FG | AE is vertical through A and BC lies in the base away from A: they never meet and aren't parallel. The other pairs are parallel.
-SA2@1,2: Using the edges and faces of a cube as examples, explain the ways two lines can be related in three dimensions, and the ways a line can be related to a plane. | Two distinct lines can intersect at one point (two edges meeting at a corner), be parallel (opposite edges of a face), or be skew: neither parallel nor meeting, such as a vertical edge and a non-parallel edge of the base that doesn't touch it. Skew lines can't lie in one plane. A line can lie in a plane (an edge in a face), meet it at a single point (a vertical edge meeting the base), or be parallel to it (a top edge and the base). | intersecting lines with example ; parallel lines with example ; skew lines defined with example ; skew lines are not coplanar ; three line-plane cases
+TF1#maths-u05-03-q3@1: Three non-collinear points always determine exactly one plane. | true | Three points not on one line fix a unique plane, which is why a three-legged stool never wobbles.
+NUM2#maths-u05-03-q4@1: Five points lie in a plane with no three collinear. How many different straight lines pass through two of them? | 10 | 0 | lines | Each pair of points fixes one line, and there are 5 × 4 ÷ 2 = 10 pairs.
+M3#maths-u05-03-q5@2: Cube ABCDEFGH has base ABCD and top EFGH, with E above A, F above B, G above C and H above D. Which pair of edges is skew? | AE and BC | AB and DC | AE and CG | AB and EF | BC and FG | AE is vertical through A and BC lies in the base away from A: they never meet and aren't parallel. The other pairs are parallel.
+SA2#maths-u05-03-q6@1,2: Using the edges and faces of a cube as examples, explain the ways two lines can be related in three dimensions, and the ways a line can be related to a plane. | Two distinct lines can intersect at one point (two edges meeting at a corner), be parallel (opposite edges of a face), or be skew: neither parallel nor meeting, such as a vertical edge and a non-parallel edge of the base that doesn't touch it. Skew lines can't lie in one plane. A line can lie in a plane (an edge in a face), meet it at a single point (a vertical edge meeting the base), or be parallel to it (a top edge and the base). | intersecting lines with example ; parallel lines with example ; skew lines defined with example ; skew lines are not coplanar ; three line-plane cases
 
 ## Angles
 S: An angle measures the amount of turn between two lines meeting at a point. Angle facts (on a line, around a point, vertically opposite) are the foundation of every geometric argument.
@@ -151,8 +151,8 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 NUM1#maths-u05-04-q1@1: Three angles around a point are 2x, 3x and 4x. Find x. | 40 | 0 | ° | 9x = 360, so x = 40°.
 M1#maths-u05-04-q2@1: Which angle is reflex? | 250° | 90° | 170° | 45° | 180° | A reflex angle is more than 180° and less than 360°.
 M2#maths-u05-04-q3@2: Angle ABC is formed by points A, B and C. Where is the vertex? | At B | At A | At C | Between A and C | It depends on the diagram | The middle letter always names the vertex.
-M3@2: Two straight lines cross. One angle is 4x + 12 and the angle vertically opposite it is 6x − 28. What size is each of the other two angles? | 88° | 92° | 20° | 268° | 44° | Vertically opposite angles are equal: 4x + 12 = 6x − 28, so x = 20 and that angle is 92°; the adjacent angles are 180 − 92 = 88°.
-SA2@1,2: Two lines cross and two adjacent angles are 2x + 25 and 4x − 7. A student writes 2x + 25 = 4x − 7, so x = 16. Explain the error, then find all four angles with reasons. | Adjacent angles where two lines cross lie on a straight line, so they add to 180°; they are not equal (only vertically opposite angles are equal). So 2x + 25 + 4x − 7 = 180, 6x = 162 and x = 27. The angles are 2(27) + 25 = 79° and 4(27) − 7 = 101°. Vertically opposite angles are equal, so the four angles are 79°, 101°, 79° and 101°. | adjacent angles are supplementary, not equal ; 6x + 18 = 180 ; x = 27 ; 79° and 101° ; vertically opposite angles equal
+M3#maths-u05-04-q4@2: Two straight lines cross. One angle is 4x + 12 and the angle vertically opposite it is 6x − 28. What size is each of the other two angles? | 88° | 92° | 20° | 268° | 44° | Vertically opposite angles are equal: 4x + 12 = 6x − 28, so x = 20 and that angle is 92°; the adjacent angles are 180 − 92 = 88°.
+SA2#maths-u05-04-q5@1,2: Two lines cross and two adjacent angles are 2x + 25 and 4x − 7. A student writes 2x + 25 = 4x − 7, so x = 16. Explain the error, then find all four angles with reasons. | Adjacent angles where two lines cross lie on a straight line, so they add to 180°; they are not equal (only vertically opposite angles are equal). So 2x + 25 + 4x − 7 = 180, 6x = 162 and x = 27. The angles are 2(27) + 25 = 79° and 4(27) − 7 = 101°. Vertically opposite angles are equal, so the four angles are 79°, 101°, 79° and 101°. | adjacent angles are supplementary, not equal ; 6x + 18 = 180 ; x = 27 ; 79° and 101° ; vertically opposite angles equal
 
 ## Parallel and Perpendicular Lines
 S: Parallel lines never meet; perpendicular lines meet at right angles. A line crossing two parallel lines creates equal alternate and corresponding angles, a key tool in geometric proof.
@@ -188,10 +188,10 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary mastery professional development materials: angles in parallel lines | guidance | 2019 | https://www.ncetm.org.uk/
 M1#maths-u05-05-q1@1: Which pair of lines is perpendicular? | y = 3x + 2 and y = −x/3 | y = 3x and y = 3x + 1 | y = 2x and y = x/2 | y = x and y = x + 4 | y = 5 and y = −5 | 3 × (−1/3) = −1, so the gradients are negative reciprocals.
 M2#maths-u05-05-q2@2: Corresponding angles on parallel lines are 4x − 20 and 2x + 40. What is x? | 30 | 10 | 40 | 60 | 20 | Corresponding angles are equal: 4x − 20 = 2x + 40, so x = 30.
-TF1@1: Co-interior angles between parallel lines are equal. | false | Co-interior angles add to 180°; they are equal only in the special case where each is 90°.
-M2@2: What is the gradient of a line perpendicular to the line through (1, 2) and (4, 11)? | −1/3 | 1/3 | −3 | 3 | −1/9 | The line's gradient is (11 − 2)/(4 − 1) = 3, and the perpendicular gradient is the negative reciprocal, −1/3.
-NUM3@1: Two parallel lines are crossed by a transversal. Angles p and q are co-interior, and p is 40° more than three times q. Find p. | 145 | 0 | ° | Co-interior angles add to 180°: (3q + 40) + q = 180, so q = 35° and p = 145°.
-SA2@1,2: Explain two ways to show that lines are parallel: one using angles with a transversal, one using equations. Use 2y = 6x + 1 and y = 3x − 4, and say how x + 3y = 2 relates to y = 3x − 4. | With a transversal, the lines are parallel if a pair of alternate or corresponding angles are equal, or a pair of co-interior angles add to 180° (the converses of the angle facts). With equations, write each line as y = mx + c: 2y = 6x + 1 gives y = 3x + ½, gradient 3, the same as y = 3x − 4, so they're parallel (different intercepts, so distinct lines). x + 3y = 2 gives y = −x/3 + 2/3, gradient −1/3; 3 × (−1/3) = −1, so it is perpendicular to y = 3x − 4. | converse of alternate or corresponding angles ; co-interior angles summing to 180° ; rearranges to y = mx + c ; equal gradients of 3 so parallel ; gradient −1/3 and product −1 so perpendicular
+TF1#maths-u05-05-q3@1: Co-interior angles between parallel lines are equal. | false | Co-interior angles add to 180°; they are equal only in the special case where each is 90°.
+M2#maths-u05-05-q4@2: What is the gradient of a line perpendicular to the line through (1, 2) and (4, 11)? | −1/3 | 1/3 | −3 | 3 | −1/9 | The line's gradient is (11 − 2)/(4 − 1) = 3, and the perpendicular gradient is the negative reciprocal, −1/3.
+NUM3#maths-u05-05-q5@1: Two parallel lines are crossed by a transversal. Angles p and q are co-interior, and p is 40° more than three times q. Find p. | 145 | 0 | ° | Co-interior angles add to 180°: (3q + 40) + q = 180, so q = 35° and p = 145°.
+SA2#maths-u05-05-q6@1,2: Explain two ways to show that lines are parallel: one using angles with a transversal, one using equations. Use 2y = 6x + 1 and y = 3x − 4, and say how x + 3y = 2 relates to y = 3x − 4. | With a transversal, the lines are parallel if a pair of alternate or corresponding angles are equal, or a pair of co-interior angles add to 180° (the converses of the angle facts). With equations, write each line as y = mx + c: 2y = 6x + 1 gives y = 3x + ½, gradient 3, the same as y = 3x − 4, so they're parallel (different intercepts, so distinct lines). x + 3y = 2 gives y = −x/3 + 2/3, gradient −1/3; 3 × (−1/3) = −1, so it is perpendicular to y = 3x − 4. | converse of alternate or corresponding angles ; co-interior angles summing to 180° ; rearranges to y = mx + c ; equal gradients of 3 so parallel ; gradient −1/3 and product −1 so perpendicular
 
 ## Triangles
 S: Triangles are the simplest polygons and the building blocks of all others. Their angle facts, types and the exterior angle theorem appear in almost every geometry problem.
@@ -230,9 +230,9 @@ SRC: Hartshorne R, Geometry: Euclid and Beyond (Springer 2000) | secondary | 200
 NUM1#maths-u05-06-q1@1: A triangle has angles x, 2x and 3x. Find the largest angle. | 90 | 0 | ° | 6x = 180, so x = 30 and the largest angle is 90°.
 M1#maths-u05-06-q2@1: Which set of lengths can form a triangle? | 4, 5, 8 | 2, 3, 6 | 1, 1, 3 | 5, 5, 11 | 3, 4, 7 | 4 + 5 = 9 > 8; in the others, the two shorter sides don't exceed the longest.
 M2#maths-u05-06-q3@2: An isosceles triangle has one angle of 100°. What are the other two? | 40° and 40° | 100° and −20° | 80° and 0° | 50° and 30° | 100° and 100° | 100° must be the apex (two 100° angles would exceed 180°), so the base angles share 80°.
-NUM2@1: Two sides of a triangle are 6 cm and 9 cm, and the third side is a whole number of centimetres. How many lengths are possible? | 11 | 0 | lengths | The third side must be between 9 − 6 = 3 and 9 + 6 = 15, not inclusive, so 4, 5, …, 14 cm: 11 lengths.
-M3@1,2: In triangle ABC, AB = AC. Side BC is extended beyond C, and the exterior angle at C is 112°. Find angle A. | 44° | 68° | 56° | 112° | 24° | Interior angle C = 180 − 112 = 68°; AB = AC makes B = C = 68°, so A = 180 − 136 = 44°.
-SA2@2: Prove the exterior angle theorem: an exterior angle of a triangle equals the sum of the two interior opposite angles. | In triangle ABC, extend BC beyond C to make the exterior angle e at C. Angle C and e lie on a straight line, so C + e = 180°. The angles of the triangle give A + B + C = 180°. So C + e = A + B + C, and subtracting C gives e = A + B. | sets up the exterior angle at one vertex ; straight-line fact C + e = 180° ; triangle angle sum A + B + C = 180° ; equates and subtracts C ; concludes e = A + B
+NUM2#maths-u05-06-q4@1: Two sides of a triangle are 6 cm and 9 cm, and the third side is a whole number of centimetres. How many lengths are possible? | 11 | 0 | lengths | The third side must be between 9 − 6 = 3 and 9 + 6 = 15, not inclusive, so 4, 5, …, 14 cm: 11 lengths.
+M3#maths-u05-06-q5@1,2: In triangle ABC, AB = AC. Side BC is extended beyond C, and the exterior angle at C is 112°. Find angle A. | 44° | 68° | 56° | 112° | 24° | Interior angle C = 180 − 112 = 68°; AB = AC makes B = C = 68°, so A = 180 − 136 = 44°.
+SA2#maths-u05-06-q6@2: Prove the exterior angle theorem: an exterior angle of a triangle equals the sum of the two interior opposite angles. | In triangle ABC, extend BC beyond C to make the exterior angle e at C. Angle C and e lie on a straight line, so C + e = 180°. The angles of the triangle give A + B + C = 180°. So C + e = A + B + C, and subtracting C gives e = A + B. | sets up the exterior angle at one vertex ; straight-line fact C + e = 180° ; triangle angle sum A + B + C = 180° ; equates and subtracts C ; concludes e = A + B
 
 ## Congruence and Similarity
 S: Congruent shapes are identical in size and shape; similar shapes have the same shape but may differ in size. Similarity is the geometry of scale drawings, maps and enlargements, and links lengths, areas and volumes.
@@ -266,9 +266,9 @@ SRC: Hartshorne R, Geometry: Euclid and Beyond (Springer 2000) | secondary | 200
 NUM1#maths-u05-07-q1@1: Two similar shapes have areas 20 cm² and 45 cm². What is the length scale factor? | 1.5 | 0 |  | The area scale factor is 45/20 = 2.25, so k = √2.25 = 1.5.
 M1#maths-u05-07-q2@1: Which condition does NOT prove two triangles congruent? | AAA | SSS | SAS | RHS | ASA | Equal angles alone give similar triangles of possibly different sizes.
 M3#maths-u05-07-q3@2: Two similar cones have volumes 54 cm³ and 16 cm³. The larger has surface area 90 cm². What is the smaller's? | 40 cm² | 26.7 cm² | 60 cm² | 30 cm² | 10 cm² | Volume ratio 16/54 = (2/3)^{3}, so k = 2/3 and the area ratio is 4/9: 90 × 4/9 = 40.
-M2@1: Triangles ABC and DEF have AB = DE, angle B = angle E and BC = EF. Which condition proves them congruent? | SAS | ASA | SSS | RHS | AAS | Two pairs of sides are equal and the equal angles B and E lie between them, so the included-angle condition SAS applies.
-NUM2@2: A map has scale 1 : 25,000. A lake covers 3 cm² on the map. What is its real area in km²? | 0.1875 | 0.001 | km² | The area scale factor is 25,000² = 6.25 × 10^{8}, so the lake is 1.875 × 10^{9} cm²; 1 km² = 10^{10} cm², giving 0.1875 km².
-SA3@1: Prove that the diagonals of parallelogram ABCD bisect each other. | Let the diagonals AC and BD meet at M. In triangles ABM and CDM: AB = CD (opposite sides of a parallelogram are equal); angle MAB = angle MCD (alternate angles, AB parallel to DC); angle MBA = angle MDC (alternate angles). So the triangles are congruent (ASA). Corresponding sides are equal: AM = CM and BM = DM, so M is the midpoint of both diagonals. | names the two triangles ; AB = CD with reason ; two pairs of alternate angles ; congruent by ASA ; AM = CM and BM = DM so the diagonals bisect each other
+M2#maths-u05-07-q4@1: Triangles ABC and DEF have AB = DE, angle B = angle E and BC = EF. Which condition proves them congruent? | SAS | ASA | SSS | RHS | AAS | Two pairs of sides are equal and the equal angles B and E lie between them, so the included-angle condition SAS applies.
+NUM2#maths-u05-07-q5@2: A map has scale 1 : 25,000. A lake covers 3 cm² on the map. What is its real area in km²? | 0.1875 | 0.001 | km² | The area scale factor is 25,000² = 6.25 × 10^{8}, so the lake is 1.875 × 10^{9} cm²; 1 km² = 10^{10} cm², giving 0.1875 km².
+SA3#maths-u05-07-q6@1: Prove that the diagonals of parallelogram ABCD bisect each other. | Let the diagonals AC and BD meet at M. In triangles ABM and CDM: AB = CD (opposite sides of a parallelogram are equal); angle MAB = angle MCD (alternate angles, AB parallel to DC); angle MBA = angle MDC (alternate angles). So the triangles are congruent (ASA). Corresponding sides are equal: AM = CM and BM = DM, so M is the midpoint of both diagonals. | names the two triangles ; AB = CD with reason ; two pairs of alternate angles ; congruent by ASA ; AM = CM and BM = DM so the diagonals bisect each other
 
 ## Quadrilaterals
 S: Quadrilaterals are four-sided polygons: squares, rectangles, parallelograms, rhombuses, trapeziums and kites. Each is defined by its sides, angles, diagonals and symmetry, and they form a family tree of special cases.
@@ -308,13 +308,15 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 NUM1#maths-u05-08-q1@1: A trapezium has parallel sides 7 cm and 13 cm and height 6 cm. Find its area. | 60 | 0 | cm² | ½ × (7 + 13) × 6 = 60 cm^{2}.
 M3#maths-u05-08-q2@1: Which quadrilateral has diagonals that are equal and bisect each other, but not necessarily at right angles? | A rectangle | A rhombus | A kite | A trapezium | A general parallelogram | A rectangle's diagonals are equal and bisect each other; they're perpendicular only if it's a square.
 M2#maths-u05-08-q3@2: Which statement about the quadrilateral family is true? | Every square is a rhombus | Every rhombus is a square | Every rectangle is a square | Every kite is a rhombus | Every trapezium is a parallelogram | A square has four equal sides, so it meets the definition of a rhombus.
-M1@1: Which quadrilateral has exactly one line of symmetry and diagonals that cross at right angles? | A kite | A rhombus | A rectangle | A parallelogram | A square | A kite's symmetry line is one diagonal, and its diagonals are perpendicular; a rhombus and a square have more symmetry lines.
-SA2@1,2: Explain why every square is a rectangle but not every rectangle is a square, and compare the diagonals of a square, a rectangle and a rhombus. | A rectangle is defined as a quadrilateral with four right angles. A square has four right angles, so it is a rectangle; it also has four equal sides, which a general rectangle need not have, so not every rectangle is a square. Diagonals: in a rectangle they are equal and bisect each other; in a rhombus they bisect each other at right angles and bisect the vertex angles but are generally unequal; a square, being both, has equal diagonals that bisect each other at right angles. | rectangle defined by four right angles ; square meets that definition ; rectangle need not have equal sides ; rectangle diagonals equal and bisecting ; rhombus diagonals perpendicular, square both
+M1#maths-u05-08-q4@1: Which quadrilateral has exactly one line of symmetry and diagonals that cross at right angles? | A kite | A rhombus | A rectangle | A parallelogram | A square | A kite's symmetry line is one diagonal, and its diagonals are perpendicular; a rhombus and a square have more symmetry lines.
+SA2#maths-u05-08-q5@1,2: Explain why every square is a rectangle but not every rectangle is a square, and compare the diagonals of a square, a rectangle and a rhombus. | A rectangle is defined as a quadrilateral with four right angles. A square has four right angles, so it is a rectangle; it also has four equal sides, which a general rectangle need not have, so not every rectangle is a square. Diagonals: in a rectangle they are equal and bisect each other; in a rhombus they bisect each other at right angles and bisect the vertex angles but are generally unequal; a square, being both, has equal diagonals that bisect each other at right angles. | rectangle defined by four right angles ; square meets that definition ; rectangle need not have equal sides ; rectangle diagonals equal and bisecting ; rhombus diagonals perpendicular, square both
 
 ## Polygons
 S: A polygon is a closed shape with straight sides. The angle sums of polygons follow from splitting them into triangles, and regular polygons have elegant formulas for their interior and exterior angles.
 O: Calculate interior and exterior angle sums of polygons
 O: Find the angles and number of sides of regular polygons
+LV: GCSE · Fluency
+EV: established | The interior angles of an n-sided polygon sum to (n − 2) × 180°, and the exterior angles of a convex polygon sum to 360°.
 T: Regular polygon | A polygon with all sides equal and all angles equal
 T: Exterior angle sum | The exterior angles of any convex polygon add to 360°
 H: Angle sums
@@ -343,11 +345,16 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 NUM1#maths-u05-09-q1@1: What is each interior angle of a regular octagon? | 135 | 0 | ° | The exterior angle is 360/8 = 45°, so the interior angle is 135°.
 M1#maths-u05-09-q2@1: What is the sum of the interior angles of a pentagon? | 540° | 360° | 720° | 500° | 900° | A pentagon splits into 3 triangles from one vertex: (5 − 2) × 180 = 540°.
 M3#maths-u05-09-q3@2: Can a regular polygon have interior angles of 145°? | No: the exterior angle 35° doesn't divide 360 exactly | Yes, with 10 sides | Yes, with 35 sides | Yes, with 145 sides | Only if it's irregular | n = 360/35 isn't a whole number, so no regular polygon has that angle.
+M2#maths-u05-09-q4@1,2: Each exterior angle of a regular polygon is 20°. What is the sum of its interior angles? | 2,880° | 3,240° | 3,600° | 2,520° | 160° | n = 360 ÷ 20 = 18 sides, so the interior angles add to (18 − 2) × 180 = 2,880°.
+NUM2#maths-u05-09-q5@1: How many diagonals does a decagon have? | 35 | 0 | diagonals | Each of the 10 vertices joins to 7 non-adjacent vertices, and each diagonal is counted twice: 10 × 7 ÷ 2 = 35.
+SA2#maths-u05-09-q6@1,2: Explain why the interior angles of an n-sided polygon add to (n − 2) × 180°, and use exterior angles to show that no regular polygon has interior angles of 130°. | From one vertex, draw diagonals to every vertex except itself and its two neighbours: this splits the polygon into n − 2 triangles whose angles together make up the interior angles, so the sum is (n − 2) × 180°. For a regular polygon each exterior angle is 180 − interior; for 130° that is 50°. The exterior angles add to 360°, so n = 360 ÷ 50 = 7.2, which isn't a whole number, so no such polygon exists. | diagonals from one vertex ; n − 2 triangles ; each triangle 180° ; exterior angle 50° ; 360 ÷ 50 not a whole number
 
 ## Pythagorean Theorem
 S: Pythagoras' theorem says that in a right-angled triangle, the square on the hypotenuse equals the sum of the squares on the other two sides. It's one of the most used results in mathematics, from building to navigation to distances in coordinates.
 O: Use Pythagoras' theorem to find missing sides in 2D and 3D
 O: Use the converse to test for right angles
+LV: GCSE · Fluency
+EV: established | In a right-angled triangle the square on the hypotenuse equals the sum of the squares on the other two sides, and the converse also holds.
 T: Hypotenuse | The longest side of a right-angled triangle, opposite the right angle
 T: Pythagorean triple | Whole numbers a, b, c with a^{2} + b^{2} = c^{2}, such as 3, 4, 5 and 5, 12, 13
 H: The theorem
@@ -377,11 +384,16 @@ NUM1#maths-u05-10-q1@1: A ladder 6.5 m long reaches 6 m up a wall. How far is it
 M1#maths-u05-10-q2@1: Which is a Pythagorean triple? | 8, 15, 17 | 6, 8, 12 | 5, 6, 7 | 2, 3, 4 | 9, 12, 16 | Check a^{2} + b^{2} = c^{2}: 8^{2} + 15^{2} = 64 + 225 = 289 = 17^{2}.
 M3#maths-u05-10-q3@2: What is the distance between (−2, 3) and (4, −5)? | 10 | 14 | 8 | √20 | 6 | The differences are 6 and 8, so the distance is √(6^{2} + 8^{2}) = √100 = 10.
 NUM1#maths-u05-10-q4@1: A right-angled triangle has hypotenuse 13 and one side 5. How long is the other side? | 12 | 0 |  | √(13^{2} − 5^{2}) = √144 = 12.
+NUM2#maths-u05-10-q5@1: An isosceles triangle has two sides of 10 cm and a base of 12 cm. Find its perpendicular height. | 8 | 0 | cm | The height bisects the base, making a right-angled triangle with hypotenuse 10 and base 6: √(100 − 36) = 8 cm.
+M2#maths-u05-10-q6@2: A triangle has sides 9, 12 and 16. Which statement is true? | It is obtuse, as 9² + 12² < 16² | It is right-angled, as 9² + 12² = 16² | It is acute, as 9² + 12² > 16² | It can't exist, as 9 + 12 < 16 | 81 + 144 = 225, which is less than 16² = 256, so the angle opposite the longest side is more than 90°.
+SA2#maths-u05-10-q7@1,2: Find the space diagonal of a 2 cm by 3 cm by 6 cm cuboid, and decide whether a triangle with sides 20, 21 and 29 is right-angled. Explain each method. | For the cuboid, first find a face diagonal, √(2² + 3²) = √13, then use it as one leg of a right-angled triangle with the 6 cm edge: √(13 + 36) = √49 = 7 cm; equivalently √(a² + b² + c²). For the triangle, use the converse: if the squares of the two shorter sides add to the square of the longest, the angle opposite it is 90°. 20² + 21² = 400 + 441 = 841 = 29², so the triangle is right-angled, with the right angle opposite the 29 side. | face diagonal √13 ; space diagonal 7 cm ; states the converse ; 400 + 441 = 841 ; right angle opposite the longest side
 
 ## Circles
 S: A circle is the set of points at a fixed distance from a centre. Its circumference and area involve π, the ratio of circumference to diameter, one of mathematics' most famous constants.
 O: Name the parts of a circle
 O: Calculate circumferences and areas of circles
+LV: GCSE · Fluency
+EV: established | A circle's circumference is 2πr and its area is πr², where π is the fixed ratio of circumference to diameter.
 T: Radius | The distance from the centre to the circle; the diameter is twice the radius
 T: π (pi) | The ratio of a circle's circumference to its diameter, about 3.14159
 H: Parts of a circle
@@ -410,11 +422,16 @@ SRC: Beckmann P, A History of Pi (St Martin's Press 1971) | secondary | 1971 | h
 NUM1#maths-u05-11-q1@1: A circle has area 64π cm². What is its circumference, in terms of π? | 16 | 0 | π cm | r^{2} = 64, so r = 8 and C = 2π × 8 = 16π cm.
 M1#maths-u05-11-q2@1: What is the area of a circle with diameter 10 cm? | 25π cm² | 100π cm² | 10π cm² | 5π cm² | 20π cm² | The radius is 5 cm, so the area is π × 5^{2} = 25π.
 M2#maths-u05-11-q3@2: What is the region between a chord and its arc called? | A segment | A sector | A tangent | A radius | An annulus | A sector is bounded by two radii; a segment by a chord and an arc.
+NUM3#maths-u05-11-q4@2: A circular pond has area 50 m². Find its circumference, to 1 decimal place. | 25.1 | 0.05 | m | r = √(50/π) ≈ 3.989 m, so C = 2πr ≈ 25.1 m.
+M3#maths-u05-11-q5@2: A quarter circle of radius 10 cm is drawn inside a square of side 10 cm, centred on one corner. What area of the square lies outside it? | 100 − 25π cm² | 100 − 10π cm² | 100 − 20π cm² | 100 − 5π cm² | 25π cm² | The quarter circle has area ¼ × π × 10² = 25π cm², so 100 − 25π ≈ 21.5 cm² of the square is left.
+SA2#maths-u05-11-q6@1,2: Explain the difference between a sector and a segment of a circle, then find the perimeter of a quarter circle of radius 6 cm, exactly and to 1 decimal place. | A sector is the region between two radii and the arc joining them, like a slice of pizza; a segment is the region between a chord and its arc. A quarter circle is a sector with a 90° angle: its curved edge is ¼ × 2π × 6 = 3π cm, and its perimeter also includes the two straight radii, 6 + 6 = 12 cm. The perimeter is 3π + 12 ≈ 21.4 cm. | sector bounded by two radii and an arc ; segment bounded by a chord and an arc ; arc length 3π ; adds the two radii ; 3π + 12 ≈ 21.4 cm
 
 ## Chords and Tangents
 S: Chords and tangents connect lines and circles. A tangent meets a circle at exactly one point, and the radius there is perpendicular to it; the perpendicular from the centre to a chord bisects it.
 O: Use properties of chords and tangents to find lengths and angles
 O: Find equations of tangents to circles in coordinate geometry
+LV: GCSE and A level · Application
+EV: established | A tangent is perpendicular to the radius at the point of contact, and the perpendicular from the centre to a chord bisects the chord.
 T: Tangent | A straight line that touches a circle at exactly one point
 T: Perpendicular bisector of a chord | The line through the midpoint of a chord at right angles; it passes through the centre
 H: Properties
@@ -443,11 +460,16 @@ SRC: Department for Education, Mathematics AS and A level subject content: coord
 NUM1#maths-u05-12-q1@1: A tangent from a point P touches a circle of radius 5 cm. P is 13 cm from the centre. How long is the tangent? | 12 | 0 | cm | The radius is perpendicular to the tangent, so √(13^{2} − 5^{2}) = 12 cm.
 M1#maths-u05-12-q2@1: Two tangents from an external point to a circle are: | Equal in length | Perpendicular | Parallel | Different lengths | Always 90° apart | By symmetry, tangents from the same external point are the same length.
 M2#maths-u05-12-q3@2: The centre of a circle is (2, 1) and P(5, 5) is on it. What is the gradient of the tangent at P? | −3/4 | 4/3 | 3/4 | −4/3 | 0 | The radius has gradient 4/3, so the tangent's gradient is the negative reciprocal, −3/4.
+M3#maths-u05-12-q4@1: Tangents from P touch a circle with centre O at A and B, and angle APB = 50°. What is angle AOB? | 130° | 50° | 100° | 40° | 65° | OAPB has right angles at A and B (tangent ⟂ radius), so angle AOB = 360 − 90 − 90 − 50 = 130°.
+NUM3#maths-u05-12-q5@2: Find the tangent to x^{2} + y^{2} = 25 at the point (3, 4). Give the y-intercept of the tangent. | 6.25 | 0 |  | The radius has gradient 4/3, so the tangent has gradient −3/4: y − 4 = −¾(x − 3), giving y = −¾x + 6.25 (or 3x + 4y = 25).
+SA2#maths-u05-12-q6@1: A chord of length 24 cm lies in a circle of radius 13 cm. Find the distance of the chord from the centre, and explain why the perpendicular from the centre bisects the chord. | Let the chord be AB, the centre O, and M the foot of the perpendicular from O. Triangles OMA and OMB are right-angled at M, share OM, and have OA = OB (radii), so they are congruent (RHS) and AM = MB. So AM = 12 cm, and by Pythagoras OM = √(13² − 12²) = √25 = 5 cm. | right angles at M ; OA = OB as radii ; congruent by RHS so AM = MB ; half-chord 12 cm ; distance 5 cm
 
 ## Circle Theorems
 S: The circle theorems describe the angles formed by chords, tangents and radii in a circle. They're elegant, provable from basic facts, and a staple of GCSE Higher geometry.
 O: State and apply the circle theorems with correct reasons
 O: Prove a circle theorem using isosceles triangles
+LV: GCSE and A level · Problem solving
+EV: established | The circle theorems follow from the isosceles triangles formed by radii and from the triangle angle sum.
 T: Cyclic quadrilateral | A quadrilateral whose four vertices lie on a circle
 T: Subtended angle | The angle formed at a point by lines from the ends of an arc or chord
 H: The theorems
@@ -477,11 +499,16 @@ SRC: Heath TL (trans.), Euclid: The Thirteen Books of the Elements (Dover 1956) 
 NUM1#maths-u05-13-q1@1: In a cyclic quadrilateral, one angle is 4x and its opposite angle is 5x. Find x. | 20 | 0 | ° | Opposite angles add to 180°: 9x = 180, so x = 20.
 M1#maths-u05-13-q2@1: AB is a diameter and C is on the circle. What is angle ACB? | 90° | 180° | 45° | 60° | It depends on C | The angle in a semicircle is a right angle.
 M3#maths-u05-13-q3@2: The angle between a tangent and chord AB at A is 52°. What is the angle subtended by AB in the alternate segment? | 52° | 104° | 38° | 128° | 26° | By the alternate segment theorem, it equals the tangent–chord angle.
+M2#maths-u05-13-q4@1: A, B and C lie on a circle with centre O, B on the major arc, and angle ABC = 35°. What is angle AOC? | 70° | 35° | 145° | 110° | 17.5° | The angle at the centre is twice the angle at the circumference standing on the same arc: 2 × 35 = 70°.
+NUM2#maths-u05-13-q5@1: ABCD is a cyclic quadrilateral with angle A = 3x + 10 and angle C = 2x + 20. Find angle A. | 100 | 0 | ° | Opposite angles of a cyclic quadrilateral add to 180°: 5x + 30 = 180, so x = 30 and A = 100°.
+SA3#maths-u05-13-q6@2: AB is a diameter of a circle with centre O, and C is any other point on the circle. Prove that angle ACB = 90°. | Join OC. OA = OC = OB because they are radii, so triangles OAC and OBC are isosceles. Let angle OAC = angle OCA = a and angle OBC = angle OCB = b. Then angle ACB = a + b. The angles of triangle ABC add to 180°: a + b + (a + b) = 180°, so 2(a + b) = 180° and angle ACB = a + b = 90°. | joins OC ; three radii equal ; two isosceles triangles with equal base angles ; angle sum of ABC gives 2(a + b) = 180° ; concludes 90°
 
 ## Constructions
 S: Geometric constructions use only a straight edge and compasses to draw accurate figures: perpendicular bisectors, angle bisectors, perpendiculars and triangles. They show how geometry follows from the properties of circles.
 O: Construct perpendicular bisectors, angle bisectors and perpendiculars
 O: Construct triangles from given information
+LV: GCSE · Fluency
+EV: established | Compass-and-straight-edge constructions of bisectors and perpendiculars work because their points are equidistant from given points or lines.
 T: Perpendicular bisector | The line at right angles to a segment through its midpoint: every point on it is equidistant from the segment's ends
 T: Angle bisector | The line splitting an angle into two equal angles: every point on it is equidistant from the angle's arms
 H: The standard constructions
@@ -497,6 +524,7 @@ X: Describe how to construct an angle of 45° at a point A on a line.
 > Construct the perpendicular to the line at A (bisect a segment centred on A), giving 90°
 > Bisect the 90° angle using equal arcs from points on each arm
 > The bisector makes 45° with the line
+!: Setting the compasses to less than half of AB when bisecting it: the arcs from A and B then fail to cross.
 K: Use compasses and a straight edge; keep arcs visible; bisectors give 90°, and halving equilateral angles gives 60° and 30°.
 !: Changing the compass width midway through a construction that needs equal arcs.
 Q: Which points lie on the perpendicular bisector of AB? | Points equidistant from A and B.
@@ -507,11 +535,17 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 SRC: Hartshorne R, Geometry: Euclid and Beyond (Springer 2000) | secondary | 2000 | https://link.springer.com/
 M1#maths-u05-14-q1@1: Which construction finds all points equidistant from two points A and B? | The perpendicular bisector of AB | The angle bisector | A circle centred on A | A line parallel to AB | The midpoint only | Every point on the perpendicular bisector is the same distance from A and B.
 M2#maths-u05-14-q2@2: Which angle can't be constructed with compasses and a straight edge alone by bisecting standard angles? | 20° | 30° | 45° | 15° | 22.5° | Bisecting 60° and 90° gives 30°, 45°, 15° and 22.5°; trisecting 60° to get 20° is impossible with these tools (Wantzel, 1837).
+TF1#maths-u05-14-q3@1: An angle of 60° can be constructed with compasses and a straight edge alone. | true | Arcs of the same radius from the two ends of a segment meet at the third vertex of an equilateral triangle, whose angles are 60°.
+SEQ2#maths-u05-14-q4@1: Put the steps for constructing the perpendicular bisector of AB in order. | Set the compasses to more than half the length of AB ; Draw arcs above and below AB, centred on A ; Keep the width and draw arcs centred on B to cross them ; Join the two crossing points with a straight line | The width must be fixed before the first arc and kept for the second, and the line goes through both crossing points.
+M3#maths-u05-14-q5@1: Why does the perpendicular bisector construction work? | Each crossing point is equidistant from A and B, and all such points lie on one line | The compasses mark a 90° angle each time the two arcs cross over | The arcs always meet at the midpoint of AB, which fixes the direction | Any two arcs drawn from A and B meet each other at right angles | The two crossing points are each the same distance from A and B, and the set of all such points is the perpendicular bisector.
+SA2#maths-u05-14-q6@2: Describe how to construct a triangle with sides 7 cm, 5 cm and 4 cm, and explain why no triangle has sides 7 cm, 3 cm and 3 cm. | Draw the 7 cm side AB with a ruler. Set the compasses to 5 cm and draw an arc centred on A; set them to 4 cm and draw an arc centred on B. The arcs cross at C; join AC and BC, leaving the arcs visible. With 7, 3 and 3, arcs of 3 cm from each end of a 7 cm line don't meet, because 3 + 3 = 6 is less than 7: the triangle inequality fails. | draws the longest side first ; arcs of 5 cm and 4 cm from the two ends ; joins to the crossing point and keeps arcs ; 3 + 3 < 7 ; arcs don't meet
 
 ## Loci
 S: A locus is the set of all points satisfying a rule, such as "always 3 m from a tree". Loci combine with constructions to solve practical problems about regions and boundaries.
 O: Draw loci for standard rules
 O: Combine loci to identify regions satisfying several conditions
+LV: GCSE · Application
+EV: established | Standard loci (circles, perpendicular bisectors, angle bisectors and parallel lines) are the sets of points satisfying simple distance conditions.
 T: Locus | The set of points that satisfy a given condition (plural: loci)
 T: Equidistant | At equal distances from two points, lines or objects
 H: Standard loci
@@ -528,6 +562,7 @@ X: A goat is tied to a corner of a 10 m by 6 m shed (outside it) with a 4 m rope
 > From the corner, the rope sweeps three quarters of a circle of radius 4 m (the shed blocks the other quarter)
 > Its area is ¾ × π × 4^{2} = 12π
 > ≈ 37.7 m^{2}
+!: Using the wrong boundary: "closer to A than to B" is the region on A's side of the perpendicular bisector of AB, not a circle round A.
 K: Points at a fixed distance from a point form a circle; equidistant from two points is the perpendicular bisector; combine loci to find regions.
 !: Drawing a locus from a line segment with square corners instead of semicircular ends.
 Q: What is the locus of points 2 cm from a point P? | A circle of radius 2 cm centred on P.
@@ -538,11 +573,16 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary mastery professional development materials: constructions and loci | guidance | 2019 | https://www.ncetm.org.uk/
 M1#maths-u05-15-q1@1: What is the locus of points 5 m from a straight wall (on one side)? | A line parallel to the wall, 5 m away | A circle of radius 5 m | A perpendicular bisector | An angle bisector | A single point | Every point 5 m from the wall lies on a parallel line at that distance.
 M2#maths-u05-15-q2@2: Points equidistant from (0, 0) and (6, 0) lie on which line? | x = 3 | y = 3 | y = x | x = 6 | y = 0 | That's the perpendicular bisector of the segment, through its midpoint (3, 0).
+TF1#maths-u05-15-q3@1: The locus of points exactly 3 cm from a point P is a disc of radius 3 cm. | false | Points exactly 3 cm away form the circle; the points less than 3 cm away fill the disc inside it.
+NUM3#maths-u05-15-q4@2: A goat is tied outside a 5 m by 3 m shed, at one corner, with a 4 m rope. What area can it graze, in m² to 1 decimal place? | 38.5 | 0.1 | m² | Three quarters of a circle of radius 4 gives 12π; along the 3 m wall the rope passes the far corner with 1 m left, adding a quarter circle of radius 1 (π/4): 12.25π ≈ 38.5 m².
+SA2#maths-u05-15-q5@1,2: Describe how to find and shade the region of points that are within 5 km of a town C and closer to town A than to town B, and state which constructions you use. | Draw a circle of radius 5 km (to scale) centred on C with compasses; points inside it are within 5 km of C. Construct the perpendicular bisector of AB: points on it are equidistant from A and B, and points on A's side are closer to A. Shade the part of the disc that lies on A's side of the bisector. Use solid or dashed boundaries as the question asks and leave construction arcs visible. | circle of radius 5 km about C ; inside the circle ; perpendicular bisector of AB ; A's side is closer to A ; shades the overlap
 
 ## Bearings
 S: A bearing gives a direction as a three-figure angle measured clockwise from north. Bearings are used in navigation, orienteering, aviation and surveying, and combine with trigonometry to find distances.
 O: Measure and calculate bearings
 O: Find back bearings and solve bearing problems with trigonometry
+LV: GCSE · Application
+EV: established | A bearing is a three-figure angle measured clockwise from north, and the back bearing differs from it by 180°.
 T: Bearing | An angle measured clockwise from north, written with three figures, such as 045°
 T: Back bearing | The bearing of the return journey: add or subtract 180°
 H: The rules
@@ -569,6 +609,8 @@ SRC: Ordnance Survey, Map reading made easy | guidance | 2023 | https://www.ordn
 NUM1#maths-u05-16-q1@1: The bearing of Q from P is 155°. What is the bearing of P from Q? | 335 | 0 | ° | Add 180° for the back bearing: 155 + 180 = 335°.
 M1#maths-u05-16-q2@1: Which bearing describes south-east? | 135° | 045° | 225° | 315° | 090° | South-east is halfway between east (090°) and south (180°).
 M2#maths-u05-16-q3@2: A walker goes 5 km north and 5 km east. What is her bearing from the start? | 045° | 090° | 135° | 000° | 315° | Equal north and east components give an angle of 45° clockwise from north.
+NUM3#maths-u05-16-q4@2: A ship sails 8 km on a bearing of 040°, then 6 km on 130°. Find the bearing of its finishing point from its start, to the nearest degree. | 77 | 0.5 | ° | The legs meet at 90° (130 − 40), so the angle between the first leg and the line to the finish is tan⁻¹(6/8) ≈ 36.9°; 40 + 36.9 ≈ 077°.
+SA2#maths-u05-16-q5@1,2: B is on a bearing of 070° from A. Find the bearing of A from B and explain, using the north lines at A and B, why the rule 'add 180°' works. | The north lines at A and B are parallel. The line AB is a transversal, so the angle at B between north and the direction back to A makes co-interior angles with the 070° at A: the angle from B's north clockwise round to BA is 70° + 180° = 250°. So the bearing of A from B is 250°. In general the return direction is exactly opposite, a half turn of 180°, so add 180° to bearings under 180° and subtract 180° from bearings over 180°. | north lines are parallel ; AB as a transversal ; co-interior or alternate angle reasoning ; bearing 250° ; add or subtract 180°
 
 ## Perimeter
 S: The perimeter is the total distance around the outside of a shape. It's what you'd need for fencing, edging or a frame, and calculating it carefully means accounting for every edge, including curved ones.

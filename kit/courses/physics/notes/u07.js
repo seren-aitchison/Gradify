@@ -227,6 +227,11 @@ SA2@1,2: Show that the period of a circular orbit is proportional to r^{3/2}, an
 
 ## Circular and elliptical orbits
 S: Bound orbits under an inverse-square force are ellipses with the central body at one focus; a circle is the special case of zero eccentricity. Unbound orbits are parabolas or hyperbolas.
+O: Describe an orbit by its semi-major axis and eccentricity
+O: Relate an orbit's total energy to its shape and whether it is bound
+O: Use the vis-viva equation to find speeds anywhere on an orbit
+PRE: Orbital velocity
+LV: Year 1 · Application
 H: Ellipse geometry
 E: r = a(1 − e^{2})/(1 + e cos θ) :: a = semi-major axis, e = eccentricity
 E: r_{peri} = a(1 − e), r_{apo} = a(1 + e)
@@ -241,17 +246,34 @@ E: v^{2} = GM(2/r − 1/a) :: vis-viva equation
 X: A comet has perihelion 0.6 AU and aphelion 35 AU. Find a and e.
 > a = (0.6 + 35)/2 = 17.8 AU
 > e = (35 − 0.6)/(35 + 0.6) = 0.97
+K: The semi-major axis alone fixes the energy (and period); the eccentricity says how stretched the orbit is.
 !: The Sun is at a focus of the ellipse, not at its centre.
 P: **Investigate with the lab.** Make an ellipse with eccentricity above 0.6 and watch the planet speed up near the star and slow down far away.
 IX: orbits
+T: Eccentricity | A number e describing an orbit's shape: 0 for a circle, between 0 and 1 for an ellipse, 1 for a parabola
+T: Semi-major axis | Half the longest diameter of an ellipse, a = (r_{peri} + r_{apo})/2
+T: Periapsis | The point of an orbit closest to the central body (perihelion for the Sun)
+SUM: Inverse-square orbits are conic sections with the central mass at a focus.
+SUM: E = −GMm/(2a) decides bound or unbound; vis-viva gives the speed at any r.
+EV: established | Orbits under an inverse-square attraction are conic sections with the attracting body at one focus
+SRC: OpenStax, University Physics Volume 1, section 13.5 "Kepler's Laws of Planetary Motion" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/13-5-keplers-laws-of-planetary-motion
+SRC: OpenStax, College Physics 2e, section 6.6 "Satellites and Kepler's Laws: An Argument for Simplicity" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/6-6-satellites-and-keplers-laws-an-argument-for-simplicity
 Q: What is the vis-viva equation? | v^{2} = GM(2/r − 1/a).
 Q: What decides whether an orbit is bound? | Its total energy: negative energy means a bound ellipse.
-M1: An orbit with e = 0 is: | A circle | A parabola | A hyperbola | A straight line | Zero eccentricity.
-M2: Where is an orbiting body fastest? | At periapsis | At apoapsis | Everywhere the same | At the end of the minor axis | Angular momentum conservation.
-M2: Where is a planet on an elliptical orbit moving fastest? | At closest approach to the star | At its furthest point from the star | Halfway along the orbit | It moves at constant speed | Angular momentum is conserved, so the planet moves fastest where it is closest.
+M1@1: An orbit with e = 0 is: | A circle | A parabola | A hyperbola | A straight line | Eccentricity measures departure from a circle, so e = 0 means a circle; e = 1 is a parabola and e > 1 a hyperbola.
+M2@3: Where is an orbiting body fastest? | At periapsis | At apoapsis | Everywhere the same | At the end of the minor axis | Angular momentum mvr is conserved (and vis-viva gives larger v at smaller r), so the speed is greatest where r is least.
+M2@3: Where is a planet on an elliptical orbit moving fastest? | At closest approach to the star | At its furthest point from the star | Halfway along the orbit | It moves at constant speed | Angular momentum is conserved, so the planet moves fastest where it is closest.
+NUM2@3: A satellite has a = 10 000 km about Earth (GM = 3.99 × 10^{14} m^{3} s^{-2}). What is its speed, in km s^{-1}, when r = 7000 km? | 8.61 | 2% | km s^{-1} | v^{2} = GM(2/r − 1/a) = 3.99 × 10^{14} × (2.857 × 10^{-7} − 1.0 × 10^{-7}) = 7.41 × 10^{7} m^{2} s^{-2}, so v = 8.61 km s^{-1}.
+M3@2: A probe passes Earth with total orbital energy exactly zero relative to Earth. Its path is: | A parabola, just escaping | A circle | A closed ellipse | A hyperbola that returns | E = 0 is the boundary between bound ellipses (E < 0) and hyperbolic flybys (E > 0): a parabola, escaping with zero speed at infinity.
+SA2@1,2: Two comets have the same perihelion distance, but one has total energy −1 × 10^{9} J and the other +1 × 10^{9} J. Describe and explain how their orbits differ. | The comet with negative energy is bound: it follows an ellipse with the Sun at one focus, with a semi-major axis set by E = −GMm/(2a), and it returns periodically. The comet with positive energy is unbound: it follows a hyperbola, swings once around the Sun and leaves for ever with some speed left at infinity. At the shared perihelion the unbound comet moves faster. | Negative energy: bound ellipse that returns ; Semi-major axis fixed by energy ; Positive energy: hyperbola, never returns ; Unbound comet faster at perihelion
 
 ## Kepler's laws
 S: Kepler found three laws in Tycho Brahe's planetary data; Newton showed they follow from an inverse-square gravitational force. They still describe moons, exoplanets and binary stars.
+O: State Kepler's three laws and the physics behind each
+O: Use T^{2} ∝ a^{3} to compare orbits about the same body
+O: Use Newton's form of the third law to find a central mass
+PRE: Circular and elliptical orbits
+LV: A level · Application
 H: The laws
 - **First**: planets move in ellipses with the Sun at one focus.
 - **Second**: the line from Sun to planet sweeps equal areas in equal times (conservation of angular momentum).
@@ -262,17 +284,33 @@ P: Kepler's third law measures masses: the Sun's from Earth's orbit, Jupiter's f
 X: Jupiter is 5.2 AU from the Sun. Find its period.
 > T^{2} = a^{3} (years, AU) = 140.6
 > T = 11.9 years
+K: Kepler's laws are consequences of an inverse-square central force: the first of its form, the second of angular momentum conservation, the third of the force's strength.
 !: The third law in its simple form T^{2} ∝ a^{3} compares bodies orbiting the same central mass; Earth's satellites and the planets have different constants.
 P: **Investigate with the lab.** Try orbits of two sizes and compare T² with a³. Then check equal areas in equal times on an eccentric orbit.
 IX: orbits
+T: Kepler's third law | The square of an orbital period is proportional to the cube of the semi-major axis, T^{2} ∝ a^{3}
+T: Astronomical unit | The mean Earth–Sun distance, about 1.50 × 10^{11} m
+SUM: Ellipses, equal areas, T^{2} ∝ a^{3}.
+SUM: Newton's form T^{2} = 4π^{2}a^{3}/(GM) lets orbits weigh central bodies.
+EV: established | Kepler's laws follow from Newton's inverse-square law and describe planetary, satellite and binary orbits
+SRC: OpenStax, University Physics Volume 1, section 13.5 "Kepler's Laws of Planetary Motion" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/13-5-keplers-laws-of-planetary-motion
+SRC: AQA, A-level Physics specification (7408), section 3.7.2.4 | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: What does Kepler's second law express physically? | Conservation of angular momentum.
 Q: How can Kepler's third law measure a star's mass? | From a planet's period and orbit size: M = 4π^{2}a^{3}/(GT^{2}).
-M1: A planet at 4 AU has a period of: | 8 years | 4 years | 16 years | 2 years | T = a^{3/2}.
-M2: Kepler's laws were derived from observations by: | Tycho Brahe | Galileo | Copernicus | Ptolemy | Kepler analysed Tycho's precise data.
-M2: One planet's orbit has four times the semi-major axis of another's. How do their periods compare? | Eight times longer | Four times longer | Sixteen times longer | Twice as long | Kepler's third law: T² ∝ a³, so T ∝ a^{1.5} = 4^{1.5} = 8.
+M1@2: A planet at 4 AU has a period of: | 8 years | 4 years | 16 years | 2 years | In years and AU, T^{2} = a^{3} = 64, so T = 8 years; 16 years would come from T ∝ a^{2}.
+M2@1: Kepler's laws were derived from observations by: | Tycho Brahe | Galileo | Copernicus | Ptolemy | Kepler analysed Tycho Brahe's precise naked-eye measurements of planetary positions, especially those of Mars.
+M2@2: One planet's orbit has four times the semi-major axis of another's. How do their periods compare? | Eight times longer | Four times longer | Sixteen times longer | Twice as long | Kepler's third law: T² ∝ a³, so T ∝ a^{1.5} = 4^{1.5} = 8.
+NUM2@3: Io orbits Jupiter at 4.22 × 10^{8} m with period 1.77 days. Find Jupiter's mass in units of 10^{27} kg. | 1.90 | 3% | × 10^{27} kg | T = 1.529 × 10^{5} s; M = 4π^{2}a^{3}/(GT^{2}) = 39.48 × 7.515 × 10^{25}/(6.67 × 10^{-11} × 2.338 × 10^{10}) = 1.90 × 10^{27} kg.
+M3@1: A comet's speed at perihelion (0.5 AU) is v. Using Kepler's second law, its speed at aphelion (5 AU) is: | v/10 | v | v/100 | 10v | At the ends of the major axis the velocity is perpendicular to r, so equal areal rate means r_{p}v_{p} = r_{a}v_{a}: v_{a} = v × 0.5/5 = v/10.
+SA2@1: Explain how Kepler's second law follows from conservation of angular momentum, and what it implies for a planet's speed. | Gravity on a planet acts along the line to the Sun, so it exerts no torque about the Sun and the planet's angular momentum L = mr × v is constant. The area swept per unit time is ½|r × v| = L/(2m), which is therefore constant: equal areas in equal times. To sweep equal areas the planet must move faster when it is close to the Sun and slower when far away. | Gravity is central, so no torque about the Sun ; Angular momentum is conserved ; Areal rate dA/dt = L/(2m) is constant ; Faster near the Sun, slower far away
 
 ## Satellite motion
 S: Satellites are placed in orbits chosen for their purpose: low orbits for imaging and the ISS, sun-synchronous polar orbits for Earth observation, medium orbits for navigation, and geostationary orbits for communications and weather.
+O: Compare the main types of Earth orbit and their uses
+O: Explain the conditions for a geostationary orbit
+O: Explain the effects of drag and why GPS needs relativistic corrections
+PRE: Orbital velocity
+LV: A level · Application
 H: Common orbits
 - **LEO** (160–2000 km): ~90 min periods; ISS, Starlink, imaging; atmospheric drag means orbits decay.
 - **Sun-synchronous**: near-polar, precessing once a year (using Earth's bulge) so each pass sees the same local time of day.
@@ -286,17 +324,35 @@ H: Practical issues
 X: Why does GPS need relativity?
 > Satellite clocks run fast by ~45 μs per day (weaker gravity) and slow by ~7 μs per day (speed): net +38 μs per day
 > Uncorrected, position errors would grow by ~10 km per day
+K: A geostationary satellite must be over the equator, moving eastward, with a period of one sidereal day: that fixes a single orbit at 35 786 km altitude.
 !: Drag on a satellite makes it speed up, not slow down: it drops to a lower orbit where the orbital speed is higher.
 P: **Investigate with the lab.** Find the circular orbit for a satellite close in, then one further out, and compare their periods.
 IX: orbits
+T: Low Earth orbit | An orbit roughly 160–2000 km up, with a period of about 90–130 minutes
+T: Sun-synchronous orbit | A near-polar orbit whose plane precesses once a year, so it passes each place at the same local solar time
+T: Polar orbit | An orbit passing over or near both poles, so Earth turns beneath it and it scans the whole surface
+SUM: Low orbits suit imaging but suffer drag; geostationary orbits stay above one point for communications.
+SUM: GPS clocks gain a net 38 μs per day from relativity and must be corrected.
+EV: established | Satellite orbits are chosen by altitude, inclination and period to suit their purpose, and GPS requires general and special relativistic clock corrections
+SRC: OpenStax, University Physics Volume 1, section 13.4 "Satellite Orbits and Energy" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/13-4-satellite-orbits-and-energy
+SRC: AQA, A-level Physics specification (7408), section 3.7.2.4 | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: Why are Earth observation satellites often sun-synchronous? | So they pass over each place at the same local solar time, giving consistent lighting.
 Q: What happens to a LEO satellite's speed as drag lowers its orbit? | It increases.
-M1: GPS satellites orbit in: | Medium Earth orbit (~20 000 km) | Geostationary orbit | LEO | Polar LEO only | About 12-hour orbits.
-M2: The net relativistic clock offset for GPS satellites is about: | +38 μs per day | −7 μs per day | 0 | +1 s per day | Gravitational blueshift exceeds velocity time dilation.
-M2: Why must a geostationary satellite orbit at one particular height? | Its period must be exactly one day, which fixes its orbital radius | It must be beyond the reach of Earth's gravity | It must avoid the Moon's orbit | Its speed must be zero relative to the stars | T² ∝ r³ means only one radius gives a 24-hour period.
+M1@1: GPS satellites orbit in: | Medium Earth orbit (~20 000 km) | Geostationary orbit (~36 000 km) | Very low orbit (~300 km) | A polar orbit at ~800 km | GPS uses medium orbits at about 20 200 km altitude with periods of about 12 hours, so each satellite covers a large area.
+M2@3: The net relativistic clock offset for GPS satellites is about: | +38 μs per day | −7 μs per day | 0 | +1 s per day | Weaker gravity makes the clocks gain about 45 μs per day and their speed makes them lose about 7 μs: a net gain of about 38 μs per day.
+M2@2: Why must a geostationary satellite orbit at one particular height? | Its period must be exactly one day, which fixes its orbital radius | It must be beyond the reach of Earth's gravity | It must avoid the Moon's orbit | Its speed must be zero relative to the stars | T² ∝ r³ means only one radius gives a 24-hour period.
+MS2@2: Which conditions must a geostationary satellite meet? | Orbit above the equator ; Period of one sidereal day ; Move in the same direction as Earth rotates | Polar orbit ; Altitude of about 400 km ; Zero speed relative to the stars | It must stay above one point: so it orbits in the equatorial plane, eastward, with a period equal to Earth's rotation period.
+M3@3: A satellite's clock gains 45 μs per day from gravity and loses 7 μs from speed. Light travels about 300 m per μs. Roughly how big would the daily ranging error be uncorrected? | About 11 km | About 2 km | About 14 km | About 300 m | Net error 38 μs per day; distance = 38 × 300 m ≈ 11 km. 14 km comes from adding the two effects instead of subtracting.
+SA2@1,3: A weather agency wants (a) continuous images of one hemisphere and (b) high-resolution images of the whole globe. Recommend an orbit for each and explain. | (a) A geostationary orbit: at 35 786 km over the equator with a one-day period, the satellite stays above one point and sees the same hemisphere continuously, though at low resolution because it is far away. (b) A low, sun-synchronous polar orbit at a few hundred to about 800 km: Earth turns beneath it so it scans the whole globe, it is close enough for high resolution, and it passes each place at the same local time, giving consistent lighting. | Geostationary for continuous coverage ; Equatorial, one-day period, stays above one point ; Low polar or sun-synchronous for global high resolution ; Earth rotates beneath it; consistent lighting
 
 ## Orbital energy and angular momentum
 S: An orbit's total energy fixes its size (semi-major axis); its angular momentum fixes its shape. In circular orbits, kinetic energy is half the magnitude of potential energy and total energy is negative.
+O: Calculate the kinetic, potential and total energy of a circular orbit
+O: Explain why raising an orbit lowers the speed but raises the total energy
+O: Use the effective potential to explain turning points
+PRE: Gravitational potential and potential energy
+PRE: Angular momentum
+LV: Year 1 · Physical reasoning
 H: Circular orbit energies
 E: KE = GMm/(2r); U = −GMm/r; E = −GMm/(2r) = −KE :: virial theorem: 2KE = −U
 H: Ellipses
@@ -309,17 +365,34 @@ P: To raise a circular orbit you add energy (fire forward), but at the new, high
 X: A 500 kg satellite moves from r = 7000 km to 8000 km (circular). Find ΔE, ΔKE and ΔU.
 > GMm = 3.99 × 10^{14} × 500 = 2.0 × 10^{17}
 > E: −14.25 GJ → −12.47 GJ, ΔE = +1.78 GJ; ΔKE = −1.78 GJ; ΔU = +3.56 GJ
+K: In a circular orbit E = −KE = U/2: adding energy raises the orbit, which lowers the kinetic energy.
 !: Total orbital energy is negative for bound orbits; "more energy" means less negative.
 P: **Investigate with the lab.** On an eccentric orbit, watch the kinetic and potential energy exchange while the total stays constant. Then give the planet escape velocity and note the total energy reaches zero.
 IX: orbits
+T: Virial theorem | For a bound inverse-square orbit, 2⟨KE⟩ = −⟨U⟩, so the total energy is −⟨KE⟩
+T: Effective potential | U_{eff} = U + L^{2}/(2mr^{2}), which reduces orbital motion to motion in r alone
+SUM: Circular orbit: KE = GMm/2r, U = −GMm/r, E = −GMm/2r.
+SUM: Energy sets a; angular momentum sets e; turning points lie where E = U_{eff}.
+EV: established | For bound inverse-square orbits the total energy is −GMm/(2a) and in circular orbits KE = −E = −U/2
+SRC: OpenStax, University Physics Volume 1, section 13.4 "Satellite Orbits and Energy" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/13-4-satellite-orbits-and-energy
+SRC: OpenStax, University Physics Volume 1, section 13.5 "Kepler's Laws of Planetary Motion" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/13-5-keplers-laws-of-planetary-motion
 Q: State the virial theorem for circular gravitational orbits. | 2KE = −U, so E = −KE = U/2.
 Q: What sets the shape of an orbit at fixed energy? | Its angular momentum (larger L means less eccentric).
-M1: For a circular orbit, if KE = 5 GJ, the total energy is: | −5 GJ | 5 GJ | −10 GJ | 10 GJ | E = −KE.
-M2: The L^{2}/(2mr^{2}) term in the effective potential: | Prevents the orbit reaching r = 0 | Represents drag | Is the gravitational PE | Is always zero | It's a centrifugal barrier.
-M2: What is the sign of the total energy of a bound orbit? | Negative | Positive | Zero | It changes sign each orbit | A bound orbit has total energy below zero; at escape velocity it reaches zero.
+M1@1: For a circular orbit, if KE = 5 GJ, the total energy is: | −5 GJ | 5 GJ | −10 GJ | 10 GJ | In a circular orbit E = −KE, so E = −5 GJ; −10 GJ is the potential energy U = −2KE.
+M2@3: The L^{2}/(2mr^{2}) term in the effective potential: | Prevents the orbit reaching r = 0 | Represents the drag of the atmosphere | Is the gravitational potential energy | Is always zero for elliptical orbits | It grows as 1/r^{2}, faster than gravity's −1/r, so it acts as a centrifugal barrier keeping a body with L ≠ 0 away from the centre.
+M2@1: What is the sign of the total energy of a bound orbit? | Negative | Positive | Zero | It changes sign each orbit | A bound orbit has total energy below zero; at escape velocity it reaches zero.
+NUM2@1: A 1000 kg satellite is in a circular orbit of radius 7.0 × 10^{6} m about Earth (GM = 3.99 × 10^{14} m^{3} s^{-2}). What is its total energy in GJ? | -28.5 | 2% | GJ | E = −GMm/(2r) = −3.99 × 10^{14} × 1000/(1.4 × 10^{7}) = −2.85 × 10^{10} J = −28.5 GJ.
+M3@2: A satellite fires its engine briefly to move to a higher circular orbit. Compared with before, its kinetic energy and total energy are: | KE lower, total energy higher | KE higher, total energy higher | KE lower, total energy lower | Both unchanged | E = −KE, so a less negative (higher) total energy means a smaller KE: the higher orbit is slower even though energy was added; U rises by twice ΔE.
+SA3@2,3: A spacecraft in a circular orbit wants to catch up with a station 100 km ahead of it in the same orbit. Explain, using orbital energy, why it should first fire its engine backwards. | Firing backwards removes energy, so the spacecraft drops into a lower orbit (a smaller semi-major axis). Lower orbits have shorter periods and higher speeds, since E = −KE and T ∝ a^{3/2}. It therefore gains on the station. When it has caught up it fires forwards to raise its orbit back to the station's. Firing forwards first would raise it into a slower, higher orbit and it would fall further behind. | Retrograde burn lowers the orbit ; Lower orbit: shorter period, higher speed ; E = −KE links lower energy to higher speed ; Prograde burn later to rejoin ; Firing forwards first would make it fall behind
 
 ## Two-body gravitational problem
 S: Two bodies orbiting under mutual gravity both circle their common centre of mass. Their relative motion is equivalent to one body of reduced mass orbiting a fixed centre, so Kepler's results apply exactly.
+O: Reduce a two-body orbit to a one-body problem using the reduced mass
+O: Find the masses and orbit sizes of a binary system from its period and separation
+O: Explain how the reflex motion of a star reveals exoplanets
+PRE: Centre of mass
+PRE: Kepler's laws
+LV: Year 1 · Application
 H: Reduction to one body
 E: μ = m_{1}m_{2}/(m_{1} + m_{2}); r = r_{1} − r_{2}
 E: μ r̈ = −Gm_{1}m_{2} r̂/r^{2}
@@ -332,17 +405,34 @@ H: Applications
 X: Two stars of 2 and 1 solar masses orbit with separation 3 AU. Find the period.
 > T^{2} = a^{3}/(M_{1} + M_{2}) (years, AU, solar masses) = 27/3 = 9
 > T = 3 years; the 2 M_{⊙} star is 1 AU from the CM, the other 2 AU
+K: Neither body is fixed: both orbit the centre of mass, and the period depends on the total mass, while the ratio of orbit sizes gives the mass ratio.
 !: Kepler's third law with only the central mass, M, is an approximation; use M + m when the companion isn't negligible.
+T: Reduced mass | μ = m_{1}m_{2}/(m_{1} + m_{2}), the mass used to treat two-body motion as one body orbiting a fixed point
+T: Barycentre | The centre of mass of an orbiting system, about which both bodies move
+SUM: Both bodies orbit the centre of mass with distances in inverse ratio to their masses.
+SUM: T^{2} = 4π^{2}a^{3}/(G(m_{1} + m_{2})) gives the total mass; the orbit-size ratio splits it.
+EV: established | Two gravitating bodies move on similar conic orbits about their common centre of mass, with a period fixed by their total mass and separation
+SRC: OpenStax, University Physics Volume 1, section 13.4 "Satellite Orbits and Energy" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/13-4-satellite-orbits-and-energy
+SRC: OpenStax, University Physics Volume 1, section 13.5 "Kepler's Laws of Planetary Motion" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/13-5-keplers-laws-of-planetary-motion
 Q: What is the reduced mass? | μ = m_{1}m_{2}/(m_{1} + m_{2}).
 Q: How do the orbits of two stars about their CM compare in size? | In inverse proportion to their masses.
-M1: The Sun wobbles around the Solar System's CM mainly due to: | Jupiter | Earth | Mercury | Comets | Jupiter has most of the planetary mass.
-M2: Two equal-mass stars orbit their CM. Their orbits are: | The same size, on opposite sides | Different sizes | One star is stationary | Circular only | Equal masses ⇒ symmetric orbits.
+M1@3: The Sun wobbles around the Solar System's CM mainly due to: | Jupiter | Earth | Mercury | Comets | Jupiter holds most of the planets' mass, and its pull moves the Sun around a barycentre just outside the Sun's surface.
+M2@1: Two equal-mass stars orbit their CM. Their orbits are: | The same size, on opposite sides | Different sizes | One star is stationary | Circular only | Orbit sizes are in inverse ratio of the masses, so equal masses give equal orbits, always diametrically opposite across the CM.
+NUM2@2: Two stars 4.0 AU apart orbit each other every 4.0 years. What is their total mass in solar masses? | 4 | 2% | M_{⊙} | In years, AU and solar masses, M_{1} + M_{2} = a^{3}/T^{2} = 64/16 = 4.0 solar masses.
+M3@2: In a binary, star A moves on an orbit about the centre of mass three times as large as star B's. What is the ratio of their masses, m_{A}/m_{B}? | 1/3 | 3 | 9 | 1/9 | m_{A}r_{A} = m_{B}r_{B}, so the star with the larger orbit is the lighter one: m_{A}/m_{B} = r_{B}/r_{A} = 1/3.
+TF2@3: An exoplanet can be detected even if it is never seen, because its star moves in a small orbit about their common centre of mass. | true | The star's reflex motion periodically Doppler-shifts its spectral lines by metres per second, revealing the planet's period and a lower limit on its mass.
+SA2@1,2: Explain how astronomers can find the individual masses of two stars in a visual binary. | Measure the period T and, with the distance to the system, the semi-major axis a of the relative orbit. Newton's form of Kepler's third law, T^{2} = 4π^{2}a^{3}/(G(m_{1} + m_{2})), gives the total mass. Then measure each star's orbit about the centre of mass: since m_{1}a_{1} = m_{2}a_{2}, the ratio of the orbit sizes gives the mass ratio, and combining the sum and the ratio gives each mass. | Measure period and separation ; Third law gives the total mass ; Orbit sizes about the CM give the mass ratio ; Combine sum and ratio for each mass
 
 ## Tidal forces
 S: Tidal forces arise because gravity varies across an extended body: the near side is pulled more strongly than the far side. They raise ocean tides, lock moons' rotations, heat Io's volcanoes and stretch objects falling into black holes.
+O: Derive the 1/r^{3} dependence of the tidal acceleration
+O: Explain two tidal bulges and spring and neap tides
+O: Explain tidal locking and the Moon's recession
+PRE: Gravitational field strength
+LV: Year 1 · Physical reasoning
 H: The tidal acceleration
 E: Δg ≈ 2GMd/r^{3} :: difference across a size d at distance r from mass M
-- Falls as 1/r^{3}: the Moon's tidal effect on Earth is about 2.2 times the Sun's, though the Sun's pull is much stronger.
+- It is the difference between GM/r^{2} at two points, so it falls as 1/r^{3}: the Moon's tidal effect on Earth is about 2.2 times the Sun's, though the Sun's pull is much stronger.
 - Produces two bulges: towards and away from the Moon, hence two high tides a day (every ~12 h 25 min).
 - Spring tides (Sun and Moon aligned, new and full moon) and neap tides (at right angles).
 H: Tidal evolution
@@ -350,11 +440,23 @@ P: Earth's rotation drags the tidal bulge ahead of the Moon. The bulge pulls the
 X: Compare the Moon's and Sun's tidal effects on Earth.
 > Ratio = (M_{moon}/M_{sun})(r_{sun}/r_{moon})^{3} = (7.35 × 10^{22}/2 × 10^{30})(1.5 × 10^{11}/3.84 × 10^{8})^{3}
 > = 3.7 × 10^{-8} × 6.0 × 10^{7} ≈ 2.2
+K: Tides depend on the difference in gravity across a body, not on gravity's strength, which is why the nearby Moon beats the far more massive Sun.
 !: Tides aren't caused by the Moon "pulling the water up" on the near side only; the far-side bulge comes from the Earth being pulled away from the water there.
+T: Tidal force | The difference in gravitational force across an extended body, which stretches it along the line to the attracting mass
+T: Tidal locking | The state in which a body's rotation period equals its orbital period, so it always shows the same face
+T: Spring tide | An unusually large tidal range when the Sun and Moon are in line, at new and full moon
+SUM: Tidal acceleration ≈ 2GMd/r^{3}; the Moon's tides on Earth are about twice the Sun's.
+SUM: Tidal friction slows Earth's spin, moves the Moon outward and locks moons' rotations.
+EV: established | Ocean tides result from the variation of the Moon's and Sun's gravity across the Earth, which falls as the inverse cube of distance
+SRC: OpenStax, University Physics Volume 1, section 13.6 "Tidal Forces" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/13-6-tidal-forces
+SRC: OpenStax, Astronomy 2e, section 4.6 "Ocean Tides and the Moon" | secondary | 2022 | https://openstax.org/books/astronomy-2e/pages/4-6-ocean-tides-and-the-moon
 Q: Why are there two tidal bulges? | Gravity is stronger on the near side and weaker on the far side than at Earth's centre, stretching the Earth–ocean system.
 Q: How does tidal force depend on distance? | As 1/r^{3}.
-M1: Spring tides occur at: | New and full moon | First and last quarter | Only in spring | Equinoxes only | Sun and Moon aligned.
-M2: Tidal friction is making the Moon: | Recede from Earth | Approach Earth | Speed up its orbit | Stop rotating | Angular momentum moves from Earth's spin to the Moon's orbit.
+M1@2: Spring tides occur at: | New and full moon | First and last quarter | Only in spring | Equinoxes only | At new and full moon the Sun and Moon are in line, so their tidal bulges add, giving the largest range; "spring" has nothing to do with the season.
+M2@3: Tidal friction is making the Moon: | Recede from Earth | Approach Earth | Speed up its orbit | Stop rotating | The bulge, dragged ahead by Earth's spin, pulls the Moon forward, transferring angular momentum from Earth's rotation to the Moon's orbit, so the Moon moves outward (about 3.8 cm a year).
+NUM2@1: By what factor would the Moon's tidal effect on Earth increase if it were at half its present distance? | 8 | 1% |  | Tidal acceleration ∝ 1/r^{3}, so halving r multiplies it by 2^{3} = 8, whereas the ordinary pull would rise only by 4.
+M3@1: The Sun's gravitational pull on Earth is about 180 times the Moon's, yet the Moon raises larger tides. Why? | Tides depend on the gradient of gravity, which falls as 1/r^{3} | The Moon is denser than the Sun | The Sun's pull is cancelled by Earth's orbital motion everywhere | Tides depend on the Moon's light, not its gravity | The tidal effect is the change of g across Earth, ∝ M/r^{3}; the Moon's closeness outweighs its small mass, giving about 2.2 times the Sun's effect.
+SA3@2,3: Explain why the Earth has two tidal bulges, one facing the Moon and one on the opposite side. | The Moon's gravitational field decreases with distance. Earth's near-side ocean is pulled towards the Moon more strongly than Earth's centre, and the centre more strongly than the far-side ocean. Relative to Earth's centre, the near-side water is pulled towards the Moon and the far-side water is left behind, so both sides bulge outward along the Earth–Moon line. As Earth rotates through these bulges each place has two high tides a day. | Moon's field weakens with distance ; Near side pulled more than centre, centre more than far side ; Relative to the centre both sides bulge outward ; Rotation through two bulges gives two tides a day
 
 ## Roche limits
 S: The Roche limit is the distance within which a body held together only by its own gravity is torn apart by a planet's tides. It explains why Saturn's rings are rings and not a moon.

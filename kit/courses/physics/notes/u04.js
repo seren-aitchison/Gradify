@@ -299,6 +299,11 @@ SA2@1,2: A pilot wants to fly due north at an airspeed of 100 m s^{-1} with a 30
 
 ## Reference frames
 S: A reference frame is a viewpoint with its own clocks and rulers from which motion is measured. Choosing a convenient frame (the centre of mass, a moving train, a rotating Earth) can make a problem far simpler, as long as you account correctly for the frame's own motion.
+O: Distinguish inertial, non-inertial, lab and centre-of-mass frames
+O: Transform positions and velocities between frames with the Galilean transformation
+O: Solve a collision by working in the centre-of-mass frame
+PRE: Relative motion
+LV: A level · Physical reasoning
 H: Kinds of frame
 - **Inertial**: not accelerating; Newton's first law holds.
 - **Non-inertial**: accelerating or rotating; fictitious forces appear.
@@ -307,38 +312,73 @@ H: Kinds of frame
 H: Galilean relativity
 E: x' = x − Vt, y' = y, z' = z, t' = t :: frame S' moving at V along x
 P: The laws of mechanics are the same in all inertial frames: no mechanical experiment inside a smoothly moving train can tell you its speed. Einstein extended this to all of physics, including light, which forced the Lorentz transformations.
-X: In the centre-of-mass frame, analyse a 2 kg ball at 3 m s^{-1} hitting a stationary 1 kg ball.
+X: In the centre-of-mass frame, analyse a 2 kg ball at 3 m s^{-1} hitting a stationary 1 kg ball elastically.
 > v_{cm} = (2 × 3)/3 = 2 m s^{-1}
 > In the CM frame the balls approach at +1 and −2 m s^{-1}; in an elastic collision they simply reverse
 > Back in the lab: v_{1} = 2 − 1 = 1 m s^{-1}, v_{2} = 2 + 2 = 4 m s^{-1}
+K: Velocities depend on the frame; accelerations, forces and the laws of mechanics are the same in every inertial frame.
 !: Energies are frame-dependent (kinetic energy differs between frames), but energy conservation holds in each inertial frame.
+T: Reference frame | A coordinate system with clocks and rulers from which positions and times are measured
+T: Inertial frame | A frame that is not accelerating, in which Newton's first law holds
+T: Centre-of-mass frame | The frame moving with the centre of mass, in which total momentum is zero
+SUM: Galilean transformation: x' = x − Vt, v' = v − V, a' = a.
+SUM: Pick the frame that simplifies the problem, often the centre-of-mass frame for collisions.
+EV: established | Galilean relativity holds for mechanics at speeds much less than c
+SRC: OpenStax, University Physics Volume 1, section 4.5 "Relative Motion in One and Two Dimensions" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/4-5-relative-motion-in-one-and-two-dimensions
+SRC: OpenStax, University Physics Volume 1, section 5.2 "Newton's First Law" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/5-2-newtons-first-law
 Q: What is the Galilean principle of relativity? | The laws of mechanics are the same in every inertial frame.
 Q: Why is the centre-of-mass frame useful for collisions? | Total momentum is zero there, so the analysis is symmetric and simple.
-M1: Which quantity is the same in all inertial frames (Galilean)? | Acceleration | Velocity | Kinetic energy | Momentum | Constant relative velocity doesn't change acceleration.
-M2: A ball dropped in a train moving at constant velocity lands: | Directly below the release point (in the train's frame) | Behind it | In front of it | Depends on the train's speed | Galilean relativity.
+M1@2: Which quantity is the same in all inertial frames (Galilean)? | Acceleration | Velocity | Kinetic energy | Momentum | A constant relative velocity V subtracts the same amount from every velocity, so changes in velocity, and hence accelerations, are unchanged.
+M2@1: A ball dropped in a train moving at constant velocity lands: | Directly below the release point (in the train's frame) | Behind the release point | In front of the release point | It depends on the train's speed | The train is an inertial frame, so the ball falls just as it would in a stationary room.
+NUM2@2: A train moves at 30 m s^{-1}; a passenger walks towards the front at 1.5 m s^{-1}. What is her speed relative to the ground, in m s^{-1}? | 31.5 | 0.1 | m s^{-1} | Galilean addition: v_{ground} = v_{train} + v_{passenger} = 30 + 1.5 = 31.5 m s^{-1}.
+M3@2,3: A 4.0 kg cart at 6.0 m s^{-1} approaches a stationary 2.0 kg cart. What is the velocity of the centre of mass? | 4.0 m s^{-1} | 6.0 m s^{-1} | 3.0 m s^{-1} | 2.0 m s^{-1} | v_{cm} = total momentum/total mass = (4.0 × 6.0)/6.0 = 4.0 m s^{-1}, unchanged by the collision.
+SA3@1,3: Explain why an elastic collision is easy to analyse in the centre-of-mass frame, and outline the steps. | In the centre-of-mass frame the total momentum is zero, so the two bodies approach with equal and opposite momenta. In an elastic head-on collision kinetic energy is also conserved, which is only possible if each simply reverses its velocity. So: find v_{cm}, subtract it from each velocity, reverse both, then add v_{cm} back to return to the lab frame. | Total momentum zero in CM frame ; Elastic means velocities reverse ; Transform into and out of the frame ; Steps stated in order
 
 ## Newton's laws of motion
-S: Newton's three laws connect force and motion. They define what force does (changes momentum), give a quantitative rule (F = dp/dt), and insist forces come in equal and opposite pairs between objects.
+S: Newton's three laws connect force and motion. They say what force does (changes momentum), give a quantitative rule (F = dp/dt), and insist that forces come in equal and opposite pairs between objects.
+O: State Newton's three laws and identify third-law pairs
+O: Apply ΣF = ma to single and connected bodies
+O: Explain motion using the forces on each separate body
+PRE: Acceleration
+LV: GCSE and A level · Foundation
 H: The laws
-- **First**: an object stays at rest or moves with constant velocity unless a net external force acts. (Defines inertial frames.)
-- **Second**: F_{net} = dp/dt = ma for constant mass.
+- **First**: an object stays at rest or moves with constant velocity unless a net external force acts. (This defines inertial frames.)
+- **Second**: F_{net} = dp/dt, which is ma for constant mass.
 - **Third**: if A exerts a force on B, B exerts an equal and opposite force on A, of the same type, along the same line.
 E: ΣF = ma :: vector equation; apply to each component separately
 H: Using the second law
-- Isolate one body; draw all forces on it (free-body diagram).
-- Choose axes (along the acceleration); write ΣF = ma per axis.
+- Isolate one body; draw all the forces on it (free-body diagram).
+- Choose axes (one along the acceleration); write ΣF = ma per axis.
 - For connected bodies, use one equation per body plus a constraint (same acceleration if the string is taut).
 X: A 2.0 kg block is pulled by a 10 N horizontal force on a surface with 4.0 N of friction. Find a.
 > ΣF = 10 − 4 = 6 N
 > a = 6/2 = 3.0 m s^{-2}
+K: Only the net force on a body determines its acceleration; forces on other bodies don't appear in its equation.
 !: Third-law pairs act on different bodies, so they never cancel each other in one body's free-body diagram. Weight and the normal force on a book are not a third-law pair.
+T: Net force | The vector sum of all the forces acting on a body
+T: Inertia | The tendency of a body to keep its velocity; mass measures it
+T: Third-law pair | Two equal and opposite forces of the same type that two bodies exert on each other
+SUM: No net force, no change in velocity; F_{net} = ma; forces come in pairs on different bodies.
+SUM: Isolate each body, sum the forces on it, and add constraints for connected bodies.
+EV: established | Newton's laws describe motion accurately at speeds much less than c and on scales above the atomic
+SRC: OpenStax, University Physics Volume 1, section 5.3 "Newton's Second Law" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/5-3-newtons-second-law
+SRC: AQA, A-level Physics specification (7408), section 3.4.1.5, Newton's laws of motion | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: State Newton's second law in terms of momentum. | The net force equals the rate of change of momentum, F = dp/dt.
 Q: What is the third-law partner of the Earth's gravitational pull on you? | Your gravitational pull on the Earth.
-M1: A 1000 kg car accelerates at 2 m s^{-2}. The net force is: | 2000 N | 500 N | 1000 N | 4000 N | F = ma.
-M2: A horse pulls a cart forward. Why can they accelerate if the cart pulls the horse back equally? | The forces act on different bodies; the ground pushes the horse forward more than the cart pulls back | They can't | The horse's force is larger | Friction is zero | Consider each body's net force separately.
+M1@2: A 1000 kg car accelerates at 2 m s^{-2}. The net force is: | 2000 N | 500 N | 1000 N | 4000 N | F = ma = 1000 × 2 = 2000 N, the resultant of engine force, friction and drag.
+M2@1,3: A horse pulls a cart forward. Why can they accelerate if the cart pulls the horse back equally? | The forces act on different bodies; the ground pushes the horse forward more than the cart pulls back | They can't accelerate at all | The horse's force on the cart is larger | Friction on the cart is zero | The third-law pair acts on different bodies; each body accelerates according to the net force on it alone.
+NUM2@2: Blocks of 3.0 kg and 1.0 kg on a frictionless table are pushed together by 8.0 N applied to the 3.0 kg block. What force does the 3.0 kg block exert on the 1.0 kg block, in newtons? | 2 | 0.05 | N | a = 8.0/4.0 = 2.0 m s^{-2}; the 1.0 kg block needs F = 1.0 × 2.0 = 2.0 N.
+TF1@1: A book resting on a table: its weight and the normal force from the table are a Newton's third-law pair. | false | Both act on the book, so they can't be a third-law pair; the partner of the book's weight is the book's gravitational pull on the Earth.
+M3@3: A lorry and a small car collide head-on. Which experiences the larger force? | Both experience forces of equal size | The car, because it has less mass | The lorry, because it has more momentum | Whichever vehicle was moving faster | By the third law the forces are equal and opposite; the car has the larger acceleration because its mass is smaller.
+SA2@1,3: Explain using Newton's laws why a passenger without a seatbelt moves forward relative to the car when it brakes sharply. | The braking force from the road acts on the car, which decelerates. No equal horizontal force acts on the unbelted passenger (friction from the seat is small), so by the first law she continues at the original velocity. Relative to the decelerating car she therefore moves forward until the dashboard or windscreen exerts a large force on her. A seatbelt supplies the force needed to decelerate her with the car. | Force acts on the car, not the passenger ; First law: passenger keeps velocity ; Relative motion forward ; Seatbelt provides decelerating force
 
 ## Inertial and non-inertial frames
 S: Newton's laws hold as written only in inertial frames. In an accelerating or rotating frame, objects seem to accelerate with no force acting, so you must add fictitious (inertial) forces to use F = ma.
+O: Identify whether a frame is inertial
+O: Calculate apparent weight in an accelerating lift
+O: Explain centrifugal and Coriolis effects as fictitious forces
+PRE: Newton's laws of motion
+LV: Year 1 · Physical reasoning
 H: Fictitious forces
 E: F_{fict} = −mA :: in a frame accelerating at A
 E: centrifugal: mω^{2}r outward; Coriolis: −2mω × v′ :: in a frame rotating at ω
@@ -351,19 +391,36 @@ H: Examples
 X: A 60 kg person stands on scales in a lift accelerating upward at 2.0 m s^{-2}. What do the scales read?
 > R − mg = ma ⇒ R = 60(9.8 + 2.0) = 708 N
 > In the lift's frame: an extra downward fictitious force of 120 N
+K: In an inertial frame, use only real forces; in an accelerating frame, add −mA to each body to use F = ma.
 !: In an inertial frame, "centrifugal force" doesn't exist: an object in circular motion is pulled inward and has no outward force acting on it.
+T: Non-inertial frame | An accelerating or rotating frame, in which Newton's laws need fictitious forces
+T: Fictitious force | An apparent force, proportional to mass, with no physical source or third-law partner
+T: Apparent weight | The reading of a scale supporting a body, equal to the normal force
+SUM: Apparent weight in a lift is m(g + a) going up and m(g − a) going down; zero in free fall.
+SUM: Centrifugal and Coriolis forces appear only in rotating frames.
+EV: established | Fictitious forces correctly account for motion observed from accelerating frames
+SRC: OpenStax, University Physics Volume 1, section 6.3 "Centripetal Force" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/6-3-centripetal-force
+SRC: OpenStax, University Physics Volume 1, section 5.2 "Newton's First Law" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/5-2-newtons-first-law
 Q: What is a fictitious force? | An apparent force needed to apply Newton's laws in a non-inertial frame; it has no physical source or reaction partner.
 Q: What do scales read in a freely falling lift? | Zero (apparent weightlessness).
-M1: In a lift accelerating downward at g/2, your apparent weight is: | mg/2 | mg | 3mg/2 | 0 | R = m(g − a).
-M2: Which shows the Earth is a rotating (non-inertial) frame? | Foucault's pendulum precessing | Tides | Ocean waves | The Moon's phases | The swing plane rotates relative to the ground.
+M1@2: In a lift accelerating downward at g/2, your apparent weight is: | mg/2 | mg | 3mg/2 | 0 | mg − R = ma with a = g/2, so R = m(g − g/2) = mg/2.
+M2@1,3: Which shows the Earth is a rotating (non-inertial) frame? | Foucault's pendulum precessing | Tides | Ocean waves | The Moon's phases | The swing plane turns relative to the ground because the Earth rotates beneath it.
+NUM2@2: A 50 kg person stands in a lift decelerating at 1.5 m s^{-2} while moving upward (g = 9.8). What does the scale read, in newtons? | 415 | 2 | N | Acceleration is 1.5 m s^{-2} downward: R = m(g − a) = 50 × 8.3 = 415 N.
+M3@3: A pendulum hangs in a train accelerating forward at a. Seen from the train, at what angle from vertical does it hang? | tan θ = a/g, tilted backward | tan θ = g/a, tilted forward | It stays exactly vertical | tan θ = a/g, tilted forward | In the train's frame a fictitious force ma acts backward; balancing it with mg gives tan θ = a/g, the bob hanging towards the rear.
+SA2@1,3: Explain from an inertial frame and from the rotating frame why a passenger in a car on a sharp bend feels pushed outwards. | In the inertial (road) frame there is no outward force: the passenger tends to continue in a straight line (first law), and the door or seat must push her inward to give the centripetal force mv^{2}/r. In the car's rotating frame she is at rest, so a fictitious centrifugal force mv^{2}/r outward is added to balance the real inward push. Both descriptions predict the same experience. | Inertial: tendency to go straight ; Real inward force provides centripetal force ; Rotating frame adds centrifugal force ; Same outcome either way
 
 ## Free-body diagrams
 S: A free-body diagram shows one object, isolated, with every external force acting on it drawn as an arrow from its point of action. It's the essential first step in any force problem.
+O: Draw a free-body diagram showing every force acting on one body
+O: Resolve forces along convenient axes
+O: Avoid including fictitious or reaction forces wrongly
+PRE: Newton's laws of motion
+LV: GCSE and A level · Foundation
 H: How to draw one
 - Isolate the body; draw it as a box or dot (or to shape if torques matter).
 - Add every force from contact (normal, friction, tension, drag, push) and from fields (weight, electric, magnetic).
 - Label each force by type and by what exerts it ("tension from rope").
-- Do not include forces the body exerts on others, or "ma" as a force.
+- Don't include forces the body exerts on others, or "ma" as a force.
 - Mark the acceleration separately, beside the diagram.
 H: Checks
 - Each force must have a physical source.
@@ -372,57 +429,108 @@ H: Checks
 X: A box is pushed up a rough slope by a horizontal force P. List the forces.
 > Weight mg (down), normal force N (perpendicular to slope), friction f (down the slope, opposing motion), push P (horizontal)
 > Resolve along and perpendicular to the slope: N = mg cos θ + P sin θ
+K: One body, every force on it, each with a named source: nothing more, nothing less.
 !: "Centripetal force" isn't an extra force to draw; it's the net inward force supplied by real forces (tension, gravity, friction).
+P: Arrow lengths should roughly show the sizes of the forces, so the diagram itself suggests whether the net force is zero or which way the body accelerates.
+T: Free-body diagram | A sketch of one isolated body showing all external forces acting on it
+T: Resolving | Splitting a force into perpendicular components along chosen axes
+SUM: Isolate one body and draw every external force with its source; mark acceleration separately.
+SUM: Choose axes along the acceleration; never draw ma or centripetal force as an extra force.
+EV: established | Free-body diagrams are the standard method for applying Newton's second law
+SRC: OpenStax, University Physics Volume 1, section 5.7 "Drawing Free-Body Diagrams" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/5-7-drawing-free-body-diagrams
+SRC: AQA, A-level Physics specification (7408), section 3.4.1.1, Scalars and vectors | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: What forces go on a free-body diagram? | All external forces acting on the chosen body, and nothing else.
 Q: Why is "ma" never drawn as a force? | It's the result of the net force, not a separate force.
-M1: A ball hangs from a string at rest. Its free-body diagram has: | Weight and tension | Weight, tension and the ball's pull on the string | Tension only | Weight only | Only forces on the ball.
-M2: A car rounds a flat bend. What provides the centripetal force? | Friction from the road | Centrifugal force | The engine | Air resistance | Sideways static friction on the tyres.
+M1@1: A ball hangs from a string at rest. Its free-body diagram has: | Weight and tension | Weight, tension and the ball's pull on the string | Tension only, pulling upwards | Weight only, pulling downwards | Only forces acting on the ball belong: Earth's pull (weight) and the string's pull (tension).
+M2@3: A car rounds a flat bend. What provides the centripetal force? | Friction from the road | Centrifugal force | The engine | Air resistance | Sideways static friction from the road on the tyres is the only horizontal force pointing towards the centre.
+NUM2@2: A 2.0 kg box rests on a floor while pulled upward by a 5.0 N string (g = 9.8). What is the normal force, in newtons? | 14.6 | 0.1 | N | Vertical equilibrium: N + 5.0 = 2.0 × 9.8 = 19.6, so N = 14.6 N.
+M3@2,3: A box on a smooth 30° slope is held by a rope parallel to the slope. Which set of forces belongs on its free-body diagram? | Weight, normal force, tension | Weight, normal force, tension, mg sin θ | Weight, tension, a down-slope force | Normal force, tension, friction | mg sin θ is a component of the weight, not an extra force; the slope is smooth, so there is no friction.
+SA2@1,2: Draw (in words) the free-body diagram for a skydiver falling at terminal velocity and explain what it shows. | The skydiver is drawn as a single body with two forces: weight mg acting downward from the centre of mass, and air resistance (drag) acting upward, drawn the same length. No other forces act. Because the arrows are equal and opposite, the net force is zero, so by the first law the velocity is constant. | Body isolated ; Weight down and drag up ; Equal sizes ; Net force zero means constant velocity
 
 ## Normal force and tension
-S: The normal force is the perpendicular push a surface exerts to stop objects passing through it; tension is the pull transmitted along a rope or string. Both are "constraint" forces: they take whatever value the motion requires.
+S: The normal force is the perpendicular push a surface exerts to stop objects passing through it; tension is the pull transmitted along a rope or string. Both are constraint forces: they take whatever value the motion requires.
+O: Calculate the normal force in situations where it isn't equal to mg
+O: Solve connected-body problems including the Atwood machine
+O: Identify when contact is lost or a string goes slack
+PRE: Free-body diagrams
+LV: GCSE and A level · Application
 H: Normal force
 - Perpendicular to the contact surface; can only push.
 - Not always mg: on a slope N = mg cos θ; in an accelerating lift N = m(g + a); pulling up on a box reduces it.
-- When N falls to zero, contact is lost (a car over a hump, a roller-coaster loop).
+- When N falls to zero, contact is lost (a car over a hump, the top of a roller-coaster loop).
 H: Tension
 - Along the string, pulling on whatever it's attached to.
-- Light (massless) string: same tension throughout. Ideal pulley: changes direction, not size.
+- Light (massless) string: the same tension throughout. Ideal pulley: changes direction, not size.
 - A heavy rope has tension that varies along its length.
+P: Both forces come from the electromagnetic forces between atoms: a surface or rope deforms very slightly until the restoring force is exactly what is needed. That is why they have no formula of their own and must be found from the equations of motion.
 X: Two masses, 3.0 kg and 2.0 kg, hang over a frictionless pulley (Atwood machine). Find a and T.
 > a = (m_{1} − m_{2})g/(m_{1} + m_{2}) = (1/5)(9.8) = 1.96 m s^{-2}
 > T = 2m_{1}m_{2}g/(m_{1} + m_{2}) = 2 × 6 × 9.8/5 = 23.5 N
+K: Normal force and tension are found from Newton's second law: they adjust to whatever the constraint requires.
 !: Ropes can't push; if a calculation gives negative tension, the string has gone slack and the model changes.
+T: Normal force | The contact force perpendicular to a surface, preventing objects passing through it
+T: Tension | The pulling force transmitted along a string, rope or cable
+SUM: N equals mg only on level ground with no vertical acceleration or other vertical forces.
+SUM: A light string over an ideal pulley has one tension; write F = ma for each mass.
+EV: established | Treating normal force and tension as constraint forces is standard Newtonian mechanics
+SRC: OpenStax, College Physics 2e, section 4.5 "Normal, Tension, and Other Examples of Forces" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/4-5-normal-tension-and-other-examples-of-forces
+SRC: OpenStax, University Physics Volume 1, section 6.1 "Solving Problems with Newton's Laws" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/6-1-solving-problems-with-newtons-laws
 Q: What is the normal force on a block on a slope of angle θ? | mg cos θ (if no other forces have perpendicular components).
 Q: When does a car lose contact going over a hump of radius r? | When v^{2}/r ≥ g, so N would have to be negative.
-M1: A 5 kg mass hangs from a rope in a lift accelerating up at 2 m s^{-2} (g = 10). Tension? | 60 N | 50 N | 40 N | 10 N | T = m(g + a).
-M2: In the Atwood machine, if m_{1} = m_{2}, then: | a = 0 and T = mg | a = g | T = 0 | T = 2mg | Balanced.
+M1@1: A 5 kg mass hangs from a rope in a lift accelerating up at 2 m s^{-2} (g = 10). Tension? | 60 N | 50 N | 40 N | 10 N | T − mg = ma, so T = m(g + a) = 5 × 12 = 60 N.
+M2@2: In the Atwood machine, if m_{1} = m_{2}, then: | a = 0 and T = mg | a = g and T = 0 | T = 0 and a = 0 | T = 2mg and a = 0 | With equal masses the system is balanced: a = (m_{1} − m_{2})g/(m_{1} + m_{2}) = 0 and the tension equals each weight.
+NUM2@3: What is the greatest speed at which a car can pass over the top of a hump of radius 10 m without losing contact (g = 9.8), in m s^{-1}? | 9.9 | 0.1 | m s^{-1} | Contact is lost when N = 0, i.e. mg = mv^{2}/r: v = √(gr) = √98 = 9.9 m s^{-1}.
+M3@2: A 4.0 kg block on a smooth table is joined by a string over a pulley to a hanging 1.0 kg mass (g = 10). What is the tension? | 8.0 N | 10 N | 2.0 N | 40 N | a = 1.0 × 10/5.0 = 2.0 m s^{-2}; the table block needs T = 4.0 × 2.0 = 8.0 N, less than the hanging weight.
+SA2@1,2: Explain why the tension in a lift cable is greater when the lift accelerates upward than when it moves upward at constant speed. | At constant speed the acceleration is zero, so the net force is zero and the tension equals the total weight, mg. When accelerating upward the net force must be ma upward, so T − mg = ma and T = m(g + a), larger than mg. The cable must both support the weight and provide the extra force to accelerate the lift. | Constant speed means zero net force ; T equals mg then ; Upward acceleration requires T − mg = ma ; T = m(g + a)
 
 ## Friction and drag
-S: Friction opposes relative sliding between surfaces; drag opposes motion through a fluid. Friction is roughly independent of speed and contact area, while drag grows with speed.
+S: Friction opposes relative sliding between surfaces; drag opposes motion through a fluid. Dry friction is roughly independent of speed and contact area, while drag grows with speed.
+O: Apply the static and kinetic friction laws
+O: Choose between linear and quadratic drag using the Reynolds number
+O: Explain the power needed to overcome drag at speed
+PRE: Normal force and tension
+LV: A level · Application
 H: Friction
 E: f_{s} ≤ μ_{s}N :: static friction: as large as needed, up to a maximum
 E: f_{k} = μ_{k}N :: kinetic friction, usually μ_{k} < μ_{s}
-- Microscopically, friction comes from bonds and interlocking at the small true contact area, which is ∝ N.
+- Microscopically, friction comes from bonds and interlocking at the small true contact area, which is proportional to N.
 - Friction is what lets you walk, drive and grip; on wheels rolling without slipping it's static friction.
 H: Drag
-E: F_{D} ≈ bv :: low speed, small objects, viscous (Stokes: b = 6πηr)
-E: F_{D} = ½ρC_{d}Av^{2} :: high speed, turbulent: most everyday objects
+E: F_{D} ≈ bv :: low speed, small objects, viscous flow (Stokes: b = 6πηr)
+E: F_{D} = ½ρC_{d}Av^{2} :: high speed, turbulent flow: most everyday objects
 - The Reynolds number Re = ρvL/η decides which regime applies.
-- Streamlining reduces C_{d} (car ≈ 0.3, flat plate ≈ 1.2).
-X: A 20 kg box on a floor with μ_{s} = 0.5, μ_{k} = 0.4. What force starts it moving, and what keeps it moving at constant speed? (g = 9.8)
+- Streamlining reduces C_{d} (car about 0.3, flat plate about 1.2).
+X: A 20 kg box on a floor has μ_{s} = 0.5, μ_{k} = 0.4. What force starts it moving, and what keeps it moving at constant speed? (g = 9.8)
 > Start: μ_{s}mg = 98 N
 > Keep moving: μ_{k}mg = 78 N
+K: Static friction matches the applied force up to μ_{s}N; once sliding, kinetic friction is μ_{k}N whatever the speed.
 !: Static friction isn't always μ_{s}N; that's only its maximum. On a stationary box pushed with 30 N, static friction is exactly 30 N.
 P: **Investigate with the lab.** Switch air resistance on and off for the same launch and compare the paths. Then find the best angle with drag, which is below 45°.
 IX: projectile
-Q: Why does ABS braking stop cars faster? | Wheels keep rolling, using static friction (higher than kinetic) instead of skidding.
+T: Coefficient of friction | The ratio of the friction force to the normal force, μ = f/N
+T: Drag | The resistive force on a body moving through a fluid
+T: Reynolds number | Re = ρvL/η, the ratio of inertial to viscous effects in a flow
+SUM: Static friction ≤ μ_{s}N, kinetic friction = μ_{k}N, both independent of contact area.
+SUM: Drag is ∝ v at low Re and ∝ v^{2} at high Re, so the power to overcome it rises as v^{3}.
+EV: established | The friction laws are good empirical approximations, not fundamental laws
+SRC: OpenStax, University Physics Volume 1, section 6.2 "Friction" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/6-2-friction
+SRC: OpenStax, College Physics 2e, section 5.2 "Drag Forces" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/5-2-drag-forces
+Q: How does ABS help when braking hard? | It stops the wheels locking, so they use static friction (usually higher than kinetic) and the driver can still steer.
 Q: How does high-speed drag depend on speed? | It's proportional to v^{2}.
-M1: A 10 kg block is pushed with 20 N; μ_{s} = 0.5 (g = 10). The friction force is: | 20 N | 50 N | 0 | 30 N | Static friction matches the push until it exceeds 50 N.
-M2: Doubling a car's speed multiplies the power needed to overcome drag by: | 8 | 2 | 4 | 16 | P = Fv ∝ v^{3}.
-M2: With air resistance, why is the best launch angle below 45°? | Drag shortens long, high flights most, so a flatter path loses less range | Drag adds a forward force on the ball at high angles | Gravity is weaker at higher angles of launch | Drag only acts on the way down, so lower is safer | The longer and faster the flight, the more energy drag removes, favouring flatter trajectories.
+M1@1: A 10 kg block is pushed with 20 N; μ_{s} = 0.5 (g = 10). The friction force is: | 20 N | 50 N | 0 | 30 N | The maximum static friction is 50 N, so the block stays put and friction exactly matches the 20 N push.
+M2@3: Doubling a car's speed multiplies the power needed to overcome drag by: | 8 | 2 | 4 | 16 | Drag ∝ v^{2} and power P = Fv, so P ∝ v^{3}: doubling v multiplies the power by 8.
+M2@2: With air resistance, why is the best launch angle below 45°? | Drag shortens long, high flights most, so a flatter path loses less range | Drag adds a forward force on the ball at high angles | Gravity is weaker at higher angles of launch | Drag only acts on the way down, so lower is safer | The longer and faster the flight, the more energy drag removes, favouring flatter trajectories.
+NUM2@1: A 15 kg crate slides across a floor with μ_{k} = 0.30 (g = 9.8). What is the friction force, in newtons? | 44 | 0.5 | N | f_{k} = μ_{k}mg = 0.30 × 15 × 9.8 = 44.1 N.
+M3@1: A 50 kg crate needs 200 N to start moving but only 150 N to keep it moving at constant speed (g = 10). What are μ_{s} and μ_{k}? | 0.40 and 0.30 | 0.30 and 0.40 | 4.0 and 3.0 | 0.40 and 0.40 | μ_{s} = 200/500 = 0.40 and μ_{k} = 150/500 = 0.30; kinetic is usually the smaller.
+SA2@1,3: Explain why a cyclist's top speed is limited mostly by air resistance, and why halving the frontal area helps so much. | At cycling speeds the flow is turbulent, so drag = ½ρC_{d}Av^{2}, and the power needed is drag × v, proportional to v^{3}. The cyclist's maximum power is limited, so the top speed is where this power equals the drag power. Since P ∝ Av^{3}, halving A (crouching, aero kit) raises the top speed by a factor 2^{1/3} ≈ 1.26 for the same power. | Drag proportional to v squared ; Power proportional to v cubed ; Top speed where power output equals drag power ; Smaller area raises top speed
 
 ## Inclined planes
 S: On a slope, resolve forces parallel and perpendicular to the surface. Gravity's component down the slope, mg sin θ, drives motion; its perpendicular component, mg cos θ, sets the normal force and therefore friction.
+O: Resolve weight into components parallel and perpendicular to a slope
+O: Calculate acceleration on a slope with and without friction
+O: Measure coefficients of friction with a tilting ramp
+PRE: Friction and drag
+LV: GCSE and A level · Application
 H: Key results
 E: a = g sin θ :: frictionless slope
 E: a = g(sin θ − μ_{k} cos θ) :: sliding down with friction
@@ -433,20 +541,36 @@ X: A block slides from rest down a 30° slope with μ_{k} = 0.2. Find its speed 
 > v = √(2 × 3.2 × 4.0) = 5.1 m s^{-1}
 H: Measuring μ
 P: Tilt the slope until the block just slips: μ_{s} = tan θ_{c}. Then find the angle at which it slides at constant speed once started: μ_{k} = tan θ.
+K: Take axes along and perpendicular to the slope: along it, mg sin θ minus friction gives ma; perpendicular, N = mg cos θ.
 !: The normal force on a slope isn't mg; it's mg cos θ (plus any other perpendicular forces).
+T: Component of weight down the slope | mg sin θ, the part of the weight parallel to an incline of angle θ
+T: Angle of friction | The slope angle at which a block just starts to slide, with tan θ = μ_{s}
+SUM: Down-slope component mg sin θ; normal force mg cos θ; friction ≤ μN.
+SUM: Frictionless a = g sin θ, independent of mass; slipping starts at tan θ = μ_{s}.
+EV: established | Resolving forces on an incline follows directly from Newton's second law
+SRC: OpenStax, University Physics Volume 1, section 6.2 "Friction" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/6-2-friction
+SRC: AQA, A-level Physics specification (7408), section 3.4.1.1, Scalars and vectors | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: What component of weight acts down a slope? | mg sin θ.
 Q: How can you measure μ_{s} with a tilting ramp? | Increase the angle until the block just slips; μ_{s} = tan θ.
-M1: A block is at rest on a 20° slope. What is the friction force for m = 5 kg (g = 10)? | 17 N | 47 N | 50 N | 0 | mg sin 20° = 50 × 0.342.
-M2: On a frictionless slope, a heavier block's acceleration is: | The same as a lighter block's | Larger | Smaller | Zero | a = g sin θ, independent of mass.
+M1@1: A block is at rest on a 20° slope. What is the friction force for m = 5 kg (g = 10)? | 17 N | 47 N | 50 N | 0 | At rest, friction balances the down-slope component: mg sin 20° = 50 × 0.342 = 17 N.
+M2@2: On a frictionless slope, a heavier block's acceleration is: | The same as a lighter block's | Larger | Smaller | Zero | a = g sin θ: both the driving force and the inertia are proportional to m, so mass cancels.
+NUM2@3: A block just starts to slide when a ramp is tilted to 25°. What is μ_{s}? | 0.47 | 0.01 | – | At the point of slipping mg sin θ = μ_{s}mg cos θ, so μ_{s} = tan 25° = 0.466.
+M3@2: A block is pushed up a 30° slope at 6.0 m s^{-1}; μ_{k} = 0.20 (g = 9.8). How far up does it travel? | 2.7 m | 3.7 m | 1.8 m | 6.0 m | a = −9.8(0.5 + 0.2 × 0.866) = −6.6 m s^{-2}; s = u^{2}/(2 × 6.6) = 36/13.2 = 2.7 m.
+SA2@1,3: Describe how to measure the coefficients of static and kinetic friction between a block and a board, and explain the physics. | Place the block on the board and slowly raise one end, measuring the angle when the block just begins to slide. At that point mg sin θ = μ_{s}mg cos θ, so μ_{s} = tan θ. Then lower the angle and tap the block to start it; find the angle at which it slides at constant speed, where acceleration is zero and μ_{k} = tan θ. Repeat several times and average, measuring angles with a protractor or from height and length. | Tilt until slip ; Balance gives tan theta for static ; Constant speed gives kinetic ; Repeats and angle measurement
 
 ## Circular motion
 S: An object moving in a circle constantly changes direction, so it accelerates towards the centre even at constant speed. Angular quantities describe the motion neatly, and a net inward force is needed to sustain it.
+O: Convert between angular velocity, frequency, period and linear speed
+O: Calculate centripetal acceleration
+O: Analyse forces at the top and bottom of a vertical circle
+PRE: Motion in two and three dimensions
+LV: A level · Application
 H: Quantities
 E: ω = dθ/dt = 2π/T = 2πf :: angular velocity
 E: v = ωr :: linear speed
 E: a = v^{2}/r = ω^{2}r :: centripetal acceleration
 - Period T, frequency f = 1/T; angles in radians.
-- Non-uniform circular motion has a tangential acceleration rα too.
+- Non-uniform circular motion also has a tangential acceleration rα.
 H: Vertical circles
 - At the top of a loop the net inward force is mg + N (or mg + T); at the bottom N − mg.
 - Minimum speed at the top to stay in contact: v = √(gr).
@@ -454,11 +578,22 @@ H: Vertical circles
 X: A 0.2 kg ball whirls on a 0.5 m string in a vertical circle. What is the minimum speed at the top, and the tension at the bottom?
 > v_{top} = √(9.8 × 0.5) = 2.21 m s^{-1}
 > v_{bottom}^{2} = 4.9 + 19.6 = 24.5; T = mg + mv^{2}/r = 1.96 + 9.8 = 11.8 N
+K: Uniform circular motion needs a net force mv^{2}/r towards the centre; without it the object moves off along a tangent.
 !: Circular motion at constant speed is still accelerated motion; there must be a net force.
+T: Angular velocity | The rate of change of angle, ω = 2π/T, in rad s^{-1}
+T: Centripetal acceleration | The acceleration v^{2}/r directed towards the centre of a circular path
+SUM: ω = 2πf, v = ωr, a = v^{2}/r = ω^{2}r towards the centre.
+SUM: In a vertical circle the minimum speed at the top is √(gr); tension or normal force is greatest at the bottom.
+EV: established | The kinematics of circular motion follow exactly from vector geometry
+SRC: OpenStax, University Physics Volume 1, section 4.4 "Uniform and Nonuniform Circular Motion" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/4-4-uniform-circular-motion
+SRC: AQA, A-level Physics specification (7408), section 3.6.1.1, Circular motion | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: What is the minimum speed at the top of a vertical circle of radius r? | √(gr).
 Q: How are v and ω related? | v = ωr.
-M1: A wheel turns at 600 rpm. Its angular velocity is: | 63 rad s^{-1} | 10 rad s^{-1} | 600 rad s^{-1} | 3770 rad s^{-1} | 10 rev/s × 2π.
-M2: In a loop-the-loop, the normal force is largest at: | The bottom | The top | The sides | It's constant | At the bottom N must exceed mg to provide the inward force.
+M1@1: A wheel turns at 600 rpm. Its angular velocity is: | 63 rad s^{-1} | 10 rad s^{-1} | 600 rad s^{-1} | 3770 rad s^{-1} | 600 rpm = 10 rev s^{-1}; ω = 2π × 10 = 63 rad s^{-1}.
+M2@3: In a loop-the-loop, the normal force is largest at: | The bottom | The top | The sides | It's constant | At the bottom N − mg = mv^{2}/r and the speed is greatest, so N is largest there.
+NUM2@2: A point on a 0.30 m radius wheel turns at 5.0 revolutions per second. What is its centripetal acceleration, in m s^{-2}? | 296 | 3 | m s^{-2} | ω = 2π × 5.0 = 31.4 rad s^{-1}; a = ω^{2}r = 986 × 0.30 = 296 m s^{-2}.
+M3@3: A bucket of water is swung in a vertical circle of radius 1.0 m. What is the minimum speed at the top for the water to stay in (g = 9.8)? | 3.1 m s^{-1} | 9.8 m s^{-1} | 1.0 m s^{-1} | 4.4 m s^{-1} | At minimum speed gravity alone supplies the centripetal force: v = √(gr) = √9.8 = 3.1 m s^{-1}.
+SA2@1,3: Explain why a satellite in a circular orbit is accelerating even though its speed is constant, and what provides the force. | Velocity is a vector; in a circular orbit its direction changes continuously, so the velocity changes and the satellite accelerates. The acceleration v^{2}/r points towards the centre of the orbit. The force producing it is the gravitational attraction of the Earth, which acts towards the Earth's centre, perpendicular to the velocity, so it changes direction without changing speed. | Velocity changes direction ; Acceleration towards centre, v squared over r ; Gravity provides the force ; Force perpendicular to velocity so speed constant
 
 ## Centripetal acceleration and force
 S: Centripetal means "centre-seeking": the acceleration v^{2}/r towards the centre of a circular path, and the net force mv^{2}/r that causes it. That force is always provided by real forces: tension, gravity, friction, normal force, magnetism.

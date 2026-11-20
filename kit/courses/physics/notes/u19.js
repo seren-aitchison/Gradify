@@ -343,119 +343,216 @@ SA2@1,2: Explain what causes myopia and how a lens corrects it, including a calc
 
 ## Microscopes and telescopes
 S: Microscopes magnify small, near objects; telescopes magnify the angular size of distant ones and collect their faint light. Both use an objective to form an image and an eyepiece (or sensor) to view it.
+O: Calculate the magnification of a compound microscope and an astronomical telescope
+O: Use the Rayleigh criterion to find the resolving limit of a telescope
+O: Compare refracting and reflecting telescopes
+PRE: Optical instruments
+LV: A level · Application
 H: Compound microscope
 E: M ≈ (L/f_{o})(25 cm/f_{e}) :: L = tube length
-- Objective (short f) makes a magnified real image; eyepiece magnifies it further.
-- Resolution limit d ≈ 0.61λ/NA (~200 nm for visible light); oil immersion raises NA to ~1.4.
+- The objective (short f) makes a magnified real image; the eyepiece magnifies it further.
+- Resolution limit d ≈ 0.61λ/NA (~200 nm for visible light); oil immersion raises the numerical aperture NA to ~1.4.
 - Super-resolution microscopy (STED, PALM, STORM; Nobel 2014) beats this using fluorescence tricks.
 H: Telescopes
-E: M = f_{o}/f_{e} :: angular magnification
-E: θ_{min} = 1.22λ/D :: resolution
-- **Refractors**: lenses; chromatic aberration; limited to ~1 m.
-- **Reflectors**: mirrors; no chromatic aberration; segmented and up to 39 m (ELT).
-- Light-gathering ∝ D^{2}: the main reason for large telescopes.
+E: M = f_{o}/f_{e} :: angular magnification in normal adjustment
+E: θ_{min} ≈ 1.22λ/D :: resolution (Rayleigh criterion)
+- **Refractors**: lenses; chromatic aberration; practical limit about 1 m aperture.
+- **Reflectors**: mirrors; no chromatic aberration; segmented primaries up to 39 m (ELT).
+- Light-gathering power ∝ D^{2}: the main reason for large telescopes.
 - Space telescopes avoid atmospheric blurring and absorption (Hubble, JWST).
-X: A telescope with f_{o} = 1.2 m and f_{e} = 25 mm. Magnification? Resolution if D = 0.2 m (550 nm)?
-> M = 48
+X: A telescope has f_{o} = 1.2 m and f_{e} = 25 mm. What is its magnification, and its resolution if D = 0.2 m at 550 nm?
+> M = f_{o}/f_{e} = 1.2/0.025 = 48
 > θ = 1.22 × 5.5 × 10^{-7}/0.2 = 3.4 × 10^{-6} rad ≈ 0.7″
+K: Aperture sets both the light gathered (∝ D^{2}) and the finest detail (∝ λ/D); magnification only enlarges what the aperture delivers.
 !: Telescope magnification is less important than aperture; a high-magnification small telescope just shows a dim, blurry view.
+T: Normal adjustment | Telescope setting with the lenses separated by f_{o} + f_{e}, so the final image is at infinity
+T: Numerical aperture | NA = n sin θ for the half-angle θ of the cone of light a microscope objective accepts
+SUM: Microscope M ≈ (L/f_{o})(25 cm/f_{e}); telescope M = f_{o}/f_{e}.
+SUM: Resolution is limited by diffraction: 1.22λ/D for telescopes, ~0.61λ/NA for microscopes.
+SUM: Large telescopes are reflectors: mirrors can be supported from behind and have no chromatic aberration.
+EV: established | Optical resolution is limited by diffraction at the aperture
+SRC: OpenStax, University Physics Volume 3, section 2.8 "Microscopes and Telescopes" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/2-8-microscopes-and-telescopes
+SRC: OpenStax, College Physics 2e, section 26.5 "Telescopes" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/26-5-telescopes
+SRC: AQA, A-level Physics specification (7408), section 3.9.1.1 "Astronomical telescope consisting of two converging lenses" | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: Why are large telescopes reflectors? | Large mirrors can be supported from behind and have no chromatic aberration.
 Q: What limits an optical microscope's resolution? | Diffraction: about 0.61λ/NA.
-M1: A telescope's light-gathering power depends on: | Aperture area | Magnification | Eyepiece | Length | ∝ D^{2}.
-M2: Oil immersion improves microscope resolution by: | Increasing numerical aperture | Shortening λ in air | Brightening the lamp | Reducing magnification | NA = n sin θ.
+M1@3: A telescope's light-gathering power depends on: | Aperture area | Magnification | The eyepiece used | Tube length | Collected light ∝ area ∝ D^{2}; magnification spreads the same light over a bigger image.
+M2@2: Oil immersion improves microscope resolution by: | Increasing numerical aperture | Shortening λ in air | Brightening the lamp | Reducing magnification | NA = n sin θ: oil (n ≈ 1.5) between lens and slide raises NA from below 1 to about 1.4, so d = 0.61λ/NA falls.
+NUM2@2: What is the smallest angle (in μrad) resolvable by a 10 m telescope at 500 nm, ignoring the atmosphere? | 0.061 | 3% | μrad | θ = 1.22λ/D = 1.22 × 5.0 × 10^{-7}/10 = 6.1 × 10^{-8} rad = 0.061 μrad, about 0.013″.
+M3@1,3: An astronomical telescope in normal adjustment has M = 40 and is 41 cm long. What are the focal lengths? | f_{o} = 40 cm, f_{e} = 1 cm | f_{o} = 41 cm, f_{e} = 1 cm | f_{o} = 20 cm, f_{e} = 0.5 cm | f_{o} = 1 cm, f_{e} = 40 cm | In normal adjustment f_{o} + f_{e} = 41 cm and f_{o}/f_{e} = 40, so f_{e} = 1 cm and f_{o} = 40 cm.
+SA2@2,3: Explain why astronomers build ever larger telescopes, and why the largest are reflectors. | A larger aperture D collects more light (∝ D^{2}), so fainter objects can be detected in a given time, and it improves the diffraction limit θ ≈ 1.22λ/D, so finer detail can be resolved. Large lenses are impractical: they can only be supported at their edges and sag, they absorb light, and they suffer chromatic aberration. Mirrors reflect all wavelengths equally, can be supported across their backs, and can be made in segments, so apertures of tens of metres are possible. | Light gathered ∝ D^{2} ; Resolution 1.22λ/D improves with D ; Lenses sag, absorb and have chromatic aberration ; Mirrors have no chromatic aberration and can be supported from behind ; Segmented mirrors allow very large apertures
 
 ## Aberrations
 S: Aberrations are departures from perfect imaging in real lenses and mirrors. They blur, distort and colour images, and much of optical design is about correcting them.
+O: Describe the main monochromatic (Seidel) aberrations
+O: Explain chromatic aberration and how an achromatic doublet corrects it
+O: Explain the trade-off between aberrations and diffraction when stopping down a lens
+PRE: Thin lenses
+LV: Year 1 · Application
 H: Monochromatic (Seidel) aberrations
-- **Spherical**: edge rays focus closer than central ones; fixed by aspheric surfaces or stopping down.
+- **Spherical**: edge rays focus closer than central ones; reduced by aspheric surfaces or stopping down.
 - **Coma**: off-axis points look like comets.
-- **Astigmatism**: different foci for perpendicular planes.
+- **Astigmatism**: different foci for rays in perpendicular planes.
 - **Field curvature**: the sharp image lies on a curved surface.
 - **Distortion**: barrel or pincushion (straight lines curve).
 H: Chromatic aberration
-- Dispersion makes different colours focus at different distances (axial) and magnifications (lateral).
-- Achromatic doublet: crown + flint glass bring two colours to a focus; apochromats bring three.
+- Dispersion makes different colours focus at different distances (axial) and with different magnifications (lateral).
+- Achromatic doublet: a converging crown-glass lens and a weaker diverging flint-glass lens bring two colours to the same focus; apochromats bring three.
 - Mirrors have none.
 H: Correction
-P: Camera lenses use many elements of different glasses, aspheric surfaces and low-dispersion materials to cancel aberrations. Modern phones also correct distortion and colour fringing in software. Hubble's primary mirror had spherical aberration (2.2 μm error at the edge), corrected in 1993 by optics designed to have equal and opposite aberration.
+P: Camera lenses use many elements of different glasses, aspheric surfaces and low-dispersion materials to cancel aberrations; phones also correct distortion and colour fringing in software. Hubble's primary mirror had spherical aberration (an error of about 2.2 μm at its edge), corrected in 1993 by optics with equal and opposite aberration.
 X: Why does stopping a lens down (higher f-number) sharpen images, up to a point?
-> Blocking edge rays reduces spherical aberration and other aberrations
+> Blocking edge rays reduces spherical and other aberrations
 > But a smaller aperture increases diffraction blur (∝ N), so very small apertures soften images again
+K: Aberrations come from geometry (monochromatic) or from dispersion (chromatic); designs cancel them with several elements of different glasses.
 !: Aberrations and diffraction trade off; the sharpest aperture is usually two or three stops below maximum.
+T: Spherical aberration | Failure of a spherical surface to focus rays at different distances from the axis to the same point
+T: Achromatic doublet | A pair of lenses of different glasses (crown and flint) cemented so that two wavelengths share a focus
+SUM: Seidel aberrations: spherical, coma, astigmatism, field curvature and distortion.
+SUM: Chromatic aberration comes from dispersion; doublets and mirrors avoid it.
+SUM: Stopping down reduces aberrations but increases diffraction.
+EV: established | Real lenses and mirrors show aberrations that can be reduced but not removed entirely by design
+SRC: OpenStax, College Physics 2e, section 26.6 "Aberrations" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/26-6-aberrations
+SRC: OpenStax, University Physics Volume 3, section 2.4 "Thin Lenses" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/2-4-thin-lenses
 Q: What causes chromatic aberration? | Dispersion: refractive index varies with wavelength, so colours focus differently.
 Q: How was Hubble's spherical aberration fixed? | Corrective optics (COSTAR and new instruments) with equal and opposite aberration.
-M1: Which optical element has no chromatic aberration? | Mirror | Single lens | Prism | Achromat | Reflection is wavelength-independent.
-M2: Barrel distortion makes straight lines: | Curve outward | Curve inward | Disappear | Colour-fringed | Bulging.
+M1@2: Which optical element has no chromatic aberration? | Mirror | Single lens | Prism | Achromat | The law of reflection doesn't depend on wavelength, so a mirror focuses all colours at the same point; an achromat only corrects two.
+M2@1: Barrel distortion makes straight lines: | Curve outward | Curve inward | Disappear | Become colour-fringed | Magnification falls away from the centre, so straight lines near the edges bulge outwards like a barrel.
+M2@2: In an achromatic doublet, the flint-glass element is: | A weaker diverging lens with higher dispersion | A stronger converging lens with lower dispersion | Identical to the crown element | A flat window that only protects the crown lens | Flint's higher dispersion lets a weak diverging lens cancel the crown lens's colour spread while leaving net converging power.
+TF1@1: Stopping a lens down to its smallest aperture always gives the sharpest image. | false | At very small apertures diffraction blur (∝ f-number) exceeds the aberrations removed, so sharpness falls again.
+M3@3: A photographer finds a lens sharpest at f/5.6, softer at f/1.8 and also softer at f/22. Why? | Aberrations dominate wide open; diffraction dominates when stopped right down | Depth of field causes all three effects | The sensor is less sensitive at f/22 | Only chromatic aberration varies with aperture | Wide apertures admit rays far from the axis (aberrations); tiny apertures increase diffraction spread; the best compromise lies between.
+SA2@1,2: Describe spherical and chromatic aberration in a single converging lens and one way to reduce each. | Spherical aberration: rays striking the lens far from the axis are bent too strongly and focus closer than paraxial rays, so a point becomes a blur. It is reduced by stopping down, by aspheric surfaces, or by sharing the bending between several elements. Chromatic aberration: the refractive index is larger for blue than red light, so blue focuses closer and images have coloured fringes. It is reduced by an achromatic doublet (crown and flint glass), by low-dispersion glass, or by using mirrors instead. | Spherical: marginal rays focus closer ; Reduce: stop down, aspheric or multiple elements ; Chromatic: n depends on wavelength; blue focuses closer ; Reduce: achromatic doublet or low-dispersion glass ; Mirrors free of chromatic aberration
 
 ## Dispersion and prisms
 S: A prism refracts different colours by different amounts because glass's refractive index depends on wavelength. Newton used prisms to show white light is a mixture of colours, founding spectroscopy.
+O: Explain dispersion in terms of the variation of refractive index with wavelength
+O: Use the minimum-deviation formula to find a prism's refractive index
+O: Explain how rainbows form
+PRE: Snell's law
+LV: Year 1 · Application
 H: Prism deviation
 E: n = sin((A + δ_{min})/2)/sin(A/2) :: minimum deviation for apex angle A
 - Thin prism: δ ≈ (n − 1)A.
-- Violet deviates most, red least (normal dispersion).
+- In glass n is larger for violet than red (normal dispersion), so violet deviates most.
 H: Rainbows
 - Sunlight refracts entering a raindrop, reflects inside, refracts out.
 - Primary bow at ~42° from the anti-solar point (red outside); secondary at ~51° (two reflections; colours reversed).
-- Alexander's dark band between them.
+- Alexander's dark band lies between them.
 H: Spectroscopy
-P: Newton's prism experiments (1666) showed colours aren't added by glass but separated from white light, and recombined them. Fraunhofer (1814) saw dark lines in sunlight; Kirchhoff and Bunsen identified them as elemental absorption, letting astronomers find what stars are made of. Gratings have largely replaced prisms in spectrometers.
-X: A 60° prism gives minimum deviation 39°. Refractive index?
-> n = sin(49.5°)/sin(30°) = 0.760/0.5 = 1.52
+P: Newton's prism experiments (1666) showed that glass doesn't add colours but separates them from white light, and he recombined them. Fraunhofer (1814) saw dark lines in sunlight; Kirchhoff and Bunsen identified them as absorption by elements, letting astronomers find what stars are made of. Gratings have largely replaced prisms in spectrometers.
+X: A 60° prism gives minimum deviation 39°. What is its refractive index?
+> n = sin((60° + 39°)/2)/sin 30° = sin 49.5°/0.5
+> n = 0.760/0.5 = 1.52
+K: Dispersion is the dependence of n on wavelength: in glass, shorter wavelengths are slowed and bent more.
 !: Prisms separate colours by dispersion; gratings by diffraction. They spread colours in opposite orders (prisms bend violet most; gratings bend red most).
+T: Dispersion | The variation of refractive index (and so wave speed) with wavelength
+T: Minimum deviation | The smallest angle through which a prism turns a ray, reached when the ray passes symmetrically through it
+SUM: n depends on wavelength, so a prism spreads white light into a spectrum, violet bent most.
+SUM: Minimum deviation gives n = sin((A + δ_{min})/2)/sin(A/2).
+SUM: Rainbows are dispersion plus internal reflection in raindrops.
+EV: established | White light is a mixture of wavelengths that glass refracts by different amounts
+SRC: OpenStax, University Physics Volume 3, section 1.5 "Dispersion" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/1-5-dispersion
+SRC: OpenStax, College Physics 2e, section 25.5 "Dispersion: The Rainbow and Prisms" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/25-5-dispersion-the-rainbow-and-prisms
 Q: How did Newton show white light is a mixture? | Separated it with a prism and recombined the colours into white with a second prism.
 Q: Why is the secondary rainbow's colour order reversed? | An extra internal reflection inverts the order.
-M1: Which colour does a glass prism deviate most? | Violet | Red | Green | Yellow | Highest n.
-M2: The primary rainbow appears at about: | 42° from the anti-solar point | 90° | 10° | 180° | Minimum deviation in water drops.
+M1@1: Which colour does a glass prism deviate most? | Violet | Red | Green | Yellow | Glass has its highest refractive index for the shortest visible wavelengths, so violet is bent most.
+M2@3: The primary rainbow appears at about: | 42° from the anti-solar point | 90° from the Sun | 10° from the anti-solar point | 180° from the anti-solar point | Light leaving raindrops after one internal reflection bunches near minimum deviation, 138°, which is 42° from the anti-solar point.
+NUM2@2: A thin prism of apex angle 6.0° has n = 1.52. Through what angle does it deviate light, in degrees? | 3.1 | 3% | ° | For a thin prism δ ≈ (n − 1)A = 0.52 × 6.0° = 3.1°.
+M3@2: An equilateral prism has n = 1.65 for violet and 1.62 for red. Which ray has the larger minimum deviation, and by about how much? | Violet, by about 3° | Red, by about 3° | Violet, by about 0.03° | They are equal, as the apex angle is the same | δ_{min} = 2 sin^{-1}(n sin 30°) − 60° gives 51.2° for violet and 48.2° for red: violet deviates more because its n is larger.
+SA2@1,3: Explain how a rainbow forms and why red appears on the outside of the primary bow. | Sunlight enters spherical raindrops and refracts, reflects once off the back of the drop and refracts again on leaving. Because the refractive index of water is slightly larger for violet than for red, each colour leaves with its strongest concentration at a slightly different angle to the incoming sunlight: about 42° for red and 40° for violet, measured from the anti-solar point. Drops higher in the sky send red light to the observer and lower drops send violet, so red forms the outer edge of the bow. | Refraction in, one internal reflection, refraction out ; Dispersion: n larger for violet ; Light concentrated near minimum deviation ; Red at ~42°, violet ~40° from anti-solar point ; Red from higher drops, so red outermost
 
 ## Physical optics
 S: Physical (wave) optics treats light as a wave to explain what rays can't: interference, diffraction, coherence and polarisation. It sets the ultimate limits of optical instruments.
+O: Use optical path difference to find the phase difference between waves
+O: Identify situations where wave optics is needed
+O: Describe the evidence that established the wave theory of light
+PRE: Superposition
+LV: Year 1 · Foundation
 H: Key ideas
 - Superposition of coherent waves gives interference patterns.
-- Huygens–Fresnel principle explains diffraction.
-- Optical path difference: Δ = Σn_{i}l_{i}; phase difference δ = 2πΔ/λ.
-- Fraunhofer (far-field) diffraction = Fourier transform of the aperture.
+- The Huygens–Fresnel principle explains diffraction: every point on a wavefront acts as a source of secondary wavelets.
+- Optical path difference Δ = Σn_{i}l_{i} differences; phase difference δ = 2πΔ/λ.
+- Fraunhofer (far-field) diffraction pattern = Fourier transform of the aperture.
 H: When it matters
 - Small apertures (pinholes, slits) and fine structures (gratings, cells, CD tracks).
 - Thin films (soap bubbles, oil slicks, coatings).
-- Resolution limits of every imaging system.
+- The resolution limit of every imaging system.
 - Coherent sources (lasers) make wave effects obvious; speckle appears on any rough surface lit by a laser.
 H: Historical victory
-P: Young's double slit (1801) and Fresnel's diffraction theory (1818) overturned Newton's corpuscular theory. The Poisson spot, predicted from Fresnel's theory as an apparent absurdity, was observed by Arago, convincing the sceptics.
+P: Young's double slit (1801) and Fresnel's diffraction theory (1818) overturned Newton's corpuscular theory. The Poisson spot, a bright point at the centre of a disc's shadow, was derived from Fresnel's theory by Poisson as an apparent absurdity; Arago observed it, convincing the sceptics.
 X: Why does a laser beam on a wall look grainy (speckle)?
 > The rough surface scatters coherent light with random path differences
 > Random interference produces bright and dark grains
+K: Wave effects appear whenever path differences of a wavelength or so matter: tiny apertures, thin films and coherent light.
 !: Wave optics doesn't replace ray optics; ray optics is the short-wavelength limit of wave optics.
+T: Optical path difference | The difference between the optical path lengths (n × distance) of two waves to the same point
+T: Huygens–Fresnel principle | Each point on a wavefront is a source of secondary wavelets whose superposition forms the later wavefront
+SUM: Phase difference = 2π × optical path difference/λ.
+SUM: Wave optics explains interference, diffraction, coherence and polarisation.
+SUM: Young, Fresnel and the Poisson spot established the wave theory in the early 1800s.
+EV: established | Interference and diffraction of light show that it behaves as a wave
+SRC: OpenStax, University Physics Volume 3, section 1.6 "Huygens’s Principle" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/1-6-huygenss-principle
+SRC: OpenStax, University Physics Volume 3, section 3.1 "Young's Double-Slit Interference" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/3-1-youngs-double-slit-interference
+SRC: AQA, A-level Physics specification (7408), section 3.3.2.1 "Interference" | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: What is optical path length? | The physical path length times refractive index, Σnl.
 Q: What is speckle? | A granular interference pattern from coherent light scattered by a rough surface.
-M1: Fraunhofer diffraction patterns are: | Fourier transforms of the aperture | Images of the aperture | Random | Always circular | Far-field.
-M2: Which phenomenon requires wave optics? | Thin-film colours | Shadows | Mirror images | Snell's law | Interference.
+M1@2: Fraunhofer diffraction patterns are: | Fourier transforms of the aperture | Sharp images of the aperture | Random patterns | Always circular | In the far field the amplitude pattern is the Fourier transform of the aperture's transmission function.
+M2@2: Which phenomenon requires wave optics? | Thin-film colours | Sharp shadows | Mirror images | Snell's law | Thin-film colours come from interference between reflections from the two surfaces; the others are explained by rays.
+NUM2@1: Light of wavelength 600 nm travels through 3.0 μm of glass (n = 1.5) instead of the same length of air. What phase difference results, in units of π? | 5 | 2% | π rad | Extra optical path = (1.5 − 1) × 3.0 μm = 1.5 μm = 2.5λ, so δ = 2π × 2.5 = 5π.
+M3@3: Why was the bright Poisson spot such strong evidence for the wave theory? | A particle theory predicts complete darkness at the centre of a disc's shadow | It showed light travels faster in water | It proved light is a transverse wave | It was seen only with a laser | Particles travelling in straight lines cannot reach the shadow's centre; waves diffracting round the rim arrive there in phase, making it bright.
+SA2@1,2: Explain, using optical path difference, why a thin film of oil on water shows colours in white light. | Light reflects from both the top and bottom surfaces of the film. The ray from the bottom travels an extra optical path of about 2nt (n film index, t thickness) and there may be an extra half-wavelength shift at reflection. For a given thickness this path difference gives constructive interference for some wavelengths and destructive for others, so those colours are reinforced or removed. Because the film's thickness varies, different colours are seen in different places. | Reflections from top and bottom surfaces ; Extra optical path about 2nt ; Possible half-wave phase change on reflection ; Constructive for some wavelengths, destructive for others ; Varying thickness gives coloured bands
 
 ## Young's double-slit experiment
-S: Young's double-slit experiment sends light through two narrow slits and shows bright and dark fringes on a screen: interference of waves from the two slits. It proved light is a wave and, done one particle at a time, revealed quantum superposition.
+S: Young's double-slit experiment sends light through two narrow slits and shows bright and dark fringes on a screen: interference of the waves from the two slits. It showed light is a wave and, done one particle at a time, revealed quantum superposition.
+O: Use d sin θ = nλ and w = λD/d to analyse double-slit fringes
+O: State the conditions needed to see two-source interference
+O: Describe the single-particle version and what it shows
+PRE: Interference
+LV: A level · Application
 H: Results
-E: d sin θ = nλ :: bright fringes
-E: x = λD/d :: fringe spacing (small angles)
-E: I = 4I_{0} cos^{2}(πd sin θ/λ) :: intensity (ignoring single-slit envelope)
+E: d sin θ = nλ :: bright fringes (d = slit separation)
+E: w = λD/d :: fringe spacing for small angles (D = slit–screen distance)
+E: I = 4I_{0} cos^{2}(πd sin θ/λ) :: intensity, ignoring the single-slit envelope
 - Wider slit spacing gives closer fringes; longer wavelength gives wider fringes.
 - The pattern is modulated by each slit's diffraction envelope.
 H: Requirements
-- Coherent sources: originally sunlight through a single pinhole; now lasers.
-- Slits comparable in width and close together (sub-mm).
+- Coherent sources (constant phase difference): originally sunlight through a single pinhole; now lasers.
+- Narrow slits, close together (sub-millimetre).
+- Laser safety: never look into the beam or its reflections.
 H: Quantum version
-P: Fire photons, electrons, neutrons, atoms or even molecules of ~2000 atoms one at a time: each lands at a single point, but the pattern builds up into fringes. Each particle's wavefunction passes through both slits. Measuring which slit it went through destroys the pattern.
-X: Laser light (633 nm), slits 0.25 mm apart, screen 2.0 m away. Fringe spacing?
-> x = 633 × 10^{-9} × 2.0/2.5 × 10^{-4} = 5.1 mm
+P: Fire photons, electrons, neutrons, atoms or even molecules of ~2000 atoms one at a time: each lands at a single point, but the pattern builds up into fringes. Each particle's wavefunction passes through both slits; measuring which slit it went through destroys the pattern.
+X: Laser light (633 nm) passes through slits 0.25 mm apart onto a screen 2.0 m away. What is the fringe spacing?
+> w = λD/d = 633 × 10^{-9} × 2.0/(2.5 × 10^{-4})
+> w = 5.1 mm
+K: Bright fringes appear where the path difference from the two slits is a whole number of wavelengths: spacing λD/d.
 !: The fringes come from path difference to each point on the screen, not from light "bouncing" between the slits.
 P: **Investigate with the lab.** In double-slit mode, halve the slit separation and see the fringes spread twice as far apart. Then move the screen further away.
 IX: interference
+T: Coherent sources | Sources with the same frequency and a constant phase difference
+T: Fringe spacing | The distance between neighbouring bright (or dark) fringes, w = λD/d for small angles
+SUM: Bright fringes where d sin θ = nλ; spacing w = λD/d.
+SUM: The sources must be coherent; lasers make it easy.
+SUM: Single particles build up the same fringes, showing quantum superposition.
+EV: established | Light passing through two slits produces interference fringes with spacing λD/d
+SRC: OpenStax, University Physics Volume 3, section 3.1 "Young's Double-Slit Interference" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/3-1-youngs-double-slit-interference
+SRC: OpenStax, College Physics 2e, section 27.3 "Young’s Double Slit Experiment" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/27-3-youngs-double-slit-experiment
+SRC: AQA, A-level Physics specification (7408), section 3.3.2.1 "Interference" | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: What's the fringe spacing in Young's experiment? | x = λD/d.
 Q: What happens to the pattern if you detect which slit each electron passes through? | The interference fringes disappear.
-M1: Using blue light instead of red makes fringes: | Closer together | Farther apart | Disappear | Brighter only | x ∝ λ.
-M2: Young's experiment with single electrons shows: | Interference builds up from single detections | Electrons are classical | No pattern | Only two bands | Wave–particle duality.
-M2: In Young's experiment, what happens to the fringe spacing if the slit separation is halved? | It doubles | It halves | It stays the same | It quadruples | Fringe spacing w = λD/s, so halving s doubles w.
+M1@1: Using blue light instead of red makes fringes: | Closer together | Farther apart | Disappear | Brighter only | w = λD/d is proportional to wavelength, and blue light has the shorter wavelength.
+M2@3: Young's experiment with single electrons shows: | Interference builds up from single detections | Electrons behave as classical particles | No pattern forms with single electrons | Only two bands appear, behind the slits | Each electron arrives at one point, but the distribution of many arrivals shows fringes: wave–particle duality.
+M2@1: In Young's experiment, what happens to the fringe spacing if the slit separation is halved? | It doubles | It halves | It stays the same | It quadruples | Fringe spacing w = λD/d (AQA writes s for d), so halving d doubles w.
+NUM2@1: Fringes 3.0 mm apart are seen on a screen 1.5 m from slits 0.30 mm apart. What is the wavelength, in nm? | 600 | 2% | nm | λ = wd/D = 3.0 × 10^{-3} × 0.30 × 10^{-3}/1.5 = 6.0 × 10^{-7} m = 600 nm.
+M3@1,2: White light is used in a double-slit experiment. What is seen? | A white central fringe with coloured fringes either side, fading out | Identical sharp fringes in white | No fringes, because white light is not coherent | A single continuous spectrum | All wavelengths have zero path difference at the centre (white); elsewhere maxima of different colours fall at different places, so the fringes are coloured and wash out.
+SA2@1,2: Describe how to use a laser and a double slit to measure the wavelength of laser light, with the precautions you would take. | Shine the laser through a double slit of known separation d onto a screen a measured distance D away (several metres, with a tape measure). Measure across as many fringes as possible with a ruler and divide by the number of spacings to find w. Calculate λ = wd/D. Precautions: never look into the beam or reflections, remove reflective jewellery and keep the beam below eye level; use a large D and many fringes to reduce percentage uncertainty. | Laser through double slit of known d onto screen at distance D ; Measure across several fringes to find w ; λ = wd/D ; Large D and many fringes reduce uncertainty ; Laser safety precautions
 
 ## Interference and coherence
 S: Interference needs coherence: a stable phase relationship between waves. Temporal coherence describes how long a wave stays in phase with itself; spatial coherence describes how phase is correlated across a beam.
+O: Calculate coherence length from spectral width
+O: Explain spatial coherence and how it limits interference from extended sources
+O: Calculate and interpret fringe visibility
+PRE: Young's double-slit experiment
+LV: Year 2 · Application
 H: Temporal coherence
 E: l_{c} ≈ λ^{2}/Δλ = c/Δf :: coherence length
 - White light: ~1 μm (thin films only). LED: ~10 μm. Sodium lamp: ~1 mm. HeNe laser: ~0.1–1 m. Stabilised lasers: kilometres.
@@ -467,41 +564,72 @@ H: Fringe visibility
 E: V = (I_{max} − I_{min})/(I_{max} + I_{min})
 - V = 1 fully coherent; 0 incoherent.
 - Hanbury Brown–Twiss intensity interferometry measures star sizes from intensity correlations.
-X: Coherence length of an LED with λ = 630 nm, Δλ = 20 nm?
-> l_{c} = (630 × 10^{-9})^{2}/(20 × 10^{-9}) ≈ 20 μm
+X: What is the coherence length of an LED with λ = 630 nm and Δλ = 20 nm?
+> l_{c} = (630 × 10^{-9})^{2}/(20 × 10^{-9})
+> l_{c} ≈ 20 μm
+K: The narrower the spectrum, the longer the coherence length; the smaller the source's angular size, the wider the coherence width.
 !: Two independent lasers can interfere briefly (beats), but their relative phase drifts; for stable fringes, use beams from one source.
 P: **Investigate with the lab.** Compare the fringes for different slit separations and screen distances, and note that clear fringes need a steady phase relationship between the slits.
 IX: interference
+T: Coherence length | The path difference over which a wave stays correlated with itself, l_{c} ≈ λ^{2}/Δλ
+T: Fringe visibility | V = (I_{max} − I_{min})/(I_{max} + I_{min}), from 0 (no fringes) to 1 (perfect contrast)
+SUM: Temporal coherence: l_{c} ≈ λ^{2}/Δλ.
+SUM: Spatial coherence: d_{c} ≈ λL/s for a source of size s.
+SUM: Visibility measures fringe contrast and so the degree of coherence.
+EV: established | Interference fringes are visible only when path differences are within the coherence length
+SRC: OpenStax, University Physics Volume 3, section 3.1 "Young's Double-Slit Interference" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/3-1-youngs-double-slit-interference
+SRC: AQA, A-level Physics specification (7408), section 3.3.2.1 "Interference" | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: What is coherence length? | The path difference over which a wave stays correlated with itself, l_{c} ≈ λ^{2}/Δλ.
 Q: Why can thin films show colours in white light? | Their path differences are shorter than white light's tiny coherence length.
-M1: A narrower spectral linewidth gives: | Longer coherence length | Shorter coherence length | No change | Lower intensity | l_{c} ∝ 1/Δλ.
-M2: Fringe visibility of 0 means: | No interference fringes | Perfect fringes | Maximum intensity | Monochromatic light | Incoherent.
-M2: Why must the two sources in an interference experiment be coherent? | They need a constant phase difference for a stable pattern | They must have different frequencies | They must be very bright | They must be at different distances from the screen | Without a constant phase difference, the fringes move too fast to see.
+M1@1: A narrower spectral linewidth gives: | Longer coherence length | Shorter coherence length | No change in coherence | Lower intensity only | l_{c} ≈ λ^{2}/Δλ, so a smaller Δλ means the wave stays in step with itself over a longer distance.
+M2@3: Fringe visibility of 0 means: | No interference fringes | Perfect fringes | Maximum intensity | Monochromatic light | V = 0 when I_{max} = I_{min}: the light is incoherent over the path difference, so the screen is uniformly lit.
+M2@1: Why must the two sources in an interference experiment be coherent? | They need a constant phase difference for a stable pattern | They must have different frequencies | They must be very bright | They must be at different distances from the screen | Without a constant phase difference, the fringes move too fast to see.
+NUM2@3: Fringes have maximum intensity 9.0 units and minimum 1.0 unit. What is the visibility? | 0.8 | 2% |  | V = (9 − 1)/(9 + 1) = 0.8: good but not perfect coherence, or unequal beam intensities.
+M3@2: A pinhole 0.5 mm wide is 1.0 m from a double slit, lit with 500 nm light. Roughly how far apart can the slits be and still give clear fringes? | About 1 mm | About 1 μm | About 1 m | Any distance | The coherence width d_{c} ≈ λL/s = 5 × 10^{-7} × 1.0/5 × 10^{-4} = 1 mm; wider slit spacings see incoherent light.
+SA3@1,3: Explain why thin soap films show colours in white light but a 1 cm thick glass plate does not. | Colours come from interference between light reflected from the two surfaces, which needs the path difference (about twice the thickness times n) to be shorter than the coherence length. White light contains a wide range of wavelengths, so its coherence length is only about a micrometre. A soap film is a few hundred nanometres thick, so its path difference is within this and fringes form, coloured because different wavelengths interfere constructively at different thicknesses. For a 1 cm plate the path difference is about 3 cm, vastly longer than the coherence length, so the two reflections are incoherent and their intensities simply add. | Interference between two surface reflections ; Path difference about 2nt ; White light coherence length ~1 μm ; Film path difference within coherence length, plate far beyond ; Plate reflections incoherent: no fringes
 
 ## Diffraction
-S: Diffraction is the spreading and bending of light around obstacles and through apertures, producing patterns of light and dark. It's why light can't be focused to an arbitrarily small spot and why fine detail has a limit.
+S: Diffraction is the spreading and bending of light around obstacles and through apertures, producing patterns of light and dark. It is why light can't be focused to an arbitrarily small spot and why fine detail has a limit.
+O: Use a sin θ = mλ and θ ≈ 1.22λ/D to find diffraction angles
+O: Distinguish Fraunhofer and Fresnel diffraction
+O: Explain how diffraction limits the resolution of optical systems and lithography
+PRE: Huygens' principle
+LV: Year 1 · Application
 H: Regimes
-- **Fraunhofer** (far field): source and screen effectively at infinity (or with lenses); pattern is the aperture's Fourier transform.
-- **Fresnel** (near field): curved wavefronts; patterns change with distance (Fresnel number F = a^{2}/(Lλ)).
+- **Fraunhofer** (far field): source and screen effectively at infinity (or with lenses); the pattern is the aperture's Fourier transform.
+- **Fresnel** (near field): curved wavefronts; the pattern changes with distance (Fresnel number F = a^{2}/(Lλ); far field when F ≪ 1).
 H: Key results
-E: a sin θ = mλ :: single slit minima
+E: a sin θ = mλ :: single-slit minima
 E: sin θ = 1.22λ/D :: first dark ring of a circular aperture (Airy disc)
-- Smaller apertures give wider patterns.
+- Smaller apertures and longer wavelengths give wider patterns.
 H: Uses and limits
 - Resolution of eyes, cameras, telescopes and microscopes.
 - Spectrometers (gratings), holograms, X-ray crystallography.
 - Lithography: chip features are limited by the diffraction of the light used, so the industry moved from 248 nm to 193 nm (with immersion) to 13.5 nm EUV.
-X: The pupil (3 mm) viewing at 550 nm. Smallest resolvable angle?
+X: The pupil (3 mm) views light of 550 nm. What is the smallest resolvable angle?
 > θ = 1.22 × 5.5 × 10^{-7}/0.003 = 2.2 × 10^{-4} rad ≈ 0.8′
 > About the eye's actual acuity (~1′)
+K: Diffraction spreads light by an angle of about λ/a: the smaller the opening compared with the wavelength, the wider the spread.
 !: Diffraction happens at every edge and aperture; it's not a defect but a fundamental property of waves.
 P: **Investigate with the lab.** Switch to single-slit mode and narrow the slit: the central maximum gets wider. Widen it and the light spreads less.
 IX: interference
+T: Airy disc | The central bright spot of the diffraction pattern of a circular aperture, bounded by the first dark ring at sin θ = 1.22λ/D
+T: Rayleigh criterion | Two point sources are just resolved when the centre of one Airy disc falls on the first minimum of the other
+SUM: Single slit minima: a sin θ = mλ; circular aperture: 1.22λ/D.
+SUM: Fraunhofer (far field) versus Fresnel (near field) regimes.
+SUM: Diffraction sets the resolution of every optical system.
+EV: established | Waves passing through an aperture spread by an angle of order λ divided by the aperture width
+SRC: OpenStax, University Physics Volume 3, section 4.1 "Single-Slit Diffraction" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/4-1-single-slit-diffraction
+SRC: OpenStax, University Physics Volume 3, section 4.5 "Circular Apertures and Resolution" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/4-5-circular-apertures-and-resolution
+SRC: AQA, A-level Physics specification (7408), section 3.3.2.2 "Diffraction" | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: What is the Airy disc? | The central bright spot of the diffraction pattern from a circular aperture.
 Q: Why does chip lithography use ever-shorter wavelengths? | Diffraction limits feature size to roughly the wavelength.
-M1: Halving an aperture's diameter makes the Airy disc: | Twice as wide | Half as wide | The same | Four times wider | ∝ λ/D.
-M2: Fraunhofer diffraction applies when: | Source and screen are effectively at infinity | The screen is very close | Light is incoherent | The aperture is large | Far field.
-M2: What happens to the diffraction pattern when the slit is made narrower? | The central maximum gets wider | The central maximum gets narrower | The pattern disappears | The colours separate | The spread of the central maximum is roughly λ/a, so a narrower slit spreads the light more.
+M1@1: Halving an aperture's diameter makes the Airy disc: | Twice as wide | Half as wide | The same size | Four times wider | The angular size 1.22λ/D is inversely proportional to D.
+M2@2: Fraunhofer diffraction applies when: | Source and screen are effectively at infinity | The screen is very close to the aperture | The light is incoherent | The aperture is much larger than the screen distance | Far-field conditions (Fresnel number ≪ 1, or lenses) give plane wavefronts at the aperture and screen.
+M2@1: What happens to the diffraction pattern when the slit is made narrower? | The central maximum gets wider | The central maximum gets narrower | The pattern disappears | The colours separate | The spread of the central maximum is roughly λ/a, so a narrower slit spreads the light more.
+NUM2@1: Light of 600 nm passes through a slit 0.12 mm wide. At what angle is the first minimum, in degrees? | 0.29 | 3% | ° | sin θ = λ/a = 6.0 × 10^{-7}/1.2 × 10^{-4} = 5.0 × 10^{-3}, so θ = 0.29°.
+M3@3: A car's two headlights are 1.5 m apart. Using a 3 mm pupil at 550 nm, about how far away can the eye just resolve them? | About 7 km | About 70 m | About 700 km | About 70 km | θ_{min} = 1.22λ/D = 2.2 × 10^{-4} rad; distance ≈ 1.5/2.2 × 10^{-4} ≈ 6800 m (in practice less, as the eye is not perfect).
+SA2@1,3: Explain why a radio telescope must be much larger than an optical telescope to achieve the same resolution. | Resolution is limited by diffraction: the smallest resolvable angle is θ ≈ 1.22λ/D. Radio wavelengths (centimetres to metres) are about 10^{5}–10^{7} times longer than visible wavelengths (~500 nm). To give the same θ, the aperture D must be larger by the same factor, so radio dishes are tens to hundreds of metres across, and interferometer arrays spread over thousands of kilometres are used for the finest detail. | θ ≈ 1.22λ/D ; Radio wavelength far longer than visible ; D must scale with λ for same θ ; Hence very large dishes ; Arrays (interferometry) give effective D of km
 
 ## Single-slit and multiple-slit diffraction
 S: A single slit produces a broad central maximum with weaker side fringes. Adding more slits keeps that envelope but sharpens the bright fringes inside it, until many slits give the narrow lines of a diffraction grating.
