@@ -20,9 +20,26 @@ export const HUB_LINKS = [
 const G = `<svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4641ff"/><stop offset=".35" stop-color="#f055dd"/><stop offset=".7" stop-color="#ff5600"/><stop offset="1" stop-color="#ffc002"/></linearGradient></defs><rect x=".75" y=".75" width="30.5" height="30.5" rx="9" fill="#0b0b0b" stroke="rgba(255,255,255,.22)" stroke-width="1.5"/><path d="M22.9 10.9A8.6 8.6 0 1 0 24.6 16H16.4" fill="none" stroke="url(#gg)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 const START = "<!-- hub-header: written by scripts/sync-headers.mjs; edit it there -->", END = "<!-- /hub-header -->";
 
-export function hubHeader(current = "") {
+/**
+ * the page's main content, for the skip link: its first <main> (given id="main" if it has no id), or a course page's
+ * #course. Returns [html, id]; the page's own older skip links are removed, so there's one.
+ */
+export function skipTarget(html) {
+  html = html.replace(/\n\s*<a class="skip-link"[^>]*>[^<]*<\/a>/g, "");   // the header adds the one skip link
+  const m = html.match(/<main\b[^>]*>/);
+  if (m) {
+    const id = m[0].match(/\sid="([^"]+)"/)?.[1];
+    if (id) return [html, id];
+    return [html.replace(m[0], m[0].replace("<main", '<main id="main"')), "main"];
+  }
+  return [html, /id="course"/.test(html) ? "course" : "main"];
+}
+const skipLink = (id) => `<a class="skip-link" href="#${id}">Skip to content</a>`;
+
+export function hubHeader(current = "", skip = "main") {
   const link = ([id, href, label]) => `<a href="${href}"${id === current ? ' class="active" aria-current="page"' : ""}>${label}</a>`;
   return `${START}
+    ${skipLink(skip)}
     <header class="bar glass hub-bar">
       <a class="brand" href="/">${G} Gradify</a>
       <nav class="sections" aria-label="Gradify">${HUB_LINKS.map(link).join("")}</nav>
@@ -39,7 +56,8 @@ export function hubHeader(current = "") {
 
 /** the page with its hub header written in (replacing an earlier one, an older hand-written bar, or added first) */
 export function withHubHeader(html, current) {
-  const head = hubHeader(current);
+  let skip; [html, skip] = skipTarget(html);
+  const head = hubHeader(current, skip);
   if (html.includes(START)) return html.replace(new RegExp(`${START}[\\s\\S]*?${END}`), head);
   const bar = html.match(/<header class="bar glass">[\s\S]*?<\/header>/);
   if (bar) return html.replace(bar[0], head);
@@ -72,11 +90,12 @@ export function siteItems(indexHtml) {
  * href (relative to the site) of the page's own item; `course`: a course page, whose button starts the course;
  * `kit`: the path from the page to kit/
  */
-export function subHeader({ name, courses, extras }, { up = "", current = "", course = false, kit = "../kit/" } = {}) {
+export function subHeader({ name, courses, extras }, { up = "", current = "", course = false, kit = "../kit/", skip = "main" } = {}) {
   const a = (href, label, cls = "") => { const here = href === current; return `<a href="${here && course ? "./" : up + href}"${cls ? ` class="${cls}"` : ""}${here ? ' aria-current="page"' : ""}>${esc(label)}</a>`; };
   const main = [...courses.map((c) => a(c.href, c.label)), a("app.html#/study", "Study"), a("map.html", "Map"), a("lifeos.html", "LifeOS"), ...extras.map((x) => a(x.href, x.label))];
   const more = [a("app.html#/notes", "Notes"), a("app.html#/progress", "Progress"), a("app.html#/plan", "Plan"), '<a href="/">All Gradify sites</a>'];
   return `${SUB_START}
+    ${skipLink(skip)}
     <header class="sub-nav glass">
       <a class="sub-brand" href="${up || "./"}"><span class="icon"></span><span data-site-name>${esc(name)}</span></a>
       <nav class="sub-links" aria-label="${esc(name)}">
@@ -94,7 +113,8 @@ export function subHeader({ name, courses, extras }, { up = "", current = "", co
 
 /** the page with its site header written in (replacing an earlier one or a hand-written one, or added at the top) */
 export function withSubHeader(html, items, opts) {
-  const head = subHeader(items, opts);
+  let skip; [html, skip] = skipTarget(html);
+  const head = subHeader(items, { ...opts, skip });
   if (html.includes(SUB_START)) return html.replace(new RegExp(`${SUB_START}[\\s\\S]*?${SUB_END}`), head);
   const bar = html.match(/<header class="sub-nav glass">[\s\S]*?<\/header>/);
   if (bar) return html.replace(bar[0], head);
@@ -111,11 +131,24 @@ export async function sitePages(root = ROOT) {
     const index = new URL(`${dir}/index.html`, root); if (!existsSync(index)) continue;
     const items = siteItems(await readFile(index, "utf8")); if (!items.name) continue;
     for (const f of (await readdir(new URL(`${dir}/`, root))).sort()) {
-      if (f.endsWith(".html") && f !== "app.html") out.push({ file: `${dir}/${f}`, items, opts: { up: "", current: f === "index.html" ? "" : f, kit: "../kit/" } });
+      // pages with the site header, and the LifeOS tour (which had none); not the app, or a stub that only forwards
+      const page = f.endsWith(".html") && f !== "app.html" && (f === "lifeos.html" || /class="sub-nav/.test(await readFile(new URL(`${dir}/${f}`, root), "utf8")));
+      if (page) out.push({ file: `${dir}/${f}`, items, opts: { up: "", current: f === "index.html" ? "" : f, kit: "../kit/" } });
       const ci = new URL(`${dir}/${f}/index.html`, root);
       if (!f.includes(".") && existsSync(ci) && /<div id="course">/.test(await readFile(ci, "utf8"))) out.push({ file: `${dir}/${f}/index.html`, items, opts: { up: "../", current: `${f}/`, course: true, kit: "../../kit/" } });
     }
   }
+  return out;
+}
+
+/** an app page (its own app bar, not rewritten): just the skip link, before the bar */
+export function withAppSkip(html) {
+  let skip; [html, skip] = skipTarget(html);
+  return html.replace(/(\n(\s*)<header class="bar glass app-bar">)/, `\n$2${skipLink(skip)}$1`);
+}
+export async function appPages(root = ROOT) {
+  const out = ["app.html"];
+  for (const d of (await readdir(root)).filter((d) => /gradify$/.test(d)).sort()) if (existsSync(new URL(`${d}/app.html`, root))) out.push(`${d}/app.html`);
   return out;
 }
 
@@ -127,6 +160,10 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   }
   for (const { file, items, opts } of await sitePages()) {
     const url = new URL(file, ROOT), html = await readFile(url, "utf8"), next = withSubHeader(html, items, opts);
+    if (next !== html) { stale.push(file); if (!check) await writeFile(url, next); }
+  }
+  for (const file of await appPages()) {
+    const url = new URL(file, ROOT), html = await readFile(url, "utf8"), next = withAppSkip(html);
     if (next !== html) { stale.push(file); if (!check) await writeFile(url, next); }
   }
   if (check && stale.length) { console.error(`Headers out of date: ${stale.slice(0, 8).join(", ")}. Run node scripts/sync-headers.mjs`); process.exit(1); }

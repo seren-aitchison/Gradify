@@ -31,3 +31,22 @@ test("the header has the same links, in the same order, everywhere, and every ac
   assert.deepEqual(labels(menu), [...HUB_LINKS.map((l) => l[2]), "Sign in", "Open Gradify"]);
   assert.match(h, /kit\/core\/hubnav\.js/);
 });
+
+test("every course Gradify links to has a page, and the planned ones (never linked) don't yet", async () => {
+  const { COURSES, PLANNED, LIVE_COURSES } = await import("../kit/learning/learner-data.js");
+  const { existsSync } = await import("node:fs");
+  const page = (p) => existsSync(new URL(`..${p}index.html`, import.meta.url));
+  for (const [slug, p] of Object.entries(LIVE_COURSES)) assert.ok(page(p), `${slug}: ${p} has no page`);
+  for (const slug of PLANNED) assert.ok(!page(COURSES[slug]), `${slug} has a page now: take it out of PLANNED so it's linked`);
+});
+
+test("every page has one skip link, to an element that's there", async () => {
+  const { sitePages, appPages } = await import("../scripts/sync-headers.mjs");
+  const files = [...Object.keys(HUB_PAGES), ...(await sitePages()).map((p) => p.file), ...(await appPages())];
+  assert.ok(files.length > 180, `${files.length} pages`);
+  for (const f of files) {
+    const html = await read(f), links = [...html.matchAll(/<a class="skip-link" href="#([^"]+)"/g)];
+    assert.equal(links.length, 1, `${f}: one skip link`);
+    assert.match(html, new RegExp(`id="${links[0][1]}"`), `${f}: the skip link's target #${links[0][1]} exists`);
+  }
+});

@@ -172,6 +172,9 @@ a { color: inherit; }
 }
 .pill-white { background: var(--invert-bg); color: var(--invert-fg); box-shadow: 0 4px 14px -6px rgba(0, 0, 0, .5); }
 .pill-dark { background: rgba(var(--sink-rgb), .3); color: var(--mute); border: 1px solid var(--line); font-weight: 500; }
+/* "Skip to content", first on every page (scripts/sync-headers.mjs): out of sight until it has keyboard focus */
+.skip-link { position: absolute; left: 16px; top: -64px; z-index: 70; padding: 8px 14px; border-radius: 10px; background: var(--invert-bg); color: var(--invert-fg); font-weight: 600; text-decoration: none; }
+.skip-link:focus { top: 12px; }
 /* ---------- Top bar ---------- */
 .bar {
   position: sticky; top: 10px; z-index: 10;

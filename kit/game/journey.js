@@ -6,7 +6,7 @@ import { gameState, claim, dayKey, weekStart, DAY, unsynced, rewardKind, outside
 import { quests, nextSteps } from "./quests.js";
 import { achievements, nextAchievement } from "./achievements.js";
 import { dailyChallenge, challengeReward } from "./challenges.js";
-import { COURSES } from "../learning/learner-data.js";
+import { COURSES, LIVE_COURSES } from "../learning/learner-data.js";
 import { startedCourses } from "../learning/course-states.js";
 import { conceptGraph } from "../learning/concepts.js";
 import { weaknessTargets } from "../learning/targets.js";
@@ -111,7 +111,7 @@ export async function mountJourney(root, { embedded = false, store = null } = {}
           <section class="gj-card gj-challenge" id="challenge"></section>
           <section class="gj-card"><h2>Subjects</h2>${s.subjects.length ? s.subjects.map((x) => `<a class="gj-subject" href="${COURSES[x.slug]}"><div><b>${esc(x.name)}</b><span class="gj-sub">${esc(x.site)} · ${esc(x.rank.name)} · level ${x.level.n} · ${fmt(x.xp)} XP</span></div>
             <div class="gj-bar" role="img" aria-label="${x.done} of ${x.lessons} lessons"><i style="width:${x.lessons ? (100 * x.done) / x.lessons : 0}%"></i></div><span class="gj-sub">${x.done} / ${x.lessons} lessons · ${x.unitsDone} complete</span></a>`).join("") : `<p class="gj-sub">No courses started on this device yet.</p>`}
-            <p class="gj-sub gj-more">Explore: ${Object.entries(COURSES).filter(([k]) => !courses.some((c) => c.slug === k)).map(([k, p]) => `<a href="${p}">${esc(k[0].toUpperCase() + k.slice(1))}</a>`).join(" · ")}</p></section>
+            <p class="gj-sub gj-more">Explore: ${Object.entries(LIVE_COURSES).filter(([k]) => !courses.some((c) => c.slug === k)).map(([k, p]) => `<a href="${p}">${esc(k[0].toUpperCase() + k.slice(1))}</a>`).join(" · ")}</p></section>
         </div>
         <div>
           ${nextA ? `<section class="gj-card gj-nexta"><span class="gj-label">Next achievement</span><div class="gj-ach">${badge(nextA)}<div><b>${esc(nextA.name)}</b><span class="gj-sub">${esc(nextA.d)}</span><div class="gj-bar"><i style="width:${(100 * nextA.n) / nextA.of}%"></i></div><span class="gj-sub">${nextA.n} / ${nextA.of}</span></div></div></section>` : ""}
