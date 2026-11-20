@@ -12,7 +12,8 @@ export const cloudConfigured = () => Boolean(SUPABASE_URL && SUPABASE_ANON_KEY);
 
 // The Supabase client (213 KB) is only needed by someone who's signed in. The app pages load it with a <script> tag
 // (signing in happens there); every other page loads it here, on demand, when this browser holds a sign-in or has
-// just come back from one, so a signed-out visitor never downloads it and the page doesn't wait for it.
+// just come back from one, so a signed-out visitor never downloads it and the page doesn't wait for it. (The service
+// worker doesn't fetch it at install either: it joins the offline cache later, or the first time a page uses it.)
 const SUPABASE_JS = new URL("../vendor/supabase/supabase.js", import.meta.url).href;
 let supabaseLoading = null;
 export const hasStoredSession = () => { try { return Object.keys(localStorage).some((k) => /^sb-[\w-]+-auth-token$/.test(k)); } catch { return false; } };

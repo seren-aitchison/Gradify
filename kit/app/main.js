@@ -5,7 +5,7 @@ import { GROUPS } from "../core/sites.js";
 import { icon } from "../core/icons.js";
 import { tile, ink } from "../core/colour.js";
 import { SAMPLE, readFile } from "../notes/studio.js";
-import { renderJot, jotStripHtml, wireJotStrip, takePackDraft } from "../notes/jot.js";
+import { renderJot, jotStripHtml, wireJotStrip, takePackDraft, exportJots, clearJots } from "../notes/jot.js";
 import { LocalStore, CloudStore, cloudConfigured, scopeToSite, authProviders } from "../data/store.js";
 import { describePlan, mySubscription, myAllowance, openPortal, startCheckout, AI_ALLOWANCES, PLAN_PRICES } from "../data/billing.js";
 import { OFFER, captureOffer, offerToShow, storedOffer, dismissOffer, offerForAccount, offerTerms } from "../data/offer.js";
@@ -1491,7 +1491,7 @@ async function renderAccount() {
   { const nm = { intel: intelOf(learnerOf(profile)), storeMode: store.mode }; const slot = $("#notify-slot"); if (slot) { slot.outerHTML = notifyPanelHtml(nm); wireNotify(view, nm, apctx()); } }
   $("#export").addEventListener("click", async () => {
     const a = document.createElement("a");
-    a.href = URL.createObjectURL(new Blob([JSON.stringify(await store.exportAll(), null, 2)], { type: "application/json" }));
+    a.href = URL.createObjectURL(new Blob([JSON.stringify({ ...(await store.exportAll()), quick_notes: exportJots() }, null, 2)], { type: "application/json" }));
     a.download = `gradify-data-${today()}.json`;
     a.click();
     setTimeout(() => URL.revokeObjectURL(a.href), 1000);
@@ -1499,6 +1499,7 @@ async function renderAccount() {
   $("#wipe").addEventListener("click", async () => {
     if (!confirm("Delete all your notes, cards and progress? This can't be undone.")) return;
     await store.wipe();
+    clearJots();   // quick notes live beside the store, on this device (kit/notes/jot.js)
     profile = await store.getProfile();
     location.hash = "#/start";
   });

@@ -60,7 +60,8 @@ const SHELL = [
 ];
 
 // the heavy part of SHELL, cached after the core
-const LATER_RE = /^kit\/(vendor\/(pdfjs|three|mind-elixir)\/|courses\/|notes\/mindmap\/|tools\/|interactive\/|labs\/|maps\/|models\/)|^kit\/data\/search-index\.json$/;
+// (the Supabase client too: a signed-out visitor never needs it, and a signed-in one has it cached from their pages)
+const LATER_RE = /^kit\/(vendor\/(pdfjs|three|mind-elixir|supabase)\/|courses\/|notes\/mindmap\/|tools\/|interactive\/|labs\/|maps\/|models\/)|^kit\/data\/search-index\.json$/;
 const CORE = SHELL.filter((u) => !LATER_RE.test(u)), LATER = SHELL.filter((u) => LATER_RE.test(u));
 // fetched from the network, not the browser's HTTP cache, so a new version never stores a mix of old and new files
 const fresh = (u) => new Request(u, { cache: "reload" });
@@ -72,21 +73,24 @@ self.addEventListener("activate", (e) => {
 });
 // the rest of SHELL, in the background: after a pause (so it never competes with the page being opened), four files
 // at a time, skipping what's already cached; once per worker, resumed if the worker was stopped part-way
-let warming = null;
+let warming = null, warmed = false;
 const slowLink = () => { const c = self.navigator?.connection; return !!c && (c.saveData || /(^|-)2g$/.test(c.effectiveType || "")); };
 function warm() {
+  if (warmed) return Promise.resolve();
   if (warming || slowLink()) return warming || Promise.resolve();
   warming = (async () => {
     await new Promise((r) => setTimeout(r, 5000));
     const cache = await caches.open(CACHE);
+    let missing = 0;
     for (let i = 0; i < LATER.length; i += 4) {
       if (slowLink()) return;
       await Promise.all(LATER.slice(i, i + 4).map(async (u) => {
         if (await cache.match(u)) return;
-        try { const res = await fetch(fresh(u)); if (res.ok) await cache.put(u, res); } catch { /* offline: tried again next time */ }
+        try { const res = await fetch(fresh(u)); if (res.ok) await cache.put(u, res); else missing++; } catch { missing++; /* offline: tried again next time */ }
       }));
     }
-  })().catch(() => {});
+    warmed = !missing;
+  })().catch(() => {}).finally(() => { warming = null; });   // a pass cut short (Data Saver, a dropped file) can run again later
   return warming;
 }
 self.addEventListener("fetch", (e) => {
@@ -95,7 +99,7 @@ self.addEventListener("fetch", (e) => {
   const sameOrigin = new URL(req.url).origin === location.origin;
   const isFont = /fonts\.(googleapis|gstatic)\.com$/.test(new URL(req.url).hostname);
   if (!sameOrigin && !isFont) return;
-  if (!warming && req.mode === "navigate") e.waitUntil(warm());
+  if (!warmed && !warming && req.mode === "navigate") e.waitUntil(warm());
   e.respondWith(
     // same-origin files are revalidated with the server (a cheap 304 when unchanged): a module from the HTTP cache can be
     // older than the module importing it, and after a deploy that mix fails to load

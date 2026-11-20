@@ -2532,7 +2532,7 @@ export function mountCourse(root, cfg) {
       const hay = (l) => `${l.title} ${l.module || ""} ${l.unit.title}`.toLowerCase();
       return lessons.filter((l) => words.every((w) => hay(l).includes(w))).sort((a, b) => Number(!a.title.toLowerCase().includes(words[0])) - Number(!b.title.toLowerCase().includes(words[0])))
         .slice(0, 6).map((l) => ({ title: l.title, href: `#/lesson/${l.id}`, sub: `${U} ${l.unit.n}: ${l.unit.title}${l.module ? ` · ${l.module}` : ""}` })); },
-    unavailable: (what) => signinLine(what, ""),
+    unavailable: (what) => signinLine(what, ""), lab: () => (curLesson ? labFor(labLast) : null),
   });
   reviewPool().then(paintHud);
   return { state: () => S, lessons, units };

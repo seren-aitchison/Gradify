@@ -21,7 +21,9 @@ const EXAMPLE = "Give me one clear, real-world example of the main idea in this 
  *   director: () => object, link: (id: string) => string, titleOf: (id: string) => string,
  *   resume: () => ({ title: string, href: string } | null), due: () => number, reviewHref: string,
  *   find: (q: string) => { title: string, href: string, sub: string }[],
- *   unavailable: (what: string) => string, pricing?: string }} o
+ *   unavailable: (what: string) => string, pricing?: string, lab?: () => ({ title: string, state: string } | null) }} o
+ * lab: the lab the learner last used on this page, sent with explain and Socratic questions as the lesson tutor does,
+ * so a challenge met after the AI helped is recorded as assisted
  */
 export function mountAssistant(o) {
   if (document.querySelector(".gai")) return null;
@@ -96,7 +98,7 @@ export function mountAssistant(o) {
     bubble("me", `<p>${esc(shown)}</p>`);
     const w = thinking();
     try {
-      const r = await o.ask({ mode: "explain", lesson: { id: here.id, title: here.title }, question });
+      const r = await o.ask({ mode: "explain", lesson: { id: here.id, title: here.title }, question, lab: o.lab?.() || undefined });
       w.classList.remove("gai-wait");
       w.innerHTML = `${paras(r.answer)}${r.fromLesson === false ? `<p class="gai-aside">This goes beyond the lesson's notes, so check it against your course materials.</p>` : ""}`;
       scroll();
@@ -111,7 +113,7 @@ export function mountAssistant(o) {
     busy = true; send.disabled = true;
     const w = thinking();
     try {
-      const r = await o.ask({ mode: k === "viva" ? "examiner" : "socratic", lesson: { id: here.id, title: here.title }, goal: k === "think" ? "the main idea of this lesson" : undefined, turns, conversationId: conv });
+      const r = await o.ask({ mode: k === "viva" ? "examiner" : "socratic", lesson: { id: here.id, title: here.title }, goal: k === "think" ? "the main idea of this lesson" : undefined, turns, conversationId: conv, lab: k === "think" ? o.lab?.() || undefined : undefined });
       turns.push({ role: "tutor", text: r.reply });
       w.classList.remove("gai-wait"); w.innerHTML = paras(r.reply); scroll();
       if (k === "viva" && /End of viva\.?\s*$/i.test(r.reply)) setKind("ask");
@@ -170,6 +172,7 @@ export function mountAssistant(o) {
   box.addEventListener("keydown", (e) => { if (e.key === "Escape") { e.stopPropagation(); open(false); } });
   box.addEventListener("click", (e) => { const a = e.target.closest("a[href]"); if (a && matchMedia("(max-width: 760px)").matches) open(false); });
   // a lesson renders a moment after its link is followed
-  addEventListener("hashchange", () => setTimeout(() => { if (!box.hidden) refresh(); else here = null; }, 350));
+  // (closed, it keeps the lesson it last showed, so reopening on another page sees the change and starts afresh)
+  addEventListener("hashchange", () => setTimeout(() => { if (!box.hidden) refresh(); }, 350));
   return { open: () => open(true), close: () => open(false) };
 }

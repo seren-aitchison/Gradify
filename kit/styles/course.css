@@ -1815,7 +1815,7 @@ html[data-motion="reduce"] .co-main.cx-enter { animation: none; }
   .cx-fmeta .cx-fbtn { margin-left: auto; width: 30px; height: 30px; }
   .cx-shelves { gap: 24px; }
 }
-@media (prefers-reduced-transparency: reduce) { .cx-plank, .cx-fpanel { -webkit-backdrop-filter: none; backdrop-filter: none; background: rgb(var(--surface-rgb)); } }
+@media (prefers-reduced-transparency: reduce) { :root .cx-plank, :root .cx-fpanel, :root[data-theme] .cx-plank, :root[data-theme] .cx-fpanel { -webkit-backdrop-filter: none; backdrop-filter: none; background: rgb(var(--surface-rgb)); } }
 :root[data-a-contrast="high"] :is(.cx-plank, .cx-fpanel) { background: var(--bg); border-color: var(--fg); box-shadow: none; }
 @media (prefers-reduced-motion: reduce) {
   .co-reading .co-read .co-notes::before { animation: none; }
@@ -2065,7 +2065,7 @@ body.has-gai .gx-totop { bottom: calc(84px + env(safe-area-inset-bottom)); }
 .cx-focus .gai-fab, .cx-focus .gai { display: none; }
 @media print { .gai, .gai-fab { display: none !important; } }
 @media (prefers-reduced-motion: reduce) { .gai-orb, .gai, .gai-dots i { animation: none; } .gai-fab, .gai-sugs button { transition: none; } }
-@media (prefers-reduced-transparency: reduce) { .gai, .gai-fab { -webkit-backdrop-filter: none; backdrop-filter: none; background: rgb(var(--surface-rgb)); } }
+@media (prefers-reduced-transparency: reduce) { :root .gai, :root .gai-fab, :root[data-theme] .gai, :root[data-theme] .gai-fab { -webkit-backdrop-filter: none; backdrop-filter: none; background: rgb(var(--surface-rgb)); } }
 :root[data-a-contrast="high"] :is(.gai, .gai-fab, .gai-sugs button, .gai-form) { background: var(--bg); border-color: var(--fg); box-shadow: none; }
 
 /* ----- Continue reading: recent lessons as books on a shelf (course home), Kindle-style: big covers in a row you

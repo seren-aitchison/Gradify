@@ -33,10 +33,15 @@ const todos = (t) => { const all = t.match(/^\s*\[[ x]\]/gim) || []; return { n:
 const when = (t) => { const m = Math.round((Date.now() - t) / 6e4); if (m < 1) return "just now"; if (m < 60) return `${m} min ago`; if (m < 1440) return `${Math.round(m / 60)} h ago`; const d = new Date(t); return d.toLocaleDateString(undefined, { day: "numeric", month: "short" }); };
 const sorted = (list) => [...list].sort((a, b) => Number(!!b.pinned) - Number(!!a.pinned) || b.updated - a.updated);
 
-function add(text, tag) { const now = Date.now(), n = { id: uid(), text, tag, pinned: false, created: now, updated: now }; saveJots([n, ...loadJots()]); return n; }
-function update(id, patch) { const list = loadJots(), i = list.findIndex((n) => n.id === id); if (i < 0) return null; list[i] = { ...list[i], ...patch, updated: Date.now() }; saveJots(list); return list[i]; }
-function remove(id) { const list = loadJots(), n = list.find((x) => x.id === id); saveJots(list.filter((x) => x.id !== id)); return n; }
-function restore(n) { saveJots([n, ...loadJots().filter((x) => x.id !== n.id)]); }
+// each change returns the saved note, or null when this device refused to store it (full or blocked storage)
+function add(text, tag) { const now = Date.now(), n = { id: uid(), text, tag, pinned: false, created: now, updated: now }; return saveJots([n, ...loadJots()]) ? n : null; }
+function update(id, patch) { const list = loadJots(), i = list.findIndex((n) => n.id === id); if (i < 0) return null; list[i] = { ...list[i], ...patch, updated: Date.now() }; return saveJots(list) ? list[i] : null; }
+function remove(id) { const list = loadJots(), n = list.find((x) => x.id === id); return n && saveJots(list.filter((x) => x.id !== id)) ? n : null; }
+function restore(n) { return saveJots([n, ...loadJots().filter((x) => x.id !== n.id)]); }
+const NOT_SAVED = "Couldn't save on this device: its storage is full or blocked. Your text is still here.";
+// for the app's "Download my data" and "Delete all my data"
+export const exportJots = () => loadJots();
+export function clearJots() { try { localStorage.removeItem(KEY); sessionStorage.removeItem(PACK_KEY); } catch { /* storage blocked */ } }
 
 // a note handed to "Add notes" (#/new) to become a study pack; renderNew takes it once
 export function takePackDraft() { try { const v = JSON.parse(sessionStorage.getItem(PACK_KEY) || "null"); sessionStorage.removeItem(PACK_KEY); return v; } catch { return null; } }
@@ -45,7 +50,7 @@ const toPack = (n) => { try { sessionStorage.setItem(PACK_KEY, JSON.stringify({ 
 // dictation, where the browser offers it: words are added at the end of the box as they're heard
 const Speech = globalThis.SpeechRecognition || globalThis.webkitSpeechRecognition;
 function wireMic(btn, box, onText, status) {
-  if (!Speech || !btn) { btn?.remove(); return; }
+  if (!Speech || !btn) { btn?.remove(); return () => {}; }
   let rec = null;
   const stop = () => { rec?.stop(); rec = null; btn.setAttribute("aria-pressed", "false"); btn.classList.remove("on"); if (status) status.textContent = ""; };
   btn.addEventListener("click", () => {
@@ -57,6 +62,7 @@ function wireMic(btn, box, onText, status) {
     try { rec.start(); btn.setAttribute("aria-pressed", "true"); btn.classList.add("on"); if (status) status.textContent = "Listening… tap the microphone again to stop."; } catch { stop(); }
   });
   addEventListener("hashchange", stop, { once: true });
+  return () => { if (rec) { rec.onresult = null; stop(); } };
 }
 const grow = (t, max = 9999) => { t.style.height = "auto"; t.style.height = `${Math.min(t.scrollHeight + 2, max)}px`; };
 const tagChips = (name, cur) => `<div class="jt-tags" role="radiogroup" aria-label="File it as">${TAGS.map(([k, l]) => `<label class="jt-tag t-${k}"><input type="radio" name="${name}" value="${k}"${k === cur ? " checked" : ""}><span>${l}</span></label>`).join("")}</div>`;
@@ -75,12 +81,13 @@ function wireComposer(root, onSaved) {
   const box = f.querySelector("textarea"), status = f.querySelector(".jt-status");
   box.addEventListener("input", () => grow(box, 320));
   box.addEventListener("keydown", (e) => { if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) { e.preventDefault(); f.requestSubmit(); } });
-  wireMic(f.querySelector("[data-mic]"), box, null, status);
+  const stopMic = wireMic(f.querySelector("[data-mic]"), box, null, status);
   f.addEventListener("submit", (e) => {
     e.preventDefault();
     const text = box.value.trim(); if (!text) { status.textContent = "Write something first."; box.focus(); return; }
     const n = add(text, f.querySelector("input[type=radio]:checked")?.value || "note");
-    box.value = ""; grow(box, 320); status.textContent = "Saved.";
+    if (!n) { status.textContent = NOT_SAVED; return; }
+    stopMic(); box.value = ""; grow(box, 320); status.textContent = "Saved.";
     onSaved(n);
   });
 }
@@ -142,8 +149,12 @@ function renderOne(view, id, { toast }) {
   const box = view.querySelector("#jt-text"), read = view.querySelector(".jt-read"), saved = view.querySelector(".jt-saved"), whenEl = view.querySelector(".jt-when");
   box.value = n.text;
   let t = 0;
-  const flush = () => { clearTimeout(t); if (box.value !== n.text) { n = update(n.id, { text: box.value }) || n; } saved.textContent = "Saved"; whenEl.textContent = `Edited ${when(n.updated)} · created ${new Date(n.created).toLocaleDateString(undefined, { day: "numeric", month: "long", year: "numeric" })}`; };
-  box.addEventListener("input", () => { saved.textContent = "Saving…"; grow(box); clearTimeout(t); t = setTimeout(flush, 400); });
+  let dirty = false;
+  const flush = () => {
+    clearTimeout(t);
+    if (dirty && box.value !== n.text) { const u = update(n.id, { text: box.value }); if (!u) { saved.textContent = "Not saved"; toast(NOT_SAVED); return; } n = u; }
+    dirty = false; saved.textContent = "Saved"; whenEl.textContent = `Edited ${when(n.updated)} · created ${new Date(n.created).toLocaleDateString(undefined, { day: "numeric", month: "long", year: "numeric" })}`; };
+  box.addEventListener("input", () => { dirty = true; saved.textContent = "Saving…"; grow(box); clearTimeout(t); t = setTimeout(flush, 400); });
   box.addEventListener("blur", flush);
   addEventListener("pagehide", flush, { once: true });
   addEventListener("hashchange", flush, { once: true });
@@ -161,7 +172,8 @@ function renderOne(view, id, { toast }) {
     const c = e.target.closest("[data-line]"); if (!c) return;
     const lines = n.text.split("\n"), i = +c.dataset.line;
     lines[i] = lines[i].replace(/^(\s*)\[[ x]\]/i, `$1[${c.checked ? "x" : " "}]`);
-    n = update(n.id, { text: lines.join("\n") }) || n; box.value = n.text; flush();
+    const u = update(n.id, { text: lines.join("\n") }); if (!u) { c.checked = !c.checked; toast(NOT_SAVED); return; }
+    n = u; box.value = n.text; dirty = false; flush();
   });
   const setMode = (m) => {
     flush(); mode = m;
@@ -171,8 +183,10 @@ function renderOne(view, id, { toast }) {
     if (m === "read") drawRead(); else { grow(box); }
   };
   view.querySelector(".jt-seg").addEventListener("click", (e) => { const b = e.target.closest("[data-mode]"); if (b) setMode(b.dataset.mode); });
-  view.querySelector("[data-pin]").addEventListener("click", (e) => { n = update(n.id, { pinned: !n.pinned }) || n; e.currentTarget.setAttribute("aria-pressed", String(!!n.pinned)); toast(n.pinned ? "Pinned to the top." : "Unpinned."); });
-  view.querySelector(".jt-one > .jt-tags").addEventListener("change", (e) => { n = update(n.id, { tag: e.target.value }) || n; flush(); });
+  // pin and tag change only that field; typing is saved first, and an untouched box shows what's stored (another tab may have saved newer text)
+  const setField = (patch) => { flush(); if (dirty) return null; const u = update(n.id, patch); if (!u) { toast(NOT_SAVED); return null; } n = u; if (box.value !== n.text) { box.value = n.text; if (mode === "read") drawRead(); } flush(); return n; };
+  view.querySelector("[data-pin]").addEventListener("click", (e) => { if (!setField({ pinned: !n.pinned })) return; e.currentTarget.setAttribute("aria-pressed", String(!!n.pinned)); toast(n.pinned ? "Pinned to the top." : "Unpinned."); });
+  view.querySelector(".jt-one > .jt-tags").addEventListener("change", (e) => { if (!setField({ tag: e.target.value })) { const was = view.querySelector(`.jt-one > .jt-tags input[value="${n.tag}"]`); if (was) was.checked = true; } });
   // a prefix at the start of the line the cursor is on
   view.querySelectorAll("[data-ins]").forEach((b) => b.addEventListener("click", () => {
     const p = b.dataset.ins, s = box.selectionStart ?? box.value.length, start = box.value.lastIndexOf("\n", s - 1) + 1;
@@ -187,9 +201,9 @@ function renderOne(view, id, { toast }) {
     catch (err) { if (err?.name !== "AbortError") toast("Couldn't share this note. Select the text and copy it instead."); }
   });
   view.querySelector("[data-del]").addEventListener("click", () => {
-    clearTimeout(t); const gone = remove(n.id); location.hash = "#/jot";
+    clearTimeout(t); dirty = false; const gone = remove(n.id); if (!gone) { toast(NOT_SAVED); return; } location.hash = "#/jot";
     const tt = toast(`Note deleted. <button type="button" class="jt-undo">Undo</button>`, { timeout: 7000 });
-    setTimeout(() => document.querySelector(".jt-undo")?.addEventListener("click", () => { restore(gone); tt?.close?.(); location.hash = `#/jot/${gone.id}`; }), 0);
+    setTimeout(() => document.querySelector(".jt-undo")?.addEventListener("click", () => { tt?.close?.(); if (!restore(gone)) { toast(NOT_SAVED); return; } location.hash = `#/jot/${gone.id}`; }), 0);
   });
   setMode(mode); flush();
   if (mode === "write" && !n.text) box.focus();
