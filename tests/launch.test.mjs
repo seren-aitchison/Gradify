@@ -28,8 +28,8 @@ test("the 404 page works at any address: every local path is absolute", async ()
   const html = await read("404.html");
   const refs = [...html.matchAll(/\s(?:href|src)="([^"]+)"/g)].map((m) => m[1]).filter((h) => !/^https?:/.test(h));
   assert.ok(refs.length > 3);
-  // absolute, or a fragment of the page itself (the skip link), which works at any address too
-  for (const r of refs) assert.ok(r.startsWith("/") || r.startsWith("#"), `relative path in 404.html: ${r}`);
+  // absolute, a fragment of the page itself (the skip link) or an email address: each works at any address
+  for (const r of refs) assert.ok(r.startsWith("/") || r.startsWith("#") || r.startsWith("mailto:"), `relative path in 404.html: ${r}`);
   assert.match(html, /from "\/kit\/core\/site\.js"/);
 });
 

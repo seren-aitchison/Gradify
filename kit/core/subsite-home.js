@@ -22,8 +22,7 @@ export function renderHome(el, siteName) {
   const site = SITES.find((s) => s.n === siteName), c = SITES_CONTENT[siteName];
   if (!site || !c) return;
   trackView(site.n);
-  const foot = document.querySelector(".sub-foot");
-  if (foot && !foot.querySelector(".sub-privacy")) foot.insertAdjacentHTML("beforeend", ` <a class="sub-privacy" href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a>`);
+  // the footer (Privacy, Terms and the rest) is written into every page: scripts/sync-headers.mjs
   const k = KINDS[c.kind], model = modelOf(siteName);
   const who = (site.who || "learners").replace(/^./, (x) => x.toLowerCase());
   const fill = (t) => esc(t).replaceAll("{site}", site.n).replaceAll("{who}", esc(who)).replaceAll("{exams}", esc(c.exams || "your exams")).replaceAll("{topic}", esc(c.topics[0][0]));

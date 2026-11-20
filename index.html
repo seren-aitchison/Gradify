@@ -700,26 +700,19 @@
       </div>
     </section>
 
-    <footer class="glass">
-      <div class="foot-cols">
-        <div class="foot-brand">
-          <b>Gradify™</b>
-          <p>Turn your notes into flashcards checked against what you wrote, and revise them at the right time.</p>
-        </div>
-        <nav aria-label="Gradify">
-          <b>Gradify</b>
-          <a href="app.html">Try it free</a><a href="#how">How it works</a><a href="pricing.html">Pricing</a><a href="#faq">Questions</a><a href="quality.html">Quality</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a>
-        </nav>
+    <!-- hub-footer: written by scripts/sync-headers.mjs; edit it there -->
+    <footer class="hub-foot glass">
+      <div class="hub-foot-cols">
+        <div class="hub-foot-brand"><b>Gradify™</b><p>Turn your notes into flashcards checked against what you wrote, and revise them at the right time.</p></div>
+        <nav aria-label="Gradify"><b>Gradify</b><a href="/explore.html">Explore</a><a href="/#find">Sites</a><a href="/journey.html">Journey</a><a href="/pricing.html">Pricing</a><a href="/app.html">Open Gradify</a></nav>
+        <nav aria-label="About Gradify"><b>About</b><a href="/quality.html">Quality</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="mailto:hello@getgradify.com">Contact</a></nav>
       </div>
-      <div class="foot-base">
-        <p><b>Also from the Gradify team:</b> Seren Aitchison (portfolio blog), BioFrontier, Eirova™, Erya™ and Vizeon™.</p>
-        <p>© <span id="year">2026</span> Gradify™</p>
-      </div>
+      <div class="hub-foot-base"><p><b>Also from the Gradify team:</b> Seren Aitchison (portfolio blog), BioFrontier, Eirova™, Erya™ and Vizeon™.</p><p>© <span class="hub-year">2026</span> Gradify™</p></div>
     </footer>
+    <!-- /hub-footer -->
   </div>
   <button type="button" class="ai-fab lg" id="ai-fab" hidden aria-label="Gradify AI preview (scripted demo)"><span class="ai-av" aria-hidden="true"></span><span class="fab-txt">Gradify AI preview</span></button>
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
     if ("serviceWorker" in navigator) addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
   </script>
 </body>

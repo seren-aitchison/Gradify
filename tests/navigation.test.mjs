@@ -50,3 +50,18 @@ test("every page has one skip link, to an element that's there", async () => {
     assert.match(html, new RegExp(`id="${links[0][1]}"`), `${f}: the skip link's target #${links[0][1]} exists`);
   }
 });
+
+test("every hub page and every page of every site has its one footer", async () => {
+  const { sitePages, withHubFooter, withSubFooter } = await import("../scripts/sync-headers.mjs");
+  for (const page of Object.keys(HUB_PAGES)) {
+    const html = await read(page);
+    assert.equal(withHubFooter(html), html, `${page}: footer out of date`);
+    assert.equal(html.split('class="hub-foot glass"').length - 1, 1, `${page}: one footer`);
+  }
+  for (const { file, items } of await sitePages()) {
+    const html = await read(file);
+    assert.equal(withSubFooter(html, items), html, `${file}: footer out of date`);
+    assert.equal(html.split('class="sub-foot"').length - 1, 1, `${file}: one footer`);
+    assert.match(html, /href="\/privacy\.html">Privacy<\/a>/, `${file}: links to the privacy notice`);
+  }
+});

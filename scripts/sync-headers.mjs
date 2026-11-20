@@ -54,6 +54,30 @@ export function hubHeader(current = "", skip = "main") {
     ${END}`;
 }
 
+// the hub footer: the same on every hub page (links, the legal pages, contact), after the page's main content
+const FOOT_START = "<!-- hub-footer: written by scripts/sync-headers.mjs; edit it there -->", FOOT_END = "<!-- /hub-footer -->";
+export function hubFooter() {
+  return `${FOOT_START}
+    <footer class="hub-foot glass">
+      <div class="hub-foot-cols">
+        <div class="hub-foot-brand"><b>Gradify™</b><p>Turn your notes into flashcards checked against what you wrote, and revise them at the right time.</p></div>
+        <nav aria-label="Gradify"><b>Gradify</b>${HUB_LINKS.map(([, href, label]) => `<a href="${href}">${label}</a>`).join("")}<a href="/app.html">Open Gradify</a></nav>
+        <nav aria-label="About Gradify"><b>About</b><a href="/quality.html">Quality</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="mailto:hello@getgradify.com">Contact</a></nav>
+      </div>
+      <div class="hub-foot-base"><p><b>Also from the Gradify team:</b> Seren Aitchison (portfolio blog), BioFrontier, Eirova™, Erya™ and Vizeon™.</p><p>© <span class="hub-year">2026</span> Gradify™</p></div>
+    </footer>
+    ${FOOT_END}`;
+}
+export function withHubFooter(html) {
+  const foot = hubFooter();
+  if (html.includes(FOOT_START)) return html.replace(new RegExp(`${FOOT_START}[\\s\\S]*?${FOOT_END}`), foot);
+  const old = html.match(/<footer class="glass">[\s\S]*?<\/footer>/);
+  if (old) return html.replace(old[0], foot);
+  // after the main content: in the page's width (pages whose main isn't inside .wrap get one round the footer)
+  const wrapped = html.includes("wrap hub-top") ? `<div class="wrap hub-bottom">\n    ${foot}\n  </div>` : foot;
+  return html.replace(/(<\/main>)/, `$1\n    ${wrapped}`);
+}
+
 /** the page with its hub header written in (replacing an earlier one, an older hand-written bar, or added first) */
 export function withHubHeader(html, current) {
   let skip; [html, skip] = skipTarget(html);
@@ -111,6 +135,22 @@ export function subHeader({ name, courses, extras }, { up = "", current = "", co
     ${SUB_END}`;
 }
 
+// the site footer: which family the site belongs to, and the same links on every page of every site
+const SFOOT_START = "<!-- sub-footer: written by scripts/sync-headers.mjs; edit it there -->", SFOOT_END = "<!-- /sub-footer -->";
+export function subFooter({ name }) {
+  return `${SFOOT_START}
+    <footer class="sub-foot"><p><span data-site-name>${esc(name)}</span> is part of <a href="/">Gradify</a>. Sign in to keep your progress on every device.</p><nav aria-label="${esc(name)} footer"><a href="/">All Gradify sites</a><a href="/pricing.html">Pricing</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="mailto:hello@getgradify.com">Contact</a></nav></footer>
+    ${SFOOT_END}`;
+}
+export function withSubFooter(html, items) {
+  const foot = subFooter(items);
+  if (html.includes(SFOOT_START)) return html.replace(new RegExp(`${SFOOT_START}[\\s\\S]*?${SFOOT_END}`), foot);
+  const old = html.match(/<footer class="sub-foot">[\s\S]*?<\/footer>/);
+  if (old) return html.replace(old[0], foot);
+  // the LifeOS tour has none: after its main content, in the page's width
+  return html.replace(/(\n\s*<\/main>)(?![\s\S]*<\/main>)/, `$1\n  <div class="wrap">\n    ${foot}\n  </div>`);
+}
+
 /** the page with its site header written in (replacing an earlier one or a hand-written one, or added at the top) */
 export function withSubHeader(html, items, opts) {
   let skip; [html, skip] = skipTarget(html);
@@ -155,11 +195,11 @@ export async function appPages(root = ROOT) {
 if (import.meta.url === `file://${process.argv[1]}`) {
   const check = process.argv.includes("--check"), stale = [];
   for (const [page, current] of Object.entries(HUB_PAGES)) {
-    const url = new URL(page, ROOT), html = await readFile(url, "utf8"), next = withHubHeader(html, current);
+    const url = new URL(page, ROOT), html = await readFile(url, "utf8"), next = withHubFooter(withHubHeader(html, current));
     if (next !== html) { stale.push(page); if (!check) await writeFile(url, next); }
   }
   for (const { file, items, opts } of await sitePages()) {
-    const url = new URL(file, ROOT), html = await readFile(url, "utf8"), next = withSubHeader(html, items, opts);
+    const url = new URL(file, ROOT), html = await readFile(url, "utf8"), next = withSubFooter(withSubHeader(html, items, opts), items);
     if (next !== html) { stale.push(file); if (!check) await writeFile(url, next); }
   }
   for (const file of await appPages()) {

@@ -29,3 +29,6 @@ if (bar && btn && menu && !bar.dataset.wired) {
   const signedIn = (() => { try { return Object.keys(localStorage).some((k) => /^sb-.*-auth-token$/.test(k) && localStorage.getItem(k)); } catch { return false; } })();
   if (signedIn) document.querySelectorAll(".hub-signin").forEach((a) => { a.textContent = "Account"; });
 }
+
+// the footer's year, on every hub page
+document.querySelectorAll(".hub-year").forEach((y) => { y.textContent = String(new Date().getFullYear()); });
