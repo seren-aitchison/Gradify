@@ -1,11 +1,736 @@
 {
  "task": "physics-u10-u12",
- "on": "2026-11-19",
- "status": "in progress: u10 complete; u12 lessons 1-24 enhanced (check clean for those)",
+ "on": "2026-11-20",
  "files": [
   "kit/courses/physics/notes/u10.js",
   "kit/courses/physics/notes/u12.js"
  ],
- "lessons": [],
- "notes": []
+ "lessons": [
+  {
+   "course": "physics",
+   "lesson": "u10-01",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u10-02",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u10-03",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 7: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u10-04",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u10-05",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u10-06",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "Anomalous dispersion bullet clarified: v_g can exceed c or be negative and then no longer gives the signal speed."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u10-07",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u10-08",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 7: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u10-09",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 7: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u10-10",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 7: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u10-11",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u10-12",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u10-13",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 7: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u10-14",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "Fibre text clarified: zero dispersion near 1310 nm, lowest loss near 1550 nm."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u10-15",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u10-16",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": [
+    {
+     "class": "error-fixed",
+     "note": "Worked example: a 10 fs pulse at 800 nm with Δf ≈ 1/Δt gives Δλ/λ ≈ 0.27, i.e. about 200 nm, not 'about 100 nm' as stated; corrected, noting that a Gaussian pulse (ΔfΔt ≈ 0.44) gives about 90 nm."
+    },
+    {
+     "class": "editorial",
+     "note": "Electron packet doubling time made more precise: 2√3 mΔx₀²/ħ ≈ 3 × 10^-16 s for Δx₀ = 1 Å (was 'about 10^-16 s')."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u10-17",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 7: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": [
+    {
+     "class": "error-fixed",
+     "note": "Piano/tuning-fork worked example concluded 438 Hz; wrong. Loading the fork lowers it (to ~439 Hz); beats rising from 2 to 3 per second means the string is above the fork: 442 Hz."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u10-18",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 7: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u10-19",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 7: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u10-20",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "Coupled-mode theory not covered by OpenStax; sources cited support forced oscillation and interference background only."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u10-21",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "Burgers, KdV and NLS equations and modulational instability are beyond OpenStax; cited sections cover only the linear wave equation and shock waves. A nonlinear-waves text should be added after review."
+    },
+    {
+     "class": "editorial",
+     "note": "Existing M1 stem 'Second-harmonic generation requires:' duplicated a u36 question; reworded in its own slot."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u10-22",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "Soliton history and KdV soliton formula not covered by OpenStax; cited sections support only the wave-equation and dispersion background."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u10-23",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u10-24",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u10-25",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "OpenStax sections cited cover harmonics and superposition; a Fourier-analysis source would strengthen it."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u12-01",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u12-02",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u12-03",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u12-04",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u12-05",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u12-06",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": [
+    {
+     "class": "error-fixed",
+     "note": "M1 (steel rod) had two equal distractors, '12 mm' and '1.2 cm'; replaced '1.2 cm' with '0.012 mm' (right answer 1.2 mm unchanged)."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u12-07",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u12-08",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u12-09",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u12-10",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 7: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u12-11",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u12-12",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u12-13",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u12-14",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u12-15",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u12-16",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u12-17",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u12-18",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u12-19",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u12-20",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "Potentials, Legendre transforms and F = −kT ln Z are beyond OpenStax University Physics; cited sections give first-law and entropy background only."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u12-21",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "Joule–Thomson inversion temperatures and steady-flow energy equation not in the cited OpenStax sections."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u12-22",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "Helmholtz free energy and entropic elasticity not covered by cited OpenStax sections."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u12-23",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "Gibbs free energy, ΔG° = −RT ln K and ΔG = −nFE not covered by the cited physics sections (OpenStax Chemistry 2e would be suitable but is outside the brief's allowed list)."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u12-24",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "Chemical potential, phase rule and osmotic pressure only partly covered by cited Phase Changes sections."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u12-25",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "Maxwell relations not covered by OpenStax University Physics; cited sections are background only."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u12-26",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "Third-law statements and residual entropy only partly covered by cited sections."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u12-27",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u12-28",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 7: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u12-29",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "Critical exponents and universality beyond the cited Phase Changes sections."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u12-30",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "Worked example implied a linear 0.28 K/kPa extrapolation explains 120 °C in a pressure cooker (linear gives ~128 °C); reworded to say integrating the curve gives ~120 °C."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u12-31",
+   "action": "enhanced",
+   "changes": [
+    "added O (3), PRE, LV, K, T (2-3), SUM, EV and 2-3 confirmed OpenStax/AQA 7408 SRC lines",
+    "questions now 6: existing kept in their slots with @n links and 40+ character explanations; new M3, NUM/TF and an SA appended after them",
+    "tightened text; recomputed every worked example and answer"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "Onsager relations, fluctuation theorems and dissipative structures not covered by the cited OpenStax sections."
+    }
+   ]
+  }
+ ],
+ "notes": [
+  "All 56 lessons enhanced to standard 2; new-course check: u10 0 problems, u12 0 problems, length bias OK in both (u12's earlier bias fixed by lengthening distractors).",
+  "OpenStax section titles/URLs confirmed from openstax.org tables of contents (University Physics Vol 1-3, College Physics 2e); AQA 7408 section numbers confirmed from AQA-7407-7408-SP-2015.PDF (sha256 32a556da85fa0928c3600f8178d1a18fe5156b2ea36d76b541df866451721e20).",
+  "Existing physics check questions and flashcards keep their positions and right answers (verified against the pre-edit files); new questions only appended.",
+  "Advanced lessons (nonlinear waves, solitons, coupled waves, potentials, Maxwell relations, Gibbs/Helmholtz, critical phenomena, non-equilibrium) cite OpenStax background sections only: logged as needs-source.",
+  "Tests run: node --test tests/course.test.mjs tests/compat.test.mjs tests/qa-content.test.mjs: 16 pass, 0 fail."
+ ]
 }

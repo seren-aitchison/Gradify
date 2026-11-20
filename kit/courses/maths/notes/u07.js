@@ -998,6 +998,7 @@ SA2#maths-u07-27-q5@1: Find ∫ (2√x − 3/x^{2} + e^{2x}) dx, showing how you
 S: A Riemann sum approximates the area under a curve by adding up the areas of thin rectangles. As the rectangles get thinner, the sum approaches the definite integral, which is how integration is defined.
 O: Calculate left, right and midpoint Riemann sums
 O: Explain how the definite integral is defined as a limit of sums
+LV: A level · Application
 T: Riemann sum | Σ f(x_{i}*) Δx, the sum of rectangle areas approximating ∫_{a}^{b} f(x) dx
 T: Partition | A division of [a, b] into subintervals of width Δx
 H: Building the sum
@@ -1023,17 +1024,20 @@ Q: Does a left Riemann sum over- or underestimate for an increasing function? | 
 Q: Where does the notation ∫ ... dx come from? | A sum (S) of f(x) times small widths Δx.
 SUM: Riemann sums approximate areas with rectangles.
 SUM: The definite integral is their limit.
+EV: established | The definite integral is defined as the limit of Riemann sums as the strip width tends to zero.
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | secondary | 2008 | https://www.publishorperish.com/
 NUM1#maths-u07-28-q1@1: Estimate ∫_{0}^{3} x dx with three strips and left endpoints. | 3 | 0 |  | Δx = 1; heights 0, 1 and 2 sum to 3; 3 × 1 = 3 (exact value 4.5).
 M1#maths-u07-28-q2@1: With n strips on [a, b], what is the width of each? | (b − a)/n | n/(b − a) | b − a | (a + b)/n | 1/n | The interval's length divided equally into n parts.
 M2#maths-u07-28-q3@2: For a decreasing function, how does a right Riemann sum compare with the integral? | It underestimates | It overestimates | It's exact | It's always zero | It depends on n only | Right endpoints of a decreasing function are the lowest points in each strip.
 M2#maths-u07-28-q4@2: For an increasing function, how does the left Riemann sum compare with the exact integral? | It underestimates, since each rectangle uses the lowest value on its strip | It overestimates, since each strip uses its highest value | It is always exact for increasing functions | It depends only on n, not on the function | It always gives zero for increasing functions | On an increasing function the left endpoint is the minimum of each strip.
+SA3@1,2: Estimate ∫_{0}^{2} x^{2} dx with four strips using midpoints. Compare it with the left sum, the right sum and the exact value, and explain the pattern. | Δx = 0.5; midpoints 0.25, 0.75, 1.25 and 1.75 give heights 0.0625, 0.5625, 1.5625 and 3.0625, summing to 5.25, so the estimate is 2.625. The left sum is (0 + 0.25 + 1 + 2.25) × 0.5 = 1.75 and the right sum is 3.75. The exact value is 8/3 ≈ 2.667. x^{2} is increasing, so left underestimates and right overestimates; the midpoint is far closer because its errors on each side of the midpoint largely cancel. As n → ∞ all three tend to 8/3. | Uses Δx = 0.5 and the correct midpoints ; Gets the midpoint estimate 2.625 ; Gets left 1.75 and right 3.75 ; States the exact value 8/3 ; Explains under- and overestimates and the limit
 
 ## Definite Integrals
 S: A definite integral ∫_{a}^{b} f(x) dx gives a number: the net signed area between the curve and the x-axis from a to b. It's evaluated by finding an antiderivative and subtracting its values at the limits.
 O: Evaluate definite integrals
 O: Find areas under curves and between curves
+LV: A level · Fluency
 T: Limits of integration | The values a and b in ∫_{a}^{b}
 T: Signed area | Area above the x-axis counts positive; below counts negative
 H: Evaluating
@@ -1061,17 +1065,20 @@ Q: What is ∫_{0}^{1} 3x^{2} dx? | 1.
 Q: Why is ∫_{−1}^{1} x^{3} dx = 0? | The equal areas above and below the axis cancel (x^{3} is odd).
 SUM: Definite integrals give net signed areas.
 SUM: Split at roots for total area.
+EV: established | A definite integral equals F(b) − F(a) for any antiderivative F and gives net signed area.
 SRC: Department for Education, Mathematics AS and A level subject content: integration | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 NUM1#maths-u07-29-q1@1: Evaluate ∫_{1}^{4} 3√x dx. | 14 | 0 |  | [2x^{3/2}]_{1}^{4} = 2 × 8 − 2 × 1 = 14.
 M1#maths-u07-29-q2@1: What is ∫_{0}^{2} (x^{3} + 1) dx? | 6 | 4 | 5 | 8 | 2 | An antiderivative is x^{4}/4 + x; evaluating from 0 to 2 gives 4 + 2 − 0 = 6.
 M2#maths-u07-29-q3@2: What is the total area between y = x − 1 and the x-axis from x = 0 to x = 2? | 1 | 0 | 2 | 1/2 | −1 | Each triangle has area 1/2, one below and one above the axis; the total area is 1, though the integral is 0.
 M2#maths-u07-29-q4@2: What is ∫ x dx from −1 to 1? | 0, since the negative and positive areas cancel | 1, the total area between the line and the axis | 2, the length of the interval of integration | −1, since the left half dominates the right | It is undefined, since the line crosses the axis | The area below the axis on [−1, 0] is −½ and the area above on [0, 1] is +½, so the signed areas cancel to 0.
+SA3@2: Find ∫_{0}^{5} (x^{2} − 4x) dx and the total area between y = x^{2} − 4x and the x-axis from x = 0 to x = 5, explaining why they differ. | An antiderivative is x^{3}/3 − 2x^{2}. The curve crosses the axis at x = 0 and x = 4. ∫_{0}^{4} = 64/3 − 32 = −32/3 (below the axis) and ∫_{4}^{5} = (125/3 − 50) − (64/3 − 32) = 7/3. So the integral is −32/3 + 7/3 = −25/3, but the total area is 32/3 + 7/3 = 13. They differ because the integral counts area below the axis as negative. | Finds the antiderivative ; Finds the root x = 4 and splits there ; Evaluates −32/3 and 7/3 ; Gives integral −25/3 and area 13 ; Explains signed area
 
 ## Fundamental Theorem of Calculus
 S: The fundamental theorem of calculus links the two halves of calculus: differentiation and integration are inverse processes. It's why we can evaluate areas using antiderivatives instead of limits of sums.
 O: State both parts of the fundamental theorem of calculus
 O: Differentiate integrals with variable limits
+LV: Year 1 · Application
 T: Accumulation function | A(x) = ∫_{a}^{x} f(t) dt, the area from a to x
 T: Fundamental theorem (part 1) | If f is continuous, then d/dx ∫_{a}^{x} f(t) dt = f(x)
 H: The two parts
@@ -1094,16 +1101,20 @@ Q: What is d/dx ∫_{2}^{x} t^{3} dt? | x^{3}.
 Q: Which two processes does the theorem show are inverses? | Differentiation and integration.
 SUM: Calculus has two halves linked by one theorem.
 SUM: Antiderivatives evaluate definite integrals.
+EV: established | Differentiation and integration are inverse processes: d/dx ∫_{a}^{x} f(t) dt = f(x) for continuous f, and ∫_{a}^{b} f = F(b) − F(a).
 SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | secondary | 2008 | https://www.publishorperish.com/
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-30-q1@1: What is d/dx ∫_{0}^{x} √(1 + t^{2}) dt? | √(1 + x^{2}) | √(1 + x^{2}) − 1 | x√(1 + x^{2}) | 0 | 1/(2√(1 + x^{2})) | Part 1 of the theorem: the derivative of the accumulation function is the integrand at x.
 M2#maths-u07-30-q2@2: What is d/dx ∫_{0}^{x^{3}} sin t dt? | 3x^{2} sin(x^{3}) | sin(x^{3}) | −cos(x^{3}) | 3x^{2} cos(x^{3}) | sin x | The integrand at the upper limit, sin(x^{3}), times the derivative of x^{3}, which is 3x^{2}.
 NUM1#maths-u07-30-q3@1: Using F(x) = x^{3}/3, what is ∫₀^{3} x^{2} dx? | 9 | 0 |  | F(3) − F(0) = 27/3 = 9, the value the Riemann sums approach.
+NUM3@2: G(x) = ∫_{1}^{x^{2}} ln t dt. Find G′(2) to 3 decimal places. | 5.545 | 0.002 |  | By part 1 with the chain rule, G′(x) = ln(x^{2}) × 2x, so G′(2) = 4 ln 4 ≈ 5.545.
+SA3@1: Explain why d/dx ∫_{a}^{x} f(t) dt = f(x) for continuous f, and use part 2 to evaluate ∫_{0}^{π} sin x dx. | Let A(x) = ∫_{a}^{x} f(t) dt. A(x + h) − A(x) is the area of a thin strip of width h and height about f(x), so (A(x + h) − A(x))/h → f(x) as h → 0, because f is continuous; hence A′(x) = f(x). Part 2: −cos x is an antiderivative of sin x, so ∫_{0}^{π} sin x dx = −cos π − (−cos 0) = 1 + 1 = 2. | Defines the accumulation function ; Uses the thin-strip argument ; Notes the role of continuity ; Uses −cos x as an antiderivative ; Gets 2
 
 ## Integration by Substitution
 S: Integration by substitution reverses the chain rule. Replacing an awkward part of the integrand with a new variable u often turns a hard integral into a standard one.
 O: Integrate using a substitution, including changing limits
 O: Recognise integrals of the form ∫ f′(x)/f(x) dx and ∫ f′(x)[f(x)]^{n} dx
+LV: A level · Application
 T: Substitution | Replacing x with a function of u (or u with a function of x) to simplify an integral
 T: du | The differential of u: du = (du/dx) dx
 H: Method
@@ -1126,10 +1137,14 @@ Q: What is ∫ 3x^{2}/(x^{3} + 1) dx? | ln|x^{3} + 1| + c.
 Q: What substitution suits ∫ cos x e^{sin x} dx? | u = sin x.
 SUM: Substitution reverses the chain rule.
 SUM: Change limits in definite integrals.
+EV: established | Integration by substitution is the chain rule in reverse, and definite integrals can be evaluated entirely in the new variable once the limits are changed.
 SRC: Department for Education, Mathematics AS and A level subject content: integration | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-31-q1@1: What is ∫ 2x e^{x^{2}} dx? | e^{x^{2}} + c | 2e^{x^{2}} + c | x^{2}e^{x^{2}} + c | e^{2x} + c | e^{x^{2}}/(2x) + c | With u = x^{2}, du = 2x dx, the integral becomes ∫ e^{u} du = e^{u} + c.
 M2#maths-u07-31-q2@2: What is ∫ (2x + 3)^{4} dx? | (2x + 3)^{5}/10 + c | (2x + 3)^{5}/5 + c | 2(2x + 3)^{5}/5 + c | (2x + 3)^{3}/12 + c | 4(2x + 3)^{3} + c | With u = 2x + 3, dx = du/2, so ∫ u^{4}/2 du = u^{5}/10 + c.
+NUM2@1: Evaluate ∫_{0}^{2} 2x(x^{2} + 1)^{3} dx. | 156 | 0 |  | With u = x^{2} + 1, du = 2x dx and the limits become 1 and 5: [u^{4}/4] from 1 to 5 = (625 − 1)/4 = 156.
+NUM3@1,2: Evaluate ∫_{0}^{1} x^{2}e^{x^{3}} dx to 3 decimal places. | 0.573 | 0.001 |  | With u = x^{3}, du = 3x^{2} dx, so the integral is (1/3)∫_{0}^{1} e^{u} du = (e − 1)/3 ≈ 0.573.
+SA3@1: Evaluate ∫_{0}^{3} x/√(x + 1) dx using u = x + 1, showing how the limits and dx change. | u = x + 1 gives x = u − 1 and dx = du; the limits x = 0 and x = 3 become u = 1 and u = 4. The integral is ∫_{1}^{4} (u − 1)u^{−1/2} du = ∫_{1}^{4} (u^{1/2} − u^{−1/2}) du = [⅔u^{3/2} − 2u^{1/2}]_{1}^{4} = (16/3 − 4) − (2/3 − 2) = 8/3. | Writes x in terms of u and dx = du ; Changes the limits to 1 and 4 ; Splits into powers of u ; Integrates correctly ; Gets 8/3
 
 ## Integration by Parts
 S: Integration by parts reverses the product rule. It integrates products like x e^{x} or x sin x by trading one integral for a simpler one.

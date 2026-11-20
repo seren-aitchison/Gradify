@@ -616,6 +616,8 @@ SA2#maths-u05-16-q5@1,2: B is on a bearing of 070° from A. Find the bearing of 
 S: The perimeter is the total distance around the outside of a shape. It's what you'd need for fencing, edging or a frame, and calculating it carefully means accounting for every edge, including curved ones.
 O: Calculate perimeters of polygons and compound shapes
 O: Calculate perimeters involving arcs and circles
+LV: GCSE · Fluency
+EV: established | A perimeter is the total length of a shape's boundary, including arcs and excluding internal edges.
 T: Perimeter | The total length of the boundary of a 2D shape
 T: Compound shape | A shape made from simpler shapes joined together
 H: Polygons and compound shapes
@@ -631,6 +633,10 @@ X: A shape is a 10 cm by 6 cm rectangle with a semicircle on one 6 cm side (the 
 > The straight edges are 10 + 6 + 10 = 26 cm
 > The semicircle has diameter 6 cm: its arc is ½ × π × 6 = 3π ≈ 9.42 cm
 > Perimeter ≈ 26 + 9.42 = 35.4 cm
+X: An L-shape is an 8 cm by 6 cm rectangle with a 3 cm by 2 cm rectangle cut from one corner. Find its perimeter.
+> The two edges of the notch replace the 3 cm and 2 cm of the corner they cut away
+> So the perimeter equals the rectangle's: 2(8 + 6) = 28 cm
+> Check by adding all six edges: 8 + 4 + 3 + 2 + 5 + 6 = 28 cm
 K: Add every edge in the same units; find missing sides from given ones; include arcs, and exclude internal edges.
 !: Including an internal edge where two shapes join, or forgetting the straight diameter of a semicircle.
 Q: What is the perimeter of a regular hexagon with side 7 cm? | 42 cm.
@@ -642,11 +648,15 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 NUM1#maths-u05-17-q1@1: A rectangle has length 3 cm more than its width and perimeter 34 cm. What is its width? | 7 | 0 | cm | 2(w + w + 3) = 34 gives 4w + 6 = 34, so w = 7 cm.
 M1#maths-u05-17-q2@1: What is the perimeter of a quarter circle of radius 4 cm, to 1 decimal place? | 14.3 cm | 6.3 cm | 12.6 cm | 8.0 cm | 25.1 cm | The arc is ¼ × 2π × 4 = 2π ≈ 6.28, plus two radii of 4: 14.3 cm.
 M2#maths-u05-17-q3@2: Which rectangle with perimeter 24 cm has the largest area? | 6 cm by 6 cm | 10 cm by 2 cm | 8 cm by 4 cm | 11 cm by 1 cm | 9 cm by 3 cm | For a fixed perimeter, the square gives the largest area: 36 cm^{2}.
+NUM3@2: A running track has two straight sides of 100 m and two semicircular ends, each of diameter 60 m. Find the length of one lap, to the nearest metre. | 388 | 0.5 | m | The two semicircles make one circle of diameter 60 m, 60π ≈ 188.5 m; adding 2 × 100 m gives about 388 m.
+SA2@1,2: Explain, using rectangles with perimeter 20 cm, why equal perimeters don't mean equal areas, and find the perimeter of a semicircle of diameter 10 cm. | A 1 cm by 9 cm rectangle and a 5 cm by 5 cm square both have perimeter 2(1 + 9) = 2(5 + 5) = 20 cm, but their areas are 9 cm² and 25 cm²: perimeter measures the boundary and area the surface, so they can vary independently (for a fixed perimeter, the square has the largest area of any rectangle). A semicircle of diameter 10 cm has a curved edge ½ × π × 10 = 5π cm and a straight edge of 10 cm, so its perimeter is 5π + 10 ≈ 25.7 cm. | two rectangles with perimeter 20 cm ; areas 9 and 25 cm² ; boundary versus surface ; arc 5π cm ; includes the diameter: 5π + 10 ≈ 25.7 cm
 
 ## Area
 S: Area measures the amount of surface a 2D shape covers, in square units. Formulas for rectangles, triangles, parallelograms, trapeziums and circles combine to find the area of almost any shape.
 O: Use area formulas for standard shapes
 O: Find areas of compound shapes and convert area units
+LV: GCSE · Fluency
+EV: established | Areas of standard shapes follow from the rectangle and triangle formulas, and area units convert by the square of the length factor.
 T: Area | The size of a 2D surface, measured in square units such as cm^{2} or m^{2}
 T: Perpendicular height | The height measured at right angles to the base
 H: Formulas
@@ -674,11 +684,15 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 NUM1#maths-u05-18-q1@1: Find the area of a sector with radius 10 cm and angle 72°, to 1 decimal place. | 62.8 | 0.05 | cm² | (72/360) × π × 100 = 20π ≈ 62.8 cm^{2}.
 M1#maths-u05-18-q2@1: A parallelogram has base 8 cm, slanted side 5 cm and perpendicular height 4 cm. What is its area? | 32 cm² | 40 cm² | 20 cm² | 26 cm² | 16 cm² | Area = base × perpendicular height = 8 × 4; the slanted side isn't used.
 M2#maths-u05-18-q3@2: How many mm² are in 1 m²? | 1,000,000 | 1,000 | 10,000 | 100,000 | 100 | 1 m = 1,000 mm, so 1 m^{2} = 1,000 × 1,000 mm^{2}.
+NUM3@1: A trapezium has area 54 cm², perpendicular height 6 cm and one parallel side of 7 cm. How long is the other parallel side? | 11 | 0 | cm | ½(7 + b) × 6 = 54, so 3(7 + b) = 54, 7 + b = 18 and b = 11 cm.
+SA2@1,2: A wall is 4 m by 3 m with a 1.2 m by 0.9 m window. Find the area to be painted in m² and in cm², explaining each step. | The wall's area is 4 × 3 = 12 m² and the window's is 1.2 × 0.9 = 1.08 m²; subtracting the cut-out gives 12 − 1.08 = 10.92 m². Since 1 m = 100 cm, 1 m² = 100 × 100 = 10,000 cm², so 10.92 m² = 109,200 cm². | wall area 12 m² ; window area 1.08 m² ; subtracts to 10.92 m² ; 1 m² = 10,000 cm² ; 109,200 cm²
 
 ## Arc Length
 S: An arc is part of a circle's circumference. Its length is a fraction of the whole circumference, set by the angle at the centre, and in radians the formula is especially simple.
 O: Calculate arc lengths and sector perimeters in degrees and radians
 O: Find angles or radii from given arc lengths
+LV: GCSE and A level · Application
+EV: established | An arc is the fraction θ/360 of the circumference, which in radians gives arc length rθ and sector area ½r²θ.
 T: Arc | A part of the circumference of a circle
 T: Radian | The angle subtended at the centre by an arc equal in length to the radius; 2π radians = 360°
 H: Formulas
@@ -708,11 +722,15 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 NUM1#maths-u05-19-q1@1: Find the arc length of a sector with radius 6 cm and angle 2.5 radians. | 15 | 0 | cm | arc = rθ = 6 × 2.5 = 15 cm.
 M1#maths-u05-19-q2@1: What fraction of the circumference is an arc subtending 45°? | 1/8 | 1/4 | 1/45 | 45/100 | 1/2 | The arc's share of the circle is its angle over 360°: 45/360 = 1/8.
 M2#maths-u05-19-q3@2: What is the area of a sector with r = 4 cm and θ = 0.75 rad? | 6 cm² | 3 cm² | 12 cm² | 1.5 cm² | 24 cm² | With θ in radians, sector area = ½r^{2}θ = ½ × 16 × 0.75 = 6 cm^{2}.
+NUM3@2: A sector has area 15 cm² and radius 5 cm. Find its arc length. | 6 | 0 | cm | ½r^{2}θ = 15 gives θ = 30/25 = 1.2 radians, so the arc is rθ = 5 × 1.2 = 6 cm.
+SA3@1: Explain why the arc length is rθ when θ is in radians, then find the area of the segment cut off by a chord that subtends π/3 at the centre of a circle of radius 6 cm. | A full turn is 2π radians and the whole circumference is 2πr, so an angle θ takes the fraction θ/2π of it: (θ/2π) × 2πr = rθ. The same fraction of the area πr² gives the sector area ½r²θ. The segment is the sector minus the triangle formed by the two radii: ½ × 36 × π/3 − ½ × 36 × sin(π/3) = 6π − 9√3 ≈ 18.85 − 15.59 = 3.26 cm². | fraction θ/2π of the circle ; arc = rθ ; sector area 6π ; triangle area ½r² sin θ = 9√3 ; segment ≈ 3.26 cm²
 
 ## Solid Geometry
 S: Solid geometry studies three-dimensional shapes: prisms, pyramids, cylinders, cones and spheres. Visualising them through nets, plans and elevations, and measuring them, is essential in design, engineering and science.
 O: Name and describe common 3D solids
 O: Use nets, plans and elevations to represent solids
+LV: GCSE · Fluency
+EV: established | Prisms have a constant cross-section, pyramids and cones taper to an apex, and nets, plans and elevations represent solids in two dimensions.
 T: Prism | A solid with the same cross-section along its length
 T: Net | A 2D pattern that folds to make a 3D solid
 H: Common solids
@@ -729,6 +747,7 @@ X: A solid has a plan view that's a circle and front and side elevations that ar
 > From above, the outline is a circle
 > From the front and side, it tapers to a point
 > It's a cone
+P: Plans and elevations are drawn without perspective. A square-based pyramid has a square plan with its diagonals drawn (the sloping edges seen from above) and triangular front and side elevations.
 K: Prisms keep the same cross-section; pyramids taper to an apex; nets, plans and elevations represent solids in 2D.
 !: Confusing a plan (from above) with an elevation (from the front or side).
 Q: What is a prism? | A solid with a constant cross-section along its length.
@@ -739,11 +758,16 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | secondary | 1989 | https://www.wiley.com/
 M1#maths-u05-20-q1@1: Which solid has a constant circular cross-section? | A cylinder | A cone | A sphere | A pyramid | A hemisphere | A cylinder is a prism with a circular cross-section.
 M3#maths-u05-20-q2@2: Which cross-section is impossible when slicing a cube with a flat plane? | A heptagon | A triangle | A hexagon | A pentagon | A rectangle | A cube has 6 faces, so a plane can cut at most 6 of them: at most a hexagon.
+TF1@1: A cone has the same cross-section all the way along its height. | false | A cone's circular cross-sections shrink towards the apex, so it is pyramid-like, not a prism; a cylinder keeps a constant cross-section.
+M2@2: A solid's plan is a rectangle, its front elevation is a rectangle and its side elevation is a triangle. What is it? | A triangular prism | A cuboid | A square-based pyramid | A cone | A tetrahedron | A triangular prism lying on a rectangular face looks rectangular from above and from the front, and shows its triangular cross-section from the side.
+SA2@1,2: Describe a square-based pyramid: give its numbers of faces, edges and vertices, and describe its net and its plan view. | A square-based pyramid has 5 faces (one square base and four triangles), 8 edges (four round the base and four to the apex) and 5 vertices (four base corners and the apex). Its net is a square with a triangle attached to each side, which fold up to meet at the apex. Seen from above, the plan is a square with its two diagonals drawn, meeting at the point directly below the apex. | 5 faces ; 8 edges ; 5 vertices ; net of a square with four triangles ; plan is a square with diagonals
 
 ## Polyhedra
 S: A polyhedron is a solid with flat polygonal faces. The five Platonic solids are the regular polyhedra, and Euler's formula V − E + F = 2 links the numbers of vertices, edges and faces of every convex polyhedron.
 O: Identify the Platonic solids
 O: Use Euler's formula to find vertices, edges or faces
+LV: GCSE · Application
+EV: established | There are exactly five Platonic solids, and every convex polyhedron satisfies V − E + F = 2.
 T: Polyhedron | A solid bounded by flat polygonal faces (plural: polyhedra)
 T: Euler's formula | V − E + F = 2 for any convex polyhedron
 H: The Platonic solids
@@ -771,11 +795,16 @@ SRC: Richeson DS, Euler's Gem: The Polyhedron Formula and the Birth of Topology 
 NUM1#maths-u05-21-q1@1: A convex polyhedron has 12 faces and 20 vertices. How many edges does it have? | 30 | 0 |  | V − E + F = 2 gives 20 − E + 12 = 2, so E = 30 (a dodecahedron).
 M1#maths-u05-21-q2@1: How many Platonic solids are there? | 5 | 3 | 4 | 6 | Infinitely many | Only five convex regular polyhedra exist: tetrahedron, cube, octahedron, dodecahedron and icosahedron.
 M2#maths-u05-21-q3@2: Which Platonic solid has pentagonal faces? | Dodecahedron | Icosahedron | Octahedron | Tetrahedron | Cube | The dodecahedron has 12 regular pentagonal faces.
+M2@2: Could a convex polyhedron have 7 vertices, 10 edges and 6 faces? | No: V − E + F would be 3, not 2 | Yes: the counts are all positive whole numbers | Yes: any counts work if the faces differ in shape | No: polyhedra must have an even number of vertices | 7 − 10 + 6 = 3, but Euler's formula requires V − E + F = 2 for every convex polyhedron.
+NUM3@2: A football (truncated icosahedron) has 12 pentagonal and 20 hexagonal faces. How many vertices does it have? | 60 | 0 | vertices | F = 32; each edge is shared by two faces, so E = (12 × 5 + 20 × 6) ÷ 2 = 90; V = 2 + E − F = 2 + 90 − 32 = 60.
+SA3@1: Explain why there are exactly five Platonic solids, using the angles that meet at a vertex. | At each vertex of a convex polyhedron at least three faces meet, and their angles must add to less than 360° (at exactly 360° they lie flat). Equilateral triangles (60°) allow 3, 4 or 5 at a vertex (180°, 240°, 300°): the tetrahedron, octahedron and icosahedron. Squares (90°) allow only 3 (270°): the cube. Regular pentagons (108°) allow only 3 (324°): the dodecahedron. Hexagons give 3 × 120° = 360°, which is flat, and larger polygons are worse, so there are exactly five. | at least three faces at a vertex ; angle sum under 360° ; three triangle cases ; squares and pentagons one case each ; hexagons and above impossible
 
 ## Surface Area
 S: The surface area of a solid is the total area of all its faces or curved surfaces. It matters for packaging, painting, heat loss and biology, where the surface-area-to-volume ratio is crucial.
 O: Calculate surface areas of prisms, pyramids, cylinders, cones and spheres
 O: Use nets to find surface areas
+LV: GCSE · Application
+EV: established | The surface area of a solid is the sum of the areas of its faces and curved surfaces, using the slant height for cones.
 T: Surface area | The total area of the outer surface of a 3D shape
 T: Slant height | The distance from the apex of a cone or pyramid to the edge of its base along its surface
 H: Formulas
@@ -803,11 +832,15 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 NUM1#maths-u05-22-q1@1: Find the surface area of a 4 cm by 5 cm by 6 cm cuboid. | 148 | 0 | cm² | 2(20 + 24 + 30) = 2 × 74 = 148 cm^{2}.
 M1#maths-u05-22-q2@1: What is the total surface area of a closed cylinder with r = 2 cm and h = 5 cm? | 28π cm² | 20π cm² | 24π cm² | 14π cm² | 40π cm² | Two circular ends 2πr^{2} = 8π plus the curved surface 2πrh = 20π gives 28π.
 M2#maths-u05-22-q3@2: What is the curved surface area of a hemisphere of radius 5 cm? | 50π cm² | 100π cm² | 75π cm² | 25π cm² | 125π cm² | Half of 4πr^{2} = 2π × 25 = 50π (add 25π for the flat face if it's included).
+NUM3@1: A solid is a hemisphere of radius 3 cm on top of a cylinder of radius 3 cm and height 10 cm, with a flat circular base. Find its surface area in terms of π. | 87 | 0 | π cm² | Hemisphere 2πr^{2} = 18π, curved cylinder 2πrh = 60π and base πr^{2} = 9π; the join is hidden, so the total is 87π cm².
+SA2@1,2: A square-based pyramid has base edges of 6 cm, and each triangular face has a perpendicular height (slant height) of 5 cm. Explain how a net helps you find its surface area, and find it. | The net is the square base with a triangle on each side; the surface area is the total area of the net. The base is 6 × 6 = 36 cm². Each triangle has base 6 cm and height 5 cm, so area ½ × 6 × 5 = 15 cm², and there are four: 60 cm². The total surface area is 36 + 60 = 96 cm². | net of a square and four triangles ; base 36 cm² ; each triangle 15 cm² using slant height ; four triangles 60 cm² ; total 96 cm²
 
 ## Volume
 S: Volume measures the space a 3D object occupies, in cubic units. Formulas for prisms, pyramids, cones and spheres let us compute capacities, masses (with density) and costs.
 O: Calculate volumes of prisms, cylinders, pyramids, cones and spheres
 O: Convert volume and capacity units
+LV: GCSE · Application
+EV: established | Prisms have volume cross-section × length, pyramids and cones one third of base × height, and spheres (4/3)πr³.
 T: Volume | The amount of space inside a 3D shape, measured in cubic units
 T: Capacity | The amount a container holds, often in litres: 1 litre = 1,000 cm^{3}
 H: Formulas
@@ -836,11 +869,15 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 NUM1#maths-u05-23-q1@1: Find the volume of a sphere of radius 3 cm, in terms of π. | 36 | 0 | π cm³ | (4/3)π × 27 = 36π cm^{3}.
 M1#maths-u05-23-q2@1: A triangular prism has a cross-section of area 15 cm² and length 8 cm. What is its volume? | 120 cm³ | 60 cm³ | 23 cm³ | 40 cm³ | 1,800 cm³ | Volume of a prism = area of cross-section × length.
 M3#maths-u05-23-q3@2: A cone and a cylinder have the same radius and the same volume. How do their heights compare? | The cone is three times as tall | They're equal | The cylinder is three times as tall | The cone is twice as tall | The cone is √3 times as tall | Equal volumes: ⅓πr^{2}h₁ = πr^{2}h₂, so the cone's height is h₁ = 3h₂.
+NUM2@2: A cuboid tank measures 2 m by 1.5 m by 0.8 m. How many litres does it hold when full? | 2400 | 0 | litres | V = 2 × 1.5 × 0.8 = 2.4 m^{3}, and 1 m^{3} = 1,000 litres, so it holds 2,400 litres.
+SA3@1: A cone of radius 6 cm and height 12 cm has its top cut off by a plane parallel to the base, halfway up. Find the volume of the remaining frustum in terms of π, explaining your method. | The whole cone has volume ⅓π × 6² × 12 = 144π cm³. The removed top is a similar cone with height 6 cm, so the length scale factor is ½ and its radius is 3 cm: volume ⅓π × 3² × 6 = 18π cm³ (or 144π × (½)³). The frustum is the difference: 144π − 18π = 126π ≈ 396 cm³. | large cone 144π ; small cone similar with factor ½ ; small cone 18π ; subtracts ; 126π cm³
 
 ## Geometric Transformations
 S: Transformations move or change shapes: translations, reflections, rotations and enlargements. Describing them precisely, and combining them, links geometry with vectors, matrices and symmetry.
 O: Perform and describe the four basic transformations
 O: Describe combined transformations as single transformations where possible
+LV: GCSE · Application
+EV: established | Translations, reflections and rotations preserve lengths and angles, enlargements preserve shape, and each is fixed by a full description.
 T: Isometry | A transformation preserving lengths and angles (translation, reflection, rotation)
 T: Centre of enlargement | The fixed point from which an enlargement scales distances
 H: The four transformations
@@ -869,7 +906,9 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | secondary | 1989 | https://www.wiley.com/
 M1#maths-u05-24-q1@1: Where does (4, 1) go after reflection in the line y = x? | (1, 4) | (−4, 1) | (4, −1) | (−1, −4) | (1, −4) | Reflection in y = x swaps the coordinates.
 M2#maths-u05-24-q2@2: Where does (2, 5) go after a 90° clockwise rotation about the origin? | (5, −2) | (−5, 2) | (−2, 5) | (2, −5) | (−5, −2) | A 90° clockwise rotation maps (x, y) to (y, −x).
-M2#maths-u05-24-q3@2: What does the matrix [[3, 0], [0, 3]] do to shapes? | Enlarges them by scale factor 3 about the origin, multiplying areas by 9 | Rotates them by 3° | Reflects them in y = x | Translates them by 3 | Enlarges by 9 and areas by 3 | Both coordinates triple, so lengths ×3 and areas ×9 = det.
+M2#maths-u05-24-q3@2: What does the matrix [[3, 0], [0, 3]] do to shapes? | Enlarges them by scale factor 3 about the origin, multiplying areas by 9 | Rotates them by 3° about the origin, keeping areas the same | Reflects them in y = x, keeping areas the same | Translates them 3 units right and 3 units up the grid | Enlarges them by scale factor 9, multiplying areas by 3 | Both coordinates triple, so lengths ×3 and areas ×9 = det.
+M3@2: A shape is reflected in the line x = 1 and then in the line x = 4. Which single transformation has the same effect? | Translation by (6, 0) | Translation by (3, 0) | Reflection in x = 5 | Rotation 180° about (2.5, 0) | Translation by (−6, 0) | Reflections in parallel lines make a translation of twice the gap between them, from the first line towards the second: (0, 0) → (2, 0) → (6, 0).
+SA2@1: Triangle P has vertices (1, 1), (3, 1) and (1, 2); triangle Q has vertices (−1, 1), (−1, 3) and (−2, 1). Describe fully the single transformation that maps P to Q, and show how you checked it. | It is a rotation of 90° anticlockwise about the origin (0, 0). This rotation maps (x, y) to (−y, x): (1, 1) → (−1, 1), (3, 1) → (−1, 3) and (1, 2) → (−2, 1), which are exactly Q's vertices. A full description of a rotation needs the angle, the direction and the centre. | names a rotation ; 90° ; anticlockwise ; centre (0, 0) ; checks the vertices with (x, y) → (−y, x)
 
 ## Transformations and Symmetry
 S: A shape has symmetry if a transformation maps it onto itself. Line (reflection) and rotational symmetry describe the shapes of letters, logos, crystals and molecules, and lead to group theory.

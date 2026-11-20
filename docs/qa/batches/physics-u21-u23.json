@@ -1,7 +1,7 @@
 {
   "task": "physics-u21-u23",
   "on": "2026-11-20",
-  "status": "u21 complete (0 problems); u23 lessons 1-8 enhanced",
+  "status": "u21 complete (0 problems); u23 lessons 1-16 enhanced (0 problems in those); 17-25 in progress",
   "files": [
     "kit/courses/physics/notes/u21.js",
     "kit/courses/physics/notes/u23.js"

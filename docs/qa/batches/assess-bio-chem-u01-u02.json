@@ -749,6 +749,351 @@
     "extended written answer (SA) with model answer and marking points added"
    ],
    "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-01",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Which statement links all three levels of description correctly?\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-02",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"A white solid melts between 120 and 128 °C.\"",
+    "distractors lengthened to remove length bias: \"Which particle diagram describes a mixture of an element and a compound?\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-03",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Why is sodium chloride safe to eat when sodium and chlorine\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-04",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Why can fractional distillation separate the hydrocarbons in crude oil?\"",
+    "distractors lengthened to remove length bias: \"In paper chromatography an unknown gives one spot with Rf 0.62\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-05",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "second source added: OpenStax, Chemistry 2e, section 1.2 \"Phases and Classification of Matter\"",
+    "distractors lengthened to remove length bias: \"Mixing two colourless solutions forms a yellow solid.\"",
+    "distractors lengthened to remove length bias: \"When ammonium nitrate dissolves in water the temperature falls sharply.\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-06",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Why is the boiling plateau on water's heating curve longer\"",
+    "distractors lengthened to remove length bias: \"Iodine crystals turn straight into a purple vapour\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "M1#chemistry-u01-06-q2 asks in which state particles move fastest at the same temperature; the keyed answer (same average kinetic energy) is defensible but may confuse beginners. Left unchanged."
+    }
+   ]
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-07",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"In the gold-foil experiment, why did a few alpha particles bounce back?\"",
+    "distractors lengthened to remove length bias: \"Why couldn't the plum-pudding model explain the gold-foil results?\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-08",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"A student writes \"NACL\" for sodium chloride.\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-09",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-10",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "second source added: OpenStax, Chemistry 2e, section 4.2 \"Classifying Chemical Reactions\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-11",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "second source added: OpenStax, Chemistry: Atoms First 2e, section 7.1 \"Writing and Balancing Chemical Equations\"",
+    "distractors lengthened to remove length bias: \"Magnesium ribbon is heated in an open crucible\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-12",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Copper has two isotopes, ⁶³Cu and ⁶⁵Cu, and Ar = 63.55.\"",
+    "distractors lengthened to remove length bias: \"Why does IUPAC now give the atomic weight of some elements\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-13",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-14",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-15",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"The silicon sphere method counted atoms\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-16",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"A hydrated salt loses 36% of its mass on heating to constant mass.\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-17",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "second source added: OpenStax, Chemistry 2e, section 9.3 \"Stoichiometry of Gaseous Substances, Mixtures, and Reactions\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-18",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Chemical reasoning",
+    "evidence status: established",
+    "second source added: OpenStax, Chemistry: Atoms First 2e, section 7.4 \"Reaction Yields\"",
+    "distractors lengthened to remove length bias: \"In the example above, what happens chemically when oxygen is limiting\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-19",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "second source added: OpenStax, Chemistry: Atoms First 2e, section 7.4 \"Reaction Yields\"",
+    "distractors lengthened to remove length bias: \"A chemist recrystallises a product twice.\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "Worked example: 14.2 ÷ 25.1 = 56.6%, but with the unrounded theoretical yield (25.11 g) the result is 56.5%; left as it is (difference from intermediate rounding)."
+    }
+   ]
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-20",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Chemical reasoning",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Which type of reaction always has 100% atom economy?\"",
+    "distractors lengthened to remove length bias: \"Two routes to a drug have yields of 90% and 60%\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": [
+    {
+     "class": "error-fixed",
+     "note": "NUM2#chemistry-u01-20-q1 (atom economy of iron extraction) gave the answer 46.3 while its own working gives 111.7 ÷ 243.7 × 100 = 45.8%; answer corrected to 45.8 (the 1% tolerance did not include the correct value)."
+    }
+   ]
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-21",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Why is a volumetric flask used, rather than a beaker\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-22",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"When diluting concentrated sulfuric acid\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-23",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-24",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-25",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
   }
  ],
  "notes": [

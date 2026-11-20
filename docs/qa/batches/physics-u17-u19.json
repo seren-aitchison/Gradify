@@ -654,10 +654,108 @@
     "defined Airy disc and Rayleigh criterion as terms; Fresnel-number far-field condition; headlight-resolution question"
    ],
    "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-16",
+   "title": "Single-slit and multiple-slit diffraction",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "normalised the N-slit intensity formula so I_0 is the central peak; worked example now counts fringes inside the envelope"
+   ],
+   "findings": [
+    {
+     "class": "error-fixed",
+     "note": "N-slit formula I = I0(sin β/β)²(sin Nγ/sin γ)² was written with I0 as the single-slit intensity but read as the peak; rewritten as I0(sin β/β)²(sin Nγ/(N sin γ))² with I0 the central peak, consistent with 'intensity ∝ N²' stated for fixed slits."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-17",
+   "title": "Diffraction gratings",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added derivation SA (AQA 3.3.2.2) and order-overlap question"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "'Doppler shifts to ~1 m/s (ESPRESSO), detecting Earth-mass planets' changed to 'below 1 m/s (HARPS, ESPRESSO), enough to detect planets of a few Earth masses'; Earth analogues around Sun-like stars need ~0.1 m/s."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-18",
+   "title": "Michelson interferometer",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "described beam splitter and arms; gas refractive-index calculation; LIGO SA"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-19",
+   "title": "Fabry–Pérot interferometer",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added resolving question using linewidth = FSR/finesse"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "No OpenStax section covers Fabry–Pérot; sources are Hecht, Optics, 5th edn (Pearson 2017) and Saleh & Teich, Fundamentals of Photonics, 2nd edn (Wiley 2007), cited without chapter."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-20",
+   "title": "Polarisation",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "Malus's law angle defined; three-polariser question; transverse-wave SA (AQA 3.3.1.2)"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "Removed the claim that Vikings navigated with 'sunstones' (a hypothesis, not established); bees kept."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-21",
+   "title": "Brewster's angle",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "defined p- and s-polarisation; water-to-glass Brewster calculation"
+   ],
+   "findings": []
   }
  ],
  "notes": [
-  "Physics lesson questions keep legacy position keys: all existing M questions are kept in their original order and new questions are appended after them. tests/compat.test.mjs compares the frozen legacy parser with the current one; the legacy parser does not recognise objective links (M2@1:), so this test will fail for any standard-2 physics unit, not only these. The coordinator should update the fixture or the test.",
+  "Physics lesson questions keep legacy position keys: all existing M questions and flashcards are kept in their original slots; new questions are appended after them. node --test tests/compat.test.mjs and tests/qa-content.test.mjs pass.",
   "Sources: OpenStax sections were confirmed against the live openstax.org tables of contents (2026-11-19); AQA section numbers and titles were checked in the downloaded specification PDF (filestore.aqa.org.uk AQA-7407-7408-SP-2015.PDF, sha256 32a556da85fa0928c3600f8178d1a18fe5156b2ea36d76b541df866451721e20). The magnetic-field topics are AQA 3.7.5.x, not 3.7.4 or 7.4."
  ]
 }
