@@ -24,7 +24,7 @@ const check = (name, ok, detail = "") => ({ name, ok: !!ok, detail });
 
 // ---------- drawing primitives ----------
 function svg(W, H, alt, body) {
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${f1(W)} ${f1(H)}" width="${f1(W)}" height="${f1(H)}" role="img" aria-label="${esc(alt)}" style="color:${C.ink};font-family:inherit">${body}</svg>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${f1(W)} ${f1(H)}" width="${f1(W)}" height="${f1(H)}" role="img" aria-label="${esc(alt)}" style="color:${C.ink};font-family:inherit;max-width:100%;height:auto">${body}</svg>`;
 }
 function text(x, y, s, { size = 14, weight = 500, anchor = "middle", fill = C.ink, italic = false, baseline = "middle" } = {}) {
   // sub/superscripts written x_{0} and x^{2}

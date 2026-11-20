@@ -321,5 +321,6 @@
     "date": "2026-11-20",
     "notes": "Round 1 (AI reviewer): Kekulé ring and localised arenium charge would lose the AQA depiction mark; now delocalised ring and horseshoe intermediate, with the N=O arrow explained in the caption; all fixed.",
     "awaiting": "approval by a named subject reviewer"
-  }
+  },
+  "perRow": 2
 }

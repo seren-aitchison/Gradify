@@ -410,7 +410,7 @@ def compose(spec, mols, narrow=False):
         W, H = max(wmax + 40, max(len(st.get('label', '')) * 7.6 + 30 for st in stages)), y + 30
     title = str(spec.get("alt", spec.get("title", ""))).replace("&", "&amp;").replace('"', "&quot;").replace("<", "&lt;")
     return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W:.0f} {H:.0f}" width="{W:.0f}" height="{H:.0f}" role="img" '
-            f'aria-label="{title}" style="color:{INK};font-family:inherit">' + "".join(parts) + "</svg>")
+            f'aria-label="{title}" style="color:{INK};font-family:inherit;max-width:100%;height:auto">' + "".join(parts) + "</svg>")
 
 
 def stage_svg(st, inner, w, h, pos, ox, oy):

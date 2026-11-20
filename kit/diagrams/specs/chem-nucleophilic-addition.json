@@ -7,8 +7,8 @@
   "caption": "The cyanide carbon's lone pair attacks the δ+ carbonyl carbon and the C=O π electrons move onto oxygen, giving an alkoxide. The alkoxide takes a proton from HCN, which regenerates cyanide. The flat carbonyl can be attacked from either face, so an unsymmetrical carbonyl gives a racemic product. Ethanal is unsymmetrical, so 2-hydroxypropanenitrile forms as a racemic mixture.",
   "alt": "Nucleophilic addition mechanism: cyanide attacks the carbonyl carbon of ethanal to give an alkoxide, which takes a proton from HCN to form 2-hydroxypropanenitrile.",
   "description": [
-    "Stage 1: ethanal, CH₃ bonded to a carbon that is double-bonded to oxygen and carries a hydrogen, with a cyanide ion below it and a molecule of HCN. A curly arrow goes from the lone pair on cyanide's carbon to the carbonyl carbon, and another from the C=O double bond onto the oxygen.",
-    "Stage 2: the alkoxide intermediate, oxygen now single-bonded and negatively charged, with the nitrile group on the carbon. A curly arrow goes from a lone pair on the O⁻ to the hydrogen of HCN, and another from the H–C bond of HCN onto its carbon.",
+    "Stage 1: ethanal, CH₃ bonded to a carbon that is double-bonded to oxygen and carries a hydrogen, with a cyanide ion below it. A curly arrow goes from the lone pair on cyanide's carbon to the carbonyl carbon, and another from the C=O double bond onto the oxygen.",
+    "Stage 2: the alkoxide intermediate, oxygen now single-bonded and negatively charged, with the nitrile group on the carbon, next to a molecule of HCN. A curly arrow goes from a lone pair on the O⁻ to the hydrogen of HCN, and another from the H–C bond of HCN onto its carbon.",
     "Stage 3: 2-hydroxypropanenitrile, CH₃CH(OH)CN, and a regenerated cyanide ion."
   ],
   "stages": [
@@ -96,9 +96,11 @@
           "bend": -1
         }
       ],
-      "labels": {
-        "7": "C"
-      }
+      "hide": [
+        6,
+        7,
+        8
+      ]
     },
     {
       "smiles": "[CH3:1][C:2]([O-:3])([H:10])[C:4]#[N:5].[H:6][C:7]#[N:8]",
@@ -207,11 +209,11 @@
           -2.45
         ],
         "7": [
-          3.7,
+          3.05,
           1.0
         ],
         "8": [
-          2.6,
+          1.95,
           1.0
         ]
       },

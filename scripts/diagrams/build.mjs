@@ -37,6 +37,16 @@ function lessonSource(course, title) {
   return null;
 }
 
+// The lesson column is about 707px wide on desktop and scales the wide layout to fit. Past MAX_WIDE the atom symbols
+// (19px) drop below 14px and the stage labels (15px) below 11px on screen, so a wider layout must be tightened or
+// wrapped into rows (perRow) instead.
+const COLUMN = 707, MAX_WIDE = 960;
+function legible(svg) {
+  const w = Number(/viewBox="0 0 ([\d.]+)/.exec(svg || "")?.[1] || 0);
+  return { name: `wide layout legible in the ${COLUMN}px lesson column (at most ${MAX_WIDE}px wide)`, ok: w > 0 && w <= MAX_WIDE,
+    detail: `${Math.round(w)}px wide, shown at ${Math.round((COLUMN / w) * 100)}% (labels ${((15 * COLUMN) / w).toFixed(1)}px)` };
+}
+
 const manifest = existsSync(MANIFEST) ? JSON.parse(readFileSync(MANIFEST, "utf8")) : {};
 let failed = 0;
 for (const f of readdirSync(SPECS).filter((f) => f.endsWith(".json")).sort()) {
@@ -54,6 +64,7 @@ for (const f of readdirSync(SPECS).filter((f) => f.endsWith(".json")).sort()) {
     { name: "the lesson places this diagram (D: line)", ok: !!lesson && new RegExp(`^D:\\s*${spec.id}\\s*$`, "m").test(lesson.text) },
     { name: "has alt text, a caption and a step-by-step description", ok: !!(spec.alt && spec.caption && spec.description?.length) },
     ...out.checks,
+    legible(out.wide),
   ];
   const ok = checks.every((c) => c.ok);
   if (out.wide) writeFileSync(join(OUT, `${spec.id}.wide.svg`), out.wide);
