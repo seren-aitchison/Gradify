@@ -344,11 +344,12 @@ export function start() {
   // the GPU can be taken away (a driver reset, too many contexts, the OS reclaiming memory): CSS glass meanwhile,
   // the same canvas and observers back when it returns
   const onLost = (e) => { e.preventDefault(); lost = true; lostCount++; P = null; root.classList.remove("lgl"); status("css", "GPU context lost; waiting for it back"); };
-  const onRestored = () => { if (stopped) return; par = gl.getExtension("KHR_parallel_shader_compile"); build(tier).then(() => { if (stopped) return; lost = false; root.classList.add("lgl"); dirty = true; status(P.tier, "GPU context restored"); kick(); }).catch(() => { if (!gl.isContextLost()) stop(); }); };
+  // back from a lost context: rebuild the tier that last built; a speed check that was running starts afresh (downtime isn't slowness)
+  const onRestored = () => { if (stopped) return; par = gl.getExtension("KHR_parallel_shader_compile"); build(tier).then(() => { if (stopped) return; lost = false; root.classList.add("lgl"); dirty = true; status(P.tier, "GPU context restored"); if (probing) probe(); else kick(); }).catch(() => { if (!gl.isContextLost()) stop(); }); };
 
   function stop() {
     if (stopped) return; stopped = true;
-    live = false; running = null; clearTimeout(mt); if (raf) cancelAnimationFrame(raf); probing = false;
+    live = false; if (running === handle) running = null;   // never clear a newer instance clearTimeout(mt); if (raf) cancelAnimationFrame(raf); probing = false;
     mqT.removeEventListener("change", onAccess); mqC.removeEventListener("change", onAccess);
     mo.disconnect(); to.disconnect(); root.classList.remove("lgl"); canvas.remove(); style.remove();
     document.querySelectorAll("[data-lg]").forEach((e) => { e.removeAttribute("data-lg"); e.removeAttribute("data-lg-cap"); });
@@ -361,7 +362,7 @@ export function start() {
   }
 
   let stopped = false;
-  running = { stop, redraw: () => { dirty = true; kick(); }, get tier() { return P ? P.tier : "css"; } };
+  const handle = running = { stop, redraw: () => { dirty = true; kick(); }, get tier() { return P ? P.tier : "css"; } };
   status("css", null, { pending: tier });   // CSS glass until the GPU program is ready
   build(tier).catch((e) => tier === "webgl" ? build(tier = "webgl-lite") : Promise.reject(e)).then(() => {
     if (!running || stopped) return;
@@ -376,6 +377,6 @@ export function start() {
     if (root.getAttribute("data-a-contrast") === "high" || mqT.matches || mqC.matches || zoomed()) { status("css", "accessibility setting changed"); return stop(); }
     live = true; root.classList.add("lgl"); status(P.tier, "measuring");
     probe();   // entrance animations move things for a moment, and the speed check runs over the same frames
-  }).catch((e) => { console.warn("Liquid Glass: falling back to CSS glass", e); status("css", "shader failed: " + e.message); running = null; });
+  }).catch((e) => { if (stopped) return; console.warn("Liquid Glass: falling back to CSS glass", e); status("css", "shader failed: " + e.message); stop(); });
   return running;
 }
