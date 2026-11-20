@@ -96,6 +96,11 @@ async function device(b, name) {
   const ctx = await b.newContext({ viewport: { width: 1280, height: 900 } });
   const s = session();
   // sandboxed frames (some interactives) have no storage, so the seeding is guarded
+  // GLASS=force runs the whole journey with the GPU Liquid Glass drawing (kit/ui/liquid-gl.js), even on a software GPU;
+  // GLASS=slow-gpu: the browser's software GPU reports itself as a real one, so the glass starts, measures itself slow
+  // and steps down to CSS glass while the journey runs (a low-end device)
+  if (process.env.GLASS === "slow-gpu") await ctx.addInitScript(() => { const g = WebGLRenderingContext.prototype.getParameter; WebGLRenderingContext.prototype.getParameter = function (k) { return k === 0x9246 ? "ANGLE (Intel, Intel(R) HD Graphics 4000)" : g.call(this, k); }; });
+  else if (process.env.GLASS) await ctx.addInitScript((v) => { try { localStorage.setItem("gradify.glass", v); } catch { /* no storage */ } }, process.env.GLASS);
   await ctx.addInitScript(([key, value]) => { try { if (!localStorage.getItem(key)) localStorage.setItem(key, value); } catch { /* no storage in this frame */ } }, [`sb-${REF}-auth-token`, JSON.stringify(s)]);
   await ctx.route("**/gradify.config.js", (r) => r.fulfill({ status: 200, contentType: "text/javascript", body: `export const SITE = null;\nexport const SUPABASE_URL = "${HOST}";\nexport const SUPABASE_ANON_KEY = "${ANON}";\n` }));
   const errs = [];
