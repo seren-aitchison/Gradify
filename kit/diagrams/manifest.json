@@ -8,13 +8,19 @@
    "The adult curve is S-shaped (sigmoid): flat at low partial pressure, steep in the middle, and levelling off near 97% at the partial pressure in the lungs (about 13 kPa).",
    "The curve at high carbon dioxide (the Bohr effect) lies to the right of it: at the same partial pressure, haemoglobin is less saturated, so it has given up more oxygen. An arrow at 4 kPa shows the extra oxygen unloaded.",
    "The fetal haemoglobin curve lies to the left: at the same partial pressure it is more saturated, so it can take oxygen from the mother's blood.",
-   "Shaded bands mark the partial pressures typical of respiring tissue and of the lungs. Curves drawn from the Hill equation with textbook values; real values vary."
+   "Shaded bands mark the partial pressures typical of respiring tissue and of the lungs. Curves are drawn from the Hill equation (n = 2.7) with P50 about 3.6 kPa for adult haemoglobin, 4.4 kPa at high CO₂ and 2.5 kPa for fetal haemoglobin: illustrative values, and real ones vary."
   ],
   "course": "biology",
   "lesson": "Oxygen transport",
   "renderer": "graph",
-  "status": "validated",
-  "review": null,
+  "status": "ai-reviewed",
+  "review": {
+   "status": "ai-reviewed",
+   "by": "independent AI reviewer (two rounds)",
+   "date": "2026-11-20",
+   "notes": "Round 1: Bohr shift exaggerated (P50 4.8); now 4.4 kPa and labelled illustrative. Round 2: approve.",
+   "awaiting": "approval by a named subject reviewer"
+  },
   "checks": [
    {
     "name": "the lesson exists",
@@ -42,7 +48,7 @@
    {
     "name": "high CO₂ curve lies to the right (lower saturation at the same pO₂)",
     "ok": true,
-    "detail": "37.94 < 57.06"
+    "detail": "43.6 < 57.06"
    },
    {
     "name": "fetal curve lies to the left (higher affinity)",
@@ -53,19 +59,25 @@
  },
  "bus-supply-demand": {
   "title": "Equilibrium, and what an increase in demand does",
-  "caption": "Equilibrium is where the curves cross: P = 20, Q = 60 for the worked example. Above it there is a surplus that pushes price down. If demand increases (D → D₂), price and quantity both rise, to P = 25, Q = 70.",
+  "caption": "Equilibrium is where the curves cross: P = 20, Q = 60 for the worked example. Below it, at P = 15, buyers want 70 but sellers offer only 50: a shortage of 20 that pushes the price up. If demand increases (D → D₂), price and quantity both rise, to P = 25, Q = 70.",
   "alt": "Supply and demand diagram with price on the vertical axis and quantity on the horizontal. Demand and supply cross at price 20, quantity 60. Demand shifting right moves equilibrium to price 25, quantity 70.",
   "description": [
    "Price is on the vertical axis and quantity on the horizontal axis, as is conventional in economics.",
    "The demand curve D (Qd = 100 − 2P) slopes down; the supply curve S (Qs = 20 + 2P) slopes up. They cross at the equilibrium E: price 20, quantity 60.",
-   "At a price of 30, quantity supplied (80) is greater than quantity demanded (40): a surplus of 40, shown by a double-headed arrow, which pushes the price down towards equilibrium.",
+   "At a price of 15, quantity demanded (70) is greater than quantity supplied (50): a shortage of 20, shown by a double-headed arrow between the two curves, which pushes the price up towards equilibrium.",
    "A dashed curve D₂ (Qd = 120 − 2P) shows an increase in demand. It crosses supply at E₂: price 25, quantity 70. Both price and quantity have risen."
   ],
   "course": "business",
   "lesson": "Supply and market equilibrium",
   "renderer": "graph",
-  "status": "validated",
-  "review": null,
+  "status": "ai-reviewed",
+  "review": {
+   "status": "ai-reviewed",
+   "by": "independent AI reviewer (two rounds)",
+   "date": "2026-11-20",
+   "notes": "Round 1: phone label clipped; surplus arrow crossed D₂; fixed by showing the shortage at P = 15. Round 2: approve.",
+   "awaiting": "approval by a named subject reviewer"
+  },
   "checks": [
    {
     "name": "the lesson exists",
@@ -91,31 +103,37 @@
     "detail": "60-x/2 → 25, (x-20)/2 → 25"
    },
    {
-    "name": "at P = 30, quantity demanded is 40",
+    "name": "at P = 15, quantity demanded is 70",
     "ok": true,
-    "detail": "y(40) = 30"
+    "detail": "y(70) = 15"
    },
    {
-    "name": "at P = 30, quantity supplied is 80 (a surplus of 40)",
+    "name": "at P = 15, quantity supplied is 50 (a shortage of 20)",
     "ok": true,
-    "detail": "y(80) = 30"
+    "detail": "y(50) = 15"
    }
   ]
  },
  "chem-br2-bromonium": {
-  "title": "Adding Br₂ to ethene: the bromonium ion",
-  "caption": "The approaching π bond polarises Br₂. The π electrons bond to the near bromine, which uses a lone pair to bond to the other carbon, giving a three-membered bromonium ion. Bromide then opens the ring from the opposite face, which is why addition is anti.",
-  "alt": "Mechanism of bromine adding to ethene through a cyclic bromonium ion, which bromide opens from the opposite face to give 1,2-dibromoethane.",
+  "title": "Adding Br₂ to cyclohexene: anti addition through a bromonium ion",
+  "caption": "The approaching π bond polarises Br₂. The π electrons bond to the near bromine, which uses a lone pair to bond to the other carbon, giving a bromonium ion that bridges the top face of the ring (wedges). The top face is blocked, so bromide attacks from the bottom face and that bromine ends up on a hash. The two bromines end up on opposite faces: trans-1,2-dibromocyclohexane.",
+  "alt": "Mechanism of bromine adding to cyclohexene: a bromonium ion forms on the top face, bromide opens it from the bottom face, giving trans-1,2-dibromocyclohexane.",
   "description": [
-   "Left: ethene and a bromine molecule, polarised δ+ on the near bromine and δ− on the far one. Three curly arrows: from the C=C bond to the near bromine; from a lone pair on that bromine back to the other carbon; and from the Br–Br bond to the far bromine.",
-   "Middle: a cyclic bromonium ion, a three-membered ring of two carbons and a positively charged bromine, with a bromide ion on the opposite side. A curly arrow goes from a lone pair on bromide to one ring carbon, and another from that carbon's bond to the ring bromine back onto the bromine.",
-   "Right: 1,2-dibromoethane. The two bromines arrived from opposite faces."
+   "Left: cyclohexene with a bromine molecule above its double bond, polarised δ+ on the near bromine and δ− on the far one. Three curly arrows: from the C=C bond to the near bromine; from a lone pair on that bromine back to the other double-bond carbon; and from the Br–Br bond to the far bromine.",
+   "Middle: the bromonium ion. A positively charged bromine bridges the two former double-bond carbons; both of its bonds are drawn as wedges, so it sits on the top face of the ring. A bromide ion approaches the right-hand carbon. A curly arrow goes from a lone pair on bromide to that carbon, and another from that carbon's bond to the bridging bromine back onto the bromine.",
+   "Right: trans-1,2-dibromocyclohexane. One bromine is on a wedge (top face) and the other on a hash (bottom face): the two bromines added to opposite faces, which is anti addition."
   ],
   "course": "chemistry",
   "lesson": "Electrophilic addition",
   "renderer": "mechanism",
-  "status": "validated",
-  "review": null,
+  "status": "ai-reviewed",
+  "review": {
+   "status": "ai-reviewed",
+   "by": "independent AI reviewer (two rounds)",
+   "date": "2026-11-20",
+   "notes": "Round 1: ethene could not show anti addition; replaced by cyclohexene → trans-1,2-dibromocyclohexane with a drawn-trans check. Round 2: approve with a caption wording fix, applied.",
+   "awaiting": "approval by a named subject reviewer"
+  },
   "checks": [
    {
     "name": "the lesson exists",
@@ -133,22 +151,27 @@
    {
     "name": "stage 1 is a valid structure",
     "ok": true,
-    "detail": "[Br:3][Br:4].[CH2:1]=[CH2:2]"
+    "detail": "[Br:3][Br:4].[CH:1]1=[CH:2][CH2:5][CH2:6][CH2:7][CH2:8]1"
    },
    {
     "name": "stage 2 is a valid structure",
     "ok": true,
-    "detail": "[Br-:4].[CH2:1]1[CH2:2][Br+:3]1"
+    "detail": "[Br-:4].[CH:1]12[CH:2]([Br+:3]1)[CH2:5][CH2:6][CH2:7][CH2:8]2"
    },
    {
     "name": "stage 3 is a valid structure",
     "ok": true,
-    "detail": "[CH2:1]([CH2:2][Br:4])[Br:3]"
+    "detail": "[CH:1]1([Br:3])[CH:2]([Br:4])[CH2:5][CH2:6][CH2:7][CH2:8]1"
+   },
+   {
+    "name": "stage 3: drawn stereocentres 1 and 2 are trans",
+    "ok": true,
+    "detail": "atom 1 reads R, atom 2 reads R (equal labels = trans for 1,2-dibromocyclohexane)"
    },
    {
     "name": "stages 1→2 conserve atoms and charge",
     "ok": true,
-    "detail": "charge 0→0, implicit H 4→4"
+    "detail": "charge 0→0, implicit H 10→10"
    },
    {
     "name": "curly arrows on stage 1 give stage 2",
@@ -158,7 +181,7 @@
    {
     "name": "stages 2→3 conserve atoms and charge",
     "ok": true,
-    "detail": "charge 0→0, implicit H 4→4"
+    "detail": "charge 0→0, implicit H 10→10"
    },
    {
     "name": "curly arrows on stage 2 give stage 3",
@@ -169,18 +192,24 @@
  },
  "chem-hbr-propene": {
   "title": "Adding HBr to propene",
-  "caption": "Step 1: the π electrons attack the δ+ hydrogen and the H–Br bond breaks, leaving the more stable secondary carbocation. Step 2: bromide's lone pair bonds to the positive carbon. The major product is 2-bromopropane.",
+  "caption": "Step 1: the π electrons attack the δ+ hydrogen and the H–Br bond breaks. Hydrogen adds to the end carbon, so the positive charge sits on the middle carbon: a secondary carbocation, more stable than the primary one the other way round would give. Step 2: bromide's lone pair bonds to the positive carbon. The major product is 2-bromopropane; 1-bromopropane forms only as a minor product.",
   "alt": "Mechanism of HBr adding to propene: the π bond attacks hydrogen to form a secondary carbocation and bromide, then bromide attacks the carbocation to give 2-bromopropane.",
   "description": [
    "Left: propene and hydrogen bromide, with δ+ on hydrogen and δ− on bromine. A curly arrow goes from the C=C double bond to the hydrogen. A second curly arrow goes from the H–Br bond to bromine.",
-   "Middle: a secondary carbocation (positive charge on the middle carbon, which is bonded to two other carbons) and a bromide ion. A curly arrow goes from a lone pair on bromide to the positive carbon.",
+   "Middle: the secondary carbocation CH₃–C⁺H–CH₃ (positive charge on the middle carbon, bonded to two other carbons) and a bromide ion. A curly arrow goes from a lone pair on bromide to the positive carbon.",
    "Right: 2-bromopropane, the major product. Hydrogen added to the end carbon and bromine to the middle carbon."
   ],
   "course": "chemistry",
   "lesson": "Electrophilic addition",
   "renderer": "mechanism",
-  "status": "validated",
-  "review": null,
+  "status": "ai-reviewed",
+  "review": {
+   "status": "ai-reviewed",
+   "by": "independent AI reviewer (two rounds)",
+   "date": "2026-11-20",
+   "notes": "Round 1: added H drawn as a stray –H; minor route not shown; fixed (CH3 label; caption explains the less stable primary cation). Round 2: approve.",
+   "awaiting": "approval by a named subject reviewer"
+  },
   "checks": [
    {
     "name": "the lesson exists",
@@ -243,8 +272,14 @@
   "course": "chemistry",
   "lesson": "Reaction energy profiles",
   "renderer": "energy-profile",
-  "status": "validated",
-  "review": null,
+  "status": "ai-reviewed",
+  "review": {
+   "status": "ai-reviewed",
+   "by": "independent AI reviewer (two rounds)",
+   "date": "2026-11-20",
+   "notes": "Round 1: labels on curves, no plateaus; fixed. Round 2: products label moved below the curve end.",
+   "awaiting": "approval by a named subject reviewer"
+  },
   "checks": [
    {
     "name": "the lesson exists",
@@ -323,18 +358,24 @@
  },
  "chem-sn2-mechanism": {
   "title": "SN2: hydroxide and (R)-2-bromobutane",
-  "caption": "One concerted step. The lone pair on hydroxide attacks carbon from the side opposite bromine while the C–Br bond breaks, so the other three groups flip over like an umbrella in the wind.",
+  "caption": "One concerted step, (R) → (S). The lone pair on hydroxide attacks carbon from the side opposite bromine while the C–Br bond breaks. In the transition state carbon is partly bonded to both, with the other three groups flat; they then flip over like an umbrella in the wind.",
   "alt": "SN2 mechanism: hydroxide attacks the carbon of (R)-2-bromobutane from the back, passes through a five-coordinate transition state, and gives (S)-butan-2-ol and bromide.",
   "description": [
-   "Left: hydroxide ion and (R)-2-bromobutane. A curly arrow goes from a lone pair on the oxygen of hydroxide to the carbon bonded to bromine, approaching from the side opposite the bromine. A second curly arrow goes from the C–Br bond to the bromine atom.",
-   "Middle, in square brackets with a double dagger: the transition state. Oxygen and bromine are both partly bonded to carbon (dashed lines) on opposite sides; the methyl, ethyl and hydrogen lie flat in one plane. Oxygen and bromine each carry a partial negative charge.",
-   "Right: (S)-butan-2-ol and bromide ion. The hydroxyl group is now on the side the hydroxide came from, and the other three groups have flipped to the other side: inversion of configuration."
+   "Left: hydroxide ion and (R)-2-bromobutane, drawn with the methyl group on a wedge (towards you) and the hydrogen on a hash (away from you). A curly arrow goes from a lone pair on the oxygen of hydroxide to the carbon bonded to bromine, approaching from the side opposite the bromine. A second curly arrow goes from the C–Br bond to the bromine atom.",
+   "Middle, in square brackets with a double dagger: the transition state. Oxygen and bromine are both partly bonded to carbon (dashed lines) on opposite sides. The hydrogen, methyl (wedge) and ethyl (hash) lie in one plane at right angles to the O–C–Br line. Oxygen and bromine each carry a partial negative charge.",
+   "Right: (S)-butan-2-ol and bromide ion. The hydroxyl group is on the side the hydroxide came from, and the other three groups have flipped to the other side, the mirror image of the starting arrangement: inversion of configuration."
   ],
   "course": "chemistry",
   "lesson": "SN2 mechanisms",
   "renderer": "mechanism",
-  "status": "validated",
-  "review": null,
+  "status": "ai-reviewed",
+  "review": {
+   "status": "ai-reviewed",
+   "by": "independent AI reviewer (two rounds)",
+   "date": "2026-11-20",
+   "notes": "Round 1: TS drawn flat, single stereo bond, caption lacked R→S; fixed (wedge/hash in all stages, drawn-stereo check added). Round 2: approve; R/S re-derived by hand from the drawn wedges.",
+   "awaiting": "approval by a named subject reviewer"
+  },
   "checks": [
    {
     "name": "the lesson exists",
@@ -370,9 +411,19 @@
     "detail": "as stated: atom 3 is R"
    },
    {
+    "name": "stage 1: the wedges and hashes as drawn encode the stated R/S",
+    "ok": true,
+    "detail": "atom 3 reads as R"
+   },
+   {
     "name": "stage 3 CIP labels",
     "ok": true,
     "detail": "as stated: atom 3 is S"
+   },
+   {
+    "name": "stage 3: the wedges and hashes as drawn encode the stated R/S",
+    "ok": true,
+    "detail": "atom 3 reads as S"
    },
    {
     "name": "stages 1→3 conserve atoms and charge",
@@ -388,19 +439,24 @@
  },
  "law-duty-of-care": {
   "title": "Does a duty of care exist?",
-  "caption": "After Robinson, start with precedent, not with a three-stage test. Only a genuinely novel situation calls for incremental reasoning by analogy, using the Caparo factors. Omissions and harm caused by third parties are the main exception to liability for positive acts.",
-  "alt": "Decision tree for whether a duty of care exists in negligence, following Robinson v Chief Constable of West Yorkshire Police and Caparo v Dickman.",
+  "caption": "After Robinson, start with precedent rather than a three-stage test. Precedent can deny a duty as well as recognise one. Only a genuinely novel situation calls for incremental reasoning by analogy, with the Caparo factors weighed together. Separately, there is generally no duty to protect others from harm caused by third parties or to rescue, unless an exception applies.",
+  "alt": "Decision tree for whether a duty of care exists in negligence, following Robinson v Chief Constable of West Yorkshire Police, Caparo v Dickman and the omissions rule.",
   "description": [
-   "Question 1: did the defendant's own positive act cause the harm? If no (an omission, or harm done by a third party), there is generally no duty unless the defendant created the danger, assumed responsibility, or had control of the third party or the source of danger (Smith v Littlewoods; N v Poole BC).",
-   "Question 2: is the situation genuinely novel, with no established category or precedent? If no, a duty exists: apply the established category, such as road users or doctor and patient (Robinson).",
-   "Question 3: by analogy with established categories, was the damage reasonably foreseeable, and was there sufficient proximity? If no, no duty.",
-   "Question 4: is it fair, just and reasonable to impose a duty? If no, no duty. If yes, a new duty is recognised incrementally (Caparo)."
+   "Question 1: is the claim that the defendant's own act made the claimant worse off, or, if it is about failing to protect them from harm, does an exception apply (the defendant created the danger, assumed responsibility, or had control of the third party or the source of danger)? If no, there is generally no duty: no general duty to prevent harm caused by third parties or to rescue (Smith v Littlewoods; N v Poole BC).",
+   "Question 2: is the situation genuinely novel, with no precedent deciding it? If no, follow the precedent: there is a duty where it recognises one (for example road users, doctor and patient), provided the kind of harm to this claimant was reasonably foreseeable; there is no duty where precedent excludes one (Robinson).",
+   "If the situation is novel: develop the law incrementally, by analogy with established categories, weighing reasonable foreseeability of damage, proximity, and whether it is fair, just and reasonable to impose a duty, together rather than as separate gates (Caparo; Robinson)."
   ],
   "course": "law",
   "lesson": "Duty of care",
   "renderer": "decision-tree",
-  "status": "validated",
-  "review": null,
+  "status": "ai-reviewed",
+  "review": {
+   "status": "ai-reviewed",
+   "by": "independent AI reviewer (two rounds)",
+   "date": "2026-11-20",
+   "notes": "Round 1: REJECTED (not novel ≠ duty exists; omissions branch a dead end; Caparo as sequential gates). Rebuilt to follow Robinson. Round 2: approve; the lesson's own K: line, which contradicted Robinson, was corrected.",
+   "awaiting": "approval by a named subject reviewer"
+  },
   "checks": [
    {
     "name": "the lesson exists",
@@ -438,15 +494,21 @@
   "alt": "Graph of a curve y = f(x) with a maximum at (4, 6), and its transformations y = 3f(x − 1), with maximum at (5, 18), and y = f(2x) − 5, with maximum at (2, 1).",
   "description": [
    "Three downward parabolas on one set of axes. The original curve y = f(x) has its maximum at (4, 6).",
-   "y = 3f(x − 1) is the same shape moved 1 to the right and stretched vertically by 3: it is three times as tall and its maximum is at (5, 18).",
-   "y = f(2x) − 5 is squeezed horizontally by a factor of 1/2 and moved down 5: it is narrower and its maximum is at (2, 1).",
+   "y = 3f(x − 1) is the curve moved 1 to the right and stretched parallel to the y-axis by scale factor 3: it is three times as tall and its maximum is at (5, 18).",
+   "y = f(2x) − 5 is stretched parallel to the x-axis by scale factor ½ (so it is narrower) and translated 5 down: its maximum is at (2, 1).",
    "Arrows run from (4, 6) to each new maximum."
   ],
   "course": "maths",
   "lesson": "Transformations of Functions",
   "renderer": "graph",
-  "status": "validated",
-  "review": null,
+  "status": "ai-reviewed",
+  "review": {
+   "status": "ai-reviewed",
+   "by": "independent AI reviewer (two rounds)",
+   "date": "2026-11-20",
+   "notes": "Round 1: label collisions, description wording; fixed with exam wording. Round 2: legend moved to the empty top-left.",
+   "awaiting": "approval by a named subject reviewer"
+  },
   "checks": [
    {
     "name": "the lesson exists",
@@ -480,7 +542,7 @@
  },
  "phys-converging-lens": {
   "title": "Ray diagrams for a converging lens",
-  "caption": "Use the ray rules: a ray parallel to the axis passes through F; a ray through the centre is undeviated; a ray through F emerges parallel. Where they meet is the image. At 2F the image is real, inverted and the same size; inside F the rays diverge and only appear to come from a virtual, upright, magnified image.",
+  "caption": "A lens with f = 10 cm. Use the ray rules: a ray parallel to the axis passes through F; a ray through the centre is undeviated; a ray through F emerges parallel. Where they meet is the image. At 2F the image is real, inverted and the same size; inside F the rays diverge and only appear to come from a virtual, upright, magnified image.",
   "alt": "Three ray diagrams for a converging lens of focal length 10 cm: object beyond 2F, object at 2F, and object inside F.",
   "description": [
    "Each panel shows the principal axis, a converging lens drawn as a vertical double-headed arrow, and the focal points F and 2F on both sides. The lens has focal length 10 cm.",
@@ -491,8 +553,14 @@
   "course": "physics",
   "lesson": "Thin lenses",
   "renderer": "rays",
-  "status": "validated",
-  "review": null,
+  "status": "ai-reviewed",
+  "review": {
+   "status": "ai-reviewed",
+   "by": "independent AI reviewer (two rounds)",
+   "date": "2026-11-20",
+   "notes": "Round 1: label overlaps; caption did not give f; fixed. Round 2: remaining label offsets fixed.",
+   "awaiting": "approval by a named subject reviewer"
+  },
   "checks": [
    {
     "name": "the lesson exists",
@@ -541,18 +609,24 @@
  },
  "phys-fbd-slope": {
   "title": "Box pushed up a rough slope by a horizontal force",
-  "caption": "Four forces, each with a physical source. Weight acts from the centre of mass straight down; the normal force is perpendicular to the slope; friction acts down the slope, opposing the motion; the push P is horizontal. Resolving perpendicular to the slope gives N = mg cos θ + P sin θ.",
+  "caption": "Four forces, each with a physical source. Weight acts from the centre of mass straight down; the normal force is perpendicular to the slope; friction acts down the slope, opposing the motion; the push P is horizontal. Because P presses the box into the slope, N is bigger than mg here: resolving perpendicular to the slope gives N = mg cos θ + P sin θ.",
   "alt": "Free-body diagram of a box on a slope at angle theta, with weight down, normal force perpendicular to the slope, friction down the slope and a horizontal push.",
   "description": [
    "A right-angled slope rising to the right at angle theta, with a box resting on it.",
    "Weight, mg, is drawn straight down from the box's centre of mass. The normal force, N, is drawn from the contact face, perpendicular to the slope, pointing away from it. Friction, f, is drawn along the contact face, pointing down the slope. The push, P, is a horizontal arrow arriving at the box from the left.",
-   "Because P is horizontal, part of it presses the box into the slope, so the normal force is bigger than mg cos theta: N = mg cos theta + P sin theta."
+   "Because P is horizontal, part of it presses the box into the slope, so the normal force is bigger than mg cos theta: N = mg cos theta + P sin theta. With m = 2 kg, P = 15 N and theta = 25 degrees, N is about 24 N against a weight of about 20 N, and the arrows are drawn to that scale (friction's size is illustrative)."
   ],
   "course": "physics",
   "lesson": "Free-body diagrams",
   "renderer": "free-body",
-  "status": "validated",
-  "review": null,
+  "status": "ai-reviewed",
+  "review": {
+   "status": "ai-reviewed",
+   "by": "independent AI reviewer (two rounds)",
+   "date": "2026-11-20",
+   "notes": "Round 1: N drawn shorter than mg, an acceleration note with no arrow; fixed (arrows to scale for m = 2 kg, P = 15 N). Round 2: approve.",
+   "awaiting": "approval by a named subject reviewer"
+  },
   "checks": [
    {
     "name": "the lesson exists",
@@ -591,17 +665,24 @@
  },
  "phys-kirchhoff-loop": {
   "title": "Two opposing cells in one loop",
-  "caption": "Go round the loop: the 6 V cell is a rise, the 2 V cell (facing the other way) is a drop, and the resistance takes the rest. ΣEMF = ΣIR gives 6 − 2 = I × 4, so I = 1 A, driven by the 6 V cell.",
+  "caption": "Go round the loop: the 6 V cell is a rise, the 2 V cell (facing the other way) is a drop, and the resistance takes the rest. ΣEMF = ΣIR gives 6 − 2 = I × 4, so I = 1 A, driven by the 6 V cell. The 2 V cell has current forced through it backwards, so it is being charged.",
   "alt": "Circuit with a 6 volt cell and a 2 volt cell facing opposite ways in a single loop with a 4 ohm resistor; a current of 1 amp flows clockwise.",
   "description": [
    "A single rectangular loop. On the top wire is a 6 V cell with its positive (long) plate on the right. On the bottom wire are a 4 ohm resistor and a 2 V cell whose positive plate is also on the right, so it pushes the other way round the loop.",
-   "Arrows on the side wires show the current flowing clockwise: down the right-hand side and up the left. The current is 1 A."
+   "Arrows on the side wires show the current flowing clockwise: down the right-hand side and up the left. The current is 1 A.",
+   "Because the current flows into the 2 V cell's positive terminal, that cell is being charged."
   ],
   "course": "physics",
   "lesson": "Kirchhoff's laws",
   "renderer": "circuit",
-  "status": "validated",
-  "review": null,
+  "status": "ai-reviewed",
+  "review": {
+   "status": "ai-reviewed",
+   "by": "independent AI reviewer (two rounds)",
+   "date": "2026-11-20",
+   "notes": "Approved in both rounds; caption now notes the 2 V cell is being charged.",
+   "awaiting": "approval by a named subject reviewer"
+  },
   "checks": [
    {
     "name": "the lesson exists",

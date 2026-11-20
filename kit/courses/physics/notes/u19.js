@@ -127,6 +127,7 @@ H: Types
 - **Converging (convex)**: thicker in the middle; positive focal length; forms real images of distant objects.
 - **Diverging (concave)**: thinner in the middle; negative focal length; virtual images only.
 - Power P = 1/f (dioptres, D): +2 D lens has f = 50 cm.
+- Thin lenses in contact combine by adding powers: P = P_{1} + P_{2}.
 H: Lensmaker's equation
 E: 1/f = (n − 1)(1/R_{1} − 1/R_{2})
 - Focal length depends on curvature and refractive index (and so on wavelength: chromatic aberration).
@@ -139,7 +140,6 @@ H: Ray rules
 D: phys-converging-lens
 X: A biconvex lens (n = 1.5) with radii 20 cm and −20 cm. Focal length?
 > 1/f = 0.5(1/20 + 1/20) = 0.05 ⇒ f = 20 cm
-- Thin lenses in contact combine by adding powers: P = P_{1} + P_{2}.
 !: Thinking a converging lens always forms a real image. An object inside F gives a virtual, upright, magnified image on the same side as the object.
 P: **Investigate with the lab.** Make a real, inverted image the same size as the object with a converging lens. Then try a diverging lens.
 IX: optics

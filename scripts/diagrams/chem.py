@@ -133,6 +133,18 @@ def validate(spec):
             bad = {k: (v, got.get(k)) for k, v in cip.items() if got.get(k) != v}
             checks.append({"name": f"stage {i + 1} CIP labels", "ok": not bad,
                            "detail": "as stated: " + ", ".join(f"atom {k} is {v}" for k, v in cip.items()) if not bad else f"stated vs RDKit: {bad}"})
+        st = spec["stages"][i]
+        if st.get("wedges") and (cip or st.get("drawnSame")):
+            got = drawn_cip(st, m)
+            if cip:
+                bad = {k: (v, got.get(k)) for k, v in cip.items() if got.get(k) != v}
+                checks.append({"name": f"stage {i + 1}: the wedges and hashes as drawn encode the stated R/S", "ok": not bad,
+                               "detail": ", ".join(f"atom {k} reads as {got.get(k)}" for k in cip) if not bad else f"stated vs drawn: {bad}"})
+            if st.get("drawnSame"):
+                a, b, want = st["drawnSame"]
+                same = got.get(str(a)) == got.get(str(b)) and got.get(str(a)) is not None
+                checks.append({"name": f"stage {i + 1}: drawn stereocentres {a} and {b} are {want}", "ok": same == (want == "trans"),
+                               "detail": f"atom {a} reads {got.get(str(a))}, atom {b} reads {got.get(str(b))} (equal labels = trans for 1,2-dibromocyclohexane)"})
     # conservation and arrows, between chemical stages (a transition state is illustrative and is skipped)
     chem = [(i, m) for i, m in real if not spec["stages"][i].get("ts")]
     for (i, m), (j, n) in zip(chem, chem[1:]):
@@ -154,14 +166,26 @@ def validate(spec):
 
 
 # ---------------------------------------------------------------- drawing
-def draw_stage(st, mol):
-    """One stage as an SVG fragment in its own pixel box; returns (svg_inner, width, height, atom_xy_by_map)."""
+def drawn_mol(st, mol):
+    """The molecule as drawn: given 2D coordinates, partial bonds, hidden atoms, display labels and hand-set wedges."""
     m = Chem.RWMol(mol)
+    idx = lambda: {a.GetAtomMapNum(): a.GetIdx() for a in m.GetAtoms()}
+    for k in sorted(st.get("hide", []), key=lambda k: -idx()[k]):
+        for nb in m.GetAtomWithIdx(idx()[k]).GetNeighbors():
+            nb.SetNoImplicit(True)
+        m.RemoveAtom(idx()[k])
     for pair in st.get("partial", []):
-        idx = {a.GetAtomMapNum(): a.GetIdx() for a in m.GetAtoms()}
-        i, j = idx[pair[0]], idx[pair[1]]
+        i, j = idx()[pair[0]], idx()[pair[1]]
         if m.GetBondBetweenAtoms(i, j) is None:
             m.AddBond(i, j, Chem.BondType.ZERO)
+    for k, lab in st.get("labels", {}).items():
+        m.GetAtomWithIdx(idx()[int(k)]).SetProp("_displayLabel", lab)
+    for a, b, kind in st.get("wedges", []):
+        i, j = idx()[a], idx()[b]
+        bt = m.GetBondBetweenAtoms(i, j).GetBondType()
+        m.RemoveBond(i, j)
+        m.AddBond(i, j, bt)  # begins at the stereocentre, as a wedge must
+        m.GetBondBetweenAtoms(i, j).SetBondDir(Chem.BondDir.BEGINWEDGE if kind == "wedge" else Chem.BondDir.BEGINDASH)
     conf = Chem.Conformer(m.GetNumAtoms())
     xy = {int(k): v for k, v in st["xy"].items()}
     for a in m.GetAtoms():
@@ -172,6 +196,25 @@ def draw_stage(st, mol):
     if st.get("ts"):
         for a in m.GetAtoms():
             a.SetNumRadicalElectrons(0); a.SetNoImplicit(True)
+    return m
+
+
+def drawn_cip(st, mol):
+    """R/S as a reader would assign them from the wedges and hashes actually drawn."""
+    m = Chem.Mol(drawn_mol(st, mol))
+    Chem.SanitizeMol(m)
+    for a in m.GetAtoms():
+        a.SetChiralTag(Chem.ChiralType.CHI_UNSPECIFIED)
+    Chem.AssignChiralTypesFromBondDirs(m)
+    Chem.AssignStereochemistry(m, cleanIt=True, force=True)
+    rdCIPLabeler.AssignCIPLabels(m)
+    return {str(a.GetAtomMapNum()): a.GetPropsAsDict().get("_CIPCode") for a in m.GetAtoms()}
+
+
+def draw_stage(st, mol):
+    """One stage as an SVG fragment in its own pixel box; returns (svg_inner, width, height, atom_xy_by_map)."""
+    m = drawn_mol(st, mol)
+    xy = {int(k): v for k, v in st["xy"].items() if int(k) not in st.get("hide", [])}
     maps = {a.GetIdx(): a.GetAtomMapNum() for a in m.GetAtoms()}
     for a in m.GetAtoms():
         a.SetAtomMapNum(0)
@@ -193,7 +236,7 @@ def draw_stage(st, mol):
     o.setBackgroundColour((1, 1, 1, 0))
     # an explicitly given geometry is kept as drawn; RDKit chooses wedges that match the stereochemistry
     from rdkit.Chem.Draw import rdMolDraw2D as R
-    pm = R.PrepareMolForDrawing(m, kekulize=True, addChiralHs=False, wedgeBonds=True)
+    pm = R.PrepareMolForDrawing(m, kekulize=True, addChiralHs=False, wedgeBonds=not st.get("wedges"))
     d.DrawMolecule(pm)
     d.FinishDrawing()
     svg = d.GetDrawingText()
@@ -234,7 +277,8 @@ def arrows_svg(st, pos, ox, oy):
         if "lp" in src:
             a = pos[src["lp"]]
             ang = math.radians(ar.get("lpAngle", -90))
-            c = (a[0] + math.cos(ang) * 15, a[1] + math.sin(ang) * 15)
+            dist = ar.get("lpDist", 15)
+            c = (a[0] + math.cos(ang) * dist, a[1] + math.sin(ang) * dist)
             px, py = -math.sin(ang) * 3.6, math.cos(ang) * 3.6
             out.append(f'<circle cx="{c[0] + px + ox:.1f}" cy="{c[1] + py + oy:.1f}" r="2.4" fill="{E_COLOUR}"/><circle cx="{c[0] - px + ox:.1f}" cy="{c[1] - py + oy:.1f}" r="2.4" fill="{E_COLOUR}"/>')
             p0 = (c[0] + math.cos(ang) * 5, c[1] + math.sin(ang) * 5)
@@ -301,7 +345,8 @@ def compose(spec, mols, narrow=False):
             if i < len(drawn) - 1:
                 parts.append(step_arrow(spec, i, x + 10, 34 + hmax / 2, x + gap - 10, 34 + hmax / 2))
                 x += gap
-        W, H = x + 20, hmax + 34 + 44
+        last = stages[-1].get("label", "")
+        W, H = x + 20 + max(0, len(last) * 7.6 / 2 - drawn[-1][1] / 2), hmax + 34 + 44
     else:
         wmax = max(w for _, w, _, _ in drawn)
         y = 30
@@ -312,7 +357,7 @@ def compose(spec, mols, narrow=False):
             if i < len(drawn) - 1:
                 parts.append(step_arrow(spec, i, 20 + wmax / 2, y + 8, 20 + wmax / 2, y + gap - 8, vertical=True))
                 y += gap
-        W, H = wmax + 40, y + 30
+        W, H = max(wmax + 40, max(len(st.get('label', '')) * 7.6 + 30 for st in stages)), y + 30
     title = esc(spec.get("alt", spec.get("title", "")))
     return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W:.0f} {H:.0f}" width="{W:.0f}" height="{H:.0f}" role="img" '
             f'aria-label="{title}" style="color:{INK};font-family:inherit">' + "".join(parts) + "</svg>")

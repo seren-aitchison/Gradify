@@ -4,12 +4,12 @@
   "course": "chemistry",
   "lesson": "SN2 mechanisms",
   "title": "SN2: hydroxide and (R)-2-bromobutane",
-  "caption": "One concerted step. The lone pair on hydroxide attacks carbon from the side opposite bromine while the C–Br bond breaks, so the other three groups flip over like an umbrella in the wind.",
+  "caption": "One concerted step, (R) → (S). The lone pair on hydroxide attacks carbon from the side opposite bromine while the C–Br bond breaks. In the transition state carbon is partly bonded to both, with the other three groups flat; they then flip over like an umbrella in the wind.",
   "alt": "SN2 mechanism: hydroxide attacks the carbon of (R)-2-bromobutane from the back, passes through a five-coordinate transition state, and gives (S)-butan-2-ol and bromide.",
   "description": [
-    "Left: hydroxide ion and (R)-2-bromobutane. A curly arrow goes from a lone pair on the oxygen of hydroxide to the carbon bonded to bromine, approaching from the side opposite the bromine. A second curly arrow goes from the C–Br bond to the bromine atom.",
-    "Middle, in square brackets with a double dagger: the transition state. Oxygen and bromine are both partly bonded to carbon (dashed lines) on opposite sides; the methyl, ethyl and hydrogen lie flat in one plane. Oxygen and bromine each carry a partial negative charge.",
-    "Right: (S)-butan-2-ol and bromide ion. The hydroxyl group is now on the side the hydroxide came from, and the other three groups have flipped to the other side: inversion of configuration."
+    "Left: hydroxide ion and (R)-2-bromobutane, drawn with the methyl group on a wedge (towards you) and the hydrogen on a hash (away from you). A curly arrow goes from a lone pair on the oxygen of hydroxide to the carbon bonded to bromine, approaching from the side opposite the bromine. A second curly arrow goes from the C–Br bond to the bromine atom.",
+    "Middle, in square brackets with a double dagger: the transition state. Oxygen and bromine are both partly bonded to carbon (dashed lines) on opposite sides. The hydrogen, methyl (wedge) and ethyl (hash) lie in one plane at right angles to the O–C–Br line. Oxygen and bromine each carry a partial negative charge.",
+    "Right: (S)-butan-2-ol and bromide ion. The hydroxyl group is on the side the hydroxide came from, and the other three groups have flipped to the other side, the mirror image of the starting arrangement: inversion of configuration."
   ],
   "stages": [
     {
@@ -75,6 +75,18 @@
           },
           "bend": 1
         }
+      ],
+      "wedges": [
+        [
+          3,
+          2,
+          "wedge"
+        ],
+        [
+          3,
+          7,
+          "hash"
+        ]
       ]
     },
     {
@@ -124,7 +136,19 @@
         "1": "δ−",
         "4": "δ−"
       },
-      "label": "transition state"
+      "label": "transition state",
+      "wedges": [
+        [
+          3,
+          2,
+          "wedge"
+        ],
+        [
+          3,
+          5,
+          "hash"
+        ]
+      ]
     },
     {
       "smiles": "[OH:1][C@@:3]([H:7])([CH3:2])[CH2:5][CH3:6].[Br-:4]",
@@ -167,7 +191,19 @@
       "cip": {
         "3": "S"
       },
-      "label": "(S)-butan-2-ol"
+      "label": "(S)-butan-2-ol",
+      "wedges": [
+        [
+          3,
+          2,
+          "wedge"
+        ],
+        [
+          3,
+          7,
+          "hash"
+        ]
+      ]
     }
   ],
   "steps": [
@@ -177,5 +213,12 @@
     {
       "label": ""
     }
-  ]
+  ],
+  "review": {
+    "status": "ai-reviewed",
+    "by": "independent AI reviewer (two rounds)",
+    "date": "2026-11-20",
+    "notes": "Round 1: TS drawn flat, single stereo bond, caption lacked R→S; fixed (wedge/hash in all stages, drawn-stereo check added). Round 2: approve; R/S re-derived by hand from the drawn wedges.",
+    "awaiting": "approval by a named subject reviewer"
+  }
 }

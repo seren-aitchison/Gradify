@@ -4,12 +4,12 @@
   "course": "physics",
   "lesson": "Free-body diagrams",
   "title": "Box pushed up a rough slope by a horizontal force",
-  "caption": "Four forces, each with a physical source. Weight acts from the centre of mass straight down; the normal force is perpendicular to the slope; friction acts down the slope, opposing the motion; the push P is horizontal. Resolving perpendicular to the slope gives N = mg cos θ + P sin θ.",
+  "caption": "Four forces, each with a physical source. Weight acts from the centre of mass straight down; the normal force is perpendicular to the slope; friction acts down the slope, opposing the motion; the push P is horizontal. Because P presses the box into the slope, N is bigger than mg here: resolving perpendicular to the slope gives N = mg cos θ + P sin θ.",
   "alt": "Free-body diagram of a box on a slope at angle theta, with weight down, normal force perpendicular to the slope, friction down the slope and a horizontal push.",
   "description": [
     "A right-angled slope rising to the right at angle theta, with a box resting on it.",
     "Weight, mg, is drawn straight down from the box's centre of mass. The normal force, N, is drawn from the contact face, perpendicular to the slope, pointing away from it. Friction, f, is drawn along the contact face, pointing down the slope. The push, P, is a horizontal arrow arriving at the box from the left.",
-    "Because P is horizontal, part of it presses the box into the slope, so the normal force is bigger than mg cos theta: N = mg cos theta + P sin theta."
+    "Because P is horizontal, part of it presses the box into the slope, so the normal force is bigger than mg cos theta: N = mg cos theta + P sin theta. With m = 2 kg, P = 15 N and theta = 25 degrees, N is about 24 N against a weight of about 20 N, and the arrows are drawn to that scale (friction's size is illustrative)."
   ],
   "angle": 25,
   "forces": [
@@ -18,7 +18,7 @@
       "label": "mg",
       "dir": "down",
       "colour": "a1",
-      "len": 92,
+      "len": 78,
       "source": "Earth's gravity",
       "lx": 0,
       "ly": 4
@@ -28,7 +28,7 @@
       "label": "N",
       "dir": "normal",
       "colour": "a4",
-      "len": 84,
+      "len": 96,
       "offset": 12,
       "source": "the slope's surface, perpendicular contact force"
     },
@@ -37,24 +37,31 @@
       "label": "f",
       "dir": "downslope",
       "colour": "a2",
-      "len": 62,
+      "len": 48,
       "source": "the rough slope, opposing sliding",
-      "lx": 6,
-      "ly": -18
+      "lx": 10,
+      "ly": -22
     },
     {
       "name": "push",
       "label": "P",
       "dir": "horizontal-in",
       "colour": "a3",
-      "len": 74,
+      "len": 60,
       "source": "whoever is pushing"
     }
   ],
-  "note": "acceleration is marked separately, not drawn as a force",
+  "note": "arrows drawn to scale for m = 2 kg, P = 15 N, θ = 25°; no ‘ma’ arrow: acceleration is not a force",
   "verify": {
     "m": 2,
     "g": 9.81,
     "P": 15
+  },
+  "review": {
+    "status": "ai-reviewed",
+    "by": "independent AI reviewer (two rounds)",
+    "date": "2026-11-20",
+    "notes": "Round 1: N drawn shorter than mg, an acceleration note with no arrow; fixed (arrows to scale for m = 2 kg, P = 15 N). Round 2: approve.",
+    "awaiting": "approval by a named subject reviewer"
   }
 }

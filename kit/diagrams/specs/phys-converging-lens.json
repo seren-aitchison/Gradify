@@ -1,7 +1,10 @@
 {
-  "id": "phys-converging-lens", "renderer": "rays", "course": "physics", "lesson": "Thin lenses",
+  "id": "phys-converging-lens",
+  "renderer": "rays",
+  "course": "physics",
+  "lesson": "Thin lenses",
   "title": "Ray diagrams for a converging lens",
-  "caption": "Use the ray rules: a ray parallel to the axis passes through F; a ray through the centre is undeviated; a ray through F emerges parallel. Where they meet is the image. At 2F the image is real, inverted and the same size; inside F the rays diverge and only appear to come from a virtual, upright, magnified image.",
+  "caption": "A lens with f = 10 cm. Use the ray rules: a ray parallel to the axis passes through F; a ray through the centre is undeviated; a ray through F emerges parallel. Where they meet is the image. At 2F the image is real, inverted and the same size; inside F the rays diverge and only appear to come from a virtual, upright, magnified image.",
   "alt": "Three ray diagrams for a converging lens of focal length 10 cm: object beyond 2F, object at 2F, and object inside F.",
   "description": [
     "Each panel shows the principal axis, a converging lens drawn as a vertical double-headed arrow, and the focal points F and 2F on both sides. The lens has focal length 10 cm.",
@@ -11,8 +14,33 @@
   ],
   "f": 10,
   "panels": [
-    { "title": "Object beyond 2F", "u": 30, "h": 3, "expect": "real, inverted, diminished", "result": "real, inverted, diminished" },
-    { "title": "Object at 2F", "u": 20, "h": 3, "expect": "real, inverted, same size", "result": "real, inverted, same size" },
-    { "title": "Object inside F", "u": 6, "h": 2, "expect": "virtual, upright, magnified", "result": "virtual, upright, magnified (a magnifying glass)" }
-  ]
+    {
+      "title": "Object beyond 2F",
+      "u": 30,
+      "h": 3,
+      "expect": "real, inverted, diminished",
+      "result": "real, inverted, diminished"
+    },
+    {
+      "title": "Object at 2F",
+      "u": 20,
+      "h": 3,
+      "expect": "real, inverted, same size",
+      "result": "real, inverted, same size"
+    },
+    {
+      "title": "Object inside F",
+      "u": 6,
+      "h": 2,
+      "expect": "virtual, upright, magnified",
+      "result": "virtual, upright, magnified (a magnifying glass)"
+    }
+  ],
+  "review": {
+    "status": "ai-reviewed",
+    "by": "independent AI reviewer (two rounds)",
+    "date": "2026-11-20",
+    "notes": "Round 1: label overlaps; caption did not give f; fixed. Round 2: remaining label offsets fixed.",
+    "awaiting": "approval by a named subject reviewer"
+  }
 }

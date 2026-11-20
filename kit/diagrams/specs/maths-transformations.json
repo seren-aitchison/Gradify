@@ -8,8 +8,8 @@
   "alt": "Graph of a curve y = f(x) with a maximum at (4, 6), and its transformations y = 3f(x − 1), with maximum at (5, 18), and y = f(2x) − 5, with maximum at (2, 1).",
   "description": [
     "Three downward parabolas on one set of axes. The original curve y = f(x) has its maximum at (4, 6).",
-    "y = 3f(x − 1) is the same shape moved 1 to the right and stretched vertically by 3: it is three times as tall and its maximum is at (5, 18).",
-    "y = f(2x) − 5 is squeezed horizontally by a factor of 1/2 and moved down 5: it is narrower and its maximum is at (2, 1).",
+    "y = 3f(x − 1) is the curve moved 1 to the right and stretched parallel to the y-axis by scale factor 3: it is three times as tall and its maximum is at (5, 18).",
+    "y = f(2x) − 5 is stretched parallel to the x-axis by scale factor ½ (so it is narrower) and translated 5 down: its maximum is at (2, 1).",
     "Arrows run from (4, 6) to each new maximum."
   ],
   "range": {
@@ -18,7 +18,7 @@
       9
     ],
     "y": [
-      -6,
+      -9,
       21
     ]
   },
@@ -51,30 +51,15 @@
   "curves": [
     {
       "expr": "6-0.5*(x-4)^2",
-      "colour": "a1",
-      "label": "y = f(x)",
-      "labelAt": [
-        6.6,
-        6.4
-      ]
+      "colour": "a1"
     },
     {
       "expr": "3*(6-0.5*(x-5)^2)",
-      "colour": "a2",
-      "label": "y = 3f(x − 1)",
-      "labelAt": [
-        7.2,
-        17
-      ]
+      "colour": "a2"
     },
     {
       "expr": "6-0.5*(2*x-4)^2-5",
-      "colour": "a4",
-      "label": "y = f(2x) − 5",
-      "labelAt": [
-        4.4,
-        -4.5
-      ]
+      "colour": "a4"
     }
   ],
   "arrows": [
@@ -124,9 +109,9 @@
       "y": 1,
       "label": "(2, 1)",
       "colour": "a4",
-      "dx": 0,
-      "anchor": "middle",
-      "dy": 20
+      "dx": -10,
+      "anchor": "end",
+      "dy": -12
     }
   ],
   "checks": [
@@ -163,5 +148,30 @@
       "y": 1,
       "name": "y = f(2x) − 5 has its maximum at (2, 1)"
     }
-  ]
+  ],
+  "legend": [
+    [
+      "y = f(x)",
+      "a1"
+    ],
+    [
+      "y = 3f(x − 1)",
+      "a2"
+    ],
+    [
+      "y = f(2x) − 5",
+      "a4"
+    ]
+  ],
+  "legendData": [
+    -0.7,
+    19.5
+  ],
+  "review": {
+    "status": "ai-reviewed",
+    "by": "independent AI reviewer (two rounds)",
+    "date": "2026-11-20",
+    "notes": "Round 1: label collisions, description wording; fixed with exam wording. Round 2: legend moved to the empty top-left.",
+    "awaiting": "approval by a named subject reviewer"
+  }
 }

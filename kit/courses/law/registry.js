@@ -99,7 +99,7 @@ export const LESSONS = {
   "u03-36":{"v":2,"hash":"fbab2bc2abc9","updated":"2026-11-03"},
   "u04-01":{"v":2,"hash":"9b973fc2bb03","updated":"2026-11-03"},
   "u04-02":{"v":3,"hash":"dcbefcfb9912","updated":"2026-11-05"},
-  "u04-03":{"v":4,"hash":"ec190e3bb680","updated":"2026-11-20"},
+  "u04-03":{"v":5,"hash":"6c285d09711b","updated":"2026-11-20"},
   "u04-04":{"v":2,"hash":"7ec31be45cee","updated":"2026-11-03"},
   "u04-05":{"v":3,"hash":"59fd0728417a","updated":"2026-11-05"},
   "u04-06":{"v":3,"hash":"17b5f796f5b2","updated":"2026-11-05"},

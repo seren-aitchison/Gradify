@@ -11,7 +11,7 @@
     "The adult curve is S-shaped (sigmoid): flat at low partial pressure, steep in the middle, and levelling off near 97% at the partial pressure in the lungs (about 13 kPa).",
     "The curve at high carbon dioxide (the Bohr effect) lies to the right of it: at the same partial pressure, haemoglobin is less saturated, so it has given up more oxygen. An arrow at 4 kPa shows the extra oxygen unloaded.",
     "The fetal haemoglobin curve lies to the left: at the same partial pressure it is more saturated, so it can take oxygen from the mother's blood.",
-    "Shaded bands mark the partial pressures typical of respiring tissue and of the lungs. Curves drawn from the Hill equation with textbook values; real values vary."
+    "Shaded bands mark the partial pressures typical of respiring tissue and of the lungs. Curves are drawn from the Hill equation (n = 2.7) with P50 about 3.6 kPa for adult haemoglobin, 4.4 kPa at high CO₂ and 2.5 kPa for fetal haemoglobin: illustrative values, and real ones vary."
   ],
   "range": {
     "x": [
@@ -78,10 +78,11 @@
       "dash": "7 5",
       "label": "fetal",
       "labelAt": [
-        1.0,
-        66
+        3.25,
+        82
       ],
-      "width": 2.6
+      "width": 2.6,
+      "anchor": "end"
     },
     {
       "expr": "100*x^2.7/(3.6^2.7+x^2.7)",
@@ -93,7 +94,7 @@
       ]
     },
     {
-      "expr": "100*x^2.7/(4.8^2.7+x^2.7)",
+      "expr": "100*x^2.7/(4.4^2.7+x^2.7)",
       "colour": "a2",
       "dash": "7 5",
       "label": "high CO₂ (Bohr shift)",
@@ -145,7 +146,7 @@
     },
     {
       "type": "order",
-      "a": "100*x^2.7/(4.8^2.7+x^2.7)",
+      "a": "100*x^2.7/(4.4^2.7+x^2.7)",
       "b": "100*x^2.7/(3.6^2.7+x^2.7)",
       "x": 4,
       "rel": "<",
@@ -159,5 +160,12 @@
       "rel": ">",
       "name": "fetal curve lies to the left (higher affinity)"
     }
-  ]
+  ],
+  "review": {
+    "status": "ai-reviewed",
+    "by": "independent AI reviewer (two rounds)",
+    "date": "2026-11-20",
+    "notes": "Round 1: Bohr shift exaggerated (P50 4.8); now 4.4 kPa and labelled illustrative. Round 2: approve.",
+    "awaiting": "approval by a named subject reviewer"
+  }
 }

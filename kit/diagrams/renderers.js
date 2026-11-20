@@ -114,12 +114,12 @@ function graph(spec, W, H) {
     s += `<path d="${pathOf(pts)}" fill="none" stroke="${col(c.colour || "a1")}" stroke-width="${c.width || 3}" stroke-linecap="round" stroke-linejoin="round"${c.dash ? ` stroke-dasharray="${c.dash}"` : ""} clip-path="url(#${clipId})"/>`;
     if (c.label) { const [lx, ly] = c.labelAt; s += text(sx(lx), sy(ly), c.label, { size: 13, weight: 700, fill: col(c.colour || "a1"), anchor: c.anchor || "start" }); }
   }
-  for (const a of spec.arrows || []) s += arrow(sx(a.from[0]), sy(a.from[1]), sx(a.to[0]), sy(a.to[1]), { stroke: col(a.colour || "ink"), w: 2, head: 9, dash: a.dash || "" }) + (a.label ? (a.labelAt ? text(sx(a.labelAt[0]), sy(a.labelAt[1]), a.label, { size: 12.5, weight: 600, anchor: "start", fill: col(a.colour || "ink") }) : text((sx(a.from[0]) + sx(a.to[0])) / 2 + (a.dx || 0), (sy(a.from[1]) + sy(a.to[1])) / 2 + (a.dy || -12), a.label, { size: 12.5, weight: 600, fill: col(a.colour || "ink") })) : "");
+  for (const a of spec.arrows || []) s += arrow(sx(a.from[0]), sy(a.from[1]), sx(a.to[0]), sy(a.to[1]), { stroke: col(a.colour || "ink"), w: 2, head: 9, dash: a.dash || "", both: !!a.both }) + (a.label ? (a.labelAt ? text(sx(a.labelAt[0]), sy(a.labelAt[1]), a.label, { size: 12.5, weight: 600, anchor: a.anchor || "start", fill: col(a.colour || "ink") }) : text((sx(a.from[0]) + sx(a.to[0])) / 2 + (a.dx || 0), (sy(a.from[1]) + sy(a.to[1])) / 2 + (a.dy || -12), a.label, { size: 12.5, weight: 600, fill: col(a.colour || "ink") })) : "");
   for (const p of spec.points || []) {
     s += `<circle cx="${f1(sx(p.x))}" cy="${f1(sy(p.y))}" r="5" fill="${col(p.colour || "ink")}" stroke="${C.panel}" stroke-width="2"/>`;
     if (p.label) s += text(sx(p.x) + (p.dx ?? 10), sy(p.y) + (p.dy ?? -12), p.label, { size: 13, weight: 600, anchor: p.anchor || "start", fill: col(p.colour || "ink") });
   }
-  if (spec.legend) s += legend(spec.legend, spec.legendAt?.[0] ?? pad.l + 14, spec.legendAt?.[1] ?? pad.t + 10);
+  if (spec.legend) s += legend(spec.legend, spec.legendData ? sx(spec.legendData[0]) : spec.legendAt?.[0] ?? pad.l + 14, spec.legendData ? sy(spec.legendData[1]) : spec.legendAt?.[1] ?? pad.t + 10);
   return s;
 }
 
@@ -154,8 +154,8 @@ function graphChecks(spec) {
 // points: [{x, e, kind: "start" | "ts" | "int" | "end", label}], one panel per profile; half-cosine segments between
 // extremes, so every transition state is a smooth maximum and every intermediate a smooth minimum
 function profilePanel(p, x, y, w, h, opt) {
-  const es = p.points.map((q) => q.e), lo = Math.min(...es) - 12, hi = Math.max(...es) + 18;
-  const X = (t) => x + 28 + t * (w - 46), Y = (e) => y + h - 30 - ((e - lo) / (hi - lo)) * (h - 70);
+  const es = p.points.map((q) => q.e), lo = Math.min(...es) - 24, hi = Math.max(...es) + 18;
+  const X = (t) => x + 34 + (0.1 + t * 0.8) * (w - 52), Y = (e) => y + h - 30 - ((e - lo) / (hi - lo)) * (h - 70);
   let s = arrow(x + 18, y + h - 30, x + 18, y + 26, { w: 1.6, head: 8 }) + arrow(x + 18, y + h - 30, x + w - 6, y + h - 30, { w: 1.6, head: 8 });
   s += text(x + 4, y + (h - 4) / 2, "energy", { size: 12, fill: C.soft, anchor: "middle" }).replace("<text", `<text transform="rotate(-90 ${f1(x + 4)} ${f1(y + (h - 4) / 2)})"`);
   s += text(x + w - 6, y + h - 12, "reaction progress", { size: 12, fill: C.soft, anchor: "end" });
@@ -165,12 +165,14 @@ function profilePanel(p, x, y, w, h, opt) {
     const a = p.points[i], b = p.points[i + 1];
     for (let k = 0; k <= 40; k++) { const t = k / 40, u = (1 - Math.cos(Math.PI * t)) / 2; pts.push([X(a.x + (b.x - a.x) * t), Y(a.e + (b.e - a.e) * u)]); }
   }
+  const first = p.points[0], last = p.points.at(-1);
+  pts.unshift([X(first.x) - 0.1 * (w - 52), Y(first.e)]); pts.push([X(last.x) + 0.08 * (w - 52), Y(last.e)]);
   s += `<path d="${pathOf(pts)}" fill="none" stroke="${col(p.colour || "a1")}" stroke-width="3.2" stroke-linejoin="round"/>`;
   const start = p.points[0];
   s += line(X(start.x) - 6, Y(start.e), X(p.points.at(-1).x) + 6, Y(start.e), { stroke: C.line, w: 1.2, dash: "4 4" });
   for (const q of p.points) {
     const lab = q.kind === "ts" ? `${q.label || "TS"} ‡` : q.label;
-    const ly = q.kind === "ts" ? -14 : q.kind === "int" ? 18 : -14, lx = q.kind === "start" ? 6 : q.kind === "end" ? -6 : 0;
+    const ly = q.kind === "ts" ? -14 : q.kind === "int" ? 18 : 17, lx = q.kind === "start" ? -0.1 * (w - 52) : q.kind === "end" ? 0.08 * (w - 52) : 0;
     if (lab) s += text(X(q.x) + lx, Y(q.e) + ly, lab, { size: 12.5, weight: q.kind === "int" ? 700 : 600, anchor: q.kind === "start" ? "start" : q.kind === "end" ? "end" : "middle", fill: q.kind === "ts" ? C.ink : col(q.kind === "int" ? "a3" : "soft") });
     if (q.kind === "int") s += `<circle cx="${f1(X(q.x))}" cy="${f1(Y(q.e))}" r="4.5" fill="${C.a3}"/>`;
   }
@@ -178,7 +180,7 @@ function profilePanel(p, x, y, w, h, opt) {
     const ts = p.points[ea.to], fromE = p.points[ea.from].e, xx = X(ts.x) + (ea.dx ?? 0);
     s += line(X(p.points[ea.from].x), Y(fromE), xx + 4, Y(fromE), { stroke: C.line, w: 1, dash: "2 3" });
     s += arrow(xx, Y(fromE), xx, Y(ts.e) + 3, { stroke: col(ea.colour || "a2"), w: 1.8, head: 7, both: false });
-    s += text(xx + (ea.anchor === "start" ? 7 : -7), (Y(fromE) + Y(ts.e)) / 2 + 8, ea.label, { size: 12.5, weight: 700, anchor: ea.anchor || "end", fill: col(ea.colour || "a2") });
+    s += text(xx + (ea.anchor === "start" ? 9 : -9), (Y(fromE) + Y(ts.e)) / 2 + 22, ea.label, { size: 12.5, weight: 700, anchor: ea.anchor || "end", fill: col(ea.colour || "a2") });
   }
   return s;
 }
@@ -238,7 +240,7 @@ function freeBody(spec, W, H) {
     s += arrow(x0, y0, x1, y1, { stroke: col(f.colour), w: 3.2 });
     s += text(x1 + dx * 16 + (f.lx || 0), y1 + dy * 16 + (f.ly || 0), f.label, { size: 15, weight: 700, fill: col(f.colour), italic: true });
   }
-  if (spec.note) s += text(W - 16, 24, spec.note, { size: 12.5, fill: C.soft, anchor: "end" });
+  if (spec.note) { const nb = textBlock(16, 0, spec.note, Math.floor((W - 32) / 6.6), { size: 12.5, fill: C.soft, anchor: "start" }); s += `<g transform="translate(0 ${f1(16 + nb.h / 2)})">${nb.svg}</g>`; }
   return s;
 }
 function freeBodyChecks(spec) {
@@ -273,7 +275,7 @@ function rayPanel(p, x, y, w, h, f) {
   // the lens: a thin double-headed line
   const lh = hmax * vs * 0.98;
   s += arrow(X(0), Y(0) + lh, X(0), Y(0) - lh, { stroke: C.a4, w: 2.4, head: 9, both: true });
-  for (const [d, lab] of [[-f, "F"], [f, "F"], [-2 * f, "2F"], [2 * f, "2F"]]) if (Math.abs(d) * scale < w / 2 - 8) s += `<circle cx="${f1(X(d))}" cy="${f1(Y(0))}" r="3" fill="${C.ink}"/>` + text(X(d), Y(0) + 16, lab, { size: 12.5, weight: 600, fill: C.soft });
+  for (const [d, lab] of [[-f, "F"], [f, "F"], [-2 * f, "2F"], [2 * f, "2F"]]) if (Math.abs(d) * scale < w / 2 - 8) { const clash = Math.abs(d - v) * scale < 10; s += `<circle cx="${f1(X(d))}" cy="${f1(Y(0))}" r="3" fill="${C.ink}"/>` + text(X(d) + (clash ? -8 : 0), Y(0) + (clash && hi > 0 ? 16 : clash ? -10 : 16), lab, { size: 12.5, weight: 600, fill: C.soft, anchor: clash ? "end" : "middle" }); }
   // object
   s += arrow(X(-u), Y(0), X(-u), Y(ho), { stroke: C.a1, w: 3.2, head: 10 })  + "</g>" + text(X(-u), Y(0) + 32, "object", { size: 12.5, weight: 600, fill: C.a1 }) + `<g clip-path="url(#${clip})">`;
   const real = v > 0;
@@ -295,8 +297,8 @@ function rayPanel(p, x, y, w, h, f) {
     s += line(X(0), Y(ho), X(v), Y(hi), { stroke: C.a3, w: 1.6, dash: "6 5" }) + line(X(0), Y(0), X(v), Y(hi), { stroke: C.a3, w: 1.6, dash: "6 5" });
   }
   s += arrow(X(v), Y(0), X(v), Y(hi), { stroke: C.a2, w: 3.2, head: 10, dash: real ? "" : "7 5" });
-  const edge = X(v) > x + w - 46 ? "end" : X(v) < x + 46 ? "start" : "middle";
-  const imgLabel = text(X(v) + (edge === "end" ? 6 : edge === "start" ? -6 : 0), Y(hi) + (hi < 0 ? 16 : -14), real ? "real image" : "virtual image", { size: 12.5, weight: 600, fill: C.a2, anchor: edge });
+  const edge = X(v) > x + w - 46 ? "end" : real ? "start" : X(v) < x + 46 ? "start" : "middle";
+  const imgLabel = text(X(v) + (edge === "end" ? -8 : edge === "start" ? 8 : 0), Y(hi) + (hi < 0 ? 30 : -14), real ? "real image" : "virtual image", { size: 12.5, weight: 600, fill: C.a2, anchor: edge });
   s += "</g>" + imgLabel + text(x + w / 2, y + h - 10, p.result, { size: 12.5, fill: C.soft });
   return s;
 }
@@ -372,38 +374,45 @@ function circuitChecks(spec) {
 // spec.nodes: {id: {q, yes, no, cite} | {outcome, tone: "good" | "bad" | "warn", cite}}; spec.start
 function tree(spec, W, narrow) {
   const N = spec.nodes, out = [];
-  // lay out: the "yes" path goes down the main column, each "no" branches to an outcome beside it
+  // the "yes" path runs down the main column; each "no" leads to an outcome beside its question (wide) or tucked
+  // under it, with the "yes" connector running down the right-hand edge past it (narrow)
   let y = 20;
   const boxW = narrow ? W - 40 : Math.min(400, W * 0.56), mainX = narrow ? 20 : 30, sideX = mainX + boxW + 60, sideW = W - sideX - 20;
+  const tone = (t) => ({ good: C.good, bad: C.bad, warn: C.a3, neutral: C.a4 })[t] || C.a1;
   let id = spec.start, guard = 0;
-  const tone = (t) => ({ good: C.good, bad: C.bad, warn: C.a3 })[t] || C.a1;
   while (id && guard++ < 20) {
     const n = N[id];
     if (n.outcome) {
-      const b = textBlock(mainX + boxW / 2, 0, n.outcome, narrow ? 34 : 44, { size: 14, weight: 700, fill: tone(n.tone) }), h = b.h + 22;
-      out.push(`<rect x="${f1(mainX)}" y="${f1(y)}" width="${f1(boxW)}" height="${f1(h)}" rx="14" fill="${tone(n.tone)}" fill-opacity=".1" stroke="${tone(n.tone)}" stroke-width="2"/>` + `<g transform="translate(0 ${f1(y + h / 2)})">${b.svg}</g>`);
-      if (n.cite) out.push(text(mainX + boxW / 2, y + h + 14, n.cite, { size: 12, fill: C.soft, italic: true })), y += 16;
+      const b = textBlock(mainX + boxW / 2, 0, n.outcome, narrow ? 34 : 46, { size: 14, weight: 700, fill: tone(n.tone) }), h = b.h + 22 + (n.cite ? 18 : 0);
+      out.push(`<rect x="${f1(mainX)}" y="${f1(y)}" width="${f1(boxW)}" height="${f1(h)}" rx="14" fill="${tone(n.tone)}" fill-opacity=".1" stroke="${tone(n.tone)}" stroke-width="2"/><g transform="translate(0 ${f1(y + (h - (n.cite ? 18 : 0)) / 2)})">${b.svg}</g>`);
+      if (n.cite) out.push(text(mainX + boxW / 2, y + h - 14, n.cite, { size: 12, fill: C.soft, italic: true }));
       y += h + 10; break;
     }
-    const b = textBlock(mainX + boxW / 2, 0, n.q, narrow ? 36 : 46, { size: 14, weight: 600 }), h = b.h + (n.cite ? 36 : 22);
-    out.push(`<rect x="${f1(mainX)}" y="${f1(y)}" width="${f1(boxW)}" height="${f1(h)}" rx="14" fill="${C.panel}" stroke="${C.a1}" stroke-width="2"/>` + `<g transform="translate(0 ${f1(y + (n.cite ? h / 2 - 8 : h / 2))})">${b.svg}</g>`);
-    if (n.cite) out.push(text(mainX + boxW / 2, y + h - 13, n.cite, { size: 12, fill: C.soft, italic: true }));
+    const qb = textBlock(mainX + boxW / 2, 0, n.q, narrow ? 36 : 46, { size: 14, weight: 600 }), h = qb.h + (n.cite ? 36 : 22);
     const no = N[n.no];
-    if (no) {
-      if (narrow) {
-        // on a phone the "no" outcome sits under the question, indented, before the "yes" arrow continues
-        const nb = textBlock(mainX + 24 + (boxW - 24) / 2, 0, `No → ${no.outcome || no.q}`, 36, { size: 13, weight: 700, fill: tone(no.tone) });
-        out.push(`<rect x="${f1(mainX + 24)}" y="${f1(y + h + 10)}" width="${f1(boxW - 24)}" height="${f1(nb.h + 14)}" rx="10" fill="${tone(no.tone)}" fill-opacity=".1" stroke="${tone(no.tone)}" stroke-width="1.6"/><g transform="translate(0 ${f1(y + h + 17 + nb.h / 2)})">${nb.svg}</g>`);
-        out.push(line(mainX + 12, y + h, mainX + 12, y + h + 17 + nb.h / 2, { stroke: tone(no.tone), w: 1.8 }) + line(mainX + 12, y + h + 17 + nb.h / 2, mainX + 24, y + h + 17 + nb.h / 2, { stroke: tone(no.tone), w: 1.8 }));
-        y += nb.h + 24;
-      } else {
-        const nb = textBlock(sideX + sideW / 2, 0, no.outcome || no.q, Math.max(18, Math.floor(sideW / 7.6)), { size: 13, weight: 700, fill: tone(no.tone) });
-        const nh = nb.h + 18;
-        out.push(arrow(mainX + boxW, y + h / 2, sideX - 2, y + h / 2, { stroke: tone(no.tone), w: 2, head: 9 }) + text((mainX + boxW + sideX) / 2, y + h / 2 - 11, "no", { size: 12.5, weight: 700, fill: tone(no.tone) }));
-        out.push(`<rect x="${f1(sideX)}" y="${f1(y + h / 2 - nh / 2)}" width="${f1(sideW)}" height="${f1(nh)}" rx="12" fill="${tone(no.tone)}" fill-opacity=".1" stroke="${tone(no.tone)}" stroke-width="1.8"/><g transform="translate(0 ${f1(y + h / 2)})">${nb.svg}</g>`);
-      }
+    const noText = no ? (no.outcome || no.q) + (no.cite ? ` (${no.cite})` : "") : "";
+    const nb = no && textBlock(0, 0, noText, narrow ? 32 : Math.max(18, Math.floor(sideW / 7.6)), { size: 13, weight: 700, fill: tone(no.tone) });
+    if (no && !narrow) y += Math.max(0, (nb.h + 18 - h) / 2); // room above for a tall side box
+    out.push(`<rect x="${f1(mainX)}" y="${f1(y)}" width="${f1(boxW)}" height="${f1(h)}" rx="14" fill="${C.panel}" stroke="${C.a1}" stroke-width="2"/><g transform="translate(0 ${f1(y + (n.cite ? h / 2 - 8 : h / 2))})">${qb.svg}</g>`);
+    if (n.cite) out.push(text(mainX + boxW / 2, y + h - 13, n.cite, { size: 12, fill: C.soft, italic: true }));
+    let below = y + h;
+    if (no && !narrow) {
+      const nh = nb.h + 18, cx = sideX + sideW / 2;
+      out.push(arrow(mainX + boxW, y + h / 2, sideX - 2, y + h / 2, { stroke: tone(no.tone), w: 2, head: 9 }) + text((mainX + boxW + sideX) / 2, y + h / 2 - 11, "no", { size: 12.5, weight: 700, fill: tone(no.tone) }));
+      out.push(`<rect x="${f1(sideX)}" y="${f1(y + h / 2 - nh / 2)}" width="${f1(sideW)}" height="${f1(nh)}" rx="12" fill="${tone(no.tone)}" fill-opacity=".1" stroke="${tone(no.tone)}" stroke-width="1.8"/><g transform="translate(${f1(cx)} ${f1(y + h / 2)})">${nb.svg}</g>`);
+      below = Math.max(below, y + h / 2 + nh / 2 - 10);
+    } else if (no) {
+      // phone: the "no" box sits under the question on the left; "yes" runs down the right edge, past it
+      const bx = mainX + 22, bw = boxW - 70, nh = nb.h + 30, by = y + h + 12, cx = bx + bw / 2;
+      const nb2 = textBlock(cx, 0, noText, Math.floor(bw / 7.4), { size: 13, weight: 700, fill: tone(no.tone) });
+      const nh2 = nb2.h + 30;
+      out.push(line(mainX + 10, y + h, mainX + 10, by + 16, { stroke: tone(no.tone), w: 1.8 }) + arrow(mainX + 10, by + 16, bx - 1, by + 16, { stroke: tone(no.tone), w: 1.8, head: 7 }));
+      out.push(`<rect x="${f1(bx)}" y="${f1(by)}" width="${f1(bw)}" height="${f1(nh2)}" rx="10" fill="${tone(no.tone)}" fill-opacity=".1" stroke="${tone(no.tone)}" stroke-width="1.6"/>` + text(cx, by + 14, "no", { size: 12, weight: 800, fill: tone(no.tone) }) + `<g transform="translate(0 ${f1(by + 16 + nh2 / 2)})">${nb2.svg}</g>`);
+      const yx = mainX + boxW - 22, end = by + nh2 + 26;
+      out.push(arrow(yx, y + h + 2, yx, end, { stroke: C.good, w: 2, head: 9 }) + text(yx - 6, by + nh2 / 2, "yes", { size: 12.5, weight: 700, fill: C.good, anchor: "end" }).replace("<text", `<text transform="rotate(-90 ${f1(yx - 6)} ${f1(by + nh2 / 2)})"`));
+      y = end + 4; id = n.yes; continue;
     }
-    y += h;
+    y = below;
     out.push(arrow(mainX + boxW / 2, y + 2, mainX + boxW / 2, y + 34, { stroke: C.good, w: 2, head: 9 }) + text(mainX + boxW / 2 + 10, y + 18, "yes", { size: 12.5, weight: 700, fill: C.good, anchor: "start" }));
     y += 38;
     id = n.yes;
@@ -426,7 +435,7 @@ function treeChecks(spec, lessonText = "") {
 export const RENDERERS = {
   graph: { draw: (s, W, narrow) => { const H = s.height?.[narrow ? 1 : 0] || (narrow ? 330 : 380); return { s: graph(s, W, H), H }; }, checks: graphChecks, widths: [680, 400] },
   "energy-profile": { draw: (s, W, narrow) => energyProfile(s, W, narrow), checks: profileChecks, widths: [760, 400] },
-  "free-body": { draw: (s, W) => { const H = W * 0.62; return { s: freeBody(s, W, H), H }; }, checks: freeBodyChecks, widths: [620, 400] },
+  "free-body": { draw: (s, W, narrow) => { const H = W * (narrow ? 0.98 : 0.66); return { s: freeBody(s, W, H), H }; }, checks: freeBodyChecks, widths: [620, 400] },
   rays: { draw: (s, W, narrow) => rays(s, W, narrow), checks: rayChecks, widths: [880, 400] },
   circuit: { draw: (s, W, narrow) => { const H = narrow ? 300 : 280; return { s: circuit(s, W, H, narrow), H }; }, checks: circuitChecks, widths: [560, 380] },
   "decision-tree": { draw: (s, W, narrow) => tree(s, W, narrow), checks: treeChecks, widths: [760, 380] },

@@ -1,24 +1,49 @@
 {
-  "id": "law-duty-of-care", "renderer": "decision-tree", "course": "law", "lesson": "Duty of care",
+  "id": "law-duty-of-care",
+  "renderer": "decision-tree",
+  "course": "law",
+  "lesson": "Duty of care",
   "title": "Does a duty of care exist?",
-  "caption": "After Robinson, start with precedent, not with a three-stage test. Only a genuinely novel situation calls for incremental reasoning by analogy, using the Caparo factors. Omissions and harm caused by third parties are the main exception to liability for positive acts.",
-  "alt": "Decision tree for whether a duty of care exists in negligence, following Robinson v Chief Constable of West Yorkshire Police and Caparo v Dickman.",
+  "caption": "After Robinson, start with precedent rather than a three-stage test. Precedent can deny a duty as well as recognise one. Only a genuinely novel situation calls for incremental reasoning by analogy, with the Caparo factors weighed together. Separately, there is generally no duty to protect others from harm caused by third parties or to rescue, unless an exception applies.",
+  "alt": "Decision tree for whether a duty of care exists in negligence, following Robinson v Chief Constable of West Yorkshire Police, Caparo v Dickman and the omissions rule.",
   "description": [
-    "Question 1: did the defendant's own positive act cause the harm? If no (an omission, or harm done by a third party), there is generally no duty unless the defendant created the danger, assumed responsibility, or had control of the third party or the source of danger (Smith v Littlewoods; N v Poole BC).",
-    "Question 2: is the situation genuinely novel, with no established category or precedent? If no, a duty exists: apply the established category, such as road users or doctor and patient (Robinson).",
-    "Question 3: by analogy with established categories, was the damage reasonably foreseeable, and was there sufficient proximity? If no, no duty.",
-    "Question 4: is it fair, just and reasonable to impose a duty? If no, no duty. If yes, a new duty is recognised incrementally (Caparo)."
+    "Question 1: is the claim that the defendant's own act made the claimant worse off, or, if it is about failing to protect them from harm, does an exception apply (the defendant created the danger, assumed responsibility, or had control of the third party or the source of danger)? If no, there is generally no duty: no general duty to prevent harm caused by third parties or to rescue (Smith v Littlewoods; N v Poole BC).",
+    "Question 2: is the situation genuinely novel, with no precedent deciding it? If no, follow the precedent: there is a duty where it recognises one (for example road users, doctor and patient), provided the kind of harm to this claimant was reasonably foreseeable; there is no duty where precedent excludes one (Robinson).",
+    "If the situation is novel: develop the law incrementally, by analogy with established categories, weighing reasonable foreseeability of damage, proximity, and whether it is fair, just and reasonable to impose a duty, together rather than as separate gates (Caparo; Robinson)."
   ],
   "start": "act",
   "nodes": {
-    "act": { "q": "Did the defendant's own positive act cause the harm?", "yes": "novel", "no": "omit", "cite": "Robinson v Chief Constable of West Yorkshire [2018] UKSC 4" },
-    "omit": { "outcome": "Omission or third party: generally no duty, unless the defendant created the danger, assumed responsibility or had control (Smith v Littlewoods; N v Poole BC)", "tone": "warn" },
-    "novel": { "q": "Is the situation genuinely novel, with no established category or precedent?", "yes": "fp", "no": "est" },
-    "est": { "outcome": "Duty exists: apply the established category (e.g. road users, doctor and patient)", "tone": "good", "cite": "Robinson v Chief Constable of West Yorkshire [2018] UKSC 4" },
-    "fp": { "q": "By analogy: was the damage reasonably foreseeable, and was there sufficient proximity?", "yes": "fjr", "no": "none1" },
-    "none1": { "outcome": "No duty", "tone": "bad" },
-    "fjr": { "q": "Is it fair, just and reasonable to impose a duty?", "yes": "new", "no": "none2", "cite": "Caparo Industries v Dickman [1990] 2 AC 605" },
-    "none2": { "outcome": "No duty", "tone": "bad" },
-    "new": { "outcome": "A new duty is recognised, developed incrementally", "tone": "good" }
+    "act": {
+      "q": "Did the defendant's own act cause the harm, or, if the claim is a failure to protect, does an exception apply (created the danger, assumed responsibility, or control)?",
+      "yes": "novel",
+      "no": "omit"
+    },
+    "omit": {
+      "outcome": "Generally no duty to prevent harm by third parties or to rescue",
+      "tone": "warn",
+      "cite": "Smith v Littlewoods; N v Poole BC"
+    },
+    "novel": {
+      "q": "Is the situation genuinely novel, with no precedent deciding it?",
+      "yes": "new",
+      "no": "prec",
+      "cite": "Robinson v CC West Yorkshire [2018] UKSC 4"
+    },
+    "prec": {
+      "outcome": "Follow the precedent: a duty where it recognises one (if the harm was reasonably foreseeable); no duty where it excludes one",
+      "tone": "neutral"
+    },
+    "new": {
+      "outcome": "Develop incrementally by analogy, weighing foreseeability, proximity and whether a duty is fair, just and reasonable, together",
+      "tone": "neutral",
+      "cite": "Caparo Industries v Dickman [1990] 2 AC 605"
+    }
+  },
+  "review": {
+    "status": "ai-reviewed",
+    "by": "independent AI reviewer (two rounds)",
+    "date": "2026-11-20",
+    "notes": "Round 1: REJECTED (not novel ≠ duty exists; omissions branch a dead end; Caparo as sequential gates). Rebuilt to follow Robinson. Round 2: approve; the lesson's own K: line, which contradicted Robinson, was corrected.",
+    "awaiting": "approval by a named subject reviewer"
   }
 }

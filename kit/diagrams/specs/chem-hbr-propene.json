@@ -4,11 +4,11 @@
   "course": "chemistry",
   "lesson": "Electrophilic addition",
   "title": "Adding HBr to propene",
-  "caption": "Step 1: the π electrons attack the δ+ hydrogen and the H–Br bond breaks, leaving the more stable secondary carbocation. Step 2: bromide's lone pair bonds to the positive carbon. The major product is 2-bromopropane.",
+  "caption": "Step 1: the π electrons attack the δ+ hydrogen and the H–Br bond breaks. Hydrogen adds to the end carbon, so the positive charge sits on the middle carbon: a secondary carbocation, more stable than the primary one the other way round would give. Step 2: bromide's lone pair bonds to the positive carbon. The major product is 2-bromopropane; 1-bromopropane forms only as a minor product.",
   "alt": "Mechanism of HBr adding to propene: the π bond attacks hydrogen to form a secondary carbocation and bromide, then bromide attacks the carbocation to give 2-bromopropane.",
   "description": [
     "Left: propene and hydrogen bromide, with δ+ on hydrogen and δ− on bromine. A curly arrow goes from the C=C double bond to the hydrogen. A second curly arrow goes from the H–Br bond to bromine.",
-    "Middle: a secondary carbocation (positive charge on the middle carbon, which is bonded to two other carbons) and a bromide ion. A curly arrow goes from a lone pair on bromide to the positive carbon.",
+    "Middle: the secondary carbocation CH₃–C⁺H–CH₃ (positive charge on the middle carbon, bonded to two other carbons) and a bromide ion. A curly arrow goes from a lone pair on bromide to the positive carbon.",
     "Right: 2-bromopropane, the major product. Hydrogen added to the end carbon and bromine to the middle carbon."
   ],
   "stages": [
@@ -120,9 +120,16 @@
           },
           "toward": 2,
           "lpAngle": 180,
-          "bend": -0.5
+          "bend": -0.5,
+          "lpDist": 26
         }
-      ]
+      ],
+      "hide": [
+        4
+      ],
+      "labels": {
+        "3": "CH<sub>3</sub>"
+      }
     },
     {
       "smiles": "[CH3:1][CH:2]([Br:5])[CH2:3][H:4]",
@@ -148,7 +155,13 @@
           -1.2
         ]
       },
-      "label": "2-bromopropane (major)"
+      "label": "2-bromopropane (major)",
+      "hide": [
+        4
+      ],
+      "labels": {
+        "3": "CH<sub>3</sub>"
+      }
     }
   ],
   "steps": [
@@ -160,5 +173,12 @@
       "label": "step 2",
       "below": "fast"
     }
-  ]
+  ],
+  "review": {
+    "status": "ai-reviewed",
+    "by": "independent AI reviewer (two rounds)",
+    "date": "2026-11-20",
+    "notes": "Round 1: added H drawn as a stray –H; minor route not shown; fixed (CH3 label; caption explains the less stable primary cation). Round 2: approve.",
+    "awaiting": "approval by a named subject reviewer"
+  }
 }

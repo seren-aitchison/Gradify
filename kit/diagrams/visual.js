@@ -60,7 +60,7 @@ export async function hydrateDiagrams(root, { preview = previewMode() } = {}) {
       <button type="button" class="vx-art" aria-label="Open the diagram full size: ${esc(d.title)}">
         <span class="vx-wide">${uniq(wide)}</span><span class="vx-narrow">${uniq(narrow || wide)}</span>
       </button>
-      <figcaption><b>${esc(d.title)}.</b> ${esc(d.caption)}</figcaption>
+      <figcaption><b>${esc(d.title)}${/[.?!]$/.test(d.title) ? "" : "."}</b> ${esc(d.caption)}</figcaption>
       <details class="vx-desc"><summary>The diagram in words</summary><ol>${d.description.map((x) => `<li>${esc(x)}</li>`).join("")}</ol></details>
       ${preview ? `<details class="vx-checks"><summary>What was checked</summary><ul>${d.checks.map((c) => `<li class="${c.ok ? "ok" : "no"}">${c.ok ? "✓" : "✗"} ${esc(c.name)}${c.detail ? ` <small>${esc(c.detail)}</small>` : ""}</li>`).join("")}</ul>${d.review?.notes ? `<p><b>Review:</b> ${esc(d.review.notes)}</p>` : ""}</details>` : ""}`;
     fig.hidden = false;
@@ -73,7 +73,7 @@ function openFull(d, wide) {
   const dlg = document.createElement("dialog");
   dlg.className = "vx-full";
   dlg.setAttribute("aria-label", d.title);
-  dlg.innerHTML = `<div class="vx-fullart">${uniq(wide)}</div><p><b>${esc(d.title)}.</b> ${esc(d.caption)}</p><button type="button" class="vx-close" aria-label="Close">×</button>`;
+  dlg.innerHTML = `<div class="vx-fullart">${uniq(wide)}</div><p><b>${esc(d.title)}${/[.?!]$/.test(d.title) ? "" : "."}</b> ${esc(d.caption)}</p><button type="button" class="vx-close" aria-label="Close">×</button>`;
   const close = () => { dlg.close(); dlg.remove(); };
   dlg.addEventListener("click", (e) => { if (e.target === dlg || e.target.closest(".vx-close")) close(); });
   dlg.addEventListener("cancel", (e) => { e.preventDefault(); close(); });
