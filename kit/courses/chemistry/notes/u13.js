@@ -340,6 +340,7 @@ H: Mechanism
 - **Step 2**: the nucleophile attacks the carbocation (fast).
 - Rate = k[R–X]: **first order**, independent of nucleophile.
 - Called **unimolecular** because one species is in the rate-determining step.
+D: chem-sn1-mechanism
 H: Favouring conditions
 - **Tertiary** substrates, which form stable carbocations.
 - **Polar protic solvents** that stabilise ions.
@@ -349,7 +350,7 @@ P: 2-bromo-2-methylpropane hydrolyses by SN1 in water. If the carbon is a stereo
 X: Hydrolysis of 2-bromo-2-methylpropane.
 > C–Br breaks, forming (CH₃)₃C⁺ and Br⁻.
 > Water attacks the carbocation.
-> A proton is lost from the oxonium ion.
+> A second water molecule removes a proton from the oxonium ion.
 > 2-methylpropan-2-ol forms.
 K: SN1 reactions form a carbocation in a slow first step and then capture a nucleophile; rate depends only on substrate, tertiary substrates, polar protic solvents and weak nucleophiles favour them and stereocentres are racemised.
 !: Thinking nucleophile concentration changes SN1 rate. It does not appear in the rate equation.
@@ -505,6 +506,7 @@ H: Mechanism
 - All in **one concerted step**.
 - Rate = k[R–X][base]: **second order**.
 - Favoured by **strong bases** such as alkoxides and hydroxide.
+D: chem-e2-mechanism
 H: Geometry
 - The β-hydrogen and leaving group must be **anti-periplanar**: 180° apart in the same plane.
 - This lines up orbitals to form the π bond.
@@ -512,7 +514,7 @@ H: Geometry
 - Geometry controls which E or Z alkene forms.
 P: E2 is the main elimination with strong bases, including for primary and secondary substrates. Because of the anti-periplanar requirement, some cyclohexyl halides react slowly or give unexpected alkenes when the needed hydrogen cannot be axial.
 X: Anti-periplanar elimination.
-> In a staggered conformation, H on C2 and Br on C1 are 180° apart.
+> In a staggered conformation, Br on one carbon and H on the neighbouring (β) carbon are 180° apart.
 > The base removes H as the C–Br bond breaks.
 > Electrons from the C–H bond form the π bond.
 > The alkene forms in one step with defined geometry.
@@ -630,12 +632,13 @@ H: Mechanism
 - The π electrons move onto oxygen, forming an **alkoxide**.
 - The alkoxide is **protonated** to give an alcohol.
 - Examples: HCN gives hydroxynitriles; NaBH₄ gives alcohols.
+D: chem-nucleophilic-addition
 H: Reactivity and stereochemistry
 - **Aldehydes** are more reactive than **ketones**.
 - Ketones have two alkyl groups that donate electrons and crowd the carbon.
 - The planar carbonyl can be attacked from **either face**.
 - Unsymmetrical carbonyls give **racemic** products.
-P: Adding HCN to ethanal makes 2-hydroxypropanenitrile, extending the carbon chain. Because KCN is used with acid rather than HCN gas for safety in teaching labs, the cyanide ion is the nucleophile. Grignard reagents add to carbonyls to make larger alcohols.
+P: Adding HCN to ethanal makes 2-hydroxypropanenitrile, extending the carbon chain. In teaching labs KCN with acid is used rather than HCN gas, for safety; either way the cyanide ion is the nucleophile, and the alkoxide is then protonated by HCN or by H⁺ from the acid. Grignard reagents add to carbonyls to make larger alcohols.
 X: HCN with propanal.
 > CN⁻ attacks the carbonyl carbon from above or below.
 > An alkoxide intermediate forms.
@@ -671,6 +674,7 @@ H: General mechanism
 - A positively charged **arenium ion** (Wheland intermediate) forms; aromaticity is lost.
 - A base removes H⁺ from the sp³ carbon.
 - Aromaticity is **restored**, giving the substituted product.
+D: chem-nitration
 H: Making electrophiles
 - **Nitration**: H₂SO₄ protonates HNO₃, giving **NO₂⁺**.
 - **Halogenation**: FeBr₃ accepts Br⁻ from Br₂, giving a **Br⁺**-like electrophile.

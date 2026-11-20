@@ -35,12 +35,19 @@ INK = "var(--vx-ink, #151826)"
 SOFT = "var(--vx-soft, #5b6275)"
 
 
+# Kekulé structures stay exactly as written (aromaticity is not perceived), so a curly arrow from "the C1=C2 bond"
+# means the bond drawn there; everything else in sanitisation (valence, charges, hydrogens) still runs.
+SANITIZE = Chem.SanitizeFlags.SANITIZE_ALL ^ Chem.SanitizeFlags.SANITIZE_SETAROMATICITY
+
+
 def parse(smiles):
     p = Chem.SmilesParserParams()
     p.removeHs = False
+    p.sanitize = False
     m = Chem.MolFromSmiles(smiles, p)
     if m is None:
         raise ValueError(f"RDKit cannot parse {smiles}")
+    m.UpdatePropertyCache(strict=False)
     return m
 
 
@@ -115,7 +122,7 @@ def validate(spec):
     for i, st in enumerate(spec["stages"]):
         try:
             m = parse(st["smiles"])
-            Chem.SanitizeMol(m)
+            Chem.SanitizeMol(m, SANITIZE)
             mols.append(m)
             if st.get("ts"):
                 checks.append({"name": f"stage {i + 1} is a transition state", "ok": True, "detail": "drawn for illustration: partial bonds dashed, not validated as a species"})
@@ -186,6 +193,19 @@ def drawn_mol(st, mol):
         m.RemoveBond(i, j)
         m.AddBond(i, j, bt)  # begins at the stereocentre, as a wedge must
         m.GetBondBetweenAtoms(i, j).SetBondDir(Chem.BondDir.BEGINWEDGE if kind == "wedge" else Chem.BondDir.BEGINDASH)
+    ring = st.get("ring")
+    if ring:
+        # drawn delocalised (circle or horseshoe, see stage_svg); the electron bookkeeping still uses the Kekule form
+        idx2 = idx()
+        ids = [idx2[k] for k in ring["atoms"]]
+        for b in m.GetBonds():
+            if b.GetBeginAtomIdx() in ids and b.GetEndAtomIdx() in ids:
+                b.SetBondType(Chem.BondType.SINGLE)
+        for i in ids:
+            a = m.GetAtomWithIdx(i)
+            a.SetNoImplicit(True)
+            a.SetNumExplicitHs(a.GetTotalNumHs())
+            a.SetFormalCharge(0)
     conf = Chem.Conformer(m.GetNumAtoms())
     xy = {int(k): v for k, v in st["xy"].items()}
     for a in m.GetAtoms():
@@ -202,7 +222,7 @@ def drawn_mol(st, mol):
 def drawn_cip(st, mol):
     """R/S as a reader would assign them from the wedges and hashes actually drawn."""
     m = Chem.Mol(drawn_mol(st, mol))
-    Chem.SanitizeMol(m)
+    Chem.SanitizeMol(m, SANITIZE)
     for a in m.GetAtoms():
         a.SetChiralTag(Chem.ChiralType.CHI_UNSPECIFIED)
     Chem.AssignChiralTypesFromBondDirs(m)
@@ -236,7 +256,7 @@ def draw_stage(st, mol):
     o.setBackgroundColour((1, 1, 1, 0))
     # an explicitly given geometry is kept as drawn; RDKit chooses wedges that match the stereochemistry
     from rdkit.Chem.Draw import rdMolDraw2D as R
-    pm = R.PrepareMolForDrawing(m, kekulize=True, addChiralHs=False, wedgeBonds=not st.get("wedges"))
+    pm = R.PrepareMolForDrawing(m, kekulize=False, addChiralHs=False, wedgeBonds=not st.get("wedges"))
     d.DrawMolecule(pm)
     d.FinishDrawing()
     svg = d.GetDrawingText()
@@ -268,6 +288,20 @@ def toward(a, b, dist):
     return a[0] + dx / L * dist, a[1] + dy / L * dist
 
 
+def centroid(st, pos):
+    pts = [pos[k] for k in st["ring"]["atoms"]]
+    return (sum(p[0] for p in pts) / len(pts), sum(p[1] for p in pts) / len(pts))
+
+
+def inring(st, pos, bond):
+    """For a delocalised ring, a bond's arrow end sits inside the ring, on the circle near that bond."""
+    if not st.get("ring") or not all(k in st["ring"]["atoms"] for k in bond):
+        return None
+    c, a, b = centroid(st, pos), pos[bond[0]], pos[bond[1]]
+    m = ((a[0] + b[0]) / 2, (a[1] + b[1]) / 2)
+    return (m[0] + (c[0] - m[0]) * 0.42, m[1] + (c[1] - m[1]) * 0.42)
+
+
 def arrows_svg(st, pos, ox, oy):
     out = []
     for n, ar in enumerate(st.get("arrows", [])):
@@ -284,7 +318,7 @@ def arrows_svg(st, pos, ox, oy):
             p0 = (c[0] + math.cos(ang) * 5, c[1] + math.sin(ang) * 5)
         else:
             a, b = pos[src["bond"][0]], pos[src["bond"][1]]
-            p0 = ((a[0] + b[0]) / 2, (a[1] + b[1]) / 2)
+            p0 = inring(st, pos, src["bond"]) or ((a[0] + b[0]) / 2, (a[1] + b[1]) / 2)
         # where they go: to an atom (it gains a lone pair) or towards a new bond (drawn ending near the atom attacked)
         if "atom" in dst and "bond" in src:
             # a bond breaking towards an atom: start on the bond, finish just beyond the atom on the bend side
@@ -309,6 +343,8 @@ def arrows_svg(st, pos, ox, oy):
                 p1 = toward(near, p0, 16)
             elif "toward" in ar:
                 p1 = toward(pos[ar["toward"]], p0, 15)
+            else:
+                p1 = inring(st, pos, (i, j)) or p1
         cx, cy = ctrl(p0, p1, bend)
         # stop the curve a little short so the head sits on the target
         hx, hy = p1[0] - cx, p1[1] - cy
@@ -327,7 +363,10 @@ def arrows_svg(st, pos, ox, oy):
 
 
 def esc(s):
-    return str(s).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+    s = str(s).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+    for g, t in (("⁻", "−"), ("⁺", "+")):
+        s = s.replace(g, f'<tspan baseline-shift="super" font-size="75%">{t}</tspan>')
+    return s
 
 
 def compose(spec, mols, narrow=False):
@@ -337,16 +376,27 @@ def compose(spec, mols, narrow=False):
     parts, x, y = [], 20, 20
     W = H = 0
     if not narrow:
-        hmax = max(h for _, _, h, _ in drawn)
-        for i, (inner, w, h, pos) in enumerate(drawn):
-            oy = 34 + (hmax - h) / 2
-            parts.append(stage_svg(stages[i], inner, w, h, pos, x, oy))
-            x += w
-            if i < len(drawn) - 1:
-                parts.append(step_arrow(spec, i, x + 10, 34 + hmax / 2, x + gap - 10, 34 + hmax / 2))
+        # long mechanisms wrap: at most `perRow` stages a row (default 3), each later row opening with its step arrow
+        per = spec.get("perRow", 3)
+        rows = [list(range(i, min(i + per, len(drawn)))) for i in range(0, len(drawn), per)]
+        y0, W = 0, 0
+        for r, idxs in enumerate(rows):
+            hmax = max(drawn[i][2] for i in idxs)
+            x, cy = 20, y0 + 34 + hmax / 2
+            if r:
+                parts.append(step_arrow(spec, idxs[0] - 1, x + 10, cy, x + gap - 10, cy))
                 x += gap
-        last = stages[-1].get("label", "")
-        W, H = x + 20 + max(0, len(last) * 7.6 / 2 - drawn[-1][1] / 2), hmax + 34 + 44
+            for i in idxs:
+                inner, w, h, pos = drawn[i]
+                parts.append(stage_svg(stages[i], inner, w, h, pos, x, y0 + 34 + (hmax - h) / 2))
+                x += w
+                if i < len(drawn) - 1 and i != idxs[-1]:
+                    parts.append(step_arrow(spec, i, x + 10, cy, x + gap - 10, cy))
+                    x += gap
+            last = stages[idxs[-1]].get("label", "")
+            W = max(W, x + 20 + max(0, len(last) * 7.6 / 2 - drawn[idxs[-1]][1] / 2))
+            y0 += hmax + 34 + 44
+        H = y0
     else:
         wmax = max(w for _, w, _, _ in drawn)
         y = 30
@@ -358,13 +408,29 @@ def compose(spec, mols, narrow=False):
                 parts.append(step_arrow(spec, i, 20 + wmax / 2, y + 8, 20 + wmax / 2, y + gap - 8, vertical=True))
                 y += gap
         W, H = max(wmax + 40, max(len(st.get('label', '')) * 7.6 + 30 for st in stages)), y + 30
-    title = esc(spec.get("alt", spec.get("title", "")))
+    title = str(spec.get("alt", spec.get("title", ""))).replace("&", "&amp;").replace('"', "&quot;").replace("<", "&lt;")
     return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W:.0f} {H:.0f}" width="{W:.0f}" height="{H:.0f}" role="img" '
             f'aria-label="{title}" style="color:{INK};font-family:inherit">' + "".join(parts) + "</svg>")
 
 
 def stage_svg(st, inner, w, h, pos, ox, oy):
-    s = f'<g transform="translate({ox:.1f} {oy:.1f})">{inner}</g>' + arrows_svg(st, pos, ox, oy)
+    s = f'<g transform="translate({ox:.1f} {oy:.1f})">{inner}</g>'
+    ring = st.get("ring")
+    if ring:
+        c = centroid(st, pos)
+        r = BOND * 0.58
+        if ring.get("style") == "horseshoe":
+            # open at the sp3 carbon, covering the other five, with the charge inside
+            o = pos[ring["open"]]
+            t0 = math.atan2(o[1] - c[1], o[0] - c[0])
+            a0, a1 = t0 + math.radians(42), t0 + math.radians(318)
+            p = lambda t: (c[0] + r * math.cos(t) + ox, c[1] + r * math.sin(t) + oy)
+            (x0, y0), (x1, y1) = p(a0), p(a1)
+            s += f'<path d="M{x0:.1f} {y0:.1f} A{r:.1f} {r:.1f} 0 1 1 {x1:.1f} {y1:.1f}" fill="none" stroke="currentColor" stroke-width="2"/>'
+            s += f'<text x="{c[0] + ox:.1f}" y="{c[1] + oy + 6:.1f}" font-size="19" fill="currentColor" text-anchor="middle">+</text>'
+        else:
+            s += f'<circle cx="{c[0] + ox:.1f}" cy="{c[1] + oy:.1f}" r="{r:.1f}" fill="none" stroke="currentColor" stroke-width="2"/>'
+    s += arrows_svg(st, pos, ox, oy)
     if st.get("ts"):
         b = 10
         s += (f'<path d="M{ox + b:.1f} {oy:.1f} h-8 v{h:.1f} h8 M{ox + w - b:.1f} {oy:.1f} h8 v{h:.1f} h-8" fill="none" stroke="currentColor" stroke-width="1.8"/>'

@@ -13,6 +13,7 @@ const PILOT = [
   ["scigradify/physics/", "u04-12", "free-body"], ["scigradify/physics/", "u19-06", "thin-lenses"], ["scigradify/physics/", "u16-06", "kirchhoff"],
   ["mathgradify/course/", "u03-37", "transformations"], ["scigradify/biology/", "u07-20", "oxygen-transport"],
   ["businessgradify/course/", "u08-02", "supply-demand"], ["lawgradify/course/", "u04-03", "duty-of-care"],
+  ["scigradify/chemistry/", "u13-09", "sn1"], ["scigradify/chemistry/", "u13-13", "e2"], ["scigradify/chemistry/", "u13-16", "nucleophilic-addition"], ["scigradify/chemistry/", "u13-17", "nitration"],
 ];
 
 async function serve(ctx) {

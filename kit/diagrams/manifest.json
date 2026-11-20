@@ -713,5 +713,290 @@
     "detail": ""
    }
   ]
+ },
+ "chem-e2-mechanism": {
+  "title": "E2: hydroxide and 2-bromopropane",
+  "caption": "One concerted step with ethanolic KOH and heat (in water, substitution competes). Hydroxide takes a β-hydrogen, the C–H bonding pair becomes the new π bond, and bromide leaves, all at once. The hydrogen and bromine are drawn on opposite sides (anti-periplanar), the arrangement E2 needs. Rate = k[R–X][base].",
+  "alt": "E2 mechanism: hydroxide removes a hydrogen from the carbon next to the C–Br carbon while the C=C forms and bromide leaves, giving propene, water and bromide.",
+  "description": [
+   "Left: 2-bromopropane with the bromine pointing up from carbon 2 and a hydrogen on carbon 1 pointing down, on the opposite side (anti-periplanar), and a hydroxide ion, drawn ⁻O–H with its lone pair facing that hydrogen. The conditions are KOH in ethanol, heated.",
+   "Three curly arrows act together: from a lone pair on hydroxide's oxygen to the hydrogen; from the C–H bond to between carbons 1 and 2, forming the π bond; and from the C–Br bond to the bromine.",
+   "Right: propene, water and a bromide ion."
+  ],
+  "course": "chemistry",
+  "lesson": "E2 mechanisms",
+  "renderer": "mechanism",
+  "status": "ai-reviewed",
+  "review": {
+   "status": "ai-reviewed",
+   "by": "independent AI reviewer (one round, fixes applied)",
+   "date": "2026-11-20",
+   "notes": "Round 1 (AI reviewer): arrow appeared to start from H of HO⁻ (now ⁻O–H), conditions missing (now KOH in ethanol, heat), lesson's C1/C2 wording corrected, water drawn as H₂O; all fixed.",
+   "awaiting": "approval by a named subject reviewer"
+  },
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u13.js: E2 mechanisms"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "stage 1 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:2][CH:3]([Br:4])[CH2:5][H:6].[O-:1][H:11]"
+   },
+   {
+    "name": "stage 2 is a valid structure",
+    "ok": true,
+    "detail": "[Br-:4].[CH3:2][CH:3]=[CH2:5].[O:1]([H:6])[H:11]"
+   },
+   {
+    "name": "stages 1→2 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge -1→-1, implicit H 6→6"
+   },
+   {
+    "name": "curly arrows on stage 1 give stage 2",
+    "ok": true,
+    "detail": "3 arrow(s): electron bookkeeping matches every bond and charge"
+   }
+  ]
+ },
+ "chem-nitration": {
+  "title": "Nitration of benzene",
+  "caption": "π electrons from the delocalised ring attack the nitronium ion, NO₂⁺, giving the arenium (Wheland) intermediate: the horseshoe shows the delocalisation broken at the sp³ carbon, with the positive charge spread over the other five, which is why this step is slow. HSO₄⁻ then removes H⁺ from the sp³ carbon, the C–H bonding pair restores the aromatic ring, and the catalyst H₂SO₄ is regenerated. The arrow from an N=O bond onto oxygen shows where nitrogen's extra bond comes from; A-level answers usually show only the ring-to-N arrow and write the product –NO₂.",
+  "alt": "Electrophilic aromatic substitution: benzene attacks the nitronium ion to form an arenium ion, then hydrogensulfate removes a proton to give nitrobenzene and sulfuric acid.",
+  "description": [
+   "Stage 1: benzene drawn as a hexagon with a circle inside (delocalised), the nitronium ion O=N⁺=O above and to the right, and a hydrogensulfate ion to the left. A curly arrow goes from the circle to the nitrogen, and another from one N=O bond onto that oxygen.",
+   "Stage 2: the arenium ion. The top carbon is sp³, bonded to a hydrogen and the nitro group; a horseshoe covers the other five carbons with a + inside. A curly arrow goes from a lone pair on hydrogensulfate's O⁻ to that hydrogen, and another from the C–H bond back into the ring.",
+   "Stage 3: nitrobenzene, with the delocalised ring (circle) restored, and sulfuric acid, H₂SO₄."
+  ],
+  "course": "chemistry",
+  "lesson": "Electrophilic aromatic substitution",
+  "renderer": "mechanism",
+  "status": "ai-reviewed",
+  "review": {
+   "status": "ai-reviewed",
+   "by": "independent AI reviewer (one round, fixes applied)",
+   "date": "2026-11-20",
+   "notes": "Round 1 (AI reviewer): Kekulé ring and localised arenium charge would lose the AQA depiction mark; now delocalised ring and horseshoe intermediate, with the N=O arrow explained in the caption; all fixed.",
+   "awaiting": "approval by a named subject reviewer"
+  },
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u13.js: Electrophilic aromatic substitution"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "stage 1 is a valid structure",
+    "ok": true,
+    "detail": "[C:1]1([H:10])=[CH:2][CH:3]=[CH:4][CH:5]=[CH:6]1.[N+:7](=[O:8])=[O:9].[O-:20][S:21](=[O:22])(=[O:23])[OH:24]"
+   },
+   {
+    "name": "stage 2 is a valid structure",
+    "ok": true,
+    "detail": "[C:1]1([N+:7]([O-:8])=[O:9])([H:10])[CH+:2][CH:3]=[CH:4][CH:5]=[CH:6]1.[O-:20][S:21](=[O:22])(=[O:23])[OH:24]"
+   },
+   {
+    "name": "stage 3 is a valid structure",
+    "ok": true,
+    "detail": "[C:1]1([N+:7]([O-:8])=[O:9])=[CH:2][CH:3]=[CH:4][CH:5]=[CH:6]1.[H:10][O:20][S:21](=[O:22])(=[O:23])[OH:24]"
+   },
+   {
+    "name": "stages 1→2 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 0→0, implicit H 6→6"
+   },
+   {
+    "name": "curly arrows on stage 1 give stage 2",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "stages 2→3 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 0→0, implicit H 6→6"
+   },
+   {
+    "name": "curly arrows on stage 2 give stage 3",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
+   }
+  ]
+ },
+ "chem-nucleophilic-addition": {
+  "title": "Nucleophilic addition: cyanide and ethanal",
+  "caption": "The cyanide carbon's lone pair attacks the δ+ carbonyl carbon and the C=O π electrons move onto oxygen, giving an alkoxide. The alkoxide takes a proton from HCN, which regenerates cyanide. The flat carbonyl can be attacked from either face, so an unsymmetrical carbonyl gives a racemic product. Ethanal is unsymmetrical, so 2-hydroxypropanenitrile forms as a racemic mixture.",
+  "alt": "Nucleophilic addition mechanism: cyanide attacks the carbonyl carbon of ethanal to give an alkoxide, which takes a proton from HCN to form 2-hydroxypropanenitrile.",
+  "description": [
+   "Stage 1: ethanal, CH₃ bonded to a carbon that is double-bonded to oxygen and carries a hydrogen, with a cyanide ion below it and a molecule of HCN. A curly arrow goes from the lone pair on cyanide's carbon to the carbonyl carbon, and another from the C=O double bond onto the oxygen.",
+   "Stage 2: the alkoxide intermediate, oxygen now single-bonded and negatively charged, with the nitrile group on the carbon. A curly arrow goes from a lone pair on the O⁻ to the hydrogen of HCN, and another from the H–C bond of HCN onto its carbon.",
+   "Stage 3: 2-hydroxypropanenitrile, CH₃CH(OH)CN, and a regenerated cyanide ion."
+  ],
+  "course": "chemistry",
+  "lesson": "Nucleophilic addition",
+  "renderer": "mechanism",
+  "status": "ai-reviewed",
+  "review": {
+   "status": "ai-reviewed",
+   "by": "independent AI reviewer (one round, fixes applied)",
+   "date": "2026-11-20",
+   "notes": "Round 1 (AI reviewer): unlabelled nitrile carbons (now labelled), charge on regenerated CN⁻ unreadable, lesson's KCN/HCN sentence corrected; all fixed.",
+   "awaiting": "approval by a named subject reviewer"
+  },
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u13.js: Nucleophilic addition"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "stage 1 is a valid structure",
+    "ok": true,
+    "detail": "[C-:4]#[N:5].[CH3:1][C:2](=[O:3])[H:10].[H:6][C:7]#[N:8]"
+   },
+   {
+    "name": "stage 2 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:1][C:2]([O-:3])([C:4]#[N:5])[H:10].[H:6][C:7]#[N:8]"
+   },
+   {
+    "name": "stage 3 is a valid structure",
+    "ok": true,
+    "detail": "[C-:7]#[N:8].[CH3:1][C:2]([O:3][H:6])([C:4]#[N:5])[H:10]"
+   },
+   {
+    "name": "stages 1→2 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge -1→-1, implicit H 3→3"
+   },
+   {
+    "name": "curly arrows on stage 1 give stage 2",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "stages 2→3 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge -1→-1, implicit H 3→3"
+   },
+   {
+    "name": "curly arrows on stage 2 give stage 3",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
+   }
+  ]
+ },
+ "chem-sn1-mechanism": {
+  "title": "SN1: hydrolysis of 2-bromo-2-methylpropane",
+  "caption": "Step 1 is slow: the C–Br bond breaks on its own, leaving a flat tertiary carbocation and bromide. Water attacks the carbocation (step 2), and a second water molecule removes a proton from the oxonium ion (step 3). Only the haloalkane is involved in the slow, rate-determining step, so rate = k[R–X].",
+  "alt": "SN1 mechanism: 2-bromo-2-methylpropane ionises to a tertiary carbocation, water attacks it, and loss of a proton gives 2-methylpropan-2-ol.",
+  "description": [
+   "Stage 1: 2-bromo-2-methylpropane, a central carbon with three methyl groups and a bromine. A curly arrow goes from the C–Br bond to the bromine. The reaction is in water.",
+   "Stage 2: the tertiary carbocation, a positive central carbon with three methyl groups in a flat arrangement, and a bromide ion. A curly arrow goes from a lone pair on the oxygen of a water molecule to the positive carbon.",
+   "Stage 3: an oxonium ion, the central carbon bonded to an OH₂⁺ group. A curly arrow goes from a lone pair on a second water molecule to one hydrogen of the OH₂⁺ group, and another from that O–H bond onto the oxygen.",
+   "Stage 4: 2-methylpropan-2-ol, a hydronium ion H₃O⁺ and a bromide ion."
+  ],
+  "course": "chemistry",
+  "lesson": "SN1 mechanisms",
+  "renderer": "mechanism",
+  "status": "ai-reviewed",
+  "review": {
+   "status": "ai-reviewed",
+   "by": "independent AI reviewer (one round, fixes applied)",
+   "date": "2026-11-20",
+   "notes": "Round 1 (AI reviewer): caption wording on the rate equation, missing C–Br dipole, stray bromide position; all fixed; lesson step now names the second water.",
+   "awaiting": "approval by a named subject reviewer"
+  },
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u13.js: SN1 mechanisms"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "stage 1 is a valid structure",
+    "ok": true,
+    "detail": "[C:1]([CH3:2])([CH3:3])([CH3:4])[Br:5].[O:6]([H:7])[H:8].[OH2:9]"
+   },
+   {
+    "name": "stage 2 is a valid structure",
+    "ok": true,
+    "detail": "[Br-:5].[C+:1]([CH3:2])([CH3:3])[CH3:4].[O:6]([H:7])[H:8].[OH2:9]"
+   },
+   {
+    "name": "stage 3 is a valid structure",
+    "ok": true,
+    "detail": "[Br-:5].[C:1]([CH3:2])([CH3:3])([CH3:4])[O+:6]([H:7])[H:8].[OH2:9]"
+   },
+   {
+    "name": "stage 4 is a valid structure",
+    "ok": true,
+    "detail": "[Br-:5].[C:1]([CH3:2])([CH3:3])([CH3:4])[O:6][H:8].[H:7][OH2+:9]"
+   },
+   {
+    "name": "stages 1→2 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 0→0, implicit H 11→11"
+   },
+   {
+    "name": "curly arrows on stage 1 give stage 2",
+    "ok": true,
+    "detail": "1 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "stages 2→3 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 0→0, implicit H 11→11"
+   },
+   {
+    "name": "curly arrows on stage 2 give stage 3",
+    "ok": true,
+    "detail": "1 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "stages 3→4 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 0→0, implicit H 11→11"
+   },
+   {
+    "name": "curly arrows on stage 3 give stage 4",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
+   }
+  ]
  }
 }

@@ -125,6 +125,54 @@
   "pageOverflow": false
  },
  {
+  "lesson": "scigradify/chemistry/#/lesson/u13-09",
+  "view": "desktop",
+  "diagrams": 1,
+  "errors": [],
+  "fig1": {
+   "width": 707,
+   "overflow": false,
+   "layout": "wide"
+  },
+  "pageOverflow": false
+ },
+ {
+  "lesson": "scigradify/chemistry/#/lesson/u13-13",
+  "view": "desktop",
+  "diagrams": 1,
+  "errors": [],
+  "fig1": {
+   "width": 707,
+   "overflow": false,
+   "layout": "wide"
+  },
+  "pageOverflow": false
+ },
+ {
+  "lesson": "scigradify/chemistry/#/lesson/u13-16",
+  "view": "desktop",
+  "diagrams": 1,
+  "errors": [],
+  "fig1": {
+   "width": 707,
+   "overflow": false,
+   "layout": "wide"
+  },
+  "pageOverflow": false
+ },
+ {
+  "lesson": "scigradify/chemistry/#/lesson/u13-17",
+  "view": "desktop",
+  "diagrams": 1,
+  "errors": [],
+  "fig1": {
+   "width": 707,
+   "overflow": false,
+   "layout": "wide"
+  },
+  "pageOverflow": false
+ },
+ {
   "lesson": "scigradify/chemistry/#/lesson/u13-10",
   "view": "phone",
   "diagrams": 1,
@@ -239,6 +287,54 @@
  },
  {
   "lesson": "lawgradify/course/#/lesson/u04-03",
+  "view": "phone",
+  "diagrams": 1,
+  "errors": [],
+  "fig1": {
+   "width": 320,
+   "overflow": false,
+   "layout": "narrow"
+  },
+  "pageOverflow": false
+ },
+ {
+  "lesson": "scigradify/chemistry/#/lesson/u13-09",
+  "view": "phone",
+  "diagrams": 1,
+  "errors": [],
+  "fig1": {
+   "width": 320,
+   "overflow": false,
+   "layout": "narrow"
+  },
+  "pageOverflow": false
+ },
+ {
+  "lesson": "scigradify/chemistry/#/lesson/u13-13",
+  "view": "phone",
+  "diagrams": 1,
+  "errors": [],
+  "fig1": {
+   "width": 320,
+   "overflow": false,
+   "layout": "narrow"
+  },
+  "pageOverflow": false
+ },
+ {
+  "lesson": "scigradify/chemistry/#/lesson/u13-16",
+  "view": "phone",
+  "diagrams": 1,
+  "errors": [],
+  "fig1": {
+   "width": 320,
+   "overflow": false,
+   "layout": "narrow"
+  },
+  "pageOverflow": false
+ },
+ {
+  "lesson": "scigradify/chemistry/#/lesson/u13-17",
   "view": "phone",
   "diagrams": 1,
   "errors": [],
