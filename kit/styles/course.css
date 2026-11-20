@@ -2188,3 +2188,16 @@ body:has(> .co-modal) .cx-rings { display: none !important; }
 .cx-donebox { max-height: calc(100dvh - 24px); overflow-y: auto; overscroll-behavior: contain; }
 /* phones: the one button comes before the paragraph, so Start is on the first screen */
 @media (max-width: 760px) { .co-herotext { display: flex; flex-direction: column; } .co-herotext h2 { order: 1; } .co-herotext .co-herogo { order: 2; margin: 4px 0 14px; } .co-herotext > p:not(.co-herosmall) { order: 3; } .co-herotext .co-herosmall { order: 4; } }
+
+/* a long lesson's second half, folded into one card at a natural break (kit/course/course.js, "two parts") */
+.co-prose > .cx-part2 { grid-column: 1 / -1; column-span: all; margin: 28px 0; border-radius: 18px; border: 1.5px solid color-mix(in srgb, var(--accent, #6366f1) 45%, transparent); background: rgba(var(--surface-rgb), .6); }
+.cx-part2 > summary { display: grid; gap: 4px; padding: 18px 48px 18px 20px; cursor: pointer; list-style: none; position: relative; min-height: 44px; }
+.cx-part2 > summary::-webkit-details-marker { display: none; }
+.cx-part2 > summary .cx-p2k { font-size: .85rem; opacity: .8; display: inline-flex; gap: 6px; align-items: center; }
+.cx-part2 > summary b { font-size: 1.1rem; }
+.cx-part2 > summary small { opacity: .75; }
+.cx-part2 > summary .cx-chev { position: absolute; right: 18px; top: 50%; transform: translateY(-50%); }
+.cx-part2[open] > summary .cx-chev { transform: translateY(-50%) rotate(90deg); }
+.cx-part2[open] > summary small { display: none; }
+.cx-part2[open] { background: none; border-color: transparent; }
+.cx-part2[open] > summary { border-bottom: 1px solid rgba(var(--ink-rgb), .12); margin-bottom: 12px; }

@@ -1237,7 +1237,7 @@ export function mountCourse(root, cfg) {
     paintSide();
     // the section headings and parts the rail links to, so it can show which one you're reading
     // (sections moved into the split-screen pane aren't on the page's scroll, so they don't count)
-    const targets = () => [...root.querySelectorAll(".co-toc a")].map((a) => [a, document.getElementById(a.dataset.jump)]).filter(([, el]) => el && !el.closest(".cx-splitpane"));
+    const targets = () => [...root.querySelectorAll(".co-toc a")].map((a) => [a, document.getElementById(a.dataset.jump)]).filter(([, el]) => el && !el.closest(".cx-splitpane") && !el.closest("details:not([open])"));
     let pctShown = -1, lastPlace = null;
     // where you were in this lesson (S.pos, synced with the account so another device picks up at the same section):
     // offered as "Continue" when you come back before finishing it, and used by Continue learning everywhere
@@ -1511,6 +1511,22 @@ export function mountCourse(root, cfg) {
       d.innerHTML = `<summary>${ic("grid")} Show diagram: ${esc(label)}<span class="cx-chev" aria-hidden="true">${ic("right")}</span></summary>`;
       g.before(d); d.append(g);
     });
+    // a long lesson reads as two parts: past the halfway point (by words) the rest folds into one "Part 2" card, so
+    // the first sitting ends at a natural break instead of after twenty screens. Jumps and search still open it.
+    {
+      const prose = main.querySelector(".co-prose"), secs = prose ? [...prose.querySelectorAll(":scope > section")] : [];
+      const words = secs.map((x) => (x.textContent.match(/\S+/g) || []).length), total = words.reduce((a, b) => a + b, 0);
+      if (secs.length >= 3 && total > 700) {
+        let k = 0, run = 0; while (k < secs.length - 2 && run + words[k] < total / 2) run += words[k++];
+        k = Math.max(2, Math.min(k, secs.length - 1));
+        const rest = secs.slice(k), m = Math.max(1, Math.round(words.slice(k).reduce((a, b) => a + b, 0) / 200));
+        const names = rest.map((x) => x.querySelector("h2, h3")?.textContent.trim()).filter(Boolean);
+        const d = document.createElement("details"); d.className = "cx-part2 cx-acc"; d.id = "co-part2";
+        d.innerHTML = `<summary><span class="cx-p2k">${ic("check")} Part 1 done: a good place to pause</span><b>Part 2 of 2${names[0] ? `: ${esc(names[0])}` : ""}</b><small>About ${m} min${names.length > 1 ? ` · ${names.length} sections` : ""} · tap to carry on</small><span class="cx-chev" aria-hidden="true">${ic("right")}</span></summary>`;
+        rest[0].before(d); d.append(...rest);
+        d.addEventListener("toggle", () => { if (d.open && !d.dataset.counted) { d.dataset.counted = "1"; track("part2_open", cfg.site); } });
+      }
+    }
     // a quick check early: the first question moves up to just after the lesson's opening section, so you answer
     // something within a screen or two instead of after the whole lesson (it still counts with the rest)
     {
@@ -1594,15 +1610,15 @@ export function mountCourse(root, cfg) {
     const key = (e) => { if (e.key === "Escape") { e.preventDefault(); close(); } };
     // navigating away (Back, a link, a new hash) removes the sheet: stop its countdown and key handler with it
     routeStop = () => { clearInterval(tick); removeEventListener("keydown", key, true); };
-    d.querySelector("[data-autonext]")?.addEventListener("change", (e) => { S.autoNext = e.target.checked; save(); if (!e.target.checked) { clearInterval(tick); const c = d.querySelector(".cx-countdown"); if (c) c.hidden = true; } });
+    d.querySelector("[data-autonext]")?.addEventListener("change", (e) => { S.autoNext = e.target.checked; save(); track(S.autoNext ? "autonext_on" : "autonext_off", cfg.site); if (!e.target.checked) { clearInterval(tick); const c = d.querySelector(".cx-countdown"); if (c) c.hidden = true; } });
     // chosen by the learner, and never with reduced motion: a five-second countdown they can stop with any key or tap
     const calm = matchMedia("(prefers-reduced-motion: reduce)").matches || document.documentElement.dataset.aMotion === "reduce";
     if (next && S.autoNext && !calm) {
       let n = 5; const c = d.querySelector(".cx-countdown"); c.hidden = false;
       const show = () => { c.innerHTML = `Next lesson in ${n}s · <button type="button" class="co-link" data-stopnext>Stay here</button>`; };
       show();
-      tick = setInterval(() => { n--; if (n <= 0) { close(); location.hash = `#/lesson/${next.id}`; } else show(); }, 1000);
-      const stop = () => { clearInterval(tick); c.hidden = true; };
+      tick = setInterval(() => { n--; if (n <= 0) { track("autonext_go", cfg.site); close(); location.hash = `#/lesson/${next.id}`; } else show(); }, 1000);
+      const stop = () => { if (c.hidden) return; clearInterval(tick); c.hidden = true; track("autonext_stay", cfg.site); };
       d.addEventListener("pointerdown", (e) => { if (!e.target.closest(".cx-donenext")) stop(); }, { once: true });
       d.addEventListener("click", (e) => { if (e.target.closest("[data-stopnext]")) stop(); });
       d.addEventListener("keydown", (e) => { if (e.key !== "Enter") stop(); }, { once: true });
@@ -2575,7 +2591,8 @@ export function mountCourse(root, cfg) {
       const mins = Number(window.gradifyAccess?.get?.().block) || 25;
       if (active >= (blocks + 1) * mins * 60000) {
         blocks++;
-        uiToast({ html: `<b>${mins * blocks} minutes of study.</b> Nice work. Keep going, or take a five-minute break?` }, { tone: "ok", icon: "clock", timeout: 12000, key: "co-block", action: { label: "Break", run: () => uiToast("Break started. Come back in five minutes: you'll pick up right here.", { icon: "clock", timeout: 8000, key: "co-block" }) } });
+        track("break_shown", cfg.site);
+        uiToast({ html: `<b>${mins * blocks} minutes of study.</b> Nice work. Keep going, or take a five-minute break?` }, { tone: "ok", icon: "clock", timeout: 12000, key: "co-block", action: { label: "Break", run: () => { track("break_taken", cfg.site); uiToast("Break started. Come back in five minutes: you'll pick up right here.", { icon: "clock", timeout: 8000, key: "co-block" }); } } });
       }
     }, 30000);
   }
