@@ -345,6 +345,8 @@ S: The autonomic nervous system controls involuntary functions such as heart rat
 O: Compare the sympathetic and parasympathetic divisions and their effects
 O: Name the main neurotransmitters and receptors of the autonomic nervous system
 O: Relate autonomic responses to clinical signs and medicines
+LV: Year 1 · Application
+EV: established | Sympathetic nerves act mainly through noradrenaline on adrenergic receptors and parasympathetic nerves through acetylcholine on muscarinic receptors.
 PRE: Nervous system
 H: Two divisions
 - **Sympathetic** ("fight or flight"): raises heart rate and contractility, dilates the pupils and bronchioles, constricts most blood vessels, diverts blood to muscles, raises blood glucose, and slows digestion and bladder emptying.
@@ -376,12 +378,15 @@ M1#nursing-u02-09-q1@1: Which is an effect of sympathetic stimulation? | Dilated
 M2#nursing-u02-09-q2@3: Why are non-selective beta-blockers avoided in people with asthma? | Blocking beta-2 receptors can cause bronchospasm | They dilate the airways too much | They increase heart rate dangerously | They block muscarinic receptors in the gut | Beta-2 receptors keep the airways open; blocking them can trigger bronchoconstriction.
 M3#nursing-u02-09-q3@3: An older man is given an antimuscarinic medicine for bladder symptoms and becomes confused and unable to pass urine. What is the most likely explanation? | Antimuscarinic side effects: confusion and urinary retention | Sympathetic overactivity from pain | A beta-2 agonist effect | Normal ageing, unrelated to the medicine | Blocking muscarinic receptors reduces bladder contraction and can cause confusion, particularly in older people; this should be reported for medical review.
 MATCH1#nursing-u02-09-q4@2: Match each receptor to its main location or effect. | Beta-1 = Heart ; Beta-2 = Airways ; Alpha-1 = Blood vessel walls ; Muscarinic = Parasympathetic target organs | Receptor locations explain which tissues a medicine affects.
+SA3@1,3: Mrs Khan (invented) is found pale, clammy and sweating, with a pulse of 120 and dilated pupils. Explain which division of the autonomic nervous system is active and why, and why the nurse must not assume this is anxiety. | This is sympathetic activation. Noradrenaline from sympathetic nerves and adrenaline from the adrenal medulla act on beta-1 receptors to speed the heart, on alpha-1 receptors to constrict skin vessels (pallor), and stimulate sweating and pupil dilation. The same fight-or-flight response occurs in pain, fear, hypoglycaemia, shock and sepsis, so the nurse should check her blood glucose, take a full set of observations, calculate NEWS2, look for a cause and escalate in line with local policy rather than simply reassuring her. | Identifies sympathetic activation ; Links signs to noradrenaline or adrenaline and receptors ; Names other causes such as hypoglycaemia, shock or sepsis ; Checks blood glucose and a full set of observations ; Escalates using NEWS2 and local policy
 
 ## Cardiovascular system
 S: The cardiovascular system is the heart and blood vessels, which deliver oxygen and nutrients to every cell and remove waste. Pulse, blood pressure and capillary refill all assess how well it is working.
 O: Describe the structure of the heart and the route of blood through it
 O: Explain the cardiac conduction system and the cardiac cycle
 O: Define cardiac output and blood pressure and relate them to observations
+LV: Year 1 · Foundation
+EV: established | Cardiac output equals heart rate multiplied by stroke volume, and blood pressure depends on cardiac output and vascular resistance.
 PRE: Anatomical terminology
 H: Structure of the heart
 - Four chambers: **right and left atria** (receiving) and **right and left ventricles** (pumping). The left ventricle has the thickest wall because it pumps blood around the whole body.
@@ -414,12 +419,15 @@ M1#nursing-u02-10-q1@1: Which valve lies between the left atrium and the left ve
 M2#nursing-u02-10-q2@3: A patient's stroke volume falls after blood loss. What does the body do first to maintain cardiac output? | Increase the heart rate | Decrease the heart rate | Dilate all blood vessels | Reduce the respiratory rate | Cardiac output = heart rate × stroke volume, so a compensatory tachycardia keeps output up as stroke volume falls.
 M3#nursing-u02-10-q3@2,3: Why can a very fast heart rate cause chest pain in someone with coronary artery disease? | Diastole shortens, reducing coronary filling while the heart's oxygen demand rises | The SA node stops firing, so the ventricles beat alone | Systole becomes longer, increasing coronary flow | The heart valves stay closed for longer in each beat | The coronary arteries fill mainly in diastole; tachycardia shortens diastole and increases demand, causing ischaemia.
 SEQ1#nursing-u02-10-q4@1: Put these in the order blood passes through them, starting from the body. | Venae cavae ; Right atrium ; Right ventricle ; Pulmonary arteries ; Lungs ; Pulmonary veins ; Left atrium ; Left ventricle ; Aorta | Blood passes through the right heart to the lungs, then the left heart to the body.
+SA3@2,3: Using the cardiac output equation, explain how the body responds to blood loss and why a falling blood pressure is a late sign. | Cardiac output = heart rate × stroke volume. Blood loss reduces venous return and preload, so stroke volume falls. Baroreceptors trigger sympathetic responses: the heart rate rises and vessels constrict, raising resistance. With illustrative numbers, 70 beats a minute × 70 mL = 4900 mL a minute; if stroke volume falls to 50 mL, the heart rate must rise to about 98 (4900 ÷ 50) to keep the same output. Blood pressure is held near normal until compensation fails, so tachycardia, pallor, cool peripheries and slow capillary refill appear first and must be escalated. | States cardiac output = heart rate × stroke volume ; Explains the fall in stroke volume after blood loss ; Describes compensatory tachycardia and vasoconstriction ; Explains that blood pressure falls only when compensation fails ; Identifies earlier signs to escalate
 
 ## Blood and circulation
 S: Blood carries oxygen, nutrients, hormones, heat and immune cells around the body through a network of arteries, capillaries and veins. Understanding blood and circulation underpins assessing perfusion, anaemia, bleeding and clotting.
 O: Describe the components of blood and their functions
 O: Compare arteries, capillaries and veins and explain capillary exchange
 O: Explain haemostasis and relate it to bleeding and clotting risks
+LV: Year 1 · Foundation
+EV: established | Capillary fluid exchange depends on blood pressure pushing fluid out and plasma proteins drawing it back.
 PRE: Cardiovascular system
 H: Components of blood
 - **Plasma** (about 55%): water, proteins (albumin, clotting factors, antibodies), electrolytes, glucose, hormones and waste.
@@ -455,12 +463,16 @@ M1#nursing-u02-11-q1@1: What is the main function of platelets? | Starting blood
 M2#nursing-u02-11-q2@2: A patient with liver failure has a low serum albumin and swollen ankles. What explains the oedema? | Reduced plasma protein pull means less fluid returns to the capillaries | Increased red cell production thickens the blood in the legs | Excess platelets block the veins | Arterial pressure has fallen, pushing more fluid into the tissues | Albumin draws fluid back into capillaries; when it is low, fluid stays in the tissues.
 M2#nursing-u02-11-q3@3: Which patient is at the highest risk of venous thromboembolism? | An immobile patient after hip surgery | A mobile young adult with a cold | A person taking an anticoagulant who walks daily | A well-hydrated outpatient | Surgery, immobility and venous stasis all raise clotting risk, which is why VTE risk assessment and prevention are required.
 MATCH1#nursing-u02-11-q4@2: Match each vessel to its feature. | Artery = Thick muscular wall under high pressure ; Capillary = Wall one cell thick ; Vein = Valves and low pressure | Structure fits function in each vessel type.
+M3@3: Mr Brown (invented), who takes an anticoagulant, slips and hits his head. He says he feels fine and has no visible wound. What should the nurse do? | Report it for prompt medical review, because his bleeding risk is raised | Reassure him, as no visible injury means no review is needed | Stop his anticoagulant without discussing it with the prescriber | Apply ice and check him again at the next routine round | Anticoagulants interrupt coagulation, so even a minor head injury can cause bleeding inside the skull; head injury guidance treats anticoagulant use as a reason for medical assessment.
+SA3@2: Explain how fluid moves between capillaries and tissues, and why a person with a low serum albumin may develop oedema. | At the arterial end of a capillary, blood pressure pushes water and small solutes out into the tissue spaces. At the venous end, the osmotic pull of plasma proteins, mainly albumin, draws most of the fluid back, and the lymphatic system returns the rest. When albumin is low, as in liver disease or malnutrition, less fluid is drawn back, so it collects in the tissues as oedema, often in the ankles or sacrum, even though the blood vessels may be under-filled. | Describes blood pressure pushing fluid out at the arterial end ; Explains albumin drawing fluid back at the venous end ; Mentions the lymphatic return ; Links low albumin to reduced return and oedema ; Gives a cause such as liver disease or malnutrition
 
 ## Respiratory system
 S: The respiratory system brings air into the lungs so oxygen can enter the blood and carbon dioxide can leave. Respiratory rate is one of the most sensitive signs of a patient becoming unwell.
 O: Describe the structures of the upper and lower respiratory tract
 O: Explain the mechanics of breathing and its control
 O: Relate respiratory physiology to the assessment of breathing
+LV: Year 1 · Foundation
+EV: established | Breathing is controlled mainly by blood carbon dioxide, and a raised respiratory rate is often the earliest sign of deterioration.
 PRE: Anatomical terminology
 H: Structures
 - **Upper tract**: nose, pharynx and larynx, which warm, moisten and filter air; the epiglottis protects the airway during swallowing.
@@ -492,12 +504,16 @@ M1#nursing-u02-12-q1@1: Where does gas exchange take place? | In the alveoli | I
 M2#nursing-u02-12-q2@2: What happens when the diaphragm contracts? | It flattens, enlarging the chest so air flows in | It rises, pushing air out | It closes the epiglottis to protect the airway | It stops the heart beating | Contraction flattens the diaphragm, increasing chest volume and lowering pressure so air enters.
 M2#nursing-u02-12-q3@3: A patient is sitting forward, using their neck muscles to breathe and can only speak a few words at a time. What does this indicate? | Significant respiratory distress needing urgent assessment and escalation | Normal breathing after exercise | Anxiety about being in hospital, so reassurance alone is enough | A comfortable position that shows their saturation must be normal | Accessory muscle use and being unable to complete sentences are signs of severe breathlessness.
 TF2#nursing-u02-12-q4@1: An inhaled foreign body is more likely to enter the right main bronchus than the left. | True | The right main bronchus is wider, shorter and more vertical, so aspirated material more often enters the right lung.
+M3@2,3: Mr Carter (invented) has COPD with long-standing high carbon dioxide and a prescribed target saturation of 88–92%. On oxygen his SpO2 is 95% and he is becoming drowsy. What should the nurse suspect and do? | Rising carbon dioxide: escalate urgently and keep to the prescribed target | Good oxygenation: turn the oxygen up so that he stays comfortable | Normal tiredness: let him sleep and recheck in four hours | Oxygen excess: remove it completely and recheck him later | Saturation above his target range with new drowsiness suggests hypercapnia. Oxygen is adjusted to the prescribed range, not stopped suddenly, and he needs urgent medical review.
+SA3@2,3: Explain how breathing is controlled, why the respiratory rate is often the earliest sign of deterioration, and how it should be measured. | The respiratory centres in the medulla and pons set the rate and depth of breathing, mainly in response to rising carbon dioxide (falling pH), with low oxygen a weaker stimulus. When a person becomes unwell, for example with sepsis, acidosis or hypoxia, breathing speeds up to compensate before other observations change. The rate should be counted for a full minute without the person being aware, noting depth, pattern, accessory muscle use and ability to speak, and recorded as part of NEWS2 so that a rise is escalated in line with local policy. | Names the medulla and pons ; States carbon dioxide as the main stimulus ; Explains compensatory rise in rate in illness ; Counts for a full minute unobtrusively ; Links to NEWS2 and escalation
 
 ## Gas exchange
 S: Gas exchange is the movement of oxygen from the alveoli into the blood and carbon dioxide from the blood into the alveoli. It explains oxygen saturation, hypoxia and why some patients need oxygen.
 O: Explain how oxygen and carbon dioxide move across the alveolar-capillary membrane
 O: Describe how oxygen and carbon dioxide are carried in the blood
 O: Relate gas exchange to pulse oximetry and its limitations
+LV: Year 1 · Application
+EV: established | Pulse oximeters can overestimate oxygen saturation in people with darker skin, and SpO2 does not measure carbon dioxide or breathing effort.
 PRE: Respiratory system
 H: Diffusion across the membrane
 P: Gases diffuse from higher to lower partial pressure across the very thin alveolar and capillary walls. Exchange is efficient because of the huge surface area of the alveoli, the thin membrane, and the close match between air flow (**ventilation**) and blood flow (**perfusion**). Anything that thickens the membrane (fibrosis, fluid in pulmonary oedema), reduces the surface area (emphysema) or mismatches ventilation and perfusion (pneumonia, pulmonary embolism) impairs exchange.
@@ -529,12 +545,15 @@ M1#nursing-u02-13-q1@1: By what process do oxygen and carbon dioxide cross the a
 M2#nursing-u02-13-q2@3: Which factor can make a pulse oximeter reading falsely high? | Darker skin pigmentation | A warm, well-perfused finger | A correctly sized probe | Keeping the hand still | Evidence shows pulse oximeters may overestimate saturation in people with darker skin; interpret readings with the whole clinical picture.
 M3#nursing-u02-13-q3@2,3: A patient's SpO2 is 96% but their respiratory rate is 30 and they appear exhausted. What is the safest interpretation? | They may be maintaining saturation by working very hard and could be retaining carbon dioxide: escalate | The SpO2 is normal so their breathing is fine | Their breathing is likely to settle, so a routine review tomorrow is enough | The oximeter is probably faulty, so the reading and the rate can be ignored | Saturation doesn't show respiratory effort or carbon dioxide; a high respiratory rate and exhaustion are red flags.
 MS2#nursing-u02-13-q4@1: Which conditions impair gas exchange? | Pulmonary oedema ; Emphysema ; Pulmonary embolism | Mild exercise ; Normal ageing at rest | Fluid thickens the membrane, emphysema loses surface area and a pulmonary embolism blocks perfusion.
+SA3@3: Ms Mensah (invented), who has dark skin and pneumonia, has an SpO2 of 95%. Explain the limitations of this reading and what else the nurse should assess. | Pulse oximeters can overestimate saturation in people with darker skin, so the true value may be lower. Readings are also affected by poor perfusion, cold hands, movement and nail varnish, and SpO2 says nothing about carbon dioxide or how hard she is working to breathe. The nurse should assess her respiratory rate, depth and effort, accessory muscle use, ability to speak, colour of lips and mucous membranes, heart rate, blood pressure, temperature and conscious level, calculate NEWS2, follow the trend, and escalate concerns in line with local policy, as blood gases may be needed. | Explains overestimation in darker skin ; Names other causes of unreliable readings ; States that SpO2 doesn't show carbon dioxide or effort ; Assesses respiratory rate and effort and other observations ; Uses NEWS2 and escalates
 
 ## Digestive system
 S: The digestive system breaks food down into molecules the body can absorb, and eliminates what it can't use. Nurses assess appetite, swallowing, bowel function and nutrition every day.
 O: Describe the structures of the alimentary canal and accessory organs
 O: Explain mechanical and chemical digestion and where nutrients are absorbed
 O: Relate digestive physiology to swallowing problems, constipation and diarrhoea
+LV: Year 1 · Foundation
+EV: established | Most digestion and absorption take place in the small intestine, and the large intestine reclaims water.
 PRE: Cells and tissues
 H: The alimentary canal
 - **Mouth**: chewing, saliva (lubricates and starts starch digestion with amylase).
@@ -566,12 +585,15 @@ M1#nursing-u02-14-q1@1: Which substance made in the stomach is needed to absorb 
 M2#nursing-u02-14-q2@2: Where do absorbed sugars and amino acids go first? | To the liver through the hepatic portal vein | Directly to the brain | Into the lymphatic vessels | To the kidneys through the renal artery | The hepatic portal vein takes nutrient-rich blood from the gut to the liver for processing.
 M2#nursing-u02-14-q3@3: A patient who had a stroke yesterday coughs and splutters when drinking water. What should the nurse do? | Stop oral intake and arrange a swallowing assessment per local policy | Encourage faster drinking to clear the throat | Give thicker food without assessment | Document it and continue as normal | Coughing when drinking suggests aspiration risk; the person needs swallow screening and speech and language therapy assessment.
 M3#nursing-u02-14-q4@3: A patient on regular morphine for pain has not opened their bowels for four days and feels bloated. What is the most likely cause? | Opioids slowing gut motility | Excess dietary fibre | Increased gut motility | A side effect of drinking too much water | Opioids reduce peristalsis and commonly cause constipation, so laxatives are usually prescribed alongside them.
+SA3@2,3: Explain how opioids, reduced mobility and a low fluid intake contribute to constipation in hospital, and what the nurse should assess. | Opioids reduce peristalsis, so contents move slowly through the gut. Immobility also slows gut motility. The longer faeces stay in the large intestine, the more water is absorbed, and a low fluid intake means stools are harder still. The nurse should assess and record bowel frequency and stool type using the Bristol Stool Chart, abdominal discomfort, bloating, nausea, appetite, fluid intake, mobility and medicines, report constipation so that laxatives or other treatment can be reviewed, and watch for overflow diarrhoea or signs of obstruction. | Links opioids to reduced peristalsis ; Links immobility to slower motility ; Explains increased water absorption in the colon ; Uses the Bristol Stool Chart or bowel record ; Reviews medicines, fluids and escalates concerns
 
 ## Liver and pancreas
 S: The liver and pancreas are accessory organs of digestion with major metabolic roles. The liver processes nutrients, medicines and toxins; the pancreas makes digestive enzymes and the hormones that control blood glucose.
 O: Describe the main functions of the liver
 O: Describe the exocrine and endocrine functions of the pancreas
 O: Relate liver and pancreatic function to jaundice, medicines and blood glucose
+LV: Year 1 · Foundation
+EV: established | The liver synthesises albumin and most clotting factors and metabolises many medicines.
 PRE: Digestive system
 H: The liver
 - **Metabolism**: stores glucose as glycogen and releases it when needed; converts amino acids and fats; makes cholesterol.
@@ -603,12 +625,15 @@ M1#nursing-u02-15-q1@1: Which of these does the liver make? | Albumin and most c
 M2#nursing-u02-15-q2@3: A patient has yellow sclerae, dark urine and pale stools. What is the most likely mechanism? | Blocked flow of bile into the gut | Excess insulin release | Too little red cell breakdown | Low glucagon levels | Obstruction stops bilirubin reaching the gut (pale stools); conjugated bilirubin spills into the urine (dark urine).
 M2#nursing-u02-15-q3@2: What is the effect of glucagon? | Raises blood glucose by releasing glucose from liver glycogen | Lowers blood glucose by helping cells take it up | Digests fats in the duodenum | Stores iron in the liver | Glucagon from alpha cells stimulates the liver to break down glycogen and release glucose.
 M3#nursing-u02-15-q4@3: Why may a patient with advanced liver disease become confused? | Ammonia and other toxins aren't cleared by the liver and affect the brain | The pancreas stops making amylase | Bile salts build up and reduce oxygen delivery to the brain | Too much albumin enters the brain | Failure to convert ammonia to urea contributes to hepatic encephalopathy, which needs urgent medical review.
+SA3@1,3: Explain why a person with advanced liver disease may bleed easily, develop ankle oedema and be at risk from usual doses of some medicines. | The liver makes most clotting factors, so when it fails the blood clots poorly and the person bruises and bleeds easily. It also makes albumin, and a low albumin reduces the osmotic pull that draws fluid back into capillaries, so fluid collects in the tissues as oedema. Many medicines are metabolised in the liver, so in liver failure they are cleared more slowly and can accumulate to toxic levels, and some medicines can damage the liver further. Doses therefore need checking with the prescriber, pharmacist and BNF. | Links failure to reduced clotting factors and bleeding ; Links low albumin to oedema ; Explains reduced metabolism and accumulation of medicines ; Mentions hepatotoxic medicines or dose checks ; Uses accurate terminology
 
 ## Renal system
 S: The kidneys filter the blood, remove waste and control the body's water, electrolytes, acid-base balance and blood pressure. Urine output is one of the most useful signs of how well a patient is perfused.
 O: Describe the structure of the kidney and the nephron
 O: Explain filtration, reabsorption and secretion
 O: Describe the kidneys' hormonal roles and relate renal function to urine output and blood results
+LV: Year 1 · Application
+EV: established | An adult urine output below about 0.5 mL/kg/hour for several hours may indicate acute kidney injury or poor perfusion.
 PRE: Blood and circulation
 H: Structure
 - Two kidneys lie at the back of the abdomen, receiving about a fifth of the cardiac output through the **renal arteries**.
@@ -642,6 +667,8 @@ M1#nursing-u02-16-q1@2: Which hormone makes the collecting ducts reabsorb more w
 M2#nursing-u02-16-q2@3: A 70 kg patient has passed 60 mL of urine in the last four hours. What is the significance? | Output is below about 0.5 mL/kg/hour and needs assessment and escalation | Output is normal for an adult | It only matters if the patient is thirsty | It shows the kidneys are concentrating urine well, so no action is needed | 0.5 mL/kg/hour for 70 kg is 35 mL an hour (140 mL in four hours); 60 mL suggests oliguria, which can signal acute kidney injury or poor perfusion.
 M2#nursing-u02-16-q3@3: Why are people with chronic kidney disease often anaemic? | The kidneys make less erythropoietin | The kidneys lose all red cells in the urine | The bone marrow is blocked by urea | The liver stops making albumin | Reduced erythropoietin means fewer red blood cells are produced.
 SEQ2#nursing-u02-16-q4@2: Put the parts of the nephron in the order filtrate passes through them. | Bowman's capsule ; Proximal tubule ; Loop of Henle ; Distal tubule ; Collecting duct | Filtrate passes from the capsule along the tubules to the collecting duct, where final water reabsorption occurs.
+M3@3: Mrs Lee (invented), 80 kg, has a urinary catheter. Over three hours she has passed 20, 15 and 10 mL, and her heart rate is rising. What should the nurse do? | Check the catheter for kinks or blockage, assess her and escalate | Wait another four hours to see whether the output picks up | Encourage her to drink more and recheck the output tomorrow | Record it, as this output is adequate for her body weight | At 0.5 mL/kg/hour, 80 kg needs about 40 mL an hour, 120 mL over three hours; 45 mL with a rising heart rate suggests poor perfusion or acute kidney injury, so check the catheter and escalate.
+SA3@2,3: Explain how the kidneys respond to dehydration through antidiuretic hormone and the renin-angiotensin-aldosterone system, and how this shows in a patient's observations. | Dehydration raises plasma concentration and lowers blood volume. The pituitary releases ADH, so the collecting ducts reabsorb more water and urine becomes small in volume and concentrated. Reduced kidney perfusion releases renin, leading to angiotensin II, which constricts vessels, and aldosterone, which retains sodium and water. Together these defend blood pressure. Observations show low, dark urine output, thirst, a rising heart rate and, if compensation fails, a falling blood pressure; creatinine may rise. Low output should be assessed and escalated. | Explains ADH increasing water reabsorption ; Describes renin, angiotensin II and aldosterone ; Explains the effect on blood pressure ; Links to low, concentrated urine output ; Names other signs and escalation
 
 ## Urinary system
 S: The urinary system stores and eliminates urine through the ureters, bladder and urethra. Continence, urinary tract infection and urinary retention are everyday nursing concerns.

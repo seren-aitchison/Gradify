@@ -711,6 +711,7 @@
    "changes": [
     "level: A level · Fluency",
     "evidence status: established",
+    "explanation of the existing NUM question \"Convert 3π/4 radians to degrees\" lengthened to explain the conversion",
     "questions added: NUM3, SA2 (all linked to objectives)",
     "extended written answer (SA) with model answer and marking points added"
    ],
@@ -737,6 +738,79 @@
     "evidence status: established",
     "content added: P (**Two observations.** When the elevation of a tower's top is measur…)",
     "questions added: NUM3, SA3 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u06-09",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE and A level · Application",
+    "evidence status: established",
+    "questions added: NUM2, SA3 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u06-10",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE and A level · Application",
+    "evidence status: established",
+    "questions added: NUM3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u06-11",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE and A level · Fluency",
+    "evidence status: established",
+    "questions added: NUM3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u06-12",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 2 · Application",
+    "evidence status: established",
+    "content added: P (For a triangle whose sides are tiny compared with the radius, cos a…)",
+    "questions added: NUM2, NUM3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u06-13",
+   "action": "enhanced",
+   "changes": [
+    "level: GCSE and A level · Application",
+    "evidence status: established",
+    "questions added: M3, SA2 (all linked to objectives)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "maths",
+   "lesson": "u06-14",
+   "action": "enhanced",
+   "changes": [
+    "level: A level · Application",
+    "evidence status: established",
+    "questions added: NUM2, SA2 (all linked to objectives)",
     "extended written answer (SA) with model answer and marking points added"
    ],
    "findings": []

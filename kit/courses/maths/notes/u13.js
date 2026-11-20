@@ -938,6 +938,7 @@ SA3@2: Explain why a paired t-test on before-and-after measurements is usually m
 S: Chi-squared tests compare observed counts with the counts expected under a hypothesis. They test whether data fit a distribution (goodness of fit) and whether two categorical variables are associated (independence).
 O: Carry out chi-squared goodness-of-fit and independence tests
 O: Find the degrees of freedom and check expected-count conditions
+LV: A level · Application
 T: Chi-squared statistic | X^{2} = Σ (O − E)^{2}/E over all cells
 T: Expected count | The count predicted by H₀, such as (row total × column total)/grand total in a table
 H: Goodness of fit
@@ -962,16 +963,20 @@ Q: How do you find an expected count in a contingency table? | (Row total × col
 Q: How many degrees of freedom for testing a Poisson fit over 6 classes with λ estimated? | 6 − 1 − 1 = 4.
 SUM: Chi-squared compares observed with expected counts.
 SUM: It tests fit and independence.
+EV: established | Under H₀ the statistic Σ(O − E)^{2}/E is approximately chi-squared when expected counts are not too small.
 SRC: Agresti A, Categorical Data Analysis (3rd edn, Wiley 2013) | secondary | 2013 | https://www.wiley.com/
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
-NUM1#maths-u13-25-q1@1: In a 2 × 2 table, a cell has row total 40, column total 30 and grand total 100. Find its expected count. | 12 | 0 |  | 40 × 30/100 = 12.
+NUM1#maths-u13-25-q1@1: In a 2 × 2 table, a cell has row total 40, column total 30 and grand total 100. Find its expected count. | 12 | 0 |  | E = row total × column total/n = 40 × 30/100 = 12.
 M1#maths-u13-25-q2@1: Why should percentages never be used in place of counts in a chi-squared test? | The statistic depends on sample size, which percentages hide | Percentages are always wrong | Percentages can't be squared, so the formula fails | Counts are easier to type | It makes no difference | The same percentages from 10 or 10,000 people carry very different evidence.
 M2#maths-u13-25-q3@2: What are the degrees of freedom for a 4 × 3 table test of independence? | 6 | 12 | 7 | 5 | 11 | For an r × c table the degrees of freedom are (r − 1)(c − 1) = 3 × 2 = 6.
+NUM3@1: A 2 × 2 table has counts 30, 20 in the first row and 20, 30 in the second (n = 100). Find the chi-squared statistic for independence. | 4 | 0.001 |  | Every row and column total is 50, so each E = 50 × 50/100 = 25. Each (O − E)^{2}/E = 25/25 = 1, so X^{2} = 4 on 1 degree of freedom.
+SA3@2: A survey of 500 people finds a significant chi-squared association between region and preferred news source. Explain what this does and does not show, and how to describe the strength of the association. | It shows that news source is not independent of region in the population, beyond what sampling variation would plausibly produce. It does not show that region causes the preference (confounders such as age or income may differ by region), nor how strong the association is: with large n even weak associations are significant. Describe strength with Cramér's V (or odds ratios for 2 × 2 tables) and look at which cells contribute most to X^{2}, comparing observed and expected counts. | States association, not independence ; Says it isn't causation ; Names a possible confounder ; Notes significance isn't strength ; Names Cramér's V, odds ratios or cell contributions
 
 ## Fisher's Exact Test
 S: Fisher's exact test analyses 2 × 2 tables using the exact hypergeometric probabilities, rather than a chi-squared approximation. It's valid for any sample size and is the standard choice when counts are small.
 O: Explain the basis of Fisher's exact test
 O: Calculate an exact p-value for a small table
+LV: Year 1 · Application
 T: Fisher's exact test | A test of association in a 2 × 2 table, conditioning on the row and column totals
 T: Conditional test | A test that treats some margins as fixed, so probabilities come from the hypergeometric distribution
 H: The idea
@@ -996,16 +1001,20 @@ Q: Which distribution underlies Fisher's exact test? | The hypergeometric.
 Q: In the tea experiment, what is P(all four correct) by guessing? | 1/70.
 SUM: Fisher's test is exact for 2 × 2 tables.
 SUM: It suits small samples.
+EV: established | Conditional on both margins, the count in one cell of a 2 × 2 table is hypergeometric under independence, giving exact p-values.
 SRC: Fisher RA, The Design of Experiments (Oliver and Boyd 1935) | secondary | 1935 | https://archive.org/
 SRC: Agresti A, Categorical Data Analysis (3rd edn, Wiley 2013) | secondary | 2013 | https://www.wiley.com/
-NUM1#maths-u13-26-q1@1: How many ways are there to choose which 4 of 8 cups were milk-first? | 70 | 0 |  | C(8, 4) = 70.
+NUM1#maths-u13-26-q1@1: How many ways are there to choose which 4 of 8 cups were milk-first? | 70 | 0 |  | The number of ways to choose 4 cups from 8 is C(8, 4) = 8!/(4!4!) = 70.
 M1#maths-u13-26-q2@1: When is Fisher's exact test preferred to the chi-squared test? | When expected counts are small | When the table is very large | When data are continuous | When the sample has thousands of observations | Never | The chi-squared approximation is poor for small expected counts.
 M2#maths-u13-26-q3@2: What does Fisher's test hold fixed when computing probabilities? | Both sets of margins (row and column totals) | The difference in proportions | Only the grand total of the table | The cell counts | The odds ratio | Conditioning on the margins makes the table's distribution hypergeometric.
+NUM3@2: A 2 × 2 table has row totals 5 and 5 and column totals 4 and 6. Under independence, find the probability that the top-left cell is 4, to 4 decimal places. | 0.0238 | 0.0005 |  | Hypergeometric: C(5, 4)C(5, 0)/C(10, 4) = 5/210 ≈ 0.0238.
+SA3@1: Explain the logic of Fisher's "lady tasting tea" experiment and why identifying three of the four milk-first cups is not convincing evidence. | Eight cups, four milk-first, are presented in random order, and she must pick the four milk-first cups. If she is guessing (H₀), every choice of 4 cups from 8 is equally likely: C(8, 4) = 70. Getting all four is 1/70 ≈ 0.014, which would be significant at 5%. But three or more right has probability (16 + 1)/70 ≈ 0.243, so three right happens about a quarter of the time by guessing alone. Randomising the order is what makes these probabilities valid. | Describes the design ; Computes C(8, 4) = 70 ; Gets P(all four) = 1/70 ; Gets P(at least three) = 17/70 ; Explains the role of randomisation
 
 ## Mann–Whitney U Test
 S: The Mann–Whitney U test (also called the Wilcoxon rank-sum test) compares two independent groups using ranks. It tests whether values in one group tend to be larger than in the other, without assuming normality.
 O: Calculate the U statistic from ranks
 O: Interpret the test and state its assumptions
+LV: Year 1 · Application
 T: Mann–Whitney U | U₁ = R₁ − n₁(n₁ + 1)/2, where R₁ is the rank sum of group 1 in the combined ranking
 T: Stochastic dominance | One group tends to give larger values: P(X > Y) > 1/2
 H: Method
@@ -1030,16 +1039,20 @@ Q: What is U₁ + U₂ always equal to? | n₁n₂.
 Q: What effect size does U₁/(n₁n₂) estimate? | P(X > Y), the probability a group 1 value exceeds a group 2 value.
 SUM: Mann–Whitney compares two groups by ranks.
 SUM: It's robust and assumption-light.
+EV: established | The Mann–Whitney U statistic divided by n₁n₂ estimates the probability that a value from one group exceeds a value from the other.
 SRC: Mann HB, Whitney DR, On a test of whether one of two random variables is stochastically larger than the other, Annals of Mathematical Statistics 18(1), 50 | primary | 1947 | https://doi.org/10.1214/aoms/1177730491
 SRC: Hollander M, Wolfe DA, Chicken E, Nonparametric Statistical Methods (3rd edn, Wiley 2014) | secondary | 2014 | https://www.wiley.com/
 NUM1#maths-u13-27-q1@1: Group 1 (n₁ = 5) has rank sum 40 in a combined ranking. Find U₁. | 25 | 0 |  | U₁ = 40 − 5 × 6/2 = 40 − 15 = 25.
 M1#maths-u13-27-q2@1: Which situation suits a Mann–Whitney U test? | Comparing pain ratings between two independent groups | Comparing before and after scores on the same people | Comparing three groups | Testing a correlation | Testing a proportion | Two independent groups and ordinal data suit the rank-sum approach.
 M2#maths-u13-27-q3@2: What is the mean of U under H₀ for groups of 10 and 12? | 60 | 120 | 11 | 22 | 66 | Under H₀ the U statistic is centred at half of n₁n₂: E(U) = 120/2 = 60.
+NUM3@1: Group A is 7, 9, 12, 15 and group B is 3, 5, 8, 10, 11. Find the smaller of U_{A} and U_{B}. | 5 | 0 |  | Combined ranks give R_{A} = 3 + 5 + 8 + 9 = 25, so U_{A} = 25 − 4 × 5/2 = 15 and U_{B} = 4 × 5 − 15 = 5.
+SA3@2: A Mann–Whitney test compares recovery times under two treatments and gives U_{1}/(n₁n₂) = 0.70 with p = 0.01. Interpret this, and explain when it can be described as a difference in medians. | The p-value gives evidence that recovery times tend to differ between the treatments. The effect size 0.70 estimates that a randomly chosen patient on treatment 1 has a longer recovery time than one on treatment 2 with probability 0.70 (0.5 would mean no tendency either way). It is a test of medians only if the two distributions have the same shape and differ by a shift; otherwise it tests whether one group's values tend to be larger. | Interprets the significant result ; Interprets 0.70 as P(X > Y) ; Notes 0.5 means no difference ; States the same-shape condition for medians ; Mentions the independence assumption or the general stochastic-ordering hypothesis
 
 ## Wilcoxon Signed-Rank Test
 S: The Wilcoxon signed-rank test compares paired data, or one sample with a hypothesised median, using the ranks of the absolute differences. It uses more information than the sign test while staying robust to outliers.
 O: Calculate the signed-rank statistic
 O: Choose between the sign test, signed-rank test and paired t-test
+LV: Year 1 · Application
 T: Signed-rank statistic | W⁺, the sum of the ranks of the positive differences (ranks of |d|)
 T: Symmetry assumption | The test assumes the differences are symmetric about their median
 H: Method
@@ -1064,16 +1077,20 @@ Q: What do W⁺ and W⁻ add up to for n non-zero differences? | n(n + 1)/2.
 Q: What assumption does the signed-rank test make that the sign test doesn't? | The differences are symmetric about their median.
 SUM: Signed ranks use both direction and size.
 SUM: It suits paired, non-normal data.
+EV: established | The signed-rank test assumes paired differences are symmetric about their median and uses the ranks of their sizes.
 SRC: Wilcoxon F, Individual comparisons by ranking methods, Biometrics Bulletin 1(6), 80 | primary | 1945 | https://doi.org/10.2307/3001968
 SRC: Hollander M, Wolfe DA, Chicken E, Nonparametric Statistical Methods (3rd edn, Wiley 2014) | secondary | 2014 | https://www.wiley.com/
 NUM1#maths-u13-28-q1@1: Under H₀, what is the mean of W⁺ for n = 20 non-zero differences? | 105 | 0 |  | n(n + 1)/4 = 20 × 21/4 = 105.
 M1#maths-u13-28-q2@1: What does the signed-rank test use that the sign test ignores? | The sizes of the differences, through their ranks | The order of collection | The sample mean | The variance | The order in which the pairs were collected | Ranking |d| brings in magnitude, which adds power.
 M3#maths-u13-28-q3@2: Paired differences are strongly skewed. Which test is safest? | The sign test | The Wilcoxon signed-rank test | The paired t-test | A two-sample t-test | Fisher's exact test | Skewness violates the signed-rank test's symmetry assumption; the sign test needs none.
+NUM2@1: Paired differences are 5, −2, 7, 1, −3, 9, 4, −6. Find W⁻. | 11 | 0 |  | Ranking |d| gives −2 rank 2, −3 rank 3 and −6 rank 6, so W⁻ = 11; then W⁺ = 36 − 11 = 25, since the ranks sum to 8 × 9/2 = 36.
+SA2@2: Reaction times are recorded for 15 people with and without caffeine. Explain how you would choose between a paired t-test, a Wilcoxon signed-rank test and a sign test. | All three use the paired differences. Plot them. If they look roughly normal, the paired t-test is most powerful and estimates the mean difference. If they are symmetric but heavy-tailed or contain outliers, use the signed-rank test, which uses the sizes of differences through ranks. If they are clearly skewed, the signed-rank symmetry assumption fails, so use the sign test, which needs only independence. | Uses the differences ; Checks their distribution by plotting ; Chooses t for roughly normal differences ; Chooses signed-rank for symmetric heavy tails ; Chooses the sign test for skewed differences
 
 ## Kruskal–Wallis Test
 S: The Kruskal–Wallis test compares three or more independent groups using ranks. It's the nonparametric counterpart of one-way ANOVA, used when data are ordinal or clearly non-normal.
 O: Calculate the Kruskal–Wallis H statistic
 O: Interpret the test and follow it with post hoc comparisons
+LV: Year 2 · Application
 T: Kruskal–Wallis H | H = [12/(N(N + 1))] Σ R_{i}^{2}/n_{i} − 3(N + 1), using rank sums R_{i}
 T: Post hoc test | A follow-up test identifying which groups differ, such as Dunn's test
 H: Method
@@ -1098,16 +1115,20 @@ Q: What is the parametric counterpart of the Kruskal–Wallis test? | One-way AN
 Q: How many degrees of freedom does H have for 4 groups? | 3.
 SUM: Kruskal–Wallis compares several groups by ranks.
 SUM: Follow up to find which differ.
+EV: established | Under H₀ of identical distributions, the Kruskal–Wallis H statistic is approximately chi-squared with k − 1 degrees of freedom.
 SRC: Kruskal WH, Wallis WA, Use of ranks in one-criterion variance analysis, Journal of the American Statistical Association 47(260), 583 | primary | 1952 | https://doi.org/10.1080/01621459.1952.10483441
 SRC: Hollander M, Wolfe DA, Chicken E, Nonparametric Statistical Methods (3rd edn, Wiley 2014) | secondary | 2014 | https://www.wiley.com/
 NUM1#maths-u13-29-q1@1: For 5 groups, what is the 5% critical value of the χ^{2} approximation to H, to 2 decimal places? | 9.49 | 0.01 |  | With k − 1 = 4 degrees of freedom, the upper 5% point of χ^{2}₄ is 9.49.
 M1#maths-u13-29-q2@1: Which test fits comparing pain scores across four independent treatment groups with skewed data? | Kruskal–Wallis | Paired t-test | Mann–Whitney U | Fisher's exact | Two-sample z-test | Several independent groups with non-normal data call for Kruskal–Wallis.
 M2#maths-u13-29-q3@2: A Kruskal–Wallis test is significant. What should you do next? | Run corrected pairwise comparisons, such as Dunn's test | Conclude all groups differ | Conclude the largest group differs | Run another Kruskal–Wallis | Conclude that every group differs from every other | H tells you some difference exists, not where.
+NUM3@1: Three groups of 3 have ranks A: 1, 2, 4; B: 3, 5, 7; C: 6, 8, 9. Find H, to 2 decimal places. | 5.69 | 0.01 |  | R = 7, 15 and 23. H = (12/90)((49 + 225 + 529)/3) − 30 = (12/90)(267.67) − 30 ≈ 5.69, just below the χ^{2}₂ value 5.991.
+SA3@2: A Kruskal–Wallis test across four hospitals' satisfaction scores is significant. Explain what you can conclude and how to find which hospitals differ. | It shows that at least one hospital's scores tend to differ from the others; it does not say which, or how. Follow up with pairwise comparisons (Dunn's test, or Mann–Whitney tests for each of the 6 pairs) with a multiple testing correction such as Holm or Bonferroni (0.05/6 ≈ 0.0083), since six tests would otherwise inflate false positives. Report effect sizes, and interpret it as medians only if the distributions have similar shapes. | States at least one group differs ; Says H doesn't identify which ; Proposes Dunn's or pairwise tests ; Applies a multiple testing correction ; Mentions effect sizes or the shape condition
 
 ## Kolmogorov–Smirnov Test
 S: The Kolmogorov–Smirnov test compares whole distributions: a sample with a hypothesised distribution, or two samples with each other. Its statistic is the largest vertical gap between cumulative distribution functions.
 O: Calculate the KS statistic and compare it with a critical value
 O: State the limitations of the KS test
+LV: Year 2 · Application
 T: KS statistic | D = sup_{x} |F_{n}(x) − F₀(x)|, the largest gap between the empirical and hypothesised CDFs
 T: Two-sample KS test | Compares the empirical CDFs of two samples
 H: Method
@@ -1132,16 +1153,20 @@ Q: What does the KS statistic measure? | The largest vertical distance between t
 Q: Which test gives more weight to the tails than KS? | The Anderson–Darling test.
 SUM: KS compares entire distributions.
 SUM: Watch for estimated parameters.
+EV: established | The KS statistic is distribution-free when the hypothesised continuous distribution is fully specified, but not when its parameters are estimated from the data.
 SRC: Massey FJ, The Kolmogorov–Smirnov test for goodness of fit, Journal of the American Statistical Association 46(253), 68 | primary | 1951 | https://doi.org/10.1080/01621459.1951.10500769
 SRC: NIST/SEMATECH, e-Handbook of Statistical Methods, section 1.3.5.16: Kolmogorov–Smirnov goodness-of-fit test | guidance | 2012 | https://www.itl.nist.gov/div898/handbook/
 NUM1#maths-u13-30-q1@1: Find the approximate 5% KS critical value for n = 400, to 3 decimal places. | 0.068 | 0.001 |  | 1.36/√400 = 1.36/20 = 0.068.
 M1#maths-u13-30-q2@1: What is a weakness of the KS test? | It has low power for differences in the tails | It only detects differences in means | It requires normal data | It can't compare two samples | It needs large expected counts | The CDF gap is naturally small in the tails, so tail differences are hard to detect.
 M2#maths-u13-30-q3@2: A KS test for normality uses the sample mean and SD as parameters. What's the problem? | Standard critical values are too large, making the test conservative | The test becomes invalid for every sample size | It needs very large samples | It always rejects | It needs a t-distribution | Fitting parameters to the data shrinks D; Lilliefors' critical values account for that.
+NUM2@1: Find the approximate 5% critical value for a two-sample KS test with n₁ = n₂ = 50, to 3 decimal places. | 0.272 | 0.001 |  | 1.36√((50 + 50)/(50 × 50)) = 1.36 × 0.2 = 0.272.
+SA3@2: A researcher tests 30 observations for normality with a KS test, using the sample mean and SD as the parameters, and gets p = 0.4. Explain what is wrong and what to do instead. | Estimating μ and σ from the same data makes the fitted normal hug the sample, so D is smaller than standard tables assume: the p-value is too large and the test is too conservative. Use Lilliefors' critical values or simulate the null distribution, or, better, the Shapiro–Wilk test, which is more powerful for normality; and look at a Q–Q plot. With n = 30 any test has limited power, so a large p doesn't prove normality. | Identifies estimated parameters as the problem ; Says D is too small or p too large ; Proposes Lilliefors or simulation ; Recommends Shapiro–Wilk or a Q–Q plot ; Notes non-rejection doesn't prove normality
 
 ## Analysis of Variance (ANOVA)
 S: Analysis of variance tests whether several group means are equal by comparing the variation between groups with the variation within them. It avoids the inflated error rate of many pairwise t-tests and underlies the analysis of designed experiments.
 O: Partition variation into between-group and within-group sums of squares
 O: Carry out a one-way ANOVA F-test
+LV: Year 1 · Application
 T: Between-group sum of squares | SS_{B} = Σ n_{i}(x̄_{i} − x̄)^{2}, variation of group means about the grand mean
 T: Within-group sum of squares | SS_{W} = Σ Σ (x_{ij} − x̄_{i})^{2}, variation inside the groups
 H: The partition
@@ -1167,16 +1192,20 @@ Q: What are the degrees of freedom for one-way ANOVA with 4 groups and 20 observ
 Q: What does a significant ANOVA F-test tell you? | At least one group mean differs.
 SUM: ANOVA compares between- and within-group variation.
 SUM: The F-test checks for any difference in means.
+EV: established | Under H₀ of equal means, with independent normal errors of common variance, MS_{B}/MS_{W} follows an F(k − 1, N − k) distribution.
 SRC: Montgomery DC, Design and Analysis of Experiments (9th edn, Wiley 2017) | secondary | 2017 | https://www.wiley.com/
 SRC: NIST/SEMATECH, e-Handbook of Statistical Methods, section 7.4.3: Are the means equal? | guidance | 2012 | https://www.itl.nist.gov/div898/handbook/
 NUM1#maths-u13-31-q1@1: An ANOVA has SS_{B} = 30 with 3 groups and SS_{W} = 54 with 30 observations. Find F, to 2 decimal places. | 7.5 | 0.01 |  | MS_{B} = 30/2 = 15, MS_{W} = 54/27 = 2, F = 7.5.
 M1#maths-u13-31-q2@1: Why use ANOVA rather than all pairwise t-tests for five groups? | Ten separate tests would inflate the chance of a false positive | t-tests can't compare means | t-tests need equal group sizes | ANOVA needs fewer assumptions | ANOVA gives each pair's difference with a p-value | Ten tests at 5% give a much higher family-wise error rate than one F-test.
 M2#maths-u13-31-q3@2: In ANOVA, what is η^{2}? | The proportion of total variation explained by the groups | The p-value of the F-test | The ratio of between-group to within-group mean squares | The within-group variance | The number of groups | η^{2} = SS_{B}/SS_{total}, an effect size for group differences.
+NUM3@1,2: Groups are A: 1, 3, 5; B: 4, 6, 8; C: 4, 5, 6. Find the one-way ANOVA F statistic, to 3 decimal places. | 2.333 | 0.005 |  | Means 3, 6, 5 and grand mean 14/3: SS_{B} = 3(25/9 + 16/9 + 1/9) = 14 and SS_{W} = 8 + 8 + 2 = 18. F = (14/2)/(18/6) = 7/3 ≈ 2.333.
+SA3@2: For the worked example (groups 4, 5, 6; 6, 7, 8; 8, 9, 10), find η^{2} and explain what a significant F does and does not tell you. | SS_{total} = SS_{B} + SS_{W} = 24 + 6 = 30, so η^{2} = 24/30 = 0.8: 80% of the variation is between groups, a very large effect. A significant F shows that not all population means are equal, but not which differ. Follow up with a post hoc method such as Tukey's HSD, which controls the family-wise error across all pairs, and check the assumptions with residual plots. | Computes SS_{total} = 30 ; Gets η^{2} = 0.8 and interprets it ; States F shows at least one mean differs ; Says it doesn't identify which ; Names Tukey's HSD or a corrected post hoc test
 
 ## Analysis of Covariance (ANCOVA)
 S: Analysis of covariance combines ANOVA with regression: it compares group means after adjusting for a continuous covariate, such as a baseline score. Adjusting reduces noise and corrects for chance imbalances, so trials get more precise answers.
 O: Explain how ANCOVA adjusts group comparisons for a covariate
 O: Calculate an adjusted difference in means
+LV: Year 2 · Application
 T: Covariate | A continuous variable related to the outcome, such as a baseline measurement
 T: Adjusted mean | A group mean estimated at a common value of the covariate
 H: The model
@@ -1201,16 +1230,20 @@ Q: What does ANCOVA add to ANOVA? | A continuous covariate in the model.
 Q: Why adjust for baseline in a randomised trial? | To improve precision and correct chance imbalances.
 SUM: ANCOVA adjusts comparisons for covariates.
 SUM: It increases precision in trials.
+EV: established | Adjusting for a pre-specified prognostic baseline covariate in a randomised trial increases precision without introducing bias.
 SRC: European Medicines Agency, Guideline on adjustment for baseline covariates in clinical trials (EMA/CHMP/295050/2013) | guidance | 2015 | https://www.ema.europa.eu/
 SRC: Vickers AJ, Altman DG, Analysing controlled trials with baseline and follow up measurements, BMJ 323, 1123 | primary | 2001 | https://doi.org/10.1136/bmj.323.7321.1123
-NUM1#maths-u13-32-q1@1: Raw means differ by 10, baseline means by 5, and the covariate slope is 1.2. Find the adjusted difference. | 4 | 0 |  | 10 − 1.2 × 5 = 4.
+NUM1#maths-u13-32-q1@1: Raw means differ by 10, baseline means by 5, and the covariate slope is 1.2. Find the adjusted difference. | 4 | 0 |  | Adjusted = raw − slope × baseline difference = 10 − 1.2 × 5 = 4.
 M1#maths-u13-32-q2@1: Which ANCOVA assumption is checked by testing a group × covariate interaction? | Homogeneity of regression slopes | Normality of the covariate | Equal group sizes | Independence of groups | No missing data | Equal slopes mean the adjustment is the same in every group.
 M2#maths-u13-32-q3@2: In a trial, why shouldn't you adjust for a variable measured after treatment started? | It may be affected by the treatment, biasing the estimated effect | It's always uncorrelated | It reduces sample size | It reduces the sample size available for the analysis | It makes ANCOVA impossible | Adjusting for a consequence of treatment can remove part of the treatment's real effect.
+NUM3@2: In a blood pressure trial the treated group's mean is 3 mmHg lower than the control group's, but its baseline mean was 2 mmHg higher. With covariate slope 0.5, find the adjusted difference (treated − control). | -4 | 0 | mmHg | Adjusted = −3 − 0.5 × 2 = −4: allowing for the higher baseline, the treatment effect is larger than the raw difference suggests.
+SA3@1: Explain why adjusting for a baseline measurement with ANCOVA improves a randomised trial's analysis, and why the covariate must be chosen in advance. | Much of the variation in the outcome is explained by the baseline, so removing it shrinks the residual variance and the standard error of the treatment effect, giving more power. It also corrects chance imbalances in baseline between arms. Randomisation makes the adjusted estimate unbiased for a pre-treatment covariate. The covariate must be pre-specified, because choosing adjustments after seeing the data allows selecting whichever gives the most favourable result. | Says the baseline explains outcome variation ; Links this to a smaller standard error or more power ; Mentions correcting chance imbalance ; Requires a pre-treatment covariate ; Explains pre-specification prevents selective analysis
 
 ## Categorical Data Analysis
 S: Categorical data analysis deals with outcomes that fall into categories: yes or no, blood group, disease stage. It uses proportions, odds and odds ratios, and models such as logistic and log-linear regression.
 O: Calculate proportions, odds, odds ratios and relative risks
 O: Choose methods for nominal, ordinal and paired categorical data
+LV: Year 1 · Application
 T: Odds | p/(1 − p): a probability of 0.2 gives odds of 0.25 (1 to 4)
 T: Odds ratio | The ratio of the odds in two groups; 1 means no association
 H: Measures of association
@@ -1235,16 +1268,20 @@ Q: What are the odds for a probability of 0.75? | 3 (3 to 1).
 Q: Which test suits paired binary data? | McNemar's test.
 SUM: Categorical outcomes use odds and proportions.
 SUM: OR and RR differ for common outcomes.
+EV: established | The odds ratio approximates the relative risk only when the outcome is rare.
 SRC: Agresti A, Categorical Data Analysis (3rd edn, Wiley 2013) | secondary | 2013 | https://www.wiley.com/
 SRC: Bland JM, Altman DG, The odds ratio, BMJ 320, 1468 | primary | 2000 | https://doi.org/10.1136/bmj.320.7247.1468
-NUM1#maths-u13-33-q1@1: A probability of 0.2 corresponds to what odds? | 0.25 | 0.0001 |  | 0.2/0.8 = 0.25.
+NUM1#maths-u13-33-q1@1: A probability of 0.2 corresponds to what odds? | 0.25 | 0.0001 |  | Odds = p/(1 − p) = 0.2/0.8 = 0.25, or 1 to 4.
 M1#maths-u13-33-q2@1: Which study design can estimate an odds ratio but not a relative risk directly? | Case–control study | Randomised trial | Cohort study | Census | Cross-over trial | Case–control studies fix the numbers of cases and controls, so risks can't be computed, but odds ratios can.
 M2#maths-u13-33-q3@2: An outcome is rare (1%). How do the OR and RR compare? | They're nearly equal | The OR is much larger | The RR is much larger | They're unrelated | The OR is always 1 | When p is small, p/(1 − p) ≈ p, so odds and risks almost coincide.
+NUM3@1: Among 200 exposed people 40 develop a disease, and among 200 unexposed people 20 do. Find the odds ratio. | 2.25 | 0.001 |  | OR = (40 × 180)/(160 × 20) = 7200/3200 = 2.25, slightly above the relative risk 0.2/0.1 = 2.
+SA3@2: The same 100 patients are asked before and after a campaign whether they smoke. 15 switched from yes to no and 5 from no to yes. Explain why a chi-squared test of independence is wrong here and carry out McNemar's test. | The before and after answers come from the same people, so they are paired, not independent samples. McNemar's test uses only the discordant pairs, b = 15 and c = 5: X^{2} = (b − c)^{2}/(b + c) = 100/20 = 5 on 1 degree of freedom, which exceeds 3.84, so at the 5% level there is evidence that the proportion smoking changed (it fell). Concordant pairs carry no information about change. | Identifies the data as paired ; Says independence fails ; Uses only the discordant cells ; Computes X^{2} = 5 ; Compares with 3.84 and concludes in context
 
 ## Contingency Tables
 S: A contingency table cross-tabulates counts for two or more categorical variables. Reading it well, with row and column percentages and attention to hidden variables, reveals associations and avoids paradoxes.
 O: Construct and read contingency tables with conditional percentages
 O: Recognise Simpson's paradox and measure strength of association
+LV: Year 1 · Application
 T: Contingency table | A table of counts for combinations of categories of two or more variables
 T: Simpson's paradox | An association that holds within every subgroup but reverses when the groups are combined
 H: Reading tables
@@ -1270,16 +1307,20 @@ Q: What causes Simpson's paradox? | A lurking variable linked to both the groupi
 Q: What range does Cramér's V take? | From 0 (no association) to 1.
 SUM: Contingency tables cross-tabulate counts.
 SUM: Lurking variables can reverse comparisons.
+EV: established | Simpson's paradox shows that an association in combined data can reverse within every stratum of a lurking variable.
 SRC: Charig CR, Webb DR, Payne SR, Wickham JE, Comparison of treatment of renal calculi by open surgery, PCNL and ESWL, BMJ 292, 879 | primary | 1986 | https://doi.org/10.1136/bmj.292.6524.879
 SRC: Agresti A, Categorical Data Analysis (3rd edn, Wiley 2013) | secondary | 2013 | https://www.wiley.com/
 NUM1#maths-u13-34-q1@1: A 2 × 2 table with n = 200 gives χ^{2} = 8. Find Cramér's V. | 0.2 | 0.001 |  | V = √(8/(200 × 1)) = √0.04 = 0.2.
 M1#maths-u13-34-q2@1: Of 120 smokers, 30 have a cough; of 80 non-smokers, 8 do. What percentage of smokers have a cough? | 25% | 30% | 15% | 37.5% | 20% | 30/120 = 25%: use the smokers' row total as the denominator.
 M2#maths-u13-34-q3@2: Treatment A beats B within men and within women, but B beats A overall. What's the likely explanation? | Simpson's paradox from different sex mixes in each treatment group | A data entry error | Chance alone, since paradoxes like this are random | The treatments are identical | Men and women can't be combined | Unequal mixes of an influential subgroup can reverse the combined comparison.
+NUM3@2: A 3 × 4 contingency table with n = 300 gives χ^{2} = 18. Find Cramér's V, to 3 decimal places. | 0.173 | 0.001 |  | min(r, c) − 1 = 2, so V = √(18/(300 × 2)) = √0.03 ≈ 0.173: a weak association.
+SA3@2: In the kidney stone data, treatment A has the higher success rate for small and for large stones, but the lower rate overall. Explain how this happens and which comparison should guide the choice of treatment. | Stone size affects both the treatment given and the outcome: A was given mostly to large stones (263 of 350), which are harder to treat, while B was given mostly to small ones. The overall rate for A is therefore weighted towards the hard cases. Since size is a confounder, the stratified comparison, which compares like with like, should guide the choice: A is better for each size. | Identifies stone size as the lurking variable ; Explains the unequal case mix ; Says large stones have lower success ; Concludes the stratified comparison is fairer ; States A is better within each stratum
 
 ## Regression Analysis
 S: Regression analysis models how a response variable depends on one or more predictors. It's used to predict, to estimate effects and to adjust for confounders, and its misuse (extrapolating, confusing association with causation) is just as common.
 O: Describe the aims and the main types of regression
 O: Recognise the dangers of extrapolation and overfitting
+LV: GCSE and A level · Fluency
 T: Response and predictors | The variable being modelled (y) and the variables used to explain it (x₁, x₂, …)
 T: Residual | Observed minus fitted value: e = y − ŷ
 H: Aims
@@ -1307,16 +1348,20 @@ Q: Which regression model suits a yes/no response? | Logistic regression.
 Q: What is a residual? | Observed value minus fitted value.
 SUM: Regression relates a response to predictors.
 SUM: Respect the data's range and confounders.
+EV: established | Regression models fitted to one range of data do not justify predictions far outside that range.
 SRC: Gelman A, Hill J, Vehtari A, Regression and Other Stories (Cambridge University Press 2020) | secondary | 2020 | https://avehtari.github.io/ROS-Examples/
 SRC: Barnett AG, van der Pols JC, Dobson AJ, Regression to the mean: what it is and how to deal with it, International Journal of Epidemiology 34(1), 215 | primary | 2005 | https://doi.org/10.1093/ije/dyh299
 M1#maths-u13-35-q1@1: Patients with the highest blood pressure readings are retested and their average falls, with no treatment. What explains it? | Regression to the mean | A placebo effect only | Measurement fraud | Extrapolation | Overfitting | Extreme readings partly reflect random variation, which tends not to repeat.
 M2#maths-u13-35-q2@2: Which model suits the number of hospital admissions per day? | Poisson (or negative binomial) regression | Linear regression on raw counts only | Logistic regression | Survival analysis | Fisher's exact test | Counts are non-negative integers, suited to count models with a log link.
 M2#maths-u13-35-q3@2: What does a curved pattern in the residuals suggest? | The straight-line model is missing a non-linear relationship | The model fits perfectly | The data have no errors | r must be 1 | Nothing | Residuals should look like random scatter if the model form is right.
+NUM2@1: The model height = 80 + 6 × age (cm) was fitted to children aged 2 to 10. Predict the height of a 7-year-old. | 122 | 0 | cm | 80 + 6 × 7 = 122 cm; age 7 is inside the fitted range, so this is interpolation and reasonable.
+SA3@1,2: A study finds that people who take vitamin supplements have lower blood pressure, and fits a regression. Explain why the slope may not measure the effect of taking supplements, and give two other dangers in using the model. | The data are observational, so the slope measures association; supplement users may differ in diet, exercise or income, which also lower blood pressure (confounding). Adjusting for measured confounders helps, but unmeasured ones remain. Other dangers: extrapolating to doses outside the observed range; overfitting with many predictors and few people; and regression to the mean if people were selected because of extreme readings. | Distinguishes association from causation ; Names a plausible confounder ; Mentions adjustment and its limits ; Gives extrapolation or overfitting ; Gives a second danger such as regression to the mean
 
 ## Linear Regression
 S: Simple linear regression fits the straight line ŷ = a + bx that minimises the sum of squared residuals. It's the most widely used statistical model, giving an interpretable slope, predictions and a measure of fit.
 O: Calculate the least squares regression line
 O: Interpret the slope, intercept and R^{2}, and check residuals
+LV: A level · Application
 T: Least squares | Choosing a and b to minimise Σ(y − a − bx)^{2}
 T: Coefficient of determination | R^{2}, the proportion of variation in y explained by the model; r^{2} in simple regression
 H: The formulas
@@ -1344,12 +1389,14 @@ Q: Through which point does every least squares line pass? | (x̄, ȳ).
 Q: What does a funnel-shaped residual plot suggest? | Non-constant variance.
 SUM: Least squares fits the best straight line.
 SUM: Residuals check the fit.
+EV: established | The least squares line ŷ = a + bx has b = S_{xy}/S_{xx} and passes through (x̄, ȳ).
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
 SRC: Weisberg S, Applied Linear Regression (4th edn, Wiley 2014) | secondary | 2014 | https://www.wiley.com/
 NUM1#maths-u13-36-q1@1: Using ŷ = 2.2 + 0.6x, predict y at x = 3.5. | 4.3 | 0.001 |  | 2.2 + 0.6 × 3.5 = 2.2 + 2.1 = 4.3.
 M1#maths-u13-36-q2@1: A regression of exam mark on hours studied has slope 3.2. What does that mean? | Each extra hour is associated with 3.2 more marks on average | Each mark needs 3.2 hours | The intercept is 3.2 | The correlation between hours and marks | Studying causes exactly 3.2% more marks per hour | The slope is the average change in y per unit of x (an association, not proof of cause).
 M3#maths-u13-36-q3@2: Why is a prediction interval wider than a confidence interval for the mean response at the same x? | It includes the scatter of individual points as well as uncertainty in the line | It uses a larger significance level than the confidence interval | It ignores the slope | It uses fewer data | They're the same width | A new observation varies about the true line, adding σ^{2} to the uncertainty.
 M2#maths-u13-36-q4@2: Why can one outlier change a least-squares line a lot? | Squaring residuals gives a far-away point a very large weight in the sum being minimised | Least squares ignores outliers | Outliers are removed automatically | The gradient never changes | Outliers only affect r | Minimising squared residuals pulls the line strongly towards extreme points.
+SA3@1,2: For x = 2, 4, 6, 8 and y = 3, 7, 8, 10, find the least squares line and R^{2}, and interpret the slope. | x̄ = 5 and ȳ = 7. Deviations give S_{xy} = 12 + 0 + 1 + 9 = 22, S_{xx} = 20 and S_{yy} = 26. b = 22/20 = 1.1 and a = 7 − 1.1 × 5 = 1.5, so ŷ = 1.5 + 1.1x. R^{2} = 22^{2}/(20 × 26) ≈ 0.93: the line explains about 93% of the variation in y. Each unit increase in x is associated with an average increase of 1.1 in y, within the range 2 to 8. | Finds the means ; Computes S_{xy} and S_{xx} ; Gets ŷ = 1.5 + 1.1x ; Gets R^{2} ≈ 0.93 ; Interprets the slope as an average change within range
 
 ## Multiple Linear Regression
 S: Multiple linear regression models a response using several predictors at once. Each coefficient estimates the effect of one predictor with the others held fixed, which is how regression adjusts for confounders.

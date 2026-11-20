@@ -232,7 +232,7 @@ SUM: Radians measure angles by arc length.
 SUM: They make calculus clean.
 SRC: Department for Education, Mathematics AS and A level subject content: trigonometry | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
-NUM1#maths-u06-06-q1@1: Convert 3π/4 radians to degrees. | 135 | 0 | ° | 3π/4 × 180/π = 135°.
+NUM1#maths-u06-06-q1@1: Convert 3π/4 radians to degrees. | 135 | 0 | ° | Multiply by 180/π to convert: 3π/4 × 180/π = 3 × 45 = 135°.
 M1#maths-u06-06-q2@1: What is 270° in radians? | 3π/2 | 3π/4 | 2π/3 | 3π | π/2 | Multiply degrees by π/180: 270 × π/180 = 3π/2, three quarters of a full turn.
 M2#maths-u06-06-q3@2: Why is d/dx sin x = cos x only true in radians? | In degrees the derivative gains a factor of π/180 | It's true in any unit | Degrees aren't real angles | Sine isn't differentiable in degrees | Calculators require it | The limit (sin x)/x = 1 as x → 0 holds only when x is measured in radians.
 NUM3@2: Use the small-angle approximations to estimate (sin 0.1 × tan 0.1)/(1 − cos 0.1), with the angle in radians. | 2 | 0.05 |  | sin x ≈ x, tan x ≈ x and 1 − cos x ≈ x^{2}/2, so the expression ≈ x^{2}/(x^{2}/2) = 2 (the exact value is about 2.004).
@@ -314,6 +314,8 @@ SA3@2: A square-based pyramid has base edges of 6 cm and vertical height 4 cm. F
 S: The sine rule relates the sides of any triangle to the sines of their opposite angles. It finds missing sides and angles when you know an angle and its opposite side, and it has an "ambiguous case" to watch.
 O: Use the sine rule to find sides and angles
 O: Recognise and solve the ambiguous case
+LV: GCSE and A level · Application
+EV: established | In any triangle a/sin A = b/sin B = c/sin C, and two sides with a non-included angle can fit two different triangles.
 T: Sine rule | a/sin A = b/sin B = c/sin C (sides a, b, c opposite angles A, B, C)
 T: Ambiguous case | When two different triangles fit the given information (two sides and a non-included angle)
 H: Using the rule
@@ -343,11 +345,15 @@ SRC: Department for Education, Mathematics AS and A level subject content: trigo
 NUM1#maths-u06-09-q1@1: In a triangle, A = 30°, a = 6 and B = 90°. Find b. | 12 | 0 |  | b = 6 sin 90°/sin 30° = 6/0.5 = 12.
 M1#maths-u06-09-q2@1: Which information makes the sine rule the right tool? | Two angles and any side | Three sides | Two sides and the included angle | Three angles only | One side only | Knowing two angles gives the third, and every side then pairs with its opposite angle.
 M3#maths-u06-09-q3@2: For a = 5, b = 8, A = 30°, how many triangles are possible? | Two | One | None | Three | Infinitely many | sin B = 8 × 0.5/5 = 0.8, so B ≈ 53.1° or 126.9°; both give valid angle sums.
+NUM2@1: In triangle ABC, a = 9 cm, A = 48° and B = 62°. Find b, to 1 decimal place. | 10.7 | 0.05 | cm | b/sin 62° = 9/sin 48°, so b = 9 sin 62°/sin 48° ≈ 9 × 0.8829/0.7431 ≈ 10.7 cm.
+SA3@2: In triangle ABC, a = 6 cm, b = 9 cm and A = 35°. Show that two triangles fit this information, and find side c in each, to 1 decimal place. | By the sine rule, sin B = 9 sin 35°/6 ≈ 0.860, so B ≈ 59.4° or B ≈ 180 − 59.4 = 120.6°. Both are possible because 35° + 120.6° is less than 180°. Then C = 180 − 35 − 59.4 ≈ 85.6° or C = 180 − 35 − 120.6 ≈ 24.4°. Using c = 6 sin C/sin 35°: c ≈ 10.4 cm in the first triangle and c ≈ 4.3 cm in the second. | sin B ≈ 0.860 ; acute and obtuse values of B ; checks the angle sum for the obtuse case ; both values of C ; c ≈ 10.4 cm and c ≈ 4.3 cm
 
 ## Cosine Rule
 S: The cosine rule generalises Pythagoras' theorem to any triangle. It finds a side from two sides and the included angle, or an angle from three sides.
 O: Use the cosine rule to find sides and angles
 O: Choose between the sine and cosine rules
+LV: GCSE and A level · Application
+EV: established | In any triangle a² = b² + c² − 2bc cos A, which reduces to Pythagoras' theorem when A = 90°.
 T: Cosine rule | a^{2} = b^{2} + c^{2} − 2bc cos A
 T: Included angle | The angle between two given sides
 H: The rule
@@ -375,11 +381,15 @@ SRC: Department for Education, Mathematics AS and A level subject content: trigo
 NUM1#maths-u06-10-q1@1: A triangle has sides 3, 5 and 7. Find its largest angle in degrees. | 120 | 0.1 | ° | cos C = (9 + 25 − 49)/30 = −1/2, so C = 120°.
 M1#maths-u06-10-q2@1: Which rule finds a side from two sides and the included angle? | The cosine rule | The sine rule | Pythagoras only | SOHCAHTOA only | The area rule | With SAS there's no side–angle opposite pair, so the cosine rule is needed.
 M2#maths-u06-10-q3@2: In a triangle, cos A is negative. What does that tell you? | A is obtuse | A is acute | A is a right angle | The triangle doesn't exist | A is 0° | Cosine is negative for angles between 90° and 180°.
+NUM3@1: Two sides of a triangle are 6 cm and 10 cm and the angle between them is 135°. Find the third side, to 1 decimal place. | 14.9 | 0.05 | cm | a^{2} = 36 + 100 − 120 cos 135° = 136 + 84.85 = 220.85, since cos 135° is negative, so a ≈ 14.9 cm.
+SA2@1,2: A triangle has sides 4 cm, 6 cm and 9 cm. Explain which rule you need to find its largest angle and why that angle is opposite the 9 cm side, then find it. | With three sides and no angle there is no side–angle pair for the sine rule, so the cosine rule is needed. The largest angle is opposite the longest side, 9 cm. cos C = (4² + 6² − 9²)/(2 × 4 × 6) = (16 + 36 − 81)/48 = −29/48 ≈ −0.604. The cosine is negative, so the angle is obtuse: C = cos⁻¹(−0.604) ≈ 127.2°, with no ambiguity. | cosine rule because SSS ; largest angle opposite longest side ; cos C = −29/48 ; negative cosine means obtuse ; C ≈ 127.2°
 
 ## Area of a Triangle
 S: The area of any triangle can be found from two sides and the included angle: ½ab sin C. It extends ½ × base × height to triangles whose height you don't know.
 O: Use area = ½ab sin C
 O: Find sides or angles from a given area
+LV: GCSE and A level · Fluency
+EV: established | The area of any triangle is ½ab sin C, where C is the angle between sides a and b.
 T: Included angle | The angle between the two sides used in the formula
 T: Heron's formula | Area = √(s(s − a)(s − b)(s − c)), where s is half the perimeter
 H: The formula
@@ -410,11 +420,15 @@ SRC: Maor E, Trigonometric Delights (Princeton University Press 2013) | secondar
 NUM1#maths-u06-11-q1@1: Find the area of an equilateral triangle with side 10 cm, to 1 decimal place. | 43.3 | 0.05 | cm² | ½ × 10 × 10 × sin 60° = 50 × √3/2 = 25√3 ≈ 43.3 cm^{2}.
 M1#maths-u06-11-q2@1: Which pieces of information does ½ab sin C need? | Two sides and the angle between them | Three sides | Two angles and a side | One side and its opposite angle | Three angles | C must be the included angle between sides a and b.
 M2#maths-u06-11-q3@2: Using Heron's formula, what is the area of a 5, 12, 13 triangle? | 30 | 60 | 15 | 65 | 39 | s = 15, so √(15 × 10 × 3 × 2) = √900 = 30 (it's right-angled: ½ × 5 × 12).
+NUM3@2: A triangle has area 30 cm², two sides of 8 cm and 10 cm, and an obtuse angle between them. Find that angle, to 1 decimal place. | 131.4 | 0.05 | ° | ½ × 8 × 10 × sin C = 30 gives sin C = 0.75, so C ≈ 48.6° or 180 − 48.6 = 131.4°; the obtuse value is 131.4°.
+SA2@1,2: Show how the formula area = ½ab sin C follows from ½ × base × height, and use it to show that an equilateral triangle of side s has area (√3/4)s^{2}. | Take side a as the base. Drop a perpendicular from the opposite vertex to the line of a: in the right-angled triangle formed with side b, the height is h = b sin C, where C is the angle between a and b. So the area is ½ × a × h = ½ab sin C. For an equilateral triangle every side is s and every angle 60°, so the area is ½ × s × s × sin 60° = ½s² × √3/2 = (√3/4)s². | base a with perpendicular height ; height = b sin C ; area = ½ab sin C ; equilateral angles 60° ; (√3/4)s²
 
 ## Spherical Trigonometry
 S: Spherical trigonometry solves triangles drawn on a sphere, whose sides are arcs of great circles. It's the mathematics of navigation, astronomy and geodesy, and it differs from plane trigonometry because the sphere is curved.
 O: Use the spherical cosine rule
 O: Calculate great-circle distances between places on the Earth
+LV: Year 2 · Application
+EV: established | Spherical triangles obey the spherical cosine and sine rules, which give the great-circle distance between two points of given latitude and longitude.
 T: Spherical triangle | A triangle on a sphere whose sides are arcs of great circles
 T: Haversine formula | A numerically stable formula for the great-circle distance between two latitude–longitude points
 H: Formulas
@@ -430,6 +444,7 @@ X: Find the great-circle distance between two points on the equator at longitude
 > φ₁ = φ₂ = 0, so cos d = 0 + 1 × 1 × cos 90° = 0
 > d = 90° = π/2 radians
 > Distance = 6,371 × π/2 ≈ 10,008 km
+P: For a triangle whose sides are tiny compared with the radius, cos a ≈ 1 − a^{2}/2 and sin a ≈ a, and the spherical cosine rule reduces to the plane cosine rule: small regions are nearly flat.
 K: Spherical triangles have arc sides measured as angles; the spherical cosine rule gives great-circle distances.
 !: Using plane trigonometry over long distances on the Earth.
 Q: What are the sides of a spherical triangle? | Arcs of great circles, measured by central angles.
@@ -440,11 +455,16 @@ SRC: Todhunter I, Spherical Trigonometry (Macmillan 1886) | secondary | 1886 | h
 SRC: Ordnance Survey, A guide to coordinate systems in Great Britain | guidance | 2020 | https://www.ordnancesurvey.co.uk/
 M1#maths-u06-12-q1@1: In spherical trigonometry, what do the angles of a triangle add up to? | More than 180° | Exactly 180° | Less than 180° | Exactly 360° | 90° | Positive curvature gives an angle excess.
 M2#maths-u06-12-q2@2: Two places on the same meridian are at latitudes 10°N and 40°N. What is the central angle between them? | 30° | 50° | 40° | 10° | 400° | Along a meridian, the central angle is the difference in latitude.
+NUM2@2: Two points on the equator are at longitudes 20°E and 55°W. Taking R = 6,371 km, find the great-circle distance between them, to the nearest km. | 8340 | 1 | km | The longitude difference is 20 + 55 = 75° = 1.309 radians, so the distance is 6,371 × 1.309 ≈ 8,340 km.
+NUM3@1,2: Two points both at latitude 60°N differ in longitude by 90°. Find the central angle between them, in degrees to 1 decimal place. | 41.4 | 0.05 | ° | cos d = sin 60° sin 60° + cos 60° cos 60° cos 90° = 0.75 + 0 = 0.75, so d ≈ 41.4°.
+SA2@1,2: Two places are both at latitude 60°N and differ in longitude by 90°. Explain why flying along the line of latitude isn't the shortest route, comparing the two distances as multiples of the Earth's radius R. | Lines of latitude other than the equator aren't great circles, so they aren't geodesics. The circle of latitude 60°N has radius R cos 60° = R/2, and a quarter of it is (R/2)(π/2) ≈ 0.785R. The great-circle route has central angle d with cos d = sin²60° + cos²60° cos 90° = 0.75, so d ≈ 41.4° ≈ 0.723 radians, a distance of about 0.723R. The great circle is about 8% shorter; it bends towards the pole. | latitude circle not a great circle ; latitude radius R cos 60° ; latitude route ≈ 0.785R ; spherical cosine rule gives d ≈ 41.4° ; great circle ≈ 0.723R is shorter
 
 ## Trigonometric Graphs
 S: The graphs of sine, cosine and tangent show their periodic behaviour. Transforming them, with amplitude, period, phase shift and vertical shift, models waves, tides and cycles.
 O: Sketch the graphs of sin, cos and tan
 O: Describe transformations of trigonometric graphs
+LV: GCSE and A level · Application
+EV: established | y = a sin(bx + c) + d has amplitude |a|, period 360°/b, a horizontal shift of −c/b and a midline at y = d.
 T: Period | The length of one complete cycle: 360° for sin and cos, 180° for tan
 T: Phase shift | A horizontal translation of a periodic graph
 H: The basic graphs
@@ -480,11 +500,15 @@ NUM1#maths-u06-13-q1@1: What is the period, in degrees, of y = sin(x/2)? | 720 |
 M1#maths-u06-13-q2@1: What is the amplitude of y = −5 sin x? | 5 | −5 | 1 | 10 | 0 | Amplitude is |a|: the negative sign reflects the graph but doesn't change its height.
 M2#maths-u06-13-q3@2: Which describes y = sin(x + 90°)? | It's the same as y = cos x | It's y = sin x shifted right 90° | It has period 90° | It has amplitude 90 | It's y = −sin x | Adding 90° inside the bracket shifts sine left by 90°, which gives the cosine graph.
 NUM1#maths-u06-13-q4@1: What is the period of y = 3 sin(2x) + 1, in radians, to 3 decimal places? | 3.142 | 0.001 |  | The period is 2π/b = 2π/2 = π ≈ 3.142.
+M3@2: Which equation has maximum 7, minimum −1 and period 180°? | y = 4 sin 2x + 3 | y = 8 sin 2x − 1 | y = 4 sin(x/2) + 3 | y = 3 sin 2x + 4 | The amplitude is (7 − (−1))/2 = 4, the midline is y = (7 + (−1))/2 = 3, and a period of 180° needs b = 2.
+SA2@2: Describe the transformations that take y = sin x to y = 2 sin(3x − 90°) + 1, in a valid order, and state the period, maximum and minimum. | Factorise the bracket: 3x − 90° = 3(x − 30°). Starting from y = sin x: stretch horizontally by factor ⅓ (giving sin 3x, period 120°); translate 30° to the right (giving sin 3(x − 30°)); stretch vertically by factor 2 (amplitude 2); translate up 1 (midline y = 1). The period is 360°/3 = 120°, the maximum is 2 + 1 = 3 and the minimum is −2 + 1 = −1. | factorises to 3(x − 30°) ; horizontal stretch factor ⅓ ; shift 30° right, not 90° ; vertical stretch 2 and shift up 1 ; period 120°, max 3, min −1
 
 ## Periodic Functions
 S: A periodic function repeats its values at regular intervals. Tides, seasons, heartbeats, sound and alternating current are all periodic, and trigonometric functions are the building blocks for modelling them.
 O: Identify the period of a periodic function
 O: Describe real-world periodic phenomena with functions
+LV: A level · Application
+EV: established | A periodic function satisfies f(x + T) = f(x), and A sin(ωt) has period 2π/ω and frequency ω/2π.
 T: Periodic function | A function with f(x + T) = f(x) for all x, for some T > 0
 T: Fundamental period | The smallest positive T that works
 H: Periods
@@ -514,6 +538,8 @@ SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | s
 NUM1#maths-u06-14-q1@1: A wave has angular frequency 4π rad/s. What is its period in seconds? | 0.5 | 0 | s | T = 2π/ω = 2π/4π = 0.5 s.
 M1#maths-u06-14-q2@1: What is the frequency of a wave with period 0.25 s? | 4 Hz | 0.25 Hz | 25 Hz | 2 Hz | 40 Hz | Frequency is the reciprocal of the period: f = 1/T = 1/0.25 = 4 cycles per second.
 M3#maths-u06-14-q3@2: What is the period of sin 2x + cos 3x? | 2π | π | 2π/3 | 6π | It isn't periodic | The periods π and 2π/3 have least common multiple 2π.
+NUM2@2: A Ferris wheel seat's height is h = 20 − 18 cos(πt/15) metres, t minutes after boarding. How long does one revolution take, in minutes? | 30 | 0 | minutes | The period is 2π ÷ (π/15) = 30 minutes; the height runs from 2 m to 38 m over each cycle.
+SA2@1,2: The depth of water in a harbour is d = 6 + 2.5 sin(πt/6) metres, t hours after midnight. Find the period, the maximum and minimum depths and when they first occur, and how long in each cycle the depth is at least 7 m. | The period is 2π ÷ (π/6) = 12 hours. The maximum is 6 + 2.5 = 8.5 m when πt/6 = π/2, at t = 3 (03:00); the minimum is 6 − 2.5 = 3.5 m when πt/6 = 3π/2, at t = 9 (09:00). Depth ≥ 7 m needs sin(πt/6) ≥ 0.4, so πt/6 lies between sin⁻¹(0.4) ≈ 0.412 and π − 0.412 ≈ 2.730, giving 0.79 ≤ t ≤ 5.21: about 4.4 hours in each 12-hour cycle. | period 12 hours ; maximum 8.5 m at t = 3 ; minimum 3.5 m at t = 9 ; sets up sin(πt/6) ≥ 0.4 ; about 4.4 hours
 
 ## Cosecant
 S: Cosecant is the reciprocal of sine: cosec θ = 1/sin θ. It appears in identities, calculus and some physics formulas, and its graph has asymptotes wherever sin θ = 0.
