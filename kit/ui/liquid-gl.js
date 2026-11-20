@@ -60,6 +60,7 @@ uniform vec3 base; uniform vec3 acc1; uniform vec3 acc2; uniform float accentRim
 uniform int n; uniform vec4 rects[${MAX}]; uniform vec4 props[${MAX}];
 float sdBox(vec2 p, vec2 b, float r){ vec2 q = abs(p) - b + r; return length(max(q, 0.)) + min(max(q.x, q.y), 0.) - r; }
 float hash(vec2 p){ return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453); }
+vec3 hue(float a){ return clamp(abs(mod(a * 6. + vec3(0., 4., 2.), 6.) - 3.) - 1., 0., 1.); }
 float blob(vec2 uv, vec2 c, float r){ vec2 d = (uv - c) * vec2(res.x / res.y, 1.); return exp(-dot(d, d) / (r * r)); }
 // the page's light: the theme, colour at the edges (the course or site, and the Gradify spectrum), a bright (light) or
 // deep (dark) centre
@@ -84,7 +85,9 @@ void main(){
     vec4 r = rects[i]; vec2 p = fc - r.xy - vec2(0., 14. * dpr);
     if (abs(p.x) > r.z + 70. * dpr || abs(p.y) > r.w + 70. * dpr) continue;
     float d = sdBox(p, r.zw, props[i].x);
-    col *= 1. - (lightMode > .5 ? .07 : .22) * (1. - smoothstep(-20. * dpr, 50. * dpr, d));
+    float sh = 1. - smoothstep(-20. * dpr, 50. * dpr, d);
+    if (lightMode > .5) col *= mix(vec3(1.), .9 + .1 * hue(fc.x / res.x * 1.3 + .05), sh * (.6 + .4 * props[i].y)) * (1. - .05 * sh);   // light mode: a faint spectrum in the shadow
+    else col *= 1. - .22 * sh;
     float dh = sdBox(fc - r.xy, r.zw, props[i].x);                           // a halo, hugging the edge and fading out
     if (dh > 0.) col = mix(col, lightMode > .5 ? vec3(1.) : mix(acc1, vec3(1.), .25), (lightMode > .5 ? .62 : .2) * pow(1. - smoothstep(0., 46. * dpr, dh), 1.6));
   }
@@ -100,7 +103,7 @@ void main(){
     float h = sqrt(max(1. - (1. - t) * (1. - t), 0.)), bend = 1. - h;      // a circular bevel
     float wet = props[i].y;                                                  // the Gradify bar: thicker, wetter, magnifying
     vec2 off = -nrm * bend * bez * (1.1 + .9 * wet) - p * (.04 + .14 * wet);   // refraction at the edge, a lens inside (1.2x on the bar)
-    vec2 disp = nrm * bend * 5. * dpr;                                       // colours part at the rim
+    vec2 disp = nrm * bend * (lightMode > .5 ? 9. : 5.) * dpr;                                       // colours part at the rim
     ${lite ? "vec3 c = scene(fc + off);" : "vec3 c = vec3(scene(fc + off - disp).r, scene(fc + off).g, scene(fc + off + disp).b);"}
     float tint = props[i].z;
     c = mix(c, lightMode > .5 ? vec3(1.) : vec3(.045, .045, .07), tint);
@@ -118,6 +121,16 @@ void main(){
     float arc = wet * bend * pow(max(dot(nrm, light), 0.), 3.) * (lightMode > .5 ? .35 : .5);
     float caustic = wet * smoothstep(.2, 1., nrm.y) * bend * (lightMode > .5 ? .18 : .32);
     vec3 glass = c + fres * (1. + .6 * wet) + spec + gloss + arc + caustic;
+    if (lightMode > .5) {
+      // wet chrome: the bevel reflects a bright sky and a grey horizon in thin bands, as polished glass on white does
+      float band = .5 + .5 * sin(bend * (11. + 5. * wet) - nrm.y * 1.6);
+      vec3 chrome = mix(vec3(.58, .6, .66), vec3(1.), smoothstep(.25, .85, band));
+      glass = mix(glass, chrome, smoothstep(.04, .5, bend) * (.55 + .2 * wet));
+      // holographic: a thin-film spectrum running round the inner bevel, brightest towards the light
+      float film = smoothstep(.12, .4, bend) * (1. - smoothstep(.55, .9, bend));
+      vec3 iri = mix(mix(hue(atan(p.y, p.x) / 6.2832 + bend * 1.4 + .1), vec3(.78, .72, 1.), .3), vec3(1.), .4);   // pastel: lilac, pink, blue, peach
+      glass = mix(glass, iri, film * (.28 + .2 * wet) * (.55 + .45 * lit));
+    }
     glass = mix(glass, rimc, rim * (props[i].y > .5 ? .95 : (accentRim > .5 ? .85 : .55 + .35 * lit)));
     glass *= 1. - (.14 + (lightMode > .5 ? .22 : .12) * wet) * bend * max(dot(nrm, -light), 0.);   // the edge away from the light, in shade (deeper on the bar)
     col = mix(col, glass, aa);
@@ -263,7 +276,7 @@ export function start() {
       const big = r.width * r.height > innerWidth * innerHeight * .25;
       rects.set([(r.left + hw) * dpr, (r.top + hh) * dpr, hw * dpr, hh * dpr], k * 4);
       const rainbow = e.matches("header.bar, header.sub-nav") ? 1 : 0;
-      const tint = (colours.lightMode ? (big ? .8 : .66) : (big ? .56 : .42)) * (rainbow ? .7 : 1);   // the bar: clearer, so it magnifies what's behind
+      const tint = (colours.lightMode ? (big ? .62 : .46) : (big ? .56 : .42)) * (rainbow ? .7 : 1);   // light mode: clear glass, not milk   // the bar: clearer, so it magnifies what's behind
       props.set([rad * dpr, rainbow, tint, Math.min(rainbow ? 30 : big ? 16 : 22, rainbow ? hh * .85 : rad * .9 + 6, hw, hh) * dpr], k * 4);
       if (e.hasAttribute("data-lg-cap")) caps.push([e, r]);
       k++;
