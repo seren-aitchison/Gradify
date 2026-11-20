@@ -45,6 +45,16 @@ M2#business-u01-01-q2@2: A florist buys flowers and wrapping for £8 and sells a
 MATCH1#business-u01-01-q3@1: Match each resource to its factor of production. | A farm's fields = Land ; A delivery driver's work = Labour ; A bakery's ovens = Capital ; The founder's decision to risk savings on a new shop = Enterprise | Land is natural resources, labour human effort, capital man-made equipment and enterprise the organising and risk-taking role.
 M3#business-u01-01-q4@3: Which is the strongest reason for defining a business without reference to profit? | Charities, social enterprises and public bodies also combine resources to produce valued goods and services | Most businesses make a loss in their first year, so profit cannot define them | Profit is hard to measure accurately, so it is a poor basis for a definition | Large companies prefer to talk about purpose rather than profit in their reports | The defining activity, producing goods or services for customers using combined resources, is shared by organisations with very different goals. Losses or measurement problems don't change what a business is.
 SA3#business-u01-01-q5@2,3: "A business exists to make a profit." Evaluate this statement. | A business combines resources to create goods or services that customers value. Profit is the main aim of many private-sector firms, and without a surplus a firm can't survive or reward owners for risk. But social enterprises, co-operatives and charities trade with other primary aims, and even profit-seeking firms pursue survival, growth or market share at times. Profit is better seen as a reward for adding value, and a condition of survival, than as the definition of a business. | Defines a business by adding value ; Explains why profit matters to owners and survival ; Gives examples of organisations with other aims ; Notes that objectives change over time ; Reaches a justified judgement
+Q: What is the difference between goods and services? | Goods are tangible products, such as a bicycle; services are intangible activities, such as a haircut or an insurance policy.
+Q: Which factor of production covers man-made aids to production? | Capital, such as machinery, buildings and IT.
+Q: What does the factor of production called enterprise involve? | The willingness to organise land, labour and capital and to bear the risk.
+Q: When does a business add value? | When customers will pay more for its output than the cost of the bought-in inputs.
+Q: Name four ways other than manufacture through which a business can add value. | Through design, convenience, quality and branding (also speed or service).
+Q: What must a café's added value per cup pay for before any profit remains? | Wages, rent, energy, business rates and equipment.
+Q: What did Adam Smith illustrate with his pin factory? | That specialisation and the division of labour, each worker doing one step, produce far more output than each worker making whole pins.
+Q: How did Ronald Coase explain the existence of firms? | Firms coordinate activity more cheaply inside one organisation than through repeated market deals, saving transaction costs.
+Q: What is the return for owners of a social enterprise, rather than profit? | A surplus that is reinvested in the mission.
+Q: What defines a business, according to the lesson's key idea? | What it does: combining resources to create goods or services that customers value, not whether it makes a profit or its size.
 
 ## Business purpose and objectives
 LV: Introductory · Application
@@ -93,6 +103,16 @@ M2#business-u01-02-q2@2: A restaurant sets the objective "improve customer satis
 SEQ1#business-u01-02-q3@1: Order these from the broadest to the most specific. | Purpose ; Mission statement ; Corporate aim ; Functional objective ; Individual target | Each level turns the one above into something narrower and more measurable: the hierarchy of objectives.
 M3#business-u01-02-q4@3: A family-owned brewery turns down a takeover that would have doubled the owners' wealth. What best explains this? | Its owners value independence and continuity, objectives that aren't purely financial | Family businesses are legally barred from selling to companies | It must be failing to maximise profit, so it is badly managed | Private limited companies can't be bought | Objectives reflect who owns the business and what they value. Turning down an offer is a rational choice when independence matters more to the owners than wealth; nothing prevents the sale legally.
 SA2#business-u01-02-q5@2,3: Explain why a new technology start-up and a long-established supermarket chain are likely to set different objectives. | A start-up's main objectives are survival, securing funding and reaching break-even, then rapid growth in users or sales to attract investors. An established supermarket has a secure position, so it is more likely to pursue market share, cost efficiency, steady profit and dividends for shareholders, and sustainability targets under public scrutiny. Stage of life, ownership, funding and market position all shape objectives. | Start-up: survival or break-even ; Start-up: growth to attract investment ; Supermarket: market share, efficiency or returns to shareholders ; Links the difference to stage, ownership or market position
+Q: What is the purpose of an organisation? | Why it exists: the problem it solves for customers and society.
+Q: Define a mission statement. | A short public statement of an organisation's purpose and values.
+Q: How do aims differ from objectives? | Aims are broad, long-term intentions; objectives are specific, measurable targets that turn aims into action.
+Q: Name the three levels in the hierarchy of objectives. | Corporate, functional and individual objectives.
+Q: Who introduced the SMART mnemonic? | George Doran, in 1981.
+Q: Why is 'increase membership' a weak objective for a gym? | It sets no target and no deadline, so it isn't specific, measurable or time-bound.
+Q: What is satisficing? | Aiming for a satisfactory outcome rather than the maximum possible, for example a satisfactory level of profit.
+Q: Why might a business pursue growth as an objective? | Growth in sales, market share or outlets often brings economies of scale.
+Q: Define market share. | The business's sales as a percentage of total market sales.
+Q: What did Locke and Latham's goal-setting research find? | Specific, challenging goals generally lead to higher performance than vague 'do your best' goals.
 
 ## Stakeholders
 LV: Introductory · Application
@@ -140,6 +160,16 @@ M2#business-u01-03-q2@2: A regulator has the power to fine a company but has sho
 MS2#business-u01-03-q3@3: A manufacturer decides to move production abroad to cut costs. Which stakeholder conflicts are likely? Choose all that apply. | Shareholders gain from lower costs while employees lose jobs ; The local community loses income while customers may gain lower prices | Customers and shareholders both lose from lower costs ; Suppliers abroad lose orders | Relocation tends to benefit owners and possibly customers at the expense of the workforce and local community; foreign suppliers are more likely to gain.
 M3#business-u01-03-q4@3: Which is the best evaluation of section 172 of the Companies Act 2006? | It requires directors to consider stakeholders, but the duty is owed to the company for its members, so shareholders' interests remain primary | It makes directors legally equal trustees for every stakeholder group, so shareholders have no priority | It allows employees and suppliers to sue directors directly for any breach of the duty | It applies only to charities and social enterprises, not to ordinary companies | Section 172 is an "enlightened shareholder value" duty: directors must have regard to stakeholders while promoting success for the members. Only the company (or shareholders in a derivative claim) can enforce it.
 SA3#business-u01-03-q5@1,3: Analyse the conflicts between stakeholders when a supermarket chain decides to pay its suppliers more slowly. | Slower payment improves the supermarket's cash flow and working capital, which benefits shareholders and lenders. Suppliers, often smaller firms, face cash-flow problems and may cut jobs or fail, which harms their employees and communities. Customers may gain if the savings lower prices, but lose if suppliers cut quality or withdraw. Regulators (the Groceries Code Adjudicator in the UK) and the media may become interested, raising reputational risk. | Benefit to the supermarket's cash flow or shareholders ; Harm to suppliers, especially small ones ; Knock-on effects on customers or employees ; Role of regulator or reputation ; A judgement on which interests prevail
+Q: How did Freeman (1984) define stakeholders? | Any group or individual who can affect or is affected by the achievement of the organization's objectives.
+Q: Name the three internal stakeholder groups. | Owners and shareholders, directors and managers, and employees.
+Q: Which stakeholders are classed as connected? | Customers, suppliers and lenders such as banks and bondholders.
+Q: What does Mendelow's matrix recommend for high-power, low-interest stakeholders? | Keep them satisfied.
+Q: What does Mendelow's matrix recommend for low-power, high-interest stakeholders? | Keep them informed.
+Q: How should low-power, low-interest stakeholders be treated under Mendelow's matrix? | Monitor them, with minimal effort.
+Q: Why is a power-interest matrix only a snapshot? | Power and interest change with the decision and over time; a pressure group winning media coverage can move to 'manage closely'.
+Q: Give one example of overlapping stakeholder interests. | Well-treated employees can give better service, which pleases customers and raises profit.
+Q: What does section 172 of the Companies Act 2006 require of directors? | To promote the company's success for its members while having regard to employees, suppliers, customers, the community and the environment.
+Q: Name four ways businesses manage stakeholder conflict. | Consultation, compromise, communication and formal duties.
 
 ## The private, public and third sectors
 LV: Introductory · Foundation
@@ -184,6 +214,16 @@ M2#business-u01-04-q2@3: A coffee shop chain, a farm and a software consultancy 
 TF1#business-u01-04-q3@1: A charity that runs shops and makes a surplus is part of the third sector. | true | Trading and making a surplus don't change its sector: it is independent of the state and reinvests surpluses in its charitable purpose.
 M3#business-u01-04-q4@2: Which is the strongest argument against privatising a water company? | It is a natural monopoly, so private owners face little competitive pressure and may exploit customers unless tightly regulated | Private companies never invest in infrastructure, so pipes and treatment works would collapse | Water cannot be measured accurately, so it cannot be sold to customers | Privatisation always raises taxes, because the state loses the company's income | A natural monopoly removes the competition that privatisation relies on for efficiency; the case against rests on weak competitive pressure and the difficulty of regulation, not on claims that private firms never invest.
 SA3#business-u01-04-q5@2: Evaluate the case for returning a privatised utility to public ownership. | For: natural monopoly means competition can't discipline owners, public ownership removes dividends and expensive private debt, and long-term investment can be planned for the public interest. Against: buying out owners is costly, public bodies may be less efficient or subject to political interference and Treasury spending limits, and better regulation might achieve the same aims. Judgement depends on the industry, the state of regulation and the price of nationalisation. | An argument for (monopoly, investment or accountability) ; An argument against (cost, efficiency or politics) ; Considers regulation as an alternative ; Uses an example ; Reaches a justified judgement
+Q: How is the public sector funded? | Mainly by taxation.
+Q: What happens to surpluses in the third sector? | They are reinvested in the organisation's social purpose.
+Q: Why does the ONS classification of an organisation matter? | It decides whether the organisation's debts count as public debt.
+Q: Define nationalisation. | The transfer of ownership or control of an organisation from the private sector to the state, the reverse of privatisation.
+Q: State three arguments for privatisation. | The profit motive and competition encourage efficiency and innovation; access to private capital; government raises revenue and is freed from day-to-day management.
+Q: What lesson does the Thames Water case teach about ownership? | Ownership alone doesn't guarantee efficiency: regulation and financial structure matter as much.
+Q: What does the primary sector do? | Extracts natural resources, as in farming, fishing and mining.
+Q: What does the quaternary sector cover? | Knowledge-based services, such as research and IT.
+Q: What is deindustrialisation? | The long-run shift of output away from manufacturing towards services, which now account for around four-fifths of UK output.
+Q: What does the primary, secondary and tertiary classification measure, rather than ownership? | Activities, or stages of production.
 
 ## Sole traders and partnerships
 LV: Introductory · Application
@@ -228,6 +268,16 @@ M2#business-u01-05-q2@2: A partner signs a contract on the firm's behalf without
 TF2#business-u01-05-q3@1: Without a deed of partnership, the Partnership Act 1890 presumes partners share profits equally. | true | Section 24 of the 1890 Act sets default rules, including equal sharing of capital and profits, unless the partners agree otherwise.
 M3#business-u01-05-q4@3: A freelance tutor with no employees, no borrowing and low costs is choosing a legal form. Which is the best advice in principle? | A sole trader is likely to suit, because the risk of large debts is low and simplicity and privacy matter | She must form a public limited company before she can trade legally | An LLP is required by law because she will have paying clients | A partnership is best because it gives her limited liability | Unlimited liability matters most where debts could be large. For a low-risk, low-cost business, the simplicity and privacy of being a sole trader usually outweigh the risk. (This is study, not advice for a real business.)
 SA3#business-u01-05-q5@2,3: Evaluate whether two architects starting a practice together should form an ordinary partnership or an LLP. | An ordinary partnership is simple, private and flexible, but each partner has unlimited and joint liability, which is serious in a profession exposed to negligence claims and large contracts. An LLP keeps the flexible partnership structure and tax treatment while giving limited liability and separate legal identity, at the cost of registration, public accounts and some administration. Given the risk of professional claims, an LLP (with professional indemnity insurance) is likely to be preferred. | Features of an ordinary partnership ; Unlimited and joint liability risk ; Features of an LLP ; Costs of an LLP (publicity, administration) ; Justified recommendation linked to risk
+Q: How does a UK sole trader pay tax on profits? | They register with HMRC for Self Assessment and pay income tax and National Insurance on the profits.
+Q: Name three advantages of being a sole trader. | Easy and cheap to set up, full control, and the owner keeps all the profit (also privacy).
+Q: Why does a sole trader lack continuity? | The business and owner are legally the same person, so it doesn't continue if the owner dies or retires.
+Q: How does the Partnership Act 1890 define a partnership? | Two or more people carrying on a business in common with a view to profit.
+Q: What does joint liability mean for partners? | Each partner can be held responsible for the firm's debts, so one partner's decisions bind the others.
+Q: What does a deed of partnership set out? | Capital contributions, profit shares, duties and what happens when a partner leaves.
+Q: Which Act created limited liability partnerships? | The Limited Liability Partnerships Act 2000.
+Q: Which kinds of firm are commonly LLPs? | Accountancy and law firms.
+Q: Why do sole traders and ordinary partners have unlimited liability? | The business has no separate legal identity, so the owners' personal assets are at risk for its debts.
+Q: Name four factors that affect the choice of legal form. | Risk, capital needs, tax and administration (also privacy).
 
 ## Private and public limited companies
 LV: Introductory · Application
@@ -272,6 +322,16 @@ M2#business-u01-06-q2@2: A family-owned Ltd wants to raise £30 million to expan
 SEQ2#business-u01-06-q3@1: Put these in the order a growing business might follow. | Sole trader ; Private limited company ; Public limited company ; Listing on a stock exchange | A common route is to incorporate as a Ltd for limited liability, re-register as a plc, then float to raise capital from the public.
 M3#business-u01-06-q4@3: Shareholders in a listed plc complain that directors are pursuing acquisitions that raise their own pay but lower the share price. What concept best explains this? | The principal–agent problem arising from the separation of ownership and control | The unlimited liability of the directors for company debts | The rule in Salomon that companies cannot be sued | Diseconomies of scale caused by high share prices | Shareholders (principals) delegate control to directors (agents) whose interests may differ; empire-building to raise pay is a classic agency cost.
 SA3#business-u01-06-q5@3: Evaluate the decision of a successful private company to become a listed public limited company. | Advantages: access to large amounts of equity capital without debt, liquidity for existing shareholders, status and publicity, and shares to use in acquisitions or employee schemes. Disadvantages: high flotation costs, ongoing disclosure and governance obligations, short-termist pressure from investors, loss of control by founders and vulnerability to takeover. The decision depends on the need for capital, the founders' attitude to control and market conditions. | Explains capital raising ; Liquidity or status benefit ; Costs and disclosure ; Loss of control or takeover risk ; Justified judgement on the conditions for floating
+Q: How is a UK company incorporated? | By registering with Companies House under the Companies Act 2006.
+Q: Name three things a company can do in its own name as a separate legal person. | Own property, make contracts, and sue and be sued (it also continues if shareholders change).
+Q: What must a company file at Companies House each year? | Accounts and a confirmation statement.
+Q: What register must a company keep about who controls it? | A register of people with significant control (PSC).
+Q: Since 2025, what must directors and PSCs do under the Economic Crime and Corporate Transparency Act 2023? | Verify their identity.
+Q: What restriction applies to a private limited company's shares? | It can't offer them to the general public, and they may be transferred only with directors' consent.
+Q: How many directors must a private limited company and a plc have? | A private limited company needs at least one; a plc needs at least two, plus a qualified company secretary.
+Q: Define flotation. | Offering a company's shares to the public on a stock exchange for the first time, also called an initial public offering.
+Q: Why does flotation bring takeover risk? | Anyone can buy shares on the market, so a rival could build a stake and bid.
+Q: Who described the separation of ownership and control in 1932? | Berle and Means.
 
 ## Social enterprises and co-operatives
 LV: Introductory · Application
@@ -315,6 +375,16 @@ M2#business-u01-07-q2@2: A group of residents wants to run a community café who
 MS2#business-u01-07-q3@2: Which are likely disadvantages of a worker co-operative? Choose all that apply. | Difficulty raising capital from outside investors ; Slower decisions when members must agree | Members have unlimited liability by law ; It can't trade at a surplus | Outside investors can't take control or large returns, so capital is harder to raise, and democratic control can slow decisions. Co-operatives can have limited liability and can make surpluses.
 M3#business-u01-07-q4@3: Which is the best evaluation of employee ownership, using John Lewis as an example? | It can strengthen engagement and long-term focus, but it doesn't remove market pressures and may limit access to capital in a downturn | It guarantees higher profits than investor-owned rivals, because employee-owners always work harder | It prevents any job losses, because employees own the firm and vote against cuts | It is illegal for employee-owned firms to borrow, so they cannot grow | The John Lewis case shows both the claimed benefits (engagement, service) and the limits: bonuses were cut and stores closed when trading was weak, and capital is harder to raise.
 SA3#business-u01-07-q5@3: Evaluate whether a social enterprise can compete successfully with profit-maximising rivals. | A social mission can attract customers willing to pay for ethics, motivated staff and volunteers, grants and goodwill, and some markets reward trust. But a social enterprise may face higher costs (fair wages, ethical sourcing), find capital harder to raise and risk mission drift if it chases profit. Success depends on whether the mission is valued by customers and whether it runs efficiently; examples such as The Big Issue or Divine Chocolate show it is possible in some markets. | Sources of advantage (loyalty, motivation, goodwill) ; Cost or capital disadvantages ; Mission drift or tension ; Uses an example ; Justified judgement
+Q: How does The Big Issue work as a social enterprise? | Its magazines are sold by vendors who keep part of the price.
+Q: Which Act created the community interest company? | The Companies (Audit, Investigations and Community Enterprise) Act 2004.
+Q: Which test must a CIC pass? | A community interest test.
+Q: Who oversees community interest companies? | The Regulator of Community Interest Companies.
+Q: Name three kinds of co-operative and who owns each. | Consumer co-operatives, owned by customers; worker co-operatives, owned by employees; producer co-operatives, owned by producers.
+Q: Who owns a mutual such as a building society? | Its customers.
+Q: How do John Lewis Partners share in profits? | The partnership is held in trust for employees, who share in profits through a bonus.
+Q: What has encouraged UK founders since 2014 to sell to an employee ownership trust? | Tax relief for companies sold to an employee ownership trust.
+Q: What is mission drift? | When commercial pressures pull a social enterprise away from its mission.
+Q: Why is raising capital harder for co-operatives and employee-owned firms? | Outside investors can't take control or large dividends.
 
 ## Franchising
 LV: Introductory · Application
@@ -358,6 +428,16 @@ M2#business-u01-08-q2@2: An outlet's sales are £400,000 a year and the royalty 
 TF2#business-u01-08-q3@1: In the UK there is a specific Act of Parliament regulating franchise agreements. | false | The UK has no franchise-specific legislation; general contract and competition law apply, and the British Franchise Association self-regulates its members.
 M3#business-u01-08-q4@3: For which business is franchising least likely to be an effective growth method? | A bespoke furniture maker whose quality depends on one founder's rare craft skill | A sandwich chain with standard recipes and suppliers | A domestic cleaning service with a clear training system | A gym chain with standard equipment and classes | Franchising relies on a system that can be copied and taught. Where quality depends on scarce individual skill, franchisees can't reproduce it and the brand would suffer.
 SA3#business-u01-08-q5@2,3: Evaluate the decision to buy a franchise rather than start an independent business. | A franchise gives a proven model, a known brand, training, buying power and national marketing, which lowers the risk of failure and may make banks more willing to lend. But it costs an initial fee and royalties on sales whatever the profit, restricts the franchisee's freedom, ties them to the franchisor's suppliers and reputation, and the agreement may be restrictive. The decision depends on the strength and track record of the franchisor, the fee level, the location and the buyer's wish for independence. | Benefits of a proven model and brand ; Support, training or marketing ; Cost of fees and royalties ; Loss of independence or franchisor risk ; Justified judgement
+Q: What does a business-format franchisor license a franchisee to do? | Run a business under its brand, using its methods, products, suppliers and training, for a fixed period.
+Q: Which body self-regulates franchising in the UK? | The British Franchise Association.
+Q: What sets the terms of a UK franchise, given there is no franchise-specific legislation? | The franchise agreement itself.
+Q: Name two risks of franchising for the franchisor. | Less control over quality, and one poor franchisee damaging the whole brand (also sharing profit).
+Q: Name three gains of franchising for the franchisee. | A proven model and brand that reduce failure risk; training and support; buying power and national advertising.
+Q: Name three risks of franchising for the franchisee. | High start-up costs, royalties paid even when profits are low, and little freedom to innovate.
+Q: Why can a franchisee make a loss even when the outlet makes a profit before fees? | Royalties and marketing levies are charged on sales, whatever the profit, so they can exceed the profit before fees.
+Q: Which kinds of business suit franchising? | Businesses with a simple, replicable system and strong brand, such as fast food, cleaning or fitness.
+Q: Why is franchising less suited where the franchisor's know-how is easily copied? | Franchisees would have little reason to keep paying for a system they could reproduce themselves.
+Q: What does growth by franchising rely on, given that disputes are common? | Careful franchisee selection and support.
 
 ## PESTLE analysis
 LV: Introductory · Application
@@ -407,6 +487,16 @@ M2#business-u01-09-q2@2: A UK firm that imports most of its components from the 
 MATCH1#business-u01-09-q3@1: Match each development to its PESTLE category. | A rise in the minimum wage = Political or legal ; Growth of generative AI tools = Technological ; A recession = Economic ; Flooding of riverside premises = Environmental | Some factors span categories, but each has a primary home; the minimum wage is set by government and enforced in law.
 M3#business-u01-09-q4@3: Which is the most important limitation of PESTLE analysis for a small business? | It identifies external factors but doesn't show whether the firm has the resources to respond | It only works for multinationals with global operations | It cannot include environmental or ecological factors at all | It requires published accounts before it can be used | PESTLE scans the environment; whether a firm can exploit an opportunity or survive a threat depends on its internal strengths, so it must be combined with internal analysis such as SWOT.
 SA3#business-u01-09-q5@2,3: Using PESTLE, evaluate the external factors facing a UK budget airline. | Political and legal: air passenger duty, airport slot rules, consumer protection for delays. Economic: fuel prices and exchange rates (fuel is priced in dollars) are major costs, while incomes drive leisure demand. Social: demand for cheap holidays but rising concern about flying's climate impact. Technological: more fuel-efficient aircraft and online pricing. Environmental: emissions trading and net zero targets raise costs. The most significant are likely fuel and exchange rates in the short term and environmental regulation in the long term. | Identifies relevant political or legal factors ; Economic factors explained as costs or demand ; Social or environmental factors ; Prioritises the most significant ; Justified judgement
+Q: Name four factors grouped under 'economic' in PESTLE. | Growth, interest rates, inflation and exchange rates (also unemployment and consumer incomes).
+Q: Give two examples of social factors in a PESTLE analysis. | Demographics such as an ageing population, and health trends such as reduced alcohol consumption (also lifestyles, attitudes, education).
+Q: Whose 1967 work on environmental scanning did the PESTLE framework grow from? | Aguilar's.
+Q: Which extra factor does STEEPLE add to PESTLE? | Ethics.
+Q: State the three things a good PESTLE analysis does. | Identifies the factors relevant to this business, explains how each creates an opportunity or threat, and judges which are most significant, likely and urgent.
+Q: Which other analysis does PESTLE output feed into? | The external half of a SWOT analysis (and strategic decisions).
+Q: In the vape shop example, which factors were judged most significant? | The legal factors, such as the ban on single-use disposable vapes.
+Q: Why do overlapping categories limit PESTLE? | One factor can sit in several categories: a carbon tax is political, legal, economic and environmental.
+Q: Why must environmental scanning be continuous? | A PESTLE analysis is a snapshot and the environment changes quickly.
+Q: What should PESTLE be combined with, and why? | Internal analysis, because PESTLE identifies external factors but not the firm's capacity to respond.
 
 ## Markets and competition
 LV: Introductory · Application
@@ -451,6 +541,16 @@ M2#business-u01-10-q2@1: A firm's sales rise from £10m to £11m while the marke
 TF1#business-u01-10-q3@2: In a highly competitive market with many similar firms, an individual firm has little control over its price. | true | When customers can easily switch to near-identical rivals, a firm that raises its price loses sales, so it is close to being a price taker.
 M3#business-u01-10-q4@3: The arrival of discount supermarkets increased competition in UK groceries. Which response best illustrates a firm trying to avoid competing on price alone? | Investing in a premium own-label range and personalised loyalty-scheme offers | Cutting prices on all products below cost to win customers back | Closing every store and moving entirely online | Reducing quality while keeping prices unchanged | Differentiation through premium ranges and loyalty schemes gives customers reasons other than price to stay, protecting margins. Selling below cost is unsustainable.
 SA3#business-u01-10-q5@2,3: Evaluate the impact of increased competition on consumers and businesses in a market. | Consumers usually gain lower prices, more choice, better quality and innovation. Businesses face lower margins and must cut costs, differentiate or find niches; weaker firms may exit, which can later reduce choice or jobs. Some firms innovate faster under competitive pressure, while others cut corners or merge to escape it. The overall effect depends on how intense the competition is and how firms respond. | Benefits to consumers ; Pressure on margins and costs ; Strategic responses (differentiation, niche, innovation) ; A risk or downside ; Justified judgement
+Q: Define a market. | Any arrangement through which buyers and sellers exchange a product, such as a street market, online marketplace or commodity exchange.
+Q: How does a mass market differ from a niche market? | A mass market is large and broad; a niche market is small and specialised.
+Q: State the formula for market growth. | Market growth (%) = (this year's market size − last year's) ÷ last year's × 100.
+Q: How do firms in highly competitive markets such as hairdressing compete, given low margins? | On service and location, since they are close to price takers.
+Q: How do firms in an oligopoly often compete instead of all-out price wars? | On loyalty schemes and advertising.
+Q: Above roughly what market share may a firm be considered dominant in UK and EU competition practice? | About 40%.
+Q: Name three benefits of competition for consumers. | Prices pushed down towards costs, higher quality and more innovation.
+Q: Name the two routes to competitive advantage. | Lower costs or differentiation.
+Q: How did the larger UK supermarkets respond to the rise of Aldi and Lidl? | They cut prices, introduced price-matching and simplified ranges.
+Q: What contested idea links market concentration and innovation? | That some concentration may encourage innovation because large firms can fund research, so the relationship may follow an inverted U.
 
 ## The economic environment
 LV: Introductory · Application
@@ -495,6 +595,16 @@ M2#business-u01-11-q2@2: Which business is most likely to see demand rise during
 TF2#business-u01-11-q3@1: Higher interest rates tend to reduce consumer spending on goods bought on credit. | true | Borrowing costs more, so demand for credit-financed goods such as cars and furniture falls, and existing borrowers have less to spend.
 M3#business-u01-11-q4@3: A UK firm imports raw materials priced in dollars and exports most of its output to the USA. What is the overall effect of a fall in the pound against the dollar? | It depends on the balance: input costs rise in pounds, but exports become cheaper for US buyers or more profitable in pounds | It is unambiguously bad, because imported raw materials now cost more in pounds | It is unambiguously good, because its exports become cheaper for US buyers | It has no effect at all, because both its costs and sales are priced in dollars | A weaker pound raises the sterling cost of imports but increases the competitiveness or sterling value of exports. A firm exposed both ways is partly naturally hedged; the net effect depends on the proportions.
 SA3#business-u01-11-q5@3: Evaluate the impact of a period of high inflation on a UK restaurant chain. | Rising food, energy and wage costs squeeze margins; customers' real incomes fall, so they eat out less or trade down; menus must be repriced often. The chain may pass costs on if its brand is strong, but price rises risk losing customers. Higher interest rates used to fight inflation raise borrowing costs. Impact depends on the chain's pricing power, debt, cost structure and whether rivals face the same pressures. | Effect on costs ; Effect on demand or real incomes ; Ability to pass on costs ; Interest rate link ; Justified judgement
+Q: How is a recession often defined? | Two consecutive quarters of falling real GDP.
+Q: How do higher interest rates affect consumers' behaviour? | They raise the cost of loans and mortgages, reduce spending on credit and encourage saving.
+Q: Which index measures UK inflation? | The Consumer Prices Index (CPI).
+Q: How does a stronger pound affect a UK importer? | Imports become cheaper.
+Q: How does high unemployment help some businesses, even though it lowers demand? | It eases recruitment and wage pressure.
+Q: Why does demand for foreign holidays fall more in a recession than demand for necessities? | Luxuries have high income elasticity, so demand falls sharply when incomes fall; necessities stay stable.
+Q: Why could a cash-rich business with no debt gain from a rise in Bank Rate? | It earns more interest on its savings and may find rivals weakened.
+Q: Why does high inflation harm businesses even though prices rise? | Costs rise too, real incomes may fall and uncertainty discourages investment.
+Q: Name four ways businesses respond to economic change. | Adjusting prices, cutting costs, hedging currency risk and fixing interest rates on loans (also changing ranges, investment timing or staffing).
+Q: About how long does the Bank of England say the full effect of rate changes on inflation takes? | Up to about two years.
 
 ## The legal and regulatory environment
 LV: Introductory · Application
@@ -542,6 +652,16 @@ M2#business-u01-12-q2@2: A customer's new kettle stops working after a week. Und
 MS2#business-u01-12-q3@3: Which are arguments that business regulation benefits businesses themselves? Choose all that apply. | It stops irresponsible rivals undercutting firms that treat staff and customers well ; It builds consumer trust that supports demand | It always reduces costs ; It removes the need for any competition | A level playing field and trust are business benefits of regulation; regulation usually adds rather than reduces costs, and it is meant to support competition, not replace it.
 M3#business-u01-12-q4@3: Which is the best evaluation of the claim that regulation is a burden on small businesses? | Compliance costs fall proportionately harder on small firms, but regulation also protects them from unfair competition and builds the trust they rely on | Small businesses are exempt from most UK employment and consumer law, so regulation cannot burden them | Regulation affects only large companies, so small firms are never burdened by compliance | Regulation always helps small firms more than large ones, because it is written for them | Fixed compliance costs weigh more heavily on small firms, but rules on fair competition and consumer trust also protect them; a balanced answer recognises both.
 SA3#business-u01-12-q5@2,3: Evaluate the impact of employment law on a small hospitality business. | Minimum wage rises, holiday pay, sick pay and rules on dismissal raise labour costs and administrative time, which is significant where wages are a large share of costs and margins are thin. However, fair treatment can reduce staff turnover and recruitment costs, improve service and protect the business from tribunal claims and reputational damage. The overall impact depends on the size of cost increases, the firm's ability to raise prices and how well it manages its people. | Identifies specific employment law ; Effect on costs or administration ; Benefits (retention, motivation, reputation) ; Considers margins or pricing power ; Justified judgement
+Q: What standard must services meet under the Consumer Rights Act 2015? | They must be performed with reasonable care and skill.
+Q: What new powers did the Digital Markets, Competition and Consumers Act 2024 give the CMA? | Power to fine firms directly for consumer law breaches; the Act also banned fake reviews.
+Q: What does the Equality Act 2010 cover? | Discrimination on protected characteristics.
+Q: Up to what amount can the CMA fine a firm for breaching the Competition Act 1998? | Up to 10% of worldwide turnover.
+Q: What duty does the Health and Safety at Work etc. Act 1974 place on employers? | To ensure, so far as reasonably practicable, the health, safety and welfare of employees.
+Q: Who enforces health and safety law? | The Health and Safety Executive (HSE) and local authorities.
+Q: Name the sector regulators for water, energy and communications. | Ofwat for water, Ofgem for energy and Ofcom for communications.
+Q: What right to cancel do online customers usually have under the Consumer Contracts Regulations 2013? | A 14-day right to cancel distance purchases.
+Q: Why does regulation fall proportionately harder on small firms? | Compliance time, fees and other fixed costs of 'red tape' are spread over less business.
+Q: How does regulation create a level playing field? | Responsible firms aren't undercut by rivals cutting corners on safety, wages or the environment.
 
 ## Technology and social change
 LV: Introductory · Application
@@ -587,6 +707,16 @@ M2#business-u01-13-q2@2: A city-centre sandwich chain sees weekday sales fall af
 TF2#business-u01-13-q3@3: An established firm can find it harder to adopt a disruptive technology than a new entrant, even if it can afford to. | true | Its existing customers, assets and routines reward the current model, so the new technology looks unattractive at first: the innovator's dilemma.
 M3#business-u01-13-q4@3: Why did Blockbuster's failure illustrate more than a technology problem? | Its business model, store network and late-fee revenue made it reluctant to adopt the model customers were moving to | It had no access to the internet in any of the countries where it operated | Streaming technology was illegal in its markets until after it collapsed | It sold only physical goods, which cannot be sold or rented online | The technology was available to Blockbuster; its profitable existing model discouraged a timely switch. Failure was strategic as well as technological.
 SA3#business-u01-13-q5@3: Evaluate how a traditional high-street bank should respond to technological and social change. | Customers increasingly bank by app, so branch visits and cash use have fallen, and app-based challengers compete on convenience. The bank could invest in digital services, close or repurpose branches and cut costs, but must consider customers who rely on branches and cash (often older or rural), regulators' expectations on access to cash and reputational risk. It might use shared banking hubs and partner with fintechs. The best response balances efficiency with inclusion. | Identifies technological change ; Identifies social or demographic change ; Proposes a response ; Considers excluded customers or regulation ; Justified judgement
+Q: Give an example of process innovation from the lesson. | Ocado's automated warehouses, which use automation to cut costs and raise quality.
+Q: Name three new business models enabled by technology. | E-commerce, subscriptions and platforms (also the sharing economy).
+Q: Name four costs or risks that technology brings to a business. | Investment, retraining, cybersecurity threats and resistance from staff.
+Q: Why did Blockbuster fail against Netflix? | Its model relied on stores and late fees, and its own online service came too late as customers moved to streaming.
+Q: How does an ageing UK population affect labour supply? | It tightens labour supply.
+Q: How has hybrid working affected some businesses? | It reduced demand for city-centre lunches.
+Q: What ethical expectations do customers and employees now have of firms? | That firms act responsibly on climate, diversity and fair pay.
+Q: Name four ways businesses respond to technological and social change. | Scanning for change, investing in research and development, training staff, and partnering with or buying start-ups (also piloting models, listening to customers).
+Q: What is the innovator's dilemma? | Christensen's idea that established firms struggle to adapt because their existing customers, assets and routines reward the old model.
+Q: Why do many technology investments fail? | Poor implementation, weak staff buy-in or a lack of customer demand; technology must fit the strategy.
 
 ## Globalisation and international business
 LV: Intermediate · Application
@@ -631,6 +761,16 @@ M2#business-u01-14-q2@2: A UK food producer wants to enter a distant market it k
 SEQ2#business-u01-14-q3@2: Order these entry methods from least to most commitment and control. | Exporting through an agent ; Licensing ; Joint venture ; Wholly owned subsidiary | Commitment, cost, risk and control all rise as a firm moves from exporting to owning its own operation abroad.
 M3#business-u01-14-q4@3: Which is the strongest evaluation of the impact of globalisation on a developed country's manufacturers? | It opens bigger markets and cheaper inputs for some, while exposing others to low-cost competition; the outcome depends on each firm's competitiveness | It benefits all manufacturers equally, because every firm gains from lower-cost imported inputs | It harms all manufacturers, because production and jobs inevitably move abroad | It has no effect on manufacturers at all, because it affects only service industries | Globalisation creates winners and losers; firms that can compete on quality, innovation or scale gain access to markets, while those competing on cost alone may lose.
 SA3#business-u01-14-q5@3: Evaluate the opportunities and risks for a UK small business that starts exporting to the EU. | Opportunities: a large, nearby market, tariff-free access for goods meeting rules of origin under the TCA, growth and spreading risk. Risks: customs declarations, VAT and regulatory checks raise costs and delays; exchange-rate risk; cultural and language differences; competition from EU firms. Government export support and intermediaries can reduce the barriers. Success depends on the product's competitiveness and the firm's capacity to manage the paperwork. | Opportunity of market size or growth ; Post-Brexit barriers ; Currency or cultural risk ; Ways to reduce risk ; Justified judgement
+Q: Define globalisation. | The increasing integration of economies through trade, investment, technology and the movement of people.
+Q: Name four drivers of globalisation. | Trade liberalisation, cheaper transport and communication, capital flows and the growth of emerging economies.
+Q: What is meant by 'slowbalisation'? | Fragmentation of globalisation as firms shorten supply chains and governments use tariffs and industrial policy.
+Q: Name four reasons firms trade internationally. | To reach new customers, extend a product's life cycle, spread risk and gain economies of scale (also access cheaper or specialised inputs).
+Q: Define a multinational corporation. | A business with operations in more than one country, such as Unilever or AstraZeneca.
+Q: Why does JCB manufacture in India? | Lower costs, closeness to a large, growing market, and avoiding some tariffs.
+Q: Name four risks globalisation brings to businesses. | Exposure to exchange rates, trade barriers, cultural differences and fragile global supply chains.
+Q: What agreement has governed UK-EU trade since the end of 2020? | The Trade and Cooperation Agreement (TCA).
+Q: What new costs did Brexit introduce for UK goods exporters to the EU? | Customs declarations, regulatory checks and new costs, especially for small exporters and food.
+Q: Which trade bloc did the UK join in 2024? | The CPTPP.
 
 ## Business size and growth
 LV: Intermediate · Application
@@ -676,6 +816,16 @@ M2#business-u01-15-q2@2: A chocolate manufacturer buys a cocoa plantation. What 
 MATCH2#business-u01-15-q3@2: Match each example to the type of economy of scale. | A supermarket gets a lower price per tin by buying millions = Purchasing ; A large firm borrows at a lower interest rate than a small one = Financial ; A national TV advert spread over millions of sales = Marketing ; A larger, more efficient production line = Technical | Each fall in average cost arises from a different source as scale rises.
 M3#business-u01-15-q4@3: A fast-growing company finds that decisions now take weeks and departments duplicate work. What is the best interpretation? | It is experiencing diseconomies of scale from poor communication and coordination, which could be eased by restructuring and delegation | It is enjoying economies of scale, so its average costs must be falling as it grows larger | It should grow even faster to overcome the problem through greater size | Its market share must be falling, which is causing the slow decisions | Slow decisions and duplication are classic managerial diseconomies; they can often be reduced by better structure, systems and delegation.
 SA3#business-u01-15-q5@3: Evaluate whether a successful independent coffee shop should grow into a regional chain. | Growth could bring economies of scale in purchasing and marketing, higher profit and a stronger brand. But it needs capital, management skills and systems; quality and the personal atmosphere customers value may suffer; competition from national chains is strong; and diseconomies may emerge. The owner may prefer control and lifestyle. The decision depends on demand, finance, the owner's aims and whether the concept can be replicated. | Benefits of growth such as economies of scale ; Need for finance or management ; Risk to quality, brand or control ; Consideration of the owner's objectives ; Justified judgement
+Q: Name five measures of business size. | Number of employees, revenue, market share, capital employed and market capitalisation.
+Q: How is market capitalisation calculated? | Share price × number of shares.
+Q: What proportion of UK private-sector businesses had no employees other than the owner at the start of 2024? | About three-quarters.
+Q: Name three reasons firms grow. | Economies of scale, market power and survival against rivals (also risk diversification, managers' ambitions, investors' expectations).
+Q: State one advantage and one disadvantage of organic growth. | It is lower risk and keeps control and culture, but it is slow.
+Q: How does a merger differ from a takeover? | In a merger two firms agree to combine; in a takeover one firm buys a controlling stake in another.
+Q: What is horizontal integration? | Combining with a firm at the same stage of the same industry.
+Q: What is conglomerate integration? | Combining with a firm in an unrelated industry.
+Q: Name five types of economy of scale. | Purchasing, technical, financial, marketing and managerial.
+Q: Name three causes of diseconomies of scale. | Poor communication, slower decisions and weaker coordination (also low morale).
 
 ## Why businesses fail
 LV: Intermediate · Evaluation
@@ -720,4 +870,14 @@ M2#business-u01-16-q2@2: A manufacturer wins large orders but must pay suppliers
 TF1#business-u01-16-q3@2: Under the Insolvency Act 1986, a company that can't pay its debts as they fall due may be treated as insolvent even if its assets exceed its liabilities. | true | Section 123 includes both a cash-flow test (debts as they fall due) and a balance-sheet test.
 M3#business-u01-16-q4@3: Which is the best evaluation of the causes of Carillion's collapse? | Mainly internal: low-margin bidding, high debt and weak governance, exposed when problem contracts led to large losses | Entirely external: government contracts were cancelled without any warning | Caused only by the economic recession that hit the UK in 2018 | Caused by a sudden lack of demand for construction services | The parliamentary inquiry emphasised the board's decisions, aggressive accounting and debt; contract losses triggered the collapse but exposed internal weaknesses.
 SA3#business-u01-16-q5@1,3: Evaluate the view that most business failures are caused by poor management rather than external factors. | Many failures stem from internal weaknesses such as poor cash flow management, over-trading, excessive debt, weak planning or failure to adapt, as the Carillion inquiry found. But external shocks, such as recessions, the pandemic or energy price rises, can bring down well-run firms, and they often trigger failures. Good managers anticipate and build resilience, so internal and external causes interact. On balance, management decisions determine how vulnerable a firm is when external shocks arrive. | Internal causes explained ; External causes explained ; A real example ; Interaction between the two ; Justified judgement
+Q: What proportion of new UK businesses are still trading five years after they start? | Well under half, according to ONS business demography statistics.
+Q: Name four internal causes of business failure. | Poor cash flow management, weak planning, over-trading and excessive debt (also poor management, cost control, innovation or governance).
+Q: Name four external causes of business failure. | Recession, rising interest rates or costs, new competitors or technologies, and changes in law (also shocks such as the pandemic).
+Q: How do internal and external causes usually combine in business failure? | An external shock exposes internal weaknesses, such as high debt or an outdated model.
+Q: Define over-trading. | Expanding faster than the firm's working capital can support.
+Q: State the two tests of insolvency under section 123 of the Insolvency Act 1986. | The company can't pay its debts as they fall due, or its liabilities exceed its assets.
+Q: When did Carillion go into compulsory liquidation? | January 2018.
+Q: Name three causes of Carillion's collapse. | Aggressive low-margin bidding, high debt from acquisitions and weak governance (also over-optimistic accounting).
+Q: Name four lessons managers can learn from business failures. | Forecast and monitor cash flow, keep debt manageable, test assumptions with market research and adapt to change (also strong governance).
+Q: Name three UK high-street failures cited in the lesson. | Woolworths (2008), BHS (2016) and Wilko (2023).
 `;
