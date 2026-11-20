@@ -445,7 +445,7 @@ SRC: Employers' Liability (Defective Equipment) Act 1969 | legislation | 1969 | 
 SRC: Walker v Northumberland County Council [1995] 1 All ER 737 | case | 1994
 H: The common law duty (Wilsons and Clyde Coal v English [1938])
 - **Competent staff** (Hudson v Ridge Manufacturing [1957]: a known practical joker).
-- **Adequate plant and equipment** (Employer's Liability (Defective Equipment) Act 1969 makes the employer liable for defective equipment from a third-party supplier).
+- **Adequate plant and equipment** (the Employers' Liability (Defective Equipment) Act 1969 makes the employer liable for defective equipment from a third-party supplier).
 - **A safe place of work**.
 - **A safe system of work**, including supervision and training (General Cleaning Contractors v Christmas [1953]).
 - The duty extends to psychiatric injury from work stress, where foreseeable (Hatton v Sutherland [2002]; Walker v Northumberland CC [1995]).
@@ -576,7 +576,7 @@ H: Unreasonable use
 - **Duration and frequency**.
 - **Sensitivity of the claimant** (Robinson v Kilvert (1889): an abnormally sensitive use isn't protected).
 - **Malice** (Christie v Davey [1893]; Hollywood Silver Fox Farm v Emmett [1936]).
-- Fitzroy Place Residential v Fearn [2023] UKSC 4: viewing from the Tate Modern platform into flats was a nuisance.
+- Fearn v Tate Gallery [2023] UKSC 4: viewing from the Tate Modern platform into flats was a nuisance.
 H: Defences and remedies
 - **Prescription** (20 years of the nuisance, as an easement), statutory authority, and consent. "Coming to the nuisance" is not a defence (Miller v Jackson [1977]; Coventry v Lawrence).
 - Remedies: injunction (the usual remedy), damages, abatement.

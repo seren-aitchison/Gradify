@@ -734,7 +734,7 @@
   ],
   "notes": [
     "Sources used: OpenStax University Physics Vol 1-3 (2016) and College Physics 2e (2022) sections, each URL fetched and its page title confirmed on 2026-11-19; AQA 7408 specification sections confirmed in the PDF (sha256 32a556da85fa0928c3600f8178d1a18fe5156b2ea36d76b541df866451721e20).",
-    "Existing check questions are kept first and in their original order, but they now carry @n objective links and (in some) lengthened distractors, so tests/compat.test.mjs (legacy parser, which doesn't read @n tags) will report changed question counts for these units. That test needs updating for any physics standard-2 work.",
-    "Lessons average about 5 KB in u21, above the 2-3.5 KB guide, mostly because the required metadata, five-plus questions and SA model answers add ~2.5 KB to a ~2 KB lesson."
+    "Existing check questions and flashcards keep their positions and order (wording, @n links and distractors corrected in place); new questions are added only after them. tests/compat.test.mjs passes.",
+    "Lessons average about 5 KB in u21 and u23, above the 2-3.5 KB guide, mostly because the required metadata, five-plus questions and SA model answers add ~2.5 KB to a ~2 KB lesson."
   ]
 }

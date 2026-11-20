@@ -651,25 +651,49 @@ SA3@2,3: Describe a Hohmann transfer from a low circular orbit to a higher one, 
 
 ## Gravitational perturbations
 S: Real orbits are perturbed by other bodies, by the non-spherical shapes of planets, by drag and by radiation pressure. Perturbation theory treats these as small corrections that slowly change the orbital elements.
+O: Identify the main perturbations acting on planets and satellites
+O: Explain how repeated small perturbations build up, including resonances
+O: Describe how perturbations led to the discovery of Neptune
+PRE: Kepler's laws
+PRE: Satellite motion
+LV: Year 3 · Physical reasoning
 H: Main perturbations
 - **Third bodies**: the Moon and Sun on Earth satellites; planets on each other.
 - **Oblateness (J_{2})**: Earth's equatorial bulge makes orbits' planes precess and their ellipses rotate. Exploited for sun-synchronous orbits.
 - **Atmospheric drag**: shrinks low orbits.
 - **Solar radiation pressure**: important for light, large spacecraft and solar sails.
-- **Resonances**: repeated tugs at the same orbital phase build up effects (Kirkwood gaps, Laplace resonance of Io, Europa, Ganymede at 1:2:4).
+- **Resonances**: repeated tugs at the same orbital phase build up effects (Kirkwood gaps, Laplace resonance of Io, Europa, Ganymede, whose periods are in the ratio 1:2:4).
 H: Neptune
 P: In 1846 Le Verrier and Adams used unexplained perturbations of Uranus to predict an unseen planet; Galle found Neptune within 1° of the prediction. Today, perturbations of distant Kuiper belt objects motivate searches for a hypothetical "Planet Nine".
 X: How do you choose a sun-synchronous orbit's inclination?
 > The J_{2} nodal precession rate depends on inclination and altitude
 > At ~800 km, an inclination of ~98.6° (slightly retrograde) gives 360° per year, matching Earth's orbit around the Sun
+K: Perturbations rarely change an orbit's size much in one pass; they slowly rotate and tilt it, and effects that recur at the same orbital phase (resonances) add up instead of averaging out.
 !: Perturbations add up over many orbits; an effect too small to matter in one orbit can dominate over years.
+T: Perturbation | A small extra force that makes an orbit depart slowly from a pure Kepler ellipse
+T: Orbital resonance | A simple whole-number ratio between two orbital periods, so gravitational tugs repeat at the same points
+T: Orbital elements | The set of numbers (a, e, inclination, node, periapsis direction, phase) that specify an orbit
+SUM: Third bodies, oblateness, drag and radiation pressure slowly change orbital elements.
+SUM: Resonances amplify perturbations; unexplained perturbations of Uranus revealed Neptune.
+EV: established | Small perturbations from other bodies and non-spherical masses cause slow, predictable changes in orbits, and unexplained ones can reveal unseen masses
+SRC: OpenStax, Astronomy 2e, section 3.6 "Gravity with More Than Two Bodies" | secondary | 2022 | https://openstax.org/books/astronomy-2e/pages/3-6-gravity-with-more-than-two-bodies
+SRC: OpenStax, University Physics Volume 1, section 13.5 "Kepler's Laws of Planetary Motion" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/13-5-keplers-laws-of-planetary-motion
 Q: How was Neptune discovered? | By predicting its position from unexplained perturbations in Uranus's orbit.
 Q: What is J_{2}? | The coefficient describing a planet's oblateness, the main perturbation on low satellite orbits.
-M1: Io, Europa and Ganymede are in a: | 1:2:4 orbital resonance | 1:1 resonance | Random pattern | 2:3 resonance | The Laplace resonance.
-M2: Solar radiation pressure matters most for: | Light, large-area spacecraft | Planets | Dense small satellites | Rockets during launch | Force ∝ area, acceleration ∝ area/mass.
+M1@2: Io, Europa and Ganymede are in a: | 1:2:4 orbital resonance | 1:1 co-orbital resonance | Random, unrelated pattern | 2:3 orbital resonance | Their periods are close to 1.77, 3.55 and 7.15 days, in the ratio 1:2:4: the Laplace resonance, which keeps their orbits eccentric and heats Io.
+M2@1: Solar radiation pressure matters most for: | Light, large-area spacecraft | Planets | Dense small satellites | Rockets during launch | The force is proportional to area, so the acceleration depends on area/mass: largest for light, large spacecraft such as solar sails.
+NUM2@2: Ganymede's period is 7.15 days and it is in a 1:2:4 resonance with Europa and Io. What is Io's period in days? | 1.79 | 3% | days | Io's period is a quarter of Ganymede's: 7.15/4 = 1.79 days (observed 1.77 days; the ratio is close to, not exactly, 1:2:4).
+M3@2: Why can a perturbation that is tiny on each orbit dramatically change an asteroid's path if it is in resonance with Jupiter? | The tugs recur at the same orbital point, so they add up instead of cancelling | Resonance makes Jupiter's gravity stronger | The asteroid's mass grows with each orbit | Resonance removes the Sun's gravity | Out of resonance, tugs at random phases average out; in resonance they repeat at the same point every few orbits and accumulate, pumping up the eccentricity.
+TF1@3: Neptune was first found by telescope surveys and only later explained by calculation. | false | It was predicted by Le Verrier (and Adams) from Uranus's perturbed orbit, and Galle found it in 1846 within about 1° of the predicted position.
+SA3@1,3: Explain how the orbit of Uranus led astronomers to discover Neptune, and why the same method is used today in searches for unseen planets. | Uranus's observed positions drifted from the orbit predicted from the Sun's and the known planets' gravity. Le Verrier and Adams assumed the residuals were the perturbation of an unknown outer planet and calculated where it must be; Galle found Neptune near that spot in 1846. Today the clustering of distant Kuiper belt orbits is analysed the same way, suggesting a possible undiscovered planet, though none has yet been found. | Uranus's observed positions disagreed with predictions ; Residuals interpreted as perturbation by an unseen planet ; Position calculated, then found by observation ; Same reasoning used for distant Kuiper belt objects today
 
 ## Precession of orbits
 S: Under a pure inverse-square force around a point mass, an orbit's ellipse stays fixed. Any deviation (other planets, a planet's oblateness, general relativity) makes the ellipse rotate slowly: apsidal precession.
+O: Distinguish apsidal precession from nodal precession
+O: List the causes of precession and explain why a pure inverse-square force gives none
+O: Calculate the general relativistic precession of an orbit
+PRE: Gravitational perturbations
+LV: Year 3 · Physical reasoning
 H: Causes
 - Planetary perturbations: most of Mercury's 574″ per century perihelion precession.
 - Oblateness of the central body.
@@ -682,14 +706,33 @@ E: Δφ = 6πGM/(c^{2}a(1 − e^{2})) per orbit
 X: Calculate Mercury's GR precession per orbit.
 > 6π × 6.67 × 10^{-11} × 2 × 10^{30}/(9 × 10^{16} × 5.79 × 10^{10} × 0.957) = 5.0 × 10^{-7} rad per orbit
 > × 415 orbits per century = 2.1 × 10^{-4} rad = 43″ per century
+K: Only an exact inverse-square (or exactly harmonic) force gives closed orbits, so precession is a sensitive test of the force law: Mercury's 43″ per century residual was the first sign that Newton's law is not exact.
 !: Most of Mercury's precession is Newtonian (from other planets); only the 43″ residue needed new physics.
+T: Apsidal precession | Slow rotation of an orbit's major axis (line of apsides) within its plane
+T: Nodal precession | Slow rotation of an orbit's plane about the central body's axis
+T: Arcsecond | One 3600th of a degree, written ″
+SUM: Any departure from a point-mass inverse-square force makes orbits precess.
+SUM: GR adds Δφ = 6πGM/(c^{2}a(1 − e^{2})) per orbit: 43″ per century for Mercury.
+EV: established | General relativity accounts for the 43 arcseconds per century of Mercury's perihelion precession left over after Newtonian planetary perturbations
+SRC: OpenStax, University Physics Volume 1, section 13.7 "Einstein's Theory of Gravity" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/13-7-einsteins-theory-of-gravity
+SRC: OpenStax, Astronomy 2e, section 24.3 "Tests of General Relativity" | secondary | 2022 | https://openstax.org/books/astronomy-2e/pages/24-3-tests-of-general-relativity
 Q: How much of Mercury's perihelion precession is due to GR? | About 43 arcseconds per century.
 Q: Why does an orbit precess if the force isn't exactly inverse-square? | Only the 1/r^{2} force (and the harmonic force) give closed orbits (Bertrand's theorem).
-M1: The Moon's orbital plane precesses with a period of: | 18.6 years | 1 month | 26 000 years | 1 year | Nodal precession.
-M2: GR precession is largest for orbits that are: | Close and eccentric around massive bodies | Distant and circular | Around light bodies | Retrograde | ∝ M/(a(1 − e^{2})).
+M1@1: The Moon's orbital plane precesses with a period of: | 18.6 years | 1 month | 26 000 years | 1 year | The Sun's pull makes the Moon's orbital plane (its nodes) swing round once every 18.6 years, which sets the cycle of eclipse seasons.
+M2@3: GR precession is largest for orbits that are: | Close and eccentric around massive bodies | Distant and circular around any body | Around light bodies such as asteroids | Retrograde around any central body | Δφ ∝ M/(a(1 − e^{2})), so large M, small a and large e all increase the precession per orbit.
+NUM2@3: Using Δφ = 6πGM/(c^{2}a(1 − e^{2})), find the GR precession per orbit, in units of 10^{-8} rad, for Earth (a = 1.50 × 10^{11} m, e ≈ 0, M = 2.0 × 10^{30} kg). | 18.6 | 3% | × 10^{-8} rad | 6π × 1.334 × 10^{20}/(9 × 10^{16} × 1.50 × 10^{11}) = 2.515 × 10^{21}/1.35 × 10^{28} = 1.86 × 10^{-7} rad, about 3.8″ per century.
+M3@2: Of Mercury's observed perihelion precession of about 574″ per century, how much did Newtonian theory fail to explain? | About 43″ per century | All 574″ per century | About 531″ per century | None of it | Perturbations from the other planets account for about 531″; the remaining 43″ was unexplained until general relativity predicted exactly that amount.
+TF2@1: Nodal precession and apsidal precession are two names for the same effect. | false | Apsidal precession turns the ellipse's long axis within the orbital plane; nodal precession turns the plane itself about the central body's axis.
+SA3@2,3: Explain why the precession of Mercury's perihelion was an important test of general relativity, and why the effect is larger for Mercury than for the other planets. | A pure inverse-square force gives a fixed ellipse, so precession reveals other influences. After subtracting the precession caused by the other planets, Newtonian theory left 43″ per century unexplained. General relativity predicts an extra precession 6πGM/(c^{2}a(1 − e^{2})) per orbit, which gives exactly 43″ per century for Mercury. Mercury has the smallest orbit, a fairly large eccentricity, and the most orbits per century, so its effect is the largest. | Closed ellipse only for exact inverse square ; 43″ per century residual after planetary perturbations ; GR formula predicts the residual ; Small a, sizeable e and short period make Mercury's largest
 
 ## General relativistic corrections
 S: General relativity treats gravity as curved spacetime. For weak fields it reproduces Newton, but it adds small, measurable corrections: clocks run slower deeper in gravity, light bends twice the Newtonian amount, orbits precess, and signals are delayed.
+O: Calculate gravitational time dilation near Earth's surface
+O: Describe the classic tests of general relativity
+O: Explain why GPS and precise timekeeping need relativistic corrections
+PRE: Gravitational potential and potential energy
+PRE: Equivalence principle
+LV: Year 2 · Physical reasoning
 H: Key effects
 E: Δt/t ≈ ΔΦ/c^{2} = gh/c^{2} :: gravitational time dilation near Earth
 E: θ = 4GM/(c^{2}b) :: bending of light passing mass M at distance b (1.75″ at the Sun's edge)
@@ -698,19 +741,37 @@ E: θ = 4GM/(c^{2}b) :: bending of light passing mass M at distance b (1.75″ a
 - **Frame dragging**: rotating masses twist spacetime (Gravity Probe B, LAGEOS).
 H: Where they matter
 - GPS (38 μs per day correction).
-- Atomic clocks detect a height difference of ~1 cm in the gravitational potential.
+- Optical atomic clocks can detect height differences of about a centimetre through the gravitational potential.
 - Strong fields: neutron stars, black holes, binary pulsars, gravitational waves.
 X: How much faster does a clock 1 km higher run per day?
 > Δt/t = 9.8 × 1000/(9 × 10^{16}) = 1.1 × 10^{-13}
 > × 86 400 s ≈ 9.4 ns per day
+K: The size of a GR correction is set by ΔΦ/c^{2} (or GM/(rc^{2})): tiny near Earth, about 10^{-9}, but measurable with atomic clocks and large near compact objects.
 !: GR corrections aren't "tiny so irrelevant": in GPS and precise timekeeping they're essential engineering.
+T: Gravitational time dilation | Clocks deeper in a gravitational potential run slower than clocks higher up
+T: Gravitational redshift | The decrease in frequency of light climbing out of a gravitational potential well
+T: Shapiro delay | The extra travel time of a signal passing close to a massive body
+SUM: Weak-field GR adds corrections of order ΔΦ/c^{2} to Newtonian gravity.
+SUM: Light bending, redshift, Shapiro delay and frame dragging have all been measured; GPS corrects for them daily.
+EV: established | Gravitational time dilation, light bending, gravitational redshift and the Shapiro delay have all been measured and agree with general relativity
+SRC: OpenStax, University Physics Volume 1, section 13.7 "Einstein's Theory of Gravity" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/13-7-einsteins-theory-of-gravity
+SRC: OpenStax, Astronomy 2e, section 24.4 "Time in General Relativity" | secondary | 2022 | https://openstax.org/books/astronomy-2e/pages/24-4-time-in-general-relativity
 Q: How much does light bend passing the edge of the Sun? | 1.75 arcseconds (twice the Newtonian prediction).
 Q: What is gravitational redshift? | The decrease in frequency of light climbing out of a gravitational potential well.
-M1: Which experiment first confirmed light bending? | Eddington's 1919 eclipse expedition | Michelson–Morley | Pound–Rebka | LIGO | Star positions near the eclipsed Sun shifted.
-M2: A clock at a lower altitude runs: | Slower | Faster | At the same rate | Backwards | Deeper in the potential well.
+M1@2: Which experiment first confirmed light bending? | Eddington's 1919 eclipse expedition | The Michelson–Morley experiment (1887) | The Pound–Rebka tower experiment (1959) | LIGO's first detection (2015) | During the 1919 total eclipse, stars near the Sun appeared shifted outward by about the amount GR predicts, twice the Newtonian value.
+M2@1: A clock at a lower altitude runs: | Slower | Faster | At the same rate | Backwards | A clock deeper in the gravitational potential well runs slow relative to one higher up, by gh/c^{2} near Earth's surface.
+NUM2@1: By how many nanoseconds per day does a clock on a 300 m tower gain on one at its base? | 2.8 | 3% | ns | Δt/t = gh/c^{2} = 9.8 × 300/(9 × 10^{16}) = 3.27 × 10^{-14}; × 86 400 s = 2.8 × 10^{-9} s per day.
+M3@3: GPS satellite clocks run fast by about 38 μs per day overall. Which statement explains the sign? | The gravitational speed-up (about 45 μs) outweighs the velocity slow-down (about 7 μs) | Both effects make the clocks run fast | Velocity time dilation makes moving clocks run fast | Gravity makes higher clocks run slow, but the speed effect is larger | Higher in Earth's potential the clocks gain about 45 μs per day, while special-relativistic time dilation from their 3.9 km s^{-1} speed loses about 7 μs: a net gain.
+TF1@2: General relativity predicts that light grazing the Sun is deflected by twice the angle a simple Newtonian calculation gives. | true | Newtonian reasoning (treating light as particles) gives 0.87″; GR gives 1.75″, which the 1919 eclipse and later radio measurements confirmed.
+SA2@2,3: Describe two experimental tests of general relativity and what each measured. | The 1919 Eddington eclipse expedition photographed stars near the eclipsed Sun and found them displaced outward by close to 1.75″, the GR prediction for light bending (twice the Newtonian value). The Pound–Rebka experiment (1959) sent gamma rays up and down a 22.5 m tower and measured the tiny frequency shift (about 2.5 × 10^{-15}), confirming gravitational redshift. Other tests include the Shapiro radar delay and GPS clock rates. | Eclipse light bending, 1.75″ ; Twice the Newtonian prediction ; Pound–Rebka gravitational redshift in a tower ; Measured shift agreed with gh/c^{2}
 
 ## Gravitational lensing
 S: Mass bends light, so a galaxy or cluster in front of a distant source acts as a lens, distorting, magnifying and multiplying its images. Lensing weighs dark matter, finds exoplanets and magnifies the most distant galaxies.
+O: Distinguish strong, weak and microlensing
+O: Use the Einstein radius to relate lensing to the lens mass
+O: Explain how lensing reveals dark matter and exoplanets
+PRE: General relativistic corrections
+LV: Year 3 · Physical reasoning
 H: Regimes
 - **Strong lensing**: multiple images, arcs and Einstein rings when source, lens and observer align.
 - **Weak lensing**: small, statistical distortions of many background galaxy shapes; maps mass including dark matter.
@@ -723,19 +784,37 @@ H: Discoveries
 X: Why do lensed images of the same quasar flicker at different times?
 > Light paths have different lengths and gravitational delays
 > Measuring the delay (days to months) and the lens mass model gives distances and H_{0}
+K: Lensing responds to all mass, luminous or not, so it weighs galaxies and clusters directly, including their dark matter.
 !: Gravitational lenses aren't like glass lenses: they have no single focal point, producing arcs and rings rather than sharp images.
+T: Einstein ring | A ring-shaped image formed when source, lens and observer are exactly aligned
+T: Microlensing | Temporary brightening of a background star as a foreground star or planet passes in front of it
+T: Weak lensing | Small, coherent distortions of many background galaxy shapes, used statistically to map mass
+SUM: Strong lensing makes arcs, rings and multiple images; weak lensing maps mass statistically; microlensing finds compact objects and planets.
+SUM: The Einstein radius grows as √M, so lensing measures total mass, including dark matter.
+EV: established | Gravitational lensing by galaxies and clusters is observed and is used to measure their total mass, which exceeds their visible mass
+SRC: OpenStax, College Physics 2e, section 34.2 "General Relativity and Quantum Gravity" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/34-2-general-relativity-and-quantum-gravity
+SRC: OpenStax, Astronomy 2e, section 28.4 "The Challenge of Dark Matter" | secondary | 2022 | https://openstax.org/books/astronomy-2e/pages/28-4-the-challenge-of-dark-matter
 Q: What is an Einstein ring? | A ring image formed when a source, lens and observer are exactly aligned.
 Q: How does weak lensing reveal dark matter? | It measures the total mass from distortions of background galaxies, including mass that emits no light.
-M1: Microlensing has been used to discover: | Exoplanets | Black hole spins | Neutrinos | Cosmic rays | Planets add brief features to lensing light curves.
-M2: The Bullet Cluster is evidence for dark matter because: | Lensing mass is separated from the visible gas | It is very bright | It has no galaxies | Its light isn't bent | Most mass doesn't follow the baryons.
+M1@3: Microlensing has been used to discover: | Exoplanets | Black hole spins | Neutrinos | Cosmic rays | A planet orbiting a lens star adds a brief extra spike to the smooth brightening of the background star, revealing planets that are too faint to see.
+M2@3: The Bullet Cluster is evidence for dark matter because: | Lensing mass is separated from the visible gas | It is the brightest cluster known | It contains no galaxies at all | Its light isn't bent by gravity | After the clusters collided, the hot gas (most of the visible mass) lagged behind, but lensing shows most of the mass moved on with the galaxies: unseen matter that doesn't collide like gas.
+NUM2@2: By what factor does the Einstein radius increase if a lens's mass is quadrupled, with the distances unchanged? | 2 | 1% |  | θ_{E} ∝ √M, so four times the mass gives √4 = 2 times the Einstein radius.
+M3@1: A survey sees many faint background galaxies each slightly stretched in a common tangential pattern around an empty-looking patch of sky. The best interpretation is: | Weak lensing by an unseen concentration of mass | Strong lensing producing multiple images | Microlensing by a single star | A glass-lens defect in the telescope | Small, coherent distortions of many sources are weak lensing; their pattern maps a mass concentration even where little light is emitted, as in dark-matter halos.
+MATCH2@1: Match each lensing regime to what it shows. | Strong lensing = multiple images, arcs and Einstein rings ; Weak lensing = small statistical distortions of many galaxy shapes ; Microlensing = a temporary brightening of a single background star | The regimes differ in how massive and well aligned the lens is, from galaxy clusters (strong) to individual stars (micro).
+SA3@2,3: Explain how gravitational lensing can be used to measure the mass of a galaxy cluster, and why the result is evidence for dark matter. | Mass bends light by an amount that depends on the total mass, not its nature. The positions of arcs and multiple images (strong lensing) give the Einstein radius, which grows as √M, and the stretching of many background galaxies (weak lensing) maps the mass distribution further out. Lensing masses of clusters are several times larger than the mass in stars and hot gas, and in the Bullet Cluster the lensing mass is displaced from the gas, so most of the mass is unseen dark matter. | Bending depends on total mass ; Einstein radius from arcs or rings gives the mass ; Weak lensing maps mass distribution ; Lensing mass exceeds visible mass; Bullet Cluster offset
 
 ## Gravitational waves
 S: Gravitational waves are ripples in spacetime that travel at the speed of light, produced by accelerating masses. Predicted by Einstein in 1916, they were first detected directly in 2015 by LIGO from two merging black holes.
+O: Describe the properties of gravitational waves, including strain and polarisation
+O: Explain how laser interferometers detect them
+O: Summarise the evidence from binary pulsars and detected mergers
+PRE: General relativistic corrections
+LV: Year 2 · Physical reasoning
 H: Properties
 - Transverse; two polarisations (+ and ×) that stretch and squeeze space at 90°.
-- Strain h = ΔL/L; typical detected strains ~10^{-21}: a change of 10^{-18} m in a 4 km arm.
+- Strain h = ΔL/L; typical detected strains ~10^{-21}: a change of about 4 × 10^{-18} m in a 4 km arm.
 - Produced by changing mass quadrupoles (not monopoles or dipoles): binary systems, supernovae, the early universe.
-- Carry energy away: binary pulsars spiral together at exactly GR's predicted rate (Hulse–Taylor, Nobel 1993).
+- Carry energy away: the Hulse–Taylor binary pulsar's orbit shrinks at the rate GR predicts, to within about 0.2% (Nobel 1993).
 H: Detection
 - Laser interferometers (LIGO, Virgo, KAGRA): arms of 3–4 km, Fabry–Pérot cavities, power recycling, squeezed light, seismic isolation.
 - Pulsar timing arrays detect nanohertz waves from supermassive black hole binaries (background reported in 2023).
@@ -744,10 +823,23 @@ H: What we've learned
 P: Over 90 mergers detected by 2023: black holes of tens of solar masses, neutron-star mergers. GW170817's merger was also seen as a gamma-ray burst and kilonova, showing gravitational waves travel at c (to 1 part in 10^{15}) and that such mergers make heavy elements like gold.
 X: Estimate the arm-length change for h = 10^{-21} in LIGO.
 > ΔL = hL = 10^{-21} × 4000 = 4 × 10^{-18} m
-> About 1/1000 of a proton's diameter
+> About 1/400 of a proton's diameter
+K: A passing wave stretches one arm while squeezing the other; an interferometer turns that tiny length difference into a change in light intensity at its output.
 !: Gravitational waves are not "gravity waves" in fluids (waves on water restored by gravity); they're oscillations of spacetime itself.
+T: Strain | The fractional change in length produced by a gravitational wave, h = ΔL/L
+T: Interferometer | An instrument that splits light along two paths and recombines it, so path-length differences show up as intensity changes
+T: Chirp | The rising frequency and amplitude of the signal as two compact objects spiral together and merge
+SUM: Gravitational waves are transverse ripples of spacetime moving at c, measured as strain h ~ 10^{-21}.
+SUM: Binary-pulsar decay gave indirect evidence; LIGO's 2015 detection and GW170817 gave direct confirmation.
+EV: established | Gravitational waves from merging black holes and neutron stars have been detected directly, and binary-pulsar orbits decay at the rate general relativity predicts
+SRC: OpenStax, Astronomy 2e, section 24.7 "Gravitational Wave Astronomy" | secondary | 2022 | https://openstax.org/books/astronomy-2e/pages/24-7-gravitational-wave-astronomy
+SRC: OpenStax, College Physics 2e, section 34.2 "General Relativity and Quantum Gravity" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/34-2-general-relativity-and-quantum-gravity
 Q: What was the first direct detection of gravitational waves? | GW150914 by LIGO in 2015, from two merging black holes.
 Q: What is gravitational-wave strain? | The fractional change in length, h = ΔL/L.
-M1: Gravitational waves travel at: | The speed of light | Faster than light | The speed of sound | 0.1c | Confirmed by GW170817.
-M2: The Hulse–Taylor binary pulsar provided evidence of gravitational waves because: | Its orbit shrinks at the rate GR predicts for wave emission | It emits radio waves | It's very massive | It's rotating fast | Indirect evidence via energy loss.
+M1@1: Gravitational waves travel at: | The speed of light | Faster than light | The speed of sound | 0.1c | GW170817's gravitational waves and gamma rays arrived within 2 s of each other after 130 million years, showing the waves travel at c to about 1 part in 10^{15}.
+M2@3: The Hulse–Taylor binary pulsar provided evidence of gravitational waves because: | Its orbit shrinks at the rate GR predicts for wave emission | It emits radio waves | It's very massive | It's rotating fast | Its orbital period decreases exactly as expected if energy is carried away by gravitational waves: indirect evidence via energy loss.
+NUM1@1: A gravitational wave of strain 2 × 10^{-21} passes a 3.0 km interferometer arm. What is the change in arm length, in units of 10^{-18} m? | 6 | 2% | × 10^{-18} m | ΔL = hL = 2 × 10^{-21} × 3000 m = 6 × 10^{-18} m.
+M3@2: Why can't a single spherical star pulsating symmetrically in and out emit gravitational waves? | Its mass quadrupole doesn't change | It is moving too slowly | Its mass is too small | Its light carries the energy instead | Gravitational waves need a changing mass quadrupole; a perfectly spherical pulsation changes only the monopole, whose external field stays GM/r^{2}.
+SEQ2@3: Put the stages of a compact binary merger, as seen in a gravitational-wave signal, in order. | Slow inspiral at low frequency ; Chirp of rising frequency and amplitude ; Merger at peak amplitude ; Ringdown as the new black hole settles | Energy lost to waves shrinks the orbit, so the frequency rises (chirp) until the bodies merge; the remnant then rings down like a struck bell.
+SA3@2,3: Explain how a laser interferometer such as LIGO detects a passing gravitational wave, and why its arms are several kilometres long. | A laser beam is split into two perpendicular arms, reflected from mirrors at the ends and recombined so that the light normally interferes destructively at the detector. A passing wave stretches one arm and squeezes the other by ΔL = hL, changing the path difference and letting light reach the detector. Because h is only about 10^{-21}, ΔL is tiny; making L large (4 km, with light bouncing many times in Fabry–Pérot cavities) increases ΔL, and seismic isolation and high laser power reduce noise. | Split beam in perpendicular arms, recombined ; Wave stretches one arm and squeezes the other ; Path change alters the interference at the output ; ΔL = hL, so long arms (and folded paths) give bigger signals
 `;

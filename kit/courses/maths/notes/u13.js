@@ -5,6 +5,7 @@ export default `
 S: Descriptive statistics summarise data with a few numbers and pictures: where the centre is, how spread out the values are, and what shape they make. Every analysis starts here, because a good summary reveals errors, outliers and patterns.
 O: Calculate and choose measures of centre and spread
 O: Identify outliers and describe the shape of a distribution
+LV: GCSE and A level · Fluency
 T: Measures of centre | Mean (sum ÷ count), median (middle value) and mode (most common value)
 T: Interquartile range | IQR = Q3 − Q1, the spread of the middle half of the data
 H: Centre
@@ -30,16 +31,20 @@ Q: Which measure of centre is resistant to outliers? | The median.
 Q: In right-skewed data, which is larger, the mean or the median? | The mean.
 SUM: Summaries describe centre, spread and shape.
 SUM: Choose robust measures when data are skewed.
+EV: established | The median and interquartile range resist outliers and skew, whereas the mean and standard deviation use every value and are pulled by extremes.
 SRC: Freedman D, Pisani R, Purves R, Statistics (4th edn, Norton 2007) | secondary | 2007 | https://wwnorton.com/
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
 NUM1#maths-u13-01-q1@1: Find the sample standard deviation of 2, 4, 6, to 3 decimal places. | 2 | 0.001 |  | Mean 4; squared deviations 4, 0, 4 sum to 8; s = √(8/2) = 2.
 M1#maths-u13-01-q2@1: Which pair of summaries suits house prices best? | Median and interquartile range | Mean and range | Mode and range | Mean and standard deviation | Maximum and minimum | House prices are right-skewed, so robust measures describe them better.
 M2#maths-u13-01-q3@2: Q1 = 20 and Q3 = 30. Which value would the 1.5 × IQR rule flag as an outlier? | 46 | 44 | 35 | 15 | 21 | The upper fence is 30 + 15 = 45 and the lower is 5, so only 46 lies outside.
+NUM2@2: For the data 1, 3, 5, 7, 9, 11, 40, find the upper outlier fence Q3 + 1.5 × IQR. | 23 | 0 |  | Q1 = 3 and Q3 = 11 (medians of 1, 3, 5 and 9, 11, 40), so IQR = 8 and the fence is 11 + 12 = 23; 40 is an outlier.
+SA3@1,2: Nine salaries (£000) are 18, 20, 21, 22, 24, 25, 27, 30, 150. Calculate suitable summaries and recommend which to report. | The mean is 337/9 ≈ 37.4 but the median is 24: the single value 150 pulls the mean above eight of the nine salaries. Q1 = 20.5 and Q3 = 28.5, so IQR = 8 and the upper fence is 40.5, making 150 an outlier. Report the median and IQR (and mention the outlier), since the data are right-skewed. | Finds the mean ≈ 37.4 and median 24 ; Finds the quartiles and IQR ; Identifies 150 as an outlier with the 1.5 × IQR rule ; Recommends median and IQR ; Justifies by skew or outlier
 
 ## Correlation
 S: Correlation measures the strength and direction of a linear relationship between two variables. It's one of the most used and most misused statistics: a strong correlation doesn't show that one variable causes the other.
 O: Calculate and interpret Pearson's and Spearman's correlation coefficients
 O: Explain the limitations of correlation, including confounding
+LV: GCSE and A level · Application
 T: Pearson's correlation coefficient | r = S_{xy}/√(S_{xx}S_{yy}), between −1 and 1
 T: Spearman's rank correlation | Pearson's r applied to the ranks of the data; measures monotonic association
 H: Calculating r
@@ -67,17 +72,20 @@ Q: What does r = −0.9 indicate? | A strong negative linear relationship.
 Q: When is Spearman's coefficient preferred over Pearson's? | For ranks, ordinal data or monotonic but non-linear relationships.
 SUM: Correlation measures linear association.
 SUM: It doesn't establish causation.
+EV: established | Pearson's r measures only linear association, and correlation alone does not establish causation.
 SRC: Freedman D, Pisani R, Purves R, Statistics (4th edn, Norton 2007) | secondary | 2007 | https://wwnorton.com/
 SRC: Anscombe FJ, Graphs in statistical analysis, The American Statistician 27(1), 17 | primary | 1973 | https://doi.org/10.1080/00031305.1973.10478966
 NUM1#maths-u13-02-q1@1: S_{xy} = 12, S_{xx} = 16 and S_{yy} = 25. Find r. | 0.6 | 0.001 |  | r = 12/√(16 × 25) = 12/20 = 0.6.
 M1#maths-u13-02-q2@1: A correlation of r = 0.8 means a straight line explains what share of the variation in y? | 64% | 80% | 8% | 40% | 89% | The proportion explained is r^{2} = 0.64.
 M3#maths-u13-02-q3@2: The points lie exactly on y = x^{2} for x = −2, −1, 0, 1, 2. What is Pearson's r? | 0 | 1 | −1 | 0.5 | It's undefined | The pattern is a perfect symmetric curve with no linear trend, so r = 0.
 M2#maths-u13-02-q4@2: Data lie exactly on y = x^{2} for x from −3 to 3. What is the Pearson correlation r, and why? | 0, because r measures only linear association and the pattern is symmetric | 1, because the relationship is perfect | −1, because half the points fall | 0.5 | It can't be computed | Pearson's r detects straight-line trends; a symmetric parabola has none.
+SA3@2: Monthly ice cream sales and drownings are strongly positively correlated. Explain why this does not show that ice cream causes drowning, and how you could investigate further. | Correlation measures association, not cause. A confounder, hot weather, increases both ice cream sales and swimming, and so drownings. To investigate, measure the confounder (temperature or swimming numbers) and compare within months of similar temperature, or model drownings with temperature included; the association with ice cream should largely disappear. Also plot the data, since r only measures linear association. | States that correlation isn't causation ; Names temperature or season as a confounder ; Explains how the confounder drives both variables ; Proposes controlling for the confounder ; Mentions plotting or the limits of r
 
 ## Data Interpretation
 S: Data interpretation is reading charts, tables and statistics critically: what they show, what they hide and how they might mislead. It's an essential skill for citizens, journalists, managers and scientists.
 O: Read and critique graphs and tables
 O: Distinguish relative and absolute risk, and percentages from percentage points
+LV: GCSE and A level · Application
 T: Relative risk | The ratio of risks in two groups, such as 1.5 (a 50% increase)
 T: Absolute risk | The actual chance of an outcome, such as 3 in 10,000
 H: Misleading graphs
@@ -104,16 +112,20 @@ Q: A rate rises from 4% to 6%. What is the rise in percentage points, and in per
 Q: Why compare crime rates per 1,000 people rather than totals? | Areas have different populations.
 SUM: Read charts critically.
 SUM: Absolute risks give context to relative ones.
+EV: established | Absolute risks and numbers needed to treat convey the practical size of an effect better than relative risks alone.
 SRC: Spiegelhalter D, The Art of Statistics: Learning from Data (Pelican 2019) | secondary | 2019 | https://www.penguin.co.uk/
 SRC: Office for Statistics Regulation, Code of Practice for Statistics (edition 2.0) | standard | 2018 | https://code.statisticsauthority.gov.uk/
 NUM1#maths-u13-03-q1@1: Unemployment falls from 5.0% to 4.0%. By what percentage has the rate fallen? | 20 | 0 | % | The fall is 1 percentage point, which is 1/5 = 20% of the original rate.
 M1#maths-u13-03-q2@1: A bar chart's y-axis starts at 95 instead of 0. What's the risk? | Small differences look large | Bars become hidden | The data are wrong | Large differences look small | Nothing | Truncating the axis exaggerates the visual difference between bars.
 M2#maths-u13-03-q3@2: Treatment cuts the risk of an illness from 4% to 3%. What is the relative risk reduction? | 25% | 1% | 3% | 75% | 4% | The fall of 1 point is a quarter of the original 4%.
+NUM3@2: A treatment cuts the risk of an illness from 4% to 3%. How many people must be treated to prevent one case? | 100 | 0 | people | The absolute risk reduction is 0.04 − 0.03 = 0.01, so the number needed to treat is 1/0.01 = 100.
+SA3@1,2: A headline says a medicine "doubles the risk" of a rare clot. Explain what further information you need before judging it, and why. | Doubling is a relative risk of 2. The baseline (absolute) risk matters: from 1 in 100,000 to 2 in 100,000 is an absolute rise of 1 in 100,000. Ask for the absolute risks, the number needed to harm, the benefits the medicine brings, the sample size and uncertainty, and whether the study controlled for confounders. A relative change alone can make a tiny risk sound alarming. | Identifies doubling as a relative risk ; Asks for the baseline or absolute risk ; Mentions number needed to harm or absolute difference ; Weighs against benefits ; Asks about sample size, uncertainty or confounding
 
 ## Statistics in Everyday Life
 S: Statistics shape everyday decisions: inflation figures set pay rises and benefits, polls guide elections, weather forecasts plan days out, and medical risks inform treatment. Knowing how they're produced helps you use them well.
 O: Interpret official statistics, polls and forecasts
 O: Recognise uncertainty in everyday statistics
+LV: GCSE and A level · Application
 T: Margin of error | The likely size of sampling error, often given as ±3 percentage points for a poll of about 1,000
 T: Index number | A value relative to a base period set at 100, such as the Consumer Prices Index
 H: Official statistics
@@ -138,16 +150,20 @@ Q: Which organisation publishes UK inflation figures? | The Office for National 
 Q: What does a well-calibrated "30% chance of rain" mean? | It rains on about 30% of days given that forecast.
 SUM: Everyday decisions rest on statistics.
 SUM: Every estimate carries uncertainty.
+EV: established | A simple random sample of about 1,000 gives a 95% margin of error near ±3 percentage points for a proportion around 50%.
 SRC: Office for National Statistics, Consumer price inflation, UK: methods and guidance | guidance | 2025 | https://www.ons.gov.uk/economy/inflationandpriceindices
 SRC: British Polling Council, Officers' note on margin of error | guidance | 2024 | https://www.britishpollingcouncil.org/
 NUM1#maths-u13-04-q1@1: For a poll of 2,500 with p = 0.5, find the 95% margin of error in percentage points, to 1 decimal place. | 2 | 0.05 | points | 1.96 × √(0.25/2500) = 1.96 × 0.01 = 0.0196, about 2.0 points.
 M1#maths-u13-04-q2@1: Why do official earnings releases often quote the median rather than the mean? | Earnings are right-skewed by high earners | The median is easier to compute | The mean is always lower | The median includes more people | Law requires it | A few very high salaries pull the mean above what a typical worker earns.
 M2#maths-u13-04-q3@2: A poll's margin of error is ±3 points. Party A has 41% and B 39%. What's the fairest summary? | The race is too close to call from this poll | B is really ahead, after adjusting for error | A is ahead, because 41% is larger than 39% | A leads by 3 points | The poll is wrong | The 2-point gap is within the sampling error.
+NUM2@2: Find the 95% margin of error, in percentage points to 1 decimal place, for a poll of 1,000 with p = 0.5. | 3.1 | 0.05 | points | 1.96 × √(0.25/1000) = 1.96 × 0.0158 ≈ 0.031, about 3.1 points.
+SA3@2: Explain how a poll's margin of error depends on its sample size, and give two reasons a poll can be wrong by more than its margin of error. | The margin of error is about 1.96√(p(1 − p)/n), so it shrinks in proportion to 1/√n: quadrupling the sample halves the margin. It covers only random sampling error. Polls can be wrong by more because of non-response bias (some groups decline to answer), coverage gaps in the sampling frame, inaccurate turnout models, people changing their minds or not giving true answers. | Gives the margin as proportional to 1/√n ; States quadrupling n halves the margin ; Says it measures sampling error only ; Gives a first non-sampling reason ; Gives a second non-sampling reason
 
 ## Inferential Statistics
 S: Inferential statistics draws conclusions about a population from a sample, with a measure of how uncertain those conclusions are. It's how a poll of 1,000 speaks for millions, and how a trial of hundreds tells us whether a drug works.
 O: Distinguish populations, samples, parameters and statistics
 O: Describe the main tasks of inference: estimation, testing and prediction
+LV: A level · Fluency
 T: Parameter | A fixed, usually unknown, number describing a population (such as μ or p)
 T: Statistic | A number calculated from a sample (such as x̄ or p̂), used to estimate a parameter
 H: Populations and samples
@@ -173,16 +189,20 @@ Q: Is the mean height of all UK adults a parameter or a statistic? | A parameter
 Q: Name three tasks of statistical inference. | Estimation, hypothesis testing and prediction.
 SUM: Inference generalises from samples.
 SUM: It always comes with uncertainty.
+EV: established | Random sampling allows probability to quantify how far a sample statistic is likely to be from the population parameter.
 SRC: Wasserman L, All of Statistics: A Concise Course in Statistical Inference (Springer 2004) | secondary | 2004 | https://link.springer.com/
 SRC: Department for Education, Mathematics AS and A level subject content: statistics | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 NUM1#maths-u13-05-q1@1: A sample of 100 has p̂ = 0.5. Find the standard error of p̂. | 0.05 | 0.0001 |  | √(0.5 × 0.5/100) = √0.0025 = 0.05.
 M1#maths-u13-05-q2@1: Which is a statistic? | The mean of 50 sampled exam marks | The mean of all exam marks nationally | The true proportion of left-handers | The population variance | The probability of heads for a coin | A statistic is calculated from sample data; the national mean and true proportions are parameters.
 M2#maths-u13-05-q3@2: Why does inference need random sampling? | So probability can describe sampling error | So the sample is large | So every result is significant | To avoid calculations | So the sample equals the population | Randomness makes the sample's deviation from the population predictable in distribution.
+NUM2@1: In a random sample of 250 people, 60 own a dog. Find the standard error of p̂, to 4 decimal places. | 0.027 | 0.0002 |  | p̂ = 60/250 = 0.24, so SE = √(0.24 × 0.76/250) ≈ 0.0270.
+SA3@1,2: A council estimates residents' support for a new road from 500 people who attended a public meeting. Identify the population, sample, parameter and statistic, and judge whether the inference is sound. | Population: all residents. Sample: the 500 attendees. Parameter: the proportion of all residents who support the road. Statistic: the proportion of attendees in support. The sample isn't random: people with strong views are more likely to attend, so the estimate may be biased however large the sample, and a margin of error would be misleading. A random sample of residents would be needed. | Identifies the population and sample ; Identifies the parameter and statistic ; Notes the sample is self-selected ; Explains the likely bias ; Recommends random sampling
 
 ## Statistical Inference
 S: Statistical inference has several frameworks (frequentist, Bayesian and likelihood-based) and a common toolkit for judging estimators: bias, variance, consistency and efficiency. Understanding them explains why we use the formulas we do.
 O: Compare estimators using bias, variance and mean squared error
 O: Outline the main frameworks for inference
+LV: Year 1 · Application
 T: Bias | E(θ̂) − θ: how far an estimator is from the truth on average
 T: Mean squared error | MSE = E[(θ̂ − θ)^{2}] = Var(θ̂) + bias^{2}
 H: Properties of estimators
@@ -208,11 +228,14 @@ Q: What is the MSE of an estimator with bias 2 and variance 5? | 9.
 Q: Why divide by n − 1 in the sample variance? | To make it unbiased for σ^{2}.
 SUM: Estimators trade bias against variance.
 SUM: Frameworks differ in their meaning of probability.
+EV: established | Mean squared error equals variance plus squared bias, so a slightly biased estimator can outperform an unbiased one.
 SRC: Casella G, Berger RL, Statistical Inference (2nd edn, Duxbury 2002) | secondary | 2002 | https://www.cengage.com/
 SRC: Wasserman L, All of Statistics: A Concise Course in Statistical Inference (Springer 2004) | secondary | 2004 | https://link.springer.com/
 NUM1#maths-u13-06-q1@1: With n = 5, what is E(Σ(x − x̄)^{2}/n) as a multiple of σ^{2}? | 0.8 | 0.001 |  | (n − 1)/n = 4/5 = 0.8.
 M1#maths-u13-06-q2@1: Which property means an estimator gets arbitrarily close to the truth with enough data? | Consistency | Unbiasedness | Sufficiency | Robustness | Efficiency at small n | Consistency means θ̂ → θ as n → ∞: more data bring the estimate arbitrarily close.
 M2#maths-u13-06-q3@2: Which framework treats an unknown parameter as having a probability distribution? | Bayesian | Frequentist | Likelihood-free | Descriptive | Non-parametric only | Bayesians describe uncertainty about θ with a prior and posterior distribution.
+NUM2@1: An estimator has bias 0.5 and standard error 1.2. Find its mean squared error. | 1.69 | 0.001 |  | MSE = variance + bias^{2} = 1.2^{2} + 0.5^{2} = 1.44 + 0.25 = 1.69.
+SA3@1: Explain why the sample variance divides by n − 1, and whether the sample standard deviation s is then unbiased for σ. | Deviations are measured from x̄, which is fitted to the same data and so sits closer to them than μ does; Σ(x − x̄)^{2} is therefore too small on average, with expectation (n − 1)σ^{2}. Dividing by n − 1 makes E(s^{2}) = σ^{2}. But the square root is a concave function, so E(s) < √E(s^{2}) = σ: s is slightly biased low, though the bias shrinks as n grows. | Explains deviations from x̄ are too small ; States E(Σ(x − x̄)^{2}) = (n − 1)σ^{2} ; Concludes s^{2} is unbiased ; States s is biased low ; Justifies via the square root being concave or Jensen's inequality
 
 ## Sampling Theory
 S: Sampling theory designs ways to choose samples so that they represent the population and give precise estimates for a given cost. The design decides what conclusions are possible before any data arrive.

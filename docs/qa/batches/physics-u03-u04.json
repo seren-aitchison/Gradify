@@ -1,6 +1,6 @@
 {
  "task": "physics-u03-u04",
- "on": "2026-11-19",
+ "on": "2026-11-20",
  "files": [
   "kit/courses/physics/notes/u03.js",
   "kit/courses/physics/notes/u04.js"
@@ -511,7 +511,12 @@
     "added questions to reach at least five across levels 1-3, including an extended written answer (SA)",
     "tightened text; recomputed every worked example and answer"
    ],
-   "findings": []
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "Existing M1 \"Which is a vector?\" duplicated a u01 question word for word; reworded in its own slot to \"Which of these motion quantities is a vector?\" (same answer and options)."
+    }
+   ]
   },
   {
    "course": "physics",
@@ -792,7 +797,12 @@
     "added questions to reach at least five across levels 1-3, including an extended written answer (SA)",
     "tightened text; recomputed every worked example and answer"
    ],
-   "findings": []
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "Dropped \"LED 40%\" from the typical-efficiency list (wall-plug efficiency varies widely); kept motor, engine, solar cell and muscle figures."
+    }
+   ]
   },
   {
    "course": "physics",
@@ -964,7 +974,7 @@
   }
  ],
  "notes": [
-  "tests/compat.test.mjs fails for physics once questions carry @n objective links: the frozen legacy parser (tests/fixtures/legacy-parser) only matches M1:/M2:/M3: and treats M2@1: as a paragraph, so mcq counts differ. The brief requires @n links, so the test needs the same @-stripping the nursing/law case already uses (or an update to compare question text only). All existing M questions keep their position, question text, right answer and difficulty, so lesson#index keys are unchanged; new M questions are appended after the old ones.",
+  "Question order: every existing check question and flashcard keeps its slot, question text, right answer and difficulty (except the reworded duplicate noted under Speed and velocity); new questions are only appended after the existing ones. tests/compat.test.mjs, tests/qa-content.test.mjs and tests/course.test.mjs pass; scripts/new-course.mjs check reports 0 problems for u03 and u04, length bias OK.",
   "Sources used: OpenStax University Physics Vol 1 and 2 (2016), College Physics 2e (2022), Introductory Statistics 2e (2023, for the statistics lessons: hypothesis testing, significance, regression, residuals, confidence intervals, controls) and the AQA A-level Physics specification 7408 (sections checked in the downloaded PDF, sha256 32a556da85fa0928c3600f8178d1a18fe5156b2ea36d76b541df866451721e20, version 1.3). Every OpenStax section URL was fetched and its page title confirmed. Introductory Statistics 2e is outside the brief list of books; please confirm it is acceptable.",
   "Some instrumentation lessons (lock-in amplifiers, signal-to-noise, data acquisition, sensors, cryogenics) cite the closest OpenStax sections (AC circuits, resonance, resistivity, heat capacity), which support only part of the content; a specialist instrumentation text would be a better source (needs source).",
   "Lessons average about 4.5 KB, above the 2–3.5 KB aim, mainly because of the required five questions with explanations and the SA model answer."
