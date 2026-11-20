@@ -1,0 +1,48 @@
+{
+ "id": "chem-alkenes",
+ "renderer": "structures",
+ "course": "chemistry",
+ "lesson": "Alkenes",
+ "title": "Ethene and propene",
+ "caption": "Each alkene has one C=C and fits CₙH₂ₙ. The two carbons of the double bond and the four atoms attached to them all lie in one plane.",
+ "alt": "Displayed formulae of ethene and propene with the C=C highlighted.",
+ "description": [
+  "Ethene, C₂H₄: two carbons joined by a double bond, each with two hydrogens.",
+  "Propene, C₃H₆: a CH₃ on one carbon of the double bond."
+ ],
+ "panels": [
+  {
+   "smiles": "C=C",
+   "label": "ethene",
+   "displayed": true,
+   "sub": "C₂H₄",
+   "formula": "C2H4",
+   "highlight": [
+    {
+     "group": "alkene",
+     "colour": "a1"
+    }
+   ]
+  },
+  {
+   "smiles": "C=CC",
+   "label": "propene",
+   "displayed": true,
+   "sub": "C₃H₆",
+   "formula": "C3H6",
+   "highlight": [
+    {
+     "group": "alkene",
+     "colour": "a1"
+    }
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "type": "general",
+   "formula": "CₙH₂ₙ",
+   "hOffset": 0
+  }
+ ]
+}

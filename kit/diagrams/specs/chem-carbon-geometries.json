@@ -1,0 +1,78 @@
+{
+ "id": "chem-carbon-geometries",
+ "renderer": "vsepr",
+ "course": "chemistry",
+ "lesson": "Carbon bonding",
+ "title": "Carbon's three shapes",
+ "caption": "Four single bonds put carbon at the centre of a tetrahedron, 109.5°. With a double bond it is trigonal planar, 120°; with a triple bond, linear, 180°. A multiple bond counts as one region of electron density.",
+ "alt": "Methane tetrahedral at 109.5°, methanal trigonal planar at 120°, and hydrogen cyanide linear at 180°.",
+ "description": [
+  "Methane: four C–H bonds, two in the plane, one wedge and one hash, 109.5°.",
+  "Methanal: C=O and two C–H in a plane at 120°.",
+  "Hydrogen cyanide: H–C≡N in a straight line, 180°."
+ ],
+ "molecules": [
+  {
+   "label": "CH4, sp³ carbon",
+   "centre": "C",
+   "ligands": [
+    {
+     "el": "H"
+    },
+    {
+     "el": "H"
+    },
+    {
+     "el": "H"
+    },
+    {
+     "el": "H"
+    }
+   ],
+   "shape": "tetrahedral",
+   "angle": "109.5°",
+   "anglePair": [
+    0,
+    1
+   ]
+  },
+  {
+   "label": "HCHO, sp² carbon",
+   "centre": "C",
+   "ligands": [
+    {
+     "el": "O",
+     "order": 2
+    },
+    {
+     "el": "H"
+    },
+    {
+     "el": "H"
+    }
+   ],
+   "shape": "trigonal planar",
+   "angle": "120°",
+   "anglePair": [
+    1,
+    2
+   ]
+  },
+  {
+   "label": "HCN, sp carbon",
+   "centre": "C",
+   "ligands": [
+    {
+     "el": "H"
+    },
+    {
+     "el": "N",
+     "order": 3
+    }
+   ],
+   "shape": "linear",
+   "angle": "180°",
+   "showAngle": false
+  }
+ ]
+}

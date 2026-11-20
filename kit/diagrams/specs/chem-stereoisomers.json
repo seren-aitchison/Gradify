@@ -1,0 +1,64 @@
+{
+ "id": "chem-stereoisomers",
+ "renderer": "structures",
+ "course": "chemistry",
+ "lesson": "Stereoisomerism",
+ "title": "Two kinds of stereoisomer",
+ "caption": "E- and Z-but-2-ene differ in which side of the rigid C=C the methyl groups sit. (R)- and (S)-butan-2-ol differ at a chiral centre and are non-superimposable mirror images. In each pair the atoms are joined in the same order.",
+ "alt": "E- and Z-but-2-ene, and the two enantiomers of butan-2-ol with wedge and hash bonds.",
+ "description": [
+  "E-but-2-ene: methyl groups on opposite sides of the double bond.",
+  "Z-but-2-ene: methyl groups on the same side.",
+  "(R)-butan-2-ol and (S)-butan-2-ol: mirror images at the carbon bearing OH."
+ ],
+ "perRow": [
+  4,
+  2
+ ],
+ "panels": [
+  {
+   "smiles": "C/[CH:1]=[CH:2]/C",
+   "label": "E-but-2-ene",
+   "ez": {
+    "1-2": "E"
+   }
+  },
+  {
+   "smiles": "C/[CH:1]=[CH:2]\\C",
+   "label": "Z-but-2-ene",
+   "ez": {
+    "1-2": "Z"
+   }
+  },
+  {
+   "smiles": "CC[C@@H:1](C)O",
+   "label": "(R)-butan-2-ol",
+   "cip": {
+    "1": "R"
+   }
+  },
+  {
+   "smiles": "CC[C@H:1](C)O",
+   "label": "(S)-butan-2-ol",
+   "cip": {
+    "1": "S"
+   }
+  }
+ ],
+ "claims": [
+  {
+   "type": "isomers",
+   "panels": [
+    0,
+    1
+   ]
+  },
+  {
+   "type": "enantiomers",
+   "panels": [
+    2,
+    3
+   ]
+  }
+ ]
+}

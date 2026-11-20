@@ -2042,5 +2042,1340 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "chem-alkanes-series": {
+  "title": "The first four alkanes",
+  "caption": "Each alkane has one more CH₂ than the last, and every one fits CₙH₂ₙ₊₂. Methane to butane are gases at room temperature; boiling points rise with chain length.",
+  "alt": "Displayed formulae of methane, ethane, propane and butane with their molecular formulae.",
+  "description": [
+   "Methane, CH₄: one carbon with four hydrogens.",
+   "Ethane, C₂H₆.",
+   "Propane, C₃H₈.",
+   "Butane, C₄H₁₀."
+  ],
+  "course": "chemistry",
+  "lesson": "Alkanes",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u12.js: Alkanes"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "methane: formula CH4",
+    "ok": true,
+    "detail": "RDKit: CH4"
+   },
+   {
+    "name": "ethane: formula C2H6",
+    "ok": true,
+    "detail": "RDKit: C2H6"
+   },
+   {
+    "name": "propane: formula C3H8",
+    "ok": true,
+    "detail": "RDKit: C3H8"
+   },
+   {
+    "name": "butane: formula C4H10",
+    "ok": true,
+    "detail": "RDKit: C4H10"
+   },
+   {
+    "name": "each member differs from the last by CH₂",
+    "ok": true,
+    "detail": "CH4, C2H6, C3H8, C4H10"
+   },
+   {
+    "name": "every member fits CₙH₂ₙ₊₂",
+    "ok": true,
+    "detail": "CH4, C2H6, C3H8, C4H10"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-alkenes": {
+  "title": "Ethene and propene",
+  "caption": "Each alkene has one C=C and fits CₙH₂ₙ. The two carbons of the double bond and the four atoms attached to them all lie in one plane.",
+  "alt": "Displayed formulae of ethene and propene with the C=C highlighted.",
+  "description": [
+   "Ethene, C₂H₄: two carbons joined by a double bond, each with two hydrogens.",
+   "Propene, C₃H₆: a CH₃ on one carbon of the double bond."
+  ],
+  "course": "chemistry",
+  "lesson": "Alkenes",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u12.js: Alkenes"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "ethene: formula C2H4",
+    "ok": true,
+    "detail": "RDKit: C2H4"
+   },
+   {
+    "name": "ethene: contains alkene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "propene: formula C3H6",
+    "ok": true,
+    "detail": "RDKit: C3H6"
+   },
+   {
+    "name": "propene: contains alkene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every member fits CₙH₂ₙ",
+    "ok": true,
+    "detail": "C2H4, C3H6"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-alkynes": {
+  "title": "Ethyne and propyne",
+  "caption": "Each alkyne has a C≡C and fits CₙH₂ₙ₋₂. The two sp carbons and the atoms on them lie in a straight line.",
+  "alt": "Displayed formulae of ethyne and propyne, drawn linear, with the C≡C highlighted.",
+  "description": [
+   "Ethyne, C₂H₂: H–C≡C–H in a straight line.",
+   "Propyne, C₃H₄: H–C≡C–CH₃."
+  ],
+  "course": "chemistry",
+  "lesson": "Alkynes",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u12.js: Alkynes"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "ethyne: formula C2H2",
+    "ok": true,
+    "detail": "RDKit: C2H2"
+   },
+   {
+    "name": "ethyne: contains alkyne",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "propyne: formula C3H4",
+    "ok": true,
+    "detail": "RDKit: C3H4"
+   },
+   {
+    "name": "propyne: contains alkyne",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every member fits CₙH₂ₙ₋₂",
+    "ok": true,
+    "detail": "C2H2, C3H4"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-aromatics": {
+  "title": "Aromatic compounds",
+  "caption": "Each has a planar ring with 4n + 2 delocalised π electrons: six for benzene and its derivatives, ten for naphthalene (n = 2).",
+  "alt": "Skeletal formulae of benzene, methylbenzene, phenol and naphthalene.",
+  "description": [
+   "Benzene, C₆H₆.",
+   "Methylbenzene: a CH₃ on the ring.",
+   "Phenol: an OH on the ring.",
+   "Naphthalene, C₁₀H₈: two fused rings."
+  ],
+  "course": "chemistry",
+  "lesson": "Aromatic compounds",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u12.js: Aromatic compounds"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "benzene: formula C6H6",
+    "ok": true,
+    "detail": "RDKit: C6H6"
+   },
+   {
+    "name": "methylbenzene: formula C7H8",
+    "ok": true,
+    "detail": "RDKit: C7H8"
+   },
+   {
+    "name": "phenol: formula C6H6O",
+    "ok": true,
+    "detail": "RDKit: C6H6O"
+   },
+   {
+    "name": "phenol: contains phenol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "naphthalene: formula C10H8",
+    "ok": true,
+    "detail": "RDKit: C10H8"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-benzene-structure": {
+  "title": "Kekulé and delocalised benzene",
+  "caption": "Kekulé's structure has alternating single (0.154 nm) and double (0.134 nm) bonds. X-ray diffraction finds every C–C bond 0.139 nm, so the six π electrons are delocalised round the ring, drawn as a circle.",
+  "alt": "Two Kekulé structures of benzene with a double-headed arrow between them, and the delocalised structure with a circle in the ring.",
+  "description": [
+   "Left and centre: the two Kekulé structures, double bonds in alternate positions.",
+   "Right: the hexagon with a circle, all bonds equal at 0.139 nm."
+  ],
+  "course": "chemistry",
+  "lesson": "Benzene structure",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u12.js: Benzene structure"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Kekulé form: formula C6H6",
+    "ok": true,
+    "detail": "RDKit: C6H6"
+   },
+   {
+    "name": "Kekulé form: formula C6H6",
+    "ok": true,
+    "detail": "RDKit: C6H6"
+   },
+   {
+    "name": "delocalised: formula C6H6",
+    "ok": true,
+    "detail": "RDKit: C6H6"
+   },
+   {
+    "name": "each Kekulé form is benzene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-butane-conformations": {
+  "title": "Energy of butane as it rotates",
+  "caption": "Rotating about the central C–C bond: the anti conformation (180°) is lowest; gauche (60°, 300°) is about 3.8 kJ mol⁻¹ higher; eclipsed forms are maxima, the fully eclipsed one (0°, methyls together) highest at about 19 kJ mol⁻¹.",
+  "alt": "Energy against dihedral angle from 0 to 360 degrees: maxima at 0 and 360 (19 kJ/mol) and at 120 and 240 (about 15), minima at 60 and 300 (gauche, about 3.8) and at 180 (anti, 0).",
+  "description": [
+   "Fully eclipsed at 0° and 360°: about 19 kJ mol⁻¹.",
+   "Gauche minima at 60° and 300°: about 3.8 kJ mol⁻¹.",
+   "Eclipsed maxima at 120° and 240°: about 15 kJ mol⁻¹.",
+   "Anti at 180°: the lowest, 0."
+  ],
+  "course": "chemistry",
+  "lesson": "Conformational analysis",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u12.js: Conformational analysis"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the fully eclipsed form (0°) is the highest, 19 kJ mol⁻¹",
+    "ok": true,
+    "detail": "found (0, 19)"
+   },
+   {
+    "name": "anti (180°) is the zero of energy",
+    "ok": true,
+    "detail": "y(180) = 0"
+   },
+   {
+    "name": "gauche is about 3.8 kJ mol⁻¹ above anti",
+    "ok": true,
+    "detail": "9.5+2.533*cos(x*0.0174533)+6.967*cos(3*x*0.0174533) at 60 = 3.8; expected 3.5–4.1"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-carbon-geometries": {
+  "title": "Carbon's three shapes",
+  "caption": "Four single bonds put carbon at the centre of a tetrahedron, 109.5°. With a double bond it is trigonal planar, 120°; with a triple bond, linear, 180°. A multiple bond counts as one region of electron density.",
+  "alt": "Methane tetrahedral at 109.5°, methanal trigonal planar at 120°, and hydrogen cyanide linear at 180°.",
+  "description": [
+   "Methane: four C–H bonds, two in the plane, one wedge and one hash, 109.5°.",
+   "Methanal: C=O and two C–H in a plane at 120°.",
+   "Hydrogen cyanide: H–C≡N in a straight line, 180°."
+  ],
+  "course": "chemistry",
+  "lesson": "Carbon bonding",
+  "also": [],
+  "renderer": "vsepr",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u12.js: Carbon bonding"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "CH4, sp³ carbon: 4 bonding domain(s) and 0 lone pair(s) from the electron count",
+    "ok": true,
+    "detail": "C has 4 outer electrons, 4 used in bonds, charge 0"
+   },
+   {
+    "name": "CH4, sp³ carbon: shape tetrahedral",
+    "ok": true,
+    "detail": "VSEPR gives tetrahedral (tetrahedral electron pairs)"
+   },
+   {
+    "name": "CH4, sp³ carbon: bond angle 109.5°",
+    "ok": true,
+    "detail": "VSEPR gives 109.5°"
+   },
+   {
+    "name": "HCHO, sp² carbon: 3 bonding domain(s) and 0 lone pair(s) from the electron count",
+    "ok": true,
+    "detail": "C has 4 outer electrons, 4 used in bonds, charge 0"
+   },
+   {
+    "name": "HCHO, sp² carbon: shape trigonal planar",
+    "ok": true,
+    "detail": "VSEPR gives trigonal planar (trigonal planar electron pairs)"
+   },
+   {
+    "name": "HCHO, sp² carbon: bond angle 120°",
+    "ok": true,
+    "detail": "VSEPR gives 120°"
+   },
+   {
+    "name": "HCN, sp carbon: 2 bonding domain(s) and 0 lone pair(s) from the electron count",
+    "ok": true,
+    "detail": "C has 4 outer electrons, 4 used in bonds, charge 0"
+   },
+   {
+    "name": "HCN, sp carbon: shape linear",
+    "ok": true,
+    "detail": "VSEPR gives linear (linear electron pairs)"
+   },
+   {
+    "name": "HCN, sp carbon: bond angle 180°",
+    "ok": true,
+    "detail": "VSEPR gives 180°"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-chirality": {
+  "title": "A chiral centre: four different groups",
+  "caption": "Butan-2-ol's second carbon carries H, OH, CH₃ and C₂H₅, four different groups, so the molecule is chiral. Propan-2-ol's central carbon has two identical CH₃ groups and is not.",
+  "alt": "Butan-2-ol with its chiral carbon shaded, beside propan-2-ol, which has no chiral centre.",
+  "description": [
+   "Butan-2-ol: the carbon bearing OH also carries H, CH₃ and CH₂CH₃, so it is a stereocentre.",
+   "Propan-2-ol: the central carbon carries two CH₃ groups, so it is not."
+  ],
+  "course": "chemistry",
+  "lesson": "Chirality",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u12.js: Chirality"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "butan-2-ol: 1 chiral centre(s)",
+    "ok": true,
+    "detail": "found 1"
+   },
+   {
+    "name": "propan-2-ol: 0 chiral centre(s)",
+    "ok": true,
+    "detail": "found 0"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-constitutional-c3h8o": {
+  "title": "The constitutional isomers of C₃H₈O",
+  "caption": "Three different connections of the same atoms: two alcohols and an ether. Their properties differ: propan-1-ol boils at 97 °C, propan-2-ol at 82 °C and methoxyethane at 7 °C, which has no O–H to hydrogen bond.",
+  "alt": "Propan-1-ol, propan-2-ol and methoxyethane, each C₃H₈O.",
+  "description": [
+   "Propan-1-ol: OH on the end carbon.",
+   "Propan-2-ol: OH on the middle carbon.",
+   "Methoxyethane: CH₃–O–CH₂CH₃."
+  ],
+  "course": "chemistry",
+  "lesson": "Constitutional isomers",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u12.js: Constitutional isomers"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "propan-1-ol: formula C3H8O",
+    "ok": true,
+    "detail": "RDKit: C3H8O"
+   },
+   {
+    "name": "propan-2-ol: formula C3H8O",
+    "ok": true,
+    "detail": "RDKit: C3H8O"
+   },
+   {
+    "name": "methoxyethane: formula C3H8O",
+    "ok": true,
+    "detail": "RDKit: C3H8O"
+   },
+   {
+    "name": "methoxyethane: contains ether",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "propan-1-ol, propan-2-ol, methoxyethane: same formula, different compounds",
+    "ok": true,
+    "detail": "formulae ['C3H8O']; 3 distinct structures"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-diastereomers": {
+  "title": "The stereoisomers of 2,3-dibromobutane",
+  "caption": "Two stereocentres allow up to 2² = 4 stereoisomers, but here there are three. (2R,3R) and (2S,3S) are enantiomers. The (2R,3S) form has a mirror plane, so it is meso and achiral, and it is a diastereomer of each of the others.",
+  "alt": "(2R,3R)-, (2S,3S)- and meso-2,3-dibromobutane.",
+  "description": [
+   "(2R,3R)-2,3-dibromobutane.",
+   "(2S,3S)-2,3-dibromobutane, its mirror image.",
+   "meso-(2R,3S)-2,3-dibromobutane, identical to its own mirror image."
+  ],
+  "course": "chemistry",
+  "lesson": "Diastereomers",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u12.js: Diastereomers"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(2R,3R): atom 1 is R",
+    "ok": true,
+    "detail": "RDKit CIP: R"
+   },
+   {
+    "name": "(2R,3R): atom 2 is R",
+    "ok": true,
+    "detail": "RDKit CIP: R"
+   },
+   {
+    "name": "(2S,3S): atom 1 is S",
+    "ok": true,
+    "detail": "RDKit CIP: S"
+   },
+   {
+    "name": "(2S,3S): atom 2 is S",
+    "ok": true,
+    "detail": "RDKit CIP: S"
+   },
+   {
+    "name": "meso (2R,3S): atom 1 is R",
+    "ok": true,
+    "detail": "RDKit CIP: R"
+   },
+   {
+    "name": "meso (2R,3S): atom 2 is S",
+    "ok": true,
+    "detail": "RDKit CIP: S"
+   },
+   {
+    "name": "the two are enantiomers: same structure, every stereocentre inverted",
+    "ok": true,
+    "detail": "['R', 'R'] against ['S', 'S']"
+   },
+   {
+    "name": "the two are diastereomers: same structure, stereoisomers but not mirror images",
+    "ok": true,
+    "detail": "[(1, 'R'), (2, 'R')] against [(1, 'R'), (2, 'S')]"
+   },
+   {
+    "name": "meso (2R,3S) is meso: 2 stereocentres, yet identical to its mirror image",
+    "ok": true,
+    "detail": "C[C@H](Br)[C@@H](C)Br"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-e-z": {
+  "title": "E and Z where cis and trans fail",
+  "caption": "In 1-bromo-1-chloropropene each carbon of the C=C carries two different groups, so cis/trans is ambiguous. By priority, Br beats Cl on one carbon and CH₃ beats H on the other: the two higher-priority groups together is Z, opposite is E.",
+  "alt": "Z- and E-1-bromo-1-chloropropene.",
+  "description": [
+   "Z isomer: Br and CH₃ on the same side of the double bond.",
+   "E isomer: Br and CH₃ on opposite sides."
+  ],
+  "course": "chemistry",
+  "lesson": "E and Z nomenclature",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u12.js: E and Z nomenclature"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Z isomer: the double bond 1-2 is Z",
+    "ok": true,
+    "detail": "RDKit CIP: Z"
+   },
+   {
+    "name": "E isomer: the double bond 1-2 is E",
+    "ok": true,
+    "detail": "RDKit CIP: E"
+   },
+   {
+    "name": "Z isomer, E isomer: same formula, different compounds",
+    "ok": true,
+    "detail": "formulae ['C3H4BrCl']; 2 distinct structures"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-enantiomers-alanine": {
+  "title": "The enantiomers of alanine",
+  "caption": "(S)-alanine, the form in proteins, and (R)-alanine are mirror images that cannot be superimposed. They have the same melting point and solubility, and rotate plane-polarised light by equal amounts in opposite directions.",
+  "alt": "(S)-alanine and (R)-alanine as mirror images with a dashed mirror line between them.",
+  "description": [
+   "Left: (S)-alanine.",
+   "Right: (R)-alanine, its mirror image.",
+   "Same atoms, same connections, opposite arrangement at the central carbon."
+  ],
+  "course": "chemistry",
+  "lesson": "Enantiomers",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u12.js: Enantiomers"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(S)-alanine: atom 1 is S",
+    "ok": true,
+    "detail": "RDKit CIP: S"
+   },
+   {
+    "name": "(R)-alanine: atom 1 is R",
+    "ok": true,
+    "detail": "RDKit CIP: R"
+   },
+   {
+    "name": "the two are enantiomers: same structure, every stereocentre inverted",
+    "ok": true,
+    "detail": "['S'] against ['R']"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-fgi-map": {
+  "title": "Functional group interconversions",
+  "caption": "A map of the A level reactions linking the main groups, with reagents on the arrows. Following it backwards from a target is how a synthesis is planned.",
+  "alt": "A flow map: alkene to alcohol (steam, H₃PO₄), halogenoalkane to alcohol (NaOH(aq), heat), primary alcohol to aldehyde to carboxylic acid (acidified dichromate), secondary alcohol to ketone, acid and alcohol to ester.",
+  "description": [
+   "Alkene → alcohol with steam and an H₃PO₄ catalyst.",
+   "Halogenoalkane → alcohol with aqueous NaOH, heated.",
+   "Primary alcohol → aldehyde (distil) → carboxylic acid (reflux), each with acidified potassium dichromate.",
+   "Secondary alcohol → ketone with acidified dichromate.",
+   "Carboxylic acid + alcohol → ester with an acid catalyst."
+  ],
+  "course": "chemistry",
+  "lesson": "Functional group interconversion",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u12.js: Functional group interconversion"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "C2H4 + H2O → C2H5OH balances",
+    "ok": true,
+    "detail": "atoms and charge balance (C, H, O; charge 0)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-functional-groups": {
+  "title": "The main functional groups",
+  "caption": "A functional group is the atom or group of atoms that gives a family its reactions. Each two- or three-carbon example has its group shaded.",
+  "alt": "Eight small molecules: ethanol, bromoethane, ethanal, propanone, ethanoic acid, methyl ethanoate, ethylamine and ethanamide, each with its functional group shaded.",
+  "description": [
+   "alcohol: CCO with the alcohol group shaded.",
+   "halogenoalkane: CCBr with the halogenoalkane group shaded.",
+   "aldehyde: CC=O with the aldehyde group shaded.",
+   "ketone: CC(C)=O with the ketone group shaded.",
+   "carboxylic acid: CC(=O)O with the carboxylic acid group shaded.",
+   "ester: CC(=O)OC with the ester group shaded.",
+   "amine: CCN with the primary amine group shaded.",
+   "amide: CC(N)=O with the amide group shaded."
+  ],
+  "course": "chemistry",
+  "lesson": "Functional groups",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u12.js: Functional groups"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "alcohol: contains alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "halogenoalkane: contains halogenoalkane",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "aldehyde: contains aldehyde",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ketone: contains ketone",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "carboxylic acid: contains carboxylic acid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ester: contains ester",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "amine: contains primary amine",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "amide: contains amide",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-hydrocarbon-families": {
+  "title": "The four hydrocarbon families",
+  "caption": "Alkanes have only single bonds, alkenes a C=C, alkynes a C≡C, and arenes a benzene ring. Each is shown with four or six carbons so the families compare directly.",
+  "alt": "Skeletal formulae of butane, but-1-ene, but-1-yne and benzene, with the C=C, C≡C and ring highlighted.",
+  "description": [
+   "Butane: a four-carbon zigzag, single bonds only.",
+   "But-1-ene: the same chain with a double bond at one end, highlighted.",
+   "But-1-yne: a triple bond at one end, drawn straight.",
+   "Benzene: a hexagon with a ring of delocalised electrons."
+  ],
+  "course": "chemistry",
+  "lesson": "Hydrocarbons",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u12.js: Hydrocarbons"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "alkane: formula C4H10",
+    "ok": true,
+    "detail": "RDKit: C4H10"
+   },
+   {
+    "name": "alkene: formula C4H8",
+    "ok": true,
+    "detail": "RDKit: C4H8"
+   },
+   {
+    "name": "alkene: contains alkene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "alkyne: formula C4H6",
+    "ok": true,
+    "detail": "RDKit: C4H6"
+   },
+   {
+    "name": "alkyne: contains alkyne",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "arene: formula C6H6",
+    "ok": true,
+    "detail": "RDKit: C6H6"
+   },
+   {
+    "name": "arene: contains arene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-iupac-naming": {
+  "title": "Naming by the longest chain",
+  "caption": "4-methylpentan-2-ol: the longest chain holding the –OH has five carbons (pent-), numbered from the end nearer the OH so it gets 2; a methyl branch sits on carbon 4.",
+  "alt": "Skeletal formula of 4-methylpentan-2-ol with the hydroxyl group highlighted.",
+  "description": [
+   "A five-carbon zigzag with OH on carbon 2 and a methyl branch on carbon 4.",
+   "Numbered from the OH end: OH at 2, methyl at 4."
+  ],
+  "course": "chemistry",
+  "lesson": "IUPAC nomenclature",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u12.js: IUPAC nomenclature"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "4-methylpentan-2-ol: formula C6H14O",
+    "ok": true,
+    "detail": "RDKit: C6H14O"
+   },
+   {
+    "name": "4-methylpentan-2-ol: contains secondary alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-optical-activity": {
+  "title": "Enantiomers rotate light oppositely",
+  "caption": "(R)- and (S)-butan-2-ol rotate plane-polarised light by the same angle in opposite directions. A 50:50 racemic mixture shows no rotation, because the two effects cancel.",
+  "alt": "The two enantiomers of butan-2-ol, labelled with opposite signs of optical rotation.",
+  "description": [
+   "(S)-(+)-butan-2-ol rotates the plane clockwise.",
+   "(R)-(−)-butan-2-ol rotates it anticlockwise by the same angle."
+  ],
+  "course": "chemistry",
+  "lesson": "Optical activity",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u12.js: Optical activity"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(S)-(+)-butan-2-ol: atom 1 is S",
+    "ok": true,
+    "detail": "RDKit CIP: S"
+   },
+   {
+    "name": "(R)-(−)-butan-2-ol: atom 1 is R",
+    "ok": true,
+    "detail": "RDKit CIP: R"
+   },
+   {
+    "name": "the two are enantiomers: same structure, every stereocentre inverted",
+    "ok": true,
+    "detail": "['S'] against ['R']"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-organic-formulae": {
+  "title": "Four ways to write butan-1-ol",
+  "caption": "The same molecule, C₄H₁₀O, as a displayed formula (every bond and atom), a structural formula, CH₃CH₂CH₂CH₂OH, and a skeletal formula, where each corner or line end is a carbon carrying enough hydrogens to make four bonds.",
+  "alt": "Butan-1-ol drawn as a displayed formula with all hydrogens and as a skeletal formula, with the molecular and structural formulae as labels.",
+  "description": [
+   "Left: the displayed formula, four carbons in a chain with every C–H bond drawn and O–H on the end carbon.",
+   "Right: the skeletal formula, a zigzag of three lines ending in OH.",
+   "Labels give C₄H₁₀O and CH₃CH₂CH₂CH₂OH."
+  ],
+  "course": "chemistry",
+  "lesson": "Introduction to organic chemistry",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u12.js: Introduction to organic chemistry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "displayed formula: formula C4H10O",
+    "ok": true,
+    "detail": "RDKit: C4H10O"
+   },
+   {
+    "name": "skeletal formula: formula C4H10O",
+    "ok": true,
+    "detail": "RDKit: C4H10O"
+   },
+   {
+    "name": "skeletal formula: contains primary alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "both drawings are the same compound",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-r-s": {
+  "title": "Assigning R and S",
+  "caption": "For bromochlorofluoromethane the priorities by atomic number are Br > Cl > F > H. With H pointing away, Br → Cl → F runs clockwise for (R) and anticlockwise for (S).",
+  "alt": "(R)- and (S)-bromochlorofluoromethane with CIP labels.",
+  "description": [
+   "(R)-CHBrClF: with H at the back, Br, Cl, F go clockwise.",
+   "(S)-CHBrClF: the mirror image, anticlockwise."
+  ],
+  "course": "chemistry",
+  "lesson": "R and S nomenclature",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u12.js: R and S nomenclature"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(R)-CHBrClF: atom 1 is R",
+    "ok": true,
+    "detail": "RDKit CIP: R"
+   },
+   {
+    "name": "(S)-CHBrClF: atom 1 is S",
+    "ok": true,
+    "detail": "RDKit CIP: S"
+   },
+   {
+    "name": "the two are enantiomers: same structure, every stereocentre inverted",
+    "ok": true,
+    "detail": "['R'] against ['S']"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-reaction-classes": {
+  "title": "Classifying an organic reaction",
+  "caption": "Ask what happens to the starting molecule. Two molecules joining into one is addition; a group swapped for another is substitution; a small molecule lost to form a double bond is elimination. Oxidation, reduction, condensation and hydrolysis are named by what is gained or lost.",
+  "alt": "A decision tree: does the number of molecules fall? If yes, addition. If no, is one group replaced by another? If yes, substitution; if no, is a small molecule removed to leave a multiple bond? If yes, elimination; otherwise a rearrangement.",
+  "description": [
+   "First question: do two reactant molecules become one product? Yes means addition, as in ethene + HBr.",
+   "Otherwise: is one atom or group replaced by another? Yes means substitution, as in bromoethane + OH⁻.",
+   "Otherwise: is a small molecule such as H₂O or HBr removed, leaving a double bond? Yes means elimination; if not, the atoms have rearranged."
+  ],
+  "course": "chemistry",
+  "lesson": "Organic reaction classification",
+  "also": [],
+  "renderer": "classify",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u12.js: Organic reaction classification"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every path ends in a classification",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "no unreachable boxes",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-stereoisomers": {
+  "title": "Two kinds of stereoisomer",
+  "caption": "E- and Z-but-2-ene differ in which side of the rigid C=C the methyl groups sit. (R)- and (S)-butan-2-ol differ at a chiral centre and are non-superimposable mirror images. In each pair the atoms are joined in the same order.",
+  "alt": "E- and Z-but-2-ene, and the two enantiomers of butan-2-ol with wedge and hash bonds.",
+  "description": [
+   "E-but-2-ene: methyl groups on opposite sides of the double bond.",
+   "Z-but-2-ene: methyl groups on the same side.",
+   "(R)-butan-2-ol and (S)-butan-2-ol: mirror images at the carbon bearing OH."
+  ],
+  "course": "chemistry",
+  "lesson": "Stereoisomerism",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u12.js: Stereoisomerism"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "E-but-2-ene: the double bond 1-2 is E",
+    "ok": true,
+    "detail": "RDKit CIP: E"
+   },
+   {
+    "name": "Z-but-2-ene: the double bond 1-2 is Z",
+    "ok": true,
+    "detail": "RDKit CIP: Z"
+   },
+   {
+    "name": "(R)-butan-2-ol: atom 1 is R",
+    "ok": true,
+    "detail": "RDKit CIP: R"
+   },
+   {
+    "name": "(S)-butan-2-ol: atom 1 is S",
+    "ok": true,
+    "detail": "RDKit CIP: S"
+   },
+   {
+    "name": "E-but-2-ene, Z-but-2-ene: same formula, different compounds",
+    "ok": true,
+    "detail": "formulae ['C4H8']; 2 distinct structures"
+   },
+   {
+    "name": "the two are enantiomers: same structure, every stereocentre inverted",
+    "ok": true,
+    "detail": "['R'] against ['S']"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-structural-isomers": {
+  "title": "Three kinds of structural isomer",
+  "caption": "Chain isomers have different skeletons (butane, methylpropane); position isomers have the group in a different place (propan-1-ol, propan-2-ol); functional group isomers have different groups (ethanol, methoxymethane). Each pair shares a molecular formula.",
+  "alt": "Three pairs of isomers: butane and methylpropane, propan-1-ol and propan-2-ol, ethanol and methoxymethane.",
+  "description": [
+   "Chain: butane and methylpropane, both C₄H₁₀.",
+   "Position: propan-1-ol and propan-2-ol, both C₃H₈O.",
+   "Functional group: ethanol and methoxymethane, both C₂H₆O."
+  ],
+  "course": "chemistry",
+  "lesson": "Structural isomerism",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u12.js: Structural isomerism"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "butane: formula C4H10",
+    "ok": true,
+    "detail": "RDKit: C4H10"
+   },
+   {
+    "name": "methylpropane: formula C4H10",
+    "ok": true,
+    "detail": "RDKit: C4H10"
+   },
+   {
+    "name": "propan-1-ol: formula C3H8O",
+    "ok": true,
+    "detail": "RDKit: C3H8O"
+   },
+   {
+    "name": "propan-1-ol: contains alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "propan-2-ol: formula C3H8O",
+    "ok": true,
+    "detail": "RDKit: C3H8O"
+   },
+   {
+    "name": "propan-2-ol: contains alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "ethanol: formula C2H6O",
+    "ok": true,
+    "detail": "RDKit: C2H6O"
+   },
+   {
+    "name": "ethanol: contains alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "methoxymethane: formula C2H6O",
+    "ok": true,
+    "detail": "RDKit: C2H6O"
+   },
+   {
+    "name": "methoxymethane: contains ether",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "butane, methylpropane: same formula, different compounds",
+    "ok": true,
+    "detail": "formulae ['C4H10']; 2 distinct structures"
+   },
+   {
+    "name": "propan-1-ol, propan-2-ol: same formula, different compounds",
+    "ok": true,
+    "detail": "formulae ['C3H8O']; 2 distinct structures"
+   },
+   {
+    "name": "ethanol, methoxymethane: same formula, different compounds",
+    "ok": true,
+    "detail": "formulae ['C2H6O']; 2 distinct structures"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }

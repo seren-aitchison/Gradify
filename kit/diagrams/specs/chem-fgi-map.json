@@ -1,0 +1,102 @@
+{
+ "id": "chem-fgi-map",
+ "renderer": "flow",
+ "course": "chemistry",
+ "lesson": "Functional group interconversion",
+ "title": "Functional group interconversions",
+ "caption": "A map of the A level reactions linking the main groups, with reagents on the arrows. Following it backwards from a target is how a synthesis is planned.",
+ "alt": "A flow map: alkene to alcohol (steam, H₃PO₄), halogenoalkane to alcohol (NaOH(aq), heat), primary alcohol to aldehyde to carboxylic acid (acidified dichromate), secondary alcohol to ketone, acid and alcohol to ester.",
+ "description": [
+  "Alkene → alcohol with steam and an H₃PO₄ catalyst.",
+  "Halogenoalkane → alcohol with aqueous NaOH, heated.",
+  "Primary alcohol → aldehyde (distil) → carboxylic acid (reflux), each with acidified potassium dichromate.",
+  "Secondary alcohol → ketone with acidified dichromate.",
+  "Carboxylic acid + alcohol → ester with an acid catalyst."
+ ],
+ "layout": "grid",
+ "rowHeight": 110,
+ "boxWidth": 96,
+ "nodes": [
+  {
+   "id": "alkene",
+   "label": "alkene",
+   "col": 0,
+   "row": 0
+  },
+  {
+   "id": "halo",
+   "label": "halogenoalkane",
+   "col": 0,
+   "row": 1
+  },
+  {
+   "id": "alc",
+   "label": "primary alcohol",
+   "col": 1,
+   "row": 0
+  },
+  {
+   "id": "ald",
+   "label": "aldehyde",
+   "col": 2,
+   "row": 0
+  },
+  {
+   "id": "acid",
+   "label": "carboxylic acid",
+   "col": 3,
+   "row": 0
+  },
+  {
+   "id": "ester",
+   "label": "ester",
+   "col": 3,
+   "row": 1
+  },
+  {
+   "id": "sec",
+   "label": "secondary alcohol",
+   "col": 1,
+   "row": 1
+  },
+  {
+   "id": "ket",
+   "label": "ketone",
+   "col": 2,
+   "row": 1
+  }
+ ],
+ "edges": [
+  {
+   "from": "alkene",
+   "to": "alc",
+   "label": "steam, H₃PO₄",
+   "eq": "C2H4 + H2O → C2H5OH"
+  },
+  {
+   "from": "halo",
+   "to": "alc",
+   "label": "NaOH(aq), heat"
+  },
+  {
+   "from": "alc",
+   "to": "ald",
+   "label": "K₂Cr₂O₇/H⁺, distil"
+  },
+  {
+   "from": "ald",
+   "to": "acid",
+   "label": "K₂Cr₂O₇/H⁺, reflux"
+  },
+  {
+   "from": "sec",
+   "to": "ket",
+   "label": "K₂Cr₂O₇/H⁺"
+  },
+  {
+   "from": "acid",
+   "to": "ester",
+   "label": "alcohol, H⁺"
+  }
+ ]
+}

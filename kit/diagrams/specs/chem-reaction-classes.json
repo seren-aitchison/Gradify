@@ -1,0 +1,61 @@
+{
+ "id": "chem-reaction-classes",
+ "renderer": "classify",
+ "course": "chemistry",
+ "lesson": "Organic reaction classification",
+ "title": "Classifying an organic reaction",
+ "caption": "Ask what happens to the starting molecule. Two molecules joining into one is addition; a group swapped for another is substitution; a small molecule lost to form a double bond is elimination. Oxidation, reduction, condensation and hydrolysis are named by what is gained or lost.",
+ "alt": "A decision tree: does the number of molecules fall? If yes, addition. If no, is one group replaced by another? If yes, substitution; if no, is a small molecule removed to leave a multiple bond? If yes, elimination; otherwise a rearrangement.",
+ "description": [
+  "First question: do two reactant molecules become one product? Yes means addition, as in ethene + HBr.",
+  "Otherwise: is one atom or group replaced by another? Yes means substitution, as in bromoethane + OH⁻.",
+  "Otherwise: is a small molecule such as H₂O or HBr removed, leaving a double bond? Yes means elimination; if not, the atoms have rearranged."
+ ],
+ "start": "q1",
+ "rowHeight": 96,
+ "nodes": {
+  "q1": {
+   "q": "Do two molecules join to make one product?",
+   "yes": "add",
+   "no": "q2"
+  },
+  "add": {
+   "leaf": "Addition",
+   "examples": [
+    "ethene + HBr"
+   ],
+   "tone": "a1"
+  },
+  "q2": {
+   "q": "Is one atom or group replaced by another?",
+   "yes": "sub",
+   "no": "q3"
+  },
+  "sub": {
+   "leaf": "Substitution",
+   "examples": [
+    "CH3CH2Br + OH-"
+   ],
+   "tone": "a4"
+  },
+  "q3": {
+   "q": "Is a small molecule lost, leaving a C=C?",
+   "yes": "elim",
+   "no": "rearr"
+  },
+  "elim": {
+   "leaf": "Elimination",
+   "examples": [
+    "2-bromopropane → propene"
+   ],
+   "tone": "a3"
+  },
+  "rearr": {
+   "leaf": "Rearrangement",
+   "examples": [
+    "carbocation shift"
+   ],
+   "tone": "a5"
+  }
+ }
+}

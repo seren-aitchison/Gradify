@@ -17,7 +17,7 @@ import { parseFormula, balanced, configuration, readConfig, sameConfig, configTe
 const C = { ink: "var(--vx-ink, #151826)", soft: "var(--vx-soft, #5b6275)", line: "var(--vx-line, #8a92a8)", grid: "var(--vx-grid, #e6e8f0)", panel: "var(--vx-panel, #f4f5fb)" };
 // subscript digits in formulae and superscript charges, written in the text() markup: H2O → H_{2}O, SO4^2- → SO_{4}^{2−}
 export function fm(s) {
-  return ascii(s).replace(/\^(\d*[+-])/g, (_, q) => `^{${q.replace("-", "−")}}`).replace(/([A-Za-z)\]])(\d+)/g, "$1_{$2}");
+  return ascii(s).replace(/\^(\d*[+-])/g, (_, q) => `^{${q.replace("-", "−")}}`).replace(/\^(\d+)/g, "^{$1}").replace(/([A-Za-z)\]])(\d+)/g, "$1_{$2}");
 }
 const rng = (seed) => { let h = 2166136261; for (const c of String(seed)) h = Math.imul(h ^ c.charCodeAt(0), 16777619); return () => { h ^= h << 13; h ^= h >>> 17; h ^= h << 5; return ((h >>> 0) % 100000) / 100000; }; };
 

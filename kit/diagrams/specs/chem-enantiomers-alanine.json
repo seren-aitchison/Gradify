@@ -1,0 +1,40 @@
+{
+ "id": "chem-enantiomers-alanine",
+ "renderer": "structures",
+ "course": "chemistry",
+ "lesson": "Enantiomers",
+ "title": "The enantiomers of alanine",
+ "caption": "(S)-alanine, the form in proteins, and (R)-alanine are mirror images that cannot be superimposed. They have the same melting point and solubility, and rotate plane-polarised light by equal amounts in opposite directions.",
+ "alt": "(S)-alanine and (R)-alanine as mirror images with a dashed mirror line between them.",
+ "description": [
+  "Left: (S)-alanine.",
+  "Right: (R)-alanine, its mirror image.",
+  "Same atoms, same connections, opposite arrangement at the central carbon."
+ ],
+ "between": [
+  "mirror"
+ ],
+ "panels": [
+  {
+   "smiles": "C[C@H:1](N)C(=O)O",
+   "label": "(S)-alanine",
+   "cip": {
+    "1": "S"
+   },
+   "sub": "L-alanine, in proteins"
+  },
+  {
+   "smiles": "C[C@@H:1](N)C(=O)O",
+   "label": "(R)-alanine",
+   "cip": {
+    "1": "R"
+   },
+   "sub": "D-alanine"
+  }
+ ],
+ "claims": [
+  {
+   "type": "enantiomers"
+  }
+ ]
+}

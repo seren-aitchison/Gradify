@@ -1,0 +1,41 @@
+{
+ "id": "chem-r-s",
+ "renderer": "structures",
+ "course": "chemistry",
+ "lesson": "R and S nomenclature",
+ "title": "Assigning R and S",
+ "caption": "For bromochlorofluoromethane the priorities by atomic number are Br > Cl > F > H. With H pointing away, Br → Cl → F runs clockwise for (R) and anticlockwise for (S).",
+ "alt": "(R)- and (S)-bromochlorofluoromethane with CIP labels.",
+ "description": [
+  "(R)-CHBrClF: with H at the back, Br, Cl, F go clockwise.",
+  "(S)-CHBrClF: the mirror image, anticlockwise."
+ ],
+ "between": [
+  "mirror"
+ ],
+ "panels": [
+  {
+   "smiles": "Br[C@@H:1](Cl)F",
+   "label": "(R)-CHBrClF",
+   "cip": {
+    "1": "R"
+   },
+   "cipLabels": true,
+   "sub": "Br > Cl > F > H"
+  },
+  {
+   "smiles": "Br[C@H:1](Cl)F",
+   "label": "(S)-CHBrClF",
+   "cip": {
+    "1": "S"
+   },
+   "cipLabels": true,
+   "sub": "Br > Cl > F > H"
+  }
+ ],
+ "claims": [
+  {
+   "type": "enantiomers"
+  }
+ ]
+}

@@ -1,0 +1,125 @@
+{
+ "id": "chem-butane-conformations",
+ "renderer": "graph",
+ "course": "chemistry",
+ "lesson": "Conformational analysis",
+ "title": "Energy of butane as it rotates",
+ "caption": "Rotating about the central C–C bond: the anti conformation (180°) is lowest; gauche (60°, 300°) is about 3.8 kJ mol⁻¹ higher; eclipsed forms are maxima, the fully eclipsed one (0°, methyls together) highest at about 19 kJ mol⁻¹.",
+ "alt": "Energy against dihedral angle from 0 to 360 degrees: maxima at 0 and 360 (19 kJ/mol) and at 120 and 240 (about 15), minima at 60 and 300 (gauche, about 3.8) and at 180 (anti, 0).",
+ "description": [
+  "Fully eclipsed at 0° and 360°: about 19 kJ mol⁻¹.",
+  "Gauche minima at 60° and 300°: about 3.8 kJ mol⁻¹.",
+  "Eclipsed maxima at 120° and 240°: about 15 kJ mol⁻¹.",
+  "Anti at 180°: the lowest, 0."
+ ],
+ "range": {
+  "x": [
+   0,
+   360
+  ],
+  "y": [
+   -2,
+   22
+  ]
+ },
+ "ticks": [
+  [
+   0,
+   60,
+   120,
+   180,
+   240,
+   300,
+   360
+  ],
+  [
+   0,
+   5,
+   10,
+   15,
+   20
+  ]
+ ],
+ "grid": [
+  60,
+  5
+ ],
+ "height": [
+  340,
+  300
+ ],
+ "axisLabels": [
+  "dihedral angle / °",
+  "relative energy / kJ mol⁻¹"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "9.5+2.533*cos(x*0.0174533)+6.967*cos(3*x*0.0174533)",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 19,
+   "label": "fully eclipsed",
+   "dx": 8,
+   "dy": 4
+  },
+  {
+   "x": 60,
+   "y": 3.8,
+   "label": "gauche",
+   "dy": 16,
+   "anchor": "middle",
+   "dx": 0
+  },
+  {
+   "x": 180,
+   "y": 0,
+   "label": "anti",
+   "dy": -14,
+   "anchor": "middle",
+   "dx": 0
+  },
+  {
+   "x": 120,
+   "y": 15.2,
+   "label": "eclipsed",
+   "dy": -12,
+   "anchor": "middle",
+   "dx": 0
+  }
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "9.5+2.533*cos(x*0.0174533)+6.967*cos(3*x*0.0174533)",
+   "domain": [
+    0,
+    359
+   ],
+   "x": 0,
+   "y": 19,
+   "name": "the fully eclipsed form (0°) is the highest, 19 kJ mol⁻¹"
+  },
+  {
+   "type": "point",
+   "expr": "9.5+2.533*cos(x*0.0174533)+6.967*cos(3*x*0.0174533)",
+   "x": 180,
+   "y": 0,
+   "name": "anti (180°) is the zero of energy"
+  },
+  {
+   "type": "value",
+   "expr": "9.5+2.533*cos(x*0.0174533)+6.967*cos(3*x*0.0174533)",
+   "x": 60,
+   "between": [
+    3.5,
+    4.1
+   ],
+   "name": "gauche is about 3.8 kJ mol⁻¹ above anti"
+  }
+ ]
+}

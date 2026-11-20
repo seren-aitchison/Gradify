@@ -20,6 +20,7 @@ import { join } from "node:path";
 import { render } from "../../kit/diagrams/renderers.js";
 import "../../kit/diagrams/chem-renderers.js"; // registers the chemistry renderers
 import "../../kit/diagrams/chem-renderers-2.js";
+import "../../kit/diagrams/chem-renderers-3.js";
 
 const ROOT = new URL("../../", import.meta.url).pathname;
 const SPECS = join(ROOT, "kit/diagrams/specs"), OUT = join(ROOT, "kit/diagrams/svg"), MANIFEST = join(ROOT, "kit/diagrams/manifest.json");
@@ -56,8 +57,9 @@ for (const f of readdirSync(SPECS).filter((f) => f.endsWith(".json")).sort()) {
   if (only && !spec.id.includes(only)) continue;
   const lesson = lessonSource(spec.course, spec.lesson);
   let out;
-  if (spec.renderer === "mechanism") {
-    const r = spawnSync("python3", [join(ROOT, "scripts/diagrams/chem.py"), join(SPECS, f)], { encoding: "utf8" });
+  const PY = { mechanism: "chem.py", structures: "chem_more.py", nmr: "chem_more.py", ms: "chem_more.py", ir: "chem_more.py" };
+  if (PY[spec.renderer]) {
+    const r = spawnSync("python3", [join(ROOT, "scripts/diagrams", PY[spec.renderer]), join(SPECS, f)], { encoding: "utf8", maxBuffer: 64 << 20 });
     if (r.status !== 0) { console.error(r.stderr); out = { wide: "", narrow: "", checks: [{ name: "chemistry renderer ran", ok: false, detail: r.stderr.slice(-300) }] }; }
     else out = JSON.parse(r.stdout);
   } else out = render(spec, { lessonText: lesson?.text || "" });

@@ -1,0 +1,29 @@
+{
+ "id": "chem-iupac-naming",
+ "renderer": "structures",
+ "course": "chemistry",
+ "lesson": "IUPAC nomenclature",
+ "title": "Naming by the longest chain",
+ "caption": "4-methylpentan-2-ol: the longest chain holding the –OH has five carbons (pent-), numbered from the end nearer the OH so it gets 2; a methyl branch sits on carbon 4.",
+ "alt": "Skeletal formula of 4-methylpentan-2-ol with the hydroxyl group highlighted.",
+ "description": [
+  "A five-carbon zigzag with OH on carbon 2 and a methyl branch on carbon 4.",
+  "Numbered from the OH end: OH at 2, methyl at 4."
+ ],
+ "panels": [
+  {
+   "smiles": "CC(O)CC(C)C",
+   "label": "4-methylpentan-2-ol",
+   "formula": "C6H14O",
+   "highlight": [
+    {
+     "group": "secondary alcohol",
+     "colour": "a1"
+    }
+   ],
+   "sub": "chain of 5, OH on C2, CH₃ on C4",
+   "cipLabels": false
+  }
+ ],
+ "note": "Number from the end that gives the main group the lowest number."
+}

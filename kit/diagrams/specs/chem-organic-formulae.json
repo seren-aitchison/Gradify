@@ -1,0 +1,42 @@
+{
+ "id": "chem-organic-formulae",
+ "renderer": "structures",
+ "course": "chemistry",
+ "lesson": "Introduction to organic chemistry",
+ "title": "Four ways to write butan-1-ol",
+ "caption": "The same molecule, C₄H₁₀O, as a displayed formula (every bond and atom), a structural formula, CH₃CH₂CH₂CH₂OH, and a skeletal formula, where each corner or line end is a carbon carrying enough hydrogens to make four bonds.",
+ "alt": "Butan-1-ol drawn as a displayed formula with all hydrogens and as a skeletal formula, with the molecular and structural formulae as labels.",
+ "description": [
+  "Left: the displayed formula, four carbons in a chain with every C–H bond drawn and O–H on the end carbon.",
+  "Right: the skeletal formula, a zigzag of three lines ending in OH.",
+  "Labels give C₄H₁₀O and CH₃CH₂CH₂CH₂OH."
+ ],
+ "panels": [
+  {
+   "smiles": "CCCCO",
+   "label": "displayed formula",
+   "displayed": true,
+   "formula": "C4H10O",
+   "sub": "molecular formula C₄H₁₀O"
+  },
+  {
+   "smiles": "CCCCO",
+   "label": "skeletal formula",
+   "formula": "C4H10O",
+   "groups": [
+    "primary alcohol"
+   ],
+   "sub": "structural CH₃CH₂CH₂CH₂OH"
+  }
+ ],
+ "claims": [
+  {
+   "type": "same",
+   "panels": [
+    0,
+    1
+   ],
+   "name": "both drawings are the same compound"
+  }
+ ]
+}
