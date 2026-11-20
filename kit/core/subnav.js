@@ -38,6 +38,8 @@ export function mountSubNav(doc = document) {
   menu.addEventListener("click", (e) => { if (e.target.closest("a")) set(false); });
   doc.addEventListener("keydown", (e) => { if (e.key === "Escape" && !menu.hidden) { set(false); btn.focus(); } });
   doc.addEventListener("click", (e) => { if (!menu.hidden && !e.target.closest(".sub-menu, .sub-menu-btn")) set(false); });
+  // focus moving elsewhere (Tab out of the menu, or into the page's search) closes it too, as a tap outside does
+  doc.addEventListener("focusin", (e) => { if (!menu.hidden && !e.target.closest?.(".sub-menu, .sub-menu-btn")) set(false); });
 
   menuSettings(menu, { close: () => set(false), from: btn });
   right.append(btn);
