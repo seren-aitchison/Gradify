@@ -350,7 +350,8 @@ export function start() {
 
   function stop() {
     if (stopped) return; stopped = true;
-    live = false; if (running === handle) running = null;   // never clear a newer instance clearTimeout(mt); if (raf) cancelAnimationFrame(raf); probing = false;
+    live = false; if (running === handle) running = null;   // never clear a newer instance
+    clearTimeout(mt); if (raf) cancelAnimationFrame(raf); probing = false;
     mqT.removeEventListener("change", onAccess); mqC.removeEventListener("change", onAccess);
     mo.disconnect(); to.disconnect(); root.classList.remove("lgl"); canvas.remove(); style.remove();
     document.querySelectorAll("[data-lg]").forEach((e) => { e.removeAttribute("data-lg"); e.removeAttribute("data-lg-cap"); });

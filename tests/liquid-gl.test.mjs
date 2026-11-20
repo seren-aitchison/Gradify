@@ -81,3 +81,10 @@ test("floating bars draw last, so cards scrolling under the header never cut its
   // pastel: every stop light (no channel below 0x90)
   for (const h of stops) assert.ok([1, 3, 5].every((i) => parseInt(h.slice(i, i + 2), 16) >= 0x90), h);
 });
+
+test("stop() cancels pending frames and timers (the cleanup is code, not swallowed by a comment)", async () => {
+  const src = await readFile(new URL("../kit/ui/liquid-gl.js", import.meta.url), "utf8");
+  const body = src.slice(src.indexOf("function stop()"), src.indexOf("\n  }", src.indexOf("function stop()")));
+  const code = body.split("\n").map((l) => l.replace(/\s\/\/.*$/, "")).join("\n");   // strip trailing comments
+  for (const k of ["clearTimeout(mt)", "cancelAnimationFrame(raf)", "probing = false", "mo.disconnect()", "canvas.remove()"]) assert.ok(code.includes(k), k);
+});
