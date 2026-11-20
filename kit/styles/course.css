@@ -1452,3 +1452,348 @@ html[data-motion="reduce"] .co-main.cx-enter { animation: none; }
 .cx-tquest { border-color: rgba(140, 39, 202, .45); background: radial-gradient(120% 140% at 0% 0%, rgba(140, 39, 202, .14), transparent 60%), rgba(var(--surface-rgb), .5); }
 .cx-tqxp { font: 600 12px var(--mono); color: var(--mute); }
 .cx-tqname { margin: 0 0 10px; font-size: 13.5px; color: var(--mute); } .cx-tqname b { display: block; font-size: 16px; color: var(--fg); }
+
+/* ---------- Touch: tap targets at least 44px (WCAG 2.5.5) ----------
+   Only on touch screens (pointer: coarse), so mouse layouts are unchanged. Inline links grow an invisible margin of
+   tap area (padding taken back by a negative margin), so nothing on the page moves. */
+@media (pointer: coarse) {
+  .cx-crumbs a, .cx-upnext a, .cx-sech a, .cx-qt a { padding-block: 14px; margin-block: -14px; }
+  .cx-stages a { min-height: 44px; }
+  .co-tabs > a, .cx-morebtn { min-height: 44px; display: inline-flex; align-items: center; }
+  .cx-pin { min-height: 44px; padding-block: 8px; }
+  .cx-ib { width: 44px; height: 44px; }
+  .cx-ob { min-height: 44px; min-width: 44px; justify-content: center; }
+  .co-askform input, .co-askform .btn, .co-dirbox .btn { min-height: 44px; }
+  .co-tmodes button, .aq .btn { min-height: 44px; }
+  .cx-mrl { min-height: 44px; }
+  /* the mastery grid's cells (one per lesson, 12px) are too dense to tap one by one: on a touch screen the row's
+     chapter link is the target, and the cells are its picture */
+  .cx-mrc a { pointer-events: none; }
+  /* the activity heatmap: each day is a 30px tap (above WCAG's 24px minimum); the grid scrolls sideways */
+  .co-heat { grid-auto-columns: 30px; grid-template-rows: repeat(7, 30px); }
+  .co-heat > * { width: 30px; height: 30px; }
+}
+
+/* ---------- Liquid Glass lesson ----------
+   The lesson as layered, frosted glass over soft light in its own colours (Apple's Liquid Glass): the outline, the
+   reading sheet, the toolbar and the rail's widgets float as translucent panels with a bright top edge, a soft rim
+   and deep, concentric corners. Only the big surfaces blur what's behind them (cards inside the sheet sit on glass
+   already), so it stays smooth on phones. Reduced transparency or high contrast: solid panels, same shapes. */
+:root { --spec-rgb: 255, 255, 255; }   /* the specular highlight: white light in both themes */
+.co.co-reading {
+  --lg-blur: blur(28px) saturate(185%);
+  --lg-fill: rgba(var(--surface-rgb), .26);
+  --lg-fill-sheet: rgba(var(--surface-rgb), .5);
+  --lg-rim: rgba(var(--ink-rgb), .1);
+  --lg-spec: rgba(var(--spec-rgb), .38);
+  --lg-shadow: 0 1px 2px rgba(0, 0, 0, .12), 0 24px 60px -28px rgba(0, 0, 0, .7);
+  --lg-r: 34px; --lg-r-md: 28px; --lg-r-sm: 22px; --lg-r-xs: 16px;
+}
+/* the glass itself */
+.co-reading :is(.cx-tree, .cx-lbar, .co-read .co-notes, .cx-widget, .co-pncard, .cx-dock) {
+  isolation: isolate;
+  background: linear-gradient(155deg, rgba(var(--ink-rgb), .09), rgba(var(--ink-rgb), .015) 42%, rgba(var(--ink-rgb), .04)), var(--lg-fill);
+  -webkit-backdrop-filter: var(--lg-blur); backdrop-filter: var(--lg-blur);
+  border: 1px solid var(--lg-rim);
+  box-shadow: inset 0 1px 0 var(--lg-spec), inset 0 -18px 36px -30px rgba(var(--spec-rgb), .22), var(--lg-shadow);
+}
+/* the panes that aren't already sticky or fixed hold their rim and sheen */
+.co-reading :is(.co-read .co-notes, .cx-widget, .co-pncard) { position: relative; }
+/* the liquid rim: a gradient edge, bright where the light falls (top left) and fading round the pane */
+.co-reading :is(.cx-tree, .cx-lbar, .co-read .co-notes, .cx-widget, .co-pncard, .cx-dock)::before {
+  content: ""; position: absolute; inset: -1px; z-index: 1; border-radius: inherit; padding: 1px; pointer-events: none;
+  background: linear-gradient(145deg, rgba(var(--spec-rgb), .62), rgba(var(--spec-rgb), .12) 26%, rgba(var(--spec-rgb), 0) 52%, rgba(var(--spec-rgb), .06) 78%, rgba(var(--spec-rgb), .26));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+}
+/* light catching the top-left edge of each pane */
+.co-reading :is(.cx-tree, .co-read .co-notes, .cx-widget, .co-pncard)::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; pointer-events: none;
+  background: radial-gradient(120% 60% at 0% 0%, rgba(var(--spec-rgb), .1), transparent 55%);
+}
+.co-reading .co-read .co-notes { background: linear-gradient(170deg, rgba(var(--ink-rgb), .07), transparent 30%), var(--lg-fill-sheet); border-radius: var(--lg-r); }
+/* the reading sheet is tinted, not backdrop-blurred: it is the largest pane (blurring it costs the most), and a blurred
+   sheet becomes its own backdrop, so the bars floating over it couldn't frost the text underneath */
+.co-reading .co-read .co-notes { -webkit-backdrop-filter: none; backdrop-filter: none; }
+.co-reading .cx-tree { border-radius: var(--lg-r-md); }
+.co-reading .cx-lbar { border-radius: 26px; padding: 8px 12px 10px; top: 10px; }
+.co-reading .cx-lbar .co-steps a { border-radius: 99px; }
+/* controls that float over the text use thicker glass, so what scrolls under them never competes with their labels */
+
+/* the reading sheet's furniture: concentric, softer corners */
+.co-reading .co-lhead { padding-bottom: 30px !important; }
+.co-reading .co-lhead .mv-chips button, .co-reading .co-lhead .mv-chips > span { border-radius: 99px; backdrop-filter: none; box-shadow: inset 0 1px 0 rgba(var(--spec-rgb), .14); }
+.co-reading .cx-kit { gap: 10px; }
+.co-reading .cx-kc {
+  border-radius: var(--lg-r-sm); padding: 14px; border-color: var(--lg-rim);
+  background: linear-gradient(160deg, rgba(var(--ink-rgb), .09), rgba(var(--ink-rgb), .025));
+  box-shadow: inset 0 1px 0 rgba(var(--spec-rgb), .2), 0 10px 26px -20px rgba(0, 0, 0, .7);
+  transition: transform .2s, box-shadow .2s, background .2s;
+}
+.co-reading .cx-kc:hover { transform: translateY(-2px); background: linear-gradient(160deg, rgba(var(--ink-rgb), .13), rgba(var(--ink-rgb), .04)); box-shadow: inset 0 1px 0 rgba(var(--spec-rgb), .3), 0 16px 30px -18px rgba(0, 0, 0, .75); }
+.co-reading .cx-kc > :first-child { border-radius: 12px; box-shadow: inset 0 1px 0 rgba(var(--spec-rgb), .25); }
+.co-reading .co-frame { border-radius: var(--lg-r-sm); border-color: var(--lg-rim); background: linear-gradient(165deg, rgba(var(--ink-rgb), .07), rgba(var(--ink-rgb), .02)); box-shadow: inset 0 1px 0 rgba(var(--spec-rgb), .14); }
+.co-reading .co-qn > :first-child { border-radius: var(--lg-r-sm); }
+.co-reading .co-draft { border-radius: var(--lg-r-xs); }
+.co-reading .co-builds a { border-radius: 99px; }
+.co-reading .co-pncard { border-radius: var(--lg-r-sm); }
+.co-reading .co-pncard:hover { box-shadow: inset 0 1px 0 var(--lg-spec), 0 20px 40px -24px rgba(0, 0, 0, .8); }
+
+/* the outline: the current lesson glows like a lit key */
+.co-reading .cx-tree .cx-l { border-radius: 12px; }
+.co-reading .cx-tree .cx-l.here { box-shadow: inset 0 1px 0 rgba(var(--spec-rgb), .22), 0 6px 18px -10px color-mix(in srgb, var(--la) 70%, transparent); }
+.co-reading .cx-tree .cx-tf, .co-reading .cx-tree .cx-tf input { border-radius: 14px; }
+
+/* the rail: a stack of widgets */
+.co-reading .co-side { gap: 14px; }
+.co-reading .cx-widgets { display: flex; flex-direction: column; gap: 14px; padding: 0; border: 0; background: none; box-shadow: none; border-radius: 0; }
+.co-reading .cx-widget { display: flex; flex-direction: column; gap: 10px; padding: 18px; border-radius: var(--lg-r-md); color: inherit; text-decoration: none; }
+.co-reading .cx-widget .co-kicker { margin: 0; }
+.cx-w-title { font-size: 15.5px; line-height: 1.3; letter-spacing: -.01em; }
+.cx-widget small { color: var(--mute); font-size: 12.5px; }
+.cx-w-page .co-toc { margin: 0; }
+.cx-w-steps .co-railgo { width: 100%; justify-content: center; }
+/* this topic: a dot for each lesson in it */
+.cx-w-dots { display: flex; flex-wrap: wrap; gap: 7px; margin: 2px 0 0; padding: 0; list-style: none; }
+.cx-w-dots a { position: relative; display: block; width: 14px; height: 14px; border-radius: 50%; background: rgba(var(--ink-rgb), .12); box-shadow: inset 0 1px 0 rgba(var(--spec-rgb), .2); }
+.cx-w-dots a::before { content: ""; position: absolute; inset: -6px; }   /* a bigger target than the dot */
+.cx-w-dots a.done { background: linear-gradient(135deg, var(--la), var(--lb)); }
+.cx-w-dots a.here { outline: 2px solid var(--fg); outline-offset: 2px; }
+.cx-w-dots a:hover { transform: scale(1.18); }
+/* up next: the whole widget is the link, with a glass arrow */
+.cx-w-next { padding-right: 64px !important; transition: transform .2s, box-shadow .2s; }
+.cx-w-next:hover { transform: translateY(-2px); }
+.cx-w-go { position: absolute; right: 16px; top: 50%; translate: 0 -50%; display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(var(--ink-rgb), .1); border: 1px solid var(--lg-rim); box-shadow: inset 0 1px 0 var(--lg-spec); }
+.cx-w-go .co-ic { width: 18px; height: 18px; }
+.cx-w-next:hover .cx-w-go { background: linear-gradient(135deg, var(--la), var(--lb)); color: var(--invert-bg); }
+
+/* phones: the sheet, toolbar and dock are glass; the dock floats as a capsule */
+@media (max-width: 760px) {
+  .co.co-reading { --lg-r: 28px; --lg-r-md: 24px; --lg-r-sm: 20px; }
+  .co-reading .cx-dock { border-radius: 28px; }
+  .co-reading .cx-dock [aria-current] { border-radius: 20px; box-shadow: inset 0 1px 0 rgba(var(--spec-rgb), .2); }
+  .co-reading .cx-lbar { border-radius: 22px; }
+}
+/* reduced transparency or high contrast: the same shapes, solid */
+@media (prefers-reduced-transparency: reduce) {
+  .co-reading :is(.cx-tree, .cx-lbar, .co-read .co-notes, .cx-widget, .co-pncard, .cx-dock) { background: rgb(var(--surface-rgb)); -webkit-backdrop-filter: none; backdrop-filter: none; }
+  .co.co-reading::before { display: none; }
+}
+:root[data-a-contrast="high"] .co-reading :is(.cx-tree, .cx-lbar, .co-read .co-notes, .cx-widget, .co-pncard, .cx-dock) { background: var(--bg); -webkit-backdrop-filter: none; backdrop-filter: none; border-color: var(--fg); }
+:root[data-a-contrast="high"] .co.co-reading::before { display: none; }
+@media (prefers-reduced-motion: reduce) { .co-reading :is(.cx-kc, .cx-w-next, .cx-w-dots a) { transition: none; } .co-reading :is(.cx-kc, .cx-w-next):hover { transform: none; } }
+
+
+/* ---------- Liquid Glass 2: colour at the edges, white light at the centre, three kinds of glass ----------
+   Every course page sits on light in the course's colours plus the Gradify rainbow, strongest at the edges of the window
+   and fading to white (dark: to deep ink) round the lesson, which glows and wears a gleaming rim in the course's colours.
+   The light is fixed to the window, so it runs the length of the page however far you scroll.
+   Three kinds of glass, as on Apple's and Samsung's systems:
+     clear   — wet and almost magnified: barely blurred, very bright edges, a coloured caustic glow beneath; on Chromium a
+               lens (an SVG displacement filter, kit/course/course.js) magnifies what's behind. Tiles, cards, the dock.
+     frosted — blurred with a fine grain, like etched glass. The outline, the rail's widgets, the folders' fronts.
+     blur    — the deepest, smoothest blur, tinted by the course. The lesson toolbar.                                  */
+.co { --la: var(--a); --lb: var(--b); --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+.co::before {
+  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(42vw 46vh at -4% 8%, color-mix(in srgb, var(--la) 70%, transparent), transparent 70%),
+    radial-gradient(40vw 50vh at 104% 14%, color-mix(in srgb, var(--lb) 66%, transparent), transparent 70%),
+    radial-gradient(34vw 40vh at -6% 58%, color-mix(in srgb, #ffb020 50%, transparent), transparent 70%),
+    radial-gradient(36vw 44vh at 106% 62%, color-mix(in srgb, #23c7d9 48%, transparent), transparent 70%),
+    radial-gradient(40vw 40vh at 4% 104%, color-mix(in srgb, #ff4fa3 50%, transparent), transparent 70%),
+    radial-gradient(44vw 42vh at 98% 106%, color-mix(in srgb, #4641ff 52%, transparent), transparent 70%),
+    radial-gradient(30vw 30vh at 50% -8%, color-mix(in srgb, var(--la) 36%, transparent), transparent 70%);
+}
+/* the centre of the window is the brightest (dark: the deepest): colour gathers at the edges */
+.co::after {
+  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(44% 70% at 50% 46%, var(--lg-core), color-mix(in srgb, var(--lg-core) 60%, transparent) 55%, transparent 100%);
+}
+.co { --lg-core: rgba(var(--sink-rgb), .72); }
+:root[data-theme="light"] .co { --lg-core: #fff; }
+
+/* text and edges a touch brighter: white reads as white, not grey (and near-black in light) */
+.co.co-reading { --lg-rim: rgba(var(--ink-rgb), .2); --mute: rgba(var(--ink-rgb), .76); }
+:root[data-theme="light"] .co.co-reading { --lg-rim: rgba(var(--spec-rgb), .95); --mute: #474760; }
+.co-reading .co-notes :is(.mv-cols p, .mv-cols ul, .co-frame p, .co-frame li) { color: rgba(var(--ink-rgb), .92); }
+.co-reading .co-notes .mv-lead { color: rgba(var(--ink-rgb), .95); }
+:root[data-theme="light"] .co-reading .co-notes :is(.mv-cols p, .mv-cols ul, .co-frame p, .co-frame li) { color: #1e1e30; }
+:root[data-theme="light"] .co-reading .co-notes .mv-lead { color: color-mix(in srgb, var(--la) 28%, #1a1a2e); }
+.co-reading .co-notes :is(h1, h2, h3, h4) { color: var(--fg); }
+.co-reading .co-notes :is(.co-recap, .co-check, .co-deeper, .co-refsec, .co-trylab) { border-top-color: rgba(var(--ink-rgb), .16); }
+
+/* the lesson: a bright sheet in a halo of white light, with a gleaming rim in the course's colours */
+@property --lg-ang { syntax: "<angle>"; inherits: false; initial-value: 120deg; }
+.co-reading .co-read .co-notes {
+  background: var(--grain), linear-gradient(170deg, rgba(var(--ink-rgb), .06), transparent 30%), rgba(var(--surface-rgb), .74);
+  background-size: 160px 160px, auto, auto; background-blend-mode: soft-light, normal, normal;
+  border-color: transparent;
+  box-shadow: inset 0 1px 0 rgba(var(--spec-rgb), .3), 0 0 0 1px rgba(var(--spec-rgb), .05), 0 0 90px 10px color-mix(in srgb, var(--la) 22%, transparent), 0 0 220px 40px rgba(var(--spec-rgb), .05);
+}
+:root[data-theme="light"] .co-reading .co-read .co-notes {
+  background: var(--grain), linear-gradient(170deg, #fff, rgba(var(--spec-rgb), .86) 40%, rgba(var(--spec-rgb), .9));
+  background-size: 160px 160px, auto; background-blend-mode: soft-light, normal;
+  box-shadow: inset 0 1px 0 #fff, 0 0 0 6px rgba(var(--spec-rgb), .55), 0 0 70px 30px rgba(var(--spec-rgb), .95), 0 0 180px 90px rgba(var(--spec-rgb), .7), 0 40px 80px -30px color-mix(in srgb, var(--la) 40%, transparent);
+}
+.co-reading .co-read .co-notes::before {
+  inset: -2px; padding: 2px;
+  background: conic-gradient(from var(--lg-ang), var(--la), color-mix(in srgb, var(--la) 40%, #fff) 10%, var(--lb) 22%, #fff 27%, var(--lb) 32%, var(--la) 55%, color-mix(in srgb, var(--lb) 50%, #fff) 70%, #fff 76%, var(--la) 82%, var(--la));
+  filter: saturate(1.3); opacity: .95;
+  animation: lg-gleam 14s linear infinite;
+}
+@keyframes lg-gleam { to { --lg-ang: 480deg; } }
+
+/* ----- clear glass: wet, bright-edged, almost magnified ----- */
+.co-reading :is(.cx-kc, .co-pncard, .cx-w-next, .cx-dock, .co-lhead .mv-chips > *) {
+  --clr-glow: color-mix(in srgb, var(--la) 70%, transparent);
+  isolation: isolate;
+  background:
+    radial-gradient(70% 46% at 30% 0%, rgba(var(--spec-rgb), .34), transparent 70%),
+    linear-gradient(180deg, rgba(var(--spec-rgb), .16), rgba(var(--spec-rgb), .02) 40%, rgba(var(--spec-rgb), 0) 62%, rgba(var(--spec-rgb), .1)),
+    rgba(var(--surface-rgb), .1);
+  -webkit-backdrop-filter: blur(1.5px) saturate(200%) brightness(1.08); backdrop-filter: blur(1.5px) saturate(200%) brightness(1.08);
+  border: 1px solid rgba(var(--spec-rgb), .34);
+  box-shadow:
+    inset 0 1.5px 0 rgba(var(--spec-rgb), .9), inset 0 -1px 0 rgba(var(--spec-rgb), .4),
+    inset 1px 0 0 rgba(var(--spec-rgb), .22), inset -1px 0 0 rgba(var(--spec-rgb), .16),
+    inset 0 12px 16px -12px rgba(var(--spec-rgb), .6),
+    inset 0 -16px 22px -16px var(--clr-glow),
+    inset 0 0 0 1px rgba(0, 0, 0, .06),
+    0 1px 1px rgba(0, 0, 0, .1), 0 18px 34px -18px var(--clr-glow);
+}
+/* (the dock is fixed; the rest hold their gloss) */
+.co-reading :is(.cx-kc, .co-pncard, .cx-w-next, .co-lhead .mv-chips > *) { position: relative; }
+/* on the lesson sheet there's little behind a tile, so a tile carries its own wash of the course's colour */
+.co-reading .co-notes :is(.cx-kc, .mv-chips > *) { background:
+    radial-gradient(70% 46% at 30% 0%, rgba(var(--spec-rgb), .4), transparent 70%),
+    linear-gradient(180deg, rgba(var(--spec-rgb), .14), rgba(var(--spec-rgb), 0) 55%),
+    linear-gradient(135deg, color-mix(in srgb, var(--la) 16%, transparent), color-mix(in srgb, var(--lb) 12%, transparent)); }
+.co-reading .cx-kc:hover { transform: translateY(-3px) scale(1.015); }
+/* the droplet's gloss: a bright arc along the top edge */
+.co-reading :is(.cx-kc, .cx-w-next, .co-pncard)::after {
+  content: ""; position: absolute; z-index: 2; inset: 1px 12% auto; height: 40%; border-radius: 999px / 60%; pointer-events: none;
+  background: linear-gradient(180deg, rgba(var(--spec-rgb), .55), rgba(var(--spec-rgb), 0));
+  opacity: .55; mix-blend-mode: screen;
+}
+/* the dock over text: clear, but dimmed enough that its labels always read */
+.co-reading .cx-dock { --clr-glow: color-mix(in srgb, var(--la) 55%, transparent); background:
+    radial-gradient(70% 60% at 30% 0%, rgba(var(--spec-rgb), .22), transparent 70%),
+    linear-gradient(180deg, rgba(var(--spec-rgb), .1), rgba(var(--spec-rgb), 0) 60%),
+    rgba(var(--surface-rgb), .62);
+  -webkit-backdrop-filter: blur(6px) saturate(220%) brightness(1.05); backdrop-filter: blur(6px) saturate(220%) brightness(1.05); }
+.co-reading .cx-dock > * { text-shadow: 0 1px 6px rgba(var(--surface-rgb), .9); }
+/* Chromium: the lens. Everything behind clear glass is drawn slightly magnified, as through a drop of water */
+.lg-lens .co-reading :is(.cx-kc, .co-pncard, .cx-w-next) { -webkit-backdrop-filter: url(#lg-lens) saturate(200%) brightness(1.08); backdrop-filter: url(#lg-lens) saturate(200%) brightness(1.08); }
+.lg-lens .co-reading .cx-dock { -webkit-backdrop-filter: url(#lg-lens) blur(5px) saturate(220%); backdrop-filter: url(#lg-lens) blur(5px) saturate(220%); }
+
+/* ----- frosted glass: blurred, with a fine grain ----- */
+.co-reading :is(.cx-tree, .cx-widget:not(.cx-w-next)) {
+  background: var(--grain), linear-gradient(155deg, rgba(var(--spec-rgb), .1), rgba(var(--spec-rgb), .02) 45%, rgba(var(--spec-rgb), .05)), rgba(var(--surface-rgb), .34);
+  background-size: 160px 160px, auto, auto; background-blend-mode: overlay, normal, normal;
+  -webkit-backdrop-filter: blur(30px) saturate(170%); backdrop-filter: blur(30px) saturate(170%);
+}
+:root[data-theme="light"] .co-reading :is(.cx-tree, .cx-widget:not(.cx-w-next)) { background: var(--grain), linear-gradient(155deg, rgba(var(--spec-rgb), .75), rgba(var(--spec-rgb), .45) 50%, rgba(var(--spec-rgb), .55)); background-size: 160px 160px, auto; background-blend-mode: soft-light, normal; }
+
+/* ----- blur glass: the deepest blur, tinted by the course ----- */
+.co.co-reading .cx-lbar {
+  background: linear-gradient(180deg, rgba(var(--spec-rgb), .12), rgba(var(--spec-rgb), 0) 60%), linear-gradient(90deg, color-mix(in srgb, var(--la) 14%, transparent), color-mix(in srgb, var(--lb) 10%, transparent)), rgba(var(--surface-rgb), .78);
+  -webkit-backdrop-filter: blur(44px) saturate(210%); backdrop-filter: blur(44px) saturate(210%);
+}
+
+/* light mode first: the rims are white light, the shadows tinted by the course rather than grey */
+:root[data-theme="light"] .co.co-reading { --lg-shadow: 0 1px 2px rgba(22, 22, 48, .06), 0 24px 50px -26px color-mix(in srgb, var(--la) 45%, rgba(22, 22, 48, .4)); --lg-spec: #fff; }
+:root[data-theme="light"] .co-reading :is(.cx-kc, .co-pncard, .cx-w-next, .co-lhead .mv-chips > *) { border-color: rgba(var(--spec-rgb), .95); box-shadow:
+    inset 0 1.5px 0 #fff, inset 0 -1px 0 rgba(var(--spec-rgb), .8), inset 0 12px 16px -12px #fff,
+    inset 0 -16px 22px -16px var(--clr-glow), 0 0 0 1px rgba(22, 22, 48, .06),
+    0 1px 2px rgba(22, 22, 48, .08), 0 18px 34px -16px var(--clr-glow); }
+
+/* ----- accordions: Sources (and anything else that folds) ----- */
+.cx-acc > summary { display: flex; align-items: center; gap: 10px; padding: 6px 0; cursor: pointer; list-style: none; font-size: 18px; font-weight: 650; letter-spacing: -.01em; color: var(--fg); }
+.cx-acc > summary::-webkit-details-marker { display: none; }
+.cx-acc > summary .co-ic { width: 18px; height: 18px; color: var(--la, var(--a)); }
+.cx-acc > summary .cx-chev { margin-left: auto; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: rgba(var(--ink-rgb), .07); transition: transform .25s; }
+.cx-acc[open] > summary .cx-chev { transform: rotate(90deg); }
+.cx-acc > .cx-accbody { padding-top: 14px; }
+.cx-acc .co-refs h3 { font-size: 15px; }
+
+/* ----- folders: a course's modules, each a folder that opens to its lessons ----- */
+.cx-folders { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); gap: 18px 16px; padding-top: 10px; }
+.cx-folder { min-width: 0; border-radius: 24px; }
+.cx-folder[open] { grid-column: 1 / -1; }   /* an open folder takes the row, its lessons laid out beneath it */
+.cx-folder > summary { position: relative; display: block; height: 150px; cursor: pointer; list-style: none; border-radius: 24px; }
+.cx-folder[open] > summary { max-width: 380px; }
+.cx-folder > summary::-webkit-details-marker { display: none; }
+.cx-folder > summary:focus-visible { outline: 2px solid var(--fg); outline-offset: 4px; }
+/* the back: vivid, swirling colour in the course's palette, with a tab on the right */
+.cx-fback { position: absolute; inset: 16px 0 0; border-radius: 22px;
+  background: radial-gradient(70% 110% at 12% 18%, var(--a), transparent 72%), radial-gradient(60% 110% at 88% 8%, var(--b), transparent 72%), radial-gradient(55% 90% at 55% 100%, #4641ff, transparent 72%), linear-gradient(120deg, var(--a), var(--b));
+  box-shadow: inset 0 1px 0 rgba(var(--spec-rgb), .45), 0 18px 32px -18px color-mix(in srgb, var(--a) 75%, transparent); }
+.cx-fback::before { content: ""; position: absolute; right: 0; top: -16px; width: 48%; height: 34px; border-radius: 14px 22px 0 0; background: linear-gradient(90deg, color-mix(in srgb, var(--a) 35%, var(--b)), var(--b)); box-shadow: inset 0 1px 0 rgba(var(--spec-rgb), .45); }
+.cx-fback::after { content: ""; position: absolute; right: calc(48% - 12px); top: -16px; width: 26px; height: 18px; background: color-mix(in srgb, var(--a) 35%, var(--b)); clip-path: polygon(100% 0, 100% 100%, 0 100%); }
+/* a sheet of paper inside, peeking out, which lifts as you hover or open the folder */
+.cx-fpaper { position: absolute; left: 9%; right: 9%; top: 24px; height: 46px; border-radius: 10px; background: repeating-linear-gradient(180deg, transparent 0 9px, rgba(22, 22, 48, .08) 9px 10px), linear-gradient(#fff, #f1f1f6); box-shadow: 0 -2px 8px rgba(0, 0, 0, .14); transition: transform .35s cubic-bezier(.2, .9, .3, 1.3); }
+/* the front: frosted glass over the colour, with the module's name and progress */
+.cx-ffront { position: absolute; inset: 52px 0 0; z-index: 1; display: flex; flex-direction: column; justify-content: space-between; gap: 6px; padding: 14px 14px 12px 16px; border-radius: 22px;
+  background: var(--grain), linear-gradient(180deg, rgba(var(--spec-rgb), .14), rgba(var(--spec-rgb), .02)), rgba(var(--surface-rgb), .58);
+  background-size: 160px 160px, auto, auto; background-blend-mode: overlay, normal, normal;
+  -webkit-backdrop-filter: blur(18px) saturate(170%); backdrop-filter: blur(18px) saturate(170%);
+  border: 1px solid rgba(var(--spec-rgb), .3);
+  box-shadow: inset 0 1.5px 0 rgba(var(--spec-rgb), .6), inset 0 -12px 22px -16px rgba(var(--spec-rgb), .35), 0 10px 24px -14px rgba(0, 0, 0, .55);
+  transition: transform .35s cubic-bezier(.2, .9, .3, 1.1), box-shadow .35s; }
+:root[data-theme="light"] .cx-ffront { background: var(--grain), linear-gradient(180deg, rgba(var(--spec-rgb), .8), rgba(var(--spec-rgb), .58)); background-size: 160px 160px, auto; background-blend-mode: soft-light, normal; border-color: #fff; box-shadow: inset 0 1.5px 0 #fff, 0 12px 26px -16px rgba(22, 22, 48, .35); }
+.cx-fhead { display: flex; align-items: baseline; gap: 8px; min-width: 0; }
+.cx-fhead b { font-size: 15.5px; line-height: 1.25; letter-spacing: -.01em; color: var(--fg); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.cx-fhead .cx-n { flex: none; font: 600 12px var(--mono); color: var(--mute); }
+.cx-fmeta { display: flex; align-items: center; gap: 10px; }
+.cx-fmeta small { flex: none; font-size: 12.5px; color: var(--mute); }
+.cx-fbar { flex: 1; height: 6px; border-radius: 99px; background: rgba(var(--ink-rgb), .14); overflow: hidden; }
+.cx-fbar i { display: block; width: calc(var(--p) * 100%); height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--a), var(--b)); }
+.cx-fbtn { flex: none; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--invert-bg); color: var(--invert-fg); box-shadow: inset 0 1px 0 rgba(var(--spec-rgb), .3), 0 6px 14px -6px rgba(0, 0, 0, .6); transition: transform .3s; }
+.cx-fbtn .co-ic { width: 16px; height: 16px; }
+.cx-folder > summary:hover .cx-fpaper { transform: translateY(-10px); }
+.cx-folder > summary:hover .cx-ffront { transform: translateY(3px); }
+.cx-folder[open] > summary .cx-fpaper { transform: translateY(-16px) rotate(-1.5deg); }
+.cx-folder[open] > summary .cx-ffront { transform: translateY(5px); }
+.cx-folder[open] > summary .cx-fbtn { transform: rotate(90deg); }
+.cx-folder.full .cx-fbar i { background: var(--s-mastered); }
+.cx-folder > .cx-lgrid { margin: 14px 0 6px; padding: 14px; border-radius: 22px; background: rgba(var(--ink-rgb), .05); border: 1px solid rgba(var(--ink-rgb), .1); }
+:root[data-theme="light"] .cx-folder > .cx-lgrid { background: rgba(var(--spec-rgb), .75); border-color: #fff; box-shadow: 0 12px 30px -20px rgba(22, 22, 48, .3); }
+
+/* the syllabus and other course pages: the same glass, lighter, over the same light */
+.co:not(.co-reading) :is(.cx-ucard, .cx-panel, .co-card, .cx-sylhead) { border-color: rgba(var(--ink-rgb), .14); background: var(--grain), linear-gradient(160deg, rgba(var(--spec-rgb), .07), rgba(var(--spec-rgb), .01)), rgba(var(--surface-rgb), .5); background-size: 160px 160px, auto, auto; background-blend-mode: overlay, normal, normal; box-shadow: inset 0 1px 0 rgba(var(--spec-rgb), .18); }
+:root[data-theme="light"] .co:not(.co-reading) :is(.cx-ucard, .cx-panel, .co-card, .cx-sylhead) { border-color: #fff; background: var(--grain), linear-gradient(160deg, rgba(var(--spec-rgb), .92), rgba(var(--spec-rgb), .72)); background-size: 160px 160px, auto; background-blend-mode: soft-light, normal; box-shadow: inset 0 1px 0 #fff, 0 18px 40px -28px color-mix(in srgb, var(--la) 40%, rgba(22, 22, 48, .4)); }
+.cx-ucard { border-radius: 24px; }
+.cx-ucard > summary { padding: 18px 20px; }
+.cx-ucard .cx-chev .co-ic, .cx-ucard .cx-chev { transition: transform .25s; }
+.cx-ucard[open] > summary .cx-chev { transform: rotate(90deg); }
+.cx-ucontent { padding: 4px 18px 18px; }
+
+@media (max-width: 760px) {
+  .cx-folder > summary, .cx-folder[open] > summary { height: 136px; max-width: none; }
+  .cx-ffront { inset: 44px 0 0; }
+  .cx-ucontent { padding: 2px 10px 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .co-reading .co-read .co-notes::before { animation: none; }
+  .cx-fpaper, .cx-ffront, .cx-fbtn, .cx-acc > summary .cx-chev { transition: none; }
+}
+/* the learner's settings beat every glass rule above, whatever its specificity (lens, light theme, toolbar) */
+@media (prefers-reduced-transparency: reduce) {
+  .co::before, .co::after { display: none; }
+  .co-reading :is(.cx-kc, .co-pncard, .cx-w-next, .cx-dock, .cx-lbar, .cx-tree, .cx-widget, .co-read .co-notes), .cx-ffront { background: rgb(var(--surface-rgb)) !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+}
+:root[data-a-contrast="high"] .co::before, :root[data-a-contrast="high"] .co::after { display: none; }
+:root[data-a-contrast="high"] .co-reading :is(.cx-kc, .co-pncard, .cx-w-next, .cx-dock, .cx-lbar, .cx-tree, .cx-widget, .co-read .co-notes), :root[data-a-contrast="high"] .cx-ffront { background: var(--bg) !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; border-color: var(--fg); }
+.co-reading .cx-tf input::placeholder { color: var(--mute); opacity: 1; }
+
+/* touch: each topic dot sits in its own 44px square, side by side, so a tap never lands on the neighbour */
+@media (pointer: coarse) {
+  .cx-w-dots { gap: 0; }
+  .cx-w-dots a { margin: 15px; }
+  .cx-w-dots a::before { inset: -15px; }
+  .cx-w-dots a:hover { transform: none; }
+}
+/* narrow phones: the toolbar keeps every control on screen (the step bar under it already shows where you are) */
+@media (max-width: 420px) { .cx-lbar .cx-pn small { display: none; } }
+@media (max-width: 350px) { .cx-lbar [data-focus] { display: none; } }

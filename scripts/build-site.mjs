@@ -41,6 +41,7 @@ export const EXCLUDE = {
     "scripts": "operational and deployment scripts",
     "supabase": "database migrations and server function source",
     "tests": "automated tests",
+    "labs": "design research prototypes (the Liquid Glass material lab), opened locally and never published",
     "package.json": "development tooling",
     "package-lock.json": "development tooling",
   },
