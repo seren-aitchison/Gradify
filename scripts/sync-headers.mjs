@@ -159,7 +159,8 @@ export function withSubHeader(html, items, opts) {
   const bar = html.match(/<header class="sub-nav glass">[\s\S]*?<\/header>/);
   if (bar) return html.replace(bar[0], head);
   // a page without one (the LifeOS tour): the header goes above the page, in the same width, with its stylesheet
-  let out = html.replace(/<main class="wrap">/, `<div class="wrap">\n    ${head}\n  </div>\n  <main class="wrap">`);
+  // (matched by pattern: skipTarget may have given the main an id; the tag itself is kept as it is)
+  let out = html.replace(/<main\b[^>]*class="wrap"[^>]*>/, (main) => `<div class="wrap">\n    ${head}\n  </div>\n  ${main}`);
   if (!/styles\/subsite\.css/.test(out)) out = out.replace(/(<link rel="stylesheet" href="([^"]*?)styles\/components\.css">)/, `$1\n  <link rel="stylesheet" href="$2styles/subsite.css">`);
   return out;
 }

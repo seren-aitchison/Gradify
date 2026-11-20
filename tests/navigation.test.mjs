@@ -65,3 +65,17 @@ test("every hub page and every page of every site has its one footer", async () 
     assert.match(html, /href="\/privacy\.html">Privacy<\/a>/, `${file}: links to the privacy notice`);
   }
 });
+
+test("every site page with a static title has exactly one h1 (course pages draw theirs)", async () => {
+  const { sitePages } = await import("../scripts/sync-headers.mjs");
+  const { readdir } = await import("node:fs/promises");
+  for (const { file, opts } of await sitePages()) {
+    if (opts.course || file.endsWith("/index.html")) continue;   // the course engine and the site home write their headings
+    const html = await read(file);
+    assert.equal((html.match(/<h1\b/g) || []).length, 1, `${file}: one h1`);
+  }
+  // the templates new sites are made from keep the same headings
+  for (const f of (await readdir(new URL("../kit/templates/subsite/", import.meta.url))).filter((f) => /^(map|lifeos|3d)\.html$/.test(f))) {
+    assert.equal(((await read(`kit/templates/subsite/${f}`)).match(/<h1\b/g) || []).length, 1, `template ${f}: one h1`);
+  }
+});

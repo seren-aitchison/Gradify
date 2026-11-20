@@ -1118,7 +1118,7 @@ async function renderGoalForm(arg) {
       </fieldset>
       <div class="wide gf-part" data-part="tracked">
         <label><span>What it measures</span><select name="metric">${Object.entries(METRICS).map(([k, d]) => `<option value="${k}" ${`${m.source}:${m.metric}` === k ? "selected" : ""}>${d.label}</option>`).join("")}</select></label>
-        <label data-needs="course"><span>Course</span><select name="course">${Object.keys(LIVE_COURSES).map((c) => `<option value="${c}" ${m.course === c ? "selected" : ""}>${esc(courseName(c))}</option>`).join("")}</select></label>
+        <label data-needs="course"><span>Course</span><select name="course">${Object.keys(COURSES).filter((c) => LIVE_COURSES[c] || c === m.course).map((c) => `<option value="${c}" ${m.course === c ? "selected" : ""}>${esc(courseName(c))}</option>`).join("")}</select></label>
         <label data-needs="site"><span>Site (optional)</span><select name="msite"><option value="">Any Gradify site</option>${sites.map((x) => `<option ${m.site === x.n ? "selected" : ""}>${esc(x.n)}</option>`).join("")}</select></label>
         <label><span>Counted</span><select name="period">${PERIODS.map(([k, l]) => `<option value="${k}" ${(m.period || "since_start") === k ? "selected" : ""}>${l}</option>`).join("")}</select></label>
         <label><span>Target</span><input type="number" name="ttarget" min="1" step="1" value="${g?.metric ? esc(g.target) : ""}" placeholder="e.g. 20"></label>
