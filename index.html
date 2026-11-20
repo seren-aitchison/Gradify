@@ -33,9 +33,15 @@
   <link rel="stylesheet" href="assets/styles.css">
   <script type="module" src="assets/app.js"></script>
   <script type="module" src="assets/proof.js"></script>
-  <script type="module" src="kit/lifeos/lifeos.js"></script>
   <script type="module" src="assets/nav.js"></script>
-  <script type="module" src="kit/lifeos/os.js"></script>
+  <!-- the LifeOS tour (#lifeos) is hidden on the homepage: its scripts (the studio, planner, calendar, globe, 3D island)
+       only load when it's shown, so the homepage doesn't spend a second of main thread on something nobody sees -->
+  <script type="module">
+    const os = document.getElementById("lifeos");
+    const go = () => { import("./kit/lifeos/lifeos.js"); import("./kit/lifeos/os.js"); };
+    if (os && !os.hidden) go();
+    else if (os) new MutationObserver((_, mo) => { if (!os.hidden) { mo.disconnect(); go(); } }).observe(os, { attributes: true, attributeFilter: ["hidden"] });
+  </script>
   <script type="module" src="assets/features.js"></script>
   <script type="module" src="assets/pro.js"></script>
   <script type="module">
@@ -81,7 +87,7 @@
       <figure class="hero-shot">
         <div class="shot-frame">
           <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span>getgradify.com · Study pack</span></div>
-          <img src="assets/screens/notes-deck.jpg" width="1376" height="860" alt="A Gradify study pack made from notes on the cardiac cycle: 19 flashcards, 100% checked against the notes, ready to revise." fetchpriority="high">
+          <picture><source type="image/webp" srcset="assets/screens/notes-deck.webp"><img src="assets/screens/notes-deck.jpg" width="1376" height="860" alt="A Gradify study pack made from notes on the cardiac cycle: 19 flashcards, 100% checked against the notes, ready to revise." fetchpriority="high"></picture>
         </div>
         <figcaption>A real study pack, made from the sample notes in the app.</figcaption>
       </figure>
@@ -100,19 +106,19 @@
           <span class="how-n">1</span>
           <span class="how-g3d" data-g3d="upload notes file" data-g3d-size="60"></span><h3>Bring your notes</h3>
           <p>Drop in a PDF or paste your notes. One lecture or topic at a time works best. No account needed to try it.</p>
-          <img src="assets/screens/notes-upload.jpg" width="1376" height="860" loading="lazy" alt="The Bring your notes screen, with notes on the cardiac cycle pasted in and a Make my study pack button.">
+          <picture><source type="image/webp" srcset="assets/screens/notes-upload.webp"><img src="assets/screens/notes-upload.jpg" width="1376" height="860" loading="lazy" alt="The Bring your notes screen, with notes on the cardiac cycle pasted in and a Make my study pack button."></picture>
         </li>
         <li class="how-step glass">
           <span class="how-n">2</span>
           <span class="how-g3d" data-g3d="layers cards check" data-g3d-size="60"></span><h3>Get checked flashcards</h3>
           <p>Every card is matched to the line in your notes it came from. Anything that doesn't match is flagged so you can fix it.</p>
-          <img src="assets/screens/notes-deck.jpg" width="1376" height="860" loading="lazy" alt="A study pack of 19 flashcards, 100% checked against the notes.">
+          <picture><source type="image/webp" srcset="assets/screens/notes-deck.webp"><img src="assets/screens/notes-deck.jpg" width="1376" height="860" loading="lazy" alt="A study pack of 19 flashcards, 100% checked against the notes."></picture>
         </li>
         <li class="how-step glass">
           <span class="how-n">3</span>
           <span class="how-g3d" data-g3d="clock calendar timer" data-g3d-size="60"></span><h3>Revise at the right time</h3>
           <p>Rate how well you knew each card. Gradify brings it back just before you'd forget, paced to your exam date.</p>
-          <img src="assets/screens/notes-study.jpg" width="1376" height="860" loading="lazy" alt="A flashcard asking: What is the cardiac cycle? with I know it, Not sure and No idea buttons.">
+          <picture><source type="image/webp" srcset="assets/screens/notes-study.webp"><img src="assets/screens/notes-study.jpg" width="1376" height="860" loading="lazy" alt="A flashcard asking: What is the cardiac cycle? with I know it, Not sure and No idea buttons."></picture>
         </li>
       </ol>
       <p class="how-cta"><a class="btn btn-primary lg" href="app.html"><span>Try it with your notes</span> <span aria-hidden="true">→</span></a></p>

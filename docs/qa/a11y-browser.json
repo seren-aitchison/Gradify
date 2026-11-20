@@ -1,14 +1,28 @@
 {
- "date": "2026-11-05",
- "base": "http://localhost:8090",
+ "date": "2026-11-20",
+ "base": "http://localhost:8080",
  "results": {
   "UnderGradify": [
    {
     "url": "undergradify/",
     "contrast": {
-     "checked": 93,
-     "pass": 93,
+     "checked": 74,
+     "pass": 74,
      "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   },
+   {
+    "url": "undergradify/course/",
+    "contrast": {
+     "checked": 94,
+     "pass": 94,
+     "skipped": 0,
      "fails": []
     },
     "focus": {
@@ -22,9 +36,23 @@
    {
     "url": "postgradify/",
     "contrast": {
-     "checked": 90,
-     "pass": 90,
+     "checked": 76,
+     "pass": 76,
      "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   },
+   {
+    "url": "postgradify/course/",
+    "contrast": {
+     "checked": 93,
+     "pass": 93,
+     "skipped": 0,
      "fails": []
     },
     "focus": {
@@ -38,9 +66,23 @@
    {
     "url": "progradify/",
     "contrast": {
-     "checked": 105,
-     "pass": 105,
+     "checked": 84,
+     "pass": 84,
      "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   },
+   {
+    "url": "progradify/course/",
+    "contrast": {
+     "checked": 88,
+     "pass": 88,
+     "skipped": 0,
      "fails": []
     },
     "focus": {
@@ -54,9 +96,23 @@
    {
     "url": "edugradify/",
     "contrast": {
-     "checked": 97,
-     "pass": 97,
+     "checked": 82,
+     "pass": 82,
      "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   },
+   {
+    "url": "edugradify/course/",
+    "contrast": {
+     "checked": 95,
+     "pass": 95,
+     "skipped": 0,
      "fails": []
     },
     "focus": {
@@ -70,9 +126,23 @@
    {
     "url": "youthgradify/",
     "contrast": {
-     "checked": 87,
-     "pass": 87,
+     "checked": 72,
+     "pass": 72,
      "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   },
+   {
+    "url": "youthgradify/course/",
+    "contrast": {
+     "checked": 90,
+     "pass": 90,
+     "skipped": 0,
      "fails": []
     },
     "focus": {
@@ -86,9 +156,23 @@
    {
     "url": "juniorgradify/",
     "contrast": {
-     "checked": 85,
-     "pass": 85,
+     "checked": 72,
+     "pass": 72,
      "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   },
+   {
+    "url": "juniorgradify/course/",
+    "contrast": {
+     "checked": 104,
+     "pass": 104,
+     "skipped": 0,
      "fails": []
     },
     "focus": {
@@ -102,8 +186,8 @@
    {
     "url": "lawgradify/",
     "contrast": {
-     "checked": 87,
-     "pass": 87,
+     "checked": 75,
+     "pass": 75,
      "skipped": 1,
      "fails": []
     },
@@ -116,21 +200,10 @@
    {
     "url": "lawgradify/course/",
     "contrast": {
-     "checked": 90,
-     "pass": 88,
+     "checked": 156,
+     "pass": 156,
      "skipped": 0,
-     "fails": [
-      {
-       "text": "Hide path",
-       "ratio": 4.18,
-       "need": 4.5
-      },
-      {
-       "text": "level",
-       "ratio": 3.76,
-       "need": 4.5
-      }
-     ]
+     "fails": []
     },
     "focus": {
      "stops": 25,
@@ -143,9 +216,23 @@
    {
     "url": "businessgradify/",
     "contrast": {
-     "checked": 93,
-     "pass": 93,
+     "checked": 76,
+     "pass": 76,
      "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   },
+   {
+    "url": "businessgradify/course/",
+    "contrast": {
+     "checked": 104,
+     "pass": 104,
+     "skipped": 0,
      "fails": []
     },
     "focus": {
@@ -159,9 +246,23 @@
    {
     "url": "financegradify/",
     "contrast": {
-     "checked": 93,
-     "pass": 93,
+     "checked": 82,
+     "pass": 82,
      "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   },
+   {
+    "url": "financegradify/course/",
+    "contrast": {
+     "checked": 85,
+     "pass": 85,
+     "skipped": 0,
      "fails": []
     },
     "focus": {
@@ -175,9 +276,23 @@
    {
     "url": "investorgradify/",
     "contrast": {
-     "checked": 101,
-     "pass": 101,
+     "checked": 82,
+     "pass": 82,
      "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   },
+   {
+    "url": "investorgradify/course/",
+    "contrast": {
+     "checked": 106,
+     "pass": 106,
+     "skipped": 0,
      "fails": []
     },
     "focus": {
@@ -191,9 +306,23 @@
    {
     "url": "medgradify/",
     "contrast": {
-     "checked": 81,
-     "pass": 81,
+     "checked": 68,
+     "pass": 68,
      "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   },
+   {
+    "url": "medgradify/course/",
+    "contrast": {
+     "checked": 100,
+     "pass": 100,
+     "skipped": 0,
      "fails": []
     },
     "focus": {
@@ -207,9 +336,23 @@
    {
     "url": "dentalgradify/",
     "contrast": {
-     "checked": 81,
-     "pass": 81,
+     "checked": 70,
+     "pass": 70,
      "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   },
+   {
+    "url": "dentalgradify/course/",
+    "contrast": {
+     "checked": 100,
+     "pass": 100,
+     "skipped": 0,
      "fails": []
     },
     "focus": {
@@ -223,9 +366,23 @@
    {
     "url": "vetgradify/",
     "contrast": {
-     "checked": 81,
-     "pass": 81,
+     "checked": 70,
+     "pass": 70,
      "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   },
+   {
+    "url": "vetgradify/course/",
+    "contrast": {
+     "checked": 97,
+     "pass": 97,
+     "skipped": 0,
      "fails": []
     },
     "focus": {
@@ -239,8 +396,8 @@
    {
     "url": "nursegradify/",
     "contrast": {
-     "checked": 71,
-     "pass": 71,
+     "checked": 69,
+     "pass": 69,
      "skipped": 1,
      "fails": []
     },
@@ -253,21 +410,10 @@
    {
     "url": "nursegradify/course/",
     "contrast": {
-     "checked": 89,
-     "pass": 87,
+     "checked": 155,
+     "pass": 155,
      "skipped": 0,
-     "fails": [
-      {
-       "text": "Hide path",
-       "ratio": 4.3,
-       "need": 4.5
-      },
-      {
-       "text": "level",
-       "ratio": 3.76,
-       "need": 4.5
-      }
-     ]
+     "fails": []
     },
     "focus": {
      "stops": 25,
@@ -280,8 +426,8 @@
    {
     "url": "pharmagradify/",
     "contrast": {
-     "checked": 72,
-     "pass": 72,
+     "checked": 69,
+     "pass": 69,
      "skipped": 1,
      "fails": []
     },
@@ -294,26 +440,10 @@
    {
     "url": "pharmagradify/course/",
     "contrast": {
-     "checked": 88,
-     "pass": 85,
+     "checked": 152,
+     "pass": 152,
      "skipped": 0,
-     "fails": [
-      {
-       "text": "0 / 20 lessons",
-       "ratio": 4.2,
-       "need": 4.5
-      },
-      {
-       "text": "Hide path",
-       "ratio": 2.61,
-       "need": 4.5
-      },
-      {
-       "text": "level",
-       "ratio": 3.76,
-       "need": 4.5
-      }
-     ]
+     "fails": []
     },
     "focus": {
      "stops": 25,
@@ -326,9 +456,23 @@
    {
     "url": "healthgradify/",
     "contrast": {
-     "checked": 87,
-     "pass": 87,
+     "checked": 70,
+     "pass": 70,
      "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   },
+   {
+    "url": "healthgradify/course/",
+    "contrast": {
+     "checked": 102,
+     "pass": 102,
+     "skipped": 0,
      "fails": []
     },
     "focus": {
@@ -342,8 +486,8 @@
    {
     "url": "psychgradify/",
     "contrast": {
-     "checked": 73,
-     "pass": 73,
+     "checked": 69,
+     "pass": 69,
      "skipped": 1,
      "fails": []
     },
@@ -372,9 +516,23 @@
    {
     "url": "internshipgradify/",
     "contrast": {
-     "checked": 93,
-     "pass": 93,
+     "checked": 78,
+     "pass": 78,
      "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   },
+   {
+    "url": "internshipgradify/course/",
+    "contrast": {
+     "checked": 91,
+     "pass": 91,
+     "skipped": 0,
      "fails": []
     },
     "focus": {
@@ -388,9 +546,23 @@
    {
     "url": "engineergradify/",
     "contrast": {
-     "checked": 81,
-     "pass": 81,
+     "checked": 68,
+     "pass": 68,
      "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   },
+   {
+    "url": "engineergradify/course/",
+    "contrast": {
+     "checked": 112,
+     "pass": 112,
+     "skipped": 0,
      "fails": []
     },
     "focus": {
@@ -404,9 +576,23 @@
    {
     "url": "mathgradify/",
     "contrast": {
-     "checked": 85,
-     "pass": 85,
+     "checked": 68,
+     "pass": 68,
      "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   },
+   {
+    "url": "mathgradify/course/",
+    "contrast": {
+     "checked": 155,
+     "pass": 155,
+     "skipped": 0,
      "fails": []
     },
     "focus": {
@@ -420,8 +606,8 @@
    {
     "url": "scigradify/",
     "contrast": {
-     "checked": 80,
-     "pass": 80,
+     "checked": 78,
+     "pass": 78,
      "skipped": 1,
      "fails": []
     },
@@ -434,16 +620,10 @@
    {
     "url": "scigradify/physics/",
     "contrast": {
-     "checked": 81,
-     "pass": 80,
+     "checked": 162,
+     "pass": 162,
      "skipped": 0,
-     "fails": [
-      {
-       "text": "level",
-       "ratio": 3.76,
-       "need": 4.5
-      }
-     ]
+     "fails": []
     },
     "focus": {
      "stops": 25,
@@ -456,9 +636,23 @@
    {
     "url": "ecogradify/",
     "contrast": {
-     "checked": 79,
-     "pass": 79,
+     "checked": 68,
+     "pass": 68,
      "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   },
+   {
+    "url": "ecogradify/course/",
+    "contrast": {
+     "checked": 87,
+     "pass": 87,
+     "skipped": 0,
      "fails": []
     },
     "focus": {
@@ -472,8 +666,8 @@
    {
     "url": "socgradify/",
     "contrast": {
-     "checked": 83,
-     "pass": 83,
+     "checked": 72,
+     "pass": 72,
      "skipped": 1,
      "fails": []
     },
@@ -486,8 +680,38 @@
    {
     "url": "socgradify/course/",
     "contrast": {
-     "checked": 130,
-     "pass": 130,
+     "checked": 131,
+     "pass": 131,
+     "skipped": 0,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   }
+  ],
+  "HistoryGradify": [
+   {
+    "url": "historygradify/",
+    "contrast": {
+     "checked": 76,
+     "pass": 76,
+     "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   },
+   {
+    "url": "historygradify/course/",
+    "contrast": {
+     "checked": 86,
+     "pass": 86,
      "skipped": 0,
      "fails": []
     },
@@ -502,9 +726,23 @@
    {
     "url": "litgradify/",
     "contrast": {
-     "checked": 81,
-     "pass": 81,
+     "checked": 70,
+     "pass": 70,
      "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   },
+   {
+    "url": "litgradify/course/",
+    "contrast": {
+     "checked": 95,
+     "pass": 95,
+     "skipped": 0,
      "fails": []
     },
     "focus": {
@@ -518,9 +756,23 @@
    {
     "url": "languagegradify/",
     "contrast": {
-     "checked": 89,
-     "pass": 89,
+     "checked": 69,
+     "pass": 69,
      "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   },
+   {
+    "url": "languagegradify/course/",
+    "contrast": {
+     "checked": 96,
+     "pass": 96,
+     "skipped": 0,
      "fails": []
     },
     "focus": {
@@ -534,9 +786,23 @@
    {
     "url": "artgradify/",
     "contrast": {
+     "checked": 70,
+     "pass": 70,
+     "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   },
+   {
+    "url": "artgradify/course/",
+    "contrast": {
      "checked": 85,
      "pass": 85,
-     "skipped": 1,
+     "skipped": 0,
      "fails": []
     },
     "focus": {
@@ -550,9 +816,23 @@
    {
     "url": "musicgradify/",
     "contrast": {
-     "checked": 85,
-     "pass": 85,
+     "checked": 72,
+     "pass": 72,
      "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   },
+   {
+    "url": "musicgradify/course/",
+    "contrast": {
+     "checked": 105,
+     "pass": 105,
+     "skipped": 0,
      "fails": []
     },
     "focus": {
@@ -566,9 +846,23 @@
    {
     "url": "sportgradify/",
     "contrast": {
-     "checked": 83,
-     "pass": 83,
+     "checked": 71,
+     "pass": 71,
      "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   },
+   {
+    "url": "sportgradify/course/",
+    "contrast": {
+     "checked": 99,
+     "pass": 99,
+     "skipped": 0,
      "fails": []
     },
     "focus": {
@@ -580,16 +874,10 @@
    {
     "url": "sportgradify/body.html",
     "contrast": {
-     "checked": 63,
-     "pass": 62,
+     "checked": 73,
+     "pass": 73,
      "skipped": 0,
-     "fails": [
-      {
-       "text": "Sport",
-       "ratio": 3.66,
-       "need": 4.5
-      }
-     ]
+     "fails": []
     },
     "focus": {
      "stops": 25,
@@ -602,9 +890,53 @@
    {
     "url": "creategradify/",
     "contrast": {
-     "checked": 101,
-     "pass": 101,
+     "checked": 79,
+     "pass": 79,
      "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   },
+   {
+    "url": "creategradify/course/",
+    "contrast": {
+     "checked": 96,
+     "pass": 96,
+     "skipped": 0,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   }
+  ],
+  "TechGradify · ForgeLab": [
+   {
+    "url": "techgradify/",
+    "contrast": {
+     "checked": 76,
+     "pass": 76,
+     "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   },
+   {
+    "url": "techgradify/course/",
+    "contrast": {
+     "checked": 102,
+     "pass": 102,
+     "skipped": 0,
      "fails": []
     },
     "focus": {

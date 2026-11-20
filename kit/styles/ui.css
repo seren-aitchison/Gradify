@@ -40,7 +40,7 @@ html.gx-lock { overflow: hidden; }
 .gx-save[data-tone="warn"] { color: var(--fg); border-color: rgba(251, 191, 36, .5); background: rgba(251, 191, 36, .1); }
 .gx-save[data-tone="warn"] .gx-ic { color: var(--gx-warn); }
 .gx-save.quiet { border-color: transparent; background: none; }
-.gx-save.quiet span { opacity: .75; }
+.gx-save.quiet span { opacity: 1; }
 @keyframes gx-pulse { 50% { opacity: .35; } }
 
 /* ---------- modals and drawers ---------- */
