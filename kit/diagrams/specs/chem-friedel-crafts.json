@@ -1,0 +1,308 @@
+{
+ "id": "chem-friedel-crafts",
+ "renderer": "mechanism",
+ "course": "chemistry",
+ "lesson": "Aromatic compounds",
+ "title": "Friedel–Crafts acylation of benzene",
+ "caption": "AlCl₃ generates the acylium ion CH₃CO⁺ from ethanoyl chloride. The delocalised π electrons attack it, breaking aromaticity in the arenium ion; AlCl₄⁻ removes the proton from the sp³ carbon, restoring the ring and regenerating AlCl₃. The product is phenylethanone.",
+ "alt": "Three stages: benzene's ring attacking the acylium ion; AlCl₄⁻ removing a proton from the arenium ion; phenylethanone, HCl and AlCl₃.",
+ "description": [
+  "Stage 1: a curly arrow from the ring's π electrons to the positive carbon of the acylium ion, CH₃C⁺=O.",
+  "Stage 2: the arenium ion with a horseshoe; a curly arrow from an Al–Cl bond of AlCl₄⁻ to the ring hydrogen, and one from the C–H bond back into the ring.",
+  "Stage 3: phenylethanone, HCl and AlCl₃ (the catalyst is regenerated)."
+ ],
+ "stages": [
+  {
+   "smiles": "[C:1]1([H:10])=[CH:2][CH:3]=[CH:4][CH:5]=[CH:6]1.[CH3:20][C+:21]=[O:22].[Cl:30][Al-:31]([Cl:32])([Cl:33])[Cl:34]",
+   "xy": {
+    "1": [
+     0,
+     1
+    ],
+    "2": [
+     0.87,
+     0.5
+    ],
+    "3": [
+     0.87,
+     -0.5
+    ],
+    "4": [
+     0,
+     -1
+    ],
+    "5": [
+     -0.87,
+     -0.5
+    ],
+    "6": [
+     -0.87,
+     0.5
+    ],
+    "10": [
+     -0.6,
+     1.85
+    ],
+    "21": [
+     1.6,
+     2.4
+    ],
+    "20": [
+     2.7,
+     2.4
+    ],
+    "22": [
+     1.0,
+     3.4
+    ],
+    "30": [
+     -2.4,
+     2.2
+    ],
+    "31": [
+     -3.4,
+     2.2
+    ],
+    "32": [
+     -3.4,
+     3.3
+    ],
+    "33": [
+     -3.4,
+     1.1
+    ],
+    "34": [
+     -4.5,
+     2.2
+    ]
+   },
+   "label": "benzene + CH₃CO⁺",
+   "arrows": [
+    {
+     "from": {
+      "bond": [
+       1,
+       2
+      ]
+     },
+     "to": {
+      "bond": [
+       1,
+       21
+      ]
+     },
+     "toward": 21,
+     "bend": -0.7
+    }
+   ],
+   "ring": {
+    "atoms": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "style": "circle"
+   }
+  },
+  {
+   "smiles": "[C:1]1([H:10])([C:21](=[O:22])[CH3:20])[CH+:2][CH:3]=[CH:4][CH:5]=[CH:6]1.[Cl:30][Al-:31]([Cl:32])([Cl:33])[Cl:34]",
+   "xy": {
+    "1": [
+     0,
+     1
+    ],
+    "2": [
+     0.87,
+     0.5
+    ],
+    "3": [
+     0.87,
+     -0.5
+    ],
+    "4": [
+     0,
+     -1
+    ],
+    "5": [
+     -0.87,
+     -0.5
+    ],
+    "6": [
+     -0.87,
+     0.5
+    ],
+    "10": [
+     -0.95,
+     1.8
+    ],
+    "21": [
+     0.6,
+     2.0
+    ],
+    "22": [
+     0.1,
+     3.0
+    ],
+    "20": [
+     1.75,
+     2.3
+    ],
+    "30": [
+     -2.4,
+     2.2
+    ],
+    "31": [
+     -3.4,
+     2.2
+    ],
+    "32": [
+     -3.4,
+     3.3
+    ],
+    "33": [
+     -3.4,
+     1.1
+    ],
+    "34": [
+     -4.5,
+     2.2
+    ]
+   },
+   "label": "arenium ion",
+   "arrows": [
+    {
+     "from": {
+      "bond": [
+       31,
+       30
+      ]
+     },
+     "to": {
+      "bond": [
+       30,
+       10
+      ]
+     },
+     "toward": 10,
+     "bend": -0.5
+    },
+    {
+     "from": {
+      "bond": [
+       1,
+       10
+      ]
+     },
+     "to": {
+      "bond": [
+       1,
+       2
+      ]
+     },
+     "bend": -0.8
+    }
+   ],
+   "ring": {
+    "atoms": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "style": "horseshoe",
+    "open": 1
+   }
+  },
+  {
+   "smiles": "[C:1]1([C:21](=[O:22])[CH3:20])=[CH:2][CH:3]=[CH:4][CH:5]=[CH:6]1.[H:10][Cl:30].[Al:31]([Cl:32])([Cl:33])[Cl:34]",
+   "xy": {
+    "1": [
+     0,
+     1
+    ],
+    "2": [
+     0.87,
+     0.5
+    ],
+    "3": [
+     0.87,
+     -0.5
+    ],
+    "4": [
+     0,
+     -1
+    ],
+    "5": [
+     -0.87,
+     -0.5
+    ],
+    "6": [
+     -0.87,
+     0.5
+    ],
+    "21": [
+     0,
+     2.1
+    ],
+    "22": [
+     -0.95,
+     2.65
+    ],
+    "20": [
+     0.95,
+     2.65
+    ],
+    "10": [
+     -2.8,
+     0.8
+    ],
+    "30": [
+     -2.8,
+     1.8
+    ],
+    "31": [
+     -4.0,
+     1.0
+    ],
+    "32": [
+     -4.0,
+     2.1
+    ],
+    "33": [
+     -5.1,
+     1.0
+    ],
+    "34": [
+     -4.0,
+     -0.1
+    ]
+   },
+   "label": "phenylethanone + HCl + AlCl₃",
+   "ring": {
+    "atoms": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "style": "circle"
+   }
+  }
+ ],
+ "steps": [
+  {
+   "label": "slow"
+  },
+  {
+   "label": "fast"
+  }
+ ],
+ "perRow": 2
+}

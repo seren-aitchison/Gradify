@@ -27,7 +27,7 @@ from rdkit.Geometry import Point3D
 RDLogger.DisableLog("rdApp.*")
 BOND = 46.0  # pixels per bond length
 PT = Chem.GetPeriodicTable()
-VALENCE_E = {1: 1, 5: 3, 6: 4, 7: 5, 8: 6, 9: 7, 15: 5, 16: 6, 17: 7, 35: 7, 53: 7, 11: 1, 3: 1, 12: 2}
+VALENCE_E = {1: 1, 5: 3, 6: 4, 7: 5, 8: 6, 9: 7, 13: 3, 15: 5, 16: 6, 17: 7, 35: 7, 53: 7, 11: 1, 3: 1, 12: 2}
 PALETTE = {6: (0.08, 0.09, 0.15), 8: (0.86, 0.15, 0.2), 7: (0.15, 0.39, 0.92), 35: (0.72, 0.25, 0.05), 17: (0.06, 0.55, 0.32),
            9: (0.06, 0.55, 0.32), 53: (0.49, 0.23, 0.82), 16: (0.79, 0.54, 0.02), 1: (0.36, 0.38, 0.46)}
 E_COLOUR = "var(--vx-e, #db2777)"
@@ -388,13 +388,14 @@ def compose(spec, mols, narrow=False):
                 x += gap
             for i in idxs:
                 inner, w, h, pos = drawn[i]
-                parts.append(stage_svg(stages[i], inner, w, h, pos, x, y0 + 34 + (hmax - h) / 2))
-                x += w
+                # a stage's slot is at least as wide as its label, so a long label never runs off the drawing
+                slot = max(w, len(stages[i].get("label", "")) * 7.4 + 10)
+                parts.append(stage_svg(stages[i], inner, w, h, pos, x + (slot - w) / 2, y0 + 34 + (hmax - h) / 2))
+                x += slot
                 if i < len(drawn) - 1 and i != idxs[-1]:
                     parts.append(step_arrow(spec, i, x + 10, cy, x + gap - 10, cy))
                     x += gap
-            last = stages[idxs[-1]].get("label", "")
-            W = max(W, x + 20 + max(0, len(last) * 7.6 / 2 - drawn[idxs[-1]][1] / 2))
+            W = max(W, x + 20)
             y0 += hmax + 34 + 44
         H = y0
     else:

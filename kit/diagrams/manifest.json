@@ -204,7 +204,7 @@
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
     "ok": true,
-    "detail": "782px wide, shown at 90% (labels 13.6px)"
+    "detail": "810px wide, shown at 87% (labels 13.1px)"
    }
   ]
  },
@@ -219,7 +219,12 @@
   ],
   "course": "chemistry",
   "lesson": "Electrophilic addition",
-  "also": [],
+  "also": [
+   {
+    "course": "chemistry",
+    "lesson": "Addition reactions"
+   }
+  ],
   "renderer": "mechanism",
   "status": "approved",
   "review": {
@@ -238,6 +243,11 @@
    {
     "name": "the lesson places this diagram (D: line)",
     "ok": true
+   },
+   {
+    "name": "also placed in chemistry: Addition reactions",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u13.js"
    },
    {
     "name": "has alt text, a caption and a step-by-step description",
@@ -281,7 +291,7 @@
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
     "ok": true,
-    "detail": "708px wide, shown at 100% (labels 15.0px)"
+    "detail": "760px wide, shown at 93% (labels 14.0px)"
    }
   ]
  },
@@ -397,7 +407,12 @@
   ],
   "course": "chemistry",
   "lesson": "SN2 mechanisms",
-  "also": [],
+  "also": [
+   {
+    "course": "chemistry",
+    "lesson": "Substitution reactions"
+   }
+  ],
   "renderer": "mechanism",
   "status": "approved",
   "review": {
@@ -416,6 +431,11 @@
    {
     "name": "the lesson places this diagram (D: line)",
     "ok": true
+   },
+   {
+    "name": "also placed in chemistry: Substitution reactions",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u13.js"
    },
    {
     "name": "has alt text, a caption and a step-by-step description",
@@ -791,7 +811,12 @@
   ],
   "course": "chemistry",
   "lesson": "E2 mechanisms",
-  "also": [],
+  "also": [
+   {
+    "course": "chemistry",
+    "lesson": "Elimination reactions"
+   }
+  ],
   "renderer": "mechanism",
   "status": "ai-reviewed",
   "review": {
@@ -810,6 +835,11 @@
    {
     "name": "the lesson places this diagram (D: line)",
     "ok": true
+   },
+   {
+    "name": "also placed in chemistry: Elimination reactions",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u13.js"
    },
    {
     "name": "has alt text, a caption and a step-by-step description",
@@ -930,7 +960,12 @@
   ],
   "course": "chemistry",
   "lesson": "Nucleophilic addition",
-  "also": [],
+  "also": [
+   {
+    "course": "chemistry",
+    "lesson": "Curly arrow notation"
+   }
+  ],
   "renderer": "mechanism",
   "status": "ai-reviewed",
   "review": {
@@ -949,6 +984,11 @@
    {
     "name": "the lesson places this diagram (D: line)",
     "ok": true
+   },
+   {
+    "name": "also placed in chemistry: Curly arrow notation",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u13.js"
    },
    {
     "name": "has alt text, a caption and a step-by-step description",
@@ -12000,6 +12040,829 @@
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
     "ok": true,
     "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "chem-acyl-chloride-water": {
+  "title": "Addition–elimination: ethanoyl chloride and water",
+  "caption": "Water's lone pair attacks the very δ+ carbonyl carbon (addition); the C=O re-forms and chloride leaves (elimination); chloride then removes a proton from the oxygen. The products are ethanoic acid and steamy fumes of HCl.",
+  "alt": "Four stages: water attacking ethanoyl chloride; the tetrahedral intermediate losing chloride; chloride removing a proton; ethanoic acid and HCl.",
+  "description": [
+   "Stage 1: arrows from water's lone pair to the carbonyl carbon and from C=O onto oxygen.",
+   "Stage 2: the intermediate with O⁻ and an O⁺H₂; arrows re-forming C=O and from C–Cl onto chlorine.",
+   "Stage 3: protonated ethanoic acid and Cl⁻; arrows from Cl⁻ to an O–H hydrogen and from that O–H bond onto oxygen.",
+   "Stage 4: ethanoic acid and hydrogen chloride."
+  ],
+  "course": "chemistry",
+  "lesson": "Acyl chlorides",
+  "also": [],
+  "renderer": "mechanism",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u14.js: Acyl chlorides"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "stage 1 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:1][C:2](=[O:3])[Cl:4].[OH:5][H:6]"
+   },
+   {
+    "name": "stage 2 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:1][C:2]([O-:3])([Cl:4])[OH+:5][H:6]"
+   },
+   {
+    "name": "stage 3 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:1][C:2](=[O:3])[OH+:5][H:6].[Cl-:4]"
+   },
+   {
+    "name": "stage 4 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:1][C:2](=[O:3])[OH:5].[Cl:4][H:6]"
+   },
+   {
+    "name": "stages 1→2 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 0→0, implicit H 4→4"
+   },
+   {
+    "name": "curly arrows on stage 1 give stage 2",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "stages 2→3 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 0→0, implicit H 4→4"
+   },
+   {
+    "name": "curly arrows on stage 2 give stage 3",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "stages 3→4 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 0→0, implicit H 4→4"
+   },
+   {
+    "name": "curly arrows on stage 3 give stage 4",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "732px wide, shown at 97% (labels 14.5px)"
+   }
+  ]
+ },
+ "chem-e1-mechanism": {
+  "title": "The E1 mechanism",
+  "caption": "In a polar solvent, 2-bromo-2-methylpropane first ionises (slow) to a tertiary carbocation and bromide. A water molecule then removes a proton from a carbon next to C⁺ (fast), and those electrons form the C=C of 2-methylpropene. Only the halogenoalkane is in the rate equation.",
+  "alt": "Three stages: the C–Br bond breaking to give a carbocation; water removing a neighbouring hydrogen while the C–H electrons form a double bond; 2-methylpropene and H₃O⁺.",
+  "description": [
+   "Stage 1: a curly arrow from the C–Br bond onto bromine.",
+   "Stage 2: the planar tertiary carbocation; a curly arrow from a lone pair on water to a hydrogen on the neighbouring carbon, and another from that C–H bond to the C–C bond.",
+   "Stage 3: 2-methylpropene, H₃O⁺ and Br⁻."
+  ],
+  "course": "chemistry",
+  "lesson": "E1 mechanisms",
+  "also": [],
+  "renderer": "mechanism",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u13.js: E1 mechanisms"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "stage 1 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:1][C:2]([CH3:3])([CH2:4][H:6])[Br:5].[OH2:7]"
+   },
+   {
+    "name": "stage 2 is a valid structure",
+    "ok": true,
+    "detail": "[Br-:5].[CH3:1][C+:2]([CH3:3])[CH2:4][H:6].[OH2:7]"
+   },
+   {
+    "name": "stage 3 is a valid structure",
+    "ok": true,
+    "detail": "[Br-:5].[CH3:1][C:2]([CH3:3])=[CH2:4].[H:6][OH2+:7]"
+   },
+   {
+    "name": "stages 1→2 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 0→0, implicit H 10→10"
+   },
+   {
+    "name": "curly arrows on stage 1 give stage 2",
+    "ok": true,
+    "detail": "1 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "stages 2→3 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 0→0, implicit H 10→10"
+   },
+   {
+    "name": "curly arrows on stage 2 give stage 3",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "626px wide, shown at 113% (labels 16.9px)"
+   }
+  ]
+ },
+ "chem-enolate-formation": {
+  "title": "Forming an enolate",
+  "caption": "A hydrogen on the carbon next to C=O (the α-carbon) is weakly acidic (pKa about 19 to 20 for propanone) because removing it gives an anion whose charge is shared with oxygen. A strong base removes it: the C–H electrons form a C=C and the C=O π electrons move onto oxygen.",
+  "alt": "Two stages: hydroxide removing an α-hydrogen of propanone with three curly arrows; the enolate ion with the charge on oxygen, and water.",
+  "description": [
+   "Stage 1: arrows from hydroxide to an α-hydrogen, from that C–H bond to the C–C bond, and from C=O onto oxygen.",
+   "Stage 2: the enolate, C=C with O⁻, and water."
+  ],
+  "course": "chemistry",
+  "lesson": "Enolates and enols",
+  "also": [],
+  "renderer": "mechanism",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u14.js: Enolates and enols"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "stage 1 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:1][C:2](=[O:3])[CH2:4][H:5].[OH-:6]"
+   },
+   {
+    "name": "stage 2 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:1][C:2]([O-:3])=[CH2:4].[H:5][OH:6]"
+   },
+   {
+    "name": "stages 1→2 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge -1→-1, implicit H 6→6"
+   },
+   {
+    "name": "curly arrows on stage 1 give stage 2",
+    "ok": true,
+    "detail": "3 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "596px wide, shown at 119% (labels 17.8px)"
+   }
+  ]
+ },
+ "chem-ester-hydrolysis": {
+  "title": "Alkaline hydrolysis of an ester",
+  "caption": "Hydroxide adds to the ester's carbonyl carbon to give a tetrahedral intermediate; the C=O re-forms and ethoxide leaves; ethoxide then takes the acid's proton. That last step is essentially irreversible, which is why alkaline hydrolysis goes to completion: ethanoate and ethanol.",
+  "alt": "Four stages: hydroxide adding to ethyl ethanoate; the tetrahedral intermediate expelling ethoxide; ethoxide deprotonating ethanoic acid; ethanoate and ethanol.",
+  "description": [
+   "Stage 1: curly arrows from hydroxide to the carbonyl carbon and from C=O onto oxygen.",
+   "Stage 2: the tetrahedral intermediate; arrows re-forming C=O and breaking the C–O bond to the ethoxy group.",
+   "Stage 3: ethanoic acid and ethoxide; arrows from ethoxide to the acid's hydrogen and from that O–H bond onto oxygen.",
+   "Stage 4: ethanoate and ethanol."
+  ],
+  "course": "chemistry",
+  "lesson": "Hydrolysis",
+  "also": [],
+  "renderer": "mechanism",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u13.js: Hydrolysis"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "stage 1 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:1][C:2](=[O:3])[O:4][CH2:5][CH3:6].[O-:7][H:8]"
+   },
+   {
+    "name": "stage 2 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:1][C:2]([O-:3])([O:4][CH2:5][CH3:6])[O:7][H:8]"
+   },
+   {
+    "name": "stage 3 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:1][C:2](=[O:3])[O:7][H:8].[O-:4][CH2:5][CH3:6]"
+   },
+   {
+    "name": "stage 4 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:1][C:2](=[O:3])[O-:7].[O:4]([CH2:5][CH3:6])[H:8]"
+   },
+   {
+    "name": "stages 1→2 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge -1→-1, implicit H 8→8"
+   },
+   {
+    "name": "curly arrows on stage 1 give stage 2",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "stages 2→3 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge -1→-1, implicit H 8→8"
+   },
+   {
+    "name": "curly arrows on stage 2 give stage 3",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "stages 3→4 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge -1→-1, implicit H 8→8"
+   },
+   {
+    "name": "curly arrows on stage 3 give stage 4",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "884px wide, shown at 80% (labels 12.0px)"
+   }
+  ]
+ },
+ "chem-friedel-crafts": {
+  "title": "Friedel–Crafts acylation of benzene",
+  "caption": "AlCl₃ generates the acylium ion CH₃CO⁺ from ethanoyl chloride. The delocalised π electrons attack it, breaking aromaticity in the arenium ion; AlCl₄⁻ removes the proton from the sp³ carbon, restoring the ring and regenerating AlCl₃. The product is phenylethanone.",
+  "alt": "Three stages: benzene's ring attacking the acylium ion; AlCl₄⁻ removing a proton from the arenium ion; phenylethanone, HCl and AlCl₃.",
+  "description": [
+   "Stage 1: a curly arrow from the ring's π electrons to the positive carbon of the acylium ion, CH₃C⁺=O.",
+   "Stage 2: the arenium ion with a horseshoe; a curly arrow from an Al–Cl bond of AlCl₄⁻ to the ring hydrogen, and one from the C–H bond back into the ring.",
+   "Stage 3: phenylethanone, HCl and AlCl₃ (the catalyst is regenerated)."
+  ],
+  "course": "chemistry",
+  "lesson": "Aromatic compounds",
+  "also": [],
+  "renderer": "mechanism",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u12.js: Aromatic compounds"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "stage 1 is a valid structure",
+    "ok": true,
+    "detail": "[C:1]1([H:10])=[CH:2][CH:3]=[CH:4][CH:5]=[CH:6]1.[CH3:20][C+:21]=[O:22].[Cl:30][Al-:31]([Cl:32])([Cl:33])[Cl:34]"
+   },
+   {
+    "name": "stage 2 is a valid structure",
+    "ok": true,
+    "detail": "[C:1]1([H:10])([C:21]([CH3:20])=[O:22])[CH+:2][CH:3]=[CH:4][CH:5]=[CH:6]1.[Cl:30][Al-:31]([Cl:32])([Cl:33])[Cl:34]"
+   },
+   {
+    "name": "stage 3 is a valid structure",
+    "ok": true,
+    "detail": "[Al:31]([Cl:32])([Cl:33])[Cl:34].[C:1]1([C:21]([CH3:20])=[O:22])=[CH:2][CH:3]=[CH:4][CH:5]=[CH:6]1.[H:10][Cl:30]"
+   },
+   {
+    "name": "stages 1→2 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 0→0, implicit H 8→8"
+   },
+   {
+    "name": "curly arrows on stage 1 give stage 2",
+    "ok": true,
+    "detail": "1 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "stages 2→3 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 0→0, implicit H 8→8"
+   },
+   {
+    "name": "curly arrows on stage 2 give stage 3",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "852px wide, shown at 83% (labels 12.4px)"
+   }
+  ]
+ },
+ "chem-halogenoalkane-ammonia": {
+  "title": "Ammonia and bromoethane",
+  "caption": "Ammonia's lone pair attacks the δ+ carbon and bromide leaves (nucleophilic substitution), giving the ethylammonium ion. A second ammonia molecule removes a proton, giving ethylamine. Excess ammonia is used because ethylamine can itself react on.",
+  "alt": "Three stages: ammonia attacking bromoethane; a second ammonia removing a proton from the ethylammonium ion; ethylamine and the ammonium ion.",
+  "description": [
+   "Stage 1: arrows from ammonia's lone pair to the δ+ carbon and from the C–Br bond onto bromine.",
+   "Stage 2: ethylammonium and Br⁻; arrows from a second ammonia to an N–H hydrogen and from that N–H bond onto nitrogen.",
+   "Stage 3: ethylamine, NH₄⁺ and Br⁻."
+  ],
+  "course": "chemistry",
+  "lesson": "Halogenoalkanes",
+  "also": [],
+  "renderer": "mechanism",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u14.js: Halogenoalkanes"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "stage 1 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:2][CH2:3][Br:4].[NH2:1][H:7].[NH3:5]"
+   },
+   {
+    "name": "stage 2 is a valid structure",
+    "ok": true,
+    "detail": "[Br-:4].[NH2+:1]([CH2:3][CH3:2])[H:7].[NH3:5]"
+   },
+   {
+    "name": "stage 3 is a valid structure",
+    "ok": true,
+    "detail": "[Br-:4].[NH2:1][CH2:3][CH3:2].[NH3+:5][H:7]"
+   },
+   {
+    "name": "stages 1→2 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 0→0, implicit H 10→10"
+   },
+   {
+    "name": "curly arrows on stage 1 give stage 2",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "stages 2→3 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 0→0, implicit H 10→10"
+   },
+   {
+    "name": "curly arrows on stage 2 give stage 3",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "629px wide, shown at 112% (labels 16.9px)"
+   }
+  ]
+ },
+ "chem-homo-heterolytic": {
+  "title": "Two ways a bond can break",
+  "caption": "In homolytic fission each atom keeps one electron of the bonding pair, giving two radicals (half-headed arrows). In heterolytic fission the more electronegative atom takes both electrons, giving a cation and an anion (a full curly arrow).",
+  "alt": "Two rows: C–Br breaking homolytically into CH₃• and Br•, and heterolytically into CH₃⁺ and Br⁻.",
+  "description": [
+   "Homolytic: CH₃–Br → CH₃• + Br•, one electron each.",
+   "Heterolytic: CH₃–Br → CH₃⁺ + Br⁻, bromine takes both."
+  ],
+  "course": "chemistry",
+  "lesson": "Homolytic and heterolytic cleavage",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u13.js: Homolytic and heterolytic cleavage"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "CH3Br → CH3• + Br• balances",
+    "ok": true,
+    "detail": "atoms and charge balance (C, H, Br; charge 0)"
+   },
+   {
+    "name": "CH3Br → CH3+ + Br- balances",
+    "ok": true,
+    "detail": "atoms and charge balance (C, H, Br; charge 0)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-hydride-shift": {
+  "title": "A 1,2-hydride shift",
+  "caption": "A secondary carbocation next to a carbon bearing a hydrogen and two methyl groups rearranges: the C–H bonding pair moves, with the hydrogen, to the C⁺. The positive charge moves to the neighbouring carbon, which is now tertiary and more stable.",
+  "alt": "Two stages: the 3-methylbutan-2-yl cation with a curly arrow from the neighbouring C–H bond to the positive carbon; the tertiary 2-methylbutan-2-yl cation.",
+  "description": [
+   "Stage 1: secondary cation; a curly arrow from the C–H bond on the next carbon towards C⁺.",
+   "Stage 2: the hydrogen has moved; the positive charge is on the carbon bearing two methyl groups, a tertiary cation."
+  ],
+  "course": "chemistry",
+  "lesson": "Rearrangements",
+  "also": [],
+  "renderer": "mechanism",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u13.js: Rearrangements"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "stage 1 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:1][CH+:2][C:3]([CH3:4])([CH3:5])[H:6]"
+   },
+   {
+    "name": "stage 2 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:1][CH:2]([C+:3]([CH3:4])[CH3:5])[H:6]"
+   },
+   {
+    "name": "stages 1→2 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 1→1, implicit H 10→10"
+   },
+   {
+    "name": "curly arrows on stage 1 give stage 2",
+    "ok": true,
+    "detail": "1 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "597px wide, shown at 118% (labels 17.8px)"
+   }
+  ]
+ },
+ "chem-lewis-acid-bf3": {
+  "title": "A Lewis acid–base reaction",
+  "caption": "Ammonia's lone pair is donated to boron trifluoride, whose boron has only six outer electrons and an empty orbital. NH₃ is the Lewis base (electron-pair donor) and BF₃ the Lewis acid (acceptor); the product has a coordinate bond.",
+  "alt": "Ammonia approaching boron trifluoride with a curly arrow from nitrogen's lone pair to boron, then the adduct H₃N⁺–B⁻F₃.",
+  "description": [
+   "NH₃ on the left with a lone pair on nitrogen; planar BF₃ on the right.",
+   "A curly arrow from the nitrogen lone pair to the boron.",
+   "Product: H₃N–BF₃, nitrogen +1 and boron −1 formally, joined by a coordinate bond."
+  ],
+  "course": "chemistry",
+  "lesson": "Lewis acid-base theory",
+  "also": [],
+  "renderer": "mechanism",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u09.js: Lewis acid-base theory"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "stage 1 is a valid structure",
+    "ok": true,
+    "detail": "[B:2]([F:3])([F:4])[F:5].[NH3:1]"
+   },
+   {
+    "name": "stage 2 is a valid structure",
+    "ok": true,
+    "detail": "[NH3+:1][B-:2]([F:3])([F:4])[F:5]"
+   },
+   {
+    "name": "stages 1→2 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge 0→0, implicit H 3→3"
+   },
+   {
+    "name": "curly arrows on stage 1 give stage 2",
+    "ok": true,
+    "detail": "1 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "516px wide, shown at 137% (labels 20.6px)"
+   }
+  ]
+ },
+ "chem-nabh4-reduction": {
+  "title": "Reducing propanone with NaBH₄",
+  "caption": "NaBH₄ supplies hydride, H⁻, which attacks the δ+ carbonyl carbon as a nucleophile while the C=O π electrons move onto oxygen. The alkoxide is then protonated by water, giving propan-2-ol: a secondary alcohol from a ketone.",
+  "alt": "Three stages: hydride attacking the carbonyl carbon of propanone; the alkoxide taking a proton from water; propan-2-ol and hydroxide.",
+  "description": [
+   "Stage 1: a curly arrow from the hydride's lone pair to the carbonyl carbon, and one from the C=O onto oxygen.",
+   "Stage 2: the alkoxide; a curly arrow from O⁻ to a hydrogen of water, and one from the O–H bond onto water's oxygen.",
+   "Stage 3: propan-2-ol and OH⁻."
+  ],
+  "course": "chemistry",
+  "lesson": "Reduction reactions",
+  "also": [],
+  "renderer": "mechanism",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u13.js: Reduction reactions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "stage 1 is a valid structure",
+    "ok": true,
+    "detail": "[CH3:3][C:4](=[O:5])[CH3:6].[H-:2].[OH:7][H:8]"
+   },
+   {
+    "name": "stage 2 is a valid structure",
+    "ok": true,
+    "detail": "[H:2][C:4]([CH3:3])([O-:5])[CH3:6].[OH:7][H:8]"
+   },
+   {
+    "name": "stage 3 is a valid structure",
+    "ok": true,
+    "detail": "[H:2][C:4]([CH3:3])([O:5][H:8])[CH3:6].[OH-:7]"
+   },
+   {
+    "name": "stages 1→2 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge -1→-1, implicit H 7→7"
+   },
+   {
+    "name": "curly arrows on stage 1 give stage 2",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "stages 2→3 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge -1→-1, implicit H 7→7"
+   },
+   {
+    "name": "curly arrows on stage 2 give stage 3",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "859px wide, shown at 82% (labels 12.3px)"
+   }
+  ]
+ },
+ "chem-radical-chlorination": {
+  "title": "Free-radical chlorination of methane",
+  "caption": "UV light splits Cl₂ into two chlorine radicals (initiation). Each Cl• takes an H from methane, and the methyl radical takes a Cl from Cl₂, regenerating Cl• (propagation): the two steps add up to CH₄ + Cl₂ → CH₃Cl + HCl and repeat thousands of times. Any two radicals meeting end a chain (termination).",
+  "alt": "A cycle: Cl• reacts with CH₄ to give CH₃• and HCl; CH₃• reacts with Cl₂ to give CH₃Cl and Cl•, which returns to the start. Initiation and termination are shown beside it.",
+  "description": [
+   "Initiation: Cl₂ → 2Cl• in UV light.",
+   "Propagation 1: Cl• + CH₄ → CH₃• + HCl.",
+   "Propagation 2: CH₃• + Cl₂ → CH₃Cl + Cl•.",
+   "Termination: for example Cl• + CH₃• → CH₃Cl, or 2Cl• → Cl₂."
+  ],
+  "course": "chemistry",
+  "lesson": "Radical intermediates",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u13.js: Radical intermediates"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Cl• + CH4 → CH3• + HCl balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Cl, C, H; charge 0)"
+   },
+   {
+    "name": "CH3• + Cl2 → CH3Cl + Cl• balances",
+    "ok": true,
+    "detail": "atoms and charge balance (C, H, Cl; charge 0)"
+   },
+   {
+    "name": "the steps add up to CH4 + Cl2 → CH3Cl + HCl",
+    "ok": true,
+    "detail": "CH4 + Cl2 → HCl + CH3Cl"
+   },
+   {
+    "name": "Cl• + CH4 → CH3• + HCl balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Cl, C, H; charge 0)"
+   },
+   {
+    "name": "CH3• + Cl2 → CH3Cl + Cl• balances",
+    "ok": true,
+    "detail": "atoms and charge balance (C, H, Cl; charge 0)"
+   },
+   {
+    "name": "Cl• is regenerated: it is not used up overall",
+    "ok": true,
+    "detail": "CH4 + Cl2 → HCl + CH3Cl"
+   },
+   {
+    "name": "Cl2 → 2Cl• balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Cl; charge 0)"
+   },
+   {
+    "name": "Cl• + CH3• → CH3Cl balances",
+    "ok": true,
+    "detail": "atoms and charge balance (Cl, C, H; charge 0)"
+   },
+   {
+    "name": "2CH3• → C2H6 balances",
+    "ok": true,
+    "detail": "atoms and charge balance (C, H; charge 0)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "chem-snar": {
+  "title": "Nucleophilic aromatic substitution",
+  "caption": "An electron-withdrawing nitro group para to the chlorine lets hydroxide add to the ring. The negative charge of the addition intermediate (the Meisenheimer complex) is spread onto the nitro group; chloride then leaves and the ring is restored, giving 4-nitrophenol (as its anion in excess alkali).",
+  "alt": "Three stages: hydroxide adding to the carbon bearing chlorine of 4-chloronitrobenzene; the Meisenheimer complex with a carbanion; loss of chloride to give 4-nitrophenol.",
+  "description": [
+   "Stage 1: a curly arrow from hydroxide to the carbon bearing Cl, and another from the C=C onto the neighbouring carbon.",
+   "Stage 2: the Meisenheimer complex: that carbon is sp³ with OH and Cl; the ring carries a negative charge.",
+   "A curly arrow from the carbanion back to re-form the C=C, and another from the C–Cl bond onto chlorine.",
+   "Stage 3: 4-nitrophenol and Cl⁻."
+  ],
+  "course": "chemistry",
+  "lesson": "Nucleophilic aromatic substitution",
+  "also": [],
+  "renderer": "mechanism",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/chemistry/notes/u13.js: Nucleophilic aromatic substitution"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "stage 1 is a valid structure",
+    "ok": true,
+    "detail": "[C:1]1([Cl:7])=[CH:2][CH:3]=[C:4]([N+:8](=[O:9])[O-:10])[CH:5]=[CH:6]1.[OH-:11]"
+   },
+   {
+    "name": "stage 2 is a valid structure",
+    "ok": true,
+    "detail": "[C:1]1([Cl:7])([OH:11])[CH-:2][CH:3]=[C:4]([N+:8](=[O:9])[O-:10])[CH:5]=[CH:6]1"
+   },
+   {
+    "name": "stage 3 is a valid structure",
+    "ok": true,
+    "detail": "[C:1]1([OH:11])=[CH:2][CH:3]=[C:4]([N+:8](=[O:9])[O-:10])[CH:5]=[CH:6]1.[Cl-:7]"
+   },
+   {
+    "name": "stages 1→2 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge -1→-1, implicit H 5→5"
+   },
+   {
+    "name": "curly arrows on stage 1 give stage 2",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "stages 2→3 conserve atoms and charge",
+    "ok": true,
+    "detail": "charge -1→-1, implicit H 5→5"
+   },
+   {
+    "name": "curly arrows on stage 2 give stage 3",
+    "ok": true,
+    "detail": "2 arrow(s): electron bookkeeping matches every bond and charge"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "486px wide, shown at 145% (labels 21.8px)"
    }
   ]
  }

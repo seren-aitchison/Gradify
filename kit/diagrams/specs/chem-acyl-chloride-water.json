@@ -1,0 +1,239 @@
+{
+ "id": "chem-acyl-chloride-water",
+ "renderer": "mechanism",
+ "course": "chemistry",
+ "lesson": "Acyl chlorides",
+ "title": "Addition–elimination: ethanoyl chloride and water",
+ "caption": "Water's lone pair attacks the very δ+ carbonyl carbon (addition); the C=O re-forms and chloride leaves (elimination); chloride then removes a proton from the oxygen. The products are ethanoic acid and steamy fumes of HCl.",
+ "alt": "Four stages: water attacking ethanoyl chloride; the tetrahedral intermediate losing chloride; chloride removing a proton; ethanoic acid and HCl.",
+ "description": [
+  "Stage 1: arrows from water's lone pair to the carbonyl carbon and from C=O onto oxygen.",
+  "Stage 2: the intermediate with O⁻ and an O⁺H₂; arrows re-forming C=O and from C–Cl onto chlorine.",
+  "Stage 3: protonated ethanoic acid and Cl⁻; arrows from Cl⁻ to an O–H hydrogen and from that O–H bond onto oxygen.",
+  "Stage 4: ethanoic acid and hydrogen chloride."
+ ],
+ "stages": [
+  {
+   "smiles": "[CH3:1][C:2](=[O:3])[Cl:4].[OH:5][H:6]",
+   "xy": {
+    "1": [
+     -1.05,
+     -0.6
+    ],
+    "2": [
+     0,
+     0
+    ],
+    "3": [
+     0,
+     1.3
+    ],
+    "4": [
+     1.15,
+     -0.6
+    ],
+    "5": [
+     -0.6,
+     -2.1
+    ],
+    "6": [
+     -1.5,
+     -2.6
+    ]
+   },
+   "charges": {
+    "2": "δ+"
+   },
+   "chargeOffset": {
+    "2": [
+     -16,
+     -6
+    ]
+   },
+   "label": "ethanoyl chloride + water",
+   "arrows": [
+    {
+     "from": {
+      "lp": 5
+     },
+     "to": {
+      "bond": [
+       5,
+       2
+      ]
+     },
+     "toward": 2,
+     "lpAngle": 40,
+     "lpDist": 16,
+     "bend": -0.3
+    },
+    {
+     "from": {
+      "bond": [
+       2,
+       3
+      ]
+     },
+     "to": {
+      "atom": 3
+     },
+     "bend": -1
+    }
+   ]
+  },
+  {
+   "smiles": "[CH3:1][C:2]([O-:3])([Cl:4])[OH+:5][H:6]",
+   "xy": {
+    "1": [
+     -1.1,
+     -0.2
+    ],
+    "2": [
+     0,
+     0
+    ],
+    "3": [
+     0,
+     1.3
+    ],
+    "4": [
+     1.25,
+     -0.4
+    ],
+    "5": [
+     -0.2,
+     -1.3
+    ],
+    "6": [
+     -1.1,
+     -1.9
+    ]
+   },
+   "label": "tetrahedral intermediate",
+   "arrows": [
+    {
+     "from": {
+      "lp": 3
+     },
+     "to": {
+      "bond": [
+       3,
+       2
+      ]
+     },
+     "toward": 2,
+     "lpAngle": 180,
+     "lpDist": 16,
+     "bend": 0.6
+    },
+    {
+     "from": {
+      "bond": [
+       2,
+       4
+      ]
+     },
+     "to": {
+      "atom": 4
+     },
+     "bend": -1
+    }
+   ]
+  },
+  {
+   "smiles": "[CH3:1][C:2](=[O:3])[OH+:5][H:6].[Cl-:4]",
+   "xy": {
+    "1": [
+     -1.05,
+     -0.6
+    ],
+    "2": [
+     0,
+     0
+    ],
+    "3": [
+     0,
+     1.3
+    ],
+    "5": [
+     1.1,
+     -0.6
+    ],
+    "6": [
+     2.0,
+     -0.1
+    ],
+    "4": [
+     3.3,
+     -0.4
+    ]
+   },
+   "label": "protonated acid + Cl⁻",
+   "arrows": [
+    {
+     "from": {
+      "lp": 4
+     },
+     "to": {
+      "bond": [
+       4,
+       6
+      ]
+     },
+     "toward": 6,
+     "lpAngle": 160,
+     "lpDist": 18,
+     "bend": -0.4
+    },
+    {
+     "from": {
+      "bond": [
+       5,
+       6
+      ]
+     },
+     "to": {
+      "atom": 5
+     },
+     "bend": 1
+    }
+   ]
+  },
+  {
+   "smiles": "[CH3:1][C:2](=[O:3])[OH:5].[H:6][Cl:4]",
+   "xy": {
+    "1": [
+     -1.05,
+     -0.6
+    ],
+    "2": [
+     0,
+     0
+    ],
+    "3": [
+     0,
+     1.3
+    ],
+    "5": [
+     1.1,
+     -0.6
+    ],
+    "6": [
+     2.6,
+     -0.4
+    ],
+    "4": [
+     3.6,
+     -0.4
+    ]
+   },
+   "label": "ethanoic acid + HCl"
+  }
+ ],
+ "steps": [
+  {},
+  {},
+  {}
+ ],
+ "perRow": 2
+}

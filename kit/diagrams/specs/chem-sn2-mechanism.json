@@ -220,5 +220,11 @@
     "date": "2026-11-20",
     "notes": "Round 1: TS drawn flat, single stereo bond, caption lacked R→S; fixed (wedge/hash in all stages, drawn-stereo check added). Round 2: approve; R/S re-derived by hand from the drawn wedges.",
     "approvedAt": "2026-11-20"
-  }
+  },
+  "also": [
+    {
+      "course": "chemistry",
+      "lesson": "Substitution reactions"
+    }
+  ]
 }

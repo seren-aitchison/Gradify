@@ -136,6 +136,7 @@ H: Definitions
 - A **Lewis base** is an **electron pair donor**.
 - Reaction forms a **dative covalent bond**.
 - No protons need be involved.
+D: chem-lewis-acid-bf3
 H: Examples
 - BF₃ + NH₃ → F₃B←NH₃: BF₃ accepts, NH₃ donates.
 - Metal ions in complexes act as Lewis acids; ligands are Lewis bases.

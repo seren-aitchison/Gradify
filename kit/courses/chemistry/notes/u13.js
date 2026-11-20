@@ -11,6 +11,7 @@ H: Rules
 - A **half-headed** (fishhook) arrow shows movement of **one electron**.
 - Arrows start at a **lone pair** or a **bond**, never at an atom's nucleus or a positive charge.
 - Arrows end where the electrons go: an atom (forming a lone pair) or between atoms (forming a bond).
+D: chem-nucleophilic-addition
 H: Checking
 - The **overall charge** must be the same on both sides of each step.
 - No atom should exceed its valence, such as carbon with five bonds.
@@ -93,6 +94,7 @@ H: Two ways to break
 - **Heterolytic**: one atom takes both electrons, forming a **cation** and an **anion**.
 - Homolysis is shown with fishhook arrows.
 - Heterolysis is shown with a full curly arrow.
+D: chem-homo-heterolytic
 H: Conditions
 - **Homolysis** is favoured by **UV light**, heat and non-polar bonds, often in the gas phase.
 - **Heterolysis** is favoured by **polar bonds** and **polar solvents** that stabilise ions.
@@ -216,6 +218,7 @@ H: Structure and stability
 - Roughly planar, with the electron in a p orbital.
 - Stability: **tertiary > secondary > primary > methyl**.
 - **Resonance** stabilises allylic and benzylic radicals.
+D: chem-radical-chlorination
 H: Reactions
 - **Chain reactions**: initiation, propagation, termination.
 - **Selectivity**: bromine radicals are more selective than chlorine radicals.
@@ -299,6 +302,7 @@ H: Nucleophilic substitution
 - Haloalkanes react with OH⁻, CN⁻, NH₃ and alkoxides.
 - **SN1** goes through a carbocation; **SN2** is one concerted step.
 - Products: alcohols, nitriles, amines and ethers.
+D: chem-sn2-mechanism
 H: Leaving groups
 - Good leaving groups are **weak bases** that are stable on their own.
 - Order: **I⁻ > Br⁻ > Cl⁻ > F⁻**.
@@ -424,6 +428,7 @@ H: Eliminations
 - **Dehydration**: alcohol + acid catalyst → alkene + H₂O.
 - A hydrogen is lost from the carbon **next to** the leaving group (β-hydrogen).
 - Two mechanisms: **E1** and **E2**.
+D: chem-e2-mechanism
 H: Elimination versus substitution
 - **Zaitsev's rule**: the more substituted alkene is usually major.
 - **Hot**, **ethanolic** KOH favours elimination.
@@ -465,6 +470,7 @@ H: Mechanism
 - **Step 2**: a base removes a **β-hydrogen**, forming the C=C (fast).
 - Rate = k[R–X]: first order.
 - Shares its first step with SN1.
+D: chem-e1-mechanism
 H: Conditions and products
 - Favoured by **tertiary** substrates and **weak bases**.
 - **Heat** favours E1 over SN1, since elimination increases entropy.
@@ -548,6 +554,7 @@ H: Two kinds of π bond
 - **C=O** is polar with a δ+ carbon: it attracts **nucleophiles**.
 - In both, the π bond breaks and two new σ bonds form.
 - Addition turns sp² carbons into sp³ carbons.
+D: chem-hbr-propene
 H: Examples
 - Ethene + HBr → bromoethane (electrophilic addition).
 - Ethanal + HCN → 2-hydroxypropanenitrile (nucleophilic addition).
@@ -716,6 +723,7 @@ H: Why it is unusual
 - Backside attack is blocked by the ring.
 - Aryl cations are very unstable.
 - The C–X bond is strengthened by overlap with the ring.
+D: chem-snar
 H: SNAr mechanism
 - **Electron-withdrawing groups** (–NO₂) at the 2- or 4-position activate the ring.
 - The nucleophile **adds** to the carbon bearing the leaving group.
@@ -803,6 +811,7 @@ H: Recognising reduction
 - Shown with [H] in simplified equations.
 - Aldehydes reduce to **primary** alcohols; ketones to **secondary** alcohols.
 - Nitriles and amides can reduce to **amines**.
+D: chem-nabh4-reduction
 H: Reagents
 - **NaBH₄**: mild, works in water or alcohol; reduces aldehydes and ketones.
 - **LiAlH₄**: powerful, needs dry ether; also reduces acids, esters and amides.
@@ -885,6 +894,7 @@ H: Esters
 - **Base hydrolysis (saponification)**: irreversible; gives a **carboxylate salt** and an alcohol.
 - Base hydrolysis goes to completion because the carboxylate cannot react back.
 - Saponification of fats makes soap.
+D: chem-ester-hydrolysis
 H: Other groups
 - **Amides** hydrolyse slowly, needing hot acid or base.
 - **Haloalkanes** hydrolyse to alcohols with water or hydroxide.
@@ -926,6 +936,7 @@ H: Carbocation shifts
 - **1,2-alkyl shifts** move a methyl or other alkyl group.
 - Shifts form a **more stable** carbocation.
 - They occur in SN1, E1 and electrophilic addition.
+D: chem-hydride-shift
 H: Named rearrangements
 - **Pinacol rearrangement**: a 1,2-diol in acid gives a ketone.
 - **Beckmann rearrangement**: an oxime gives an amide, used to make nylon-6.

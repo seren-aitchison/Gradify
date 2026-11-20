@@ -233,5 +233,11 @@
     "date": "2026-11-20",
     "notes": "Round 1 (AI reviewer): unlabelled nitrile carbons (now labelled), charge on regenerated CN⁻ unreadable, lesson's KCN/HCN sentence corrected; all fixed.",
     "awaiting": "approval by a named subject reviewer"
-  }
+  },
+  "also": [
+    {
+      "course": "chemistry",
+      "lesson": "Curly arrow notation"
+    }
+  ]
 }

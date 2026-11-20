@@ -1,0 +1,60 @@
+{
+ "id": "chem-homo-heterolytic",
+ "renderer": "flow",
+ "course": "chemistry",
+ "lesson": "Homolytic and heterolytic cleavage",
+ "title": "Two ways a bond can break",
+ "caption": "In homolytic fission each atom keeps one electron of the bonding pair, giving two radicals (half-headed arrows). In heterolytic fission the more electronegative atom takes both electrons, giving a cation and an anion (a full curly arrow).",
+ "alt": "Two rows: C–Br breaking homolytically into CH₃• and Br•, and heterolytically into CH₃⁺ and Br⁻.",
+ "description": [
+  "Homolytic: CH₃–Br → CH₃• + Br•, one electron each.",
+  "Heterolytic: CH₃–Br → CH₃⁺ + Br⁻, bromine takes both."
+ ],
+ "layout": "grid",
+ "rowHeight": 96,
+ "boxWidth": 130,
+ "nodes": [
+  {
+   "id": "a",
+   "label": "CH₃–Br",
+   "col": 0,
+   "row": 0
+  },
+  {
+   "id": "b",
+   "label": "CH₃• + Br•",
+   "col": 1,
+   "row": 0,
+   "tone": "a5",
+   "sub": "two radicals"
+  },
+  {
+   "id": "c",
+   "label": "CH₃–Br",
+   "col": 0,
+   "row": 1
+  },
+  {
+   "id": "d",
+   "label": "CH₃⁺ + Br⁻",
+   "col": 1,
+   "row": 1,
+   "tone": "a3",
+   "sub": "two ions"
+  }
+ ],
+ "edges": [
+  {
+   "from": "a",
+   "to": "b",
+   "label": "homolytic",
+   "eq": "CH3Br → CH3• + Br•"
+  },
+  {
+   "from": "c",
+   "to": "d",
+   "label": "heterolytic",
+   "eq": "CH3Br → CH3+ + Br-"
+  }
+ ]
+}

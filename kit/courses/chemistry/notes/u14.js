@@ -259,6 +259,7 @@ H: Reactivity
 - The carbonyl carbon is strongly δ+ due to both O and Cl.
 - **Cl⁻** is a good leaving group.
 - React by **nucleophilic addition-elimination**.
+D: chem-acyl-chloride-water
 H: Reactions
 - With **water**: carboxylic acid + HCl (vigorous, steamy fumes).
 - With **alcohols**: esters + HCl.
@@ -546,6 +547,7 @@ H: Classification and properties
 - The C–X bond is **polar**, with δ+ carbon.
 - Boiling points rise with chain length and halogen size.
 - Insoluble in water, despite polarity.
+D: chem-halogenoalkane-ammonia
 H: Reactivity
 - Reactivity order: **R–I > R–Br > R–Cl > R–F**.
 - **Bond enthalpy** decides this, not polarity.
@@ -751,6 +753,7 @@ H: Enols and enolates
 - **Keto-enol tautomerism**: the keto form usually dominates.
 - A base removes an α-hydrogen, forming a resonance-stabilised **enolate**.
 - Enolates are nucleophilic at the α-carbon.
+D: chem-enolate-formation
 H: Reactions
 - **Aldol reaction**: an enolate adds to another carbonyl, giving a β-hydroxy carbonyl.
 - Heating gives the **aldol condensation** product, an α,β-unsaturated carbonyl.

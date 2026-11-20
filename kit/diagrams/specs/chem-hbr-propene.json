@@ -180,5 +180,11 @@
     "date": "2026-11-20",
     "notes": "Round 1: added H drawn as a stray –H; minor route not shown; fixed (CH3 label; caption explains the less stable primary cation). Round 2: approve.",
     "approvedAt": "2026-11-20"
-  }
+  },
+  "also": [
+    {
+      "course": "chemistry",
+      "lesson": "Addition reactions"
+    }
+  ]
 }

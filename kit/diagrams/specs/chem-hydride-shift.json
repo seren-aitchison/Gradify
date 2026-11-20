@@ -1,0 +1,95 @@
+{
+ "id": "chem-hydride-shift",
+ "renderer": "mechanism",
+ "course": "chemistry",
+ "lesson": "Rearrangements",
+ "title": "A 1,2-hydride shift",
+ "caption": "A secondary carbocation next to a carbon bearing a hydrogen and two methyl groups rearranges: the C–H bonding pair moves, with the hydrogen, to the C⁺. The positive charge moves to the neighbouring carbon, which is now tertiary and more stable.",
+ "alt": "Two stages: the 3-methylbutan-2-yl cation with a curly arrow from the neighbouring C–H bond to the positive carbon; the tertiary 2-methylbutan-2-yl cation.",
+ "description": [
+  "Stage 1: secondary cation; a curly arrow from the C–H bond on the next carbon towards C⁺.",
+  "Stage 2: the hydrogen has moved; the positive charge is on the carbon bearing two methyl groups, a tertiary cation."
+ ],
+ "stages": [
+  {
+   "smiles": "[CH3:1][CH+:2][C:3]([H:6])([CH3:4])[CH3:5]",
+   "xy": {
+    "1": [
+     -1.1,
+     -0.6
+    ],
+    "2": [
+     0,
+     0
+    ],
+    "3": [
+     1.15,
+     -0.6
+    ],
+    "6": [
+     1.15,
+     -1.9
+    ],
+    "4": [
+     2.3,
+     0
+    ],
+    "5": [
+     1.15,
+     0.9
+    ]
+   },
+   "label": "secondary carbocation",
+   "arrows": [
+    {
+     "from": {
+      "bond": [
+       3,
+       6
+      ]
+     },
+     "to": {
+      "bond": [
+       6,
+       2
+      ]
+     },
+     "bend": -0.9
+    }
+   ]
+  },
+  {
+   "smiles": "[CH3:1][CH:2]([H:6])[C+:3]([CH3:4])[CH3:5]",
+   "xy": {
+    "1": [
+     -1.1,
+     -0.6
+    ],
+    "2": [
+     0,
+     0
+    ],
+    "6": [
+     -0.3,
+     -1.25
+    ],
+    "3": [
+     1.15,
+     -0.6
+    ],
+    "4": [
+     2.3,
+     0
+    ],
+    "5": [
+     1.15,
+     -1.9
+    ]
+   },
+   "label": "tertiary carbocation (more stable)"
+  }
+ ],
+ "steps": [
+  {}
+ ]
+}

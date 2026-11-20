@@ -144,5 +144,11 @@
     "date": "2026-11-20",
     "notes": "Round 1 (AI reviewer): arrow appeared to start from H of HO⁻ (now ⁻O–H), conditions missing (now KOH in ethanol, heat), lesson's C1/C2 wording corrected, water drawn as H₂O; all fixed.",
     "awaiting": "approval by a named subject reviewer"
-  }
+  },
+  "also": [
+    {
+      "course": "chemistry",
+      "lesson": "Elimination reactions"
+    }
+  ]
 }

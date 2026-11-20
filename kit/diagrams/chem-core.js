@@ -33,7 +33,7 @@ export function ascii(s, keepStates = false) {
 
 /** Parse one species: atoms {El: n} and charge. Handles brackets, hydrates (·), charges written ^2-, 2-, + and -. */
 export function parseFormula(raw) {
-  let s = ascii(raw);
+  let s = ascii(raw).replace(/•/g, ""); // a radical dot marks unpaired electrons, not atoms
   let charge = 0;
   // a charge is ^n± (Unicode superscripts become this) or a bare trailing + or −, which means 1: NH4+ is NH₄⁺
   const cm = s.match(/\^(\d*)([+-])$/) || s.match(/()([+-])$/);
