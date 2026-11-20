@@ -1,0 +1,485 @@
+{
+ "baseline": "3719ed3",
+ "note": "Original 365-file scope only; files are done when scripts/fc-done.mjs commits them. Re-run the checker to see what is left.",
+ "batches": [
+  {
+   "id": 1,
+   "lessons": 300,
+   "subjects": [
+    "dentistry",
+    "art",
+    "careers",
+    "gcse",
+    "research",
+    "chemistry",
+    "biology",
+    "computing"
+   ],
+   "files": [
+    "kit/courses/dentistry/notes/u04.js",
+    "kit/courses/art/notes/u05.js",
+    "kit/courses/art/notes/u11.js",
+    "kit/courses/careers/notes/u05.js",
+    "kit/courses/careers/notes/u10.js",
+    "kit/courses/gcse/notes/u07.js",
+    "kit/courses/gcse/notes/u09.js",
+    "kit/courses/research/notes/u01.js",
+    "kit/courses/research/notes/u02.js",
+    "kit/courses/chemistry/notes/u01.js",
+    "kit/courses/chemistry/notes/u02.js",
+    "kit/courses/biology/notes/u01.js",
+    "kit/courses/biology/notes/u02.js",
+    "kit/courses/computing/notes/u01.js",
+    "kit/courses/computing/notes/u02.js",
+    "kit/courses/computing/notes/u03.js",
+    "kit/courses/computing/notes/u04.js"
+   ]
+  },
+  {
+   "id": 2,
+   "lessons": 309,
+   "subjects": [
+    "spanish",
+    "ecology",
+    "investing",
+    "primary"
+   ],
+   "files": [
+    "kit/courses/spanish/notes/u01.js",
+    "kit/courses/spanish/notes/u02.js",
+    "kit/courses/spanish/notes/u03.js",
+    "kit/courses/spanish/notes/u04.js",
+    "kit/courses/spanish/notes/u05.js",
+    "kit/courses/ecology/notes/u01.js",
+    "kit/courses/ecology/notes/u02.js",
+    "kit/courses/ecology/notes/u09.js",
+    "kit/courses/ecology/notes/u10.js",
+    "kit/courses/investing/notes/u02.js",
+    "kit/courses/investing/notes/u03.js",
+    "kit/courses/investing/notes/u04.js",
+    "kit/courses/investing/notes/u05.js",
+    "kit/courses/investing/notes/u07.js",
+    "kit/courses/primary/notes/u01.js",
+    "kit/courses/primary/notes/u02.js",
+    "kit/courses/primary/notes/u03.js",
+    "kit/courses/primary/notes/u04.js",
+    "kit/courses/primary/notes/u05.js",
+    "kit/courses/primary/notes/u06.js"
+   ]
+  },
+  {
+   "id": 3,
+   "lessons": 276,
+   "subjects": [
+    "veterinary",
+    "university",
+    "music"
+   ],
+   "files": [
+    "kit/courses/veterinary/notes/u01.js",
+    "kit/courses/veterinary/notes/u02.js",
+    "kit/courses/veterinary/notes/u03.js",
+    "kit/courses/veterinary/notes/u04.js",
+    "kit/courses/veterinary/notes/u08.js",
+    "kit/courses/university/notes/u01.js",
+    "kit/courses/university/notes/u02.js",
+    "kit/courses/university/notes/u03.js",
+    "kit/courses/university/notes/u09.js",
+    "kit/courses/university/notes/u11.js",
+    "kit/courses/university/notes/u12.js",
+    "kit/courses/music/notes/u05.js",
+    "kit/courses/music/notes/u06.js",
+    "kit/courses/music/notes/u07.js",
+    "kit/courses/music/notes/u08.js",
+    "kit/courses/music/notes/u09.js",
+    "kit/courses/music/notes/u10.js"
+   ]
+  },
+  {
+   "id": 4,
+   "lessons": 303,
+   "subjects": [
+    "business",
+    "engineering",
+    "design"
+   ],
+   "files": [
+    "kit/courses/business/notes/u01.js",
+    "kit/courses/business/notes/u02.js",
+    "kit/courses/business/notes/u03.js",
+    "kit/courses/business/notes/u04.js",
+    "kit/courses/business/notes/u05.js",
+    "kit/courses/business/notes/u06.js",
+    "kit/courses/engineering/notes/u01.js",
+    "kit/courses/engineering/notes/u02.js",
+    "kit/courses/engineering/notes/u03.js",
+    "kit/courses/engineering/notes/u04.js",
+    "kit/courses/engineering/notes/u05.js",
+    "kit/courses/engineering/notes/u06.js",
+    "kit/courses/design/notes/u02.js",
+    "kit/courses/design/notes/u03.js",
+    "kit/courses/design/notes/u04.js",
+    "kit/courses/design/notes/u05.js",
+    "kit/courses/design/notes/u06.js",
+    "kit/courses/design/notes/u07.js",
+    "kit/courses/design/notes/u09.js"
+   ]
+  },
+  {
+   "id": 5,
+   "lessons": 232,
+   "subjects": [
+    "history",
+    "literature"
+   ],
+   "files": [
+    "kit/courses/history/notes/u07.js",
+    "kit/courses/history/notes/u08.js",
+    "kit/courses/history/notes/u09.js",
+    "kit/courses/history/notes/u10.js",
+    "kit/courses/history/notes/u11.js",
+    "kit/courses/history/notes/u12.js",
+    "kit/courses/literature/notes/u01.js",
+    "kit/courses/literature/notes/u02.js",
+    "kit/courses/literature/notes/u03.js",
+    "kit/courses/literature/notes/u04.js",
+    "kit/courses/literature/notes/u05.js",
+    "kit/courses/literature/notes/u06.js",
+    "kit/courses/literature/notes/u07.js"
+   ]
+  },
+  {
+   "id": 6,
+   "lessons": 246,
+   "subjects": [
+    "sport",
+    "professional"
+   ],
+   "files": [
+    "kit/courses/sport/notes/u01.js",
+    "kit/courses/sport/notes/u02.js",
+    "kit/courses/sport/notes/u03.js",
+    "kit/courses/sport/notes/u04.js",
+    "kit/courses/sport/notes/u08.js",
+    "kit/courses/sport/notes/u09.js",
+    "kit/courses/sport/notes/u12.js",
+    "kit/courses/professional/notes/u01.js",
+    "kit/courses/professional/notes/u02.js",
+    "kit/courses/professional/notes/u03.js",
+    "kit/courses/professional/notes/u04.js",
+    "kit/courses/professional/notes/u06.js",
+    "kit/courses/professional/notes/u08.js",
+    "kit/courses/professional/notes/u10.js"
+   ]
+  },
+  {
+   "id": 7,
+   "lessons": 286,
+   "subjects": [
+    "health",
+    "finance"
+   ],
+   "files": [
+    "kit/courses/health/notes/u01.js",
+    "kit/courses/health/notes/u03.js",
+    "kit/courses/health/notes/u04.js",
+    "kit/courses/health/notes/u05.js",
+    "kit/courses/health/notes/u06.js",
+    "kit/courses/health/notes/u07.js",
+    "kit/courses/health/notes/u08.js",
+    "kit/courses/health/notes/u09.js",
+    "kit/courses/finance/notes/u03.js",
+    "kit/courses/finance/notes/u04.js",
+    "kit/courses/finance/notes/u05.js",
+    "kit/courses/finance/notes/u06.js",
+    "kit/courses/finance/notes/u07.js",
+    "kit/courses/finance/notes/u08.js",
+    "kit/courses/finance/notes/u09.js",
+    "kit/courses/finance/notes/u10.js",
+    "kit/courses/finance/notes/u11.js"
+   ]
+  },
+  {
+   "id": 8,
+   "lessons": 179,
+   "subjects": [
+    "teaching"
+   ],
+   "files": [
+    "kit/courses/teaching/notes/u01.js",
+    "kit/courses/teaching/notes/u02.js",
+    "kit/courses/teaching/notes/u03.js",
+    "kit/courses/teaching/notes/u04.js",
+    "kit/courses/teaching/notes/u05.js",
+    "kit/courses/teaching/notes/u06.js",
+    "kit/courses/teaching/notes/u10.js",
+    "kit/courses/teaching/notes/u11.js",
+    "kit/courses/teaching/notes/u12.js"
+   ]
+  },
+  {
+   "id": 9,
+   "lessons": 180,
+   "subjects": [
+    "medicine"
+   ],
+   "files": [
+    "kit/courses/medicine/notes/u03.js",
+    "kit/courses/medicine/notes/u04.js",
+    "kit/courses/medicine/notes/u05.js",
+    "kit/courses/medicine/notes/u06.js",
+    "kit/courses/medicine/notes/u07.js",
+    "kit/courses/medicine/notes/u08.js",
+    "kit/courses/medicine/notes/u09.js",
+    "kit/courses/medicine/notes/u10.js",
+    "kit/courses/medicine/notes/u11.js"
+   ]
+  },
+  {
+   "id": 10,
+   "lessons": 196,
+   "subjects": [
+    "pharmacy"
+   ],
+   "files": [
+    "kit/courses/pharmacy/notes/u01.js",
+    "kit/courses/pharmacy/notes/u02.js",
+    "kit/courses/pharmacy/notes/u03.js",
+    "kit/courses/pharmacy/notes/u06.js",
+    "kit/courses/pharmacy/notes/u12.js",
+    "kit/courses/pharmacy/notes/u13.js",
+    "kit/courses/pharmacy/notes/u14.js",
+    "kit/courses/pharmacy/notes/u15.js",
+    "kit/courses/pharmacy/notes/u16.js",
+    "kit/courses/pharmacy/notes/u17.js",
+    "kit/courses/pharmacy/notes/u18.js",
+    "kit/courses/pharmacy/notes/u19.js"
+   ]
+  },
+  {
+   "id": 11,
+   "lessons": 298,
+   "subjects": [
+    "law"
+   ],
+   "files": [
+    "kit/courses/law/notes/u01.js",
+    "kit/courses/law/notes/u02.js",
+    "kit/courses/law/notes/u03.js",
+    "kit/courses/law/notes/u07.js",
+    "kit/courses/law/notes/u08.js",
+    "kit/courses/law/notes/u09.js",
+    "kit/courses/law/notes/u10.js",
+    "kit/courses/law/notes/u11.js",
+    "kit/courses/law/notes/u12.js",
+    "kit/courses/law/notes/u17.js",
+    "kit/courses/law/notes/u18.js",
+    "kit/courses/law/notes/u19.js"
+   ]
+  },
+  {
+   "id": 12,
+   "lessons": 340,
+   "subjects": [
+    "nursing"
+   ],
+   "files": [
+    "kit/courses/nursing/notes/u01.js",
+    "kit/courses/nursing/notes/u02.js",
+    "kit/courses/nursing/notes/u03.js",
+    "kit/courses/nursing/notes/u06.js",
+    "kit/courses/nursing/notes/u07.js",
+    "kit/courses/nursing/notes/u08.js",
+    "kit/courses/nursing/notes/u09.js",
+    "kit/courses/nursing/notes/u10.js",
+    "kit/courses/nursing/notes/u11.js",
+    "kit/courses/nursing/notes/u15.js",
+    "kit/courses/nursing/notes/u16.js",
+    "kit/courses/nursing/notes/u17.js"
+   ]
+  },
+  {
+   "id": 13,
+   "lessons": 393,
+   "subjects": [
+    "psychology"
+   ],
+   "files": [
+    "kit/courses/psychology/notes/u01.js",
+    "kit/courses/psychology/notes/u02.js",
+    "kit/courses/psychology/notes/u03.js",
+    "kit/courses/psychology/notes/u04.js",
+    "kit/courses/psychology/notes/u05.js",
+    "kit/courses/psychology/notes/u06.js",
+    "kit/courses/psychology/notes/u07.js",
+    "kit/courses/psychology/notes/u08.js",
+    "kit/courses/psychology/notes/u09.js",
+    "kit/courses/psychology/notes/u10.js",
+    "kit/courses/psychology/notes/u11.js",
+    "kit/courses/psychology/notes/u12.js",
+    "kit/courses/psychology/notes/u13.js",
+    "kit/courses/psychology/notes/u14.js",
+    "kit/courses/psychology/notes/u15.js",
+    "kit/courses/psychology/notes/u16.js"
+   ]
+  },
+  {
+   "id": 14,
+   "lessons": 438,
+   "subjects": [
+    "sociology"
+   ],
+   "files": [
+    "kit/courses/sociology/notes/u01.js",
+    "kit/courses/sociology/notes/u02.js",
+    "kit/courses/sociology/notes/u03.js",
+    "kit/courses/sociology/notes/u04.js",
+    "kit/courses/sociology/notes/u05.js",
+    "kit/courses/sociology/notes/u06.js",
+    "kit/courses/sociology/notes/u07.js",
+    "kit/courses/sociology/notes/u08.js",
+    "kit/courses/sociology/notes/u09.js",
+    "kit/courses/sociology/notes/u10.js",
+    "kit/courses/sociology/notes/u11.js",
+    "kit/courses/sociology/notes/u12.js",
+    "kit/courses/sociology/notes/u13.js",
+    "kit/courses/sociology/notes/u14.js",
+    "kit/courses/sociology/notes/u15.js",
+    "kit/courses/sociology/notes/u16.js",
+    "kit/courses/sociology/notes/u17.js",
+    "kit/courses/sociology/notes/u18.js"
+   ]
+  },
+  {
+   "id": 15,
+   "lessons": 279,
+   "subjects": [
+    "maths part 1/3"
+   ],
+   "files": [
+    "kit/courses/maths/notes/u02.js",
+    "kit/courses/maths/notes/u03.js",
+    "kit/courses/maths/notes/u04.js",
+    "kit/courses/maths/notes/u05.js",
+    "kit/courses/maths/notes/u06.js",
+    "kit/courses/maths/notes/u10.js",
+    "kit/courses/maths/notes/u11.js"
+   ]
+  },
+  {
+   "id": 16,
+   "lessons": 279,
+   "subjects": [
+    "maths part 2/3"
+   ],
+   "files": [
+    "kit/courses/maths/notes/u12.js",
+    "kit/courses/maths/notes/u13.js",
+    "kit/courses/maths/notes/u16.js",
+    "kit/courses/maths/notes/u17.js",
+    "kit/courses/maths/notes/u18.js",
+    "kit/courses/maths/notes/u19.js"
+   ]
+  },
+  {
+   "id": 17,
+   "lessons": 212,
+   "subjects": [
+    "maths part 3/3"
+   ],
+   "files": [
+    "kit/courses/maths/notes/u20.js",
+    "kit/courses/maths/notes/u24.js",
+    "kit/courses/maths/notes/u25.js",
+    "kit/courses/maths/notes/u26.js",
+    "kit/courses/maths/notes/u27.js",
+    "kit/courses/maths/notes/u28.js"
+   ]
+  },
+  {
+   "id": 18,
+   "lessons": 301,
+   "subjects": [
+    "physics part 1/4"
+   ],
+   "files": [
+    "kit/courses/physics/notes/u01.js",
+    "kit/courses/physics/notes/u02.js",
+    "kit/courses/physics/notes/u08.js",
+    "kit/courses/physics/notes/u09.js",
+    "kit/courses/physics/notes/u10.js",
+    "kit/courses/physics/notes/u11.js",
+    "kit/courses/physics/notes/u12.js",
+    "kit/courses/physics/notes/u13.js",
+    "kit/courses/physics/notes/u14.js",
+    "kit/courses/physics/notes/u15.js",
+    "kit/courses/physics/notes/u16.js",
+    "kit/courses/physics/notes/u17.js"
+   ]
+  },
+  {
+   "id": 19,
+   "lessons": 308,
+   "subjects": [
+    "physics part 2/4"
+   ],
+   "files": [
+    "kit/courses/physics/notes/u18.js",
+    "kit/courses/physics/notes/u19.js",
+    "kit/courses/physics/notes/u20.js",
+    "kit/courses/physics/notes/u21.js",
+    "kit/courses/physics/notes/u22.js",
+    "kit/courses/physics/notes/u23.js",
+    "kit/courses/physics/notes/u24.js",
+    "kit/courses/physics/notes/u25.js",
+    "kit/courses/physics/notes/u26.js",
+    "kit/courses/physics/notes/u27.js",
+    "kit/courses/physics/notes/u28.js"
+   ]
+  },
+  {
+   "id": 20,
+   "lessons": 306,
+   "subjects": [
+    "physics part 3/4"
+   ],
+   "files": [
+    "kit/courses/physics/notes/u29.js",
+    "kit/courses/physics/notes/u30.js",
+    "kit/courses/physics/notes/u31.js",
+    "kit/courses/physics/notes/u32.js",
+    "kit/courses/physics/notes/u33.js",
+    "kit/courses/physics/notes/u34.js",
+    "kit/courses/physics/notes/u35.js",
+    "kit/courses/physics/notes/u36.js",
+    "kit/courses/physics/notes/u37.js",
+    "kit/courses/physics/notes/u38.js",
+    "kit/courses/physics/notes/u39.js",
+    "kit/courses/physics/notes/u40.js",
+    "kit/courses/physics/notes/u41.js"
+   ]
+  },
+  {
+   "id": 21,
+   "lessons": 267,
+   "subjects": [
+    "physics part 4/4"
+   ],
+   "files": [
+    "kit/courses/physics/notes/u42.js",
+    "kit/courses/physics/notes/u43.js",
+    "kit/courses/physics/notes/u44.js",
+    "kit/courses/physics/notes/u45.js",
+    "kit/courses/physics/notes/u46.js",
+    "kit/courses/physics/notes/u47.js",
+    "kit/courses/physics/notes/u48.js",
+    "kit/courses/physics/notes/u49.js",
+    "kit/courses/physics/notes/u50.js",
+    "kit/courses/physics/notes/u51.js",
+    "kit/courses/physics/notes/u52.js",
+    "kit/courses/physics/notes/u53.js",
+    "kit/courses/physics/notes/u54.js"
+   ]
+  }
+ ]
+}
