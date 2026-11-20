@@ -207,8 +207,8 @@ specification → outcome → concepts → lessons. The engine already resolves 
 
 - **`main`** is production: every push deploys. Content work never commits to it directly.
 - **Curriculum work** happens on one integration branch, in focused commits, and reaches `main` through reviewed pull
-  requests. The brief names `curriculum/global-content`. This session works on `claude/happy-darwin-0942cr`, the
-  branch it was assigned. It can move to `curriculum/global-content` once the owner approves that.
+  requests. The brief names `curriculum/global-content`. The work began on `claude/happy-darwin-0942cr` and continues on
+  `claude/epic-ptolemy-pslj3f` (merged with `main` on 20 November 2026), the branch the current session was assigned. It can move to `curriculum/global-content` once the owner approves that.
 - **Ownership.** The curriculum workstream owns `kit/curriculum/`, `kit/courses/*/notes/`, `syllabus.js`, `ids.js`,
   `qa.js`, `map.js`, `concepts.js`, the curriculum docs and `scripts/curriculum*.mjs`. The UX workstream owns `kit/app/`,
   `kit/ui/`, `kit/styles/`, `kit/course/` rendering and the site pages. Neither edits the other's area without
@@ -264,8 +264,9 @@ validated*: passes content standard 2 now, recomputed on every run; a structural
 has signed it off. Nothing is shown as verified coverage until a person has checked the specification and confirmed
 its mappings, and the matrix enforces that.
 
-**How batches run.** Parallel workers, each owning named files, follow shared briefs (common rules, the Physics
-standard-2 upgrade, the assessment and progression upgrade). They never commit; the coordinator validates
+**How batches run.** Parallel workers, each owning named files, follow the shared brief in `docs/qa/BATCH_BRIEF.md`
+(common rules, the standard-2 upgrade, course-specific rules, the batch report format), kept in the repository so a
+new session can pick it up. They never commit; the coordinator validates
 (`node scripts/new-course.mjs check`, the course tests, `npm run curriculum`), commits only what passes, and
 regenerates the reports. Pre-existing test failures (14 database tests needing a local Postgres) are reported
 separately from anything new.
