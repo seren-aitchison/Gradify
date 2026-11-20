@@ -84,3 +84,13 @@
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", mount); else mount();
 })();
+
+// "Skip to content" (every page, scripts/sync-headers.mjs): move focus to the main content without changing the
+// address. Course and app pages route by the part after "#", so following the link's own href would change the view.
+document.addEventListener("click", function (e) {
+  var a = e.target.closest && e.target.closest("a.skip-link"); if (!a) return;
+  var t = document.getElementById((a.getAttribute("href") || "").slice(1)); if (!t) return;
+  e.preventDefault();
+  if (!t.hasAttribute("tabindex")) t.setAttribute("tabindex", "-1");
+  t.focus({ preventScroll: true }); t.scrollIntoView({ block: "start" });
+});

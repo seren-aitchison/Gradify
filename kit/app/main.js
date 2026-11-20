@@ -28,7 +28,7 @@ import { schedule, preview, isDue, isLearned, fmtInterval, RATINGS } from "../le
 import { topicProfiles, practiceOrder, LEVELS } from "../learning/mastery.js";
 import { sixHtml, calibrationHtml, HOW } from "../learning/mastery-view.js";
 import { levelOf as gameLevelOf } from "../game/engine.js";
-import { loadLearner, COURSES, leafKind } from "../learning/learner-data.js";
+import { loadLearner, COURSES, LIVE_COURSES, leafKind } from "../learning/learner-data.js";
 import { mountJourney, journeySummary } from "../game/journey.js";
 import { AREAS, METRICS, PERIODS, HABIT_MODES, validateGoal, goalProgress, focusGoals } from "../learning/goals.js";
 import { goalData } from "../learning/goal-data.js";
@@ -262,13 +262,14 @@ function decorate(root) {
 }
 
 async function route() {
-  const [name, arg] = (location.hash.replace(/^#\/?/, "") || "today").split("/");
+  // #/name/arg/…: each view gets its first argument, and any further parts of the route (#/goal/edit/<id>)
+  const [name, arg, ...more] = (location.hash.replace(/^#\/?/, "") || "today").split("/");
   if (needsSetup(profile) && !["start", "account"].includes(name)) { location.replace("#/start"); return; }
   const section = name in SECTION_OF ? SECTION_OF[name] : name;
   document.querySelectorAll(".app-nav a, .tabbar a, .lo-side a").forEach((a) => a.setAttribute("aria-current", String(a.dataset.route === section)));
   document.body.classList.remove("side-open");
   view.innerHTML = '<div class="loading" aria-busy="true"></div>';
-  try { await (routes[name] || renderToday)(arg); } catch (e) { console.error(e); view.innerHTML = `<div class="panel glass"><h3>Something went wrong</h3><p class="sub">${esc(e.message)}</p></div>`; }
+  try { await (routes[name] || renderToday)(arg, more); } catch (e) { console.error(e); view.innerHTML = `<div class="panel glass"><h3>Something went wrong</h3><p class="sub">${esc(e.message)}</p></div>`; }
   decorate(view);
   tabify(name);
   sessionPill(name);
@@ -987,7 +988,7 @@ function nextList(items) {
 // sites to start with when a learner has no course yet: the built course sites, this learner's own first
 function startCourses(L, n = 6) {
   const started = new Set((L?.courses || []).map((c) => c.slug));
-  const all = Object.entries(COURSES).filter(([slug]) => !started.has(slug));
+  const all = Object.entries(LIVE_COURSES).filter(([slug]) => !started.has(slug));
   return all.slice(0, n).map(([slug, href]) => `<a class="lo-chip" href="${href}">${esc(slug[0].toUpperCase() + slug.slice(1))}</a>`).join("");
 }
 function proCard(sub) {
@@ -1098,8 +1099,9 @@ async function renderGoals() {
 routes.goals = renderGoals;
 
 // create or edit one goal
-async function renderGoalForm(arg) {
-  const [mode, id] = String(arg || "new").split("/").length > 1 ? String(arg).split("/") : [arg || "new"];
+async function renderGoalForm(arg, more = []) {
+  // #/goal/new, or #/goal/edit/<id> (the id arrives as the route's next part)
+  const mode = arg || "new", id = more[0] || "";
   const goals = await store.listGoals().catch(() => []);
   const g = mode === "edit" ? goals.find((x) => x.id === decodeURIComponent(id)) : null;
   if (mode === "edit" && !g) { view.innerHTML = `<article class="panel glass"><h3>That goal isn't here any more</h3><a class="see" href="#/goals">Back to your goals</a></article>`; return; }
@@ -1118,7 +1120,7 @@ async function renderGoalForm(arg) {
       </fieldset>
       <div class="wide gf-part" data-part="tracked">
         <label><span>What it measures</span><select name="metric">${Object.entries(METRICS).map(([k, d]) => `<option value="${k}" ${`${m.source}:${m.metric}` === k ? "selected" : ""}>${d.label}</option>`).join("")}</select></label>
-        <label data-needs="course"><span>Course</span><select name="course">${Object.keys(COURSES).map((c) => `<option value="${c}" ${m.course === c ? "selected" : ""}>${esc(courseName(c))}</option>`).join("")}</select></label>
+        <label data-needs="course"><span>Course</span><select name="course">${Object.keys(COURSES).filter((c) => LIVE_COURSES[c] || c === m.course).map((c) => `<option value="${c}" ${m.course === c ? "selected" : ""}>${esc(courseName(c))}</option>`).join("")}</select></label>
         <label data-needs="site"><span>Site (optional)</span><select name="msite"><option value="">Any Gradify site</option>${sites.map((x) => `<option ${m.site === x.n ? "selected" : ""}>${esc(x.n)}</option>`).join("")}</select></label>
         <label><span>Counted</span><select name="period">${PERIODS.map(([k, l]) => `<option value="${k}" ${(m.period || "since_start") === k ? "selected" : ""}>${l}</option>`).join("")}</select></label>
         <label><span>Target</span><input type="number" name="ttarget" min="1" step="1" value="${g?.metric ? esc(g.target) : ""}" placeholder="e.g. 20"></label>

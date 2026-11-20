@@ -172,6 +172,21 @@ a { color: inherit; }
 }
 .pill-white { background: var(--invert-bg); color: var(--invert-fg); box-shadow: 0 4px 14px -6px rgba(0, 0, 0, .5); }
 .pill-dark { background: rgba(var(--sink-rgb), .3); color: var(--mute); border: 1px solid var(--line); font-weight: 500; }
+/* "Skip to content", first on every page (scripts/sync-headers.mjs): out of sight until it has keyboard focus */
+.skip-link { position: absolute; left: 16px; top: -64px; z-index: 70; padding: 8px 14px; border-radius: 10px; background: var(--invert-bg); color: var(--invert-fg); font-weight: 600; text-decoration: none; }
+.skip-link:focus { top: 12px; }
+/* the hub footer (scripts/sync-headers.mjs): the same on every hub page */
+.hub-foot { margin: 64px 0 28px; padding: 28px 28px 22px; border-radius: 20px; font-size: 14px; color: var(--mute); }
+.hub-foot-cols { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 24px; }
+.hub-foot-brand b { font-size: 18px; color: var(--fg); }
+.hub-foot-brand p { margin: 6px 0 0; max-width: 26em; }
+.hub-foot nav { display: flex; flex-direction: column; gap: 4px; }
+.hub-foot nav b { margin-bottom: 4px; color: var(--fg); }
+.hub-foot nav a { color: var(--mute); text-decoration: none; padding: 4px 0; }
+.hub-foot nav a:hover { color: var(--fg); }
+.hub-foot-base { margin-top: 22px; padding-top: 16px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 13px; color: var(--faint); }
+.hub-foot-base p { margin: 0; }
+@media (max-width: 640px) { .hub-foot { padding: 22px 18px; } .hub-foot-cols { grid-template-columns: 1fr 1fr; } .hub-foot-brand { grid-column: 1 / -1; } .hub-foot nav a { padding: 11px 0; } }
 /* ---------- Top bar ---------- */
 .bar {
   position: sticky; top: 10px; z-index: 10;
@@ -245,7 +260,22 @@ a { color: inherit; }
 @media (max-width: 640px) {
   :root { --gutter: 16px; --bar-bleed: 8px; }
   .bar .right .btn-primary { display: none; }
+  /* the hub header on phones: logo, search and the menu; sign-in and the reading and theme settings are in the menu */
+  .hub-bar .right { gap: 8px; }
+  .hub-bar .right .hub-signin, .hub-bar .right .access-btn, .hub-bar .right .theme-btn { display: none; }
 }
+/* the hub header's menu (scripts/sync-headers.mjs, kit/core/hubnav.js): links, then sign-in and "Open Gradify", then
+   the reading and theme settings, which the bar itself only shows on wider screens */
+.menu a[aria-current="page"] { background: rgba(var(--ink-rgb), .08); font-weight: 600; }
+.menu .btn { justify-content: center; margin: 6px 4px 2px; }
+.menu .menu-set { display: flex; gap: 8px; padding: 8px 4px 2px; margin-top: 6px; border-top: 1px solid var(--line); }
+.menu .menu-set button {
+  flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 8px 10px;
+  border-radius: 12px; border: 1px solid var(--line); background: rgba(var(--ink-rgb), .05); color: var(--fg); font: 500 14px var(--sans); cursor: pointer;
+}
+.menu .menu-set button:hover { background: rgba(var(--ink-rgb), .1); }
+.menu .menu-set svg { width: 16px; height: 16px; }
+@media (min-width: 641px) { .menu .menu-set, .menu .hub-signin, .menu .hub-open { display: none; } }
 
 /* learner settings (kit/data/profile.js applyPrefs): reduce motion and larger text, on every site */
 html[data-motion="reduce"] *, html[data-motion="reduce"] *::before, html[data-motion="reduce"] *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }

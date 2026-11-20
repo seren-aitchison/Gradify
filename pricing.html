@@ -73,7 +73,7 @@
     tbody th { font-weight: 500; }
     .faq { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
     .faq details { padding: 16px 18px; border-radius: var(--radius); }
-    .faq summary { cursor: pointer; font-weight: 600; line-height: 1.4; }
+    .faq summary { cursor: pointer; font-weight: 600; line-height: 1.4; padding: 11px 0; }
     .faq details p { color: var(--mute); line-height: 1.55; margin: 10px 0 0; }
     .foot { max-width: 980px; margin: 56px auto 32px; padding-top: 18px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 8px 22px; justify-content: space-between; color: var(--mute); font-size: 14px; }
     .foot a { color: inherit; }
@@ -84,23 +84,22 @@
 <body>
   <div class="aurora" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
   <div class="wrap">
-    <header class="bar glass">
-      <a class="brand" href="/">
-        <svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4641ff"/><stop offset=".35" stop-color="#f055dd"/><stop offset=".7" stop-color="#ff5600"/><stop offset="1" stop-color="#ffc002"/></linearGradient></defs><rect x=".75" y=".75" width="30.5" height="30.5" rx="9" fill="#0b0b0b" stroke="rgba(255,255,255,.22)" stroke-width="1.5"/><path d="M22.9 10.9A8.6 8.6 0 1 0 24.6 16H16.4" fill="none" stroke="url(#gg)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Gradify
-      </a>
-      <nav class="sections" aria-label="Sections">
-        <a href="/#stage">Sites</a>
-        <a href="/#features">Features</a>
-        <a href="/pricing.html" class="active" aria-current="page">Pricing</a>
-      </nav>
+    <!-- hub-header: written by scripts/sync-headers.mjs; edit it there -->
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="bar glass hub-bar">
+      <a class="brand" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4641ff"/><stop offset=".35" stop-color="#f055dd"/><stop offset=".7" stop-color="#ff5600"/><stop offset="1" stop-color="#ffc002"/></linearGradient></defs><rect x=".75" y=".75" width="30.5" height="30.5" rx="9" fill="#0b0b0b" stroke="rgba(255,255,255,.22)" stroke-width="1.5"/><path d="M22.9 10.9A8.6 8.6 0 1 0 24.6 16H16.4" fill="none" stroke="url(#gg)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Gradify</a>
+      <nav class="sections" aria-label="Gradify"><a href="/explore.html">Explore</a><a href="/#find">Sites</a><a href="/journey.html">Journey</a><a href="/pricing.html" class="active" aria-current="page">Pricing</a></nav>
       <div class="right">
-        <a class="link" href="/app.html#/account" id="acct-link">Sign in</a>
-        <a class="btn btn-primary btn-sm lg" href="/app.html">Open Gradify</a>
+        <a class="link hub-signin" href="/app.html#/account">Sign in</a>
+        <a class="btn btn-primary btn-sm lg hub-open" href="/app.html">Open Gradify</a>
+        <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
       </div>
+      <nav class="menu" id="menu" aria-label="Menu" hidden><a href="/explore.html">Explore</a><a href="/#find">Sites</a><a href="/journey.html">Journey</a><a href="/pricing.html" class="active" aria-current="page">Pricing</a><a class="hub-signin" href="/app.html#/account">Sign in</a><a class="btn btn-primary lg hub-open" href="/app.html">Open Gradify</a></nav>
     </header>
+    <script type="module" src="/kit/core/hubnav.js"></script>
+    <!-- /hub-header -->
 
-    <main>
+    <main id="main">
       <div class="hero">
         <span class="badge"><span class="spark"></span> Pricing</span>
         <h1>Learn free.<br><em>Let Gradify run the rest.</em></h1>
@@ -164,9 +163,18 @@
 
       <div class="foot">
         <span>Prices in pounds sterling (GBP), including VAT.</span>
-        <span><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a> · <a href="/app.html#/account">Account</a> · <a href="/">Gradify</a></span>
       </div>
     </main>
+    <!-- hub-footer: written by scripts/sync-headers.mjs; edit it there -->
+    <footer class="hub-foot glass">
+      <div class="hub-foot-cols">
+        <div class="hub-foot-brand"><b>Gradify™</b><p>Turn your notes into flashcards checked against what you wrote, and revise them at the right time.</p></div>
+        <nav aria-label="Gradify"><b>Gradify</b><a href="/explore.html">Explore</a><a href="/#find">Sites</a><a href="/journey.html">Journey</a><a href="/pricing.html">Pricing</a><a href="/app.html">Open Gradify</a></nav>
+        <nav aria-label="About Gradify"><b>About</b><a href="/quality.html">Quality</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="mailto:hello@getgradify.com">Contact</a></nav>
+      </div>
+      <div class="hub-foot-base"><p><b>Also from the Gradify team:</b> Seren Aitchison (portfolio blog), BioFrontier, Eirova™, Erya™ and Vizeon™.</p><p>© <span class="hub-year">2026</span> Gradify™</p></div>
+    </footer>
+    <!-- /hub-footer -->
   </div>
 
   <script src="/kit/vendor/supabase/supabase.js"></script>
@@ -295,7 +303,7 @@
       store = clientStore(client);
       const { data } = await client.auth.getSession();
       signedIn = Boolean(data.session);
-      $("#acct-link").textContent = signedIn ? "Account" : "Sign in";
+      document.querySelectorAll(".hub-signin").forEach((a) => { a.textContent = signedIn ? "Account" : "Sign in"; });
       if (signedIn) sub = await mySubscription(store).catch(() => null);
       // an offer kept in the account (from another browser or device): the learner's own profile row
       if (signedIn) learner = (await Promise.resolve(client.from("profiles").select("learner").maybeSingle()).catch(() => ({ data: null }))).data?.learner || null;

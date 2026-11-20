@@ -50,25 +50,26 @@
 </head>
 <body class="sub-page">
   <div class="wrap">
+    <!-- sub-header: written by scripts/sync-headers.mjs; edit it there -->
+    <a class="skip-link" href="#main">Skip to content</a>
     <header class="sub-nav glass">
       <a class="sub-brand" href="./"><span class="icon"></span><span data-site-name>UnderGradify</span></a>
       <nav class="sub-links" aria-label="UnderGradify">
         <a href="course/">Course</a>
-        <a href="app.html#/study">Learn</a>
-        <a href="app.html#/notes">Notes</a>
-        <a href="app.html#/progress">Progress</a>
-        <a href="app.html#/plan">Plan</a>
+        <a href="app.html#/study">Study</a>
         <a href="map.html">Map</a>
         <a href="lifeos.html">LifeOS</a>
-        <a href="/">Gradify</a>
+        <details class="sub-more"><summary>More</summary><div class="sub-more-list"><a href="app.html#/notes">Notes</a><a href="app.html#/progress">Progress</a><a href="app.html#/plan">Plan</a><a href="/">All Gradify sites</a></div></details>
       </nav>
       <div class="sub-right">
         <a class="signin" href="app.html#/account">Sign in</a>
-        <a class="btn btn-light lg btn-sm" href="app.html"><span>Start free</span></a>
+        <a class="btn btn-light lg btn-sm sub-cta" href="app.html"><span>Start free</span></a>
       </div>
     </header>
+    <script type="module" src="../kit/core/subheader.js"></script>
+    <!-- /sub-header -->
 
-    <main>
+    <main id="main">
       <section class="sub-hero">
         <div>
           <a class="sub-badge" href="/#lifeos"><i></i>A Gradify site, designed to connect with Gradify LifeOS <span aria-hidden="true">→</span></a>
@@ -98,7 +99,9 @@
       </a>
       <div id="sub-more"></div>
     </main>
-    <footer class="sub-foot"><span data-site-name>UnderGradify</span> is part of <a href="/">Gradify</a>. One Gradify account is coming to every Gradify site; until then, your progress is saved in this browser.</footer>
+    <!-- sub-footer: written by scripts/sync-headers.mjs; edit it there -->
+    <footer class="sub-foot"><p><span data-site-name>UnderGradify</span> is part of <a href="/">Gradify</a>. Sign in to keep your progress on every device.</p><nav aria-label="UnderGradify footer"><a href="/">All Gradify sites</a><a href="/pricing.html">Pricing</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="mailto:hello@getgradify.com">Contact</a></nav></footer>
+    <!-- /sub-footer -->
   </div>
 </body>
 </html>

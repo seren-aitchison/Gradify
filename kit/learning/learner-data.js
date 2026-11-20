@@ -31,6 +31,12 @@ export const COURSES = {
   french: "/languagegradify/french/", german: "/languagegradify/german/", italian: "/languagegradify/italian/", dutch: "/languagegradify/dutch/",
   swedish: "/languagegradify/swedish/", japanese: "/languagegradify/japanese/", mandarin: "/languagegradify/mandarin/",
 };
+// courses listed above whose pages aren't built yet: kept for reading activity, never linked to
+// (tests/navigation.test.mjs checks every other course's page exists, and these don't)
+export const PLANNED = new Set(["french", "german", "italian", "dutch", "swedish", "mandarin"]);
+/** the courses a learner can open now: { slug: path } */
+export const LIVE_COURSES = Object.fromEntries(Object.entries(COURSES).filter(([k]) => !PLANNED.has(k)));
+
 const dayKey = (t) => { const d = new Date(t); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`; };
 
 // ---------- activity: the life heatmap and the Tree ----------

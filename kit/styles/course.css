@@ -139,7 +139,9 @@
 .co-crumbs { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 14px; color: var(--mute); }
 .co-crumbs a { color: var(--fg); text-decoration: none; }
 .co-steps { display: flex; gap: 4px; margin: 12px 0 0; }
-.co-steps a { flex: 1; height: 6px; border-radius: 9px; background: rgba(var(--ink-rgb), .1); }
+.co-steps a { flex: 1; height: 6px; border-radius: 9px; background: rgba(var(--ink-rgb), .1); position: relative; }
+/* each lesson's bar is thin to look at but tall to tap: an invisible target around it */
+.co-steps a::before { content: ""; position: absolute; inset: -16px -2px; }
 .co-steps a.done { background: linear-gradient(90deg, var(--a), var(--b)); }
 .co-steps a.here { background: var(--invert-bg); box-shadow: 0 0 10px rgba(255, 255, 255, .6); }
 .co-notes { margin-top: 16px; }
@@ -810,7 +812,9 @@ button.rx-s { cursor: pointer; border-bottom: 1px dashed var(--line-strong); } b
 /* the lesson's header */
 .co-lhead { position: relative; padding-bottom: 28px !important; }
 .co-lhead .co-licon { float: right; margin: -6px -6px 12px 20px; }
-.co-lhead h2 { font-size: clamp(32px, 4.6vw, 52px) !important; line-height: 1.04; letter-spacing: -.04em; margin-top: 12px !important; text-wrap: balance; }
+/* the lesson title is the page's heading (h1) while reading: the course header above it is hidden then */
+.co-lhead h1 { margin: 0; }
+.co-lhead :is(h1, h2) { font-size: clamp(32px, 4.6vw, 52px) !important; line-height: 1.04; letter-spacing: -.04em; margin-top: 12px !important; text-wrap: balance; }
 .co-lhead .mv-lead { font-size: clamp(17px, 1.6vw, 19.5px); line-height: 1.6; max-width: 62ch; margin-top: 16px; text-wrap: pretty; }
 .co-lhead .mv-chips { margin-top: 20px; gap: 8px; }
 .co-jump { text-decoration: none; color: var(--fg); cursor: pointer; }
