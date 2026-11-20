@@ -60,7 +60,7 @@
 .co-ring { width: 76px; height: 76px; flex: none; transform: rotate(-90deg); }
 .co-ring circle { fill: none; stroke-width: 8; stroke-linecap: round; }
 .co-ring .bg { stroke: rgba(var(--ink-rgb), .08); } .co-ring .fg { stroke: #40d4b1; transition: stroke-dashoffset .6s; filter: drop-shadow(0 0 6px rgba(64, 212, 177, .6)); }
-.co-dots { display: grid; grid-template-columns: repeat(auto-fill, minmax(16px, 1fr)); gap: 5px; margin-top: 10px; }
+.co-dots { display: grid; grid-template-columns: repeat(auto-fill, minmax(18px, 1fr)); gap: 6px; margin-top: 10px; }
 .co-dots a { aspect-ratio: 1; border-radius: 5px; background: linear-gradient(0deg, var(--a) calc(var(--p) * 100%), rgba(var(--ink-rgb), .07) calc(var(--p) * 100%)); border: 1px solid color-mix(in srgb, var(--a) 40%, transparent); }
 .co-dots a:hover { outline: 2px solid var(--fg); }
 .co-badges { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-top: 10px; }
@@ -2146,3 +2146,18 @@ body.has-gai .gx-totop { bottom: calc(84px + env(safe-area-inset-bottom)); }
 .cx-donenext { display: flex; width: 100%; justify-content: center; margin: 4px 0 18px; font-size: 17px; padding: 16px 22px; }
 .co-quick { margin-top: 28px; padding-top: 22px; border-top: 1px solid rgba(var(--ink-rgb), .14); }
 body:has(> .co-modal) .cx-rings { display: none !important; }
+/* mouse and trackpad: the dense grids keep 24px between neighbours' centres (WCAG 2.5.8 target spacing) */
+.cx-mrc { gap: 6px; } .cx-mrc a { width: 18px; height: 18px; border-radius: 5px; }
+.cx-activity .co-heat { gap: 7px; } .cx-heatm { gap: 7px; } .cx-heatwd { gap: 7px; }
+/* the lesson step bars: a 24px-tall target each, with the 5px bar drawn inside it, so pointer users have room too */
+.co-read .co-steps { margin: 0; }
+.co-steps a, .co-read .co-steps a { --bar: rgba(var(--ink-rgb), .1); height: 24px; background: none !important; box-shadow: none !important; transform: none !important; }
+.co-steps a::before { inset: 0; }
+.co-steps a::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 5px; translate: 0 -50%; border-radius: 99px; background: var(--bar); transition: transform .15s; }
+.co-steps a.done { --bar: linear-gradient(90deg, var(--a), var(--b)); }
+.co-steps a.here { --bar: var(--invert-bg); }
+.co-steps a.here::after { box-shadow: 0 0 10px rgba(var(--spec-rgb), .6); }
+.co-steps a:hover::after { transform: scaleY(1.8); }
+@media (prefers-reduced-motion: reduce) { .co-steps a::after { transition: none; } }
+/* this topic's dots, for mouse users: 24px apart (touch screens already give each a 44px square) */
+@media (pointer: fine) { .cx-w-dots { gap: 10px; } .cx-w-dots a { margin: 0; } }
