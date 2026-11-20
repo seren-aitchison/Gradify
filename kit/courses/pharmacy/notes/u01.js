@@ -301,8 +301,8 @@ Q: Name two pieces of jargon to avoid in instructions. | PRN and bd.
 Q: What writing style helps people with low health literacy? | Plain words, short sentences and one idea at a time.
 Q: What format of leaflet helps people with learning disabilities? | Easy-read leaflets.
 Q: What does the Accessible Information Standard require NHS services in England to do? | Ask about and record people's communication needs.
-Q: Which is clearer: 'take two 5 mL spoonfuls' or '10 mL'? | Take two 5 mL spoonfuls.
 Q: How could a 10 mL dose be phrased more clearly for a patient? | As 'take two 5 mL spoonfuls'.
+Q: Name three accessible formats for people with sight loss. | Large print, Braille labels and audio information.
 
 ## Consent in pharmacy practice
 S: Before any examination, treatment or service, a person must give valid consent. Pharmacists seek consent for consultations, vaccinations, services and sharing information, and must recognise when someone lacks capacity.
