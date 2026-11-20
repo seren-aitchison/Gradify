@@ -707,6 +707,7 @@ SA3@2: A drug halves the risk of a side effect from 0.2% to 0.1%. Calculate the 
 S: When many hypotheses are tested, some will be "significant" by chance alone. Multiple testing corrections adjust the thresholds so that the chance of any false positive, or the proportion of them, stays under control.
 O: Calculate the family-wise error rate for several tests
 O: Apply the Bonferroni and Holm corrections
+LV: Year 1 · Application
 T: Family-wise error rate | FWER, the probability of at least one Type I error among all the tests
 T: Bonferroni correction | Testing each of m hypotheses at α/m, which keeps the FWER ≤ α
 H: The problem
@@ -731,16 +732,20 @@ Q: What is the Bonferroni threshold for 10 tests at α = 0.05? | 0.005.
 Q: Is Holm's method more or less powerful than Bonferroni's? | More powerful, with the same FWER guarantee.
 SUM: Many tests produce chance findings.
 SUM: Corrections control the error rate.
+EV: established | Running m tests at level α inflates the chance of at least one false positive, and the Bonferroni and Holm procedures keep it at most α.
 SRC: Bland JM, Altman DG, Multiple significance tests: the Bonferroni method, BMJ 310, 170 | primary | 1995 | https://doi.org/10.1136/bmj.310.6973.170
 SRC: Holm S, A simple sequentially rejective multiple test procedure, Scandinavian Journal of Statistics 6(2), 65 | primary | 1979 | https://www.jstor.org/stable/4615733
 NUM1#maths-u13-19-q1@1: Five independent tests are each run at α = 0.05 with all nulls true. Find the FWER, to 4 decimal places. | 0.2262 | 0.0005 |  | 1 − 0.95^{5} ≈ 1 − 0.7738 = 0.2262.
 M1#maths-u13-19-q2@1: With Holm's method for 4 tests at α = 0.05, what threshold does the smallest p-value face? | 0.0125 | 0.05 | 0.0167 | 0.025 | 0.2 | The smallest is compared with α/m = 0.05/4.
 M2#maths-u13-19-q3@2: Why is the Bonferroni correction called conservative? | It controls the FWER at or below α, often well below, losing power | It increases false positives | It ignores the number of tests | It only works for independent tests | It uses larger thresholds, so it rejects more often | Dividing α by m guarantees control but often rejects fewer than necessary.
+NUM3@2: Four p-values are 0.004, 0.011, 0.02 and 0.3. How many hypotheses does Holm's method reject at α = 0.05? | 3 | 0 |  | Compare in order with 0.05/4, 0.05/3, 0.05/2 and 0.05: 0.004 < 0.0125, 0.011 < 0.0167 and 0.02 < 0.025 pass, but 0.3 fails, so three are rejected (Bonferroni rejects only two).
+SA3@2: A trial finds its primary outcome non-significant, but one of 12 secondary outcomes has p = 0.03. Evaluate a press release that calls the drug effective. | With 12 tests at 5% and no real effects, the chance of at least one p < 0.05 is 1 − 0.95^{12} ≈ 0.46, so one such result is unsurprising. A Bonferroni threshold would be 0.05/12 ≈ 0.0042, which 0.03 does not meet. The primary outcome, chosen in advance, failed, so the claim is not supported; the secondary finding is at most a hypothesis for a new, pre-registered trial. | Computes or describes the inflated FWER ; Applies a correction such as 0.05/12 ; Concludes 0.03 is not significant after correction ; Stresses the pre-specified primary outcome ; Suggests treating it as hypothesis-generating
 
 ## False Discovery Rate
 S: The false discovery rate (FDR) is the expected proportion of false positives among the results declared significant. Controlling it, rather than the chance of any false positive, keeps power when thousands of hypotheses are screened, as in genomics.
 O: Define the false discovery rate
 O: Apply the Benjamini–Hochberg procedure
+LV: Year 2 · Application
 T: False discovery rate | E(V/R), the expected fraction of false rejections V among all rejections R (taken as 0 if R = 0)
 T: Benjamini–Hochberg procedure | Order the m p-values; find the largest k with p₍ₖ₎ ≤ (k/m)q; reject hypotheses 1 to k
 H: The idea
@@ -766,16 +771,20 @@ Q: What does FDR control at 10% mean? | On average, at most 10% of declared disc
 Q: What is the BH threshold for the 3rd smallest of 10 p-values at q = 0.05? | 0.015.
 SUM: FDR controls the share of false discoveries.
 SUM: Benjamini–Hochberg is the standard method.
+EV: established | The Benjamini–Hochberg procedure controls the expected proportion of false discoveries at q for independent and positively dependent tests.
 SRC: Benjamini Y, Hochberg Y, Controlling the false discovery rate, Journal of the Royal Statistical Society B 57(1), 289 | primary | 1995 | https://doi.org/10.1111/j.2517-6161.1995.tb02031.x
 SRC: Storey JD, Tibshirani R, Statistical significance for genomewide studies, PNAS 100(16), 9440 | primary | 2003 | https://doi.org/10.1073/pnas.1530509100
 NUM1#maths-u13-20-q1@1: With m = 100 tests and q = 0.05, what is the BH threshold for the 20th smallest p-value? | 0.01 | 0.00001 |  | (k/m)q = (20/100) × 0.05 = 0.01.
 M1#maths-u13-20-q2@1: When is FDR control preferred to FWER control? | When screening many hypotheses for follow-up | When one false positive would be disastrous | When there's only one test | Never | When p-values are large | Screening accepts a few false leads in exchange for many more true discoveries.
 M2#maths-u13-20-q3@2: In Benjamini–Hochberg, p₍₂₎ fails its threshold but p₍₃₎ passes. What happens to hypothesis 2? | It's rejected too | It's not rejected | The procedure stops | It's retested | It's removed | All hypotheses up to the largest passing k are rejected.
+NUM3@2: Six p-values are 0.002, 0.009, 0.035, 0.041, 0.06 and 0.5. How many hypotheses does Benjamini–Hochberg reject at q = 0.05? | 2 | 0 |  | Thresholds (k/6) × 0.05 are 0.0083, 0.0167, 0.025, 0.0333, 0.0417, 0.05. Only k = 1 and 2 pass (0.035 > 0.025, 0.041 > 0.0333, 0.06 > 0.0417), so the largest passing k is 2.
+SA3@1,2: A genomics study tests 10,000 genes. Explain why it would control the false discovery rate rather than the family-wise error rate, and what an FDR of 5% means for its list of significant genes. | FWER control (for example Bonferroni at 0.05/10,000 = 0.000005) aims for no false positives at all, which is so strict that many real effects would be missed. The study is a screen whose hits will be followed up, so a few false leads are acceptable. FDR control at 5% means that, on average, about 5% of the genes declared significant are false discoveries: from a list of 200, about 10 might be false. | Explains FWER control is too strict here ; Notes the loss of power ; Notes screening tolerates some false leads ; Defines FDR as the expected share of false discoveries ; Gives an example of what 5% means
 
 ## Parametric Statistics
 S: Parametric methods assume the data come from a family of distributions described by a few parameters, usually the normal. When the assumptions hold, they're the most powerful tools available; when they don't, results can mislead.
 O: Identify the assumptions of common parametric methods
 O: Check assumptions and use transformations when they fail
+LV: Year 1 · Fluency
 T: Parametric method | A method that assumes a distribution family with finitely many parameters
 T: Q–Q plot | A plot of sample quantiles against theoretical quantiles; a straight line suggests the model fits
 H: Common methods and assumptions
@@ -800,15 +809,20 @@ Q: What does a straight Q–Q plot suggest? | The data fit the theoretical distr
 Q: Which transformation often helps with right-skewed positive data? | Taking logarithms.
 SUM: Parametric methods assume a model.
 SUM: Check assumptions before trusting results.
+EV: established | Parametric tests on means are robust to moderate non-normality in large samples because of the central limit theorem.
 SRC: NIST/SEMATECH, e-Handbook of Statistical Methods, section 1.3.3.24: Normal probability plot | guidance | 2012 | https://www.itl.nist.gov/div898/handbook/
 SRC: Altman DG, Practical Statistics for Medical Research (Chapman & Hall 1991) | secondary | 1991 | https://www.routledge.com/
 M1#maths-u13-21-q1@1: Which is an assumption of the pooled two-sample t-test? | Equal population variances | Equal sample sizes | Integer data | A sample size above 100 | Uniformly distributed data | The pooled version assumes a common variance; Welch's version drops it.
 M2#maths-u13-21-q2@2: Why might a t-test still be reasonable for moderately skewed data with n = 200? | The CLT makes the sample mean approximately normal | Skewness doesn't exist for large samples | t-tests need no assumptions | Large samples are always normal | It isn't reasonable | Inference for means relies on the sampling distribution of x̄, which the CLT makes nearly normal.
+NUM2@2: Right-skewed data 10, 100 and 1,000 are analysed on the log₁₀ scale. Back-transform the mean of the logs to get the geometric mean. | 100 | 0 |  | The logs are 1, 2 and 3 with mean 2, and 10^{2} = 100: the geometric mean, which is far below the arithmetic mean 370.
+M3@2: A Shapiro–Wilk test on 5,000 observations gives p = 0.001 for slightly heavy-tailed data. What is the best response before a t-test on the mean? | Check a Q–Q plot; with n this large the t-test is robust to mild non-normality | Abandon parametric methods, since the normality test has rejected | Delete extreme values until the normality test passes | Report that no valid test of the mean is possible | Halve the sample so that the normality test has less power | With huge n, normality tests reject trivial departures, while the CLT makes x̄ nearly normal; plots show whether the departure matters.
+SA3@1: State the assumptions of linear regression and explain how residual plots are used to check them. | Assumptions: the mean of y is linear in x; errors are independent; errors have constant variance; and, for small-sample inference, errors are normal. Plot residuals against fitted values: a curve suggests non-linearity, and a funnel suggests non-constant variance. Plot residuals in time or collection order to look for dependence. A normal Q–Q plot of residuals checks normality. | Lists linearity ; Lists independence ; Lists constant variance ; Lists normality for small samples ; Describes the matching residual plots
 
 ## Nonparametric Statistics
 S: Nonparametric methods make few assumptions about the shape of the population, often working with ranks or signs. They're robust to outliers and suit ordinal or skewed data, at a small cost in power when normal assumptions would have held.
 O: Describe when nonparametric methods are appropriate
 O: Carry out a sign test
+LV: Year 1 · Application
 T: Nonparametric method | A method that doesn't assume a specific parametric distribution
 T: Sign test | A test of a median using only whether observations (or differences) are above or below it
 H: When to use them
@@ -835,16 +849,20 @@ Q: Which nonparametric test compares two independent groups? | The Mann–Whitne
 Q: What information does the sign test ignore? | The sizes of the differences.
 SUM: Nonparametric methods trade assumptions for robustness.
 SUM: Ranks and signs carry the information.
+EV: established | Rank-based tests lose little power under normality (asymptotic relative efficiency about 95%) and can be much more powerful for heavy-tailed data.
 SRC: Hollander M, Wolfe DA, Chicken E, Nonparametric Statistical Methods (3rd edn, Wiley 2014) | secondary | 2014 | https://www.wiley.com/
 SRC: Altman DG, Practical Statistics for Medical Research (Chapman & Hall 1991) | secondary | 1991 | https://www.routledge.com/
 NUM1#maths-u13-22-q1@1: In a sign test with 12 non-zero differences, all 12 are positive. Find the one-tailed p-value, to 5 decimal places. | 0.00024 | 0.00001 |  | (1/2)^{12} = 1/4096 ≈ 0.00024.
 M1#maths-u13-22-q2@1: Which data most clearly call for a nonparametric test? | Satisfaction ratings on a 1–5 scale from 12 people | Exam marks for a large national cohort of students | Reaction times of 1,000 people | Masses of 200 machine parts | Weights of 300 newborn babies | Small samples of ordinal ratings don't suit normal-based methods.
 M3#maths-u13-22-q3@2: Under perfectly normal data, how efficient is the Wilcoxon test relative to the t-test asymptotically? | About 95% | About 50% | About 64% | Exactly 100% | About 10% | The asymptotic relative efficiency is 3/π ≈ 0.955: very little is lost.
+NUM2@2: In a sign test, 9 of 10 non-zero paired differences are positive. Find the one-tailed p-value, to 4 decimal places. | 0.0107 | 0.0001 |  | P(X ≥ 9) for B(10, 0.5) is (10 + 1)/1024 ≈ 0.0107: significant at 5%.
+SA2@1: Explain when you would choose a nonparametric test instead of a t-test, giving an example, and what you might give up. | Choose it for ordinal data (such as 1–5 ratings), small samples from clearly non-normal populations, or data with influential outliers, where a mean is unrepresentative. For example, comparing pain ratings from two small groups with a Mann–Whitney test. The cost is a small loss of power if the data really were normal, and the result concerns ranks or medians rather than a mean difference with a simple confidence interval. Independence is still required. | Names ordinal or skewed data or outliers ; Gives an appropriate example and test ; Notes the small loss of power under normality ; Notes the hypothesis concerns ranks or medians ; States independence is still needed
 
 ## Z-Tests
 S: A z-test compares a statistic with its hypothesised value using the standard normal distribution. It's used for means with known standard deviation and for proportions with large samples.
 O: Carry out one-sample and two-proportion z-tests
 O: State when a z-test is appropriate
+LV: A level · Application
 T: z statistic | (estimate − hypothesised value)/standard error, compared with N(0, 1)
 T: Pooled proportion | The combined proportion of both samples, used for the standard error under H₀: p₁ = p₂
 H: One-sample tests
@@ -869,16 +887,20 @@ Q: What critical value is used for a one-sided 5% z-test? | 1.645.
 Q: How is a two-proportion z-test related to a chi-squared test? | z^{2} equals the 2 × 2 chi-squared statistic.
 SUM: z-tests use the standard normal.
 SUM: They need known σ or large samples.
+EV: established | A z-test is appropriate when σ is known or the sample is large enough for the normal approximation to hold.
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
 SRC: Agresti A, Categorical Data Analysis (3rd edn, Wiley 2013) | secondary | 2013 | https://www.wiley.com/
 NUM1#maths-u13-23-q1@1: Test H₀: p = 0.5 with n = 100 and p̂ = 0.6. Find z. | 2 | 0.001 |  | SE = √(0.25/100) = 0.05, so z = 0.1/0.05 = 2.
 M1#maths-u13-23-q2@1: When is a z-test for a mean appropriate rather than a t-test? | When σ is known or n is large | When n is small and σ unknown | Always | Never | When data are ordinal | With σ estimated from a small sample, the extra uncertainty calls for t.
 M2#maths-u13-23-q3@2: In an A/B test, which standard error does the two-proportion z-test use under H₀? | One based on the pooled proportion | The larger sample's | √(p̂₁ + p̂₂) | The difference in proportions | σ/√n | Under H₀ both groups share one p, best estimated by pooling.
+NUM3@1: In an A/B test, version A converts 120 of 1,000 visitors and version B 150 of 1,000. Find the two-proportion z statistic for B − A, to 2 decimal places. | 1.96 | 0.01 |  | Pooled p̂ = 270/2000 = 0.135; SE = √(0.135 × 0.865 × (1/1000 + 1/1000)) ≈ 0.01528; z = 0.03/0.01528 ≈ 1.96, right at the two-sided 5% boundary.
+SA3@2: In a one-proportion z-test of H₀: p = 0.4 with n = 150 and p̂ = 0.48, explain why the standard error uses p₀, then carry out the test at 5% (two-sided). | The test assumes H₀ is true, so the standard error is the one H₀ implies: √(0.4 × 0.6/150) = 0.04 (p̂ would be used for a confidence interval). z = (0.48 − 0.4)/0.04 = 2. Since |z| = 2 > 1.96, reject H₀ at the 5% level (p ≈ 0.046): there is evidence that the proportion differs from 0.4. Check np₀ = 60 and n(1 − p₀) = 90 are large enough. | Justifies using p₀ under H₀ ; Computes SE = 0.04 ; Computes z = 2 ; Compares with 1.96 and concludes in context ; Checks the large-sample condition
 
 ## T-Tests
 S: The t-test compares means when the population standard deviation is unknown and estimated from the data. One-sample, paired and two-sample versions answer the most common questions in experiments.
 O: Choose and carry out one-sample, paired and two-sample t-tests
 O: State the assumptions and degrees of freedom of each
+LV: Year 1 · Application
 T: One-sample t statistic | t = (x̄ − μ₀)/(s/√n), with n − 1 degrees of freedom
 T: Welch's t-test | A two-sample t-test that doesn't assume equal variances
 H: The versions
@@ -903,11 +925,14 @@ Q: How many degrees of freedom does a paired t-test on 15 pairs use? | 14.
 Q: Which two-sample t-test doesn't assume equal variances? | Welch's t-test.
 SUM: t-tests compare means with estimated SDs.
 SUM: Match the version to the design.
+EV: established | When σ is estimated from the sample, the standardised mean follows a t-distribution with n − 1 degrees of freedom for normal data.
 SRC: Student, The probable error of a mean, Biometrika 6(1), 1 | primary | 1908 | https://doi.org/10.1093/biomet/6.1.1
 SRC: Altman DG, Practical Statistics for Medical Research (Chapman & Hall 1991) | secondary | 1991 | https://www.routledge.com/
 NUM1#maths-u13-24-q1@1: A sample of 16 has x̄ = 54 and s = 6. Find t for H₀: μ = 50, to 3 decimal places. | 2.667 | 0.001 |  | SE = 6/4 = 1.5, so t = 4/1.5 ≈ 2.667.
 M1#maths-u13-24-q2@1: Students take a test before and after a course. Which t-test fits? | Paired | Two-sample pooled | Welch two-sample | One-sample against 0 using the raw scores | None | Each student gives two linked scores, so analyse their differences.
 M2#maths-u13-24-q3@2: What is the pooled two-sample t-test's degrees of freedom for groups of 12 and 15? | 25 | 27 | 26 | 11 | 14 | The pooled test loses one degree of freedom per group: n₁ + n₂ − 2 = 25.
+NUM3@1,2: Two independent groups of 10 have means 20 and 17 and standard deviations 3 and 4. Find the pooled two-sample t statistic, to 3 decimal places. | 1.897 | 0.002 |  | s_{p}^{2} = (9 × 9 + 9 × 16)/18 = 12.5, SE = √(12.5 × (1/10 + 1/10)) = √2.5 ≈ 1.581, so t = 3/1.581 ≈ 1.897 on 18 degrees of freedom.
+SA3@2: Explain why a paired t-test on before-and-after measurements is usually more powerful than a two-sample t-test on the same data. | Each person's before and after values share that person's level, so they are positively correlated. The paired test analyses the differences, which removes between-person variation: Var(D) = Var(X) + Var(Y) − 2Cov(X, Y) is much smaller than the variance the two-sample test uses. A smaller standard error gives a larger t for the same mean change. The two-sample test also wrongly treats the two sets of scores as independent. | Notes the measurements are correlated within people ; Says pairing removes between-person variation ; Uses the variance of differences or the covariance term ; Links smaller SE to more power ; Notes the independence assumption is violated by a two-sample test
 
 ## Chi-Squared Tests
 S: Chi-squared tests compare observed counts with the counts expected under a hypothesis. They test whether data fit a distribution (goodness of fit) and whether two categorical variables are associated (independence).

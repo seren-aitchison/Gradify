@@ -669,6 +669,66 @@
    "course": "maths",
    "action": "enhanced",
    "findings": []
+  },
+  {
+   "lesson": "u13-19",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added NUM3 (Holm) and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-20",
+   "changes": [
+    "LV Year 2 · Application; EV",
+    "added NUM3 (Benjamini–Hochberg) and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-21",
+   "changes": [
+    "LV Year 1 · Fluency; EV",
+    "added NUM2, M3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-22",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added NUM2 and SA2 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-23",
+   "changes": [
+    "LV A level · Application; EV",
+    "added NUM3 (A/B test) and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-24",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added NUM3 (pooled t) and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
   }
  ],
  "notes": [
