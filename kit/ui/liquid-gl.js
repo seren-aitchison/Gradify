@@ -59,7 +59,7 @@ uniform vec2 res; uniform vec2 light; uniform float lightMode; uniform float dpr
 uniform vec3 base; uniform vec3 acc1; uniform vec3 acc2; uniform float accentRim;
 uniform int n; uniform vec4 rects[${MAX}]; uniform vec4 props[${MAX}];
 float sdBox(vec2 p, vec2 b, float r){ vec2 q = abs(p) - b + r; return length(max(q, 0.)) + min(max(q.x, q.y), 0.) - r; }
-float hash(vec2 p){ return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453); }
+float hash(vec2 p){ p = mod(p, 256.); return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453); }   // wrapped: finite in mediump too
 vec3 hue(float a){ return clamp(abs(mod(a * 6. + vec3(0., 4., 2.), 6.) - 3.) - 1., 0., 1.); }
 float blob(vec2 uv, vec2 c, float r){ vec2 d = (uv - c) * vec2(res.x / res.y, 1.); return exp(-dot(d, d) / (r * r)); }
 // the page's light: the theme, colour at the edges (the course or site, and the Gradify spectrum), a bright (light) or
@@ -177,7 +177,7 @@ export function start() {
   window.gradifyGlass = { renderer, highp, uniforms };
   if (tier === "css") { status("css", caveat ? "software rendering (browser reported)" : uniforms < 16 + 2 * MAX_LITE ? "GPU too small" : "software rendering: " + renderer); return null; }
   const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
-  const par = gl.getExtension("KHR_parallel_shader_compile");
+  let par = gl.getExtension("KHR_parallel_shader_compile");
 
   // the GPU program for a tier; compiled in the background where the browser can, so the page never waits on it
   let P = null, lost = false;
@@ -198,7 +198,7 @@ export function start() {
       }
       const loc = gl.getAttribLocation(prog, "p"); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
       const U = {}; for (const k of ["res", "light", "lightMode", "dpr", "base", "acc1", "acc2", "accentRim", "n", "rects", "props"]) U[k] = gl.getUniformLocation(prog, k);
-      Object.assign(P, { prog, U, max, tier: t }); resolve();
+      Object.assign(P, { prog, U, max, tier: t }); tier = t; resolve();
     };
     if (!par) return done();
     const poll = () => { if (gl.isContextLost()) return reject(new Error("context lost")); gl.getProgramParameter(prog, par.COMPLETION_STATUS_KHR) ? done() : setTimeout(poll, 30); };
@@ -314,11 +314,11 @@ export function start() {
     const stalled = gaps.length >= 3 && gaps.slice(-3).every((g) => g > 3 * SLOW_MS);
     if (!stalled && gaps.length < TAKE && t - since < DEADLINE) return;
     probing = false;
-    const ms = gaps.length >= 3 ? median(gaps) : Infinity, next = nextTier(P.tier, ms, pref);
+    const ms = gaps.length < 3 ? Infinity : stalled ? median(gaps.slice(-3)) : median(gaps), next = nextTier(P.tier, ms, pref);
     window.gradifyGlass.frameMs = Math.round(ms * 10) / 10;
     if (next === P.tier) { status(P.tier, "measured " + window.gradifyGlass.frameMs + "ms a frame"); return; }
     if (next === "css") { status("css", `too slow here (${window.gradifyGlass.frameMs}ms a frame)`); return stop(); }
-    build(next).then(() => { if (stopped) return; dirty = true; status(next, `measuring (full tier was ${window.gradifyGlass.frameMs}ms a frame)`); probe(); }).catch((e) => { status("css", "lite shader failed: " + e.message); stop(); });
+    build(next).then(() => { if (stopped) return; dirty = true; status(next, `measuring (full tier was ${window.gradifyGlass.frameMs}ms a frame)`); probe(); }).catch((e) => { if (lost || gl.isContextLost()) return; status("css", "lite shader failed: " + e.message); stop(); });   // a lost context: onRestored takes over
   };
 
   const onScroll = () => kick();
@@ -344,7 +344,7 @@ export function start() {
   // the GPU can be taken away (a driver reset, too many contexts, the OS reclaiming memory): CSS glass meanwhile,
   // the same canvas and observers back when it returns
   const onLost = (e) => { e.preventDefault(); lost = true; lostCount++; P = null; root.classList.remove("lgl"); status("css", "GPU context lost; waiting for it back"); };
-  const onRestored = () => { if (stopped) return; build(tier).then(() => { if (stopped) return; lost = false; root.classList.add("lgl"); dirty = true; status(P.tier, "GPU context restored"); kick(); }).catch(() => stop()); };
+  const onRestored = () => { if (stopped) return; par = gl.getExtension("KHR_parallel_shader_compile"); build(tier).then(() => { if (stopped) return; lost = false; root.classList.add("lgl"); dirty = true; status(P.tier, "GPU context restored"); kick(); }).catch(() => { if (!gl.isContextLost()) stop(); }); };
 
   function stop() {
     if (stopped) return; stopped = true;
@@ -373,6 +373,7 @@ export function start() {
     mqT.addEventListener("change", onAccess); mqC.addEventListener("change", onAccess);
     mo.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["class", "open", "hidden", "style"] });
     to.observe(root, { attributes: true, attributeFilter: ["data-theme", "data-a-contrast"] });
+    if (root.getAttribute("data-a-contrast") === "high" || mqT.matches || mqC.matches || zoomed()) { status("css", "accessibility setting changed"); return stop(); }
     live = true; root.classList.add("lgl"); status(P.tier, "measuring");
     probe();   // entrance animations move things for a moment, and the speed check runs over the same frames
   }).catch((e) => { console.warn("Liquid Glass: falling back to CSS glass", e); status("css", "shader failed: " + e.message); running = null; });
