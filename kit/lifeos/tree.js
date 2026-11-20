@@ -34,16 +34,25 @@ const loadIsland = () => (islandP ||= import("./island3d.js").then((m) => (m.web
 // three.js and the island cost about half a second of main thread to start, so they wait until the tree is actually on
 // screen (or close to it): a tree in a hidden tab, or far down the page, stays flat until then and the page loads smoothly
 const whenSeen = (el) => new Promise((resolve) => {
+  el.__seen?.disconnect();   // a newer draw replaces the older one's wait (and the data it holds)
   if (typeof IntersectionObserver !== "function") return resolve();
-  const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { io.disconnect(); resolve(); } }, { rootMargin: "300px 0px" });
+  const io = (el.__seen = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { io.disconnect(); el.__seen = null; resolve(); } }, { rootMargin: "300px 0px" }));
   io.observe(el);
 });
+// on screen (or within 300px of it) right now
+const onScreen = (el) => { const r = el.getBoundingClientRect(); return r.width > 0 && r.height > 0 && r.bottom > -300 && r.top < innerHeight + 300; };
 export function drawTree(el, data) {
-  drawTreeFlat(el, data);
-  // swap in the island once it's on screen (even when the module is already loaded: building a renderer for a hidden
-  // tree is the expensive part) and loaded, unless something else has been drawn here since
   const mine = (el.__drawn = {});
-  whenSeen(el).then(() => el.__drawn === mine && (island || loadIsland())).then((m) => { if (m && el.isConnected && el.__drawn === mine) m.drawIsland(el, data); });
+  // already loaded and in view: straight to the island (it replaces its previous drawing itself), no flash of flat
+  if (island && onScreen(el)) { el.__seen?.disconnect(); island.drawIsland(el, data); return; }
+  island?.disposeIsland(el);   // a running island here stops before the flat drawing replaces it
+  drawTreeFlat(el, data);
+  // swap in the island once it's on screen and loaded, and still on screen once it has loaded, unless something else
+  // has been drawn here since
+  whenSeen(el)
+    .then(() => el.__drawn === mine && (island || loadIsland()))
+    .then((m) => m && el.__drawn === mine && whenSeen(el).then(() => m))
+    .then((m) => { if (m && el.isConnected && el.__drawn === mine) m.drawIsland(el, data); });
 }
 
 export function drawTreeFlat(el, { sites, bars, rand }) {
