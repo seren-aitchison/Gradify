@@ -20,8 +20,8 @@
    {
     "url": "undergradify/course/",
     "contrast": {
-     "checked": 95,
-     "pass": 95,
+     "checked": 94,
+     "pass": 94,
      "skipped": 0,
      "fails": []
     },
@@ -50,8 +50,8 @@
    {
     "url": "postgradify/course/",
     "contrast": {
-     "checked": 94,
-     "pass": 94,
+     "checked": 93,
+     "pass": 93,
      "skipped": 0,
      "fails": []
     },
@@ -80,8 +80,8 @@
    {
     "url": "progradify/course/",
     "contrast": {
-     "checked": 89,
-     "pass": 89,
+     "checked": 88,
+     "pass": 88,
      "skipped": 0,
      "fails": []
     },
@@ -110,8 +110,8 @@
    {
     "url": "edugradify/course/",
     "contrast": {
-     "checked": 96,
-     "pass": 96,
+     "checked": 95,
+     "pass": 95,
      "skipped": 0,
      "fails": []
     },
@@ -140,8 +140,8 @@
    {
     "url": "youthgradify/course/",
     "contrast": {
-     "checked": 91,
-     "pass": 91,
+     "checked": 90,
+     "pass": 90,
      "skipped": 0,
      "fails": []
     },
@@ -170,8 +170,8 @@
    {
     "url": "juniorgradify/course/",
     "contrast": {
-     "checked": 105,
-     "pass": 105,
+     "checked": 104,
+     "pass": 104,
      "skipped": 0,
      "fails": []
     },
@@ -200,8 +200,8 @@
    {
     "url": "lawgradify/course/",
     "contrast": {
-     "checked": 157,
-     "pass": 157,
+     "checked": 156,
+     "pass": 156,
      "skipped": 0,
      "fails": []
     },
@@ -230,8 +230,8 @@
    {
     "url": "businessgradify/course/",
     "contrast": {
-     "checked": 105,
-     "pass": 105,
+     "checked": 104,
+     "pass": 104,
      "skipped": 0,
      "fails": []
     },
@@ -260,8 +260,8 @@
    {
     "url": "financegradify/course/",
     "contrast": {
-     "checked": 86,
-     "pass": 86,
+     "checked": 85,
+     "pass": 85,
      "skipped": 0,
      "fails": []
     },
@@ -290,8 +290,8 @@
    {
     "url": "investorgradify/course/",
     "contrast": {
-     "checked": 107,
-     "pass": 107,
+     "checked": 106,
+     "pass": 106,
      "skipped": 0,
      "fails": []
     },
@@ -320,8 +320,8 @@
    {
     "url": "medgradify/course/",
     "contrast": {
-     "checked": 101,
-     "pass": 101,
+     "checked": 100,
+     "pass": 100,
      "skipped": 0,
      "fails": []
     },
@@ -350,8 +350,8 @@
    {
     "url": "dentalgradify/course/",
     "contrast": {
-     "checked": 101,
-     "pass": 101,
+     "checked": 100,
+     "pass": 100,
      "skipped": 0,
      "fails": []
     },
@@ -380,8 +380,8 @@
    {
     "url": "vetgradify/course/",
     "contrast": {
-     "checked": 98,
-     "pass": 98,
+     "checked": 97,
+     "pass": 97,
      "skipped": 0,
      "fails": []
     },
@@ -410,8 +410,8 @@
    {
     "url": "nursegradify/course/",
     "contrast": {
-     "checked": 156,
-     "pass": 156,
+     "checked": 155,
+     "pass": 155,
      "skipped": 0,
      "fails": []
     },
@@ -440,8 +440,8 @@
    {
     "url": "pharmagradify/course/",
     "contrast": {
-     "checked": 153,
-     "pass": 153,
+     "checked": 152,
+     "pass": 152,
      "skipped": 0,
      "fails": []
     },
@@ -470,8 +470,8 @@
    {
     "url": "healthgradify/course/",
     "contrast": {
-     "checked": 103,
-     "pass": 103,
+     "checked": 102,
+     "pass": 102,
      "skipped": 0,
      "fails": []
     },
@@ -500,8 +500,8 @@
    {
     "url": "psychgradify/course/",
     "contrast": {
-     "checked": 107,
-     "pass": 107,
+     "checked": 106,
+     "pass": 106,
      "skipped": 0,
      "fails": []
     },
@@ -530,8 +530,8 @@
    {
     "url": "internshipgradify/course/",
     "contrast": {
-     "checked": 92,
-     "pass": 92,
+     "checked": 91,
+     "pass": 91,
      "skipped": 0,
      "fails": []
     },
@@ -560,16 +560,10 @@
    {
     "url": "engineergradify/course/",
     "contrast": {
-     "checked": 113,
+     "checked": 112,
      "pass": 112,
      "skipped": 0,
-     "fails": [
-      {
-       "text": "Try this",
-       "ratio": 1.9,
-       "need": 4.5
-      }
-     ]
+     "fails": []
     },
     "focus": {
      "stops": 25,
@@ -596,8 +590,8 @@
    {
     "url": "mathgradify/course/",
     "contrast": {
-     "checked": 156,
-     "pass": 156,
+     "checked": 155,
+     "pass": 155,
      "skipped": 0,
      "fails": []
     },
@@ -626,8 +620,8 @@
    {
     "url": "scigradify/physics/",
     "contrast": {
-     "checked": 163,
-     "pass": 163,
+     "checked": 162,
+     "pass": 162,
      "skipped": 0,
      "fails": []
     },
@@ -656,8 +650,8 @@
    {
     "url": "ecogradify/course/",
     "contrast": {
-     "checked": 88,
-     "pass": 88,
+     "checked": 87,
+     "pass": 87,
      "skipped": 0,
      "fails": []
     },
@@ -686,8 +680,8 @@
    {
     "url": "socgradify/course/",
     "contrast": {
-     "checked": 132,
-     "pass": 132,
+     "checked": 131,
+     "pass": 131,
      "skipped": 0,
      "fails": []
     },
@@ -716,8 +710,8 @@
    {
     "url": "historygradify/course/",
     "contrast": {
-     "checked": 87,
-     "pass": 87,
+     "checked": 86,
+     "pass": 86,
      "skipped": 0,
      "fails": []
     },
@@ -746,8 +740,8 @@
    {
     "url": "litgradify/course/",
     "contrast": {
-     "checked": 96,
-     "pass": 96,
+     "checked": 95,
+     "pass": 95,
      "skipped": 0,
      "fails": []
     },
@@ -776,8 +770,8 @@
    {
     "url": "languagegradify/course/",
     "contrast": {
-     "checked": 97,
-     "pass": 97,
+     "checked": 96,
+     "pass": 96,
      "skipped": 0,
      "fails": []
     },
@@ -806,8 +800,8 @@
    {
     "url": "artgradify/course/",
     "contrast": {
-     "checked": 86,
-     "pass": 86,
+     "checked": 85,
+     "pass": 85,
      "skipped": 0,
      "fails": []
     },
@@ -836,8 +830,8 @@
    {
     "url": "musicgradify/course/",
     "contrast": {
-     "checked": 106,
-     "pass": 106,
+     "checked": 105,
+     "pass": 105,
      "skipped": 0,
      "fails": []
     },
@@ -866,8 +860,8 @@
    {
     "url": "sportgradify/course/",
     "contrast": {
-     "checked": 100,
-     "pass": 100,
+     "checked": 99,
+     "pass": 99,
      "skipped": 0,
      "fails": []
     },
@@ -910,8 +904,8 @@
    {
     "url": "creategradify/course/",
     "contrast": {
-     "checked": 97,
-     "pass": 97,
+     "checked": 96,
+     "pass": 96,
      "skipped": 0,
      "fails": []
     },
@@ -940,8 +934,8 @@
    {
     "url": "techgradify/course/",
     "contrast": {
-     "checked": 103,
-     "pass": 103,
+     "checked": 102,
+     "pass": 102,
      "skipped": 0,
      "fails": []
     },
