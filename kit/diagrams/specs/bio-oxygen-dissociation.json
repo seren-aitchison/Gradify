@@ -162,10 +162,10 @@
     }
   ],
   "review": {
-    "status": "ai-reviewed",
-    "by": "independent AI reviewer (two rounds)",
+    "status": "approved",
+    "by": "site owner (seren-aitchison)",
     "date": "2026-11-20",
     "notes": "Round 1: Bohr shift exaggerated (P50 4.8); now 4.4 kPa and labelled illustrative. Round 2: approve.",
-    "awaiting": "approval by a named subject reviewer"
+    "approvedAt": "2026-11-20"
   }
 }

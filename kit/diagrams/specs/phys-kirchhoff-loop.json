@@ -39,10 +39,10 @@
     "driver": "6 V"
   },
   "review": {
-    "status": "ai-reviewed",
-    "by": "independent AI reviewer (two rounds)",
+    "status": "approved",
+    "by": "site owner (seren-aitchison)",
     "date": "2026-11-20",
     "notes": "Approved in both rounds; caption now notes the 2 V cell is being charged.",
-    "awaiting": "approval by a named subject reviewer"
+    "approvedAt": "2026-11-20"
   }
 }

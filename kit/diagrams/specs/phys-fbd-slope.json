@@ -58,10 +58,10 @@
     "P": 15
   },
   "review": {
-    "status": "ai-reviewed",
-    "by": "independent AI reviewer (two rounds)",
+    "status": "approved",
+    "by": "site owner (seren-aitchison)",
     "date": "2026-11-20",
     "notes": "Round 1: N drawn shorter than mg, an acceleration note with no arrow; fixed (arrows to scale for m = 2 kg, P = 15 N). Round 2: approve.",
-    "awaiting": "approval by a named subject reviewer"
+    "approvedAt": "2026-11-20"
   }
 }

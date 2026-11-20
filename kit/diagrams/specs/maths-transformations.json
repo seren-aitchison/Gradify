@@ -168,10 +168,10 @@
     19.5
   ],
   "review": {
-    "status": "ai-reviewed",
-    "by": "independent AI reviewer (two rounds)",
+    "status": "approved",
+    "by": "site owner (seren-aitchison)",
     "date": "2026-11-20",
     "notes": "Round 1: label collisions, description wording; fixed with exam wording. Round 2: legend moved to the empty top-left.",
-    "awaiting": "approval by a named subject reviewer"
+    "approvedAt": "2026-11-20"
   }
 }

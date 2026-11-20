@@ -188,10 +188,10 @@
     }
   ],
   "review": {
-    "status": "ai-reviewed",
-    "by": "independent AI reviewer (two rounds)",
+    "status": "approved",
+    "by": "site owner (seren-aitchison)",
     "date": "2026-11-20",
     "notes": "Round 1: phone label clipped; surplus arrow crossed D₂; fixed by showing the shortage at P = 15. Round 2: approve.",
-    "awaiting": "approval by a named subject reviewer"
+    "approvedAt": "2026-11-20"
   }
 }

@@ -13,13 +13,13 @@
   "course": "biology",
   "lesson": "Oxygen transport",
   "renderer": "graph",
-  "status": "ai-reviewed",
+  "status": "approved",
   "review": {
-   "status": "ai-reviewed",
-   "by": "independent AI reviewer (two rounds)",
+   "status": "approved",
+   "by": "site owner (seren-aitchison)",
    "date": "2026-11-20",
    "notes": "Round 1: Bohr shift exaggerated (P50 4.8); now 4.4 kPa and labelled illustrative. Round 2: approve.",
-   "awaiting": "approval by a named subject reviewer"
+   "approvedAt": "2026-11-20"
   },
   "checks": [
    {
@@ -70,13 +70,13 @@
   "course": "business",
   "lesson": "Supply and market equilibrium",
   "renderer": "graph",
-  "status": "ai-reviewed",
+  "status": "approved",
   "review": {
-   "status": "ai-reviewed",
-   "by": "independent AI reviewer (two rounds)",
+   "status": "approved",
+   "by": "site owner (seren-aitchison)",
    "date": "2026-11-20",
    "notes": "Round 1: phone label clipped; surplus arrow crossed D₂; fixed by showing the shortage at P = 15. Round 2: approve.",
-   "awaiting": "approval by a named subject reviewer"
+   "approvedAt": "2026-11-20"
   },
   "checks": [
    {
@@ -126,13 +126,13 @@
   "course": "chemistry",
   "lesson": "Electrophilic addition",
   "renderer": "mechanism",
-  "status": "ai-reviewed",
+  "status": "approved",
   "review": {
-   "status": "ai-reviewed",
-   "by": "independent AI reviewer (two rounds)",
+   "status": "approved",
+   "by": "site owner (seren-aitchison)",
    "date": "2026-11-20",
    "notes": "Round 1: ethene could not show anti addition; replaced by cyclohexene → trans-1,2-dibromocyclohexane with a drawn-trans check. Round 2: approve with a caption wording fix, applied.",
-   "awaiting": "approval by a named subject reviewer"
+   "approvedAt": "2026-11-20"
   },
   "checks": [
    {
@@ -202,13 +202,13 @@
   "course": "chemistry",
   "lesson": "Electrophilic addition",
   "renderer": "mechanism",
-  "status": "ai-reviewed",
+  "status": "approved",
   "review": {
-   "status": "ai-reviewed",
-   "by": "independent AI reviewer (two rounds)",
+   "status": "approved",
+   "by": "site owner (seren-aitchison)",
    "date": "2026-11-20",
    "notes": "Round 1: added H drawn as a stray –H; minor route not shown; fixed (CH3 label; caption explains the less stable primary cation). Round 2: approve.",
-   "awaiting": "approval by a named subject reviewer"
+   "approvedAt": "2026-11-20"
   },
   "checks": [
    {
@@ -272,13 +272,13 @@
   "course": "chemistry",
   "lesson": "Reaction energy profiles",
   "renderer": "energy-profile",
-  "status": "ai-reviewed",
+  "status": "approved",
   "review": {
-   "status": "ai-reviewed",
-   "by": "independent AI reviewer (two rounds)",
+   "status": "approved",
+   "by": "site owner (seren-aitchison)",
    "date": "2026-11-20",
    "notes": "Round 1: labels on curves, no plateaus; fixed. Round 2: products label moved below the curve end.",
-   "awaiting": "approval by a named subject reviewer"
+   "approvedAt": "2026-11-20"
   },
   "checks": [
    {
@@ -368,13 +368,13 @@
   "course": "chemistry",
   "lesson": "SN2 mechanisms",
   "renderer": "mechanism",
-  "status": "ai-reviewed",
+  "status": "approved",
   "review": {
-   "status": "ai-reviewed",
-   "by": "independent AI reviewer (two rounds)",
+   "status": "approved",
+   "by": "site owner (seren-aitchison)",
    "date": "2026-11-20",
    "notes": "Round 1: TS drawn flat, single stereo bond, caption lacked R→S; fixed (wedge/hash in all stages, drawn-stereo check added). Round 2: approve; R/S re-derived by hand from the drawn wedges.",
-   "awaiting": "approval by a named subject reviewer"
+   "approvedAt": "2026-11-20"
   },
   "checks": [
    {
@@ -449,13 +449,13 @@
   "course": "law",
   "lesson": "Duty of care",
   "renderer": "decision-tree",
-  "status": "ai-reviewed",
+  "status": "approved",
   "review": {
-   "status": "ai-reviewed",
-   "by": "independent AI reviewer (two rounds)",
+   "status": "approved",
+   "by": "site owner (seren-aitchison)",
    "date": "2026-11-20",
    "notes": "Round 1: REJECTED (not novel ≠ duty exists; omissions branch a dead end; Caparo as sequential gates). Rebuilt to follow Robinson. Round 2: approve; the lesson's own K: line, which contradicted Robinson, was corrected.",
-   "awaiting": "approval by a named subject reviewer"
+   "approvedAt": "2026-11-20"
   },
   "checks": [
    {
@@ -501,13 +501,13 @@
   "course": "maths",
   "lesson": "Transformations of Functions",
   "renderer": "graph",
-  "status": "ai-reviewed",
+  "status": "approved",
   "review": {
-   "status": "ai-reviewed",
-   "by": "independent AI reviewer (two rounds)",
+   "status": "approved",
+   "by": "site owner (seren-aitchison)",
    "date": "2026-11-20",
    "notes": "Round 1: label collisions, description wording; fixed with exam wording. Round 2: legend moved to the empty top-left.",
-   "awaiting": "approval by a named subject reviewer"
+   "approvedAt": "2026-11-20"
   },
   "checks": [
    {
@@ -553,13 +553,13 @@
   "course": "physics",
   "lesson": "Thin lenses",
   "renderer": "rays",
-  "status": "ai-reviewed",
+  "status": "approved",
   "review": {
-   "status": "ai-reviewed",
-   "by": "independent AI reviewer (two rounds)",
+   "status": "approved",
+   "by": "site owner (seren-aitchison)",
    "date": "2026-11-20",
    "notes": "Round 1: label overlaps; caption did not give f; fixed. Round 2: remaining label offsets fixed.",
-   "awaiting": "approval by a named subject reviewer"
+   "approvedAt": "2026-11-20"
   },
   "checks": [
    {
@@ -619,13 +619,13 @@
   "course": "physics",
   "lesson": "Free-body diagrams",
   "renderer": "free-body",
-  "status": "ai-reviewed",
+  "status": "approved",
   "review": {
-   "status": "ai-reviewed",
-   "by": "independent AI reviewer (two rounds)",
+   "status": "approved",
+   "by": "site owner (seren-aitchison)",
    "date": "2026-11-20",
    "notes": "Round 1: N drawn shorter than mg, an acceleration note with no arrow; fixed (arrows to scale for m = 2 kg, P = 15 N). Round 2: approve.",
-   "awaiting": "approval by a named subject reviewer"
+   "approvedAt": "2026-11-20"
   },
   "checks": [
    {
@@ -675,13 +675,13 @@
   "course": "physics",
   "lesson": "Kirchhoff's laws",
   "renderer": "circuit",
-  "status": "ai-reviewed",
+  "status": "approved",
   "review": {
-   "status": "ai-reviewed",
-   "by": "independent AI reviewer (two rounds)",
+   "status": "approved",
+   "by": "site owner (seren-aitchison)",
    "date": "2026-11-20",
    "notes": "Approved in both rounds; caption now notes the 2 V cell is being charged.",
-   "awaiting": "approval by a named subject reviewer"
+   "approvedAt": "2026-11-20"
   },
   "checks": [
    {

@@ -248,10 +248,10 @@
     {}
   ],
   "review": {
-    "status": "ai-reviewed",
-    "by": "independent AI reviewer (two rounds)",
+    "status": "approved",
+    "by": "site owner (seren-aitchison)",
     "date": "2026-11-20",
     "notes": "Round 1: ethene could not show anti addition; replaced by cyclohexene → trans-1,2-dibromocyclohexane with a drawn-trans check. Round 2: approve with a caption wording fix, applied.",
-    "awaiting": "approval by a named subject reviewer"
+    "approvedAt": "2026-11-20"
   }
 }
