@@ -633,142 +633,253 @@ SA2@1,3: Explain why a radio telescope must be much larger than an optical teles
 
 ## Single-slit and multiple-slit diffraction
 S: A single slit produces a broad central maximum with weaker side fringes. Adding more slits keeps that envelope but sharpens the bright fringes inside it, until many slits give the narrow lines of a diffraction grating.
+O: Describe and use the single-slit intensity pattern
+O: Explain how N slits sharpen the principal maxima
+O: Predict missing orders from the ratio of slit separation to slit width
+PRE: Diffraction
+LV: Year 2 · Physical reasoning
 H: Single slit
 E: I = I_{0}(sin β/β)^{2}, β = (πa sin θ)/λ
-- Minima at a sin θ = mλ (m ≠ 0); central maximum twice as wide as the others.
-- Side maxima ~4.7%, 1.6%… of the central intensity.
+- Minima at a sin θ = mλ (m ≠ 0); the central maximum is twice as wide as the others.
+- Side maxima are about 4.7% and 1.6% of the central intensity.
 H: N slits
-E: I = I_{0}(sin β/β)^{2}(sin Nγ/sin γ)^{2}, γ = (πd sin θ)/λ
-- Principal maxima at d sin θ = nλ, intensity ∝ N^{2}.
+E: I = I_{0}(sin β/β)^{2}(sin Nγ/(N sin γ))^{2}, γ = (πd sin θ)/λ :: I_{0} is the central peak
+- Principal maxima at d sin θ = nλ, with peak intensity ∝ N^{2} for fixed slits.
 - N − 1 minima and N − 2 subsidiary maxima between principal maxima.
 - Width of principal maxima ∝ 1/N: more slits, sharper lines.
-- **Missing orders**: when a principal maximum falls on a single-slit minimum (d/a an integer).
-X: Double slit with d = 0.3 mm and a = 0.1 mm. Which interference orders are missing?
-> d/a = 3: orders 3, 6, 9… coincide with single-slit minima
+- **Missing orders**: a principal maximum vanishes where it falls on a single-slit minimum (when d/a is an integer).
+X: A double slit has d = 0.3 mm and slit width a = 0.1 mm. Which interference orders are missing?
+> d/a = 3, so orders 3, 6, 9… coincide with single-slit minima
+> The central envelope (between the first minima) contains orders 0, ±1 and ±2: five bright fringes
+K: The multi-slit pattern is the interference pattern multiplied by the single-slit envelope; more slits give sharper, brighter peaks.
 !: The single-slit envelope multiplies the interference pattern; the two effects aren't separate patterns side by side.
 P: **Investigate with the lab.** Set the slit separation to three times the slit width and find the missing bright fringe where it meets a diffraction minimum.
 IX: interference
+T: Diffraction envelope | The single-slit intensity pattern (sin β/β)^{2} that modulates the multi-slit interference fringes
+T: Missing order | An interference maximum that is absent because it coincides with a minimum of the single-slit envelope
+SUM: Single slit: minima at a sin θ = mλ; central maximum twice as wide as the rest.
+SUM: N slits: principal maxima at d sin θ = nλ, intensity ∝ N^{2}, width ∝ 1/N.
+SUM: When d/a is an integer, orders that are multiples of it are missing.
+EV: established | The pattern of N identical slits is the N-slit interference pattern times the single-slit diffraction envelope
+SRC: OpenStax, University Physics Volume 3, section 4.2 "Intensity in Single-Slit Diffraction" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/4-2-intensity-in-single-slit-diffraction
+SRC: OpenStax, University Physics Volume 3, section 3.3 "Multiple-Slit Interference" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/3-3-multiple-slit-interference
+SRC: OpenStax, University Physics Volume 3, section 4.3 "Double-Slit Diffraction" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/4-3-double-slit-diffraction
 Q: Why does adding slits sharpen the fringes? | More slits must all be in phase for a maximum; small angle changes destroy the agreement, narrowing peaks.
 Q: What causes missing orders? | A principal maximum coinciding with a single-slit diffraction minimum.
-M1: The central maximum of a single slit is: | Twice as wide as the others | The same width | Half as wide | Absent | Between the ±1 minima.
-M2: Principal maxima intensity for N slits scales as: | N^{2} | N | √N | 1/N | Amplitudes add.
-M2: In a double-slit pattern with d = 3a, which interference order is missing? | The third order | The first order | The second order | No order is missing | The third bright fringe falls exactly on the first diffraction minimum, so it vanishes.
+M1@1: The central maximum of a single slit is: | Twice as wide as the others | The same width as the others | Half as wide as the others | Absent | It extends between the m = ±1 minima, whereas each side maximum lies between neighbouring minima, so it is twice as wide.
+M2@2: Principal maxima intensity for N slits scales as: | N^{2} | N | √N | 1/N | At a principal maximum the N amplitudes add in phase, giving amplitude ∝ N and intensity ∝ N^{2}.
+M2@3: In a double-slit pattern with d = 3a, which interference order is missing? | The third order | The first order | The second order | No order is missing | The third bright fringe falls exactly on the first diffraction minimum, so it vanishes.
+NUM2@1: Light of 500 nm passes through a slit 0.050 mm wide onto a screen 2.0 m away. How wide is the central maximum on the screen, in cm? | 4.0 | 3% | cm | First minima at θ ≈ λ/a = 0.010 rad, so each is 2.0 × 0.010 = 2.0 cm from the centre; the full width is 4.0 cm.
+M3@2: Compared with two slits, a grating of five slits with the same spacing gives principal maxima that are: | In the same places, but narrower and brighter, with three weak maxima between each pair | In different places, closer together | Wider and dimmer | In the same places with no subsidiary maxima | Positions depend only on d; with N = 5 there are N − 1 = 4 minima and N − 2 = 3 subsidiary maxima between principal peaks, which narrow as 1/N.
+SA3@1,3: Explain why the double-slit interference fringes are not all equally bright, and why some can be missing altogether. | Each slit has a finite width a, so the light from each one is itself spread by single-slit diffraction with intensity (sin β/β)^{2}, falling to zero at a sin θ = mλ. The two-slit interference fringes, at d sin θ = nλ, are multiplied by this envelope, so fringes further from the centre are dimmer. If a fringe angle coincides with an envelope zero, which happens when d/a is a whole number k, the orders k, 2k… have zero intensity and are missing. | Finite slit width gives single-slit diffraction from each slit ; Envelope (sin β/β)^{2} with zeros at a sin θ = mλ ; Interference fringes multiplied by envelope ; Outer fringes dimmer ; Missing orders where d/a is an integer
 
 ## Diffraction gratings
-S: A diffraction grating has thousands of closely spaced slits or grooves. It produces very sharp, bright maxima at angles depending on wavelength, so it's the heart of most spectrometers.
+S: A diffraction grating has thousands of closely spaced slits or grooves. It produces very sharp, bright maxima at angles that depend on wavelength, so it is the heart of most spectrometers.
+O: Derive and use the grating equation d sin θ = nλ
+O: Find the highest observable order and the grating's resolving power
+O: Describe uses of gratings in science and technology
+PRE: Single-slit and multiple-slit diffraction
+LV: A level · Application
 H: The grating equation
 E: d sin θ = nλ
 E: d = 1/(lines per metre)
-E: R = λ/Δλ = nN :: resolving power
-- Higher orders spread colours more; maximum order n_{max} < d/λ.
-- Reflection gratings, blazed to send most light into one order.
+E: R = λ/Δλ = nN :: resolving power with N lines illuminated
+- Light from adjacent slits differs in path by d sin θ; maxima need this to be a whole number of wavelengths.
+- Higher orders spread colours more; the maximum order is the largest integer below d/λ.
+- Reflection gratings are blazed to send most light into one order.
 H: Uses
 - Spectrometers in chemistry, astronomy and environmental monitoring.
 - Separating wavelengths in fibre communications (WDM demultiplexers).
 - Distributed Bragg reflectors in lasers.
 - Natural gratings: CDs, DVDs, peacock feathers, butterfly wings.
 H: Astronomical spectroscopy
-P: High-resolution gratings (R ~ 100 000) measure Doppler shifts of stellar lines to ~1 m s^{-1} (ESPRESSO), detecting Earth-mass planets, and reveal stars' compositions, temperatures and magnetic fields.
-X: A grating with 600 lines per mm: angle of the first-order sodium line (589 nm)? Can it resolve the sodium doublet (589.0, 589.6 nm) with 2 cm illuminated?
-> d = 1.67 μm; sin θ = 0.353 ⇒ θ = 20.7°
-> N = 12 000; R = 12 000 in first order; needed: 589/0.6 ≈ 1000 ✓
+P: High-resolution gratings (R ~ 100 000) measure Doppler shifts of stellar lines to below 1 m s^{-1} (HARPS, ESPRESSO), enough to detect planets of a few Earth masses, and reveal stars' compositions, temperatures and magnetic fields.
+X: A grating has 600 lines per mm. At what angle is the first-order sodium line (589 nm)? Can it resolve the sodium doublet (589.0 and 589.6 nm) with 2 cm illuminated?
+> d = 1.67 μm; sin θ = 0.589/1.67 = 0.353 ⇒ θ = 20.7°
+> N = 12 000, so R = 12 000 in first order; needed 589/0.6 ≈ 1000: easily resolved
+K: Many slits make the maxima very sharp, so each wavelength appears as a thin line at angle sin^{-1}(nλ/d).
 !: Gratings send red farther than violet (opposite to prisms) and produce several overlapping orders that can confuse spectra.
 P: **Investigate with the lab.** Use a grating with 600 lines per mm and find how many orders red light at 700 nm can show. Then try shorter wavelengths.
 IX: interference
+T: Grating spacing | The distance d between adjacent lines of a grating, the reciprocal of the number of lines per metre
+T: Resolving power | R = λ/Δλ, the smallest fractional wavelength difference a grating can separate; R = nN
+SUM: d sin θ = nλ, with d = 1/(lines per metre).
+SUM: The highest order is below d/λ; resolving power is nN.
+SUM: Gratings are the core of spectrometers, from labs to exoplanet searches.
+EV: established | A grating forms maxima at angles given by d sin θ = nλ
+SRC: OpenStax, University Physics Volume 3, section 4.4 "Diffraction Gratings" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/4-4-diffraction-gratings
+SRC: AQA, A-level Physics specification (7408), section 3.3.2.2 "Diffraction" | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: State the grating equation. | d sin θ = nλ.
 Q: What is a grating's resolving power? | R = λ/Δλ = nN, order times number of illuminated lines.
-M1: A grating with 500 lines per mm can show orders up to (λ = 500 nm): | 3 | 4 | 2 | 10 | d/λ = 4, so n < 4.
-M2: CD rainbow colours come from: | Diffraction from closely spaced tracks | Thin-film interference | Dispersion | Fluorescence | A natural reflection grating.
-M2: A grating has 600 lines per mm. What is the highest order visible for 700 nm light? | The second order | The first order | The third order | The fifth order | d = 1/600 mm ≈ 1.67 μm; n_max = d/λ ≈ 2.4, so the second order is the highest.
+M1@2: A grating with 500 lines per mm can show orders up to (λ = 500 nm): | 3 | 4 | 2 | 10 | d = 2 μm and d/λ = 4; the fourth order would need sin θ = 1 (90°), so 3 is the highest seen.
+M2@3: CD rainbow colours come from: | Diffraction from closely spaced tracks | Thin-film interference in the coating | Dispersion in the plastic | Fluorescence of the dye layer | The 1.6 μm track spacing acts as a reflection grating, sending each wavelength to a different angle.
+M2@2: A grating has 600 lines per mm. What is the highest order visible for 700 nm light? | The second order | The first order | The third order | The fifth order | d = 1/600 mm ≈ 1.67 μm; n_max = d/λ ≈ 2.4, so the second order is the highest.
+NUM2@1: A grating with 300 lines per mm is lit by 633 nm laser light. At what angle is the second-order maximum, in degrees? | 22.3 | 2% | ° | d = 3.33 μm; sin θ = 2 × 0.633/3.33 = 0.380, so θ = 22.3°.
+M3@2,3: In a grating spectrum of white light (400–700 nm), why do the second and third orders overlap but the first and second do not? | The red end of order 2 (2 × 700 = 1400) exceeds the violet end of order 3 (3 × 400 = 1200) | Higher orders are brighter | The third order is always missing | The first order contains only red light | Overlap occurs where nλ values coincide: 2 × 700 nm > 3 × 400 nm, but 1 × 700 nm < 2 × 400 nm.
+SA2@1: Derive the grating equation for light at normal incidence on a grating of spacing d. | Plane waves arrive in phase at all the slits. Consider light leaving adjacent slits at angle θ to the normal. The path from one slit is longer than from its neighbour by d sin θ, shown by dropping a perpendicular from one slit onto the ray from the other. For a bright maximum, waves from every slit must arrive in phase, so this path difference must be a whole number of wavelengths: d sin θ = nλ, where n = 0, 1, 2… is the order. | Normal incidence: slits in phase ; Path difference between adjacent slits d sin θ ; Construction shown or described ; Constructive interference needs whole wavelengths ; d sin θ = nλ with n the order
 
 ## Michelson interferometer
 S: A Michelson interferometer splits a beam, sends the halves along two arms, and recombines them. Tiny changes in arm length shift the fringes, measuring distances to a fraction of a wavelength.
+O: Explain how a Michelson interferometer produces fringes
+O: Relate fringe shifts to mirror movement and wavelength
+O: Describe major uses, from Michelson–Morley to LIGO and OCT
+PRE: Interference and coherence
+LV: Year 2 · Application
 H: Operation
 E: Δ = 2(L_{1} − L_{2}); bright when Δ = mλ
-- Moving one mirror by λ/2 shifts one fringe.
+- A beam splitter divides the light; mirrors at the ends of the arms return it; the beams recombine at the detector.
+- Moving one mirror by λ/2 shifts the pattern by one fringe.
 - Counting fringes measures displacement or wavelength.
 H: Uses
-- **Michelson–Morley** (1887): no detectable ether wind; paved the way for relativity.
-- **Fourier transform spectroscopy** (FTIR): scan the mirror, Fourier-transform the interferogram to get the spectrum.
-- **Gravitational-wave detectors**: LIGO's 4 km arms with Fabry–Pérot cavities detect changes of 10^{-18} m.
-- Defining the metre historically, testing optical flatness, measuring refractive index of gases.
+- **Michelson–Morley** (1887): no detectable ether wind; it paved the way for relativity.
+- **Fourier transform spectroscopy** (FTIR): scan the mirror, then Fourier-transform the interferogram to get the spectrum.
+- **Gravitational-wave detectors**: LIGO's 4 km arms with Fabry–Pérot cavities detect length changes of about 10^{-18} m.
+- Defining the metre historically, testing optical flatness, measuring the refractive index of gases.
 - **Optical coherence tomography (OCT)**: low-coherence interferometry images the retina in 3D.
-X: Moving a mirror changes the pattern by 2000 fringes for λ = 632.8 nm. Mirror movement?
-> d = 2000 × λ/2 = 0.633 mm
+X: Moving a mirror changes the pattern by 2000 fringes for λ = 632.8 nm. How far did the mirror move?
+> Each fringe is λ/2 of movement
+> d = 2000 × 632.8 nm/2 = 0.633 mm
+K: Light travels each arm twice, so moving a mirror by λ/2 changes the path difference by λ: one fringe.
 !: Each fringe corresponds to a mirror movement of λ/2, not λ, because light travels the arm twice.
+T: Beam splitter | A partially reflecting surface that divides a beam into a transmitted and a reflected part
+T: Interferogram | The detected intensity as a function of path difference, whose Fourier transform gives the spectrum
+SUM: Path difference 2(L_{1} − L_{2}); one fringe per λ/2 of mirror movement.
+SUM: Fringe counting measures tiny lengths or wavelengths.
+SUM: Uses include Michelson–Morley, FTIR, LIGO and OCT.
+EV: established | Michelson interferometers measure length changes of a small fraction of a wavelength
+SRC: OpenStax, University Physics Volume 3, section 3.5 "The Michelson Interferometer" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/3-5-the-michelson-interferometer
+SRC: OpenStax, University Physics Volume 3, section 3.2 "Mathematics of Interference" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/3-2-mathematics-of-interference
 Q: How much must a Michelson mirror move to shift one fringe? | λ/2.
 Q: What did the Michelson–Morley experiment find? | No evidence for motion through an ether.
-M1: FTIR spectrometers are based on: | Michelson interferometers | Prisms | Gratings | Fabry–Pérot only | Interferogram → spectrum.
-M2: OCT imaging of the retina uses: | Low-coherence interferometry | X-rays | Ultrasound | MRI | Coherence gating.
+M1@3: FTIR spectrometers are based on: | Michelson interferometers | Prisms | Diffraction gratings | Fabry–Pérot etalons only | The moving mirror records an interferogram, and its Fourier transform gives the infrared spectrum.
+M2@3: OCT imaging of the retina uses: | Low-coherence interferometry | X-ray absorption | Ultrasound echoes | Magnetic resonance | Broadband light gives fringes only when the two arm lengths match within the short coherence length, selecting reflections from one depth.
+NUM2@2: A gas cell 5.0 cm long in one arm is filled slowly from vacuum; 45 fringes pass for λ = 633 nm. What is the gas's refractive index minus 1, in units of 10^{-4}? | 2.85 | 2% | × 10^{-4} | The light crosses the cell twice: 2(n − 1)L = Nλ, so n − 1 = 45 × 633 × 10^{-9}/(2 × 0.050) = 2.85 × 10^{-4}.
+M3@2: In a Michelson interferometer the mirror is moved 0.100 mm and 400 fringes pass. What is the wavelength? | 500 nm | 250 nm | 1000 nm | 400 nm | d = Nλ/2, so λ = 2d/N = 2 × 1.00 × 10^{-4}/400 = 5.00 × 10^{-7} m.
+SA3@1,3: Explain how LIGO uses a Michelson interferometer to detect gravitational waves. | Laser light is split into two perpendicular 4 km arms, reflected back and recombined; the output is set near a dark fringe so the two beams nearly cancel. A passing gravitational wave stretches one arm and squeezes the other by about 10^{-18} m, changing the path difference and letting some light reach the photodetector. Fabry–Pérot cavities in the arms make the light travel each arm hundreds of times, multiplying the phase shift, and high laser power, vibration isolation and two widely separated detectors distinguish real signals from noise. | Two perpendicular arms, recombined beams ; Output set near dark fringe ; Wave changes arm lengths oppositely by ~10^{-18} m ; Path difference changes, light reaches detector ; Cavities multiply effect; isolation and two sites
 
 ## Fabry–Pérot interferometer
-S: A Fabry–Pérot interferometer is two parallel, highly reflective surfaces. Light bounces between them many times, and only wavelengths that fit a whole number of half-wavelengths are transmitted, giving extremely sharp resonances.
+S: A Fabry–Pérot interferometer is two parallel, highly reflective surfaces. Light bounces between them many times, and only wavelengths that fit a whole number of half-wavelengths into the gap are transmitted strongly, giving extremely sharp resonances.
+O: Use the resonance condition and the free spectral range
+O: Calculate finesse and linewidth from mirror reflectivity
+O: Describe uses in spectroscopy, lasers and gravitational-wave detection
+PRE: Michelson interferometer
+LV: Year 3 · Application
 H: Transmission
 E: 2nd cos θ = mλ :: resonance condition
-E: FSR = c/(2nd) :: free spectral range
+E: FSR = c/(2nd) :: free spectral range (frequency)
 E: F = π√R/(1 − R) :: finesse (R = mirror reflectivity)
-E: Δf = FSR/F :: linewidth
-- High reflectivity gives very narrow peaks (finesse > 10^{5} with supermirrors).
+E: Δf = FSR/F :: linewidth of each peak
+- High reflectivity gives very narrow peaks (finesse above 10^{5} with supermirrors).
 H: Uses
 - High-resolution spectroscopy (resolving fine structure, Zeeman splitting).
 - Laser cavities and frequency stabilisation (reference cavities for optical clocks).
 - Optical filters for telecoms (dense WDM).
-- LIGO's arm cavities multiply effective arm length ~300 times.
+- LIGO's arm cavities increase the light's effective path by about 300 times.
 - Etalons select single modes in lasers.
-X: A Fabry–Pérot with d = 5 mm in air and mirrors of R = 0.95. FSR and linewidth?
-> FSR = 3 × 10^{8}/0.01 = 30 GHz
-> F = π√0.95/0.05 ≈ 61; Δf ≈ 0.49 GHz
+X: A Fabry–Pérot has d = 5 mm in air and mirrors of R = 0.95. Find the FSR and linewidth.
+> FSR = c/(2d) = 3 × 10^{8}/0.01 = 30 GHz
+> F = π√0.95/0.05 ≈ 61; Δf ≈ 30/61 = 0.49 GHz
+K: Multiple reflections make transmission peaks far sharper than two-beam fringes; the higher R, the sharper.
 !: High finesse requires both high reflectivity and very flat, parallel surfaces; imperfect surfaces limit the achievable finesse.
+T: Free spectral range | The frequency spacing between successive transmission peaks, c/(2nd)
+T: Finesse | The ratio of free spectral range to peak width, set mainly by mirror reflectivity
+SUM: Transmission peaks where 2nd cos θ = mλ, spaced by c/(2nd).
+SUM: Finesse π√R/(1 − R) sets how sharp they are.
+SUM: Used in spectroscopy, laser stabilisation, telecoms filters and LIGO.
+EV: established | Multiple-beam interference between parallel mirrors gives sharp transmission resonances
+SRC: Hecht E., Optics, 5th edn, Pearson | secondary | 2017
+SRC: Saleh B. E. A. and Teich M. C., Fundamentals of Photonics, 2nd edn, Wiley | secondary | 2007
 Q: What is the free spectral range? | The frequency spacing between successive transmission peaks, c/(2nd).
 Q: What does finesse measure? | The ratio of free spectral range to peak width; set by mirror reflectivity.
-M1: Increasing mirror reflectivity in a Fabry–Pérot makes peaks: | Narrower | Wider | Disappear | Shift in frequency | Higher finesse.
-M2: LIGO uses Fabry–Pérot cavities in its arms to: | Increase the effective arm length | Filter colours | Polarise light | Reduce laser power | Many round trips.
+M1@2: Increasing mirror reflectivity in a Fabry–Pérot makes peaks: | Narrower | Wider | Disappear | Shift in frequency | Higher R means more round trips before light leaks out, raising the finesse and narrowing each peak.
+M2@3: LIGO uses Fabry–Pérot cavities in its arms to: | Increase the effective arm length | Filter out unwanted colours | Polarise the laser light | Reduce the laser power | Light makes hundreds of round trips, so a tiny length change produces a correspondingly larger phase shift.
+NUM2@1: What is the free spectral range of an air-spaced etalon with a 1.5 cm gap, in GHz? | 10 | 2% | GHz | FSR = c/(2d) = 3.0 × 10^{8}/(2 × 0.015) = 1.0 × 10^{10} Hz = 10 GHz.
+M3@1,2: An etalon with FSR 10 GHz and finesse 50 is used to examine two laser lines 0.1 GHz apart. Can it separate them? | No: the peak width is 0.2 GHz, wider than their separation | Yes: 0.1 GHz is far less than the FSR | Yes: any finesse above 10 separates lines | No: the lines are outside the FSR | Linewidth = FSR/F = 10/50 = 0.2 GHz; lines must be at least about one linewidth apart to be resolved.
+SA3@1,2: Explain how the finesse of a Fabry–Pérot interferometer depends on mirror reflectivity, and why this gives much sharper fringes than a Michelson. | In a Michelson only two beams interfere, so intensity varies smoothly as cos^{2} with path difference. In a Fabry–Pérot light bounces many times between the mirrors, and the transmitted beam is the sum of many partial beams with successively greater path differences. Only when the round-trip phase is a whole multiple of 2π do they all add in phase; a small departure makes the many beams cancel, so peaks are very narrow. Higher reflectivity R means more significant beams, giving finesse F = π√R/(1 − R): about 61 for R = 0.95 and about 300 for R = 0.99. | Michelson: two beams, smooth cos^{2} fringes ; Fabry–Pérot: many beams from multiple reflections ; All in phase only at resonance; otherwise cancel ; More reflections with higher R ; F = π√R/(1 − R) with an example
 
 ## Polarisation
-S: Polarisation describes the orientation of light's electric field oscillation. Natural light is unpolarised, but reflection, scattering, dichroic filters and birefringent crystals can polarise it, and many technologies depend on controlling it.
+S: Polarisation describes the direction of light's electric-field oscillation. Natural light is unpolarised, but reflection, scattering, dichroic filters and birefringent crystals can polarise it, and many technologies depend on controlling it.
+O: Explain polarisation as evidence that light is a transverse wave
+O: Use Malus's law and the halving rule for unpolarised light
+O: Describe how polarised light is produced and used
+PRE: Transverse and longitudinal waves
+LV: A level · Foundation
 H: Producing polarised light
 - **Dichroism**: Polaroid sheets absorb one field direction.
-- **Reflection**: fully polarised at Brewster's angle.
+- **Reflection**: completely polarised at Brewster's angle.
 - **Scattering**: skylight 90° from the Sun is strongly polarised.
 - **Birefringence**: calcite and wave plates separate or alter polarisation.
 H: Laws
-E: I = I_{0} cos^{2}θ :: Malus
-E: I = I_{0}/2 :: unpolarised through an ideal polariser
+E: I = I_{0} cos^{2}θ :: Malus's law (θ between polarisation and transmission axis)
+E: I = I_{0}/2 :: unpolarised light through an ideal polariser
+- Only transverse waves can be polarised: sound in air cannot.
 H: Applications
 - Sunglasses cut horizontally polarised glare.
 - LCDs: liquid crystal twists polarisation between crossed polarisers.
 - Photoelastic stress analysis of transparent models.
 - Polarimetry measures sugar concentration and probes cosmic magnetic fields.
-- Navigation: bees and Vikings (sunstones) used sky polarisation.
-X: A polariser and analyser at 30°. Unpolarised light of 100 W m^{-2}. Transmitted?
-> After the polariser: 50 W m^{-2}
+- Navigation: bees use sky polarisation.
+X: A polariser and analyser have axes at 30°. Unpolarised light of 100 W m^{-2} falls on them. What is transmitted?
+> After the polariser: 100/2 = 50 W m^{-2}
 > After the analyser: 50 cos^{2}30° = 37.5 W m^{-2}
+K: A polariser transmits the field component along its axis, so intensity falls as cos^{2}θ; unpolarised light is halved.
 !: A polariser doesn't "rotate" light into its axis; it removes the perpendicular component.
+T: Plane polarised light | Light whose electric field oscillates in a single plane containing the direction of travel
+T: Malus's law | The intensity transmitted by a polariser is I_{0}cos^{2}θ, θ being the angle between the light's polarisation and the axis
+SUM: Polarisation shows light is transverse.
+SUM: Unpolarised light is halved by a polariser; then I = I_{0}cos^{2}θ.
+SUM: Reflection, scattering, dichroism and birefringence all polarise light.
+EV: established | Light is a transverse wave and can be polarised
+SRC: OpenStax, University Physics Volume 3, section 1.7 "Polarization" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/1-7-polarization
+SRC: OpenStax, College Physics 2e, section 27.8 "Polarization" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/27-8-polarization
+SRC: AQA, A-level Physics specification (7408), section 3.3.1.2 "Longitudinal and transverse waves" | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: How does an LCD use polarisation? | Liquid crystals rotate light's polarisation between crossed polarisers; voltage controls how much passes.
 Q: Why does skylight show polarisation? | Rayleigh scattering polarises light, most strongly at 90° from the Sun.
-M1: Polarised sunglasses block: | Horizontally polarised glare | All light | Vertical polarisation | UV only | Reflected glare is horizontal.
-M2: Photoelasticity reveals: | Stress patterns in transparent materials | Temperature | Magnetic fields | Composition | Stress-induced birefringence.
+M1@3: Polarised sunglasses block: | Horizontally polarised glare | All light equally | Vertically polarised light | Only ultraviolet light | Light reflected from roads and water is mostly horizontally polarised, so lenses with vertical transmission axes remove it.
+M2@3: Photoelasticity reveals: | Stress patterns in transparent materials | Temperature differences | Magnetic fields | Chemical composition | Stress makes plastics birefringent, so between crossed polarisers stressed regions show coloured fringes.
+NUM2@2: Unpolarised light of intensity 80 W m^{-2} passes through two polarisers with axes at 60°. What intensity emerges, in W m^{-2}? | 10 | 2% | W m^{-2} | 80/2 = 40 W m^{-2} after the first, then 40 cos^{2}60° = 40 × 0.25 = 10 W m^{-2}.
+M3@2: Two polarisers are crossed, so no light passes. A third is inserted between them at 45°. What happens? | Light passes: a quarter of the intensity leaving the first polariser | Still no light, because the outer pair are crossed | All the light from the first polariser passes | Half the light from the first polariser passes | Each step at 45° transmits cos^{2}45° = ½, so ½ × ½ = ¼ of the light after the first polariser gets through.
+SA2@1,3: Explain why polarisation shows that light is a transverse wave, and describe a demonstration. | Polarisation means restricting the oscillation to one direction perpendicular to the travel. A longitudinal wave oscillates along its direction of travel, so there is only one possible oscillation direction and it cannot be polarised. Light can: rotating a Polaroid analyser in front of a polarised beam (for example light already through one Polaroid, or an LCD screen) makes the transmitted intensity vary from maximum to zero every 90°. This shows the field oscillates perpendicular to the beam, so light is transverse. | Polarisation restricts oscillation to one plane ; Longitudinal waves cannot be polarised ; Demonstration with two Polaroids or LCD ; Intensity varies, zero when crossed ; Conclusion: oscillation perpendicular to travel, transverse
 
 ## Brewster's angle
-S: At Brewster's angle, light polarised in the plane of incidence (p) isn't reflected at all, so reflected light is perfectly polarised. The reflected and refracted rays are then at right angles.
+S: At Brewster's angle, light polarised in the plane of incidence (p) is not reflected at all, so the reflected light is completely polarised. The reflected and refracted rays are then at right angles.
+O: Use tan θ_{B} = n_{2}/n_{1} to calculate Brewster's angle
+O: Explain why p-polarised light is not reflected at Brewster's angle
+O: Describe uses of Brewster's angle in lasers and photography
+PRE: Polarisation
+LV: Year 1 · Application
 H: Condition
 E: tan θ_{B} = n_{2}/n_{1}
 E: θ_{B} + θ_{t} = 90°
 - Air–water: 53°; air–glass (1.5): 56°.
+- Reflected light is s-polarised (field perpendicular to the plane of incidence).
 H: Why it happens
-P: The reflected wave is radiated by dipoles in the second medium oscillating along the refracted field. At Brewster's angle the p-polarised dipoles point exactly along the would-be reflected direction, and dipoles don't radiate along their axis: no p-reflection.
+P: The reflected wave is radiated by electrons in the second medium, oscillating along the refracted wave's field. At Brewster's angle the p-polarised oscillation points exactly along the would-be reflected direction, and oscillating dipoles don't radiate along their axis: so no p-polarised light is reflected.
 H: Uses
 - **Brewster windows** on gas laser tubes: zero reflection loss for one polarisation, so the laser emits polarised light.
 - Measuring refractive index from the angle of zero p-reflection.
 - Photographers' polarising filters remove reflections from water and glass.
 - Brewster angle microscopy images monolayers on water.
-X: Brewster's angle for light hitting diamond (n = 2.42) from air?
-> θ_{B} = tan^{-1} 2.42 = 67.5°
+X: What is Brewster's angle for light hitting diamond (n = 2.42) from air?
+> θ_{B} = tan^{-1} 2.42
+> θ_{B} = 67.5°
+K: At θ_{B} = tan^{-1}(n_{2}/n_{1}) the reflected and refracted rays are perpendicular and only s-polarised light is reflected.
 !: Only p-polarised light has zero reflection at Brewster's angle; s-polarised light still reflects.
+T: Brewster's angle | The angle of incidence at which p-polarised light is not reflected: tan θ_{B} = n_{2}/n_{1}
+T: p-polarisation | Polarisation with the electric field in the plane of incidence (s-polarisation is perpendicular to it)
+SUM: tan θ_{B} = n_{2}/n_{1}; reflected and refracted rays are at 90°.
+SUM: Dipoles can't radiate along their axis, so p-light isn't reflected.
+SUM: Brewster windows, polarising filters and refractive-index measurement use it.
+EV: established | At Brewster's angle reflected light is completely s-polarised
+SRC: OpenStax, University Physics Volume 3, section 1.7 "Polarization" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/1-7-polarization
+SRC: OpenStax, College Physics 2e, section 27.8 "Polarization" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/27-8-polarization
 Q: State Brewster's law. | tan θ_{B} = n_{2}/n_{1}.
 Q: Why do gas lasers with Brewster windows emit polarised light? | The windows have no loss for p-polarisation, so it dominates lasing.
-M1: At Brewster's angle the reflected and refracted rays are: | Perpendicular | Parallel | At 45° | Opposite | θ_{B} + θ_{t} = 90°.
-M2: Brewster's angle for water (n = 1.33) is about: | 53° | 37° | 49° | 45° | tan^{-1} 1.33.
+M1@1: At Brewster's angle the reflected and refracted rays are: | Perpendicular | Parallel | At 45° | Opposite | θ_{B} + θ_{t} = 90°, so the reflected and refracted rays make a right angle with each other.
+M2@1: Brewster's angle for water (n = 1.33) is about: | 53° | 37° | 49° | 45° | θ_{B} = tan^{-1} 1.33 = 53°; 37° is its complement and 49° is water's critical angle.
+NUM2@1: What is Brewster's angle for light going from water (n = 1.33) into glass (n = 1.50), in degrees? | 48.4 | 1% | ° | tan θ_{B} = 1.50/1.33 = 1.128, so θ_{B} = 48.4°.
+M3@2,3: Light at Brewster's angle meets a glass surface. If the incoming light is p-polarised, the reflected intensity is: | Zero | About 4% | 50% | 100% | The p-reflection coefficient is exactly zero at θ_{B}, which is why Brewster windows transmit p-light with no loss.
+SA2@2,3: Explain how Brewster windows make a gas laser's output polarised. | The laser tube is closed by windows tilted at Brewster's angle. Light polarised in the plane of incidence (p) passes through with no reflection loss, while s-polarised light loses some energy at every pass by reflection out of the beam. Light makes many round trips between the mirrors, so these losses grow and s-light cannot build up enough gain to lase. The p-polarisation dominates and the output is linearly polarised. | Windows tilted at Brewster's angle ; No reflection loss for p-polarisation ; s-light reflected out at each pass ; Many round trips make the loss decisive ; Output linearly polarised in p direction
 
 ## Birefringence
 S: Birefringent crystals have two refractive indices depending on the polarisation of light. A ray entering them splits in two, and the different speeds for the two polarisations let engineers build wave plates and polarisers.

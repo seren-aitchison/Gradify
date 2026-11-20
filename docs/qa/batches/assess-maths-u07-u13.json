@@ -240,6 +240,62 @@
    "course": "maths",
    "action": "enhanced",
    "findings": []
+  },
+  {
+   "lesson": "u07-23",
+   "changes": [
+    "LV A level · Application; EV",
+    "added paragraph on the chord definition of convexity",
+    "added NUM2, M3 (Jensen) and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-24",
+   "changes": [
+    "LV A level · Application; EV",
+    "added NUM3 and SA2 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-25",
+   "changes": [
+    "LV A level · Problem solving; EV",
+    "added NUM3 (oblique asymptote) and SA3 (sketch of x^2/(x − 1)) questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-26",
+   "changes": [
+    "LV A level · Fluency; EV",
+    "added SA3 question (displacement versus distance)"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "M2#maths-u07-26-q4 (which numerical rule has the smallest error) belongs with Numerical Integration (u07-36) rather than this overview lesson; it is correct, so left in place."
+    }
+   ],
+   "course": "maths",
+   "action": "enhanced"
+  },
+  {
+   "lesson": "u07-27",
+   "changes": [
+    "LV A level · Fluency; EV",
+    "added NUM2 and SA2 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
   }
  ],
  "notes": [

@@ -318,170 +318,312 @@ SA2@2,3: Explain why the decay of a large number of nuclei gives a smooth expone
 
 ## Alpha, beta and gamma decay
 S: The three classic types of radioactive decay emit helium nuclei (alpha), electrons or positrons (beta) or high-energy photons (gamma). They differ in what changes in the nucleus, in their energies and in how penetrating they are.
+O: Write balanced equations for alpha, beta-minus, beta-plus and gamma decay
+O: Compare the ionising and penetrating properties of the three radiations
+O: Explain the continuous beta spectrum and the need for the neutrino
+PRE: Nuclear stability
+LV: GCSE and A level · Foundation
 H: Alpha decay
 E: ^{A}_{Z}X → ^{A−4}_{Z−2}Y + ^{4}_{2}He
-- Heavy nuclei; discrete energies 4–9 MeV; stopped by paper or a few cm of air; highly ionising.
-- Quantum tunnelling through the Coulomb barrier.
+- Heavy nuclei; discrete energies of 4–9 MeV; stopped by paper or a few cm of air; strongly ionising.
+- The alpha escapes by quantum tunnelling through the Coulomb barrier.
 H: Beta decay
 E: n → p + e^{−} + ν̄_{e} :: β^{−}
-E: p → n + e^{+} + ν_{e} :: β^{+} (in nuclei)
+E: p → n + e^{+} + ν_{e} :: β^{+} (only inside nuclei)
 - Electron capture: p + e^{−} → n + ν_{e}.
-- Continuous electron energy spectrum: the missing energy led Pauli to propose the neutrino (1930).
-- Weak interaction; stopped by a few mm of aluminium.
+- The electrons have a continuous energy spectrum: the missing energy led Pauli to propose the neutrino (1930).
+- A weak-interaction process; betas are stopped by a few mm of aluminium.
 H: Gamma decay
-- Nucleus drops between energy levels, emitting a photon (keV–MeV); Z and A unchanged.
-- Usually follows alpha or beta decay; metastable states (technetium-99m, 6 h) are medically valuable.
-- Highly penetrating: needs lead or concrete.
+- The nucleus drops between its own energy levels, emitting a photon (keV–MeV); Z and A are unchanged.
+- It usually follows alpha or beta decay; metastable states (technetium-99m, 6 h) are medically valuable.
+- Weakly ionising but highly penetrating: needs lead or thick concrete.
 X: Radium-226 alpha decays. Product?
-> ^{226}_{88}Ra → ^{222}_{86}Rn + ^{4}_{2}He: radon-222, a radioactive gas
-!: Gamma rays carry no charge and no mass number change; they don't change the element.
+> ^{226}_{88}Ra → ^{222}_{86}Rn + ^{4}_{2}He
+> Radon-222, a radioactive gas
+K: Alpha lowers Z by 2 and A by 4; β^{−} raises Z by 1; β^{+} lowers Z by 1; gamma changes neither.
+!: Gamma rays carry no charge and no nucleon number, so they don't change the element.
 P: **Investigate with the lab.** Watch the nuclei change as they decay and note that each decay emits radiation from the nucleus.
 IX: decay
+T: Alpha particle | A helium-4 nucleus, two protons and two neutrons, emitted by heavy nuclei
+T: Beta particle | An electron (β^{−}) or positron (β^{+}) created and emitted in a weak decay of the nucleus
+T: Gamma ray | A high-energy photon emitted when a nucleus drops to a lower energy level
+SUM: α: ^{4}_{2}He, range a few cm of air; β: e^{∓} with a neutrino, a few mm of aluminium; γ: photon, cm of lead.
+SUM: Ionising power falls and penetration rises from α to β to γ.
+SUM: The continuous β spectrum revealed the neutrino.
+EV: established | Alpha, beta and gamma decay conserve charge and nucleon number, and beta decay's continuous spectrum requires the (now detected) neutrino
+SRC: AQA, A-level Physics specification (7408), section 3.8.1.2 α, β and γ radiation | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
+SRC: OpenStax, College Physics 2e, section 31.4 "Nuclear Decay and Conservation Laws" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/31-4-nuclear-decay-and-conservation-laws
 Q: Why does beta decay need a neutrino? | Electron energies are continuous; a third particle must carry the missing energy and momentum.
 Q: What stops alpha particles? | Paper, skin or a few centimetres of air.
-M1: In β^{−} decay, Z: | Increases by 1 | Decreases by 1 | Stays the same | Decreases by 2 | n → p.
-M2: Technetium-99m is useful in medicine because it: | Emits gamma rays with a short half-life | Emits alphas | Is stable | Emits neutrons | 140 keV gamma, 6 h.
-M2: Which type of decay doesn't change the proton number? | Gamma decay | Alpha decay | Beta-minus decay | Beta-plus decay | Gamma emission releases energy without changing the nucleus's composition.
+M1@1: In β^{−} decay, Z: | Increases by 1 | Decreases by 1 | Stays the same | Decreases by 2 | A neutron becomes a proton, so the proton number rises by 1 while A stays the same.
+M2@2: Technetium-99m is useful in medicine because it: | Emits only gamma rays and has a short half-life | Emits strongly ionising alpha particles | Is completely stable in the body | Emits a beam of neutrons | Its 140 keV gammas escape the body to reach a camera, and its 6 h half-life keeps the patient's dose low.
+M2@1: Which type of decay doesn't change the proton number? | Gamma decay | Alpha decay | Beta-minus decay | Beta-plus decay | Gamma emission releases energy without changing the nucleus's composition.
+NUM2@1: Thorium-232 (Z = 90) alpha decays. What is the proton number of the product? | 88 | 0 | (proton number) | Alpha emission removes two protons: 90 − 2 = 88, radium-228.
+TF1@2: Alpha particles are the most penetrating of the three radiations. | false | Alphas are the most ionising, so they lose energy fastest and are stopped by paper; gamma rays are the most penetrating.
+M3@3: Why do alpha particles from one nuclide have a single energy, while beta electrons have a spread? | Alpha decay has two products, beta decay three | Alphas are heavier than electrons | Beta decay is electromagnetic | Electrons lose energy inside the nucleus | With two bodies, momentum conservation fixes each share of the energy; with three (electron, neutrino, nucleus) the energy can be shared in many ways.
+SA2@1,2: Compare alpha, beta and gamma radiation in terms of their nature, effect on the nucleus, ionising ability and penetration. | Alpha particles are helium-4 nuclei; emitting one lowers Z by 2 and A by 4. They are strongly ionising and are stopped by paper or a few cm of air. Beta-minus particles are fast electrons (with an antineutrino) from a neutron becoming a proton; Z rises by 1 and A is unchanged; they are moderately ionising and stopped by a few mm of aluminium. Gamma rays are photons from a nucleus dropping to a lower energy level; Z and A are unchanged; they are weakly ionising and penetrating, reduced but not stopped by several cm of lead. | Alpha: helium nucleus, Z − 2, A − 4 ; Beta: electron, Z + 1 ; Gamma: photon, no change ; Ionising order α > β > γ ; Penetration and absorbers correct
 
 ## Decay chains and half-life
 S: Many radioactive nuclei decay into products that are themselves radioactive, forming decay chains that end at a stable isotope. Their behaviour depends on the relative half-lives and enables radiometric dating of rocks, bones and the Earth itself.
+O: Describe natural decay series and secular and transient equilibrium
+O: Calculate ages from parent and daughter amounts
+O: Use half-lives to find remaining fractions and activities
+PRE: Radioactive decay
+LV: Year 1 · Application
 H: Natural decay series
-- Uranium-238 → … → lead-206 (14 steps, including radium-226, radon-222).
+- Uranium-238 → … → lead-206 (14 steps: 8 alpha and 6 beta decays, including radium-226 and radon-222).
 - Uranium-235 → lead-207; thorium-232 → lead-208.
-- Neptunium series (extinct in nature).
+- The neptunium series is extinct in nature.
 H: Equilibrium
 E: dN_{2}/dt = λ_{1}N_{1} − λ_{2}N_{2}
-- **Secular equilibrium** (t_{1/2,parent} ≫ daughter's): activities equal: A_{1} = A_{2}.
-- **Transient equilibrium**: parent somewhat longer-lived; daughter activity tracks parent's.
+- **Secular equilibrium** (parent half-life ≫ daughter's): activities equal, A_{1} = A_{2}.
+- **Transient equilibrium**: parent somewhat longer-lived; the daughter's activity tracks the parent's.
 - Medical generators: molybdenum-99 (66 h) → technetium-99m (6 h), "milked" daily.
 H: Radiometric dating
-E: t = (1/λ) ln(1 + D/P) :: daughter D, parent P
+E: t = (1/λ) ln(1 + D/P) :: daughter D, parent P, no daughter at the start
 - Carbon-14 (up to ~50 000 years).
 - Potassium–argon, uranium–lead (zircons up to 4.4 billion years old), rubidium–strontium.
-- Isochron methods remove the need to know initial daughter amounts.
-X: A rock has equal numbers of ²³⁸U and its final daughter ²⁰⁶Pb (none initially). Age?
-> D/P = 1 ⇒ t = t_{1/2} = 4.5 × 10^{9} years
-!: Carbon dating assumes a known initial ¹⁴C level; calibration curves (tree rings, corals) correct for its variations.
+- Isochron methods remove the need to know the initial daughter amount.
+X: A rock has equal numbers of ^{238}U and its final daughter ^{206}Pb (none initially). Age?
+> D/P = 1 ⇒ t = ln 2/λ = t_{1/2}
+> t = 4.5 × 10^{9} years
+K: In a chain, a short-lived daughter's activity quickly matches its long-lived parent's: secular equilibrium.
+!: Carbon dating assumes a known initial ^{14}C level; calibration curves (tree rings, corals) correct for its variations.
 P: **Investigate with the lab.** Mark the moment half the nuclei are left, then run the decay chain and watch the daughter build up, peak and decay away.
 IX: decay
+T: Decay chain | A sequence of radioactive decays from a parent through radioactive daughters to a stable end product
+T: Secular equilibrium | The state in which a long-lived parent and short-lived daughter have equal activities
+T: Radiometric dating | Finding an age from the measured amounts of a radioactive parent and its daughter
+SUM: Natural series end at stable lead isotopes.
+SUM: Secular equilibrium: A_{daughter} = A_{parent}.
+SUM: Age t = (1/λ) ln(1 + D/P).
+EV: established | Radiometric ages from independent decay chains agree, giving an age of the Earth of about 4.5 billion years
+SRC: OpenStax, College Physics 2e, section 31.5 "Half-Life and Activity" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/31-5-half-life-and-activity
+SRC: OpenStax, University Physics Volume 3, section 10.3 "Radioactive Decay" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/10-3-radioactive-decay
 Q: What is secular equilibrium? | When a long-lived parent and short-lived daughter have equal activities.
 Q: Why is uranium–lead dating so reliable? | Two independent decay chains (U-238 and U-235) cross-check ages, and zircons exclude initial lead.
-M1: Carbon-14 dating works up to about: | 50 000 years | 5 billion years | 100 years | 1 million years | ~10 half-lives.
-M2: A Tc-99m generator relies on: | The decay of Mo-99 parent | Fission | Neutron capture in the hospital | Alpha decay | Transient equilibrium.
-M2: A sample has a half-life of 2 hours. What fraction remains after 6 hours? | One eighth | One sixth | One third | One quarter | Six hours is three half-lives: ½ × ½ × ½ = ⅛.
+M1@2: Carbon-14 dating works up to about: | 50 000 years | 5 billion years | 100 years | 1 million years | After about 9 half-lives of 5730 years, too little ^{14}C remains to measure reliably.
+M2@1: A Tc-99m generator relies on: | The decay of the parent Mo-99 | Fission inside the hospital | Neutron capture in the hospital | Alpha decay of technetium | Mo-99 (66 h) continuously produces Tc-99m (6 h) in transient equilibrium, so it can be extracted each day.
+M2@3: A sample has a half-life of 2 hours. What fraction remains after 6 hours? | One eighth | One sixth | One third | One quarter | Six hours is three half-lives: ½ × ½ × ½ = ⅛.
+NUM2@2: A mineral contains three ^{206}Pb atoms for every ^{238}U atom (no lead at formation). What is its age, in billions of years? (t_{1/2} = 4.5 × 10^{9} y) | 9.0 | 0.1 | × 10^{9} y | D/P = 3, so t = t_{1/2} log_{2}(1 + 3) = 2 half-lives = 9.0 × 10^{9} y (older than the Earth, so the sample would be suspect).
+TF1@1: In secular equilibrium, the parent and daughter have equal numbers of atoms. | false | They have equal activities, λ_{1}N_{1} = λ_{2}N_{2}; the short-lived daughter has far fewer atoms.
+M3@1,3: Radon-222 (3.8 days) comes from radium-226 (1600 years). In an old radium sample, how does the radon activity compare with the radium activity? | They are equal | Radon's is far greater | Radon's is far smaller | Radon's is zero | Within a few weeks radon reaches secular equilibrium: it decays as fast as it is made, so the activities match.
+SA3@2,3: Explain how uranium–lead dating gives the age of a zircon crystal and why it is considered reliable. | Zircon incorporates uranium but excludes lead when it crystallises, so any lead now present comes from decay. Measuring the ratio of ^{206}Pb to ^{238}U gives the age from t = (1/λ) ln(1 + D/P). The ^{235}U → ^{207}Pb chain has a different half-life and gives an independent age from the same crystal; agreement of the two (concordance) shows the crystal has neither gained nor lost uranium or lead. The long half-lives (4.5 and 0.7 billion years) suit geological ages. | No initial lead in zircon ; Daughter/parent ratio gives age with formula ; Second independent chain U-235 to Pb-207 ; Concordance checks a closed system ; Suitable half-lives
 
 ## Nuclear reaction equations
-S: Nuclear reactions are written like chemical equations, but must conserve mass number, charge, energy and momentum. Balancing them predicts products, and mass differences give the energy released.
+S: Nuclear reactions are written like chemical equations, but must conserve nucleon number, charge, energy and momentum. Balancing them predicts products, and mass differences give the energy released.
+O: Balance nuclear equations by conserving A and Z
+O: Use X(a, b)Y notation and identify historic reactions
+O: Calculate Q-values and decide whether a reaction needs a threshold energy
+PRE: Mass defect
+LV: A level · Foundation
 H: Conservation rules
-- Total A (nucleon number) conserved.
-- Total Z (charge) conserved.
-- Lepton number and baryon number conserved.
-- Mass–energy and momentum conserved.
+- Total nucleon number A is conserved.
+- Total charge Z is conserved.
+- Lepton number and baryon number are conserved.
+- Mass–energy and momentum are conserved.
 H: Notation
 E: a + X → Y + b, or X(a, b)Y
-- E.g. ^{14}N(α, p)^{17}O: Rutherford's first artificial transmutation (1919).
+- ^{14}N(α, p)^{17}O: Rutherford's first artificial transmutation (1919).
 - ^{9}Be(α, n)^{12}C: Chadwick's discovery of the neutron (1932).
 H: Q-value and thresholds
 E: Q = (m_{a} + m_{X} − m_{Y} − m_{b})c^{2}
 E: E_{th} = −Q(1 + m_{a}/m_{X}) :: threshold for endothermic reactions (non-relativistic)
-- Exothermic (Q > 0) reactions can occur at low energy (if Coulomb barriers allow).
+- Exothermic (Q > 0) reactions can occur at low energy, if Coulomb barriers allow.
+- Some kinetic energy must go into moving the products, so the threshold exceeds |Q|.
 X: Complete: ^{235}_{92}U + ^{1}_{0}n → ^{141}_{56}Ba + ^{92}_{36}Kr + ?
 > A: 236 = 141 + 92 + 3; Z: 92 = 56 + 36 + 0
 > 3 neutrons
-!: Particles' kinetic energies count in energy conservation; mass number and charge balancing alone don't guarantee a reaction is energetically possible.
+K: Balancing A and Z gives the products; masses then give Q, and Q < 0 means a threshold energy is needed.
+!: Balancing A and Z alone doesn't guarantee a reaction is energetically possible; the kinetic energies count in energy conservation.
+T: Transmutation | The change of one element into another by a nuclear reaction or decay
+T: Threshold energy | The minimum kinetic energy of the projectile for an endothermic reaction to occur
+SUM: Conserve A, Z, lepton and baryon numbers, energy and momentum.
+SUM: X(a, b)Y is shorthand for a + X → Y + b.
+SUM: Q = (initial − final mass)c^{2}; E_{th} = −Q(1 + m_{a}/m_{X}).
+EV: established | Nuclear reactions conserve nucleon number, charge, energy and momentum, with Q-values matching measured mass differences
+SRC: OpenStax, University Physics Volume 3, section 10.4 "Nuclear Reactions" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/10-4-nuclear-reactions
+SRC: OpenStax, College Physics 2e, section 31.4 "Nuclear Decay and Conservation Laws" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/31-4-nuclear-decay-and-conservation-laws
 Q: What must be conserved in a nuclear reaction equation? | Nucleon number, charge, energy, momentum (and lepton and baryon numbers).
 Q: What was Rutherford's first artificial transmutation? | Nitrogen-14 bombarded by alphas producing oxygen-17 and a proton.
-M1: ^{27}Al(n, α)? produces: | ^{24}Na | ^{24}Mg | ^{28}Al | ^{23}Ne | A: 27 + 1 − 4 = 24; Z: 13 − 2 = 11.
-M2: A reaction with Q < 0: | Needs a minimum kinetic energy to occur | Releases energy | Is impossible | Has no products | Endothermic threshold.
+M1@1: ^{27}Al(n, α)? produces: | ^{24}Na | ^{24}Mg | ^{28}Al | ^{23}Ne | A: 27 + 1 − 4 = 24; Z: 13 − 2 = 11, which is sodium.
+M2@3: A reaction with Q < 0: | Needs a minimum kinetic energy to occur | Releases energy when it occurs | Can never take place at all | Produces no particles at all | An endothermic reaction absorbs energy, so the projectile must bring at least the threshold energy −Q(1 + m_{a}/m_{X}).
+NUM2@3: A reaction has Q = −1.19 MeV, with an alpha (m = 4 u) striking nitrogen-14. What is the threshold energy, in MeV? | 1.53 | 0.02 | MeV | E_{th} = 1.19 × (1 + 4/14) = 1.19 × 1.286 = 1.53 MeV.
+TF1@1: In any nuclear reaction the total mass number on each side must be equal. | true | Baryon number is conserved, so the total count of protons and neutrons is the same before and after.
+M3@1,2: Which particle completes ^{9}_{4}Be + ^{4}_{2}He → ^{12}_{6}C + ? | A neutron | A proton | An electron | A gamma ray only | A: 9 + 4 − 12 = 1; Z: 4 + 2 − 6 = 0, so it is ^{1}_{0}n, Chadwick's neutron.
+SA2@1,3: Explain how to decide what product is formed in a nuclear reaction and whether the reaction can occur at low energy. | Write the equation with the unknown product and conserve nucleon number and charge: the sums of A and of Z on each side must match, which identifies the unknown nuclide or particle (its Z gives the element). Then calculate Q from the total rest mass before minus after, times c^{2} (931.5 MeV per u). If Q is positive the reaction releases energy and can occur at low energy, provided Coulomb barriers can be overcome; if Q is negative it needs a projectile with at least the threshold energy. | Conserve A ; Conserve Z to identify element ; Q from mass difference ; Q > 0 releases energy ; Q < 0 needs threshold, or Coulomb barrier mentioned
 
 ## Nuclear cross-sections
 S: A cross-section measures how likely a nuclear reaction is, expressed as an effective target area. Cross-sections vary enormously with energy and determine reactor design, shielding and astrophysical reaction rates.
+O: Use R = σΦN and the barn to calculate reaction rates
+O: Explain the 1/v law and resonances in neutron cross-sections
+O: Calculate attenuation and mean free paths from cross-sections
+PRE: Nuclear reaction equations
+LV: Year 2 · Application
 H: Definition
 E: R = σΦN :: reaction rate = cross-section × flux × number of targets
 E: 1 barn = 10^{-28} m^{2}
-- Geometric size of a heavy nucleus ~2 barns.
-- Differential cross-section dσ/dΩ: angular distribution.
+- The geometric area of a heavy nucleus is ~2 barns.
+- The differential cross-section dσ/dΩ gives the angular distribution.
 H: Energy dependence
 - **1/v law**: neutron absorption cross-sections often ∝ 1/v at low energies (slow neutrons linger near nuclei).
-- **Resonances**: sharp peaks when energy matches a compound-nucleus level (Breit–Wigner shape).
+- **Resonances**: sharp peaks when the energy matches a compound-nucleus level (Breit–Wigner shape).
 - Thermal neutron capture: cadmium-113 ~20 000 b, boron-10 3840 b, xenon-135 ~2.6 million b (a reactor poison).
 - U-235 thermal fission: 585 b; fast fission: ~1 b.
 H: Attenuation
 E: I = I_{0}e^{−nσx}; mean free path λ = 1/(nσ)
 X: Thermal neutrons in water (hydrogen n = 6.7 × 10^{28} m^{-3}, σ_{capture} = 0.33 b). Mean free path for capture?
-> λ = 1/(6.7 × 10^{28} × 3.3 × 10^{-29}) = 0.45 m
+> λ = 1/(6.7 × 10^{28} × 3.3 × 10^{-29} m^{2})
+> λ ≈ 0.45 m
+K: A cross-section is a probability expressed as an area: rate = σ × flux × number of target nuclei.
 !: A cross-section isn't the physical size of the nucleus; quantum effects make it much larger or smaller depending on energy.
+T: Cross-section | The effective area a target nucleus presents for a given reaction
+T: Barn | A unit of cross-section, 10^{-28} m^{2}
+T: Neutron flux | The number of neutrons crossing unit area per second
+SUM: R = σΦN; 1 b = 10^{-28} m^{2}.
+SUM: Slow-neutron cross-sections follow 1/v and show resonances.
+SUM: Mean free path = 1/(nσ).
+EV: established | Measured neutron cross-sections show 1/v behaviour and Breit–Wigner resonances, and are tabulated for reactor and shielding design
+SRC: OpenStax, University Physics Volume 3, section 10.4 "Nuclear Reactions" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/10-4-nuclear-reactions
+SRC: OpenStax, College Physics 2e, section 32.6 "Fission" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/32-6-fission
 Q: What is a barn? | A unit of cross-section, 10^{-28} m^{2}.
 Q: Why do slow neutrons often have larger absorption cross-sections? | They spend more time near the nucleus (1/v law).
-M1: Xenon-135 matters in reactors because: | Its huge neutron absorption cross-section poisons the chain reaction | It's a fuel | It moderates neutrons | It's stable | Reactor poison.
-M2: Reaction rate is proportional to: | Cross-section × flux × number of targets | Mass only | Temperature only | Half-life | R = σΦN.
+M1@2: Xenon-135 matters in reactors because: | Its huge neutron absorption cross-section poisons the chain | It is the main fissile fuel isotope | It moderates fast neutrons well | It is stable and builds up as ash | With ~2.6 million barns it absorbs thermal neutrons strongly, so its build-up after power changes reduces reactivity.
+M2@1: Reaction rate is proportional to: | Cross-section × flux × number of targets | The target's mass alone | Temperature alone | The product's half-life | R = σΦN: each of N nuclei presents area σ to a flux Φ of particles per unit area per second.
+NUM2@1: A foil holds 1.0 × 10^{20} nuclei with σ = 2.0 b in a flux of 1.0 × 10^{16} m^{-2} s^{-1}. What is the reaction rate, in s^{-1}? | 2.0 | 0.05 | × 10^{8} s^{-1} | R = σΦN = 2.0 × 10^{-28} × 1.0 × 10^{16} × 1.0 × 10^{20} = 2.0 × 10^{8} reactions per second.
+TF1@2: The 1/v law means slower neutrons are more likely to be absorbed. | true | Absorption probability rises as the neutron spends longer within range of the nucleus, so σ ∝ 1/v at low energy.
+M3@2,3: The thermal capture cross-section of a nuclide is 100 b at 0.025 eV. Following the 1/v law, what is it at 0.1 eV? | 50 b | 25 b | 200 b | 400 b | v ∝ √E, so quadrupling E doubles v and halves σ: 100/2 = 50 b.
+SA3@1,3: Explain what a nuclear cross-section is, and why the absorption cross-section of a nucleus can be much larger than its geometric size. | A cross-section σ is the effective target area per nucleus for a reaction, defined so that the rate is R = σΦN; it is a probability expressed as an area, measured in barns. A heavy nucleus has a geometric area of about 1–2 b, but slow neutrons have de Broglie wavelengths far larger than the nucleus and interact quantum mechanically: at low energies σ ∝ 1/v because the neutron spends longer near the nucleus, and when its energy matches a level of the compound nucleus there is a resonance. So xenon-135 absorbs thermal neutrons with σ ≈ 2.6 × 10^{6} b. | Defines σ via R = σΦN ; Probability as area, barns ; Neutron wavelength larger than nucleus ; 1/v law or resonance explanation ; Example such as Xe-135 or Cd-113
 
 ## Nuclear scattering
 S: Scattering particles off nuclei reveals nuclear sizes, shapes, forces and excited states. Elastic scattering maps the nucleus's shape; inelastic scattering excites it, and knockout reactions probe individual nucleons.
+O: Distinguish elastic, inelastic and deep inelastic scattering and what each probes
+O: Relate the probe's wavelength to the size of structure it can resolve
+O: Explain form factors and the optical model
+PRE: Rutherford scattering
+LV: Year 3 · Application
 H: Types
-- **Rutherford (Coulomb)**: low-energy charged particles; deviations show nuclear size.
+- **Rutherford (Coulomb)**: low-energy charged particles; deviations reveal nuclear size.
 - **Elastic electron scattering**: charge distributions (form factors).
-- **Neutron scattering**: no Coulomb barrier; probes nuclear potential; resonances.
-- **Inelastic**: excites nuclear levels; energy loss spectrum shows excited states.
+- **Neutron scattering**: no Coulomb barrier; probes the nuclear potential and resonances.
+- **Inelastic**: excites nuclear levels; the energy-loss spectrum shows excited states.
 - **Deep inelastic**: high-energy electrons scatter off quarks inside nucleons.
 H: Optical model
-P: The nucleus acts like a cloudy crystal ball for incoming particles: a complex potential where the real part refracts and the imaginary part absorbs (removing flux into reactions). It fits elastic scattering data across many nuclei and energies.
+P: The nucleus acts like a "cloudy crystal ball" for incoming particles: a complex potential whose real part refracts the wave and whose imaginary part absorbs it (removing flux into reactions). It fits elastic scattering data across many nuclei and energies.
 H: Form factors
 E: dσ/dΩ = (dσ/dΩ)_{point}|F(q)|^{2}
 - F(q) is the Fourier transform of the charge distribution; diffraction minima give the radius.
 X: Electrons of what energy have a de Broglie wavelength ~ 1 fm?
-> λ = hc/E for relativistic electrons: E = 1240 MeV fm/1 fm ≈ 1.2 GeV
-!: To see small structures you need short wavelengths, so high energies: nuclear physics needs MeV–GeV probes.
+> Relativistic: λ = hc/E, so E = 1240 MeV fm/1 fm
+> E ≈ 1.2 GeV
+K: To resolve a structure of size d, the probe's wavelength must be about d or smaller, so smaller structures need higher energies.
+!: To see small structures you need short wavelengths and so high energies: nuclear physics needs MeV–GeV probes.
+T: Form factor | F(q), the Fourier transform of a target's charge distribution, measured from scattering
+T: Inelastic scattering | Scattering in which the target is left in an excited state and the projectile loses energy
+T: Optical model | A complex potential describing elastic scattering, with absorption representing loss into reactions
+SUM: Elastic scattering gives shape and size; inelastic gives excited states.
+SUM: Wavelength must match the structure: ~GeV electrons for fm scales.
+SUM: Form factors and the optical model turn data into structure.
+EV: established | Electron and hadron scattering data determine nuclear charge distributions and excited states, and revealed quarks inside nucleons
+SRC: OpenStax, College Physics 2e, section 30.2 "Discovery of the Parts of the Atom: Electrons and Nuclei" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/30-2-discovery-of-the-parts-of-the-atom-electrons-and-nuclei
+SRC: OpenStax, University Physics Volume 3, section 10.1 "Properties of Nuclei" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/10-1-properties-of-nuclei
 Q: What does the form factor reveal? | The spatial distribution of charge inside a nucleus (its Fourier transform).
 Q: Why are neutrons good probes of nuclei? | They have no charge, so no Coulomb barrier.
-M1: Electron scattering is good for measuring: | Charge distributions | Neutron spins | Half-lives | Fission yields | Electromagnetic probe.
-M2: In the optical model, absorption represents: | Flux lost to reactions | Light absorption | Electron capture | Gamma emission | Imaginary potential.
+M1@1: Electron scattering is good for measuring: | Charge distributions | Neutron spins | Half-lives | Fission yields | Electrons interact electromagnetically and are point-like, so they map the nuclear charge without strong-force complications.
+M2@3: In the optical model, absorption represents: | Flux lost to reactions | Absorption of visible light | Capture of electrons | Emission of gamma rays | The imaginary part of the potential removes particles from the elastic channel into inelastic and reaction channels.
+NUM2@2: What electron energy, in GeV, gives a de Broglie wavelength of 0.5 fm? (hc = 1240 MeV fm) | 2.5 | 0.05 | GeV | E ≈ hc/λ = 1240/0.5 = 2480 MeV ≈ 2.5 GeV.
+TF1@1: In inelastic scattering the nucleus is left in an excited state. | true | The projectile loses an energy equal to the excitation energy, so the energy-loss spectrum maps the nuclear levels.
+M3@2,3: Electrons scattered from a nucleus show a diffraction minimum. If the electron energy is doubled, the minimum moves to: | A smaller angle | A larger angle | The same angle | It disappears completely | Doubling E halves λ, and sin θ_{min} ∝ λ/R, so the minimum moves to a smaller angle.
+SA3@1,2: Explain why GeV electrons are needed to study the internal structure of nucleons, while MeV alphas sufficed for Rutherford's discovery of the nucleus. | Resolving a structure requires a probe wavelength comparable to or smaller than the structure. Rutherford needed only to show that charge is concentrated within ~10^{-14} m; MeV alphas, whose closest approach was tens of femtometres, were enough, and Coulomb scattering showed a point-like centre. Nucleons are about 1 fm across, and their quarks much smaller, so the probe needs λ < 1 fm, which for electrons means energies of order GeV (E ≈ hc/λ = 1.24 GeV at 1 fm). Electrons are also point-like and feel no strong force, so the data are cleaner. | Resolution needs wavelength comparable to size ; Rutherford's question needed only ~10 fm scale ; Nucleon size ~1 fm ; E ≈ hc/λ gives ~GeV ; Electrons point-like, no strong force
 
 ## Nuclear fission
 S: In fission, a heavy nucleus such as uranium-235 splits into two medium nuclei plus neutrons, releasing about 200 MeV. The extra neutrons can trigger further fissions, enabling reactors and nuclear weapons.
+O: Describe induced fission of U-235 and the energy released
+O: Explain fission using the liquid-drop model and why U-235 fissions with slow neutrons
+O: Calculate the energy released by fissioning a given mass of fuel
+PRE: Nuclear binding energy
+LV: A level · Application
 H: The process
 - U-235 absorbs a thermal neutron → U-236* (excited) → deforms → splits.
-- Fragments typically asymmetric (masses ~95 and ~140).
-- 2–3 prompt neutrons per fission; ~0.65% delayed neutrons (from fragment decays) make reactors controllable.
-- Energy: ~165 MeV fragment kinetic energy, plus gammas, betas, neutrinos: ~200 MeV total.
+- Fragments are usually unequal (masses around 95 and 140).
+- 2–3 prompt neutrons per fission; ~0.65% of neutrons are delayed (from fragment decays), which makes reactors controllable.
+- Energy: ~165 MeV fragment kinetic energy, plus gammas, betas and neutrinos: ~200 MeV in total.
 H: Liquid-drop explanation
-P: Deforming a heavy nucleus increases surface energy but decreases Coulomb energy. When Z^{2}/A is large enough, the fission barrier (~6 MeV) can be overcome by the binding energy released when a neutron is absorbed. U-235 (odd N) gains extra pairing energy on absorbing a neutron, so slow neutrons suffice; U-238 needs fast neutrons.
+P: Deforming a heavy nucleus increases its surface energy but decreases its Coulomb energy. For large Z^{2}/A the fission barrier is only ~6 MeV, and the binding energy released when a neutron is absorbed can exceed it. U-235 (odd N) gains extra pairing energy on absorbing a neutron, so even slow neutrons suffice; U-238 needs fast neutrons.
 H: Discovery
-- Hahn and Strassmann (1938) found barium from uranium bombarded with neutrons; Meitner and Frisch explained it as fission (1939).
+- Hahn and Strassmann (1938) found barium in uranium bombarded with neutrons; Meitner and Frisch explained it as fission (1939).
 X: Energy from fissioning 1 kg of U-235?
-> Atoms = 1000/235 × 6.02 × 10^{23} = 2.56 × 10^{24}
-> E = 2.56 × 10^{24} × 200 MeV × 1.6 × 10^{-13} J/MeV = 8.2 × 10^{13} J: about 20 kilotons of TNT
-!: Fission fragments are neutron-rich and highly radioactive; that's the origin of most nuclear waste.
+> Atoms = (1000/235) × 6.02 × 10^{23} = 2.56 × 10^{24}
+> E = 2.56 × 10^{24} × 200 MeV × 1.6 × 10^{-13} J MeV^{-1} = 8.2 × 10^{13} J: about 20 kilotons of TNT
+K: Fission releases ~200 MeV because the fragments have about 0.9 MeV more binding per nucleon than uranium.
+!: Fission fragments are neutron-rich and highly radioactive; they are the origin of most high-level nuclear waste.
+T: Induced fission | Splitting of a heavy nucleus after it absorbs a neutron
+T: Fission barrier | The energy needed to deform a nucleus to the point where it splits
+T: Delayed neutrons | Neutrons emitted seconds after fission by decaying fragments
+SUM: U-235 + n → two fragments + 2–3 neutrons + ~200 MeV.
+SUM: Liquid drop: Coulomb energy favours splitting, surface energy resists.
+SUM: 1 kg of U-235 releases ~8 × 10^{13} J.
+EV: established | Thermal-neutron fission of U-235 releases about 200 MeV and 2.4 neutrons on average per event
+SRC: OpenStax, University Physics Volume 3, section 10.5 "Fission" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/10-5-fission
+SRC: AQA, A-level Physics specification (7408), section 3.8.1.7 Induced fission | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: Why does U-235 fission with slow neutrons but U-238 doesn't? | U-235 gains extra pairing energy on absorbing a neutron, exceeding its fission barrier.
 Q: Why are delayed neutrons important? | They slow the reactor's response enough to make it controllable.
-M1: Energy released per U-235 fission is about: | 200 MeV | 17.6 MeV | 2 MeV | 1 GeV | Typical.
-M2: Who explained fission theoretically? | Meitner and Frisch | Hahn alone | Fermi | Bohr only | 1939.
+M1@1: Energy released per U-235 fission is about: | 200 MeV | 17.6 MeV | 2 MeV | 1 GeV | Most of the ~200 MeV appears as fragment kinetic energy (~165 MeV), the rest as gammas, betas and neutrinos; 17.6 MeV is D–T fusion.
+M2@2: Who explained fission theoretically? | Meitner and Frisch | Otto Hahn alone | Enrico Fermi | Niels Bohr alone | In 1939 Meitner and Frisch interpreted Hahn and Strassmann's barium as the splitting of a liquid-drop uranium nucleus.
+NUM2@3: A reactor fissions 1.0 g of U-235 each day. What average thermal power, in MW, does this give? (8.2 × 10^{10} J per gram) | 0.95 | 0.02 | MW | P = 8.2 × 10^{10} J/86 400 s = 9.5 × 10^{5} W ≈ 0.95 MW; about 1 g per day per MW.
+TF1@2: In the liquid-drop model, deforming a heavy nucleus lowers its Coulomb energy. | true | Stretching moves protons further apart on average, reducing repulsion, while the larger surface raises the surface energy; fission occurs when Coulomb wins.
+M3@2,3: Why can't U-238 sustain a chain reaction with thermal neutrons? | The energy gained on absorbing a slow neutron is below its fission barrier | U-238 has no neutrons to release | U-238 is not radioactive | Its fragments absorb all the neutrons | Adding a neutron to even-N U-238 releases less binding energy (no pairing gain) than its ~6 MeV barrier, so only fast neutrons above ~1 MeV cause fission.
+SA2@1,2: Describe the process of induced fission in uranium-235 and explain where the energy released comes from. | A slow neutron is absorbed by U-235, forming excited U-236. The excitation, from the binding energy of the added neutron, makes the nucleus oscillate and stretch; once Coulomb repulsion between the two ends outweighs the surface tension of the nuclear force, it splits into two unequal fragments such as barium and krypton, with two or three neutrons. The fragments have greater binding energy per nucleon (about 8.5 against 7.6 MeV), so the total mass decreases and about 200 MeV is released, mostly as kinetic energy of the fragments, which becomes heat. | Neutron absorption forming U-236 ; Deformation, Coulomb versus surface ; Two fragments and 2–3 neutrons ; Higher binding energy per nucleon, mass decrease ; ~200 MeV mostly fragment kinetic energy
 
 ## Nuclear fusion
-S: Fusion joins light nuclei into heavier ones, releasing energy because the products are more tightly bound. It powers the Sun and stars and could provide abundant clean energy on Earth, if the plasma can be confined long enough.
+S: Fusion joins light nuclei into heavier ones, releasing energy because the products are more tightly bound. It powers the Sun and stars and could provide abundant low-carbon energy on Earth, if the plasma can be confined long enough.
+O: Write the main fusion reactions and calculate how their energy is shared
+O: Explain the Coulomb barrier and how tunnelling allows fusion in stars
+O: State the Lawson criterion and compare magnetic and inertial confinement
+PRE: Nuclear binding energy
+LV: A level · Application
 H: Reactions
-E: D + T → ⁴He (3.5 MeV) + n (14.1 MeV) :: easiest for reactors
-E: D + D → ³He + n or T + p
-E: 4p → ⁴He + 2e^{+} + 2ν_{e} + 26.7 MeV :: Sun (pp chain)
+E: D + T → ^{4}He (3.5 MeV) + n (14.1 MeV) :: easiest for reactors
+E: D + D → ^{3}He + n or T + p
+E: 4p → ^{4}He + 2e^{+} + 2ν_{e} :: the Sun's pp chain, 26.7 MeV including positron annihilation
 H: The Coulomb barrier
-- Nuclei must get within ~fm despite repulsion (~0.4 MeV for D–T).
-- Thermal energies in the Sun's core (~1.3 keV) are far below; quantum tunnelling and the high-energy tail make it work (Gamow peak).
+- Nuclei must get within a few fm despite their repulsion (~0.4 MeV barrier for D–T).
+- Thermal energies in the Sun's core (~1.3 keV) are far below; quantum tunnelling and the high-energy tail of the Maxwell distribution make fusion possible (the Gamow peak).
 - Fusion reactors need ~100–150 million K.
 H: Lawson criterion
 E: nτ_{E}T ≳ 3 × 10^{21} keV s m^{-3} :: ignition for D–T
 - **Magnetic confinement**: tokamaks (ITER), stellarators (Wendelstein 7-X).
-- **Inertial confinement**: lasers compress fuel pellets; NIF achieved ignition (more fusion energy out than laser energy in) in December 2022.
+- **Inertial confinement**: lasers compress fuel pellets; NIF achieved ignition (more fusion energy out than laser energy delivered to the target) in December 2022.
 X: What fraction of D–T fusion energy goes to the neutron, and why?
-> Momentum conservation: lighter particle gets more energy
+> Momentum conservation: equal and opposite momenta, so E = p^{2}/2m favours the lighter particle
 > E_{n}/E_{α} = m_{α}/m_{n} ≈ 4: 14.1 of 17.6 MeV (80%)
-!: Fusion in stars is slow precisely because it relies on rare tunnelling; that's why the Sun lasts 10 billion years.
+K: Fusion needs nuclei hot and dense enough, for long enough, to tunnel through their Coulomb barrier: the Lawson criterion.
+!: Fusion in stars is slow precisely because it relies on rare tunnelling; that's why the Sun lasts about 10 billion years.
+T: Coulomb barrier | The electric potential energy that two nuclei must overcome or tunnel through to get within range of the strong force
+T: Lawson criterion | The minimum product of density, energy confinement time and temperature for a fusion plasma to ignite
+T: Ignition | The condition in which fusion heating sustains the plasma without external heating (at NIF: fusion yield exceeding laser energy on target)
+SUM: D–T gives 17.6 MeV, 80% to the neutron.
+SUM: Tunnelling and the Maxwell tail let stars fuse at ~10^{7} K; reactors need ~10^{8} K.
+SUM: Ignition needs nτ_{E}T above ~3 × 10^{21} keV s m^{-3}.
+EV: established | Fusion powers the Sun and achieved target gain at NIF in 2022; net electricity from fusion has not yet been demonstrated
+SRC: OpenStax, University Physics Volume 3, section 10.6 "Nuclear Fusion" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/10-6-nuclear-fusion
+SRC: OpenStax, College Physics 2e, section 32.5 "Fusion" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/32-5-fusion
 Q: What is the Lawson criterion? | The minimum product of density, confinement time and temperature needed for fusion ignition.
 Q: How do nuclei in the Sun overcome the Coulomb barrier? | Quantum tunnelling, aided by the high-energy tail of the Maxwell distribution.
-M1: The easiest fusion reaction for power plants is: | D–T | p–p | D–D | He–He | Highest cross-section at lower T.
-M2: NIF achieved ignition in: | 2022 | 1958 | 2005 | 2035 | December 2022.
+M1@1: The easiest fusion reaction for power plants is: | D–T | p–p | D–D | He–He | D–T has the largest cross-section at the lowest temperature, so it reaches the Lawson criterion most easily.
+M2@3: NIF achieved ignition in: | 2022 | 1958 | 2005 | 2035 | In December 2022 a laser shot delivering 2.05 MJ to the target produced about 3.15 MJ of fusion energy.
+NUM2@2: Estimate the Coulomb barrier, in MeV, for two deuterons touching at 4.0 fm. (e^{2}/(4πε_{0}) = 1.44 MeV fm) | 0.36 | 0.01 | MeV | U = 1.44 MeV fm × 1 × 1/4.0 fm = 0.36 MeV, far above thermal energies of ~1 keV.
+TF1@2: In the Sun's core, the average thermal energy of protons is large enough to overcome the Coulomb barrier classically. | false | kT ≈ 1.3 keV is hundreds of times below the barrier; fusion relies on tunnelling by the fastest protons.
+M3@2,3: Why is it harder to reach ignition with D–D fuel than with D–T? | Its fusion cross-section is much smaller at accessible temperatures | Deuterium is radioactive | D–D releases more energy per reaction | D–D produces no neutrons | The D–T cross-section is about 100 times larger at ~10 keV, so D–D needs higher nτT for the same fusion rate.
+SA3@2,3: Explain why controlled fusion on Earth needs temperatures about ten times higher than the Sun's core. | Fusion requires nuclei to approach within a few fm, against a Coulomb barrier of ~0.4 MeV, so it relies on tunnelling by the fastest nuclei. The Sun's core, at about 15 million K, has an enormous mass, high density (~150 g cm^{-3}) and billions of years, so even a tiny rate per nucleus gives its output, and gravity provides confinement. A reactor plasma is about 10^{8} times less dense and must be confined for only seconds by magnetic fields, so it needs a much higher rate per nucleus: temperatures of 100–150 million K, where D–T tunnelling probability and cross-section are near their maximum, to satisfy the Lawson criterion. | Coulomb barrier and tunnelling ; Sun's large mass, density and time ; Gravity confines the Sun ; Reactor plasma less dense, short confinement ; Higher T needed to meet Lawson criterion
 
 ## Chain reactions
-S: In a chain reaction, each fission releases neutrons that cause more fissions. Whether the chain dies out, stays steady or grows depends on the multiplication factor k, which reactors keep exactly at 1.
+S: In a chain reaction, each fission releases neutrons that cause more fissions. Whether the chain dies out, stays steady or grows depends on the multiplication factor k, which reactors keep at exactly 1.
+O: Define the multiplication factor and classify subcritical, critical and supercritical assemblies
+O: Explain critical mass and the factors that affect it
+O: Explain how delayed neutrons make a reactor controllable
+PRE: Nuclear fission
+LV: A level · Application
 H: Multiplication factor
 E: k = neutrons in one generation/neutrons in the previous
 - k < 1: subcritical; k = 1: critical (steady); k > 1: supercritical.
@@ -489,17 +631,32 @@ E: k_{∞} = ηfpε :: four-factor formula (infinite medium)
 - η: neutrons per absorption in fuel; f: thermal utilisation; p: resonance escape; ε: fast fission factor.
 - Finite reactors: k_{eff} = k_{∞} × non-leakage probability.
 H: Critical mass
-- Minimum mass for k_{eff} = 1: depends on shape, density, enrichment, reflectors.
-- Bare sphere of U-235 ~52 kg; Pu-239 ~10 kg; less with reflectors or compression.
+- The minimum mass for k_{eff} = 1: it depends on shape, density, enrichment and reflectors.
+- A bare sphere of U-235 needs ~52 kg; Pu-239 ~10 kg; less with reflectors or compression.
 H: Reactor control
-P: Prompt neutron generation times are ~10^{-4} s in thermal reactors, too fast to control. Delayed neutrons (from fission products, seconds to a minute) extend the effective generation time, so reactors are operated "delayed critical" and controlled by rods and boron. Prompt criticality causes rapid power excursions (as at Chernobyl).
+P: Prompt neutron generation times are ~10^{-4} s in thermal reactors, too fast to control. Delayed neutrons (from fission products, after seconds to a minute) lengthen the effective generation time to ~0.1 s, so reactors are operated "delayed critical" and controlled with rods and dissolved boron. Prompt criticality causes rapid power excursions, as at Chernobyl.
 X: A reactor with k = 1.001 and effective generation time 0.1 s. How fast does power grow?
-> Growth per second: (1.001)^{10} ≈ 1.01: 1% per second, controllable
+> 10 generations per second: (1.001)^{10} ≈ 1.01
+> About 1% per second: controllable
+K: k = 1 means a steady chain; delayed neutrons stretch the generation time so small excesses of k grow slowly.
 !: A critical reactor (k = 1) isn't dangerous; it simply means a steady chain reaction.
+T: Multiplication factor (k) | The ratio of neutrons in one generation to those in the previous one
+T: Critical mass | The smallest mass of fissile material that can sustain a chain reaction (k_{eff} = 1)
+T: Prompt critical | A state in which the chain grows on prompt neutrons alone, too fast for control
+SUM: k < 1 dies out; k = 1 steady; k > 1 grows.
+SUM: Critical mass depends on shape, density, enrichment and reflection.
+SUM: Delayed neutrons make control possible.
+EV: established | Reactor kinetics with delayed neutrons is well understood and underlies the control of every power reactor
+SRC: OpenStax, University Physics Volume 3, section 10.5 "Fission" | secondary | 2016 | https://openstax.org/books/university-physics-volume-3/pages/10-5-fission
+SRC: AQA, A-level Physics specification (7408), section 3.8.1.7 Induced fission | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: What does k = 1 mean? | Each generation has the same number of neutrons: a steady chain reaction.
 Q: Why are delayed neutrons essential for reactor control? | They lengthen the effective generation time from ~0.1 ms to ~0.1 s.
-M1: A subcritical assembly has: | k < 1 | k = 1 | k > 1 | k = 0 | Dies out.
-M2: Neutron reflectors reduce critical mass by: | Returning escaping neutrons | Absorbing neutrons | Heating fuel | Adding fuel | Less leakage.
+M1@1: A subcritical assembly has: | k < 1 | k = 1 | k > 1 | k = 2 exactly | Each generation has fewer neutrons than the last, so the chain dies out.
+M2@2: Neutron reflectors reduce critical mass by: | Returning escaping neutrons to the core | Absorbing neutrons in the fuel | Heating the fuel to expand it | Adding extra fissile fuel | Fewer neutrons leak out, raising the non-leakage probability, so k_{eff} = 1 is reached with less fuel.
+NUM2@1: A chain starts with 1000 neutrons and k = 0.9. How many neutrons are in the third generation after it? | 729 | 1 | neutrons | 1000 × 0.9^{3} = 729: the chain dies away.
+TF1@2: Compressing a subcritical mass of plutonium can make it supercritical. | true | Higher density shortens the neutron mean free path, so fewer neutrons escape before causing fission, raising k_{eff}.
+M3@3: If a reactor relied only on prompt neutrons (generation time 10^{-4} s) with k = 1.001, by roughly what factor would power grow in one second? | About e^{10} ≈ 2 × 10^{4} | About 1.01 | About 2 | About 10^{100} | 10^{4} generations: 1.001^{10 000} = e^{10 000 × 0.001} ≈ e^{10}, a 22 000-fold rise that no control rod could follow.
+SA2@1,3: Explain the meaning of the multiplication factor k and how a reactor is kept at k = 1. | k is the ratio of the number of neutrons in one generation to the number in the previous one; k < 1 the chain dies out, k = 1 it is steady, k > 1 it grows. In a reactor, neutrons are lost by leakage and absorption in non-fuel materials; control rods of boron or cadmium absorb neutrons and are moved in or out to adjust k, together with dissolved boron. Because about 0.65% of neutrons are delayed by seconds, the effective generation time is ~0.1 s, so small deviations change power slowly enough for the control system to respond, and negative temperature feedback helps stabilise it. | Defines k ; Three regimes ; Control rods absorb neutrons ; Delayed neutrons lengthen generation time ; Feedback or slow response allows control
 
 ## Nuclear reactors
 S: A nuclear reactor sustains a controlled fission chain reaction, using the heat to make steam and generate electricity. Its core contains fuel, a moderator, control rods and coolant, surrounded by shielding and containment.

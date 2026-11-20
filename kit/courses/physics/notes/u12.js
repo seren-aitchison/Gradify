@@ -938,27 +938,50 @@ SA2@1,3: Explain why a red blood cell placed in pure water swells and may burst.
 
 ## Maxwell relations
 S: Maxwell relations are equalities between partial derivatives of thermodynamic variables, following from the potentials being state functions. They let you calculate hard-to-measure quantities, like entropy changes, from easy ones like p, V and T.
+O: Derive Maxwell relations from the differentials of U, H, F and G
+O: Use Maxwell relations to express entropy derivatives in terms of measurable p–V–T data
+O: Apply the energy equation and C_{p} − C_{V} = TVα^{2}/κ_{T}
+PRE: Thermodynamic potentials
+LV: Year 2 · Application
 H: The four relations
 E: (∂T/∂V)_{S} = −(∂p/∂S)_{V}
 E: (∂T/∂p)_{S} = (∂V/∂S)_{p}
 E: (∂S/∂V)_{T} = (∂p/∂T)_{V}
 E: (∂S/∂p)_{T} = −(∂V/∂T)_{p}
 - From equality of mixed partial derivatives of U, H, F, G.
+P: For example, dF = −S dT − p dV gives S = −(∂F/∂T)_{V} and p = −(∂F/∂V)_{T}; differentiating each by the other variable and equating ∂^{2}F/∂V∂T gives (∂S/∂V)_{T} = (∂p/∂T)_{V}.
 H: Uses
 - Entropy change with volume from the equation of state: (∂S/∂V)_{T} = (∂p/∂T)_{V}.
-- General relation C_{p} − C_{V} = TVα^{2}/κ_{T} (α expansivity, κ_{T} compressibility) — always positive.
+- General relation C_{p} − C_{V} = TVα^{2}/κ_{T} (α expansivity, κ_{T} compressibility): always positive.
 - Energy equation: (∂U/∂V)_{T} = T(∂p/∂T)_{V} − p, zero for an ideal gas (internal energy independent of volume).
 X: Show U of an ideal gas doesn't depend on V.
 > (∂U/∂V)_{T} = T(∂p/∂T)_{V} − p
 > With p = nRT/V: T(nR/V) − nRT/V = 0
+K: Because potentials are state functions, their mixed second derivatives are equal, which links entropy to measurable p, V and T.
 !: Always note which variable is held constant; the same derivative with a different constant is a different quantity.
+T: Maxwell relation | An identity between partial derivatives of thermodynamic variables that follows from equality of the mixed second derivatives of a potential
+T: Isothermal compressibility | κ_{T} = −(1/V)(∂V/∂p)_{T}, the fractional decrease in volume per unit pressure rise at constant temperature
+SUM: Four Maxwell relations come from dU, dH, dF and dG.
+SUM: They turn entropy derivatives into p–V–T data and show U of an ideal gas depends only on T.
+EV: established | Maxwell relations follow mathematically from the existence of the thermodynamic potentials as state functions
+SRC: OpenStax, University Physics Volume 2, section 3.5 "Heat Capacities of an Ideal Gas" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/3-5-heat-capacities-of-an-ideal-gas
+SRC: OpenStax, University Physics Volume 2, section 4.6 "Entropy" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/4-6-entropy
 Q: What makes Maxwell relations true? | Thermodynamic potentials are state functions, so their mixed second derivatives are equal.
 Q: What does (∂S/∂V)_{T} = (∂p/∂T)_{V} let you do? | Find entropy changes from measurable p–V–T data.
-M1: Maxwell relations come from: | Equality of mixed partial derivatives | The first law only | Experiment | Statistical mechanics only | Exact differentials.
-M2: For an ideal gas, (∂U/∂V)_{T} = : | 0 | p | nR | T | Internal energy depends only on T.
+M1@1: Maxwell relations come from: | Equality of mixed partial derivatives | The first law on its own | Fitting experimental data | Statistical mechanics only | Each potential is an exact differential, so ∂^{2}Φ/∂x∂y = ∂^{2}Φ/∂y∂x for its natural variables, giving one relation per potential.
+M2@3: For an ideal gas, (∂U/∂V)_{T} = : | 0 | p | nR | T | The energy equation gives T(nR/V) − p = 0: an ideal gas's internal energy depends only on temperature.
+M3@2: For a van der Waals gas, p = nRT/(V − nb) − an^{2}/V^{2}. What is (∂S/∂V)_{T}? | nR/(V − nb) | nR/V | an^{2}/V^{2} | 0 | By the Maxwell relation (∂S/∂V)_{T} = (∂p/∂T)_{V}, and only the first term depends on T, giving nR/(V − nb).
+TF1@3: For any substance, C_{p} − C_{V} = TVα^{2}/κ_{T} can never be negative. | true | T, V and κ_{T} are positive for stable matter and α^{2} ≥ 0, so C_{p} ≥ C_{V}, with equality where α = 0 (water at 4 °C).
+NUM2@1: Use (∂S/∂V)_{T} = (∂p/∂T)_{V} for 1.0 mol of ideal gas at V = 0.025 m^{3}. What is (∂S/∂V)_{T} in J K^{-1} m^{-3}? (R = 8.31) | 332 | 2 | J K^{-1} m^{-3} | (∂p/∂T)_{V} = nR/V = 8.31/0.025 = 332 J K^{-1} m^{-3}.
+SA3@1,2: Derive the Maxwell relation (∂S/∂V)_{T} = (∂p/∂T)_{V} and explain why it is useful. | From dF = −S dT − p dV, S = −(∂F/∂T)_{V} and p = −(∂F/∂V)_{T}. Because F is a state function its mixed second derivatives are equal: ∂/∂V(∂F/∂T) = ∂/∂T(∂F/∂V), so −(∂S/∂V)_{T} = −(∂p/∂T)_{V}. Entropy cannot be measured directly, but the pressure change with temperature at fixed volume can be measured or found from the equation of state, so this gives how entropy changes as a substance expands. | Start from dF = −S dT − p dV ; Identify S and p as partial derivatives of F ; Mixed second derivatives of F are equal ; Result (∂S/∂V)_{T} = (∂p/∂T)_{V} ; Useful because the right side is measurable
 
 ## Third law of thermodynamics
 S: The third law says the entropy of a perfect crystal approaches zero as the temperature approaches absolute zero, and that absolute zero can't be reached in a finite number of steps.
+O: State the Nernst, Planck and unattainability forms of the third law
+O: Explain why heat capacities and expansivities vanish as T → 0
+O: Explain residual entropy and zero-point energy
+PRE: Entropy
+LV: Year 2 · Physical reasoning
 H: Statements
 - **Nernst**: entropy changes in isothermal processes vanish as T → 0.
 - **Planck**: S → 0 as T → 0 for a perfect crystal (a single ground state, Ω = 1).
@@ -972,16 +995,34 @@ P: Some solids are frozen in disorder: ice has residual entropy (~3.4 J mol^{-1}
 X: Why do coolest lab temperatures approach but never reach 0 K?
 > Each cooling step (e.g. adiabatic demagnetisation) reduces T by a fraction
 > The steps get smaller as entropy differences vanish; reaching 0 would need infinitely many
+K: As T → 0 the entropy of a perfect crystal goes to zero, and the cooling achievable per step shrinks to nothing.
 !: Absolute zero doesn't mean zero energy: quantum zero-point motion remains.
+T: Third law of thermodynamics | The entropy of a perfect crystal tends to zero as the temperature tends to absolute zero, and absolute zero cannot be reached in a finite number of steps
+T: Residual entropy | Entropy that remains in a solid near 0 K because disorder is frozen in, as in ice or glass
+T: Zero-point energy | The minimum energy a quantum system retains in its ground state, even at absolute zero
+SUM: S → 0 as T → 0 for a perfect crystal; 0 K is unattainable in finitely many steps.
+SUM: Heat capacities vanish at low T; frozen-in disorder leaves residual entropy.
+EV: established | Heat capacities of all substances tend to zero as the temperature approaches absolute zero
+SRC: OpenStax, University Physics Volume 2, section 4.7 "Entropy on a Microscopic Scale" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/4-7-entropy-on-a-microscopic-scale
+SRC: OpenStax, University Physics Volume 2, section 2.3 "Heat Capacity and Equipartition of Energy" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/2-3-heat-capacity-and-equipartition-of-energy
 Q: State the third law. | The entropy of a perfect crystal approaches zero as T approaches 0 K, and 0 K can't be reached in finitely many steps.
 Q: Why do heat capacities vanish as T → 0? | Otherwise entropy would diverge; quantum levels freeze out.
-M1: The record lowest temperatures reached are about: | Tens of picokelvin | 1 K | 1 mK | Exactly 0 K | In atom traps and nuclear spin systems.
-M2: Ice has residual entropy at 0 K because: | Hydrogen positions have many possible arrangements | It's not crystalline | It contains air | The third law fails | Frozen-in disorder.
+M1@3: The record lowest temperatures reached are about: | Tens of picokelvin | Around one kelvin | Around one millikelvin | Exactly zero kelvin | Laser and evaporative cooling of atoms and nuclear-spin cooling have reached below a nanokelvin, but never 0 K.
+M2@3: Ice has residual entropy at 0 K because: | Hydrogen positions have many possible arrangements | It is not really a crystalline solid | Air is trapped in it as it freezes | The third law does not apply to water | Each oxygen has two near and two far hydrogens in many allowed patterns, frozen in on cooling: S ≈ R ln(3/2).
+M3@2: Why must the heat capacity of a solid fall to zero as T → 0? | If C stayed finite, ΔS = ∫C dT/T would diverge at T = 0, contradicting a finite entropy | Because the solid stops having any internal energy | Because heat can no longer flow into the solid | Because Dulong–Petit predicts it | A finite C makes the integral grow like ln T without limit as T → 0; the third law requires S to stay finite.
+TF1@1: At absolute zero the atoms in a crystal are completely at rest. | false | Quantum mechanics leaves zero-point motion: atoms keep a minimum vibrational energy even in the ground state.
+NUM2@3: Pauling estimated the residual entropy of ice as R ln(3/2) per mole. What is this in J mol^{-1} K^{-1}? (R = 8.31) | 3.37 | 0.03 | J mol^{-1} K^{-1} | R ln 1.5 = 8.31 × 0.405 = 3.37 J mol^{-1} K^{-1}, close to the measured 3.4.
+SA2@1,2: Explain why absolute zero cannot be reached, using the idea of cooling by successive steps. | Cooling methods such as adiabatic demagnetisation work by exploiting an entropy difference between two states of a system at the same temperature (for example magnetised and unmagnetised). By the third law these entropy differences shrink to zero as T → 0, so each step cools by a smaller and smaller amount, roughly a fixed fraction of the current temperature. An infinite number of steps would be needed to reach 0 K. | Cooling steps exploit entropy differences between states ; Third law: these differences vanish as T → 0 ; Each step cools less ; Infinitely many steps needed ; 0 K unattainable
 
 ## Thermodynamic cycles
 S: Practical engines and refrigerators follow particular cycles chosen for their working fluid and hardware. Comparing them with the Carnot ideal shows where efficiency is lost.
+O: Describe the Otto, Diesel, Brayton, Rankine and Stirling cycles
+O: Calculate ideal Otto and Brayton efficiencies from compression or pressure ratios
+O: Explain why real engines fall short of their ideal cycles
+PRE: Carnot cycle
+LV: Year 1 · Application
 H: Engine cycles
-- **Otto** (petrol): isentropic compression, constant-volume heat addition, expansion, constant-volume rejection. η = 1 − r^{1−γ} (r = compression ratio).
+- **Otto** (petrol): adiabatic compression, constant-volume heat addition, adiabatic expansion, constant-volume rejection. η = 1 − r^{1−γ} (r = compression ratio).
 - **Diesel**: heat added at constant pressure; higher compression ratios possible.
 - **Brayton** (gas turbines, jet engines): constant-pressure heat addition and rejection; η = 1 − r_{p}^{(1−γ)/γ}.
 - **Rankine** (steam power): pump, boiler, turbine, condenser; uses phase change for good heat transfer.
@@ -990,17 +1031,38 @@ H: Refrigeration cycles
 - Vapour compression (fridges, air conditioners, heat pumps).
 - Absorption chillers (driven by heat).
 - Gas cycles for cryogenics (Linde–Hampson, Claude).
+H: Real and ideal
+P: An engine's indicator diagram has rounded corners and a smaller area than the ideal cycle, because valves take time, combustion is not instantaneous, and heat leaks through the cylinder walls. Friction then takes a further share between indicated and brake power.
 X: Ideal Otto efficiency for r = 10, γ = 1.4?
 > η = 1 − 10^{−0.4} = 1 − 0.398 = 60%
 > Real engines reach ~35%: friction, heat loss, incomplete combustion
+K: Each cycle's ideal efficiency depends on its compression or pressure ratio; real cycles lose more to finite-rate heat transfer and friction.
 !: Raising the compression ratio in petrol engines is limited by knocking (premature ignition), not by thermodynamics.
+T: Compression ratio | r = V_{max}/V_{min}, the ratio of cylinder volumes before and after compression
+T: Otto cycle | The ideal petrol-engine cycle of two adiabats and two constant-volume processes
+T: Regenerator | A heat store that takes heat from the gas on one stroke and returns it on another, as in a Stirling engine
+SUM: Otto: η = 1 − r^{1−γ}; Brayton: η = 1 − r_{p}^{(1−γ)/γ}.
+SUM: Rankine uses phase change; Stirling with a regenerator can approach Carnot.
+EV: established | The ideal Otto cycle efficiency rises with compression ratio as 1 − r^{1−γ}
+SRC: OpenStax, University Physics Volume 2, section 4.2 "Heat Engines" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/4-2-heat-engines
+SRC: OpenStax, College Physics 2e, section 15.3 "Introduction to the Second Law of Thermodynamics: Heat Engines and Their Efficiency" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/15-3-introduction-to-the-second-law-of-thermodynamics-heat-engines-and-their-efficiency
+SRC: AQA, A-level Physics specification (7408), section 3.11.2 | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: What determines ideal Otto cycle efficiency? | The compression ratio (and γ): η = 1 − r^{1−γ}.
 Q: Which cycle do steam power stations use? | The Rankine cycle.
-M1: Jet engines run on which cycle? | Brayton | Otto | Diesel | Rankine | Gas turbine.
-M2: Stirling engines can approach Carnot efficiency because: | Heat exchange is isothermal with a regenerator | They have no moving parts | They use steam | They're very fast | Reversible isothermal heat transfer.
+M1@1: Jet engines run on which cycle? | Brayton | Otto | Diesel | Rankine | Gas turbines and jet engines compress air, add heat at constant pressure in the combustor and expand it: the Brayton cycle.
+M2@1: Stirling engines can approach Carnot efficiency because: | Heat exchange is isothermal with a regenerator | They have no moving parts at all | They use steam as the working fluid | They run at very high speeds | Heat enters and leaves at constant temperature, and the regenerator recycles heat internally, mimicking the reversible Carnot exchanges.
+M3@2: A gas turbine has pressure ratio 16 and uses air (γ = 1.4). What is its ideal Brayton efficiency? | 55% | 94% | 75% | 33% | η = 1 − 16^{−0.4/1.4} = 1 − 16^{−0.286} = 1 − 0.453 = 55%.
+TF1@3: A real petrol engine's indicator diagram encloses a larger area than its ideal Otto cycle. | false | Finite valve and combustion times and heat losses round off the corners, so the real loop is smaller and gives less work per cycle.
+NUM2@2: What is the ideal Otto efficiency for a compression ratio of 8 with γ = 1.4, in percent? | 56.5 | 0.5 | % | η = 1 − 8^{−0.4} = 1 − 0.435 = 0.565, about 56.5%.
+SA2@1,3: Describe the four strokes of the ideal Otto cycle on a p–V diagram and give two reasons why a real petrol engine is less efficient. | 1: adiabatic compression of the fuel–air mixture (V falls, p and T rise). 2: constant-volume heat addition as the spark ignites it (vertical rise in p). 3: adiabatic expansion, the power stroke. 4: constant-volume heat rejection as the exhaust valve opens (vertical fall). Real engines are less efficient because combustion and valve opening take time (rounded corners), heat leaks to the cylinder walls, combustion is incomplete, and friction and pumping losses absorb work. | Adiabatic compression ; Constant-volume heat addition ; Adiabatic expansion (power stroke) ; Constant-volume heat rejection ; Two real losses, e.g. heat leaks, finite combustion time, friction
 
 ## Equations of state
 S: An equation of state relates pressure, volume and temperature (and amount) for a substance. The ideal gas law works for dilute gases; real substances need corrections for molecular size and attraction.
+O: Use the ideal gas equation pV = nRT = Nk_{B}T
+O: Explain the van der Waals corrections and use the compressibility factor
+O: Recognise equations of state for solids, stars and cosmology
+PRE: Isobaric and isochoric processes
+LV: A level · Application
 H: Ideal gas
 E: pV = nRT = Nk_{B}T
 - Assumes point particles with no forces between them.
@@ -1018,17 +1080,34 @@ H: Other equations of state
 X: 1 mol of CO_{2} in 1 L at 300 K: compare ideal and van der Waals pressures (a = 0.364 Pa m^{6} mol^{-2}, b = 4.27 × 10^{-5} m^{3} mol^{-1}).
 > Ideal: 8.31 × 300/10^{-3} = 24.9 bar
 > VdW: 2493/(0.957 × 10^{-3}) − 0.364/10^{-6} = 26.0 − 3.6 = 22.4 bar
+K: Real-gas behaviour adds excluded volume (raises p) and attraction (lowers p) to the ideal gas law.
 !: The ideal gas law fails near condensation and at high pressures; check Z before trusting it.
 P: **Investigate with the lab.** Change volume and temperature in turn and check that pV/T stays constant for the gas in the box.
 IX: gas
+T: Equation of state | A relation between pressure, volume, temperature and amount for a substance in equilibrium
+T: Compressibility factor | Z = pV/(nRT), which equals 1 for an ideal gas and measures departure from ideal behaviour
+SUM: pV = nRT for dilute gases; van der Waals adds a (attraction) and b (size).
+SUM: Z = pV/(nRT) shows how far a real gas departs from ideal.
+EV: established | Real gases approach ideal-gas behaviour at low pressure and high temperature, and deviate where molecular size and attraction matter
+SRC: OpenStax, University Physics Volume 2, section 2.1 "Molecular Model of an Ideal Gas" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/2-1-molecular-model-of-an-ideal-gas
+SRC: AQA, A-level Physics specification (7408), section 3.6.2.2 | standard | 2015 | https://www.aqa.org.uk/subjects/science/as-and-a-level/physics-7407-7408
 Q: What do the van der Waals constants a and b represent? | a: intermolecular attraction; b: the volume occupied by molecules.
 Q: What is the compressibility factor? | Z = pV/(nRT), equal to 1 for an ideal gas.
-M1: An ideal gas obeys: | pV = nRT | pV^{γ} = constant always | p = ρg | pV = 0 | Definition.
-M2: Real gases deviate most from ideal behaviour at: | High pressure and low temperature | Low pressure and high temperature | Room conditions | Vacuum | Molecules close together and slow.
-M2: A fixed mass of ideal gas is heated from 300 K to 600 K at constant volume. What happens to its pressure? | It doubles | It halves | It stays the same | It rises by 300 Pa | p/T is constant at fixed volume, so doubling T doubles p.
+M1@1: An ideal gas obeys: | pV = nRT | pV^{γ} = constant always | p = ρg | pV = 0 | The ideal gas equation pV = nRT holds for any equilibrium state; pV^{γ} = constant applies only along an adiabat.
+M2@2: Real gases deviate most from ideal behaviour at: | High pressure and low temperature | Low pressure and high temperature | Room conditions | Vacuum | When molecules are close together and slow, their size and attractions matter, so the ideal assumptions fail.
+M2@1: A fixed mass of ideal gas is heated from 300 K to 600 K at constant volume. What happens to its pressure? | It doubles | It halves | It stays the same | It rises by 300 Pa | p/T is constant at fixed volume, so doubling T doubles p.
+M3@1: How many molecules are in 1.0 m^{3} of ideal gas at 1.0 × 10^{5} Pa and 300 K? (k_{B} = 1.38 × 10^{-23} J K^{-1}) | 2.4 × 10^{25} | 2.4 × 10^{22} | 4.1 × 10^{-21} | 6.0 × 10^{23} | N = pV/(k_{B}T) = 1.0 × 10^{5}/(1.38 × 10^{-23} × 300) = 2.4 × 10^{25}; 6.0 × 10^{23} is one mole.
+TF1@2: For a gas whose intermolecular attractions dominate, the compressibility factor Z is greater than 1. | false | Attraction pulls molecules together and lowers the wall pressure, so pV < nRT and Z < 1; excluded volume makes Z > 1.
+NUM2@1: 0.50 mol of ideal gas is held at 2.0 × 10^{5} Pa and 400 K. What is its volume, in litres? (R = 8.31) | 8.31 | 0.05 | L | V = nRT/p = 0.50 × 8.31 × 400/2.0 × 10^{5} = 8.31 × 10^{-3} m^{3} = 8.31 L.
+SA2@2: Explain the physical meaning of the two corrections in the van der Waals equation, and when they matter. | The term nb subtracts the volume occupied by the molecules themselves, so the free volume available is V − nb; this raises the pressure compared with an ideal gas. The term an^{2}/V^{2} accounts for attraction between molecules, which slows those about to hit the wall and lowers the pressure they exert. Both matter when the gas is dense (high pressure) and the attraction most when it is cold, near condensation. | nb: excluded volume of the molecules ; Reduces free volume, raising pressure ; an^{2}/V^{2}: intermolecular attraction ; Attraction lowers pressure on the walls ; Matter at high density and low temperature
 
 ## Critical points
 S: A critical point is where the distinction between two phases disappears: above the critical temperature, liquid and gas merge into one supercritical fluid. Near critical points, matter shows universal behaviour with huge fluctuations.
+O: Describe the liquid–gas critical point and supercritical fluids
+O: Calculate critical constants from the van der Waals equation
+O: Describe critical phenomena: diverging fluctuations, critical exponents and universality
+PRE: Equations of state
+LV: Year 2 · Application
 H: The liquid–gas critical point
 - Water: T_{c} = 647 K, p_{c} = 22.1 MPa. CO_{2}: 304 K, 7.4 MPa.
 - Above T_{c}, no amount of pressure liquefies the gas.
@@ -1041,15 +1120,33 @@ H: Critical phenomena
 H: Supercritical fluids
 P: Supercritical CO_{2} dissolves substances like a liquid but flows like a gas: used to decaffeinate coffee, dry-clean, and as a power-cycle working fluid.
 X: Using van der Waals constants for CO_{2}, estimate T_{c}.
-> T_{c} = 8 × 0.364/(27 × 8.31 × 4.27 × 10^{-5}) = 304 K
+> T_{c} = 8a/(27Rb) = 8 × 0.364/(27 × 8.31 × 4.27 × 10^{-5}) = 304 K
+K: At the critical point liquid and gas become identical, and fluctuations grow at every length scale.
 !: Near critical points mean-field theories (like van der Waals) give wrong exponents; fluctuations dominate.
+T: Critical point | The temperature and pressure above which liquid and gas phases can no longer be distinguished
+T: Supercritical fluid | A substance above its critical temperature and pressure, with properties between those of a liquid and a gas
+T: Universality | The finding that very different systems share the same critical exponents near their critical points
+SUM: Above T_{c} a gas cannot be liquefied; vdW gives T_{c} = 8a/(27Rb).
+SUM: Near T_{c} fluctuations diverge and exponents are universal.
+EV: established | Above its critical temperature a gas cannot be liquefied by pressure alone
+SRC: OpenStax, University Physics Volume 2, section 1.5 "Phase Changes" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/1-5-phase-changes
+SRC: OpenStax, College Physics 2e, section 13.5 "Phase Changes" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/13-5-phase-changes
 Q: What happens above the critical temperature? | Liquid and gas phases can no longer be distinguished; a gas can't be liquefied by pressure.
 Q: What is universality in critical phenomena? | Very different systems share the same critical exponents near their critical points.
-M1: Critical opalescence is caused by: | Large density fluctuations scattering light | Chemical reactions | Boiling | Impurities | Fluctuations at all length scales.
-M2: Supercritical CO_{2} is used to: | Decaffeinate coffee | Make ice | Generate X-rays | Store hydrogen | Solvent properties.
+M1@3: Critical opalescence is caused by: | Large density fluctuations scattering light | Chemical reactions in the fluid | Bubbles forming as the fluid boils | Impurities dissolved in the fluid | Near T_{c} density fluctuations occur on all length scales, including the wavelength of light, so the fluid scatters strongly and looks milky.
+M2@1: Supercritical CO_{2} is used to: | Decaffeinate coffee | Make ice | Generate X-rays | Store hydrogen | Above 304 K and 7.4 MPa, CO_{2} dissolves caffeine like a liquid solvent but penetrates beans like a gas, and leaves no residue.
+M3@2: From van der Waals, the critical volume is V_{c} = 3nb and p_{c} = a/(27b^{2}). What is the critical compressibility factor Z_{c} = p_{c}V_{c}/(nRT_{c}) with T_{c} = 8a/(27Rb)? | 3/8 | 1 | 8/27 | 1/3 | Z_{c} = [a/(27b^{2})] × 3b/[R × 8a/(27Rb)] = 3/8 = 0.375; real gases give about 0.29, showing van der Waals' limits.
+TF1@1: Carbon dioxide at 320 K can be turned into a liquid by compressing it hard enough. | false | 320 K is above CO_{2}'s critical temperature of 304 K, so compression only makes a denser supercritical fluid.
+NUM2@2: For a gas with a = 0.137 Pa m^{6} mol^{-2} and b = 3.87 × 10^{-5} m^{3} mol^{-1} (nitrogen), estimate T_{c} from van der Waals, in K. (R = 8.31) | 126 | 3 | K | T_{c} = 8a/(27Rb) = 8 × 0.137/(27 × 8.31 × 3.87 × 10^{-5}) = 1.096/8.68 × 10^{-3} = 126 K.
+SA3@1,3: Describe what is observed when a sealed tube of liquid CO_{2} and its vapour is slowly warmed through 304 K, and explain it. | Below 304 K a meniscus separates liquid from vapour. As it warms, the liquid expands and becomes less dense while the vapour becomes denser. Near 304 K the tube turns milky (critical opalescence) because large density fluctuations scatter light. At the critical point the densities become equal, the meniscus fades and disappears, and above it there is a single supercritical fluid with no distinction between liquid and gas. | Meniscus visible below T_{c} ; Liquid density falls and vapour density rises ; Critical opalescence from density fluctuations ; Meniscus vanishes at T_{c} when densities equal ; Single supercritical phase above T_{c}
 
 ## Phase transitions
 S: A phase transition is an abrupt change in a system's properties as a control parameter (temperature, pressure, field) crosses a critical value: melting, boiling, magnetisation, superconductivity. Their classification depends on how the free energy behaves.
+O: Distinguish first-order and continuous phase transitions
+O: Describe order parameters, symmetry breaking and Landau theory
+O: Use the Clausius–Clapeyron equation to find the slope of a phase boundary
+PRE: Gibbs free energy
+LV: Year 2 · Application
 H: Classification
 - **First order**: latent heat, discontinuous density or magnetisation, coexistence of phases, hysteresis (supercooling, superheating). Melting, boiling.
 - **Continuous (second order)**: no latent heat; order parameter grows continuously from zero; diverging fluctuations. Ferromagnetism at the Curie point, superconductivity in zero field, superfluid helium.
@@ -1059,18 +1156,36 @@ H: Order parameters and symmetry breaking
 - Landau theory expands free energy in the order parameter: F = a(T − T_{c})m^{2} + bm^{4}.
 H: Clausius–Clapeyron
 E: dp/dT = L/(TΔV) :: slope of a first-order phase boundary
-P: Water's ice–liquid line slopes backwards (ΔV < 0), so pressure lowers the melting point slightly: ~7.4 mK per atm.
+P: Water's ice–liquid line slopes backwards (ΔV < 0 on melting), so pressure lowers the melting point slightly: about 7.4 mK per atm.
 X: Find the boiling-point rise of water per 1000 Pa near 100 °C (ΔV ≈ 1.67 m^{3} kg^{-1}).
 > dT/dp = TΔV/L = 373 × 1.67/2.26 × 10^{6} = 2.76 × 10^{-4} K Pa^{-1}
-> 0.28 K per kPa: why pressure cookers reach ~120 °C at 2 atm
+> About 0.28 K per kPa near 1 atm; integrating the curve to 2 atm gives the ~120 °C reached in a pressure cooker
+K: First-order transitions have latent heat and coexisting phases; continuous ones have an order parameter that grows smoothly from zero.
 !: Ice skating isn't explained by pressure melting (the effect is far too small); surface premelting and friction heating matter more.
+T: First-order transition | A phase transition with latent heat and a discontinuous change in density or another first derivative of G
+T: Order parameter | A quantity that is zero in the disordered phase and non-zero in the ordered phase, such as magnetisation
+T: Clausius–Clapeyron equation | dp/dT = L/(TΔV), the slope of the coexistence line between two phases
+SUM: First-order: latent heat and coexistence. Continuous: no latent heat, diverging fluctuations.
+SUM: Clausius–Clapeyron gives phase-boundary slopes; water's melting line slopes backwards.
+EV: established | The slope of a first-order phase boundary is given by the Clausius–Clapeyron equation, dp/dT = L/(TΔV)
+SRC: OpenStax, University Physics Volume 2, section 1.5 "Phase Changes" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/1-5-phase-changes
+SRC: OpenStax, College Physics 2e, section 14.3 "Phase Change and Latent Heat" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/14-3-phase-change-and-latent-heat
 Q: What distinguishes first-order from continuous transitions? | First-order have latent heat and discontinuities; continuous have none but show diverging fluctuations.
 Q: What is an order parameter? | A quantity that's zero in the disordered phase and non-zero in the ordered phase.
-M1: Which transition is continuous? | Ferromagnet at its Curie temperature (zero field) | Water boiling | Ice melting | Sublimation of dry ice | No latent heat.
-M2: The Clausius–Clapeyron equation gives: | The slope of a phase boundary | Entropy at 0 K | Heat capacity | Critical exponents | dp/dT = L/(TΔV).
+M1@1: Which transition is continuous? | Ferromagnet at its Curie temperature (zero field) | Liquid water boiling at 100 °C and 1 atm | Ice melting into water at 0 °C | Dry ice subliming at atmospheric pressure | At the Curie point the magnetisation grows smoothly from zero with no latent heat; the others absorb latent heat.
+M2@3: The Clausius–Clapeyron equation gives: | The slope of a phase boundary | The entropy of a crystal at 0 K | The heat capacity of a gas | The values of critical exponents | It relates dp/dT along a coexistence line to the latent heat and volume change: dp/dT = L/(TΔV).
+M3@3: Ice melts with ΔV = −9.1 × 10^{-5} m^{3} kg^{-1} and L = 3.34 × 10^{5} J kg^{-1} at 273 K. By how much does a pressure rise of 100 atm (1.0 × 10^{7} Pa) change the melting point? | Lowers it by about 0.74 K | Raises it by about 0.74 K | Lowers it by about 7.4 K | No change, since melting is isothermal | dT/dp = TΔV/L = 273 × (−9.1 × 10^{-5})/3.34 × 10^{5} = −7.4 × 10^{-8} K Pa^{-1}; × 10^{7} Pa = −0.74 K.
+TF1@2: Water can be cooled below 0 °C without freezing, because first-order transitions can show hysteresis. | true | Freezing needs nucleation; without seeds pure water can be supercooled well below 0 °C before ice suddenly forms.
+NUM2@3: Near 100 °C, water's boiling point rises 0.28 K per kPa of extra pressure. Estimate the boiling point at 105 kPa compared with 101 kPa, in °C. | 101.1 | 0.1 | °C | ΔT ≈ 0.28 × 4 = 1.1 K, so water boils at about 101.1 °C.
+SA2@1,2: Compare the melting of ice with the loss of magnetism in iron at its Curie temperature, as examples of the two kinds of phase transition. | Melting is first order: it needs latent heat at a fixed temperature, the density changes abruptly, ice and water coexist at 0 °C, and water can be supercooled (hysteresis). Iron at its Curie point (in zero field) is continuous: there is no latent heat, the magnetisation (the order parameter) falls smoothly to zero, there is no coexistence, and fluctuations and susceptibility diverge near T_{c}. | Melting: latent heat, first order ; Abrupt density change, coexistence, hysteresis ; Curie point: no latent heat, continuous ; Order parameter (magnetisation) falls smoothly to zero ; Diverging fluctuations near T_{c}
 
 ## Non-equilibrium thermodynamics
 S: Most of the world is out of equilibrium: heat flows, currents run, chemical reactions proceed, organisms live. Non-equilibrium thermodynamics describes flows driven by gradients, the entropy they produce, and the structures they can create.
+O: Describe linear flux–force laws and the entropy production they cause
+O: State Onsager's reciprocal relations and give an example
+O: Explain dissipative structures, fluctuation theorems and how living things maintain order
+PRE: Second law of thermodynamics
+LV: Year 3 · Physical reasoning
 H: Near equilibrium
 E: J = L X :: fluxes proportional to forces (Fourier, Ohm, Fick laws)
 E: σ = Σ J_{i}X_{i} ≥ 0 :: entropy production rate
@@ -1085,9 +1200,22 @@ X: Peltier and Seebeck effects: how are they related?
 > Seebeck: a temperature difference drives a voltage (thermocouples)
 > Peltier: a current drives heat flow (thermoelectric coolers)
 > Onsager: Π = ST (Kelvin relation) links the coefficients
+K: Gradients drive flows, flows produce entropy, and a steady flow of energy can sustain ordered structures.
 !: Steady state isn't equilibrium: a constant heat flow through a rod has unchanging temperatures but continuous entropy production.
+T: Entropy production | The rate at which irreversible flows create entropy, σ = ΣJ_{i}X_{i}, always non-negative
+T: Onsager reciprocal relations | The equality L_{ij} = L_{ji} of cross-coefficients linking fluxes and forces near equilibrium
+T: Dissipative structure | An ordered pattern maintained by a continuous flow of energy and production of entropy
+SUM: Near equilibrium, fluxes are linear in forces and Onsager's relations link cross-effects.
+SUM: Far from equilibrium, energy flow sustains order; fluctuation theorems hold exactly for small systems.
+EV: established | Steady flows driven by gradients always produce entropy, and near equilibrium the cross-coefficients obey Onsager's reciprocal relations
+SRC: OpenStax, University Physics Volume 2, section 1.6 "Mechanisms of Heat Transfer" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/1-6-mechanisms-of-heat-transfer
+SRC: OpenStax, University Physics Volume 2, section 4.1 "Reversible and Irreversible Processes" | secondary | 2016 | https://openstax.org/books/university-physics-volume-2/pages/4-1-reversible-and-irreversible-processes
 Q: What do Onsager's reciprocal relations state? | Cross-coupling coefficients between fluxes and forces are equal, L_{ij} = L_{ji}.
 Q: What is a dissipative structure? | An ordered pattern maintained by a continuous flow of energy and production of entropy.
-M1: Fourier's law of heat conduction is an example of: | A linear flux–force relation | A conservation law | Equilibrium | The third law | Heat flux ∝ temperature gradient.
-M2: The Jarzynski equality relates: | Non-equilibrium work to equilibrium free-energy differences | Entropy to temperature | Pressure to volume | Heat to work at equilibrium | Exact for any driving speed.
+M1@1: Fourier's law of heat conduction is an example of: | A linear flux–force relation | A conservation law for energy | A state of thermal equilibrium | A statement of the third law | The heat flux is proportional to the temperature gradient, its driving force, like Ohm's and Fick's laws.
+M2@3: The Jarzynski equality relates: | Non-equilibrium work to equilibrium free-energy differences | Entropy to temperature in an ideal gas | Pressure to volume along an isotherm | Heat to work in a reversible cycle | ⟨e^{−W/k_{B}T}⟩ = e^{−ΔF/k_{B}T} holds for any driving speed, so ΔF can be found from repeated fast experiments.
+M3@1: A copper rod carries a steady 50 W of heat from a reservoir at 400 K to one at 300 K. At what rate is entropy produced? | 0.042 W K^{-1} | 0.125 W K^{-1} | 0.167 W K^{-1} | 0 W K^{-1} | σ = P(1/T_{c} − 1/T_{h}) = 50 × (1/300 − 1/400) = 50 × 8.33 × 10^{-4} = 0.042 W K^{-1}, even though the rod's state is steady.
+TF1@3: Living organisms violate the second law because they build ordered structures from disordered materials. | false | They are open systems that export more entropy (heat and waste) than the order they build, so total entropy still rises.
+NUM2@2: A thermocouple has Seebeck coefficient 40 µV K^{-1}. What voltage does a 250 K temperature difference produce, in mV? | 10 | 0.1 | mV | V = SΔT = 40 × 10^{-6} × 250 = 1.0 × 10^{-2} V = 10 mV.
+SA3@2,3: Explain how convection cells in a heated layer of fluid are an example of a dissipative structure, and why they do not violate the second law. | When a fluid layer is heated from below strongly enough, the uniform conducting state becomes unstable and the fluid organises into regular rolling convection cells (Bénard cells). This order exists only while energy flows through the layer; switch off the heating and it decays. The cells actually transport heat faster than conduction, so the entropy produced by heat flowing from hot to cold increases. Order inside is paid for by greater entropy export, so the total entropy still rises. | Heating from below drives instability beyond a threshold ; Regular convection cells form (ordered pattern) ; Order maintained only by continuous energy flow ; Cells increase heat transport and entropy production ; Total entropy increases, so no violation
 `;
