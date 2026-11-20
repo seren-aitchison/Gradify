@@ -19,6 +19,8 @@ export const ISLANDS = [".earth-map", ".tree-wrap", ".isle3d", ".isle-tag", ".fo
 const NEVER = ["button", "input", "select", "textarea", ".btn", "dialog", ...ISLANDS].join(", ");
 const MAX = 32;   // surfaces drawn at once (the ones on screen, outermost first)
 
+// a renderer string that means there's no GPU behind WebGL
+export const softwareRenderer = (name) => /swiftshader|llvmpipe|softpipe|software|basic render|microsoft basic/i.test(name || "");
 // may it run here? (a pure check, so the decision is testable)
 export function allowed({ webgl, reducedTransparency, highContrast, saveData, pref }) {
   return !!webgl && !reducedTransparency && !highContrast && !saveData && pref !== "off";
@@ -108,6 +110,9 @@ export function start() {
   const pref = (() => { try { return localStorage.getItem("gradify.glass"); } catch { return null; } })();
   const ok = allowed({ webgl: gl, reducedTransparency: matchMedia("(prefers-reduced-transparency: reduce)").matches, highContrast: root.getAttribute("data-a-contrast") === "high" || matchMedia("(prefers-contrast: more)").matches, saveData: !!navigator.connection?.saveData, pref });
   if (!ok) return null;
+  // software rendering (no GPU: SwiftShader, llvmpipe, a VM) can't draw this smoothly: keep the CSS glass, at no cost
+  const dbg = gl.getExtension("WEBGL_debug_renderer_info"), gpu = dbg ? String(gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL)) : "";
+  if (pref !== "force" && softwareRenderer(gpu)) return null;
 
   const sh = (t, s) => { const o = gl.createShader(t); gl.shaderSource(o, s); gl.compileShader(o); if (!gl.getShaderParameter(o, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(o)); return o; };
   let prog;
@@ -206,7 +211,10 @@ export function start() {
 
   // too slow here (an old phone, software rendering): give the page back to the CSS glass
   let frames = 0, spent = 0;
-  const probe = () => { const t = performance.now(); draw(); gl.finish(); spent += performance.now() - t; if (++frames < 12) requestAnimationFrame(probe); else if (spent / frames > 22 && pref !== "force") stop(); };
+  // a few frames, timed; one slow frame is enough to hand back to the CSS glass, so a slow device never stalls
+  const probe = () => { const t = performance.now(); draw(); gl.finish(); const ms = performance.now() - t; spent += ms; frames++;
+    if (pref !== "force" && (ms > 45 || (frames >= 4 && spent / frames > 22))) return stop();
+    if (frames < 4) requestAnimationFrame(probe); };
 
   addEventListener("scroll", kick, { passive: true, capture: true });
   addEventListener("resize", () => { dirty = true; kick(); });

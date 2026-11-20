@@ -3,7 +3,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
-import { allowed, ISLANDS, GLASS } from "../kit/ui/liquid-gl.js";
+import { allowed, softwareRenderer, ISLANDS, GLASS } from "../kit/ui/liquid-gl.js";
 import { ISLANDS as THEME_ISLANDS } from "../scripts/theme-tokens.mjs";
 
 test("runs only with WebGL and default transparency, contrast and data use, unless turned off", () => {
@@ -28,4 +28,9 @@ test("every page loads it, through theme-boot, after the page has loaded", async
   const boot = await readFile(new URL("../kit/core/theme-boot.js", import.meta.url), "utf8");
   assert.match(boot, /ui\/liquid-gl\.js/);
   assert.match(boot, /addEventListener\("load"/);
+});
+
+test("no GPU, no WebGL glass: software renderers keep the CSS glass", () => {
+  for (const n of ["Google SwiftShader", "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero)))", "llvmpipe (LLVM 15.0.7, 256 bits)", "Microsoft Basic Render Driver"]) assert.ok(softwareRenderer(n), n);
+  for (const n of ["Apple M2", "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060)", "Adreno (TM) 740", "Mali-G78"]) assert.ok(!softwareRenderer(n), n);
 });
