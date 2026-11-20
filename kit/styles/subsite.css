@@ -30,7 +30,11 @@
 @media (max-width: 960px) { .sub-nav { height: 60px; } }   /* above the page, so the open menu is never covered */
 .sub-menu-btn .sm-close, .sub-menu-btn[aria-expanded="true"] .sm-open { display: none; }
 .sub-menu-btn[aria-expanded="true"] .sm-close { display: block; }
-.sub-menu { max-height: calc(100vh - 110px); overflow-y: auto; }
+/* the open menu sits above everything fixed on the page (a course's phone dock, the Gradify AI orb): its bar is
+   lifted while the menu is open, and the menu stops short of the bottom of the screen, scrolling if it must */
+.sub-menu { max-height: calc(100vh - 110px); max-height: calc(100dvh - 110px - env(safe-area-inset-bottom)); overflow-y: auto; overscroll-behavior: contain; }
+.sub-nav:has(.sub-menu:not([hidden])) { z-index: 220; }
+@media (max-width: 960px) { body:has(.sub-menu:not([hidden])) :is(.gai-fab, .cx-dock, .gx-totop) { visibility: hidden; } }   /* only where the menu shows */
 .sub-menu .sub-menu-signin { margin-top: 6px; padding: 10px 14px; border-top: 1px solid var(--line); border-radius: 0 0 12px 12px; text-decoration: none; font-size: 15px; color: var(--mute); }
 .sub-menu .sub-menu-cta { justify-content: center; margin: 8px 4px 2px; }
 @media (min-width: 641px) { .sub-menu .sub-menu-signin, .sub-menu .sub-menu-cta, .sub-menu .menu-set { display: none; } }

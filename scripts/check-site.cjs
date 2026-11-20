@@ -96,9 +96,11 @@ function serve(dir) {
           // pressed from the page rather than by Playwright: on the 3D pages a busy WebGL loop starves its click checks
           const btnShown = await pg.evaluate(() => { const b = document.querySelector(".sub-menu-btn"); if (!b || !b.offsetParent) return false; b.click(); return true; });
           if (!btnShown) throw new Error("no visible menu button");
-          const got = await pg.$$eval(".sub-menu a", (as) => as.filter((a) => a.offsetParent && !a.classList.contains("sub-menu-signin")).map((a) => a.textContent.trim()));
+          // the menu repeats the bar's Sign in and Start free on phones (the bar hides them there): compared separately
+          const got = await pg.$$eval(".sub-menu a", (as) => as.filter((a) => a.offsetParent && !a.classList.contains("sub-menu-signin") && !a.classList.contains("sub-menu-cta")).map((a) => a.textContent.trim()));
+          const ctaOk = await pg.evaluate(() => { const bar = document.querySelector(".sub-right .sub-cta"), m = document.querySelector(".sub-menu .sub-menu-cta"); return !bar || Boolean(m && m.offsetParent && m.textContent.trim() === bar.textContent.trim()); });
           const onTop = await pg.evaluate(() => { const m = document.querySelector(".sub-menu"), b = m.getBoundingClientRect(); return Boolean(document.elementFromPoint(b.left + b.width / 2, b.bottom - 12)?.closest(".sub-menu")); });
-          r.menu = JSON.stringify(got) === JSON.stringify(want) && onTop ? "ok" : `links ${JSON.stringify(got)} instead of ${JSON.stringify(want)}${onTop ? "" : ", covered by the page"}`;
+          r.menu = JSON.stringify(got) === JSON.stringify(want) && onTop && ctaOk ? "ok" : `links ${JSON.stringify(got)} instead of ${JSON.stringify(want)}${onTop ? "" : ", covered by the page"}${ctaOk ? "" : ", Start free missing from the menu"}`;
         }
         if (courses.includes(f)) {
           await pg.evaluate(() => scrollTo(0, 0));
