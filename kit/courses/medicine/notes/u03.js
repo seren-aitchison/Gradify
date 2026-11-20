@@ -44,6 +44,16 @@ M2#medicine-u03-01-q2@2: A patient has heart rate 90/min, EDV 150 mL and ESV 90 
 M3#medicine-u03-01-q3@3: A 75-year-old with long-standing hypertension has a fourth heart sound. What does it most likely indicate? | Atrial contraction into a stiff, hypertrophied left ventricle | Rapid filling of a dilated ventricle in systolic failure | A normal finding in a healthy older adult | Severe aortic regurgitation with a dilated ventricle | S4 occurs in late diastole when the atrium pushes blood into a non-compliant ventricle, as in left ventricular hypertrophy.
 NUM2#medicine-u03-01-q4@2: A ventricle has EDV 140 mL and ESV 56 mL. What is its ejection fraction, in per cent? | 60 | 1% | % | SV = 140 − 56 = 84 mL; EF = 84/140 = 0.60, which is 60%.
 SA2#medicine-u03-01-q5@2,3: Explain how the body increases cardiac output during exercise. | Sympathetic activation raises heart rate and contractility. Muscle pumping and venoconstriction increase venous return, raising preload, so the Frank–Starling mechanism increases stroke volume. Vasodilation in exercising muscle lowers total peripheral resistance, reducing afterload. Together these can raise cardiac output several-fold. | Heart rate increase ; Contractility ; Venous return and Frank–Starling ; Reduced resistance or afterload
+Q: What happens to the valves during isovolumetric contraction? | The mitral and tricuspid valves close (S1) and all valves are shut while ventricular pressure rises.
+Q: When do the AV valves open again after systole? | When ventricular pressure drops below atrial pressure during isovolumetric relaxation.
+Q: In which patients does atrial contraction contribute more to ventricular filling? | Older people and those with stiff ventricles.
+Q: What does an S3 suggest in an adult with heart failure? | Rapid filling of a dilated ventricle in early diastole.
+Q: Define afterload. | The load the ventricle ejects against, mainly arterial pressure and aortic valve resistance.
+Q: Define contractility. | The intrinsic strength of contraction at a given preload, increased by sympathetic stimulation and inotropes.
+Q: How is ejection fraction calculated? | Stroke volume divided by end-diastolic volume (EF = SV ÷ EDV).
+Q: What is the approximate normal range of ejection fraction? | Roughly 50–70%.
+Q: Why is a normal ejection fraction not proof of normal cardiac function? | A patient can have heart failure with preserved EF (HFpEF), and EF is not the same as cardiac output.
+Q: What causes the ventricular semilunar valves to open during ejection? | Ventricular pressure exceeding aortic and pulmonary pressure.
 
 ## Cardiac electrophysiology and conduction
 LV: Preclinical · Application
@@ -85,6 +95,16 @@ M2#medicine-u03-02-q2@2: The R–R interval on a 25 mm/s ECG is 3 large squares.
 M3#medicine-u03-02-q3@3: A patient's QRS duration is 140 ms with an otherwise normal rhythm. What does this most likely indicate? | Delayed ventricular conduction, such as a bundle branch block | Delayed conduction through the AV node | Faster atrial depolarisation than normal | A normal finding in healthy adults | A QRS of 120 ms or more shows slowed ventricular depolarisation, as in bundle branch block or ventricular rhythms.
 NUM1#medicine-u03-02-q4@1: An irregular rhythm shows 15 QRS complexes in a 10-second strip. What is the approximate heart rate, per minute? | 90 | 1% | /min | Multiply the count in 10 seconds by 6: 15 × 6 = 90 per minute.
 SA2#medicine-u03-02-q5@2,3: Explain why the AV node delays conduction and what happens to the ECG if that delay is prolonged. | The AV nodal delay allows the atria to finish contracting and the ventricles to fill before they contract, and limits how fast impulses reach the ventricles in atrial tachyarrhythmias. Prolonged AV conduction lengthens the PR interval beyond 200 ms (first-degree block); more severe disease can block some or all impulses (second- or third-degree block). | Allows ventricular filling ; Protects ventricles from fast atrial rates ; PR prolongation ; Higher-degree block
+Q: Which ion current causes phase 0 depolarisation of a ventricular myocyte? | Rapid sodium influx.
+Q: What ion movement causes phase 3 repolarisation of a ventricular myocyte? | Potassium efflux.
+Q: Which currents produce the slow phase 4 depolarisation of SA node cells? | The funny current I_{f} and calcium currents.
+Q: What drives the upstroke of the SA node action potential? | Calcium influx (a calcium-driven upstroke), not fast sodium channels.
+Q: How does vagal stimulation affect heart rate? | It reduces the slope of phase 4 depolarisation in the SA node, slowing the rate.
+Q: Trace the conduction pathway from the AV node to the ventricles. | AV node, bundle of His, left and right bundle branches, Purkinje fibres, then ventricular myocardium.
+Q: What does the T wave represent? | Ventricular repolarisation.
+Q: Why is the QT interval corrected to give QTc? | Because the QT interval varies with heart rate.
+Q: What is the normal upper limit of QRS duration? | Under 120 ms.
+Q: What is pulseless electrical activity? | A cardiac arrest in which the ECG shows an organised rhythm but there is no pulse.
 
 ## Blood pressure regulation
 LV: Preclinical · Application
@@ -126,6 +146,16 @@ M2#medicine-u03-03-q2@2: Blood pressure is 150/90 mmHg. What is the approximate 
 M3#medicine-u03-03-q3@3: A young man has lost about 1 litre of blood after an injury. His blood pressure is 118/78 mmHg and heart rate 118/min. What is the best interpretation? | He is compensating with tachycardia and vasoconstriction; pressure may fall suddenly and he needs urgent assessment | His normal blood pressure shows the blood loss is clinically unimportant | The fast heart rate must be due to anxiety alone, so no action is needed | His baroreflex has failed, which is why the heart rate is high | Tachycardia is the early sign; hypotension is late. Escalate urgently using local pathways for major haemorrhage.
 NUM2#medicine-u03-03-q4@2: A patient has cardiac output 5 L/min and MAP 95 mmHg. If TPR rises by 20% with output unchanged, what is the new MAP, in mmHg? | 114 | 1% | mmHg | MAP = CO × TPR, so a 20% rise in TPR raises MAP by 20%: 95 × 1.2 = 114 mmHg.
 SA2#medicine-u03-03-q5@2,3: Describe how the body responds to a sudden fall in blood volume. | Within seconds, reduced baroreceptor firing increases sympathetic and decreases vagal outflow, raising heart rate, contractility and vasoconstriction. Over minutes to hours, reduced renal perfusion activates RAAS: angiotensin II constricts vessels and stimulates thirst and ADH, and aldosterone retains sodium. ADH retains water. Fluid shifts from the interstitium into vessels. | Baroreflex response ; RAAS and angiotensin II ; Aldosterone and ADH ; Thirst or fluid shift
+Q: State the equation relating mean arterial pressure to cardiac output. | MAP = CO × TPR (cardiac output times total peripheral resistance).
+Q: How is mean arterial pressure estimated from systolic and diastolic pressures? | MAP ≈ DBP + ⅓(SBP − DBP).
+Q: Why is MAP closer to the diastolic than the systolic pressure at rest? | Diastole lasts longer than systole at rest.
+Q: Which nerves carry signals from the carotid sinus and aortic arch baroreceptors? | Glossopharyngeal nerve from the carotid sinus; vagus nerve from the aortic arch.
+Q: How does the medulla respond to reduced baroreceptor firing? | It increases sympathetic and decreases vagal outflow, raising heart rate, contractility and vasoconstriction.
+Q: What three stimuli cause renin release? | Low renal perfusion, reduced sodium at the macula densa and sympathetic stimulation.
+Q: Name four actions of angiotensin II. | Arteriolar constriction, stimulating thirst, stimulating ADH release and releasing aldosterone.
+Q: What triggers ADH (vasopressin) release? | High plasma osmolality or low blood volume.
+Q: What is pressure natriuresis? | Higher blood pressure increases renal sodium excretion, which sets the long-term blood pressure level.
+Q: Why is falling blood pressure a late sign of haemorrhage? | Compensatory tachycardia and vasoconstriction hold pressure up until a large loss, especially in young people.
 
 ## Atherosclerosis and cardiovascular risk
 LV: Clinical · Foundation
@@ -171,6 +201,16 @@ M2#medicine-u03-04-q2@2: Which is a non-modifiable cardiovascular risk factor? |
 M3#medicine-u03-04-q3@3: A 35-year-old with type 1 diabetes for 15 years has a low QRISK3 score. What is the best approach? | Follow NICE's separate recommendations for type 1 diabetes, since risk tools underestimate risk in this group | Reassure that no prevention is needed because the score is low | Calculate the risk again until it is above 10% | Use cholesterol alone and ignore diabetes | NICE recommends considering statins for adults with type 1 diabetes who are older than 40, have had diabetes for over 10 years, or have nephropathy or other risk factors, as QRISK3 underestimates their risk.
 TF1#medicine-u03-04-q4@1: QRISK3 is intended for people who already have established cardiovascular disease. | false | It estimates risk for people without established cardiovascular disease; those with it are already at high risk and are offered secondary prevention.
 SA2#medicine-u03-04-q5@2,3: Explain the stages of atherosclerotic plaque development and how a stable plaque differs from a vulnerable one. | Endothelial dysfunction allows LDL into the intima, where it is oxidised; monocytes become macrophages and foam cells, forming fatty streaks. Smooth muscle cells form a fibrous cap over a lipid-rich core. Stable plaques have thick caps and narrow the lumen slowly, causing exertional symptoms; vulnerable plaques have thin caps, large cores and inflammation, and can rupture, causing thrombosis and acute events. | Endothelial dysfunction and LDL ; Foam cells and fatty streak ; Fibrous cap and core ; Stable versus vulnerable
+Q: What factors cause the endothelial dysfunction that starts atherosclerosis? | Hypertension, smoking, high LDL cholesterol, diabetes and inflammation.
+Q: What happens to LDL after it enters the arterial intima? | It is oxidised and taken up by macrophages derived from monocytes, forming foam cells and a fatty streak.
+Q: Which cells form the fibrous cap of a mature plaque? | Smooth muscle cells that migrate into the intima.
+Q: How do stable plaques cause symptoms? | By gradually narrowing the lumen, causing angina or claudication.
+Q: What features make a plaque vulnerable? | A thin fibrous cap and a large lipid core.
+Q: Name the non-modifiable cardiovascular risk factors listed in the lesson. | Age, male sex, family history of premature cardiovascular disease and ethnicity.
+Q: Which ethnic background carries higher cardiovascular risk according to the lesson? | South Asian background.
+Q: What does QRISK3 estimate, and in whom? | 10-year risk of heart attack or stroke in people aged 25–84 without established cardiovascular disease.
+Q: Why do people with type 1 diabetes, CKD or familial hypercholesterolaemia have separate statin recommendations? | Because risk tools underestimate their cardiovascular risk.
+Q: Why should cardiovascular risk not be judged from cholesterol alone? | Absolute risk depends on all risk factors together, so lower cholesterol with smoking and diabetes can carry higher risk.
 
 ## Stable angina
 LV: Clinical · Application
@@ -219,6 +259,16 @@ M2#medicine-u03-05-q2@2: Which drugs does NICE recommend first-line to prevent a
 M3#medicine-u03-05-q3@3: A man with known angina now gets chest pain at rest lasting 20 minutes. What is the most appropriate next step? | Treat as a possible acute coronary syndrome and seek emergency assessment | Increase his anti-anginal drugs and review in a month | Arrange a routine CT coronary angiogram | Reassure him, since his angina is already diagnosed | Rest pain or a change in pattern suggests an acute coronary syndrome; call for emergency help in line with local pathways.
 TF1#medicine-u03-05-q4@1: A normal resting ECG rules out stable angina. | false | The resting ECG is often normal in stable angina; ischaemia appears only on exertion.
 SA2#medicine-u03-05-q5@3: Evaluate the role of revascularisation compared with medical therapy in stable angina. | Optimal medical therapy (anti-anginal drugs and secondary prevention) is the foundation for all patients. Revascularisation improves symptoms when medicines fail and improves prognosis in specific anatomy such as left main stem or extensive disease with poor LV function. The ISCHEMIA trial found an initial invasive strategy didn't reduce major events in most stable patients, so revascularisation is mainly for symptoms or high-risk anatomy, decided with the patient and heart team. | Medical therapy for all ; Symptom benefit of revascularisation ; Prognostic benefit in selected anatomy ; ISCHEMIA evidence
+Q: How does NICE classify chest pain with only one or none of the three anginal features? | Non-anginal chest pain.
+Q: What makes angina stable rather than an acute coronary syndrome? | It occurs predictably at a given level of exertion; new, worsening or rest pain suggests ACS.
+Q: Which blood tests are listed for initial assessment of suspected angina? | Full blood count, lipids, HbA1c, renal function and thyroid function.
+Q: When is functional imaging used in suspected stable angina? | If CTCA is non-diagnostic or to assess the significance of known disease.
+Q: Name three types of functional imaging for coronary disease. | Stress echocardiography, myocardial perfusion scan and cardiac MRI.
+Q: When is invasive coronary angiography indicated in stable angina? | If non-invasive tests are inconclusive or revascularisation is being considered.
+Q: What safety-netting advice accompanies a GTN prescription? | Call 999 if pain persists after repeat doses.
+Q: Name four second-line anti-anginal options besides beta-blockers and calcium-channel blockers. | Long-acting nitrates, ivabradine, nicorandil and ranolazine.
+Q: What are the components of secondary prevention in stable angina? | Antiplatelet therapy, statin, blood pressure control, smoking cessation and exercise.
+Q: Which anatomical finding is a prognostic indication for revascularisation? | Significant left main stem disease.
 
 ## Acute coronary syndromes
 LV: Clinical · Application
@@ -268,6 +318,16 @@ M2#medicine-u03-06-q2@2: A patient with STEMI presents 3 hours after onset to a 
 M3#medicine-u03-06-q3@3: A woman with severe pneumonia and septic shock has a modest troponin rise without chest pain or ST changes. What is the most likely explanation? | Myocardial injury or a type 2 MI from supply–demand mismatch, not plaque rupture | A type 1 STEMI needing immediate primary PCI | Laboratory error, since troponin only rises in plaque rupture | Unstable angina, which always raises troponin | Troponin rises in many acute illnesses; sepsis causes demand ischaemia (type 2 MI) or non-ischaemic injury. Treat the cause and seek senior review.
 TF2#medicine-u03-06-q4@1: In suspected STEMI, reperfusion should be delayed until a troponin result is available. | false | STEMI is diagnosed from symptoms and the ECG; waiting for troponin delays reperfusion and loses myocardium.
 SA2#medicine-u03-06-q5@2,3: Outline the immediate assessment and management of a patient presenting with suspected STEMI. | Recognise ischaemic symptoms and record a 12-lead ECG immediately; identify ST elevation. Call for help and activate the local primary PCI pathway. Monitor with resuscitation facilities available. Give antiplatelet therapy and analgesia as per protocol, oxygen only if hypoxic. Arrange primary PCI if within the NICE time window, otherwise fibrinolysis. Check troponin and bloods without delaying reperfusion. | Immediate ECG ; Escalate and activate PCI pathway ; Antiplatelets, analgesia, oxygen only if hypoxic ; Reperfusion choice by time window
+Q: Define unstable angina. | Ischaemic symptoms at rest or rapidly worsening, without a troponin rise.
+Q: What troponin pattern defines myocardial infarction? | A rise and fall of troponin above the 99th percentile with ischaemic features.
+Q: Besides ST elevation, which ECG finding can indicate STEMI in the right clinical context? | New left bundle branch block.
+Q: What usually causes STEMI? | Complete occlusion of a coronary artery.
+Q: How does the Fourth Universal Definition separate type 1 from type 2 MI? | Type 1 is caused by plaque rupture; type 2 by supply–demand mismatch, for example in sepsis or anaemia.
+Q: Which groups more often present with atypical ACS symptoms? | Older people, women and people with diabetes.
+Q: How quickly should a 12-lead ECG be done in suspected ACS? | As soon as possible, ideally within 10 minutes of arrival.
+Q: When does NICE NG185 recommend fibrinolysis instead of primary PCI for STEMI? | When primary PCI cannot be delivered within 120 minutes of when fibrinolysis could be given, or presentation is beyond 12 hours.
+Q: What score can be used to risk stratify NSTEMI or unstable angina? | The GRACE score.
+Q: What is the timing of angiography for intermediate or higher risk NSTEMI? | Within 72 hours.
 
 ## Secondary prevention after myocardial infarction
 LV: Clinical · Application
@@ -315,6 +375,16 @@ M2#medicine-u03-07-q2@2: What should be checked after starting an ACE inhibitor 
 M3#medicine-u03-07-q3@3: Three months after a drug-eluting stent, a patient wants to stop his second antiplatelet before dental work. What is the best advice? | Don't stop without discussing with the cardiology team, because early cessation risks stent thrombosis | Stop both antiplatelets for a week before the dental work | Stop the second antiplatelet immediately, as dental work always takes priority | Double the aspirin dose instead of the second antiplatelet | Most dental procedures can proceed on antiplatelets; any interruption needs specialist advice because stent thrombosis can be fatal.
 TF1#medicine-u03-07-q4@1: Cardiac rehabilitation is only for people who have had heart surgery. | false | It is recommended after MI, PCI, CABG and for heart failure, not only after surgery.
 SA2#medicine-u03-07-q5@2,3: Explain the purpose of each of the main drug classes used in secondary prevention after MI. | Antiplatelets reduce platelet aggregation and the risk of further thrombosis, including stent thrombosis. ACE inhibitors limit adverse remodelling and reduce mortality, especially with reduced ejection fraction. Beta-blockers reduce myocardial oxygen demand and arrhythmias. Statins lower LDL cholesterol and stabilise plaques, reducing recurrent events. | Antiplatelets ; ACE inhibitors ; Beta-blockers ; Statins
+Q: What does dual antiplatelet therapy after MI usually consist of, and for how long? | Aspirin plus a second antiplatelet such as ticagrelor or prasugrel, usually for up to 12 months, then aspirin long term.
+Q: What should be used after MI if an ACE inhibitor is not tolerated? | An angiotensin receptor blocker (ARB).
+Q: When is a beta-blocker particularly indicated after MI? | With reduced ejection fraction or ongoing angina.
+Q: When is an aldosterone antagonist added after MI? | If there is heart failure with reduced ejection fraction.
+Q: Which statin intensity is recommended after MI? | High-intensity statin.
+Q: What did the Cochrane review find about exercise-based cardiac rehabilitation? | It reduces cardiovascular mortality and hospital admissions and improves quality of life.
+Q: Which groups have lower uptake of cardiac rehabilitation in the UK? | Women, older people and minority ethnic groups.
+Q: How soon after discharge should cardiac rehabilitation ideally start, according to NICE? | Within 10 days of discharge.
+Q: What dietary pattern is recommended after MI? | A Mediterranean-style diet.
+Q: What is the risk of stopping dual antiplatelet therapy early after a stent? | Stent thrombosis.
 
 ## Heart failure: causes and classification
 LV: Clinical · Foundation
@@ -362,6 +432,16 @@ M2#medicine-u03-08-q2@2: A breathless man has an NT-proBNP of 900 ng/L. What doe
 M3#medicine-u03-08-q3@3: An obese woman with breathlessness and oedema has an NT-proBNP of 350 ng/L. What is the best interpretation? | Heart failure is less likely but not excluded, since obesity lowers NT-proBNP; consider clinical context | Heart failure is ruled out completely and needs no further thought | The result proves she has severe HFrEF | NT-proBNP is never affected by body weight | Obesity can lower NT-proBNP; if clinical suspicion is high, discuss with a specialist.
 MATCH1#medicine-u03-08-q4@1: Match each ejection fraction to its category. | EF 30% = HFrEF ; EF 45% = HFmrEF ; EF 60% with raised filling pressures = HFpEF ; EF 40% = HFrEF | The boundaries are 40% or less, 41–49%, and 50% or more.
 SA2#medicine-u03-08-q5@2,3: Describe the symptoms and signs of chronic heart failure and explain their mechanisms. | Breathlessness, orthopnoea and paroxysmal nocturnal dyspnoea result from raised left-sided pressures causing pulmonary congestion, worse lying flat as fluid redistributes. Fatigue reflects low output. Ankle swelling and raised JVP result from fluid retention via RAAS activation and raised right-sided pressures. An S3 and displaced apex reflect a dilated ventricle; crackles reflect pulmonary oedema. | Pulmonary congestion symptoms ; Fatigue from low output ; Fluid retention and RAAS ; Signs explained
+Q: Define heart failure. | A clinical syndrome in which the heart cannot pump enough blood to meet the body's needs at normal filling pressures.
+Q: Name two toxins that can cause heart failure. | Alcohol and some chemotherapy drugs such as anthracyclines.
+Q: Name two causes of high-output heart failure. | Severe anaemia and thyrotoxicosis.
+Q: What ejection fraction range defines HFmrEF? | 41–49%.
+Q: What does NYHA class II describe? | Slight limitation with ordinary activity.
+Q: What does NYHA class IV describe? | Symptoms at rest.
+Q: Name four signs of chronic heart failure. | Raised JVP, displaced apex, S3, crackles and peripheral oedema.
+Q: What does NICE NG106 recommend for an NT-proBNP above 2,000 ng/L? | Specialist assessment and echocardiography within 2 weeks.
+Q: What NT-proBNP level makes heart failure less likely in an untreated person? | Below 400 ng/L.
+Q: Which factors can falsely lower NT-proBNP? | Obesity and drugs such as diuretics, ACE inhibitors and beta-blockers.
 
 ## Managing chronic heart failure
 LV: Clinical · Application
@@ -409,6 +489,16 @@ M2#medicine-u03-09-q2@2: A patient with HFrEF has an EF of 28% and QRS duration 
 M3#medicine-u03-09-q3@3: A man with HFrEF is prescribed a regular NSAID for knee pain and becomes more oedematous. What is the most likely explanation? | NSAIDs cause sodium and water retention and can worsen heart failure | NSAIDs are a treatment for heart failure | His beta-blocker has stopped working | Knee pain causes fluid retention | NSAIDs impair renal sodium excretion and can precipitate decompensation; they should be avoided where possible.
 TF1#medicine-u03-09-q4@2: SGLT2 inhibitors reduce heart failure events in both HFrEF and HFpEF. | true | Trials such as DAPA-HF, EMPEROR-Preserved and DELIVER showed reduced hospitalisation across ejection fractions.
 SA2#medicine-u03-09-q5@3: Explain why drugs for HFrEF are started at low doses and titrated, and what monitoring is needed. | Beta-blockers can initially worsen symptoms by reducing contractility, and ACE inhibitors, ARNI and MRAs can cause hypotension, kidney dysfunction and hyperkalaemia. Starting low and titrating gradually allows adaptation and reduces adverse effects. Monitor blood pressure, heart rate, renal function and potassium after each change, and watch for symptoms. Target or maximum tolerated doses give the greatest benefit. | Initial adverse effects ; Hypotension, renal and potassium risks ; Monitoring ; Aim for target doses
+Q: When is sacubitril–valsartan used in HFrEF? | In people who remain symptomatic, in place of an ACE inhibitor or ARB.
+Q: Name the two mineralocorticoid receptor antagonists used in heart failure. | Spironolactone and eplerenone.
+Q: Name the two SGLT2 inhibitors listed for heart failure. | Dapagliflozin and empagliflozin.
+Q: How should a heart failure beta-blocker be started? | At a low dose, titrated slowly.
+Q: What should be monitored when using prognostic drugs for HFrEF? | Renal function, potassium and blood pressure.
+Q: How should the loop diuretic dose be set in chronic heart failure? | At the lowest dose that keeps the person euvolaemic.
+Q: Which patients with heart failure are considered for an ICD? | Selected people at high risk of ventricular arrhythmias.
+Q: Which drugs should be avoided because they worsen heart failure? | NSAIDs, and verapamil and diltiazem in HFrEF.
+Q: Which vaccinations are recommended for everyone with heart failure? | Annual influenza and pneumococcal vaccination.
+Q: Why are daily weights advised in heart failure? | To spot fluid gain early.
 
 ## Valvular heart disease
 LV: Clinical · Application
@@ -452,6 +542,16 @@ M2#medicine-u03-10-q2@2: A patient has an early diastolic murmur at the left ste
 M3#medicine-u03-10-q3@3: A 45-year-old with a bicuspid aortic valve has moderate stenosis on echo and no symptoms. What is the most appropriate plan? | Regular echocardiographic surveillance and advice to report symptoms promptly | Immediate TAVI, because all bicuspid valves need replacing | Discharge, since bicuspid valves never progress | Long-term antibiotics to slow progression | Asymptomatic moderate AS is monitored; intervention is triggered by symptoms, severe disease or LV dysfunction.
 MATCH1#medicine-u03-10-q4@1: Match each lesion to its murmur. | Aortic stenosis = Ejection systolic, radiating to carotids ; Mitral regurgitation = Pansystolic, radiating to axilla ; Aortic regurgitation = Early diastolic at left sternal edge ; Mitral stenosis = Mid-diastolic at apex | Timing, location and radiation together identify the lesion.
 SA2#medicine-u03-10-q5@2,3: Explain why exertional syncope is a serious symptom in a patient with aortic stenosis. | In severe aortic stenosis, the narrowed valve fixes cardiac output. During exercise, vasodilation in muscles lowers peripheral resistance, but output can't rise to compensate, so blood pressure and cerebral perfusion fall, causing syncope. Arrhythmias may also contribute. Symptomatic severe AS has a high risk of sudden death without intervention, so urgent echo and cardiology review are needed. | Fixed cardiac output ; Vasodilation on exercise ; Reduced cerebral perfusion ; Prognosis and urgency
+Q: Which cause of aortic stenosis presents at a younger age? | A bicuspid aortic valve.
+Q: Where is the aortic stenosis murmur heard and where does it radiate? | At the right second intercostal space, radiating to the carotids.
+Q: Name two signs besides the murmur that suggest severe aortic stenosis. | A slow-rising pulse and a soft or absent S2.
+Q: State the echocardiographic criteria for severe aortic stenosis. | Valve area under 1.0 cm^{2}, mean gradient over 40 mmHg or peak velocity over 4 m/s.
+Q: What are the two options for valve intervention in symptomatic severe aortic stenosis? | Surgical aortic valve replacement (SAVR) or TAVI, decided by a heart team.
+Q: How is the aortic regurgitation murmur best heard? | At the left sternal edge with the patient leaning forward in expiration.
+Q: Name two causes of aortic regurgitation. | Aortic root dilatation and endocarditis.
+Q: What are the causes of mitral regurgitation? | Degenerative (prolapse), functional (dilated ventricle), ischaemic and endocarditis.
+Q: Besides the murmur, what auscultatory findings occur in mitral stenosis? | A loud S1 and an opening snap.
+Q: What does echocardiography assess in suspected valve disease? | It confirms the lesion, grades its severity and measures ventricular size and function.
 
 ## Infective endocarditis
 LV: Clinical · Application
@@ -501,6 +601,16 @@ M2#medicine-u03-11-q2@2: What are Osler's nodes? | Painful nodules on the finger
 M3#medicine-u03-11-q3@3: A man with a prosthetic aortic valve has fever for two weeks; transthoracic echo is normal. What is the best next step? | Arrange transoesophageal echocardiography, as TTE has low sensitivity for prosthetic valve endocarditis | Exclude endocarditis because the transthoracic echo is normal | Start oral antibiotics and review in a month | Replace the valve immediately without further tests | TOE is much more sensitive than TTE, especially with prosthetic valves; a normal TTE doesn't exclude endocarditis.
 TF1#medicine-u03-11-q4@1: NICE recommends routine antibiotic prophylaxis before dental procedures for people at risk of endocarditis. | false | NICE CG64 doesn't recommend routine prophylaxis; ESC and AHA guidance differs for the highest-risk patients.
 SA2#medicine-u03-11-q5@2,3: Explain why blood cultures should be taken before antibiotics in suspected endocarditis, and how the diagnosis is confirmed. | Endocarditis involves continuous bacteraemia; cultures identify the organism and its sensitivities, guiding weeks of targeted treatment. Antibiotics given first can sterilise cultures and make diagnosis harder. At least three sets from separate sites are taken. Diagnosis combines positive cultures, echocardiographic evidence of vegetations or abscess, and clinical findings using the Duke criteria. | Continuous bacteraemia ; Guides targeted treatment ; Antibiotics can sterilise cultures ; Echo and Duke criteria
+Q: Name five risk factors for infective endocarditis. | Prosthetic valves, previous endocarditis, congenital heart disease, valve disease, injecting drug use, intravascular devices and haemodialysis.
+Q: How does Staphylococcus aureus endocarditis behave clinically? | It is acute and destructive.
+Q: What is the origin and typical course of viridans streptococcal endocarditis? | Oral origin with a subacute course.
+Q: Which organisms are associated with prosthetic valve endocarditis in the lesson? | Coagulase-negative staphylococci.
+Q: What are Janeway lesions? | Painless haemorrhagic macules on the palms and soles.
+Q: Name three immunological phenomena of endocarditis. | Osler's nodes, Roth spots and glomerulonephritis.
+Q: When is transoesophageal echo used in suspected endocarditis? | If transthoracic echo is negative but suspicion is high, or a prosthetic valve is present.
+Q: What are the major modified Duke criteria? | Typical organisms in blood cultures and imaging evidence of endocardial involvement.
+Q: Name three indications for surgery in infective endocarditis. | Heart failure, uncontrolled infection and high embolic risk.
+Q: What should be done for a septic patient with suspected endocarditis? | Follow local sepsis guidance without delay rather than waiting for cultures.
 
 ## Cardiomyopathies and pericardial disease
 LV: Clinical · Application
@@ -546,6 +656,16 @@ M2#medicine-u03-12-q2@2: A 17-year-old footballer collapses during a match and i
 M3#medicine-u03-12-q3@3: A patient with a large pericardial effusion is hypotensive with a raised JVP and a 20 mmHg inspiratory fall in systolic pressure. What is the priority? | Call for senior help immediately for urgent pericardiocentesis | Give a loop diuretic to reduce the effusion | Arrange an outpatient echocardiogram | Start colchicine and review the next day | These are signs of tamponade, a life-threatening emergency needing urgent drainage; diuretics would worsen filling.
 TF1#medicine-u03-12-q4@1: The pain of acute pericarditis is typically relieved by sitting forward. | true | Leaning forward reduces pressure on the inflamed pericardium; lying flat worsens it.
 SA2#medicine-u03-12-q5@2,3: Explain how you would distinguish acute pericarditis from STEMI. | History: pericarditis pain is sharp, pleuritic and positional, often after a viral illness; STEMI pain is crushing and not positional. Examination: a pericardial rub suggests pericarditis. ECG: pericarditis gives widespread concave ST elevation with PR depression and no reciprocal changes; STEMI gives regional convex ST elevation with reciprocal depression, evolving Q waves. Echo may show effusion or regional wall motion abnormality. Seek senior review if unsure. | Pain character ; Rub ; ECG distribution, shape and reciprocal changes ; Echo or escalation
+Q: Define cardiomyopathy. | A disease of the heart muscle not explained by coronary disease or loading conditions.
+Q: What genetic basis usually underlies hypertrophic cardiomyopathy? | Autosomal dominant mutations in sarcomere genes.
+Q: Who should be offered screening when a patient has HCM? | First-degree relatives.
+Q: Name four causes of dilated cardiomyopathy. | Genetic mutations, alcohol, myocarditis, pregnancy (peripartum cardiomyopathy) and chemotherapy.
+Q: How does dilated cardiomyopathy usually present? | As heart failure or arrhythmia.
+Q: Give an example of a restrictive cardiomyopathy. | Cardiac amyloidosis.
+Q: Describe the typical pain of acute pericarditis. | Sharp, central and pleuritic, relieved by sitting forward and worse lying flat.
+Q: Name four causes of acute pericarditis other than viral infection. | Post-MI, uraemia, autoimmune disease, tuberculosis and malignancy.
+Q: What is the usual treatment of acute pericarditis under ESC 2015 guidance? | An NSAID or aspirin with colchicine, plus gastric protection, after excluding high-risk features.
+Q: What is the treatment of cardiac tamponade? | Urgent pericardiocentesis or surgical drainage, with immediate senior help.
 
 ## Atrial fibrillation
 LV: Clinical · Application
@@ -591,6 +711,16 @@ M2#medicine-u03-13-q2@2: Which drug is a first-line rate-control option for AF i
 M3#medicine-u03-13-q3@3: An 82-year-old with AF and CHA2DS2-VASc of 5 has had one fall in a year. Her family worry anticoagulation is unsafe. What is the best approach? | Assess bleeding risk and fall causes, but offer anticoagulation, as her stroke risk is high and benefit is large | Avoid anticoagulation because she has fallen once | Prescribe aspirin instead, as it is safer and equally effective | Delay any decision until she has fallen again | Absolute benefit is greatest in older, high-risk people; aspirin alone isn't recommended. Decisions are shared and reviewed.
 NUM2#medicine-u03-13-q4@2: A 70-year-old man with AF has diabetes and hypertension, and no other risk factors. What is his CHA2DS2-VASc score? | 3 | 0 | points | Age 65–74 scores 1, diabetes 1 and hypertension 1: a total of 3.
 SA2#medicine-u03-13-q5@2,3: Compare rate control and rhythm control in AF, and say when each is preferred. | Rate control slows ventricular response with beta-blockers, rate-limiting calcium-channel blockers or digoxin, accepting AF; it is first-line for most people. Rhythm control aims to restore sinus rhythm by cardioversion, drugs or ablation, and is preferred for AF with a reversible cause, heart failure caused by AF, new-onset AF, or persisting symptoms despite rate control. Anticoagulation decisions are based on stroke risk regardless of strategy. | Rate control methods ; Rhythm control methods ; Indications for rhythm control ; Anticoagulation independent of strategy
+Q: What does the pulse feel like in atrial fibrillation? | Irregularly irregular.
+Q: How is paroxysmal AF distinguished from persistent AF? | Paroxysmal AF stops within 7 days; persistent AF lasts over 7 days.
+Q: What defines permanent AF? | A decision not to try to restore sinus rhythm.
+Q: Name five causes or associations of AF. | Hypertension, ischaemic and valvular heart disease, heart failure, alcohol, thyrotoxicosis, obesity, sleep apnoea and sepsis.
+Q: How is unstable AF managed? | Emergency help and electrical cardioversion following the Resuscitation Council UK algorithm.
+Q: Which CHA2DS2-VASc items score 2 points? | Age 75 or over and previous stroke, TIA or thromboembolism.
+Q: Which score does NICE NG196 use to assess bleeding risk in AF? | The ORBIT score.
+Q: What is the role of aspirin alone for stroke prevention in AF? | It is not recommended.
+Q: When is digoxin used for rate control in AF? | In sedentary people or in combination with other rate-control drugs.
+Q: What is required before elective cardioversion of AF lasting over 48 hours? | Anticoagulation for at least 3 weeks, or a TOE to exclude thrombus.
 
 ## Bradyarrhythmias and heart block
 LV: Clinical · Application
@@ -633,6 +763,16 @@ M2#medicine-u03-14-q2@2: An ECG shows a constant PR interval with occasional P w
 M3#medicine-u03-14-q3@3: A fit 22-year-old runner has a resting heart rate of 44/min in sinus rhythm and no symptoms. What is the best response? | Reassure: this is likely physiological sinus bradycardia, provided the history and ECG are otherwise normal | Arrange an urgent permanent pacemaker | Give atropine immediately | Admit for continuous monitoring as an emergency | Athletic training increases vagal tone; asymptomatic sinus bradycardia with a normal ECG doesn't need treatment.
 TF1#medicine-u03-14-q4@1: In complete heart block, P waves and QRS complexes occur independently. | true | No atrial impulses reach the ventricles, so an escape rhythm beats independently of the atria.
 SA2#medicine-u03-14-q5@2,3: Explain why Mobitz II block is more dangerous than Mobitz I. | Mobitz I usually reflects AV nodal disease, often caused by vagal tone or drugs, and rarely progresses to complete block. Mobitz II reflects disease below the AV node in the His–Purkinje system, can progress suddenly to complete heart block, and any escape rhythm is slow and unreliable, risking asystole. Mobitz II is therefore an indication for specialist assessment and usually pacing. | Mobitz I nodal and benign ; Mobitz II infranodal ; Progression to complete block ; Risk of asystole and pacing
+Q: Name four causes of sinus bradycardia besides athletic training. | Rate-slowing drugs, hypothyroidism, hypothermia and raised intracranial pressure.
+Q: What features characterise sick sinus syndrome? | Sinus pauses, sinoatrial block and often alternating bradycardia and tachycardia.
+Q: Where is the conduction disease in Mobitz II block? | Below the AV node.
+Q: What escape rhythm occurs in complete heart block? | A slow junctional or ventricular escape rhythm.
+Q: Name the reversible causes of AV block to check for. | Rate-slowing drugs, hyperkalaemia, hypothyroidism and inferior myocardial infarction.
+Q: Why does heart block after inferior MI often recover? | The right coronary artery usually supplies the AV node, so the block is often transient.
+Q: What is the initial drug treatment for bradycardia with adverse features? | Atropine, followed by further drugs or pacing with expert help.
+Q: Name the features indicating risk of asystole in bradycardia. | Recent asystole, Mobitz II, complete heart block with broad QRS, or a ventricular pause over 3 seconds.
+Q: What does a broad-complex escape rhythm in complete heart block indicate? | A ventricular escape rhythm with a risk of asystole.
+Q: What long-term treatment is usually needed for symptomatic complete heart block? | A permanent pacemaker.
 
 ## Tachyarrhythmias
 LV: Clinical · Application
@@ -680,6 +820,16 @@ M2#medicine-u03-15-q2@2: A patient with tachycardia at 170/min is hypotensive an
 M3#medicine-u03-15-q3@3: A 40-year-old with known WPW has an irregular broad-complex tachycardia at 220/min. What should be avoided? | AV-nodal blocking drugs such as adenosine, verapamil or digoxin | Calling for expert cardiology help | Assessing for adverse features | Continuous ECG monitoring | In pre-excited AF, blocking the AV node can increase conduction down the accessory pathway and precipitate VF.
 TF1#medicine-u03-15-q4@1: A broad-complex tachycardia of uncertain origin should be treated as ventricular tachycardia. | true | Assuming VT is safer; misdiagnosing VT as SVT and giving the wrong drug can be dangerous.
 SA2#medicine-u03-15-q5@2,3: Describe the initial assessment and management of a patient with a tachycardia, following the RCUK approach. | Assess using ABCDE, call for help, attach monitoring and record a 12-lead ECG. Check for a pulse; if absent, follow the cardiac arrest algorithm. Look for adverse features (shock, syncope, myocardial ischaemia, heart failure); if present, give synchronised DC cardioversion with sedation and expert help. If stable, classify by QRS width and regularity: for regular narrow-complex, try vagal manoeuvres then adenosine with ECG recording; for broad-complex, seek expert help and treat as VT if unsure. | ABCDE, help and ECG ; Pulse check ; Adverse features and cardioversion ; Stable treatment by QRS type
+Q: Name the regular narrow-complex tachycardias. | Sinus tachycardia, AVNRT, AVRT and atrial flutter with regular block.
+Q: Name the causes of an irregular broad-complex tachycardia. | AF with bundle branch block, pre-excited AF (WPW) and polymorphic VT such as torsades de pointes.
+Q: What is the typical rate range of AVNRT? | 150–250 per minute.
+Q: Where are atrial flutter waves best seen? | In the inferior leads, as a sawtooth pattern.
+Q: What does AVRT use that AVNRT does not? | An accessory pathway.
+Q: Which ECG features in sinus rhythm suggest Wolff–Parkinson–White syndrome? | A short PR interval and a delta wave (slurred QRS upstroke).
+Q: Which ECG features support VT in a broad-complex tachycardia? | AV dissociation, fusion beats and capture beats.
+Q: Which vagal manoeuvre is more effective, according to the REVERT trial? | The modified Valsalva manoeuvre.
+Q: How should adenosine be given for SVT? | With continuous ECG recording, after vagal manoeuvres fail.
+Q: Why are AV-nodal blocking drugs dangerous in pre-excited AF? | They can speed conduction down the accessory pathway and cause VF.
 
 ## Hypertension
 LV: Clinical · Application
@@ -730,6 +880,16 @@ M2#medicine-u03-16-q2@2: A 45-year-old man of Black African family origin withou
 M3#medicine-u03-16-q3@3: A 50-year-old has clinic BP 192/124 with headache and blurred vision; fundoscopy shows papilloedema. What is needed? | Same-day specialist referral for suspected accelerated hypertension | ABPM over the next week before deciding | Lifestyle advice and review in a month | Start a single drug and review in 4 weeks | Severe hypertension with papilloedema suggests accelerated hypertension, which needs same-day referral.
 MATCH1#medicine-u03-16-q4@1: Match each reading pattern to its NICE category. | Clinic 150/92, ABPM 140/88 = Stage 1 ; Clinic 168/104, ABPM 156/98 = Stage 2 ; Clinic 184/110 = Severe ; Clinic 148/92, ABPM 128/80 = White-coat effect | Staging uses both clinic and out-of-clinic readings; severe hypertension is defined on clinic readings alone.
 SA2#medicine-u03-16-q5@2,3: Explain the stepwise drug treatment of hypertension in NICE NG136 and why the first choice depends on age and ethnicity. | Step 1 is an ACE inhibitor or ARB for people with type 2 diabetes or under 55 and not of Black African or African-Caribbean origin, and a calcium-channel blocker for those 55 or over or of Black African or African-Caribbean origin. This reflects evidence that older and Black patients often have lower renin levels and respond better to calcium-channel blockers. Step 2 adds the other or a thiazide-like diuretic; step 3 combines all three; step 4 adds spironolactone or another agent with specialist advice. | Step 1 choices ; Reason: renin and response ; Steps 2 and 3 ; Step 4 resistant hypertension
+Q: In which clinic BP range does NICE offer ABPM to confirm hypertension? | Between 140/90 and 180/120 mmHg.
+Q: What clinic and ABPM readings define stage 2 hypertension? | Clinic 160/100 or higher and ABPM or home average 150/95 or higher.
+Q: What clinic readings define severe hypertension? | Systolic 180 or higher, or diastolic 120 or higher.
+Q: When should severe hypertension be referred the same day? | With retinal haemorrhage or papilloedema, life-threatening symptoms or suspected phaeochromocytoma.
+Q: Which investigations look for target organ damage in hypertension? | Urine albumin–creatinine ratio, dipstick for haematuria, renal function, HbA1c, lipids, fundoscopy and a 12-lead ECG.
+Q: When should secondary causes of hypertension be considered? | In people under 40, or with resistant hypertension, hypokalaemia or other clues.
+Q: When are antihypertensive drugs offered for stage 1 hypertension? | Under 80 with target organ damage, cardiovascular or renal disease, diabetes or QRISK3 of 10% or more.
+Q: What is NICE step 3 in hypertension treatment? | ACE inhibitor or ARB plus calcium-channel blocker plus thiazide-like diuretic.
+Q: What is considered at step 4 if potassium is 4.5 mmol/L or less? | Low-dose spironolactone, after checking adherence and confirming with ABPM.
+Q: What is the clinic BP target for people aged 80 and over? | Below 150/90 mmHg.
 
 ## Peripheral arterial disease and aortic aneurysm
 LV: Clinical · Application
@@ -778,6 +938,16 @@ M2#medicine-u03-17-q2@2: An AAA on surveillance measures 5.6 cm. What should hap
 M3#medicine-u03-17-q3@3: A 74-year-old with diabetes has a foot ulcer and rest pain, but an ABPI of 1.4. What is the best interpretation? | Calcified arteries may give a falsely high ABPI; assess with toe pressures or duplex and refer urgently | The high ABPI rules out PAD, so the pain must be neuropathic | ABPI above 1.3 proves the arteries are healthy and wide | No action is needed, since ulcers in diabetes always heal | Incompressible vessels mask ischaemia; rest pain and ulceration suggest limb-threatening ischaemia needing urgent vascular review.
 NUM1#medicine-u03-17-q4@1: A patient's highest ankle systolic pressure is 70 mmHg and highest brachial systolic pressure 140 mmHg. What is the ABPI? | 0.5 | 1% | ratio | ABPI = ankle ÷ brachial = 70 ÷ 140 = 0.5, indicating significant PAD.
 SA2#medicine-u03-17-q5@2,3: Describe the presentation of a ruptured abdominal aortic aneurysm and the immediate response. | Sudden severe abdominal, back or flank pain, collapse or syncope, hypotension and tachycardia, and sometimes a pulsatile abdominal mass, often in an older male smoker. It may be mistaken for renal colic. The response is to call for emergency help immediately, assess using ABCDE, involve senior and vascular surgical teams urgently, and follow local major haemorrhage and ruptured AAA pathways. | Pain and collapse ; Shock signs and pulsatile mass ; Mimics such as renal colic ; Emergency escalation
+Q: What is chronic limb-threatening ischaemia? | Rest pain (often at night, eased by hanging the leg down), ulcers or gangrene.
+Q: List the 6 Ps of acute limb ischaemia. | Pain, pallor, pulselessness, paraesthesia, paralysis and perishing cold.
+Q: How is the ABPI calculated? | Highest ankle systolic pressure divided by highest brachial systolic pressure.
+Q: What can be used instead of ABPI when arteries are calcified? | Toe pressures or duplex ultrasound.
+Q: What is first-line treatment for intermittent claudication under NICE CG147? | A supervised exercise programme.
+Q: What secondary prevention is offered in peripheral arterial disease? | Stopping smoking, antiplatelet therapy, statin and control of blood pressure and diabetes.
+Q: What diameter defines an abdominal aortic aneurysm? | 3.0 cm or more.
+Q: Name the risk factors for abdominal aortic aneurysm. | Age, male sex, smoking, family history and hypertension.
+Q: How often is an AAA of 4.5–5.4 cm scanned? | Every 3 months.
+Q: Besides size of 5.5 cm or more, what prompts vascular referral of an AAA? | Growth over 1 cm a year or symptoms.
 
 ## Venous thromboembolism
 LV: Clinical · Application
@@ -824,4 +994,14 @@ M2#medicine-u03-18-q2@2: A patient has a PE Wells score of 6. What does NICE rec
 M3#medicine-u03-18-q3@3: A man with a first unprovoked PE has completed 3 months of anticoagulation and has low bleeding risk. What is the best approach? | Discuss continuing anticoagulation, as recurrence risk after unprovoked VTE is higher | Stop anticoagulation, as 3 months is always enough | Switch to aspirin alone indefinitely | Repeat a CTPA to decide | NICE advises considering extended treatment after unprovoked VTE, balancing recurrence and bleeding risk with the patient.
 TF1#medicine-u03-18-q4@1: A raised D-dimer confirms a diagnosis of pulmonary embolism. | false | D-dimer is non-specific; a raised result needs imaging, while a negative result in low-probability patients helps exclude VTE.
 SA2#medicine-u03-18-q5@2,3: Outline NICE's diagnostic pathway for suspected pulmonary embolism. | Assess clinical features and consider PERC if suspicion is low. Calculate the two-level PE Wells score. If PE is likely (score over 4), arrange immediate CTPA, giving interim anticoagulation if there is a delay. If unlikely, do a D-dimer; if negative, consider an alternative diagnosis; if positive, arrange CTPA. Escalate immediately if the patient is unstable. | Clinical assessment and PERC ; Wells score likely pathway ; Unlikely pathway with D-dimer ; Escalation for instability
+Q: Name three factors causing stasis in Virchow's triad. | Immobility, long journeys and surgery.
+Q: Name the hypercoagulable states listed in Virchow's triad. | Cancer, pregnancy, oestrogen and thrombophilia.
+Q: What are the clinical features of DVT? | Unilateral calf or leg swelling, pain, tenderness along the deep veins and warmth.
+Q: What are the clinical features of PE? | Sudden breathlessness, pleuritic chest pain, haemoptysis, tachycardia and hypoxia; collapse if massive.
+Q: What does NICE recommend when the DVT Wells score is 2 or more? | Proximal leg vein ultrasound within 4 hours, or D-dimer and interim anticoagulation if not possible.
+Q: What is the PERC rule used for? | Avoiding testing for PE where clinical suspicion is low.
+Q: Why is D-dimer not specific for VTE? | It rises with age, infection, pregnancy, cancer and surgery.
+Q: Which anticoagulants does NICE recommend first-line for most patients with VTE? | Apixaban or rivaroxaban.
+Q: What treatment is considered for massive PE with haemodynamic instability? | Systemic thrombolysis, with senior help.
+Q: When should longer anticoagulation beyond 3 months be considered? | For unprovoked VTE, balancing recurrence and bleeding risk.
 `;
