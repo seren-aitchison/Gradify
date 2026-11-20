@@ -175,7 +175,10 @@ if (process.env.SERVE_ONLY) { serve().then(() => console.log(`stand-in Supabase 
   // 6. the AI tutor: expired session refreshed and retried; a sign-in that has ended; service failures
   const ask = async (q) => {
     await pb.goto(`${BASE}/lawgradify/course/#/lesson/u01-01`); await pb.waitForTimeout(2500);
-    await pb.fill("#co-askq", q); await pb.click(".co-askform button"); await pb.waitForTimeout(1500);
+    await pb.fill("#co-askq", q); await pb.click(".co-askform button");
+    // wait for the reply itself rather than a fixed time: on a slow machine (CI) it can take more than a second or
+    // two, and reading early sees "Thinking…"
+    await pb.waitForFunction(() => { const t = document.querySelector(".co-askout")?.innerText || ""; return t.trim() && !/Thinking/.test(t); }, null, { timeout: 10000 }).catch(() => {});
     return pb.locator(".co-askout").innerText();
   };
   check("Signed in, the tutor answers", /Stand-in answer/.test(await ask("What is law, in short?")));
