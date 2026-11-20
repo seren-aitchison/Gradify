@@ -78,6 +78,92 @@
    "course": "maths",
    "action": "enhanced",
    "findings": []
+  },
+  {
+   "lesson": "u07-08",
+   "changes": [
+    "LV A level · Fluency; EV",
+    "added NUM3 (normal meets curve again) and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-09",
+   "changes": [
+    "LV A level · Fluency; EV",
+    "added paragraph on nth-derivative patterns",
+    "added NUM3 and SA2 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-10",
+   "changes": [
+    "LV A level · Application; EV",
+    "added NUM2 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-11",
+   "changes": [
+    "LV A level · Application; EV",
+    "added NUM2, M3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-12",
+   "changes": [
+    "LV A level · Application; EV",
+    "added NUM2, M3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-13",
+   "changes": [
+    "LV A level · Application; EV",
+    "added NUM2, NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-14",
+   "changes": [
+    "LV A level · Problem solving; EV",
+    "added NUM2 and SA2 questions"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "M3#maths-u07-14-q3 is a recall question tagged at level 3; left unchanged."
+    }
+   ],
+   "course": "maths",
+   "action": "enhanced"
+  },
+  {
+   "lesson": "u07-15",
+   "changes": [
+    "LV A level · Application; EV",
+    "added NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
   }
  ],
  "notes": [
