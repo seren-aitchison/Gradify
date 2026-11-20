@@ -41,6 +41,16 @@ M2#art-u05-01-q2@2: How does an original print differ from a reproduction? | It 
 NUM2#art-u05-01-q3@2: An edition is numbered out of 75, and the artist keeps artist's proofs equal to about a tenth of the edition. Roughly how many artist's proofs is that, to the nearest whole number? | 8 | 0 | proofs | A tenth of 75 is 7.5, so about 8 artist's proofs.
 M3#art-u05-01-q4@3: A print is marked "AP" rather than a number. What does this indicate? | An artist's proof outside the numbered edition | A damaged impression | A reproduction poster | The final impression of the edition | Applying the standard result: AP stands for artist's proof.
 SA2#art-u05-01-q5@2,3: Explain how editions and proofs help collectors understand a print. | Numbering such as 23/40 shows that the impression belongs to a limited edition of forty, while the artist's pencil signature indicates approval. Proofs record the image's history: state proofs show stages of development, artist's proofs are a small set kept by the artist, and the bon à tirer is the approved standard. Together these tell collectors how many impressions exist and where a print fits in its making. | Numbering ; Signature ; Types of proof ; Rarity and history
+Q: What is an impression in printmaking? | A single print made by inking the matrix and pressing it against paper.
+Q: What is an original print? | A print whose image the artist designed specifically for the printmaking process and was involved in making.
+Q: What is a reproduction, as opposed to an original print? | A photomechanical copy of an artwork made in another medium, such as a poster of a painting.
+Q: How do artists usually sign a print? | In pencil, below the image.
+Q: Why is a matrix sometimes cancelled after an edition? | To prevent further printing.
+Q: What are state proofs? | Trial impressions showing the image at stages as the artist develops it.
+Q: Roughly how many artist's proofs are usually made? | Around a tenth of the edition.
+Q: What is a printer's proof? | An impression that may be given to the printer who helped make the edition.
+Q: Why is it a mistake to read a print's number as its printing order? | Numbering is often done after printing and may not match the order impressions were pulled.
+Q: When did numbering and signing limited editions become standard? | In the late nineteenth and twentieth centuries.
 
 ## Relief printing: woodcut and linocut
 LV: Introductory · Application
@@ -81,6 +91,16 @@ M2#art-u05-02-q2@2: Which artist made the woodcut series The Apocalypse in 1498?
 M3#art-u05-02-q3@3: An artist cuts her name normally on a lino block. What will the print show? | The name reversed | The name printed correctly | No letters at all | The name upside down only | Applying the standard result: Relief prints are mirror images.
 MATCH1#art-u05-02-q4@2: Match each relief technique to its material. | Woodcut = Plank grain ; Wood engraving = End grain of boxwood ; Linocut = Linoleum ; Ukiyo-e = Woodblocks for colour prints | Each relief technique uses a different block or material.
 SA2#art-u05-02-q5@2,3: Explain the reduction method in relief printing and its implications for an edition. | In the reduction method, an artist prints the lightest colour from a block across the whole edition, then cuts away more of the block and prints the next colour on top, repeating until the darkest colour. Because the block is destroyed in the process, no further impressions can be made, so the edition size must be decided at the start and errors cannot be reprinted. | Progressive cutting ; Layered colours ; Block destroyed ; Fixed edition
+Q: In relief printing, which parts of the block are cut away? | The parts that should stay white.
+Q: Why must lettering be cut back to front on a relief block? | Relief prints come out reversed.
+Q: How can paper be pressed onto a relief block? | By hand, with a burnishing tool, or in a press.
+Q: What is a woodcut? | A relief print cut along the grain of a plank, giving bold lines and sometimes visible grain.
+Q: Who perfected wood engraving in the eighteenth century? | Thomas Bewick.
+Q: Why is linocut popular in schools? | Linoleum is soft and easy to carve.
+Q: What is ukiyo-e? | Japanese woodblock prints of the Edo period, which used many colour blocks and influenced European artists.
+Q: What did Picasso contribute to relief printing in the late 1950s? | Bold reduction linocuts.
+Q: Why is a reduction print edition limited by the method? | The block is progressively cut away between colours, so no more copies can be made afterwards.
+Q: Where was woodblock printing used before Europe? | In East Asia, centuries earlier.
 
 ## Intaglio: etching and engraving
 LV: Introductory · Application
@@ -122,6 +142,16 @@ M2#art-u05-03-q2@2: Which technique uses acid to bite lines into a plate? | Etch
 M3#art-u05-03-q3@3: Which technique did Goya use to create tonal areas in Los Caprichos? | Aquatint | Woodcut | Lithography | Monotype | Applying the standard result: Aquatint creates tone.
 MATCH2#art-u05-03-q4@2: Match each technique to its tool or material. | Engraving = Burin ; Etching = Acid and ground ; Drypoint = Needle raising a burr ; Aquatint = Resin dust | Tools define techniques.
 SA2#art-u05-03-q5@2,3: Compare engraving and etching as intaglio techniques. | In engraving, the artist cuts lines directly into the plate with a burin, requiring strength and control and producing crisp, swelling lines. In etching, the artist draws freely with a needle through an acid-resistant ground, and acid bites the exposed lines; varying the biting time changes line depth and darkness. Etching allows a looser, more drawing-like line than engraving. | Engraving method ; Engraved line quality ; Etching method ; Freedom of line
+Q: Which metals are usually used for intaglio plates? | Copper or zinc.
+Q: How is an intaglio plate inked? | Ink is pushed into the grooves and the surface is wiped clean.
+Q: What kind of press does intaglio need? | A roller press applying great pressure.
+Q: What kind of line does engraving with a burin create? | Crisp, swelling lines, as in Dürer's Melencolia I.
+Q: What is drypoint? | Lines scratched with a needle that raise a burr, giving soft, velvety lines that wear quickly.
+Q: How is aquatint tone created? | Resin dust is melted onto the plate, and bitten areas print as tone.
+Q: What is mezzotint? | The plate is roughened all over, then smoothed to create lights, producing rich darks.
+Q: How does an etcher get lines of different darkness? | By biting some areas in acid for longer than others.
+Q: Why is intaglio less suited to home printing than relief? | It needs a powerful press.
+Q: Why is confusing intaglio with relief a mistake? | In intaglio the ink is held in the grooves, not on the raised surface.
 
 ## Lithography
 LV: Introductory · Application
@@ -163,6 +193,16 @@ M2#art-u05-04-q2@2: Which artist made famous colour lithograph posters in 1890s 
 M3#art-u05-04-q3@3: A colour lithograph shows blurred edges where colours should meet. What has gone wrong? | The plates were poorly registered | The stone was too smooth | The ink was too oily for water | The print was not signed | Applying the standard result: Registration aligns colours.
 TF1#art-u05-04-q4@1: In lithography, the image is cut into the stone. | false | Lithography is planographic: the image is drawn on a flat surface.
 SA2#art-u05-04-q5@2,3: Explain how the chemistry of lithography makes printing possible. | The artist draws with greasy crayon or ink on a flat stone or plate, which is then treated to fix the image. When the surface is dampened, water is absorbed by the bare areas but repelled by the greasy drawing. Oily ink rolled across the surface sticks only to the greasy image, not the wet areas, so the drawing alone transfers to paper in the press. | Greasy drawing ; Fixing ; Water and ink repel ; Transfer
+Q: What does "lithography" mean? | Stone drawing.
+Q: What does the artist draw with in lithography? | Greasy crayons or ink on smooth limestone or a prepared metal plate.
+Q: How is a lithographic image fixed before printing? | The surface is treated with a gum arabic and acid solution.
+Q: Why does ink stick only to the drawing in lithography? | The dampened bare areas hold water, which repels the oily ink.
+Q: How are colour lithographs made? | With separate stones or plates for each colour, carefully aligned (registration).
+Q: What is registration in printmaking? | Aligning separate colour layers accurately.
+Q: What did lithography let artists do with line? | Draw directly with a crayon, capturing a sketchy line.
+Q: What is offset lithography? | Lithography that transfers the image via a rubber blanket; it became the main commercial printing method of the twentieth century.
+Q: Why is it wrong to think lithography involves cutting the stone? | It is planographic: the image is drawn on a flat surface.
+Q: How can overlapping colour plates create new colours? | Overlapping yellow, red and blue creates oranges, purples and greens.
 
 ## Screen printing
 LV: Introductory · Application
@@ -203,6 +243,16 @@ M2#art-u05-05-q2@2: How is a photographic stencil made? | By exposing light-sens
 M3#art-u05-05-q3@3: Which artist used photographic silkscreens to repeat images of Marilyn Monroe? | Andy Warhol | Henri de Toulouse-Lautrec | Albrecht Dürer | Edgar Degas | Applying the standard result: Warhol made the Marilyn Diptych in 1962.
 SEQ1#art-u05-05-q4@2: Put the steps of screen printing in order. | Prepare the stencil on the mesh ; Place paper or fabric under the screen ; Add ink to the screen ; Pull ink across with a squeegee ; Lift the screen and dry the print | Ink is pushed through the stencil.
 SA2#art-u05-05-q5@2,3: Explain why screen printing appealed to Pop artists such as Andy Warhol. | Screen printing with photographic stencils allowed artists to reproduce images from newspapers, adverts and film stills quickly and repeatedly, in bold flat colours. This suited Pop Art's interest in mass media, consumer culture and celebrity: Warhol's repeated, slightly imperfect silkscreen images echoed mass production while questioning originality and the role of the artist. | Photographic images ; Repetition ; Mass culture ; Originality
+Q: What is screen printing? | Printing by forcing ink through a stencilled mesh with a squeegee.
+Q: What does the stencil do in screen printing? | It blocks some areas of the mesh so ink passes only through the open areas.
+Q: What is a cut stencil? | Paper or film cut by hand and attached to the screen.
+Q: What is blocking out in screen printing? | Painting areas of the mesh with a filler.
+Q: How is a photographic stencil made? | The screen is coated with light-sensitive emulsion and exposed through a transparent positive; unexposed areas wash out.
+Q: What does a photographic stencil allow? | Photographs and fine detail to be printed.
+Q: What surfaces is screen printing used for? | Textiles, posters, signs and packaging.
+Q: What did Warhol explore by repeating media images in the Marilyn Diptych (1962)? | Celebrity and mass production.
+Q: Why must each screen-printed colour be registered? | Each colour normally needs a separate screen, which must align.
+Q: When did screen printing become an important fine art medium? | In the 1960s, through Pop Art.
 
 ## Monoprinting
 LV: Introductory · Application
@@ -244,6 +294,16 @@ M2#art-u05-06-q2@2: What is the subtractive monotype method? | Covering a plate 
 M3#art-u05-06-q3@3: Which artist reworked monotype ghost prints with pastel? | Edgar Degas | Andy Warhol | Thomas Bewick | Alois Senefelder | Applying the standard result: Degas combined monotype and pastel.
 MATCH1#art-u05-06-q4@2: Match each monotype method to its description. | Additive = Painting the image onto the plate ; Subtractive = Wiping ink away to make lights ; Trace = Drawing on the back of paper over ink ; Ghost = A faint second impression | Each monotype method applies or removes ink in a different way.
 SA2#art-u05-06-q5@2,3: Explain what makes monotype attractive to artists despite producing only one print. | Monotype allows artists to work directly and spontaneously on a smooth surface, combining the painterly freedom of brushwork and wiping with the distinctive textures and softness of a printed transfer. Because there is no fixed matrix, it encourages experimentation, and ghost impressions can be reworked in other media, as Degas did, making each print a unique work. | Directness ; Print textures ; Experimentation ; Unique works
+Q: What is a monotype? | A unique print made by painting or drawing with ink on a smooth, unworked surface and transferring it to paper.
+Q: What surfaces are used for monotypes? | Smooth, unworked surfaces such as glass, metal or acrylic.
+Q: What is the additive monotype method? | Painting the image onto the plate with ink or paint, then printing.
+Q: What is a trace monotype? | Paper laid on an inked surface is drawn on from the back, so ink transfers where you press.
+Q: How did Degas use monotype? | He made hundreds in the 1870s and 1880s, sometimes reworking ghost impressions with pastel.
+Q: What qualities does monotype offer artists? | Painterly effects, spontaneity and experimentation.
+Q: Why is monotype popular in schools? | It needs little equipment.
+Q: What tool can be used to press paper onto an inked plate by hand? | A baren.
+Q: Why is calling a limited edition print a monotype a mistake? | Monotypes are unique, single impressions.
+Q: What tools can wipe lights from an inked plate in a subtractive monotype? | Rags, cotton buds and a brush handle.
 
 ## Carving
 LV: Introductory · Application
@@ -284,6 +344,16 @@ M2#art-u05-07-q2@2: What did direct carvers such as Hepworth value? | Truth to m
 M3#art-u05-07-q3@3: When carving wood, why must the sculptor consider the grain? | It affects how the wood splits and how the form looks | Grain makes the wood heavier | Grain has no effect on carving | Grain changes the wood's colour completely | Applying the standard result: Grain guides cutting.
 TF1#art-u05-07-q4@1: Carving is an additive process. | false | Carving removes material, making it subtractive.
 SA2#art-u05-07-q5@2,3: Explain the idea of "truth to materials" in direct carving. | Truth to materials is the principle that a sculpture should respect and reveal the natural qualities of its material, such as the grain of wood, the colour and hardness of stone, rather than disguising them. Direct carvers like Hepworth and Moore worked straight into the block without detailed models, letting the material's character shape the final form, so the sculpture and its material are inseparable. | Respecting qualities ; Revealing grain and colour ; Direct working ; Form shaped by material
+Q: Why are carving mistakes hard to correct? | Removed material cannot be replaced.
+Q: Name three stones used for carving. | Any three: marble, limestone, alabaster, granite.
+Q: How did Michelangelo describe carving his figures? | As freeing forms imprisoned in the marble.
+Q: What are point, claw and flat chisels used for in stone carving? | Point chisels rough out, claw chisels shape and flat chisels finish.
+Q: Why does grain matter in wood carving? | It affects how the wood splits and how the form looks.
+Q: How were models copied into stone in the past? | With pointing machines.
+Q: What is direct carving? | Working straight into the material without a detailed model.
+Q: Which artists promoted direct carving in the early twentieth century? | Constantin Brâncuși, Henry Moore and Barbara Hepworth.
+Q: What do Hepworth's pierced forms explore? | Inner space and the relationship with landscape.
+Q: How might a carver respond when wood grain tears, following truth to materials? | Adapt the form rather than forcing it.
 
 ## Modelling
 LV: Introductory · Application
@@ -326,6 +396,16 @@ M2#art-u05-08-q2@2: Why are larger clay sculptures often hollowed? | So they dry
 M3#art-u05-08-q3@3: Which sculptor's modelled surfaces kept visible marks and lumps for energy? | Auguste Rodin | Michelangelo | Barbara Hepworth | Andy Warhol | Applying the standard result: Rodin's surfaces are lively.
 MATCH1#art-u05-08-q4@2: Match each term to its meaning. | Armature = Internal support ; Terracotta = Fired clay ; Wax = Material for lost-wax casting ; Modelling tool = Shapes soft material | These terms relate to modelling.
 SA2#art-u05-08-q5@2,3: Compare modelling and carving as sculptural processes. | Carving is subtractive: the sculptor removes stone or wood and cannot easily replace mistakes, so forms are planned carefully and shaped by the block's limits. Modelling is additive: clay or wax is built up and changed freely, often over an armature, allowing experimentation and expressive surfaces. Modelled works may be fired or cast, while carved works are usually finished in the original material. | Carving subtractive ; Planning and limits ; Modelling additive ; Flexibility and finishing
+Q: What materials are used in modelling? | Soft materials such as clay, wax or plasticine.
+Q: Why does modelling allow more changes than carving? | Material can be added or removed freely while it is soft.
+Q: What can happen to a finished modelled work? | It may be kept as it is, fired as terracotta, or used as an original for casting.
+Q: What is terracotta? | Fired, unglazed clay.
+Q: How must clay be handled while working and before firing? | Kept damp while working, then dried slowly and fired.
+Q: Why is wax useful in modelling? | It can be warmed and shaped, and it is used in lost-wax casting.
+Q: Name three modelling tools. | Any three: wire loops, wooden modelling tools, scrapers, fingers.
+Q: Why should a clay sculpture with a metal armature not be fired? | The armature prevents safe firing, so such works are usually cast.
+Q: How did Rodin's modelling give surfaces energy? | He left visible fingerprints and lumps, then had works cast in bronze.
+Q: What do Giacometti's rough, elongated figures suggest? | Fragility.
 
 ## Casting
 LV: Introductory · Application
@@ -369,6 +449,16 @@ M2#art-u05-09-q2@2: What is patination? | Treating a metal surface to change its
 M3#art-u05-09-q3@3: Which artist is known for casting the spaces inside and around objects? | Rachel Whiteread | Michelangelo | Andy Warhol | Edgar Degas | Applying the standard result: Whiteread casts negative space.
 SEQ1#art-u05-09-q4@2: Put the stages of lost-wax casting in order. | Make the wax model with sprues ; Cover it in investment ; Heat to melt out the wax ; Pour in molten bronze ; Break the mould and finish the surface | The wax is lost before the metal is poured.
 SA2#art-u05-09-q5@2,3: Explain why casting is important in the history of sculpture. | Casting allows sculptors to translate forms modelled in soft clay or wax into durable materials such as bronze, and to produce several copies from one original. The lost-wax process, used for thousands of years from the Benin court to Rodin, preserves fine detail. Modern artists have extended casting, as Rachel Whiteread did by casting empty spaces, making the process itself meaningful. | Durability ; Multiples ; Detail and tradition ; Modern uses
+Q: What is casting? | Making a copy of a form by pouring a liquid material into a mould and letting it harden.
+Q: What is the difference between a waste mould and a piece or rubber mould? | A waste mould is broken to release a single cast; piece and flexible rubber moulds can be reused for several casts.
+Q: What are sprues in lost-wax casting? | Wax rods that become channels for molten metal and escaping air.
+Q: What is the investment in lost-wax casting? | The heat-resistant mould that covers the wax original.
+Q: What happens after a bronze cools in lost-wax casting? | The investment is broken away, sprues are cut off and the surface is finished by chasing and patination.
+Q: What is patination? | Treating a metal surface, often chemically, to change its colour.
+Q: Who produced renowned lost-wax brass castings from around the sixteenth century? | The Benin court artists of West Africa.
+Q: Why does casting matter for modelled sculpture? | It translates a clay or wax original into a durable material such as bronze.
+Q: Why is it a mistake to assume sculptors pour their own bronzes? | Many artists work with specialist foundries, as Rodin did.
+Q: How does Antony Gormley use casting? | He casts from his own body.
 
 ## Construction and assemblage
 LV: Introductory · Application
@@ -412,6 +502,16 @@ M2#art-u05-10-q2@2: Which work is a famous readymade? | Duchamp's Fountain (1917
 M3#art-u05-10-q3@3: Why did Louise Nevelson paint her assemblages a single colour? | To unify diverse found objects into one work | To hide that they were sculptures | To make them lighter to carry | Because paint was cheap | Applying the standard result: A single colour unifies parts.
 MATCH1#art-u05-10-q4@2: Match each artist to their approach. | Picasso = Cardboard constructions ; Duchamp = Readymades ; Nevelson = Painted wooden assemblages ; Caro = Welded steel sculpture | Each artist built sculpture differently.
 SA2#art-u05-10-q5@2,3: Explain how construction and assemblage changed sculpture in the twentieth century. | Instead of carving or modelling a solid mass, artists began building sculptures from separate parts and found objects. Picasso's Guitar created form from planes and space, Constructivists used industrial materials, and Duchamp's readymades questioned whether choosing an object could make it art. Later, Nevelson and Caro developed assemblage and welded construction, widening sculpture's materials, forms and meanings. | Building not carving ; Open forms ; Readymades ; Expanded materials
+Q: What is construction in sculpture? | Making sculpture by joining separate pieces of material, by welding, gluing, nailing or bolting.
+Q: What is assemblage? | Sculpture made by combining found objects and materials.
+Q: How did construction and assemblage break with tradition? | They abandoned carving and modelling, allowing open, spatial forms.
+Q: How did Picasso's Guitar (1912) build form? | From flat planes and open space in cardboard, string and wire.
+Q: What materials did Russian Constructivists such as Tatlin use? | Industrial materials, for abstract constructions.
+Q: What did Duchamp's readymades propose? | That an artist's choice could make an everyday object into art.
+Q: How did David Smith and Anthony Caro work? | They welded steel into abstract sculptures placed directly on the ground.
+Q: Why do found objects matter in assemblage? | They bring meanings and associations that become part of the work.
+Q: Who do some historians suggest may have conceived Fountain? | Elsa von Freytag-Loringhoven, though most still attribute it to Duchamp.
+Q: Why is it a mistake to see the readymade as just shock? | Duchamp raised serious questions about what makes something art.
 
 ## Installation art
 LV: Intermediate · Application
@@ -454,6 +554,16 @@ M2#art-u05-11-q2@2: Which work by Tracey Emin was shortlisted for the Turner Pri
 M3#art-u05-11-q3@3: Why are many installations hard to judge from photographs? | They depend on the viewer's presence in the space | Photographs are not allowed in galleries | They are always invisible | They are too small to photograph | Applying the standard result: Experience is central.
 MATCH1#art-u05-11-q4@2: Match each artist to an installation. | Yayoi Kusama = Infinity Mirror Rooms ; Olafur Eliasson = The Weather Project ; Kurt Schwitters = Merzbau ; Tracey Emin = My Bed | Each is a landmark installation.
 SA2#art-u05-11-q5@2,3: Explain why the viewer's experience is central to installation art. | Installations surround viewers with space, light, sound and objects, so the work is encountered physically as viewers move through it, rather than seen from outside. Their perceptions, feelings and even reflections become part of the piece, as in Kusama's mirror rooms or Eliasson's artificial sun, which is why such works are often temporary and hard to capture in photographs. | Surrounding space ; Movement and senses ; Viewer as part ; Limits of documentation
+Q: What is installation art? | Work that transforms a space, often a whole room, which the viewer enters and experiences.
+Q: What does Claire Bishop identify as installation's distinctive feature? | The viewer's physical presence within the work.
+Q: What is an early example of installation art? | Kurt Schwitters's Merzbau in his Hanover home, begun in the 1920s.
+Q: What did 1960s and 1970s environments and happenings contribute to installation? | They made the viewer's experience central.
+Q: When did installation art become prominent in museums? | From the 1990s.
+Q: How do Kusama's Infinity Mirror Rooms work? | Mirrors and lights create seemingly endless spaces in which viewers see themselves repeated.
+Q: What did Tracey Emin's My Bed (1998) present? | Her unmade bed and personal debris.
+Q: What did Ilya Kabakov's installations explore? | Immersive rooms telling stories of Soviet life.
+Q: What does ephemeral mean? | Lasting only a short time.
+Q: What criticism is made of some installations? | That they prioritise spectacle over meaning.
 
 ## Site-specific and land art
 LV: Intermediate · Evaluation
@@ -495,6 +605,16 @@ M2#art-u05-12-q2@2: Why would moving a site-specific work change it? | Its meani
 M3#art-u05-12-q3@3: A town proposes a large public sculpture without consulting residents. What issue does Tilted Arc highlight? | Public art can provoke conflict without community support | Public art never causes controversy | Artists must always choose remote sites | Steel sculptures are banned | Applying the standard result: Consultation matters.
 MATCH2#art-u05-12-q4@2: Match each artist to their work. | Robert Smithson = Spiral Jetty ; Richard Long = A Line Made by Walking ; Antony Gormley = Angel of the North ; Richard Serra = Tilted Arc | These are key site-specific works.
 SA2#art-u05-12-q5@2,3: Evaluate the debate over the removal of Richard Serra's Tilted Arc. | Serra argued that Tilted Arc was site-specific, so removing it destroyed it, and defended artistic freedom. Office workers complained that it blocked the plaza and was unwelcoming, and the government removed it in 1989. The case raises questions about who public space is for, the need for consultation, and whether commissioned art should remain if the community rejects it. | Serra's argument ; Public objections ; Removal ; Wider questions
+Q: What is site-specific art? | Art made for a particular location that draws meaning from its history, landscape, architecture or community.
+Q: What did Richard Serra say about removing Tilted Arc? | That to remove the work was to destroy it.
+Q: When did land art emerge and why? | In the late 1960s, partly as a challenge to gallery-based art.
+Q: What is Spiral Jetty (1970)? | Robert Smithson's coil of rock and earth extending into Utah's Great Salt Lake, sometimes submerged.
+Q: What was Richard Long's A Line Made by Walking (1967)? | A path worn in grass by walking back and forth, recorded in a photograph.
+Q: What materials does Andy Goldsworthy use? | Leaves, ice and stone, in ephemeral works documented in photographs.
+Q: Why is the site of the Angel of the North (1998) significant? | It stands on a former colliery site near Gateshead, referring to the region's industrial past.
+Q: What questions do public sculptures raise? | Consultation, funding, maintenance and how communities identify with them.
+Q: Why is it a mistake to assume land art only exists in remote places? | Many site-specific and environmental works are in towns and public spaces.
+Q: Why would moving a site-specific work change it? | Its meaning depends on its location.
 
 ## Ceramics
 LV: Introductory · Application
@@ -537,6 +657,16 @@ M2#art-u05-13-q2@2: What does glaze add to ceramics? | Colour, texture and water
 NUM2#art-u05-13-q3@2: Earthenware is fired at about 1,100 °C and stoneware at about 1,250 °C. How many degrees hotter is the stoneware firing? | 150 | 0 | °C | 1,250 − 1,100 = 150 °C hotter.
 M3#art-u05-13-q4@3: Which ceramic artist won the Turner Prize in 2003? | Grayson Perry | Bernard Leach | Lucie Rie | Magdalene Odundo | Applying the standard result: Perry's pots explore identity.
 SA2#art-u05-13-q5@2,3: Describe the process of making a glazed ceramic object from clay. | The maker forms the object by hand-building, such as coiling or slabs, or by throwing on a wheel or slip casting. It is refined when leather-hard and dried completely. A bisque firing hardens it; then glaze is applied by dipping, brushing or spraying, and a second firing melts the glaze into a glassy surface that adds colour and makes the piece waterproof. | Forming ; Drying ; Bisque firing ; Glazing and second firing
+Q: What are ceramics? | Objects made from clay and hardened by firing.
+Q: At what temperature is earthenware fired, and what is it like? | Roughly 1,000 to 1,150 °C; porous unless glazed, often red or buff.
+Q: What is stoneware like? | Fired at around 1,200 to 1,300 °C, it is dense, strong and non-porous.
+Q: What is special about porcelain? | It is fine white clay fired at high temperatures that can be translucent when thin.
+Q: What stages does clay pass through before firing? | From soft and plastic to leather-hard, then bone-dry.
+Q: What is slip casting? | Pouring liquid clay into plaster moulds.
+Q: How can kiln atmosphere affect ceramics? | Atmosphere, such as reduction, changes glaze colours.
+Q: Who helped establish the studio pottery movement in Britain? | Bernard Leach, author of A Potter's Book (1940), drawing on Japanese traditions.
+Q: Why must clay be fully dried before firing? | Trapped moisture can turn to steam and crack or explode the piece.
+Q: How does Grayson Perry use ceramics? | He uses decorated pots to explore identity and society.
 
 ## Textiles and fibre art
 LV: Introductory · Application
@@ -581,6 +711,16 @@ M2#art-u05-14-q2@2: Which artist developed weaving as a modern art form at the B
 M3#art-u05-14-q3@3: Why have textiles often been undervalued as art in the West? | Associations with women's domestic labour and craft | Textiles cannot be displayed | They contain no imagery | They are always very small | Applying the standard result: Hierarchies ranked craft lower.
 MATCH1#art-u05-14-q4@2: Match each technique to its description. | Batik = Wax-resist dyeing ; Appliqué = Stitching shapes onto fabric ; Felting = Matting fibres together ; Embroidery = Decorative stitching | Each technique works fibres differently.
 SA2#art-u05-14-q5@2,3: Explain how contemporary artists use textiles to create meaning. | Artists choose textiles for their associations with home, the body, care, labour and tradition. Techniques such as quilting and embroidery link works to histories of women's craft and community, while large woven or fibre sculptures challenge the idea that textiles are only decorative or functional. The material itself becomes part of the message, as in Faith Ringgold's story quilts. | Associations ; Histories of craft ; Challenging hierarchies ; Material as meaning
+Q: What are knitting and crochet? | Techniques that loop yarn into fabric.
+Q: What is appliqué? | Layering and stitching fabric pieces onto a ground.
+Q: What is felting? | Matting fibres together with moisture, heat and friction.
+Q: What does the Bayeux Tapestry depict, and how long is it? | The Norman Conquest, in about 70 metres of stitched linen.
+Q: Name three textile traditions besides European embroidery. | Any three: Ghanaian kente cloth, Indian block-printed cottons, Japanese indigo dyeing, Gee's Bend quilts.
+Q: Why were textiles historically undervalued as art? | Partly because of their association with women's domestic labour.
+Q: Who created large woven sculptures in the 1960s and 1970s? | Magdalena Abakanowicz.
+Q: How did Faith Ringgold combine media? | She combined painting and quilting in story quilts.
+Q: What themes do contemporary fibre artists explore? | Identity, craft, labour and the body.
+Q: Why can choosing a quilt rather than canvas be part of a work's meaning? | It connects the work to traditions such as women's quilting and storytelling.
 
 ## Product and 3D design
 LV: Intermediate · Application
@@ -626,6 +766,16 @@ M2#art-u05-15-q2@2: Which designer set out ten principles of good design? | Diet
 M3#art-u05-15-q3@3: A phone case is attractive but breaks easily and cannot be recycled. Which design aspects need improving? | Durability and sustainability | Its colour only | Its brand name | Its packaging font | Applying the standard result: Good design lasts and minimises impact.
 SEQ1#art-u05-15-q4@2: Order the stages of the product design process. | Research users and context ; Write a brief and specification ; Generate ideas ; Develop and test prototypes ; Refine for manufacture | Design moves from research to production.
 SA2#art-u05-15-q5@2,3: Evaluate an everyday product using principles of good design. | I would assess whether it meets users' needs reliably (function), whether it is comfortable and accessible to different users (ergonomics and inclusive design), whether its form is simple and honest about how it works, as Rams advised, and whether it is durable, repairable and recyclable (sustainability). Weaknesses suggest improvements, such as easier controls or replaceable parts. | Function ; Ergonomics and inclusion ; Simplicity ; Sustainability
+Q: What happens at the research stage of product design? | Studying users' needs, existing products, materials and context.
+Q: What does a design brief and specification set out? | What the product must do and its constraints, such as cost and size.
+Q: Why is design described as iterative? | Testing leads back to improvement, repeating the cycle.
+Q: What is a prototype? | An early model used to test a design.
+Q: What did the Bauhaus (1919 to 1933) aim to unite? | Art, craft and industry.
+Q: Name a Bauhaus product design. | Marcel Breuer's tubular steel chairs.
+Q: Name three of Dieter Rams's principles of good design. | Any three: useful, understandable, honest, long-lasting, as little design as possible.
+Q: What is inclusive design? | Design that considers users of different ages and abilities.
+Q: How can product designers improve sustainability? | By choosing materials, designing for durability, repair and recycling, and considering the full life cycle.
+Q: Why is judging a product only on its looks a mistake? | Good design balances function, usability, durability and environmental impact.
 
 ## Architecture as an art
 LV: Intermediate · Evaluation
@@ -671,4 +821,14 @@ M2#art-u05-16-q2@2: Which building embodies Le Corbusier's five points of archit
 M3#art-u05-16-q3@3: A building looks beautiful but leaks and is hard to use. Which Vitruvian principles does it fail? | Firmness and commodity | Delight only | None of them | All three equally | Applying the standard result: It lacks strength and usefulness.
 MATCH2#art-u05-16-q4@2: Match each building to its style. | Salisbury Cathedral = Gothic ; Villa Savoye = Modernism ; Barbican Estate = Brutalism ; Sydney Opera House = Expressive modernism | Styles reflect their periods.
 SA2#art-u05-16-q5@2,3: Analyse a building of your choice using Vitruvius's principles. | Taking the Sydney Opera House: its firmness depends on complex precast concrete shells developed with engineers after years of problems. Its commodity has been debated, as the halls were compromised during construction, though it functions as a world-famous arts venue. Its delight is undeniable: its sail-like roofs on Sydney Harbour make it an iconic, expressive symbol of the city. | Firmness ; Commodity ; Delight ; Overall judgement
+Q: When did Vitruvius write about architecture? | In the first century BC.
+Q: What does venustas mean? | Delight or beauty, one of Vitruvius's three principles.
+Q: What features define Gothic cathedrals? | Pointed arches, ribbed vaults and flying buttresses, creating soaring, light-filled interiors.
+Q: What did Renaissance architects revive? | Classical proportion and symmetry.
+Q: Name two of Le Corbusier's five points as seen in Villa Savoye. | Any two: pilotis (columns), a free plan, ribbon windows.
+Q: What is Brutalism? | An architectural style using raw, exposed concrete, as in London's Barbican Estate.
+Q: Name two contemporary architectural examples from the lesson. | Jørn Utzon's Sydney Opera House (opened 1973) and Zaha Hadid's flowing forms.
+Q: What aspects should you consider when analysing a building? | Form, materials and structure, space and light, function and context, and meaning.
+Q: Why is judging a building only by its exterior a mistake? | Space, light, use and context matter as much as appearance.
+Q: Why is Vitruvius's De architectura significant? | It is the only major architectural treatise to survive from classical antiquity.
 `;

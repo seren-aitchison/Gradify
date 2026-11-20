@@ -43,6 +43,16 @@ NUM2#finance-u02-01-q2@2: A machine costs £30,000 plus reclaimable VAT of £6,0
 M2#finance-u02-01-q3@2: A café replaces its worn floor tiles with identical new tiles for £4,000. How should this be treated? | Revenue expenditure: it restores the original condition | Capital expenditure, because it is a large amount | Capital expenditure, because the tiles last several years | A capital receipt | Like-for-like replacement maintains the asset's condition; it doesn't improve it, so it is a repair.
 M3#finance-u02-01-q4@3: A company capitalises £50,000 of routine repairs as an improvement to its building. What is the effect this year? | Profit and non-current assets are both overstated, by up to £50,000 less any depreciation charged | Profit is understated by £50,000 | Only cash is affected | Liabilities are overstated by £50,000 | Moving an expense into assets raises profit and assets this year; the cost then leaks into later years through depreciation.
 SA3#finance-u02-01-q5@2,3: Classify four costs of a new delivery van (price, sign-writing the company logo, road fund licence for the first year, a later engine rebuild that adds three years to its life) and analyse the effect of treating the price as an expense. | Purchase price and sign-writing are capital (cost of making it ready for use); the road fund licence is revenue (running cost); the engine rebuild that extends the life is capital. Expensing the price would understate profit and non-current assets this year and overstate profit in later years when no depreciation is charged, distorting comparisons and possibly tax. | Price capital ; Sign-writing capital ; Licence revenue ; Life-extending rebuild capital ; Effect on profit now and later
+Q: How is capital expenditure charged to profit? | It is recorded as an asset and charged gradually through depreciation.
+Q: What is revenue expenditure? | Spending on running the business day to day or maintaining assets, expensed in the period.
+Q: Name costs that are capitalised as part of a non-current asset. | Purchase price, import duties, delivery, installation, site preparation, professional fees, testing and legal costs of buying property.
+Q: Is staff training to use a new machine capital or revenue expenditure? | Revenue expenditure, an expense.
+Q: Is an extension to a building capital or revenue expenditure? | Capital expenditure, as it improves the asset.
+Q: When does IAS 16 recognise an item of property, plant and equipment as an asset? | When future economic benefits are probable and its cost can be measured reliably.
+Q: Is selling a non-current asset a capital or revenue receipt? | A capital receipt.
+Q: A press costs £48,000 plus VAT, with £1,500 delivery and £2,200 installation. What is capitalised? | £51,700, excluding the reclaimable VAT.
+Q: What is the effect of treating capital expenditure as revenue? | Profit and assets are understated this year, then profit is overstated later as there is no depreciation.
+Q: What did WorldCom do before its 2002 collapse? | It capitalised about 3.8 billion US dollars of ordinary line costs as assets.
 
 ## Accruals and prepayments
 LV: Introductory · Application
@@ -82,6 +92,16 @@ M1#finance-u02-02-q3@1: Electricity used in the last month of the year but not y
 M2#finance-u02-02-q4@2: A landlord receives £9,000 rent in the year, including £1,500 paid in advance for next year, and £750 for this year is still owed by a tenant. What is rent income for the year? | £8,250 | £9,000 | £9,750 | £10,500 | 9,000 − 1,500 deferred + 750 accrued = £8,250.
 M3#finance-u02-02-q5@3: A business fails to record a closing accrual of £2,000. What is the effect on this year's statements? | Profit is overstated and liabilities understated by £2,000 | Profit is understated and assets overstated by £2,000 | Only next year's profit is affected | There is no effect, because the bill will be paid next year | The expense is missing from this year, so profit is too high, and the obligation is missing from liabilities.
 SA3#finance-u02-02-q6@2,3: Explain how accruals and prepayments apply the accruals concept, with a calculation, and the effect of the adjustments on the statement of financial position. | The accruals concept matches expenses to the period they are incurred in. Example: rent paid £5,000 including £1,000 for next year gives an expense of £4,000 and a prepayment (current asset) of £1,000; electricity paid £1,800 with £200 owing gives an expense of £2,000 and an accrual (current liability) of £200. Without them profit would reflect payment timing rather than the year's resources used. | Defines the accruals concept ; Correct prepayment calculation ; Correct accrual calculation ; Classifies balances ; Explains why profit is more meaningful
+Q: What is an accrual? | An expense incurred in the period but not yet paid or invoiced, shown as a current liability.
+Q: How does a prepayment affect the expense for the year? | It reduces the expense.
+Q: What is the formula for the expense for the year? | Cash paid + closing accrual − opening accrual − closing prepayment + opening prepayment.
+Q: What is accrued income? | Income earned but not yet received, shown as a current asset.
+Q: How does deferred income affect income for the year? | It reduces income, and is shown as a current liability.
+Q: What is the double entry for a £300 electricity accrual? | Dr Electricity £300, Cr Accruals £300.
+Q: What is the double entry for a £1,200 rent prepayment? | Dr Prepayments £1,200, Cr Rent £1,200.
+Q: What happens to last year's closing accrual at the start of the new year? | It becomes this year's opening accrual, so its payment is not counted again.
+Q: What question helps decide between an accrual and a prepayment? | Has the business had the benefit yet?
+Q: Why are accrual adjustments needed? | Otherwise profit would depend on when bills are paid and could be shifted between years.
 
 ## Depreciation
 LV: Introductory · Application
@@ -125,6 +145,16 @@ M1#finance-u02-03-q3@1: Which asset is normally not depreciated? | Freehold land
 M2#finance-u02-03-q4@2: Which method best suits a mining machine whose wear depends on tonnes extracted? | Units of production | Straight line | Reducing balance | No depreciation | Units of production links the charge to use, matching the consumption of the machine's benefits.
 M3#finance-u02-03-q5@3: A company extends the estimated useful life of its fleet from 4 to 6 years. What is the main effect, and why might users be cautious? | Annual depreciation falls and profit rises, without any change in cash or operations | Depreciation rises, reducing profit | Past years' profits are restated | Cash flow improves because less depreciation is paid | A longer life spreads the cost over more years, raising current profit; users should ask whether the new estimate reflects reality or flatters results.
 SA3#finance-u02-03-q6@2,3: Calculate two years' depreciation on a £40,000 asset with a £4,000 residual value under straight line (4 years) and reducing balance (40%), and evaluate which method is more appropriate for a delivery van. | Straight line: 36,000 ÷ 4 = £9,000 each year. Reducing balance: year 1 40% × 40,000 = £16,000; year 2 40% × 24,000 = £9,600. A van loses more value and gives more trouble-free use early, while repairs rise later, so reducing balance matches expense to benefit better and keeps total running cost more even; straight line is simpler and comparable. The choice must reflect the pattern of benefits and be applied consistently. | Straight-line £9,000 ; Reducing balance £16,000 then £9,600 ; Pattern of benefit for a van ; Strength of the other method ; Judgement with consistency
+Q: How does IAS 16 define depreciation? | The systematic allocation of the depreciable amount of an asset over its useful life.
+Q: What is residual value? | The estimated amount obtainable for an asset at the end of its life.
+Q: What is the straight-line depreciation formula? | (Cost − residual value) ÷ useful life.
+Q: How is reducing balance depreciation calculated? | Rate × carrying amount at the start of the year.
+Q: How is units-of-production depreciation calculated? | (Cost − residual value) × units this year ÷ total expected units.
+Q: Which depreciation method suits vehicles and computers? | Reducing balance, as they lose more value early.
+Q: What is carrying amount? | Cost less accumulated depreciation and impairment.
+Q: How often must depreciation estimates be reviewed under IAS 16? | At least at each financial year end.
+Q: How does a change in depreciation estimate affect the accounts under IAS 8? | It affects the current and future years only.
+Q: What is a common mistake about depreciation and cash? | Thinking it provides money to replace the asset; it is a book entry and no cash moves.
 
 ## Disposal of non-current assets
 LV: Introductory · Application
@@ -164,6 +194,16 @@ M1#finance-u02-04-q2@1: Which entry removes accumulated depreciation when an ass
 M2#finance-u02-04-q3@2: A new machine costing £18,000 is bought by trading in an old one for an allowance of £2,500, with the rest paid by bank. What is debited to the machinery account? | £18,000 | £15,500 | £2,500 | £20,500 | The new asset is recorded at full cost; the £2,500 allowance is credited to disposal, and £15,500 is paid.
 M3#finance-u02-04-q4@3: A company reports a large profit on disposal of vehicles every year. What is the best interpretation? | Its depreciation is probably too high, so it is shifting profit into disposal gains | It is an efficient vehicle trader | Its vehicles are increasing in value | Its revenue is understated | Repeated disposal profits mean the carrying amounts were consistently too low: depreciation charged was more than the actual fall in value.
 SA3#finance-u02-04-q5@2,3: A vehicle bought for £25,000 has accumulated depreciation of £16,000 and is part-exchanged for a new one costing £32,000 with an allowance of £7,500. Prepare the key entries and interpret the result. | Dr Disposal 25,000, Cr Vehicles 25,000; Dr Accumulated depreciation 16,000, Cr Disposal 16,000; Dr Vehicles 32,000, Cr Disposal 7,500, Cr Bank 24,500. Carrying amount £9,000; proceeds £7,500; loss £1,500 to profit or loss. The loss shows depreciation was slightly too low over the van's life; it is an adjustment to past estimates, not a trading loss. | Cost and depreciation removed ; New vehicle at £32,000 ; Allowance as proceeds and £24,500 paid ; Loss of £1,500 ; Interpretation
+Q: What is the first entry to remove an asset on disposal? | Dr Disposal, Cr Asset at cost.
+Q: How are disposal proceeds recorded? | Dr Bank or receivable, Cr Disposal.
+Q: Where is the profit or loss on disposal transferred? | To the statement of profit or loss.
+Q: A machine cost £20,000 with £13,500 depreciation and is sold for £5,000. What is the result? | A loss of £1,500, as the carrying amount is £6,500.
+Q: What is a part-exchange allowance treated as? | The disposal proceeds of the old asset.
+Q: A £30,000 van is bought with a £7,000 part-exchange allowance. What are the entries? | Dr Van £30,000, Cr Disposal £7,000, Cr Bank £23,000.
+Q: What does a profit on disposal usually indicate? | That too much depreciation was charged in earlier years.
+Q: Is a profit on disposal a trading gain? | No. It mostly corrects past depreciation estimates.
+Q: Why are large recurring disposal profits disclosed separately? | They can flatter profit.
+Q: What is a common mistake in recording a part-exchange? | Recording the new asset at the cash paid; it is recorded at its full cost.
 
 ## Irrecoverable debts and allowances for receivables
 LV: Introductory · Application
@@ -202,6 +242,16 @@ M2#finance-u02-05-q3@2: A debt of £800 written off last year is unexpectedly pa
 TF2#finance-u02-05-q4@2: A decrease in the allowance for receivables increases profit. | true | Only the change in the allowance goes to profit or loss; a decrease is a credit (income or a reduction in the expense).
 M3#finance-u02-05-q5@3: Why did IFRS 9 move from an incurred-loss to an expected-loss model? | Incurred-loss rules delayed recognising losses until there was evidence of impairment, which was criticised after the financial crisis | Expected losses are always smaller | Incurred losses were too subjective to audit | IFRS 9 abolished allowances for receivables | Waiting for a loss event meant allowances lagged reality; the expected-loss model uses forward-looking information to recognise losses earlier.
 SA3#finance-u02-05-q6@2,3: Receivables are £85,000 before writing off £5,000; the allowance is to be 2.5% of the remainder, and last year's was £1,500. Calculate the effects and explain the difference between the write-off and the allowance. | Receivables after write-off £80,000; allowance required £2,000; increase £500. Profit or loss: irrecoverable debts £5,000 and increase in allowance £500, total £5,500. Statement of financial position: receivables £80,000 less allowance £2,000 = £78,000. The write-off removes specific debts known to be lost; the allowance is an estimate of further losses on remaining debts, applying prudence and, under IFRS 9, expected credit losses. | Allowance £2,000 ; Increase £500 ; Net receivables £78,000 ; Total charge £5,500 ; Distinguishes write-off from estimate
+Q: What is an irrecoverable debt? | A receivable the business is sure it won't collect, written off as an expense.
+Q: What was the allowance for receivables formerly called? | The provision for doubtful debts.
+Q: Which concepts justify an allowance for receivables? | Prudence and accruals.
+Q: How does an increase in the allowance for receivables affect profit? | It is an expense, reducing profit.
+Q: Receivables are £40,000 and the allowance is 3%. Last year's was £1,500. What is the effect on profit? | A £300 decrease in the allowance, credited to profit.
+Q: What model does IFRS 9 use for allowances? | Expected credit losses, using reasonable forecasts as well as past experience.
+Q: What approach does IFRS 9 allow for trade receivables? | The simplified approach: a loss allowance equal to lifetime expected credit losses.
+Q: What is a provision matrix? | A tool applying higher loss rates to older debts to estimate expected credit losses.
+Q: How is a recovered written-off debt recorded simply? | Dr Bank, Cr Irrecoverable debts recovered (income).
+Q: What is a common mistake with the allowance for receivables? | Charging the whole allowance to profit each year; only the change is recognised.
 
 ## Inventory valuation
 LV: Introductory · Application
@@ -244,6 +294,16 @@ M1#finance-u02-06-q2@1: Which cost is included in the cost of purchased inventor
 M2#finance-u02-06-q3@2: Prices are rising. Compared with weighted average cost, FIFO gives: | Higher closing inventory and higher profit | Lower closing inventory and higher profit | Higher cost of sales and lower profit | The same profit | With rising prices FIFO leaves the newest, dearer units in inventory, so cost of sales is lower and profit higher.
 M3#finance-u02-06-q4@3: Closing inventory this year is overstated by £5,000. What is the effect over two years, ignoring tax? | This year's profit is overstated by £5,000 and next year's understated by £5,000 | Both years' profits are overstated by £5,000 | Only this year is affected | Only next year is affected | Closing inventory reduces cost of sales this year; as next year's opening inventory it increases next year's cost of sales, so the error reverses.
 SA3#finance-u02-06-q5@2,3: Explain how IAS 2 values inventory, and evaluate the effect of choosing FIFO rather than weighted average cost when prices are rising. | Inventory is valued at the lower of cost and NRV item by item; cost includes purchase and conversion costs, not selling or admin costs; FIFO and weighted average are allowed, LIFO isn't. With rising prices FIFO gives higher closing inventory, lower cost of sales and higher profit than AVCO; the statement of financial position is closer to current cost, but profit includes holding gains. The choice must be applied consistently so years can be compared. | Lower of cost and NRV ; What cost includes and excludes ; FIFO higher inventory and profit ; Evaluation of relevance or holding gains ; Consistency
+Q: What is included in the cost of inventory? | Purchase price, import duties, carriage inwards and, for manufactured goods, conversion costs.
+Q: What is excluded from the cost of inventory? | Abnormal waste, storage unless needed in production, administrative overheads and selling costs.
+Q: What is net realisable value? | Estimated selling price less estimated costs of completion and of making the sale.
+Q: At what level is the cost and NRV comparison made? | Item by item or for groups of similar items, never for inventory as a whole.
+Q: What does weighted average cost do? | Values each item at the average cost of units available, recalculated per purchase or per period.
+Q: Why does IAS 2 prohibit LIFO? | It values inventory at old prices that may bear no relation to current costs.
+Q: With rising prices, how does FIFO affect profit compared with AVCO? | FIFO gives higher closing inventory, lower cost of sales and higher profit.
+Q: An item costs £2,500 and sells for £2,600 after £400 of repairs. At what value is it held? | £2,200, its net realisable value.
+Q: How does overstating closing inventory affect profit over two years? | It overstates this year's profit and reduces next year's by the same amount.
+Q: What is a common mistake about selling costs and inventory? | Including them in cost; they are deducted in arriving at NRV.
 
 ## The extended trial balance
 LV: Intermediate · Application
@@ -283,6 +343,16 @@ NUM2#finance-u02-07-q2@2: In an extended trial balance, the profit or loss credi
 M2#finance-u02-07-q3@2: Wages in the trial balance are £30,000 and £1,200 is owed at the year end. What is extended to the profit or loss debit column? | £31,200 | £28,800 | £30,000 | £1,200 | The accrual adds to the expense: 30,000 + 1,200 = £31,200, and a £1,200 accrual is shown as a liability.
 M3#finance-u02-07-q4@3: After extending everything and inserting profit, the financial position columns differ by £900. What is the most likely cause? | An item extended to the wrong column or for the wrong amount | The profit figure is always £900 out | The trial balance columns never agree | Closing inventory was entered in both statements | Profit is calculated from the profit or loss columns, so a remaining difference signals an extension error, such as an asset placed on the credit side.
 SA3#finance-u02-07-q5@2,3: Explain how an extended trial balance moves from the trial balance to the financial statements, using closing inventory and an accrual as examples. | Start with ledger balances; enter year-end adjustments as debit and credit pairs; extend each adjusted balance to profit or loss (income and expenses) or financial position (assets, liabilities, capital, drawings). Closing inventory is credited in profit or loss (reducing cost of sales) and debited in financial position (asset). An accrual is debited to the expense, increasing it, and credited to an accruals line shown as a liability. Profit is the balancing figure in both pairs. | Describes the columns ; Adjustments as pairs ; Closing inventory in both statements ; Accrual increases expense and creates liability ; Profit as balancing figure
+Q: What is an extended trial balance? | A worksheet that adjusts the trial balance and sorts each figure into the profit or loss or financial position.
+Q: What does each line's balance after adjustments get extended to in an extended trial balance? | Either the profit or loss columns or the financial position columns.
+Q: Why do the adjustment columns of an extended trial balance agree? | Every adjustment has an equal debit and credit.
+Q: How is closing inventory entered in an extended trial balance? | Dr in financial position as an asset and Cr in profit or loss reducing cost of sales.
+Q: Rent is £6,000 with a £1,000 prepayment. What goes to the profit or loss debit column? | £5,000.
+Q: Electricity is £2,000 with a £250 accrual. What goes to the profit or loss debit column? | £2,250.
+Q: How is depreciation entered as an adjustment? | Dr Depreciation expense, Cr Accumulated depreciation.
+Q: How is a loss entered in an extended trial balance? | As a credit in the profit or loss columns and a debit in the financial position columns.
+Q: What does it mean if the financial position columns don't balance after profit is inserted? | There is an extension error.
+Q: What is a common mistake with closing inventory in an extended trial balance? | Extending it only once instead of in both statements.
 
 ## The statement of profit or loss
 LV: Introductory · Application
@@ -323,6 +393,16 @@ NUM1#finance-u02-08-q3@2: Revenue is £90,000 and cost of sales £54,000. Expens
 M2#finance-u02-08-q4@2: Gross profit has risen but profit for the year has fallen. Which is the most likely explanation? | Overheads such as wages or rent have risen faster than gross profit | Sales have fallen | Cost of sales has risen sharply | Closing inventory has increased | Gross profit is before overheads; if it rises while profit falls, expenses below gross profit must have grown more.
 M3#finance-u02-08-q5@3: A sole trader includes £12,000 of drawings among expenses. What is the effect, and why does it matter? | Profit is understated by £12,000, which misstates performance and taxable profit | Profit is overstated by £12,000 | Capital is overstated by £12,000 | There is no effect, as drawings and expenses both reduce capital | Drawings reduce capital directly; treating them as expenses reduces reported profit and would understate taxable profit.
 SA3#finance-u02-08-q6@2,3: Prepare the key figures of a statement of profit or loss from: sales £80,000, returns inwards £1,000, opening inventory £5,000, purchases £48,000, closing inventory £6,000, expenses £19,000; then explain what gross profit and profit for the year each show. | Revenue 79,000; cost of sales 5,000 + 48,000 − 6,000 = 47,000; gross profit 32,000; profit for the year 32,000 − 19,000 = 13,000. Gross profit shows the margin earned on trading, reflecting pricing and buying; profit for the year shows what is left for the owner after all costs, reflecting overall efficiency. | Revenue £79,000 ; Cost of sales £47,000 ; Gross profit £32,000 ; Profit £13,000 ; Explains each measure
+Q: How is revenue calculated in the statement of profit or loss? | Sales − returns inwards.
+Q: How is gross profit calculated? | Revenue − cost of sales.
+Q: How is profit for the year calculated? | Gross profit + other income − expenses.
+Q: What does gross profit show? | How much the business earns from buying and selling before overheads.
+Q: Give examples of other income in the statement of profit or loss. | Rent received and discounts received.
+Q: Is carriage inwards a cost of sales or an expense? | Part of cost of sales, as a cost of buying goods.
+Q: What does comparing gross profit with revenue show? | Pricing and buying efficiency, the gross margin.
+Q: Do drawings appear in the statement of profit or loss? | No. They never appear in it.
+Q: Revenue £118,000 and cost of sales £68,000; expenses total £36,000. What is profit for the year? | £14,000, from gross profit of £50,000.
+Q: What happens to profit for the year in a sole trader's accounts? | It is added to the owner's capital.
 
 ## The statement of financial position
 LV: Introductory · Application
@@ -365,6 +445,16 @@ M1#finance-u02-09-q2@1: In which section of the statement of financial position 
 M2#finance-u02-09-q3@2: Opening capital is £50,000, profit £18,000 and drawings £21,000. What is closing capital? | £47,000 | £53,000 | £89,000 | £11,000 | 50,000 + 18,000 − 21,000 = £47,000: drawings exceeded profit, so capital fell.
 M3#finance-u02-09-q4@3: A business has net current liabilities (current liabilities exceed current assets). What is the best interpretation? | It may struggle to pay short-term debts unless it generates cash quickly or has reliable finance | It is certainly insolvent and must close | It is very profitable | It has too much inventory | Negative working capital is a warning sign, though some businesses, such as supermarkets paid in cash, run that way safely; context matters.
 SA3#finance-u02-09-q5@2,3: Explain how a sole trader's statement of financial position reflects the accounting equation, and evaluate its usefulness to a lender. | Assets less liabilities (net assets) equal closing capital, which is opening capital plus profit less drawings. A lender can see existing borrowings, net current assets as a sign of liquidity and assets that might be security. Limitations: it is a snapshot that may be untypical, assets are at historical cost not realisable value, and it says nothing about future cash flows, so lenders also want forecasts and the profit and cash history. | Net assets equal capital ; Capital section explained ; Liquidity from net current assets ; Security and existing debt ; Limitations
+Q: How are non-current assets shown in the statement of financial position? | At cost less accumulated depreciation, giving carrying amounts.
+Q: What items are current assets in a sole trader's statement of financial position? | Inventory, receivables less allowance, prepayments and accrued income, bank and cash.
+Q: What items are current liabilities? | Trade payables, accruals and deferred income, bank overdraft and loan instalments due within a year.
+Q: How are net assets calculated? | Non-current assets + net current assets − non-current liabilities.
+Q: What should closing capital equal? | Net assets.
+Q: How is the allowance for receivables shown? | Deducted from trade receivables.
+Q: What can a negative net current assets figure signal? | Liquidity problems.
+Q: What does the split of finance between capital and loans show? | How much the business depends on borrowing.
+Q: Name three limits of the statement of financial position. | It is a snapshot, uses historical cost less depreciation, and omits unrecorded assets such as reputation.
+Q: What is a common mistake with drawings in the statement of financial position? | Adding them to capital or showing them as liabilities; they are deducted in the capital section.
 
 ## Incomplete records
 LV: Intermediate · Application
@@ -406,6 +496,16 @@ NUM2#finance-u02-10-q2@2: Cost of sales is £48,000 and the business uses a mark
 M1#finance-u02-10-q3@1: Which formula gives profit from opening and closing capital? | Closing capital − opening capital + drawings − capital introduced | Closing capital + opening capital − drawings | Opening capital − closing capital + capital introduced | Closing capital − drawings | Drawings reduced capital but aren't losses, so they are added back; capital introduced increased capital but isn't profit, so it is deducted.
 M3#finance-u02-10-q4@3: A shop's expected margin is 30% but its records give 22%, and the owner says nothing unusual happened. What should an accountant consider first? | Unrecorded sales or missing inventory, such as takings not banked or goods taken | That the margin calculation is always unreliable | That prices must have risen | That the business has made an error in depreciation | A margin below the norm for the trade signals that sales or closing inventory may be understated, or goods taken; it calls for investigation before accepting the figures.
 SA3#finance-u02-10-q5@1,3: A trader's net assets rose from £18,000 to £25,000; drawings were £12,000 and £3,000 of capital was introduced. Calculate profit and evaluate the reliability of profit found this way. | Profit = 25,000 − 18,000 + 12,000 − 3,000 = £16,000. Reliability is limited: it depends on complete, correctly valued lists of assets and liabilities at both dates, accurate drawings records (often not kept), and gives no breakdown of revenue and expenses, so errors or unrecorded drawings go straight into profit; it is a fallback where double-entry records don't exist. | Correct profit £16,000 ; Depends on accurate asset and liability lists ; Drawings often unrecorded ; No analysis of income and expenses ; Judgement
+Q: What is a statement of affairs? | A list of assets and liabilities at a date, used to calculate capital when full records are not kept.
+Q: Net assets rose from £32,000 to £41,000; drawings £15,000; capital introduced £4,000. What is profit? | £20,000.
+Q: How are credit sales found from a receivables control account? | Receipts + closing receivables − opening receivables, plus discounts allowed and irrecoverable debts.
+Q: How are credit purchases found from a payables control account? | Payments + closing payables − opening payables, plus discounts received.
+Q: How can a missing figure such as drawings be found from the cash book? | As the balancing figure once all known receipts and payments are entered.
+Q: What is the formula for mark-up? | Gross profit ÷ cost of sales.
+Q: What is the formula for margin? | Gross profit ÷ revenue.
+Q: What margin does a 25% mark-up give? | 20%.
+Q: Cost of sales is £60,000 at a 25% mark-up. What are sales? | £75,000.
+Q: How can mark-up or margin reveal missing inventory? | By comparing expected gross profit with actual, showing goods lost or stolen.
 
 ## Profit and cash
 LV: Intermediate · Analysis
@@ -448,6 +548,16 @@ M1#finance-u02-11-q2@1: Which item reduces profit but not cash in the year? | De
 M2#finance-u02-11-q3@2: A business's receivables doubled while its profit rose. What happens to cash? | Cash is held back by the rise in receivables, so it rises less than profit or falls | Cash rises by more than profit | Cash is unaffected by receivables | Receivables increase cash immediately | Sales on credit count as profit before the cash arrives; a growing receivables balance means profit is not yet converted into cash.
 M3#finance-u02-11-q4@3: A fast-growing wholesaler is profitable but keeps exceeding its overdraft. Which response best addresses the problem? | Tighten credit control and arrange longer-term working capital finance matched to growth | Charge more depreciation | Pay higher drawings to the owner | Ignore it, since the business is profitable | The cash shortage comes from working capital absorbed by growth; collecting receivables faster and financing growth properly addresses it.
 SA3#finance-u02-11-q5@2,3: Explain why a profitable sole trader might have less cash at the end of the year than at the start, and evaluate why cash flow matters for survival. | Profit is measured on accruals; cash can fall if receivables and inventory rise, payables fall, equipment is bought, loans are repaid or drawings exceed profit. Depreciation reduces profit without cash. Survival depends on paying debts when due: a business can be insolvent on a cash-flow basis despite profits, especially when overtrading, so forecasts, credit control and appropriate finance matter as much as profitability. | Accruals versus cash ; Working capital effects ; Capital spending, loans or drawings ; Depreciation non-cash ; Survival and insolvency or overtrading
+Q: How do credit sales cause profit and cash to differ? | Income is recorded before cash is received, so rising receivables absorb cash.
+Q: How does capital expenditure cause profit and cash to differ? | Cash goes out now but the expense is charged gradually.
+Q: How do loans affect profit and cash? | Borrowing brings cash without profit; repayments use cash without an expense.
+Q: How do drawings affect profit and cash? | They use cash but don't reduce profit.
+Q: How do increases in inventory and receivables affect cash from operations? | They reduce it.
+Q: How do increases in payables and accruals affect cash from operations? | They increase it.
+Q: Profit £18,000, depreciation £3,000; receivables +£4,000, inventory +£2,000, payables +£1,500. What is cash from operations? | £16,500.
+Q: Which standard requires companies to publish a statement of cash flows? | IAS 7.
+Q: What is the cash basis for small unincorporated businesses? | Taxing receipts less payments, the default for income tax from 2024–25.
+Q: Why do profitable businesses sometimes fail? | They cannot pay debts as they fall due, often through overtrading.
 
 ## Partnership agreements and the Partnership Act 1890
 LV: Introductory · Foundation
@@ -490,6 +600,16 @@ NUM2#finance-u02-12-q2@2: With no partnership agreement, Cara lends the firm £1
 M2#finance-u02-12-q3@2: Three partners with no agreement disagree about whether to admit a fourth. Two agree, one refuses. What happens? | The new partner can't be admitted without everyone's consent | The majority decides | The partner with most capital decides | The court must appoint the new partner | Section 24(7) requires the consent of all existing partners to admit a new partner.
 M3#finance-u02-12-q4@3: Why might two professionals choose an LLP rather than an ordinary partnership? | It gives members limited liability while keeping partnership-style flexibility, at the cost of filing public accounts | It removes the need for any agreement between members | Its profits are tax-free | It cannot be sued | An LLP is a separate legal person whose members generally have limited liability; in exchange it must file accounts at Companies House.
 SA3#finance-u02-12-q5@1,3: Explain what a partnership agreement should cover and evaluate the risks of relying on the Partnership Act 1890 defaults. | It should cover profit-sharing ratio, interest on capital, salaries, interest on drawings, capital contributions, loans and procedures for admission, retirement and disputes. Under the defaults partners share equally regardless of capital or work, get no interest on capital or salaries, and need unanimous consent for new partners. This can be unfair where contributions differ and leads to disputes; a written agreement tailored to the partners avoids this. | Lists agreement terms ; States the main defaults ; Unfairness where contributions differ ; Dispute or exit risks ; Judgement favouring written agreement
+Q: Name items a partnership agreement typically covers. | Profit-sharing ratio, interest on capital, salaries, interest on drawings, capital contributions and procedures for admitting or retiring partners.
+Q: Which section of the Partnership Act 1890 sets the default rules? | Section 24.
+Q: Under the 1890 Act defaults, is interest paid on partners' capital? | No.
+Q: Under the 1890 Act defaults, are partners paid salaries? | No.
+Q: Under the 1890 Act defaults, how are ordinary disagreements decided? | By a majority.
+Q: Can a new partner be admitted by majority under the 1890 Act? | No. All partners must consent.
+Q: What does section 5 of the Partnership Act 1890 say about partners? | Each partner is an agent of the firm.
+Q: What does section 9 of the Partnership Act 1890 say about debts? | Partners are jointly liable for the firm's debts.
+Q: Why might professionals choose an LLP over a partnership? | To avoid unlimited liability, disputes and dissolution when a partner leaves.
+Q: What is a common mistake with interest on a partner's loan? | Treating it as an appropriation; it is an expense charged before profit.
 
 ## The appropriation account
 LV: Intermediate · Application
@@ -529,6 +649,16 @@ M1#finance-u02-13-q2@1: Which item is added in the appropriation account? | Inte
 M2#finance-u02-13-q3@2: A partner lends the firm £20,000 at 6% interest. Where is the £1,200 interest recorded? | As an expense in the statement of profit or loss | As an appropriation of profit | Deducted from the partner's capital account | It isn't recorded | Interest on a partner's loan is a cost of borrowing, charged before profit is found; it is credited to the partner's current account.
 M3#finance-u02-13-q4@3: A firm makes £20,000 profit; salaries and interest on capital total £30,000, shared between two partners equally. What is the effect? | A £10,000 residual loss is shared in the profit-sharing ratio, reducing each partner's total below their salaries and interest | The salaries are reduced until they equal profit | The partners receive £30,000 in total | The appropriation account can't be prepared | Appropriations are still made in full; the negative residue is a loss shared in the ratio, so totals still equal the £20,000 profit.
 SA3#finance-u02-13-q5@2,3: Prepare an appropriation account for Cal and Dee (profit £72,000, ratio 2:1, interest on capital 4% on £60,000 and £40,000, salary to Dee £15,000, interest on drawings Cal £700 and Dee £300) and analyse how the terms reflect each partner's contribution. | 72,000 + 1,000 = 73,000; less salary 15,000 = 58,000; less interest on capital 2,400 and 1,600 = 54,000; shared 2:1: Cal 36,000, Dee 18,000. Totals: Cal 2,400 + 36,000 − 700 = 37,700; Dee 15,000 + 1,600 + 18,000 − 300 = 34,300; total 72,000. Cal's larger capital and profit share reward capital and risk; Dee's salary rewards work in the business. | Correct residue £54,000 ; Shares £36,000 and £18,000 ; Totals reconcile to £72,000 ; Links terms to capital, work and risk
+Q: What is a partnership appropriation account? | The account showing how profit for the year is divided among the partners.
+Q: Are appropriations expenses? | No. They are shares of profit.
+Q: Why is interest charged on partners' drawings? | To discourage early or heavy drawings.
+Q: In what order are items dealt with in the appropriation account? | Add interest on drawings, deduct salaries and interest on capital, then share the residue.
+Q: What does interest on capital reward? | The capital tied up in the firm.
+Q: What does a partner's profit share reward? | Bearing risk.
+Q: What happens if appropriations exceed profit? | The negative residue is shared as a loss in the profit-sharing ratio.
+Q: Profit is £60,000 plus £1,000 interest on drawings; a salary of £12,000 and interest on capital of £4,000. What is the residue? | £45,000.
+Q: A residue of £45,000 is shared 3:2. What does each partner get? | £27,000 and £18,000.
+Q: What is a common mistake with partners' salaries? | Deducting them as an expense; they are an appropriation of profit.
 
 ## Partners' capital and current accounts
 LV: Intermediate · Application
@@ -565,6 +695,16 @@ M1#finance-u02-14-q2@1: With fixed capital accounts, where is a partner's share 
 M2#finance-u02-14-q3@2: Which entry appears on the debit side of a partner's current account? | Interest on drawings | Salary | Interest on capital | Share of residual profit | Interest on drawings is charged to the partner, reducing what they are owed.
 M3#finance-u02-14-q4@3: A partner has a large and growing debit balance on their current account. What is the main concern for the other partners? | The firm is financing that partner's drawings, reducing cash and effectively lending to them without agreement | It shows the partner is very profitable | It increases the firm's capital | It means the appropriation account is wrong | Drawings beyond profit take cash the business may need; the partners may agree limits on drawings or interest on drawings to discourage it.
 SA3#finance-u02-14-q5@2,3: Prepare a current account for a partner (opening credit £3,000, salary £10,000, interest on capital £2,000, profit share £16,000, drawings £30,000, interest on drawings £500) and interpret the balance. | Credits 3,000 + 10,000 + 2,000 + 16,000 = 31,000; debits 30,000 + 500 = 30,500; closing balance £500 credit. The partner has drawn almost all of the profit allocated, leaving just £500 in the firm; the opening credit has been used up, so continuing at this rate would turn the balance into a debit and draw on the firm's cash. | Correct credits ; Correct debits ; Closing £500 credit ; Interpretation of undrawn profit ; Comment on trend or cash
+Q: What does a fixed capital account record? | Only agreed long-term capital introduced or withdrawn.
+Q: What is a fluctuating capital account? | One account per partner through which everything goes, so capital changes each year.
+Q: Why are fixed capital accounts more common? | They keep agreed capital clear, which matters when interest on capital is paid.
+Q: What is credited to a partner's current account? | Salary, interest on capital, share of residual profit and any loan interest credited there.
+Q: What is debited to a partner's current account? | Drawings, interest on drawings and any share of a residual loss.
+Q: What does a credit balance on a current account mean? | The partner has left profit in the firm, which the firm owes them.
+Q: Why are persistent debit current account balances a concern? | They can drain the firm's cash.
+Q: How are partners' funds shown in the statement of financial position? | Capital and current accounts together, with a debit current balance deducted.
+Q: Credits total £33,500 and debits £25,400 on a current account. What is the balance? | £8,100 credit.
+Q: What is a common mistake with drawings under fixed capitals? | Recording them in the capital account; they go through the current account.
 
 ## Goodwill and changes in partners
 LV: Advanced · Application
@@ -602,4 +742,14 @@ M1#finance-u02-15-q2@1: When a new partner is admitted, in which ratio is goodwi
 M2#finance-u02-15-q3@2: On admission of a partner, premises are revalued from £120,000 to £150,000 and inventory down by £4,000. The old partners share 1:1. What is credited to each old partner? | £13,000 | £15,000 | £17,000 | £26,000 | Net revaluation gain = 30,000 − 4,000 = £26,000, shared 1:1 = £13,000 each.
 M3#finance-u02-15-q4@3: Why are goodwill and revaluation adjustments needed when a partner joins, even though no cash changes hands? | Without them the new partner would share in value created before joining, at the old partners' expense | They are required to calculate tax on the partnership | They increase the firm's cash | They prevent the new partner from receiving a salary | Adjusting capital accounts for value built up to the date of the change ensures that later gains on that value are shared fairly.
 SA3#finance-u02-15-q5@2,3: Partners P and Q share 3:1. R joins with a new ratio of 2:1:1. Goodwill is valued at £48,000 and not kept in the books. Calculate the effect on each capital account and evaluate why goodwill is hard to value. | Created 3:1: P +36,000, Q +12,000. Eliminated 2:1:1: P −24,000, Q −12,000, R −12,000. Net: P +12,000, Q nil, R −12,000. Goodwill depends on expected future profits from reputation and customers; methods such as a multiple of average or super profits rely on judgements about future earnings and the multiple, and it disappears if key people leave, so values are subjective and often fixed by agreement. | Creation in old ratio ; Elimination in new ratio ; Correct net effects ; Explains subjectivity of valuation ; Mentions methods or dependence on people
+Q: What makes up a partnership's goodwill? | Its reputation, customers, staff and location.
+Q: Name methods of valuing partnership goodwill. | A multiple of average profits, a multiple of super profits, or an agreed figure.
+Q: What are super profits? | Profits above a normal return for the partners' capital and work.
+Q: What is the entry to create goodwill on a change in partners? | Dr Goodwill, Cr old partners' capital accounts in the old ratio.
+Q: What is the entry to eliminate goodwill? | Dr all partners' capital accounts in the new ratio, Cr Goodwill.
+Q: Why are assets revalued when partners change? | So gains or losses up to that date belong to the old partners.
+Q: How is a revaluation account balance shared? | Among the old partners in the old ratio.
+Q: What happens to a retiring partner's balances? | They are paid out or transferred to a loan account repaid over time.
+Q: What did Garner v Murray (1904) establish? | Solvent partners bear an insolvent partner's debit balance in the ratio of their last agreed capitals.
+Q: What is a common mistake when eliminating goodwill? | Using the old ratio; using the same ratio for both makes the adjustment cancel out.
 `;

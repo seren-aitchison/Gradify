@@ -42,6 +42,16 @@ M2#gcse-u05-01-q2@2: An atom of sodium has atomic number 11 and mass number 23. 
 NUM2#gcse-u05-01-q3@3: An element has two isotopes: mass 63 (70%) and mass 65 (30%). What is its relative atomic mass? | 63.6 | 0.05 | – | (63 × 70 + 65 × 30) ÷ 100 = (4410 + 1950) ÷ 100 = 63.6.
 M3#gcse-u05-01-q4@1: Why do isotopes of the same element react in the same way? | They have the same electron arrangement | They have the same mass number | They have no neutrons | They have different numbers of protons | Applying the standard result: Chemistry depends on electrons.
 SA2#gcse-u05-01-q5@1,2: Explain what isotopes are and why relative atomic masses are often not whole numbers. | Isotopes are atoms of the same element with the same number of protons but different numbers of neutrons, so different mass numbers. Relative atomic mass is the average mass of the atoms, weighted by how common each isotope is, so a mix such as 75% chlorine-35 and 25% chlorine-37 gives 35.5. | Same protons ; Different neutrons ; Weighted average ; Example
+Q: What particles are found in the nucleus of an atom? | Protons and neutrons.
+Q: How big is the nucleus compared with the whole atom? | Around 10,000 times smaller, yet it contains almost all the mass.
+Q: About how wide is an atom? | About 0.1 nm across.
+Q: Why do atoms have no overall charge? | The number of electrons equals the number of protons.
+Q: What are the relative mass and charge of a proton? | Relative mass 1 and relative charge +1.
+Q: What are the relative mass and charge of an electron? | Very small mass (about 1/1840) and charge −1.
+Q: What does the mass number tell you? | The total number of protons and neutrons in an atom.
+Q: What is an isotope? | An atom of the same element with a different number of neutrons.
+Q: What is relative atomic mass (Ar)? | The average mass of an element's atoms, weighted by the abundance of each isotope.
+Q: Show how chlorine's relative atomic mass of 35.5 is calculated. | (35 × 75 + 37 × 25) ÷ 100 = 3550 ÷ 100 = 35.5.
 
 ## The development of the atomic model
 LV: GCSE · Application
@@ -86,6 +96,16 @@ M2#gcse-u05-02-q2@2: In the alpha scattering experiment, what did most alpha par
 SEQ1#gcse-u05-02-q3@1: Put these models of the atom in the order they were proposed. | Dalton's solid spheres ; Thomson's plum pudding ; Rutherford's nuclear model ; Bohr's electron shells | Each model built on new evidence.
 M3#gcse-u05-02-q4@3: Why was the plum pudding model replaced? | It could not explain alpha particles bouncing back from the foil | It was too simple to draw easily | Thomson withdrew his evidence | It predicted no electrons at all | Applying the standard result: New evidence did not fit.
 SA2#gcse-u05-02-q5@2,3: Explain how the alpha scattering experiment changed the model of the atom. | The plum pudding model predicted that alpha particles would pass through gold foil with little deflection. Most did pass through, showing atoms are mostly empty space, but a few were deflected through large angles or bounced back. Rutherford concluded that the positive charge and most of the mass are concentrated in a tiny nucleus, so the nuclear model replaced the plum pudding model. | Prediction ; Most passed through ; Some deflected ; Nuclear model
+Q: How did John Dalton describe atoms? | As tiny solid spheres that could not be divided, in the early 1800s.
+Q: What did Thomson's discovery of the electron show? | That atoms contain smaller charged particles.
+Q: Who carried out the alpha scattering experiment, and when? | Geiger and Marsden, working with Ernest Rutherford, in 1909.
+Q: What did Geiger and Marsden fire alpha particles at? | Thin gold foil.
+Q: What did Rutherford conclude in 1911? | That the mass and positive charge are concentrated in a tiny nucleus with mostly empty space around it.
+Q: Why did some alpha particles bounce back from the foil? | A small, dense, positive nucleus repelled the positive alpha particles.
+Q: What did Niels Bohr propose in 1913? | That electrons orbit at specific distances in shells.
+Q: What did later experiments show the nucleus contains? | Smaller positive particles called protons.
+Q: When are scientific models replaced or modified? | When new evidence cannot be explained by the existing model.
+Q: Who discovered the electron, and whose work led to the nuclear model? | Thomson discovered the electron; Rutherford's work led to the nuclear model.
 
 ## The periodic table and groups
 LV: GCSE · Foundation
@@ -130,6 +150,16 @@ M2#gcse-u05-03-q2@2: What forms when sodium reacts with water? | Sodium hydroxid
 TF1#gcse-u05-03-q3@3: Potassium is more reactive than lithium. | true | Reactivity increases down Group 1 because the outer electron is further from the nucleus.
 M3#gcse-u05-03-q4@3: Bromine water is added to potassium iodide solution. What happens? | Iodine is displaced because bromine is more reactive | No reaction because iodine is more reactive | Bromine is displaced by iodine | Chlorine gas is produced | Applying the standard result: Reactivity decreases down Group 7.
 SA2#gcse-u05-03-q5@3: Explain why reactivity increases down Group 1 but decreases down Group 7. | Group 1 metals react by losing their single outer electron. Down the group, the outer electron is further from the nucleus and more shielded, so it is lost more easily. Halogens react by gaining an electron; down Group 7, the outer shell is further from the nucleus, so the attraction for an extra electron is weaker and they react less readily. | Lose an electron ; Distance and shielding ; Gain an electron ; Weaker attraction
+Q: How is the modern periodic table ordered? | By atomic number.
+Q: What are the rows of the periodic table called? | Periods.
+Q: Why do elements in the same group have similar chemical properties? | They have the same number of electrons in their outer shell.
+Q: Where are metals and non-metals in the periodic table? | Metals are on the left and in the centre; non-metals are on the right.
+Q: Which elements fitted the gaps in Mendeleev's table? | Elements such as gallium and germanium.
+Q: Why does reactivity increase down Group 1? | The outer electron is further from the nucleus and more easily lost.
+Q: Why are the noble gases very unreactive? | They have full outer shells.
+Q: How do noble gas boiling points change down Group 0? | They increase down the group.
+Q: What form do halogens exist in? | Diatomic molecules, such as Cl₂.
+Q: What colour change shows chlorine displacing bromine from potassium bromide? | The solution turns orange as bromine forms.
 
 ## Ionic, covalent and metallic bonding
 LV: GCSE · Foundation
@@ -172,6 +202,16 @@ M2#gcse-u05-04-q2@2: What charge does a magnesium ion have? | 2+ | 1+ | 2− | 1
 MATCH1#gcse-u05-04-q3@2: Match each substance to its bonding. | Sodium chloride = Ionic ; Methane = Covalent ; Iron = Metallic ; Calcium oxide = Ionic | Element types decide the bonding.
 M3#gcse-u05-04-q4@3: Why does oxygen gas, O₂, contain a double bond? | Each atom needs two more electrons, so they share two pairs | Oxygen atoms transfer two electrons | Oxygen is a metal | Each atom has one outer electron | Applying the standard result: Two shared pairs fill both shells.
 SA2#gcse-u05-04-q5@1,2: Compare ionic and covalent bonding. | Ionic bonding occurs between metals and non-metals: electrons are transferred, forming positive and negative ions held by strong electrostatic forces in a giant lattice. Covalent bonding occurs between non-metals: atoms share pairs of electrons to fill their outer shells, forming either small molecules or giant covalent structures. | Types of element ; Transfer versus sharing ; Ions and lattice ; Molecules
+Q: What happens to electrons in ionic bonding? | Metal atoms lose electrons to form positive ions; non-metal atoms gain them to form negative ions.
+Q: What holds ions together in an ionic compound? | Strong electrostatic forces in a giant lattice.
+Q: What ions form in sodium chloride? | Na⁺ and Cl⁻.
+Q: Between which types of element does covalent bonding occur? | Between non-metal atoms.
+Q: What is a double covalent bond? | Two shared pairs of electrons, as in O₂.
+Q: Give an example of a small covalent molecule and a giant covalent structure. | Water (H₂O) is a small molecule; diamond is a giant structure.
+Q: What is metallic bonding? | A lattice of positive metal ions in a sea of delocalised electrons, held by strong attraction.
+Q: What are delocalised electrons? | Electrons free to move through a structure.
+Q: What do dot and cross diagrams show? | Which atom each electron came from.
+Q: Are ionic compounds made of molecules? | No. They form giant lattices of ions, not separate molecules.
 
 ## Structure and properties of substances
 LV: GCSE · Application
@@ -215,6 +255,16 @@ M2#gcse-u05-05-q2@2: Why does carbon dioxide have a low boiling point? | Only we
 TF2#gcse-u05-05-q3@2: Molten sodium chloride conducts electricity. | true | When molten, the ions are free to move and carry charge.
 M3#gcse-u05-05-q4@3: A substance has a very high melting point and does not conduct when solid or molten. What is its likely structure? | Giant covalent | Ionic lattice | Small molecules | Metallic | Applying the standard result: Diamond and silicon dioxide fit.
 SA2#gcse-u05-05-q5@2,3: Explain why diamond and graphite have different properties, although both are pure carbon. | In diamond, each carbon atom forms four strong covalent bonds in a rigid 3D network, making it very hard with a very high melting point, and it has no free electrons, so it does not conduct. In graphite, each carbon forms three bonds in layers with weak forces between them, so layers slide and it is soft, and each atom has one delocalised electron, so it conducts electricity. | Four bonds ; Three bonds and layers ; Hardness ; Conductivity
+Q: Why do ionic compounds have high melting points? | Strong electrostatic forces act in all directions in the lattice.
+Q: When do ionic compounds conduct electricity? | When melted or dissolved, because the ions can move.
+Q: Why do small molecules not conduct electricity? | They have no overall charge.
+Q: Why is diamond very hard with a very high melting point? | Each carbon forms four covalent bonds in a giant structure.
+Q: Why is graphite soft and slippery? | Each carbon forms three bonds in layers, and the layers slide.
+Q: What is graphene? | A single layer of graphite, which is strong and conductive.
+Q: What are fullerenes and nanotubes? | Fullerenes are hollow carbon molecules such as C₆₀; nanotubes are cylindrical fullerenes.
+Q: Why are pure metals malleable? | Layers of ions can slide over each other.
+Q: Why are polymers solid at room temperature? | They are long chain molecules with stronger intermolecular forces.
+Q: When water boils, are covalent bonds broken? | No. Boiling overcomes weak forces between molecules, not the bonds within them.
 
 ## Conservation of mass and relative formula mass
 LV: GCSE · Application
@@ -257,6 +307,16 @@ M2#gcse-u05-06-q2@2: Magnesium is burned in air and the product has more mass th
 NUM2#gcse-u05-06-q3@2: What is the relative formula mass of carbon dioxide, CO₂? (C = 12, O = 16) | 44 | 0 | – | 12 + 2 × 16 = 12 + 32 = 44.
 NUM3#gcse-u05-06-q4@3: What is the relative formula mass of magnesium hydroxide, Mg(OH)₂? (Mg = 24, O = 16, H = 1) | 58 | 0 | – | 24 + 2 × (16 + 1) = 24 + 34 = 58.
 SA2#gcse-u05-06-q5@2,3: Explain why a reaction in an open flask might appear to lose mass, and how this fits the conservation of mass. | If a reaction produces a gas, such as carbon dioxide from an acid and a carbonate, the gas escapes from the open flask, so the measured mass falls. No atoms have been destroyed: the total mass of all products, including the gas, equals the mass of the reactants, as a sealed container would show. | Gas produced ; Gas escapes ; Atoms conserved ; Sealed container
+Q: Why might the mass seem to increase in a reaction? | A gas such as oxygen is taken in from the air.
+Q: Why might the mass seem to decrease in a reaction in an open container? | A gas such as carbon dioxide escapes.
+Q: How must a symbol equation be balanced? | By placing numbers in front of formulae, never by changing the formulae.
+Q: What must be true of each side of a balanced equation? | It must have the same number of each type of atom.
+Q: Give a balanced equation for hydrogen burning to form water. | 2H₂ + O₂ → 2H₂O.
+Q: What do the state symbols (s), (l) and (g) mean? | Solid, liquid and gas.
+Q: What is relative formula mass (Mr)? | The sum of the relative atomic masses of all the atoms in a formula.
+Q: What is the Mr of water, H₂O? | 2 × 1 + 16 = 18.
+Q: What is the Mr of calcium carbonate, CaCO₃? | 40 + 12 + 3 × 16 = 100.
+Q: Why does mass appear to fall when calcium carbonate is heated? | It forms calcium oxide and carbon dioxide gas, which escapes.
 
 ## Moles and concentration
 LV: GCSE · Application
@@ -299,6 +359,16 @@ NUM2#gcse-u05-07-q2@2: How many moles are in 88 g of carbon dioxide (Mr 44)? | 2
 NUM2#gcse-u05-07-q3@2: 5 g of salt is dissolved to make 250 cm³ of solution. What is the concentration in g/dm³? | 20 | 0 | g/dm³ | 250 cm³ = 0.25 dm³, so 5 ÷ 0.25 = 20 g/dm³.
 M3#gcse-u05-07-q4@3: In a reaction, all the acid is used up but some magnesium is left. Which is the limiting reactant? | The acid | The magnesium | Neither reactant | Both reactants | Applying the standard result: The acid ran out first.
 SA2#gcse-u05-07-q5@2,3: Explain how to calculate the mass of product formed from a given mass of reactant. | First calculate the moles of the reactant by dividing its mass by its Mr. Then use the balanced equation to find the mole ratio between reactant and product, and so the moles of product. Finally, multiply the moles of product by its Mr to find its mass. If one reactant is limiting, base the calculation on that reactant. | Moles from mass ; Mole ratio ; Mass from moles ; Limiting reactant
+Q: What is a mole? | The amount of substance containing 6.02 × 10²³ particles.
+Q: What is the mass of one mole of a substance? | Its relative formula mass in grams, for example 12 g of carbon.
+Q: What is the equation linking moles, mass and Mr? | Moles = mass (g) ÷ Mr.
+Q: What does a balanced equation show about moles? | The ratio of moles that react and form.
+Q: What are the three steps to find a product's mass from a reactant's mass? | Calculate moles of reactant, use the equation's ratio, then multiply by the product's Mr.
+Q: What is a reactant in excess? | One that is not used up when the limiting reactant runs out.
+Q: How is concentration in g/dm³ calculated? | Concentration = mass of solute (g) ÷ volume (dm³).
+Q: How do you convert cm³ to dm³? | Divide by 1000, because 1 dm³ = 1000 cm³.
+Q: What mass of magnesium oxide forms from 6 g of magnesium? | 6 ÷ 24 = 0.25 mol Mg, giving 0.25 mol MgO, so 0.25 × 40 = 10 g.
+Q: What unit of concentration do higher-tier students also use? | mol/dm³.
 
 ## Reactivity series and extraction of metals
 LV: GCSE · Application
@@ -341,6 +411,16 @@ M2#gcse-u05-08-q2@2: Zinc is added to copper sulfate solution. What happens? | C
 M3#gcse-u05-08-q3@3: Why is aluminium not extracted by heating its oxide with carbon? | Aluminium is more reactive than carbon | Carbon is too expensive | Aluminium oxide has no oxygen | Aluminium is found as a pure metal | Applying the standard result: Carbon cannot reduce it.
 TF2#gcse-u05-08-q4@2: In a blast furnace, iron oxide is reduced. | true | Iron oxide loses oxygen to carbon, which is reduction.
 SA2#gcse-u05-08-q5@2,3: Explain how the reactivity of a metal determines how it is extracted. | Very unreactive metals such as gold occur uncombined. Metals less reactive than carbon, such as iron, can be extracted by heating their oxides with carbon, which removes the oxygen in a reduction reaction. Metals more reactive than carbon, such as aluminium, cannot be reduced by carbon, so they are extracted by electrolysis of their molten compounds, which is costly because it uses a lot of electricity. | Uncombined metals ; Reduction with carbon ; Electrolysis ; Cost
+Q: What is the reactivity series? | A list of metals in order of how readily they react.
+Q: Why are more reactive metals more reactive? | They lose electrons more easily to form positive ions.
+Q: What happens when magnesium is placed in copper sulfate solution? | It becomes coated in copper, because magnesium displaces the less reactive copper.
+Q: What is reduction in terms of oxygen? | The loss of oxygen.
+Q: What does OIL RIG mean? | Oxidation Is Loss of electrons, Reduction Is Gain of electrons.
+Q: What is an ore? | A rock containing enough metal to make extraction worthwhile.
+Q: How are metals less reactive than carbon, such as iron and zinc, extracted? | By reduction with carbon.
+Q: What is the word equation for extracting iron in a blast furnace? | Iron oxide + carbon → iron + carbon dioxide.
+Q: In the blast furnace, which substance is oxidised? | Carbon, because it gains oxygen.
+Q: What is a drawback of extracting metals by electrolysis? | It uses large amounts of electricity.
 
 ## Acids, alkalis and salts
 LV: GCSE · Application
@@ -385,6 +465,16 @@ M2#gcse-u05-09-q2@2: What is produced when an acid reacts with a metal carbonate
 SEQ1#gcse-u05-09-q3@3: Put the steps for making a soluble salt from an insoluble base in order. | Warm the acid ; Add excess base and stir ; Filter off unreacted base ; Evaporate some water ; Leave to crystallise | Excess base ensures all acid reacts.
 M3#gcse-u05-09-q4@3: Why is excess copper oxide added when making copper sulfate? | To make sure all the acid has reacted | To make the solution more acidic | To produce hydrogen gas | To increase the pH above 14 | Applying the standard result: Excess base uses up the acid.
 SA2#gcse-u05-09-q5@2,3: Explain the difference between a strong acid and a concentrated acid. | A strong acid, such as hydrochloric acid, is completely ionised in water, releasing all its hydrogen ions, while a weak acid, such as ethanoic acid, is only partly ionised. Concentration describes how much acid is dissolved in a given volume. So a weak acid can be concentrated and a strong acid can be dilute. | Ionisation ; Strong and weak ; Amount dissolved ; Independent ideas
+Q: What range of the pH scale is alkaline? | Above 7, up to 14.
+Q: What ions do alkalis produce in water? | Hydroxide ions, OH⁻.
+Q: What is the ionic equation for neutralisation? | H⁺ + OH⁻ → H₂O.
+Q: How can pH be measured? | With universal indicator or a pH probe.
+Q: What is produced when an acid reacts with a metal? | A salt and hydrogen.
+Q: What does acid plus a metal oxide or hydroxide produce? | A salt and water.
+Q: What salts do sulfuric and nitric acids form? | Sulfates and nitrates.
+Q: What is the difference between a base and an alkali? | A base neutralises an acid; an alkali is a soluble base.
+Q: Why is the mixture filtered when making a soluble salt from an insoluble base? | To remove the unreacted solid.
+Q: Give an example of a strong acid and a weak acid. | Hydrochloric acid is strong (completely ionised); ethanoic acid is weak (partly ionised).
 
 ## Electrolysis
 LV: GCSE · Application
@@ -427,6 +517,16 @@ M2#gcse-u05-10-q2@2: What forms at the anode when sodium chloride solution is el
 MATCH2#gcse-u05-10-q3@2: Match each electrolyte to the product at the cathode. | Molten lead bromide = Lead ; Copper sulfate solution = Copper ; Sodium chloride solution = Hydrogen ; Molten aluminium oxide = Aluminium | Reactivity decides aqueous products.
 M3#gcse-u05-10-q4@3: Why must the anodes be replaced in aluminium extraction? | Oxygen reacts with the carbon anodes, forming carbon dioxide | Aluminium sticks to them | Cryolite dissolves them | They become negatively charged | Applying the standard result: The anodes burn away.
 SA2#gcse-u05-10-q5@2,3: Explain why electrolysis of sodium chloride solution does not produce sodium. | In the solution, water provides hydrogen ions as well as sodium ions. At the cathode, the less reactive element is discharged; sodium is more reactive than hydrogen, so hydrogen gas forms instead. Chloride ions form chlorine at the anode, and sodium and hydroxide ions stay in solution as sodium hydroxide. | Ions from water ; Reactivity ; Hydrogen forms ; Sodium hydroxide remains
+Q: What is electrolysis? | Passing an electric current through a molten or dissolved ionic compound to break it down.
+Q: What happens to positive ions at the cathode? | They gain electrons.
+Q: What happens to negative ions at the anode? | They lose electrons.
+Q: What forms when molten lead bromide is electrolysed? | Lead at the cathode and bromine at the anode.
+Q: In aqueous electrolysis, when does hydrogen form at the cathode? | When the metal is more reactive than hydrogen.
+Q: In aqueous electrolysis, what forms at the anode if no halide ions are present? | Oxygen.
+Q: What does electrolysis of brine produce? | Chlorine, hydrogen and sodium hydroxide.
+Q: What forms when copper chloride solution is electrolysed? | Copper at the cathode and chlorine at the anode.
+Q: Name two uses of electrolysis besides extracting aluminium. | Purifying copper and electroplating.
+Q: Which electrode is the cathode and which is the anode? | The cathode is negative; the anode is positive.
 
 ## Exothermic and endothermic reactions
 LV: GCSE · Application
@@ -469,6 +569,16 @@ M2#gcse-u05-11-q2@2: On an exothermic reaction profile, where are the products? 
 NUM3#gcse-u05-11-q3@3: Breaking bonds in a reaction takes in 1200 kJ/mol and making bonds releases 1500 kJ/mol. What is the energy change, in kJ/mol? | -300 | 0 | kJ/mol | 1200 − 1500 = -300 kJ/mol, so the reaction is exothermic.
 TF2#gcse-u05-11-q4@2: Making bonds releases energy. | true | Forming bonds transfers energy to the surroundings, so it is exothermic.
 SA2#gcse-u05-11-q5@2,3: Explain, in terms of bonds, why some reactions are exothermic and others endothermic. | Breaking bonds in the reactants needs energy, and forming bonds in the products releases energy. If more energy is released making new bonds than is taken in breaking old ones, the reaction is exothermic and the surroundings warm up. If more energy is needed to break bonds than is released, the reaction is endothermic and the surroundings cool. | Breaking needs energy ; Making releases energy ; Exothermic balance ; Endothermic balance
+Q: What happens to the temperature of the surroundings in an exothermic reaction? | It rises, because energy is transferred to the surroundings.
+Q: Give three examples of exothermic reactions. | Combustion, neutralisation and most oxidation reactions.
+Q: Give two examples of endothermic reactions. | Thermal decomposition, and citric acid reacting with sodium hydrogencarbonate.
+Q: Give uses of exothermic and endothermic reactions. | Exothermic: hand warmers and self-heating cans. Endothermic: some sports injury packs.
+Q: On an endothermic reaction profile, where are the products? | Higher in energy than the reactants.
+Q: How is activation energy shown on a reaction profile? | As the "hill" between reactants and products.
+Q: Is bond breaking exothermic or endothermic? | Endothermic: breaking bonds takes in energy.
+Q: How is the energy change calculated from bond energies? | Energy to break bonds minus energy released making bonds.
+Q: What does a negative overall energy change mean? | The reaction is exothermic.
+Q: What is the energy change for H₂ + Cl₂ → 2HCl? | 678 − 862 = −184 kJ/mol, so it is exothermic.
 
 ## Rates of reaction
 LV: GCSE · Application
@@ -511,6 +621,16 @@ NUM2#gcse-u05-12-q2@2: A reaction produces 45 cm³ of gas in 15 seconds. What is
 M2#gcse-u05-12-q3@3: Why does increasing temperature increase the rate of reaction? | Particles collide more often and with more energy | Particles become larger | The activation energy rises | Fewer collisions happen | Applying the standard result: Speed and energy both increase.
 M3#gcse-u05-12-q4@3: Why does a rate graph eventually level off? | One of the reactants has been used up | The catalyst has been used up | The temperature has fallen to zero | The product has disappeared | Applying the standard result: The reaction has stopped.
 SA2#gcse-u05-12-q5@2,3: Use collision theory to explain the effect of concentration on rate. | Reactions happen when particles collide with at least the activation energy. In a more concentrated solution, there are more reactant particles in the same volume, so collisions happen more frequently. More frequent successful collisions per second mean a faster rate of reaction, although the energy of each collision is unchanged. | Collisions needed ; More particles ; More frequent collisions ; Faster rate
+Q: What is the rate of reaction? | How quickly reactants are used up or products are formed.
+Q: How is mean rate calculated? | Quantity of reactant used or product formed ÷ time taken.
+Q: Name three ways to measure a rate of reaction. | Volume of gas produced, loss in mass as gas escapes, or time for a solution to turn cloudy.
+Q: What does a steeper line on a product–time graph mean? | A faster reaction.
+Q: Name four factors that increase the rate of reaction. | Higher temperature, higher concentration or pressure, larger surface area, and catalysts.
+Q: According to collision theory, when do reactions happen? | When particles collide with at least the activation energy.
+Q: Why does a larger surface area increase rate? | It makes collisions more frequent.
+Q: Why does a higher temperature have a double effect on rate? | Particles collide more often and more collisions have enough energy.
+Q: What is the mean rate if 60 cm³ of gas forms in 30 seconds? | 60 ÷ 30 = 2 cm³/s.
+Q: Does a catalyst give particles more energy? | No. It provides a pathway with a lower activation energy.
 
 ## Reversible reactions and equilibrium
 LV: GCSE · Evaluation
@@ -554,6 +674,16 @@ M2#gcse-u05-13-q2@2: At equilibrium, what is true about the forward and reverse 
 M2#gcse-u05-13-q3@3: For N₂ + 3H₂ ⇌ 2NH₃, what does increasing pressure do? | Shifts the equilibrium towards ammonia | Shifts it towards nitrogen and hydrogen | Has no effect | Stops the reaction | Applying the standard result: The right has fewer gas molecules.
 M3#gcse-u05-13-q4@3: A forward reaction is exothermic. What happens to the yield of product if temperature is increased? | It decreases | It increases | It stays the same | It doubles exactly | Applying the standard result: Heat favours the endothermic direction.
 SA3#gcse-u05-13-q5@3: Evaluate the choice of conditions in the Haber process. | The forward reaction is exothermic, so low temperature would increase the yield of ammonia, but the rate would be too slow, so a compromise of about 450 °C is used. High pressure favours ammonia because there are fewer gas molecules on the right, but very high pressure is expensive and dangerous, so about 200 atmospheres is used. An iron catalyst speeds up the reaction without affecting yield, and unreacted gases are recycled. | Temperature compromise ; Pressure compromise ; Catalyst ; Cost and safety
+Q: What is a reversible reaction? | A reaction where the products can react to re-form the original reactants.
+Q: What happens when blue hydrated copper sulfate is heated? | It forms white anhydrous copper sulfate and water; adding water reverses it.
+Q: If a reversible reaction is exothermic one way, what is it the other way? | Endothermic by the same amount.
+Q: Where does a reversible reaction reach equilibrium? | In a closed system.
+Q: Why is equilibrium called dynamic? | Both reactions continue at equal rates, so amounts stay constant.
+Q: What is Le Chatelier's principle? | If conditions change, the equilibrium shifts to counteract the change.
+Q: What does increasing temperature favour in an equilibrium? | The endothermic direction.
+Q: What does increasing pressure favour in an equilibrium? | The side with fewer gas molecules.
+Q: Does a catalyst change the position of equilibrium? | No. It only helps equilibrium be reached faster.
+Q: What conditions are used in the Haber process? | About 450 °C and 200 atmospheres, with an iron catalyst.
 
 ## Crude oil and hydrocarbons
 LV: GCSE · Application
@@ -598,6 +728,16 @@ M2#gcse-u05-14-q2@2: Where in the fractionating column do the shortest hydrocarb
 MATCH2#gcse-u05-14-q3@2: Match each property to how it changes as hydrocarbon chains get longer. | Boiling point = Increases ; Viscosity = Increases ; Flammability = Decreases ; Volatility = Decreases | Longer chains have stronger intermolecular forces.
 M3#gcse-u05-14-q4@3: Bromine water is added to a product of cracking and turns colourless. What does this show? | An alkene is present | Only alkanes are present | The product is crude oil | Bromine has evaporated | Applying the standard result: Alkenes decolourise bromine water.
 SA2#gcse-u05-14-q5@2,3: Explain how fractional distillation separates crude oil into useful fractions. | Crude oil is heated so that most of it evaporates and passes into a column that is hottest at the bottom and coolest at the top. As the vapours rise, they cool, and each hydrocarbon condenses when it reaches a height where the temperature is below its boiling point. Hydrocarbons with similar chain lengths and boiling points collect together as fractions, with short chains at the top and long chains at the bottom. | Heating ; Temperature gradient ; Condensing at boiling points ; Fractions
+Q: How was crude oil formed? | Over millions of years from remains of ancient marine organisms, mainly plankton, buried in mud.
+Q: What is a hydrocarbon? | A compound containing hydrogen and carbon only.
+Q: What are the first four alkanes? | Methane, ethane, propane and butane.
+Q: What does saturated mean for alkanes? | They contain only single carbon–carbon bonds.
+Q: How does temperature vary in a fractionating column? | It is hot at the bottom and cooler at the top.
+Q: Name four fractions from crude oil. | Refinery gases, petrol, kerosene, diesel, heavy fuel oil and bitumen.
+Q: How do properties change as hydrocarbon chains get longer? | Higher boiling points, higher viscosity and less flammable.
+Q: What does complete combustion of a hydrocarbon produce? | Carbon dioxide and water.
+Q: What are the two types of cracking? | Catalytic cracking, using a hot catalyst, and steam cracking.
+Q: Is fractional distillation a chemical reaction? | No. It is a physical separation based on boiling points.
 
 ## Chemical analysis and chromatography
 LV: GCSE · Application
@@ -641,6 +781,16 @@ NUM2#gcse-u05-15-q2@3: A spot moves 3.6 cm and the solvent moves 9.0 cm. What is
 M2#gcse-u05-15-q3@2: A sample gives three spots on a chromatogram. What does this show? | It is a mixture of at least three substances | It is a pure substance | It contains no dyes | The solvent was wrong | Applying the standard result: Each spot is a substance.
 M3#gcse-u05-15-q4@3: Why must the solvent level start below the start line? | So the samples do not dissolve directly into the solvent | So the paper stays dry | To make the Rf values larger | So the spots move faster | Applying the standard result: Spots would wash away.
 SA2#gcse-u05-15-q5@2,3: Explain how paper chromatography can identify the dyes in an unknown ink. | Spots of the unknown ink and known dyes are placed on a pencil line and the paper is stood in a solvent. As the solvent rises, each dye separates according to its attraction to the paper and the solvent. Comparing the heights and Rf values of the unknown's spots with those of known dyes in the same solvent identifies which dyes are present. | Method ; Separation by attraction ; Rf values ; Comparison with knowns
+Q: What is a pure substance in chemistry? | A single element or compound, not mixed with any other substance.
+Q: How does an impure substance melt? | Over a range of temperatures.
+Q: How does everyday use of "pure" differ from the chemical meaning? | In everyday language it often means natural or unprocessed, as in "pure orange juice".
+Q: What is a formulation? | A mixture designed as a useful product, with measured quantities of each component.
+Q: What determines how far a substance moves in paper chromatography? | How strongly it is attracted to the mobile phase (solvent) and the stationary phase (paper).
+Q: How does a pure substance appear on a chromatogram? | As one spot in all solvents.
+Q: How is an Rf value calculated? | Distance moved by substance ÷ distance moved by solvent.
+Q: What range do Rf values fall within? | Always between 0 and 1.
+Q: Why are Rf values useful for identifying substances? | They are constant for a substance with a given solvent and paper.
+Q: In paper chromatography, what are the mobile and stationary phases? | The mobile phase is the solvent; the stationary phase is the paper.
 
 ## Tests for gases
 LV: GCSE · Foundation
@@ -683,6 +833,16 @@ M2#gcse-u05-16-q2@2: A gas bleaches damp litmus paper. Which gas is it? | Chlori
 MATCH1#gcse-u05-16-q3@1: Match each gas to its test result. | Hydrogen = Squeaky pop ; Oxygen = Glowing splint relights ; Carbon dioxide = Limewater turns milky ; Chlorine = Damp litmus bleached | Each gas has a distinctive test.
 M3#gcse-u05-16-q4@3: Why is chlorine tested in a fume cupboard? | Chlorine is toxic | Chlorine is explosive | It needs extra heat | The fume cupboard adds moisture | Applying the standard result: It harms the lungs.
 SA2#gcse-u05-16-q5@2,3: A student adds acid to a metal carbonate. Explain how they could confirm which gas is produced. | Acids react with metal carbonates to produce a salt, water and carbon dioxide. To confirm the gas, the student should bubble it through limewater: if the limewater turns milky or cloudy, carbon dioxide is present. They could also show it is not hydrogen or oxygen, because it would not pop with a lighted splint or relight a glowing one. | Reaction ; Limewater test ; Positive result ; Ruling out others
+Q: What is the test for hydrogen? | A lighted splint at the mouth of the tube burns with a squeaky pop.
+Q: What is the test for oxygen? | A glowing splint relights.
+Q: What is the test for chlorine? | Damp litmus paper is bleached white; blue litmus may turn red first.
+Q: What is limewater? | Calcium hydroxide solution, used to test for carbon dioxide.
+Q: How can oxygen be produced in the laboratory? | By decomposing hydrogen peroxide with a catalyst, or by electrolysis.
+Q: How can carbon dioxide be produced? | By acids reacting with carbonates, or by combustion.
+Q: How can chlorine be produced? | By electrolysis of sodium chloride solution.
+Q: What safety precautions apply to gas tests? | Use small amounts of flammable hydrogen, test toxic chlorine in a fume cupboard, and wear eye protection.
+Q: When dilute sulfuric acid is electrolysed, how do the gas volumes compare? | The volume of hydrogen is about twice the volume of oxygen.
+Q: What is a glowing splint? | A splint that has been lit and blown out, used to test for oxygen.
 
 ## The Earth's atmosphere and climate change
 LV: GCSE · Evaluation
@@ -728,6 +888,16 @@ M2#gcse-u05-17-q2@2: How did oxygen build up in the atmosphere? | Through photos
 M2#gcse-u05-17-q3@3: Which pollutant causes acid rain? | Sulfur dioxide | Carbon monoxide | Argon | Nitrogen | Applying the standard result: Sulfur dioxide dissolves in rain.
 M3#gcse-u05-17-q4@3: Why do scientists attribute recent warming to human activity? | Models only match observed warming when human emissions are included | Temperatures have never changed before | Volcanic activity has stopped | The Sun has become much hotter | Applying the standard result: Evidence links warming to emissions.
 SA3#gcse-u05-17-q5@3: Evaluate the evidence that human activity is causing climate change. | Measurements show carbon dioxide has risen from about 280 ppm to over 420 ppm since industrialisation, closely matching fossil fuel use, and global temperatures have risen by about 1.1 °C. The greenhouse effect explains how extra carbon dioxide traps heat, and climate models only reproduce the warming when human emissions are included. The IPCC judges human influence unequivocal, although predicting exact future regional effects remains uncertain. | CO₂ measurements ; Temperature rise ; Mechanism and models ; Uncertainty in details
+Q: What was the early atmosphere probably mainly made of? | Carbon dioxide, with water vapour that condensed to form the oceans.
+Q: How did carbon dioxide decrease in the early atmosphere? | It dissolved in oceans, formed carbonate rocks and fossil fuels, and was used by algae and plants in photosynthesis.
+Q: How do greenhouse gases keep the Earth warm? | They absorb long-wavelength infrared radiation from the Earth's surface.
+Q: Name three greenhouse gases. | Carbon dioxide, methane and water vapour.
+Q: Name three human activities that increase greenhouse gases. | Burning fossil fuels, deforestation and farming.
+Q: What has atmospheric carbon dioxide risen from and to? | From about 280 ppm before industrialisation to over 420 ppm today.
+Q: What is a carbon footprint? | The total greenhouse gases emitted over the life of a product, service or event.
+Q: What harm does soot cause? | Global dimming and lung problems.
+Q: What do sulfur dioxide and oxides of nitrogen cause? | Acid rain and respiratory problems.
+Q: Why do models support human-caused warming? | Climate models only reproduce the observed warming when human emissions are included.
 
 ## Using resources: water and life cycle assessment
 LV: GCSE · Evaluation
@@ -773,6 +943,16 @@ M2#gcse-u05-18-q2@2: Why is desalination not used widely in the UK? | It require
 SEQ2#gcse-u05-18-q3@2: Put the stages of a life cycle assessment in order. | Extracting and processing raw materials ; Manufacturing and packaging ; Use and operation ; Disposal at end of life | LCAs follow the product's life.
 M3#gcse-u05-18-q4@3: A company publishes an LCA that covers only the use stage of its product. What is the concern? | Leaving out stages can make the product seem greener than it is | The LCA will be too detailed | It will overestimate all impacts | LCAs must only cover use | Applying the standard result: Selective LCAs can mislead.
 SA3#gcse-u05-18-q5@3: Evaluate the use of life cycle assessments to compare products. | LCAs give a structured way to compare products by considering energy, water, resources and waste at every stage from extraction to disposal, revealing impacts that are not obvious. However, some effects, such as pollution, are hard to measure, so assessors must make value judgements, results depend on assumptions such as how often a product is reused, and selective or shortened LCAs can be used to support misleading claims. | Whole-life view ; Quantifying impacts ; Assumptions ; Misuse
+Q: Why is potable water not chemically pure? | It contains dissolved substances, though it has low levels of salts and microbes.
+Q: How is fresh water treated in the UK? | By filtering through beds to remove solids, then sterilising with chlorine, ozone or ultraviolet light.
+Q: What sources does UK fresh water come from? | Rain, rivers, lakes and aquifers.
+Q: What is the main drawback of desalination? | It requires large amounts of energy.
+Q: What is the first stage of sewage treatment? | Screening and grit removal to take out large objects.
+Q: How are effluent and sludge treated? | Effluent gets aerobic biological treatment; sludge gets anaerobic digestion, which can produce biogas.
+Q: What is a life cycle assessment? | An assessment of a product's environmental impact across its whole life.
+Q: What are the stages of a life cycle assessment? | Extracting and processing raw materials, manufacturing and packaging, use, and disposal.
+Q: Why can LCAs involve value judgements? | Some values, such as pollutant effects, are hard to quantify.
+Q: What decides whether a plastic or paper bag is better? | How many times each bag is reused.
 
 ## Chemistry required practicals
 LV: GCSE · Evaluation
@@ -817,4 +997,14 @@ M2#gcse-u05-19-q2@2: Repeat readings are 25.1, 25.0 and 25.2 cm³, but the true 
 NUM2#gcse-u05-19-q3@3: Titres are 24.30, 24.10 and 25.60 cm³. Excluding the anomaly, what is the mean titre, in cm³? | 24.2 | 0.01 | cm³ | Excluding 25.60, the mean is (24.30 + 24.10) ÷ 2 = 24.2 cm³.
 M3#gcse-u05-19-q4@3: A balance always reads 0.5 g too high. What type of error is this? | Systematic error | Random error | Anomalous result | Zero error is impossible | Applying the standard result: It shifts every reading.
 SA3#gcse-u05-19-q5@2,3: Evaluate how a student could improve the accuracy of a rate experiment that uses the disappearing cross method. | The disappearing cross method relies on human judgement of when the cross vanishes, which varies, causing random error. Using a light sensor and data logger to measure cloudiness would make timing more objective. The student should also control the temperature with a water bath, use the same volumes measured with a measuring cylinder or pipette, repeat each concentration and exclude anomalies before calculating a mean. | Human judgement ; Light sensor ; Controlling variables ; Repeats and anomalies
+Q: How many required practicals does AQA GCSE Chemistry include? | Eight.
+Q: What is the dependent variable? | The variable you measure.
+Q: What is an independent variable? | The variable that is deliberately changed.
+Q: What does accurate mean for results? | Results close to the true value.
+Q: What does precise mean for results? | Results close to each other, with little spread.
+Q: What does repeatable mean? | Similar results when the same person repeats the experiment.
+Q: What is the difference between random and systematic errors? | Random errors cause spread; systematic errors shift all results the same way.
+Q: What should be done with anomalous results? | Identify them and exclude them from means.
+Q: How could the disappearing cross method be improved? | Use a light sensor, since human judgement of when the cross disappears varies.
+Q: Can precise results be inaccurate? | Yes. They can be consistently wrong because of a systematic error.
 `;

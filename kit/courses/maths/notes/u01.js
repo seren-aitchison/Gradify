@@ -32,6 +32,16 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 NUM1#maths-u01-01-q1@1: Work out 468 ÷ 18. | 26 | 0 |  | 18 × 26 = 468 (18 × 25 = 450, plus 18), so 468 ÷ 18 = 26.
 M1#maths-u01-01-q2@1: Which operation is commutative? | Multiplication | Subtraction | Division | Finding a remainder | Raising to a power | 6 × 4 = 4 × 6, but 6 − 4 ≠ 4 − 6 and 6 ÷ 4 ≠ 4 ÷ 6.
 M2#maths-u01-01-q3@2: Which check best shows that 52 × 19 = 988 is plausible? | 52 × 19 ≈ 50 × 20 = 1,000 | 52 + 19 = 71 | 988 is even | 988 has three digits | 19 is prime | Estimating by rounding each number shows the answer should be close to 1,000.
+Q: What is an inverse operation? | An operation that undoes another: subtraction undoes addition, and division undoes multiplication.
+Q: What does it mean for an operation to be commutative? | The order doesn't matter: a + b = b + a and a × b = b × a.
+Q: Which of the four operations are associative? | Addition and multiplication; you can regroup them, but not subtraction or division.
+Q: State the distributive law. | a × (b + c) = a × b + a × c.
+Q: In what three ways can a division remainder be written? | As a remainder, a fraction or a decimal, depending on the question.
+Q: How do you multiply in long multiplication? | Multiply by each digit, keeping place value, then add the results.
+Q: How can rounding check 384 ÷ 12 = 32? | Estimate 400 ÷ 10 = 40, which is close to 32, so the answer is sensible.
+Q: How can the last digit check 37 × 24? | The answer must end in 8, because 7 × 4 = 28.
+Q: What is 37 × 24, and how is it built up in long multiplication? | 888: 37 × 4 = 148 and 37 × 20 = 740, then 148 + 740 = 888.
+Q: What is the common mistake about subtraction and order? | Treating subtraction as commutative: 3 − 7 isn't the same as 7 − 3.
 
 ## Order of Operations
 S: When a calculation has several operations, the order you do them in changes the answer. A single agreed convention (brackets, then indices, then division and multiplication, then addition and subtraction) means everyone gets the same result.
@@ -66,6 +76,16 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 NUM1#maths-u01-02-q1@1: Evaluate 6 + 18 ÷ 3 × 2 − 4. | 14 | 0 |  | 18 ÷ 3 = 6, then 6 × 2 = 12 (left to right), so 6 + 12 − 4 = 14.
 M2#maths-u01-02-q2@2: What is 2 × 3^{2}? | 18 | 36 | 12 | 81 | 9 | Indices first: 3^{2} = 9, then 2 × 9 = 18. (2 × 3)^{2} would be 36.
 M3#maths-u01-02-q3@2: A student types 10 + 6 ÷ 2 into a calculator wanting (10 + 6) ÷ 2. What do they get? | 13 | 8 | 16 | 3 | 5 | The calculator divides first: 6 ÷ 2 = 3, then adds 10. Brackets are needed to get 8.
+Q: What does BIDMAS stand for? | Brackets, Indices, Division and Multiplication, Addition and Subtraction.
+Q: What is an index? | A power, such as the 2 in 3^{2}.
+Q: In which order should you work out nested brackets? | From the innermost bracket outwards.
+Q: Which comes first, division or multiplication? | Neither: they have equal priority and are done from left to right.
+Q: How should addition and subtraction be ordered in a calculation? | They have equal priority, so work from left to right.
+Q: How does a fraction bar affect the order of operations? | It acts as brackets around the top and the bottom.
+Q: Why should you type brackets around fraction tops and bottoms on a calculator? | Calculators follow the order of operations, so without brackets they divide before adding.
+Q: Evaluate 20 − 3 × (5 − 2)^{2} ÷ 9. | 17: brackets give 3, the index gives 9, then 3 × 9 ÷ 9 = 3, and 20 − 3 = 17.
+Q: What does 2x^{2} mean in algebra? | 2 × (x^{2}), not (2x)^{2}.
+Q: What is the common mistake with multiplication and division in BIDMAS? | Doing all multiplication before any division, when they have equal priority and go left to right.
 
 ## Number Systems
 S: A number system is a way of representing numbers with symbols. Our everyday system is decimal and positional, but others (Roman numerals, binary, base 60 for time) show that the symbols are a choice, while the numbers themselves are the same.
@@ -95,6 +115,16 @@ SRC: Courant R, Robbins H, What Is Mathematics? (2nd edn, Oxford University Pres
 SRC: Department for Education, Mathematics programmes of study: key stage 3 | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study
 M1#maths-u01-03-q1@1: What is the value of the digit 4 in 64,215? | 4,000 | 4 | 40 | 400 | 40,000 | The 4 is in the thousands place, so it's worth 4 × 1,000 = 4,000.
 M2#maths-u01-03-q2@2: Why are written calculations hard with Roman numerals? | They aren't positional and have no zero | They use letters instead of digits only | They only go up to 100 | They can't show odd numbers | They're base 2 | Positional notation lets column methods work; Roman numerals don't line up by place value.
+Q: What is a positional number system? | A system where a digit's value depends on its position, such as hundreds, tens and units.
+Q: What is the base of a positional system? | The number of different digits it uses, and the multiplier between neighbouring places.
+Q: How much is each place worth in base 10 compared with the place to its right? | 10 times as much.
+Q: Write 3,507 as a sum of place values. | 3 × 1000 + 5 × 100 + 0 × 10 + 7 × 1.
+Q: Where is binary (base 2) used? | In computers.
+Q: Where is base 60 used today? | In minutes and degrees.
+Q: How do Roman numerals represent numbers? | By adding and subtracting symbols, as in XIV = 10 + 4, with no zero.
+Q: What is the simplest number system? | Tally marks: one mark per object.
+Q: What is 2,046 in Roman numerals? | MMXLVI: MM for 2000, XL for 40 and VI for 6.
+Q: List the families of numbers from smallest to largest. | Natural numbers, integers, rationals, reals, complex numbers, each contained in the next.
 
 ## Natural Numbers
 S: The natural numbers are the counting numbers 1, 2, 3, … (and, in many university courses, 0 as well). They're the starting point for all other numbers and the setting for primes, divisibility and induction.
@@ -123,6 +153,16 @@ SRC: Courant R, Robbins H, What Is Mathematics? (2nd edn, Oxford University Pres
 SRC: Liebeck M, A Concise Introduction to Pure Mathematics (4th edn, CRC Press 2015) | textbook | 2015 | https://www.routledge.com/
 M1#maths-u01-04-q1@1: Which of these is a natural number in every convention? | 7 | 0 | −2 | 1/2 | 0.5 | 7 is a counting number; 0 depends on the convention.
 M2#maths-u01-04-q2@2: Under which operation is ℕ closed? | Multiplication | Subtraction | Division | Taking square roots | Halving | The product of two natural numbers is always natural.
+Q: What are the natural numbers? | The counting numbers 1, 2, 3, …, written ℕ; some definitions include 0.
+Q: What does it mean for a set to be closed under an operation? | Applying the operation to members always gives a member.
+Q: Under which operations is ℕ closed? | Addition and multiplication.
+Q: Why is ℕ not closed under division? | Dividing one natural number by another can give a non-natural number, such as 3 ÷ 5.
+Q: Why do we extend the natural numbers to integers and rationals? | Because ℕ isn't closed under subtraction or division.
+Q: What is the well-ordering principle? | Every non-empty set of natural numbers has a smallest member.
+Q: Which method of proof is based on the well-ordering principle? | Proof by induction.
+Q: Where does the natural numbers usually start in school maths, and in university or computing? | School maths usually starts at 1; university and computing courses often include 0.
+Q: Is ℕ closed under "larger minus smaller"? | It depends: equal numbers give 0, which is natural only if your convention includes 0.
+Q: What is the common mistake about 0 and the natural numbers? | Assuming everyone agrees whether 0 is a natural number; check the convention in use.
 
 ## Integers
 S: The integers extend the natural numbers to include zero and the negatives: …, −2, −1, 0, 1, 2, …. They let us subtract freely and describe temperatures, debts and directions.
@@ -156,6 +196,16 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 NUM1#maths-u01-05-q1@1: Work out (−6) × (−7) − 50. | -8 | 0 |  | (−6) × (−7) = 42 (same signs give a positive), and 42 − 50 = −8.
 M1#maths-u01-05-q2@1: What is −3 − 5? | −8 | 2 | −2 | 8 | 15 | Starting at −3 and moving 5 to the left reaches −8.
 M2#maths-u01-05-q3@2: What is (−24) ÷ (−6) × (−2)? | −8 | 8 | 2 | −2 | −12 | Left to right: (−24) ÷ (−6) = 4, then 4 × (−2) = −8.
+Q: What are the integers? | The whole numbers, positive, negative and zero, written ℤ.
+Q: What is absolute value? | The distance of a number from zero, so the absolute value of −5 is 5.
+Q: What is 6 + (−4)? | 2: adding a negative is subtracting.
+Q: What sign do you get when multiplying two numbers with different signs? | Negative: for example (−12) ÷ 4 = −3.
+Q: What is (−3) × (−4)? | 12: same signs give a positive.
+Q: Is zero positive or negative? | Neither.
+Q: What is the additive inverse of an integer? | Its opposite, which adds to it to give 0, as 5 and −5 do.
+Q: Why do two negatives multiply to give a positive? | Multiplying by −1 reflects a number in zero on the number line, so doing it twice returns to the positive side.
+Q: Under which operation are the integers not closed? | Division: for example 7 ÷ 2 isn't an integer.
+Q: A temperature of −5 °C rises by 9 °C, then falls by 12 °C. What is it now? | −8 °C: −5 + 9 = 4, then 4 − 12 = −8.
 
 ## Rational Numbers
 S: Rational numbers are numbers that can be written as a fraction of two integers, p/q with q not zero. They include all integers, fractions and terminating or recurring decimals, and they're closed under all four operations (except dividing by zero).
@@ -185,6 +235,16 @@ SRC: Liebeck M, A Concise Introduction to Pure Mathematics (4th edn, CRC Press 2
 M1#maths-u01-06-q1@1: Which number is rational? | 0.454545… | √2 | π | √3 | e | Any recurring decimal is rational: 0.4545… = 5/11.
 M2#maths-u01-06-q2@2: Which fraction gives a terminating decimal? | 7/40 | 1/3 | 2/7 | 5/6 | 4/9 | 40 = 2^{3} × 5, so 7/40 = 0.175 terminates.
 M3#maths-u01-06-q3@2: What is 0.\\dot{1}\\dot{8} as a fraction in its simplest form? | 2/11 | 18/100 | 9/50 | 1/8 | 18/90 | Let x = 0.1818…; then 100x − x = 18, so x = 18/99, which simplifies to 2/11.
+Q: What is a rational number? | A number that can be written as p/q, where p and q are integers and q ≠ 0, written ℚ.
+Q: What is a recurring decimal? | A decimal with a repeating block of digits, such as 0.272727…
+Q: Write the integer 5 as a rational number. | 5/1.
+Q: What two kinds of decimal can a rational number have? | A terminating decimal or a recurring decimal.
+Q: What does it mean that the rationals are dense on the number line? | Between any two rationals there's another rational, such as their mean.
+Q: Under which operations are the rational numbers closed? | All four operations, except dividing by zero.
+Q: What is the method for converting a recurring decimal to a fraction? | Let x be the decimal, multiply by a power of 10 to line up the repeats, then subtract.
+Q: What is 0.272727… as a fraction in its simplest form? | 3/11, since 99x = 27 gives x = 27/99.
+Q: Why are the rationals said not to be complete? | They have gaps, such as √2, which the real numbers fill.
+Q: What is the common mistake about 0.999…? | Thinking it is less than 1; by the recurring decimal method it equals 1.
 
 ## Irrational Numbers
 S: An irrational number can't be written as a fraction of two integers. Its decimal goes on forever without repeating. Famous examples are √2, π and e, and there are, in a precise sense, far more irrationals than rationals.
@@ -213,6 +273,16 @@ SRC: Department for Education, Mathematics AS and A level subject content: proof
 M1#maths-u01-07-q1@1: Which number is irrational? | √7 | √49 | 0.25 | 3/11 | −4 | 7 isn't a perfect square, so √7 is irrational.
 M2#maths-u01-07-q2@2: In the proof that √2 is irrational, what gives the contradiction? | Both p and q turn out to be even, though p/q was in lowest terms | p turns out to be negative | q turns out to be zero | √2 turns out to equal 1 | p^{2} turns out to be odd | Lowest terms means p and q share no common factor, but both are even.
 M3#maths-u01-07-q3@2: Which product is rational? | √8 × √2 | √2 × √3 | π × 2 | √5 × 3 | e × e | √8 × √2 = √16 = 4, a whole number, so it's rational; the others are irrational.
+Q: What is an irrational number? | A real number that can't be written as p/q with integers p and q.
+Q: What is special about the decimal of an irrational number? | It goes on forever without repeating.
+Q: When is √n irrational for a natural number n? | Whenever n isn't a perfect square, as with √2, √3, √5 and √8.
+Q: Name three famous irrational numbers. | √2, π and e.
+Q: Is the sum of a rational and an irrational number rational or irrational? | Irrational.
+Q: What is proof by contradiction? | A proof that assumes the opposite of what you want and shows it leads to something impossible.
+Q: In the proof that √2 is irrational, what does p^{2} = 2q^{2} lead to? | p is even, so p = 2k, which then forces q to be even as well.
+Q: Simplify √50 and say whether it is rational. | √50 = 5√2, which is irrational, since a non-zero rational times an irrational is irrational.
+Q: How do the numbers of rationals and irrationals compare? | In a precise sense there are far more irrationals than rationals.
+Q: What is the common mistake about 22/7 and π? | Thinking 22/7 equals π; it is only an approximation, since π is irrational.
 
 ## Real Numbers
 S: The real numbers are all the rational and irrational numbers together: every point on the number line. They're the numbers of measurement and calculus.
@@ -244,6 +314,16 @@ SRC: Liebeck M, A Concise Introduction to Pure Mathematics (4th edn, CRC Press 2
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
 M1#maths-u01-08-q1@1: Which set contains π? | The real numbers | The integers | The rational numbers | The natural numbers | None of them | π is irrational, so it's real but not rational.
 M2#maths-u01-08-q2@2: Which inequality matches the interval [−2, 3)? | −2 ≤ x < 3 | −2 < x ≤ 3 | −2 < x < 3 | −2 ≤ x ≤ 3 | x < −2 or x ≥ 3 | The square bracket includes −2; the round bracket excludes 3.
+Q: What are the real numbers? | All rational and irrational numbers together, written ℝ: every point on the number line.
+Q: What is an interval? | A set of real numbers between two endpoints, such as [2, 5), meaning 2 ≤ x < 5.
+Q: What does [a, b] mean? | All real numbers from a to b, including both ends.
+Q: What does (a, b) mean? | All real numbers between a and b, excluding both ends.
+Q: How is an included endpoint shown on a number line? | With a filled circle; an open circle excludes it.
+Q: What does it mean that the real numbers are complete? | Every real number is a point on the number line, with no gaps.
+Q: Is √−1 a real number? | No; it is a complex number.
+Q: How would you classify √9? | Natural, integer, rational and real, since √9 = 3.
+Q: What is a field, as the real numbers form? | A set that can be added, multiplied and divided (except by zero) with all the familiar rules.
+Q: What is the common mistake when classifying numbers? | Forgetting that integers and natural numbers are also rational and real.
 
 ## Factors and Multiples
 S: A factor of a number divides it exactly; a multiple is the result of multiplying it by a whole number. Factors and multiples are the language of divisibility, fractions and primes.
@@ -279,6 +359,16 @@ NUM1#maths-u01-09-q1@1: How many factors does 48 have? | 10 | 0 |  | 1×48, 2×2
 M1#maths-u01-09-q2@1: Which number is a multiple of 8? | 72 | 4 | 20 | 36 | 50 | 72 = 8 × 9, so 72 is in the 8 times table; the others aren't.
 M2#maths-u01-09-q3@2: Which number has an odd number of factors? | 49 | 50 | 30 | 12 | 18 | 49 is a square number (7 × 7), so one factor pair repeats.
 M2#maths-u01-09-q4@2: When the sieve crosses out the multiples of 5, which number is crossed out first? | 25, since 10, 15 and 20 were already crossed out by 2 or 3 | 5, since every prime crosses itself out | 10, the first multiple after 5 | 15, the first odd multiple | 35, the first multiple not divisible by 2 or 3 | Smaller multiples of 5 have a smaller prime factor, so 5 × 5 = 25 is the first new number it removes.
+Q: What is a factor? | A whole number that divides another exactly: the factors of 12 are 1, 2, 3, 4, 6 and 12.
+Q: What is a multiple? | The product of a number and a whole number: multiples of 7 are 7, 14, 21, …
+Q: How should you search for factors systematically? | Work in factor pairs from 1 upwards, stopping when the pairs meet at or before √n.
+Q: How many factors and multiples does a number have? | Finitely many factors but infinitely many multiples.
+Q: What are the common factors of 18 and 24, and their HCF? | 1, 2, 3 and 6; the HCF is 6.
+Q: What are the first common multiples of 4 and 6, and their LCM? | 12, 24, 36, …; the LCM is 12.
+Q: How many factors does 60 have? | 12: 1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30 and 60.
+Q: How many factors does a prime number have? | Exactly two.
+Q: How do factors and multiples of a number compare in size with the number? | Factors are less than or equal to it; multiples are greater than or equal to it.
+Q: What is the common mistake with factors and multiples? | Confusing them: 3 is a factor of 12, and 12 is a multiple of 3.
 
 ## Divisibility
 S: Divisibility tests tell you whether one number divides another without doing the division. They speed up factorising, simplifying fractions and spotting primes.
@@ -310,6 +400,16 @@ SRC: Department for Education, Mathematics programmes of study: key stage 3 | st
 M1#maths-u01-10-q1@1: Which number is divisible by 9? | 5,814 | 5,813 | 5,812 | 5,810 | 5,815 | 5 + 8 + 1 + 4 = 18, which is divisible by 9.
 M2#maths-u01-10-q2@2: Which number is divisible by 6? | 2,334 | 2,335 | 1,334 | 2,333 | 1,331 | 2,334 is even and its digit sum 12 is divisible by 3.
 M3#maths-u01-10-q3@2: Which test shows 3,512 is divisible by 8? | 512 = 8 × 64 | 3 + 5 + 1 + 2 = 11 | 12 is divisible by 4 | It ends in 2 | 35 is odd | Divisibility by 8 depends on the last three digits.
+Q: What does it mean for a to be divisible by b? | a ÷ b is a whole number.
+Q: What is a digit sum? | The total of a number's digits.
+Q: How do you test for divisibility by 3 or 9? | Check whether the digit sum is divisible by 3 or by 9.
+Q: How do you test for divisibility by 8? | Check whether the last three digits are divisible by 8.
+Q: What are the tests for divisibility by 2, 5 and 10? | 2: last digit even; 5: last digit 0 or 5; 10: last digit 0.
+Q: How do you test for divisibility by 11? | Check whether the alternating sum of the digits is divisible by 11.
+Q: Show that 2,728 passes the test for 11. | 2 − 7 + 2 − 8 = −11, which is divisible by 11.
+Q: Why does a number leave the same remainder on division by 9 as its digit sum? | Each power of 10 leaves remainder 1 on division by 9, because 10 = 9 + 1.
+Q: What does it mean that divisibility is transitive? | If 4 divides 12 and 12 divides 36, then 4 divides 36.
+Q: What is the common mistake with the divisibility test for 6? | Using only the digit-sum test; the number must also be even.
 
 ## Prime Numbers
 S: A prime number has exactly two factors: 1 and itself. Primes are the building blocks of the whole numbers, and their mysteries drive both number theory and modern cryptography.
@@ -343,6 +443,16 @@ M1#maths-u01-11-q1@1: Which number is prime? | 37 | 39 | 51 | 57 | 91 | 37 has n
 M2#maths-u01-11-q2@2: To test whether 199 is prime, which primes must you try? | 2, 3, 5, 7, 11 and 13 | All primes up to 199 | Only 2 and 3 | All odd numbers up to 100 | 2, 3 and 5 only | √199 ≈ 14.1, so primes up to 13 are enough.
 NUM1#maths-u01-11-q3@2: What is the sum of the prime numbers between 20 and 40? | 120 | 0 |  | The primes are 23, 29, 31 and 37, which add to 120.
 NUM1#maths-u01-11-q4@1: Using the sieve, how many primes are there below 200? | 46 | 0 |  | The sieve leaves 46 numbers uncrossed below 200, from 2 up to 199.
+Q: What is a prime number? | A natural number greater than 1 whose only factors are 1 and itself.
+Q: List the primes under 20. | 2, 3, 5, 7, 11, 13, 17 and 19.
+Q: What is the only even prime? | 2.
+Q: What is trial division? | Testing whether n is prime by dividing by primes up to √n; if none divides it, n is prime.
+Q: What is the Sieve of Eratosthenes? | A method for listing primes by crossing out multiples of each prime in turn.
+Q: Who proved there are infinitely many primes? | Euclid.
+Q: In Euclid's proof, why does N = p₁ × … × pₖ + 1 give a contradiction? | N leaves remainder 1 on division by every listed prime, so it has a prime factor not in the list.
+Q: Is 221 prime? | No: 221 = 13 × 17.
+Q: How common are primes around a large number n? | Roughly 1 in every ln(n) numbers is prime, by the prime number theorem.
+Q: Why are large primes important in everyday life? | They are the basis of RSA encryption, which secures online payments.
 
 ## Composite Numbers
 S: A composite number is a natural number greater than 1 that isn't prime: it has at least one factor other than 1 and itself. Every composite number breaks down into primes.
@@ -376,6 +486,16 @@ SRC: Department for Education, Mathematics programmes of study: key stage 3 | st
 M1#maths-u01-12-q1@1: Which number is composite? | 119 | 113 | 109 | 107 | 103 | 119 = 7 × 17, so it has factors other than 1 and itself; the others are prime.
 M2#maths-u01-12-q2@2: Why is 6! + 4 composite? | It's divisible by 4 | It's even and greater than 2 only by coincidence | It's a square number | It's divisible by 7 | 6! is prime | 6! = 720 is divisible by 4, so 720 + 4 is too.
 M2#maths-u01-12-q3@2: In the sieve, which prime first crosses out 91? | 7, since 91 = 7 × 13 and 7 is its smallest prime factor | 13, since 91 = 7 × 13 and 13 is larger | 3, since 9 + 1 = 10 isn't prime | 91 is never crossed out because it's prime | 2, since every composite is even | A composite number is first crossed out by its smallest prime factor, which for 91 = 7 × 13 is 7.
+Q: What is a composite number? | A natural number greater than 1 with more than two factors.
+Q: What is a proper factor? | A factor other than 1 and the number itself.
+Q: Name three kinds of number that are always composite. | Even numbers greater than 2, multiples of a prime greater than that prime, and squares of whole numbers greater than 1.
+Q: What is enough to show a number is composite? | One factor pair, such as 91 = 7 × 13.
+Q: Why are n! + 2, n! + 3, …, n! + n all composite? | Each n! + k is divisible by k.
+Q: What do arbitrarily long runs of composites tell us about primes? | Gaps between consecutive primes can be as large as you like.
+Q: Give five consecutive composite numbers below 30. | 24, 25, 26, 27 and 28.
+Q: Why does trial division only need to go up to √n? | Every composite number n has a prime factor no bigger than √n.
+Q: Can two composite numbers be co-prime? | Yes: 8 and 9 share no common factor except 1.
+Q: In the sieve, what does the prime that first crosses out a number tell you? | It is that number's smallest prime factor.
 
 ## Prime Factorisation
 S: Every whole number greater than 1 can be written as a product of primes in exactly one way, apart from order. This "fundamental theorem of arithmetic" makes prime factorisation a powerful tool for HCFs, LCMs, roots and fractions.
@@ -410,6 +530,16 @@ M1#maths-u01-13-q1@1: What is 84 as a product of prime factors? | 2^{2} × 3 × 
 M2#maths-u01-13-q2@2: What is the smallest number you can multiply 2^{3} × 3 × 5^{2} by to make a square? | 6 | 2 | 3 | 5 | 30 | Multiplying by 2 × 3 makes the powers 2^{4} × 3^{2} × 5^{2}, all even.
 NUM1#maths-u01-13-q3@2: 2^{a} × 3^{b} = 648. What is a + b? | 7 | 0 |  | 648 = 8 × 81 = 2^{3} × 3^{4}, so a + b = 3 + 4 = 7.
 NUM1#maths-u01-13-q4@1: How many prime factors, counted with repeats, does 192 have? | 7 | 0 |  | 192 = 2^{6} × 3, so it has six 2s and one 3: seven prime factors in all.
+Q: What is prime factorisation? | Writing a number as a product of primes, such as 360 = 2^{3} × 3^{2} × 5.
+Q: What does the fundamental theorem of arithmetic state? | Every integer greater than 1 has a unique prime factorisation, apart from order.
+Q: How does a factor tree work? | Split the number into any factor pair and keep splitting until every branch ends in a prime.
+Q: How does repeated division find a prime factorisation? | Divide by 2 as often as possible, then by 3, then 5, and so on.
+Q: How should a prime factorisation be written? | In index form, with the primes in ascending order.
+Q: How can you tell from its prime factorisation that a number is a cube? | Every power is a multiple of 3.
+Q: Use prime factors to find √3,600. | 3,600 = 2^{4} × 3^{2} × 5^{2}, so √3,600 = 2^{2} × 3 × 5 = 60.
+Q: What is 1,764 as a product of prime factors? | 2^{2} × 3^{2} × 7^{2}, so it is a square: √1,764 = 42.
+Q: Why does prime factorisation keep RSA encryption secure? | Factorising large numbers is very hard for computers.
+Q: What is the common mistake in writing a product of primes? | Leaving a composite number, such as 9, in the product.
 
 ## Greatest Common Divisor (GCD)
 S: The greatest common divisor (GCD), called the highest common factor (HCF) at GCSE, is the largest number that divides two numbers exactly. It simplifies fractions and solves sharing and tiling problems.
@@ -441,6 +571,16 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 NUM1#maths-u01-14-q1@1: Find the HCF of 84 and 126. | 42 | 0 |  | 84 = 2^{2} × 3 × 7 and 126 = 2 × 3^{2} × 7, so HCF = 2 × 3 × 7 = 42.
 M1#maths-u01-14-q2@1: Which pair of numbers is co-prime? | 9 and 16 | 6 and 15 | 8 and 12 | 14 and 21 | 10 and 25 | 9 = 3^{2} and 16 = 2^{4} share no prime factors.
 M2#maths-u01-14-q3@2: A 48 cm by 60 cm board is covered exactly with the largest possible identical square tiles. How wide is each tile? | 12 cm | 6 cm | 4 cm | 24 cm | 240 cm | The tile width must divide both 48 and 60: the largest such number is the HCF, 12.
+Q: What is the highest common factor (HCF)? | The largest number that is a factor of two or more numbers; also called the greatest common divisor.
+Q: What does it mean for two numbers to be co-prime? | Their HCF is 1, as with 8 and 15.
+Q: How does the listing method find the HCF of 24 and 36? | List the factors of each and pick the largest shared one: 12.
+Q: How does Euclid's algorithm find an HCF? | Repeatedly replace the larger number with the remainder on dividing, until the remainder is 0.
+Q: Why is Euclid's algorithm useful? | It is fast even for huge numbers.
+Q: How does the HCF help simplify fractions? | Divide top and bottom by the HCF: 24/36 becomes 2/3 after dividing by 12.
+Q: What is the largest square tile that exactly covers a 24 cm by 36 cm rectangle? | 12 cm, the HCF of 24 and 36.
+Q: What is the HCF of 252 and 198? | 18.
+Q: How are the HCF and LCM of two numbers related? | HCF × LCM equals the product of the two numbers.
+Q: What is the common mistake in finding the HCF from prime factors? | Taking the highest powers, which gives the LCM instead of the HCF.
 
 ## Least Common Multiple (LCM)
 S: The least common multiple (LCM), called the lowest common multiple at GCSE, is the smallest number that is a multiple of two numbers. It finds common denominators and solves "when do they coincide again?" problems.
@@ -475,6 +615,16 @@ NUM1#maths-u01-15-q1@1: Find the LCM of 18 and 30. | 90 | 0 |  | 18 = 2 × 3^{2}
 M1#maths-u01-15-q2@1: What is the LCM of 9 and 12? | 36 | 108 | 3 | 72 | 21 | 9 = 3^{2}, 12 = 2^{2} × 3, so the LCM is 2^{2} × 3^{2} = 36.
 M3#maths-u01-15-q3@2: Two numbers have HCF 6 and LCM 72. One is 18. What is the other? | 24 | 12 | 36 | 4 | 54 | For two numbers, HCF × LCM = their product: 6 × 72 = 432, and 432 ÷ 18 = 24.
 NUM1#maths-u01-15-q4@1: Using prime factorisations, what is the LCM of 12 and 18? | 36 | 0 |  | 12 = 2^{2} × 3 and 18 = 2 × 3^{2}, so the LCM is 2^{2} × 3^{2} = 36.
+Q: What is the lowest common multiple (LCM)? | The smallest positive number that is a multiple of two or more numbers.
+Q: What is a common denominator? | A shared denominator for adding or subtracting fractions, usually the LCM of the denominators.
+Q: How do you find the LCM from prime factorisations? | Take every prime that appears to its highest power.
+Q: Find the LCM of 6 and 8 by listing. | 24: multiples of 6 are 6, 12, 18, 24 and of 8 are 8, 16, 24.
+Q: Work out 5/6 + 3/8 using the LCM of the denominators. | 29/24: the common denominator is 24, giving 20/24 + 9/24.
+Q: Buses leave every 12 and 18 minutes. When do they next leave together? | After 36 minutes, the LCM of 12 and 18.
+Q: Two lighthouses flash every 20 and 45 seconds. How often do they flash together? | Every 180 seconds, or 3 minutes, the LCM of 20 and 45.
+Q: What is the LCM of two co-prime numbers? | Their product: LCM(8, 9) = 72.
+Q: How do you find the LCM of three numbers? | Take each prime to its highest power across all three numbers.
+Q: What is the common mistake in finding an LCM? | Multiplying the two numbers and calling it the LCM: 6 × 8 = 48, but the LCM is 24.
 
 ## Fractions
 S: A fraction represents part of a whole, or a division: 3/4 means 3 ÷ 4. Understanding equivalent fractions and simplifying is the key to calculating with them.
@@ -510,6 +660,16 @@ M1#maths-u01-16-q1@1: Which fraction is equivalent to 3/8? | 15/40 | 6/24 | 5/10
 M2#maths-u01-16-q2@2: Which fraction is largest? | 4/5 | 7/9 | 11/15 | 3/4 | 5/7 | As decimals: 0.8, 0.778, 0.733, 0.75, 0.714.
 NUM1#maths-u01-16-q3@1: What is 3/8 of 96? | 36 | 0 |  | 96 ÷ 8 = 12, and 12 × 3 = 36.
 NUM1#maths-u01-16-q4@1: As in the practice set, give 2/3 + 3/4 as a decimal to 3 decimal places. | 1.417 | 0.001 |  | 2/3 + 3/4 = 8/12 + 9/12 = 17/12 ≈ 1.417.
+Q: What does the fraction 3/4 mean as a division? | 3 ÷ 4.
+Q: What are equivalent fractions? | Fractions with the same value, such as 2/3 = 8/12.
+Q: What do the numerator and denominator of a fraction tell you? | The denominator is how many equal parts the whole is split into; the numerator is how many you have.
+Q: How do you write a fraction in its simplest form? | Divide the top and bottom by their HCF: 18/24 = 3/4.
+Q: What is an improper fraction? | A fraction whose numerator is at least its denominator, such as 7/4.
+Q: How do you convert 3⅖ to an improper fraction? | (3 × 5 + 2)/5 = 17/5.
+Q: How do you compare fractions such as 5/8 and 2/3? | Write them with a common denominator: 15/24 and 16/24, so 2/3 is bigger.
+Q: What is a unit fraction? | A fraction with numerator 1, such as 1/5.
+Q: Why is a fraction with denominator 0 undefined? | You can't share into zero parts.
+Q: What is the common mistake in making equivalent fractions? | Adding to the top and bottom; 2/3 isn't equal to 3/4.
 
 ## Decimals
 S: Decimals extend place value to the right of the units: tenths, hundredths, thousandths. They're how measurements and money are written, and calculators show results as decimals.
@@ -542,6 +702,16 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 NUM1#maths-u01-17-q1@1: Work out 0.7 × 0.08. | 0.056 | 0 |  | 7 × 8 = 56, and there are three decimal places in total, so 0.056.
 M1#maths-u01-17-q2@1: What is 7/20 as a decimal? | 0.35 | 0.7 | 0.207 | 3.5 | 0.72 | Multiply top and bottom by 5: 7/20 = 35/100 = 0.35.
 M2#maths-u01-17-q3@2: Which calculation gives an answer greater than 50? | 50 ÷ 0.8 | 50 × 0.8 | 50 − 0.8 × 2 | 50 × 0.99 | 50 ÷ 1.2 | Dividing by a number less than 1 makes the result bigger: 50 ÷ 0.8 = 62.5.
+Q: What is a decimal place? | A position after the decimal point: tenths, hundredths, thousandths.
+Q: What is a terminating decimal? | A decimal that ends, such as 0.375.
+Q: How do you add and subtract decimals? | Line up the decimal points.
+Q: How do you multiply decimals without a calculator? | Ignore the points, multiply, then put back as many decimal places as there were in total.
+Q: Work out 0.3 × 0.04. | 0.012: 3 × 4 = 12, with three decimal places.
+Q: How do you divide by a decimal? | Multiply both numbers by a power of 10 to make the divisor whole: 4.2 ÷ 0.06 = 420 ÷ 6.
+Q: How do you convert 3/8 to a decimal? | Divide: 3 ÷ 8 = 0.375.
+Q: What happens when you multiply by a number between 0 and 1? | The result is smaller; dividing by such a number makes it bigger.
+Q: Which is bigger, 0.45 or 0.405? | 0.45: the tenths match, but 0.45 has 5 hundredths and 0.405 has none.
+Q: What is the common mistake with 0.3 × 0.3? | Thinking it is 0.9; it is 0.09.
 
 ## Percentages
 S: A percentage is a fraction out of 100. Percentages compare proportions on a common scale and appear everywhere: discounts, interest, test scores and statistics.
@@ -579,6 +749,16 @@ NUM1#maths-u01-18-q1@1: What is 35% of 260? | 91 | 0 |  | 0.35 × 260 = 91.
 M1#maths-u01-18-q2@1: Which is 0.06 as a percentage? | 6% | 0.6% | 60% | 0.06% | 600% | To turn a decimal into a percentage, multiply by 100: 0.06 = 6/100 = 6%.
 M2#maths-u01-18-q3@2: In a test, Ali scores 42 out of 56. What percentage is this? | 75% | 42% | 56% | 70% | 80% | Divide the score by the total and multiply by 100: 42 ÷ 56 = 0.75 = 75%.
 NUM1#maths-u01-18-q4@1: A price rises by 15% to £69. What was the original price in £? | 60 | 0 | £ | Divide by the multiplier 1.15: 69/1.15 = £60.
+Q: What is a percentage? | A number of parts per hundred: 35% = 35/100 = 0.35.
+Q: What is a multiplier for a percentage? | The decimal you multiply by to find that percentage of an amount: 35% gives 0.35.
+Q: What is 0.125 as a percentage? | 12.5%.
+Q: What fraction is 33⅓%? | ⅓.
+Q: How do you find 35% of 240 with a multiplier? | 0.35 × 240 = 84.
+Q: What is 45 minutes as a percentage of 2 hours? | 37.5%: convert to minutes, then 45 ÷ 120 × 100.
+Q: Find 17.5% of £360 without a calculator. | £63: 10% is £36, 5% is £18 and 2.5% is £9.
+Q: What is 150% of 40? | 60; percentages can exceed 100%.
+Q: What is the difference between a percentage point and a percentage change? | A rate rising from 4% to 5% rises by 1 percentage point, which is a 25% increase.
+Q: What is 50% of 20%? | 10%: percentages of percentages multiply.
 
 ## Percentage Change and Reverse Percentages
 S: Percentage change measures an increase or decrease relative to the original amount. Reverse percentages work backwards from a changed amount to the original, a common exam question and a common source of everyday mistakes.
@@ -614,6 +794,16 @@ NUM1#maths-u01-29-q2@2: After a 25% increase, a value is 150. What was the origi
 M3#maths-u01-29-q3@2: A shop increases prices by 20%, then reduces them by 20%. Compared with the start, prices are: | 4% lower | the same | 4% higher | 2% lower | 20% lower | The multipliers combine: × 1.2 × 0.8 = × 0.96, which is a 4% decrease overall.
 M1#maths-u01-29-q4@1: Which multiplier increases an amount by 7%? | 1.07 | 0.07 | 1.7 | 0.93 | 7 | An increase of 7% keeps 100% and adds 7%, so multiply by 107% = 1.07.
 NUM1#maths-u01-29-q5@1: After a 20% discount a coat costs £48. What was the original price in £? | 60 | 0 | £ | The multiplier is 0.8, so the original price is 48/0.8 = £60.
+Q: What is the formula for percentage change? | (new − original) ÷ original × 100.
+Q: What multiplier increases an amount by 15%? | 1.15.
+Q: What multiplier decreases an amount by 15%? | 0.85.
+Q: What must you always divide by when finding percentage change? | The original amount.
+Q: What is a reverse percentage? | Finding the original value when you know the value after a percentage change.
+Q: After a 20% increase a price is £96. What was the original? | £80: £96 is 120% of the original, so 96 ÷ 1.2.
+Q: Why is taking 20% off £96 wrong for undoing a 20% increase? | The 20% was of the original, not of £96, so it gives £76.80 instead of £80.
+Q: A coat costs £68 after 15% off. What was the original price? | £80: 68 ÷ 0.85.
+Q: How do you calculate 5% growth over 3 years? | Multiply by 1.05^{3}.
+Q: How do you model a car losing 15% of its value each year for n years? | Multiply by 0.85^{n}.
 
 ## Exponents and Powers
 S: A power (exponent, index) tells you how many times to multiply a number by itself. The laws of indices make calculations with powers fast, and extend naturally to zero, negative and fractional powers.
@@ -651,6 +841,16 @@ NUM1#maths-u01-20-q1@1: Evaluate 32^{3/5}. | 8 | 0 |  | The fifth root of 32 is 
 M1#maths-u01-20-q2@1: Simplify x^{5} × x^{3}. | x^{8} | x^{15} | x^{2} | 2x^{8} | x^{53} | Multiplying powers of the same base adds the indices: 5 + 3 = 8, so x^{8}.
 M2#maths-u01-20-q3@2: What is 2^{−3}? | 1/8 | −8 | −6 | 8 | 1/6 | A negative power is a reciprocal: 1/2^{3} = 1/8.
 NUM1#maths-u01-20-q4@1: Simplify 2^{5} × 2^{−2} ÷ 2^{1} and give its value. | 4 | 0 |  | Add and subtract indices: 2^{5 − 2 − 1} = 2^{2} = 4.
+Q: What is the base in 5^{3}? | 5, the number being raised to a power.
+Q: What is the law for multiplying powers with the same base? | a^{m} × a^{n} = a^{m+n}.
+Q: What is the law for dividing powers with the same base? | a^{m} ÷ a^{n} = a^{m−n}.
+Q: What is the law for a power of a power? | (a^{m})^{n} = a^{mn}.
+Q: What does a negative power mean? | A reciprocal: a^{−n} = 1/a^{n}.
+Q: What does a^{1/n} mean? | The nth root of a.
+Q: Why is a^{0} defined as 1? | It keeps the division law working: a^{3} ÷ a^{3} = a^{0}, and it also equals 1.
+Q: Evaluate 27^{−2/3}. | 1/9: 27^{1/3} = 3, 3^{2} = 9, and the negative power gives the reciprocal.
+Q: Is (a + b)^{n} equal to a^{n} + b^{n}? | No: (2 + 3)^{2} = 25, not 13.
+Q: What sign does a negative base give with even and odd powers? | Even powers give a positive, (−2)^{4} = 16; odd powers give a negative, (−2)^{3} = −8.
 
 ## Roots and Radicals
 S: A root undoes a power: the square root of 49 is 7 because 7^{2} = 49. Roots that aren't whole numbers are left exactly as surds (School 3) or estimated as decimals.
@@ -685,6 +885,16 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 NUM1#maths-u01-21-q1@1: What is ³√125 + √144? | 17 | 0 |  | ³√125 = 5 and √144 = 12, so 17.
 M1#maths-u01-21-q2@1: Between which two whole numbers does √40 lie? | 6 and 7 | 4 and 5 | 5 and 6 | 7 and 8 | 19 and 21 | 40 lies between the square numbers 36 = 6^{2} and 49 = 7^{2}, so √40 is between 6 and 7.
 M3#maths-u01-21-q3@2: Which statement is true? | √(36 + 64) = 10 | √36 + √64 = 10 | √(36 + 64) = 14 | √36 × √64 = 100 | √(36 × 64) = 100 | √100 = 10, while √36 + √64 = 14: roots don't distribute over addition.
+Q: What is a square root? | A number which, multiplied by itself, gives the original: √49 = 7.
+Q: What is a radical? | A root sign and the expression under it.
+Q: How many square roots does a positive number have? | Two, a positive and a negative; the √ sign means the positive one.
+Q: Do negative numbers have real cube roots? | Yes: ³√−8 = −2; but they have no real square roots.
+Q: Estimate √50. | About 7.07: it lies between √49 = 7 and √64 = 8, closer to 7.
+Q: What is the side of a square of area 200 cm^{2}? | √200 ≈ 14.1 cm.
+Q: Estimate √90 to one decimal place. | 9.5: 9.5^{2} = 90.25 is just above 90.
+Q: How can √(ab) be split for positive a and b? | √(ab) = √a × √b.
+Q: Why can't 7,342 be a perfect square? | Square numbers end only in 0, 1, 4, 5, 6 or 9.
+Q: How should exact answers involving roots be written? | Keeping the root sign, such as √2, rather than a decimal approximation.
 
 ## Scientific Notation
 S: Scientific notation (standard form) writes numbers as A × 10^{n}, with 1 ≤ A < 10. It makes very large and very small numbers readable and easy to compare and calculate with.
@@ -719,6 +929,16 @@ SRC: NASA, Planetary fact sheet | data | 2024 | https://nssdc.gsfc.nasa.gov/plan
 NUM1#maths-u01-22-q1@1: Work out (6 × 10^{5}) × (4 × 10^{−2}) as an ordinary number. | 24000 | 0 |  | 6 × 4 = 24 and 10^{5 − 2} = 10^{3}, giving 24 × 10^{3} = 24,000 (2.4 × 10^{4}).
 M1#maths-u01-22-q2@1: Which is 360,000 in standard form? | 3.6 × 10^{5} | 36 × 10^{4} | 3.6 × 10^{4} | 0.36 × 10^{6} | 3.6 × 10^{6} | Move the point 5 places so that A = 3.6 is between 1 and 10.
 M2#maths-u01-22-q3@2: What is (8 × 10^{9}) ÷ (2 × 10^{−3})? | 4 × 10^{12} | 4 × 10^{6} | 4 × 10^{−27} | 6 × 10^{12} | 16 × 10^{6} | Divide the numbers (8 ÷ 2 = 4) and subtract the powers: 9 − (−3) = 12, giving 4 × 10^{12}.
+Q: What is standard form? | A × 10^{n}, where 1 ≤ A < 10 and n is an integer.
+Q: What is an order of magnitude? | The power of 10 a quantity is closest to.
+Q: What is 4,700,000 in standard form? | 4.7 × 10^{6}.
+Q: What does a negative power of 10 tell you in standard form? | The number is less than 1.
+Q: Why isn't 23 × 10^{4} in standard form? | 23 isn't between 1 and 10; it should be 2.3 × 10^{5}.
+Q: How do you multiply numbers in standard form? | Multiply the A values, add the powers, then adjust so A is between 1 and 10.
+Q: How do you add numbers in standard form? | Convert them to the same power of 10, or to ordinary numbers, first.
+Q: Roughly how many times heavier is the Earth than the Moon? | About 81 times: 5.97 × 10^{24} ÷ 7.35 × 10^{22}.
+Q: How do you compare numbers in standard form? | Compare the powers first, then the A values.
+Q: What does 4.7E6 on a calculator mean, and how should you write it? | 4.7 × 10^{6}; always write standard form properly in your answer.
 
 ## Rounding and Estimation
 S: Rounding simplifies numbers to a sensible accuracy; estimation uses rounded numbers to predict an answer. Together they catch calculator slips and give quick answers when exactness isn't needed.
@@ -750,6 +970,16 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 M1#maths-u01-23-q1@1: What is 4,649 to the nearest hundred? | 4,600 | 4,700 | 4,650 | 5,000 | 4,640 | To the nearest hundred, look at the tens digit: it's 4, so round down to 4,600.
 M2#maths-u01-23-q2@2: Which is the best estimate of 6.12 × 39.7 ÷ 0.49? | 480 | 240 | 120 | 4,800 | 48 | Round each number to 1 significant figure: 6 × 40 ÷ 0.5 = 240 ÷ 0.5 = 480.
 NUM1#maths-u01-23-q3@2: Round 0.0896 to 2 decimal places. | 0.09 | 0 |  | The third decimal digit is 9, so 0.08 rounds up to 0.09.
+Q: What is rounding? | Replacing a number with a simpler nearby value at a stated accuracy.
+Q: What is an estimate? | An approximate answer found with rounded numbers.
+Q: How do you decide whether to round up or down? | Look at the digit after the last one you're keeping: 5 or more rounds up, less than 5 rounds down.
+Q: What is 2.995 to 2 decimal places? | 3.00, keeping the zeros to show the accuracy.
+Q: What is 18,350 to the nearest 1,000? | 18,000.
+Q: How do you estimate a calculation? | Round each number to 1 significant figure, then calculate.
+Q: Estimate 48.7 × 3.12 ÷ 0.512. | 50 × 3 ÷ 0.5 = 300.
+Q: What should you do if a calculator answer differs wildly from your estimate? | Check the calculation.
+Q: What is the difference between truncating and rounding 3.78 to 1 decimal place? | Truncating chops the digits to give 3.7; rounding gives 3.8.
+Q: What is the common mistake of rounding in stages? | Rounding 3.4467 to 3.447, then 3.45, then 3.5, when 3.4467 to 1 d.p. is 3.4.
 
 ## Significant Figures
 S: Significant figures count the digits that carry meaning about a number's size and precision. They let you state answers to a sensible accuracy, especially for very large or very small numbers.
@@ -781,6 +1011,16 @@ SRC: National Physical Laboratory, Good practice guide: a beginner's guide to un
 NUM1#maths-u01-24-q1@1: Round 0.004 865 to 2 significant figures. | 0.0049 | 0 |  | The first two significant figures are 4 and 8; the next digit is 6, so round up to 0.0049.
 M1#maths-u01-24-q2@1: What is 72,486 to 1 significant figure? | 70,000 | 7 | 72,000 | 80,000 | 70 | The first significant figure is the 7 in the ten-thousands place; the next digit (2) rounds down.
 M2#maths-u01-24-q3@2: How many significant figures does 30.050 have? | 5 | 3 | 4 | 2 | 6 | All digits from the first non-zero digit count, including the trailing zero after the decimal point.
+Q: What is a significant figure? | A digit that contributes to a number's precision, starting from the first non-zero digit.
+Q: Are leading zeros significant? | No; zeros before the first non-zero digit, as in 0.0045, are never significant.
+Q: How many significant figures does 3,007 have? | 4, because zeros between non-zero digits count.
+Q: Why are trailing zeros in a whole number such as 5,200 ambiguous? | It may be 2, 3 or 4 significant figures, so you should say which.
+Q: How many significant figures are in 0.004 50? | 3: the 4, the 5 and the final 0.
+Q: What is 48,762 to 2 significant figures? | 49,000.
+Q: What is 0.003 846 to 2 significant figures? | 0.003 8.
+Q: How many significant figures should an answer have? | No more than your least precise measurement; 3 s.f. is the usual GCSE default unless told otherwise.
+Q: What is 167.4154 to 3 significant figures? | 167.
+Q: Why should you round only the final answer? | Rounding intermediate steps makes rounding errors build up.
 
 ## Sequences of Numbers
 S: A sequence is an ordered list of numbers following a rule. Spotting and describing the rule, whether term-to-term or position-to-term, is the foundation of algebra and of series in calculus.
@@ -815,6 +1055,16 @@ NUM1#maths-u01-25-q1@1: What is the 40th term of the sequence with nth term 6n �
 M1#maths-u01-25-q2@1: What is the nth term of 4, 10, 16, 22, …? | 6n − 2 | n + 6 | 6n + 4 | 4n + 6 | 6n | The common difference is 6, so start with 6n; then 6 × 1 = 6 needs − 2 to give the first term 4.
 M2#maths-u01-25-q3@2: Is 200 a term of the sequence 3n + 5? | Yes, the 65th term | No | Yes, the 66th term | Yes, the 200th term | Only if n can be a fraction | Solve 3n + 5 = 200: 3n = 195, so n = 65, a whole number, so it's the 65th term.
 NUM1#maths-u01-25-q4@1: What is the 20th term of 5, 8, 11, 14, …? | 62 | 0 |  | The nth term is 3n + 2, so the 20th term is 62.
+Q: What is an arithmetic sequence? | A sequence with a constant difference between terms, such as 5, 8, 11, 14, …
+Q: What is the nth term? | A formula giving any term from its position n.
+Q: What is a term-to-term rule? | A rule for getting from one term to the next, such as "add 3".
+Q: What does the coefficient of n tell you in the nth term of an arithmetic sequence? | The common difference.
+Q: What is the 50th term of 3n + 2? | 152.
+Q: Is 100 a term of 3n + 2? | No: 3n = 98 has no whole-number solution.
+Q: What is the nth term of 17, 13, 9, 5, …? | 21 − 4n.
+Q: What is a quadratic sequence? | A sequence whose second differences are constant.
+Q: What is the nth term of the geometric sequence 3, 6, 12, 24, …? | 3 × 2^{n−1}.
+Q: What is the common mistake in writing the nth term of 5, 8, 11, …? | Writing n + 3 from the term-to-term rule instead of 3n + 2.
 
 ## Number Patterns
 S: Number patterns (square, triangular, cube and Fibonacci numbers, and patterns in tables) reveal structure in mathematics. Explaining why a pattern holds, not just noticing it, is the first step towards proof.
@@ -846,6 +1096,16 @@ SRC: Courant R, Robbins H, What Is Mathematics? (2nd edn, Oxford University Pres
 NUM1#maths-u01-26-q1@1: What is the 12th triangular number? | 78 | 0 |  | 12 × 13 ÷ 2 = 78.
 M1#maths-u01-26-q2@1: Which is the next Fibonacci number after 21, 34? | 55 | 47 | 68 | 89 | 42 | Each Fibonacci number is the sum of the two before it: 21 + 34 = 55.
 M3#maths-u01-26-q3@2: What is the nth term of 4, 9, 16, 25, 36, …? | (n + 1)^{2} | n^{2} + 3 | 5n − 1 | n^{2} + 4 | 2n + 2 | These are the squares 2^{2}, 3^{2}, 4^{2}, …: term n is (n + 1)^{2}.
+Q: What is a triangular number? | A number of dots that can form a triangle: 1, 3, 6, 10, …, with nth term n(n + 1)/2.
+Q: What is a conjecture? | A statement believed to be true from evidence, but not yet proved.
+Q: What are the nth terms of square and cube numbers? | n^{2} for squares and n^{3} for cubes.
+Q: How is each Fibonacci number formed? | By adding the previous two terms: 1, 1, 2, 3, 5, 8, 13, …
+Q: Why is the sum of the first n odd numbers equal to n^{2}? | Each odd number adds an L-shaped border to a square.
+Q: What do two consecutive triangular numbers add to? | A square number, such as 6 + 10 = 16.
+Q: What warning does n^{2} + n + 41 give about patterns? | It is prime for n = 0 to 39, but not for n = 40, so patterns can mislead.
+Q: How do you find the n^{2} coefficient of a quadratic sequence? | Halve the second difference.
+Q: What is the nth term of 2, 7, 14, 23, 34, …? | n^{2} + 2n − 1.
+Q: What is the common mistake with number patterns? | Assuming a pattern always continues because it holds for the first few cases.
 
 ## Number Bases
 S: A number base is the number of digits a positional system uses. Binary (base 2), octal (base 8) and hexadecimal (base 16) are used throughout computing, and converting between bases deepens understanding of place value.
@@ -876,6 +1136,16 @@ SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw Hill 2
 NUM1#maths-u01-27-q1@1: Convert 1043₅ (base 5) to base 10. | 148 | 0 |  | 1 × 125 + 0 × 25 + 4 × 5 + 3 = 148.
 M1#maths-u01-27-q2@1: What is the hexadecimal digit for 13? | D | C | E | B | 13 | Hexadecimal uses letters for 10 to 15: A = 10, B = 11, C = 12, D = 13.
 M2#maths-u01-27-q3@2: What is 45 in base 3? | 1200₃ | 1020₃ | 2100₃ | 1110₃ | 45₃ | 45 = 1 × 27 + 2 × 9 + 0 × 3 + 0, so 1200₃.
+Q: What digits does base b use? | The digits 0 to b − 1.
+Q: What are the place values in base b? | 1, b, b^{2}, b^{3}, …
+Q: What is 342 in base 5 as a base 10 number? | 97: 3 × 25 + 4 × 5 + 2.
+Q: What is hexadecimal? | Base 16, with digits 0–9 and A–F, where A = 10 and F = 15.
+Q: Why is hexadecimal compact for binary? | Each hex digit is exactly 4 binary digits.
+Q: What is 2F in hexadecimal as a base 10 number? | 47: 2 × 16 + 15.
+Q: How do you convert a base 10 number to another base? | Divide repeatedly by the base, recording remainders, and read them from last to first.
+Q: What is 200 in hexadecimal? | C8: 12 × 16 + 8 = 200.
+Q: In any base b, what does the number written 10 mean? | b itself; 100 means b^{2}.
+Q: What is the common mistake when converting from base 10 by repeated division? | Reading the remainders in the wrong order, from first to last.
 
 ## Binary Arithmetic
 S: Binary (base 2) uses only the digits 0 and 1, matching the off and on states of electronic circuits. Every number, character and image in a computer is ultimately stored and calculated in binary.
@@ -907,6 +1177,16 @@ SRC: Department for Education, Computer science GCSE subject content | standard 
 NUM1#maths-u01-28-q1@1: Convert 1101001₂ to denary. | 105 | 0 |  | 64 + 32 + 8 + 1 = 105.
 M1#maths-u01-28-q2@1: What is 13 in binary? | 1101 | 1011 | 1110 | 1001 | 111 | 13 = 8 + 4 + 1, so there are 1s in the 8, 4 and 1 columns and a 0 in the 2 column: 1101.
 M2#maths-u01-28-q3@2: What is 111₂ + 1₂? | 1000₂ | 112₂ | 1111₂ | 110₂ | 1001₂ | 7 + 1 = 8 = 1000₂: the carries ripple through.
+Q: What is a bit? | A binary digit: 0 or 1.
+Q: What is a byte? | 8 bits, which can represent 256 values, from 0 to 255.
+Q: Why do computers use binary? | Its digits 0 and 1 match the off and on states of electronic circuits.
+Q: What are the binary place values? | 1, 2, 4, 8, 16, 32, 64, 128, …
+Q: What is 101101 in binary as a denary number? | 45: 32 + 8 + 4 + 1.
+Q: How many different values can n bits represent? | 2^{n}.
+Q: What is 1 + 1 + 1 in binary addition? | 11: write 1, carry 1.
+Q: What happens when you shift every binary digit one place left? | The number doubles, just as appending 0 in denary multiplies by 10.
+Q: How do computers represent negative numbers in two's complement? | Invert the bits and add 1.
+Q: What does shifting a binary number right do? | Halves it, losing any remainder.
 
 ## Ratios and Proportions
 S: A ratio compares the sizes of quantities; a proportion says two ratios are equal. Ratio reasoning scales recipes, maps and mixtures, and is one of the most used ideas in everyday and professional maths.
@@ -937,4 +1217,14 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 NUM1#maths-u01-19-q1@1: Share 360 in the ratio 4 : 5. What is the larger share? | 200 | 0 |  | 9 parts, so one part is 40; the larger share is 5 × 40 = 200.
 M1#maths-u01-19-q2@1: What is 45 : 60 in its simplest form? | 3 : 4 | 9 : 12 | 4 : 3 | 45 : 60 | 15 : 20 | Divide both parts by their highest common factor, 15, to get 3 : 4.
 M2#maths-u01-19-q3@2: Paint is mixed blue to yellow in the ratio 2 : 3. How much blue is needed to make 8 litres? | 3.2 litres | 2 litres | 5.33 litres | 4.8 litres | 2.67 litres | Blue is 2/5 of the mix: 2/5 × 8 = 3.2 litres.
+Q: What is a ratio? | A comparison of quantities, such as 3 : 2, showing how many of one for each of the other.
+Q: How do you simplify a ratio? | Divide both parts by the HCF, after converting to the same units: 18 : 12 = 3 : 2.
+Q: What is 50 cm : 2 m in its simplest form? | 1 : 4.
+Q: How do you share £240 in the ratio 3 : 5? | 8 parts in total, so one part is £30, giving £90 and £150.
+Q: In the ratio 3 : 5, what fraction of the whole is the first share? | 3/8.
+Q: What is the unitary method? | Find the value of one unit, then scale: if 4 pens cost £3.60, one costs £0.90.
+Q: What is direct proportion? | Two quantities increasing at the same rate, y = kx, with a graph through the origin.
+Q: What is inverse proportion? | When one quantity increases the other decreases, y = k/x, as with more workers taking less time.
+Q: A recipe for 6 uses 450 g of flour. How much is needed for 15? | 1,125 g, using the scale factor 2.5.
+Q: What is the common mistake when sharing in a ratio? | Dividing the total by one side of the ratio instead of by the total number of parts.
 `;
