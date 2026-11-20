@@ -2,7 +2,7 @@
 // kit/styles/base.css in each page's <head>, so the theme is set before the first paint and a page never flashes the
 // wrong colours.
 //
-//   localStorage "gradify.theme" = "dark" (the default, Gradify's own look) | "light" | "system" (follow the device)
+//   localStorage "gradify.theme" = "system" (the default: follow the device) | "light" | "dark"
 //   <html data-theme="dark|light">  the resolved theme; the colours are tokens in kit/styles/base.css
 //
 // It's a choice for this device, like the device's own appearance setting, so it isn't synced to the account.
@@ -10,7 +10,8 @@
 (function () {
   var KEY = "gradify.theme", root = document.documentElement;
   var media = window.matchMedia ? window.matchMedia("(prefers-color-scheme: light)") : null;
-  function choice() { try { var v = localStorage.getItem(KEY); return v === "light" || v === "system" ? v : "dark"; } catch (e) { return "dark"; } }
+  // until someone chooses, follow the device: a phone set to light (most are, by day) gets light mode first
+  function choice() { try { var v = localStorage.getItem(KEY); return v === "light" || v === "dark" ? v : "system"; } catch (e) { return "system"; } }
   function resolved(c) { return c === "system" ? (media && media.matches ? "light" : "dark") : c; }
   function apply() {
     var t = resolved(choice());
@@ -75,7 +76,10 @@
     b.type = "button"; b.className = bar ? "icon-btn access-btn" : "icon-btn access-btn access-float"; b.innerHTML = AA;
     b.setAttribute("aria-label", "Reading and accessibility settings"); b.title = "Reading and accessibility settings";
     b.setAttribute("aria-haspopup", "dialog");
-    b.addEventListener("click", function () { open(b); });
+    // until it has been opened once, the button says what it is ("Reading"), so the settings are easy to find
+    var SEEN = "gradify.access.seen", seen = false; try { seen = !!localStorage.getItem(SEEN); } catch (e) { seen = true; }
+    if (!seen && bar) { b.classList.add("access-named"); b.insertAdjacentHTML("beforeend", '<span class="access-name">Reading</span>'); }
+    b.addEventListener("click", function () { try { localStorage.setItem(SEEN, "1"); } catch (e) { /* fine */ } b.classList.remove("access-named"); var n = b.querySelector(".access-name"); if (n) n.remove(); open(b); });
     // pages without a top bar (terms, privacy, quality…) get the button in the corner, so the settings are on every page
     if (!bar) document.body.appendChild(b);
     else { var t = bar.querySelector(".theme-btn"); if (t) t.parentNode.insertBefore(b, t); else { var host = bar.querySelector(".right, .sub-right"); host ? host.insertBefore(b, host.firstChild) : bar.appendChild(b); } }

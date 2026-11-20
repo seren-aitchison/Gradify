@@ -429,3 +429,8 @@ header.bar.glass, header.sub-nav.glass {
 }
 @keyframes course-wait { from { background-position: 100% 0; } to { background-position: 0 0; } }
 @media (prefers-reduced-motion: reduce) { #course:empty::before { animation: none; } }
+
+/* the reading-settings button, named until it's first opened (kit/core/theme-boot.js) */
+.access-btn.access-named { width: auto !important; gap: 6px; padding: 0 12px 0 9px; border-radius: 999px; display: inline-flex; align-items: center; }
+.access-name { font: 600 13.5px var(--sans); }
+@media (max-width: 760px) { .access-btn.access-named { width: 36px !important; padding: 0; justify-content: center; } .access-name { display: none; } }
