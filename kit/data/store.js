@@ -10,6 +10,24 @@ const uid = () => (crypto.randomUUID ? crypto.randomUUID() : "10000000-1000-4000
 const now = () => new Date().toISOString();
 export const cloudConfigured = () => Boolean(SUPABASE_URL && SUPABASE_ANON_KEY);
 
+// The Supabase client (213 KB) is only needed by someone who's signed in. The app pages load it with a <script> tag
+// (signing in happens there); every other page loads it here, on demand, when this browser holds a sign-in or has
+// just come back from one, so a signed-out visitor never downloads it and the page doesn't wait for it.
+const SUPABASE_JS = new URL("../vendor/supabase/supabase.js", import.meta.url).href;
+let supabaseLoading = null;
+export const hasStoredSession = () => { try { return Object.keys(localStorage).some((k) => /^sb-[\w-]+-auth-token$/.test(k)); } catch { return false; } };
+const authReturn = () => /[#&?](access_token|refresh_token|code|error_description)=/.test(`${location.search}${location.hash}`);
+export function loadSupabase() {
+  if (globalThis.window?.supabase) return Promise.resolve(true);
+  if (typeof document === "undefined") return Promise.resolve(false);
+  return (supabaseLoading ||= new Promise((resolve) => {
+    const s = Object.assign(document.createElement("script"), { src: SUPABASE_JS, async: true });
+    s.onload = () => resolve(Boolean(window.supabase));
+    s.onerror = () => { supabaseLoading = null; s.remove(); resolve(false); };
+    document.head.append(s);
+  }));
+}
+
 // Which sign-in methods the Gradify project has switched on (Supabase's public auth settings). Google sign-in only
 // works once the Google provider is enabled in Supabase (Authentication → Sign In / Providers → Google, with a Google
 // OAuth client); until then the Google button is hidden instead of sending learners to Supabase's error page.
@@ -122,7 +140,9 @@ export class CloudStore {
   }
   fresh() { this._shared.clear(); this._cp = null; }
   static async create() {
-    if (!cloudConfigured() || !window.supabase) return null;
+    if (!cloudConfigured()) return null;
+    if (!window.supabase && !(hasStoredSession() || authReturn())) return null;   // signed out: this device's store
+    if (!(await loadSupabase())) return null;
     // once Pro is on sale, every request says which study device it's from (Free studies on one: kit/data/plan.js)
     const device = PLUS_ON_SALE ? deviceId() : null;
     const store = new CloudStore(window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, device ? { global: { headers: { "x-gradify-device": device } } } : undefined));
