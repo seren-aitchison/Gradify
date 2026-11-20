@@ -48,7 +48,7 @@
 .co-me { display: flex; gap: 14px; align-items: center; }
 .co-me > div:last-child { flex: 1; min-width: 0; }
 .co-lvbadge { width: 58px; height: 58px; flex: none; display: grid; place-items: center; align-content: center; border-radius: 16px; background: var(--spectrum); box-shadow: 0 8px 24px -8px #f055dd; color: #fff; }
-.co-lvbadge b { font-size: 22px; line-height: 1; } .co-lvbadge small { font-size: 9.5px; color: var(--fg); text-transform: uppercase; letter-spacing: .1em; }
+.co-lvbadge b { font-size: 22px; line-height: 1; } .co-lvbadge small { font-size: 9.5px; color: #fff; text-transform: uppercase; letter-spacing: .1em; padding: 1px 4px; border-radius: 4px; background: rgba(8, 8, 20, .62); }
 .co-bar { height: 8px; margin: 7px 0 5px; border-radius: 9px; background: rgba(var(--ink-rgb), .08); overflow: hidden; }
 .co-bar i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--a, #4641ff), var(--b, #f055dd)); transition: width .5s; }
 .co-bar.warm i { background: linear-gradient(90deg, #ff5600, #ffc002); }
@@ -1597,8 +1597,8 @@ html[data-motion="reduce"] .co-main.cx-enter { animation: none; }
 .co::before {
   content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
   background:
-    radial-gradient(42vw 46vh at -4% 8%, color-mix(in srgb, var(--la) 70%, transparent), transparent 70%),
-    radial-gradient(40vw 50vh at 104% 14%, color-mix(in srgb, var(--lb) 66%, transparent), transparent 70%),
+    radial-gradient(42vw 46vh at -4% 8%, color-mix(in srgb, var(--la) 46%, transparent), transparent 70%),
+    radial-gradient(40vw 50vh at 104% 14%, color-mix(in srgb, var(--lb) 44%, transparent), transparent 70%),
     radial-gradient(34vw 40vh at -6% 58%, color-mix(in srgb, #ffb020 50%, transparent), transparent 70%),
     radial-gradient(36vw 44vh at 106% 62%, color-mix(in srgb, #23c7d9 48%, transparent), transparent 70%),
     radial-gradient(40vw 40vh at 4% 104%, color-mix(in srgb, #ff4fa3 50%, transparent), transparent 70%),
@@ -1610,7 +1610,8 @@ html[data-motion="reduce"] .co-main.cx-enter { animation: none; }
   content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
   background: radial-gradient(44% 70% at 50% 46%, var(--lg-core), color-mix(in srgb, var(--lg-core) 60%, transparent) 55%, transparent 100%);
 }
-.co { --lg-core: rgba(var(--sink-rgb), .72); }
+.co { --lg-core: rgba(var(--sink-rgb), .72); --mute: #c9c9d1; }
+:root[data-theme="light"] .co { --mute: #4a4a5e; }
 :root[data-theme="light"] .co { --lg-core: #fff; }
 
 /* text and edges a touch brighter: white reads as white, not grey (and near-black in light) */
@@ -1870,12 +1871,12 @@ html[data-motion="reduce"] .co-main.cx-enter { animation: none; }
 .cx-flow::-webkit-scrollbar { display: none; }
 .cx-flow:focus-visible { box-shadow: 0 0 0 2px var(--fg); border-radius: 24px; }
 .cx-fcard { --d: 0; flex: none; scroll-snap-align: center; position: relative; display: flex; flex-direction: column; gap: 6px; width: 260px; min-height: 200px; padding: 20px; border-radius: 28px; color: #fff; text-decoration: none; overflow: hidden;
-  background: radial-gradient(80% 60% at 20% 10%, rgba(255, 255, 255, .35), transparent 60%), radial-gradient(90% 90% at 90% 100%, rgba(0, 0, 0, .35), transparent 60%), linear-gradient(140deg, var(--a), var(--b));
+  background: radial-gradient(70% 50% at 92% 0%, rgba(255, 255, 255, .26), transparent 60%), linear-gradient(180deg, rgba(8, 8, 20, .42), rgba(8, 8, 20, .56)), linear-gradient(140deg, var(--a), var(--b));
   box-shadow: inset 0 1.5px 0 rgba(255, 255, 255, .55), inset 0 0 0 1px rgba(255, 255, 255, .18), 0 24px 44px -24px color-mix(in srgb, var(--a) 80%, transparent);
   transform: rotateY(calc(var(--d) * -28deg)) scale(calc(1 - min(abs(var(--d)), 1.4) * .14)) translateZ(0); transition: transform .12s linear, filter .2s; filter: saturate(calc(1 - min(abs(var(--d)), 1) * .35)) brightness(calc(1 - min(abs(var(--d)), 1) * .12)); }
-.cx-fcard .co-kicker { color: rgba(255, 255, 255, .85); }
+.cx-fcard .co-kicker { color: #fff; text-shadow: 0 1px 6px rgba(0, 0, 0, .35); }
 .cx-fcard b { font-size: 21px; line-height: 1.2; letter-spacing: -.02em; text-shadow: 0 1px 12px rgba(0, 0, 0, .25); }
-.cx-fcard small { color: rgba(255, 255, 255, .85); font-size: 13px; }
+.cx-fcard small { color: #fff; font-size: 13px; text-shadow: 0 1px 6px rgba(0, 0, 0, .35); }
 .cx-fstat { margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 99px; font: 600 12px var(--sans); background: rgba(var(--sink-rgb), .25); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3); }
 .cx-flowbtn { position: absolute; top: 50%; z-index: 20; translate: 0 -50%; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(var(--ink-rgb), .14); background: rgba(var(--surface-rgb), .7); color: var(--fg); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); box-shadow: inset 0 1px 0 rgba(var(--spec-rgb), .4), 0 10px 22px -12px rgba(0, 0, 0, .6); cursor: pointer; }
 .cx-flowbtn.prev { left: 4px; } .cx-flowbtn.next { right: 4px; }
