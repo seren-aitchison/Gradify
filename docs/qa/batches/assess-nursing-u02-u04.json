@@ -1,0 +1,181 @@
+{
+  "task": "assess-nursing-u02-u04",
+  "on": "2026-11-20",
+  "files": [
+    "kit/courses/nursing/notes/u02.js",
+    "kit/courses/nursing/notes/u04.js"
+  ],
+  "lessons": [
+    {
+      "course": "nursing",
+      "lesson": "u02-01",
+      "action": "enhanced",
+      "changes": [
+        "added LV and EV",
+        "added M3 vignette (precise anatomical record)",
+        "added SA3 on rewriting a vague handover"
+      ],
+      "findings": []
+    },
+    {
+      "course": "nursing",
+      "lesson": "u02-02",
+      "action": "enhanced",
+      "changes": [
+        "added LV and EV",
+        "added SA3 on osmosis and intravenous fluid tonicity"
+      ],
+      "findings": []
+    },
+    {
+      "course": "nursing",
+      "lesson": "u02-03",
+      "action": "enhanced",
+      "changes": [
+        "added LV and EV",
+        "added M2 on insulin negative feedback",
+        "added SA3 on post-operative compensation and NEWS2 escalation"
+      ],
+      "findings": []
+    },
+    {
+      "course": "nursing",
+      "lesson": "u02-04",
+      "action": "enhanced",
+      "changes": [
+        "added LV and EV",
+        "added M3 vignette on early pressure damage in darker skin",
+        "added SA3 on skin structure, protection and temperature"
+      ],
+      "findings": []
+    },
+    {
+      "course": "nursing",
+      "lesson": "u02-05",
+      "action": "enhanced",
+      "changes": [
+        "added LV and EV",
+        "added SA3 on fragility fracture, steroids and remodelling"
+      ],
+      "findings": []
+    },
+    {
+      "course": "nursing",
+      "lesson": "u02-06",
+      "action": "enhanced",
+      "changes": [
+        "added LV and EV",
+        "added M3 on neuromuscular junction receptor blockade",
+        "added SA3 on immobility, muscle wasting and VTE"
+      ],
+      "findings": []
+    },
+    {
+      "course": "nursing",
+      "lesson": "u02-07",
+      "action": "enhanced",
+      "changes": [
+        "added LV and EV",
+        "added M3 vignette on falling GCS with pupil change",
+        "added SA3 on the action potential and synapse"
+      ],
+      "findings": []
+    },
+    {
+      "course": "nursing",
+      "lesson": "u02-08",
+      "action": "enhanced",
+      "changes": [
+        "added LV and EV",
+        "added SA3 on level of spinal cord injury"
+      ],
+      "findings": []
+    },
+    {
+      "course": "nursing",
+      "lesson": "u02-09",
+      "action": "enhanced",
+      "changes": [
+        "added LV and EV",
+        "added SA3 vignette on sympathetic activation versus anxiety"
+      ],
+      "findings": []
+    },
+    {
+      "course": "nursing",
+      "lesson": "u02-10",
+      "action": "enhanced",
+      "changes": [
+        "added LV and EV",
+        "added SA3 on cardiac output compensation after blood loss (illustrative numbers recomputed: 70 x 70 = 4900 mL/min, 4900 / 50 = 98)"
+      ],
+      "findings": []
+    },
+    {
+      "course": "nursing",
+      "lesson": "u02-11",
+      "action": "enhanced",
+      "changes": [
+        "added LV and EV",
+        "added M3 vignette on head injury while anticoagulated",
+        "added SA3 on capillary exchange and low-albumin oedema"
+      ],
+      "findings": []
+    },
+    {
+      "course": "nursing",
+      "lesson": "u02-12",
+      "action": "enhanced",
+      "changes": [
+        "added LV and EV",
+        "added M3 vignette on hypercapnia above target saturation in COPD",
+        "added SA3 on control of breathing and counting respiratory rate"
+      ],
+      "findings": []
+    },
+    {
+      "course": "nursing",
+      "lesson": "u02-13",
+      "action": "enhanced",
+      "changes": [
+        "added LV and EV",
+        "added SA3 vignette on pulse oximetry limits in darker skin"
+      ],
+      "findings": []
+    },
+    {
+      "course": "nursing",
+      "lesson": "u02-14",
+      "action": "enhanced",
+      "changes": [
+        "added LV and EV",
+        "added SA3 on constipation in hospital"
+      ],
+      "findings": []
+    },
+    {
+      "course": "nursing",
+      "lesson": "u02-15",
+      "action": "enhanced",
+      "changes": [
+        "added LV and EV",
+        "added SA3 on liver failure: bleeding, oedema and medicines"
+      ],
+      "findings": []
+    },
+    {
+      "course": "nursing",
+      "lesson": "u02-16",
+      "action": "enhanced",
+      "changes": [
+        "added LV and EV",
+        "added M3 urine output vignette (0.5 x 80 = 40 mL/h; 120 mL expected over 3 h vs 45 mL passed)",
+        "added SA3 on ADH and RAAS in dehydration"
+      ],
+      "findings": []
+    }
+  ],
+  "notes": [
+    "In progress: u02 lessons 01-16 done."
+  ]
+}

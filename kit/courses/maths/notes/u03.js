@@ -5,6 +5,8 @@ export default `
 S: Algebra uses letters to stand for numbers, so that we can describe patterns, rules and relationships that hold for many values at once. It turns "think of a number, double it and add three" into 2n + 3.
 O: Use letters to represent unknowns and variables
 O: Write and interpret simple algebraic expressions
+LV: GCSE · Fluency
+EV: established | A letter in algebra stands for a number, either a particular unknown or a variable, and obeys the same rules as numbers.
 T: Variable | A letter standing for a number that can change, such as x in y = 2x + 1
 T: Expression | A combination of numbers, letters and operations, with no equals sign, such as 3a + 2b
 H: Letters for numbers
@@ -32,11 +34,15 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 M1#maths-u03-01-q1@1: Which expression means "7 less than y"? | y − 7 | 7 − y | 7y | y ÷ 7 | y + 7 | "Less than" subtracts 7 from y, so y − 7; 7 − y is 7 minus y.
 M2#maths-u03-01-q2@2: Pens cost p pence each and a pad costs 90p. What is the cost, in pence, of 4 pens and 2 pads? | 4p + 180 | 6p + 90 | 4p + 90 | 8p | 4(p + 90) | 4 pens cost 4p and 2 pads cost 2 × 90 = 180, so 4p + 180.
 NUM1#maths-u03-01-q3@1: Find the value of 2n + 3 when n = 8.5. | 20 | 0 |  | 2 × 8.5 = 17, and 17 + 3 = 20.
+M3@2: Adult tickets cost £a and child tickets £c. A family of 2 adults and 3 children pays with a £50 note. Which expression gives their change in pounds? | 50 − 2a − 3c | 50 − 2a + 3c | 2a + 3c − 50 | 50 − 5ac | The cost is 2a + 3c, and the change is 50 minus all of it: 50 − (2a + 3c) = 50 − 2a − 3c.
+SA2@1,2: A student writes "4 less than 3 times n" as 4 − 3n. Explain the mistake, give the correct expression and check it with n = 10. | "4 less than" something means take 4 away from it, so the 4 is subtracted from 3n, not the other way round. The correct expression is 3n − 4. Check with n = 10: 3 times 10 is 30, and 4 less is 26; 3n − 4 = 26, whereas 4 − 3n = −26. | Says the 4 is subtracted from 3n ; Writes 3n − 4 ; Substitutes n = 10 to get 26 ; Shows 4 − 3n gives a different value
 
 ## Elementary Algebra
 S: Elementary algebra is the toolkit of school algebra: the rules for manipulating expressions and equations, built on the properties of numbers. Every later technique, from factorising to calculus, rests on these rules.
 O: Apply the commutative, associative and distributive laws to expressions
 O: Distinguish expressions, equations, formulae and identities
+LV: GCSE · Fluency
+EV: established | The commutative, associative and distributive laws hold for all real numbers and justify every step of algebraic manipulation.
 T: Identity | A statement true for every value of the variable, such as 2(x + 3) ≡ 2x + 6
 T: Formula | A rule linking quantities, such as v = u + at
 H: The laws
@@ -63,14 +69,19 @@ Q: What symbol shows an identity? | ≡.
 SUM: Algebra follows the laws of arithmetic.
 SUM: Expressions, equations, formulae and identities are different kinds of statement.
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
-SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | textbook | 1993 | https://link.springer.com/
+SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | secondary | 1993 | https://link.springer.com/
 M1#maths-u03-02-q1@1: Which is an identity? | 3(x + 2) ≡ 3x + 6 | 3x + 2 = 11 | y = 3x + 2 | 3x + 2 | 3x > 2 | It's true for every value of x, so it's an identity.
 M2#maths-u03-02-q2@2: Which law justifies 7 × 98 = 7 × 100 − 7 × 2? | The distributive law | The commutative law | The associative law | The law of indices | The inverse law | 7(100 − 2) = 7 × 100 − 7 × 2 multiplies across a bracket.
+TF1@2: 2(x + 3) = 2x + 3 is an identity. | false | The distributive law multiplies both terms in the bracket: 2(x + 3) = 2x + 6, so the statement is false for every x.
+M3@1: Which step uses the associative law? | (2x + 5) + 3 = 2x + (5 + 3) | 4(x + 2) = 4x + 8 | 3x + 7 = 7 + 3x | x + (−x) = 0 | Regrouping without changing order is the associative law; the others show the distributive, commutative and inverse laws.
+SA2@2: Explain the difference between an equation and an identity, giving an example of each, and describe how you could test which one a statement is. | An equation is true only for particular values: 2x + 1 = 7 holds only when x = 3. An identity is true for every value and is written with ≡: 2(x + 3) ≡ 2x + 6. To test, simplify both sides: if they become the same expression it is an identity; or substitute two or three values: if any value fails, it isn't an identity. | Defines an equation as true for particular values ; Defines an identity as true for all values (≡) ; Gives a correct example of each ; Describes a valid test
 
 ## Algebraic Expressions
 S: An algebraic expression is built from terms joined by + and −. Knowing the vocabulary (terms, coefficients, constants, like terms) and substituting values accurately are the foundations of algebraic fluency.
 O: Identify terms, coefficients and constants
 O: Substitute values, including negatives, into expressions
+LV: GCSE · Fluency
+EV: established | Substituting into an expression follows the order of operations, with negative values placed in brackets.
 T: Term | A part of an expression separated by + or −, such as 5x^{2}, −3x and 7 in 5x^{2} − 3x + 7
 T: Coefficient | The number multiplying a variable in a term: the coefficient of x in −3x is −3
 H: Vocabulary
@@ -98,11 +109,15 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 NUM1#maths-u03-03-q1@1: Evaluate 4x^{2} − 3x when x = −2. | 22 | 0 |  | 4 × (−2)^{2} = 16 and −3 × (−2) = 6, so 16 + 6 = 22.
 M1#maths-u03-03-q2@1: Which pair are like terms? | 5a^{2}b and −a^{2}b | 5ab and 5a^{2}b | 3x and 3y | 4x^{2} and 4x | 2p and 2 | Like terms have the same letters to the same powers: a^{2}b in both.
 M2#maths-u03-03-q3@2: What is the value of −x^{2} + 2x when x = −4? | −24 | 8 | −8 | 24 | 32 | −(−4)^{2} = −16 and 2 × (−4) = −8, giving −24.
+NUM3@2: Use s = ut + ½at^{2} to find s when u = −3, a = 4 and t = 5. | 35 | 0 |  | ut = −3 × 5 = −15 and ½at^{2} = ½ × 4 × 25 = 50, so s = −15 + 50 = 35.
+SA2@2: A student says that when x = −5, 3x^{2} = 225. Explain the error and find the correct value. | The student squared 3x, working out (3 × −5)^{2} = 225. By the order of operations the index applies only to x: x^{2} = (−5)^{2} = 25, then 3 × 25 = 75. | Identifies that the student squared 3x ; Says the power applies before multiplying ; Uses brackets for the negative value ; Gets 75
 
 ## Simplifying Expressions
 S: Simplifying an expression means writing it in an equivalent, shorter form by collecting like terms and using index laws. Simple expressions are easier to read, check and use.
 O: Collect like terms accurately
 O: Simplify products and quotients of algebraic terms
+LV: GCSE · Fluency
+EV: established | Only like terms combine by addition and subtraction, while products and quotients of terms simplify by the index laws.
 T: Collecting like terms | Adding or subtracting the coefficients of like terms: 5x + 3x − x = 7x
 T: Equivalent expressions | Expressions with the same value for every value of the variables
 H: Collecting like terms
@@ -130,11 +145,15 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 M1#maths-u03-04-q1@1: Simplify 7y − 3 + 2y + 8. | 9y + 5 | 9y + 11 | 14y | 5y + 5 | 9y − 11 | Collect the y terms (7y + 2y = 9y) and the numbers (−3 + 8 = 5), giving 9y + 5.
 M2#maths-u03-04-q2@2: Simplify 18a^{4}b^{2} ÷ 6ab^{2}. | 3a^{3} | 3a^{4} | 12a^{3}b | 3a^{3}b | 3a^{5}b^{4} | 18 ÷ 6 = 3, a^{4} ÷ a = a^{3}, and b^{2} ÷ b^{2} = 1.
 M3#maths-u03-04-q3@2: Which expression is equivalent to 2x^{2} + 3x − x^{2} − 3x? | x^{2} | x^{2} + 6x | 3x^{2} | x^{4} | 0 | The x^{2} terms give x^{2}; the x terms cancel to 0.
+M2@1: Simplify 3p − 5q − 7p + 2q. | −4p − 3q | 4p − 3q | −4p + 3q | −10p − 7q | The p terms give 3p − 7p = −4p and the q terms give −5q + 2q = −3q; each sign stays with its term.
+SA2@2: Explain why 2x + 3y cannot be simplified, but 2x × 3y can, and simplify 2x × 3y. | Addition only combines like terms: 2x and 3y have different letters, so 2x + 3y is already as simple as it can be (try x = 1, y = 2: it's 8, not 5xy = 10). Multiplication combines any terms: multiply the numbers and the letters, so 2x × 3y = 6xy. | Says only like terms can be added ; Says 2x and 3y are unlike ; Says products of unlike terms can be written together ; Gets 6xy
 
 ## Expanding Brackets
 S: Expanding brackets means multiplying out so that an expression is written as a sum of terms. It relies on the distributive law and is the reverse of factorising.
 O: Expand single, double and triple brackets
 O: Recognise and use the expansions of (a ± b)^{2} and (a + b)(a − b)
+LV: GCSE · Fluency
+EV: established | Expanding brackets is repeated use of the distributive law: every term in one bracket multiplies every term in the other.
 T: Expand | Multiply out brackets to remove them
 T: Difference of two squares | (a + b)(a − b) = a^{2} − b^{2}
 H: Single and double brackets
@@ -161,11 +180,15 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 M1#maths-u03-05-q1@1: Expand 4(3x − 2). | 12x − 8 | 12x − 2 | 7x − 6 | 12x + 8 | 3x − 8 | Multiply both terms by 4: 4 × 3x = 12x and 4 × (−2) = −8.
 M2#maths-u03-05-q2@2: Expand (x − 9)(x + 2). | x^{2} − 7x − 18 | x^{2} + 7x − 18 | x^{2} − 7x + 18 | x^{2} − 11x − 18 | x^{2} − 18 | x × 2 = 2x and −9 × x = −9x combine to −7x; −9 × 2 = −18.
 M3#maths-u03-05-q3@2: What is the coefficient of x in (2x − 5)^{2}? | −20 | −10 | 10 | 25 | 4 | (2x − 5)^{2} = 4x^{2} − 20x + 25: the middle term is 2 × 2x × (−5).
+NUM2@1: Expand (x + 2)(x − 1)(x + 3). What is the coefficient of x^{2}? | 4 | 0 |  | (x + 2)(x − 1) = x^{2} + x − 2; multiplying by (x + 3) gives x^{3} + 3x^{2} + x^{2} + 3x − 2x − 6 = x^{3} + 4x^{2} + x − 6.
+SA3@2: Use the difference of two squares to work out 103 × 97 without a calculator, and explain why the method works. | 103 × 97 = (100 + 3)(100 − 3). Since (a + b)(a − b) = a^{2} − ab + ab − b^{2} = a^{2} − b^{2}, the middle terms cancel, so 103 × 97 = 100^{2} − 3^{2} = 10,000 − 9 = 9,991. | Writes 103 and 97 as 100 + 3 and 100 − 3 ; Uses (a + b)(a − b) = a^{2} − b^{2} ; Explains the cross terms cancel ; Gets 9,991
 
 ## Factorisation
 S: Factorising writes an expression as a product of factors. It's the reverse of expanding and the key to solving quadratic equations, simplifying algebraic fractions and finding roots.
 O: Factorise by taking out common factors and factorising quadratics
 O: Recognise the difference of two squares and perfect squares
+LV: GCSE · Application
+EV: established | Factorising reverses expansion; a quadratic with integer roots factorises using two numbers whose product is ac and whose sum is b.
 T: Factorise | Write an expression as a product of its factors
 T: Fully factorised | Factorised so that no factor can be factorised further
 H: Common factors
@@ -195,11 +218,15 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 M1#maths-u03-06-q1@1: Factorise x^{2} − 5x + 6. | (x − 2)(x − 3) | (x + 2)(x + 3) | (x − 1)(x − 6) | (x − 2)(x + 3) | x(x − 5) + 6 | −2 and −3 multiply to 6 and add to −5, so the factors are (x − 2)(x − 3).
 M2#maths-u03-06-q2@2: Factorise fully 8x^{2} − 2. | 2(2x − 1)(2x + 1) | (8x − 2)(x + 1) | 2(4x^{2} − 1) | (4x − 1)(2x + 2) | 8(x − 1)(x + 1) | Take out 2 to get 2(4x^{2} − 1), then 4x^{2} − 1 is a difference of two squares.
 M3#maths-u03-06-q3@2: Factorise 3x^{2} − 10x − 8. | (3x + 2)(x − 4) | (3x − 2)(x + 4) | (3x − 4)(x + 2) | (3x + 4)(x − 2) | 3(x − 4)(x + 2) | ac = −24: −12 and 2 add to −10, giving 3x(x − 4) + 2(x − 4) = (3x + 2)(x − 4).
+M1@2: Which expression is a difference of two squares? | 16x^{2} − 25 | 16x^{2} + 25 | x^{2} − 10x + 25 | 4x^{2} − 25x | 16x^{2} − 25 = (4x)^{2} − 5^{2} = (4x − 5)(4x + 5). A sum of squares doesn't factorise this way, and the others aren't of the form a^{2} − b^{2}.
+SA2@1,2: Factorise 2x^{3} − 50x fully, explaining each step. | First take out the highest common factor of both terms, 2x: 2x(x^{2} − 25). Then x^{2} − 25 = x^{2} − 5^{2} is a difference of two squares, so it factorises as (x − 5)(x + 5). Fully factorised: 2x(x − 5)(x + 5). Check by expanding. | Takes out the common factor 2x ; Recognises x^{2} − 25 as a difference of two squares ; Gets 2x(x − 5)(x + 5) ; Checks or explains why it is fully factorised
 
 ## Algebraic Manipulation
 S: Algebraic manipulation is rearranging, substituting and transforming expressions and formulae while keeping them equal. It's how a formula for one quantity is turned into a formula for another, and how proofs are built.
 O: Rearrange formulae to change the subject
 O: Use algebra to prove simple general results
+LV: GCSE · Application
+EV: established | A statement about all integers is proved by algebra using general forms such as 2n and 2n + 1; examples alone don't prove it.
 T: Subject of a formula | The variable on its own on one side, such as v in v = u + at
 T: Algebraic proof | Showing a statement holds for all values using algebra, not examples
 H: Changing the subject
@@ -216,6 +243,7 @@ X: Make x the subject of y = (3x + 2)/(x − 1).
 > Factorise: x(y − 3) = y + 2, so x = (y + 2)/(y − 3)
 K: Undo operations in reverse order; if the subject appears twice, collect and factorise; prove with general expressions like 2n and 2n + 1.
 !: Checking a "proof" with a few numbers and calling it proved.
+!: Dividing by a term when the new subject appears twice: from xy − y = 3x + 2, writing x = (3x + 2 + y)/y still has x on both sides. Collect the x terms and factorise first.
 Q: Make r the subject of C = 2πr. | r = C/(2π).
 Q: How do you write a general odd number? | 2n + 1, where n is an integer.
 SUM: Rearranging keeps formulae equivalent.
@@ -224,11 +252,16 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 SRC: Department for Education, Mathematics AS and A level subject content: proof | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 M1#maths-u03-07-q1@1: Make a the subject of v^{2} = u^{2} + 2as. | a = (v^{2} − u^{2})/(2s) | a = v^{2} − u^{2} − 2s | a = (v − u)^{2}/(2s) | a = 2s/(v^{2} − u^{2}) | a = (v^{2} + u^{2})/(2s) | Subtract u^{2} from both sides to get 2as = v^{2} − u^{2}, then divide by 2s.
 M2#maths-u03-07-q2@2: Which expression shows the product of two consecutive integers is even? | n(n + 1), where one of n and n + 1 is even | 2n | 2n + 1 | n + (n + 1) | n^{2} + 1 | Of any two consecutive integers, one is even, so their product n(n + 1) has a factor of 2.
+NUM1@1: Make t the subject of v = u + at, and find t when v = 20, u = 5 and a = 3. | 5 | 0 |  | Subtract u and divide by a: t = (v − u)/a = (20 − 5)/3 = 15/3 = 5.
+M3@1: Make x the subject of y = (2x − 1)/(x + 3). | x = (1 + 3y)/(2 − y) | x = (3y − 1)/(2 − y) | x = (1 + 3y)/(y − 2) | x = (y + 1)/(2 − 3y) | y(x + 3) = 2x − 1, so xy + 3y = 2x − 1 and xy − 2x = −1 − 3y. Factorising, x(y − 2) = −(1 + 3y), so x = (1 + 3y)/(2 − y).
+SA3@2: Prove that the difference between the squares of two consecutive odd numbers is always a multiple of 8. | Let the odd numbers be 2n + 1 and 2n + 3, for an integer n. (2n + 3)^{2} − (2n + 1)^{2} = (4n^{2} + 12n + 9) − (4n^{2} + 4n + 1) = 8n + 8 = 8(n + 1). Since n + 1 is an integer, the difference is a multiple of 8 for every pair. (Example: 7^{2} − 5^{2} = 24 = 8 × 3.) | Writes consecutive odd numbers as 2n + 1 and 2n + 3 ; Expands both squares correctly ; Simplifies to 8(n + 1) ; Concludes it holds for all n
 
 ## Algebraic Fractions
 S: Algebraic fractions have expressions on the top or bottom. They follow the same rules as numerical fractions: simplify by cancelling common factors, and add or subtract over a common denominator.
 O: Simplify algebraic fractions by factorising
 O: Add, subtract, multiply and divide algebraic fractions
+LV: GCSE · Application
+EV: established | Algebraic fractions follow the rules of numerical fractions: cancel only common factors, and add over a common denominator.
 T: Algebraic fraction | A fraction whose numerator or denominator is an algebraic expression, such as (x + 2)/(x^{2} − 4)
 T: Cancelling | Dividing the numerator and denominator by a common factor
 H: Simplifying
@@ -254,11 +287,16 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 SRC: Department for Education, Mathematics AS and A level subject content: algebra and functions | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 M1#maths-u03-08-q1@1: Simplify (x^{2} − 4x)/(x^{2} − 16). | x/(x + 4) | −4x/(−16) | x/4 | 1/(x + 4) | (x − 4)/x | x(x − 4)/((x − 4)(x + 4)) cancels to x/(x + 4).
 M2#maths-u03-08-q2@2: Write 3/(x − 2) − 1/x as a single fraction. | (2x + 2)/(x(x − 2)) | 2/(x − 2) | (3x − 1)/(x(x − 2)) | 2/(2x − 2) | (2x − 2)/(x(x − 2)) | (3x − (x − 2))/(x(x − 2)) = (2x + 2)/(x(x − 2)).
+NUM2@1: Simplify (x^{2} + 5x + 6)/(x + 2), then find its value when x = 47. | 50 | 0 |  | x^{2} + 5x + 6 = (x + 2)(x + 3), so the fraction simplifies to x + 3, which is 50 when x = 47.
+M3@2: Solve 2/x + 3/(x + 1) = 2. | x = 2 or x = −1/2 | x = −2 or x = 1/2 | x = 2 only | x = 1 or x = −2 | Multiply by x(x + 1): 2(x + 1) + 3x = 2x(x + 1), so 2x^{2} − 3x − 2 = 0 = (2x + 1)(x − 2). Neither root makes a denominator zero.
+SA2@1: A student simplifies (x + 6)/6 to x + 1. Explain the error, and simplify (3x + 6)/6 correctly. | Only common factors of the whole numerator and whole denominator can be cancelled; 6 is a term in x + 6, not a factor of it, so (x + 6)/6 can't be simplified (check x = 6: it's 2, not 7). For (3x + 6)/6, factorise the top: 3(x + 2)/6 = (x + 2)/2. | Says only factors, not terms, can be cancelled ; Shows a numerical check ; Factorises 3x + 6 as 3(x + 2) ; Gets (x + 2)/2
 
 ## Linear Equations
 S: A linear equation has the unknown only to the first power, like 3x + 5 = 20. Solving it means finding the value that makes it true, by doing the same thing to both sides until the unknown is alone.
 O: Solve linear equations, including with brackets, fractions and unknowns on both sides
 O: Form and solve linear equations from problems
+LV: GCSE · Fluency
+EV: established | A linear equation is solved by applying the same operation to both sides until the unknown stands alone; it has one solution, none or infinitely many.
 T: Linear equation | An equation in which the unknown appears only to the power 1
 T: Solution | A value of the unknown that makes the equation true
 H: Solving
@@ -286,12 +324,16 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 NUM1#maths-u03-09-q1@1: Solve 3(2x − 4) = 2(x + 6). | 6 | 0 |  | 6x − 12 = 2x + 12, so 4x = 24 and x = 6.
 M1#maths-u03-09-q2@1: Solve 7 − 2x = 15. | x = −4 | x = 4 | x = 11 | x = −11 | x = 8 | Subtract 7 from both sides: −2x = 8. Divide by −2: x = −4.
 M2#maths-u03-09-q3@2: Three consecutive integers add up to 141. What is the largest? | 48 | 47 | 46 | 49 | 45 | n + (n + 1) + (n + 2) = 141 gives 3n + 3 = 141, n = 46, so the largest is 48.
-NUM1#maths-u03-09-q4@1: Solve 5x − 7 = 2x + 8. | 5 | 0 |  | 3x = 15, so x = 5.
+NUM1#maths-u03-09-q4@1: Solve 5x − 7 = 2x + 8. | 5 | 0 |  | Subtract 2x and add 7 to both sides: 3x = 15, so x = 5. Check: 5 × 5 − 7 = 18 = 2 × 5 + 8.
+NUM3@2: Ann is three times as old as Ben. In 10 years' time she will be twice as old as him. How old is Ben now? | 10 | 0 | years | Let Ben be b: Ann is 3b. In 10 years, 3b + 10 = 2(b + 10) = 2b + 20, so b = 10 (Ann is 30; in 10 years 40 = 2 × 20).
+SA2@1: Solve (x + 3)/4 − (x − 1)/6 = 2, explaining each step. | Multiply every term by 12, the LCM of 4 and 6: 3(x + 3) − 2(x − 1) = 24. Expand, taking care with the minus sign: 3x + 9 − 2x + 2 = 24. Collect terms: x + 11 = 24, so x = 13. Check: 16/4 − 12/6 = 4 − 2 = 2. | Multiplies every term by 12 ; Expands the second bracket with the correct sign ; Gets x = 13 ; Checks by substitution
 
 ## Simultaneous Equations
 S: Simultaneous equations are two or more equations that must be true at the same time. With two unknowns you need two equations, and the solution is where their graphs meet.
 O: Solve linear simultaneous equations by elimination and substitution
 O: Interpret solutions graphically and form equations from problems
+LV: GCSE and A level · Application
+EV: established | Two linear equations in two unknowns have one solution, none (parallel lines) or infinitely many (the same line).
 T: Elimination | Adding or subtracting equations to remove one unknown
 T: Substitution | Rearranging one equation and substituting it into the other
 H: Elimination
@@ -320,11 +362,15 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 M1#maths-u03-10-q1@1: Solve x + y = 10 and x − y = 4. | x = 7, y = 3 | x = 3, y = 7 | x = 6, y = 4 | x = 5, y = 5 | x = 14, y = −4 | Adding gives 2x = 14, so x = 7 and y = 3.
 M2#maths-u03-10-q2@2: Solve 2x + 3y = 12 and 4x − y = 10. | x = 3, y = 2 | x = 2, y = 3 | x = 4, y = 6 | x = 1.5, y = 3 | x = 3, y = −2 | From the second, y = 4x − 10; then 2x + 12x − 30 = 12 gives x = 3 and y = 2.
 NUM1#maths-u03-10-q3@1: Solve x + y = 7 and x − y = 3. What is x? | 5 | 0 |  | Adding the equations gives 2x = 10, so x = 5 (and y = 2).
+M3@1: Solve 3x + 4y = 18 and 5x − 6y = −8. | x = 2, y = 3 | x = 3, y = 2 | x = −2, y = 6 | x = 2, y = −3 | Multiply by 3 and by 2: 9x + 12y = 54 and 10x − 12y = −16. Adding gives 19x = 38, so x = 2 and 4y = 12, y = 3. (−2, 6) fits only the first equation.
+SA2@2: Explain, algebraically and graphically, why 2x + y = 5 and 4x + 2y = 7 have no solution. | Doubling the first equation gives 4x + 2y = 10, but the second says 4x + 2y = 7; the same expression can't equal both, so there is no solution. Graphically, the lines are y = 5 − 2x and y = 3.5 − 2x: both have gradient −2 but different intercepts, so they are parallel and never meet. | Shows the left-hand sides match after doubling ; Notes 10 ≠ 7 ; Rearranges both to y = mx + c with gradient −2 ; Concludes parallel lines don't intersect
 
 ## Quadratic Equations
 S: A quadratic equation has the unknown squared, like x^{2} − 5x + 6 = 0. It can have two, one or no real solutions, found by factorising, completing the square or the quadratic formula.
 O: Solve quadratic equations by factorising
 O: Interpret the solutions as roots of a graph
+LV: GCSE and A level · Application
+EV: established | If a product is zero, one of its factors is zero, so a factorised quadratic gives its roots directly.
 T: Quadratic equation | An equation of the form ax^{2} + bx + c = 0 with a ≠ 0
 T: Root | A solution of an equation; the x-coordinate where a graph crosses the x-axis
 H: Solving by factorising
@@ -356,11 +402,14 @@ M1#maths-u03-11-q1@1: Solve x^{2} + 2x − 15 = 0. | x = 3 or x = −5 | x = −
 M2#maths-u03-11-q2@2: Solve 2x^{2} = 18. | x = 3 or x = −3 | x = 3 | x = 9 | x = ±9 | x = 4.5 | Divide by 2 to get x^{2} = 9, so x = ±3: both the positive and negative roots count.
 M3#maths-u03-11-q3@2: Why is it wrong to solve x^{2} = 5x by dividing both sides by x? | It loses the solution x = 0 | It gives the wrong positive root | Division isn't allowed in equations | It makes the equation linear | It doubles the solutions | Dividing by x assumes x ≠ 0, but x = 0 is a solution.
 NUM1#maths-u03-11-q4@1: What is the larger root of x^{2} − x − 12 = 0? | 4 | 0 |  | (x − 4)(x + 3) = 0 gives x = 4 or x = −3.
+SA2@1,2: A ball's height in metres after t seconds is h = 20t − 5t^{2}. Find when it is 15 m high, and explain why there are two answers. | Set 20t − 5t^{2} = 15, so 5t^{2} − 20t + 15 = 0 and t^{2} − 4t + 3 = 0. Factorise: (t − 1)(t − 3) = 0, so t = 1 or t = 3. Both make sense: the ball passes 15 m on the way up at 1 s and on the way down at 3 s; the graph of h is a parabola crossing the line h = 15 twice. | Forms 5t^{2} − 20t + 15 = 0 ; Divides by 5 and factorises ; Gets t = 1 and t = 3 ; Interprets both as up and down
 
 ## Completing the Square
 S: Completing the square rewrites x^{2} + bx + c as (x + p)^{2} + q. It solves any quadratic, gives the turning point of a parabola, and is how the quadratic formula is derived.
 O: Write a quadratic in completed-square form
 O: Use completed-square form to solve equations and find turning points
+LV: GCSE and A level · Application
+EV: established | Any quadratic ax^{2} + bx + c can be written as a(x + p)^{2} + q, which gives its turning point (−p, q).
 T: Completed-square form | A quadratic written as a(x + p)^{2} + q
 T: Turning point | The minimum or maximum point of a parabola; for (x + p)^{2} + q it's (−p, q)
 H: The method
@@ -388,11 +437,16 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 SRC: Department for Education, Mathematics AS and A level subject content: algebra and functions | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 M1#maths-u03-12-q1@1: Write x^{2} − 4x + 9 in the form (x + p)^{2} + q. | (x − 2)^{2} + 5 | (x − 2)^{2} + 9 | (x − 4)^{2} − 7 | (x + 2)^{2} + 5 | (x − 2)^{2} − 5 | (x − 2)^{2} = x^{2} − 4x + 4, so add 5 to reach 9.
 M2#maths-u03-12-q2@2: What is the minimum value of x^{2} + 6x + 14? | 5 | 14 | −3 | 3 | 9 | (x + 3)^{2} + 5 is smallest when the square is zero, giving 5.
+NUM1@2: What is the x-coordinate of the turning point of y = x^{2} − 10x + 3? | 5 | 0 |  | x^{2} − 10x + 3 = (x − 5)^{2} − 22, so the minimum is at (5, −22).
+M3@1: Write 3x^{2} + 12x − 1 in the form a(x + p)^{2} + q. | 3(x + 2)^{2} − 13 | 3(x + 2)^{2} − 5 | 3(x + 6)^{2} − 37 | (3x + 2)^{2} − 5 | 3(x^{2} + 4x) − 1 = 3((x + 2)^{2} − 4) − 1 = 3(x + 2)^{2} − 12 − 1. Forgetting to multiply the −4 by 3 gives −5.
+SA3@1,2: Solve 2x^{2} + 8x − 3 = 0 by completing the square, giving exact answers. | Factor 2 from the x terms: 2(x^{2} + 4x) − 3 = 2((x + 2)^{2} − 4) − 3 = 2(x + 2)^{2} − 11. So 2(x + 2)^{2} = 11 and (x + 2)^{2} = 11/2. Taking both roots, x + 2 = ±√(11/2), so x = −2 ± √(11/2) = −2 ± √22/2. | Takes out the factor 2 correctly ; Completes the square to 2(x + 2)^{2} − 11 ; Rearranges to (x + 2)^{2} = 11/2 ; Gives both roots exactly
 
 ## The Quadratic Formula
 S: The quadratic formula gives the solutions of any quadratic equation directly from its coefficients. The discriminant inside it tells you how many real solutions there are before you calculate them.
 O: Solve quadratic equations using the formula
 O: Use the discriminant to find the number of real roots
+LV: GCSE and A level · Application
+EV: established | The roots of ax^{2} + bx + c = 0 are (−b ± √(b^{2} − 4ac))/(2a), and the sign of b^{2} − 4ac gives the number of real roots.
 T: Quadratic formula | x = (−b ± √(b^{2} − 4ac))/(2a) for ax^{2} + bx + c = 0
 T: Discriminant | b^{2} − 4ac, which decides the nature of the roots
 H: Using the formula
@@ -422,11 +476,15 @@ SRC: Department for Education, Mathematics AS and A level subject content: algeb
 NUM1#maths-u03-13-q1@1: What is the discriminant of 2x^{2} − 7x + 3 = 0? | 25 | 0 |  | b^{2} − 4ac = 49 − 24 = 25, so there are two distinct real roots.
 M1#maths-u03-13-q2@1: How many real roots does x^{2} − 6x + 9 = 0 have? | One (repeated) | Two | None | Three | Infinitely many | b^{2} − 4ac = 36 − 36 = 0, so there's one repeated root, x = 3.
 M3#maths-u03-13-q3@2: For which value of k does x^{2} + 4x + k = 0 have no real roots? | k = 5 | k = 4 | k = 3 | k = 0 | k = −1 | No real roots needs 16 − 4k < 0, so k > 4; only k = 5 works.
+M2@1: Solve x^{2} − 4x − 1 = 0, giving exact answers. | x = 2 ± √5 | x = −2 ± √5 | x = 4 ± √5 | x = 2 ± √3 | a = 1, b = −4, c = −1: x = (4 ± √(16 + 4))/2 = (4 ± √20)/2 = (4 ± 2√5)/2 = 2 ± √5.
+SA3@2: Find the values of k for which kx^{2} + 6x + k = 0 has two distinct real roots. | It's a quadratic only if k ≠ 0. Two distinct real roots need b^{2} − 4ac > 0: 36 − 4k^{2} > 0, so k^{2} < 9 and −3 < k < 3. Excluding k = 0 (which gives the linear equation 6x = 0 with one root), the answer is −3 < k < 3, k ≠ 0. | Uses the discriminant condition b^{2} − 4ac > 0 ; Forms 36 − 4k^{2} > 0 ; Solves to −3 < k < 3 ; Excludes k = 0 with a reason
 
 ## Cubic Equations
 S: A cubic equation has the unknown cubed, like x^{3} − 6x^{2} + 11x − 6 = 0. Every cubic has at least one real root, and once one root is found, the rest come from a quadratic.
 O: Solve cubic equations using the factor theorem
 O: Sketch cubic graphs from their roots
+LV: GCSE and A level · Application
+EV: established | Every cubic with real coefficients has at least one real root, and a root a gives a factor (x − a) by the factor theorem.
 T: Cubic | A polynomial of degree 3: ax^{3} + bx^{2} + cx + d with a ≠ 0
 T: Degree | The highest power of the variable in a polynomial
 H: Solving cubics
@@ -444,19 +502,25 @@ X: Solve x^{3} − 6x^{2} + 11x − 6 = 0.
 > Roots: x = 1, 2, 3
 K: Take out common factors; find one root with the factor theorem; divide to a quadratic; sketch from the roots and the sign of a.
 !: Assuming a cubic with a positive constant has no negative roots: test negative divisors too.
+!: Dividing through by x to simplify x^{3} − 4x = 0: that loses the root x = 0. Factorise x out instead.
 Q: How many real roots must a cubic have? | At least one.
 Q: What does a squared factor (x − a)^{2} mean for the graph? | It touches the x-axis at x = a.
 SUM: Cubics factorise once one root is found.
 SUM: Roots and the leading coefficient give the graph's shape.
 SRC: Department for Education, Mathematics AS and A level subject content: algebra and functions | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | textbook | 1993 | https://link.springer.com/
+SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | secondary | 1993 | https://link.springer.com/
 M1#maths-u03-14-q1@1: What are the roots of x(x − 4)(x + 1) = 0? | 0, 4 and −1 | 4 and −1 only | 0, −4 and 1 | 4 only | 0 only | Each factor gives a root: x = 0, x = 4, x = −1.
 M2#maths-u03-14-q2@2: Which value is a root of x^{3} − 2x^{2} − 5x + 6? | x = 1 | x = −1 | x = 2 | x = −2 | x = 6 | Substituting gives f(1) = 1 − 2 − 5 + 6 = 0, so x = 1 is a root.
+NUM2@1: x = 2 is a root of x^{3} − 3x^{2} − 4x + 12 = 0. What is the sum of the other two roots? | 1 | 0 |  | Dividing by (x − 2) leaves x^{2} − x − 6 = (x − 3)(x + 2), so the other roots are 3 and −2, which add to 1.
+M3@2: Which curve touches the x-axis at x = 2, crosses it at x = −1 and meets the y-axis at (0, 4)? | y = (x − 2)^{2}(x + 1) | y = (x + 2)^{2}(x − 1) | y = (x − 2)(x + 1)^{2} | y = −(x − 2)^{2}(x + 1) | A touch at x = 2 needs the squared factor (x − 2)^{2}, a crossing at −1 needs (x + 1), and x = 0 gives 4 × 1 = 4. The negative version meets the y-axis at −4.
+SA2@1: Solve x^{3} + 2x^{2} − 5x − 6 = 0, showing how you find the first root. | Try divisors of −6: f(1) = −8, but f(−1) = −1 + 2 + 5 − 6 = 0, so (x + 1) is a factor. Dividing gives x^{3} + 2x^{2} − 5x − 6 = (x + 1)(x^{2} + x − 6) = (x + 1)(x + 3)(x − 2). The roots are x = −1, x = −3 and x = 2. | Tests divisors of the constant term ; Finds f(−1) = 0 ; Divides to get x^{2} + x − 6 ; Gives all three roots
 
 ## Polynomial Equations
 S: Polynomial equations of any degree arise in modelling and science. Low-degree ones can be solved exactly; for higher degrees we factorise where possible and otherwise solve numerically or graphically.
 O: Solve polynomial equations by factorising and substitution
 O: Recognise when numerical or graphical methods are needed
+LV: A level · Application
+EV: established | A polynomial of degree n has at most n real roots, and there is no general formula in radicals for degree 5 or more (Abel–Ruffini).
 T: Polynomial equation | An equation p(x) = 0 where p is a polynomial
 T: Hidden quadratic | An equation like x^{4} − 5x^{2} + 4 = 0 that becomes quadratic with a substitution (u = x^{2})
 H: Exact methods
@@ -479,15 +543,19 @@ Q: Is there a general formula for degree 5 polynomials? | No: the Abel–Ruffini
 SUM: Many polynomial equations reduce to quadratics.
 SUM: Higher degrees often need numerical methods.
 SRC: Department for Education, Mathematics AS and A level subject content: algebra and functions | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Stewart I, Galois Theory (5th edn, CRC Press 2022) | textbook | 2022 | https://www.routledge.com/
+SRC: Stewart I, Galois Theory (5th edn, CRC Press 2022) | secondary | 2022 | https://www.routledge.com/
 NUM1#maths-u03-15-q1@2: How many real solutions does x^{4} − 10x^{2} + 9 = 0 have? | 4 | 0 |  | u^{2} − 10u + 9 = 0 gives u = 1 or 9, so x = ±1 or ±3: four solutions.
 M1#maths-u03-15-q2@1: What is the maximum number of real roots a degree 4 polynomial can have? | 4 | 2 | 3 | 5 | 8 | A polynomial of degree n has at most n real roots.
 M2#maths-u03-15-q3@2: What are the real solutions of x^{4} − 81 = 0? | x = 3 or x = −3 | x = 3 only | x = ±9 | x = ±3 and ±3i as real roots | x = 81 | (x^{2} − 9)(x^{2} + 9) = 0; x^{2} + 9 = 0 has no real roots.
+M3@1: Solve 2^{2x} − 5 × 2^{x} + 4 = 0. | x = 0 or x = 2 | x = 1 or x = 4 | x = 0 or x = 4 | x = 2 only | Let u = 2^{x}: u^{2} − 5u + 4 = 0, so u = 1 or u = 4. Then 2^{x} = 1 gives x = 0 and 2^{x} = 4 gives x = 2. 1 and 4 are values of u, not x.
+SA2@2: Explain how you would show that x^{5} + x − 1 = 0 has a root between 0 and 1, and narrow it down, and why you can't just use a formula. | No general formula in radicals exists for degree 5 (Abel–Ruffini), so use a sign change. f(0) = −1 and f(1) = 1; f is continuous, so a root lies between 0 and 1. Bisect: f(0.5) ≈ −0.47 and f(0.75) ≈ −0.01, while f(0.8) ≈ 0.13, so the root is between 0.75 and 0.8. Repeat to the accuracy needed. | Says there's no general quintic formula ; Shows the sign change from f(0) to f(1) ; Mentions continuity ; Narrows the interval with correct values
 
 ## Inequalities
 S: An inequality compares two quantities using <, >, ≤ or ≥. Solving one gives a range of values rather than a single answer, shown on a number line or in set or interval notation.
 O: Solve linear and quadratic inequalities
 O: Represent solution sets on number lines and in set notation
+LV: GCSE and A level · Application
+EV: established | Multiplying or dividing an inequality by a negative number reverses it, and a quadratic inequality is solved from its critical values and a sketch.
 T: Inequality | A statement that one quantity is less than, greater than, or at most or at least another
 T: Critical values | The values where the two sides of an inequality are equal; for a quadratic inequality, the roots
 H: Linear inequalities
@@ -505,6 +573,7 @@ X: Solve 2x^{2} − 5x − 3 ≥ 0.
 > x ≤ −1/2 or x ≥ 3
 K: Reverse the inequality when multiplying or dividing by a negative; for quadratics, find the roots and sketch.
 !: Writing −2 > x > 3 for "x < −2 or x > 3": no number satisfies it.
+!: Forgetting to reverse the sign: from −3x < 12, writing x < −4 instead of x > −4 (test x = 0: −3 × 0 < 12 is true, so 0 must be a solution).
 Q: Solve 5 − 2x > 1. | x < 2.
 Q: Solve x^{2} < 16. | −4 < x < 4.
 SUM: Inequalities have ranges of solutions.
@@ -514,11 +583,15 @@ SRC: Department for Education, Mathematics AS and A level subject content: algeb
 M1#maths-u03-16-q1@1: Solve −4x ≥ 20. | x ≤ −5 | x ≥ −5 | x ≤ 5 | x ≥ 5 | x ≤ −80 | Dividing by −4 reverses the inequality: x ≤ −5.
 M2#maths-u03-16-q2@2: Solve x^{2} − 9 > 0. | x < −3 or x > 3 | −3 < x < 3 | x > 3 | x > ±3 | x > 9 | The parabola is above the axis outside its roots, ±3.
 M3#maths-u03-16-q3@2: How many integers satisfy −3 ≤ 2x + 1 < 8? | 6 | 5 | 7 | 4 | 11 | −4 ≤ 2x < 7 gives −2 ≤ x < 3.5: the integers −2, −1, 0, 1, 2, 3.
+NUM1@1: What is the smallest integer x that satisfies 3x − 7 > 11? | 7 | 0 |  | 3x > 18, so x > 6. The inequality is strict, so 6 itself doesn't work and the smallest integer is 7.
+SA2@1,2: Solve x^{2} + 2x − 15 ≤ 0, explaining how a sketch helps, and give the answer in set notation. | Critical values: (x + 5)(x − 3) = 0, so x = −5 or x = 3. The parabola y = x^{2} + 2x − 15 opens upwards, so it is on or below the x-axis between its roots. So −5 ≤ x ≤ 3 (inclusive, because of ≤). In set notation: {x : −5 ≤ x ≤ 3}. | Finds the critical values −5 and 3 ; Uses an upward parabola to choose the region between the roots ; Includes the endpoints for ≤ ; Writes correct set notation
 
 ## Simultaneous Inequalities
 S: Simultaneous inequalities are several conditions that must all hold at once. In two variables, each inequality is a region of the plane, and the solution set is where all the regions overlap: the basis of linear programming.
 O: Solve simultaneous inequalities in one variable
 O: Represent and find regions defined by inequalities in two variables
+LV: GCSE and A level · Application
+EV: established | The solution of several inequalities is the overlap of their separate solution sets; in two variables it is a region of the plane.
 T: Feasible region | The set of points satisfying all the inequalities at once
 T: Boundary line | The line where an inequality becomes an equation: solid for ≤ or ≥, dashed for < or >
 H: One variable
@@ -536,6 +609,7 @@ X: List the integer points (x, y) satisfying x ≥ 1, y > x and x + y ≤ 6.
 > Points: (1, 2), (1, 3), (1, 4), (1, 5), (2, 3), (2, 4)
 K: Find the overlap of all conditions; in 2D, draw boundaries (solid or dashed) and test a point to choose the side.
 !: Drawing y > x with a solid line, which includes points on the line.
+!: Testing a point that lies on the boundary itself, such as (0, 0) for y > 2x: it tells you nothing. Choose a point clearly on one side, such as (0, 1).
 Q: What does a dashed boundary line mean? | Points on the line aren't included (strict inequality).
 Q: Solve x > 3 and x < 1 together. | No solution.
 SUM: Simultaneous inequalities overlap.
@@ -544,11 +618,16 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 SRC: Department for Education, Mathematics AS and A level subject content: algebra and functions | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 M1#maths-u03-17-q1@1: Which values satisfy x > −2 and x ≤ 3? | −2 < x ≤ 3 | x ≤ −2 | x > 3 | −2 ≤ x < 3 | Any real number | The overlap of x > −2 and x ≤ 3 is −2 < x ≤ 3.
 M2#maths-u03-17-q2@2: Which point lies in the region y < 2x, y > 1? | (2, 3) | (1, 3) | (0, 0) | (3, 0) | (1, 2) | For (2, 3): 3 < 4 and 3 > 1, so both hold.
+NUM2@2: How many points with whole-number coordinates satisfy x ≥ 0, y ≥ 0 and x + y ≤ 3? | 10 | 0 |  | Count by x: x = 0 gives y = 0 to 3 (4 points), x = 1 gives 3, x = 2 gives 2 and x = 3 gives 1: 4 + 3 + 2 + 1 = 10.
+M3@2: Which inequalities describe the triangle with vertices (0, 0), (4, 0) and (0, 2), including its edges? | x ≥ 0, y ≥ 0, x + 2y ≤ 4 | x ≥ 0, y ≥ 0, 2x + y ≤ 4 | x ≥ 0, y ≥ 0, x + y ≤ 4 | x ≥ 0, y ≥ 0, x + 2y ≥ 4 | The line through (4, 0) and (0, 2) is x + 2y = 4, and the origin satisfies x + 2y ≤ 4, so the triangle is on that side.
+SA2@1: Solve 3x − 2 > 7 and 2x + 1 ≤ 15 together, and list the integers that satisfy both. | Solve each: 3x > 9 gives x > 3; 2x ≤ 14 gives x ≤ 7. Both must hold, so take the overlap: 3 < x ≤ 7. The integers are 4, 5, 6 and 7 (3 is excluded by the strict inequality, 7 is included). | Solves 3x − 2 > 7 to x > 3 ; Solves 2x + 1 ≤ 15 to x ≤ 7 ; Combines as 3 < x ≤ 7 ; Lists 4, 5, 6, 7 with the endpoints handled correctly
 
 ## Absolute Value Equations
 S: The absolute value (modulus) |x| is the distance of x from zero, so it's never negative. Equations and inequalities with absolute values usually split into two cases.
 O: Solve equations and inequalities involving |x|
 O: Sketch graphs of y = |f(x)|
+LV: A level · Application
+EV: established | |x − a| = b means x − a = b or x − a = −b, and case solutions must be checked in the original equation.
 T: Modulus | The absolute value |x|: x if x ≥ 0 and −x if x < 0
 T: Case analysis | Splitting a problem into separate cases, such as the inside of a modulus being positive or negative
 H: Equations
@@ -572,14 +651,19 @@ Q: Write |x − 5| < 2 without a modulus. | 3 < x < 7.
 SUM: |x| is distance from zero.
 SUM: Modulus problems split into cases.
 SRC: Department for Education, Mathematics AS and A level subject content: algebra and functions | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | textbook | 1993 | https://link.springer.com/
+SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | secondary | 1993 | https://link.springer.com/
 M1#maths-u03-18-q1@1: Solve |2x| = 10. | x = 5 or x = −5 | x = 5 | x = 20 | x = ±20 | x = −5 | The modulus is 10 when 2x = 10 or 2x = −10, giving x = 5 or x = −5.
 M2#maths-u03-18-q2@2: Which describes |x − 1| ≥ 4? | x ≤ −3 or x ≥ 5 | −3 ≤ x ≤ 5 | x ≥ 5 | x ≥ 3 | x ≤ −5 or x ≥ 3 | The distance from 1 is at least 4: x ≤ 1 − 4 or x ≥ 1 + 4.
+NUM1@1: What is the larger solution of |3x − 6| = 9? | 5 | 0 |  | 3x − 6 = 9 gives x = 5, and 3x − 6 = −9 gives x = −1. The larger is 5.
+M3@1: Solve |x + 1| = 2x − 4. | x = 5 only | x = 5 or x = 1 | x = 1 only | No solution | If x + 1 ≥ 0: x + 1 = 2x − 4 gives x = 5, valid. If x + 1 < 0: −x − 1 = 2x − 4 gives x = 1, but 1 + 1 isn't negative, so reject it (|2| = 2, but 2 × 1 − 4 = −2).
+SA2@2: Describe the graph of y = |2x − 4| and use it to solve |2x − 4| < 6. | The graph is a V with its vertex on the x-axis at (2, 0), meeting the y-axis at (0, 4); the part of y = 2x − 4 below the axis is reflected upwards. |2x − 4| < 6 where the V is below the line y = 6: −6 < 2x − 4 < 6, so −2 < 2x < 10 and −1 < x < 5. | Gives the vertex (2, 0) and V shape ; Explains the reflection of the negative part ; Writes −6 < 2x − 4 < 6 ; Gets −1 < x < 5
 
 ## Rational Equations
 S: A rational equation contains algebraic fractions, like 2/x + 3/(x + 1) = 1. Clearing the denominators turns it into a polynomial equation, but any solution that makes a denominator zero must be rejected.
 O: Solve equations involving algebraic fractions
 O: Identify and reject extraneous solutions
+LV: A level · Application
+EV: established | Multiplying through by the common denominator can introduce extraneous solutions, so values making a denominator zero must be rejected.
 T: Rational expression | A quotient of two polynomials
 T: Extraneous solution | A value produced by the algebra that doesn't satisfy the original equation
 H: Method
@@ -602,16 +686,20 @@ Q: Two machines take 4 and 12 hours alone. How long together? | 3 hours (1/4 + 1
 SUM: Clear denominators to solve rational equations.
 SUM: Always check against excluded values.
 SRC: Department for Education, Mathematics AS and A level subject content: algebra and functions | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | textbook | 1993 | https://link.springer.com/
+SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | secondary | 1993 | https://link.springer.com/
 NUM1#maths-u03-19-q1@1: Solve 6/x + 1 = 4. | 2 | 0 |  | 6/x = 3, so x = 2 (which isn't excluded).
 M2#maths-u03-19-q2@2: How many solutions does (x^{2} − 9)/(x − 3) = 6 have? | None | One | Two | Three | Infinitely many | It simplifies to x + 3 = 6, so x = 3, but x = 3 is excluded: no solutions.
 M3#maths-u03-19-q3@2: Solve 1/x + 1/(x + 1) = 5/6. | x = 2 or x = −3/5 | x = 2 only | x = 3 | x = −2 or x = 3/5 | x = 6 | 6(x + 1) + 6x = 5x(x + 1) gives 5x^{2} − 7x − 6 = 0, so (5x + 3)(x − 2) = 0.
+M1@2: Which values of x are excluded when solving 3/(x − 2) + 1/(x + 5) = 1? | x = 2 and x = −5 | x = −2 and x = 5 | x = 2 only | x = 0 and x = 1 | A value is excluded when it makes a denominator zero: x − 2 = 0 at x = 2 and x + 5 = 0 at x = −5.
+SA2@1,2: One pipe fills a tank in 4 hours and another in 6 hours. Set up a rational equation for the time t hours they take together, solve it, and explain the method. | In one hour the pipes fill 1/4 and 1/6 of the tank, and together 1/t. So 1/4 + 1/6 = 1/t. Multiply by 12t: 3t + 2t = 12, so t = 12/5 = 2.4 hours, which is 2 hours 24 minutes. t = 0 is excluded, and 2.4 is less than either time alone, which makes sense. | Uses rates 1/4 and 1/6 per hour ; Forms 1/4 + 1/6 = 1/t ; Clears denominators to get t = 2.4 ; Converts to 2 h 24 min or checks sense
 
 
 ## Surds
 S: A surd is a root that can't be simplified to a rational number, such as √2 or √12. Leaving answers in surd form keeps them exact, which matters in geometry, trigonometry and exact A level answers.
 O: Simplify surds and calculate with them
 O: Rationalise denominators
+LV: GCSE and A level · Application
+EV: established | √(ab) = √a × √b for non-negative a and b, and multiplying by the conjugate rationalises a denominator of the form a + √b.
 T: Surd | An irrational root, such as √3 or ∛5, left in root form to keep it exact
 T: Rationalise the denominator | Rewrite a fraction so its denominator has no surds
 H: Rules
@@ -641,11 +729,15 @@ SRC: Department for Education, Mathematics AS and A level subject content: algeb
 M1#maths-u03-20-q1@1: Simplify √75. | 5√3 | 3√5 | 25√3 | 15√5 | 75√1 | 75 = 25 × 3 and 25 is a square number with √25 = 5, so √75 = 5√3.
 M2#maths-u03-20-q2@2: Rationalise 10/√5. | 2√5 | 10√5 | 5√2 | 2 | √50/5 | Multiply top and bottom by √5: 10√5/5, which simplifies to 2√5.
 M3#maths-u03-20-q3@2: Expand (2 + √3)^{2}. | 7 + 4√3 | 7 | 4 + 3 | 7 + 2√3 | 13 | 4 + 4√3 + 3 = 7 + 4√3: the middle term is 2 × 2 × √3.
+NUM2@1: √50 + √18 = √n. Find n. | 128 | 0 |  | √50 = 5√2 and √18 = 3√2, so the sum is 8√2 = √(64 × 2) = √128.
+SA3@2: Rationalise the denominator of (1 + √3)/(2 − √3), simplifying fully, and explain why the method works. | Multiply top and bottom by the conjugate 2 + √3. The denominator becomes (2 − √3)(2 + √3) = 4 − 3 = 1, a difference of two squares with no surd. The numerator is (1 + √3)(2 + √3) = 2 + √3 + 2√3 + 3 = 5 + 3√3. So the answer is 5 + 3√3. | Multiplies by the conjugate 2 + √3 ; Explains the difference of two squares removes the surd ; Expands the numerator correctly ; Gets 5 + 3√3
 
 ## Logarithms
 S: A logarithm answers the question "what power?": log_{2} 8 = 3 because 2^{3} = 8. Logarithms turn multiplication into addition and powers into multiplication, which is why they solve exponential equations and compress huge ranges of values.
 O: Convert between exponential and logarithmic forms
 O: Use the laws of logarithms
+LV: A level · Application
+EV: established | log_{a} x is the inverse of a^{x}, and the product, quotient and power laws follow from the index laws.
 T: Logarithm | log_{a} x is the power to which a must be raised to give x
 T: Natural logarithm | ln x = log_{e} x, the logarithm to base e ≈ 2.718
 H: Definition
@@ -674,16 +766,20 @@ Q: Write 3 ln x − ln y as a single logarithm. | ln(x^{3}/y).
 SUM: Logarithms are inverse to powers.
 SUM: The laws turn products into sums.
 SRC: Department for Education, Mathematics AS and A level subject content: exponentials and logarithms | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Courant R, Robbins H, What Is Mathematics? (2nd edn, Oxford University Press 1996) | textbook | 1996 | https://global.oup.com/
+SRC: Courant R, Robbins H, What Is Mathematics? (2nd edn, Oxford University Press 1996) | secondary | 1996 | https://global.oup.com/
 NUM1#maths-u03-21-q1@1: Evaluate log_{3} 81 + log_{2} (1/4). | 2 | 0 |  | log_{3} 81 = 4 and log_{2} (1/4) = −2, so the total is 2.
 M1#maths-u03-21-q2@1: Which statement is equivalent to log_{5} 125 = 3? | 5^{3} = 125 | 3^{5} = 125 | 125^{3} = 5 | 5 × 3 = 125 | 125^{5} = 3 | The logarithm is the power: 5 raised to 3 gives 125.
 M2#maths-u03-21-q3@2: Which equals log 12? | log 3 + log 4 | log 3 × log 4 | log 6 + log 6 | 12 log 1 | log 24 − log 12 | The log of a product is the sum of the logs: log(3 × 4) = log 3 + log 4.
 NUM1#maths-u03-21-q4@1: Solve log₂ x = 5. | 32 | 0 |  | log₂ x = 5 means x = 2^{5} = 32.
+M3@2: Given log 2 = p and log 3 = q, which expression equals log 72? | 3p + 2q | 2p + 3q | 6pq | 3p × 2q | 72 = 2^{3} × 3^{2}, so log 72 = log 2^{3} + log 3^{2} = 3 log 2 + 2 log 3 = 3p + 2q.
+SA2@1,2: Explain why log(x + y) is not equal to log x + log y, using an example, and state what log x + log y does equal. | The product law says log x + log y = log(xy), because adding powers corresponds to multiplying numbers. There is no law for a sum. Example in base 10: log 10 + log 10 = 1 + 1 = 2 = log 100, but log(10 + 10) = log 20 ≈ 1.30. | States log x + log y = log(xy) ; Links it to adding indices ; Gives a numerical counterexample ; Concludes there is no law for log of a sum
 
 ## Exponential Equations
 S: In an exponential equation the unknown is in a power, like 3^{x} = 20. Taking logarithms brings the unknown down, and equations in disguise (like 4^{x} − 2^{x+1} = 8) become quadratics.
 O: Solve exponential equations using logarithms
 O: Solve exponential equations that reduce to quadratics
+LV: A level · Application
+EV: established | Taking logarithms of both sides solves a^{x} = b as x = ln b/ln a, and a^{x} > 0 for every real x.
 T: Exponential equation | An equation with the unknown in an exponent
 T: Exponential function | A function such as f(x) = a^{x} or e^{kx}, where the variable is the power
 H: Using logarithms
@@ -707,15 +803,19 @@ Q: Why does 2^{x} = −2 have no real solution? | 2^{x} is positive for every re
 SUM: Logs bring exponents down.
 SUM: Substitution turns some exponential equations into quadratics.
 SRC: Department for Education, Mathematics AS and A level subject content: exponentials and logarithms | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Courant R, Robbins H, What Is Mathematics? (2nd edn, Oxford University Press 1996) | textbook | 1996 | https://global.oup.com/
+SRC: Courant R, Robbins H, What Is Mathematics? (2nd edn, Oxford University Press 1996) | secondary | 1996 | https://global.oup.com/
 NUM1#maths-u03-22-q1@1: Solve 2^{x} = 50, to 3 significant figures. | 5.64 | 0.01 |  | x = ln 50/ln 2 ≈ 5.644, which is 5.64 to 3 significant figures.
 M1#maths-u03-22-q2@1: Solve 8^{x} = 32. | x = 5/3 | x = 4 | x = 1/4 | x = 3/5 | x = 2 | Write both as powers of 2: 2^{3x} = 2^{5}, so 3x = 5 and x = 5/3.
 M3#maths-u03-22-q3@2: Solve 9^{x} − 4 × 3^{x} + 3 = 0. | x = 0 or x = 1 | x = 1 or x = 3 | x = 0 only | x = 3 only | x = −1 or x = 1 | With u = 3^{x}: u^{2} − 4u + 3 = 0, so u = 1 or 3, giving x = 0 or 1.
+NUM2@1: Solve 5^{x + 1} = 12, giving x to 3 significant figures. | 0.544 | 0.001 |  | (x + 1) ln 5 = ln 12, so x + 1 = ln 12/ln 5 ≈ 1.544 and x ≈ 0.544.
+SA2@2: A substance halves every 6 hours. Find how long it takes to fall to 10% of its starting amount, explaining each step. | After t hours the fraction left is (1/2)^{t/6}. Set (1/2)^{t/6} = 0.1. Take logs: (t/6) ln 0.5 = ln 0.1, so t = 6 ln 0.1/ln 0.5 = 6 ln 10/ln 2 ≈ 19.9 hours. Check: three halvings (18 h) leave 12.5%, four (24 h) leave 6.25%, so about 20 h is sensible. | Models the amount as (1/2)^{t/6} ; Sets it equal to 0.1 ; Takes logarithms to solve for t ; Gets about 19.9 hours with a check
 
 ## Logarithmic Equations
 S: Logarithmic equations have the unknown inside a logarithm. Combine the logs into one using the laws, convert to exponential form, and check that every solution keeps the arguments of the logs positive.
 O: Solve equations involving logarithms
 O: Check solutions against the domain of the logarithm
+LV: A level · Application
+EV: established | A logarithm is defined only for a positive argument, so solutions that make any argument zero or negative are rejected.
 T: Argument | The input of a function: in log(x − 2), the argument is x − 2, which must be positive
 T: Domain | The set of allowed inputs
 H: Method
@@ -742,15 +842,19 @@ Q: Why reject x = −2 in log_{2} x + log_{2}(x − 2) = 3? | log_{2}(−2) isn'
 SUM: Combine logs, then exponentiate.
 SUM: Check that arguments are positive.
 SRC: Department for Education, Mathematics AS and A level subject content: exponentials and logarithms | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Courant R, Robbins H, What Is Mathematics? (2nd edn, Oxford University Press 1996) | textbook | 1996 | https://global.oup.com/
+SRC: Courant R, Robbins H, What Is Mathematics? (2nd edn, Oxford University Press 1996) | secondary | 1996 | https://global.oup.com/
 NUM1#maths-u03-23-q1@1: Solve log_{2} (3x − 1) = 5. | 11 | 0 |  | 3x − 1 = 2^{5} = 32, so 3x = 33 and x = 11.
 M1#maths-u03-23-q2@1: Solve log_{10} x = −2. | x = 0.01 | x = −100 | x = 100 | x = −0.01 | No solution | Convert to exponential form: x = 10^{−2} = 0.01, which is positive, so it's valid.
 M2#maths-u03-23-q3@2: Solve log x + log (x − 3) = log 10. | x = 5 | x = −2 or x = 5 | x = −2 | x = 13 | x = 10 | x(x − 3) = 10 gives x = 5 or −2; x = −2 makes log x undefined.
+M3@2: Solve log_{2} x + log_{2} (x + 6) = 4. | x = 2 | x = 2 or x = −8 | x = −8 | x = 10 | Combine: x(x + 6) = 2^{4} = 16, so x^{2} + 6x − 16 = 0 = (x + 8)(x − 2). x = −8 makes log_{2} x undefined, so only x = 2.
+SA2@1,2: Solve 2 log_{3} x − log_{3} (x − 2) = 2, checking your solutions. | Use the power and quotient laws: log_{3} (x^{2}/(x − 2)) = 2. Exponential form: x^{2}/(x − 2) = 9, so x^{2} = 9x − 18 and x^{2} − 9x + 18 = 0, giving (x − 3)(x − 6) = 0. Both x = 3 and x = 6 make x and x − 2 positive, so both are valid. | Uses the power law to write log_{3} x^{2} ; Combines with the quotient law ; Forms and solves x^{2} − 9x + 18 = 0 ; Checks both roots against the domain
 
 ## Polynomials
 S: A polynomial is a sum of terms each made of a number times a whole-number power of the variable, like 3x^{4} − 2x + 7. Polynomials are the simplest functions, and much of algebra is about understanding them.
 O: Identify the degree, leading coefficient and constant term of a polynomial
 O: Describe the graph shapes of polynomials
+LV: A level · Fluency
+EV: established | A polynomial of degree n has at most n real roots and at most n − 1 turning points, and its end behaviour is set by the degree and leading coefficient.
 T: Polynomial | An expression a_{n}x^{n} + … + a_{1}x + a_{0} with whole-number powers
 T: Leading coefficient | The coefficient of the highest power, a_{n}
 H: Vocabulary
@@ -768,19 +872,25 @@ X: Describe the graph of y = −2x^{3} + 5x^{2} − x + 4.
 > It crosses the y-axis at (0, 4)
 K: Degree and leading coefficient set the end behaviour; the constant term is the y-intercept; at most n roots.
 !: Calling 3/x^{2} + 1 a polynomial: negative powers aren't allowed.
+!: Reading end behaviour from the first term written rather than the highest power: in 5 − x^{3} + 2x^{6}, the x^{6} term decides it (both ends up).
 Q: What is the degree of 5 − x^{3} + 2x^{6}? | 6.
 Q: How many turning points can a quartic have at most? | 3.
 SUM: Polynomials use whole-number powers.
 SUM: Degree governs roots, turning points and end behaviour.
 SRC: Department for Education, Mathematics AS and A level subject content: algebra and functions | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | textbook | 1993 | https://link.springer.com/
+SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | secondary | 1993 | https://link.springer.com/
 M1#maths-u03-24-q1@1: Which is a polynomial? | 4x^{3} − x + 2 | 2/x + 1 | √x + 3 | 3^{x} | x^{−2} | Every power of x is a whole number in 4x^{3} − x + 2.
 M2#maths-u03-24-q2@2: What is the end behaviour of y = −x^{4} + 3x? | Both ends go down | Both ends go up | Down on the left, up on the right | Up on the left, down on the right | It levels off | Even degree with a negative leading coefficient: both ends go down.
+NUM1@2: What is the greatest number of turning points the graph of a degree 7 polynomial can have? | 6 | 0 |  | A degree n polynomial has at most n − 1 turning points, so a degree 7 polynomial has at most 6.
+M3@2: A polynomial's graph has both ends going up and exactly 3 turning points. Which could be its degree and leading coefficient? | Degree 4, positive | Degree 3, positive | Degree 4, negative | Degree 5, positive | Both ends up needs even degree and a positive leading coefficient, and 3 turning points needs degree at least 4. Odd degrees have ends going opposite ways.
+SA2@1,2: Explain why 2^{x} and √x + 1 are not polynomials, and describe the graph of y = x^{4} − 5x^{2} + 4. | A polynomial has only whole-number powers of x: 2^{x} has x in the power and √x = x^{1/2} has a fractional power. y = x^{4} − 5x^{2} + 4 = (x^{2} − 1)(x^{2} − 4) = (x − 1)(x + 1)(x − 2)(x + 2), so it crosses the x-axis at ±1 and ±2. It's even degree with positive leading coefficient, so both ends go up; it meets the y-axis at 4 and has 3 turning points. | Explains why 2^{x} isn't a polynomial ; Explains why √x isn't ; Factorises to find roots ±1, ±2 ; Describes end behaviour and y-intercept
 
 ## Polynomial Algebra
 S: Polynomial algebra is adding, subtracting and multiplying polynomials, and comparing their coefficients. Equating coefficients is a powerful tool for finding unknown constants.
 O: Add, subtract and multiply polynomials
 O: Use equating coefficients to find unknowns in identities
+LV: A level · Application
+EV: established | Two polynomials are identical exactly when the coefficients of each power are equal.
 T: Equating coefficients | If two polynomials are identical, their coefficients of each power are equal
 T: Like powers | Terms with the same power of the variable
 H: Operations
@@ -804,15 +914,19 @@ Q: If (x + 1)(x + b) ≡ x^{2} + 5x + 4, what is b? | 4.
 SUM: Polynomials add and multiply term by term.
 SUM: Identical polynomials have equal coefficients.
 SRC: Department for Education, Mathematics AS and A level subject content: algebra and functions | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | textbook | 1993 | https://link.springer.com/
+SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | secondary | 1993 | https://link.springer.com/
 NUM1#maths-u03-25-q1@1: Find the coefficient of x in (3x^{2} − 2x + 5)(x − 4). | 13 | 0 |  | The x terms are −2x × (−4) = 8x and 5 × x = 5x, giving 13x.
 M2#maths-u03-25-q2@2: If 2x^{2} + 9x + 7 ≡ (2x + a)(x + b), what are a and b? | a = 7, b = 1 | a = 1, b = 7 | a = 2, b = 7 | a = 9, b = 7 | a = 7, b = 2 | Expanding (2x + 7)(x + 1) gives 2x^{2} + 2x + 7x + 7 = 2x^{2} + 9x + 7.
 M3#maths-u03-25-q3@2: What is the degree of (x^{4} − 1)(x^{3} + x) − x^{7}? | 5 | 7 | 4 | 12 | 3 | The x^{7} terms cancel, leaving x^{5} − x^{3} − x: degree 5.
+M2@1: Simplify (2x^{3} − x + 4) − (x^{3} + 3x^{2} − 2x + 1). | x^{3} − 3x^{2} + x + 3 | x^{3} + 3x^{2} − 3x + 5 | x^{3} − 3x^{2} − 3x + 3 | 3x^{3} − 3x^{2} + x + 3 | Subtract like powers, changing every sign in the second bracket: x^{3} − 3x^{2} + (−x + 2x) + (4 − 1) = x^{3} − 3x^{2} + x + 3.
+SA3@2: Find A, B and C such that 2x^{2} − 3x + 5 ≡ A(x − 1)^{2} + B(x − 1) + C, explaining your method. | Expand: A(x^{2} − 2x + 1) + B(x − 1) + C = Ax^{2} + (B − 2A)x + (A − B + C). Equate coefficients: x^{2}: A = 2; x: B − 2A = −3, so B = 1; constants: A − B + C = 5, so C = 4. (Or substitute x = 1 to get C = 4 at once.) Check with x = 0: 2 − 1 + 4 = 5 ✓. | Expands the right-hand side ; Equates the x^{2} coefficients to get A = 2 ; Equates x coefficients to get B = 1 ; Finds C = 4 and checks
 
 ## Polynomial Division
 S: Polynomials can be divided like numbers, giving a quotient and a remainder. Division finds the other factors once one is known and is essential for solving cubics and simplifying rational expressions.
 O: Divide a polynomial by a linear expression using long division or synthetic division
 O: Interpret the quotient and remainder
+LV: A level · Application
+EV: established | Any polynomial p(x) can be written as d(x)q(x) + r(x), with the remainder's degree less than the divisor's.
 T: Quotient | The result of the division (the polynomial part)
 T: Remainder | What's left over: for division by a linear expression, a constant
 H: Long division
@@ -829,19 +943,25 @@ X: Divide x^{3} + 2x^{2} − 5x − 6 by (x + 1).
 > −6x ÷ x = −6; −6(x + 1) = −6x − 6; subtract: 0. Quotient x^{2} + x − 6 = (x + 3)(x − 2), remainder 0
 K: Divide leading terms, multiply back, subtract and repeat; include zero coefficients for missing powers.
 !: Leaving out missing powers, which misaligns the columns.
+!: Subtracting only the first term of each product: (x^{2} − 5x) − (x^{2} + x) is −6x, not −4x. Change every sign of the line being subtracted.
 Q: What is the remainder when x^{2} + 1 is divided by x − 1? | 2.
 Q: How do you handle x^{3} − 8 in long division? | Write it as x^{3} + 0x^{2} + 0x − 8.
 SUM: Polynomial division works like number division.
 SUM: Dividing by a known factor leaves a simpler polynomial.
 SRC: Department for Education, Mathematics AS and A level subject content: algebra and functions | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | textbook | 1993 | https://link.springer.com/
+SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | secondary | 1993 | https://link.springer.com/
 M1#maths-u03-26-q1@1: What is (x^{2} + 5x + 6) ÷ (x + 2)? | x + 3 | x + 2 | x − 3 | x + 6 | x^{2} + 3 | x^{2} + 5x + 6 factorises as (x + 2)(x + 3), so dividing by (x + 2) leaves x + 3.
 M2#maths-u03-26-q2@2: What is the quotient when x^{3} − 1 is divided by x − 1? | x^{2} + x + 1 | x^{2} − 1 | x^{2} − x + 1 | x^{2} + 1 | x + 1 | (x − 1)(x^{2} + x + 1) = x^{3} − 1 (difference of two cubes).
+NUM2@2: Find the remainder when x^{3} + 2x^{2} − x + 5 is divided by (x − 2). | 19 | 0 |  | Long division leaves a constant remainder, which equals the value at x = 2: 8 + 8 − 2 + 5 = 19.
+M3@1: What is the quotient when 2x^{3} + x^{2} − 13x + 6 is divided by (x − 2)? | 2x^{2} + 5x − 3 | 2x^{2} − 3x − 7 | 2x^{2} + 5x + 3 | 2x^{2} − 5x − 3 | 2x^{3} ÷ x = 2x^{2}; subtract 2x^{3} − 4x^{2} to leave 5x^{2} − 13x; then 5x, leaving −3x + 6; then −3, remainder 0.
+SA2@1,2: Divide x^{3} − 8 by (x − 2), showing your working, and explain what the result tells you. | Write x^{3} + 0x^{2} + 0x − 8 so the columns line up. x^{3} ÷ x = x^{2}; subtract x^{3} − 2x^{2} to leave 2x^{2} + 0x. 2x^{2} ÷ x = 2x; subtract 2x^{2} − 4x to leave 4x − 8. 4x ÷ x = 4; subtract 4x − 8 to leave 0. So x^{3} − 8 = (x − 2)(x^{2} + 2x + 4): the remainder 0 means (x − 2) is a factor. | Inserts zero coefficients ; Carries out each division step correctly ; Gets quotient x^{2} + 2x + 4 and remainder 0 ; Interprets remainder 0 as a factor
 
 ## Remainder Theorem
 S: The remainder theorem gives the remainder of dividing a polynomial by (x − a) without doing the division: it's simply f(a). It's a quick, powerful check.
 O: Use the remainder theorem to find remainders
 O: Find unknown coefficients from given remainders
+LV: A level · Application
+EV: established | The remainder when f(x) is divided by (x − a) is f(a), because f(x) = (x − a)q(x) + r.
 T: Remainder theorem | The remainder when f(x) is divided by (x − a) is f(a)
 T: Divisor | The expression you divide by
 H: Why it works
@@ -865,16 +985,20 @@ Q: What is the remainder when x^{4} − 3 is divided by (x − 2)? | 13.
 Q: What do you substitute to find the remainder on division by (2x − 1)? | x = 1/2.
 SUM: The remainder is f(a).
 SUM: Remainder conditions give equations for unknowns.
-SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | textbook | 1993 | https://link.springer.com/
+SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | secondary | 1993 | https://link.springer.com/
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
 NUM1#maths-u03-27-q1@1: Find the remainder when x^{3} − 4x^{2} + 2x + 7 is divided by (x − 3). | 4 | 0 |  | f(3) = 27 − 36 + 6 + 7 = 4.
 M1#maths-u03-27-q2@1: What is the remainder when x^{2} + 3x − 1 is divided by (x + 1)? | −3 | 3 | 1 | −1 | 5 | By the remainder theorem, substitute x = −1: f(−1) = 1 − 3 − 1 = −3.
 M2#maths-u03-27-q3@2: x^{3} + kx + 2 leaves remainder 0 when divided by (x − 1). What is k? | −3 | 3 | −1 | 0 | 2 | A zero remainder means f(1) = 0: 1 + k + 2 = 0, so k = −3.
+NUM3@2: Find the remainder when f(x) = 4x^{3} − 2x + 7 is divided by (2x − 1). | 6.5 | 0 |  | 2x − 1 = 0 when x = 1/2, so the remainder is f(1/2) = 4 × 1/8 − 1 + 7 = 0.5 − 1 + 7 = 6.5.
+SA2@2: Explain why the remainder theorem works, and use it to find the remainder when x^{100} + 1 is divided by (x + 1). | Dividing by (x − a) gives f(x) = (x − a)q(x) + r, where r is a constant. Substituting x = a makes the first term zero, so f(a) = r. For (x + 1), a = −1: the remainder is (−1)^{100} + 1 = 1 + 1 = 2, found without any division. | Writes f(x) = (x − a)q(x) + r ; Explains why substituting x = a leaves r ; Uses a = −1 for (x + 1) ; Gets remainder 2
 
 ## Factor Theorem
 S: The factor theorem is the remainder theorem with remainder zero: (x − a) is a factor of f(x) exactly when f(a) = 0. It's how we find the first factor of a cubic or quartic.
 O: Use the factor theorem to test and find factors
 O: Factorise cubics completely
+LV: A level · Application
+EV: established | (x − a) is a factor of a polynomial f(x) if and only if f(a) = 0.
 T: Factor theorem | (x − a) is a factor of f(x) if and only if f(a) = 0
 T: Rational root test | Any rational root p/q of a polynomial with integer coefficients has p dividing the constant term and q dividing the leading coefficient
 H: Testing for factors
@@ -897,15 +1021,19 @@ Q: Which values should you try first as roots of x^{3} + 2x^{2} − 5x − 6? | 
 SUM: f(a) = 0 means (x − a) is a factor.
 SUM: One factor reduces a cubic to a quadratic.
 SRC: Department for Education, Mathematics AS and A level subject content: algebra and functions | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | textbook | 1993 | https://link.springer.com/
+SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | secondary | 1993 | https://link.springer.com/
 M1#maths-u03-28-q1@1: Which is a factor of x^{3} − 4x^{2} + x + 6? | x − 2 | x + 2 | x − 1 | x + 3 | x − 6 | By the factor theorem, f(2) = 8 − 16 + 2 + 6 = 0, so (x − 2) is a factor.
 M2#maths-u03-28-q2@2: (x − 3) is a factor of x^{3} − 2x^{2} + kx − 6. What is k? | −1 | 1 | −3 | 3 | 6 | f(3) = 27 − 18 + 3k − 6 = 0 gives 3k = −3, so k = −1.
 M3#maths-u03-28-q3@2: Factorise x^{3} + x^{2} − 10x + 8 completely. | (x − 1)(x − 2)(x + 4) | (x + 1)(x + 2)(x − 4) | (x − 1)(x + 2)(x − 4) | (x − 2)^{2}(x + 2) | (x − 1)(x^{2} + 2x − 8) | f(1) = 0, and x^{2} + 2x − 8 = (x − 2)(x + 4).
+NUM2@1: (x − 1) is a factor of x^{3} + ax^{2} + bx − 6. What is a + b? | 5 | 0 |  | By the factor theorem f(1) = 0: 1 + a + b − 6 = 0, so a + b = 5.
+SA3@1,2: Show that (2x − 1) is a factor of 2x^{3} + 3x^{2} − 8x + 3, and factorise it completely. | (2x − 1) is zero at x = 1/2. f(1/2) = 2 × 1/8 + 3 × 1/4 − 4 + 3 = 0.25 + 0.75 − 1 = 0, so it is a factor. Dividing (or equating coefficients): 2x^{3} + 3x^{2} − 8x + 3 = (2x − 1)(x^{2} + 2x − 3) = (2x − 1)(x + 3)(x − 1). | Substitutes x = 1/2 ; Shows f(1/2) = 0 ; Finds the quadratic factor x^{2} + 2x − 3 ; Factorises completely
 
 ## Roots of Polynomials
 S: The roots of a polynomial are the values that make it zero. Their number, nature and position tell you a lot about the polynomial and its graph, and every polynomial's roots exist in the complex numbers.
 O: Relate roots, factors and graphs of polynomials
 O: Describe repeated and complex roots
+LV: A level · Application
+EV: established | Every polynomial of degree n has exactly n complex roots counted with multiplicity, and non-real roots of real polynomials come in conjugate pairs.
 T: Multiplicity | How many times a root is repeated: in (x − 2)^{3}, the root 2 has multiplicity 3
 T: Fundamental theorem of algebra | Every polynomial of degree n ≥ 1 has exactly n complex roots, counted with multiplicity
 H: Roots and factors
@@ -929,15 +1057,19 @@ Q: If 1 − i is a root of a real polynomial, what else must be a root? | 1 + i.
 SUM: Roots correspond to linear factors.
 SUM: Every polynomial has its full set of roots in the complex numbers.
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
-SRC: Stewart I, Galois Theory (5th edn, CRC Press 2022) | textbook | 2022 | https://www.routledge.com/
+SRC: Stewart I, Galois Theory (5th edn, CRC Press 2022) | secondary | 2022 | https://www.routledge.com/
 M1#maths-u03-29-q1@1: What happens to the graph of y = (x − 3)^{2}(x + 1) at x = 3? | It touches the x-axis and turns | It crosses the x-axis | It has an asymptote | It has a gap | It crosses with a flat point | A double root means the graph touches the axis there.
 M2#maths-u03-29-q2@2: A real quartic has roots 2i and 1 (single). How many real roots does it have in total? | 2 | 1 | 3 | 4 | 0 | 2i and −2i account for two roots, leaving two real ones: 1 and one more.
 M2#maths-u03-29-q3@2: Where does y = (x − 2)(x + 3)(x + 1) cross the x-axis? | At x = 2, −3 and −1 | At x = −2, 3 and 1 | At x = 2, 3 and 1 | Only at x = 2 | At x = 6 | Each linear factor (x − r) is zero at x = r.
+M3@2: A cubic with real coefficients and leading coefficient 1 has roots 3 and 1 + 2i. What is it? | x^{3} − 5x^{2} + 11x − 15 | x^{3} − 5x^{2} + 7x − 15 | x^{3} + 5x^{2} + 11x + 15 | x^{3} − 2x^{2} + 5x − 15 | 1 − 2i must also be a root, giving the factor x^{2} − 2x + 5. Then (x − 3)(x^{2} − 2x + 5) = x^{3} − 5x^{2} + 11x − 15.
+SA2@1: Show that f(x) = x^{3} − 3x + 1 has a root between 1 and 2, and explain why your argument needs f to be continuous. | f(1) = 1 − 3 + 1 = −1 and f(2) = 8 − 6 + 1 = 3. The sign changes, and f is a polynomial, so it is continuous: its graph can't get from below the axis to above it without crossing. So there is a root between 1 and 2. A function with a jump (such as 1/x near 0) can change sign without a root. | Evaluates f(1) = −1 ; Evaluates f(2) = 3 ; Uses the sign change to conclude ; Explains the role of continuity
 
 ## Vieta's Formulas
 S: Vieta's formulas link the roots of a polynomial to its coefficients: for example, the roots of x^{2} + bx + c add to −b and multiply to c. They let you work with roots without finding them.
 O: State Vieta's formulas for quadratics and cubics
 O: Use them to find expressions in the roots and to form new equations
+LV: A level · Problem solving
+EV: established | The sums and products of a polynomial's roots are fixed by its coefficients, as comparing coefficients of a(x − α)(x − β)… shows.
 T: Sum of roots | For ax^{2} + bx + c = 0, α + β = −b/a
 T: Product of roots | For ax^{2} + bx + c = 0, αβ = c/a
 H: Quadratics and cubics
@@ -963,15 +1095,19 @@ Q: Write α^{2} + β^{2} in terms of α + β and αβ. | (α + β)^{2} − 2αβ
 SUM: Coefficients encode symmetric facts about roots.
 SUM: Expressions in the roots can be found without solving.
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
-SRC: Stewart I, Galois Theory (5th edn, CRC Press 2022) | textbook | 2022 | https://www.routledge.com/
+SRC: Stewart I, Galois Theory (5th edn, CRC Press 2022) | secondary | 2022 | https://www.routledge.com/
 NUM1#maths-u03-30-q1@1: The roots of x^{2} + 5x − 3 = 0 are α and β. Find 1/α + 1/β. | 1.6667 | 0.001 |  | (α + β)/(αβ) = (−5)/(−3) = 5/3 ≈ 1.667.
 M1#maths-u03-30-q2@1: What is the product of the roots of 3x^{2} − 4x − 12 = 0? | −4 | 4 | 4/3 | −12 | 12 | By Vieta's formulas the product of the roots is c/a = −12/3 = −4.
 M3#maths-u03-30-q3@2: The roots of x^{2} − 3x + 1 = 0 are α and β. Which equation has roots α + 1 and β + 1? | x^{2} − 5x + 5 = 0 | x^{2} − 3x + 2 = 0 | x^{2} − 4x + 2 = 0 | x^{2} − 5x + 2 = 0 | x^{2} + 5x + 5 = 0 | New sum = 3 + 2 = 5; new product = αβ + (α + β) + 1 = 1 + 3 + 1 = 5.
+M2@1: The roots of 2x^{3} − 5x^{2} + 3x + 7 = 0 are α, β and γ. What is αβγ? | −7/2 | 7/2 | 5/2 | 3/2 | For a cubic, αβγ = −d/a = −7/2. The sum of the roots is 5/2 and the sum of pairs is 3/2.
+SA3@2: The roots of x^{2} − 4x + 2 = 0 are α and β. Find a quadratic equation with roots α^{2} and β^{2}, without solving the equation. | α + β = 4 and αβ = 2. New sum: α^{2} + β^{2} = (α + β)^{2} − 2αβ = 16 − 4 = 12. New product: α^{2}β^{2} = (αβ)^{2} = 4. So the equation is x^{2} − 12x + 4 = 0. | Finds α + β = 4 and αβ = 2 ; Uses (α + β)^{2} − 2αβ for the new sum ; Finds the new product 4 ; Writes x^{2} − 12x + 4 = 0
 
 ## Symmetric Polynomials
 S: A symmetric polynomial is unchanged when its variables are swapped, like x + y or x^{2} + y^{2}. Every symmetric polynomial can be written in terms of a few basic ones, which is why Vieta's formulas are so powerful.
 O: Recognise symmetric polynomials
 O: Express symmetric polynomials in terms of elementary symmetric polynomials
+LV: A level · Problem solving
+EV: established | Every symmetric polynomial can be written as a polynomial in the elementary symmetric polynomials (the fundamental theorem of symmetric polynomials).
 T: Symmetric polynomial | A polynomial unchanged by any permutation of its variables
 T: Elementary symmetric polynomials | In two variables, e₁ = x + y and e₂ = xy; in three, x + y + z, xy + yz + zx and xyz
 H: Recognising symmetry
@@ -992,16 +1128,20 @@ Q: Is x^{2}y + xy^{2} symmetric? | Yes: it equals xy(x + y).
 Q: Express x^{2} + y^{2} using e₁ and e₂. | e₁^{2} − 2e₂.
 SUM: Symmetric polynomials are invariant under swapping variables.
 SUM: They reduce to elementary symmetric polynomials.
-SRC: Stewart I, Galois Theory (5th edn, CRC Press 2022) | textbook | 2022 | https://www.routledge.com/
-SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | textbook | 1993 | https://link.springer.com/
+SRC: Stewart I, Galois Theory (5th edn, CRC Press 2022) | secondary | 2022 | https://www.routledge.com/
+SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | secondary | 1993 | https://link.springer.com/
 NUM1#maths-u03-31-q1@1: If x + y = 4 and xy = 1, find (x − y)^{2}. | 12 | 0 |  | (x − y)^{2} = (x + y)^{2} − 4xy = 16 − 4 = 12.
 M1#maths-u03-31-q2@1: Which polynomial is symmetric in x and y? | x^{2} + 3xy + y^{2} | x^{2} − y^{2} | x + 2y | x^{3}y | x − y | Swapping x and y leaves x^{2} + 3xy + y^{2} unchanged.
 M2#maths-u03-31-q3@2: If a + b = 3 and ab = −2, what is a^{2} + b^{2}? | 13 | 5 | 9 | 7 | 1 | Use a^{2} + b^{2} = (a + b)^{2} − 2ab = 9 − 2(−2) = 9 + 4 = 13.
+NUM3@2: If x + y = 5 and xy = 3, find x^{4} + y^{4}. | 343 | 0 |  | x^{2} + y^{2} = 25 − 6 = 19. Then x^{4} + y^{4} = (x^{2} + y^{2})^{2} − 2(xy)^{2} = 361 − 18 = 343.
+SA2@1,2: The roots of x^{2} − 6x + 4 = 0 are α and β. Explain why α − β is not symmetric but (α − β)^{2} is, and use this to find |α − β|. | Swapping α and β turns α − β into β − α = −(α − β), so it changes; squaring removes the sign, so (α − β)^{2} is symmetric. (α − β)^{2} = (α + β)^{2} − 4αβ = 36 − 16 = 20, so |α − β| = √20 = 2√5. Check: the roots are 3 ± √5, which differ by 2√5. | Shows swapping changes the sign of α − β ; Explains why the square is symmetric ; Uses (α + β)^{2} − 4αβ = 20 ; Gets 2√5
 
 ## Partial Fractions
 S: Partial fractions split a complicated algebraic fraction into a sum of simpler ones. This is the reverse of adding fractions, and it's essential for integrating rational functions and for binomial expansions at A level.
 O: Decompose fractions with distinct linear and repeated linear factors
 O: Handle improper fractions by dividing first
+LV: A level · Application
+EV: established | A proper rational function whose denominator factorises into linear factors can be written uniquely as a sum of partial fractions.
 T: Partial fractions | Writing a rational expression as a sum of fractions with simpler denominators
 T: Improper algebraic fraction | One where the numerator's degree is at least the denominator's
 H: Forms
@@ -1023,14 +1163,19 @@ Q: What must you do first if the numerator's degree is at least the denominator'
 SUM: Partial fractions undo adding fractions.
 SUM: Repeated factors need a term for each power.
 SRC: Department for Education, Mathematics AS and A level subject content: algebra and functions | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | textbook | 2020 | https://www.bloomsbury.com/
+SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | secondary | 2020 | https://www.bloomsbury.com/
 M1#maths-u03-32-q1@1: Which is the correct form for (3x + 1)/((x − 2)(x + 5))? | A/(x − 2) + B/(x + 5) | A/(x − 2)(x + 5) | (Ax + B)/(x − 2) | A/(x − 2)^{2} + B/(x + 5) | A + B/(x + 5) | Two distinct linear factors give two simple fractions.
 M2#maths-u03-32-q2@2: If 4/((x − 1)(x + 1)) ≡ A/(x − 1) + B/(x + 1), what is A? | 2 | −2 | 4 | 1 | 1/2 | 4 ≡ A(x + 1) + B(x − 1); with x = 1, 4 = 2A, so A = 2.
+NUM1@1: (5x + 4)/((x − 1)(x + 2)) ≡ A/(x − 1) + B/(x + 2). Find B. | 2 | 0 |  | 5x + 4 ≡ A(x + 2) + B(x − 1). Put x = −2: −6 = −3B, so B = 2 (and x = 1 gives A = 3).
+M3@1,2: Express (x^{2} + 1)/((x − 1)(x + 1)) in partial fractions. | 1 + 1/(x − 1) − 1/(x + 1) | 1/(x − 1) − 1/(x + 1) | 1 − 1/(x − 1) + 1/(x + 1) | 1 + 2/(x − 1) − 2/(x + 1) | It is improper: (x^{2} + 1)/(x^{2} − 1) = 1 + 2/(x^{2} − 1). Then 2 ≡ A(x + 1) + B(x − 1) gives A = 1, B = −1.
+SA2@1: Express 3/(x(x + 3)) in partial fractions, explaining each step. | The denominator has distinct linear factors, so write 3/(x(x + 3)) ≡ A/x + B/(x + 3). Multiply by x(x + 3): 3 ≡ A(x + 3) + Bx. Put x = 0: 3 = 3A, so A = 1. Put x = −3: 3 = −3B, so B = −1. So 3/(x(x + 3)) = 1/x − 1/(x + 3). | Chooses the form A/x + B/(x + 3) ; Multiplies through by the denominator ; Substitutes x = 0 and x = −3 ; Gets 1/x − 1/(x + 3)
 
 ## Functions
 S: A function is a rule that takes each input and gives exactly one output. Functions are the central idea of modern mathematics: graphs, calculus and modelling are all about functions.
 O: Use function notation and evaluate functions
 O: Distinguish functions from relations that aren't functions
+LV: GCSE and A level · Fluency
+EV: established | A function assigns exactly one output to each input in its domain; many-to-one rules are functions, one-to-many rules are not.
 T: Function | A rule assigning exactly one output to each input in its domain, written f(x) or f: x ↦ …
 T: Mapping | The correspondence between inputs and outputs; one-to-one, many-to-one or one-to-many
 H: Notation
@@ -1058,15 +1203,19 @@ SUM: Functions map each input to one output.
 SUM: The vertical line test identifies functions.
 SRC: Department for Education, Mathematics AS and A level subject content: algebra and functions | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
-NUM1#maths-u03-33-q1@1: If f(x) = 2x^{2} − 3x + 1, find f(−2). | 15 | 0 |  | 2 × 4 + 6 + 1 = 15.
+NUM1#maths-u03-33-q1@1: If f(x) = 2x^{2} − 3x + 1, find f(−2). | 15 | 0 |  | Substitute x = −2 with brackets: 2 × (−2)^{2} − 3 × (−2) + 1 = 8 + 6 + 1 = 15.
 M1#maths-u03-33-q2@1: Which describes f(x) = x^{2}? | Many-to-one | One-to-one | One-to-many | Not a function | Many-to-many | f(2) = f(−2) = 4: two inputs share an output.
 M2#maths-u03-33-q3@2: For f(x) = 4x + 1, solve f(x) = f(2x − 3). | x = 3 | x = −3 | x = 1 | x = 0 | No solution | f(2x − 3) = 4(2x − 3) + 1 = 8x − 11, and 4x + 1 = 8x − 11 gives x = 3.
 M2#maths-u03-33-q4@2: Plotting y = x^{2} − 4, what is the range of the function? | y ≥ −4, since the minimum value is −4 at x = 0 | All real numbers, since parabolas go on forever | y ≥ 0, since squares are never negative | y ≤ −4, since the graph opens downwards | −2 ≤ y ≤ 2, the roots | x^{2} ≥ 0, so x^{2} − 4 ≥ −4, and every value above −4 is reached.
+M3@1: f(x) = x^{2} − 3x. For which values of a is f(a) = f(2a)? | a = 0 or a = 1 | a = 1 only | a = 0 or a = 3 | a = −1 or a = 0 | a^{2} − 3a = 4a^{2} − 6a gives 3a^{2} − 3a = 0, so 3a(a − 1) = 0 and a = 0 or 1. Check a = 1: f(1) = −2 = f(2).
+SA2@2: Use the vertical line test to decide whether x^{2} + y^{2} = 9 defines y as a function of x, and explain how to make a function from it. | The graph is a circle of radius 3. A vertical line such as x = 0 meets it twice, at (0, 3) and (0, −3), so one input gives two outputs and it is not a function of x. Restricting to the upper half, y ≥ 0, gives the function y = √(9 − x^{2}) with domain −3 ≤ x ≤ 3. | Identifies the circle ; Applies the vertical line test with an example ; Concludes it is not a function ; Restricts to one branch and gives y = √(9 − x^{2})
 
 ## Domain and Range
 S: The domain of a function is the set of inputs it accepts; the range is the set of outputs it actually produces. Getting these right avoids dividing by zero, square-rooting negatives, and makes inverse functions possible.
 O: Find the natural domain of a function
 O: Find the range of a function on a given domain
+LV: A level · Application
+EV: established | A function's natural domain excludes inputs giving zero denominators, negative square-root arguments or non-positive log arguments.
 T: Domain | The set of allowed inputs of a function
 T: Range | The set of all outputs the function produces
 H: Domains
@@ -1085,19 +1234,25 @@ X: Find the domain and range of h(x) = 3 + √(x − 1).
 > So the range is h(x) ≥ 3
 K: Domains exclude zero denominators, negative roots and non-positive logs; ranges come from the graph over the domain.
 !: Finding the range of a quadratic on an interval from the endpoints only, missing the turning point.
+!: Forgetting that √ gives only non-negative outputs: the range of 3 + √(x − 1) is h(x) ≥ 3, not all real numbers.
 Q: What is the domain of f(x) = 1/(x^{2} − 4)? | All real x except ±2.
 Q: What is the range of f(x) = (x + 1)^{2} − 5? | f(x) ≥ −5.
 SUM: The domain is what goes in; the range is what comes out.
 SUM: Sketch to find ranges.
 SRC: Department for Education, Mathematics AS and A level subject content: algebra and functions | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Liebeck M, A Concise Introduction to Pure Mathematics (4th edn, CRC Press 2015) | textbook | 2015 | https://www.routledge.com/
+SRC: Liebeck M, A Concise Introduction to Pure Mathematics (4th edn, CRC Press 2015) | secondary | 2015 | https://www.routledge.com/
 M1#maths-u03-34-q1@1: What is the domain of f(x) = √(4 − x)? | x ≤ 4 | x ≥ 4 | x > 4 | x ≥ 0 | All real x | The square root needs 4 − x ≥ 0, so the domain is x ≤ 4.
 M2#maths-u03-34-q2@2: What is the range of f(x) = x^{2} − 2x for −1 ≤ x ≤ 4? | −1 ≤ f(x) ≤ 8 | 3 ≤ f(x) ≤ 8 | 0 ≤ f(x) ≤ 8 | f(x) ≥ −1 | −1 ≤ f(x) ≤ 3 | (x − 1)^{2} − 1 has minimum −1 at x = 1 and maximum 8 at x = 4.
+NUM1@1: What is the smallest integer in the domain of f(x) = √(2x − 7)? | 4 | 0 |  | The square root needs 2x − 7 ≥ 0, so x ≥ 3.5; the smallest integer in that set is 4.
+M3@2: What is the range of f(x) = 5 − (x − 2)^{2} for 0 ≤ x ≤ 5? | −4 ≤ f(x) ≤ 5 | 1 ≤ f(x) ≤ 5 | −4 ≤ f(x) ≤ 1 | f(x) ≤ 5 | The maximum is 5 at x = 2, inside the interval. At the ends f(0) = 1 and f(5) = −4, so the least value is −4.
+SA2@1,2: Find the domain and range of f(x) = 1/(x^{2} + 1), explaining your reasoning. | x^{2} + 1 ≥ 1 for every real x, so the denominator is never zero and the domain is all real numbers. Because x^{2} + 1 ≥ 1, the fraction is at most 1, reached at x = 0; it is always positive and gets close to 0 as x grows, but never reaches it. So the range is 0 < f(x) ≤ 1. | Shows the denominator is never zero ; Gives the domain as all real x ; Finds the maximum 1 at x = 0 ; States the range 0 < f(x) ≤ 1 with 0 excluded
 
 ## Composite Functions
 S: A composite function applies one function and then another: fg(x) means "do g, then f". Composition builds complicated functions from simple ones and is the idea behind the chain rule.
 O: Form and evaluate composite functions
 O: Find domains of composites and solve equations involving them
+LV: A level · Application
+EV: established | fg(x) = f(g(x)) applies g first, exists only where g(x) lies in the domain of f, and in general differs from gf(x).
 T: Composite function | fg(x) = f(g(x)): apply g first, then f
 T: Order of composition | fg and gf are usually different
 H: Forming composites
@@ -1125,11 +1280,15 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 NUM1#maths-u03-35-q1@1: f(x) = x^{2} − 1 and g(x) = 3x + 2. Find fg(−1). | 0 | 0 |  | g(−1) = −1, and f(−1) = 1 − 1 = 0.
 M1#maths-u03-35-q2@1: f(x) = 2x and g(x) = x + 5. What is fg(x)? | 2x + 10 | 2x + 5 | 2x^{2} + 10x | x + 10 | 2x + 52 | Apply g first: fg(x) = f(x + 5) = 2(x + 5) = 2x + 10.
 M2#maths-u03-35-q3@2: f(x) = x^{2} and g(x) = x − 3. Solve gf(x) = fg(x). | x = 2 | x = 3 | x = 0 | No solution | x = −2 | gf(x) = x^{2} − 3 and fg(x) = (x − 3)^{2} = x^{2} − 6x + 9, so −3 = −6x + 9 and x = 2.
+M3@2: f(x) = √x and g(x) = 4 − x^{2}. What is the domain of fg(x)? | −2 ≤ x ≤ 2 | x ≥ 0 | x ≤ 4 | x ≤ −2 or x ≥ 2 | fg(x) = √(4 − x^{2}) needs g(x) in the domain of f: 4 − x^{2} ≥ 0, so x^{2} ≤ 4 and −2 ≤ x ≤ 2.
+SA2@1: f(x) = x + 3 and g(x) = x^{2}. Show that fg and gf are different, and find any x for which fg(x) = gf(x). | fg(x) = f(x^{2}) = x^{2} + 3, while gf(x) = g(x + 3) = (x + 3)^{2} = x^{2} + 6x + 9; these differ (for example at x = 0: 3 and 9). Setting them equal: x^{2} + 3 = x^{2} + 6x + 9, so 6x = −6 and x = −1 (both give 4). | Forms fg(x) = x^{2} + 3 ; Forms gf(x) = (x + 3)^{2} ; Shows they differ ; Solves to x = −1
 
 ## Inverse Functions
 S: An inverse function undoes a function: if f takes 3 to 11, then f^{−1} takes 11 back to 3. Only one-to-one functions have inverses, and the graph of an inverse is the reflection of the original in the line y = x.
 O: Find the inverse of a one-to-one function
 O: State the domain and range of an inverse and sketch it
+LV: A level · Application
+EV: established | Only one-to-one functions have inverses; the domain of f^{−1} is the range of f, and its graph is the reflection of y = f(x) in y = x.
 T: Inverse function | f^{−1}, where f^{−1}(f(x)) = x for every x in the domain of f
 T: Self-inverse | A function that is its own inverse, such as f(x) = 1/x or f(x) = 5 − x
 H: Finding an inverse
@@ -1158,11 +1317,15 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 NUM1#maths-u03-36-q1@1: f(x) = (x + 4)/3. Find f^{−1}(5). | 11 | 0 |  | f^{−1}(x) = 3x − 4, so f^{−1}(5) = 11 (check: f(11) = 15/3 = 5).
 M1#maths-u03-36-q2@1: What is the inverse of f(x) = x^{3} + 1? | f^{−1}(x) = ∛(x − 1) | f^{−1}(x) = ∛x − 1 | f^{−1}(x) = 1/(x^{3} + 1) | f^{−1}(x) = x^{3} − 1 | f^{−1}(x) = (x − 1)^{3} | Swap and rearrange: x = y^{3} + 1, so y = ∛(x − 1).
 M2#maths-u03-36-q3@2: f(x) = e^{x} + 2. What is the domain of f^{−1}? | x > 2 | x > 0 | All real x | x ≥ 2 | x < 2 | The range of f is f(x) > 2, which becomes the domain of f^{−1}.
+M3@1: f(x) = (3x + 1)/(x − 2), x ≠ 2. What is f^{−1}(x)? | (2x + 1)/(x − 3) | (x − 2)/(3x + 1) | (2x − 1)/(x − 3) | (x + 1)/(3x − 2) | Swap: x = (3y + 1)/(y − 2), so xy − 2x = 3y + 1 and y(x − 3) = 2x + 1. The reciprocal (x − 2)/(3x + 1) is a common wrong answer.
+SA2@2: Explain why f(x) = (x − 1)^{2} for all real x has no inverse, and find an inverse on a suitable restricted domain, stating its domain. | f is many-to-one: f(0) = f(2) = 1, so an output can't be traced back to one input. Restrict to x ≥ 1, where f is one-to-one with range f(x) ≥ 0. Swap and solve: x = (y − 1)^{2}, so y − 1 = √x (positive root, since y ≥ 1) and f^{−1}(x) = 1 + √x, with domain x ≥ 0. | Shows f is many-to-one with an example ; Restricts the domain to x ≥ 1 (or x ≤ 1) ; Finds f^{−1}(x) = 1 + √x with the right root ; States the domain of f^{−1} as the range of f
 
 ## Transformations of Functions
 S: Transformations move, stretch and reflect graphs. Knowing how f(x) + a, f(x + a), af(x) and f(ax) change a graph lets you sketch whole families of functions from one you know.
 O: Describe the effect of translations, stretches and reflections on graphs
 O: Combine transformations and find equations of transformed graphs
+LV: GCSE and A level · Application
+EV: established | f(x) + a and af(x) act vertically as written, while f(x + a) and f(ax) act horizontally in the opposite sense.
 T: Translation | A shift of a graph without changing its shape, described by a vector
 T: Stretch | Scaling a graph parallel to an axis by a scale factor
 H: The four basic transformations
@@ -1193,11 +1356,14 @@ M1#maths-u03-37-q1@1: Which transformation maps y = x^{2} to y = (x + 5)^{2}? | 
 M2#maths-u03-37-q2@2: (3, −2) lies on y = f(x). Which point lies on y = −f(x) + 4? | (3, 6) | (3, 2) | (−3, 6) | (3, −6) | (7, 2) | Reflecting gives (3, 2), then up 4 gives (3, 6).
 M3#maths-u03-37-q3@2: Which describes y = f(2x + 6) compared with y = f(x)? | Translate 6 left, then stretch by 1/2 parallel to the x-axis | Stretch by 1/2, then translate 6 left | Translate 3 right | Stretch by 2, then translate 6 right | Translate 6 right, then stretch by 1/2 | f(2x + 6) = f(2(x + 3)): it's also "stretch by ½, then translate 3 left"; translating 6 left first, then stretching, gives the same graph.
 M2#maths-u03-37-q4@2: Compared with y = x^{2}, how is y = −2(x + 1)^{2} + 4 transformed? | Shifted 1 left and 4 up, stretched by 2 vertically and reflected in the x-axis | Shifted 1 right and 4 up, then reflected | Shifted 1 left and 4 down, stretched horizontally by 2 | Only reflected in the y-axis | Shifted 2 left and 4 up | The vertex moves to (−1, 4), and the factor −2 stretches by 2 and flips the curve.
+SA2@1,2: The point (2, 5) lies on y = f(x). Describe how y = 3 − 2f(x + 1) is obtained from y = f(x), and find the image of (2, 5). | Work inside the bracket first: f(x + 1) translates 1 left, so (2, 5) → (1, 5). Multiplying by 2 stretches vertically by scale factor 2: (1, 10). The minus sign reflects in the x-axis: (1, −10). Adding 3 translates up 3: (1, −7). | Translates 1 left for x + 1 ; Stretches vertically by 2 ; Reflects in the x-axis ; Translates up 3 and gets (1, −7)
 
 ## Piecewise Functions
 S: A piecewise function uses different rules on different parts of its domain, like a tax system with bands or a phone tariff. They model real situations and test careful reading of where each rule applies.
 O: Evaluate and sketch piecewise functions
 O: Check continuity at the boundaries between pieces
+LV: A level · Application
+EV: established | A piecewise function is continuous at a boundary exactly when its pieces give the same value there.
 T: Piecewise function | A function defined by different formulae on different intervals
 T: Continuous | Having no jumps: at each boundary the pieces meet
 H: Evaluating and sketching
@@ -1220,14 +1386,19 @@ Q: What does a step function look like? | Horizontal segments with jumps between
 SUM: Piecewise functions change rule across intervals.
 SUM: Continuity means the pieces meet.
 SRC: Department for Education, Mathematics AS and A level subject content: algebra and functions | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Liebeck M, A Concise Introduction to Pure Mathematics (4th edn, CRC Press 2015) | textbook | 2015 | https://www.routledge.com/
+SRC: Liebeck M, A Concise Introduction to Pure Mathematics (4th edn, CRC Press 2015) | secondary | 2015 | https://www.routledge.com/
 M1#maths-u03-38-q1@1: f(x) = x + 4 for x < 0 and 4 − x^{2} for x ≥ 0. What is f(−1) + f(2)? | 3 | 0 | 6 | 7 | −1 | −1 uses the first rule: f(−1) = 3; 2 uses the second: f(2) = 4 − 4 = 0. Total 3.
 M2#maths-u03-38-q2@2: Is f(x) = 2x for x < 1 and x + 2 for x ≥ 1 continuous at x = 1? | No: the pieces give 2 and 3 | Yes | Yes: both pieces are linear | No: f(1) is undefined | Only from the right | The left piece approaches 2 but the right piece gives 3: a jump.
+NUM1@1: f(x) = 3x for x < 2 and x^{2} + 1 for x ≥ 2. Find f(1) + f(3). | 13 | 0 |  | 1 < 2 uses the first rule: f(1) = 3. 3 ≥ 2 uses the second: f(3) = 10. The total is 13.
+M3@2: f(x) = ax + 3 for x < 2 and x^{2} − a for x ≥ 2. Which value of a makes f continuous? | a = 1/3 | a = 1 | a = −1/3 | a = 7/3 | At x = 2 the pieces must agree: 2a + 3 = 4 − a, so 3a = 1 and a = 1/3 (both pieces then give 11/3).
+SA2@1: A phone plan costs £10 a month for up to 100 minutes, then 5p for each extra minute. Write the monthly cost C(m) in pounds as a piecewise function of the minutes m, find C(160) and say whether C is continuous. | C(m) = 10 for 0 ≤ m ≤ 100, and C(m) = 10 + 0.05(m − 100) for m > 100. C(160) = 10 + 0.05 × 60 = £13. At m = 100 both pieces give £10, so C is continuous there: no jump in cost. | Gives the flat piece for m ≤ 100 ; Gives 10 + 0.05(m − 100) for m > 100 ; Gets C(160) = £13 ; Checks continuity at m = 100
 
 ## Parametric Equations
 S: Parametric equations describe a curve using a third variable, the parameter, for both coordinates: x = t^{2}, y = 2t. They're natural for motion, where t is time, and describe curves that aren't functions, like circles.
 O: Convert between parametric and Cartesian forms
 O: Sketch and interpret parametric curves
+LV: A level · Application
+EV: established | A parametric curve can be converted to Cartesian form by eliminating the parameter, using an identity such as cos^{2} θ + sin^{2} θ = 1 where needed.
 T: Parameter | An extra variable, often t or θ, on which both x and y depend
 T: Cartesian equation | An equation linking x and y directly
 H: Working with parameters
@@ -1245,20 +1416,25 @@ X: Find the Cartesian equation of x = 2t + 1, y = t^{2} − 3.
 > y = (x − 1)^{2}/4 − 3, a parabola
 K: Eliminate the parameter to get a Cartesian equation; use trigonometric identities for circles and ellipses.
 !: Forgetting that the parameter's range can restrict the curve to only part of the Cartesian graph.
+!: Writing x^{2} + y^{2} = r^{2} for x = a cos θ, y = b sin θ when a ≠ b: that curve is the ellipse x^{2}/a^{2} + y^{2}/b^{2} = 1.
 Q: What curve is x = 3 cos θ, y = 3 sin θ? | A circle of radius 3 centred at the origin.
 Q: For x = t^{3}, y = t^{2}, what is the Cartesian equation? | y = x^{2/3} (or y^{3} = x^{2}).
 SUM: Parameters describe both coordinates.
 SUM: Eliminate the parameter for Cartesian form.
 SRC: Department for Education, Mathematics AS and A level subject content: coordinate geometry | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | textbook | 2020 | https://www.bloomsbury.com/
+SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | secondary | 2020 | https://www.bloomsbury.com/
 NUM1#maths-u03-39-q1@1: A curve has x = 3t − 1, y = t^{2}. Find y when x = 5. | 4 | 0 |  | 3t − 1 = 5 gives t = 2, so y = 4.
 M1#maths-u03-39-q2@1: Which Cartesian equation matches x = t + 1, y = 2t? | y = 2x − 2 | y = 2x + 2 | y = x + 1 | y = 2x | y = x/2 − 1 | From x = t + 1, t = x − 1; substituting gives y = 2(x − 1) = 2x − 2.
 M2#maths-u03-39-q3@2: Which curve is x = 4 cos t, y = 2 sin t? | An ellipse | A circle | A parabola | A hyperbola | A straight line | x^{2}/16 + y^{2}/4 = cos^{2} t + sin^{2} t = 1.
+M3@2: Where does the curve x = t^{2}, y = 2t meet the line y = x − 3? | (9, 6) and (1, −2) | (3, 6) and (−1, −2) | (9, 6) only | (1, 2) and (9, −6) | Substitute: 2t = t^{2} − 3, so t^{2} − 2t − 3 = 0 and t = 3 or −1. Then t = 3 gives (9, 6) and t = −1 gives (1, −2).
+SA2@1: Show that x = 3 + 2 cos θ, y = −1 + 2 sin θ describes a circle, and give its centre and radius. | Rearrange: cos θ = (x − 3)/2 and sin θ = (y + 1)/2. Since cos^{2} θ + sin^{2} θ = 1, (x − 3)^{2}/4 + (y + 1)^{2}/4 = 1, so (x − 3)^{2} + (y + 1)^{2} = 4. This is a circle with centre (3, −1) and radius 2. | Isolates cos θ and sin θ ; Uses cos^{2} θ + sin^{2} θ = 1 ; Gets (x − 3)^{2} + (y + 1)^{2} = 4 ; States centre (3, −1) and radius 2
 
 ## Implicit Equations
 S: An implicit equation links x and y without making y the subject, like x^{2} + y^{2} = 25 or x^{3} + y^{3} = 6xy. Many important curves can only be written this way, and they're differentiated implicitly.
 O: Interpret and sketch curves given implicitly
 O: Find points on implicit curves and test whether points lie on them
+LV: A level · Application
+EV: established | Points on an implicit curve are exactly the (x, y) pairs satisfying its equation; one x can give several y values.
 T: Implicit equation | An equation in x and y where y isn't given explicitly as a function of x
 T: Explicit equation | An equation with y as the subject, such as y = 3x^{2}
 H: Working with implicit curves
@@ -1275,19 +1451,25 @@ X: Find the points where x^{2} + 2y^{2} = 18 meets the line y = x.
 > Points: (√6, √6) and (−√6, −√6)
 K: Implicit equations link x and y directly; substitute to test points, find coordinates or intersections.
 !: Assuming an implicit curve gives one y for each x.
+!: Dividing by x or y when finding intersections, which can lose points such as the origin: factorise instead.
 Q: Does (1, 2) lie on x^{2} + y^{2} − 2x = 4? | No: 1 + 4 − 2 = 3, not 4.
 Q: Why might you leave a curve in implicit form? | Solving for y may be impossible or give several branches.
 SUM: Implicit equations describe curves without y as the subject.
 SUM: Substitute to test points and find intersections.
 SRC: Department for Education, Mathematics AS and A level subject content: differentiation | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | textbook | 2020 | https://www.bloomsbury.com/
+SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | secondary | 2020 | https://www.bloomsbury.com/
 M1#maths-u03-40-q1@1: Which point lies on x^{2} − y^{2} = 16? | (5, 3) | (4, 1) | (3, 5) | (5, 4) | (2, 2) | Substituting (5, 3): 5^{2} − 3^{2} = 25 − 9 = 16, so the point lies on the curve.
 M2#maths-u03-40-q2@2: On x^{2} + xy + y^{2} = 7, what are the y-values when x = 1? | 2 and −3 | 3 and −2 | 2 only | ±√6 | 7 and −1 | 1 + y + y^{2} = 7 gives (y + 3)(y − 2) = 0.
+NUM1@2: The point (2, k) lies on x^{2} + y^{2} − 4y = 1. Find the larger possible value of k. | 3 | 0 |  | Substitute x = 2: 4 + k^{2} − 4k = 1, so k^{2} − 4k + 3 = 0 = (k − 1)(k − 3). k = 1 or 3; the larger is 3.
+M3@2: Where does the curve x^{2} + y^{2} = 10 meet the line y = 3x? | (1, 3) and (−1, −3) | (1, 3) only | (3, 1) and (−3, −1) | (1, −3) and (−1, 3) | Substitute y = 3x: x^{2} + 9x^{2} = 10, so x^{2} = 1 and x = ±1, giving y = ±3 with the same sign as x.
+SA2@1: Explain why x^{2} + y^{2} = 25 does not define y as a function of x, and describe two symmetries of the curve, justifying each from the equation. | For most x between −5 and 5 there are two y values (x = 3 gives y = ±4), so y isn't a function of x. Replacing y with −y leaves the equation unchanged, so the curve is symmetric in the x-axis; replacing x with −x also leaves it unchanged, so it is symmetric in the y-axis. (Swapping x and y shows symmetry in y = x too.) | Gives an x with two y values ; Concludes y isn't a function of x ; Justifies symmetry in the x-axis by y → −y ; Justifies another symmetry
 
 ## Recurrence Relations
 S: A recurrence relation defines each term of a sequence from earlier terms, like u_{n+1} = 2u_{n} + 3. Recurrences model populations, loans and algorithms, and some can be solved to give a formula for the nth term.
 O: Generate terms from a recurrence relation
 O: Describe the long-term behaviour of a sequence and find limits
+LV: A level · Application
+EV: established | A recurrence u_{n+1} = au_{n} + b converges when |a| < 1, and its limit L satisfies L = aL + b.
 T: Recurrence relation | A rule giving each term from previous ones, with starting values
 T: Limit | A value that the terms approach as n becomes large
 H: Generating and describing
@@ -1304,6 +1486,7 @@ X: A pond has 200 fish. Each year the population falls by 10% and 30 fish are ad
 > P_{1} = 0.9 × 200 + 30 = 210
 > P_{2} = 0.9 × 210 + 30 = 219
 > Limit: L = 0.9L + 30, so 0.1L = 30 and L = 300 fish
+!: Using L = b/(1 − a) when |a| ≥ 1: for u_{n+1} = 2u_{n} + 3, L = −3 is a fixed point, but a sequence starting anywhere else moves away from it.
 K: Generate terms by repeated substitution; for u_{n+1} = au_{n} + b with |a| < 1, the limit is b/(1 − a).
 !: Assuming every recurrence has a limit: u_{n+1} = 2u_{n} + 3 grows without bound.
 Q: What is u_{3} if u_{1} = 4 and u_{n+1} = 3u_{n} − 5? | u_{2} = 7, u_{3} = 16.
@@ -1311,15 +1494,19 @@ Q: What is the limit of u_{n+1} = 0.2u_{n} + 8? | 10.
 SUM: Recurrences build sequences step by step.
 SUM: Some converge to a limit found by solving L = f(L).
 SRC: Department for Education, Mathematics AS and A level subject content: sequences and series | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw Hill 2019) | textbook | 2019 | https://www.mheducation.com/
+SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw Hill 2019) | secondary | 2019 | https://www.mheducation.com/
 NUM1#maths-u03-41-q1@1: u_{1} = 2 and u_{n+1} = u_{n}^{2} − 1. Find u_{4}. | 63 | 0 |  | u_{2} = 3, u_{3} = 8, u_{4} = 63.
 M1#maths-u03-41-q2@1: Which type of sequence is u_{n+1} = −u_{n}, u_{1} = 5? | Periodic | Increasing | Decreasing | Convergent to 0 | Arithmetic | It alternates 5, −5, 5, −5, …, repeating every 2 terms.
 M2#maths-u03-41-q3@2: u_{n+1} = 0.75u_{n} + 5. What is its limit? | 20 | 5 | 6.67 | 15 | It has none | L = 0.75L + 5 gives 0.25L = 5, so L = 20.
+NUM3@1,2: A loan of £1,000 is charged 2% interest a month, and £100 is repaid at the end of each month: B_{n+1} = 1.02B_{n} − 100 with B_{0} = 1000. Find the balance after 2 months. | 838.4 | 0.01 | £ | B_{1} = 1.02 × 1000 − 100 = 920. B_{2} = 1.02 × 920 − 100 = 938.40 − 100 = £838.40.
+SA2@2: For u_{n+1} = 0.6u_{n} + 4 with u_{1} = 0, find the next three terms and the limit, and explain why the sequence converges. | u_{2} = 4, u_{3} = 6.4, u_{4} = 7.84. Since |0.6| < 1, each step shrinks the distance to the limit by a factor 0.6, so the sequence converges. The limit satisfies L = 0.6L + 4, so 0.4L = 4 and L = 10. | Gets 4, 6.4 and 7.84 ; Sets L = 0.6L + 4 ; Gets L = 10 ; Explains convergence using |a| < 1
 
 ## Intermediate Algebra
 S: Intermediate algebra bridges GCSE and A level: confident manipulation of quadratics, functions, inequalities, surds and indices together, in multi-step problems. It's where fluency becomes problem solving.
 O: Combine algebraic techniques in multi-step problems
 O: Choose an efficient method for a given problem
+LV: GCSE and A level · Problem solving
+EV: established | A line is a tangent to a quadratic curve exactly when substituting gives a quadratic with a repeated root (discriminant zero).
 T: Fluency | Carrying out standard procedures accurately and efficiently
 T: Strategy | Choosing which technique to use, and in what order
 H: Combining techniques
@@ -1334,6 +1521,7 @@ X: Find where the line y = x + 1 meets the circle x^{2} + y^{2} = 13.
 > Substitute: x^{2} + (x + 1)^{2} = 13, so 2x^{2} + 2x − 12 = 0, so x^{2} + x − 6 = 0
 > (x + 3)(x − 2) = 0, so x = −3 or x = 2
 > Points: (−3, −2) and (2, 3)
+!: Using a discriminant greater than zero for a tangent: that gives two intersection points. A tangent needs exactly zero.
 K: Chain techniques deliberately; use the discriminant for tangency; substitute linear into quadratic.
 !: Losing track of signs across several steps: check each line.
 Q: How do you show a line is a tangent to a curve? | Substitute and show the resulting quadratic has a repeated root (discriminant 0).
@@ -1341,14 +1529,19 @@ Q: When is completing the square better than the formula? | When you need the tu
 SUM: Intermediate algebra combines methods.
 SUM: Strategy matters as much as technique.
 SRC: Department for Education, Mathematics AS and A level subject content: algebra and functions | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Pólya G, How to Solve It (Princeton University Press 2004) | textbook | 2004 | https://press.princeton.edu/
+SRC: Pólya G, How to Solve It (Princeton University Press 2004) | secondary | 2004 | https://press.princeton.edu/
 M1#maths-u03-42-q1@1: For what value of k is y = 4x + k a tangent to y = x^{2}? | −4 | 4 | 0 | 2 | −2 | x^{2} − 4x − k = 0 needs 16 + 4k = 0, so k = −4.
 M2#maths-u03-42-q2@2: Where does y = 2x meet y = x^{2} − 3? | (3, 6) and (−1, −2) | (3, 6) only | (−3, −6) and (1, 2) | (2, 4) and (0, 0) | They don't meet | Set 2x = x^{2} − 3: x^{2} − 2x − 3 = 0, so x = 3 or −1, giving (3, 6) and (−1, −2).
+NUM1@1: Evaluate √12 × 3^{1/2}. | 6 | 0 |  | 3^{1/2} = √3, so √12 × √3 = √36 = 6. Combining indices and surds gives an exact whole number.
+M3@1,2: For which values of k does the line y = x + k meet the circle x^{2} + y^{2} = 8 at two points? | −4 < k < 4 | k < −4 or k > 4 | −2√2 < k < 2√2 | k = ±4 | Substitute: 2x^{2} + 2kx + k^{2} − 8 = 0. Two points need 4k^{2} − 8(k^{2} − 8) > 0, so 64 − 4k^{2} > 0 and k^{2} < 16. k = ±4 gives tangents.
+SA3@1,2: Show that the line y = 2x − 1 is a tangent to the curve y = x^{2}, and find the point of contact. | Substitute the line into the curve: x^{2} = 2x − 1, so x^{2} − 2x + 1 = 0. The discriminant is 4 − 4 = 0, so there is exactly one (repeated) root: (x − 1)^{2} = 0, x = 1. The line meets the curve at only one point and so is a tangent; the point of contact is (1, 1). | Substitutes to form x^{2} − 2x + 1 = 0 ; Shows the discriminant is 0 ; Explains one repeated root means a tangent ; Gives the point (1, 1)
 
 ## Advanced Algebra
 S: Advanced algebra extends school methods with proof by induction, the binomial theorem for any power, series and complex roots. It's the algebra of A level Further Maths and the first year of a maths degree.
 O: Use the binomial expansion for positive integer and other powers
 O: Prove algebraic results by induction
+LV: A level · Problem solving
+EV: established | (1 + x)^{n} for non-integer or negative n is an infinite series valid only for |x| < 1, and induction proves statements for all positive integers.
 T: Binomial expansion | (a + b)^{n} = Σ nCr a^{n−r}b^{r}
 T: Proof by induction | Proving a statement for n = 1 and that truth for n = k implies truth for n = k + 1
 H: Binomial expansions
@@ -1362,6 +1555,7 @@ X: Find the first three terms of (1 − 2x)^{1/2} in ascending powers of x, and 
 > 1 + (½)(−2x) + (½)(−½)(−2x)^{2}/2
 > = 1 − x − ½x^{2} + …
 > Valid for |2x| < 1, so |x| < ½
+!: Using an infinite binomial series outside its range of validity: (1 + x)^{−1} with x = 2 gives 1 − 2 + 4 − …, which never approaches 1/3.
 K: Use nCr for whole-number powers and the general series for others (with its validity range); prove "for all n" statements by induction.
 !: Forgetting to raise the coefficient inside the bracket to the power, as in (2x)^{2} = 4x^{2}.
 Q: What is 5C2? | 10.
@@ -1369,15 +1563,19 @@ Q: What are the two parts of a proof by induction? | The base case and the induc
 SUM: The binomial theorem expands powers of brackets.
 SUM: Induction proves statements for all natural numbers.
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
-SRC: Liebeck M, A Concise Introduction to Pure Mathematics (4th edn, CRC Press 2015) | textbook | 2015 | https://www.routledge.com/
+SRC: Liebeck M, A Concise Introduction to Pure Mathematics (4th edn, CRC Press 2015) | secondary | 2015 | https://www.routledge.com/
 NUM1#maths-u03-43-q1@1: Find the coefficient of x^{2} in (3 + 2x)^{5}. | 1080 | 0 |  | 5C2 × 3^{3} × 2^{2} = 10 × 27 × 4 = 1080.
 M1#maths-u03-43-q2@1: What is the coefficient of x in (1 + x)^{−2}? | −2 | 2 | 1 | −1 | 3 | In (1 + x)^{n} = 1 + nx + …, the coefficient of x is n, which is −2 here.
 M3#maths-u03-43-q3@2: In the inductive step for 1 + 3 + … + (2n − 1) = n^{2}, what must you show? | k^{2} + (2k + 1) = (k + 1)^{2} | k^{2} = (k + 1)^{2} | 1 = 1^{2} | 2k − 1 = k^{2} | (k + 1)^{2} − k^{2} = 1 | Adding the next odd number, 2(k + 1) − 1 = 2k + 1, to k^{2} must give (k + 1)^{2}.
+M2@1: What is the coefficient of x^{3} in the expansion of (1 − x)^{−1/2}? | 5/16 | −5/16 | 3/8 | 15/8 | With n = −1/2 and (−x) in place of x: n(n − 1)(n − 2)/3! × (−1)^{3} = (−1/2)(−3/2)(−5/2)/6 × (−1) = (15/8)/6 = 5/16.
+SA3@2: Prove by induction that 7^{n} − 1 is divisible by 6 for every integer n ≥ 1. | Base case: n = 1 gives 7 − 1 = 6, divisible by 6. Inductive step: assume 7^{k} − 1 = 6m for some integer m. Then 7^{k+1} − 1 = 7 × 7^{k} − 1 = 7(7^{k} − 1) + 6 = 42m + 6 = 6(7m + 1), which is divisible by 6. So truth for k implies truth for k + 1, and by induction it holds for all n ≥ 1. | Checks the base case n = 1 ; States the inductive assumption ; Rewrites 7^{k+1} − 1 as 7(7^{k} − 1) + 6 ; Concludes with a correct induction statement
 
 ## Complex Numbers
 S: Complex numbers extend the reals with i, where i^{2} = −1. Every polynomial has all its roots among them, and they're indispensable in electrical engineering, quantum mechanics and signal processing.
 O: Calculate with complex numbers in the form a + bi
 O: Solve quadratic equations with complex roots and represent numbers on an Argand diagram
+LV: A level · Application
+EV: established | Every quadratic with real coefficients and negative discriminant has two complex conjugate roots.
 T: Imaginary unit | i, with i^{2} = −1
 T: Complex conjugate | For z = a + bi, the conjugate is z* = a − bi
 H: Arithmetic
@@ -1403,18 +1601,21 @@ Q: What is (2 − 3i)(2 + 3i)? | 13.
 SUM: Complex numbers solve every polynomial equation.
 SUM: The Argand diagram shows them as points.
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
-SRC: Needham T, Visual Complex Analysis (Oxford University Press 2023) | textbook | 2023 | https://global.oup.com/
+SRC: Needham T, Visual Complex Analysis (Oxford University Press 2023) | secondary | 2023 | https://global.oup.com/
 NUM1#maths-u03-44-q1@1: Find |6 − 8i|. | 10 | 0 |  | √(36 + 64) = √100 = 10.
 M1#maths-u03-44-q2@1: What is (4 + i) − (1 − 3i)? | 3 + 4i | 3 − 2i | 5 − 2i | 3 + 2i | 5 + 4i | Real parts: 4 − 1 = 3; imaginary parts: 1 − (−3) = 4.
 M2#maths-u03-44-q3@2: What are the roots of z^{2} + 9 = 0? | 3i and −3i | 3 and −3 | 9i and −9i | 3 + i and 3 − i | There are none | z^{2} = −9, and √−9 = 3i, so the roots are the conjugate pair z = ±3i.
 M3#maths-u03-44-q4@2: Simplify (5 + 5i)/(2 + i). | 3 + i | 5 + 5i/2 | 2.5 + 5i | 1 + 3i | 3 − i | Multiply by (2 − i)/(2 − i): (10 − 5i + 10i + 5)/5 = (15 + 5i)/5 = 3 + i.
 M2#maths-u03-44-q5@2: On the Argand diagram, what does multiplying a complex number by i do? | Rotates it 90° anticlockwise about the origin, keeping its modulus | Reflects it in the real axis | Doubles its modulus | Rotates it 90° clockwise | Moves it one unit up | i has modulus 1 and argument 90°, so multiplication adds 90° to the argument and leaves the modulus unchanged.
 NUM1#maths-u03-44-q6@1: What is the modulus of each solution of z^{4} = −16? | 2 | 0 |  | Each root has modulus 16^{1/4} = 2; the four roots sit at arguments 45°, 135°, 225° and 315°.
+SA2@1,2: Solve z^{2} + 2z + 5 = 0, explain why the roots form a conjugate pair, and find their modulus. | The discriminant is 4 − 20 = −16, so z = (−2 ± √−16)/2 = (−2 ± 4i)/2 = −1 ± 2i. The ± in the formula gives a + bi and a − bi, so real coefficients always give conjugate pairs; on the Argand diagram they are reflections in the real axis. Each has modulus √(1 + 4) = √5. | Finds the discriminant −16 ; Gets z = −1 ± 2i ; Explains the conjugate pair from the ± ; Gets modulus √5
 
 ## Boolean Algebra
 S: Boolean algebra is the algebra of true and false (1 and 0), with operations AND, OR and NOT. It's the mathematics of logic circuits, search queries and computer programs.
 O: Evaluate Boolean expressions and construct truth tables
 O: Simplify Boolean expressions using the laws, including De Morgan's laws
+LV: Year 1 · Application
+EV: established | Boolean algebra obeys its own laws, including absorption and De Morgan's laws, which any truth table confirms.
 T: Boolean variable | A variable taking only the values 0 (false) and 1 (true)
 T: De Morgan's laws | NOT (A AND B) = (NOT A) OR (NOT B); NOT (A OR B) = (NOT A) AND (NOT B)
 H: Operations and truth tables
@@ -1437,8 +1638,11 @@ Q: What is NOT (A OR B) by De Morgan's law? | (NOT A) AND (NOT B).
 Q: How many rows does a truth table for 3 variables have? | 8.
 SUM: Boolean algebra describes logic.
 SUM: Its laws simplify circuits and conditions.
-SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw Hill 2019) | textbook | 2019 | https://www.mheducation.com/
+SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw Hill 2019) | secondary | 2019 | https://www.mheducation.com/
 SRC: Department for Education, Computer science GCSE subject content | standard | 2015 | https://www.gov.uk/government/publications/gcse-computer-science
 M1#maths-u03-45-q1@1: What is 1 AND 0? | 0 | 1 | 2 | 10 | Undefined | AND gives 1 only when both inputs are 1; here one input is 0, so the result is 0.
 M2#maths-u03-45-q2@2: Which expression equals A + A·B? | A | B | A·B | A + B | 1 | By absorption: A + A·B = A·(1 + B) = A·1 = A.
+NUM1@1: How many rows does a truth table for 4 Boolean variables need? | 16 | 0 |  | Each variable is 0 or 1, so n variables give 2^{n} combinations: 2^{4} = 16 rows.
+M3@2: Which expression equals NOT (A AND NOT B)? | Ā + B | Ā·B | A + B̄ | Ā + B̄ | By De Morgan's law, the complement of A·B̄ is Ā + (complement of B̄) = Ā + B; the double negation cancels.
+SA2@1,2: Use a truth table, and then the laws, to show that A + A·B = A. | Truth table: A = 0, B = 0: A·B = 0, A + A·B = 0. A = 0, B = 1: 0, total 0. A = 1, B = 0: 0, total 1. A = 1, B = 1: 1, total 1. The final column matches A in every row. Algebraically, A + A·B = A·1 + A·B = A·(1 + B) = A·1 = A, using annihilation (1 + B = 1). | Lists all four input combinations ; Computes A·B and A + A·B correctly ; Notes the result matches A in every row ; Gives an algebraic proof using the laws
 `;

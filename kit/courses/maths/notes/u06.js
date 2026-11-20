@@ -5,6 +5,8 @@ export default `
 S: Trigonometry studies the relationships between the angles and sides of triangles. It began with astronomy and surveying, and today it underpins navigation, engineering, physics, music and signal processing.
 O: Label the sides of a right-angled triangle relative to an angle
 O: Explain what trigonometry is used for
+LV: GCSE · Fluency
+EV: established | In a right-angled triangle the hypotenuse, opposite and adjacent sides are named relative to the chosen acute angle, and trigonometry links that angle to ratios of these sides.
 T: Hypotenuse | The longest side of a right-angled triangle, opposite the right angle
 T: Opposite and adjacent | The side across from the angle θ, and the side next to θ (not the hypotenuse)
 H: Labelling
@@ -21,6 +23,7 @@ X: In triangle ABC, the right angle is at C, AB = 13, BC = 5 and AC = 12. For th
 > The hypotenuse is opposite the right angle: AB = 13
 > Opposite angle A is side BC = 5
 > Adjacent to angle A (not the hypotenuse) is AC = 12
+P: **Choosing a ratio.** Once the sides are labelled, the pair you know or need picks the ratio: opposite and hypotenuse use sine, adjacent and hypotenuse cosine, opposite and adjacent tangent.
 K: Label H, O and A relative to the chosen angle; trigonometry links angles to ratios of sides.
 !: Labelling sides before choosing the angle, or calling the hypotenuse the adjacent side.
 Q: Which side is always the longest in a right-angled triangle? | The hypotenuse.
@@ -28,14 +31,19 @@ Q: Does the opposite side depend on which angle you choose? | Yes: it's the side
 SUM: Trigonometry links angles and side ratios.
 SUM: Label sides relative to the angle.
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
-SRC: Maor E, Trigonometric Delights (Princeton University Press 2013) | textbook | 2013 | https://press.princeton.edu/
+SRC: Maor E, Trigonometric Delights (Princeton University Press 2013) | secondary | 2013 | https://press.princeton.edu/
 M1#maths-u06-01-q1@1: In a right-angled triangle, which side is opposite the right angle? | The hypotenuse | The adjacent | The opposite | The base | The shortest side | The hypotenuse is always opposite the right angle and is the longest side.
 M2#maths-u06-01-q2@2: For the other acute angle of the same triangle, what does the "opposite" side become? | The adjacent side | The hypotenuse | It stays the opposite | It disappears | The shortest side always | Swapping the acute angle swaps which leg is opposite and which is adjacent.
+TF1@1: The adjacent side can be the longest side of a right-angled triangle. | false | The hypotenuse, opposite the right angle, is always the longest side; the adjacent is one of the two shorter legs.
+M3@1: In triangle PQR the right angle is at Q. For the angle at R, which side is the opposite? | PQ | QR | PR | None: R has no opposite side | The opposite side is the one that doesn't touch R, which is PQ; PR is the hypotenuse and QR the adjacent.
+SA2@1,2: Explain how to label the sides of a right-angled triangle for a chosen angle, why the labels change if you choose the other acute angle, and give one practical use of trigonometry. | First mark the right angle: the side opposite it is the hypotenuse, the longest side. Then, for the chosen acute angle θ, the opposite is the side across from θ (not touching it) and the adjacent is the side next to θ that isn't the hypotenuse. The two legs swap roles for the other acute angle, because the leg across from one angle is next to the other. Trigonometry then lets us find unknown lengths or angles from these ratios, for example the height of a building from its distance and the angle of elevation of its top. | hypotenuse opposite the right angle ; opposite is across from θ ; adjacent is next to θ, not the hypotenuse ; legs swap for the other angle ; a valid practical use
 
 ## Trigonometric Ratios
 S: The trigonometric ratios sine, cosine and tangent compare pairs of sides in a right-angled triangle. Because similar triangles have equal ratios, each ratio depends only on the angle.
 O: Use sin, cos and tan to find missing sides and angles
 O: Recall exact values for 0°, 30°, 45°, 60° and 90°
+LV: GCSE · Fluency
+EV: established | Because similar right-angled triangles have equal side ratios, sin, cos and tan depend only on the angle.
 T: SOHCAHTOA | sin = opposite/hypotenuse, cos = adjacent/hypotenuse, tan = opposite/adjacent
 T: Inverse ratio | Using sin^{−1}, cos^{−1} or tan^{−1} to find an angle from a ratio
 H: Using the ratios
@@ -67,11 +75,16 @@ NUM1#maths-u06-02-q1@1: A ladder 5 m long makes an angle of 70° with the ground
 M1#maths-u06-02-q2@1: What is tan 45°? | 1 | 0 | √2/2 | √3 | 1/2 | In an isosceles right-angled triangle the opposite and adjacent sides are equal, so their ratio is 1.
 M2#maths-u06-02-q3@2: In a right-angled triangle, the adjacent side is 9 and the hypotenuse is 15. What is the angle? | About 53.1° | About 36.9° | About 31.0° | About 59.0° | About 0.6° | cos θ = 9/15 = 0.6, so θ = cos^{−1}(0.6) ≈ 53.1°.
 NUM1#maths-u06-02-q4@1: In a right-angled triangle the side opposite 30° is 4 cm. How long is the hypotenuse in cm? | 8 | 0 | cm | sin 30° = 4/h, so h = 4/0.5 = 8 cm.
+NUM3@1: From a point 25 m from the foot of a tree, the angle of elevation of the top is 38°, measured from an eye level 1.6 m above the ground. Find the tree's height, to 1 decimal place. | 21.1 | 0.05 | m | The height above eye level is 25 tan 38° ≈ 19.53 m; adding 1.6 m gives about 21.1 m.
+M3@2: What is the exact value of sin 60° × cos 30° + tan 45°? | 7/4 | 3/2 | 5/4 | 1 + √3/2 | √3 | sin 60° × cos 30° = (√3/2)(√3/2) = 3/4, and tan 45° = 1, so the total is 7/4.
+SA2@2: Use an equilateral triangle of side 2 to derive the exact values of sin, cos and tan for 30° and 60°. | Cut the equilateral triangle in half with a perpendicular from one vertex: this gives a right-angled triangle with hypotenuse 2, short side 1 and angles 30°, 60° and 90°. By Pythagoras the third side is √(4 − 1) = √3. Opposite 30° is 1 and adjacent √3, so sin 30° = ½, cos 30° = √3/2, tan 30° = 1/√3. Opposite 60° is √3 and adjacent 1, so sin 60° = √3/2, cos 60° = ½ and tan 60° = √3. | halves the equilateral triangle ; sides 1, 2 and √3 by Pythagoras ; values for 30° ; values for 60° ; angles 30° and 60° identified correctly
 
 ## Sine
 S: The sine of an angle starts as a ratio in a right-angled triangle and becomes a function defined for every angle, using the unit circle. Its smooth repeating graph describes waves, oscillations and anything periodic.
 O: Define sine for any angle using the unit circle
 O: Use the symmetry of sine to find angles with the same sine
+LV: GCSE and A level · Application
+EV: established | On the unit circle sin θ is the y-coordinate of the point at angle θ, so it has period 360° and satisfies sin(180° − θ) = sin θ.
 T: Sine function | sin θ, the y-coordinate of the point at angle θ on the unit circle
 T: Amplitude | The maximum distance of a wave from its centre line; for sin θ it's 1
 H: Beyond right angles
@@ -98,14 +111,19 @@ Q: What is the period of sin x? | 360° (2π radians).
 SUM: Sine extends to all angles via the unit circle.
 SUM: Symmetry gives multiple solutions.
 SRC: Department for Education, Mathematics AS and A level subject content: trigonometry | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Maor E, Trigonometric Delights (Princeton University Press 2013) | textbook | 2013 | https://press.princeton.edu/
+SRC: Maor E, Trigonometric Delights (Princeton University Press 2013) | secondary | 2013 | https://press.princeton.edu/
 M1#maths-u06-03-q1@1: What is the maximum value of 5 sin x? | 5 | 1 | 0 | 10 | 5π | sin x is at most 1, so 5 sin x is at most 5: the amplitude is 5.
 M2#maths-u06-03-q2@2: Which angle between 0° and 360° has the same sine as 40°? | 140° | 220° | 320° | 50° | 400° | sin(180° − θ) = sin θ, so sin 140° = sin 40°.
+NUM2@2: Solve sin x = 0.8 for 90° ≤ x ≤ 180°, to 1 decimal place. | 126.9 | 0.05 | ° | The principal value is sin⁻¹(0.8) ≈ 53.1°, and sin(180° − θ) = sin θ gives 180 − 53.1 = 126.9° in the range.
+M3@1,2: How many solutions does sin 2x = 0.5 have for 0° ≤ x < 360°? | 4 | 2 | 8 | 1 | 3 | 2x runs over 0° to 720°, two periods: 2x = 30°, 150°, 390° or 510°, so x = 15°, 75°, 195° or 255°.
+SA2@1,2: Use the unit circle to explain why sin(180° − θ) = sin θ, and solve sin x = −0.5 for 0° ≤ x < 360°. | The point at angle θ on the unit circle is (cos θ, sin θ). The point at 180° − θ is its reflection in the y-axis, which keeps the y-coordinate and changes the sign of x, so sin(180° − θ) = sin θ. For sin x = −0.5 the reference angle is 30°. Sine is negative where the point is below the x-axis, in the third and fourth quadrants, so x = 180° + 30° = 210° or x = 360° − 30° = 330°. | sine as the y-coordinate ; reflection in the y-axis keeps y ; reference angle 30° ; negative in quadrants 3 and 4 ; 210° and 330°
 
 ## Cosine
 S: The cosine is the x-coordinate of the point at angle θ on the unit circle. It's the sine shifted by 90°, and it describes horizontal positions in circular motion and the phase of waves.
 O: Define cosine for any angle using the unit circle
 O: Use the symmetry of cosine to solve equations
+LV: GCSE and A level · Application
+EV: established | On the unit circle cos θ is the x-coordinate of the point at angle θ, so cosine is even and cos(360° − θ) = cos θ.
 T: Cosine function | cos θ, the x-coordinate of the point at angle θ on the unit circle
 T: Even function | A function with f(−x) = f(x); cosine is even
 H: Properties
@@ -133,14 +151,19 @@ Q: Is cosine odd or even? | Even: cos(−θ) = cos θ.
 SUM: Cosine is the horizontal coordinate on the unit circle.
 SUM: Its symmetry gives pairs of solutions.
 SRC: Department for Education, Mathematics AS and A level subject content: trigonometry | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Maor E, Trigonometric Delights (Princeton University Press 2013) | textbook | 2013 | https://press.princeton.edu/
+SRC: Maor E, Trigonometric Delights (Princeton University Press 2013) | secondary | 2013 | https://press.princeton.edu/
 M1#maths-u06-04-q1@1: What is cos 300°? | 1/2 | −1/2 | √3/2 | −√3/2 | 0 | cos 300° = cos(360° − 60°) = cos 60° = 1/2.
 M3#maths-u06-04-q2@2: How many solutions does cos x = 0.3 have for 0° ≤ x < 720°? | 4 | 2 | 1 | 3 | 8 | Two solutions per 360° period, over two periods, gives four.
+M2@1: The point at angle θ on the unit circle is (−0.6, 0.8). What is cos θ? | −0.6 | 0.8 | 0.6 | −0.8 | −0.75 | cos θ is the x-coordinate of the point, −0.6; the y-coordinate 0.8 is sin θ, and θ is in the second quadrant.
+NUM2@2: Solve 5 cos x = 2 for 0° ≤ x < 360°. Give the larger solution, to 1 decimal place. | 293.6 | 0.05 | ° | cos x = 0.4 gives x ≈ 66.4°, and cos(360° − θ) = cos θ gives the second solution 360 − 66.4 = 293.6°.
+SA2@1,2: Explain why cos x = k (with −1 < k < 1) has two solutions in each 360° cycle, and solve 2 cos x = √3 for 0° ≤ x < 360°. | cos x is the x-coordinate of the point at angle x on the unit circle. A vertical line x = k with −1 < k < 1 cuts the circle at two points, symmetric in the x-axis, at angles x and 360° − x, so there are two solutions per turn. For 2 cos x = √3, cos x = √3/2, whose reference angle is 30°. Cosine is positive in the first and fourth quadrants, so x = 30° or x = 360° − 30° = 330°. | cosine as the x-coordinate ; vertical line meets the circle twice ; symmetry gives 360° − x ; cos x = √3/2 ; 30° and 330°
 
 ## Tangent
 S: The tangent of an angle is sin θ/cos θ, the gradient of the line at angle θ to the horizontal. Unlike sine and cosine, it's unbounded, with asymptotes where cos θ = 0, and it repeats every 180°.
 O: Define tangent as sin θ/cos θ and interpret it as a gradient
 O: Sketch tan θ and solve tangent equations
+LV: GCSE and A level · Application
+EV: established | tan θ = sin θ/cos θ is the gradient of the radius at angle θ, with period 180° and asymptotes where cos θ = 0.
 T: Tangent function | tan θ = sin θ/cos θ, undefined where cos θ = 0
 T: Asymptote | A line the graph approaches but never reaches; tan θ has asymptotes at 90°, 270°, …
 H: Properties
@@ -167,14 +190,19 @@ Q: Where is tan x undefined? | Where cos x = 0: at 90°, 270°, and so on.
 SUM: Tangent is a ratio and a gradient.
 SUM: It repeats every 180° with asymptotes.
 SRC: Department for Education, Mathematics AS and A level subject content: trigonometry | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Maor E, Trigonometric Delights (Princeton University Press 2013) | textbook | 2013 | https://press.princeton.edu/
+SRC: Maor E, Trigonometric Delights (Princeton University Press 2013) | secondary | 2013 | https://press.princeton.edu/
 M1#maths-u06-05-q1@1: What is the gradient of a line at 60° to the positive x-axis? | √3 | 1/2 | √3/2 | 1/√3 | 60 | The gradient of a line equals the tangent of its angle to the x-axis: tan 60° = √3 ≈ 1.73.
 M2#maths-u06-05-q2@2: Solve tan x = −1 for 0° ≤ x < 360°. | 135° and 315° | 45° and 225° | 135° only | 225° and 315° | −45° | Tangent is negative in the second and fourth quadrants: 180° − 45° and 360° − 45°.
+TF1@1: tan 90° is undefined. | true | tan 90° = sin 90°/cos 90° = 1/0, and division by zero is undefined: the graph has an asymptote there.
+NUM3@2: Solve 2 sin x = 5 cos x for 0° ≤ x < 360°. Give the larger solution, to 1 decimal place. | 248.2 | 0.05 | ° | Dividing by cos x gives tan x = 2.5, so x ≈ 68.2°; adding the period 180° gives 248.2°.
+SA2@1,2: Explain why tan θ = sin θ/cos θ, why the tangent repeats every 180°, and solve tan x = −√3 for 0° ≤ x < 360°. | On the unit circle the radius to the point (cos θ, sin θ) has gradient sin θ/cos θ, which matches opposite/adjacent for acute angles, so tan θ = sin θ/cos θ. Adding 180° moves the point to (−cos θ, −sin θ): both coordinates change sign, so their ratio, the gradient, is unchanged; the period is 180°. For tan x = −√3 the reference angle is 60°, and tangent is negative in the second and fourth quadrants, so x = 120° or x = 300° (120° + 180°). | tangent as the gradient sin θ/cos θ ; adding 180° negates both coordinates ; ratio unchanged so period 180° ; reference angle 60° ; 120° and 300°
 
 ## Radians and Degrees
 S: Radians measure angles by arc length: one radian is the angle subtended by an arc equal to the radius. They make calculus formulas simple, so they're the standard unit at A level and beyond.
 O: Convert between radians and degrees
 O: Explain why radians are used in calculus
+LV: A level · Fluency
+EV: established | One radian is the angle subtended by an arc equal to the radius, so π radians = 180°, and the standard calculus results for trigonometric functions hold only in radians.
 T: Radian | The angle at the centre of a circle subtended by an arc equal in length to the radius
 T: Exact radian values | Angles written as multiples of π, such as π/6 = 30°
 H: Converting
@@ -203,15 +231,19 @@ Q: Roughly how many degrees is 1 radian? | About 57.3°.
 SUM: Radians measure angles by arc length.
 SUM: They make calculus clean.
 SRC: Department for Education, Mathematics AS and A level subject content: trigonometry | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
-NUM1#maths-u06-06-q1@1: Convert 3π/4 radians to degrees. | 135 | 0 | ° | 3π/4 × 180/π = 135°.
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
+NUM1#maths-u06-06-q1@1: Convert 3π/4 radians to degrees. | 135 | 0 | ° | Multiply by 180/π to convert: 3π/4 × 180/π = 3 × 45 = 135°.
 M1#maths-u06-06-q2@1: What is 270° in radians? | 3π/2 | 3π/4 | 2π/3 | 3π | π/2 | Multiply degrees by π/180: 270 × π/180 = 3π/2, three quarters of a full turn.
 M2#maths-u06-06-q3@2: Why is d/dx sin x = cos x only true in radians? | In degrees the derivative gains a factor of π/180 | It's true in any unit | Degrees aren't real angles | Sine isn't differentiable in degrees | Calculators require it | The limit (sin x)/x = 1 as x → 0 holds only when x is measured in radians.
+NUM3@2: Use the small-angle approximations to estimate (sin 0.1 × tan 0.1)/(1 − cos 0.1), with the angle in radians. | 2 | 0.05 |  | sin x ≈ x, tan x ≈ x and 1 − cos x ≈ x^{2}/2, so the expression ≈ x^{2}/(x^{2}/2) = 2 (the exact value is about 2.004).
+SA2@2: Explain why d/dx sin x = cos x holds only when x is in radians, and find the derivative of sin x when x is measured in degrees. | The derivative of sin x at 0 is the limit of (sin h)/h as h → 0. In radians, for a small angle h the arc of the unit circle (length h) and the height sin h are almost equal, so the limit is 1, and the general result d/dx sin x = cos x follows from this. If x is in degrees, sin x° = sin(πx/180), and by the chain rule its derivative is (π/180) cos x°: an awkward extra factor. Radians remove it. | derivative depends on the limit of (sin h)/h ; arc length equals the angle in radians ; limit is 1 in radians ; degrees: sin x° = sin(πx/180) ; derivative (π/180) cos x°
 
 ## Unit Circle
 S: The unit circle (radius 1, centred at the origin) defines sine and cosine for every angle: the point at angle θ is (cos θ, sin θ). It explains signs, symmetries and identities at a glance.
 O: Use the unit circle to define trigonometric functions for any angle
 O: Determine signs and exact values in each quadrant
+LV: A level · Application
+EV: established | The point at angle θ on the unit circle is (cos θ, sin θ), so cos²θ + sin²θ = 1 and the quadrant fixes each function's sign.
 T: Unit circle | The circle x^{2} + y^{2} = 1
 T: Quadrant | One of four regions of the plane divided by the axes
 H: Definitions
@@ -236,14 +268,19 @@ Q: Which functions are positive in the second quadrant? | Sine (and cosecant).
 SUM: The unit circle defines trig functions for all angles.
 SUM: Quadrants set the signs.
 SRC: Department for Education, Mathematics AS and A level subject content: trigonometry | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Maor E, Trigonometric Delights (Princeton University Press 2013) | textbook | 2013 | https://press.princeton.edu/
+SRC: Maor E, Trigonometric Delights (Princeton University Press 2013) | secondary | 2013 | https://press.princeton.edu/
 M1#maths-u06-07-q1@1: Which point on the unit circle corresponds to 180°? | (−1, 0) | (1, 0) | (0, −1) | (0, 1) | (−1, −1) | Half a turn from (1, 0) reaches (−1, 0): cos 180° = −1 and sin 180° = 0.
 M3#maths-u06-07-q2@2: What is the exact value of cos 330°? | √3/2 | −√3/2 | 1/2 | −1/2 | √2/2 | 330° is in the fourth quadrant, where cosine is positive, with reference angle 30°.
+M2@2: What is the exact value of tan 150°? | −1/√3 | 1/√3 | −√3 | √3 | −1/2 | 150° is in the second quadrant with reference angle 30°, where tangent is negative: tan 150° = −tan 30° = −1/√3.
+NUM2@1: The point at angle θ on the unit circle lies in the second quadrant and has y-coordinate 0.6. Find its x-coordinate. | -0.8 | 0 |  | x^{2} + 0.6^{2} = 1 gives x^{2} = 0.64, and x is negative in the second quadrant, so x = cos θ = −0.8.
+SA2@1,2: Explain how the unit circle shows that cos^{2} θ + sin^{2} θ = 1, and find the exact values of sin 315° and cos 315°. | The point at angle θ on the unit circle has coordinates (cos θ, sin θ), and every point on the circle satisfies x² + y² = 1, so cos²θ + sin²θ = 1 for every angle. 315° is in the fourth quadrant with reference angle 360 − 315 = 45°. There cosine is positive and sine negative, so cos 315° = √2/2 and sin 315° = −√2/2. | point is (cos θ, sin θ) ; circle equation x² + y² = 1 ; identity holds for all θ ; reference angle 45° in the fourth quadrant ; cos 315° = √2/2 and sin 315° = −√2/2
 
 ## Trigonometric Geometry
 S: Trigonometry solves geometric problems: heights, distances, angles of elevation and depression, and 3D problems such as the angle between a line and a plane. It's how surveyors and engineers measure what they can't reach.
 O: Solve problems with angles of elevation and depression
 O: Use trigonometry in three-dimensional problems
+LV: GCSE and A level · Application
+EV: established | Heights, distances and angles in two and three dimensions can be found by reducing a problem to right-angled triangles.
 T: Angle of elevation | The angle above the horizontal from an observer to an object
 T: Angle of depression | The angle below the horizontal from an observer to an object
 H: Elevation and depression
@@ -258,6 +295,7 @@ X: A cuboid is 6 cm by 8 cm by 5 cm tall. Find the angle between a space diagona
 > The base diagonal is √(36 + 64) = 10 cm
 > The space diagonal rises 5 cm over 10 cm horizontally: tan θ = 5/10
 > θ = tan^{−1}(0.5) ≈ 26.6°
+P: **Two observations.** When the elevation of a tower's top is measured from two points in line with it, write the height in both right-angled triangles and eliminate the unknown distance.
 K: Draw the horizontal and the right angle; depression from A to B equals elevation from B to A; in 3D, find the right-angled triangle with the projection.
 !: Measuring the angle of depression from the vertical instead of the horizontal.
 Q: How are angles of elevation and depression between two points related? | They're equal (alternate angles).
@@ -269,11 +307,15 @@ SRC: Ordnance Survey, A guide to coordinate systems in Great Britain | guidance 
 NUM1#maths-u06-08-q1@1: From a cliff 80 m high, a boat is at an angle of depression of 15°. How far is it from the foot of the cliff, to the nearest metre? | 299 | 1 | m | tan 15° = 80/d, so d = 80/tan 15° ≈ 298.6 m.
 M1#maths-u06-08-q2@1: A kite string 50 m long makes 40° with the ground. How high is the kite (ignoring sag)? | About 32.1 m | About 38.3 m | About 42.0 m | About 59.6 m | About 30.0 m | The string is the hypotenuse and the height is opposite 40°: 50 sin 40° ≈ 32.1 m.
 M2#maths-u06-08-q3@2: The angle of elevation from A to B is 25°. What is the angle of depression from B to A? | 25° | 65° | 155° | 115° | 50° | They're alternate angles between parallel horizontal lines, so they're equal.
+NUM3@1: From A, the top of a tower is at an angle of elevation of 30°. After walking 50 m straight towards the tower, to B, the angle is 45°. Find the tower's height, to 1 decimal place. | 68.3 | 0.1 | m | Let d be B's distance: h = d tan 45° = d and h = (d + 50) tan 30°, so d√3 = d + 50, d = 50/(√3 − 1) ≈ 68.3 m = h.
+SA3@2: A square-based pyramid has base edges of 6 cm and vertical height 4 cm. Find the angle between a sloping edge and the base, explaining each step. | The sloping edge runs from a base corner to the apex, which is directly above the centre of the base. Its projection onto the base is the line from the corner to the centre: half the base diagonal. The base diagonal is √(6² + 6²) = 6√2, so half is 3√2 ≈ 4.24 cm. In the right-angled triangle formed with the vertical height, tan θ = 4/(3√2) ≈ 0.943, so θ ≈ 43.3°. | apex above the centre of the base ; projection is half the diagonal ; half-diagonal 3√2 ; tan θ = 4/(3√2) ; θ ≈ 43.3°
 
 ## Sine Rule
 S: The sine rule relates the sides of any triangle to the sines of their opposite angles. It finds missing sides and angles when you know an angle and its opposite side, and it has an "ambiguous case" to watch.
 O: Use the sine rule to find sides and angles
 O: Recognise and solve the ambiguous case
+LV: GCSE and A level · Application
+EV: established | In any triangle a/sin A = b/sin B = c/sin C, and two sides with a non-included angle can fit two different triangles.
 T: Sine rule | a/sin A = b/sin B = c/sin C (sides a, b, c opposite angles A, B, C)
 T: Ambiguous case | When two different triangles fit the given information (two sides and a non-included angle)
 H: Using the rule
@@ -303,11 +345,15 @@ SRC: Department for Education, Mathematics AS and A level subject content: trigo
 NUM1#maths-u06-09-q1@1: In a triangle, A = 30°, a = 6 and B = 90°. Find b. | 12 | 0 |  | b = 6 sin 90°/sin 30° = 6/0.5 = 12.
 M1#maths-u06-09-q2@1: Which information makes the sine rule the right tool? | Two angles and any side | Three sides | Two sides and the included angle | Three angles only | One side only | Knowing two angles gives the third, and every side then pairs with its opposite angle.
 M3#maths-u06-09-q3@2: For a = 5, b = 8, A = 30°, how many triangles are possible? | Two | One | None | Three | Infinitely many | sin B = 8 × 0.5/5 = 0.8, so B ≈ 53.1° or 126.9°; both give valid angle sums.
+NUM2@1: In triangle ABC, a = 9 cm, A = 48° and B = 62°. Find b, to 1 decimal place. | 10.7 | 0.05 | cm | b/sin 62° = 9/sin 48°, so b = 9 sin 62°/sin 48° ≈ 9 × 0.8829/0.7431 ≈ 10.7 cm.
+SA3@2: In triangle ABC, a = 6 cm, b = 9 cm and A = 35°. Show that two triangles fit this information, and find side c in each, to 1 decimal place. | By the sine rule, sin B = 9 sin 35°/6 ≈ 0.860, so B ≈ 59.4° or B ≈ 180 − 59.4 = 120.6°. Both are possible because 35° + 120.6° is less than 180°. Then C = 180 − 35 − 59.4 ≈ 85.6° or C = 180 − 35 − 120.6 ≈ 24.4°. Using c = 6 sin C/sin 35°: c ≈ 10.4 cm in the first triangle and c ≈ 4.3 cm in the second. | sin B ≈ 0.860 ; acute and obtuse values of B ; checks the angle sum for the obtuse case ; both values of C ; c ≈ 10.4 cm and c ≈ 4.3 cm
 
 ## Cosine Rule
 S: The cosine rule generalises Pythagoras' theorem to any triangle. It finds a side from two sides and the included angle, or an angle from three sides.
 O: Use the cosine rule to find sides and angles
 O: Choose between the sine and cosine rules
+LV: GCSE and A level · Application
+EV: established | In any triangle a² = b² + c² − 2bc cos A, which reduces to Pythagoras' theorem when A = 90°.
 T: Cosine rule | a^{2} = b^{2} + c^{2} − 2bc cos A
 T: Included angle | The angle between two given sides
 H: The rule
@@ -335,11 +381,15 @@ SRC: Department for Education, Mathematics AS and A level subject content: trigo
 NUM1#maths-u06-10-q1@1: A triangle has sides 3, 5 and 7. Find its largest angle in degrees. | 120 | 0.1 | ° | cos C = (9 + 25 − 49)/30 = −1/2, so C = 120°.
 M1#maths-u06-10-q2@1: Which rule finds a side from two sides and the included angle? | The cosine rule | The sine rule | Pythagoras only | SOHCAHTOA only | The area rule | With SAS there's no side–angle opposite pair, so the cosine rule is needed.
 M2#maths-u06-10-q3@2: In a triangle, cos A is negative. What does that tell you? | A is obtuse | A is acute | A is a right angle | The triangle doesn't exist | A is 0° | Cosine is negative for angles between 90° and 180°.
+NUM3@1: Two sides of a triangle are 6 cm and 10 cm and the angle between them is 135°. Find the third side, to 1 decimal place. | 14.9 | 0.05 | cm | a^{2} = 36 + 100 − 120 cos 135° = 136 + 84.85 = 220.85, since cos 135° is negative, so a ≈ 14.9 cm.
+SA2@1,2: A triangle has sides 4 cm, 6 cm and 9 cm. Explain which rule you need to find its largest angle and why that angle is opposite the 9 cm side, then find it. | With three sides and no angle there is no side–angle pair for the sine rule, so the cosine rule is needed. The largest angle is opposite the longest side, 9 cm. cos C = (4² + 6² − 9²)/(2 × 4 × 6) = (16 + 36 − 81)/48 = −29/48 ≈ −0.604. The cosine is negative, so the angle is obtuse: C = cos⁻¹(−0.604) ≈ 127.2°, with no ambiguity. | cosine rule because SSS ; largest angle opposite longest side ; cos C = −29/48 ; negative cosine means obtuse ; C ≈ 127.2°
 
 ## Area of a Triangle
 S: The area of any triangle can be found from two sides and the included angle: ½ab sin C. It extends ½ × base × height to triangles whose height you don't know.
 O: Use area = ½ab sin C
 O: Find sides or angles from a given area
+LV: GCSE and A level · Fluency
+EV: established | The area of any triangle is ½ab sin C, where C is the angle between sides a and b.
 T: Included angle | The angle between the two sides used in the formula
 T: Heron's formula | Area = √(s(s − a)(s − b)(s − c)), where s is half the perimeter
 H: The formula
@@ -366,15 +416,19 @@ Q: Why can a given area lead to two possible angles? | sin C = sin(180° − C).
 SUM: ½ab sin C finds areas without heights.
 SUM: Heron's formula uses three sides.
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
-SRC: Maor E, Trigonometric Delights (Princeton University Press 2013) | textbook | 2013 | https://press.princeton.edu/
+SRC: Maor E, Trigonometric Delights (Princeton University Press 2013) | secondary | 2013 | https://press.princeton.edu/
 NUM1#maths-u06-11-q1@1: Find the area of an equilateral triangle with side 10 cm, to 1 decimal place. | 43.3 | 0.05 | cm² | ½ × 10 × 10 × sin 60° = 50 × √3/2 = 25√3 ≈ 43.3 cm^{2}.
 M1#maths-u06-11-q2@1: Which pieces of information does ½ab sin C need? | Two sides and the angle between them | Three sides | Two angles and a side | One side and its opposite angle | Three angles | C must be the included angle between sides a and b.
 M2#maths-u06-11-q3@2: Using Heron's formula, what is the area of a 5, 12, 13 triangle? | 30 | 60 | 15 | 65 | 39 | s = 15, so √(15 × 10 × 3 × 2) = √900 = 30 (it's right-angled: ½ × 5 × 12).
+NUM3@2: A triangle has area 30 cm², two sides of 8 cm and 10 cm, and an obtuse angle between them. Find that angle, to 1 decimal place. | 131.4 | 0.05 | ° | ½ × 8 × 10 × sin C = 30 gives sin C = 0.75, so C ≈ 48.6° or 180 − 48.6 = 131.4°; the obtuse value is 131.4°.
+SA2@1,2: Show how the formula area = ½ab sin C follows from ½ × base × height, and use it to show that an equilateral triangle of side s has area (√3/4)s^{2}. | Take side a as the base. Drop a perpendicular from the opposite vertex to the line of a: in the right-angled triangle formed with side b, the height is h = b sin C, where C is the angle between a and b. So the area is ½ × a × h = ½ab sin C. For an equilateral triangle every side is s and every angle 60°, so the area is ½ × s × s × sin 60° = ½s² × √3/2 = (√3/4)s². | base a with perpendicular height ; height = b sin C ; area = ½ab sin C ; equilateral angles 60° ; (√3/4)s²
 
 ## Spherical Trigonometry
 S: Spherical trigonometry solves triangles drawn on a sphere, whose sides are arcs of great circles. It's the mathematics of navigation, astronomy and geodesy, and it differs from plane trigonometry because the sphere is curved.
 O: Use the spherical cosine rule
 O: Calculate great-circle distances between places on the Earth
+LV: Year 2 · Application
+EV: established | Spherical triangles obey the spherical cosine and sine rules, which give the great-circle distance between two points of given latitude and longitude.
 T: Spherical triangle | A triangle on a sphere whose sides are arcs of great circles
 T: Haversine formula | A numerically stable formula for the great-circle distance between two latitude–longitude points
 H: Formulas
@@ -390,21 +444,27 @@ X: Find the great-circle distance between two points on the equator at longitude
 > φ₁ = φ₂ = 0, so cos d = 0 + 1 × 1 × cos 90° = 0
 > d = 90° = π/2 radians
 > Distance = 6,371 × π/2 ≈ 10,008 km
+P: For a triangle whose sides are tiny compared with the radius, cos a ≈ 1 − a^{2}/2 and sin a ≈ a, and the spherical cosine rule reduces to the plane cosine rule: small regions are nearly flat.
 K: Spherical triangles have arc sides measured as angles; the spherical cosine rule gives great-circle distances.
 !: Using plane trigonometry over long distances on the Earth.
 Q: What are the sides of a spherical triangle? | Arcs of great circles, measured by central angles.
 Q: Which formula do GPS systems use for distances? | The haversine formula (or a more accurate ellipsoidal version).
 SUM: Spherical trigonometry handles triangles on spheres.
 SUM: It gives great-circle distances.
-SRC: Todhunter I, Spherical Trigonometry (Macmillan 1886) | textbook | 1886 | https://archive.org/
+SRC: Todhunter I, Spherical Trigonometry (Macmillan 1886) | secondary | 1886 | https://archive.org/
 SRC: Ordnance Survey, A guide to coordinate systems in Great Britain | guidance | 2020 | https://www.ordnancesurvey.co.uk/
 M1#maths-u06-12-q1@1: In spherical trigonometry, what do the angles of a triangle add up to? | More than 180° | Exactly 180° | Less than 180° | Exactly 360° | 90° | Positive curvature gives an angle excess.
 M2#maths-u06-12-q2@2: Two places on the same meridian are at latitudes 10°N and 40°N. What is the central angle between them? | 30° | 50° | 40° | 10° | 400° | Along a meridian, the central angle is the difference in latitude.
+NUM2@2: Two points on the equator are at longitudes 20°E and 55°W. Taking R = 6,371 km, find the great-circle distance between them, to the nearest km. | 8340 | 1 | km | The longitude difference is 20 + 55 = 75° = 1.309 radians, so the distance is 6,371 × 1.309 ≈ 8,340 km.
+NUM3@1,2: Two points both at latitude 60°N differ in longitude by 90°. Find the central angle between them, in degrees to 1 decimal place. | 41.4 | 0.05 | ° | cos d = sin 60° sin 60° + cos 60° cos 60° cos 90° = 0.75 + 0 = 0.75, so d ≈ 41.4°.
+SA2@1,2: Two places are both at latitude 60°N and differ in longitude by 90°. Explain why flying along the line of latitude isn't the shortest route, comparing the two distances as multiples of the Earth's radius R. | Lines of latitude other than the equator aren't great circles, so they aren't geodesics. The circle of latitude 60°N has radius R cos 60° = R/2, and a quarter of it is (R/2)(π/2) ≈ 0.785R. The great-circle route has central angle d with cos d = sin²60° + cos²60° cos 90° = 0.75, so d ≈ 41.4° ≈ 0.723 radians, a distance of about 0.723R. The great circle is about 8% shorter; it bends towards the pole. | latitude circle not a great circle ; latitude radius R cos 60° ; latitude route ≈ 0.785R ; spherical cosine rule gives d ≈ 41.4° ; great circle ≈ 0.723R is shorter
 
 ## Trigonometric Graphs
 S: The graphs of sine, cosine and tangent show their periodic behaviour. Transforming them, with amplitude, period, phase shift and vertical shift, models waves, tides and cycles.
 O: Sketch the graphs of sin, cos and tan
 O: Describe transformations of trigonometric graphs
+LV: GCSE and A level · Application
+EV: established | y = a sin(bx + c) + d has amplitude |a|, period 360°/b, a horizontal shift of −c/b and a midline at y = d.
 T: Period | The length of one complete cycle: 360° for sin and cos, 180° for tan
 T: Phase shift | A horizontal translation of a periodic graph
 H: The basic graphs
@@ -440,11 +500,15 @@ NUM1#maths-u06-13-q1@1: What is the period, in degrees, of y = sin(x/2)? | 720 |
 M1#maths-u06-13-q2@1: What is the amplitude of y = −5 sin x? | 5 | −5 | 1 | 10 | 0 | Amplitude is |a|: the negative sign reflects the graph but doesn't change its height.
 M2#maths-u06-13-q3@2: Which describes y = sin(x + 90°)? | It's the same as y = cos x | It's y = sin x shifted right 90° | It has period 90° | It has amplitude 90 | It's y = −sin x | Adding 90° inside the bracket shifts sine left by 90°, which gives the cosine graph.
 NUM1#maths-u06-13-q4@1: What is the period of y = 3 sin(2x) + 1, in radians, to 3 decimal places? | 3.142 | 0.001 |  | The period is 2π/b = 2π/2 = π ≈ 3.142.
+M3@2: Which equation has maximum 7, minimum −1 and period 180°? | y = 4 sin 2x + 3 | y = 8 sin 2x − 1 | y = 4 sin(x/2) + 3 | y = 3 sin 2x + 4 | The amplitude is (7 − (−1))/2 = 4, the midline is y = (7 + (−1))/2 = 3, and a period of 180° needs b = 2.
+SA2@2: Describe the transformations that take y = sin x to y = 2 sin(3x − 90°) + 1, in a valid order, and state the period, maximum and minimum. | Factorise the bracket: 3x − 90° = 3(x − 30°). Starting from y = sin x: stretch horizontally by factor ⅓ (giving sin 3x, period 120°); translate 30° to the right (giving sin 3(x − 30°)); stretch vertically by factor 2 (amplitude 2); translate up 1 (midline y = 1). The period is 360°/3 = 120°, the maximum is 2 + 1 = 3 and the minimum is −2 + 1 = −1. | factorises to 3(x − 30°) ; horizontal stretch factor ⅓ ; shift 30° right, not 90° ; vertical stretch 2 and shift up 1 ; period 120°, max 3, min −1
 
 ## Periodic Functions
 S: A periodic function repeats its values at regular intervals. Tides, seasons, heartbeats, sound and alternating current are all periodic, and trigonometric functions are the building blocks for modelling them.
 O: Identify the period of a periodic function
 O: Describe real-world periodic phenomena with functions
+LV: A level · Application
+EV: established | A periodic function satisfies f(x + T) = f(x), and A sin(ωt) has period 2π/ω and frequency ω/2π.
 T: Periodic function | A function with f(x + T) = f(x) for all x, for some T > 0
 T: Fundamental period | The smallest positive T that works
 H: Periods
@@ -470,10 +534,12 @@ Q: What is the period of |sin x|? | π.
 SUM: Periodic functions repeat.
 SUM: Many natural and technical cycles are periodic.
 SRC: Department for Education, Mathematics AS and A level subject content: trigonometry | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | textbook | 2020 | https://www.bloomsbury.com/
+SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | secondary | 2020 | https://www.bloomsbury.com/
 NUM1#maths-u06-14-q1@1: A wave has angular frequency 4π rad/s. What is its period in seconds? | 0.5 | 0 | s | T = 2π/ω = 2π/4π = 0.5 s.
 M1#maths-u06-14-q2@1: What is the frequency of a wave with period 0.25 s? | 4 Hz | 0.25 Hz | 25 Hz | 2 Hz | 40 Hz | Frequency is the reciprocal of the period: f = 1/T = 1/0.25 = 4 cycles per second.
 M3#maths-u06-14-q3@2: What is the period of sin 2x + cos 3x? | 2π | π | 2π/3 | 6π | It isn't periodic | The periods π and 2π/3 have least common multiple 2π.
+NUM2@2: A Ferris wheel seat's height is h = 20 − 18 cos(πt/15) metres, t minutes after boarding. How long does one revolution take, in minutes? | 30 | 0 | minutes | The period is 2π ÷ (π/15) = 30 minutes; the height runs from 2 m to 38 m over each cycle.
+SA2@1,2: The depth of water in a harbour is d = 6 + 2.5 sin(πt/6) metres, t hours after midnight. Find the period, the maximum and minimum depths and when they first occur, and how long in each cycle the depth is at least 7 m. | The period is 2π ÷ (π/6) = 12 hours. The maximum is 6 + 2.5 = 8.5 m when πt/6 = π/2, at t = 3 (03:00); the minimum is 6 − 2.5 = 3.5 m when πt/6 = 3π/2, at t = 9 (09:00). Depth ≥ 7 m needs sin(πt/6) ≥ 0.4, so πt/6 lies between sin⁻¹(0.4) ≈ 0.412 and π − 0.412 ≈ 2.730, giving 0.79 ≤ t ≤ 5.21: about 4.4 hours in each 12-hour cycle. | period 12 hours ; maximum 8.5 m at t = 3 ; minimum 3.5 m at t = 9 ; sets up sin(πt/6) ≥ 0.4 ; about 4.4 hours
 
 ## Cosecant
 S: Cosecant is the reciprocal of sine: cosec θ = 1/sin θ. It appears in identities, calculus and some physics formulas, and its graph has asymptotes wherever sin θ = 0.
@@ -505,7 +571,7 @@ Q: Where is cosec θ undefined? | Where sin θ = 0.
 SUM: Cosecant is the reciprocal of sine.
 SUM: Convert to sine to solve.
 SRC: Department for Education, Mathematics AS and A level subject content: trigonometry | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | textbook | 2020 | https://www.bloomsbury.com/
+SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | secondary | 2020 | https://www.bloomsbury.com/
 M1#maths-u06-15-q1@1: What is the exact value of cosec 30°? | 2 | 1/2 | √3 | 2/√3 | √2 | Cosecant is the reciprocal of sine; sin 30° = 1/2, so cosec 30° = 2.
 M2#maths-u06-15-q2@2: Which value can cosec θ never take? | 0.5 | 1 | −1 | 2 | −3 | |sin θ| ≤ 1, so |cosec θ| ≥ 1: values strictly between −1 and 1 are impossible.
 
@@ -538,7 +604,7 @@ Q: Write sec^{2} θ in terms of tan θ. | 1 + tan^{2} θ.
 SUM: Secant is the reciprocal of cosine.
 SUM: 1 + tan^{2} = sec^{2} links them.
 SRC: Department for Education, Mathematics AS and A level subject content: trigonometry | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | textbook | 2020 | https://www.bloomsbury.com/
+SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | secondary | 2020 | https://www.bloomsbury.com/
 NUM1#maths-u06-16-q1@1: If tan θ = 3/4, find sec^{2} θ. | 1.5625 | 0.0001 |  | sec^{2} θ = 1 + tan^{2} θ = 1 + 9/16 = 25/16 = 1.5625.
 M1#maths-u06-16-q2@1: What is d/dx (tan x)? | sec^{2} x | sec x tan x | cos^{2} x | −cosec^{2} x | 1/(1 + x^{2}) | By the quotient rule, (cos^{2} x + sin^{2} x)/cos^{2} x = 1/cos^{2} x = sec^{2} x.
 M3#maths-u06-16-q3@2: Solve sec x = 2 for 0 ≤ x < 2π. | x = π/3 or x = 5π/3 | x = π/6 or 5π/6 | x = π/3 only | x = 2π/3 or 4π/3 | x = π/4 or 7π/4 | cos x = 1/2 gives π/3 and 2π − π/3 = 5π/3.
@@ -573,7 +639,7 @@ Q: Where is cot θ equal to 0? | Where cos θ = 0: 90°, 270°, …
 SUM: Cotangent is the reciprocal of tangent.
 SUM: Its identity links it with cosecant.
 SRC: Department for Education, Mathematics AS and A level subject content: trigonometry | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | textbook | 2020 | https://www.bloomsbury.com/
+SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | secondary | 2020 | https://www.bloomsbury.com/
 M1#maths-u06-17-q1@1: What is cot 30°? | √3 | 1/√3 | 1/2 | 2 | √3/2 | Cotangent is the reciprocal of tangent; tan 30° = 1/√3, so cot 30° = √3.
 M2#maths-u06-17-q2@2: Which identity is correct? | 1 + cot^{2} θ = cosec^{2} θ | 1 + cot^{2} θ = sec^{2} θ | cot^{2} θ − 1 = cosec^{2} θ | cot^{2} θ + sec^{2} θ = 1 | cot θ + tan θ = 1 | Dividing sin^{2} θ + cos^{2} θ = 1 by sin^{2} θ gives 1 + cot^{2} θ = cosec^{2} θ.
 
@@ -606,7 +672,7 @@ Q: What is arccos(0)? | π/2.
 SUM: Inverse trig functions give angles from ratios.
 SUM: Restricted ranges make them functions.
 SRC: Department for Education, Mathematics AS and A level subject content: trigonometry | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 M1#maths-u06-18-q1@1: What is arcsin(1)? | π/2 | π | 0 | π/4 | 1 | sin(π/2) = 1, and π/2 lies in arcsin's range.
 M3#maths-u06-18-q2@2: What is arccos(cos(5π/3))? | π/3 | 5π/3 | −π/3 | 2π/3 | 4π/3 | cos(5π/3) = 1/2, and arccos returns the value in [0, π], which is π/3.
 
@@ -668,7 +734,7 @@ Q: What equation describes simple harmonic motion? | d^{2}x/dt^{2} = −ω^{2}x.
 SUM: Waves of one frequency combine into one wave.
 SUM: The R form gives maxima and solves equations.
 SRC: Department for Education, Mathematics AS and A level subject content: trigonometry | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | textbook | 2020 | https://www.bloomsbury.com/
+SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | secondary | 2020 | https://www.bloomsbury.com/
 NUM1#maths-u06-20-q1@1: Find R when 8 sin x − 6 cos x is written as R sin(x − α). | 10 | 0 |  | R = √(64 + 36) = 10.
 M1#maths-u06-20-q2@1: What is the minimum value of 7 sin x + 24 cos x? | −25 | −31 | −7 | 0 | −24 | R = √(49 + 576) = 25, so the minimum is −25.
 M2#maths-u06-20-q3@2: What is the period of x = 3 cos(4t + 1)? | π/2 | 4 | 2π | π/4 | 8π | For cos(ωt + φ) the period is 2π/ω; here ω = 4, so the period is π/2.
@@ -699,7 +765,7 @@ Q: Write sin^{2} θ in terms of cos θ. | 1 − cos^{2} θ.
 SUM: Identities hold for all angles.
 SUM: Prove them from one side to the other.
 SRC: Department for Education, Mathematics AS and A level subject content: trigonometry | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Maor E, Trigonometric Delights (Princeton University Press 2013) | textbook | 2013 | https://press.princeton.edu/
+SRC: Maor E, Trigonometric Delights (Princeton University Press 2013) | secondary | 2013 | https://press.princeton.edu/
 M1#maths-u06-21-q1@1: Simplify sin θ/tan θ. | cos θ | sin^{2} θ | 1 | tan θ | sec θ | Dividing by tan θ means multiplying by cos θ/sin θ: sin θ × cos θ/sin θ = cos θ.
 M2#maths-u06-21-q2@2: Simplify (1 − sin^{2} θ)/cos θ. | cos θ | sin θ | 1 | sec θ | tan θ | 1 − sin^{2} θ = cos^{2} θ, and cos^{2} θ/cos θ = cos θ.
 
@@ -735,7 +801,7 @@ Q: What is sin 75° exactly? | (√6 + √2)/4.
 SUM: Addition formulas handle sums of angles.
 SUM: They give exact values of many angles.
 SRC: Department for Education, Mathematics AS and A level subject content: trigonometry | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Maor E, Trigonometric Delights (Princeton University Press 2013) | textbook | 2013 | https://press.princeton.edu/
+SRC: Maor E, Trigonometric Delights (Princeton University Press 2013) | secondary | 2013 | https://press.princeton.edu/
 M1#maths-u06-22-q1@1: Which is the correct expansion of sin(A − B)? | sin A cos B − cos A sin B | sin A cos B + cos A sin B | cos A cos B − sin A sin B | sin A − sin B | sin A sin B − cos A cos B | The sine formula keeps the sign of the compound angle.
 M3#maths-u06-22-q2@2: If tan A = 1/2 and tan B = 1/3, what is A + B (for acute A and B)? | 45° | 30° | 60° | 90° | 75° | tan(A + B) = (½ + ⅓)/(1 − ⅙) = (5/6)/(5/6) = 1, so A + B = 45°.
 
@@ -767,7 +833,7 @@ Q: Which form of cos 2A helps if the equation has only sin x? | 1 − 2 sin^{2} 
 SUM: Double angle formulas come from addition formulas.
 SUM: They reduce powers and solve equations.
 SRC: Department for Education, Mathematics AS and A level subject content: trigonometry | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Maor E, Trigonometric Delights (Princeton University Press 2013) | textbook | 2013 | https://press.princeton.edu/
+SRC: Maor E, Trigonometric Delights (Princeton University Press 2013) | secondary | 2013 | https://press.princeton.edu/
 NUM1#maths-u06-23-q1@1: If sin A = 3/5 and A is acute, find sin 2A. | 0.96 | 0.001 |  | cos A = 4/5, so sin 2A = 2 × 3/5 × 4/5 = 24/25 = 0.96.
 M1#maths-u06-23-q2@1: Which expression equals cos^{2} x − sin^{2} x? | cos 2x | sin 2x | 1 | 2 cos x | cos^{2} 2x | This is one form of the double angle formula for cosine.
 M2#maths-u06-23-q3@2: Which launch angle maximises a projectile's range on level ground? | 45° | 30° | 60° | 90° | 15° | R = u^{2} sin 2θ/g is largest when sin 2θ = 1, at 2θ = 90°.
@@ -798,8 +864,8 @@ Q: What is sin^{2}(A/2) in terms of cos A? | (1 − cos A)/2.
 Q: With t = tan(x/2), what is cos x? | (1 − t^{2})/(1 + t^{2}).
 SUM: Half angle formulas give exact values.
 SUM: The t-substitution rationalises trig expressions.
-SRC: Maor E, Trigonometric Delights (Princeton University Press 2013) | textbook | 2013 | https://press.princeton.edu/
-SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | textbook | 2020 | https://www.bloomsbury.com/
+SRC: Maor E, Trigonometric Delights (Princeton University Press 2013) | secondary | 2013 | https://press.princeton.edu/
+SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | secondary | 2020 | https://www.bloomsbury.com/
 M1#maths-u06-24-q1@1: Which formula gives cos^{2}(A/2)? | (1 + cos A)/2 | (1 − cos A)/2 | 2 cos^{2} A − 1 | 1 − 2 sin^{2} A | cos A/2 | Rearranging the double angle formula cos A = 2 cos^{2}(A/2) − 1 gives (1 + cos A)/2.
 M2#maths-u06-24-q2@2: With t = tan(x/2), what is sin x? | 2t/(1 + t^{2}) | (1 − t^{2})/(1 + t^{2}) | 2t/(1 − t^{2}) | t/(1 + t) | 1/(1 + t^{2}) | sin x = 2 sin(x/2) cos(x/2) = 2 tan(x/2) cos^{2}(x/2) = 2t/(1 + t^{2}).
 
@@ -829,7 +895,7 @@ Q: What should you do instead of dividing by sin x? | Factorise sin x out.
 SUM: Trig equations have many solutions.
 SUM: Identities reduce them to one function.
 SRC: Department for Education, Mathematics AS and A level subject content: trigonometry | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Maor E, Trigonometric Delights (Princeton University Press 2013) | textbook | 2013 | https://press.princeton.edu/
+SRC: Maor E, Trigonometric Delights (Princeton University Press 2013) | secondary | 2013 | https://press.princeton.edu/
 M1#maths-u06-25-q1@1: How many solutions does tan x = 2 have for 0° ≤ x < 360°? | 2 | 1 | 4 | 0 | 3 | tan has period 180°, so there are two solutions in 360°.
 M3#maths-u06-25-q2@2: Solve sin x cos x = 0 for 0° ≤ x < 360°. How many solutions are there? | 4 | 2 | 3 | 1 | 6 | sin x = 0 gives 0° and 180°; cos x = 0 gives 90° and 270°.
 
@@ -861,7 +927,7 @@ Q: What is the first step in solving a trig inequality? | Solve the correspondin
 SUM: Boundaries come from equations.
 SUM: Graphs choose the intervals.
 SRC: Department for Education, Mathematics AS and A level subject content: trigonometry | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | textbook | 2020 | https://www.bloomsbury.com/
+SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | secondary | 2020 | https://www.bloomsbury.com/
 M1#maths-u06-26-q1@1: For 0° ≤ x < 360°, where is sin x < 0? | 180° < x < 360° | 0° < x < 180° | 90° < x < 270° | 0° < x < 90° | Everywhere | Sine is negative in the third and fourth quadrants.
 M2#maths-u06-26-q2@2: Solve 2 sin x ≥ √3 for 0° ≤ x < 360°. | 60° ≤ x ≤ 120° | 0° ≤ x ≤ 60° | 120° ≤ x ≤ 240° | 60° ≤ x ≤ 300° | x = 60° only | sin x ≥ √3/2 between the boundaries 60° and 120°.
 
@@ -892,7 +958,7 @@ Q: What is d/dx (cosh x)? | sinh x.
 SUM: Hyperbolic functions are exponential combinations.
 SUM: Their identities mirror trig with sign changes.
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
-SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | textbook | 2020 | https://www.bloomsbury.com/
+SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | secondary | 2020 | https://www.bloomsbury.com/
 NUM1#maths-u06-27-q1@1: Find sinh(ln 3). | 1.3333 | 0.0001 |  | (3 − 1/3)/2 = (8/3)/2 = 4/3 ≈ 1.333.
 M1#maths-u06-27-q2@1: Which identity holds for hyperbolic functions? | cosh^{2} x − sinh^{2} x = 1 | cosh^{2} x + sinh^{2} x = 1 | sinh^{2} x − cosh^{2} x = 1 | tanh^{2} x + 1 = sech^{2} x | cosh x − sinh x = 1 | Expanding the exponentials gives cosh^{2} x − sinh^{2} x = 1.
 M2#maths-u06-27-q3@2: What shape does a uniform cable hanging under its own weight form? | A catenary (a cosh curve) | A parabola | A circle | A sine wave | A hyperbola | Galileo thought it was a parabola; it's y = a cosh(x/a).
@@ -926,7 +992,7 @@ Q: What is ∫ 1/√(x^{2} + 9) dx? | arsinh(x/3) + c.
 SUM: Inverse hyperbolic functions are logarithms.
 SUM: They give standard integrals.
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
-SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | textbook | 2020 | https://www.bloomsbury.com/
+SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | secondary | 2020 | https://www.bloomsbury.com/
 NUM1#maths-u06-28-q1@1: Find arcosh(5/4) as a decimal, to 3 decimal places. | 0.693 | 0.0005 |  | ln(5/4 + √(25/16 − 1)) = ln(5/4 + 3/4) = ln 2 ≈ 0.693.
 M1#maths-u06-28-q2@1: What is the domain of arcosh x? | x ≥ 1 | All real x | −1 < x < 1 | x > 0 | x ≤ 1 | cosh x ≥ 1, so its inverse is only defined for x ≥ 1.
 M2#maths-u06-28-q3@2: What is d/dx (artanh x)? | 1/(1 − x^{2}) | 1/(1 + x^{2}) | 1/√(1 − x^{2}) | −1/(1 − x^{2}) | sech^{2} x | Differentiating ½ ln((1 + x)/(1 − x)) gives ½(1/(1 + x) + 1/(1 − x)) = 1/(1 − x^{2}).
@@ -957,8 +1023,8 @@ Q: Which terms appear in the Fourier series of an odd function? | Only sine term
 Q: What is the Gibbs phenomenon? | The overshoot of partial sums near a jump discontinuity.
 SUM: Fourier series build periodic functions from waves.
 SUM: Orthogonality isolates each coefficient.
-SRC: Kreyszig E, Advanced Engineering Mathematics (10th edn, Wiley 2011) | textbook | 2011 | https://www.wiley.com/
-SRC: Körner TW, Fourier Analysis (Cambridge University Press 1988) | textbook | 1988 | https://www.cambridge.org/
+SRC: Kreyszig E, Advanced Engineering Mathematics (10th edn, Wiley 2011) | secondary | 2011 | https://www.wiley.com/
+SRC: Körner TW, Fourier Analysis (Cambridge University Press 1988) | secondary | 1988 | https://www.cambridge.org/
 M1#maths-u06-29-q1@1: Which terms does the Fourier series of an even function contain? | Cosines (and a constant) only | Sines only | Both sines and cosines always | Exponentials only | No terms | Even functions are symmetric, matching the even cosine terms.
 M2#maths-u06-29-q2@2: In the square wave series (4/π)(sin x + sin 3x/3 + sin 5x/5 + …), what is the coefficient of sin 5x? | 4/(5π) | 1/5 | 4/π | 5 | 0 | Each term is (4/π) × sin(nx)/n for odd n, so n = 5 gives 4/(5π).
 
@@ -987,8 +1053,8 @@ Q: What does the FFT compute? | The discrete Fourier transform, in O(n log n) ti
 Q: What happens to convolution under the Fourier transform? | It becomes multiplication.
 SUM: Fourier analysis reveals frequency content.
 SUM: It powers modern signal processing.
-SRC: Körner TW, Fourier Analysis (Cambridge University Press 1988) | textbook | 1988 | https://www.cambridge.org/
-SRC: Cooley JW, Tukey JW, An algorithm for the machine calculation of complex Fourier series, Mathematics of Computation 19(90) 297 | journal | 1965 | https://doi.org/10.1090/S0025-5718-1965-0178586-1
+SRC: Körner TW, Fourier Analysis (Cambridge University Press 1988) | secondary | 1988 | https://www.cambridge.org/
+SRC: Cooley JW, Tukey JW, An algorithm for the machine calculation of complex Fourier series, Mathematics of Computation 19(90) 297 | primary | 1965 | https://doi.org/10.1090/S0025-5718-1965-0178586-1
 M1#maths-u06-30-q1@1: What does the spectrum of a pure 440 Hz tone look like? | A single spike at 440 Hz | Spikes at every frequency | A flat line | A spike at 0 Hz | A spike at 220 Hz | A pure sine wave contains only its own frequency.
 M2#maths-u06-30-q2@2: Which technology relies on the Fourier transform to build images? | MRI scanning | Barcode reading | Thermometers | Mechanical clocks | Abacuses | MRI measures spatial frequency data and reconstructs the image with an inverse Fourier transform.
 `;

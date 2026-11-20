@@ -5,9 +5,9 @@
  "site": "SciGradify",
  "unitWord": "Unit",
  "levels": [
-  "Easy",
-  "Medium",
-  "Hard"
+  "Foundation",
+  "Application",
+  "Physical reasoning"
  ],
  "notice": null,
  "notes": "/kit/courses/physics/notes/{unit}.js",

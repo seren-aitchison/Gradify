@@ -31,7 +31,7 @@ Q: What is the order of y‴ + xy′ = 0? | 3.
 Q: Is y′ = sin y linear? | No: sin y isn't linear in y.
 SUM: ODEs relate functions to their derivatives.
 SUM: Conditions pick out particular solutions.
-SRC: Boyce WE, DiPrima RC, Meade DB, Elementary Differential Equations and Boundary Value Problems (12th edn, Wiley 2022) | textbook | 2022 | https://www.wiley.com/
+SRC: Boyce WE, DiPrima RC, Meade DB, Elementary Differential Equations and Boundary Value Problems (12th edn, Wiley 2022) | secondary | 2022 | https://www.wiley.com/
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
 NUM1#maths-u10-01-q1@1: How many arbitrary constants does the general solution of a fourth-order linear ODE contain? | 4 | 0 |  | An nth-order equation needs n constants, one per integration.
 M1#maths-u10-01-q2@1: Which equation is linear? | y″ + x^{2}y′ + y = e^{x} | y′ = y^{2} + 1 | yy″ = 1 | y′ + sin y = 0 | (y′)^{2} = x | y and its derivatives appear only to the first power, multiplied by functions of x.
@@ -69,8 +69,8 @@ Q: What type is y′ + 3y = e^{x}? | Linear first-order.
 Q: What is an equilibrium solution of y′ = y(1 − y)? | y = 0 or y = 1.
 SUM: First-order ODEs model rates.
 SUM: Recognising the type is the key step.
-SRC: Boyce WE, DiPrima RC, Meade DB, Elementary Differential Equations and Boundary Value Problems (12th edn, Wiley 2022) | textbook | 2022 | https://www.wiley.com/
-SRC: Zill DG, A First Course in Differential Equations with Modeling Applications (11th edn, Cengage 2018) | textbook | 2018 | https://www.cengage.co.uk/
+SRC: Boyce WE, DiPrima RC, Meade DB, Elementary Differential Equations and Boundary Value Problems (12th edn, Wiley 2022) | secondary | 2022 | https://www.wiley.com/
+SRC: Zill DG, A First Course in Differential Equations with Modeling Applications (11th edn, Cengage 2018) | secondary | 2018 | https://www.cengage.co.uk/
 NUM1#maths-u10-02-q1@1: Using T(t) = 20 + 70(4/7)^{t/10}, find T(20) to 2 decimal places. | 42.86 | 0.01 | °C | 20 + 70 × (4/7)^{2} = 20 + 70 × 16/49 ≈ 42.86°C.
 M1#maths-u10-02-q2@1: Which method suits y′ = x^{2}y^{3}? | Separation of variables | An integrating factor for a linear ODE | The exact equation test | Undetermined coefficients | Laplace transforms only | The right side factorises into a function of x times a function of y.
 M2#maths-u10-02-q3@2: A tank holds 100 L of water with 5 kg of salt. Brine at 0.2 kg/L flows in at 3 L/min, and the mixture flows out at 3 L/min. Which ODE models the salt S(t)? | S′ = 0.6 − 3S/100 | S′ = 0.6 + 3S/100 | S′ = 3 − 0.2S | S′ = 0.2S − 0.6 | S′ = −3S | In: 3 × 0.2 = 0.6 kg/min; out: 3 L/min at concentration S/100.
@@ -106,7 +106,7 @@ Q: Solve dy/dx = 3y. | y = Ae^{3x}.
 Q: At what population is logistic growth fastest? | K/2.
 SUM: Separate variables and integrate.
 SUM: The logistic curve is S-shaped.
-SRC: Boyce WE, DiPrima RC, Meade DB, Elementary Differential Equations and Boundary Value Problems (12th edn, Wiley 2022) | textbook | 2022 | https://www.wiley.com/
+SRC: Boyce WE, DiPrima RC, Meade DB, Elementary Differential Equations and Boundary Value Problems (12th edn, Wiley 2022) | secondary | 2022 | https://www.wiley.com/
 SRC: Department for Education, Mathematics AS and A level subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 NUM1#maths-u10-03-q1@1: Using y = 2e^{x^{2}/2}, find y(2) to 2 decimal places. | 14.78 | 0.01 |  | 2e^{2} ≈ 2 × 7.389 = 14.78.
 M1#maths-u10-03-q2@1: A logistic population has K = 1,000. At what size is it growing fastest? | 500 | 1,000 | 250 | 0 | 750 | rP(1 − P/K) is a parabola in P with its maximum at P = K/2.
@@ -140,8 +140,8 @@ Q: What is the integrating factor for y′ + 3y = x? | e^{3x}.
 Q: What is the integrating factor for y′ − y/x = x (x > 0)? | 1/x.
 SUM: Integrating factors solve linear equations.
 SUM: Solutions split into transient and steady parts.
-SRC: Boyce WE, DiPrima RC, Meade DB, Elementary Differential Equations and Boundary Value Problems (12th edn, Wiley 2022) | textbook | 2022 | https://www.wiley.com/
-SRC: Stroud KA, Booth DJ, Advanced Engineering Mathematics (6th edn, Bloomsbury 2020) | textbook | 2020 | https://www.bloomsbury.com/
+SRC: Boyce WE, DiPrima RC, Meade DB, Elementary Differential Equations and Boundary Value Problems (12th edn, Wiley 2022) | secondary | 2022 | https://www.wiley.com/
+SRC: Stroud KA, Booth DJ, Advanced Engineering Mathematics (6th edn, Bloomsbury 2020) | secondary | 2020 | https://www.bloomsbury.com/
 NUM1#maths-u10-04-q1@1: Using y = 2 − 2e^{−2x}, find y(1) to 4 decimal places. | 1.7293 | 0.0001 |  | 2 − 2e^{−2} ≈ 2 − 0.2707 = 1.7293.
 M1#maths-u10-04-q2@1: What is the general solution of y′ − y/x = x for x > 0? | y = x^{2} + Cx | y = x^{2} + C | y = Cx^{2} | y = x + C/x | y = e^{x} + C | With μ = 1/x, (y/x)′ = 1, so y/x = x + C.
 M2#maths-u10-04-q3@2: An RC circuit charges according to Q′ + Q/(RC) = V/R. What does Q approach as t → ∞? | CV | V/R | RC | 0 | V | The transient decays, leaving the steady state Q = CV.
@@ -176,8 +176,8 @@ Q: Is (y dx + x dy) = 0 exact? | Yes: M_{y} = 1 = N_{x}.
 Q: What are the solution curves of an exact equation? | Level curves F(x, y) = C.
 SUM: Exact equations are total differentials.
 SUM: Their solutions are level curves.
-SRC: Zill DG, A First Course in Differential Equations with Modeling Applications (11th edn, Cengage 2018) | textbook | 2018 | https://www.cengage.co.uk/
-SRC: Boyce WE, DiPrima RC, Meade DB, Elementary Differential Equations and Boundary Value Problems (12th edn, Wiley 2022) | textbook | 2022 | https://www.wiley.com/
+SRC: Zill DG, A First Course in Differential Equations with Modeling Applications (11th edn, Cengage 2018) | secondary | 2018 | https://www.cengage.co.uk/
+SRC: Boyce WE, DiPrima RC, Meade DB, Elementary Differential Equations and Boundary Value Problems (12th edn, Wiley 2022) | secondary | 2022 | https://www.wiley.com/
 NUM1#maths-u10-05-q1@1: For x^{2}y + 3x − y = C passing through (1, 2), find C. | 3 | 0 |  | 1 × 2 + 3 − 2 = 3.
 M1#maths-u10-05-q2@1: Which equation is exact? | (3x^{2} + y) dx + (x + 2y) dy = 0 | (x + y) dx + (x − y)^{2} dy = 0 | y dx − x dy = 0 | x^{2}y dx + y dy = 0 | (y + 1) dx + y^{2} dy = 0 | M_{y} = 1 and N_{x} = 1, so they're equal.
 M2#maths-u10-05-q3@2: Why is exactness linked to conservative vector fields? | Both need ∂M/∂y = ∂N/∂x, so (M, N) is the gradient of a potential | Exact equations are always linear | Conservative fields have zero divergence | Neither involves derivatives | Only linear equations can ever be exact, like linear vector fields | M dx + N dy = dF exactly when (M, N) = ∇F.
@@ -212,8 +212,8 @@ Q: Is y′ = (x^{2} + y^{2})/(xy) homogeneous? | Yes: it's (x/y) + (y/x), a func
 Q: What is y′ after substituting y = vx? | v + xv′.
 SUM: Substitution makes homogeneous equations separable.
 SUM: "Homogeneous" has two meanings.
-SRC: Zill DG, A First Course in Differential Equations with Modeling Applications (11th edn, Cengage 2018) | textbook | 2018 | https://www.cengage.co.uk/
-SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | textbook | 2020 | https://www.bloomsbury.com/
+SRC: Zill DG, A First Course in Differential Equations with Modeling Applications (11th edn, Cengage 2018) | secondary | 2018 | https://www.cengage.co.uk/
+SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | secondary | 2020 | https://www.bloomsbury.com/
 NUM1#maths-u10-06-q1@1: For y = x ln x + Cx with y(1) = 2, find y(e) to 3 decimal places. | 8.155 | 0.001 |  | C = 2, so y(e) = e × 1 + 2e = 3e ≈ 8.155.
 M1#maths-u10-06-q2@1: Which equation is homogeneous in the y/x sense? | y′ = (2x − y)/(x + y) | y′ = x + y^{2} | y′ = e^{x}y | y′ = x^{2} + 1 | y′ = y + 1 | Dividing top and bottom by x gives (2 − y/x)/(1 + y/x).
 M2#maths-u10-06-q3@2: In "y″ + 4y = 0 is homogeneous", what does homogeneous mean? | The linear equation has zero right-hand side | It can be written as F(y/x) | Its coefficients are all equal | It has constant solutions only | It's separable | For linear ODEs, homogeneous means there's no forcing term.
@@ -247,8 +247,8 @@ Q: What substitution solves y′ + y = xy^{3}? | v = y^{−2}.
 Q: Which famous growth model is a Bernoulli equation? | The logistic equation.
 SUM: Bernoulli equations linearise by substitution.
 SUM: v = y^{1−n} is the key.
-SRC: Boyce WE, DiPrima RC, Meade DB, Elementary Differential Equations and Boundary Value Problems (12th edn, Wiley 2022) | textbook | 2022 | https://www.wiley.com/
-SRC: Zill DG, A First Course in Differential Equations with Modeling Applications (11th edn, Cengage 2018) | textbook | 2018 | https://www.cengage.co.uk/
+SRC: Boyce WE, DiPrima RC, Meade DB, Elementary Differential Equations and Boundary Value Problems (12th edn, Wiley 2022) | secondary | 2022 | https://www.wiley.com/
+SRC: Zill DG, A First Course in Differential Equations with Modeling Applications (11th edn, Cengage 2018) | secondary | 2018 | https://www.cengage.co.uk/
 NUM1#maths-u10-07-q1@1: With y = 1/(1 + Ce^{x}) and y(0) = ½, find y(ln 2) to 4 decimal places. | 0.3333 | 0.0001 |  | y(0) = 1/(1 + C) = ½ gives C = 1; y(ln 2) = 1/(1 + 2) = 1/3.
 M1#maths-u10-07-q2@1: Which substitution linearises y′ − 2y = 3y^{4}? | v = y^{−3} | v = y^{4} | v = y^{3} | v = 1/y | v = ln y | For a Bernoulli equation use v = y^{1−n}; with n = 4 that gives v = y^{−3}.
 M3#maths-u10-07-q3@2: After substituting v = y^{1−n}, what equation does v satisfy? | v′ + (1 − n)P v = (1 − n)Q | v′ + Pv = Qvⁿ | v′ = Qv | v″ + Pv′ = Q | v′ + nPv = nQ | Multiplying the divided equation by (1 − n) gives this linear form.
@@ -281,7 +281,7 @@ Q: Solve y″ + 9y = 0. | y = A cos 3x + B sin 3x.
 Q: What does critically damped mean? | The characteristic equation has a repeated root: return to equilibrium fastest without oscillating.
 SUM: Characteristic roots give the CF.
 SUM: Add a PI for the forcing.
-SRC: Boyce WE, DiPrima RC, Meade DB, Elementary Differential Equations and Boundary Value Problems (12th edn, Wiley 2022) | textbook | 2022 | https://www.wiley.com/
+SRC: Boyce WE, DiPrima RC, Meade DB, Elementary Differential Equations and Boundary Value Problems (12th edn, Wiley 2022) | secondary | 2022 | https://www.wiley.com/
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
 NUM1#maths-u10-08-q1@1: For y″ + 4y′ + 13y = 0, the roots are α ± iβ. Find β. | 3 | 0 |  | r = (−4 ± √(16 − 52))/2 = −2 ± 3i, so β = 3.
 M1#maths-u10-08-q2@1: What form of PI should you try for y″ + y = e^{2x}? | ke^{2x} | kxe^{2x} | k sin 2x | kx^{2} | k | The forcing is e^{2x}, which isn't in the CF (cos x, sin x).
@@ -314,8 +314,8 @@ Q: What solutions does a triple root r = 2 give? | e^{2x}, xe^{2x} and x^{2}e^{2
 Q: How many independent solutions does a fifth-order linear homogeneous ODE have? | 5.
 SUM: Higher-order equations generalise second-order methods.
 SUM: Repeated roots need powers of x.
-SRC: Kreyszig E, Advanced Engineering Mathematics (10th edn, Wiley 2011) | textbook | 2011 | https://www.wiley.com/
-SRC: Boyce WE, DiPrima RC, Meade DB, Elementary Differential Equations and Boundary Value Problems (12th edn, Wiley 2022) | textbook | 2022 | https://www.wiley.com/
+SRC: Kreyszig E, Advanced Engineering Mathematics (10th edn, Wiley 2011) | secondary | 2011 | https://www.wiley.com/
+SRC: Boyce WE, DiPrima RC, Meade DB, Elementary Differential Equations and Boundary Value Problems (12th edn, Wiley 2022) | secondary | 2022 | https://www.wiley.com/
 NUM1#maths-u10-09-q1@1: Find the Wronskian of 1 and x. | 1 | 0 |  | W = det [[1, x], [0, 1]] = 1, non-zero, so they're independent.
 M1#maths-u10-09-q2@1: What is the general solution of (D − 1)^{3}y = 0, where D = d/dx? | (A + Bx + Cx^{2})e^{x} | Ae^{x} + Be^{2x} + Ce^{3x} | A + Bx + Cx^{2} | Ae^{x} | (A + Bx)e^{x} | A triple root at 1 gives e^{x}, xe^{x} and x^{2}e^{x}.
 M2#maths-u10-09-q3@2: How is a third-order ODE usually solved numerically? | Rewrite it as a system of three first-order equations | Integrate three times by hand | Differentiate it once more | Solvers apply the quadratic formula to its characteristic equation | It can't be solved numerically | Setting y₁ = y, y₂ = y′, y₃ = y″ gives a first-order system for standard solvers.
@@ -348,8 +348,8 @@ Q: What is the period of a small-angle pendulum of length L? | 2π√(L/g).
 Q: Does superposition hold for y′ = y^{2}? | No.
 SUM: Nonlinear ODEs behave in new ways.
 SUM: Linearisation gives local insight.
-SRC: Strogatz SH, Nonlinear Dynamics and Chaos (2nd edn, CRC Press 2015) | textbook | 2015 | https://www.routledge.com/
-SRC: Jordan DW, Smith P, Nonlinear Ordinary Differential Equations (4th edn, Oxford University Press 2007) | textbook | 2007 | https://global.oup.com/
+SRC: Strogatz SH, Nonlinear Dynamics and Chaos (2nd edn, CRC Press 2015) | secondary | 2015 | https://www.routledge.com/
+SRC: Jordan DW, Smith P, Nonlinear Ordinary Differential Equations (4th edn, Oxford University Press 2007) | secondary | 2007 | https://global.oup.com/
 NUM1#maths-u10-10-q1@1: For y′ = y^{2} with y(0) = 4, at what x does the solution blow up? | 0.25 | 0.0001 |  | y = 1/(¼ − x), which blows up at x = ¼.
 M1#maths-u10-10-q2@1: Which equation is nonlinear? | y″ + sin y = 0 | y″ + 4y = cos x | y′ + xy = 1 | y″ − y = e^{x} | x^{2}y″ + y = 0 | sin y isn't linear in y; the others are linear in y.
 M2#maths-u10-10-q3@2: Why do large-amplitude pendulums disagree with the period 2π√(L/g)? | That formula uses sin θ ≈ θ, which fails for large angles | Gravity changes with amplitude | Large pendulums have more mass | The formula is for springs only | Air resistance grows with amplitude and dominates large swings | The linear approximation is only accurate for small θ; the true period grows with amplitude.
@@ -384,8 +384,8 @@ Q: Is y = 2 stable for y′ = 2 − y? | Yes: f′ = −1 < 0.
 Q: What is the maximum sustainable constant harvest for logistic growth? | rK/4.
 SUM: Phase lines reveal autonomous behaviour.
 SUM: The sign of f′ decides stability.
-SRC: Strogatz SH, Nonlinear Dynamics and Chaos (2nd edn, CRC Press 2015) | textbook | 2015 | https://www.routledge.com/
-SRC: Murray JD, Mathematical Biology I: An Introduction (3rd edn, Springer 2002) | textbook | 2002 | https://link.springer.com/
+SRC: Strogatz SH, Nonlinear Dynamics and Chaos (2nd edn, CRC Press 2015) | secondary | 2015 | https://www.routledge.com/
+SRC: Murray JD, Mathematical Biology I: An Introduction (3rd edn, Springer 2002) | secondary | 2002 | https://link.springer.com/
 NUM1#maths-u10-11-q1@1: A fish population grows logistically with r = 0.4 per year and K = 1,000. What is the maximum sustainable constant harvest per year? | 100 | 0 | fish | rK/4 = 0.4 × 1,000/4 = 100.
 M1#maths-u10-11-q2@1: For y′ = y^{2} − 4, which equilibrium is stable? | y = −2 | y = 2 | Both | Neither | y = 0 | f′(y) = 2y: f′(−2) = −4 < 0 (stable), f′(2) = 4 > 0 (unstable).
 M2#maths-u10-11-q3@2: Why can't two different solutions of an autonomous ODE cross? | Uniqueness forbids two solutions through the same point | Autonomous equations have only one solution | Solutions are always parallel lines | Crossing would make f negative | They can cross | With f Lipschitz, the solution through any point is unique.
@@ -420,8 +420,8 @@ Q: What equilibrium type occurs when eigenvalues are ±2i? | A centre.
 Q: What does det A < 0 imply for a 2D linear system? | A saddle.
 SUM: Eigenvalues solve linear systems.
 SUM: They classify phase portraits.
-SRC: Hirsch MW, Smale S, Devaney RL, Differential Equations, Dynamical Systems, and an Introduction to Chaos (3rd edn, Academic Press 2013) | textbook | 2013 | https://www.sciencedirect.com/
-SRC: Boyce WE, DiPrima RC, Meade DB, Elementary Differential Equations and Boundary Value Problems (12th edn, Wiley 2022) | textbook | 2022 | https://www.wiley.com/
+SRC: Hirsch MW, Smale S, Devaney RL, Differential Equations, Dynamical Systems, and an Introduction to Chaos (3rd edn, Academic Press 2013) | secondary | 2013 | https://www.sciencedirect.com/
+SRC: Boyce WE, DiPrima RC, Meade DB, Elementary Differential Equations and Boundary Value Problems (12th edn, Wiley 2022) | secondary | 2022 | https://www.wiley.com/
 NUM1#maths-u10-12-q1@1: For A = [[−3, 1], [0, −2]], find the larger eigenvalue. | -2 | 0 |  | Triangular matrix: eigenvalues are the diagonal entries −3 and −2, so the larger is −2 (a stable node).
 M1#maths-u10-12-q2@1: Eigenvalues −1 ± 2i describe which equilibrium? | A stable spiral | An unstable spiral | A saddle | A centre | An unstable node | Negative real part means decay; non-zero imaginary part means rotation.
 M3#maths-u10-12-q3@2: Trace 4 and determinant 3. What kind of equilibrium is it? | An unstable node | A stable node | A saddle | A centre | A stable spiral | Eigenvalues 1 and 3 (from λ^{2} − 4λ + 3 = 0) are both positive and real.
@@ -455,8 +455,8 @@ Q: How many initial conditions does a second-order IVP need? | Two.
 Q: Why does y′ = 3y^{2/3}, y(0) = 0 have more than one solution? | f isn't Lipschitz in y at y = 0.
 SUM: IVPs fix solutions by starting values.
 SUM: Lipschitz conditions ensure uniqueness.
-SRC: Teschl G, Ordinary Differential Equations and Dynamical Systems (American Mathematical Society 2012) | textbook | 2012 | https://www.mat.univie.ac.at/~gerald/ftp/book-ode/
-SRC: Boyce WE, DiPrima RC, Meade DB, Elementary Differential Equations and Boundary Value Problems (12th edn, Wiley 2022) | textbook | 2022 | https://www.wiley.com/
+SRC: Teschl G, Ordinary Differential Equations and Dynamical Systems (American Mathematical Society 2012) | secondary | 2012 | https://www.mat.univie.ac.at/~gerald/ftp/book-ode/
+SRC: Boyce WE, DiPrima RC, Meade DB, Elementary Differential Equations and Boundary Value Problems (12th edn, Wiley 2022) | secondary | 2022 | https://www.wiley.com/
 NUM1#maths-u10-13-q1@1: Solve y′ = −2y with y(0) = 5 and find y(1), to 4 decimal places. | 0.6767 | 0.0001 |  | y = 5e^{−2x}, so y(1) = 5e^{−2} ≈ 0.6767.
 M1#maths-u10-13-q2@1: Which IVP is guaranteed a unique solution near x = 0? | y′ = x^{2} + y, y(0) = 1 | y′ = 3y^{2/3}, y(0) = 0 | y′ = √|y|, y(0) = 0 | y′ = y^{1/3}, y(0) = 0 | None of them | x^{2} + y is smooth, so Lipschitz in y; the others fail at y = 0.
 M2#maths-u10-13-q3@2: Why does determinism in physics need uniqueness theorems? | Uniqueness means the present state determines one future | It guarantees all solutions are periodic | It makes equations linear | It removes the need for initial conditions | It doesn't need them | Without uniqueness, the same initial state could evolve in different ways.
@@ -490,8 +490,8 @@ Q: For what λ does y″ + λy = 0, y(0) = y(π) = 0 have non-zero solutions? | 
 Q: What is the shooting method? | Solving IVPs with guessed initial slopes and adjusting until the boundary condition is met.
 SUM: BVPs set conditions at two points.
 SUM: Eigenvalue problems give modes.
-SRC: Boyce WE, DiPrima RC, Meade DB, Elementary Differential Equations and Boundary Value Problems (12th edn, Wiley 2022) | textbook | 2022 | https://www.wiley.com/
-SRC: Kreyszig E, Advanced Engineering Mathematics (10th edn, Wiley 2011) | textbook | 2011 | https://www.wiley.com/
+SRC: Boyce WE, DiPrima RC, Meade DB, Elementary Differential Equations and Boundary Value Problems (12th edn, Wiley 2022) | secondary | 2022 | https://www.wiley.com/
+SRC: Kreyszig E, Advanced Engineering Mathematics (10th edn, Wiley 2011) | secondary | 2011 | https://www.wiley.com/
 NUM1#maths-u10-14-q1@1: Using y = x^{3} − x, find y(0.5). | -0.375 | 0.0001 |  | 0.125 − 0.5 = −0.375.
 M1#maths-u10-14-q2@1: How many solutions does y″ + y = 0, y(0) = 0, y(π) = 1 have? | None | One | Two | Infinitely many | Three | Every solution with y(0) = 0 is B sin x, which is 0 at π, never 1.
 M2#maths-u10-14-q3@2: What is the smallest eigenvalue λ for y″ + λy = 0, y(0) = y(2) = 0? | π^{2}/4 | π^{2} | 2π | 4π^{2} | π/2 | The eigenvalues are λ = (nπ/L)^{2}; the smallest, n = 1 with L = 2, is π^{2}/4.
@@ -525,8 +525,8 @@ Q: What is L{e^{5t}}? | 1/(s − 5).
 Q: What is L{f′} in terms of F? | sF(s) − f(0).
 SUM: Laplace transforms make calculus algebraic.
 SUM: Initial conditions come built in.
-SRC: Kreyszig E, Advanced Engineering Mathematics (10th edn, Wiley 2011) | textbook | 2011 | https://www.wiley.com/
-SRC: Schiff JL, The Laplace Transform: Theory and Applications (Springer 1999) | textbook | 1999 | https://link.springer.com/
+SRC: Kreyszig E, Advanced Engineering Mathematics (10th edn, Wiley 2011) | secondary | 2011 | https://www.wiley.com/
+SRC: Schiff JL, The Laplace Transform: Theory and Applications (Springer 1999) | secondary | 1999 | https://link.springer.com/
 NUM1#maths-u10-15-q1@1: Evaluate L{t^{3}} at s = 2. | 0.375 | 0.0001 |  | L{t^{3}} = 3!/s^{4} = 6/16 = 0.375.
 M1#maths-u10-15-q2@1: What is L{cos 3t}? | s/(s^{2} + 9) | 3/(s^{2} + 9) | s/(s^{2} − 9) | 1/(s − 3) | 3s/(s^{2} + 9) | The table gives s/(s^{2} + ω^{2}) with ω = 3.
 M2#maths-u10-15-q3@2: Why are Laplace transforms suited to circuits switched on at t = 2? | The second shift theorem turns delayed inputs into factors e^{−2s} | Laplace transforms ignore switches | Switching makes the circuit equations linear for the first time | The transform only works after t = 2 | Switches make the transform zero | H(t − 2)f(t − 2) transforms to e^{−2s}F(s), keeping the algebra simple.
@@ -560,8 +560,8 @@ Q: What is L^{−1}{1/(s + 3)}? | e^{−3t}.
 Q: What is L^{−1}{e^{−2s}/s}? | H(t − 2), the unit step switched on at t = 2.
 SUM: Inverting completes the Laplace method.
 SUM: Partial fractions do most of the work.
-SRC: Kreyszig E, Advanced Engineering Mathematics (10th edn, Wiley 2011) | textbook | 2011 | https://www.wiley.com/
-SRC: Stroud KA, Booth DJ, Advanced Engineering Mathematics (6th edn, Bloomsbury 2020) | textbook | 2020 | https://www.bloomsbury.com/
+SRC: Kreyszig E, Advanced Engineering Mathematics (10th edn, Wiley 2011) | secondary | 2011 | https://www.wiley.com/
+SRC: Stroud KA, Booth DJ, Advanced Engineering Mathematics (6th edn, Bloomsbury 2020) | secondary | 2020 | https://www.bloomsbury.com/
 NUM1#maths-u10-16-q1@1: Evaluate L^{−1}{5/(s^{2} + 25)} at t = π/10. | 1 | 0.0001 |  | The inverse is sin 5t, and sin(π/2) = 1.
 M1#maths-u10-16-q2@1: What is L^{−1}{1/(s − 2)^{2}}? | te^{2t} | e^{2t} | t^{2}e^{2t} | 2e^{t} | e^{−2t} | L{t} = 1/s^{2}, and the first shift theorem replaces s by s − 2, multiplying by e^{2t}.
 M3#maths-u10-16-q3@2: What is L^{−1}{(s + 1)/((s + 1)^{2} + 4)}? | e^{−t} cos 2t | e^{−t} sin 2t | cos 2t | e^{t} cos 2t | ½e^{−t} sin 2t | It's s/(s^{2} + 4) shifted by −1, so cos 2t times e^{−t}.
@@ -594,8 +594,8 @@ Q: What does the Fourier transform turn f″ into? | −ξ^{2} f̂.
 Q: How wide does a point of heat spread after time t? | About √(2kt).
 SUM: Fourier transforms diagonalise derivatives.
 SUM: The heat kernel smooths.
-SRC: Stein EM, Shakarchi R, Fourier Analysis: An Introduction (Princeton University Press 2003) | textbook | 2003 | https://press.princeton.edu/
-SRC: Strauss WA, Partial Differential Equations: An Introduction (2nd edn, Wiley 2008) | textbook | 2008 | https://www.wiley.com/
+SRC: Stein EM, Shakarchi R, Fourier Analysis: An Introduction (Princeton University Press 2003) | secondary | 2003 | https://press.princeton.edu/
+SRC: Strauss WA, Partial Differential Equations: An Introduction (2nd edn, Wiley 2008) | secondary | 2008 | https://www.wiley.com/
 NUM1#maths-u10-17-q1@1: Find the heat kernel's value at x = 0 when k = 1 and t = 1, to 4 decimal places. | 0.2821 | 0.0001 |  | 1/√(4π) ≈ 0.2821.
 M1#maths-u10-17-q2@1: Under the Fourier transform, what does convolution become? | Multiplication | Addition | Differentiation | Integration | Division | The convolution theorem: the transform of f * g is f̂ ĝ.
 M2#maths-u10-17-q3@2: In the transformed heat equation, why do high frequencies disappear first? | They decay like e^{−kξ^{2}t}, faster for larger ξ | They have more energy | They travel faster | They're reflected at boundaries | They don't disappear | The decay rate kξ^{2} grows with frequency.
@@ -628,8 +628,8 @@ Q: What equation does a Green's function satisfy? | LG = δ(x − s), with the b
 Q: What is the free-space Green's function of −∇^{2} in 3D? | 1/(4π|x − y|).
 SUM: Green's functions are point-source responses.
 SUM: Superposition builds every solution.
-SRC: Stakgold I, Holst M, Green's Functions and Boundary Value Problems (3rd edn, Wiley 2011) | textbook | 2011 | https://www.wiley.com/
-SRC: Duffy DG, Green's Functions with Applications (2nd edn, CRC Press 2015) | textbook | 2015 | https://www.routledge.com/
+SRC: Stakgold I, Holst M, Green's Functions and Boundary Value Problems (3rd edn, Wiley 2011) | secondary | 2011 | https://www.wiley.com/
+SRC: Duffy DG, Green's Functions with Applications (2nd edn, CRC Press 2015) | secondary | 2015 | https://www.routledge.com/
 NUM1#maths-u10-18-q1@1: Using u(x) = x(1 − x)/2, find u(0.5). | 0.125 | 0.0001 |  | 0.5 × 0.5/2 = 0.125.
 M1#maths-u10-18-q2@1: What does a Green's function represent physically? | The response to a unit point source | The total energy of the system | The boundary values only | The average of the solution | The eigenvalue of the operator | G is the field produced by a delta source at s.
 M2#maths-u10-18-q3@2: When does a Green's function fail to exist for Lu = f with given boundary conditions? | When the homogeneous problem has a non-zero solution | When f is discontinuous | When the domain is bounded | Whenever the forcing f has a jump discontinuity in the domain | It always exists | A non-trivial homogeneous solution means L isn't invertible.
@@ -663,8 +663,8 @@ Q: Are Sturm–Liouville eigenvalues real? | Yes.
 Q: Which special functions solve Bessel's equation? | Bessel functions.
 SUM: Sturm–Liouville problems give orthogonal families.
 SUM: They justify series solutions of PDEs.
-SRC: Zettl A, Sturm–Liouville Theory (American Mathematical Society 2005) | textbook | 2005 | https://bookstore.ams.org/
-SRC: Haberman R, Applied Partial Differential Equations (5th edn, Pearson 2013) | textbook | 2013 | https://www.pearson.com/
+SRC: Zettl A, Sturm–Liouville Theory (American Mathematical Society 2005) | secondary | 2005 | https://bookstore.ams.org/
+SRC: Haberman R, Applied Partial Differential Equations (5th edn, Pearson 2013) | secondary | 2013 | https://www.pearson.com/
 NUM1#maths-u10-19-q1@1: For L = 1, find the smallest eigenvalue λ₁ = (π/2)^{2}, to 4 decimal places. | 2.4674 | 0.0001 |  | (π/2)^{2} ≈ 2.4674.
 M1#maths-u10-19-q2@1: How many zeros inside the interval does the third eigenfunction have? | 2 | 3 | 1 | 0 | 4 | The nth eigenfunction has n − 1 interior zeros.
 M2#maths-u10-19-q3@2: Why can solutions of the heat equation be written as sine series? | The spatial problem is Sturm–Liouville, so its sine eigenfunctions are complete and orthogonal | Sines are the only functions | The heat equation is linear in time only | Sine series converge for every function pointwise | Temperature is always shaped like a sine wave, whatever the start | Separation gives y″ + λy = 0 with boundary conditions, a Sturm–Liouville problem.
@@ -696,8 +696,8 @@ Q: What type is the heat equation? | Parabolic.
 Q: Name Hadamard's three conditions for well-posedness. | Existence, uniqueness and continuous dependence on data.
 SUM: PDEs have three main types.
 SUM: Each needs its own data and methods.
-SRC: Evans LC, Partial Differential Equations (2nd edn, American Mathematical Society 2010) | textbook | 2010 | https://bookstore.ams.org/
-SRC: Strauss WA, Partial Differential Equations: An Introduction (2nd edn, Wiley 2008) | textbook | 2008 | https://www.wiley.com/
+SRC: Evans LC, Partial Differential Equations (2nd edn, American Mathematical Society 2010) | secondary | 2010 | https://bookstore.ams.org/
+SRC: Strauss WA, Partial Differential Equations: An Introduction (2nd edn, Wiley 2008) | secondary | 2008 | https://www.wiley.com/
 NUM1#maths-u10-20-q1@1: Find B^{2} − 4AC for u_{xx} + 2u_{xy} + u_{yy} = 0. | 0 | 0 |  | 4 − 4 = 0, so the equation is parabolic.
 M1#maths-u10-20-q2@1: Which PDE is elliptic? | u_{xx} + u_{yy} = 0 | u_{t} = u_{xx} | u_{tt} = u_{xx} | u_{t} + u_{x} = 0 | u_{xx} − u_{yy} = 0 | Laplace's equation has B^{2} − 4AC = −4 < 0.
 M2#maths-u10-20-q3@2: Why is the backward heat equation ill-posed? | Tiny changes in data cause huge changes in the solution, breaking continuous dependence | It has no solutions ever | Running time backwards turns it into an elliptic equation | It needs no boundary conditions | It's well-posed | Running diffusion backwards amplifies high frequencies by e^{+kξ^{2}t}.
@@ -729,8 +729,8 @@ Q: Which mode decays slowest in the heat equation on a rod? | The first (n = 1).
 Q: What does the maximum principle say for the heat equation? | The maximum occurs initially or on the boundary.
 SUM: Heat diffuses and smooths.
 SUM: Modes decay at rates n^{2}.
-SRC: Haberman R, Applied Partial Differential Equations (5th edn, Pearson 2013) | textbook | 2013 | https://www.pearson.com/
-SRC: Fourier J, Théorie analytique de la chaleur (Firmin Didot 1822) | textbook | 1822 | https://archive.org/
+SRC: Haberman R, Applied Partial Differential Equations (5th edn, Pearson 2013) | secondary | 2013 | https://www.pearson.com/
+SRC: Fourier J, Théorie analytique de la chaleur (Firmin Didot 1822) | secondary | 1822 | https://archive.org/
 NUM1#maths-u10-21-q1@1: With u = 3e^{−t} sin x + e^{−4t} sin 2x, find u(π/2, 1) to 4 decimal places. | 1.1036 | 0.0001 |  | sin 2x = 0 at π/2, so u = 3e^{−1} ≈ 1.1036.
 M1#maths-u10-21-q2@1: What is the long-term temperature of a rod with both ends held at 0? | 0 everywhere | The initial average | The initial maximum | It oscillates forever | It grows without limit | Each sine mode decays exponentially, so with ends held at 0 the whole rod tends to 0.
 M3#maths-u10-21-q3@2: A rod has insulated ends. What does its temperature approach? | The average of the initial temperature | Zero everywhere | The initial maximum | A linear profile | It never settles | With u_{x} = 0 at the ends, the constant (n = 0) cosine mode survives: the mean.
@@ -763,8 +763,8 @@ Q: What is the second harmonic of a 220 Hz string? | 440 Hz.
 Q: What happens to pitch if string tension is quadrupled? | It doubles (c ∝ √T).
 SUM: Waves travel at finite speed.
 SUM: Strings vibrate in harmonic modes.
-SRC: Strauss WA, Partial Differential Equations: An Introduction (2nd edn, Wiley 2008) | textbook | 2008 | https://www.wiley.com/
-SRC: Haberman R, Applied Partial Differential Equations (5th edn, Pearson 2013) | textbook | 2013 | https://www.pearson.com/
+SRC: Strauss WA, Partial Differential Equations: An Introduction (2nd edn, Wiley 2008) | secondary | 2008 | https://www.wiley.com/
+SRC: Haberman R, Applied Partial Differential Equations (5th edn, Pearson 2013) | secondary | 2013 | https://www.pearson.com/
 NUM1#maths-u10-22-q1@1: Find the fundamental frequency, in Hz, of a 0.5 m string with wave speed 330 m/s. | 330 | 0 | Hz | c/(2L) = 330/1 = 330 Hz.
 M1#maths-u10-22-q2@1: Which function solves u_{tt} = 4u_{xx}? | sin(x − 2t) | sin(x − 4t) | e^{−4t} sin x | sin x + t | sin(2x − t) | Waves move at speed c = 2, so any F(x − 2t) works.
 M2#maths-u10-22-q3@2: How does wave behaviour differ from heat diffusion? | Waves travel at finite speed and keep sharp features | Waves smooth out faster | Both have infinite speed | Heat oscillates and waves don't | They behave the same | Hyperbolic equations propagate shapes; parabolic ones diffuse them.
@@ -798,8 +798,8 @@ Q: Where does a harmonic function attain its maximum on a closed bounded region?
 Q: Which type of PDE is Laplace's equation? | Elliptic.
 SUM: Laplace's equation describes equilibrium.
 SUM: Boundary values determine the solution.
-SRC: Evans LC, Partial Differential Equations (2nd edn, American Mathematical Society 2010) | textbook | 2010 | https://bookstore.ams.org/
-SRC: Farlow SJ, Partial Differential Equations for Scientists and Engineers (Dover 1993) | textbook | 1993 | https://store.doverpublications.com/
+SRC: Evans LC, Partial Differential Equations (2nd edn, American Mathematical Society 2010) | secondary | 2010 | https://bookstore.ams.org/
+SRC: Farlow SJ, Partial Differential Equations for Scientists and Engineers (Dover 1993) | secondary | 1993 | https://store.doverpublications.com/
 NUM1#maths-u10-23-q1@1: Find u at the centre of the square, sinh(π/2)/sinh π, to 3 decimal places. | 0.199 | 0.001 |  | sinh(π/2) ≈ 2.3013 and sinh π ≈ 11.5487, ratio ≈ 0.199.
 M1#maths-u10-23-q2@1: A harmonic function on a disc has boundary values averaging 20. What is its value at the centre? | 20 | 0 | 40 | 10 | It can't be determined | The mean value property: the centre equals the average over the boundary circle.
 M2#maths-u10-23-q3@2: Why is the solution of the Dirichlet problem for Laplace's equation unique? | The difference of two solutions is harmonic with zero boundary values, so it's zero | Laplace's equation is nonlinear | Boundaries are always circles | It isn't unique | Harmonic functions are constant | By the maximum principle, a harmonic function zero on the boundary is zero inside.
@@ -832,8 +832,8 @@ Q: What is ∇^{2}(x^{2} + y^{2})? | 4.
 Q: What is Poisson's equation for gravity? | ∇^{2}Φ = 4πGρ.
 SUM: Poisson's equation adds sources.
 SUM: Particular plus harmonic fits the boundary.
-SRC: Evans LC, Partial Differential Equations (2nd edn, American Mathematical Society 2010) | textbook | 2010 | https://bookstore.ams.org/
-SRC: Griffiths DJ, Introduction to Electrodynamics (5th edn, Cambridge University Press 2023) | textbook | 2023 | https://www.cambridge.org/
+SRC: Evans LC, Partial Differential Equations (2nd edn, American Mathematical Society 2010) | secondary | 2010 | https://bookstore.ams.org/
+SRC: Griffiths DJ, Introduction to Electrodynamics (5th edn, Cambridge University Press 2023) | secondary | 2023 | https://www.cambridge.org/
 NUM1#maths-u10-24-q1@1: Using u = (r^{2} − 1)/4, find u at the centre of the disc. | -0.25 | 0.0001 |  | r = 0 gives −¼.
 M1#maths-u10-24-q2@1: Which source makes ∇^{2}φ = −ρ/ε₀ the right model? | A charge density ρ | A mass density in gravity | A heat flux | A fluid velocity | A magnetic field | It's Gauss's law for electrostatics in potential form.
 M2#maths-u10-24-q3@2: Why must ∫f equal the boundary flux for the Neumann problem ∇^{2}u = f? | The divergence theorem gives ∫∇^{2}u = ∮ ∂u/∂n | Neumann problems have no solutions | f must be zero | The boundary must be circular | It isn't required | Integrating the equation over the region turns the left side into the boundary flux.
@@ -866,8 +866,8 @@ Q: By what factor does diffusion time increase if distance is multiplied by 10? 
 Q: What is Fick's first law? | J = −D∇c.
 SUM: Diffusion spreads down gradients.
 SUM: Distance grows like √t.
-SRC: Crank J, The Mathematics of Diffusion (2nd edn, Oxford University Press 1975) | textbook | 1975 | https://global.oup.com/
-SRC: Berg HC, Random Walks in Biology (expanded edn, Princeton University Press 1993) | textbook | 1993 | https://press.princeton.edu/
+SRC: Crank J, The Mathematics of Diffusion (2nd edn, Oxford University Press 1975) | secondary | 1975 | https://global.oup.com/
+SRC: Berg HC, Random Walks in Biology (expanded edn, Princeton University Press 1993) | secondary | 1993 | https://press.princeton.edu/
 NUM1#maths-u10-25-q1@1: With D = 10^{−9} m^{2}/s, find the root-mean-square 1D displacement √(2Dt) after 100 s, in millimetres to 3 decimal places. | 0.447 | 0.001 | mm | √(2 × 10^{−9} × 100) = √(2 × 10^{−7}) ≈ 4.47 × 10^{−4} m = 0.447 mm.
 M1#maths-u10-25-q2@1: Which equation describes diffusion? | ∂c/∂t = D∇^{2}c | ∂^{2}c/∂t^{2} = D∇^{2}c | ∇^{2}c = 0 | ∂c/∂t + D∂c/∂x = 0 | ∂c/∂t = Dc | Fick's law plus conservation gives the diffusion (heat) equation.
 M2#maths-u10-25-q3@2: Why do large animals need circulatory systems rather than diffusion alone? | Diffusion time grows with distance squared, far too slow over centimetres | Diffusion stops in large bodies | Oxygen molecules are too large to move by random motion | Large animals have no gradients | They don't need them | Diffusing across centimetres would take hours.
@@ -901,8 +901,8 @@ Q: What is the Fisher–KPP wave speed? | 2√(rD).
 Q: Who proposed diffusion-driven pattern formation? | Alan Turing (1952).
 SUM: Reactions plus diffusion make waves and patterns.
 SUM: Speed scales with √(rD).
-SRC: Murray JD, Mathematical Biology II: Spatial Models and Biomedical Applications (3rd edn, Springer 2003) | textbook | 2003 | https://link.springer.com/
-SRC: Turing AM, The chemical basis of morphogenesis, Philosophical Transactions of the Royal Society B 237(641), 37 | journal | 1952 | https://doi.org/10.1098/rstb.1952.0012
+SRC: Murray JD, Mathematical Biology II: Spatial Models and Biomedical Applications (3rd edn, Springer 2003) | secondary | 2003 | https://link.springer.com/
+SRC: Turing AM, The chemical basis of morphogenesis, Philosophical Transactions of the Royal Society B 237(641), 37 | primary | 1952 | https://doi.org/10.1098/rstb.1952.0012
 NUM1#maths-u10-26-q1@1: An invasion has r = 2 per year and D = 0.5 km^{2}/year. Find the Fisher–KPP speed in km per year. | 2 | 0 | km/yr | 2√(2 × 0.5) = 2.
 M1#maths-u10-26-q2@1: Which term in u_{t} = Du_{xx} + ru(1 − u) represents local growth? | ru(1 − u) | Du_{xx} | u_{t} | D | u(1 − u) only when r = 0 | The logistic reaction term models local population growth.
 M3#maths-u10-26-q3@2: How does Turing's mechanism create patterns? | An inhibitor diffusing faster than an activator destabilises the uniform state at certain wavelengths | Diffusion always smooths patterns away | Random initial noise is frozen in place, with diffusion playing no part | Equal diffusion rates are required | Patterns come from initial conditions only | Short-range activation and long-range inhibition select a characteristic spacing.
@@ -935,8 +935,8 @@ Q: At what density is LWR traffic flow greatest? | Half the jam density.
 Q: What is a shock in a conservation law? | A moving discontinuity where characteristics collide.
 SUM: Transport equations express conservation.
 SUM: Nonlinear flux creates shocks.
-SRC: Lighthill MJ, Whitham GB, On kinematic waves II: a theory of traffic flow on long crowded roads, Proceedings of the Royal Society A 229(1178), 317 | journal | 1955 | https://doi.org/10.1098/rspa.1955.0089
-SRC: LeVeque RJ, Finite Volume Methods for Hyperbolic Problems (Cambridge University Press 2002) | textbook | 2002 | https://www.cambridge.org/
+SRC: Lighthill MJ, Whitham GB, On kinematic waves II: a theory of traffic flow on long crowded roads, Proceedings of the Royal Society A 229(1178), 317 | primary | 1955 | https://doi.org/10.1098/rspa.1955.0089
+SRC: LeVeque RJ, Finite Volume Methods for Hyperbolic Problems (Cambridge University Press 2002) | secondary | 2002 | https://www.cambridge.org/
 NUM1#maths-u10-27-q1@1: With v_{max} = 80 km/h and ρ_{max} = 150 cars/km, find the maximum flow in cars per hour. | 3000 | 0 | cars/h | v_{max}ρ_{max}/4 = 80 × 150/4 = 3,000.
 M1#maths-u10-27-q2@1: What does the conservation law u_{t} + q_{x} = 0 say? | Changes in a region come only from flux through its ends | The quantity is constant everywhere | The flux is zero | The quantity diffuses | Nothing moves | Integrating over [a, b] gives d/dt ∫u = q(a) − q(b).
 M2#maths-u10-27-q3@2: Why do traffic jams form as shocks in the LWR model? | Information from lighter traffic upstream catches up with denser traffic ahead | Drivers brake randomly | The model includes diffusion | Speed increases with density | They don't form | Characteristics move at q′(ρ), which decreases with density, so they converge.
@@ -969,8 +969,8 @@ Q: What is the solution of u_{t} + 2u_{x} = 0 with u(x, 0) = sin x? | u = sin(x 
 Q: What does the CFL condition limit? | The time step relative to the grid spacing and wave speed.
 SUM: Advection shifts profiles.
 SUM: Numerics must respect the CFL limit.
-SRC: LeVeque RJ, Finite Volume Methods for Hyperbolic Problems (Cambridge University Press 2002) | textbook | 2002 | https://www.cambridge.org/
-SRC: Courant R, Friedrichs K, Lewy H, Über die partiellen Differenzengleichungen der mathematischen Physik, Mathematische Annalen 100, 32 | journal | 1928 | https://doi.org/10.1007/BF01448839
+SRC: LeVeque RJ, Finite Volume Methods for Hyperbolic Problems (Cambridge University Press 2002) | secondary | 2002 | https://www.cambridge.org/
+SRC: Courant R, Friedrichs K, Lewy H, Über die partiellen Differenzengleichungen der mathematischen Physik, Mathematische Annalen 100, 32 | primary | 1928 | https://doi.org/10.1007/BF01448839
 NUM1#maths-u10-28-q1@1: With c = 2 and Δx = 0.1, what is the largest time step allowed by the CFL condition? | 0.05 | 0.0001 |  | Δt ≤ Δx/|c| = 0.1/2 = 0.05.
 M1#maths-u10-28-q2@1: In which direction does u_{t} − 4u_{x} = 0 move profiles? | Left, at speed 4 | Right, at speed 4 | Left, at speed ¼ | It doesn't move them | Right, at speed ¼ | The equation is u_{t} + cu_{x} = 0 with c = −4.
 M2#maths-u10-28-q3@2: Why does an upwind scheme smear a sharp step over time? | Its truncation error acts like an added diffusion term | It moves the step too fast | It violates the CFL condition | Exact solutions also smear | It doesn't smear | First-order upwinding introduces numerical diffusion proportional to Δx.
@@ -1003,8 +1003,8 @@ Q: Water flows from a 4 cm^{2} pipe at 2 m/s into a 1 cm^{2} pipe. What is its n
 Q: Is flow with Re = 100 laminar or turbulent? | Laminar.
 SUM: Fluid equations conserve mass and momentum.
 SUM: Re decides laminar or turbulent.
-SRC: Acheson DJ, Elementary Fluid Dynamics (Oxford University Press 1990) | textbook | 1990 | https://global.oup.com/
-SRC: Reynolds O, An experimental investigation of the circumstances which determine whether the motion of water shall be direct or sinuous, Philosophical Transactions of the Royal Society 174, 935 | journal | 1883 | https://doi.org/10.1098/rstl.1883.0029
+SRC: Acheson DJ, Elementary Fluid Dynamics (Oxford University Press 1990) | secondary | 1990 | https://global.oup.com/
+SRC: Reynolds O, An experimental investigation of the circumstances which determine whether the motion of water shall be direct or sinuous, Philosophical Transactions of the Royal Society 174, 935 | primary | 1883 | https://doi.org/10.1098/rstl.1883.0029
 NUM1#maths-u10-29-q1@1: Water leaves a hole 5 m below the surface of a tank. Using v = √(2gh) with g = 9.8, find v to 2 decimal places. | 9.9 | 0.01 | m/s | √(2 × 9.8 × 5) = √98 ≈ 9.90 m/s.
 M1#maths-u10-29-q2@1: By continuity, what happens to the speed of incompressible flow where a pipe narrows? | It increases | It decreases | It stays the same | It becomes zero | It reverses | A₁v₁ = A₂v₂, so smaller area means higher speed.
 M2#maths-u10-29-q3@2: Why can a small wind-tunnel model predict the flow round a full-size aircraft? | Matching the Reynolds number (and Mach number) makes the flows dynamically similar | Air behaves the same at any size | Models are always accurate | Viscosity is irrelevant | It can't | Dimensionless numbers determine the flow pattern, so equal values give similar flows.
@@ -1038,7 +1038,7 @@ Q: Which term makes the Navier–Stokes equations nonlinear? | (v · ∇)v, the 
 Q: How does Poiseuille flow rate depend on radius? | As R^{4}.
 SUM: Navier–Stokes governs viscous flow.
 SUM: Their mathematics is still incomplete.
-SRC: Batchelor GK, An Introduction to Fluid Dynamics (Cambridge University Press 1967) | textbook | 1967 | https://www.cambridge.org/
+SRC: Batchelor GK, An Introduction to Fluid Dynamics (Cambridge University Press 1967) | secondary | 1967 | https://www.cambridge.org/
 SRC: Clay Mathematics Institute, Navier–Stokes equation: Millennium Prize problem | guidance | 2000 | https://www.claymath.org/millennium/navier-stokes-equation/
 NUM1#maths-u10-30-q1@1: If a pipe's radius doubles (same pressure gradient and fluid), by what factor does Poiseuille flow increase? | 16 | 0 |  | Q ∝ R^{4}, and 2^{4} = 16.
 M1#maths-u10-30-q2@1: What does the μ∇^{2}v term represent? | Viscous forces | Pressure forces | Gravity | Acceleration | Mass conservation | Viscosity diffuses momentum, smoothing velocity differences.
@@ -1073,8 +1073,8 @@ Q: Which Maxwell equation says there are no magnetic monopoles? | ∇ · B = 0.
 Q: What is the speed of electromagnetic waves in vacuum? | c = 1/√(μ₀ε₀) ≈ 3 × 10^{8} m/s.
 SUM: Maxwell's equations unify electromagnetism.
 SUM: They predict light as a wave.
-SRC: Griffiths DJ, Introduction to Electrodynamics (5th edn, Cambridge University Press 2023) | textbook | 2023 | https://www.cambridge.org/
-SRC: Maxwell JC, A dynamical theory of the electromagnetic field, Philosophical Transactions of the Royal Society 155, 459 | journal | 1865 | https://doi.org/10.1098/rstl.1865.0008
+SRC: Griffiths DJ, Introduction to Electrodynamics (5th edn, Cambridge University Press 2023) | secondary | 2023 | https://www.cambridge.org/
+SRC: Maxwell JC, A dynamical theory of the electromagnetic field, Philosophical Transactions of the Royal Society 155, 459 | primary | 1865 | https://doi.org/10.1098/rstl.1865.0008
 NUM1#maths-u10-31-q1@1: Give c in units of 10^{8} m/s, to 3 decimal places. | 2.998 | 0.001 | 10^{8} m/s | c ≈ 2.998 × 10^{8} m/s.
 M1#maths-u10-31-q2@1: Which law explains how a generator produces voltage? | Faraday's law | Gauss's law | ∇ · B = 0 | Coulomb's law alone | Ohm's law alone | A changing magnetic flux induces a circulating electric field.
 M2#maths-u10-31-q3@2: Why was Maxwell's displacement current essential? | It made the equations consistent with charge conservation and predicted electromagnetic waves | It removed the need for Faraday's law | It explained magnetism in iron, which the other laws couldn't | It's only a historical curiosity | It made the equations nonlinear | Without it, ∇ · (∇ × B) = 0 would contradict changing charge densities.
@@ -1107,8 +1107,8 @@ Q: What does |ψ|^{2} represent? | The probability density for the particle's po
 Q: How do particle-in-a-box energies scale with n? | As n^{2}.
 SUM: Schrödinger's equation evolves quantum states.
 SUM: Energies are eigenvalues.
-SRC: Griffiths DJ, Schroeter DF, Introduction to Quantum Mechanics (3rd edn, Cambridge University Press 2018) | textbook | 2018 | https://www.cambridge.org/
-SRC: Schrödinger E, Quantisierung als Eigenwertproblem, Annalen der Physik 384(4), 361 | journal | 1926 | https://doi.org/10.1002/andp.19263840404
+SRC: Griffiths DJ, Schroeter DF, Introduction to Quantum Mechanics (3rd edn, Cambridge University Press 2018) | secondary | 2018 | https://www.cambridge.org/
+SRC: Schrödinger E, Quantisierung als Eigenwertproblem, Annalen der Physik 384(4), 361 | primary | 1926 | https://doi.org/10.1002/andp.19263840404
 NUM1#maths-u10-32-q1@1: For a particle in a box, find E₃/E₁. | 9 | 0 |  | E_{n} ∝ n^{2}, so E₃/E₁ = 9.
 M1#maths-u10-32-q2@1: Why is the Schrödinger equation's linearity important? | Superpositions of solutions are also solutions | It makes all energies equal | It removes the need for boundary conditions | It means particles move in straight lines | It isn't linear | Linearity underlies superposition and interference in quantum mechanics.
 M2#maths-u10-32-q3@2: Why can't a particle in a box have zero energy? | The zero-energy solution is identically zero, which can't be normalised | Boxes always add energy | Zero isn't an eigenvalue of any operator | Energy is always negative | Quantum particles always carry an extra unit of rest energy | E = 0 gives φ = 0, not a valid state; the ground state has E₁ > 0.
@@ -1144,8 +1144,8 @@ Q: What is the order of RK4? | Fourth order.
 Q: What kind of method suits stiff equations? | Implicit methods, such as backward Euler.
 SUM: Numerical solvers step through time.
 SUM: Accuracy and stability both matter.
-SRC: Iserles A, A First Course in the Numerical Analysis of Differential Equations (2nd edn, Cambridge University Press 2009) | textbook | 2009 | https://www.cambridge.org/
-SRC: Burden RL, Faires JD, Burden AM, Numerical Analysis (10th edn, Cengage 2016) | textbook | 2016 | https://www.cengage.co.uk/
+SRC: Iserles A, A First Course in the Numerical Analysis of Differential Equations (2nd edn, Cambridge University Press 2009) | secondary | 2009 | https://www.cambridge.org/
+SRC: Burden RL, Faires JD, Burden AM, Numerical Analysis (10th edn, Cengage 2016) | secondary | 2016 | https://www.cengage.co.uk/
 NUM1#maths-u10-33-q1@1: One Euler step of size 0.1 for y′ = 2y from y(0) = 1 gives what value? | 1.2 | 0.0001 |  | y₁ = 1 + 0.1 × 2 × 1 = 1.2.
 M1#maths-u10-33-q2@1: Halving the step size in RK4 reduces the global error by roughly what factor? | 16 | 2 | 4 | 8 | 32 | RK4 is fourth order, so halving h multiplies the error by (½)^{4} = 1/16.
 M2#maths-u10-33-q3@2: Why does an explicit method struggle with a stiff equation? | Stability forces tiny steps set by the fastest decaying component | Stiff equations have no solutions | Explicit methods can't handle systems | The solution oscillates wildly | It doesn't struggle | Fast-decaying modes impose a step limit long after they've vanished.
@@ -1180,8 +1180,8 @@ Q: What does the method of lines leave you with? | A system of ODEs in time.
 Q: Is Crank–Nicolson stable for any time step on the heat equation? | Yes, it's unconditionally stable.
 SUM: Numerical PDEs build algebraic systems.
 SUM: Stability is essential.
-SRC: Morton KW, Mayers DF, Numerical Solution of Partial Differential Equations (2nd edn, Cambridge University Press 2005) | textbook | 2005 | https://www.cambridge.org/
-SRC: LeVeque RJ, Finite Difference Methods for Ordinary and Partial Differential Equations (SIAM 2007) | textbook | 2007 | https://epubs.siam.org/
+SRC: Morton KW, Mayers DF, Numerical Solution of Partial Differential Equations (2nd edn, Cambridge University Press 2005) | secondary | 2005 | https://www.cambridge.org/
+SRC: LeVeque RJ, Finite Difference Methods for Ordinary and Partial Differential Equations (SIAM 2007) | secondary | 2007 | https://epubs.siam.org/
 NUM1#maths-u10-34-q1@1: With k = 2 and Δx = 0.2, what is the largest stable Δt for the explicit heat scheme? | 0.01 | 0.0001 |  | Δt ≤ Δx^{2}/(2k) = 0.04/4 = 0.01.
 M1#maths-u10-34-q2@1: Which method suits a complicated 3D engine part best? | Finite elements on an unstructured mesh | Finite differences on a square grid | A Fourier spectral method | Euler's method alone | Separation of variables | Unstructured element meshes fit irregular geometry and can be refined where needed.
 M2#maths-u10-34-q3@2: What does the Lax equivalence theorem say? | For consistent schemes on well-posed linear problems, stability ⇔ convergence | All schemes converge | Stability is irrelevant | Implicit schemes are always wrong | Consistency implies stability | It's the basic guarantee linking stability to convergence.
@@ -1214,8 +1214,8 @@ Q: What is the error order of the central difference for f′? | O(h^{2}).
 Q: What kind of linear system does a 1D second-order BVP give? | A tridiagonal system.
 SUM: Differences approximate derivatives.
 SUM: Central differences are more accurate.
-SRC: LeVeque RJ, Finite Difference Methods for Ordinary and Partial Differential Equations (SIAM 2007) | textbook | 2007 | https://epubs.siam.org/
-SRC: Burden RL, Faires JD, Burden AM, Numerical Analysis (10th edn, Cengage 2016) | textbook | 2016 | https://www.cengage.co.uk/
+SRC: LeVeque RJ, Finite Difference Methods for Ordinary and Partial Differential Equations (SIAM 2007) | secondary | 2007 | https://epubs.siam.org/
+SRC: Burden RL, Faires JD, Burden AM, Numerical Analysis (10th edn, Cengage 2016) | secondary | 2016 | https://www.cengage.co.uk/
 NUM1#maths-u10-35-q1@1: Use the second difference with h = 0.1 to approximate f″(1) for f = x^{3}. | 6 | 0.0001 |  | (1.331 − 2 + 0.729)/0.01 = 6, exact because the error depends on the fourth derivative.
 M1#maths-u10-35-q2@1: Which formula approximates f′(x) with second-order accuracy? | (f(x + h) − f(x − h))/(2h) | (f(x + h) − f(x))/h | (f(x) − f(x − h))/h | f(x + h)/h | (f(x + 2h) − f(x))/h | Odd error terms cancel in the central difference.
 M2#maths-u10-35-q3@2: Why does making h tiny eventually increase the error of a difference formula? | Subtracting nearly equal values magnifies rounding error | Taylor series stop working | Derivatives become infinite | The formula changes order | It doesn't | Truncation error falls with h but rounding error grows like ε/h.
@@ -1248,8 +1248,8 @@ Q: What does integration by parts achieve in the weak form? | It moves a derivat
 Q: What are the typical basis functions in linear FEM? | Hat (tent) functions.
 SUM: FEM builds solutions from elements.
 SUM: It fits complex geometry.
-SRC: Strang G, Fix G, An Analysis of the Finite Element Method (2nd edn, Wellesley-Cambridge Press 2008) | textbook | 2008 | https://math.mit.edu/~gs/
-SRC: Johnson C, Numerical Solution of Partial Differential Equations by the Finite Element Method (Dover 2009) | textbook | 2009 | https://store.doverpublications.com/
+SRC: Strang G, Fix G, An Analysis of the Finite Element Method (2nd edn, Wellesley-Cambridge Press 2008) | secondary | 2008 | https://math.mit.edu/~gs/
+SRC: Johnson C, Numerical Solution of Partial Differential Equations by the Finite Element Method (Dover 2009) | secondary | 2009 | https://store.doverpublications.com/
 NUM1#maths-u10-36-q1@1: In the two-element example, find the nodal value u₁. | 0.125 | 0.0001 |  | 4u₁ = 0.5 gives u₁ = 0.125.
 M1#maths-u10-36-q2@1: Why is the finite element method popular in structural engineering? | Element meshes fit complex shapes and refine where stresses are high | It needs no linear algebra | It only works on rectangles | It's exact for every problem | It avoids boundary conditions | Flexible meshes and solid theory suit real geometries.
 M2#maths-u10-36-q3@2: What is the Galerkin method? | Choosing the approximate solution so the residual is orthogonal to the same basis functions | Guessing the solution at random | Using finite differences on a grid | Solving the strong form exactly | Ignoring the boundary | Test and trial functions come from the same space.
@@ -1282,8 +1282,8 @@ Q: Why do finite volume schemes conserve quantities exactly? | Each face flux le
 Q: What do limiters do? | Prevent spurious oscillations near sharp gradients.
 SUM: Finite volumes balance fluxes.
 SUM: They conserve exactly and handle shocks.
-SRC: Versteeg HK, Malalasekera W, An Introduction to Computational Fluid Dynamics: The Finite Volume Method (2nd edn, Pearson 2007) | textbook | 2007 | https://www.pearson.com/
-SRC: LeVeque RJ, Finite Volume Methods for Hyperbolic Problems (Cambridge University Press 2002) | textbook | 2002 | https://www.cambridge.org/
+SRC: Versteeg HK, Malalasekera W, An Introduction to Computational Fluid Dynamics: The Finite Volume Method (2nd edn, Pearson 2007) | secondary | 2007 | https://www.pearson.com/
+SRC: LeVeque RJ, Finite Volume Methods for Hyperbolic Problems (Cambridge University Press 2002) | secondary | 2002 | https://www.cambridge.org/
 NUM1#maths-u10-37-q1@1: A cell average is 5, Δt/Δx = 0.2, F_{i−½} = 4 and F_{i+½} = 2. Find the new average. | 5.4 | 0.0001 |  | 5 − 0.2 × (2 − 4) = 5 + 0.4 = 5.4.
 M1#maths-u10-37-q2@1: Which field relies most heavily on finite volume methods? | Computational fluid dynamics | Number theory | Graph colouring | Cryptography | Combinatorics | Conservation of mass, momentum and energy makes them natural for fluids.
 M2#maths-u10-37-q3@2: Why must schemes for shock problems be conservative? | Otherwise shocks travel at the wrong speed | Shocks don't exist numerically | Conservative schemes are always faster | Non-conservative schemes are unstable for smooth flows | It doesn't matter | The Lax–Wendroff theorem: convergent conservative schemes give correct weak solutions.
@@ -1317,8 +1317,8 @@ Q: What does differentiation become in Fourier space? | Multiplication by ik.
 Q: Why use Chebyshev points rather than equally spaced points? | To avoid Runge's oscillations near the ends.
 SUM: Spectral methods use global smooth bases.
 SUM: Smooth problems converge exponentially.
-SRC: Trefethen LN, Spectral Methods in MATLAB (SIAM 2000) | textbook | 2000 | https://people.maths.ox.ac.uk/trefethen/spectral.html
-SRC: Boyd JP, Chebyshev and Fourier Spectral Methods (2nd edn, Dover 2001) | textbook | 2001 | https://store.doverpublications.com/
+SRC: Trefethen LN, Spectral Methods in MATLAB (SIAM 2000) | secondary | 2000 | https://people.maths.ox.ac.uk/trefethen/spectral.html
+SRC: Boyd JP, Chebyshev and Fourier Spectral Methods (2nd edn, Dover 2001) | secondary | 2001 | https://store.doverpublications.com/
 NUM1#maths-u10-38-q1@1: Find the Chebyshev point x₁ = cos(π/4) for N = 4, to 4 decimal places. | 0.7071 | 0.0001 |  | cos(π/4) = √2/2 ≈ 0.7071.
 M1#maths-u10-38-q2@1: For a very smooth periodic solution, which method usually converges fastest as N grows? | A Fourier spectral method | A first-order finite difference scheme | Euler's method | A finite volume upwind scheme | Linear finite elements | Spectral methods converge exponentially for smooth periodic functions.
 M2#maths-u10-38-q3@2: What limits spectral methods for problems with shocks? | Gibbs oscillations near discontinuities slow convergence | They can't represent smooth functions | They need unstructured meshes | They don't use the FFT | Nothing limits them | Global smooth bases struggle to represent jumps.
@@ -1351,8 +1351,8 @@ Q: What is the non-zero fixed point of the logistic map? | 1 − 1/r.
 Q: At what r does period doubling begin in the logistic map? | r = 3.
 SUM: Dynamical systems study long-term evolution.
 SUM: Maps and flows have different stability tests.
-SRC: Strogatz SH, Nonlinear Dynamics and Chaos (2nd edn, CRC Press 2015) | textbook | 2015 | https://www.routledge.com/
-SRC: May RM, Simple mathematical models with very complicated dynamics, Nature 261, 459 | journal | 1976 | https://doi.org/10.1038/261459a0
+SRC: Strogatz SH, Nonlinear Dynamics and Chaos (2nd edn, CRC Press 2015) | secondary | 2015 | https://www.routledge.com/
+SRC: May RM, Simple mathematical models with very complicated dynamics, Nature 261, 459 | primary | 1976 | https://doi.org/10.1038/261459a0
 NUM1#maths-u10-39-q1@1: Find the non-zero fixed point of the logistic map with r = 3.2, to 4 decimal places. | 0.6875 | 0.0001 |  | 1 − 1/3.2 = 0.6875.
 M1#maths-u10-39-q2@1: When is a fixed point x* of a map stable? | When |f′(x*)| < 1 | When f′(x*) < 0 | When f(x*) = 0 | When |f′(x*)| > 1 | Always | Small perturbations are multiplied by f′(x*) each step.
 M2#maths-u10-39-q3@2: Why can't trajectories of an autonomous flow cross in phase space? | Uniqueness of solutions means each point has one future | Flows always move in straight lines | Phase space is one-dimensional | Crossing would require a map | They can | Two trajectories through the same point would violate uniqueness.
@@ -1385,8 +1385,8 @@ Q: What does Hartman–Grobman guarantee? | Near hyperbolic equilibria, nonlinea
 Q: What must a Lyapunov function's derivative satisfy for stability? | V′ ≤ 0 along trajectories.
 SUM: Eigenvalues decide local stability.
 SUM: Lyapunov functions prove it directly.
-SRC: Khalil HK, Nonlinear Systems (3rd edn, Prentice Hall 2002) | textbook | 2002 | https://www.pearson.com/
-SRC: Strogatz SH, Nonlinear Dynamics and Chaos (2nd edn, CRC Press 2015) | textbook | 2015 | https://www.routledge.com/
+SRC: Khalil HK, Nonlinear Systems (3rd edn, Prentice Hall 2002) | secondary | 2002 | https://www.pearson.com/
+SRC: Strogatz SH, Nonlinear Dynamics and Chaos (2nd edn, CRC Press 2015) | secondary | 2015 | https://www.routledge.com/
 NUM1#maths-u10-40-q1@1: For the Jacobian [[0, 1], [−1, −1]], find the real part of the eigenvalues. | -0.5 | 0.0001 |  | λ = (−1 ± i√3)/2, so the real part is −0.5.
 M1#maths-u10-40-q2@1: Eigenvalues at an equilibrium are −2 and 3. What is it? | An unstable saddle | A stable node | A stable spiral | A centre | An unstable spiral | One positive eigenvalue makes it unstable; opposite signs give a saddle.
 M3#maths-u10-40-q3@2: The linearisation at an equilibrium has eigenvalues ±i. What can you conclude about the nonlinear system? | Nothing definite: it could be a centre or a slow spiral either way | It's certainly a centre | It's certainly stable | It's certainly unstable | It's a saddle | Purely imaginary eigenvalues are non-hyperbolic, so nonlinear terms decide.
@@ -1418,8 +1418,8 @@ Q: Which bifurcation creates a limit cycle from an equilibrium? | A Hopf bifurca
 Q: What is hysteresis? | The system doesn't return the same way when the parameter is reversed.
 SUM: Bifurcations change behaviour qualitatively.
 SUM: They underlie tipping points.
-SRC: Kuznetsov YA, Elements of Applied Bifurcation Theory (3rd edn, Springer 2004) | textbook | 2004 | https://link.springer.com/
-SRC: Strogatz SH, Nonlinear Dynamics and Chaos (2nd edn, CRC Press 2015) | textbook | 2015 | https://www.routledge.com/
+SRC: Kuznetsov YA, Elements of Applied Bifurcation Theory (3rd edn, Springer 2004) | secondary | 2004 | https://link.springer.com/
+SRC: Strogatz SH, Nonlinear Dynamics and Chaos (2nd edn, CRC Press 2015) | secondary | 2015 | https://www.routledge.com/
 NUM1#maths-u10-41-q1@1: For x′ = r + x^{2} with r = −4, find the stable equilibrium. | -2 | 0 |  | Equilibria ±2; f′(x) = 2x is negative at −2.
 M1#maths-u10-41-q2@1: Which normal form shows a pitchfork bifurcation? | x′ = rx − x^{3} | x′ = r + x^{2} | x′ = rx − x^{2} | x′ = r − x | x′ = x^{2} | Symmetric under x → −x, one equilibrium splits into three as r passes 0.
 M2#maths-u10-41-q3@2: Why do saddle-node bifurcations make tipping points dangerous? | Past the critical value the equilibrium vanishes, causing an abrupt jump that may not reverse | They're always reversible | They slow everything down | They create stable cycles only | Equilibria multiply without limit, making the system unpredictable | Hysteresis means undoing the change needn't restore the old state.
@@ -1452,8 +1452,8 @@ Q: What sign of Lyapunov exponent indicates chaos? | Positive.
 Q: Who discovered sensitive dependence in a weather model in 1963? | Edward Lorenz.
 SUM: Chaos is deterministic unpredictability.
 SUM: Errors grow exponentially.
-SRC: Lorenz EN, Deterministic nonperiodic flow, Journal of the Atmospheric Sciences 20(2), 130 | journal | 1963 | https://doi.org/10.1175/1520-0469(1963)020<0130:DNF>2.0.CO;2
-SRC: Feigenbaum MJ, Quantitative universality for a class of nonlinear transformations, Journal of Statistical Physics 19, 25 | journal | 1978 | https://doi.org/10.1007/BF01020332
+SRC: Lorenz EN, Deterministic nonperiodic flow, Journal of the Atmospheric Sciences 20(2), 130 | primary | 1963 | https://doi.org/10.1175/1520-0469(1963)020<0130:DNF>2.0.CO;2
+SRC: Feigenbaum MJ, Quantitative universality for a class of nonlinear transformations, Journal of Statistical Physics 19, 25 | primary | 1978 | https://doi.org/10.1007/BF01020332
 NUM1#maths-u10-42-q1@1: An error of 10^{−3} doubles every hour. After how many hours does it exceed 1 (to the nearest whole hour)? | 10 | 0 | hours | 2^{10} = 1,024 > 1,000, so about 10 hours.
 M1#maths-u10-42-q2@1: What is the minimum dimension for chaos in an autonomous continuous flow? | 3 | 1 | 2 | 4 | 10 | The Poincaré–Bendixson theorem rules out chaos in planar flows.
 M3#maths-u10-42-q3@2: Improving initial measurements by a factor of 1,000 extends a chaotic forecast how much? | By a fixed, modest amount (log of 1,000 over the growth rate) | By a factor of 1,000 | Indefinitely | Not at all | By a factor of 3 | Separation grows like e^{λt}, so the horizon grows like (ln 1,000)/λ.
@@ -1486,8 +1486,8 @@ Q: What two effects balance in a soliton? | Nonlinear steepening and dispersion.
 Q: Who first observed a soliton? | John Scott Russell, on the Union Canal in 1834.
 SUM: Solitons keep their shape.
 SUM: They pass through each other.
-SRC: Drazin PG, Johnson RS, Solitons: An Introduction (Cambridge University Press 1989) | textbook | 1989 | https://www.cambridge.org/
-SRC: Zabusky NJ, Kruskal MD, Interaction of "solitons" in a collisionless plasma and the recurrence of initial states, Physical Review Letters 15(6), 240 | journal | 1965 | https://doi.org/10.1103/PhysRevLett.15.240
+SRC: Drazin PG, Johnson RS, Solitons: An Introduction (Cambridge University Press 1989) | secondary | 1989 | https://www.cambridge.org/
+SRC: Zabusky NJ, Kruskal MD, Interaction of "solitons" in a collisionless plasma and the recurrence of initial states, Physical Review Letters 15(6), 240 | primary | 1965 | https://doi.org/10.1103/PhysRevLett.15.240
 NUM1#maths-u10-43-q1@1: A KdV soliton has speed 10. What is its amplitude? | 5 | 0 |  | Amplitude = c/2 = 5.
 M1#maths-u10-43-q2@1: What happens when two KdV solitons collide? | They pass through each other and keep their shapes, with a phase shift | They merge into one larger wave | They cancel each other out | They break into many small waves | Both are destroyed, leaving a train of small linear ripples | Integrability means solitons interact elastically.
 M2#maths-u10-43-q3@2: Why are solitons useful in optical fibre communication? | They don't spread as they travel, so pulses stay distinct | They travel faster than light | They need no power | They avoid all losses | They're easier to generate than any other pulse | Nonlinearity balances dispersion, keeping pulses compact over long distances.
@@ -1519,8 +1519,8 @@ Q: What extra data does a DDE need compared with an ODE? | A history function ov
 Q: When does Hutchinson's delayed logistic equation oscillate? | When rτ > π/2.
 SUM: Delays add memory.
 SUM: They often create oscillations.
-SRC: Smith H, An Introduction to Delay Differential Equations with Applications to the Life Sciences (Springer 2011) | textbook | 2011 | https://link.springer.com/
-SRC: Mackey MC, Glass L, Oscillation and chaos in physiological control systems, Science 197(4300), 287 | journal | 1977 | https://doi.org/10.1126/science.267326
+SRC: Smith H, An Introduction to Delay Differential Equations with Applications to the Life Sciences (Springer 2011) | secondary | 2011 | https://link.springer.com/
+SRC: Mackey MC, Glass L, Oscillation and chaos in physiological control systems, Science 197(4300), 287 | primary | 1977 | https://doi.org/10.1126/science.267326
 NUM1#maths-u10-44-q1@1: In the example, find x(2). | -0.5 | 0.0001 |  | x(2) = −(2 × 2 − 2^{2}/2) + 1.5 = −2 + 1.5 = −0.5.
 M1#maths-u10-44-q2@1: Why are DDEs called infinite-dimensional? | Their state is a whole function over the delay interval | They have infinitely many variables written out | They never have solutions | They involve infinite delays | They aren't | Predicting the future needs the entire recent history, a function.
 M2#maths-u10-44-q3@2: For N′ = rN(1 − N(t − τ)/K), what happens as the delay τ increases past π/(2r)? | The equilibrium K loses stability and oscillations appear | Growth stops | The population becomes negative | Nothing changes | The equation becomes linear | The delayed logistic undergoes a Hopf bifurcation at rτ = π/2.
@@ -1554,8 +1554,8 @@ Q: What is the variance of W_{t}? | t.
 Q: What extra term does Itô's lemma add? | ½f″b^{2} dt.
 SUM: SDEs model noisy dynamics.
 SUM: Itô calculus handles rough paths.
-SRC: Øksendal B, Stochastic Differential Equations (6th edn, Springer 2003) | textbook | 2003 | https://link.springer.com/
-SRC: Higham DJ, An algorithmic introduction to numerical simulation of stochastic differential equations, SIAM Review 43(3), 525 | journal | 2001 | https://doi.org/10.1137/S0036144500378302
+SRC: Øksendal B, Stochastic Differential Equations (6th edn, Springer 2003) | secondary | 2003 | https://link.springer.com/
+SRC: Higham DJ, An algorithmic introduction to numerical simulation of stochastic differential equations, SIAM Review 43(3), 525 | primary | 2001 | https://doi.org/10.1137/S0036144500378302
 NUM1#maths-u10-45-q1@1: Using the example, find E(S₁) to 2 decimal places. | 108.33 | 0.01 |  | 100e^{0.08} ≈ 108.33.
 M1#maths-u10-45-q2@1: Which is the Euler–Maruyama step for dX = a dt + b dW? | X + aΔt + b√Δt Z with Z ~ N(0, 1) | X + aΔt + bΔt Z | X + aΔt only | X + b Z only | X × e^{aΔt} | Brownian increments over Δt have standard deviation √Δt.
 M3#maths-u10-45-q3@2: Why does Itô's lemma include the term ½f″b^{2}? | Brownian increments satisfy (dW)^{2} = dt, so second-order terms don't vanish | It's a rounding correction | Ordinary calculus always has it | Because b is constant | It corrects rounding errors in numerical simulations of noise | Quadratic variation makes the second-order Taylor term first order in dt.
@@ -1588,8 +1588,8 @@ Q: What does E_{α}(z) reduce to when α = 1? | e^{z}.
 Q: What is subdiffusion? | Mean squared displacement growing like t^{α} with α < 1.
 SUM: Fractional equations model memory.
 SUM: Their decay is slower than exponential.
-SRC: Podlubny I, Fractional Differential Equations (Academic Press 1999) | textbook | 1999 | https://www.sciencedirect.com/
-SRC: Metzler R, Klafter J, The random walk's guide to anomalous diffusion: a fractional dynamics approach, Physics Reports 339(1), 1 | journal | 2000 | https://doi.org/10.1016/S0370-1573(00)00070-3
+SRC: Podlubny I, Fractional Differential Equations (Academic Press 1999) | secondary | 1999 | https://www.sciencedirect.com/
+SRC: Metzler R, Klafter J, The random walk's guide to anomalous diffusion: a fractional dynamics approach, Physics Reports 339(1), 1 | primary | 2000 | https://doi.org/10.1016/S0370-1573(00)00070-3
 NUM1#maths-u10-46-q1@1: For subdiffusion with MSD ∝ t^{0.5}, by what factor does MSD increase when time is quadrupled? | 2 | 0 |  | 4^{0.5} = 2 (normal diffusion would give 4).
 M1#maths-u10-46-q2@1: Which function solves fractional relaxation D^{α}y = −λy? | A Mittag-Leffler function | A pure exponential | A sine wave | A polynomial | A logarithm | y = y₀E_{α}(−λt^{α}), which is exponential only when α = 1.
 M2#maths-u10-46-q3@2: Why are fractional equations expensive to solve numerically? | Each step depends on the entire past history | They have no solutions | They need complex numbers | They're always stiff | They aren't expensive | Non-local operators couple every time step to all earlier ones.

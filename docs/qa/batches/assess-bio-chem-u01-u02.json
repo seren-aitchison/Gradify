@@ -1,0 +1,1392 @@
+{
+ "task": "assess-bio-chem-u01-u02",
+ "on": "2026-11-19",
+ "files": [
+  "kit/courses/biology/notes/u01.js",
+  "kit/courses/biology/notes/u02.js",
+  "kit/courses/chemistry/notes/u01.js",
+  "kit/courses/chemistry/notes/u02.js"
+ ],
+ "lessons": [
+  {
+   "course": "biology",
+   "lesson": "u01-01",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"A biologist studies how the population\"",
+    "distractors lengthened to remove length bias: \"Which example best shows how biology's levels connect?\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u01-02",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"A new particle found in a hot spring\"",
+    "distractors lengthened to remove length bias: \"Which pair of observations would most strongly\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u01-03",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "second source added: OpenStax, Concepts of Biology, section 1.1 \"Themes and Concepts of Biology\"",
+    "distractors lengthened to remove length bias: \"Why can't the behaviour of an ecosystem\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u01-04",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"A sample releases CO₂ when given nutrients\"",
+    "distractors lengthened to remove length bias: \"Why did the Viking life-detection results\"",
+    "existing questions linked to objectives (@n)",
+    "new M2 question added: \"A tardigrade has been dried out for months and shows no detectable met\""
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u01-05",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Birds are now classified within the reptile clade.\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u01-06",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"What does the finding that archaeal RNA polymerase\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u01-07",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"DNA studies show fungi are more closely related\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u01-08",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"In science, a theory is…\"",
+    "distractors lengthened to remove length bias: \"In Pasteur's experiment, what was the purpose\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u01-09",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Which is a null hypothesis?\"",
+    "distractors lengthened to remove length bias: \"A student's hypothesis is that caffeine increases\"",
+    "distractors lengthened to remove length bias: \"A test gives p = 0.30\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u01-10",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "existing questions linked to objectives (@n)",
+    "new M2 question added: \"A student measures the effect of temperature on enzyme activity with o\""
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u01-11",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"A drug trial gives one group the drug\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u01-12",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Students always read a measuring cylinder from above\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u01-13",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Counting oxygen bubbles from pondweed\"",
+    "distractors lengthened to remove length bias: \"A study finds that people who drink more coffee\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u01-14",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Two organelles 50 nm apart appear as one blurred spot\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "Second source 'Royal Society of Biology, Biological Nomenclature, 4th edition (2009)' left as it is; the 2009 4th edition was issued under the Institute of Biology / Society of Biology name, so the publisher name may need checking."
+    }
+   ]
+  },
+  {
+   "course": "biology",
+   "lesson": "u01-15",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "second source added: OpenStax, College Physics 2e, section 1.2 \"Physical Quantities and Units\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u01-16",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "second source added: OpenStax, Chemistry 2e, section 1.5 \"Measurement Uncertainty, Accuracy, and Precision\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u01-17",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"A curve of product mass against time flattens\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u01-18",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u01-19",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"In a mark–release–recapture study the marks make\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u01-20",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Biological reasoning",
+    "evidence status: contested",
+    "distractors lengthened to remove length bias: \"A study wants to use blood samples collected years ago\"",
+    "existing questions linked to objectives (@n)",
+    "new M2 question added: \"A volunteer in a diet study decides halfway through that she no longer\""
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-01",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"A student says a light microscope at ×2000\"",
+    "distractors lengthened to remove length bias: \"Which observation would most directly challenge the third principle\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-02",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "second source added: OpenStax, Biology 2e, section 22.2 \"Structure of Prokaryotes: Bacteria and Archaea\"",
+    "distractors lengthened to remove length bias: \"Why are prokaryotic cells almost never larger\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-03",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"An organism is single-celled, has a nucleus\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-04",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"A cell secretes large amounts of protein hormone.\"",
+    "distractors lengthened to remove length bias: \"White blood cells can engulf bacteria but plant cells cannot.\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-05",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "second source added: OpenStax, Concepts of Biology, section 3.3 \"Eukaryotic Cells\"",
+    "distractors lengthened to remove length bias: \"A cell from a carrot root has a cell wall\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-06",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "second source added: OpenStax, Microbiology, section 5.3 \"Fungi\"",
+    "distractors lengthened to remove length bias: \"Why does a mycelium suit a fungus's way of feeding?\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-07",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"A bacterium stains pink after a Gram stain.\"",
+    "distractors lengthened to remove length bias: \"Penicillin kills actively dividing bacteria but has little effect\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": [
+    {
+     "class": "error-fixed",
+     "note": "OpenStax source link was broken (404): .../pages/22-2-structure-of-prokaryotes; corrected to .../pages/22-2-structure-of-prokaryotes-bacteria-and-archaea and the section title to \"Structure of Prokaryotes: Bacteria and Archaea\" (checked on openstax.org)."
+    }
+   ]
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-08",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "second source added: OpenStax, Concepts of Biology, section 3.3 \"Eukaryotic Cells\"",
+    "distractors lengthened to remove length bias: \"Cells lining the stomach secrete a lot of enzyme\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-09",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"What are histones?\"",
+    "distractors lengthened to remove length bias: \"Why does a mature mammalian red blood cell have a limited lifespan\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "M2#biology-u02-09-q5 (\"What is made in the nucleolus?\") duplicates a flashcard in the same lesson; left unchanged."
+    }
+   ]
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-10",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"A poison blocks the electron transport chain.\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-11",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "second source added: OpenStax, Biology 2e, section 8.2 \"The Light-Dependent Reactions of Photosynthesis\"",
+    "distractors lengthened to remove length bias: \"Where do the light-dependent reactions of photosynthesis take place?\"",
+    "distractors lengthened to remove length bias: \"Palisade cells have far more chloroplasts\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "M2#biology-u02-11-q5 (\"In which part of a chloroplast are the light-dependent reactions?\") asks the same thing as M1#biology-u02-11-q1; left in place because ids are permanent, but one could be reworded to test a different point."
+    }
+   ]
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-12",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Tetracycline binds to the 30S ribosomal subunit.\"",
+    "distractors lengthened to remove length bias: \"Some antibiotics that act on bacterial ribosomes cause side effects\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-13",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "second source added: Alberts B. et al., Molecular Biology of the Cell, 6th edition, chapter 12 \"Intracellular Compartments and Protein Sorting\"",
+    "distractors lengthened to remove length bias: \"Which cell would have the most smooth ER?\"",
+    "distractors lengthened to remove length bias: \"Regular heavy drinking increases the amount of smooth ER\"",
+    "distractors lengthened to remove length bias: \"A mutation causes a secreted protein to fold incorrectly.\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-14",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"What is the main function of the Golgi apparatus?\"",
+    "distractors lengthened to remove length bias: \"In I-cell disease, lysosomal enzymes are found in the blood\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-15",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"What is autophagy?\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-16",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "second source added: Alberts B. et al., Molecular Biology of the Cell, 6th edition, chapter 16 \"The Cytoskeleton\"",
+    "distractors lengthened to remove length bias: \"People with primary ciliary dyskinesia\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-17",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "second source added: Alberts B. et al., Molecular Biology of the Cell, 6th edition, chapter 10 \"Membrane Structure\"",
+    "distractors lengthened to remove length bias: \"Why can a mitochondrion make ATP only when its inner membrane\"",
+    "distractors lengthened to remove length bias: \"A cell is placed in a solution containing a dye\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": [
+    {
+     "class": "curriculum-dependent",
+     "note": "Bound in kit/curriculum/mappings/lessons.js (u02-17 to u02-23): assessment added and a second source, teaching content unchanged; the content hash will change and needs re-confirmation."
+    }
+   ]
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-18",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"In a famous experiment, a mouse cell and a human cell were fused\"",
+    "distractors lengthened to remove length bias: \"Bacteria grown at low temperature make membranes\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": [
+    {
+     "class": "curriculum-dependent",
+     "note": "Bound in kit/curriculum/mappings/lessons.js (u02-17 to u02-23): assessment added and a second source, teaching content unchanged; the content hash will change and needs re-confirmation."
+    }
+   ]
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-19",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "second source added: Alberts B. et al., Molecular Biology of the Cell, 6th edition, chapter 11 \"Membrane Transport of Small Molecules and the Electrical Properties of Membranes\"",
+    "distractors lengthened to remove length bias: \"Steroid hormones such as testosterone act on receptors inside cells\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": [
+    {
+     "class": "curriculum-dependent",
+     "note": "Bound in kit/curriculum/mappings/lessons.js (u02-17 to u02-23): assessment added and a second source, teaching content unchanged; the content hash will change and needs re-confirmation."
+    }
+   ]
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-20",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "second source added: OpenStax, Biology 2e, section 39.1 \"Systems of Gas Exchange\"",
+    "distractors lengthened to remove length bias: \"In emphysema, alveolar walls break down\"",
+    "distractors lengthened to remove length bias: \"Why are single-celled organisms able to rely on diffusion\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": [
+    {
+     "class": "curriculum-dependent",
+     "note": "Bound in kit/curriculum/mappings/lessons.js (u02-17 to u02-23): assessment added and a second source, teaching content unchanged; the content hash will change and needs re-confirmation."
+    }
+   ]
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-21",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Intravenous drips use saline of about 0.9%\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": [
+    {
+     "class": "curriculum-dependent",
+     "note": "Bound in kit/curriculum/mappings/lessons.js (u02-17 to u02-23): assessment added and a second source, teaching content unchanged; the content hash will change and needs re-confirmation."
+    }
+   ]
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-22",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "second source added: Alberts B. et al., Molecular Biology of the Cell, 6th edition, chapter 11 \"Membrane Transport of Small Molecules and the Electrical Properties of Membranes\"",
+    "distractors lengthened to remove length bias: \"Which statement about facilitated diffusion is correct?\"",
+    "distractors lengthened to remove length bias: \"A graph of uptake rate against external glucose concentration\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": [
+    {
+     "class": "curriculum-dependent",
+     "note": "Bound in kit/curriculum/mappings/lessons.js (u02-17 to u02-23): assessment added and a second source, teaching content unchanged; the content hash will change and needs re-confirmation."
+    }
+   ]
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-23",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Root hair cells absorb nitrate ions from soil\"",
+    "distractors lengthened to remove length bias: \"Ouabain blocks the Na⁺/K⁺ pump.\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": [
+    {
+     "class": "curriculum-dependent",
+     "note": "Bound in kit/curriculum/mappings/lessons.js (u02-17 to u02-23): assessment added and a second source, teaching content unchanged; the content hash will change and needs re-confirmation."
+    }
+   ]
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-24",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"People with familial hypercholesterolaemia\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-25",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "second source added: OpenStax, Biology 2e, section 30.1 \"The Plant Body\"",
+    "distractors lengthened to remove length bias: \"Cells lining the small intestine have microvilli\"",
+    "distractors lengthened to remove length bias: \"Why can severe damage to the brain's neurons leave lasting effects\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-26",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Biological reasoning",
+    "evidence status: contested",
+    "distractors lengthened to remove length bias: \"Which cells are pluripotent?\"",
+    "distractors lengthened to remove length bias: \"Why does a bone marrow transplant restore all types of blood cell?\"",
+    "distractors lengthened to remove length bias: \"What is the main advantage of iPSCs over embryonic stem cells\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-27",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Biological reasoning",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"A nucleus from a frog's intestinal cell\"",
+    "distractors lengthened to remove length bias: \"Mature B lymphocytes are an exception\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-28",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Biological reasoning",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"One molecule of adrenaline can lead to the release\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-29",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "second source added: Alberts B. et al., Molecular Biology of the Cell, 6th edition, chapter 19 \"Cell Junctions and the Extracellular Matrix\"",
+    "distractors lengthened to remove length bias: \"Why does the blood–brain barrier depend especially on tight junctions?\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "biology",
+   "lesson": "u02-30",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Why can't a large animal rely on diffusion across its skin\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-01",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Which statement links all three levels of description correctly?\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-02",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"A white solid melts between 120 and 128 °C.\"",
+    "distractors lengthened to remove length bias: \"Which particle diagram describes a mixture of an element and a compound?\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-03",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Why is sodium chloride safe to eat when sodium and chlorine\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-04",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Why can fractional distillation separate the hydrocarbons in crude oil?\"",
+    "distractors lengthened to remove length bias: \"In paper chromatography an unknown gives one spot with Rf 0.62\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-05",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "second source added: OpenStax, Chemistry 2e, section 1.2 \"Phases and Classification of Matter\"",
+    "distractors lengthened to remove length bias: \"Mixing two colourless solutions forms a yellow solid.\"",
+    "distractors lengthened to remove length bias: \"When ammonium nitrate dissolves in water the temperature falls sharply.\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-06",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Why is the boiling plateau on water's heating curve longer\"",
+    "distractors lengthened to remove length bias: \"Iodine crystals turn straight into a purple vapour\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "M1#chemistry-u01-06-q2 asks in which state particles move fastest at the same temperature; the keyed answer (same average kinetic energy) is defensible but may confuse beginners. Left unchanged."
+    }
+   ]
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-07",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"In the gold-foil experiment, why did a few alpha particles bounce back?\"",
+    "distractors lengthened to remove length bias: \"Why couldn't the plum-pudding model explain the gold-foil results?\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-08",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"A student writes \"NACL\" for sodium chloride.\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-09",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-10",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "second source added: OpenStax, Chemistry 2e, section 4.2 \"Classifying Chemical Reactions\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-11",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "second source added: OpenStax, Chemistry: Atoms First 2e, section 7.1 \"Writing and Balancing Chemical Equations\"",
+    "distractors lengthened to remove length bias: \"Magnesium ribbon is heated in an open crucible\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-12",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Copper has two isotopes, ⁶³Cu and ⁶⁵Cu, and Ar = 63.55.\"",
+    "distractors lengthened to remove length bias: \"Why does IUPAC now give the atomic weight of some elements\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-13",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-14",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-15",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"The silicon sphere method counted atoms\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-16",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"A hydrated salt loses 36% of its mass on heating to constant mass.\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-17",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "second source added: OpenStax, Chemistry 2e, section 9.3 \"Stoichiometry of Gaseous Substances, Mixtures, and Reactions\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-18",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Chemical reasoning",
+    "evidence status: established",
+    "second source added: OpenStax, Chemistry: Atoms First 2e, section 7.4 \"Reaction Yields\"",
+    "distractors lengthened to remove length bias: \"In the example above, what happens chemically when oxygen is limiting\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-19",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "second source added: OpenStax, Chemistry: Atoms First 2e, section 7.4 \"Reaction Yields\"",
+    "distractors lengthened to remove length bias: \"A chemist recrystallises a product twice.\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "Worked example: 14.2 ÷ 25.1 = 56.6%, but with the unrounded theoretical yield (25.11 g) the result is 56.5%; left as it is (difference from intermediate rounding)."
+    }
+   ]
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-20",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Chemical reasoning",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Which type of reaction always has 100% atom economy?\"",
+    "distractors lengthened to remove length bias: \"Two routes to a drug have yields of 90% and 60%\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": [
+    {
+     "class": "error-fixed",
+     "note": "NUM2#chemistry-u01-20-q1 (atom economy of iron extraction) gave the answer 46.3 while its own working gives 111.7 ÷ 243.7 × 100 = 45.8%; answer corrected to 45.8 (the 1% tolerance did not include the correct value)."
+    }
+   ]
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-21",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Why is a volumetric flask used, rather than a beaker\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-22",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"When diluting concentrated sulfuric acid\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-23",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-24",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u01-25",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-01",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"What did the large-angle deflection of a few alpha particles show?\"",
+    "distractors lengthened to remove length bias: \"Why do heavy stable nuclei such as lead-208\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-02",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Why is the radius of Na⁺ (about 102 pm) much smaller\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-03",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Heavy water (D₂O) can be separated from ordinary water\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-04",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Thorium-234 (Z = 90) undergoes beta-minus decay.\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-05",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Foundation",
+    "evidence status: established",
+    "second source added: Housecroft C.E. and Sharpe A.G., Inorganic Chemistry, 5th edition, chapter 1 \"Basic concepts: atoms\"",
+    "distractors lengthened to remove length bias: \"Potassium is more reactive than sodium, though both\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-06",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "second source added: OpenStax, Chemistry: Atoms First 2e, section 3.3 \"Development of Quantum Theory\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-07",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Why does each orbital hold at most two electrons?\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-08",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "second source added: OpenStax, Chemistry: Atoms First 2e, section 3.4 \"Electronic Structure of Atoms (Electron Configurations)\"",
+    "distractors lengthened to remove length bias: \"Why is chromium's configuration [Ar] 3d⁵ 4s¹\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-09",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Why does a 4s electron in potassium have lower energy\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-10",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Why can an orbital hold only two electrons?\"",
+    "distractors lengthened to remove length bias: \"Liquid oxygen is attracted to a magnet but liquid nitrogen\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "M2#chemistry-u02-10-q5 (What does the Pauli exclusion principle state?) duplicates a flashcard or another question in the same lesson; left unchanged because ids are permanent, but could be reworded to test a different point."
+    }
+   ]
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-11",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Why is the first ionisation energy of oxygen lower\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "M2#chemistry-u02-11-q5 (How many unpaired electrons does a nitrogen atom have?) duplicates a flashcard or another question in the same lesson; left unchanged because ids are permanent, but could be reworded to test a different point."
+    }
+   ]
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-12",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Why is boron's first ionisation energy (801 kJ mol⁻¹)\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-13",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Which group has the most exothermic first electron affinities?\"",
+    "distractors lengthened to remove length bias: \"Why is fluorine's first electron affinity less exothermic\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-14",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"What happens when an electron moves from a higher to a lower energy level?\"",
+    "distractors lengthened to remove length bias: \"Why do the lines in each hydrogen series get closer together\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-15",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Why do the emission and absorption lines of an element occur\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-16",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Chemical reasoning",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Why can electron diffraction be used to study crystal structures\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-17",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Chemical reasoning",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"What does an orbital represent in the quantum mechanical model?\"",
+    "distractors lengthened to remove length bias: \"Why can't we say exactly where an electron in an atom is\"",
+    "distractors lengthened to remove length bias: \"How does the quantum mechanical model explain why electron energies\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "M2#chemistry-u02-17-q6 (How does the quantum mechanical model describe an electron location?) overlaps M1#chemistry-u02-17-q2 and duplicates a flashcard or another question in the same lesson; left unchanged because ids are permanent, but could be reworded to test a different point."
+    }
+   ]
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-18",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Why is there zero probability of finding a 2p electron at the nucleus\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-19",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Application",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Caesium's nucleus has 55 protons and sodium's 11\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  },
+  {
+   "course": "chemistry",
+   "lesson": "u02-20",
+   "action": "enhanced",
+   "changes": [
+    "level: Year 1 · Chemical reasoning",
+    "evidence status: established",
+    "distractors lengthened to remove length bias: \"Chlorine water is added to potassium bromide solution\"",
+    "distractors lengthened to remove length bias: \"Scandium is in the d-block, but Sc³⁺ compounds are white\"",
+    "existing questions linked to objectives (@n)",
+    "extended written answer (SA) with model answer and marking points added"
+   ],
+   "findings": []
+  }
+ ],
+ "notes": [
+  "All 95 lessons in biology u01-u02 and chemistry u01-u02 now pass content standard 2: node scripts/new-course.mjs check gives 0 problems and length bias OK for each unit.",
+  "Every lesson got LV (Year 1 · Foundation/Application/Biological or Chemical reasoning), EV, @n objective links on every existing question (ids untouched) and one new SA extended answer with model answer and marking points; lessons that already had an SA got a new M2 instead. New questions are appended after existing ones and carry no #id.",
+  "Length bias was fixed by rewriting distractors only (right answers and explanations unchanged) on 121 questions (biology u01 23, u02 48; chemistry u01 24, u02 26).",
+  "25 second sources added, all OpenStax sections confirmed on openstax.org on 2026-11-20, or Alberts et al., Molecular Biology of the Cell 6th edition chapters, or Housecroft and Sharpe Inorganic Chemistry 5th edition (both already cited elsewhere in these files). All 53 OpenStax links in the four files were checked: one was broken and has been fixed (biology u02-07).",
+  "Biology u02-17 to u02-23 (bound in mappings/lessons.js) changed only in metadata, questions and a second source; teaching text unchanged.",
+  "Several lessons grew by 30 to 39% (mostly short lessons that gained a source and an SA); totals: biology u01 +25%, u02 +28%, chemistry u01 +28%, u02 +25%.",
+  "Checks: node --test tests/sciences.test.mjs tests/qa-content.test.mjs tests/compat.test.mjs tests/courses.test.mjs: 62 pass, 0 fail."
+ ]
+}

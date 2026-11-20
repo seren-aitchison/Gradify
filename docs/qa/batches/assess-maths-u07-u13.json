@@ -1,0 +1,868 @@
+{
+ "task": "assess-maths-u07-u13",
+ "on": "2026-11-20",
+ "files": [
+  "kit/courses/maths/notes/u07.js",
+  "kit/courses/maths/notes/u13.js"
+ ],
+ "lessons": [
+  {
+   "lesson": "u07-01",
+   "changes": [
+    "LV GCSE and A level · Fluency; EV",
+    "added common mistake on splitting multi-term denominators",
+    "added NUM2, M3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-02",
+   "changes": [
+    "LV A level · Fluency; EV",
+    "added paragraph linking the ring argument to the fundamental theorem",
+    "added NUM2, M3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-03",
+   "changes": [
+    "LV A level · Application; EV",
+    "added SA3 question (conjugate limit)"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-04",
+   "changes": [
+    "LV A level · Application; EV",
+    "added paragraph on continuity on an interval",
+    "added NUM2, NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-05",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added NUM3 and SA2 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-06",
+   "changes": [
+    "LV GCSE and A level · Fluency; EV",
+    "added NUM2 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-07",
+   "changes": [
+    "LV A level · Fluency; EV",
+    "added NUM2 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-08",
+   "changes": [
+    "LV A level · Fluency; EV",
+    "added NUM3 (normal meets curve again) and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-09",
+   "changes": [
+    "LV A level · Fluency; EV",
+    "added paragraph on nth-derivative patterns",
+    "added NUM3 and SA2 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-10",
+   "changes": [
+    "LV A level · Application; EV",
+    "added NUM2 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-11",
+   "changes": [
+    "LV A level · Application; EV",
+    "added NUM2, M3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-12",
+   "changes": [
+    "LV A level · Application; EV",
+    "added NUM2, M3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-13",
+   "changes": [
+    "LV A level · Application; EV",
+    "added NUM2, NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-14",
+   "changes": [
+    "LV A level · Problem solving; EV",
+    "added NUM2 and SA2 questions"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "M3#maths-u07-14-q3 is a recall question tagged at level 3; left unchanged."
+    }
+   ],
+   "course": "maths",
+   "action": "enhanced"
+  },
+  {
+   "lesson": "u07-15",
+   "changes": [
+    "LV A level · Application; EV",
+    "added NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-16",
+   "changes": [
+    "LV GCSE and A level · Application; EV",
+    "added common mistake on average versus instantaneous rate",
+    "added NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-17",
+   "changes": [
+    "LV A level · Problem solving; EV",
+    "added paragraph on cones and similar triangles",
+    "added NUM3 (cone filling) and SA3 (ladder) questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-18",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added NUM2 and SA2 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-19",
+   "changes": [
+    "LV A level · Fluency; EV",
+    "added paragraph on checking stationary points in context",
+    "added NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-20",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added common mistake on points outside the domain",
+    "added NUM2, NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-21",
+   "changes": [
+    "LV A level · Application; EV",
+    "added paragraph comparing the two tests",
+    "added NUM2, M3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-22",
+   "changes": [
+    "LV A level · Problem solving; EV",
+    "added paragraph on the context's domain",
+    "added NUM2 (box volume) and SA3 (cylinder) questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-23",
+   "changes": [
+    "LV A level · Application; EV",
+    "added paragraph on the chord definition of convexity",
+    "added NUM2, M3 (Jensen) and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-24",
+   "changes": [
+    "LV A level · Application; EV",
+    "added NUM3 and SA2 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-25",
+   "changes": [
+    "LV A level · Problem solving; EV",
+    "added NUM3 (oblique asymptote) and SA3 (sketch of x^2/(x − 1)) questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-26",
+   "changes": [
+    "LV A level · Fluency; EV",
+    "added SA3 question (displacement versus distance)"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "M2#maths-u07-26-q4 (which numerical rule has the smallest error) belongs with Numerical Integration (u07-36) rather than this overview lesson; it is correct, so left in place."
+    }
+   ],
+   "course": "maths",
+   "action": "enhanced"
+  },
+  {
+   "lesson": "u07-27",
+   "changes": [
+    "LV A level · Fluency; EV",
+    "added NUM2 and SA2 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-28",
+   "changes": [
+    "LV A level · Application; EV",
+    "added SA3 question (midpoint, left and right sums)"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-29",
+   "changes": [
+    "LV A level · Fluency; EV",
+    "added SA3 question (signed area against total area)"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-30",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-31",
+   "changes": [
+    "LV A level · Application; EV",
+    "added NUM2, NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-32",
+   "changes": [
+    "LV A level · Application; EV",
+    "added NUM2 and SA3 (cyclic parts) questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-33",
+   "changes": [
+    "LV A level · Application; EV",
+    "added NUM2, NUM3 and SA3 (repeated factor) questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-34",
+   "changes": [
+    "LV A level · Application; EV",
+    "added NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-35",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added NUM2 and SA2 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-36",
+   "changes": [
+    "LV A level · Application; EV",
+    "added NUM2 (Simpson's rule) and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-37",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added NUM3 and SA3 (sphere surface area) questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-38",
+   "changes": [
+    "LV A level · Application; EV",
+    "added NUM2 (about the y-axis) and SA2 (washers) questions"
+   ],
+   "findings": [
+    {
+     "class": "curriculum-dependent",
+     "note": "Volumes of revolution are in A level Further Mathematics, not the DfE A level Mathematics content; LV says A level."
+    }
+   ],
+   "course": "maths",
+   "action": "enhanced"
+  },
+  {
+   "lesson": "u07-39",
+   "changes": [
+    "LV A level · Fluency; EV",
+    "reworded a bullet that said the sum of a series is found from u_{n} = S_{n} − S_{n−1} (that formula recovers the terms, not the sum)",
+    "added NUM3 and SA3 questions"
+   ],
+   "findings": [
+    {
+     "class": "error-fixed",
+     "note": "Bullet claimed 'the sum of a series can be found from its partial sums by u_{n} = S_{n} − S_{n−1}'; corrected to 'the terms can be recovered from the partial sums'."
+    }
+   ],
+   "course": "maths",
+   "action": "enhanced"
+  },
+  {
+   "lesson": "u07-40",
+   "changes": [
+    "LV A level · Application; EV",
+    "added NUM2 and SA2 (0.999… = 1) questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-41",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added common mistake on the ratio test for p-series",
+    "added NUM2, M3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-42",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added NUM3 (interval endpoint) and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-43",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added NUM2, NUM3 and SA3 (remainder bound) questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u07-44",
+   "changes": [
+    "LV A level · Application; EV",
+    "added paragraph on integrating e^{−x^{2}} by series",
+    "added NUM2 and SA2 questions"
+   ],
+   "findings": [
+    {
+     "class": "curriculum-dependent",
+     "note": "Maclaurin series are A level Further Mathematics content; LV says A level."
+    }
+   ],
+   "course": "maths",
+   "action": "enhanced"
+  },
+  {
+   "lesson": "u13-01",
+   "changes": [
+    "LV GCSE and A level · Fluency; EV",
+    "added NUM2 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-02",
+   "changes": [
+    "LV GCSE and A level · Application; EV",
+    "added SA3 question (confounding)"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "M3#maths-u13-02-q3 and M2#maths-u13-02-q4 test the same idea (r = 0 for points on y = x^{2}); consider retiring one at review."
+    }
+   ],
+   "course": "maths",
+   "action": "enhanced"
+  },
+  {
+   "lesson": "u13-03",
+   "changes": [
+    "LV GCSE and A level · Application; EV",
+    "added NUM3 (number needed to treat) and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-04",
+   "changes": [
+    "LV GCSE and A level · Application; EV",
+    "added NUM2 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-05",
+   "changes": [
+    "LV A level · Fluency; EV",
+    "added NUM2 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-06",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added NUM2 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-07",
+   "changes": [
+    "LV A level · Application; EV",
+    "added NUM2 and SA2 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-08",
+   "changes": [
+    "LV A level · Application; EV",
+    "added SA3 question"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-09",
+   "changes": [
+    "LV GCSE and A level · Fluency; EV",
+    "added NUM3 and SA3 (Literary Digest) questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-10",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added NUM2 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-11",
+   "changes": [
+    "LV Year 2 · Application; EV",
+    "added NUM2 and SA2 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-12",
+   "changes": [
+    "LV Year 2 · Application; EV",
+    "added NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-13",
+   "changes": [
+    "LV A level · Application; EV",
+    "added NUM3 (critical region) and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-14",
+   "changes": [
+    "LV Year 1 · Application; EV (contested: reform of NHST)",
+    "added NUM2, NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-15",
+   "changes": [
+    "LV A level · Application; EV",
+    "added NUM2 and SA2 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-16",
+   "changes": [
+    "LV A level · Application; EV",
+    "added NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-17",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added NUM2 and SA2 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-18",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added NUM2 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-19",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added NUM3 (Holm) and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-20",
+   "changes": [
+    "LV Year 2 · Application; EV",
+    "added NUM3 (Benjamini–Hochberg) and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-21",
+   "changes": [
+    "LV Year 1 · Fluency; EV",
+    "added NUM2, M3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-22",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added NUM2 and SA2 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-23",
+   "changes": [
+    "LV A level · Application; EV",
+    "added NUM3 (A/B test) and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-24",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added NUM3 (pooled t) and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-25",
+   "changes": [
+    "LV A level · Application; EV",
+    "added NUM3 and SA3 questions",
+    "lengthened the explanation of an existing NUM1 question (under 20 characters)"
+   ],
+   "findings": [
+    {
+     "class": "curriculum-dependent",
+     "note": "Chi-squared tests are in A level Further Mathematics statistics options, not DfE A level Mathematics; LV says A level."
+    }
+   ],
+   "course": "maths",
+   "action": "enhanced"
+  },
+  {
+   "lesson": "u13-26",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added NUM3 (hypergeometric) and SA3 (lady tasting tea) questions",
+    "lengthened the explanation of an existing NUM1 question (under 20 characters)"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-27",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-28",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added NUM2 and SA2 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-29",
+   "changes": [
+    "LV Year 2 · Application; EV",
+    "added NUM3 (H statistic) and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-30",
+   "changes": [
+    "LV Year 2 · Application; EV",
+    "added NUM2 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-31",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added NUM3 (F statistic) and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-32",
+   "changes": [
+    "LV Year 2 · Application; EV",
+    "lengthened the explanation of NUM1#maths-u13-32-q1 (under 20 characters)",
+    "added NUM3 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-33",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "lengthened the explanation of NUM1#maths-u13-33-q1",
+    "added NUM3 (odds ratio) and SA3 (McNemar) questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-34",
+   "changes": [
+    "LV Year 1 · Application; EV",
+    "added NUM3 (Cramér's V) and SA3 (Simpson's paradox) questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-35",
+   "changes": [
+    "LV GCSE and A level · Fluency; EV",
+    "added NUM2 and SA3 questions"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  },
+  {
+   "lesson": "u13-36",
+   "changes": [
+    "LV A level · Application; EV",
+    "added SA3 question"
+   ],
+   "course": "maths",
+   "action": "enhanced",
+   "findings": []
+  }
+ ],
+ "notes": [
+  "NUM answers must use an ASCII hyphen-minus for negatives: Number() rejects the Unicode minus sign, and the question then silently fails to parse.",
+  "new-course check briefly failed with 'Invalid or unexpected token' once, apparently while another worker was writing a maths notes file it also loads; a rerun was clean.",
+  "u07: every lesson needed 2–3 new questions including a long SA model answer, so lessons grew by a median of about 35% (most for lessons that had only two questions), above the ~30% guide. No existing content was removed to compensate."
+ ]
+}

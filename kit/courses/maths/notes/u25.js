@@ -32,8 +32,8 @@ Q: What is the error signal in a feedback loop? | The reference minus the measur
 Q: Who analysed the stability of governors mathematically in 1868? | James Clerk Maxwell.
 SUM: Control makes systems behave.
 SUM: Feedback is the key idea.
-SRC: Åström KJ, Murray RM, Feedback Systems: An Introduction for Scientists and Engineers (2nd edn, Princeton University Press 2021) | textbook | 2021 | https://fbswiki.org/
-SRC: Maxwell JC, On governors, Proceedings of the Royal Society of London 16, 270 | journal | 1868 | https://doi.org/10.1098/rspl.1867.0055
+SRC: Åström KJ, Murray RM, Feedback Systems: An Introduction for Scientists and Engineers (2nd edn, Princeton University Press 2021) | secondary | 2021 | https://fbswiki.org/
+SRC: Maxwell JC, On governors, Proceedings of the Royal Society of London 16, 270 | primary | 1868 | https://doi.org/10.1098/rspl.1867.0055
 NUM1#maths-u25-01-q1@1: A cruise controller targets 70 mph and the car is doing 64 mph. What is the error signal in mph? | 6 | 0 | mph | e = r − y = 70 − 64 = 6.
 M1#maths-u25-01-q2@1: In a car's cruise control, which component is the actuator? | The throttle that changes engine power | The speedometer measuring speed | The driver's chosen set speed | The gradient of the road ahead | The total mass of the car | The actuator applies the control input to the plant.
 M2#maths-u25-01-q3@2: Why do control engineers model disturbances explicitly? | Controllers must keep performance despite unknown inputs like wind, load changes or hills | Disturbances never occur in well-designed systems, so modelling them is a formality | Modelling disturbances makes the system linear, which simplifies the design | Disturbances replace the reference signal, so they must be known exactly | They don't model them; feedback handles any disturbance automatically | Disturbance rejection is a main purpose of feedback.
@@ -69,8 +69,8 @@ Q: What does superposition mean? | The response to a sum of inputs is the sum of
 Q: What is the time constant of ẋ = −ax? | 1/a.
 SUM: Linear means superposition.
 SUM: Eigenvalues set behaviour.
-SRC: Chen CT, Linear System Theory and Design (4th edn, Oxford University Press 2013) | textbook | 2013 | https://global.oup.com/
-SRC: Hespanha JP, Linear Systems Theory (2nd edn, Princeton University Press 2018) | textbook | 2018 | https://press.princeton.edu/
+SRC: Chen CT, Linear System Theory and Design (4th edn, Oxford University Press 2013) | secondary | 2013 | https://global.oup.com/
+SRC: Hespanha JP, Linear Systems Theory (2nd edn, Princeton University Press 2018) | secondary | 2018 | https://press.princeton.edu/
 NUM1#maths-u25-02-q1@1: A first-order system has time constant 4 s. About how long does it take to settle to within 2% of its final value, in seconds? | 16 | 0 | s | The 2% settling time is about 4τ = 16 s.
 M1#maths-u25-02-q2@1: A system has eigenvalues −1 ± 3i. How does its unforced response behave? | Decaying oscillation | Growing oscillation | Pure exponential decay | Constant | Pure exponential growth | Negative real parts decay; imaginary parts give oscillation at 3 rad/s.
 M2#maths-u25-02-q3@2: Why are non-linear systems often linearised for control design? | Near an operating point a linear model approximates the behaviour well, enabling exact design tools | Non-linear systems are always linear near every point, so nothing is lost | Linearisation removes all modelling errors from the design process | Linearisation makes the system unstable, which simplifies control | They're never linearised; non-linear design tools are always used | Small deviations obey the Jacobian dynamics.
@@ -106,8 +106,8 @@ Q: What is a region of attraction? | The set of starting states that converge to
 Q: What is integrator windup? | Integral action accumulating error while an actuator is saturated.
 SUM: Non-linear systems behave richly.
 SUM: Linearisation is only local.
-SRC: Khalil HK, Nonlinear Systems (3rd edn, Prentice Hall 2002) | textbook | 2002 | https://www.pearson.com/
-SRC: Strogatz SH, Nonlinear Dynamics and Chaos (2nd edn, CRC Press 2015) | textbook | 2015 | https://www.routledge.com/
+SRC: Khalil HK, Nonlinear Systems (3rd edn, Prentice Hall 2002) | secondary | 2002 | https://www.pearson.com/
+SRC: Strogatz SH, Nonlinear Dynamics and Chaos (2nd edn, CRC Press 2015) | secondary | 2015 | https://www.routledge.com/
 NUM1#maths-u25-03-q1@1: For ẋ = x − x^{3}, how many equilibrium points are there? | 3 | 0 |  | x(1 − x^{2}) = 0 gives x = −1, 0 and 1.
 M1#maths-u25-03-q2@1: For ẋ = x − x^{3}, what is the stability of x = 0? | Unstable, since the linearisation ẋ ≈ x grows | Stable, since x^{3} dominates | Neutrally stable | Asymptotically stable | Undefined | The linearisation at 0 is ẋ ≈ f′(0)x = x, with f′(0) = 1 > 0, so small deviations grow and the origin is unstable.
 M3#maths-u25-03-q3@2: Why can a linearisation predict local stability but not the region of attraction? | It describes only small deviations; far away, non-linear terms can push trajectories elsewhere | Linearisation is exact everywhere, so it predicts the region too | Regions of attraction are always the whole state space | Non-linear terms vanish far from the equilibrium | It predicts both local stability and the region exactly | The Jacobian ignores higher-order terms that matter for large deviations.
@@ -142,8 +142,8 @@ Q: How are a state-space model's poles found? | As eigenvalues of A.
 Q: What is the transfer function of a state-space model? | C(sI − A)^{−1}B + D.
 SUM: States capture a system's memory.
 SUM: Matrices make analysis systematic.
-SRC: Franklin GF, Powell JD, Emami-Naeini A, Feedback Control of Dynamic Systems (8th edn, Pearson 2019) | textbook | 2019 | https://www.pearson.com/
-SRC: Kalman RE, Mathematical description of linear dynamical systems, Journal of the Society for Industrial and Applied Mathematics A 1(2), 152 | journal | 1963 | https://doi.org/10.1137/0301010
+SRC: Franklin GF, Powell JD, Emami-Naeini A, Feedback Control of Dynamic Systems (8th edn, Pearson 2019) | secondary | 2019 | https://www.pearson.com/
+SRC: Kalman RE, Mathematical description of linear dynamical systems, Journal of the Society for Industrial and Applied Mathematics A 1(2), 152 | primary | 1963 | https://doi.org/10.1137/0301010
 NUM1#maths-u25-04-q1@1: How many state variables does a third-order ODE need in state-space form? | 3 | 0 | states | An nth-order ODE needs n first-order states.
 M1#maths-u25-04-q2@1: For A = [[0, 1], [−4, 0]], what are the poles? | ±2i | ±4 | −2 and −2 | 0 and 4 | ±4i | λ^{2} + 4 = 0 gives λ = ±2i: undamped oscillation.
 M2#maths-u25-04-q3@2: Why are state-space models well suited to multi-input, multi-output systems? | Matrices B and C handle any number of inputs and outputs in one framework | They only work for systems with a single input and output | Transfer functions handle multi-input systems more simply | State variables can't include any of the outputs | They aren't suited; MIMO systems need separate models | Single matrix equations replace many coupled transfer functions.
@@ -178,8 +178,8 @@ Q: Where must poles lie for a continuous-time system to be stable? | In the left
 Q: What is the closed-loop transfer function with forward G and feedback H? | G/(1 + GH).
 SUM: Transfer functions make dynamics algebraic.
 SUM: Poles tell stability.
-SRC: Ogata K, Modern Control Engineering (5th edn, Pearson 2010) | textbook | 2010 | https://www.pearson.com/
-SRC: Dorf RC, Bishop RH, Modern Control Systems (14th edn, Pearson 2021) | textbook | 2021 | https://www.pearson.com/
+SRC: Ogata K, Modern Control Engineering (5th edn, Pearson 2010) | secondary | 2010 | https://www.pearson.com/
+SRC: Dorf RC, Bishop RH, Modern Control Systems (14th edn, Pearson 2021) | secondary | 2021 | https://www.pearson.com/
 NUM1#maths-u25-05-q1@1: A second-order system has damping ratio ζ = 0.5. What is its percentage overshoot, to the nearest whole number? | 16 | 0.5 | % | e^{−π × 0.5/√0.75} = e^{−1.814} ≈ 0.163, about 16%.
 M1#maths-u25-05-q2@1: What is the DC gain of G(s) = 10/(s^{2} + 4s + 5)? | 2 | 10 | 5 | 0.5 | 4 | The DC gain is G(0), the steady response to a unit step: 10/5 = 2.
 M2#maths-u25-05-q3@2: Why does a right-half-plane zero make control harder? | It causes the response to start in the wrong direction and limits achievable speed | It makes the open-loop system unstable by itself, whatever the poles | It has no effect on the response, only on the plot's appearance | It speeds up the response, causing excessive overshoot | It removes all poles, so the system has no dynamics left | Non-minimum-phase zeros impose fundamental bandwidth limits.
@@ -214,8 +214,8 @@ Q: What is a guard in a hybrid automaton? | A condition that triggers a transiti
 Q: What is Zeno behaviour? | Infinitely many transitions in finite time.
 SUM: Continuous dynamics with discrete switches.
 SUM: Verification is hard but vital.
-SRC: Goebel R, Sanfelice RG, Teel AR, Hybrid Dynamical Systems (Princeton University Press 2012) | textbook | 2012 | https://press.princeton.edu/
-SRC: Alur R et al., The algorithmic analysis of hybrid systems, Theoretical Computer Science 138(1), 3 | journal | 1995 | https://doi.org/10.1016/0304-3975(94)00202-T
+SRC: Goebel R, Sanfelice RG, Teel AR, Hybrid Dynamical Systems (Princeton University Press 2012) | secondary | 2012 | https://press.princeton.edu/
+SRC: Alur R et al., The algorithmic analysis of hybrid systems, Theoretical Computer Science 138(1), 3 | primary | 1995 | https://doi.org/10.1016/0304-3975(94)00202-T
 NUM1#maths-u25-06-q1@1: A ball dropped from 2 m bounces with restitution e = 0.6. What height does it reach after the first bounce, in m? | 0.72 | 0.001 | m | Height scales by e^{2} = 0.36: 2 × 0.36 = 0.72 m.
 M1#maths-u25-06-q2@1: Which system is naturally modelled as hybrid? | A thermostat switching a heater on and off | A pure mass–spring system | A linear RC circuit without switches | Exponential decay | A constant signal | It has continuous temperature dynamics and discrete heater modes.
 M2#maths-u25-06-q3@2: Why is safety verification of hybrid systems difficult? | Mixing flows with discrete switches makes reachable sets hard to compute; it's undecidable in general | Hybrid systems are always safe, so verification is a formality | They have no continuous states, so reachability is trivial | Verification needs only a few simulations to be complete | It isn't difficult; standard ODE solvers prove safety directly | Even simple hybrid automata can encode undecidable problems.
@@ -250,8 +250,8 @@ Q: What does a common Lyapunov function guarantee? | Stability under arbitrary s
 Q: What is dwell time? | A minimum time spent in each mode between switches.
 SUM: Switching changes stability.
 SUM: Lyapunov tools cover all modes.
-SRC: Liberzon D, Switching in Systems and Control (Birkhäuser 2003) | textbook | 2003 | https://link.springer.com/
-SRC: Hespanha JP, Morse AS, Stability of switched systems with average dwell-time, Proceedings of the 38th IEEE Conference on Decision and Control, 2655 | journal | 1999 | https://doi.org/10.1109/CDC.1999.831330
+SRC: Liberzon D, Switching in Systems and Control (Birkhäuser 2003) | secondary | 2003 | https://link.springer.com/
+SRC: Hespanha JP, Morse AS, Stability of switched systems with average dwell-time, Proceedings of the 38th IEEE Conference on Decision and Control, 2655 | primary | 1999 | https://doi.org/10.1109/CDC.1999.831330
 NUM1#maths-u25-07-q1@1: A switched system must dwell at least 0.2 s in each mode. What is the maximum number of switches in 10 s? | 50 | 0 | switches | 10/0.2 = 50 switches at most.
 M1#maths-u25-07-q2@1: Which condition guarantees a switched linear system is stable under any switching? | A common Lyapunov function exists for all modes | Each mode is stable on its own | The modes commute with no extra conditions | The switching is random | No condition can guarantee it | Individual stability isn't enough; a shared Lyapunov function is.
 M3#maths-u25-07-q3@2: How can switching between two unstable modes produce a stable system? | Well-timed switching uses each mode's contracting directions, so the state shrinks | Unstable modes become stable on their own after enough time | Switching removes all dynamics, so the state stays fixed | It's impossible: switching between unstable modes always diverges | The two modes cancel exactly whenever they're switched together | Each unstable mode may still contract in some directions, and switching exploits them.
@@ -286,8 +286,8 @@ Q: Does open-loop control use output measurements? | No.
 Q: Can an unstable plant be stabilised with open-loop control? | No.
 SUM: Plan the input, don't measure.
 SUM: Simple but can't correct errors.
-SRC: Åström KJ, Murray RM, Feedback Systems: An Introduction for Scientists and Engineers (2nd edn, Princeton University Press 2021) | textbook | 2021 | https://fbswiki.org/
-SRC: Franklin GF, Powell JD, Emami-Naeini A, Feedback Control of Dynamic Systems (8th edn, Pearson 2019) | textbook | 2019 | https://www.pearson.com/
+SRC: Åström KJ, Murray RM, Feedback Systems: An Introduction for Scientists and Engineers (2nd edn, Princeton University Press 2021) | secondary | 2021 | https://fbswiki.org/
+SRC: Franklin GF, Powell JD, Emami-Naeini A, Feedback Control of Dynamic Systems (8th edn, Pearson 2019) | secondary | 2019 | https://www.pearson.com/
 NUM1#maths-u25-08-q1@1: A pump gives 2 L/min per volt. What open-loop voltage gives 9 L/min? | 4.5 | 0.001 | V | u = r/K = 9/2 = 4.5 V.
 M1#maths-u25-08-q2@1: Which device uses open-loop control? | A toaster that heats for a set time | A thermostat-controlled boiler | Cruise control using speed measurements | An autopilot using gyroscopes | A balancing robot | The toaster doesn't measure how brown the toast is.
 M2#maths-u25-08-q3@2: Why is feedforward often combined with feedback? | Feedforward gives a fast response to known changes, while feedback corrects remaining errors | Feedback alone is always fastest, so feedforward only adds cost | Feedforward makes systems unstable unless feedback is added | They can't be combined in a single controller | There's no benefit; one or the other is always enough | Feedforward handles the predictable part; feedback handles uncertainty.
@@ -320,8 +320,8 @@ Q: What is the sensitivity function? | S = 1/(1 + L).
 Q: What eliminates steady-state error for a step input? | Integral action in the loop.
 SUM: Feedback corrects errors.
 SUM: Sensitivity trade-offs are unavoidable.
-SRC: Skogestad S, Postlethwaite I, Multivariable Feedback Control: Analysis and Design (2nd edn, Wiley 2005) | textbook | 2005 | https://www.wiley.com/
-SRC: Bode HW, Network Analysis and Feedback Amplifier Design (Van Nostrand 1945) | textbook | 1945 | https://archive.org/
+SRC: Skogestad S, Postlethwaite I, Multivariable Feedback Control: Analysis and Design (2nd edn, Wiley 2005) | secondary | 2005 | https://www.wiley.com/
+SRC: Bode HW, Network Analysis and Feedback Amplifier Design (Van Nostrand 1945) | secondary | 1945 | https://archive.org/
 NUM1#maths-u25-09-q1@1: A loop has L(0) = 19 with proportional control. What is the steady-state error for a unit step? | 0.05 | 0.001 |  | e_{ss} = 1/(1 + 19) = 0.05.
 M1#maths-u25-09-q2@1: Which signal does the complementary sensitivity T pass to the output? | Measurement noise (as well as the reference) | Only the disturbances acting on the plant | Nothing at all, since T is a design aid | Only the control effort sent to the actuator | Only errors in the plant model | y contains −Tn, so high T at high frequency amplifies sensor noise.
 M3#maths-u25-09-q3@2: What does Bode's sensitivity integral (the waterbed effect) imply? | Pushing sensitivity down over some frequencies forces it up over others | Sensitivity can be made zero at every frequency at once | Sensitivity doesn't depend on frequency for stable loops | Feedback always increases sensitivity at all frequencies | It implies nothing about how sensitivity can be shaped | For stable open loops, ∫ ln|S(iω)| dω = 0, so reductions must be balanced.
@@ -356,8 +356,8 @@ Q: What does pole placement choose? | State-feedback gains that set the closed-l
 Q: Who invented the negative-feedback amplifier in 1927? | Harold Black.
 SUM: Measure, compare, correct.
 SUM: Feedback can stabilise.
-SRC: Black HS, Stabilized feedback amplifiers, Bell System Technical Journal 13(1), 1 | journal | 1934 | https://doi.org/10.1002/j.1538-7305.1934.tb00652.x
-SRC: Åström KJ, Murray RM, Feedback Systems: An Introduction for Scientists and Engineers (2nd edn, Princeton University Press 2021) | textbook | 2021 | https://fbswiki.org/
+SRC: Black HS, Stabilized feedback amplifiers, Bell System Technical Journal 13(1), 1 | primary | 1934 | https://doi.org/10.1002/j.1538-7305.1934.tb00652.x
+SRC: Åström KJ, Murray RM, Feedback Systems: An Introduction for Scientists and Engineers (2nd edn, Princeton University Press 2021) | secondary | 2021 | https://fbswiki.org/
 NUM1#maths-u25-10-q1@1: For ẋ = 4x + u with u = −Kx, what gain K places the pole at −6? | 10 | 0 |  | 4 − K = −6 gives K = 10.
 M1#maths-u25-10-q2@1: Which plant needs feedback to be stabilised? | An inverted pendulum balanced upright | A damped mass–spring system | A stable first-order filter | A resistor | A cooling cup of tea | Its upright equilibrium is unstable without corrective control.
 M2#maths-u25-10-q3@2: Why does feedback reduce sensitivity to plant variations? | Relative changes in G are scaled by S = 1/(1 + L), small at high loop gain | Feedback removes the plant from the loop entirely | It makes the plant's transfer function constant | Sensitivity rises with feedback, not falls | It doesn't reduce sensitivity to plant changes | dT/T = S dG/G, so high gain suppresses parameter effects.
@@ -392,8 +392,8 @@ Q: Which PID term removes steady-state error? | The integral term.
 Q: What causes integral windup? | Integrating error while the actuator is saturated.
 SUM: Three simple actions, many applications.
 SUM: Tune and protect against windup.
-SRC: Åström KJ, Hägglund T, Advanced PID Control (ISA 2006) | textbook | 2006 | https://www.isa.org/
-SRC: Ziegler JG, Nichols NB, Optimum settings for automatic controllers, Transactions of the ASME 64, 759 | journal | 1942 | https://doi.org/10.1115/1.4019264
+SRC: Åström KJ, Hägglund T, Advanced PID Control (ISA 2006) | secondary | 2006 | https://www.isa.org/
+SRC: Ziegler JG, Nichols NB, Optimum settings for automatic controllers, Transactions of the ASME 64, 759 | primary | 1942 | https://doi.org/10.1115/1.4019264
 NUM1#maths-u25-11-q1@1: Using Ziegler–Nichols with K_{u} = 20, what is the classic PID proportional gain? | 12 | 0 |  | K_{p} = 0.6 × 20 = 12.
 M1#maths-u25-11-q2@1: Which PID term amplifies high-frequency measurement noise most? | The derivative term | The proportional term | The integral term | None of them | All equally | Differentiation multiplies a sinusoid's amplitude by its frequency.
 M2#maths-u25-11-q3@2: Why does proportional-only control usually leave a steady-state error? | A non-zero error is needed to produce the non-zero control input that holds the output | Proportional control always removes all steady-state error | The error grows without bound under proportional control | Proportional gain is zero at steady state, so it does nothing | It doesn't leave one for any plant or reference | u = K_{p}e, so a steady input needs a steady error unless the plant has an integrator.
@@ -429,8 +429,8 @@ Q: For s^{2} + a₁s + a₀, when is the system stable? | When a₁ > 0 and a₀
 Q: Where must discrete-time poles lie for stability? | Inside the unit circle.
 SUM: Stability means returning or staying bounded.
 SUM: Routh–Hurwitz counts unstable roots.
-SRC: Routh EJ, A Treatise on the Stability of a Given State of Motion (Macmillan 1877) | textbook | 1877 | https://archive.org/
-SRC: Hurwitz A, Über die Bedingungen, unter welchen eine Gleichung nur Wurzeln mit negativen reellen Theilen besitzt, Mathematische Annalen 46, 273 | journal | 1895 | https://doi.org/10.1007/BF01446812
+SRC: Routh EJ, A Treatise on the Stability of a Given State of Motion (Macmillan 1877) | secondary | 1877 | https://archive.org/
+SRC: Hurwitz A, Über die Bedingungen, unter welchen eine Gleichung nur Wurzeln mit negativen reellen Theilen besitzt, Mathematische Annalen 46, 273 | primary | 1895 | https://doi.org/10.1007/BF01446812
 NUM1#maths-u25-12-q1@1: For s^{3} + 4s^{2} + 5s + K, the Routh condition is 4 × 5 > K. What is the largest K for stability? | 20 | 0 |  | The cubic s^{3} + a₂s^{2} + a₁s + a₀ is stable iff all coefficients are positive and a₂a₁ > a₀, so K < 20.
 M1#maths-u25-12-q2@1: A system has poles at −2 and ±3i. What kind of stability does it have? | Marginal stability with sustained oscillation | Asymptotic stability | Exponential stability | Instability with growth | BIBO stability for all inputs | Imaginary-axis poles give undamped oscillation that doesn't decay.
 M3#maths-u25-12-q3@2: Why is a system with a pole at s = 0 not BIBO stable? | A bounded step input produces a ramp output, which grows without bound | Poles at zero always cause oscillation | It is always BIBO stable | Bounded inputs give zero output | The pole has no effect on stability | An integrator 1/s turns a constant into an unbounded ramp.
@@ -465,8 +465,8 @@ Q: What must V̇ satisfy for asymptotic stability? | Negative definite (V̇ < 0 
 Q: What does the Lyapunov equation AᵀP + PA = −Q test? | Stability of the linear system ẋ = Ax.
 SUM: Energy-like functions prove stability.
 SUM: No need to solve the equations.
-SRC: Lyapunov AM, The general problem of the stability of motion, International Journal of Control 55(3), 531 (English translation of the 1892 thesis) | journal | 1992 | https://doi.org/10.1080/00207179208934253
-SRC: Khalil HK, Nonlinear Systems (3rd edn, Prentice Hall 2002) | textbook | 2002 | https://www.pearson.com/
+SRC: Lyapunov AM, The general problem of the stability of motion, International Journal of Control 55(3), 531 (English translation of the 1892 thesis) | primary | 1992 | https://doi.org/10.1080/00207179208934253
+SRC: Khalil HK, Nonlinear Systems (3rd edn, Prentice Hall 2002) | secondary | 2002 | https://www.pearson.com/
 NUM1#maths-u25-13-q1@1: For ẋ = −3x and V = x^{2}, what is V̇ at x = 2? | -24 | 0 |  | V̇ = 2xẋ = 2 × 2 × (−6) = −24.
 M1#maths-u25-13-q2@1: Which function is a valid Lyapunov candidate for proving stability at the origin? | V = x₁^{2} + x₂^{2} | V = x₁ + x₂ | V = −x₁^{2} | V = x₁x₂ | V = 1 | It's zero at the origin and positive elsewhere.
 M2#maths-u25-13-q3@2: Why does Lyapunov's method succeed for ẋ = −x^{3} when linearisation fails? | The linearisation has a zero eigenvalue and is inconclusive, but V = x^{2} decreases along all trajectories | Linearisation shows the system is unstable, so Lyapunov is needed instead | Lyapunov's method only works for linear systems like this one | The system is actually unstable, and Lyapunov's method confirms it | Both fail; this system's stability can't be determined | Higher-order terms decide stability here, which V captures.
@@ -500,8 +500,8 @@ Q: What rank must the controllability matrix have? | n, the number of states.
 Q: What does controllability allow in state feedback? | Arbitrary placement of closed-loop poles.
 SUM: Can inputs reach every state?
 SUM: Rank tests decide.
-SRC: Kalman RE, On the general theory of control systems, Proceedings of the First IFAC Congress 1, 481 | journal | 1960 | https://doi.org/10.1016/S1474-6670(17)70094-8
-SRC: Chen CT, Linear System Theory and Design (4th edn, Oxford University Press 2013) | textbook | 2013 | https://global.oup.com/
+SRC: Kalman RE, On the general theory of control systems, Proceedings of the First IFAC Congress 1, 481 | primary | 1960 | https://doi.org/10.1016/S1474-6670(17)70094-8
+SRC: Chen CT, Linear System Theory and Design (4th edn, Oxford University Press 2013) | secondary | 2013 | https://global.oup.com/
 NUM1#maths-u25-14-q1@1: For A = [[1, 0], [0, 2]] and B = [1, 0]ᵀ, what is the rank of the controllability matrix? | 1 | 0 |  | B = [1, 0]ᵀ and AB = [1, 0]ᵀ are parallel, so the rank is 1: the second state can't be influenced.
 M1#maths-u25-14-q2@1: What is the controllability matrix for a system with 3 states? | [B, AB, A^{2}B] | [B, A] | [A, A^{2}, A^{3}] | [C, CA, CA^{2}] | [B] | The controllability matrix stacks B, AB, …, A^{n−1}B; with n = 3 states that's [B, AB, A^{2}B].
 M3#maths-u25-14-q3@2: Why can't state feedback move an uncontrollable mode's eigenvalue? | The input can't influence that mode, so feedback can't change it | Feedback always moves every eigenvalue of the system | Uncontrollable modes have no eigenvalues to move | The mode becomes unstable whenever feedback is applied | It can move it, given enough feedback gain | In controllable/uncontrollable decomposition, the uncontrollable block of A − BK equals that of A.
@@ -535,8 +535,8 @@ Q: What is the dual of observability? | Controllability.
 Q: What does detectability require? | All unobservable modes are stable.
 SUM: Can outputs reveal the state?
 SUM: Duality mirrors controllability.
-SRC: Kalman RE, On the general theory of control systems, Proceedings of the First IFAC Congress 1, 481 | journal | 1960 | https://doi.org/10.1016/S1474-6670(17)70094-8
-SRC: Hespanha JP, Linear Systems Theory (2nd edn, Princeton University Press 2018) | textbook | 2018 | https://press.princeton.edu/
+SRC: Kalman RE, On the general theory of control systems, Proceedings of the First IFAC Congress 1, 481 | primary | 1960 | https://doi.org/10.1016/S1474-6670(17)70094-8
+SRC: Hespanha JP, Linear Systems Theory (2nd edn, Princeton University Press 2018) | secondary | 2018 | https://press.princeton.edu/
 NUM1#maths-u25-15-q1@1: For A = [[0, 1], [0, 0]] and C = [0, 1] (measuring velocity only), what is the rank of the observability matrix? | 1 | 0 |  | C = [0, 1] and CA = [0, 0], so the rank is 1: position can't be determined from velocity alone.
 M1#maths-u25-15-q2@1: Which pair is dual to (A, C) being observable? | (Aᵀ, Cᵀ) being controllable | (A, B) being controllable | (C, A) being stable | (A, D) being observable | No dual exists | Transposing turns the observability matrix into a controllability matrix.
 M3#maths-u25-15-q3@2: Why can position be observed from position measurements alone, but not from velocity alone? | Position changes reveal velocity, but velocity can't fix position's offset | Velocity measurements contain no information at all | Position sensors measure velocity directly as well | Both quantities are equally observable from either sensor | Neither is observable from a single sensor | Integrating velocity gives position only up to an unknown starting value.
@@ -570,8 +570,8 @@ Q: What phase does a first-order lag have at its corner frequency? | −45°.
 Q: What does phase margin measure? | How much extra phase lag the loop tolerates before instability.
 SUM: Sinusoids reveal system behaviour.
 SUM: Margins measure robustness.
-SRC: Franklin GF, Powell JD, Emami-Naeini A, Feedback Control of Dynamic Systems (8th edn, Pearson 2019) | textbook | 2019 | https://www.pearson.com/
-SRC: Skogestad S, Postlethwaite I, Multivariable Feedback Control: Analysis and Design (2nd edn, Wiley 2005) | textbook | 2005 | https://www.wiley.com/
+SRC: Franklin GF, Powell JD, Emami-Naeini A, Feedback Control of Dynamic Systems (8th edn, Pearson 2019) | secondary | 2019 | https://www.pearson.com/
+SRC: Skogestad S, Postlethwaite I, Multivariable Feedback Control: Analysis and Design (2nd edn, Wiley 2005) | secondary | 2005 | https://www.wiley.com/
 NUM1#maths-u25-16-q1@1: A time delay of 0.1 s adds how many degrees of phase lag at ω = 5 rad/s, to 1 decimal place? | 28.6 | 0.1 | ° | Phase = −ωT = −0.5 rad ≈ −28.6°.
 M1#maths-u25-16-q2@1: At which frequency does G(s) = 1/(2s + 1) have gain 1/√2? | 0.5 rad/s | 2 rad/s | 1 rad/s | 0.25 rad/s | 4 rad/s | A first-order lag 1/(τs + 1) has gain 1/√2 (−3 dB) at its corner frequency ω = 1/τ = 1/2 rad/s.
 M2#maths-u25-16-q3@2: Why do engineers specify a minimum phase margin? | It provides a safety buffer against unmodelled delays and parameter changes that add phase lag | It maximises the loop gain at every frequency | It removes all overshoot from the step response | It's required only for open-loop control systems | It isn't specified; only gain margin matters | Low phase margin means small extra lag could cause instability.
@@ -606,8 +606,8 @@ Q: What slope does one pole add to a Bode magnitude plot? | −20 dB per decade.
 Q: Where is phase margin read? | At the gain crossover frequency (0 dB).
 SUM: Log scales make gain and phase additive.
 SUM: Margins read off the plot.
-SRC: Bode HW, Network Analysis and Feedback Amplifier Design (Van Nostrand 1945) | textbook | 1945 | https://archive.org/
-SRC: Dorf RC, Bishop RH, Modern Control Systems (14th edn, Pearson 2021) | textbook | 2021 | https://www.pearson.com/
+SRC: Bode HW, Network Analysis and Feedback Amplifier Design (Van Nostrand 1945) | secondary | 1945 | https://archive.org/
+SRC: Dorf RC, Bishop RH, Modern Control Systems (14th edn, Pearson 2021) | secondary | 2021 | https://www.pearson.com/
 NUM1#maths-u25-17-q1@1: A gain of 1000 is how many decibels? | 60 | 0 | dB | 20 log₁₀ 1000 = 20 × 3 = 60 dB.
 M1#maths-u25-17-q2@1: What is the high-frequency slope of G(s) = 1/(s(s + 1)) on a Bode magnitude plot? | −40 dB/decade | −20 dB/decade | 0 dB/decade | +20 dB/decade | −60 dB/decade | Two poles (one integrator and one first-order) give −40 dB/decade.
 M2#maths-u25-17-q3@2: At phase crossover the loop gain is −8 dB. What is the gain margin? | 8 dB | −8 dB | 0 dB | 16 dB | 180 dB | Gain could rise by 8 dB before the loop reaches 0 dB at −180°.
@@ -643,8 +643,8 @@ Q: What point do Nyquist plots encircle to indicate instability? | −1.
 Q: What theorem underlies the Nyquist criterion? | Cauchy's argument principle.
 SUM: Count encirclements of −1.
 SUM: Distance to −1 measures robustness.
-SRC: Nyquist H, Regeneration theory, Bell System Technical Journal 11(1), 126 | journal | 1932 | https://doi.org/10.1002/j.1538-7305.1932.tb02344.x
-SRC: Åström KJ, Murray RM, Feedback Systems: An Introduction for Scientists and Engineers (2nd edn, Princeton University Press 2021) | textbook | 2021 | https://fbswiki.org/
+SRC: Nyquist H, Regeneration theory, Bell System Technical Journal 11(1), 126 | primary | 1932 | https://doi.org/10.1002/j.1538-7305.1932.tb02344.x
+SRC: Åström KJ, Murray RM, Feedback Systems: An Introduction for Scientists and Engineers (2nd edn, Princeton University Press 2021) | secondary | 2021 | https://fbswiki.org/
 NUM1#maths-u25-18-q1@1: For L(s) = K/(s + 1)^{3}, what is the gain margin (as a factor) when K = 2? | 4 | 0 |  | The critical gain is 8, so the margin is 8/2 = 4 (about 12 dB).
 M1#maths-u25-18-q2@1: A stable open-loop system's Nyquist plot encircles −1 once clockwise. How many closed-loop RHP poles are there? | 1 | 0 | 2 | −1 | It can't be determined | By the Nyquist criterion Z = N + P, with N = 1 clockwise encirclement and P = 0 open-loop RHP poles, so Z = 1.
 M3#maths-u25-18-q3@2: Why does a time delay threaten stability in Nyquist terms? | It rotates each point clockwise by ωT, which can swing the plot round −1 | It shrinks the Nyquist plot to the origin | It removes all encirclements of −1 | It moves the critical point away from −1 | It has no effect on the Nyquist plot | e^{−iωT} adds phase lag growing with frequency.
@@ -679,8 +679,8 @@ Q: Where does a root locus start? | At the open-loop poles.
 Q: What damping ratio corresponds to poles at 45° from the negative real axis? | About 0.707.
 SUM: Watch poles move with gain.
 SUM: Pick gains for damping and speed.
-SRC: Evans WR, Graphical analysis of control systems, Transactions of the AIEE 67(1), 547 | journal | 1948 | https://doi.org/10.1109/T-AIEE.1948.5059708
-SRC: Ogata K, Modern Control Engineering (5th edn, Pearson 2010) | textbook | 2010 | https://www.pearson.com/
+SRC: Evans WR, Graphical analysis of control systems, Transactions of the AIEE 67(1), 547 | primary | 1948 | https://doi.org/10.1109/T-AIEE.1948.5059708
+SRC: Ogata K, Modern Control Engineering (5th edn, Pearson 2010) | secondary | 2010 | https://www.pearson.com/
 NUM1#maths-u25-19-q1@1: For L(s) = 1/(s(s + 4)), at what gain K are the closed-loop poles a repeated real pair? | 4 | 0 |  | s^{2} + 4s + K = 0 has a double root when 16 − 4K = 0, so K = 4.
 M1#maths-u25-19-q2@1: Three open-loop poles and no zeros: at what angles do the root locus asymptotes lie? | ±60° and 180° | ±90° only | 0° and 180° | ±45° and ±135° | ±30° and 90° | Angles (2k + 1)180°/3 give 60°, 180° and 300°.
 M2#maths-u25-19-q3@2: Why does adding a zero in the left half-plane (lead compensation) often improve stability? | It pulls the root locus branches to the left, away from the imaginary axis | It adds a pole at the origin to the loop | It increases the phase lag of the loop | It removes all the open-loop poles | It doesn't change the root locus at all | Zeros attract locus branches and add phase lead.
@@ -714,8 +714,8 @@ Q: What equation governs a Luenberger observer's error? | ė = (A − LC)e.
 Q: What does the separation principle allow? | Designing controller and observer gains independently.
 SUM: Estimate what you can't measure.
 SUM: Design controller and observer separately.
-SRC: Luenberger DG, Observing the state of a linear system, IEEE Transactions on Military Electronics 8(2), 74 | journal | 1964 | https://doi.org/10.1109/TME.1964.4323124
-SRC: Doyle JC, Guaranteed margins for LQG regulators, IEEE Transactions on Automatic Control 23(4), 756 | journal | 1978 | https://doi.org/10.1109/TAC.1978.1101812
+SRC: Luenberger DG, Observing the state of a linear system, IEEE Transactions on Military Electronics 8(2), 74 | primary | 1964 | https://doi.org/10.1109/TME.1964.4323124
+SRC: Doyle JC, Guaranteed margins for LQG regulators, IEEE Transactions on Automatic Control 23(4), 756 | primary | 1978 | https://doi.org/10.1109/TAC.1978.1101812
 NUM1#maths-u25-20-q1@1: For ẋ = 2x + u, y = x, what observer gain L gives error dynamics with eigenvalue −8? | 10 | 0 |  | 2 − L = −8 gives L = 10.
 M1#maths-u25-20-q2@1: Which condition must hold to place observer poles arbitrarily? | The system must be observable | The system must be stable | The input must be zero | C must be the identity | No condition | Observability of (A, C) is dual to controllability for pole placement.
 M2#maths-u25-20-q3@2: Why are observer poles usually chosen faster than controller poles? | So state estimates converge before the controller relies heavily on them | Slower observers are always better at rejecting noise | Observer speed has no effect on closed-loop behaviour | Fast observer poles reduce noise sensitivity | They're chosen slower than the controller poles | Estimation error should die out quickly relative to the closed-loop dynamics.
@@ -750,8 +750,8 @@ Q: What does LQG combine? | An LQR controller with a Kalman filter.
 Q: What equation gives the steady-state Kalman gain? | An algebraic Riccati equation.
 SUM: Optimal estimation under Gaussian noise.
 SUM: Dual to LQR.
-SRC: Kalman RE, Bucy RS, New results in linear filtering and prediction theory, Journal of Basic Engineering 83(1), 95 | journal | 1961 | https://doi.org/10.1115/1.3658902
-SRC: Anderson BDO, Moore JB, Optimal Filtering (Prentice Hall 1979; Dover 2005) | textbook | 2005 | https://store.doverpublications.com/
+SRC: Kalman RE, Bucy RS, New results in linear filtering and prediction theory, Journal of Basic Engineering 83(1), 95 | primary | 1961 | https://doi.org/10.1115/1.3658902
+SRC: Anderson BDO, Moore JB, Optimal Filtering (Prentice Hall 1979; Dover 2005) | secondary | 2005 | https://store.doverpublications.com/
 NUM1#maths-u25-21-q1@1: In the scalar example, what is the steady-state updated variance P = P⁻/(P⁻ + 1), to 3 decimal places? | 0.618 | 0.001 |  | P = 1.618/2.618 ≈ 0.618 (the golden ratio conjugate).
 M1#maths-u25-21-q2@1: What happens to the Kalman gain when process noise Q_{w} increases? | It increases, trusting measurements more | It decreases, trusting the model more | It stays exactly the same | It becomes zero immediately | It becomes negative | Larger model uncertainty raises P⁻ and hence K.
 M3#maths-u25-21-q3@2: Why doesn't LQG automatically have good robustness margins? | Adding an observer changes the loop; Doyle showed margins can be tiny | LQG controllers are always unstable in practice | Kalman filters remove all stability margins by design | LQR itself has no robustness margins to inherit | It does automatically; LQG keeps all of LQR's margins | Separation gives stability, but not the guaranteed margins of full-state LQR.
@@ -786,8 +786,8 @@ Q: What is persistent excitation? | An input rich enough to reveal all the syste
 Q: Why validate a model on separate data? | To check it predicts beyond the data it was fitted to.
 SUM: Learn models from data.
 SUM: Excite, fit, validate.
-SRC: Ljung L, System Identification: Theory for the User (2nd edn, Prentice Hall 1999) | textbook | 1999 | https://www.pearson.com/
-SRC: Van Overschee P, De Moor B, N4SID: subspace algorithms for the identification of combined deterministic-stochastic systems, Automatica 30(1), 75 | journal | 1994 | https://doi.org/10.1016/0005-1098(94)90230-5
+SRC: Ljung L, System Identification: Theory for the User (2nd edn, Prentice Hall 1999) | secondary | 1999 | https://www.pearson.com/
+SRC: Van Overschee P, De Moor B, N4SID: subspace algorithms for the identification of combined deterministic-stochastic systems, Automatica 30(1), 75 | primary | 1994 | https://doi.org/10.1016/0005-1098(94)90230-5
 NUM1#maths-u25-22-q1@1: An ARX model is y_{t} = 0.5y_{t−1} + 3u_{t−1}. What is its DC gain? | 6 | 0 |  | y(1 − 0.5) = 3u gives y/u = 6.
 M1#maths-u25-22-q2@1: Which input is commonly used to identify system dynamics because it excites many frequencies? | A pseudo-random binary sequence (PRBS) | A constant zero input | A single slow sinusoid | A one-off step with no repetition | No input at all | A PRBS switches between two levels pseudo-randomly, giving a broad, flat spectrum that excites the system across many frequencies.
 M2#maths-u25-22-q3@2: Why is identification in closed loop harder than in open loop? | Feedback makes the input correlated with the noise, which can bias standard estimators | Closed loops produce no useful data for identification | Controllers remove all the dynamics from the data | Open-loop data are always too noisy to use | It isn't harder; closed-loop data are always better | The controller feeds disturbances back into u, violating estimator assumptions.
@@ -822,8 +822,8 @@ Q: What does increasing R do in LQR? | Penalises control effort more, giving gen
 Q: What phase margin does single-input LQR guarantee? | At least 60°.
 SUM: Optimal quadratic regulation.
 SUM: Riccati gives the gain.
-SRC: Kalman RE, Contributions to the theory of optimal control, Boletín de la Sociedad Matemática Mexicana 5, 102 | journal | 1960 | https://www.semanticscholar.org/
-SRC: Anderson BDO, Moore JB, Optimal Control: Linear Quadratic Methods (Prentice Hall 1990; Dover 2007) | textbook | 2007 | https://store.doverpublications.com/
+SRC: Kalman RE, Contributions to the theory of optimal control, Boletín de la Sociedad Matemática Mexicana 5, 102 | primary | 1960 | https://www.semanticscholar.org/
+SRC: Anderson BDO, Moore JB, Optimal Control: Linear Quadratic Methods (Prentice Hall 1990; Dover 2007) | secondary | 2007 | https://store.doverpublications.com/
 NUM1#maths-u25-23-q1@1: For ẋ = u with Q = 16 and R = 4, what is the LQR gain K? | 2 | 0 |  | Riccati −P^{2}/4 + 16 = 0 gives P = 8, so K = P/R = 2.
 M1#maths-u25-23-q2@1: Using Bryson's rule, a state with maximum allowed deviation 0.5 gets which weight? | 4 | 0.5 | 2 | 0.25 | 1 | Bryson's rule sets Qᵢᵢ = 1/(max xᵢ)^{2}, so a maximum deviation of 0.5 gives weight 1/0.25 = 4.
 M2#maths-u25-23-q3@2: Why does LQR guarantee good robustness margins for single-input systems? | Its loop satisfies |1 + L(iω)| ≥ 1, keeping the Nyquist plot away from −1 | It removes all model errors from the plant | It has infinite phase margin for every system | It uses no feedback, so margins don't apply | It doesn't guarantee any margins at all | Kalman's inequality gives at least 60° phase margin and infinite gain margin upward.
@@ -858,8 +858,8 @@ Q: How many of the planned inputs does MPC apply before re-planning? | Only the 
 Q: What optimisation does linear MPC solve each step? | A quadratic program.
 SUM: Plan ahead, act, re-plan.
 SUM: Constraints are built in.
-SRC: Rawlings JB, Mayne DQ, Diehl M, Model Predictive Control: Theory, Computation, and Design (2nd edn, Nob Hill 2017) | textbook | 2017 | https://sites.engineering.ucsb.edu/~jbraw/mpc/
-SRC: Qin SJ, Badgwell TA, A survey of industrial model predictive control technology, Control Engineering Practice 11(7), 733 | journal | 2003 | https://doi.org/10.1016/S0967-0661(02)00186-7
+SRC: Rawlings JB, Mayne DQ, Diehl M, Model Predictive Control: Theory, Computation, and Design (2nd edn, Nob Hill 2017) | secondary | 2017 | https://sites.engineering.ucsb.edu/~jbraw/mpc/
+SRC: Qin SJ, Badgwell TA, A survey of industrial model predictive control technology, Control Engineering Practice 11(7), 733 | primary | 2003 | https://doi.org/10.1016/S0967-0661(02)00186-7
 NUM1#maths-u25-24-q1@1: An MPC runs every 50 ms with a 2-second prediction horizon. How many steps is the horizon? | 40 | 0 | steps | 2/0.05 = 40 steps.
 M1#maths-u25-24-q2@1: What advantage does MPC have over LQR? | It handles input and state constraints explicitly | It needs no model of the plant | It never needs to solve an optimisation | It works only for systems with one state | It ignores the future behaviour of the plant | Constraints enter the optimisation directly rather than being violated or clipped.
 M3#maths-u25-24-q3@2: Why does MPC re-solve its optimisation at every step instead of applying the whole plan? | New measurements correct for disturbances and model errors, giving feedback | The plan is always wrong at the first step | Solvers can only output one input at a time | It saves computation compared with one long plan | It doesn't re-solve; it applies the whole plan | Receding-horizon re-planning turns open-loop optimisation into closed-loop control.
@@ -894,8 +894,8 @@ Q: What does the H∞ norm measure? | The largest gain of a system over all freq
 Q: What is the robust stability condition for multiplicative uncertainty W? | ‖WT‖_{∞} < 1.
 SUM: Design for the worst case.
 SUM: Small gains guarantee stability.
-SRC: Zhou K, Doyle JC, Glover K, Robust and Optimal Control (Prentice Hall 1996) | textbook | 1996 | https://www.pearson.com/
-SRC: Doyle JC, Glover K, Khargonekar PP, Francis BA, State-space solutions to standard H2 and H∞ control problems, IEEE Transactions on Automatic Control 34(8), 831 | journal | 1989 | https://doi.org/10.1109/9.29425
+SRC: Zhou K, Doyle JC, Glover K, Robust and Optimal Control (Prentice Hall 1996) | secondary | 1996 | https://www.pearson.com/
+SRC: Doyle JC, Glover K, Khargonekar PP, Francis BA, State-space solutions to standard H2 and H∞ control problems, IEEE Transactions on Automatic Control 34(8), 831 | primary | 1989 | https://doi.org/10.1109/9.29425
 NUM1#maths-u25-25-q1@1: Two stable systems with H∞ norms 0.8 and 1.1 are connected in feedback. What is the product of norms? | 0.88 | 0.001 |  | 0.8 × 1.1 = 0.88 < 1, so the small-gain theorem guarantees stability.
 M1#maths-u25-25-q2@1: What does the small-gain theorem require for loop stability? | The product of the subsystems' H∞ norms is below 1 | Each subsystem's gain is above 1 | The two gains are exactly equal | The loop contains no feedback | Nothing about the gains at all | If the loop gain is less than 1 everywhere, signals can't grow around the loop.
 M2#maths-u25-25-q3@2: Why does robust control usually cost some nominal performance? | Guarding against worst-case uncertainty forces more conservative, lower-bandwidth designs | Robustness always improves nominal performance as well | Nominal performance doesn't matter in robust design | Robust controllers remove feedback from the loop | It doesn't cost anything compared with nominal design | Keeping |T| small where uncertainty is large limits how aggressive the controller can be.
@@ -929,8 +929,8 @@ Q: What does MRAC make the plant follow? | A reference model's output.
 Q: What does parameter convergence in adaptive control require? | Persistently exciting signals.
 SUM: Controllers that learn as they go.
 SUM: Stability needs careful adaptation laws.
-SRC: Åström KJ, Wittenmark B, Adaptive Control (2nd edn, Addison-Wesley 1995; Dover 2008) | textbook | 2008 | https://store.doverpublications.com/
-SRC: Ioannou PA, Sun J, Robust Adaptive Control (Prentice Hall 1996; Dover 2012) | textbook | 2012 | https://store.doverpublications.com/
+SRC: Åström KJ, Wittenmark B, Adaptive Control (2nd edn, Addison-Wesley 1995; Dover 2008) | secondary | 2008 | https://store.doverpublications.com/
+SRC: Ioannou PA, Sun J, Robust Adaptive Control (Prentice Hall 1996; Dover 2012) | secondary | 2012 | https://store.doverpublications.com/
 NUM1#maths-u25-26-q1@1: Using θ̇ = −γeφ with γ = 0.2, e = −5 and φ = 3, what is θ̇? | 3 | 0 |  | −0.2 × (−5) × 3 = 3.
 M1#maths-u25-26-q2@1: Which method estimates plant parameters online and redesigns the controller from them? | A self-tuning regulator | A fixed PID controller | Open-loop control | A static gain | A lookup table | It combines recursive estimation with certainty-equivalence design.
 M3#maths-u25-26-q3@2: Why can adaptive controllers lose robustness to unmodelled dynamics and disturbances? | Adaptation can drift parameters in response to disturbances, driving gains to destabilising values | Adaptation always improves robustness to every kind of disturbance | Disturbances never affect the parameter estimates in adaptive control | Adaptive controllers have fixed gains, so they can't drift at all | It can't happen if the adaptation law is gradient-based | Rohrs et al. (1985) showed instability from small unmodelled dynamics without robust modifications.
@@ -965,8 +965,8 @@ Q: What is certainty equivalence in LQG? | Using the deterministic optimal gain 
 Q: What extra term appears in the stochastic HJB equation? | The second-order diffusion term ½ tr(σσᵀ∇^{2}V).
 SUM: Optimise expected performance under noise.
 SUM: Certainty equivalence in LQG.
-SRC: Fleming WH, Soner HM, Controlled Markov Processes and Viscosity Solutions (2nd edn, Springer 2006) | textbook | 2006 | https://link.springer.com/
-SRC: Merton RC, Optimum consumption and portfolio rules in a continuous-time model, Journal of Economic Theory 3(4), 373 | journal | 1971 | https://doi.org/10.1016/0022-0531(71)90038-X
+SRC: Fleming WH, Soner HM, Controlled Markov Processes and Viscosity Solutions (2nd edn, Springer 2006) | secondary | 2006 | https://link.springer.com/
+SRC: Merton RC, Optimum consumption and portfolio rules in a continuous-time model, Journal of Economic Theory 3(4), 373 | primary | 1971 | https://doi.org/10.1016/0022-0531(71)90038-X
 NUM1#maths-u25-27-q1@1: For dx = σdW with σ = 0.5, what is the variance of x after 4 time units, starting at 0? | 1 | 0 |  | Var = σ^{2}t = 0.25 × 4 = 1.
 M1#maths-u25-27-q2@1: In LQG control, what determines the optimal feedback gain? | The system matrices and the cost weights Q and R, not the noise level | The noise level only, not the cost weights | The initial state of the system | The colour and type of the sensor | Random chance during operation | Certainty equivalence separates the gain from the noise statistics.
 M2#maths-u25-27-q3@2: Why does partial observation make stochastic control harder? | Decisions must use the belief (a distribution over states), a far larger object | Observations are always perfect in stochastic control | It makes the problem fully deterministic | Beliefs are never needed when observations are partial | It doesn't make the problem any harder to solve | POMDP belief spaces grow quickly, making exact solutions intractable.
@@ -1001,8 +1001,8 @@ Q: What does feedback linearisation do? | Cancels non-linearities with feedback 
 Q: What is chattering in sliding-mode control? | Rapid switching of the control around the sliding surface.
 SUM: Control beyond linear approximations.
 SUM: Lyapunov and cancellation are key tools.
-SRC: Khalil HK, Nonlinear Systems (3rd edn, Prentice Hall 2002) | textbook | 2002 | https://www.pearson.com/
-SRC: Slotine JJE, Li W, Applied Nonlinear Control (Prentice Hall 1991) | textbook | 1991 | https://www.pearson.com/
+SRC: Khalil HK, Nonlinear Systems (3rd edn, Prentice Hall 2002) | secondary | 2002 | https://www.pearson.com/
+SRC: Slotine JJE, Li W, Applied Nonlinear Control (Prentice Hall 1991) | secondary | 1991 | https://www.pearson.com/
 NUM1#maths-u25-28-q1@1: For ẋ = x^{3} + u with u = −x^{3} − 5x, what is ẋ when x = 2? | -10 | 0 |  | ẋ = x^{3} − x^{3} − 5x = −5 × 2 = −10.
 M1#maths-u25-28-q2@1: Which method is designed to be robust to matched uncertainties by forcing the state onto a surface? | Sliding-mode control | Open-loop control | Pure feedforward | Proportional control only | Gain scheduling | Switching control keeps s(x) = 0 despite bounded matched disturbances.
 M3#maths-u25-28-q3@2: Why can feedback linearisation perform poorly when the model is uncertain? | It relies on cancelling exact non-linear terms; mismatched terms remain and can destabilise the loop | It never uses a model of the plant, so errors don't arise | Model uncertainty always improves its performance | It is inherently robust to any model mismatch | It performs perfectly whatever the model quality | Imperfect cancellation leaves residual non-linear dynamics.
@@ -1038,8 +1038,8 @@ Q: What do agents converge to under undirected consensus on a connected graph? |
 Q: What does the algebraic connectivity λ₂ determine? | The consensus convergence rate.
 SUM: Local rules, global agreement.
 SUM: Graphs govern convergence.
-SRC: Olfati-Saber R, Fax JA, Murray RM, Consensus and cooperation in networked multi-agent systems, Proceedings of the IEEE 95(1), 215 | journal | 2007 | https://doi.org/10.1109/JPROC.2006.887293
-SRC: Mesbahi M, Egerstedt M, Graph Theoretic Methods in Multiagent Networks (Princeton University Press 2010) | textbook | 2010 | https://press.princeton.edu/
+SRC: Olfati-Saber R, Fax JA, Murray RM, Consensus and cooperation in networked multi-agent systems, Proceedings of the IEEE 95(1), 215 | primary | 2007 | https://doi.org/10.1109/JPROC.2006.887293
+SRC: Mesbahi M, Egerstedt M, Graph Theoretic Methods in Multiagent Networks (Princeton University Press 2010) | secondary | 2010 | https://press.princeton.edu/
 NUM1#maths-u25-29-q1@1: Four agents on a connected undirected graph start at 2, 4, 6 and 12. What consensus value do they reach? | 6 | 0 |  | The average is 24/4 = 6.
 M1#maths-u25-29-q2@1: What property of the graph Laplacian guarantees consensus for undirected graphs? | A single zero eigenvalue, which holds when the graph is connected | All its eigenvalues are exactly zero | It is a diagonal matrix for every graph | Its determinant is always equal to 1 | It has some negative eigenvalues | Connectedness gives one zero eigenvalue with eigenvector (1, …, 1).
 M2#maths-u25-29-q3@2: Why does adding communication links usually speed up consensus? | It increases the algebraic connectivity λ₂, which sets the slowest convergence rate | Extra links slow convergence by adding more disagreement | Convergence speed doesn't depend on the number of links | It removes the average, so agents reach zero instead | It doesn't speed anything up; only gains matter | Better-connected graphs mix information faster.
@@ -1074,8 +1074,8 @@ Q: What does the data-rate theorem bound? | The minimum bit rate needed to stabi
 Q: What does event-triggered control do? | Communicates only when a triggering condition is met.
 SUM: Feedback over imperfect networks.
 SUM: Information limits stabilisation.
-SRC: Nair GN, Evans RJ, Stabilizability of stochastic linear systems with finite feedback data rates, SIAM Journal on Control and Optimization 43(2), 413 | journal | 2004 | https://doi.org/10.1137/S0363012902402116
-SRC: Sinopoli B et al., Kalman filtering with intermittent observations, IEEE Transactions on Automatic Control 49(9), 1453 | journal | 2004 | https://doi.org/10.1109/TAC.2004.834121
+SRC: Nair GN, Evans RJ, Stabilizability of stochastic linear systems with finite feedback data rates, SIAM Journal on Control and Optimization 43(2), 413 | primary | 2004 | https://doi.org/10.1137/S0363012902402116
+SRC: Sinopoli B et al., Kalman filtering with intermittent observations, IEEE Transactions on Automatic Control 49(9), 1453 | primary | 2004 | https://doi.org/10.1109/TAC.2004.834121
 NUM1#maths-u25-30-q1@1: A discrete-time plant has unstable eigenvalues 2 and 8. What minimum data rate in bits per sample does the data-rate theorem require? | 4 | 0 | bits | log₂ 2 + log₂ 8 = 1 + 3 = 4 bits per sample.
 M1#maths-u25-30-q2@1: How does a network delay affect a feedback loop's stability margin? | It adds phase lag, reducing the phase margin | It adds gain margin | It has no effect | It always stabilises the loop | It removes all poles | A delay e^{−sT} leaves gain unchanged but adds phase lag ωT, which eats into the phase margin and can cause instability.
 M3#maths-u25-30-q3@2: Why can't an unstable plant be stabilised with arbitrarily few bits per sample? | Uncertainty grows by the unstable eigenvalues each step, and the bits must undo it | Bits don't matter for stabilisation, only for accuracy | Stable plants need more bits than unstable ones | Any data rate works if the controller is well designed | It can be stabilised with one bit per sample always | log₂|λ| bits are needed per step just to counter the expansion of uncertainty.

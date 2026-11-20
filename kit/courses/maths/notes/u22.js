@@ -32,8 +32,8 @@ Q: What is seasonality? | A pattern that repeats with a fixed period.
 Q: Why can't time series be split randomly for testing? | Future values would inform past predictions.
 SUM: Order matters in time series.
 SUM: Patterns guide model choice.
-SRC: Hyndman RJ, Athanasopoulos G, Forecasting: Principles and Practice (3rd edn, OTexts 2021) | textbook | 2021 | https://otexts.com/fpp3/
-SRC: Chatfield C, Xing H, The Analysis of Time Series: An Introduction with R (7th edn, CRC Press 2019) | textbook | 2019 | https://www.routledge.com/
+SRC: Hyndman RJ, Athanasopoulos G, Forecasting: Principles and Practice (3rd edn, OTexts 2021) | secondary | 2021 | https://otexts.com/fpp3/
+SRC: Chatfield C, Xing H, The Analysis of Time Series: An Introduction with R (7th edn, CRC Press 2019) | secondary | 2019 | https://www.routledge.com/
 NUM1#maths-u22-01-q1@1: A series is recorded every hour with a daily cycle. What is the seasonal period in observations? | 24 | 0 | observations | One day contains 24 hourly observations, so the period is 24.
 M1#maths-u22-01-q2@1: Which component describes a long-run upward movement in a series? | The trend | The seasonal component | The irregular component | The lag | The residual autocorrelation | A trend is a persistent long-term change in level.
 M2#maths-u22-01-q3@2: Why can ordinary regression standard errors mislead with time series data? | Serially correlated errors make the effective sample size smaller than the number of observations | Time series have no random errors, so standard errors are always exactly zero | Regression can't use time as a variable, so its standard errors are undefined | Standard errors are always too large with time series, making tests too cautious | They don't mislead; independence makes no difference to regression inference | Positive autocorrelation means each observation adds less new information.
@@ -67,8 +67,8 @@ Q: When is a multiplicative decomposition appropriate? | When seasonal swings gr
 Q: What does STL stand for? | Seasonal and Trend decomposition using Loess.
 SUM: Split series into components.
 SUM: Adjust for seasonality to see trends.
-SRC: Cleveland RB, Cleveland WS, McRae JE, Terpenning I, STL: a seasonal-trend decomposition procedure based on loess, Journal of Official Statistics 6(1), 3 | journal | 1990 | https://www.scb.se/
-SRC: Office for National Statistics, Guide to seasonal adjustment | guideline | 2023 | https://www.ons.gov.uk/methodology/methodologytopicsandstatisticalconcepts/seasonaladjustment
+SRC: Cleveland RB, Cleveland WS, McRae JE, Terpenning I, STL: a seasonal-trend decomposition procedure based on loess, Journal of Official Statistics 6(1), 3 | primary | 1990 | https://www.scb.se/
+SRC: Office for National Statistics, Guide to seasonal adjustment | guidance | 2023 | https://www.ons.gov.uk/methodology/methodologytopicsandstatisticalconcepts/seasonaladjustment
 NUM1#maths-u22-02-q1@1: With a multiplicative seasonal index of 1.25 for December, what is the seasonally adjusted value of December sales of 500? | 400 | 0 |  | Divide by the seasonal index: 500/1.25 = 400.
 M1#maths-u22-02-q2@1: Which decomposition suits a series whose seasonal peaks grow in proportion to its level? | Multiplicative | Additive | Linear trend only | No decomposition | Differencing only | Multiplicative seasonal factors scale with the trend.
 M2#maths-u22-02-q3@2: Why are seasonally adjusted figures at the end of a series often revised? | Trend and seasonal estimates near the end use fewer future observations, so they change as new data arrive | Statisticians change their adjustment methods every month for consistency | The raw data are always wrong when first published, so they're replaced | Revisions are never made to seasonally adjusted figures once released | Seasonality disappears from the latest data, so the adjustment is redone | Centred filters need data on both sides; at the end, forecasts fill in until actual values come.
@@ -102,8 +102,8 @@ Q: What does a unit root imply about shocks? | They have permanent effects.
 Q: Which test checks for a unit root? | The augmented Dickey–Fuller test.
 SUM: Trends describe long-run direction.
 SUM: Know whether shocks persist.
-SRC: Granger CWJ, Newbold P, Spurious regressions in econometrics, Journal of Econometrics 2(2), 111 | journal | 1974 | https://doi.org/10.1016/0304-4076(74)90034-7
-SRC: Dickey DA, Fuller WA, Distribution of the estimators for autoregressive time series with a unit root, Journal of the American Statistical Association 74(366), 427 | journal | 1979 | https://doi.org/10.1080/01621459.1979.10482531
+SRC: Granger CWJ, Newbold P, Spurious regressions in econometrics, Journal of Econometrics 2(2), 111 | primary | 1974 | https://doi.org/10.1016/0304-4076(74)90034-7
+SRC: Dickey DA, Fuller WA, Distribution of the estimators for autoregressive time series with a unit root, Journal of the American Statistical Association 74(366), 427 | primary | 1979 | https://doi.org/10.1080/01621459.1979.10482531
 NUM1#maths-u22-03-q1@1: A linear trend is y = 50 + 2.5t. What is the trend value at t = 12? | 80 | 0 |  | 50 + 2.5 × 12 = 50 + 30 = 80.
 M1#maths-u22-03-q2@1: A series follows y_{t} = y_{t−1} + 0.5 + ε_{t}. What kind of trend does it have? | A stochastic trend (random walk with drift) | A deterministic linear trend | No trend | A seasonal trend | A quadratic trend | Accumulated shocks plus drift give a unit-root process.
 M3#maths-u22-03-q3@2: Why do regressions between unrelated random walks often look significant? | Both series wander persistently, so they share apparent trends by chance, inflating R^{2} and t-statistics | Random walks are always related through their shared normal shocks | Regression removes the trends automatically, leaving real relationships | The regression errors are independent, so the tests are valid | They never look significant; random walks have zero correlation | Non-stationary errors invalidate standard inference (spurious regression).
@@ -138,8 +138,8 @@ Q: What is m for quarterly data with yearly seasonality? | 4.
 Q: How many dummies model monthly seasonality with an intercept? | 11.
 SUM: Seasonality repeats with fixed period.
 SUM: Choose a representation to suit the period.
-SRC: Hyndman RJ, Athanasopoulos G, Forecasting: Principles and Practice (3rd edn, OTexts 2021) | textbook | 2021 | https://otexts.com/fpp3/
-SRC: De Livera AM, Hyndman RJ, Snyder RD, Forecasting time series with complex seasonal patterns using exponential smoothing, Journal of the American Statistical Association 106(496), 1513 | journal | 2011 | https://doi.org/10.1198/jasa.2011.tm09771
+SRC: Hyndman RJ, Athanasopoulos G, Forecasting: Principles and Practice (3rd edn, OTexts 2021) | secondary | 2021 | https://otexts.com/fpp3/
+SRC: De Livera AM, Hyndman RJ, Snyder RD, Forecasting time series with complex seasonal patterns using exponential smoothing, Journal of the American Statistical Association 106(496), 1513 | primary | 2011 | https://doi.org/10.1198/jasa.2011.tm09771
 NUM1#maths-u22-04-q1@1: Half-hourly electricity demand has a daily cycle. What is the seasonal period m? | 48 | 0 | observations | 24 hours × 2 observations per hour = 48.
 M1#maths-u22-04-q2@1: Which ACF pattern suggests weekly seasonality in daily data? | Spikes at lags 7, 14 and 21 | A single spike at lag 1 | Spikes at lags 12 and 24 | A slow linear decay only | No spikes at all | With daily data a weekly cycle makes values correlate with those 7, 14 and 21 days earlier, so the ACF spikes at multiples of 7.
 M2#maths-u22-04-q3@2: Why are Fourier terms preferred to dummies for weekly data with yearly seasonality? | A few sine–cosine pairs capture a smooth 52-week pattern with far fewer parameters than 51 dummies | Dummy variables can't model seasonality of any period length | Fourier terms need no data, since sine curves are fixed in advance | Weekly data have no seasonality, so Fourier terms just add noise | They aren't preferred; 51 dummies are always the better choice | Parsimony matters when the period is long.
@@ -175,8 +175,8 @@ Q: What is the null hypothesis of the ADF test? | A unit root (non-stationarity)
 Q: What is the variance of a random walk after t steps? | tσ^{2}.
 SUM: Stationary means stable statistics.
 SUM: Transform to reach stationarity.
-SRC: Brockwell PJ, Davis RA, Introduction to Time Series and Forecasting (3rd edn, Springer 2016) | textbook | 2016 | https://link.springer.com/
-SRC: Kwiatkowski D, Phillips PCB, Schmidt P, Shin Y, Testing the null hypothesis of stationarity against the alternative of a unit root, Journal of Econometrics 54, 159 | journal | 1992 | https://doi.org/10.1016/0304-4076(92)90104-Y
+SRC: Brockwell PJ, Davis RA, Introduction to Time Series and Forecasting (3rd edn, Springer 2016) | secondary | 2016 | https://link.springer.com/
+SRC: Kwiatkowski D, Phillips PCB, Schmidt P, Shin Y, Testing the null hypothesis of stationarity against the alternative of a unit root, Journal of Econometrics 54, 159 | primary | 1992 | https://doi.org/10.1016/0304-4076(92)90104-Y
 NUM1#maths-u22-05-q1@1: A random walk has shock variance σ^{2} = 4. What is the variance of y₂₅ (with y₀ = 0)? | 100 | 0 |  | Var(y_{t}) = tσ^{2} = 25 × 4 = 100.
 M1#maths-u22-05-q2@1: Which series is weakly stationary? | White noise with constant variance | A random walk | A series with a linear trend | A series whose variance doubles each year | Monthly sales with growing seasonality | White noise has constant mean, variance and zero autocorrelation.
 M3#maths-u22-05-q3@2: Why are the ADF and KPSS tests often used together? | They have opposite null hypotheses, so agreement between them gives stronger evidence | They are identical tests run twice for extra confidence | ADF tests seasonality only, while KPSS tests trends | KPSS can't detect stationarity, so ADF is needed instead | They are never combined, because their results always agree | ADF assumes a unit root and KPSS assumes stationarity; low power makes each alone inconclusive.
@@ -210,8 +210,8 @@ Q: What does the backshift operator B do? | By_{t} = y_{t−1}.
 Q: What are log differences approximately? | Percentage growth rates.
 SUM: Differences remove trends.
 SUM: Don't over-difference.
-SRC: Box GEP, Jenkins GM, Reinsel GC, Ljung GM, Time Series Analysis: Forecasting and Control (5th edn, Wiley 2015) | textbook | 2015 | https://www.wiley.com/
-SRC: Hyndman RJ, Athanasopoulos G, Forecasting: Principles and Practice (3rd edn, OTexts 2021) | textbook | 2021 | https://otexts.com/fpp3/
+SRC: Box GEP, Jenkins GM, Reinsel GC, Ljung GM, Time Series Analysis: Forecasting and Control (5th edn, Wiley 2015) | secondary | 2015 | https://www.wiley.com/
+SRC: Hyndman RJ, Athanasopoulos G, Forecasting: Principles and Practice (3rd edn, OTexts 2021) | secondary | 2021 | https://otexts.com/fpp3/
 NUM1#maths-u22-06-q1@1: Monthly values are 120 in January 2024 and 132 in January 2025. What is the seasonal (lag-12) difference? | 12 | 0 |  | y_{t} − y_{t−12} = 132 − 120 = 12.
 M1#maths-u22-06-q2@1: A series becomes stationary after differencing twice. How is it described? | I(2) | I(1) | I(0) | Seasonal only | White noise | Integrated of order 2 needs two differences.
 M2#maths-u22-06-q3@2: What sign suggests a series has been over-differenced? | A lag-1 autocorrelation near −0.5 in the differenced series | A lag-1 autocorrelation near +1 that decays very slowly | No autocorrelation at any lag in the differenced series | A growing trend that remains after the differencing | A single seasonal spike at lag 12 in the residuals | Differencing white noise gives an MA(1) with θ = −1 and ρ₁ = −0.5.
@@ -246,8 +246,8 @@ Q: What are the approximate 95% ACF bounds for white noise? | ±1.96/√T.
 Q: What should model residuals look like? | White noise.
 SUM: Autocorrelation measures memory.
 SUM: Use it to diagnose models.
-SRC: Ljung GM, Box GEP, On a measure of lack of fit in time series models, Biometrika 65(2), 297 | journal | 1978 | https://doi.org/10.1093/biomet/65.2.297
-SRC: Brockwell PJ, Davis RA, Introduction to Time Series and Forecasting (3rd edn, Springer 2016) | textbook | 2016 | https://link.springer.com/
+SRC: Ljung GM, Box GEP, On a measure of lack of fit in time series models, Biometrika 65(2), 297 | primary | 1978 | https://doi.org/10.1093/biomet/65.2.297
+SRC: Brockwell PJ, Davis RA, Introduction to Time Series and Forecasting (3rd edn, Springer 2016) | secondary | 2016 | https://link.springer.com/
 NUM1#maths-u22-07-q1@1: For T = 400, what is the approximate 95% bound for sample autocorrelations of white noise, to 3 decimal places? | 0.098 | 0.001 |  | 1.96/√400 = 1.96/20 = 0.098.
 M1#maths-u22-07-q2@1: Which ACF pattern suggests a non-stationary trending series? | Very slow decay from near 1 | A sharp cut-off after lag 1 | All values within the bounds | Alternating signs decaying fast | A single spike at lag 12 | Trends keep values correlated over many lags.
 M3#maths-u22-07-q3@2: Why might about 1 in 20 ACF spikes cross the 95% bounds even for white noise? | Each bound is a 5% test, so checking many lags produces some false alarms by chance | White noise is always correlated at some lag, so spikes are real | The ±1.96/√T bounds are wrong for every sample size | ACFs are never random, so any spike indicates structure | It never happens with white noise; every spike is meaningful | Multiple testing means joint tests like Ljung–Box are more reliable.
@@ -282,8 +282,8 @@ Q: Which function cuts off for an AR(p) model? | The PACF, after lag p.
 Q: Which function cuts off for an MA(q) model? | The ACF, after lag q.
 SUM: PACF removes intermediate lags.
 SUM: It identifies AR order.
-SRC: Box GEP, Jenkins GM, Reinsel GC, Ljung GM, Time Series Analysis: Forecasting and Control (5th edn, Wiley 2015) | textbook | 2015 | https://www.wiley.com/
-SRC: Shumway RH, Stoffer DS, Time Series Analysis and Its Applications (4th edn, Springer 2017) | textbook | 2017 | https://link.springer.com/
+SRC: Box GEP, Jenkins GM, Reinsel GC, Ljung GM, Time Series Analysis: Forecasting and Control (5th edn, Wiley 2015) | secondary | 2015 | https://www.wiley.com/
+SRC: Shumway RH, Stoffer DS, Time Series Analysis and Its Applications (4th edn, Springer 2017) | secondary | 2017 | https://link.springer.com/
 NUM1#maths-u22-08-q1@1: For an AR(1) with φ = 0.6, what is the partial autocorrelation at lag 2? | 0 | 0 |  | An AR(1) has no direct dependence on y_{t−2} once y_{t−1} is included, so φ₂₂ = 0.
 M1#maths-u22-08-q2@1: A PACF shows significant spikes at lags 1 and 2 only, with a decaying ACF. Which model fits? | AR(2) | MA(2) | AR(1) | MA(1) | White noise | A PACF cut-off after lag 2 indicates two autoregressive terms.
 M2#maths-u22-08-q3@2: Why do analysts compare information criteria after reading ACF and PACF plots? | Sample patterns are noisy and several models may look plausible, so AIC or BIC helps choose | ACF and PACF plots always identify the exact model, so criteria just confirm it | Information criteria replace fitting, so no estimation is needed afterwards | ACF and PACF plots are never useful, so only criteria should be used | They don't compare them; plots alone are the standard Box–Jenkins method | Criteria balance fit and complexity among candidate orders.
@@ -318,8 +318,8 @@ Q: Which moving average removes monthly seasonality? | A 2 × 12 (centred 12-mon
 Q: What is the trade-off in choosing window size? | Smoothness against lag.
 SUM: Average neighbours to smooth.
 SUM: Windows trade smoothness for lag.
-SRC: Hyndman RJ, Athanasopoulos G, Forecasting: Principles and Practice (3rd edn, OTexts 2021) | textbook | 2021 | https://otexts.com/fpp3/
-SRC: Chatfield C, Xing H, The Analysis of Time Series: An Introduction with R (7th edn, CRC Press 2019) | textbook | 2019 | https://www.routledge.com/
+SRC: Hyndman RJ, Athanasopoulos G, Forecasting: Principles and Practice (3rd edn, OTexts 2021) | secondary | 2021 | https://otexts.com/fpp3/
+SRC: Chatfield C, Xing H, The Analysis of Time Series: An Introduction with R (7th edn, CRC Press 2019) | secondary | 2019 | https://www.routledge.com/
 NUM1#maths-u22-09-q1@1: What is the 4-period trailing moving-average forecast after observations 12, 15, 14 and 19? | 15 | 0 |  | (12 + 15 + 14 + 19)/4 = 60/4 = 15.
 M1#maths-u22-09-q2@1: Why is a 2 × 12 moving average used for monthly data? | It centres the 12-month average on a single month while removing yearly seasonality | It doubles the amount of data available for estimating the trend | It removes all trends, leaving only the seasonal pattern | It needs only two months of data, which makes it quick | It isn't used; a 12-month trailing average is the standard | A 12-term average falls between months, so averaging two neighbours centres it.
 M2#maths-u22-09-q3@2: What is the main drawback of a long trailing moving average for tracking a trend? | It responds slowly, so it lags behind turning points | It is too noisy to show the underlying trend | It removes the trend entirely along with the noise | It needs future data that aren't yet available | It has no drawbacks compared with short windows | Averaging many past values delays the reaction to recent changes.
@@ -352,8 +352,8 @@ Q: What does a large α do? | Weights recent observations more heavily.
 Q: Which method adds seasonality to exponential smoothing? | Holt–Winters.
 SUM: Weight recent data more.
 SUM: ETS adds a statistical model.
-SRC: Hyndman RJ, Koehler AB, Ord JK, Snyder RD, Forecasting with Exponential Smoothing: The State Space Approach (Springer 2008) | textbook | 2008 | https://link.springer.com/
-SRC: Gardner ES, Exponential smoothing: the state of the art—Part II, International Journal of Forecasting 22(4), 637 | journal | 2006 | https://doi.org/10.1016/j.ijforecast.2006.03.005
+SRC: Hyndman RJ, Koehler AB, Ord JK, Snyder RD, Forecasting with Exponential Smoothing: The State Space Approach (Springer 2008) | secondary | 2008 | https://link.springer.com/
+SRC: Gardner ES, Exponential smoothing: the state of the art—Part II, International Journal of Forecasting 22(4), 637 | primary | 2006 | https://doi.org/10.1016/j.ijforecast.2006.03.005
 NUM1#maths-u22-10-q1@1: In simple exponential smoothing with α = 0.2, what weight is given to the observation two periods before the latest (lag 2)? | 0.128 | 0.001 |  | Weight α(1 − α)^{2} = 0.2 × 0.64 = 0.128.
 M1#maths-u22-10-q2@1: Which method suits a series with trend but no seasonality? | Holt's linear (or damped) trend method | Simple exponential smoothing | Holt–Winters seasonal method | A seasonal naive forecast | A 12-month moving average | Holt's method adds a trend component to the level.
 M2#maths-u22-10-q3@2: Why do damped trend methods often forecast better than linear trends? | Trends rarely continue indefinitely, so damping avoids over-extrapolation at long horizons | Damping removes all trends, which is safer for every series | Linear trends are always correct in the long run, so damping only adds bias | Damped methods ignore the data, which avoids over-fitting entirely | They don't; undamped linear trends win every forecasting competition | Empirical studies show damped trends are robust across many series.
@@ -388,8 +388,8 @@ Q: What is the ACF of an AR(1) at lag k? | φᵏ.
 Q: What is the mean of a stationary AR(1)? | c/(1 − φ).
 SUM: Regress on your own past.
 SUM: Forecasts revert to the mean.
-SRC: Box GEP, Jenkins GM, Reinsel GC, Ljung GM, Time Series Analysis: Forecasting and Control (5th edn, Wiley 2015) | textbook | 2015 | https://www.wiley.com/
-SRC: Hamilton JD, Time Series Analysis (Princeton University Press 1994) | textbook | 1994 | https://press.princeton.edu/
+SRC: Box GEP, Jenkins GM, Reinsel GC, Ljung GM, Time Series Analysis: Forecasting and Control (5th edn, Wiley 2015) | secondary | 2015 | https://www.wiley.com/
+SRC: Hamilton JD, Time Series Analysis (Princeton University Press 1994) | secondary | 1994 | https://press.princeton.edu/
 NUM1#maths-u22-11-q1@1: For the AR(1) example (c = 2, φ = 0.6, y_{T} = 10), what is the two-step forecast? | 6.8 | 0.001 |  | ŷ_{T+2} = 2 + 0.6 × 8 = 6.8, continuing towards the mean of 5.
 M1#maths-u22-11-q2@1: Which AR(1) is stationary? | y_{t} = 0.9y_{t−1} + ε_{t} | y_{t} = 1.0y_{t−1} + ε_{t} | y_{t} = 1.2y_{t−1} + ε_{t} | y_{t} = −1.5y_{t−1} + ε_{t} | y_{t} = 2y_{t−1} + ε_{t} | An AR(1) is stationary only when |φ| < 1; φ = 0.9 qualifies, while φ = 1 is a random walk and larger |φ| explodes.
 M2#maths-u22-11-q3@2: Why do AR(1) forecasts converge to the mean at long horizons? | Each step multiplies the deviation from the mean by φ, which shrinks it when |φ| < 1 | Forecasts always equal the last observed value | The noise grows forever, swamping the forecast | AR models have no mean to converge towards | They don't converge; they grow without limit | The forecast deviation obeys ŷ_{T+h} − μ = φʰ(y_{T} − μ), which shrinks to zero geometrically when |φ| < 1.
@@ -424,8 +424,8 @@ Q: After how many lags does an MA(q) ACF cut off? | q.
 Q: What is the maximum possible |ρ(1)| for MA(1)? | 0.5.
 SUM: MA models have short memory.
 SUM: Invertibility fixes uniqueness.
-SRC: Brockwell PJ, Davis RA, Introduction to Time Series and Forecasting (3rd edn, Springer 2016) | textbook | 2016 | https://link.springer.com/
-SRC: Shumway RH, Stoffer DS, Time Series Analysis and Its Applications (4th edn, Springer 2017) | textbook | 2017 | https://link.springer.com/
+SRC: Brockwell PJ, Davis RA, Introduction to Time Series and Forecasting (3rd edn, Springer 2016) | secondary | 2016 | https://link.springer.com/
+SRC: Shumway RH, Stoffer DS, Time Series Analysis and Its Applications (4th edn, Springer 2017) | secondary | 2017 | https://link.springer.com/
 NUM1#maths-u22-12-q1@1: For an MA(1) with θ = −0.8, what is ρ(1), to 3 decimal places? | -0.488 | 0.001 |  | ρ(1) = −0.8/(1 + 0.64) = −0.8/1.64 ≈ −0.488.
 M1#maths-u22-12-q2@1: For an MA(2) model, what is ρ(3)? | 0 | θ₁ | θ₂ | θ₁θ₂ | 1 | MA(q) autocorrelations vanish beyond lag q.
 M3#maths-u22-12-q3@2: Why do MA models with θ and 1/θ need an invertibility condition? | Both give the same autocorrelations, so the data can't tell them apart without a convention | One of the two models is always non-stationary, so it must be excluded | They have different means, so the data distinguish them easily | Only one of them is a valid model, since θ must be below zero | They don't need any condition; θ and 1/θ give different ACFs | ρ(1) = θ/(1 + θ^{2}) is unchanged when θ is replaced by 1/θ.
@@ -460,8 +460,8 @@ Q: What does AIC penalise? | The number of parameters.
 Q: What does Wold's theorem state? | Every stationary process has an MA(∞) representation (plus a deterministic part).
 SUM: AR and MA together are parsimonious.
 SUM: Identify, estimate, check.
-SRC: Box GEP, Jenkins GM, Reinsel GC, Ljung GM, Time Series Analysis: Forecasting and Control (5th edn, Wiley 2015) | textbook | 2015 | https://www.wiley.com/
-SRC: Akaike H, A new look at the statistical model identification, IEEE Transactions on Automatic Control 19(6), 716 | journal | 1974 | https://doi.org/10.1109/TAC.1974.1100705
+SRC: Box GEP, Jenkins GM, Reinsel GC, Ljung GM, Time Series Analysis: Forecasting and Control (5th edn, Wiley 2015) | secondary | 2015 | https://www.wiley.com/
+SRC: Akaike H, A new look at the statistical model identification, IEEE Transactions on Automatic Control 19(6), 716 | primary | 1974 | https://doi.org/10.1109/TAC.1974.1100705
 NUM1#maths-u22-13-q1@1: A model has log-likelihood −200 and 4 parameters. What is its AIC? | 408 | 0 |  | AIC = −2(−200) + 2 × 4 = 400 + 8 = 408.
 M1#maths-u22-13-q2@1: What are the AR and MA orders of y_{t} = 0.5y_{t−1} + ε_{t} + 0.3ε_{t−1} + 0.2ε_{t−2}? | AR order 1, MA order 2 | AR order 2, MA order 1 | AR order 1, MA order 1 | AR order 0, MA order 3 | AR order 3, MA order 0 | One lag of y and two lagged shocks make it ARMA(1,2).
 M2#maths-u22-13-q3@2: Why does BIC tend to choose smaller models than AIC? | Its penalty k log T grows with sample size, exceeding AIC's 2k once T > 7 | BIC ignores the likelihood and counts only parameters | AIC penalises parameters more heavily than BIC does | They always agree on the same model order | BIC chooses larger models when samples are big | A heavier complexity penalty favours parsimony.
@@ -495,8 +495,8 @@ Q: Which ARIMA model is equivalent to simple exponential smoothing? | ARIMA(0,1,
 Q: What does a constant with d = 1 produce in forecasts? | A linear trend.
 SUM: Difference, then fit ARMA.
 SUM: Intervals widen for integrated series.
-SRC: Hyndman RJ, Khandakar Y, Automatic time series forecasting: the forecast package for R, Journal of Statistical Software 27(3), 1 | journal | 2008 | https://doi.org/10.18637/jss.v027.i03
-SRC: Box GEP, Jenkins GM, Reinsel GC, Ljung GM, Time Series Analysis: Forecasting and Control (5th edn, Wiley 2015) | textbook | 2015 | https://www.wiley.com/
+SRC: Hyndman RJ, Khandakar Y, Automatic time series forecasting: the forecast package for R, Journal of Statistical Software 27(3), 1 | primary | 2008 | https://doi.org/10.18637/jss.v027.i03
+SRC: Box GEP, Jenkins GM, Reinsel GC, Ljung GM, Time Series Analysis: Forecasting and Control (5th edn, Wiley 2015) | secondary | 2015 | https://www.wiley.com/
 NUM1#maths-u22-14-q1@1: A random walk without drift has shock variance 4. What is the standard deviation of its 9-step-ahead forecast error? | 6 | 0 |  | Variance = 9 × 4 = 36, so the SD is 6.
 M1#maths-u22-14-q2@1: Which ARIMA model gives the naive forecast (the last value)? | ARIMA(0,1,0) without a constant | ARIMA(1,0,0) | ARIMA(0,0,1) | ARIMA(0,1,1) with drift | ARIMA(2,0,2) | A random walk forecasts every future value as the last observation.
 M2#maths-u22-14-q3@2: Why do ARIMA prediction intervals for d = 1 keep widening with the horizon? | Shocks accumulate permanently in an integrated series, so uncertainty grows without limit | The model forgets the data after a few steps, so uncertainty grows | Intervals are always constant in width for any ARIMA model | The mean drifts randomly, so intervals must be reset each period | They don't widen; integrated models have bounded forecast variance | Forecast error variance for a random walk is hσ^{2}.
@@ -530,8 +530,8 @@ Q: What is the seasonal period m for monthly data? | 12.
 Q: What does (1 − B^{12}) do? | Takes a seasonal difference at lag 12.
 SUM: Seasonal terms at lags of m.
 SUM: The airline model is a classic.
-SRC: Box GEP, Jenkins GM, Reinsel GC, Ljung GM, Time Series Analysis: Forecasting and Control (5th edn, Wiley 2015) | textbook | 2015 | https://www.wiley.com/
-SRC: Hyndman RJ, Athanasopoulos G, Forecasting: Principles and Practice (3rd edn, OTexts 2021) | textbook | 2021 | https://otexts.com/fpp3/
+SRC: Box GEP, Jenkins GM, Reinsel GC, Ljung GM, Time Series Analysis: Forecasting and Control (5th edn, Wiley 2015) | secondary | 2015 | https://www.wiley.com/
+SRC: Hyndman RJ, Athanasopoulos G, Forecasting: Principles and Practice (3rd edn, OTexts 2021) | secondary | 2021 | https://otexts.com/fpp3/
 NUM1#maths-u22-15-q1@1: In SARIMA(1,1,1)(1,1,1)₁₂, how many AR and MA coefficients (regular plus seasonal) are there in total? | 4 | 0 |  | φ, Φ, θ and Θ give four coefficients.
 M1#maths-u22-15-q2@1: Monthly residuals show a significant ACF spike at lag 12 only. Which term is suggested? | A seasonal MA(1) term at lag 12 | A non-seasonal AR(1) term | An extra regular difference | A seasonal AR(5) | No change | An isolated spike at the seasonal lag points to seasonal MA.
 M2#maths-u22-15-q3@2: Why might SARIMA be impractical for hourly data with weekly seasonality? | The period m = 168 makes seasonal polynomials and differencing unwieldy | SARIMA can't handle seasonality of any kind | Hourly data never contain weekly seasonality | SARIMA needs exactly m = 12 to work properly | It's always practical, whatever the period | Fourier terms or TBATS handle long periods more efficiently.
@@ -566,8 +566,8 @@ Q: What does Granger causality test? | Whether past values of one series improve
 Q: Why pre-whiten before cross-correlating? | To avoid spurious correlations from shared autocorrelation and trends.
 SUM: Model related series together.
 SUM: Lead–lag isn't causation.
-SRC: Granger CWJ, Investigating causal relations by econometric models and cross-spectral methods, Econometrica 37(3), 424 | journal | 1969 | https://doi.org/10.2307/1912791
-SRC: Lütkepohl H, New Introduction to Multiple Time Series Analysis (Springer 2005) | textbook | 2005 | https://link.springer.com/
+SRC: Granger CWJ, Investigating causal relations by econometric models and cross-spectral methods, Econometrica 37(3), 424 | primary | 1969 | https://doi.org/10.2307/1912791
+SRC: Lütkepohl H, New Introduction to Multiple Time Series Analysis (Springer 2005) | secondary | 2005 | https://link.springer.com/
 NUM1#maths-u22-16-q1@1: A VAR with 5 variables and 2 lags has how many slope coefficients (excluding intercepts)? | 50 | 0 |  | Each lag has a 5 × 5 matrix, so 2 × 25 = 50 coefficients.
 M1#maths-u22-16-q2@1: Cross-correlation between x_{t} and y_{t−3} is high. What does this suggest? | y leads x by about three periods | x leads y by three periods | They are independent | Both are white noise | x causes y | Past y (three periods earlier) correlates with current x.
 M2#maths-u22-16-q3@2: Why do VAR models with many variables need shrinkage? | The number of parameters grows with the square of the number of variables, risking over-fitting | VARs with many variables have too few parameters to fit the data | Shrinkage makes the VAR non-stationary, which suits macroeconomic data | Data are always plentiful enough to estimate every coefficient freely | They don't need it; least squares works well however many variables there are | Priors pull many small coefficients towards zero, improving forecasts.
@@ -602,8 +602,8 @@ Q: Who introduced VARs to macroeconomics? | Christopher Sims (1980).
 Q: What does a variance decomposition show? | The share of forecast error variance due to each shock.
 SUM: Each variable depends on all lags.
 SUM: Identification shapes interpretation.
-SRC: Sims CA, Macroeconomics and reality, Econometrica 48(1), 1 | journal | 1980 | https://doi.org/10.2307/1912017
-SRC: Kilian L, Lütkepohl H, Structural Vector Autoregressive Analysis (Cambridge University Press 2017) | textbook | 2017 | https://www.cambridge.org/
+SRC: Sims CA, Macroeconomics and reality, Econometrica 48(1), 1 | primary | 1980 | https://doi.org/10.2307/1912017
+SRC: Kilian L, Lütkepohl H, Structural Vector Autoregressive Analysis (Cambridge University Press 2017) | secondary | 2017 | https://www.cambridge.org/
 NUM1#maths-u22-17-q1@1: For a VAR(1) with A₁ = [[0.5, 0], [0, 0.8]], what is the larger eigenvalue? | 0.8 | 0 |  | A diagonal matrix has its diagonal entries as eigenvalues: 0.5 and 0.8.
 M1#maths-u22-17-q2@1: What condition makes a VAR(1) stable? | All eigenvalues of A₁ have modulus less than 1 | All entries of A₁ are positive | A₁ is symmetric | The determinant of A₁ is 1 | A₁ is the identity | Stability requires shocks to die out, which needs eigenvalues inside the unit circle.
 M2#maths-u22-17-q3@2: Why can Cholesky-identified impulse responses depend on variable ordering? | The ordering decides which shocks can affect which variables within the same period | Ordering never matters for impulse responses | Cholesky ignores correlations between the shocks | Changing the order changes the underlying data | They don't depend on it under any identification | A lower-triangular factor imposes a recursive contemporaneous structure.
@@ -637,8 +637,8 @@ Q: What does cointegration mean? | A stationary linear combination of non-statio
 Q: Who developed the cointegration rank test? | Søren Johansen.
 SUM: Long-run equilibrium binds series.
 SUM: Error correction pulls them back.
-SRC: Engle RF, Granger CWJ, Co-integration and error correction: representation, estimation, and testing, Econometrica 55(2), 251 | journal | 1987 | https://doi.org/10.2307/1913236
-SRC: Johansen S, Statistical analysis of cointegration vectors, Journal of Economic Dynamics and Control 12(2–3), 231 | journal | 1988 | https://doi.org/10.1016/0165-1889(88)90041-3
+SRC: Engle RF, Granger CWJ, Co-integration and error correction: representation, estimation, and testing, Econometrica 55(2), 251 | primary | 1987 | https://doi.org/10.2307/1913236
+SRC: Johansen S, Statistical analysis of cointegration vectors, Journal of Economic Dynamics and Control 12(2–3), 231 | primary | 1988 | https://doi.org/10.1016/0165-1889(88)90041-3
 NUM1#maths-u22-18-q1@1: With adjustment coefficient −0.2, what fraction of a deviation from equilibrium remains after 3 periods (ignoring shocks), to 3 decimal places? | 0.512 | 0.001 |  | Each period keeps 1 − 0.2 = 0.8 of the gap: 0.8^{3} = 0.512.
 M1#maths-u22-18-q2@1: Two I(1) series x and y have y − 3x stationary. What is the cointegrating vector? | (1, −3) for (y, x) | (1, 1) | (3, 1) | (0, 0) | (1, 3) | The cointegrating vector gives the stationary combination: 1·y − 3·x, written (1, −3) for the ordering (y, x).
 M3#maths-u22-18-q3@2: Why is a VECM preferred to a VAR in differences for cointegrated series? | Differencing alone discards the long-run equilibrium relation, which the error-correction term retains | VARs can't be estimated on differenced data, so a VECM is the only option | VECMs ignore short-run dynamics, which makes them simpler than VARs | Cointegration makes every series stationary, so no differencing is needed | It isn't preferred; a VAR in differences captures everything a VECM does | The Granger representation theorem shows the error-correction term is needed.
@@ -674,8 +674,8 @@ Q: What does the observation equation link? | Observations to the hidden state.
 Q: How does the state-space framework handle missing data? | It skips the update step and keeps predicting.
 SUM: Hidden states drive observations.
 SUM: The framework unifies many models.
-SRC: Durbin J, Koopman SJ, Time Series Analysis by State Space Methods (2nd edn, Oxford University Press 2012) | textbook | 2012 | https://global.oup.com/
-SRC: Harvey AC, Forecasting, Structural Time Series Models and the Kalman Filter (Cambridge University Press 1989) | textbook | 1989 | https://www.cambridge.org/
+SRC: Durbin J, Koopman SJ, Time Series Analysis by State Space Methods (2nd edn, Oxford University Press 2012) | secondary | 2012 | https://global.oup.com/
+SRC: Harvey AC, Forecasting, Structural Time Series Models and the Kalman Filter (Cambridge University Press 1989) | secondary | 1989 | https://www.cambridge.org/
 NUM1#maths-u22-19-q1@1: In a local level model, the level is 20 and η_{t} = 0.5 this period. What is the next level? | 20.5 | 0.001 |  | μ_{t+1} = μ_{t} + η_{t} = 20 + 0.5 = 20.5.
 M1#maths-u22-19-q2@1: Which model is a state-space model with a random-walk level plus noise? | The local level model | A pure AR(2) without noise | A deterministic linear trend | White noise | A fixed seasonal dummy model | It has state μ_{t} following a random walk and noisy observations.
 M2#maths-u22-19-q3@2: Why do state-space models handle missing observations easily? | The filter predicts the state forward and simply skips the update when no observation arrives | Missing data are filled with zeros before filtering | They need complete data, so gaps must be imputed first | Missing observations are deleted along with their dates | They can't handle missing data without special software | The prediction step needs no observation; only the update uses y_{t}.
@@ -711,8 +711,8 @@ Q: What does a Kalman gain near 0 mean? | The filter mostly trusts its predictio
 Q: What is the innovation? | The observation minus its prediction.
 SUM: Predict, then correct with data.
 SUM: The gain balances uncertainties.
-SRC: Kalman RE, A new approach to linear filtering and prediction problems, Journal of Basic Engineering 82(1), 35 | journal | 1960 | https://doi.org/10.1115/1.3662552
-SRC: Simon D, Optimal State Estimation: Kalman, H∞, and Nonlinear Approaches (Wiley 2006) | textbook | 2006 | https://www.wiley.com/
+SRC: Kalman RE, A new approach to linear filtering and prediction problems, Journal of Basic Engineering 82(1), 35 | primary | 1960 | https://doi.org/10.1115/1.3662552
+SRC: Simon D, Optimal State Estimation: Kalman, H∞, and Nonlinear Approaches (Wiley 2006) | secondary | 2006 | https://www.wiley.com/
 NUM1#maths-u22-20-q1@1: With P⁻ = 3 and R = 1, what is the Kalman gain? | 0.75 | 0.001 |  | K = 3/(3 + 1) = 0.75: the uncertain prediction is outweighed by the precise measurement.
 M1#maths-u22-20-q2@1: A sensor becomes much noisier (R increases). How does the Kalman gain change? | It decreases, giving less weight to measurements | It increases, giving more weight to measurements | It stays the same, since only P⁻ affects it | It becomes negative, reversing the correction | It becomes exactly 1, ignoring the prediction | The gain K = P⁻/(P⁻ + R) falls as R grows, so the filter trusts noisy measurements less and leans on its prediction.
 M3#maths-u22-20-q3@2: Why does a steady-state Kalman filter for the local level model resemble exponential smoothing? | Its constant gain K weights the latest observation by K and the previous estimate by 1 − K, like α | It ignores observations once it reaches steady state, so it's constant | It uses no prediction step, so it becomes a moving average | Exponential smoothing has no parameters, so any filter resembles it | They're unrelated; the Kalman filter is a completely different method | The update x̂_{t} = Ky_{t} + (1 − K)x̂_{t−1} matches SES with α = K.
@@ -748,8 +748,8 @@ Q: What does the Viterbi algorithm find? | The most probable sequence of hidden 
 Q: What is the expected duration of a state with self-transition probability p? | 1/(1 − p).
 SUM: Hidden regimes generate observations.
 SUM: Dynamic programming decodes them.
-SRC: Rabiner LR, A tutorial on hidden Markov models and selected applications in speech recognition, Proceedings of the IEEE 77(2), 257 | journal | 1989 | https://doi.org/10.1109/5.18626
-SRC: Hamilton JD, A new approach to the economic analysis of nonstationary time series and the business cycle, Econometrica 57(2), 357 | journal | 1989 | https://doi.org/10.2307/1912559
+SRC: Rabiner LR, A tutorial on hidden Markov models and selected applications in speech recognition, Proceedings of the IEEE 77(2), 257 | primary | 1989 | https://doi.org/10.1109/5.18626
+SRC: Hamilton JD, A new approach to the economic analysis of nonstationary time series and the business cycle, Econometrica 57(2), 357 | primary | 1989 | https://doi.org/10.2307/1912559
 NUM1#maths-u22-21-q1@1: A recession state persists with probability 0.75 each quarter. What is its expected duration in quarters? | 4 | 0 | quarters | 1/(1 − 0.75) = 4 quarters.
 M1#maths-u22-21-q2@1: Which algorithm estimates HMM parameters from unlabelled observations? | Baum–Welch (expectation–maximisation) | Viterbi decoding of the most probable path | The Kalman filter's prediction step | Ordinary least squares on the observations | Bisection on the likelihood function | Baum–Welch iterates forward–backward probabilities and parameter updates.
 M2#maths-u22-21-q3@2: Why can the sequence of individually most probable states differ from the Viterbi path? | Choosing each state separately ignores transition probabilities, so the combined path may even be impossible | They are always identical, by the definition of the Viterbi algorithm | Viterbi ignores the observations and uses only transition probabilities | Individual state probabilities can't be computed for a hidden Markov model | It can't differ, since each state is chosen to maximise the same likelihood | Viterbi maximises the joint probability of the whole path.
@@ -784,8 +784,8 @@ Q: What does functional PCA produce? | Basis functions and scores capturing curv
 Q: Which mortality model uses a single time index k_{t}? | The Lee–Carter model.
 SUM: Each observation is a curve.
 SUM: Reduce, forecast, reconstruct.
-SRC: Hyndman RJ, Ullah MS, Robust forecasting of mortality and fertility rates: a functional data approach, Computational Statistics and Data Analysis 51(10), 4942 | journal | 2007 | https://doi.org/10.1016/j.csda.2006.07.028
-SRC: Lee RD, Carter LR, Modeling and forecasting U.S. mortality, Journal of the American Statistical Association 87(419), 659 | journal | 1992 | https://doi.org/10.1080/01621459.1992.10475265
+SRC: Hyndman RJ, Ullah MS, Robust forecasting of mortality and fertility rates: a functional data approach, Computational Statistics and Data Analysis 51(10), 4942 | primary | 2007 | https://doi.org/10.1016/j.csda.2006.07.028
+SRC: Lee RD, Carter LR, Modeling and forecasting U.S. mortality, Journal of the American Statistical Association 87(419), 659 | primary | 1992 | https://doi.org/10.1080/01621459.1992.10475265
 NUM1#maths-u22-22-q1@1: In Nelson–Siegel yield curve modelling, how many factors describe the curve? | 3 | 0 | factors | Level, slope and curvature factors describe the whole yield curve.
 M1#maths-u22-22-q2@1: Which is a functional time series? | A daily curve of electricity demand by hour | A single daily temperature | A list of share prices on one day | A set of independent surveys | A random sample of heights | Each day contributes a whole curve over the hours.
 M2#maths-u22-22-q3@2: Why is functional PCA useful for forecasting curves? | It reduces each curve to a few scores whose time series can be forecast and recombined | It forecasts each grid point independently of the others | It removes all variation, leaving only the mean curve | It needs no data, since components are fixed in advance | It isn't useful; curves can't be forecast at all | A handful of components often explain most variation.
@@ -820,8 +820,8 @@ Q: Who introduced ARCH models? | Robert Engle (1982).
 Q: What is the unconditional variance of ARCH(1)? | ω/(1 − α).
 SUM: Variance responds to recent shocks.
 SUM: ARCH captures clustering.
-SRC: Engle RF, Autoregressive conditional heteroscedasticity with estimates of the variance of United Kingdom inflation, Econometrica 50(4), 987 | journal | 1982 | https://doi.org/10.2307/1912773
-SRC: Tsay RS, Analysis of Financial Time Series (3rd edn, Wiley 2010) | textbook | 2010 | https://www.wiley.com/
+SRC: Engle RF, Autoregressive conditional heteroscedasticity with estimates of the variance of United Kingdom inflation, Econometrica 50(4), 987 | primary | 1982 | https://doi.org/10.2307/1912773
+SRC: Tsay RS, Analysis of Financial Time Series (3rd edn, Wiley 2010) | secondary | 2010 | https://www.wiley.com/
 NUM1#maths-u22-23-q1@1: An ARCH(1) has ω = 0.1 and α = 0.6. What is its unconditional variance? | 0.25 | 0.001 |  | ω/(1 − α) = 0.1/0.4 = 0.25.
 M1#maths-u22-23-q2@1: Which test checks residuals for ARCH effects? | Engle's Lagrange multiplier test on squared residuals | The Dickey–Fuller unit root test | The Durbin–Watson test on residual levels | A t-test on the mean of the residuals | The Jarque–Bera normality test only | Regressing squared residuals on their lags detects conditional heteroscedasticity.
 M2#maths-u22-23-q3@2: Why does an ARCH model produce fat-tailed returns even with normal z_{t}? | Mixing normals with randomly varying variance gives more extreme values than a single normal | Normal variables are already fat-tailed, so ARCH inherits it | ARCH removes all extreme values from the distribution | The variance is constant, so tails come from the mean | It doesn't produce fat tails with normal innovations | Periods of high variance generate outliers more often than constant variance would.
@@ -857,8 +857,8 @@ Q: Who introduced GARCH? | Tim Bollerslev (1986).
 Q: What does EGARCH capture? | Asymmetric (leverage) effects of shocks on volatility.
 SUM: Variance depends on past variance and shocks.
 SUM: Persistence sets decay.
-SRC: Bollerslev T, Generalized autoregressive conditional heteroskedasticity, Journal of Econometrics 31(3), 307 | journal | 1986 | https://doi.org/10.1016/0304-4076(86)90063-1
-SRC: Glosten LR, Jagannathan R, Runkle DE, On the relation between the expected value and the volatility of the nominal excess return on stocks, Journal of Finance 48(5), 1779 | journal | 1993 | https://doi.org/10.1111/j.1540-6261.1993.tb05128.x
+SRC: Bollerslev T, Generalized autoregressive conditional heteroskedasticity, Journal of Econometrics 31(3), 307 | primary | 1986 | https://doi.org/10.1016/0304-4076(86)90063-1
+SRC: Glosten LR, Jagannathan R, Runkle DE, On the relation between the expected value and the volatility of the nominal excess return on stocks, Journal of Finance 48(5), 1779 | primary | 1993 | https://doi.org/10.1111/j.1540-6261.1993.tb05128.x
 NUM1#maths-u22-24-q1@1: A GARCH(1,1) has ω = 0.02, α = 0.08 and β = 0.9. What is its long-run variance? | 1 | 0.001 |  | ω/(1 − α − β) = 0.02/0.02 = 1.
 M1#maths-u22-24-q2@1: In GARCH(1,1), what does α + β = 1 imply? | Volatility shocks persist indefinitely (integrated GARCH) | Volatility is constant at its long-run level | The model reduces to ARCH with no lags | Returns become independent and identically distributed | The conditional variance is always exactly zero | The long-run variance is undefined and shocks never decay.
 M3#maths-u22-24-q3@2: Why are asymmetric GARCH models used for equity returns? | Falls in prices tend to raise volatility more than equal rises, which symmetric GARCH can't capture | Equity returns are symmetric, so asymmetric models fit better | Asymmetric models have fewer parameters than standard GARCH | GARCH ignores shocks completely, unlike asymmetric versions | They aren't used for equities, only for currencies | The leverage effect makes negative shocks more volatility-raising.
@@ -894,8 +894,8 @@ Q: How is daily volatility annualised? | Multiply by √252 (trading days).
 Q: What does the VIX measure? | Implied volatility of S&P 500 options over 30 days.
 SUM: Many ways to measure volatility.
 SUM: Each answers a different question.
-SRC: Andersen TG, Bollerslev T, Diebold FX, Labys P, Modeling and forecasting realized volatility, Econometrica 71(2), 579 | journal | 2003 | https://doi.org/10.1111/1468-0262.00418
-SRC: Corsi F, A simple approximate long-memory model of realized volatility, Journal of Financial Econometrics 7(2), 174 | journal | 2009 | https://doi.org/10.1093/jjfinec/nbp001
+SRC: Andersen TG, Bollerslev T, Diebold FX, Labys P, Modeling and forecasting realized volatility, Econometrica 71(2), 579 | primary | 2003 | https://doi.org/10.1111/1468-0262.00418
+SRC: Corsi F, A simple approximate long-memory model of realized volatility, Journal of Financial Econometrics 7(2), 174 | primary | 2009 | https://doi.org/10.1093/jjfinec/nbp001
 NUM1#maths-u22-25-q1@1: Annual volatility is 32%. What is the approximate daily volatility in %, using √256 = 16 as a rule of thumb? | 2 | 0 | % | 32%/16 = 2% a day.
 M1#maths-u22-25-q2@1: Which volatility measure is forward-looking and derived from market prices of options? | Implied volatility | Historical volatility | Realised volatility | EWMA volatility | Range-based volatility | It's backed out from option prices, reflecting expectations and risk premiums.
 M2#maths-u22-25-q3@2: Why does realised volatility from intraday data estimate daily volatility more precisely than daily returns alone? | Summing many squared intraday returns uses far more information about price movement within the day | Intraday prices are less volatile than daily closing prices | Daily returns are always zero, so they carry no information | It uses option prices as well as traded share prices | It isn't more precise than using daily returns alone | More observations of the same path reduce estimation error.
@@ -931,8 +931,8 @@ Q: What does CUSUM accumulate? | Deviations from the target mean beyond an allow
 Q: What does PELT stand for? | Pruned Exact Linear Time.
 SUM: Detect when behaviour changes.
 SUM: Balance speed and false alarms.
-SRC: Page ES, Continuous inspection schemes, Biometrika 41(1–2), 100 | journal | 1954 | https://doi.org/10.1093/biomet/41.1-2.100
-SRC: Killick R, Fearnhead P, Eckley IA, Optimal detection of changepoints with a linear computational cost, Journal of the American Statistical Association 107(500), 1590 | journal | 2012 | https://doi.org/10.1080/01621459.2012.737745
+SRC: Page ES, Continuous inspection schemes, Biometrika 41(1–2), 100 | primary | 1954 | https://doi.org/10.1093/biomet/41.1-2.100
+SRC: Killick R, Fearnhead P, Eckley IA, Optimal detection of changepoints with a linear computational cost, Journal of the American Statistical Association 107(500), 1590 | primary | 2012 | https://doi.org/10.1080/01621459.2012.737745
 NUM1#maths-u22-26-q1@1: In the CUSUM example (μ₀ = 10, k = 0.5), what is S after observations 13 and 9? | 1.5 | 0.001 |  | S₁ = 13 − 10.5 = 2.5; S₂ = max(0, 2.5 + 9 − 10.5) = 1.5.
 M1#maths-u22-26-q2@1: Which method detects change points in real time as data arrive? | CUSUM | PELT | Binary segmentation | Wild binary segmentation | Offline Bayesian segmentation | CUSUM updates a statistic with each new observation.
 M3#maths-u22-26-q3@2: Why do segmentation methods add a penalty for each change point? | Without it, adding change points always improves the fit, so the method would split at noise | Penalties make detection faster but have no effect on the results | Change points have no cost, so penalties are only a convention | Penalties remove real changes and keep only spurious ones | They don't add penalties; every possible split is accepted | A BIC-style penalty balances fit against the number of segments.
@@ -966,8 +966,8 @@ Q: What does the Chow test compare? | Coefficients before and after a known date
 Q: What can an unmodelled break mimic? | A unit root.
 SUM: Relationships can change.
 SUM: Test and model breaks.
-SRC: Chow GC, Tests of equality between sets of coefficients in two linear regressions, Econometrica 28(3), 591 | journal | 1960 | https://doi.org/10.2307/1910133
-SRC: Bai J, Perron P, Estimating and testing linear models with multiple structural changes, Econometrica 66(1), 47 | journal | 1998 | https://doi.org/10.2307/2998540
+SRC: Chow GC, Tests of equality between sets of coefficients in two linear regressions, Econometrica 28(3), 591 | primary | 1960 | https://doi.org/10.2307/1910133
+SRC: Bai J, Perron P, Estimating and testing linear models with multiple structural changes, Econometrica 66(1), 47 | primary | 1998 | https://doi.org/10.2307/2998540
 NUM1#maths-u22-27-q1@1: A Chow test has pooled RSS 100, sub-sample RSS 30 and 40, k = 3 and n = 46. What is the F statistic, to 2 decimal places? | 5.71 | 0.01 |  | Numerator (100 − 70)/3 = 10 and denominator 70/(46 − 6) = 1.75, so F = 10/1.75 ≈ 5.71.
 M1#maths-u22-27-q2@1: Which test handles a structural break at an unknown date? | Andrews' sup-F test | The Chow test with a guessed date | The Dickey–Fuller test | The Ljung–Box test | A t-test on the mean | Sup-F takes the maximum over candidate dates with adjusted critical values.
 M2#maths-u22-27-q3@2: Why can an unmodelled structural break make a stationary series look like it has a unit root? | A shift in level makes deviations look persistent, so unit root tests lose power | Breaks always create genuine unit roots in the data | Unit root tests ignore the level of the series entirely | Breaks turn stationary series into white noise | It can't: breaks and unit roots are easily told apart | Perron (1989) showed breaks bias tests towards non-rejection of a unit root.
@@ -1003,8 +1003,8 @@ Q: What does a flat spectrum indicate? | White noise.
 Q: How is period related to frequency? | Period = 1/frequency.
 SUM: Decompose variance by frequency.
 SUM: Smooth the periodogram.
-SRC: Percival DB, Walden AT, Spectral Analysis for Physical Applications (Cambridge University Press 1993) | textbook | 1993 | https://www.cambridge.org/
-SRC: Priestley MB, Spectral Analysis and Time Series (Academic Press 1981) | textbook | 1981 | https://www.elsevier.com/
+SRC: Percival DB, Walden AT, Spectral Analysis for Physical Applications (Cambridge University Press 1993) | secondary | 1993 | https://www.cambridge.org/
+SRC: Priestley MB, Spectral Analysis and Time Series (Academic Press 1981) | secondary | 1981 | https://www.elsevier.com/
 NUM1#maths-u22-28-q1@1: A daily series shows a spectral peak at frequency 1/7 cycles per day. What is the period in days? | 7 | 0 | days | Period = 1/(1/7) = 7 days: a weekly cycle.
 M1#maths-u22-28-q2@1: Where does an AR(1) with φ = 0.9 concentrate its spectral power? | At low frequencies | At high frequencies | Equally at all frequencies | Only at the seasonal frequency | Nowhere | Strong positive persistence means slow fluctuations dominate.
 M3#maths-u22-28-q3@2: Why is the raw periodogram an inconsistent estimator of the spectrum? | Its variance doesn't shrink as the sample grows, so it needs smoothing across neighbouring frequencies | It is biased towards zero at every frequency, however long the series | It ignores the data and depends only on the sample length | It has zero variance, so it can't be smoothed any further | It is consistent; its variance falls as the series gets longer | Each ordinate is roughly a scaled χ^{2}₂ variable no matter how long the series.
@@ -1038,8 +1038,8 @@ Q: What is the Nyquist frequency for data sampled once per unit time? | ½ cycle
 Q: What is the computational cost of the FFT? | O(n log n).
 SUM: Analyse series by frequency.
 SUM: Filters reshape frequency content.
-SRC: Cooley JW, Tukey JW, An algorithm for the machine calculation of complex Fourier series, Mathematics of Computation 19, 297 | journal | 1965 | https://doi.org/10.1090/S0025-5718-1965-0178586-1
-SRC: Baxter M, King RG, Measuring business cycles: approximate band-pass filters for economic time series, Review of Economics and Statistics 81(4), 575 | journal | 1999 | https://doi.org/10.1162/003465399558454
+SRC: Cooley JW, Tukey JW, An algorithm for the machine calculation of complex Fourier series, Mathematics of Computation 19, 297 | primary | 1965 | https://doi.org/10.1090/S0025-5718-1965-0178586-1
+SRC: Baxter M, King RG, Measuring business cycles: approximate band-pass filters for economic time series, Review of Economics and Statistics 81(4), 575 | primary | 1999 | https://doi.org/10.1162/003465399558454
 NUM1#maths-u22-29-q1@1: Data are sampled 10 times per second. What is the Nyquist frequency in Hz? | 5 | 0 | Hz | Nyquist = half the sampling rate = 5 Hz.
 M1#maths-u22-29-q2@1: Which kind of filter is a simple moving average? | Low-pass | High-pass | Band-stop only | All-pass | Notch at zero frequency | Averaging suppresses rapid fluctuations and keeps slow ones.
 M2#maths-u22-29-q3@2: What does high coherence at low frequencies between two series indicate? | They move together closely over long cycles, even if short-run movements differ | They are identical series at every frequency | They are unrelated at all frequencies | One of the two series is pure white noise | Nothing about how the series are related | Coherence measures frequency-specific correlation.
@@ -1075,8 +1075,8 @@ Q: What does MASE below 1 indicate? | Better than the naive benchmark in-sample.
 Q: What does the Diebold–Mariano test compare? | Expected losses of two forecasts.
 SUM: Measure accuracy out of sample.
 SUM: Compare fairly with benchmarks.
-SRC: Hyndman RJ, Koehler AB, Another look at measures of forecast accuracy, International Journal of Forecasting 22(4), 679 | journal | 2006 | https://doi.org/10.1016/j.ijforecast.2006.03.001
-SRC: Diebold FX, Mariano RS, Comparing predictive accuracy, Journal of Business and Economic Statistics 13(3), 253 | journal | 1995 | https://doi.org/10.1080/07350015.1995.10524599
+SRC: Hyndman RJ, Koehler AB, Another look at measures of forecast accuracy, International Journal of Forecasting 22(4), 679 | primary | 2006 | https://doi.org/10.1016/j.ijforecast.2006.03.001
+SRC: Diebold FX, Mariano RS, Comparing predictive accuracy, Journal of Business and Economic Statistics 13(3), 253 | primary | 1995 | https://doi.org/10.1080/07350015.1995.10524599
 NUM1#maths-u22-30-q1@1: A method has test MAE 6, and the naive method's in-sample MAE is 8. What is the MASE? | 0.75 | 0.001 |  | MASE = 6/8 = 0.75.
 M1#maths-u22-30-q2@1: Which error measure is undefined when actual values are zero? | MAPE | MAE | RMSE | MASE | Mean error | MAPE divides each error by the actual value, so a zero actual makes the percentage infinite or undefined.
 M2#maths-u22-30-q3@2: Why use rolling-origin evaluation instead of a single train–test split? | Averaging over many forecast origins gives a more reliable estimate of accuracy | It uses future data to improve the accuracy estimates | A single split is always more reliable than many origins | It removes all forecast errors from the evaluation | It isn't used in practice, only in theory | One split depends heavily on the particular test period chosen.
@@ -1110,8 +1110,8 @@ Q: What z-value gives a 95% normal prediction interval? | 1.96.
 Q: What does coverage measure? | The fraction of outcomes falling within the intervals.
 SUM: Intervals show uncertainty.
 SUM: Check coverage honestly.
-SRC: Chatfield C, Calculating interval forecasts, Journal of Business and Economic Statistics 11(2), 121 | journal | 1993 | https://doi.org/10.1080/07350015.1993.10509938
-SRC: Hyndman RJ, Athanasopoulos G, Forecasting: Principles and Practice (3rd edn, OTexts 2021) | textbook | 2021 | https://otexts.com/fpp3/
+SRC: Chatfield C, Calculating interval forecasts, Journal of Business and Economic Statistics 11(2), 121 | primary | 1993 | https://doi.org/10.1080/07350015.1993.10509938
+SRC: Hyndman RJ, Athanasopoulos G, Forecasting: Principles and Practice (3rd edn, OTexts 2021) | secondary | 2021 | https://otexts.com/fpp3/
 NUM1#maths-u22-31-q1@1: A point forecast is 200 with σ_{h} = 10. What is the upper limit of the 95% normal prediction interval? | 219.6 | 0.01 |  | 200 + 1.96 × 10 = 219.6.
 M1#maths-u22-31-q2@1: Intervals labelled 95% contain the outcome only 80% of the time on test data. What does this show? | The intervals are too narrow (under-coverage) | The intervals are too wide (over-coverage) | The forecasts are unbiased and well calibrated | Coverage is perfect for 95% intervals | The data must have been recorded wrongly | Actual coverage below nominal means uncertainty is underestimated.
 M2#maths-u22-31-q3@2: Why are model-based prediction intervals often too narrow? | They usually ignore uncertainty in parameter estimates and in the choice of model | They overstate every source of uncertainty, so they're actually too wide | They use too many simulations, which shrinks the intervals artificially | Future errors are always smaller than past ones, so they can't be too narrow | They aren't too narrow; model-based intervals usually over-cover in practice | Treating the fitted model as exactly true omits important sources of error.
@@ -1147,8 +1147,8 @@ Q: What is a proper scoring rule? | One optimised in expectation by honest repor
 Q: What should a PIT histogram look like for calibrated forecasts? | Uniform.
 SUM: Forecast the whole distribution.
 SUM: Score with proper rules.
-SRC: Gneiting T, Raftery AE, Strictly proper scoring rules, prediction, and estimation, Journal of the American Statistical Association 102(477), 359 | journal | 2007 | https://doi.org/10.1198/016214506000001437
-SRC: Gneiting T, Katzfuss M, Probabilistic forecasting, Annual Review of Statistics and Its Application 1, 125 | review | 2014 | https://doi.org/10.1146/annurev-statistics-062713-085831
+SRC: Gneiting T, Raftery AE, Strictly proper scoring rules, prediction, and estimation, Journal of the American Statistical Association 102(477), 359 | primary | 2007 | https://doi.org/10.1198/016214506000001437
+SRC: Gneiting T, Katzfuss M, Probabilistic forecasting, Annual Review of Statistics and Its Application 1, 125 | secondary | 2014 | https://doi.org/10.1146/annurev-statistics-062713-085831
 NUM1#maths-u22-32-q1@1: A forecaster always says 50% chance of rain. What Brier score do they get on every day, whatever happens? | 0.25 | 0.001 |  | (0.5 − 1)^{2} = (0.5 − 0)^{2} = 0.25.
 M1#maths-u22-32-q2@1: Over many days a forecaster said "70% chance of rain", and it rained on 70% of them. What does this show? | The forecasts are well calibrated | The forecasts are always wrong | The forecasts are perfectly sharp | Rain is unpredictable | Nothing at all | Calibration means stated probabilities match observed frequencies.
 M3#maths-u22-32-q3@2: Why must probabilistic forecasts be judged with proper scoring rules? | Improper rules can reward reporting distorted probabilities instead of honest beliefs | Proper rules ignore the outcomes and score only the forecasts | All scoring rules are proper, so the choice doesn't matter | Proper rules only check the median of each forecast | They needn't be; any accuracy measure judges them fairly | Under a proper score, the forecaster's expected score is best when reporting their true distribution.
@@ -1182,8 +1182,8 @@ Q: What does Croston's method forecast? | Demand size divided by demand interval
 Q: Why can MAPE fail for intermittent demand? | Actual values of zero make it undefined.
 SUM: Many zeros need special methods.
 SUM: Judge by inventory outcomes.
-SRC: Croston JD, Forecasting and stock control for intermittent demands, Operational Research Quarterly 23(3), 289 | journal | 1972 | https://doi.org/10.2307/3007885
-SRC: Syntetos AA, Boylan JE, The accuracy of intermittent demand estimates, International Journal of Forecasting 21(2), 303 | journal | 2005 | https://doi.org/10.1016/j.ijforecast.2004.10.001
+SRC: Croston JD, Forecasting and stock control for intermittent demands, Operational Research Quarterly 23(3), 289 | primary | 1972 | https://doi.org/10.2307/3007885
+SRC: Syntetos AA, Boylan JE, The accuracy of intermittent demand estimates, International Journal of Forecasting 21(2), 303 | primary | 2005 | https://doi.org/10.1016/j.ijforecast.2004.10.001
 NUM1#maths-u22-33-q1@1: Non-zero demands occur in periods 2, 6 and 10 of a 12-period history. What is the average interval between them? | 4 | 0 | periods | The gaps are 4 and 4 periods, giving an average interval of 4.
 M1#maths-u22-33-q2@1: Which method smooths the probability of demand occurring, helping with obsolete items? | TSB (Teunter–Syntetos–Babai) | Croston's original method | Simple exponential smoothing | Holt's linear method | Seasonal naive | TSB updates demand probability every period, so it decays when demand stops.
 M2#maths-u22-33-q3@2: Why can a forecast of zero look accurate on intermittent data yet be useless? | Most periods have zero demand, so errors look small, but holding no stock causes stock-outs when demand comes | Zero forecasts are always optimal for intermittent items, so they're fine | Demand never occurs for intermittent items, so zero is exactly right | Errors can't be measured when demand is zero, so it looks accurate | It isn't useless; a zero forecast is the standard choice for spare parts | Point accuracy measures miss the inventory consequences.
@@ -1219,8 +1219,8 @@ Q: What is a conditional forecast? | One that assumes given future values of pre
 Q: Why add ARIMA errors to a regression? | To model autocorrelation left in the residuals.
 SUM: Forecast from drivers.
 SUM: Scenarios need stable relationships.
-SRC: Hyndman RJ, Athanasopoulos G, Forecasting: Principles and Practice (3rd edn, OTexts 2021) | textbook | 2021 | https://otexts.com/fpp3/
-SRC: Abadie A, Diamond A, Hainmueller J, Synthetic control methods for comparative case studies, Journal of the American Statistical Association 105(490), 493 | journal | 2010 | https://doi.org/10.1198/jasa.2009.ap08746
+SRC: Hyndman RJ, Athanasopoulos G, Forecasting: Principles and Practice (3rd edn, OTexts 2021) | secondary | 2021 | https://otexts.com/fpp3/
+SRC: Abadie A, Diamond A, Hainmueller J, Synthetic control methods for comparative case studies, Journal of the American Statistical Association 105(490), 493 | primary | 2010 | https://doi.org/10.1198/jasa.2009.ap08746
 NUM1#maths-u22-34-q1@1: In the sales model, by how many units do forecast sales change if advertising rises by £5k (price unchanged)? | 10 | 0 | units | The advertising coefficient is 2 per £1k, so £5k adds 10 units.
 M1#maths-u22-34-q2@1: What extra uncertainty does an unconditional causal forecast include? | Uncertainty in forecasting the predictor variables themselves | None beyond the model residuals | Only rounding error in calculations | Uncertainty in past data only | Uncertainty in the intercept only | Unknown future predictors must themselves be forecast.
 M2#maths-u22-34-q3@2: Why might a sales–price regression mislead when planning a big price cut? | Past data may not cover such a change, and customers or competitors may respond in new ways | Regressions can't use price as a predictor | Price never affects sales in practice | The coefficient is always exactly right | It wouldn't mislead for any price change | Extrapolating beyond observed conditions risks changed relationships.

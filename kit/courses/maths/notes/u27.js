@@ -34,7 +34,7 @@ Q: How do you get a numerical value of π to 20 digits? | N[Pi, 20].
 SUM: Symbolic, numeric and visual in one system.
 SUM: Exact by default; check assumptions.
 SRC: Wolfram Research, Wolfram Mathematica documentation | primary | 2025 | https://reference.wolfram.com/language/
-SRC: Wolfram S, The Mathematica Book (5th edn, Wolfram Media 2003) | textbook | 2003 | https://www.wolfram-media.com/
+SRC: Wolfram S, The Mathematica Book (5th edn, Wolfram Media 2003) | secondary | 2003 | https://www.wolfram-media.com/
 NUM1#maths-u27-01-q1@1: Mathematica's Expand[(x + 1)^3] returns a polynomial. What is the coefficient of x^{2}? | 3 | 0 |  | (x + 1)^{3} = x^{3} + 3x^{2} + 3x + 1, so the coefficient is 3.
 M1#maths-u27-01-q2@1: How does Mathematica write the sine of x? | Sin[x] | sin(x) | SIN x | sine{x} | math.sin(x) | Built-in functions are capitalised and take square brackets.
 M3#maths-u27-01-q3@2: Why might Simplify[Sqrt[x^2]] not return x? | For general complex or negative x, √(x^{2}) isn't x, so an assumption like x > 0 is needed | Mathematica can't simplify square roots of symbolic expressions at all | Simplify only works on explicit numbers, never on symbols like x | It always returns x, since squaring and rooting cancel exactly | It returns an error because x hasn't been given a numerical value | Without assumptions the system must keep results valid for all x.
@@ -70,7 +70,7 @@ Q: What does f /@ {a, b} return? | {f[a], f[b]}.
 Q: What index does the first element of a Wolfram Language list have? | 1.
 SUM: Everything is an expression.
 SUM: Patterns and rules transform them.
-SRC: Wolfram S, An Elementary Introduction to the Wolfram Language (3rd edn, Wolfram Media 2023) | textbook | 2023 | https://www.wolfram.com/language/elementary-introduction/
+SRC: Wolfram S, An Elementary Introduction to the Wolfram Language (3rd edn, Wolfram Media 2023) | secondary | 2023 | https://www.wolfram.com/language/elementary-introduction/
 SRC: Wolfram Research, Wolfram Language documentation | primary | 2025 | https://reference.wolfram.com/language/
 NUM1#maths-u27-02-q1@1: What does x^2 + 1 /. x -> 4 evaluate to? | 17 | 0 |  | Substituting x = 4 gives 16 + 1 = 17.
 M1#maths-u27-02-q2@1: What does Table[i^2, {i, 1, 4}] return? | {1, 4, 9, 16} | {0, 1, 4, 9} | {2, 4, 6, 8} | 30 | {1, 2, 3, 4} | i runs from 1 to 4 and each value is squared.
@@ -145,7 +145,7 @@ Q: What file extension do Mathematica notebooks use? | .nb.
 SUM: Cells mix code, output and explanation.
 SUM: Restart the kernel to check reproducibility.
 SRC: Wolfram Research, Notebooks and documents (Wolfram Language documentation) | primary | 2025 | https://reference.wolfram.com/language/guide/NotebookBasics.html
-SRC: Wolfram S, An Elementary Introduction to the Wolfram Language (3rd edn, Wolfram Media 2023) | textbook | 2023 | https://www.wolfram.com/language/elementary-introduction/
+SRC: Wolfram S, An Elementary Introduction to the Wolfram Language (3rd edn, Wolfram Media 2023) | secondary | 2023 | https://www.wolfram.com/language/elementary-introduction/
 NUM1#maths-u27-04-q1@1: A notebook evaluates In[1] := a = 3 and then In[2] := a^2 + a. What is Out[2]? | 12 | 0 |  | 3^{2} + 3 = 12, using the kernel's stored value of a.
 M1#maths-u27-04-q2@1: What stores the definitions made in a notebook session? | The kernel | The front end's text cells | The file name | The output cells only | The operating system | The kernel performs evaluations and holds definitions in memory.
 M3#maths-u27-04-q3@2: Why should you quit the kernel and re-evaluate the whole notebook before sharing it? | It confirms the results don't depend on hidden state from deleted or out-of-order cells | It makes the notebook file much smaller for emailing | It deletes all outputs permanently from the notebook | It changes the results randomly to test robustness | There's no need, since notebooks always rerun identically | Others will run the notebook from scratch, so it must work that way.
@@ -182,7 +182,7 @@ Q: What does int(x, x = 0 .. 1) return? | 1/2.
 SUM: Strong symbolic algebra in worksheets.
 SUM: := assigns; evalf gives numbers.
 SRC: Maplesoft, Maple online help | primary | 2025 | https://www.maplesoft.com/support/help/
-SRC: Char BW et al., Maple V Language Reference Manual (Springer 1991) | textbook | 1991 | https://link.springer.com/
+SRC: Char BW et al., Maple V Language Reference Manual (Springer 1991) | secondary | 1991 | https://link.springer.com/
 NUM1#maths-u27-05-q1@1: In Maple, diff(x^4, x) returns ax^{3}. What is a? | 4 | 0 |  | The derivative of x^{4} is 4x^{3}.
 M1#maths-u27-05-q2@1: Which Maple statement assigns 5 to a? | a := 5; | a = 5; | let a be 5 | 5 -> a | a == 5 | Maple uses := for assignment; = forms an equation.
 M2#maths-u27-05-q3@2: Why does Maple distinguish ending a statement with ; and :? | A semicolon shows the result; a colon hides it, handy for long outputs | They are identical, since both end a statement the same way | A colon causes an error unless the statement is an assignment | Only semicolons are allowed in Maple worksheets | Colons assign values, while semicolons compare them | Suppressing output keeps worksheets readable.
@@ -220,7 +220,7 @@ Q: How is π written in Maxima? | %pi.
 SUM: Free symbolic algebra.
 SUM: Constants use % prefixes.
 SRC: Maxima project, Maxima reference manual | primary | 2025 | https://maxima.sourceforge.io/docs/manual/
-SRC: Moses J, Macsyma: a personal history, Journal of Symbolic Computation 47(2), 123 | journal | 2012 | https://doi.org/10.1016/j.jsc.2010.08.018
+SRC: Moses J, Macsyma: a personal history, Journal of Symbolic Computation 47(2), 123 | primary | 2012 | https://doi.org/10.1016/j.jsc.2010.08.018
 NUM1#maths-u27-06-q1@1: In Maxima, integrate(2*x, x, 0, 3) gives what value? | 9 | 0 |  | ∫₀^{3} 2x dx = [x^{2}]₀^{3} = 9.
 M1#maths-u27-06-q2@1: Which Maxima statement defines a function f(x) = x^{2}? | f(x) := x^2; | f(x) = x^2; | f: x^2 | def f(x): x^2 | f[x_] := x^2 | In Maxima, := defines a function, so f(x) := x^2; makes f(3) return 9; a single colon assigns a value instead.
 M2#maths-u27-06-q3@2: Why do some teachers prefer Maxima for courses? | It's free and open source, so every student can install it without licences | It's faster than every commercial system for all problems | It has no syntax, so students needn't learn commands | It only works online, so nothing needs installing | There's no reason; teachers always prefer commercial tools | Cost and access matter when students need their own copies.
@@ -257,7 +257,7 @@ Q: What does factor(2^32 + 1) return? | 641 × 6700417.
 SUM: One interface to many packages.
 SUM: Free and open.
 SRC: The Sage Developers, SageMath documentation | primary | 2025 | https://doc.sagemath.org/
-SRC: Zimmermann P et al., Computational Mathematics with SageMath (SIAM 2018) | textbook | 2018 | https://epubs.siam.org/
+SRC: Zimmermann P et al., Computational Mathematics with SageMath (SIAM 2018) | secondary | 2018 | https://epubs.siam.org/
 NUM1#maths-u27-07-q1@1: In SageMath, what is the inverse of 3 in GF(7)? | 5 | 0 |  | 3 × 5 = 15 = 2 × 7 + 1, so 3^{−1} = 5 mod 7.
 M1#maths-u27-07-q2@1: Which package does SageMath use for computational group theory? | GAP | MATLAB | Excel | Stata | SPSS | SageMath calls GAP for group computations.
 M2#maths-u27-07-q3@2: Why does SageMath track parents such as ZZ, QQ and GF(p)? | The same symbol means different things in different rings, like 1/3 in GF(7) | Parents only affect how results are printed on screen | All numbers are stored as floats, so parents are labels | It doesn't track them; every number is treated the same | Parents slow everything down without changing any results | Correct arithmetic depends on which ring the elements live in.
@@ -293,7 +293,7 @@ Q: Which three languages inspired the name Jupyter? | Julia, Python and R.
 Q: What format does a .ipynb file use? | JSON.
 SUM: Live documents of code and explanation.
 SUM: Restart and run all before sharing.
-SRC: Kluyver T et al., Jupyter Notebooks: a publishing format for reproducible computational workflows, Positioning and Power in Academic Publishing, 87 | journal | 2016 | https://doi.org/10.3233/978-1-61499-649-1-87
+SRC: Kluyver T et al., Jupyter Notebooks: a publishing format for reproducible computational workflows, Positioning and Power in Academic Publishing, 87 | primary | 2016 | https://doi.org/10.3233/978-1-61499-649-1-87
 SRC: Project Jupyter, Jupyter documentation | primary | 2025 | https://docs.jupyter.org/
 NUM1#maths-u27-08-q1@1: A Markdown cell contains $x^2$ and $$\\int_0^1 x\\,dx$$. How many maths expressions will be rendered? | 2 | 0 |  | One inline expression and one display expression.
 M1#maths-u27-08-q2@1: What does a Jupyter kernel do? | Runs the code in the notebook's language and keeps its state | Renders the Markdown cells into formatted text | Stores notebook files on the computer's disk | Formats LaTeX documents into PDFs for printing | Manages passwords for the notebook server | The kernel executes cells and holds variables.
@@ -332,7 +332,7 @@ Q: How should Ax = b be solved in MATLAB? | x = A \\ b.
 SUM: Matrices are the core data type.
 SUM: Vectorise and use backslash.
 SRC: MathWorks, MATLAB documentation | primary | 2025 | https://www.mathworks.com/help/matlab/
-SRC: Moler C, Numerical Computing with MATLAB (SIAM 2004) | textbook | 2004 | https://www.mathworks.com/moler/chapters.html
+SRC: Moler C, Numerical Computing with MATLAB (SIAM 2004) | secondary | 2004 | https://www.mathworks.com/moler/chapters.html
 NUM1#maths-u27-09-q1@1: In MATLAB, x = [1 2 3]; what is sum(x.^2)? | 14 | 0 |  | Element-wise squares are 1, 4 and 9, which sum to 14.
 M1#maths-u27-09-q2@1: What does A(2, 1) refer to in MATLAB? | The entry in row 2, column 1 | The entry in row 1, column 2 | The second element of a 0-based array | The whole second row | An error | MATLAB indexes rows then columns, starting at 1.
 M3#maths-u27-09-q3@2: Why is x = A \\ b preferred to x = inv(A) * b? | Backslash uses a factorisation directly, which is faster and more accurate than forming the inverse | They're identical in speed and accuracy, so either can be used | inv is always more accurate, though backslash is slightly faster | Backslash only works for scalars, so inv is needed for matrices | It isn't preferred; MATLAB's documentation recommends inv(A) * b | Explicit inversion costs more and amplifies rounding error.
@@ -407,7 +407,7 @@ Q: What does f.(v) do in Julia? | Applies f element-wise to v (broadcasting).
 Q: What is multiple dispatch? | Selecting a method by the types of all arguments.
 SUM: Fast and expressive.
 SUM: Dispatch on types.
-SRC: Bezanson J, Edelman A, Karpinski S, Shah VB, Julia: a fresh approach to numerical computing, SIAM Review 59(1), 65 | journal | 2017 | https://doi.org/10.1137/141000671
+SRC: Bezanson J, Edelman A, Karpinski S, Shah VB, Julia: a fresh approach to numerical computing, SIAM Review 59(1), 65 | primary | 2017 | https://doi.org/10.1137/141000671
 SRC: The Julia Project, Julia documentation | primary | 2025 | https://docs.julialang.org/
 NUM1#maths-u27-11-q1@1: In Julia, v = [1, 2, 3]; what is sum(v .^ 2)? | 14 | 0 |  | Broadcasting squares each entry: 1 + 4 + 9 = 14.
 M1#maths-u27-11-q2@1: Which index does the first element of a Julia array have? | 1 | 0 | −1 | It depends on the type | 2 | Julia arrays are 1-based by default, like MATLAB and R, so v[1] is the first element (unlike Python's v[0]).
@@ -481,7 +481,7 @@ Q: What operator multiplies matrices in NumPy? | @.
 Q: What shape results from broadcasting (3, 1) with (1, 4)? | (3, 4).
 SUM: Arrays make numerics fast.
 SUM: Broadcasting combines shapes.
-SRC: Harris CR et al., Array programming with NumPy, Nature 585, 357 | journal | 2020 | https://doi.org/10.1038/s41586-020-2649-2
+SRC: Harris CR et al., Array programming with NumPy, Nature 585, 357 | primary | 2020 | https://doi.org/10.1038/s41586-020-2649-2
 SRC: NumPy Developers, NumPy documentation | primary | 2025 | https://numpy.org/doc/stable/
 NUM1#maths-u27-13-q1@1: What is the size of np.linspace(0, 1, 11)? | 11 | 0 | elements | linspace includes both endpoints and returns the requested 11 points.
 M1#maths-u27-13-q2@1: What does np.arange(0, 10, 3) return? | [0, 3, 6, 9] | [0, 3, 6, 9, 12] | [3, 6, 9] | [0, 10, 3] | [1, 4, 7, 10] | arange starts at 0 and steps by 3 but stops before the end value 10, giving 0, 3, 6 and 9.
@@ -518,7 +518,7 @@ Q: What does scipy.integrate.quad return? | The integral value and an error esti
 Q: Which SciPy function fits a model curve to data? | scipy.optimize.curve_fit.
 SUM: Tested algorithms with a Python interface.
 SUM: Check success flags.
-SRC: Virtanen P et al., SciPy 1.0: fundamental algorithms for scientific computing in Python, Nature Methods 17, 261 | journal | 2020 | https://doi.org/10.1038/s41592-019-0686-2
+SRC: Virtanen P et al., SciPy 1.0: fundamental algorithms for scientific computing in Python, Nature Methods 17, 261 | primary | 2020 | https://doi.org/10.1038/s41592-019-0686-2
 SRC: SciPy Developers, SciPy documentation | primary | 2025 | https://docs.scipy.org/doc/scipy/
 NUM1#maths-u27-14-q1@1: scipy.integrate.quad(lambda x: 3*x**2, 0, 2) returns an integral value of what? | 8 | 0.000001 |  | ∫₀^{2} 3x^{2} dx = [x^{3}]₀^{2} = 8.
 M1#maths-u27-14-q2@1: Which SciPy function solves an ODE initial value problem? | scipy.integrate.solve_ivp | scipy.optimize.minimize | scipy.stats.norm | scipy.fft.fft | scipy.linalg.svd | solve_ivp integrates dy/dt = f(t, y) from initial conditions.
@@ -555,7 +555,7 @@ Q: How do you create a symbol x in SymPy? | x = symbols('x').
 Q: What does lambdify do? | Converts a symbolic expression into a numerical function.
 SUM: Symbolic maths in plain Python.
 SUM: Use Rational for exact fractions.
-SRC: Meurer A et al., SymPy: symbolic computing in Python, PeerJ Computer Science 3, e103 | journal | 2017 | https://doi.org/10.7717/peerj-cs.103
+SRC: Meurer A et al., SymPy: symbolic computing in Python, PeerJ Computer Science 3, e103 | primary | 2017 | https://doi.org/10.7717/peerj-cs.103
 SRC: SymPy Development Team, SymPy documentation | primary | 2025 | https://docs.sympy.org/
 NUM1#maths-u27-15-q1@1: SymPy's integrate(x**3, (x, 0, 2)) returns what value? | 4 | 0 |  | ∫₀^{2} x^{3} dx = 2^{4}/4 = 4.
 M1#maths-u27-15-q2@1: What does factor(x**2 − 5*x + 6) return in SymPy? | (x − 3)*(x − 2) | x**2 − 5*x + 6 | (x + 2)*(x + 3) | x − 5 | 6 | The roots of x^{2} − 5x + 6 are 2 and 3, so SymPy factors it as (x − 3)(x − 2).
@@ -631,7 +631,7 @@ Q: What does y ~ x mean in R? | A model formula with response y and predictor x.
 SUM: Built for statistics.
 SUM: Formulas describe models.
 SRC: R Core Team, R: A Language and Environment for Statistical Computing (R Foundation) | primary | 2025 | https://www.r-project.org/
-SRC: Ihaka R, Gentleman R, R: a language for data analysis and graphics, Journal of Computational and Graphical Statistics 5(3), 299 | journal | 1996 | https://doi.org/10.1080/10618600.1996.10474713
+SRC: Ihaka R, Gentleman R, R: a language for data analysis and graphics, Journal of Computational and Graphical Statistics 5(3), 299 | primary | 1996 | https://doi.org/10.1080/10618600.1996.10474713
 NUM1#maths-u27-17-q1@1: In R, x <- c(2, 4, 6, 8); what is mean(x)? | 5 | 0 |  | (2 + 4 + 6 + 8)/4 = 5.
 M1#maths-u27-17-q2@1: What does x[1] return for x <- c(10, 20, 30) in R? | 10 | 20 | 30 | An error | NULL | R vectors are 1-based, so x[1] is the first element, 10; x[0] would return an empty vector.
 M2#maths-u27-17-q3@2: Why does mean(c(1, 2, NA)) return NA in R? | Missing values propagate unless removed with na.rm = TRUE | R can't average three numbers | NA counts as zero in the sum | It returns 1.5 by default | It returns an error message | R refuses to guess a value for missing data by default.
@@ -704,7 +704,7 @@ Q: What's the difference between .loc and .iloc? | .loc selects by labels; .iloc
 Q: What value does pandas use for missing numbers? | NaN.
 SUM: Tables in Python.
 SUM: Split, apply, combine.
-SRC: McKinney W, Data structures for statistical computing in Python, Proceedings of the 9th Python in Science Conference, 56 | journal | 2010 | https://doi.org/10.25080/Majora-92bf1922-00a
+SRC: McKinney W, Data structures for statistical computing in Python, Proceedings of the 9th Python in Science Conference, 56 | primary | 2010 | https://doi.org/10.25080/Majora-92bf1922-00a
 SRC: pandas Development Team, pandas documentation | primary | 2025 | https://pandas.pydata.org/docs/
 NUM1#maths-u27-19-q1@1: A DataFrame has a column with values 3, 5, NaN and 7. What does .mean() return? | 5 | 0 |  | pandas skips NaN by default: (3 + 5 + 7)/3 = 5.
 M1#maths-u27-19-q2@1: Which pandas method computes group averages by category? | df.groupby('cat').mean() | df.mean('cat') | df.sort('cat') | df.pivot() only | df.merge('cat') | groupby splits rows by category, then mean aggregates each group.
@@ -741,7 +741,7 @@ Q: Which statsmodels interface uses R-style formulas? | statsmodels.formula.api.
 Q: How does statsmodels differ from scikit-learn in emphasis? | It focuses on inference and diagnostics rather than prediction pipelines.
 SUM: Statistical inference in Python.
 SUM: Summaries report uncertainty.
-SRC: Seabold S, Perktold J, Statsmodels: econometric and statistical modeling with Python, Proceedings of the 9th Python in Science Conference, 92 | journal | 2010 | https://doi.org/10.25080/Majora-92bf1922-011
+SRC: Seabold S, Perktold J, Statsmodels: econometric and statistical modeling with Python, Proceedings of the 9th Python in Science Conference, 92 | primary | 2010 | https://doi.org/10.25080/Majora-92bf1922-011
 SRC: statsmodels Developers, statsmodels documentation | primary | 2025 | https://www.statsmodels.org/stable/
 NUM1#maths-u27-20-q1@1: An OLS fit reports a coefficient 2.4 with standard error 0.6. What is its t-statistic? | 4 | 0 |  | t = 2.4/0.6 = 4.
 M1#maths-u27-20-q2@1: Which statsmodels call fits a logistic regression with a formula? | smf.logit('y ~ x', data=df).fit() | smf.ols('y ~ x').predict() | sm.add_constant(df) | pd.read_csv('y ~ x') | np.linalg.solve | logit fits a binary logistic model from the formula.
@@ -778,7 +778,7 @@ Q: What two methods does every scikit-learn estimator have? | fit and predict (o
 Q: Why use a Pipeline? | To chain preprocessing and model steps and avoid leakage.
 SUM: One API for many models.
 SUM: Pipelines prevent leakage.
-SRC: Pedregosa F et al., Scikit-learn: machine learning in Python, Journal of Machine Learning Research 12, 2825 | journal | 2011 | https://jmlr.org/papers/v12/pedregosa11a.html
+SRC: Pedregosa F et al., Scikit-learn: machine learning in Python, Journal of Machine Learning Research 12, 2825 | primary | 2011 | https://jmlr.org/papers/v12/pedregosa11a.html
 SRC: scikit-learn Developers, scikit-learn user guide | primary | 2025 | https://scikit-learn.org/stable/user_guide.html
 NUM1#maths-u27-21-q1@1: 5-fold cross-validation on 1000 examples uses how many examples for testing in each fold? | 200 | 0 | examples | Each fold holds out 1000/5 = 200 examples.
 M1#maths-u27-21-q2@1: Which scikit-learn tool searches hyperparameters with cross-validation? | GridSearchCV | StandardScaler | train_test_split alone | LabelEncoder | numpy.mean | It fits the model for each parameter combination on CV folds.
@@ -816,7 +816,7 @@ Q: What file extension do SPSS data files use? | .sav.
 SUM: Menu-driven statistics.
 SUM: Save syntax for reproducibility.
 SRC: IBM, IBM SPSS Statistics documentation | primary | 2025 | https://www.ibm.com/docs/en/spss-statistics
-SRC: Field A, Discovering Statistics Using IBM SPSS Statistics (6th edn, SAGE 2024) | textbook | 2024 | https://uk.sagepub.com/
+SRC: Field A, Discovering Statistics Using IBM SPSS Statistics (6th edn, SAGE 2024) | secondary | 2024 | https://uk.sagepub.com/
 NUM1#maths-u27-22-q1@1: An SPSS crosstab has 3 rows and 4 columns. How many degrees of freedom does the chi-squared test have? | 6 | 0 |  | (3 − 1)(4 − 1) = 6.
 M1#maths-u27-22-q2@1: In SPSS, where do you set a variable's measurement level? | Variable View | Data View | Output Viewer | Syntax Editor only | Chart Builder | Variable View holds each variable's type, labels and level.
 M2#maths-u27-22-q3@2: Why should SPSS users save syntax rather than rely on menus? | Syntax records every step exactly, so analyses can be rerun, checked and shared | Menus are much slower than typing syntax | Syntax is required to open any data file | Menus give wrong answers for most tests | There's no reason; menus record everything | Menu clicks leave no reproducible record.
@@ -853,7 +853,7 @@ Q: Which industry relies heavily on SAS for regulatory submissions? | Pharmaceut
 SUM: DATA steps prepare; PROC steps analyse.
 SUM: Valued for auditable analytics.
 SRC: SAS Institute, SAS documentation | primary | 2025 | https://documentation.sas.com/
-SRC: Delwiche LD, Slaughter SJ, The Little SAS Book (6th edn, SAS Institute 2019) | textbook | 2019 | https://support.sas.com/
+SRC: Delwiche LD, Slaughter SJ, The Little SAS Book (6th edn, SAS Institute 2019) | secondary | 2019 | https://support.sas.com/
 NUM1#maths-u27-23-q1@1: PROC MEANS on values 4, 8, 15, 16 and 23 reports the mean. What is it, to 1 decimal place? | 13.2 | 0.01 |  | (4 + 8 + 15 + 16 + 23)/5 = 66/5 = 13.2.
 M1#maths-u27-23-q2@1: Which SAS step reads and transforms data row by row? | The DATA step | PROC MEANS | PROC SGPLOT | PROC PRINT | The LIBNAME statement | The DATA step builds or modifies a dataset one observation at a time, before PROC steps analyse it.
 M2#maths-u27-23-q3@2: Why is SAS common in clinical trial reporting? | Its validated procedures and audit trails suit strict regulatory submissions | It's the only statistics software regulators have heard of | It's free for all companies, which keeps costs down | Regulators forbid any other software for submissions | It isn't common in clinical trials at all | Regulated environments value stability and documentation.
@@ -890,7 +890,7 @@ Q: What does i.region mean in a Stata model? | Treat region as a categorical var
 SUM: Concise commands, reproducible do-files.
 SUM: Strong econometrics.
 SRC: StataCorp, Stata documentation | primary | 2025 | https://www.stata.com/features/documentation/
-SRC: Cameron AC, Trivedi PK, Microeconometrics Using Stata (2nd edn, Stata Press 2022) | textbook | 2022 | https://www.stata-press.com/
+SRC: Cameron AC, Trivedi PK, Microeconometrics Using Stata (2nd edn, Stata Press 2022) | secondary | 2022 | https://www.stata-press.com/
 NUM1#maths-u27-24-q1@1: A Stata model includes i.region where region has 5 categories. How many region dummy coefficients are estimated (with an intercept)? | 4 | 0 |  | One category is the base, so 5 − 1 = 4 dummies.
 M1#maths-u27-24-q2@1: Which Stata option gives heteroscedasticity-robust standard errors? | , robust | , cluster only | , noconstant | , beta | , level(90) | regress y x, robust uses Huber–White standard errors.
 M2#maths-u27-24-q3@2: Why do economists value Stata's do-files? | They record every command so results can be reproduced and checked by others | They run much faster than typed commands | They hide the analysis from journal referees | They're required to open any Stata dataset | They don't; economists rarely use do-files | Replication packages in economics are usually do-files plus data.
@@ -927,7 +927,7 @@ Q: What does a process capability index compare? | Specification width with natu
 SUM: Easy statistics for teaching and industry.
 SUM: Quality tools built in.
 SRC: Minitab LLC, Minitab support documentation | primary | 2025 | https://support.minitab.com/
-SRC: Montgomery DC, Introduction to Statistical Quality Control (8th edn, Wiley 2019) | textbook | 2019 | https://www.wiley.com/
+SRC: Montgomery DC, Introduction to Statistical Quality Control (8th edn, Wiley 2019) | secondary | 2019 | https://www.wiley.com/
 NUM1#maths-u27-25-q1@1: A process has USL = 10.6, LSL = 9.4 and σ = 0.1. What is Cp? | 2 | 0 |  | Cp = (10.6 − 9.4)/(6 × 0.1) = 1.2/0.6 = 2.
 M1#maths-u27-25-q2@1: Which tool detects unusual variation in a process over time? | A control chart | A pie chart | A word cloud | A Gantt chart | A Venn diagram | Control charts flag points beyond limits or non-random patterns.
 M2#maths-u27-25-q3@2: Why might a process with Cp = 2 still produce defects? | Cp ignores centring; if the mean is off target, Cpk can be much lower | Cp guarantees zero defects whatever the mean | Cp measures the defect rate directly | Higher Cp always means more defects | It can't produce defects with Cp above 1 | Cpk accounts for the distance of the mean from the nearer limit.
@@ -962,8 +962,8 @@ Q: Which sampler does Stan use by default? | NUTS (No-U-Turn Sampler), a form of
 Q: What R̂ value indicates convergence? | Close to 1 (below about 1.01).
 SUM: Bayesian models in a dedicated language.
 SUM: Check R̂ and divergences.
-SRC: Carpenter B et al., Stan: a probabilistic programming language, Journal of Statistical Software 76(1), 1 | journal | 2017 | https://doi.org/10.18637/jss.v076.i01
-SRC: Hoffman MD, Gelman A, The No-U-Turn Sampler, Journal of Machine Learning Research 15, 1593 | journal | 2014 | https://jmlr.org/papers/v15/hoffman14a.html
+SRC: Carpenter B et al., Stan: a probabilistic programming language, Journal of Statistical Software 76(1), 1 | primary | 2017 | https://doi.org/10.18637/jss.v076.i01
+SRC: Hoffman MD, Gelman A, The No-U-Turn Sampler, Journal of Machine Learning Research 15, 1593 | primary | 2014 | https://jmlr.org/papers/v15/hoffman14a.html
 NUM1#maths-u27-26-q1@1: Four chains each draw 1000 post-warmup samples. How many posterior draws are there in total? | 4000 | 0 | draws | 4 × 1000 = 4000.
 M1#maths-u27-26-q2@1: Which Stan block declares the unknowns to be estimated? | parameters | data | generated quantities | functions | transformed data | The parameters block lists quantities given priors and sampled.
 M3#maths-u27-26-q3@2: Why do divergent transitions in Stan matter? | The sampler couldn't follow the posterior's geometry, so estimates may be biased | They speed up sampling by skipping regions | They're harmless warnings that can be ignored | They show that the model has converged | They never occur with well-written models | Regions of high curvature (such as funnels) may be under-explored.
@@ -999,8 +999,8 @@ Q: What sampler does pm.sample() use by default for continuous models? | NUTS.
 Q: What does ArviZ provide? | Diagnostics, summaries and plots for Bayesian models.
 SUM: Bayesian models in Python.
 SUM: Diagnose with ArviZ.
-SRC: Abril-Pla O et al., PyMC: a modern, and comprehensive probabilistic programming framework in Python, PeerJ Computer Science 9, e1516 | journal | 2023 | https://doi.org/10.7717/peerj-cs.1516
-SRC: Kumar R et al., ArviZ: a unified library for exploratory analysis of Bayesian models in Python, Journal of Open Source Software 4(33), 1143 | journal | 2019 | https://doi.org/10.21105/joss.01143
+SRC: Abril-Pla O et al., PyMC: a modern, and comprehensive probabilistic programming framework in Python, PeerJ Computer Science 9, e1516 | primary | 2023 | https://doi.org/10.7717/peerj-cs.1516
+SRC: Kumar R et al., ArviZ: a unified library for exploratory analysis of Bayesian models in Python, Journal of Open Source Software 4(33), 1143 | primary | 2019 | https://doi.org/10.21105/joss.01143
 NUM1#maths-u27-27-q1@1: A PyMC posterior for p has mean 0.62 and 94% HDI [0.48, 0.75]. What is the HDI width? | 0.27 | 0.001 |  | 0.75 − 0.48 = 0.27.
 M1#maths-u27-27-q2@1: How is observed data attached to a likelihood in PyMC? | With the observed= argument | With a separate fit() call | With pm.data_only() | It can't be | By renaming the variable | observed=data conditions the model on the data.
 M2#maths-u27-27-q3@2: Why are posterior predictive checks useful? | Simulating data from the fitted model shows whether it reproduces key features of the real data | They prove the model is true | They replace the need for priors | They speed up the sampler | They aren't useful in practice | Systematic mismatches reveal model misspecification.
@@ -1035,8 +1035,8 @@ Q: What does BUGS stand for? | Bayesian inference Using Gibbs Sampling.
 Q: In BUGS, what is the second parameter of dnorm? | The precision (1/variance).
 SUM: Bayesian modelling made practical.
 SUM: Watch the precision parameterisation.
-SRC: Lunn DJ, Thomas A, Best N, Spiegelhalter D, WinBUGS — a Bayesian modelling framework, Statistics and Computing 10, 325 | journal | 2000 | https://doi.org/10.1023/A:1008929526011
-SRC: Plummer M, JAGS: a program for analysis of Bayesian graphical models using Gibbs sampling, Proceedings of DSC 2003 | journal | 2003 | https://mcmc-jags.sourceforge.io/
+SRC: Lunn DJ, Thomas A, Best N, Spiegelhalter D, WinBUGS — a Bayesian modelling framework, Statistics and Computing 10, 325 | primary | 2000 | https://doi.org/10.1023/A:1008929526011
+SRC: Plummer M, JAGS: a program for analysis of Bayesian graphical models using Gibbs sampling, Proceedings of DSC 2003 | primary | 2003 | https://mcmc-jags.sourceforge.io/
 NUM1#maths-u27-28-q1@1: In BUGS, dnorm(0, 0.25) has precision 0.25. What is its standard deviation? | 2 | 0 |  | Variance = 1/0.25 = 4, so σ = 2.
 M1#maths-u27-28-q2@1: Which program runs BUGS-language models and is cross-platform? | JAGS | SPSS | Excel | Stata | MATLAB | JAGS (Just Another Gibbs Sampler) reads BUGS-style models.
 M2#maths-u27-28-q3@2: Why can Gibbs sampling mix slowly for some models? | Updating one parameter at a time moves slowly when parameters are strongly correlated | It uses gradients, which slow it down | It never converges for any model | It samples all parameters jointly | It always mixes fast for every model | Narrow diagonal posteriors force small coordinate-wise steps.
@@ -1072,7 +1072,7 @@ Q: What does loss.backward() do? | Computes gradients of the loss with respect t
 Q: Why call model.eval() before evaluating? | It switches layers like dropout and batch norm to inference behaviour.
 SUM: Tensors plus autograd.
 SUM: Zero, backward, step.
-SRC: Paszke A et al., PyTorch: an imperative style, high-performance deep learning library, NeurIPS 32 | journal | 2019 | https://arxiv.org/abs/1912.01703
+SRC: Paszke A et al., PyTorch: an imperative style, high-performance deep learning library, NeurIPS 32 | primary | 2019 | https://arxiv.org/abs/1912.01703
 SRC: PyTorch Foundation, PyTorch documentation | primary | 2025 | https://pytorch.org/docs/stable/
 NUM1#maths-u27-29-q1@1: With x = torch.tensor(3.0, requires_grad=True) and y = x**2 + 2*x, what is x.grad after y.backward()? | 8 | 0 |  | dy/dx = 2x + 2 = 8 at x = 3.
 M1#maths-u27-29-q2@1: How many parameters does nn.Linear(10, 5) have (with bias)? | 55 | 50 | 15 | 10 | 5 | nn.Linear(10, 5) has a 5 × 10 weight matrix (50 parameters) plus 5 biases, giving 55.
@@ -1109,7 +1109,7 @@ Q: What is Keras? | TensorFlow's high-level neural network API.
 Q: What does tf.GradientTape do? | Records operations to compute gradients.
 SUM: Production-ready ML platform.
 SUM: Keras for quick models.
-SRC: Abadi M et al., TensorFlow: a system for large-scale machine learning, OSDI 2016, 265 | journal | 2016 | https://www.usenix.org/conference/osdi16/technical-sessions/presentation/abadi
+SRC: Abadi M et al., TensorFlow: a system for large-scale machine learning, OSDI 2016, 265 | primary | 2016 | https://www.usenix.org/conference/osdi16/technical-sessions/presentation/abadi
 SRC: Google, TensorFlow documentation | primary | 2025 | https://www.tensorflow.org/api_docs
 NUM1#maths-u27-30-q1@1: A Keras Dense(64) layer receives 784 inputs. How many parameters does it have? | 50240 | 0 | parameters | 784 × 64 + 64 = 50,176 + 64 = 50,240.
 M1#maths-u27-30-q2@1: Which call trains a compiled Keras model? | model.fit(x, y) | model.train_now() | model.compile(x, y) | model.predict(y) | keras.run() | After compile sets the optimiser and loss, model.fit(x, y) runs the training loop over the requested epochs.
@@ -1147,7 +1147,7 @@ Q: What function calculates a loan payment in Excel? | PMT.
 SUM: Formulas in cells.
 SUM: Powerful but error-prone.
 SRC: Microsoft, Excel functions (by category) | primary | 2025 | https://support.microsoft.com/en-us/excel
-SRC: Ziemann M, Eren Y, El-Osta A, Gene name errors are widespread in the scientific literature, Genome Biology 17, 177 | journal | 2016 | https://doi.org/10.1186/s13059-016-1044-7
+SRC: Ziemann M, Eren Y, El-Osta A, Gene name errors are widespread in the scientific literature, Genome Biology 17, 177 | primary | 2016 | https://doi.org/10.1186/s13059-016-1044-7
 NUM1#maths-u27-31-q1@1: Cells A1:A4 hold 2, 5, 8 and 11. What does =AVERAGE(A1:A4) return? | 6.5 | 0.001 |  | (2 + 5 + 8 + 11)/4 = 26/4 = 6.5.
 M1#maths-u27-31-q2@1: =B2*$C$1 is copied from D2 to D3. What does D3 contain? | =B3*$C$1 | =B2*$C$1 | =B3*$C$2 | =C3*$D$1 | =B3*C1 | The relative reference shifts down a row; the absolute one stays fixed.
 M2#maths-u27-31-q3@2: Why did Public Health England lose COVID-19 test records in 2020? | Data were handled in the old .xls format, whose row limit truncated the files | Excel deleted the records deliberately as duplicates | The records were encrypted and couldn't be opened | Formulas in the sheet calculated the totals wrongly | It didn't happen; no records were lost | The legacy format holds about 65,000 rows, so excess rows were dropped.
@@ -1184,7 +1184,7 @@ Q: What does the Sensitivity Report give for linear models? | Shadow prices and 
 SUM: Optimisation inside a spreadsheet.
 SUM: Match the method to the model.
 SRC: Microsoft, Define and solve a problem by using Solver | primary | 2025 | https://support.microsoft.com/en-us/office/define-and-solve-a-problem-by-using-solver-5d1a388f-079d-43ac-a7eb-f63e45925040
-SRC: Ragsdale CT, Spreadsheet Modeling and Decision Analysis (9th edn, Cengage 2021) | textbook | 2021 | https://www.cengage.com/
+SRC: Ragsdale CT, Spreadsheet Modeling and Decision Analysis (9th edn, Cengage 2021) | secondary | 2021 | https://www.cengage.com/
 NUM1#maths-u27-32-q1@1: In the example, what is the optimal profit Solver reports? | 12 | 0 |  | At x = 4, y = 0 the objective is 3 × 4 = 12.
 M1#maths-u27-32-q2@1: Which Solver method suits a model with IF statements and discontinuities? | Evolutionary | Simplex LP | GRG Nonlinear only | Goal Seek | None | Evolutionary search doesn't need smoothness.
 M2#maths-u27-32-q3@2: Why should GRG Nonlinear be run from several starting values? | It finds local optima, so different starts may reveal a better solution | It always finds the global optimum from any start | Starting values make no difference to the result | It needs integer starting values to work at all | It shouldn't be; one start is always sufficient | Multistart reduces the risk of stopping at a poor local optimum.
@@ -1220,8 +1220,8 @@ Q: What is a circular reference? | A formula that depends on its own result.
 Q: What does SUMPRODUCT compute? | The sum of products of corresponding entries.
 SUM: Structure prevents errors.
 SUM: Check and test.
-SRC: Panko RR, What we know about spreadsheet errors, Journal of End User Computing 10(2), 15 | journal | 1998 | https://doi.org/10.4018/joeuc.1998040102
-SRC: FAST Standard Organisation, The FAST Standard for financial modelling | guideline | 2023 | https://www.fast-standard.org/
+SRC: Panko RR, What we know about spreadsheet errors, Journal of End User Computing 10(2), 15 | primary | 1998 | https://doi.org/10.4018/joeuc.1998040102
+SRC: FAST Standard Organisation, The FAST Standard for financial modelling | guidance | 2023 | https://www.fast-standard.org/
 NUM1#maths-u27-33-q1@1: =1000*(1+0.05)^3 returns what value, to 2 decimal places? | 1157.63 | 0.01 |  | 1000 × 1.157625 = 1157.625, displayed as 1157.63.
 M1#maths-u27-33-q2@1: Which practice makes spreadsheet assumptions easiest to check and change? | Putting each assumption in its own labelled input cell | Typing numbers inside every formula | Hiding columns with inputs | Using different formulas in each row | Avoiding labels | Visible, single-source inputs make changes safe.
 M2#maths-u27-33-q3@2: Why test a spreadsheet with simple inputs whose answers you already know? | It shows whether formulas work as intended before real data are used | It replaces the need for formulas in the sheet | Simple inputs always break spreadsheets | It's only done to make the sheet look tidy | It isn't useful for finding mistakes | Known-answer tests catch logic errors that plausible-looking outputs hide.
@@ -1257,7 +1257,7 @@ Q: Who created GeoGebra? | Markus Hohenwarter (2001).
 Q: What does a slider do in GeoGebra? | Varies a parameter and updates dependent objects.
 SUM: Dynamic, linked mathematics.
 SUM: Exploration suggests, proof confirms.
-SRC: Hohenwarter M, Jones K, Ways of linking geometry and algebra: the case of GeoGebra, Proceedings of the British Society for Research into Learning Mathematics 27(3), 126 | journal | 2007 | https://bsrlm.org.uk/
+SRC: Hohenwarter M, Jones K, Ways of linking geometry and algebra: the case of GeoGebra, Proceedings of the British Society for Research into Learning Mathematics 27(3), 126 | primary | 2007 | https://bsrlm.org.uk/
 SRC: GeoGebra GmbH, GeoGebra manual | primary | 2025 | https://geogebra.github.io/docs/manual/en/
 NUM1#maths-u27-34-q1@1: In GeoGebra, a slider a runs from −5 to 5 with step 0.5. How many values can it take? | 21 | 0 | values | (5 − (−5))/0.5 + 1 = 21.
 M1#maths-u27-34-q2@1: Where do a triangle's perpendicular bisectors meet? | At the circumcentre | At the centroid | At the incentre | At the orthocentre always | They never meet | The circumcentre is equidistant from all three vertices.
@@ -1295,7 +1295,7 @@ Q: How do you restrict a graph's domain? | Add a condition in braces, like {0 < 
 SUM: Instant graphs and sliders.
 SUM: Great for exploring functions.
 SRC: Desmos Studio PBC, Desmos user guide | primary | 2025 | https://help.desmos.com/
-SRC: Ebert D, Graphing projects with Desmos, Mathematics Teacher 108(5), 388 | journal | 2015 | https://doi.org/10.5951/mathteacher.108.5.0388
+SRC: Ebert D, Graphing projects with Desmos, Mathematics Teacher 108(5), 388 | primary | 2015 | https://doi.org/10.5951/mathteacher.108.5.0388
 NUM1#maths-u27-35-q1@1: Desmos fits y₁ ~ mx₁ + b to points (0, 1), (1, 3) and (2, 5). What value of m does it find? | 2 | 0 |  | The points lie exactly on y = 2x + 1, so m = 2.
 M1#maths-u27-35-q2@1: What happens when you type y = ax + b into Desmos? | It offers sliders for a and b | It gives an error | It solves for a | It plots nothing | It asks for a table | Undefined parameters become adjustable sliders.
 M2#maths-u27-35-q3@2: Why must you still choose a sensible model form when using Desmos regression? | It fits whatever form you type, so a wrong form gives a misleading best fit | Desmos chooses the true model automatically from the data | Regression in Desmos ignores the data points entirely | All model forms fit any data equally well in Desmos | It doesn't matter which form is typed into the regression | A straight line can fit curved data badly yet still report parameters.
@@ -1331,8 +1331,8 @@ Q: Who created LaTeX? | Leslie Lamport.
 Q: Which package provides the align environment? | amsmath.
 SUM: Plain text in, beautiful maths out.
 SUM: Labels and references number automatically.
-SRC: Lamport L, LaTeX: A Document Preparation System (2nd edn, Addison-Wesley 1994) | textbook | 1994 | https://www.pearson.com/
-SRC: Knuth DE, The TeXbook (Addison-Wesley 1984) | textbook | 1984 | https://www-cs-faculty.stanford.edu/~knuth/abcde.html
+SRC: Lamport L, LaTeX: A Document Preparation System (2nd edn, Addison-Wesley 1994) | secondary | 1994 | https://www.pearson.com/
+SRC: Knuth DE, The TeXbook (Addison-Wesley 1984) | secondary | 1984 | https://www-cs-faculty.stanford.edu/~knuth/abcde.html
 NUM1#maths-u27-36-q1@1: A LaTeX document has 3 equation environments before the one labelled eq:main, all numbered. What number does \\ref{eq:main} print? | 4 | 0 |  | Automatic numbering makes it the 4th equation.
 M1#maths-u27-36-q2@1: Which LaTeX code produces a fraction a over b? | \\frac{a}{b} | a/b in text mode | \\over{a,b} | \\fraction(a b) | [a|b] | \\frac takes numerator and denominator arguments.
 M2#maths-u27-36-q3@2: Why use \\label and \\ref instead of typing equation numbers? | Numbers update automatically when equations are added or moved | It's faster to type than writing a number | Typed equation numbers are forbidden in LaTeX | Labels change the mathematics in the equation | There's no reason to prefer labels | Manual numbering breaks whenever the document changes.
@@ -1368,7 +1368,7 @@ Q: What does MathJax render? | LaTeX and MathML mathematics in web pages.
 Q: Name a faster alternative to MathJax. | KaTeX.
 SUM: Maths on the web.
 SUM: Accessible and scalable.
-SRC: Cervone D, MathJax: a platform for mathematics on the web, Notices of the AMS 59(2), 312 | journal | 2012 | https://www.ams.org/notices/201202/rtx120200312p.pdf
+SRC: Cervone D, MathJax: a platform for mathematics on the web, Notices of the AMS 59(2), 312 | primary | 2012 | https://www.ams.org/notices/201202/rtx120200312p.pdf
 SRC: MathJax Consortium, MathJax documentation | primary | 2025 | https://docs.mathjax.org/
 NUM1#maths-u27-37-q1@1: A web page contains the text \\(a^2\\), \\(b^2\\) and \\[c^2\\]. How many expressions will MathJax render as display (block) maths? | 1 | 0 |  | Only \\[c^2\\] uses display delimiters; the other two are inline.
 M1#maths-u27-37-q2@1: Which tool renders LaTeX maths in Jupyter Markdown cells? | MathJax | Excel | SPSS | Gurobi | OpenFOAM | Jupyter uses MathJax to typeset maths in the browser.
@@ -1409,7 +1409,7 @@ Q: What does Size(SymmetricGroup(5)) return? | 120.
 SUM: Computational group theory.
 SUM: Vast libraries of groups.
 SRC: The GAP Group, GAP — Groups, Algorithms, and Programming, reference manual | primary | 2025 | https://www.gap-system.org/
-SRC: Holt DF, Eick B, O'Brien EA, Handbook of Computational Group Theory (CRC Press 2005) | textbook | 2005 | https://www.routledge.com/
+SRC: Holt DF, Eick B, O'Brien EA, Handbook of Computational Group Theory (CRC Press 2005) | secondary | 2005 | https://www.routledge.com/
 NUM1#maths-u27-38-q1@1: What does GAP return for Size(SymmetricGroup(4))? | 24 | 0 |  | |S₄| = 4! = 24.
 M1#maths-u27-38-q2@1: Which GAP library contains all groups of small order? | SmallGroups | CRAN | NumPy | CPLEX | SPSS | The SmallGroups library enumerates groups by order.
 M2#maths-u27-38-q3@2: Why do group theorists rely on systems like GAP? | Many questions about specific groups need huge exact computations impossible by hand | GAP proves all theorems automatically for them | Groups can't be studied by hand at all | Using GAP is required for publication | They don't rely on computer systems | Classifying subgroups or characters of large groups needs computer algebra.
@@ -1445,7 +1445,7 @@ Q: Where was Magma developed? | The University of Sydney.
 Q: What system preceded Magma? | Cayley.
 SUM: High-performance algebra.
 SUM: Structures organise everything.
-SRC: Bosma W, Cannon J, Playoust C, The Magma algebra system I: the user language, Journal of Symbolic Computation 24(3–4), 235 | journal | 1997 | https://doi.org/10.1006/jsco.1996.0125
+SRC: Bosma W, Cannon J, Playoust C, The Magma algebra system I: the user language, Journal of Symbolic Computation 24(3–4), 235 | primary | 1997 | https://doi.org/10.1006/jsco.1996.0125
 SRC: Computational Algebra Group, Magma handbook (University of Sydney) | primary | 2025 | https://magma.maths.usyd.edu.au/magma/handbook/
 NUM1#maths-u27-39-q1@1: Magma's Factorisation(x^4 − 1) over ℚ returns how many irreducible factors? | 3 | 0 | factors | x^{4} − 1 = (x − 1)(x + 1)(x^{2} + 1).
 M1#maths-u27-39-q2@1: Which area is a particular strength of Magma? | Number theory and elliptic curves | Word processing and layout | Video editing | Spreadsheet macros | Web design | Magma's algorithms for elliptic curves and number fields are state of the art.
@@ -1483,7 +1483,7 @@ Q: What does eulerphi(12) return? | 4.
 SUM: Fast number theory.
 SUM: Library plus shell.
 SRC: The PARI Group, PARI/GP User's Guide (Université de Bordeaux) | primary | 2025 | https://pari.math.u-bordeaux.fr/doc.html
-SRC: Cohen H, A Course in Computational Algebraic Number Theory (Springer 1993) | textbook | 1993 | https://link.springer.com/
+SRC: Cohen H, A Course in Computational Algebraic Number Theory (Springer 1993) | secondary | 1993 | https://link.springer.com/
 NUM1#maths-u27-40-q1@1: What does GP's Mod(3, 7)^-1 return as a residue? | 5 | 0 |  | 3 × 5 = 15 ≡ 1 (mod 7), so the inverse is 5.
 M1#maths-u27-40-q2@1: What does eulerphi(10) return in GP? | 4 | 10 | 5 | 2 | 9 | The numbers 1, 3, 7 and 9 are coprime to 10.
 M2#maths-u27-40-q3@2: Why is PARI/GP split into a library and a shell? | Other programs such as SageMath can call the C library, while GP is interactive | It makes installation deliberately harder | The shell is faster than the C library | They're unrelated programs sharing a name | It isn't split; PARI and GP are one program | Separating them lets many systems reuse the same fast algorithms.
@@ -1519,7 +1519,7 @@ Q: What does UFL describe? | Variational (weak) forms of PDEs.
 Q: Which library handles parallel linear algebra in FEniCS? | PETSc.
 SUM: Weak forms in, simulations out.
 SUM: Code generated automatically.
-SRC: Logg A, Mardal KA, Wells GN (eds), Automated Solution of Differential Equations by the Finite Element Method: The FEniCS Book (Springer 2012) | textbook | 2012 | https://link.springer.com/
+SRC: Logg A, Mardal KA, Wells GN (eds), Automated Solution of Differential Equations by the Finite Element Method: The FEniCS Book (Springer 2012) | secondary | 2012 | https://link.springer.com/
 SRC: FEniCS Project, DOLFINx documentation | primary | 2025 | https://docs.fenicsproject.org/
 NUM1#maths-u27-41-q1@1: A P1 (piecewise linear) element on a triangle has one degree of freedom per vertex. How many degrees of freedom does one triangle element have? | 3 | 0 |  | Three vertices give three local basis functions.
 M1#maths-u27-41-q2@1: In FEniCS, which UFL line expresses the Poisson bilinear form? | a = inner(grad(u), grad(v))*dx | a = u + v | a = solve(u) | a = div(u)*f | a = mesh*dx | The weak form of −∇^{2}u = f is ∫ ∇u·∇v dx = ∫ fv dx, written in UFL as inner(grad(u), grad(v))*dx.
@@ -1557,7 +1557,7 @@ Q: What is a multiphysics simulation? | One that couples several interacting phy
 SUM: Coupled physics in one model.
 SUM: Check mesh convergence.
 SRC: COMSOL AB, COMSOL Multiphysics reference manual | primary | 2025 | https://doc.comsol.com/
-SRC: Zimmerman WBJ, Multiphysics Modeling with Finite Element Methods (World Scientific 2006) | textbook | 2006 | https://www.worldscientific.com/
+SRC: Zimmerman WBJ, Multiphysics Modeling with Finite Element Methods (World Scientific 2006) | secondary | 2006 | https://www.worldscientific.com/
 NUM1#maths-u27-42-q1@1: A mesh study gives peak temperatures 351.0, 352.6 and 352.9 K for successively finer meshes. By how many kelvin did the last refinement change the result? | 0.3 | 0.001 | K | 352.9 − 352.6 = 0.3 K, a sign of convergence.
 M1#maths-u27-42-q2@1: Which phenomenon is a classic multiphysics problem? | Joule heating, coupling electric current with heat transfer | A single linear spring at rest | Pure arithmetic on whole numbers | A static bar chart of data | A list of material names | Current generates heat, and temperature changes electrical properties.
 M2#maths-u27-42-q3@2: Why run a mesh convergence study in COMSOL? | To confirm results don't change significantly with a finer mesh, so discretisation error is small | It makes the model run faster on the final mesh | It replaces the need for any validation | It's optional decoration for reports | It's never needed with automatic meshing | Results that still change with refinement aren't yet trustworthy.
@@ -1594,7 +1594,7 @@ Q: Which ANSYS product is known for CFD? | Fluent.
 SUM: Engineering simulation suite.
 SUM: Inputs determine outputs.
 SRC: Ansys Inc, Ansys documentation | primary | 2025 | https://www.ansys.com/
-SRC: Madenci E, Guven I, The Finite Element Method and Applications in Engineering Using ANSYS (2nd edn, Springer 2015) | textbook | 2015 | https://link.springer.com/
+SRC: Madenci E, Guven I, The Finite Element Method and Applications in Engineering Using ANSYS (2nd edn, Springer 2015) | secondary | 2015 | https://link.springer.com/
 NUM1#maths-u27-43-q1@1: A hand calculation gives a beam stress of 50 MPa, and ANSYS reports 52 MPa away from stress concentrations. What is the percentage difference relative to the hand value? | 4 | 0 | % | (52 − 50)/50 = 0.04 = 4%, a reassuring match.
 M3#maths-u27-43-q2@1: Why do stresses at a sharp re-entrant corner keep rising as the mesh is refined? | The corner is a geometric singularity where elastic stress is theoretically infinite | The solver is broken and must be reinstalled | Mesh refinement always lowers peak stress | Materials soften at corners in the model | They don't rise; corner stresses converge quickly | Real parts have fillets; a perfectly sharp corner gives a singular stress field.
 M2#maths-u27-43-q3@2: Why should engineers do a hand calculation before running an FEA model? | It gives an independent order-of-magnitude check that catches unit and setup errors | Hand calculations are always more accurate than FEA | FEA needs hand results as inputs to run | It's only required in university exams | It's unnecessary with modern software | Large disagreements reveal mistakes in loads, units or constraints.
@@ -1630,7 +1630,7 @@ Q: Which folder holds initial and boundary conditions in an OpenFOAM case? | 0/.
 Q: Which method does OpenFOAM use to discretise equations? | The finite volume method.
 SUM: Open-source CFD toolbox.
 SUM: Check mesh and convergence.
-SRC: Weller HG, Tabor G, Jasak H, Fureby C, A tensorial approach to computational continuum mechanics using object-oriented techniques, Computers in Physics 12(6), 620 | journal | 1998 | https://doi.org/10.1063/1.168744
+SRC: Weller HG, Tabor G, Jasak H, Fureby C, A tensorial approach to computational continuum mechanics using object-oriented techniques, Computers in Physics 12(6), 620 | primary | 1998 | https://doi.org/10.1063/1.168744
 SRC: OpenFOAM Foundation, OpenFOAM user guide | primary | 2025 | https://doc.cfd.direct/openfoam/user-guide-v12/
 NUM1#maths-u27-44-q1@1: An OpenFOAM case is decomposed over 4 × 4 × 2 processors. How many MPI processes run? | 32 | 0 | processes | 4 × 4 × 2 = 32 subdomains, one per process.
 M1#maths-u27-44-q2@1: Which OpenFOAM solver suits steady incompressible turbulent flow? | simpleFoam | interFoam | rhoCentralFoam | reactingFoam | blockMesh | simpleFoam uses the SIMPLE algorithm for steady incompressible flow.
@@ -1668,7 +1668,7 @@ Q: What kind of equations does MapleSim build from connected components? | Diffe
 SUM: Physical components, automatic equations.
 SUM: Symbolic simplification speeds simulation.
 SRC: Maplesoft, MapleSim documentation | primary | 2025 | https://www.maplesoft.com/products/maplesim/
-SRC: Fritzson P, Principles of Object-Oriented Modeling and Simulation with Modelica 3.3 (Wiley 2014) | textbook | 2014 | https://www.wiley.com/
+SRC: Fritzson P, Principles of Object-Oriented Modeling and Simulation with Modelica 3.3 (Wiley 2014) | secondary | 2014 | https://www.wiley.com/
 NUM1#maths-u27-45-q1@1: A MapleSim model connects a 2 kg mass to a spring of stiffness 200 N/m. What is the natural angular frequency in rad/s? | 10 | 0 | rad/s | ω = √(k/m) = √100 = 10 rad/s.
 M1#maths-u27-45-q2@1: What characterises acausal modelling? | Components connect through physical ports without fixed input–output directions | Every block has a fixed input and output signal | All the equations must be written by hand | Only electrical systems can be modelled this way | It needs no equations, only diagrams | Physical connections impose conservation laws solved simultaneously.
 M2#maths-u27-45-q3@2: Why does symbolic simplification help physical simulation? | Reducing and simplifying the DAEs before solving makes simulation faster and more robust | It changes the physics so the model runs faster | It removes all equations, leaving only parameters | It's only cosmetic and doesn't affect solving | It doesn't help; numerical solvers handle everything | Index reduction and elimination give smaller, better-conditioned systems.
@@ -1705,7 +1705,7 @@ Q: Which solver suits stiff systems? | A stiff solver such as ode15s.
 SUM: Dynamic systems as block diagrams.
 SUM: Simulate, then generate code.
 SRC: MathWorks, Simulink documentation | primary | 2025 | https://www.mathworks.com/help/simulink/
-SRC: Karris ST, Introduction to Simulink with Engineering Applications (3rd edn, Orchard Publications 2011) | textbook | 2011 | https://www.orchardpublications.com/
+SRC: Karris ST, Introduction to Simulink with Engineering Applications (3rd edn, Orchard Publications 2011) | secondary | 2011 | https://www.orchardpublications.com/
 NUM1#maths-u27-46-q1@1: A Simulink model of ẋ = −2x uses one Integrator, one Gain of −2 and a feedback line. Starting from x = 1, what is x at t = 0.5 s, to 3 decimal places? | 0.368 | 0.001 |  | x(t) = e^{−2t}, so x(0.5) = e^{−1} ≈ 0.368.
 M1#maths-u27-46-q2@1: Which Simulink block multiplies a signal by a constant? | Gain | Scope | Integrator | Mux | Clock | The Gain block multiplies its input by a constant factor, the basic building block for scaling signals.
 M2#maths-u27-46-q3@2: What is an algebraic loop in Simulink? | A feedback loop with no delay or integrator, so a block's output depends instantly on itself | A feedback loop containing an Integrator block | A plotting error in the Scope block | A type of variable-step ODE solver | It doesn't exist in Simulink models | Without dynamics in the loop, Simulink must solve an implicit equation each step.
@@ -1742,7 +1742,7 @@ Q: What tool finds the cause of infeasibility in Gurobi? | The irreducible infea
 SUM: Fast commercial MIP solving.
 SUM: Read the gap and status.
 SRC: Gurobi Optimization LLC, Gurobi Optimizer reference manual | primary | 2025 | https://docs.gurobi.com/
-SRC: Bixby RE, A brief history of linear and mixed-integer programming computation, Documenta Mathematica Extra Volume ISMP, 107 | journal | 2012 | https://www.math.uni-bielefeld.de/documenta/
+SRC: Bixby RE, A brief history of linear and mixed-integer programming computation, Documenta Mathematica Extra Volume ISMP, 107 | primary | 2012 | https://www.math.uni-bielefeld.de/documenta/
 NUM1#maths-u27-47-q1@1: Gurobi reports incumbent 950 and best bound 1000 in a maximisation. What is the gap relative to the incumbent, in %, to 2 decimal places? | 5.26 | 0.01 | % | (1000 − 950)/950 ≈ 0.0526.
 M1#maths-u27-47-q2@1: Which Gurobi status means the time limit stopped the solve before proving optimality? | TIME_LIMIT | OPTIMAL | INFEASIBLE | UNBOUNDED | LOADED | The best solution so far is returned with a remaining gap.
 M3#maths-u27-47-q3@2: Why compute an IIS when a model is infeasible? | It isolates a minimal set of conflicting constraints, showing where the formulation is wrong | It makes the model feasible automatically | It speeds up solving of feasible models | It deletes constraints at random until feasible | It isn't useful for debugging infeasibility | Large models are hard to debug without knowing which constraints clash.
@@ -1778,7 +1778,7 @@ Q: Name an open-source alternative to CPLEX. | HiGHS (or SCIP, CBC).
 SUM: A pioneering MIP solver.
 SUM: Compare solvers on your problems.
 SRC: IBM, IBM ILOG CPLEX Optimization Studio documentation | primary | 2025 | https://www.ibm.com/docs/en/icos
-SRC: Bixby RE, Solving real-world linear programs: a decade and more of progress, Operations Research 50(1), 3 | journal | 2002 | https://doi.org/10.1287/opre.50.1.3.17780
+SRC: Bixby RE, Solving real-world linear programs: a decade and more of progress, Operations Research 50(1), 3 | primary | 2002 | https://doi.org/10.1287/opre.50.1.3.17780
 NUM1#maths-u27-48-q1@1: A solver improves 10× every 5 years. What total speed-up does that give over 20 years? | 10000 | 0 | times | Four periods of 10× give 10^{4} = 10,000.
 M1#maths-u27-48-q2@1: Which CPLEX algorithm is an interior-point method? | The barrier method | Primal simplex | Dual simplex | Branch and bound | Gomory cuts only | Barrier methods follow the central path through the interior.
 M2#maths-u27-48-q3@2: Why use a modelling layer such as Pyomo or JuMP with CPLEX? | It lets the same model run on different solvers, making comparison and switching easy | It makes CPLEX free for commercial use | It replaces the solver with its own algorithm | It removes constraints the solver can't handle | There's no reason to use a modelling layer | Solver performance varies by problem, so portability helps.
@@ -1851,8 +1851,8 @@ Q: What does DCP guarantee? | That the problem built from the rules is convex.
 Q: Where does CVXPY store the optimal variable values? | In variable.value.
 SUM: Convex problems in natural notation.
 SUM: DCP rules certify convexity.
-SRC: Diamond S, Boyd S, CVXPY: a Python-embedded modeling language for convex optimization, Journal of Machine Learning Research 17(83), 1 | journal | 2016 | https://jmlr.org/papers/v17/15-408.html
-SRC: Grant M, Boyd S, Ye Y, Disciplined convex programming, in Global Optimization: From Theory to Implementation (Springer 2006), 155 | textbook | 2006 | https://link.springer.com/
+SRC: Diamond S, Boyd S, CVXPY: a Python-embedded modeling language for convex optimization, Journal of Machine Learning Research 17(83), 1 | primary | 2016 | https://jmlr.org/papers/v17/15-408.html
+SRC: Grant M, Boyd S, Ye Y, Disciplined convex programming, in Global Optimization: From Theory to Implementation (Springer 2006), 155 | secondary | 2006 | https://link.springer.com/
 NUM1#maths-u27-50-q1@1: CVXPY minimises (x − 3)^{2} subject to x ≤ 1. What is the optimal value prob.value? | 4 | 0 |  | The constrained optimum is at x = 1, giving (1 − 3)^{2} = 4.
 M1#maths-u27-50-q2@1: Which objective follows DCP rules? | Minimise cp.norm(x, 2) | Maximise cp.norm(x, 2) | Minimise cp.log(x) | Maximise cp.square(x) | Minimise cp.sqrt(x) | Minimising a convex norm is DCP; the others minimise concave or maximise convex expressions.
 M3#maths-u27-50-q3@2: Why can CVXPY reject a problem that is actually convex? | DCP verifies convexity only via its rules, so non-DCP forms of convex expressions fail | CVXPY can't solve any convex problem, only linear ones | All convex problems are rejected unless written as LPs | DCP proves the problem isn't convex when it rejects it | It never rejects convex problems written in any form | Rewriting the expression with suitable atoms (such as norm instead of sqrt of a sum of squares) fixes it.

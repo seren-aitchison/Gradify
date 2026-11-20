@@ -29,8 +29,8 @@ Q: What is the Euler characteristic of a sphere? | 2.
 Q: Are a coffee mug and a doughnut topologically the same? | Yes: each has one hole.
 SUM: Topology studies shape without measurement.
 SUM: Invariants tell shapes apart.
-SRC: Armstrong MA, Basic Topology (Springer 1983) | textbook | 1983 | https://link.springer.com/
-SRC: Richeson DS, Euler's Gem: The Polyhedron Formula and the Birth of Topology (Princeton University Press 2008) | textbook | 2008 | https://press.princeton.edu/
+SRC: Armstrong MA, Basic Topology (Springer 1983) | secondary | 1983 | https://link.springer.com/
+SRC: Richeson DS, Euler's Gem: The Polyhedron Formula and the Birth of Topology (Princeton University Press 2008) | secondary | 2008 | https://press.princeton.edu/
 NUM1#maths-u17-01-q1@1: What is the Euler characteristic of a torus? | 0 | 0 |  | A torus with g = 1 hole has χ = 2 − 2g = 0.
 M1#maths-u17-01-q2@1: Which pair of letters are topologically the same as curves? | O and D | O and B | C and O | B and P | A and C | O and D are each a single closed loop, so one can be deformed into the other; B has two loops and C, A have different shapes.
 M2#maths-u17-01-q3@2: Why isn't a sphere the same shape as a torus topologically? | Their Euler characteristics differ (2 and 0) | The sphere has a larger surface area | The torus is smoother than the sphere | Their curvatures differ at every point | They are the same up to deformation | χ is a topological invariant, so different values mean different shapes.
@@ -63,8 +63,8 @@ Q: What is the closure of ℚ in ℝ? | ℝ.
 Q: What topology turns an interval into a circle? | A quotient topology gluing its endpoints.
 SUM: Open and closed sets are the basic language.
 SUM: New spaces come from subspaces, products and quotients.
-SRC: Munkres JR, Topology (2nd edn, Pearson 2000) | textbook | 2000 | https://www.pearson.com/
-SRC: Sutherland WA, Introduction to Metric and Topological Spaces (2nd edn, Oxford University Press 2009) | textbook | 2009 | https://global.oup.com/
+SRC: Munkres JR, Topology (2nd edn, Pearson 2000) | secondary | 2000 | https://www.pearson.com/
+SRC: Sutherland WA, Introduction to Metric and Topological Spaces (2nd edn, Oxford University Press 2009) | secondary | 2009 | https://global.oup.com/
 NUM1#maths-u17-02-q1@1: How many points does the boundary of the interval (0, 1) in ℝ contain? | 2 | 0 |  | The boundary is {0, 1}.
 M1#maths-u17-02-q2@1: Which subset of ℝ is neither open nor closed? | [0, 1) | (0, 1) | [0, 1] | ℝ | ∅ | It contains 0 but not its limit point 1, and no neighbourhood of 0 stays inside.
 M3#maths-u17-02-q3@2: Why do sequences in a Hausdorff space have at most one limit? | Two limits would have disjoint neighbourhoods, and the sequence can't eventually lie in both | Hausdorff spaces contain no convergent sequences at all | Every sequence in a Hausdorff space is eventually constant | Limits in a Hausdorff space are always zero | They can have two, one in each open neighbourhood | Disjoint open sets separate the candidate limits.
@@ -99,8 +99,8 @@ Q: Is ⋂ₙ (−1/n, 1/n) open in ℝ? | No: it's {0}.
 Q: What are the open sets of the indiscrete topology? | Only ∅ and X.
 SUM: Topologies specify open sets.
 SUM: Three axioms suffice.
-SRC: Munkres JR, Topology (2nd edn, Pearson 2000) | textbook | 2000 | https://www.pearson.com/
-SRC: Steen LA, Seebach JA, Counterexamples in Topology (Dover 1995) | textbook | 1995 | https://store.doverpublications.com/
+SRC: Munkres JR, Topology (2nd edn, Pearson 2000) | secondary | 2000 | https://www.pearson.com/
+SRC: Steen LA, Seebach JA, Counterexamples in Topology (Dover 1995) | secondary | 1995 | https://store.doverpublications.com/
 NUM1#maths-u17-03-q1@1: How many different topologies are there on a two-point set {a, b}? | 4 | 0 |  | Indiscrete, discrete, and the two Sierpiński topologies with {a} or {b} open.
 M1#maths-u17-03-q2@1: Which collection is a topology on {a, b, c}? | {∅, {a}, {a, b}, {a, b, c}} | {∅, {a}, {b}, {a, b, c}} | {{a}, {a, b, c}} | {∅, {a, b}, {b, c}, {a, b, c}} | {∅, {a}} | It contains ∅ and X and is closed under unions and intersections; the others fail one rule.
 M2#maths-u17-03-q3@2: In the discrete topology, which subsets are closed? | Every subset | Only ∅ and X | Only finite sets | Only singletons | None | Every subset is open, so every complement is open too.
@@ -132,8 +132,8 @@ Q: Is ℚ complete with the usual metric? | No.
 Q: What shape is the unit ball of d₁ in ℝ^{2}? | A diamond (a square rotated 45°).
 SUM: Metrics measure distance.
 SUM: Different metrics can give the same topology.
-SRC: Sutherland WA, Introduction to Metric and Topological Spaces (2nd edn, Oxford University Press 2009) | textbook | 2009 | https://global.oup.com/
-SRC: Kreyszig E, Introductory Functional Analysis with Applications (Wiley 1978) | textbook | 1978 | https://www.wiley.com/
+SRC: Sutherland WA, Introduction to Metric and Topological Spaces (2nd edn, Oxford University Press 2009) | secondary | 2009 | https://global.oup.com/
+SRC: Kreyszig E, Introductory Functional Analysis with Applications (Wiley 1978) | secondary | 1978 | https://www.wiley.com/
 NUM1#maths-u17-04-q1@1: Find the taxicab distance d₁ between (1, 5) and (4, 1). | 7 | 0 |  | |1 − 4| + |5 − 1| = 3 + 4 = 7.
 M1#maths-u17-04-q2@1: Which function is a metric on ℝ? | d(x, y) = |x − y| | d(x, y) = x − y | d(x, y) = (x − y)^{2} | d(x, y) = |x| + |y| | d(x, y) = 0 | |x − y| is positive, symmetric and satisfies the triangle inequality.
 M2#maths-u17-04-q3@2: Why does d(x, y) = (x − y)^{2} fail to be a metric on ℝ? | It breaks the triangle inequality: d(0, 2) = 4 > d(0, 1) + d(1, 2) = 2 | It takes negative values for some pairs of points | It isn't symmetric: d(x, y) ≠ d(y, x) | It is zero for some pairs of distinct points | It is a metric, since squares are never negative | Squaring distances breaks the triangle inequality.
@@ -166,8 +166,8 @@ Q: Is every map from a discrete space continuous? | Yes.
 Q: Do continuous maps send open sets to open sets? | Not necessarily.
 SUM: Continuity is about preimages.
 SUM: It preserves compactness and connectedness.
-SRC: Munkres JR, Topology (2nd edn, Pearson 2000) | textbook | 2000 | https://www.pearson.com/
-SRC: Sutherland WA, Introduction to Metric and Topological Spaces (2nd edn, Oxford University Press 2009) | textbook | 2009 | https://global.oup.com/
+SRC: Munkres JR, Topology (2nd edn, Pearson 2000) | secondary | 2000 | https://www.pearson.com/
+SRC: Sutherland WA, Introduction to Metric and Topological Spaces (2nd edn, Oxford University Press 2009) | secondary | 2009 | https://global.oup.com/
 NUM1#maths-u17-05-q1@1: For f(x) = x^{2}, into how many disjoint open intervals does f^{−1}((1, 4)) split? | 2 | 0 |  | (−2, −1) and (1, 2).
 M1#maths-u17-05-q2@1: Why is the floor function discontinuous on ℝ? | The preimage of (−½, ½) is [0, 1), which isn't open | Its image ℤ is an open subset of ℝ | It is unbounded both above and below | It is constant on the whole real line | It is continuous, being a step function | The preimage of the open set (−½, ½) is [0, 1), which isn't open, so the preimage test for continuity fails.
 M2#maths-u17-05-q3@2: Which property of [0, 1] does every continuous real function on it inherit? | Its image is compact, so the function attains a maximum | Its image is an open interval of ℝ | Its image is always a single point | The function becomes differentiable on it | Nothing, since [0, 1] is just an interval | Continuous images of compact sets are compact, giving the extreme value theorem.
@@ -199,8 +199,8 @@ Q: Is (0, 1) homeomorphic to ℝ? | Yes.
 Q: How many pieces remain when an interior point is removed from an open interval? | 2.
 SUM: Homeomorphism means same topology.
 SUM: Invariants prove difference.
-SRC: Armstrong MA, Basic Topology (Springer 1983) | textbook | 1983 | https://link.springer.com/
-SRC: Munkres JR, Topology (2nd edn, Pearson 2000) | textbook | 2000 | https://www.pearson.com/
+SRC: Armstrong MA, Basic Topology (Springer 1983) | secondary | 1983 | https://link.springer.com/
+SRC: Munkres JR, Topology (2nd edn, Pearson 2000) | secondary | 2000 | https://www.pearson.com/
 NUM1#maths-u17-06-q1@1: How many connected pieces remain when one point is removed from a circle? | 1 | 0 |  | The circle minus a point is an open arc, which is connected.
 M1#maths-u17-06-q2@1: Which pair of spaces is homeomorphic? | (0, 1) and (2, 5) | [0, 1] and (0, 1) | A circle and [0, 1] | ℝ and ℝ^{2} | A circle and a figure of eight | Any two open intervals are homeomorphic by a linear map.
 M3#maths-u17-06-q3@2: Why is t ↦ (cos t, sin t) from [0, 2π) to the circle not a homeomorphism? | Its inverse jumps near (1, 0), sending nearby points to t near 0 and near 2π | The map itself is not continuous at t = π | It isn't onto: it misses the point (1, 0) | It isn't one-to-one: t and t + π collide | It is a homeomorphism, being a bijection | The inverse is discontinuous at the point (1, 0).
@@ -232,8 +232,8 @@ Q: Is [0, 1] compact? | Yes.
 Q: Is ℝ compact? | No.
 SUM: Compactness is finiteness in disguise.
 SUM: In ℝⁿ it means closed and bounded.
-SRC: Munkres JR, Topology (2nd edn, Pearson 2000) | textbook | 2000 | https://www.pearson.com/
-SRC: Rudin W, Principles of Mathematical Analysis (3rd edn, McGraw-Hill 1976) | textbook | 1976 | https://www.mheducation.com/
+SRC: Munkres JR, Topology (2nd edn, Pearson 2000) | secondary | 2000 | https://www.pearson.com/
+SRC: Rudin W, Principles of Mathematical Analysis (3rd edn, McGraw-Hill 1976) | secondary | 1976 | https://www.mheducation.com/
 NUM1#maths-u17-07-q1@1: The cover (1/n, 1) for n ≥ 2 is used for (0, 1). If a finite subcover's largest index is N = 10, what is the left end of the part it covers? | 0.1 | 0.0001 |  | It covers only (1/10, 1), missing (0, 0.1].
 M1#maths-u17-07-q2@1: Which subset of ℝ^{2} is compact? | The closed unit disc | The open unit disc | The whole plane | The x-axis | The upper half-plane | By Heine–Borel, compact subsets of ℝ^{2} are closed and bounded; only the closed unit disc is both.
 M2#maths-u17-07-q3@2: Why does a continuous function on [a, b] attain a maximum? | Its image is compact, hence closed and bounded, so it contains its supremum | Every continuous function on [a, b] is increasing | Continuity on [a, b] forces differentiability | Continuous functions on [a, b] are constant | It needn't: the supremum may be missed | Compactness is preserved by continuous maps.
@@ -267,8 +267,8 @@ Q: Is ℚ connected? | No: it splits at any irrational, such as √2.
 Q: How many components does ℝ minus one point have? | 2.
 SUM: Connectedness means one piece.
 SUM: It underlies the intermediate value theorem.
-SRC: Munkres JR, Topology (2nd edn, Pearson 2000) | textbook | 2000 | https://www.pearson.com/
-SRC: Steen LA, Seebach JA, Counterexamples in Topology (Dover 1995) | textbook | 1995 | https://store.doverpublications.com/
+SRC: Munkres JR, Topology (2nd edn, Pearson 2000) | secondary | 2000 | https://www.pearson.com/
+SRC: Steen LA, Seebach JA, Counterexamples in Topology (Dover 1995) | secondary | 1995 | https://store.doverpublications.com/
 NUM1#maths-u17-08-q1@1: How many components does ℝ minus 3 points have? | 4 | 0 |  | k points leave k + 1 intervals.
 M1#maths-u17-08-q2@1: Which subset of ℝ is connected? | [0, 2] | [0, 1] ∪ [2, 3] | ℚ | ℤ | {0, 1} | Intervals are exactly the connected subsets of ℝ.
 M3#maths-u17-08-q3@2: Why is the topologist's sine curve connected but not path-connected? | Its wiggling part accumulates on the segment, but no path can reach the segment through infinitely fast oscillation | It falls into two separate open pieces, so it isn't connected at all | It is an open subset of the plane, so connectedness fails | It is a straight line, so every path stays inside it | It is in fact path-connected through the origin | The closure joins the pieces, yet any path would have to oscillate infinitely.
@@ -301,8 +301,8 @@ Q: What does the hairy ball theorem say? | A continuous tangent vector field on 
 Q: What does the Brouwer fixed-point theorem guarantee? | A fixed point for any continuous map of a closed disc to itself.
 SUM: Algebra captures topology.
 SUM: Invariants prove impossibility.
-SRC: Hatcher A, Algebraic Topology (Cambridge University Press 2002) | textbook | 2002 | https://pi.math.cornell.edu/~hatcher/AT/ATpage.html
-SRC: Armstrong MA, Basic Topology (Springer 1983) | textbook | 1983 | https://link.springer.com/
+SRC: Hatcher A, Algebraic Topology (Cambridge University Press 2002) | secondary | 2002 | https://pi.math.cornell.edu/~hatcher/AT/ATpage.html
+SRC: Armstrong MA, Basic Topology (Springer 1983) | secondary | 1983 | https://link.springer.com/
 NUM1#maths-u17-09-q1@1: Find χ for the surface of a cube. | 2 | 0 |  | 8 − 12 + 6 = 2.
 M1#maths-u17-09-q2@1: Which statement follows from the Borsuk–Ulam theorem? | Two antipodal points on Earth have the same temperature and pressure | Every continuous map of a disc to itself has a fixed point | Every sphere carries a nowhere-zero tangent field | Every closed surface contains at least one hole | Every map between spheres is continuous | Borsuk–Ulam: a continuous map from S^{2} to ℝ^{2} identifies some antipodal pair.
 M2#maths-u17-09-q3@2: Why can equal invariants fail to prove two spaces are the same? | Different spaces can share an invariant; only differences are conclusive | Invariants are equal for every pair of spaces | Invariants depend on how the spaces are drawn | Equal invariants always prove the spaces are the same | They can't fail, because invariants are complete | An invariant can distinguish but not, on its own, identify.
@@ -336,8 +336,8 @@ Q: What is π₁ of a disc? | Trivial.
 Q: What is the fundamental group of a torus? | ℤ × ℤ.
 SUM: Loops up to deformation form a group.
 SUM: It detects one-dimensional holes.
-SRC: Hatcher A, Algebraic Topology (Cambridge University Press 2002) | textbook | 2002 | https://pi.math.cornell.edu/~hatcher/AT/ATpage.html
-SRC: Massey WS, A Basic Course in Algebraic Topology (Springer 1991) | textbook | 1991 | https://link.springer.com/
+SRC: Hatcher A, Algebraic Topology (Cambridge University Press 2002) | secondary | 2002 | https://pi.math.cornell.edu/~hatcher/AT/ATpage.html
+SRC: Massey WS, A Basic Course in Algebraic Topology (Springer 1991) | secondary | 1991 | https://link.springer.com/
 NUM1#maths-u17-10-q1@1: How many independent generators does π₁(torus) = ℤ × ℤ have? | 2 | 0 |  | One loop around each of the torus's two circular directions.
 M1#maths-u17-10-q2@1: Which space is simply connected? | The sphere S^{2} | The circle | The torus | The annulus | The figure of eight | Every loop on a sphere can be shrunk to a point.
 M2#maths-u17-10-q3@2: Why can't the figure-of-eight group be abelian? | Going round loop a then b isn't homotopic to b then a | It has only one loop, so ab = ba trivially | It's homeomorphic to a circle, with group ℤ | Every fundamental group is abelian | It is abelian, as ℤ × ℤ like the torus | Its fundamental group is free on two generators, where ab ≠ ba.
@@ -371,8 +371,8 @@ Q: Is a disc contractible? | Yes.
 Q: What is π₃(S^{2})? | ℤ.
 SUM: Homotopy is deformation.
 SUM: Higher groups detect higher holes.
-SRC: Hatcher A, Algebraic Topology (Cambridge University Press 2002) | textbook | 2002 | https://pi.math.cornell.edu/~hatcher/AT/ATpage.html
-SRC: Hopf H, Über die Abbildungen der dreidimensionalen Sphäre auf die Kugelfläche, Mathematische Annalen 104, 637 | journal | 1931 | https://doi.org/10.1007/BF01457962
+SRC: Hatcher A, Algebraic Topology (Cambridge University Press 2002) | secondary | 2002 | https://pi.math.cornell.edu/~hatcher/AT/ATpage.html
+SRC: Hopf H, Über die Abbildungen der dreidimensionalen Sphäre auf die Kugelfläche, Mathematische Annalen 104, 637 | primary | 1931 | https://doi.org/10.1007/BF01457962
 NUM1#maths-u17-11-q1@1: What is the degree of the map z ↦ z^{3} from the circle to itself? | 3 | 0 |  | It wraps the circle around itself three times.
 M1#maths-u17-11-q2@1: Which space is homotopy equivalent to a circle? | An annulus | A disc | A point | A sphere | A solid ball | The annulus deformation-retracts onto a circle.
 M3#maths-u17-11-q3@2: Why are a disc and a point homotopy equivalent but not homeomorphic? | The disc contracts to a point, but no bijection exists between them | They have different fundamental groups | A single point isn't a topological space | They are homeomorphic as well as equivalent | A disc has a hole that a point lacks | Homotopy equivalence allows collapsing; homeomorphism needs a bijection.
@@ -406,8 +406,8 @@ Q: What does b₀ count? | Connected components.
 Q: What is b₁ of a surface of genus 3? | 6.
 SUM: Homology counts holes by dimension.
 SUM: Betti numbers give χ.
-SRC: Hatcher A, Algebraic Topology (Cambridge University Press 2002) | textbook | 2002 | https://pi.math.cornell.edu/~hatcher/AT/ATpage.html
-SRC: Edelsbrunner H, Harer J, Computational Topology: An Introduction (American Mathematical Society 2010) | textbook | 2010 | https://bookstore.ams.org/
+SRC: Hatcher A, Algebraic Topology (Cambridge University Press 2002) | secondary | 2002 | https://pi.math.cornell.edu/~hatcher/AT/ATpage.html
+SRC: Edelsbrunner H, Harer J, Computational Topology: An Introduction (American Mathematical Society 2010) | secondary | 2010 | https://bookstore.ams.org/
 NUM1#maths-u17-12-q1@1: What is b₁ for a torus? | 2 | 0 |  | Two independent loops: around the tube and around the hole.
 M1#maths-u17-12-q2@1: What are the Betti numbers (b₀, b₁, b₂) of the sphere S^{2}? | (1, 0, 1) | (1, 1, 0) | (1, 2, 1) | (0, 0, 1) | (2, 0, 2) | One component, no loop holes, one enclosed void.
 M2#maths-u17-12-q3@2: In persistent homology, which features are usually treated as real signal? | Holes that persist over a long range of scales | Holes that appear and vanish quickly | Only components | Every feature equally | None | Holes that persist across a long range of scales are robust to noise, so they are treated as real structure in the data.
@@ -440,8 +440,8 @@ Q: What is ∮ dθ around the origin? | 2π.
 Q: What does the cup product give cohomology? | A ring structure.
 SUM: Cohomology measures holes dually.
 SUM: Forms detect holes in calculus.
-SRC: Bott R, Tu LW, Differential Forms in Algebraic Topology (Springer 1982) | textbook | 1982 | https://link.springer.com/
-SRC: Hatcher A, Algebraic Topology (Cambridge University Press 2002) | textbook | 2002 | https://pi.math.cornell.edu/~hatcher/AT/ATpage.html
+SRC: Bott R, Tu LW, Differential Forms in Algebraic Topology (Springer 1982) | secondary | 1982 | https://link.springer.com/
+SRC: Hatcher A, Algebraic Topology (Cambridge University Press 2002) | secondary | 2002 | https://pi.math.cornell.edu/~hatcher/AT/ATpage.html
 NUM1#maths-u17-13-q1@1: Evaluate ∮ dθ once around the origin, to 3 decimal places. | 6.283 | 0.001 |  | 2π ≈ 6.283.
 M1#maths-u17-13-q2@1: What does de Rham cohomology measure? | Closed forms modulo exact forms | Distances on manifolds | The number of points | Curvature only | The area of a surface | Non-exact closed forms correspond to holes.
 M3#maths-u17-13-q3@2: Why does the cup product help where homology alone doesn't? | Spaces with equal Betti numbers can have different cup product rings | It changes the Betti numbers of the space | Homology of every manifold is always zero | It counts connected components and nothing more | It doesn't help: cohomology equals homology | The torus and S^{2} ∨ S^{1} ∨ S^{1} share homology but not their cohomology rings.
@@ -474,8 +474,8 @@ Q: How many critical points does the height function on an upright torus have? |
 Q: Who discovered exotic spheres? | John Milnor (1956).
 SUM: Smooth topology adds calculus.
 SUM: Smoothness can be exotic.
-SRC: Milnor JW, Topology from the Differentiable Viewpoint (Princeton University Press 1965) | textbook | 1965 | https://press.princeton.edu/
-SRC: Milnor JW, On manifolds homeomorphic to the 7-sphere, Annals of Mathematics 64(2), 399 | journal | 1956 | https://doi.org/10.2307/1969983
+SRC: Milnor JW, Topology from the Differentiable Viewpoint (Princeton University Press 1965) | secondary | 1965 | https://press.princeton.edu/
+SRC: Milnor JW, On manifolds homeomorphic to the 7-sphere, Annals of Mathematics 64(2), 399 | primary | 1956 | https://doi.org/10.2307/1969983
 NUM1#maths-u17-14-q1@1: A Morse function on a surface has 1 minimum, 1 maximum and 4 saddles. Find χ. | -2 | 0 |  | χ = 1 − 4 + 1 = −2, a surface of genus 2.
 M1#maths-u17-14-q2@1: What index does a saddle point on a surface have? | 1 | 0 | 2 | 3 | −1 | The index counts downward directions at a critical point; a saddle has exactly one, so its index is 1.
 M2#maths-u17-14-q3@2: What does the Poincaré–Hopf theorem say about vector fields? | The indices of the zeros sum to the Euler characteristic | Every vector field on a manifold is zero | Zeros of a field can always be smoothed away | The indices of the zeros are always positive | It says the number of zeros equals the dimension | So a sphere (χ = 2) needs a zero: the hairy ball theorem.
@@ -508,8 +508,8 @@ Q: What is the crossing number of the trefoil? | 3.
 Q: Who proved the Poincaré conjecture? | Grigori Perelman.
 SUM: Geometric topology studies low dimensions.
 SUM: Knots and 3-manifolds are its heart.
-SRC: Adams CC, The Knot Book (American Mathematical Society 2004) | textbook | 2004 | https://bookstore.ams.org/
-SRC: Perelman G, The entropy formula for the Ricci flow and its geometric applications, arXiv:math/0211159 | journal | 2002 | https://arxiv.org/abs/math/0211159
+SRC: Adams CC, The Knot Book (American Mathematical Society 2004) | secondary | 2004 | https://bookstore.ams.org/
+SRC: Perelman G, The entropy formula for the Ricci flow and its geometric applications, arXiv:math/0211159 | primary | 2002 | https://arxiv.org/abs/math/0211159
 NUM1#maths-u17-15-q1@1: What is the Euler characteristic of an orientable surface of genus 3? | -4 | 0 |  | χ = 2 − 2 × 3 = −4.
 M1#maths-u17-15-q2@1: Which surface is non-orientable? | The Klein bottle | The torus | The sphere | The double torus | The cylinder | The Klein bottle has only one side, so no consistent choice of normal direction exists; the others are orientable.
 M2#maths-u17-15-q3@2: What method did Perelman use to prove the Poincaré conjecture? | Ricci flow with surgery | Knot polynomials | Morse theory alone | Counting triangulations | Computer search | Hamilton's Ricci flow, controlled through singularities.
@@ -542,8 +542,8 @@ Q: What dimension is the sphere S^{2} as a manifold? | 2.
 Q: How many stereographic charts cover the sphere? | 2.
 SUM: Manifolds are locally flat.
 SUM: Atlases stitch charts together.
-SRC: Lee JM, Introduction to Smooth Manifolds (2nd edn, Springer 2013) | textbook | 2013 | https://link.springer.com/
-SRC: Tu LW, An Introduction to Manifolds (2nd edn, Springer 2011) | textbook | 2011 | https://link.springer.com/
+SRC: Lee JM, Introduction to Smooth Manifolds (2nd edn, Springer 2013) | secondary | 2013 | https://link.springer.com/
+SRC: Tu LW, An Introduction to Manifolds (2nd edn, Springer 2011) | secondary | 2011 | https://link.springer.com/
 NUM1#maths-u17-16-q1@1: What is the minimum number of charts needed in an atlas of S^{2}? | 2 | 0 |  | One chart is impossible because S^{2} is compact.
 M1#maths-u17-16-q2@1: Which space is a 1-dimensional manifold? | A circle | A figure of eight | A filled square | A cone with its tip | Two crossing lines | Every point of a circle has a neighbourhood like an interval; the crossing points of the others fail.
 M3#maths-u17-16-q3@2: Why isn't a figure of eight a manifold? | Near the crossing point it looks like four rays meeting, not an interval | It fails to be compact, unlike a circle | It contains no points near the crossing | It is two-dimensional near the crossing | It is a manifold, as each lobe is a circle | Removing the crossing point leaves four pieces locally, unlike an interval.
@@ -577,8 +577,8 @@ Q: What is d(d f) for any function f? | 0.
 Q: What is d(x dy)? | dx ∧ dy.
 SUM: Forms unify vector calculus.
 SUM: Stokes covers every integral theorem.
-SRC: Spivak M, Calculus on Manifolds (W. A. Benjamin 1965) | textbook | 1965 | https://www.routledge.com/
-SRC: Bott R, Tu LW, Differential Forms in Algebraic Topology (Springer 1982) | textbook | 1982 | https://link.springer.com/
+SRC: Spivak M, Calculus on Manifolds (W. A. Benjamin 1965) | secondary | 1965 | https://www.routledge.com/
+SRC: Bott R, Tu LW, Differential Forms in Algebraic Topology (Springer 1982) | secondary | 1982 | https://link.springer.com/
 NUM1#maths-u17-17-q1@1: Evaluate ∮ x dy anticlockwise around the square [0, 2] × [0, 2]. | 4 | 0 |  | dω = dx ∧ dy, integrated over an area of 4.
 M1#maths-u17-17-q2@1: Which classical theorem is the case of Stokes' theorem for 1-forms on a region in the plane? | Green's theorem | The divergence theorem | The mean value theorem | Fubini's theorem | Pythagoras' theorem | ∫_{D} d(P dx + Q dy) = ∮ P dx + Q dy is Green's theorem.
 M2#maths-u17-17-q3@2: What does d^{2} = 0 correspond to in vector calculus? | curl(grad f) = 0 and div(curl F) = 0 | grad(div F) = 0 for every field | curl(curl F) = 0 for every field | div(grad f) = 0 for every function | Nothing in classical vector calculus | Applying d twice always gives zero; on 0-forms and 1-forms in ℝ^{3} this is curl grad f = 0 and div curl F = 0.
@@ -612,8 +612,8 @@ Q: What is the fibre of the Hopf fibration? | A circle.
 Q: Is the tangent bundle of S^{2} trivial? | No.
 SUM: Bundles are twisted products.
 SUM: They underpin gauge physics.
-SRC: Husemoller D, Fibre Bundles (3rd edn, Springer 1994) | textbook | 1994 | https://link.springer.com/
-SRC: Frankel T, The Geometry of Physics (3rd edn, Cambridge University Press 2011) | textbook | 2011 | https://www.cambridge.org/
+SRC: Husemoller D, Fibre Bundles (3rd edn, Springer 1994) | secondary | 1994 | https://link.springer.com/
+SRC: Frankel T, The Geometry of Physics (3rd edn, Cambridge University Press 2011) | secondary | 2011 | https://www.cambridge.org/
 NUM1#maths-u17-18-q1@1: How many boundary components does a Möbius band have? | 1 | 0 |  | Its single edge goes twice around the band.
 M1#maths-u17-18-q2@1: Which bundle over the circle is trivial? | The cylinder | The Möbius band | The Klein bottle as a circle bundle | The Hopf fibration | None | The cylinder is globally circle × interval.
 M3#maths-u17-18-q3@2: Why does the hairy ball theorem show the tangent bundle of S^{2} is non-trivial? | A trivial bundle would have a nowhere-zero section, but every tangent field on S^{2} vanishes somewhere | The sphere has no tangent planes at its poles, so the bundle is empty there | All bundles over spheres are trivial, so the theorem shows nothing | Hairy balls are about knots, not bundles, so it doesn't show this | Tangent bundles of all manifolds are trivial, so no proof is needed | Triviality would give constant non-zero vector fields.
@@ -646,8 +646,8 @@ Q: What is the real dimension of a complex manifold of complex dimension 4? | 8.
 Q: What is ℂP^{1} topologically? | A sphere.
 SUM: Complex manifolds use holomorphic charts.
 SUM: Holomorphy imposes strong rigidity.
-SRC: Huybrechts D, Complex Geometry: An Introduction (Springer 2005) | textbook | 2005 | https://link.springer.com/
-SRC: Griffiths P, Harris J, Principles of Algebraic Geometry (Wiley 1978) | textbook | 1978 | https://www.wiley.com/
+SRC: Huybrechts D, Complex Geometry: An Introduction (Springer 2005) | secondary | 2005 | https://link.springer.com/
+SRC: Griffiths P, Harris J, Principles of Algebraic Geometry (Wiley 1978) | secondary | 1978 | https://www.wiley.com/
 NUM1#maths-u17-19-q1@1: What is the real dimension of ℂP^{3}? | 6 | 0 |  | Complex dimension 3 means real dimension 6.
 M1#maths-u17-19-q2@1: What holomorphic functions exist on a compact connected complex manifold? | Only constants | Every polynomial | Every smooth function | All exponentials | None, not even constants | The maximum principle forces holomorphic functions to be constant.
 M2#maths-u17-19-q3@2: Which manifolds model the hidden dimensions in string theory? | Calabi–Yau manifolds | Real projective planes | Klein bottles | Exotic spheres | Möbius bands | Ricci-flat Kähler manifolds preserve the needed supersymmetry.
@@ -679,8 +679,8 @@ Q: How many sheets does the Riemann surface of √z have? | 2.
 Q: What is the genus of a smooth plane cubic? | 1.
 SUM: Riemann surfaces make multivalued functions single-valued.
 SUM: Genus links analysis and topology.
-SRC: Donaldson S, Riemann Surfaces (Oxford University Press 2011) | textbook | 2011 | https://global.oup.com/
-SRC: Forster O, Lectures on Riemann Surfaces (Springer 1981) | textbook | 1981 | https://link.springer.com/
+SRC: Donaldson S, Riemann Surfaces (Oxford University Press 2011) | secondary | 2011 | https://global.oup.com/
+SRC: Forster O, Lectures on Riemann Surfaces (Springer 1981) | secondary | 1981 | https://link.springer.com/
 NUM1#maths-u17-20-q1@1: What is the genus of a smooth plane curve of degree 5? | 6 | 0 |  | (5 − 1)(5 − 2)/2 = 4 × 3/2 = 6.
 M1#maths-u17-20-q2@1: Which simply connected Riemann surfaces exist, by uniformisation? | The sphere, the plane and the disc | Only the sphere, up to isomorphism | Every surface of every genus | Only the plane and the punctured plane | Tori of every genus and the sphere | Uniformisation lists exactly these three.
 M3#maths-u17-20-q3@2: Why does √z need two sheets? | Going once round the origin changes the sign of √z, so two copies are needed to return | √z has no values at negative numbers, so a second sheet supplies them | It has infinitely many values, like log z, so two sheets are a convention | It is a polynomial, and polynomials always need two sheets | It needs only one sheet once a branch cut is made, so two is wrong | The square root picks up a factor e^{iπ} = −1 per loop.
@@ -713,8 +713,8 @@ Q: What are the closed points of Spec ℤ? | The ideals (p) for primes p.
 Q: Who developed scheme theory? | Alexander Grothendieck.
 SUM: Schemes make rings into spaces.
 SUM: Geometry and number theory merge.
-SRC: Hartshorne R, Algebraic Geometry (Springer 1977) | textbook | 1977 | https://link.springer.com/
-SRC: Vakil R, The Rising Sea: Foundations of Algebraic Geometry (Princeton University Press 2025) | textbook | 2025 | https://math.stanford.edu/~vakil/216blog/
+SRC: Hartshorne R, Algebraic Geometry (Springer 1977) | secondary | 1977 | https://link.springer.com/
+SRC: Vakil R, The Rising Sea: Foundations of Algebraic Geometry (Princeton University Press 2025) | secondary | 2025 | https://math.stanford.edu/~vakil/216blog/
 NUM1#maths-u17-21-q1@1: How many points does Spec ℤ/30ℤ have? | 3 | 0 |  | One for each prime dividing 30: 2, 3 and 5.
 M1#maths-u17-21-q2@1: What are the points of Spec R? | The prime ideals of R | The elements of R | The units of R | The maximal elements of R | The zero divisors | Grothendieck's definition uses prime ideals as points.
 M2#maths-u17-21-q3@2: What extra information does Spec k[x]/(x^{2}) carry compared with a single point? | A tangent direction, recorded by the nilpotent x | A second point next to the origin | A whole affine line of points | Nothing beyond a single point | A circle of points around the origin | Nilpotents remember infinitesimal structure.
@@ -747,8 +747,8 @@ Q: What is the product of two sets in Set? | Their Cartesian product.
 Q: What kind of map is π₁ between categories? | A functor.
 SUM: Categories study structures through maps.
 SUM: Universal properties unify constructions.
-SRC: Mac Lane S, Categories for the Working Mathematician (2nd edn, Springer 1998) | textbook | 1998 | https://link.springer.com/
-SRC: Leinster T, Basic Category Theory (Cambridge University Press 2014) | textbook | 2014 | https://arxiv.org/abs/1612.09375
+SRC: Mac Lane S, Categories for the Working Mathematician (2nd edn, Springer 1998) | secondary | 1998 | https://link.springer.com/
+SRC: Leinster T, Basic Category Theory (Cambridge University Press 2014) | secondary | 2014 | https://arxiv.org/abs/1612.09375
 NUM1#maths-u17-22-q1@1: How many morphisms are there in the one-object category of the group ℤ₅? | 5 | 0 |  | One arrow for each group element.
 M1#maths-u17-22-q2@1: Which is a functor? | π₁ from pointed spaces to groups | The determinant of one matrix | A single continuous function | The number 3 | A set of objects | It sends spaces to groups and maps to homomorphisms, respecting composition.
 M3#maths-u17-22-q3@2: Why can a universal property define products in every category at once? | It specifies the product by how maps factor through it, without referring to elements | Every category's objects have elements to pair up | Products in every category are Cartesian products of sets | It doesn't define them; each category needs its own definition | Categories have no maps, so products must be built from elements | The definition uses only objects and arrows, so it makes sense anywhere.

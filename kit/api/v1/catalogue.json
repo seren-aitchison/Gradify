@@ -142,9 +142,9 @@
    "status": "live",
    "accent": "#ffea05",
    "page": "/youthgradify/course/",
-   "units": 9,
-   "lessons": 149,
-   "lessonsWritten": 149,
+   "units": 12,
+   "lessons": 208,
+   "lessonsWritten": 208,
    "syllabus": "/kit/api/v1/courses/gcse.json"
   },
   {

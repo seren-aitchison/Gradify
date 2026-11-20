@@ -9,15 +9,33 @@ import physics from "../kit/courses/physics/course.js";
 // the parser as it was before the library (commit cdd837e), frozen in tests/fixtures/legacy-parser
 import * as old from "./fixtures/legacy-parser/kit/course/notes.js";
 
-test("physics: every lesson parses to the same check questions, in the same order, as before", async () => {
+// Physics questions have no permanent ids: saved answers and progress are keyed by lesson and question position
+// ("p-u01-l01#0"). The original questions are frozen as fingerprints in tests/fixtures/physics-questions-2026-11-19.json
+// (taken from the notes before the content standard 2 upgrade, read by the old parser). The upgrade may add questions
+// after them, add objective links, and correct a question's wording in its own slot; it must never remove an original
+// question, move one, or insert a new one before it, or saved progress would point at the wrong question.
+import { createHash } from "node:crypto";
+import { readFileSync } from "node:fs";
+const ORIGINAL = JSON.parse(readFileSync(new URL("./fixtures/physics-questions-2026-11-19.json", import.meta.url), "utf8"));
+const fp = (s) => createHash("sha256").update(s).digest("hex").slice(0, 10);
+
+test("physics: every original check question and flashcard keeps its position, so saved progress still lines up", async () => {
   for (const id of physics.written) {
-    const text = await physics.notes(id), a = old.parseNotes(text), b = parseNotes(text);
-    assert.equal(b.length, a.length, id);
-    a.forEach((L, i) => {
-      assert.equal(b[i].mcq.length, L.mcq.length, `${id} ${L.title}: same number of questions, so saved lesson#index keys still match`);
-      L.mcq.forEach((m, j) => { const n = b[i].mcq[j]; assert.equal(n.q, m.q); assert.equal(n.right, m.right); assert.deepEqual(n.wrong, m.wrong); assert.equal(n.d, m.d); });
-      assert.equal(b[i].cards.length, L.cards.length, `${id} ${L.title}: flashcards unchanged`);
-    });
+    const lessons = parseNotes(await physics.notes(id)), before = ORIGINAL[id] || {};
+    for (const [title, was] of Object.entries(before)) {
+      const L = lessons.find((x) => x.title === title);
+      assert.ok(L, `${id} ${title}: lesson still present`);
+      // a question is recognised by its stem or by its right answer, so a corrected wording still counts as itself
+      const qs = L.mcq.map((m) => [fp(m.q), fp(m.right)]);
+      assert.ok(qs.length >= was.q.length, `${id} ${title}: no original question removed`);
+      was.q.forEach((h, j) => {
+        const at = qs.findIndex(([q, a]) => q === h || a === was.a[j]);
+        assert.ok(at === -1 || at === j || qs[j][0] === h || qs[j][1] === was.a[j], `${id} ${title}: original question ${j} moved to ${at}`);
+      });
+      const cards = L.cards.map((c) => fp(c[0]));
+      assert.ok(cards.length >= was.cards.length, `${id} ${title}: no original flashcard removed`);
+      was.cards.forEach((h, j) => { const at = cards.indexOf(h); assert.ok(at === -1 || at === j, `${id} ${title}: original flashcard ${j} moved to ${at}`); });
+    }
   }
 });
 

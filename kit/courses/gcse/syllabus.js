@@ -1,4 +1,4 @@
-// YouthGradify GCSE Core: the full curriculum, 9 schools. Modelled on the DfE GCSE subject content for English
+// YouthGradify GCSE Core: the full curriculum, 12 schools. Modelled on the DfE GCSE subject content for English
 // Language (2013), Combined Science (2015) and Geography (2014), and on the AQA (8700, 8464, 8035), Pearson Edexcel
 // (1EN0, 1SC0, 1GA0) and OCR (J351, J250, J383) specifications built on it, with study skills and PSHE-style life
 // skills (DfE statutory guidance on relationships, sex and health education; the Gatsby Benchmarks for careers).
@@ -203,22 +203,102 @@ export const SYLLABUS = `
 > Health in the UK
 * Measuring the nation's health
 * Leading causes of death and ill health in the UK
+10. Cells and Bioenergetics
+> Cell structure
+* Eukaryotic and prokaryotic cells
+* Animal and plant cells
+* Specialised cells and differentiation
+* Microscopy and magnification
+> Cell division
+* Chromosomes, mitosis and the cell cycle
+* Stem cells
+> Transport in cells
+* Diffusion
+* Surface area to volume ratio and exchange surfaces
+* Osmosis
+* Active transport
+> Enzymes and digestion
+* Enzymes and the lock and key model
+* Digestive enzymes and bile
+> Plant organisation
+* Plant tissues and the leaf
+* Transpiration and translocation
+> Photosynthesis and respiration
+* Photosynthesis
+* The rate of photosynthesis and limiting factors
+* Aerobic and anaerobic respiration
+* Respiration and exercise
+* Metabolism
+11. Infection, Inheritance and Evolution
+> Communicable disease
+* Pathogens and the spread of disease
+* Viral and bacterial diseases
+* Fungal and protist diseases
+* Human defence systems
+* Vaccination
+* Antibiotics and painkillers
+* Discovering and developing drugs
+> Reproduction and inheritance
+* Sexual and asexual reproduction and meiosis
+* DNA and the genome
+* Genetic inheritance and Punnett squares
+* Inherited disorders and embryo screening
+* Sex determination
+> Variation and evolution
+* Variation and mutation
+* Evolution by natural selection
+* Selective breeding
+* Genetic engineering
+> Evidence and classification
+* Fossils and extinction
+* Antibiotic-resistant bacteria
+* Classification of living organisms
+> Practical skills
+* Biology required practicals
+12. English Language: Reading and Writing
+> The English Language exam
+* The English Language GCSE: papers and assessment objectives
+> Reading fiction for the exam
+* Retrieving explicit and implicit information
+* Analysing language in prose fiction
+* Analysing structure in prose fiction
+* Evaluating a text critically
+> Reading non-fiction and comparing viewpoints
+* Reading non-fiction and literary non-fiction
+* Reading nineteenth-century sources
+* Summary and synthesis
+* Analysing viewpoint and persuasion in non-fiction
+* Comparing writers' viewpoints and methods
+> Writing to describe and narrate
+* Planning and structuring creative writing
+* Descriptive writing
+* Narrative writing
+> Writing to present a viewpoint
+* Viewpoint writing: form, audience and purpose
+* Building an argument: structure and rhetoric
+> Technical accuracy
+* Vocabulary and sentence variety for effect
+* Punctuation and sentence demarcation
+* Spelling, grammar and Standard English
+> Spoken language and the exam
+* The spoken language endorsement
+* Timing each paper
 `;
 
 export const TRACKS = [
   { name: "Stage 1 · Learning to learn", units: [1], from: "#ffd84a", to: "#f59e0b" },
-  { name: "Stage 2 · English Language", units: [2, 3], from: "#fde047", to: "#fb923c" },
-  { name: "Stage 3 · Combined Science", units: [4, 5, 6], from: "#facc15", to: "#22d3ee" },
+  { name: "Stage 2 · English Language", units: [2, 3, 12], from: "#fde047", to: "#fb923c" },
+  { name: "Stage 3 · Combined Science", units: [4, 10, 11, 5, 6], from: "#facc15", to: "#22d3ee" },
   { name: "Stage 4 · Geography", units: [7, 8], from: "#fbbf24", to: "#34d399" },
   { name: "Stage 5 · Life beyond the exam", units: [9], from: "#fcd34d", to: "#a78bfa" },
 ];
 
 export const PATHS = [
-  { id: "core", name: "The GCSE core", sub: "Every school in order, from how to revise to life after Year 11.", units: [1, 2, 3, 4, 5, 6, 7, 8, 9] },
-  { id: "english", name: "English Language", sub: "Revision skills, then both papers: reading fiction and non-fiction, and writing to describe, narrate and argue.", units: [1, 2, 3] },
-  { id: "science", name: "Combined Science", sub: "Revision skills, then biology, chemistry and physics with every required practical and equation.", units: [1, 4, 5, 6] },
+  { id: "core", name: "The GCSE core", sub: "Every school in order, from how to revise to life after Year 11.", units: [1, 2, 3, 12, 4, 10, 11, 5, 6, 7, 8, 9] },
+  { id: "english", name: "English Language", sub: "Revision skills, then both papers: reading fiction and non-fiction, and writing to describe, narrate and argue.", units: [1, 2, 3, 12] },
+  { id: "science", name: "Combined Science", sub: "Revision skills, then biology, chemistry and physics with every required practical and equation.", units: [1, 4, 10, 11, 5, 6] },
   { id: "geography", name: "Geography", sub: "Revision skills, physical and human geography, map skills, fieldwork and issue evaluation.", units: [1, 7, 8] },
-  { id: "year11", name: "Year 11 exam year", sub: "Revision and exam technique first, then the subjects, then next steps after GCSEs.", units: [1, 2, 3, 6, 4, 5, 9] },
+  { id: "year11", name: "Year 11 exam year", sub: "Revision and exam technique first, then the subjects, then next steps after GCSEs.", units: [1, 2, 3, 12, 6, 4, 10, 11, 5, 9] },
 ];
 
 // one line per school for the overview page
@@ -232,6 +312,9 @@ export const BLURBS = {
   7: "What ecology studies, the physical environment, tolerance, adaptation and the niche, and the biomes of the living world.",
   8: "Urbanisation, development, the changing economy, resources, map and data skills, fieldwork and decision making.",
   9: "What health and wellbeing mean, what shapes them, how inequalities arise and how to judge health evidence and risk.",
+  10: "Cells, microscopy, mitosis and stem cells, diffusion, osmosis and active transport, enzymes, plant transport, photosynthesis and respiration.",
+  11: "Pathogens, defences, vaccines and drugs; meiosis, DNA and genetic crosses; variation, evolution, breeding, GM, fossils, classification and every biology required practical.",
+  12: "Both English Language papers: retrieval, language and structure analysis, evaluation, summary, comparing viewpoints, creative and viewpoint writing, SPaG, spoken language and timing.",
 };
 
 export const UNITS = parseSyllabus(SYLLABUS, IDS, RETIRED);

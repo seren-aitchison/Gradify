@@ -1,0 +1,922 @@
+{
+ "task": "physics-u17-u19",
+ "on": "2026-11-19",
+ "files": [
+  "kit/courses/physics/notes/u17.js",
+  "kit/courses/physics/notes/u19.js"
+ ],
+ "lessons": [
+  {
+   "course": "physics",
+   "lesson": "u17-01",
+   "title": "Magnetic fields",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "clarified field-line direction inside a magnet; defined the tesla; fixed ambiguous ratio working 1.5/5 × 10^-5 to 1.5/(5 × 10^-5)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-02",
+   "title": "Magnetic forces on charges",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "corrected the electron direction question; explained Fleming's rule with conventional current"
+   ],
+   "findings": [
+    {
+     "class": "error-fixed",
+     "note": "M1 'electron moving east in a field pointing north' gave the force as up, with the explanation 'v × B is down'. East × north is up, so v × B is up and the force on the negative electron is down. Right answer changed to 'Down (into the ground)'."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-03",
+   "title": "Lorentz force",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "rewrote the relativity paragraph so the frames are stated correctly (magnetic force in the wire frame, electric force in the charge's rest frame)"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "Relativity paragraph said a charge 'at rest' beside a wire feels no force and then switched frames confusingly; rewritten."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-04",
+   "title": "Magnetic forces on current-carrying wires",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added the 2019 SI note, the AQA top-pan balance practical (RP10) as a question and SA"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-05",
+   "title": "Motion of charged particles in magnetic fields",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "explained the cyclotron dee/gap mechanism and relativistic loss of synchronism"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-06",
+   "title": "Biot–Savart law",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "coil-centre formula now shows N turns, matching the worked example; noted μ0 is measured since 2019"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-07",
+   "title": "Ampère's law",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-08",
+   "title": "Magnetic dipoles",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "Stern–Gerlach paragraph now says the 1922 result showed space quantisation, later explained by spin"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "Stern–Gerlach (1922) was originally interpreted as orbital space quantisation; spin was proposed in 1925. Wording adjusted."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-09",
+   "title": "Magnetic flux",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added the AQA search-coil practical (RP11) as an SA"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "SQUID claim 'fields as small as 10^-17 T' softened to femtotesla fields, the usual quoted sensitivity."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-10",
+   "title": "Electromagnetic induction",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added simple demonstration section (magnet and coil)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-11",
+   "title": "Faraday's law",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "noted that peak emf occurs at zero flux; Kirchhoff-loop SA"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-12",
+   "title": "Lenz's law",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added an energy-transfer step to the worked example and a pole-choosing rule of thumb"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-13",
+   "title": "Inductance",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added flyback-diode SA"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-14",
+   "title": "Self-induction and mutual induction",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "defined M and k as terms"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "Removed the specific NFC/RFID coupling range 'k ~ 0.1–0.5' (unsourced; varies widely); now 'well below 1'."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-15",
+   "title": "Energy stored in magnetic fields",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "showed where ½LI² comes from (SA derivation)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-16",
+   "title": "Magnetic materials",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-17",
+   "title": "Diamagnetism",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "stated the levitation condition as an equation; clarified Earnshaw's theorem"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "Second source is Kittel, Introduction to Solid State Physics, 8th edn (Wiley, 2005), cited without chapter; OpenStax has only one relevant section (UP2 12.7). Coordinator may want to confirm."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-18",
+   "title": "Paramagnetism",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "clarified the weak-field condition for Curie's law; expanded adiabatic demagnetisation steps"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "Second source Kittel (8th edn, 2005) cited without chapter, as for Diamagnetism."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-19",
+   "title": "Ferromagnetism",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added quantitative reason why dipole forces cannot explain ferromagnetism (M3)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-20",
+   "title": "Hysteresis",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "showed the power-loss formula step in the worked example"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "Second source Kittel (8th edn, 2005) cited without chapter."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-21",
+   "title": "Electromagnets",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added saturation as a key term and a saturation question"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-22",
+   "title": "Solenoids and toroids",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "defined a, b, h in the toroid inductance formula; ITER coil field stated as a peak value"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-23",
+   "title": "Electric motors and generators",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added load/back-emf reasoning question"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-24",
+   "title": "Maxwell's equations",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added integral forms and a MATCH question; QED described as 'one of the most precisely tested' theories"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "'QED, the most precisely tested theory in physics' softened to 'one of the most precisely tested theories'."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-25",
+   "title": "Displacement current",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added the field-inside-capacitor question (B ∝ r)"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "Second source is Griffiths, Introduction to Electrodynamics, 4th edn (CUP 2017), chapter 7; not an OpenStax/AQA source, cited at chapter level."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-26",
+   "title": "Electromagnetic potentials",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "explained why two Maxwell equations are automatic; Aharonov–Bohm wording (predicted 1959, confirmed 1986)"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "No OpenStax section covers potentials; sources are Griffiths (4th edn, 2017) ch. 10 and Jackson (3rd edn, Wiley 1999) ch. 6, cited at chapter level."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-27",
+   "title": "Gauge transformations",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "'guarantees charge conservation and a massless photon' softened to 'tied to'"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "Sources Griffiths ch. 10 and Jackson ch. 6 (no OpenStax coverage)."
+    },
+    {
+     "class": "editorial",
+     "note": "Gauge invariance does not by itself 'guarantee' charge conservation in every formulation; reworded as 'tied to'."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-28",
+   "title": "Electromagnetic boundary conditions",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "stated the direction of n̂ and how each condition is derived (pillbox/loop); perfect conductor interior fields"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "Sources Griffiths ch. 7 and Jackson, Introduction (no OpenStax coverage)."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u17-29",
+   "title": "Electromagnetic momentum and energy",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added solar-sail calculation and Poynting-vector resistor SA (VI = I²R check)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-01",
+   "title": "Geometrical optics",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "Fermat's principle linked to least time; lengthened distractors"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-02",
+   "title": "Reflection and refraction",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added n = c/v, the 4% normal-incidence figure and a diamond reflectance question"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-03",
+   "title": "Snell's law",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "worked example now compares Perspex (1.49) and crown glass explicitly"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-04",
+   "title": "Total internal reflection",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added prism-in-water question (critical angle rises to 62°)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-05",
+   "title": "Mirrors and image formation",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "stated meaning of negative m in the real-is-positive convention"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-06",
+   "title": "Thin lenses",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "stated the radius sign convention for the lensmaker's equation; lens-in-water calculation"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-07",
+   "title": "Lens equations",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "magnification written as |m| = v/u to match the convention; added two-lens question"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "Mirror lesson used m = −v/u and lens lesson m = v/u in the same real-is-positive convention; lens lesson now states |m| = v/u."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-08",
+   "title": "Optical instruments",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added near-point correcting-lens calculation and myopia SA"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-09",
+   "title": "Microscopes and telescopes",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "defined normal adjustment and numerical aperture; added focal-length deduction question"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-10",
+   "title": "Aberrations",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "explained the doublet (converging crown + weaker diverging flint); added aperture trade-off question"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-11",
+   "title": "Dispersion and prisms",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added thin-prism and two-colour minimum-deviation calculations; rainbow SA"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-12",
+   "title": "Physical optics",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "clarified that Poisson derived the spot and Arago observed it; added optical-path phase calculation"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-13",
+   "title": "Young's double-slit experiment",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "fringe spacing written w = λD/d with the AQA notation (s) noted; added laser-safety and wavelength-measurement SA (AQA RP2)"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "Existing M2 explanation used w and s while the lesson used x and d; notation reconciled."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-14",
+   "title": "Interference and coherence",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added visibility and coherence-width calculations"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-15",
+   "title": "Diffraction",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "defined Airy disc and Rayleigh criterion as terms; Fresnel-number far-field condition; headlight-resolution question"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-16",
+   "title": "Single-slit and multiple-slit diffraction",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "normalised the N-slit intensity formula so I_0 is the central peak; worked example now counts fringes inside the envelope"
+   ],
+   "findings": [
+    {
+     "class": "error-fixed",
+     "note": "N-slit formula I = I0(sin β/β)²(sin Nγ/sin γ)² was written with I0 as the single-slit intensity but read as the peak; rewritten as I0(sin β/β)²(sin Nγ/(N sin γ))² with I0 the central peak, consistent with 'intensity ∝ N²' stated for fixed slits."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-17",
+   "title": "Diffraction gratings",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added derivation SA (AQA 3.3.2.2) and order-overlap question"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "'Doppler shifts to ~1 m/s (ESPRESSO), detecting Earth-mass planets' changed to 'below 1 m/s (HARPS, ESPRESSO), enough to detect planets of a few Earth masses'; Earth analogues around Sun-like stars need ~0.1 m/s."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-18",
+   "title": "Michelson interferometer",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "described beam splitter and arms; gas refractive-index calculation; LIGO SA"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-19",
+   "title": "Fabry–Pérot interferometer",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added resolving question using linewidth = FSR/finesse"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "No OpenStax section covers Fabry–Pérot; sources are Hecht, Optics, 5th edn (Pearson 2017) and Saleh & Teich, Fundamentals of Photonics, 2nd edn (Wiley 2007), cited without chapter."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-20",
+   "title": "Polarisation",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "Malus's law angle defined; three-polariser question; transverse-wave SA (AQA 3.3.1.2)"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "Removed the claim that Vikings navigated with 'sunstones' (a hypothesis, not established); bees kept."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-21",
+   "title": "Brewster's angle",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "defined p- and s-polarisation; water-to-glass Brewster calculation"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-22",
+   "title": "Birefringence",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "quarter-wave plate condition (input at 45°) stated; half-wave rotation question"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-23",
+   "title": "Optical activity",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added D/L-versus-rotation common mistake; Faraday-rotation contrast moved into a question; polarimeter SA"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "'Sugars right-handed (D)' implied D means dextrorotatory; clarified that D/L is configuration (D-fructose is laevorotatory)."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-24",
+   "title": "Lasers",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added laser-safety line, four-level vs three-level question and inversion SA"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-25",
+   "title": "Optical cavities",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added diode-laser mode spacing and stability calculations"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "Second source Saleh & Teich, Fundamentals of Photonics, 2nd edn (Wiley 2007), cited without chapter."
+    },
+    {
+     "class": "editorial",
+     "note": "'Detects trace gases at parts per trillion' softened to 'very low concentrations' (instrument-dependent)."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-26",
+   "title": "Fibre optics",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "explained the role of the cladding; NA and modal-delay calculations; dB rule"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-27",
+   "title": "Nonlinear optics",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "explained why χ(2) vanishes in centrosymmetric media; sum-frequency calculation"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "No OpenStax coverage; sources Boyd, Nonlinear Optics, 3rd edn (Academic Press 2008) and Saleh & Teich (2007), cited without chapter."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-28",
+   "title": "Ultrafast optics",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added scale paragraph, time–bandwidth calculation; reworded M1 stem that duplicated a u36 question"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "Attosecond pulse durations '~50–100 as' changed to 'tens to hundreds of attoseconds'; typical HHG pulses are a few hundred as, records about 43 as."
+    },
+    {
+     "class": "needs-source",
+     "note": "No OpenStax coverage; sources Weiner, Ultrafast Optics (Wiley 2009) and Saleh & Teich (2007)."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-29",
+   "title": "Integrated photonics",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "added Si/SiO2 critical-angle calculation and Mach–Zehnder SA"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "Sources Saleh & Teich (2007) and OpenStax UP3 1.4 (TIR, the guiding principle); no OpenStax section on integrated photonics."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u19-30",
+   "title": "Adaptive optics",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite, level, key terms, summaries, evidence status and sources",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added level-3 question, a calculation or true/false item and an extended written answer (SA)",
+    "seeing-limit calculation; why IR is easier (r0 ∝ λ^6/5)"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "'Proved a supermassive black hole' changed to 'showed a supermassive compact object' in the notes (the M question keeps the standard wording)."
+    },
+    {
+     "class": "needs-source",
+     "note": "Second source Hardy, Adaptive Optics for Astronomical Telescopes (OUP 1998)."
+    }
+   ]
+  }
+ ],
+ "notes": [
+  "Physics lesson questions keep legacy position keys: all existing M questions and flashcards are kept in their original slots; new questions are appended after them. node --test tests/compat.test.mjs and tests/qa-content.test.mjs pass.",
+  "Sources: OpenStax sections were confirmed against the live openstax.org tables of contents (2026-11-19); AQA section numbers and titles were checked in the downloaded specification PDF (filestore.aqa.org.uk AQA-7407-7408-SP-2015.PDF, sha256 32a556da85fa0928c3600f8178d1a18fe5156b2ea36d76b541df866451721e20). The magnetic-field topics are AQA 3.7.5.x, not 3.7.4 or 7.4.",
+  "Checks on 2026-11-20: node scripts/new-course.mjs check physics --unit u17 and --unit u19 both report 0 problems, length bias OK; node --test tests/qa-content.test.mjs tests/compat.test.mjs tests/course.test.mjs: 16 pass, 0 fail.",
+  "Textbook sources outside OpenStax/AQA (Griffiths 2017, Jackson 1999, Kittel 2005, Hecht 2017, Saleh & Teich 2007, Boyd 2008, Weiner 2009, Hardy 1998) are well-known works cited at book or chapter level only, used where OpenStax has no section; each is logged as needs-source for confirmation."
+ ]
+}

@@ -1,0 +1,195 @@
+{
+ "task": "assess-law-u03-u04",
+ "on": "2026-11-20",
+ "files": [
+  "kit/courses/law/notes/u03.js",
+  "kit/courses/law/notes/u04.js"
+ ],
+ "lessons": [
+  {
+   "course": "law",
+   "lesson": "u03-01",
+   "action": "enhanced",
+   "changes": [
+    "LV, EV",
+    "worked example on formation; common mistake on void and voidable",
+    "added M3, M2 and SA3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-02",
+   "action": "enhanced",
+   "changes": [
+    "LV, EV",
+    "common mistake: request for information versus counter-offer",
+    "added SA3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-03",
+   "action": "enhanced",
+   "changes": [
+    "LV, EV",
+    "common mistake on uncommunicated acceptance",
+    "added SA3 on the battle of the forms"
+   ],
+   "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-04",
+   "action": "enhanced",
+   "changes": [
+    "LV, EV (established and contested: email acceptance)",
+    "worked example on postal timeline",
+    "added SA3"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "Email acceptance has no appellate authority; marked EV: contested."
+    }
+   ]
+  },
+  {
+   "course": "law",
+   "lesson": "u03-05",
+   "action": "enhanced",
+   "changes": [
+    "LV, EV (contested: practical benefit and part payment)",
+    "worked example on High Trees; common mistake: estoppel is a shield (Combe v Combe)",
+    "added M2 and SA3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-06",
+   "action": "enhanced",
+   "changes": [
+    "LV, EV",
+    "worked example (Jones v Padavatton); common mistake on presumptions",
+    "added M3, M2 and SA3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-07",
+   "action": "enhanced",
+   "changes": [
+    "LV, EV",
+    "worked example (Foley v Classique Coaches); common mistake on SGA s 8; paragraph on lock-outs (Pitt v PHH)",
+    "added M3, M2 and SA3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-08",
+   "action": "enhanced",
+   "changes": [
+    "LV, EV",
+    "common mistake on terms versus representations",
+    "added M3, M2 and SA3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-09",
+   "action": "enhanced",
+   "changes": [
+    "LV, EV",
+    "worked example (Thornton v Shoe Lane)",
+    "added M3, M2 and SA3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-10",
+   "action": "enhanced",
+   "changes": [
+    "LV, EV",
+    "common mistake: implication needs necessity, not reasonableness",
+    "added M3, M2 and SA3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-11",
+   "action": "enhanced",
+   "changes": [
+    "LV, EV",
+    "common mistake on wrongful termination",
+    "added M2 (SGA s 15A) and SA3 (The Hansa Nord)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-12",
+   "action": "enhanced",
+   "changes": [
+    "LV, EV",
+    "worked example; common mistake on collateral contracts; paragraph on why the distinction matters",
+    "added M3, M2 and SA3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-13",
+   "action": "enhanced",
+   "changes": [
+    "LV, EV",
+    "worked example on opinion implying facts; common mistake on half-truths",
+    "added M2 and SA3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-14",
+   "action": "enhanced",
+   "changes": [
+    "LV, EV",
+    "worked example on recklessness; common mistake: carelessness is not fraud",
+    "added M3 (Smith New Court), M2 and SA3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-15",
+   "action": "enhanced",
+   "changes": [
+    "LV, EV",
+    "worked example (Howard Marine v Ogden); common mistake: s 2(1) only against the contracting party",
+    "added M3, M2 and SA3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-16",
+   "action": "enhanced",
+   "changes": [
+    "LV, EV (established and contested: s 2(2) once rescission barred)",
+    "worked example (Leaf); common mistake on s 2(2)",
+    "added M3, M2 and SA3"
+   ],
+   "findings": []
+  }
+ ],
+ "notes": [
+  "New questions carry no #id; run the registry (npm run qa) to assign ids and bump lesson versions.",
+  "LV levels: Year 1 for core doctrine, Year 2 for harder doctrinal topics, SQE1 for practice-oriented statutory lessons; difficulty names Foundation, Application, Legal reasoning."
+ ]
+}

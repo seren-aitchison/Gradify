@@ -822,7 +822,7 @@ SUM: Compassionate and collective leadership improve culture and care.
 SUM: The Healthcare Leadership Model supports development.
 SRC: West M, Compassionate Leadership: sustaining wisdom, humanity and presence in health and social care, Swirling Leaf Press | secondary | 2021
 SRC: NHS Leadership Academy, Healthcare Leadership Model | guidance | 2013 | https://www.leadershipacademy.nhs.uk/resources/healthcare-leadership-model/
-SRC: Nursing and Midwifery Council, The Code: professional standards of practice and behaviour for nurses, midwives and nursing associates | regulation | 2018 | https://www.nmc.org.uk/standards/code/
+SRC: Nursing and Midwifery Council, The Code: professional standards of practice and behaviour for nurses, midwives and nursing associates | standard | 2018 | https://www.nmc.org.uk/standards/code/
 Q: What are the four behaviours of compassionate leadership? | Attending, understanding, empathising and helping.
 Q: What is situational leadership? | Adapting leadership style to the needs of the person and task.
 M1#nursing-u16-20-q1@1: Which leadership style inspires through vision and individual consideration? | Transformational | Laissez-faire | Transactional only | Autocratic | Transformational leaders inspire and motivate.
@@ -942,8 +942,8 @@ SUM: The delegator remains accountable for the decision; the delegatee for perfo
 SUM: Use the rights of delegation: task, circumstances, person, directions and supervision.
 SUM: Don't delegate tasks needing registered nurse judgement or beyond competence.
 SRC: Royal College of Nursing, Accountability and delegation: a guide for the nursing team | guidance | 2023 | https://www.rcn.org.uk/Professional-Development/Accountability-and-delegation
-SRC: Nursing and Midwifery Council, The Code, section 11 | regulation | 2018 | https://www.nmc.org.uk/standards/code/
-SRC: Nursing and Midwifery Council, Standards of proficiency for nursing associates | regulation | 2024 | https://www.nmc.org.uk/standards/standards-for-nursing-associates/
+SRC: Nursing and Midwifery Council, The Code, section 11 | standard | 2018 | https://www.nmc.org.uk/standards/code/
+SRC: Nursing and Midwifery Council, Standards of proficiency for nursing associates | standard | 2024 | https://www.nmc.org.uk/standards/standards-for-nursing-associates/
 Q: Who is accountable for the decision to delegate? | The person delegating.
 Q: What is the Care Certificate? | A set of standards for the induction of healthcare support workers.
 M1#nursing-u16-23-q1@1: Which is one of the rights of delegation? | The right person | The right uniform | The right pay grade only | The right time of year | The right person must be competent for the task.
@@ -982,8 +982,8 @@ SUM: A-EQUIP and PNAs provide restorative supervision; preceptorship supports ne
 SUM: NMC standards define practice supervisor, practice assessor and academic assessor roles.
 SRC: Proctor B, Supervision: a co-operative exercise in accountability, in Marken M and Payne M (eds), Enabling and Ensuring | secondary | 1986
 SRC: NHS England, Professional nurse advocate A-EQUIP model: a model of clinical supervision for nurses | guidance | 2021 | https://www.england.nhs.uk/publication/professional-nurse-advocate-a-equip-model-a-model-of-clinical-supervision-for-nurses/
-SRC: Nursing and Midwifery Council, Principles for preceptorship | regulation | 2022 | https://www.nmc.org.uk/standards/guidance/preceptorship/
-SRC: Nursing and Midwifery Council, Standards for student supervision and assessment | regulation | 2023 | https://www.nmc.org.uk/standards/standards-for-post-registration/standards-for-student-supervision-and-assessment/
+SRC: Nursing and Midwifery Council, Principles for preceptorship | standard | 2022 | https://www.nmc.org.uk/standards/guidance/preceptorship/
+SRC: Nursing and Midwifery Council, Standards for student supervision and assessment | standard | 2023 | https://www.nmc.org.uk/standards/standards-for-post-registration/standards-for-student-supervision-and-assessment/
 Q: What are the three functions in Proctor's model? | Normative, formative and restorative.
 Q: What does a Professional Nurse Advocate provide? | Restorative clinical supervision and support for quality improvement.
 M1#nursing-u16-24-q1@1: Which function of Proctor's model focuses on support and wellbeing? | Restorative | Normative | Formative | Summative | The restorative function supports wellbeing.
@@ -1061,8 +1061,8 @@ SUM: Clinical governance was introduced in the late 1990s.
 SUM: Its pillars include effectiveness, audit, risk management, education and involvement.
 SUM: Regulators and boards oversee quality; nurses contribute daily.
 SRC: Scally G, Donaldson LJ, Clinical governance and the drive for quality improvement in the new NHS in England, BMJ 317(7150):61–65 | primary | 1998
-SRC: Care Quality Commission, Single assessment framework | regulation | 2024 | https://www.cqc.org.uk/assessment/single-assessment-framework
-SRC: Nursing and Midwifery Council, Revalidation | regulation | 2019 | https://www.nmc.org.uk/revalidation/
+SRC: Care Quality Commission, Single assessment framework | standard | 2024 | https://www.cqc.org.uk/assessment/single-assessment-framework
+SRC: Nursing and Midwifery Council, Revalidation | standard | 2019 | https://www.nmc.org.uk/revalidation/
 Q: Who defined clinical governance in 1998? | Scally and Donaldson.
 Q: How often do nurses revalidate with the NMC? | Every three years.
 M1#nursing-u16-26-q1@1: Which is a pillar of clinical governance? | Risk management | Car parking | Catering contracts | Building maintenance | Risk management sits alongside effectiveness, audit, education and involvement as a governance pillar.

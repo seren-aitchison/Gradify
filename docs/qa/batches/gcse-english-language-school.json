@@ -1,0 +1,222 @@
+{
+  "task": "gcse-english-language-school",
+  "on": "2026-11-20",
+  "files": [
+    "kit/courses/gcse/syllabus.js",
+    "kit/courses/gcse/ids.js",
+    "kit/courses/gcse/registry.js",
+    "kit/courses/gcse/course.js",
+    "kit/courses/gcse/qa.js",
+    "kit/courses/gcse/notes/u12.js"
+  ],
+  "lessons": [
+    {
+      "course": "gcse",
+      "lesson": "u12-01",
+      "action": "generated",
+      "changes": [
+        "New lesson \"The English Language GCSE: papers and assessment objectives\" (standard 2, 5 questions); covers aqa-8700 outcomes: AO1, AO2, AO3, AO4, AO5, AO6, AO7, AO8, AO9, p1-a, p1-b, p2-a, p2-b, sl"
+      ],
+      "findings": [
+        {
+          "class": "curriculum-dependent",
+          "note": "Edexcel 1EN0 (Paper 1 19th-century fiction, 1 h 45, 64 marks, 40%; Paper 2 20th/21st-century non-fiction, 2 h 5, 96 marks, 60%) and OCR J351 (two 2-hour components of 80 marks; 19th-century text in Component 01) confirmed from their specifications and noted in K: lines."
+        }
+      ]
+    },
+    {
+      "course": "gcse",
+      "lesson": "u12-02",
+      "action": "generated",
+      "changes": [
+        "New lesson \"Retrieving explicit and implicit information\" (standard 2, 5 questions); covers aqa-8700 outcomes: AO1, 3.1.1, p1-a, p2-a"
+      ],
+      "findings": [
+        {
+          "class": "curriculum-dependent",
+          "note": "The focus of each AQA question (Q1 list four things / choose four true statements; Q2 language or summary; Q3 structure or language; Q4 evaluation or comparison) follows AQA's published papers, not the specification, which fixes only the marks. Stated as such in u12-20; a teacher should confirm against current sample papers."
+        }
+      ]
+    },
+    {
+      "course": "gcse",
+      "lesson": "u12-03",
+      "action": "generated",
+      "changes": [
+        "New lesson \"Analysing language in prose fiction\" (standard 2, 5 questions); covers aqa-8700 outcomes: AO2, 3.1.1, p1-a"
+      ],
+      "findings": []
+    },
+    {
+      "course": "gcse",
+      "lesson": "u12-04",
+      "action": "generated",
+      "changes": [
+        "New lesson \"Analysing structure in prose fiction\" (standard 2, 5 questions); covers aqa-8700 outcomes: AO2, 3.1.1, p1-a"
+      ],
+      "findings": []
+    },
+    {
+      "course": "gcse",
+      "lesson": "u12-05",
+      "action": "generated",
+      "changes": [
+        "New lesson \"Evaluating a text critically\" (standard 2, 5 questions); covers aqa-8700 outcomes: AO4, 3.1.1, p1-a"
+      ],
+      "findings": []
+    },
+    {
+      "course": "gcse",
+      "lesson": "u12-06",
+      "action": "generated",
+      "changes": [
+        "New lesson \"Reading non-fiction and literary non-fiction\" (standard 2, 5 questions); covers aqa-8700 outcomes: AO1, AO2, 3.1.1, p2-a"
+      ],
+      "findings": []
+    },
+    {
+      "course": "gcse",
+      "lesson": "u12-07",
+      "action": "generated",
+      "changes": [
+        "New lesson \"Reading nineteenth-century sources\" (standard 2, 5 questions); covers aqa-8700 outcomes: AO1, AO2, 3.1.1, p2-a"
+      ],
+      "findings": []
+    },
+    {
+      "course": "gcse",
+      "lesson": "u12-08",
+      "action": "generated",
+      "changes": [
+        "New lesson \"Summary and synthesis\" (standard 2, 5 questions); covers aqa-8700 outcomes: AO1, 3.1.1, p2-a"
+      ],
+      "findings": []
+    },
+    {
+      "course": "gcse",
+      "lesson": "u12-09",
+      "action": "generated",
+      "changes": [
+        "New lesson \"Analysing viewpoint and persuasion in non-fiction\" (standard 2, 5 questions); covers aqa-8700 outcomes: AO2, 3.1.1, p2-a"
+      ],
+      "findings": []
+    },
+    {
+      "course": "gcse",
+      "lesson": "u12-10",
+      "action": "generated",
+      "changes": [
+        "New lesson \"Comparing writers' viewpoints and methods\" (standard 2, 5 questions); covers aqa-8700 outcomes: AO3, 3.1.1, p2-a"
+      ],
+      "findings": []
+    },
+    {
+      "course": "gcse",
+      "lesson": "u12-11",
+      "action": "generated",
+      "changes": [
+        "New lesson \"Planning and structuring creative writing\" (standard 2, 5 questions); covers aqa-8700 outcomes: AO5, 3.1.2, p1-b"
+      ],
+      "findings": []
+    },
+    {
+      "course": "gcse",
+      "lesson": "u12-12",
+      "action": "generated",
+      "changes": [
+        "New lesson \"Descriptive writing\" (standard 2, 5 questions); covers aqa-8700 outcomes: AO5, AO6, 3.1.2, p1-b"
+      ],
+      "findings": []
+    },
+    {
+      "course": "gcse",
+      "lesson": "u12-13",
+      "action": "generated",
+      "changes": [
+        "New lesson \"Narrative writing\" (standard 2, 5 questions); covers aqa-8700 outcomes: AO5, 3.1.2, p1-b"
+      ],
+      "findings": []
+    },
+    {
+      "course": "gcse",
+      "lesson": "u12-14",
+      "action": "generated",
+      "changes": [
+        "New lesson \"Viewpoint writing: form, audience and purpose\" (standard 2, 5 questions); covers aqa-8700 outcomes: AO5, 3.1.2, p2-b"
+      ],
+      "findings": []
+    },
+    {
+      "course": "gcse",
+      "lesson": "u12-15",
+      "action": "generated",
+      "changes": [
+        "New lesson \"Building an argument: structure and rhetoric\" (standard 2, 5 questions); covers aqa-8700 outcomes: AO5, 3.1.2, p2-b"
+      ],
+      "findings": []
+    },
+    {
+      "course": "gcse",
+      "lesson": "u12-16",
+      "action": "generated",
+      "changes": [
+        "New lesson \"Vocabulary and sentence variety for effect\" (standard 2, 5 questions); covers aqa-8700 outcomes: AO6, 3.1.2, p1-b, p2-b"
+      ],
+      "findings": []
+    },
+    {
+      "course": "gcse",
+      "lesson": "u12-17",
+      "action": "generated",
+      "changes": [
+        "New lesson \"Punctuation and sentence demarcation\" (standard 2, 5 questions); covers aqa-8700 outcomes: AO6, p1-b, p2-b"
+      ],
+      "findings": []
+    },
+    {
+      "course": "gcse",
+      "lesson": "u12-18",
+      "action": "generated",
+      "changes": [
+        "New lesson \"Spelling, grammar and Standard English\" (standard 2, 5 questions); covers aqa-8700 outcomes: AO6, p1-b, p2-b"
+      ],
+      "findings": []
+    },
+    {
+      "course": "gcse",
+      "lesson": "u12-19",
+      "action": "generated",
+      "changes": [
+        "New lesson \"The spoken language endorsement\" (standard 2, 5 questions); covers aqa-8700 outcomes: AO7, AO8, AO9, 3.1.3, sl"
+      ],
+      "findings": [
+        {
+          "class": "editorial",
+          "note": "Pass/Merit/Distinction criteria paraphrased from AQA 8700 section 4.4; the specification says the criteria are common to all boards."
+        }
+      ]
+    },
+    {
+      "course": "gcse",
+      "lesson": "u12-20",
+      "action": "generated",
+      "changes": [
+        "New lesson \"Timing each paper\" (standard 2, 5 questions); covers aqa-8700 outcomes: p1-a, p1-b, p2-a, p2-b"
+      ],
+      "findings": [
+        {
+          "class": "editorial",
+          "note": "The per-question timing plan is common study advice, stated as such in the EV line, not an AQA requirement."
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "New School 12 'English Language: Reading and Writing': 7 modules, 20 lessons (u12-01..u12-20), 100 questions (ids assigned by lock). Added to the Stage 2 track and the core, english and year11 paths; BLURBS[12] added; syllabus header now says 12 schools.",
+    "Sources fetched and read: AQA 8700 spec v1.5 (https://filestore.aqa.org.uk/resources/english/specifications/AQA-8700-SP-2015.PDF, sha256 261d2dbe7dc5335e1d89aafd9164c824e428d0f34742f652e71e182b068635e5, same file as the spec record); DfE GCSE English language subject content DFE-00232-2013 (https://assets.publishing.service.gov.uk/media/5a7bfd7640f0b63f7572aa8b/GCSE_English_language.pdf, sha256 41c4d4f6d1b1afb8c0d2a39d436b7a33f793cc495565da3ebc085ff81ad962bc); Pearson Edexcel 1EN0 spec Issue 6 (sha256 582fa0b1e884921dc69a3c8b59f1007e3faa3486ec83992b01e3eee693688f64); OCR J351 spec v2.0 (sha256 a0c16e5335898ea42258b21f95654b0c1d2ed866c7c5acb7782d7ec5fe8298e8).",
+    "Ofqual subject-level conditions were not fetched; the DfE subject content is cited for AO1-AO9.",
+    "Extracts are original except short public-domain quotations: Dickens, Bleak House ch. 1 (1853) and Hard Times (1854). The 19th-century-style letter (Source A) is invented and labelled as such.",
+    "kit/curriculum/mappings/coverage/aqa-8700.js (not mine to edit) still records AO5-AO9, 3.1.2, 3.1.3, p1-b, p2-b and sl as gaps; it should be updated from the per-lesson outcome lists above.",
+    "Checks: lock gcse (208 ids, 100 registry changes); check gcse --unit u12: 0 problems, length bias OK; node --test new-courses, courses, sites-status, qa-content, compat: 254/254 pass."
+  ]
+}

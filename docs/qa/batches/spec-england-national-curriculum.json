@@ -1,0 +1,99 @@
+{
+  "task": "spec-england-national-curriculum",
+  "on": "2026-11-19",
+  "files": [
+    "kit/curriculum/specifications/uk/dfe-ks12-maths.js",
+    "kit/curriculum/mappings/coverage/dfe-ks12-maths.js",
+    "kit/curriculum/specifications/uk/dfe-ks12-english.js",
+    "kit/curriculum/mappings/coverage/dfe-ks12-english.js",
+    "kit/curriculum/specifications/uk/dfe-ks12-science.js",
+    "kit/curriculum/mappings/coverage/dfe-ks12-science.js",
+    "kit/curriculum/specifications/uk/dfe-ks3-science.js",
+    "kit/curriculum/mappings/coverage/dfe-ks3-science.js",
+    "kit/curriculum/specifications/uk/dfe-ks3-maths.js",
+    "kit/curriculum/mappings/coverage/dfe-ks3-maths.js",
+    "kit/curriculum/specifications/uk/dfe-ks3-english.js",
+    "kit/curriculum/mappings/coverage/dfe-ks3-english.js",
+    "kit/curriculum/specifications/uk/dfe-ks3-geography.js",
+    "kit/curriculum/mappings/coverage/dfe-ks3-geography.js",
+    "kit/curriculum/specifications/uk/dfe-ks3-history.js",
+    "kit/curriculum/mappings/coverage/dfe-ks3-history.js",
+    "kit/curriculum/specifications/uk/dfe-ks3-computing.js",
+    "kit/curriculum/mappings/coverage/dfe-ks3-computing.js",
+    "kit/curriculum/specifications/uk/dfe-eyfs.js",
+    "kit/curriculum/mappings/coverage/dfe-eyfs.js"
+  ],
+  "specs": [
+    {
+      "id": "dfe-ks12-maths",
+      "outcomes": 47,
+      "sha256": "cfae407ffaa5766bba0f00932f9a1f70a945ac03f955e3cddd761a63e826a1e4",
+      "url": "https://assets.publishing.service.gov.uk/media/5a7da548ed915d2ac884cb07/PRIMARY_national_curriculum_-_Mathematics_220714.pdf"
+    },
+    {
+      "id": "dfe-ks12-english",
+      "outcomes": 25,
+      "sha256": "cafa62081e38ab50cca559580ed3afc98743e493cfc80670b41130c848d4017a",
+      "url": "https://assets.publishing.service.gov.uk/media/5a7de93840f0b62305b7f8ee/PRIMARY_national_curriculum_-_English_220714.pdf"
+    },
+    {
+      "id": "dfe-ks12-science",
+      "outcomes": 31,
+      "sha256": "5aafcbad6d43eb3aed6dbedf73ee334342a6033551c3a4a4cc1ac3a171a5e359",
+      "url": "https://assets.publishing.service.gov.uk/media/5a806ebd40f0b62305b8b1fa/PRIMARY_national_curriculum_-_Science.pdf"
+    },
+    {
+      "id": "dfe-ks3-science",
+      "outcomes": 43,
+      "sha256": "8ec1ebae9fb00a6fff85a81e489117f036228106186aa8ab59486994ca0f6b42",
+      "url": "https://assets.publishing.service.gov.uk/media/5a7d563de5274a2af0ae2ffa/SECONDARY_national_curriculum_-_Science_220714.pdf"
+    },
+    {
+      "id": "dfe-ks3-maths",
+      "outcomes": 9,
+      "sha256": "faf4c691aae8012836f162f6f2d041bb83849024b1c80496bdcb1b30289cf7a3",
+      "url": "https://assets.publishing.service.gov.uk/media/5a7c1408e5274a1f5cc75a68/SECONDARY_national_curriculum_-_Mathematics.pdf"
+    },
+    {
+      "id": "dfe-ks3-english",
+      "outcomes": 4,
+      "sha256": "08b0616a3faf6b493dd47b85c05fc46e3bde2ef3a497540c54b55cc20f22d5eb",
+      "url": "https://assets.publishing.service.gov.uk/media/5a7b8761ed915d4147620f6b/SECONDARY_national_curriculum_-_English2.pdf"
+    },
+    {
+      "id": "dfe-ks3-geography",
+      "outcomes": 4,
+      "sha256": "74bdc613703777bf57683666ebf1e37871a516bf16537ea12e70160b1dd6029d",
+      "url": "https://assets.publishing.service.gov.uk/media/5a7b8699ed915d131105fd16/SECONDARY_national_curriculum_-_Geography.pdf"
+    },
+    {
+      "id": "dfe-ks3-history",
+      "outcomes": 7,
+      "sha256": "9048c2a7f86bac58b5794bd9f570d3507e02b076f00275846eeae6f091d04c3a",
+      "url": "https://assets.publishing.service.gov.uk/media/5a7c66d740f0b626628abcdd/SECONDARY_national_curriculum_-_History.pdf"
+    },
+    {
+      "id": "dfe-ks3-computing",
+      "outcomes": 9,
+      "sha256": "83f2c295562bc324832d36864e6134775daa085e5e0884796c46c32d3eaa0f2f",
+      "url": "https://assets.publishing.service.gov.uk/media/5a7cb981ed915d682236228d/SECONDARY_national_curriculum_-_Computing.pdf"
+    },
+    {
+      "id": "dfe-eyfs",
+      "outcomes": 17,
+      "sha256": "d52043c2983d1761c12919e027eeec6864d728fd6eb9d7e7c41592b60e3e61dd",
+      "url": "https://assets.publishing.service.gov.uk/media/6a5f8e4fb00f3323bf1a23a1/EYFS_group_and_school_based_from_September_2026.pdf"
+    }
+  ],
+  "notes": [
+    "Coverage (outcomes with a covers lesson / partial only / gap): dfe-ks12-maths 11/36/0; dfe-ks12-english 2/18/5; dfe-ks12-science 17/10/4; dfe-ks3-science 0/10/33; dfe-ks3-maths 0/0/9; dfe-ks3-english 0/0/4; dfe-ks3-geography 0/1/3; dfe-ks3-history 0/0/7; dfe-ks3-computing 0/0/9; dfe-eyfs 0/4/13",
+    "Granularity: primary outcomes are year group (years 3-4 and 5-6 for English) x domain heading; most primary outcomes are partial because each heading spans several lessons, and a lesson is marked covers only when it teaches most of the heading.",
+    "Biggest primary gaps: English spoken language (Y1-6) and handwriting (every year) have no lesson; science working scientifically (KS1, LKS2, UKS2) and Y5 human development to old age have no lesson; Y2 living/dead/never alive missing; maths has no long division, order of operations (Y6), cube numbers/prime factors (Y5), parts of a circle (Y6), algebra beyond sequence rules (Y6), pie-chart construction; English has no subjunctive, hyphens or fact vs opinion (Y5-6), and the Y1 writing lessons are pitched from Y2.",
+    "dfe-ks3-science replaced with the full KS3 programme (43 outcomes); bio-cells-structure and bio-cells-diffusion kept, so mappings/outcomes.js still resolves. Its title is unchanged.",
+    "KS3 mappings: only 11 entries, all partial, to GCSE lessons whose main subject is the KS3 heading (gcse u04-34, u04-39, u05-03, u05-08, u05-11, u06-04, u06-06, u06-08, u06-13, u06-19, u08-11, u08-13); everything else is a gap by design.",
+    "History KS3 has no headings: each statutory bullet is one outcome with its text as title. Computing KS3 has no headings either: titles are short labels (not document wording), refs are statement numbers.",
+    "English KS1-2: statutory English Appendices 1 and 2 (spelling, VGP) are not modelled as outcomes; only the programme-of-study headings. EYFS uses the group and school-based framework effective 1 September 2026 (dated 13 July 2026); the childminder version has the same ELGs (not compared).",
+    "The new specs are not imported into kit/curriculum/knowledge.js (outside my file ownership) and KB.outcomeLessons is still empty: the coordinator must wire the new specs and coverage files in.",
+    "code: DFE reference numbers taken from each PDF; primary English and EYFS carry none, so code is null."
+  ]
+}

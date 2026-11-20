@@ -1,0 +1,673 @@
+{
+ "task": "physics-u15-u16",
+ "on": "2026-11-20",
+ "files": [
+  "kit/courses/physics/notes/u15.js",
+  "kit/courses/physics/notes/u16.js"
+ ],
+ "lessons": [
+  {
+   "course": "physics",
+   "lesson": "u15 Electric charge",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "M1 distractor wording clarified (glass rod); added contact charging and Q = ±Ne."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u15 Conservation and quantisation of charge",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "Added Millikan balance condition q = mgd/V, which the lesson referred to without stating."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u15 Conductors, insulators and dielectrics",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u15 Coulomb's law",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "Third question duplicated the first (separation halved); rewritten in the same slot as a tripled-distance question so position keys are unchanged."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u15 Electric fields",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u15 Electric field lines",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u15 Electric potential",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "M2 explanation was garbled ('Negative charge, lower PE at higher V'); rewritten using U = −eV."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u15 Electric potential energy",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u15 Voltage and potential difference",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u15 Electric dipoles",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u15 Electric flux",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u15 Gauss's law",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u15 Charge distributions",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u15 Conductors in electrostatic equilibrium",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u15 Capacitance",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u15 Parallel-plate and spherical capacitors",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u15 Capacitors in series and parallel",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u15 Energy stored in electric fields",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u15 Dielectric polarisation",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "D, χ_e and bound-charge formalism go beyond OpenStax 8.4/8.5; a Year 2 electrodynamics source would strengthen it."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u15 Boundary conditions for electric fields",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "Topic (D and E boundary conditions, field-line refraction) is beyond OpenStax; SRC lines cite the nearest OpenStax sections. A graduate electrodynamics text should be added once confirmed."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u15 Electrostatic shielding",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u15 Method of images",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "OpenStax does not cover the method of images; SRC lines cite the underlying conductor/equipotential sections only. Needs a confirmed electrodynamics text."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u15 Poisson's equation",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "OpenStax has no section on Poisson's equation; cited sections cover E = −∇V and Gauss's law only."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u15 Laplace's equation",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "OpenStax has no section on Laplace's equation or Earnshaw's theorem; cited sections are the closest."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u16 Electric current",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "'Signal travels at near the speed of light' softened to 'a large fraction of the speed of light'."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u16 Resistance and resistivity",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u16 Ohm's law",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u16 Conductivity",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u16 Series and parallel circuits",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u16 Kirchhoff's laws",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u16 Electromotive force",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u16 Internal resistance",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u16 Electrical power and energy",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u16 Resistor networks",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u16 Capacitor charging and discharging",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "Added the charging equation for Q, which AQA 3.7.4.4 requires."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u16 RC circuits",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u16 RL circuits",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u16 RLC circuits",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u16 Transient responses",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u16 Alternating current",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u16 Root-mean-square values",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u16 Impedance and reactance",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u16 Phasor diagrams",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u16 Resonance in AC circuits",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u16 Transformers",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u16 Rectification",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "Rectification and smoothing are not in the AQA 7408 core or a dedicated OpenStax section; cited UP3 9.7 (diodes) and UP2 15.1."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u16 Filters and frequency response",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "Filter design families (Butterworth etc.) are beyond OpenStax and AQA; sources cover RLC AC response and LC filters only."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u16 Electrical measurement",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "u16 Circuit analysis methods",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "Superposition example reworded: the circuit description was ambiguous about how the sources and load were connected. Lab paragraph and one Wheatstone question are off-topic but were kept (interactive and legacy question keys)."
+    },
+    {
+     "class": "needs-source",
+     "note": "Nodal/mesh analysis and source transformation are not covered as such in OpenStax; cited sections are Kirchhoff's rules and series/parallel."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u16 Thevenin and Norton equivalents",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "OpenStax has no Thevenin/Norton section; SRC lines cite EMF/internal resistance and Kirchhoff's rules. Needs a confirmed circuit-theory text."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u16 Operational amplifiers",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": [
+    {
+     "class": "needs-source",
+     "note": "Only AQA 3.13 (Electronics option) sources found; no OpenStax coverage of op-amps."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "u16 Semiconductor circuit fundamentals",
+   "action": "enhanced",
+   "changes": [
+    "Added O (3), PRE, LV, K, T (2), SUM, EV and 2 SRC lines (OpenStax sections and/or AQA 7408 sections, all URLs checked)",
+    "Existing M questions kept in order (legacy position keys), explanations rewritten to 40+ characters, @objective links added",
+    "Added an M3 and a NUM/TF question and an SA extended answer; all worked examples and answers recomputed"
+   ],
+   "findings": []
+  }
+ ],
+ "notes": [
+  "All 52 lessons enhanced; node scripts/new-course.mjs check physics --unit u15 and --unit u16 report 0 problems, length bias OK; node --test tests/course.test.mjs passes.",
+  "No factual or numerical errors found in existing worked examples or answers after recomputing all of them; changes logged as editorial.",
+  "Lesson size averages about 4.2 KB (u15 106 KB/24, u16 119 KB/28), above the 2-3.5 KB aim: the standard-2 metadata, two SRC lines and an SA model answer alone add about 1.5 KB per lesson.",
+  "tests/compat.test.mjs fails because the legacy parser does not recognise M lines with @objective links (M2@1:), so it counts fewer questions than the new parser. It already fails at u03 from other committed units; existing question order is preserved, so lesson#index keys for old questions still match in the new parser.",
+  "AQA spec cited: AQA-7407-7408-SP-2015.PDF (version 1.3), sha256 32a556da85fa0928c3600f8178d1a18fe5156b2ea36d76b541df866451721e20, section numbers checked against the text."
+ ]
+}

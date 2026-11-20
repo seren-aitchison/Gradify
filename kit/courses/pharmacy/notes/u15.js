@@ -137,7 +137,7 @@ Q: What does STOPP stand for? | Screening Tool of Older Persons' Prescriptions.
 Q: Name two anticholinergic medicines that cause confusion. | For example oxybutynin and amitriptyline.
 SUM: Older people are more sensitive to many medicines.
 SUM: Use structured tools to review medicines.
-SRC: O'Mahony D et al, STOPP/START criteria for potentially inappropriate prescribing in older people: version 3 | journal | 2023 | https://doi.org/10.1007/s41999-023-00777-y
+SRC: O'Mahony D et al, STOPP/START criteria for potentially inappropriate prescribing in older people: version 3 | primary | 2023 | https://doi.org/10.1007/s41999-023-00777-y
 SRC: NICE NG56, Multimorbidity: clinical assessment and management | guidance | 2016 | https://www.nice.org.uk/guidance/ng56
 M1#pharmacy-u15-05-q1@1: Which medicine type increases confusion in older people? | Anticholinergics | Emollients | Vitamin D | Paracetamol at normal doses | Saline eye drops | Anticholinergics impair memory and cause confusion.
 M2#pharmacy-u15-05-q2@2: Why may creatinine clearance be preferred to eGFR in older people? | eGFR can overestimate function in low body weight | eGFR is illegal to use | Creatinine clearance is always lower | They're identical | eGFR only applies to children | Cockcroft-Gault accounts for weight and is used for narrow-margin drugs.
@@ -275,7 +275,7 @@ Q: What is diagnostic overshadowing? | Attributing symptoms to a disability rath
 SUM: Reasonable adjustments improve care and outcomes.
 SUM: STOMP reduces inappropriate psychotropic use.
 SRC: NHS England, STOMP: stopping over-medication of people with a learning disability, autism or both | guidance | 2016 | https://www.england.nhs.uk/learning-disabilities/improving-health/stomp/
-SRC: King's College London, LeDeR: learning from lives and deaths of people with a learning disability and autistic people | report | 2024 | https://www.kcl.ac.uk/research/leder
+SRC: King's College London, LeDeR: learning from lives and deaths of people with a learning disability and autistic people | secondary | 2024 | https://www.kcl.ac.uk/research/leder
 M1#pharmacy-u15-10-q1@1: Which Act requires reasonable adjustments? | Equality Act 2010 | Medicines Act 1968 | Misuse of Drugs Act 1971 | Health Act 2006 | Poisons Act 1972 | The Equality Act 2010 requires reasonable adjustments.
 M2#pharmacy-u15-10-q2@2: What does STOMP aim to reduce? | Inappropriate use of psychotropic medicines | Use of all medicines | Vaccination | Physical health checks | Use of easy-read information | Psychotropics are often used for behaviour without a mental illness.
 M2#pharmacy-u15-10-q3@1: Which adjustment helps someone with a learning disability understand their medicines? | Easy-read information with pictures | Speaking faster | Using medical jargon | Shorter appointments | Written information only | Accessible formats improve understanding.
@@ -332,7 +332,7 @@ Q: What is a homely remedy? | An OTC medicine kept by a care home under an agree
 SUM: Care home residents are vulnerable to medication errors.
 SUM: Pharmacists strengthen systems and reviews.
 SRC: NICE SC1, Managing medicines in care homes | guidance | 2014 | https://www.nice.org.uk/guidance/sc1
-SRC: Barber ND et al, Care homes' use of medicines study (CHUMS) | journal | 2009 | https://doi.org/10.1136/qshc.2009.034231
+SRC: Barber ND et al, Care homes' use of medicines study (CHUMS) | primary | 2009 | https://doi.org/10.1136/qshc.2009.034231
 M1#pharmacy-u15-12-q1@1: What does a MAR chart record? | Each dose given, refused or omitted | The pharmacy's profits | Staff rotas | Visitor times | Residents' diets | The MAR is the administration record for each dose given, refused or omitted.
 M2#pharmacy-u15-12-q2@2: What is required for a care home to keep homely remedies? | A written protocol agreed with a GP or pharmacist | Nothing | A controlled drugs licence | A wholesale licence | A court order | Protocols define which products, doses and when to refer.
 M3#pharmacy-u15-12-q3@2: What should happen when a resident returns from hospital? | Medicines reconciliation against the discharge information and MAR | Restart all previous medicines automatically | Wait for the next monthly cycle | Stop all medicines | Rely on memory | Transfers cause discrepancies that reconciliation catches.

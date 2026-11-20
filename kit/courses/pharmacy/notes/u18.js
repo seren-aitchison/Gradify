@@ -111,7 +111,7 @@ Q: What does ICE stand for? | Ideas, Concerns and Expectations.
 Q: What is safety netting? | Advising what to watch for and when to seek help.
 SUM: Consultation models structure clinical conversations.
 SUM: Listening, shared decisions and safety netting are core.
-SRC: Silverman J, Kurtz S, Draper J, Skills for Communicating with Patients (3rd edn, CRC Press 2013) | textbook | 2013 | https://www.routledge.com/
+SRC: Silverman J, Kurtz S, Draper J, Skills for Communicating with Patients (3rd edn, CRC Press 2013) | secondary | 2013 | https://www.routledge.com/
 SRC: Centre for Pharmacy Postgraduate Education, Consultation skills for pharmacy practice | guidance | 2024 | https://www.cppe.ac.uk/
 M1#pharmacy-u18-04-q1@1: Which consultation model includes "initiating the session" and "closing the session"? | Calgary-Cambridge | Pendleton only | SBAR | ABCDE | WWHAM | Calgary-Cambridge is the most widely used framework.
 M2#pharmacy-u18-04-q2@2: What does "teach-back" mean? | Asking the person to explain in their own words | Teaching the person about the drug's chemistry | Repeating the label | Giving a leaflet only | Testing them with an exam | Asking people to explain in their own words checks they've understood.
@@ -142,7 +142,7 @@ Q: What does SOCRATES describe? | Pain: site, onset, character, radiation, assoc
 Q: What should a drug history include? | Prescribed, OTC, herbal and recreational medicines and adherence.
 SUM: History taking is the foundation of diagnosis.
 SUM: Medication and allergy histories guide safe prescribing.
-SRC: Douglas G, Nicol F, Robertson C, Macleod's Clinical Examination (15th edn, Elsevier 2023) | textbook | 2023 | https://www.elsevier.com/
+SRC: Douglas G, Nicol F, Robertson C, Macleod's Clinical Examination (15th edn, Elsevier 2023) | secondary | 2023 | https://www.elsevier.com/
 SRC: Royal Pharmaceutical Society, Medicines optimisation: helping patients to make the most of medicines | guidance | 2013 | https://www.rpharms.com/
 M1#pharmacy-u18-05-q1@1: In SOCRATES, what does the "R" stand for? | Radiation | Rate | Rash | Rest | Relief | Radiation describes where the pain spreads, such as to the arm or jaw.
 M3#pharmacy-u18-05-q2@2: Why ask about herbal and recreational drugs? | They cause interactions and adverse effects | They're never relevant to prescribing | Only to complete research records | To decide whether to treat the person | To work out the prescription charge | Unrecorded products cause important interactions.
@@ -172,7 +172,7 @@ Q: Name the four classic stages of examination. | Inspection, palpation, percuss
 Q: When should a chaperone be offered? | For intimate examinations, or whenever the person or clinician wants one.
 SUM: Examination tests hypotheses from the history.
 SUM: Stay within competence and document findings.
-SRC: Douglas G, Nicol F, Robertson C, Macleod's Clinical Examination (15th edn, Elsevier 2023) | textbook | 2023 | https://www.elsevier.com/
+SRC: Douglas G, Nicol F, Robertson C, Macleod's Clinical Examination (15th edn, Elsevier 2023) | secondary | 2023 | https://www.elsevier.com/
 SRC: General Medical Council, Intimate examinations and chaperones | guidance | 2024 | https://www.gmc-uk.org/
 M1#pharmacy-u18-06-q1@1: Which instrument examines the ear canal and drum? | Otoscope | Stethoscope | Sphygmomanometer | Peak flow meter | Thermometer | An otoscope views the ear canal and tympanic membrane.
 M2#pharmacy-u18-06-q2@2: What should a prescriber do with unclear examination findings? | Refer or seek advice | Prescribe anyway | Ignore them | Repeat the examination 10 times | Guess the diagnosis | Working within competence protects patients.
@@ -259,7 +259,7 @@ Q: What is anchoring bias? | Sticking with the first impression despite new info
 Q: What is a can't-miss diagnosis? | A serious condition that must be excluded even if unlikely.
 SUM: Diagnosis combines fast and slow thinking.
 SUM: Cognitive biases cause errors that strategies can reduce.
-SRC: Croskerry P, The importance of cognitive errors in diagnosis and strategies to minimize them, Academic Medicine 78(8) 775 | journal | 2003 | https://doi.org/10.1097/00001888-200308000-00003
+SRC: Croskerry P, The importance of cognitive errors in diagnosis and strategies to minimize them, Academic Medicine 78(8) 775 | primary | 2003 | https://doi.org/10.1097/00001888-200308000-00003
 SRC: NICE CKS, Clinical Knowledge Summaries | guidance | 2026 | https://cks.nice.org.uk/
 M1#pharmacy-u18-09-q1@1: What is a differential diagnosis? | A list of possible conditions explaining the presentation | The final diagnosis | A prescription | A blood test | A referral letter | It lists possible conditions to test with history, examination and investigations.
 M2#pharmacy-u18-09-q2@2: What is premature closure? | Stopping the search once a diagnosis seems to fit | Closing the pharmacy early | Ending a consultation politely | Completing a referral | Finishing a course of antibiotics | Premature closure causes missed diagnoses.

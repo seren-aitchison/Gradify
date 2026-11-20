@@ -8,6 +8,7 @@ S: Biology is the scientific study of living things: what they are made of, how 
 O: Describe what biologists study, from molecules to the biosphere
 O: Name the unifying ideas of biology: cells, genes, evolution, energy and homeostasis
 O: Explain how biology connects with chemistry, physics and mathematics
+LV: Year 1 · Foundation
 H: The scope of biology
 P: Biology ranges from the shapes of single proteins to the carbon cycle of the whole planet. Some biologists work with molecules (biochemistry, molecular biology), some with cells, some with whole organisms (physiology, behaviour) and some with populations and ecosystems (ecology, evolution). Computational biology and bioinformatics analyse the huge data sets that modern methods produce.
 H: Five unifying ideas
@@ -23,6 +24,7 @@ K: Biology explains living things at every scale, held together by cells, genes,
 H: In practice
 P: Medicine, agriculture, conservation and biotechnology all apply biology. Vaccines, crop breeding and gene therapy each rest on understanding how living systems work at the molecular level.
 !: Thinking biology is just memorising names. The names matter less than the mechanisms: how and why living things work as they do.
+EV: established | Cells, genes, evolution, energy flow and homeostasis are the standard unifying themes of biology, and living things obey the laws of chemistry and physics.
 T: Biology | The scientific study of living organisms and life processes
 T: Homeostasis | Keeping internal conditions within narrow limits despite changes outside
 T: Evolution | Change in the inherited characteristics of populations over generations
@@ -32,16 +34,18 @@ SRC: OpenStax, Biology 2e, chapter 1 "The Study of Life" | secondary | 2018 | ht
 SRC: Dobzhansky T., "Nothing in biology makes sense except in the light of evolution", American Biology Teacher 35:125–129 | primary | 1973
 Q: Name the five unifying ideas of biology. | Cells, genes (inheritance), evolution, energy flow and homeostasis.
 Q: Why does biology depend on chemistry and physics? | Living things are made of matter and obey physical and chemical laws: enzymes are catalysts, nerve impulses are electrical, transport follows diffusion and fluid flow.
-M1#biology-u01-01-q1: Which statement is part of cell theory? | Cells only arise from existing cells | All cells contain a nucleus | Cells can arise from non-living matter today | Only animals are made of cells | Cell theory holds that all organisms are made of cells and that new cells come only from the division of existing cells; prokaryotes have no nucleus.
-M2#biology-u01-01-q2: A biologist studies how the population of a bird species changes over 30 years as its habitat warms. Which level of biology is this mainly? | Population ecology and evolution | Molecular biology | Cell biology | Anatomy | Changes in the size and inherited traits of a population over generations are studied in ecology and evolutionary biology.
-M3#biology-u01-01-q3: Which example best shows how biology's levels connect? | A gene mutation changes an enzyme, altering a cell's metabolism and the organism's survival, and the allele's frequency changes over generations | A cell divides by mitosis | A leaf photosynthesises in sunlight | A bird migrates south in winter | Only the first traces one cause from the molecular level through cells and organisms to a change in a population.
-TF1#biology-u01-01-q4: All living things are made of one or more cells. | true | This is the first principle of cell theory. Viruses are not made of cells, which is one reason they are not usually classed as living.
+M1#biology-u01-01-q1@2: Which statement is part of cell theory? | Cells only arise from existing cells | All cells contain a nucleus | Cells can arise from non-living matter today | Only animals are made of cells | Cell theory holds that all organisms are made of cells and that new cells come only from the division of existing cells; prokaryotes have no nucleus.
+M2#biology-u01-01-q2@1: A biologist studies how the population of a bird species changes over 30 years as its habitat warms. Which level of biology is this mainly? | Population ecology and evolution | Molecular biology and biochemistry | Cell biology and microscopy | Human anatomy and physiology | Changes in the size and inherited traits of a population over generations are studied in ecology and evolutionary biology.
+M3#biology-u01-01-q3@1,2: Which example best shows how biology's levels connect? | A gene mutation changes an enzyme, altering a cell's metabolism and the organism's survival, and the allele's frequency changes over generations | A cell divides by mitosis, producing two genetically identical daughter cells that let a tissue grow | A leaf photosynthesises in bright sunlight, converting carbon dioxide and water into glucose and oxygen | A bird migrates south in winter, following the same route its parents took the previous autumn | Only the first traces one cause from the molecular level through cells and organisms to a change in a population.
+TF1#biology-u01-01-q4@2: All living things are made of one or more cells. | true | This is the first principle of cell theory. Viruses are not made of cells, which is one reason they are not usually classed as living.
+SA2@2,3: Explain how the unifying ideas of biology connect, and why biology depends on chemistry, physics and mathematics. | Biology is held together by cells (the unit of life, arising only from existing cells), genes (inherited information in DNA used to make RNA and proteins), evolution by natural selection (explaining unity and diversity), energy flow (mostly captured from the Sun) and homeostasis (feedback keeps internal conditions within limits). They link: a gene mutation changes a protein, which alters cells and survival, and so allele frequencies in a population. Living things obey chemistry and physics: enzymes are catalysts, nerve impulses are electrical and blood flow follows fluid physics; mathematics and statistics measure variation, test hypotheses and model populations. | names the five unifying ideas ; shows how they connect across levels ; enzymes as chemistry ; nerve impulses or transport as physics ; statistics and modelling as mathematics
 
 ## Characteristics of living organisms
 S: Living things share a set of properties that, taken together, distinguish them from non-living matter. This lesson describes those properties and uses them to discuss borderline cases such as viruses.
 O: List and explain the characteristics shared by living organisms
 O: Apply the characteristics to decide whether something is alive
 O: Explain why viruses are a borderline case
+LV: Year 1 · Foundation
 PRE: What is biology?
 H: What living things do
 - **Organisation**: made of one or more cells, highly ordered.
@@ -58,6 +62,7 @@ H: Viruses: the borderline case
 P: Viruses contain genetic material (DNA or RNA) and evolve, but they have no cells, no metabolism of their own, and can only reproduce inside a host cell using its machinery. Most biologists therefore do not count them as living organisms, while recognising that they are biological entities that evolve.
 K: Life is defined by a set of shared characteristics, not by any one of them; viruses have some but not others.
 !: Saying plants don't respire because they photosynthesise. Plant cells respire all the time; in light, photosynthesis also runs, usually faster.
+EV: established | Life is recognised by a combination of characteristics; whether viruses count as alive depends on the definition used.
 T: Metabolism | All the chemical reactions in an organism, including those that release energy and those that build molecules
 T: Stimulus | A change in the environment that an organism can detect
 SUM: Living things are organised, metabolise, grow, reproduce, respond, regulate and evolve.
@@ -66,16 +71,18 @@ SRC: OpenStax, Biology 2e, section 1.2 "Themes and Concepts of Biology" | second
 SRC: Koonin E.V. and Starokadomskyy P., "Are viruses alive?", Studies in History and Philosophy of Biological and Biomedical Sciences 59:125–134 | primary | 2016
 Q: Why is a crystal not alive even though it grows? | It has no cells, no genetic material and no metabolism; it grows by adding matter to its surface, not by controlled chemical reactions.
 Q: Which characteristics of life do viruses lack? | Cells and their own metabolism; they can reproduce only inside host cells.
-M1#biology-u01-02-q1: Which is a characteristic of all living organisms? | They respond to stimuli | They move from place to place | They photosynthesise | They reproduce sexually | All organisms detect and respond to changes; many don't move, only some photosynthesise, and many reproduce asexually.
-M2#biology-u01-02-q2: A new particle found in a hot spring contains RNA and makes copies of itself only inside bacterial cells. How should it be classified? | Like a virus: biological but not a living organism by the usual criteria | A living prokaryote | A non-biological crystal | A plant | It has genetic material but no cells and can only replicate inside a host, the defining features of a virus.
-M3#biology-u01-02-q3: Which pair of observations would most strongly suggest that a sample from Mars was alive? | It grows in nutrient medium and passes heritable variation to its offspring | It is made of carbon compounds | It contains water | It changes shape when heated | Growth with reproduction and inheritance shows metabolism and genetic continuity; carbon compounds, water and shape changes also occur in non-living matter.
-MS2#biology-u01-02-q4: Which of these are characteristics shared by all living organisms? | Metabolism ; Response to stimuli ; Reproduction | Photosynthesis ; Locomotion ; A nervous system | Plants and microbes lack nervous systems and many don't move; only producers photosynthesise. All organisms metabolise, respond and reproduce.
+M1#biology-u01-02-q1@1: Which is a characteristic of all living organisms? | They respond to stimuli | They move from place to place | They photosynthesise | They reproduce sexually | All organisms detect and respond to changes; many don't move, only some photosynthesise, and many reproduce asexually.
+M2#biology-u01-02-q2@2,3: A new particle found in a hot spring contains RNA and makes copies of itself only inside bacterial cells. How should it be classified? | Like a virus: biological but not a living organism by the usual criteria | A living prokaryote, because it contains RNA and copies itself | A non-biological crystal that grows by adding matter | A free-living cell that simply lacks a nucleus | It has genetic material but no cells and can only replicate inside a host, the defining features of a virus.
+M3#biology-u01-02-q3@2: Which pair of observations would most strongly suggest that a sample from Mars was alive? | It grows in nutrient medium and passes heritable variation to its offspring | It is made of carbon compounds similar to those found in cells | It contains liquid water trapped between its mineral grains | It changes shape and colour when it is heated and cooled | Growth with reproduction and inheritance shows metabolism and genetic continuity; carbon compounds, water and shape changes also occur in non-living matter.
+MS2#biology-u01-02-q4@1: Which of these are characteristics shared by all living organisms? | Metabolism ; Response to stimuli ; Reproduction | Photosynthesis ; Locomotion ; A nervous system | Plants and microbes lack nervous systems and many don't move; only producers photosynthesise. All organisms metabolise, respond and reproduce.
+SA2@1,3: Explain why no single characteristic defines life, using fire, crystals and viruses as examples. | Living things are organised in cells, metabolise, grow and develop, reproduce, respond to stimuli, regulate their internal conditions and evolve. Some non-living things share one or two of these: fire grows and uses oxygen, and crystals grow and are highly ordered, but neither has cells, inherited genetic information or enzyme-controlled metabolism. Viruses have genetic material and evolve, but have no cells or metabolism of their own and replicate only inside host cells, so most biologists treat them as borderline. Life is therefore recognised by the combination of characteristics. | lists the characteristics ; fire or crystals show one property alone isn't enough ; non-living cases lack cells, genes and metabolism ; viruses have genes and evolve but lack cells and metabolism ; life is the combination
 
 ## Levels of biological organisation
 S: Living things are organised in a hierarchy, from atoms and molecules through cells, tissues, organs and organisms to populations, communities, ecosystems and the biosphere. Each level has emergent properties that the levels below don't have.
 O: Put the levels of biological organisation in order
 O: Explain what an emergent property is, with examples
 O: Relate a process at one level to its effects at another
+LV: Year 1 · Foundation
 PRE: What is biology?
 H: The hierarchy
 - **Atoms and molecules**: carbon, hydrogen, oxygen and nitrogen form biological molecules such as proteins and DNA.
@@ -101,24 +108,28 @@ P: A change at one level can show up at others. In sickle-cell disease, one amin
 K: Each level is built from the one below and has emergent properties of its own.
 IX: organ-systems
 !: Confusing a tissue with an organ. A tissue is one type of cell working together; an organ contains several tissues.
+EV: established | Living systems are organised in a hierarchy from molecules to the biosphere, with emergent properties at each level.
 T: Tissue | A group of similar cells that work together to carry out a function
 T: Emergent property | A property of a whole system that its separate parts do not have
 T: Ecosystem | A community of organisms together with their physical environment
 SUM: Atoms → molecules → organelles → cells → tissues → organs → systems → organisms → populations → communities → ecosystems → biosphere.
 SUM: Emergent properties appear at each level.
 SRC: OpenStax, Biology 2e, section 1.2 "Levels of Organization of Living Things" | secondary | 2018 | https://openstax.org/books/biology-2e/pages/1-2-themes-and-concepts-of-biology
+SRC: OpenStax, Concepts of Biology, section 1.1 "Themes and Concepts of Biology" | secondary | 2013 | https://openstax.org/books/concepts-biology/pages/1-1-themes-and-concepts-of-biology
 Q: What is an emergent property? Give an example. | A property of a whole that its parts lack, for example the heart's pumping, which no single muscle cell can do.
 Q: What is the difference between a population and a community? | A population is one species in an area; a community is all the populations of different species in that area.
-SEQ1#biology-u01-03-q1: Put these levels in order from smallest to largest. | molecule ; cell ; tissue ; organ ; organism ; population ; ecosystem | Each level is built from units of the level before it.
-M1#biology-u01-03-q2: Which is an organ? | The stomach | A muscle cell | Blood plasma | A mitochondrion | The stomach contains several tissues (muscle, epithelium, glands) working together; a muscle cell is a cell and a mitochondrion an organelle.
-M2#biology-u01-03-q3: All the trout, algae, insects and plants in a lake, but not the water or rocks, make up a… | community | population | ecosystem | biosphere | A community is all the living populations in an area; adding the non-living environment would make an ecosystem.
-M3#biology-u01-03-q4: Why can't the behaviour of an ecosystem be predicted just by studying each species separately? | Interactions between species and with the environment create emergent properties such as nutrient cycling and food-web stability | Species never interact | Ecosystems contain no cells | Each species behaves randomly | Feeding relationships, competition and cycling of matter arise from interactions between parts, which studying parts in isolation misses.
+SEQ1#biology-u01-03-q1@1: Put these levels in order from smallest to largest. | molecule ; cell ; tissue ; organ ; organism ; population ; ecosystem | Each level is built from units of the level before it.
+M1#biology-u01-03-q2@1: Which is an organ? | The stomach | A muscle cell | Blood plasma | A mitochondrion | The stomach contains several tissues (muscle, epithelium, glands) working together; a muscle cell is a cell and a mitochondrion an organelle.
+M2#biology-u01-03-q3@1: All the trout, algae, insects and plants in a lake, but not the water or rocks, make up a… | community | population | ecosystem | biosphere | A community is all the living populations in an area; adding the non-living environment would make an ecosystem.
+M3#biology-u01-03-q4@2,3: Why can't the behaviour of an ecosystem be predicted just by studying each species separately? | Interactions between species and with the environment create emergent properties such as nutrient cycling and food-web stability | Species never interact with one another, so studying each alone already gives the full picture | Ecosystems contain no cells, so the methods of cell and organism biology can't be applied to them | Each species behaves randomly, so no level of study can ever predict what an ecosystem will do | Feeding relationships, competition and cycling of matter arise from interactions between parts, which studying parts in isolation misses.
+SA2@2,3: Using oxygen transport or sickle-cell disease as an example, explain what an emergent property is and how a change at one level of organisation affects others. | An emergent property is a property of a whole system that its separate parts lack: one heart muscle cell contracts, but only the organised heart pumps blood. In sickle-cell disease, a single amino acid change in haemoglobin (molecule) makes red blood cells deform at low oxygen (cell), so they block capillaries and damage organs (organ and organism). Because carriers are partly protected from malaria, the allele is common in some populations (population). A change at the molecular level therefore appears at every level above. | defines emergent property ; gives a whole-versus-parts example ; molecular change in haemoglobin ; effects on cells and organs ; effect on allele frequency in populations
 
 ## The characteristics of life
 S: How do we know whether a newly discovered organism, a dormant seed or a frozen bacterium is alive? This lesson applies the characteristics of life to real cases and looks at how life is detected in practice.
 O: Apply the characteristics of life to dormant, extreme and unusual cases
 O: Describe practical tests used to detect life
 O: Explain why scientists use several criteria together
+LV: Year 1 · Application
 PRE: Characteristics of living organisms
 H: Hard cases
 - **Seeds and spores** can stay dormant for years with almost no detectable metabolism, yet germinate when conditions return: they are alive but inactive.
@@ -135,6 +146,7 @@ K: Use several characteristics together, and remember that an organism can be al
 H: In practice
 P: Food safety relies on detecting living bacteria: plate counts and ATP swabs measure whether surfaces and food still carry living microbes after cleaning.
 !: Concluding that a dormant seed is dead because it shows no growth. It is alive; its metabolism is very slow until conditions allow germination.
+EV: established | Dormant and cryptobiotic organisms are alive, and life detection needs several independent tests with controls.
 T: Dormancy | A state of very low metabolic activity from which an organism can resume normal life
 T: Cryptobiosis | Reversible suspension of detectable metabolism, as in dried tardigrades
 SUM: Dormant and cryptobiotic organisms are alive though inactive.
@@ -143,16 +155,18 @@ SRC: OpenStax, Biology 2e, section 1.2 "Properties of Life" | secondary | 2018 |
 SRC: Levin G.V. and Straat P.A., "Viking Labeled Release Biology Experiment: Interim Results", Science 194:1322–1329 | primary | 1976
 Q: Why is a prion not considered alive? | It is a misfolded protein with no genetic material, no cells and no metabolism of its own.
 Q: Name three practical ways to test whether a sample contains living cells. | Look for growth or reproduction, measure metabolism (for example gas exchange or ATP), and detect DNA or RNA.
-M1#biology-u01-04-q1: A seed has been stored dry for 20 years and shows no growth. What is the best description? | It is alive but dormant | It is dead | It is non-living matter | It is a virus | Dormant seeds keep living cells with very slow metabolism and can germinate when given water and warmth.
-M2#biology-u01-04-q2: A sample releases CO₂ when given nutrients, but also does so after being heated to 200 °C for an hour. What does this suggest? | The CO₂ may come from non-living chemistry, since heating should kill living cells | The sample is definitely alive | Heating increases life | The test proves the sample contains viruses | A biological signal should disappear after sterilisation; persistence after heating points to a chemical process, which is why controls matter.
-M3#biology-u01-04-q3: Why did the Viking life-detection results remain controversial? | Reactive chemicals in Martian soil could produce gas release without life, and other tests found no organic molecules | The landers never reached the surface | Mars has no soil | The experiments detected DNA | A positive metabolic signal without supporting evidence (organic molecules, growth) can't distinguish life from non-biological chemistry.
-SA3#biology-u01-04-q4: Explain why a single test, such as measuring gas release, is not enough to show that a sample is alive. | Gas release can come from non-biological chemical reactions, so a positive result is ambiguous. Living things show several characteristics together (growth, reproduction, metabolism controlled by enzymes, genetic material), so independent tests and controls such as a sterilised sample are needed. | non-living chemistry can mimic metabolism ; life is shown by several characteristics together ; a sterilised control is needed
+M1#biology-u01-04-q1@1: A seed has been stored dry for 20 years and shows no growth. What is the best description? | It is alive but dormant | It is dead | It is non-living matter | It is a virus | Dormant seeds keep living cells with very slow metabolism and can germinate when given water and warmth.
+M2#biology-u01-04-q2@2,3: A sample releases CO₂ when given nutrients, but also does so after being heated to 200 °C for an hour. What does this suggest? | The CO₂ may come from non-living chemistry, since heating should kill living cells | The sample is definitely alive, because it released CO₂ in both tests | Heating has increased the activity of the organisms in the sample | The test proves the sample contains viruses rather than cells | A biological signal should disappear after sterilisation; persistence after heating points to a chemical process, which is why controls matter.
+M3#biology-u01-04-q3@3: Why did the Viking life-detection results remain controversial? | Reactive chemicals in Martian soil could produce gas release without life, and other tests found no organic molecules | The landers never reached the surface, so the experiments were run on samples of the atmosphere | Mars has no soil, so the instruments could only test dust blown onto the lander's deck | The experiments detected DNA, but it could have come from contamination brought from Earth | A positive metabolic signal without supporting evidence (organic molecules, growth) can't distinguish life from non-biological chemistry.
+SA3#biology-u01-04-q4@2,3: Explain why a single test, such as measuring gas release, is not enough to show that a sample is alive. | Gas release can come from non-biological chemical reactions, so a positive result is ambiguous. Living things show several characteristics together (growth, reproduction, metabolism controlled by enzymes, genetic material), so independent tests and controls such as a sterilised sample are needed. | non-living chemistry can mimic metabolism ; life is shown by several characteristics together ; a sterilised control is needed
+M2@1: A tardigrade has been dried out for months and shows no detectable metabolism. When water is added it starts moving again. What best describes its dried state? | Cryptobiosis: it was alive with metabolism suspended | It was dead and has been brought back to life | It was a non-living cyst made by the parent | It was dormant like a seed, so it is a plant | Cryptobiosis is a reversible suspension of detectable metabolism; the animal remained alive throughout and recovered when rehydrated.
 
 ## Classification and taxonomy
 S: With an estimated several million species alive today, biologists need a system to name and organise them. Taxonomy names and classifies organisms in a hierarchy; modern classification aims to reflect evolutionary relationships.
 O: Put the taxonomic ranks in order
 O: Write a species name correctly using binomial nomenclature
 O: Explain why modern classification is based on evolutionary relationships
+LV: Year 1 · Foundation
 PRE: Characteristics of living organisms
 H: The hierarchy of ranks
 P: The ranks, from broadest to narrowest, are domain, kingdom, phylum, class, order, family, genus and species. Humans are domain Eukarya, kingdom Animalia, phylum Chordata, class Mammalia, order Primates, family Hominidae, genus *Homo*, species *Homo sapiens*.
@@ -164,6 +178,7 @@ H: What is a species?
 P: The biological species concept defines a species as a group of organisms that can interbreed to produce fertile offspring. It doesn't work for asexual organisms or fossils, so biologists also use genetic and morphological species concepts.
 K: Classification uses nested ranks and binomial names, and aims to group organisms by common ancestry.
 !: Writing "homo Sapiens" or "Homo Sapiens". The genus is capitalised and the species epithet is not: *Homo sapiens*.
+EV: established | Organisms are named by binomial nomenclature in nested ranks, and modern classification aims to group organisms by common ancestry.
 T: Taxonomy | The science of naming, describing and classifying organisms
 T: Binomial nomenclature | The two-part scientific naming system of genus and specific epithet
 T: Monophyletic group | A group containing an ancestor and all of its descendants
@@ -174,16 +189,18 @@ SRC: OpenStax, Biology 2e, chapter 20 "Phylogenies and the History of Life" | se
 SRC: International Commission on Zoological Nomenclature, International Code of Zoological Nomenclature, 4th edition | standard | 1999 | https://www.iczn.org/the-code/the-code-online/
 Q: List the taxonomic ranks from broadest to narrowest. | Domain, kingdom, phylum, class, order, family, genus, species.
 Q: Why are scientific names more useful than common names? | Each species has one internationally agreed name, whereas common names vary between languages and regions and can refer to different species.
-SEQ1#biology-u01-05-q1: Put the taxonomic ranks in order, broadest first. | Domain ; Kingdom ; Phylum ; Class ; Order ; Family ; Genus ; Species | A mnemonic: "Do Keep Ponds Clean Or Frogs Get Sick".
-M1#biology-u01-05-q2: Which is the correct way to write the scientific name of the lion? | *Panthera leo* | *Panthera Leo* | *panthera leo* | Panthera-Leo | The genus is capitalised, the specific epithet lower case, and both are italicised.
-M2#biology-u01-05-q3: Two populations of frogs look identical but don't interbreed in the wild and their hybrids in the laboratory are sterile. Under the biological species concept they are… | separate species | the same species | the same subspecies | different genera | Reproductive isolation with sterile hybrids means they are separate biological species despite looking alike (cryptic species).
-M3#biology-u01-05-q4: Birds are now classified within the reptile clade. What is the main reason? | DNA and fossil evidence show birds descend from reptilian (dinosaur) ancestors, so a monophyletic reptile group must include them | Birds lay eggs | Birds have scales on their legs | Linnaeus classified them as reptiles | A monophyletic group includes all descendants of a common ancestor; excluding birds from "reptiles" would leave a group that isn't monophyletic.
+SEQ1#biology-u01-05-q1@1: Put the taxonomic ranks in order, broadest first. | Domain ; Kingdom ; Phylum ; Class ; Order ; Family ; Genus ; Species | A mnemonic: "Do Keep Ponds Clean Or Frogs Get Sick".
+M1#biology-u01-05-q2@2: Which is the correct way to write the scientific name of the lion? | *Panthera leo* | *Panthera Leo* | *panthera leo* | Panthera-Leo | The genus is capitalised, the specific epithet lower case, and both are italicised.
+M2#biology-u01-05-q3@1: Two populations of frogs look identical but don't interbreed in the wild and their hybrids in the laboratory are sterile. Under the biological species concept they are… | separate species | the same species | the same subspecies | different genera | Reproductive isolation with sterile hybrids means they are separate biological species despite looking alike (cryptic species).
+M3#biology-u01-05-q4@3: Birds are now classified within the reptile clade. What is the main reason? | DNA and fossil evidence show birds descend from reptilian (dinosaur) ancestors, so a monophyletic reptile group must include them | Birds lay hard-shelled eggs, and egg-laying is the feature that defines the reptile group in modern classification | Birds have scales on their legs, and shared scales are enough to place two groups in the same clade | Linnaeus classified them as reptiles, and the original groups he gave are still followed unchanged | A monophyletic group includes all descendants of a common ancestor; excluding birds from "reptiles" would leave a group that isn't monophyletic.
+SA2@2,3: Explain how species are named and why modern classification is based on evolutionary relationships rather than appearance alone. | Linnaeus's binomial system gives each species a two-part Latin name, the genus with a capital letter and the specific epithet in lower case, written in italics (*Homo sapiens*), so there is one agreed name worldwide. Species are placed in nested ranks from domain to species. Linnaeus grouped by visible similarity, but similar appearance can be superficial, so phylogenetic classification uses DNA and anatomy to group organisms by shared ancestry. Groups should be monophyletic, an ancestor and all its descendants, which is why birds are now placed within the reptiles. | binomial name rules ; one name avoids confusion between common names ; nested ranks ; DNA and shared ancestry ; monophyletic groups with the bird example
 
 ## The three domains of life
 S: All living organisms fall into three domains: Bacteria, Archaea and Eukarya. The division, proposed by Carl Woese in the 1970s and 1990 from ribosomal RNA sequences, revealed that "prokaryotes" are two very different groups.
 O: Name the three domains and give examples of each
 O: Compare Bacteria, Archaea and Eukarya
 O: Describe the molecular evidence for the three-domain system
+LV: Year 1 · Foundation
 PRE: Classification and taxonomy
 H: The three domains
 - **Bacteria**: prokaryotes with cell walls of peptidoglycan; include *Escherichia coli*, cyanobacteria and many pathogens.
@@ -197,6 +214,7 @@ P: Comparing features shows why archaea were separated from bacteria. Both lack 
 K: Life has three domains: Bacteria, Archaea (both prokaryotic) and Eukarya, defined largely by ribosomal RNA sequences.
 IX: tree-of-life
 !: Thinking archaea are a kind of bacteria. They are prokaryotes, but they are as different from bacteria as both are from eukaryotes.
+EV: established | Small-subunit rRNA sequences divide life into Bacteria, Archaea and Eukarya; whether eukaryotes arose from within the Archaea is still researched.
 T: Domain | The highest rank of classification: Bacteria, Archaea or Eukarya
 T: Prokaryote | An organism whose cells lack a nucleus and membrane-bound organelles
 T: Ribosomal RNA (rRNA) | The RNA that forms part of ribosomes; its sequence is used to compare distantly related organisms
@@ -207,16 +225,18 @@ SRC: OpenStax, Biology 2e, section 22.1 "Prokaryotic Diversity" | secondary | 20
 SRC: Eme L. et al., "Archaea and the origin of eukaryotes", Nature Reviews Microbiology 15:711–723 | secondary | 2017
 Q: Name the three domains of life. | Bacteria, Archaea and Eukarya.
 Q: Which molecule did Woese use to define the domains, and why was it suitable? | Small-subunit ribosomal RNA: every cell has it, it has the same function everywhere, and it changes slowly enough to compare very distant organisms.
-MATCH2#biology-u01-06-q1: Match each feature to its domain. | Peptidoglycan cell wall = Bacteria ; Ether-linked membrane lipids = Archaea ; Membrane-bound nucleus = Eukarya | Peptidoglycan is found only in bacterial walls; ether-linked lipids are a hallmark of archaea; a nucleus defines eukaryotes.
-M1#biology-u01-06-q2: Which organism belongs to the domain Eukarya? | A mushroom | *Escherichia coli* | A methanogen | A cyanobacterium | Fungi have nucleated cells; *E. coli* and cyanobacteria are bacteria and methanogens are archaea.
-M2#biology-u01-06-q3: A newly discovered prokaryote from a deep-sea vent has ether-linked membrane lipids and no peptidoglycan. Which domain is it most likely in? | Archaea | Bacteria | Eukarya | Viruses | These two features are characteristic of archaea; bacteria have ester-linked lipids and peptidoglycan walls.
-M3#biology-u01-06-q4: What does the finding that archaeal RNA polymerase resembles eukaryotic RNA polymerase suggest? | Archaea and eukaryotes share a more recent common ancestor with each other than either does with bacteria | Archaea evolved from eukaryotes | Bacteria are more closely related to eukaryotes | RNA polymerase evolved three separate times | Shared, derived molecular machinery indicates common ancestry; the archaea–eukaryote link is a key piece of evidence for the three-domain (and two-domain) trees.
+MATCH2#biology-u01-06-q1@2: Match each feature to its domain. | Peptidoglycan cell wall = Bacteria ; Ether-linked membrane lipids = Archaea ; Membrane-bound nucleus = Eukarya | Peptidoglycan is found only in bacterial walls; ether-linked lipids are a hallmark of archaea; a nucleus defines eukaryotes.
+M1#biology-u01-06-q2@1: Which organism belongs to the domain Eukarya? | A mushroom | *Escherichia coli* | A methanogen | A cyanobacterium | Fungi have nucleated cells; *E. coli* and cyanobacteria are bacteria and methanogens are archaea.
+M2#biology-u01-06-q3@2: A newly discovered prokaryote from a deep-sea vent has ether-linked membrane lipids and no peptidoglycan. Which domain is it most likely in? | Archaea | Bacteria | Eukarya | Viruses | These two features are characteristic of archaea; bacteria have ester-linked lipids and peptidoglycan walls.
+M3#biology-u01-06-q4@3: What does the finding that archaeal RNA polymerase resembles eukaryotic RNA polymerase suggest? | Archaea and eukaryotes share a more recent common ancestor with each other than either does with bacteria | Archaea evolved from eukaryotes by losing their nucleus and membrane-bound organelles | Bacteria are more closely related to eukaryotes than archaea are to either group | RNA polymerase evolved three separate times, once in each of the three domains | Shared, derived molecular machinery indicates common ancestry; the archaea–eukaryote link is a key piece of evidence for the three-domain (and two-domain) trees.
+SA2@2,3: Compare the three domains of life and describe the evidence that led Woese to propose them. | Bacteria and Archaea are prokaryotes with no nucleus; Eukarya have a nucleus and membrane-bound organelles. Bacteria have peptidoglycan walls and ester-linked membrane lipids; Archaea have no peptidoglycan, ether-linked lipids and eukaryote-like transcription machinery such as RNA polymerase. Woese compared small-subunit ribosomal RNA, present in all cells with the same function and changing slowly, and the sequences fell into three deep groups, showing that "prokaryotes" were two very different lineages. | prokaryote versus eukaryote ; peptidoglycan and lipid differences ; archaea share features with eukaryotes ; rRNA sequence comparison ; why rRNA suits the comparison
 
 ## The kingdoms of life
 S: Within the domain Eukarya, organisms are traditionally divided into kingdoms: animals, plants, fungi and protists. Older schemes included kingdoms for prokaryotes too. This lesson compares the kingdoms and explains why "protists" are not a natural group.
 O: Describe the main features of animals, plants, fungi and protists
 O: Classify an unfamiliar eukaryote into a kingdom from its features
 O: Explain why protists don't form a monophyletic group
+LV: Year 1 · Foundation
 PRE: The three domains of life
 H: The eukaryotic kingdoms
 - **Animalia**: multicellular, heterotrophic (ingest food), no cell walls, most move and have nerves and muscles.
@@ -233,6 +253,7 @@ X: Classify three unknown eukaryotes.
 > C: single-celled, with chloroplasts and a silica shell, lives in the sea. A protist (a diatom).
 K: Animals ingest, plants photosynthesise, fungi absorb; protists are the eukaryotes that fit none of these and don't form one natural group.
 !: Calling fungi plants. Fungi have chitin walls, can't photosynthesise and are more closely related to animals than to plants.
+EV: established | Animals, plants and fungi are natural groups, while protists are a convenient category that is not monophyletic.
 T: Heterotroph | An organism that obtains organic molecules by feeding on other organisms or their products
 T: Autotroph | An organism that makes its own organic molecules from inorganic sources, usually by photosynthesis
 T: Saprotroph | An organism that feeds by secreting enzymes onto dead matter and absorbing the products
@@ -242,16 +263,18 @@ SRC: OpenStax, Biology 2e, chapter 23 "Protists" and chapter 24 "Fungi" | second
 SRC: Whittaker R.H., "New concepts of kingdoms of organisms", Science 163:150–160 | primary | 1969
 Q: How do fungi obtain their food? | By secreting digestive enzymes onto organic matter and absorbing the products (saprotrophic nutrition), or as parasites or mutualists.
 Q: Why is "protist" not a natural group? | It includes eukaryotes that are more closely related to animals, plants or fungi than to each other, so it doesn't contain one ancestor and all its descendants.
-MATCH1#biology-u01-07-q1: Match each kingdom to its cell-wall material. | Plants = cellulose ; Fungi = chitin ; Animals = no cell wall | Cellulose walls are typical of plants, chitin of fungi, and animal cells have none.
-M1#biology-u01-07-q2: Which feature is shared by fungi and animals but not plants? | They are heterotrophic | They have cell walls of cellulose | They photosynthesise | They store starch | Fungi and animals both obtain organic molecules from other organisms; plants are autotrophs with cellulose walls and starch stores.
-M2#biology-u01-07-q3: A single-celled eukaryote lives in pond water, has chloroplasts and a flagellum, and can also engulf food in the dark. How is it classified? | As a protist | As a plant | As an animal | As a bacterium | Single-celled eukaryotes with mixed modes of nutrition, like *Euglena*, are protists.
-M3#biology-u01-07-q4: DNA studies show fungi are more closely related to animals than to plants. Which observation fits this? | Fungi and animals both store glycogen and have chitin-related biochemistry, and both are heterotrophs | Fungi have cell walls like plants | Fungi grow in soil like plants | Fungi don't move, like plants | Shared biochemistry such as glycogen storage supports the DNA evidence; walls and not moving are superficial resemblances to plants.
+MATCH1#biology-u01-07-q1@1: Match each kingdom to its cell-wall material. | Plants = cellulose ; Fungi = chitin ; Animals = no cell wall | Cellulose walls are typical of plants, chitin of fungi, and animal cells have none.
+M1#biology-u01-07-q2@1: Which feature is shared by fungi and animals but not plants? | They are heterotrophic | They have cell walls of cellulose | They photosynthesise | They store starch | Fungi and animals both obtain organic molecules from other organisms; plants are autotrophs with cellulose walls and starch stores.
+M2#biology-u01-07-q3@2: A single-celled eukaryote lives in pond water, has chloroplasts and a flagellum, and can also engulf food in the dark. How is it classified? | As a protist | As a plant | As an animal | As a bacterium | Single-celled eukaryotes with mixed modes of nutrition, like *Euglena*, are protists.
+M3#biology-u01-07-q4@3: DNA studies show fungi are more closely related to animals than to plants. Which observation fits this? | Fungi and animals both store glycogen and have chitin-related biochemistry, and both are heterotrophs | Fungi have rigid cell walls, as plants do, which shows the two share a recent ancestor | Fungi grow in soil and send out root-like threads, just as the roots of plants do | Fungi don't move from place to place, so they share a sedentary way of life with plants | Shared biochemistry such as glycogen storage supports the DNA evidence; walls and not moving are superficial resemblances to plants.
+SA2@1,3: Compare the nutrition, cell walls and storage molecules of animals, plants and fungi, and explain why protists are not a natural group. | Animals are multicellular heterotrophs that ingest food, have no cell walls and store glycogen. Plants are multicellular autotrophs that photosynthesise in chloroplasts, have cellulose walls and store starch. Fungi are heterotrophs that secrete enzymes and absorb the products, have chitin walls and store glycogen. Protists are the eukaryotes that are none of these; DNA shows that some are more closely related to animals, fungi or plants than to each other, so the group doesn't contain one ancestor and all its descendants. | animals ingest, no walls, glycogen ; plants photosynthesise, cellulose, starch ; fungi absorb, chitin, glycogen ; protists defined by exclusion ; not monophyletic
 
 ## Scientific method
 S: Science is a way of finding out about the natural world by testing ideas against evidence. This lesson describes the cycle of observation, hypothesis, prediction, experiment and conclusion, and what makes it reliable.
 O: Describe the steps of the scientific method as a cycle
 O: Distinguish a hypothesis from a theory
 O: Explain why peer review and replication matter
+LV: Year 1 · Foundation
 H: The cycle
 - **Observation**: noticing something that needs explaining.
 - **Question and hypothesis**: a testable explanation.
@@ -271,6 +294,7 @@ X: Pasteur's swan-necked flask experiment (1859) tested whether microbes arise s
 > Conclusion: the evidence refuted spontaneous generation and supported the hypothesis.
 K: Science tests falsifiable hypotheses against evidence, and its conclusions are strengthened by peer review and replication.
 !: Saying an experiment "proved" a hypothesis. Data support or fail to support it; future evidence could always revise the conclusion.
+EV: established | Science tests falsifiable hypotheses against evidence, and peer review and replication make its conclusions more reliable.
 T: Hypothesis | A testable, falsifiable explanation for an observation
 T: Theory | A broad explanation supported by a large body of evidence from many sources
 T: Peer review | Evaluation of research by independent experts before publication
@@ -280,16 +304,18 @@ SRC: OpenStax, Biology 2e, section 1.1 "The Science of Biology" | secondary | 20
 SRC: Popper K., The Logic of Scientific Discovery (English edition) | secondary | 1959
 Q: What makes a hypothesis scientific? | It is testable and falsifiable: some possible result would show it to be wrong.
 Q: How is a scientific theory different from a hypothesis? | A theory is a broad explanation supported by many independent lines of evidence; a hypothesis is a single testable proposal.
-SEQ1#biology-u01-08-q1: Put the stages of a scientific investigation in order. | Make an observation ; Form a hypothesis ; Make a prediction ; Carry out an experiment ; Analyse the results ; Share the findings for peer review | Each step depends on the one before; peer review then feeds new questions.
-M1#biology-u01-08-q2: In science, a theory is… | a well-supported explanation based on a large body of evidence | an untested guess | a hypothesis that has been proved true | the same as a law | Scientific theories such as cell theory are among the most reliable knowledge science has.
-M2#biology-u01-08-q3: Which hypothesis is falsifiable? | Plants grown in red light grow taller than plants grown in blue light | Plants grow because of an undetectable life force | Some plants may respond to music in some way | Plants are beautiful | Only the first makes a specific prediction that an experiment could show to be wrong.
-M3#biology-u01-08-q4: In Pasteur's experiment, what was the purpose of breaking the neck of a flask after the broth had stayed clear? | To show that the broth could still support microbial growth once dust could enter, ruling out the idea that boiling had destroyed its "vital" capacity | To sterilise the broth | To let the broth cool | To measure the volume of broth | Breaking the neck tests the alternative explanation: the broth was still able to support life, so the earlier absence of microbes was due to excluding airborne dust.
+SEQ1#biology-u01-08-q1@1: Put the stages of a scientific investigation in order. | Make an observation ; Form a hypothesis ; Make a prediction ; Carry out an experiment ; Analyse the results ; Share the findings for peer review | Each step depends on the one before; peer review then feeds new questions.
+M1#biology-u01-08-q2@2: In science, a theory is… | a well-supported explanation based on a large body of evidence | an untested guess that scientists hope to confirm later | a hypothesis that has been proved true by an experiment | the same as a law, describing a pattern in nature | Scientific theories such as cell theory are among the most reliable knowledge science has.
+M2#biology-u01-08-q3@1: Which hypothesis is falsifiable? | Plants grown in red light grow taller than plants grown in blue light | Plants grow because of an undetectable life force | Some plants may respond to music in some way | Plants are beautiful | Only the first makes a specific prediction that an experiment could show to be wrong.
+M3#biology-u01-08-q4@1: In Pasteur's experiment, what was the purpose of breaking the neck of a flask after the broth had stayed clear? | To show that the broth could still support microbial growth once dust could enter, ruling out the idea that boiling had destroyed its "vital" capacity | To sterilise the broth again, because air entering through the broken neck kills any microbes that survived boiling | To let the broth cool faster, because microbes can only be detected in broth kept at room temperature | To measure the volume of broth that had evaporated through the curved neck during the experiment | Breaking the neck tests the alternative explanation: the broth was still able to support life, so the earlier absence of microbes was due to excluding airborne dust.
+SA2@1,2,3: Use Pasteur's swan-necked flask experiment to explain the scientific method, including what makes a hypothesis scientific and why peer review and replication matter. | Pasteur observed that broth spoils and hypothesised that the microbes came from microbes in the air. He predicted that boiled broth in a flask whose curved neck trapped dust would stay clear, and that breaking the neck would let it spoil; the results matched, refuting spontaneous generation. The hypothesis was falsifiable, because cloudy broth with the neck intact would have refuted it. Evidence supports rather than proves a hypothesis, and other scientists repeating and scrutinising the work through peer review and replication is what turns a single finding into a well-supported theory. | observation, hypothesis and prediction ; result and conclusion ; falsifiability ; support not proof ; peer review and replication
 
 ## Hypotheses and predictions
 S: A good investigation starts with a clear hypothesis and a precise prediction. This lesson shows how to write testable hypotheses, null and alternative hypotheses, and predictions that follow from them.
 O: Write a testable hypothesis and a prediction for an investigation
 O: Distinguish null and alternative hypotheses
 O: Explain why a prediction must follow logically from the hypothesis
+LV: Year 1 · Foundation
 PRE: Scientific method
 H: From hypothesis to prediction
 P: A **hypothesis** proposes an explanation ("enzyme activity depends on temperature because molecules collide more often and with more energy as temperature rises"). A **prediction** states what you expect to observe in a particular test if the hypothesis is right, usually as "if … then …": "if temperature affects amylase activity, then starch will be broken down faster at 35 °C than at 15 °C".
@@ -306,6 +332,7 @@ X: Write a hypothesis, prediction and null hypothesis for an investigation of li
 > Null hypothesis: light intensity has no effect on the rate of oxygen release.
 K: A hypothesis explains, a prediction states the expected result of a specific test, and the null hypothesis is what a statistical test tries to reject.
 !: Writing a prediction with no reason behind it ("the plant will make more bubbles"). A hypothesis needs a biological explanation; the prediction follows from it.
+EV: established | Statistical tests assess the null hypothesis; failing to reject it is not proof that it is true.
 T: Null hypothesis | The hypothesis that there is no effect or no difference; it is what a statistical test assesses
 T: Prediction | The specific outcome expected in a test if the hypothesis is correct
 SUM: Hypotheses explain; predictions are "if … then …" statements about a specific test.
@@ -314,16 +341,18 @@ SRC: OpenStax, Biology 2e, section 1.1 "The Process of Science" | secondary | 20
 SRC: Diez D., Çetinkaya-Rundel M. and Barr C., OpenIntro Statistics, 4th edition, chapter 5 | secondary | 2019 | https://www.openintro.org/book/os/
 Q: What is a null hypothesis? | A statement that there is no difference or no relationship between the variables; statistical tests assess whether the data allow it to be rejected.
 Q: How is a prediction different from a hypothesis? | A hypothesis explains why something happens; a prediction states the specific result expected in a particular test if the hypothesis is correct.
-M1#biology-u01-09-q1: Which is a null hypothesis? | There is no difference in growth between plants given fertiliser and plants without it | Fertiliser increases plant growth | Fertilised plants will be at least 10% taller | Plants need nitrogen | The null hypothesis states no effect; the others state an effect or a fact.
-M2#biology-u01-09-q2: A student's hypothesis is that caffeine increases heart rate in water fleas. Which prediction follows from it? | Water fleas in caffeine solution will have a higher heart rate than those in pond water alone | Water fleas will die in caffeine | Caffeine is a stimulant | Heart rate depends on temperature | The prediction must name the specific measurable outcome of the test that the hypothesis implies.
-M3#biology-u01-09-q3: A test gives p = 0.30 for the difference between two groups. What is the correct conclusion? | There is not enough evidence to reject the null hypothesis; the difference could be due to chance | The null hypothesis has been proved true | The alternative hypothesis is proved | The experiment was a failure | A large p-value means data like these would be common if there were no effect; failing to reject H₀ isn't proof that H₀ is true.
-TF2#biology-u01-09-q4: A p-value of 0.03 means there is a 3% chance that the null hypothesis is true. | false | The p-value is the probability of getting results at least this extreme if the null hypothesis were true, not the probability that the null hypothesis is true.
+M1#biology-u01-09-q1@2: Which is a null hypothesis? | There is no difference in growth between plants given fertiliser and plants without it | Fertiliser increases plant growth because it supplies nitrogen and other minerals | Fertilised plants will be at least 10% taller than unfertilised plants after a month | Plants need nitrate ions from the soil to make amino acids and proteins | The null hypothesis states no effect; the others state an effect or a fact.
+M2#biology-u01-09-q2@3: A student's hypothesis is that caffeine increases heart rate in water fleas. Which prediction follows from it? | Water fleas in caffeine solution will have a higher heart rate than those in pond water alone | Water fleas will die if they are left in a strong caffeine solution for too long | Caffeine is a stimulant found in coffee, tea and many soft drinks | Heart rate in water fleas depends on the temperature of the water | The prediction must name the specific measurable outcome of the test that the hypothesis implies.
+M3#biology-u01-09-q3@2: A test gives p = 0.30 for the difference between two groups. What is the correct conclusion? | There is not enough evidence to reject the null hypothesis; the difference could be due to chance | The null hypothesis has been proved true, so there is definitely no difference | The alternative hypothesis is proved, because the p-value is above zero | The experiment was a failure and its results should not be reported | A large p-value means data like these would be common if there were no effect; failing to reject H₀ isn't proof that H₀ is true.
+TF2#biology-u01-09-q4@2: A p-value of 0.03 means there is a 3% chance that the null hypothesis is true. | false | The p-value is the probability of getting results at least this extreme if the null hypothesis were true, not the probability that the null hypothesis is true.
+SA2@1,2,3: A student investigates whether salt concentration affects the germination of cress seeds. Write a hypothesis, a prediction and a null hypothesis, and explain how a statistical test would be used. | Hypothesis: salt lowers the water potential of the medium, so seeds take up less water and fewer germinate as salt concentration rises. Prediction: if salt affects germination, then a lower percentage of seeds will germinate in 2% salt solution than in distilled water. Null hypothesis: salt concentration has no effect on the percentage of seeds that germinate. A statistical test calculates how likely the observed data would be if the null hypothesis were true; if p < 0.05 the null hypothesis is rejected in favour of the alternative, otherwise there is not enough evidence to reject it. | hypothesis with a biological reason ; "if … then" prediction for the specific test ; null hypothesis of no effect ; p < 0.05 threshold ; not rejecting H₀ isn't proving it
 
 ## Variables and experimental design
 S: A fair experiment changes one factor, measures its effect on another and keeps everything else the same. This lesson defines independent, dependent and control variables and shows how to design a valid experiment.
 O: Identify independent, dependent and control variables in an investigation
 O: Design an experiment that tests one variable fairly
 O: Explain the role of replicates and sample size
+LV: Year 1 · Application
 PRE: Hypotheses and predictions
 H: Types of variable
 - **Independent variable**: the one you deliberately change (temperature).
@@ -346,6 +375,7 @@ X: Design an experiment to find the effect of temperature on the activity of the
 K: Change one variable, measure another, control the rest, and repeat.
 IX: enzyme-kinetics
 !: Calling the temperature of the room a control. A control variable is kept constant on purpose; the room temperature is only a control variable if you hold it constant, for example with a water bath.
+EV: established | Fair tests change one variable, control the others and use replicates, controls and randomisation.
 T: Independent variable | The variable deliberately changed by the experimenter
 T: Dependent variable | The variable measured to see whether it changes
 T: Confounding variable | An uncontrolled variable that varies with the independent variable and could account for the result
@@ -355,17 +385,19 @@ SRC: OpenStax, Biology 2e, section 1.1 "The Process of Science" | secondary | 20
 SRC: Ruxton G.D. and Colegrave N., Experimental Design for the Life Sciences, 4th edition | secondary | 2016
 Q: What is a confounding variable? | A factor that changes along with the independent variable and could be the real cause of the change in the dependent variable.
 Q: Why are replicates used? | To estimate the variation in results, identify anomalies and give a more reliable mean.
-MATCH1#biology-u01-10-q1: Match each variable to its role in an investigation of light intensity and stomatal opening. | Distance of the lamp = independent variable ; Width of stomata = dependent variable ; Species of plant = control variable | The lamp distance is changed, stomatal width is measured, and the species is kept the same.
-M1#biology-u01-10-q2: In an investigation of how pH affects the rate of an enzyme reaction, the dependent variable is… | the rate of the reaction | the pH | the temperature | the volume of enzyme | The rate is what is measured; pH is the independent variable, and temperature and enzyme volume should be controlled.
-M2#biology-u01-10-q3: Students find that plants nearer the window grew taller than plants at the back of the room, and conclude that light causes growth. What is the main weakness? | Temperature and air flow may also differ near the window, so they are possible confounding variables | They used too many plants | Plants don't need light | They should have measured mass instead | Without controlling other factors that vary with position, the difference can't be attributed to light alone.
-M3#biology-u01-10-q4: Why is it better to randomise which seedlings go into each treatment group? | So that unknown differences between seedlings are spread evenly and don't bias the comparison | So the experiment takes less time | So that every group has the same mean height before starting | Because the null hypothesis requires it | Random allocation prevents systematic bias from factors the experimenter doesn't know about or can't control.
-SA3#biology-u01-10-q5: A student wants to test whether a new fertiliser increases the yield of tomato plants. Describe a fair experimental design. | Use two groups of the same variety of tomato plant, randomly allocated, in the same conditions (light, temperature, water, pot size and compost). One group gets the fertiliser at the recommended dose; the control group gets the same volume of water without fertiliser. Use several plants per group (for example 10) and measure the mass of tomatoes per plant over the same period, then compare the means with a statistical test. | a control group without fertiliser ; random allocation of plants ; control variables listed ; replicates in each group ; a measurable dependent variable such as fruit mass ; a statistical comparison
+MATCH1#biology-u01-10-q1@1: Match each variable to its role in an investigation of light intensity and stomatal opening. | Distance of the lamp = independent variable ; Width of stomata = dependent variable ; Species of plant = control variable | The lamp distance is changed, stomatal width is measured, and the species is kept the same.
+M1#biology-u01-10-q2@1: In an investigation of how pH affects the rate of an enzyme reaction, the dependent variable is… | the rate of the reaction | the pH | the temperature | the volume of enzyme | The rate is what is measured; pH is the independent variable, and temperature and enzyme volume should be controlled.
+M2#biology-u01-10-q3@1: Students find that plants nearer the window grew taller than plants at the back of the room, and conclude that light causes growth. What is the main weakness? | Temperature and air flow may also differ near the window, so they are possible confounding variables | They used too many plants | Plants don't need light | They should have measured mass instead | Without controlling other factors that vary with position, the difference can't be attributed to light alone.
+M3#biology-u01-10-q4@2,3: Why is it better to randomise which seedlings go into each treatment group? | So that unknown differences between seedlings are spread evenly and don't bias the comparison | So the experiment takes less time | So that every group has the same mean height before starting | Because the null hypothesis requires it | Random allocation prevents systematic bias from factors the experimenter doesn't know about or can't control.
+SA3#biology-u01-10-q5@2,3: A student wants to test whether a new fertiliser increases the yield of tomato plants. Describe a fair experimental design. | Use two groups of the same variety of tomato plant, randomly allocated, in the same conditions (light, temperature, water, pot size and compost). One group gets the fertiliser at the recommended dose; the control group gets the same volume of water without fertiliser. Use several plants per group (for example 10) and measure the mass of tomatoes per plant over the same period, then compare the means with a statistical test. | a control group without fertiliser ; random allocation of plants ; control variables listed ; replicates in each group ; a measurable dependent variable such as fruit mass ; a statistical comparison
+M2@3: A student measures the effect of temperature on enzyme activity with one test tube at each of five temperatures. What is the main benefit of using three tubes at each temperature instead? | Variation can be estimated and anomalies spotted, giving a more reliable mean | It increases the accuracy of the thermometer used in each water bath | It allows the student to change two variables at the same time | It removes the need for any control variables in the experiment | Replicates show how much results vary at each temperature, reveal anomalies and give a more reliable mean; they don't fix a faulty instrument.
 
 ## Controls and reproducibility
 S: Controls show that a result is caused by the factor being tested and not by something else. Reproducibility, getting the same result when an experiment is repeated by others, is what turns a single finding into trusted knowledge.
 O: Distinguish positive, negative and placebo controls
 O: Explain the difference between repeatability and reproducibility
 O: Describe why the "reproducibility crisis" matters and how it is being addressed
+LV: Year 1 · Application
 PRE: Variables and experimental design
 H: Kinds of control
 - **Negative control**: a treatment expected to give no effect (enzyme boiled to denature it, or no enzyme), showing that any effect needs the active factor.
@@ -381,6 +413,7 @@ X: Design the controls for a test of whether a plant extract kills bacteria on a
 > Test: discs with the extract, repeated on several plates, with the zones measured blind.
 K: Controls rule out alternative explanations; reproducibility by others is what makes a result reliable knowledge.
 !: Thinking a control group is "the group where nothing happens". A control is chosen to answer a specific question; positive controls are supposed to show an effect.
+EV: established | Controls rule out alternative explanations, and large replication projects have found that many published findings are hard to reproduce.
 T: Negative control | A treatment expected to produce no effect, used to show that an effect depends on the factor tested
 T: Positive control | A treatment known to produce an effect, used to show the method works
 T: Reproducibility | Getting consistent results when an experiment is repeated independently by others
@@ -390,16 +423,18 @@ SRC: Baker M., "1,500 scientists lift the lid on reproducibility", Nature 533:45
 SRC: Errington T.M. et al., "Investigating the replicability of preclinical cancer biology", eLife 10:e71601 | primary | 2021 | https://doi.org/10.7554/eLife.71601
 Q: What is the purpose of a positive control? | To show that the method can detect an effect when one is present, so a negative result isn't just a failure of the method.
 Q: What is the difference between repeatable and reproducible? | Repeatable: the same person gets similar results with the same method; reproducible: other people, possibly with different methods, get similar results.
-M1#biology-u01-11-q1: In an experiment on the effect of amylase on starch, which is the best negative control? | Starch solution with boiled amylase | Starch solution with active amylase | Starch solution at a higher temperature | A different enzyme | Boiled (denatured) amylase shows that starch breakdown needs active enzyme, with all other conditions the same.
-M2#biology-u01-11-q2: A drug trial gives one group the drug and another group an identical-looking sugar pill, and neither patients nor doctors know who gets which. This design is called… | a double-blind, placebo-controlled trial | an observational study | a positive control | a pilot study | A placebo removes expectation effects, and double-blinding stops bias from both patients and researchers.
-M3#biology-u01-11-q3: A laboratory reports that a gene knock-out doubles lifespan in mice, but three other laboratories find no effect. What is the most appropriate conclusion? | The original result is doubtful until it is reproduced; possible causes include chance, differences in conditions or bias | The original result is correct because it was published first | The other laboratories must have made mistakes | The gene has no function | Failure to reproduce weakens confidence in a finding; investigating the differences and running larger studies is the way forward.
-MS2#biology-u01-11-q4: Which practices improve the reproducibility of research? | Pre-registering the study plan ; Sharing raw data and analysis code ; Using adequate sample sizes | Reporting only significant results ; Changing the analysis until p < 0.05 ; Using as few replicates as possible | Transparency and adequate power make results checkable and reliable; selective reporting and flexible analysis produce false positives.
+M1#biology-u01-11-q1@1: In an experiment on the effect of amylase on starch, which is the best negative control? | Starch solution with boiled amylase | Starch solution with active amylase | Starch solution at a higher temperature | A different enzyme | Boiled (denatured) amylase shows that starch breakdown needs active enzyme, with all other conditions the same.
+M2#biology-u01-11-q2@1: A drug trial gives one group the drug and another group an identical-looking sugar pill, and neither patients nor doctors know who gets which. This design is called… | a double-blind, placebo-controlled trial | a randomised observational study | a positive control experiment | a single-blind pilot study | A placebo removes expectation effects, and double-blinding stops bias from both patients and researchers.
+M3#biology-u01-11-q3@2,3: A laboratory reports that a gene knock-out doubles lifespan in mice, but three other laboratories find no effect. What is the most appropriate conclusion? | The original result is doubtful until it is reproduced; possible causes include chance, differences in conditions or bias | The original result is correct because it was published first | The other laboratories must have made mistakes | The gene has no function | Failure to reproduce weakens confidence in a finding; investigating the differences and running larger studies is the way forward.
+MS2#biology-u01-11-q4@3: Which practices improve the reproducibility of research? | Pre-registering the study plan ; Sharing raw data and analysis code ; Using adequate sample sizes | Reporting only significant results ; Changing the analysis until p < 0.05 ; Using as few replicates as possible | Transparency and adequate power make results checkable and reliable; selective reporting and flexible analysis produce false positives.
+SA2@1,2,3: A company claims that a herbal extract cures colds. Describe how a trial should be designed and what would be needed before the claim could be trusted. | Volunteers should be randomly allocated to the extract or to a placebo that looks and tastes identical, so that expectations don't bias the results, and the trial should be double-blind, so neither volunteers nor researchers know who receives what. Enough participants are needed to detect a real effect, and the plan should be pre-registered. The result is repeatable if the same team gets it again, but it becomes trusted knowledge only when it is reproduced by independent groups, with data shared and negative results published. | random allocation ; placebo control ; double-blinding ; adequate sample size or pre-registration ; independent reproduction
 
 ## Accuracy and precision
 S: Accuracy is how close a measurement is to the true value; precision is how close repeated measurements are to each other. A measurement can be precise but inaccurate. This lesson separates the two and links them to types of error.
 O: Distinguish accuracy, precision and resolution
 O: Relate random error to precision and systematic error to accuracy
 O: Suggest how to improve the accuracy and precision of a measurement
+LV: Year 1 · Application
 PRE: Variables and experimental design
 H: Definitions
 - **Accuracy**: closeness of a measurement (or mean) to the true value.
@@ -418,6 +453,7 @@ X: A student times the same reaction five times: 41, 43, 42, 44 and 40 s. Find t
 > Percentage uncertainty = 2 / 42 × 100 ≈ 4.8%.
 K: Random error affects precision and is reduced by repeats; systematic error affects accuracy and is reduced by calibration.
 !: Thinking that repeating measurements improves accuracy. Repeats reduce the effect of random error; a systematic error stays in every reading.
+EV: established | Random errors reduce precision and are reduced by repeats; systematic errors reduce accuracy and are removed by calibration.
 T: Accuracy | How close a measured value is to the true value
 T: Precision | How close repeated measurements are to each other
 T: Systematic error | An error that shifts all measurements in the same direction
@@ -427,16 +463,18 @@ SRC: BIPM, Evaluation of measurement data: Guide to the expression of uncertaint
 SRC: Royal Society of Biology, Biological Nomenclature, 4th edition (measurement and units sections) | guidance | 2009
 Q: A balance always reads 0.2 g too high. What type of error is this and how could it be corrected? | A systematic error; calibrate (zero) the balance, or subtract 0.2 g from each reading.
 Q: How does taking more repeats improve a result? | It reduces the effect of random errors on the mean and makes anomalies easier to spot; it doesn't remove systematic error.
-NUM2#biology-u01-12-q1: A leaf is measured as 52 mm long using a ruler with 1 mm divisions. Taking the uncertainty as half the resolution, what is the percentage uncertainty? | 0.96 | 3% | % | The uncertainty is ± 0.5 mm, and 0.5 / 52 × 100 = 0.96%.
-M1#biology-u01-12-q2: Repeated measurements that are very close together but far from the true value are… | precise but not accurate | accurate but not precise | accurate and precise | neither accurate nor precise | Low spread means precise; being far from the true value means inaccurate, usually because of a systematic error.
-M2#biology-u01-12-q3: Students always read a measuring cylinder from above the meniscus. What effect does this have? | A systematic error that makes all volume readings inaccurate in the same direction | A random error that reduces precision | No effect because the error averages out | It improves the resolution | Reading from the same wrong angle every time (parallax) shifts every reading the same way.
-M3#biology-u01-12-q4: Two methods measure glucose in the same sample. Method A gives 5.1, 5.0, 5.2 mmol/L; method B gives 4.4, 5.8, 5.0 mmol/L. The true value is 5.0 mmol/L. Which statement is correct? | A is more precise, and both have means close to the true value | B is more precise | A is inaccurate | B is more accurate because it has a larger range | A's readings vary much less (higher precision); both means are about 5.1 and 5.07, close to the true value.
+NUM2#biology-u01-12-q1@1: A leaf is measured as 52 mm long using a ruler with 1 mm divisions. Taking the uncertainty as half the resolution, what is the percentage uncertainty? | 0.96 | 3% | % | The uncertainty is ± 0.5 mm, and 0.5 / 52 × 100 = 0.96%.
+M1#biology-u01-12-q2@1: Repeated measurements that are very close together but far from the true value are… | precise but not accurate | accurate but not precise | accurate and precise | neither accurate nor precise | Low spread means precise; being far from the true value means inaccurate, usually because of a systematic error.
+M2#biology-u01-12-q3@2: Students always read a measuring cylinder from above the meniscus. What effect does this have? | A systematic error that makes all volume readings inaccurate in the same direction | A random error that reduces precision but not accuracy | No effect, because the error averages out over many readings | It improves the resolution of the measuring cylinder | Reading from the same wrong angle every time (parallax) shifts every reading the same way.
+M3#biology-u01-12-q4@1,2: Two methods measure glucose in the same sample. Method A gives 5.1, 5.0, 5.2 mmol/L; method B gives 4.4, 5.8, 5.0 mmol/L. The true value is 5.0 mmol/L. Which statement is correct? | A is more precise, and both have means close to the true value | B is more precise | A is inaccurate | B is more accurate because it has a larger range | A's readings vary much less (higher precision); both means are about 5.1 and 5.07, close to the true value.
+SA2@2,3: A student uses a stopwatch to time how long a reaction takes and a balance that has not been zeroed. Explain which type of error each introduces and how each could be reduced. | Starting and stopping the stopwatch by hand introduces random error from reaction time, which varies from one reading to the next and reduces precision; it is reduced by taking repeats and calculating a mean, or by using a data logger or colorimeter that times automatically. A balance that has not been zeroed adds a systematic error, shifting every reading by the same amount and reducing accuracy; repeating doesn't help, so the balance must be zeroed or calibrated, or the offset subtracted. | reaction time is a random error ; random error reduces precision ; repeats and a mean, or automatic timing ; unzeroed balance is systematic ; calibrate or zero, repeats don't help
 
 ## Reliability and validity
 S: A result is reliable if it can be obtained consistently, and valid if it actually measures what it claims to and answers the question asked. This lesson explains both, and how evidence is judged.
 O: Define reliability and validity and give examples of threats to each
 O: Evaluate whether a conclusion is supported by the evidence
 O: Explain why correlation doesn't prove causation
+LV: Year 1 · Application
 PRE: Controls and reproducibility
 H: Reliability
 P: Results are reliable when repeated measurements, repeated experiments and other investigators give consistent results. Reliability improves with repeats, larger samples, standard procedures and precise instruments.
@@ -453,6 +491,7 @@ X: Evaluate the claim "students who sleep more get better exam results, so more 
 > Causation would need, for example, an experiment that changes sleep and measures the effect, plus a mechanism (sleep's role in memory consolidation).
 K: Reliable means consistent; valid means it measures and tests what it claims; correlation needs extra evidence before it can show cause.
 !: Calling a result valid because it was repeated many times. A flawed method repeated many times gives reliable but invalid results.
+EV: established | Correlation alone does not show causation; controlled experiments, a mechanism and consistent results are needed.
 T: Reliability | The consistency of results when measurements or experiments are repeated
 T: Validity | Whether a measurement or experiment measures what it claims to, and whether conclusions follow from the data
 T: Correlation | A statistical association between two variables
@@ -462,16 +501,18 @@ SRC: Hill A.B., "The environment and disease: association or causation?", Procee
 SRC: OpenStax, Introductory Statistics 2e, chapter 12 "Linear Regression and Correlation" | secondary | 2023 | https://openstax.org/details/books/introductory-statistics-2e
 Q: Give one reason a correlation between two variables might not mean that one causes the other. | A third (confounding) variable might cause both, or the association might arise by chance.
 Q: What makes a measurement valid? | It measures the quantity it is meant to measure, without being affected by other factors.
-M1#biology-u01-13-q1: Results that are similar each time an experiment is repeated are described as… | reliable | valid | accurate | biased | Consistency on repetition is reliability; validity depends on whether the method measures the right thing fairly.
-M2#biology-u01-13-q2: Counting oxygen bubbles from pondweed is said to be less valid than collecting the gas in a syringe. Why? | Bubbles vary in size, so the count doesn't measure the volume of oxygen accurately | Counting takes longer | Pondweed doesn't release oxygen | Syringes are more expensive | The count measures number, not volume, so it is a poorer measure of the rate of oxygen production.
-M3#biology-u01-13-q3: A study finds that people who drink more coffee have lower rates of a disease. Which additional evidence would most support a causal link? | A randomised controlled trial in which assigning people to drink coffee lowers the disease rate, with a plausible biological mechanism | A larger observational study with the same correlation | A survey of coffee preferences | A study showing coffee drinkers are wealthier | Randomisation removes confounding, and a mechanism makes causation plausible; more correlation alone can't separate cause from confounding.
-TF2#biology-u01-13-q4: A method can be reliable but not valid. | true | A consistently wrong method (for example, a miscalibrated instrument used every time) gives reliable but invalid results.
+M1#biology-u01-13-q1@1: Results that are similar each time an experiment is repeated are described as… | reliable | valid | accurate | biased | Consistency on repetition is reliability; validity depends on whether the method measures the right thing fairly.
+M2#biology-u01-13-q2@1: Counting oxygen bubbles from pondweed is said to be less valid than collecting the gas in a syringe. Why? | Bubbles vary in size, so the count doesn't measure the volume of oxygen accurately | Counting takes longer than reading the volume from a gas syringe | Pondweed doesn't release oxygen, only carbon dioxide, in bright light | Syringes are more expensive, so fewer repeats can be done | The count measures number, not volume, so it is a poorer measure of the rate of oxygen production.
+M3#biology-u01-13-q3@3: A study finds that people who drink more coffee have lower rates of a disease. Which additional evidence would most support a causal link? | A randomised controlled trial in which assigning people to drink coffee lowers the disease rate, with a plausible biological mechanism | A larger observational study of many more people finding the same correlation between coffee and the disease | A survey of coffee preferences showing which drinks people with and without the disease like best | A study showing that coffee drinkers are wealthier, on average, than people who drink little coffee | Randomisation removes confounding, and a mechanism makes causation plausible; more correlation alone can't separate cause from confounding.
+TF2#biology-u01-13-q4@1: A method can be reliable but not valid. | true | A consistently wrong method (for example, a miscalibrated instrument used every time) gives reliable but invalid results.
+SA3@1,2,3: A newspaper reports that "children who eat breakfast do better at school, so breakfast boosts learning". Evaluate this conclusion. | The data show a correlation, which could arise because breakfast improves learning, because a third factor causes both, or by chance. Possible confounding variables include family income, sleep and parental support, which may lead to both eating breakfast and doing well. The claim is only as reliable as the data: check the sample size and whether other studies agree, and whether self-reported breakfast and school performance were measured validly. A causal conclusion needs further evidence, such as a randomised trial providing breakfast, a plausible mechanism and consistent results. | correlation isn't causation ; named confounding variable ; reliability of data ; validity of measurement ; evidence needed for a causal claim
 
 ## Biological measurements
 S: Biologists measure things across an enormous range of scales, from nanometre-sized molecules to whole ecosystems. This lesson covers how sizes, masses, volumes and rates are measured, and how to calculate magnification.
 O: Choose suitable instruments and units for biological measurements
 O: Calculate actual size from magnification and image size
 O: Use a calibrated eyepiece graticule to measure cells
+LV: Year 1 · Application
 PRE: Accuracy and precision
 H: Scales in biology
 - Molecules: nanometres (nm); a protein is about 2–10 nm across.
@@ -491,6 +532,7 @@ X: At ×400, 40 graticule divisions line up with 10 stage-micrometer divisions o
 > Cell length = 24 × 2.5 = 60 µm.
 K: Use magnification = image ÷ actual with matching units, and calibrate a graticule at every objective.
 !: Forgetting to convert units before calculating magnification, such as dividing millimetres by micrometres.
+EV: established | Magnification is image size divided by actual size, and the resolution of light microscopes is limited to about 0.2 µm by the wavelength of light.
 T: Magnification | How many times larger an image is than the actual object
 T: Resolution (microscopy) | The smallest distance between two points that can still be seen as separate
 T: Eyepiece graticule | A scale in a microscope eyepiece, calibrated with a stage micrometer
@@ -500,16 +542,18 @@ SRC: OpenStax, Biology 2e, section 4.1 "Studying Cells" | secondary | 2018 | htt
 SRC: Royal Society of Biology, Biological Nomenclature, 4th edition | guidance | 2009
 Q: State the formula linking magnification, image size and actual size. | Magnification = image size ÷ actual size (in the same units).
 Q: Why must an eyepiece graticule be recalibrated when the objective is changed? | The graticule's scale stays the same size in the eyepiece, so the real distance per division changes with magnification.
-NUM2#biology-u01-14-q1: A cell is 8 mm wide in a drawing and actually 40 µm wide. What is the magnification of the drawing? | 200 | 0.5% | × | 8 mm = 8,000 µm; 8,000 ÷ 40 = ×200.
-M1#biology-u01-14-q2: Which unit is most suitable for the diameter of a red blood cell (about 7–8)? | micrometres | nanometres | millimetres | metres | Red blood cells are about 7–8 µm across: nanometres would give thousands, millimetres a tiny fraction.
-M2#biology-u01-14-q3: A bacterium is 2 µm long. In a photograph it is 30 mm long. What is the magnification? | ×15,000 | ×150 | ×1,500 | ×15 | Convert to the same units first: 30 mm = 30,000 µm, and 30,000 ÷ 2 = ×15,000.
-M3#biology-u01-14-q4: Two organelles 50 nm apart appear as one blurred spot under a light microscope at ×1,500. Why? | The light microscope's resolution (about 200 nm) is coarser than their separation, so extra magnification can't separate them | The magnification is too low | The specimen wasn't stained | Organelles can't be seen with light | Resolution is limited by the wavelength of light; beyond it, magnifying only enlarges the blur.
+NUM2#biology-u01-14-q1@2: A cell is 8 mm wide in a drawing and actually 40 µm wide. What is the magnification of the drawing? | 200 | 0.5% | × | 8 mm = 8,000 µm; 8,000 ÷ 40 = ×200.
+M1#biology-u01-14-q2@1: Which unit is most suitable for the diameter of a red blood cell (about 7–8)? | micrometres | nanometres | millimetres | metres | Red blood cells are about 7–8 µm across: nanometres would give thousands, millimetres a tiny fraction.
+M2#biology-u01-14-q3@2: A bacterium is 2 µm long. In a photograph it is 30 mm long. What is the magnification? | ×15,000 | ×150 | ×1,500 | ×15 | Convert to the same units first: 30 mm = 30,000 µm, and 30,000 ÷ 2 = ×15,000.
+M3#biology-u01-14-q4@1,2: Two organelles 50 nm apart appear as one blurred spot under a light microscope at ×1,500. Why? | The light microscope's resolution (about 200 nm) is coarser than their separation, so extra magnification can't separate them | The magnification is too low; increasing it to ×3,000 would show the two organelles separately | The specimen wasn't stained, so the organelles have too little contrast to be told apart | Organelles can't be seen with light microscopes at all; only electron microscopes can show them | Resolution is limited by the wavelength of light; beyond it, magnifying only enlarges the blur.
+SA2@2,3: Explain how an eyepiece graticule is calibrated and used to measure a cell, and why it must be recalibrated for each objective lens. | The eyepiece graticule's divisions have no fixed real size. A stage micrometer, a slide with a scale of known divisions (often 10 µm), is lined up with the graticule; if 40 graticule divisions match 10 micrometer divisions (100 µm), each graticule division is 2.5 µm. The cell is then measured in graticule divisions and multiplied by this value, so 24 divisions is 60 µm. The graticule scale stays the same size in the eyepiece while the specimen image changes with the objective, so the value of each division must be recalculated at every magnification. | stage micrometer of known size ; line up the two scales ; calculate µm per division ; multiply the cell's divisions ; recalibrate because the real distance per division changes with magnification
 
 ## Units and conversions
 S: Science uses the International System of Units (SI) so that measurements can be compared worldwide. This lesson covers base units, prefixes and the conversions biologists use most.
 O: Use SI base units and prefixes correctly
 O: Convert between units of length, mass, volume and concentration
 O: Express rates with appropriate units
+LV: Year 1 · Application
 PRE: Biological measurements
 H: SI base units
 - Length: metre (m). Mass: kilogram (kg). Time: second (s). Temperature: kelvin (K). Amount of substance: mole (mol).
@@ -527,24 +571,28 @@ H: Rates and concentrations
 P: A rate is a change divided by time, for example cm³ of oxygen per minute (cm³ min⁻¹). Concentrations are often in mol dm⁻³ (mol/L), or mass per volume such as g dm⁻³ or mg/mL.
 K: Use SI units and prefixes; each prefix step from milli to pico is ×1,000, and area and volume factors are squared and cubed.
 !: Converting cm² to m² by dividing by 100. It's 100² = 10,000, because area has two dimensions.
+EV: established | SI units and prefixes are defined internationally by the BIPM, and area and volume conversion factors are the square and cube of the length factor.
 T: SI units | The International System of Units, based on seven base units such as the metre, kilogram and second
 T: Prefix | A symbol that multiplies a unit by a power of ten, such as micro- (10⁻⁶)
 SUM: Know the base units and prefixes from giga to pico.
 SUM: Square or cube the factor for area or volume conversions.
 SRC: BIPM, The International System of Units (SI Brochure), 9th edition | standard | 2019 | https://www.bipm.org/en/publications/si-brochure
+SRC: OpenStax, College Physics 2e, section 1.2 "Physical Quantities and Units" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/1-2-physical-quantities-and-units
 Q: How many micrometres are there in a millimetre? | 1,000.
 Q: How many cm³ are there in 1 dm³? | 1,000.
-NUM1#biology-u01-15-q1: Convert 3.5 mm to micrometres. | 3500 | 0 | µm | 1 mm = 1,000 µm, so 3.5 mm = 3,500 µm.
-NUM2#biology-u01-15-q2: A leaf has an area of 24 cm². What is this in m²? | 0.0024 | 1% | m² | 1 m² = 10,000 cm², so 24 ÷ 10,000 = 0.0024 m².
-M1#biology-u01-15-q3: Which prefix means 10⁻⁹? | nano | micro | pico | milli | Nano is 10⁻⁹; micro is 10⁻⁶ and pico 10⁻¹².
-M2#biology-u01-15-q4: A plant releases 12 cm³ of oxygen in 4 minutes. What is the rate in cm³ per second? | 0.05 | 3 | 0.33 | 48 | Four minutes is 240 s, so the rate is 12 cm³ ÷ 240 s = 0.05 cm³ s⁻¹.
-M3#biology-u01-15-q5: A cube-shaped cell has sides of 20 µm. What is its volume in mm³? | 8 × 10⁻⁶ mm³ | 8 × 10⁻³ mm³ | 8,000 mm³ | 0.02 mm³ | Convert the side first: 20 µm = 0.02 mm, then cube it: 0.02³ = 8 × 10⁻⁶ mm³.
+NUM1#biology-u01-15-q1@2: Convert 3.5 mm to micrometres. | 3500 | 0 | µm | 1 mm = 1,000 µm, so 3.5 mm = 3,500 µm.
+NUM2#biology-u01-15-q2@2: A leaf has an area of 24 cm². What is this in m²? | 0.0024 | 1% | m² | 1 m² = 10,000 cm², so 24 ÷ 10,000 = 0.0024 m².
+M1#biology-u01-15-q3@1: Which prefix means 10⁻⁹? | nano | micro | pico | milli | Nano is 10⁻⁹; micro is 10⁻⁶ and pico 10⁻¹².
+M2#biology-u01-15-q4@3: A plant releases 12 cm³ of oxygen in 4 minutes. What is the rate in cm³ per second? | 0.05 | 3 | 0.33 | 48 | Four minutes is 240 s, so the rate is 12 cm³ ÷ 240 s = 0.05 cm³ s⁻¹.
+M3#biology-u01-15-q5@2: A cube-shaped cell has sides of 20 µm. What is its volume in mm³? | 8 × 10⁻⁶ mm³ | 8 × 10⁻³ mm³ | 8,000 mm³ | 0.02 mm³ | Convert the side first: 20 µm = 0.02 mm, then cube it: 0.02³ = 8 × 10⁻⁶ mm³.
+SA2@2,3: Explain how to convert an area measured in cm² to m² and a volume in mm³ to cm³, and why the factors are not the same as for length. | For length, 1 m = 100 cm and 1 cm = 10 mm. Area has two dimensions, so the factor is squared: 1 m² = 100² = 10,000 cm², and to go to the larger unit you divide, so 24 cm² = 0.0024 m². Volume has three dimensions, so the factor is cubed: 1 cm³ = 10³ = 1,000 mm³, and 500 mm³ = 0.5 cm³. Using the length factor alone, such as dividing cm² by 100, is a common mistake. Rates are given per unit time, such as cm³ s⁻¹. | squares the length factor for area ; cubes it for volume ; divides when converting to a larger unit ; a correct worked conversion ; names the common mistake
 
 ## Scientific notation
 S: Biology deals with numbers from the 10⁻¹⁰ m of an atom to the 10¹³ cells of a human body. Scientific notation (standard form) writes such numbers compactly and makes calculations with them easier.
 O: Write very large and very small numbers in standard form
 O: Multiply and divide numbers in standard form
 O: Use significant figures appropriately
+LV: Year 1 · Application
 PRE: Units and conversions
 H: Standard form
 P: A number in standard form is written as A × 10ⁿ, where 1 ≤ A < 10 and n is an integer. 3,700,000 = 3.7 × 10⁶; 0.000052 = 5.2 × 10⁻⁵.
@@ -559,24 +607,28 @@ H: Significant figures
 P: Give answers to the same number of significant figures as the least precise data used. Zeros between non-zero digits count; leading zeros don't (0.0052 has 2 significant figures).
 K: Write numbers as A × 10ⁿ with 1 ≤ A < 10; add powers when multiplying and subtract when dividing.
 !: Writing 25 × 10³ as standard form. A must be between 1 and 10: 2.5 × 10⁴.
+EV: established | Standard form and the rules for significant figures are standard mathematical conventions used throughout science.
 T: Standard form | A way of writing numbers as A × 10ⁿ where 1 ≤ A < 10
 T: Significant figures | The digits in a number that carry meaningful information about its precision
 SUM: Standard form handles huge and tiny numbers.
 SUM: Round answers to match the precision of the data.
 SRC: BIPM, The International System of Units (SI Brochure), 9th edition | standard | 2019 | https://www.bipm.org/en/publications/si-brochure
+SRC: OpenStax, Chemistry 2e, section 1.5 "Measurement Uncertainty, Accuracy, and Precision" | secondary | 2019 | https://openstax.org/books/chemistry-2e/pages/1-5-measurement-uncertainty-accuracy-and-precision
 Q: Write 0.00045 in standard form. | 4.5 × 10⁻⁴.
 Q: How many significant figures are in 0.0306? | Three (3, 0 and 6).
-NUM1#biology-u01-16-q1: Calculate (6 × 10⁵) × (3 × 10²) and give the coefficient A when the answer is in standard form, A × 10⁸. | 1.8 | 0.01 |  | 6 × 3 = 18 and 10⁵ × 10² = 10⁷, giving 18 × 10⁷ = 1.8 × 10⁸.
-NUM2#biology-u01-16-q2: A human body has about 3.7 × 10¹³ cells and about 3.8 × 10¹³ bacteria. What is the ratio of bacteria to human cells (to 2 significant figures)? | 1.0 | 2% |  | 3.8 ÷ 3.7 = 1.03, which is 1.0 to 2 significant figures: roughly one bacterium per human cell.
-M1#biology-u01-16-q3: What is 6.2 × 10⁻³ written as an ordinary number? | 0.0062 | 0.062 | 6,200 | 0.00062 | A negative power moves the decimal point left: three places gives 0.0062.
-M2#biology-u01-16-q4: A virus is 1 × 10⁻⁷ m across and a cell 2 × 10⁻⁵ m. How many times wider is the cell? | 200 | 20 | 2,000 | 0.005 | Divide the numbers and subtract the powers: (2 × 10⁻⁵) ÷ (1 × 10⁻⁷) = 2 × 10² = 200.
-M3#biology-u01-16-q5: A population of bacteria grows from 5 × 10³ to 8 × 10⁶ cells. Approximately how many generations (doublings) is this? | about 11 | about 3 | about 1,600 | about 160 | 8 × 10⁶ ÷ 5 × 10³ = 1,600, and 2¹⁰·⁶ ≈ 1,600, so about 11 doublings.
+NUM1#biology-u01-16-q1@2: Calculate (6 × 10⁵) × (3 × 10²) and give the coefficient A when the answer is in standard form, A × 10⁸. | 1.8 | 0.01 |  | 6 × 3 = 18 and 10⁵ × 10² = 10⁷, giving 18 × 10⁷ = 1.8 × 10⁸.
+NUM2#biology-u01-16-q2@2,3: A human body has about 3.7 × 10¹³ cells and about 3.8 × 10¹³ bacteria. What is the ratio of bacteria to human cells (to 2 significant figures)? | 1.0 | 2% |  | 3.8 ÷ 3.7 = 1.03, which is 1.0 to 2 significant figures: roughly one bacterium per human cell.
+M1#biology-u01-16-q3@1: What is 6.2 × 10⁻³ written as an ordinary number? | 0.0062 | 0.062 | 6,200 | 0.00062 | A negative power moves the decimal point left: three places gives 0.0062.
+M2#biology-u01-16-q4@2: A virus is 1 × 10⁻⁷ m across and a cell 2 × 10⁻⁵ m. How many times wider is the cell? | 200 | 20 | 2,000 | 0.005 | Divide the numbers and subtract the powers: (2 × 10⁻⁵) ÷ (1 × 10⁻⁷) = 2 × 10² = 200.
+M3#biology-u01-16-q5@2: A population of bacteria grows from 5 × 10³ to 8 × 10⁶ cells. Approximately how many generations (doublings) is this? | about 11 | about 3 | about 1,600 | about 160 | 8 × 10⁶ ÷ 5 × 10³ = 1,600, and 2¹⁰·⁶ ≈ 1,600, so about 11 doublings.
+SA2@1,2,3: A sample contains 4.8 × 10⁸ bacteria in 2.0 × 10³ cm³ of culture. Calculate the number per cm³ in standard form and explain each step, including the number of significant figures. | Divide the numbers and subtract the powers: 4.8 ÷ 2.0 = 2.4 and 10⁸ ÷ 10³ = 10⁵, giving 2.4 × 10⁵ bacteria per cm³. The coefficient 2.4 already lies between 1 and 10, so no adjustment is needed; if it had not, the decimal point would be moved and the power changed to compensate. Both data values have two significant figures, so the answer is given to two significant figures. | divides the coefficients ; subtracts the powers ; answer 2.4 × 10⁵ per cm³ ; checks 1 ≤ A < 10 ; two significant figures to match the data
 
 ## Graphs and data presentation
 S: Choosing the right table or graph makes patterns in data clear and honest. This lesson covers results tables, line graphs, bar charts, histograms and scatter graphs, and how to draw and read them.
 O: Construct a results table with correct headings and units
 O: Choose the appropriate type of graph for a data set
 O: Describe and interpret trends, including rates from gradients
+LV: Year 1 · Application
 PRE: Variables and experimental design
 H: Results tables
 P: Put the independent variable in the first column and the dependent variable (with repeats and means) in the next columns. Column headings give the quantity and unit, separated by a solidus: "Temperature / °C". Units go in headings, not in the body of the table. Record raw data to the instrument's resolution and means to one more decimal place at most.
@@ -596,6 +648,7 @@ X: The volume of oxygen released by an enzyme reaction is 0 cm³ at 0 s and 18 c
 > Gradient = change in y ÷ change in x = 18 ÷ 60 = 0.3 cm³ s⁻¹.
 K: Match the graph to the data: line graphs for continuous data, bar charts for categories, histograms for frequency distributions, scatter graphs for correlations.
 !: Joining points on a bar chart, or drawing gaps between histogram bars. Categories aren't continuous, and histogram classes are.
+EV: established | The type of graph should match the type of data, and the gradient of an amount–time graph gives the rate.
 T: Gradient | The change in y divided by the change in x; on a graph of amount against time it is the rate
 T: Histogram | A chart of the frequency of a continuous variable in classes, with adjacent bars
 T: Error bar | A line on a graph showing the variability or uncertainty of a value
@@ -605,16 +658,18 @@ SRC: Association for Science Education, The Language of Measurement: Terminology
 SRC: OpenStax, Introductory Statistics 2e, chapter 2 "Descriptive Statistics" | secondary | 2023 | https://openstax.org/details/books/introductory-statistics-2e
 Q: Where should units appear in a results table? | In the column headings, after the quantity (for example "Time / s"), not in the body of the table.
 Q: How do you find the rate at a point on a curved graph? | Draw a tangent to the curve at that point and calculate its gradient.
-MATCH1#biology-u01-17-q1: Match each data set to the best type of graph. | Number of plants of each flower colour = bar chart ; Rate of reaction at different temperatures = line graph ; Frequency of leaf lengths in 5 mm classes = histogram ; Arm span against height for 30 people = scatter graph | Categories suit bar charts, continuous change suits line graphs, frequency distributions suit histograms and correlations suit scatter graphs.
-M1#biology-u01-17-q2: Which variable goes on the x-axis? | The independent variable | The dependent variable | Whichever has the larger numbers | The control variable | Convention places the variable that is changed on the x-axis and the measured variable on the y-axis.
-M2#biology-u01-17-q3: A curve of product mass against time flattens out after 5 minutes. What does this show? | The rate has fallen to zero, probably because a reactant has been used up | The reaction has sped up | The enzyme has been made | The product is being destroyed | A horizontal section means no further change in product: the reaction has stopped.
-M3#biology-u01-17-q4: On a graph of oxygen volume against time, the tangent at 30 s passes through (0 s, 4 cm³) and (60 s, 22 cm³). What is the rate at 30 s? | 0.30 cm³ s⁻¹ | 0.73 cm³ s⁻¹ | 0.37 cm³ s⁻¹ | 18 cm³ | Gradient of the tangent = (22 − 4) ÷ (60 − 0) = 18 ÷ 60 = 0.30 cm³ s⁻¹.
+MATCH1#biology-u01-17-q1@2: Match each data set to the best type of graph. | Number of plants of each flower colour = bar chart ; Rate of reaction at different temperatures = line graph ; Frequency of leaf lengths in 5 mm classes = histogram ; Arm span against height for 30 people = scatter graph | Categories suit bar charts, continuous change suits line graphs, frequency distributions suit histograms and correlations suit scatter graphs.
+M1#biology-u01-17-q2@1: Which variable goes on the x-axis? | The independent variable | The dependent variable | Whichever has the larger numbers | The control variable | Convention places the variable that is changed on the x-axis and the measured variable on the y-axis.
+M2#biology-u01-17-q3@3: A curve of product mass against time flattens out after 5 minutes. What does this show? | The rate has fallen to zero, probably because a reactant has been used up | The reaction has sped up because more product is now present | The enzyme has been made in the reaction as a product | The product is being destroyed as quickly as it forms | A horizontal section means no further change in product: the reaction has stopped.
+M3#biology-u01-17-q4@3: On a graph of oxygen volume against time, the tangent at 30 s passes through (0 s, 4 cm³) and (60 s, 22 cm³). What is the rate at 30 s? | 0.30 cm³ s⁻¹ | 0.73 cm³ s⁻¹ | 0.37 cm³ s⁻¹ | 18 cm³ | Gradient of the tangent = (22 − 4) ÷ (60 − 0) = 18 ÷ 60 = 0.30 cm³ s⁻¹.
+SA2@1,2,3: A student measures the volume of oxygen released by catalase every 30 s for 5 minutes at one temperature, with three repeats. Describe how to record and present the data and how to find the initial rate. | Record the results in a table with time in the first column and the volume for each repeat and the mean in later columns, with headings giving quantity and unit, such as "Time / s" and "Volume of oxygen / cm³", and no units in the body. Both variables are continuous, so plot a line graph with time on the x-axis, volume on the y-axis, labelled axes with units and scales using more than half the grid. Draw a smooth curve of best fit. The initial rate is the gradient of the straight early part, or of a tangent drawn at time zero, in cm³ s⁻¹. | table layout with independent variable first ; headings with units ; line graph for continuous data ; axes, scales and curve of best fit ; initial rate from gradient or tangent
 
 ## Statistical foundations
 S: Living things vary, so biologists need statistics to summarise data and decide whether differences are real or due to chance. This lesson covers averages, spread, the normal distribution and choosing a statistical test.
 O: Calculate mean, median, mode, range and standard deviation
 O: Describe the normal distribution and the meaning of standard deviation
 O: Choose an appropriate statistical test and interpret a p-value
+LV: Year 1 · Application
 PRE: Hypotheses and predictions
 H: Averages and spread
 - **Mean**: the sum divided by the number of values. **Median**: the middle value when ordered. **Mode**: the most frequent value.
@@ -635,6 +690,7 @@ X: Find the mean and standard deviation of 4, 6, 7, 7 and 6.
 K: Summarise data with an average and a measure of spread, and use a statistical test to judge whether a difference could be due to chance.
 IX: punnett
 !: Thinking "statistically significant" means "large" or "important". It means the result would be unlikely if there were no real effect; a tiny effect can be significant in a large sample.
+EV: established | The normal distribution and tests such as t-tests and chi-squared are standard statistical tools; p < 0.05 is a convention, not a law.
 T: Standard deviation | A measure of how spread out values are around the mean
 T: Normal distribution | A symmetrical, bell-shaped distribution of a continuous variable
 T: p-value | The probability of obtaining results at least as extreme as those observed if the null hypothesis were true
@@ -645,16 +701,18 @@ SRC: Diez D., Çetinkaya-Rundel M. and Barr C., OpenIntro Statistics, 4th editio
 SRC: OpenStax, Introductory Statistics 2e | secondary | 2023 | https://openstax.org/details/books/introductory-statistics-2e
 Q: Which test compares observed and expected frequencies in categories? | The chi-squared test.
 Q: What percentage of values lie within one standard deviation of the mean in a normal distribution? | About 68%.
-NUM2#biology-u01-18-q1: Find the median of 12, 5, 9, 15, 7, 10. | 9.5 | 0 |  | Ordered: 5, 7, 9, 10, 12, 15; the median is the mean of the middle two, (9 + 10) ÷ 2 = 9.5.
-M1#biology-u01-18-q2: Which measure of spread is most affected by a single extreme value? | The range | The standard deviation | The median | The interquartile range | The range uses only the largest and smallest values, so one outlier changes it completely.
-M2#biology-u01-18-q3: Which test should be used to compare mean leaf length in two populations of normally distributed data? | A t-test | A chi-squared test | Spearman's rank correlation | No test is needed | A t-test compares two means; chi-squared is for counts and correlation tests for relationships.
-M3#biology-u01-18-q4: Group A has mean 50 and standard deviation 2; group B has mean 52 and standard deviation 10. Both groups have 10 measurements. Which statement is best? | B's large spread means the 2-unit difference in means may well be due to chance; a statistical test is needed | B is clearly larger because its mean is higher | A is more variable than B | The difference must be significant because the means differ | Overlap between groups depends on spread as well as means; with B so variable, the difference could easily arise by chance.
+NUM2#biology-u01-18-q1@1: Find the median of 12, 5, 9, 15, 7, 10. | 9.5 | 0 |  | Ordered: 5, 7, 9, 10, 12, 15; the median is the mean of the middle two, (9 + 10) ÷ 2 = 9.5.
+M1#biology-u01-18-q2@1: Which measure of spread is most affected by a single extreme value? | The range | The standard deviation | The median | The interquartile range | The range uses only the largest and smallest values, so one outlier changes it completely.
+M2#biology-u01-18-q3@3: Which test should be used to compare mean leaf length in two populations of normally distributed data? | A t-test | A chi-squared test | Spearman's rank correlation | No test is needed | A t-test compares two means; chi-squared is for counts and correlation tests for relationships.
+M3#biology-u01-18-q4@2,3: Group A has mean 50 and standard deviation 2; group B has mean 52 and standard deviation 10. Both groups have 10 measurements. Which statement is best? | B's large spread means the 2-unit difference in means may well be due to chance; a statistical test is needed | B is clearly larger because its mean is higher | A is more variable than B | The difference must be significant because the means differ | Overlap between groups depends on spread as well as means; with B so variable, the difference could easily arise by chance.
+SA2@2,3: Explain what a standard deviation tells you, how it relates to the normal distribution, and why a statistical test is needed to compare two means. | Standard deviation measures the typical distance of values from the mean, so it shows how spread out the data are. For normally distributed data, a bell-shaped distribution, about 68% of values lie within one standard deviation of the mean and about 95% within two. Two samples can have different means just by chance; whether the difference is likely to be real depends on the size of the difference, the spread and the sample size. A t-test calculates a p-value, the probability of a difference at least this large if the null hypothesis were true; p < 0.05 is usually taken as significant. | SD as spread about the mean ; 68% and 95% ; differences can arise by chance ; spread and sample size matter ; t-test and p-value
 
 ## Sampling methods
 S: Biologists can rarely measure every individual, so they study samples. A sample is only useful if it represents the population fairly. This lesson covers random, systematic and stratified sampling and the methods used in ecology.
 O: Explain why samples must be representative and large enough
 O: Describe random, systematic and stratified sampling
 O: Estimate population size using quadrats and mark–release–recapture
+LV: Year 1 · Application
 PRE: Statistical foundations
 H: Why sampling matters
 P: A sample should be **representative** (unbiased) and **large enough** to reflect the variation in the population. Bias creeps in when samples are chosen for convenience, such as only surveying the easy-to-reach edge of a field.
@@ -673,6 +731,7 @@ P: The estimate assumes no migration, births or deaths between samples, that mar
 K: Sample randomly (or systematically along gradients), take enough samples, and know the assumptions behind each method.
 IX: population
 !: Placing quadrats where the plants look interesting. That introduces bias; use random coordinates.
+EV: established | Random and systematic sampling and mark–release–recapture give valid estimates only when their assumptions are met.
 T: Representative sample | A sample whose characteristics reflect those of the whole population
 T: Transect | A line across a habitat along which samples are taken at intervals
 T: Mark–release–recapture | A method of estimating the size of a mobile animal population from the proportion of marked individuals recaptured
@@ -683,16 +742,18 @@ SRC: OpenStax, Biology 2e, section 45.1 "Population Demography" | secondary | 20
 SRC: Sutherland W.J. (editor), Ecological Census Techniques: A Handbook, 2nd edition | secondary | 2006
 Q: When would systematic sampling along a transect be better than random sampling? | When conditions change across the area (a gradient), for example from a woodland edge into a field or down a rocky shore.
 Q: State two assumptions of mark–release–recapture. | No migration, births or deaths between samples; marks don't affect survival or come off; marked individuals mix randomly with the population.
-NUM2#biology-u01-19-q1: 40 snails are marked and released. Later 50 are caught, of which 8 are marked. Estimate the population size. | 250 | 0 | snails | N = (40 × 50) ÷ 8 = 250.
-M1#biology-u01-19-q2: Which method is best for estimating the population of daisies on a school field? | Random quadrats | Mark–release–recapture | A line transect from a hedge | Counting every daisy in one corner | Random quadrats give unbiased estimates of plant density across a uniform area.
-M2#biology-u01-19-q3: A survey of a rocky shore records species every 2 m from the low-tide line to the top of the shore. This is… | systematic sampling with a transect | random sampling | stratified sampling | mark–release–recapture | Regular intervals along a line across a gradient is systematic transect sampling.
-M3#biology-u01-19-q4: In a mark–release–recapture study the marks make beetles more visible to birds. How does this affect the estimate? | Fewer marked beetles survive to be recaptured, so R is too small and the population is overestimated | The estimate is unaffected | The population is underestimated | The method can't be used for beetles | If marked individuals die more often, the recaptured proportion falls and N = MC/R becomes too large.
+NUM2#biology-u01-19-q1@3: 40 snails are marked and released. Later 50 are caught, of which 8 are marked. Estimate the population size. | 250 | 0 | snails | N = (40 × 50) ÷ 8 = 250.
+M1#biology-u01-19-q2@2: Which method is best for estimating the population of daisies on a school field? | Random quadrats | Mark–release–recapture | A line transect from a hedge | Counting every daisy in one corner | Random quadrats give unbiased estimates of plant density across a uniform area.
+M2#biology-u01-19-q3@2: A survey of a rocky shore records species every 2 m from the low-tide line to the top of the shore. This is… | systematic sampling with a transect | random sampling | stratified sampling | mark–release–recapture | Regular intervals along a line across a gradient is systematic transect sampling.
+M3#biology-u01-19-q4@3: In a mark–release–recapture study the marks make beetles more visible to birds. How does this affect the estimate? | Fewer marked beetles survive to be recaptured, so R is too small and the population is overestimated | The estimate is unaffected, because the number marked in the first sample stays the same | The population is underestimated, because birds remove beetles from the unmarked group too | The method can't be used for beetles, because their hard wing cases can't be marked | If marked individuals die more often, the recaptured proportion falls and N = MC/R becomes too large.
+SA2@1,2: Describe how you would estimate the number of dandelions on a school field and how you would study the change in plants from a hedge into the field. | For the whole field, use random sampling: lay out two tape measures at right angles, use random numbers to choose coordinates, and count the dandelions in a 1 m² quadrat at each point. Take enough quadrats (for example 20) for the mean to settle, then multiply the mean number per m² by the field's area. Random positions avoid the bias of choosing interesting spots. Because conditions change from the hedge into the field, use systematic sampling instead: run a transect out from the hedge and place quadrats at regular intervals, such as every 2 m, recording species and percentage cover. | random coordinates ; quadrat counts ; enough samples ; scale up mean by area ; transect with regular intervals for the gradient
 
 ## Ethical considerations in biological research
 S: Biological research can involve animals, human volunteers, human tissue and data, and organisms that could affect the environment. This lesson sets out the main ethical principles and how research is regulated, with UK examples.
 O: Explain the 3Rs and how animal research is regulated in the UK
 O: Describe the principles of research with human participants, including informed consent
 O: Discuss ethical issues around genetic information, biodiversity and dual-use research
+LV: Year 1 · Biological reasoning
 PRE: Scientific method
 H: Animals in research
 P: In the UK, scientific procedures on living vertebrates (and cephalopods) are regulated by the Animals (Scientific Procedures) Act 1986. Researchers need licences, projects need a harm–benefit assessment, and work is reviewed by an ethics committee. The **3Rs** guide practice:
@@ -711,6 +772,7 @@ H: Wider issues
 - **Dual use**: research that could be misused, such as making pathogens more transmissible, needs special oversight.
 K: Ethical research weighs benefits against harms, protects participants through informed consent and review, and applies the 3Rs to animal work.
 !: Thinking ethics is only about animals. It also covers human participants, personal data, the environment and the misuse of research.
+EV: contested | Where the balance between benefits and harms of animal research lies is debated, although the 3Rs and licensing are agreed practice.
 T: The 3Rs | Replacement, reduction and refinement of animal use in research
 T: Informed consent | Voluntary agreement to take part in research, given with an understanding of what it involves and its risks
 T: Dual-use research | Legitimate research that could also be misused to cause harm
@@ -722,8 +784,9 @@ SRC: World Medical Association, Declaration of Helsinki: Ethical Principles for 
 READ: Nuffield Council on Bioethics reports on genome editing and on the use of animals in research.
 Q: What are the 3Rs? | Replacement, Reduction and Refinement of the use of animals in research.
 Q: What does informed consent require? | That participants understand the purpose, procedures and risks, agree voluntarily, and know they can withdraw at any time.
-M1#biology-u01-20-q1: Using cell cultures instead of live animals to test a chemical is an example of… | replacement | reduction | refinement | randomisation | Replacing animal use with a non-animal method is the first R.
-M2#biology-u01-20-q2: A researcher redesigns a study using a statistical power calculation so that 24 mice are needed instead of 40. Which R does this apply? | Reduction | Replacement | Refinement | Repetition | Reduction means obtaining comparable information from fewer animals, often through better experimental design.
-M3#biology-u01-20-q3: A study wants to use blood samples collected years ago for routine tests to research a genetic disease. What is the main ethical issue? | Whether the donors consented to this new use of their samples and data, and how their privacy is protected | Whether the samples are still frozen | Whether the research is expensive | Whether the disease is common | Using samples beyond the purpose originally agreed raises questions of consent and confidentiality that an ethics committee must consider.
-SA3#biology-u01-20-q4: Discuss the ethical arguments for and against using animals in medical research. | Arguments for: some questions about whole-body physiology and safety can't yet be answered without animals, and animal research has contributed to vaccines and treatments that benefit humans and animals. Arguments against: animals can suffer, and their interests matter morally; results don't always translate to humans. In the UK the use is permitted only where benefits outweigh harms, under licence, with the 3Rs applied, so the debate is about where that balance lies. | benefits to human and animal health ; animal suffering has moral weight ; results don't always translate to humans ; regulation weighs harm against benefit ; the 3Rs
+M1#biology-u01-20-q1@1: Using cell cultures instead of live animals to test a chemical is an example of… | replacement | reduction | refinement | randomisation | Replacing animal use with a non-animal method is the first R.
+M2#biology-u01-20-q2@1: A researcher redesigns a study using a statistical power calculation so that 24 mice are needed instead of 40. Which R does this apply? | Reduction | Replacement | Refinement | Repetition | Reduction means obtaining comparable information from fewer animals, often through better experimental design.
+M3#biology-u01-20-q3@2,3: A study wants to use blood samples collected years ago for routine tests to research a genetic disease. What is the main ethical issue? | Whether the donors consented to this new use of their samples and data, and how their privacy is protected | Whether the samples are still frozen and usable after so many years in storage | Whether the research is too expensive to justify compared with other projects | Whether the disease is common enough to make the research worthwhile | Using samples beyond the purpose originally agreed raises questions of consent and confidentiality that an ethics committee must consider.
+SA3#biology-u01-20-q4@1: Discuss the ethical arguments for and against using animals in medical research. | Arguments for: some questions about whole-body physiology and safety can't yet be answered without animals, and animal research has contributed to vaccines and treatments that benefit humans and animals. Arguments against: animals can suffer, and their interests matter morally; results don't always translate to humans. In the UK the use is permitted only where benefits outweigh harms, under licence, with the 3Rs applied, so the debate is about where that balance lies. | benefits to human and animal health ; animal suffering has moral weight ; results don't always translate to humans ; regulation weighs harm against benefit ; the 3Rs
+M2@2: A volunteer in a diet study decides halfway through that she no longer wants to take part. What should happen? | She may withdraw at any time without giving a reason | She must finish the study because she gave consent | She may leave only if the researchers agree | She must pay back any expenses she was given | Informed consent includes the right to withdraw at any time; consent given at the start doesn't bind a participant to continue.
 `;

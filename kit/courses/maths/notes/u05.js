@@ -5,6 +5,8 @@ export default `
 S: Euclidean geometry is the geometry of flat space, built by Euclid around 300 BCE from a handful of definitions and axioms. It was the model of rigorous reasoning for two thousand years, and it's still the geometry of everyday measurement.
 O: Describe Euclid's axiomatic approach and the parallel postulate
 O: Use deductive reasoning to prove geometric results
+LV: GCSE · Application
+EV: established | Euclid's Elements derives plane geometry from definitions and postulates, and the parallel postulate is independent of the other four.
 T: Axiom | A statement accepted without proof as a starting point for reasoning
 T: Parallel postulate | Euclid's fifth postulate: through a point not on a line there is exactly one parallel line (Playfair's form)
 H: Euclid's Elements
@@ -19,21 +21,31 @@ X: Prove that the angles in a triangle add up to 180°.
 > Draw triangle ABC and a line through A parallel to BC
 > The angles either side of A on the line equal angles B and C (alternate angles)
 > Together with angle A they make a straight line, 180°, so A + B + C = 180°
+X: Prove that vertically opposite angles are equal.
+> Two lines cross, making angles a, b, c in turn, with a and c opposite
+> a + b = 180° and b + c = 180° (angles on a straight line)
+> Subtracting, a = c: each step is justified by an earlier fact, not by the diagram
 K: Euclidean geometry deduces theorems from axioms; the parallel postulate distinguishes it from other geometries.
 !: Treating a diagram as a proof: a diagram can mislead, while reasoning from axioms can't.
 Q: What does the parallel postulate say (Playfair's form)? | Through a point not on a line there is exactly one line parallel to it.
 Q: Which postulate is needed to prove the triangle angle sum? | The parallel postulate.
 SUM: Euclid built geometry from axioms.
 SUM: The parallel postulate defines flat geometry.
-SRC: Heath TL (trans.), Euclid: The Thirteen Books of the Elements (Dover 1956) | textbook | 1956 | https://store.doverpublications.com/
-SRC: Hartshorne R, Geometry: Euclid and Beyond (Springer 2000) | textbook | 2000 | https://link.springer.com/
+SRC: Heath TL (trans.), Euclid: The Thirteen Books of the Elements (Dover 1956) | secondary | 1956 | https://store.doverpublications.com/
+SRC: Hartshorne R, Geometry: Euclid and Beyond (Springer 2000) | secondary | 2000 | https://link.springer.com/
 M1#maths-u05-01-q1@1: Around when did Euclid write the Elements? | About 300 BCE | About 1600 CE | About 1000 BCE | About 1900 CE | About 500 CE | Euclid worked in Alexandria around 300 BCE.
 M2#maths-u05-01-q2@2: Which result depends on the parallel postulate? | The angles in a triangle add to 180° | All right angles are equal | A circle can be drawn with any centre | A line can be extended | A point has no part | The angle sum proof uses a parallel line and alternate angles, which rely on the parallel postulate.
+NUM2#maths-u05-01-q3@2: In triangle ABC, angle A = 52° and angle B is 18° larger than angle C. Find angle C. | 55 | 0 | ° | B + C = 180 − 52 = 128 and B = C + 18, so 2C + 18 = 128 and C = 55°.
+M3#maths-u05-01-q4@1,2: A student claims to have proved the parallel postulate from Euclid's first four postulates. What follows? | The proof has an error: hyperbolic geometry obeys the first four but not the fifth | The proof is right, since the fifth postulate was always a theorem of the other four | Nobody had tried before, so it would be the first proof of its kind | Postulates can't be tested, so the proof can be neither right nor wrong | Hyperbolic geometry is a consistent model of the first four postulates in which the fifth fails, so the fifth can't follow from them.
+TF1#maths-u05-01-q5@1: An axiom is a statement accepted without proof as a starting point for reasoning. | true | Axioms (Euclid's postulates and common notions) are assumed; everything else is deduced from them.
+SA2#maths-u05-01-q6@1,2: Explain what an axiomatic system is, using Euclid's Elements, and show where the parallel postulate is used in proving that the angles of a triangle add to 180°. | An axiomatic system starts from definitions and axioms accepted without proof, and deduces every other result by logical steps, each justified by an axiom, a definition or an earlier theorem. Euclid began with definitions, five postulates and common notions and proved 465 propositions. To prove the angle sum, draw a line through A parallel to BC; the parallel postulate guarantees this line exists and is unique, and alternate angles on parallel lines are equal, so the two angles beside A equal B and C; with A they form a straight line, so A + B + C = 180°. | defines axioms as unproved starting points ; theorems deduced step by step with reasons ; Euclid's definitions, postulates and common notions ; parallel line through A uses the parallel postulate ; alternate angles and straight line give 180°
 
 ## Plane Geometry
 S: Plane geometry studies two-dimensional figures (points, lines, angles, polygons and circles) and their measurements. It's the geometry of GCSE, drawing, design and architecture.
 O: Identify and describe 2D shapes and their properties
 O: Use properties of shapes to find missing lengths and angles
+LV: GCSE · Fluency
+EV: established | Missing lengths and angles in plane figures follow from shape properties and angle facts, each step justified by a stated reason.
 T: Plane | A flat surface extending infinitely in two dimensions
 T: Polygon | A closed plane figure with straight sides
 H: The objects of plane geometry
@@ -50,6 +62,7 @@ X: In a kite ABCD, angle A = 110°, angle C = 70° and angles B and D are equal.
 > Angles in a quadrilateral add to 360°
 > B + D = 360 − 110 − 70 = 180
 > B = D = 90°
+P: Shapes are named by their vertices in order round the shape: quadrilateral ABCD has sides AB, BC, CD and DA, and diagonals AC and BD.
 K: Plane geometry studies 2D shapes; combine shape properties and angle facts, giving reasons.
 !: Assuming a shape has a property (equal sides, right angles) because it looks that way in a diagram.
 Q: What is a polygon? | A closed plane figure with straight sides.
@@ -57,14 +70,20 @@ Q: What do the angles in a quadrilateral add up to? | 360°.
 SUM: Plane geometry is the geometry of flat shapes.
 SUM: Properties and reasons solve problems.
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
-SRC: Hartshorne R, Geometry: Euclid and Beyond (Springer 2000) | textbook | 2000 | https://link.springer.com/
+SRC: Hartshorne R, Geometry: Euclid and Beyond (Springer 2000) | secondary | 2000 | https://link.springer.com/
 M1#maths-u05-02-q1@1: An isosceles triangle has an apex angle of 50°. What is each base angle? | 65° | 50° | 130° | 75° | 40° | The base angles share 180 − 50 = 130°, so each is 65°.
 M2#maths-u05-02-q2@2: Which shape always has exactly one pair of parallel sides? | A trapezium | A rectangle | A rhombus | A parallelogram | A kite | A trapezium has exactly one pair (in the UK definition); the others have two or none.
+TF1#maths-u05-02-q3@1: A square is a regular polygon. | true | A square has all four sides equal and all four angles equal (90°), which is exactly the definition of a regular polygon.
+M2#maths-u05-02-q4@2: Two angles of a triangle are 35° and 75°. What is the exterior angle at the third vertex? | 110° | 70° | 145° | 105° | 250° | The third angle is 180 − 35 − 75 = 70°, and the exterior angle on a straight line with it is 180 − 70 = 110°.
+NUM3#maths-u05-02-q5@2: In triangle ABC, AB = AC, angle A = x + 20 and angle B = 2x + 10. Find angle A. | 48 | 0 | ° | Base angles B and C are equal, so (x + 20) + 2(2x + 10) = 180, giving 5x = 140, x = 28 and A = 48°.
+SA2#maths-u05-02-q6@1,2: An isosceles triangle has an apex angle of 40°. Find the base angles, explaining each step, and say why a diagram alone isn't a reason. | The angles in a triangle add to 180°, so the two base angles share 180 − 40 = 140°. An isosceles triangle has equal base angles, so each is 140 ÷ 2 = 70°. A diagram may not be drawn to scale, so sides or angles that look equal can't be assumed equal; each step must cite a property, such as 'angles in a triangle add to 180°' or 'base angles of an isosceles triangle are equal'. | angle sum 180° stated ; 140° shared between base angles ; base angles equal gives 70° ; diagrams may not be to scale ; each step needs a named property
 
 ## Points, Lines and Planes
 S: Points, lines and planes are the basic undefined objects of geometry. Everything else (angles, shapes, solids) is built from them, and their relationships (intersecting, parallel, skew) structure 2D and 3D space.
 O: Describe how points, lines and planes relate in two and three dimensions
 O: Distinguish intersecting, parallel and skew lines
+LV: GCSE · Fluency
+EV: established | Two points determine a line and three non-collinear points determine a plane; in three dimensions, lines can be skew.
 T: Collinear | Points that lie on the same straight line
 T: Skew lines | Lines in 3D that are neither parallel nor intersecting
 H: Basic facts
@@ -81,21 +100,28 @@ X: In a cube ABCDEFGH (ABCD the base, EFGH the top, with E above A), classify th
 > AB and GH: GH is parallel to EF, which is parallel to AB, so AB and GH are parallel
 > AB and FG: FG runs parallel to BC; it's on the top face and doesn't meet AB
 > AB and FG aren't parallel and don't meet: they're skew
+P: **Coplanar** points lie in one plane. Any three points are coplanar, but four need not be: the corners of a tetrahedron are not.
 K: Two points fix a line, three non-collinear points fix a plane; in 3D, non-parallel lines can be skew.
 !: Assuming that two lines that aren't parallel must meet: in 3D they may be skew.
 Q: How many points determine a plane? | Three, if they aren't collinear.
 Q: Can skew lines exist in a plane? | No: only in three or more dimensions.
 SUM: Points, lines and planes are geometry's building blocks.
 SUM: 3D adds skew lines.
-SRC: Hartshorne R, Geometry: Euclid and Beyond (Springer 2000) | textbook | 2000 | https://link.springer.com/
+SRC: Hartshorne R, Geometry: Euclid and Beyond (Springer 2000) | secondary | 2000 | https://link.springer.com/
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
 M1#maths-u05-03-q1@1: What are points that lie on the same straight line called? | Collinear | Coplanar | Concurrent | Skew | Parallel | Collinear means on one line; coplanar means on one plane.
 M2#maths-u05-03-q2@2: Two distinct planes that aren't parallel meet in: | A line | A point | A plane | Two points | Nothing | Two non-parallel planes always intersect along a straight line, like the pages of a book along the spine.
+TF1#maths-u05-03-q3@1: Three non-collinear points always determine exactly one plane. | true | Three points not on one line fix a unique plane, which is why a three-legged stool never wobbles.
+NUM2#maths-u05-03-q4@1: Five points lie in a plane with no three collinear. How many different straight lines pass through two of them? | 10 | 0 | lines | Each pair of points fixes one line, and there are 5 × 4 ÷ 2 = 10 pairs.
+M3#maths-u05-03-q5@2: Cube ABCDEFGH has base ABCD and top EFGH, with E above A, F above B, G above C and H above D. Which pair of edges is skew? | AE and BC | AB and DC | AE and CG | AB and EF | BC and FG | AE is vertical through A and BC lies in the base away from A: they never meet and aren't parallel. The other pairs are parallel.
+SA2#maths-u05-03-q6@1,2: Using the edges and faces of a cube as examples, explain the ways two lines can be related in three dimensions, and the ways a line can be related to a plane. | Two distinct lines can intersect at one point (two edges meeting at a corner), be parallel (opposite edges of a face), or be skew: neither parallel nor meeting, such as a vertical edge and a non-parallel edge of the base that doesn't touch it. Skew lines can't lie in one plane. A line can lie in a plane (an edge in a face), meet it at a single point (a vertical edge meeting the base), or be parallel to it (a top edge and the base). | intersecting lines with example ; parallel lines with example ; skew lines defined with example ; skew lines are not coplanar ; three line-plane cases
 
 ## Angles
 S: An angle measures the amount of turn between two lines meeting at a point. Angle facts (on a line, around a point, vertically opposite) are the foundation of every geometric argument.
 O: Classify angles and apply basic angle facts
 O: Calculate missing angles with reasons
+LV: GCSE · Fluency
+EV: established | Angles on a straight line sum to 180°, angles about a point to 360°, and vertically opposite angles are equal.
 T: Vertically opposite angles | The equal angles opposite each other where two lines cross
 T: Reflex angle | An angle between 180° and 360°
 H: Types and facts
@@ -125,11 +151,15 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 NUM1#maths-u05-04-q1@1: Three angles around a point are 2x, 3x and 4x. Find x. | 40 | 0 | ° | 9x = 360, so x = 40°.
 M1#maths-u05-04-q2@1: Which angle is reflex? | 250° | 90° | 170° | 45° | 180° | A reflex angle is more than 180° and less than 360°.
 M2#maths-u05-04-q3@2: Angle ABC is formed by points A, B and C. Where is the vertex? | At B | At A | At C | Between A and C | It depends on the diagram | The middle letter always names the vertex.
+M3#maths-u05-04-q4@2: Two straight lines cross. One angle is 4x + 12 and the angle vertically opposite it is 6x − 28. What size is each of the other two angles? | 88° | 92° | 20° | 268° | 44° | Vertically opposite angles are equal: 4x + 12 = 6x − 28, so x = 20 and that angle is 92°; the adjacent angles are 180 − 92 = 88°.
+SA2#maths-u05-04-q5@1,2: Two lines cross and two adjacent angles are 2x + 25 and 4x − 7. A student writes 2x + 25 = 4x − 7, so x = 16. Explain the error, then find all four angles with reasons. | Adjacent angles where two lines cross lie on a straight line, so they add to 180°; they are not equal (only vertically opposite angles are equal). So 2x + 25 + 4x − 7 = 180, 6x = 162 and x = 27. The angles are 2(27) + 25 = 79° and 4(27) − 7 = 101°. Vertically opposite angles are equal, so the four angles are 79°, 101°, 79° and 101°. | adjacent angles are supplementary, not equal ; 6x + 18 = 180 ; x = 27 ; 79° and 101° ; vertically opposite angles equal
 
 ## Parallel and Perpendicular Lines
 S: Parallel lines never meet; perpendicular lines meet at right angles. A line crossing two parallel lines creates equal alternate and corresponding angles, a key tool in geometric proof.
 O: Use alternate, corresponding and co-interior angles
 O: Identify parallel and perpendicular lines, including from gradients
+LV: GCSE and A level · Application
+EV: established | A transversal of parallel lines makes equal alternate and corresponding angles; parallel lines share a gradient and perpendicular gradients multiply to −1.
 T: Transversal | A line crossing two or more other lines
 T: Co-interior angles | Angles between parallel lines on the same side of a transversal; they add to 180°
 H: Angles with parallel lines
@@ -145,6 +175,9 @@ X: Two parallel lines are crossed by a transversal. One co-interior angle is 2x 
 > Co-interior angles add to 180°: 3x + 45 = 180
 > x = 45
 > The angles are 120° and 60°
+X: Show that y = 2x + 3 and x + 2y = 8 are perpendicular.
+> Rearrange the second: 2y = −x + 8, so y = −½x + 4 with gradient −½
+> 2 × (−½) = −1, so the lines are perpendicular
 K: Alternate and corresponding angles are equal, co-interior angles add to 180°; parallel lines share a gradient and perpendicular gradients multiply to −1.
 !: Calling co-interior angles equal: they add to 180°.
 Q: What is the gradient of a line perpendicular to y = 4x − 1? | −1/4.
@@ -155,11 +188,17 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary mastery professional development materials: angles in parallel lines | guidance | 2019 | https://www.ncetm.org.uk/
 M1#maths-u05-05-q1@1: Which pair of lines is perpendicular? | y = 3x + 2 and y = −x/3 | y = 3x and y = 3x + 1 | y = 2x and y = x/2 | y = x and y = x + 4 | y = 5 and y = −5 | 3 × (−1/3) = −1, so the gradients are negative reciprocals.
 M2#maths-u05-05-q2@2: Corresponding angles on parallel lines are 4x − 20 and 2x + 40. What is x? | 30 | 10 | 40 | 60 | 20 | Corresponding angles are equal: 4x − 20 = 2x + 40, so x = 30.
+TF1#maths-u05-05-q3@1: Co-interior angles between parallel lines are equal. | false | Co-interior angles add to 180°; they are equal only in the special case where each is 90°.
+M2#maths-u05-05-q4@2: What is the gradient of a line perpendicular to the line through (1, 2) and (4, 11)? | −1/3 | 1/3 | −3 | 3 | −1/9 | The line's gradient is (11 − 2)/(4 − 1) = 3, and the perpendicular gradient is the negative reciprocal, −1/3.
+NUM3#maths-u05-05-q5@1: Two parallel lines are crossed by a transversal. Angles p and q are co-interior, and p is 40° more than three times q. Find p. | 145 | 0 | ° | Co-interior angles add to 180°: (3q + 40) + q = 180, so q = 35° and p = 145°.
+SA2#maths-u05-05-q6@1,2: Explain two ways to show that lines are parallel: one using angles with a transversal, one using equations. Use 2y = 6x + 1 and y = 3x − 4, and say how x + 3y = 2 relates to y = 3x − 4. | With a transversal, the lines are parallel if a pair of alternate or corresponding angles are equal, or a pair of co-interior angles add to 180° (the converses of the angle facts). With equations, write each line as y = mx + c: 2y = 6x + 1 gives y = 3x + ½, gradient 3, the same as y = 3x − 4, so they're parallel (different intercepts, so distinct lines). x + 3y = 2 gives y = −x/3 + 2/3, gradient −1/3; 3 × (−1/3) = −1, so it is perpendicular to y = 3x − 4. | converse of alternate or corresponding angles ; co-interior angles summing to 180° ; rearranges to y = mx + c ; equal gradients of 3 so parallel ; gradient −1/3 and product −1 so perpendicular
 
 ## Triangles
 S: Triangles are the simplest polygons and the building blocks of all others. Their angle facts, types and the exterior angle theorem appear in almost every geometry problem.
 O: Classify triangles and use their angle properties
 O: Apply the exterior angle theorem
+LV: GCSE · Fluency
+EV: established | The angles of a triangle sum to 180°, an exterior angle equals the sum of the two interior opposite angles, and side lengths obey the triangle inequality.
 T: Exterior angle | The angle between one side of a triangle and the extension of an adjacent side
 T: Isosceles triangle | A triangle with two equal sides and two equal base angles
 H: Types and facts
@@ -176,6 +215,10 @@ X: In triangle PQR, angle P = 48° and the exterior angle at R is 115°. Find an
 > The exterior angle at R equals P + Q
 > 115 = 48 + Q
 > Q = 67°
+X: Two sides of a triangle are 7 cm and 10 cm. What lengths are possible for the third side?
+> It must be less than 7 + 10 = 17 cm
+> It must be more than 10 − 7 = 3 cm, or 7 + x wouldn't exceed 10
+> So 3 cm < third side < 17 cm
 K: Angles add to 180°, the exterior angle equals the two opposite interior angles, and sides must satisfy the triangle inequality.
 !: Assuming a triangle is isosceles because two sides look equal.
 Q: What is each angle in an equilateral triangle? | 60°.
@@ -183,15 +226,20 @@ Q: Can sides of 5, 6 and 12 form a triangle? | No: 5 + 6 < 12.
 SUM: Triangles have angle sum 180°.
 SUM: The exterior angle theorem saves steps.
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
-SRC: Hartshorne R, Geometry: Euclid and Beyond (Springer 2000) | textbook | 2000 | https://link.springer.com/
+SRC: Hartshorne R, Geometry: Euclid and Beyond (Springer 2000) | secondary | 2000 | https://link.springer.com/
 NUM1#maths-u05-06-q1@1: A triangle has angles x, 2x and 3x. Find the largest angle. | 90 | 0 | ° | 6x = 180, so x = 30 and the largest angle is 90°.
 M1#maths-u05-06-q2@1: Which set of lengths can form a triangle? | 4, 5, 8 | 2, 3, 6 | 1, 1, 3 | 5, 5, 11 | 3, 4, 7 | 4 + 5 = 9 > 8; in the others, the two shorter sides don't exceed the longest.
 M2#maths-u05-06-q3@2: An isosceles triangle has one angle of 100°. What are the other two? | 40° and 40° | 100° and −20° | 80° and 0° | 50° and 30° | 100° and 100° | 100° must be the apex (two 100° angles would exceed 180°), so the base angles share 80°.
+NUM2#maths-u05-06-q4@1: Two sides of a triangle are 6 cm and 9 cm, and the third side is a whole number of centimetres. How many lengths are possible? | 11 | 0 | lengths | The third side must be between 9 − 6 = 3 and 9 + 6 = 15, not inclusive, so 4, 5, …, 14 cm: 11 lengths.
+M3#maths-u05-06-q5@1,2: In triangle ABC, AB = AC. Side BC is extended beyond C, and the exterior angle at C is 112°. Find angle A. | 44° | 68° | 56° | 112° | 24° | Interior angle C = 180 − 112 = 68°; AB = AC makes B = C = 68°, so A = 180 − 136 = 44°.
+SA2#maths-u05-06-q6@2: Prove the exterior angle theorem: an exterior angle of a triangle equals the sum of the two interior opposite angles. | In triangle ABC, extend BC beyond C to make the exterior angle e at C. Angle C and e lie on a straight line, so C + e = 180°. The angles of the triangle give A + B + C = 180°. So C + e = A + B + C, and subtracting C gives e = A + B. | sets up the exterior angle at one vertex ; straight-line fact C + e = 180° ; triangle angle sum A + B + C = 180° ; equates and subtracts C ; concludes e = A + B
 
 ## Congruence and Similarity
 S: Congruent shapes are identical in size and shape; similar shapes have the same shape but may differ in size. Similarity is the geometry of scale drawings, maps and enlargements, and links lengths, areas and volumes.
 O: Prove triangles congruent using SSS, SAS, ASA and RHS
 O: Use scale factors for lengths, areas and volumes of similar shapes
+LV: GCSE · Application
+EV: established | SSS, SAS, ASA/AAS and RHS guarantee congruence, and similar shapes with length scale factor k have areas in ratio k² and volumes in ratio k³.
 T: Congruent | Identical in shape and size: corresponding sides and angles are equal
 T: Similar | The same shape: corresponding angles equal and corresponding sides in the same ratio
 H: Congruent triangles
@@ -206,6 +254,7 @@ X: Two similar bottles have heights 12 cm and 18 cm. The smaller holds 400 ml. H
 > Length scale factor k = 18/12 = 1.5
 > Volume scale factor k^{3} = 3.375
 > 400 × 3.375 = 1,350 ml
+!: Pairing the wrong sides: list vertices in matching order (triangle ABC ~ triangle PQR means A ↔ P, B ↔ Q, C ↔ R) and compare corresponding sides only.
 K: Congruence needs SSS, SAS, ASA/AAS or RHS; similar shapes scale lengths by k, areas by k^{2} and volumes by k^{3}.
 !: Using the length scale factor for areas or volumes.
 Q: Why isn't AAA a congruence condition? | Equal angles only guarantee the same shape, not the same size.
@@ -213,15 +262,20 @@ Q: If lengths double, what happens to the area? | It multiplies by 4.
 SUM: Congruence means identical; similarity means scaled.
 SUM: Area and volume scale by k^{2} and k^{3}.
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
-SRC: Hartshorne R, Geometry: Euclid and Beyond (Springer 2000) | textbook | 2000 | https://link.springer.com/
+SRC: Hartshorne R, Geometry: Euclid and Beyond (Springer 2000) | secondary | 2000 | https://link.springer.com/
 NUM1#maths-u05-07-q1@1: Two similar shapes have areas 20 cm² and 45 cm². What is the length scale factor? | 1.5 | 0 |  | The area scale factor is 45/20 = 2.25, so k = √2.25 = 1.5.
 M1#maths-u05-07-q2@1: Which condition does NOT prove two triangles congruent? | AAA | SSS | SAS | RHS | ASA | Equal angles alone give similar triangles of possibly different sizes.
 M3#maths-u05-07-q3@2: Two similar cones have volumes 54 cm³ and 16 cm³. The larger has surface area 90 cm². What is the smaller's? | 40 cm² | 26.7 cm² | 60 cm² | 30 cm² | 10 cm² | Volume ratio 16/54 = (2/3)^{3}, so k = 2/3 and the area ratio is 4/9: 90 × 4/9 = 40.
+M2#maths-u05-07-q4@1: Triangles ABC and DEF have AB = DE, angle B = angle E and BC = EF. Which condition proves them congruent? | SAS | ASA | SSS | RHS | AAS | Two pairs of sides are equal and the equal angles B and E lie between them, so the included-angle condition SAS applies.
+NUM2#maths-u05-07-q5@2: A map has scale 1 : 25,000. A lake covers 3 cm² on the map. What is its real area in km²? | 0.1875 | 0.001 | km² | The area scale factor is 25,000² = 6.25 × 10^{8}, so the lake is 1.875 × 10^{9} cm²; 1 km² = 10^{10} cm², giving 0.1875 km².
+SA3#maths-u05-07-q6@1: Prove that the diagonals of parallelogram ABCD bisect each other. | Let the diagonals AC and BD meet at M. In triangles ABM and CDM: AB = CD (opposite sides of a parallelogram are equal); angle MAB = angle MCD (alternate angles, AB parallel to DC); angle MBA = angle MDC (alternate angles). So the triangles are congruent (ASA). Corresponding sides are equal: AM = CM and BM = DM, so M is the midpoint of both diagonals. | names the two triangles ; AB = CD with reason ; two pairs of alternate angles ; congruent by ASA ; AM = CM and BM = DM so the diagonals bisect each other
 
 ## Quadrilaterals
 S: Quadrilaterals are four-sided polygons: squares, rectangles, parallelograms, rhombuses, trapeziums and kites. Each is defined by its sides, angles, diagonals and symmetry, and they form a family tree of special cases.
 O: Describe the properties of the special quadrilaterals
 O: Use quadrilateral properties to solve problems
+LV: GCSE · Fluency
+EV: established | The special quadrilaterals are defined by their sides, angles and diagonals and form a hierarchy in which a square is both a rectangle and a rhombus.
 T: Parallelogram | A quadrilateral with both pairs of opposite sides parallel
 T: Rhombus | A quadrilateral with four equal sides
 H: The family
@@ -239,6 +293,10 @@ X: A rhombus has diagonals 10 cm and 24 cm. Find its area and side length.
 > Area = ½ × 10 × 24 = 120 cm^{2}
 > The diagonals bisect at right angles, making four right-angled triangles with legs 5 and 12
 > Side = √(25 + 144) = 13 cm
+X: In a parallelogram, one angle is 3x and the next angle round is x + 40. Find both angles.
+> Adjacent angles of a parallelogram are co-interior, so they add to 180°
+> 4x + 40 = 180, so x = 35
+> The angles are 105° and 75° (and the opposite angles match them)
 K: Learn each quadrilateral's sides, angles, diagonals and symmetry; squares are special rectangles and rhombuses.
 !: Saying a rhombus's diagonals are equal (they're only equal in a square).
 Q: Which quadrilaterals have diagonals that bisect at right angles? | Rhombuses and squares (and a kite's diagonals are perpendicular).
@@ -250,11 +308,15 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 NUM1#maths-u05-08-q1@1: A trapezium has parallel sides 7 cm and 13 cm and height 6 cm. Find its area. | 60 | 0 | cm² | ½ × (7 + 13) × 6 = 60 cm^{2}.
 M3#maths-u05-08-q2@1: Which quadrilateral has diagonals that are equal and bisect each other, but not necessarily at right angles? | A rectangle | A rhombus | A kite | A trapezium | A general parallelogram | A rectangle's diagonals are equal and bisect each other; they're perpendicular only if it's a square.
 M2#maths-u05-08-q3@2: Which statement about the quadrilateral family is true? | Every square is a rhombus | Every rhombus is a square | Every rectangle is a square | Every kite is a rhombus | Every trapezium is a parallelogram | A square has four equal sides, so it meets the definition of a rhombus.
+M1#maths-u05-08-q4@1: Which quadrilateral has exactly one line of symmetry and diagonals that cross at right angles? | A kite | A rhombus | A rectangle | A parallelogram | A square | A kite's symmetry line is one diagonal, and its diagonals are perpendicular; a rhombus and a square have more symmetry lines.
+SA2#maths-u05-08-q5@1,2: Explain why every square is a rectangle but not every rectangle is a square, and compare the diagonals of a square, a rectangle and a rhombus. | A rectangle is defined as a quadrilateral with four right angles. A square has four right angles, so it is a rectangle; it also has four equal sides, which a general rectangle need not have, so not every rectangle is a square. Diagonals: in a rectangle they are equal and bisect each other; in a rhombus they bisect each other at right angles and bisect the vertex angles but are generally unequal; a square, being both, has equal diagonals that bisect each other at right angles. | rectangle defined by four right angles ; square meets that definition ; rectangle need not have equal sides ; rectangle diagonals equal and bisecting ; rhombus diagonals perpendicular, square both
 
 ## Polygons
 S: A polygon is a closed shape with straight sides. The angle sums of polygons follow from splitting them into triangles, and regular polygons have elegant formulas for their interior and exterior angles.
 O: Calculate interior and exterior angle sums of polygons
 O: Find the angles and number of sides of regular polygons
+LV: GCSE · Fluency
+EV: established | The interior angles of an n-sided polygon sum to (n − 2) × 180°, and the exterior angles of a convex polygon sum to 360°.
 T: Regular polygon | A polygon with all sides equal and all angles equal
 T: Exterior angle sum | The exterior angles of any convex polygon add to 360°
 H: Angle sums
@@ -283,11 +345,16 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 NUM1#maths-u05-09-q1@1: What is each interior angle of a regular octagon? | 135 | 0 | ° | The exterior angle is 360/8 = 45°, so the interior angle is 135°.
 M1#maths-u05-09-q2@1: What is the sum of the interior angles of a pentagon? | 540° | 360° | 720° | 500° | 900° | A pentagon splits into 3 triangles from one vertex: (5 − 2) × 180 = 540°.
 M3#maths-u05-09-q3@2: Can a regular polygon have interior angles of 145°? | No: the exterior angle 35° doesn't divide 360 exactly | Yes, with 10 sides | Yes, with 35 sides | Yes, with 145 sides | Only if it's irregular | n = 360/35 isn't a whole number, so no regular polygon has that angle.
+M2#maths-u05-09-q4@1,2: Each exterior angle of a regular polygon is 20°. What is the sum of its interior angles? | 2,880° | 3,240° | 3,600° | 2,520° | 160° | n = 360 ÷ 20 = 18 sides, so the interior angles add to (18 − 2) × 180 = 2,880°.
+NUM2#maths-u05-09-q5@1: How many diagonals does a decagon have? | 35 | 0 | diagonals | Each of the 10 vertices joins to 7 non-adjacent vertices, and each diagonal is counted twice: 10 × 7 ÷ 2 = 35.
+SA2#maths-u05-09-q6@1,2: Explain why the interior angles of an n-sided polygon add to (n − 2) × 180°, and use exterior angles to show that no regular polygon has interior angles of 130°. | From one vertex, draw diagonals to every vertex except itself and its two neighbours: this splits the polygon into n − 2 triangles whose angles together make up the interior angles, so the sum is (n − 2) × 180°. For a regular polygon each exterior angle is 180 − interior; for 130° that is 50°. The exterior angles add to 360°, so n = 360 ÷ 50 = 7.2, which isn't a whole number, so no such polygon exists. | diagonals from one vertex ; n − 2 triangles ; each triangle 180° ; exterior angle 50° ; 360 ÷ 50 not a whole number
 
 ## Pythagorean Theorem
 S: Pythagoras' theorem says that in a right-angled triangle, the square on the hypotenuse equals the sum of the squares on the other two sides. It's one of the most used results in mathematics, from building to navigation to distances in coordinates.
 O: Use Pythagoras' theorem to find missing sides in 2D and 3D
 O: Use the converse to test for right angles
+LV: GCSE · Fluency
+EV: established | In a right-angled triangle the square on the hypotenuse equals the sum of the squares on the other two sides, and the converse also holds.
 T: Hypotenuse | The longest side of a right-angled triangle, opposite the right angle
 T: Pythagorean triple | Whole numbers a, b, c with a^{2} + b^{2} = c^{2}, such as 3, 4, 5 and 5, 12, 13
 H: The theorem
@@ -312,16 +379,21 @@ Q: What is the distance between (1, 2) and (4, 6)? | 5.
 SUM: Pythagoras links the sides of right-angled triangles.
 SUM: It gives distances in 2D and 3D.
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
-SRC: Maor E, The Pythagorean Theorem: A 4,000-Year History (Princeton University Press 2007) | textbook | 2007 | https://press.princeton.edu/
+SRC: Maor E, The Pythagorean Theorem: A 4,000-Year History (Princeton University Press 2007) | secondary | 2007 | https://press.princeton.edu/
 NUM1#maths-u05-10-q1@1: A ladder 6.5 m long reaches 6 m up a wall. How far is its foot from the wall? | 2.5 | 0.01 | m | √(6.5^{2} − 6^{2}) = √(42.25 − 36) = √6.25 = 2.5 m.
 M1#maths-u05-10-q2@1: Which is a Pythagorean triple? | 8, 15, 17 | 6, 8, 12 | 5, 6, 7 | 2, 3, 4 | 9, 12, 16 | Check a^{2} + b^{2} = c^{2}: 8^{2} + 15^{2} = 64 + 225 = 289 = 17^{2}.
 M3#maths-u05-10-q3@2: What is the distance between (−2, 3) and (4, −5)? | 10 | 14 | 8 | √20 | 6 | The differences are 6 and 8, so the distance is √(6^{2} + 8^{2}) = √100 = 10.
 NUM1#maths-u05-10-q4@1: A right-angled triangle has hypotenuse 13 and one side 5. How long is the other side? | 12 | 0 |  | √(13^{2} − 5^{2}) = √144 = 12.
+NUM2#maths-u05-10-q5@1: An isosceles triangle has two sides of 10 cm and a base of 12 cm. Find its perpendicular height. | 8 | 0 | cm | The height bisects the base, making a right-angled triangle with hypotenuse 10 and base 6: √(100 − 36) = 8 cm.
+M2#maths-u05-10-q6@2: A triangle has sides 9, 12 and 16. Which statement is true? | It is obtuse, as 9² + 12² < 16² | It is right-angled, as 9² + 12² = 16² | It is acute, as 9² + 12² > 16² | It can't exist, as 9 + 12 < 16 | 81 + 144 = 225, which is less than 16² = 256, so the angle opposite the longest side is more than 90°.
+SA2#maths-u05-10-q7@1,2: Find the space diagonal of a 2 cm by 3 cm by 6 cm cuboid, and decide whether a triangle with sides 20, 21 and 29 is right-angled. Explain each method. | For the cuboid, first find a face diagonal, √(2² + 3²) = √13, then use it as one leg of a right-angled triangle with the 6 cm edge: √(13 + 36) = √49 = 7 cm; equivalently √(a² + b² + c²). For the triangle, use the converse: if the squares of the two shorter sides add to the square of the longest, the angle opposite it is 90°. 20² + 21² = 400 + 441 = 841 = 29², so the triangle is right-angled, with the right angle opposite the 29 side. | face diagonal √13 ; space diagonal 7 cm ; states the converse ; 400 + 441 = 841 ; right angle opposite the longest side
 
 ## Circles
 S: A circle is the set of points at a fixed distance from a centre. Its circumference and area involve π, the ratio of circumference to diameter, one of mathematics' most famous constants.
 O: Name the parts of a circle
 O: Calculate circumferences and areas of circles
+LV: GCSE · Fluency
+EV: established | A circle's circumference is 2πr and its area is πr², where π is the fixed ratio of circumference to diameter.
 T: Radius | The distance from the centre to the circle; the diameter is twice the radius
 T: π (pi) | The ratio of a circle's circumference to its diameter, about 3.14159
 H: Parts of a circle
@@ -346,15 +418,20 @@ Q: What is a chord? | A line segment joining two points on a circle.
 SUM: Circles are defined by a centre and radius.
 SUM: π links diameter, circumference and area.
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
-SRC: Beckmann P, A History of Pi (St Martin's Press 1971) | textbook | 1971 | https://us.macmillan.com/
+SRC: Beckmann P, A History of Pi (St Martin's Press 1971) | secondary | 1971 | https://us.macmillan.com/
 NUM1#maths-u05-11-q1@1: A circle has area 64π cm². What is its circumference, in terms of π? | 16 | 0 | π cm | r^{2} = 64, so r = 8 and C = 2π × 8 = 16π cm.
 M1#maths-u05-11-q2@1: What is the area of a circle with diameter 10 cm? | 25π cm² | 100π cm² | 10π cm² | 5π cm² | 20π cm² | The radius is 5 cm, so the area is π × 5^{2} = 25π.
 M2#maths-u05-11-q3@2: What is the region between a chord and its arc called? | A segment | A sector | A tangent | A radius | An annulus | A sector is bounded by two radii; a segment by a chord and an arc.
+NUM3#maths-u05-11-q4@2: A circular pond has area 50 m². Find its circumference, to 1 decimal place. | 25.1 | 0.05 | m | r = √(50/π) ≈ 3.989 m, so C = 2πr ≈ 25.1 m.
+M3#maths-u05-11-q5@2: A quarter circle of radius 10 cm is drawn inside a square of side 10 cm, centred on one corner. What area of the square lies outside it? | 100 − 25π cm² | 100 − 10π cm² | 100 − 20π cm² | 100 − 5π cm² | 25π cm² | The quarter circle has area ¼ × π × 10² = 25π cm², so 100 − 25π ≈ 21.5 cm² of the square is left.
+SA2#maths-u05-11-q6@1,2: Explain the difference between a sector and a segment of a circle, then find the perimeter of a quarter circle of radius 6 cm, exactly and to 1 decimal place. | A sector is the region between two radii and the arc joining them, like a slice of pizza; a segment is the region between a chord and its arc. A quarter circle is a sector with a 90° angle: its curved edge is ¼ × 2π × 6 = 3π cm, and its perimeter also includes the two straight radii, 6 + 6 = 12 cm. The perimeter is 3π + 12 ≈ 21.4 cm. | sector bounded by two radii and an arc ; segment bounded by a chord and an arc ; arc length 3π ; adds the two radii ; 3π + 12 ≈ 21.4 cm
 
 ## Chords and Tangents
 S: Chords and tangents connect lines and circles. A tangent meets a circle at exactly one point, and the radius there is perpendicular to it; the perpendicular from the centre to a chord bisects it.
 O: Use properties of chords and tangents to find lengths and angles
 O: Find equations of tangents to circles in coordinate geometry
+LV: GCSE and A level · Application
+EV: established | A tangent is perpendicular to the radius at the point of contact, and the perpendicular from the centre to a chord bisects the chord.
 T: Tangent | A straight line that touches a circle at exactly one point
 T: Perpendicular bisector of a chord | The line through the midpoint of a chord at right angles; it passes through the centre
 H: Properties
@@ -383,11 +460,16 @@ SRC: Department for Education, Mathematics AS and A level subject content: coord
 NUM1#maths-u05-12-q1@1: A tangent from a point P touches a circle of radius 5 cm. P is 13 cm from the centre. How long is the tangent? | 12 | 0 | cm | The radius is perpendicular to the tangent, so √(13^{2} − 5^{2}) = 12 cm.
 M1#maths-u05-12-q2@1: Two tangents from an external point to a circle are: | Equal in length | Perpendicular | Parallel | Different lengths | Always 90° apart | By symmetry, tangents from the same external point are the same length.
 M2#maths-u05-12-q3@2: The centre of a circle is (2, 1) and P(5, 5) is on it. What is the gradient of the tangent at P? | −3/4 | 4/3 | 3/4 | −4/3 | 0 | The radius has gradient 4/3, so the tangent's gradient is the negative reciprocal, −3/4.
+M3#maths-u05-12-q4@1: Tangents from P touch a circle with centre O at A and B, and angle APB = 50°. What is angle AOB? | 130° | 50° | 100° | 40° | 65° | OAPB has right angles at A and B (tangent ⟂ radius), so angle AOB = 360 − 90 − 90 − 50 = 130°.
+NUM3#maths-u05-12-q5@2: Find the tangent to x^{2} + y^{2} = 25 at the point (3, 4). Give the y-intercept of the tangent. | 6.25 | 0 |  | The radius has gradient 4/3, so the tangent has gradient −3/4: y − 4 = −¾(x − 3), giving y = −¾x + 6.25 (or 3x + 4y = 25).
+SA2#maths-u05-12-q6@1: A chord of length 24 cm lies in a circle of radius 13 cm. Find the distance of the chord from the centre, and explain why the perpendicular from the centre bisects the chord. | Let the chord be AB, the centre O, and M the foot of the perpendicular from O. Triangles OMA and OMB are right-angled at M, share OM, and have OA = OB (radii), so they are congruent (RHS) and AM = MB. So AM = 12 cm, and by Pythagoras OM = √(13² − 12²) = √25 = 5 cm. | right angles at M ; OA = OB as radii ; congruent by RHS so AM = MB ; half-chord 12 cm ; distance 5 cm
 
 ## Circle Theorems
 S: The circle theorems describe the angles formed by chords, tangents and radii in a circle. They're elegant, provable from basic facts, and a staple of GCSE Higher geometry.
 O: State and apply the circle theorems with correct reasons
 O: Prove a circle theorem using isosceles triangles
+LV: GCSE and A level · Problem solving
+EV: established | The circle theorems follow from the isosceles triangles formed by radii and from the triangle angle sum.
 T: Cyclic quadrilateral | A quadrilateral whose four vertices lie on a circle
 T: Subtended angle | The angle formed at a point by lines from the ends of an arc or chord
 H: The theorems
@@ -413,15 +495,20 @@ Q: What do opposite angles in a cyclic quadrilateral add up to? | 180°.
 SUM: Circle theorems connect angles and arcs.
 SUM: State the theorem as the reason.
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
-SRC: Heath TL (trans.), Euclid: The Thirteen Books of the Elements (Dover 1956) | textbook | 1956 | https://store.doverpublications.com/
+SRC: Heath TL (trans.), Euclid: The Thirteen Books of the Elements (Dover 1956) | secondary | 1956 | https://store.doverpublications.com/
 NUM1#maths-u05-13-q1@1: In a cyclic quadrilateral, one angle is 4x and its opposite angle is 5x. Find x. | 20 | 0 | ° | Opposite angles add to 180°: 9x = 180, so x = 20.
 M1#maths-u05-13-q2@1: AB is a diameter and C is on the circle. What is angle ACB? | 90° | 180° | 45° | 60° | It depends on C | The angle in a semicircle is a right angle.
 M3#maths-u05-13-q3@2: The angle between a tangent and chord AB at A is 52°. What is the angle subtended by AB in the alternate segment? | 52° | 104° | 38° | 128° | 26° | By the alternate segment theorem, it equals the tangent–chord angle.
+M2#maths-u05-13-q4@1: A, B and C lie on a circle with centre O, B on the major arc, and angle ABC = 35°. What is angle AOC? | 70° | 35° | 145° | 110° | 17.5° | The angle at the centre is twice the angle at the circumference standing on the same arc: 2 × 35 = 70°.
+NUM2#maths-u05-13-q5@1: ABCD is a cyclic quadrilateral with angle A = 3x + 10 and angle C = 2x + 20. Find angle A. | 100 | 0 | ° | Opposite angles of a cyclic quadrilateral add to 180°: 5x + 30 = 180, so x = 30 and A = 100°.
+SA3#maths-u05-13-q6@2: AB is a diameter of a circle with centre O, and C is any other point on the circle. Prove that angle ACB = 90°. | Join OC. OA = OC = OB because they are radii, so triangles OAC and OBC are isosceles. Let angle OAC = angle OCA = a and angle OBC = angle OCB = b. Then angle ACB = a + b. The angles of triangle ABC add to 180°: a + b + (a + b) = 180°, so 2(a + b) = 180° and angle ACB = a + b = 90°. | joins OC ; three radii equal ; two isosceles triangles with equal base angles ; angle sum of ABC gives 2(a + b) = 180° ; concludes 90°
 
 ## Constructions
 S: Geometric constructions use only a straight edge and compasses to draw accurate figures: perpendicular bisectors, angle bisectors, perpendiculars and triangles. They show how geometry follows from the properties of circles.
 O: Construct perpendicular bisectors, angle bisectors and perpendiculars
 O: Construct triangles from given information
+LV: GCSE · Fluency
+EV: established | Compass-and-straight-edge constructions of bisectors and perpendiculars work because their points are equidistant from given points or lines.
 T: Perpendicular bisector | The line at right angles to a segment through its midpoint: every point on it is equidistant from the segment's ends
 T: Angle bisector | The line splitting an angle into two equal angles: every point on it is equidistant from the angle's arms
 H: The standard constructions
@@ -437,6 +524,7 @@ X: Describe how to construct an angle of 45° at a point A on a line.
 > Construct the perpendicular to the line at A (bisect a segment centred on A), giving 90°
 > Bisect the 90° angle using equal arcs from points on each arm
 > The bisector makes 45° with the line
+!: Setting the compasses to less than half of AB when bisecting it: the arcs from A and B then fail to cross.
 K: Use compasses and a straight edge; keep arcs visible; bisectors give 90°, and halving equilateral angles gives 60° and 30°.
 !: Changing the compass width midway through a construction that needs equal arcs.
 Q: Which points lie on the perpendicular bisector of AB? | Points equidistant from A and B.
@@ -444,14 +532,20 @@ Q: How do you construct a 30° angle? | Construct 60° (an equilateral triangle)
 SUM: Constructions use only compasses and a straight edge.
 SUM: Bisectors are loci of equidistant points.
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
-SRC: Hartshorne R, Geometry: Euclid and Beyond (Springer 2000) | textbook | 2000 | https://link.springer.com/
+SRC: Hartshorne R, Geometry: Euclid and Beyond (Springer 2000) | secondary | 2000 | https://link.springer.com/
 M1#maths-u05-14-q1@1: Which construction finds all points equidistant from two points A and B? | The perpendicular bisector of AB | The angle bisector | A circle centred on A | A line parallel to AB | The midpoint only | Every point on the perpendicular bisector is the same distance from A and B.
 M2#maths-u05-14-q2@2: Which angle can't be constructed with compasses and a straight edge alone by bisecting standard angles? | 20° | 30° | 45° | 15° | 22.5° | Bisecting 60° and 90° gives 30°, 45°, 15° and 22.5°; trisecting 60° to get 20° is impossible with these tools (Wantzel, 1837).
+TF1#maths-u05-14-q3@1: An angle of 60° can be constructed with compasses and a straight edge alone. | true | Arcs of the same radius from the two ends of a segment meet at the third vertex of an equilateral triangle, whose angles are 60°.
+SEQ2#maths-u05-14-q4@1: Put the steps for constructing the perpendicular bisector of AB in order. | Set the compasses to more than half the length of AB ; Draw arcs above and below AB, centred on A ; Keep the width and draw arcs centred on B to cross them ; Join the two crossing points with a straight line | The width must be fixed before the first arc and kept for the second, and the line goes through both crossing points.
+M3#maths-u05-14-q5@1: Why does the perpendicular bisector construction work? | Each crossing point is equidistant from A and B, and all such points lie on one line | The compasses mark a 90° angle each time the two arcs cross over | The arcs always meet at the midpoint of AB, which fixes the direction | Any two arcs drawn from A and B meet each other at right angles | The two crossing points are each the same distance from A and B, and the set of all such points is the perpendicular bisector.
+SA2#maths-u05-14-q6@2: Describe how to construct a triangle with sides 7 cm, 5 cm and 4 cm, and explain why no triangle has sides 7 cm, 3 cm and 3 cm. | Draw the 7 cm side AB with a ruler. Set the compasses to 5 cm and draw an arc centred on A; set them to 4 cm and draw an arc centred on B. The arcs cross at C; join AC and BC, leaving the arcs visible. With 7, 3 and 3, arcs of 3 cm from each end of a 7 cm line don't meet, because 3 + 3 = 6 is less than 7: the triangle inequality fails. | draws the longest side first ; arcs of 5 cm and 4 cm from the two ends ; joins to the crossing point and keeps arcs ; 3 + 3 < 7 ; arcs don't meet
 
 ## Loci
 S: A locus is the set of all points satisfying a rule, such as "always 3 m from a tree". Loci combine with constructions to solve practical problems about regions and boundaries.
 O: Draw loci for standard rules
 O: Combine loci to identify regions satisfying several conditions
+LV: GCSE · Application
+EV: established | Standard loci (circles, perpendicular bisectors, angle bisectors and parallel lines) are the sets of points satisfying simple distance conditions.
 T: Locus | The set of points that satisfy a given condition (plural: loci)
 T: Equidistant | At equal distances from two points, lines or objects
 H: Standard loci
@@ -468,6 +562,7 @@ X: A goat is tied to a corner of a 10 m by 6 m shed (outside it) with a 4 m rope
 > From the corner, the rope sweeps three quarters of a circle of radius 4 m (the shed blocks the other quarter)
 > Its area is ¾ × π × 4^{2} = 12π
 > ≈ 37.7 m^{2}
+!: Using the wrong boundary: "closer to A than to B" is the region on A's side of the perpendicular bisector of AB, not a circle round A.
 K: Points at a fixed distance from a point form a circle; equidistant from two points is the perpendicular bisector; combine loci to find regions.
 !: Drawing a locus from a line segment with square corners instead of semicircular ends.
 Q: What is the locus of points 2 cm from a point P? | A circle of radius 2 cm centred on P.
@@ -478,11 +573,16 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary mastery professional development materials: constructions and loci | guidance | 2019 | https://www.ncetm.org.uk/
 M1#maths-u05-15-q1@1: What is the locus of points 5 m from a straight wall (on one side)? | A line parallel to the wall, 5 m away | A circle of radius 5 m | A perpendicular bisector | An angle bisector | A single point | Every point 5 m from the wall lies on a parallel line at that distance.
 M2#maths-u05-15-q2@2: Points equidistant from (0, 0) and (6, 0) lie on which line? | x = 3 | y = 3 | y = x | x = 6 | y = 0 | That's the perpendicular bisector of the segment, through its midpoint (3, 0).
+TF1#maths-u05-15-q3@1: The locus of points exactly 3 cm from a point P is a disc of radius 3 cm. | false | Points exactly 3 cm away form the circle; the points less than 3 cm away fill the disc inside it.
+NUM3#maths-u05-15-q4@2: A goat is tied outside a 5 m by 3 m shed, at one corner, with a 4 m rope. What area can it graze, in m² to 1 decimal place? | 38.5 | 0.1 | m² | Three quarters of a circle of radius 4 gives 12π; along the 3 m wall the rope passes the far corner with 1 m left, adding a quarter circle of radius 1 (π/4): 12.25π ≈ 38.5 m².
+SA2#maths-u05-15-q5@1,2: Describe how to find and shade the region of points that are within 5 km of a town C and closer to town A than to town B, and state which constructions you use. | Draw a circle of radius 5 km (to scale) centred on C with compasses; points inside it are within 5 km of C. Construct the perpendicular bisector of AB: points on it are equidistant from A and B, and points on A's side are closer to A. Shade the part of the disc that lies on A's side of the bisector. Use solid or dashed boundaries as the question asks and leave construction arcs visible. | circle of radius 5 km about C ; inside the circle ; perpendicular bisector of AB ; A's side is closer to A ; shades the overlap
 
 ## Bearings
 S: A bearing gives a direction as a three-figure angle measured clockwise from north. Bearings are used in navigation, orienteering, aviation and surveying, and combine with trigonometry to find distances.
 O: Measure and calculate bearings
 O: Find back bearings and solve bearing problems with trigonometry
+LV: GCSE · Application
+EV: established | A bearing is a three-figure angle measured clockwise from north, and the back bearing differs from it by 180°.
 T: Bearing | An angle measured clockwise from north, written with three figures, such as 045°
 T: Back bearing | The bearing of the return journey: add or subtract 180°
 H: The rules
@@ -509,11 +609,15 @@ SRC: Ordnance Survey, Map reading made easy | guidance | 2023 | https://www.ordn
 NUM1#maths-u05-16-q1@1: The bearing of Q from P is 155°. What is the bearing of P from Q? | 335 | 0 | ° | Add 180° for the back bearing: 155 + 180 = 335°.
 M1#maths-u05-16-q2@1: Which bearing describes south-east? | 135° | 045° | 225° | 315° | 090° | South-east is halfway between east (090°) and south (180°).
 M2#maths-u05-16-q3@2: A walker goes 5 km north and 5 km east. What is her bearing from the start? | 045° | 090° | 135° | 000° | 315° | Equal north and east components give an angle of 45° clockwise from north.
+NUM3#maths-u05-16-q4@2: A ship sails 8 km on a bearing of 040°, then 6 km on 130°. Find the bearing of its finishing point from its start, to the nearest degree. | 77 | 0.5 | ° | The legs meet at 90° (130 − 40), so the angle between the first leg and the line to the finish is tan⁻¹(6/8) ≈ 36.9°; 40 + 36.9 ≈ 077°.
+SA2#maths-u05-16-q5@1,2: B is on a bearing of 070° from A. Find the bearing of A from B and explain, using the north lines at A and B, why the rule 'add 180°' works. | The north lines at A and B are parallel. The line AB is a transversal, so the angle at B between north and the direction back to A makes co-interior angles with the 070° at A: the angle from B's north clockwise round to BA is 70° + 180° = 250°. So the bearing of A from B is 250°. In general the return direction is exactly opposite, a half turn of 180°, so add 180° to bearings under 180° and subtract 180° from bearings over 180°. | north lines are parallel ; AB as a transversal ; co-interior or alternate angle reasoning ; bearing 250° ; add or subtract 180°
 
 ## Perimeter
 S: The perimeter is the total distance around the outside of a shape. It's what you'd need for fencing, edging or a frame, and calculating it carefully means accounting for every edge, including curved ones.
 O: Calculate perimeters of polygons and compound shapes
 O: Calculate perimeters involving arcs and circles
+LV: GCSE · Fluency
+EV: established | A perimeter is the total length of a shape's boundary, including arcs and excluding internal edges.
 T: Perimeter | The total length of the boundary of a 2D shape
 T: Compound shape | A shape made from simpler shapes joined together
 H: Polygons and compound shapes
@@ -529,6 +633,10 @@ X: A shape is a 10 cm by 6 cm rectangle with a semicircle on one 6 cm side (the 
 > The straight edges are 10 + 6 + 10 = 26 cm
 > The semicircle has diameter 6 cm: its arc is ½ × π × 6 = 3π ≈ 9.42 cm
 > Perimeter ≈ 26 + 9.42 = 35.4 cm
+X: An L-shape is an 8 cm by 6 cm rectangle with a 3 cm by 2 cm rectangle cut from one corner. Find its perimeter.
+> The two edges of the notch replace the 3 cm and 2 cm of the corner they cut away
+> So the perimeter equals the rectangle's: 2(8 + 6) = 28 cm
+> Check by adding all six edges: 8 + 4 + 3 + 2 + 5 + 6 = 28 cm
 K: Add every edge in the same units; find missing sides from given ones; include arcs, and exclude internal edges.
 !: Including an internal edge where two shapes join, or forgetting the straight diameter of a semicircle.
 Q: What is the perimeter of a regular hexagon with side 7 cm? | 42 cm.
@@ -540,11 +648,15 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 NUM1#maths-u05-17-q1@1: A rectangle has length 3 cm more than its width and perimeter 34 cm. What is its width? | 7 | 0 | cm | 2(w + w + 3) = 34 gives 4w + 6 = 34, so w = 7 cm.
 M1#maths-u05-17-q2@1: What is the perimeter of a quarter circle of radius 4 cm, to 1 decimal place? | 14.3 cm | 6.3 cm | 12.6 cm | 8.0 cm | 25.1 cm | The arc is ¼ × 2π × 4 = 2π ≈ 6.28, plus two radii of 4: 14.3 cm.
 M2#maths-u05-17-q3@2: Which rectangle with perimeter 24 cm has the largest area? | 6 cm by 6 cm | 10 cm by 2 cm | 8 cm by 4 cm | 11 cm by 1 cm | 9 cm by 3 cm | For a fixed perimeter, the square gives the largest area: 36 cm^{2}.
+NUM3@2: A running track has two straight sides of 100 m and two semicircular ends, each of diameter 60 m. Find the length of one lap, to the nearest metre. | 388 | 0.5 | m | The two semicircles make one circle of diameter 60 m, 60π ≈ 188.5 m; adding 2 × 100 m gives about 388 m.
+SA2@1,2: Explain, using rectangles with perimeter 20 cm, why equal perimeters don't mean equal areas, and find the perimeter of a semicircle of diameter 10 cm. | A 1 cm by 9 cm rectangle and a 5 cm by 5 cm square both have perimeter 2(1 + 9) = 2(5 + 5) = 20 cm, but their areas are 9 cm² and 25 cm²: perimeter measures the boundary and area the surface, so they can vary independently (for a fixed perimeter, the square has the largest area of any rectangle). A semicircle of diameter 10 cm has a curved edge ½ × π × 10 = 5π cm and a straight edge of 10 cm, so its perimeter is 5π + 10 ≈ 25.7 cm. | two rectangles with perimeter 20 cm ; areas 9 and 25 cm² ; boundary versus surface ; arc 5π cm ; includes the diameter: 5π + 10 ≈ 25.7 cm
 
 ## Area
 S: Area measures the amount of surface a 2D shape covers, in square units. Formulas for rectangles, triangles, parallelograms, trapeziums and circles combine to find the area of almost any shape.
 O: Use area formulas for standard shapes
 O: Find areas of compound shapes and convert area units
+LV: GCSE · Fluency
+EV: established | Areas of standard shapes follow from the rectangle and triangle formulas, and area units convert by the square of the length factor.
 T: Area | The size of a 2D surface, measured in square units such as cm^{2} or m^{2}
 T: Perpendicular height | The height measured at right angles to the base
 H: Formulas
@@ -572,11 +684,15 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 NUM1#maths-u05-18-q1@1: Find the area of a sector with radius 10 cm and angle 72°, to 1 decimal place. | 62.8 | 0.05 | cm² | (72/360) × π × 100 = 20π ≈ 62.8 cm^{2}.
 M1#maths-u05-18-q2@1: A parallelogram has base 8 cm, slanted side 5 cm and perpendicular height 4 cm. What is its area? | 32 cm² | 40 cm² | 20 cm² | 26 cm² | 16 cm² | Area = base × perpendicular height = 8 × 4; the slanted side isn't used.
 M2#maths-u05-18-q3@2: How many mm² are in 1 m²? | 1,000,000 | 1,000 | 10,000 | 100,000 | 100 | 1 m = 1,000 mm, so 1 m^{2} = 1,000 × 1,000 mm^{2}.
+NUM3@1: A trapezium has area 54 cm², perpendicular height 6 cm and one parallel side of 7 cm. How long is the other parallel side? | 11 | 0 | cm | ½(7 + b) × 6 = 54, so 3(7 + b) = 54, 7 + b = 18 and b = 11 cm.
+SA2@1,2: A wall is 4 m by 3 m with a 1.2 m by 0.9 m window. Find the area to be painted in m² and in cm², explaining each step. | The wall's area is 4 × 3 = 12 m² and the window's is 1.2 × 0.9 = 1.08 m²; subtracting the cut-out gives 12 − 1.08 = 10.92 m². Since 1 m = 100 cm, 1 m² = 100 × 100 = 10,000 cm², so 10.92 m² = 109,200 cm². | wall area 12 m² ; window area 1.08 m² ; subtracts to 10.92 m² ; 1 m² = 10,000 cm² ; 109,200 cm²
 
 ## Arc Length
 S: An arc is part of a circle's circumference. Its length is a fraction of the whole circumference, set by the angle at the centre, and in radians the formula is especially simple.
 O: Calculate arc lengths and sector perimeters in degrees and radians
 O: Find angles or radii from given arc lengths
+LV: GCSE and A level · Application
+EV: established | An arc is the fraction θ/360 of the circumference, which in radians gives arc length rθ and sector area ½r²θ.
 T: Arc | A part of the circumference of a circle
 T: Radian | The angle subtended at the centre by an arc equal in length to the radius; 2π radians = 360°
 H: Formulas
@@ -606,11 +722,15 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 NUM1#maths-u05-19-q1@1: Find the arc length of a sector with radius 6 cm and angle 2.5 radians. | 15 | 0 | cm | arc = rθ = 6 × 2.5 = 15 cm.
 M1#maths-u05-19-q2@1: What fraction of the circumference is an arc subtending 45°? | 1/8 | 1/4 | 1/45 | 45/100 | 1/2 | The arc's share of the circle is its angle over 360°: 45/360 = 1/8.
 M2#maths-u05-19-q3@2: What is the area of a sector with r = 4 cm and θ = 0.75 rad? | 6 cm² | 3 cm² | 12 cm² | 1.5 cm² | 24 cm² | With θ in radians, sector area = ½r^{2}θ = ½ × 16 × 0.75 = 6 cm^{2}.
+NUM3@2: A sector has area 15 cm² and radius 5 cm. Find its arc length. | 6 | 0 | cm | ½r^{2}θ = 15 gives θ = 30/25 = 1.2 radians, so the arc is rθ = 5 × 1.2 = 6 cm.
+SA3@1: Explain why the arc length is rθ when θ is in radians, then find the area of the segment cut off by a chord that subtends π/3 at the centre of a circle of radius 6 cm. | A full turn is 2π radians and the whole circumference is 2πr, so an angle θ takes the fraction θ/2π of it: (θ/2π) × 2πr = rθ. The same fraction of the area πr² gives the sector area ½r²θ. The segment is the sector minus the triangle formed by the two radii: ½ × 36 × π/3 − ½ × 36 × sin(π/3) = 6π − 9√3 ≈ 18.85 − 15.59 = 3.26 cm². | fraction θ/2π of the circle ; arc = rθ ; sector area 6π ; triangle area ½r² sin θ = 9√3 ; segment ≈ 3.26 cm²
 
 ## Solid Geometry
 S: Solid geometry studies three-dimensional shapes: prisms, pyramids, cylinders, cones and spheres. Visualising them through nets, plans and elevations, and measuring them, is essential in design, engineering and science.
 O: Name and describe common 3D solids
 O: Use nets, plans and elevations to represent solids
+LV: GCSE · Fluency
+EV: established | Prisms have a constant cross-section, pyramids and cones taper to an apex, and nets, plans and elevations represent solids in two dimensions.
 T: Prism | A solid with the same cross-section along its length
 T: Net | A 2D pattern that folds to make a 3D solid
 H: Common solids
@@ -627,6 +747,7 @@ X: A solid has a plan view that's a circle and front and side elevations that ar
 > From above, the outline is a circle
 > From the front and side, it tapers to a point
 > It's a cone
+P: Plans and elevations are drawn without perspective. A square-based pyramid has a square plan with its diagonals drawn (the sloping edges seen from above) and triangular front and side elevations.
 K: Prisms keep the same cross-section; pyramids taper to an apex; nets, plans and elevations represent solids in 2D.
 !: Confusing a plan (from above) with an elevation (from the front or side).
 Q: What is a prism? | A solid with a constant cross-section along its length.
@@ -634,14 +755,19 @@ Q: How many different nets does a cube have? | 11.
 SUM: Solids are classified by their shapes and faces.
 SUM: 2D views represent 3D solids.
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
-SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | textbook | 1989 | https://www.wiley.com/
+SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | secondary | 1989 | https://www.wiley.com/
 M1#maths-u05-20-q1@1: Which solid has a constant circular cross-section? | A cylinder | A cone | A sphere | A pyramid | A hemisphere | A cylinder is a prism with a circular cross-section.
 M3#maths-u05-20-q2@2: Which cross-section is impossible when slicing a cube with a flat plane? | A heptagon | A triangle | A hexagon | A pentagon | A rectangle | A cube has 6 faces, so a plane can cut at most 6 of them: at most a hexagon.
+TF1@1: A cone has the same cross-section all the way along its height. | false | A cone's circular cross-sections shrink towards the apex, so it is pyramid-like, not a prism; a cylinder keeps a constant cross-section.
+M2@2: A solid's plan is a rectangle, its front elevation is a rectangle and its side elevation is a triangle. What is it? | A triangular prism | A cuboid | A square-based pyramid | A cone | A tetrahedron | A triangular prism lying on a rectangular face looks rectangular from above and from the front, and shows its triangular cross-section from the side.
+SA2@1,2: Describe a square-based pyramid: give its numbers of faces, edges and vertices, and describe its net and its plan view. | A square-based pyramid has 5 faces (one square base and four triangles), 8 edges (four round the base and four to the apex) and 5 vertices (four base corners and the apex). Its net is a square with a triangle attached to each side, which fold up to meet at the apex. Seen from above, the plan is a square with its two diagonals drawn, meeting at the point directly below the apex. | 5 faces ; 8 edges ; 5 vertices ; net of a square with four triangles ; plan is a square with diagonals
 
 ## Polyhedra
 S: A polyhedron is a solid with flat polygonal faces. The five Platonic solids are the regular polyhedra, and Euler's formula V − E + F = 2 links the numbers of vertices, edges and faces of every convex polyhedron.
 O: Identify the Platonic solids
 O: Use Euler's formula to find vertices, edges or faces
+LV: GCSE · Application
+EV: established | There are exactly five Platonic solids, and every convex polyhedron satisfies V − E + F = 2.
 T: Polyhedron | A solid bounded by flat polygonal faces (plural: polyhedra)
 T: Euler's formula | V − E + F = 2 for any convex polyhedron
 H: The Platonic solids
@@ -664,16 +790,21 @@ Q: How many faces does an octahedron have? | 8.
 Q: Check Euler's formula for a tetrahedron. | 4 − 6 + 4 = 2.
 SUM: Polyhedra have flat polygonal faces.
 SUM: Euler's formula holds for all convex polyhedra.
-SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | textbook | 1989 | https://www.wiley.com/
-SRC: Richeson DS, Euler's Gem: The Polyhedron Formula and the Birth of Topology (Princeton University Press 2008) | textbook | 2008 | https://press.princeton.edu/
+SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | secondary | 1989 | https://www.wiley.com/
+SRC: Richeson DS, Euler's Gem: The Polyhedron Formula and the Birth of Topology (Princeton University Press 2008) | secondary | 2008 | https://press.princeton.edu/
 NUM1#maths-u05-21-q1@1: A convex polyhedron has 12 faces and 20 vertices. How many edges does it have? | 30 | 0 |  | V − E + F = 2 gives 20 − E + 12 = 2, so E = 30 (a dodecahedron).
 M1#maths-u05-21-q2@1: How many Platonic solids are there? | 5 | 3 | 4 | 6 | Infinitely many | Only five convex regular polyhedra exist: tetrahedron, cube, octahedron, dodecahedron and icosahedron.
 M2#maths-u05-21-q3@2: Which Platonic solid has pentagonal faces? | Dodecahedron | Icosahedron | Octahedron | Tetrahedron | Cube | The dodecahedron has 12 regular pentagonal faces.
+M2@2: Could a convex polyhedron have 7 vertices, 10 edges and 6 faces? | No: V − E + F would be 3, not 2 | Yes: the counts are all positive whole numbers | Yes: any counts work if the faces differ in shape | No: polyhedra must have an even number of vertices | 7 − 10 + 6 = 3, but Euler's formula requires V − E + F = 2 for every convex polyhedron.
+NUM3@2: A football (truncated icosahedron) has 12 pentagonal and 20 hexagonal faces. How many vertices does it have? | 60 | 0 | vertices | F = 32; each edge is shared by two faces, so E = (12 × 5 + 20 × 6) ÷ 2 = 90; V = 2 + E − F = 2 + 90 − 32 = 60.
+SA3@1: Explain why there are exactly five Platonic solids, using the angles that meet at a vertex. | At each vertex of a convex polyhedron at least three faces meet, and their angles must add to less than 360° (at exactly 360° they lie flat). Equilateral triangles (60°) allow 3, 4 or 5 at a vertex (180°, 240°, 300°): the tetrahedron, octahedron and icosahedron. Squares (90°) allow only 3 (270°): the cube. Regular pentagons (108°) allow only 3 (324°): the dodecahedron. Hexagons give 3 × 120° = 360°, which is flat, and larger polygons are worse, so there are exactly five. | at least three faces at a vertex ; angle sum under 360° ; three triangle cases ; squares and pentagons one case each ; hexagons and above impossible
 
 ## Surface Area
 S: The surface area of a solid is the total area of all its faces or curved surfaces. It matters for packaging, painting, heat loss and biology, where the surface-area-to-volume ratio is crucial.
 O: Calculate surface areas of prisms, pyramids, cylinders, cones and spheres
 O: Use nets to find surface areas
+LV: GCSE · Application
+EV: established | The surface area of a solid is the sum of the areas of its faces and curved surfaces, using the slant height for cones.
 T: Surface area | The total area of the outer surface of a 3D shape
 T: Slant height | The distance from the apex of a cone or pyramid to the edge of its base along its surface
 H: Formulas
@@ -701,11 +832,15 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 NUM1#maths-u05-22-q1@1: Find the surface area of a 4 cm by 5 cm by 6 cm cuboid. | 148 | 0 | cm² | 2(20 + 24 + 30) = 2 × 74 = 148 cm^{2}.
 M1#maths-u05-22-q2@1: What is the total surface area of a closed cylinder with r = 2 cm and h = 5 cm? | 28π cm² | 20π cm² | 24π cm² | 14π cm² | 40π cm² | Two circular ends 2πr^{2} = 8π plus the curved surface 2πrh = 20π gives 28π.
 M2#maths-u05-22-q3@2: What is the curved surface area of a hemisphere of radius 5 cm? | 50π cm² | 100π cm² | 75π cm² | 25π cm² | 125π cm² | Half of 4πr^{2} = 2π × 25 = 50π (add 25π for the flat face if it's included).
+NUM3@1: A solid is a hemisphere of radius 3 cm on top of a cylinder of radius 3 cm and height 10 cm, with a flat circular base. Find its surface area in terms of π. | 87 | 0 | π cm² | Hemisphere 2πr^{2} = 18π, curved cylinder 2πrh = 60π and base πr^{2} = 9π; the join is hidden, so the total is 87π cm².
+SA2@1,2: A square-based pyramid has base edges of 6 cm, and each triangular face has a perpendicular height (slant height) of 5 cm. Explain how a net helps you find its surface area, and find it. | The net is the square base with a triangle on each side; the surface area is the total area of the net. The base is 6 × 6 = 36 cm². Each triangle has base 6 cm and height 5 cm, so area ½ × 6 × 5 = 15 cm², and there are four: 60 cm². The total surface area is 36 + 60 = 96 cm². | net of a square and four triangles ; base 36 cm² ; each triangle 15 cm² using slant height ; four triangles 60 cm² ; total 96 cm²
 
 ## Volume
 S: Volume measures the space a 3D object occupies, in cubic units. Formulas for prisms, pyramids, cones and spheres let us compute capacities, masses (with density) and costs.
 O: Calculate volumes of prisms, cylinders, pyramids, cones and spheres
 O: Convert volume and capacity units
+LV: GCSE · Application
+EV: established | Prisms have volume cross-section × length, pyramids and cones one third of base × height, and spheres (4/3)πr³.
 T: Volume | The amount of space inside a 3D shape, measured in cubic units
 T: Capacity | The amount a container holds, often in litres: 1 litre = 1,000 cm^{3}
 H: Formulas
@@ -734,11 +869,15 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 NUM1#maths-u05-23-q1@1: Find the volume of a sphere of radius 3 cm, in terms of π. | 36 | 0 | π cm³ | (4/3)π × 27 = 36π cm^{3}.
 M1#maths-u05-23-q2@1: A triangular prism has a cross-section of area 15 cm² and length 8 cm. What is its volume? | 120 cm³ | 60 cm³ | 23 cm³ | 40 cm³ | 1,800 cm³ | Volume of a prism = area of cross-section × length.
 M3#maths-u05-23-q3@2: A cone and a cylinder have the same radius and the same volume. How do their heights compare? | The cone is three times as tall | They're equal | The cylinder is three times as tall | The cone is twice as tall | The cone is √3 times as tall | Equal volumes: ⅓πr^{2}h₁ = πr^{2}h₂, so the cone's height is h₁ = 3h₂.
+NUM2@2: A cuboid tank measures 2 m by 1.5 m by 0.8 m. How many litres does it hold when full? | 2400 | 0 | litres | V = 2 × 1.5 × 0.8 = 2.4 m^{3}, and 1 m^{3} = 1,000 litres, so it holds 2,400 litres.
+SA3@1: A cone of radius 6 cm and height 12 cm has its top cut off by a plane parallel to the base, halfway up. Find the volume of the remaining frustum in terms of π, explaining your method. | The whole cone has volume ⅓π × 6² × 12 = 144π cm³. The removed top is a similar cone with height 6 cm, so the length scale factor is ½ and its radius is 3 cm: volume ⅓π × 3² × 6 = 18π cm³ (or 144π × (½)³). The frustum is the difference: 144π − 18π = 126π ≈ 396 cm³. | large cone 144π ; small cone similar with factor ½ ; small cone 18π ; subtracts ; 126π cm³
 
 ## Geometric Transformations
 S: Transformations move or change shapes: translations, reflections, rotations and enlargements. Describing them precisely, and combining them, links geometry with vectors, matrices and symmetry.
 O: Perform and describe the four basic transformations
 O: Describe combined transformations as single transformations where possible
+LV: GCSE · Application
+EV: established | Translations, reflections and rotations preserve lengths and angles, enlargements preserve shape, and each is fixed by a full description.
 T: Isometry | A transformation preserving lengths and angles (translation, reflection, rotation)
 T: Centre of enlargement | The fixed point from which an enlargement scales distances
 H: The four transformations
@@ -764,15 +903,19 @@ Q: What does a negative scale factor do in an enlargement? | It places the image
 SUM: Transformations move and resize shapes.
 SUM: Full descriptions need every detail.
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
-SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | textbook | 1989 | https://www.wiley.com/
+SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | secondary | 1989 | https://www.wiley.com/
 M1#maths-u05-24-q1@1: Where does (4, 1) go after reflection in the line y = x? | (1, 4) | (−4, 1) | (4, −1) | (−1, −4) | (1, −4) | Reflection in y = x swaps the coordinates.
 M2#maths-u05-24-q2@2: Where does (2, 5) go after a 90° clockwise rotation about the origin? | (5, −2) | (−5, 2) | (−2, 5) | (2, −5) | (−5, −2) | A 90° clockwise rotation maps (x, y) to (y, −x).
-M2#maths-u05-24-q3@2: What does the matrix [[3, 0], [0, 3]] do to shapes? | Enlarges them by scale factor 3 about the origin, multiplying areas by 9 | Rotates them by 3° | Reflects them in y = x | Translates them by 3 | Enlarges by 9 and areas by 3 | Both coordinates triple, so lengths ×3 and areas ×9 = det.
+M2#maths-u05-24-q3@2: What does the matrix [[3, 0], [0, 3]] do to shapes? | Enlarges them by scale factor 3 about the origin, multiplying areas by 9 | Rotates them by 3° about the origin, keeping areas the same | Reflects them in y = x, keeping areas the same | Translates them 3 units right and 3 units up the grid | Enlarges them by scale factor 9, multiplying areas by 3 | Both coordinates triple, so lengths ×3 and areas ×9 = det.
+M3@2: A shape is reflected in the line x = 1 and then in the line x = 4. Which single transformation has the same effect? | Translation by (6, 0) | Translation by (3, 0) | Reflection in x = 5 | Rotation 180° about (2.5, 0) | Translation by (−6, 0) | Reflections in parallel lines make a translation of twice the gap between them, from the first line towards the second: (0, 0) → (2, 0) → (6, 0).
+SA2@1: Triangle P has vertices (1, 1), (3, 1) and (1, 2); triangle Q has vertices (−1, 1), (−1, 3) and (−2, 1). Describe fully the single transformation that maps P to Q, and show how you checked it. | It is a rotation of 90° anticlockwise about the origin (0, 0). This rotation maps (x, y) to (−y, x): (1, 1) → (−1, 1), (3, 1) → (−1, 3) and (1, 2) → (−2, 1), which are exactly Q's vertices. A full description of a rotation needs the angle, the direction and the centre. | names a rotation ; 90° ; anticlockwise ; centre (0, 0) ; checks the vertices with (x, y) → (−y, x)
 
 ## Transformations and Symmetry
 S: A shape has symmetry if a transformation maps it onto itself. Line (reflection) and rotational symmetry describe the shapes of letters, logos, crystals and molecules, and lead to group theory.
 O: Identify lines of symmetry and the order of rotational symmetry
 O: Connect symmetry with transformations
+LV: GCSE · Fluency
+EV: established | A shape's symmetries are the transformations that map it onto itself, and they form a group.
 T: Line of symmetry | A mirror line that reflects a shape onto itself
 T: Order of rotational symmetry | The number of times a shape fits onto itself in one full turn
 H: Types of symmetry
@@ -787,6 +930,7 @@ X: State the lines of symmetry and order of rotational symmetry of a regular hex
 > It has 6 lines of symmetry: 3 through opposite vertices and 3 through midpoints of opposite sides
 > It fits onto itself after rotations of 60°, 120°, …, 360°
 > Order of rotational symmetry 6
+P: Capital letters show the two kinds separately: H has 2 lines of symmetry and rotational symmetry of order 2; S has no lines of symmetry but order 2; A has 1 line and order 1.
 K: Count mirror lines and the turns that map a shape onto itself; a regular n-gon has n of each.
 !: Saying a parallelogram has lines of symmetry: it has rotational symmetry of order 2 but no mirror lines (unless it's a rhombus or rectangle).
 Q: What is the order of rotational symmetry of an equilateral triangle? | 3.
@@ -794,14 +938,20 @@ Q: How many lines of symmetry does a rectangle (not a square) have? | 2.
 SUM: Symmetry is invariance under transformation.
 SUM: Symmetries form groups.
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
-SRC: Armstrong MA, Groups and Symmetry (Springer 1988) | textbook | 1988 | https://link.springer.com/
+SRC: Armstrong MA, Groups and Symmetry (Springer 1988) | secondary | 1988 | https://link.springer.com/
 M1#maths-u05-25-q1@1: How many lines of symmetry does a regular pentagon have? | 5 | 1 | 2 | 10 | 0 | A regular n-sided polygon has n lines of symmetry.
 M2#maths-u05-25-q2@2: Which shape has rotational symmetry of order 2 but no lines of symmetry? | A (non-rectangular, non-rhombus) parallelogram | A square | A kite | An isosceles trapezium | An equilateral triangle | A general parallelogram looks the same after a half turn, but no mirror line maps it onto itself.
+TF1@1: A shape with no rotational symmetry is said to have rotational symmetry of order 1. | true | Every shape fits onto itself once in a full turn (the 360° turn), so order 1 means no rotational symmetry.
+NUM2@1: A regular polygon fits onto itself after every turn of 40°. How many lines of symmetry does it have? | 9 | 0 | lines | It has 360 ÷ 40 = 9 rotations, so it is a regular 9-gon, and a regular n-gon has n lines of symmetry.
+M3@2: Counting rotations and reflections together (including the identity), how many symmetries does a regular hexagon have? | 12 | 6 | 8 | 18 | 24 | It has 6 rotations (including the 360° turn) and 6 reflections, so 12 symmetries: the dihedral group of order 12.
+SA2@1,2: Explain how line symmetry and rotational symmetry relate to reflections and rotations, and list all the symmetries of a (non-square) rectangle. | A line of symmetry is a mirror line for a reflection that maps the shape onto itself; rotational symmetry means a rotation about the centre maps it onto itself, and the order counts these rotations in one full turn. A rectangle that isn't a square has two lines of symmetry (through the midpoints of opposite sides) and rotational symmetry of order 2 (a half turn and the full turn). Its symmetries are therefore four: the identity (full turn), the half turn about the centre, and the two reflections. | lines of symmetry as reflections ; rotational symmetry as rotations ; rectangle has 2 lines ; order 2 ; four symmetries listed
 
 ## Tessellations
 S: A tessellation is a pattern of shapes covering a plane with no gaps or overlaps. Tessellations appear in tiling, brickwork, honeycombs and art, and their mathematics explains which shapes can tile.
 O: Determine which regular polygons tessellate
 O: Explain tessellation using angles at a vertex
+LV: GCSE · Application
+EV: established | A tessellation needs the angles at each vertex to total 360°, so only equilateral triangles, squares and regular hexagons tile alone among regular polygons.
 T: Tessellation | A tiling of the plane by shapes with no gaps or overlaps
 T: Regular tessellation | A tessellation using one regular polygon, with the same arrangement at every vertex
 H: Which shapes tessellate?
@@ -817,21 +967,30 @@ X: Can regular octagons tessellate on their own? Can they with squares?
 > Each interior angle of a regular octagon is 135°; 360/135 isn't a whole number, so not alone
 > Two octagons and a square at a vertex: 135 + 135 + 90 = 360
 > So octagons tessellate with squares (as on many bathroom floors)
+X: Show that any triangle tessellates.
+> Let its angles be a, b and c, with a + b + c = 180°
+> Rotate copies by 180° about the midpoints of the sides: six copies meet at each vertex, two of each angle
+> 2(a + b + c) = 360°, so they fit with no gaps or overlaps
 K: Angles at each vertex must total 360°; only equilateral triangles, squares and regular hexagons tile alone among regular polygons.
 !: Assuming every regular polygon tessellates.
 Q: Why don't regular pentagons tessellate? | Their 108° angles can't add to exactly 360° at a vertex.
 Q: Does every quadrilateral tessellate? | Yes.
 SUM: Tessellations need angles summing to 360°.
 SUM: Only three regular polygons tile alone.
-SRC: Grünbaum B, Shephard GC, Tilings and Patterns (2nd edn, Dover 2016) | textbook | 2016 | https://store.doverpublications.com/
-SRC: Smith D, Myers JS, Kaplan CS, Goodman-Strauss C, An aperiodic monotile, Combinatorial Theory 4(1) | journal | 2024 | https://doi.org/10.5070/C64163843
+SRC: Grünbaum B, Shephard GC, Tilings and Patterns (2nd edn, Dover 2016) | secondary | 2016 | https://store.doverpublications.com/
+SRC: Smith D, Myers JS, Kaplan CS, Goodman-Strauss C, An aperiodic monotile, Combinatorial Theory 4(1) | primary | 2024 | https://doi.org/10.5070/C64163843
 M1#maths-u05-26-q1@1: Which regular polygon tessellates on its own? | Hexagon | Pentagon | Octagon | Heptagon | Decagon | Three hexagons meet at a vertex: 3 × 120° = 360°.
 M2#maths-u05-26-q2@2: Which combination of regular polygons fits exactly around a vertex? | Two octagons and a square | Two pentagons and a square | Three pentagons | Two hexagons and a square | An octagon and two triangles | The angles at the vertex must total 360°: 135° + 135° + 90° = 360°.
+TF1@1: Every quadrilateral, even one with a reflex angle, tessellates. | true | Rotating copies by 180° about side midpoints puts all four angles, which add to 360°, round each vertex, whatever the shape.
+M3@2: Two regular dodecagons (12-gons) meet at a vertex. Which regular polygon fills the gap exactly? | An equilateral triangle | A square | A regular hexagon | A regular pentagon | A regular octagon | Each dodecagon angle is 180 − 360/12 = 150°; 2 × 150 = 300, leaving 60°, the angle of an equilateral triangle.
+SA3@1,2: Explain why exactly three regular polygons tessellate on their own. | At each vertex the angles must total 360°, so the interior angle must divide 360 exactly, with at least three polygons meeting. Equilateral triangles (60°, six at a vertex), squares (90°, four) and regular hexagons (120°, three) work. A regular pentagon's 108° doesn't divide 360. For seven or more sides the interior angle is between 120° and 180°, so fewer than three fit round a point but two leave a gap: none can tile alone. | angles at a vertex total 360° ; at least three polygons meet ; triangle, square and hexagon cases ; pentagon 108° fails ; angles over 120° fail for n ≥ 7
 
 ## Coordinate Geometry
 S: Coordinate geometry describes points, lines and shapes with numbers, so geometric problems can be solved with algebra. It was Descartes' great idea, and it underlies graphs, computer graphics and GPS.
 O: Find midpoints, distances and gradients of line segments
 O: Find and use equations of straight lines
+LV: GCSE and A level · Fluency
+EV: established | Gradients, midpoints, distances and line equations follow from coordinates, letting geometric problems be solved with algebra.
 T: Gradient | The steepness of a line: change in y ÷ change in x
 T: Midpoint | The point halfway between two points: ((x₁ + x₂)/2, (y₁ + y₂)/2)
 H: Points and segments
@@ -860,11 +1019,15 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 NUM1#maths-u05-27-q1@1: Find the gradient of the line through (−1, 4) and (3, −8). | -3 | 0 |  | (−8 − 4)/(3 − (−1)) = −12/4 = −3.
 M1#maths-u05-27-q2@1: Which line passes through (2, 7) with gradient 3? | y = 3x + 1 | y = 3x + 7 | y = 2x + 3 | y = 3x − 1 | y = 7x + 2 | Use y − y₁ = m(x − x₁): y − 7 = 3(x − 2), which gives y = 3x + 1.
 M2#maths-u05-27-q3@2: Where do y = 2x + 1 and y = −x + 7 meet? | (2, 5) | (1, 3) | (3, 4) | (2, 3) | (6, 13) | Set the expressions equal: 2x + 1 = −x + 7 gives x = 2, so y = 5.
+NUM3@2: The line through A(1, 2) perpendicular to y = 3x − 5 crosses the x-axis at (k, 0). Find k. | 7 | 0 |  | The perpendicular gradient is −1/3: y − 2 = −⅓(x − 1). At y = 0, x − 1 = 6, so k = 7.
+SA2@1,2: Show that A(1, 1), B(4, 5) and C(7, 9) are collinear, and find the length of AC and the midpoint of AC. | The gradient of AB is (5 − 1)/(4 − 1) = 4/3 and the gradient of BC is (9 − 5)/(7 − 4) = 4/3. The segments have equal gradients and share point B, so A, B and C lie on one line. AC = √((7 − 1)² + (9 − 1)²) = √(36 + 64) = 10. The midpoint of AC is ((1 + 7)/2, (1 + 9)/2) = (4, 5), which is B. | gradient of AB 4/3 ; gradient of BC 4/3 ; shared point B so collinear ; AC = 10 ; midpoint (4, 5)
 
 ## Analytic Geometry
 S: Analytic geometry studies curves through their equations: lines, circles and the conics, in two and three dimensions. It answers geometric questions (tangents, intersections, distances) with algebra.
 O: Use the equation of a circle and find tangents and intersections
 O: Find the distance from a point to a line
+LV: GCSE and A level · Application
+EV: established | Circles are described by (x − a)² + (y − b)² = r², and line–circle intersections are decided by the discriminant of the resulting quadratic.
 T: Analytic geometry | Geometry using coordinates and equations, also called Cartesian geometry
 T: Locus equation | The equation satisfied by all points of a locus
 H: Circles
@@ -887,15 +1050,19 @@ Q: How do you test whether a line is tangent to a circle? | Substitute and check
 SUM: Equations describe curves.
 SUM: Algebra answers geometric questions.
 SRC: Department for Education, Mathematics AS and A level subject content: coordinate geometry | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | textbook | 1989 | https://www.wiley.com/
+SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | secondary | 1989 | https://www.wiley.com/
 NUM1#maths-u05-28-q1@1: What is the radius of x^{2} + y^{2} + 8x − 2y − 8 = 0? | 5 | 0 |  | (x + 4)^{2} + (y − 1)^{2} = 8 + 16 + 1 = 25, so r = 5.
 M1#maths-u05-28-q2@1: What is the centre of (x + 2)^{2} + (y − 5)^{2} = 9? | (−2, 5) | (2, −5) | (2, 5) | (−2, −5) | (5, −2) | (x − a)^{2} + (y − b)^{2}: here a = −2 and b = 5.
 M3#maths-u05-28-q3@2: Does the line y = x + 5 meet the circle x^{2} + y^{2} = 4? | No | Yes, twice | Yes, once (tangent) | Only at the origin | It lies inside | Substituting gives 2x^{2} + 10x + 21 = 0, with discriminant 100 − 168 < 0.
+NUM2@2: Find the distance from the point (1, −2) to the line 5x − 12y + 4 = 0, to 2 decimal places. | 2.54 | 0.01 |  | |5(1) − 12(−2) + 4| = 33 and √(25 + 144) = 13, so the distance is 33/13 ≈ 2.54.
+SA3@1: Find the values of k for which the line y = x + k is a tangent to the circle x^{2} + y^{2} = 8, explaining the method. | Substitute y = x + k: x² + (x + k)² = 8, so 2x² + 2kx + k² − 8 = 0. A tangent meets the circle once, so this quadratic has a repeated root and its discriminant is zero: (2k)² − 4 × 2 × (k² − 8) = 64 − 4k² = 0, giving k = 4 or k = −4. Check: the distance from the centre (0, 0) to x − y + k = 0 is |k|/√2 = 4/√2 = √8, the radius. | substitutes the line ; forms the quadratic ; discriminant zero for a tangent ; k = ±4 ; checks or interprets with the radius
 
 ## Vectors in Geometry
 S: Vectors have size and direction, and they make geometric proofs remarkably clean. Representing points and directions as vectors turns geometry into algebra with arrows.
 O: Add, subtract and scale vectors, and find magnitudes
 O: Use vectors to prove geometric results such as parallel lines and ratios
+LV: GCSE and A level · Application
+EV: established | Parallel vectors are scalar multiples of each other, so vector algebra proves parallel and collinear results.
 T: Vector | A quantity with magnitude and direction, written a, AB or as a column (x, y)
 T: Position vector | The vector from the origin to a point
 H: Vector arithmetic
@@ -925,11 +1092,15 @@ SRC: Department for Education, Mathematics AS and A level subject content: vecto
 NUM1#maths-u05-29-q1@1: Find the magnitude of the vector (6, 8). | 10 | 0 |  | √(36 + 64) = √100 = 10.
 M1#maths-u05-29-q2@1: A = (2, 1) and B = (5, 5). What is the vector AB? | (3, 4) | (−3, −4) | (7, 6) | (5, 5) | (2.5, 3) | AB = b − a: subtract A's coordinates from B's to get (5 − 2, 5 − 1) = (3, 4).
 M2#maths-u05-29-q3@2: Which vector is parallel to (2, −3)? | (−4, 6) | (3, −2) | (2, 3) | (−2, −2) | (6, 4) | Parallel vectors are scalar multiples, and (−4, 6) = −2 × (2, −3).
+M3@1,2: OA = a and OB = b. P lies on AB with AP : PB = 1 : 3. What is OP? | ¾a + ¼b | ¼a + ¾b | ⅓a + ⅔b | ⅔a + ⅓b | a + ¼b | OP = a + ¼AB = a + ¼(b − a) = ¾a + ¼b; P is nearer A, so a has the larger weight.
+SA3@2: OA = a, OB = b and OC = 3b − 2a. Prove that A, B and C are collinear and find the ratio AB : BC. | AB = b − a. BC = OC − OB = 3b − 2a − b = 2b − 2a = 2(b − a). So BC = 2AB: the vectors are parallel, and they share the point B, so A, B and C lie on one straight line. Since BC is twice AB, AB : BC = 1 : 2. | AB = b − a ; BC = 2b − 2a ; BC is a scalar multiple of AB ; shared point B gives collinearity ; ratio 1 : 2
 
 ## 3D Coordinate Geometry
 S: 3D coordinate geometry extends coordinates to (x, y, z). Distances, midpoints, lines and planes in space describe everything from molecular structures to flight paths and video game worlds.
 O: Find distances and midpoints in three dimensions
 O: Write vector equations of lines and planes in 3D
+LV: A level · Application
+EV: established | Distance, midpoint and scalar-product formulas extend to three dimensions, where lines are r = a + λd and planes are fixed by a normal vector.
 T: Vector equation of a line | r = a + λd: a point a plus multiples of a direction d
 T: Normal vector | A vector perpendicular to a plane
 H: Points in 3D
@@ -955,14 +1126,19 @@ Q: What is the normal vector to the plane 2x − y + 3z = 7? | (2, −1, 3).
 SUM: Coordinates extend naturally to 3D.
 SUM: Vectors describe lines and planes.
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
-SRC: Anton H, Rorres C, Elementary Linear Algebra (12th edn, Wiley 2019) | textbook | 2019 | https://www.wiley.com/
+SRC: Anton H, Rorres C, Elementary Linear Algebra (12th edn, Wiley 2019) | secondary | 2019 | https://www.wiley.com/
 M1#maths-u05-30-q1@1: What is the distance from the origin to (2, 3, 6)? | 7 | 11 | 5 | √11 | 49 | The 3D distance formula gives √(2^{2} + 3^{2} + 6^{2}) = √49 = 7.
 M2#maths-u05-30-q2@2: Which point lies on the line r = (1, 0, 2) + λ(1, 2, −1)? | (3, 4, 0) | (2, 2, 3) | (1, 2, 1) | (0, 0, 0) | (3, 4, 4) | λ = 2 gives (1 + 2, 0 + 4, 2 − 2) = (3, 4, 0).
+NUM2@1: Find the distance between (1, 2, −1) and (3, −1, 5). | 7 | 0 |  | The differences are 2, −3 and 6, so the distance is √(4 + 9 + 36) = √49 = 7.
+M3@2: What is the angle between lines with directions (1, 0, 1) and (0, 1, 1)? | 60° | 45° | 30° | 90° | 120° | The scalar product is 0 + 0 + 1 = 1 and each magnitude is √2, so cos θ = 1/2 and θ = 60°.
+SA3@2: Decide whether the lines r = (1, 0, 0) + λ(1, 1, 0) and r = (0, 0, 1) + μ(1, 0, 1) intersect, are parallel or are skew. Show your working. | The directions (1, 1, 0) and (1, 0, 1) aren't scalar multiples, so the lines aren't parallel. Points on them are (1 + λ, λ, 0) and (μ, 0, 1 + μ). Equating z: 0 = 1 + μ, so μ = −1. Equating x: 1 + λ = −1, so λ = −2. Then the y-coordinates are λ = −2 and 0, which don't agree, so there is no common point. The lines are neither parallel nor intersecting: they are skew. | directions not parallel ; general points on each line ; solves two equations for λ and μ ; third equation fails ; concludes skew
 
 ## Conic Sections
 S: Conic sections are the curves formed by slicing a double cone with a plane: circles, ellipses, parabolas and hyperbolas. Studied since ancient Greece, they describe planetary orbits, satellite dishes and the paths of comets.
 O: Identify the conic sections and how they arise
 O: Classify conics from their equations
+LV: A level · Fluency
+EV: established | Plane sections of a double cone give circles, ellipses, parabolas and hyperbolas, classified by eccentricity.
 T: Conic section | A curve formed by the intersection of a plane with a double cone
 T: Eccentricity | A number e describing a conic's shape: circle e = 0, ellipse 0 < e < 1, parabola e = 1, hyperbola e > 1
 H: The family
@@ -979,6 +1155,7 @@ X: Classify the conic 4x^{2} − 9y^{2} = 36.
 > Divide by 36: x^{2}/9 − y^{2}/4 = 1
 > The x^{2} and y^{2} terms have opposite signs
 > It's a hyperbola, with vertices at (±3, 0)
+P: A circle is a special ellipse with equal axes. For the ellipse x^{2}/a^{2} + y^{2}/b^{2} = 1 with a > b, the eccentricity is e = √(1 − b^{2}/a^{2}): the flatter the ellipse, the nearer e is to 1.
 K: Slicing a cone gives circles, ellipses, parabolas and hyperbolas; eccentricity and the signs of the squared terms classify them.
 !: Confusing a parabola (one squared term) with a hyperbola (two squared terms of opposite sign).
 Q: What is the eccentricity of a circle? | 0.
@@ -986,14 +1163,20 @@ Q: Which conic do planets follow? | Ellipses.
 SUM: Conics come from slicing a cone.
 SUM: Their equations and eccentricity classify them.
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
-SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | textbook | 1989 | https://www.wiley.com/
+SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | secondary | 1989 | https://www.wiley.com/
 M1#maths-u05-31-q1@1: Which conic is x^{2}/25 + y^{2}/9 = 1? | An ellipse | A hyperbola | A parabola | A circle | Two lines | Both squared terms are positive with different denominators: an ellipse.
 M2#maths-u05-31-q2@2: What eccentricity does a parabola have? | 1 | 0 | Between 0 and 1 | Greater than 1 | Infinite | A parabola is the boundary case between ellipses (e < 1) and hyperbolas (e > 1).
+TF1@1: A hyperbola arises when the cutting plane meets both halves of the double cone. | true | Only a hyperbola has two separate branches, one from each half of the double cone.
+M2@2: Which equation describes a hyperbola? | x^{2} − 4y^{2} + 2x = 3 | x^{2} + 4y^{2} + 2x = 3 | x^{2} + 4y + 2x = 3 | x^{2} + y^{2} + 2x = 3 | With no xy term, opposite signs on the x^{2} and y^{2} terms give a hyperbola; same signs an ellipse or circle; one squared term a parabola.
+NUM3@2: Find the eccentricity of the ellipse x^{2}/25 + y^{2}/9 = 1. | 0.8 | 0 |  | e = √(1 − b^{2}/a^{2}) = √(1 − 9/25) = √(16/25) = 0.8, between 0 and 1 as an ellipse's must be.
+SA2@1,2: Describe how each of the four conics is obtained by slicing a double cone, and classify 9x^{2} + 4y^{2} = 36, y = x^{2} and x^{2} − y^{2} = 1. | A plane perpendicular to the axis gives a circle; tilted so it cuts right across one cone, an ellipse; parallel to a slanted side of the cone, a parabola; steep enough to cut both halves, a hyperbola. 9x² + 4y² = 36 has both squared terms positive with different coefficients, so it is an ellipse (x²/4 + y²/9 = 1). y = x² has one squared term, so it is a parabola. x² − y² = 1 has squared terms of opposite signs, so it is a hyperbola. | circle and ellipse slices ; parabola parallel to a side ; hyperbola cuts both halves ; ellipse identified ; parabola and hyperbola identified
 
 ## Parabolas
 S: A parabola is the set of points equidistant from a point (the focus) and a line (the directrix). Every quadratic graph is a parabola, and its reflective property is why satellite dishes and car headlights are parabolic.
 O: Use the focus–directrix definition of a parabola
 O: Find the focus and directrix of y^{2} = 4ax
+LV: A level · Application
+EV: established | A parabola is the locus of points equidistant from a focus and a directrix, and y² = 4ax has focus (a, 0) and directrix x = −a.
 T: Focus | The fixed point in the focus–directrix definition
 T: Directrix | The fixed line in the focus–directrix definition
 H: Equations
@@ -1009,6 +1192,7 @@ X: Find the focus and directrix of y^{2} = 12x, and check that (3, 6) is equidis
 > 4a = 12, so a = 3: focus (3, 0), directrix x = −3
 > Distance from (3, 6) to the focus is √(0 + 36) = 6
 > Distance to the directrix is 3 − (−3) = 6 ✓
+!: Using the y^{2} = 4ax results for x^{2} = 4ay without swapping the axes: for x^{2} = 4ay the focus is (0, a) and the directrix is y = −a.
 K: y^{2} = 4ax has focus (a, 0) and directrix x = −a; parabolas reflect parallel rays to the focus.
 !: Mixing up a and 4a when reading the focus from y^{2} = 4ax.
 Q: What is the focus of y^{2} = 8x? | (2, 0).
@@ -1016,15 +1200,19 @@ Q: Why are satellite dishes parabolic? | Signals parallel to the axis reflect to
 SUM: Parabolas balance focus and directrix distances.
 SUM: Their reflective property has many uses.
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
-SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | textbook | 1989 | https://www.wiley.com/
+SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | secondary | 1989 | https://www.wiley.com/
 NUM1#maths-u05-32-q1@1: The parabola y^{2} = 4ax has focus (5, 0). What is a? | 5 | 0 |  | The focus of y^{2} = 4ax is (a, 0), so a = 5 (the equation is y^{2} = 20x).
 M1#maths-u05-32-q2@1: What is the directrix of y^{2} = 16x? | x = −4 | x = 4 | y = −4 | x = −16 | y = 4 | 4a = 16 gives a = 4, and the directrix is x = −a.
 M2#maths-u05-32-q3@2: Where should a bulb be placed in a parabolic headlight to make a parallel beam? | At the focus | At the vertex | On the directrix | At the rim | Anywhere on the axis | Rays from the focus reflect off the parabola parallel to its axis.
+NUM3@1,2: A point P on the parabola y^{2} = 12x is 10 units from the focus. Find the x-coordinate of P. | 7 | 0 |  | The directrix is x = −3, and P is as far from the directrix as from the focus: x + 3 = 10, so x = 7.
+SA3@1,2: Using the focus–directrix definition, derive the equation of the parabola with focus (a, 0) and directrix x = −a. | For a point (x, y) on the parabola, the distance to the focus equals the distance to the directrix: √((x − a)² + y²) = x + a. Squaring both sides: x² − 2ax + a² + y² = x² + 2ax + a². Cancelling x² and a² leaves y² − 2ax = 2ax, so y² = 4ax. | sets the two distances equal ; distance to the directrix is x + a ; squares both sides ; expands and cancels ; reaches y² = 4ax
 
 ## Ellipses
 S: An ellipse is a stretched circle: the set of points whose distances to two foci add to a constant. Planets, comets and satellites travel in ellipses, as Kepler discovered.
 O: Use the standard equation of an ellipse
 O: Find the foci and eccentricity of an ellipse
+LV: A level · Application
+EV: established | An ellipse is the locus of points whose distances to two foci sum to 2a, with c² = a² − b² and eccentricity c/a between 0 and 1.
 T: Foci | The two fixed points of an ellipse; the sum of distances to them is constant (2a)
 T: Semi-major axis | Half the longest diameter, a
 H: The standard ellipse
@@ -1052,11 +1240,15 @@ SRC: NASA, Planetary fact sheet | data | 2024 | https://nssdc.gsfc.nasa.gov/plan
 NUM1#maths-u05-33-q1@1: For x^{2}/100 + y^{2}/36 = 1, find the distance from the centre to each focus. | 8 | 0 |  | c^{2} = 100 − 36 = 64, so c = 8.
 M1#maths-u05-33-q2@1: What is the sum of the distances from any point on x^{2}/49 + y^{2}/24 = 1 to its foci? | 14 | 7 | 10 | 49 | 2√24 | The sum of the distances to the foci is 2a, and a = √49 = 7, so 14.
 M2#maths-u05-33-q3@2: Which orbit is most nearly circular? | Eccentricity 0.02 | Eccentricity 0.5 | Eccentricity 0.9 | Eccentricity 0.97 | Eccentricity 1 | Eccentricity close to 0 means close to a circle.
+NUM3@1,2: An ellipse centred at the origin has foci (±3, 0) and passes through (5, 0). Find b, the length of its semi-minor axis. | 4 | 0 |  | The vertex (5, 0) gives a = 5, and c = 3, so b^{2} = a^{2} − c^{2} = 25 − 9 = 16 and b = 4.
+SA2@1,2: Explain why a string of length 2a with its ends pinned at the foci draws an ellipse, and find the foci and eccentricity of x^{2}/169 + y^{2}/144 = 1. | Keeping the string taut with a pencil, the pencil's distances to the two pins always add to the string's length, 2a, which is exactly the defining property of an ellipse with those foci. For x²/169 + y²/144 = 1, a = 13 and b = 12, so c² = a² − b² = 169 − 144 = 25 and c = 5: the foci are (±5, 0). The eccentricity is e = c/a = 5/13 ≈ 0.385. | distances to the foci sum to the string length ; sum is 2a ; a = 13, b = 12 ; c = 5 and foci (±5, 0) ; e = 5/13
 
 ## Hyperbolas
 S: A hyperbola is the set of points whose distances to two foci differ by a constant. It has two branches and two asymptotes, and appears in navigation systems, the paths of fast-moving comets and the graph of y = 1/x.
 O: Use the standard equation of a hyperbola
 O: Find foci, asymptotes and eccentricity
+LV: A level · Application
+EV: established | A hyperbola is the locus of points whose distances to two foci differ by 2a, with c² = a² + b², asymptotes y = ±(b/a)x and eccentricity above 1.
 T: Asymptote of a hyperbola | A line the branches approach: y = ±(b/a)x for x^{2}/a^{2} − y^{2}/b^{2} = 1
 T: Rectangular hyperbola | A hyperbola with perpendicular asymptotes, such as xy = c^{2}
 H: The standard hyperbola
@@ -1080,15 +1272,19 @@ Q: Is y = 1/x a hyperbola? | Yes: a rectangular hyperbola, xy = 1.
 SUM: Hyperbolas have constant difference of distances to two foci.
 SUM: They have two branches and two asymptotes.
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
-SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | textbook | 1989 | https://www.wiley.com/
+SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | secondary | 1989 | https://www.wiley.com/
 NUM1#maths-u05-34-q1@1: For x^{2}/9 − y^{2}/16 = 1, find c, the distance from the centre to each focus. | 5 | 0 |  | c^{2} = a^{2} + b^{2} = 9 + 16 = 25, so c = 5.
 M1#maths-u05-34-q2@1: Which equation is a hyperbola? | x^{2}/4 − y^{2}/9 = 1 | x^{2}/4 + y^{2}/9 = 1 | y = x^{2} | x^{2} + y^{2} = 9 | y = 2x + 1 | A hyperbola has x^{2} and y^{2} terms with opposite signs, as in the first option.
 M2#maths-u05-34-q3@2: What is the eccentricity of x^{2}/16 − y^{2}/9 = 1? | 5/4 | 4/5 | 3/4 | 5/3 | 1 | c^{2} = 16 + 9 = 25, so c = 5 and a = 4, giving e = c/a = 5/4.
+M3@2: A hyperbola centred at the origin has vertices (±3, 0) and asymptotes y = ±2x. What is its equation? | x^{2}/9 − y^{2}/36 = 1 | x^{2}/9 − y^{2}/4 = 1 | x^{2}/36 − y^{2}/9 = 1 | x^{2}/9 + y^{2}/36 = 1 | x^{2}/3 − y^{2}/6 = 1 | a = 3 and the asymptote gradient is b/a = 2, so b = 6 and b^{2} = 36.
+SA2@1,2: Compare the ellipse x^{2}/25 + y^{2}/16 = 1 and the hyperbola x^{2}/4 − y^{2}/5 = 1: state each curve's defining property, find their foci and eccentricities, and comment on the result. | An ellipse is the set of points whose distances to the foci add to 2a; a hyperbola the set whose distances differ by 2a. For the ellipse, a = 5 and c² = a² − b² = 25 − 16 = 9, so the foci are (±3, 0) and e = 3/5 = 0.6 (less than 1). For the hyperbola, a = 2 and c² = a² + b² = 4 + 5 = 9, so the foci are also (±3, 0) and e = 3/2 = 1.5 (greater than 1). The two curves share their foci: they are confocal. | sum versus difference of distances ; ellipse uses c² = a² − b² ; hyperbola uses c² = a² + b² ; both have foci (±3, 0) ; e = 0.6 and e = 1.5
 
 ## Non-Euclidean Geometry
 S: Non-Euclidean geometries keep Euclid's first four postulates but replace the parallel postulate. Discovered in the 1800s, they showed that more than one consistent geometry exists, and one of them describes the curved space-time of general relativity.
 O: Explain how non-Euclidean geometries differ from Euclidean geometry
 O: Compare the three classical geometries by curvature and angle sum
+LV: Year 2 · Fluency
+EV: established | Hyperbolic and elliptic geometries are as consistent as Euclidean geometry, and the parallel postulate cannot be proved from the other axioms.
 T: Curvature | A measure of how a space bends: zero (flat), positive (sphere-like) or negative (saddle-like)
 T: Model | A concrete space in which a geometry's axioms hold, such as the sphere or the Poincaré disc
 H: Three geometries
@@ -1104,21 +1300,28 @@ X: A triangle drawn on a sphere has angles 90°, 90° and 50°. Which geometry i
 > The angle sum is 230°, more than 180°
 > So the geometry is spherical (positive curvature)
 > The excess is 230 − 180 = 50° (proportional to the triangle's area)
+!: Thinking spherical geometry changes only the parallel postulate: on a sphere, great-circle lines are finite and antipodal points lie on infinitely many of them, so other axioms change too. Hyperbolic geometry is the one that keeps the first four postulates exactly.
 K: Changing the parallel postulate gives spherical (angle sum > 180°) and hyperbolic (< 180°) geometries, distinguished by curvature.
 !: Thinking non-Euclidean geometry is "wrong" geometry: it's equally consistent, and describes curved spaces.
 Q: How many parallels through a point does hyperbolic geometry allow? | Infinitely many.
 Q: Which physical theory uses non-Euclidean geometry? | Einstein's general relativity.
 SUM: Non-Euclidean geometries replace the parallel postulate.
 SUM: Curvature distinguishes them.
-SRC: Greenberg MJ, Euclidean and Non-Euclidean Geometries (4th edn, WH Freeman 2008) | textbook | 2008 | https://www.macmillanlearning.com/
-SRC: Hartshorne R, Geometry: Euclid and Beyond (Springer 2000) | textbook | 2000 | https://link.springer.com/
+SRC: Greenberg MJ, Euclidean and Non-Euclidean Geometries (4th edn, WH Freeman 2008) | secondary | 2008 | https://www.macmillanlearning.com/
+SRC: Hartshorne R, Geometry: Euclid and Beyond (Springer 2000) | secondary | 2000 | https://link.springer.com/
 M1#maths-u05-35-q1@1: In which geometry do triangles have angle sums less than 180°? | Hyperbolic | Spherical | Euclidean | Projective | Affine | Negative curvature makes triangles "thin", with angle sums below 180°.
 M2#maths-u05-35-q2@2: Who independently developed hyperbolic geometry in the 1820s and 1830s? | Bolyai and Lobachevsky (and Gauss, unpublished) | Euclid and Archimedes | Newton and Leibniz | Descartes and Fermat | Einstein and Minkowski | Bolyai and Lobachevsky published; Gauss had the ideas but didn't publish them.
+TF1@1: In spherical geometry, any two distinct lines (great circles) meet. | true | Two great circles lie in planes through the centre, which meet in a diameter, so the circles cross at two antipodal points: there are no parallels.
+NUM2@2: A triangle on a sphere has angles 80°, 75° and 95°. What is its angle excess, in degrees? | 70 | 0 | ° | The angle sum is 250°, so the excess over a flat triangle's 180° is 70°.
+M3@1,2: Why does flat Euclidean geometry work well when surveying a field on the curved Earth? | Small regions are nearly flat, so the angle excess is tiny | The Earth's surface is exactly flat on scales under a kilometre | Surveyors correct every measured angle by adding 180° | The parallel postulate holds on a sphere for short lines | A triangle's angle excess is proportional to its area, so a field-sized triangle on the Earth differs from 180° by far less than any instrument can measure.
+SA2@2: Compare Euclidean, spherical and hyperbolic geometry by curvature, number of parallels through a point and triangle angle sum, naming a model of each. | Euclidean geometry has zero curvature: through a point not on a line there is exactly one parallel, and triangle angles add to exactly 180°; the flat plane is its model. Spherical (elliptic) geometry has positive curvature: there are no parallels, since all lines meet, and angle sums exceed 180°; the sphere with great circles as lines is its model. Hyperbolic geometry has negative curvature: there are infinitely many parallels, and angle sums are below 180°; the Poincaré disc or a saddle shape models it. | curvature zero, positive, negative ; parallels one, none, infinitely many ; angle sums equal, more, less than 180° ; a model for each ; links angle sum to curvature
 
 ## Spherical Geometry
 S: Spherical geometry is geometry on the surface of a sphere, where the "straight lines" are great circles. It's the geometry of navigation, flight paths and astronomy, and its triangles have angle sums greater than 180°.
 O: Identify great circles as the geodesics of a sphere
 O: Use the angle excess to find areas of spherical triangles
+LV: Year 2 · Application
+EV: established | On a sphere the geodesics are great circles, and a triangle's area equals R² times its angle excess (Girard's theorem).
 T: Great circle | The intersection of a sphere with a plane through its centre; the shortest path between two points lies along one
 T: Angle excess | The amount by which a spherical triangle's angles exceed 180° (π radians)
 H: Lines, distances and triangles
@@ -1140,16 +1343,20 @@ Q: Are lines of longitude great circles? | Yes.
 Q: What is the area of a spherical triangle with angle excess E (radians) on a sphere of radius R? | R^{2}E.
 SUM: Great circles are spherical lines.
 SUM: Angle excess measures area.
-SRC: Greenberg MJ, Euclidean and Non-Euclidean Geometries (4th edn, WH Freeman 2008) | textbook | 2008 | https://www.macmillanlearning.com/
-SRC: Todhunter I, Spherical Trigonometry (Macmillan 1886) | textbook | 1886 | https://archive.org/
+SRC: Greenberg MJ, Euclidean and Non-Euclidean Geometries (4th edn, WH Freeman 2008) | secondary | 2008 | https://www.macmillanlearning.com/
+SRC: Todhunter I, Spherical Trigonometry (Macmillan 1886) | secondary | 1886 | https://archive.org/
 NUM1#maths-u05-36-q1@1: A spherical triangle on a unit sphere has angles 100°, 80° and 90°. What is its area, as a multiple of π? | 0.5 | 0.001 | π | The excess is 270 − 180 = 90° = π/2, so the area is π/2 = 0.5π.
 M1#maths-u05-36-q2@1: Which of these is a great circle on the Earth? | The equator | The Arctic Circle | The Tropic of Cancer | Latitude 51.5°N | The Tropic of Capricorn | Only the equator, among lines of latitude, has its centre at the Earth's centre.
 M2#maths-u05-36-q3@2: How many points do two distinct great circles share? | Two (antipodal points) | None | One | Infinitely many | Four | Two planes through the centre meet in a line through the centre, which hits the sphere twice.
+NUM3@1: Two towns lie on the same line of longitude, one at 50°N and one at 20°S. Taking R = 6,371 km, how far apart are they along the meridian, to the nearest km? | 7784 | 1 | km | The central angle is 50 + 20 = 70° = 1.2217 radians, so the distance is Rθ ≈ 6,371 × 1.2217 ≈ 7,784 km.
+SA3@1,2: Explain why only one line of latitude is a great circle, and use Girard's theorem to find the area of a spherical triangle with angles 120°, 90° and 60° on a sphere of radius 10 cm. | A great circle is cut by a plane through the sphere's centre. The equator's plane passes through the centre, but every other line of latitude lies in a parallel plane that misses the centre, so it is a smaller circle and not a geodesic. For the triangle, the angle sum is 270°, so the excess is 90° = π/2 radians. Girard's theorem gives area = R² × excess = 100 × π/2 = 50π ≈ 157 cm². | great circle plane through the centre ; only the equator qualifies ; angle excess 90° ; converts to π/2 radians ; area 50π ≈ 157 cm²
 
 ## Hyperbolic Geometry
 S: Hyperbolic geometry has constant negative curvature: through a point not on a line there are infinitely many parallels, and triangles are "thin", with angle sums less than 180°. It's visualised with models such as the Poincaré disc.
 O: Describe the main features of hyperbolic geometry
 O: Use the angle defect to find areas of hyperbolic triangles
+LV: Year 3 · Application
+EV: established | The hyperbolic plane has constant negative curvature, and a triangle's area equals its angle defect when the curvature is −1.
 T: Poincaré disc | A model of the hyperbolic plane inside a disc, where lines are arcs meeting the boundary at right angles
 T: Angle defect | π minus the angle sum of a triangle; in curvature −1 it equals the area
 H: Features
@@ -1165,22 +1372,27 @@ X: A hyperbolic triangle (curvature −1) has angles π/4, π/6 and π/12. Find 
 > Angle sum = π/4 + π/6 + π/12 = 3π/12 + 2π/12 + π/12 = π/2
 > Defect = π − π/2 = π/2
 > Area = π/2 ≈ 1.57
+!: Using Euclidean area formulas such as ½ab sin C on a hyperbolic triangle: with curvature −1 the area comes from the angle defect alone.
 K: Hyperbolic geometry has many parallels and angle sums below 180°; area equals the angle defect (curvature −1).
 !: Picturing hyperbolic lines in the Poincaré disc as straight chords: they're arcs at right angles to the boundary (except diameters).
 Q: What is the largest possible area of a hyperbolic triangle (curvature −1)? | π (an ideal triangle).
 Q: How do hyperbolic triangles' angle sums compare with 180°? | They're less than 180°.
 SUM: Hyperbolic geometry is negatively curved.
 SUM: Area equals the angle defect.
-SRC: Greenberg MJ, Euclidean and Non-Euclidean Geometries (4th edn, WH Freeman 2008) | textbook | 2008 | https://www.macmillanlearning.com/
-SRC: Anderson JW, Hyperbolic Geometry (2nd edn, Springer 2005) | textbook | 2005 | https://link.springer.com/
+SRC: Greenberg MJ, Euclidean and Non-Euclidean Geometries (4th edn, WH Freeman 2008) | secondary | 2008 | https://www.macmillanlearning.com/
+SRC: Anderson JW, Hyperbolic Geometry (2nd edn, Springer 2005) | secondary | 2005 | https://link.springer.com/
 NUM1#maths-u05-37-q1@1: A hyperbolic triangle (curvature −1) has angles π/3, π/4 and π/6. Find its area as a multiple of π. | 0.25 | 0.001 | π | The angles sum to 3π/4, so the defect and area are π/4 = 0.25π.
 M1#maths-u05-37-q2@1: What do lines look like in the Poincaré disc model? | Arcs meeting the boundary at right angles, or diameters | Straight chords only | Concentric circles | Spirals | Points | Hyperbolic lines are represented by circular arcs orthogonal to the boundary circle.
 M2#maths-u05-37-q3@2: How does a circle's circumference grow in the hyperbolic plane compared with 2πr? | Faster (exponentially) | Slower | The same | It shrinks | It's constant | Negative curvature makes space "spread out", so circumference grows exponentially with radius.
+NUM3@2: A hyperbolic triangle (curvature −1) has area 0.5 and two angles of 0.8 and 1.0 radians. Find the third angle in radians, to 2 decimal places. | 0.84 | 0.01 | rad | Area = π − (sum of angles), so the angles sum to π − 0.5 ≈ 2.642; the third is 2.642 − 1.8 ≈ 0.84 radians.
+SA2@1,2: Explain why no triangle in the hyperbolic plane (curvature −1) has area greater than π, and describe a triangle that reaches this bound. | With curvature −1, a triangle's area equals its angle defect, π − (A + B + C). Angles can't be negative, so the defect, and hence the area, is at most π, however long the sides are. The bound is reached by an ideal triangle, whose three vertices lie on the boundary of the Poincaré disc (at infinity): its sides are arcs meeting the boundary at right angles, all three angles are 0, and its area is exactly π. | area equals the angle defect ; angles are non-negative ; area at most π ; ideal triangle with vertices on the boundary ; angles 0 and area π
 
 ## Affine Geometry
 S: Affine geometry studies the properties preserved by affine transformations: those that keep straight lines straight and parallel lines parallel, though not lengths or angles. It's the geometry of shears, stretches and perspective-free drawing.
 O: Identify properties preserved by affine transformations
 O: Apply affine maps in coordinates
+LV: Year 2 · Application
+EV: established | Affine maps preserve straight lines, parallelism and ratios along lines, and scale every area by |det A|.
 T: Affine transformation | A map x ↦ Ax + b, with A an invertible matrix and b a vector
 T: Affine invariant | A property unchanged by affine maps, such as parallelism or ratios of lengths along a line
 H: What's preserved
@@ -1195,22 +1407,30 @@ X: An affine map sends (x, y) to (2x + y, y + 3). Find the image of the midpoint
 > Midpoint of AB is (2, 1), which maps to (5, 4)
 > A maps to (0, 3) and B maps to (10, 5); their midpoint is (5, 4)
 > They agree: affine maps preserve midpoints
+X: Find the image of the triangle (0, 0), (1, 0), (0, 1) under (x, y) ↦ (3x + y, 2y), and its area.
+> The vertices map to (0, 0), (3, 0) and (1, 2)
+> The image has base 3 and height 2, so area 3
+> The original area is ½ and det A = 3 × 2 = 6: ½ × 6 = 3 ✓
 K: Affine maps preserve lines, parallelism and ratios along lines, but not lengths or angles; area scales by |det A|.
 !: Assuming affine maps preserve angles or circles.
 Q: Do affine maps preserve parallel lines? | Yes.
 Q: What does an affine map do to a circle? | It maps it to an ellipse (or a circle).
 SUM: Affine geometry keeps lines and parallelism.
 SUM: Ratios along lines are invariant.
-SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | textbook | 1989 | https://www.wiley.com/
-SRC: Brannan DA, Esplen MF, Gray JJ, Geometry (2nd edn, Cambridge University Press 2011) | textbook | 2011 | https://www.cambridge.org/
+SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | secondary | 1989 | https://www.wiley.com/
+SRC: Brannan DA, Esplen MF, Gray JJ, Geometry (2nd edn, Cambridge University Press 2011) | secondary | 2011 | https://www.cambridge.org/
 NUM1#maths-u05-38-q1@1: An affine map has matrix A = [[3, 1], [0, 2]]. By what factor does it scale areas? | 6 | 0 |  | The area scale factor is |det A| = 3 × 2 − 1 × 0 = 6.
 M1#maths-u05-38-q2@1: Which property is preserved by every affine transformation? | Parallelism | Lengths | Angles | Circles | Perpendicularity | Affine maps keep parallel lines parallel but can change lengths and angles.
 M3#maths-u05-38-q3@2: Why can a ratio theorem proved for an equilateral triangle be applied to every triangle? | Any triangle is the affine image of an equilateral triangle, and ratios along lines are preserved | All triangles are similar | All triangles are congruent | Angles are preserved | It can't | Affine maps carry any triangle to any other while keeping ratios along lines.
+M2@2: What does the shear (x, y) ↦ (x + 2y, y) do to the unit square with vertices (0, 0), (1, 0), (1, 1) and (0, 1)? | Makes a parallelogram with the same area | Makes a larger square with double the area | Makes a rectangle with double the area | Makes a kite with the same area | The vertices go to (0, 0), (1, 0), (3, 1) and (2, 1): opposite sides stay parallel, and det = 1 × 1 − 2 × 0 = 1 keeps the area.
+SA2@1: Explain which properties of a square survive the map (x, y) ↦ (x + y, y) and which don't, and why this means a circle can become an ellipse. | The map is affine with matrix [[1, 1], [0, 1]], so it keeps straight lines straight, keeps parallel sides parallel and keeps ratios along lines (midpoints go to midpoints). The unit square becomes a parallelogram with vertices (0, 0), (1, 0), (2, 1), (1, 1), with the same area since det = 1. But its right angles become 45° and 135°, and a diagonal changes length, so angles and lengths aren't preserved. Because distances in different directions are stretched by different amounts, a circle (all points the same distance from the centre) is mapped to an ellipse. | lines and parallels preserved ; ratios along lines preserved ; square becomes a parallelogram ; angles and lengths change ; unequal stretching turns circles into ellipses
 
 ## Projective Geometry
 S: Projective geometry is the geometry of perspective: what stays the same when a scene is projected onto a canvas or a camera. Parallel lines meet "at infinity", and every two lines meet in exactly one point.
 O: Describe points at infinity and homogeneous coordinates
 O: Identify projective invariants such as incidence and the cross-ratio
+LV: Year 2 · Application
+EV: established | Projections preserve incidence and the cross-ratio, and in the projective plane every two distinct lines meet in exactly one point.
 T: Point at infinity | An ideal point where parallel lines meet, added to the plane to form the projective plane
 T: Cross-ratio | (A, B; C, D) = (AC × BD)/(BC × AD), a ratio preserved by projections
 H: The projective plane
@@ -1226,21 +1446,28 @@ X: Points A, B, C, D on a line have coordinates 0, 1, 3 and 4. Find the cross-ra
 > AC = 3, BD = 3, BC = 2, AD = 4
 > (A, B; C, D) = (3 × 3)/(2 × 4)
 > = 9/8 (and any projection of the line keeps this value)
+P: **Duality.** Swap the words point and line in a theorem of the projective plane and you get another theorem: Brianchon's theorem is the dual of Pascal's.
 K: The projective plane adds points at infinity so any two lines meet; projections preserve incidence and the cross-ratio.
 !: Expecting projections to preserve ratios of lengths: only the cross-ratio survives.
 Q: Where do parallel lines meet in the projective plane? | At a point at infinity.
 Q: Which quantity is preserved by projection? | The cross-ratio.
 SUM: Projective geometry is the geometry of perspective.
 SUM: Points at infinity make every pair of lines meet.
-SRC: Coxeter HSM, Projective Geometry (2nd edn, Springer 1987) | textbook | 1987 | https://link.springer.com/
-SRC: Brannan DA, Esplen MF, Gray JJ, Geometry (2nd edn, Cambridge University Press 2011) | textbook | 2011 | https://www.cambridge.org/
+SRC: Coxeter HSM, Projective Geometry (2nd edn, Springer 1987) | secondary | 1987 | https://link.springer.com/
+SRC: Brannan DA, Esplen MF, Gray JJ, Geometry (2nd edn, Cambridge University Press 2011) | secondary | 2011 | https://www.cambridge.org/
 M1#maths-u05-39-q1@1: In the projective plane, how many points do two distinct lines share? | Exactly one | None or one | Two | Infinitely many | It depends | Parallel lines meet at a point at infinity, so every pair of distinct lines meets exactly once.
 M2#maths-u05-39-q2@2: What are the homogeneous coordinates of the Euclidean point (3, 5)? | [3 : 5 : 1] (or any multiple) | [3 : 5 : 0] | [1 : 3 : 5] | [5 : 3 : 1] | [0 : 3 : 5] | Append 1; any non-zero multiple, such as [6 : 10 : 2], is the same point.
+TF1@1: In homogeneous coordinates, [2 : 4 : 2] and [1 : 2 : 1] are the same point. | true | Homogeneous coordinates are defined up to a non-zero multiple; both represent the Euclidean point (1, 2).
+NUM2@2: Points A, B, C and D on a line have coordinates 0, 2, 3 and 6. Find the cross-ratio (A, B; C, D) = (AC × BD)/(BC × AD). | 2 | 0 |  | AC = 3, BD = 4, BC = 1 and AD = 6, so the cross-ratio is (3 × 4)/(1 × 6) = 2.
+M3@1: In the projective plane, where do the parallel lines y = 2x + 1 and y = 2x − 3 meet? | At the point [1 : 2 : 0] | At the point [2 : 1 : 0] | At the point [0 : 0 : 1] | At the point [1 : 2 : 1] | They never meet | Homogenised, 2x − y + z = 0 and 2x − y − 3z = 0 force z = 0 and y = 2x: the point at infinity in direction (1, 2).
+SA2@1,2: Explain why parallel railway lines appear to meet in a photograph, and how the projective plane models this. | A camera projects the scene from a single point onto a flat image. Parallel rails heading away from the camera have images that converge to one vanishing point on the horizon, because points further away are projected closer together. Projection preserves straight lines and incidence but not parallelism, lengths or angles. The projective plane adds a point at infinity for each direction, where all lines with that direction meet; the vanishing point in the photograph is the image of the rails' point at infinity, so in projective geometry every two lines meet. | central projection from one point ; images of parallel lines converge ; parallelism and lengths not preserved ; point at infinity for each direction ; vanishing point is the image of that point
 
 ## Fractal Geometry
 S: Fractals are shapes with detail at every scale, often self-similar: zoom in and you see copies of the whole. Coastlines, ferns, clouds and blood vessels are fractal-like, and fractals have dimensions that aren't whole numbers.
 O: Describe self-similarity and construct simple fractals
 O: Calculate similarity dimensions
+LV: Year 2 · Application
+EV: established | Self-similar fractals have similarity dimension log N / log(1/r), which is often not a whole number.
 T: Self-similar | Made of smaller copies of itself
 T: Similarity dimension | D = log N / log(1/r), for a shape made of N copies scaled by r
 H: Classic fractals
@@ -1257,22 +1484,30 @@ X: Find the similarity dimension of the Cantor set.
 > Each step keeps N = 2 pieces, each scaled by r = 1/3
 > D = log 2 / log 3
 > ≈ 0.631: less than a line, more than a point
+X: What fraction of the original triangle's area remains after 5 steps of the Sierpiński construction?
+> Each step removes the middle quarter of every triangle, keeping 3/4 of the area
+> After 5 steps: (3/4)^{5} = 243/1024
+> ≈ 0.237: the area tends to 0 as the steps continue
 K: Fractals repeat their structure at every scale; similarity dimension D = log N / log(1/r) is often not a whole number.
 !: Assuming every irregular shape is a fractal: fractals have structure repeating across scales.
 Q: What is the dimension of the Koch curve? | log 4/log 3 ≈ 1.26.
 Q: What happens to the Koch curve's length after infinitely many steps? | It becomes infinite.
 SUM: Fractals have detail at all scales.
 SUM: Their dimensions can be fractional.
-SRC: Mandelbrot BB, The Fractal Geometry of Nature (WH Freeman 1982) | textbook | 1982 | https://www.macmillanlearning.com/
-SRC: Falconer K, Fractal Geometry: Mathematical Foundations and Applications (3rd edn, Wiley 2014) | textbook | 2014 | https://www.wiley.com/
+SRC: Mandelbrot BB, The Fractal Geometry of Nature (WH Freeman 1982) | secondary | 1982 | https://www.macmillanlearning.com/
+SRC: Falconer K, Fractal Geometry: Mathematical Foundations and Applications (3rd edn, Wiley 2014) | secondary | 2014 | https://www.wiley.com/
 NUM1#maths-u05-40-q1@1: A fractal is made of 8 copies of itself, each scaled by 1/2. Find its similarity dimension. | 3 | 0 |  | D = log 8/log 2 = 3 (like a solid cube made of 8 half-size cubes).
 M1#maths-u05-40-q2@1: What is the similarity dimension of the Sierpiński triangle? | log 3/log 2 ≈ 1.58 | 2 | 1 | log 2/log 3 ≈ 0.63 | 3/2 exactly | It's made of N = 3 copies scaled by r = 1/2.
 M2#maths-u05-40-q3@2: After each step of the Koch construction, the curve's length is multiplied by: | 4/3 | 3/4 | 2 | 1/3 | 3 | Each segment is replaced by 4 segments each a third as long.
+NUM3@2: A square is divided into 9 equal smaller squares and only the 4 corner squares and the centre square are kept; this is repeated for ever. Find the similarity dimension, to 2 decimal places. | 1.46 | 0.01 |  | N = 5 copies scaled by r = 1/3, so D = log 5/log 3 ≈ 1.46.
+SA2@1,2: Explain why the Koch snowflake has an infinite perimeter but encloses a finite area, and find the similarity dimension of its boundary. | Each step replaces every segment by 4 segments a third as long, multiplying the perimeter by 4/3. After n steps the perimeter is (4/3)ⁿ times the original, which grows without limit. But every added triangle lies near the original triangle, so the whole snowflake stays inside a fixed circle and its area is bounded (it tends to 8/5 of the original triangle's area). The boundary is made of N = 4 copies scaled by r = 1/3, so D = log 4/log 3 ≈ 1.26. | length multiplied by 4/3 each step ; (4/3)ⁿ grows without limit ; snowflake stays in a bounded region ; area finite (8/5 of the triangle) ; dimension log 4/log 3 ≈ 1.26
 
 ## Discrete Geometry
 S: Discrete geometry studies finite or countable sets of geometric objects: points, lines, polygons and lattices, and how they're arranged. Packing, covering, counting lattice points and arranging points are its central problems.
 O: Use Pick's theorem to find areas of lattice polygons
 O: Describe classic problems of packing and arrangement
+LV: Year 2 · Application
+EV: established | Pick's theorem gives the area of a simple lattice polygon as I + B/2 − 1, and hexagonal packing is the densest packing of equal circles in the plane.
 T: Lattice point | A point with integer coordinates
 T: Pick's theorem | For a polygon with vertices on lattice points: area = I + B/2 − 1, where I is the number of interior and B the number of boundary lattice points
 H: Pick's theorem
@@ -1284,25 +1519,30 @@ H: Packing and arrangements
 - **Erdős problems**: how many distinct distances must n points determine? Arrangements of lines and points.
 - Applications: crystallography, coding theory, wireless networks.
 X: Find the area of the triangle with vertices (0, 0), (4, 0) and (0, 3) using Pick's theorem, and check it.
-> Boundary points: 5 on the base, 4 on the vertical side, and the hypotenuse adds none besides its ends: B = 4 + 3 + 1 = 8
+> Boundary points: 5 on the base and 4 on the vertical side, sharing the origin; the hypotenuse has none between its ends: B = 5 + 4 − 1 = 8
 > Interior points: (1, 1), (2, 1), (1, 2): I = 3
 > Area = 3 + 4 − 1 = 6, matching ½ × 4 × 3 = 6
+P: Counting boundary points: the segment from (x₁, y₁) to (x₂, y₂) passes through gcd(|x₂ − x₁|, |y₂ − y₁|) + 1 lattice points, including its ends.
 K: Pick's theorem: area = I + B/2 − 1 for lattice polygons; packing problems ask for the densest arrangements.
 !: Applying Pick's theorem to a polygon whose vertices aren't lattice points.
 Q: What is the densest packing of equal circles in the plane? | The hexagonal packing (about 90.7%).
 Q: Who proved the Kepler conjecture? | Thomas Hales (1998; formally verified 2014).
 SUM: Discrete geometry studies arrangements of objects.
 SUM: Pick's theorem counts lattice points to find area.
-SRC: Matoušek J, Lectures on Discrete Geometry (Springer 2002) | textbook | 2002 | https://link.springer.com/
-SRC: Hales TC et al, A formal proof of the Kepler conjecture, Forum of Mathematics, Pi 5 | journal | 2017 | https://doi.org/10.1017/fmp.2017.1
+SRC: Matoušek J, Lectures on Discrete Geometry (Springer 2002) | secondary | 2002 | https://link.springer.com/
+SRC: Hales TC et al, A formal proof of the Kepler conjecture, Forum of Mathematics, Pi 5 | primary | 2017 | https://doi.org/10.1017/fmp.2017.1
 NUM1#maths-u05-41-q1@1: A lattice polygon has 10 interior points and 6 boundary points. Find its area. | 12 | 0 |  | Pick's theorem: 10 + 6/2 − 1 = 12.
 M1#maths-u05-41-q2@1: What fraction of space do equal spheres fill in the densest packing? | About 74% | About 52% | About 90.7% | 100% | About 50% | Kepler's conjecture, proved by Hales: π/(3√2) ≈ 0.7405.
 M2#maths-u05-41-q3@2: When does Pick's theorem apply? | To polygons whose vertices are all lattice points (no holes) | To any polygon | To circles | To 3D polyhedra | Only to triangles | It needs integer-coordinate vertices and a simple polygon.
+NUM3@1: The lattice triangle with vertices (0, 0), (6, 0) and (0, 4) has area 12. How many lattice points lie strictly inside it? | 7 | 0 | points | The edges contribute gcd(6, 0) + gcd(0, 4) + gcd(6, 4) = 6 + 4 + 2 = 12 boundary points, so by Pick 12 = I + 6 − 1 and I = 7.
+SA2@2: Compare the square and hexagonal packings of equal circles in the plane, and state what is known about the densest packing of spheres in three dimensions. | In square packing each circle touches 4 others and sits in a square of side 2r, so the density is πr²/(4r²) = π/4 ≈ 78.5%. In hexagonal packing each circle touches 6 others and the gaps are smaller, giving π/(2√3) ≈ 90.7%, which is the densest possible packing of equal circles (Thue, Fejes Tóth). In three dimensions the densest packing of equal spheres has density π/(3√2) ≈ 74%, achieved by stacking hexagonal layers; this was Kepler's conjecture, proved by Hales in 1998 and formally verified in 2014. | square packing touches 4 with density π/4 ; hexagonal touches 6 with density ≈ 90.7% ; hexagonal is optimal in the plane ; 3D optimum ≈ 74% ; Kepler conjecture proved by Hales
 
 ## Convex Geometry
 S: A convex set contains the whole segment between any two of its points: discs, triangles and filled polygons are convex; crescents aren't. Convexity makes problems tractable, which is why it's central to optimisation.
 O: Decide whether a set is convex and find convex hulls
 O: State key results such as Helly's theorem
+LV: Year 2 · Application
+EV: established | Intersections of convex sets are convex, and Helly's theorem guarantees a common point when every three convex sets in a finite planar family meet.
 T: Convex set | A set containing the line segment between any two of its points
 T: Convex hull | The smallest convex set containing a given set, like a rubber band stretched around points
 H: Convex sets
@@ -1318,21 +1558,28 @@ X: Is the region {(x, y) : x^{2} + y^{2} ≤ 4 and y ≥ x} convex?
 > x^{2} + y^{2} ≤ 4 is a disc, which is convex
 > y ≥ x is a half-plane, which is convex
 > Their intersection is convex
+P: A polygon is convex exactly when every interior angle is less than 180°: going round it, every turn is in the same direction.
 K: Convex means every segment between points stays inside; intersections of convex sets are convex; convex hulls wrap points tightly.
 !: Assuming the union of two convex sets is convex.
 Q: Is a star shape convex? | No: segments between some points leave the shape.
 Q: What is the convex hull of a set of points? | The smallest convex set containing them.
 SUM: Convex sets contain all their connecting segments.
 SUM: Convexity underpins optimisation.
-SRC: Boyd S, Vandenberghe L, Convex Optimization (Cambridge University Press 2004) | textbook | 2004 | https://web.stanford.edu/~boyd/cvxbook/
-SRC: Matoušek J, Lectures on Discrete Geometry (Springer 2002) | textbook | 2002 | https://link.springer.com/
+SRC: Boyd S, Vandenberghe L, Convex Optimization (Cambridge University Press 2004) | secondary | 2004 | https://web.stanford.edu/~boyd/cvxbook/
+SRC: Matoušek J, Lectures on Discrete Geometry (Springer 2002) | secondary | 2002 | https://link.springer.com/
 M1#maths-u05-42-q1@1: Which set is convex? | A filled triangle | A crescent moon shape | An annulus (ring) | Two separate discs | A star | Any segment between two points of a triangle stays inside it.
 M2#maths-u05-42-q2@2: Which operation always preserves convexity? | Intersection | Union | Complement | Removing a point from the interior | Taking the boundary | The intersection of convex sets is convex, but unions and complements usually aren't.
+TF1@1: The union of two overlapping discs is always convex. | false | Unless one disc contains the other, a segment joining the far sides of the two discs passes outside both near the pinch where they meet.
+NUM2@1: Find the area of the convex hull of the points (0, 0), (6, 0), (3, 5), (3, 1) and (2, 2). | 15 | 0 |  | (3, 1) and (2, 2) lie inside the triangle (0, 0), (6, 0), (3, 5), so that triangle is the hull: area ½ × 6 × 5 = 15.
+M3@2: Four convex sets in the plane have the property that every three of them share a point. What follows? | All four share a common point | Only three of them must share a point | Nothing: Helly needs every pair to meet | Some pair of them must be disjoint | Helly's theorem in the plane: if every three sets of a finite family of convex sets intersect, the whole family has a common point.
+SA2@1: Prove that the intersection of two convex sets is convex, and give an example showing that the union of two convex sets need not be. | Let A and B be convex and take any two points P and Q in A ∩ B. Both points are in A, which is convex, so the segment PQ lies in A; likewise it lies in B. So PQ lies in A ∩ B, which is therefore convex. For a union, take two disjoint discs: the segment from a point of one to a point of the other passes through points in neither disc, so the union isn't convex. | takes two points in the intersection ; segment lies in A by convexity ; segment lies in B ; concludes intersection convex ; counterexample for unions
 
 ## Computational Geometry
 S: Computational geometry designs efficient algorithms for geometric problems: convex hulls, intersections, nearest neighbours, triangulations and Voronoi diagrams. It powers computer graphics, mapping, robotics and computer-aided design.
 O: Use the orientation test to decide turn direction
 O: Describe standard algorithms such as convex hulls and Voronoi diagrams
+LV: Year 2 · Application
+EV: established | The orientation test is the basic primitive of computational geometry, and convex hulls of n points can be found in O(n log n) time.
 T: Orientation test | The sign of the cross product (b − a) × (c − a) decides whether a → b → c turns left, right or is straight
 T: Voronoi diagram | The partition of the plane into regions closest to each of a set of sites
 H: Basic tools
@@ -1347,26 +1594,32 @@ X: Do the points a(0, 0), b(4, 1), c(2, 3) make a left or right turn?
 > (b_{x} − a_{x})(c_{y} − a_{y}) − (b_{y} − a_{y})(c_{x} − a_{x}) = 4 × 3 − 1 × 2
 > = 12 − 2 = 10
 > Positive, so a → b → c turns left (anticlockwise)
+P: **Point in polygon (ray casting).** Draw a ray from the point in any direction: the point is inside if the ray crosses the boundary an odd number of times.
 K: The orientation test is the basic primitive; convex hulls take O(n log n); Voronoi diagrams partition by nearest site.
 !: Using exact equality tests with floating-point coordinates.
 Q: What does a zero orientation value mean? | The three points are collinear.
 Q: What is a Voronoi region? | The set of points closer to one site than to any other.
 SUM: Computational geometry makes geometry algorithmic.
 SUM: Simple primitives build efficient algorithms.
-SRC: de Berg M, Cheong O, van Kreveld M, Overmars M, Computational Geometry: Algorithms and Applications (3rd edn, Springer 2008) | textbook | 2008 | https://link.springer.com/
-SRC: O'Rourke J, Computational Geometry in C (2nd edn, Cambridge University Press 1998) | textbook | 1998 | https://www.cambridge.org/
+SRC: de Berg M, Cheong O, van Kreveld M, Overmars M, Computational Geometry: Algorithms and Applications (3rd edn, Springer 2008) | secondary | 2008 | https://link.springer.com/
+SRC: O'Rourke J, Computational Geometry in C (2nd edn, Cambridge University Press 1998) | secondary | 1998 | https://www.cambridge.org/
 NUM1#maths-u05-43-q1@1: Use the shoelace formula to find the area of the triangle (0, 0), (5, 0), (2, 4). | 10 | 0 |  | ½|0 × 0 − 5 × 0 + 5 × 4 − 2 × 0 + 2 × 0 − 0 × 4| = ½ × 20 = 10.
 M1#maths-u05-43-q2@1: What is the time complexity of the best general convex hull algorithms? | O(n log n) | O(n^{2}) | O(n^{3}) | O(log n) | O(2^{n}) | Sorting the points is the bottleneck, giving O(n log n), which is optimal in general.
 M2#maths-u05-43-q3@2: What is the dual structure of a Voronoi diagram? | The Delaunay triangulation | The convex hull | A spanning tree | A kd-tree | A grid | Joining sites whose Voronoi regions share an edge gives the Delaunay triangulation.
+NUM2@1: Compute the orientation value (b_{x} − a_{x})(c_{y} − a_{y}) − (b_{y} − a_{y})(c_{x} − a_{x}) for a(1, 1), b(4, 2), c(2, 5). | 11 | 0 |  | (4 − 1)(5 − 1) − (2 − 1)(2 − 1) = 12 − 1 = 11, which is positive, so a → b → c turns left.
+NUM3@1: Use the shoelace formula to find the area of the quadrilateral (0, 0), (4, 0), (5, 3), (1, 4), taken in that order. | 14.5 | 0 |  | The terms x_{i}y_{i+1} − x_{i+1}y_{i} are 0, 12, 17 and 0, totalling 29, so the area is 29/2 = 14.5.
+SA2@1,2: Explain how the orientation test is used to build the convex hull of a set of points with Andrew's monotone chain algorithm, and why it takes O(n log n) time. | Sort the points by x-coordinate (then y). Build the lower hull by going left to right: add each point, and while the last three points do not make a left turn (orientation not positive), remove the middle one. Build the upper hull the same way from right to left, and join the two chains. Each point is added once and removed at most once, so the scan is O(n); the sort costs O(n log n), so the whole algorithm is O(n log n). | sorts the points ; orientation test decides left or right turns ; pops points that make a non-left turn ; lower and upper chains joined ; sorting dominates, O(n log n)
 
 ## Integral Geometry
 S: Integral geometry measures sets of geometric objects (lines, needles, planes) using integrals, often with probability. Its most famous result, Buffon's needle, estimates π by dropping needles on lined paper.
 O: Solve Buffon's needle problem
 O: Describe how integral geometry measures sets of lines
+LV: Year 3 · Application
+EV: established | A needle of length l ≤ d dropped at random on lines d apart crosses a line with probability 2l/(πd).
 T: Buffon's needle | Dropping a needle of length l on lines d apart (l ≤ d); the probability it crosses a line is 2l/(πd)
 T: Crofton formula | The length of a curve equals a constant times the measure of the set of lines meeting it, counted with multiplicity
 H: Buffon's needle
-- Comte de Buffon posed it in 1777: the answer involves π, so repeated drops estimate π.
+- Comte de Buffon posed it in 1733 and published the solution in 1777: the answer involves π, so repeated drops estimate π.
 - With l = d, the probability is 2/π ≈ 0.637.
 - Derivation: integrate over the needle's angle θ and its centre's distance from the nearest line.
 H: Measuring lines
@@ -1377,22 +1630,30 @@ X: A needle of length 1 cm is dropped on lines 2 cm apart. What is the probabili
 > P = 2l/(πd) = 2 × 1/(π × 2)
 > = 1/π
 > ≈ 0.318
+X: Derive P = 2l/(πd) for l ≤ d.
+> Let y be the distance from the needle's centre to the nearest line (uniform on 0 to d/2) and θ its angle to the lines (uniform on 0 to π/2)
+> It crosses when y ≤ (l/2) sin θ, so P = ∫ (l/2) sin θ dθ (from 0 to π/2) ÷ ((d/2)(π/2))
+> = (l/2) ÷ (πd/4) = 2l/(πd)
 K: Buffon's needle: P = 2l/(πd) for l ≤ d; integral geometry measures sets of lines, giving formulas for lengths and areas.
 !: Using Buffon's formula for needles longer than the line spacing (it changes).
-Q: Who posed the needle problem? | Georges-Louis Leclerc, Comte de Buffon (1777).
+Q: Who posed the needle problem? | Georges-Louis Leclerc, Comte de Buffon (posed 1733, published 1777).
 Q: What does stereology use integral geometry for? | Estimating 3D quantities from 2D slices.
 SUM: Integral geometry measures sets of geometric objects.
 SUM: Buffon's needle links probability and π.
-SRC: Santaló LA, Integral Geometry and Geometric Probability (2nd edn, Cambridge University Press 2004) | textbook | 2004 | https://www.cambridge.org/
-SRC: Klain DA, Rota GC, Introduction to Geometric Probability (Cambridge University Press 1997) | textbook | 1997 | https://www.cambridge.org/
+SRC: Santaló LA, Integral Geometry and Geometric Probability (2nd edn, Cambridge University Press 2004) | secondary | 2004 | https://www.cambridge.org/
+SRC: Klain DA, Rota GC, Introduction to Geometric Probability (Cambridge University Press 1997) | secondary | 1997 | https://www.cambridge.org/
 NUM1#maths-u05-44-q1@1: A needle of length 3 cm is dropped on lines 4 cm apart. Find the probability it crosses a line, to 3 decimal places. | 0.477 | 0.0005 |  | 2 × 3/(π × 4) = 6/(4π) ≈ 0.477.
 M1#maths-u05-44-q2@1: If needles equal in length to the line spacing are dropped, about what fraction cross a line? | 2/π ≈ 0.64 | 1/2 | 1/π ≈ 0.32 | π/4 ≈ 0.79 | 1 | With needle length equal to the spacing, P = 2l/(πd) = 2/π ≈ 0.64.
 M3#maths-u05-44-q3@2: In 1,000 drops with l = d, 640 needles cross a line. What is the estimate of π? | About 3.125 | About 3.2 | About 1.56 | About 0.64 | About 6.4 | The observed proportion 0.64 estimates 2/π, so π ≈ 2/0.64 = 3.125.
+NUM2@1: Needles 5 cm long are dropped on lines 10 cm apart, 2,000 times. To the nearest whole number, how many crossings would you expect? | 637 | 0.5 | crossings | P = 2 × 5/(π × 10) = 1/π ≈ 0.3183, and 2,000 × 0.3183 ≈ 637.
+SA2@1,2: Explain how Buffon's needle experiment estimates π, and why the estimate improves only slowly as more needles are dropped. | For needles of length l on lines d apart (l ≤ d), the probability of a crossing is 2l/(πd). After n drops with c crossings, the proportion c/n estimates this probability, so π ≈ 2ln/(cd). By the law of large numbers the proportion tends to the true probability, but its random error shrinks only like 1/√n: to gain one more correct decimal place in π needs about 100 times as many drops, so the method is a demonstration of geometric probability rather than a practical way to compute π. | crossing probability 2l/(πd) ; proportion of crossings estimates it ; rearranges for π ; error shrinks like 1/√n ; about 100 times more drops per extra digit
 
 ## Differential Geometry
 S: Differential geometry uses calculus to study curves and surfaces: how they bend and twist. Curvature is its central idea, and Gauss's remarkable theorem shows a surface's curvature can be measured from within it.
 O: Calculate the curvature of plane curves
 O: Describe Gaussian curvature and the Theorema Egregium
+LV: Year 2 · Application
+EV: established | Curvature measures bending, and Gauss's Theorema Egregium shows Gaussian curvature is intrinsic to a surface.
 T: Curvature of a curve | κ = |y″|/(1 + y′^{2})^{3/2}; for a circle of radius R it's 1/R
 T: Gaussian curvature | K = κ₁κ₂, the product of a surface's principal curvatures at a point
 H: Curves
@@ -1407,22 +1668,27 @@ X: Find the curvature of y = x^{2} at x = 0 and at x = 1.
 > y′ = 2x and y″ = 2
 > At x = 0: κ = 2/(1 + 0)^{3/2} = 2 (osculating circle radius ½)
 > At x = 1: κ = 2/(1 + 4)^{3/2} = 2/5^{3/2} ≈ 0.179
+P: The **radius of curvature** is ρ = 1/κ. Road and railway designers use it because a vehicle on a bend needs a sideways acceleration of v^{2}/ρ.
 K: κ = |y″|/(1 + y′^{2})^{3/2}, circle 1/R; Gaussian curvature is intrinsic, so spheres can't be mapped flat without distortion.
 !: Thinking a cylinder is curved in Gauss's sense: its Gaussian curvature is zero.
 Q: What is the curvature of a circle of radius 4? | 1/4.
 Q: Why can't a perfect flat map of the Earth exist? | Gaussian curvature is intrinsic, and a sphere's (positive) differs from a plane's (zero).
 SUM: Curvature measures bending.
 SUM: Gaussian curvature is intrinsic.
-SRC: do Carmo MP, Differential Geometry of Curves and Surfaces (2nd edn, Dover 2016) | textbook | 2016 | https://store.doverpublications.com/
-SRC: Pressley A, Elementary Differential Geometry (2nd edn, Springer 2010) | textbook | 2010 | https://link.springer.com/
+SRC: do Carmo MP, Differential Geometry of Curves and Surfaces (2nd edn, Dover 2016) | secondary | 2016 | https://store.doverpublications.com/
+SRC: Pressley A, Elementary Differential Geometry (2nd edn, Springer 2010) | secondary | 2010 | https://link.springer.com/
 NUM1#maths-u05-45-q1@1: What is the curvature of a circle of radius 0.25 m? | 4 | 0 | m⁻¹ | κ = 1/R = 1/0.25 = 4 m^{−1}.
 M1#maths-u05-45-q2@1: What is the Gaussian curvature of a cylinder? | Zero | Positive | Negative | Infinite | It varies | One principal curvature is zero (along the axis), so their product is zero: a cylinder can be unrolled flat.
 M2#maths-u05-45-q3@2: Which surface has negative Gaussian curvature at its centre? | A saddle (y^{2} − x^{2}) | A sphere | A plane | A cylinder | An egg | At a saddle, the surface curves up in one direction and down in the other.
+NUM3@1: Find the curvature of y = x^{3} at x = 1, to 2 decimal places. | 0.19 | 0.005 |  | y′ = 3 and y″ = 6 at x = 1, so κ = 6/(1 + 9)^{3/2} = 6/31.62 ≈ 0.19.
+SA2@2: Explain what Gauss's Theorema Egregium says, and use it to explain why a sheet of paper can be rolled into a cylinder but not wrapped smoothly round a sphere. | Gaussian curvature K is the product of the two principal curvatures at a point. The Theorema Egregium (Gauss, 1827) says K is intrinsic: it can be computed from distances measured within the surface, so any bending that doesn't stretch or tear the surface keeps K unchanged. Flat paper has K = 0. A cylinder curves in one direction but not along its axis, so K = 1/R × 0 = 0: rolling paper into it needs no stretching. A sphere has K = 1/R² > 0 everywhere, so paper (K = 0) can't be fitted to it without stretching, creasing or tearing, which is also why every flat map of the Earth distorts. | K is the product of principal curvatures ; K is intrinsic ; bending without stretching keeps K ; cylinder K = 0 ; sphere K = 1/R² so paper can't fit
 
 ## Riemannian Geometry
 S: Riemannian geometry studies curved spaces of any dimension using a metric that measures lengths and angles at every point. It's the mathematics of general relativity, where gravity is the curvature of space-time.
 O: Describe metrics, geodesics and curvature in Riemannian geometry
 O: Apply the Gauss–Bonnet theorem
+LV: Year 3 · Application
+EV: established | A Riemannian metric determines lengths, geodesics and curvature, and the Gauss–Bonnet theorem gives ∫ K dA = 2πχ for a closed surface.
 T: Riemannian metric | A smoothly varying inner product on tangent spaces, giving lengths and angles
 T: Geodesic | A locally shortest path; the generalisation of a straight line
 H: Core ideas
@@ -1437,22 +1703,27 @@ X: Verify the Gauss–Bonnet theorem for a sphere of radius 3.
 > K = 1/R^{2} = 1/9 everywhere, and area = 4π × 9 = 36π
 > ∫ K dA = (1/9) × 36π = 4π
 > A sphere has χ = 2, and 2πχ = 4π ✓
+P: **Gauss–Bonnet for triangles.** On a surface, the angle sum of a geodesic triangle is π plus the integral of K over it: this gives Girard's theorem on a sphere and the angle defect on the hyperbolic plane.
 K: A metric defines geometry; geodesics are straightest paths; Gauss–Bonnet links total curvature to topology; relativity is Riemannian geometry.
 !: Thinking total curvature depends on a surface's size: for a sphere it's always 4π.
 Q: What are the geodesics on a sphere? | Great circles.
 Q: What does the Gauss–Bonnet theorem relate? | Total curvature and the Euler characteristic.
 SUM: Riemannian geometry measures curved spaces.
 SUM: It underpins general relativity.
-SRC: do Carmo MP, Riemannian Geometry (Birkhäuser 1992) | textbook | 1992 | https://link.springer.com/
-SRC: Carroll SM, Spacetime and Geometry (Cambridge University Press 2019) | textbook | 2019 | https://www.cambridge.org/
+SRC: do Carmo MP, Riemannian Geometry (Birkhäuser 1992) | secondary | 1992 | https://link.springer.com/
+SRC: Carroll SM, Spacetime and Geometry (Cambridge University Press 2019) | secondary | 2019 | https://www.cambridge.org/
 NUM1#maths-u05-46-q1@1: A closed surface has Euler characteristic 0 (a torus). What is its total Gaussian curvature? | 0 | 0 |  | By Gauss–Bonnet, ∫ K dA = 2πχ = 0: positive and negative curvature cancel.
 M1#maths-u05-46-q2@1: In general relativity, what do freely falling objects follow? | Geodesics of space-time | Straight lines in space | Circles | Parabolas only | Great circles on the Earth | Gravity is curvature, and free motion is along geodesics.
 M2#maths-u05-46-q3@2: What is the total Gaussian curvature of any sphere, whatever its radius? | 4π | 4πR^{2} | 2π | 1/R^{2} | 0 | Curvature 1/R^{2} times area 4πR^{2} always gives 4π.
+NUM3@2: A closed orientable surface has genus 2 (χ = 2 − 2g). Find its total Gaussian curvature as a multiple of π. | -4 | 0 | π | χ = 2 − 2 × 2 = −2, so Gauss–Bonnet gives ∫ K dA = 2πχ = −4π.
+SA2@1,2: Explain what a Riemannian metric provides, and verify the Gauss–Bonnet theorem for a sphere of any radius R, explaining why the answer doesn't depend on R. | A Riemannian metric is a smoothly varying inner product on each tangent space: it gives the length of tangent vectors and the angles between them, so lengths of curves (by integrating ds), geodesics (locally shortest paths) and curvature can all be defined. On a sphere of radius R, the Gaussian curvature is K = 1/R² everywhere and the area is 4πR², so ∫ K dA = (1/R²)(4πR²) = 4π. The sphere's Euler characteristic is 2, and 2πχ = 4π, agreeing. Enlarging the sphere lowers K by the same factor that it raises the area, so the total is fixed by the topology. | metric gives lengths and angles ; defines geodesics and curvature ; K = 1/R² and area 4πR² ; total 4π = 2π × 2 ; R cancels so total is topological
 
 ## Symplectic Geometry
 S: Symplectic geometry is the geometry of classical mechanics' phase space, where positions and momenta live together. Its structure measures oriented areas rather than lengths, and Hamiltonian flows preserve it.
 O: Describe phase space and the symplectic form
 O: Explain why Hamiltonian flows preserve phase-space area
+LV: Postgraduate · Fluency
+EV: established | Hamiltonian flows preserve the symplectic form, and so preserve phase-space area (Liouville's theorem).
 T: Phase space | The space of positions q and momenta p of a system
 T: Symplectic form | A non-degenerate, closed 2-form ω (in 2D, ω = dq ∧ dp) measuring oriented area
 H: Mechanics in phase space
@@ -1467,21 +1738,27 @@ X: Show that the map (q, p) ↦ (q + p, p) preserves area in phase space.
 > The Jacobian matrix is [[1, 1], [0, 1]]
 > Its determinant is 1 × 1 − 1 × 0 = 1
 > So it preserves oriented area: it's a symplectic map (a shear)
+P: For the oscillator H = (p^{2} + q^{2})/2, Hamilton's equations give dq/dt = p and dp/dt = −q, so the state moves clockwise round a circle of radius √(2H) in the (q, p) plane, conserving energy.
 K: Phase space pairs positions and momenta; the symplectic form measures oriented area; Hamiltonian flows preserve it.
 !: Thinking symplectic geometry measures lengths: it measures oriented areas instead.
 Q: What does Liouville's theorem say? | Hamiltonian flows preserve phase-space volume.
 Q: In 2D, when is a map symplectic? | When its Jacobian determinant is 1 everywhere.
 SUM: Symplectic geometry is mechanics' natural geometry.
 SUM: Hamiltonian motion preserves its structure.
-SRC: Arnold VI, Mathematical Methods of Classical Mechanics (2nd edn, Springer 1989) | textbook | 1989 | https://link.springer.com/
-SRC: McDuff D, Salamon D, Introduction to Symplectic Topology (3rd edn, Oxford University Press 2017) | textbook | 2017 | https://global.oup.com/
+SRC: Arnold VI, Mathematical Methods of Classical Mechanics (2nd edn, Springer 1989) | secondary | 1989 | https://link.springer.com/
+SRC: McDuff D, Salamon D, Introduction to Symplectic Topology (3rd edn, Oxford University Press 2017) | secondary | 2017 | https://global.oup.com/
 M1#maths-u05-47-q1@1: What does phase space combine? | Positions and momenta | Time and energy only | Mass and charge | Length and area | Velocity and acceleration only | Each point records the system's state: where it is and how it's moving.
 M3#maths-u05-47-q2@2: Which 2D linear map is symplectic? | [[2, 3], [1, 2]] | [[2, 0], [0, 2]] | [[1, 1], [1, 1]] | [[3, 0], [0, 1]] | [[0, 2], [1, 0]] | Its determinant is 4 − 3 = 1, so it preserves oriented area.
+M2@1: For a particle with H = p^{2}/(2m) + V(q), what does Hamilton's equation give for dq/dt? | p/m | −V′(q) | p^{2}/(2m) | m × p | dq/dt = ∂H/∂p = p/m, the velocity; dp/dt = −∂H/∂q = −V′(q) is the force.
+NUM2@2: The linear map with matrix [[3, 2], [k, 1]] is symplectic. Find k. | 1 | 0 |  | A 2D linear map is symplectic when its determinant is 1: 3 × 1 − 2k = 1, so k = 1.
+SA2@1,2: Explain what Liouville's theorem says, illustrate it with the harmonic oscillator H = (p^{2} + q^{2})/2, and say why it matters for statistical mechanics. | Phase space pairs positions q and momenta p. Liouville's theorem says the flow of Hamilton's equations preserves phase-space volume (in 2D, area): a region of initial states may change shape, but not its size. For the oscillator, dq/dt = p and dp/dt = −q, so every point rotates clockwise about the origin at the same rate; a region of states simply rotates rigidly, keeping its area. In statistical mechanics this means a uniform probability distribution over states of fixed energy stays uniform, which justifies treating equal phase-space volumes as equally likely. | defines phase space ; Hamiltonian flow preserves area or volume ; oscillator equations dq/dt = p, dp/dt = −q ; rigid rotation keeps area ; equal volumes equally likely in statistical mechanics
 
 ## Algebraic Geometry
 S: Algebraic geometry studies the shapes defined by polynomial equations, called varieties. It joins algebra and geometry deeply, and its ideas solved Fermat's Last Theorem and power modern cryptography.
 O: Describe algebraic varieties as solution sets of polynomials
 O: Apply Bézout's theorem to count intersections
+LV: Year 3 · Application
+EV: established | Bézout's theorem states that plane curves of degrees m and n with no common component meet in mn points counted with multiplicity in the complex projective plane.
 T: Algebraic variety | The set of common solutions of a system of polynomial equations
 T: Bézout's theorem | Two plane curves of degrees m and n with no common component meet in exactly mn points, counted with multiplicity, in the complex projective plane
 H: Varieties
@@ -1496,21 +1773,27 @@ X: At most how many points can the circle x^{2} + y^{2} = 25 and the parabola y 
 > Degrees 2 and 2, so Bézout allows at most 4
 > Substitute x^{2} = y + 5: y + 5 + y^{2} = 25, so y^{2} + y − 20 = 0 and y = 4 or −5
 > y = 4: x = ±3; y = −5: x = 0. Points (3, 4), (−3, 4) and (0, −5) (the last counts twice: a tangency)
+P: A **singular point** is where a curve isn't smooth: y^{2} = x^{3} has a cusp at the origin, and y^{2} = x^{2}(x + 1) crosses itself there (a node).
 K: Varieties are polynomial solution sets; Bézout counts intersections (mn, with multiplicity, over the complex projective plane).
 !: Expecting exactly mn real intersection points: some may be complex, at infinity or repeated.
 Q: In how many points can two conics meet? | At most 4 (exactly 4 counting complex, infinite and repeated points).
 Q: Which famous theorem was proved using algebraic geometry? | Fermat's Last Theorem.
 SUM: Algebraic geometry studies polynomial shapes.
 SUM: Bézout's theorem counts intersections.
-SRC: Reid M, Undergraduate Algebraic Geometry (Cambridge University Press 1988) | textbook | 1988 | https://www.cambridge.org/
-SRC: Hartshorne R, Algebraic Geometry (Springer 1977) | textbook | 1977 | https://link.springer.com/
+SRC: Reid M, Undergraduate Algebraic Geometry (Cambridge University Press 1988) | secondary | 1988 | https://www.cambridge.org/
+SRC: Hartshorne R, Algebraic Geometry (Springer 1977) | secondary | 1977 | https://link.springer.com/
 M1#maths-u05-48-q1@1: At most how many points can a line and a cubic curve share? | 3 | 2 | 1 | 6 | 9 | Bézout: degrees 1 and 3 give at most 1 × 3 = 3.
 M2#maths-u05-48-q2@2: Who proved Fermat's Last Theorem? | Andrew Wiles (with Richard Taylor) | Pierre de Fermat | Leonhard Euler | Alexander Grothendieck | Grigori Perelman | Wiles's 1995 proof used elliptic curves and modular forms.
+TF1@1: The circle x^{2} + y^{2} = 1 has infinitely many points with both coordinates rational. | true | Each Pythagorean triple a² + b² = c² gives the rational point (a/c, b/c), and there are infinitely many triples.
+M3@2: Bézout's theorem says the line y = 0 meets the cubic y = x^{3} in 3 points. How is that count reached? | x = 0 is one point counted three times, since x³ = 0 has a triple root | There are three distinct real points of intersection | Two points are real and one is complex | Two of the points lie at infinity on the line | Substituting y = 0 gives x³ = 0, whose only root x = 0 has multiplicity 3: the line is tangent at an inflection point.
+SA2@1,2: Explain what Bézout's theorem says about a line and a circle, and illustrate the role of complex points using x^{2} + y^{2} = 1 with the lines y = 0 and y = 2. | A line has degree 1 and a circle degree 2, so Bézout says they meet in exactly 1 × 2 = 2 points when complex points, points at infinity and multiplicities are counted. The line y = 0 gives x² = 1, so two real points (±1, 0). The line y = 2 gives x² = −3, so x = ±i√3: two complex points and no real ones. A tangent line such as y = 1 gives x² = 0, one point counted twice. | degrees 1 and 2 give 2 points ; counting complex, infinite and repeated points ; y = 0 gives (±1, 0) ; y = 2 gives x = ±i√3 ; tangency counts twice
 
 ## Topological Geometry
 S: Topological geometry studies the properties of shapes that survive stretching and bending without tearing or gluing. To a topologist, a coffee mug and a doughnut are the same shape, because each has one hole.
 O: Classify surfaces by their Euler characteristic and genus
 O: Distinguish topological properties from geometric ones
+LV: Year 2 · Application
+EV: established | Closed orientable surfaces are classified by their genus g, with Euler characteristic χ = 2 − 2g.
 T: Homeomorphic | Topologically equivalent: one shape can be continuously deformed into the other
 T: Genus | The number of "handles" (holes) of a closed orientable surface
 H: Topological properties
@@ -1526,22 +1809,27 @@ X: A surface is built from 16 vertices, 32 edges and 16 faces. What is its Euler
 > χ = 16 − 32 + 16 = 0
 > χ = 2 − 2g gives 0 = 2 − 2g
 > g = 1: it's a torus
+P: The Euler characteristic doesn't depend on how a surface is divided up: putting a new vertex in the middle of an edge adds one vertex and one edge, leaving V − E + F unchanged.
 K: Topology studies properties unchanged by continuous deformation; χ = 2 − 2g classifies closed orientable surfaces.
 !: Treating geometric measurements (like area) as topological properties.
 Q: What is the genus of a sphere? | 0.
 Q: Why are a mug and a doughnut topologically the same? | Each has exactly one hole and can be deformed into the other.
 SUM: Topology ignores lengths and angles.
 SUM: Holes and orientability classify surfaces.
-SRC: Armstrong MA, Basic Topology (Springer 1983) | textbook | 1983 | https://link.springer.com/
-SRC: Richeson DS, Euler's Gem: The Polyhedron Formula and the Birth of Topology (Princeton University Press 2008) | textbook | 2008 | https://press.princeton.edu/
+SRC: Armstrong MA, Basic Topology (Springer 1983) | secondary | 1983 | https://link.springer.com/
+SRC: Richeson DS, Euler's Gem: The Polyhedron Formula and the Birth of Topology (Princeton University Press 2008) | secondary | 2008 | https://press.princeton.edu/
 NUM1#maths-u05-49-q1@1: What is the Euler characteristic of a closed orientable surface of genus 3? | -4 | 0 |  | χ = 2 − 2g = 2 − 6 = −4.
 M1#maths-u05-49-q2@1: Which shape is homeomorphic to a doughnut (torus)? | A coffee mug with one handle | A sphere | A disc | A figure eight | A solid ball | Both have one hole, so one can be continuously deformed into the other.
 M2#maths-u05-49-q3@2: Which surface has only one side? | A Möbius strip | A torus | A sphere | A cylinder | A disc | A Möbius strip is non-orientable: you can travel from one "side" to the other without crossing an edge.
+M3@1,2: Treating capital letters as curves drawn with a thin line, which pair are homeomorphic? | O and D | O and B | O and P | O and X | O and D are each a single closed loop; B has two loops, P a loop with a tail and X a crossing of four ends, which no continuous deformation removes.
+SA2@1: A closed orientable surface is divided into 10 vertices, 30 edges and 16 faces. Find its Euler characteristic and genus, and explain why χ classifies such surfaces. | χ = V − E + F = 10 − 30 + 16 = −4. For a closed orientable surface χ = 2 − 2g, so −4 = 2 − 2g and g = 3: a surface with three handles. χ is a topological invariant, unchanged by subdivision or continuous deformation, and the classification theorem says every closed orientable surface is a sphere with g handles; since χ = 2 − 2g determines g, it identifies the surface. | χ = −4 ; uses χ = 2 − 2g ; genus 3 ; χ unchanged by deformation and subdivision ; classification by genus
 
 ## Knot Theory
 S: A mathematical knot is a closed loop in 3D space that can't pass through itself. Knot theory asks when two knots are the same, using invariants that don't change under deformation. It has applications in DNA biology and physics.
 O: Describe knots, diagrams and Reidemeister moves
 O: Use simple invariants such as tricolourability to distinguish knots
+LV: Year 3 · Fluency
+EV: established | Two knot diagrams represent the same knot exactly when Reidemeister moves relate them, and invariants such as tricolourability can prove knots different.
 T: Knot | A closed loop embedded in 3D space, considered up to continuous deformation without cutting
 T: Knot invariant | A quantity unchanged by deformation, used to tell knots apart
 H: Knots and diagrams
@@ -1557,14 +1845,18 @@ X: Explain why the trefoil can't be untied into the unknot.
 > The trefoil diagram can be tricoloured: its three arcs each get a different colour, and at every crossing all three colours meet
 > The unknot's diagram has one arc, so it can only use one colour: not tricolourable
 > Tricolourability is invariant under Reidemeister moves, so the trefoil isn't the unknot
+!: Thinking that a knot which can't be tricoloured must be the unknot: the figure-eight knot isn't tricolourable either, so this invariant can't separate it from the unknot.
 K: Knots are loops in 3D up to deformation; Reidemeister moves relate diagrams; invariants such as tricolourability and polynomials distinguish knots.
 !: Thinking a messy diagram must be a complicated knot: it may simplify to the unknot.
 Q: What is the crossing number of the trefoil? | 3.
 Q: Why are invariants useful? | If two knots have different invariant values, they can't be the same knot.
 SUM: Knot theory classifies loops in space.
 SUM: Invariants tell knots apart.
-SRC: Adams CC, The Knot Book (American Mathematical Society 2004) | textbook | 2004 | https://bookstore.ams.org/
-SRC: Lickorish WBR, An Introduction to Knot Theory (Springer 1997) | textbook | 1997 | https://link.springer.com/
+SRC: Adams CC, The Knot Book (American Mathematical Society 2004) | secondary | 2004 | https://bookstore.ams.org/
+SRC: Lickorish WBR, An Introduction to Knot Theory (Springer 1997) | secondary | 1997 | https://link.springer.com/
 M1#maths-u05-50-q1@1: What is the simplest non-trivial knot? | The trefoil | The figure-eight knot | The unknot | The granny knot | The square knot | The trefoil, with crossing number 3, is the simplest knot that can't be untied.
 M2#maths-u05-50-q2@2: What do Reidemeister moves do? | Change a knot diagram without changing the knot | Cut and rejoin the strands | Count the crossings | Colour the arcs | Turn a knot into a link | Any two diagrams of the same knot are related by a sequence of these three local moves.
+TF1@1: Every knot diagram with exactly one crossing represents the unknot. | true | A single crossing is a twist in the loop, which a Reidemeister move of the first type removes, leaving a simple circle.
+M3@2: A knot diagram can be tricoloured. Which conclusion is justified? | The knot isn't the unknot | The knot must be the trefoil | Its crossing number is exactly 3 | Every diagram of it has three arcs | Tricolourability is invariant and the unknot isn't tricolourable, so the knot is non-trivial; many knots besides the trefoil are tricolourable.
+SA2@1,2: Explain how a knot invariant is used to prove two knots are different, using the trefoil and the unknot, and explain why an invariant can't always prove two knots are the same. | By Reidemeister's theorem, two diagrams show the same knot exactly when a sequence of the three Reidemeister moves turns one into the other. An invariant is a property unchanged by each move, so equivalent knots have the same value. The trefoil can be tricoloured (each of its three arcs a different colour, all three meeting at every crossing), but the unknot's one-arc diagram can't, so they are different knots. The converse fails: knots can share an invariant value without being equivalent, as the unknot and the figure-eight knot are both non-tricolourable, so stronger invariants such as the Jones polynomial are needed. | Reidemeister moves relate diagrams ; invariant unchanged by each move ; trefoil tricolourable ; unknot not ; equal invariants don't prove equivalence
 `;

@@ -31,8 +31,8 @@ Q: How many elements does {∅} have? | One.
 Q: Is ∅ a subset of {1, 2}? | Yes.
 SUM: Sets are the basic objects of mathematics.
 SUM: Membership and inclusion are different.
-SRC: Halmos PR, Naive Set Theory (Van Nostrand 1960) | textbook | 1960 | https://link.springer.com/
-SRC: Velleman DJ, How to Prove It: A Structured Approach (3rd edn, Cambridge University Press 2019) | textbook | 2019 | https://www.cambridge.org/
+SRC: Halmos PR, Naive Set Theory (Van Nostrand 1960) | secondary | 1960 | https://link.springer.com/
+SRC: Velleman DJ, How to Prove It: A Structured Approach (3rd edn, Cambridge University Press 2019) | secondary | 2019 | https://www.cambridge.org/
 NUM1#maths-u16-01-q1@1: How many elements does {x ∈ ℕ : 1 ≤ x ≤ 20 and x is a multiple of 3} have? | 6 | 0 |  | The multiples of 3 up to 20 are 3, 6, 9, 12, 15 and 18, which is six elements.
 M1#maths-u16-01-q2@1: Which statement about A = {1, {2}, 3} is true? | {2} ∈ A | 2 ∈ A | {1, 2} ⊆ A | |A| = 4 | {3} ∈ A | A's elements are 1, the set {2} and 3, so {2} is an element but the number 2 isn't.
 M2#maths-u16-01-q3@2: How is equality of two sets A and B usually proved? | Show A ⊆ B and B ⊆ A | Show they have equal sizes | Show one element lies in both | Show A ∩ B is non-empty | Draw a single Venn diagram | Two sets are equal exactly when each is contained in the other, so both inclusions are proved.
@@ -65,8 +65,8 @@ Q: Who showed that ℝ is uncountable? | Georg Cantor.
 Q: What is the von Neumann number 2? | {∅, {∅}}.
 SUM: Set theory measures and builds collections.
 SUM: Paradoxes forced axioms.
-SRC: Enderton HB, Elements of Set Theory (Academic Press 1977) | textbook | 1977 | https://www.elsevier.com/
-SRC: Ferreirós J, Labyrinth of Thought: A History of Set Theory and Its Role in Modern Mathematics (2nd edn, Birkhäuser 2007) | textbook | 2007 | https://link.springer.com/
+SRC: Enderton HB, Elements of Set Theory (Academic Press 1977) | secondary | 1977 | https://www.elsevier.com/
+SRC: Ferreirós J, Labyrinth of Thought: A History of Set Theory and Its Role in Modern Mathematics (2nd edn, Birkhäuser 2007) | secondary | 2007 | https://link.springer.com/
 NUM1#maths-u16-02-q1@1: How many elements does the von Neumann natural number 3 have? | 3 | 0 |  | 3 = {0, 1, 2} = {∅, {∅}, {∅, {∅}}}, so each von Neumann number n has n elements.
 M1#maths-u16-02-q2@1: What does Russell's paradox show? | Not every property defines a set | Every set contains itself | ℝ is countable | The empty set doesn't exist | Infinite sets are all equal | R = {x : x ∉ x} leads to contradiction, so unrestricted set formation must be abandoned.
 M3#maths-u16-02-q3@2: Why is the Kuratowski definition (a, b) = {{a}, {a, b}} useful? | It encodes order using only sets, so (a, b) = (c, d) exactly when a = c and b = d | It makes (a, b) equal to (b, a), so pairs become unordered sets | It shows ordered pairs can't be built from sets and need new axioms | It gives every ordered pair exactly three elements, one per brace | It removes the need for the empty set when building numbers | Sets ignore order, yet this construction recovers which element comes first.
@@ -102,8 +102,8 @@ Q: What is A Δ A? | ∅.
 Q: What is A ∪ (A ∩ B)? | A.
 SUM: Set operations form an algebra.
 SUM: Inclusion–exclusion counts unions.
-SRC: Velleman DJ, How to Prove It: A Structured Approach (3rd edn, Cambridge University Press 2019) | textbook | 2019 | https://www.cambridge.org/
-SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw-Hill 2019) | textbook | 2019 | https://www.mheducation.com/
+SRC: Velleman DJ, How to Prove It: A Structured Approach (3rd edn, Cambridge University Press 2019) | secondary | 2019 | https://www.cambridge.org/
+SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw-Hill 2019) | secondary | 2019 | https://www.mheducation.com/
 NUM1#maths-u16-03-q1@1: If |A| = 12, |B| = 9 and |A ∩ B| = 4, find |A Δ B|. | 13 | 0 |  | |A Δ B| = |A| + |B| − 2|A ∩ B| = 12 + 9 − 8 = 13, since the overlap is removed from both sets.
 M1#maths-u16-03-q2@1: Which expression equals A ∩ (B ∪ C)? | (A ∩ B) ∪ (A ∩ C) | (A ∪ B) ∩ (A ∪ C) | (A ∩ B) ∩ C | A ∪ (B ∩ C) | (A \\ B) ∪ C | Intersection distributes over union, just as multiplication distributes over addition.
 M2#maths-u16-03-q3@2: Which description fits the symmetric difference A Δ B? | Elements in exactly one of A and B | Elements in both A and B | Elements in neither A nor B | Elements in A but not in B | All elements of A and B | A Δ B = (A \\ B) ∪ (B \\ A), so it keeps elements belonging to one set only.
@@ -139,8 +139,8 @@ Q: What is A ∩ ∅? | ∅.
 Q: When are A and B disjoint? | When A ∩ B = ∅.
 SUM: Union is "or"; intersection is "and".
 SUM: Indexed families extend both.
-SRC: Halmos PR, Naive Set Theory (Van Nostrand 1960) | textbook | 1960 | https://link.springer.com/
-SRC: Velleman DJ, How to Prove It: A Structured Approach (3rd edn, Cambridge University Press 2019) | textbook | 2019 | https://www.cambridge.org/
+SRC: Halmos PR, Naive Set Theory (Van Nostrand 1960) | secondary | 1960 | https://link.springer.com/
+SRC: Velleman DJ, How to Prove It: A Structured Approach (3rd edn, Cambridge University Press 2019) | secondary | 2019 | https://www.cambridge.org/
 NUM1#maths-u16-04-q1@1: Students take French (18) or Spanish (14); 5 take both. How many take at least one? | 27 | 0 |  | |F ∪ S| = 18 + 14 − 5 = 27, since the 5 students in both are otherwise counted twice.
 M1#maths-u16-04-q2@1: What is ⋂_{n≥1} (0, 1/n)? | ∅ | {0} | (0, 1) | [0, 1] | (0, 1/2) | No positive number lies below every 1/n, and 0 is excluded, so nothing is in all the sets.
 M2#maths-u16-04-q3@2: If A ∪ B = B, what must be true? | A ⊆ B | B ⊆ A | A = ∅ | A ∩ B = ∅ | A = B always | Union with B leaves B unchanged exactly when everything in A is already in B.
@@ -176,8 +176,8 @@ Q: What is (Aᶜ)ᶜ? | A.
 Q: Express A \\ B using intersection and complement. | A ∩ Bᶜ.
 SUM: Complements are relative to U.
 SUM: De Morgan swaps union and intersection.
-SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw-Hill 2019) | textbook | 2019 | https://www.mheducation.com/
-SRC: Velleman DJ, How to Prove It: A Structured Approach (3rd edn, Cambridge University Press 2019) | textbook | 2019 | https://www.cambridge.org/
+SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw-Hill 2019) | secondary | 2019 | https://www.mheducation.com/
+SRC: Velleman DJ, How to Prove It: A Structured Approach (3rd edn, Cambridge University Press 2019) | secondary | 2019 | https://www.cambridge.org/
 NUM1#maths-u16-05-q1@1: In U = {1, …, 100}, how many numbers are divisible by neither 2 nor 5? | 40 | 0 |  | Divisible by 2 or 5: 50 + 20 − 10 = 60, so the complement has 100 − 60 = 40 numbers.
 M1#maths-u16-05-q2@1: Which set equals (A ∩ B)ᶜ? | Aᶜ ∪ Bᶜ | Aᶜ ∩ Bᶜ | A ∪ B | A ∩ Bᶜ | (A ∪ B)ᶜ | By De Morgan, the complement of an intersection is the union of the complements.
 M2#maths-u16-05-q3@2: Why must a universal set be fixed before taking complements? | The complement of a set changes with what counts as "everything" | Complements are always empty unless a universal set is named | Sets have no elements outside them, so a fixed U adds nothing | The universal set is always ℝ, so fixing it is just a habit | Complements depend only on the set itself, never on any U | In ℤ the complement of the evens is the odds, but in ℝ it also contains every non-integer.
@@ -214,8 +214,8 @@ Q: What is A × ∅? | ∅.
 Q: Is A × B equal to B × A in general? | No.
 SUM: Products pair elements in order.
 SUM: They host relations and coordinates.
-SRC: Halmos PR, Naive Set Theory (Van Nostrand 1960) | textbook | 1960 | https://link.springer.com/
-SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw-Hill 2019) | textbook | 2019 | https://www.mheducation.com/
+SRC: Halmos PR, Naive Set Theory (Van Nostrand 1960) | secondary | 1960 | https://link.springer.com/
+SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw-Hill 2019) | secondary | 2019 | https://www.mheducation.com/
 NUM1#maths-u16-06-q1@1: If |A| = 4 and |B| = 5, how many elements does A × B × A have? | 80 | 0 |  | |A × B × A| = 4 × 5 × 4 = 80, multiplying the sizes of the factors.
 M1#maths-u16-06-q2@1: Which pair belongs to {1, 2} × {x, y}? | (2, x) | (x, 2) | {1, x} | (1, 2) | (x, y) | Elements of A × B have first entry from A and second from B, in that order.
 M2#maths-u16-06-q3@2: Which equation holds for all sets A, B and C? | A × (B ∪ C) = (A × B) ∪ (A × C) | A × B = B × A | A × (B ∪ C) = A × B × C | (A × B)ᶜ = Aᶜ × Bᶜ | A × A = A | Products distribute over unions: a pair has second entry in B ∪ C iff it lies in A × B or A × C.
@@ -251,8 +251,8 @@ Q: How many elements does P(∅) have? | One.
 Q: How many subsets does a 10-element set have? | 1024.
 SUM: Power sets collect all subsets.
 SUM: They are always strictly larger.
-SRC: Enderton HB, Elements of Set Theory (Academic Press 1977) | textbook | 1977 | https://www.elsevier.com/
-SRC: Cantor G, Über eine elementare Frage der Mannigfaltigkeitslehre, Jahresbericht der DMV 1, 75 | journal | 1891 | https://eudml.org/
+SRC: Enderton HB, Elements of Set Theory (Academic Press 1977) | secondary | 1977 | https://www.elsevier.com/
+SRC: Cantor G, Über eine elementare Frage der Mannigfaltigkeitslehre, Jahresbericht der DMV 1, 75 | primary | 1891 | https://eudml.org/
 NUM1#maths-u16-07-q1@1: How many subsets of a 6-element set have exactly 2 elements? | 15 | 0 |  | C(6, 2) = 6 × 5/2 = 15 ways to choose which two elements are included.
 M1#maths-u16-07-q2@1: How many elements does P(P(∅)) have? | 2 | 1 | 0 | 4 | 3 | P(∅) = {∅} has one element, so its power set has 2^{1} = 2 elements: ∅ and {∅}.
 M3#maths-u16-07-q3@2: In Cantor's proof, why can the set D = {x : x ∉ f(x)} never equal f(d)? | If it did, d ∈ D would hold exactly when d ∉ D | D is always empty | D is always the whole of A | f can't be a function | D contains every element of A | Assuming D = f(d) makes d's membership in D contradict itself.
@@ -286,8 +286,8 @@ Q: Is ℚ countable? | Yes.
 Q: Is the set of finite English texts countable? | Yes.
 SUM: Countable means listable.
 SUM: Many infinite sets are countable.
-SRC: Enderton HB, Elements of Set Theory (Academic Press 1977) | textbook | 1977 | https://www.elsevier.com/
-SRC: Velleman DJ, How to Prove It: A Structured Approach (3rd edn, Cambridge University Press 2019) | textbook | 2019 | https://www.cambridge.org/
+SRC: Enderton HB, Elements of Set Theory (Academic Press 1977) | secondary | 1977 | https://www.elsevier.com/
+SRC: Velleman DJ, How to Prove It: A Structured Approach (3rd edn, Cambridge University Press 2019) | secondary | 2019 | https://www.cambridge.org/
 NUM1#maths-u16-08-q1@1: Under the bijection f(n) = n/2 for even n and −(n + 1)/2 for odd n, what is f(7)? | -4 | 0 |  | 7 is odd, so f(7) = −(7 + 1)/2 = −4.
 M1#maths-u16-08-q2@1: Which set is countably infinite? | The set of prime numbers | The set of real numbers | The interval [0, 1] | The power set of ℕ | The set of irrationals | The primes are an infinite subset of ℕ, so they can be listed in increasing order.
 M2#maths-u16-08-q3@2: How does Hilbert's hotel fit countably many new guests when full? | Move each guest from room n to room 2n, freeing the odd rooms | Ask every second guest to leave and give their rooms away | Build new rooms beyond the last room and send guests there | Put two guests into every room, doubling the occupancy | It can't: a full hotel has no space for even one more guest | Doubling room numbers frees infinitely many rooms while keeping everyone housed.
@@ -319,8 +319,8 @@ Q: Are the algebraic numbers countable? | Yes.
 Q: Is the set of infinite binary sequences countable? | No.
 SUM: Some infinities are bigger.
 SUM: Diagonalisation proves it.
-SRC: Cantor G, Über eine elementare Frage der Mannigfaltigkeitslehre, Jahresbericht der DMV 1, 75 | journal | 1891 | https://eudml.org/
-SRC: Enderton HB, Elements of Set Theory (Academic Press 1977) | textbook | 1977 | https://www.elsevier.com/
+SRC: Cantor G, Über eine elementare Frage der Mannigfaltigkeitslehre, Jahresbericht der DMV 1, 75 | primary | 1891 | https://eudml.org/
+SRC: Enderton HB, Elements of Set Theory (Academic Press 1977) | secondary | 1977 | https://www.elsevier.com/
 NUM1#maths-u16-09-q1@1: How many binary strings of length 10 are there? (Infinite binary sequences, by contrast, are uncountable.) | 1024 | 0 |  | Each of the 10 positions is 0 or 1, giving 2^{10} = 1024 strings.
 M1#maths-u16-09-q2@1: Which set is uncountable? | The set of transcendental numbers | The set of algebraic numbers | The set of rational numbers | The set of computer programs | The set of finite subsets of ℕ | Removing the countable algebraic numbers from uncountable ℝ leaves an uncountable set.
 M3#maths-u16-09-q3@2: Why does the diagonal argument fail to show ℚ is uncountable? | The number it builds needn't be rational, so it may not belong to ℚ at all | ℚ has no decimal expansions, so no list of digits exists | It doesn't fail: the argument works and ℚ is uncountable | Rationals have only finitely many digits, so no diagonal exists | ℚ is finite, so listing it needs no diagonal argument | The constructed decimal can be non-repeating, so it escapes ℚ rather than contradicting the list.
@@ -354,8 +354,8 @@ Q: Is "less than" on ℝ reflexive? | No.
 Q: What is the inverse of the relation "is a parent of"? | "Is a child of".
 SUM: Relations are sets of pairs.
 SUM: Four properties classify them.
-SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw-Hill 2019) | textbook | 2019 | https://www.mheducation.com/
-SRC: Velleman DJ, How to Prove It: A Structured Approach (3rd edn, Cambridge University Press 2019) | textbook | 2019 | https://www.cambridge.org/
+SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw-Hill 2019) | secondary | 2019 | https://www.mheducation.com/
+SRC: Velleman DJ, How to Prove It: A Structured Approach (3rd edn, Cambridge University Press 2019) | secondary | 2019 | https://www.cambridge.org/
 NUM1#maths-u16-10-q1@1: How many different relations are there on a 3-element set? | 512 | 0 |  | A relation is any subset of A × A, which has 9 pairs, so there are 2^{9} = 512 relations.
 M1#maths-u16-10-q2@1: Which relation on ℤ is symmetric but not reflexive? | a R b iff a + b = 1 | a R b iff a ≤ b | a R b iff a = b | a R b iff a divides b | a R b iff a − b is even | a + b = 1 is symmetric, but a R a needs 2a = 1, which fails for every integer.
 M2#maths-u16-10-q3@2: What does the transitive closure of a graph's edge relation describe? | Which vertices can reach which others by some path | Which vertices have the same degree | Which edges form a cycle | Which vertices are isolated | Which edges are undirected | Closing under transitivity adds an arrow a → c whenever a path from a to c exists.
@@ -388,8 +388,8 @@ Q: Is every function a relation? | Yes.
 Q: What is the range of sin: ℝ → ℝ? | [−1, 1].
 SUM: Functions are single-valued relations.
 SUM: Range sits inside the codomain.
-SRC: Velleman DJ, How to Prove It: A Structured Approach (3rd edn, Cambridge University Press 2019) | textbook | 2019 | https://www.cambridge.org/
-SRC: Halmos PR, Naive Set Theory (Van Nostrand 1960) | textbook | 1960 | https://link.springer.com/
+SRC: Velleman DJ, How to Prove It: A Structured Approach (3rd edn, Cambridge University Press 2019) | secondary | 2019 | https://www.cambridge.org/
+SRC: Halmos PR, Naive Set Theory (Van Nostrand 1960) | secondary | 1960 | https://link.springer.com/
 NUM1#maths-u16-11-q1@1: How many functions are there from a 3-element set to a 4-element set? | 64 | 0 |  | Each of the 3 inputs independently chooses one of 4 outputs, giving 4^{3} = 64 functions.
 M1#maths-u16-11-q2@1: Which relation from {1, 2, 3} to {a, b} is a function? | {(1, a), (2, a), (3, b)} | {(1, a), (1, b), (2, a), (3, b)} | {(1, a), (2, b)} | {(1, b), (3, a)} | {(a, 1), (b, 2), (b, 3)} | Each of 1, 2 and 3 appears exactly once as a first entry, so every input has one output.
 M3#maths-u16-11-q3@2: Why isn't f(a/b) = a + b a function on ℚ? | Equal fractions such as 1/2 and 2/4 would get different outputs, 3 and 6 | Fractions have no numerators, so a + b can't be computed | It has no inputs, since ℚ is empty under this rule | Its codomain is too small to contain the sums a + b | It is a function, since a + b is always an integer | A rule on fractions must not depend on which representative is chosen.
@@ -423,8 +423,8 @@ Q: Is f(x) = eˣ from ℝ to ℝ surjective? | No: it never takes values ≤ 0.
 Q: What is the inverse of a bijection f? | f^{−1}, with f^{−1}(f(x)) = x.
 SUM: Injective, surjective, bijective.
 SUM: Bijections have inverses.
-SRC: Velleman DJ, How to Prove It: A Structured Approach (3rd edn, Cambridge University Press 2019) | textbook | 2019 | https://www.cambridge.org/
-SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw-Hill 2019) | textbook | 2019 | https://www.mheducation.com/
+SRC: Velleman DJ, How to Prove It: A Structured Approach (3rd edn, Cambridge University Press 2019) | secondary | 2019 | https://www.cambridge.org/
+SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw-Hill 2019) | secondary | 2019 | https://www.mheducation.com/
 NUM1#maths-u16-12-q1@1: How many injective functions are there from a 3-element set to a 5-element set? | 60 | 0 |  | 5 × 4 × 3 = 60: each successive input must pick an output not already used.
 M1#maths-u16-12-q2@1: Which function from ℝ to ℝ is injective but not surjective? | f(x) = eˣ | f(x) = x^{3} | f(x) = x^{2} | f(x) = sin x | f(x) = 2x + 1 | eˣ never repeats a value, but it misses every negative number and 0.
 M2#maths-u16-12-q3@2: If g ∘ f is surjective, what can you conclude? | g is surjective | f is surjective | f is injective | g is injective | Both are bijections | Every output of g ∘ f is an output of g, so g must hit everything.
@@ -458,8 +458,8 @@ Q: Is "has the same birthday as" an equivalence relation? | Yes: it's reflexive,
 Q: Which property does "is within 1 of" fail? | Transitivity.
 SUM: Equivalence relations capture sameness.
 SUM: They need three properties.
-SRC: Velleman DJ, How to Prove It: A Structured Approach (3rd edn, Cambridge University Press 2019) | textbook | 2019 | https://www.cambridge.org/
-SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw-Hill 2019) | textbook | 2019 | https://www.mheducation.com/
+SRC: Velleman DJ, How to Prove It: A Structured Approach (3rd edn, Cambridge University Press 2019) | secondary | 2019 | https://www.cambridge.org/
+SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw-Hill 2019) | secondary | 2019 | https://www.mheducation.com/
 NUM1#maths-u16-13-q1@1: How many equivalence classes does congruence modulo 7 have on ℤ? | 7 | 0 |  | The classes correspond to the remainders 0, 1, 2, 3, 4, 5 and 6 on division by 7.
 M1#maths-u16-13-q2@1: Which relation on ℝ is an equivalence relation? | x ~ y iff x − y ∈ ℤ | x ~ y iff x ≤ y | x ~ y iff |x − y| < 1 | x ~ y iff xy > 0 | x ~ y iff x < y | Differences in ℤ are reflexive (0), symmetric (negation) and transitive (sums of integers).
 M2#maths-u16-13-q3@2: Which property fails for "xy > 0" on ℝ? | Reflexivity, since 0 × 0 = 0 | Symmetry, since xy ≠ yx | Transitivity, for all non-zero numbers | None: it's an equivalence relation | Antisymmetry fails, so it's not one | 0 isn't related to itself, though on non-zero reals the relation is an equivalence.
@@ -493,8 +493,8 @@ Q: Can two different equivalence classes share an element? | No.
 Q: How many equivalence relations are there on a 3-element set? | 5.
 SUM: Classes partition the set.
 SUM: Quotients collect the classes.
-SRC: Velleman DJ, How to Prove It: A Structured Approach (3rd edn, Cambridge University Press 2019) | textbook | 2019 | https://www.cambridge.org/
-SRC: Graham RL, Knuth DE, Patashnik O, Concrete Mathematics (2nd edn, Addison-Wesley 1994) | textbook | 1994 | https://www-cs-faculty.stanford.edu/~knuth/gkp.html
+SRC: Velleman DJ, How to Prove It: A Structured Approach (3rd edn, Cambridge University Press 2019) | secondary | 2019 | https://www.cambridge.org/
+SRC: Graham RL, Knuth DE, Patashnik O, Concrete Mathematics (2nd edn, Addison-Wesley 1994) | secondary | 1994 | https://www-cs-faculty.stanford.edu/~knuth/gkp.html
 NUM1#maths-u16-14-q1@1: How many equivalence relations are there on a 4-element set? | 15 | 0 |  | They correspond to partitions of the set, counted by the Bell number B₄ = 15.
 M1#maths-u16-14-q2@1: Under congruence mod 4 on ℤ, which set is the class [3]? | {…, −5, −1, 3, 7, 11, …} | {…, −3, 0, 3, 6, 9, …} | {3} only | {0, 1, 2, 3} | {…, −4, 0, 4, 8, …} | [3] contains integers leaving remainder 3 on division by 4, including −1 and −5.
 M3#maths-u16-14-q3@2: Why must two equivalence classes be either equal or disjoint? | A shared element would make every member of one equivalent to every member of the other, by symmetry and transitivity | Equivalence classes are always singletons, so they can never share an element | Equivalence relations aren't transitive, so overlapping classes are ruled out by definition | Classes never contain their own representatives, so two classes have nothing in common | They needn't be: two classes can overlap in some elements and differ in others | If c ∈ [a] ∩ [b], then a ~ c ~ b, so a ~ b and [a] = [b].
@@ -528,8 +528,8 @@ Q: Are {1} and {2} comparable under ⊆? | No.
 Q: Is divisibility on ℤ (including negatives) antisymmetric? | No: 2 | −2 and −2 | 2.
 SUM: Partial orders allow incomparability.
 SUM: Hasse diagrams draw them.
-SRC: Davey BA, Priestley HA, Introduction to Lattices and Order (2nd edn, Cambridge University Press 2002) | textbook | 2002 | https://www.cambridge.org/
-SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw-Hill 2019) | textbook | 2019 | https://www.mheducation.com/
+SRC: Davey BA, Priestley HA, Introduction to Lattices and Order (2nd edn, Cambridge University Press 2002) | secondary | 2002 | https://www.cambridge.org/
+SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw-Hill 2019) | secondary | 2019 | https://www.mheducation.com/
 NUM1#maths-u16-15-q1@1: How many edges does the Hasse diagram of divisibility on the divisors of 12 have? | 7 | 0 |  | Covers: 1–2, 1–3, 2–4, 2–6, 3–6, 4–12 and 6–12, which is seven edges.
 M1#maths-u16-15-q2@1: Which relation is a partial order? | ⊆ on the subsets of a set | < on the real numbers | "is a sibling of" on people | Congruence mod 5 on ℤ | "is within 1 of" on ℝ | Inclusion is reflexive, antisymmetric and transitive, the three defining properties.
 M2#maths-u16-15-q3@2: What does a topological sort of a partial order produce? | A total order listing every element after everything below it | A partition of the set into disjoint equivalence classes | A Hasse diagram with all the transitive edges added back | An equivalence relation identifying comparable elements | A list of the pairs of elements that are incomparable | It linearly orders the elements consistently with the partial order, as in task scheduling.
@@ -562,8 +562,8 @@ Q: Can a poset have two maximal elements? | Yes.
 Q: What is the largest antichain in P({1, 2, 3, 4})? | Size C(4, 2) = 6.
 SUM: Posets have bounds and extremes.
 SUM: Zorn's lemma finds maximal elements.
-SRC: Davey BA, Priestley HA, Introduction to Lattices and Order (2nd edn, Cambridge University Press 2002) | textbook | 2002 | https://www.cambridge.org/
-SRC: Trotter WT, Combinatorics and Partially Ordered Sets: Dimension Theory (Johns Hopkins University Press 1992) | textbook | 1992 | https://www.press.jhu.edu/
+SRC: Davey BA, Priestley HA, Introduction to Lattices and Order (2nd edn, Cambridge University Press 2002) | secondary | 2002 | https://www.cambridge.org/
+SRC: Trotter WT, Combinatorics and Partially Ordered Sets: Dimension Theory (Johns Hopkins University Press 1992) | secondary | 1992 | https://www.press.jhu.edu/
 NUM1#maths-u16-16-q1@1: What is the size of the largest antichain in P({1, 2, 3, 4, 5}) ordered by inclusion? | 10 | 0 |  | By Sperner's theorem it's C(5, 2) = 10, achieved by all 2-element subsets.
 M1#maths-u16-16-q2@1: In {2, 3, 4, 6, 12} under divisibility, which element is greatest? | 12 | 6 | 4 | 2 | There is none | Every other element divides 12, so 12 lies above all of them.
 M3#maths-u16-16-q3@2: Why is Zorn's lemma needed to show every vector space has a basis? | Infinite spaces may have no step-by-step construction, but chains of independent sets have upper bounds, giving a maximal one | Every vector space is finite-dimensional, so a basis can always be built one vector at a time | Bases never exist without Zorn, even in ℝ^{2}, since spanning sets need choice to shrink | Zorn's lemma computes the basis explicitly, giving a formula for each basis vector | It isn't needed: every vector space has a countable basis found by Gram–Schmidt | A maximal linearly independent set is a basis, and Zorn guarantees one exists.
@@ -596,8 +596,8 @@ Q: Is ℤ well-ordered by ≤? | No.
 Q: Is ℚ dense? | Yes.
 SUM: Total orders compare everything.
 SUM: Well-orders have least elements.
-SRC: Davey BA, Priestley HA, Introduction to Lattices and Order (2nd edn, Cambridge University Press 2002) | textbook | 2002 | https://www.cambridge.org/
-SRC: Enderton HB, Elements of Set Theory (Academic Press 1977) | textbook | 1977 | https://www.elsevier.com/
+SRC: Davey BA, Priestley HA, Introduction to Lattices and Order (2nd edn, Cambridge University Press 2002) | secondary | 2002 | https://www.cambridge.org/
+SRC: Enderton HB, Elements of Set Theory (Academic Press 1977) | secondary | 1977 | https://www.elsevier.com/
 NUM1#maths-u16-17-q1@1: In lexicographic order on two-letter strings from {a, b, c}, what position (counting from 1) does "ca" hold? | 7 | 0 |  | The aa–ac block has 3 strings and ba–bc another 3, so "ca" is the 7th string.
 M1#maths-u16-17-q2@1: Which set is well-ordered by its usual order? | ℕ = {0, 1, 2, …} | ℤ, all the integers | ℚ ∩ [0, 1] | (0, 1) | The negative integers | Every non-empty set of natural numbers has a least element.
 M2#maths-u16-17-q3@2: Which order is dense? | ℚ under ≤ | ℤ under ≤ | ℕ under ≤ | {0, 1} under ≤ | Words of length 1 in dictionary order | Between rationals a < b lies (a + b)/2, so ℚ is dense; the others have gaps.
@@ -631,8 +631,8 @@ Q: What is the meet in the divisibility lattice? | gcd.
 Q: Which theorem gives fixed points on complete lattices? | Knaster–Tarski.
 SUM: Lattices have joins and meets.
 SUM: Many structures form lattices.
-SRC: Davey BA, Priestley HA, Introduction to Lattices and Order (2nd edn, Cambridge University Press 2002) | textbook | 2002 | https://www.cambridge.org/
-SRC: Birkhoff G, Lattice Theory (3rd edn, American Mathematical Society 1967) | textbook | 1967 | https://bookstore.ams.org/
+SRC: Davey BA, Priestley HA, Introduction to Lattices and Order (2nd edn, Cambridge University Press 2002) | secondary | 2002 | https://www.cambridge.org/
+SRC: Birkhoff G, Lattice Theory (3rd edn, American Mathematical Society 1967) | secondary | 1967 | https://bookstore.ams.org/
 NUM1#maths-u16-18-q1@1: In the divisibility lattice, find 8 ∨ 12. | 24 | 0 |  | The join is the least common multiple, and lcm(8, 12) = 24.
 M1#maths-u16-18-q2@1: What are join and meet in the lattice P(A) ordered by ⊆? | Union and intersection | Intersection and union | Product and sum | Complement and difference | Maximum and minimum | A ∪ B is the smallest set containing both, and A ∩ B is the largest set inside both.
 M3#maths-u16-18-q3@2: Why is the pentagon lattice N₅ important? | A lattice is modular exactly when it contains no copy of N₅, so N₅ is the model failure | It is the only distributive lattice with five elements | It has no meets at all, so it isn't even a lattice | It is a Boolean lattice, the smallest with a complement | Every lattice is a copy of it, so it's the only example | Dedekind's criterion: non-modularity always shows up as a pentagon sublattice.
@@ -665,8 +665,8 @@ Q: How many elements can a finite Boolean algebra have? | A power of 2.
 Q: Which single gate can build every Boolean function? | NAND (or NOR).
 SUM: Boolean lattices model logic.
 SUM: Finite ones are power sets.
-SRC: Givant S, Halmos P, Introduction to Boolean Algebras (Springer 2009) | textbook | 2009 | https://link.springer.com/
-SRC: Davey BA, Priestley HA, Introduction to Lattices and Order (2nd edn, Cambridge University Press 2002) | textbook | 2002 | https://www.cambridge.org/
+SRC: Givant S, Halmos P, Introduction to Boolean Algebras (Springer 2009) | secondary | 2009 | https://link.springer.com/
+SRC: Davey BA, Priestley HA, Introduction to Lattices and Order (2nd edn, Cambridge University Press 2002) | secondary | 2002 | https://www.cambridge.org/
 NUM1#maths-u16-19-q1@1: How many elements does the Boolean lattice of divisors of 210 = 2 × 3 × 5 × 7 have? | 16 | 0 |  | 210 has four distinct prime factors, so its divisors match P of a 4-element set: 2^{4} = 16.
 M1#maths-u16-19-q2@1: In the divisor lattice of 30, what is the complement of 2? | 15 | 3 | 5 | 30 | 1 | lcm(2, 15) = 30 and gcd(2, 15) = 1, so 15 is the complement.
 M2#maths-u16-19-q3@2: Why don't the divisors of 12 form a Boolean lattice? | 2 has no complement: no x gives lcm(2, x) = 12 and gcd(2, x) = 1 | 12 has too few divisors to form any lattice at all | Divisibility isn't a partial order on the divisors of 12 | It has six elements, and no lattice can have six elements | They do form one, with lcm as join and gcd as meet | Only 3 is coprime to 2 among the divisors, and lcm(2, 3) = 6 ≠ 12.
@@ -700,8 +700,8 @@ Q: What does soundness say? | Everything provable is true.
 Q: Who proved the completeness theorem for first-order logic? | Kurt Gödel (1929).
 SUM: Logic studies reasoning mathematically.
 SUM: Proof and truth are linked by soundness and completeness.
-SRC: Enderton HB, A Mathematical Introduction to Logic (2nd edn, Academic Press 2001) | textbook | 2001 | https://www.elsevier.com/
-SRC: Mendelson E, Introduction to Mathematical Logic (6th edn, CRC Press 2015) | textbook | 2015 | https://www.routledge.com/
+SRC: Enderton HB, A Mathematical Introduction to Logic (2nd edn, Academic Press 2001) | secondary | 2001 | https://www.elsevier.com/
+SRC: Mendelson E, Introduction to Mathematical Logic (6th edn, CRC Press 2015) | secondary | 2015 | https://www.routledge.com/
 NUM1#maths-u16-20-q1@1: In what year did Gödel publish his incompleteness theorems? | 1931 | 0 |  | Gödel's paper "Über formal unentscheidbare Sätze" appeared in 1931, two years after his completeness theorem.
 M1#maths-u16-20-q2@1: What does the completeness theorem for first-order logic say? | Every logically valid formula is provable | Every arithmetic truth is provable | Every formula is true | No formula is provable | Proofs are always short | Gödel showed that semantic validity (⊨) implies syntactic provability (⊢) in first-order logic.
 M2#maths-u16-20-q3@2: Which branch of logic studies what algorithms can compute? | Computability theory | Model theory | Proof theory | Modal logic | Fuzzy logic | Computability theory, founded by Turing, Church and Gödel, studies decidable and undecidable problems.
@@ -734,8 +734,8 @@ Q: When is p → q false? | Only when p is true and q is false.
 Q: What is the contrapositive of p → q? | ¬q → ¬p.
 SUM: Propositions combine by connectives.
 SUM: Truth tables decide validity.
-SRC: Enderton HB, A Mathematical Introduction to Logic (2nd edn, Academic Press 2001) | textbook | 2001 | https://www.elsevier.com/
-SRC: Huth M, Ryan M, Logic in Computer Science (2nd edn, Cambridge University Press 2004) | textbook | 2004 | https://www.cambridge.org/
+SRC: Enderton HB, A Mathematical Introduction to Logic (2nd edn, Academic Press 2001) | secondary | 2001 | https://www.elsevier.com/
+SRC: Huth M, Ryan M, Logic in Computer Science (2nd edn, Cambridge University Press 2004) | secondary | 2004 | https://www.cambridge.org/
 NUM1#maths-u16-21-q1@1: How many rows does a truth table for a formula with 5 variables have? | 32 | 0 |  | Each variable is true or false independently, giving 2^{5} = 32 assignments.
 M1#maths-u16-21-q2@1: Which formula is equivalent to p → q? | ¬p ∨ q | p ∨ ¬q | q → p | ¬p → ¬q | p ∧ ¬q | p → q fails only when p is true and q false, which is exactly when ¬p ∨ q fails.
 M2#maths-u16-21-q3@2: Which formula is a tautology? | (p ∧ q) → p | p → (p ∧ q) | p ∨ q | p → ¬p | (p ∨ q) → p | Whenever p ∧ q is true, p is true, so the implication can never be false.
@@ -768,8 +768,8 @@ Q: What is ¬∃x P(x) equivalent to? | ∀x ¬P(x).
 Q: Is ∃y ∀x (y > x) true in ℕ? | No.
 SUM: Quantifiers express generality.
 SUM: Order and negation need care.
-SRC: Velleman DJ, How to Prove It: A Structured Approach (3rd edn, Cambridge University Press 2019) | textbook | 2019 | https://www.cambridge.org/
-SRC: Enderton HB, A Mathematical Introduction to Logic (2nd edn, Academic Press 2001) | textbook | 2001 | https://www.elsevier.com/
+SRC: Velleman DJ, How to Prove It: A Structured Approach (3rd edn, Cambridge University Press 2019) | secondary | 2019 | https://www.cambridge.org/
+SRC: Enderton HB, A Mathematical Introduction to Logic (2nd edn, Academic Press 2001) | secondary | 2001 | https://www.elsevier.com/
 NUM1#maths-u16-22-q1@1: On the domain {1, 2, 3, 4}, how many values of x satisfy ∃y (y > x)? | 3 | 0 |  | x = 1, 2 and 3 each have a larger element in the domain; x = 4 has none.
 M1#maths-u16-22-q2@1: Which formula negates "for every x there is some y with P(x, y)"? | ∃x ∀y ¬P(x, y) | ∀x ∃y ¬P(x, y) | ∃x ∃y ¬P(x, y) | ∀x ∀y P(x, y) | ∃y ∀x ¬P(x, y) | Each quantifier flips as the negation passes it, and P is negated at the end.
 M3#maths-u16-22-q3@2: Why is ∃x (S(x) → P(x)) a poor translation of "some student passed"? | It is true as soon as anything isn't a student, even if no student passed | It is false whenever a student passed, so it never fits | It means every student passed, which is far too strong | It uses the wrong variable, since x should be y here | It is a correct translation of the sentence | An implication with a false premise is true, so any non-student makes the formula true.
@@ -802,8 +802,8 @@ Q: Is validity in first-order logic decidable? | No.
 Q: What does compactness say? | If every finite subset of a theory has a model, the theory has a model.
 SUM: First-order logic is mathematics' standard logic.
 SUM: It is complete but can't fix sizes.
-SRC: Enderton HB, A Mathematical Introduction to Logic (2nd edn, Academic Press 2001) | textbook | 2001 | https://www.elsevier.com/
-SRC: Ebbinghaus HD, Flum J, Thomas W, Mathematical Logic (3rd edn, Springer 2021) | textbook | 2021 | https://link.springer.com/
+SRC: Enderton HB, A Mathematical Introduction to Logic (2nd edn, Academic Press 2001) | secondary | 2001 | https://www.elsevier.com/
+SRC: Ebbinghaus HD, Flum J, Thomas W, Mathematical Logic (3rd edn, Springer 2021) | secondary | 2021 | https://link.springer.com/
 NUM1#maths-u16-23-q1@1: In the compactness argument, a finite subset contains c > 0, c > 1, …, c > 99. What is the smallest natural value of c that satisfies it in ℕ? | 100 | 0 |  | c must exceed 99, so c = 100 is the least choice that works in the standard model.
 M1#maths-u16-23-q2@1: Which property can't be expressed by a set of first-order sentences? | The domain is finite | The domain has at least 3 elements | The relation is transitive | There is a least element | The operation is commutative | By compactness, any theory with arbitrarily large finite models also has an infinite model.
 M2#maths-u16-23-q3@2: What does the Löwenheim–Skolem theorem imply about ZFC? | If consistent, it has a countable model, though it proves uncountable sets exist | It has exactly one model, the true universe of all sets | It has no models at all, since it proves uncountable sets | All its models are finite, as every proof is finite | It decides every statement, including the continuum hypothesis | Skolem's paradox: "uncountable" inside a model needn't mean uncountable from outside.
@@ -836,8 +836,8 @@ Q: Does second-order Peano arithmetic have non-standard models (full semantics)?
 Q: Is full second-order logic complete? | No.
 SUM: Higher-order logic is more expressive.
 SUM: It sacrifices completeness.
-SRC: Shapiro S, Foundations without Foundationalism: A Case for Second-Order Logic (Oxford University Press 1991) | textbook | 1991 | https://global.oup.com/
-SRC: Väänänen J, Second-order and higher-order logic, Stanford Encyclopedia of Philosophy | review | 2024 | https://plato.stanford.edu/entries/logic-higher-order/
+SRC: Shapiro S, Foundations without Foundationalism: A Case for Second-Order Logic (Oxford University Press 1991) | secondary | 1991 | https://global.oup.com/
+SRC: Väänänen J, Second-order and higher-order logic, Stanford Encyclopedia of Philosophy | secondary | 2024 | https://plato.stanford.edu/entries/logic-higher-order/
 NUM1#maths-u16-24-q1@1: How many models up to isomorphism does second-order Peano arithmetic have under full semantics? | 1 | 0 |  | Dedekind's categoricity theorem shows every full model is isomorphic to ℕ.
 M1#maths-u16-24-q2@1: What does second-order logic allow quantifiers to range over? | Properties and sets of individuals | Only individual objects | Only truth values | Only natural numbers | Only finite sets | Second-order quantifiers like ∀P range over properties, not only elements.
 M3#maths-u16-24-q3@2: Why can't full second-order logic have a complete, effective proof system? | Its validities include truths of arithmetic that, by Gödel, no effective system can capture | It has no formulas at all, so there's nothing for a proof system to derive | Every formula is valid, so no proof system could ever be sound for it | It is weaker than first-order logic, so it can't express arithmetic at all | It does have one: Henkin's proof system is complete for full semantics | Categorical arithmetic makes second-order validity at least as hard as full arithmetic truth.
@@ -871,8 +871,8 @@ Q: How is ◇p defined from □? | ¬□¬p.
 Q: Which frame property validates axiom 4? | Transitivity.
 SUM: Modal logic reasons about necessity.
 SUM: Frames determine valid axioms.
-SRC: Blackburn P, de Rijke M, Venema Y, Modal Logic (Cambridge University Press 2001) | textbook | 2001 | https://www.cambridge.org/
-SRC: Kripke SA, Semantical considerations on modal logic, Acta Philosophica Fennica 16, 83 | journal | 1963 | https://philpapers.org/
+SRC: Blackburn P, de Rijke M, Venema Y, Modal Logic (Cambridge University Press 2001) | secondary | 2001 | https://www.cambridge.org/
+SRC: Kripke SA, Semantical considerations on modal logic, Acta Philosophica Fennica 16, 83 | primary | 1963 | https://philpapers.org/
 NUM1#maths-u16-25-q1@1: A world w sees 4 worlds, and p is true at 3 of them. At how many of those 4 worlds must p be true for □p to hold at w? | 4 | 0 |  | □p requires p at every accessible world, so all 4 must make p true; here □p fails.
 M1#maths-u16-25-q2@1: Which axiom corresponds to a reflexive accessibility relation? | □p → p | □p → □□p | ◇p → □◇p | □(p → q) → (□p → □q) | p → □p | If each world sees itself, whatever is necessary at w is true at w.
 M2#maths-u16-25-q3@2: Which modal system is commonly used for knowledge, where access is an equivalence relation? | S5 | K | GL | T only | No modal system | S5 frames are reflexive, symmetric and transitive, matching ideal knowledge.
@@ -905,8 +905,8 @@ Q: Is ¬¬p → p intuitionistically valid? | No.
 Q: What does a constructive proof of ∃x P(x) provide? | A specific x with a proof of P(x).
 SUM: Intuitionistic truth is provability.
 SUM: Excluded middle isn't assumed.
-SRC: Troelstra AS, van Dalen D, Constructivism in Mathematics (North-Holland 1988) | textbook | 1988 | https://www.elsevier.com/
-SRC: Moschovakis J, Intuitionistic logic, Stanford Encyclopedia of Philosophy | review | 2023 | https://plato.stanford.edu/entries/logic-intuitionistic/
+SRC: Troelstra AS, van Dalen D, Constructivism in Mathematics (North-Holland 1988) | secondary | 1988 | https://www.elsevier.com/
+SRC: Moschovakis J, Intuitionistic logic, Stanford Encyclopedia of Philosophy | secondary | 2023 | https://plato.stanford.edu/entries/logic-intuitionistic/
 NUM1#maths-u16-26-q1@1: In the classical proof about aᵇ, the second case uses (√2^{√2})^{√2}. What rational number does it equal? | 2 | 0 |  | (√2^{√2})^{√2} = √2^{2} = 2, so that choice works if √2^{√2} is irrational.
 M1#maths-u16-26-q2@1: Which principle does intuitionistic logic reject in general? | p ∨ ¬p | p → p | (p ∧ q) → p | p → (q → p) | p → ¬¬p | Excluded middle would assert a proof of p or of ¬p for every statement, which may not exist.
 M2#maths-u16-26-q3@2: What does the Curry–Howard correspondence identify? | Proofs with programs and propositions with types | Sets with numbers | Truth tables with circuits | Models with proofs | Axioms with theorems | Intuitionistic proofs correspond to typed programs, the basis of proof assistants.
@@ -939,8 +939,8 @@ Q: What is NOT 0.2 in fuzzy logic? | 0.8.
 Q: Does p OR NOT p always equal 1 in fuzzy logic? | No.
 SUM: Fuzzy logic grades truth.
 SUM: It powers practical controllers.
-SRC: Zadeh LA, Fuzzy sets, Information and Control 8(3), 338 | journal | 1965 | https://doi.org/10.1016/S0019-9958(65)90241-X
-SRC: Klir GJ, Yuan B, Fuzzy Sets and Fuzzy Logic: Theory and Applications (Prentice Hall 1995) | textbook | 1995 | https://www.pearson.com/
+SRC: Zadeh LA, Fuzzy sets, Information and Control 8(3), 338 | primary | 1965 | https://doi.org/10.1016/S0019-9958(65)90241-X
+SRC: Klir GJ, Yuan B, Fuzzy Sets and Fuzzy Logic: Theory and Applications (Prentice Hall 1995) | secondary | 1995 | https://www.pearson.com/
 NUM1#maths-u16-27-q1@1: Using the product t-norm, what is the fuzzy AND of truth values 0.6 and 0.5? | 0.3 | 0 |  | The product t-norm multiplies the truth values: 0.6 × 0.5 = 0.3.
 M1#maths-u16-27-q2@1: Using Zadeh operations, what is p OR NOT p when p = 0.5? | 0.5 | 1 | 0 | 0.25 | 0.75 | NOT p = 0.5, and max(0.5, 0.5) = 0.5, so excluded middle fails.
 M2#maths-u16-27-q3@2: How does a fuzzy membership degree differ from a probability? | It measures how far something fits a vague concept, not how likely an event is | It is always exactly 0 or 1, unlike a probability | Degrees must sum to 1 over all sets, like a distribution | It is a frequency measured over repeated experiments | They are the same thing under different names | Someone 175 cm tall is partly tall with certainty; there's no randomness involved.
@@ -973,8 +973,8 @@ Q: What does F p mean? | p is eventually true.
 Q: Is G ¬(error) a safety or a liveness property? | Safety.
 SUM: Temporal logic reasons about time.
 SUM: Model checking verifies systems.
-SRC: Pnueli A, The temporal logic of programs, 18th Symposium on Foundations of Computer Science, 46 | journal | 1977 | https://doi.org/10.1109/SFCS.1977.32
-SRC: Baier C, Katoen JP, Principles of Model Checking (MIT Press 2008) | textbook | 2008 | https://mitpress.mit.edu/
+SRC: Pnueli A, The temporal logic of programs, 18th Symposium on Foundations of Computer Science, 46 | primary | 1977 | https://doi.org/10.1109/SFCS.1977.32
+SRC: Baier C, Katoen JP, Principles of Model Checking (MIT Press 2008) | secondary | 2008 | https://mitpress.mit.edu/
 NUM1#maths-u16-28-q1@1: On the path where p is true exactly at times 0, 2, 4, 6, … (forever), how many of G p, F p, G F p and F G p are true at time 0? | 2 | 0 |  | F p and G F p are true; G p fails at time 1, and F G p fails because p keeps switching off.
 M1#maths-u16-28-q2@1: Which LTL formula says "p holds infinitely often"? | G F p | F G p | X p | G p | p U q | At every point there's a later point where p holds, so p recurs forever.
 M3#maths-u16-28-q3@2: Why can no finite observation show that a liveness property is violated? | The good event could still happen later, so any finite trace can be extended to satisfy it | Liveness properties are always false, so they need no observation | Finite traces satisfy every temporal formula, safety included | Liveness concerns only the first state, so one step decides it | It can: a finite trace with no good event shows the violation | Safety violations show up in finite prefixes; liveness violations only in infinite behaviour.
@@ -1010,8 +1010,8 @@ Q: How do you disprove "every prime is odd"? | Give the counterexample 2.
 Q: What must you prove for "P if and only if Q"? | Both P → Q and Q → P.
 SUM: Match method to statement.
 SUM: Avoid circular and converse errors.
-SRC: Velleman DJ, How to Prove It: A Structured Approach (3rd edn, Cambridge University Press 2019) | textbook | 2019 | https://www.cambridge.org/
-SRC: Hammack R, Book of Proof (3rd edn, Richard Hammack 2018) | textbook | 2018 | https://www.people.vcu.edu/~rhammack/BookOfProof/
+SRC: Velleman DJ, How to Prove It: A Structured Approach (3rd edn, Cambridge University Press 2019) | secondary | 2019 | https://www.cambridge.org/
+SRC: Hammack R, Book of Proof (3rd edn, Richard Hammack 2018) | secondary | 2018 | https://www.people.vcu.edu/~rhammack/BookOfProof/
 NUM1#maths-u16-29-q1@1: Find the smallest n ≥ 1 for which n^{2} + n + 41 is not prime, a counterexample to Euler's pattern. | 40 | 0 |  | 40^{2} + 40 + 41 = 1681 = 41^{2}, while n = 1 to 39 all give primes.
 M1#maths-u16-29-q2@1: Which technique is most natural for proving "√3 is irrational"? | Proof by contradiction | Mathematical induction | A single example | Proof by cases on parity | Direct calculation | Assume √3 = p/q in lowest terms and derive a contradiction about divisibility by 3.
 M2#maths-u16-29-q3@2: What is the error in "for n = 1, 2, 3 the formula works, so it's true for all n"? | Checking examples doesn't prove a universal statement | The examples are too large to be checked reliably | Induction was used, but its step was set out wrongly | It proves the converse of the formula instead | There's no error: three cases make a valid proof | Patterns can fail later, as n^{2} + n + 41 does at n = 40.
@@ -1045,8 +1045,8 @@ Q: How do you unpack "a divides b"? | b = ak for some integer k.
 Q: What's the first line of a direct proof of P → Q? | Assume P.
 SUM: Direct proofs go forward.
 SUM: Definitions do the work.
-SRC: Hammack R, Book of Proof (3rd edn, Richard Hammack 2018) | textbook | 2018 | https://www.people.vcu.edu/~rhammack/BookOfProof/
-SRC: Velleman DJ, How to Prove It: A Structured Approach (3rd edn, Cambridge University Press 2019) | textbook | 2019 | https://www.cambridge.org/
+SRC: Hammack R, Book of Proof (3rd edn, Richard Hammack 2018) | secondary | 2018 | https://www.people.vcu.edu/~rhammack/BookOfProof/
+SRC: Velleman DJ, How to Prove It: A Structured Approach (3rd edn, Cambridge University Press 2019) | secondary | 2019 | https://www.cambridge.org/
 NUM1#maths-u16-30-q1@1: In the direct proof that (2a + 1)(2b + 1) is odd, with a = 3 and b = 4, what is the integer m in the form 2m + 1? | 31 | 0 |  | m = 2ab + a + b = 24 + 3 + 4 = 31, and indeed 7 × 9 = 63 = 2 × 31 + 1.
 M1#maths-u16-30-q2@1: What is wrong with writing "let a = 2k and b = 2k" for two even numbers? | It forces a and b to be equal, so the proof covers only that special case | Even numbers can't be written in the form 2k at all | k must be odd for 2k to be an even number | It is perfectly correct and the usual way to start | It assumes the conclusion, so the proof is circular | Distinct numbers need distinct parameters, such as a = 2k and b = 2m.
 M2#maths-u16-30-q3@2: Which first step suits a direct proof that the sum of two rationals is rational? | Write them as a/b and c/d with integers a, b, c, d and b, d ≠ 0 | Assume the sum is irrational and look for a contradiction | Check the claim for 1/2 and 1/3 and then generalise | Use induction on the numerators of the two fractions | Draw both numbers on a number line and add lengths | Unpacking "rational" gives a/b + c/d = (ad + bc)/bd, which is rational.
@@ -1079,8 +1079,8 @@ Q: What is the contrapositive of "if x > 2 then x^{2} > 4"? | If x^{2} ≤ 4 the
 Q: Is the converse of a true implication always true? | No.
 SUM: The contrapositive is equivalent.
 SUM: The converse isn't.
-SRC: Hammack R, Book of Proof (3rd edn, Richard Hammack 2018) | textbook | 2018 | https://www.people.vcu.edu/~rhammack/BookOfProof/
-SRC: Velleman DJ, How to Prove It: A Structured Approach (3rd edn, Cambridge University Press 2019) | textbook | 2019 | https://www.cambridge.org/
+SRC: Hammack R, Book of Proof (3rd edn, Richard Hammack 2018) | secondary | 2018 | https://www.people.vcu.edu/~rhammack/BookOfProof/
+SRC: Velleman DJ, How to Prove It: A Structured Approach (3rd edn, Cambridge University Press 2019) | secondary | 2019 | https://www.cambridge.org/
 NUM1#maths-u16-31-q1@1: Of the converse, inverse and contrapositive of P → Q, how many are logically equivalent to P → Q? | 1 | 0 |  | Only the contrapositive ¬Q → ¬P is equivalent; the converse and inverse are equivalent to each other.
 M1#maths-u16-31-q2@1: Which statement is the contrapositive of "if a number is divisible by 6 then it is even"? | If a number is odd then it isn't divisible by 6 | If a number is even then it's divisible by 6 | If a number isn't divisible by 6 then it's odd | If a number is odd then it's divisible by 6 | Every even number is divisible by 6 | Negate both parts and swap them: "not even" implies "not divisible by 6".
 M2#maths-u16-31-q3@2: Why is contraposition natural for "if xy is irrational then x or y is irrational"? | ¬Q says x and y are both rational, which is concrete and quickly gives xy rational | The statement has no hypothesis, so a direct proof can't even begin | Irrational numbers have simple formulas, so the contrapositive is direct | It can't be proved any other way, as contradiction fails for irrationals | Contraposition is unsuitable here, since the conclusion is an "or" | Rational numbers have the form a/b, so the contrapositive is a one-line direct proof.
@@ -1113,8 +1113,8 @@ Q: What do you assume first in a proof by contradiction? | That the statement is
 Q: Is 2 × 3 × 5 × 7 × 11 × 13 + 1 prime? | No: 30031 = 59 × 509.
 SUM: Assume false, reach the impossible.
 SUM: Classic proofs use it.
-SRC: Hardy GH, Wright EM, An Introduction to the Theory of Numbers (6th edn, Oxford University Press 2008) | textbook | 2008 | https://global.oup.com/
-SRC: Aigner M, Ziegler GM, Proofs from THE BOOK (6th edn, Springer 2018) | textbook | 2018 | https://link.springer.com/
+SRC: Hardy GH, Wright EM, An Introduction to the Theory of Numbers (6th edn, Oxford University Press 2008) | secondary | 2008 | https://global.oup.com/
+SRC: Aigner M, Ziegler GM, Proofs from THE BOOK (6th edn, Springer 2018) | secondary | 2018 | https://link.springer.com/
 NUM1#maths-u16-32-q1@1: Compute Euclid's number 2 × 3 × 5 + 1. | 31 | 0 |  | 2 × 3 × 5 + 1 = 31, which is prime and not in the list {2, 3, 5}.
 M1#maths-u16-32-q2@1: In the proof that √2 is irrational, what contradiction is reached? | p and q are both even, though p/q was in lowest terms | p is odd and even at the same time | q is zero | √2 is negative | p^{2} equals q^{2} | Both being even means they share a factor 2, contradicting lowest terms.
 M3#maths-u16-32-q3@2: Why doesn't Euclid's proof claim p₁p₂⋯pₙ + 1 is always prime? | It only needs some prime factor of it outside the list, and the number may be composite, like 30031 | The number p₁p₂⋯pₙ + 1 is always even, so it can't be prime | It is always prime, so Euclid had no need to claim it | The proof is really about composite numbers, not primes | Euclid did assume it was prime, and the proof relies on it | Dividing by any listed prime leaves remainder 1, so its prime factors are new.
@@ -1148,8 +1148,8 @@ Q: What does strong induction assume? | That all earlier cases hold.
 Q: Where does the "all horses same colour" argument fail? | Going from 1 horse to 2.
 SUM: Induction climbs from case to case.
 SUM: Base and step are both essential.
-SRC: Hammack R, Book of Proof (3rd edn, Richard Hammack 2018) | textbook | 2018 | https://www.people.vcu.edu/~rhammack/BookOfProof/
-SRC: Graham RL, Knuth DE, Patashnik O, Concrete Mathematics (2nd edn, Addison-Wesley 1994) | textbook | 1994 | https://www-cs-faculty.stanford.edu/~knuth/gkp.html
+SRC: Hammack R, Book of Proof (3rd edn, Richard Hammack 2018) | secondary | 2018 | https://www.people.vcu.edu/~rhammack/BookOfProof/
+SRC: Graham RL, Knuth DE, Patashnik O, Concrete Mathematics (2nd edn, Addison-Wesley 1994) | secondary | 1994 | https://www-cs-faculty.stanford.edu/~knuth/gkp.html
 NUM1#maths-u16-33-q1@1: What is the smallest n ≥ 1 from which 2ⁿ > n^{2} holds for all larger n? | 5 | 0 |  | It holds at n = 1 but fails at n = 2, 3, 4 (4 = 4, 8 < 9, 16 = 16); from n = 5 (32 > 25) induction carries it on.
 M1#maths-u16-33-q2@1: What is the role of the inductive hypothesis? | Assuming P(k) to derive P(k + 1) | Assuming P(n) for every n | Checking the case n = 1 | Proving P(k) for one k | Giving a counterexample | The step shows the truth passes from k to k + 1; the hypothesis is the assumption P(k).
 M2#maths-u16-33-q3@2: Which statement is naturally proved by strong induction? | Every integer n ≥ 2 is a product of primes | 1 + 2 + … + n = n(n + 1)/2 | 2ⁿ ≥ n + 1 for all n | 3 divides n^{3} − n | n! > 2ⁿ for n ≥ 4 | A composite n factors into smaller numbers, each needing the hypothesis, not just n − 1.
@@ -1182,8 +1182,8 @@ Q: Which theorem was formally verified in Coq in 2005? | The four colour theorem
 Q: What is the single rule of a typical Hilbert system? | Modus ponens.
 SUM: Formal proofs can be machine-checked.
 SUM: Proof assistants verify real mathematics.
-SRC: Gonthier G, Formal proof: the four-color theorem, Notices of the AMS 55(11), 1382 | journal | 2008 | https://www.ams.org/notices/200811/
-SRC: Hales T et al., A formal proof of the Kepler conjecture, Forum of Mathematics, Pi 5, e2 | journal | 2017 | https://doi.org/10.1017/fmp.2017.1
+SRC: Gonthier G, Formal proof: the four-color theorem, Notices of the AMS 55(11), 1382 | primary | 2008 | https://www.ams.org/notices/200811/
+SRC: Hales T et al., A formal proof of the Kepler conjecture, Forum of Mathematics, Pi 5, e2 | primary | 2017 | https://doi.org/10.1017/fmp.2017.1
 NUM1#maths-u16-34-q1@1: In what year was the formal proof of the Kepler conjecture (Flyspeck) completed? | 2014 | 0 |  | The Flyspeck project announced completion in August 2014, and the paper appeared in 2017.
 M1#maths-u16-34-q2@1: Which rule introduces an implication in natural deduction? | Assume P, derive Q, then discharge to conclude P → Q | From P and P → Q conclude Q | From P ∧ Q conclude P | From P conclude P ∨ Q | From ¬¬P conclude P | →-introduction discharges an assumption; the second option is →-elimination (modus ponens).
 M2#maths-u16-34-q3@2: Why do proof assistants rely on a small trusted kernel? | Only the kernel's simple checks need trusting, however complex the tactics that produce proofs | The kernel writes all the proofs, so users never need to | Kernels make every formal proof shorter than on paper | It removes the need for axioms, since the kernel decides truth | They don't: proof assistants trust every tactic equally | The de Bruijn criterion keeps the trusted code small and easy to audit.
@@ -1216,8 +1216,8 @@ Q: How do you show an axiom is independent? | Find a model of the other axioms w
 Q: Which geometry shows the parallel postulate is independent? | Hyperbolic geometry.
 SUM: Axioms are chosen starting points.
 SUM: Models test consistency and independence.
-SRC: Greenberg MJ, Euclidean and Non-Euclidean Geometries: Development and History (4th edn, W. H. Freeman 2008) | textbook | 2008 | https://www.macmillanlearning.com/
-SRC: Hilbert D, Grundlagen der Geometrie (Teubner 1899) | textbook | 1899 | https://archive.org/
+SRC: Greenberg MJ, Euclidean and Non-Euclidean Geometries: Development and History (4th edn, W. H. Freeman 2008) | secondary | 2008 | https://www.macmillanlearning.com/
+SRC: Hilbert D, Grundlagen der Geometrie (Teubner 1899) | secondary | 1899 | https://archive.org/
 NUM1#maths-u16-35-q1@1: How many postulates did Euclid state at the start of the Elements? | 5 | 0 |  | Euclid listed five postulates, the fifth being the parallel postulate, alongside common notions.
 M1#maths-u16-35-q2@1: How is the consistency of an axiom system usually shown? | By exhibiting a model in which all the axioms are true | By proving every axiom from the others | By listing many theorems | By checking the axioms are short | By showing it is complete | If a model exists, no contradiction can be derived, since the model would make it true.
 M2#maths-u16-35-q3@2: What did hyperbolic geometry show about the parallel postulate? | It is independent of Euclid's other postulates | It can be proved from the other postulates | It is false in every geometry | It makes geometry inconsistent | It is equivalent to Pythagoras | A consistent model where the others hold but parallels fail shows it can't be proved.
@@ -1250,8 +1250,8 @@ Q: What is a proper class? | A collection too large to be a set, such as all set
 Q: Who first axiomatised set theory, in 1908? | Ernst Zermelo.
 SUM: Axioms decide which sets exist.
 SUM: ZFC is the standard theory.
-SRC: Kunen K, Set Theory (College Publications 2011) | textbook | 2011 | https://www.collegepublications.co.uk/
-SRC: Zermelo E, Untersuchungen über die Grundlagen der Mengenlehre I, Mathematische Annalen 65, 261 | journal | 1908 | https://doi.org/10.1007/BF01449999
+SRC: Kunen K, Set Theory (College Publications 2011) | secondary | 2011 | https://www.collegepublications.co.uk/
+SRC: Zermelo E, Untersuchungen über die Grundlagen der Mengenlehre I, Mathematische Annalen 65, 261 | primary | 1908 | https://doi.org/10.1007/BF01449999
 NUM1#maths-u16-36-q1@1: In what year did Zermelo publish his axioms for set theory? | 1908 | 0 |  | Zermelo's 1908 paper in Mathematische Annalen gave the first axiomatisation, later extended by Fraenkel and Skolem.
 M1#maths-u16-36-q2@1: Which axiom replaces unrestricted comprehension in ZF? | Separation: subsets of existing sets defined by a property | Choice: selecting an element from each set | Infinity: a set containing ℕ exists | Extensionality: sets with equal members are equal | Foundation: no infinite descending ∈ chains | Separation only forms {x ∈ A : P(x)}, which blocks Russell's construction.
 M3#maths-u16-36-q3@2: Why are consistency results for ZFC stated relatively, such as "if ZF is consistent, so is ZFC"? | Gödel's second theorem means ZF can't prove its own consistency, so only relative results are possible | ZF is known to be inconsistent, so absolute results would be false | Consistency is never meaningful for theories as strong as ZF | ZFC proves its own consistency, so relative results are just simpler | Relative results are just a convention with no logical reason behind it | Absolute consistency proofs would need a stronger theory.
@@ -1287,8 +1287,8 @@ Q: Which axiom rules out x ∈ x? | Foundation (regularity).
 Q: Is the continuum hypothesis provable in ZFC? | No, nor is its negation.
 SUM: ZFC is the standard foundation.
 SUM: Its axioms build sets step by step.
-SRC: Kunen K, Set Theory (College Publications 2011) | textbook | 2011 | https://www.collegepublications.co.uk/
-SRC: Jech T, Set Theory (3rd millennium edn, Springer 2003) | textbook | 2003 | https://link.springer.com/
+SRC: Kunen K, Set Theory (College Publications 2011) | secondary | 2011 | https://www.collegepublications.co.uk/
+SRC: Jech T, Set Theory (3rd millennium edn, Springer 2003) | secondary | 2003 | https://link.springer.com/
 NUM1#maths-u16-37-q1@1: How many elements does the set ⋃ {{1, 2}, {2, 3}, {4}} have? | 4 | 0 |  | The union collects 1, 2, 3 and 4, with 2 counted once, so it has four elements.
 M1#maths-u16-37-q2@1: Which ZFC axiom guarantees an infinite set exists? | Infinity | Extensionality | Pairing | Foundation | Separation | The axiom of infinity asserts a set containing ∅ and closed under successor.
 M2#maths-u16-37-q3@2: What does the axiom of extensionality say? | Two sets with exactly the same elements are equal | Every set has a power set | Every set is infinite | Sets can contain themselves | Every property defines a set | Sets are determined by their members alone, so {1, 2} = {2, 1}.
@@ -1322,8 +1322,8 @@ Q: Is the axiom of choice provable in ZF? | No.
 Q: Name a statement equivalent to choice. | Zorn's lemma (or well-ordering).
 SUM: Choice selects without a rule.
 SUM: It is powerful and independent.
-SRC: Jech T, The Axiom of Choice (North-Holland 1973; Dover 2008) | textbook | 2008 | https://store.doverpublications.com/
-SRC: Wagon S, Tomkowicz G, The Banach–Tarski Paradox (2nd edn, Cambridge University Press 2016) | textbook | 2016 | https://www.cambridge.org/
+SRC: Jech T, The Axiom of Choice (North-Holland 1973; Dover 2008) | secondary | 2008 | https://store.doverpublications.com/
+SRC: Wagon S, Tomkowicz G, The Banach–Tarski Paradox (2nd edn, Cambridge University Press 2016) | secondary | 2016 | https://www.cambridge.org/
 NUM1#maths-u16-38-q1@1: In the Banach–Tarski paradox, what is the minimum number of pieces needed to turn one ball into two? | 5 | 0 |  | Robinson showed five pieces suffice and that fewer are impossible.
 M1#maths-u16-38-q2@1: Which statement is equivalent to the axiom of choice over ZF? | Every set can be well-ordered | Every set is finite | Every function is continuous | Every set is countable | Every subset of ℝ is measurable | Zermelo's well-ordering theorem is one of the classic equivalents of choice.
 M3#maths-u16-38-q3@2: Why doesn't Banach–Tarski contradict the conservation of volume? | The pieces are non-measurable sets, so they have no well-defined volume to conserve | Volume isn't conserved by rotations, only by translations | The second ball is smaller than the first, so volume shrinks | It only works in two dimensions, where area isn't preserved | It does: the paradox is a contradiction proved in ZFC | Rigid motions preserve measure, but only for measurable sets.
@@ -1357,8 +1357,8 @@ Q: How is ℝ built from ℚ? | By Dedekind cuts or Cauchy sequences.
 Q: Which set is the von Neumann natural 1? | {∅}.
 SUM: Everything can be encoded as sets.
 SUM: Properties matter more than encodings.
-SRC: Enderton HB, Elements of Set Theory (Academic Press 1977) | textbook | 1977 | https://www.elsevier.com/
-SRC: Dedekind R, Stetigkeit und irrationale Zahlen (Vieweg 1872) | textbook | 1872 | https://archive.org/
+SRC: Enderton HB, Elements of Set Theory (Academic Press 1977) | secondary | 1977 | https://www.elsevier.com/
+SRC: Dedekind R, Stetigkeit und irrationale Zahlen (Vieweg 1872) | secondary | 1872 | https://archive.org/
 NUM1#maths-u16-39-q1@1: Under the pair representation of ℤ, (a, b) represents a − b. If (7, b) represents −2, what is b? | 9 | 0 |  | 7 − b = −2 gives b = 9, so (7, 9) lies in the class of −2.
 M1#maths-u16-39-q2@1: How is a real number defined as a Dedekind cut? | As a split of ℚ into a lower set with no greatest element and the upper rest | As an infinite string of decimal digits with no last digit | As an ordered pair of integers (a, b) with b non-zero | As the limit of an increasing sequence of integers | As a set of natural numbers coding its binary digits | Cuts fill the gaps in ℚ: √2 is the cut {q : q < 0 or q^{2} < 2}.
 M2#maths-u16-39-q3@2: What is a "junk theorem" in set-theoretic foundations? | A true statement about an encoding with no ordinary meaning, such as 2 ∈ 3 | A false theorem of ZFC that was accepted by mistake | A theorem whose shortest proof is impractically long | A theorem about junk data in computer databases | A theorem that can be proved only with choice | It reflects how numbers are coded as sets, not anything about numbers themselves.
@@ -1391,8 +1391,8 @@ Q: Is 2·ω equal to ω? | Yes.
 Q: What ordinal comes right after ω? | ω + 1.
 SUM: Ordinals extend counting.
 SUM: Their arithmetic isn't commutative.
-SRC: Jech T, Set Theory (3rd millennium edn, Springer 2003) | textbook | 2003 | https://link.springer.com/
-SRC: Kirby L, Paris J, Accessible independence results for Peano arithmetic, Bulletin of the London Mathematical Society 14(4), 285 | journal | 1982 | https://doi.org/10.1112/blms/14.4.285
+SRC: Jech T, Set Theory (3rd millennium edn, Springer 2003) | secondary | 2003 | https://link.springer.com/
+SRC: Kirby L, Paris J, Accessible independence results for Peano arithmetic, Bulletin of the London Mathematical Society 14(4), 285 | primary | 1982 | https://doi.org/10.1112/blms/14.4.285
 NUM1#maths-u16-40-q1@1: How many of the equations 1 + ω = ω, ω + 1 = ω, 2·ω = ω and ω·2 = ω are true? | 2 | 0 |  | 1 + ω = ω and 2·ω = ω are true; ω + 1 and ω·2 = ω + ω are strictly larger than ω.
 M1#maths-u16-40-q2@1: Which ordinal is a limit ordinal? | ω·2 | ω + 1 | 5 | ω + 7 | ω·2 + 1 | ω·2 = ω + ω has no immediate predecessor; the others are successors.
 M3#maths-u16-40-q3@2: Why does Goodstein's theorem need ordinals beyond those Peano arithmetic can handle? | Its termination proof assigns decreasing ordinals below ε₀, and PA can't prove transfinite induction up to ε₀ | Goodstein sequences are infinite | Ordinals are unrelated to Goodstein's theorem | Peano arithmetic proves it easily | The sequences increase forever | Kirby and Paris showed PA can't prove the theorem, matching PA's proof-theoretic ordinal ε₀.
@@ -1427,8 +1427,8 @@ Q: What is ℵ₀ · ℵ₀? | ℵ₀.
 Q: Who showed ¬CH is consistent with ZFC? | Paul Cohen (1963).
 SUM: Infinite sizes add simply.
 SUM: Exponentiation is mysterious.
-SRC: Jech T, Set Theory (3rd millennium edn, Springer 2003) | textbook | 2003 | https://link.springer.com/
-SRC: Cohen PJ, The independence of the continuum hypothesis, PNAS 50(6), 1143 | journal | 1963 | https://doi.org/10.1073/pnas.50.6.1143
+SRC: Jech T, Set Theory (3rd millennium edn, Springer 2003) | secondary | 2003 | https://link.springer.com/
+SRC: Cohen PJ, The independence of the continuum hypothesis, PNAS 50(6), 1143 | primary | 1963 | https://doi.org/10.1073/pnas.50.6.1143
 NUM1#maths-u16-41-q1@1: In what year did Paul Cohen prove the independence of the continuum hypothesis? | 1963 | 0 |  | Cohen introduced forcing in 1963 to show ¬CH is consistent, for which he won the 1966 Fields Medal.
 M1#maths-u16-41-q2@1: What is ℵ₀ + 2^{ℵ₀}? | 2^{ℵ₀} | ℵ₀ | ℵ₁ in every model | 2^{ℵ₀ + 1} | ℵ₀ + 1 | Infinite cardinal sums equal the larger summand, here 2^{ℵ₀}.
 M2#maths-u16-41-q3@2: What did Gödel and Cohen together show about CH? | Neither CH nor its negation can be proved from ZFC | CH is true, settled by Gödel's constructible universe | CH is false, settled by Cohen's method of forcing | CH is meaningless, so no proof could ever apply to it | ZFC is inconsistent, since it proves both CH and ¬CH | Gödel built a model where CH holds and Cohen one where it fails.
@@ -1461,8 +1461,8 @@ Q: What does V_{κ} model when κ is inaccessible? | ZFC.
 Q: Which is stronger, a measurable or an inaccessible cardinal? | Measurable.
 SUM: Large cardinals extend ZFC.
 SUM: They measure strength.
-SRC: Kanamori A, The Higher Infinite (2nd edn, Springer 2003) | textbook | 2003 | https://link.springer.com/
-SRC: Martin DA, Steel JR, A proof of projective determinacy, Journal of the AMS 2(1), 71 | journal | 1989 | https://doi.org/10.1090/S0894-0347-1989-0955605-X
+SRC: Kanamori A, The Higher Infinite (2nd edn, Springer 2003) | secondary | 2003 | https://link.springer.com/
+SRC: Martin DA, Steel JR, A proof of projective determinacy, Journal of the AMS 2(1), 71 | primary | 1989 | https://doi.org/10.1090/S0894-0347-1989-0955605-X
 NUM1#maths-u16-42-q1@1: In what year did Martin and Steel publish their proof of projective determinacy from Woodin cardinals? | 1989 | 0 |  | Their paper appeared in the Journal of the AMS in 1989.
 M1#maths-u16-42-q2@1: Which list orders large cardinals from weaker to stronger? | Inaccessible, measurable, supercompact | Supercompact, measurable, inaccessible | Measurable, inaccessible, supercompact | Inaccessible, supercompact, measurable | They are all equally strong | Each later notion implies the consistency of the earlier ones.
 M3#maths-u16-42-q3@2: Why can't ZFC prove an inaccessible cardinal exists, assuming ZFC is consistent? | It would then prove V_{κ} is a model of ZFC, so it would prove its own consistency, violating Gödel's second theorem | Inaccessible cardinals are finite, so ZFC's infinite methods never reach them at all | ZFC has no infinite sets, so it can't discuss any cardinals beyond the natural numbers | They have been shown not to exist, so proving they exist would make ZFC inconsistent | It can: inaccessibles follow from the power set and replacement axioms together | The existence of an inaccessible implies Con(ZFC).
@@ -1495,8 +1495,8 @@ Q: What is the proof-theoretic ordinal of Peano arithmetic? | ε₀.
 Q: What property do cut-free proofs have? | The subformula property.
 SUM: Proofs are objects of study.
 SUM: Ordinals measure theory strength.
-SRC: Gentzen G, Die Widerspruchsfreiheit der reinen Zahlentheorie, Mathematische Annalen 112, 493 | journal | 1936 | https://doi.org/10.1007/BF01565428
-SRC: Takeuti G, Proof Theory (2nd edn, North-Holland 1987; Dover 2013) | textbook | 2013 | https://store.doverpublications.com/
+SRC: Gentzen G, Die Widerspruchsfreiheit der reinen Zahlentheorie, Mathematische Annalen 112, 493 | primary | 1936 | https://doi.org/10.1007/BF01565428
+SRC: Takeuti G, Proof Theory (2nd edn, North-Holland 1987; Dover 2013) | secondary | 2013 | https://store.doverpublications.com/
 NUM1#maths-u16-43-q1@1: In what year did Gentzen publish his consistency proof for Peano arithmetic? | 1936 | 0 |  | Gentzen's proof appeared in Mathematische Annalen in 1936, using induction up to ε₀.
 M1#maths-u16-43-q2@1: What does cut elimination guarantee? | Every provable sequent has a proof using only subformulas of its conclusion | Every formula is provable | Proofs can't be shortened | Every theory is complete | Lemmas are always necessary | Cut-free proofs never introduce formulas that aren't parts of the result.
 M2#maths-u16-43-q3@2: How does Gentzen's consistency proof avoid conflicting with Gödel's second theorem? | It uses transfinite induction up to ε₀, which Peano arithmetic itself can't prove | It shows PA is inconsistent, agreeing with Gödel's theorem | It is a proof carried out entirely inside PA itself | Gödel's theorem doesn't apply to arithmetic at all | It doesn't: the two results genuinely contradict each other | The proof uses a principle beyond PA, so PA doesn't prove its own consistency.
@@ -1529,8 +1529,8 @@ Q: Is the theory of real closed fields decidable? | Yes (Tarski).
 Q: Are (ℚ, <) and (ℝ, <) isomorphic? | No: they differ in size.
 SUM: Model theory links theories and structures.
 SUM: It has strong algebraic applications.
-SRC: Marker D, Model Theory: An Introduction (Springer 2002) | textbook | 2002 | https://link.springer.com/
-SRC: Hodges W, A Shorter Model Theory (Cambridge University Press 1997) | textbook | 1997 | https://www.cambridge.org/
+SRC: Marker D, Model Theory: An Introduction (Springer 2002) | secondary | 2002 | https://link.springer.com/
+SRC: Hodges W, A Shorter Model Theory (Cambridge University Press 1997) | secondary | 1997 | https://www.cambridge.org/
 NUM1#maths-u16-44-q1@1: How many countable dense linear orders without endpoints are there, up to isomorphism? | 1 | 0 |  | Cantor's back-and-forth theorem shows every such order is isomorphic to (ℚ, <).
 M1#maths-u16-44-q2@1: Which sentence is true in (ℚ, <) but false in (ℤ, <)? | Between any two elements lies a third | There is no greatest element | There is no least element | Every two elements are comparable | The order is irreflexive | Density holds in ℚ, but nothing lies strictly between 0 and 1 in ℤ.
 M2#maths-u16-44-q3@2: What did Tarski's quantifier elimination show about real numbers? | The first-order theory of (ℝ, +, ·, <) is decidable | Every real number is rational | ℝ is countable | Real arithmetic is undecidable | ℝ has no models | Removing quantifiers reduces questions to checking polynomial sign conditions, which is algorithmic.
@@ -1564,8 +1564,8 @@ Q: Is Presburger arithmetic (addition only) complete? | Yes.
 Q: What does the second theorem say? | A consistent theory of this kind can't prove its own consistency.
 SUM: Arithmetic can't be fully axiomatised.
 SUM: Consistency can't be self-proved.
-SRC: Gödel K, Über formal unentscheidbare Sätze der Principia Mathematica und verwandter Systeme I, Monatshefte für Mathematik und Physik 38, 173 | journal | 1931 | https://doi.org/10.1007/BF01700692
-SRC: Smith P, An Introduction to Gödel's Theorems (2nd edn, Cambridge University Press 2013) | textbook | 2013 | https://www.cambridge.org/
+SRC: Gödel K, Über formal unentscheidbare Sätze der Principia Mathematica und verwandter Systeme I, Monatshefte für Mathematik und Physik 38, 173 | primary | 1931 | https://doi.org/10.1007/BF01700692
+SRC: Smith P, An Introduction to Gödel's Theorems (2nd edn, Cambridge University Press 2013) | secondary | 2013 | https://www.cambridge.org/
 NUM1#maths-u16-45-q1@1: Using Gödel's coding 2^{a}·3^{b} for a pair (a, b), what number codes (2, 1)? | 12 | 0 |  | 2^{2} × 3^{1} = 4 × 3 = 12, and unique factorisation lets the pair be recovered.
 M1#maths-u16-45-q2@1: Which theory escapes the first incompleteness theorem because it's too weak? | Presburger arithmetic, with addition but no multiplication | Peano arithmetic | ZFC set theory | Robinson arithmetic Q | Second-order arithmetic | Without multiplication, it can't code proofs, and it's complete and decidable.
 M3#maths-u16-45-q3@2: Why doesn't incompleteness mean ZFC's unprovable statements are unknowable forever? | Stronger axioms can prove them, though the new theory has its own unprovable sentences | Every statement is eventually proved in ZFC given enough time | Unprovable statements are all false, so nothing remains unknown | Incompleteness applies only to ZFC, not to stronger theories | It does: unprovable statements can never be settled at all | Adding Con(ZFC) or large cardinals settles some, but incompleteness reappears at each level.
@@ -1598,8 +1598,8 @@ Q: Is the set of halting programs listable? | Yes (semi-decidable), but not deci
 Q: What does Rice's theorem say? | Every non-trivial semantic property of programs is undecidable.
 SUM: Some problems have no algorithm.
 SUM: Diagonalisation proves it.
-SRC: Turing AM, On computable numbers, with an application to the Entscheidungsproblem, Proceedings of the London Mathematical Society 42, 230 | journal | 1936 | https://doi.org/10.1112/plms/s2-42.1.230
-SRC: Sipser M, Introduction to the Theory of Computation (3rd edn, Cengage 2012) | textbook | 2012 | https://www.cengage.com/
+SRC: Turing AM, On computable numbers, with an application to the Entscheidungsproblem, Proceedings of the London Mathematical Society 42, 230 | primary | 1936 | https://doi.org/10.1112/plms/s2-42.1.230
+SRC: Sipser M, Introduction to the Theory of Computation (3rd edn, Cengage 2012) | secondary | 2012 | https://www.cengage.com/
 NUM1#maths-u16-46-q1@1: In what year did Matiyasevich complete the proof that Hilbert's tenth problem is undecidable? | 1970 | 0 |  | Building on Davis, Putnam and Robinson, Matiyasevich finished the proof in 1970.
 M1#maths-u16-46-q2@1: What does the Church–Turing thesis claim? | Every effectively calculable function is Turing computable | Every function is computable | Turing machines are faster than computers | The halting problem is decidable | λ-calculus is weaker than Turing machines | It identifies the informal idea of an algorithm with Turing computability.
 M2#maths-u16-46-q3@2: Which problem is undecidable by Rice's theorem? | Whether a program outputs 0 on every input | Whether a program's source has 100 lines | Whether a program contains a loop keyword | Whether a file is a valid program | Whether two strings are equal | It's a non-trivial property of the function computed, so no algorithm can decide it.
@@ -1632,8 +1632,8 @@ Q: Is factorial primitive recursive? | Yes.
 Q: Which function is computable but not primitive recursive? | The Ackermann function.
 SUM: Recursion builds computable functions.
 SUM: μ completes the class.
-SRC: Kleene SC, Introduction to Metamathematics (North-Holland 1952) | textbook | 1952 | https://www.elsevier.com/
-SRC: Boolos GS, Burgess JP, Jeffrey RC, Computability and Logic (5th edn, Cambridge University Press 2007) | textbook | 2007 | https://www.cambridge.org/
+SRC: Kleene SC, Introduction to Metamathematics (North-Holland 1952) | secondary | 1952 | https://www.elsevier.com/
+SRC: Boolos GS, Burgess JP, Jeffrey RC, Computability and Logic (5th edn, Cambridge University Press 2007) | secondary | 2007 | https://www.cambridge.org/
 NUM1#maths-u16-47-q1@1: With mult(0, y) = 0 and mult(n + 1, y) = add(mult(n, y), y), compute mult(4, 6). | 24 | 0 |  | Each step adds 6 once more: 0, 6, 12, 18, 24, so mult(4, 6) = 24.
 M1#maths-u16-47-q2@1: Which operation takes us from primitive recursive to general recursive functions? | The μ-operator (unbounded minimisation) | Composition of functions | Primitive recursion on two variables | Adding the successor function | Using projection functions | Unbounded search may never stop, giving partial functions and all computable ones.
 M3#maths-u16-47-q3@2: Why can't the Ackermann function be primitive recursive? | It eventually outgrows every primitive recursive function, each of which is bounded by some fixed level of Ackermann's | It isn't computable, so it lies outside every class of recursive functions | It is undefined for large inputs, so it isn't a total function at all | It uses only the successor function, which is too weak to count as recursion | It is primitive recursive, being defined by a double recursion on two variables | Each primitive recursive function is dominated by A(k, ·) for some k, but A(n, n) dominates all of these.
@@ -1667,8 +1667,8 @@ Q: Who created the lambda calculus? | Alonzo Church.
 Q: What is (λx. x) y? | y.
 SUM: λ-calculus is computation by functions.
 SUM: It underlies functional programming.
-SRC: Barendregt HP, The Lambda Calculus: Its Syntax and Semantics (rev. edn, North-Holland 1984) | textbook | 1984 | https://www.elsevier.com/
-SRC: Church A, An unsolvable problem of elementary number theory, American Journal of Mathematics 58(2), 345 | journal | 1936 | https://doi.org/10.2307/2371045
+SRC: Barendregt HP, The Lambda Calculus: Its Syntax and Semantics (rev. edn, North-Holland 1984) | secondary | 1984 | https://www.elsevier.com/
+SRC: Church A, An unsolvable problem of elementary number theory, American Journal of Mathematics 58(2), 345 | primary | 1936 | https://doi.org/10.2307/2371045
 NUM1#maths-u16-48-q1@1: The Church numeral 3 applies f three times. Applying it to f = (add 2) and x = 1, what is the result? | 7 | 0 |  | f(f(f(1))) = 1 + 2 + 2 + 2 = 7.
 M1#maths-u16-48-q2@1: What does (λx. λy. y) a b reduce to? | b | a | λy. y | a b | λx. x | The first application discards a, leaving λy. y, which returns b: this is "false".
 M2#maths-u16-48-q3@2: Which term has no normal form? | (λx. x x)(λx. x x) | λx. x | (λx. x) y | λx. λy. x | (λx. y) z | It reduces to itself forever, so β-reduction never terminates.
@@ -1701,8 +1701,8 @@ Q: What type corresponds to "A implies B"? | The function type A → B.
 Q: Which quantifier corresponds to Π-types? | ∀ (for all).
 SUM: Types classify terms.
 SUM: Proofs are programs.
-SRC: Martin-Löf P, Intuitionistic Type Theory (Bibliopolis 1984) | textbook | 1984 | https://archive-pml.github.io/
-SRC: The Univalent Foundations Program, Homotopy Type Theory: Univalent Foundations of Mathematics (Institute for Advanced Study 2013) | textbook | 2013 | https://homotopytypetheory.org/book/
+SRC: Martin-Löf P, Intuitionistic Type Theory (Bibliopolis 1984) | secondary | 1984 | https://archive-pml.github.io/
+SRC: The Univalent Foundations Program, Homotopy Type Theory: Univalent Foundations of Mathematics (Institute for Advanced Study 2013) | secondary | 2013 | https://homotopytypetheory.org/book/
 NUM1#maths-u16-49-q1@1: How many distinct functions of type Bool → Bool are there, where Bool has 2 values? | 4 | 0 |  | Each of the 2 inputs can map to either of 2 outputs, giving 2^{2} = 4 functions.
 M1#maths-u16-49-q2@1: Under Curry–Howard, what does a term of type A × B correspond to? | A proof of A and B | A proof of A or B | A proof that A implies B | A proof of not A | A proof that A equals B | A pair contains evidence for both components, matching conjunction.
 M2#maths-u16-49-q3@2: What is a dependent type? | A type that depends on a value, such as vectors of length n | A type that can't be used | A type with no elements | A type equal to every other | A type of booleans | Dependent types let types mention values, expressing precise specifications.
@@ -1735,8 +1735,8 @@ Q: Who developed constructive real analysis in 1967? | Errett Bishop.
 Q: Is x = 0 ∨ x ≠ 0 decidable for constructive reals? | No.
 SUM: Constructive proofs compute.
 SUM: Some classical results become approximate.
-SRC: Bishop E, Foundations of Constructive Analysis (McGraw-Hill 1967) | textbook | 1967 | https://archive.org/
-SRC: Bridges D, Palmgren E, Constructive mathematics, Stanford Encyclopedia of Philosophy | review | 2022 | https://plato.stanford.edu/entries/mathematics-constructive/
+SRC: Bishop E, Foundations of Constructive Analysis (McGraw-Hill 1967) | secondary | 1967 | https://archive.org/
+SRC: Bridges D, Palmgren E, Constructive mathematics, Stanford Encyclopedia of Philosophy | secondary | 2022 | https://plato.stanford.edu/entries/mathematics-constructive/
 NUM1#maths-u16-50-q1@1: Euclid's construction from the primes 2, 3, 5, 7 gives 2 × 3 × 5 × 7 + 1. What is it? | 211 | 0 |  | 210 + 1 = 211, which happens to be prime, a new prime not on the list.
 M1#maths-u16-50-q2@1: Which form of the intermediate value theorem is constructively provable? | For every ε > 0 there's an x with |f(x)| < ε | There's always an exact root found by trial | Every function has a root | Roots can be found by excluded middle | No form is provable | Approximate roots can be computed by bisection, though an exact root may not be.
 M2#maths-u16-50-q3@2: What practical benefit does constructive proof offer in proof assistants? | Programs can be extracted from proofs automatically | Proofs become shorter in every case | It avoids needing any axioms | It makes every theorem decidable | It has no practical benefit | A constructive proof of ∀x ∃y P(x, y) contains an algorithm computing y from x.
@@ -1769,8 +1769,8 @@ Q: Who proposed ETCS? | William Lawvere.
 Q: What logic is internal to a general topos? | Intuitionistic logic.
 SUM: Foundations can be structural.
 SUM: Toposes are generalised universes of sets.
-SRC: Lawvere FW, An elementary theory of the category of sets, PNAS 52(6), 1506 | journal | 1964 | https://doi.org/10.1073/pnas.52.6.1506
-SRC: Mac Lane S, Moerdijk I, Sheaves in Geometry and Logic: A First Introduction to Topos Theory (Springer 1992) | textbook | 1992 | https://link.springer.com/
+SRC: Lawvere FW, An elementary theory of the category of sets, PNAS 52(6), 1506 | primary | 1964 | https://doi.org/10.1073/pnas.52.6.1506
+SRC: Mac Lane S, Moerdijk I, Sheaves in Geometry and Logic: A First Introduction to Topos Theory (Springer 1992) | secondary | 1992 | https://link.springer.com/
 NUM1#maths-u16-51-q1@1: In ETCS, elements of A are maps 1 → A. How many maps are there from 1 to a 5-element set? | 5 | 0 |  | Each map from a one-point set picks out exactly one element, so there are 5.
 M1#maths-u16-51-q2@1: What does a subobject classifier do in a topos? | It represents subobjects, as {true, false} does for subsets of sets | It counts the objects of the topos and their morphisms | It lists every morphism into each object of the topos | It makes the internal logic of the topos classical | It removes all limits so that only colimits remain | In Set, subsets of A correspond to maps A → {0, 1}; Ω generalises this.
 M3#maths-u16-51-q3@2: Why are structural foundations said to avoid "junk theorems"? | They describe objects only by maps and properties, so facts like 2 ∈ 3 can't even be stated | They forbid all theorems about sets, so no junk can arise | They are inconsistent, so they prove junk and its negation | They use only finite sets, where encodings are unambiguous | They don't: junk theorems are provable in them just as in ZFC | Without a global membership relation, encoding accidents don't appear.
@@ -1805,8 +1805,8 @@ Q: Which programme did Russell's paradox undermine? | Frege's logicism.
 Q: Who wrote about "the unreasonable effectiveness of mathematics"? | Eugene Wigner (1960).
 SUM: Philosophy asks what mathematics is.
 SUM: Foundational results inform the debate.
-SRC: Shapiro S, Thinking about Mathematics: The Philosophy of Mathematics (Oxford University Press 2000) | textbook | 2000 | https://global.oup.com/
-SRC: Wigner EP, The unreasonable effectiveness of mathematics in the natural sciences, Communications on Pure and Applied Mathematics 13(1), 1 | journal | 1960 | https://doi.org/10.1002/cpa.3160130102
+SRC: Shapiro S, Thinking about Mathematics: The Philosophy of Mathematics (Oxford University Press 2000) | secondary | 2000 | https://global.oup.com/
+SRC: Wigner EP, The unreasonable effectiveness of mathematics in the natural sciences, Communications on Pure and Applied Mathematics 13(1), 1 | primary | 1960 | https://doi.org/10.1002/cpa.3160130102
 NUM1#maths-u16-52-q1@1: In what year did Russell write to Frege about the paradox in his system? | 1902 | 0 |  | Russell's letter of June 1902 reached Frege as the second volume of his Grundgesetze was in press.
 M1#maths-u16-52-q2@1: Which position holds that mathematics studies structures rather than particular objects? | Structuralism | Logicism | Formalism | Intuitionism | Fictionalism | Structuralists say "3" means a position in the natural number structure, not a specific set.
 M2#maths-u16-52-q3@2: What is the indispensability argument? | We should believe in mathematical objects because our best scientific theories need them | Mathematics is invented, so it is useful fiction and nothing more | Mathematics reduces to logic, as Frege tried to show | Only mental constructions are real mathematical objects | Mathematics is meaningless symbols moved by fixed rules | Quine and Putnam argued commitment to science brings commitment to its mathematics.
