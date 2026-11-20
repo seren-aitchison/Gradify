@@ -1887,3 +1887,49 @@ html.cx-focus .cx-rings { display: none !important; }
 @media (prefers-reduced-motion: reduce) { .cx-fcard, .cx-rings, .cx-wday, .cx-deck { transition: none !important; } }
 /* touch: the activity board's days stay 30px, like the rest of the course's touch targets */
 @media (pointer: coarse) { .cx-activity .co-heat { grid-auto-columns: 30px; grid-template-rows: repeat(7, 30px); } .cx-activity .co-heat > * { width: 30px; height: 30px; } .cx-heatm { grid-auto-columns: 30px; } .cx-heatwd { grid-template-rows: 18px repeat(7, 30px); } }
+
+/* ---------- Calmer lessons, steadier widgets, an easier outline ----------
+   Less on the lesson's first screen: its facts as one quiet line, what it builds on as plain links, the draft note
+   in a line, the topic's tools in a grid that wraps instead of cutting words off, and the notes in one reading
+   column. Widgets share one padding; the outline's rows are bigger, wrap instead of truncating, and show focus. */
+.co-reading .co-lhead .mv-chips { gap: 4px 0; margin-top: 18px; }
+.co-reading .co-lhead .mv-chips > *, :root[data-theme="light"] .co-reading .co-lhead .mv-chips > * {
+  padding: 0 !important; border: 0 !important; background: none !important; box-shadow: none !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important;
+  font: 500 13.5px var(--sans); color: var(--mute); }
+.co-reading .co-lhead .mv-chips > *::after { display: none !important; }
+.co-reading .co-lhead .mv-chips > * + *::before { content: "·"; margin: 0 10px; color: rgba(var(--ink-rgb), .3); }
+.co-reading .co-lhead .mv-chips .co-ic { width: 14px; height: 14px; }
+.co-reading .co-builds { display: block; font-size: 13.5px; color: var(--mute); line-height: 1.7; }
+.co-reading .co-builds a { display: inline; padding: 0; border: 0; background: none; box-shadow: none; border-radius: 0; color: var(--fg); text-decoration: underline; text-decoration-color: rgba(var(--ink-rgb), .25); text-underline-offset: 3px; }
+.co-reading .co-builds a + a::before { content: ", "; color: var(--mute); display: inline-block; text-decoration: none; }
+.co-reading .co-builds a i { font-style: normal; color: var(--mute); font-size: 12px; }
+.co-reading .co-draft { padding: 10px 14px; font-size: 13px; line-height: 1.5; border-style: solid; border-color: rgba(var(--ink-rgb), .12); }
+.co-reading .cx-kit { grid-template-columns: repeat(auto-fill, minmax(176px, 1fr)); gap: 12px; margin: 26px 0 14px; }
+.co-reading .cx-kc { min-height: 64px; padding: 12px 14px; grid-template-columns: 38px minmax(0, 1fr); column-gap: 12px; }
+.co-reading .cx-kc b { font-size: 14.5px; line-height: 1.25; }
+.co-reading .cx-kc small { white-space: normal; overflow: visible; line-height: 1.35; }
+.co-reading .co-read .mv-cols { columns: 1; max-width: 70ch; }
+.co-reading .co-read .mv-cols p, .co-reading .co-read .mv-cols ul { font-size: 16.5px; line-height: 1.75; }
+.co-reading .co-read .mv-cols section { margin-bottom: 34px; }
+
+/* the rail's widgets: one padding, and nothing spills */
+.co-reading .cx-widget { padding: 18px 18px 20px; gap: 12px; overflow: hidden; }
+.co-reading .cx-widget :is(b, small, p, a) { overflow-wrap: anywhere; }
+.co-reading .co-railq .co-checkn { padding: 10px 12px; font: 500 13px var(--sans); letter-spacing: 0; text-transform: none; }
+.co-reading .cx-loop { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 4px 0; }
+.co-reading .cx-step { display: flex; align-items: center; gap: 8px; min-height: 40px; padding: 8px 10px; border-radius: 14px; font-size: 13px; }
+.co-reading .cx-step small { font: 600 12.5px var(--sans); white-space: nowrap; }
+.co-reading .cx-step .co-ic { flex: none; width: 16px; height: 16px; }
+
+/* the outline: bigger rows, two lines before an ellipsis, sticky stage headings, visible focus */
+.co-reading .cx-tree { --row: 40px; }
+.co-reading .cx-tf { margin: 0 14px 10px; min-height: 42px; border-radius: 14px; }
+.co-reading .cx-tf input { font-size: 14px; padding: 10px 0; }
+.co-reading .cx-tb { padding: 0 10px 14px; }
+.co-reading .cx-tg { position: sticky; top: 0; z-index: 2; margin: 10px 0 4px; padding: 8px 8px 6px; background: rgb(var(--surface-rgb)); border-radius: 10px; box-shadow: 0 6px 10px -6px rgba(var(--surface-rgb), 1); }
+.co-reading .cx-unit > summary { min-height: var(--row); padding: 8px 10px; font-size: 14px; grid-template-columns: 28px minmax(0, 1fr) auto; }
+.co-reading .cx-ut { white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; line-height: 1.3; }
+.co-reading .cx-l { min-height: 36px; padding: 8px 10px; font-size: 13.5px; border-radius: 12px; }
+.co-reading .cx-l.here { box-shadow: inset 4px 0 0 var(--la, var(--a)), inset 0 1px 0 rgba(var(--spec-rgb), .25); }
+.co-reading .cx-mt { margin: 12px 8px 4px; font-size: 13px; }
+.co-reading .cx-tree :is(a, summary, button, input):focus-visible { outline: 2px solid var(--la, var(--fg)); outline-offset: 2px; }

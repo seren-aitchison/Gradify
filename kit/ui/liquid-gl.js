@@ -14,7 +14,7 @@
 // with localStorage "gradify.glass" = "off" ("force" skips the speed check, for testing). Loaded by kit/core/theme-boot.js.
 
 // which boxes are glass, and which never are (controls, and the dark islands of kit/styles/base.css / scripts/theme-tokens.mjs)
-export const GLASS = [".glass", ".panel", ".plan", ".hub-foot", ".sub-foot", ".co-card", ".cx-panel", ".cx-ucard", ".cx-sylhead", ".cx-widget", ".cx-tree", ".co-pncard", ".co-read .co-notes", ".cx-lbar", ".cx-dock", ".pro-card", ".cp-card", ".course-card", ".start-card", ".goal-card", ".offer-card"].join(", ");
+export const GLASS = [".glass", ".panel", ".plan", ".hub-foot", ".sub-foot", ".co-card", ".cx-panel", ".cx-ucard", ".cx-sylhead", ".cx-widget", ".cx-tree", ".co-pncard", ".co-read .co-notes", ".cx-lbar", ".cx-dock", ".co-tabs", ".pro-card", ".cp-card", ".course-card", ".start-card", ".goal-card", ".offer-card"].join(", ");
 export const ISLANDS = [".earth-map", ".tree-wrap", ".isle3d", ".isle-tag", ".forest", ".fs-key", ".mv-stage", ".mv-studio", ".sm-3d-art", ".lab-3d", ".lab-cv", ".lab-svg", ".co-lab", ".tablet", ".shot-frame", "[class*=\"vc-\"]", ".holo", ".sphere", ".spotlight", ".bi-stage", ".mv-labels", ".mv-tip", ".mv-controls", ".mv-info", ".gj-ring", ".cx-fcard", ".cx-rings", ".cx-wok"];
 const NEVER = ["button", "input", "select", "textarea", ".btn", "dialog", ...ISLANDS].join(", ");
 const MAX = 32;   // surfaces drawn at once (the ones on screen, outermost first)
@@ -27,7 +27,7 @@ export function allowed({ webgl, reducedTransparency, highContrast, saveData, pr
 const VS = "attribute vec2 p; void main(){ gl_Position = vec4(p, 0., 1.); }";
 const FS = `precision highp float;
 uniform vec2 res; uniform vec2 light; uniform float lightMode; uniform float dpr;
-uniform vec3 base; uniform vec3 acc1; uniform vec3 acc2;
+uniform vec3 base; uniform vec3 acc1; uniform vec3 acc2; uniform float accentRim;
 uniform int n; uniform vec4 rects[${MAX}]; uniform vec4 props[${MAX}];
 float sdBox(vec2 p, vec2 b, float r){ vec2 q = abs(p) - b + r; return length(max(q, 0.)) + min(max(q.x, q.y), 0.) - r; }
 float hash(vec2 p){ return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453); }
@@ -56,6 +56,8 @@ void main(){
     if (abs(p.x) > r.z + 70. * dpr || abs(p.y) > r.w + 70. * dpr) continue;
     float d = sdBox(p, r.zw, props[i].x);
     col *= 1. - (lightMode > .5 ? .07 : .22) * (1. - smoothstep(-20. * dpr, 50. * dpr, d));
+    float dh = sdBox(fc - r.xy, r.zw, props[i].x);                           // a halo, hugging the edge and fading out
+    if (dh > 0.) col = mix(col, lightMode > .5 ? vec3(1.) : mix(acc1, vec3(1.), .25), (lightMode > .5 ? .62 : .2) * pow(1. - smoothstep(0., 46. * dpr, dh), 1.6));
   }
   for (int i = 0; i < ${MAX}; i++) { if (i >= n) break;
     vec4 r = rects[i]; vec2 p = fc - r.xy;
@@ -76,12 +78,14 @@ void main(){
     float ndh = max(dot(N, H), 0.);
     float spec = pow(ndh, 90.) * (lightMode > .5 ? .9 : 1.3) + pow(ndh, 12.) * .08;
     float fres = pow(1. - h, 3.) * (lightMode > .5 ? .55 : .5);
-    float rim = smoothstep(-2.2 * dpr, -.4, d) * (1. - smoothstep(-.4, 1., d));
+    float rim = smoothstep(-3. * dpr, -.6 * dpr, d) * (1. - smoothstep(-.5, 1., d));   // a definite edge
     float lit = .5 + .5 * dot(nrm, light);
-    vec3 rimc = vec3(1.);
+    vec3 rimc = accentRim > .5 ? mix(acc1, vec3(1.), .25 + .45 * lit) : vec3(1.);   // the course's colour, or white light
     if (props[i].y > .5) { float a = atan(p.y, p.x) / 6.2832 + .5;          // the Gradify bar: a rainbow edge
       rimc = clamp(abs(mod(a * 6. + vec3(0., 4., 2.), 6.) - 3.) - 1., 0., 1.); rimc = mix(rimc, vec3(1.), .15); }
-    vec3 glass = c + fres + spec + rim * rimc * (props[i].y > .5 ? .9 : (.22 + .5 * lit));
+    float gloss = (1. - smoothstep(-r.w, -r.w + min(70. * dpr, r.w * .7), p.y)) * (lightMode > .5 ? .22 : .1);   // a glossy sheet across the top
+    vec3 glass = c + fres + spec + gloss;
+    glass = mix(glass, rimc, rim * (props[i].y > .5 ? .95 : (accentRim > .5 ? .85 : .55 + .35 * lit)));
     glass *= 1. - .14 * bend * max(dot(nrm, -light), 0.);
     col = mix(col, glass, aa);
   }
@@ -112,7 +116,7 @@ export function start() {
   gl.useProgram(prog);
   const buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf); gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
   const loc = gl.getAttribLocation(prog, "p"); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
-  const U = {}; for (const k of ["res", "light", "lightMode", "dpr", "base", "acc1", "acc2", "n", "rects", "props"]) U[k] = gl.getUniformLocation(prog, k);
+  const U = {}; for (const k of ["res", "light", "lightMode", "dpr", "base", "acc1", "acc2", "accentRim", "n", "rects", "props"]) U[k] = gl.getUniformLocation(prog, k);
 
   canvas.className = "lgl-canvas"; canvas.setAttribute("aria-hidden", "true");
   const style = document.createElement("style");
@@ -158,7 +162,7 @@ export function start() {
     const base = hexRgb(rs.getPropertyValue("--bg")) || (lightMode ? [.965, .965, .984] : [0, 0, 0]);
     const a1 = hexRgb(cs?.getPropertyValue("--la")) || hexRgb(bs.getPropertyValue("--accent")) || [.27, .25, 1];
     const a2 = hexRgb(cs?.getPropertyValue("--lb")) || [.94, .33, .87];
-    colours = { lightMode, base, a1, a2 };
+    colours = { lightMode, base, a1, a2, course: !!course };
   };
 
   const draw = () => {
@@ -178,14 +182,14 @@ export function start() {
       const big = r.width * r.height > innerWidth * innerHeight * .25;
       rects.set([(r.left + hw) * dpr, (r.top + hh) * dpr, hw * dpr, hh * dpr], k * 4);
       const rainbow = e.matches("header.bar, header.sub-nav") ? 1 : 0;
-      const tint = colours.lightMode ? (big ? .72 : .5) : (big ? .5 : .32);
+      const tint = colours.lightMode ? (big ? .8 : .66) : (big ? .56 : .42);
       props.set([rad * dpr, rainbow, tint, Math.min(big ? 16 : 22, rad * .9 + 6, hw, hh) * dpr], k * 4);
       if (e.hasAttribute("data-lg-cap")) caps.push([e, r]);
       k++;
     }
     gl.viewport(0, 0, W, H);
     gl.uniform2f(U.res, W, H); gl.uniform2f(U.light, light[0], light[1]); gl.uniform1f(U.lightMode, colours.lightMode ? 1 : 0); gl.uniform1f(U.dpr, dpr);
-    gl.uniform3fv(U.base, colours.base); gl.uniform3fv(U.acc1, colours.a1); gl.uniform3fv(U.acc2, colours.a2);
+    gl.uniform1f(U.accentRim, colours.course ? 1 : 0); gl.uniform3fv(U.base, colours.base); gl.uniform3fv(U.acc1, colours.a1); gl.uniform3fv(U.acc2, colours.a2);
     gl.uniform1i(U.n, k); gl.uniform4fv(U.rects, rects); gl.uniform4fv(U.props, props);
     gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
     // the bars that float over the page: their patch of the canvas, inside them, above what scrolls beneath
