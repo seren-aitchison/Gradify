@@ -1,0 +1,62 @@
+{
+ "id": "chem-reaction-monitoring",
+ "renderer": "apparatus",
+ "course": "chemistry",
+ "unit": "u19",
+ "lesson": "Reaction monitoring",
+ "title": "Following a reaction by TLC",
+ "caption": "Spotting the reaction mixture on TLC plates over time shows the starting material (Rf 0.55) fading as the product (Rf 0.30) grows. When the starting-material spot has gone, the reaction is complete.",
+ "alt": "Three TLC plates at 0, 30 and 60 minutes; the high spot fades and the low spot appears.",
+ "description": [
+  "0 min: only the starting material spot.",
+  "30 min: both spots.",
+  "60 min: only the product spot: complete."
+ ],
+ "kind": "tlc",
+ "plates": [
+  {
+   "title": "0 min",
+   "lanes": [
+    {
+     "label": "RM",
+     "spots": [
+      0.55
+     ],
+     "colour": "a1"
+    }
+   ]
+  },
+  {
+   "title": "30 min",
+   "lanes": [
+    {
+     "label": "RM ",
+     "spots": [
+      0.55,
+      0.3
+     ],
+     "colour": "a5"
+    }
+   ]
+  },
+  {
+   "title": "60 min",
+   "lanes": [
+    {
+     "label": "RM  ",
+     "spots": [
+      0.3
+     ],
+     "colour": "a2"
+    }
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "type": "gone",
+   "lane": "RM  ",
+   "rf": 0.55
+  }
+ ]
+}

@@ -1,0 +1,110 @@
+{
+ "id": "chem-conc-change",
+ "renderer": "graph",
+ "course": "chemistry",
+ "unit": "u08",
+ "lesson": "Concentration and equilibrium",
+ "title": "Removing a product",
+ "caption": "A ⇌ B at equilibrium, Kc = 1.5. At 5 s some B is removed: [B] drops from 0.6 to 0.2. The system makes more B from A until the ratio is 1.5 again, at [A] = 0.24 and [B] = 0.36. This is why removing a product drives a reaction on.",
+ "alt": "Concentration against time: steady, then [B] drops at 5 s and recovers partway while [A] falls.",
+ "description": [
+  "Before 5 s: [A] 0.4, [B] 0.6.",
+  "At 5 s: [B] drops to 0.2.",
+  "After: [B] rises to 0.36, [A] falls to 0.24."
+ ],
+ "range": {
+  "x": [
+   0,
+   20
+  ],
+  "y": [
+   0,
+   0.8
+  ]
+ },
+ "ticks": [
+  [
+   5,
+   10,
+   15,
+   20
+  ],
+  [
+   0.2,
+   0.4,
+   0.6
+  ]
+ ],
+ "grid": [
+  5,
+  0.2
+ ],
+ "axisLabels": [
+  "time / s",
+  "concentration / mol dm⁻³"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "0.4",
+   "domain": [
+    0,
+    5
+   ],
+   "colour": "a1"
+  },
+  {
+   "expr": "0.24+0.16*exp(-0.6*(x-5))",
+   "domain": [
+    5,
+    20
+   ],
+   "colour": "a1",
+   "label": "[A]",
+   "labelAt": [
+    18,
+    0.19
+   ]
+  },
+  {
+   "expr": "0.6",
+   "domain": [
+    0,
+    5
+   ],
+   "colour": "a2"
+  },
+  {
+   "expr": "0.36-0.16*exp(-0.6*(x-5))",
+   "domain": [
+    5,
+    20
+   ],
+   "colour": "a2",
+   "label": "[B]",
+   "labelAt": [
+    18,
+    0.41
+   ]
+  }
+ ],
+ "marks": [
+  {
+   "x": 5,
+   "label": "B removed",
+   "to": 0.7
+  }
+ ],
+ "checks": [
+  {
+   "type": "value",
+   "expr": "(0.36-0.16*exp(-0.6*(x-5)))/(0.24+0.16*exp(-0.6*(x-5)))",
+   "x": 60,
+   "between": [
+    1.499,
+    1.501
+   ],
+   "name": "the new equilibrium has the same Kc = 1.5"
+  }
+ ]
+}

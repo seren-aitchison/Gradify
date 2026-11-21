@@ -1,0 +1,85 @@
+{
+ "id": "chem-balancing",
+ "renderer": "particles",
+ "course": "chemistry",
+ "unit": "u01",
+ "lesson": "Balancing equations",
+ "title": "Balancing by counting atoms",
+ "caption": "H₂ + O₂ → H₂O leaves an oxygen atom unaccounted for. Putting 2 in front of H₂O balances oxygen, and 2 in front of H₂ then balances hydrogen: 2H₂ + O₂ → 2H₂O. Only the numbers in front change, never the formulae.",
+ "alt": "Before: two hydrogen molecules and one oxygen molecule. After: two water molecules.",
+ "description": [
+  "Left side: 2H₂ and O₂, so 4 hydrogen and 2 oxygen atoms.",
+  "Right side: 2H₂O, 4 hydrogen and 2 oxygen atoms. Balanced."
+ ],
+ "species": {
+  "H2": {
+   "atoms": [
+    "H",
+    "H"
+   ]
+  },
+  "O2": {
+   "atoms": [
+    "O",
+    "O"
+   ]
+  },
+  "H2O": {
+   "atoms": [
+    "O",
+    "H",
+    "H"
+   ],
+   "shape": "bent"
+  }
+ },
+ "steps": [
+  "react"
+ ],
+ "panelHeight": 140,
+ "panels": [
+  {
+   "title": "2H₂ + O₂",
+   "arrangement": "gas",
+   "contents": [
+    [
+     "H2",
+     2
+    ],
+    [
+     "O2",
+     1
+    ]
+   ],
+   "spacing": 16
+  },
+  {
+   "title": "2H₂O",
+   "arrangement": "gas",
+   "contents": [
+    [
+     "H2O",
+     2
+    ]
+   ],
+   "spacing": 16
+  }
+ ],
+ "claims": [
+  {
+   "type": "conserved",
+   "panels": [
+    0,
+    1
+   ]
+  },
+  {
+   "type": "equation",
+   "eq": "2H2 + O2 → 2H2O",
+   "panels": [
+    0,
+    1
+   ]
+  }
+ ]
+}

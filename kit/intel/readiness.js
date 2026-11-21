@@ -3,11 +3,17 @@
 //
 // Course objectives ("By the end of this lesson you can…") come from course answers: each question names the
 // objectives it assesses. Evidence is weighted by recency (a 30-day half-life) into a Beta estimate, then projected
-// to the exam with a forgetting curve whose stability grows with each separate day the learner got it right. The
-// range is an 80% interval from the Beta spread, so little evidence gives a wide range, never a falsely exact figure.
+// to the exam with the learner's own memory of it: their answers, one review a day, are replayed through Gradify's
+// scheduler (FSRS, kit/learning/srs.js), so memory lasts longer with every spaced success, exactly as their cards do.
+// What fades isn't scored as zero: a learner who has forgotten still answers right at the guessing rate fitted from
+// learners' answers (kit/learning/bkt-params.js). The range is an 80% interval from the Beta spread, so little
+// evidence gives a wide range, never a falsely exact figure. (Until 20 November 2026 the stability was a rule of
+// thumb, 3 days doubling per day right, and faded memory counted as 0%: the readiness benchmark showed that read
+// about 12 points too low.)
 // For the learner's own notes, each topic is an objective: its cards' FSRS recall on exam day, with a range from how
 // much evidence there is. Pure, so Node can test it (tests/intel3.test.mjs).
-import { memoryOf, retrievability } from "../learning/srs.js";
+import { memoryOf, retrievability, nextState } from "../learning/srs.js";
+import { paramsFor } from "../learning/bkt.js";
 
 const DAY = 864e5, HALF_LIFE = 30, Z80 = 1.2816;
 const clamp = (x) => Math.max(0, Math.min(1, x));
@@ -19,6 +25,20 @@ export function statusOf(p, lo, n) {
   if (p >= 0.7) return "likely";
   if (p >= 0.5) return "borderline";
   return "at-risk";
+}
+
+// How long the learner holds an objective (FSRS stability, in days): their answers replayed through the scheduler,
+// the best answer of each day as that day's review (right 4, mostly right 3, partly 2, wrong 1).
+export function stabilityOf(list) {
+  const days = new Map();
+  for (const e of [...list].sort((a, b) => a.t - b.t)) { const d = Math.floor(e.t / DAY); days.set(d, Math.max(days.get(d) ?? 0, e.score)); }
+  let mem = null, prev = null;
+  for (const [d, score] of days) {
+    const g = score >= 0.9 ? 4 : score >= 0.7 ? 3 : score >= 0.4 ? 2 : 1;
+    mem = nextState(mem, prev == null ? 0 : d - prev, g);
+    prev = d;
+  }
+  return Math.min(365, mem?.S ?? 1);
 }
 
 /**
@@ -44,12 +64,12 @@ export function objectiveReadiness({ attempts = [], cards = [], concepts = [], e
     let s = 1, f = 1;
     for (const e of g.list) { const w = Math.pow(0.5, (now - e.t) / DAY / HALF_LIFE); s += e.score * w; f += (1 - e.score) * w; }
     const p0 = s / (s + f), sd = Math.sqrt((s * f) / ((s + f) ** 2 * (s + f + 1)));
-    const goodDays = new Set(g.list.filter((e) => e.score >= 0.7).map((e) => Math.floor(e.t / DAY))).size;
     const last = Math.max(...g.list.map((e) => e.t));
-    const S = Math.min(120, 3 * 2 ** Math.max(0, goodDays - 1));
-    const keep = retrievability((at - last) / DAY, S);
-    // forgetting between the last answer and the exam lowers the estimate and its range
-    const p = clamp(p0 * keep), lo = clamp((p0 - Z80 * sd) * keep), hi = clamp(Math.min(1, p0 + Z80 * sd) * Math.max(keep, 0.95));
+    const keep = retrievability((at - last) / DAY, stabilityOf(g.list));
+    // forgetting between the last answer and the exam pulls the estimate (and its range) towards the guessing rate
+    const floor = Math.min(p0, paramsFor(g.subject).G);
+    const fade = (x) => clamp(x * keep + floor * (1 - keep));
+    const p = fade(p0), lo = fade(p0 - Z80 * sd), hi = clamp(Math.min(1, p0 + Z80 * sd) * Math.max(keep, 0.95) + floor * (1 - Math.max(keep, 0.95)));
     const title = titles.get(g.lesson) || g.lesson;
     out.push({ id: g.id, kind: "course", site: g.site, name: `${title}: objective ${g.n}`, lesson: g.lesson, p, lo, hi, n: g.list.length, status: statusOf(p, lo, g.list.length),
       why: `${g.list.length} ${g.list.length === 1 ? "answer" : "answers"}, ${Math.round(p0 * 100)}% now; ${keep < 0.95 ? `about ${Math.round((1 - keep) * 100)}% likely to fade by then without review` : "it should hold until then"}.` });

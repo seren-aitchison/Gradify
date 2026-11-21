@@ -804,6 +804,7 @@ H: Unloading oxygen
 - In tissues, low partial pressure causes oxygen release.
 - **Bohr effect**: high CO₂ (lower pH) shifts the curve right, so haemoglobin releases more oxygen.
 - **Fetal haemoglobin** has a higher affinity, curve shifted left, taking oxygen from the mother's blood.
+D: bio-oxygen-dissociation
 P: Most CO₂ is carried as hydrogencarbonate ions in plasma, formed in red cells by **carbonic anhydrase**. Carbon monoxide binds haemoglobin about 200 times more strongly than oxygen, reducing oxygen transport, which is why it is so dangerous. At high altitude, people produce more red cells over time to compensate for lower oxygen.
 X: The Bohr effect in exercise.
 > Active muscle produces more CO₂.

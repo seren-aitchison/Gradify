@@ -15,7 +15,7 @@
 
 /* top bar */
 .sub-nav { display: flex; align-items: center; gap: 22px; padding: 10px 12px 10px 14px; margin-top: 12px; border-radius: 16px; margin-inline: calc(-1 * var(--bar-bleed)); }
-.sub-brand { display: inline-flex; align-items: center; gap: 12px; font-weight: 700; font-size: 19px; letter-spacing: -.02em; text-decoration: none; color: var(--fg); }
+.sub-brand { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; font-weight: 700; font-size: 19px; letter-spacing: -.02em; text-decoration: none; color: var(--fg); }
 .sub-brand .icon { width: 38px; height: 38px; border-radius: 11px; }
 .sub-brand .icon .ico { width: 19px; height: 19px; }
 .sub-links { display: flex; gap: 4px; margin-left: 12px; }
@@ -25,14 +25,23 @@
 .sub-right .signin { font-size: 15px; color: var(--mute); text-decoration: none; }
 .sub-right .signin:hover { color: var(--fg); }
 /* the phone and tablet menu (kit/core/subnav.js): the same links, opened from a button */
-.sub-nav { position: relative; z-index: 30; }   /* above the page, so the open menu is never covered */
+.sub-nav { position: relative; z-index: 30; }
+.sub-nav { box-sizing: border-box; height: 62px; }   /* fixed: buttons added after first paint don't move the page */
+@media (max-width: 960px) { .sub-nav { height: 60px; } }   /* above the page, so the open menu is never covered */
 .sub-menu-btn .sm-close, .sub-menu-btn[aria-expanded="true"] .sm-open { display: none; }
 .sub-menu-btn[aria-expanded="true"] .sm-close { display: block; }
-.sub-menu { max-height: calc(100vh - 110px); overflow-y: auto; }
+/* the open menu sits above everything fixed on the page (a course's phone dock, the Gradify AI orb): its bar is
+   lifted while the menu is open, and the menu stops short of the bottom of the screen, scrolling if it must */
+.sub-menu { max-height: calc(100vh - 110px); max-height: calc(100dvh - 110px - env(safe-area-inset-bottom)); overflow-y: auto; overscroll-behavior: contain; }
+.sub-nav:has(.sub-menu:not([hidden])) { z-index: 220; }
+@media (max-width: 960px) { body:has(.sub-menu:not([hidden])) :is(.gai-fab, .cx-dock, .gx-totop) { visibility: hidden; } }   /* only where the menu shows */
 .sub-menu .sub-menu-signin { margin-top: 6px; padding: 10px 14px; border-top: 1px solid var(--line); border-radius: 0 0 12px 12px; text-decoration: none; font-size: 15px; color: var(--mute); }
 .sub-menu .sub-menu-cta { justify-content: center; margin: 8px 4px 2px; }
 @media (min-width: 641px) { .sub-menu .sub-menu-signin, .sub-menu .sub-menu-cta, .sub-menu .menu-set { display: none; } }
-@media (min-width: 961px) { .sub-menu { display: none !important; } }
+/* the full row of links needs about 1150px: below 1200px they move into the menu, instead of wrapping ("Cell / 3D")
+   and pushing search off the edge */
+@media (min-width: 1200px) { .sub-menu { display: none !important; } }
+@media (max-width: 1199px) { .sub-links { display: none; } .sub-nav .menu-btn { display: grid; } }
 /* "More" in the header (scripts/sync-headers.mjs): Notes, Progress, Plan and all Gradify sites, in a small menu */
 .sub-more { position: relative; }
 .sub-more > summary { list-style: none; cursor: pointer; padding: 8px 12px; border-radius: 999px; font-size: 15px; color: var(--mute); display: inline-flex; align-items: center; gap: 6px; }
@@ -171,7 +180,7 @@
 .sm-day::before { content: ""; position: absolute; left: 0; right: 0; top: 13px; height: 2px; background: linear-gradient(90deg, var(--accent), transparent); opacity: .5; }
 .sm-day li { position: relative; padding-top: 36px; display: flex; flex-direction: column; gap: 4px; }
 .sm-day li::before { content: ""; position: absolute; top: 6px; left: 0; width: 16px; height: 16px; border-radius: 50%; background: #0b0b0b; background: light-dark(#ffffff, #0b0b0b); border: 2px solid var(--accent); box-shadow: 0 0 12px var(--accent); }
-.sm-day time { font: 600 13px var(--mono); color: var(--accent); }
+.sm-day time { font: 600 13px var(--mono); color: var(--fg); }
 .sm-day b { font-size: 17px; }
 .sm-faq { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; align-items: start; }
 .sm-faq details { padding: 18px 20px; border-radius: 12px; }

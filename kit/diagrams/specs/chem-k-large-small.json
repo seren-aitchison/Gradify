@@ -1,0 +1,79 @@
+{
+ "id": "chem-k-large-small",
+ "renderer": "graph",
+ "course": "chemistry",
+ "unit": "u08",
+ "lesson": "Equilibrium constants",
+ "title": "The size of K and the position of equilibrium",
+ "caption": "For A ⇌ B the fraction converted to B at equilibrium is K/(1 + K). K = 1 gives half; each factor of 10 pushes it further: K = 1000 is 99.9% products, K = 0.001 almost none.",
+ "alt": "Fraction of B at equilibrium against log K: an S-shaped curve through 0.5 at log K = 0.",
+ "description": [
+  "log K = −3: almost all A.",
+  "log K = 0 (K = 1): half and half.",
+  "log K = +3: almost all B."
+ ],
+ "range": {
+  "x": [
+   -4,
+   4
+  ],
+  "y": [
+   0,
+   1.05
+  ]
+ },
+ "ticks": [
+  [
+   -4,
+   -2,
+   0,
+   2,
+   4
+  ],
+  [
+   0.5,
+   1
+  ]
+ ],
+ "grid": [
+  1,
+  0.25
+ ],
+ "axisLabels": [
+  "log₁₀ K",
+  "fraction as B"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "10^x/(1+10^x)",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 0,
+   "y": 0.5,
+   "label": "K = 1"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "10^x/(1+10^x)",
+   "x": 0,
+   "y": 0.5,
+   "name": "K = 1: half converted"
+  },
+  {
+   "type": "value",
+   "expr": "10^x/(1+10^x)",
+   "x": 3,
+   "between": [
+    0.998,
+    0.9995
+   ],
+   "name": "K = 1000: 99.9% converted"
+  }
+ ]
+}

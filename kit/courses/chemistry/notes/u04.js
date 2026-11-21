@@ -11,6 +11,7 @@ H: Why atoms bond
 - Bonds form through **electrostatic attraction** between positive and negative charges.
 - Many atoms achieve a stable arrangement such as a full outer shell.
 - Breaking bonds requires energy; making bonds releases energy.
+D: chem-bond-type
 H: Types of bond
 - **Ionic**: between metals and non-metals, by electron transfer.
 - **Covalent**: between non-metals, by sharing electron pairs.
@@ -52,6 +53,7 @@ H: Formation
 - Oppositely charged ions attract strongly in all directions.
 - Dot-and-cross diagrams show electron transfer.
 - Formulae balance charges, such as MgCl₂ and Al₂O₃.
+D: chem-ionic-nacl
 H: Lattices and properties
 - Ions form a **giant ionic lattice**, such as NaCl with each ion surrounded by six of the opposite charge.
 - **High melting points**: many strong bonds must be broken.
@@ -93,6 +95,7 @@ H: Sharing electrons
 - **Single**, **double** and **triple** bonds share one, two and three pairs.
 - Multiple bonds are **shorter** and **stronger** than single bonds.
 - **Lone pairs** are outer electron pairs not used in bonding.
+D: chem-covalent-water
 H: Structures
 - **Simple molecular**: small molecules, such as H₂O and CO₂, with low melting points due to weak intermolecular forces.
 - **Giant covalent**: networks, such as diamond, graphite and SiO₂, with very high melting points.
@@ -134,6 +137,7 @@ H: Dative bonds
 - The donor needs a **lone pair**; the acceptor needs an empty orbital.
 - Shown by an arrow from donor to acceptor.
 - Once formed, it is identical to other covalent bonds.
+D: chem-coordinate-ammonium
 H: Examples
 - **Ammonium ion**: NH₃ donates a lone pair to H⁺, forming NH₄⁺.
 - **Hydronium ion**: H₂O + H⁺ → H₃O⁺.
@@ -175,6 +179,7 @@ H: The model
 - The electrons are **delocalised** across the whole structure.
 - Bonding is the attraction between the ions and the delocalised electrons.
 - The bonding is non-directional.
+D: chem-metallic-bonding
 H: Properties and strength
 - **Electrical conductivity**: delocalised electrons move through the structure.
 - **Thermal conductivity**: electrons transfer energy.
@@ -216,6 +221,7 @@ H: Drawing steps
 - Choose a central atom, usually the least electronegative (not hydrogen).
 - Connect atoms with single bonds, then add lone pairs to outer atoms.
 - Use multiple bonds if the central atom lacks an octet.
+D: chem-lewis-examples
 H: Exceptions
 - **Incomplete octets**: BF₃ (boron has six electrons).
 - **Expanded octets**: elements in period 3 and below, such as PCl₅ and SF₆.
@@ -257,6 +263,7 @@ H: Calculation
 - The sum of formal charges equals the overall charge of the species.
 - In NH₄⁺, nitrogen has formal charge +1.
 - Formal charges are written next to atoms.
+D: chem-formal-charge-co2
 H: Choosing structures
 - The best structure has formal charges **as close to zero** as possible.
 - Negative formal charges should be on the **more electronegative** atoms.
@@ -298,6 +305,7 @@ H: Resonance structures
 - They differ only in the positions of electrons, not atoms.
 - Linked by a double-headed arrow ↔.
 - The real structure is a **resonance hybrid**, an average of them.
+D: chem-resonance-carbonate
 H: Consequences
 - Bonds in the hybrid have **equal lengths** intermediate between single and double.
 - Electrons are **delocalised** over several atoms.
@@ -339,6 +347,7 @@ H: Principles
 - Count **electron domains**: bonding regions (single or multiple bonds count as one) and lone pairs.
 - The arrangement of domains gives the **electron geometry**.
 - The positions of atoms give the **molecular shape**.
+D: chem-vsepr-domains
 H: Lone pairs
 - Repulsion order: **lone pair–lone pair > lone pair–bond pair > bond pair–bond pair**.
 - Lone pairs compress bond angles.
@@ -381,6 +390,7 @@ H: Shapes without lone pairs
 - 4 domains: **tetrahedral**, 109.5°, such as CH₄.
 - 5 domains: **trigonal bipyramidal**, 90° and 120°, such as PCl₅.
 - 6 domains: **octahedral**, 90°, such as SF₆.
+D: chem-vsepr-lone-pairs
 H: Shapes with lone pairs
 - 3 bonding + 1 lone: **trigonal pyramidal**, such as NH₃.
 - 2 bonding + 2 lone: **bent**, such as H₂O.
@@ -422,6 +432,7 @@ H: Polar bonds
 - The more electronegative atom gains a partial negative charge (δ−).
 - The less electronegative atom gains a partial positive charge (δ+).
 - Dipoles are shown with δ symbols or an arrow pointing towards the negative end.
+D: chem-bond-polarity
 H: Effects
 - Greater electronegativity difference gives a more polar bond.
 - Polar bonds have **partial ionic character**.
@@ -463,6 +474,7 @@ H: Combining dipoles
 - In symmetrical molecules, dipoles **cancel**: CO₂, BF₃ and CH₄ are non-polar.
 - In unsymmetrical molecules, they do not cancel: H₂O, NH₃ and CHCl₃ are polar.
 - Lone pairs often make molecules unsymmetrical.
+D: chem-molecular-polarity
 H: Effects
 - Polar molecules have **permanent dipoles**.
 - They experience **dipole-dipole forces**.
@@ -504,6 +516,7 @@ H: The bonding continuum
 - Percentage ionic character rises with electronegativity difference.
 - Around a difference of 1.7–2.0, bonds are roughly 50% ionic.
 - **Van Arkel–Ketelaar triangles** plot average electronegativity against difference to place ionic, covalent and metallic bonding.
+D: chem-electronegativity-p2
 H: Scales
 - **Pauling scale**: based on bond enthalpies; fluorine 4.0.
 - **Mulliken scale**: average of ionisation energy and electron affinity.
@@ -545,6 +558,7 @@ H: Types
 - **Permanent dipole-dipole forces**: between polar molecules.
 - **Hydrogen bonds**: between H on N, O or F and a lone pair on N, O or F.
 - Intermolecular forces are much weaker than covalent bonds.
+D: chem-imf-bp
 H: Effects
 - Stronger intermolecular forces give **higher melting and boiling points**.
 - They affect **viscosity**, **surface tension** and **vapour pressure**.
@@ -586,6 +600,7 @@ H: Origin
 - This creates a **temporary dipole**.
 - It **induces** a dipole in a neighbouring molecule.
 - The temporary and induced dipoles attract.
+D: chem-alkane-bp
 H: Strength
 - More electrons give larger, more **polarisable** electron clouds and stronger forces.
 - Boiling points of noble gases and halogens rise down their groups.
@@ -627,6 +642,7 @@ H: Permanent dipoles
 - The δ+ end of one molecule attracts the δ− end of another.
 - Molecules tend to line up to maximise attraction.
 - These forces act **in addition** to London forces.
+D: chem-dipole-dipole
 H: Comparison
 - For molecules of similar size, dipole-dipole forces raise boiling points.
 - Propanone (polar, M = 58) boils at 56 °C; butane (non-polar, M = 58) at −1 °C.
@@ -668,6 +684,7 @@ H: Conditions
 - This makes hydrogen strongly δ+.
 - It is attracted to a **lone pair** on N, O or F of another molecule.
 - The three atoms involved are usually in a straight line.
+D: chem-hydrogen-bond-water
 H: Effects
 - H₂O, NH₃ and HF have unusually high boiling points for their size.
 - **Ice is less dense than water**: hydrogen bonds hold molecules in an open lattice.
@@ -709,6 +726,7 @@ H: Definitions
 - Bond breaking is **endothermic**; bond making is **exothermic**.
 - **Mean bond enthalpy** is averaged over many compounds.
 - Triple bonds > double bonds > single bonds in strength.
+D: chem-bond-enthalpy-methane
 H: Calculations
 - ΔH = Σ(bonds broken) − Σ(bonds made).
 - Results are approximate because mean values are used.
@@ -750,6 +768,7 @@ H: Definition
 - **Lattice dissociation enthalpy**: the reverse (endothermic).
 - It cannot be measured directly.
 - Larger magnitude means stronger ionic bonding.
+D: chem-lattice-enthalpy-ions
 H: Factors
 - **Higher charges** give larger lattice enthalpies.
 - **Smaller ions** give larger lattice enthalpies.
@@ -792,6 +811,7 @@ H: The steps
 - **Ionisation energy** of the metal.
 - **Electron affinity** of the non-metal.
 - **Lattice enthalpy** forming the solid from gaseous ions.
+D: chem-born-haber-nacl
 H: Using the cycle
 - By Hess's law, the total enthalpy change is the same by either route.
 - ΔfH = ΔatH(metal) + ΔatH(non-metal) + IE + EA + ΔlattH.
@@ -833,6 +853,7 @@ H: Orbitals
 - Bonding orbitals are **lower** in energy; antibonding (*) orbitals are **higher**.
 - Electrons fill molecular orbitals following the Aufbau principle, Pauli principle and Hund's rule.
 - σ and π molecular orbitals form from different overlaps.
+D: chem-mo-o2
 H: Bond order and magnetism
 - **Bond order** = ½ × (bonding electrons − antibonding electrons).
 - Bond order 0 means no stable bond, such as He₂.
@@ -874,6 +895,7 @@ H: Hybrid orbitals
 - **sp³**: one s + three p → four orbitals at 109.5°, tetrahedral, as in CH₄.
 - **sp²**: one s + two p → three orbitals at 120°, trigonal planar, as in ethene.
 - **sp**: one s + one p → two orbitals at 180°, linear, as in ethyne.
+D: chem-hybridisation-sp3
 H: Using hybridisation
 - The number of electron domains equals the number of hybrid orbitals.
 - Unhybridised p orbitals form **π bonds**.
@@ -915,6 +937,7 @@ H: Two types
 - **π bonds** form by **side-on** overlap of p orbitals above and below the line.
 - Every single bond is a σ bond.
 - A double bond is one σ + one π; a triple bond is one σ + two π.
+D: chem-sigma-pi
 H: Consequences
 - σ bonds allow **free rotation**; π bonds **prevent rotation**.
 - This causes **cis-trans (E/Z) isomerism** in alkenes.
@@ -956,6 +979,7 @@ H: Benzene
 - Each carbon's spare p orbital overlaps with its neighbours above and below the ring.
 - Six π electrons are **delocalised** around the ring.
 - All C–C bonds are the same length, about 140 pm.
+D: chem-benzene-structure
 H: Effects
 - Delocalisation gives extra **stability**: benzene is about 150 kJ mol⁻¹ more stable than predicted for alternating bonds.
 - Benzene prefers **substitution** to addition, keeping its delocalised system.
@@ -997,6 +1021,7 @@ H: Lattices and unit cells
 - The **unit cell** is the smallest repeating unit.
 - Common cubic cells: **simple cubic**, **body-centred cubic** and **face-centred cubic**.
 - **Coordination number** is the number of nearest neighbours.
+D: chem-nacl-lattice
 H: Packing and ionic structures
 - **Close packing** in metals: hexagonal close packed (hcp) and cubic close packed (ccp, face-centred cubic), both with coordination number 12.
 - **Body-centred cubic** metals, such as iron, have coordination number 8.
@@ -1038,6 +1063,7 @@ H: Types of solid
 - **Molecular**: molecules held by intermolecular forces; low melting, non-conducting.
 - **Giant covalent**: atoms in a covalent network; very high melting, usually non-conducting.
 - **Metallic**: ions in delocalised electrons; conducting, malleable.
+D: chem-solid-types
 H: Band theory
 - In solids, atomic orbitals merge into **energy bands**.
 - The **valence band** holds bonding electrons; the **conduction band** allows electrons to move.

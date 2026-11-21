@@ -1,0 +1,122 @@
+{
+ "id": "chem-jablonski",
+ "renderer": "levels",
+ "course": "chemistry",
+ "unit": "u15",
+ "lesson": "Fluorescence spectroscopy",
+ "title": "A Jablonski diagram",
+ "caption": "Absorption lifts a molecule from S₀ to an excited singlet. It quickly relaxes to the lowest level of S₁ (vibrational relaxation and internal conversion), then either emits fluorescence (nanoseconds) or crosses to the triplet T₁, which emits phosphorescence much more slowly. Emitted light has lower energy than absorbed light.",
+ "alt": "Energy levels S₀, S₁ and T₁ (T₁ below S₁): absorption up, wavy relaxation, fluorescence down from S₁, intersystem crossing to T₁, phosphorescence down from T₁.",
+ "description": [
+  "Absorption: S₀ up to a high vibrational level of S₁.",
+  "Wavy arrow: relaxation to the bottom of S₁.",
+  "Fluorescence: S₁ down to S₀.",
+  "Intersystem crossing: S₁ to T₁.",
+  "Phosphorescence: T₁ down to S₀, lowest energy."
+ ],
+ "kind": "custom",
+ "height": [
+  320,
+  340
+ ],
+ "levels": [
+  {
+   "id": "s0",
+   "label": "S₀",
+   "E": 0,
+   "x0": 0.1,
+   "x1": 0.95
+  },
+  {
+   "id": "s0v",
+   "E": 0.35,
+   "x0": 0.1,
+   "x1": 0.6,
+   "thin": true
+  },
+  {
+   "id": "s1",
+   "label": "S₁",
+   "E": 5,
+   "x0": 0.1,
+   "x1": 0.55
+  },
+  {
+   "id": "s1v",
+   "E": 5.6,
+   "x0": 0.1,
+   "x1": 0.55,
+   "thin": true
+  },
+  {
+   "id": "t1",
+   "label": "T₁",
+   "E": 3.8,
+   "x0": 0.65,
+   "x1": 0.95,
+   "labelRight": true
+  }
+ ],
+ "transitions": [
+  {
+   "from": "s0",
+   "to": "s1v",
+   "x": 0.18,
+   "label": "absorption",
+   "colour": "a1"
+  },
+  {
+   "from": "s1v",
+   "to": "s1",
+   "x": 0.3,
+   "wavy": true,
+   "colour": "a5"
+  },
+  {
+   "from": "s1",
+   "to": "s0v",
+   "x": 0.42,
+   "label": "fluorescence",
+   "colour": "a4"
+  },
+  {
+   "from": "s1",
+   "to": "t1",
+   "x": 0.6,
+   "wavy": true,
+   "label": "ISC",
+   "colour": "a5"
+  },
+  {
+   "from": "t1",
+   "to": "s0",
+   "x": 0.8,
+   "label": "phosphorescence",
+   "colour": "a2"
+  }
+ ],
+ "claims": [
+  {
+   "type": "lower",
+   "transitions": [
+    2,
+    0
+   ],
+   "name": "fluorescence emits less energy than was absorbed"
+  },
+  {
+   "type": "below",
+   "a": "t1",
+   "b": "s1",
+   "name": "T₁ lies below S₁"
+  },
+  {
+   "type": "lower",
+   "transitions": [
+    4,
+    2
+   ],
+   "name": "phosphorescence is lower in energy than fluorescence"
+  }
+ ]
+}

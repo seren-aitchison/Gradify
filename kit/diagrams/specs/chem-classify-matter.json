@@ -1,0 +1,91 @@
+{
+ "id": "chem-classify-matter",
+ "renderer": "classify",
+ "course": "chemistry",
+ "unit": "u01",
+ "lesson": "Matter and its classification",
+ "title": "Classifying matter",
+ "caption": "A pure substance has a fixed composition: an element (one kind of atom) or a compound (elements chemically joined in fixed proportions). A mixture can be separated by physical means and may be uniform throughout (homogeneous) or not (heterogeneous).",
+ "alt": "A tree: is the sample one substance? Yes leads to: can it be broken down chemically? Yes, compound; no, element. No leads to: is it uniform throughout? Yes, homogeneous mixture; no, heterogeneous mixture.",
+ "description": [
+  "Is it a single pure substance with fixed composition?",
+  "If yes: can chemical reactions break it into simpler substances? Yes, a compound such as water or sodium chloride; no, an element such as oxygen or iron.",
+  "If no, it is a mixture: uniform throughout is homogeneous, such as salt water or air; otherwise heterogeneous, such as sand in water."
+ ],
+ "start": "q1",
+ "rowHeight": 110,
+ "nodes": {
+  "q1": {
+   "q": "Is it one substance with a fixed composition?",
+   "yes": "q2",
+   "no": "q3"
+  },
+  "q2": {
+   "q": "Can a chemical reaction break it down?",
+   "yes": "cpd",
+   "no": "el"
+  },
+  "cpd": {
+   "leaf": "Compound",
+   "examples": [
+    "H2O",
+    "NaCl",
+    "CO2"
+   ],
+   "kind": "compound",
+   "tone": "a4"
+  },
+  "el": {
+   "leaf": "Element",
+   "examples": [
+    "O2",
+    "Fe",
+    "He"
+   ],
+   "kind": "element",
+   "tone": "a1"
+  },
+  "q3": {
+   "q": "Is it the same throughout?",
+   "yes": "hom",
+   "no": "het"
+  },
+  "hom": {
+   "leaf": "Homogeneous mixture",
+   "examples": [
+    "salt + water",
+    "air (N2, O2, Ar)"
+   ],
+   "kind": "mixture",
+   "tone": "a5"
+  },
+  "het": {
+   "leaf": "Heterogeneous mixture",
+   "examples": [
+    "sand + water"
+   ],
+   "kind": "mixture",
+   "tone": "a3"
+  }
+ },
+ "claims": [
+  {
+   "type": "path",
+   "substance": "water",
+   "answers": [
+    "yes",
+    "yes"
+   ],
+   "leaf": "Compound"
+  },
+  {
+   "type": "path",
+   "substance": "air",
+   "answers": [
+    "no",
+    "yes"
+   ],
+   "leaf": "Homogeneous mixture"
+  }
+ ]
+}

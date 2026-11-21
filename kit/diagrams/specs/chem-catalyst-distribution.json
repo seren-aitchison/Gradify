@@ -1,0 +1,83 @@
+{
+ "id": "chem-catalyst-distribution",
+ "renderer": "graph",
+ "course": "chemistry",
+ "unit": "u07",
+ "lesson": "Homogeneous catalysis",
+ "title": "Why a catalyst speeds a reaction",
+ "caption": "With a catalyst the activation energy falls from Ea to Ea(cat). The distribution of energies is unchanged, but a much larger fraction of molecules now has enough energy: here about 3.7 times as many.",
+ "alt": "One Maxwell–Boltzmann distribution with two thresholds: Ea, and a lower Ea(cat); the area beyond Ea(cat) is much larger.",
+ "description": [
+  "The same energy distribution: the temperature has not changed.",
+  "Uncatalysed: only molecules beyond Ea react.",
+  "Catalysed: everything beyond the lower Ea(cat) can react."
+ ],
+ "range": {
+  "x": [
+   0,
+   9
+  ],
+  "y": [
+   0,
+   0.5
+  ]
+ },
+ "ticks": [
+  [],
+  []
+ ],
+ "axisLabels": [
+  "energy",
+  "number of molecules"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "1.128379*sqrt(x)*exp(-x/1.0)",
+   "domain": [
+    0,
+    9
+   ],
+   "colour": "a1"
+  }
+ ],
+ "areas": [
+  {
+   "expr": "1.128379*sqrt(x)*exp(-x/1.0)",
+   "from": 3,
+   "to": 9,
+   "colour": "a4",
+   "opacity": 0.2
+  },
+  {
+   "expr": "1.128379*sqrt(x)*exp(-x/1.0)",
+   "from": 4.5,
+   "to": 9,
+   "colour": "a2",
+   "opacity": 0.3
+  }
+ ],
+ "marks": [
+  {
+   "x": 3,
+   "label": "Ea(cat)",
+   "to": 0.24
+  },
+  {
+   "x": 4.5,
+   "label": "Ea",
+   "to": 0.2
+  }
+ ],
+ "checks": [
+  {
+   "type": "tail",
+   "a": "1.128379*sqrt(x)*exp(-x/1.0)",
+   "fromA": 3,
+   "fromB": 4.5,
+   "to": 60,
+   "factor": 3,
+   "name": "lowering Ea from 4.5 to 3 (units of kT) more than triples the fraction able to react"
+  }
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "id": "chem-c13-nmr-propanol",
+ "renderer": "nmr",
+ "course": "chemistry",
+ "unit": "u15",
+ "lesson": "Carbon-13 NMR",
+ "title": "¹³C NMR spectrum of propan-1-ol",
+ "caption": "Each carbon environment gives one line. Propan-1-ol has three different carbons, so three lines; the one bonded to oxygen is furthest downfield (64 ppm). Propan-2-ol, by symmetry, would give only two.",
+ "alt": "¹³C spectrum with lines at about 10, 26 and 64 ppm, and the structure of propan-1-ol.",
+ "description": [
+  "δ 10: CH₃.",
+  "δ 26: the middle CH₂.",
+  "δ 64: CH₂ bonded to oxygen."
+ ],
+ "molecule": "CCCO",
+ "nucleus": "13C",
+ "range": [
+  0,
+  100
+ ],
+ "tms": true,
+ "peaks": [
+  {
+   "shift": 10,
+   "n": 1,
+   "atoms": [
+    0
+   ],
+   "env": "C–C",
+   "colour": "a1"
+  },
+  {
+   "shift": 26,
+   "n": 1,
+   "atoms": [
+    1
+   ],
+   "env": "C–C",
+   "colour": "a4"
+  },
+  {
+   "shift": 64,
+   "n": 1,
+   "atoms": [
+    2
+   ],
+   "env": "C–O",
+   "colour": "a2"
+  }
+ ]
+}

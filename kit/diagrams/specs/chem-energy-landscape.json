@@ -1,0 +1,53 @@
+{
+ "id": "chem-energy-landscape",
+ "renderer": "graph",
+ "course": "chemistry",
+ "unit": "u16",
+ "lesson": "Computational molecular modelling",
+ "title": "A conformational energy landscape",
+ "caption": "Rotating bonds in a flexible molecule moves it across an energy landscape with several minima (stable conformers) separated by barriers. A conformational search aims to find the global minimum, not just the nearest local one. Illustrative one-dimensional slice.",
+ "alt": "Energy against a conformational coordinate: a wavy curve with several local minima, the lowest near 2.85.",
+ "description": [
+  "Several dips: local minima, each a stable conformer.",
+  "Hills between them: barriers to interconversion.",
+  "The deepest dip: the global minimum."
+ ],
+ "range": {
+  "x": [
+   0,
+   8
+  ],
+  "y": [
+   -1.2,
+   1.5
+  ]
+ },
+ "ticks": [
+  [],
+  []
+ ],
+ "axisLabels": [
+  "conformational coordinate",
+  "energy"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "0.5*cos(1.2*x)+0.35*cos(2.9*x+1)+0.02*(x-3)^2",
+   "colour": "a5"
+  }
+ ],
+ "checks": [
+  {
+   "type": "min",
+   "expr": "0.5*cos(1.2*x)+0.35*cos(2.9*x+1)+0.02*(x-3)^2",
+   "domain": [
+    0,
+    8
+   ],
+   "x": 2.851,
+   "tol": 0.01,
+   "name": "the deepest minimum (global) is at 2.85, not the first one reached from either end"
+  }
+ ]
+}

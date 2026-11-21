@@ -1,0 +1,97 @@
+{
+ "id": "chem-oxidation-alcohols",
+ "renderer": "structures",
+ "course": "chemistry",
+ "unit": "u13",
+ "lesson": "Oxidation reactions",
+ "title": "Oxidising alcohols",
+ "caption": "With acidified potassium dichromate (orange to green), a primary alcohol is oxidised to an aldehyde (distil it off as it forms) and then to a carboxylic acid (reflux). A secondary alcohol gives a ketone. A tertiary alcohol is not oxidised.",
+ "alt": "Top row: ethanol to ethanal to ethanoic acid. Bottom row: propan-2-ol to propanone. Each arrow is labelled [O].",
+ "description": [
+  "Ethanol (primary) → ethanal (aldehyde) → ethanoic acid (carboxylic acid).",
+  "Propan-2-ol (secondary) → propanone (ketone)."
+ ],
+ "perRow": [
+  3,
+  2
+ ],
+ "between": [
+  "→",
+  "→",
+  "",
+  "→"
+ ],
+ "betweenLabels": [
+  "[O]",
+  "[O]",
+  "",
+  "[O]"
+ ],
+ "panels": [
+  {
+   "smiles": "CCO",
+   "label": "ethanol",
+   "groups": [
+    "primary alcohol"
+   ],
+   "highlight": [
+    {
+     "group": "primary alcohol",
+     "colour": "a1"
+    }
+   ]
+  },
+  {
+   "smiles": "CC=O",
+   "label": "ethanal",
+   "groups": [
+    "aldehyde"
+   ],
+   "highlight": [
+    {
+     "group": "aldehyde",
+     "colour": "a2"
+    }
+   ]
+  },
+  {
+   "smiles": "CC(=O)O",
+   "label": "ethanoic acid",
+   "groups": [
+    "carboxylic acid"
+   ],
+   "highlight": [
+    {
+     "group": "carboxylic acid",
+     "colour": "a4"
+    }
+   ]
+  },
+  {
+   "smiles": "CC(C)O",
+   "label": "propan-2-ol",
+   "groups": [
+    "secondary alcohol"
+   ],
+   "highlight": [
+    {
+     "group": "secondary alcohol",
+     "colour": "a1"
+    }
+   ]
+  },
+  {
+   "smiles": "CC(C)=O",
+   "label": "propanone",
+   "groups": [
+    "ketone"
+   ],
+   "highlight": [
+    {
+     "group": "ketone",
+     "colour": "a2"
+    }
+   ]
+  }
+ ]
+}

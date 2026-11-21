@@ -1,0 +1,91 @@
+{
+ "id": "chem-partition-function",
+ "renderer": "graph",
+ "course": "chemistry",
+ "unit": "u16",
+ "lesson": "Partition functions",
+ "title": "A two-level partition function",
+ "caption": "The partition function q = Σ e^(−Eᵢ/kT) counts the states thermally available. For two levels a gap ε apart, q = 1 + e^(−ε/kT): just 1 when kT ≪ ε (only the ground state is used) and approaching 2 when kT ≫ ε (both equally).",
+ "alt": "q against kT/ε: starting at 1, rising through 1.37 at kT = ε, and levelling towards 2.",
+ "description": [
+  "Low temperature: q ≈ 1.",
+  "kT = ε: q = 1 + e⁻¹ = 1.37.",
+  "High temperature: q → 2."
+ ],
+ "range": {
+  "x": [
+   0,
+   6
+  ],
+  "y": [
+   0.8,
+   2.1
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  [
+   1,
+   1.5,
+   2
+  ]
+ ],
+ "grid": [
+  1,
+  0.25
+ ],
+ "axisLabels": [
+  "kT / ε",
+  "q"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "1+exp(-1/x)",
+   "domain": [
+    0.02,
+    6
+   ],
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "y": 2,
+   "label": "limit: 2 states"
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 1.3679,
+   "label": "1 + e⁻¹"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "1+exp(-1/x)",
+   "x": 1,
+   "y": 1.367879,
+   "name": "q = 1 + 1/e at kT = ε"
+  },
+  {
+   "type": "value",
+   "expr": "1+exp(-1/x)",
+   "x": 0.05,
+   "between": [
+    1,
+    1.0001
+   ],
+   "name": "q → 1 at low temperature"
+  }
+ ]
+}

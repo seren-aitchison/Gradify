@@ -1,0 +1,43 @@
+{
+ "id": "chem-atom-sodium-ion",
+ "renderer": "atom",
+ "course": "chemistry",
+ "unit": "u02",
+ "lesson": "Protons, neutrons and electrons",
+ "title": "A sodium atom and a sodium ion",
+ "caption": "Na and Na⁺ have the same nucleus, 11 protons and 12 neutrons. The ion has lost its single outer electron, so 11 positive charges and 10 negative ones leave a charge of +1.",
+ "alt": "Sodium atom with shells 2, 8, 1 beside the sodium ion with shells 2, 8; both nuclei have 11 protons and 12 neutrons.",
+ "description": [
+  "Left: sodium atom, nucleus 11 p and 12 n, electrons 2, 8, 1.",
+  "Right: sodium ion Na⁺, the same nucleus, electrons 2, 8; charge 11 − 10 = +1."
+ ],
+ "atoms": [
+  {
+   "symbol": "Na",
+   "A": 23,
+   "label": "Na atom",
+   "claims": {
+    "protons": 11,
+    "neutrons": 12,
+    "electrons": 11,
+    "shells": [
+     2,
+     8,
+     1
+    ]
+   }
+  },
+  {
+   "symbol": "Na",
+   "A": 23,
+   "charge": 1,
+   "claims": {
+    "electrons": 10,
+    "shells": [
+     2,
+     8
+    ]
+   }
+  }
+ ]
+}

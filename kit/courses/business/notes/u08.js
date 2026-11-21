@@ -70,6 +70,7 @@ H: Changes in equilibrium
 - An increase in demand raises both equilibrium price and quantity.
 - An increase in supply lowers price and raises quantity.
 - When both shift, the effect on one of price or quantity depends on the size of the shifts.
+D: bus-supply-demand
 X: Solving for equilibrium.
 > Demand: Q_{d} = 100 − 2P; supply: Q_{s} = 20 + 2P.
 > Setting Q_{d} = Q_{s}: 100 − 2P = 20 + 2P, so 4P = 80.

@@ -96,6 +96,11 @@ async function device(b, name) {
   const ctx = await b.newContext({ viewport: { width: 1280, height: 900 } });
   const s = session();
   // sandboxed frames (some interactives) have no storage, so the seeding is guarded
+  // GLASS=force runs the whole journey with the GPU Liquid Glass drawing (kit/ui/liquid-gl.js), even on a software GPU;
+  // GLASS=slow-gpu: the browser's software GPU reports itself as a real one, so the glass starts, measures itself slow
+  // and steps down to CSS glass while the journey runs (a low-end device)
+  if (process.env.GLASS === "slow-gpu") await ctx.addInitScript(() => { const g = WebGLRenderingContext.prototype.getParameter; WebGLRenderingContext.prototype.getParameter = function (k) { return k === 0x9246 ? "ANGLE (Intel, Intel(R) HD Graphics 4000)" : g.call(this, k); }; });
+  else if (process.env.GLASS) await ctx.addInitScript((v) => { try { localStorage.setItem("gradify.glass", v); } catch { /* no storage */ } }, process.env.GLASS);
   await ctx.addInitScript(([key, value]) => { try { if (!localStorage.getItem(key)) localStorage.setItem(key, value); } catch { /* no storage in this frame */ } }, [`sb-${REF}-auth-token`, JSON.stringify(s)]);
   await ctx.route("**/gradify.config.js", (r) => r.fulfill({ status: 200, contentType: "text/javascript", body: `export const SITE = null;\nexport const SUPABASE_URL = "${HOST}";\nexport const SUPABASE_ANON_KEY = "${ANON}";\n` }));
   const errs = [];
@@ -120,6 +125,9 @@ async function answer(p, right) {
 
 // SERVE_ONLY=1: just run the stand-in backend, e.g. to rehearse scripts/check-live.cjs against it
 if (process.env.SERVE_ONLY) { serve().then(() => console.log(`stand-in Supabase on ${HOST}; test learner ${USER.email} / stand-in-password`)); return; }
+// the AI tutor is in the lesson's "Go deeper" section, which a learner opens with a tap
+const openDeeper = async (p) => { const s = p.locator("#co-deeper > summary"); if (await s.count() && !(await p.locator("#co-deeper").evaluate((d) => d.open))) await s.click(); };
+
 (async () => {
   const server = await serve();
   const b = await chromium.launch();
@@ -175,7 +183,7 @@ if (process.env.SERVE_ONLY) { serve().then(() => console.log(`stand-in Supabase 
   // 6. the AI tutor: expired session refreshed and retried; a sign-in that has ended; service failures
   const ask = async (q) => {
     await pb.goto(`${BASE}/lawgradify/course/#/lesson/u01-01`); await pb.waitForTimeout(2500);
-    await pb.fill("#co-askq", q); await pb.click(".co-askform button");
+    await openDeeper(pb); await pb.fill("#co-askq", q); await pb.click(".co-askform button");
     // wait for the reply itself rather than a fixed time: on a slow machine (CI) it can take more than a second or
     // two, and reading early sees "Thinking…"
     await pb.waitForFunction(() => { const t = document.querySelector(".co-askout")?.innerText || ""; return t.trim() && !/Thinking/.test(t); }, null, { timeout: 10000 }).catch(() => {});

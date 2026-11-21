@@ -1,0 +1,101 @@
+{
+ "id": "chem-bond-polarity",
+ "renderer": "dotcross",
+ "course": "chemistry",
+ "unit": "u04",
+ "lesson": "Bond polarity",
+ "title": "Polar bonds",
+ "caption": "Chlorine (3.16) and fluorine (3.98) are more electronegative than hydrogen (2.20), so they pull the shared pair towards themselves and become δ−, leaving hydrogen δ+.",
+ "alt": "Lewis structures of HCl and HF with δ+ on hydrogen and δ− on the halogen.",
+ "description": [
+  "H–Cl: hydrogen δ+, chlorine δ−, with three lone pairs on chlorine.",
+  "H–F: hydrogen δ+, fluorine δ−, a more polar bond."
+ ],
+ "perRow": 2,
+ "rowHeight": [
+  150,
+  140
+ ],
+ "molecules": [
+  {
+   "label": "HCl",
+   "sub": "difference 0.96",
+   "style": "lewis",
+   "atoms": [
+    {
+     "id": "h",
+     "el": "H",
+     "x": -0.6,
+     "y": 0,
+     "delta": "+"
+    },
+    {
+     "id": "cl",
+     "el": "Cl",
+     "x": 0.6,
+     "y": 0,
+     "lone": 3,
+     "loneAt": [
+      -90,
+      0,
+      90
+     ],
+     "delta": "-"
+    }
+   ],
+   "bonds": [
+    {
+     "a": "h",
+     "b": "cl",
+     "order": 1
+    }
+   ],
+   "claims": {
+    "delta": {
+     "h": "+",
+     "cl": "-"
+    }
+   }
+  },
+  {
+   "label": "HF",
+   "sub": "difference 1.78",
+   "style": "lewis",
+   "atoms": [
+    {
+     "id": "h",
+     "el": "H",
+     "x": -0.6,
+     "y": 0,
+     "delta": "+"
+    },
+    {
+     "id": "f",
+     "el": "F",
+     "x": 0.6,
+     "y": 0,
+     "lone": 3,
+     "loneAt": [
+      -90,
+      0,
+      90
+     ],
+     "delta": "-"
+    }
+   ],
+   "bonds": [
+    {
+     "a": "h",
+     "b": "f",
+     "order": 1
+    }
+   ],
+   "claims": {
+    "delta": {
+     "h": "+",
+     "f": "-"
+    }
+   }
+  }
+ ]
+}

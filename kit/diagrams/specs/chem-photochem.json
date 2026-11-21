@@ -1,0 +1,52 @@
+{
+ "id": "chem-photochem",
+ "renderer": "levels",
+ "course": "chemistry",
+ "unit": "u16",
+ "lesson": "Photochemistry",
+ "title": "Light can break a bond",
+ "caption": "A photon breaks a bond if its energy at least equals the bond energy. Cl–Cl is 242 kJ mol⁻¹, so wavelengths of 494 nm or shorter can split Cl₂ into radicals, which is why chlorination of methane starts in sunlight.",
+ "alt": "Energy diagram: Cl₂ at the bottom, 2Cl• 242 kJ mol⁻¹ above, with a photon arrow of 494 nm reaching it.",
+ "description": [
+  "Lower level: Cl₂.",
+  "Upper level: two chlorine radicals, 242 kJ mol⁻¹ higher.",
+  "A 494 nm photon carries exactly 242 kJ mol⁻¹."
+ ],
+ "kind": "custom",
+ "height": [
+  240,
+  260
+ ],
+ "levels": [
+  {
+   "id": "m",
+   "label": "Cl₂",
+   "E": 0,
+   "x0": 0.2,
+   "x1": 0.6
+  },
+  {
+   "id": "r",
+   "label": "2Cl•",
+   "E": 242,
+   "x0": 0.2,
+   "x1": 0.6
+  }
+ ],
+ "transitions": [
+  {
+   "from": "m",
+   "to": "r",
+   "x": 0.4,
+   "label": "hν, λ ≤ 494 nm: 242 kJ mol⁻¹",
+   "colour": "a5"
+  }
+ ],
+ "claims": [
+  {
+   "type": "photon",
+   "nm": 494,
+   "kj": 242
+  }
+ ]
+}

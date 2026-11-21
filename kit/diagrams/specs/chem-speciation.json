@@ -1,0 +1,79 @@
+{
+ "id": "chem-speciation",
+ "renderer": "graph",
+ "course": "chemistry",
+ "unit": "u09",
+ "lesson": "Acid dissociation constants",
+ "title": "Ethanoic acid and ethanoate",
+ "caption": "As pH rises, CH₃COOH is converted to CH₃COO⁻. The curves cross at pH = pKa = 4.76, where the two are equal: the point of best buffering.",
+ "alt": "Fraction of ethanoic acid falling and fraction of ethanoate rising with pH, crossing at 0.5 at pH 4.76.",
+ "description": [
+  "Low pH: mainly CH₃COOH.",
+  "pH 4.76: equal amounts.",
+  "High pH: mainly CH₃COO⁻."
+ ],
+ "range": {
+  "x": [
+   1,
+   9
+  ],
+  "y": [
+   0,
+   1.05
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8
+  ],
+  [
+   0.5,
+   1
+  ]
+ ],
+ "grid": [
+  1,
+  0.25
+ ],
+ "axisLabels": [
+  "pH",
+  "fraction"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "1-1/(1+10^(4.76-x))",
+   "colour": "a2",
+   "label": "CH₃COOH",
+   "labelAt": [
+    1.3,
+    0.9
+   ]
+  },
+  {
+   "expr": "1/(1+10^(4.76-x))",
+   "colour": "a1",
+   "label": "CH₃COO⁻",
+   "labelAt": [
+    6.6,
+    0.9
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "intersect",
+   "a": "1-1/(1+10^(4.76-x))",
+   "b": "1/(1+10^(4.76-x))",
+   "x": 4.76,
+   "y": 0.5,
+   "name": "equal amounts at pH = pKa = 4.76"
+  }
+ ]
+}

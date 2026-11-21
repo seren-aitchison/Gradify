@@ -1,0 +1,95 @@
+{
+ "id": "chem-vapour-pressure",
+ "renderer": "graph",
+ "course": "chemistry",
+ "unit": "u05",
+ "lesson": "Vapour pressure",
+ "title": "Vapour pressure of water",
+ "caption": "Vapour pressure rises steeply with temperature. A liquid boils when its vapour pressure equals the pressure above it: 101.3 kPa at 100 °C for water at sea level, lower on a mountain, so water boils at a lower temperature there.",
+ "alt": "Vapour pressure of water against temperature, a curve rising steeply to 101.3 kPa at 100 °C, with a dashed line marking atmospheric pressure.",
+ "description": [
+  "Vapour pressure is small at 20 °C (about 2.3 kPa).",
+  "It rises ever more steeply.",
+  "It reaches 101.3 kPa, atmospheric pressure, at 100 °C: the normal boiling point."
+ ],
+ "range": {
+  "x": [
+   0,
+   110
+  ],
+  "y": [
+   0,
+   120
+  ]
+ },
+ "ticks": [
+  [
+   20,
+   40,
+   60,
+   80,
+   100
+  ],
+  [
+   20,
+   40,
+   60,
+   80,
+   100
+  ]
+ ],
+ "grid": [
+  20,
+  20
+ ],
+ "axisLabels": [
+  "temperature / °C",
+  "vapour pressure / kPa"
+ ],
+ "xLabelBelow": true,
+ "marks": [
+  {
+   "y": 101.325,
+   "label": "1 atm = 101.3 kPa",
+   "to": 100
+  }
+ ],
+ "curves": [
+  {
+   "expr": "0.133322*10^(8.07131-1730.63/(233.426+x))",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 100,
+   "y": 101.3,
+   "label": "boils",
+   "dx": -10,
+   "anchor": "end",
+   "dy": -14
+  }
+ ],
+ "checks": [
+  {
+   "type": "value",
+   "expr": "0.133322*10^(8.07131-1730.63/(233.426+x))",
+   "x": 100,
+   "between": [
+    100.8,
+    101.8
+   ],
+   "name": "vapour pressure reaches 1 atm at 100 °C (Antoine equation)"
+  },
+  {
+   "type": "value",
+   "expr": "0.133322*10^(8.07131-1730.63/(233.426+x))",
+   "x": 20,
+   "between": [
+    2.2,
+    2.45
+   ],
+   "name": "about 2.3 kPa at 20 °C"
+  }
+ ]
+}

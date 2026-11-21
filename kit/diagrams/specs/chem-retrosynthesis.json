@@ -1,0 +1,53 @@
+{
+ "id": "chem-retrosynthesis",
+ "renderer": "flow",
+ "course": "chemistry",
+ "unit": "u19",
+ "lesson": "Retrosynthetic analysis",
+ "title": "A retrosynthetic disconnection",
+ "caption": "Work backwards: disconnect the ester in ethyl ethanoate at the C–O bond to give two synthons, an acyl cation and an alkoxide. Their real equivalents are ethanoyl chloride and ethanol, which react directly.",
+ "alt": "Ethyl ethanoate, a retrosynthetic arrow, the synthons CH₃CO⁺ and ⁻OC₂H₅, and the reagents ethanoyl chloride and ethanol.",
+ "description": [
+  "Target: CH₃COOC₂H₅.",
+  "Disconnect the C–O bond: synthons CH₃CO⁺ and C₂H₅O⁻.",
+  "Reagents: CH₃COCl and C₂H₅OH."
+ ],
+ "layout": "line",
+ "nodes": [
+  {
+   "id": "t",
+   "label": "CH₃COOC₂H₅",
+   "sub": "target",
+   "tone": "a5"
+  },
+  {
+   "id": "s",
+   "label": "CH₃CO⁺ + ⁻OC₂H₅",
+   "sub": "synthons"
+  },
+  {
+   "id": "r",
+   "label": "CH₃COCl + C₂H₅OH",
+   "sub": "reagents",
+   "tone": "a4"
+  }
+ ],
+ "edges": [
+  {
+   "from": "t",
+   "to": "s",
+   "label": "disconnect"
+  },
+  {
+   "from": "s",
+   "to": "r",
+   "label": "equivalents"
+  }
+ ],
+ "claims": [
+  {
+   "type": "equation",
+   "eq": "CH3COCl + C2H5OH → CH3COOC2H5 + HCl"
+  }
+ ]
+}

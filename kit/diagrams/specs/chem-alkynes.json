@@ -1,0 +1,49 @@
+{
+ "id": "chem-alkynes",
+ "renderer": "structures",
+ "course": "chemistry",
+ "unit": "u12",
+ "lesson": "Alkynes",
+ "title": "Ethyne and propyne",
+ "caption": "Each alkyne has a C≡C and fits CₙH₂ₙ₋₂. The two sp carbons and the atoms on them lie in a straight line.",
+ "alt": "Displayed formulae of ethyne and propyne, drawn linear, with the C≡C highlighted.",
+ "description": [
+  "Ethyne, C₂H₂: H–C≡C–H in a straight line.",
+  "Propyne, C₃H₄: H–C≡C–CH₃."
+ ],
+ "panels": [
+  {
+   "smiles": "C#C",
+   "label": "ethyne",
+   "displayed": true,
+   "sub": "C₂H₂",
+   "formula": "C2H2",
+   "highlight": [
+    {
+     "group": "alkyne",
+     "colour": "a2"
+    }
+   ]
+  },
+  {
+   "smiles": "C#CC",
+   "label": "propyne",
+   "displayed": true,
+   "sub": "C₃H₄",
+   "formula": "C3H4",
+   "highlight": [
+    {
+     "group": "alkyne",
+     "colour": "a2"
+    }
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "type": "general",
+   "formula": "CₙH₂ₙ₋₂",
+   "hOffset": -2
+  }
+ ]
+}

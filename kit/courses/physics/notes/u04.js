@@ -351,6 +351,7 @@ H: Checks
 X: A box is pushed up a rough slope by a horizontal force P. List the forces.
 > Weight mg (down), normal force N (perpendicular to slope), friction f (down the slope, opposing motion), push P (horizontal)
 > Resolve along and perpendicular to the slope: N = mg cos θ + P sin θ
+D: phys-fbd-slope
 !: "Centripetal force" isn't an extra force to draw; it's the net inward force supplied by real forces (tension, gravity, friction).
 Q: What forces go on a free-body diagram? | All external forces acting on the chosen body, and nothing else.
 Q: Why is "ma" never drawn as a force? | It's the result of the net force, not a separate force.

@@ -52,6 +52,7 @@ H: Types of alloy
 - **Interstitial**: small atoms fit in gaps, as carbon in steel.
 - Different-sized atoms **disrupt** the regular layers.
 - This makes it harder for layers to **slide**.
+D: chem-alloy
 H: Important alloys
 - **Steel**: iron with carbon; strength depends on carbon content.
 - **Stainless steel**: iron with chromium and nickel; corrosion resistant.
@@ -93,6 +94,7 @@ H: Structure
 - **Chain length** (molar mass) affects strength.
 - **Branching** lowers density and melting point.
 - **Cross-linking** joins chains with covalent bonds.
+D: chem-polymers
 H: Types and properties
 - **Thermoplastics**: no cross-links; soften on heating; recyclable by melting.
 - **Thermosets**: cross-linked; do not melt; char on heating.
@@ -134,6 +136,7 @@ H: Addition polymerisation
 - No small molecule is lost; atom economy is 100%.
 - Usually a **radical chain** mechanism: initiation, propagation, termination.
 - Examples: poly(ethene), poly(propene), PVC, PTFE, polystyrene.
+D: chem-addition-condensation-polymers
 H: Condensation polymerisation
 - Monomers with **two functional groups** join, losing a small molecule.
 - Examples: polyesters (PET) and polyamides (nylon).
@@ -175,6 +178,7 @@ H: Natural biopolymers
 - **Proteins**: polyamides from amino acids.
 - **Nucleic acids**: DNA and RNA.
 - **Natural rubber**: poly(isoprene).
+D: chem-biopolymers
 H: Bio-based plastics
 - **PLA** (poly(lactic acid)) is made from fermented plant sugars.
 - **PHAs** are polyesters made by bacteria.
@@ -257,6 +261,7 @@ H: Band theory
 - The **valence band** is filled; the **conduction band** is empty at absolute zero.
 - The **band gap** decides conductivity: metals none, semiconductors small, insulators large.
 - In semiconductors, conductivity **increases** with temperature.
+D: chem-band-gap
 H: Doping and devices
 - **n-type**: dopant with extra electrons (P in Si).
 - **p-type**: dopant with fewer electrons, creating **holes** (B in Si).
@@ -298,6 +303,7 @@ H: Examples
 - **Carbon nanotubes**: rolled sheets of graphene.
 - **Graphene**: a single layer of carbon atoms.
 - **Nanoparticles** of silver, gold and titanium dioxide.
+D: chem-surface-area-volume
 H: Why they differ
 - Very high **surface area to volume ratio**.
 - **Quantum confinement** changes electronic and optical properties.
@@ -462,6 +468,7 @@ H: Structure and composition
 - **Stratosphere**: contains the **ozone layer**.
 - Dry air: about 78% N₂, 21% O₂, 0.9% Ar, 0.04% CO₂.
 - Trace gases have large effects.
+D: chem-ozone-cycle
 H: Ozone and radicals
 - **Chapman cycle**: O₂ + UV → 2O; O + O₂ → O₃; O₃ + UV → O₂ + O.
 - Ozone absorbs harmful **UV-B and UV-C**.
@@ -503,6 +510,7 @@ H: Key properties
 - **pH** is buffered by the **carbonate system**: CO₂, HCO₃⁻ and CO₃²⁻.
 - **Hardness** comes from Ca²⁺ and Mg²⁺.
 - **Biochemical oxygen demand (BOD)** measures organic pollution.
+D: chem-carbonate-speciation
 H: Problems
 - **Ocean acidification**: extra CO₂ lowers pH and carbonate availability.
 - **Eutrophication**: excess nitrate and phosphate cause algal blooms.
@@ -585,6 +593,7 @@ H: Drinking water
 - **Coagulation and flocculation** with aluminium or iron salts clump fine particles.
 - **Sedimentation** and **filtration** remove the clumps.
 - **Disinfection** with chlorine, ozone or UV kills microbes.
+D: chem-water-treatment
 H: Wastewater
 - **Primary**: settling removes solids.
 - **Secondary**: bacteria break down organic matter (activated sludge).
@@ -626,6 +635,7 @@ H: Pollutants
 - **Nitrogen oxides (NOₓ)**: from high-temperature engines.
 - **Sulfur dioxide**: from burning sulfur-containing fuels.
 - **Carbon monoxide** and **volatile organic compounds (VOCs)**.
+D: chem-catalytic-converter
 H: Effects and controls
 - **Acid rain**: SO₂ and NOₓ form sulfuric and nitric acids.
 - **Photochemical smog**: NOₓ and VOCs react in sunlight, forming ozone.
@@ -667,6 +677,7 @@ H: The greenhouse effect
 - Greenhouse gases absorb and re-emit IR, warming the lower atmosphere.
 - Without it, Earth would be about 33 °C colder.
 - Extra greenhouse gases enhance the effect.
+D: chem-greenhouse
 H: Which gases
 - Molecules absorb IR if vibrations **change their dipole moment**.
 - CO₂, CH₄, N₂O, H₂O and CFCs absorb IR; N₂ and O₂ do not.
@@ -708,6 +719,7 @@ H: Carbon cycle and evidence
 - Burning fossil fuels moves carbon from rocks to the atmosphere quickly.
 - **Isotope evidence**: fossil carbon lacks ¹⁴C and is depleted in ¹³C.
 - **Ice cores** record past CO₂ and temperature.
+D: chem-keeling
 H: Feedbacks and mitigation
 - **Water vapour feedback**: warmer air holds more water, amplifying warming.
 - **Permafrost thaw** releases CH₄ and CO₂.
@@ -749,6 +761,7 @@ H: Process types
 - **Continuous**: reactants fed and products removed constantly; efficient for large volumes such as ammonia.
 - Choice depends on scale, product value and safety.
 - **Process intensification** uses smaller, more efficient equipment.
+D: chem-process-flow
 H: Unit operations
 - **Reactors** carry out reactions.
 - **Separation**: distillation, crystallisation, filtration, extraction.
@@ -790,6 +803,7 @@ H: Sectors
 - **Fine chemicals**: smaller volumes, high purity, such as drug intermediates.
 - **Speciality chemicals**: valued for function, such as adhesives and coatings.
 - **Feedstocks**: crude oil, natural gas, salt, air, water and biomass.
+D: chem-batch-continuous
 H: Scale-up
 - Laboratory → **pilot plant** → full-scale plant.
 - Heat transfer and mixing change with scale.
@@ -831,6 +845,7 @@ H: Types in use
 - **Homogeneous**: soluble complexes, highly selective, such as rhodium and iridium in carbonylation.
 - **Biocatalysts**: enzymes, very selective, mild conditions.
 - Most chemical products involve a catalyst at some stage.
+D: chem-industrial-catalyst
 H: Performance and design
 - **Activity**, **selectivity** and **lifetime** measure performance.
 - **Poisoning**: impurities such as sulfur block active sites.
@@ -872,6 +887,7 @@ H: Refining
 - **Catalytic cracking** with zeolites gives petrol and alkenes.
 - **Steam cracking** of ethane or naphtha gives ethene and propene.
 - **Reforming** converts straight chains into branched and aromatic compounds, raising octane number.
+D: chem-fractionating-column
 H: Petrochemicals
 - **Ethene** → poly(ethene), ethanol, ethane-1,2-diol.
 - **Propene** → poly(propene), propanone.
@@ -913,6 +929,7 @@ H: Nutrients and products
 - **Ammonium nitrate** from ammonia and nitric acid.
 - **Urea** from ammonia and carbon dioxide.
 - **Superphosphates** from phosphate rock and acid.
+D: chem-haber-ostwald
 H: Impacts
 - Fertilisers support food for billions of people.
 - Ammonia production uses about 1–2% of world energy.
@@ -996,6 +1013,7 @@ H: Key principles
 - Use **safer solvents** and less hazardous reagents.
 - Use **catalysts** rather than stoichiometric reagents.
 - Use **renewable** feedstocks and design for **degradation**.
+D: chem-atom-economy-routes
 H: Greener choices
 - **Supercritical CO₂** replaces organic solvents, as in decaffeinating coffee.
 - **Water** as a solvent where possible.
@@ -1037,6 +1055,7 @@ H: Linear versus circular
 - **Circular**: reduce, reuse, recycle, recover.
 - Waste becomes a **feedstock** for new products.
 - Closing loops saves resources and energy.
+D: chem-circular
 H: Recycling
 - **Mechanical recycling**: sort, wash, melt and remould; quality may fall.
 - **Chemical recycling**: break polymers back into monomers or feedstocks.
@@ -1078,6 +1097,7 @@ H: Waste hierarchy
 - Prevention is best; landfill is the last resort.
 - Laboratory waste is minimised by microscale experiments.
 - Solvents are recovered by distillation where possible.
+D: chem-waste-hierarchy
 H: Classification and treatment
 - Hazard classes include **flammable**, **toxic**, **corrosive** and **oxidising**.
 - **Incompatible** wastes must be kept apart.

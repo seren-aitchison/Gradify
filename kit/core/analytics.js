@@ -10,6 +10,11 @@ import { SUPABASE_URL, SUPABASE_ANON_KEY } from "../../gradify.config.js";
 
 const OFF = "gradify.noanalytics";
 export const EVENTS = ["view", "lesson_complete", "exam_finish", "tutor"];
+// how the gentle-rhythm features are used: whether learners keep auto-next on, take the study break, and open
+// the second part of a long lesson. Counted the same anonymous way. The database only accepts them once
+// docs/sql/rhythm-events.sql has been run (it widens page_events' event check); set RHYTHM_LIVE to true then.
+export const RHYTHM_LIVE = false;
+export const RHYTHM_EVENTS = ["autonext_on", "autonext_off", "autonext_go", "autonext_stay", "break_shown", "break_taken", "part2_open"];
 
 export function analyticsAllowed(env = globalThis, configured = Boolean(SUPABASE_URL && SUPABASE_ANON_KEY)) {
   const nav = env.navigator || {}, loc = env.location || {};
@@ -31,7 +36,7 @@ export function eventRow(event, site, env = globalThis) {
 }
 
 export function track(event, site) {
-  if (!EVENTS.includes(event) || !analyticsAllowed()) return;
+  if (!(EVENTS.includes(event) || (RHYTHM_LIVE && RHYTHM_EVENTS.includes(event))) || !analyticsAllowed()) return;
   const headers = { apikey: SUPABASE_ANON_KEY, "Content-Type": "application/json", Prefer: "return=minimal" };
   if (SUPABASE_ANON_KEY.startsWith("eyJ")) headers.Authorization = `Bearer ${SUPABASE_ANON_KEY}`;
   fetch(`${SUPABASE_URL}/rest/v1/page_events`, { method: "POST", keepalive: true, headers, body: JSON.stringify(eventRow(event, site)) }).catch(() => {});

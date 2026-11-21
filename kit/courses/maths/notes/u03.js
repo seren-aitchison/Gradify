@@ -1179,6 +1179,7 @@ X: The curve y = f(x) has a maximum at (4, 6). Find the maximum of y = 3f(x − 
 > y = 3f(x − 1): move 1 right, stretch vertically by 3: maximum at (5, 18)
 > y = f(2x) − 5: halve the x-coordinate, then move down 5
 > Maximum at (2, 1)
+D: maths-transformations
 P: **Investigate with the lab.** Work through the completed-square and reflected-parabola challenges. For each slider, predict the effect before you move it.
 IX: grapher
 K: Outside the bracket affects y as written; inside affects x in reverse; track key points through each step.

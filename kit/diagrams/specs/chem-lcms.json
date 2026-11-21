@@ -1,0 +1,52 @@
+{
+ "id": "chem-lcms",
+ "renderer": "flow",
+ "course": "chemistry",
+ "unit": "u15",
+ "lesson": "LC-MS",
+ "title": "LC–MS",
+ "caption": "For compounds that are not volatile enough for GC, such as drugs and proteins, liquid chromatography separates them and electrospray ionisation gently turns each into gaseous ions (often [M+H]⁺) before mass analysis.",
+ "alt": "A flow: sample in solution → HPLC separates → electrospray ionisation → mass analyser → spectrum.",
+ "description": [
+  "HPLC separates the components.",
+  "Electrospray: the solution is sprayed through a charged needle and the solvent evaporates, leaving ions such as [M+H]⁺.",
+  "The mass analyser records m/z."
+ ],
+ "layout": "line",
+ "nodes": [
+  {
+   "id": "a",
+   "label": "solution"
+  },
+  {
+   "id": "b",
+   "label": "HPLC",
+   "tone": "a4"
+  },
+  {
+   "id": "c",
+   "label": "electrospray",
+   "sub": "[M+H]⁺ ions",
+   "tone": "a5"
+  },
+  {
+   "id": "d",
+   "label": "mass analyser",
+   "tone": "a2"
+  }
+ ],
+ "edges": [
+  {
+   "from": "a",
+   "to": "b"
+  },
+  {
+   "from": "b",
+   "to": "c"
+  },
+  {
+   "from": "c",
+   "to": "d"
+  }
+ ]
+}

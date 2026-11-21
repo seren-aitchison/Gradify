@@ -1,0 +1,59 @@
+{
+ "id": "chem-carbonyl-reactivity",
+ "renderer": "structures",
+ "course": "chemistry",
+ "unit": "u14",
+ "lesson": "Carbonyl chemistry",
+ "title": "Reactivity of carboxylic acid derivatives",
+ "caption": "Towards nucleophiles: acyl chlorides > acid anhydrides > esters > amides. The better the leaving group (Cl⁻ best, NH₂⁻ worst) and the less the lone pair next to C=O feeds into it, the more reactive the derivative.",
+ "alt": "Ethanoyl chloride, ethanoic anhydride, methyl ethanoate and ethanamide in order of decreasing reactivity.",
+ "description": [
+  "Ethanoyl chloride: most reactive.",
+  "Ethanoic anhydride.",
+  "Methyl ethanoate.",
+  "Ethanamide: least reactive."
+ ],
+ "between": [
+  ">",
+  ">",
+  ">"
+ ],
+ "perRow": [
+  4,
+  2
+ ],
+ "bond": [
+  30,
+  28
+ ],
+ "panels": [
+  {
+   "smiles": "CC(=O)Cl",
+   "label": "acyl chloride",
+   "groups": [
+    "acyl chloride"
+   ]
+  },
+  {
+   "smiles": "CC(=O)OC(C)=O",
+   "label": "anhydride",
+   "groups": [
+    "acid anhydride"
+   ]
+  },
+  {
+   "smiles": "COC(C)=O",
+   "label": "ester",
+   "groups": [
+    "ester"
+   ]
+  },
+  {
+   "smiles": "CC(N)=O",
+   "label": "amide",
+   "groups": [
+    "amide"
+   ]
+  }
+ ]
+}

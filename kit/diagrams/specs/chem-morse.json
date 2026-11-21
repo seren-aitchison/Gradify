@@ -1,0 +1,90 @@
+{
+ "id": "chem-morse",
+ "renderer": "graph",
+ "course": "chemistry",
+ "unit": "u16",
+ "lesson": "Vibrational spectroscopy",
+ "title": "A real bond: the Morse potential",
+ "caption": "A real bond is not a perfect spring. Squeezing the atoms together is very hard (the steep left wall) and stretching it far enough breaks it (the curve levels off at the dissociation energy). The vibrational levels get closer together towards the top. Values roughly for H₂.",
+ "alt": "Potential energy against bond length: a steep wall at short distance, a minimum at 0.074 nm and a curve levelling off at about 4.75 eV at long distance.",
+ "description": [
+  "Minimum at the bond length, 0.074 nm.",
+  "Steep repulsion at short distances.",
+  "Levelling off at the dissociation energy, about 4.75 eV."
+ ],
+ "range": {
+  "x": [
+   0.3,
+   3.5
+  ],
+  "y": [
+   0,
+   6
+  ]
+ },
+ "ticks": [
+  [
+   0.5,
+   1,
+   1.5,
+   2,
+   2.5,
+   3
+  ],
+  [
+   1,
+   2,
+   3,
+   4,
+   5
+  ]
+ ],
+ "grid": [
+  0.5,
+  1
+ ],
+ "axisLabels": [
+  "bond length / 10⁻¹⁰ m",
+  "energy / eV"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "4.75*(1-exp(-1.94*(x-0.74)))^2",
+   "domain": [
+    0.38,
+    3.5
+   ],
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "y": 4.75,
+   "label": "dissociation energy"
+  }
+ ],
+ "checks": [
+  {
+   "type": "min",
+   "expr": "4.75*(1-exp(-1.94*(x-0.74)))^2",
+   "domain": [
+    0.4,
+    3.4
+   ],
+   "x": 0.74,
+   "y": 0,
+   "name": "the minimum is at the equilibrium bond length, 0.74 × 10⁻¹⁰ m"
+  },
+  {
+   "type": "value",
+   "expr": "4.75*(1-exp(-1.94*(x-0.74)))^2",
+   "x": 3.4,
+   "between": [
+    4.65,
+    4.75
+   ],
+   "name": "at long range the energy approaches the dissociation energy"
+  }
+ ]
+}

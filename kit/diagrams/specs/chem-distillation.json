@@ -1,0 +1,18 @@
+{
+ "id": "chem-distillation",
+ "renderer": "apparatus",
+ "course": "chemistry",
+ "unit": "u19",
+ "lesson": "Distillation",
+ "title": "Simple distillation",
+ "caption": "The vapour leaving the flask passes the thermometer bulb, placed level with the side arm so it reads the temperature of the vapour that is distilling, then condenses in a sloping condenser and is collected. Water enters the lower end of the condenser.",
+ "alt": "A heated flask, a still head with a thermometer bulb at the side arm, a sloping condenser with water in at the lower end, and a collecting flask.",
+ "description": [
+  "Heat the mixture.",
+  "Thermometer bulb level with the side arm.",
+  "Condenser: water in at the lower end, out at the upper end.",
+  "The distillate is collected."
+ ],
+ "kind": "distillation",
+ "mixture": "ethanol and water"
+}

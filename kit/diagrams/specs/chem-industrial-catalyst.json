@@ -1,0 +1,109 @@
+{
+ "id": "chem-industrial-catalyst",
+ "renderer": "energy-profile",
+ "course": "chemistry",
+ "unit": "u17",
+ "lesson": "Catalysis in industry",
+ "title": "The Haber process with and without iron",
+ "caption": "Breaking the N≡N triple bond gives the uncatalysed reaction a very high activation energy. On iron, nitrogen and hydrogen adsorb and react in a series of lower-barrier surface steps, so the rate is fast enough at 450 °C. ΔH (−92 kJ mol⁻¹) is unchanged.",
+ "alt": "Two profiles: uncatalysed with one very high peak; catalysed with several small humps; both ending at the same lower product level.",
+ "description": [
+  "Uncatalysed: one high barrier.",
+  "On iron: several smaller barriers via adsorbed intermediates.",
+  "Same start and finish: ΔH unchanged."
+ ],
+ "profiles": [
+  {
+   "title": "uncatalysed",
+   "colour": "a1",
+   "points": [
+    {
+     "x": 0,
+     "e": 60,
+     "kind": "start",
+     "label": "N₂ + 3H₂"
+    },
+    {
+     "x": 0.5,
+     "e": 170,
+     "kind": "ts",
+     "label": "TS"
+    },
+    {
+     "x": 1,
+     "e": 15,
+     "kind": "end",
+     "label": "2NH₃"
+    }
+   ],
+   "ea": [
+    {
+     "from": 0,
+     "to": 1,
+     "label": "Ea",
+     "dx": 0,
+     "anchor": "start"
+    }
+   ],
+   "expect": {
+    "ts": 1,
+    "int": 0,
+    "dh": "exothermic"
+   }
+  },
+  {
+   "title": "on iron",
+   "colour": "a4",
+   "points": [
+    {
+     "x": 0,
+     "e": 60,
+     "kind": "start",
+     "label": "N₂ + 3H₂"
+    },
+    {
+     "x": 0.2,
+     "e": 95,
+     "kind": "ts",
+     "label": ""
+    },
+    {
+     "x": 0.38,
+     "e": 45,
+     "kind": "int",
+     "label": "N(ads)"
+    },
+    {
+     "x": 0.58,
+     "e": 80,
+     "kind": "ts",
+     "label": ""
+    },
+    {
+     "x": 0.75,
+     "e": 35,
+     "kind": "int",
+     "label": "NH(ads)"
+    },
+    {
+     "x": 0.88,
+     "e": 62,
+     "kind": "ts",
+     "label": ""
+    },
+    {
+     "x": 1,
+     "e": 15,
+     "kind": "end",
+     "label": "2NH₃"
+    }
+   ],
+   "expect": {
+    "ts": 3,
+    "int": 2,
+    "rds": 1,
+    "dh": "exothermic"
+   }
+  }
+ ]
+}

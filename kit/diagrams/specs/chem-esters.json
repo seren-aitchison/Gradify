@@ -1,0 +1,56 @@
+{
+ "id": "chem-esters",
+ "renderer": "structures",
+ "course": "chemistry",
+ "unit": "u14",
+ "lesson": "Esters",
+ "title": "Esters",
+ "caption": "Esters, R–COO–R′, are named from the alcohol part then the acid part. Many smell fruity: ethyl ethanoate (nail varnish remover), ethyl butanoate (pineapple), 3-methylbutyl ethanoate (pear drops, banana).",
+ "alt": "Ethyl ethanoate, ethyl butanoate and 3-methylbutyl ethanoate with the ester group shaded.",
+ "description": [
+  "Ethyl ethanoate, CH₃COOC₂H₅.",
+  "Ethyl butanoate.",
+  "3-Methylbutyl ethanoate."
+ ],
+ "panels": [
+  {
+   "smiles": "CCOC(C)=O",
+   "label": "ethyl ethanoate",
+   "groups": [
+    "ester"
+   ],
+   "highlight": [
+    {
+     "group": "ester",
+     "colour": "a5"
+    }
+   ]
+  },
+  {
+   "smiles": "CCCC(=O)OCC",
+   "label": "ethyl butanoate",
+   "groups": [
+    "ester"
+   ],
+   "highlight": [
+    {
+     "group": "ester",
+     "colour": "a5"
+    }
+   ]
+  },
+  {
+   "smiles": "CC(C)CCOC(C)=O",
+   "label": "3-methylbutyl ethanoate",
+   "groups": [
+    "ester"
+   ],
+   "highlight": [
+    {
+     "group": "ester",
+     "colour": "a5"
+    }
+   ]
+  }
+ ]
+}

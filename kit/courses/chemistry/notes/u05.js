@@ -11,6 +11,7 @@ H: Properties
 - They are highly **compressible** because particles are far apart.
 - They **mix** completely and diffuse quickly.
 - Gas densities are low, roughly a thousandth of liquid densities.
+D: chem-gas-particles
 H: Pressure and units
 - **Pressure** is force per unit area, caused by particles colliding with walls.
 - SI unit: the **pascal** (Pa) = 1 N m⁻²; 1 atm = 101,325 Pa = 101.3 kPa.
@@ -52,6 +53,7 @@ H: The laws
 - **Charles's law**: at constant pressure, V/T = constant.
 - **Gay-Lussac's law**: at constant volume, p/T = constant.
 - **Avogadro's law**: at constant p and T, volume is proportional to amount of gas.
+D: chem-boyle
 H: Combined gas law
 - p₁V₁/T₁ = p₂V₂/T₂ for a fixed amount of gas.
 - Temperatures must be in kelvin.
@@ -93,6 +95,7 @@ H: The equation
 - p in pascals, V in m³, n in moles, T in kelvin.
 - R = **8.314 J K⁻¹ mol⁻¹**, the gas constant.
 - 1 dm³ = 1 × 10⁻³ m³; 1 cm³ = 1 × 10⁻⁶ m³.
+D: chem-charles
 H: Uses
 - Find the **amount** of gas: n = pV ÷ RT.
 - Find **molar mass**: M = mRT ÷ pV.
@@ -134,6 +137,7 @@ H: Ideal assumptions
 - There are **no intermolecular forces** between particles.
 - Collisions are **perfectly elastic**.
 - Particles move randomly in straight lines.
+D: chem-real-gas-z
 H: Deviations
 - Real gases deviate at **high pressure** and **low temperature**.
 - At high pressure, particle volume becomes significant compared with the container.
@@ -175,6 +179,7 @@ H: Postulates
 - Particles have negligible volume and no forces between them except during collisions.
 - Collisions are elastic.
 - **Average kinetic energy is proportional to kelvin temperature**.
+D: chem-maxwell-boltzmann-T
 H: Speeds
 - At a given temperature, particles have a **range of speeds**.
 - The **Maxwell-Boltzmann distribution** shows the spread.
@@ -216,6 +221,7 @@ H: Particles
 - They move past each other, so liquids **flow** and take the shape of their container.
 - Liquids have a **fixed volume** and are only slightly compressible.
 - Particles have short-range order but no long-range order.
+D: chem-liquid-particles
 H: Properties
 - Stronger intermolecular forces give higher **boiling points**, **viscosity** and **surface tension**.
 - Weaker forces give more **volatile** liquids that evaporate easily.
@@ -257,6 +263,7 @@ H: Definition
 - The pressure of the vapour then is the **vapour pressure**.
 - It depends only on the substance and temperature, not on the amount of liquid.
 - Volatile liquids have high vapour pressures.
+D: chem-vapour-pressure
 H: Boiling
 - Vapour pressure **increases with temperature**.
 - A liquid **boils** when its vapour pressure equals the external pressure.
@@ -298,6 +305,7 @@ H: Changes of state
 - **Boiling** or **evaporation** (liquid → gas) and **condensation** (gas → liquid).
 - **Sublimation** (solid → gas) and **deposition** (gas → solid).
 - Melting, boiling and sublimation are **endothermic**.
+D: chem-heating-curve
 H: Heating curves
 - On heating, temperature rises until a change of state begins.
 - During melting and boiling, temperature stays **constant**.
@@ -339,6 +347,7 @@ H: Features
 - Lines show conditions where two phases coexist in equilibrium.
 - The **triple point** is where all three phases coexist.
 - The **critical point** is beyond which liquid and gas become a single **supercritical fluid**.
+D: chem-phase-water
 H: Water and CO₂
 - Water's solid-liquid line slopes **backwards**: increasing pressure can melt ice, because ice is less dense.
 - CO₂'s triple point is at 5.1 atm, so at 1 atm solid CO₂ **sublimes**.
@@ -380,6 +389,7 @@ H: Particles
 - Solids have a **fixed shape and volume**.
 - They are generally incompressible.
 - Particles gain vibrational energy when heated until the solid melts.
+D: chem-solid-types-lattice
 H: Types
 - **Crystalline** solids have a regular, repeating arrangement.
 - **Amorphous** solids lack long-range order, such as glass.
@@ -421,6 +431,7 @@ H: Features
 - **Sharp melting points**, because all bonds are equivalent.
 - Flat faces and characteristic angles.
 - Can be ionic, molecular, covalent network or metallic.
+D: chem-cubic-cells
 H: Directions and defects
 - **Anisotropy**: some properties vary with direction, such as graphite conducting along layers.
 - **Cleavage**: crystals split along planes of weakness.
@@ -462,6 +473,7 @@ H: Structure
 - Examples: **glass**, many **polymers**, amorphous silicon and candyfloss.
 - They often form when liquids are **cooled rapidly**, so particles cannot arrange.
 - They **soften over a range** of temperatures instead of melting sharply.
+D: chem-crystalline-amorphous
 H: Glass transition and comparison
 - The **glass transition temperature** (Tg) is where an amorphous solid changes from hard and brittle to soft and rubbery.
 - Quartz is crystalline SiO₂; glass is amorphous SiO₂.
@@ -503,6 +515,7 @@ H: Terms
 - **Solvent**: the substance it dissolves in.
 - **Solution**: a homogeneous mixture.
 - Solutions can be solid (alloys), liquid or gaseous (air).
+D: chem-dissolving
 H: Dissolving
 - Solute-solute and solvent-solvent attractions are broken.
 - New solute-solvent attractions form.
@@ -544,6 +557,7 @@ H: Definitions
 - A **saturated** solution holds the maximum; an **unsaturated** one holds less.
 - **Supersaturated** solutions hold more than the equilibrium amount and are unstable.
 - Often expressed as g per 100 g of water.
+D: chem-solubility-curve
 H: Factors
 - **Like dissolves like**: polar solutes in polar solvents, non-polar in non-polar.
 - Solubility of most solids **increases** with temperature.
@@ -628,6 +642,7 @@ H: The properties
 - **Boiling point elevation**: ΔTb = Kb × m.
 - **Freezing point depression**: ΔTf = Kf × m.
 - **Osmotic pressure** is also colligative.
+D: chem-colligative
 H: Particles and uses
 - m is molality; for water, Kf = 1.86 K kg mol⁻¹.
 - Ionic solutes give more particles: NaCl gives two, CaCl₂ three (the **van 't Hoff factor**, i).
@@ -669,6 +684,7 @@ H: Osmosis
 - **Osmotic pressure** (Π) is the pressure needed to stop osmosis.
 - **Π = iMRT**, where M is molarity, R the gas constant and T kelvin temperature.
 - Osmotic pressure is a colligative property.
+D: chem-osmosis
 H: Applications
 - **Isotonic** intravenous drips match the osmotic pressure of blood.
 - **Reverse osmosis**: applying pressure greater than Π forces solvent from concentrated to dilute.
@@ -710,6 +726,7 @@ H: Diffusion
 - It continues until concentrations are **uniform**.
 - Faster in gases than liquids and very slow in solids.
 - Rate increases with **temperature** and **concentration gradient**.
+D: chem-diffusion
 H: Graham's law
 - **Effusion** is the escape of gas through a tiny hole.
 - **Graham's law**: rate of effusion ∝ 1/√M.
@@ -751,6 +768,7 @@ H: Cause
 - Molecules at the surface are pulled **inwards** and sideways only.
 - This creates **surface tension**, minimising surface area.
 - Stronger intermolecular forces give higher surface tension; water's is high due to hydrogen bonding.
+D: chem-surface-tension
 H: Effects and surfactants
 - Droplets form **spheres**, the shape with smallest surface area.
 - Some insects, such as pond skaters, walk on water.

@@ -1,0 +1,112 @@
+{
+ "id": "chem-hybridisation-sp3",
+ "renderer": "levels",
+ "course": "chemistry",
+ "unit": "u04",
+ "lesson": "Hybridisation",
+ "title": "sp³ hybridisation in carbon",
+ "caption": "Carbon's 2s and three 2p orbitals mix into four equivalent sp³ hybrids of equal energy, each holding one electron, which point to the corners of a tetrahedron and form four identical bonds, as in methane.",
+ "alt": "Energy diagram: one 2s level and three higher 2p levels on the left; four equal sp³ levels between them on the right.",
+ "description": [
+  "Left: 2s lower, three 2p orbitals higher.",
+  "Right: four sp³ orbitals at one energy in between.",
+  "Four orbitals in, four out."
+ ],
+ "kind": "custom",
+ "height": [
+  280,
+  300
+ ],
+ "levels": [
+  {
+   "id": "s",
+   "label": "2s",
+   "E": 0,
+   "x0": 0.1,
+   "x1": 0.22
+  },
+  {
+   "id": "p0",
+   "label": "2p",
+   "E": 3,
+   "x0": 0.1,
+   "x1": 0.22
+  },
+  {
+   "id": "p1",
+   "label": "",
+   "E": 3,
+   "x0": 0.24000000000000002,
+   "x1": 0.36
+  },
+  {
+   "id": "p2",
+   "label": "",
+   "E": 3,
+   "x0": 0.38,
+   "x1": 0.5
+  },
+  {
+   "id": "h0",
+   "label": "",
+   "E": 2.25,
+   "x0": 0.6,
+   "x1": 0.68
+  },
+  {
+   "id": "h1",
+   "label": "",
+   "E": 2.25,
+   "x0": 0.7,
+   "x1": 0.78
+  },
+  {
+   "id": "h2",
+   "label": "",
+   "E": 2.25,
+   "x0": 0.8,
+   "x1": 0.8800000000000001
+  },
+  {
+   "id": "h3",
+   "label": "",
+   "E": 2.25,
+   "x0": 0.9,
+   "x1": 0.9800000000000001
+  }
+ ],
+ "notes": [
+  {
+   "x": 0.75,
+   "E": 2.25,
+   "dy": -18,
+   "text": "four sp³ hybrids",
+   "bold": true,
+   "colour": "a2"
+  },
+  {
+   "x": 0.25,
+   "E": 0,
+   "dy": 18,
+   "text": "atomic orbitals"
+  }
+ ],
+ "transitions": [
+  {
+   "from": "s",
+   "to": "h0",
+   "x": 0.45,
+   "label": "mix",
+   "colour": "a5",
+   "dash": "5 4"
+  }
+ ],
+ "claims": [
+  {
+   "type": "conserve",
+   "name": "four atomic orbitals (one 2s, three 2p) give four hybrids",
+   "before": 4,
+   "after": 4
+  }
+ ]
+}

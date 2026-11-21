@@ -1,0 +1,108 @@
+{
+ "id": "chem-structural-isomers",
+ "renderer": "structures",
+ "course": "chemistry",
+ "unit": "u12",
+ "lesson": "Structural isomerism",
+ "title": "Three kinds of structural isomer",
+ "caption": "Chain isomers have different skeletons (butane, methylpropane); position isomers have the group in a different place (propan-1-ol, propan-2-ol); functional group isomers have different groups (ethanol, methoxymethane). Each pair shares a molecular formula.",
+ "alt": "Three pairs of isomers: butane and methylpropane, propan-1-ol and propan-2-ol, ethanol and methoxymethane.",
+ "description": [
+  "Chain: butane and methylpropane, both C₄H₁₀.",
+  "Position: propan-1-ol and propan-2-ol, both C₃H₈O.",
+  "Functional group: ethanol and methoxymethane, both C₂H₆O."
+ ],
+ "perRow": [
+  2,
+  2
+ ],
+ "bond": [
+  32,
+  28
+ ],
+ "panels": [
+  {
+   "smiles": "CCCC",
+   "label": "butane",
+   "sub": "C₄H₁₀, chain isomers",
+   "formula": "C4H10"
+  },
+  {
+   "smiles": "CC(C)C",
+   "label": "methylpropane",
+   "sub": "C₄H₁₀",
+   "formula": "C4H10"
+  },
+  {
+   "smiles": "CCCO",
+   "label": "propan-1-ol",
+   "sub": "C₃H₈O, position isomers",
+   "formula": "C3H8O",
+   "highlight": [
+    {
+     "group": "alcohol",
+     "colour": "a1"
+    }
+   ]
+  },
+  {
+   "smiles": "CC(C)O",
+   "label": "propan-2-ol",
+   "sub": "C₃H₈O",
+   "formula": "C3H8O",
+   "highlight": [
+    {
+     "group": "alcohol",
+     "colour": "a1"
+    }
+   ]
+  },
+  {
+   "smiles": "CCO",
+   "label": "ethanol",
+   "sub": "C₂H₆O, functional group isomers",
+   "formula": "C2H6O",
+   "highlight": [
+    {
+     "group": "alcohol",
+     "colour": "a1"
+    }
+   ]
+  },
+  {
+   "smiles": "COC",
+   "label": "methoxymethane",
+   "sub": "C₂H₆O",
+   "formula": "C2H6O",
+   "highlight": [
+    {
+     "group": "ether",
+     "colour": "a5"
+    }
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "type": "isomers",
+   "panels": [
+    0,
+    1
+   ]
+  },
+  {
+   "type": "isomers",
+   "panels": [
+    2,
+    3
+   ]
+  },
+  {
+   "type": "isomers",
+   "panels": [
+    4,
+    5
+   ]
+  }
+ ]
+}

@@ -1,0 +1,62 @@
+{
+ "id": "chem-catalytic-cycle",
+ "renderer": "flow",
+ "course": "chemistry",
+ "unit": "u07",
+ "lesson": "Catalytic cycles",
+ "title": "A homogeneous catalytic cycle",
+ "caption": "Peroxodisulfate and iodide ions are both negative and repel, so they react slowly. Fe²⁺ catalyses the reaction: it reduces S₂O₈²⁻ and becomes Fe³⁺, which oxidises I⁻ back to I₂ and becomes Fe²⁺ again. Each step is between oppositely charged ions.",
+ "alt": "A cycle between Fe²⁺ and Fe³⁺: S₂O₈²⁻ converts Fe²⁺ to Fe³⁺, and I⁻ converts Fe³⁺ back to Fe²⁺.",
+ "description": [
+  "S₂O₈²⁻ + 2Fe²⁺ → 2SO₄²⁻ + 2Fe³⁺.",
+  "2Fe³⁺ + 2I⁻ → 2Fe²⁺ + I₂.",
+  "Overall: S₂O₈²⁻ + 2I⁻ → 2SO₄²⁻ + I₂, with the iron regenerated."
+ ],
+ "layout": "cycle",
+ "radius": 110,
+ "nodes": [
+  {
+   "id": "f2",
+   "label": "Fe²⁺",
+   "tone": "a4"
+  },
+  {
+   "id": "f3",
+   "label": "Fe³⁺",
+   "tone": "a3"
+  }
+ ],
+ "edges": [
+  {
+   "from": "f2",
+   "to": "f3",
+   "label": "+ S₂O₈²⁻ → 2SO₄²⁻",
+   "eq": "S2O8^2- + 2Fe2+ → 2SO4^2- + 2Fe3+"
+  },
+  {
+   "from": "f3",
+   "to": "f2",
+   "label": "+ 2I⁻ → I₂",
+   "eq": "2Fe3+ + 2I- → 2Fe2+ + I2"
+  }
+ ],
+ "centre": "net: S₂O₈²⁻ + 2I⁻ → 2SO₄²⁻ + I₂",
+ "claims": [
+  {
+   "type": "net",
+   "steps": [
+    "S2O8^2- + 2Fe2+ → 2SO4^2- + 2Fe3+",
+    "2Fe3+ + 2I- → 2Fe2+ + I2"
+   ],
+   "net": "S2O8^2- + 2I- → 2SO4^2- + I2"
+  },
+  {
+   "type": "regenerated",
+   "species": "Fe2+",
+   "steps": [
+    "S2O8^2- + 2Fe2+ → 2SO4^2- + 2Fe3+",
+    "2Fe3+ + 2I- → 2Fe2+ + I2"
+   ]
+  }
+ ]
+}

@@ -84,16 +84,37 @@ a { color: inherit; }
   100% { transform: translate(-3vw, 6vh) scale(.95); }
 }
 /* ---------- Glass panels ---------- */
+/* Gradify glass: the Pro banner's material (kit/styles/components.css .lim-banner) as tokens, for every glass surface.
+   Frosted, never magnified: a brand tint (indigo, pink, orange) over smoked glass, a 22px blur, bright inner edges and a
+   thin spectrum rim drawn as a border-box background (no pseudo-elements, so it works on any element). */
+:root {
+  --gg-fill: rgba(18, 18, 28, .55);
+  --gg-tint: linear-gradient(135deg, rgba(70, 65, 255, .2), rgba(240, 85, 221, .15) 55%, rgba(255, 138, 0, .13));
+  --gg-tint-strong: linear-gradient(135deg, rgba(70, 65, 255, .42), rgba(240, 85, 221, .32) 55%, rgba(255, 138, 0, .28));
+  --gg-rim: linear-gradient(135deg, rgba(70, 65, 255, .7), rgba(240, 85, 221, .6) 35%, rgba(255, 86, 0, .5) 70%, rgba(255, 192, 2, .5));
+  --gg-rim-strong: linear-gradient(135deg, #4641ff, #f055dd 35%, #ff5600 70%, #ffc002);
+  --gg-blur: blur(22px) saturate(180%);
+  --gg-spec: inset 1.5px 1.5px 0 -.5px rgba(255, 255, 255, .5), inset -1px -1px 0 -.5px rgba(255, 255, 255, .25);
+  --gg-shadow: 0 24px 60px -24px rgba(0, 0, 0, .6);
+}
+:root[data-theme="light"] {
+  --gg-fill: rgba(255, 255, 255, .66);
+  --gg-tint: linear-gradient(135deg, rgba(70, 65, 255, .09), rgba(240, 85, 221, .07) 55%, rgba(255, 138, 0, .06));
+  --gg-tint-strong: linear-gradient(135deg, rgba(70, 65, 255, .16), rgba(240, 85, 221, .12) 55%, rgba(255, 138, 0, .1));
+  --gg-rim: linear-gradient(135deg, rgba(70, 65, 255, .45), rgba(240, 85, 221, .4) 35%, rgba(255, 86, 0, .35) 70%, rgba(255, 192, 2, .4));
+  --gg-spec: inset 1.5px 1.5px 0 -.5px rgba(255, 255, 255, .95), inset -1px -1px 0 -.5px rgba(255, 255, 255, .6);
+  --gg-shadow: 0 1px 2px rgba(22, 22, 48, .06), 0 18px 44px -22px rgba(22, 22, 48, .22);
+}
 .glass {
-  background: linear-gradient(180deg, rgba(var(--ink-rgb), .045), rgba(var(--ink-rgb), .01)), var(--panel);
-  -webkit-backdrop-filter: blur(22px) saturate(150%);
-  backdrop-filter: blur(22px) saturate(150%);
-  border: 1px solid var(--line);
-  box-shadow: inset 0 1px 0 var(--edge), 0 24px 48px -28px rgba(0, 0, 0, .85);
+  background: var(--gg-tint) padding-box, linear-gradient(var(--gg-fill), var(--gg-fill)) padding-box, var(--gg-rim) border-box;
+  -webkit-backdrop-filter: var(--gg-blur);
+  backdrop-filter: var(--gg-blur);
+  border: 1px solid transparent;
+  box-shadow: var(--gg-spec), var(--gg-shadow);
   border-radius: var(--radius);
 }
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-  .glass { background: var(--panel-strong); }
+  .glass { background: var(--gg-tint) padding-box, linear-gradient(var(--panel-strong), var(--panel-strong)) padding-box, var(--gg-rim) border-box; }
 }
 /* recessed area inside a panel */
 .inset {
@@ -103,7 +124,7 @@ a { color: inherit; }
   border-radius: 999px;
 }
 /* ---------- Liquid glass: thick glossy rim, specular top, coloured light underneath ---------- */
-.lg {
+.lg, .btn:not(.lg) {
   --glow: 255, 255, 255;
   position: relative; isolation: isolate;
   border: 1px solid rgba(var(--ink-rgb), .18);
@@ -120,17 +141,17 @@ a { color: inherit; }
 }
 /* the shine: the same shape as the element (border-radius: inherit), brightest along the top edge and fading out
    before the middle, so it follows a pill's rounded ends instead of floating inside as a separate lozenge */
-.lg::before {
+.lg::before, .btn:not(.lg)::before {
   content: ""; position: absolute; inset: 1px; z-index: -1;
   border-radius: inherit; pointer-events: none;
   background: linear-gradient(180deg, rgba(var(--ink-rgb), .2) 0%, rgba(var(--ink-rgb), .07) 38%, rgba(var(--ink-rgb), 0) 56%);
 }
-.lg::after {
+.lg::after, .btn:not(.lg)::after {
   content: ""; position: absolute; left: 14%; right: 14%; bottom: -9px; height: 14px; z-index: -1;
   border-radius: 50%; pointer-events: none;
   background: rgb(var(--glow)); filter: blur(12px); opacity: .45; transition: opacity .25s;
 }
-.lg:hover::after { opacity: .8; }
+.lg:hover::after, .btn:not(.lg):hover::after { opacity: .8; }
 /* ---------- Buttons + pills ---------- */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
@@ -195,7 +216,7 @@ a { color: inherit; }
   padding: 8px 8px 8px 16px; border-radius: 16px;
   margin-inline: calc(-1 * var(--bar-bleed));
 }
-.brand { display: flex; align-items: center; gap: 10px; font-weight: 600; text-decoration: none; font-size: 17px; letter-spacing: -.01em; }
+.brand { display: flex; align-items: center; gap: 10px; min-height: 44px; font-weight: 600; text-decoration: none; font-size: 17px; letter-spacing: -.01em; }
 .brand svg { width: 30px; height: 30px; }
 /* section links: plain text on the bar (no recessed track), a soft highlight on hover, and the current section in
    white with a small Gradify-gradient underline, like TechGradify's top bar */
@@ -215,6 +236,12 @@ a { color: inherit; }
 .bar .sections a.active::after { opacity: 1; transform: scaleX(1); }
 .bar .sections a:focus-visible { outline-offset: 1px; border-radius: 10px; }
 .bar .right { margin-left: auto; display: flex; align-items: center; gap: 14px; }
+/* a fixed height, so buttons added by scripts after first paint (search, reading settings, theme, account) never push
+   the page down and back up while it loads */
+.bar { box-sizing: border-box; height: 58px; }
+.bar .right { flex-wrap: nowrap; min-width: 0; }
+.bar .right > * { flex: none; }
+@media (max-width: 960px) { .bar { height: 56px; } }
 .bar .right .link { font-size: 14px; color: var(--mute); text-decoration: none; }
 .bar .right .link:hover { color: var(--fg); }
 .icon-btn {
@@ -286,8 +313,11 @@ header.bar.glass, header.sub-nav.glass {
   border: 1px solid transparent !important;
   background: linear-gradient(var(--bar-bg), var(--bar-bg)) padding-box, var(--bar-rainbow) border-box !important;
 }
-/* the full rainbow, end to end, so the bar reads the same on the web, the installed app and every sub-site */
-:root { --bar-rainbow: linear-gradient(90deg, #ff3b4d, #ff8a00 14%, #ffc002 28%, #34c759 43%, #1fc8c8 57%, #3c78d8 71%, #4641ff 80%, #8b3dff 90%, #f055dd); }
+/* the full rainbow, end to end, in pastel (soft, not primary), so the bar reads the same on the web, the installed app
+   and every sub-site; light mode a touch deeper so the 1px edge still shows on white. kit/ui/liquid-gl.js draws the same
+   pastel edge on the GPU */
+:root { --bar-rainbow: linear-gradient(90deg, #ffb3bd, #ffcfa3 14%, #ffe8a3 28%, #b8ebc4 43%, #a8e8e6 57%, #b0cdf5 71%, #bdbaff 80%, #d7bcff 90%, #f7bdec); }
+:root[data-theme="light"] { --bar-rainbow: linear-gradient(90deg, #ff9aa8, #ffbc85 14%, #ffd97a 28%, #94ddaa 43%, #85d9d6 57%, #93b8ef 71%, #a5a1ff 80%, #c5a3ff 90%, #f2a3e2); }
 
 
 /* light and dark switch, added to every top bar by kit/core/theme-boot.js */
@@ -297,7 +327,7 @@ header.bar.glass, header.sub-nav.glass {
 /* light mode: the aurora glow is a soft wash of the brand colours, not white light; shadows are lighter */
 :root[data-theme="light"] .aurora { opacity: .55; }
 :root[data-theme="light"] .aurora span { mix-blend-mode: multiply; }
-:root[data-theme="light"] .glass, :root[data-theme="light"] .panel { box-shadow: 0 1px 2px rgba(22, 22, 48, .06), 0 10px 30px -12px rgba(22, 22, 48, .14); }
+:root[data-theme="light"] .panel:not(.glass) { box-shadow: 0 1px 2px rgba(22, 22, 48, .06), 0 10px 30px -12px rgba(22, 22, 48, .14); }
 
 /* Dark islands: things that stay dark in light mode (3D stages, the night-time Earth map, lab canvases, the app pictured
    on the homepage), and cards painted in a brand colour, where text is white whatever the theme. Inside them every
@@ -305,7 +335,7 @@ header.bar.glass, header.sub-nav.glass {
    ISLANDS in scripts/theme-tokens.mjs. */
 :root[data-theme="light"] :is(.earth-map, .tree-wrap, .isle3d, .forest, .fs-key, .mv-stage, .mv-studio, .sm-3d-art, .lab-3d, .lab-cv, .lab-svg, .co-lab, .tablet, .shot-frame,
   .vc-stage, .vc-timeline, .vc-props, .holo, .spotlight, .bi-stage, .mv-labels, .mv-tip, .mv-controls, .mv-info,
-  .i-profile, .sub-course, .notify-ask, [class*="tone-"], .k-step:not(.s0), .co-lvbadge, .r-n, .dk-teal, .ng-tile, .cp-hero, .wd-funnel .s1, .wd-funnel .s2, .wd-funnel .s3, .wd-funnel .s4) {
+  .cx-fcard, .cx-bcover, .cx-rings, .cx-wok, .i-profile, .sub-course, .notify-ask, [class*="tone-"], .k-step:not(.s0), .co-lvbadge, .r-n, .dk-teal, .ng-tile, .cp-hero, .wd-funnel .s1, .wd-funnel .s2, .wd-funnel .s3, .wd-funnel .s4) {
   --fg: #fff; --mute: rgba(255, 255, 255, .78); --faint: rgba(255, 255, 255, .62);
   --ink-rgb: 255, 255, 255; --surface-rgb: 20, 20, 20; --sink-rgb: 0, 0, 0; --invert-bg: #fff; --invert-fg: #000;
   --line: rgba(255, 255, 255, .14); --line-strong: rgba(255, 255, 255, .26); --edge: rgba(255, 255, 255, .1);
@@ -388,3 +418,44 @@ header.bar.glass, header.sub-nav.glass {
 .a-read { position: fixed; z-index: 2147483050; padding: 8px 12px; border-radius: 99px; border: 0; background: var(--invert-bg); color: var(--invert-fg); font: 600 14px var(--sans); box-shadow: 0 6px 20px rgba(0, 0, 0, .35); cursor: pointer; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 .access-float { position: fixed; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom)); z-index: 90; width: 46px; height: 46px; border-radius: 50%; background: var(--panel-strong); border: 1px solid var(--line-strong); color: var(--fg); display: grid; place-items: center; cursor: pointer; }
+
+/* ---------- Glass controls: icon buttons and small round controls share the buttons' liquid glass ----------
+   One material for every control: a translucent body, a bright top rim and gloss, a soft shadow. Kept quiet so a
+   row of them (a toolbar) reads calmly. */
+:root { --spec-rgb: 255, 255, 255; }
+:is(.icon-btn, .theme-btn, .a11y-btn, .cx-ib:not(.off), .cx-ob, .cx-flowbtn, .co-x, .cx-fclose, .gai-ib, .gx-totop) {
+  border: 1px solid rgba(var(--ink-rgb), .14) !important;
+  background: radial-gradient(90% 60% at 50% 0%, rgba(var(--spec-rgb), .22), transparent 70%), linear-gradient(180deg, rgba(var(--ink-rgb), .07), rgba(var(--ink-rgb), .02)), rgba(var(--surface-rgb), .45) !important;
+  box-shadow: inset 0 1px 0 rgba(var(--spec-rgb), .5), inset 0 -8px 14px -11px rgba(var(--spec-rgb), .3), 0 6px 14px -10px rgba(0, 0, 0, .45) !important;
+  transition: transform .15s, box-shadow .2s, background .2s;
+}
+:is(.icon-btn, .theme-btn, .a11y-btn, .cx-ib:not(.off), .cx-ob, .cx-flowbtn, .co-x, .cx-fclose, .gai-ib, .gx-totop):hover { transform: translateY(-1px); box-shadow: inset 0 1px 0 rgba(var(--spec-rgb), .7), inset 0 -8px 14px -11px rgba(var(--spec-rgb), .4), 0 10px 18px -10px rgba(0, 0, 0, .5) !important; }
+.cx-ib:not(.off) { border-radius: 999px; }
+:root[data-theme="light"] :is(.icon-btn, .theme-btn, .a11y-btn, .cx-ib:not(.off), .cx-ob, .cx-flowbtn, .co-x, .cx-fclose, .gai-ib, .gx-totop) { border-color: rgba(var(--spec-rgb), .95) !important; box-shadow: inset 0 1px 0 rgb(var(--spec-rgb)), 0 0 0 1px rgba(22, 22, 48, .06), 0 6px 14px -10px rgba(22, 22, 48, .3) !important; }
+@media (prefers-reduced-transparency: reduce) { :is(.icon-btn, .theme-btn, .a11y-btn, .cx-ib:not(.off), .cx-ob, .cx-flowbtn, .co-x, .cx-fclose, .gai-ib, .gx-totop) { background: rgb(var(--surface-rgb)) !important; } }
+:root[data-a-contrast="high"] :is(.icon-btn, .theme-btn, .a11y-btn, .cx-ib:not(.off), .cx-ob, .cx-flowbtn, .co-x, .cx-fclose, .gai-ib, .gx-totop) { background: var(--bg) !important; border-color: var(--fg) !important; box-shadow: none !important; }
+
+/* a site's name: its accent colour, lightened for the dark bar (kit/core/site.js accentOf) and darkened for the light
+   one (accentOnLight), so it reads at 5.5:1 or more on both */
+:root[data-theme="light"] .site-accent[style*="--acc-l"] { color: var(--acc-l) !important; }
+
+/* a course page before its scripts arrive (kit/course/course.js fills #course): the space the course will take, and a
+   quiet placeholder of its hero card, so the footer doesn't sit under the header and then jump away, and the page
+   doesn't look empty while it loads */
+#course:empty { min-height: 100vh; }
+/* and once the course has drawn its header and tabs but not yet the view (a lesson waits for its notes): it still fills
+   the screen, so the footer doesn't show and then jump down twice */
+#course { min-height: 100vh; min-height: 100dvh; }
+#course:empty::before {
+  content: ""; display: block; height: 260px; margin-top: 24px; border-radius: 22px; border: 1px solid var(--line);
+  background: linear-gradient(100deg, rgba(var(--ink-rgb), .03) 30%, rgba(var(--ink-rgb), .08) 50%, rgba(var(--ink-rgb), .03) 70%) 0 0 / 300% 100%;
+  animation: course-wait 1.4s ease-in-out infinite;
+}
+@keyframes course-wait { from { background-position: 100% 0; } to { background-position: 0 0; } }
+@media (prefers-reduced-motion: reduce) { #course:empty::before { animation: none; } }
+
+/* the reading-settings button, named until it's first opened (kit/core/theme-boot.js) */
+.access-btn.access-named { width: auto !important; gap: 6px; padding: 0 12px 0 9px; border-radius: 999px; display: inline-flex; align-items: center; }
+.access-name { font: 600 13.5px var(--sans); }
+@media (max-width: 760px) { .access-btn.access-named { width: 36px !important; padding: 0; justify-content: center; } .access-name { display: none; } }
+@media (prefers-reduced-transparency: reduce) { .glass { background: linear-gradient(rgb(var(--surface-rgb)), rgb(var(--surface-rgb))) padding-box, var(--gg-rim) border-box; -webkit-backdrop-filter: none; backdrop-filter: none; } }

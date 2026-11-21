@@ -1426,7 +1426,7 @@ section[data-tab] { gap: 16px; }
 .offer-page > .sub { margin: 0; }
 .offer-perks { list-style: none; margin: 6px 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
 .offer-perks li { display: flex; gap: 12px; align-items: flex-start; padding: 16px; }
-.offer-perks li > svg { flex: none; width: 22px; height: 22px; color: #f055dd; }
+.offer-perks li > svg { flex: none; width: 22px; height: 22px; color: #f055dd; color: light-dark(#b2069d, #f055dd); }
 .offer-perks b { display: block; margin-bottom: 2px; }
 .offer-perks span { color: var(--mute); font-size: 14px; line-height: 1.45; }
 .offer-box { display: grid; gap: 8px; border: 1px solid transparent; background: linear-gradient(var(--panel-strong), var(--panel-strong)) padding-box, linear-gradient(135deg, #4641ff, #f055dd 35%, #ff5600 70%, #ffc002) border-box; }
@@ -1434,3 +1434,97 @@ section[data-tab] { gap: 16px; }
 .offer-price { margin: 0; font-size: 18px; } .offer-price b { font-size: 40px; letter-spacing: -.02em; margin-right: 4px; }
 .offer-note { margin: 0 0 12px; padding: 10px 14px; border-radius: 12px; border: 1px dashed #f055dd; color: var(--mute); }
 .offer-note b { color: var(--fg); }
+
+/* ----- Quick notes (kit/notes/jot.js): a note taker for one thumb. Every target is at least 44px, the writing box
+   is ready on arrival, and on phones the note's tools sit in a glass bar just above the tab bar ----- */
+.jt { display: grid; gap: 16px; max-width: 860px; }
+.jt-head h1 { margin: 0 0 4px; }
+.jt-ic { width: 20px; height: 20px; flex: none; }
+.jt-compose, .jt-strip { padding: 16px; }
+.jt-striph { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
+.jt-striph h2 { margin: 0; font-size: 18px; }
+.jt-striph a { font-size: 14px; color: var(--mute); }
+.jt-new { display: grid; gap: 12px; }
+.jt-new textarea { width: 100%; min-height: 64px; padding: 14px 16px; border-radius: 18px; border: 1px solid var(--line-strong); background: rgba(var(--ink-rgb), .05); color: var(--fg); font: 17px/1.5 var(--sans); resize: none; }
+.jt-new textarea:focus-visible { outline: 3px solid color-mix(in srgb, var(--accent, #6c63ff) 60%, transparent); outline-offset: 1px; }
+.jt-newrow { display: flex; align-items: center; gap: 10px; }
+.jt-newrow .jt-save { margin-left: auto; }
+.jt-status { font-size: 13.5px; color: var(--mute); min-width: 0; }
+/* tags: big pills, each with its own colour, picked as you write */
+.jt-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.jt-tag { position: relative; }
+.jt-tag input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
+.jt-tag span { display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--line-strong); background: rgba(var(--ink-rgb), .05); font-size: 14.5px; font-weight: 600; color: var(--mute); transition: background .15s, color .15s, border-color .15s; }
+.jt-tag input:checked + span { color: var(--fg); background: color-mix(in srgb, var(--tc) 22%, transparent); border-color: color-mix(in srgb, var(--tc) 70%, transparent); box-shadow: inset 0 1px 0 rgba(var(--spec-rgb), .25); }
+.jt-tag input:focus-visible + span { outline: 3px solid var(--fg); outline-offset: 2px; }
+.t-note { --tc: #8f8cff; } .t-lecture { --tc: #39b8ff; } .t-idea { --tc: #ffb020; } .t-todo { --tc: #2fd27a; } .t-question { --tc: #ff5fa2; }
+.jt-round { display: inline-grid; place-items: center; width: 48px; height: 48px; flex: none; border-radius: 50%; border: 1px solid var(--line-strong); background: rgba(var(--ink-rgb), .06); color: var(--fg); cursor: pointer; text-decoration: none; }
+.jt-round[data-mic][aria-pressed="true"] { background: color-mix(in srgb, #ff4d6d 25%, transparent); border-color: #ff4d6d; }   /* listening */
+.jt-round[data-pin][aria-pressed="true"] { background: color-mix(in srgb, #ffb020 25%, transparent); border-color: #ffb020; color: #ffb020; color: light-dark(#9a5b00, #ffb020); }
+.jt-find { display: grid; gap: 10px; }
+.jt-search { display: flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--line-strong); background: rgba(var(--ink-rgb), .05); color: var(--mute); }
+.jt-search:focus-within { outline: 3px solid color-mix(in srgb, var(--accent, #6c63ff) 60%, transparent); }
+.jt-search input { flex: 1; min-width: 0; border: 0; background: none; color: var(--fg); font: 17px var(--sans); outline: none; padding: 0; }
+.jt-filter { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 2px; scrollbar-width: none; }
+.jt-filter button { flex: none; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--line-strong); background: rgba(var(--ink-rgb), .05); color: var(--mute); font: 600 14px var(--sans); cursor: pointer; }
+.jt-filter button[aria-pressed="true"] { background: var(--invert-bg); color: var(--invert-fg); border-color: transparent; }
+.jt-filter small { opacity: .7; font-weight: 500; }
+.jt-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); gap: 12px; }
+.jt-mini { margin-top: 14px; }
+.jt-card { position: relative; display: grid; gap: 6px; min-height: 110px; padding: 14px 16px 12px 20px; border-radius: 20px; color: var(--fg); text-decoration: none; overflow: hidden;
+  background: linear-gradient(180deg, rgba(var(--spec-rgb), .08), rgba(var(--spec-rgb), .02)), rgba(var(--surface-rgb), .6); border: 1px solid var(--line-strong); box-shadow: inset 0 1px 0 rgba(var(--spec-rgb), .2); transition: transform .18s; }
+.jt-card::before { content: ""; position: absolute; left: 0; top: 12px; bottom: 12px; width: 4px; border-radius: 0 4px 4px 0; background: var(--tc); }
+.jt-card:hover { transform: translateY(-2px); }
+.jt-card:focus-visible { outline: 3px solid var(--fg); outline-offset: 2px; }
+.jt-ct { display: flex; align-items: flex-start; gap: 6px; }
+.jt-ct b { font-size: 16px; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; overflow-wrap: anywhere; }
+.jt-pinned .jt-ic { width: 16px; height: 16px; color: var(--tc); margin-top: 2px; }
+.jt-cb { font-size: 14px; line-height: 1.45; color: var(--mute); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; overflow-wrap: anywhere; }
+.jt-cm { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; margin-top: auto; font-size: 12.5px; color: var(--mute); }
+.jt-chip { font-style: normal; font-weight: 600; color: var(--fg); padding: 2px 9px; border-radius: 999px; background: color-mix(in srgb, var(--tc) 20%, transparent); }
+.jt-empty { grid-column: 1 / -1; padding: 22px; border-radius: 20px; border: 1px dashed var(--line-strong); color: var(--mute); text-align: center; }
+/* one note */
+.jt-one { gap: 12px; padding-bottom: 96px; }
+.jt-bar { display: flex; align-items: center; gap: 10px; }
+.jt-seg { display: inline-flex; padding: 4px; border-radius: 999px; background: rgba(var(--ink-rgb), .07); border: 1px solid var(--line-strong); }
+.jt-seg button { min-height: 40px; padding: 0 18px; border: 0; border-radius: 999px; background: none; color: var(--mute); font: 600 14.5px var(--sans); cursor: pointer; }
+.jt-seg button[aria-pressed="true"] { background: var(--invert-bg); color: var(--invert-fg); }
+.jt-saved { margin-left: auto; font-size: 13px; color: var(--mute); }
+.jt-text { width: 100%; min-height: 52vh; padding: 18px; border-radius: 22px; border: 1px solid var(--line-strong); background: rgba(var(--ink-rgb), .04); color: var(--fg); font: 18px/1.6 var(--sans); resize: none; }
+.jt-text:focus-visible { outline: 3px solid color-mix(in srgb, var(--accent, #6c63ff) 55%, transparent); outline-offset: 1px; }
+.jt-read { min-height: 40vh; padding: 18px 20px; border-radius: 22px; border: 1px solid var(--line-strong); background: rgba(var(--ink-rgb), .03); font-size: 18px; line-height: 1.6; }
+.jt-read h3 { margin: .6em 0 .3em; font-size: 21px; } .jt-read h3:first-child { margin-top: 0; }
+.jt-read p { margin: 0 0 .5em; } .jt-read .jt-gap { height: .4em; }
+.jt-read .jt-bul { position: relative; padding-left: 22px; } .jt-read .jt-bul::before { content: ""; position: absolute; left: 6px; top: .68em; width: 7px; height: 7px; border-radius: 50%; background: currentColor; opacity: .6; }
+.jt-todo { display: flex; align-items: flex-start; gap: 14px; min-height: 48px; padding: 8px 4px; border-bottom: 1px solid rgba(var(--ink-rgb), .07); cursor: pointer; }
+.jt-todo input { flex: none; width: 26px; height: 26px; margin: 1px 0 0; accent-color: #2fd27a; cursor: pointer; }
+.jt-todo input:checked + span { color: var(--mute); text-decoration: line-through; }
+.jt-when { margin: 0; font-size: 13px; color: var(--mute); }
+.jt-tools { display: flex; gap: 2px; overflow-x: auto; padding: 6px; border-radius: 24px; border: 1px solid var(--line-strong); background: rgba(var(--surface-rgb), .9); -webkit-backdrop-filter: blur(20px) saturate(160%); backdrop-filter: blur(20px) saturate(160%); scrollbar-width: none; }
+.jt-tools button { flex: 1 1 0; display: grid; justify-items: center; gap: 3px; min-width: 46px; min-height: 56px; padding: 6px 2px; border: 0; border-radius: 18px; background: none; color: var(--fg); font: 600 11.5px var(--sans); cursor: pointer; }
+.jt-tools button:hover:not(:disabled) { background: rgba(var(--ink-rgb), .08); }
+.jt-tools button:disabled { opacity: .35; cursor: default; }
+.jt-tools button[aria-pressed="true"] { background: color-mix(in srgb, #ff4d6d 25%, transparent); }
+.jt-tools .jt-del { color: #ff6b7d; color: light-dark(#c8102e, #ff6b7d); }
+.jt-undo { margin-left: 8px; min-height: 36px; padding: 0 14px; border-radius: 999px; border: 0; background: var(--invert-bg); color: var(--invert-fg); font: 600 13px var(--sans); cursor: pointer; }
+@media (max-width: 860px) {
+  .jt-one .jt-tools { position: fixed; left: 12px; right: 12px; bottom: calc(80px + env(safe-area-inset-bottom, 0px)); z-index: 31; box-shadow: 0 14px 34px -12px rgba(0, 0, 0, .55); }
+  .jt-one { padding-bottom: 170px; }
+  .jt-text { min-height: 46vh; }
+}
+@media (max-width: 560px) {
+  .jt-newrow .jt-save { flex: 1; }
+  .jt-list { grid-template-columns: 1fr; }
+  .jt-card { min-height: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .jt-card, .jt-tag span { transition: none; } .jt-card:hover { transform: none; } }
+:root[data-a-contrast="high"] :is(.jt-card, .jt-tools, .jt-new textarea, .jt-text, .jt-read) { background: var(--bg); border-color: var(--fg); box-shadow: none; }
+
+/* Gradify glass (tokens in kit/styles/base.css): the side menu, and the phone tab bar with the stronger tint, like the Pro banner */
+:root body :is(.lo-side, .tabbar) {
+  border: 1px solid transparent;
+  background: var(--gg-tint) padding-box, linear-gradient(var(--gg-fill), var(--gg-fill)) padding-box, var(--gg-rim) border-box;
+  -webkit-backdrop-filter: var(--gg-blur); backdrop-filter: var(--gg-blur);
+  box-shadow: var(--gg-spec), var(--gg-shadow);
+}
+:root body .tabbar { background: var(--gg-tint-strong) padding-box, linear-gradient(var(--gg-fill), var(--gg-fill)) padding-box, var(--gg-rim-strong) border-box; }

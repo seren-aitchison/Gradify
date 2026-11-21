@@ -1,0 +1,72 @@
+{
+ "id": "chem-electron-affinity-p3",
+ "renderer": "trend",
+ "course": "chemistry",
+ "unit": "u02",
+ "lesson": "Electron affinity",
+ "title": "First electron affinities across period 3",
+ "caption": "Gaining an electron releases energy for these atoms, most of all for chlorine, whose extra electron completes the 3p sub-shell. Phosphorus (3p³, half-filled) releases less than silicon: its value is less negative. Magnesium and argon form no stable 1− ion and are left out.",
+ "alt": "Bar chart of first electron affinities, all negative: sodium −53, aluminium −42, silicon −134, phosphorus −72, sulfur −200, chlorine −349 kJ mol⁻¹.",
+ "description": [
+  "Sodium −53, aluminium −42 and silicon −134 kJ mol⁻¹.",
+  "Phosphorus −72, smaller than silicon because its 3p is half filled.",
+  "Sulfur −200 and chlorine −349, the most exothermic."
+ ],
+ "kind": "bars",
+ "dataset": "ea1",
+ "range": [
+  -400,
+  0
+ ],
+ "ticks": [
+  -400,
+  -300,
+  -200,
+  -100,
+  0
+ ],
+ "yLabel": "first electron affinity / kJ mol⁻¹",
+ "items": [
+  {
+   "key": "Na",
+   "value": -53
+  },
+  {
+   "key": "Al",
+   "value": -42
+  },
+  {
+   "key": "Si",
+   "value": -134
+  },
+  {
+   "key": "P",
+   "value": -72
+  },
+  {
+   "key": "S",
+   "value": -200
+  },
+  {
+   "key": "Cl",
+   "value": -349
+  }
+ ],
+ "highlight": {
+  "Cl": "a2",
+  "P": "a3"
+ },
+ "claims": [
+  {
+   "type": "min",
+   "key": "Cl"
+  },
+  {
+   "type": "order",
+   "keys": [
+    "Si",
+    "P"
+   ]
+  }
+ ]
+}

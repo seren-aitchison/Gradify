@@ -1,0 +1,60 @@
+{
+ "id": "chem-formation-cycle",
+ "renderer": "cycle",
+ "course": "chemistry",
+ "unit": "u06",
+ "lesson": "Enthalpy of formation",
+ "title": "ΔrH from enthalpies of formation",
+ "caption": "For C₂H₄ + H₂ → C₂H₆, both routes from the elements must give the same total: ΔrH = ΣΔfH(products) − ΣΔfH(reactants) = −84 − (+52) = −136 kJ mol⁻¹.",
+ "alt": "A Hess triangle: reactants C₂H₄ + H₂ top left, product C₂H₆ top right, elements 2C + 3H₂ at the bottom; arrows from the elements up to each side.",
+ "description": [
+  "Elements 2C(s) + 3H₂(g) at the bottom.",
+  "Up to C₂H₄ + H₂: ΔfH = +52 kJ mol⁻¹ (H₂ is an element, 0).",
+  "Up to C₂H₆: ΔfH = −84 kJ mol⁻¹.",
+  "So ΔrH = −84 − 52 = −136 kJ mol⁻¹."
+ ],
+ "kind": "triangle",
+ "states": [
+  {
+   "id": "r",
+   "label": "C2H4 + H2"
+  },
+  {
+   "id": "p",
+   "label": "C2H6"
+  },
+  {
+   "id": "e",
+   "label": "2C + 3H2 (elements)"
+  }
+ ],
+ "steps": [
+  {
+   "from": "r",
+   "to": "p",
+   "dh": null,
+   "label": "ΔrH"
+  },
+  {
+   "from": "e",
+   "to": "r",
+   "dh": 52,
+   "label": "ΔfH"
+  },
+  {
+   "from": "e",
+   "to": "p",
+   "dh": -84,
+   "label": "ΔfH"
+  }
+ ],
+ "find": {
+  "step": 0,
+  "value": -136
+ },
+ "equations": [
+  "C2H4 + H2 → C2H6",
+  "2C + 2H2 → C2H4",
+  "2C + 3H2 → C2H6"
+ ]
+}

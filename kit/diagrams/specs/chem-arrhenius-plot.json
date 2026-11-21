@@ -1,0 +1,64 @@
+{
+ "id": "chem-arrhenius-plot",
+ "renderer": "graph",
+ "course": "chemistry",
+ "unit": "u07",
+ "lesson": "Arrhenius equation",
+ "title": "The Arrhenius plot",
+ "caption": "ln k = ln A − Ea/RT, so plotting ln k against 1/T gives a straight line of gradient −Ea/R. Here the gradient is −6.01 × 10³ K, so Ea = 6.01 × 10³ × 8.314 = 50 kJ mol⁻¹.",
+ "alt": "ln k against 1/T (in units of 10⁻³ K⁻¹): a straight line falling with gradient −6.01.",
+ "description": [
+  "x-axis: 1/T from 2.6 to 3.6 × 10⁻³ K⁻¹.",
+  "Gradient −Ea/R = −6.01 × 10³ K.",
+  "Intercept (at 1/T = 0) ln A = 20."
+ ],
+ "range": {
+  "x": [
+   2.6,
+   3.6
+  ],
+  "y": [
+   -2,
+   5
+  ]
+ },
+ "ticks": [
+  [
+   2.8,
+   3.0,
+   3.2,
+   3.4,
+   3.6
+  ],
+  [
+   -2,
+   0,
+   2,
+   4
+  ]
+ ],
+ "grid": [
+  0.2,
+  1
+ ],
+ "axisLabels": [
+  "1/T / 10⁻³ K⁻¹",
+  "ln k"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "20-6.0140*x",
+   "colour": "a1"
+  }
+ ],
+ "checks": [
+  {
+   "type": "slope",
+   "expr": "20-6.0140*x",
+   "x": 3,
+   "value": -6.014,
+   "name": "gradient = −Ea/R; with Ea = 50 kJ mol⁻¹ that is −6.01 × 10³ K"
+  }
+ ]
+}

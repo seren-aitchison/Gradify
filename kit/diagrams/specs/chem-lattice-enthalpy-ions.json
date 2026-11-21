@@ -1,0 +1,54 @@
+{
+ "id": "chem-lattice-enthalpy-ions",
+ "renderer": "trend",
+ "course": "chemistry",
+ "unit": "u04",
+ "lesson": "Lattice enthalpy",
+ "title": "Lattice enthalpy and ion size",
+ "caption": "Lattice enthalpy becomes less exothermic from NaF to NaI: the halide ions get larger, so the oppositely charged ions are further apart and attract less. Charge matters even more: MgO, with 2+ and 2− ions, is −3791 kJ mol⁻¹.",
+ "alt": "Bar chart of lattice enthalpies: NaF −923, NaCl −787, NaBr −747, NaI −704 kJ/mol.",
+ "description": [
+  "NaF −923 kJ mol⁻¹.",
+  "NaCl −787.",
+  "NaBr −747.",
+  "NaI −704: the largest anion, the least exothermic."
+ ],
+ "kind": "bars",
+ "dataset": "latticeNaX",
+ "range": [
+  -1000,
+  0
+ ],
+ "ticks": [
+  -1000,
+  -750,
+  -500,
+  -250,
+  0
+ ],
+ "yLabel": "lattice enthalpy of formation / kJ mol⁻¹",
+ "colour": "a3",
+ "items": [
+  {
+   "key": "NaF",
+   "value": -923
+  },
+  {
+   "key": "NaCl",
+   "value": -787
+  },
+  {
+   "key": "NaBr",
+   "value": -747
+  },
+  {
+   "key": "NaI",
+   "value": -704
+  }
+ ],
+ "claims": [
+  {
+   "type": "increasing"
+  }
+ ]
+}

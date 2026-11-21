@@ -1,0 +1,51 @@
+{
+ "id": "chem-phenol-acidity",
+ "renderer": "structures",
+ "course": "chemistry",
+ "unit": "u14",
+ "lesson": "Phenols",
+ "title": "Why phenol is more acidic than ethanol",
+ "caption": "Phenol (pKa 10.0) loses H⁺ far more readily than ethanol (pKa about 16) because the phenoxide ion's charge is delocalised into the benzene ring. Ethoxide has nowhere to spread its charge.",
+ "alt": "Phenol in equilibrium with phenoxide, compared with ethanol in equilibrium with ethoxide.",
+ "description": [
+  "Phenol ⇌ phenoxide + H⁺: pKa 10.0, charge spread into the ring.",
+  "Ethanol ⇌ ethoxide + H⁺: pKa about 16, charge on oxygen only."
+ ],
+ "perRow": [
+  2,
+  2
+ ],
+ "between": [
+  "⇌",
+  "",
+  "⇌"
+ ],
+ "panels": [
+  {
+   "smiles": "Oc1ccccc1",
+   "label": "phenol",
+   "sub": "pKa 10.0",
+   "groups": [
+    "phenol"
+   ]
+  },
+  {
+   "smiles": "[O-]c1ccccc1",
+   "label": "phenoxide",
+   "sub": "charge delocalised"
+  },
+  {
+   "smiles": "CCO",
+   "label": "ethanol",
+   "sub": "pKa about 16",
+   "groups": [
+    "alcohol"
+   ]
+  },
+  {
+   "smiles": "CC[O-]",
+   "label": "ethoxide",
+   "sub": "charge localised"
+  }
+ ]
+}

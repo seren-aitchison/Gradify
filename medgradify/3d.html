@@ -14,10 +14,12 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
   <link rel="stylesheet" href="../kit/styles/base.css">
   <script src="../kit/core/theme-boot.js"></script>
+  <!-- the anatomy model (6 MB) starts downloading now, while the page's scripts load, not after them -->
+  <link rel="preload" href="../kit/vendor/anatomy/anatomy-male.glb" as="fetch" crossorigin>
+  <link rel="preload" href="../kit/vendor/anatomy/catalog.json" as="fetch" crossorigin>
   <link rel="stylesheet" href="../kit/styles/components.css">
   <link rel="stylesheet" href="../kit/styles/subsite.css">
   <link rel="stylesheet" href="../kit/styles/model.css">
-  <script src="../kit/vendor/supabase/supabase.js" defer></script>
   <script type="module">
     import { SITES, nameHtml, accentOf } from "../kit/core/site.js";
     import { icon } from "../kit/core/icons.js";
@@ -44,10 +46,8 @@
       <nav class="sub-links" aria-label="MedGradify">
         <a href="course/">Course</a>
         <a href="app.html#/study">Study</a>
-        <a href="map.html">Map</a>
-        <a href="lifeos.html">LifeOS</a>
         <a href="3d.html" aria-current="page">Anatomy 3D</a>
-        <details class="sub-more"><summary>More</summary><div class="sub-more-list"><a href="app.html#/notes">Notes</a><a href="app.html#/progress">Progress</a><a href="app.html#/plan">Plan</a><a href="/">All Gradify sites</a></div></details>
+        <details class="sub-more"><summary>More</summary><div class="sub-more-list"><a href="map.html">Map</a><a href="lifeos.html">LifeOS</a><a href="app.html#/notes">Notes</a><a href="app.html#/progress">Progress</a><a href="app.html#/plan">Plan</a><a href="/">All Gradify sites</a></div></details>
       </nav>
       <div class="sub-right">
         <a class="signin" href="app.html#/account">Sign in</a>

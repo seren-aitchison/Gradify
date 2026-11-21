@@ -32,6 +32,9 @@ const check = (label, ok, detail = "") => { results.push({ section, label, ok, d
 const head = (s) => { section = s; console.log(`\n${s}`); };
 const until = async (fn, ms = 15000) => { const t = Date.now(); while (Date.now() - t < ms) { if (await fn()) return true; await new Promise((r) => setTimeout(r, 500)); } return false; };
 
+// the AI tutor is in the lesson's "Go deeper" section, which a learner opens with a tap
+const openDeeper = async (p) => { const s = p.locator("#co-deeper > summary"); if (await s.count() && !(await p.locator("#co-deeper").evaluate((d) => d.open))) await s.click(); };
+
 (async () => {
   head("1 Authentication");
   const s = await api("/auth/v1/token?grant_type=password", { method: "POST", body: { email: EMAIL, password: PASSWORD } });
@@ -99,12 +102,12 @@ const until = async (fn, ms = 15000) => { const t = Date.now(); while (Date.now(
   if (AI) {
     head("6 AI tutor (real model)");
     await pb.goto(`${BASE}/lawgradify/course/#/lesson/${LESSONS[0]}`); await pb.waitForTimeout(3000);
-    await pb.fill("#co-askq", "In one sentence, what makes a rule a law rather than a moral rule?"); await pb.click(".co-askform button");
+    await openDeeper(pb); await pb.fill("#co-askq", "In one sentence, what makes a rule a law rather than a moral rule?"); await pb.click(".co-askform button");
     const ok = await until(async () => (await pb.locator(".co-askans").count()) > 0, 90000);
     check("The tutor answers a real question", ok, (await pb.locator(".co-askout").innerText().catch(() => "")).slice(0, 140).replace(/\n/g, " "));
     await pb.evaluate((k) => { const v = JSON.parse(localStorage.getItem(k)); v.access_token = "expired.invalid.token"; localStorage.setItem(k, JSON.stringify(v)); }, KEY);
     await pb.reload(); await pb.waitForTimeout(3000);
-    await pb.fill("#co-askq", "In one sentence, what is equity?"); await pb.click(".co-askform button");
+    await openDeeper(pb); await pb.fill("#co-askq", "In one sentence, what is equity?"); await pb.click(".co-askform button");
     check("With an expired token, the tutor refreshes the session and still answers", await until(async () => (await pb.locator(".co-askans").count()) > 0, 90000), (await pb.locator(".co-askout").innerText().catch(() => "")).slice(0, 140).replace(/\n/g, " "));
   } else { head("6 AI tutor"); check("Skipped (run with --ai; one or two real requests)", true); results.at(-1).ok = null; }
 

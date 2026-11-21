@@ -1,0 +1,82 @@
+{
+ "id": "chem-radial-1s",
+ "renderer": "graph",
+ "course": "chemistry",
+ "unit": "u02",
+ "lesson": "Quantum mechanical model",
+ "title": "Where the 1s electron is",
+ "caption": "The radial probability distribution 4πr²ψ² for hydrogen's 1s electron. The electron is most likely to be found at the Bohr radius, a₀ = 52.9 pm, but there is a spread of distances: the quantum model replaces a fixed orbit with a probability.",
+ "alt": "Probability against distance from the nucleus in units of a₀: zero at the nucleus, a peak at 1 a₀, and a long tail.",
+ "description": [
+  "Zero at the nucleus.",
+  "Maximum at r = a₀ = 52.9 pm.",
+  "A tail stretching out several a₀."
+ ],
+ "range": {
+  "x": [
+   0,
+   6
+  ],
+  "y": [
+   0,
+   0.6
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  [
+   0.2,
+   0.4
+  ]
+ ],
+ "grid": [
+  1,
+  0.1
+ ],
+ "axisLabels": [
+  "r / a₀",
+  "radial probability"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "4*x^2*exp(-2*x)",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 1,
+   "label": "a₀ = 52.9 pm",
+   "to": 0.54
+  }
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "4*x^2*exp(-2*x)",
+   "domain": [
+    0,
+    6
+   ],
+   "x": 1,
+   "y": 0.54134,
+   "name": "the most probable distance is the Bohr radius, r = a₀"
+  },
+  {
+   "type": "area",
+   "expr": "4*x^2*exp(-2*x)",
+   "from": 0,
+   "to": 40,
+   "value": 1,
+   "name": "total probability 1"
+  }
+ ]
+}

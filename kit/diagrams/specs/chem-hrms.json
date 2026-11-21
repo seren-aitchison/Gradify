@@ -1,0 +1,58 @@
+{
+ "id": "chem-hrms",
+ "renderer": "ms",
+ "course": "chemistry",
+ "unit": "u15",
+ "lesson": "High-resolution mass spectrometry",
+ "title": "High-resolution mass spectrometry",
+ "caption": "CO, N₂ and C₂H₄ all have a nominal mass of 28, but their exact masses differ because isotopic masses are not whole numbers (¹²C is exactly 12, ¹H is 1.0078, ¹⁴N 14.0031, ¹⁶O 15.9949). Measured to four decimal places they are easily told apart.",
+ "alt": "Three narrow peaks near m/z 28: CO at 27.9949, N₂ at 28.0061 and C₂H₄ at 28.0313.",
+ "description": [
+  "CO: 27.9949.",
+  "N₂: 28.0061.",
+  "C₂H₄: 28.0313."
+ ],
+ "kind": "hrms",
+ "range": [
+  27.98,
+  28.04
+ ],
+ "tick": 0.01,
+ "peaks": [
+  {
+   "mz": 27.9949,
+   "rel": 80,
+   "label": "CO",
+   "colour": "a2"
+  },
+  {
+   "mz": 28.0061,
+   "rel": 80,
+   "label": "N₂",
+   "colour": "a1"
+  },
+  {
+   "mz": 28.0313,
+   "rel": 80,
+   "label": "C₂H₄",
+   "colour": "a4"
+  }
+ ],
+ "species": [
+  {
+   "formula": "CO",
+   "mass": 27.9949,
+   "nominal": 28
+  },
+  {
+   "formula": "N2",
+   "mass": 28.0061,
+   "nominal": 28
+  },
+  {
+   "formula": "C2H4",
+   "mass": 28.0313,
+   "nominal": 28
+  }
+ ]
+}

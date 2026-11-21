@@ -1,0 +1,92 @@
+{
+ "id": "chem-recrystallisation",
+ "renderer": "graph",
+ "course": "chemistry",
+ "unit": "u19",
+ "lesson": "Recrystallisation",
+ "title": "Recrystallisation",
+ "caption": "Benzoic acid is about 17 times more soluble in boiling water than at room temperature. Dissolving the crude solid in the minimum hot water, filtering, then cooling makes most of it crystallise out pure; soluble impurities stay in solution.",
+ "alt": "Solubility of benzoic acid against temperature: rising steeply from 0.3 g at 20 °C to about 7 g at 100 °C.",
+ "description": [
+  "20 °C: about 0.3 g per 100 g of water.",
+  "100 °C: about 7 g: dissolve here in the minimum volume.",
+  "Cooling to 20 °C crystallises out nearly all of it."
+ ],
+ "range": {
+  "x": [
+   0,
+   100
+  ],
+  "y": [
+   0,
+   8
+  ]
+ },
+ "ticks": [
+  [
+   20,
+   40,
+   60,
+   80,
+   100
+  ],
+  [
+   2,
+   4,
+   6,
+   8
+  ]
+ ],
+ "grid": [
+  20,
+  2
+ ],
+ "axisLabels": [
+  "temperature / °C",
+  "solubility / g per 100 g water"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "0.3*exp(0.0396*(x-20))",
+   "colour": "a3"
+  }
+ ],
+ "points": [
+  {
+   "x": 100,
+   "y": 7.128,
+   "label": "dissolve hot",
+   "dx": -10,
+   "anchor": "end"
+  },
+  {
+   "x": 20,
+   "y": 0.3,
+   "label": "crystallise cold",
+   "dy": -14
+  }
+ ],
+ "checks": [
+  {
+   "type": "value",
+   "expr": "0.3*exp(0.0396*(x-20))",
+   "x": 20,
+   "between": [
+    0.29,
+    0.31
+   ],
+   "name": "about 0.3 g at 20 °C"
+  },
+  {
+   "type": "value",
+   "expr": "0.3*exp(0.0396*(x-20))",
+   "x": 100,
+   "between": [
+    6.5,
+    7.5
+   ],
+   "name": "about 7 g at 100 °C"
+  }
+ ]
+}

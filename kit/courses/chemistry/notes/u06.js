@@ -11,6 +11,7 @@ H: Systems
 - **Open** systems exchange matter and energy; **closed** systems exchange energy only; **isolated** systems exchange neither.
 - Energy transfers as **heat** or **work**.
 - Chemical energy is stored in bonds and intermolecular arrangements.
+D: chem-exo-endo-profiles
 H: Conservation
 - Energy cannot be created or destroyed, only transferred.
 - Energy released by a reaction goes into the surroundings.
@@ -52,6 +53,7 @@ H: Exothermic
 - The surroundings get **warmer**.
 - ΔH is **negative**.
 - Products have **lower energy** than reactants.
+D: chem-exothermic-combustion
 H: Examples
 - **Combustion** of fuels.
 - **Neutralisation** of acids and bases.
@@ -93,6 +95,7 @@ H: Endothermic
 - The surroundings get **colder**.
 - ΔH is **positive**.
 - Products have **higher energy** than reactants.
+D: chem-endothermic-decomposition
 H: Examples
 - **Thermal decomposition**, such as CaCO₃ → CaO + CO₂.
 - **Photosynthesis**, using light energy.
@@ -134,6 +137,7 @@ H: Enthalpy change
 - **Enthalpy change** (ΔH) is the heat transferred at **constant pressure**.
 - Units: kJ mol⁻¹.
 - ΔH = H(products) − H(reactants).
+D: chem-enthalpy-levels
 H: Representing ΔH
 - **Thermochemical equations** include state symbols and ΔH.
 - ΔH scales with amounts: doubling the equation doubles ΔH.
@@ -216,6 +220,7 @@ H: Definition
 - For elements in standard states, ΔfH⦵ = 0.
 - Example: C(s) + 2H₂(g) → CH₄(g), ΔfH⦵ = −75 kJ mol⁻¹.
 - Fractions may be needed to make exactly one mole.
+D: chem-formation-cycle
 H: Using values
 - ΔrH⦵ = ΣΔfH⦵(products) − ΣΔfH⦵(reactants).
 - Multiply each value by its coefficient in the equation.
@@ -257,6 +262,7 @@ H: Definition
 - Always **negative** (exothermic).
 - Products are CO₂(g) and H₂O(l) for hydrocarbons.
 - Example: CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(l), ΔcH⦵ = −891 kJ mol⁻¹.
+D: chem-combustion-cycle
 H: Measurement and comparison
 - Measured with a **spirit burner** heating water, or more accurately with a **bomb calorimeter**.
 - ΔcH⦵ becomes more negative by about 650 kJ mol⁻¹ per extra CH₂ in alkanes.
@@ -298,6 +304,7 @@ H: Definition
 - For strong acids and strong bases, about **−57 kJ mol⁻¹**.
 - The reaction is essentially H⁺(aq) + OH⁻(aq) → H₂O(l).
 - Spectator ions do not affect the value.
+D: chem-neutralisation-calorimeter
 H: Weak acids
 - Weak acids give **less negative** values, such as about −55 kJ mol⁻¹ for ethanoic acid.
 - Energy is used to **dissociate** the weak acid fully.
@@ -339,6 +346,7 @@ H: Hess's law
 - It follows from conservation of energy.
 - It lets chemists calculate enthalpy changes that cannot be measured.
 - Routes can be drawn as **Hess cycles**.
+D: chem-hess-law
 H: Using cycles
 - **Formation route**: ΔrH = ΣΔfH(products) − ΣΔfH(reactants).
 - **Combustion route**: ΔrH = ΣΔcH(reactants) − ΣΔcH(products).
@@ -380,6 +388,7 @@ H: Two methods compared
 - **Formation data method**: ΔH = ΣΔfH(products) − ΣΔfH(reactants).
 - Formation data are more accurate because they are measured for the exact compounds.
 - Bond enthalpy values only apply to gaseous species.
+D: chem-bond-enthalpy-cycle
 H: Discrepancies and back-calculation
 - Mean bond enthalpies are averages over many molecules.
 - Liquids and solids require extra energy for changes of state, not included in bond calculations.
@@ -421,6 +430,7 @@ H: The equation
 - For water, c = 4.18 J g⁻¹ K⁻¹.
 - ΔH = −q ÷ n (in J mol⁻¹), where n is moles of the limiting reactant.
 - The sign is negative for exothermic reactions.
+D: chem-calorimetry-cooling
 H: Methods and errors
 - Solution reactions: **polystyrene cup** with lid and thermometer.
 - Combustion: **spirit burner** heating water in a copper can, or a **bomb calorimeter**.
@@ -462,6 +472,7 @@ H: Entropy
 - Units: **J K⁻¹ mol⁻¹**.
 - Gases have higher entropy than liquids, which have higher entropy than solids.
 - Entropy increases with temperature.
+D: chem-entropy-states
 H: Entropy changes
 - ΔS is **positive** when disorder increases: melting, boiling, dissolving, more gas molecules.
 - ΔS⦵ = ΣS⦵(products) − ΣS⦵(reactants).
@@ -503,6 +514,7 @@ H: The equation
 - T in kelvin; ΔS must be converted to kJ K⁻¹ mol⁻¹ when ΔH is in kJ.
 - A reaction is **feasible** (thermodynamically favourable) when **ΔG < 0**.
 - ΔG = 0 at the temperature where feasibility changes.
+D: chem-gibbs-T
 H: Using ΔG
 - Set ΔG = 0: **T = ΔH ÷ ΔS**.
 - Exothermic with positive ΔS: always feasible.
@@ -544,6 +556,7 @@ H: Spontaneous processes
 - Spontaneous processes have **ΔG < 0**.
 - Examples: ice melting above 0 °C, iron rusting, gases mixing.
 - The reverse of a spontaneous process is non-spontaneous.
+D: chem-spontaneity-signs
 H: Four cases
 - ΔH −, ΔS +: spontaneous at **all** temperatures.
 - ΔH +, ΔS −: **never** spontaneous.
@@ -585,6 +598,7 @@ H: Equilibrium
 - Gibbs free energy is at a **minimum** at equilibrium.
 - Systems move towards the composition with lowest G.
 - **Phase changes** at their transition temperatures are equilibria, such as ice and water at 0 °C.
+D: chem-gibbs-extent
 H: ΔG⦵ and K
 - **ΔG⦵ = −RT ln K**.
 - ΔG⦵ < 0 gives **K > 1**: products favoured.
@@ -667,6 +681,7 @@ H: The second law
 - ΔS(total) = ΔS(system) + ΔS(surroundings).
 - **ΔS(surroundings) = −ΔH ÷ T**.
 - Heat flows spontaneously from hot to cold.
+D: chem-second-law
 H: Link to ΔG
 - ΔS(total) = ΔS(system) − ΔH ÷ T.
 - Multiplying by −T gives −TΔS(total) = ΔH − TΔS = ΔG.
@@ -708,6 +723,7 @@ H: Definition
 - Substances move from **high to low** chemical potential.
 - At equilibrium, each substance has the **same** chemical potential everywhere.
 - For a pure substance, μ equals its molar Gibbs energy.
+D: chem-chemical-potential
 H: Concentration and uses
 - μ = μ⦵ + RT ln(a), where a is activity (approximately concentration or partial pressure).
 - Higher concentration means higher chemical potential.
@@ -749,6 +765,7 @@ H: ΔG and temperature
 - The **gradient** is −ΔS and the **intercept** is ΔH.
 - Where the line crosses ΔG = 0, feasibility changes.
 - Assumes ΔH and ΔS are roughly constant with temperature.
+D: chem-gibbs-T-lines
 H: K and temperature
 - For **exothermic** reactions, K **decreases** as temperature rises.
 - For **endothermic** reactions, K **increases** as temperature rises.
@@ -790,6 +807,7 @@ H: Enthalpy of solution
 - Equivalently, ΔsolH = ΔlattH(dissociation) + ΣΔhydH.
 - **Hydration enthalpy** is the enthalpy change when gaseous ions dissolve to form aqueous ions; always negative.
 - Smaller, more highly charged ions have more negative hydration enthalpies.
+D: chem-thermo-cycle-dissolution
 H: Beyond enthalpy
 - Cycles work for any **state function**, including ΔG and ΔS.
 - Solubility depends on both enthalpy and entropy of solution.

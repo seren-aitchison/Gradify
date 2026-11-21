@@ -116,8 +116,11 @@ export function siteItems(indexHtml) {
  */
 export function subHeader({ name, courses, extras }, { up = "", current = "", course = false, kit = "../kit/", skip = "main" } = {}) {
   const a = (href, label, cls = "") => { const here = href === current; return `<a href="${here && course ? "./" : up + href}"${cls ? ` class="${cls}"` : ""}${here ? ' aria-current="page"' : ""}>${esc(label)}</a>`; };
-  const main = [...courses.map((c) => a(c.href, c.label)), a("app.html#/study", "Study"), a("map.html", "Map"), a("lifeos.html", "LifeOS"), ...extras.map((x) => a(x.href, x.label))];
-  const more = [a("app.html#/notes", "Notes"), a("app.html#/progress", "Progress"), a("app.html#/plan", "Plan"), '<a href="/">All Gradify sites</a>'];
+  // the bar holds the courses and Study, so there are few choices to scan; everything else is one tap away in More
+  // (the page you're on stays in the bar, so its current marker is always visible)
+  const side = [["map.html", "Map"], ["lifeos.html", "LifeOS"], ...extras.map((x) => [x.href, x.label])];
+  const main = [...courses.map((c) => a(c.href, c.label)), a("app.html#/study", "Study"), ...side.filter(([h]) => h === current).map(([h, l]) => a(h, l))];
+  const more = [...side.filter(([h]) => h !== current).map(([h, l]) => a(h, l)), a("app.html#/notes", "Notes"), a("app.html#/progress", "Progress"), a("app.html#/plan", "Plan"), '<a href="/">All Gradify sites</a>'];
   return `${SUB_START}
     ${skipLink(skip)}
     <header class="sub-nav glass">

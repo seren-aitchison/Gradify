@@ -1,0 +1,233 @@
+{
+ "id": "chem-accuracy-precision",
+ "renderer": "graph",
+ "course": "chemistry",
+ "unit": "u15",
+ "lesson": "Accuracy and precision",
+ "title": "Accuracy and precision",
+ "caption": "Four students each repeat a titration whose true titre is 25.00 cm³. Accuracy is how close the mean is to the true value; precision is how close the repeats are to each other. Precise results can still be inaccurate, from a systematic error such as a misread burette.",
+ "alt": "Four clusters of four titres around a dashed true value of 25.00 cm³: tight and on target; tight but high; spread but centred; spread and off.",
+ "description": [
+  "Student 1: 25.01, 24.99, 25.02, 25.00: accurate and precise.",
+  "Student 2: 25.40–25.43: precise but not accurate.",
+  "Student 3: 24.70–25.30: centred on 25.00 but not precise.",
+  "Student 4: spread and off target."
+ ],
+ "range": {
+  "x": [
+   0.4,
+   4.6
+  ],
+  "y": [
+   24.5,
+   26.1
+  ]
+ },
+ "ticks": [
+  [],
+  [
+   24.6,
+   25.0,
+   25.4,
+   25.8
+  ]
+ ],
+ "grid": [
+  1,
+  0.2
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "axisLabels": [
+  "student",
+  "titre / cm³"
+ ],
+ "xLabelBelow": true,
+ "marks": [
+  {
+   "y": 25.0,
+   "label": "true value 25.00"
+  }
+ ],
+ "curves": [],
+ "points": [
+  {
+   "x": 0.88,
+   "y": 25.01,
+   "colour": "a4"
+  },
+  {
+   "x": 0.96,
+   "y": 24.99,
+   "colour": "a4"
+  },
+  {
+   "x": 1.04,
+   "y": 25.02,
+   "colour": "a4"
+  },
+  {
+   "x": 1.12,
+   "y": 25.0,
+   "colour": "a4"
+  },
+  {
+   "x": 1.88,
+   "y": 25.41,
+   "colour": "a1"
+  },
+  {
+   "x": 1.96,
+   "y": 25.43,
+   "colour": "a1"
+  },
+  {
+   "x": 2.04,
+   "y": 25.4,
+   "colour": "a1"
+  },
+  {
+   "x": 2.12,
+   "y": 25.42,
+   "colour": "a1"
+  },
+  {
+   "x": 2.88,
+   "y": 24.7,
+   "colour": "a3"
+  },
+  {
+   "x": 2.96,
+   "y": 25.3,
+   "colour": "a3"
+  },
+  {
+   "x": 3.04,
+   "y": 24.85,
+   "colour": "a3"
+  },
+  {
+   "x": 3.12,
+   "y": 25.15,
+   "colour": "a3"
+  },
+  {
+   "x": 3.88,
+   "y": 25.6,
+   "colour": "a2"
+  },
+  {
+   "x": 3.96,
+   "y": 24.9,
+   "colour": "a2"
+  },
+  {
+   "x": 4.04,
+   "y": 25.9,
+   "colour": "a2"
+  },
+  {
+   "x": 4.12,
+   "y": 25.3,
+   "colour": "a2"
+  }
+ ],
+ "bands": [
+  {
+   "x": [
+    0.5,
+    1.5
+   ],
+   "label": "1",
+   "colour": "a4"
+  },
+  {
+   "x": [
+    1.5,
+    2.5
+   ],
+   "label": "2",
+   "colour": "a1"
+  },
+  {
+   "x": [
+    2.5,
+    3.5
+   ],
+   "label": "3",
+   "colour": "a3"
+  },
+  {
+   "x": [
+    3.5,
+    4.5
+   ],
+   "label": "4",
+   "colour": "a2"
+  }
+ ],
+ "checks": [
+  {
+   "type": "stats",
+   "values": [
+    25.01,
+    24.99,
+    25.02,
+    25.0
+   ],
+   "truth": 25.0,
+   "tolMean": 0.1,
+   "tolSd": 0.05,
+   "accurate": true,
+   "precise": true,
+   "name": "student 1: accurate and precise"
+  },
+  {
+   "type": "stats",
+   "values": [
+    25.41,
+    25.43,
+    25.4,
+    25.42
+   ],
+   "truth": 25.0,
+   "tolMean": 0.1,
+   "tolSd": 0.05,
+   "accurate": false,
+   "precise": true,
+   "name": "student 2: precise, not accurate"
+  },
+  {
+   "type": "stats",
+   "values": [
+    24.7,
+    25.3,
+    24.85,
+    25.15
+   ],
+   "truth": 25.0,
+   "tolMean": 0.1,
+   "tolSd": 0.05,
+   "accurate": true,
+   "precise": false,
+   "name": "student 3: accurate, not precise"
+  },
+  {
+   "type": "stats",
+   "values": [
+    25.6,
+    24.9,
+    25.9,
+    25.3
+   ],
+   "truth": 25.0,
+   "tolMean": 0.1,
+   "tolSd": 0.05,
+   "accurate": false,
+   "precise": false,
+   "name": "student 4: neither"
+  }
+ ]
+}

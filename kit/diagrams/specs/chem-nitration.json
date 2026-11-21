@@ -1,0 +1,327 @@
+{
+ "id": "chem-nitration",
+ "renderer": "mechanism",
+ "course": "chemistry",
+ "lesson": "Electrophilic aromatic substitution",
+ "title": "Nitration of benzene",
+ "caption": "π electrons from the delocalised ring attack the nitronium ion, NO₂⁺, giving the arenium (Wheland) intermediate: the horseshoe shows the delocalisation broken at the sp³ carbon, with the positive charge spread over the other five, which is why this step is slow. HSO₄⁻ then removes H⁺ from the sp³ carbon, the C–H bonding pair restores the aromatic ring, and the catalyst H₂SO₄ is regenerated. The arrow from an N=O bond onto oxygen shows where nitrogen's extra bond comes from; A-level answers usually show only the ring-to-N arrow and write the product –NO₂.",
+ "alt": "Electrophilic aromatic substitution: benzene attacks the nitronium ion to form an arenium ion, then hydrogensulfate removes a proton to give nitrobenzene and sulfuric acid.",
+ "description": [
+  "Stage 1: benzene drawn as a hexagon with a circle inside (delocalised), the nitronium ion O=N⁺=O above and to the right, and a hydrogensulfate ion to the left. A curly arrow goes from the circle to the nitrogen, and another from one N=O bond onto that oxygen.",
+  "Stage 2: the arenium ion. The top carbon is sp³, bonded to a hydrogen and the nitro group; a horseshoe covers the other five carbons with a + inside. A curly arrow goes from a lone pair on hydrogensulfate's O⁻ to that hydrogen, and another from the C–H bond back into the ring.",
+  "Stage 3: nitrobenzene, with the delocalised ring (circle) restored, and sulfuric acid, H₂SO₄."
+ ],
+ "stages": [
+  {
+   "smiles": "[C:1]1([H:10])=[CH:2][CH:3]=[CH:4][CH:5]=[CH:6]1.[O:8]=[N+:7]=[O:9].[O-:20][S:21](=[O:22])(=[O:23])[OH:24]",
+   "xy": {
+    "1": [
+     0,
+     1
+    ],
+    "2": [
+     0.87,
+     0.5
+    ],
+    "3": [
+     0.87,
+     -0.5
+    ],
+    "4": [
+     0,
+     -1
+    ],
+    "5": [
+     -0.87,
+     -0.5
+    ],
+    "6": [
+     -0.87,
+     0.5
+    ],
+    "10": [
+     -0.6,
+     1.85
+    ],
+    "7": [
+     1.5,
+     2.4
+    ],
+    "8": [
+     0.4,
+     2.4
+    ],
+    "9": [
+     2.6,
+     2.4
+    ],
+    "20": [
+     -2.2,
+     2.2
+    ],
+    "21": [
+     -3.2,
+     2.2
+    ],
+    "22": [
+     -3.2,
+     3.2
+    ],
+    "23": [
+     -3.2,
+     1.2
+    ],
+    "24": [
+     -4.2,
+     2.2
+    ]
+   },
+   "label": "benzene + NO₂⁺",
+   "arrows": [
+    {
+     "from": {
+      "bond": [
+       1,
+       2
+      ]
+     },
+     "to": {
+      "bond": [
+       1,
+       7
+      ]
+     },
+     "toward": 7,
+     "bend": -0.7
+    },
+    {
+     "from": {
+      "bond": [
+       7,
+       8
+      ]
+     },
+     "to": {
+      "atom": 8
+     },
+     "bend": -1
+    }
+   ],
+   "ring": {
+    "atoms": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "style": "circle"
+   }
+  },
+  {
+   "smiles": "[C:1]1([H:10])([N+:7](=[O:9])[O-:8])[CH+:2][CH:3]=[CH:4][CH:5]=[CH:6]1.[O-:20][S:21](=[O:22])(=[O:23])[OH:24]",
+   "xy": {
+    "1": [
+     0,
+     1
+    ],
+    "2": [
+     0.87,
+     0.5
+    ],
+    "3": [
+     0.87,
+     -0.5
+    ],
+    "4": [
+     0,
+     -1
+    ],
+    "5": [
+     -0.87,
+     -0.5
+    ],
+    "6": [
+     -0.87,
+     0.5
+    ],
+    "10": [
+     -0.95,
+     1.8
+    ],
+    "7": [
+     0.6,
+     2.0
+    ],
+    "9": [
+     1.65,
+     2.35
+    ],
+    "8": [
+     0.15,
+     3.0
+    ],
+    "20": [
+     -2.2,
+     2.2
+    ],
+    "21": [
+     -3.2,
+     2.2
+    ],
+    "22": [
+     -3.2,
+     3.2
+    ],
+    "23": [
+     -3.2,
+     1.2
+    ],
+    "24": [
+     -4.2,
+     2.2
+    ]
+   },
+   "label": "arenium (Wheland) ion",
+   "arrows": [
+    {
+     "from": {
+      "lp": 20
+     },
+     "to": {
+      "bond": [
+       20,
+       10
+      ]
+     },
+     "toward": 10,
+     "lpAngle": -35,
+     "lpDist": 22,
+     "bend": -0.3
+    },
+    {
+     "from": {
+      "bond": [
+       1,
+       10
+      ]
+     },
+     "to": {
+      "bond": [
+       1,
+       2
+      ]
+     },
+     "bend": -0.8
+    }
+   ],
+   "ring": {
+    "atoms": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "style": "horseshoe",
+    "open": 1
+   }
+  },
+  {
+   "smiles": "[C:1]1([N+:7](=[O:9])[O-:8])=[CH:2][CH:3]=[CH:4][CH:5]=[CH:6]1.[H:10][O:20][S:21](=[O:22])(=[O:23])[OH:24]",
+   "xy": {
+    "1": [
+     0,
+     1
+    ],
+    "2": [
+     0.87,
+     0.5
+    ],
+    "3": [
+     0.87,
+     -0.5
+    ],
+    "4": [
+     0,
+     -1
+    ],
+    "5": [
+     -0.87,
+     -0.5
+    ],
+    "6": [
+     -0.87,
+     0.5
+    ],
+    "7": [
+     0,
+     2.1
+    ],
+    "9": [
+     0.95,
+     2.65
+    ],
+    "8": [
+     -0.95,
+     2.65
+    ],
+    "10": [
+     -1.6,
+     1.5
+    ],
+    "20": [
+     -2.2,
+     2.2
+    ],
+    "21": [
+     -3.2,
+     2.2
+    ],
+    "22": [
+     -3.2,
+     3.2
+    ],
+    "23": [
+     -3.2,
+     1.2
+    ],
+    "24": [
+     -4.2,
+     2.2
+    ]
+   },
+   "label": "nitrobenzene + H₂SO₄",
+   "ring": {
+    "atoms": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "style": "circle"
+   }
+  }
+ ],
+ "steps": [
+  {
+   "label": "slow"
+  },
+  {
+   "label": "fast"
+  }
+ ],
+ "review": {
+  "status": "ai-reviewed",
+  "by": "independent AI reviewer (one round, fixes applied)",
+  "date": "2026-11-20",
+  "notes": "Round 1 (AI reviewer): Kekulé ring and localised arenium charge would lose the AQA depiction mark; now delocalised ring and horseshoe intermediate, with the N=O arrow explained in the caption; all fixed.",
+  "awaiting": "approval by a named subject reviewer"
+ },
+ "perRow": 2,
+ "unit": "u13"
+}
