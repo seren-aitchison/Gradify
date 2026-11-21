@@ -339,6 +339,8 @@ H: Primer design
 - GC content around **40–60%**.
 - Forward and reverse primers should have similar **melting temperatures**.
 - Avoid primers that bind each other (**primer dimers**) or fold on themselves.
+D: bio-pcr-amplification
+D: bio-pcr-cycle
 H: Setting up and troubleshooting
 - Use a **master mix** to reduce pipetting errors.
 - Include a **no-template control** and a **positive control**.
@@ -380,6 +382,7 @@ H: Running a gel
 - Samples are mixed with **loading dye** and pipetted into wells.
 - Wells are placed at the **negative** end so DNA runs towards the positive electrode.
 - Gels are stained with a DNA dye; safer alternatives to ethidium bromide are now common.
+D: bio-gel-calibration
 H: Analysis and problems
 - A **calibration curve** plots log(fragment size) against distance travelled for the ladder.
 - Unknown sizes are read from the curve.

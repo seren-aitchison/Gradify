@@ -1,0 +1,152 @@
+{
+ "id": "bio-gel-calibration",
+ "renderer": "graph",
+ "course": "biology",
+ "unit": "u12",
+ "lesson": "Gel electrophoresis",
+ "title": "Sizing a DNA fragment against a ladder",
+ "caption": "Smaller fragments move faster and further through the gel. For fragments in the working range, the distance moved falls in a straight line against the log of the size, so bands of a ladder of known sizes give a calibration line, and an unknown band's distance can be read off it. Idealised numbers.",
+ "alt": "A straight line sloping down: distance moved in millimetres against the log of fragment size in base pairs, through the ladder bands at 100, 500, 1,000 and 5,000 base pairs, with an unknown band at 35 millimetres read off as about 316 base pairs.",
+ "description": [
+  "DNA is negatively charged, so it moves towards the positive electrode.",
+  "Smaller fragments move further: distance falls as log₁₀ of the size rises (gradient −18 mm per log unit here).",
+  "Ladder bands of known size, at 100, 500, 1,000 and 5,000 bp, make the calibration line.",
+  "An unknown band that moved 35 mm lies at log₁₀ size 2.5: about 316 bp."
+ ],
+ "also": [
+  {
+   "course": "biology",
+   "unit": "u14",
+   "lesson": "Gel electrophoresis"
+  }
+ ],
+ "range": {
+  "x": [
+   1.8,
+   4
+  ],
+  "y": [
+   0,
+   50
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   2.5,
+   3,
+   3.5,
+   4
+  ],
+  [
+   10,
+   20,
+   30,
+   40
+  ]
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "log₁₀ of fragment size (base pairs)",
+  "distance moved in the gel / mm"
+ ],
+ "curves": [
+  {
+   "expr": "80-18*x",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 2,
+   "y": 44,
+   "label": "100",
+   "colour": "a4",
+   "dy": -14,
+   "dx": 6
+  },
+  {
+   "x": 2.69897,
+   "y": 31.4,
+   "label": "500",
+   "colour": "a4",
+   "dy": -14,
+   "dx": 6
+  },
+  {
+   "x": 3,
+   "y": 26,
+   "label": "1 000",
+   "colour": "a4",
+   "dy": -14,
+   "dx": 6
+  },
+  {
+   "x": 3.69897,
+   "y": 13.4185,
+   "label": "5 000",
+   "colour": "a4",
+   "dy": -14,
+   "dx": 6
+  },
+  {
+   "x": 2.5,
+   "y": 35,
+   "label": "unknown",
+   "colour": "a2",
+   "dy": -14,
+   "dx": 6
+  }
+ ],
+ "marks": [
+  {
+   "y": 35,
+   "to": 2.5
+  },
+  {
+   "x": 2.5,
+   "to": 35
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "80-18*x",
+   "x": 2,
+   "y": 44,
+   "name": "the 100 bp ladder band moved 44 mm"
+  },
+  {
+   "type": "point",
+   "expr": "80-18*x",
+   "x": 3,
+   "y": 26,
+   "name": "the 1,000 bp band moved 26 mm"
+  },
+  {
+   "type": "point",
+   "expr": "80-18*x",
+   "x": 3.69897,
+   "y": 13.4185,
+   "name": "the 5,000 bp band moved about 13.4 mm"
+  },
+  {
+   "type": "point",
+   "expr": "80-18*x",
+   "x": 2.5,
+   "y": 35,
+   "name": "a band that moved 35 mm is at log₁₀ size 2.5, about 316 bp"
+  },
+  {
+   "type": "slope",
+   "expr": "80-18*x",
+   "x": 3,
+   "value": -18,
+   "name": "larger fragments move less: distance falls as the size rises"
+  }
+ ]
+}

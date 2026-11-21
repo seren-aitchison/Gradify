@@ -1,0 +1,57 @@
+{
+ "id": "bio-crispr",
+ "renderer": "flow",
+ "course": "biology",
+ "unit": "u12",
+ "lesson": "CRISPR-Cas systems",
+ "title": "Editing a gene with CRISPR-Cas9",
+ "caption": "A guide RNA, designed to match a 20-base target, leads the Cas9 nuclease to that sequence, next to a short PAM. Cas9 cuts both DNA strands, and the cell's repair of the break lets the gene be disrupted or changed. Bacteria use the same system to destroy the DNA of viruses they have met before.",
+ "alt": "Four boxes in order: a guide RNA, Cas9 and the guide finding the target, Cas9 cutting both strands, and the cell repairing the break.",
+ "description": [
+  "A guide RNA: 20 bases that match the target DNA.",
+  "Cas9 and the guide find the target: next to a short PAM sequence.",
+  "Cas9 cuts both strands: a double-strand break in the chosen gene.",
+  "The cell repairs the break: the gene is disrupted or changed."
+ ],
+ "layout": "line",
+ "nodes": [
+  {
+   "id": "r0",
+   "label": "a guide RNA",
+   "sub": "20 bases that match the target DNA",
+   "tone": "a1"
+  },
+  {
+   "id": "r1",
+   "label": "Cas9 and the guide find the target",
+   "sub": "next to a short PAM sequence",
+   "tone": "a5"
+  },
+  {
+   "id": "r2",
+   "label": "Cas9 cuts both strands",
+   "sub": "a double-strand break in the chosen gene",
+   "tone": "a2"
+  },
+  {
+   "id": "r3",
+   "label": "the cell repairs the break",
+   "sub": "the gene is disrupted or changed",
+   "tone": "a4"
+  }
+ ],
+ "edges": [
+  {
+   "from": "r0",
+   "to": "r1"
+  },
+  {
+   "from": "r1",
+   "to": "r2"
+  },
+  {
+   "from": "r2",
+   "to": "r3"
+  }
+ ]
+}

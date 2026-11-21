@@ -1,0 +1,54 @@
+{
+ "id": "bio-pcr-cycle",
+ "renderer": "flow",
+ "course": "biology",
+ "unit": "u12",
+ "lesson": "Polymerase chain reaction",
+ "title": "One cycle of the polymerase chain reaction",
+ "caption": "Each cycle heats to separate the strands (about 95 °C), cools so primers can bind to each end of the target (50–65 °C), and warms to 72 °C so heat-stable Taq polymerase can extend them. Each cycle roughly doubles the target, so copies = initial number × 2ⁿ.",
+ "alt": "Three boxes in order: denaturation at about 95 degrees, annealing at 50 to 65 degrees, and extension at about 72 degrees, then the cycle repeats.",
+ "description": [
+  "Denaturation, about 95 °C: heat separates the two strands.",
+  "Annealing, about 50–65 °C: primers bind to each end of the target.",
+  "Extension, about 72 °C: Taq polymerase adds nucleotides from the primers.",
+  "The cycle repeats 25–35 times, doubling the target each time."
+ ],
+ "also": [
+  {
+   "course": "biology",
+   "unit": "u14",
+   "lesson": "PCR"
+  }
+ ],
+ "layout": "line",
+ "nodes": [
+  {
+   "id": "c0",
+   "label": "denaturation, about 95 °C",
+   "sub": "heat separates the two strands",
+   "tone": "a2"
+  },
+  {
+   "id": "c1",
+   "label": "annealing, about 50–65 °C",
+   "sub": "primers bind to each end of the target",
+   "tone": "a1"
+  },
+  {
+   "id": "c2",
+   "label": "extension, about 72 °C",
+   "sub": "Taq polymerase adds nucleotides from the primers",
+   "tone": "a4"
+  }
+ ],
+ "edges": [
+  {
+   "from": "c0",
+   "to": "c1"
+  },
+  {
+   "from": "c1",
+   "to": "c2"
+  }
+ ]
+}

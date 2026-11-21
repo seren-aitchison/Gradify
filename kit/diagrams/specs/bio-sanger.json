@@ -1,0 +1,25 @@
+{
+ "id": "bio-sanger",
+ "renderer": "sanger",
+ "course": "biology",
+ "unit": "u12",
+ "lesson": "Sanger sequencing",
+ "title": "Sanger sequencing: chain termination",
+ "caption": "DNA polymerase copies the template, but a little ddNTP, which has no 3′–OH, is mixed in: whenever one is added, the chain stops. The result is a fragment of every length, each ending at a base marked by a coloured dye. Sorted by size, the colours of the last bases spell out the new strand.",
+ "alt": "Ten fragments of a new DNA strand, one of every length from 1 to 10 bases, each ending in a coloured base; reading the last bases from shortest to longest gives GATTACAGCT.",
+ "description": [
+  "The template is copied by DNA polymerase from a primer, using normal dNTPs and a little labelled ddNTP.",
+  "Whenever a ddNTP is added the chain stops, so fragments of every length are made.",
+  "Fragments are separated by size by capillary electrophoresis, and a laser reads the dye of each last base.",
+  "From the shortest fragment upwards the last bases read GATTACAGCT.",
+  "The template strand is the complement: CTAATGTCGA."
+ ],
+ "newStrand": "GATTACAGCT",
+ "template": "CTAATGTCGA",
+ "claims": [
+  {
+   "type": "reads",
+   "value": "GATTACAGCT"
+  }
+ ]
+}

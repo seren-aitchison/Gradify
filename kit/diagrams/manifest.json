@@ -31468,5 +31468,430 @@
     "detail": "700px wide, shown at 101% (labels 15.2px)"
    }
   ]
+ },
+ "bio-restriction-cloning": {
+  "title": "Cutting a gene and a vector with the same enzyme",
+  "caption": "EcoRI recognises GAATTC, which reads the same on both strands, and cuts each strand between the G and the A, leaving single-stranded AATT overhangs. Cut with the same enzyme, the gene's ends and the vector's ends all fit each other, and DNA ligase seals them, restoring the site at both joins.",
+  "alt": "A gene with two EcoRI sites cut into three fragments and a vector with one site cut open, each with sticky overhangs, then the middle gene fragment ligated into the vector, with the GAATTC site restored at both joins.",
+  "description": [
+   "EcoRI recognises GAATTC and cuts between G and A on each strand.",
+   "The staggered cut leaves 5′ overhangs of AATT, called sticky ends.",
+   "The gene has two sites, so it gives three fragments; the middle one is the gene to be cloned.",
+   "The vector has one site and is cut open.",
+   "AATT pairs with AATT on another EcoRI-cut molecule, so the gene fits into the vector and ligase seals the backbones; GAATTC is restored at both joins."
+  ],
+  "course": "biology",
+  "lesson": "Restriction enzymes",
+  "also": [
+   {
+    "course": "biology",
+    "unit": "u12",
+    "lesson": "DNA ligase"
+   }
+  ],
+  "renderer": "restriction",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u12.js: Restriction enzymes"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in biology: DNA ligase",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u12.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "EcoRI's site GAATTC is palindromic: it reads the same on both strands, 5′ to 3′",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "gene DNA: 2 sites give 3 fragments that add up to the original length",
+    "ok": true,
+    "detail": "3 + 17 + 8"
+   },
+   {
+    "name": "vector: 1 site give 2 fragments that add up to the original length",
+    "ok": true,
+    "detail": "5 + 10"
+   },
+   {
+    "name": "the staggered cut leaves a 4-base overhang, AATT, that pairs with itself: every end cut by EcoRI fits every other",
+    "ok": true,
+    "detail": "AATT → reverse complement AATT"
+   },
+   {
+    "name": "every fragment used in the recombinant molecule exists",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the recombinant molecule has the site GAATTC again at each of its 2 joins",
+    "ok": true,
+    "detail": "GAATTC, GAATTC"
+   },
+   {
+    "name": "gene is cut into 3 fragments",
+    "ok": true,
+    "detail": "3"
+   },
+   {
+    "name": "vector is cut into 2 fragments",
+    "ok": true,
+    "detail": "2"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-cloning-steps": {
+  "title": "Making recombinant DNA",
+  "caption": "The gene is isolated and inserted into a vector cut with the same enzyme, ligase joins them, host cells are transformed, and the few cells that took up the plasmid are picked out by a marker gene such as antibiotic resistance. Eukaryotic genes are usually made as cDNA, because bacteria cannot remove introns.",
+  "alt": "Five boxes in order: isolate the gene, insert it into a vector, join with ligase, transform host cells, and select the transformed cells.",
+  "description": [
+   "Isolate the gene: cut with a restriction enzyme, or make cDNA from mRNA.",
+   "Insert it into a vector: a plasmid cut with the same enzyme.",
+   "Join with DNA ligase: the sticky ends are sealed.",
+   "Transform host cells: a few cells take up the recombinant plasmid.",
+   "Select the transformed cells: marker gene: only they grow on the antibiotic."
+  ],
+  "course": "biology",
+  "lesson": "Recombinant DNA",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u12.js: Recombinant DNA"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every step is linked: no box without an arrow",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-crispr": {
+  "title": "Editing a gene with CRISPR-Cas9",
+  "caption": "A guide RNA, designed to match a 20-base target, leads the Cas9 nuclease to that sequence, next to a short PAM. Cas9 cuts both DNA strands, and the cell's repair of the break lets the gene be disrupted or changed. Bacteria use the same system to destroy the DNA of viruses they have met before.",
+  "alt": "Four boxes in order: a guide RNA, Cas9 and the guide finding the target, Cas9 cutting both strands, and the cell repairing the break.",
+  "description": [
+   "A guide RNA: 20 bases that match the target DNA.",
+   "Cas9 and the guide find the target: next to a short PAM sequence.",
+   "Cas9 cuts both strands: a double-strand break in the chosen gene.",
+   "The cell repairs the break: the gene is disrupted or changed."
+  ],
+  "course": "biology",
+  "lesson": "CRISPR-Cas systems",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u12.js: CRISPR-Cas systems"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every step is linked: no box without an arrow",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-gel-calibration": {
+  "title": "Sizing a DNA fragment against a ladder",
+  "caption": "Smaller fragments move faster and further through the gel. For fragments in the working range, the distance moved falls in a straight line against the log of the size, so bands of a ladder of known sizes give a calibration line, and an unknown band's distance can be read off it. Idealised numbers.",
+  "alt": "A straight line sloping down: distance moved in millimetres against the log of fragment size in base pairs, through the ladder bands at 100, 500, 1,000 and 5,000 base pairs, with an unknown band at 35 millimetres read off as about 316 base pairs.",
+  "description": [
+   "DNA is negatively charged, so it moves towards the positive electrode.",
+   "Smaller fragments move further: distance falls as log₁₀ of the size rises (gradient −18 mm per log unit here).",
+   "Ladder bands of known size, at 100, 500, 1,000 and 5,000 bp, make the calibration line.",
+   "An unknown band that moved 35 mm lies at log₁₀ size 2.5: about 316 bp."
+  ],
+  "course": "biology",
+  "lesson": "Gel electrophoresis",
+  "also": [
+   {
+    "course": "biology",
+    "unit": "u14",
+    "lesson": "Gel electrophoresis"
+   }
+  ],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u12.js: Gel electrophoresis"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in biology: Gel electrophoresis",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u14.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the 100 bp ladder band moved 44 mm",
+    "ok": true,
+    "detail": "y(2) = 44"
+   },
+   {
+    "name": "the 1,000 bp band moved 26 mm",
+    "ok": true,
+    "detail": "y(3) = 26"
+   },
+   {
+    "name": "the 5,000 bp band moved about 13.4 mm",
+    "ok": true,
+    "detail": "y(3.69897) = 13.4185"
+   },
+   {
+    "name": "a band that moved 35 mm is at log₁₀ size 2.5, about 316 bp",
+    "ok": true,
+    "detail": "y(2.5) = 35"
+   },
+   {
+    "name": "larger fragments move less: distance falls as the size rises",
+    "ok": true,
+    "detail": "gradient -18.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "bio-pcr-amplification": {
+  "title": "PCR doubles the DNA every cycle",
+  "caption": "On a log scale an exponential rise is a straight line: each cycle adds log₁₀ 2 = 0.301. After 10 cycles one copy has become 1,024 (10³); after 30, more than a billion (10⁹).",
+  "alt": "A straight line of log of the number of copies against cycle number, rising by 0.301 per cycle: 3 at 10 cycles, 6 at 20 and 9 at 30.",
+  "description": [
+   "Copies after n cycles = initial copies × 2ⁿ.",
+   "On a log₁₀ axis this is a straight line with gradient 0.301 per cycle.",
+   "10 cycles: about 1,000 copies. 20 cycles: about a million. 30 cycles: about a billion."
+  ],
+  "course": "biology",
+  "lesson": "Polymerase chain reaction",
+  "also": [
+   {
+    "course": "biology",
+    "unit": "u14",
+    "lesson": "PCR"
+   }
+  ],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u12.js: Polymerase chain reaction"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in biology: PCR",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u14.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "each cycle doubles the DNA: log₁₀ rises by 0.301 per cycle",
+    "ok": true,
+    "detail": "gradient 0.3010"
+   },
+   {
+    "name": "after 10 cycles: 2¹⁰ = 1,024 copies, about 10³",
+    "ok": true,
+    "detail": "y(10) = 3.0103"
+   },
+   {
+    "name": "after 20 cycles: 2²⁰ = 1,048,576 copies, about 10⁶",
+    "ok": true,
+    "detail": "y(20) = 6.0206"
+   },
+   {
+    "name": "after 30 cycles: 2³⁰ copies, more than a billion",
+    "ok": true,
+    "detail": "y(30) = 9.0309"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "bio-pcr-cycle": {
+  "title": "One cycle of the polymerase chain reaction",
+  "caption": "Each cycle heats to separate the strands (about 95 °C), cools so primers can bind to each end of the target (50–65 °C), and warms to 72 °C so heat-stable Taq polymerase can extend them. Each cycle roughly doubles the target, so copies = initial number × 2ⁿ.",
+  "alt": "Three boxes in order: denaturation at about 95 degrees, annealing at 50 to 65 degrees, and extension at about 72 degrees, then the cycle repeats.",
+  "description": [
+   "Denaturation, about 95 °C: heat separates the two strands.",
+   "Annealing, about 50–65 °C: primers bind to each end of the target.",
+   "Extension, about 72 °C: Taq polymerase adds nucleotides from the primers.",
+   "The cycle repeats 25–35 times, doubling the target each time."
+  ],
+  "course": "biology",
+  "lesson": "Polymerase chain reaction",
+  "also": [
+   {
+    "course": "biology",
+    "unit": "u14",
+    "lesson": "PCR"
+   }
+  ],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u12.js: Polymerase chain reaction"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in biology: PCR",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u14.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every step is linked: no box without an arrow",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-sanger": {
+  "title": "Sanger sequencing: chain termination",
+  "caption": "DNA polymerase copies the template, but a little ddNTP, which has no 3′–OH, is mixed in: whenever one is added, the chain stops. The result is a fragment of every length, each ending at a base marked by a coloured dye. Sorted by size, the colours of the last bases spell out the new strand.",
+  "alt": "Ten fragments of a new DNA strand, one of every length from 1 to 10 bases, each ending in a coloured base; reading the last bases from shortest to longest gives GATTACAGCT.",
+  "description": [
+   "The template is copied by DNA polymerase from a primer, using normal dNTPs and a little labelled ddNTP.",
+   "Whenever a ddNTP is added the chain stops, so fragments of every length are made.",
+   "Fragments are separated by size by capillary electrophoresis, and a laser reads the dye of each last base.",
+   "From the shortest fragment upwards the last bases read GATTACAGCT.",
+   "The template strand is the complement: CTAATGTCGA."
+  ],
+  "course": "biology",
+  "lesson": "Sanger sequencing",
+  "also": [],
+  "renderer": "sanger",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u12.js: Sanger sequencing"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the template is the complement of the new strand (A–T, G–C), so each fragment can be built along it",
+    "ok": true,
+    "detail": "CTAATGTCGA against CTAATGTCGA"
+   },
+   {
+    "name": "10 fragments, one of every length, each ending at a known base",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "reading the last base of each fragment from the shortest up gives the new strand",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the sequence read is GATTACAGCT",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "660px wide, shown at 107% (labels 16.1px)"
+   }
+  ]
  }
 }

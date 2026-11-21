@@ -1,0 +1,70 @@
+{
+ "id": "bio-restriction-cloning",
+ "renderer": "restriction",
+ "course": "biology",
+ "unit": "u12",
+ "lesson": "Restriction enzymes",
+ "title": "Cutting a gene and a vector with the same enzyme",
+ "caption": "EcoRI recognises GAATTC, which reads the same on both strands, and cuts each strand between the G and the A, leaving single-stranded AATT overhangs. Cut with the same enzyme, the gene's ends and the vector's ends all fit each other, and DNA ligase seals them, restoring the site at both joins.",
+ "alt": "A gene with two EcoRI sites cut into three fragments and a vector with one site cut open, each with sticky overhangs, then the middle gene fragment ligated into the vector, with the GAATTC site restored at both joins.",
+ "description": [
+  "EcoRI recognises GAATTC and cuts between G and A on each strand.",
+  "The staggered cut leaves 5′ overhangs of AATT, called sticky ends.",
+  "The gene has two sites, so it gives three fragments; the middle one is the gene to be cloned.",
+  "The vector has one site and is cut open.",
+  "AATT pairs with AATT on another EcoRI-cut molecule, so the gene fits into the vector and ligase seals the backbones; GAATTC is restored at both joins."
+ ],
+ "also": [
+  {
+   "course": "biology",
+   "unit": "u12",
+   "lesson": "DNA ligase"
+  }
+ ],
+ "enzyme": {
+  "name": "EcoRI",
+  "site": "GAATTC",
+  "cutAfter": 1
+ },
+ "molecules": [
+  {
+   "id": "gene",
+   "label": "gene DNA",
+   "dna": "TAGAATTCATGGCCAAAGGGAATTCCTA"
+  },
+  {
+   "id": "vector",
+   "label": "vector",
+   "dna": "CCTAGAATTCGGTCA"
+  }
+ ],
+ "recombinant": {
+  "label": "recombinant DNA",
+  "from": [
+   [
+    "vector",
+    0
+   ],
+   [
+    "gene",
+    1
+   ],
+   [
+    "vector",
+    1
+   ]
+  ]
+ },
+ "claims": [
+  {
+   "type": "fragments",
+   "id": "gene",
+   "value": 3
+  },
+  {
+   "type": "fragments",
+   "id": "vector",
+   "value": 2
+  }
+ ]
+}

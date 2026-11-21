@@ -53,6 +53,7 @@ H: Steps
 - **Join** the fragments with **DNA ligase**.
 - **Transform** host cells, which take up the recombinant vector.
 - **Select** and grow transformed cells.
+D: bio-cloning-steps
 H: Identifying transformed cells
 - Vectors carry **marker genes**, such as antibiotic resistance.
 - Only transformed cells grow on agar containing the antibiotic.
@@ -100,6 +101,7 @@ H: Cutting DNA
 - Cutting a gene and vector with the same enzyme gives **complementary sticky ends**.
 - Complementary ends base-pair, then ligase seals them.
 P: Werner Arber, Daniel Nathans and Hamilton Smith shared the 1978 Nobel Prize for discovering restriction enzymes. Hundreds are now available commercially. Restriction mapping and DNA fingerprinting also use restriction enzymes to cut DNA into fragments of characteristic sizes.
+D: bio-restriction-cloning
 X: EcoRI cutting.
 > EcoRI recognises GAATTC on one strand and CTTAAG on the other.
 > It cuts between G and A on each strand.
@@ -135,6 +137,7 @@ H: The reaction
 - It uses energy from **ATP** (or NAD⁺ in bacteria).
 - It seals **nicks** in the sugar-phosphate backbone.
 - It cannot fill gaps where nucleotides are missing.
+D: bio-restriction-cloning
 H: Roles
 - In **DNA replication**, ligase joins **Okazaki fragments** on the lagging strand.
 - In **DNA repair**, ligase seals the backbone after damaged sections are replaced.
@@ -270,6 +273,8 @@ H: The cycle
 - Each cycle roughly **doubles** the DNA.
 - After n cycles, copies = initial number × 2ⁿ.
 P: Kary Mullis invented PCR in 1983 and shared the 1993 Nobel Prize in Chemistry. Taq polymerase was crucial because it survives the repeated heating that would destroy most enzymes. PCR is used in diagnosis, forensics, cloning and research. Contamination is a major risk because tiny amounts of DNA are amplified.
+D: bio-pcr-cycle
+D: bio-pcr-amplification
 X: Calculating PCR copies.
 > A sample contains 10 copies of a target sequence.
 > PCR runs for 20 cycles.
@@ -312,6 +317,7 @@ H: Interpreting
 - Bands that line up are the same size.
 - Proteins can be separated by a similar method using **SDS-PAGE**.
 P: Gel electrophoresis is used in DNA profiling, checking PCR products, analysing restriction digests and diagnosing genetic conditions. Loading dye helps track samples and makes them sink into wells. Agarose concentration affects separation: higher concentrations separate small fragments better.
+D: bio-gel-calibration
 X: Checking a PCR product.
 > A PCR was designed to amplify a 500 bp fragment.
 > The product is run on a gel beside a DNA ladder.
@@ -388,6 +394,7 @@ H: Chain termination
 - When incorporated, no further nucleotide can be added, so the chain **terminates**.
 - The reaction contains template, primer, DNA polymerase, normal dNTPs and a small amount of ddNTPs.
 - Fragments of every length are produced, each ending at a known base.
+D: bio-sanger
 H: Reading the sequence
 - Each ddNTP is labelled with a different **fluorescent dye**.
 - Fragments are separated by size in **capillary electrophoresis**.
@@ -518,6 +525,7 @@ H: As a tool
 - Scientists can design guide RNA to target almost any gene.
 - The cell repairs the break, allowing genes to be disrupted or changed.
 P: Emmanuelle Charpentier and Jennifer Doudna showed in 2012 that Cas9 could be programmed with a guide RNA to cut chosen DNA, winning the 2020 Nobel Prize in Chemistry. CRISPR is faster, cheaper and more precise than earlier editing methods. Other Cas enzymes, such as Cas12 and Cas13, are used for editing and diagnostics.
+D: bio-crispr
 X: Bacterial memory.
 > A virus infects a bacterium that survives.
 > The bacterium inserts a short piece of viral DNA as a new spacer.

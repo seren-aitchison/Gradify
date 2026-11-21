@@ -18,6 +18,8 @@
 //   ploidy     mitosis and meiosis from one parent cell: the chromosomes in every product are worked out
 //   germlayers the three germ layers and what each becomes, each tissue checked against the layer it comes from
 //   drift      genetic drift from a seeded Wright–Fisher simulation, its spread checked against theory
+//   restriction a restriction enzyme cutting and ligase joining: sites, fragments, sticky ends and the restored site checked
+//   sanger     chain-termination sequencing: a fragment of every length, read back into the sequence
 //   biocycle   the carbon and nitrogen cycles: stores and processes, each arrow a real step, no dead ends
 //   carbonflow a pathway or cycle (drawn as a flow) whose carbon atoms balance at every step
 //   sarcomere  relaxed and contracted sarcomeres: band lengths worked out from the filament lengths
@@ -1264,6 +1266,94 @@ function biocycleChecks(spec) {
   return out;
 }
 
+// ======================================================================== restriction
+// Cutting DNA with a restriction enzyme, joining pieces with ligase.
+// spec: enzyme: {name, site, cutAfter} (EcoRI: GAATTC, cut after base 1 of the top strand: G^AATTC),
+//   molecules: [{id, label, dna}] top strands 5′→3′, recombinant: {label, from: [[moleculeId, fragmentIndex], …]}
+//   claims: [{type: "fragments", id, value} | {type: "overhang", value}]
+const BASEC = { A: "a1", T: "a2", G: "a4", C: "a3" };
+const revcomp = (s) => complement(s).split("").reverse().join("");
+export function cutDna(dna, site, cutAfter) {
+  const sites = []; for (let i = dna.indexOf(site); i >= 0; i = dna.indexOf(site, i + 1)) sites.push(i);
+  const L = site.length, top = [0, ...sites.map((s) => s + cutAfter), dna.length], bot = [0, ...sites.map((s) => s + L - cutAfter), dna.length];
+  const frags = []; for (let i = 0; i < top.length - 1; i++) frags.push({ top0: top[i], top1: top[i + 1], bot0: bot[i], bot1: bot[i + 1], topSeq: dna.slice(top[i], top[i + 1]), botSeq: complement(dna.slice(bot[i], bot[i + 1])) });
+  return { sites, frags, overhang: dna.slice(sites[0] + cutAfter, sites[0] + L - cutAfter) };
+}
+function restrictionDraw(spec, W, narrow) {
+  const { site, cutAfter } = spec.enzyme, cut = Object.fromEntries(spec.molecules.map((m) => [m.id, cutDna(m.dna, site, cutAfter)]));
+  const recomb = spec.recombinant.from.map(([id, i]) => cut[id].frags[i]).filter(Boolean);
+  const rec = recomb.map((f) => f.topSeq).join(""), gap = 16;
+  const maxLen = Math.max(...spec.molecules.map((m) => m.dna.length + cut[m.id].frags.length * 0), rec.length);
+  const cw = Math.min(16, (W - 24 - 3 * gap) / maxLen);
+  let s = "", y = 8;
+  const letters = (x0, yy, str, tint) => [...str].map((b, i) => (tint?.(i) ? rect(x0 + i * cw, yy - 8, cw, 16, { fill: C.a3, op: 0.28, stroke: "none", rx: 2 }) : "") + text(x0 + i * cw + cw / 2, yy, b, { size: Math.max(9, cw * 0.82), weight: 700, fill: C[BASEC[b]] })).join("");
+  for (const m of spec.molecules) {
+    const R = cut[m.id], lw = m.label;
+    s += text(12, y + 8, `${lw}: ${spec.enzyme.name} cuts at ${site.slice(0, cutAfter)}^${site.slice(cutAfter)}`, { size: 12.5, weight: 700, anchor: "start" });
+    y += 34;
+    R.frags.forEach((f, i) => {
+      const x0 = 12 + i * gap;
+      // the single-stranded overhangs are tinted: on a fragment's top strand at its left end, on its bottom strand at its right end
+      s += letters(x0 + f.top0 * cw, y, f.topSeq, (k) => i > 0 && k < R.overhang.length);
+      s += letters(x0 + f.bot0 * cw, y + 17, f.botSeq, (k) => i < R.frags.length - 1 && f.bot0 + k >= f.top1);
+    });
+    y += 48;
+  }
+  // after ligase
+  s += text(12, y + 8, `${spec.recombinant.label}: ligase seals the matching sticky ends`, { size: 12.5, weight: 700, anchor: "start", fill: C.good });
+  y += 34;
+  const joints = []; let at = 0; recomb.forEach((f, i) => { at += f.topSeq.length; if (i < recomb.length - 1) joints.push(at - cutAfter); });
+  s += letters(12, y, rec, (k) => joints.some((j) => k >= j && k < j + site.length)) + letters(12, y + 17, complement(rec), (k) => joints.some((j) => k >= j && k < j + site.length));
+  y += 40;
+  const note = textBlock(12, 0, `The ${site} recognition site is restored at both joins, so the same enzyme can cut it out again.`, Math.floor((W - 24) / 6.3), { size: 11.5, anchor: "start", fill: C.soft });
+  s += `<g transform="translate(0 ${f1(y + 6 + ((note.lines - 1) * 14.7) / 2)})">${note.svg}</g>`;
+  return { s, H: y + 14 + note.lines * 15 };
+}
+function restrictionChecks(spec) {
+  const { name, site, cutAfter } = spec.enzyme, out = [];
+  out.push(check(`${name}'s site ${site} is palindromic: it reads the same on both strands, 5′ to 3′`, revcomp(site) === site));
+  const cut = Object.fromEntries(spec.molecules.map((m) => [m.id, cutDna(m.dna, site, cutAfter)]));
+  for (const m of spec.molecules) { const R = cut[m.id]; out.push(check(`${m.label}: ${R.sites.length} site${R.sites.length === 1 ? "" : "s"} give ${R.frags.length} fragments that add up to the original length`, R.sites.length > 0 && R.frags.reduce((a, f) => a + f.topSeq.length, 0) === m.dna.length, R.frags.map((f) => f.topSeq.length).join(" + "))); }
+  const ov = cut[spec.molecules[0].id].overhang;
+  out.push(check(`the staggered cut leaves a ${ov.length}-base overhang, ${ov}, that pairs with itself: every end cut by ${name} fits every other`, ov.length > 0 && revcomp(ov) === ov, `${ov} → reverse complement ${revcomp(ov)}`));
+  const found = spec.recombinant.from.map(([id, i]) => cut[id].frags[i]), parts = found.filter(Boolean), rec = parts.map((f) => f.topSeq).join("");
+  out.push(check("every fragment used in the recombinant molecule exists", found.every(Boolean)));
+  let at = 0; const sites = []; parts.forEach((f, i) => { at += f.topSeq.length; if (i < parts.length - 1) sites.push(at - cutAfter); });
+  out.push(check(`the recombinant molecule has the site ${site} again at each of its ${sites.length} joins`, sites.every((j) => rec.slice(j, j + site.length) === site), sites.map((j) => rec.slice(j, j + site.length)).join(", ")));
+  for (const c of spec.claims || []) if (c.type === "fragments") out.push(check(`${c.id} is cut into ${c.value} fragments`, cut[c.id].frags.length === c.value, `${cut[c.id].frags.length}`));
+  return out;
+}
+
+// ======================================================================== sanger
+// Chain-termination sequencing: every fragment ends at a base marked by a labelled ddNTP.
+// spec: newStrand: the DNA made, 5′→3′, template: the strand being copied (3′→5′), claims: [{type: "reads", value}]
+const DYE = { A: "a1", T: "a2", G: "a4", C: "a3" };
+export const sangerFragments = (newStrand) => [...newStrand].map((b, i) => ({ len: i + 1, seq: newStrand.slice(0, i + 1), last: b }));
+function sangerDraw(spec, W, narrow) {
+  const F = sangerFragments(spec.newStrand), n = F.length, cw = Math.min(26, (W - 120) / n), rowH = 24, left = narrow ? 52 : 70;
+  let s = text(12, 12, `template ${spec.template}`, { size: 12.5, weight: 600, anchor: "start", fill: C.soft });
+  let y = 38;
+  [...F].reverse().forEach((f) => {
+    s += text(left - 8, y, `${f.len}`, { size: 11.5, anchor: "end", fill: C.soft });
+    [...f.seq].forEach((b, i) => { const last = i === f.len - 1; s += rect(left + i * cw + 1, y - 9, cw - 2, 18, { fill: C[DYE[b]], op: last ? 0.9 : 0.15, stroke: C[DYE[b]], sw: 1, rx: 3 }) + text(left + i * cw + cw / 2, y, b, { size: 12, weight: 700, fill: last ? "#ffffff" : C.ink }); });
+    y += rowH;
+  });
+  s += text(12, y + 8, "length (bases)", { size: 11.5, anchor: "start", fill: C.soft });
+  const rx = left + n * cw + 12;
+  if (!narrow) s += arrow(rx + 20, y - 6, rx + 20, 30, { w: 2, head: 9 }) + text(rx + 30, y / 2 + 8, "read the last bases, shortest first", { size: 12, anchor: "start", fill: C.soft });
+  else s += text(12, y + 28, "read the coloured last bases from the shortest fragment up", { size: 11.5, anchor: "start", fill: C.soft });
+  s += text(12, y + (narrow ? 52 : 34), `sequence read: ${F.map((f) => f.last).join("")}`, { size: 13.5, weight: 700, anchor: "start", fill: C.good });
+  return { s, H: y + (narrow ? 66 : 50) };
+}
+function sangerChecks(spec) {
+  const F = sangerFragments(spec.newStrand), out = [];
+  out.push(check("the template is the complement of the new strand (A–T, G–C), so each fragment can be built along it", complement(spec.newStrand) === spec.template.replace(/[^ATGC]/g, ""), `${complement(spec.newStrand)} against ${spec.template}`));
+  out.push(check(`${F.length} fragments, one of every length, each ending at a known base`, F.every((f, i) => f.len === i + 1 && f.seq.length === i + 1)));
+  out.push(check("reading the last base of each fragment from the shortest up gives the new strand", F.map((f) => f.last).join("") === spec.newStrand));
+  for (const c of spec.claims || []) if (c.type === "reads") out.push(check(`the sequence read is ${c.value}`, F.map((f) => f.last).join("") === c.value));
+  return out;
+}
+
 register({
   cross: { draw: crossDraw, checks: crossChecks, widths: [600, 380] },
   strand: { draw: strandDraw, checks: strandChecks, widths: [760, 380] },
@@ -1282,6 +1372,8 @@ register({
   germlayers: { draw: layersDraw, checks: layersChecks, widths: [700, 380] },
   drift: { draw: driftDraw, checks: driftChecks, widths: [700, 380] },
   cladogram: { draw: cladogramDraw, checks: cladogramChecks, widths: [620, 380] },
+  restriction: { draw: restrictionDraw, checks: restrictionChecks, widths: [700, 380] },
+  sanger: { draw: sangerDraw, checks: sangerChecks, widths: [660, 380] },
   biocycle: { draw: biocycleDraw, checks: biocycleChecks, widths: [700, 380] },
   carbonflow: { draw: flowDraw, checks: carbonflowChecks, widths: [700, 380] },
   sarcomere: { draw: sarcomereDraw, checks: sarcomereChecks, widths: [660, 380] },

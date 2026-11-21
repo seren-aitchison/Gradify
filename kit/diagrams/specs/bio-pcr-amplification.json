@@ -1,0 +1,94 @@
+{
+ "id": "bio-pcr-amplification",
+ "renderer": "graph",
+ "course": "biology",
+ "unit": "u12",
+ "lesson": "Polymerase chain reaction",
+ "title": "PCR doubles the DNA every cycle",
+ "caption": "On a log scale an exponential rise is a straight line: each cycle adds log₁₀ 2 = 0.301. After 10 cycles one copy has become 1,024 (10³); after 30, more than a billion (10⁹).",
+ "alt": "A straight line of log of the number of copies against cycle number, rising by 0.301 per cycle: 3 at 10 cycles, 6 at 20 and 9 at 30.",
+ "description": [
+  "Copies after n cycles = initial copies × 2ⁿ.",
+  "On a log₁₀ axis this is a straight line with gradient 0.301 per cycle.",
+  "10 cycles: about 1,000 copies. 20 cycles: about a million. 30 cycles: about a billion."
+ ],
+ "also": [
+  {
+   "course": "biology",
+   "unit": "u14",
+   "lesson": "PCR"
+  }
+ ],
+ "range": {
+  "x": [
+   0,
+   36
+  ],
+  "y": [
+   0,
+   11
+  ]
+ },
+ "ticks": [
+  [
+   0,
+   10,
+   20,
+   30
+  ],
+  [
+   3,
+   6,
+   9
+  ]
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "number of PCR cycles",
+  "log₁₀ of copies from one starting molecule"
+ ],
+ "curves": [
+  {
+   "expr": "x*0.30103",
+   "colour": "a1",
+   "domain": [
+    0,
+    36
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "slope",
+   "expr": "x*0.30103",
+   "x": 5,
+   "value": 0.30103,
+   "name": "each cycle doubles the DNA: log₁₀ rises by 0.301 per cycle"
+  },
+  {
+   "type": "point",
+   "expr": "x*0.30103",
+   "x": 10,
+   "y": 3.0103,
+   "name": "after 10 cycles: 2¹⁰ = 1,024 copies, about 10³"
+  },
+  {
+   "type": "point",
+   "expr": "x*0.30103",
+   "x": 20,
+   "y": 6.0206,
+   "name": "after 20 cycles: 2²⁰ = 1,048,576 copies, about 10⁶"
+  },
+  {
+   "type": "point",
+   "expr": "x*0.30103",
+   "x": 30,
+   "y": 9.0309,
+   "name": "after 30 cycles: 2³⁰ copies, more than a billion"
+  }
+ ]
+}

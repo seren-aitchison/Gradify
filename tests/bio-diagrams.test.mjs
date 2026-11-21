@@ -3,7 +3,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { render } from "../kit/diagrams/renderers.js";
-import { gametes, crossOf, translate, transcribe, complement, mutationKind, pedigreeFits, osmoticOutcome, chargeOf, codonCount, bandFractions, chromatidsAfter, divide, wrightFisher, bandsOf } from "../kit/diagrams/bio-renderers.js";
+import { gametes, crossOf, translate, transcribe, complement, mutationKind, pedigreeFits, osmoticOutcome, chargeOf, codonCount, bandFractions, chromatidsAfter, divide, wrightFisher, bandsOf, cutDna, sangerFragments } from "../kit/diagrams/bio-renderers.js";
 import "../kit/diagrams/chem-renderers-3.js"; // the shared flow renderer, which route and lineage draw with
 
 const mono = { alleles: ["T", "t"], dominance: { kind: "complete", dominant: "T", traits: ["tall", "short"] } };
@@ -267,4 +267,20 @@ test("nutrient cycles: each arrow must be a real process between the right store
   assert.equal(allPass(ok), true);
   assert.equal(allPass({ ...ok, edges: [{ ...ok.edges[0], from: "consumers" }, ok.edges[1], ok.edges[2]] }), false); // animals do not photosynthesise
   assert.equal(allPass({ ...ok, edges: ok.edges.slice(0, 2) }), false); // animals would be a dead end: no way back to the air
+});
+
+test("restriction: EcoRI cuts G^AATTC, leaves a self-complementary AATT overhang, and ligation restores the site", () => {
+  const r = cutDna("TAGAATTCATGGCCAAAGGGAATTCCTA", "GAATTC", 1);
+  assert.deepEqual(r.sites, [2, 19]); assert.equal(r.frags.length, 3); assert.equal(r.overhang, "AATT");
+  const spec = { renderer: "restriction", alt: "x", enzyme: { name: "EcoRI", site: "GAATTC", cutAfter: 1 }, molecules: [{ id: "gene", label: "g", dna: "TAGAATTCATGGCCAAAGGGAATTCCTA" }, { id: "vec", label: "v", dna: "CCTAGAATTCGGTCA" }],
+    recombinant: { label: "r", from: [["vec", 0], ["gene", 1], ["vec", 1]] }, claims: [{ type: "fragments", id: "gene", value: 3 }] };
+  assert.equal(allPass(spec), true);
+  assert.equal(allPass({ ...spec, enzyme: { name: "x", site: "GAATTG", cutAfter: 1 }, molecules: [{ id: "gene", label: "g", dna: "TAGAATTGATGGCC" }, spec.molecules[1]] }), false); // not palindromic
+  assert.equal(allPass({ ...spec, recombinant: { label: "r", from: [["vec", 1], ["gene", 1], ["vec", 0]] } }), false); // pieces joined in the wrong order lose the site
+});
+
+test("Sanger: a fragment of every length, read back into the new strand", () => {
+  assert.deepEqual(sangerFragments("GAT").map((f) => f.last), ["G", "A", "T"]);
+  assert.equal(allPass({ renderer: "sanger", alt: "x", newStrand: "GATTACA", template: "CTAATGT", claims: [{ type: "reads", value: "GATTACA" }] }), true);
+  assert.equal(allPass({ renderer: "sanger", alt: "x", newStrand: "GATTACA", template: "CTAATGA" }), false); // template is not the complement
 });

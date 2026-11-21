@@ -1,0 +1,80 @@
+{
+ "id": "bio-cloning-steps",
+ "renderer": "flow",
+ "course": "biology",
+ "unit": "u12",
+ "lesson": "Recombinant DNA",
+ "title": "Making recombinant DNA",
+ "caption": "The gene is isolated and inserted into a vector cut with the same enzyme, ligase joins them, host cells are transformed, and the few cells that took up the plasmid are picked out by a marker gene such as antibiotic resistance. Eukaryotic genes are usually made as cDNA, because bacteria cannot remove introns.",
+ "alt": "Five boxes in order: isolate the gene, insert it into a vector, join with ligase, transform host cells, and select the transformed cells.",
+ "description": [
+  "Isolate the gene: cut with a restriction enzyme, or make cDNA from mRNA.",
+  "Insert it into a vector: a plasmid cut with the same enzyme.",
+  "Join with DNA ligase: the sticky ends are sealed.",
+  "Transform host cells: a few cells take up the recombinant plasmid.",
+  "Select the transformed cells: marker gene: only they grow on the antibiotic."
+ ],
+ "layout": "grid",
+ "boxWidth": 122,
+ "rowHeight": 124,
+ "nodes": [
+  {
+   "id": "g0",
+   "label": "isolate the gene",
+   "sub": "cut with a restriction enzyme, or make cDNA from mRNA",
+   "tone": "a1",
+   "col": 0,
+   "row": 0
+  },
+  {
+   "id": "g1",
+   "label": "insert it into a vector",
+   "sub": "a plasmid cut with the same enzyme",
+   "tone": "a4",
+   "col": 1,
+   "row": 0
+  },
+  {
+   "id": "g2",
+   "label": "join with DNA ligase",
+   "sub": "the sticky ends are sealed",
+   "tone": "a5",
+   "col": 2,
+   "row": 0
+  },
+  {
+   "id": "g3",
+   "label": "transform host cells",
+   "sub": "a few cells take up the recombinant plasmid",
+   "tone": "a3",
+   "col": 2,
+   "row": 1
+  },
+  {
+   "id": "g4",
+   "label": "select the transformed cells",
+   "sub": "marker gene: only they grow on the antibiotic",
+   "tone": "a2",
+   "col": 1,
+   "row": 1
+  }
+ ],
+ "edges": [
+  {
+   "from": "g0",
+   "to": "g1"
+  },
+  {
+   "from": "g1",
+   "to": "g2"
+  },
+  {
+   "from": "g2",
+   "to": "g3"
+  },
+  {
+   "from": "g3",
+   "to": "g4"
+  }
+ ]
+}
