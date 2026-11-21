@@ -1,0 +1,111 @@
+{
+ "id": "bio-herd-immunity",
+ "renderer": "graph",
+ "course": "biology",
+ "unit": "u09",
+ "lesson": "Transmission",
+ "title": "How much immunity stops an outbreak?",
+ "caption": "If one case infects R₀ others in a fully susceptible population, an outbreak declines once the immune fraction is above 1 − 1/R₀, because each case then infects fewer than one other (R below 1). Measles, with R₀ of about 12–18, needs more than about 92–94% immunity, which is why very high vaccine coverage is needed.",
+ "alt": "A curve of the immune fraction needed against R0, rising steeply and levelling towards 1: 0.5 at R0 of 2, 0.75 at 4, and about 0.92 to 0.94 for measles at R0 of 12 to 18.",
+ "description": [
+  "The fraction immune needed to stop an outbreak is 1 − 1/R₀.",
+  "R₀ = 2: half the population must be immune.",
+  "R₀ = 4: three quarters.",
+  "Measles, R₀ about 12–18: about 92% to 94%.",
+  "Above that fraction each case infects fewer than one other person, so the outbreak declines."
+ ],
+ "also": [
+  {
+   "course": "biology",
+   "unit": "u10",
+   "lesson": "Vaccination"
+  }
+ ],
+ "range": {
+  "x": [
+   1,
+   20
+  ],
+  "y": [
+   0,
+   1.08
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   4,
+   8,
+   12,
+   16,
+   20
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1.0
+  ]
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "R₀, new cases per case when everyone is susceptible",
+  "fraction immune needed"
+ ],
+ "bands": [
+  {
+   "x": [
+    12,
+    18
+   ],
+   "label": "measles",
+   "colour": "a2"
+  }
+ ],
+ "curves": [
+  {
+   "expr": "1-1/x",
+   "colour": "a1"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "1-1/x",
+   "x": 2,
+   "y": 0.5,
+   "name": "R₀ = 2: half of the population must be immune"
+  },
+  {
+   "type": "point",
+   "expr": "1-1/x",
+   "x": 4,
+   "y": 0.75,
+   "name": "R₀ = 4: three quarters must be immune"
+  },
+  {
+   "type": "value",
+   "expr": "1-1/x",
+   "x": 12,
+   "between": [
+    0.91,
+    0.92
+   ],
+   "name": "measles at R₀ = 12: about 92% must be immune"
+  },
+  {
+   "type": "value",
+   "expr": "1-1/x",
+   "x": 18,
+   "between": [
+    0.94,
+    0.95
+   ],
+   "name": "measles at R₀ = 18: about 94% must be immune"
+  }
+ ]
+}

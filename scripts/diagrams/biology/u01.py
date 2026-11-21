@@ -62,6 +62,7 @@ mk("u01-14", "bio-scale-of-life", "trend", "The scale of life, on a logarithmic 
    "Bar chart on a logarithmic scale in micrometres: protein 0.01, virus 0.1, bacterium 2, red blood cell 8, plant cell 60, human egg 120.",
    ["A large protein such as an antibody, about 0.01 µm (10 nm).", "Virus (influenza), about 0.1 µm (100 nm).", "Bacterium (E. coli), about 2 µm.",
     "Red blood cell, about 8 µm.", "Plant leaf cell, about 60 µm.", "Human egg cell, about 120 µm, just visible to the eye."],
+   also=("u09-26",),
    kind="bars", log=True, range=[0.001, 1000], ticks=[0.001, 0.01, 0.1, 1, 10, 100, 1000], yLabel="typical size / µm (log scale)",
    items=[{"key": k, "value": v} for k, v in SIZES], highlight={"protein": "a5", "virus": "a5"},
    claims=[{"type": "increasing"}])

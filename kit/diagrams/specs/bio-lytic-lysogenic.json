@@ -1,0 +1,30 @@
+{
+ "id": "bio-lytic-lysogenic",
+ "renderer": "decision-tree",
+ "course": "biology",
+ "unit": "u09",
+ "lesson": "Viral replication",
+ "title": "Lytic or lysogenic?",
+ "caption": "In the lytic cycle the virus replicates at once and the cell bursts. In the lysogenic cycle the viral DNA joins the host chromosome as a prophage and is copied with it, hiding for generations until something triggers the lytic cycle.",
+ "alt": "A flow chart: if the viral DNA does not integrate into the host chromosome, the cycle is lytic and the cell bursts; if it integrates as a prophage, the cycle is lysogenic, and may later become lytic.",
+ "description": [
+  "Does the viral genome integrate into the host chromosome? If not, it replicates immediately and the cell bursts: the lytic cycle.",
+  "If it does, it is a prophage: it is copied with the host DNA every time the cell divides, and later may switch to the lytic cycle: the lysogenic cycle."
+ ],
+ "start": "q1",
+ "nodes": {
+  "q1": {
+   "q": "Does the viral genome integrate into the host chromosome?",
+   "yes": "lyso",
+   "no": "lytic"
+  },
+  "lyso": {
+   "outcome": "Lysogenic: the genome is a prophage, copied with the host DNA, and later may become lytic",
+   "tone": "warn"
+  },
+  "lytic": {
+   "outcome": "Lytic: the virus replicates immediately and the cell bursts",
+   "tone": "bad"
+  }
+ }
+}

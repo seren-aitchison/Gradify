@@ -801,6 +801,7 @@ H: How vaccines work
 - They trigger a primary response and create **memory cells** without causing disease.
 - On real infection, a fast secondary response prevents or reduces illness.
 - **Adjuvants** boost responses.
+D: bio-herd-immunity
 H: Types
 - **Live attenuated**: weakened pathogens, such as MMR.
 - **Inactivated**: killed pathogens, such as some polio and influenza vaccines.

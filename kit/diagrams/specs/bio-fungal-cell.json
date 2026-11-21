@@ -13,6 +13,13 @@
   "A septum, a cross-wall with a pore, separates this segment from the next.",
   "There are no chloroplasts: fungi feed by absorbing food they digest outside themselves."
  ],
+ "also": [
+  {
+   "course": "biology",
+   "unit": "u09",
+   "lesson": "Fungi"
+  }
+ ],
  "cell": "fungus",
  "labels": [
   "cell wall",

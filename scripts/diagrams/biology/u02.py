@@ -11,6 +11,7 @@ mk("u02-02", "bio-prokaryotic-cell", "cellmap", "A prokaryotic cell",
     "70S ribosomes are scattered through the cytoplasm.",
     "Pili on the surface attach the cell and transfer DNA; the flagellum turns to move it.",
     "There is no nucleus, and no mitochondria, endoplasmic reticulum or Golgi apparatus."],
+   also=("u09-02",),
    cell="prokaryote", labels=["capsule", "cell wall", "plasma membrane", "cytoplasm", "nucleoid", "plasmid", "70S ribosomes", "pili", "flagellum"],
    claims=[{"type": "lacks", "structures": ["nucleus", "mitochondrion", "rough ER", "Golgi apparatus", "80S ribosomes"]}])
 
@@ -39,6 +40,7 @@ mk("u02-06", "bio-fungal-cell", "cellmap", "A fungal hypha",
    "One segment of a fungal hypha with labels for the cell wall, plasma membrane, cytoplasm, nucleus, mitochondrion, vacuole, rough endoplasmic reticulum, Golgi apparatus, ribosomes and a septum.",
    ["The wall is made mainly of chitin, with glucans, not cellulose.", "Inside are a nucleus, mitochondria, rough ER, a Golgi apparatus, ribosomes and a vacuole.",
     "A septum, a cross-wall with a pore, separates this segment from the next.", "There are no chloroplasts: fungi feed by absorbing food they digest outside themselves."],
+   also=("u09-11",),
    cell="fungus", labels=["cell wall", "plasma membrane", "cytoplasm", "nucleus", "mitochondrion", "vacuole", "rough ER", "Golgi apparatus", "80S ribosomes", "septum"],
    claims=[{"type": "lacks", "structures": ["chloroplast"]}])
 

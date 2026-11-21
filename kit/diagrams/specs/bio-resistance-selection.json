@@ -1,0 +1,64 @@
+{
+ "id": "bio-resistance-selection",
+ "renderer": "flow",
+ "course": "biology",
+ "unit": "u09",
+ "lesson": "Antimicrobial resistance",
+ "title": "How antibiotic resistance spreads",
+ "caption": "Antibiotics do not cause resistance; they select for it. A few resistant cells survive the treatment, divide, and become most of the population, and resistance genes can then spread to other bacteria by horizontal gene transfer. Stewardship slows this by limiting unnecessary use.",
+ "alt": "Four boxes in order: a mixed population with a few resistant cells, antibiotic treatment killing the susceptible ones, the resistant cells surviving, and a resistant population.",
+ "description": [
+  "A mixed population: a few cells already resistant, by mutation or a gene acquired from another bacterium.",
+  "Antibiotic treatment: kills the susceptible cells.",
+  "Resistant cells survive: and divide with less competition.",
+  "A resistant population: resistance genes may also pass to other bacteria by horizontal transfer."
+ ],
+ "also": [
+  {
+   "course": "biology",
+   "unit": "u06",
+   "lesson": "Evolution of resistance"
+  }
+ ],
+ "layout": "line",
+ "nodes": [
+  {
+   "id": "r0",
+   "label": "a mixed population",
+   "sub": "a few cells already resistant, by mutation or a gene acquired from another bacterium",
+   "tone": "a1"
+  },
+  {
+   "id": "r1",
+   "label": "antibiotic treatment",
+   "sub": "kills the susceptible cells",
+   "tone": "a3"
+  },
+  {
+   "id": "r2",
+   "label": "resistant cells survive",
+   "sub": "and divide with less competition",
+   "tone": "a4"
+  },
+  {
+   "id": "r3",
+   "label": "a resistant population",
+   "sub": "resistance genes may also pass to other bacteria by horizontal transfer",
+   "tone": "a2"
+  }
+ ],
+ "edges": [
+  {
+   "from": "r0",
+   "to": "r1"
+  },
+  {
+   "from": "r1",
+   "to": "r2"
+  },
+  {
+   "from": "r2",
+   "to": "r3"
+  }
+ ]
+}

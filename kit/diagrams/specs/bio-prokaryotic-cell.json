@@ -15,6 +15,13 @@
   "Pili on the surface attach the cell and transfer DNA; the flagellum turns to move it.",
   "There is no nucleus, and no mitochondria, endoplasmic reticulum or Golgi apparatus."
  ],
+ "also": [
+  {
+   "course": "biology",
+   "unit": "u09",
+   "lesson": "Bacterial structure"
+  }
+ ],
  "cell": "prokaryote",
  "labels": [
   "capsule",

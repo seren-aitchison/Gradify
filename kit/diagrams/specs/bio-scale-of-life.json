@@ -15,6 +15,13 @@
   "Plant leaf cell, about 60 µm.",
   "Human egg cell, about 120 µm, just visible to the eye."
  ],
+ "also": [
+  {
+   "course": "biology",
+   "unit": "u09",
+   "lesson": "Microscopy"
+  }
+ ],
  "kind": "bars",
  "log": true,
  "range": [

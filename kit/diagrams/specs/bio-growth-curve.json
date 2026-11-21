@@ -1,0 +1,181 @@
+{
+ "id": "bio-growth-curve",
+ "renderer": "graph",
+ "course": "biology",
+ "unit": "u09",
+ "lesson": "Bacterial growth",
+ "title": "The bacterial growth curve",
+ "caption": "Plotted as log₁₀ of the number of living cells, exponential growth is a straight line: with a 20-minute generation time the count doubles three times an hour (log₁₀ 2 = 0.301 per generation). A lag phase comes first, then the log phase, a stationary phase when growth equals death, and a death phase.",
+ "alt": "A curve of log of viable cell count against time in hours: flat for the first hour (lag), a straight rising line from 1 to 6 hours (log phase), flat from 6 to 10 hours (stationary) and falling afterwards (death).",
+ "description": [
+  "Lag phase, the first hour: the cells adjust and make enzymes, with little division.",
+  "Log phase: the count doubles every generation (20 minutes here), a straight line on a log scale: gradient 0.903 per hour.",
+  "Stationary phase: growth equals death as nutrients run out and wastes build up.",
+  "Death phase: more cells die than divide.",
+  "After n generations the population is the starting number × 2ⁿ: ten generations multiply it 1,024-fold."
+ ],
+ "range": {
+  "x": [
+   0,
+   14
+  ],
+  "y": [
+   2,
+   8.5
+  ]
+ },
+ "ticks": [
+  [
+   0,
+   2,
+   4,
+   6,
+   8,
+   10,
+   12,
+   14
+  ],
+  [
+   3,
+   4,
+   5,
+   6,
+   7,
+   8
+  ]
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "time / hours",
+  "log₁₀ of living cells per mL"
+ ],
+ "bands": [
+  {
+   "x": [
+    0,
+    1
+   ],
+   "label": "lag",
+   "colour": "a1"
+  },
+  {
+   "x": [
+    1,
+    6
+   ],
+   "label": "log phase",
+   "colour": "a4"
+  },
+  {
+   "x": [
+    6,
+    10
+   ],
+   "label": "stationary",
+   "colour": "a5"
+  },
+  {
+   "x": [
+    10,
+    14
+   ],
+   "label": "death",
+   "colour": "a2"
+  }
+ ],
+ "curves": [
+  {
+   "expr": "3",
+   "domain": [
+    0,
+    1
+   ],
+   "colour": "a1"
+  },
+  {
+   "expr": "3+0.90309*(x-1)",
+   "domain": [
+    1,
+    6
+   ],
+   "colour": "a4"
+  },
+  {
+   "expr": "7.5155",
+   "domain": [
+    6,
+    10
+   ],
+   "colour": "a5"
+  },
+  {
+   "expr": "7.5155-0.4*(x-10)",
+   "domain": [
+    10,
+    14
+   ],
+   "colour": "a2"
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "3",
+   "x": 0.5,
+   "y": 3,
+   "name": "lag phase: no change in the count"
+  },
+  {
+   "type": "slope",
+   "expr": "3+0.90309*(x-1)",
+   "x": 3,
+   "value": 0.90309,
+   "name": "log phase: a straight line of gradient 0.903 per hour, which is three doublings an hour (3 × log₁₀ 2)"
+  },
+  {
+   "type": "point",
+   "expr": "3+0.90309*(x-1)",
+   "x": 1.3333333,
+   "y": 3.30103,
+   "name": "one generation (20 minutes) later the count has doubled: log₁₀ rises by 0.301"
+  },
+  {
+   "type": "point",
+   "expr": "3+0.90309*(x-1)",
+   "x": 4.3333333,
+   "y": 6.0103,
+   "name": "after ten generations the count is 1,024 times larger: log₁₀ rises by 3.01"
+  },
+  {
+   "type": "point",
+   "expr": "7.5155",
+   "x": 8,
+   "y": 7.5155,
+   "name": "stationary phase: the count stops changing"
+  },
+  {
+   "type": "value",
+   "expr": "3+0.90309*(x-1)",
+   "x": 6,
+   "between": [
+    7.51,
+    7.52
+   ],
+   "name": "the log phase ends where the stationary phase begins"
+  },
+  {
+   "type": "value",
+   "expr": "7.5155-0.4*(x-10)",
+   "x": 14,
+   "between": [
+    5.9,
+    5.92
+   ],
+   "name": "death phase: the count falls"
+  }
+ ]
+}

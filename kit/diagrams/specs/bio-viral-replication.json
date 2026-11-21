@@ -1,0 +1,80 @@
+{
+ "id": "bio-viral-replication",
+ "renderer": "flow",
+ "course": "biology",
+ "unit": "u09",
+ "lesson": "Viral replication",
+ "title": "How a virus replicates",
+ "caption": "A virus can only replicate inside a host cell. It attaches to specific receptors, gets its genome in, uses the host's machinery to copy its genome and make its proteins, assembles new particles, and leaves by bursting the cell (lysis) or by budding.",
+ "alt": "Five boxes in order: attachment, entry, replication, assembly and release.",
+ "description": [
+  "Attachment: viral proteins bind specific host receptors.",
+  "Entry: fusion, endocytosis or injection of the genome.",
+  "Replication: the genome is copied and proteins made by host machinery.",
+  "Assembly: new virus particles are put together.",
+  "Release: by lysis (bursting) or budding."
+ ],
+ "layout": "grid",
+ "boxWidth": 122,
+ "rowHeight": 124,
+ "nodes": [
+  {
+   "id": "v0",
+   "label": "attachment",
+   "sub": "viral proteins bind specific host receptors",
+   "tone": "a1",
+   "col": 0,
+   "row": 0
+  },
+  {
+   "id": "v1",
+   "label": "entry",
+   "sub": "fusion, endocytosis or injection of the genome",
+   "tone": "a4",
+   "col": 1,
+   "row": 0
+  },
+  {
+   "id": "v2",
+   "label": "replication",
+   "sub": "the genome is copied and proteins made by host machinery",
+   "tone": "a5",
+   "col": 2,
+   "row": 0
+  },
+  {
+   "id": "v3",
+   "label": "assembly",
+   "sub": "new virus particles are put together",
+   "tone": "a3",
+   "col": 1,
+   "row": 1
+  },
+  {
+   "id": "v4",
+   "label": "release",
+   "sub": "by lysis (bursting) or budding",
+   "tone": "a2",
+   "col": 0,
+   "row": 1
+  }
+ ],
+ "edges": [
+  {
+   "from": "v0",
+   "to": "v1"
+  },
+  {
+   "from": "v1",
+   "to": "v2"
+  },
+  {
+   "from": "v2",
+   "to": "v3"
+  },
+  {
+   "from": "v3",
+   "to": "v4"
+  }
+ ]
+}

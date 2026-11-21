@@ -54,6 +54,7 @@ H: Structures
 - **Nucleoid**: a single circular chromosome, with no nucleus.
 - **Plasmids**: small circles of extra DNA.
 - Some have a **capsule**, **flagella** for movement and **pili** for attachment.
+D: bio-prokaryotic-cell
 H: Gram stain and shapes
 - **Gram-positive**: thick peptidoglycan wall, stains purple.
 - **Gram-negative**: thin peptidoglycan and an outer membrane, stains pink.
@@ -142,6 +143,7 @@ H: Growth curve
 - **Stationary phase**: growth equals death as nutrients run out and wastes build up.
 - **Death phase**: more cells die than divide.
 P: Growth is affected by temperature, pH, nutrients, oxygen and water availability. Because growth is exponential, numbers are often plotted on a logarithmic scale. Food is refrigerated because low temperatures slow growth, and the "danger zone" for food is often given as 8–63 °C in the UK.
+D: bio-growth-curve
 X: Calculating growth.
 > A culture starts with 100 bacteria.
 > Generation time is 20 minutes.
@@ -344,12 +346,14 @@ H: Stages
 - **Replication**: the viral genome is copied and viral proteins made using host machinery.
 - **Assembly**: new viruses are put together.
 - **Release**: by lysis (bursting) or budding.
+D: bio-viral-replication
 H: Cycles and retroviruses
 - **Lytic cycle**: the virus replicates immediately and the cell bursts.
 - **Lysogenic cycle**: viral DNA integrates into the host chromosome as a **prophage** and is copied with it, later becoming lytic.
 - **Retroviruses**, such as HIV, use **reverse transcriptase** to make DNA from RNA.
 - This DNA integrates into the host genome as a **provirus**.
 P: Host specificity depends on receptors: HIV binds CD4 on helper T cells, and SARS-CoV-2 binds ACE2. Antiviral drugs target viral steps: reverse transcriptase inhibitors for HIV, and neuraminidase inhibitors that block release of influenza. Latent viruses, such as herpes simplex, can hide in cells and reactivate, causing cold sores.
+D: bio-lytic-lysogenic
 X: HIV replication.
 > HIV binds CD4 receptors on a helper T cell.
 > Its RNA enters and reverse transcriptase makes DNA.
@@ -426,6 +430,7 @@ H: Structure
 - **Yeasts** are single-celled; **moulds** grow as **hyphae**, forming a **mycelium**.
 - Mushrooms are **fruiting bodies** that produce spores.
 - Fungi reproduce by **spores**, sexually or asexually; yeasts also bud.
+D: bio-fungal-cell
 H: Nutrition and importance
 - Fungi are **heterotrophs** that digest food externally by secreting enzymes and absorbing the products (**saprotrophic nutrition**).
 - They are major **decomposers**, recycling nutrients.
@@ -767,6 +772,7 @@ H: Reservoirs and control
 - Control: hand washing, masks, ventilation, clean water, safe sex, vector control and vaccination.
 - If R falls below 1, an outbreak declines.
 P: John Snow traced a cholera outbreak in London in 1854 to the Broad Street water pump, an early example of epidemiology. Measles has an R₀ of about 12–18, making it one of the most transmissible diseases, so very high vaccine coverage is needed. Different routes require different control measures.
+D: bio-herd-immunity
 X: John Snow and the Broad Street pump.
 > In 1854, cholera killed hundreds in Soho, London.
 > Snow mapped deaths and found they clustered around one water pump.
@@ -887,6 +893,7 @@ H: Mechanisms
 - **Efflux pumps**: proteins pump antibiotics out of the cell.
 - **Reduced permeability**: changes in outer membrane porins.
 - **Bypass pathways**: alternative enzymes replace the target.
+D: bio-resistance-selection
 H: Detection and response
 - Resistance is detected by sensitivity tests and by finding resistance genes with PCR or sequencing.
 - Surveillance tracks resistance in hospitals and communities.
@@ -1051,6 +1058,7 @@ H: Key ideas
 - **Resolution**: the ability to distinguish two close points as separate.
 - Magnification = image size ÷ actual size.
 - **Light microscopes**: up to about ×1,500, resolution about 200 nm; can view living cells and use stains.
+D: bio-scale-of-life
 H: Electron microscopes
 - **Transmission electron microscope** (TEM): beam passes through thin sections; very high resolution, around 0.1–1 nm in practice for biological samples.
 - **Scanning electron microscope** (SEM): beam scans the surface, giving 3D images.

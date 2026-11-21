@@ -928,6 +928,7 @@ H: How resistance evolves
 - The antibiotic kills susceptible bacteria, leaving resistant ones.
 - Resistant bacteria reproduce, so resistance becomes common: **directional selection**.
 - Bacteria divide rapidly, so this can happen quickly.
+D: bio-resistance-selection
 H: Spread and control
 - Resistance genes spread by **horizontal gene transfer**, especially on **plasmids** by conjugation.
 - Misuse includes unnecessary prescriptions, not finishing courses where advised, and overuse in farming.
