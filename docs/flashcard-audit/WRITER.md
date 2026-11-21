@@ -1,7 +1,7 @@
 # Writer brief: 10 more flashcards per lesson
 
 You are one of several writers working in the same checkout, /home/user/Gradify, on branch
-claude/tender-albattani-v7kiqg. Read docs/FLASHCARD-QUALITY.md first: it is the standard.
+claude/practical-galileo-m0kuia. Read docs/FLASHCARD-QUALITY.md first: it is the standard.
 
 Your batch is listed in docs/flashcard-audit/plan.json (find your batch id; work through its "files" in order,
 finishing one file completely before starting the next).
@@ -23,12 +23,15 @@ For each file:
    - No backticks, no "${", no " | " inside a question or answer. Write maths as the file does.
 3. Write the cards to a JSON file in your own scratch directory (mktemp -d), shaped
    {"1": [["question","answer"], ... 10], "2": [...], ...}, then run
-   `node scripts/fc-insert.mjs <file> <json>`. Do several lessons per JSON to save effort.
+   `node scripts/fc-insert.mjs <file> <json>`. Put 3 to 5 lessons in each JSON.
    To rewrite a lesson's new cards, put just that lesson in a JSON and add --replace.
-4. `node scripts/fc-done.mjs <file>`. It runs the checker and the audit gate, then commits and pushes
-   that file alone. Fix every BLOCKING card (rewrite it, --replace that lesson). For each REVIEW card,
-   check it against the lesson: rewrite it if the lesson does not support it. Then run fc-done again.
-   A file only counts as done when fc-done prints COMMITTED.
+4. Save as you go: after every fc-insert, run `node scripts/fc-done.mjs <file> --checkpoint`. It runs the
+   checker and the audit gate and, if they pass, commits and pushes the lessons finished so far, so a usage
+   limit can't lose them. Fix every BLOCKING card (rewrite it, --replace that lesson). For each REVIEW card,
+   check it against the lesson: rewrite it if the lesson does not support it. Then run it again. Don't start
+   the next JSON until the checkpoint prints CHECKPOINT COMMITTED (or COMMITTED).
+5. When every lesson is written, `node scripts/fc-done.mjs <file>`. The file only counts as done when it
+   prints COMMITTED.
 
 Rules: edit only notes files in your batch. Never run git checkout, reset, stash, rebase, merge or
 `git add -A`/`git add .`, and never commit other people's files; fc-done commits for you. Don't touch main.
