@@ -39,5 +39,5 @@ design · 0 planned but not placed · 0 failing. 18 placements of 18 ids (17 u01
 
 ## Commits
 
-- First maths release: see `git log -- kit/diagrams/maths-renderers.js` on main (this file is committed with it).
-- Tests at release: full `npm test` (see the commit message for the result).
+- b2450b4c (main): renderers, tests, tooling, Unit 1. Full `npm test` 1089/1089 pass; tests/renderer-names.test.mjs
+  passes (maths renderer names are unique; do not reuse physics' `vectors`).
