@@ -39,6 +39,16 @@ M2#sport-u03-01-q2@2: During a 30-minute run, what happens to the concentration 
 TF1#sport-u03-01-q3@3: In a coupled reaction, the energy released by breaking down a fuel is used to resynthesise ATP. | true | Coupled reactions link an exothermic reaction (fuel breakdown) to the endothermic resynthesis of ATP from ADP and Pi.
 M2#sport-u03-01-q4@2: Why is ATP described as the body's "energy currency"? | All energy-requiring processes in the cell are paid for with ATP, whichever fuel provided the energy | It is the body's largest energy store | It is made only from carbohydrate | It is stored mainly in fat tissue | Like money, ATP is the common medium of exchange; its stores are small, which is why it must be constantly regenerated.
 SA3#sport-u03-01-q5@2,3: Explain why the body needs energy systems if ATP is the only energy source for muscle contraction. | ATP stores in muscle are very small, lasting only 2–3 seconds of maximal work, and the body cannot store large amounts because ATP is a heavy, reactive molecule. So ATP must be rebuilt continuously from ADP and Pi using energy from coupled reactions: phosphocreatine breakdown (ATP–PC system), anaerobic breakdown of glucose (glycolytic system) and aerobic breakdown of carbohydrate and fat (aerobic system), which differ in speed and capacity. | ATP is the only direct source ; Stores last only seconds ; Resynthesis from ADP and Pi ; Coupled reactions ; Three systems differing in rate and capacity
+Q: What is adenosine triphosphate made of? | A molecule of adenosine joined to three phosphate groups.
+Q: Which bond does ATPase break to release energy? | The bond to the last (third) phosphate group, by hydrolysis.
+Q: Name two cell processes powered by the energy released from ATP breakdown. | Moving myosin heads and pumping calcium ions.
+Q: Why can food fuels not power the myosin head directly? | Only ATP is immediately usable; the energy in carbohydrate, fat and protein is used to rebuild ATP from ADP and Pi.
+Q: Roughly how much energy is released per mole of ATP broken down under standard conditions? | About 30 kJ per mole.
+Q: What happens to muscle ATP concentration and ATP turnover during intense exercise? | Concentration hardly falls, while turnover rises a hundredfold or more, because resynthesis matches use.
+Q: Roughly how much ATP does an adult resynthesise in a day? | Roughly their own body mass in ATP.
+Q: Name the three energy systems that resynthesise ATP. | The ATP–PC system, the anaerobic glycolytic system and the aerobic system.
+Q: In ATP resynthesis, which reaction is exothermic and which is endothermic? | Fuel breakdown (such as phosphocreatine or glucose) is exothermic; rebuilding ATP is endothermic.
+Q: By how much does muscle ATP concentration fall at most, even in exhausting sprints? | By at most about 20–40%, because resynthesis matches use.
 
 ## The ATP–PC system
 LV: Intermediate · Application
@@ -75,6 +85,16 @@ M2#sport-u03-02-q2@2: Which activity relies predominantly on the ATP–PC system
 NUM2#sport-u03-02-q3@3: A 100 m sprinter's PC stores are 50% restored 30 s after a sprint. If recovery were linear (it isn't quite), what percentage would be restored after 45 s? | 75 | 1 | % | 50% in 30 s is about 1.67% per second, so 45 × 1.67 ≈ 75%; in reality recovery slows as it approaches 100%.
 M3#sport-u03-02-q4@2: Which is a weakness of the ATP–PC system? | It yields only one ATP per molecule of PC | It produces lactate | It needs oxygen to work | It is the slowest system | The system's yield and stores are small. It is anaerobic, fast and produces no lactate.
 SA3#sport-u03-02-q5@2,3: Evaluate the ATP–PC system for a long jumper. | Strengths: the run-up and take-off last only a few seconds at maximal intensity, so the fastest system provides ATP at the very high rate needed for maximal power; it needs no oxygen and produces no fatiguing by-products; PC stores recover almost fully in the 3+ minutes between attempts. Weaknesses: stores are small, so it couldn't sustain longer efforts; and recovery depends on aerobic metabolism, so poor aerobic fitness may slow recovery in a long competition. Overall it is ideal for the event. | Matches duration and intensity ; Fast, anaerobic, no fatiguing by-products ; Recovery between attempts ; Limitation of small stores ; Judgement
+Q: Where is phosphocreatine stored? | In the sarcoplasm of the muscle cell.
+Q: What triggers creatine kinase to break down phosphocreatine? | Rising ADP levels.
+Q: What are the products of phosphocreatine breakdown? | Inorganic phosphate, creatine and energy.
+Q: Why is the ATP–PC system so fast? | It is a single reaction, with no delay waiting for oxygen.
+Q: How much more PC than ATP does muscle store? | About three to four times as much.
+Q: How quickly do PC stores recover after maximal effort? | About 50% in 30 seconds and nearly all in about 3 minutes.
+Q: Which supplement can increase phosphocreatine stores? | Creatine supplementation.
+Q: Why does PC recovery depend on aerobic metabolism? | PC resynthesis needs oxygen, supplied in the fast component of EPOC.
+Q: Name four activities in which the ATP–PC system is predominant. | The 100 m sprint, jumps, throws and a tennis serve.
+Q: Why is the point at which glycolysis takes over from PC in a sprint debated? | Glycolysis is fully active within the first few seconds, so the systems overlap from the start.
 
 ## The anaerobic glycolytic system
 LV: Intermediate · Application
@@ -111,6 +131,16 @@ M2#sport-u03-03-q2@2: Which event relies predominantly on the anaerobic glycolyt
 SEQ2#sport-u03-03-q3@1: Put these in order for anaerobic glycolysis from glycogen. | Glycogen broken down to glucose by glycogen phosphorylase ; Glucose broken down to pyruvate, PFK controlling the rate ; Pyruvate converted to lactate by lactate dehydrogenase | Glycogen is mobilised, glycolysis yields pyruvate and ATP, and pyruvate is reduced to lactate when oxygen supply is insufficient.
 M3#sport-u03-03-q4@3: Why is converting pyruvate to lactate useful to the muscle? | It regenerates NAD⁺, so glycolysis can keep producing ATP | It produces large amounts of ATP | It removes hydrogen ions completely | It provides oxygen to the muscle | Glycolysis needs NAD⁺ to accept hydrogen; reducing pyruvate to lactate frees NAD⁺, letting fast ATP production continue.
 SA3#sport-u03-03-q5@3: Evaluate the anaerobic glycolytic system as an energy source for a 200 m swimmer. | Strengths: it resynthesises ATP quickly without waiting for oxygen, with a greater yield and capacity than the ATP–PC system, matching the high intensity of the race's middle and later stages; glycogen stores are ample for one race. Weaknesses: the yield (2 ATP per glucose) is small compared with aerobic metabolism; hydrogen ions and other metabolites accumulate, reducing force and enzyme activity and slowing the swimmer; recovery takes time. In a race of about 2 minutes the aerobic system also makes a large contribution. | Fast resynthesis without oxygen ; Larger capacity than ATP–PC ; Fatigue from hydrogen ions and metabolites ; Low yield ; Aerobic contribution recognised
+Q: Which enzyme breaks glycogen down to glucose? | Glycogen phosphorylase.
+Q: Where is glycogen stored? | In muscle and liver.
+Q: How many ATP does anaerobic glycolysis yield per glucose unit from glycogen? | 3 ATP per glucose unit.
+Q: Which enzyme converts pyruvate to lactate? | Lactate dehydrogenase (LDH).
+Q: For what range of durations is the anaerobic glycolytic system predominant? | High-intensity efforts from about 10 seconds to about 1–3 minutes.
+Q: How does falling pH contribute to fatigue in hard efforts? | It inhibits PFK and interferes with calcium binding.
+Q: Name two ways lactate is used in the body. | As a fuel by the heart and oxidative fibres, and converted back to glucose in the liver.
+Q: What is the Cori cycle? | The conversion of lactate back to glucose in the liver.
+Q: What causes delayed-onset muscle soreness the next day? | Muscle damage, not lactate, which is cleared within an hour or so.
+Q: Besides hydrogen ions, which metabolite is named as reducing force in a 400 m race? | Inorganic phosphate.
 
 ## The aerobic system
 LV: Intermediate · Application
@@ -151,6 +181,16 @@ M2#sport-u03-04-q2@2: Why can fat not be the main fuel in a 5 km race at near-ma
 MATCH2#sport-u03-04-q3@1: Match each stage of the aerobic system to its main product. | Glycolysis = Pyruvate and 2 ATP ; Link reaction = Acetyl coenzyme A ; Krebs cycle = Carbon dioxide and hydrogen carriers ; Electron transport chain = Most of the ATP and water | Each stage passes its product to the next; the electron transport chain makes most ATP and uses oxygen to form water.
 M3#sport-u03-04-q4@3: Cyanide blocks the electron transport chain. Why would exercise capacity collapse? | Most ATP from aerobic metabolism comes from the electron transport chain, so only anaerobic systems would remain | The Krebs cycle would speed up | Glycolysis would stop immediately | More oxygen would reach the muscles | With the chain blocked, oxygen can't be used and the high-yield aerobic route fails; anaerobic systems can't sustain activity for long.
 SA3#sport-u03-04-q5@3: Evaluate the aerobic system as the main energy source for a triathlete. | Strengths: it gives a very high ATP yield from carbohydrate and fat; fat stores are almost unlimited, so it can last for hours; by-products are CO₂ and water, which are easily removed, so no fatiguing acidosis at moderate intensity. Weaknesses: it is slow, needing oxygen delivery to rise and many reactions, so it can't power surges, hills or sprint finishes, which use anaerobic systems; carbohydrate stores are limited, so glycogen depletion can cause fatigue; fat use needs more oxygen. Overall it suits the event's duration, with anaerobic contributions at high intensity. | High yield and large stores ; Harmless by-products ; Slow rate and limited power ; Glycogen limitation ; Anaerobic contribution in surges
+Q: What happens to pyruvate in the link reaction? | It enters the mitochondrion and is converted to acetyl coenzyme A, releasing CO₂.
+Q: What does acetyl CoA combine with at the start of the Krebs cycle, and what does it form? | Oxaloacetic acid, forming citric acid.
+Q: Which two carriers take hydrogen atoms from the Krebs cycle? | NAD and FAD.
+Q: How many ATP does the Krebs cycle produce per glucose? | 2 ATP per glucose.
+Q: What role does oxygen play in the electron transport chain? | It is the final acceptor, forming water.
+Q: Which enzyme, driven by pumped protons, makes most of the ATP in the electron transport chain? | ATP synthase.
+Q: Into what does lipase break down stored triglycerides? | Glycerol and free fatty acids.
+Q: How much more oxygen per ATP does fat need compared with carbohydrate? | Roughly 10–15% more.
+Q: What share of energy does protein normally supply, and when does it rise? | Less than about 5–10%, rising when glycogen is depleted.
+Q: Why is the aerobic system slow to supply ATP? | Many reactions are needed, and oxygen delivery takes time to rise.
 
 ## The energy continuum
 LV: Intermediate · Evaluation
@@ -188,6 +228,16 @@ M2#sport-u03-05-q2@2: At roughly what duration of all-out exercise do aerobic an
 MATCH1#sport-u03-05-q3@1: Match each activity to its predominant energy system. | A 100 m sprint = ATP–PC ; A 400 m sprint = Anaerobic glycolytic ; A half marathon = Aerobic | Duration and intensity determine the predominant system.
 M3#sport-u03-05-q4@3: A netball centre plays a whole match. Which statement best describes her energy supply? | All three systems contribute throughout, with the predominant one changing with the intensity of each phase | She uses only the aerobic system because the match is long | She uses only ATP–PC because netball involves short sprints | Each system is used for one quarter in turn | Intermittent sports demand all three systems, overlapping continuously; the aerobic system also restores PC between sprints.
 SA3#sport-u03-05-q5@3: Evaluate the usefulness of the energy continuum for planning training in a team sport such as hockey. | Useful: it shows that hockey players need ATP–PC power for sprints, glycolytic capacity for repeated efforts and an aerobic base for duration and recovery, guiding a mix of speed, interval and aerobic training and appropriate work-to-rest ratios. Limitations: the continuum is based on continuous maximal efforts, while hockey is intermittent and varies by position; system contributions overlap and threshold times are approximate; it ignores tactical and skill demands. Combining it with match analysis (GPS data) gives a better picture. | Identifies demands on all three systems ; Guides training methods and work-to-rest ratios ; Limitations for intermittent sport ; Overlap and approximate thresholds ; Use with match analysis
+Q: What is meant by the predominant energy system? | The system supplying most of the ATP at that moment.
+Q: Which system predominates in maximal efforts of about 10 seconds or less? | The ATP–PC system.
+Q: Which system predominates in maximal efforts from about 10 seconds to 1–2 minutes? | Anaerobic glycolysis.
+Q: What happens after about 75 seconds of all-out exercise, according to Gastin? | The aerobic system becomes predominant.
+Q: Define a threshold in the energy continuum. | The point at which one system's fuel runs low and another becomes predominant.
+Q: At about what time is the ATP–PC/glycolytic threshold placed? | At about 10 seconds.
+Q: Name five factors that determine the predominant energy system. | Intensity, duration, the athlete's fitness, the work-to-rest ratio and the position played.
+Q: Which system supplies a football midfielder during walking and jogging for most of the match? | The aerobic system.
+Q: Why is it wrong to say the energy systems switch on and off in sequence? | They overlap from the start of exercise; only their relative contributions change.
+Q: Why are threshold times such as 10 s and 3 minutes described as approximations? | Precise time points vary with the method and the athlete.
 
 ## Fuel use: carbohydrate and fat
 LV: Intermediate · Evaluation
@@ -226,6 +276,16 @@ M2#sport-u03-06-q2@2: A cyclist rides at a steady 60% of VO2max for three hours.
 M2#sport-u03-06-q3@3: Why does endurance training increase fat use at a given submaximal speed? | More mitochondria, capillaries and fat-oxidising enzymes let muscles oxidise fat faster | Training reduces fat stores | Training stops glycogen use | Training lowers oxygen delivery | Peripheral adaptations raise fat oxidation capacity, sparing glycogen and delaying fatigue.
 TF2#sport-u03-06-q4@1: Carbohydrate yields more ATP per litre of oxygen than fat. | true | Carbohydrate gives about 5.0 kcal per litre of O₂ and fat about 4.7, which is one reason carbohydrate is favoured at high intensities.
 SA3#sport-u03-06-q5@3: Evaluate the advice that endurance athletes should train on a low-carbohydrate diet to "teach the body to burn fat". | Low-carbohydrate training increases fat oxidation and some mitochondrial adaptations, and fat stores are large. But carbohydrate is the main fuel at race intensities and gives more energy per litre of oxygen; studies of elite race walkers found high-fat diets increased fat use but impaired economy and performance. Low availability may also reduce training quality and raise illness and RED-S risk. Periodised approaches (some sessions with low availability, races with high carbohydrate) are a more evidence-based compromise. | Increases fat oxidation ; Carbohydrate dominant at race pace ; Evidence of impaired performance or economy ; Training quality and health risks ; Periodised compromise
+Q: In what form is fat stored in the body, and where? | As triglyceride, in adipose tissue and in muscle.
+Q: Why is glycogen described as the limited fuel while fat is not? | Even a lean athlete carries enough fat for days of exercise, whereas glycogen stores are small and can run low.
+Q: Why does carbohydrate become the main fuel at high intensity? | It gives more ATP per litre of oxygen and can be used faster, and adrenaline and fast-fibre recruitment favour glycogen breakdown.
+Q: At roughly what intensity does fat oxidation peak, and what is this called? | Often around 45–65% of VO2max, called Fatmax, after which fat oxidation falls.
+Q: How do fuel stores and fuel use change over time during steady moderate exercise? | Glycogen falls and fat use rises as duration increases.
+Q: How does endurance training change fuel use at a given absolute intensity? | It increases fat oxidation, through more mitochondria, capillaries and fat-handling enzymes, which spares glycogen.
+Q: Define glycogen sparing. | Greater use of fat at a given intensity, which conserves glycogen.
+Q: Compare the effects of high-carbohydrate and low-carbohydrate diets on fuel stores and use. | High-carbohydrate diets and carbohydrate loading raise glycogen stores; low-carbohydrate diets increase fat use but may impair high-intensity performance.
+Q: Why do marathon runners hit the wall at around 30–35 km? | Muscle and liver glycogen run low after about 90–120 minutes, forcing more reliance on fat, which needs more oxygen and is slower, so the runner must slow sharply.
+Q: Why is low-intensity exercise not automatically best for fat loss? | It burns a higher percentage of fat, but total energy expenditure and energy balance matter more for body fat than the fuel mix during the session.
 
 ## Oxygen deficit
 LV: Intermediate · Application
@@ -261,6 +321,16 @@ M2#sport-u03-07-q2@2: In exercise above VO2max, what happens to the oxygen defic
 NUM2#sport-u03-07-q3@2: An exercise requires 2.5 L O₂/min. In the first two minutes the athlete consumes 1.2 L and then 2.2 L. What is the oxygen deficit over those two minutes? | 1.6 | 0.05 | L O₂ | Required: 2.5 × 2 = 5.0 L; consumed: 1.2 + 2.2 = 3.4 L; deficit = 5.0 − 3.4 = 1.6 L.
 M3#sport-u03-07-q4@3: Which explains why a warm-up can improve performance in a 3 km race? | It speeds oxygen uptake kinetics, reducing the early oxygen deficit and sparing anaerobic capacity | It fills the muscles with lactate | It reduces VO2max | It increases the oxygen deficit | A primed cardiovascular system meets demand sooner, so less PC and glycolytic capacity is used at the start.
 SA3#sport-u03-07-q5@1,3: Sketch in words a graph of oxygen uptake during 10 minutes of submaximal running and explain the oxygen deficit. | Oxygen demand rises instantly to a constant level at the start and stays flat. Measured uptake rises curvilinearly over the first 2–3 minutes and plateaus at the demand line (steady state). The area between the demand line and the uptake curve at the start is the oxygen deficit, met by ATP and PC stores, myoglobin oxygen and anaerobic glycolysis. After exercise, uptake falls gradually, the area above resting level being EPOC. | Demand as a step ; Uptake rises curvilinearly to steady state ; Deficit as the area between them ; How it is met ; Distinguishes from EPOC
+Q: Define the oxygen deficit. | The difference between the oxygen the exercise requires and the oxygen actually consumed during the lag at the start of exercise.
+Q: Why does oxygen uptake lag behind demand at the start of exercise? | ATP demand rises instantly, but oxygen uptake rises over minutes as heart rate, ventilation and blood flow increase.
+Q: How is the oxygen deficit shown on a graph of oxygen uptake against time? | As the area between the demand line and the rising uptake curve.
+Q: Name the four sources that meet the oxygen deficit. | Stored ATP, phosphocreatine, oxygen bound to myoglobin, and anaerobic glycolysis.
+Q: What happens to oxygen uptake in submaximal exercise once it stops rising? | It reaches a steady state, where oxygen supply meets demand.
+Q: What happens to the oxygen deficit in supramaximal exercise? | Demand above VO2max is never met, so the deficit grows until exhaustion.
+Q: Define VO₂ kinetics. | The speed at which oxygen uptake rises to meet a new exercise demand.
+Q: Why do endurance-trained people have faster VO₂ kinetics? | Quicker cardiovascular responses, and more capillaries and mitochondria.
+Q: Besides a smaller deficit, what other advantages do trained people show at the start of exercise? | They produce less lactate, deplete less PC at the start, and recover faster.
+Q: How does the maximal accumulated oxygen deficit (MAOD) estimate anaerobic capacity? | The oxygen demand of a supramaximal run is extrapolated from submaximal tests, and the measured oxygen uptake is subtracted.
 
 ## Excess post-exercise oxygen consumption (EPOC)
 LV: Intermediate · Application
@@ -299,6 +369,16 @@ M2#sport-u03-08-q2@2: After a hard 800 m race, which recovery removes lactate fa
 M2#sport-u03-08-q3@3: Why is EPOC after a 30-minute run in the heat larger than after the same run in cool conditions? | Body temperature is higher, so metabolism stays elevated for longer | Less lactate is produced | Heat reduces heart rate | The oxygen deficit is smaller | Higher body temperature raises metabolic rate and cardiovascular work in recovery, adding to the slow component.
 TF2#sport-u03-08-q4@2: Most lactate produced during exercise is oxidised rather than converted back to glucose. | true | About two-thirds or more is oxidised, mainly in muscle and the heart; the Cori cycle handles a smaller share.
 SA3#sport-u03-08-q5@3: A coach tells a team to sit down straight after a training session "to recover". Use knowledge of EPOC to advise the coach. | Advise a short active cool-down: low-intensity exercise keeps heart rate and blood flow up, maintaining venous return (avoiding pooling) and supplying oxygen for the fast component (PC and myoglobin), and speeds lactate and hydrogen ion removal in the slow component by oxidation in muscle. Then rehydrate and take carbohydrate and protein to support glycogen resynthesis, part of longer recovery. Passive rest slows lactate clearance. | Recommends active cool-down ; Fast component processes ; Slow component and lactate oxidation ; Venous return or blood pooling ; Nutrition for longer recovery
+Q: Define EPOC. | Excess post-exercise oxygen consumption: the oxygen consumed after exercise above what would have been consumed at rest.
+Q: Why is the modern term EPOC preferred to the oxygen debt? | Much of the extra oxygen serves other recovery processes, and its volume is usually larger than the deficit, so it is not simply repaying the deficit.
+Q: How quickly is phosphocreatine resynthesised in recovery? | About 50% in 30 seconds and nearly all in 3 minutes.
+Q: Which processes make up the slow (lactacid) component of EPOC? | Removal of lactate and hydrogen ions, the cost of raised heart rate, ventilation, temperature and hormones such as adrenaline, and glycogen resynthesis.
+Q: Name the three fates of lactate other than oxidation. | Conversion to glucose and glycogen in the liver, conversion to protein, and a small amount lost in sweat and urine.
+Q: Roughly what share of lactate is oxidised, and where? | Roughly 65–70%, oxidised to CO₂ and water in muscle, especially type I fibres, and the heart.
+Q: What is the Cori cycle? | The conversion of lactate to glucose in the liver and its return to muscle.
+Q: Why does active recovery remove lactate faster than passive rest? | Blood flow and oxidation in muscle stay high during low-intensity activity, at roughly 30–40% of VO2max.
+Q: Why does the fast component of EPOC take up oxygen? | To resynthesise ATP and phosphocreatine and to resaturate myoglobin with oxygen, using roughly 1–4 litres of oxygen in the first 2–3 minutes.
+Q: How should recovery between repeated 30 s sprints be planned to restore quality? | Two to three minutes restores most PC, and light jogging keeps blood flow up to help remove lactate; shorter recoveries deliberately train tolerance of acidosis.
 
 ## Lactate threshold and OBLA
 LV: Intermediate · Evaluation
@@ -338,6 +418,16 @@ NUM2#sport-u03-09-q2@2: An athlete's VO2max is 60 ml/kg/min and OBLA occurs at 7
 M2#sport-u03-09-q3@3: Why is the lactate threshold a better predictor than VO2max of performance among elite marathon runners? | Elite runners have similar VO2max values, but differ in the fraction they can sustain without lactate accumulating | VO2max can't be measured in elite runners | The lactate threshold is the same as VO2max | Marathons are run above VO2max | Among athletes with similar maxima, the sustainable fraction of VO2max (with economy) separates performances.
 M2#sport-u03-09-q4@2: Which change would raise a cyclist's lactate threshold? | More capillaries and mitochondria in the leg muscles | A higher proportion of type IIx fibres | Lower muscle oxidative enzyme activity | Less training at moderate intensity | Increased oxidative capacity lets muscle use pyruvate and lactate aerobically, delaying accumulation.
 SA3#sport-u03-09-q5@3: Evaluate the use of the lactate threshold for setting training intensities. | Strengths: it is individual and relates directly to sustainable pace; it changes with training, so it can track progress; zones based on it (below, at and above threshold) target specific adaptations. Limitations: measurement needs blood samples and a lab or field protocol; different definitions give different values; day-to-day variation, diet (glycogen status) and test protocol affect it; heart rate or pace at threshold drift in heat. Overall it is one of the most useful markers for endurance training when measured consistently. | Individual and linked to sustainable pace ; Tracks training progress ; Basis for zones ; Measurement and definition problems ; Confounding factors and judgement
+Q: Why does blood lactate stay near resting levels at low intensities? | Production is matched by removal.
+Q: Define the lactate threshold. | The exercise intensity at which blood lactate begins to rise above resting levels.
+Q: What is the maximal lactate steady state? | The highest intensity at which blood lactate remains stable over time.
+Q: At roughly what percentage of VO2max does the lactate threshold occur in untrained people and in trained endurance athletes? | About 50–60% in untrained people and 70–80% in trained endurance athletes.
+Q: How does fibre type affect the lactate threshold? | More type I fibres means more oxidation and less lactate production, so the threshold is higher.
+Q: How does glycogen use affect lactate production? | Greater reliance on carbohydrate increases lactate production.
+Q: Name the body sites that clear lactate and so affect the removal rate. | The liver, heart and muscle.
+Q: Runner A has OBLA at 80% of VO2max and runner B at 70%, with the same VO2max. Who is likely to win a 10 km race, and why? | Runner A: they can sustain a faster pace for longer without accumulating lactate.
+Q: Why is it wrong to say the lactate threshold is where the muscle runs out of oxygen? | Lactate is produced at all intensities; the threshold reflects the balance between production and removal, influenced by fibre recruitment and glycolytic rate.
+Q: What happens to blood lactate beyond OBLA? | Lactate accumulates rapidly and fatigue follows.
 
 ## Restoring phosphocreatine and glycogen
 LV: Intermediate · Application
@@ -372,6 +462,16 @@ NUM1#sport-u03-10-q2@2: A sprinter performs 8-second maximal efforts with a work
 NUM2#sport-u03-10-q3@2: A 70 kg cyclist follows a recovery guideline of 1.2 g carbohydrate per kg per hour for 4 hours. How many grams of carbohydrate is that in total? | 336 | 1 | g | 1.2 × 70 × 4 = 336 g.
 M2#sport-u03-10-q4@3: Why do guidelines recommend eating carbohydrate soon after exhausting exercise? | Glycogen synthesis is fastest in the first hours, when muscles are most insulin-sensitive | Phosphocreatine needs carbohydrate to be restored | It prevents EPOC | Glycogen can only be stored at night | Early intake takes advantage of the period of rapid glycogen synthesis, important when the next session is within 24 hours.
 SA3#sport-u03-10-q5@3: Explain how a football club should plan recovery between two matches three days apart, using knowledge of energy stores. | PC is restored within minutes and isn't a concern. Glycogen, heavily used in a match, needs 24–48 hours or more, longer after eccentric muscle damage, so players should start carbohydrate soon after the match (about 1–1.2 g/kg/h for 4 hours), with protein and fluid, and keep daily carbohydrate high. Training in between should be light to avoid depleting stores again; sleep and active recovery aid recovery. | PC restoration fast ; Glycogen 24–48 h or longer ; Early carbohydrate with amounts ; Protein, fluid and sleep ; Light training between matches
+Q: How is phosphocreatine restored, and how quickly? | Aerobically in the fast component of EPOC: about 50% within 30 seconds and nearly all within 2–3 minutes.
+Q: What slows phosphocreatine restoration? | A very acidic muscle.
+Q: What work-to-rest ratio suits anaerobic glycolytic training, with efforts of 30–90 s? | About 1:2.
+Q: What work-to-rest ratio suits aerobic interval training? | About 1:1 or shorter rests.
+Q: Why is glycogen restored in the first hours after exercise faster than later? | Muscle is most insulin-sensitive and the enzyme glycogen synthase is most active in the first hours.
+Q: What does glycogen synthase do? | It builds glycogen from glucose.
+Q: What carbohydrate intake is suggested for rapid refuelling in the first 4 hours after exercise? | About 1.0–1.2 g of carbohydrate per kg of body mass per hour.
+Q: What type of exercise makes glycogen restoration take longer? | Muscle-damaging (eccentric) exercise.
+Q: Why does adding protein to a recovery meal help? | It helps restoration when carbohydrate intake is lower.
+Q: Why does rest alone not restore glycogen? | Without enough carbohydrate in the diet, resynthesis is slow and incomplete, and stores may not be restored for days.
 
 ## Indirect calorimetry and the respiratory exchange ratio
 LV: Advanced · Application
@@ -408,6 +508,16 @@ NUM2#sport-u03-11-q2@2: A cyclist consumes 2.0 L O₂/min and produces 1.7 L CO�
 NUM2#sport-u03-11-q3@3: A runner's VO₂ is 3.5 L/min for 20 minutes. Using 20 kJ per litre of oxygen, how much energy is used, in kJ? | 1400 | 1% | kJ | Oxygen used = 3.5 × 20 = 70 L; energy = 70 × 20 = 1,400 kJ (about 335 kcal).
 M2#sport-u03-11-q4@2: Why does RER exceed 1.0 near the end of an incremental test to exhaustion? | Bicarbonate buffering of hydrogen ions and hyperventilation release extra CO₂ | The athlete starts burning protein | Fat oxidation increases | Oxygen consumption rises above CO₂ output | Extra non-metabolic CO₂ comes from buffering lactic acid and blowing off CO₂, so RER no longer reflects fuel use.
 SA3#sport-u03-11-q5@3: Evaluate indirect calorimetry for measuring an athlete's energy expenditure and fuel use during exercise. | Strengths: non-invasive, valid in steady-state exercise, portable systems allow field use, and RER shows the carbohydrate–fat mix. Limitations: it needs steady state; RER is distorted above about the lactate threshold by buffering and by hyperventilation; protein oxidation is usually ignored; equipment is expensive and the mask may affect the athlete; and it estimates energy from oxygen rather than measuring heat directly. | Non-invasive and valid at steady state ; Shows fuel mix through RER ; Distortion at high intensity ; Ignores protein and needs steady state ; Practical limitations
+Q: Contrast direct and indirect calorimetry. | Direct measures the heat the body produces in an insulated chamber; indirect estimates energy from oxygen consumption and carbon dioxide production in expired air.
+Q: Why is direct calorimetry rarely used in sport? | It is accurate but expensive and impractical.
+Q: What equipment measures expired air in indirect calorimetry? | Douglas bags or an online metabolic cart.
+Q: Roughly how much energy does each litre of oxygen used release? | Roughly 20 kJ (about 4.8–5 kcal), depending on the fuel.
+Q: Why is the RER of carbohydrate 1.0? | Glucose uses 6 O₂ and produces 6 CO₂, so the ratio is 1.
+Q: Why is the RER of fat lower than that of carbohydrate? | Fats need more oxygen per carbon, giving an RER of about 0.70.
+Q: What RER is typical at rest on a mixed diet, and what is protein's RER? | Rest is about 0.80–0.85; protein is about 0.8, usually ignored in exercise.
+Q: Why does RER exceed 1.0 in very hard exercise? | Hydrogen ions buffered by bicarbonate release extra CO₂, and hyperventilation blows off CO₂.
+Q: How is an RER above about 1.10–1.15 used in VO2max testing? | It is one criterion that the test was maximal.
+Q: How does the respiratory quotient (RQ) differ from RER? | RQ is the same ratio measured at the cell; RER is measured at the mouth.
 
 ## Energy expenditure, METs and efficiency
 LV: Intermediate · Application
@@ -446,6 +556,16 @@ NUM1#sport-u03-12-q2@2: An activity has an oxygen cost of 28 ml/kg/min. How many
 NUM2#sport-u03-12-q3@2: Estimate the energy used by an 80 kg man running at 10 METs for 30 minutes, in kcal. | 400 | 1% | kcal | 10 × 80 × 0.5 = 400 kcal.
 M2#sport-u03-12-q4@3: Two runners have the same VO2max, but Runner A uses less oxygen at 16 km/h. What does this show? | Runner A has better running economy | Runner A has a lower lactate threshold | Runner B is more efficient | They will always finish together | Lower oxygen cost at the same speed means better economy, so A runs at a lower fraction of VO2max and can go faster for longer.
 SA3#sport-u03-12-q5@3: Evaluate the use of METs to classify the intensity of physical activity for health guidelines. | Strengths: simple, standardised, allow comparison across activities and studies, and underpin the moderate (3–5.9) and vigorous (6+) categories in the CMO guidelines. Limitations: they are absolute, so the same activity is relatively harder for an unfit or older person (walking may be vigorous for them); 3.5 ml/kg/min overestimates many people's resting rate; values ignore skill, terrain and individual differences. Relative measures (heart rate reserve, RPE, the talk test) complement them. | Simple and standardised ; Basis of guideline categories ; Absolute not relative intensity ; Resting value assumption ; Individual differences and alternatives
+Q: Name the three components of daily energy expenditure. | Basal or resting metabolic rate, the thermic effect of food, and physical activity.
+Q: Roughly what share of total daily energy does BMR make up in sedentary people? | Typically 60–75%.
+Q: Which component of daily energy expenditure is the most variable? | Physical activity, including non-exercise activity thermogenesis, and it is large in athletes.
+Q: What is the thermic effect of food? | The energy needed to digest and process food, about 10% of the total.
+Q: What MET bands define moderate and vigorous activity? | Moderate is 3–5.9 METs and vigorous is 6 METs or more.
+Q: State the formula for estimating energy use from METs. | Energy (kcal) ≈ METs × body mass (kg) × time (hours), based on 1 MET ≈ 1 kcal/kg/h.
+Q: How much energy does a 60 kg person use in 45 minutes of cycling at 8 METs? | 8 × 60 × 0.75 = 360 kcal.
+Q: Define gross mechanical efficiency and give a typical value for cycling. | The percentage of energy used that becomes external work; about 18–25% for cycling, the rest lost as heat.
+Q: Define economy and give a running example. | The oxygen cost of moving at a given speed, such as ml/kg/km in running.
+Q: Why should MET values not be treated as exact for an individual? | They are population averages; fitness, skill, body composition and age change the real cost.
 
 ## Causes of fatigue
 LV: Advanced · Evaluation
@@ -484,6 +604,16 @@ M2#sport-u03-13-q2@2: Which strategy most directly delays fatigue from glycogen 
 MS2#sport-u03-13-q3@2: Which are causes of peripheral fatigue? | Accumulation of inorganic phosphate ; Glycogen depletion ; Accumulation of hydrogen ions | Reduced motivation ; Reduced neural drive from the brain | Inorganic phosphate, hydrogen ions and glycogen depletion act within the muscle; reduced motivation and neural drive are central.
 M3#sport-u03-13-q4@3: Recent research suggests acidosis matters less for fatigue than once thought. Which finding supports this? | At normal body temperature, acidosis has smaller effects on muscle force than in cold early experiments | Lactate increases muscle force | Hydrogen ions are not produced in exercise | Muscle pH never changes | Early studies on cooled muscle exaggerated acidosis's effects; at physiological temperatures inorganic phosphate appears more important.
 SA3#sport-u03-13-q5@3: Evaluate the causes of fatigue in a 10 km race run in hot weather. | Over about 30–60 minutes the race is aerobic at high intensity. Hyperthermia and dehydration are likely dominant in heat: sweat loss lowers plasma volume and stroke volume, and high core temperature raises strain and perceived effort, causing central fatigue. Hydrogen ions and inorganic phosphate accumulate when pace exceeds threshold, especially in surges and the finish. Glycogen depletion is less likely in this duration. Central factors and motivation interact with all of these. | Heat and dehydration dominant ; Cardiovascular mechanism ; Metabolites at high intensity ; Glycogen unlikely limiting ; Central fatigue ; Weighs causes
+Q: Define fatigue. | A fall in the ability to produce force or power.
+Q: Why does phosphocreatine depletion cause fatigue in maximal efforts of a few seconds? | Falling PC reduces the rate of ATP resynthesis, so power falls.
+Q: How do inorganic phosphate and hydrogen ions contribute to fatigue? | Inorganic phosphate reduces cross-bridge force and calcium release; acidosis inhibits PFK and calcium binding.
+Q: How does glycogen depletion cause fatigue in prolonged exercise? | Low muscle glycogen and low blood glucose from depleted liver glycogen force a slower pace.
+Q: How does dehydration contribute to fatigue? | Sweat losses reduce plasma volume and stroke volume, and high core temperature increases cardiovascular strain and perceived effort.
+Q: How may potassium shifts contribute to fatigue? | Potassium shifts across muscle membranes may reduce excitability.
+Q: What influences central fatigue? | Brain neurotransmitters such as serotonin and dopamine, core temperature, afferent feedback from fatigued muscle and motivation.
+Q: What does Noakes's central governor model propose? | That the brain regulates effort in advance to protect the body; this view is debated.
+Q: Why can no single measurement such as blood lactate or heart rate explain fatigue? | Fatigue is task-dependent: its mechanism depends on intensity, duration, muscle groups, environment, training and nutrition.
+Q: Why is it wrong to blame all fatigue on lactic acid? | Lactate is a fuel; fatigue in high-intensity exercise involves inorganic phosphate, hydrogen ions and other factors, and in long events fuel and heat dominate.
 
 ## Metabolic adaptations to training
 LV: Advanced · Evaluation
@@ -529,4 +659,14 @@ M2#sport-u03-14-q2@2: A 400 m runner trains with repeated 300 m efforts. Which a
 M2#sport-u03-14-q3@3: How does increased fat oxidation after endurance training improve marathon performance? | It spares glycogen, delaying glycogen depletion | It increases lactate production | It lowers VO2max | It removes the need for carbohydrate | Using more fat at race pace conserves limited glycogen stores for later in the race.
 TF2#sport-u03-14-q4@1: Short sprint interval training can increase muscle oxidative capacity. | true | Gibala and colleagues found similar oxidative adaptations to traditional endurance training after two weeks of sprint intervals.
 SA3#sport-u03-14-q5@3: Evaluate the claim that high-intensity interval training is "all you need" for endurance fitness. | Evidence: HIIT and sprint intervals increase mitochondrial content, oxidative enzymes and VO2max in much less time than continuous training, useful for time-limited exercisers and health. But most studies are short and in untrained or recreational people; elite endurance athletes do large volumes of low-intensity work, which develops fat oxidation, economy, connective tissue and fatigue resistance for long events; HIIT needs high motivation and recovery and may raise injury and burnout risk if overused. So HIIT is a valuable component, not a complete replacement. | Evidence for HIIT adaptations ; Time efficiency ; Limitations of study populations and duration ; Value of high-volume training for elites ; Recovery, injury and motivation ; Judgement
+Q: Which signalling molecule coordinates mitochondrial biogenesis, and what is it? | PGC-1α, which rises with endurance exercise and coordinates the building of new mitochondria.
+Q: Why does endurance training raise the lactate threshold? | More pyruvate is oxidised and lactate removal improves.
+Q: How does endurance training improve oxygen delivery and waste removal? | Capillary density increases.
+Q: Where does myoglobin content increase with endurance training? | Especially in type I fibres.
+Q: Name the enzyme adaptations to sprint and anaerobic training. | Increased activity of glycolytic enzymes such as PFK, and of creatine kinase.
+Q: How do small increases in ATP and PC stores arise, and what increases them further? | They are small adaptations to anaerobic training, and are larger with creatine supplementation.
+Q: What is the benefit of greater buffering capacity? | More hydrogen ions can be neutralised, so high-intensity efforts are tolerated for longer.
+Q: Which fibres show hypertrophy with resistance training? | Especially type II fibres.
+Q: What did Gibala and colleagues (2006) find about sprint interval training? | Two weeks produced similar increases in muscle oxidative capacity and time-trial performance to traditional endurance training, with about a tenth of the training volume.
+Q: Why do elite marathon runners still run long distances despite the benefits of HIIT? | Long runs build fat oxidation, glycogen sparing, connective tissue resilience, economy and psychological capacity for long events.
 `;
