@@ -1,0 +1,53 @@
+{
+ "id": "maths-u01-recurring-decimal",
+ "renderer": "number-line",
+ "course": "maths",
+ "unit": "u01",
+ "lesson": "Rational Numbers",
+ "title": "Where 0.2727… sits",
+ "caption": "0.272727… is exactly 3/11: it lies between 0.27 and 0.28, a little past 0.27, and never reaches 0.273.",
+ "alt": "A number line from 0.2 to 0.3 with a point at 3/11 = 0.2727…, just right of 0.27.",
+ "description": [
+  "The line runs from 0.20 to 0.30 with small marks every 0.01.",
+  "The point 3/11 sits just to the right of 0.27, at 0.2727…",
+  "Because 3/11 is a fraction of integers it is rational, even though its decimal never ends."
+ ],
+ "range": [
+  0.2,
+  0.3
+ ],
+ "ticks": {
+  "step": 0.05
+ },
+ "minor": 0.01,
+ "tickLabels": {
+  "0.2": "0.2",
+  "0.25": "0.25",
+  "0.3": "0.3"
+ },
+ "points": [
+  {
+   "value": 0.2727272727272727,
+   "expr": "3/11",
+   "label": "3/11 = 0.2727…"
+  }
+ ],
+ "checks": [
+  {
+   "type": "between",
+   "expr": "3/11",
+   "from": "0.27",
+   "to": "0.28"
+  },
+  {
+   "type": "value",
+   "expr": "27/99",
+   "value": "3/11",
+   "name": "27/99 simplifies to 3/11"
+  }
+ ],
+ "fromLesson": [
+  "99x = 27",
+  "27/99 = 3/11"
+ ]
+}

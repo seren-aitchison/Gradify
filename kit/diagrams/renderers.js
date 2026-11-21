@@ -518,4 +518,9 @@ export function render(spec, { lessonText = "" } = {}) {
 // ---------- for the subject modules (kit/diagrams/chem-renderers.js) ----------
 export { svg, text, line, arrow, legend, wrap, textBlock, axes, pathOf, col, f1, esc, near, check, graph, graphChecks };
 /** Add renderers from a subject module. */
-export function register(map) { Object.assign(RENDERERS, map); }
+// Renderer names are one shared namespace across every subject module. A second module registering a name that is already
+// taken would silently replace the first one's drawing and checks, so it is an error (rename it, e.g. with a subject prefix).
+export function register(map) {
+  for (const name of Object.keys(map)) if (RENDERERS[name]) throw new Error(`renderer "${name}" is already registered: pick a unique name (e.g. prefix it with the subject)`);
+  Object.assign(RENDERERS, map);
+}

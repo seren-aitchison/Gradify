@@ -1,0 +1,63 @@
+{
+ "id": "maths-u01-fraction-bars",
+ "renderer": "bar-model",
+ "course": "maths",
+ "unit": "u01",
+ "lesson": "Fractions",
+ "title": "Ordering 3/4, 5/7 and 7/10",
+ "caption": "With equal-length bars the shaded lengths can be compared directly: 7/10 is shortest, then 5/7, then 3/4, as 98/140 < 100/140 < 105/140.",
+ "alt": "Three bars of equal length: 7 of 10 parts shaded, 5 of 7 parts shaded and 3 of 4 parts shaded, the shading ending further right each time.",
+ "description": [
+  "Each bar is one whole, cut into 10, 7 or 4 equal parts.",
+  "7/10: seven of ten parts shaded.",
+  "5/7: five of seven parts shaded, ending a little further right.",
+  "3/4: three of four parts shaded, the longest."
+ ],
+ "bars": [
+  {
+   "label": "7/10",
+   "cells": 10,
+   "shaded": 7
+  },
+  {
+   "label": "5/7",
+   "cells": 7,
+   "shaded": 5
+  },
+  {
+   "label": "3/4",
+   "cells": 4,
+   "shaded": 3
+  }
+ ],
+ "checks": [
+  {
+   "type": "fraction",
+   "bar": 0,
+   "value": "98/140"
+  },
+  {
+   "type": "fraction",
+   "bar": 1,
+   "value": "100/140"
+  },
+  {
+   "type": "fraction",
+   "bar": 2,
+   "value": "105/140"
+  },
+  {
+   "type": "order",
+   "bars": [
+    0,
+    1,
+    2
+   ]
+  }
+ ],
+ "fromLesson": [
+  "3/4 = 105/140",
+  "5/7 = 100/140",
+  "7/10 = 98/140"
+ ]
+}

@@ -31068,6 +31068,1472 @@
    }
   ]
  },
+ "maths-u01-area-multiplication": {
+  "title": "37 × 24 as an area",
+  "caption": "Long multiplication is this rectangle cut in two: 37 × 20 = 740 and 37 × 4 = 148, and the whole area is 740 + 148 = 888. Each row of the written method is one strip.",
+  "alt": "A rectangle 37 wide and 24 tall, split into a strip 37 by 20 with area 740 and a strip 37 by 4 with area 148.",
+  "description": [
+   "A rectangle with width 37 and height 24 stands for 37 × 24.",
+   "A line cuts it into a strip 20 tall and a strip 4 tall, because 24 = 20 + 4.",
+   "The large strip is 37 × 20 = 740; the thin strip is 37 × 4 = 148.",
+   "Together they make 740 + 148 = 888, the answer to 37 × 24."
+  ],
+  "course": "maths",
+  "lesson": "Arithmetic",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u01.js: Arithmetic"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "ED = 37 u01",
+    "ok": true,
+    "detail": "measured 37"
+   },
+   {
+    "name": "DC = 20 u01",
+    "ok": true,
+    "detail": "measured 20"
+   },
+   {
+    "name": "CB = 4 u01",
+    "ok": true,
+    "detail": "measured 4"
+   },
+   {
+    "name": "area of FCDE = 740",
+    "ok": true,
+    "detail": "shoelace 740; label \"37 × 20 = 740\""
+   },
+   {
+    "name": "area of ABCF = 148",
+    "ok": true,
+    "detail": "shoelace 148; label \"37 × 4 = 148\""
+   },
+   {
+    "name": "the whole rectangle is 37 × 24 = 888",
+    "ok": true,
+    "detail": "shoelace 888"
+   },
+   {
+    "name": "the lesson states \"37 × 24\", \"37 × 20 = 740\", \"37 × 4 = 148\", \"148 + 740 = 888\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "5 labels in 640×330"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "5 labels in 380×260"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u01-arithmetic-sequence": {
+  "title": "17, 13, 9, 5, …: nth term 21 − 4n",
+  "caption": "The terms fall by 4 each time, so the nth term is −4n + c; n = 1 gives c = 21. The rule 21 − 4n gives every term, and the 30th is 21 − 120 = −99.",
+  "alt": "Four boxes 17, 13, 9, 5 with arrows of −4 between them, and the rule nth term = 21 − 4n.",
+  "description": [
+   "The terms are 17, 13, 9 and 5, for n = 1 to 4.",
+   "Each step is −4: the common difference.",
+   "The nth term is 21 − 4n; for n = 30 it is −99."
+  ],
+  "course": "maths",
+  "lesson": "Sequences of Numbers",
+  "also": [],
+  "renderer": "sequence",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u01.js: Sequences of Numbers"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every term follows the rule (nth 21-4*n)",
+    "ok": true,
+    "detail": "17, 13, 9, 5"
+   },
+   {
+    "name": "term 30 is -99",
+    "ok": true,
+    "detail": "−99"
+   },
+   {
+    "name": "the lesson states \"17, 13, 9, 5\", \"21 − 4n\", \"−99\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "13 labels in 680×180"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "13 labels in 380×180"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u01-factor-tree-1764": {
+  "title": "A factor tree for 1,764",
+  "caption": "Split off a prime at each step until every branch ends in a prime: 1,764 = 2² × 3² × 7². Every power is even, so 1,764 is a square: √1,764 = 2 × 3 × 7 = 42.",
+  "alt": "A factor tree: 1764 splits into 2 and 882, 882 into 2 and 441, 441 into 3 and 147, 147 into 3 and 49, and 49 into 7 and 7.",
+  "description": [
+   "1,764 is even: 1,764 = 2 × 882.",
+   "882 = 2 × 441.",
+   "441 = 3 × 147, and 147 = 3 × 49.",
+   "49 = 7 × 7, both prime.",
+   "The circled primes give 1,764 = 2² × 3² × 7²."
+  ],
+  "course": "maths",
+  "lesson": "Prime Factorisation",
+  "also": [],
+  "renderer": "factor-tree",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u01.js: Prime Factorisation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every branch multiplies to the number above it, and every leaf is prime",
+    "ok": true,
+    "detail": "leaves 2, 2, 3, 3, 7, 7"
+   },
+   {
+    "name": "1764 = 2^{2} × 3^{2} × 7^{2}",
+    "ok": true,
+    "detail": "leaves 2 × 2 × 3 × 3 × 7 × 7"
+   },
+   {
+    "name": "the lesson states \"1,764 ÷ 2 = 882\", \"441 ÷ 3 = 147\", \"2^{2} × 3^{2} × 7^{2}\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "12 labels in 560×448"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "12 labels in 380×408"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "560px wide, shown at 126% (labels 18.9px)"
+   }
+  ]
+ },
+ "maths-u01-fraction-bars": {
+  "title": "Ordering 3/4, 5/7 and 7/10",
+  "caption": "With equal-length bars the shaded lengths can be compared directly: 7/10 is shortest, then 5/7, then 3/4, as 98/140 < 100/140 < 105/140.",
+  "alt": "Three bars of equal length: 7 of 10 parts shaded, 5 of 7 parts shaded and 3 of 4 parts shaded, the shading ending further right each time.",
+  "description": [
+   "Each bar is one whole, cut into 10, 7 or 4 equal parts.",
+   "7/10: seven of ten parts shaded.",
+   "5/7: five of seven parts shaded, ending a little further right.",
+   "3/4: three of four parts shaded, the longest."
+  ],
+  "course": "maths",
+  "lesson": "Fractions",
+  "also": [],
+  "renderer": "bar-model",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u01.js: Fractions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "bar 1 shows 98/140",
+    "ok": true,
+    "detail": "shaded 7/10"
+   },
+   {
+    "name": "bar 2 shows 100/140",
+    "ok": true,
+    "detail": "shaded 5/7"
+   },
+   {
+    "name": "bar 3 shows 105/140",
+    "ok": true,
+    "detail": "shaded 3/4"
+   },
+   {
+    "name": "7/10 < 5/7 < 3/4",
+    "ok": true,
+    "detail": "0.7, 0.7143, 0.75"
+   },
+   {
+    "name": "the lesson states \"3/4 = 105/140\", \"5/7 = 100/140\", \"7/10 = 98/140\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "3 labels in 680×212"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "3 labels in 380×284"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u01-hcf-venn": {
+  "title": "HCF of 252 and 198 from prime factors",
+  "caption": "The overlap holds the primes 252 and 198 share: 2 × 3 × 3 = 18, the HCF. Multiplying everything in the diagram gives the LCM, 2,772.",
+  "alt": "A Venn diagram: circle 252 holds 2, 7; circle 198 holds 11; the overlap holds 2, 3, 3.",
+  "description": [
+   "252 = 2 × 2 × 3 × 3 × 7 and 198 = 2 × 3 × 3 × 11.",
+   "The primes both share, 2, 3, 3, go in the overlap.",
+   "The rest of 252's primes (2, 7) and of 198's (11) go in their own parts.",
+   "The overlap multiplies to the HCF, 18."
+  ],
+  "course": "maths",
+  "lesson": "Greatest Common Divisor (GCD)",
+  "also": [],
+  "renderer": "venn",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u01.js: Greatest Common Divisor (GCD)"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "A holds the prime factors of 252",
+    "ok": true,
+    "detail": "2 × 7 × 2 × 3 × 3"
+   },
+   {
+    "name": "B holds the prime factors of 198",
+    "ok": true,
+    "detail": "2 × 3 × 3 × 11"
+   },
+   {
+    "name": "the overlap multiplies to the HCF, 18",
+    "ok": true,
+    "detail": "product 18"
+   },
+   {
+    "name": "everything multiplies to the LCM, 2772",
+    "ok": true,
+    "detail": "product 2,772"
+   },
+   {
+    "name": "the lesson states \"2 × 3^{2} = 18\", \"HCF = 18\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "9 labels in 620×290"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "9 labels in 380×260"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "620px wide, shown at 114% (labels 17.1px)"
+   }
+  ]
+ },
+ "maths-u01-lcm-venn": {
+  "title": "LCM of 20 and 45 from prime factors",
+  "caption": "The LCM uses every prime in the diagram once: 2 × 2 × 5 × 3 × 3 = 180. The shared 5 is counted only once.",
+  "alt": "A Venn diagram: circle 20 holds 2, 2; circle 45 holds 3, 3; the overlap holds 5.",
+  "description": [
+   "20 = 2 × 2 × 5 and 45 = 3 × 3 × 5.",
+   "The primes both share, 5, go in the overlap.",
+   "The rest of 20's primes (2, 2) and of 45's (3, 3) go in their own parts.",
+   "All the primes together multiply to the LCM, 180."
+  ],
+  "course": "maths",
+  "lesson": "Least Common Multiple (LCM)",
+  "also": [],
+  "renderer": "venn",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u01.js: Least Common Multiple (LCM)"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "A holds the prime factors of 20",
+    "ok": true,
+    "detail": "2 × 2 × 5"
+   },
+   {
+    "name": "B holds the prime factors of 45",
+    "ok": true,
+    "detail": "5 × 3 × 3"
+   },
+   {
+    "name": "the overlap multiplies to the HCF, 5",
+    "ok": true,
+    "detail": "product 5"
+   },
+   {
+    "name": "everything multiplies to the LCM, 180",
+    "ok": true,
+    "detail": "product 180"
+   },
+   {
+    "name": "the lesson states \"20 = 2^{2} × 5\", \"45 = 3^{2} × 5\", \"180 seconds\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "8 labels in 620×290"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "8 labels in 380×260"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "620px wide, shown at 114% (labels 17.1px)"
+   }
+  ]
+ },
+ "maths-u01-number-sets": {
+  "title": "ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ",
+  "caption": "Each set sits inside the next: √9 = 3 is natural (so also an integer, rational and real), −3 is an integer but not natural, 0.75 = 3/4 is rational but not an integer, and √10 and π are irrational: real, but in no smaller set.",
+  "alt": "Four nested rounded boxes: ℕ inside ℤ inside ℚ inside ℝ. √9 is in ℕ; −3 in ℤ only; 0.75 in ℚ only; √10 and π in ℝ only.",
+  "description": [
+   "The innermost box is the natural numbers ℕ and holds √9 = 3.",
+   "Around it, the integers ℤ add −3.",
+   "Around that, the rationals ℚ add 0.75 = 3/4.",
+   "The outer box, the reals ℝ, adds the irrationals √10 and π."
+  ],
+  "course": "maths",
+  "lesson": "Real Numbers",
+  "also": [],
+  "renderer": "venn",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u01.js: Real Numbers"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every member is in its set and in no smaller one",
+    "ok": true,
+    "detail": "5 members checked"
+   },
+   {
+    "name": "the lesson states \"−3, 0.75, √9, √10 and π\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "9 labels in 620×272"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "9 labels in 380×258"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "620px wide, shown at 114% (labels 17.1px)"
+   }
+  ]
+ },
+ "maths-u01-percent-bar": {
+  "title": "17.5% of £360 built from 10%, 5% and 2.5%",
+  "caption": "10% of £360 is £36; halve it for 5% (£18) and again for 2.5% (£9). Together 17.5% is £63.",
+  "alt": "Bars on one scale: 10% of £360 is £36, 5% is £18 (half as long), 2.5% is £9 (half again), and 17.5% is the three joined, £63.",
+  "description": [
+   "10% of £360 is £36: divide by 10.",
+   "5% is half of that, £18; 2.5% is half again, £9. Each bar is half the one above.",
+   "Joining the three bars makes 17.5%, bracketed as £63."
+  ],
+  "course": "maths",
+  "lesson": "Percentages",
+  "also": [],
+  "renderer": "bar-model",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u01.js: Percentages"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the bracket over 1–3 is 63",
+    "ok": true,
+    "detail": "parts add to 63"
+   },
+   {
+    "name": "the bracket label \"17.5% = £63\" states 63",
+    "ok": true,
+    "detail": "17.5% = £63"
+   },
+   {
+    "name": "10% of 360 = 36",
+    "ok": true,
+    "detail": "36"
+   },
+   {
+    "name": "5% of 360 = 18",
+    "ok": true,
+    "detail": "18"
+   },
+   {
+    "name": "2.5% of 360 = 9",
+    "ok": true,
+    "detail": "9"
+   },
+   {
+    "name": "17.5% of 360 = 63",
+    "ok": true,
+    "detail": "63"
+   },
+   {
+    "name": "the lesson states \"10% = £36, 5% = £18, 2.5% = £9\", \"= £63\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "11 labels in 680×310"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "11 labels in 380×406"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u01-quadratic-sequence": {
+  "title": "A constant second difference: n² + 2n − 1",
+  "caption": "The first differences 5, 7, 9, 11 rise by 2 each time. A constant second difference of 2 means the sequence is quadratic with 2 ÷ 2 = 1 n²: the nth term is n² + 2n − 1.",
+  "alt": "Five boxes 2, 7, 14, 23, 34; first differences +5, +7, +9, +11 beneath; second differences +2, +2, +2 beneath those.",
+  "description": [
+   "The terms 2, 7, 14, 23, 34 for n = 1 to 5.",
+   "First differences: 5, 7, 9, 11.",
+   "Second differences: 2 each time, so the n² coefficient is 1.",
+   "The nth term is n² + 2n − 1."
+  ],
+  "course": "maths",
+  "lesson": "Number Patterns",
+  "also": [],
+  "renderer": "sequence",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u01.js: Number Patterns"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every term follows the rule (nth n^2+2*n-1)",
+    "ok": true,
+    "detail": "2, 7, 14, 23, 34"
+   },
+   {
+    "name": "the lesson states \"2, 7, 14, 23, 34\", \"5, 7, 9, 11\", \"n^{2} + 2n − 1\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "19 labels in 680×214"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "19 labels in 380×214"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u01-recipe-scale": {
+  "title": "Scaling a recipe by 15 ÷ 6 = 2.5",
+  "caption": "Fifteen people is 2.5 lots of six, so every amount is multiplied by 2.5: 450 g of flour becomes 1,125 g.",
+  "alt": "Two bars on the same scale: 450 g for 6 people, and 450 g + 450 g + 225 g = 1,125 g for 15 people.",
+  "description": [
+   "The top bar is the flour for 6 people, 450 g.",
+   "The lower bar is two whole copies of it and a half copy: 450 + 450 + 225.",
+   "That is 450 × 2.5 = 1,125 g, the flour for 15 people."
+  ],
+  "course": "maths",
+  "lesson": "Ratios and Proportions",
+  "also": [],
+  "renderer": "bar-model",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u01.js: Ratios and Proportions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the bracket over 1–3 is 1,125",
+    "ok": true,
+    "detail": "parts add to 1,125"
+   },
+   {
+    "name": "the bracket label \"× 2.5 = 1,125 g\" states 1,125",
+    "ok": true,
+    "detail": "× 2.5 = 1,125 g"
+   },
+   {
+    "name": "450 × 2.5 = 1,125",
+    "ok": true,
+    "detail": "450 × 2.5 = 1,125"
+   },
+   {
+    "name": "the lesson states \"15 ÷ 6 = 2.5\", \"450 × 2.5 = 1,125 g\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 680×182"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 380×230"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u01-recurring-decimal": {
+  "title": "Where 0.2727… sits",
+  "caption": "0.272727… is exactly 3/11: it lies between 0.27 and 0.28, a little past 0.27, and never reaches 0.273.",
+  "alt": "A number line from 0.2 to 0.3 with a point at 3/11 = 0.2727…, just right of 0.27.",
+  "description": [
+   "The line runs from 0.20 to 0.30 with small marks every 0.01.",
+   "The point 3/11 sits just to the right of 0.27, at 0.2727…",
+   "Because 3/11 is a fraction of integers it is rational, even though its decimal never ends."
+  ],
+  "course": "maths",
+  "lesson": "Rational Numbers",
+  "also": [],
+  "renderer": "number-line",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u01.js: Rational Numbers"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "3/11 = 0.2727… is at 0.2727",
+    "ok": true,
+    "detail": "3/11 = 0.272727"
+   },
+   {
+    "name": "3/11 lies between 0.27 and 0.28",
+    "ok": true,
+    "detail": "0.272727"
+   },
+   {
+    "name": "27/99 simplifies to 3/11",
+    "ok": true,
+    "detail": "0.272727"
+   },
+   {
+    "name": "the lesson states \"99x = 27\", \"27/99 = 3/11\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "4 labels in 680×90"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "4 labels in 380×90"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u01-reverse-percent": {
+  "title": "£68 is 85% of the original",
+  "caption": "After 15% off, the sale price is 85% of the original, so the original is £68 ÷ 0.85 = £80, not £68 + 15%.",
+  "alt": "A bar for the original price split into 85%, £68, and 15%, £12, with the whole bracketed as £80.",
+  "description": [
+   "The whole bar is the original price, 100%.",
+   "The sale price, £68, is the 85% part.",
+   "So 1% is £0.80 and 100% is £80; the 15% taken off was £12."
+  ],
+  "course": "maths",
+  "lesson": "Percentage Change and Reverse Percentages",
+  "also": [],
+  "renderer": "bar-model",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u01.js: Percentage Change and Reverse Percentages"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the bracket over 1–2 is 80",
+    "ok": true,
+    "detail": "parts add to 80"
+   },
+   {
+    "name": "the bracket label \"100% = £80\" states 80",
+    "ok": true,
+    "detail": "100% = £80"
+   },
+   {
+    "name": "80 changed by -15% is 68",
+    "ok": true,
+    "detail": "80 × 0.85 = 68"
+   },
+   {
+    "name": "15% of 80 = 12",
+    "ok": true,
+    "detail": "12"
+   },
+   {
+    "name": "the lesson states \"68 ÷ 0.85 = £80\", \"85% of the original\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "3 labels in 680×118"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "3 labels in 380×118"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u01-root50-diagonal": {
+  "title": "√50 = 5√2 as a length",
+  "caption": "The diagonal of a square of side 5 is √(5² + 5²) = √50 = 5√2 ≈ 7.07: a length you can draw exactly, though its decimal never ends or repeats.",
+  "alt": "A square with side 5 and its diagonal, labelled √50 = 5√2.",
+  "description": [
+   "A square has sides of length 5 with a right angle at each corner.",
+   "Its diagonal is the hypotenuse of a right-angled triangle with legs 5 and 5.",
+   "By Pythagoras the diagonal is √(25 + 25) = √50 = √25 × √2 = 5√2."
+  ],
+  "course": "maths",
+  "lesson": "Irrational Numbers",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u01.js: Irrational Numbers"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the angle at B is a right angle",
+    "ok": true,
+    "detail": "90°"
+   },
+   {
+    "name": "AB = 5 u01",
+    "ok": true,
+    "detail": "measured 5"
+   },
+   {
+    "name": "BC = 5 u01",
+    "ok": true,
+    "detail": "measured 5"
+   },
+   {
+    "name": "AC = 7.071 u01",
+    "ok": true,
+    "detail": "measured 7.0711"
+   },
+   {
+    "name": "the segments marked with 1 ticks are equal",
+    "ok": true,
+    "detail": "AB 5, BC 5"
+   },
+   {
+    "name": "AC = sqrt(50)",
+    "ok": true,
+    "detail": "measured 7.07107"
+   },
+   {
+    "name": "5√2 = √50",
+    "ok": true,
+    "detail": "7.071068"
+   },
+   {
+    "name": "the lesson states \"√50 = √25 × √2 = 5√2\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 640×330"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 380×320"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u01-root90": {
+  "title": "Trapping √90",
+  "caption": "9.4² = 88.36 is below 90 and 9.5² = 90.25 is just above, so √90 lies between 9.4 and 9.5, very close to 9.5: √90 ≈ 9.5 to one decimal place.",
+  "alt": "A number line from 9 to 10 with marks at 9.4 and 9.5 and a point for √90 just left of 9.5.",
+  "description": [
+   "The line runs from 9 to 10, since 81 < 90 < 100.",
+   "9.4 squared is 88.36, too small; 9.5 squared is 90.25, just too big.",
+   "So √90 ≈ 9.487 sits just left of 9.5 and rounds to 9.5."
+  ],
+  "course": "maths",
+  "lesson": "Roots and Radicals",
+  "also": [],
+  "renderer": "number-line",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u01.js: Roots and Radicals"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "√90 is at 9.4868",
+    "ok": true,
+    "detail": "sqrt(90) = 9.486833"
+   },
+   {
+    "name": "9.4^2 = 88.36",
+    "ok": true,
+    "detail": "88.36"
+   },
+   {
+    "name": "9.5^2 = 90.25",
+    "ok": true,
+    "detail": "90.25"
+   },
+   {
+    "name": "sqrt(90) rounds to 9.5",
+    "ok": true,
+    "detail": "rounds to 9.5"
+   },
+   {
+    "name": "sqrt(90) rounds to 9.49",
+    "ok": true,
+    "detail": "rounds to 9.49"
+   },
+   {
+    "name": "the lesson states \"9.5^{2} = 90.25\", \"9.4^{2} = 88.36\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "13 labels in 680×134"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "8 labels in 380×134"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u01-round-21-8": {
+  "title": "21.8 to 1 significant figure",
+  "caption": "To one significant figure 21.8 rounds to a multiple of 10. It is nearer 20 than 30 (the halfway point is 25), so it rounds to 20, the first step of the estimate (20 × 5) ÷ 0.2.",
+  "alt": "A number line from 10 to 30 with 21.8 marked, closer to 20 than to 30, and the halfway point 25 dashed.",
+  "description": [
+   "The candidates are the multiples of 10 either side: 20 and 30.",
+   "The halfway point between them is 25.",
+   "21.8 is below 25, so it rounds down to 20."
+  ],
+  "course": "maths",
+  "lesson": "Rounding and Estimation",
+  "also": [],
+  "renderer": "number-line",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u01.js: Rounding and Estimation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "21.8 rounds to 20",
+    "ok": true,
+    "detail": "rounds to 20"
+   },
+   {
+    "name": "4.93 rounds to 5",
+    "ok": true,
+    "detail": "rounds to 5"
+   },
+   {
+    "name": "0.198 rounds to 0.2",
+    "ok": true,
+    "detail": "rounds to 0.2"
+   },
+   {
+    "name": "the lesson states \"(20 × 5) ÷ 0.2\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 680×134"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "7 labels in 380×134"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u01-sig-figs": {
+  "title": "167.4154… to 3 significant figures",
+  "caption": "To 3 significant figures the choice is 167 or 168. 167.4154… is below the halfway point 167.5, so the area is 167 cm² (3 s.f.).",
+  "alt": "A number line from 167 to 168 with the halfway point 167.5 and the value 167.4154 marked to its left.",
+  "description": [
+   "Three significant figures keep the digits 1, 6 and 7, so the answer is 167 or 168.",
+   "The halfway point is 167.5.",
+   "167.4154 is below it: round down to 167."
+  ],
+  "course": "maths",
+  "lesson": "Significant Figures",
+  "also": [],
+  "renderer": "number-line",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u01.js: Significant Figures"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "167.4154 rounds to 167",
+    "ok": true,
+    "detail": "rounds to 167"
+   },
+   {
+    "name": "the lesson states \"167.4154\", \"Area = 167 cm^{2} (3 s.f.)\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "5 labels in 680×134"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "5 labels in 380×134"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u01-temperature-jumps": {
+  "title": "Temperature changes as jumps",
+  "caption": "Adding a positive number moves right and subtracting moves left: from −5 °C, up 9 reaches 4 °C, and down 12 crosses zero to −8 °C.",
+  "alt": "A number line from −10 to 6 with a jump of +9 from −5 to 4, then a jump of −12 from 4 to −8.",
+  "description": [
+   "The number line runs from −10 to 6 in steps of 1, labelled every 2.",
+   "Start at −5, the 06:00 temperature.",
+   "A jump of +9 to the right lands on 4 (14:00).",
+   "A jump of −12 to the left lands on −8, the final temperature."
+  ],
+  "course": "maths",
+  "lesson": "Integers",
+  "also": [],
+  "renderer": "number-line",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u01.js: Integers"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "−5 +9 −12 = −8",
+    "ok": true,
+    "detail": "jumps end at −8"
+   },
+   {
+    "name": "the lesson states \"−5 + 9 = 4\", \"4 − 12 = −8\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "14 labels in 680×168"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "14 labels in 380×168"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "bio-beer-lambert": {
+  "title": "Absorbance and concentration: the Beer–Lambert law",
+  "caption": "A = εcl: for a fixed path length and wavelength, absorbance is proportional to concentration, so standards of known concentration give a straight calibration line from which an unknown can be read. At high concentrations the real curve flattens below the line, so samples must be diluted into the linear range. Idealised numbers.",
+  "alt": "A dashed straight line of absorbance rising by 0.15 per concentration unit, and a solid curve that follows it at first and then flattens; an unknown absorbance of 0.6 is read off the straight line as a concentration of 4.",
+  "description": [
+   "Absorbance is proportional to concentration over a working range: the straight line.",
+   "Standards of known concentration make the calibration curve.",
+   "An unknown with absorbance 0.6 has concentration 4 on this line.",
+   "At high concentration the real curve falls below the line, so the relationship is no longer proportional: dilute the sample."
+  ],
+  "course": "biology",
+  "lesson": "Spectrophotometry",
+  "also": [
+   {
+    "course": "biology",
+    "unit": "u14",
+    "lesson": "ELISA"
+   }
+  ],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u14.js: Spectrophotometry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in biology: ELISA",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u14.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "A = εcl: absorbance rises by the same amount for each unit of concentration (0.15)",
+    "ok": true,
+    "detail": "gradient 0.1500"
+   },
+   {
+    "name": "at low concentration the real curve has the same gradient: it is linear in the working range",
+    "ok": true,
+    "detail": "gradient 0.1500"
+   },
+   {
+    "name": "an unknown with absorbance 0.6 has concentration 4 on the calibration line",
+    "ok": true,
+    "detail": "y(4) = 0.6"
+   },
+   {
+    "name": "at concentration 4 the real curve is within about 15% of the line",
+    "ok": true,
+    "detail": "1.5*(1-exp(-0.1*x)) at 4 = 0.49; expected 0.48–0.52"
+   },
+   {
+    "name": "at high concentration the real absorbance (about 1.4) is far below the line's 4.2: dilute the sample",
+    "ok": true,
+    "detail": "1.5*(1-exp(-0.1*x)) at 28 = 1.41; expected 1.3–1.5"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "bio-blast-evalue": {
+  "title": "E-value, bit score and database size",
+  "caption": "The E-value is the number of hits of at least that score expected by chance: E = m × n × 2^−S for a query of length m, a database of n letters and a bit score S. On a log scale it falls in a straight line as the bit score rises, and a database ten times larger raises every E-value tenfold, so the same alignment is less significant.",
+  "alt": "Two parallel lines of log of the E-value against bit score, falling by 0.301 per bit, the line for a ten times larger database one unit higher, with a threshold at E = 10 to the minus 5.",
+  "description": [
+   "E = m × n × 2^−S, so log₁₀ E falls by 0.301 for each extra bit of score.",
+   "Here the query has 300 residues and the databases have 10⁸ and 10⁹ residues.",
+   "A 10 times larger database raises log₁₀ E by exactly 1: more chance matches are expected.",
+   "E-values below about 10⁻⁵ usually indicate meaningful similarity: that needs a bit score of about 51 (smaller database) or 55 (larger)."
+  ],
+  "course": "biology",
+  "lesson": "BLAST",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u13.js: BLAST"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "each extra bit of score cuts the E-value by a factor of 2: log₁₀ E falls by 0.301",
+    "ok": true,
+    "detail": "gradient -0.3010"
+   },
+   {
+    "name": "the 10⁸ database at a bit score of 20: E = 300 × 10⁸ × 2⁻²⁰, log₁₀ about 4.46",
+    "ok": true,
+    "detail": "y(20) = 4.4565"
+   },
+   {
+    "name": "a 10 times larger database gives log₁₀ E exactly 1 higher",
+    "ok": true,
+    "detail": "y(20) = 5.4565"
+   },
+   {
+    "name": "a bit score of 53 is needed to pass E = 10⁻⁵ with the smaller database",
+    "ok": true,
+    "detail": "10.4771-0.30103*x at 53 = -5.48; expected -5.6–-5.4"
+   },
+   {
+    "name": "the same score is not quite significant against the larger database",
+    "ok": true,
+    "detail": "11.4771-0.30103*x at 53 = -4.48; expected -4.6–-4.4"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
  "bio-carbon-cycle": {
   "title": "The carbon cycle",
   "caption": "Producers take CO₂ from the atmosphere by photosynthesis and pass carbon to consumers by feeding. Respiration by every organism, including decomposers, returns it, and dead matter feeds the decomposers. Combustion of fossil fuels returns carbon that was locked away for millions of years, adding CO₂ faster than it is removed.",
@@ -31181,6 +32647,154 @@
    }
   ]
  },
+ "bio-choosing-a-test": {
+  "title": "Choosing a statistical test",
+  "caption": "Match the test to the data and the question. Counts in categories compared with expected counts: chi-squared. An association between two measured variables: correlation. Comparing group means: a t-test for two normally distributed groups, ANOVA for three or more, and Mann–Whitney U for two groups that are not normally distributed.",
+  "alt": "A flow chart from the kind of data and question to chi-squared, correlation, ANOVA, the Mann-Whitney U test or the t-test.",
+  "description": [
+   "Are the data measurements rather than counts in categories? If not, compare the observed and expected counts with a chi-squared test.",
+   "Are you comparing groups? If not, you are testing for an association between two variables: correlation (Pearson or Spearman).",
+   "Are there exactly two groups? If not, compare three or more means with ANOVA.",
+   "Are the data normally distributed? If so, use a t-test; if not, the Mann–Whitney U test."
+  ],
+  "course": "biology",
+  "lesson": "Statistical analysis",
+  "also": [
+   {
+    "course": "biology",
+    "unit": "u01",
+    "lesson": "Statistical foundations"
+   }
+  ],
+  "renderer": "decision-tree",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u14.js: Statistical analysis"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in biology: Statistical foundations",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u01.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every path ends in an outcome",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "no unreachable nodes",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every authority cited on the diagram is in the lesson",
+    "ok": true,
+    "detail": "0 citations found in the lesson text"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "760px wide, shown at 93% (labels 14.0px)"
+   }
+  ]
+ },
+ "bio-cloning-steps": {
+  "title": "Making recombinant DNA",
+  "caption": "The gene is isolated and inserted into a vector cut with the same enzyme, ligase joins them, host cells are transformed, and the few cells that took up the plasmid are picked out by a marker gene such as antibiotic resistance. Eukaryotic genes are usually made as cDNA, because bacteria cannot remove introns.",
+  "alt": "Five boxes in order: isolate the gene, insert it into a vector, join with ligase, transform host cells, and select the transformed cells.",
+  "description": [
+   "Isolate the gene: cut with a restriction enzyme, or make cDNA from mRNA.",
+   "Insert it into a vector: a plasmid cut with the same enzyme.",
+   "Join with DNA ligase: the sticky ends are sealed.",
+   "Transform host cells: a few cells take up the recombinant plasmid.",
+   "Select the transformed cells: marker gene: only they grow on the antibiotic."
+  ],
+  "course": "biology",
+  "lesson": "Recombinant DNA",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u12.js: Recombinant DNA"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every step is linked: no box without an arrow",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-crispr": {
+  "title": "Editing a gene with CRISPR-Cas9",
+  "caption": "A guide RNA, designed to match a 20-base target, leads the Cas9 nuclease to that sequence, next to a short PAM. Cas9 cuts both DNA strands, and the cell's repair of the break lets the gene be disrupted or changed. Bacteria use the same system to destroy the DNA of viruses they have met before.",
+  "alt": "Four boxes in order: a guide RNA, Cas9 and the guide finding the target, Cas9 cutting both strands, and the cell repairing the break.",
+  "description": [
+   "A guide RNA: 20 bases that match the target DNA.",
+   "Cas9 and the guide find the target: next to a short PAM sequence.",
+   "Cas9 cuts both strands: a double-strand break in the chosen gene.",
+   "The cell repairs the break: the gene is disrupted or changed."
+  ],
+  "course": "biology",
+  "lesson": "CRISPR-Cas systems",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u12.js: CRISPR-Cas systems"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every step is linked: no box without an arrow",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
  "bio-energy-pyramid": {
   "title": "A pyramid of energy",
   "caption": "Energy is lost at every step of a food chain as heat from respiration, uneaten parts, faeces and excretion, so typically only about 10% passes to the next trophic level. A pyramid of energy is therefore always upright, and food chains rarely have more than four or five links. The figures are illustrative.",
@@ -31241,6 +32855,141 @@
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
     "ok": true,
     "detail": "720px wide, shown at 98% (labels 14.7px)"
+   }
+  ]
+ },
+ "bio-gel-calibration": {
+  "title": "Sizing a DNA fragment against a ladder",
+  "caption": "Smaller fragments move faster and further through the gel. For fragments in the working range, the distance moved falls in a straight line against the log of the size, so bands of a ladder of known sizes give a calibration line, and an unknown band's distance can be read off it. Idealised numbers.",
+  "alt": "A straight line sloping down: distance moved in millimetres against the log of fragment size in base pairs, through the ladder bands at 100, 500, 1,000 and 5,000 base pairs, with an unknown band at 35 millimetres read off as about 316 base pairs.",
+  "description": [
+   "DNA is negatively charged, so it moves towards the positive electrode.",
+   "Smaller fragments move further: distance falls as log₁₀ of the size rises (gradient −18 mm per log unit here).",
+   "Ladder bands of known size, at 100, 500, 1,000 and 5,000 bp, make the calibration line.",
+   "An unknown band that moved 35 mm lies at log₁₀ size 2.5: about 316 bp."
+  ],
+  "course": "biology",
+  "lesson": "Gel electrophoresis",
+  "also": [
+   {
+    "course": "biology",
+    "unit": "u14",
+    "lesson": "Gel electrophoresis"
+   }
+  ],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u12.js: Gel electrophoresis"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in biology: Gel electrophoresis",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u14.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the 100 bp ladder band moved 44 mm",
+    "ok": true,
+    "detail": "y(2) = 44"
+   },
+   {
+    "name": "the 1,000 bp band moved 26 mm",
+    "ok": true,
+    "detail": "y(3) = 26"
+   },
+   {
+    "name": "the 5,000 bp band moved about 13.4 mm",
+    "ok": true,
+    "detail": "y(3.69897) = 13.4185"
+   },
+   {
+    "name": "a band that moved 35 mm is at log₁₀ size 2.5, about 316 bp",
+    "ok": true,
+    "detail": "y(2.5) = 35"
+   },
+   {
+    "name": "larger fragments move less: distance falls as the size rises",
+    "ok": true,
+    "detail": "gradient -18.0000"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "bio-log2-fold-change": {
+  "title": "Why log₂ fold change?",
+  "caption": "A fold change is expression in condition B divided by expression in condition A. A doubling is 2 and a halving is 0.5, which are not symmetrical; on a log₂ scale they are +1 and −1, and 'no change' is 0. Volcano plots use this scale.",
+  "alt": "A curve of log base 2 of the fold change: zero at a fold change of 1, plus 1 at 2, plus 2 at 4, minus 1 at one half and minus 2 at one quarter.",
+  "description": [
+   "Fold change = expression in B ÷ expression in A.",
+   "No change: fold change 1, log₂ = 0.",
+   "Doubled: fold change 2, log₂ = +1.  Halved: fold change ½, log₂ = −1.",
+   "On the log₂ scale increases and decreases of the same size are symmetrical."
+  ],
+  "course": "biology",
+  "lesson": "Differential expression",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u13.js: Differential expression"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "no change (fold change 1) is 0",
+    "ok": true,
+    "detail": "y(1) = 0"
+   },
+   {
+    "name": "a doubling is +1",
+    "ok": true,
+    "detail": "y(2) = 1"
+   },
+   {
+    "name": "a halving is −1: the same size as a doubling, opposite sign",
+    "ok": true,
+    "detail": "y(0.5) = -1"
+   },
+   {
+    "name": "a four-fold increase is +2",
+    "ok": true,
+    "detail": "y(4) = 2"
+   },
+   {
+    "name": "a four-fold decrease is −2",
+    "ok": true,
+    "detail": "y(0.25) = -2"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
  },
@@ -31419,341 +33168,91 @@
    }
   ]
  },
- "bio-pyramid-numbers": {
-  "title": "A pyramid of numbers can be inverted",
-  "caption": "A pyramid of numbers counts organisms at each level, not their size or energy. One oak tree supports hundreds of caterpillars, so the second level is wider than the first, and the pyramid is inverted. A pyramid of energy is never inverted. The numbers are illustrative.",
-  "alt": "A four-level pyramid of numbers on a log scale: one oak tree, 500 caterpillars, 5 blue tits and 1 sparrowhawk, with the caterpillar level wider than the oak level.",
+ "bio-pairwise-alignment": {
+  "title": "Aligning two sequences",
+  "caption": "An alignment lines up two sequences so that matching positions sit in the same column; a mismatch (×) and a gap (–, standing for an insertion or deletion) each cost points. Dynamic programming finds the alignment with the best total score, and percentage identity is the share of identical positions.",
+  "alt": "Two alignments of GATTACA: against GCTTACA, six matches and one mismatch scoring 5; and against GATACA, six matches and one gap scoring 4.",
   "description": [
-   "One oak tree (the producer).",
-   "About 500 caterpillars (primary consumers) feed on it: more organisms than at the level below, so the pyramid is inverted here.",
-   "5 blue tits (secondary consumers).",
-   "1 sparrowhawk (tertiary consumer).",
-   "A pyramid of numbers ignores the size of the organisms, which is why it can be inverted."
+   "Scoring: +1 for a match, −1 for a mismatch, −2 for a gap.",
+   "GATTACA against GCTTACA: six matches and one mismatch, score 5, 86% identical.",
+   "GATTACA against GATACA: one T is missing, so a gap is needed; six matches and one gap, score 4.",
+   "The best score is found by dynamic programming (Needleman–Wunsch); any other alignment scores less."
   ],
   "course": "biology",
-  "lesson": "Trophic levels",
-  "also": [],
-  "renderer": "pyramid",
-  "status": "validated",
-  "review": null,
-  "checks": [
-   {
-    "name": "the lesson exists",
-    "ok": true,
-    "detail": "kit/courses/biology/notes/u11.js: Trophic levels"
-   },
-   {
-    "name": "the lesson places this diagram (D: line)",
-    "ok": true
-   },
-   {
-    "name": "has alt text, a caption and a step-by-step description",
-    "ok": true
-   },
-   {
-    "name": "every level has a positive value",
-    "ok": true,
-    "detail": ""
-   },
-   {
-    "name": "caterpillars is larger than the level below",
-    "ok": true,
-    "detail": ""
-   },
-   {
-    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": true,
-    "detail": "720px wide, shown at 98% (labels 14.7px)"
-   }
-  ]
- },
- "bio-succession": {
-  "title": "Primary succession",
-  "caption": "On bare ground pioneer species such as lichens and mosses colonise first and begin forming soil. Each stage changes conditions so that new species can establish: soil depth, nutrients and water retention increase, until a stable climax community, often woodland in the UK, forms. Grazing or burning can hold it back (deflected succession).",
-  "alt": "Five boxes in order: bare rock or sand, pioneer species, grasses and small plants, shrubs, and the climax community.",
-  "description": [
-   "Bare rock or sand: no soil.",
-   "Pioneer species: lichens and mosses colonise and begin to form soil.",
-   "Grasses and small plants: soil deepens and holds more water and nutrients.",
-   "Shrubs: more shade and soil: more species arrive.",
-   "Climax community: stable woodland in the UK."
-  ],
-  "course": "biology",
-  "lesson": "Succession",
-  "also": [],
-  "renderer": "flow",
-  "status": "validated",
-  "review": null,
-  "checks": [
-   {
-    "name": "the lesson exists",
-    "ok": true,
-    "detail": "kit/courses/biology/notes/u11.js: Succession"
-   },
-   {
-    "name": "the lesson places this diagram (D: line)",
-    "ok": true
-   },
-   {
-    "name": "has alt text, a caption and a step-by-step description",
-    "ok": true
-   },
-   {
-    "name": "every step is linked: no box without an arrow",
-    "ok": true,
-    "detail": ""
-   },
-   {
-    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": true,
-    "detail": "700px wide, shown at 101% (labels 15.2px)"
-   }
-  ]
- },
- "bio-restriction-cloning": {
-  "title": "Cutting a gene and a vector with the same enzyme",
-  "caption": "EcoRI recognises GAATTC, which reads the same on both strands, and cuts each strand between the G and the A, leaving single-stranded AATT overhangs. Cut with the same enzyme, the gene's ends and the vector's ends all fit each other, and DNA ligase seals them, restoring the site at both joins.",
-  "alt": "A gene with two EcoRI sites cut into three fragments and a vector with one site cut open, each with sticky overhangs, then the middle gene fragment ligated into the vector, with the GAATTC site restored at both joins.",
-  "description": [
-   "EcoRI recognises GAATTC and cuts between G and A on each strand.",
-   "The staggered cut leaves 5′ overhangs of AATT, called sticky ends.",
-   "The gene has two sites, so it gives three fragments; the middle one is the gene to be cloned.",
-   "The vector has one site and is cut open.",
-   "AATT pairs with AATT on another EcoRI-cut molecule, so the gene fits into the vector and ligase seals the backbones; GAATTC is restored at both joins."
-  ],
-  "course": "biology",
-  "lesson": "Restriction enzymes",
+  "lesson": "Sequence alignment",
   "also": [
    {
     "course": "biology",
-    "unit": "u12",
-    "lesson": "DNA ligase"
+    "unit": "u13",
+    "lesson": "DNA sequence analysis"
    }
   ],
-  "renderer": "restriction",
+  "renderer": "align",
   "status": "validated",
   "review": null,
   "checks": [
    {
     "name": "the lesson exists",
     "ok": true,
-    "detail": "kit/courses/biology/notes/u12.js: Restriction enzymes"
+    "detail": "kit/courses/biology/notes/u13.js: Sequence alignment"
    },
    {
     "name": "the lesson places this diagram (D: line)",
     "ok": true
    },
    {
-    "name": "also placed in biology: DNA ligase",
+    "name": "also placed in biology: DNA sequence analysis",
     "ok": true,
-    "detail": "kit/courses/biology/notes/u12.js"
+    "detail": "kit/courses/biology/notes/u13.js"
    },
    {
     "name": "has alt text, a caption and a step-by-step description",
     "ok": true
    },
    {
-    "name": "EcoRI's site GAATTC is palindromic: it reads the same on both strands, 5′ to 3′",
+    "name": "GATTACA / GCTTACA: removing the gaps gives back both original sequences",
     "ok": true,
     "detail": ""
    },
    {
-    "name": "gene DNA: 2 sites give 3 fragments that add up to the original length",
-    "ok": true,
-    "detail": "3 + 17 + 8"
-   },
-   {
-    "name": "vector: 1 site give 2 fragments that add up to the original length",
-    "ok": true,
-    "detail": "5 + 10"
-   },
-   {
-    "name": "the staggered cut leaves a 4-base overhang, AATT, that pairs with itself: every end cut by EcoRI fits every other",
-    "ok": true,
-    "detail": "AATT → reverse complement AATT"
-   },
-   {
-    "name": "every fragment used in the recombinant molecule exists",
+    "name": "GATTACA / GCTTACA: the drawn alignment scores 5, the best possible by dynamic programming (5)",
     "ok": true,
     "detail": ""
    },
    {
-    "name": "the recombinant molecule has the site GAATTC again at each of its 2 joins",
-    "ok": true,
-    "detail": "GAATTC, GAATTC"
-   },
-   {
-    "name": "gene is cut into 3 fragments",
-    "ok": true,
-    "detail": "3"
-   },
-   {
-    "name": "vector is cut into 2 fragments",
-    "ok": true,
-    "detail": "2"
-   },
-   {
-    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": true,
-    "detail": "700px wide, shown at 101% (labels 15.2px)"
-   }
-  ]
- },
- "bio-cloning-steps": {
-  "title": "Making recombinant DNA",
-  "caption": "The gene is isolated and inserted into a vector cut with the same enzyme, ligase joins them, host cells are transformed, and the few cells that took up the plasmid are picked out by a marker gene such as antibiotic resistance. Eukaryotic genes are usually made as cDNA, because bacteria cannot remove introns.",
-  "alt": "Five boxes in order: isolate the gene, insert it into a vector, join with ligase, transform host cells, and select the transformed cells.",
-  "description": [
-   "Isolate the gene: cut with a restriction enzyme, or make cDNA from mRNA.",
-   "Insert it into a vector: a plasmid cut with the same enzyme.",
-   "Join with DNA ligase: the sticky ends are sealed.",
-   "Transform host cells: a few cells take up the recombinant plasmid.",
-   "Select the transformed cells: marker gene: only they grow on the antibiotic."
-  ],
-  "course": "biology",
-  "lesson": "Recombinant DNA",
-  "also": [],
-  "renderer": "flow",
-  "status": "validated",
-  "review": null,
-  "checks": [
-   {
-    "name": "the lesson exists",
-    "ok": true,
-    "detail": "kit/courses/biology/notes/u12.js: Recombinant DNA"
-   },
-   {
-    "name": "the lesson places this diagram (D: line)",
-    "ok": true
-   },
-   {
-    "name": "has alt text, a caption and a step-by-step description",
-    "ok": true
-   },
-   {
-    "name": "every step is linked: no box without an arrow",
+    "name": "GATTACA / GCTTACA: no column is a gap against a gap",
     "ok": true,
     "detail": ""
    },
    {
-    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": true,
-    "detail": "700px wide, shown at 101% (labels 15.2px)"
-   }
-  ]
- },
- "bio-crispr": {
-  "title": "Editing a gene with CRISPR-Cas9",
-  "caption": "A guide RNA, designed to match a 20-base target, leads the Cas9 nuclease to that sequence, next to a short PAM. Cas9 cuts both DNA strands, and the cell's repair of the break lets the gene be disrupted or changed. Bacteria use the same system to destroy the DNA of viruses they have met before.",
-  "alt": "Four boxes in order: a guide RNA, Cas9 and the guide finding the target, Cas9 cutting both strands, and the cell repairing the break.",
-  "description": [
-   "A guide RNA: 20 bases that match the target DNA.",
-   "Cas9 and the guide find the target: next to a short PAM sequence.",
-   "Cas9 cuts both strands: a double-strand break in the chosen gene.",
-   "The cell repairs the break: the gene is disrupted or changed."
-  ],
-  "course": "biology",
-  "lesson": "CRISPR-Cas systems",
-  "also": [],
-  "renderer": "flow",
-  "status": "validated",
-  "review": null,
-  "checks": [
-   {
-    "name": "the lesson exists",
-    "ok": true,
-    "detail": "kit/courses/biology/notes/u12.js: CRISPR-Cas systems"
-   },
-   {
-    "name": "the lesson places this diagram (D: line)",
-    "ok": true
-   },
-   {
-    "name": "has alt text, a caption and a step-by-step description",
-    "ok": true
-   },
-   {
-    "name": "every step is linked: no box without an arrow",
+    "name": "GATTACA / GATACA: removing the gaps gives back both original sequences",
     "ok": true,
     "detail": ""
    },
    {
-    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "name": "GATTACA / GATACA: the drawn alignment scores 4, the best possible by dynamic programming (4)",
     "ok": true,
-    "detail": "700px wide, shown at 101% (labels 15.2px)"
-   }
-  ]
- },
- "bio-gel-calibration": {
-  "title": "Sizing a DNA fragment against a ladder",
-  "caption": "Smaller fragments move faster and further through the gel. For fragments in the working range, the distance moved falls in a straight line against the log of the size, so bands of a ladder of known sizes give a calibration line, and an unknown band's distance can be read off it. Idealised numbers.",
-  "alt": "A straight line sloping down: distance moved in millimetres against the log of fragment size in base pairs, through the ladder bands at 100, 500, 1,000 and 5,000 base pairs, with an unknown band at 35 millimetres read off as about 316 base pairs.",
-  "description": [
-   "DNA is negatively charged, so it moves towards the positive electrode.",
-   "Smaller fragments move further: distance falls as log₁₀ of the size rises (gradient −18 mm per log unit here).",
-   "Ladder bands of known size, at 100, 500, 1,000 and 5,000 bp, make the calibration line.",
-   "An unknown band that moved 35 mm lies at log₁₀ size 2.5: about 316 bp."
-  ],
-  "course": "biology",
-  "lesson": "Gel electrophoresis",
-  "also": [
-   {
-    "course": "biology",
-    "unit": "u14",
-    "lesson": "Gel electrophoresis"
-   }
-  ],
-  "renderer": "graph",
-  "status": "validated",
-  "review": null,
-  "checks": [
-   {
-    "name": "the lesson exists",
-    "ok": true,
-    "detail": "kit/courses/biology/notes/u12.js: Gel electrophoresis"
+    "detail": ""
    },
    {
-    "name": "the lesson places this diagram (D: line)",
-    "ok": true
-   },
-   {
-    "name": "also placed in biology: Gel electrophoresis",
+    "name": "GATTACA / GATACA: no column is a gap against a gap",
     "ok": true,
-    "detail": "kit/courses/biology/notes/u14.js"
+    "detail": ""
    },
    {
-    "name": "has alt text, a caption and a step-by-step description",
-    "ok": true
-   },
-   {
-    "name": "the 100 bp ladder band moved 44 mm",
+    "name": "pair 1 is 85.7% identical",
     "ok": true,
-    "detail": "y(2) = 44"
+    "detail": "85.7%"
    },
    {
-    "name": "the 1,000 bp band moved 26 mm",
+    "name": "pair 2 is 85.7% identical",
     "ok": true,
-    "detail": "y(3) = 26"
-   },
-   {
-    "name": "the 5,000 bp band moved about 13.4 mm",
-    "ok": true,
-    "detail": "y(3.69897) = 13.4185"
-   },
-   {
-    "name": "a band that moved 35 mm is at log₁₀ size 2.5, about 316 bp",
-    "ok": true,
-    "detail": "y(2.5) = 35"
-   },
-   {
-    "name": "larger fragments move less: distance falls as the size rises",
-    "ok": true,
-    "detail": "gradient -18.0000"
+    "detail": "85.7%"
    },
    {
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
     "ok": true,
-    "detail": "680px wide, shown at 104% (labels 15.6px)"
+    "detail": "560px wide, shown at 126% (labels 18.9px)"
    }
   ]
  },
@@ -31877,6 +33376,232 @@
    }
   ]
  },
+ "bio-pyramid-numbers": {
+  "title": "A pyramid of numbers can be inverted",
+  "caption": "A pyramid of numbers counts organisms at each level, not their size or energy. One oak tree supports hundreds of caterpillars, so the second level is wider than the first, and the pyramid is inverted. A pyramid of energy is never inverted. The numbers are illustrative.",
+  "alt": "A four-level pyramid of numbers on a log scale: one oak tree, 500 caterpillars, 5 blue tits and 1 sparrowhawk, with the caterpillar level wider than the oak level.",
+  "description": [
+   "One oak tree (the producer).",
+   "About 500 caterpillars (primary consumers) feed on it: more organisms than at the level below, so the pyramid is inverted here.",
+   "5 blue tits (secondary consumers).",
+   "1 sparrowhawk (tertiary consumer).",
+   "A pyramid of numbers ignores the size of the organisms, which is why it can be inverted."
+  ],
+  "course": "biology",
+  "lesson": "Trophic levels",
+  "also": [],
+  "renderer": "pyramid",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u11.js: Trophic levels"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every level has a positive value",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "caterpillars is larger than the level below",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "720px wide, shown at 98% (labels 14.7px)"
+   }
+  ]
+ },
+ "bio-restriction-cloning": {
+  "title": "Cutting a gene and a vector with the same enzyme",
+  "caption": "EcoRI recognises GAATTC, which reads the same on both strands, and cuts each strand between the G and the A, leaving single-stranded AATT overhangs. Cut with the same enzyme, the gene's ends and the vector's ends all fit each other, and DNA ligase seals them, restoring the site at both joins.",
+  "alt": "A gene with two EcoRI sites cut into three fragments and a vector with one site cut open, each with sticky overhangs, then the middle gene fragment ligated into the vector, with the GAATTC site restored at both joins.",
+  "description": [
+   "EcoRI recognises GAATTC and cuts between G and A on each strand.",
+   "The staggered cut leaves 5′ overhangs of AATT, called sticky ends.",
+   "The gene has two sites, so it gives three fragments; the middle one is the gene to be cloned.",
+   "The vector has one site and is cut open.",
+   "AATT pairs with AATT on another EcoRI-cut molecule, so the gene fits into the vector and ligase seals the backbones; GAATTC is restored at both joins."
+  ],
+  "course": "biology",
+  "lesson": "Restriction enzymes",
+  "also": [
+   {
+    "course": "biology",
+    "unit": "u12",
+    "lesson": "DNA ligase"
+   }
+  ],
+  "renderer": "restriction",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u12.js: Restriction enzymes"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in biology: DNA ligase",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u12.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "EcoRI's site GAATTC is palindromic: it reads the same on both strands, 5′ to 3′",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "gene DNA: 2 sites give 3 fragments that add up to the original length",
+    "ok": true,
+    "detail": "3 + 17 + 8"
+   },
+   {
+    "name": "vector: 1 site give 2 fragments that add up to the original length",
+    "ok": true,
+    "detail": "5 + 10"
+   },
+   {
+    "name": "the staggered cut leaves a 4-base overhang, AATT, that pairs with itself: every end cut by EcoRI fits every other",
+    "ok": true,
+    "detail": "AATT → reverse complement AATT"
+   },
+   {
+    "name": "every fragment used in the recombinant molecule exists",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the recombinant molecule has the site GAATTC again at each of its 2 joins",
+    "ok": true,
+    "detail": "GAATTC, GAATTC"
+   },
+   {
+    "name": "gene is cut into 3 fragments",
+    "ok": true,
+    "detail": "3"
+   },
+   {
+    "name": "vector is cut into 2 fragments",
+    "ok": true,
+    "detail": "2"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-rnaseq-workflow": {
+  "title": "An RNA-seq experiment, bench to results",
+  "caption": "In the laboratory RNA is extracted, mRNA selected (ribosomal RNA is most of the RNA, so it is removed), reverse transcribed to cDNA, fragmented and sequenced. On the computer the reads are checked, aligned to a reference, counted for each gene and tested for differences between conditions.",
+  "alt": "Eight boxes in order: extract RNA, select mRNA, reverse transcribe, fragment and sequence, quality control, align, count reads per gene, and test for differences.",
+  "description": [
+   "Extract RNA: and check its quality.",
+   "Select mRNA: by poly-A tail, or remove ribosomal RNA.",
+   "Reverse transcribe: RNA to cDNA.",
+   "Fragment and sequence: add adapters, then sequence.",
+   "Quality control: check the reads.",
+   "Align the reads: to a reference genome or transcriptome.",
+   "Count reads per gene: quantification.",
+   "Test for differences: between conditions, with correction."
+  ],
+  "course": "biology",
+  "lesson": "RNA sequencing",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u13.js: RNA sequencing"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every step is linked: no box without an arrow",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-sandwich-elisa": {
+  "title": "A sandwich ELISA",
+  "caption": "A capture antibody on the plate binds the antigen from the sample, a second, enzyme-labelled antibody binds it from above, and washing removes everything unbound between steps. The enzyme turns a substrate into a coloured product whose absorbance, read against a standard curve, gives the concentration.",
+  "alt": "Five boxes in order: coat the plate with capture antibody, add the sample, add the enzyme-labelled detection antibody, add the substrate, and read the absorbance.",
+  "description": [
+   "Coat the plate: a capture antibody sticks to the wells.",
+   "Add the sample: the antigen binds the capture antibody; wash.",
+   "Add the detection antibody: an enzyme-labelled antibody binds the antigen; wash.",
+   "Add the substrate: the enzyme turns it into a coloured product.",
+   "Read the absorbance: a plate reader; unknowns are read off a standard curve."
+  ],
+  "course": "biology",
+  "lesson": "ELISA",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u14.js: ELISA"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every step is linked: no box without an arrow",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
  "bio-sanger": {
   "title": "Sanger sequencing: chain termination",
   "caption": "DNA polymerase copies the template, but a little ddNTP, which has no 3′–OH, is mixed in: whenever one is added, the chain stops. The result is a fragment of every length, each ending at a base marked by a coloured dye. Sorted by size, the colours of the last bases spell out the new strand.",
@@ -31935,234 +33660,19 @@
    }
   ]
  },
- "bio-blast-evalue": {
-  "title": "E-value, bit score and database size",
-  "caption": "The E-value is the number of hits of at least that score expected by chance: E = m × n × 2^−S for a query of length m, a database of n letters and a bit score S. On a log scale it falls in a straight line as the bit score rises, and a database ten times larger raises every E-value tenfold, so the same alignment is less significant.",
-  "alt": "Two parallel lines of log of the E-value against bit score, falling by 0.301 per bit, the line for a ten times larger database one unit higher, with a threshold at E = 10 to the minus 5.",
+ "bio-succession": {
+  "title": "Primary succession",
+  "caption": "On bare ground pioneer species such as lichens and mosses colonise first and begin forming soil. Each stage changes conditions so that new species can establish: soil depth, nutrients and water retention increase, until a stable climax community, often woodland in the UK, forms. Grazing or burning can hold it back (deflected succession).",
+  "alt": "Five boxes in order: bare rock or sand, pioneer species, grasses and small plants, shrubs, and the climax community.",
   "description": [
-   "E = m × n × 2^−S, so log₁₀ E falls by 0.301 for each extra bit of score.",
-   "Here the query has 300 residues and the databases have 10⁸ and 10⁹ residues.",
-   "A 10 times larger database raises log₁₀ E by exactly 1: more chance matches are expected.",
-   "E-values below about 10⁻⁵ usually indicate meaningful similarity: that needs a bit score of about 51 (smaller database) or 55 (larger)."
+   "Bare rock or sand: no soil.",
+   "Pioneer species: lichens and mosses colonise and begin to form soil.",
+   "Grasses and small plants: soil deepens and holds more water and nutrients.",
+   "Shrubs: more shade and soil: more species arrive.",
+   "Climax community: stable woodland in the UK."
   ],
   "course": "biology",
-  "lesson": "BLAST",
-  "also": [],
-  "renderer": "graph",
-  "status": "validated",
-  "review": null,
-  "checks": [
-   {
-    "name": "the lesson exists",
-    "ok": true,
-    "detail": "kit/courses/biology/notes/u13.js: BLAST"
-   },
-   {
-    "name": "the lesson places this diagram (D: line)",
-    "ok": true
-   },
-   {
-    "name": "has alt text, a caption and a step-by-step description",
-    "ok": true
-   },
-   {
-    "name": "each extra bit of score cuts the E-value by a factor of 2: log₁₀ E falls by 0.301",
-    "ok": true,
-    "detail": "gradient -0.3010"
-   },
-   {
-    "name": "the 10⁸ database at a bit score of 20: E = 300 × 10⁸ × 2⁻²⁰, log₁₀ about 4.46",
-    "ok": true,
-    "detail": "y(20) = 4.4565"
-   },
-   {
-    "name": "a 10 times larger database gives log₁₀ E exactly 1 higher",
-    "ok": true,
-    "detail": "y(20) = 5.4565"
-   },
-   {
-    "name": "a bit score of 53 is needed to pass E = 10⁻⁵ with the smaller database",
-    "ok": true,
-    "detail": "10.4771-0.30103*x at 53 = -5.48; expected -5.6–-5.4"
-   },
-   {
-    "name": "the same score is not quite significant against the larger database",
-    "ok": true,
-    "detail": "11.4771-0.30103*x at 53 = -4.48; expected -4.6–-4.4"
-   },
-   {
-    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": true,
-    "detail": "680px wide, shown at 104% (labels 15.6px)"
-   }
-  ]
- },
- "bio-log2-fold-change": {
-  "title": "Why log₂ fold change?",
-  "caption": "A fold change is expression in condition B divided by expression in condition A. A doubling is 2 and a halving is 0.5, which are not symmetrical; on a log₂ scale they are +1 and −1, and 'no change' is 0. Volcano plots use this scale.",
-  "alt": "A curve of log base 2 of the fold change: zero at a fold change of 1, plus 1 at 2, plus 2 at 4, minus 1 at one half and minus 2 at one quarter.",
-  "description": [
-   "Fold change = expression in B ÷ expression in A.",
-   "No change: fold change 1, log₂ = 0.",
-   "Doubled: fold change 2, log₂ = +1.  Halved: fold change ½, log₂ = −1.",
-   "On the log₂ scale increases and decreases of the same size are symmetrical."
-  ],
-  "course": "biology",
-  "lesson": "Differential expression",
-  "also": [],
-  "renderer": "graph",
-  "status": "validated",
-  "review": null,
-  "checks": [
-   {
-    "name": "the lesson exists",
-    "ok": true,
-    "detail": "kit/courses/biology/notes/u13.js: Differential expression"
-   },
-   {
-    "name": "the lesson places this diagram (D: line)",
-    "ok": true
-   },
-   {
-    "name": "has alt text, a caption and a step-by-step description",
-    "ok": true
-   },
-   {
-    "name": "no change (fold change 1) is 0",
-    "ok": true,
-    "detail": "y(1) = 0"
-   },
-   {
-    "name": "a doubling is +1",
-    "ok": true,
-    "detail": "y(2) = 1"
-   },
-   {
-    "name": "a halving is −1: the same size as a doubling, opposite sign",
-    "ok": true,
-    "detail": "y(0.5) = -1"
-   },
-   {
-    "name": "a four-fold increase is +2",
-    "ok": true,
-    "detail": "y(4) = 2"
-   },
-   {
-    "name": "a four-fold decrease is −2",
-    "ok": true,
-    "detail": "y(0.25) = -2"
-   },
-   {
-    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": true,
-    "detail": "680px wide, shown at 104% (labels 15.6px)"
-   }
-  ]
- },
- "bio-pairwise-alignment": {
-  "title": "Aligning two sequences",
-  "caption": "An alignment lines up two sequences so that matching positions sit in the same column; a mismatch (×) and a gap (–, standing for an insertion or deletion) each cost points. Dynamic programming finds the alignment with the best total score, and percentage identity is the share of identical positions.",
-  "alt": "Two alignments of GATTACA: against GCTTACA, six matches and one mismatch scoring 5; and against GATACA, six matches and one gap scoring 4.",
-  "description": [
-   "Scoring: +1 for a match, −1 for a mismatch, −2 for a gap.",
-   "GATTACA against GCTTACA: six matches and one mismatch, score 5, 86% identical.",
-   "GATTACA against GATACA: one T is missing, so a gap is needed; six matches and one gap, score 4.",
-   "The best score is found by dynamic programming (Needleman–Wunsch); any other alignment scores less."
-  ],
-  "course": "biology",
-  "lesson": "Sequence alignment",
-  "also": [
-   {
-    "course": "biology",
-    "unit": "u13",
-    "lesson": "DNA sequence analysis"
-   }
-  ],
-  "renderer": "align",
-  "status": "validated",
-  "review": null,
-  "checks": [
-   {
-    "name": "the lesson exists",
-    "ok": true,
-    "detail": "kit/courses/biology/notes/u13.js: Sequence alignment"
-   },
-   {
-    "name": "the lesson places this diagram (D: line)",
-    "ok": true
-   },
-   {
-    "name": "also placed in biology: DNA sequence analysis",
-    "ok": true,
-    "detail": "kit/courses/biology/notes/u13.js"
-   },
-   {
-    "name": "has alt text, a caption and a step-by-step description",
-    "ok": true
-   },
-   {
-    "name": "GATTACA / GCTTACA: removing the gaps gives back both original sequences",
-    "ok": true,
-    "detail": ""
-   },
-   {
-    "name": "GATTACA / GCTTACA: the drawn alignment scores 5, the best possible by dynamic programming (5)",
-    "ok": true,
-    "detail": ""
-   },
-   {
-    "name": "GATTACA / GCTTACA: no column is a gap against a gap",
-    "ok": true,
-    "detail": ""
-   },
-   {
-    "name": "GATTACA / GATACA: removing the gaps gives back both original sequences",
-    "ok": true,
-    "detail": ""
-   },
-   {
-    "name": "GATTACA / GATACA: the drawn alignment scores 4, the best possible by dynamic programming (4)",
-    "ok": true,
-    "detail": ""
-   },
-   {
-    "name": "GATTACA / GATACA: no column is a gap against a gap",
-    "ok": true,
-    "detail": ""
-   },
-   {
-    "name": "pair 1 is 85.7% identical",
-    "ok": true,
-    "detail": "85.7%"
-   },
-   {
-    "name": "pair 2 is 85.7% identical",
-    "ok": true,
-    "detail": "85.7%"
-   },
-   {
-    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": true,
-    "detail": "560px wide, shown at 126% (labels 18.9px)"
-   }
-  ]
- },
- "bio-rnaseq-workflow": {
-  "title": "An RNA-seq experiment, bench to results",
-  "caption": "In the laboratory RNA is extracted, mRNA selected (ribosomal RNA is most of the RNA, so it is removed), reverse transcribed to cDNA, fragmented and sequenced. On the computer the reads are checked, aligned to a reference, counted for each gene and tested for differences between conditions.",
-  "alt": "Eight boxes in order: extract RNA, select mRNA, reverse transcribe, fragment and sequence, quality control, align, count reads per gene, and test for differences.",
-  "description": [
-   "Extract RNA: and check its quality.",
-   "Select mRNA: by poly-A tail, or remove ribosomal RNA.",
-   "Reverse transcribe: RNA to cDNA.",
-   "Fragment and sequence: add adapters, then sequence.",
-   "Quality control: check the reads.",
-   "Align the reads: to a reference genome or transcriptome.",
-   "Count reads per gene: quantification.",
-   "Test for differences: between conditions, with correction."
-  ],
-  "course": "biology",
-  "lesson": "RNA sequencing",
+  "lesson": "Succession",
   "also": [],
   "renderer": "flow",
   "status": "validated",
@@ -32171,186 +33681,7 @@
    {
     "name": "the lesson exists",
     "ok": true,
-    "detail": "kit/courses/biology/notes/u13.js: RNA sequencing"
-   },
-   {
-    "name": "the lesson places this diagram (D: line)",
-    "ok": true
-   },
-   {
-    "name": "has alt text, a caption and a step-by-step description",
-    "ok": true
-   },
-   {
-    "name": "every step is linked: no box without an arrow",
-    "ok": true,
-    "detail": ""
-   },
-   {
-    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": true,
-    "detail": "700px wide, shown at 101% (labels 15.2px)"
-   }
-  ]
- },
- "bio-beer-lambert": {
-  "title": "Absorbance and concentration: the Beer–Lambert law",
-  "caption": "A = εcl: for a fixed path length and wavelength, absorbance is proportional to concentration, so standards of known concentration give a straight calibration line from which an unknown can be read. At high concentrations the real curve flattens below the line, so samples must be diluted into the linear range. Idealised numbers.",
-  "alt": "A dashed straight line of absorbance rising by 0.15 per concentration unit, and a solid curve that follows it at first and then flattens; an unknown absorbance of 0.6 is read off the straight line as a concentration of 4.",
-  "description": [
-   "Absorbance is proportional to concentration over a working range: the straight line.",
-   "Standards of known concentration make the calibration curve.",
-   "An unknown with absorbance 0.6 has concentration 4 on this line.",
-   "At high concentration the real curve falls below the line, so the relationship is no longer proportional: dilute the sample."
-  ],
-  "course": "biology",
-  "lesson": "Spectrophotometry",
-  "also": [
-   {
-    "course": "biology",
-    "unit": "u14",
-    "lesson": "ELISA"
-   }
-  ],
-  "renderer": "graph",
-  "status": "validated",
-  "review": null,
-  "checks": [
-   {
-    "name": "the lesson exists",
-    "ok": true,
-    "detail": "kit/courses/biology/notes/u14.js: Spectrophotometry"
-   },
-   {
-    "name": "the lesson places this diagram (D: line)",
-    "ok": true
-   },
-   {
-    "name": "also placed in biology: ELISA",
-    "ok": true,
-    "detail": "kit/courses/biology/notes/u14.js"
-   },
-   {
-    "name": "has alt text, a caption and a step-by-step description",
-    "ok": true
-   },
-   {
-    "name": "A = εcl: absorbance rises by the same amount for each unit of concentration (0.15)",
-    "ok": true,
-    "detail": "gradient 0.1500"
-   },
-   {
-    "name": "at low concentration the real curve has the same gradient: it is linear in the working range",
-    "ok": true,
-    "detail": "gradient 0.1500"
-   },
-   {
-    "name": "an unknown with absorbance 0.6 has concentration 4 on the calibration line",
-    "ok": true,
-    "detail": "y(4) = 0.6"
-   },
-   {
-    "name": "at concentration 4 the real curve is within about 15% of the line",
-    "ok": true,
-    "detail": "1.5*(1-exp(-0.1*x)) at 4 = 0.49; expected 0.48–0.52"
-   },
-   {
-    "name": "at high concentration the real absorbance (about 1.4) is far below the line's 4.2: dilute the sample",
-    "ok": true,
-    "detail": "1.5*(1-exp(-0.1*x)) at 28 = 1.41; expected 1.3–1.5"
-   },
-   {
-    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": true,
-    "detail": "680px wide, shown at 104% (labels 15.6px)"
-   }
-  ]
- },
- "bio-choosing-a-test": {
-  "title": "Choosing a statistical test",
-  "caption": "Match the test to the data and the question. Counts in categories compared with expected counts: chi-squared. An association between two measured variables: correlation. Comparing group means: a t-test for two normally distributed groups, ANOVA for three or more, and Mann–Whitney U for two groups that are not normally distributed.",
-  "alt": "A flow chart from the kind of data and question to chi-squared, correlation, ANOVA, the Mann-Whitney U test or the t-test.",
-  "description": [
-   "Are the data measurements rather than counts in categories? If not, compare the observed and expected counts with a chi-squared test.",
-   "Are you comparing groups? If not, you are testing for an association between two variables: correlation (Pearson or Spearman).",
-   "Are there exactly two groups? If not, compare three or more means with ANOVA.",
-   "Are the data normally distributed? If so, use a t-test; if not, the Mann–Whitney U test."
-  ],
-  "course": "biology",
-  "lesson": "Statistical analysis",
-  "also": [
-   {
-    "course": "biology",
-    "unit": "u01",
-    "lesson": "Graphs and data presentation"
-   }
-  ],
-  "renderer": "decision-tree",
-  "status": "validated",
-  "review": null,
-  "checks": [
-   {
-    "name": "the lesson exists",
-    "ok": true,
-    "detail": "kit/courses/biology/notes/u14.js: Statistical analysis"
-   },
-   {
-    "name": "the lesson places this diagram (D: line)",
-    "ok": true
-   },
-   {
-    "name": "also placed in biology: Graphs and data presentation",
-    "ok": true,
-    "detail": "kit/courses/biology/notes/u01.js"
-   },
-   {
-    "name": "has alt text, a caption and a step-by-step description",
-    "ok": true
-   },
-   {
-    "name": "every path ends in an outcome",
-    "ok": true,
-    "detail": ""
-   },
-   {
-    "name": "no unreachable nodes",
-    "ok": true,
-    "detail": ""
-   },
-   {
-    "name": "every authority cited on the diagram is in the lesson",
-    "ok": true,
-    "detail": "0 citations found in the lesson text"
-   },
-   {
-    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
-    "ok": true,
-    "detail": "760px wide, shown at 93% (labels 14.0px)"
-   }
-  ]
- },
- "bio-sandwich-elisa": {
-  "title": "A sandwich ELISA",
-  "caption": "A capture antibody on the plate binds the antigen from the sample, a second, enzyme-labelled antibody binds it from above, and washing removes everything unbound between steps. The enzyme turns a substrate into a coloured product whose absorbance, read against a standard curve, gives the concentration.",
-  "alt": "Five boxes in order: coat the plate with capture antibody, add the sample, add the enzyme-labelled detection antibody, add the substrate, and read the absorbance.",
-  "description": [
-   "Coat the plate: a capture antibody sticks to the wells.",
-   "Add the sample: the antigen binds the capture antibody; wash.",
-   "Add the detection antibody: an enzyme-labelled antibody binds the antigen; wash.",
-   "Add the substrate: the enzyme turns it into a coloured product.",
-   "Read the absorbance: a plate reader; unknowns are read off a standard curve."
-  ],
-  "course": "biology",
-  "lesson": "ELISA",
-  "also": [],
-  "renderer": "flow",
-  "status": "validated",
-  "review": null,
-  "checks": [
-   {
-    "name": "the lesson exists",
-    "ok": true,
-    "detail": "kit/courses/biology/notes/u14.js: ELISA"
+    "detail": "kit/courses/biology/notes/u11.js: Succession"
    },
    {
     "name": "the lesson places this diagram (D: line)",

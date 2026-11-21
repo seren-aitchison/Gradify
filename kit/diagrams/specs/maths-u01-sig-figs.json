@@ -1,0 +1,53 @@
+{
+ "id": "maths-u01-sig-figs",
+ "renderer": "number-line",
+ "course": "maths",
+ "unit": "u01",
+ "lesson": "Significant Figures",
+ "title": "167.4154… to 3 significant figures",
+ "caption": "To 3 significant figures the choice is 167 or 168. 167.4154… is below the halfway point 167.5, so the area is 167 cm² (3 s.f.).",
+ "alt": "A number line from 167 to 168 with the halfway point 167.5 and the value 167.4154 marked to its left.",
+ "description": [
+  "Three significant figures keep the digits 1, 6 and 7, so the answer is 167 or 168.",
+  "The halfway point is 167.5.",
+  "167.4154 is below it: round down to 167."
+ ],
+ "range": [
+  167,
+  168
+ ],
+ "ticks": {
+  "step": 0.5
+ },
+ "minor": 0.1,
+ "points": [
+  {
+   "value": 167.4154,
+   "label": "167.4154…"
+  }
+ ],
+ "intervals": [
+  {
+   "from": 167,
+   "to": 167.5,
+   "closed": [
+    true,
+    false
+   ],
+   "label": "rounds to 167",
+   "colour": "a4"
+  }
+ ],
+ "checks": [
+  {
+   "type": "round",
+   "value": 167.4154,
+   "sf": 3,
+   "result": 167
+  }
+ ],
+ "fromLesson": [
+  "167.4154",
+  "Area = 167 cm^{2} (3 s.f.)"
+ ]
+}

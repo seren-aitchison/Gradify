@@ -585,7 +585,6 @@ O: Describe and interpret trends, including rates from gradients
 PRE: Variables and experimental design
 H: Results tables
 P: Put the independent variable in the first column and the dependent variable (with repeats and means) in the next columns. Column headings give the quantity and unit, separated by a solidus: "Temperature / °C". Units go in headings, not in the body of the table. Record raw data to the instrument's resolution and means to one more decimal place at most.
-D: bio-choosing-a-test
 H: Which graph?
 - **Line graph**: both variables continuous, showing how the dependent variable changes with the independent variable (rate against temperature).
 - **Bar chart**: the independent variable is categorical (blood group, species).
@@ -636,6 +635,7 @@ H: Choosing a test
 - **Chi-squared test**: compare observed counts in categories with expected counts (for example genetic ratios).
 - **Spearman's rank or Pearson's correlation**: test the strength of a correlation between two variables.
 P: Each test gives a statistic and a p-value: the probability of results at least as extreme if the null hypothesis were true. Biologists usually use p < 0.05 as the threshold for statistical significance.
+D: bio-choosing-a-test
 X: Find the mean and standard deviation of 4, 6, 7, 7 and 6.
 > Mean = 30 ÷ 5 = 6.
 > Squared deviations: 4, 0, 1, 1, 0; sum = 6.

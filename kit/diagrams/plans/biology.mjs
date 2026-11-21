@@ -30,6 +30,7 @@ export const PLAN = [
   ["u01-16", null, NOT_VISUAL],
   ["u01-17", "decision-tree", "bio-which-graph", "choosing a bar chart, histogram, scatter graph or line graph"],
   ["u01-18", "graph", "bio-normal-distribution", "the normal curve with 68% and 95% of values within one and two standard deviations"],
+  ["u01-18", "decision-tree", "bio-choosing-a-test", "which statistical test fits the data and the question"],
   ["u01-18", "lab", "punnett", "test observed genetic ratios against expected with chi-squared"],
   ["u01-19", "lab", "population", "sample a population"],
   ["u01-20", null, "the ethics of research is an argument: carried in the text"],

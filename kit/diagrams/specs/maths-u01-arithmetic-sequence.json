@@ -1,0 +1,40 @@
+{
+ "id": "maths-u01-arithmetic-sequence",
+ "renderer": "sequence",
+ "course": "maths",
+ "unit": "u01",
+ "lesson": "Sequences of Numbers",
+ "title": "17, 13, 9, 5, …: nth term 21 − 4n",
+ "caption": "The terms fall by 4 each time, so the nth term is −4n + c; n = 1 gives c = 21. The rule 21 − 4n gives every term, and the 30th is 21 − 120 = −99.",
+ "alt": "Four boxes 17, 13, 9, 5 with arrows of −4 between them, and the rule nth term = 21 − 4n.",
+ "description": [
+  "The terms are 17, 13, 9 and 5, for n = 1 to 4.",
+  "Each step is −4: the common difference.",
+  "The nth term is 21 − 4n; for n = 30 it is −99."
+ ],
+ "terms": [
+  17,
+  13,
+  9,
+  5
+ ],
+ "more": true,
+ "rule": {
+  "kind": "nth",
+  "expr": "21-4*n"
+ },
+ "show": "differences",
+ "ruleText": "nth term = 21 − 4n",
+ "checks": [
+  {
+   "type": "nth",
+   "n": 30,
+   "value": -99
+  }
+ ],
+ "fromLesson": [
+  "17, 13, 9, 5",
+  "21 − 4n",
+  "−99"
+ ]
+}

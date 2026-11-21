@@ -35,7 +35,7 @@ mk("u14-17", "bio-choosing-a-test", "decision-tree", "Choosing a statistical tes
    "A flow chart from the kind of data and question to chi-squared, correlation, ANOVA, the Mann-Whitney U test or the t-test.",
    ["Are the data measurements rather than counts in categories? If not, compare the observed and expected counts with a chi-squared test.", "Are you comparing groups? If not, you are testing for an association between two variables: correlation (Pearson or Spearman).",
     "Are there exactly two groups? If not, compare three or more means with ANOVA.", "Are the data normally distributed? If so, use a t-test; if not, the Mann–Whitney U test."],
-   also=("u01-17",), start="q1", nodes={
+   also=("u01-18",), start="q1", nodes={
        "q1": {"q": "Are the data measurements, not counts in categories?", "yes": "q2", "no": "chi"},
        "chi": {"outcome": "Chi-squared test: observed against expected frequencies", "tone": "neutral"},
        "q2": {"q": "Are you comparing groups?", "yes": "q3", "no": "cor"},

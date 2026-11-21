@@ -4,33 +4,33 @@
   "sites": 32,
   "sitesServingCourses": 31,
   "courses": 34,
-  "coursesWithPlan": 5,
+  "coursesWithPlan": 6,
   "lessons": 10112,
   "written": 9979,
-  "assessed": 911,
-  "plannedVisual": 626,
-  "plannedDiagram": 582,
-  "plannedLab": 97,
-  "excluded": 285,
-  "notAssessed": 9068,
-  "withDiagram": 588,
+  "assessed": 940,
+  "plannedVisual": 648,
+  "plannedDiagram": 599,
+  "plannedLab": 108,
+  "excluded": 292,
+  "notAssessed": 9039,
+  "withDiagram": 605,
   "withLab": 841,
-  "withBoth": 160,
-  "withAny": 1269,
+  "withBoth": 167,
+  "withAny": 1279,
   "plannedNotDelivered": 0,
-  "placements": 612
+  "placements": 629
  },
  "diagrams": {
-  "manifest": 546,
-  "uniquePlaced": 546,
-  "placements": 612,
+  "manifest": 563,
+  "uniquePlaced": 563,
+  "placements": 629,
   "reused": 60,
-  "byStatus": {"ai-reviewed":4,"approved":11,"validated":531},
-  "placedByStatus": {"ai-reviewed":4,"approved":11,"validated":531},
+  "byStatus": {"ai-reviewed":4,"approved":11,"validated":548},
+  "placedByStatus": {"ai-reviewed":4,"approved":11,"validated":548},
   "failing": [],
   "unplaced": []
  },
- "problems": [{"kind":"diagram placed but not in the plan for its lesson","course":"biology","detail":"u01-17 Graphs and data presentation: bio-choosing-a-test"}],
+ "problems": [],
  "sites": [
   {
    "name": "UnderGradify",
@@ -498,18 +498,18 @@
    "totals": {
     "lessons": 1077,
     "written": 1077,
-    "assessed": 0,
-    "plannedVisual": 0,
-    "plannedDiagram": 0,
-    "plannedLab": 0,
-    "excluded": 0,
-    "notAssessed": 1077,
-    "withDiagram": 1,
+    "assessed": 29,
+    "plannedVisual": 22,
+    "plannedDiagram": 17,
+    "plannedLab": 11,
+    "excluded": 7,
+    "notAssessed": 1048,
+    "withDiagram": 18,
     "withLab": 102,
-    "withBoth": 1,
-    "withAny": 102,
+    "withBoth": 8,
+    "withAny": 112,
     "plannedNotDelivered": 0,
-    "placements": 1
+    "placements": 18
    }
   },
   {
@@ -1411,21 +1411,14 @@
       {"id":"u01-14","title":"Biological measurements","written":true,"diagrams":[{"id":"bio-scale-of-life","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-scale-of-life"]}},
       {"id":"u01-15","title":"Units and conversions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"the idea is a definition, method or argument that a picture would not teach"}},
       {"id":"u01-16","title":"Scientific notation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"the idea is a definition, method or argument that a picture would not teach"}},
-      {
-       "id": "u01-17",
-       "title": "Graphs and data presentation",
-       "written": true,
-       "diagrams": [{"id":"bio-choosing-a-test","status":"validated"},{"id":"bio-which-graph","status":"validated"}],
-       "labs": [],
-       "plan": {"verdict":"diagram","diagrams":["bio-which-graph"]}
-      },
+      {"id":"u01-17","title":"Graphs and data presentation","written":true,"diagrams":[{"id":"bio-which-graph","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-which-graph"]}},
       {
        "id": "u01-18",
        "title": "Statistical foundations",
        "written": true,
-       "diagrams": [{"id":"bio-normal-distribution","status":"validated"}],
+       "diagrams": [{"id":"bio-normal-distribution","status":"validated"},{"id":"bio-choosing-a-test","status":"validated"}],
        "labs": ["punnett"],
-       "plan": {"verdict":"diagram+lab","diagrams":["bio-normal-distribution"],"labs":["punnett"]}
+       "plan": {"verdict":"diagram+lab","diagrams":["bio-normal-distribution","bio-choosing-a-test"],"labs":["punnett"]}
       },
       {"id":"u01-19","title":"Sampling methods","written":true,"diagrams":[],"labs":["population"],"plan":{"verdict":"lab","labs":["population"]}},
       {
@@ -13480,23 +13473,23 @@
    "name": "Mathematics",
    "declaredSite": "MathGradify",
    "servedBy": ["MathGradify"],
-   "plan": null,
+   "plan": ["kit/diagrams/plans/maths.mjs"],
    "labs": 19,
    "totals": {
     "lessons": 1077,
     "written": 1077,
-    "assessed": 0,
-    "plannedVisual": 0,
-    "plannedDiagram": 0,
-    "plannedLab": 0,
-    "excluded": 0,
-    "notAssessed": 1077,
-    "withDiagram": 1,
+    "assessed": 29,
+    "plannedVisual": 22,
+    "plannedDiagram": 17,
+    "plannedLab": 11,
+    "excluded": 7,
+    "notAssessed": 1048,
+    "withDiagram": 18,
     "withLab": 102,
-    "withBoth": 1,
-    "withAny": 102,
+    "withBoth": 8,
+    "withAny": 112,
     "plannedNotDelivered": 0,
-    "placements": 1
+    "placements": 18
    },
    "units": [
     {
@@ -13506,49 +13499,175 @@
      "totals": {
       "lessons": 29,
       "written": 29,
-      "assessed": 0,
-      "plannedVisual": 0,
-      "plannedDiagram": 0,
-      "plannedLab": 0,
-      "excluded": 0,
-      "notAssessed": 29,
-      "withDiagram": 0,
+      "assessed": 29,
+      "plannedVisual": 22,
+      "plannedDiagram": 17,
+      "plannedLab": 11,
+      "excluded": 7,
+      "notAssessed": 0,
+      "withDiagram": 17,
       "withLab": 12,
-      "withBoth": 0,
-      "withAny": 12,
+      "withBoth": 7,
+      "withAny": 22,
       "plannedNotDelivered": 0,
-      "placements": 0
+      "placements": 17
      },
      "lessons": [
-      {"id":"u01-01","title":"Arithmetic","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-02","title":"Order of Operations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-03","title":"Number Systems","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-04","title":"Natural Numbers","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-05","title":"Integers","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-06","title":"Rational Numbers","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-07","title":"Irrational Numbers","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-08","title":"Real Numbers","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-09","title":"Factors and Multiples","written":true,"diagrams":[],"labs":["sieve"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-10","title":"Divisibility","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-11","title":"Prime Numbers","written":true,"diagrams":[],"labs":["sieve"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-12","title":"Composite Numbers","written":true,"diagrams":[],"labs":["sieve"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-13","title":"Prime Factorisation","written":true,"diagrams":[],"labs":["sieve"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-14","title":"Greatest Common Divisor (GCD)","written":true,"diagrams":[],"labs":["practice"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-15","title":"Least Common Multiple (LCM)","written":true,"diagrams":[],"labs":["sieve"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-16","title":"Fractions","written":true,"diagrams":[],"labs":["practice"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-17","title":"Decimals","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-18","title":"Percentages","written":true,"diagrams":[],"labs":["practice"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-29","title":"Percentage Change and Reverse Percentages","written":true,"diagrams":[],"labs":["practice"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-19","title":"Ratios and Proportions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-20","title":"Exponents and Powers","written":true,"diagrams":[],"labs":["practice"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-21","title":"Roots and Radicals","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-22","title":"Scientific Notation","written":true,"diagrams":[],"labs":["practice"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-23","title":"Rounding and Estimation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-24","title":"Significant Figures","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-25","title":"Sequences of Numbers","written":true,"diagrams":[],"labs":["practice"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-26","title":"Number Patterns","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-27","title":"Number Bases","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-28","title":"Binary Arithmetic","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}}
+      {
+       "id": "u01-01",
+       "title": "Arithmetic",
+       "written": true,
+       "diagrams": [{"id":"maths-u01-area-multiplication","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u01-area-multiplication"]}
+      },
+      {
+       "id": "u01-02",
+       "title": "Order of Operations",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"order of operations is a convention applied step by step; the worked steps in the notes carry it"}
+      },
+      {"id":"u01-03","title":"Number Systems","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"place value and Roman numerals are notation, shown as written sums in the notes"}},
+      {
+       "id": "u01-04",
+       "title": "Natural Numbers",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"closure and the convention for 0 are definitions; the integers lesson carries the number line"}
+      },
+      {
+       "id": "u01-05",
+       "title": "Integers",
+       "written": true,
+       "diagrams": [{"id":"maths-u01-temperature-jumps","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u01-temperature-jumps"]}
+      },
+      {
+       "id": "u01-06",
+       "title": "Rational Numbers",
+       "written": true,
+       "diagrams": [{"id":"maths-u01-recurring-decimal","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u01-recurring-decimal"]}
+      },
+      {
+       "id": "u01-07",
+       "title": "Irrational Numbers",
+       "written": true,
+       "diagrams": [{"id":"maths-u01-root50-diagonal","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u01-root50-diagonal"]}
+      },
+      {"id":"u01-08","title":"Real Numbers","written":true,"diagrams":[{"id":"maths-u01-number-sets","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u01-number-sets"]}},
+      {"id":"u01-09","title":"Factors and Multiples","written":true,"diagrams":[],"labs":["sieve"],"plan":{"verdict":"lab","labs":["sieve"]}},
+      {
+       "id": "u01-10",
+       "title": "Divisibility",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a written procedure or a definition: the notes' worked steps carry it better than a picture"}
+      },
+      {"id":"u01-11","title":"Prime Numbers","written":true,"diagrams":[],"labs":["sieve"],"plan":{"verdict":"lab","labs":["sieve"]}},
+      {"id":"u01-12","title":"Composite Numbers","written":true,"diagrams":[],"labs":["sieve"],"plan":{"verdict":"lab","labs":["sieve"]}},
+      {
+       "id": "u01-13",
+       "title": "Prime Factorisation",
+       "written": true,
+       "diagrams": [{"id":"maths-u01-factor-tree-1764","status":"validated"}],
+       "labs": ["sieve"],
+       "plan": {"verdict":"diagram+lab","diagrams":["maths-u01-factor-tree-1764"],"labs":["sieve"]}
+      },
+      {
+       "id": "u01-14",
+       "title": "Greatest Common Divisor (GCD)",
+       "written": true,
+       "diagrams": [{"id":"maths-u01-hcf-venn","status":"validated"}],
+       "labs": ["practice"],
+       "plan": {"verdict":"diagram+lab","diagrams":["maths-u01-hcf-venn"],"labs":["practice"]}
+      },
+      {
+       "id": "u01-15",
+       "title": "Least Common Multiple (LCM)",
+       "written": true,
+       "diagrams": [{"id":"maths-u01-lcm-venn","status":"validated"}],
+       "labs": ["sieve"],
+       "plan": {"verdict":"diagram+lab","diagrams":["maths-u01-lcm-venn"],"labs":["sieve"]}
+      },
+      {
+       "id": "u01-16",
+       "title": "Fractions",
+       "written": true,
+       "diagrams": [{"id":"maths-u01-fraction-bars","status":"validated"}],
+       "labs": ["practice"],
+       "plan": {"verdict":"diagram+lab","diagrams":["maths-u01-fraction-bars"],"labs":["practice"]}
+      },
+      {
+       "id": "u01-17",
+       "title": "Decimals",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a written procedure or a definition: the notes' worked steps carry it better than a picture"}
+      },
+      {
+       "id": "u01-18",
+       "title": "Percentages",
+       "written": true,
+       "diagrams": [{"id":"maths-u01-percent-bar","status":"validated"}],
+       "labs": ["practice"],
+       "plan": {"verdict":"diagram+lab","diagrams":["maths-u01-percent-bar"],"labs":["practice"]}
+      },
+      {
+       "id": "u01-29",
+       "title": "Percentage Change and Reverse Percentages",
+       "written": true,
+       "diagrams": [{"id":"maths-u01-reverse-percent","status":"validated"}],
+       "labs": ["practice"],
+       "plan": {"verdict":"diagram+lab","diagrams":["maths-u01-reverse-percent"],"labs":["practice"]}
+      },
+      {
+       "id": "u01-19",
+       "title": "Ratios and Proportions",
+       "written": true,
+       "diagrams": [{"id":"maths-u01-recipe-scale","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u01-recipe-scale"]}
+      },
+      {"id":"u01-20","title":"Exponents and Powers","written":true,"diagrams":[],"labs":["practice"],"plan":{"verdict":"lab","labs":["practice"]}},
+      {"id":"u01-21","title":"Roots and Radicals","written":true,"diagrams":[{"id":"maths-u01-root90","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u01-root90"]}},
+      {"id":"u01-22","title":"Scientific Notation","written":true,"diagrams":[],"labs":["practice"],"plan":{"verdict":"lab","labs":["practice"]}},
+      {
+       "id": "u01-23",
+       "title": "Rounding and Estimation",
+       "written": true,
+       "diagrams": [{"id":"maths-u01-round-21-8","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u01-round-21-8"]}
+      },
+      {"id":"u01-24","title":"Significant Figures","written":true,"diagrams":[{"id":"maths-u01-sig-figs","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["maths-u01-sig-figs"]}},
+      {
+       "id": "u01-25",
+       "title": "Sequences of Numbers",
+       "written": true,
+       "diagrams": [{"id":"maths-u01-arithmetic-sequence","status":"validated"}],
+       "labs": ["practice"],
+       "plan": {"verdict":"diagram","diagrams":["maths-u01-arithmetic-sequence"]}
+      },
+      {
+       "id": "u01-26",
+       "title": "Number Patterns",
+       "written": true,
+       "diagrams": [{"id":"maths-u01-quadratic-sequence","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["maths-u01-quadratic-sequence"]}
+      },
+      {"id":"u01-27","title":"Number Bases","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"base conversion is repeated division with remainders, laid out in the notes"}},
+      {"id":"u01-28","title":"Binary Arithmetic","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"binary column addition is laid out in the notes' worked example"}}
      ]
     },
     {

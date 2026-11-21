@@ -1,0 +1,71 @@
+{
+ "id": "maths-u01-hcf-venn",
+ "renderer": "venn",
+ "course": "maths",
+ "unit": "u01",
+ "lesson": "Greatest Common Divisor (GCD)",
+ "title": "HCF of 252 and 198 from prime factors",
+ "caption": "The overlap holds the primes 252 and 198 share: 2 × 3 × 3 = 18, the HCF. Multiplying everything in the diagram gives the LCM, 2,772.",
+ "alt": "A Venn diagram: circle 252 holds 2, 7; circle 198 holds 11; the overlap holds 2, 3, 3.",
+ "description": [
+  "252 = 2 × 2 × 3 × 3 × 7 and 198 = 2 × 3 × 3 × 11.",
+  "The primes both share, 2, 3, 3, go in the overlap.",
+  "The rest of 252's primes (2, 7) and of 198's (11) go in their own parts.",
+  "The overlap multiplies to the HCF, 18."
+ ],
+ "sets": [
+  {
+   "name": "A",
+   "label": "252"
+  },
+  {
+   "name": "B",
+   "label": "198"
+  }
+ ],
+ "universe": {
+  "label": "prime factors"
+ },
+ "items": {
+  "A": [
+   "2",
+   "7"
+  ],
+  "AB": [
+   "2",
+   "3",
+   "3"
+  ],
+  "B": [
+   "11"
+  ]
+ },
+ "checks": [
+  {
+   "type": "members",
+   "event": "A",
+   "of": 252
+  },
+  {
+   "type": "members",
+   "event": "B",
+   "of": 198
+  },
+  {
+   "type": "product",
+   "event": "A∩B",
+   "value": 18,
+   "name": "the overlap multiplies to the HCF, 18"
+  },
+  {
+   "type": "product",
+   "event": "A∪B",
+   "value": 2772,
+   "name": "everything multiplies to the LCM, 2772"
+  }
+ ],
+ "fromLesson": [
+  "2 × 3^{2} = 18",
+  "HCF = 18"
+ ]
+}
