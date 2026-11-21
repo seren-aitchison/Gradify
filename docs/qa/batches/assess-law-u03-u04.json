@@ -359,6 +359,71 @@
      "note": "Question u03-30-q3 said the pool in Ruxley v Forsyth was built 18 inches too shallow; the lesson body and the case give 9 inches (deep end 6 ft 9 in instead of 7 ft 6 in). Corrected to 9 inches."
     }
    ]
+  },
+  {
+   "course": "law",
+   "lesson": "u03-31",
+   "action": "enhanced",
+   "changes": [
+    "LV, EV",
+    "worked example on land; common mistake: discretionary even for land; paragraph on damages in lieu",
+    "added M3 (Patel v Ali), M2 and SA3 (Argyll)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-32",
+   "action": "enhanced",
+   "changes": [
+    "LV, EV",
+    "worked example on negative covenants; common mistake on implied negatives",
+    "added M3 (Lumley v Wagner), M2 (American Cyanamid) and SA3 (Page One Records)"
+   ],
+   "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-33",
+   "action": "enhanced",
+   "changes": [
+    "LV (Year 2), EV",
+    "common mistake: restitution measures gain (Benedetti)",
+    "added M3 (Lipkin Gorman), M2 and SA3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-34",
+   "action": "enhanced",
+   "changes": [
+    "LV, EV",
+    "added M3 (s 2), M2 (s 3) and SA3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-35",
+   "action": "enhanced",
+   "changes": [
+    "LV (SQE1), EV",
+    "worked example on the 14-day period; common mistake: no cooling-off for shop purchases",
+    "added M3 (s 75), M2 and SA3"
+   ],
+   "findings": []
+  },
+  {
+   "course": "law",
+   "lesson": "u03-36",
+   "action": "enhanced",
+   "changes": [
+    "LV, EV (established and contested: digital assets and smart contracts)",
+    "common mistake on order acknowledgments",
+    "added M3, M2 and SA3"
+   ],
+   "findings": []
   }
  ],
  "notes": [

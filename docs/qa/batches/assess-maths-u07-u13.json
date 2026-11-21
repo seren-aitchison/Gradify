@@ -1269,6 +1269,10 @@
  "notes": [
   "NUM answers must use an ASCII hyphen-minus for negatives: Number() rejects the Unicode minus sign, and the question then silently fails to parse.",
   "new-course check briefly failed with 'Invalid or unexpected token' once, apparently while another worker was writing a maths notes file it also loads; a rerun was clean.",
-  "u07: every lesson needed 2–3 new questions including a long SA model answer, so lessons grew by a median of about 35% (most for lessons that had only two questions), above the ~30% guide. No existing content was removed to compensate."
+  "u07: every lesson needed 2–3 new questions including a long SA model answer, so lessons grew by a median of about 35% (most for lessons that had only two questions), above the ~30% guide. No existing content was removed to compensate.",
+  "u13: lessons grew by a median of about 39% (most 30–50%), above the ~30% guide, because every lesson needed a 40+ character SA model answer with marking points plus one or two further questions. Nothing existing was cut to compensate.",
+  "One check problem remains and is deliberately left: u13-62 Statistical Computing has a SRC line with kind \"software\" (R Core Team, R: A language and environment…). That kind isn't in SRC_KINDS, but the brief said the SRC kinds were already normalised and must not be changed. The coordinator should decide whether to map it to \"primary\" or add \"software\" to the allowed kinds.",
+  "Final checks: new-course check maths --unit u07 gives 0 problems; --unit u13 gives 1 (the SRC kind above); node --test tests/courses.test.mjs tests/qa-content.test.mjs tests/compat.test.mjs gives 50 passing and 0 failing.",
+  "Inside NUM/SA bodies a conditional bar written ' | ' splits fields. Use '∣' (U+2223) for conditioning, as the existing notes do; two new questions were caught and fixed this way."
  ]
 }

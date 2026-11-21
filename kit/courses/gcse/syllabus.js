@@ -229,6 +229,11 @@ export const SYLLABUS = `
 * Aerobic and anaerobic respiration
 * Respiration and exercise
 * Metabolism
+> Health and disease
+* Coronary heart disease and its treatment
+* Health issues and interacting diseases
+* Lifestyle, risk factors and non-communicable disease
+* Cancer
 11. Infection, Inheritance and Evolution
 > Communicable disease
 * Pathogens and the spread of disease
@@ -312,7 +317,7 @@ export const BLURBS = {
   7: "What ecology studies, the physical environment, tolerance, adaptation and the niche, and the biomes of the living world.",
   8: "Urbanisation, development, the changing economy, resources, map and data skills, fieldwork and decision making.",
   9: "What health and wellbeing mean, what shapes them, how inequalities arise and how to judge health evidence and risk.",
-  10: "Cells, microscopy, mitosis and stem cells, diffusion, osmosis and active transport, enzymes, plant transport, photosynthesis and respiration.",
+  10: "Cells, microscopy, mitosis and stem cells, diffusion, osmosis and active transport, enzymes, plant transport, photosynthesis and respiration, and health and disease: heart disease, risk factors and cancer.",
   11: "Pathogens, defences, vaccines and drugs; meiosis, DNA and genetic crosses; variation, evolution, breeding, GM, fossils, classification and every biology required practical.",
   12: "Both English Language papers: retrieval, language and structure analysis, evaluation, summary, comparing viewpoints, creative and viewpoint writing, SPaG, spoken language and timing.",
 };

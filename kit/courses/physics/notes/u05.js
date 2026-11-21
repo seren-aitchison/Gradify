@@ -484,61 +484,121 @@ SA2@1,2: A gyroscope spins with its axle horizontal, supported at one end. Expla
 
 ## Precession and nutation
 S: Precession is the slow circling of a spinning body's axis under a torque; nutation is a nodding wobble superimposed on it. Both appear in tops, gyroscopes, the Earth's axis and spinning nuclei in MRI.
+O: Derive and use the precession rate Ω = τ/L
+O: Distinguish precession from nutation
+O: Describe astronomical and magnetic examples of precession
+PRE: Gyroscopic motion
+LV: Year 1 · Application
 H: Precession rate
 E: Ω = τ/L = Mgd/(Iω) :: gyroscope supported at one end (fast-spin approximation)
+- In time dt the torque turns L through dφ = τdt/L, so Ω = dφ/dt = τ/L.
 - Faster spin ⇒ slower precession.
 H: Examples
-- **Earth's axis** precesses with a 26 000-year period because the Sun and Moon pull on its equatorial bulge. The pole star changes; Vega will be near the pole in ~12 000 years.
-- **Nutation** of the Earth: an 18.6-year nodding from the Moon's tilted orbit.
-- **Larmor precession**: magnetic moments precess in a field at ω = γB, the basis of NMR and MRI (42.6 MHz per tesla for protons).
+- **Earth's axis** precesses with a period of about 26 000 years because the Sun and Moon pull on its equatorial bulge. The pole star changes; Vega will be near the pole in about 12 000 years.
+- **Nutation** of the Earth: an 18.6-year nodding driven by the precession of the Moon's tilted orbit.
+- **Larmor precession**: magnetic moments precess in a field at ω = γB, the basis of NMR and MRI; for protons f = γB/2π ≈ 42.6 MHz per tesla.
 X: A gyroscope wheel (I = 0.002 kg m^{2}) spins at 300 rad s^{-1}, supported 0.05 m from its centre of mass; M = 0.4 kg. Precession rate?
-> Ω = Mgd/(Iω) = 0.4 × 9.8 × 0.05/(0.6) = 0.33 rad s^{-1}
-> One precession circle in ~19 s
+> Ω = Mgd/(Iω) = 0.4 × 9.8 × 0.05/(0.002 × 300) = 0.196/0.6 = 0.33 rad s^{-1}
+> One precession circle takes 2π/0.33 ≈ 19 s
+K: The precession rate is torque divided by spin angular momentum, so fast spin means slow precession.
 !: The simple Ω formula assumes spin angular momentum dominates; at low spin the top nutates strongly and then falls.
+T: Nutation | A nodding oscillation of a spinning body's axis superimposed on its precession
+T: Larmor precession | The precession of a magnetic moment about a magnetic field at angular frequency γB
+SUM: Ω = τ/L = Mgd/(Iω) for a fast gyroscope; doubling spin halves the precession rate.
+SUM: Earth's axis precesses in about 26 000 years with an 18.6-year nutation; nuclear spins precess at the Larmor frequency in MRI.
+EV: established | Precession rate τ/L follows from τ = dL/dt; Earth's precession and Larmor precession are well measured
+SRC: OpenStax, University Physics Volume 1, section 11.4 "Precession of a Gyroscope" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/11-4-precession-of-a-gyroscope
+SRC: OpenStax, College Physics 2e, section 10.7 "Gyroscopic Effects: Vector Aspects of Angular Momentum" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/10-7-gyroscopic-effects-vector-aspects-of-angular-momentum
 Q: What causes the precession of Earth's axis? | Torques from the Sun and Moon on the Earth's equatorial bulge.
 Q: What is Larmor precession? | The precession of a magnetic moment about a magnetic field at ω = γB, used in MRI.
-M1: Doubling a gyroscope's spin rate changes its precession rate by: | ×1/2 | ×2 | ×4 | No change | Ω ∝ 1/ω.
-M2: The period of Earth's axial precession is about: | 26 000 years | 1 year | 18.6 years | 100 000 years | The precession of the equinoxes.
+M1@1: Doubling a gyroscope's spin rate changes its precession rate by: | ×1/2 | ×2 | ×4 | No change | Ω = τ/(Iω), so for the same gravitational torque, doubling ω halves the precession rate.
+M2@3: The period of Earth's axial precession is about: | 26 000 years | 1 year | 18.6 years | 100 000 years | This is the precession of the equinoxes; 18.6 years is the nutation period and 100 000 years an orbital (eccentricity) cycle.
+NUM2@1: A gyroscope has L = 0.50 kg m^{2} s^{-1} and gravity exerts a torque of 0.10 N m on it. What is its precession rate, in rad s^{-1}? | 0.2 | 0.01 | rad s^{-1} | Ω = τ/L = 0.10/0.50 = 0.20 rad s^{-1}, so one circuit takes about 31 s.
+M3@3: An MRI scanner has B = 1.5 T. The proton Larmor frequency is about: | 64 MHz | 42.6 MHz | 28 MHz | 1.5 GHz | f = 42.6 MHz T^{-1} × 1.5 T ≈ 64 MHz, in the radio band; 42.6 MHz would be at 1.0 T.
+TF1@2: Nutation is the same thing as precession, seen at a different speed. | false | Precession is the steady circling of the axis; nutation is a separate nodding of the tilt angle superimposed on it, strongest when the spin is slow.
+SA2@1,2: Derive the precession rate of a gyroscope supported at one end and explain why a faster spin makes it precess more slowly. | Gravity gives a horizontal torque τ = Mgd perpendicular to L. In time dt it adds dL = τdt at right angles to L, turning L through dφ = dL/L = τdt/L. So Ω = dφ/dt = τ/L = Mgd/(Iω). The torque is fixed by the weight and geometry, so a larger spin L needs a smaller turning angle to absorb the same dL: faster spin gives slower precession. | Torque Mgd perpendicular to L ; dφ = τdt/L ; Ω = Mgd/(Iω) ; Larger L means smaller Ω
 
 ## Rigid-body dynamics
 S: A rigid body's motion is the translation of its centre of mass plus rotation about it. In general, angular momentum relates to angular velocity through the inertia tensor, so they need not be parallel, and that's why unbalanced wheels wobble.
+O: Describe general rigid-body motion as CM translation plus rotation
+O: Use the inertia tensor and principal axes to relate L and ω
+O: Distinguish static and dynamic balancing
+PRE: Angular momentum
+LV: Year 2 · Physical reasoning
 H: The general picture
 E: MA_{cm} = F_{ext}; dL/dt = τ_{ext} (about the CM or a fixed point)
 E: L = Iω (tensor), L_{i} = I_{ij}ω_{j}
-- The inertia tensor has three principal axes, mutually perpendicular, about which L ∥ ω.
+- The inertia tensor is symmetric, so it has three mutually perpendicular principal axes, about which L ∥ ω.
 - Principal moments I_{1}, I_{2}, I_{3}; in principal axes KE = ½(I_{1}ω_{1}^{2} + I_{2}ω_{2}^{2} + I_{3}ω_{3}^{2}).
+- Diagonal elements are moments of inertia, e.g. I_{xx} = Σm(y^{2} + z^{2}); off-diagonal products of inertia are I_{xy} = −Σmxy.
 H: Balancing
 P: A wheel spinning about an axis that isn't principal has L rotating with it, so the bearings must keep supplying a torque: vibration. Static balance puts the CM on the axis; dynamic balance makes the axis principal. Tyre fitters add small weights for both.
 X: A dumbbell (two masses m at ±a along a rod) spins about an axis through its centre at angle θ to the rod.
 > L is perpendicular to the rod, not along ω
 > As the dumbbell turns, L sweeps round, needing a rotating torque from the bearings
+K: L and ω are parallel only about principal axes; otherwise the bearings must supply torque to keep the axis fixed.
 !: Treating L as Iω with a scalar I only works for rotation about a principal (symmetry) axis.
+T: Inertia tensor | The 3 × 3 symmetric matrix I_{ij} that gives angular momentum from angular velocity, L_{i} = I_{ij}ω_{j}
+T: Principal axes | Axes in which the inertia tensor is diagonal, so that L is parallel to ω
+T: Dynamic balance | The condition that the rotation axis is a principal axis, so no wobbling torque is needed
+SUM: Rigid-body motion = CM translation (F = MA) + rotation (τ = dL/dt).
+SUM: L = Iω with I a tensor; about principal axes L ∥ ω and KE = ½ΣI_{i}ω_{i}^{2}.
+EV: established | The inertia tensor and principal axes are standard results of classical rigid-body mechanics
+SRC: OpenStax, University Physics Volume 1, section 11.2 "Angular Momentum" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/11-2-angular-momentum
+SRC: OpenStax, University Physics Volume 1, section 9.6 "Center of Mass" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/9-6-center-of-mass
 Q: What are principal axes? | Axes about which angular momentum is parallel to angular velocity; the inertia tensor is diagonal in them.
 Q: What is dynamic balancing? | Making the rotation axis a principal axis so no wobbling torque is needed.
-M1: A rigid body's general motion can be described as: | Translation of the CM plus rotation about the CM | Rotation only | Translation only | Vibration | Chasles' theorem.
-M2: Why do unbalanced car wheels vibrate? | L isn't parallel to ω, so the bearings must supply a varying torque | Friction on the road | Air resistance | The tyre is too hard | Non-principal rotation.
+M1@1: A rigid body's general motion can be described as: | Translation of the CM plus rotation about the CM | Rotation only | Translation only | Vibration | Chasles' theorem: any rigid-body displacement is a translation of a reference point plus a rotation about it.
+M2@2,3: Why do unbalanced car wheels vibrate? | L isn't parallel to ω, so the bearings must supply a varying torque | Friction on the road | Air resistance | The tyre is too hard | About a non-principal axis, L rotates with the wheel; changing L needs a rotating torque from the axle, felt as vibration.
+TF1@3: A wheel whose centre of mass lies exactly on its axle is guaranteed to spin without vibrating. | false | That is only static balance; if the axle is not a principal axis, L still sweeps round and needs a rotating torque, so dynamic balance is needed too.
+M2@2: A body spins about a principal axis with I_{1} = 2.0 kg m^{2} at ω = 3.0 rad s^{-1}. Its kinetic energy is: | 9.0 J | 6.0 J | 18 J | 3.0 J | About a principal axis KE = ½I_{1}ω^{2} = ½ × 2.0 × 9.0 = 9.0 J; 18 J omits the half.
+M3@2: For the tilted dumbbell, which direction does L point? | Perpendicular to the rod, in the plane of the rod and ω | Along ω | Along the rod | Perpendicular to both rod and ω | Each mass has L = m r × v with r along the rod and v perpendicular to it, so L is perpendicular to the rod and lies in the plane containing the rod and the axis.
+SA3@2,3: Explain the difference between static and dynamic balancing of a car wheel, and why a wheel can be statically balanced yet still vibrate at speed. | Static balance places the centre of mass on the axle, so gravity gives no turning torque and there is no rotating net force. Dynamic balance also makes the axle a principal axis, so L is parallel to ω. If mass is distributed unevenly across the tyre's width, the CM can be on the axle while products of inertia are non-zero: L then rotates with the wheel and the bearings must supply a torque that turns with it, felt as a shimmy that grows as ω^{2}. | Static: CM on the axle ; Dynamic: axle is a principal axis ; Non-zero products of inertia make L rotate ; Rotating torque causes vibration
 
 ## Euler's equations of rotation
 S: Euler's equations give the rotational dynamics of a rigid body in its own rotating principal-axis frame. They explain tumbling, wobble and the stability of spinning bodies.
+O: Write Euler's equations for a rigid body in principal axes
+O: Explain the intermediate-axis (tennis-racket) instability
+O: Describe free precession and the effect of energy dissipation
+PRE: Rigid-body dynamics
+LV: Year 2 · Physical reasoning
 H: The equations
 E: I_{1}ω̇_{1} − (I_{2} − I_{3})ω_{2}ω_{3} = τ_{1} (and cyclic permutations)
 - Written in the body frame, where the inertia tensor is constant.
 - Torque-free (τ = 0): energy and |L| are conserved, but ω can wander.
 H: The tennis-racket theorem
-P: Rotation about the axes of largest and smallest moment of inertia is stable; about the intermediate axis it's unstable. Throw a book or phone spinning about its middle axis and it flips. Astronaut Dzhanibekov saw a wing nut flip repeatedly on the ISS.
+P: Rotation about the axes of largest and smallest moment of inertia is stable; about the intermediate axis it's unstable. Throw a book or phone spinning about its middle axis and it flips. Astronaut Dzhanibekov saw a wing nut flip repeatedly in orbit.
 H: Free precession
-P: A torque-free symmetric body spinning slightly off its symmetry axis wobbles at a rate ∝ (I_{3} − I_{1})/I_{1}. The Earth's version is the Chandler wobble (~433 days, longer than Euler's 305-day prediction because the Earth isn't rigid).
+P: A torque-free symmetric body spinning slightly off its symmetry axis wobbles at a rate (I_{3} − I_{1})ω_{3}/I_{1} in the body frame. The Earth's version is the Chandler wobble (about 433 days, longer than Euler's 305-day prediction because the Earth isn't rigid).
 X: Why did the Explorer 1 satellite (1958) go from spinning about its long axis to tumbling?
 > It spun about its axis of minimum I; flexible antennas dissipated energy
-> At fixed L, losing energy pushes rotation to the axis of maximum I
+> At fixed L, KE = L^{2}/(2I) is lowest about the maximum-I axis, so losing energy pushes rotation there
+K: In the body frame, rotation about the largest- and smallest-I axes is stable; the intermediate axis is unstable.
 !: Stability predicted for a rigid body can fail for a flexible one: with energy loss, only the maximum-I axis is stable.
+T: Euler's equations | The equations of motion of a rigid body written in its rotating principal-axis frame
+T: Intermediate-axis theorem | Rotation about the axis of middle moment of inertia is unstable (the tennis-racket theorem)
+T: Chandler wobble | The free precession of the Earth's rotation axis, period about 433 days
+SUM: Euler's equations, Iω̇ − (I_{2} − I_{3})ω_{2}ω_{3} = τ, govern rotation in the body frame.
+SUM: Middle-axis rotation is unstable; with dissipation only the maximum-I axis is stable.
+EV: established | Euler's equations and the intermediate-axis instability are standard classical mechanics, confirmed by observation
+SRC: OpenStax, University Physics Volume 1, section 11.3 "Conservation of Angular Momentum" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/11-3-conservation-of-angular-momentum
+SRC: OpenStax, University Physics Volume 1, section 11.4 "Precession of a Gyroscope" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/11-4-precession-of-a-gyroscope
 Q: Which axes give stable rotation for a rigid body? | The axes of largest and smallest moment of inertia (in the rigid, no-dissipation case).
 Q: What is the Chandler wobble? | The free nutation of the Earth's rotation axis, with a period of about 433 days.
-M1: A book spun about its intermediate axis: | Flips over unstably | Spins steadily | Stops | Speeds up | Intermediate-axis instability.
-M2: Euler's equations are written in: | The body's principal-axis frame | The lab frame | The CM frame only | Polar coordinates | The body frame makes I constant.
+M1@2: A book spun about its intermediate axis: | Flips over unstably | Spins steadily | Stops | Speeds up | Small deviations grow exponentially about the axis of middle moment of inertia, so the book flips over as it spins.
+M2@1: Euler's equations are written in: | The body's principal-axis frame | The lab frame | The CM frame only | Polar coordinates | In the body frame the inertia tensor is constant and diagonal, which makes the equations simple.
+TF1@3: A slightly flexible satellite spinning about its axis of minimum moment of inertia will keep spinning that way indefinitely. | false | Flexing dissipates energy while L stays fixed; KE = L^{2}/2I is lowest about the maximum-I axis, so the spin migrates there, as Explorer 1 showed.
+M2@1: For a torque-free body with I_{1} = I_{2}, Euler's third equation shows that ω_{3}: | Is constant | Grows exponentially | Oscillates | Decays to zero | With τ_{3} = 0, I_{3}ω̇_{3} = (I_{1} − I_{2})ω_{1}ω_{2} = 0, so the spin about the symmetry axis stays constant.
+M3@2,3: A phone has I_{1} < I_{2} < I_{3} about its three principal axes. Thrown spinning about which axis will it flip? | Axis 2 | Axis 1 | Axis 3 | None of them | Only the intermediate axis, here axis 2, is unstable; rotations about the smallest- and largest-I axes are stable for a rigid body.
+SA3@2,3: Explain why Explorer 1 changed from spinning about its long axis to tumbling end over end. | With no external torque its angular momentum L was fixed. Spinning about the long axis is rotation about the minimum moment of inertia, where KE = L^{2}/(2I) is largest. The flexible whip antennas flexed and dissipated energy, so KE fell while L stayed constant. The only way to lower KE at fixed L is to increase I, so the rotation migrated to the maximum-I axis: a tumble end over end. Rigid-body theory, which predicts that minimum-I spin is stable, ignores this dissipation. | L conserved, no external torque ; Minimum-I spin has the most KE ; Antennas dissipate energy ; Ends at maximum-I axis
 
 ## Rotating reference frames
 S: In a frame rotating at angular velocity ω, Newton's laws need fictitious forces: centrifugal, Coriolis and (if ω changes) Euler forces. Weather systems, ocean currents and the Earth itself are best studied in such a frame.
+O: Relate time derivatives in inertial and rotating frames
+O: Identify the centrifugal, Coriolis and Euler terms
+O: Estimate the effect of Earth's rotation on apparent g
+PRE: Inertial and non-inertial frames
+LV: Year 1 · Physical reasoning
 H: Transforming derivatives
 E: (dA/dt)_{inertial} = (dA/dt)_{rot} + ω × A
 E: ma′ = F − 2mω × v′ − mω × (ω × r) − m(dω/dt) × r
@@ -546,19 +606,37 @@ E: ma′ = F − 2mω × v′ − mω × (ω × r) − m(dω/dt) × r
 - −mω × (ω × r): centrifugal force, outward from the axis, mω^{2}r_{⊥}.
 - −m ω̇ × r: Euler force, if the rotation rate changes.
 H: On Earth
-- ω = 7.29 × 10^{-5} rad s^{-1}.
+- ω = 7.29 × 10^{-5} rad s^{-1} (2π per sidereal day).
 - Effective g is reduced and tilted by centrifugal effects: g at the equator ~9.78, at the poles ~9.83 m s^{-2} (also due to the equatorial bulge).
+P: Fictitious forces are not caused by any interaction, so they have no third-law partner; they are the price of using accelerated axes. They are proportional to mass, which is why they feel just like gravity.
 X: How much does the centrifugal effect reduce apparent g at the equator?
 > ω^{2}R = (7.29 × 10^{-5})^{2} × 6.37 × 10^{6} = 0.034 m s^{-2}
 > About 0.3% of g
+K: Fictitious forces in a rotating frame are mass × (terms from the frame's rotation), not real interactions.
 !: In the rotating frame, a ball thrown on a merry-go-round curves; in the ground frame it goes straight. Both descriptions agree once the frame's motion is accounted for.
+T: Fictitious force | An apparent force appearing in a non-inertial frame, proportional to mass, with no interaction causing it
+T: Euler force | The fictitious force −m(dω/dt) × r in a frame whose rotation rate is changing
+SUM: In a rotating frame add Coriolis (−2mω × v′), centrifugal (−mω × (ω × r)) and Euler (−mω̇ × r) terms.
+SUM: Earth's rotation reduces apparent g at the equator by about 0.034 m s^{-2}.
+EV: established | The rotating-frame equation follows exactly from transforming Newton's second law
+SRC: OpenStax, College Physics 2e, section 6.4 "Fictitious Forces and Non-inertial Frames: The Coriolis Force" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/6-4-fictitious-forces-and-non-inertial-frames-the-coriolis-force
+SRC: OpenStax, University Physics Volume 1, section 6.3 "Centripetal Force" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/6-3-centripetal-force
 Q: Which fictitious forces appear in a uniformly rotating frame? | Centrifugal and Coriolis.
 Q: Why is effective g smaller at the equator? | Centrifugal effects and the equatorial bulge (greater distance from the centre).
-M1: The Coriolis force on a stationary object in a rotating frame is: | Zero | mω^{2}r | 2mωv | mg | It depends on velocity in the rotating frame.
-M2: The Earth's angular velocity is about: | 7.3 × 10^{-5} rad s^{-1} | 2π rad s^{-1} | 1 rad s^{-1} | 4 × 10^{-3} rad s^{-1} | 2π per sidereal day (86 164 s).
+M1@2: The Coriolis force on a stationary object in a rotating frame is: | Zero | mω^{2}r | 2mωv | mg | The Coriolis term −2mω × v′ depends on velocity in the rotating frame, so it vanishes for an object at rest there.
+M2@3: The Earth's angular velocity is about: | 7.3 × 10^{-5} rad s^{-1} | 2π rad s^{-1} | 1 rad s^{-1} | 4 × 10^{-3} rad s^{-1} | ω = 2π per sidereal day = 2π/86 164 s ≈ 7.29 × 10^{-5} rad s^{-1}.
+NUM2@3: A space station ring of radius 100 m spins to give an apparent gravity of 9.8 m s^{-2} at its rim. What is its angular velocity, in rad s^{-1}? | 0.31 | 0.01 | rad s^{-1} | Centrifugal acceleration ω^{2}r = 9.8, so ω = √(9.8/100) = 0.31 rad s^{-1}, about one turn every 20 s.
+TF1@2: The Euler force appears only when the frame's rotation rate is changing. | true | It is −m(dω/dt) × r, so it vanishes for a uniformly rotating frame; you feel it when a roundabout speeds up or slows down.
+M3@2: Which fictitious force acts on a person standing still on a rotating roundabout, as seen in the roundabout's frame? | Centrifugal only | Coriolis only | Both centrifugal and Coriolis | Neither | At rest in the rotating frame v′ = 0, so the Coriolis term is zero; the centrifugal force mω^{2}r still acts outward.
+SA2@1,2: A ball rolls straight outward from the centre of a smooth spinning turntable. Describe its path as seen from the ground and from the turntable, and name the fictitious forces needed in the turntable frame. | From the ground no horizontal force acts, so the ball moves in a straight line at constant velocity. The turntable rotates beneath it, so in the turntable frame the path curves away, against the sense of rotation. To explain this with Newton's laws in the rotating frame, we need a centrifugal force mω^{2}r outward and a Coriolis force −2mω × v′ sideways on the moving ball. | Straight line in ground frame ; Curved path in rotating frame ; Centrifugal outward ; Coriolis sideways on moving ball
 
 ## Centrifugal and Coriolis forces
 S: Centrifugal and Coriolis forces are fictitious forces seen in rotating frames. Centrifugal acts outward from the axis on everything; Coriolis acts sideways on moving things, and steers winds, ocean currents and long-range projectiles.
+O: Find the direction and size of the Coriolis acceleration on Earth
+O: Explain large-scale weather rotation and the Foucault pendulum
+O: Use the Rossby number to judge when Coriolis effects matter
+PRE: Rotating reference frames
+LV: Year 1 · Application
 H: Coriolis
 E: F_{Cor} = −2mω × v
 - Northern hemisphere: deflects moving objects to the right; southern: to the left.
@@ -569,17 +647,36 @@ H: Scale matters
 P: The Rossby number Ro = U/(fL), with f = 2ω sin λ, compares inertia to Coriolis. Ro ≪ 1 for weather systems (Coriolis dominates); Ro ≫ 1 for a draining sink, so the Earth's rotation doesn't decide which way bathwater swirls.
 X: Find the Coriolis acceleration on a 300 m s^{-1} aircraft flying north at 45° N.
 > Horizontal: 2ωv sin λ = 2 × 7.29 × 10^{-5} × 300 × 0.707 = 0.031 m s^{-2}
-> Small, but over an hour it would deflect the path by tens of kilometres if uncorrected
+> Small, but uncorrected for an hour it would drift ½at^{2} ≈ ½ × 0.031 × 3600^{2} ≈ 2 × 10^{5} m: about 200 km
+K: Coriolis deflects moving bodies sideways (right in the north); it matters when the Rossby number is small.
 !: Sinks and toilets don't drain the other way across the equator because of Coriolis; their swirl comes from the basin's shape and leftover motion.
+T: Coriolis force | The fictitious force −2mω × v on a body moving in a rotating frame
+T: Rossby number | Ro = U/(fL), the ratio of inertial to Coriolis effects in a flow
+T: Coriolis parameter | f = 2ω sin λ, the local strength of the horizontal Coriolis effect at latitude λ
+SUM: Coriolis acceleration is 2ωv sin λ horizontally: right in the north, left in the south, zero at the equator.
+SUM: It shapes weather (Ro ≪ 1) but not sinks (Ro ≫ 1); a Foucault pendulum turns at ω sin λ.
+EV: established | Coriolis deflection is directly observed in Foucault pendulums, ballistics and atmospheric flows
+SRC: OpenStax, College Physics 2e, section 6.4 "Fictitious Forces and Non-inertial Frames: The Coriolis Force" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/6-4-fictitious-forces-and-non-inertial-frames-the-coriolis-force
+SRC: OpenStax, University Physics Volume 1, section 4.5 "Relative Motion in One and Two Dimensions" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/4-5-relative-motion-in-one-and-two-dimensions
 Q: Which way does the Coriolis force deflect moving air in the northern hemisphere? | To the right of its motion.
 Q: Why doesn't Coriolis set the direction of a sink's swirl? | The Rossby number is huge: the effect is far too weak at that size and timescale.
-M1: At the equator, the horizontal Coriolis effect on horizontal motion is: | Zero | Maximum | The same as at the poles | Reversed | ∝ sin(latitude).
-M2: Hurricanes in the northern hemisphere rotate: | Anticlockwise | Clockwise | Either, randomly | Not at all | Air flowing in is deflected right, producing anticlockwise circulation around the low.
+M1@1: At the equator, the horizontal Coriolis effect on horizontal motion is: | Zero | Maximum | The same as at the poles | Reversed | The horizontal part is 2ωv sin λ, and sin 0° = 0, so it vanishes at the equator.
+M2@2: Hurricanes in the northern hemisphere rotate: | Anticlockwise | Clockwise | Either, randomly | Not at all | Air flowing in towards the low is deflected to its right, producing anticlockwise circulation around the low.
+NUM2@2: How long does a Foucault pendulum at the North Pole take to turn its swing plane once, in hours (to the nearest hour)? | 24 | 1 | hours | At the pole sin λ = 1, so the plane turns at ω itself: once per sidereal day, about 23.9 h, so 24 to the nearest hour.
+M2@1: A projectile moves east at 800 m s^{-1} at latitude 30° N. Its horizontal Coriolis acceleration is about: | 0.058 m s^{-2} | 0.12 m s^{-2} | 0.029 m s^{-2} | 0.10 m s^{-2} | 2ωv sin λ = 2 × 7.29 × 10^{-5} × 800 × 0.5 ≈ 0.058 m s^{-2}, to the right (southward).
+TF3@3: Coriolis deflection is negligible for a sink because the Earth rotates too slowly compared with the water's timescale. | true | For a sink U/(fL) is huge: the water drains in seconds while f^{-1} is hours, so basin shape and leftover swirl dominate.
+SA3@2,3: Explain why low-pressure systems in the northern hemisphere rotate anticlockwise, and why this effect is strong for weather but not for draining baths. | Air flows inward towards low pressure. The Coriolis force deflects moving air to its right in the northern hemisphere, so the inflow is turned into an anticlockwise circulation round the low. The Rossby number U/(fL) compares inertia with Coriolis: weather systems are 1000 km across and last days, so Ro ≪ 1 and Coriolis dominates. A bath is less than a metre across and drains in minutes, so Ro ≫ 1 and the Earth's rotation is negligible. | Inflow to low pressure ; Deflection to the right gives anticlockwise ; Rossby number comparison ; Large scale small Ro, bath large Ro
 
 ## Top motion and stability
 S: A spinning top on a table combines spin, precession and nutation. It stays upright while spinning fast enough; as friction slows it, it passes a stability threshold, wobbles and falls. Some tops even turn themselves upside down.
+O: State and use the stability condition for a sleeping top
+O: Explain how precession and nutation of a top change as it slows
+O: Explain the role of friction in the tippe top and in rising tops
+PRE: Precession and nutation
+LV: Year 2 · Physical reasoning
 H: The sleeping top
 E: ω^{2} > 4MgdI_{1}/I_{3}^{2} :: condition for a vertical ("sleeping") top to be stable
+- Here I_{3} is about the spin axis, I_{1} about a perpendicular axis through the tip, and d the tip-to-CM distance.
 - Above this spin rate, small tilts lead only to small precession and nutation.
 - Below it, the top's tilt grows and it falls.
 H: Precession and nutation of a top
@@ -591,14 +688,31 @@ P: A tippe top (a truncated sphere with a stem) spun on its round side flips ove
 X: Why must a top be spun fast?
 > Stability requires ω above √(4MgdI_{1})/I_{3}
 > Slower spin ⇒ larger precession and nutation ⇒ the tip slides and it topples
+K: A top is stable only above a critical spin; friction slowly takes it below that threshold.
 !: Without friction at the tip there's no rising or tippe-top flip; energy-losing contact forces drive these effects.
+T: Sleeping top | A top spinning upright, fast enough to be stable against small tilts
+T: Tippe top | A top that, spun on its rounded end, inverts itself onto its stem through friction at the contact
+SUM: A vertical top is stable when ω^{2} > 4MgdI_{1}/I_{3}^{2}.
+SUM: As friction slows it, precession (Ω ∝ 1/ω) and nutation grow until it falls; sliding friction drives the tippe-top flip.
+EV: established | The sleeping-top criterion follows from Euler–Lagrange analysis of the heavy symmetric top
+SRC: OpenStax, University Physics Volume 1, section 11.4 "Precession of a Gyroscope" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/11-4-precession-of-a-gyroscope
+SRC: OpenStax, College Physics 2e, section 10.7 "Gyroscopic Effects: Vector Aspects of Angular Momentum" | secondary | 2022 | https://openstax.org/books/college-physics-2e/pages/10-7-gyroscopic-effects-vector-aspects-of-angular-momentum
 Q: What is a sleeping top? | A top spinning upright, fast enough to be stable against small tilts.
 Q: What makes a tippe top flip? | Sliding friction torque at the contact, which raises its centre of mass.
-M1: As friction slows a top, its precession rate: | Increases | Decreases | Stays constant | Becomes zero | Ω ∝ 1/ω.
-M2: A sleeping top is stable if: | Its spin exceeds a critical value | It is perfectly balanced | Its mass is large | It's on a smooth surface | Gyroscopic stability needs enough angular momentum.
+M1@2: As friction slows a top, its precession rate: | Increases | Decreases | Stays constant | Becomes zero | Ω ≈ Mgd/(I_{3}ω), so as ω falls the precession becomes faster, until the top falls.
+M2@1: A sleeping top is stable if: | Its spin exceeds a critical value | It is perfectly balanced | Its mass is large | It's on a smooth surface | Stability needs ω^{2} > 4MgdI_{1}/I_{3}^{2}: enough spin angular momentum to keep tilts small.
+NUM3@1: A top has M = 0.10 kg, d = 0.040 m, I_{1} = 2.0 × 10^{-4} kg m^{2} and I_{3} = 1.0 × 10^{-4} kg m^{2}. What is the minimum spin for it to sleep, in rad s^{-1}? (g = 9.8 m s^{-2}) | 56 | 2 | rad s^{-1} | ω^{2} > 4 × 0.10 × 9.8 × 0.040 × 2.0 × 10^{-4}/(1.0 × 10^{-8}) = 3136, so ω > 56 rad s^{-1}, about 9 revolutions per second.
+TF2@3: A tippe top would still flip over on a perfectly frictionless surface. | false | The flip is driven by the torque of sliding friction at the contact point, which raises the centre of mass; with no friction there is no such torque.
+M3@1,2: Making a top's centre of mass lower (smaller d), with everything else equal, makes the critical spin: | Lower, so it sleeps at a slower spin | Higher, so it needs a faster spin | Unchanged | Zero | The critical ω^{2} is proportional to Mgd, so a smaller d lowers it; gravity's toppling torque is smaller.
+SA3@2,3: Describe and explain how the motion of a spinning top changes from when it is first spun upright until it falls. | At first it spins fast above the critical value ω^{2} = 4MgdI_{1}/I_{3}^{2}, so it sleeps upright and small tilts stay small. Friction at the tip and air slowly reduce ω. Once below the threshold, any tilt grows: gravity's torque makes the axis precess at Ω ≈ Mgd/(I_{3}ω), which speeds up as ω falls, and nutation grows. Eventually the tilt is large, the rim touches the table and it falls. | Starts above critical spin and sleeps ; Friction reduces spin ; Below threshold tilt grows ; Precession speeds up as spin falls, then topples
 
 ## Coupled translational and rotational motion
 S: Many objects translate and rotate at once, with friction or constraints coupling the two. Bowling balls skid then roll, snooker balls take spin, and wheels drive cars forward, all through the interplay of F = ma and τ = Iα.
+O: Write separate translational and rotational equations for one body
+O: Find when and at what speed a skidding ball starts to roll
+O: Explain the effects of top-spin and backspin
+PRE: Rolling without slipping
+LV: Year 1 · Application
 H: Method
 - Write F = Ma_{cm} and τ_{cm} = I_{cm}α separately.
 - Identify which friction applies: kinetic (slipping) or static (rolling).
@@ -611,9 +725,21 @@ X: A bowling ball is launched at 8.0 m s^{-1} with no spin; μ_{k} = 0.1. When d
 > Rolls when v = ωR: v = (5/7) × 8 = 5.7 m s^{-1}, at t = (8 − 5.7)/0.98 = 2.3 s
 H: Snooker spin
 P: Hitting the cue ball above centre gives topspin (follow); below centre gives backspin (screw or draw). A solid ball struck horizontally at a height of 7R/5 above the table (2R/5 above its centre) rolls immediately without slipping.
+K: While slipping, kinetic friction slows translation and speeds up rotation until v = ωR.
 !: Don't assume rolling without slipping from the start; check whether v = ωR, and if not, kinetic friction acts until it is.
+T: Kinetic friction | Friction during sliding, of size μ_{k}N, that dissipates energy
+T: Backspin | Spin opposite to the sense of rolling, so friction pushes the ball backwards
+SUM: Treat F = Ma and τ = Iα separately; kinetic friction couples them until v = ωR.
+SUM: A sliding solid ball ends rolling at 5/7 of its initial speed, losing 2/7 of its KE.
+EV: established | The skid-to-roll result follows from Newton's laws with Coulomb friction
+SRC: OpenStax, University Physics Volume 1, section 11.1 "Rolling Motion" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/11-1-rolling-motion
+SRC: OpenStax, University Physics Volume 1, section 6.2 "Friction" | secondary | 2016 | https://openstax.org/books/university-physics-volume-1/pages/6-2-friction
 Q: Why is angular momentum about the contact point conserved for a skidding ball? | Friction acts at that point, so it has no torque about it (and gravity and normal force cancel).
 Q: At what height should a ball be struck to roll immediately? | 7R/5 above the table (2R/5 above the centre), for a solid sphere.
-M1: A solid ball sliding with no spin ends up rolling at what fraction of its initial speed? | 5/7 | 2/7 | 1/2 | 1 | From conservation of angular momentum about the contact point.
-M2: Backspin on a cue ball makes it, after hitting another ball head-on: | Move backwards | Stop dead | Follow through | Jump | Its spin makes friction pull it back.
+M1@2: A solid ball sliding with no spin ends up rolling at what fraction of its initial speed? | 5/7 | 2/7 | 1/2 | 1 | Angular momentum about the contact point is conserved: mv_{0}R = mvR + (2/5)mR^{2}(v/R), so v = (5/7)v_{0}.
+M2@3: Backspin on a cue ball makes it, after hitting another ball head-on: | Move backwards | Stop dead | Follow through | Jump | The collision stops its forward motion but not its backward spin, so friction then drives it backwards: a screw or draw shot.
+NUM2@2: A solid ball is launched sliding at 3.5 m s^{-1} with no spin. At what speed does it start rolling, in m s^{-1}? | 2.5 | 0.05 | m s^{-1} | Conserving angular momentum about the contact point gives v = (5/7)v_{0} = (5/7) × 3.5 = 2.5 m s^{-1}, whatever the friction coefficient.
+TF1@1: While a ball skids, the friction from the floor slows its spin. | false | For a ball sliding forward with no spin, kinetic friction acts backward at the contact point; its torque about the centre increases the forward spin while reducing the speed.
+M3@1,2: For the bowling ball above, how long it skids depends on μ_{k}, but the final rolling speed does not, because: | Friction exerts no torque about the contact point | Friction does no work | Kinetic friction is constant | The ball's mass cancels | About the contact point friction has zero moment, so L there is conserved and fixes v = (5/7)v_{0}; μ only sets the time taken.
+SA3@1,2: A snooker ball is struck so it slides forward with no spin. Describe and explain how its motion changes until it rolls, and why kinetic energy is lost. | Kinetic friction μmg acts backward at the contact point. As a force it decelerates the centre of mass (a = −μg); as a torque about the centre (μmgR) it increases forward spin. v falls and ωR rises until v = ωR, after which the ball rolls and friction becomes static and does no work. Angular momentum about the contact point is conserved, giving v = 5v_{0}/7. During slipping, the contact surfaces rub, so kinetic friction converts 2/7 of the KE into heat. | Friction decelerates translation ; Friction torque increases spin ; Rolls when v = ωR, at 5v₀/7 ; Energy lost to heat during sliding
 `;

@@ -202,6 +202,116 @@
     "explained the direction of gravity's torque on a supported gyroscope"
    ],
    "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Precession and nutation",
+   "unit": "u05",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite (where not a starting point), level, key terms, summary, evidence status and confirmed sources",
+    "added key point and common mistake where missing",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added questions after the existing ones to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer",
+    "added a short derivation of Ω = τ/L; showed the full division in the worked example; stated Larmor frequency as f = γB/2π"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Rigid-body dynamics",
+   "unit": "u05",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite (where not a starting point), level, key terms, summary, evidence status and confirmed sources",
+    "added key point and common mistake where missing",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added questions after the existing ones to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer",
+    "defined the inertia tensor elements and products of inertia"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Euler's equations of rotation",
+   "unit": "u05",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite (where not a starting point), level, key terms, summary, evidence status and confirmed sources",
+    "added key point and common mistake where missing",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added questions after the existing ones to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer",
+    "gave the free-precession rate in full, (I3 − I1)ω3/I1, and explained the Explorer 1 tumble via KE = L²/2I"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Rotating reference frames",
+   "unit": "u05",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite (where not a starting point), level, key terms, summary, evidence status and confirmed sources",
+    "added key point and common mistake where missing",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added questions after the existing ones to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer",
+    "added why fictitious forces have no third-law partner"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Centrifugal and Coriolis forces",
+   "unit": "u05",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite (where not a starting point), level, key terms, summary, evidence status and confirmed sources",
+    "added key point and common mistake where missing",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added questions after the existing ones to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer",
+    "added the Coriolis parameter"
+   ],
+   "findings": [
+    {
+     "class": "error-fixed",
+     "note": "Worked example said a 0.031 m s⁻² Coriolis acceleration uncorrected for an hour gives a deflection of 'tens of kilometres'; ½at² = ½ × 0.031 × 3600² ≈ 2 × 10⁵ m, about 200 km. Corrected."
+    }
+   ]
+  },
+  {
+   "course": "physics",
+   "lesson": "Top motion and stability",
+   "unit": "u05",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite (where not a starting point), level, key terms, summary, evidence status and confirmed sources",
+    "added key point and common mistake where missing",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added questions after the existing ones to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer",
+    "defined I1, I3 and d in the sleeping-top criterion"
+   ],
+   "findings": []
+  },
+  {
+   "course": "physics",
+   "lesson": "Coupled translational and rotational motion",
+   "unit": "u05",
+   "action": "enhanced",
+   "changes": [
+    "added objectives, prerequisite (where not a starting point), level, key terms, summary, evidence status and confirmed sources",
+    "added key point and common mistake where missing",
+    "linked all questions to objectives and lengthened explanations to 40+ characters",
+    "added questions after the existing ones to reach at least five across levels 1-3, including an extended written answer (SA)",
+    "tightened text; recomputed every worked example and answer",
+    "added key point and key terms; questions on skid-to-roll independence of μ"
+   ],
+   "findings": []
   }
  ],
  "notes": [

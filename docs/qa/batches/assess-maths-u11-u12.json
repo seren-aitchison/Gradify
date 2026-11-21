@@ -175,6 +175,98 @@
     "SA on consistency via rank",
     "lengthened a short NUM explanation"
    ]
+  },
+  {
+   "course": "maths",
+   "lesson": "u11-17",
+   "action": "enhanced",
+   "changes": [
+    "LV/EV added",
+    "NUM3 column-space membership with a parameter",
+    "SA basis of a column space from original pivot columns",
+    "lengthened a short NUM explanation"
+   ]
+  },
+  {
+   "course": "maths",
+   "lesson": "u11-18",
+   "action": "enhanced",
+   "changes": [
+    "LV/EV added",
+    "M3 dimensions of row and null spaces",
+    "SA proving null(A) ⟂ row(A)",
+    "replaced the distractor '|r||x|' (bars as text) with words and lengthened its explanation"
+   ],
+   "findings": [
+    {
+     "class": "editorial",
+     "note": "An option written as |r||x| used vertical bars inside a question field; rewritten as 'The product of their lengths'."
+    }
+   ]
+  },
+  {
+   "course": "maths",
+   "lesson": "u11-19",
+   "action": "enhanced",
+   "changes": [
+    "LV/EV added",
+    "M2 general solution membership",
+    "SA particular plus null space solution",
+    "lengthened a short NUM explanation"
+   ]
+  },
+  {
+   "course": "maths",
+   "lesson": "u11-20",
+   "action": "enhanced",
+   "changes": [
+    "LV/EV added",
+    "NUM3 parameter for infinitely many solutions",
+    "SA classifying an inconsistent 3 × 3 system (triangular prism)"
+   ]
+  },
+  {
+   "course": "maths",
+   "lesson": "u11-21",
+   "action": "enhanced",
+   "changes": [
+    "LV/EV added",
+    "NUM3 reflection in y = 2x",
+    "SA kernel, image and rank–nullity",
+    "lengthened a short NUM explanation"
+   ]
+  },
+  {
+   "course": "maths",
+   "lesson": "u11-22",
+   "action": "enhanced",
+   "changes": [
+    "LV/EV added",
+    "NUM3 matrix of a map in a new basis",
+    "SA deriving old = P × new and P^{−1}AP",
+    "lengthened a short NUM explanation"
+   ]
+  },
+  {
+   "course": "maths",
+   "lesson": "u11-23",
+   "action": "enhanced",
+   "changes": [
+    "LV/EV added",
+    "M2 similarity by trace and determinant",
+    "SA proving equal characteristic polynomials; shear not similar to I",
+    "lengthened a short NUM explanation"
+   ]
+  },
+  {
+   "course": "maths",
+   "lesson": "u11-24",
+   "action": "enhanced",
+   "changes": [
+    "LV/EV added",
+    "NUM3 det(A^{2} + I) from eigenvalues",
+    "SA eigenvalues with trace and determinant checks"
+   ]
   }
  ],
  "notes": [

@@ -331,10 +331,78 @@
           "note": "M3 q3 right answer was over twice the length of every distractor (length cue); shortened it and lengthened one distractor without changing the keyed answer."
         }
       ]
+    },
+    {
+      "course": "nursing",
+      "lesson": "u04-01",
+      "action": "enhanced",
+      "changes": [
+        "added LV and EV",
+        "was too thin (4 blocks): added paragraph on the NMC Code and competence, and a common mistake on brand and look-alike names",
+        "added M1 (therapeutic index), M3 vignette (brand vs generic name), SA3"
+      ],
+      "findings": []
+    },
+    {
+      "course": "nursing",
+      "lesson": "u04-02",
+      "action": "enhanced",
+      "changes": [
+        "added LV and EV",
+        "was too thin (3 blocks): added illustrative half-life worked example (80, 40, 20, 10; 4-5 x 6 h = 24-30 h), paragraph on drug-level sample timing, common mistake on steady state",
+        "added M2 steady-state calculation (4 x 8 = 32, 5 x 8 = 40 h), M3 digoxin toxicity vignette, SA3 on renal clearance"
+      ],
+      "findings": []
+    },
+    {
+      "course": "nursing",
+      "lesson": "u04-03",
+      "action": "enhanced",
+      "changes": [
+        "added LV and EV",
+        "was too thin (4 blocks): added paragraph on naloxone reversal and common mistake on potency vs efficacy",
+        "added second source (BNF) as required",
+        "added M2, M3 naloxone monitoring vignette, SA3 on agonists and antagonists"
+      ],
+      "findings": []
+    },
+    {
+      "course": "nursing",
+      "lesson": "u04-04",
+      "action": "enhanced",
+      "changes": [
+        "added LV and EV",
+        "was too thin (4 blocks): added paragraph on swallowing difficulty and alternatives, and common mistake on administration timing (levothyroxine)",
+        "added M2 modified-release vignette, M3 absorption in shock, SA3 on fentanyl patches and heat"
+      ],
+      "findings": []
+    },
+    {
+      "course": "nursing",
+      "lesson": "u04-05",
+      "action": "enhanced",
+      "changes": [
+        "added LV and EV",
+        "was too thin (3 blocks): added illustrative protein-binding example (10% to 20% free), paragraph on placenta and breast milk, common mistake on dosing in older age",
+        "added second source (BNF) as required",
+        "added M2, M3 breastfeeding vignette, SA3 on albumin and free drug"
+      ],
+      "findings": []
+    },
+    {
+      "course": "nursing",
+      "lesson": "u04-06",
+      "action": "enhanced",
+      "changes": [
+        "added LV and EV",
+        "was too thin (4 blocks): added paragraph on stopping an inducer and common mistake on herbal remedies and grapefruit",
+        "added M2 codeine pharmacogenetics, M3 simvastatin-clarithromycin vignette, SA3 on induction and inhibition"
+      ],
+      "findings": []
     }
   ],
   "notes": [
-    "u02 complete (30 lessons, 0 problems). u04 in progress.",
+    "u02 complete (30 lessons, 0 problems). u04 in progress: 01-06 done.",
     "u02-21 and u02-29 grew about 34% because they were too thin and needed an extra content block; all other u02 lessons are within about 31%."
   ]
 }

@@ -1,7 +1,7 @@
 // YouthGradify GCSE Core, School 10: Cells and Bioenergetics. Written to content standard 2 (docs/CURRICULUM_CONTENT_STANDARD.md)
 // on 2026-11-19 against the AQA GCSE Combined Science: Trilogy (8464) specification, version 1.1 (4 October 2019),
 // sections 4.1 Cell biology, 4.2.1 and 4.2.2.1 (enzymes and digestion), 4.2.3 Plant tissues, organs and systems and
-// 4.4 Bioenergetics. Trilogy content only ("Biology only" content is left out); Higher tier content is labelled in the
+// 4.4 Bioenergetics; module "Health and disease" (4.2.2.4-4.2.2.7) added on 2026-11-20. Trilogy content only ("Biology only" content is left out); Higher tier content is labelled in the
 // lesson. Builds on School 4 (The Human Body) and School 7 (Foundations of Ecology) without repeating them. Drafted with
 // AI assistance and awaiting review by a teacher (qa.js records the review stages).
 export default `
@@ -739,4 +739,173 @@ M2#gcse-u10-19-q2@2: Which molecules are joined to make a protein? | Amino acids
 MATCH2#gcse-u10-19-q3@2: Match each large molecule to the small molecules it is built from. | Starch = Glucose ; Protein = Amino acids ; Lipid = Glycerol and fatty acids ; Cellulose = Glucose | Carbohydrates are built from sugars, proteins from amino acids and lipids from glycerol and fatty acids.
 M3#gcse-u10-19-q4@2,3: A plant is grown in soil with no nitrate. Which process will be affected most directly? | Making amino acids and proteins | Making starch from glucose | Making cellulose for cell walls | Absorbing water by osmosis | Plants combine glucose with nitrate ions to make amino acids, so protein synthesis and growth slow down.
 SA3#gcse-u10-19-q5@2,3: Explain how a seed uses its stored starch, oil and protein when it germinates, linking each to metabolism. | Enzymes break down stored starch into glucose, which is used in respiration to transfer energy for growth and can be rebuilt into cellulose for new cell walls. Oils (lipids) are broken down into glycerol and fatty acids, which can be respired or used to build new membranes. Stored proteins are broken down into amino acids, which are used to synthesise new proteins such as enzymes. All these reactions are enzyme controlled, and the energy for synthesis comes from respiration. | Starch to glucose ; Glucose for respiration or cellulose ; Lipids to glycerol and fatty acids ; Proteins to amino acids then new proteins ; Enzyme-controlled ; Energy from respiration
+
+## Coronary heart disease and its treatment
+LV: GCSE · Application
+S: Coronary heart disease is a non-communicable disease in which fatty material narrows the arteries that supply the heart muscle. This lesson explains how it starts, how it is treated with stents and statins, what happens when heart valves fail, and when a transplant or artificial heart is used.
+O: Explain how fatty material in the coronary arteries reduces the oxygen supply to heart muscle
+O: Describe how stents, statins, replacement valves, transplants and artificial hearts are used to treat heart disease
+O: Evaluate the advantages and disadvantages of treating cardiovascular disease by drugs, mechanical devices or transplant
+PRE: The heart
+PRE: Blood vessels and blood pressure
+H: What goes wrong in coronary heart disease
+P: The **coronary arteries** branch off the aorta and supply the heart muscle itself with oxygenated blood. In **coronary heart disease (CHD)**, layers of fatty material build up inside the coronary arteries, narrowing them. This reduces the flow of blood through them, so the heart muscle gets too little oxygen. It can cause chest pain and, if an artery is blocked completely, a heart attack, where part of the heart muscle dies.
+H: Treatments for narrowed arteries
+- **Stents** are small mesh tubes inserted into a narrowed coronary artery to hold it open, so blood can flow to the heart muscle again. They work quickly and the operation is less serious than open-heart surgery, but there is a risk of infection, of blood clots forming at the stent, and of the artery narrowing again.
+- **Statins** are drugs that reduce blood **cholesterol** levels, which slows down the rate at which fatty material is deposited in arteries. They are taken by mouth and reduce the risk of heart attacks and strokes, but must be taken long-term, take time to work and can have side effects such as muscle pain.
+H: Faulty valves, heart failure and transplants
+P: In some people a **heart valve** becomes faulty: it may not open fully, or it may develop a leak. Blood then flows less efficiently in the right direction, or leaks backwards, so the heart has to work harder and the person may become tired and breathless. Faulty valves can be replaced with **biological valves** (from animals, such as pigs or cows, or from human donors) or **mechanical valves** (made from metal or carbon). Mechanical valves last longer, but the patient needs anticoagulant drugs for life to stop clots forming on them; biological valves don't usually need these drugs but wear out sooner.
+P: In **heart failure**, the heart cannot pump enough blood for the body's needs. A **donor heart**, or a heart and lungs, can be **transplanted**. Donor organs are in short supply, the patient must take drugs that suppress the immune system for the rest of their life to stop **rejection**, and major surgery carries risks. **Artificial hearts** are occasionally used to keep patients alive while they wait for a transplant, or to let the heart rest as an aid to recovery; they are not rejected, but they need a power supply and carry a risk of blood clots and infection.
+X: A patient has one narrowed coronary artery and high blood cholesterol. Compare a stent with statins.
+> Stent: opens the artery straight away and restores blood flow, but needs a surgical procedure with a small risk of clots or infection.
+> Statins: no surgery, and slow further fatty deposits throughout the body, but act slowly and must be taken every day.
+> Conclusion: doctors often use both, a stent to restore flow now and statins to reduce future risk.
+K: CHD is fatty material narrowing the coronary arteries; stents hold arteries open, statins lower cholesterol, faulty valves are replaced with biological or mechanical valves, and heart failure may need a transplant or, for a time, an artificial heart.
+!: Saying statins "unblock" arteries. Statins lower blood cholesterol and slow the build-up of fatty material; a stent is what holds a narrowed artery open.
+EV: established | Lowering blood cholesterol with statins reduces the risk of heart attacks and strokes in people at raised risk.
+T: Coronary heart disease | A non-communicable disease in which fatty material narrows the coronary arteries, reducing the oxygen supply to heart muscle
+T: Stent | A mesh tube inserted into an artery to keep it open
+T: Statin | A drug that reduces blood cholesterol and slows the deposit of fatty material in arteries
+T: Rejection | Attack by the recipient's immune system on a transplanted organ it recognises as foreign
+SUM: In CHD, fatty material narrows the coronary arteries and starves heart muscle of oxygen.
+SUM: Stents keep arteries open; statins lower cholesterol and slow fatty deposits.
+SUM: Faulty valves are replaced with biological or mechanical valves; heart failure may be treated by transplant or an artificial heart.
+SRC: AQA, GCSE Combined Science: Trilogy (8464) specification, version 1.1, 4.2.2.4 Coronary heart disease: a non-communicable disease | standard | 2019 | https://filestore.aqa.org.uk/resources/science/specifications/AQA-8464-SP-2016.PDF
+SRC: Betts J. G. et al., Anatomy and Physiology 2e, OpenStax, section 19.1 "Heart anatomy" (coronary artery disease, stents and valve disorders) | secondary | 2022 | https://openstax.org/books/anatomy-and-physiology-2e/pages/19-1-heart-anatomy
+Q: What is a stent used for? | To hold a narrowed coronary artery open so that blood can flow to the heart muscle.
+Q: How do statins help people with coronary heart disease? | They reduce blood cholesterol, which slows the rate at which fatty material is deposited in arteries.
+Q: Give one disadvantage of a mechanical heart valve. | The patient must take anticoagulant drugs for life to prevent blood clots forming on the valve.
+M1#gcse-u10-20-q1@1: Why does coronary heart disease cause a lack of oxygen for the heart muscle? | Fatty material narrows the coronary arteries, reducing blood flow | The heart valves stop opening | The lungs stop absorbing oxygen | Red blood cells lose their haemoglobin | Narrowed coronary arteries carry less blood, so less oxygen reaches the heart muscle.
+M2#gcse-u10-20-q2@2: A doctor wants to lower a patient's blood cholesterol to slow the build-up of fatty material. What should be prescribed? | A statin | A stent | A mechanical valve | An artificial pacemaker | Statins are drugs that lower blood cholesterol; stents and valves are devices, and pacemakers correct heart rhythm.
+M2#gcse-u10-20-q3@2: Which problem is caused by a heart valve that leaks? | Blood flows backwards, so the heart must work harder | Blood cholesterol rises sharply | The coronary arteries become blocked | The pacemaker cells stop working | A leaking valve lets blood flow back the wrong way, reducing the efficiency of each beat.
+M3#gcse-u10-20-q4@3: Why must a heart transplant patient take drugs for the rest of their life? | To stop the immune system rejecting the donor heart | To lower blood cholesterol after surgery | To keep the coronary arteries open | To make the new heart beat faster | The immune system recognises the donor heart as foreign, so immunosuppressant drugs are needed to prevent rejection.
+SA3#gcse-u10-20-q5@2,3: Evaluate the use of drugs, mechanical devices and transplants to treat cardiovascular disease. | Drugs such as statins need no surgery and reduce the risk of heart attack, but act slowly, must be taken long-term and can have side effects. Stents open an artery quickly with a minor procedure, but carry a risk of clots, infection and re-narrowing. Mechanical valves last a long time but need lifelong anticoagulants; biological valves need no anticoagulants but wear out. Transplants can treat heart failure, but donors are scarce, surgery is major and lifelong immunosuppressants are needed; artificial hearts can bridge the wait but need power and risk clots. The best choice depends on the problem and the patient. | Statins: advantage and disadvantage ; Stents: advantage and disadvantage ; Valves: mechanical versus biological ; Transplant: donor shortage or rejection ; Artificial heart as a bridge ; Balanced judgement
+
+## Health issues and interacting diseases
+LV: GCSE · Foundation
+S: Health is more than not being ill. This lesson defines health, distinguishes communicable from non-communicable diseases, shows how different diseases can interact, and practises reading disease data in tables, charts and scatter graphs.
+O: Describe the relationship between health and disease, including the effect of diet, stress and life situations
+O: Explain how different types of disease may interact, with examples
+O: Translate disease information between graphs and numbers, and explain the principles of sampling in epidemiology
+PRE: What is health?
+PRE: Pathogens and the spread of disease
+H: Health and disease
+P: **Health** is the state of physical and mental well-being. **Diseases**, both **communicable** (caused by pathogens and able to spread between people, such as measles) and **non-communicable** (not passed from person to person, such as coronary heart disease), are major causes of ill health. Other factors, including **diet**, **stress** and **life situations** such as housing, work or money worries, can have a profound effect on both physical and mental health.
+H: How diseases interact
+- **Defects in the immune system** mean a person is more likely to suffer from infectious diseases; for example, people with untreated HIV become ill with infections a healthy immune system would control.
+- **Viruses living in cells** can trigger cancers; for example, some types of human papillomavirus (HPV) can cause cervical cancer.
+- **Immune reactions** first caused by a pathogen can trigger **allergies** such as skin rashes and asthma.
+- **Severe physical ill health** can lead to **depression** and other mental illness.
+H: Working with disease data
+P: **Epidemiology** is the study of patterns of disease in populations. Researchers can't study everyone, so they study a **sample**. A good sample is **large** and **representative** (similar in age, sex and background to the population), and chosen **randomly**, so the results can be applied to the whole population. A small or unrepresentative sample may give a misleading result by chance.
+P: You need to move data between forms: a frequency table can be drawn as a bar chart (separate categories) or a histogram (continuous data, such as age groups), and a **scatter diagram** of two variables shows whether there is a **correlation** between them.
+X: In a survey of 400 people (invented data for practice), 60 had asthma. What percentage is this, and how would you show asthma cases in each age group?
+> Percentage = 60 ÷ 400 × 100 = 15%.
+> Age is continuous data in groups, so the cases in each age group are best shown as a histogram.
+K: Health is physical and mental well-being; communicable and non-communicable diseases, diet, stress and life situations all affect it, and one disease can make another more likely.
+!: Thinking communicable and non-communicable diseases are unrelated. A virus (communicable) can trigger a cancer (non-communicable), and a pathogen can trigger an allergy.
+EV: established | Some cancers, including most cervical cancers, are caused by persistent infection with high-risk types of human papillomavirus.
+T: Communicable disease | A disease caused by a pathogen that can spread between people or animals
+T: Non-communicable disease | A disease that is not passed from one person to another, such as coronary heart disease or most cancers
+T: Epidemiology | The study of the patterns and causes of disease in populations
+SUM: Health is physical and mental well-being, affected by disease, diet, stress and life situations.
+SUM: Diseases interact: immune defects, cancer-causing viruses, allergies and depression after physical illness.
+SUM: Epidemiological samples should be large, random and representative.
+SRC: AQA, GCSE Combined Science: Trilogy (8464) specification, version 1.1, 4.2.2.5 Health issues | standard | 2019 | https://filestore.aqa.org.uk/resources/science/specifications/AQA-8464-SP-2016.PDF
+SRC: Clark M. A., Douglas M. and Choi J., Biology 2e, OpenStax, section 42.4 "Disruptions in the immune system" (immunodeficiency and allergies) | secondary | 2018 | https://openstax.org/books/biology-2e/pages/42-4-disruptions-in-the-immune-system
+SRC: Clark M. A., Douglas M. and Choi J., Biology 2e, OpenStax, section 21.2 "Virus infections and hosts" (oncogenic viruses) | secondary | 2018 | https://openstax.org/books/biology-2e/pages/21-2-virus-infections-and-hosts
+Q: What is health? | The state of physical and mental well-being.
+Q: Give one example of a virus triggering a cancer. | Some types of human papillomavirus (HPV) can cause cervical cancer.
+M1#gcse-u10-21-q1@1: Which is a non-communicable disease? | Coronary heart disease | Measles | Malaria | Salmonella food poisoning | Coronary heart disease is not caused by a pathogen and can't be passed between people.
+M2#gcse-u10-21-q2@2: A person with an immune system defect keeps catching infections. Which explains this? | Their body is less able to destroy pathogens | Their pathogens are a different type | Infections cause immune defects in everyone | They have too many white blood cells | A defective immune system can't fight off pathogens as well, so infectious diseases are more likely.
+NUM2#gcse-u10-21-q3@3: In a sample of 250 people, 35 have type 2 diabetes. What percentage is this? | 14 | 0.1 | % | 35 ÷ 250 × 100 = 14%.
+M3#gcse-u10-21-q4@3: A study of diet and heart disease uses 20 volunteers from one gym. Why is its conclusion unreliable? | The sample is too small and not representative of the population | The sample is too large to analyse | Volunteers always give false answers | Heart disease can't be studied in samples | A small, non-random sample of gym users may differ from the population, so the result may not apply generally.
+SA2#gcse-u10-21-q5@1,2: Explain, with examples, how different types of disease can interact. | An immune system defect, such as untreated HIV, makes infectious diseases more likely. Viruses living in cells can trigger cancer, such as HPV and cervical cancer. An immune reaction first caused by a pathogen can trigger an allergy such as a skin rash or asthma. Severe physical ill health can lead to depression or other mental illness. | Immune defect and infection ; Virus triggering cancer ; Pathogen triggering allergy ; Physical illness and depression ; Named examples
+
+## Lifestyle, risk factors and non-communicable disease
+LV: GCSE · Evaluation
+S: A risk factor is linked to an increased rate of a disease. This lesson sets out the risk factors AQA names for cardiovascular disease, type 2 diabetes, liver and brain damage, lung disease, unborn babies and cancer, explains why correlation is not the same as causation, and discusses the human and financial cost of non-communicable disease.
+O: Describe risk factors as aspects of lifestyle or substances in the body or environment, with the named examples
+O: Distinguish a correlation from a proven causal mechanism, using scatter diagrams and data about risk factors
+O: Discuss the human and financial cost of non-communicable diseases to individuals, communities, nations and the world
+PRE: Health issues and interacting diseases
+PRE: Coronary heart disease and its treatment
+H: Risk factors
+P: A **risk factor** is linked to an increased rate of a disease. Risk factors can be **aspects of a person's lifestyle** (such as diet, smoking or exercise) or **substances in the person's body or environment** (such as cholesterol in the blood or asbestos in the air). A **causal mechanism** has been proven for some risk factors, but not for others. Many diseases are caused by the **interaction of several factors**.
+- **Diet, smoking and exercise** affect cardiovascular disease: a diet high in saturated fat raises blood cholesterol, smoking damages artery walls and raises blood pressure, and regular exercise lowers the risk.
+- **Obesity** is a risk factor for **type 2 diabetes**.
+- **Alcohol** damages the **liver** (for example cirrhosis) and affects **brain function**.
+- **Smoking** causes **lung disease** (such as chronic obstructive pulmonary disease) and **lung cancer**.
+- **Smoking and alcohol** harm **unborn babies**: smoking reduces the oxygen reaching the fetus and is linked to low birth weight; alcohol can cause fetal alcohol spectrum disorder.
+- **Carcinogens**, including **ionising radiation**, are risk factors for **cancer**.
+H: Correlation and causation
+P: A **scatter diagram** shows whether two variables are **correlated**: as one increases, the other tends to increase (positive correlation) or decrease (negative correlation). A correlation alone does not prove that one causes the other: a third factor may cause both, or the link may be chance. Scientists accept a cause when there is a **plausible mechanism** and the link is found consistently in large, well-designed studies, as for smoking and lung cancer, where carcinogens in tobacco smoke damage the DNA of lung cells.
+X: A scatter diagram of invented data shows that towns with more fast-food outlets have higher rates of type 2 diabetes. Does fast food cause diabetes?
+> The diagram shows a positive correlation, not a cause.
+> Other factors could explain it: income, age, exercise or obesity rates may differ between the towns.
+> To test a cause, researchers would study individuals, control for other factors and look for a mechanism (here, energy-rich food leading to obesity, a known risk factor).
+H: The cost of non-communicable disease
+P: For an **individual**, a non-communicable disease can mean pain, disability, loss of work and income, and a shorter life. For a **local community and family**, it can mean caring responsibilities and lost earnings. For a **nation**, it means the cost of health care and treatment and lost working days. **Globally**, non-communicable diseases are the leading cause of death, and lifestyle factors such as diet, alcohol and smoking change how common they are at local, national and global levels; in many lower-income countries their rates are rising as diets and lifestyles change.
+K: Risk factors are lifestyle aspects or substances linked to higher disease rates; a correlation is not proof of cause, which needs a mechanism and consistent evidence; non-communicable diseases carry human and financial costs at every scale.
+!: Saying "a correlation proves a cause". It shows only that two variables change together; a third factor or chance may explain it.
+EV: established | Smoking causes lung cancer: the link is consistent across large studies and carcinogens in tobacco smoke damage DNA.
+EV: established | Obesity increases the risk of type 2 diabetes.
+T: Risk factor | Something linked to an increased rate of a disease, such as a lifestyle aspect or a substance in the body or environment
+T: Correlation | A relationship in which two variables change together; it does not by itself show cause
+T: Causal mechanism | The process by which a factor actually brings about a disease
+T: Carcinogen | A substance or agent, such as ionising radiation, that can cause cancer
+SUM: Risk factors are aspects of lifestyle or substances in the body or environment; many diseases have several interacting causes.
+SUM: AQA examples: diet, smoking and exercise (heart disease), obesity (type 2 diabetes), alcohol (liver and brain), smoking (lungs), smoking and alcohol (unborn babies), carcinogens (cancer).
+SUM: A correlation on a scatter diagram is not proof of cause.
+SRC: AQA, GCSE Combined Science: Trilogy (8464) specification, version 1.1, 4.2.2.6 The effect of lifestyle on some non-communicable diseases | standard | 2019 | https://filestore.aqa.org.uk/resources/science/specifications/AQA-8464-SP-2016.PDF
+SRC: Spielman R. M. et al., Psychology 2e, OpenStax, section 2.3 "Analyzing findings" (correlation does not indicate causation) | secondary | 2020 | https://openstax.org/books/psychology-2e/pages/2-3-analyzing-findings
+Q: What is a risk factor? | Something linked to an increased rate of a disease: an aspect of lifestyle or a substance in the body or environment.
+Q: Which risk factor does AQA link to type 2 diabetes? | Obesity.
+Q: Why doesn't a correlation prove a cause? | A third factor or chance could explain why the two variables change together.
+M1#gcse-u10-22-q1@1: Which is a risk factor for lung cancer? | Smoking | Eating oily fish | Regular exercise | Drinking water | Carcinogens in tobacco smoke damage the DNA of lung cells.
+MATCH2#gcse-u10-22-q2@1: Match each risk factor to the disease or harm AQA links it with. | Obesity = Type 2 diabetes ; Alcohol = Liver damage ; Ionising radiation = Cancer ; Smoking in pregnancy = Low birth weight | Each risk factor raises the rate of a particular non-communicable disease or harm.
+M2#gcse-u10-22-q3@2: A scatter diagram shows that people who drink more coffee have more heart disease. What can you conclude? | There is a correlation, but coffee may not be the cause | Coffee definitely causes heart disease | Heart disease makes people drink coffee | There is no link between the variables | Coffee drinkers might also smoke more; without a mechanism and controlled studies, cause is not proven.
+M3#gcse-u10-22-q4@3: Which evidence would best show that a risk factor causes a disease? | A plausible mechanism and the same link in many large, well-controlled studies | One small study showing a correlation | A newspaper report of a single case | A link found only in one town | Cause is accepted when the link is consistent in large, controlled studies and there is a mechanism to explain it.
+SA3#gcse-u10-22-q5@2,3: Discuss the human and financial costs of type 2 diabetes, and evaluate the claim that it is caused only by lifestyle. | Human costs: illness, complications and reduced quality of life for the individual, caring for family and community, lost work. Financial costs: treatment and care paid by the health service, lost working days for the nation; globally the costs rise as rates increase. Obesity is a major risk factor with a known link, but the disease results from the interaction of several factors, including genes, age and environment, so lifestyle is not the only cause. | Individual cost ; Community or family cost ; National or global financial cost ; Obesity as risk factor ; Several interacting factors ; Judgement
+
+## Cancer
+LV: GCSE · Foundation
+S: Cancer is the result of changes in cells that lead to uncontrolled growth and division. This lesson explains how tumours form, the difference between benign and malignant tumours, how malignant cells spread to form secondary tumours, and the lifestyle and genetic risk factors for cancer.
+O: Describe cancer as the result of changes in cells that lead to uncontrolled growth and division
+O: Compare benign and malignant tumours and explain how secondary tumours form
+O: Describe lifestyle and genetic risk factors for cancer
+PRE: Chromosomes, mitosis and the cell cycle
+PRE: Lifestyle, risk factors and non-communicable disease
+H: Uncontrolled cell division
+P: Normally, cells divide by mitosis only when the body needs new cells, and the cell cycle is tightly controlled. **Cancer** is the result of changes in cells (changes to their DNA) that lead to **uncontrolled growth and division**. The cells keep dividing and form a mass of abnormal cells called a **tumour**.
+H: Benign and malignant tumours
+- **Benign tumours** are growths of abnormal cells that are contained in one area, usually within a membrane. They do not invade other parts of the body. They can still cause harm if they press on an organ, for example in the brain.
+- **Malignant tumours** are cancers. Their cells **invade neighbouring tissues** and **spread to different parts of the body in the blood**, where they form **secondary tumours**.
+X: A scan finds a tumour in a patient's lung and, later, a second tumour in the liver made of lung-type cells. What does this show?
+> The second tumour is made of lung cells, so it did not start in the liver.
+> Cells broke away from the first tumour and travelled in the blood.
+> So the lung tumour is malignant, and the liver tumour is a secondary tumour.
+H: Risk factors for cancer
+P: Scientists have identified **lifestyle risk factors** for various types of cancer, such as smoking (lung and other cancers), drinking alcohol, a poor diet and obesity, and exposure to **carcinogens** such as ultraviolet radiation from the Sun or sunbeds (skin cancer) and other ionising radiation. Some viruses can also trigger cancers. There are also **genetic risk factors**: some people inherit gene variants (for example BRCA1 or BRCA2) that greatly increase the risk of certain cancers, such as breast and ovarian cancer.
+K: Cancer is uncontrolled cell growth and division; benign tumours stay in one place inside a membrane, while malignant tumours invade tissues and spread in the blood to form secondary tumours; risk factors are both lifestyle and genetic.
+!: Saying a benign tumour is always harmless. It does not spread, but it can still press on and damage nearby organs.
+EV: established | Exposure to ultraviolet radiation from the Sun and sunbeds increases the risk of skin cancer.
+EV: established | Inherited BRCA1 and BRCA2 variants greatly increase the risk of breast and ovarian cancer.
+T: Tumour | A mass of cells formed by uncontrolled cell division
+T: Benign tumour | A growth of abnormal cells contained in one area, usually within a membrane, that does not invade other parts of the body
+T: Malignant tumour | A cancer whose cells invade neighbouring tissues and spread in the blood to form secondary tumours
+T: Secondary tumour | A tumour formed in another part of the body by cells that spread from a malignant tumour
+SUM: Cancer results from changes in cells that lead to uncontrolled growth and division.
+SUM: Benign tumours are contained and don't spread; malignant tumours invade and spread in the blood to form secondary tumours.
+SUM: Cancer has lifestyle risk factors (smoking, alcohol, diet, UV and other radiation) and genetic risk factors.
+SRC: AQA, GCSE Combined Science: Trilogy (8464) specification, version 1.1, 4.2.2.7 Cancer | standard | 2019 | https://filestore.aqa.org.uk/resources/science/specifications/AQA-8464-SP-2016.PDF
+SRC: Clark M. A., Douglas M. and Choi J., Biology 2e, OpenStax, section 10.4 "Cancer and the cell cycle" | secondary | 2018 | https://openstax.org/books/biology-2e/pages/10-4-cancer-and-the-cell-cycle
+SRC: Betts J. G. et al., Anatomy and Physiology 2e, OpenStax, section 3.5 "Cell growth and division" (benign and malignant tumours) | secondary | 2022 | https://openstax.org/books/anatomy-and-physiology-2e/pages/3-5-cell-growth-and-division
+Q: What is cancer? | The result of changes in cells that lead to uncontrolled growth and division.
+Q: How does a malignant tumour form a secondary tumour? | Its cells invade nearby tissue, travel in the blood and form a new tumour elsewhere in the body.
+M1#gcse-u10-23-q1@2: Which describes a benign tumour? | Abnormal cells contained in one area, usually within a membrane | Cells that spread in the blood to other organs | Cells that invade neighbouring tissues | A tumour that always causes death | Benign tumours stay in one place and do not invade other parts of the body.
+TF1#gcse-u10-23-q2@1: Cancer is caused by cells dividing in an uncontrolled way. | true | Changes in cells lead to uncontrolled growth and division, forming a tumour.
+M2#gcse-u10-23-q3@2: Why are malignant tumours more dangerous than benign tumours? | Their cells spread in the blood and form secondary tumours | They are always larger | They contain no abnormal cells | They are surrounded by a membrane | Malignant cells invade other tissues and spread around the body, so they are harder to remove.
+M3#gcse-u10-23-q4@3: A woman inherits a BRCA1 gene variant. Which statement is correct? | She has a genetic risk factor that increases her chance of breast cancer | She will certainly develop cancer | Her cancer risk comes only from lifestyle | She has a benign tumour | An inherited variant raises the risk, but it does not make cancer certain.
+SA2#gcse-u10-23-q5@2,3: Compare benign and malignant tumours, and give two lifestyle risk factors and one genetic risk factor for cancer. | Both are masses of cells from uncontrolled division. Benign tumours are contained in one area, usually within a membrane, and do not invade other parts of the body. Malignant tumours are cancers: their cells invade neighbouring tissues and spread in the blood to form secondary tumours. Lifestyle risk factors include smoking and UV exposure (also alcohol, poor diet, obesity). A genetic risk factor is inheriting a BRCA1 or BRCA2 variant. | Both from uncontrolled division ; Benign contained in a membrane ; Malignant invades tissues ; Spreads in blood to secondary tumours ; Two lifestyle risk factors ; One genetic risk factor
 `;
