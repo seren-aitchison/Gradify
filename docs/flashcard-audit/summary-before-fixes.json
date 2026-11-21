@@ -1,0 +1,18 @@
+{
+ "baseline": "3719ed3",
+ "cards": 18080,
+ "flagged": 660,
+ "flagRate": 0.037,
+ "kinds": {
+  "ungrounded": 76,
+  "yes-no": 440,
+  "number-drift": 12,
+  "near-dup": 43,
+  "too-thin": 26,
+  "echo": 22,
+  "vague": 50,
+  "list-count": 2
+ },
+ "strata": 75,
+ "sample": 225
+}

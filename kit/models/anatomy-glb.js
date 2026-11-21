@@ -20,16 +20,28 @@ export function loadAnatomy() {
     const keys = new Set(catalog.map((c) => c.key)), byKey = {};
     gltf.scene.updateMatrixWorld(true);
     const meshes = []; gltf.scene.traverse((o) => { if (o.isMesh) meshes.push(o); });
+    // about a million vertices: read straight from the file's arrays in one pass per mesh (not value by value), and
+    // hand the page back every few milliseconds so it stays responsive while the model is built
+    let slice = performance.now();
     for (const m of meshes) {
       const key = keys.has(m.name) ? m.name : m.name.replace(/_\d+$/, "");
       const g = new THREE.BufferGeometry(); g.setIndex(m.geometry.index);
-      // the file stores positions and normals as quantised integers: read them out as floats first
-      for (const name of ["position", "normal"]) { const at = m.geometry.attributes[name]; if (!at) continue; const f = new Float32Array(at.count * 3); for (let i = 0; i < at.count; i++) { f[i * 3] = at.getX(i); f[i * 3 + 1] = at.getY(i); f[i * 3 + 2] = at.getZ(i); } g.setAttribute(name, new THREE.BufferAttribute(f, 3)); }
-      g.applyMatrix4(m.matrixWorld); if (g.attributes.normal) g.attributes.normal.needsUpdate = true; else g.computeVertexNormals();
-      g.computeBoundingBox(); const c = g.boundingBox.getCenter(new THREE.Vector3()); g.translate(-c.x, -c.y, -c.z);
-      boxUV(g);
+      const at = m.geometry.attributes, c = new THREE.Vector3();
+      if (at.position && at.normal) {
+        const { pos, nor } = toWorld(at.position, at.normal, m.matrixWorld, c);
+        g.setAttribute("position", new THREE.BufferAttribute(pos, 3)); g.setAttribute("normal", new THREE.BufferAttribute(nor, 3));
+        g.setAttribute("uv", new THREE.BufferAttribute(boxUVArrays(pos, nor), 2));
+        g.boundingBox = null;
+      } else {
+        // (no normals in the file: the general route)
+        for (const name of ["position", "normal"]) { const a = at[name]; if (a) g.setAttribute(name, new THREE.BufferAttribute(floats(a), 3)); }
+        g.applyMatrix4(m.matrixWorld); if (!g.attributes.normal) g.computeVertexNormals();
+        g.computeBoundingBox(); g.boundingBox.getCenter(c); g.translate(-c.x, -c.y, -c.z);
+        g.setAttribute("uv", new THREE.BufferAttribute(boxUVArrays(g.attributes.position.array, g.attributes.normal.array), 2));
+      }
       const mesh = new THREE.Mesh(g); mesh.position.copy(c); mesh.name = key;
       (byKey[key] ||= []).push(mesh);
+      if (performance.now() - slice > 8) { await new Promise((r) => setTimeout(r, 0)); slice = performance.now(); }
     }
     const anchors = Object.fromEntries(catalog.filter((c) => c.anchor).map((c) => [c.key, new THREE.Vector3(...c.anchor)]));
     return { byKey, anchors, catalog };
@@ -37,16 +49,43 @@ export function loadAnatomy() {
   return loading;
 }
 
+// an attribute as plain floats (the file stores positions and normals as quantised integers, often interleaved)
+const SCALE = { Int8Array: 127, Uint8Array: 255, Int16Array: 32767, Uint16Array: 65535 };
+function floats(a) {
+  const arr = a.isInterleavedBufferAttribute ? a.data.array : a.array, stride = a.isInterleavedBufferAttribute ? a.data.stride : a.itemSize, off = a.offset || 0;
+  const k = a.normalized ? 1 / (SCALE[arr.constructor.name] || 1) : 1, signed = a.normalized && /^Int/.test(arr.constructor.name), out = new Float32Array(a.count * 3);
+  for (let i = 0, j = off; i < a.count; i++, j += stride) for (let d = 0; d < 3; d++) { const v = arr[j + d] * k; out[i * 3 + d] = signed && v < -1 ? -1 : v; }
+  return out;
+}
+// positions and normals into world space, the positions centred on their box (centre written to c)
+function toWorld(pa, na, matrix, c) {
+  const pos = floats(pa), nor = floats(na), e = matrix.elements, n = new THREE.Matrix3().getNormalMatrix(matrix).elements;
+  let x0 = Infinity, y0 = Infinity, z0 = Infinity, x1 = -Infinity, y1 = -Infinity, z1 = -Infinity;
+  for (let i = 0; i < pos.length; i += 3) {
+    const x = pos[i], y = pos[i + 1], z = pos[i + 2], w = 1 / (e[3] * x + e[7] * y + e[11] * z + e[15]);
+    const X = (e[0] * x + e[4] * y + e[8] * z + e[12]) * w, Y = (e[1] * x + e[5] * y + e[9] * z + e[13]) * w, Z = (e[2] * x + e[6] * y + e[10] * z + e[14]) * w;
+    pos[i] = X; pos[i + 1] = Y; pos[i + 2] = Z;
+    if (X < x0) x0 = X; if (X > x1) x1 = X; if (Y < y0) y0 = Y; if (Y > y1) y1 = Y; if (Z < z0) z0 = Z; if (Z > z1) z1 = Z;
+    const a = nor[i], b = nor[i + 1], d = nor[i + 2];
+    let p = n[0] * a + n[3] * b + n[6] * d, q = n[1] * a + n[4] * b + n[7] * d, r = n[2] * a + n[5] * b + n[8] * d;
+    const l = Math.hypot(p, q, r) || 1; nor[i] = p / l; nor[i + 1] = q / l; nor[i + 2] = r / l;
+  }
+  c.set((x0 + x1) / 2, (y0 + y1) / 2, (z0 + z1) / 2);
+  for (let i = 0; i < pos.length; i += 3) { pos[i] -= c.x; pos[i + 1] -= c.y; pos[i + 2] -= c.z; }
+  return { pos, nor };
+}
+
 // texture coordinates by box projection: each vertex uses the two axes its normal points away from,
 // in metres × 12, so a texture repeats about every 8 cm whatever the mesh
-function boxUV(g) {
-  const p = g.attributes.position, n = g.attributes.normal, uv = new Float32Array(p.count * 2);
-  for (let i = 0; i < p.count; i++) {
-    const ax = Math.abs(n.getX(i)), ay = Math.abs(n.getY(i)), az = Math.abs(n.getZ(i));
-    const [u, v] = ax >= ay && ax >= az ? [p.getZ(i), p.getY(i)] : ay >= az ? [p.getX(i), p.getZ(i)] : [p.getX(i), p.getY(i)];
-    uv[i * 2] = u * 12; uv[i * 2 + 1] = v * 12;
+function boxUVArrays(p, n) {
+  const uv = new Float32Array((p.length / 3) * 2);
+  for (let i = 0, j = 0; i < p.length; i += 3, j += 2) {
+    const ax = Math.abs(n[i]), ay = Math.abs(n[i + 1]), az = Math.abs(n[i + 2]);
+    if (ax >= ay && ax >= az) { uv[j] = p[i + 2] * 12; uv[j + 1] = p[i + 1] * 12; }
+    else if (ay >= az) { uv[j] = p[i] * 12; uv[j + 1] = p[i + 2] * 12; }
+    else { uv[j] = p[i] * 12; uv[j + 1] = p[i + 1] * 12; }
   }
-  g.setAttribute("uv", new THREE.BufferAttribute(uv, 2));
+  return uv;
 }
 
 // a copy of meshes for one model (the shared geometry isn't duplicated)

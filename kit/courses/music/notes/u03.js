@@ -39,6 +39,16 @@ M2#music-u03-01-q2@2: A chord has the notes E, C and G spread across two octaves
 M3#music-u03-01-q3@3: A student says the chord with G in the bass and C and E above has root G. What is the error? | The bass note isn't always the root; arranged in thirds the notes are C–E–G, so the root is C | Nothing: the lowest note is always the root | The chord has two roots, C and G | Triads have no root when spread out | Inversions put the third or fifth in the bass; the root comes from the stack of thirds.
 SEQ1#music-u03-01-q4@1: Order the steps to build a triad on any note. | Choose the root ; Add the note a third above ; Add the note a third above that ; Apply the key's accidentals | Stacking two thirds above the root, with the correct accidentals, gives the triad.
 SA2#music-u03-01-q5@2,3: Explain how to identify the root of a chord written in open position. | List the notes, ignoring octaves and repeats. Rearrange them so they form a stack of thirds, such as E–G–B. The lowest note of that stack is the root, and the others are the third and fifth. The bass note may be a different note if the chord is inverted. | List notes ; Rearrange into thirds ; Identify root ; Bass may differ
+Q: What is a chord? | Two or more notes sounded together.
+Q: How is a triad built? | By stacking two thirds above a root.
+Q: Why are the third and fifth of a triad so named? | They are named by their interval above the root.
+Q: What are the notes of a triad built on F? | F, A and C.
+Q: What does a root-position triad in close position look like on the stave? | A snowman: three notes on consecutive lines or consecutive spaces.
+Q: What is open position? | A spacing in which the chord's notes are spread more widely than an octave.
+Q: How do you find the root of a spread chord? | Rearrange its notes into a stack of thirds; the bottom note of the stack is the root.
+Q: Is C–G–E, spread out, still a C triad? | Yes: the root stays the root wherever it appears.
+Q: Over roughly what period were triads the basic building blocks of tonal harmony? | From about 1600 to 1900, and in most popular music.
+Q: What does four-part writing often do with a triad's three notes? | It doubles one of them.
 
 ## Major, minor, diminished and augmented triads
 LV: Introductory · Foundation
@@ -81,6 +91,16 @@ M2#music-u03-02-q2@2: What is the quality of the triad F♯–A–C? | Diminishe
 M3#music-u03-02-q3@3: A student writes G diminished as G–A♯–C♯. What is wrong? | The letter names should form a stack of thirds: G–B♭–D♭ | Nothing: A♯ and C♯ are the correct notes | Diminished triads have only two notes | It should be G–B–D♯ | Thirds must use alternate letters; G–B♭–D♭ is the correct spelling.
 MATCH1#music-u03-02-q4@1: Match each triad to its quality. | E–G♯–B = Major ; E–G–B = Minor ; E–G–B♭ = Diminished ; E–G♯–B♯ = Augmented | The third and fifth above E determine the quality.
 SA2#music-u03-02-q5@2,3: Explain how to build each of the four triad qualities on B♭. | Start with the major triad from B♭ major: B♭–D–F (major third, perfect fifth). Lower the third for minor: B♭–D♭–F. Lower the third and fifth for diminished: B♭–D♭–F♭. Raise the fifth for augmented: B♭–D–F♯. Keep the letter names B, D and F throughout. | Major triad ; Minor ; Diminished ; Augmented with correct spelling
+Q: What stacked thirds make a major triad? | A major third with a minor third above it.
+Q: What stacked thirds make a diminished triad? | Two minor thirds, giving a diminished fifth.
+Q: What stacked thirds make an augmented triad? | Two major thirds, giving an augmented fifth.
+Q: What are the notes of C minor and C augmented triads? | C minor is C–E♭–G; C augmented is C–E–G♯.
+Q: How do augmented triads sound, and where do they occur? | Unstable and ambiguous; on III in harmonic minor and as chromatic passing chords.
+Q: Which triad qualities are stable and form a key's main chords? | Major and minor.
+Q: What is a quick method for building any triad quality? | Build the major triad, then lower the third for minor, lower third and fifth for diminished, or raise the fifth for augmented.
+Q: What is the quality of B–D–F? | Diminished: a minor third and a diminished fifth.
+Q: What is the quality of E♭–G–B? | Augmented: a major third and an augmented fifth.
+Q: How should C diminished be spelt? | C–E♭–G♭, keeping the letter names of a stack of thirds.
 
 ## Inversions and figured bass symbols
 LV: Introductory · Application
@@ -124,6 +144,16 @@ M2#music-u03-03-q2@2: In D major, the chord A–D–F♯ has A in the bass. How 
 M3#music-u03-03-q3@3: A student harmonises a melody using several second-inversion chords in a row. What is the best advice? | Second inversions are unstable and are normally used only in patterns such as the cadential 6/4 | Second inversions are the most stable chords and should be used often | Second inversions can't be written in four parts | Only root-position chords may ever be used | Common-practice style restricts 6/4 chords to specific contexts.
 TF1#music-u03-03-q4@1: The order of the upper notes decides the inversion of a chord. | false | Only the bass note decides the inversion.
 SA2#music-u03-03-q5@2,3: Explain the cadential 6/4 and how it is labelled. | The cadential 6/4 is a tonic chord in second inversion (Ic or I6/4) placed on a strong beat before the dominant at a cadence. Its sixth and fourth above the bass behave like appoggiaturas, resolving down to the fifth and third of the dominant chord over the same bass note. It is usually labelled Ic–V or as V6/4–5/3, because it functions as a decorated dominant. | Second inversion tonic ; Before dominant at cadence ; Resolution of 6 and 4 ; Labelling
+Q: What decides a chord's inversion? | Only the bass note; the order of the upper notes doesn't matter.
+Q: What is root position, and how is it labelled? | The root in the bass, figured 5/3 (usually unwritten) and labelled a, as Ia.
+Q: How is a second-inversion chord labelled? | With c, as Ic, or figured 6/4.
+Q: What is figured bass? | A bass line with numbers showing intervals above it, from which keyboard or lute players filled in the harmony.
+Q: Why does first inversion show 6 and 3 in figured bass? | The numbers are intervals above the bass: from the third, the root is a sixth above and the fifth a third above.
+Q: In C major, what inversion has E in the bass with G and C above? | First inversion, Ib (I6).
+Q: Where are root-position chords most used? | At cadences, because they sound strong and stable.
+Q: What is first inversion useful for? | Lighter chords and smoother bass lines; it is very common.
+Q: What is the cadential 6/4 progression? | Ic–V–I: a second-inversion tonic chord before the dominant at a cadence.
+Q: Besides the cadential 6/4, which other 6/4 patterns are used? | The passing 6/4 and the pedal 6/4.
 
 ## Diatonic triads and Roman numerals
 LV: Introductory · Application
@@ -165,6 +195,16 @@ M2#music-u03-04-q2@2: What is chord IV in E♭ major? | A♭ major | B♭ major 
 M3#music-u03-04-q3@3: In A minor, a student labels E–G–B as V. What is the issue? | Without the raised seventh (G♯), E–G–B is minor (v); the usual dominant is E–G♯–B, major V | Nothing: E–G–B is always the dominant of A minor | E–G–B is the tonic of A minor | E–G–B is diminished | The major dominant uses G♯, the leading note; E–G–B is a minor v.
 MATCH1#music-u03-04-q4@1: Match each chord in C major to its Roman numeral. | D minor = ii ; F major = IV ; A minor = vi ; B diminished = vii° | Each triad is built on the corresponding degree of C major.
 SA2#music-u03-04-q5@2,3: Explain why the dominant chord in minor keys is usually major. | Built from the natural minor, the dominant would be minor, with a seventh degree a tone below the tonic, giving weak pull to the tonic. Raising the seventh (as in harmonic minor) creates a leading note a semitone below the tonic, making the dominant chord major and giving a strong perfect cadence. Composers almost always use this major V in minor keys. | Natural minor gives minor v ; Raised seventh as leading note ; Major V ; Stronger cadence
+Q: What does diatonic mean? | Using only the notes of the key.
+Q: What are the qualities of the diatonic triads in a major key? | I major, ii minor, iii minor, IV major, V major, vi minor, vii° diminished.
+Q: What do upper-case and lower-case Roman numerals show? | Upper case means a major chord, lower case a minor chord.
+Q: What symbols show diminished and augmented chords in Roman numerals? | ° for diminished and + for augmented.
+Q: What are the diatonic triads of C major? | C, Dm, Em, F, G, Am, B°.
+Q: What is chord iii in G major? | B–D–F♯, B minor.
+Q: Why can the primary triads harmonise most melodies? | I, IV and V contain every note of the scale between them.
+Q: What are secondary triads used for? | ii, iii and vi add variety and often substitute for primary chords.
+Q: What quality is III in harmonic minor, and what is it usually in practice? | Augmented in harmonic minor, but usually major in practice, using the natural seventh.
+Q: Why is V normally major in a minor key? | It uses the raised leading note, so it pulls strongly to the tonic.
 
 ## Chord symbols in popular music
 LV: Introductory · Application
@@ -211,6 +251,16 @@ M2#music-u03-05-q2@2: What is the Roman numeral of D/F♯ in G major? | V in fir
 M3#music-u03-05-q3@3: A lead sheet shows G7 where a guitarist plays Gmaj7. What has gone wrong? | Gmaj7 adds F♯, but G7 needs F natural, the dominant seventh | Nothing: G7 and Gmaj7 are the same chord | G7 has no seventh at all | Gmaj7 is a minor chord | G7 is a dominant seventh with F; Gmaj7 has a major seventh with F♯.
 TF1#music-u03-05-q4@1: Cadd9 includes a seventh. | false | An add chord adds the ninth (D) to the triad without the seventh.
 SA2#music-u03-05-q5@2,3: Explain the difference between C7, Cmaj7 and Cm7. | All are seventh chords on C. C7 is a major triad with a minor seventh (C–E–G–B♭), the dominant seventh. Cmaj7 is a major triad with a major seventh (C–E–G–B), a softer, jazzy sound. Cm7 is a minor triad with a minor seventh (C–E♭–G–B♭). | C7 ; Cmaj7 ; Cm7 ; Differences in third and seventh
+Q: What do the letter and suffix of a chord symbol show? | The letter names the root; the suffix shows the quality.
+Q: What are two ways to write C diminished as a chord symbol? | Cdim or C°.
+Q: What notes make up C7? | C–E–G–B♭, a dominant seventh.
+Q: What notes make up Cmaj7? | C–E–G–B, a major seventh.
+Q: What notes make up Cm7? | C–E♭–G–B♭.
+Q: What chord does Cø7 represent? | A half-diminished seventh, also written Cm7♭5.
+Q: What notes make up Csus2? | C, D and G: the third replaced by the second.
+Q: What does Cadd9 mean? | A C triad with an added D, without a seventh.
+Q: What does C/B♭ show? | A C chord over a non-chord bass note, B♭.
+Q: In G major, why might G – D/F♯ – Em be chosen? | D/F♯ gives a smooth stepwise bass, G–F♯–E.
 
 ## The dominant seventh
 LV: Introductory · Application
@@ -255,6 +305,16 @@ M2#music-u03-06-q2@2: What is V7 in F major? | C–E–G–B♭ | C–E–G–B 
 M3#music-u03-06-q3@3: A V4/2 chord has the seventh in the bass. To what chord does it normally resolve, and why? | Ib, because the bass seventh falls a step to the third of the tonic | Ia, because the bass always leaps to the root | IV, because V7 never resolves to I | V, because it repeats the dominant | The seventh in the bass falls a step, giving the tonic in first inversion.
 SEQ1#music-u03-06-q4@2: Order the resolution of V7 to I in C major, from leading note onwards. | B rises to C ; F falls to E ; G in the bass moves to C ; Result: C major chord | Each tendency tone moves to its nearest tonic-chord note.
 SA2#music-u03-06-q5@2,3: Explain why the dominant seventh creates strong tension that resolves to the tonic. | It combines the leading note, a semitone below the tonic, with the fourth degree, a semitone above the third of the tonic, forming an unstable tritone. Both notes have strong tendencies: the leading note rises and the seventh falls, resolving the tritone to a third in the tonic chord. The root moving by fifth to the tonic adds a strong bass motion. | Leading note ; Seventh tendency ; Tritone instability ; Bass motion by fifth
+Q: What interval does the dominant seventh add to the dominant triad? | A minor seventh above the root.
+Q: Between which notes is the tritone in V7 of C major? | B, the leading note, and F, the fourth degree.
+Q: How does the leading note of V7 resolve? | It rises a semitone to the tonic.
+Q: Where does the root of V7 usually move in the bass? | To the tonic, as G to C.
+Q: Which note of V7 is often omitted in four-part writing? | The fifth.
+Q: What are the notes of V7 in D major? | A–C♯–E–G.
+Q: What is the first inversion of V7 called? | V6/5, with the third in the bass.
+Q: What is the second inversion of V7 called? | V4/3, with the fifth in the bass.
+Q: How does the tritone of V7 resolve? | Inwards: the leading note rises and the seventh falls.
+Q: Why is V7 to I such a strong progression? | Its tritone resolves, the leading note rising and the seventh falling, giving the strongest move to the tonic.
 
 ## Types of seventh chord
 LV: Intermediate · Application
@@ -297,6 +357,16 @@ M2#music-u03-07-q2@2: What type of chord is E–G♯–B–D? | Dominant seventh
 M3#music-u03-07-q3@3: A student spells the diminished seventh on G♯ as G♯–B–D–F. Is this correct, and why? | Yes: G♯–B, B–D and D–F are all minor thirds, using alternate letters | No: it should be G♯–C–D♯–F♯ | No: diminished sevenths have only three notes | No: it should be G–B♭–D♭–F♭ | Stacked minor thirds on alternate letters give G♯–B–D–F, the vii°7 of A minor.
 MATCH1#music-u03-07-q4@1: Match each chord to its type. | C–E–G–B = Major seventh ; C–E–G–B♭ = Dominant seventh ; C–E♭–G♭–B♭ = Half-diminished ; C–E♭–G♭–B𝄫 = Diminished seventh | The triad and seventh together name each chord.
 SA2#music-u03-07-q5@2,3: Explain how to identify the type of any seventh chord. | Arrange the notes in thirds to find the root. Identify the quality of the triad formed by the bottom three notes: major, minor or diminished. Then find the interval from root to seventh: major, minor or diminished. The combination names the chord: major triad + major seventh = major seventh; major + minor = dominant; minor + minor = minor seventh; diminished + minor = half-diminished; diminished + diminished = diminished seventh. | Find root ; Triad quality ; Seventh quality ; Combination names
+Q: What is a seventh chord? | A triad with a seventh added above the root.
+Q: How does a major seventh chord sound, and where is it common? | Soft and lush; it is common in jazz and pop.
+Q: How does a minor seventh chord sound? | Mellow.
+Q: What notes make up the half-diminished seventh on C? | C–E♭–G♭–B♭.
+Q: What notes make up the fully diminished seventh on C? | C–E♭–G♭–B double-flat.
+Q: What is a fully diminished seventh chord made of? | Stacked minor thirds; it sounds very tense.
+Q: How do you identify the type of a seventh chord? | Identify the triad (major, minor or diminished), then the seventh above the root (major, minor or diminished).
+Q: Name the chord F–A–C–E. | Fmaj7: a major triad with a major seventh.
+Q: Why is the diminished seventh on C spelt with B double-flat rather than A? | Seventh chords use alternate letter names, so the seventh above C must use the letter B.
+Q: What distinguishes a fully diminished seventh from a half-diminished one? | The fully diminished has a diminished seventh above the root; the half-diminished has a minor seventh.
 
 ## Diatonic seventh chords
 LV: Intermediate · Application
@@ -335,6 +405,16 @@ M2#music-u03-08-q2@2: What are the chords of a ii7–V7–I in D major? | Em7 �
 M3#music-u03-08-q3@3: In A harmonic minor, why is the leading-note seventh chord fully diminished rather than half-diminished? | The raised seventh, G♯, forms G♯–B–D–F, all minor thirds | Because the natural minor has no seventh degree | Because minor keys use only augmented chords | It is half-diminished in every minor key | With G♯, the chord is a stack of minor thirds, giving a diminished seventh.
 TF1#music-u03-08-q4@1: In a major key, the chord on the leading note is half-diminished. | true | viiø7 is a diminished triad with a minor seventh.
 SA2#music-u03-08-q5@2,3: Explain why the ii7–V7–I progression sounds so strongly directed towards the tonic. | Its roots fall by fifths, the strongest root motion in tonal music, ending on the tonic. Each chord's seventh resolves down by step to the third of the next chord, giving smooth voice leading. V7 contains the leading note and the tritone, which resolve into I. ii prepares V as a predominant, so the progression follows tonic-predominant-dominant-tonic logic. | Roots by fifths ; Sevenths resolve down ; V7 tension ; Predominant function
+Q: What are the diatonic seventh chords of C major? | Cmaj7, Dm7, Em7, Fmaj7, G7, Am7, Bø7.
+Q: Which diatonic seventh chords in a major key are major sevenths? | Imaj7 and IVmaj7.
+Q: What is the leading-note seventh chord in a minor key, using harmonic minor? | Fully diminished, vii°7, such as G♯°7 in A minor.
+Q: What is ii7 in a minor key? | Half-diminished, iiø7, such as Bø7 in A minor.
+Q: What is V7 in A minor? | E7, a dominant seventh using the raised leading note.
+Q: How do the roots move in a ii7–V7–I progression? | They fall by fifths, as D–G–C in C major.
+Q: How do the sevenths behave in a ii7–V7–I progression? | Each chord's seventh resolves down by step into the next chord.
+Q: What are the chords of ii7–V7–I in B♭ major? | Cm7, F7 and B♭maj7.
+Q: In which style is ii7–V7–I described as the backbone of harmony? | Jazz, though it is also common in classical music.
+Q: What is voice leading? | The way individual parts move from chord to chord.
 
 ## Tonic, predominant and dominant function
 LV: Intermediate · Application
@@ -375,6 +455,16 @@ M2#music-u03-09-q2@2: In C major, which progression follows the T–PD–D–T m
 M3#music-u03-09-q3@3: A song repeats the progression V–IV–I. How does this relate to the functional model? | It reverses the usual PD–D order, common in rock and blues but less so in common-practice style | It follows the common-practice model exactly | It contains no functional harmony at all | IV is a dominant chord in this case | Moving from dominant to subdominant is a retrogression in classical terms but typical in blues-based music.
 MATCH1#music-u03-09-q4@1: Match each chord in C major to its function. | C major = Tonic ; A minor = Tonic substitute ; D minor = Predominant ; G7 = Dominant | Function depends on the chord's role in moving towards or away from the tonic.
 SA2#music-u03-09-q5@2,3: Explain the typical phrase model in tonal harmony and why it is effective. | Phrases often begin on the tonic, move to a predominant chord such as IV or ii, then to the dominant V or V7, and resolve to the tonic. This creates a cycle of stability, departure, tension and resolution. The predominant prepares the dominant smoothly, often with bass motion by step or fifth, and the dominant's leading note and tritone make the return to the tonic feel inevitable. | Stability ; Departure and preparation ; Tension ; Resolution
+Q: Which chords can substitute for I as tonic-function chords? | vi and iii.
+Q: Which chords have dominant function? | V, V7 and vii°.
+Q: What is the typical functional phrase model? | Tonic, predominant, dominant, tonic: T–PD–D–T.
+Q: Give two progressions that follow T–PD–D–T. | I–IV–V–I and I–ii6–V7–I.
+Q: What is a retrogression, and where is it common? | A progression against the usual order, such as V–IV; rare in common-practice style but frequent in rock and blues.
+Q: Label the functions in G – Em – C – D7 – G. | Tonic, tonic substitute, predominant, dominant, tonic.
+Q: Why do chords that share two notes often share function? | Their similar content lets one stand in for the other, as vi for I or ii for IV.
+Q: Which cadence uses vi as a tonic substitute? | The interrupted cadence, V–vi.
+Q: What does a predominant chord do? | It moves away from the tonic and prepares the dominant.
+Q: Why is thinking in functions better than treating Roman numerals as unrelated chords? | It shows why progressions work and why some chords can replace each other.
 
 ## Progressions by fifth and the circle of fifths sequence
 LV: Intermediate · Application
@@ -416,6 +506,16 @@ M2#music-u03-10-q2@2: What chord comes after Em in a circle of fifths sequence i
 M3#music-u03-10-q3@3: Why does a diatonic circle of fifths sequence in C major include B diminished? | To stay within the key, the fifth from F must fall to B, giving a diminished fifth and a diminished chord | Because B diminished is the tonic of C major | Because sequences must include all chord qualities | Because perfect fifths are forbidden in sequences | F to B♭ would leave the key; F to B is a diminished fifth, producing vii°.
 SEQ1#music-u03-10-q4@1: Order the circle of fifths sequence in C major, starting from C. | C ; F ; B° ; Em ; Am ; Dm ; G ; C | Each root falls a fifth (one a diminished fifth) through all the diatonic chords.
 SA2#music-u03-10-q5@2,3: Explain why circle-of-fifths sequences were popular in Baroque music. | They create a strong sense of forward motion through repeated falling-fifth root motion, ending on the tonic. They allow composers to extend phrases and modulate through closely related keys. The repeated pattern gives coherence while moving harmonically, and suspensions and sevenths can decorate each step, as in Vivaldi's and Handel's sequences. | Forward motion ; Extension and modulation ; Coherence through repetition ; Decoration
+Q: What is root motion? | The interval by which the roots of successive chords move.
+Q: Why does a falling fifth create forward motion? | The root of the first chord becomes the fifth of the next.
+Q: What is a falling-third progression like? | Smooth, because the chords share two notes, as in I–vi.
+Q: Give an example of a rising-second progression. | IV–V.
+Q: What is the diatonic circle of fifths sequence in C major? | C – F – B° – Em – Am – Dm – G – C.
+Q: What is the circle of fifths sequence in A minor? | Am – Dm – G – C – F – B° – E – Am.
+Q: What is a harmonic sequence? | A pattern of chords repeated at different pitch levels.
+Q: Which Baroque composers used circle of fifths sequences extensively? | Vivaldi, Handel and Bach.
+Q: Name a jazz standard and a pop song that use circle-of-fifths progressions. | Autumn Leaves, and Gloria Gaynor's I Will Survive.
+Q: In the major-key diatonic circle, which step is a diminished fifth? | IV to vii°, such as F to B in C major.
 
 ## Harmonic rhythm
 LV: Intermediate · Application
@@ -458,6 +558,16 @@ M2#music-u03-11-q2@2: Which style typically has a new chord on almost every beat
 M3#music-u03-11-q3@3: A student's phrase has a new chord on every quaver until the final bar, which holds the tonic. What is the likely effect? | Restless, with no build-up, as the harmony doesn't accelerate towards the cadence | A typical Classical phrase with clear acceleration | A minimalist effect of very slow change | No effect, because harmonic rhythm doesn't matter | Constant fast changes remove the contrast that makes a cadence feel like arrival.
 TF1#music-u03-11-q4@1: Harmonic rhythm is the same as the rhythm of the melody. | false | Harmonic rhythm is the rate of chord change, which can differ greatly from melodic rhythm.
 SA2#music-u03-11-q5@2,3: Explain why harmonic rhythm often speeds up towards a cadence. | Faster chord changes increase momentum and tension, signalling the approach to the end of a phrase. Predominant and dominant chords are packed into the bars before the cadence, often two per bar, then the arrival on the tonic is held. The contrast between quicker movement and the final sustained chord makes the cadence feel conclusive. | Momentum and tension ; Predominant and dominant packed in ; Held arrival ; Contrast creates closure
+Q: Is harmonic rhythm tied to the melody's rhythm? | No: it is independent; a fast melody can sit over one sustained chord.
+Q: What is slow harmonic rhythm? | Chords that change rarely, such as one chord held for several bars.
+Q: How do opening phrases often treat harmony? | They often prolong the tonic, giving stability at the start.
+Q: On which beats do chord changes usually fall? | On strong beats; changes across the barline can weaken or syncopate the effect.
+Q: What is the typical harmonic rhythm in Classical style? | Slower and regular, often one or two chords a bar, with acceleration at cadences.
+Q: What is the typical harmonic rhythm in popular music? | Often one chord per bar or two bars, in repeating loops.
+Q: What is the harmonic rhythm of minimalism like? | Very slow, sometimes one harmony for many bars.
+Q: Why does accelerating harmonic rhythm towards a cadence matter? | It creates drive into the cadence.
+Q: In an eight-bar Classical phrase, how might bar 7 differ from bars 1–4? | Bars 1–4 have one chord per bar or two; bar 7 has two, such as ii6 and V7.
+Q: What is a cadence? | A harmonic progression marking the end of a phrase.
 
 ## Harmonising a melody
 LV: Intermediate · Application
@@ -503,6 +613,16 @@ M2#music-u03-12-q2@2: In C major, which chords contain the melody note E? | C ma
 M3#music-u03-12-q3@3: A student's outer parts move from C–G to D–A. What is the problem in common-practice style? | Parallel fifths between the outer parts | Parallel thirds, which are always forbidden | Contrary motion, which weakens harmony | There is no problem with this motion | Moving a perfect fifth to another perfect fifth in the same direction gives parallel fifths.
 SEQ1#music-u03-12-q4@1: Order the steps of the harmonisation method. | Identify the key ; Plan the cadences ; Choose chords for each note ; Write the bass ; Fill in inner parts | Working from the overall plan to the details gives coherent harmony.
 SA2#music-u03-12-q5@2,3: Explain how to choose between possible chords for a melody note. | List the three diatonic chords containing the note. Choose the one that fits the phrase's progression, favouring T–PD–D–T movement and planned cadences. Consider the harmonic rhythm, so chords change mainly on strong beats. Choose a chord that gives a good bass line in contrary motion and avoids parallel fifths and octaves. Prefer primary triads at cadences. | List options ; Functional progression ; Harmonic rhythm ; Bass and voice leading
+Q: What should you identify before planning chords for a melody? | The key and any modulation.
+Q: Which cadence types might be planned at phrase ends? | Perfect, imperfect, plagal and interrupted.
+Q: What logic should a harmonisation's progression follow? | Tonic–predominant–dominant–tonic, with a sensible harmonic rhythm.
+Q: What motion should the bass mainly have against the melody? | Contrary motion, with some inversions for smoothness.
+Q: How should inner parts move in four-part writing? | Kept close and moving by step.
+Q: Why check the outer parts first in a harmonisation exercise? | A good melody and bass in contrary motion carry most of the musical effect; inner parts can be adjusted afterwards.
+Q: What makes a cadence weak in a harmonisation? | For example, ending on an inverted tonic.
+Q: How might the first phrase of Twinkle Twinkle in C end with an imperfect cadence? | Harmonise C C G G A A G as C – C – C – C – F – F – G, ending on V.
+Q: What fault occurs when a chord doesn't contain the melody note on a strong beat? | The harmony clashes with the melody at an important point.
+Q: Why plan cadences before choosing other chords? | Working back from cadences gives a coherent progression and good harmonic rhythm, rather than note-by-note choices.
 
 ## Secondary dominants
 LV: Intermediate · Application
@@ -546,6 +666,16 @@ M2#music-u03-13-q2@2: In F major, what is V7/vi? | A7 (A–C♯–E–G) | C7 (C
 M3#music-u03-13-q3@3: Why can't vii° be tonicised by a secondary dominant? | A diminished triad can't act as a tonic, so it has no key to tonicise | vii° already has its own secondary dominant | vii° is always major | vii° contains the tonic note | Only major and minor triads can serve as temporary tonics.
 TF1#music-u03-13-q4@1: A secondary dominant always causes a modulation to a new key. | false | Tonicisation is brief; modulation requires the new key to be established, usually by a cadence.
 SA2#music-u03-13-q5@2,3: Explain how to identify and label a secondary dominant in a passage. | Look for a major triad or dominant seventh with an accidental not in the key, often a raised note acting as a leading note. Check whether it resolves to a chord whose root is a fifth below it. If so, label it V (or V7) over that target: for example, D7 resolving to G in C major is V7/V. Distinguish this from modulation by checking whether a cadence establishes a new key. | Chromatic note ; Resolution down a fifth ; Slash label ; Distinguish from modulation
+Q: Which diatonic chords can be preceded by a secondary dominant? | Any major or minor diatonic chord.
+Q: How do you build a secondary dominant? | Build a major triad or dominant seventh a fifth above the target chord's root.
+Q: What is the raised note in a secondary dominant usually? | The temporary leading note of the target chord.
+Q: What is V7/ii in C major? | A7 (A–C♯–E–G); C♯ leads to D.
+Q: What is V/IV in C major, and how does its B♭ move? | C7 (C–E–G–B♭); the B♭ falls to A.
+Q: What is V/vi in C major? | E major (E–G♯–B); G♯ leads to A.
+Q: How does a secondary dominant normally resolve? | To its target chord, just as V resolves to I.
+Q: What are vii°/x chords? | Leading-note chords of other degrees, acting like secondary dominants.
+Q: What three effects do secondary dominants have? | They add chromatic colour, strengthen progressions such as V/V–V–I, and can lead to modulation.
+Q: When does tonicisation become modulation? | When the new key is established, usually by a cadence.
 
 ## Modulation to related keys
 LV: Intermediate · Application
@@ -589,6 +719,16 @@ M2#music-u03-14-q2@2: A passage in F major introduces B♮ and ends with a G7–
 M3#music-u03-14-q3@3: A piece in G major has one D7 chord resolving to G, then continues in G. A student calls this a modulation to D. What is wrong? | D7 is simply V7 of G; there is no new key and no cadence elsewhere | Nothing: any dominant seventh means a modulation | D7 belongs only to D major | The student should call it a modulation to C | D7–G is a perfect cadence in the home key.
 MATCH1#music-u03-14-q4@1: Match each key to its dominant. | C major = G major ; F major = C major ; D major = A major ; B♭ major = F major | The dominant key is a perfect fifth above the tonic.
 SA2#music-u03-14-q5@2,3: Explain how a composer could modulate smoothly from C major to E minor. | Choose a pivot chord common to both keys: A minor (vi in C, iv in E minor) or C major (I in C, VI in E minor), or E minor itself (iii in C, i in E minor). After the pivot, introduce D♯, the leading note of E minor, in B major or B7 (V in E minor), and cadence on E minor to confirm the new key. | Pivot chord choice ; Dual function explained ; New leading note in V ; Confirming cadence
+Q: What is modulation? | A change of key, confirmed by a cadence in the new key.
+Q: Which keys are closely related to C major? | G major, F major, A minor, E minor and D minor.
+Q: Which chord can pivot from C major to G major? | A minor, which is vi in C and ii in G.
+Q: What is a chromatic or direct modulation? | A sudden move to a new key, often after a cadence or a pause.
+Q: What is usually the first sign of a modulation? | The new key's leading note, such as F♯ for G major.
+Q: Without a cadence in the new key, what is a brief move towards it? | Only a tonicisation.
+Q: In modulating from D major to A major, which chord can be the pivot? | B minor, which is vi in D and ii in A.
+Q: Which key do major-key pieces most often modulate to? | The dominant.
+Q: In a sonata form exposition, where is the second subject usually? | In the dominant for major keys or the relative major for minor keys.
+Q: Why isn't every accidental a modulation? | A single chromatic chord is often a secondary dominant or decoration; a modulation needs a cadence in the new key.
 
 ## Modal mixture
 LV: Intermediate · Application
@@ -631,6 +771,16 @@ M2#music-u03-15-q2@2: What notes make up ♭VII in D major? | C–E–G | C♯�
 M3#music-u03-15-q3@3: A song in C major uses an F minor chord then returns to C major with no new cadence. How should it be described? | Modal mixture: iv borrowed from C minor | A modulation to F minor | A secondary dominant of IV | A modulation to the relative minor | The tonic remains C; borrowing iv adds colour without changing key.
 TF1#music-u03-15-q4@1: Modal mixture changes the tonic of a piece. | false | The tonic stays the same; only chord colours change.
 SA2#music-u03-15-q5@2,3: Explain why modal mixture is effective in expressive music. | Tonic major and minor share a tonic and dominant, so borrowed chords fit naturally into the major key. Chords such as iv, ♭VI and ii° introduce lowered sixth and third degrees, darkening the colour, creating poignancy or surprise. Composers use them at emotional moments or cadences, and in pop ♭VI and ♭VII give a bold, open sound. | Shared tonic and dominant ; Lowered degrees ; Expressive effect ; Examples
+Q: What is modal mixture? | Borrowing chords from the parallel mode while keeping the same tonic.
+Q: Why do borrowed chords fit easily into a major key? | The tonic major and minor share a tonic and dominant.
+Q: What colour do chords borrowed from the minor add? | A darker colour.
+Q: What is the minor subdominant in C major? | F minor (F–A♭–C), labelled iv.
+Q: What is ♭VII in C major? | B♭ major.
+Q: What is ♭III in C major? | E♭ major.
+Q: Describe a plagal ending with mixture in C major. | IV (F major) to iv (F minor) to I, with A♭ falling to G: a wistful effect.
+Q: What effect does ♭VI–♭VII–I have in pop? | A heroic or anthemic sound, as A♭–B♭–C in C major.
+Q: How are borrowed chords with lowered roots labelled? | With a flat before the Roman numeral, such as ♭VI, ♭III and ♭VII.
+Q: Does modal mixture change the key? | No: the tonic stays the same; mixture changes colour, not key.
 
 ## The Neapolitan sixth
 LV: Intermediate · Application
@@ -672,6 +822,16 @@ M2#music-u03-16-q2@2: What chord usually follows N6? | V, often through a cadent
 M3#music-u03-16-q3@3: A student spells the Neapolitan in G minor as G♯–B♯–D♯. What is wrong? | It should be built on lowered 2: A♭–C–E♭ | Nothing: sharpened chords are correct | It should be built on the leading note | It should be a minor triad | The Neapolitan is a major triad on ♭2, which in G minor is A♭.
 TF1#music-u03-16-q4@1: The Neapolitan chord functions as a predominant. | true | Like iv and ii°, it prepares the dominant.
 SA2#music-u03-16-q5@2,3: Explain how the Neapolitan sixth chord is built and how it resolves. | Take the second degree of the scale and lower it; build a major triad on it, such as D♭–F–A♭ in C minor, and place the third (F, the fourth degree) in the bass. It functions as a predominant: it moves to V, often via Ic. The ♭2 falls, either directly to the leading note (a diminished third) or through the tonic in the cadential 6/4, giving dark chromatic colour. | Lowered second degree ; Major triad, first inversion ; Predominant to V ; Voice leading of ♭2
+Q: What is the Neapolitan chord? | A major triad on the flattened second degree, ♭II.
+Q: What notes make up the Neapolitan sixth in C minor? | D♭–F–A♭, with F in the bass.
+Q: Which degree is in the bass of the Neapolitan sixth? | The fourth degree.
+Q: What progression with a cadential 6/4 commonly follows N6? | N6–Ic–V–i.
+Q: How does the ♭2 of the Neapolitan usually move? | It falls to the leading note, a diminished third, or passes through the tonic in the cadential 6/4.
+Q: In which mode is the Neapolitan more common, and why? | Minor keys, where it fits naturally.
+Q: What is the Neapolitan sixth in A minor? | B♭ major with D in the bass.
+Q: Where does the Neapolitan chord get its name? | From eighteenth-century Neapolitan opera composers.
+Q: Where does Beethoven use a Neapolitan in the Moonlight Sonata? | In bar 3 of the first movement.
+Q: What is a diminished third? | An interval of two semitones spelt as a third, such as D♭ to B.
 
 ## Augmented sixth chords
 LV: Intermediate · Application
@@ -714,6 +874,16 @@ M2#music-u03-17-q2@2: What notes make up a French sixth in G minor? | E♭–G�
 M3#music-u03-17-q3@3: Why does a German sixth usually move to Ic rather than directly to V? | Moving straight to V would create parallel fifths between ♭6–♭3 and 5–2 | Because German sixths can only resolve to I | Because V can't follow any chromatic chord | Because Ic is the tonic in root position | The perfect fifth A♭–E♭ moving to G–D gives parallels; Ic avoids them.
 MATCH1#music-u03-17-q4@1: Match each augmented sixth chord in C to its notes. | Italian = A♭–C–F♯ ; French = A♭–C–D–F♯ ; German = A♭–C–E♭–F♯ ; Dominant seventh enharmonic with German = A♭–C–E♭–G♭ | The added notes distinguish the three types.
 SA2#music-u03-17-q5@2,3: Explain how a German sixth chord can be used for an enharmonic modulation. | A German sixth in C (A♭–C–E♭–F♯) sounds identical to a dominant seventh on A♭ (A♭–C–E♭–G♭) if F♯ is respelt as G♭. A composer can treat it as V7 of D♭ and resolve to D♭ major, moving to a distant key, or reinterpret a dominant seventh as a German sixth. The identical sound with different spelling and function makes the surprise effective. | Identical sound ; Respelling ; Different resolution ; Distant key reached
+Q: Between which degrees is the augmented sixth in these chords? | Between ♭6 in the bass and ♯4 above it.
+Q: What notes make up a French sixth in C? | A♭–C–D–F♯.
+Q: What notes make up a German sixth in C? | A♭–C–E♭–F♯.
+Q: What note does the French sixth add to the Italian? | The second degree.
+Q: What note does the German sixth add to the Italian? | The flattened third degree.
+Q: To which chords do augmented sixth chords usually resolve? | V, or the cadential 6/4 (Ic) before V.
+Q: Which chord does the German sixth sound the same as? | A dominant seventh, such as A♭–C–E♭–G♭.
+Q: How do composers use the German sixth's enharmonic sound? | For enharmonic modulation, reinterpreting it as a dominant seventh.
+Q: What are the notes of the German sixth in A minor? | F–A–C–D♯.
+Q: Why is A♭–F♯ not spelt A♭–G♭? | A♭–F♯ is an augmented sixth that resolves outwards; A♭–G♭ is a minor seventh that resolves differently.
 
 ## The diminished seventh chord
 LV: Intermediate · Application
@@ -753,6 +923,16 @@ M2#music-u03-18-q2@2: What is vii°7 in E minor? | D♯–F♯–A–C | D–F�
 M3#music-u03-18-q3@3: Why can a single diminished seventh chord lead to four different keys? | Its equal minor thirds mean any note can be respelt as the leading note, giving vii°7 of four keys | It contains every note of the chromatic scale | It is a tonic chord in every key | It can only resolve to one key | Symmetry means respelling changes which note acts as the leading note.
 TF1#music-u03-18-q4@1: A diminished seventh chord contains two tritones. | true | B–F and D–A♭ are both tritones in B–D–F–A♭.
 SA2#music-u03-18-q5@2,3: Explain why the diminished seventh is useful for modulation. | Its four notes are equally spaced by minor thirds, so it sounds the same whichever note is treated as the root. By respelling it, a composer can make any of its notes the leading note of a new key and resolve accordingly. This allows sudden moves to keys a minor third apart or more, used for drama, as in Romantic music. | Symmetry ; Respelling ; New leading note and resolution ; Dramatic effect
+Q: On which degree is the diminished seventh chord built? | The leading note of the harmonic minor scale.
+Q: What notes make up vii°7 in C minor? | B–D–F–A♭.
+Q: Which tritones does vii°7 in C minor contain? | B–F and D–A♭.
+Q: How does the seventh of vii°7 resolve? | It falls by step, as A♭ to G in C minor.
+Q: What function does the diminished seventh chord have? | Dominant function: it resolves to the tonic.
+Q: Can the diminished seventh be used in major keys? | Yes, it is often borrowed into major keys.
+Q: Why can any note of a diminished seventh be heard as its root? | It divides the octave into four equal minor thirds.
+Q: Respelt as G♯–B–D–F, the C minor vii°7 belongs to which key? | A minor.
+Q: Why do composers use diminished sevenths for dramatic modulation? | One sound can be respelt as vii°7 of four different keys.
+Q: Why is B–D–F–G♯ not the vii°7 of C minor? | It uses a minor sixth instead of a diminished seventh, a different spelling and function.
 
 ## Extended chords: ninths, elevenths and thirteenths
 LV: Intermediate · Application
@@ -799,4 +979,14 @@ M2#music-u03-19-q2@2: Why is the eleventh often omitted from a dominant thirteen
 M3#music-u03-19-q3@3: A pianist plays all seven notes of a C13 in close position in the left hand, and the sound is muddy. What is the best advice? | Omit the fifth and eleventh, keep the third and seventh, and spread colour tones in the right hand | Add an extra bass note to fill the sound | Play the chord louder | Replace it with a simple C triad | Selective voicings keep quality and colour while avoiding clutter.
 TF1#music-u03-19-q4@1: A Cmaj9 chord contains B♭. | false | Cmaj9 has a major seventh, B natural; C9 has B♭.
 SA2#music-u03-19-q5@2,3: Explain how jazz musicians voice extended chords, using a dominant thirteenth as an example. | They keep the guide tones, the third and seventh, which define the chord, and add colour tones such as the ninth and thirteenth above them. The fifth is usually omitted because it adds little colour, and the eleventh is omitted because it clashes with the third. The root may be left to the bass player. For G13 a pianist might play F and B with E and A above. | Keep third and seventh ; Add colour tones ; Omit fifth and eleventh ; Example
+Q: How are extended chords formed? | By continuing to stack thirds above a seventh chord.
+Q: What notes make up C11? | C–E–G–B♭–D–F.
+Q: Which chord contains all seven notes of the scale? | The thirteenth chord, such as C13.
+Q: What does the chord symbol C9 imply? | A dominant seventh with an added ninth.
+Q: Which note is usually omitted first from an extended chord? | The fifth.
+Q: Where are extensions usually placed in a voicing? | Above the chord tones.
+Q: What altered chord is the Hendrix chord? | A 7♯9 chord.
+Q: Why is ♯11 used instead of the natural eleventh? | It avoids the clash with the major third, giving a Lydian sound.
+Q: What does ♭13 add to a dominant chord? | Dark tension.
+Q: How might a pianist voice G13? | Left hand G and F; right hand B, E and A, omitting the fifth and the eleventh.
 `;

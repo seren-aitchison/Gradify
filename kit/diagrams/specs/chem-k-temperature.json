@@ -1,0 +1,89 @@
+{
+ "id": "chem-k-temperature",
+ "renderer": "graph",
+ "course": "chemistry",
+ "unit": "u08",
+ "lesson": "Temperature and equilibrium",
+ "title": "How K changes with temperature",
+ "caption": "Raising the temperature favours the endothermic direction. For the exothermic Haber process (ΔH = −92 kJ mol⁻¹) K falls as T rises; for the endothermic N₂O₄ ⇌ 2NO₂ (ΔH = +57 kJ mol⁻¹) K rises. Shown as ln(K/K₂₉₈) from the van 't Hoff equation.",
+ "alt": "ln(K/K at 298 K) against temperature from 298 to 500 K: a falling curve for the exothermic reaction and a rising one for the endothermic reaction.",
+ "description": [
+  "Both start at zero at 298 K.",
+  "Exothermic (Haber): ln(K/K₂₉₈) falls to about −15 by 500 K.",
+  "Endothermic (N₂O₄): rises to about +9."
+ ],
+ "range": {
+  "x": [
+   298,
+   500
+  ],
+  "y": [
+   -18,
+   12
+  ]
+ },
+ "ticks": [
+  [
+   300,
+   350,
+   400,
+   450,
+   500
+  ],
+  [
+   -15,
+   -10,
+   -5,
+   0,
+   5,
+   10
+  ]
+ ],
+ "grid": [
+  50,
+  5
+ ],
+ "axisLabels": [
+  "T / K",
+  "ln(K / K₂₉₈)"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "11113.78*(1/x-1/298)",
+   "colour": "a1",
+   "label": "exothermic: N₂ + 3H₂ ⇌ 2NH₃",
+   "labelAt": [
+    330,
+    -12
+   ]
+  },
+  {
+   "expr": "-6879.96*(1/x-1/298)",
+   "colour": "a3",
+   "label": "endothermic: N₂O₄ ⇌ 2NO₂",
+   "labelAt": [
+    330,
+    8
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "order",
+   "a": "11113.78*(1/x-1/298)",
+   "b": "0",
+   "x": 400,
+   "rel": "<",
+   "name": "exothermic: K at 400 K is smaller than at 298 K"
+  },
+  {
+   "type": "order",
+   "a": "-6879.96*(1/x-1/298)",
+   "b": "0",
+   "x": 400,
+   "rel": ">",
+   "name": "endothermic: K at 400 K is larger"
+  }
+ ]
+}

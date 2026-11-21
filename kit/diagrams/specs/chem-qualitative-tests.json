@@ -1,0 +1,96 @@
+{
+ "id": "chem-qualitative-tests",
+ "renderer": "classify",
+ "course": "chemistry",
+ "unit": "u15",
+ "lesson": "Qualitative analysis",
+ "title": "Identifying an anion",
+ "caption": "Test in this order so earlier ions do not interfere: dilute acid first (carbonate fizzes), then acidified barium chloride (sulfate gives a white precipitate), then acidified silver nitrate (halides).",
+ "alt": "A tree: fizzing with dilute acid? carbonate. Otherwise white precipitate with BaCl₂? sulfate. Otherwise precipitate with AgNO₃: white chloride, cream bromide, yellow iodide.",
+ "description": [
+  "Add dilute HNO₃: fizzing, and the gas turns limewater milky: carbonate.",
+  "Add acidified BaCl₂: white precipitate: sulfate.",
+  "Add acidified AgNO₃: white (chloride), cream (bromide) or yellow (iodide)."
+ ],
+ "start": "q1",
+ "rowHeight": 92,
+ "nodes": {
+  "q1": {
+   "q": "Fizzes with dilute acid, gas turns limewater milky?",
+   "yes": "co3",
+   "no": "q2"
+  },
+  "co3": {
+   "leaf": "Carbonate",
+   "examples": [
+    "Na2CO3"
+   ],
+   "tone": "a4"
+  },
+  "q2": {
+   "q": "White precipitate with acidified BaCl₂?",
+   "yes": "so4",
+   "no": "q3"
+  },
+  "so4": {
+   "leaf": "Sulfate",
+   "examples": [
+    "Na2SO4"
+   ],
+   "tone": "a5"
+  },
+  "q3": {
+   "q": "AgNO₃: is the precipitate white?",
+   "yes": "cl",
+   "no": "q4"
+  },
+  "cl": {
+   "leaf": "Chloride",
+   "examples": [
+    "NaCl"
+   ],
+   "tone": "a1"
+  },
+  "q4": {
+   "q": "Is it cream?",
+   "yes": "br",
+   "no": "i"
+  },
+  "br": {
+   "leaf": "Bromide",
+   "examples": [
+    "NaBr"
+   ],
+   "tone": "a3"
+  },
+  "i": {
+   "leaf": "Iodide (yellow)",
+   "examples": [
+    "NaI"
+   ],
+   "tone": "a2"
+  }
+ },
+ "claims": [
+  {
+   "type": "path",
+   "substance": "sodium bromide",
+   "answers": [
+    "no",
+    "no",
+    "no",
+    "yes"
+   ],
+   "leaf": "Bromide"
+  },
+  {
+   "type": "path",
+   "substance": "sodium sulfate",
+   "answers": [
+    "no",
+    "yes"
+   ],
+   "leaf": "Sulfate"
+  }
+ ]
+}

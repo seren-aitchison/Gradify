@@ -34,6 +34,16 @@ SRC: Euler L, Solutio problematis ad geometriam situs pertinentis, Commentarii A
 NUM1#maths-u15-01-q1@1: A graph has 8 vertices, each of degree 3. How many edges does it have? | 12 | 0 |  | Σdeg = 24 = 2|E|, so |E| = 12.
 M1#maths-u15-01-q2@1: What does the degree of a vertex count? | The edges meeting it | Its distance from the centre | The number of vertices in the graph | Its label | The longest path through it | The degree counts the edges meeting a vertex, with a loop counted twice.
 M2#maths-u15-01-q3@2: Why must the number of odd-degree vertices be even? | The total degree 2|E| is even, so odd degrees must pair up | Graphs are symmetric | Every vertex has even degree | Edges have two colours | Loops always add an odd amount to a vertex, which balances out | A sum with an odd number of odd terms would be odd.
+Q: What does graph theory study? | Networks of points (vertices) joined by lines (edges).
+Q: What is a graph? | A set of vertices V and a set of edges E joining pairs of vertices.
+Q: How does a loop count towards a vertex's degree? | It counts twice.
+Q: What does the handshake lemma state? | The sum of all vertex degrees equals 2|E|, since each edge contributes 2.
+Q: Why can't 7 people each shake exactly 3 hands? | The total degree would be 21, which is odd, but it must equal twice the number of edges.
+Q: Which puzzle started graph theory, and when? | Euler's solution of the Königsberg bridges puzzle in 1736.
+Q: What does it mean for two vertices to be adjacent? | They share an edge.
+Q: Name three variations on the basic graph. | Directed graphs, weighted graphs, multigraphs and hypergraphs.
+Q: How many edges does a graph with degrees 3, 3, 2, 2, 2 have? | 6, since the degrees sum to 12.
+Q: What is the common mistake about drawings of graphs? | Assuming two different drawings show different graphs; a graph records connections, not positions.
 
 ## Undirected Graphs
 S: In an undirected graph, edges have no direction: if A is joined to B, then B is joined to A. Simple undirected graphs (no loops or repeated edges) are the standard setting for most of graph theory.
@@ -68,6 +78,16 @@ SRC: Diestel R, Graph Theory (5th edn, Springer 2017) | textbook | 2017 | https:
 NUM1#maths-u15-02-q1@1: How many edges does K₁₀ have? | 45 | 0 |  | C(10, 2) = 45.
 M1#maths-u15-02-q2@1: Which invariant shows two graphs aren't isomorphic? | Different degree sequences | Different vertex labels | Different drawings | Different colours | Different edge lengths | Isomorphisms preserve degrees; labels and drawings don't matter.
 M2#maths-u15-02-q3@2: A graph on 7 vertices has 12 edges. How many does its complement have? | 9 | 12 | 21 | 33 | 7 | K₇ has C(7, 2) = 21 edges, and the complement takes the missing ones: 21 − 12 = 9.
+Q: What is a simple graph? | An undirected graph with no loops and at most one edge between any two vertices.
+Q: How many edges does the complete graph Kₙ have? | n(n − 1)/2.
+Q: What is an adjacency matrix? | A matrix with a_{ij} = 1 if vertices i and j are adjacent, and 0 otherwise.
+Q: When is an adjacency list more efficient than an adjacency matrix? | For sparse graphs with relatively few edges.
+Q: What is the complement of a graph G? | The graph on the same vertices joining exactly the pairs not joined in G.
+Q: What is an induced subgraph? | A subgraph on chosen vertices that keeps all the edges among them.
+Q: When are two graphs isomorphic? | When a relabelling of the vertices maps edges exactly to edges.
+Q: What did Babai find in 2015 about graph isomorphism? | A quasi-polynomial algorithm.
+Q: For any graph G on 6 vertices, what is |E(G)| + |E(Ḡ)|? | 15, the number of edges of K₆.
+Q: What is the common mistake when testing isomorphism? | Concluding graphs are isomorphic just because they have the same numbers of vertices and edges.
 
 ## Directed Graphs
 S: In a directed graph (digraph), edges have directions, like one-way streets, web links or "follows" on social media. Directions change everything: reachability, connectivity and degree all split into "in" and "out".
@@ -102,6 +122,16 @@ SRC: West DB, Introduction to Graph Theory (2nd edn, Pearson 2001) | textbook | 
 NUM1#maths-u15-03-q1@1: A digraph has 15 arcs. What is the sum of all out-degrees? | 15 | 0 |  | Each arc leaves exactly one vertex.
 M1#maths-u15-03-q2@1: Which describes a strongly connected digraph? | Every vertex can reach every other along directed paths | It has no cycles | All arcs point the same way | It's connected when directions are ignored | Every vertex has in-degree 1 | Strong connectivity respects the arc directions.
 M2#maths-u15-03-q3@2: Why does every tournament contain a Hamiltonian path? | It can be built by inserting vertices one at a time into a growing path | Tournaments are complete undirected graphs | Every tournament is strongly connected | Each vertex beats exactly half of the others, forming a ring | Tournaments have no cycles | Rédei's theorem: each new vertex fits somewhere in the existing directed path.
+Q: What is a directed graph? | A graph whose edges are ordered pairs (arcs) u → v with a direction.
+Q: What are the in-degree and out-degree of a vertex? | The numbers of arcs entering and leaving it.
+Q: What is a source in a digraph? | A vertex with in-degree 0.
+Q: What is a strongly connected digraph? | One where every vertex reaches every other along directed paths.
+Q: What is a weakly connected digraph? | One that is connected when the directions are ignored.
+Q: What is a tournament? | A digraph where every pair of vertices is joined by exactly one arc, like round-robin results.
+Q: Name three real examples of directed graphs. | Web links, food webs, citation networks, task dependencies or social media follows.
+Q: What do the in-degrees of a digraph sum to? | The number of arcs, the same as the out-degrees.
+Q: In the digraph with arcs 1→2, 1→3, 2→3, 3→1, what is the one walk of length 2 from 1 to 3? | 1 → 2 → 3.
+Q: What is the common mistake with a digraph's adjacency matrix? | Treating it as symmetric; in general it isn't.
 
 ## Weighted Graphs
 S: A weighted graph attaches a number to each edge: a distance, cost, time, capacity or strength. Weights turn graphs into models of road networks, pipelines and budgets, and they're the input to shortest path and spanning tree algorithms.
@@ -137,6 +167,16 @@ SRC: Department for Education, AS and A level further mathematics subject conten
 NUM1#maths-u15-04-q1@1: Find the weight of the path with edges weighted 3, 7, 2 and 6. | 18 | 0 |  | 3 + 7 + 2 + 6 = 18.
 M1#maths-u15-04-q2@1: In a pipeline network, what do edge weights most naturally represent? | Capacities | Colours | Vertex degrees | Path counts | Planarity | Pipes limit how much can flow, a capacity.
 M2#maths-u15-04-q3@2: Why can negative edge weights cause trouble for shortest path problems? | A negative cycle can make paths arbitrarily cheap | They make graphs undirected | They create extra vertices | They're never allowed | Algorithms must then treat every edge as undirected | Going round a negative cycle repeatedly reduces the total without limit.
+Q: What is a weighted graph? | A graph with a number, its weight, on each edge.
+Q: What is the weight of a path? | The sum of the weights of its edges.
+Q: Name four things edge weights can represent. | Distance, cost, time, capacity or strength of ties.
+Q: How do directed weighted graphs model asymmetric costs? | Each direction gets its own weight, as with uphill versus downhill or one-way fares.
+Q: What do capacities on edges limit? | Flow through the network.
+Q: Which problem minimises the total cost of building links? | The minimum spanning tree problem.
+Q: Of A–B–D with weights 4 and 5 and A–C–D with weights 2 and 8, which route is cheaper? | A–B–D, with total 9 against 10.
+Q: What can negative weights allow besides breaking Dijkstra's algorithm? | Negative cycles.
+Q: What must be consistent across all edges of a weighted graph? | The units of the weights.
+Q: What is the common mistake when comparing weighted paths? | Comparing by number of edges when the question is about total weight.
 
 ## Degree Sequences
 S: A graph's degree sequence lists its vertex degrees. Deciding which lists are possible, and building graphs to match them, is useful in network modelling and chemistry, and the Havel–Hakimi algorithm does it step by step.
@@ -171,6 +211,16 @@ SRC: West DB, Introduction to Graph Theory (2nd edn, Pearson 2001) | textbook | 
 NUM1#maths-u15-05-q1@1: How many edges does a graph with degree sequence (4, 3, 3, 2, 2) have? | 7 | 0 |  | Σdeg = 14, so |E| = 7.
 M1#maths-u15-05-q2@1: Which sequence is graphical? | (2, 2, 1, 1) | (3, 1, 1) | (3, 3, 1, 1) | (1, 1, 1) | (5, 1, 1, 1, 1) | (2, 2, 1, 1) is the degree sequence of a path on four vertices, so it's graphical.
 M3#maths-u15-05-q3@2: Why isn't (3, 3, 1, 1) graphical? | Two degree-3 vertices on 4 vertices must each join all others, giving the others degree ≥ 2 | Repeated degrees force a multiple edge between those vertices | Degrees can't repeat | It has too few vertices for any graph | It is graphical | Each degree-3 vertex is adjacent to every other vertex, contradicting degree 1.
+Q: What is a degree sequence? | The list of a graph's vertex degrees.
+Q: What is a graphical sequence? | A list of non-negative integers that is the degree sequence of some simple graph.
+Q: How does the Havel–Hakimi algorithm work? | Remove the largest degree d and subtract 1 from the next d largest, repeating; it's graphical iff you reach all zeros.
+Q: What are two necessary conditions for a sequence to be graphical on n vertices? | The sum must be even, and no degree can exceed n − 1.
+Q: Why is (3, 3, 3, 1) not graphical? | Havel–Hakimi produces a negative degree, even though the sum is even.
+Q: Which inequalities give an exact criterion for graphical sequences? | The Erdős–Gallai inequalities.
+Q: Can different graphs share the same degree sequence? | Yes, many different graphs can share one.
+Q: What is the configuration model? | A way of building random graphs with a given degree sequence, used in network science.
+Q: How do degree sequences constrain molecules in chemistry? | Valences fix the degrees of atoms in molecular graphs.
+Q: What is the common mistake about degree sums? | Assuming an even sum is enough for a sequence to be graphical.
 
 ## Paths and Cycles
 S: Paths and cycles are the routes through a graph. They measure distance, decide connectivity and bipartiteness, and underlie most graph algorithms.
@@ -208,6 +258,16 @@ SRC: Bondy JA, Murty USR, Graph Theory (Springer 2008) | textbook | 2008 | https
 NUM1#maths-u15-06-q1@1: What is the diameter of the cycle C₉? | 4 | 0 |  | ⌊9/2⌋ = 4.
 M1#maths-u15-06-q2@1: Which sequence is a path in a graph (assuming the edges exist)? | A–B–C–D | A–B–A–C | A–B–C–A–D | A–A–B | B–C–B | A–B–C–D visits each vertex at most once; the others repeat a vertex.
 M2#maths-u15-06-q3@2: Why does a graph with an odd cycle fail to be bipartite? | Alternating two colours around an odd cycle forces two adjacent vertices to share a colour | Odd cycles have no edges | Bipartite graphs have no cycles | Any graph containing a cycle needs at least three colours | Odd cycles have loops | Two-colouring a cycle needs an even number of vertices.
+Q: What is the difference between a walk, a trail and a path? | A walk may repeat anything, a trail repeats no edges, and a path repeats no vertices.
+Q: What is a cycle in a graph? | A closed path that returns to its start with no other repeated vertices.
+Q: What is the distance d(u, v)? | The length of a shortest path from u to v.
+Q: What is the girth of a graph? | The length of its shortest cycle.
+Q: What is the diameter of a connected graph? | The greatest distance between any two of its vertices.
+Q: What is the criterion for a graph to be bipartite in terms of cycles? | It's bipartite iff it has no odd cycle.
+Q: What must a graph with minimum degree at least 2 contain? | A cycle.
+Q: What are the diameters of Cₙ and Pₙ? | ⌊n/2⌋ for the cycle and n − 1 for the path.
+Q: What are the girth and diameter of the Petersen graph? | Girth 5 and diameter 2.
+Q: What is the common mistake about walks and paths? | Calling any walk between two vertices a path.
 
 ## Graph Connectivity
 S: Connectivity measures how well a graph holds together: whether every vertex can reach every other, and how many vertices or edges must fail before it falls apart. It's the mathematics of network reliability.
@@ -242,6 +302,16 @@ SRC: Menger K, Zur allgemeinen Kurventheorie, Fundamenta Mathematicae 10, 96 | j
 NUM1#maths-u15-07-q1@1: What is the minimum number of edges in a connected graph with 20 vertices? | 19 | 0 |  | A spanning tree needs n − 1 = 19 edges.
 M1#maths-u15-07-q2@1: In a tree, which edges are bridges? | All of them | None of them | Only the leaves' edges | Only the longest one | Exactly half | Trees have no cycles, so every edge is a bridge.
 M2#maths-u15-07-q3@2: What does Menger's theorem say about vertices u and v? | The fewest vertices separating them equals the most internally disjoint paths between them | They're always adjacent | They have the same degree | Every path between them is shortest | Every shortest path between them passes through a cut vertex | It's the min-cut/max-paths duality for separating vertex sets.
+Q: What does connectivity measure? | How well a graph holds together and how many failures it takes to break it apart.
+Q: What is a component of a graph? | A maximal connected piece.
+Q: What is a cut vertex? | A vertex whose removal disconnects the graph.
+Q: What is a bridge? | An edge whose removal disconnects its component.
+Q: What is vertex connectivity κ(G)? | The fewest vertices whose removal disconnects G or leaves one vertex.
+Q: What does it mean for a graph to be k-connected? | It survives the removal of any k − 1 vertices.
+Q: What is the edge version of Menger's theorem? | The minimum edge cut equals the maximum number of edge-disjoint paths.
+Q: In two triangles sharing a single vertex v, what are the weak points? | v is a cut vertex, but there are no bridges since every edge lies on a triangle.
+Q: Which network theorem is linked to the edge version of Menger's theorem? | The max-flow min-cut theorem.
+Q: What is the common mistake about cut vertices and bridges? | Assuming that having no cut vertices means having no bridges, or vice versa.
 
 ## Trees
 S: A tree is a connected graph with no cycles: the simplest connected structure. Trees have exactly one path between any two vertices, n − 1 edges on n vertices, and appear as family trees, file systems, parse trees and evolutionary trees.
@@ -277,6 +347,16 @@ SRC: Cayley A, A theorem on trees, Quarterly Journal of Pure and Applied Mathema
 NUM1#maths-u15-08-q1@1: Using Cayley's formula, how many labelled trees are there on 5 vertices? | 125 | 0 |  | 5^{3} = 125.
 M1#maths-u15-08-q2@1: Which graph is a tree? | A path on 6 vertices | A cycle on 6 vertices | K₄ | Two disjoint edges | A triangle with a pendant edge | A path is connected and has no cycles, which is exactly the definition of a tree.
 M2#maths-u15-08-q3@2: A connected graph has 10 vertices and 10 edges. What must it contain? | Exactly one cycle | No cycles | At least two cycles | A vertex of degree 10 | A bridge in every position | One more edge than a spanning tree creates exactly one cycle.
+Q: What is a tree? | A connected graph with no cycles.
+Q: What is a leaf of a tree? | A vertex of degree 1.
+Q: How many edges does a tree on n vertices have? | n − 1.
+Q: How many paths join any two vertices of a tree? | Exactly one.
+Q: How many leaves must a tree with at least 2 vertices have? | At least 2.
+Q: What happens if you remove an edge from a tree? | The tree becomes disconnected.
+Q: What does Cayley's formula state? | There are n^{n−2} labelled trees on n vertices.
+Q: What do Prüfer codes provide? | A bijection between labelled trees on n vertices and sequences of length n − 2.
+Q: How do the 16 labelled trees on 4 vertices split? | Into 12 paths and 4 stars.
+Q: What is the common mistake when deciding that a graph is a tree? | Assuming n − 1 edges is enough without checking it is connected or acyclic.
 
 ## Trees and Forests
 S: A forest is a graph with no cycles: a collection of trees. Forests appear when data split into separate hierarchies, and counting their edges and components is a simple but powerful tool in algorithms such as Kruskal's.
@@ -311,6 +391,16 @@ SRC: Tarjan RE, Efficiency of a good but not linear set union algorithm, Journal
 NUM1#maths-u15-09-q1@1: A forest has 40 vertices and 31 edges. How many trees does it contain? | 9 | 0 |  | c = n − edges = 40 − 31 = 9.
 M1#maths-u15-09-q2@1: Which graph is a forest but not a tree? | Two separate paths | A single path | A cycle | K₃ | A star | Two separate paths are acyclic, but with two components the graph isn't connected.
 M3#maths-u15-09-q3@2: Why is union–find almost constant time per operation? | Union by rank and path compression keep trees extremely shallow | It uses no memory | It only works on paths | It sorts the vertices first | Sorting the vertices first makes every lookup a single step | Their combined cost grows like the inverse Ackermann function, below 5 for practical sizes.
+Q: What is a forest? | An acyclic graph, each of whose components is a tree.
+Q: How many edges does a forest with n vertices and c components have? | n − c.
+Q: What happens when you add an edge joining two trees of a forest? | They merge, the number of components falls by 1, and it stays a forest.
+Q: When does adding an edge to a forest create a cycle? | When the edge joins two vertices in the same tree.
+Q: What does a union–find data structure track? | Which vertices lie in the same tree as edges are added.
+Q: What two operations does union–find support? | Finding which tree a vertex is in, and merging two trees.
+Q: Which tricks make union–find almost constant time? | Union by rank and path compression.
+Q: How does Kruskal's algorithm use a forest? | It grows a forest until it becomes a spanning tree.
+Q: A forest with 20 vertices and 3 components gains an edge joining two components. How many edges now? | 18, with 2 components.
+Q: Name two uses of union–find. | Connectivity, clustering and image segmentation.
 
 ## Spanning Trees
 S: A spanning tree is a tree that includes every vertex of a graph, using some of its edges. Spanning trees give minimal connected backbones for networks, and counting them reveals deep links between graphs and linear algebra.
@@ -345,6 +435,16 @@ SRC: Kirchhoff G, Über die Auflösung der Gleichungen, auf welche man bei der U
 NUM1#maths-u15-10-q1@1: How many spanning trees does the cycle C₇ have? | 7 | 0 |  | Delete any one of the 7 edges.
 M1#maths-u15-10-q2@1: Which graph has no spanning tree? | A disconnected graph | A cycle | A complete graph | A star | A path | Spanning trees need every vertex connected.
 M2#maths-u15-10-q3@2: What does the matrix–tree theorem compute? | The number of spanning trees, as a Laplacian cofactor | The shortest path length | The chromatic number | How many colourings exist, from the Laplacian's largest eigenvalue | The maximum flow | Kirchhoff's theorem counts spanning trees with a determinant.
+Q: What is a spanning tree? | A subgraph that is a tree and contains every vertex of the graph.
+Q: How can you find a spanning tree of a connected graph? | By breadth-first or depth-first search, or by deleting edges from cycles.
+Q: How many spanning trees does the cycle Cₙ have? | n, one for each edge deleted.
+Q: How many spanning trees does Kₙ have? | n^{n−2}, by Cayley's formula.
+Q: What is the Laplacian matrix of a graph? | L = D − A, the degree matrix minus the adjacency matrix.
+Q: How does the matrix–tree theorem count spanning trees? | Delete any row and column of the Laplacian and take the determinant.
+Q: Who proved the matrix–tree theorem, and what motivated it? | Kirchhoff in 1847, motivated by electrical networks.
+Q: How many spanning trees does K₄ have? | 16, each using 3 of its 6 edges.
+Q: Name a practical use of spanning trees in networks. | Network backbones and broadcast trees, such as the spanning tree protocol in Ethernet.
+Q: What is the common mistake about spanning trees? | Forgetting that a spanning tree must include every vertex.
 
 ## Directed Acyclic Graphs
 S: A directed acyclic graph (DAG) has directed edges and no directed cycles. DAGs model dependencies (tasks, prerequisites, software builds, causal relationships), and they always admit a topological order.
@@ -380,6 +480,16 @@ SRC: Department for Education, AS and A level further mathematics subject conten
 NUM1#maths-u15-11-q1@1: In the example, how many days of float does task A have? | 1 | 0 | days | A can finish as late as day 4 without delaying C.
 M1#maths-u15-11-q2@1: Which structure is a DAG? | A family tree of descendants with arrows from parent to child | A road network with two-way streets | A cycle of one-way streets | A complete undirected graph | A social network of friendships | Ancestry can't loop back, so parent-to-child arrows form no cycles.
 M2#maths-u15-11-q3@2: Why can every DAG be topologically sorted? | It always has a source; removing it leaves another DAG, so the process repeats | Every DAG is a tree, and trees can always be listed in order | All vertices have equal degree | It can't always be sorted | DAGs have one vertex | Induction on Kahn's algorithm gives a valid order.
+Q: What is a directed acyclic graph (DAG)? | A directed graph with no directed cycles.
+Q: What is a topological order? | An ordering of the vertices so that every arc points forward.
+Q: When does a digraph have a topological order? | Exactly when it is acyclic.
+Q: What must every DAG contain at least one of each? | A source and a sink.
+Q: What is the critical path of a project? | The longest path through the project network, which sets the minimum completion time.
+Q: Name three things DAGs model. | Course prerequisites, build systems, spreadsheet recalculation, Git commit histories and causal diagrams.
+Q: How are earliest and latest start times found in critical path analysis? | By a forward pass for earliest and a backward pass for latest.
+Q: Which activities are critical in a project network? | Those with zero float: delaying them delays the whole project.
+Q: Why are longest paths special in DAGs? | They are easy to find in DAGs, unlike in general graphs.
+Q: What is the common mistake with topological sorting? | Applying it to a graph with a cycle, where no order exists.
 
 ## Bipartite Graphs
 S: A bipartite graph splits its vertices into two groups with edges only between groups: workers and jobs, students and courses, users and products. They're exactly the graphs with no odd cycles, and they're the setting for matching problems.
@@ -415,6 +525,16 @@ SRC: Kőnig D, Theorie der endlichen und unendlichen Graphen (Akademische Verlag
 NUM1#maths-u15-12-q1@1: How many edges does K_{3,4} have? | 12 | 0 |  | 3 × 4 = 12.
 M1#maths-u15-12-q2@1: Which graph is bipartite? | C₆ | C₇ | K₃ | K₄ | The Petersen graph | Even cycles alternate between two parts; the others contain odd cycles.
 M2#maths-u15-12-q3@2: How does breadth-first search test bipartiteness? | Colour levels alternately and check no edge joins two same-coloured vertices | It counts the vertices | It finds the longest path | It sorts edges by weight | Count the vertices and check that the total is even | An edge within one level reveals an odd cycle.
+Q: What is a bipartite graph? | A graph whose vertices split into sets X and Y with every edge joining X to Y.
+Q: What is the complete bipartite graph K_{m,n}? | The graph with all mn edges between parts of sizes m and n.
+Q: What three conditions are equivalent to a graph being bipartite? | Being bipartite, being 2-colourable, and having no odd cycles.
+Q: Name three families of graphs that are always bipartite. | Trees, even cycles and grid graphs.
+Q: Why is the cycle C₅ not bipartite? | It is an odd cycle.
+Q: Why is the 3D cube graph bipartite? | Each edge changes one bit, so the parity of the number of 1s alternates; split vertices by that parity.
+Q: What is a biadjacency matrix? | A matrix for a bipartite graph with rows for X and columns for Y.
+Q: What edge bound holds for a planar bipartite graph? | |E| ≤ 2|V| − 4.
+Q: Name two real-world uses of bipartite graphs. | Assignment problems such as workers to jobs, and recommendation systems linking users and items.
+Q: What is the common mistake about triangles and bipartite graphs? | Thinking a graph containing a triangle could be bipartite; a triangle is an odd cycle.
 
 ## Planar Graphs
 S: A planar graph can be drawn in the plane with no edges crossing. Euler's formula links its vertices, edges and faces, and it limits how many edges a planar graph can have, which matters for circuit boards and maps.
@@ -451,6 +571,16 @@ SRC: Richeson DS, Euler's Gem: The Polyhedron Formula and the Birth of Topology 
 NUM1#maths-u15-13-q1@1: A connected planar graph has 10 vertices and 15 edges. How many faces does it have? | 7 | 0 |  | F = 2 − V + E = 2 − 10 + 15 = 7.
 M1#maths-u15-13-q2@1: Which bound proves K₅ is non-planar? | E ≤ 3V − 6, since 10 > 9 | E ≤ 2V − 4, since 10 > 6 | V ≤ E, since 5 ≤ 10 | F ≤ V | It's planar | K₅ has more edges than any simple planar graph on 5 vertices allows.
 M3#maths-u15-13-q3@2: Why must every simple planar graph have a vertex of degree at most 5? | If all degrees were ≥ 6, then 2E ≥ 6V, contradicting E ≤ 3V − 6 | Planar graphs have no cycles | All planar graphs are trees | Degrees are always odd | Every planar drawing has a corner vertex touching the outer face | Summing degrees gives 2E ≥ 6V > 2(3V − 6).
+Q: What is a planar graph? | A graph that can be drawn in the plane with no edges crossing.
+Q: What is a face of a planar drawing? | A region bounded by edges, including the outer region.
+Q: How does Euler's formula change for a planar graph with c components? | V − E + F = 1 + c.
+Q: Check Euler's formula for the tetrahedron. | 4 − 6 + 4 = 2.
+Q: What edge bound holds for a simple planar graph with V ≥ 3? | E ≤ 3V − 6.
+Q: Why does a simple planar graph satisfy E ≤ 3V − 6? | Each face is bounded by at least 3 edges.
+Q: How many faces does a planar drawing of the cube graph have? | 6, since 8 − 12 + F = 2.
+Q: How can K₄ be drawn without crossings? | Draw one vertex inside a triangle formed by the other three.
+Q: What does Fáry's theorem say? | Every planar graph has a drawing with straight edges.
+Q: What is the common mistake when using Euler's formula? | Forgetting to count the outer face.
 
 ## Planarity
 S: Planarity testing decides whether a graph can be drawn without crossings, and if not, why not. Kuratowski's theorem pins the obstruction to two small graphs, and linear-time algorithms test planarity for circuits with millions of components.
@@ -485,6 +615,16 @@ SRC: Hopcroft J, Tarjan R, Efficient planarity testing, Journal of the ACM 21(4)
 NUM1#maths-u15-14-q1@1: What is the maximum number of edges in a triangle-free planar graph on 6 vertices? | 8 | 0 |  | 2V − 4 = 8.
 M1#maths-u15-14-q2@1: Which puzzle asks for a planar drawing of K_{3,3}? | Connecting three houses to three utilities without crossings | The Königsberg bridges | The four colour problem | The travelling salesperson | The knight's tour | Houses and utilities form the two parts of K_{3,3}.
 M2#maths-u15-14-q3@2: Does subdividing an edge (adding a vertex on it) change planarity? | No: it doesn't affect whether crossings are needed | Yes: it always makes a graph planar | Yes: it always makes a graph non-planar | Only for trees | Only for K₅ | A subdivided edge can be drawn along the original edge's curve.
+Q: What does Kuratowski's theorem state? | A graph is planar iff it contains no subdivision of K₅ or K_{3,3}.
+Q: What is the crossing number of a graph? | The minimum number of edge crossings in any drawing of it.
+Q: How does Wagner's version of Kuratowski's theorem differ? | It uses minors, formed by deleting and contracting edges, instead of subdivisions.
+Q: Why does K_{3,3} fail to be planar? | It's triangle-free, so planar would need E ≤ 2V − 4 = 8, but it has 9 edges.
+Q: Who gave a linear-time planarity test, and when? | Hopcroft and Tarjan, in 1974.
+Q: What is the crossing number of K₆? | 3.
+Q: Are the crossing numbers of complete graphs fully known? | No, they are still not fully known.
+Q: Where does minimising crossings matter in practice? | In circuit board and chip layout, to reduce crossings and layers.
+Q: What is a subdivision of a graph? | A graph made by inserting new vertices on its edges.
+Q: What is the common mistake when a drawing has crossings? | Thinking it proves non-planarity; another drawing might avoid the crossings.
 
 ## Eulerian Paths
 S: An Eulerian path uses every edge of a graph exactly once. Euler's 1736 analysis of the bridges of Königsberg showed exactly when such routes exist, founding graph theory and solving route-planning problems for postal and gritting services.
@@ -518,6 +658,16 @@ SRC: Department for Education, AS and A level further mathematics subject conten
 NUM1#maths-u15-15-q1@1: How many odd-degree vertices did the Königsberg bridges graph have? | 4 | 0 |  | Degrees 5, 3, 3, 3 are all odd.
 M1#maths-u15-15-q2@1: Which graph has an Eulerian circuit? | The cycle C₇ | The path P₄ | K₄ | A star with 3 leaves | K_{1,3} | Every vertex of a cycle has degree 2, which is even.
 M2#maths-u15-15-q3@2: A network has odd vertices A, B, C, D with shortest distances AB = 5, CD = 4, AC = 3, BD = 7, AD = 8, BC = 6. Which pairing minimises repeated distance? | AB with CD, total 9 | AC with BD, total 10 | AD with BC, total 14 | AB alone, total 5 | No pairing is needed | Compare totals: 9, 10 and 14; the smallest is 9.
+Q: What is an Eulerian path? | A path that uses every edge of a graph exactly once.
+Q: When does a connected graph have an Eulerian circuit? | When every vertex has even degree.
+Q: When does a connected graph have an Eulerian path that is not closed? | When exactly two vertices have odd degree.
+Q: What were the degrees of Königsberg's four land masses? | 5, 3, 3 and 3.
+Q: How does Hierholzer's algorithm find an Eulerian circuit? | Follow edges until stuck, then splice in further cycles.
+Q: What rule does Fleury's algorithm follow? | Avoid crossing bridges unless forced.
+Q: What does the route inspection (Chinese postman) problem ask? | For the shortest closed walk covering every edge at least once.
+Q: How does route inspection handle odd vertices? | Pair them up to minimise the extra distance, repeating shortest paths between pairs.
+Q: Name three uses of route inspection. | Postal routes, street cleaning, snow ploughing and pipeline inspection.
+Q: What is the common mistake between Eulerian and Hamiltonian? | Confusing them: Eulerian uses every edge once, Hamiltonian visits every vertex once.
 
 ## Hamiltonian Paths
 S: A Hamiltonian path visits every vertex exactly once. Unlike Eulerian paths, there's no simple test for them: deciding whether one exists is NP-complete, and it underlies the travelling salesperson problem.
@@ -552,6 +702,16 @@ SRC: Dirac GA, Some theorems on abstract graphs, Proceedings of the London Mathe
 NUM1#maths-u15-16-q1@1: How many distinct Hamiltonian cycles does K₆ have? | 60 | 0 |  | (6 − 1)!/2 = 120/2 = 60.
 M1#maths-u15-16-q2@1: Which condition guarantees a Hamiltonian cycle on n ≥ 3 vertices? | Every vertex has degree at least n/2 | Every vertex has even degree | The graph is connected | The graph is planar | The graph is bipartite | Dirac's theorem: minimum degree at least n/2 (with n ≥ 3) forces a Hamiltonian cycle.
 M2#maths-u15-16-q3@2: Why is the travelling salesperson problem hard for large n? | The number of possible tours grows like (n − 1)!/2 and no efficient exact algorithm is known | Distances are always unknown | It has no solution | Distances between cities are usually unknown in advance | It needs negative weights | Factorial growth defeats brute force, and the problem is NP-hard.
+Q: What is a Hamiltonian path? | A path that visits every vertex exactly once.
+Q: What is a Hamiltonian cycle? | A cycle passing through every vertex exactly once.
+Q: How hard is deciding whether a graph has a Hamiltonian path? | It is NP-complete; there is no simple test.
+Q: What does Dirac's theorem state? | If every vertex of a graph on n ≥ 3 vertices has degree ≥ n/2, it has a Hamiltonian cycle.
+Q: What does Ore's theorem require? | deg u + deg v ≥ n for every pair of non-adjacent vertices u and v.
+Q: Give a necessary condition used to disprove Hamiltonicity. | Removing k vertices mustn't leave more than k components.
+Q: How many distinct Hamiltonian cycles does Kₙ have? | (n − 1)!/2.
+Q: What is a knight's tour in graph terms? | A Hamiltonian path on the graph of knight's moves.
+Q: How do spanning trees and nearest-neighbour tours help with the TSP? | Spanning trees give lower bounds; nearest-neighbour tours give upper bounds.
+Q: What is the common mistake about testing for Hamiltonian cycles? | Thinking a degree-parity test, like Euler's, decides it.
 
 ## Graph Colouring
 S: Graph colouring assigns colours to vertices so that adjacent vertices differ. The fewest colours needed, the chromatic number, models scheduling exams, assigning radio frequencies and allocating computer registers, and the four colour theorem says every map needs at most four.
@@ -586,6 +746,16 @@ SRC: Jensen TR, Toft B, Graph Coloring Problems (Wiley 1995) | textbook | 1995 |
 NUM1#maths-u15-17-q1@1: What is the chromatic number of the cycle C₉? | 3 | 0 |  | Odd cycles need three colours.
 M1#maths-u15-17-q2@1: Which graph needs exactly 2 colours? | An even cycle | A triangle | K₄ | C₅ | The Petersen graph | An even cycle is bipartite, so alternating two colours round it works.
 M3#maths-u15-17-q3@2: Greedy colouring of a graph with maximum degree 5 uses at most how many colours? | 6 | 5 | 4 | 10 | It's unbounded | Each vertex has at most 5 coloured neighbours, so one of 6 colours is always free.
+Q: What is a proper colouring of a graph? | An assignment of colours with no two adjacent vertices the same.
+Q: What is the chromatic number χ(G)? | The fewest colours in a proper colouring of G.
+Q: What is the chromatic number of an odd cycle? | 3.
+Q: What does Brooks' theorem state? | χ ≤ Δ unless the graph is complete or an odd cycle.
+Q: How hard is computing the chromatic number in general? | It is NP-hard.
+Q: What does the four colour theorem state? | Every planar graph can be properly coloured with 4 colours.
+Q: Who proved the four colour theorem, and how? | Appel and Haken in 1976, with heavy computer use.
+Q: How is exam timetabling modelled as graph colouring? | Courses are vertices, shared students are edges, and time slots are colours.
+Q: How many exam slots are needed if five courses conflict in a cycle? | 3, since C₅ is an odd cycle.
+Q: What is the common mistake about greedy colouring? | Assuming it always finds the chromatic number; its result depends on the order.
 
 ## Chromatic Polynomials
 S: The chromatic polynomial P(G, k) counts the proper colourings of a graph using k colours. It's always a polynomial in k, it gives the chromatic number as its smallest positive integer non-root, and deletion–contraction computes it.
@@ -621,6 +791,16 @@ SRC: Birkhoff GD, A determinant formula for the number of ways of coloring a map
 NUM1#maths-u15-18-q1@1: How many proper 3-colourings does C₄ have? | 18 | 0 |  | (3 − 1)^{4} + (3 − 1) = 18.
 M1#maths-u15-18-q2@1: What is P(G, k) for a tree on 4 vertices? | k(k − 1)^{3} | k^{4} | k(k − 1)(k − 2)(k − 3) | (k − 1)^{4} | k^{3} | Colour one vertex in k ways, then each further vertex avoids its parent's colour.
 M2#maths-u15-18-q3@2: P(G, 2) = 0 but P(G, 3) = 6. What is χ(G)? | 3 | 2 | 6 | 1 | 0 | The chromatic number is the smallest k with at least one proper colouring.
+Q: What does the chromatic polynomial P(G, k) count? | The proper colourings of G using at most k colours.
+Q: What is the deletion–contraction formula? | P(G, k) = P(G − e, k) − P(G/e, k) for an edge e.
+Q: What is the chromatic polynomial of a tree on n vertices? | k(k − 1)^{n−1}.
+Q: What is the chromatic polynomial of the cycle Cₙ? | (k − 1)ⁿ + (−1)ⁿ(k − 1).
+Q: What is the chromatic polynomial of the empty graph on n vertices? | kⁿ.
+Q: How is χ(G) read from the chromatic polynomial? | It is the smallest positive integer k with P(G, k) > 0.
+Q: What sign pattern do the coefficients of a chromatic polynomial follow? | They alternate in sign.
+Q: Who introduced chromatic polynomials, and why? | Birkhoff in 1912, to attack the four colour problem.
+Q: Which polynomial generalises the chromatic polynomial? | The Tutte polynomial.
+Q: What is the common mistake with the tree formula? | Using k(k − 1)^{n−1} for a graph that contains a cycle.
 
 ## Matching Theory
 S: A matching pairs up vertices along edges with no vertex used twice: workers with jobs, students with places, donors with recipients. Hall's theorem says when everyone can be matched, and the Gale–Shapley algorithm finds stable matchings.
@@ -655,6 +835,16 @@ SRC: Lovász L, Plummer MD, Matching Theory (North-Holland 1986) | textbook | 19
 NUM1#maths-u15-19-q1@1: How many perfect matchings does K_{3,3} have? | 6 | 0 |  | Each perfect matching is a permutation: 3! = 6.
 M1#maths-u15-19-q2@1: Which fact certifies that no full matching of X exists? | A subset of X with fewer neighbours than members | A vertex of degree 1 | An even number of edges | A cycle in the graph | X and Y having equal sizes | A subset of X with fewer neighbours than members violates Hall's condition.
 M3#maths-u15-19-q3@2: Why is a Gale–Shapley matching stable? | Any pair preferring each other would already have matched when the proposer proposed | Everyone gets their first choice | Everyone is guaranteed their first choice by the end | Receivers can't refuse offers | It isn't always stable | A proposer only moves down their list after rejection, and receivers only trade up.
+Q: What is a matching? | A set of edges with no shared vertices.
+Q: What is a perfect matching? | A matching in which every vertex is matched.
+Q: What does Hall's theorem state? | X can be fully matched into Y iff every subset S of X has at least |S| neighbours in Y.
+Q: How many perfect matchings does K_{n,n} have? | n!.
+Q: When is a matching unstable? | When a pair would both prefer each other to their current partners.
+Q: How does the Gale–Shapley algorithm work? | Proposers propose in order of preference; receivers hold their best offer; repeat until stable.
+Q: Name a real allocation that uses stable matching. | UK junior doctor allocation, US medical residency or school choice.
+Q: Who won the 2012 Nobel prize in economics for stable matching? | Roth and Shapley.
+Q: Which algorithm finds maximum matchings in general graphs? | Edmonds' blossom algorithm.
+Q: What is the common mistake when checking Hall's condition? | Checking only single vertices rather than all subsets.
 
 ## Matching and Vertex Covers
 S: A vertex cover is a set of vertices touching every edge, such as security cameras covering every corridor. In bipartite graphs the largest matching and the smallest vertex cover have the same size (Kőnig's theorem), a beautiful example of duality.
@@ -689,6 +879,16 @@ SRC: Schrijver A, Combinatorial Optimization: Polyhedra and Efficiency (Springer
 NUM1#maths-u15-20-q1@1: What is the size of a maximum matching in C₆? | 3 | 0 |  | Alternate edges match all 6 vertices in 3 pairs.
 M1#maths-u15-20-q2@1: In any graph, how does the minimum vertex cover compare with the maximum matching? | It's at least as large | It's always smaller | They're always equal | It's always double | They're unrelated | Each matching edge needs its own cover vertex.
 M2#maths-u15-20-q3@2: For which graph does the maximum matching differ from the minimum vertex cover? | A triangle | A path on 4 vertices | A star | An even cycle | K_{2,3} | The triangle isn't bipartite: matching 1, cover 2.
+Q: What is a vertex cover? | A set of vertices such that every edge has at least one end in it.
+Q: What does Kőnig's theorem state? | In a bipartite graph, a maximum matching and a minimum vertex cover have the same size.
+Q: Why must any vertex cover be at least as large as any matching? | It must contain an endpoint of each matching edge, and those endpoints are all different.
+Q: What upper bound on minimum vertex cover holds in any graph? | At most twice the maximum matching.
+Q: How do you get a 2-approximation to the minimum vertex cover? | Take both ends of every edge of a maximal matching.
+Q: Of which wider results is Kőnig's theorem a special case? | Linear programming duality and max-flow min-cut.
+Q: How hard is minimum vertex cover in general graphs? | NP-hard.
+Q: What are the maximum matching and minimum cover of the star K_{1,5}? | Both are 1: the centre alone covers every edge.
+Q: Name two applications of vertex covers. | Placing monitors in networks, removing conflicts and checking drug interactions.
+Q: What is the common mistake about Kőnig's theorem? | Assuming it holds in non-bipartite graphs; it fails for the triangle.
 
 ## Shortest Path Algorithms
 S: Shortest path algorithms find the cheapest routes through weighted graphs. Breadth-first search, Dijkstra's algorithm, Bellman–Ford and Floyd–Warshall each suit different conditions, and they run inside every sat-nav and network router.
@@ -723,6 +923,16 @@ SRC: Cormen TH, Leiserson CE, Rivest RL, Stein C, Introduction to Algorithms (4t
 NUM1#maths-u15-21-q1@1: In the example, what is the shortest distance from A to D? | 8 | 0 |  | A → C → B → D: 2 + 1 + 5 = 8.
 M1#maths-u15-21-q2@1: Which algorithm is best for shortest paths in an unweighted graph? | Breadth-first search | Floyd–Warshall | Bellman–Ford | Kruskal's algorithm | Depth-first search | BFS explores in order of number of edges, which is the distance.
 M2#maths-u15-21-q3@2: Why does Dijkstra's algorithm fail with negative weights? | A finalised vertex could later be reached more cheaply via a negative edge | It can't handle directed graphs | It needs integer weights | It only works on trees | It can only process edges with whole-number weights | Dijkstra assumes distances never decrease after a vertex is fixed.
+Q: What does Dijkstra's algorithm do at each step? | Finalises the unvisited vertex with the smallest tentative distance and updates its neighbours.
+Q: What is relaxation in shortest path algorithms? | Updating d(v) to d(u) + w(u, v) if that is smaller.
+Q: What is the complexity of breadth-first search? | O(V + E).
+Q: What is the complexity of Dijkstra's algorithm with a heap? | O((V + E) log V).
+Q: What is the complexity of Bellman–Ford, and what does it allow? | O(VE); it allows negative weights.
+Q: Which algorithm finds shortest paths between all pairs? | Floyd–Warshall.
+Q: How does Dijkstra's algorithm start? | With d(source) = 0 and all other distances ∞.
+Q: How is the actual route recovered after Dijkstra's algorithm? | By recording each vertex's predecessor.
+Q: How does A* search speed up Dijkstra? | It adds a heuristic, such as straight-line distance, to guide the search.
+Q: How do road networks answer route queries in milliseconds? | With preprocessing such as contraction hierarchies.
 
 ## Shortest Path Problems
 S: Shortest path problems come in many forms: one source or all pairs, fastest or cheapest, with constraints or alternatives. Modelling a real question as the right shortest path problem is often the hard part, from routing internet traffic to detecting currency arbitrage.
@@ -757,6 +967,16 @@ SRC: Moy J, OSPF Version 2, RFC 2328 | standard | 1998 | https://www.rfc-editor.
 NUM1#maths-u15-22-q1@1: Find the product of the exchange rates 1.4, 0.9 and 0.8, to 3 decimal places. | 1.008 | 0.001 |  | 1.4 × 0.9 = 1.26, and 1.26 × 0.8 = 1.008.
 M1#maths-u15-22-q2@1: Which problem asks for shortest distances between every pair of vertices? | The all-pairs shortest path problem | The single-pair problem | The minimum spanning tree problem | The maximum flow problem | The route inspection problem | All pairs: Floyd–Warshall or repeated Dijkstra.
 M2#maths-u15-22-q3@2: A route's reliability is the product of link reliabilities. How do you find the most reliable route with a shortest path algorithm? | Use weights −ln(reliability) and find the shortest path | Add the reliabilities | Use the largest single link | Multiply weights in Dijkstra directly | It can't be done | Logs turn products into sums and maximisation into minimisation.
+Q: What is a single-source shortest path problem? | Finding shortest paths from one vertex to all others.
+Q: What is a negative cycle? | A cycle whose total weight is negative, making some shortest paths undefined.
+Q: What is a bottleneck path? | A route that maximises the smallest capacity along it.
+Q: Name two constrained or alternative shortest path variants. | k shortest paths and constrained paths with time or cost limits.
+Q: How is currency arbitrage detected with shortest paths? | Weight each exchange by −ln(rate); a profitable cycle becomes a negative cycle.
+Q: Is there an arbitrage in £ → $ at 1.4, $ → € at 0.9, € → £ at 0.8? | Yes: the rates multiply to 1.008, a 0.8% profit per loop.
+Q: Which internet protocol uses path vectors? | BGP.
+Q: How is sequence alignment in bioinformatics a shortest path problem? | It is a shortest path through a grid.
+Q: What kind of network needs special algorithms for rush-hour travel? | Time-dependent networks.
+Q: What is the common mistake when modelling route reliability? | Adding probabilities when reliability is a product.
 
 ## Minimum Spanning Trees
 S: A minimum spanning tree connects all vertices of a weighted graph at the least total cost. Kruskal's and Prim's greedy algorithms find it, and it's used to design cable, pipe and road networks and in clustering.
@@ -791,6 +1011,16 @@ SRC: Department for Education, AS and A level further mathematics subject conten
 NUM1#maths-u15-23-q1@1: In the example, find the total weight of the minimum spanning tree. | 7 | 0 |  | 1 + 2 + 4 = 7.
 M1#maths-u15-23-q2@1: What does Prim's algorithm add at each step? | The cheapest edge connecting the tree to a new vertex | The cheapest edge anywhere in the graph | The most expensive edge | An edge creating a cycle | A random edge | Prim grows one tree, always by its lightest outgoing edge.
 M3#maths-u15-23-q3@2: Why does doubling an MST give a TSP tour at most twice optimal (for metric distances)? | Any tour minus one edge is a spanning tree, so MST ≤ optimal tour, and shortcutting the doubled tree doesn't increase length | MSTs are always tours | Doubling halves the length | TSP and MST are the same problem | It doesn't | The doubled tree costs ≤ 2 × optimum, and the triangle inequality lets repeated vertices be skipped.
+Q: What is a minimum spanning tree? | A spanning tree of a weighted graph with the least total edge weight.
+Q: How does Kruskal's algorithm work? | Sort edges by weight and add each one unless it creates a cycle, stopping after n − 1 edges.
+Q: How does Prim's algorithm work? | Start from any vertex and repeatedly add the cheapest edge leaving the tree.
+Q: What does the cut property state? | For any cut, the lightest edge crossing it belongs to some MST.
+Q: Why does a greedy algorithm find the MST? | Because of the cut property, a matroid structure.
+Q: Which data structure detects cycles efficiently in Kruskal's algorithm? | Union–find.
+Q: In the example with edges AB 1, AC 2, BC 3, CD 4, BD 5, why is BC skipped? | Adding BC would create the cycle A–B–C.
+Q: Which clustering method is based on minimum spanning trees? | Single-linkage clustering.
+Q: Give a practical example of an MST problem. | Linking villages with cable at the least cost.
+Q: What is the common mistake in Kruskal's algorithm? | Adding an edge that creates a cycle.
 
 ## Network Flows
 S: A flow network moves something (water, traffic, data, goods) from a source to a sink through edges with capacities. Flow models answer how much can get through, where the bottlenecks are, and how to route at least cost.
@@ -825,6 +1055,16 @@ SRC: Department for Education, AS and A level further mathematics subject conten
 NUM1#maths-u15-24-q1@1: A path s–x–y–t has capacities 7, 4 and 9. How much can flow along it? | 4 | 0 |  | The bottleneck (smallest capacity) is 4.
 M1#maths-u15-24-q2@1: Which flow is feasible on an edge of capacity 6? | 4 | 7 | −2 | 6.5 | 10 | Flow must lie between 0 and the capacity.
 M2#maths-u15-24-q3@2: How is bipartite matching modelled as a flow? | Unit capacities from a source to one side, across allowed edges, and from the other side to a sink | By colouring the vertices | By finding shortest paths | By removing all edges | Give every edge infinite capacity and send flow both ways | Integer flows of value k correspond to matchings of size k.
+Q: What does a flow network model? | Something moving from a source to a sink through edges with capacities.
+Q: What two rules must a flow obey? | Each edge carries no more than its capacity, and flow in equals flow out at intermediate vertices.
+Q: What is the value of a flow? | The net flow out of the source, equal to the net flow into the sink.
+Q: How do you model a capacity on a vertex? | Split it into an in-node and an out-node joined by an edge with that capacity.
+Q: How do you model several sinks? | Add a super-sink joined from each of them.
+Q: What limits the flow along a single route? | Its bottleneck: the smallest capacity on the route.
+Q: Routes s–a–t (3, 4) and s–b–t (6, 5) are separate. What is the maximum flow? | 3 + 5 = 8.
+Q: What does minimum cost flow aim to do? | Meet demand at the least cost, as in transport and supply chains.
+Q: What are multicommodity flows used for? | Routing different goods or data streams through the same network.
+Q: What is the common mistake with flow at intermediate vertices? | Letting the flow in differ from the flow out.
 
 ## Maximum Flow
 S: The maximum flow problem asks for the largest possible flow from source to sink. The Ford–Fulkerson method repeatedly finds augmenting paths in the residual network until none remain, and it solves problems from traffic planning to airline scheduling.
@@ -859,6 +1099,16 @@ SRC: Cormen TH, Leiserson CE, Rivest RL, Stein C, Introduction to Algorithms (4t
 NUM1#maths-u15-25-q1@1: In the example, what is the maximum flow? | 5 | 0 |  | 2 + 2 + 1 = 5, matching the capacity out of s.
 M1#maths-u15-25-q2@1: What amount is pushed along an augmenting path? | Its smallest residual capacity | Its largest residual capacity | The total capacity of the graph | One unit always | The sink's degree | The bottleneck, the smallest residual capacity on the path, limits the extra flow.
 M3#maths-u15-25-q3@2: Why are backward residual edges essential? | They let the algorithm cancel and reroute earlier flow to reach the true maximum | They double every capacity | Without them the residual network would contain cycles | They speed up BFS only | They aren't essential | Without them an early bad choice can block further augmentation.
+Q: What does the maximum flow problem ask? | For the largest possible flow from source to sink.
+Q: What is an augmenting path? | A source-to-sink path in the residual network along which more flow can be pushed.
+Q: What does the residual network show? | Remaining capacity forward and the option to cancel flow backward on each edge.
+Q: What are the steps of the Ford–Fulkerson method? | Start at zero flow, push the bottleneck along an augmenting path, update residuals, and repeat until none remain.
+Q: What does pushing flow along a backward edge do? | It cancels earlier flow, rerouting it.
+Q: How does Edmonds–Karp choose augmenting paths? | It always uses a shortest augmenting path, found by BFS.
+Q: What is the complexity of Edmonds–Karp? | O(VE^{2}).
+Q: What did a 2022 result achieve for maximum flow? | Almost-linear time.
+Q: Name three applications of maximum flow. | Baseball elimination, image segmentation and scheduling.
+Q: What is the common mistake in Ford–Fulkerson? | Forgetting backward residual edges and getting stuck below the maximum.
 
 ## Minimum Cut
 S: A cut splits a network into a side containing the source and a side containing the sink; its capacity is the total capacity of edges crossing from source side to sink side. The max-flow min-cut theorem says the largest flow equals the smallest cut, identifying a network's true bottleneck.
@@ -893,6 +1143,16 @@ SRC: Boykov Y, Kolmogorov V, An experimental comparison of min-cut/max-flow algo
 NUM1#maths-u15-26-q1@1: A cut has edges from S to T with capacities 4, 7 and 2, and one edge from T to S with capacity 9. What is its capacity? | 13 | 0 |  | Only S-to-T edges count: 4 + 7 + 2 = 13.
 M1#maths-u15-26-q2@1: What does the max-flow min-cut theorem state? | The maximum flow equals the minimum cut capacity | Every cut has the same capacity | The maximum flow is always zero | Flows and cuts are unrelated | The minimum cut is the source's degree | It's the central duality of network flows.
 M2#maths-u15-26-q3@2: How does a minimum cut help in image segmentation? | It separates foreground from background at the lowest total boundary cost | It colours every pixel | It finds the brightest pixel | It compresses the image | Pixels are sorted by brightness and split at the median value | Pixels form a graph; a cheap cut follows strong edges between regions.
+Q: What is an s–t cut? | A partition (S, T) of the vertices with the source in S and the sink in T.
+Q: How is the capacity of an s–t cut calculated? | Sum the capacities of edges going from S to T.
+Q: Why does any cut bound the maximum flow? | Every flow from s to t must cross every cut.
+Q: What does the max-flow min-cut theorem state? | The maximum flow value equals the minimum cut capacity.
+Q: Which two graph theorems follow from max-flow min-cut? | Menger's theorem and Kőnig's theorem.
+Q: Of which wider principle is max-flow min-cut a case? | Linear programming duality.
+Q: How does a cut certify a flow is maximum? | If the flow's value equals the cut's capacity, no larger flow is possible.
+Q: In the example network, what are the capacities of cuts S = {s} and S = {s, a}? | Both are 5, equal to the maximum flow.
+Q: Name two problems solved as minimum cut problems. | Image segmentation, network reliability, project selection and open-pit mining.
+Q: What is the common mistake when computing a cut's capacity? | Including edges directed from T back to S.
 
 ## Weighted Networks
 S: Real networks have ties of different strengths: how often people call, how many passengers fly a route, how much two countries trade. Weighted network measures use those strengths rather than treating every link as equal.
@@ -927,6 +1187,16 @@ SRC: Newman MEJ, Networks (2nd edn, Oxford University Press 2018) | textbook | 2
 NUM1#maths-u15-27-q1@1: A node's edges have weights 3, 3, 4 and 10. What is its strength? | 20 | 0 |  | 3 + 3 + 4 + 10 = 20.
 M1#maths-u15-27-q2@1: In a trade network, what does a node's strength represent? | Its total trade with all partners | Its number of partners | Its geographical size | Its population | Its distance from others | Summing trade values over links gives total trade.
 M2#maths-u15-27-q3@2: Why can thresholding a weighted network mislead? | The results can change a lot with the chosen cut-off, and weak ties are discarded | It always keeps every edge | It makes weights negative | It adds edges | It never misleads | Arbitrary thresholds can create or destroy structure.
+Q: What is node strength? | The sum of the weights of a node's edges.
+Q: What is thresholding a weighted network? | Keeping only edges above a chosen weight, turning it into an unweighted network.
+Q: What is the formula for node strength? | s_{i} = Σ w_{ij}, summed over j.
+Q: How does strength often relate to degree in real networks? | Strength often grows faster than degree; busy airports have many and heavy routes.
+Q: What two interpretations must you choose between for edge weights? | Similarities (stronger means closer) or distances (larger means farther).
+Q: What are the drawbacks of thresholding? | It discards information, and the result depends on the threshold chosen.
+Q: Why normalise weights? | To compare different networks fairly.
+Q: A node has edge weights 5, 2, 8 and 1. What are its degree and strength? | Degree 4 and strength 16.
+Q: Name three examples of weighted networks. | Airline networks, trade networks, brain networks and communication networks.
+Q: What is the common mistake with strengths in shortest path calculations? | Using strengths as distances without converting them.
 
 ## Network Centrality
 S: Centrality measures identify the most important nodes in a network, but "important" depends on the question: the most connected person, the best-placed broker, or the one closest to everyone. Different measures answer different questions.
@@ -963,6 +1233,16 @@ SRC: Newman MEJ, Networks (2nd edn, Oxford University Press 2018) | textbook | 2
 NUM1#maths-u15-28-q1@1: In a 10-node network, a node has degree 3. What is its normalised degree centrality, to 4 decimal places? | 0.3333 | 0.0001 |  | 3/(10 − 1) = 1/3.
 M1#maths-u15-28-q2@1: Which measure counts a node's direct links? | Degree centrality | Betweenness centrality | Closeness centrality | Eigenvector centrality | PageRank | Degree is simply the number of neighbours.
 M2#maths-u15-28-q3@2: Why might a node with few links have high betweenness? | It bridges two otherwise separate groups | It has many neighbours | It's at the network's edge | Betweenness counts links | It can't | All paths between the groups pass through it.
+Q: What is a centrality measure? | A score ranking nodes by some notion of importance in a network.
+Q: What is normalised degree centrality? | deg(v)/(n − 1), the fraction of other nodes v is directly linked to.
+Q: What does closeness centrality measure? | How near a node is to all others, which reflects how fast it can reach everyone.
+Q: What does betweenness centrality measure? | How often a node lies on shortest paths, reflecting brokerage and control of flow.
+Q: What do eigenvector centrality and PageRank reward? | Connections to well-connected nodes, a kind of influence or prestige.
+Q: Which centrality suits spreading information quickly? | Closeness.
+Q: Do different centrality measures always agree? | No, rankings by different measures can disagree strongly.
+Q: In a star with 5 leaves, what is each leaf's normalised degree centrality? | 0.2.
+Q: What cautions apply to centrality? | It reflects position, not intrinsic importance, and missing data can change rankings.
+Q: What is the common mistake about centrality measures? | Assuming one measure captures every kind of importance.
 
 ## Betweenness Centrality
 S: Betweenness centrality measures how often a node lies on the shortest paths between other nodes. High-betweenness nodes are brokers and bottlenecks: removing them can split a network or slow its flow.
@@ -997,6 +1277,16 @@ SRC: Brandes U, A faster algorithm for betweenness centrality, Journal of Mathem
 NUM1#maths-u15-29-q1@1: What is the betweenness of the middle node of the path 1–2–3? | 1 | 0 |  | The only shortest path between 1 and 3 passes through 2.
 M1#maths-u15-29-q2@1: In a star with 5 leaves, what is the centre's betweenness? | 10 | 5 | 0 | 25 | 1 | Every pair of the 5 leaves (C(5, 2) = 10) has its shortest path through the centre.
 M2#maths-u15-29-q3@2: Why does the Girvan–Newman method remove high edge-betweenness edges? | Edges between communities carry many shortest paths, so removing them separates the groups | They're the heaviest edges | They have the most triangles | They're random | Those edges are the heaviest, so removing them lowers total weight | Inter-community bridges concentrate traffic.
+Q: What is the formula for betweenness centrality? | B(v) = Σ σ_{st}(v)/σ_{st}, over pairs s, t other than v.
+Q: What is edge betweenness used for? | Finding community boundaries.
+Q: What is the complexity of Brandes' algorithm for unweighted graphs? | O(VE).
+Q: How is betweenness normalised in an undirected graph? | Divide by the number of pairs, (n − 1)(n − 2)/2.
+Q: What is the betweenness of node 3 in the path 1–2–3–4–5? | 4.
+Q: What roles do high-betweenness nodes play? | Brokers between communities, bottlenecks and gatekeepers of information.
+Q: What happens if high-betweenness nodes are removed? | The network can split or its flow slows; targeted attacks fragment it quickly.
+Q: Which community detection method uses edge betweenness? | Girvan–Newman.
+Q: What are structural holes? | Gaps between communities that high-betweenness brokers bridge.
+Q: What is the common mistake when computing betweenness? | Counting pairs that include the node itself.
 
 ## Closeness Centrality
 S: Closeness centrality measures how near a node is to all others: the inverse of its average distance. Nodes with high closeness can spread information or reach resources fastest.
@@ -1031,6 +1321,16 @@ SRC: Boldi P, Vigna S, Axioms for centrality, Internet Mathematics 10(3–4), 22
 NUM1#maths-u15-30-q1@1: Find the closeness of node 3 in the path 1–2–3–4–5, to 3 decimal places. | 0.667 | 0.001 |  | 4/(2 + 1 + 1 + 2) = 4/6.
 M1#maths-u15-30-q2@1: What is the harmonic centrality contribution of an unreachable node? | 0 | 1 | ∞ | −1 | Undefined | An unreachable node is at distance ∞, and 1/∞ = 0, so it adds nothing.
 M2#maths-u15-30-q3@2: Why might closeness discriminate poorly in a large social network? | Average distances are short and similar for most nodes | Everyone has the same degree | Distances are infinite | It ignores edges | It discriminates well | Small-world structure compresses average distances into a narrow range.
+Q: What is closeness centrality? | C(v) = (n − 1)/Σ d(v, u), the reciprocal of the average distance to other nodes.
+Q: What is harmonic centrality? | H(v) = Σ 1/d(v, u) over other nodes u.
+Q: How are distances found for closeness in an unweighted graph? | By breadth-first search from the node.
+Q: What does high closeness indicate? | A short average distance to all other nodes.
+Q: What happens to ordinary closeness in a disconnected graph? | Infinite distances make it zero.
+Q: What is the closeness of node 1 in the path 1–2–3–4–5? | 4/10 = 0.4.
+Q: What is the closeness of each leaf in a star on n nodes? | (n − 1)/(2n − 3).
+Q: Give a practical use of closeness centrality. | Locating facilities to minimise average travel, or finding people who can spread news quickly.
+Q: Why does closeness discriminate less in large small-world networks? | Distances are all short, so closeness values bunch together.
+Q: What is the common mistake about closeness and disconnected networks? | Using ordinary closeness on a disconnected network.
 
 ## Eigenvector Centrality
 S: Eigenvector centrality scores a node highly if it's linked to other high-scoring nodes: influence by association. It's the principal eigenvector of the adjacency matrix, and it's the idea behind PageRank and many prestige measures.
@@ -1065,6 +1365,16 @@ SRC: Newman MEJ, Networks (2nd edn, Oxford University Press 2018) | textbook | 2
 NUM1#maths-u15-31-q1@1: For K_{1,3}, find x_{centre}/x_{leaf}, to 3 decimal places. | 1.732 | 0.001 |  | √3 ≈ 1.732.
 M1#maths-u15-31-q2@1: In a regular graph (all degrees equal), how do eigenvector centralities compare? | They're all equal | The first node scores highest | They're all zero | They're random | They depend on labels | The all-ones vector is the principal eigenvector of a regular graph.
 M3#maths-u15-31-q3@2: Why does Katz centrality add a constant term to each node? | So nodes without incoming links in directed graphs still get a positive score | To make scores negative | To ignore the graph's edges | To speed up convergence only | It speeds up convergence but doesn't change any rankings | In directed graphs, plain eigenvector centrality gives zero to many nodes; a baseline fixes that.
+Q: What idea lies behind eigenvector centrality? | A node scores highly if it is linked to other high-scoring nodes.
+Q: What equation defines eigenvector centrality? | λx = Ax for the largest eigenvalue λ of the adjacency matrix.
+Q: What does the Perron–Frobenius theorem guarantee for a connected graph? | Its adjacency matrix has a largest eigenvalue with a positive eigenvector.
+Q: How does power iteration compute eigenvector centrality? | Start with all 1s, repeatedly multiply by A and normalise.
+Q: Why does plain eigenvector centrality struggle on directed graphs? | Nodes with no incoming links score zero, which PageRank fixes.
+Q: What does Katz centrality add? | A baseline score to every node.
+Q: Why can a node with few links have high eigenvector centrality? | Links to important nodes count more than many unimportant ones.
+Q: What is the largest eigenvalue of the star K_{1,3}? | √3.
+Q: Name two uses of eigenvector centrality. | Prestige in citation and social networks, systemic importance in finance, and hub regions of the brain.
+Q: What is the common mistake with eigenvector centrality on directed graphs? | Applying it where sinks make many scores collapse to zero.
 
 ## PageRank Mathematics
 S: PageRank ranks web pages by imagining a random surfer who follows links and occasionally jumps to a random page. The ranking is the stationary distribution of this Markov chain, and it made Google's early search results far better than rivals'.
@@ -1099,6 +1409,16 @@ SRC: Langville AN, Meyer CD, Google's PageRank and Beyond: The Science of Search
 NUM1#maths-u15-32-q1@1: With N = 20 pages and d = 0.85, what is the PageRank of a page with no incoming links? | 0.0075 | 0.00001 |  | 0.15/20 = 0.0075.
 M1#maths-u15-32-q2@1: What does the damping factor d represent? | The probability of following a link rather than jumping randomly | The number of pages | The page's quality | The fraction of pages that have no outgoing links at all | The number of links | With probability 1 − d the surfer teleports.
 M2#maths-u15-32-q3@2: Why does PageRank include random teleportation? | It makes the chain irreducible, so a unique stationary distribution exists | To slow convergence | To penalise popular pages | To remove links | Teleporting lets the surfer skip slow-loading pages | Without it, the surfer can get trapped in dead ends or loops.
+Q: What is the random surfer model of PageRank? | A surfer follows a random outgoing link with probability d and otherwise jumps to a random page.
+Q: What is the PageRank formula? | PR(i) = (1 − d)/N + d Σ PR(j)/out(j), over pages j linking to i.
+Q: What is a stationary distribution? | A probability vector π with πP = π for the transition matrix P.
+Q: Why does teleportation guarantee a unique PageRank? | It makes the chain irreducible and aperiodic.
+Q: How are dangling nodes treated in PageRank? | As linking to every page.
+Q: How fast does power iteration for PageRank converge? | Geometrically, at a rate of about d per step.
+Q: What PageRank does a page with no incoming links get with N = 10 and d = 0.85? | 0.015, the teleport term only.
+Q: What is personalised PageRank? | PageRank that teleports to chosen pages, used for recommendations.
+Q: Name two uses of PageRank beyond the web. | Ranking researchers, species in food webs, proteins or sports teams.
+Q: What is the common mistake when passing on PageRank? | Forgetting to divide a page's PageRank by its number of outgoing links.
 
 ## Community Detection
 S: Community detection finds groups of nodes more densely connected to each other than to the rest of the network: friend circles, research fields, functional modules in cells. Modularity is the most widely used measure of how good a division is.
@@ -1133,6 +1453,16 @@ SRC: Blondel VD, Guillaume JL, Lambiotte R, Lefebvre E, Fast unfolding of commun
 NUM1#maths-u15-33-q1@1: Find the modularity of the two-triangle split in the example, to 3 decimal places. | 0.357 | 0.002 |  | 2 × (3/7 − 0.25) ≈ 0.357.
 M1#maths-u15-33-q2@1: What does a high modularity score indicate? | More links within groups than expected by chance | Fewer links within groups than random | A complete graph | A tree | Random structure | Modularity measures excess internal links over a random baseline.
 M3#maths-u15-33-q3@2: What is the resolution limit of modularity? | Maximising it can merge small genuine communities in large networks | It can't detect large communities | It only works on trees | It requires weighted graphs | Modularity only works when every community has the same size | The random-baseline term scales with network size, hiding small groups.
+Q: What is a community in a network? | A set of nodes with many internal links and relatively few links to the rest.
+Q: What does modularity compare? | Internal links in each community with the number expected at random given their total degree.
+Q: What is the modularity formula? | Q = Σ [L_{c}/m − (d_{c}/2m)^{2}], summed over communities.
+Q: What modularity values are typical of real networks? | Often 0.3 to 0.7.
+Q: How hard is maximising modularity exactly? | NP-hard, so heuristics are used.
+Q: What is the modularity of two triangles joined by one edge, split into the triangles? | About 0.357.
+Q: Name three community detection methods besides Louvain. | Girvan–Newman, label propagation, stochastic block models and spectral methods.
+Q: What kind of communities need special methods? | Overlapping communities, such as people in several circles.
+Q: How should community detection results be checked? | Validate them with external information.
+Q: What is the common mistake about community detection output? | Treating one algorithm's output as the unique true community structure.
 
 ## Network Clustering
 S: Clustering in networks measures how often a node's neighbours are also connected to each other: the tendency of friends to be friends. Social networks are highly clustered, unlike random graphs, which shapes how information and disease spread.
@@ -1166,6 +1496,16 @@ SRC: Newman MEJ, Networks (2nd edn, Oxford University Press 2018) | textbook | 2
 NUM1#maths-u15-34-q1@1: A node has 5 neighbours with 4 links among them. Find its clustering coefficient. | 0.4 | 0.001 |  | 4/C(5, 2) = 4/10 = 0.4.
 M1#maths-u15-34-q2@1: What does triadic closure mean? | Two people with a common friend tend to become friends | Networks have three components | Every node has degree 3 | Triangles are removed | Friends drift apart | Shared contacts create closing ties, raising clustering.
 M2#maths-u15-34-q3@2: Why is clustering low in large sparse Erdős–Rényi graphs? | Neighbour pairs are linked with probability p, which is tiny | Random graphs have no edges | They're always trees | Clustering is always 1 | It isn't low | Each potential triangle edge appears independently with small p.
+Q: What does the clustering coefficient of a network measure? | How often a node's neighbours are also connected to each other.
+Q: What is the formula for the local clustering coefficient? | C_{i} = (links among i's neighbours)/C(k_{i}, 2).
+Q: What is transitivity? | Global clustering: 3 × (number of triangles)/(number of connected triples).
+Q: How does average clustering differ from transitivity? | Average clustering averages each C_{i}; transitivity weights by connected triples.
+Q: How many possible neighbour pairs does a node with k neighbours have? | C(k, 2).
+Q: A node has 4 neighbours with 2 links among them. What is its clustering coefficient? | 2/6 ≈ 0.333.
+Q: What is the clustering of an Erdős–Rényi random graph roughly equal to? | p, the edge probability.
+Q: Which mechanism makes social networks highly clustered? | Triadic closure: friends of friends become friends.
+Q: What other meaning does "clustering" have in network analysis? | Grouping nodes into clusters, as in community detection.
+Q: What is the common mistake when computing clustering in undirected graphs? | Dividing by k(k − 1) instead of k(k − 1)/2.
 
 ## Spectral Graph Theory
 S: Spectral graph theory studies graphs through the eigenvalues and eigenvectors of their matrices, especially the Laplacian. Eigenvalues reveal connectivity, expansion and community structure, and they power spectral clustering and graph signal processing.
@@ -1200,6 +1540,16 @@ SRC: von Luxburg U, A tutorial on spectral clustering, Statistics and Computing 
 NUM1#maths-u15-35-q1@1: For the path a–b–c, what is the second-smallest Laplacian eigenvalue? | 1 | 0 |  | The eigenvalues are 0, 1 and 3.
 M1#maths-u15-35-q2@1: What is the smallest eigenvalue of any graph Laplacian? | 0 | 1 | −1 | The maximum degree | The number of vertices | Every Laplacian row sums to zero, so L·1 = 0 and the smallest eigenvalue is 0.
 M2#maths-u15-35-q3@2: A graph's Laplacian has eigenvalue 0 with multiplicity 3. What can you conclude? | It has 3 connected components | It has 3 vertices | It has 3 edges | It's a triangle | Nothing | Each component contributes one independent zero eigenvector.
+Q: What does spectral graph theory study? | Graphs through the eigenvalues and eigenvectors of their matrices, especially the Laplacian.
+Q: What is algebraic connectivity? | λ₂, the second-smallest Laplacian eigenvalue, which is positive iff the graph is connected.
+Q: What is the eigenvector for the Laplacian eigenvalue 0? | The all-ones vector.
+Q: Can Laplacian eigenvalues be negative? | No, all are at least 0.
+Q: What does a larger λ₂ indicate? | A better-connected graph, with fewer bottlenecks.
+Q: Which inequality links λ₂ to bottlenecks? | Cheeger's inequality.
+Q: How does the Fiedler vector split a graph? | By the sign of its entries, into two well-separated parts.
+Q: How does spectral clustering work? | It uses several leading Laplacian eigenvectors, then runs k-means.
+Q: What are the Laplacian eigenvalues of the path a–b–c? | 0, 1 and 3.
+Q: What does the mixing time of a random walk depend on? | The spectral gap.
 
 ## Random Graphs
 S: Random graph models generate networks by chance, to compare with real ones and to prove that graphs with certain properties exist. The Erdős–Rényi model shows sudden phase transitions: a giant component appears as soon as the average degree passes 1.
@@ -1234,6 +1584,16 @@ SRC: Bollobás B, Random Graphs (2nd edn, Cambridge University Press 2001) | tex
 NUM1#maths-u15-36-q1@1: For n = 100 and p = 0.1, find the expected number of edges. | 495 | 0 |  | 0.1 × C(100, 2) = 0.1 × 4,950 = 495.
 M1#maths-u15-36-q2@1: In G(n, p) with average degree 0.5, what do the components look like? | All small, with no giant component | One giant component | The graph is connected | It's a complete graph | It's a tree | Below c = 1 the graph shatters into small pieces.
 M2#maths-u15-36-q3@2: Why do random graphs serve as null models for real networks? | They show what structure arises by chance with the same size and density | They're always identical to real networks | They have hubs | They have high clustering | Real networks are generated by exactly this random process | Comparing with random baselines tests whether observed features are significant.
+Q: Why are random graph models used? | To compare with real networks and to prove that graphs with certain properties exist.
+Q: What is the Erdős–Rényi model G(n, p)? | Each of the C(n, 2) possible edges appears independently with probability p.
+Q: What is a giant component? | A connected component containing a positive fraction of all vertices.
+Q: What is the expected degree in G(n, p)? | p(n − 1), about np.
+Q: What do components look like in G(n, p) when the average degree is below 1? | Only small components, of size O(log n).
+Q: When is G(n, p) connected with high probability? | When p > ln n/n.
+Q: What are typical distances in G(n, p) with mean degree c? | About ln n/ln c.
+Q: What did Erdős show in 1947 using random graphs? | Existence results by the probabilistic method.
+Q: For n = 100 and p = 0.1, what is the average degree? | About 9.9.
+Q: What is the common mistake about Erdős–Rényi graphs and real networks? | Expecting them to reproduce real networks' hubs and high clustering.
 
 ## Small-World Networks
 S: In small-world networks, any two nodes are linked by a short chain, even though most links are local. The "six degrees of separation" idea and the Watts–Strogatz model explain how a few long-range shortcuts shrink a world full of clusters.
@@ -1268,6 +1628,16 @@ SRC: Travers J, Milgram S, An experimental study of the small world problem, Soc
 NUM1#maths-u15-37-q1@1: Estimate ln(10^{6})/ln(50), the typical distance for a million nodes with 50 contacts each, to 1 decimal place. | 3.5 | 0.1 |  | 13.8/3.9 ≈ 3.5.
 M1#maths-u15-37-q2@1: In the Watts–Strogatz model, what does a small rewiring probability achieve? | Short average paths while clustering stays high | Low clustering and long paths | A complete graph | No change at all | A tree | A few shortcuts collapse distances without destroying local structure.
 M3#maths-u15-37-q3@2: Why can a disease spread across a city quickly even if most contacts are local? | A few long-range contacts act as shortcuts, creating short paths between distant groups | Local contacts are faster | Diseases ignore networks | Clustering speeds spread | Clustering itself speeds transmission between distant groups | Small-world shortcuts let infection jump between otherwise distant clusters.
+Q: What is a small-world network? | A network with short average path lengths (growing like log n) and high clustering.
+Q: What is the Watts–Strogatz model? | A ring lattice in which each edge is rewired at random with probability p.
+Q: What does the Watts–Strogatz model look like at p = 0? | A regular lattice: highly clustered but with long paths.
+Q: What does the Watts–Strogatz model look like at p = 1? | A random graph: short paths but low clustering.
+Q: What average separation did Facebook find in 2016? | About 3.5 among over a billion users.
+Q: Name two real networks with small-world features. | Power grids, neural networks and film actor networks.
+Q: What did Kleinberg study about small worlds? | Decentralised search: finding short chains using only local knowledge.
+Q: Estimate the typical distance among 10^{9} people with about 100 contacts each. | About 4.5 steps, from ln 10^{9}/ln 100.
+Q: Name a consequence of small-world structure besides fast spreading. | Synchronisation of oscillators, such as fireflies or neurons.
+Q: What is the common mistake about shortcuts in small-world networks? | Assuming short paths need many random links; a small fraction of shortcuts suffices.
 
 ## Scale-Free Networks
 S: In a scale-free network, the degree distribution follows a power law: most nodes have few links but a few hubs have enormous numbers. Preferential attachment ("the rich get richer") explains them, and hubs make such networks robust to random failure but fragile to targeted attack.
@@ -1302,6 +1672,16 @@ SRC: Broido AD, Clauset A, Scale-free networks are rare, Nature Communications 1
 NUM1#maths-u15-38-q1@1: With γ = 2, what is P(100)/P(10)? | 0.01 | 0.0001 |  | (10)^{−2} = 0.01.
 M1#maths-u15-38-q2@1: What mechanism does the Barabási–Albert model use? | New nodes prefer to link to well-connected nodes | Every pair links with fixed probability | Edges are rewired on a ring | Nodes link only to neighbours | Links are removed over time | Preferential attachment: new nodes link to existing nodes in proportion to their degree.
 M2#maths-u15-38-q3@2: Why are scale-free networks vulnerable to targeted attacks? | Removing a few hubs destroys most of the short paths | Hubs are easy to replace | Leaves hold the network together | They have no hubs | They aren't vulnerable | Hubs carry most of the short paths, so removing a few of them fragments the network.
+Q: What is a scale-free network? | A network whose degree distribution follows a power law, with a few large hubs.
+Q: What is a power-law degree distribution? | P(k) ∝ k^{−γ}, typically with 2 < γ < 3.
+Q: What is preferential attachment? | New nodes link to existing nodes with probability proportional to their degree.
+Q: What does a power-law degree distribution look like on log–log axes? | Roughly a straight line.
+Q: Which two ingredients does the Barabási–Albert model combine? | Growth and preferential attachment.
+Q: With γ = 2.5, how much rarer are nodes of degree 100 than degree 10? | About 300 times rarer: 10^{−2.5} ≈ 0.0032.
+Q: Name two networks whose hubs preferential attachment helps explain. | The web, citation networks and some biological networks.
+Q: Why do scale-free networks break quickly under targeted attack? | Removing the few hubs removes most of the connections holding the network together.
+Q: What did Broido and Clauset suggest in 2019? | Strict power laws are rarer in real networks than once claimed.
+Q: What is the common mistake when declaring a network scale-free? | Relying on a roughly straight log–log plot without statistical testing.
 
 ## Network Science
 S: Network science studies complex networks across physics, biology, sociology and computing using shared mathematical tools. It asks how network structure arises and how it shapes processes such as spreading, synchronisation and resilience.
@@ -1336,6 +1716,16 @@ SRC: Newman MEJ, Networks (2nd edn, Oxford University Press 2018) | textbook | 2
 NUM1#maths-u15-39-q1@1: A network has 1,000 nodes and 2,500 edges. What is its average degree? | 5 | 0 |  | 2 × 2,500/1,000 = 5.
 M1#maths-u15-39-q2@1: Which question belongs to "dynamics on networks"? | How fast does a rumour spread through the network? | How many nodes are there? | What is the network's density? | Who has the highest degree? | How was the data collected? | Dynamics concern processes unfolding over the structure.
 M2#maths-u15-39-q3@2: Why can't homophily and social influence be separated easily in network data? | Similar people link together and linked people become similar, both producing correlation | Networks have no similar people | Influence never happens | Homophily is impossible to observe | They're easily separated | Both mechanisms create the same pattern of similar neighbours.
+Q: What does network science study? | Complex networks across many fields, how their structure arises and how it shapes processes.
+Q: What is network density? | The fraction of possible edges present, |E|/C(n, 2) for undirected networks.
+Q: What is the formula for average degree? | ⟨k⟩ = 2|E|/n.
+Q: What is the density of a network with 1,000 nodes and 2,500 edges? | About 0.005.
+Q: Name three processes studied as dynamics on networks. | Epidemics, opinions, synchronisation and cascades.
+Q: Name two statistical models used in network inference. | Stochastic block models and exponential random graphs.
+Q: What do multilayer and temporal networks capture? | Several types of relation and the timing of links.
+Q: How do sampling and missing data affect network measures? | They distort them.
+Q: Why does ethics matter in network science? | Social network data raise privacy concerns.
+Q: What is the common mistake about influence in networks? | Concluding influence spreads when similar people may simply connect (homophily).
 
 ## Percolation Theory
 S: Percolation theory studies what happens when parts of a network are randomly removed or kept: at a critical threshold, a spanning cluster suddenly appears or disappears. It describes fluid through porous rock, network resilience and epidemic thresholds.
@@ -1370,6 +1760,16 @@ SRC: Callaway DS, Newman MEJ, Strogatz SH, Watts DJ, Network robustness and frag
 NUM1#maths-u15-40-q1@1: An Erdős–Rényi network has mean degree 4. What fraction of nodes can be randomly removed before the giant component vanishes? | 0.75 | 0.001 |  | Kept fraction must exceed 1/4, so up to 1 − ¼ = 0.75 can go.
 M1#maths-u15-40-q2@1: Which process is bond percolation on a contact network? | Disease transmission along contacts with some probability | Removing all hubs | Adding random edges | Sorting nodes by degree | Colouring vertices | Each contact (bond) transmits independently with some probability.
 M3#maths-u15-40-q3@2: Why are scale-free networks with γ < 3 so robust to random node removal? | ⟨k^{2}⟩ diverges, so the Molloy–Reed criterion keeps holding even after heavy removal | Hubs are removed first, leaving the robust low-degree core | Their degree distribution is Poisson | They're always complete | They aren't robust | Heavy tails keep ⟨k^{2}⟩/⟨k⟩ large, pushing the threshold towards zero.
+Q: What does percolation theory study? | What happens when parts of a network are randomly removed or kept, especially the sudden appearance of a spanning cluster.
+Q: What is the percolation threshold? | The critical occupation probability p_{c} at which a giant spanning cluster first appears.
+Q: Who proved the square lattice bond threshold is ½, and when? | Kesten, in 1980.
+Q: What is the site percolation threshold on the square lattice? | About 0.5927.
+Q: What happens to quantities near the percolation threshold? | They follow power laws with universal exponents.
+Q: Removing nodes at random from a network is which kind of percolation? | Site percolation.
+Q: When does the giant component of an Erdős–Rényi network with mean degree c vanish? | When the fraction of nodes kept falls below 1/c.
+Q: What is p_{c} for scale-free networks with γ < 3? | It tends to 0, so they are extremely robust to random failure.
+Q: Name two physical examples of percolation. | Oil and water flowing through rock, and coffee through grounds.
+Q: What is the common mistake about change near the percolation threshold? | Expecting it to be gradual; the transition is sharp.
 
 ## Social Network Analysis
 S: Social network analysis studies relationships among people and organisations: who knows whom, who advises whom, who trades with whom. Its concepts (density, homophily, weak ties, structural holes) explain job searches, influence and the spread of ideas.
@@ -1405,6 +1805,16 @@ SRC: Wasserman S, Faust K, Social Network Analysis: Methods and Applications (Ca
 NUM1#maths-u15-41-q1@1: A group of 12 people has 22 ties. Find the density to 3 decimal places. | 0.333 | 0.001 |  | 22/C(12, 2) = 22/66.
 M1#maths-u15-41-q2@1: Why do weak ties often provide job information? | They connect to groups whose information you don't already have | They're stronger than close ties | Close friends never share information | They're more numerous than strong ties always | They don't | Close friends overlap with you; acquaintances bridge to new circles.
 M2#maths-u15-41-q3@2: What advantage does a broker spanning a structural hole have? | Access to non-redundant information from separate groups | More close friends | A lower degree | Less influence | No advantage | Bridging unconnected groups gives information and control benefits (Burt).
+Q: What does social network analysis study? | Relationships among people and organisations, such as who knows, advises or trades with whom.
+Q: What is the strength of weak ties? | Granovetter's finding that acquaintances bridge groups and bring new information.
+Q: What is an ego network? | A person's own connections.
+Q: What is a structural hole? | A gap between unconnected groups that a broker can span.
+Q: Who studied structural holes? | Burt.
+Q: What is Dunbar's number? | About 150 stable relationships that humans maintain.
+Q: By which characteristics does homophily shape networks? | Age, education and attitudes.
+Q: What is the density of a team of 12 people with 22 ties? | 22/66 ≈ 0.333.
+Q: Name two ethical concerns with social network data. | Consent, anonymity and the risk of re-identification.
+Q: What is the common mistake with platform data? | Treating it as a representative sample of everyone's social ties.
 
 ## Biological Network Analysis
 S: Biological networks map interactions among genes, proteins, metabolites, neurons and species. Network analysis finds key players, recurring circuit patterns and functional modules, helping to identify drug targets and understand disease.
@@ -1440,6 +1850,16 @@ SRC: White JG, Southgate E, Thomson JN, Brenner S, The structure of the nervous 
 NUM1#maths-u15-42-q1@1: How many directed edges are in a feed-forward loop? | 3 | 0 |  | X → Y, Y → Z and X → Z.
 M1#maths-u15-42-q2@1: Which network is directed? | A gene regulatory network | A protein interaction network of binding | A co-authorship network | A friendship network | A road network of two-way streets | Regulation has a direction: a transcription factor acts on a gene.
 M2#maths-u15-42-q3@2: Why must biological interaction data be interpreted cautiously? | They're noisy, incomplete and biased towards well-studied molecules | They're always complete | They contain no errors | Interactions are random, so no pattern in them is meaningful | No caution is needed | Missing and false interactions are common, and research attention is uneven.
+Q: What do biological networks map? | Interactions among genes, proteins, metabolites, neurons and species.
+Q: What is a protein interaction network? | A network with proteins as nodes and physical interactions as edges.
+Q: Why are gene regulatory networks directed? | Transcription factors regulate genes, so the influence has a direction.
+Q: When was the C. elegans connectome fully mapped? | By 1986.
+Q: What is the centrality–lethality idea? | Highly connected proteins are more often essential; it is debated.
+Q: What does a feed-forward loop do? | It filters noise and creates delays, acting as a persistence detector.
+Q: What edges make up a feed-forward loop? | X → Y, Y → Z and X → Z.
+Q: What are modules in biological networks? | Groups of genes or proteins acting together.
+Q: How are biological networks used in medicine? | To find drug targets, repurpose drugs via network proximity and identify disease modules.
+Q: What is the common mistake with missing interactions in biological data? | Treating them as confirmed absences.
 
 ## Network Epidemiology
 S: Network epidemiology models how infections spread along contacts rather than through a perfectly mixed population. Heterogeneous contact numbers create superspreaders and change epidemic thresholds, which guides targeted vaccination and contact tracing.
@@ -1474,6 +1894,16 @@ SRC: Mossong J et al, Social contacts and mixing patterns relevant to the spread
 NUM1#maths-u15-43-q1@1: With ⟨k⟩ = 4, ⟨k^{2}⟩ = 40 and T = 0.2, find R₀. | 1.8 | 0.001 |  | 0.2 × 36/4 = 1.8.
 M1#maths-u15-43-q2@1: Why does acquaintance immunisation reach high-degree people? | A random friend is more likely to be someone with many friends | Friends are always hubs | It vaccinates everyone | It picks people at random | It doesn't | High-degree people appear as friends more often (the friendship paradox).
 M3#maths-u15-43-q3@2: Two networks have the same average degree, but one has much more variable degree. Which has the higher epidemic R₀? | The more variable one, because ⟨k^{2}⟩ is larger | The less variable one | They're equal | Neither can have an epidemic | It depends only on T | R₀ depends on ⟨k^{2}⟩/⟨k⟩, which grows with degree variance.
+Q: How does network epidemiology differ from well-mixed models? | It models spread along actual contacts rather than assuming everyone contacts everyone equally.
+Q: What is the formula for R₀ on a network? | R₀ = T(⟨k^{2}⟩ − ⟨k⟩)/⟨k⟩, for transmissibility T per contact.
+Q: What is a superspreader? | Someone who infects many more people than average, often because of many contacts.
+Q: Why are high-degree people infected sooner? | They have more contacts through which infection can reach them.
+Q: What is acquaintance immunisation? | Vaccinating random friends of random people, who tend to have high degree.
+Q: When does contact tracing work best? | When it is fast.
+Q: With ⟨k⟩ = 4, ⟨k^{2}⟩ = 40 and T = 0.2, what R₀ would a well-mixed model wrongly suggest? | 0.8, against the network value of 1.8.
+Q: Name two epidemic models run on networks. | SIR and SIS, with pair approximations, message passing or agent-based simulation.
+Q: What kinds of data inform network epidemic models? | Contact surveys such as POLYMOD and mobility data.
+Q: What is the common mistake when estimating R₀ on networks? | Using average contacts alone when contact numbers vary widely.
 
 ## Graph Neural Network Mathematics
 S: Graph neural networks (GNNs) learn from data on graphs by repeatedly passing messages between neighbouring nodes. They predict molecular properties, recommend items and model traffic, and their mathematics links linear algebra, spectral graph theory and deep learning.
@@ -1508,4 +1938,14 @@ SRC: Hamilton WL, Graph Representation Learning (Morgan & Claypool 2020) | textb
 NUM1#maths-u15-44-q1@1: Node v (feature 1) has neighbours with features 3, 5 and 7. Find the mean including v. | 4 | 0 |  | (1 + 3 + 5 + 7)/4 = 4.
 M1#maths-u15-44-q2@1: Why are GNNs permutation-equivariant? | Their aggregations (sum, mean, max) don't depend on neighbour order | They sort nodes alphabetically | They use fixed node labels | They ignore the graph | They sort the nodes alphabetically before every layer | Order-independent aggregation means relabelling nodes just relabels outputs.
 M2#maths-u15-44-q3@2: What limits the ability of standard message-passing GNNs to distinguish graphs? | They're at most as powerful as the Weisfeiler–Lehman test | They can't use features | They require planar graphs | They only work on trees | Nothing limits them | Two graphs WL can't tell apart get identical GNN representations.
+Q: What is a graph neural network? | A model that learns from graph data by repeatedly passing messages between neighbouring nodes.
+Q: What is message passing in a GNN? | Each node updates its features by combining its own with aggregated features of its neighbours.
+Q: What is the GCN layer formula? | H′ = σ(D̃^{−½}ÃD̃^{−½}HW), with Ã = A + I.
+Q: Name three ways a GNN can aggregate neighbour features. | Sum, mean or max.
+Q: Why does a GCN normalise by degrees? | To keep feature scales stable.
+Q: What is permutation equivariance? | Relabelling the nodes relabels the outputs in the same way.
+Q: Which test limits the expressive power of message-passing GNNs? | The Weisfeiler–Lehman graph isomorphism test.
+Q: How do GCNs relate to spectral graph theory? | They act as low-pass filters on graph signals.
+Q: Name three applications of GNNs. | Drug discovery, materials science, recommendation, traffic forecasting and fraud detection.
+Q: What is the common mistake when designing GNNs? | Stacking many layers expecting better results, when over-smoothing makes features indistinguishable.
 `;

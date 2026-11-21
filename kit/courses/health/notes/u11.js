@@ -44,6 +44,16 @@ M2#health-u11-01-q2@2: Which risk is increased by smoking in pregnancy? | Low bi
 M3#health-u11-01-q3@3: Why are outcomes of pregnancy unequal in the UK? | Deprivation and ethnicity are linked to worse access, conditions and outcomes | All women receive exactly the same results | Inequalities only affect older mothers | Antenatal care is unavailable in poorer areas | Maternal outcomes reflect wider health inequalities.
 MATCH1#health-u11-01-q4@2: Match each element of antenatal care to its purpose. | Dating scan = Estimate due date ; Anomaly scan = Check physical development ; Blood pressure checks = Detect pre-eclampsia ; Infectious disease screening = Detect HIV, hepatitis B and syphilis | Antenatal care combines several checks.
 SA2#health-u11-01-q5@1,3: Explain how preconception care can improve the health of a baby. | Taking folic acid before conception reduces neural tube defects. Stopping smoking and avoiding alcohol reduce risks of low birth weight, prematurity, stillbirth and fetal alcohol spectrum disorder. Reaching a healthy weight and managing conditions such as diabetes reduce complications. Checking medicines and vaccinations protects the developing baby from harm early in pregnancy. | Folic acid ; Smoking and alcohol ; Weight and conditions ; Medicines and vaccines
+Q: How much folic acid does the NHS advise before conception and in early pregnancy? | 400 micrograms a day, before conception and for the first 12 weeks of pregnancy.
+Q: Name three steps before conception that improve pregnancy outcomes. | Stopping smoking, avoiding alcohol, reaching a healthy weight, reviewing medicines and checking vaccinations such as rubella.
+Q: By about when should women book antenatal care? | By about 10 weeks of pregnancy.
+Q: When is the dating scan usually offered? | At about 11 to 14 weeks.
+Q: Which infectious diseases are screened for in pregnancy? | HIV, hepatitis B and syphilis.
+Q: What do midwives monitor at antenatal appointments? | Blood pressure, urine, the baby's growth and the mother's mental health.
+Q: What is pre-eclampsia? | A pregnancy condition with high blood pressure and signs of organ strain or damage.
+Q: What can alcohol in pregnancy cause? | Fetal alcohol spectrum disorder.
+Q: Is antenatal screening compulsory? | No. Screening is a choice: parents decide whether to have each test.
+Q: Why is starting folic acid only once pregnancy is confirmed a mistake? | The neural tube forms very early, so folic acid should start before conception where possible.
 
 ## Birth and the newborn
 LV: Level 3 · Foundation
@@ -89,6 +99,16 @@ M2#health-u11-02-q2@2: What does the newborn physical examination check? | Eyes,
 M3#health-u11-02-q3@3: Why is the heel-prick test described as screening? | It identifies babies at higher risk who then need diagnostic tests | It gives a final diagnosis for every condition | It treats the conditions it finds | It replaces the newborn physical examination | Screening finds those who need further testing.
 MATCH1#health-u11-02-q4@1: Match each check to its timing. | Apgar score = 1 and 5 minutes after birth ; Physical examination = Within 72 hours ; Blood spot test = About day 5 ; Labour stage one = Before birth | Newborn care follows a set timeline.
 SA2#health-u11-02-q5@2,3: Explain the benefits of breastfeeding for mother and baby, and why support matters. | For babies, breast milk provides nutrition and antibodies that reduce infections such as gastroenteritis and ear infections. For mothers, it lowers the risk of breast and ovarian cancer. It also supports bonding. Many mothers face difficulties, such as latching problems or returning to work, so practical support from midwives and health visitors, and non-judgemental care for those who formula feed, are important. | Infant benefits ; Maternal benefits ; Bonding ; Difficulties ; Support
+Q: What happens in the first stage of labour? | The cervix opens (dilates) to about 10 cm as contractions strengthen.
+Q: What happens in the second stage of labour? | The baby is born.
+Q: Where can women choose to give birth? | At home, in a midwife-led unit or in an obstetric unit, depending on risk.
+Q: What counts as low birth weight? | Under 2,500 g.
+Q: When is the Apgar score taken, and what is its range? | At 1 and 5 minutes after birth, scored from 0 to 10.
+Q: Within what time is the newborn physical examination done? | Within 72 hours of birth.
+Q: Name two conditions screened for by the newborn blood spot test. | Sickle cell disease, cystic fibrosis and congenital hypothyroidism, among nine rare conditions.
+Q: Why is vitamin K offered to newborns? | To prevent a rare bleeding disorder.
+Q: What are the benefits of skin-to-skin contact after birth? | It helps regulate the baby's temperature and heart rate and supports bonding and breastfeeding.
+Q: For how long does the WHO recommend exclusive breastfeeding? | For the first six months.
 
 ## Infant health and development
 LV: Level 3 · Application
@@ -133,6 +153,16 @@ M2#health-u11-03-q2@2: What is a sign of concern on a growth chart? | Weight cro
 M3#health-u11-03-q3@3: Why does high immunisation uptake protect babies too young to be vaccinated? | Herd immunity reduces the spread of infection in the community | Vaccines are passed to babies through the air | Babies are immune to all infections | Unvaccinated babies never meet anyone | Fewer infected people means less exposure.
 MATCH1#health-u11-03-q4@2: Match each milestone to a typical age. | Social smile = About 6 weeks ; Sitting unsupported = About 6 to 8 months ; First words = About 12 months ; Walking = About 12 months or later | Milestones give typical, not fixed, ages.
 SA2#health-u11-03-q5@2,3: Describe the advice given to parents to reduce the risk of sudden infant death syndrome. | Place the baby on their back for every sleep, in a clear, flat cot without pillows or bumpers, in the parents' room for the first six months. Keep the baby smoke-free before and after birth, avoid overheating, and avoid sleeping with the baby on a sofa or after alcohol or drugs. Breastfeeding is also associated with lower risk. | Back to sleep ; Clear cot ; Room sharing ; Smoke-free ; Avoid risky co-sleeping
+Q: At about what age do babies sit without support? | About 6 to 8 months.
+Q: At about what age do babies develop a pincer grip? | About 9 to 12 months.
+Q: When do babies typically say first words? | Around 12 months, after cooing and babbling.
+Q: What is recorded in the personal child health record (red book)? | Weight, length and head circumference plotted on UK-WHO growth charts.
+Q: At what age does the routine immunisation programme start? | At 8 weeks.
+Q: How does high immunisation uptake protect the community? | Through herd immunity.
+Q: What happened to SIDS rates after the Back to Sleep campaign began in 1991? | They fell sharply in the UK.
+Q: Where should babies sleep for the first six months to reduce SIDS risk? | In a clear cot in the parents' room, in a smoke-free environment.
+Q: A baby's weight drops from the 50th to the 9th centile at 8 months. What does this mean? | Crossing two centile lines downward is a sign to look for a cause, such as feeding problems or illness.
+Q: Why is a single late milestone not usually a cause for concern? | Development varies widely; professionals look for patterns of delay rather than single late skills.
 
 ## Child health and the Healthy Child Programme
 LV: Level 3 · Application
@@ -175,6 +205,16 @@ M2#health-u11-04-q2@2: What does proportionate universalism mean in the Healthy 
 M3#health-u11-04-q3@3: Why is the first 1,001 days seen as so important? | It is a period of rapid brain development that shapes lifelong health | Children cannot be harmed after age two | It is the only time children need vaccines | Health visitors stop working after this period | Early experiences in this period have lasting effects on health.
 MATCH1#health-u11-04-q4@2: Match each priority to an intervention. | Obesity = National Child Measurement Programme ; Tooth decay = Fluoride toothpaste and less sugar ; Speech delay = Speech and language referral ; Infectious disease = Childhood immunisation | Different issues need different responses.
 SA3#health-u11-04-q5@2,3: Explain why childhood obesity is a public health priority and how it might be reduced. | Obesity in childhood often continues into adulthood, raising risks of type 2 diabetes, heart disease and some cancers, and can affect mental health. Rates are much higher in deprived areas, widening inequalities. Responses include measuring children through the NCMP, healthier school food, the soft drinks industry levy, restrictions on junk food advertising, support for families and safe spaces for active play. | Health risks ; Persistence ; Inequalities ; Policy responses ; Family support
+Q: What age range does the Healthy Child Programme cover? | From pregnancy to age 19.
+Q: Who delivers the Healthy Child Programme for children aged 5 to 19? | School nurses.
+Q: Who commissions the Healthy Child Programme? | Local authorities.
+Q: Name the five mandated health visitor reviews in England. | Antenatal contact, new birth visit, 6 to 8 week review, 9 to 12 month review and 2 to 2½ year review.
+Q: What proportion of Year 6 children are living with obesity? | About one in five, with much higher rates in deprived areas.
+Q: How can tooth decay in young children be prevented? | Less sugar, brushing with fluoride toothpaste and dental visits.
+Q: What are adverse childhood experiences (ACEs)? | Stressful or traumatic events such as abuse, neglect or household problems, linked to poorer health in adulthood.
+Q: What are among the most effective public health investments in early years? | Support for parents, early education and reducing child poverty.
+Q: What happens if a health visitor finds a two-year-old's speech is behind? | She gives advice and arranges a speech and language referral.
+Q: Is the Healthy Child Programme only for families with problems? | No. It is universal, with extra support proportionate to need.
 
 ## Adolescent health
 LV: Level 3 · Application
@@ -217,6 +257,16 @@ M2#health-u11-05-q2@2: When do many lifetime mental health problems begin? | By 
 M3#health-u11-05-q3@3: A 15-year-old asks a nurse for confidential advice. What should happen? | Confidentiality is offered unless there is a serious risk of harm | Parents must always be told immediately | The nurse must refuse to see them | The school must be informed | Young people have rights to confidential care, with safeguarding limits.
 MATCH1#health-u11-05-q4@2: Match each change to its effect. | Developing prefrontal cortex = Weaker impulse control ; Later body clock = Morning sleepiness ; Strong reward response = Sensitivity to peers ; Puberty hormones = Physical maturation | Biological changes shape adolescent behaviour.
 SA3#health-u11-05-q5@2,3: Explain why adolescence is an important time for preventing poor health later in life. | Habits such as smoking, drinking, diet, activity and sleep often become established in adolescence and continue into adulthood. Many mental health problems begin then, so early support can change long-term outcomes. Brain development makes young people sensitive to peers and rewards, so prevention through schools, families and environments can be powerful. Youth-friendly, confidential services increase engagement. | Habit formation ; Mental health onset ; Brain development ; Settings for prevention ; Confidential services
+Q: When does puberty usually begin? | Between about 8 and 13 in girls and 9 and 14 in boys.
+Q: What does the prefrontal cortex do? | It is involved in planning, judgement and impulse control.
+Q: How might brain development help explain teenage risk-taking? | Reward-seeking systems mature earlier than the prefrontal cortex, which weighs long-term consequences.
+Q: What proportion of lifetime mental illness starts by about age 14? | Half, according to widely cited research.
+Q: Name three common mental health issues in adolescence. | Anxiety, depression, eating disorders and self-harm.
+Q: How can social media affect adolescent health? | It offers connection and support but is linked with sleep disruption, comparison and online harms; overall effects are debated.
+Q: When may a professional share a young person's confidential health information without consent? | Only if there is a serious risk of harm.
+Q: What kind of prevention works better than information alone for teenage risk behaviours? | Prevention that changes norms and environments.
+Q: Name two services that provide mental health help to young people. | School nurses, Mental Health Support Teams in schools and children and young people's mental health services.
+Q: Is lack of information the main reason teenagers take risks? | No. Brain development and social influences such as peers are important.
 
 ## Sexual and reproductive health
 LV: Level 3 · Application
@@ -262,6 +312,16 @@ M2#health-u11-06-q2@2: Why are LARC methods the most effective contraception? | 
 M3#health-u11-06-q3@3: What does "undetectable equals untransmittable" mean? | People with HIV on effective treatment cannot pass it on sexually | HIV cannot be detected by any test | Everyone with HIV is infectious | HIV is cured by one tablet | Effective treatment suppresses the virus so it is not transmitted.
 MATCH2#health-u11-06-q4@1: Match each method to its main feature. | Implant = Long-acting reversible ; Condom = Protects against STIs ; Copper IUD = Most effective emergency option ; PrEP = Prevents HIV | Different methods have different strengths.
 SA3#health-u11-06-q5@2,3: Explain how a combination of approaches reduces sexually transmitted infections in young people. | Education, such as statutory RSE, builds knowledge of consent and protection. Free condoms reduce transmission. Easy, confidential testing, including online kits, finds symptomless infections such as chlamydia so they can be treated and partners notified. HPV vaccination prevents infection, and HIV testing, treatment and PrEP stop HIV spread. Youth-friendly services improve uptake. | Education ; Condoms ; Testing and treatment ; Vaccination ; HIV prevention
+Q: Name three types of long-acting reversible contraception. | The implant, the intrauterine device (IUD) and the intrauterine system (IUS).
+Q: Why are LARC methods more effective than the pill? | They do not depend on remembering to use them.
+Q: Up to how long after unprotected sex can emergency contraception be used? | Up to five days; pills are most effective the sooner they are taken.
+Q: What can untreated chlamydia cause? | Infertility.
+Q: Which STI is increasingly resistant to antibiotics? | Gonorrhoea.
+Q: What does HPV cause, and when is the vaccine offered? | Genital warts and most cervical cancers; vaccination is offered to all pupils at 12 to 13.
+Q: What is PrEP? | Pre-exposure prophylaxis: medicine taken to prevent HIV infection.
+Q: Since when has relationships and sex education been statutory in English secondary schools? | Since 2020.
+Q: Under which Act is abortion legal in Great Britain, and up to when usually? | The Abortion Act 1967, usually up to 24 weeks with two doctors' agreement.
+Q: Why does testing matter for STIs even without symptoms? | Many STIs, especially chlamydia, are symptomless, so no symptoms does not mean no infection.
 
 ## Young adults and health
 LV: Level 3 · Application
@@ -305,6 +365,16 @@ M2#health-u11-07-q2@2: Why can moving from child to adult services harm young pe
 M3#health-u11-07-q3@3: Which approach best supports a smooth transition? | Early planning with a named worker and joint clinics | Moving the young person on their 18th birthday without notice | Leaving the young person to arrange everything | Stopping all care at 18 | NICE recommends planned, person-centred transitions.
 MATCH2#health-u11-07-q4@1: Match each risk to a prevention approach. | Road traffic collisions = Driver education and road safety measures ; Binge drinking = Alcohol policy and education ; Suicide = Accessible mental health support ; STIs = Testing and condoms | Different risks need targeted responses.
 SA3#health-u11-07-q5@2,3: Explain why young adulthood is described as a "window of opportunity" for health. | Many health behaviours become established during this period of transition, and the brain and identity are still developing, so interventions can shape lifelong habits. Mental health problems often first appear, so early support can change outcomes. Universities, workplaces and digital services offer settings to reach young people. However, young adults use health services less, so services must be accessible and youth-friendly. | Habits forming ; Mental health onset ; Settings ; Low service use ; Youth-friendly design
+Q: Name three transitions of young adulthood. | Leaving home, higher education, training or work, new relationships and financial independence.
+Q: What does NEET mean, and why does it matter for health? | Not in education, employment or training; NEET young people have worse health outcomes.
+Q: Why do young adult habits matter for lifelong health? | Habits formed now, such as diet, activity, drinking and smoking, often persist.
+Q: Name three risk behaviours more common in young adulthood. | Binge drinking, drug use and risky driving.
+Q: In which age group are STI diagnoses highest? | Young adults.
+Q: What is binge drinking? | Drinking a large amount of alcohol in a short time.
+Q: Around what age do young people usually move from children's to adult services? | Around age 18.
+Q: What can go wrong when transition to adult services is poorly managed? | Disengagement, missed appointments and worse control of conditions.
+Q: What does NICE recommend for transition to adult services? | Planned transition starting early, a named worker, involving the young person and flexibility over timing.
+Q: Why is it wrong to assume young adults need little health care? | They face distinctive risks, especially in mental health, injuries and substance use.
 
 ## Adult health checks
 LV: Level 3 · Application
@@ -350,6 +420,16 @@ M2#health-u11-08-q2@2: How often are women invited for NHS breast screening? | E
 M3#health-u11-08-q3@3: Why might health checks widen health inequalities? | People in more deprived groups are less likely to attend though at higher risk | Everyone attends at exactly the same rate | Checks are only offered to deprived groups | Health checks always reduce inequalities | Unequal uptake means benefits go mainly to the better-off.
 MATCH2#health-u11-08-q4@1: Match each programme to its test. | Bowel screening = Home FIT kit ; Cervical screening = HPV test ; Breast screening = Mammogram ; AAA screening = Ultrasound scan | Programmes use different tests.
 SA3#health-u11-08-q5@2,3: Evaluate the NHS Health Check as a public health intervention. | It can identify high blood pressure, raised cholesterol and diabetes risk early, enabling lifestyle advice and treatment that prevent heart attacks and strokes. However, uptake is lower in deprived groups at greatest risk, follow-up may be inconsistent, and evidence on its impact on deaths is mixed. Its value depends on reaching high-risk groups and acting on results. | Early detection ; Prevention ; Unequal uptake ; Mixed evidence ; Conditions for success
+Q: What does the NHS Health Check measure? | Blood pressure, cholesterol, body mass index and, where indicated, blood sugar, plus questions on smoking, alcohol and activity.
+Q: What does the NHS Health Check estimate? | The risk of heart disease and stroke over the next ten years.
+Q: What extra information are people aged 65 to 74 given at a Health Check? | Information about dementia.
+Q: Who is offered cervical screening, and what does it test for? | People with a cervix aged 25 to 64; it tests for high-risk HPV.
+Q: Who is offered NHS breast screening? | Women aged 50 to 71, every three years.
+Q: How does NHS bowel screening work in England? | A home faecal immunochemical test (FIT) every two years from age 50 to 74.
+Q: Who is offered diabetic eye screening? | People with diabetes aged 12 and over.
+Q: What is overdiagnosis? | Diagnosis of a condition that would never have caused harm.
+Q: Name three drawbacks of screening. | False positives, overdiagnosis and anxiety.
+Q: Why might health checks widen inequalities? | Uptake is lower in deprived groups, who are often at higher risk.
 
 ## Menopause
 LV: Level 3 · Application
@@ -393,6 +473,16 @@ M2#health-u11-09-q2@2: Which long-term health risk increases after menopause? | 
 M3#health-u11-09-q3@3: Why should HRT decisions be individual? | Benefits and risks vary with the person, type of HRT and history | HRT has no benefits at all | HRT has no risks of any kind | Everyone must take HRT | Personal risk factors shape the balance of benefit and harm.
 MATCH1#health-u11-09-q4@2: Match each term to its description. | Perimenopause = Transition with fluctuating hormones ; Menopause = No periods for 12 months ; Premature ovarian insufficiency = Menopause before 40 ; HRT = Hormone treatment for symptoms | Key terms describe the menopause transition.
 SA2#health-u11-09-q5@2,3: Explain why menopause is increasingly seen as a workplace issue. | Most people going through menopause are of working age, and symptoms such as poor sleep, hot flushes and difficulty concentrating can affect work. Some leave jobs or reduce hours. Supportive policies, flexible working, cooler workspaces and awareness training help, and employers must avoid discrimination under the Equality Act 2010. | Working-age population ; Symptoms at work ; Leaving work ; Adjustments ; Legal duty
+Q: What is perimenopause? | The transition before menopause, when hormone levels fluctuate and symptoms often start.
+Q: How common is premature ovarian insufficiency? | It affects about 1 in 100 women.
+Q: Apart from natural ageing, what can cause menopause? | Surgery or cancer treatment.
+Q: Name four common symptoms of menopause. | Hot flushes, night sweats, sleep problems, low mood or anxiety, poor concentration, joint aches and vaginal dryness.
+Q: What does HRT replace? | Oestrogen, with progestogen if the womb is present.
+Q: What is a risk of some types of HRT that should be discussed? | A small increase in breast cancer risk.
+Q: Name two non-HRT options for menopause symptoms. | CBT, lifestyle changes and non-hormonal medicines.
+Q: How can the Equality Act 2010 protect people with menopause symptoms? | Severe symptoms may be protected through sex, age or disability discrimination.
+Q: What was introduced in England in 2023 for HRT? | An HRT prescription prepayment certificate.
+Q: Why is it wrong to think menopause only affects women in their fifties? | Perimenopause can start in the forties, and premature menopause occurs before 40.
 
 ## Healthy ageing
 LV: Level 3 · Application
@@ -436,6 +526,16 @@ M2#health-u11-10-q2@2: Which factor most clearly supports function in later life
 M3#health-u11-10-q3@3: Why can two people with the same health conditions have different functional ability? | Their environments, such as housing and transport, differ | Functional ability depends only on genes | Health conditions never affect function | Older people cannot change their function | Environment interacts with intrinsic capacity.
 MATCH2#health-u11-10-q4@1: Match each factor to its effect. | Hearing loss = Dementia risk factor ; Loneliness = Poorer health ; Strength training = Maintained function ; Accessible transport = Greater participation | Many factors shape healthy ageing.
 SA3#health-u11-10-q5@2,3: Explain why reducing inequalities in healthy life expectancy is a priority. | People in the most deprived areas live shorter lives and spend many more years in poor health than those in the least deprived, a gap linked to income, housing, work and health behaviours. These inequalities are unfair and avoidable, and they increase demand on health and care services and reduce people's ability to work and care. Action on the wider determinants and prevention could narrow the gap. | Size of gap ; Causes ; Fairness ; Service demand ; Action needed
+Q: What happened to UK life expectancy improvements after about 2011? | They slowed.
+Q: Roughly how many of their last years can people in England expect to live in poorer health? | Roughly the last 15 to 20 years.
+Q: How does deprivation affect healthy life expectancy? | It is much lower in deprived areas, with a large gap between the most and least deprived.
+Q: What is functional ability? | The capabilities that enable people to be and do what they value.
+Q: What two things does functional ability depend on? | Intrinsic capacity (physical and mental capacities) and the environment, such as homes, transport, services and attitudes.
+Q: How does ageism affect older people? | It affects how they are treated and can harm their health.
+Q: How often should older adults do strength and balance exercises? | On at least two days a week.
+Q: What did the 2024 Lancet Commission estimate about dementia? | Nearly half of cases could theoretically be prevented or delayed by tackling modifiable risk factors.
+Q: Name three modifiable risk factors for dementia. | Hearing loss, high blood pressure, physical inactivity, smoking and social isolation.
+Q: Is poor health an inevitable part of ageing? | No. Much decline is linked to modifiable risks and environments.
 
 ## Frailty and falls
 LV: Level 3 · Application
@@ -478,6 +578,16 @@ M2#health-u11-11-q2@2: Which medicine type increases falls risk? | Sedatives | E
 M3#health-u11-11-q3@3: Why can fear of falling be harmful in itself? | It reduces activity, leading to weakness and more falls | It always prevents any further falls | It improves balance over time | It has no effect on health | Avoiding activity causes muscle weakness and deconditioning.
 MATCH2#health-u11-11-q4@2: Match each risk factor to an intervention. | Weak legs = Strength and balance class ; Loose rugs = Occupational therapy home check ; Cataracts = Eye surgery ; Osteoporosis = Bone protection treatment | Targeted actions address individual risks.
 SA3#health-u11-11-q5@2,3: Explain why falls in older people are a significant public health issue. | They are very common and cause injuries such as hip fractures, which lead to pain, disability, loss of independence and sometimes death. A long lie and fear of falling reduce confidence and activity, increasing frailty. Falls are a major cost to the NHS and social care. Many are preventable through exercise, medication review and safer homes, making prevention worthwhile. | Frequency ; Injuries and death ; Loss of independence ; Costs ; Preventability
+Q: What is frailty? | A state of reduced reserve across body systems, so a minor illness or change can cause a big decline.
+Q: Name three signs of frailty. | Weight loss, tiredness, weakness, slow walking and low activity.
+Q: What is the Clinical Frailty Scale? | A scale grading people from very fit to severely frail.
+Q: Can frailty be improved? | Sometimes, through exercise, good nutrition and reviewing medicines; it is not inevitable with age.
+Q: What proportion of people over 80 fall each year? | About half.
+Q: Name four causes of falls in older people. | Weak muscles, poor balance, sedative medicines, low blood pressure on standing, poor eyesight, foot problems, confusion and home hazards.
+Q: What is a long lie? | Remaining on the floor for an hour or more after a fall.
+Q: How can the harm of a long lie be reduced? | Personal alarms and teaching people how to get up.
+Q: Name four evidence-based falls prevention measures. | Strength and balance exercise, medication review, eye tests and cataract surgery, removing home hazards, suitable footwear and treating osteoporosis.
+Q: Should falls be accepted as a normal part of ageing? | No. Falls usually have identifiable, often modifiable causes.
 
 ## Carers and caring
 LV: Level 3 · Application
@@ -522,6 +632,16 @@ M2#health-u11-12-q2@2: What does the Carer's Leave Act 2023 provide? | A right t
 M3#health-u11-12-q3@3: Why should professionals ask people whether they are carers? | Many carers do not identify themselves and miss support | All carers are already known to services | Carers are legally required to register | It reduces the need for social care | Asking helps identify hidden carers who need support.
 MATCH2#health-u11-12-q4@1: Match each support to its purpose. | Carer's assessment = Identify carers' own needs ; Respite care = Give carers a break ; Carer's Allowance = Financial support ; Young carers' group = Peer support for children | Different supports meet different needs.
 SA3#health-u11-12-q5@2,3: Explain how caring can affect a carer's health and wellbeing, and how this can be reduced. | Caring can cause stress, anxiety and depression, physical strain and injury, tiredness from broken sleep, and isolation from friends and activities. Financial strain from reduced work adds pressure, and carers often neglect their own health. Carer's assessments, respite, financial support, flexible work and carer's leave, peer support and recognition by GPs help reduce these harms. | Mental health effects ; Physical strain ; Isolation and finances ; Neglected own health ; Support measures
+Q: Who is an unpaid carer? | Someone who looks after a family member, partner or friend who needs help because of illness, disability, mental health problems or addiction.
+Q: How many people in England and Wales reported providing unpaid care in the 2021 Census? | Around 5 million.
+Q: Who is more likely to provide unpaid care? | Women, especially in mid-life.
+Q: Name three negative effects of caring on carers. | Stress, fatigue, depression, physical strain, isolation and financial hardship.
+Q: How can caring affect young carers? | They may miss school and opportunities.
+Q: What is respite care? | Short-term care that gives a carer a break.
+Q: Who is eligible for Carer's Allowance? | People caring for at least 35 hours a week who meet the conditions.
+Q: What does the Carer's Leave Act 2023 give employees? | A right to unpaid leave for caring, in Great Britain from April 2024.
+Q: How can GPs support carers? | By recording carers and offering health checks and flu vaccines.
+Q: Why should professionals ask people whether they care for someone? | Many carers do not see themselves as carers, so they will not identify themselves.
 
 ## End of life care
 LV: Level 3 · Evaluation
@@ -566,4 +686,14 @@ M2#health-u11-13-q2@2: What does a ReSPECT form record? | Recommendations for em
 M3#health-u11-13-q3@3: What is the main argument of those opposing assisted dying? | Vulnerable people may feel pressure to end their lives | Everyone already has access to assisted dying | It would reduce the need for hospices to zero | It is required by the NHS Constitution | Concern for vulnerable people is central to opposition.
 MATCH2#health-u11-13-q4@2: Match each tool to its purpose. | Lasting power of attorney = Trusted person decides if capacity is lost ; Advance decision = Legally binding refusal of treatment ; DNACPR = No attempt at CPR ; Advance care plan = Records wishes and preferences | Planning tools serve different purposes.
 SA3#health-u11-13-q5@2,3: Discuss the arguments for and against legalising assisted dying in the UK. | Supporters argue that people with terminal illness should have autonomy over how they die, that it can relieve unbearable suffering, and that other countries have regulated systems with safeguards. Opponents argue that vulnerable people may feel a burden and be pressured, that it may undermine trust in doctors, that safeguards can fail, and that better palliative care should come first. The debate involves ethics, law, medicine and public opinion, and legislation has been under consideration. | Autonomy ; Relief of suffering ; Risks to vulnerable people ; Palliative care alternative ; Ongoing debate
+Q: What does palliative care address? | Physical, psychological, social and spiritual needs of people with life-limiting illness and their families.
+Q: What period does end of life care usually refer to? | The last year of life, including the last days.
+Q: Where do most people say they would prefer to die? | At home, though many die in hospital.
+Q: What is advance care planning? | Discussing and recording wishes, values and preferred place of care for the future.
+Q: When is an advance decision to refuse treatment legally binding? | In England and Wales, if it is valid and applicable.
+Q: What do DNACPR decisions and ReSPECT forms record? | Recommendations about emergency treatment.
+Q: What does care focus on in the last days of life? | Comfort, dignity and supporting family, in line with the Five Priorities for Care.
+Q: What is the legal status of assisted dying in the UK? | It is illegal at present, though legislation has been debated in the UK and Scottish Parliaments since 2024.
+Q: What do supporters of assisted dying stress? | Autonomy and relief of suffering.
+Q: When can palliative care begin? | At diagnosis of a life-limiting illness, not only in the last days of life.
 `;

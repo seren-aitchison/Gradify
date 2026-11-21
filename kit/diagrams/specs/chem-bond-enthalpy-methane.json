@@ -1,0 +1,94 @@
+{
+ "id": "chem-bond-enthalpy-methane",
+ "renderer": "cycle",
+ "course": "chemistry",
+ "unit": "u04",
+ "lesson": "Bond enthalpy",
+ "title": "Bond enthalpies: burning methane",
+ "caption": "Breaking every bond in CH₄ + 2O₂ to make free atoms takes 2648 kJ; forming the bonds in CO₂ + 2H₂O releases 3466 kJ. ΔH = 2648 − 3466 = −818 kJ mol⁻¹, from mean bond enthalpies.",
+ "alt": "Enthalpy diagram: reactants, then up 2648 kJ to separate atoms, then down 3466 kJ to products, which lie 818 kJ below the reactants.",
+ "description": [
+  "Reactants CH₄ + 2O₂ at the start.",
+  "Up 2648 kJ to C + 4H + 4O: bonds broken, 4 C–H and 2 O=O.",
+  "Down 3466 kJ to CO₂ + 2H₂O: bonds made, 2 C=O and 4 O–H.",
+  "Net ΔH = −818 kJ mol⁻¹."
+ ],
+ "kind": "levels",
+ "states": [
+  {
+   "id": "r",
+   "label": "CH4 + 2O2"
+  },
+  {
+   "id": "a",
+   "label": "C + 4H + 4O (gaseous atoms)"
+  },
+  {
+   "id": "p",
+   "label": "CO2 + 2H2O"
+  }
+ ],
+ "steps": [
+  {
+   "from": "r",
+   "to": "a",
+   "dh": 2648,
+   "label": "bonds broken",
+   "col": 0
+  },
+  {
+   "from": "a",
+   "to": "p",
+   "dh": -3466,
+   "label": "bonds made",
+   "col": 1
+  },
+  {
+   "from": "r",
+   "to": "p",
+   "dh": null,
+   "label": "ΔH",
+   "col": 2
+  }
+ ],
+ "find": {
+  "step": 2,
+  "value": -818
+ },
+ "bonds": [
+  {
+   "step": 0,
+   "list": [
+    [
+     "C–H",
+     4,
+     413
+    ],
+    [
+     "O=O",
+     2,
+     498
+    ]
+   ]
+  },
+  {
+   "step": 1,
+   "sign": -1,
+   "list": [
+    [
+     "C=O",
+     2,
+     805
+    ],
+    [
+     "O–H",
+     4,
+     464
+    ]
+   ]
+  }
+ ],
+ "equations": [
+  "CH4 + 2O2 → CO2 + 2H2O"
+ ]
+}

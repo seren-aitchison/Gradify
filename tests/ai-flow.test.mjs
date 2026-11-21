@@ -27,7 +27,7 @@ test("every refusal reason gives a clear message, the right status and what the 
   const base = { plan: "free", used: 5, allowance: 5, period_end: "2026-12-01T00:00:00Z" };
   const r = refusal({ ...base, reason: "allowance" }, "socratic");
   assert.equal(r.status, 429); assert.equal(r.body.reason, "allowance"); assert.equal(r.body.upgrade, true); assert.equal(r.body.feature, "tutor");
-  assert.equal(r.body.error, "You've used your 5 free AI tutor conversations this month. They reset on 1 December. Gradify Pro has many more.");
+  assert.equal(r.body.error, "You've used your 5 free AI tutor conversations this month. They reset on 1 December. Gradify Ultra has many more.");
   const p = refusal({ ...base, plan: "pro", used: 20, allowance: 20, reason: "allowance" }, "pack");
   assert.equal(p.body.upgrade, false);
   assert.equal(p.body.error, "You've used this month's 20 study packs. Your allowance resets on 1 December.");
@@ -38,6 +38,19 @@ test("every refusal reason gives a clear message, the right status and what the 
     assert.equal(x.status, status, reason); assert.ok(x.body.error.length > 10, reason);
     assert.doesNotMatch(x.body.error, /budget|pence|£|cost/i, "learners aren't told about Gradify's costs");
   }
+});
+
+test("a fair-use refusal gives the calendar-month reset, not the learner's allowance period", () => {
+  // a Pro learner whose period runs to 15 December; the fair-use spend resets on 1 December (UTC)
+  const claim = { reason: "fair_use", plan: "pro", used: 3, allowance: 25, period_end: "2026-12-15T09:30:00Z" };
+  const r = refusal(claim, "explain", Date.UTC(2026, 10, 20, 12));
+  assert.equal(r.body.resetsAt, "2026-12-01T00:00:00.000Z");
+  assert.match(r.body.error, /resets on 1 December\./);
+  // the last moment of a month still resets on the 1st of the next; December rolls into January
+  assert.equal(refusal(claim, "explain", Date.UTC(2026, 10, 30, 23, 59, 59)).body.resetsAt, "2026-12-01T00:00:00.000Z");
+  assert.equal(refusal(claim, "explain", Date.UTC(2026, 11, 5)).body.resetsAt, "2027-01-01T00:00:00.000Z");
+  // an allowance refusal keeps the learner's own period
+  assert.equal(refusal({ ...claim, reason: "allowance" }, "explain", Date.UTC(2026, 10, 20)).body.resetsAt, "2026-12-15T09:30:00Z");
 });
 
 test("a successful request settles with the real model and tokens, and returns the learner's usage", async () => {

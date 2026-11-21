@@ -1,0 +1,91 @@
+{
+ "id": "chem-melting-range",
+ "renderer": "graph",
+ "course": "chemistry",
+ "unit": "u19",
+ "lesson": "Purity assessment",
+ "title": "Melting point as a test of purity",
+ "caption": "A pure compound melts sharply, over a degree or so, at its known melting point: benzoic acid at 122 °C. Impurities disrupt the lattice, so an impure sample melts lower and over a wider range.",
+ "alt": "Temperature scale with two bars: pure benzoic acid melting from 121.5 to 122.5 °C, and an impure sample melting from 114 to 119 °C.",
+ "description": [
+  "Pure: 121.5–122.5 °C, sharp.",
+  "Impure: 114–119 °C, lower and broad."
+ ],
+ "range": {
+  "x": [
+   110,
+   126
+  ],
+  "y": [
+   0,
+   3
+  ]
+ },
+ "ticks": [
+  [
+   110,
+   114,
+   118,
+   122,
+   126
+  ],
+  []
+ ],
+ "axisLabels": [
+  "temperature / °C",
+  ""
+ ],
+ "xLabelBelow": true,
+ "height": [
+  220,
+  220
+ ],
+ "curves": [
+  {
+   "expr": "2",
+   "domain": [
+    121.5,
+    122.5
+   ],
+   "colour": "a4",
+   "width": 10,
+   "label": "pure",
+   "labelAt": [
+    123,
+    2
+   ]
+  },
+  {
+   "expr": "1",
+   "domain": [
+    114,
+    119
+   ],
+   "colour": "a2",
+   "width": 10,
+   "label": "impure",
+   "labelAt": [
+    119.5,
+    1
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "type": "order",
+   "a": "119",
+   "b": "121.5",
+   "x": 0,
+   "rel": "<",
+   "name": "the impure sample finishes melting below the pure one starts"
+  },
+  {
+   "type": "order",
+   "a": "122.5-121.5",
+   "b": "119-114",
+   "x": 0,
+   "rel": "<",
+   "name": "the impure range (5 °C) is wider than the pure one (1 °C)"
+  }
+ ]
+}

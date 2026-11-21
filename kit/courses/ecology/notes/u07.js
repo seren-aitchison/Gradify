@@ -42,6 +42,16 @@ M2#ecology-u07-01-q2@2: Why must conservation biology draw on the social science
 M3#ecology-u07-01-q3@3: A conservation team must decide whether to protect a site before research on a rare species is complete. What principle supports acting now? | Delay risks irreversible loss in a crisis discipline | Action should always wait for full certainty | Rare species are never worth protecting | Research must be stopped once action starts | Applying the standard result: Extinction cannot be reversed.
 TF1#ecology-u07-01-q4@1: Conservation biology aims to maintain evolutionary processes as well as individual species. | true | Soulé's principles include maintaining ecological and evolutionary complexity.
 SA2#ecology-u07-01-q5@2,3: Explain why conservation biology is described as interdisciplinary. | Protecting biodiversity requires understanding the ecology and genetics of species, but also the human causes of decline and the means of changing them. Economics explains incentives such as land-use profits, social science explains behaviour and livelihoods, and law and policy provide protected areas and regulation, so effective conservation combines all of these. | Biological knowledge ; Human drivers ; Economics and social science ; Law and policy
+Q: What is conservation biology? | The applied science of protecting and restoring biodiversity.
+Q: Who described conservation biology as a crisis discipline, and when? | Michael Soulé, in 1985.
+Q: Which older traditions did conservation biology build on? | Game management, forestry and nature protection.
+Q: Which society was founded in 1985 alongside the new field? | The Society for Conservation Biology.
+Q: Why do small, isolated populations need special attention in conservation biology? | They face special risks from chance events and loss of genetic variation.
+Q: What is a crisis discipline? | A field that must act before evidence is complete, because delay risks irreversible loss.
+Q: What does genetics contribute to conservation biology? | Understanding how to maintain variation in small populations.
+Q: Why are social sciences and economics central to conservation? | Most threats are driven by human behaviour, livelihoods and incentives.
+Q: In the rare orchid example, what actions do conservationists take before research is complete? | They seek protection for the site, collect seed for a seed bank and monitor the remaining populations.
+Q: What does conservation biology aim to maintain besides individual species? | Ecological complexity and evolutionary processes.
 
 ## Conservation values and ethics
 LV: Introductory · Evaluation
@@ -85,6 +95,16 @@ M2#ecology-u07-02-q2@2: A community values a forest as part of its cultural iden
 M3#ecology-u07-02-q3@3: What is a key criticism of relying only on ecosystem services arguments? | Species with no obvious use may be neglected | They cannot be measured in any way | They ignore human well-being entirely | They are based only on religious beliefs | Usefulness-based arguments leave some species out.
 MATCH1#ecology-u07-02-q4@2: Match each argument to its value type. | Bees pollinate crops = Instrumental ; A species has a right to exist = Intrinsic ; A river is part of local heritage = Relational ; Mangroves protect coasts from storms = Instrumental | Different arguments rest on different values.
 SA2#ecology-u07-02-q5@2,3: Evaluate the use of ecosystem service values in conservation decisions. | Expressing nature's benefits, such as flood protection or pollination, in terms decision-makers understand can win support and show the costs of destruction. However, many values are hard to measure, unmeasured species may be ignored, and monetary figures may suggest nature can be traded. They work best alongside intrinsic and relational arguments. | Persuasive to decision-makers ; Measurement problems ; Neglect of unused species ; Need for plural values
+Q: What is intrinsic value? | Value that nature has in itself, independent of human use.
+Q: What is relational value? | Value arising from people's relationships with nature, such as cultural identity, a sense of place or stewardship.
+Q: When was Aldo Leopold's land ethic published? | 1949.
+Q: According to Leopold, when is a thing right? | When it tends to preserve the integrity, stability and beauty of the biotic community.
+Q: What did a widely cited 1997 study estimate about ecosystem services? | That their global value was more than the world's GDP at the time.
+Q: When were relational values proposed, and why? | In 2016, to capture reasons people care about nature that are neither intrinsic nor instrumental.
+Q: What does the new conservation approach argue? | Conservation should focus on nature's benefits to people and work with business to gain wider support.
+Q: What is the main worry about the new conservation approach? | It risks abandoning species with no obvious use and treating nature as a commodity.
+Q: Why do many conservationists use plural values? | Different arguments persuade different people.
+Q: Does giving nature a monetary value mean it can be sold? | No; valuation is a tool for decisions, not a market price.
 
 ## Conservation genetics
 LV: Introductory · Application
@@ -129,6 +149,16 @@ M2#ecology-u07-03-q2@2: Why does genetic drift matter more in small populations?
 NUM2#ecology-u07-03-q3@2: A population has 20 breeding males and 20 breeding females. What is its effective population size? | 40 | 0 | individuals | N_{e} = 4 × 20 × 20 ÷ 40 = 1600 ÷ 40 = 40, equal to the census when the sexes are equal.
 M3#ecology-u07-03-q4@3: A rare plant population shows low seed set and many deformed seedlings. Which action could help most? | Introducing pollen or plants from another population | Removing all remaining plants for storage | Fencing the site with no other action | Reducing the population further | Genetic rescue can relieve inbreeding depression.
 SA2#ecology-u07-03-q5@2,3: Explain the benefits and risks of genetic rescue. | Introducing individuals from another population adds new alleles, increasing heterozygosity and masking harmful recessives, which can reverse inbreeding depression, as in the Florida panther. Risks include outbreeding depression if the source population is adapted to different conditions, swamping local adaptations, and introducing diseases, so donors should be chosen carefully. | New variation ; Reversing inbreeding ; Outbreeding depression ; Disease risk
+Q: What is genetic drift? | Random change in allele frequencies between generations, stronger in small populations.
+Q: How much heterozygosity does an ideal population lose each generation? | About 1 ÷ (2N_{e}).
+Q: Why does inbreeding reduce fitness? | Mating between relatives exposes harmful recessive alleles, reducing survival and fertility.
+Q: Why does low genetic variation threaten long-term survival? | It reduces capacity to adapt to disease or climate change.
+Q: What is effective population size? | The size of an idealised population that would lose genetic variation at the same rate as the real one.
+Q: What is the formula for N_{e} with an unequal breeding sex ratio? | N_{e} = 4 N_{m} N_{f} ÷ (N_{m} + N_{f}), using numbers of breeding males and females.
+Q: What is the effective size of a deer herd with 10 breeding males and 40 breeding females? | 32, not the census of 50.
+Q: What is genetic rescue? | Introducing individuals from another population to restore variation and reverse inbreeding depression.
+Q: How was the Florida panther genetically rescued? | Eight female pumas from Texas were released in 1995, and numbers and health improved.
+Q: Why shouldn't the census count be used to judge genetic risk? | The effective population size is often only a fraction of the animals counted.
 
 ## Minimum viable populations
 LV: Introductory · Application
@@ -174,6 +204,16 @@ M2#ecology-u07-04-q2@2: What is population viability analysis mainly used for? |
 M3#ecology-u07-04-q3@3: Why might a second population reduce extinction risk for a rare species? | A single catastrophe is unlikely to affect both sites | It doubles the genetic mutation rate | It removes the need for monitoring | It prevents all environmental variation | Spreading risk protects against catastrophes.
 TF2#ecology-u07-04-q4@2: Removing the original cause of decline guarantees a small population will recover. | false | Chance events and genetic problems can still drive a small population to extinction.
 SA2#ecology-u07-04-q5@2,3: Explain why small populations can continue to decline even after the original threat is removed. | Once numbers are low, chance variation in births, deaths and sex ratio, poor years and catastrophes have large effects. Inbreeding and drift reduce fitness and adaptability, and Allee effects make breeding harder. These processes reinforce each other in an extinction vortex, so recovery often needs active management. | Demographic chance ; Environmental variation ; Genetic effects ; Extinction vortex
+Q: What is a minimum viable population? | The smallest population with a high chance of surviving for a set time, such as 99% over 1,000 years.
+Q: Who proposed the minimum viable population idea, and when? | Shaffer, in 1981.
+Q: What is demographic stochasticity? | Chance variation in births, deaths and sex ratio, important below a few dozen individuals.
+Q: What is environmental stochasticity? | Year-to-year variation in weather, food or disease.
+Q: Give examples of catastrophes that threaten small populations. | Rare extreme events such as fires, hurricanes or epidemics.
+Q: What is population viability analysis? | Computer modelling of births, deaths and variability to estimate extinction risk under different scenarios.
+Q: Why are PVA results best used to rank options? | They depend heavily on data quality and assumptions, so exact predictions are unreliable.
+Q: What is the 50/500 rule of thumb? | An N_{e} of 50 avoids short-term inbreeding and 500 keeps adaptive potential; later work suggests several thousand.
+Q: In the island bird PVA, how did a second population change extinction risk? | It cut the 100-year risk from 30% to under 5%.
+Q: Why isn't an MVP a precise number for every species? | It depends on the species, the time frame and the level of risk accepted.
 
 ## Protected areas
 LV: Introductory · Application
@@ -220,6 +260,16 @@ M2#ecology-u07-05-q2@2: Why are compact reserves often preferred to long, thin o
 M3#ecology-u07-05-q3@3: A new reserve is placed on remote land of low value, away from threatened species. What is the main weakness? | It protects little that is actually at risk | It is too large to be managed | It has too many species to monitor | It cannot be counted towards targets | Location should follow conservation need.
 SEQ1#ecology-u07-05-q4@2: Order the IUCN categories from least to most human use. | Ia Strict nature reserve ; II National park ; IV Habitat or species management area ; V Protected landscape ; VI Sustainable use of resources | Categories run from strict protection to sustainable use.
 SA2#ecology-u07-05-q5@2,3: Evaluate the "30 by 30" target for protected areas. | Setting a clear global target has raised ambition and political attention. However, area alone does not guarantee protection: new sites may be placed where they are cheapest rather than most valuable, may be poorly managed, and may harm local and Indigenous people if their rights are ignored. Its success depends on location, management quality, funding and fair governance. | Raises ambition ; Location quality ; Management and funding ; Rights of people
+Q: What is a protected area? | A defined space managed for long-term conservation of nature.
+Q: What are IUCN categories Ia and Ib? | Strict nature reserves and wilderness areas, with minimal human use.
+Q: What does IUCN category II cover? | National parks protecting large ecosystems while allowing recreation.
+Q: What does IUCN category VI cover? | Areas with sustainable use of natural resources.
+Q: What does reserve design theory say about reserve size? | Larger reserves usually hold more species and larger populations.
+Q: What is the SLOSS debate, and what is its answer? | Single large or several small reserves; the answer depends on the species, and both have roles.
+Q: What matters most in choosing where reserves go? | Covering the species and habitats most at risk, not just land of little economic value.
+Q: What does protected area effectiveness depend on? | Funding, enforcement, management and support from local people.
+Q: What harm has fortress conservation caused? | Excluding local people has caused injustice and conflict.
+Q: What are the advantages of four separated patches over one large block? | They cover more habitat types and spread the risk of fire.
 
 ## UK protected sites: SSSIs, SACs and SPAs
 LV: Introductory · Application
@@ -263,6 +313,16 @@ M2#ecology-u07-06-q2@2: What must an SSSI owner do before carrying out a potenti
 M3#ecology-u07-06-q3@3: A road scheme would damage an SAC. What must be shown for it to proceed? | No alternatives, overriding public interest, and compensation | That the road is cheaper than alternatives | That local residents support the scheme | That the SAC is less than ten years old | Applying the standard result: Strict tests apply to habitats sites.
 MATCH1#ecology-u07-06-q4@1: Match each designation to its basis. | SSSI = Wildlife and Countryside Act 1981 ; SAC = Habitats Directive, now Habitats Regulations ; SPA = Birds Directive, now Habitats Regulations ; Ramsar site = Wetlands convention of 1971 | Designations have different legal roots.
 SA2#ecology-u07-06-q5@2,3: Explain why the Lawton review called for "more, bigger, better and joined" wildlife sites. | The review found England's sites were too small and isolated to hold viable populations or let species move in response to climate change, and many were in poor condition. More and bigger sites support larger populations, better management improves habitat quality, and joining them through corridors and stepping stones creates a coherent ecological network. | Small isolated sites ; Climate change ; Poor condition ; Ecological network
+Q: What are Areas of Special Scientific Interest? | Northern Ireland's equivalent of SSSIs.
+Q: Which body must SSSI owners in England seek consent from? | Natural England, the statutory nature conservation body.
+Q: Which EU directive underlies Special Areas of Conservation? | The Habitats Directive.
+Q: Which law kept SACs and SPAs after the UK left the EU? | The Conservation of Habitats and Species Regulations 2017 (as amended).
+Q: What is a Habitats Regulations Assessment? | An assessment needed for plans affecting habitats sites, to judge possible harm.
+Q: What are Ramsar sites? | Wetlands of international importance, usually also SSSIs, SACs or SPAs.
+Q: What threatens the condition of many SSSIs? | Nutrient pollution, overgrazing, undergrazing and drainage.
+Q: What did the Lawton review conclude about England's sites in 2010? | They were too small, too few and too poorly connected.
+Q: In the SPA example, what was the concern about new housing near heathland? | Extra dog walkers might disturb ground-nesting birds such as nightjars.
+Q: What mitigation was proposed for housing near the heathland SPA? | Alternative green spaces for recreation and wardens on the heath.
 
 ## Habitat management
 LV: Introductory · Application
@@ -306,6 +366,16 @@ M2#ecology-u07-07-q2@2: Why should hay cuts be timed after flowers have set seed
 M3#ecology-u07-07-q3@3: Monitoring shows orchid numbers falling despite grazing. What should managers do first? | Review the stocking rate and timing in the plan | Stop all monitoring of the site | Abandon the management objectives | Fertilise the grassland heavily | Applying the standard result: Adaptive management responds to results.
 MATCH1#ecology-u07-07-q4@1: Match each habitat to a typical management technique. | Chalk grassland = Sheep grazing ; Hay meadow = Late summer mowing ; Hazel woodland = Coppicing ; Reedbed = Water-level control | Each habitat needs suitable management.
 SA2#ecology-u07-07-q5@2,3: Explain why managing a semi-natural habitat is not the same as "interfering with nature". | Semi-natural habitats were created by centuries of human activity such as grazing and cutting, and many species adapted to these conditions. Without continued management, succession replaces them with scrub and woodland, and the specialist species are lost. Management therefore continues a long-standing relationship rather than imposing something new. | Human-made habitats ; Adapted species ; Succession ; Continuing tradition
+Q: What is a semi-natural habitat? | Habitat shaped by long-term traditional human management.
+Q: Give four UK semi-natural habitats. | Chalk grassland, lowland heath, hay meadows and coppiced woodland.
+Q: Why does the adonis blue butterfly decline when grazing stops? | It depends on short turf, which grows rank without grazing.
+Q: What does grazing do for habitats? | Cattle, sheep or ponies create varied sward heights and trample bracken.
+Q: Why is scrub often cut in rotation? | To keep some scrub for birds and insects.
+Q: What is coppicing? | Cutting trees to ground level on a cycle.
+Q: How are wetlands kept wet? | Through water-level management with ditches and sluices.
+Q: What is adaptive management? | Adjusting management methods in response to monitoring results.
+Q: What does monitoring check in habitat management? | Whether objectives are met, such as sward height or plant indicator species.
+Q: Why doesn't leaving nature alone always help wildlife? | On semi-natural habitats, abandonment often causes loss of the species of interest.
 
 ## Habitat restoration
 LV: Introductory · Application
@@ -349,6 +419,16 @@ M2#ecology-u07-08-q2@2: What is a reference ecosystem? | A healthy example used 
 M3#ecology-u07-08-q3@3: A restored meadow has the right grasses but few wildflowers after three years. What is the most likely cause? | Soil fertility is still too high | The meadow is too species-rich already | The grazing is too late in the year | Restoration is complete and successful | High nutrients favour competitive grasses.
 TF1#ecology-u07-08-q4@1: Managed realignment involves building higher sea walls. | false | It involves breaching or removing sea walls to let tides recreate intertidal habitat.
 SA2#ecology-u07-08-q5@2,3: Explain how the success of a habitat restoration project should be assessed. | Success should be judged against clear objectives and a reference ecosystem in good condition. Monitoring should cover structure, such as vegetation height or water table, composition, such as indicator species, and function, such as carbon storage or flood regulation. Because ecosystems develop slowly, monitoring must continue for many years. | Objectives and reference ; Structure ; Composition and function ; Long-term monitoring
+Q: What is ecological restoration? | Assisting the recovery of an ecosystem that has been degraded, damaged or destroyed.
+Q: How does rehabilitation differ from full restoration? | It restores some functions, such as water storage, without fully recreating the original community.
+Q: Which decade did the UN declare the Decade on Ecosystem Restoration? | 2021–2030.
+Q: What is green hay spreading? | Spreading freshly cut hay from a nearby meadow to introduce seeds.
+Q: Name three river restoration techniques. | Removing weirs, reconnecting floodplains, reintroducing meanders and adding woody debris.
+Q: What is managed realignment? | Allowing the sea to flood land behind a breached sea wall, creating saltmarsh.
+Q: What three aspects of a restored site are tracked? | Structure, composition and function.
+Q: Why is long-term monitoring essential in restoration? | Restoration often takes decades.
+Q: How does blanket bog restoration affect downstream flooding? | Peak flood flows fall because water is held back longer.
+Q: Why shouldn't a restored habitat be expected to match an ancient one quickly? | Many communities, such as ancient woodland, take centuries to develop.
 
 ## Rewilding
 LV: Introductory · Evaluation
@@ -392,6 +472,16 @@ M2#ecology-u07-09-q2@2: At Knepp, which animals were introduced to drive rewildi
 M3#ecology-u07-09-q3@3: Why might rewilding harm some species? | Open-habitat specialists may decline as scrub develops | Rewilding always removes all predators | It requires the use of pesticides | It prevents any natural processes | Not every species benefits from succession.
 TF2#ecology-u07-09-q4@2: The strength of the Yellowstone trophic cascade is universally accepted. | false | Researchers continue to debate how strongly wolves caused vegetation recovery.
 SA2#ecology-u07-09-q5@2,3: Evaluate rewilding as a conservation approach in the UK. | Rewilding at sites like Knepp has increased declining species and can store carbon and reduce flooding, while generating tourism income. However, it can reduce food production and farm jobs, raise welfare concerns, and may not suit small sites or species dependent on specific management. Its value depends on scale, location and local support. | Biodiversity gains ; Ecosystem services ; Food and livelihoods ; Context dependence
+Q: What is rewilding? | Restoring natural processes and letting ecosystems develop with minimal intervention.
+Q: What is trophic rewilding? | Reintroducing large animals to restore ecosystem processes.
+Q: What is Frans Vera's wood-pasture hypothesis? | That large grazers kept prehistoric European landscapes partly open.
+Q: When did rewilding begin at Knepp, and what was the land before? | From 2001, on an intensive arable and dairy farm.
+Q: Which species increased at Knepp? | Turtle doves, purple emperor butterflies and nightingales.
+Q: What went wrong at Oostvaardersplassen? | Large herbivore numbers grew until many starved in hard winters, raising welfare concerns.
+Q: Name three benefits claimed for rewilding. | Biodiversity gains, carbon storage, flood regulation and ecotourism income.
+Q: Name three concerns about rewilding. | Loss of food production, effects on rural jobs, animal welfare and predators near livestock.
+Q: When might targeted management be safer than rewilding? | When a particular species is the priority and the site is small.
+Q: Does rewilding mean abandoning land? | No; it usually involves active steps, such as reintroducing grazers and removing drains, before stepping back.
 
 ## Species reintroductions
 LV: Introductory · Application
@@ -436,6 +526,16 @@ M2#ecology-u07-10-q2@2: What is the first step in planning a reintroduction? | A
 M3#ecology-u07-10-q3@3: A species died out because of persecution, which still continues. What should happen before reintroduction? | Address the persecution | Release more animals to compensate | Release only juveniles | Proceed and hope for the best | Applying the standard result: The original cause must be removed.
 MATCH1#ecology-u07-10-q4@2: Match each species to its UK reintroduction story. | Red kite = Released from 1989 with Spanish and Swedish birds ; White-tailed eagle = Returned to Rum in 1975 ; Large blue = Reintroduced after extinction in 1979 ; Eurasian beaver = Trial at Knapdale from 2009 | Each has a distinct history.
 SA2#ecology-u07-10-q5@2,3: Explain why public consultation is important in reintroductions. | Reintroduced species, especially predators or ecosystem engineers such as beavers, may affect farmers, fishers and landowners. Consulting them early identifies concerns, builds support, and allows measures such as management agreements or compensation. Without support, released animals may be persecuted and the project may fail. | Affected people ; Early concerns ; Mitigation ; Support for success
+Q: What is a reintroduction? | Returning a species to part of its former range where it has died out.
+Q: What is assisted colonisation? | Moving a species outside its range, for example in response to climate change.
+Q: What guidelines cover conservation translocations? | The IUCN guidelines for conservation translocations (2013).
+Q: What questions does a reintroduction feasibility study ask? | Have causes of extinction been removed, is there enough habitat, and is a suitable donor population available?
+Q: What is a soft release? | Releasing animals gradually after acclimatising them in pens.
+Q: Where did reintroduced red kites come from? | Spain and Sweden.
+Q: When and where were white-tailed eagles first returned? | To Rum in 1975.
+Q: When did the large blue butterfly die out in Britain? | 1979.
+Q: Where and when did the Scottish beaver trial begin? | At Knapdale, in 2009.
+Q: Why does reintroduction fail if the original cause of loss remains? | Released animals face the same threat that drove the species extinct.
 
 ## Wildlife corridors and landscape connectivity
 LV: Introductory · Application
@@ -479,6 +579,16 @@ M2#ecology-u07-11-q2@2: Why does isolation increase extinction risk for small po
 M3#ecology-u07-11-q3@3: What is a possible disadvantage of corridors? | They may help spread disease or invasive species | They always reduce animal movement | They increase edge effects to zero | They cannot be used by any mammals | Applying the standard result: Connections carry unwanted things too.
 TF1#ecology-u07-11-q4@1: Stepping stones must be physically joined to work. | false | Stepping stones are separate patches close enough for species to move between.
 SA2#ecology-u07-11-q5@2,3: Evaluate the use of corridors to reduce the effects of habitat fragmentation. | Corridors can increase movement between patches, allowing recolonisation, gene flow and range shifts under climate change, and evidence shows they generally increase dispersal. But they help only species that will use them, may spread disease, fire or invasive species, and can be less cost-effective than enlarging or improving existing patches. | Movement and gene flow ; Climate adaptation ; Species-specific ; Costs and risks
+Q: What is habitat fragmentation? | The breaking up of habitat into smaller, isolated patches.
+Q: How does isolation harm fragmented populations? | It prevents recolonisation after local extinction and limits gene flow.
+Q: By how much did a global synthesis find fragmentation reduced biodiversity? | By 13–75%, also impairing key ecosystem functions.
+Q: What are stepping stones? | Habitat patches close enough for species to hop between, such as ponds or small woods.
+Q: What is the landscape matrix approach to connectivity? | Making land between patches less hostile, such as through wildlife-friendly farming.
+Q: What are crossing structures? | Green bridges and tunnels over and under roads.
+Q: How much did corridors increase movement between patches in a meta-analysis? | By about 50% compared with unconnected patches.
+Q: What may corridors spread besides wildlife? | Disease, invasive species or fire.
+Q: Besides connecting patches, what else often matters as much? | Increasing patch size and quality.
+Q: How were two isolated dormouse woods connected? | By planting a thick hedgerow with hazel and bramble between them.
 
 ## Zoos and captive breeding
 LV: Introductory · Evaluation
@@ -523,6 +633,16 @@ M2#ecology-u07-12-q2@2: Which species was reintroduced to Oman after extinction 
 M3#ecology-u07-12-q3@3: Captive-bred animals released into the wild suffer high predation. What is a likely cause? | Loss of predator-avoidance behaviour in captivity | Too much genetic variation in the population | Release into a protected area | An excess of suitable habitat | Applying the standard result: Captivity can erode wild behaviours.
 SEQ1#ecology-u07-12-q4@2: Order the stages in the Arabian oryx story. | Hunting removes the last wild animals ; Captive herds are bred in zoos ; Reintroduction to Oman begins ; Poaching hits the released population | The sequence runs from 1972 onwards.
 SA2#ecology-u07-12-q5@2,3: Evaluate the role of zoos in species conservation. | Zoos have saved species such as the Arabian oryx and California condor through coordinated breeding and reintroduction, and they fund field projects and educate visitors. However, they can hold few threatened species, captive populations may lose genetic and behavioural fitness, and costs are high. Their value depends on linking captive work to protection in the wild. | Species saved ; Research and education ; Limited capacity ; Need for in situ links
+Q: What is ex situ conservation? | Conserving species outside their natural habitat, in zoos, aquaria, botanic gardens or seed banks.
+Q: What role should ex situ conservation play? | Insurance against extinction and a source for reintroduction, supporting rather than replacing protection in the wild.
+Q: When was the Arabian oryx extinct in the wild? | By 1972, wiped out by hunting.
+Q: What happened to the last wild California condors in 1987? | All were taken into captivity.
+Q: When was Przewalski's horse returned to Mongolia? | From 1992.
+Q: Why can captive-bred animals do poorly after release? | They may lose genetic diversity, adapt to captivity and lose behaviours such as predator avoidance.
+Q: Why can only a small fraction of threatened species be held in zoos? | Captive breeding is expensive and space is limited.
+Q: What does the later decline of Oman's oryx show? | Release must be matched by protection in the wild, as poaching reduced the population.
+Q: Name two roles of zoos besides breeding. | Research on reproduction, nutrition and disease, and education and funding for field conservation.
+Q: Why isn't a species safe in zoos a conservation success? | The aim is a viable wild population.
 
 ## Seed banks and botanic gardens
 LV: Introductory · Application
@@ -566,6 +686,16 @@ M2#ecology-u07-13-q2@2: What happens to recalcitrant seeds if they are dried? | 
 M3#ecology-u07-13-q3@3: A tropical tree species with recalcitrant seeds is threatened. Which method suits ex situ conservation? | Living collections or cryopreserved embryos | Standard drying and freezing of seed | Storing seed at room temperature | Collecting one seed from one tree | Conventional banking fails for these seeds.
 TF1#ecology-u07-13-q4@1: The Svalbard Global Seed Vault mainly stores backup copies of crop seed collections. | true | It safeguards duplicates of seed from gene banks around the world.
 SA2#ecology-u07-13-q5@2,3: Explain why seed banks complement, rather than replace, conservation in the wild. | Seed banks store genetic diversity as insurance against extinction and supply material for restoration. But stored seeds do not evolve with changing climate or pathogens, recalcitrant species cannot be banked, and seeds lose ecological interactions such as pollinators. Wild populations must be protected so species continue to adapt and function in ecosystems. | Insurance ; No evolution ; Recalcitrant limits ; Ecological interactions
+Q: How are seeds prepared for a seed bank? | They are cleaned, dried to low moisture, sealed and stored at around −20 °C.
+Q: Where is the Millennium Seed Bank, and who runs it? | At Wakehurst in West Sussex, run by the Royal Botanic Gardens, Kew.
+Q: When did the Svalbard Global Seed Vault open? | In 2008, in Norway.
+Q: What are orthodox seeds? | Seeds that survive drying and freezing, including most temperate plants and many crops.
+Q: How can species with recalcitrant seeds be conserved ex situ? | In living collections or by cryopreserving embryos in liquid nitrogen.
+Q: Why collect seeds from several populations? | Storing many individuals from several populations captures more genetic diversity.
+Q: What strategy guides botanic garden networks? | The Global Strategy for Plant Conservation.
+Q: Name three roles of botanic gardens. | Living collections of threatened plants, research on identification and propagation, and reintroduction of rare plants.
+Q: How was a rare arable weed re-established from stored seed? | Plants grown from banked seed were used on a reserve managed with traditional cultivation.
+Q: What happens when a seed sample's viability falls? | It is regenerated to renew the collection.
 
 ## Conservation on farmland
 LV: Introductory · Application
@@ -612,6 +742,16 @@ M2#ecology-u07-14-q2@2: What is land sparing? | Farming intensively on less land
 M3#ecology-u07-14-q3@3: Wildflower margins are planted but quickly become dominated by coarse grasses. What is the most likely problem? | High soil fertility and poor management | Too few pollinators visiting the site | Too little fertiliser being applied | The margins are too narrow to be seen | Applying the standard result: Nutrient-rich soils favour grasses.
 MATCH2#ecology-u07-14-q4@2: Match each measure to the wildlife it mainly helps. | Skylark plots = Ground-nesting birds ; Wildflower margins = Pollinators ; Winter bird food plots = Seed-eating birds ; Beetle banks = Predatory insects | Measures target different groups.
 SA2#ecology-u07-14-q5@2,3: Compare land sparing and land sharing as strategies for biodiversity. | Land sharing integrates wildlife-friendly practices across farmland, benefiting common farmland species and services such as pollination, but may reduce yields, requiring more land overall. Land sparing farms intensively on less land to protect larger natural areas, which studies suggest can favour more specialist species. Its success depends on high yields and spared land actually being protected, so a mix is often recommended. | Sharing benefits ; Yield trade-off ; Sparing benefits ; Conditions and mix
+Q: How much of the UK's land is farmland? | About 70%.
+Q: How much has the UK farmland bird indicator fallen since 1970? | By more than half.
+Q: Give three causes of farmland wildlife decline besides autumn sowing. | Loss of winter stubbles, hedgerow removal, drainage, heavier fertiliser and pesticide use, and loss of mixed farming.
+Q: Name a farmland mammal that has declined. | The brown hare.
+Q: Name three agri-environment measures. | Wildflower margins, beetle banks, winter bird food plots and skylark plots.
+Q: How should hedgerows be managed for wildlife? | Cut less often and in rotation, so they flower and fruit.
+Q: Name two English agri-environment schemes. | Countryside Stewardship and the Sustainable Farming Incentive.
+Q: What did studies in Ghana and India find about land sparing? | More bird and tree species did better under sparing.
+Q: What are the benefits of land sharing? | It benefits common farmland species and ecosystem services.
+Q: Why do skylarks struggle in autumn-sown cereals? | The crops grow too tall by spring for nesting.
 
 ## Marine conservation
 LV: Introductory · Application
@@ -657,6 +797,16 @@ M2#ecology-u07-15-q2@2: How can MPAs benefit fisheries outside them? | Spillover
 M3#ecology-u07-15-q3@3: An MPA is small, recently created and allows bottom trawling. What outcome is likely? | Limited conservation benefit | Rapid recovery of all species | Greater benefits than a no-take zone | Complete protection of the seabed | Applying the standard result: It lacks key NEOLI features.
 TF1#ecology-u07-15-q4@1: Most marine protected areas in the world ban all fishing. | false | Most allow some activities; fully no-take areas cover only a small share of the ocean.
 SA2#ecology-u07-15-q5@2,3: Explain what makes a marine protected area effective. | Research shows the best outcomes in MPAs that are no-take, well enforced, established for over ten years, larger than about 100 km² and isolated by deep water or sand. These features let populations recover, mature and reproduce without fishing pressure. Local support and monitoring also help, while partially protected or unenforced MPAs deliver much less. | No-take and enforced ; Age and size ; Isolation ; Support and monitoring
+Q: What is bycatch? | The catch of non-target species, including seabirds, dolphins and turtles.
+Q: How does bottom trawling harm marine life? | It damages seabed habitats.
+Q: What is a marine protected area? | A marine area with restrictions to protect its wildlife.
+Q: How did biomass inside no-take reserves compare with outside in a global review? | On average, several times higher inside.
+Q: What is spillover? | Movement of adults and larvae from a reserve into surrounding fished areas.
+Q: What happened to lobsters in Lundy's no-take zone? | They became more abundant and larger inside the zone.
+Q: How did Lundy's fishers come to view the no-take zone? | Initially sceptical, they came to support it.
+Q: Under which act were Marine Conservation Zones designated? | The Marine and Coastal Access Act 2009.
+Q: When were England's first Highly Protected Marine Areas designated? | 2023.
+Q: What does the BBNJ high seas treaty provide for? | Marine protected areas in areas beyond national jurisdiction.
 
 ## International conservation agreements
 LV: Introductory · Application
@@ -702,6 +852,16 @@ M2#ecology-u07-16-q2@2: What does an Appendix II listing require for trade? | Pe
 M3#ecology-u07-16-q3@3: Why did many Aichi targets go unmet? | Weak national action, funding and enforcement | The targets were all too easy to meet | No countries signed the CBD | Biodiversity loss stopped before 2020 | Global targets rely on national delivery.
 SEQ1#ecology-u07-16-q4@2: Order these agreements by date. | Ramsar Convention ; CITES ; Convention on Biological Diversity ; Kunming–Montreal Global Biodiversity Framework | Ramsar dates from 1971, CITES from 1973, the CBD from 1992 and the Kunming–Montreal framework from 2022.
 SA2#ecology-u07-16-q5@2,3: Evaluate the effectiveness of international biodiversity agreements. | Agreements create shared goals, legal frameworks and reporting, and CITES has helped control trade in many species. But they depend on national implementation, funding and enforcement; the Aichi targets were largely missed, and illegal wildlife trade continues. Their success depends on translating global commitments into national laws and action. | Shared frameworks ; CITES successes ; Missed targets ; National implementation
+Q: What is the Ramsar Convention, and when was it agreed? | A 1971 convention on conservation and wise use of internationally important wetlands.
+Q: What does CITES regulate, and when was it agreed? | International trade in endangered species, agreed in 1973.
+Q: What does the Bonn Convention protect? | Migratory species across their ranges.
+Q: What is the Bern Convention? | A 1979 agreement on conserving European wildlife and habitats.
+Q: Where was the Convention on Biological Diversity agreed? | At the Rio Earth Summit in 1992.
+Q: What does CITES Appendix II cover? | Species that could become threatened unless trade is controlled, needing permits for trade.
+Q: What does CITES Appendix III cover? | Species protected in at least one country that has asked others for help.
+Q: Give two Appendix I species. | Tigers and most rhinos.
+Q: What were the Aichi targets? | The CBD's targets for 2011–2020, which were not fully met globally.
+Q: Why aren't international agreements self-enforcing? | They depend on national laws, resources and political will.
 
 ## Evidence-based conservation
 LV: Introductory · Evaluation
@@ -746,6 +906,16 @@ M2#ecology-u07-17-q2@2: Why is a control site needed when evaluating an interven
 NUM2#ecology-u07-17-q3@2: A control site changes from 50 to 45 butterflies, and the treated site from 48 to 63. What is the BACI estimate of the effect? | 20 | 0 | butterflies | Treated change is +15 and control change is −5, so the effect is 15 − (−5) = 20.
 M3#ecology-u07-17-q4@3: A widely used intervention has never been tested. What does evidence-based conservation suggest? | Test it, ideally with a control, and share the results | Keep using it because it is traditional | Stop all conservation work in the area | Assume it works because it is popular | Applying the standard result: Untested actions need evaluation.
 SA2#ecology-u07-17-q5@2,3: Explain why conservation should be evidence-based. | Resources for conservation are limited, so money spent on ineffective actions is lost to better ones, and some actions may even harm wildlife. Using systematic evidence, from well-designed studies such as BACI and reviews, helps practitioners choose what works, improve methods and justify funding, while monitoring adds to the evidence for others. | Limited resources ; Ineffective or harmful actions ; Systematic evidence ; Learning and accountability
+Q: What did Sutherland and colleagues argue in 2004? | Many conservation decisions relied on experience, tradition or assumption rather than evidence.
+Q: What is evidence-based conservation? | Using systematic evidence on the effects of interventions to inform decisions.
+Q: What is the weakness of a control–impact design? | Treated and untreated sites may differ for other reasons.
+Q: How does a BACI design work? | It compares change at treated sites with change at control sites.
+Q: Which study design gives the strongest evidence where feasible? | Randomised experiments.
+Q: What is a counterfactual? | What would have happened without the intervention.
+Q: What does Conservation Evidence produce? | Synopses of tested interventions and the book What Works in Conservation, which rates their effectiveness.
+Q: In the hedgerow BACI example, what was the estimated effect? | 20 extra birds: +18 at the impact site minus −2 at the control.
+Q: Why should failed projects be published? | Reporting failures adds to the evidence base.
+Q: Why do ineffective conservation actions matter? | They waste money and time, and some may harm the species they aim to help.
 
 ## Community-based conservation
 LV: Introductory · Evaluation
@@ -791,4 +961,14 @@ M2#ecology-u07-18-q2@2: Why did conservancies reduce poaching in some Namibian c
 M3#ecology-u07-18-q3@3: A community project fails because a few leaders keep all the income. What was missing? | Fair and accountable governance | Enough wildlife to attract tourists | Strict exclusion of local people | Government ownership of all land | Applying the standard result: Elite capture undermines support.
 TF2#ecology-u07-18-q4@2: Indigenous peoples manage or have tenure over at least a quarter of the world's land. | true | Garnett and colleagues estimated at least about a quarter of the land surface.
 SA2#ecology-u07-18-q5@2,3: Evaluate community-based conservation compared with fortress conservation. | Fortress conservation can protect habitats strictly but has caused evictions, conflict and resentment, sometimes undermining conservation. Community-based conservation respects rights and gives people reasons to protect wildlife, and has succeeded in cases such as Namibia's conservancies. However, outcomes vary, and success depends on secure rights, real benefits and fair governance. | Fortress harms ; Rights and incentives ; Success stories ; Conditions and variability
+Q: What is community-based conservation? | Conservation led by or shared with local communities, who help manage resources, share benefits and make decisions.
+Q: When could Namibian communities first register conservancies? | Since 1996.
+Q: How do Namibian conservancies benefit from wildlife? | Through tourism and hunting.
+Q: What are locally managed marine areas? | Pacific areas where communities set fishing closures based on customary practice.
+Q: What has happened to community forests in Nepal? | User groups manage them and many have recovered.
+Q: What is free, prior and informed consent? | The right of Indigenous peoples to agree or refuse projects affecting them.
+Q: What are the three main conditions for successful community conservation? | Secure rights, real benefits that outweigh costs, and fair and accountable governance.
+Q: Which conditions did Ostrom identify for managing common resources? | Clear boundaries, rules suited to local conditions, monitoring and conflict resolution.
+Q: How does a conservancy reduce poaching? | The community gains income from living wildlife, so it has a reason to protect it.
+Q: Why doesn't community involvement automatically help wildlife? | Without benefits, rights and good governance, it can fail.
 `;

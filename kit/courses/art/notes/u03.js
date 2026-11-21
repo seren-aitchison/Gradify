@@ -40,6 +40,16 @@ M2#art-u03-01-q2@2: A painter's colours matched perfectly in the studio but look
 TF1#art-u03-01-q3@1: Rods in the retina are responsible for seeing colour in bright light. | false | Rods work in dim light and do not distinguish colour; cones provide colour vision.
 M3#art-u03-01-q4@3: What does the disagreement over "the dress" photograph (2015) best show? | Perceived colour depends on the brain's assumptions about lighting, not only on the wavelengths reaching the eye | Some viewers' screens were broken | Colour is a fixed property of fabric | Only colour-blind people saw it differently | The ambiguous illumination led different visual systems to correct the same pixels differently.
 SA3#art-u03-01-q5@1,3: Explain why a painter should paint the colours they see rather than the colours they know, using ideas about light and perception. | Perceived colour depends on the light source, shadow, reflected colour from neighbours and simultaneous contrast; colour constancy leads us to "know" a local colour (white snow) that is actually blue in shadow or orange at sunset. Observing actual colour relationships, as the Impressionists did, gives convincing light and atmosphere. | Explains role of light source ; Explains surroundings or contrast ; Explains colour constancy ; Gives an artistic example ; Draws a conclusion about practice
+Q: What range of wavelengths is visible light? | Roughly 380 to 750 nanometres.
+Q: What did Newton show with prisms? | A prism splits white sunlight into a spectrum, and a second prism recombines it.
+Q: Why does a white surface look white and a black one black? | A white surface reflects most wavelengths; a black one absorbs most.
+Q: What do rods in the retina do? | They work in dim light and do not distinguish colour.
+Q: What is the trichromatic theory of colour vision? | Colour vision depends on three cone types, most sensitive to short, medium and long wavelengths (Young and Helmholtz).
+Q: What does opponent-process theory explain? | Why we never see a reddish green or bluish yellow: signals are compared in red-green, blue-yellow and light-dark channels.
+Q: What is metamerism? | When two colours match under one light source but not under another.
+Q: Why did viewers disagree about "the dress" photograph in 2015? | Their visual systems made different assumptions about the lighting, so colour constancy corrected the same pixels in opposite directions.
+Q: Why is it a mistake to think an object has one true colour? | Perceived colour depends on the light and neighbouring colours, so a painter must paint the colour actually seen.
+Q: Why should artists check colour under the light where a work will be shown? | Gallery lighting, screen calibration and printing inks all affect how a work is seen.
 
 ## Additive and subtractive colour
 LV: Introductory · Application
@@ -79,6 +89,16 @@ M2#art-u03-02-q2@2: A logo designed on screen in a vivid RGB orange prints dull.
 MATCH1#art-u03-02-q3@1: Match each technology to its colour system. | Phone screen = Additive RGB ; Magazine printing = Subtractive CMYK ; Stage lighting gels mixed on a white backdrop = Additive RGB ; Halftone dots seen from a distance = Optical mixing | Emitted light adds, inks subtract, and small dots blend in the eye.
 M3#art-u03-02-q4@3: Why do Seurat's dots of pure colour not simply make dark mixtures as the same paints would on a palette? | Dots side by side mix optically in the eye, averaging lightness, rather than subtracting light as mixed pigments do | Seurat used additive light | The canvas reflects extra light | Pointillist paints are fluorescent | Partitive mixing occurs in perception; physical mixing of pigments subtracts more wavelengths and darkens.
 SA2#art-u03-02-q5@2,3: Explain the difference between additive and subtractive colour and why a designer needs to understand both. | Additive colour combines light (RGB), mixing towards white, as in screens; subtractive colour uses pigments and inks (CMYK) that absorb wavelengths, mixing towards black, as in print. The systems have different gamuts, so a design must be prepared in the right colour mode, soft-proofed and adjusted, or spot colours used, to keep colours consistent across screen and print. | Defines additive with primaries ; Defines subtractive with primaries ; Gives an example of each ; Explains gamut ; Explains practical consequence for design
+Q: Why does additive mixing make colours lighter? | Each light adds wavelengths, so the mixture moves towards white.
+Q: What do red, green and blue light make at full strength together? | White.
+Q: Why does subtractive mixing make colours darker? | Each pigment or ink absorbs more wavelengths from white light.
+Q: What are the subtractive primaries for printing? | Cyan, magenta and yellow (CMY), with black (K) added.
+Q: Which wavelengths do cyan, magenta and yellow inks absorb? | Cyan absorbs red, magenta absorbs green and yellow absorbs blue.
+Q: What do cyan and yellow inks make together? | Green.
+Q: What is a gamut? | The range of colours a device, ink set or medium can reproduce.
+Q: How can a designer fix a vivid screen colour that prints dull? | Soft-proof in CMYK, adjust the colour, or use a special spot ink.
+Q: Why is it a mistake to teach RYB as the real primaries in every context? | RYB is a painter's convention; light uses RGB and process printing uses CMY.
+Q: What is optical or partitive mixing? | Mixing in the eye when small dots of colour are seen side by side from a distance, as in pointillism and halftone printing.
 
 ## Hue, value and saturation
 LV: Introductory · Application
@@ -116,6 +136,16 @@ M2#art-u03-03-q2@2: A painter wants a natural grey-green for distant trees. What
 TF2#art-u03-03-q3@2: Two colours of very different hue can have the same value. | true | Hue and value are independent; an orange and a grey-blue can match in lightness.
 M3#art-u03-03-q4@3: Why does the sun in Monet's Impression, Sunrise seem to shimmer? | It is close in value to the surrounding sky, so it differs in hue but not luminance | It is painted with fluorescent pigment | It is much darker than the sky | It has a heavy black outline | Livingstone showed the near-equal luminance confuses the brain's position system, causing instability.
 SA3#art-u03-03-q5@2,3: Evaluate the claim that "colour gets the credit, but value does the work". | Value is crucial: correct values model form and space and keep a painting legible in greyscale; luminance is processed separately from hue, and Monet's equiluminant sun shows how value affects perception. But colourists such as Matisse or Rothko build space and feeling through hue and chroma relationships; in such work colour does much of the work. The claim is a useful rule for representational painting rather than a universal truth. | Explains value and form ; Refers to perception or Monet ; Gives a counterexample of colour-led work ; Considers type of painting ; Reaches a judgement
+Q: What is value in colour? | A colour's lightness or darkness.
+Q: Which hue has the lowest natural value? | Violet.
+Q: What is chroma? | The purity or intensity of a colour, from vivid to grey; similar to saturation.
+Q: Why do many painters lower chroma with a complement rather than black? | A complement lowers chroma while keeping a lively, natural grey.
+Q: How can you lower the chroma of cadmium orange while keeping its value? | Mix in a little ultramarine blue, its complement, then add a touch of white to restore the value.
+Q: What does "colour gets the credit, value does the work" mean? | Correct values carry form, so a painting reads in black and white; wrong values cannot be rescued by beautiful hues.
+Q: How does Margaret Livingstone explain the importance of value? | The brain processes luminance (the "where" system) and colour (the "what" system) separately.
+Q: Why does darkening every colour with black cause problems? | Black can deaden colours and shift yellows towards green; darker neighbouring hues or complements give richer shadows.
+Q: What can a shade do to a colour besides lowering its value? | It can shift its hue.
+Q: How did colourists such as Matisse build form? | Through hue relationships rather than tonal modelling.
 
 ## The colour wheel
 LV: Introductory · Foundation
@@ -156,6 +186,16 @@ M2#art-u03-04-q2@2: A student mixes cadmium red and ultramarine but gets a muddy
 TF1#art-u03-04-q3@1: Goethe's Theory of Colours (1810) was concerned with the perception and effects of colour. | true | Goethe focused on experience, contrast and feeling rather than Newton's physics.
 M3#art-u03-04-q4@3: Which is the best evaluation of the RYB colour wheel? | It is a useful practical guide for painters but less accurate than CMY or perceptual systems | It is the scientifically correct model of colour | It is useless and should not be taught | It applies equally to light and pigment | RYB works approximately with paints; colour science shows other primaries give wider gamuts.
 SA2#art-u03-04-q5@1,3: Explain how the traditional colour wheel is constructed and discuss one limitation of it. | Three primaries (red, yellow, blue) are placed equidistantly; mixing pairs gives the secondaries orange, green and violet between them; mixing a primary and adjacent secondary gives six tertiaries, twelve hues in all. Limitations: real pigments are impure, so some mixes are dull; RYB gives a narrower gamut than CMY; and perceptual complementaries differ from the wheel's opposites. | Describes primaries ; Describes secondaries ; Describes tertiaries ; Identifies a limitation ; Explains the limitation
+Q: How did Goethe's Theory of Colours (1810) differ from Newton's approach? | Goethe's wheel was based on perception and feeling rather than physics.
+Q: Whose twelve-part colour wheel, from his Bauhaus teaching, is still widely taught? | Johannes Itten's, published in The Art of Color (1961).
+Q: Which half of the painter's wheel is warm and which cool? | Warm runs from yellow to red-violet; cool from violet to yellow-green.
+Q: How is a twelve-hue wheel painted from three primaries? | Place the primaries in a triangle, mix the three secondaries between them, then mix each primary with a neighbouring secondary for six tertiaries.
+Q: Why might red and blue make a dull violet? | Real pigments are impure: a warm cadmium red with ultramarine gives dull violet, while a cool magenta gives a clean one.
+Q: What is a split primary palette? | A palette with a warm and a cool version of each primary, allowing cleaner mixtures.
+Q: Why are cyan, magenta and yellow better subtractive primaries than red, yellow and blue? | They produce a wider gamut of mixtures.
+Q: What is the status of the RYB colour wheel, according to the lesson? | It is a practical tradition rather than a physical law.
+Q: How do complementaries in Munsell's system differ from RYB? | Red's complement is closer to blue-green than green.
+Q: What is a secondary colour? | A colour made by mixing two primaries on a given colour wheel.
 
 ## Munsell and other colour systems
 LV: Intermediate · Application
@@ -195,6 +235,16 @@ M2#art-u03-05-q2@2: A brand's red must look the same on business cards printed i
 TF2#art-u03-05-q3@2: In the Munsell system, all hues reach the same maximum chroma. | false | The colour solid is irregular: some hues, such as yellow and red, reach much higher chroma than others.
 M3#art-u03-05-q4@3: Why did Munsell space his colours by perception rather than by equal amounts of pigment or wavelength? | So that equal steps in the notation look equal to human observers, making it useful for specification and teaching | Because pigments were not available | To match Newton's spectrum exactly | Because perception and physics give the same steps | Physical quantities do not correspond to equal perceived differences, so perceptual spacing makes communication reliable.
 SA2#art-u03-05-q5@2,3: Explain how a designer would specify a colour so it is reproduced consistently across print and screen. | Choose the colour in a standard system: a Pantone reference for spot printing, CMYK percentages for process print, RGB and hex values for screen. Record all in a brand guide, check conversions with proofs and calibrated screens, test contrast for accessibility, and provide physical swatches, because devices and inks differ. | Names a print system ; Names a screen system ; Explains conversions are approximate ; Mentions proofing or calibration ; Mentions brand guide or swatches
+Q: What is the purpose of a colour system? | To give every colour a precise address so it can be specified, matched and communicated.
+Q: Who published A Color Notation (1905)? | Albert Munsell, an American painter and teacher.
+Q: How is value measured in the Munsell system? | Up a vertical axis from black (0) to white (10).
+Q: Why is Munsell's colour solid irregular? | Steps are spaced by perception, so hues reach maximum chroma at different values, such as yellow at high value and blue at lower.
+Q: What are CIE colour spaces? | Mathematical models based on measurements of human colour matching, used in science and colour management.
+Q: How does the Natural Colour System (NCS) describe colours? | By their resemblance to six elementary colours; it is used in architecture and paint.
+Q: What is a spot colour? | A specific premixed ink, such as a Pantone colour, printed as a single colour rather than built from CMYK.
+Q: What should a designer record when specifying a brand colour? | Its Pantone reference, CMYK breakdown, and RGB and hex values, with a printed swatch for approval.
+Q: Why is it a mistake to assume a hex code looks the same everywhere? | Screens differ in calibration and colour space, and print conversions shift colours.
+Q: What did Munsell originally intend his system for? | Teaching children to see colour precisely; it was later adopted for soil science, standards and industry.
 
 ## Pigments and colour mixing
 LV: Intermediate · Application
@@ -236,6 +286,16 @@ M2#art-u03-06-q2@2: A student mixes cadmium yellow and ultramarine and gets a du
 TF1#art-u03-06-q3@1: Prussian blue was the first modern synthetic pigment. | true | It was discovered in Berlin around 1706 and was widely used, including in Hokusai's prints.
 M3#art-u03-06-q4@3: Why did Renaissance contracts sometimes specify ultramarine for the Virgin's robe? | The pigment was extremely costly, so its use displayed the patron's devotion and wealth and honoured the subject | Ultramarine was the only blue available | It was required by law | It dried faster than other blues | Material value carried meaning: the costliest blue honoured the most revered figure.
 SA2#art-u03-06-q5@1,2: Explain how pigment bias affects colour mixing and how a painter can use a split-primary palette to control it. | Each pigment leans towards a neighbouring hue (ultramarine to violet, phthalo blue to green). Mixing two pigments biased towards each other (lemon yellow and phthalo blue) gives a clean secondary; mixing pigments biased away (cadmium yellow and ultramarine) introduces the complement and gives a muted result. A split-primary palette provides a warm and a cool of each primary so the painter can choose clean or muted mixes deliberately. | Defines bias ; Gives clean mix example ; Gives muted mix example ; Explains the complement effect ; Explains split-primary palette
+Q: What is a pigment? | A finely ground coloured powder, insoluble in its binder, suspended in paint.
+Q: What is the difference between transparent and opaque pigments? | Transparent pigments, such as alizarin or phthalo blue, glaze; opaque ones, such as cadmiums or titanium white, cover.
+Q: What is the colour bias of ultramarine compared with phthalo blue? | Ultramarine leans to violet; phthalo blue leans to green.
+Q: Which ASTM lightfastness grades are the most permanent? | ASTM I and II.
+Q: Which colours does the Zorn palette use? | Yellow ochre, vermilion or cadmium red, ivory black and white.
+Q: Why does lemon yellow with phthalo blue give a clean green? | Both pigments lean towards green, and pigments biased towards each other mix clean.
+Q: Why is over-mixing or using too many pigments a mistake? | Three or more pigments with opposite biases quickly make mud.
+Q: When was synthetic French ultramarine introduced? | In 1828.
+Q: How did tube paints change painting? | Patented by John Goffe Rand in 1841, they let the Impressionists paint outdoors.
+Q: What is tinting strength? | How strongly a pigment colours a mixture: phthalo blue is strong, raw umber weak.
 
 ## Colour harmonies
 LV: Intermediate · Application
@@ -277,6 +337,16 @@ M2#art-u03-07-q2@2: A designer wants harmony with some contrast but less tension
 MATCH2#art-u03-07-q3@1,2: Match each palette to its scheme. | Yellow, yellow-orange and orange = Analogous ; Blue with orange = Complementary ; Three blues of different value = Monochromatic ; Orange, green and violet = Triadic | Each palette follows the named relationship on the wheel.
 M3#art-u03-07-q4@3: A poster uses an exact triadic scheme in equal amounts and looks chaotic. What is the most effective improvement? | Make one colour dominant, reduce another to an accent, and vary values | Switch to a different triad in equal amounts | Add a fourth hue | Increase every colour's saturation | Proportion and value control are needed for a scheme to read as harmony.
 SA3#art-u03-07-q5@2,3: Evaluate the usefulness of colour harmony rules for an artist or designer. | Rules give a quick framework for choosing related hues, help beginners avoid clashes and support consistent branding. But they ignore value, chroma, proportion and context, which often matter more; artists choose colour from observation and intuition, and fixed ratios lack evidence. Useful as a starting point to be tested in context. | Explains benefits ; Notes role of value, chroma or proportion ; Notes artists' practice ; Notes weak evidence for fixed ratios ; Reaches a judgement
+Q: What is an analogous colour scheme? | Three to five neighbouring hues on the wheel, giving a harmonious, natural effect.
+Q: What is a complementary colour scheme? | Two opposite hues, such as blue and orange, giving vibrant, high contrast.
+Q: What is a triadic scheme? | Three hues equally spaced around the wheel, lively and balanced.
+Q: What is a tetradic scheme? | Two complementary pairs; rich but hard to balance.
+Q: Which painter's Blue Period is an example of a near-monochromatic palette? | Picasso's, 1901–04.
+Q: When does a colour harmony scheme work well? | When one colour dominates, others support, and an accent is used sparingly.
+Q: Why do equal amounts of strongly contrasting colours often fail? | They tend to compete for attention.
+Q: What proportion did Goethe propose for balancing yellow and violet? | About 1 to 3, by brightness; such ratios are guides, not laws.
+Q: Why does a correct harmony scheme not guarantee a good result? | Without control of value, chroma and proportion, it can still look garish or muddy.
+Q: How should designers test a generated colour scheme? | In context, with real content and in greyscale.
 
 ## Complementary colours and simultaneous contrast
 LV: Intermediate · Application
@@ -316,6 +386,16 @@ M2#art-u03-08-q2@2: A painter wants a small orange boat to blaze against the sea
 TF2#art-u03-08-q3@2: An identical grey can look warmer on a blue background than on an orange one. | true | Simultaneous contrast tinges the grey towards the complement of its surroundings.
 M3#art-u03-08-q4@3: Why did Chevreul conclude that the Gobelins dyes were not faulty? | The dull appearance came from simultaneous contrast with adjacent colours in the weave, not from the dyes | The dyes faded only in sunlight | The wool absorbed the dye unevenly | The workers mixed the dyes wrongly | His investigation showed perception of colour depends on neighbours, which changed the advice he gave to weavers.
 SA2#art-u03-08-q5@2,3: Explain simultaneous contrast and how a painter could use it, with an example. | Adjacent colours push each other towards their complements and alter apparent value and temperature (Chevreul, 1839). Painters place complementaries side by side to intensify colour, as Van Gogh did with red and green in The Night Café, or use neutral shadows that look cool beside warm light; they also adjust colours in context rather than in isolation. | Defines simultaneous contrast ; Credits Chevreul ; Explains intensifying complements ; Gives a named example ; Explains practical use
+Q: Who was Michel-Eugène Chevreul? | A chemist directing the dye works at the Gobelins tapestry manufactory in Paris, who described simultaneous contrast in 1839.
+Q: What is simultaneous contrast? | Adjacent colours alter each other's appearance, each pushing its neighbour towards its complement.
+Q: How does a ground affect a colour's apparent lightness? | A colour looks lighter on a dark ground and darker on a light ground.
+Q: How does temperature contrast affect a colour? | A colour looks warmer next to cool colours and cooler next to warm ones.
+Q: What is successive contrast? | An afterimage in the complementary colour, seen after staring at a colour for some time.
+Q: How can a painter make a neutral shadow look cool? | Place it beside a warm light; simultaneous contrast makes it look cool without painting it blue.
+Q: Why is correcting a colour in isolation a mistake? | It may be right but affected by its neighbour; adjust relationships or test against a neutral grey card.
+Q: How did the Impressionists use complementary colour in shadows? | They painted shadows with complements of the light.
+Q: What did Van Gogh aim to express with red and green in The Night Café (1888)? | "The terrible passions of humanity".
+Q: What does it mean to neutralise a colour? | To lower its saturation by mixing in its complement.
 
 ## Itten's seven colour contrasts
 LV: Intermediate · Evaluation
@@ -358,6 +438,16 @@ M2#art-u03-09-q2@2: In a grey painting, a small spot of pure red seems to glow. 
 MS2#art-u03-09-q3@1,2: Which are among Itten's seven contrasts? | Cold-warm ; Simultaneous ; Light-dark | Texture contrast ; Contrast of scale | Itten's contrasts concern colour; texture and scale are not among them.
 M3#art-u03-09-q4@3: Which is the fairest evaluation of Itten's colour theory? | His seven contrasts are a useful descriptive tool, but his spiritual and personality claims are subjective | It is a complete scientific theory of colour | It is worthless because Itten was a mystic | It applies only to Bauhaus design | Separate the analytical framework, widely used, from the unsupported claims.
 SA3#art-u03-09-q5@2,3: Use at least three of Itten's contrasts to analyse a painting or design you know, and evaluate how useful the framework is. | Names a work and applies three contrasts accurately (for example light-dark for focus, cold-warm for space, saturation or extension for emphasis), describing visible evidence for each and its effect. Evaluates: the contrasts give a precise vocabulary and reveal how colour creates space and focus, but they describe rather than explain meaning and some of Itten's claims are subjective. | Names a work ; Applies three contrasts accurately ; Describes visual evidence ; Explains effects ; Evaluates the framework
+Q: What is Itten's contrast of hue? | Undiluted hues side by side, such as red, yellow and blue; loud and festive, as in folk art and Mondrian.
+Q: Which of Itten's contrasts is strongest for form and legibility? | Light-dark (value) contrast.
+Q: What does cold-warm contrast create in a painting? | Space and atmosphere.
+Q: What is contrast of saturation? | Contrast between pure, intense colours and dulled ones, so a small saturated area glows among greys.
+Q: How does contrast of extension balance colours? | By their relative areas, balanced according to each colour's strength.
+Q: How does low light-dark contrast affect a Rothko painting? | The edges seem to breathe and float.
+Q: Why did Itten leave the Bauhaus? | Tensions with Walter Gropius over his spiritual teaching, including Mazdaznan and breathing exercises.
+Q: Which of Itten's contrasts dominates a Morandi still life of muted bottles? | Contrast of saturation.
+Q: Which parts of Itten's colour theory are not evidence-based? | His personality "seasons" for colour preferences and his spiritual interpretations.
+Q: How can Itten's contrasts be used in a sketchbook? | Each contrast can be tested as a small study before a final piece.
 
 ## Warm and cool colour
 LV: Introductory · Application
@@ -393,6 +483,16 @@ M2#art-u03-10-q2@2: A painter's sunlit landscape looks dull. What would most imp
 TF1#art-u03-10-q3@1: Colour temperature is relative to surrounding colours. | true | A colour can be warm in one context and cool in another.
 M3#art-u03-10-q4@3: Why are the shadows on the snow in Monet's The Magpie blue-violet rather than grey? | Snow in shadow reflects cool skylight, and Monet painted the observed colour of light rather than an assumed grey | Monet used blue to show it was night | Blue paint was cheaper | He followed a rule that shadows must be black | Impressionists recorded perceived colour; shadowed snow is lit by the blue sky.
 SA2#art-u03-10-q5@1,2: Explain how you would use warm and cool colour to model a form in sunlight. | Use warm, light colours on planes facing the sun, with warm highlights; cooler, darker colours in the form shadow, neutralised with the complement; warm reflected light in shadows near warm surfaces; cool cast shadows lit by skylight, warmer and darker near contact. Compare temperatures relatively and keep values correct. | Warm lit planes ; Cool form shadow ; Reflected light ; Cool cast shadows ; Notes relativity or value
+Q: What is colour temperature? | The perceived warmth or coolness of a colour, judged relative to other colours.
+Q: Is ultramarine warm or cool next to phthalo blue? | Warm, because it leans towards violet.
+Q: Why do shadows look cool in daylight? | They receive cool light from the blue sky while the sunlight is warm.
+Q: How do lit planes and shadows look under cool north light from a window? | Lit planes look cool and shadows relatively warm.
+Q: What colour often appears at edges where light turns into shadow? | A warm band.
+Q: How should the cast shadow of an orange on a white cloth in sunlight be painted? | Cool blue-violet, warmed and darkened near the contact point.
+Q: Why is darkening shadows only with black or brown a mistake? | Real shadows shift in temperature as well as value; ignoring this gives dull, dirty-looking painting.
+Q: What is chromostereopsis? | A visual effect in which colours of different wavelengths, such as red and blue, appear at different depths.
+Q: How do designers commonly use warm and cool palettes? | Warm for energy and appetite, such as food brands; cool for calm and trust, such as finance and health.
+Q: Why should the moods linked to warm and cool palettes be treated with caution? | Such associations are cultural and contestable, not universal.
 
 ## Colour and space
 LV: Intermediate · Application
@@ -432,6 +532,16 @@ M2#art-u03-11-q2@2: In an abstract painting, a red square seems to sit behind a 
 TF2#art-u03-11-q3@2: Matisse's The Red Studio uses one dominant red to flatten the space of the room. | true | Walls and floor share the same red, so spatial cues are reduced and objects float on the surface.
 M3#art-u03-11-q4@3: Which statement best evaluates the rule that warm colours advance? | It is a tendency that interacts with value, saturation and edge, and varies between viewers | It is a law that holds in every painting | It applies only to landscapes | It has no basis in perception | Chromostereopsis exists but is variable; other colour properties can dominate.
 SA3#art-u03-11-q5@2,3: Compare how colour creates space in a landscape using aerial perspective and in a Colour Field painting. | In landscape, colour supports depicted depth: distant forms are paler, cooler, greyer and softer, near forms warm, intense and contrasted. In Colour Field painting (Rothko, Newman) colour creates space without depiction: large fields, soft edges and close values make planes float and envelop the viewer; push and pull between colour areas replaces perspective. Both use the same perceptual properties for different ends. | Explains aerial perspective with colour ; Explains Colour Field or push and pull ; Names artists ; Identifies shared properties ; Makes a comparison
+Q: How does value contrast affect depth? | High contrast reads near; low contrast reads far.
+Q: How does saturation affect depth? | Intense colours tend to advance; greyed colours recede.
+Q: How do edges affect whether a colour area advances or recedes? | Large, hard-edged areas assert themselves; soft edges recede.
+Q: How does Matisse's The Red Studio (1911) flatten space? | It floods walls and floor with one red, so the paintings in the studio float on the surface.
+Q: How can an orange square be made to sink into a pale blue ground? | Repaint it in a grey-blue close in value to the ground.
+Q: How can a square read as a hole in the ground? | Place a cool, pale square on an intense warm ground.
+Q: Why is it a mistake to assume warm colours always advance? | A low-saturation, low-contrast warm colour can recede behind an intense, high-contrast cool one; all factors interact.
+Q: How did Colour Field painters such as Rothko and Newman treat space? | Large expanses of colour envelop a viewer standing close, so space becomes an experience rather than a depicted view.
+Q: What does Albers's Homage to the Square series show about colour and space? | Nested squares advance or recede depending on colour relationships.
+Q: Where did Hans Hofmann teach push and pull? | At his schools in Munich and New York.
 
 ## Colour symbolism and culture
 LV: Intermediate · Evaluation
@@ -473,6 +583,16 @@ M2#art-u03-12-q2@2: A student interprets the white robes in a Japanese funeral s
 TF2#art-u03-12-q3@1,2: The invention of synthetic dyes such as mauveine (1856) helped make purple affordable. | true | Perkin's aniline dye made purple fashionable and widely available, reducing its exclusivity.
 M3#art-u03-12-q4@3: Which is the strongest objection to claims that blue universally means calm? | Colour meanings depend on culture and period, and blue's associations have changed over history | Blue is not a primary colour | People cannot see blue clearly | Blue is always associated with sadness | Pastoureau and Gage show meanings shift; modern Western associations are not universal.
 SA3#art-u03-12-q5@2,3: Evaluate the view that colour has fixed symbolic meanings. | Some associations are widespread or grounded in experience (red with blood), and conventions (the Virgin's blue) are stable within a tradition. But meanings vary across cultures (white for weddings or mourning) and periods (purple's status fell with synthetic dyes), and depend on materials and context. Interpretation must be contextual; fixed codes mislead. | Acknowledges some shared associations ; Gives cross-cultural variation ; Gives historical change or cost ; Explains need for context ; Reaches a judgement
+Q: What does red signify in China? | Luck, celebration and weddings.
+Q: Which colour was associated with the Virgin Mary's robe in late medieval and Renaissance painting? | Blue, linked to costly ultramarine.
+Q: What is green associated with in many Islamic contexts? | Islam and paradise.
+Q: What did black signify in 16th-century Spanish court dress? | Fashion and authority.
+Q: Why does colour symbolism often follow cost? | Rare, expensive colours such as Tyrian purple or ultramarine signalled wealth and status.
+Q: How did William Perkin's mauveine (1856) change the meaning of purple? | It made purple fashionable and affordable, so its exclusivity faded.
+Q: How should the blue in a 15th-century Italian altarpiece of the Virgin be interpreted? | As signalling devotion, the patron's wealth and a shared iconographic code, not modern calm.
+Q: Why is reading modern associations into other cultures' works a mistake? | Meanings differ, such as red in a Chinese New Year print not meaning danger; research the context first.
+Q: What did Berlin and Kay propose in Basic Color Terms (1969)? | That languages add basic colour words in a broadly similar order, a claim later refined and challenged.
+Q: What is iconography? | The identification and interpretation of conventional subjects and symbols in art.
 
 ## Colour in design and branding
 LV: Intermediate · Application
@@ -515,6 +635,16 @@ M2#art-u03-13-q2@2: A data chart uses twelve similar colours for twelve categori
 TF2#art-u03-13-q3@2: In 2013 the Court of Appeal refused Cadbury's application to register its shade of purple as a trade mark, as framed. | true | The court found the application too imprecise in describing how the colour would be used.
 M3#art-u03-13-q4@3: A client insists their bank must be blue because "blue means trust". What is the most evidence-based response? | Colour effects depend on context and fit, so test a distinctive palette with users rather than relying on a general rule | Agree, because colour psychology is proven | Refuse to use blue | Use every colour so all customers are reached | Research shows contextual, not fixed, effects; testing and distinctiveness matter.
 SA2#art-u03-13-q5@1,2: Plan a colour palette for a charity's identity and explain the role of each colour. | A distinctive primary for logo and headings; neutrals for backgrounds and text; one accent for calls to action such as "Donate"; semantic colours for status messages with icons; all specified in Pantone, CMYK, RGB and hex, checked for contrast and consistency across print and screen. Explain choices by the charity's character and audience, then test. | Primary colour role ; Neutral roles ; Accent for action ; Semantic or accessibility consideration ; Specification or testing
+Q: Name two brand colours that have become brand assets. | Any two: Tiffany's robin's-egg blue, Cadbury's purple, the red of London buses and Royal Mail.
+Q: Why did the Court of Appeal reject Cadbury's purple trademark in 2013? | The application described the colour's use too vaguely.
+Q: What role do neutrals play in a design palette? | Backgrounds and text, usually most of the area.
+Q: How should an accent colour be used? | Sparingly, for calls to action or highlights.
+Q: How did Harry Beck's London Underground map (1933) use colour? | It distinguished the lines by colour.
+Q: What makes colour coding effective? | It is consistent, limited in number and backed by labels or shapes.
+Q: What is a brand colour? | A colour consistently used to identify an organisation or product.
+Q: Why is relying on colour psychology charts a mistake? | Research finds fit between colour and the brand's personality and context matters more than fixed effects of hues.
+Q: What did Labrecque and Milne (2012) find about colour and brands? | Colour affects perceptions of brand personality, but effects depend on context and audience.
+Q: How do designers test colour choices rather than relying on rules? | With users, for example through A/B tests.
 
 ## Albers and the interaction of colour
 LV: Intermediate · Evaluation
@@ -553,6 +683,16 @@ M2#art-u03-14-q2@2: In an Albers exercise, how can two different colours be made
 SEQ2#art-u03-14-q3@2: Order the steps of the "one colour as two" exercise. | Cut two squares from the same paper ; Choose two contrasting grounds ; Place a square on each ground ; Compare the apparent difference ; Join them with a strip to reveal they are identical | The method moves from setup to observation to revealing the illusion.
 M3#art-u03-14-q4@3: What practical lesson does Albers's teaching hold for a designer choosing brand colours? | Test colours in their real contexts, because surrounding colours change how they look | Choose colours from a chart and never adjust them | Use only black and white to avoid interaction | Interaction effects only matter in paintings | Colour is relative, so palettes must be judged in use.
 SA3#art-u03-14-q5@2,3: Evaluate Albers's claim that "color deceives continually". | Supported by his exercises: one colour looks like two, two like one, through simultaneous contrast, and by perception research on context. But colour is not random: effects are predictable and can be controlled, and colour constancy often stabilises appearance in everyday life. The claim is best read as a teaching principle: never judge a colour in isolation. | Explains an Albers exercise ; Links to simultaneous contrast ; Notes predictability or constancy ; Draws a practical lesson ; Reaches a judgement
+Q: How did Albers reverse the usual order of colour teaching? | He put practice before theory.
+Q: What does Interaction of Color (1963) say about seeing colour? | That a colour is almost never seen as it really is, physically.
+Q: What is the "one colour as two" exercise? | The same colour placed on two different grounds is made to look like two different colours.
+Q: What is the "two colours as one" exercise? | Two different colours on carefully chosen grounds are made to look identical.
+Q: How did Albers make opaque papers look transparent? | By choosing the mixture colour between two overlapping colours.
+Q: What causes vibrating boundaries in Albers's exercises? | Equal-value complementaries placed together, creating flickering edges.
+Q: Why is it a mistake to treat Albers's effects as tricks? | His point is practical: every colour decision must be judged in context because surroundings change it.
+Q: How were the Homage to the Square paintings made? | Three or four nested squares placed slightly below centre, painted flat from the tube with a palette knife.
+Q: Which movements did the Homage to the Square series influence? | Op art and colour field painting.
+Q: What is a colour interval? | The perceived difference between two colours in hue, value or saturation.
 
 ## Colour and accessibility
 LV: Intermediate · Application
@@ -589,4 +729,14 @@ M2#art-u03-15-q2@2: A map shows safe routes in green and dangerous routes in red
 TF2#art-u03-15-q3@2: Contrast ratios in WCAG are based on the hues of the colours. | false | They are based on relative luminance, which is about lightness (value), not hue.
 M3#art-u03-15-q4@3: A designer's palette passes contrast checks but a key chart uses red and green bars with no labels. Which judgement is correct? | It still fails, because information must not depend on colour alone | It passes, because contrast is sufficient | It passes if the red is saturated | It only fails in print | WCAG requires both adequate contrast and that colour is not the only means of conveying information.
 SA2#art-u03-15-q5@2,3: Evaluate the colour accessibility of a design you know and suggest improvements. | Identify where meaning relies on colour alone (status, chart categories, links), check text contrast against WCAG ratios, and consider common red-green confusions. Suggest labels, icons, patterns or underlines, colour-blind-safe pairs with value differences, darker text, and testing with simulators and users. | Identifies reliance on colour ; Checks contrast ratios ; Considers red-green deficiency ; Suggests redundant coding ; Suggests testing
+Q: What proportion of men and women have a colour vision deficiency? | About 8% of men and 0.5% of women of Northern European ancestry.
+Q: What is deuteranopia? | A red-green colour vision deficiency caused by absent green-sensitive cones.
+Q: What is protanopia? | A red-green colour vision deficiency involving the red-sensitive cones.
+Q: What do people with colour vision deficiency typically confuse? | Certain pairs of colours, such as red and green, or red and brown.
+Q: What contrast ratio does WCAG AAA require for normal text? | 7 : 1.
+Q: What does WCAG success criterion 1.4.1 require? | That colour is not the only visual means of conveying information.
+Q: How can a red-green profit and loss chart be made accessible? | Add labels or plus and minus signs, and use a colour-blind-safe pair such as blue and orange that also differ in value.
+Q: Why is pale grey text on white a mistake? | Low-contrast text fails WCAG and is hard for many people to read, including older readers and anyone in sunlight.
+Q: What tools help designers check colour accessibility? | Colour vision deficiency simulators, contrast checkers and accessible palettes such as Okabe and Ito's.
+Q: How has Neil Harbisson made colour perception a subject of art? | Born with achromatopsia, he uses an antenna-like sensor that turns colours into sounds.
 `;

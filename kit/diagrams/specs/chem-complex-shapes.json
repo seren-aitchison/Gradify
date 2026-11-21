@@ -1,0 +1,98 @@
+{
+ "id": "chem-complex-shapes",
+ "renderer": "vsepr",
+ "course": "chemistry",
+ "unit": "u11",
+ "lesson": "Coordination compounds",
+ "title": "Shapes of complex ions",
+ "caption": "Six ligands give an octahedral complex (90°), four usually tetrahedral (109.5°); d⁸ ions such as Ni²⁺, Pd²⁺ and Pt²⁺ with strong-field ligands form square planar complexes (90°).",
+ "alt": "Three complexes: octahedral [Fe(H₂O)₆]²⁺, tetrahedral [CoCl₄]²⁻ and square planar [Ni(CN)₄]²⁻.",
+ "description": [
+  "[Fe(H₂O)₆]²⁺: octahedral.",
+  "[CoCl₄]²⁻: tetrahedral.",
+  "[Ni(CN)₄]²⁻: square planar."
+ ],
+ "molecules": [
+  {
+   "label": "[Fe(H2O)6]^2+",
+   "centre": "Fe",
+   "complex": true,
+   "ligands": [
+    {
+     "el": "OH2"
+    },
+    {
+     "el": "OH2"
+    },
+    {
+     "el": "OH2"
+    },
+    {
+     "el": "OH2"
+    },
+    {
+     "el": "OH2"
+    },
+    {
+     "el": "OH2"
+    }
+   ],
+   "shape": "octahedral",
+   "angle": "90°",
+   "anglePair": [
+    0,
+    2
+   ]
+  },
+  {
+   "label": "[CoCl4]^2-",
+   "centre": "Co",
+   "complex": true,
+   "ligands": [
+    {
+     "el": "Cl"
+    },
+    {
+     "el": "Cl"
+    },
+    {
+     "el": "Cl"
+    },
+    {
+     "el": "Cl"
+    }
+   ],
+   "shape": "tetrahedral",
+   "angle": "109.5°",
+   "anglePair": [
+    0,
+    1
+   ]
+  },
+  {
+   "label": "[Ni(CN)4]^2-",
+   "centre": "Ni",
+   "complex": true,
+   "ligands": [
+    {
+     "el": "CN"
+    },
+    {
+     "el": "CN"
+    },
+    {
+     "el": "CN"
+    },
+    {
+     "el": "CN"
+    }
+   ],
+   "shape": "square planar",
+   "angle": "90°",
+   "anglePair": [
+    0,
+    2
+   ]
+  }
+ ]
+}

@@ -23,10 +23,44 @@
     .row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 10px; }
     a { color: inherit; }
   </style>
-</head>
+
+  <!-- module-preload: written by scripts/preload-modules.mjs; run it after changing imports -->
+  <link rel="modulepreload" href="/kit/core/hubnav.js">
+  <link rel="modulepreload" href="/kit/core/analytics.js">
+  <link rel="modulepreload" href="/kit/ui/global-nav.js">
+  <link rel="modulepreload" href="/kit/core/menu-set.js">
+  <link rel="modulepreload" href="/gradify.config.js">
+  <link rel="modulepreload" href="/kit/ui/store.js">
+  <link rel="modulepreload" href="/kit/ui/icons.js">
+  <link rel="modulepreload" href="/kit/ui/palette.js">
+  <link rel="modulepreload" href="/kit/ui/places.js">
+  <link rel="modulepreload" href="/kit/ui/feedback.js">
+  <link rel="modulepreload" href="/kit/ui/resources.js">
+  <link rel="modulepreload" href="/kit/ui/keys.js">
+  <link rel="modulepreload" href="/kit/core/site.js">
+  <link rel="modulepreload" href="/kit/ui/overlay.js">
+  <link rel="modulepreload" href="/kit/core/sites.js">
+  <link rel="modulepreload" href="/kit/core/colour.js">
+  <link rel="modulepreload" href="/kit/core/subnav.js">
+  <!-- /module-preload --></head>
 <body>
-  <main>
-    <a href="/">← Gradify</a>
+  <div class="wrap hub-top">
+    <!-- hub-header: written by scripts/sync-headers.mjs; edit it there -->
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="bar glass hub-bar">
+      <a class="brand" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4641ff"/><stop offset=".35" stop-color="#f055dd"/><stop offset=".7" stop-color="#ff5600"/><stop offset="1" stop-color="#ffc002"/></linearGradient></defs><rect x=".75" y=".75" width="30.5" height="30.5" rx="9" fill="#0b0b0b" stroke="rgba(255,255,255,.22)" stroke-width="1.5"/><path d="M22.9 10.9A8.6 8.6 0 1 0 24.6 16H16.4" fill="none" stroke="url(#gg)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Gradify</a>
+      <nav class="sections" aria-label="Gradify"><a href="/explore.html">Explore</a><a href="/#find">Sites</a><a href="/journey.html">Journey</a><a href="/pricing.html">Pricing</a></nav>
+      <div class="right">
+        <a class="link hub-signin" href="/app.html#/account">Sign in</a>
+        <a class="btn btn-primary btn-sm lg hub-open" href="/app.html">Open Gradify</a>
+        <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      </div>
+      <nav class="menu" id="menu" aria-label="Menu" hidden><a href="/explore.html">Explore</a><a href="/#find">Sites</a><a href="/journey.html">Journey</a><a href="/pricing.html">Pricing</a><a class="hub-signin" href="/app.html#/account">Sign in</a><a class="btn btn-primary lg hub-open" href="/app.html">Open Gradify</a></nav>
+    </header>
+    <script type="module" src="/kit/core/hubnav.js"></script>
+    <!-- /hub-header -->
+  </div>
+  <main id="main">
     <h1>Privacy</h1>
     <p>A plain-English account of what Gradify keeps about you and where. It describes how the site works today. Last updated 17 November 2026.</p>
     <p class="note" id="who"><b>Who's responsible.</b> Gradify, getgradify.com and every Gradify site are run by <b>Gradify Ltd</b>, which is the controller of the personal data described on this page. See also the <a href="/terms.html">terms of use</a>.</p>
@@ -71,10 +105,10 @@
     <p><b>Don't put personal details about other people</b>, such as patients or clients, into notes, answers or questions.</p>
 
     <h2 id="launch-lists">Launch lists</h2>
-    <p>If you ask to be told when a Gradify site or Gradify Pro opens, Gradify keeps:</p>
+    <p>If you ask to be told when a Gradify site or Gradify Ultra opens, Gradify keeps:</p>
     <ul>
       <li><b>your email address</b> (stored in lower case),</li>
-      <li><b>which list you joined</b> (for example "Gradify Pro"),</li>
+      <li><b>which list you joined</b> (for example "Gradify Ultra"),</li>
       <li><b>when you joined</b>.</li>
     </ul>
     <p>Nothing else is collected: no account, no payment details, no name. The list is kept in Gradify's database (Supabase, in the UK).</p>
@@ -102,7 +136,7 @@
       <li><b>Google Fonts</b> supplies the fonts on every page, so Google sees your device's IP address when a page loads.</li>
       <li><b>GitHub Pages</b> serves the website itself, and sees your IP address like any web host.</li>
       <li><b>Anthropic</b> (Claude) writes Gradify AI's answers, once Gradify AI is switched on, as described above. Anthropic is in the United States.</li>
-      <li><b>Stripe</b> takes payments for Gradify Plus and Gradify Pro. It receives your email address and your payment details; Gradify keeps your Stripe customer number, your plan, its status and renewal date, never your card number.</li>
+      <li><b>Stripe</b> takes payments for Gradify Pro and Gradify Ultra. It receives your email address and your payment details; Gradify keeps your Stripe customer number, your plan, its status and renewal date, never your card number.</li>
     </ul>
     <p>Where one of these services handles personal data outside the UK, the transfer is covered by the safeguards UK data protection law requires, such as the UK's international data transfer agreement or addendum.</p>
 
@@ -118,6 +152,18 @@
     </ul>
     <p>Under UK data protection law you can ask for a copy of your data, ask for it to be corrected or deleted, object to how it's used, and withdraw consent you've given. If you're unhappy with how Gradify has handled your data, please tell Gradify first; you can also complain to the Information Commissioner's Office (<a href="https://ico.org.uk/make-a-complaint/">ico.org.uk</a>).</p>
   </main>
+    <div class="wrap hub-bottom">
+    <!-- hub-footer: written by scripts/sync-headers.mjs; edit it there -->
+    <footer class="hub-foot glass">
+      <div class="hub-foot-cols">
+        <div class="hub-foot-brand"><b>Gradify™</b><p>Turn your notes into flashcards checked against what you wrote, and revise them at the right time.</p></div>
+        <nav aria-label="Gradify"><b>Gradify</b><a href="/explore.html">Explore</a><a href="/#find">Sites</a><a href="/journey.html">Journey</a><a href="/pricing.html">Pricing</a><a href="/app.html">Open Gradify</a></nav>
+        <nav aria-label="About Gradify"><b>About</b><a href="/quality.html">Quality</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="mailto:hello@getgradify.com">Contact</a></nav>
+      </div>
+      <div class="hub-foot-base"><p><b>Also from the Gradify team:</b> Seren Aitchison (portfolio blog), BioFrontier, Eirova™, Erya™ and Vizeon™.</p><p>© <span class="hub-year">2026</span> Gradify™</p></div>
+    </footer>
+    <!-- /hub-footer -->
+  </div>
   <script type="module">
     import { analyticsOptedOut, setAnalytics, analyticsAllowed } from "/kit/core/analytics.js";
     const btn = document.getElementById("opt"), state = document.getElementById("opt-state");

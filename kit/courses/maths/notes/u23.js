@@ -36,6 +36,16 @@ SRC: Cover TM, Thomas JA, Elements of Information Theory (2nd edn, Wiley 2006) |
 NUM1#maths-u23-01-q1@1: What is the self-information in bits of an outcome with probability 1/32? | 5 | 0 | bits | −log₂(1/32) = log₂ 32 = 5 bits.
 M1#maths-u23-01-q2@1: Which outcome carries the most information? | One with probability 0.01 | One with probability 0.5 | One with probability 0.9 | One with probability 1 | One with probability 0.25 | Self-information −log p is largest for the least likely outcome.
 M2#maths-u23-01-q3@2: Why does information theory use logarithms of probabilities? | So that information from independent events adds, since their probabilities multiply | Logarithms make small probabilities larger, so rare events count more | It keeps every information value below 1, which simplifies coding | Logarithms remove randomness from the probabilities being measured | There's no reason; any increasing function of p would work equally well | −log(pq) = −log p − log q turns products into sums.
+Q: What is a bit? | The unit of information: the information in one fair yes/no choice.
+Q: What is self-information? | I(x) = −log₂ p(x), the surprise of an outcome with probability p(x).
+Q: What are the five parts of Shannon's communication framework? | Source, encoder, noisy channel, decoder and destination.
+Q: What does Shannon information depend on? | Probabilities, not meaning.
+Q: Why do rare events carry more information? | Their low probability makes −log₂ p(x) larger, so they are more surprising.
+Q: What does the source coding theorem limit? | Data can't be compressed below its entropy on average.
+Q: What does the channel coding theorem promise? | Reliable communication at any rate below the channel's capacity.
+Q: Name three compression formats that use information theory. | ZIP, JPEG and MP3.
+Q: How much information does a fair 8-sided die roll give? | 3 bits.
+Q: What is a common mistake about Shannon information? | Confusing it with meaning or importance.
 
 ## Entropy
 S: Entropy measures the average uncertainty, or information content, of a random variable. It's largest when all outcomes are equally likely and zero when the outcome is certain, and it gives the minimum average number of bits needed to describe the variable.
@@ -72,6 +82,16 @@ SRC: Shannon CE, Prediction and entropy of printed English, Bell System Technica
 NUM1#maths-u23-02-q1@1: What is the entropy in bits of the distribution (½, ⅛, ⅛, ⅛, ⅛)? | 2 | 0 | bits | ½ × 1 + 4 × (⅛ × 3) = 0.5 + 1.5 = 2 bits.
 M1#maths-u23-02-q2@1: Which distribution on four outcomes has the highest entropy? | (¼, ¼, ¼, ¼) | (½, ½, 0, 0) | (1, 0, 0, 0) | (0.7, 0.1, 0.1, 0.1) | (0.4, 0.4, 0.1, 0.1) | The uniform distribution maximises entropy at log₂ 4 = 2 bits.
 M2#maths-u23-02-q3@2: Why is the entropy of English text far below log₂ 27 bits per letter? | Letters aren't equally likely and depend strongly on context, so each is quite predictable | English uses fewer than 27 symbols, so log₂ 27 overcounts the alphabet | Entropy ignores probabilities, so it depends only on the alphabet size | Text is completely random, so its entropy is fixed by the letter count | It isn't below that: English text has entropy close to 4.75 bits per letter | Redundancy from letter frequencies and context lowers the average surprise.
+Q: What is Shannon entropy? | H(X) = −Σ p(x) log₂ p(x), the average uncertainty of a random variable in bits.
+Q: What is the binary entropy function? | h(p) = −p log₂ p − (1 − p) log₂(1 − p), the entropy of a coin with bias p.
+Q: What is the maximum entropy for n outcomes? | log₂ n, reached by the uniform distribution.
+Q: What is the joint entropy of independent variables? | H(X, Y) = H(X) + H(Y).
+Q: What is the entropy of a coin with p = 0.9? | About 0.469 bits.
+Q: What is the entropy of a fair six-sided die? | log₂ 6 ≈ 2.585 bits.
+Q: How many bits are in one nat? | 1/ln 2 ≈ 1.443 bits.
+Q: How does differential entropy differ from discrete entropy? | It applies to continuous variables and can be negative.
+Q: What is the entropy of probabilities ½, ¼, ¼? | 1.5 bits.
+Q: How is 0 log 0 treated in entropy? | As 0, so impossible outcomes add nothing.
 
 ## Conditional Entropy
 S: Conditional entropy measures how much uncertainty remains about one variable once another is known. It obeys a chain rule linking joint and individual entropies, and it never increases when you condition on more information.
@@ -108,6 +128,16 @@ SRC: MacKay DJC, Information Theory, Inference, and Learning Algorithms (Cambrid
 NUM1#maths-u23-03-q1@1: H(X) = 1.5 bits and H(X, Y) = 2.3 bits. What is H(Y ∣ X)? | 0.8 | 0.001 | bits | By the chain rule, H(Y ∣ X) = 2.3 − 1.5 = 0.8 bits.
 M1#maths-u23-03-q2@1: X and Y are independent with H(Y) = 2 bits. What is H(Y ∣ X)? | 2 bits | 0 bits | 1 bit | 4 bits | It depends on H(X) | Knowing an independent variable tells you nothing about Y.
 M3#maths-u23-03-q3@2: Why can observing a particular value of X increase uncertainty about Y, though H(Y ∣ X) ≤ H(Y)? | The inequality holds on average over x; some rare values can leave Y more uncertain than before | It never increases uncertainty | Entropy can be negative | Conditioning always gives zero entropy | The inequality is false | Averaging over all x gives the decrease; individual x can go either way.
+Q: What is conditional entropy? | H(Y ∣ X), the uncertainty remaining about Y once X is known, averaged over X.
+Q: What is the chain rule for entropy? | H(X, Y) = H(X) + H(Y ∣ X).
+Q: What is joint entropy? | H(X, Y) = −Σ p(x, y) log₂ p(x, y).
+Q: What is H(Y ∣ X) when X and Y are independent? | H(Y).
+Q: What bounds does conditional entropy satisfy? | 0 ≤ H(Y ∣ X) ≤ H(Y).
+Q: How does H(X, Y) compare with H(X) + H(Y)? | H(X, Y) ≤ H(X) + H(Y).
+Q: What does Fano's inequality link? | Conditional entropy H(X ∣ Y) and error probability.
+Q: How is conditional entropy used in decision trees? | To choose splits by information gain.
+Q: X is a fair coin and Y copies X with probability 0.9. What is H(Y ∣ X)? | About 0.469 bits.
+Q: What is a common mistake about conditioning? | Thinking any particular observed value of X must reduce uncertainty about Y.
 
 ## Mutual Information
 S: Mutual information measures how much knowing one variable tells you about another. It's zero exactly when they're independent, captures nonlinear relationships that correlation misses, and is central to channel capacity, feature selection and neuroscience.
@@ -144,6 +174,16 @@ SRC: Kraskov A, Stögbauer H, Grassberger P, Estimating mutual information, Phys
 NUM1#maths-u23-04-q1@1: H(X) = 2, H(Y) = 1.5 and H(X, Y) = 3 bits. What is I(X; Y) in bits? | 0.5 | 0.001 | bits | I = H(X) + H(Y) − H(X, Y) = 2 + 1.5 − 3 = 0.5.
 M1#maths-u23-04-q2@1: X is uniform on {−1, 0, 1} and Y = X^{2}. Which statement is true? | Correlation is 0 but mutual information is positive | Both correlation and mutual information are 0 | Correlation is 1 | X and Y are independent | Mutual information is negative | Y is determined by X, yet the relationship is symmetric, so linear correlation vanishes.
 M2#maths-u23-04-q3@2: What does the data processing inequality imply for image enhancement? | Processing an image can't add information about the original scene, only reveal or lose it | Enhancement always adds information about the scene that wasn't captured | Processing increases the entropy of the original scene being imaged | It has no implication for images, only for communication channels | Images aren't data in the information-theoretic sense, so it can't apply | For a chain scene → image → processed image, I(scene; processed) ≤ I(scene; image): processing can reveal or lose information but never add it.
+Q: What is mutual information? | I(X; Y) = H(X) − H(X ∣ Y), how much knowing one variable tells you about another.
+Q: What is the data processing inequality? | If X → Y → Z is a Markov chain, then I(X; Z) ≤ I(X; Y).
+Q: Is mutual information symmetric? | Yes, I(X; Y) = I(Y; X).
+Q: What is I(X; X)? | H(X).
+Q: How is mutual information related to KL divergence? | It equals the KL divergence between p(x, y) and p(x)p(y).
+Q: Why can mutual information detect relationships correlation misses? | Correlation detects only linear relationships; mutual information captures nonlinear dependence too.
+Q: How is mutual information estimated from data? | By binning or k-nearest-neighbour estimators.
+Q: How is channel capacity defined using mutual information? | As the maximum of I(X; Y) over input distributions.
+Q: A fair bit is copied correctly with probability 0.9. What is I(X; Y)? | About 0.531 bits per use.
+Q: What is a common mistake about zero correlation? | Concluding independence from it.
 
 ## Kullback–Leibler Divergence
 S: The Kullback–Leibler divergence measures how one probability distribution differs from another: the extra bits needed if you code data from P using a code designed for Q. It's not symmetric, but it underlies maximum likelihood, variational inference and model comparison.
@@ -180,6 +220,16 @@ SRC: Bishop CM, Pattern Recognition and Machine Learning (Springer 2006) | textb
 NUM1#maths-u23-05-q1@1: For P = (1, 0) and Q = (½, ½), what is D_{KL}(P ‖ Q) in bits? | 1 | 0 | bits | 1 × log₂(1/0.5) = 1 bit (the zero-probability term contributes nothing).
 M1#maths-u23-05-q2@1: What happens to D_{KL}(P ‖ Q) if Q gives zero probability to an outcome P considers possible? | It becomes infinite | It becomes zero | It becomes negative | It equals one | It is unaffected | log(p/0) is infinite, heavily penalising models that rule out real outcomes.
 M3#maths-u23-05-q3@2: Why does minimising D(q ‖ p) in variational inference tend to pick one mode of a multimodal posterior? | It heavily penalises q placing mass where p is small, so q concentrates on a single peak | It spreads q evenly across every mode of p, covering all the mass | It ignores p entirely and fits q to the prior distribution instead | Reverse KL is symmetric, so it behaves exactly like forward KL here | It doesn't; reverse KL always captures every mode of the posterior | Reverse KL is "mode-seeking", while D(p ‖ q) is "mass-covering".
+Q: What is KL divergence? | D_{KL}(P ‖ Q) = Σ p(x) log(p(x)/q(x)), how distribution P differs from Q.
+Q: What is Gibbs' inequality? | D_{KL}(P ‖ Q) ≥ 0, with equality iff P = Q.
+Q: Why is KL divergence not a metric? | It isn't symmetric and doesn't satisfy the triangle inequality.
+Q: What does KL divergence mean in coding terms? | The extra bits needed to code data from P using a code designed for Q.
+Q: What does KL divergence measure in Bayesian updating? | The information gain from prior to posterior.
+Q: How does maximum likelihood relate to KL divergence? | It minimises D(data ‖ model).
+Q: Which model selection criterion derives from expected KL divergence? | AIC.
+Q: What is a symmetric relative of KL divergence? | The Jensen–Shannon divergence.
+Q: What is D_{KL}(P ‖ Q) for P = (½, ½) and Q = (¼, ¾)? | About 0.208 bits.
+Q: What is a common mistake about KL divergence? | Treating it as a symmetric distance.
 
 ## Cross-Entropy
 S: Cross-entropy measures the average number of bits needed to encode data from distribution P using a code optimised for Q. It equals entropy plus KL divergence, and as a loss function it trains most classification models, including neural networks.
@@ -215,6 +265,16 @@ SRC: Cover TM, Thomas JA, Elements of Information Theory (2nd edn, Wiley 2006) |
 NUM1#maths-u23-06-q1@1: A language model has cross-entropy 3 bits per token. What is its perplexity? | 8 | 0 |  | Perplexity = 2^{3} = 8: as uncertain as choosing among 8 equally likely tokens.
 M1#maths-u23-06-q2@1: Which prediction gives the largest log loss when the true class is A? | P(A) = 0.01 | P(A) = 0.5 | P(A) = 0.9 | P(A) = 0.99 | P(A) = 0.7 | −log 0.01 is far larger than −log of the other values.
 M2#maths-u23-06-q3@2: Why does minimising cross-entropy fit a model to the data distribution? | H(P) is fixed, so minimising H(P, Q) minimises D_{KL}(P ‖ Q), which is zero only when Q = P | Cross-entropy ignores P, so it fits Q to a uniform distribution instead | Minimising cross-entropy maximises KL divergence, pushing Q away from P | Cross-entropy is symmetric in P and Q, so either can be optimised | It doesn't fit the model; cross-entropy only measures prediction speed | The only part depending on Q is the KL term.
+Q: What is cross-entropy? | H(P, Q) = −Σ p(x) log q(x), the average bits to code data from P with a code optimised for Q.
+Q: What is log loss? | Cross-entropy between one-hot labels and predicted probabilities, −log q(true class) per example.
+Q: How does cross-entropy compare with entropy? | H(P, Q) ≥ H(P), with equality iff Q = P.
+Q: What is minimising cross-entropy equivalent to? | Minimising KL divergence and maximising likelihood.
+Q: What is binary cross-entropy? | −[y log q + (1 − y) log(1 − q)].
+Q: How does cross-entropy treat confident wrong predictions? | It penalises them heavily.
+Q: Name two techniques related to cross-entropy training of classifiers. | Label smoothing and calibration.
+Q: A classifier gives 0.7 to the true class. What is its log loss in nats? | About 0.357 nats.
+Q: What is cross-entropy called when evaluating probabilistic forecasts? | The log score.
+Q: What is a common mistake in evaluating probabilistic classifiers? | Using accuracy alone, ignoring confidence.
 
 ## Fisher Information
 S: Fisher information measures how much a sample tells you about an unknown parameter: the sharper the likelihood curve, the more information. It sets the Cramér–Rao lower bound on the variance of unbiased estimators and links statistics with geometry.
@@ -250,6 +310,16 @@ SRC: Casella G, Berger RL, Statistical Inference (2nd edn, Duxbury 2002) | textb
 NUM1#maths-u23-07-q1@1: For a Poisson(λ) sample with λ = 4 and n = 50, what is the Cramér–Rao lower bound on the variance of an unbiased estimator of λ? | 0.08 | 0.001 |  | I(λ) = 1/4, so the bound is 1/(50 × 0.25) = 0.08 = λ/n.
 M1#maths-u23-07-q2@1: For Bernoulli(p), at which p is the Fisher information smallest? | p = 0.5 | p = 0.1 | p = 0.9 | p = 0.01 | p = 0.99 | I(p) = 1/(p(1 − p)) is smallest where p(1 − p) is largest, at p = 0.5.
 M2#maths-u23-07-q3@2: Why does a sharply peaked log-likelihood indicate high Fisher information? | Small changes in θ greatly change the likelihood, so the data pin θ down precisely | Sharp peaks mean the data are very noisy and tell us little | Peak sharpness has no relation to how much the data tell us | Flat likelihoods are more informative, since many values fit | It doesn't; Fisher information depends only on sample size | Fisher information is the expected curvature of the log-likelihood.
+Q: What is Fisher information? | I(θ) = E[(∂ log f/∂θ)^{2}], how much a sample tells you about a parameter.
+Q: What is the Cramér–Rao bound? | Var(θ̂) ≥ 1/(nI(θ)) for any unbiased estimator from n independent observations.
+Q: What is the Fisher information for Bernoulli(p)? | I(p) = 1/(p(1 − p)).
+Q: What is the Fisher information for Poisson(λ)? | I(λ) = 1/λ.
+Q: What does asymptotic efficiency of MLEs mean? | Their variance approaches 1/(nI(θ)).
+Q: How are standard errors obtained from observed information? | From the negative Hessian of the log-likelihood.
+Q: What is the Jeffreys prior? | A prior proportional to √I(θ), invariant under reparametrisation.
+Q: What role does Fisher information play in information geometry? | It acts as a Riemannian metric on models.
+Q: For Bernoulli with p = 0.3 and n = 100, what is the Cramér–Rao bound? | About 0.0021.
+Q: What is a common mistake with the Cramér–Rao bound? | Applying it to biased estimators without adjustment.
 
 ## Minimum Description Length
 S: The minimum description length principle chooses the model that gives the shortest total description of the model plus the data encoded with it. It formalises Occam's razor: a model must earn its complexity by compressing the data enough.
@@ -286,6 +356,16 @@ SRC: Grünwald PD, The Minimum Description Length Principle (MIT Press 2007) | t
 NUM1#maths-u23-08-q1@1: A model has 4 parameters fitted to n = 1024 data points. Using the BIC-like penalty (k/2) log₂ n, how many bits does describing the parameters cost? | 20 | 0 | bits | (4/2) × log₂ 1024 = 2 × 10 = 20 bits.
 M1#maths-u23-08-q2@1: Under MDL, when is a more complex model preferred? | When the reduction in data description length exceeds the extra model description length | Always, because a more complex model always fits the data better | Never, because MDL always chooses the simplest available model | Only when the complex model has fewer parameters than the simple one | When its parameter values are larger, giving it more expressive power | MDL compares total description length L(M) + L(D ∣ M), so a complex model wins only if its better fit saves more data bits than its extra model bits cost.
 M2#maths-u23-08-q3@2: Why can't Kolmogorov complexity be used directly for model selection? | It is uncomputable: no algorithm can find the shortest program for every string | It is always zero for any string, so it can't distinguish models | It ignores the data and depends only on the programming language | It always favours the most complex model, defeating Occam's razor | It can be used directly; it's computed routinely by compressors | By a halting-problem argument, the shortest description can't be computed in general.
+Q: What is the minimum description length principle? | Choose the model giving the shortest total description of the model plus the data encoded with it.
+Q: What is a two-part code? | L(M) + L(D ∣ M), bits for the model plus bits for the data given the model.
+Q: What is Kolmogorov complexity? | The length of the shortest program that outputs a given string.
+Q: Which philosophical principle does MDL formalise? | Occam's razor.
+Q: Who introduced MDL, and when? | Rissanen, in 1978.
+Q: What is the trade-off between simple and complex models in MDL? | Simple models have short model cost but long data cost; complex ones the reverse.
+Q: Which criterion does two-part MDL roughly match? | BIC, −log L + (k/2) log n.
+Q: Name two uses of MDL. | Model order selection and decision-tree pruning, as well as clustering and change-point detection.
+Q: Model A costs 520 bits in total and model B 510. Which does MDL choose? | Model B, the shorter total.
+Q: What is a common mistake when comparing model fits? | Ignoring the cost of describing the model's parameters.
 
 ## Shannon's Theorems
 S: Shannon's theorems are the fundamental limits of information theory. The source coding theorem says data can be compressed to its entropy but not below; the noisy channel coding theorem says reliable communication is possible up to the channel capacity and impossible beyond it.
@@ -321,6 +401,16 @@ SRC: Shannon CE, Communication in the presence of noise, Proceedings of the IRE 
 NUM1#maths-u23-09-q1@1: What is the capacity in bits per use of a binary symmetric channel with flip probability 0.11 (h(0.11) ≈ 0.5)? | 0.5 | 0.01 | bits | C = 1 − h(0.11) ≈ 1 − 0.5 = 0.5 bits per channel use.
 M1#maths-u23-09-q2@1: What happens if data are sent faster than channel capacity? | The error probability can't be made arbitrarily small | Errors disappear entirely once codes are long enough | The channel's capacity increases automatically to match | The channel becomes noiseless at higher transmission rates | Nothing changes; capacity limits only power, not rate | The converse of the coding theorem bounds the error away from zero.
 M3#maths-u23-09-q3@2: Why was Shannon's channel coding theorem surprising in 1948? | It showed noise needn't force errors: with clever coding, error rates can be made tiny at positive rates | It proved noise could be removed physically from any channel with filters | It showed channel capacity is always infinite for well-designed codes | It required zero noise for any reliable communication to take place | It wasn't surprising; engineers already knew error-free coding was possible | Engineers had assumed reducing errors meant reducing rate towards zero.
+Q: What is channel capacity? | C, the maximum over input distributions of I(X; Y), the highest rate of reliable communication.
+Q: What is the Shannon–Hartley theorem? | C = B log₂(1 + S/N) bits per second for bandwidth B and signal-to-noise ratio S/N.
+Q: What is the capacity of a binary symmetric channel? | C = 1 − h(p), for flip probability p.
+Q: Which coding methods approach the entropy limit? | Huffman coding of blocks and arithmetic coding.
+Q: What is the lossy version of source coding called? | Rate–distortion theory.
+Q: What happens to error probability at rates below capacity? | Codes exist whose error probability tends to zero.
+Q: Name three practical codes that come close to capacity. | Turbo, LDPC and polar codes.
+Q: How is SNR expressed in decibels? | 10 log₁₀(S/N).
+Q: What is the capacity of a 3000 Hz channel with SNR 1000? | About 29,900 bits per second.
+Q: What is a common mistake about error-free communication? | Thinking it needs a noise-free channel.
 
 ## Compression Theory
 S: Compression theory studies how to represent data in fewer bits. Lossless compression preserves data exactly and is limited by entropy; lossy compression, used for images, audio and video, trades fidelity for size according to rate–distortion theory.
@@ -358,6 +448,16 @@ SRC: Berger T, Rate Distortion Theory: A Mathematical Basis for Data Compression
 NUM1#maths-u23-10-q1@1: For a Gaussian source, how many extra bits per sample are needed to reduce mean squared error by a factor of 16? | 2 | 0 | bits | Each bit divides distortion by 4, so 16 = 4^{2} needs 2 bits.
 M1#maths-u23-10-q2@1: Which format uses lossless compression? | PNG images | JPEG photographs | MP3 audio | H.264 video | AAC audio | PNG reconstructs every pixel exactly, while JPEG, MP3, H.264 and AAC discard information that people are unlikely to notice.
 M2#maths-u23-10-q3@2: Why does transform coding help compress images? | Transforms like the DCT pack most energy into a few coefficients, so the rest can be coarsely quantised | Transforms add redundancy that entropy coders can then remove | Transforms make image files larger but easier to display | They remove all fine detail from images before coding | They don't help; images are compressed in the pixel domain | Smooth image blocks have small high-frequency coefficients.
+Q: What is lossless compression? | Encoding that allows exact reconstruction of the original data, such as ZIP or PNG.
+Q: What is the rate–distortion function? | R(D), the minimum bits per symbol to reconstruct data within average distortion D.
+Q: Name three lossless coding methods. | Huffman, arithmetic and Lempel–Ziv dictionary coding.
+Q: What does a compression ratio depend on? | The data's redundancy.
+Q: What is R(D) for a Gaussian source with squared error? | R(D) = ½ log₂(σ^{2}/D).
+Q: What does each extra bit per sample do to mean squared error? | Cuts it by a factor of 4, about 6 dB.
+Q: Which transforms do MP3 and JPEG 2000 use? | The MDCT for MP3 and wavelets for JPEG 2000.
+Q: What do perceptual models do in lossy compression? | Discard what people can't see or hear.
+Q: How many bits per sample does a Gaussian source with σ^{2} = 16 need for D = 1? | 2 bits per sample.
+Q: What is a common mistake about lossless compressors? | Claiming one can shrink every possible file.
 
 ## Source Coding
 S: Source coding assigns codewords to symbols so that messages are as short as possible on average while remaining decodable. Huffman coding is optimal among symbol-by-symbol prefix codes, and arithmetic coding gets arbitrarily close to the entropy.
@@ -394,6 +494,16 @@ SRC: Ziv J, Lempel A, A universal algorithm for sequential data compression, IEE
 NUM1#maths-u23-11-q1@1: Do codeword lengths 1, 2, 3, 3 satisfy the Kraft inequality with equality? Give Σ 2^{−lᵢ}. | 1 | 0 |  | ½ + ¼ + ⅛ + ⅛ = 1, so a complete prefix code exists.
 M1#maths-u23-11-q2@1: Which set of codewords is a prefix code? | {0, 10, 110, 111} | {0, 01, 11} | {1, 10, 100} | {00, 0, 1} | {01, 0, 10} | No codeword in it is the beginning of another.
 M2#maths-u23-11-q3@2: Why does Lempel–Ziv coding work without knowing symbol probabilities? | It builds a dictionary of repeated patterns as it reads, adapting to the data's statistics | It assumes all symbols are equally likely, which is always nearly true | It needs the symbol probabilities to be sent first in a header | It only works on English text, where the probabilities are known | It doesn't work without probabilities; it needs a trained model | Universal codes approach the entropy rate for stationary sources.
+Q: What is a prefix code? | A code in which no codeword is the start of another, so messages decode instantly.
+Q: What does the Kraft inequality guarantee? | A prefix code with lengths lᵢ exists if and only if Σ 2^{−lᵢ} ≤ 1.
+Q: How does Huffman coding build a code? | By repeatedly merging the two least probable symbols and labelling branches 0 and 1.
+Q: How close is a Huffman code's average length to entropy? | H ≤ L < H + 1.
+Q: How does arithmetic coding work? | It encodes a whole message as an interval, approaching the entropy.
+Q: What makes Lempel–Ziv a universal code? | It learns patterns from data without known probabilities.
+Q: Which coding method do modern compressors such as Zstandard use? | Asymmetric numeral systems (ANS).
+Q: Which coding method preceded Huffman coding? | Shannon–Fano coding.
+Q: What is the Huffman average length for probabilities ½, ¼, ⅛, ⅛? | 1.75 bits, equal to the entropy.
+Q: What is a common mistake with variable-length codes? | Using a code that isn't prefix-free, making messages ambiguous.
 
 ## Channel Coding
 S: Channel coding adds structured redundancy to data so that errors introduced by a noisy channel can be detected and corrected. The code rate measures how much redundancy is added, and modern codes approach Shannon's capacity limit.
@@ -430,6 +540,16 @@ SRC: Arıkan E, Channel polarization: a method for constructing capacity-achievi
 NUM1#maths-u23-12-q1@1: A code maps 223 data bytes into 255 coded bytes. What is its rate, to 3 decimal places? | 0.875 | 0.001 |  | R = 223/255 ≈ 0.875 (the Reed–Solomon code used by deep-space missions).
 M1#maths-u23-12-q2@1: A code has minimum distance 3. How many errors can it detect? | 2 | 1 | 3 | 0 | 6 | It detects up to d_{min} − 1 = 2 errors and corrects 1.
 M2#maths-u23-12-q3@2: Why are long block lengths needed to approach channel capacity? | By the law of large numbers, noise in long blocks behaves predictably, letting codes separate codewords reliably | Short codes are always better than long ones for approaching capacity | Capacity grows with block length, so longer blocks raise the limit itself | Long blocks remove noise from the channel, making errors impossible | They aren't needed; capacity can be reached with blocks of a few bits | Shannon's random coding argument relies on long blocks.
+Q: What is the code rate? | R = k/n, for a code mapping k information bits into n coded bits.
+Q: What is the minimum distance of a code? | The smallest Hamming distance between distinct codewords.
+Q: How many errors can a code with minimum distance d_{min} detect? | d_{min} − 1.
+Q: What is the 3-bit repetition code? | Sending each bit 3 times and decoding by majority, with rate ⅓, correcting 1 error.
+Q: What can a parity check do? | Detect any single error.
+Q: How are convolutional codes decoded? | With the Viterbi algorithm.
+Q: Name three block code families. | Hamming, BCH and Reed–Solomon.
+Q: What does interleaving do? | Spreads burst errors so they can be corrected.
+Q: What is the decoded error rate of the 3-bit repetition code with flip probability 0.1? | 0.028, down from 0.1.
+Q: What is a common mistake about error detection and correction? | Assuming a code can correct as many errors as it can detect.
 
 ## Error-Correcting Codes
 S: Error-correcting codes protect data in QR codes, CDs, phones, spacecraft and computer memory. Linear codes use matrices over the field with two elements, and Hamming and Reed–Solomon codes show how algebra turns into reliable communication.
@@ -467,6 +587,16 @@ SRC: Reed IS, Solomon G, Polynomial codes over certain finite fields, Journal of
 NUM1#maths-u23-13-q1@1: A Reed–Solomon code has n = 255 and k = 239 symbols. How many symbol errors can it correct? | 8 | 0 | symbols | (n − k)/2 = 16/2 = 8 symbol errors.
 M1#maths-u23-13-q2@1: What does a zero syndrome indicate? | The received word is a codeword (no detectable error) | Exactly one bit error occurred | Exactly two bit errors occurred | The decoder has failed completely | All the parity bits are zero | The syndrome s = Hrᵀ is zero exactly when r is a codeword, so either no error occurred or the errors formed another codeword.
 M3#maths-u23-13-q3@2: Why are Reed–Solomon codes good at correcting burst errors? | They work on multi-bit symbols, so a burst of bit errors corrupts only a few symbols | They correct infinitely many errors whatever the block length | They work on single bits only, which spreads bursts out | Burst errors never occur in storage or communications | They aren't good at bursts; they suit random single errors | A scratch on a CD hits consecutive bits, which fall into a small number of byte symbols.
+Q: What is a linear code? | A code whose codewords form a vector subspace, with codewords c = mG for a generator matrix G.
+Q: What is a syndrome? | s = Hrᵀ for received word r and parity-check matrix H; zero for codewords, otherwise it identifies the error.
+Q: How many data and parity bits does Hamming (7,4) use? | 4 data bits and 3 parity bits.
+Q: What is a perfect code? | A code where every word is within distance 1 of exactly one codeword, as for Hamming (7,4).
+Q: How many symbol errors can a Reed–Solomon code correct? | Up to (n − k)/2 symbol errors.
+Q: What mathematical idea underlies Reed–Solomon codes? | Evaluating polynomials over finite fields.
+Q: What are CRCs used for? | Detecting errors, as cyclic redundancy checks.
+Q: What do SECDED Hamming codes protect? | ECC computer memory.
+Q: A Hamming (7,4) syndrome is 101. What does the receiver do? | Flips bit 5, since 101 in binary is 5.
+Q: What is a common mistake about Hamming codes? | Assuming they can correct two errors.
 
 ## Signal Processing Mathematics
 S: Signal processing analyses, transforms and extracts information from signals such as sound, images, radar returns and sensor readings. Its mathematics, linear systems, Fourier analysis and probability, lets engineers filter noise, compress data and detect patterns.
@@ -504,6 +634,16 @@ SRC: Smith SW, The Scientist and Engineer's Guide to Digital Signal Processing (
 NUM1#maths-u23-14-q1@1: An LTI system has gain |H| = 3 at 50 Hz. An input sinusoid at 50 Hz has amplitude 2. What is the output amplitude? | 6 | 0 |  | Output amplitude = |H| × input amplitude = 3 × 2 = 6.
 M1#maths-u23-14-q2@1: Which property defines a linear system? | The response to a sum of inputs is the sum of their responses | Its output never changes over time | It only passes low frequencies through | Its output is always zero for any input | It has no memory of past inputs | Superposition (additivity and scaling) defines linearity.
 M2#maths-u23-14-q3@2: Why are sinusoids so useful for analysing LTI systems? | They are eigenfunctions, so each frequency is simply scaled and shifted, and any signal is a sum of them | Sinusoids are the only real signals that occur in physical systems | LTI systems can't process any other kind of signal at all | Sinusoids have no frequency, so they pass through systems unchanged | They aren't especially useful; impulse responses alone are enough | Fourier decomposition plus eigenfunction behaviour reduces analysis to multiplication by H(f).
+Q: What is a linear time-invariant system? | A system whose response to a sum of inputs is the sum of responses, and whose behaviour doesn't change over time.
+Q: What is an impulse response? | h(t), the output of an LTI system to a unit impulse.
+Q: How is an LTI system's output found from its input? | By convolution, y = h * x.
+Q: What is the frequency-domain relation for an LTI system? | Y(f) = H(f)X(f), with H the frequency response.
+Q: When is an LTI system stable? | When ∫|h| < ∞, so bounded inputs give bounded outputs.
+Q: What two steps make analogue-to-digital conversion? | Sampling and quantisation.
+Q: Name three transforms in the signal processing toolbox. | Fourier, Laplace and z-transforms.
+Q: An LTI system has gain 0.5 and phase −90° at 100 Hz. What is the output for cos(2π × 100t)? | 0.5 sin(2π × 100t).
+Q: What is the difference between energy and power signals? | Energy signals have finite total energy; power signals have finite average power.
+Q: What is a common mistake about LTI systems? | Expecting them to create frequencies not present in the input.
 
 ## Convolution
 S: Convolution combines two functions by sliding one across the other and integrating their product. It describes how LTI systems respond to inputs, blurs images, smooths data and appears in probability as the distribution of a sum of independent variables.
@@ -541,6 +681,16 @@ SRC: Bracewell RN, The Fourier Transform and Its Applications (3rd edn, McGraw-H
 NUM1#maths-u23-15-q1@1: Convolve [1, 1, 1] with [1, 1, 1]. What is the middle value of the result? | 3 | 0 |  | The result is [1, 2, 3, 2, 1], with middle value 3.
 M1#maths-u23-15-q2@1: The sum of two independent uniform(0, 1) variables has which density shape? | Triangular on [0, 2] | Uniform on [0, 2] | Normal | Exponential | Uniform on [0, 1] | Convolving two box functions gives a triangle.
 M2#maths-u23-15-q3@2: Why is FFT-based convolution faster for long signals? | The convolution theorem turns convolution into pointwise multiplication, and FFTs cost O(N log N) | FFTs skip most of the samples, so there's less arithmetic to do | Direct convolution is always faster for long signals in practice | It uses less accurate arithmetic, which is quicker on hardware | It isn't faster; FFT convolution is only used for short signals | Direct convolution needs O(N^{2}) operations for long sequences.
+Q: What is convolution? | (f * g)(t) = ∫ f(τ)g(t − τ) dτ, sliding one function across the other and integrating the product.
+Q: What is the convolution theorem? | The Fourier transform of a convolution is the product of the Fourier transforms.
+Q: What is the discrete convolution formula? | (x * h)[n] = Σ x[k]h[n − k].
+Q: Name three algebraic properties of convolution. | It is commutative, associative and distributive.
+Q: How fast is direct convolution of sequences of lengths M and N? | O(MN) operations.
+Q: What is overlap–add used for? | Convolving long signals in blocks.
+Q: How is convolution used in probability? | The density of X + Y for independent variables is f_{X} * f_{Y}.
+Q: What is [1, 2, 3] convolved with [1, 1]? | [1, 3, 5, 3].
+Q: When is deconvolution ill-posed? | When the kernel's spectrum has zeros.
+Q: What is a common mistake when computing convolution? | Forgetting to flip one sequence, which gives cross-correlation instead.
 
 ## Correlation Functions
 S: Correlation functions measure how similar a signal is to a shifted version of itself (autocorrelation) or of another signal (cross-correlation). They locate echoes and delays, reveal periodicities and link to power spectra through the Wiener–Khinchin theorem.
@@ -575,6 +725,16 @@ SRC: Abbott BP et al. (LIGO Scientific Collaboration and Virgo Collaboration), O
 NUM1#maths-u23-16-q1@1: Two microphones 0.68 m apart record a sound; cross-correlation shows a 1 ms delay. Taking sound speed 340 m/s, what extra path length in m does this imply? | 0.34 | 0.001 | m | 340 × 0.001 = 0.34 m.
 M1#maths-u23-16-q2@1: What does the autocorrelation of white noise look like? | A spike at zero lag and roughly zero elsewhere | A sine wave | A constant at all lags | A slowly decaying exponential | Periodic peaks | White noise is uncorrelated with its shifted copies.
 M3#maths-u23-16-q3@2: Why is a matched filter optimal for detecting a known pulse in white noise? | Correlating with the pulse shape adds signal energy coherently while noise adds incoherently, maximising SNR | It removes all the noise from the received signal before detection | It amplifies the noise most strongly, making the pulse easier to see | It ignores the pulse shape and responds to energy in any band | It isn't optimal; a simple low-pass filter always does better | By the Cauchy–Schwarz inequality, the filter matched to the signal maximises output SNR.
+Q: What is cross-correlation? | R_{xy}(τ) = ∫ x(t)y(t + τ) dt, measuring similarity between one signal and a shifted other.
+Q: What is the Wiener–Khinchin theorem? | The power spectral density of a wide-sense stationary process is the Fourier transform of its autocorrelation.
+Q: What does R_{xx}(0) represent? | The signal's energy or power, the maximum of its autocorrelation.
+Q: What does the autocorrelation of a periodic signal look like? | It is periodic too.
+Q: Where does cross-correlation peak? | At the delay that best aligns the two signals.
+Q: Name three uses of time-delay estimation by cross-correlation. | Radar, sonar, GPS and sound localisation.
+Q: What is matched filtering? | Correlating with a known pulse, which maximises signal-to-noise ratio in white noise.
+Q: Where is matched filtering used in physics? | In gravitational-wave detection at LIGO.
+Q: A radar cross-correlation peaks at 20 μs. How far is the target? | 3000 m.
+Q: What is a common mistake about correlation and convolution? | Confusing them; correlation doesn't flip the signal.
 
 ## Sampling Theory (Signals)
 S: Sampling turns a continuous signal into a sequence of numbers taken at regular intervals. Sampling theory explains when the original can be recovered, what goes wrong with too few samples (aliasing), and how quantisation adds noise.
@@ -610,6 +770,16 @@ SRC: Widrow B, Kollár I, Quantization Noise (Cambridge University Press 2008) |
 NUM1#maths-u23-17-q1@1: What is the approximate quantisation SNR in dB for a 12-bit converter with a full-scale sine, to 1 decimal place? | 74 | 0.1 | dB | 6.02 × 12 + 1.76 = 72.24 + 1.76 = 74.0 dB.
 M1#maths-u23-17-q2@1: A 30 kHz tone is sampled at 48 kHz. At what frequency does it appear? | 18 kHz | 30 kHz | 24 kHz | 78 kHz | 6 kHz | |30 − 48| = 18 kHz, below the 24 kHz Nyquist frequency.
 M2#maths-u23-17-q3@2: Why must an anti-aliasing filter come before the sampler rather than after? | Once sampled, aliased components are indistinguishable from genuine low frequencies and can't be removed | Filters only work on digital data, so the order doesn't matter | Aliasing happens after sampling, so filtering first does nothing | It doesn't matter where the filter goes in the chain | It must come after, to clean up the sampled data | Aliases occupy the same frequencies as real content after sampling.
+Q: What is aliasing? | When frequencies above half the sampling rate appear as lower frequencies in the sampled signal.
+Q: What is quantisation noise? | The error from rounding samples to a finite number of levels.
+Q: How does the spectrum of a sampled signal behave? | It repeats every f_{s}.
+Q: What does an anti-aliasing filter do? | Removes frequencies above f_{s}/2 before sampling.
+Q: Where does a frequency f appear after sampling at f_{s}? | At |f − kf_{s}|, for the integer k bringing it into [0, f_{s}/2].
+Q: Name two visible examples of aliasing. | The wagon-wheel effect in films and moiré patterns in images.
+Q: What is the quantisation SNR formula for a full-scale sine? | SNR ≈ 6.02N + 1.76 dB for N bits.
+Q: How many levels do N bits give? | 2ᴺ levels.
+Q: A 7 kHz tone is sampled at 10 kHz. Where does it appear? | At 3 kHz.
+Q: What is a common mistake when sampling? | Sampling without an anti-aliasing filter and mistaking aliases for real signals.
 
 ## Nyquist–Shannon Sampling Theorem
 S: The Nyquist–Shannon sampling theorem says a signal containing no frequencies above B can be perfectly reconstructed from samples taken faster than 2B per second. It's why CDs sample at 44.1 kHz and why digital audio, video and communications work.
@@ -645,6 +815,16 @@ SRC: Unser M, Sampling—50 years after Shannon, Proceedings of the IEEE 88(4), 
 NUM1#maths-u23-18-q1@1: Telephone speech is limited to 3.4 kHz. What is its Nyquist rate in kHz? | 6.8 | 0.01 | kHz | 2 × 3.4 = 6.8 kHz (telephony uses 8 kHz).
 M1#maths-u23-18-q2@1: A signal contains frequencies up to 15 kHz. Which sampling rate allows perfect reconstruction? | 32 kHz | 15 kHz | 20 kHz | 25 kHz | 30 kHz | Only 32 kHz exceeds the Nyquist rate of 30 kHz.
 M3#maths-u23-18-q3@2: Why can a sine at exactly f_{s}/2 be lost when sampled? | Samples may fall at its zero crossings, giving all zeros regardless of amplitude | Sines can't be sampled at any rate, so they're always lost | It aliases to a higher frequency, outside the sampled band | Its amplitude doubles at that rate, causing clipping | It is never lost when sampled at exactly f_{s}/2 | At exactly two samples per cycle, phase determines whether peaks or zeros are captured.
+Q: What does the Nyquist–Shannon sampling theorem state? | A signal with no frequencies above B can be perfectly reconstructed from samples taken faster than 2B per second.
+Q: What is the Nyquist rate? | 2B, twice the highest frequency in a band-limited signal.
+Q: What is sinc interpolation? | x(t) = Σ x[n] sinc((t − nT)/T), the ideal reconstruction from samples.
+Q: Who is the sampling theorem attributed to? | Nyquist, Shannon, Kotelnikov and Whittaker.
+Q: Why do practical systems oversample? | Oversampling eases anti-aliasing filter design.
+Q: What do sigma-delta converters do? | Oversample heavily and shape noise.
+Q: What does compressed sensing achieve? | It recovers sparse signals from fewer samples than the theorem requires.
+Q: Why do CDs sample at 44.1 kHz for 20 kHz audio? | It leaves a transition band so a realistic filter can roll off before 22.05 kHz.
+Q: What is band-pass sampling used for? | Sampling narrowband signals.
+Q: What is a common mistake about sampling at exactly 2B? | Sampling at exactly 2B, where a sinusoid at B may be lost by being sampled at its zeros.
 
 ## Digital Signal Processing
 S: Digital signal processing manipulates sampled signals with computers: filtering audio, compressing images, equalising communications channels. The z-transform and the discrete Fourier transform are its main mathematical tools.
@@ -681,6 +861,16 @@ SRC: Lyons RG, Understanding Digital Signal Processing (3rd edn, Pearson 2010) |
 NUM1#maths-u23-19-q1@1: For y[n] = x[n] + 0.5y[n − 1], what is the impulse response value h[3]? | 0.125 | 0.001 |  | h[n] = 0.5ⁿ, so h[3] = 0.125.
 M1#maths-u23-19-q2@1: Which filter is always stable? | An FIR filter | An IIR filter with a pole at z = 1.2 | An IIR filter with a pole at z = −1.5 | Any filter with feedback | An unstable recursive filter | FIR filters have no feedback, so bounded inputs give bounded outputs.
 M2#maths-u23-19-q3@2: Why might an engineer choose an IIR filter despite stability concerns? | It achieves a sharp frequency response with far fewer coefficients, saving computation | IIR filters are always stable, unlike FIR filters | FIR filters can't filter signals with sharp features | IIR filters always have exactly linear phase | There's no reason, since FIR is better in every way | Feedback lets a low-order filter mimic a long FIR response.
+Q: What is the z-transform? | X(z) = Σ x[n]z^{−n}, the discrete-time counterpart of the Laplace transform.
+Q: What is an FIR filter? | A finite impulse response filter y[n] = Σ b_{k}x[n − k], with no feedback and always stable.
+Q: What is a digital filter's transfer function? | H(z) = B(z)/A(z).
+Q: Where is a digital filter's frequency response evaluated? | On the unit circle, as H(e^{iω}).
+Q: What advantage do IIR filters have over FIR filters? | They need fewer coefficients for sharp responses.
+Q: Name two FIR design methods. | Windowing and Parks–McClellan.
+Q: How are IIR filters often designed? | By the bilinear transform of analogue filters.
+Q: Name two forms of sample-rate conversion. | Decimation and interpolation.
+Q: What is the impulse response of y[n] = x[n] + 0.8y[n − 1]? | h[n] = 0.8ⁿ for n ≥ 0, decaying geometrically.
+Q: What is a common mistake when designing IIR filters? | Not checking that all poles lie inside the unit circle.
 
 ## Filtering Theory
 S: Filtering theory designs systems that separate wanted signals from noise or interference. Ideal filters pass some frequencies and block others; real filters approximate them with trade-offs, and optimal filters like the Wiener filter minimise error using signal and noise statistics.
@@ -718,6 +908,16 @@ SRC: Haykin S, Adaptive Filter Theory (5th edn, Pearson 2014) | textbook | 2014 
 NUM1#maths-u23-20-q1@1: A 4th-order Butterworth low-pass filter has cut-off 1 kHz. Approximately how many dB of attenuation does it give at 10 kHz? | 80 | 1 | dB | Roll-off is 20n = 80 dB per decade, and 10 kHz is one decade above cut-off.
 M1#maths-u23-20-q2@1: Which filter type would remove 50 Hz mains hum from an ECG while keeping nearby frequencies? | A narrow band-stop (notch) filter | A low-pass filter at 10 Hz | A high-pass filter at 100 Hz | An all-pass filter | No filter | A notch removes a narrow band around 50 Hz.
 M2#maths-u23-20-q3@2: Why does the Wiener filter need knowledge of signal and noise spectra? | Its gain at each frequency balances signal against noise power, which it must know or estimate | It ignores the noise and uses only the signal spectrum | It only uses time-domain data, never spectra | It works without any statistics of signal or noise | It doesn't need them; its gain is fixed at 1 | H = S_{s}/(S_{s} + S_{n}) depends directly on both spectra.
+Q: What is a filter's cut-off frequency? | The frequency where its response falls by 3 dB, to 1/√2 in amplitude.
+Q: What is the Wiener filter's frequency response? | S_{s}(f)/(S_{s}(f) + S_{n}(f)), for signal and noise spectra.
+Q: Name four basic filter types. | Low-pass, high-pass, band-pass and band-stop.
+Q: Name three filter specifications. | Passband ripple, stopband attenuation and transition width.
+Q: How do Butterworth, Chebyshev and elliptic filters differ? | Butterworth is flat, Chebyshev has ripple, and elliptic is sharpest.
+Q: When was the Wiener filter introduced? | 1949.
+Q: What do adaptive filters such as LMS do? | Learn their coefficients online.
+Q: What does the Kalman filter extend in filtering theory? | It extends optimal filtering to time-varying, state-space settings.
+Q: Signal power 9 and noise 1 at a frequency. What is the Wiener gain? | 0.9.
+Q: What is a common mistake about real filters? | Expecting a perfectly sharp, ideal brick-wall response.
 
 ## Spectral Estimation
 S: Spectral estimation determines how a signal's power is distributed across frequencies from finite, noisy data. Non-parametric methods smooth periodograms, while parametric and subspace methods achieve higher resolution when their model assumptions hold.
@@ -753,6 +953,16 @@ SRC: Thomson DJ, Spectrum estimation and harmonic analysis, Proceedings of the I
 NUM1#maths-u23-21-q1@1: What record length in seconds is needed for 0.1 Hz frequency resolution? | 10 | 0 | s | Resolution ≈ 1/T, so T = 1/0.1 = 10 s.
 M1#maths-u23-21-q2@1: Why is a Hann window applied before an FFT? | To reduce spectral leakage from the abrupt ends of the record | To increase the effective sampling rate | To remove all noise from the recording | To make the signal exactly periodic | To shift the spectrum to lower frequencies | Tapering the edges reduces the sidelobes that spread power.
 M3#maths-u23-21-q3@2: Why doesn't zero-padding improve true frequency resolution? | It interpolates the same spectrum on a finer grid without adding information about the signal | It doubles the actual length of the recorded data | It removes spectral leakage from the transform entirely | It increases the sampling rate of the original signal | It does improve resolution, by adding more frequency bins | Resolution depends on the actual observation time, not the number of FFT points.
+Q: What is spectral leakage? | Spreading of power into neighbouring frequencies because of finite data length.
+Q: What is a window function? | A taper such as Hann or Hamming, applied before transforming to reduce leakage at the cost of resolution.
+Q: What is the periodogram formula? | |DFT|^{2}/N.
+Q: Why is the raw periodogram noisy? | Its variance doesn't shrink as N grows.
+Q: Who introduced multitaper spectral estimation? | Thomson, in 1982.
+Q: How do parametric methods estimate a spectrum? | By fitting an AR model, as in Burg's method, and computing the spectrum from its coefficients.
+Q: What advantage do parametric spectral methods have? | Higher resolution for short records.
+Q: Name two high-resolution subspace methods. | MUSIC and ESPRIT.
+Q: What is the frequency resolution of a 2-second recording? | About 0.5 Hz.
+Q: What is a common mistake about zero-padding? | Expecting it to give finer resolution; it only interpolates the spectrum.
 
 ## Wavelet Analysis
 S: Wavelet analysis represents signals with short, localised waves at different scales, showing both when and at what frequency features occur. Wavelets excel at analysing transients and edges, compressing images (JPEG 2000) and denoising data.
@@ -789,6 +999,16 @@ SRC: Mallat S, A Wavelet Tour of Signal Processing (3rd edn, Academic Press 2009
 NUM1#maths-u23-22-q1@1: Applying the unnormalised Haar step to [8, 2], what is the detail coefficient? | 3 | 0 |  | (8 − 2)/2 = 3; the average is 5.
 M1#maths-u23-22-q2@1: Which signal feature are wavelets especially good at analysing? | A sudden transient spike | A pure sine wave lasting forever | A constant signal | A perfectly periodic square wave | White noise only | Localised basis functions capture short events with few coefficients.
 M2#maths-u23-22-q3@2: How does wavelet thresholding remove noise? | Noise spreads into many small coefficients, while signal features give a few large ones, so small coefficients are zeroed | It removes all the large coefficients, which carry most of the noise energy | It averages the whole signal into a single coefficient and reconstructs from it | It shifts the signal in time so that the noise cancels with itself | It doesn't remove noise; wavelets are used only for compression | Sparse signal representations separate from diffuse noise.
+Q: What is a wavelet? | A localised oscillating function ψ, scaled and shifted as ψ_{a,b}(t) = |a|^{−1/2}ψ((t − b)/a).
+Q: What is multiresolution analysis? | A nested sequence of approximation spaces, each with half the resolution of the previous.
+Q: Why do Fourier bases localise poorly in time? | Their basis functions last forever.
+Q: How does the wavelet time–frequency trade-off work? | Fine time resolution at high frequencies and fine frequency resolution at low frequencies.
+Q: What does the continuous wavelet transform produce? | A scalogram.
+Q: How fast is the discrete wavelet transform? | O(N), using Mallat's filter banks.
+Q: What properties do Daubechies wavelets have? | Compact support and smoothness.
+Q: Who developed wavelet thresholding for denoising? | Donoho and Johnstone.
+Q: What is one Haar step on [4, 6, 10, 2]? | Approximation [5, 6] and details [−1, 4].
+Q: What is a common mistake with signals whose frequencies change? | Using Fourier analysis alone.
 
 ## Image Processing Mathematics
 S: Image processing treats images as functions or matrices of pixel values and applies mathematics to enhance, analyse and compress them. Convolution filters, Fourier transforms, linear algebra and optimisation underlie edge detection, deblurring and medical imaging.
@@ -826,6 +1046,16 @@ SRC: Rudin LI, Osher S, Fatemi E, Nonlinear total variation based noise removal 
 NUM1#maths-u23-23-q1@1: A 3 × 3 box blur averages 9 pixels. What value does it give if the neighbourhood sums to 1350? | 150 | 0 |  | 1350/9 = 150.
 M1#maths-u23-23-q2@1: Which operation is used to find edges in an image? | Convolving with gradient kernels such as Sobel | Taking the mean of all the pixels | Increasing the image's brightness | Rotating the image by 90 degrees | Adding random noise to the image | Edges are where intensity changes quickly, so gradient magnitude is large.
 M3#maths-u23-23-q3@2: Why does total variation denoising preserve edges better than Gaussian blurring? | Its penalty on the L1 norm of the gradient allows sharp jumps while flattening small noisy variations | It blurs everything equally, so edges keep their relative contrast | It ignores the gradient and works only with pixel intensities | It increases noise near edges, which makes them look sharper | It doesn't preserve edges; TV denoising blurs them like a Gaussian | Quadratic smoothing penalises jumps heavily, whereas TV tolerates them.
+Q: What is a kernel in image processing? | A small matrix convolved with an image to compute each output pixel from its neighbourhood.
+Q: What is the image gradient? | ∇I = (∂I/∂x, ∂I/∂y), whose large magnitudes mark edges.
+Q: Name two blur kernels. | Box and Gaussian kernels.
+Q: What are the steps of Canny edge detection? | Smoothing, gradient, non-maximum suppression and hysteresis.
+Q: What do low and high frequencies hold in an image's 2D FFT? | Low frequencies hold smooth content; high frequencies hold edges.
+Q: How does the SVD help with images? | It gives low-rank approximations.
+Q: Name two deconvolution methods for deblurring. | Wiener and Richardson–Lucy.
+Q: Where are MRI data collected? | In Fourier space, called k-space.
+Q: Kernel [−1, 0, 1] at the middle of [10, 10, 50, 90, 90] gives what? | 80, a large gradient marking an edge.
+Q: What is a common mistake with salt-and-pepper noise? | Using linear smoothing, which smears outliers instead of removing them.
 
 ## Statistical Signal Processing
 S: Statistical signal processing treats signals and noise as random processes and uses probability to estimate parameters and detect signals. Its tools, from maximum likelihood to Neyman–Pearson detection, power radar, communications, sonar and medical devices.
@@ -863,4 +1093,14 @@ SRC: Kay SM, Fundamentals of Statistical Signal Processing, Volume II: Detection
 NUM1#maths-u23-24-q1@1: White noise has variance 9. How many samples N make the sample-mean variance of a DC level equal to 0.01? | 900 | 0 | samples | σ^{2}/N = 0.01 gives N = 9/0.01 = 900.
 M1#maths-u23-24-q2@1: Raising a detector's threshold has what effect? | Fewer false alarms but more missed detections | More false alarms and fewer misses | Fewer of both | More of both | No effect | A higher threshold rejects more noise but also more weak signals.
 M2#maths-u23-24-q3@2: Why does integrating (averaging) a signal over more samples improve detection? | Signal adds coherently while independent noise averages down, raising the SNR | Noise grows faster than signal when samples are averaged together | It reduces the signal level, so weak signals become harder to see | It increases false alarms, since more samples mean more noise peaks | It doesn't help; detection depends only on a single sample | Averaging N samples cuts noise variance by N while keeping the signal level.
+Q: What is the Neyman–Pearson lemma? | For a fixed false-alarm probability, the likelihood ratio test maximises detection probability.
+Q: What is a ROC curve? | A curve of detection probability against false-alarm probability as the threshold varies.
+Q: What is the basic signal model in statistical signal processing? | x[n] = s[n; θ] + w[n], a parametrised signal plus noise.
+Q: Name two Bayesian estimators. | MMSE and MAP estimators.
+Q: What are the two hypotheses in detection? | H₀, noise only, and H₁, signal present.
+Q: What is the likelihood ratio in detection? | Λ(x), the probability of the data under H₁ divided by that under H₀, compared with a threshold.
+Q: What improves detection performance? | Higher signal-to-noise ratio and longer integration time.
+Q: What detectors are used in radar? | CFAR detectors.
+Q: A DC level in noise of variance 4 has 100 samples. What is the sample mean's variance? | 0.04, equal to the CRLB, so it is efficient.
+Q: What is a common mistake in choosing detection thresholds? | Choosing one without considering the false-alarm rate it implies.
 `;

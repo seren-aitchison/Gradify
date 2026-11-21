@@ -18,6 +18,18 @@ const hexRgb = (h) => { const n = parseInt(h.slice(1), 16); return [(n >> 16) & 
 
 // every land point (Natural Earth, kit/earth/earth-land.js) as a unit vector, for the dot layer
 const LAND_V = []; for (let i = 0; i < LAND.length; i += 2) LAND_V.push(vec(LAND[i] / 10, LAND[i + 1] / 10));
+// each dot's fixed "random" value (city light or not, twinkle phase), worked out once rather than every frame
+const DOT_H = Float32Array.from(LAND_V, (_, i) => hash(i));
+// lite mode draws about half the dots, picked evenly: one per 1.2° cell (narrower in longitude towards the poles, so
+// cells are about equal in area). Taking every other dot instead leaves gaps, because the points are a scatter.
+const LITE_DOTS = (() => {
+  const seen = new Set(), keep = [];
+  for (let i = 0; i < LAND.length; i += 2) {
+    const la = LAND[i] / 10, key = `${Math.floor(la / 1.2)}:${Math.floor((LAND[i + 1] / 10) * Math.cos(la * RAD) / 1.2)}`;
+    if (!seen.has(key)) { seen.add(key); keep.push(i / 2); }
+  }
+  return Uint32Array.from(keep);
+})();
 
 export function createGlobe(canvas, { onPick, onHover }) {
   const ctx = canvas.getContext("2d");
@@ -28,13 +40,21 @@ export function createGlobe(canvas, { onPick, onHover }) {
   let target = null;                                      // animate to face a topic
   let scene = { regions: [], pins: [], roads: [], portals: [], selected: null, rings: true };
   let pinsOnScreen = [], hubsOnScreen = [], visible = true, raf = 0, t0 = performance.now(), dotTint = [];
+  // quality: "full" until frames prove slow (a low-end phone or laptop), then "lite": a coarser planet texture, every
+  // other land dot (a little larger), no star twinkle, and 30 frames a second while the globe is only drifting.
+  // Measured from the time each frame takes to draw, so a fast device never loses anything.
+  let lite = false, drawMs = 0, frames = 0, lastNow = 0;
+  // the parts of the backdrop that only change with the canvas size or zoom: drawn once into a canvas, then copied
+  const backdrop = { key: "", back: null, glow: null };
+  // the current view's rotation, computed once per frame rather than for every point projected
+  let vYaw = NaN, vPitch = NaN, cyw = 1, syw = 0, cpi = 1, spi = 0;
   // the planet itself, and a field of stars behind it
   const surface = createSurface();
   const stars = Array.from({ length: 220 }, (_, i) => [hash(i + 0.5), hash(i + 101.3), 0.25 + hash(i + 57.7) * 0.75, hash(i + 9.1) > 0.92]);
 
   function resize() {
     const r = canvas.getBoundingClientRect();
-    dpr = Math.min(2, devicePixelRatio || 1);
+    dpr = lite ? 1 : Math.min(2, devicePixelRatio || 1);   // lite: one canvas pixel per CSS pixel, a quarter of the work on a phone
     W = r.width; H = r.height;
     canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -43,9 +63,9 @@ export function createGlobe(canvas, { onPick, onHover }) {
 
   // rotate a unit vector by the current view, then project (orthographic)
   function project(v, alt = 1) {
-    const cyw = Math.cos(yaw), syw = Math.sin(yaw), cp = Math.cos(pitch), sp = Math.sin(pitch);
+    if (yaw !== vYaw || pitch !== vPitch) { vYaw = yaw; vPitch = pitch; cyw = Math.cos(yaw); syw = Math.sin(yaw); cpi = Math.cos(pitch); spi = Math.sin(pitch); }
     let x = v[0] * cyw - v[2] * syw, z = v[0] * syw + v[2] * cyw, y = v[1];
-    const y2 = y * cp - z * sp, z2 = y * sp + z * cp;
+    const y2 = y * cpi - z * spi, z2 = y * spi + z * cpi;
     const r = R * zoom * alt;
     return { x: cx + x * r, y: cy - y2 * r, z: z2 };
   }
@@ -64,48 +84,83 @@ export function createGlobe(canvas, { onPick, onHover }) {
     kick();
   }
 
+  // a faint nebula (back), and the atmosphere's glow into space with the brighter sunlit side (glow), for this size
+  function paintBackdrop(r) {
+    const key = `${W}x${H}@${dpr}:${cx},${cy},${r.toFixed(2)}`;
+    if (backdrop.key === key) return;
+    const layer = (paint) => { const c = Object.assign(document.createElement("canvas"), { width: canvas.width, height: canvas.height }), g = c.getContext("2d"); g.setTransform(dpr, 0, 0, dpr, 0, 0); paint(g); return c; };
+    backdrop.back = layer((g) => {
+      const neb = g.createRadialGradient(W * 0.82, H * 0.18, 0, W * 0.82, H * 0.18, Math.max(W, H) * 0.6);
+      neb.addColorStop(0, "rgba(140,70,220,.16)"); neb.addColorStop(0.5, "rgba(70,60,200,.06)"); neb.addColorStop(1, "rgba(0,0,0,0)");
+      g.fillStyle = neb; g.fillRect(0, 0, W, H);
+      const neb2 = g.createRadialGradient(W * 0.1, H * 0.9, 0, W * 0.1, H * 0.9, Math.max(W, H) * 0.5);
+      neb2.addColorStop(0, "rgba(40,140,220,.12)"); neb2.addColorStop(1, "rgba(0,0,0,0)");
+      g.fillStyle = neb2; g.fillRect(0, 0, W, H);
+    });
+    backdrop.glow = layer((g) => {
+      const glow = g.createRadialGradient(cx, cy, r * 0.96, cx, cy, r * 1.32);
+      glow.addColorStop(0, "rgba(120,185,255,.5)"); glow.addColorStop(0.18, "rgba(90,160,255,.22)"); glow.addColorStop(0.55, "rgba(110,90,255,.07)"); glow.addColorStop(1, "rgba(70,140,255,0)");
+      g.fillStyle = glow; g.beginPath(); g.arc(cx, cy, r * 1.32, 0, 7); g.fill();
+      // brighter on the sunlit side (upper left)
+      const sunlit = g.createRadialGradient(cx - r * 0.55, cy - r * 0.55, r * 0.4, cx - r * 0.4, cy - r * 0.4, r * 1.25);
+      sunlit.addColorStop(0, "rgba(170,215,255,0)"); sunlit.addColorStop(0.75, "rgba(170,215,255,.14)"); sunlit.addColorStop(1, "rgba(170,215,255,0)");
+      g.fillStyle = sunlit; g.beginPath(); g.arc(cx, cy, r * 1.25, 0, 7); g.fill();
+    });
+    backdrop.key = key;
+  }
+  const copy = (layer) => { ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.drawImage(layer, 0, 0); ctx.restore(); };
+
   function draw(now) {
+    // hidden (a view that isn't open, a collapsed panel): nothing to draw, and a zero-sized layer can't be copied. The
+    // backing size is checked too: a sliver of a CSS pixel rounds to zero device pixels
+    if (!(W > 0 && H > 0 && R > 0) || !canvas.width || !canvas.height) return;
     const t = (now - t0) / 1000;
     ctx.clearRect(0, 0, W, H);
     const r = R * zoom;
     // a faint nebula, stars, then the atmosphere's glow into space, then the planet
-    const neb = ctx.createRadialGradient(W * 0.82, H * 0.18, 0, W * 0.82, H * 0.18, Math.max(W, H) * 0.6);
-    neb.addColorStop(0, "rgba(140,70,220,.16)"); neb.addColorStop(0.5, "rgba(70,60,200,.06)"); neb.addColorStop(1, "rgba(0,0,0,0)");
-    ctx.fillStyle = neb; ctx.fillRect(0, 0, W, H);
-    const neb2 = ctx.createRadialGradient(W * 0.1, H * 0.9, 0, W * 0.1, H * 0.9, Math.max(W, H) * 0.5);
-    neb2.addColorStop(0, "rgba(40,140,220,.12)"); neb2.addColorStop(1, "rgba(0,0,0,0)");
-    ctx.fillStyle = neb2; ctx.fillRect(0, 0, W, H);
+    paintBackdrop(r);
+    copy(backdrop.back);
+    ctx.fillStyle = "rgb(220,232,255)";
     for (const [sx, sy, b, big] of stars) {
       const x = sx * W, y = sy * H; if (Math.hypot(x - cx, y - cy) < r * 1.02) continue;
-      ctx.fillStyle = `rgba(220,232,255,${(b * (0.55 + 0.45 * Math.sin(t * 0.7 + sx * 40))).toFixed(3)})`;
+      ctx.globalAlpha = lite ? b * 0.8 : b * (0.55 + 0.45 * Math.sin(t * 0.7 + sx * 40));
       ctx.fillRect(x, y, big ? 1.6 : 1, big ? 1.6 : 1);
     }
-    let g = ctx.createRadialGradient(cx, cy, r * 0.96, cx, cy, r * 1.32);
-    g.addColorStop(0, "rgba(120,185,255,.5)"); g.addColorStop(0.18, "rgba(90,160,255,.22)"); g.addColorStop(0.55, "rgba(110,90,255,.07)"); g.addColorStop(1, "rgba(70,140,255,0)");
-    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(cx, cy, r * 1.32, 0, 7); ctx.fill();
-    // brighter on the sunlit side (upper left)
-    const sunlit = ctx.createRadialGradient(cx - r * 0.55, cy - r * 0.55, r * 0.4, cx - r * 0.4, cy - r * 0.4, r * 1.25);
-    sunlit.addColorStop(0, "rgba(170,215,255,0)"); sunlit.addColorStop(0.75, "rgba(170,215,255,.14)"); sunlit.addColorStop(1, "rgba(170,215,255,0)");
-    ctx.fillStyle = sunlit; ctx.beginPath(); ctx.arc(cx, cy, r * 1.25, 0, 7); ctx.fill();
-    surface.render(ctx, cx, cy, r, yaw, pitch, t, dpr);
+    ctx.globalAlpha = 1;
+    copy(backdrop.glow);
+    // lite, only drifting: the planet turns about a third of a pixel a frame, so its texture is repainted every other frame
+    surface.render(ctx, cx, cy, r, yaw, pitch, t, lite ? Math.min(dpr, 0.7) : dpr, lite, lite && drifting() && frames % 2 === 1);
     // the original Gradify Earth: land as a grid of glowing dots over the planet, blue-white, warm city lights here and
     // there, and each module's region lit in its colour (dimmer towards the night side and the edge)
     {
-      const size = Math.max(1.2, r / 165);
+      const size = Math.max(1.2, r / 165) * (lite ? 1.35 : 1), n = lite ? LITE_DOTS.length : LAND_V.length;
       ctx.globalCompositeOperation = "lighter";
-      for (let i = 0; i < LAND_V.length; i++) {
-        const p = project(LAND_V[i]);
-        if (p.z < 0.03) continue;
-        const shade = 0.25 + 0.75 * p.z, h = hash(i), tint = dotTint[i];
-        let col, a, sz = size * (0.7 + p.z * 0.45);
+      // dots of the same colour and (rounded) brightness are filled together: one path each, not one fill per dot
+      const batch = new Map(), rz = R * zoom;
+      project(LAND_V[0]);   // brings the view's rotation (cyw, syw, cpi, spi) up to date
+      for (let j = 0; j < n; j++) {
+        const i = lite ? LITE_DOTS[j] : j;
+        // the projection, inline: most dots face away and are dropped before anything else is worked out
+        const v = LAND_V[i], x = v[0] * cyw - v[2] * syw, z = v[0] * syw + v[2] * cyw, pz = v[1] * spi + z * cpi;
+        if (pz < 0.03) continue;
+        const px = cx + x * rz, py = cy - (v[1] * cpi - z * spi) * rz;
+        const shade = 0.25 + 0.75 * pz, h = DOT_H[i], tint = dotTint[i];
+        let cr, cg, cb, a, sz = size * (0.7 + pz * 0.45);
         if (tint && !tint.locked && h <= 0.9) {
-          const m = Math.min(1, tint.k * 1.8), blue = [140, 190, 255];
-          col = blue.map((c, j) => Math.round(c + (tint.rgb[j] - c) * m));
+          const m = Math.min(1, tint.k * 1.8);
+          cr = 140 + (tint.rgb[0] - 140) * m; cg = 190 + (tint.rgb[1] - 190) * m; cb = 255 + (tint.rgb[2] - 255) * m;
           a = shade * (0.62 + 0.18 * m + 0.12 * m * Math.sin(t * 1.6 + h * 20)); sz *= 1 + m * 0.35;
-        } else if (h > 0.9) { col = [255, 170, 100]; a = shade * (0.45 + 0.25 * Math.sin(t * 2 + h * 40)); sz *= 1.2; }
-        else { col = tint?.locked ? [160, 160, 175] : [150, 200, 255]; a = shade * (tint?.locked ? 0.25 : 0.55); }
-        ctx.fillStyle = `rgba(${col[0]},${col[1]},${col[2]},${Math.min(1, a).toFixed(3)})`;
-        ctx.fillRect(p.x - sz / 2, p.y - sz / 2, sz, sz);
+        } else if (h > 0.9) { cr = 255; cg = 170; cb = 100; a = shade * (0.45 + 0.25 * Math.sin(t * 2 + h * 40)); sz *= 1.2; }
+        else if (tint?.locked) { cr = 160; cg = 160; cb = 175; a = shade * 0.25; }
+        else { cr = 150; cg = 200; cb = 255; a = shade * 0.55; }
+        // colour to 5 bits a channel and brightness to 24 steps: a number, so no string is built per dot
+        const key = ((((cr >> 3) << 10) | ((cg >> 3) << 5) | (cb >> 3)) * 25) + Math.round(Math.min(1, a) * 24);
+        let path = batch.get(key); if (!path) batch.set(key, (path = new Path2D()));
+        path.rect(px - sz / 2, py - sz / 2, sz, sz);
+      }
+      for (const [key, path] of batch) {
+        const c = Math.floor(key / 25), al = (key % 25) / 24;
+        ctx.fillStyle = `rgba(${(c >> 10) << 3},${((c >> 5) & 31) << 3},${(c & 31) << 3},${al.toFixed(3)})`; ctx.fill(path);
       }
       ctx.globalCompositeOperation = "source-over";
     }
@@ -241,18 +296,22 @@ export function createGlobe(canvas, { onPick, onHover }) {
       } else label(L.text, L.x, L.y, L.color, L.size, L.bold);
     }
 
-    // turn smoothly towards a chosen topic
+    // turn smoothly towards a chosen topic. Motion is per 60th of a second, scaled by the time since the last frame, so
+    // it keeps the same speed when frames are slower or capped
+    const f = Math.min(4, Math.max(0.25, lastNow ? (now - lastNow) / (1000 / 60) : 1)); lastNow = now;
     if (target) {
-      const TAU = Math.PI * 2, dy = ((((target.yaw - yaw + Math.PI) % TAU) + TAU) % TAU) - Math.PI, dp = target.pitch - pitch;
-      yaw += dy * 0.12; pitch += dp * 0.12;
+      const TAU = Math.PI * 2, dy = ((((target.yaw - yaw + Math.PI) % TAU) + TAU) % TAU) - Math.PI, dp = target.pitch - pitch, k = 1 - Math.pow(0.88, f);
+      yaw += dy * k; pitch += dp * k;
       if (Math.abs(dy) < 0.002 && Math.abs(dp) < 0.002) target = null;
     } else if (!dragging) {
-      yaw += vyaw; pitch = clampPitch(pitch + vpitch);
-      vyaw *= 0.94; vpitch *= 0.94;
-      idle += 1;
-      if (!reduce && idle > 180 && Math.abs(vyaw) < 0.0005) yaw -= 0.0012;
+      yaw += vyaw * f; pitch = clampPitch(pitch + vpitch * f);
+      const decay = Math.pow(0.94, f); vyaw *= decay; vpitch *= decay;
+      idle += f;
+      if (!reduce && idle > 180 && Math.abs(vyaw) < 0.0005) yaw -= 0.0012 * f;
     }
   }
+  // only drifting (nobody turning it, nothing to face): in lite mode, 30 frames a second is plenty
+  const drifting = () => !dragging && !target && Math.abs(vyaw) < 0.0005 && Math.abs(vpitch) < 0.0005;
 
   // labels sit in small dark boxes, like a mission-control display
   function label(text, x, y, color, size, bold) {
@@ -272,7 +331,13 @@ export function createGlobe(canvas, { onPick, onHover }) {
   function loop(now) {
     raf = 0;
     if (!visible) return;
+    if (lite && drifting() && lastNow && now - lastNow < 30) { raf = requestAnimationFrame(loop); return; }
+    const s0 = performance.now();
     draw(now);
+    // slow frames for a second or so (after the first few, which include start-up work) switch to lite, for good
+    const ms = performance.now() - s0; frames++;
+    if (frames > 5) drawMs = drawMs ? drawMs * 0.9 + ms * 0.1 : ms;
+    if (!lite && frames > 30 && drawMs > 24) { lite = true; canvas.dataset.quality = "lite"; resize(); }
     raf = requestAnimationFrame(loop);
   }
   function kick() { if (!raf && visible) raf = requestAnimationFrame(loop); }
@@ -354,8 +419,11 @@ export function createGlobe(canvas, { onPick, onHover }) {
     },
     zoomBy(f) { setZoom(zoom * f); kick(); },
     reset() { target = { ...HOME }; zoom = 1; idle = 0; kick(); },
+    // for tests and the performance check: the quality tier and the average time a frame takes to draw
+    stats: () => ({ quality: lite ? "lite" : "full", drawMs: Math.round(drawMs * 10) / 10 }),
   };
   canvas.globe = api;  // for tests
+  canvas.dataset.quality = "full";
   return api;
 }
 

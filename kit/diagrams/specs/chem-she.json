@@ -1,0 +1,35 @@
+{
+ "id": "chem-she",
+ "renderer": "cell",
+ "course": "chemistry",
+ "unit": "u10",
+ "lesson": "Standard electrode potentials",
+ "title": "Measuring E° against the hydrogen electrode",
+ "caption": "The standard hydrogen electrode, H₂ at 100 kPa bubbling over platinum in 1 mol dm⁻³ H⁺ at 298 K, is defined as 0 V. Connected to Cu²⁺/Cu, the voltmeter reads 0.34 V with copper positive: E°(Cu²⁺/Cu) = +0.34 V.",
+ "alt": "Left: hydrogen gas bubbling over a platinum electrode in acid. Right: copper in copper sulfate. A salt bridge and a voltmeter reading 0.34 V join them.",
+ "description": [
+  "Standard hydrogen electrode: Pt, H₂ at 100 kPa, H⁺ at 1 mol dm⁻³: H₂ → 2H⁺ + 2e⁻.",
+  "Copper half-cell, 1 mol dm⁻³ Cu²⁺: Cu²⁺ + 2e⁻ → Cu.",
+  "Voltmeter: 0.34 V."
+ ],
+ "kind": "galvanic",
+ "ecell": 0.34,
+ "net": "H2 + Cu2+ → 2H+ + Cu",
+ "halves": [
+  {
+   "couple": "H+/H2",
+   "electrode": "Pt",
+   "gas": "H₂, 100 kPa",
+   "solution": "H+(aq), 1 mol dm⁻³",
+   "role": "anode",
+   "half": "H2 → 2H+ + 2e-"
+  },
+  {
+   "couple": "Cu2+/Cu",
+   "electrode": "Cu",
+   "solution": "Cu2+(aq), 1 mol dm⁻³",
+   "role": "cathode",
+   "half": "Cu2+ + 2e- → Cu"
+  }
+ ]
+}

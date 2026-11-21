@@ -159,9 +159,12 @@ export function createSurface() {
   }
 
   /** draw the planet into ctx: a disc of radius r at (cx, cy), viewed with yaw and pitch, at time t (s) */
-  function render(ctx, cx, cy, r, yaw, pitch, t, dpr = 1) {
+  function render(ctx, cx, cy, r, yaw, pitch, t, dpr = 1, lite = false, reuse = false) {
     if (!T) build();
-    const want = Math.max(96, Math.min(560, Math.round(2 * r * Math.min(dpr, 1.25))));
+    // reuse: draw the last frame's planet again (the globe asks for this while it only drifts, in lite mode)
+    if (reuse && off) { ctx.save(); ctx.imageSmoothingEnabled = true; ctx.imageSmoothingQuality = "medium"; ctx.drawImage(off, cx - r, cy - r, 2 * r, 2 * r); ctx.restore(); return; }
+    // lite (kit/earth/globe.js, on slow devices): a coarser texture, scaled up with cheaper smoothing
+    const want = Math.max(96, Math.min(lite ? 256 : 560, Math.round(2 * r * Math.min(dpr, 1.25))));
     if (want !== D) size(want);
     if (pitch !== tilt) setTilt(pitch);
     const px = img.data, turn = (((yaw / TAU) * EW) % EW + EW) % EW, cshift = (t * 0.004 % 1) * EW;
@@ -198,7 +201,7 @@ export function createSurface() {
       px[o] = R; px[o + 1] = G; px[o + 2] = B; px[o + 3] = edge[i] * 255;
     }
     octx.putImageData(img, 0, 0);
-    ctx.save(); ctx.imageSmoothingEnabled = true; ctx.imageSmoothingQuality = "high";
+    ctx.save(); ctx.imageSmoothingEnabled = true; ctx.imageSmoothingQuality = lite ? "medium" : "high";
     ctx.drawImage(off, cx - r, cy - r, 2 * r, 2 * r); ctx.restore();
   }
   return { setRegions, render };

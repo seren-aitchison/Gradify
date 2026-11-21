@@ -36,6 +36,16 @@ M2#history-u02-01-q2@2: What does the Sutton Hoo ship burial suggest about early
 TF1#history-u02-01-q3@1: Bede completed his Ecclesiastical History of the English People in 731. | true | Bede, a monk at Jarrow, finished it in 731.
 M3#history-u02-01-q4@3: Which judgement about England in 1066 is best supported? | It had advanced administration, but powerful earls and a disputed succession made it vulnerable | It had no shires, coinage or taxes, so the Normans built government from nothing | It was still divided into seven independent kingdoms in 1066 | It was so strong that no invasion could have succeeded | The evidence shows sophisticated government alongside political divisions.
 SA3#history-u02-01-q5@2,3: How far was Anglo-Saxon England a well-governed kingdom by 1066? | Strong government is shown by shires and hundreds with courts, sheriffs acting for the king, a regularly reminted national coinage, the geld and written writs. But great earls such as the Godwins rivalled royal power, and Edward the Confessor's death without an heir led to a disputed succession and invasion. A balanced judgement sees an administratively advanced state that was politically vulnerable. | Explains features of government ; Uses accurate examples ; Considers weaknesses ; Links to 1066 ; Reaches a judgement
+Q: When did Roman government end in Britain? | In the early fifth century.
+Q: Who were the settlers later called Angles, Saxons and Jutes? | Settlers from northern Germany and Scandinavia who established kingdoms in the east and south.
+Q: Name four of the largest Anglo-Saxon kingdoms by the seventh century. | Northumbria, Mercia, East Anglia, Essex, Kent, Sussex and Wessex.
+Q: Which kingdom dominated in each of the seventh, eighth and ninth centuries? | Northumbria in the seventh, Mercia under Offa in the eighth, and Wessex from the ninth.
+Q: Whose grave was the Sutton Hoo ship burial probably, and when was it excavated? | Probably the East Anglian king Rædwald (died around 624); it was excavated in 1939.
+Q: Which Kentish king accepted Christianity from Augustine's mission? | King Æthelberht.
+Q: Who sent Augustine's mission to Kent? | Pope Gregory the Great.
+Q: Who converted much of northern England? | Irish monks working from Iona.
+Q: What did churches and monasteries bring to Anglo-Saxon England? | Literacy, Latin learning and written law.
+Q: What weakened the English state by 1066? | Powerful earls such as the Godwins could rival the king, and the succession was disputed.
 
 ## The Viking invasions
 LV: GCSE · Foundation
@@ -74,6 +84,16 @@ M2#history-u02-02-q2@2: Why were monasteries common targets for Viking raiders? 
 TF1#history-u02-02-q3@1: The Danelaw was an area of England under Scandinavian control and law. | true | It covered much of the north and east.
 M3#history-u02-02-q4@3: Which is the best explanation for changing views of the Vikings? | New evidence, especially archaeology, added trade and settlement to the chroniclers' picture of violence | Historians decided the raids described by the chroniclers never happened at all | The chroniclers turned out to be Scandinavian settlers themselves | Modern historians simply prefer more positive stories about the past | Excavations such as Coppergate broadened the evidence base beyond hostile monastic sources.
 SA3#history-u02-02-q5@2,3: Why was the Great Heathen Army so successful in England between 865 and 878? | It was larger and more ambitious than earlier raiding bands, and used ships and horses for mobility. It exploited divisions between the English kingdoms, seized fortified winter bases and extracted tribute. It took York in 866 and destroyed East Anglia, Northumbria and Mercia as independent kingdoms. Its failure to conquer Wessex after Edington in 878 shows that success depended on English disunity and could be resisted. | Explains several reasons ; Uses accurate dates and events ; Links reasons to outcomes ; Considers limits to success ; Reaches a judgement
+Q: Which source records the raid on Lindisfarne? | The Anglo-Saxon Chronicle.
+Q: Where did the Great Heathen Army land? | In East Anglia.
+Q: When did the Great Heathen Army take York? | In 866.
+Q: Which English king did the Great Heathen Army kill in 869? | King Edmund of East Anglia.
+Q: Which Anglo-Saxon kingdoms did the Great Heathen Army break, and which survived? | It broke Northumbria, East Anglia and Mercia; only Wessex survived.
+Q: Give two Norse words that entered English. | "Sky" and "egg".
+Q: How did mobility help the Great Heathen Army succeed? | It used ships and horses to move faster than Anglo-Saxon armies could gather.
+Q: How did the Great Heathen Army use fortified bases? | It seized them, wintered in them and demanded tribute.
+Q: Which excavations changed views of the Vikings in the 1970s? | The excavations at Coppergate in York, which stressed trade, craft and settlement.
+Q: Why do historians warn against seeing Vikings only as traders? | The violence was real, as were slave-taking and tribute.
 
 ## Alfred the Great
 LV: GCSE and A level · Application
@@ -111,6 +131,16 @@ M2#history-u02-03-q2@2: Why did Alfred divide the fyrd into two halves? | So tha
 TF1#history-u02-03-q3@1: The story of Alfred burning the cakes comes from sources written in his lifetime. | false | It first appears in later sources, long after his death.
 M3#history-u02-03-q4@3: Which is the most balanced view of Asser's Life as evidence? | Very useful for how Alfred wanted to be seen, but flattering and needing corroboration | Worthless, because it praises the king | Completely reliable, because it was written in his lifetime | Irrelevant to Alfred's reign | Closeness and purpose cut both ways: value and limits must be weighed.
 SA3#history-u02-03-q5@2,3: How far does Alfred deserve the title "the Great"? | Alfred saved Wessex when other kingdoms fell, winning at Edington in 878 and securing a treaty with Guthrum. His burhs, army reforms and ships strengthened defence, and his law code and translations revived learning. These foundations allowed his successors to unify England. But much of his reputation comes from court sources such as Asser, and he defended Wessex rather than ruling all England. A strong answer weighs achievement against the nature of the evidence. | Explains military achievements ; Explains reforms ; Considers the evidence ; Considers limits ; Reaches a judgement
+Q: When was Alfred king of Wessex? | From 871 to 899.
+Q: Where did Alfred retreat after the Viking attack at Chippenham in January 878? | Into the marshes of Somerset.
+Q: What happened to Guthrum after the Battle of Edington? | He accepted baptism with Alfred as godfather, and a treaty later divided England between Wessex and the Danelaw.
+Q: How were Alfred's burhs sited? | So that most of Wessex was within a day's march of one.
+Q: Which document records how the burhs were garrisoned? | The Burghal Hidage.
+Q: Why did Alfred build ships? | To meet Vikings at sea.
+Q: Why did Alfred promote translations of Latin works into English? | To restore learning he believed the Vikings had destroyed.
+Q: Who were Edward the Elder and Æthelflæd, and what did they do? | Alfred's son and daughter, Lady of the Mercians, who pushed back the Danelaw.
+Q: Which grandson of Alfred ruled all England, and by when? | Æthelstan, by 927.
+Q: Why is Asser's Life of King Alfred limited as evidence? | Written at Alfred's court to praise him, it is flattering; its authenticity was once questioned.
 
 ## The Norman Conquest
 LV: GCSE · Foundation
@@ -148,6 +178,16 @@ M2#history-u02-04-q2@2: Which claimant was Edward the Confessor's closest blood 
 TF1#history-u02-04-q3@1: The Battle of Stamford Bridge was fought before William landed in England. | true | Stamford Bridge was on 25 September; William landed on 28 September.
 M3#history-u02-04-q4@3: Which judgement about the claims in 1066 is best supported? | Harold's was strongest by English custom, while William's rested on promises recorded mainly by Normans | William's was strongest, as his victory at Hastings proves | Hardrada's was strongest, because he was already a crowned king | Edgar's was strongest, because blood alone decided English succession | English custom and the nature of the evidence both matter.
 SA3#history-u02-04-q5@2,3: Whose claim to the English throne was strongest in 1066? | Harold was chosen by the English nobles, possibly named by Edward on his deathbed, and crowned at once, which counted for much in English custom. William claimed a promise from Edward around 1051 and an oath from Harold, but these are known mainly from Norman sources. Hardrada's claim rested on an old agreement and force; Edgar had blood but no support. A strong answer weighs custom, evidence and power. | Explains at least three claims ; Uses accurate detail ; Considers the evidence for each claim ; Distinguishes legal merit from outcome ; Reaches a judgement
+Q: Who was Harold Godwinson before he became king? | Earl of Wessex and the most powerful man in England.
+Q: What was Harold Godwinson's claim to the throne? | The English nobles chose him, and Edward may have named him on his deathbed.
+Q: What was William of Normandy's claim to the throne? | Edward had promised him the throne around 1051, and Harold had sworn to support him.
+Q: Who invaded alongside Harald Hardrada in 1066? | Harold's exiled brother Tostig.
+Q: Why did Edgar Ætheling not become king in 1066? | He was a teenager without support, despite being Edward's closest blood relative.
+Q: Where and when did Hardrada defeat the northern earls? | At Fulford on 20 September 1066.
+Q: What was the Witan? | The council of leading men who advised the Anglo-Saxon king and helped choose his successor.
+Q: Why is the evidence for William's claim partisan? | Edward's promise and Harold's oath are recorded mainly in Norman sources.
+Q: Whose claim was weakest in 1066, and why? | Hardrada's, which rested on force and an earlier agreement between Scandinavian kings.
+Q: Does William's victory prove his claim was the strongest? | No. Victory decided the throne, not the legal merits.
 
 ## The Battle of Hastings
 LV: GCSE · Application
@@ -183,6 +223,16 @@ M2#history-u02-05-q2@2: Why were feigned retreats effective against the English?
 TF1#history-u02-05-q3@1: All early sources agree that Harold was killed by an arrow in the eye. | false | Some describe him being cut down by knights; the Tapestry is ambiguous and has been restored.
 M3#history-u02-05-q4@3: Why must the Bayeux Tapestry be used carefully as evidence for the battle? | It is a later Norman narrative, has been restored, and its key scenes are ambiguous | It was made in the nineteenth century as a copy of a lost original | It shows the battle but leaves out Harold's death entirely | It was made by Harold's supporters to praise the English | Its value is real, but provenance and condition limit what it proves.
 SA3#history-u02-05-q5@2,3: Why did William win the Battle of Hastings? | William's army combined archers, infantry and cavalry, while the English fought on foot. The shield wall held for most of the day, but feigned retreats drew English troops off the ridge and archers weakened the line. Harold's army had marched from Stamford Bridge, and his death late in the day broke English resistance. A strong answer weighs Norman tactics against Harold's circumstances, and notes that the Norman-made sources shape what we know. | Explains Norman tactics ; Explains English circumstances ; Explains Harold's death and its effect ; Considers the sources ; Reaches a judgement
+Q: What were housecarls? | Professional warriors with axes who served an Anglo-Saxon king or earl.
+Q: Where did the English army stand at Hastings? | On foot behind a shield wall on a ridge north of Hastings.
+Q: What troops made up William's army? | Archers, infantry and armoured cavalry, with contingents from Brittany and Flanders.
+Q: Why was the length of the Battle of Hastings unusual? | It lasted most of the day, which was unusually long for the period.
+Q: What happened when Norman cavalry first charged the shield wall? | The charges failed.
+Q: Which of Harold's brothers also died at Hastings? | Gyrth and Leofwine.
+Q: Why did the deaths of Harold's brothers matter after Hastings? | They left no Godwin leader to continue resistance.
+Q: Why might the Bayeux Tapestry's arrow have been altered? | The tapestry has been restored, and stitch holes suggest the arrow may have been changed.
+Q: How do some early written sources say Harold died? | Hacked down by knights.
+Q: Why must the Bayeux Tapestry be used carefully as a source for Hastings? | It is a Norman narrative, made later, with its own purposes.
 
 ## William I and Norman control
 LV: GCSE · Application
@@ -221,6 +271,16 @@ M2#history-u02-06-q2@2: Why did William devastate the north in 1069–1070? | To
 TF1#history-u02-06-q3@1: William abolished the Anglo-Saxon system of shires and sheriffs. | false | He kept the effective Anglo-Saxon systems of shires, sheriffs, the geld and coinage.
 M3#history-u02-06-q4@3: Which judgement about Norman control is best supported? | Castles and the transfer of land were lasting foundations, while the Harrying ended the most serious revolt | Control was complete on the day of Hastings, so later measures were unnecessary | The English elite kept most of its land in return for loyalty | Castles mattered little, because the Normans relied on English earls | A strong answer distinguishes crisis measures from lasting foundations.
 SA3#history-u02-06-q5@2,3: How did William secure control of England between 1066 and 1087? | William built hundreds of castles to dominate towns and routes, crushed revolts at Exeter, in the north and at Ely, and laid waste the north in 1069–1070. He replaced English earls and thegns with Norman lords, and through Lanfranc replaced English Church leaders, while keeping shires, sheriffs, the geld and coinage. A strong answer judges which mattered most, distinguishing short-term repression from lasting control. | Explains castles ; Explains the defeat of revolts ; Explains changes to landholding or the Church ; Notes continuity in government ; Reaches a judgement
+Q: Why were motte and bailey castles useful to the Normans? | They could be put up quickly to dominate towns and routes.
+Q: Name a Norman castle later rebuilt in stone. | The White Tower in London.
+Q: Where and when did revolts against William break out? | At Exeter in 1068, in the north in 1069 with Danish help, and in the Fens around Ely.
+Q: Who held out against William around Ely, and until when? | Hereward, until 1071.
+Q: What did William's forces destroy in the Harrying of the North? | Crops, livestock and villages, so that no rebel army could be fed.
+Q: Which chronicler described the famine after the Harrying of the North? | Orderic Vitalis, writing decades later.
+Q: How does Domesday Book record the effects of the Harrying? | Many northern estates are recorded as "waste" in 1086.
+Q: How many major English landholders remained by 1086? | Only a handful.
+Q: What did Lanfranc do to the English Church? | He replaced English bishops and abbots with Normans and reformed the Church.
+Q: Which Anglo-Saxon systems did William keep? | Shires, sheriffs, the geld and the coinage.
 
 ## Feudalism
 LV: GCSE and A level · Application
@@ -258,6 +318,16 @@ M2#history-u02-07-q2@2: Which change shows that relationships didn't fit a fixed
 TF1#history-u02-07-q3@1: People in Norman England described their society as "feudalism". | false | The term and the pyramid model were developed later by lawyers and historians.
 M3#history-u02-07-q4@3: Which is the best judgement on the "feudal pyramid"? | A useful simplification of land held for service, but not an accurate picture of how society worked | An exact description of society that everyone at the time recognised | A modern myth with no basis at all in Norman landholding | The only valid way historians can describe medieval society | Balanced judgement credits the model's value while recognising its limits.
 SA3#history-u02-07-q5@2,3: How useful is the concept of feudalism for understanding Norman England? | The model captures how William granted land to tenants-in-chief for knight service, who granted land to knights, with homage and fealty binding them, and peasants working manors. But relationships were more varied: rent and money payments such as scutage, towns and the Church do not fit neatly. Brown and Reynolds argue that "feudalism" is a later construct. A strong answer judges it a helpful simplification but not a description. | Describes land held for service ; Explains homage and fealty or peasant obligations ; Explains limitations ; Uses historiography ; Reaches a judgement
+Q: What land did William claim after 1066? | All land in England.
+Q: What did knights owe tenants-in-chief for their land? | Military service.
+Q: What was fealty? | An oath of loyalty to a lord.
+Q: What were reliefs and wardship? | A relief was a payment when an heir inherited; wardship was a lord's control when an heir was a minor.
+Q: What restrictions did villeins face? | They were tied to the manor, owed labour, and needed permission to leave or marry off the manor.
+Q: How did freemen differ from villeins? | Freemen paid rent and had more rights.
+Q: What was the basic unit of rural life in Norman England? | The manor, the lord's estate.
+Q: What was scutage? | Money payment that replaced military service over time.
+Q: What did Elizabeth Brown call feudalism in 1974? | "The tyranny of a construct".
+Q: What did Susan Reynolds argue about feudalism in 1994? | That the model was built by later lawyers.
 
 ## The Domesday Book
 LV: GCSE and A level · Application
@@ -296,6 +366,16 @@ M2#history-u02-08-q2@2: Which entries in Domesday suggest the effects of the Har
 TF1#history-u02-08-q3@1: Domesday Book includes detailed records of London and Winchester. | false | Both major towns are missing from the survey.
 M3#history-u02-08-q4@3: Which conclusion about the Conquest does Domesday best support? | Landholding changed almost completely at the top, while village life showed much continuity | Peasants lost all their land to Norman knights | Nothing changed after 1066 | The survey shows that the English elite kept most of its estates | The 1066 and 1086 columns support change above continuity.
 SA3#history-u02-08-q5@2,3: How useful is Domesday Book for studying the effects of the Norman Conquest? | Domesday records holders and values in 1066 and 1086, so it shows the near-total replacement of English landholders and the economic damage of conquest, including waste in the north. It also shows continuity in villages, fields and peasant obligations. But it omits London and Winchester and the far north, counts households rather than people, and was compiled for royal purposes. A strong answer weighs these strengths and limits. | Explains what it records ; Explains what it shows about change ; Explains what it shows about continuity ; Identifies limitations ; Reaches a judgement
+Q: Why did William order the Domesday survey? | Facing a threatened Danish invasion, he needed to know what resources he could tax and call on.
+Q: How did the Domesday survey help settle the Norman land settlement? | It recorded who held land after twenty years of upheaval, settling disputes.
+Q: How was England organised for the Domesday survey? | Into circuits, each visited by royal commissioners.
+Q: What did Domesday record for each estate? | Holders in 1066 and 1086, ploughlands, meadow, woodland, mills, livestock, peasant numbers and values at both dates.
+Q: Into what two volumes was Domesday written up? | Great Domesday and Little Domesday.
+Q: In which work did Richard FitzNigel explain the name Domesday? | The Dialogue of the Exchequer.
+Q: What does Domesday show about village life after the Conquest? | Most villages, fields and peasant obligations looked much as before.
+Q: What does Domesday show about the Conquest overall? | Revolution at the top and much continuity below.
+Q: What is tenure? | The terms on which land was held from a lord.
+Q: Is Domesday Book a census of everyone? | No. It counts heads of households on estates, omits London and Winchester, and leaves out the far north.
 
 ## Medieval monarchy
 LV: GCSE and A level · Foundation
@@ -334,6 +414,16 @@ M2#history-u02-09-q2@2: What most limited a medieval king's power in practice? |
 TF1#history-u02-09-q3@1: Medieval English government stayed in one place, in a permanent capital. | false | Government travelled with the king and his household.
 M3#history-u02-09-q4@3: Which judgement about medieval kingship is best supported? | Kings were powerful when they kept the cooperation of the great men, and vulnerable when they lost it | Kings had absolute power and never needed anyone's cooperation | Kings had no real power, since the barons governed the kingdom | The Church ruled England, and kings simply carried out its orders | The evidence shows strength dependent on cooperation.
 SA3#history-u02-09-q5@2,3: How powerful were medieval English kings? | Kings were anointed and sworn to do justice, were supreme lords of the land, led armies and governed through a household, council and, from Henry I, an efficient Exchequer. But they had no standing army, relied on barons for military service and on the Church for legitimacy, and were expected to rule by custom and counsel; John's reign shows the cost of ignoring this. A strong answer balances these. | Explains sources of royal authority ; Explains how government worked ; Explains limits on power ; Uses an example ; Reaches a judgement
+Q: Who crowned and anointed medieval English kings? | The Archbishop of Canterbury.
+Q: What did kings swear in the coronation oath? | To protect the Church, do justice and keep good laws.
+Q: What was expected of a king as military leader? | To defend the realm and lead armies in person.
+Q: What did the royal household include? | Officials running the king's finances, chapel and writing office.
+Q: What was the curia regis? | The king's council of great men and officials.
+Q: By whose reign did the Exchequer audit sheriffs' accounts? | Henry I (1100 to 1135).
+Q: How did the Exchequer get its name? | From the chequered cloth used as a counting board.
+Q: What is the earliest surviving Exchequer record? | The Pipe Roll of 1130.
+Q: Which king faced rebellion for ignoring expectations of good rule? | John.
+Q: What did a medieval king lack that limited his power? | A standing army or police; he depended on barons and the Church.
 
 ## Henry II and legal reform
 LV: GCSE and A level · Application
@@ -372,6 +462,16 @@ M2#history-u02-10-q2@2: What was novel disseisin? | A quick royal remedy for som
 TF1#history-u02-10-q3@1: Early juries under Henry II mainly reported suspects and answered questions of fact from local knowledge. | true | They were local witnesses rather than judges of evidence presented in court.
 M3#history-u02-10-q4@3: Which is the strongest argument that Henry II's reforms were significant? | Royal courts became the normal place for land disputes and serious crime, creating a common law | They abolished all Church courts and brought clergy under royal law | They ended serious crime in England within a few years | They gave Parliament control of justice for the first time | The lasting effect was a common law administered by royal courts.
 SA3#history-u02-10-q5@2,3: How significant were Henry II's legal reforms? | After the Anarchy, Henry used the Assize of Clarendon (1166), itinerant justices, possessory assizes such as novel disseisin and standard writs to bring royal justice to every county. Royal courts became the main forum for land disputes and serious crime, and a common law developed, described in Glanvill. The reforms built on earlier practice and left Church courts independent after the Becket dispute. A strong answer judges long-term significance. | Explains the context of the Anarchy ; Explains at least two reforms ; Explains the development of common law ; Considers limits or continuity ; Reaches a judgement
+Q: When did Henry II reign? | From 1154 to 1189.
+Q: What damage had the Anarchy done that Henry II repaired? | Barons had built unlicensed castles and seized royal lands; Henry demolished castles, recovered lands and rebuilt finances.
+Q: What were eyres? | Circuits on which itinerant royal justices travelled the country.
+Q: What was novel disseisin? | A possessory assize giving anyone wrongly removed from land a quick remedy in the king's court, decided by a jury.
+Q: How were cases started in Henry II's courts? | With writs bought from the royal chancery, in standard form.
+Q: How did the common law develop under Henry II? | Royal justices applied the same rules everywhere, creating law common to the whole kingdom.
+Q: What was Glanvill? | A treatise on the laws of England written at the end of Henry II's reign.
+Q: What were the short-term effects of Henry II's legal reforms? | They restored order and increased royal income from court fees.
+Q: What limits did Henry II's legal reforms have? | They built on earlier practice, and Church courts stayed outside royal control after the Becket dispute.
+Q: What is an assize? | A royal ordinance, or a legal procedure it created.
 
 ## Thomas Becket
 LV: GCSE and A level · Application
@@ -406,6 +506,16 @@ M2#history-u02-11-q2@2: Why did Becket oppose the Constitutions of Clarendon? | 
 TF1#history-u02-11-q3@1: Edward Grim, who wrote an eyewitness account of the murder, was wounded defending Becket. | true | Grim was injured in the attack and later wrote about it.
 M3#history-u02-11-q4@3: Which judgement on the outcome of the dispute is best supported? | Becket's cause won on criminous clerks, while Henry kept most of his practical power | Henry lost all authority over the Church after the murder | Becket's murder had no lasting consequences for either side | The Pope supported Henry against Becket throughout the dispute | The evidence shows a mixed outcome: the Church kept its courts, but Henry kept most of his practical power.
 SA3#history-u02-11-q5@2,3: Why was the murder of Thomas Becket significant? | Becket's murder in 1170 shocked Christendom: he was canonised in 1173, Canterbury became a major pilgrimage site, and Henry II did public penance in 1174. Henry had to give up the Constitutions of Clarendon's demand that convicted clergy be punished by royal courts, so the Church kept its legal privileges. But Henry kept most of his power over appointments, and royal justice continued to expand. A strong answer weighs these short and long-term effects. | Explains the dispute ; Explains immediate consequences ; Explains the outcome over criminous clerks ; Considers what Henry kept ; Reaches a judgement
+Q: What post did Becket hold under Henry II from 1155? | Royal chancellor.
+Q: Why did Henry make Becket Archbishop of Canterbury in 1162? | He expected a loyal ally.
+Q: Why did criminous clerks often escape heavy punishment? | Church courts could not impose death or mutilation.
+Q: What did the Constitutions of Clarendon require? | Clergy convicted in Church courts to be handed to royal courts for punishment, and limits on appeals to Rome.
+Q: Where did Becket go into exile, and until when? | France, until 1170.
+Q: What words is Henry II reported to have said about Becket? | Words to the effect of "will no one rid me of this turbulent priest?", though the exact words are uncertain.
+Q: Who killed Becket? | Four knights.
+Q: When was Becket canonised? | In 1173.
+Q: When did Henry II do public penance for Becket's murder? | In 1174.
+Q: What did Henry II keep despite losing the Becket dispute? | Control over most appointments, and royal justice expanded.
 
 ## King John and Magna Carta
 LV: GCSE and A level · Application
@@ -444,6 +554,16 @@ M2#history-u02-12-q2@2: Why did the Pope place England under an Interdict in 120
 TF1#history-u02-12-q3@1: Most clauses of Magna Carta protected the rights of unfree villeins. | false | Most protected barons and free men; villeins benefited little.
 M3#history-u02-12-q4@3: Which is the best explanation of why Magna Carta survived after 1215? | Henry III's government reissued it to win support, and the 1225 version became law | John kept it faithfully until his death in October 1216 | The Pope confirmed it in 1215, which made it binding | The barons never rebelled again after Runnymede | Reissue, not the original agreement, gave it lasting force.
 SA3#history-u02-12-q5@2,3: Why did the barons force King John to agree to Magna Carta in 1215? | John's loss of Normandy in 1204 cost barons lands and prestige; his heavy scutage, fines and exploitation of feudal rights caused resentment; the Interdict (1208–1214) and his excommunication weakened him; and defeat at Bouvines in 1214 ended his plans. A strong answer links these, explaining how military failure drove financial pressure and how the defeat of 1214 turned resentment into rebellion. | Explains the loss of Normandy ; Explains financial grievances ; Explains the quarrel with the Church ; Explains Bouvines as a trigger ; Links causes and reaches a judgement
+Q: When did John reign? | From 1199 to 1216.
+Q: Who conquered Normandy from John, and when? | Philip II of France, in 1204.
+Q: Whose appointment as archbishop did John refuse? | Stephen Langton, the Pope's choice.
+Q: When was John excommunicated? | In 1209.
+Q: How did John raise money to recover Normandy? | He repeatedly raised scutage and other dues and exploited his rights as lord.
+Q: What did clause 40 of Magna Carta promise? | That justice would not be sold, denied or delayed.
+Q: How was Magna Carta to be enforced? | By a council of 25 barons.
+Q: Whom did the rebel barons invite to take the throne? | Prince Louis of France.
+Q: When did John die? | In October 1216.
+Q: Why did Magna Carta fail in 1215? | John never meant to keep it, the barons were divided, and the Pope annulled it in August 1215.
 
 ## The development of Parliament
 LV: GCSE and A level · Application
@@ -482,6 +602,16 @@ M2#history-u02-13-q2@2: What was the main reason medieval kings needed Parliamen
 TF1#history-u02-13-q3@1: The Commons chose a Speaker in the Good Parliament of 1376. | true | They chose Peter de la Mare.
 M3#history-u02-13-q4@3: Which judgement about Parliament by 1400 is best supported? | It limited the king in money matters but was not independent of him | It had replaced the king's council as the government of England | It met every year by law and could not be dismissed | It had no influence on the king or his policies | Consent to taxation gave influence, but the king still controlled when it met.
 SA3#history-u02-13-q5@2,3: How far did Parliament limit royal power by 1400? | Parliament grew from royal councils; from Simon de Montfort's 1265 assembly and Edward I's frequent parliaments, knights and burgesses consented to taxation. By 1376 the Commons met separately, chose a Speaker and impeached ministers. But kings summoned and dismissed Parliament as they wished and it had no fixed sessions. A strong answer judges that control of taxation gave real but limited power. | Explains origins ; Explains the role of taxation ; Uses the Good Parliament or another example ; Explains limits ; Reaches a judgement
+Q: When did the word "parliament" begin to be used? | In the 1230s, for especially important meetings of the king's council.
+Q: Where did Simon de Montfort defeat Henry III? | At Lewes in 1264.
+Q: Whom did de Montfort summon in January 1265 besides barons and bishops? | Two knights from each shire and two burgesses from certain towns.
+Q: Where was Simon de Montfort killed? | At Evesham in 1265.
+Q: Which Magna Carta principle made consent to taxation valuable? | That extraordinary taxes required common counsel.
+Q: Why was the 1295 parliament later called the Model Parliament? | It included representatives of shires, towns and the lower clergy.
+Q: Who was chosen Speaker in the Good Parliament of 1376? | Peter de la Mare.
+Q: What is impeachment? | A trial of a royal official begun by the Commons and judged by the lords.
+Q: How was Parliament still dependent on the king by 1400? | Kings summoned and dismissed it when they chose, and it had no fixed meetings.
+Q: Was medieval Parliament democratic? | No. Representatives were chosen by a small elite, and most people had no say.
 
 ## Medieval society
 LV: GCSE · Foundation
@@ -522,6 +652,16 @@ M2#history-u02-14-q2@2: Which group did the idea of the three orders leave out? 
 TF1#history-u02-14-q3@1: Peasant women often brewed ale for sale. | true | Brewing was a common source of income for women.
 M3#history-u02-14-q4@3: Which is the best judgement on the "three orders"? | An ideal that explained and justified inequality, not a full description of society | An exact description of how medieval society actually worked | A modern invention that medieval writers never used | A description of town life rather than the countryside | It was a medieval idea, but reality was more varied.
 SA3#history-u02-14-q5@2,3: How accurate is the idea that medieval society consisted of those who prayed, those who fought and those who worked? | The three orders reflected real differences in status and the Church's teaching, and most people were peasants who worked the land. But the idea omits merchants, craftsmen and townspeople organised in guilds, hides inequality within each order, and says little about women, whose work in brewing, farming and estate management mattered. A strong answer treats it as an ideal rather than a description. | Explains the three orders ; Explains peasant life ; Uses towns or women as evidence ; Explains limits of the idea ; Reaches a judgement
+Q: What did the idea of the three orders justify? | Inequality as part of God's plan.
+Q: How were open fields organised? | Large open fields were divided into strips.
+Q: What was the demesne? | The lord's own land, on which villeins owed labour.
+Q: What did the manor court do? | It settled local disputes and enforced the lord's rights.
+Q: When did towns grow in medieval England? | In the twelfth and thirteenth centuries.
+Q: What did many medieval towns gain from the king? | Charters.
+Q: What roles did noblewomen and widows take on? | Noblewomen managed estates when husbands were away; some widows ran farms and businesses.
+Q: How did law and custom treat medieval women? | They gave women fewer rights than men, especially once married.
+Q: What differences within the three orders did the idea hide? | A rich bishop and a poor parish priest, or a great baron and a poor knight.
+Q: Did medieval peasants never move or trade? | No. Many travelled to markets, and some bought land or moved to towns.
 
 ## The Black Death
 LV: GCSE and A level · Application
@@ -561,6 +701,16 @@ M2#history-u02-15-q2@2: Why did peasants' bargaining power increase after the Bl
 TF1#history-u02-15-q3@1: People in the fourteenth century understood that plague was caused by bacteria. | false | Germ theory came centuries later; they blamed sin, bad air or the stars.
 M3#history-u02-15-q4@3: Which judgement on the Black Death's effect on peasants is best supported? | It shifted power towards peasants, though villeinage declined only over generations | It ended villeinage immediately, by a law passed in 1349 | It made peasants poorer in every respect for a century | It had no effect on wages, which the Statute kept fixed | Change was real but gradual: wages rose quickly, but villeinage faded over a century and more.
 SA3#history-u02-15-q5@2,3: How far was the Black Death a turning point for English peasants? | The Black Death killed perhaps a third to a half of the population from 1348, creating a labour shortage that raised wages and peasants' bargaining power. Lords and government resisted through the Ordinance of 1349 and the Statute of 1351, which fed grievances behind the revolt of 1381. Villeinage declined, but only over the following century and more. A strong answer judges it a turning point in the balance of power whose effects took generations. | Explains the mortality and labour shortage ; Explains the government's response ; Explains longer-term change ; Considers the pace of change ; Reaches a judgement
+Q: Where did the Black Death probably arrive in England? | At Melcombe in Dorset, in the summer of 1348.
+Q: What proportion of England's population died in the Black Death? | Estimates range from about a third to a half.
+Q: When did plague return after the Black Death? | In later outbreaks, including 1361.
+Q: How has Yersinia pestis been confirmed as the cause of the Black Death? | DNA from victims buried in the 1349 East Smithfield cemetery in London.
+Q: How did people at the time explain the Black Death? | As God's punishment for sin, bad air (miasma) or the alignment of the planets.
+Q: What were flagellants? | People on the continent who whipped themselves in penance during the plague.
+Q: Name two practical measures taken against the plague. | Avoiding the sick, cleaning streets and burying the dead in new cemeteries.
+Q: Which persecuted group was attacked during the Black Death on the continent? | Jewish communities.
+Q: What happened to villages and land use in the century after the Black Death? | Many villages shrank or were abandoned, and landlords turned land to sheep farming.
+Q: How quickly did villeinage decline after the Black Death? | Gradually, over a century and more.
 
 ## The Peasants' Revolt
 LV: GCSE and A level · Application
@@ -601,6 +751,16 @@ TF1#history-u02-16-q3@1: The Peasants' Revolt abolished serfdom in England. | fa
 M3#history-u02-16-q4@3: Which judgement on the revolt's outcome is best supported? | A short-term failure that showed how far the old order had weakened | A complete success, since the king kept all his promises to the rebels | An event with no significance for later English history | A rising of nobles against the king, using peasants as soldiers | It failed immediately but revealed deep change.
 SA3#history-u02-16-q5@2,3: Why did the Peasants' Revolt break out in 1381? | After the Black Death, the Statute of Labourers and lords' efforts to enforce old obligations angered peasants whose bargaining power had grown. Poll taxes in 1377, 1379 and 1381, the last at a flat rate, fell heavily on the poor, and its enforcement in Essex and Kent triggered resistance. John Ball's preaching challenged inequality, and the costs of war and dislike of ministers added grievances. A strong answer links long-term and trigger causes. | Explains post-plague grievances ; Explains the poll tax as trigger ; Explains the role of ideas ; Links causes ; Reaches a judgement
 M2#history-u02-16-q6@1: What was the trigger of the Peasants' Revolt of 1381? | The collection of the third poll tax | The Black Death of 1348 | The Statute of Labourers of 1351 | The death of Edward III | The poll tax sparked revolt against grievances that had built up since the Black Death.
+Q: Who was Wat Tyler? | The leader of the Kent rebels in 1381.
+Q: Whose palace did the rebels burn in London in 1381? | John of Gaunt's Savoy Palace.
+Q: What did Richard II promise the rebels at Mile End? | To end serfdom.
+Q: Which royal officials did the rebels kill in the Tower? | Simon Sudbury, Archbishop of Canterbury, and Robert Hales, the Treasurer.
+Q: How did Richard II end the rebellion at Smithfield? | He rode forward after Tyler was struck down, calmed the rebels and persuaded them to disperse.
+Q: What happened to John Ball? | He was executed in July 1381.
+Q: What grievance against government fed the Peasants' Revolt? | Resentment of the king's ministers and the costs of an unsuccessful war with France.
+Q: What longer-term effects did the Peasants' Revolt have? | Rulers became wary of poll taxes and labour laws proved hard to enforce.
+Q: What is a poll tax? | A tax charged on each person, regardless of wealth.
+Q: Were the 1381 rebels all poor peasants? | No. Many were better-off villagers, artisans and some townspeople and clergy.
 
 ## The Wars of the Roses
 LV: GCSE and A level · Application
@@ -642,6 +802,16 @@ TF1#history-u02-17-q3@1: The name "Wars of the Roses" was popularised long after
 M3#history-u02-17-q4@3: Which is the best explanation of Richard III's defeat in 1485? | His usurpation divided the Yorkists, and key nobles deserted him at Bosworth | He had no army at all | Henry Tudor had a stronger hereditary claim than any Yorkist | The princes in the Tower led the rebellion | Loss of noble support was decisive: Richard's usurpation split the Yorkists, and the Stanleys turned against him at Bosworth.
 SA3#history-u02-17-q5@2,3: Why did the Wars of the Roses break out? | Henry VI was a weak king, crowned as an infant and suffering a breakdown in 1453; England lost its French lands by 1453, discrediting his government; Richard, Duke of York, a great landowner with a claim to the throne, was excluded from power; and overmighty nobles could raise their own forces. A strong answer explains how royal weakness allowed noble rivalry to become civil war. | Explains Henry VI's weakness ; Explains the effect of defeat in France ; Explains York's position ; Explains the role of overmighty nobles ; Reaches a judgement
 M2#history-u02-17-q6@1: Which battle ended the Wars of the Roses for Richard III? | Bosworth in 1485 | Hastings in 1066 | Agincourt in 1415 | Flodden in 1513 | Henry Tudor defeated Richard III at Bosworth on 22 August 1485.
+Q: When did Henry VI become king? | In 1422, as an infant.
+Q: What was Richard, Duke of York's grievance? | A great landowner with his own claim to the throne, he was excluded from power by the king's favourites.
+Q: What is an overmighty subject? | A noble with enough land and followers to challenge the crown.
+Q: Where did fighting in the Wars of the Roses begin? | At St Albans in 1455.
+Q: What is notable about the Battle of Towton? | It was one of the bloodiest battles fought on English soil.
+Q: Who briefly restored Henry VI in 1470? | The Earl of Warwick.
+Q: Which battles did Edward IV win in 1471? | Barnet and Tewkesbury.
+Q: What happened to the princes in the Tower? | Edward IV's sons disappeared after Richard III took the throne in 1483.
+Q: What role did the Stanleys play at Bosworth? | They turned against Richard III.
+Q: Were the roses used consistently as badges during the wars? | No; the name was popularised much later and the roses were not used consistently at the time.
 
 ## The rise of the Tudor dynasty
 LV: GCSE and A level · Application
@@ -682,4 +852,14 @@ TF1#history-u02-18-q3@1: Perkin Warbeck claimed to be one of the princes in the 
 M3#history-u02-18-q4@3: Which is the best explanation of the Tudor dynasty's survival? | Careful management of marriage, rebels, finances and the nobility turned a weak claim into a secure throne | Henry VII had the strongest hereditary claim of anyone living in England | No one seriously challenged Henry VII after his victory in 1485 | The great nobility had all been killed in the wars by 1485 | Survival came from policy, not from the strength of his claim.
 SA3#history-u02-18-q5@2,3: Why was Henry VII able to secure the Tudor dynasty? | Henry's hereditary claim was weak, but he won at Bosworth in 1485, married Elizabeth of York in 1486 to unite the houses, and defeated the Simnel rebels at Stoke in 1487 and later Warbeck. He strengthened royal finances, controlled the nobility through bonds and recognisances, and avoided costly wars. A strong answer weighs his policies against favourable circumstances, such as the deaths of rival claimants. | Explains how he won the throne ; Explains marriage and its effect ; Explains how he dealt with pretenders ; Explains financial or noble control ; Reaches a judgement
 M2#history-u02-18-q6@1: Which Tudor monarch reigned longest? | Elizabeth I, from 1558 to 1603 | Henry VII, from 1485 to 1509 | Henry VIII, from 1509 to 1547 | Mary I, from 1553 to 1558 | Elizabeth reigned for 44 years, longer than Henry VIII's 38.
+Q: Through whom did Henry Tudor's claim to the throne come? | His mother, Margaret Beaufort, from a line of John of Gaunt's descendants once barred from the throne.
+Q: Where did Henry Tudor land in 1485? | At Milford Haven in August 1485, with French support.
+Q: Whose forces intervened against Richard III at Bosworth? | Sir William Stanley's.
+Q: When did Henry VII marry Elizabeth of York? | In January 1486.
+Q: What did the Tudor rose symbolise? | The union of the houses, combining red and white.
+Q: Who was Lambert Simnel? | A boy presented as a Yorkist heir, whose supporters Henry defeated at Stoke in 1487.
+Q: When was Perkin Warbeck executed? | In 1499.
+Q: What are bonds and recognisances? | Financial guarantees of good behaviour that Henry VII imposed on nobles.
+Q: How did Henry VII avoid weakening his finances? | He built up royal finances and avoided costly wars.
+Q: Was Henry VII's throne safe after Bosworth? | No. Pretenders and rebellions threatened him for over a decade.
 `;

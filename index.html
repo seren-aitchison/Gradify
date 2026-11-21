@@ -31,45 +31,77 @@
   <script src="kit/core/theme-boot.js"></script>
   <link rel="stylesheet" href="kit/styles/components.css">
   <link rel="stylesheet" href="assets/styles.css">
+  <!-- module-preload: written by scripts/preload-modules.mjs; run it after changing imports -->
+  <link rel="modulepreload" href="/assets/app.js">
+  <link rel="modulepreload" href="/assets/proof.js">
+  <link rel="modulepreload" href="/assets/nav.js">
+  <link rel="modulepreload" href="/assets/features.js">
+  <link rel="modulepreload" href="/assets/pro.js">
+  <link rel="modulepreload" href="/kit/core/continue.js">
+  <link rel="modulepreload" href="/kit/core/hubnav.js">
+  <link rel="modulepreload" href="/kit/core/sites.js">
+  <link rel="modulepreload" href="/kit/core/icons.js">
+  <link rel="modulepreload" href="/kit/core/colour.js">
+  <link rel="modulepreload" href="/kit/core/site.js">
+  <link rel="modulepreload" href="/kit/data/profile.js">
+  <link rel="modulepreload" href="/kit/core/analytics.js">
+  <link rel="modulepreload" href="/kit/core/attribution.js">
+  <link rel="modulepreload" href="/kit/core/glass-icons.js">
+  <link rel="modulepreload" href="/kit/data/waitlist.js">
+  <link rel="modulepreload" href="/kit/core/install.js">
+  <link rel="modulepreload" href="/kit/data/billing.js">
+  <link rel="modulepreload" href="/kit/data/plan.js">
+  <link rel="modulepreload" href="/kit/ui/global-nav.js">
+  <link rel="modulepreload" href="/kit/ui/store.js">
+  <link rel="modulepreload" href="/kit/core/menu-set.js">
+  <link rel="modulepreload" href="/gradify.config.js">
+  <link rel="modulepreload" href="/kit/core/subnav.js">
+  <link rel="modulepreload" href="/kit/data/functions.js">
+  <link rel="modulepreload" href="/kit/ui/icons.js">
+  <link rel="modulepreload" href="/kit/ui/palette.js">
+  <link rel="modulepreload" href="/kit/ui/places.js">
+  <link rel="modulepreload" href="/kit/ui/feedback.js">
+  <link rel="modulepreload" href="/kit/ui/resources.js">
+  <link rel="modulepreload" href="/kit/ui/keys.js">
+  <link rel="modulepreload" href="/kit/ui/overlay.js">
+  <!-- /module-preload -->
   <script type="module" src="assets/app.js"></script>
   <script type="module" src="assets/proof.js"></script>
-  <script type="module" src="kit/lifeos/lifeos.js"></script>
   <script type="module" src="assets/nav.js"></script>
-  <script type="module" src="kit/lifeos/os.js"></script>
+  <!-- the LifeOS tour (#lifeos) is hidden on the homepage: its scripts (the studio, planner, calendar, globe, 3D island)
+       only load when it's shown, so the homepage doesn't spend a second of main thread on something nobody sees -->
+  <script type="module">
+    const os = document.getElementById("lifeos");
+    const go = () => { import("./kit/lifeos/lifeos.js"); import("./kit/lifeos/os.js"); };
+    if (os && !os.hidden) go();
+    else if (os) new MutationObserver((_, mo) => { if (!os.hidden) { mo.disconnect(); go(); } }).observe(os, { attributes: true, attributeFilter: ["hidden"] });
+  </script>
   <script type="module" src="assets/features.js"></script>
   <script type="module" src="assets/pro.js"></script>
+  <script type="module">
+    // your learning (pins and course cards) and the Gradify-wide search, ⌘K or / from anywhere (kit/ui/global-nav.js)
+    import { mountContinue } from "./kit/core/continue.js";
+    mountContinue(document.getElementById("continue"));
+  </script>
 </head>
 <body>
   <div class="aurora" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
 
   <div class="wrap">
-    <header class="bar glass">
-      <a class="brand" href="#top">
-        <svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4641ff"/><stop offset=".35" stop-color="#f055dd"/><stop offset=".7" stop-color="#ff5600"/><stop offset="1" stop-color="#ffc002"/></linearGradient></defs><rect x=".75" y=".75" width="30.5" height="30.5" rx="9" fill="#0b0b0b" stroke="rgba(255,255,255,.22)" stroke-width="1.5"/><path d="M22.9 10.9A8.6 8.6 0 1 0 24.6 16H16.4" fill="none" stroke="url(#gg)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Gradify
-      </a>
-      <nav class="sections" aria-label="Sections">
-        <a href="#how">How it works</a>
-        <a href="#find">Sites</a>
-        <a href="#features">Features</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="#faq">Questions</a>
-      </nav>
+    <!-- hub-header: written by scripts/sync-headers.mjs; edit it there -->
+    <a class="skip-link" href="#find">Skip to content</a>
+    <header class="bar glass hub-bar">
+      <a class="brand" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4641ff"/><stop offset=".35" stop-color="#f055dd"/><stop offset=".7" stop-color="#ff5600"/><stop offset="1" stop-color="#ffc002"/></linearGradient></defs><rect x=".75" y=".75" width="30.5" height="30.5" rx="9" fill="#0b0b0b" stroke="rgba(255,255,255,.22)" stroke-width="1.5"/><path d="M22.9 10.9A8.6 8.6 0 1 0 24.6 16H16.4" fill="none" stroke="url(#gg)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Gradify</a>
+      <nav class="sections" aria-label="Gradify"><a href="/explore.html">Explore</a><a href="/#find">Sites</a><a href="/journey.html">Journey</a><a href="/pricing.html">Pricing</a></nav>
       <div class="right">
-                <a class="btn btn-primary btn-sm lg" href="app.html">Try it free</a>
-        <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-        </button>
+        <a class="link hub-signin" href="/app.html#/account">Sign in</a>
+        <a class="btn btn-primary btn-sm lg hub-open" href="/app.html">Open Gradify</a>
+        <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
       </div>
-      <nav class="menu" id="menu" aria-label="Menu" hidden>
-        <a href="app.html">Try Gradify free</a>
-        <a href="#how">How it works</a>
-        <a href="#find">Sites</a>
-        <a href="#features">Features</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="#faq">Questions</a>
-      </nav>
+      <nav class="menu" id="menu" aria-label="Menu" hidden><a href="/explore.html">Explore</a><a href="/#find">Sites</a><a href="/journey.html">Journey</a><a href="/pricing.html">Pricing</a><a class="hub-signin" href="/app.html#/account">Sign in</a><a class="btn btn-primary lg hub-open" href="/app.html">Open Gradify</a></nav>
     </header>
+    <script type="module" src="/kit/core/hubnav.js"></script>
+    <!-- /hub-header -->
 
     <section class="hero hero-v2" id="top">
       <div class="hero-copy">
@@ -89,11 +121,13 @@
       <figure class="hero-shot">
         <div class="shot-frame">
           <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span>getgradify.com · Study pack</span></div>
-          <img src="assets/screens/notes-deck.jpg" width="1376" height="860" alt="A Gradify study pack made from notes on the cardiac cycle: 19 flashcards, 100% checked against the notes, ready to revise." fetchpriority="high">
+          <picture><source type="image/webp" srcset="assets/screens/notes-deck.webp"><img src="assets/screens/notes-deck.jpg" width="1376" height="860" alt="A Gradify study pack made from notes on the cardiac cycle: 19 flashcards, 100% checked against the notes, ready to revise." fetchpriority="high"></picture>
         </div>
         <figcaption>A real study pack, made from the sample notes in the app.</figcaption>
       </figure>
     </section>
+    <!-- Continue learning: the last lessons opened in any Gradify course on this device (kit/core/continue.js) -->
+    <section class="continue-strip" id="continue" hidden></section>
 
     <!-- How Gradify works -->
     <section class="how" id="how" aria-labelledby="how-title">
@@ -106,19 +140,19 @@
           <span class="how-n">1</span>
           <span class="how-g3d" data-g3d="upload notes file" data-g3d-size="60"></span><h3>Bring your notes</h3>
           <p>Drop in a PDF or paste your notes. One lecture or topic at a time works best. No account needed to try it.</p>
-          <img src="assets/screens/notes-upload.jpg" width="1376" height="860" loading="lazy" alt="The Bring your notes screen, with notes on the cardiac cycle pasted in and a Make my study pack button.">
+          <picture><source type="image/webp" srcset="assets/screens/notes-upload.webp"><img src="assets/screens/notes-upload.jpg" width="1376" height="860" loading="lazy" alt="The Bring your notes screen, with notes on the cardiac cycle pasted in and a Make my study pack button."></picture>
         </li>
         <li class="how-step glass">
           <span class="how-n">2</span>
           <span class="how-g3d" data-g3d="layers cards check" data-g3d-size="60"></span><h3>Get checked flashcards</h3>
           <p>Every card is matched to the line in your notes it came from. Anything that doesn't match is flagged so you can fix it.</p>
-          <img src="assets/screens/notes-deck.jpg" width="1376" height="860" loading="lazy" alt="A study pack of 19 flashcards, 100% checked against the notes.">
+          <picture><source type="image/webp" srcset="assets/screens/notes-deck.webp"><img src="assets/screens/notes-deck.jpg" width="1376" height="860" loading="lazy" alt="A study pack of 19 flashcards, 100% checked against the notes."></picture>
         </li>
         <li class="how-step glass">
           <span class="how-n">3</span>
           <span class="how-g3d" data-g3d="clock calendar timer" data-g3d-size="60"></span><h3>Revise at the right time</h3>
           <p>Rate how well you knew each card. Gradify brings it back just before you'd forget, paced to your exam date.</p>
-          <img src="assets/screens/notes-study.jpg" width="1376" height="860" loading="lazy" alt="A flashcard asking: What is the cardiac cycle? with I know it, Not sure and No idea buttons.">
+          <picture><source type="image/webp" srcset="assets/screens/notes-study.webp"><img src="assets/screens/notes-study.jpg" width="1376" height="860" loading="lazy" alt="A flashcard asking: What is the cardiac cycle? with I know it, Not sure and No idea buttons."></picture>
         </li>
       </ol>
       <p class="how-cta"><a class="btn btn-primary lg" href="app.html"><span>Try it with your notes</span> <span aria-hidden="true">→</span></a></p>
@@ -157,7 +191,7 @@
           <li><b>One level and streak.</b> XP from any site counts towards the same level, streak and achievements.</li>
           <li><b>One progress record.</b> Course progress, answers and flashcard reviews are saved to your account and follow you to every device.</li>
           <li><b>One plan.</b> Your exam date and daily study time pace every course, and study blocks go into one weekly plan.</li>
-          <li><b>One subscription.</b> Gradify Pro, when it opens, covers every site.</li>
+          <li><b>One subscription.</b> Gradify Pro covers every site.</li>
         </ul>
       </div>
       <!-- Featured site carousel -->
@@ -195,7 +229,7 @@
             <circle cx="80" cy="80" r="60" class="track"/>
             <g id="ring-segs"></g>
           </svg>
-          <div class="ring-label"><b id="live-count">0</b><span>live · <span id="beta-count">0</span> in beta<br>of <span class="js-count">32</span> sites</span></div>
+          <div class="ring-label"><b id="live-count">30</b><span>live · <span id="beta-count">0</span> in beta<br>of <span class="js-count">32</span> sites</span></div>
         </div>
         <div class="bars" id="bars" aria-label="Sites in each group"></div>
       </div>
@@ -539,22 +573,22 @@
 
 
     <!-- For organisations -->
-    <!-- Gradify Pro -->
+    <!-- Gradify Ultra -->
     <section class="pro" id="pro" aria-labelledby="pro-title">
       <div class="pro-hero">
-        <span class="pro-badge"><span class="pro-gem" aria-hidden="true"></span>Gradify Plus and Gradify Pro</span>
+        <span class="pro-badge"><span class="pro-gem" aria-hidden="true"></span>Gradify Pro and Gradify Ultra</span>
         <h2 id="pro-title">Learn free. <span class="grad">Let Gradify run the rest.</span></h2>
-        <p class="lede">Free is for learning with Gradify: flashcards, mind maps, every course and basic revision. <b>Gradify Plus</b> (<span data-price="plus"></span> a month) organises, optimises and manages your learning. <b>Gradify Pro</b> (<span data-price="pro"></span> a month) is everything in Plus, with Gradify AI.</p>
+        <p class="lede">Free is for learning with Gradify: flashcards, mind maps, every course and basic revision. <b>Gradify Pro</b> (<span data-price="plus"></span> a month) organises, optimises and manages your learning. <b>Gradify Ultra</b> (<span data-price="pro"></span> a month) is everything in Pro, with Gradify AI.</p>
         <p class="pro-status" id="pro-status" role="status"></p>
       </div>
-      <h3 class="pro-sub"><span class="tag ready">Gradify Plus</span> Gradify organises, optimises and manages your learning</h3>
+      <h3 class="pro-sub"><span class="tag ready">Gradify Pro</span> Gradify organises, optimises and manages your learning</h3>
       <div class="pro-features">
         <article class="pro-card glass"><span class="pro-ico" data-icon="sparkles" aria-hidden="true"></span><h3>Gradify Intelligence</h3><p>Smart Plan autopilot plans your week and keeps it on track. Readiness forecasts, cards ordered by what matters most, adaptive card suggestions and revision recommendations.</p></article>
         <article class="pro-card glass"><span class="pro-ico" data-icon="flame" aria-hidden="true"></span><h3>Exam preparation</h3><p>Timed exams over each part of a course and the whole course, with weak areas identified, and the complete question bank for every course.</p></article>
         <article class="pro-card glass"><span class="pro-ico" data-icon="calendar" aria-hidden="true"></span><h3>Calendar and reminders</h3><p>Plan around your Google, Apple or Outlook calendar and your timetable, export your plan, schedule study blocks automatically, and get reminders even when Gradify is closed.</p></article>
         <article class="pro-card glass"><span class="pro-ico" data-icon="layers" aria-hidden="true"></span><h3>Every device</h3><p>Notes, flashcards, mind maps, progress and revision history, up to date on every device you use. Free studies on one device at a time.</p></article>
       </div>
-      <h3 class="pro-sub"><span class="tag planned">Gradify Pro · coming soon</span> Everything in Plus, with Gradify AI</h3>
+      <h3 class="pro-sub"><span class="tag planned">Gradify Ultra · coming soon</span> Everything in Pro, with Gradify AI</h3>
       <div class="pro-features">
         <article class="pro-card glass"><span class="pro-ico" data-icon="sparkles" aria-hidden="true"></span><h3>An AI tutor for every lesson</h3><p>Talk a topic through, get questioned like a viva, or practise a client or patient conversation, grounded in the lesson's own notes.</p><b class="pro-n" data-allow="tutor"></b></article>
         <article class="pro-card glass"><span class="pro-ico" data-icon="book" aria-hidden="true"></span><h3>Explanations on demand</h3><p>Ask why something works and get an answer drawn from the lesson you're on, including what an interactive lab is showing you.</p><b class="pro-n" data-allow="explain"></b></article>
@@ -563,20 +597,20 @@
       </div>
       <div class="pro-later glass">
         <div>
-          <h3 class="pro-sub"><span class="tag planned">Planned</span> More AI-powered learning, for Pro</h3>
-          <p>After launch, Pro grows with more AI-powered learning across every Gradify site. It's being designed now, so we won't list it until it's real.</p>
+          <h3 class="pro-sub"><span class="tag planned">Planned</span> More AI-powered learning, for Ultra</h3>
+          <p>After launch, Ultra grows with more AI-powered learning across every Gradify site. It's being designed now, so we won't list it until it's real.</p>
         </div>
         <form class="notify-pro" id="notify-pro" novalidate>
-          <label for="notify-email">Get one email when Gradify Pro opens</label>
+          <label for="notify-email">Get one email when Gradify Ultra opens</label>
           <div class="notify-row"><input id="notify-email" type="email" autocomplete="email" placeholder="you@example.com" required><button class="btn btn-pro lg" type="submit"><span class="pro-gem" aria-hidden="true"></span><span>Notify me</span></button></div>
           <p class="notify-msg" id="notify-msg" role="status" aria-live="polite">No payment, no account needed. <a href="privacy.html#launch-lists">What we keep</a>.</p>
         </form>
       </div>
       <div class="compare glass" aria-labelledby="compare-title">
-        <h3 id="compare-title">Free, Plus and Pro, side by side</h3>
-        <div class="table-wrap">
+        <h3 id="compare-title">Free, Pro and Ultra, side by side</h3>
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Plan comparison, scrolls sideways">
           <table class="compare-table">
-            <thead><tr><th scope="col">What you get</th><th scope="col">Free</th><th scope="col" class="pro-col">Gradify Plus</th><th scope="col">Gradify Pro</th></tr></thead>
+            <thead><tr><th scope="col">What you get</th><th scope="col">Free</th><th scope="col" class="pro-col">Gradify Pro</th><th scope="col">Gradify Ultra</th></tr></thead>
             <tbody id="compare-rows"></tbody>
           </table>
         </div>
@@ -672,7 +706,7 @@
       <div class="faq-list">
         <details class="glass">
           <summary>Is it really free?</summary>
-          <p>Yes. Making flashcards and mind maps from your notes, revising them, every course and planning your own revision are free, with no card. <a href="pricing.html">Gradify Plus</a> lets Gradify organise, optimise and manage your learning, and Gradify Pro adds Gradify AI.</p>
+          <p>Yes. Making flashcards and mind maps from your notes, revising them, every course and planning your own revision are free, with no card. <a href="pricing.html">Gradify Pro</a> lets Gradify organise, optimise and manage your learning, and Gradify Ultra adds Gradify AI.</p>
         </details>
         <details class="glass">
           <summary>What kind of notes work?</summary>
@@ -706,26 +740,19 @@
       </div>
     </section>
 
-    <footer class="glass">
-      <div class="foot-cols">
-        <div class="foot-brand">
-          <b>Gradify™</b>
-          <p>Turn your notes into flashcards checked against what you wrote, and revise them at the right time.</p>
-        </div>
-        <nav aria-label="Gradify">
-          <b>Gradify</b>
-          <a href="app.html">Try it free</a><a href="#how">How it works</a><a href="pricing.html">Pricing</a><a href="#faq">Questions</a><a href="quality.html">Quality</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a>
-        </nav>
+    <!-- hub-footer: written by scripts/sync-headers.mjs; edit it there -->
+    <footer class="hub-foot glass">
+      <div class="hub-foot-cols">
+        <div class="hub-foot-brand"><b>Gradify™</b><p>Turn your notes into flashcards checked against what you wrote, and revise them at the right time.</p></div>
+        <nav aria-label="Gradify"><b>Gradify</b><a href="/explore.html">Explore</a><a href="/#find">Sites</a><a href="/journey.html">Journey</a><a href="/pricing.html">Pricing</a><a href="/app.html">Open Gradify</a></nav>
+        <nav aria-label="About Gradify"><b>About</b><a href="/quality.html">Quality</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="mailto:hello@getgradify.com">Contact</a></nav>
       </div>
-      <div class="foot-base">
-        <p><b>Also from the Gradify team:</b> Seren Aitchison (portfolio blog), BioFrontier, Eirova™, Erya™ and Vizeon™.</p>
-        <p>© <span id="year">2026</span> Gradify™</p>
-      </div>
+      <div class="hub-foot-base"><p><b>Also from the Gradify team:</b> Seren Aitchison (portfolio blog), BioFrontier, Eirova™, Erya™ and Vizeon™.</p><p>© <span class="hub-year">2026</span> Gradify™</p></div>
     </footer>
+    <!-- /hub-footer -->
   </div>
   <button type="button" class="ai-fab lg" id="ai-fab" hidden aria-label="Gradify AI preview (scripted demo)"><span class="ai-av" aria-hidden="true"></span><span class="fab-txt">Gradify AI preview</span></button>
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
     if ("serviceWorker" in navigator) addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
   </script>
 </body>

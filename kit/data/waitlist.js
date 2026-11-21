@@ -1,11 +1,11 @@
-// Launch lists: "tell me when this opens", for a Gradify site that's coming soon or for Gradify Pro.
+// Launch lists: "tell me when this opens", for a Gradify site that's coming soon or for Gradify Ultra.
 // Writes one row to public.waitlist (email + what it's for). The table is insert-only through the API: nobody,
 // including the person who joined, can read it back, and joining twice is ignored. Without accounts configured it
 // is kept in this browser only. privacy.html says what's kept and why.
 import { SUPABASE_URL, SUPABASE_ANON_KEY } from "../../gradify.config.js";
 
-export const PRO_LIST = "Gradify Pro";
-export const PLUS_LIST = "Gradify Plus";
+export const PRO_LIST = "Gradify Pro";   // the stored list name for the plan now called Gradify Ultra (rows already use it)
+export const PLUS_LIST = "Gradify Plus"; // the stored list name for the plan now called Gradify Pro
 // the same pattern as the table's check constraint, plus the longest address email allows (254 characters)
 export const validEmail = (e) => { const s = String(e ?? "").trim(); return s.length <= 254 && /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(s); };
 

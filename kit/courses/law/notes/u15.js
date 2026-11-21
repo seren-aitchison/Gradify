@@ -28,6 +28,16 @@ Q: Name three sources of solicitors' professional obligations. | The SRA Princip
 Q: Which regulator's handbook binds barristers? | The Bar Standards Board's BSB Handbook.
 M1#law-u15-01-q1@1: Why do solicitors owe duties beyond those to their clients? | They are officers of the court | Clients pay less than the public does | The SRA directly employs all solicitors | Their client contracts require it | They don't: their duties are only to clients | Solicitors' role in the justice system brings wider duties.
 M2#law-u15-01-q2@2: A client instructs a solicitor to present evidence the solicitor knows is false. Which duty prevails? | The duty not to mislead the court | The duty to act in the client's best interests | The duty of confidentiality | The duty to follow instructions | The duty to maximise fees | Duties to the court take precedence over client instructions.
+Q: What does it mean that a solicitor is an officer of the court? | It gives them duties to the administration of justice, not just to their client.
+Q: To whom do lawyers owe duties besides their clients? | The courts, the rule of law and the public.
+Q: When a lawyer's duties conflict, which generally prevail? | The duties to the court and the public interest prevail over the duty to the client.
+Q: Where is professional ethics tested in the SQE? | Throughout the SQE, not in a separate paper.
+Q: Name three privileges that justify lawyers' special duties. | Rights of audience, the conduct of litigation, and legal professional privilege.
+Q: Why does the justice system depend on lawyers' ethics? | It depends on lawyers not misleading courts or abusing process.
+Q: What do the SRA Standards and Regulations include? | The SRA Principles, the Codes of Conduct for individuals and firms, the SRA Accounts Rules, and other rules.
+Q: Name two statutes, besides the Solicitors Act 1974, that impose obligations on solicitors. | The Legal Services Act 2007, the Proceeds of Crime Act 2002 and the Money Laundering Regulations 2017.
+Q: What is Core Duty 1 in the BSB Handbook? | Observe your duty to the court in the administration of justice.
+Q: How do barristers' duties compare with solicitors' duties? | They are similar in substance but organised differently, in the BSB Handbook.
 
 ## SRA Principles
 S: The seven SRA Principles are the fundamental ethical requirements for everyone the SRA regulates. They apply at all times, including in some circumstances outside practice.
@@ -62,6 +72,16 @@ Q: List the seven SRA Principles. | Rule of law and the administration of justic
 Q: What is the test for dishonesty from Ivey v Genting? | Establish the person's actual state of knowledge or belief, then ask whether their conduct was dishonest by the standards of ordinary decent people.
 M1#law-u15-02-q1@1: Which Principle is engaged by a solicitor who backdates a document without intending to deceive anyone? | Integrity, and possibly honesty | Equality, diversity and inclusion only | Independence from third parties only | The best interests of the client only | None of the Principles is engaged | Backdating can show a lack of integrity even without proof of dishonest intent.
 M2#law-u15-02-q2@2: A client's best interests appear to require the solicitor to conceal a document from the court. What should the solicitor do? | Don't conceal it: justice takes precedence | Conceal it, as Principle 7 requires | Ask the SRA for permission to conceal it | Destroy the document before the hearing | Give it to the client so they can hide it | Public interest Principles take precedence.
+Q: Who must comply with the SRA Principles? | Everyone the SRA regulates, individuals and firms.
+Q: What is integrity in the SRA Principles? | Moral soundness and adherence to the ethical standards of the profession.
+Q: What did Wingate v SRA decide? | Integrity is broader than honesty, so a lack of integrity can be found without dishonesty.
+Q: Which SRA Principle requires acting with independence? | Principle 3.
+Q: Which SRA Principle concerns equality, diversity and inclusion? | Principle 6: act in a way that encourages equality, diversity and inclusion.
+Q: Which SRA Principles prevail when the Principles conflict? | Those safeguarding the wider public interest, such as the rule of law and public confidence.
+Q: What should solicitors tell clients about their duty to the court? | Where relevant, when their duty to the court and other obligations will outweigh their duty to the client.
+Q: Which SRA Principles can apply to conduct outside practice? | Principles 2, 4, 5 and 6, where conduct would undermine public trust.
+Q: Give an example of private conduct that can engage the SRA Principles. | Serious dishonesty or harassment in private life, including sexual misconduct and social media cases.
+Q: Is Principle 7, the client's best interests, the top-ranking Principle? | No; Principles protecting the wider public interest take precedence over it.
 
 ## SRA Codes of Conduct
 S: The SRA has two Codes of Conduct: one for individuals (solicitors, registered European and foreign lawyers) and one for firms. They set out the standards of professionalism expected and are shorter and more principle-based than the old rulebook.
@@ -91,6 +111,16 @@ Q: Name four sections of the Code of Conduct for Solicitors. | Any four of: main
 Q: Which body can strike a solicitor off the roll? | The Solicitors Disciplinary Tribunal.
 M1#law-u15-03-q1@1: What are the COLP and COFA? | A firm's two compliance officers | Two types of practising solicitor | Two levels of the civil courts | Two committees of the SRA board | Two types of client bank account | Firms must appoint compliance officers responsible for systems and reporting.
 M2#law-u15-03-q2@2: Which body would deal with a solicitor accused of serious dishonesty with client money? | An SRA investigation and likely SDT referral | A complaint to the Legal Ombudsman only | A disciplinary hearing by the Law Society | A prosecution in the Crown Court only | A referral to the Bar Standards Board | Serious matters are prosecuted before the SDT.
+Q: Who does the Code of Conduct for Solicitors, RELs, RFLs and RSLs cover? | Individual solicitors, registered European lawyers, registered foreign lawyers and RSLs.
+Q: How do the SRA Codes compare with the old rulebook? | They are shorter and more principle-based.
+Q: Name three duties in the "maintaining trust and acting fairly" section of the Code. | No unfair discrimination, no taking unfair advantage, performing undertakings, and not misleading.
+Q: Which paragraphs of the Code cover conflict, confidentiality and disclosure? | Paragraphs 6.1–6.5.
+Q: What does section 7 of the Code for Solicitors cover? | Cooperation and accountability, including cooperating with the SRA and reporting.
+Q: What does section 8 of the Code for Solicitors cover? | Services to the public, including client identification, complaints handling, client information and publicity.
+Q: What does the Code of Conduct for Firms add to the individual Code? | Systems and controls, compliance officers (COLP and COFA), and managers' responsibilities.
+Q: What sanctions can the SRA itself impose? | Warnings, rebukes, fines and conditions.
+Q: What is the SRA's fine limit for traditional firms and individuals, at the time of writing? | Up to £25,000, with higher limits for ABSs.
+Q: What sanctions can the Solicitors Disciplinary Tribunal impose? | Striking off, suspension, or unlimited fines.
 
 ## Client confidentiality
 S: Solicitors must keep the affairs of current and former clients confidential unless disclosure is required or permitted by law or the client consents (Code, para 6.3). The duty lasts after the retainer ends and after the client's death.
@@ -120,6 +150,16 @@ Q: Does the duty of confidentiality end when the retainer ends? | No. It continu
 Q: Name two exceptions to the duty of disclosure under para 6.4. | Disclosure prohibited by law; the client agrees otherwise; serious injury risk; information in a privileged document received by mistake (any two).
 M1#law-u15-04-q1@1: A solicitor discusses a named client's divorce at a dinner party. Which duty is breached? | Confidentiality (Code para 6.3) | Disclosure | Independence | Competence | Undertakings | Confidential information must not be disclosed without consent or legal authority.
 M3#law-u15-04-q2@2: A solicitor learns confidential financial information while acting for Company A. Company B then asks the firm to act against A in a related dispute. What is the position? | Not act unless the risk is removed or A consents | Act freely, because A is only a former client | Act, and tell B the confidential information | Act only after asking the SRA for approval | Act, as long as it charges B a higher fee | Para 6.5: the firm holds A's confidential information material to the dispute, so it can act only with effective information barriers (the Bolkiah standard) or A's informed consent.
+Q: Which paragraph of the Code sets out the duty of confidentiality? | Paragraph 6.3.
+Q: What information does the duty of confidentiality cover? | All information about a client's affairs, however obtained, not just what the client says.
+Q: Who in a firm is bound by the duty of confidentiality? | Everyone in the firm, and firms need systems to protect confidential information.
+Q: What is an information barrier? | Arrangements preventing confidential information passing within a firm.
+Q: Give two examples of disclosure required by law. | A court order, a statutory obligation such as a POCA 2002 money laundering report, or a regulator's requirement.
+Q: When is disclosure permitted by law in exceptional cases? | To prevent a client or third party committing a criminal act likely to cause serious bodily harm.
+Q: What does the duty of disclosure in para 6.4 require? | Making the client aware of all information material to the matter of which you have knowledge, subject to exceptions.
+Q: Give an example of when disclosure to a client is prohibited by law. | Tipping off.
+Q: When can a firm act against a former client whose confidential information it holds? | Only with effective measures leaving no real risk of disclosure, or the former client's informed consent (para 6.5).
+Q: Why was KPMG restrained in Prince Jefri Bolkiah v KPMG? | Its information barriers weren't effective enough to remove all risk of disclosure.
 
 ## Legal professional privilege
 S: Legal professional privilege (LPP) protects certain communications between lawyers and clients from disclosure, even to a court. It is a fundamental right of the client, not the lawyer, and is distinct from (though related to) confidentiality.
@@ -150,6 +190,16 @@ Q: What are the two types of legal professional privilege? | Legal advice privil
 Q: What is the iniquity (crime-fraud) exception? | Privilege does not protect communications made in furtherance of a crime or fraud.
 M1#law-u15-05-q1@1: Which type of privilege can cover communications with a third-party expert? | Litigation privilege, if its conditions are met | Legal advice privilege in every case | Neither form of privilege applies | Both forms of privilege, always | Only without prejudice privilege | Legal advice privilege covers only lawyer-client communications.
 M2#law-u15-05-q2@2: A client asks their solicitor how to structure a transaction to hide assets from creditors in a fraudulent way. Is the communication privileged? | No: communications in furtherance of a fraud aren't privileged | Yes: all lawyer-client communications are privileged | Yes, if marked "privileged" | Only if litigation is contemplated | Yes, if the solicitor refuses to help | The iniquity (crime-fraud) exception: privilege never protects communications made to further a crime or fraud, such as hiding assets from creditors.
+Q: Whose right is legal professional privilege? | The client's, not the lawyer's.
+Q: What is legal advice privilege? | Protection for confidential lawyer-client communications made for the dominant purpose of legal advice.
+Q: What is litigation privilege? | Protection for confidential communications, including with third parties, for the dominant purpose of litigation in reasonable contemplation.
+Q: Who is the "client" for legal advice privilege in an organisation? | Only employees authorised to seek and receive legal advice (Three Rivers (No 5)).
+Q: What did R (Prudential) v Special Commissioner of Income Tax decide? | Legal advice privilege doesn't cover tax advice from accountants; extending it is for Parliament.
+Q: Which cases set out the dominant purpose test for litigation privilege? | Waugh v British Railways Board and SFO v ENRC.
+Q: Which case established the iniquity exception? | R v Cox and Railton (1884).
+Q: How can privilege be lost? | By the client waiving it, expressly or by conduct, or if confidentiality is lost.
+Q: What did R (Morgan Grenfell) v Special Commissioner say about overriding privilege? | Statutory overrides are rare and must be clear.
+Q: How does privilege relate to confidentiality? | All privileged material is confidential, but not all confidential material is privileged.
 
 ## Conflicts of interest
 S: A solicitor must not act where there is a conflict of interests, or a significant risk of one, unless a narrow exception applies. Conflicts can arise between the solicitor and the client (own-interest) or between two or more clients (client conflict).
@@ -182,6 +232,16 @@ Q: Are there any exceptions to the bar on own-interest conflicts? | No. A solici
 Q: What are the two exceptions for client conflicts? | A substantially common interest, or clients competing for the same objective, with informed written consent, effective safeguards and it being reasonable to act.
 M1#law-u15-06-q1@1: A client asks her solicitor to draft a will leaving the solicitor £50,000. What should the solicitor do? | Don't act; advise independent advice | Draft it, as the client wants it | Draft it, but report it to the SRA | Draft it if the gift is under 10% | Ask a colleague to witness it | A significant gift creates an own-interest conflict.
 M2#law-u15-06-q2@2: Two businesses want the same firm to act for them in bidding for the same contract. Which exception might allow it? | Competing for the same objective | Substantially common interest | The own-interest exception | None: it is never allowed | Only if the SRA approves it | Para 6.2(b) allows acting for clients competing for the same objective, but only with informed written consent, effective safeguards and if it is reasonable to act.
+Q: What is an own-interest conflict? | A conflict between the solicitor's own interests and the client's.
+Q: Which paragraphs of the Code govern own-interest and client conflicts? | Paragraph 6.1 for own-interest conflicts and para 6.2 for client conflicts.
+Q: Give three examples of own-interest conflicts. | A solicitor or family member benefiting, a personal relationship with the other side, a solicitor's own mistake, or a significant gift in a will they draft.
+Q: What is a substantially common interest? | A shared objective that may allow a solicitor to act for more than one client.
+Q: What conditions apply to the client conflict exceptions? | All clients give informed written consent, effective safeguards protect confidential information, and the solicitor is satisfied it is reasonable to act.
+Q: Can a solicitor usually act for buyer and seller in a property transaction? | Generally not, because of conflicting interests, except in very limited circumstances.
+Q: Is acting for lender and borrower on a standard residential mortgage permitted? | Commonly yes, with care.
+Q: What must be watched for when acting for criminal co-defendants? | Conflicting defences.
+Q: What must a solicitor usually do if a client conflict arises during a matter? | Stop acting for at least one client, and perhaps both, depending on confidential information.
+Q: When should conflict checks be made? | Before accepting instructions, and continually as the matter develops.
 
 ## Client money
 S: Client money is money held or received by a firm for or on behalf of a client or third party (and certain other categories). The SRA Accounts Rules 2019 protect it by requiring it to be kept separate, used only for proper purposes and returned promptly.
@@ -212,6 +272,16 @@ Q: What is the "banking facility" prohibition? | A firm must not allow its clien
 Q: What must a firm do on discovering a breach of the Accounts Rules? | Correct it promptly, including replacing any money improperly withheld or withdrawn.
 M1#law-u15-07-q1@1: A client asks the firm to receive £20,000 from a friend and pay it to another person, unrelated to any legal matter. What should the firm do? | Refuse: it would be a banking facility | Do it, because it is client money | Do it, if the client pays a fee | Do it through the office account | Do it, but delay for a week | Rule 3.3 prohibits providing banking facilities.
 M2#law-u15-07-q2@2: A transaction completes and £350 remains in client account for the client. What should the firm do? | Return the money promptly to the client | Keep it to cover future work | Transfer it to office account | Give it to charity straight away | Leave it indefinitely | Rule 2.5 of the Accounts Rules requires client money to be returned promptly once there is no longer a proper reason to hold it.
+Q: What is a client account? | A separate bank account for holding client money.
+Q: Which rules protect client money? | The SRA Accounts Rules 2019.
+Q: Name three categories of client money under rule 2.1. | Money held for a client or third party, money held as trustee, money for unpaid professional disbursements, and money for fees before a bill.
+Q: What does rule 2.3 of the Accounts Rules require? | Client money must be kept separate from firm money and paid promptly into a client account.
+Q: When may client money be withdrawn? | Only for a proper purpose with appropriate authority (rule 5).
+Q: Can one client's money be used for another client? | No, never.
+Q: When must client money be returned? | Promptly, once there is no longer a proper reason to hold it (rule 2.5).
+Q: What must a firm do about interest on client money? | Account for a fair sum of interest under its written policy (rule 7.1).
+Q: What can be done with small residual balances that can't be returned? | Pay them to charity after reasonable steps to trace the owner, in line with SRA guidance and limits.
+Q: Why should client money be treated as trust money? | Because it belongs to someone else, and legally it often is trust money.
 
 ## Solicitors' accounts
 S: The SRA Accounts Rules require firms to keep accurate accounting records, reconcile client accounts regularly and, in most cases, obtain an accountant's report. Solicitors' Accounts is assessed in SQE1 FLK2, including the double-entry recording of transactions.
@@ -239,6 +309,16 @@ Q: How often must client accounts be reconciled? | At least every five weeks.
 Q: When can costs be transferred from client account to business account? | After a bill or other written notification of costs has been given to the client.
 M1#law-u15-08-q1@1: Which records must a firm keep for client money? | Client ledgers, a cash book and a record of bills | Only bank statements | Only a list of clients | Only invoices | Only the accountant's report | Rule 8.1 requires full accounting records.
 M2#law-u15-08-q2@2: A firm transfers £1,000 from client account to business account for costs before sending the bill, intending to send it next week. What is the position? | A breach: bill or notify before transferring | Acceptable if a bill follows within a month | Acceptable if the client trusts the firm | Acceptable if the COFA agrees in advance | Acceptable for amounts under £1,000 | Rule 4.3 of the Accounts Rules: money for costs can be transferred from client to business account only after a bill or written notification of costs has been given.
+Q: What is a reconciliation in solicitors' accounts? | Comparing the client ledgers, cash book and bank statements.
+Q: What is an accountant's report? | An annual report on a firm's compliance with the Accounts Rules.
+Q: Which SQE assessment covers Solicitors' Accounts? | SQE1 FLK2.
+Q: What three qualities must client money records have under rule 8.1? | Accurate, contemporaneous and chronological.
+Q: What columns does a client ledger have? | Client and business columns.
+Q: How is a receipt of client money recorded in double entry? | A credit to the client ledger client column and a debit in the client cash account.
+Q: Who must sign off client account reconciliations? | A manager or the COFA.
+Q: When must an accountant's report be obtained? | Within six months of the end of the accounting period, unless an exemption applies.
+Q: Give an example of an exemption from the accountant's report requirement. | A low average client account balance.
+Q: Who is responsible for compliance with the Accounts Rules? | All managers, jointly and severally; the COFA must report material breaches to the SRA.
 
 ## Client care
 S: Client care is about giving clients the information and service they need: who will do the work, what it will cost, what will happen and how to complain. The SRA Code and the Transparency Rules set minimum requirements.
@@ -267,6 +347,16 @@ Q: When must a client be told about their right to complain? | In writing, at th
 Q: What must a firm give about costs? | The best possible information about pricing and the likely overall cost, at the start and as the matter progresses.
 M1#law-u15-09-q1@1: How long does a firm have to resolve a complaint before the client can go to the Legal Ombudsman? | Eight weeks | Two weeks | Six months | One year | No time limit | After 8 weeks, or a final response, the client can go to LeO.
 M2#law-u15-09-q2@2: Halfway through a matter, costs are likely to be double the estimate. What should the solicitor do? | Tell the client promptly and update the costs information | Wait until the final bill | Stop work without explanation | Charge the original estimate and absorb the rest | Ask the other side to pay | Para 8.7 requires updates as the matter progresses.
+Q: What is a client care letter? | A letter setting out the terms, costs and complaints information for a matter.
+Q: What are the SRA Transparency Rules? | Rules requiring firms to publish price and service information for certain services.
+Q: How must information be given to clients under the Code? | Clearly and accessibly, in a way they understand, so they can make informed decisions.
+Q: Which paragraph of the Code requires the best possible information about pricing? | Paragraph 8.7.
+Q: What must clients be told about who will do their work? | Who will carry out and supervise the work, their regulatory status, and protections such as indemnity insurance and the Compensation Fund.
+Q: How must firms handle complaints? | Promptly, fairly and free of charge.
+Q: When must a firm tell the client about the Legal Ombudsman? | At engagement, and in writing if the complaint isn't resolved within 8 weeks or at the end of the process.
+Q: Name three services covered by the Transparency Rules. | Residential conveyancing, probate, motoring offences, employment tribunal claims and immigration.
+Q: Besides prices, what must firms publish under the Transparency Rules? | Service and complaints information and the SRA's digital badge.
+Q: Is a client care letter compulsory in every case? | No, but it is the best way to meet the information requirements.
 
 ## Competence
 S: Solicitors must provide a proper standard of service, be competent to carry out their role and keep their professional knowledge and skills up to date (Code paras 3.2–3.6).
@@ -294,6 +384,16 @@ Q: Do solicitors have to complete a set number of CPD hours? | No. They must kee
 Q: What does para 3.4 require? | Considering and taking account of the client's attributes, needs and circumstances.
 M1#law-u15-10-q1@1: A newly qualified commercial solicitor is asked by a friend to handle a complex immigration appeal. What should they do? | Decline or refer, unless competent in time | Take it on so as to learn the area | Take it on, but charge a reduced fee | Take it on with a written disclaimer | Ask the friend to waive competence | Para 3.2 requires a competent and timely service, so a solicitor without immigration expertise should refer the friend unless they can become competent in time.
 M2#law-u15-10-q2@2: A supervisor signs off a trainee's letter of advice without reading it, and it contains a serious error. Who is accountable? | The supervisor remains accountable | Only the trainee who did the work | Only the client who gave instructions | No one, as it was a trainee's error | The SRA, as the approving regulator | Supervisors are accountable for supervised work.
+Q: What is continuing competence? | The SRA's requirement for solicitors to keep their skills and knowledge up to date.
+Q: What is the Statement of Solicitor Competence? | The SRA's description of the competences expected of solicitors.
+Q: What does Code para 3.2 require? | That the service you provide is competent and delivered in a timely manner.
+Q: What does Code para 3.3 require? | Maintaining competence and keeping knowledge and skills up to date.
+Q: What does Code para 3.5 require of supervisors? | They remain accountable for work done through others and must supervise effectively.
+Q: What does Code para 3.6 require of managers? | Ensuring the people they manage are competent and keep their skills up to date.
+Q: How do solicitors meet the continuing competence requirement? | By reflecting on practice, identifying, planning and addressing learning needs, and making an annual declaration.
+Q: What should a solicitor do if not competent to handle a matter? | Refer the client elsewhere, get help, or obtain the knowledge needed before acting.
+Q: How can taking on too much work breach the competence duty? | It can cause delay and missed deadlines.
+Q: Give an example of a client attribute to consider under para 3.4. | Vulnerability.
 
 ## Honesty and integrity
 S: Honesty and integrity are among the most important requirements of being a solicitor. Dishonesty almost always leads to striking off; lack of integrity is also treated very seriously.
@@ -323,6 +423,16 @@ Q: What is the usual sanction for a dishonest solicitor? | Striking off the roll
 Q: How does integrity differ from honesty? | Integrity is a broader standard of ethical soundness; a solicitor can lack integrity without being dishonest.
 M1#law-u15-11-q1@1: A solicitor tells a client that proceedings have been issued when they haven't, to avoid admitting a delay. Which Principle is most directly breached? | Honesty | Independence | Equality, diversity and inclusion | Rule of law only | None, if the claim is issued later | Knowingly false statements are dishonest.
 M2#law-u15-11-q2@2: Overwhelmed by work, a solicitor backdates a letter to make it look as though a deadline was met. What is the likely outcome if proved dishonest? | Striking off, save in exceptional cases | A small fine and nothing more | No action, because stress explains it | A written warning on the record | A requirement to retake the SQE | SRA v James: stress rarely amounts to exceptional circumstances.
+Q: What is striking off? | Removal from the roll of solicitors.
+Q: What did Bolton v Law Society say is the purpose of sanctions? | To maintain the reputation of the profession, whose members may be "trusted to the ends of the earth".
+Q: Give three examples of dishonesty by solicitors. | Misleading clients about progress, fabricating documents, misusing client money, lying to the SRA, and inflating bills.
+Q: Give three examples of lack of integrity. | Backdating documents, recklessly allowing a client to mislead, making misleading statements without checking, and taking unfair advantage.
+Q: What did SRA v James decide about exceptional circumstances? | Mental health and workplace pressure don't usually amount to exceptional circumstances avoiding striking off.
+Q: Which case, alongside Wingate, defined integrity? | Malins v SRA.
+Q: What does Code para 1.4 prohibit? | Misleading or attempting to mislead clients, the court or others, including by allowing or being complicit in others' acts.
+Q: Can a solicitor breach para 1.4 through a client's actions? | Yes, by allowing or being complicit in the client's misleading acts or omissions.
+Q: How should a solicitor deal with an honest mistake? | Correct it promptly; an honest mistake corrected quickly differs greatly from concealment.
+Q: Was the solicitor in Bolton v Law Society dishonest? | No, but his suspension for misusing client money stood.
 
 ## Independence
 S: Solicitors must act with independence (Principle 3): their professional judgement must not be compromised by the interests of third parties, introducers, funders, employers or their own interests.
@@ -349,6 +459,16 @@ Q: Are referral fees allowed in personal injury cases? | No. LASPO 2012, s 56 ba
 Q: What must a client be told about a referral arrangement? | The arrangement, any financial or other interest, and the fee paid or received.
 M1#law-u15-12-q1@1: An estate agent refers clients to a solicitor and expects the solicitor to "keep the deal moving" by not raising awkward points. Which Principle is at risk? | Independence | Equality, diversity and inclusion | Rule of law | Honesty only | None | The introducer's interests mustn't compromise advice.
 M2#law-u15-12-q2@2: An in-house solicitor's director tells them to sign off a misleading statement to a regulator. What should the solicitor do? | Refuse and raise it internally | Comply, as the employer is the client | Comply, but note their disagreement | Resign without telling anyone why | Ask a junior colleague to sign it | In-house solicitors remain bound by the Principles and Code.
+Q: What is independence under SRA Principle 3? | Professional judgement free from compromise by others' interests.
+Q: What is an inducement? | A gift or benefit that might affect professional judgement.
+Q: Which Code paragraphs govern referral arrangements? | Paragraphs 5.1–5.2.
+Q: Is fee sharing allowed? | Yes, with care, but not where it compromises independence or the client's interests.
+Q: Whom does a solicitor act for when a third-party funder pays? | The client, not the funder.
+Q: Who is the client of an in-house solicitor? | The employer, though the solicitor must still exercise independent judgement.
+Q: Which Act makes offering or accepting a bribe an offence? | The Bribery Act 2010.
+Q: Name three threats to independence. | Referrers and introducers, fee sharing, funders and insurers, employer pressure, and personal interests such as gifts.
+Q: How can solicitors protect their independence? | Be transparent about arrangements, advise only in the client's interests, and refuse instructions that compromise judgement.
+Q: What warning sign suggests independence is at stake? | A third party who sends work or pays wants to influence the advice.
 
 ## Professional duties to the court
 S: Solicitors and barristers owe duties to the court that override their duties to clients. The duty not to mislead the court is central to the administration of justice.
@@ -379,6 +499,16 @@ Q: What does para 2.7 require? | Drawing the court's attention to relevant cases
 Q: Can a solicitor act for a client who has admitted guilt but pleads not guilty? | Yes, by putting the prosecution to proof, but must not assert innocence or present false evidence.
 M1#law-u15-13-q1@1: A solicitor offers a witness a payment if the claimant wins. Which paragraph is breached? | 2.3 | 6.3 | 4.1 | 8.7 | 1.3 | Benefits dependent on evidence or outcome are prohibited.
 M3#law-u15-13-q2@2: In a sentencing hearing, the prosecution says the defendant has no previous convictions. The defence solicitor knows this is wrong. What should the solicitor do? | Don't rely on it; withdraw if necessary | Confirm the prosecution's mistaken statement | Correct it without the client's consent | Stay silent and rely on the error | Ask the court to adjourn indefinitely | You mustn't mislead the court, but confidentiality also applies.
+Q: What is an adverse authority? | A legal authority against your client that must be drawn to the court's attention.
+Q: What does Code para 2.1 prohibit? | Misusing or tampering with evidence, or attempting to do so.
+Q: What does Code para 2.2 prohibit? | Seeking to influence the substance of evidence, including generating false evidence or persuading witnesses to change it.
+Q: What does Code para 2.4 require of submissions? | Only make assertions or submissions that are properly arguable.
+Q: What do Code paras 2.5 and 2.6 require? | Not placing yourself in contempt, complying with court orders, and not wasting the court's time.
+Q: What should a solicitor do if a client lies about previous convictions and won't allow correction? | Not repeat it, and may have to withdraw without explaining why, preserving confidentiality.
+Q: Must an adverse authority be cited if the other side misses it? | Yes.
+Q: What are wasted costs orders? | Orders against lawyers for improper, unreasonable or negligent conduct (Senior Courts Act 1981, s 51(6)).
+Q: What did R (Ayinde) v Haringey warn about AI-generated citations? | Lawyers must check every authority; false authorities may lead to regulator referral, contempt or police proceedings.
+Q: What is the difference between silence and misleading the court? | A solicitor can stay silent on confidential matters but can never actively mislead the court.
 
 ## Undertakings
 S: An undertaking is a statement, given orally or in writing, by which a solicitor (or someone in a firm) agrees to do or not do something. Solicitors must perform all undertakings given, within the agreed timescale or within a reasonable time (Code para 1.3).
@@ -408,6 +538,16 @@ Q: What does Code para 1.3 require? | That you perform all undertakings given by
 Q: Does an undertaking need the word "undertake"? | No. Any unequivocal promise relied on by the recipient can be an undertaking.
 M1#law-u15-14-q1@1: Which is a common conveyancing undertaking? | An undertaking to redeem the mortgage | The buyer's promise to like the house | The estate agent's promise to market it | The surveyor's promise to visit the site | The lender's promise to approve the loan | Redemption undertakings are standard in residential conveyancing.
 M2#law-u15-14-q2@2: A solicitor undertakes to send the other side £10,000 "on receipt from my client". The client doesn't send it. Is the solicitor in breach? | No: the undertaking was conditional on receipt, which hasn't happened | Yes: the solicitor must pay from their own funds | Yes, after 14 days | No, because undertakings are never binding | Yes, if the other side complains | The condition hasn't been met; drafting undertakings carefully protects the solicitor.
+Q: What is an undertaking? | A statement, oral or written, by which a solicitor agrees to do or not do something.
+Q: Who is bound by a solicitor's undertaking? | The solicitor personally.
+Q: How can undertakings be enforced? | Through the court's supervisory jurisdiction over solicitors as officers of the court, and by the SRA.
+Q: What did Udall v Capri Lighting decide? | The court can enforce a solicitor's undertaking under its inherent supervisory jurisdiction.
+Q: Who in a firm can give an undertaking? | Anyone in the firm on its behalf, so firms must control who gives them.
+Q: How is an ambiguous undertaking construed? | In favour of the recipient.
+Q: Give two common litigation undertakings. | To pay costs and to hold funds.
+Q: Give two common conveyancing undertakings besides redeeming the mortgage. | To hold the deposit to order and to send title deeds.
+Q: What should firms do to manage undertakings? | Record them centrally and track compliance.
+Q: What should a solicitor do if unable to comply with an undertaking? | Seek release from the recipient.
 
 ## Anti-money laundering
 S: Solicitors are a target for money launderers because they handle large sums and give credibility to transactions. Anti-money laundering (AML) law imposes criminal offences and regulatory duties, and the SRA treats AML compliance as a priority.
@@ -436,6 +576,16 @@ Q: Name the three principal money laundering offences in POCA 2002. | Concealing
 Q: What is tipping off? | Disclosing that a suspicious activity report has been made, or that an investigation is under way, in a way likely to prejudice an investigation (s 333A).
 M1#law-u15-15-q1@1: Who should a solicitor report a suspicion of money laundering to within the firm? | The money laundering reporting officer (MLRO) | The client | The other side's solicitor | The Legal Ombudsman | The court | The MLRO decides whether to make a SAR to the NCA.
 M3#law-u15-15-q2@2: A client buying a house asks to pay the deposit in cash and won't explain where it came from. What should the solicitor do? | Ask for source of funds; report to the MLRO | Accept the cash and proceed as normal | Tell the client a report is being made | Proceed if the amount is under £10,000 | Ask the estate agent to hold the cash | These are red flags requiring due diligence and possibly a report.
+Q: Why are solicitors a target for money launderers? | They handle large sums and give credibility to transactions.
+Q: What is customer due diligence? | Checks to identify and verify clients and understand their transactions.
+Q: What is a suspicious activity report? | A disclosure to the National Crime Agency about suspected money laundering.
+Q: What is a DAML? | Consent from the NCA, a defence against money laundering, obtained or deemed after the notice and moratorium periods.
+Q: What is the s 330 POCA 2002 offence? | In the regulated sector, failing to report knowledge, suspicion or reasonable grounds for suspicion of money laundering.
+Q: Which section of POCA 2002 creates the offence of prejudicing an investigation? | Section 342.
+Q: Name three firm-wide requirements of the Money Laundering Regulations 2017. | A risk assessment, policies and controls, training, and an MLRO and compliance officer.
+Q: When is enhanced due diligence needed? | In high-risk situations, such as PEPs, high-risk third countries, and complex or unusually large transactions.
+Q: When may simplified due diligence be used? | Where the risk is low.
+Q: Name four money laundering red flags. | Unexplained funds, cash, third-party payments, unusual urgency, no economic sense, reluctance to give ID, changed instructions, and using client account as a bank.
 
 ## Financial crime
 S: Beyond money laundering, solicitors must understand other financial crimes that can affect their practice or their clients: fraud, bribery, sanctions breaches, tax evasion facilitation and terrorist financing.
@@ -463,6 +613,16 @@ Q: What is the corporate offence under s 7 of the Bribery Act 2010? | Failure by
 Q: What is "Friday afternoon fraud"? | Fraud in which criminals intercept emails and change bank details so that money (often completion funds) is sent to their account.
 M1#law-u15-16-q1@1: Which body implements financial sanctions in the UK? | OFSI, part of HM Treasury | The Solicitors Regulation Authority | The Legal Ombudsman | HM Land Registry | The Crown Court | OFSI implements and enforces financial sanctions.
 M2#law-u15-16-q2@2: Just before completion, the firm receives an email, apparently from the client, with new bank details for the sale proceeds. What should the firm do? | Verify the change by phone on known details | Send the money to the new account | Send half of the money to each account | Ask the client to confirm by reply email | Delay completion for a month to be safe | Changed bank details by email are a classic fraud warning sign.
+Q: What three forms of fraud does the Fraud Act 2006 create? | False representation, failing to disclose information, and abuse of position.
+Q: Name the four Bribery Act 2010 offences. | Bribing, being bribed, bribing a foreign public official, and failing to prevent bribery (s 7).
+Q: What corporate offence does the Criminal Finances Act 2017 create? | Failing to prevent the facilitation of tax evasion.
+Q: What corporate offence does the Economic Crime and Corporate Transparency Act 2023 create? | Failing to prevent fraud by associated persons, for large organisations, in force from September 2025.
+Q: Which Act creates terrorist financing offences and a duty to report in the regulated sector? | The Terrorism Act 2000.
+Q: Which Act underpins UK financial sanctions? | The Sanctions and Anti-Money Laundering Act 2018, with regulations.
+Q: What is it an offence to do under financial sanctions law? | Dealing with funds of a designated person without a licence; strict civil liability can also apply.
+Q: Name two scams that target law firms. | Email interception changing bank details, impersonation of firms, and bogus law firms.
+Q: How can firms protect clients from payment fraud? | Tell them bank details won't change by email, and verify payment details by phone using known numbers.
+Q: What does a firm need to fight financial crime besides individual vigilance? | Systems to prevent, detect and report financial crime.
 
 ## Equality and diversity
 S: Solicitors must act in a way that encourages equality, diversity and inclusion (Principle 6), and must not unfairly discriminate (Code para 1.1). Firms must also comply with the Equality Act 2010 as employers and service providers.
@@ -488,6 +648,16 @@ Q: Which SRA Principle concerns equality, diversity and inclusion? | Principle 6
 Q: What duty did the Worker Protection Act 2023 introduce? | A duty on employers to take reasonable steps to prevent sexual harassment of their employees.
 M1#law-u15-17-q1@1: A firm refuses to take on a client because of the client's religion. Which provision is breached? | Code para 1.1 (unfair discrimination) and Principle 6 | Para 6.3 | Para 4.2 | Para 2.7 | None, because solicitors can choose clients | Refusing for a discriminatory reason is unfair discrimination.
 M2#law-u15-17-q2@2: A deaf client needs a BSL interpreter for meetings. What should the firm do? | Make reasonable adjustments, such as arranging an interpreter | Refuse to act | Ask the client to bring a family member to interpret | Charge the client extra for the interpreter by default | Use written notes only without discussion | Reasonable adjustments are required for disabled clients.
+Q: What is a reasonable adjustment? | A change to remove disadvantage for a disabled person.
+Q: Which Code paragraph prohibits unfair discrimination? | Paragraph 1.1.
+Q: In what two capacities must firms comply with the Equality Act 2010? | As employers and as service providers.
+Q: Give three examples of reasonable adjustments for disabled clients. | Accessible information, extra time and interpreters.
+Q: What must firms do about diversity data? | Collect and publish it as required by the SRA, and promote an inclusive culture.
+Q: How does the regulator treat sexual harassment and bullying by solicitors? | As serious regulatory matters; the Tribunal has struck off or suspended solicitors for such conduct.
+Q: From when did the employer duty to prevent sexual harassment apply? | From October 2024, under the Worker Protection Act 2023.
+Q: Does the cab-rank rule apply to solicitors? | No; it applies to barristers, though solicitors mustn't refuse clients for discriminatory reasons.
+Q: Can a solicitor choose whether to accept instructions? | Generally yes, but not refuse a client for discriminatory reasons.
+Q: What is equality about in practice, according to the SRA approach? | Outcomes: adjusting how you work so clients and colleagues can participate fully.
 
 ## Complaints
 S: Clients who are unhappy with a firm's service have a right to complain, first to the firm and then to the Legal Ombudsman. Conduct issues are dealt with separately by the SRA.
@@ -516,6 +686,16 @@ Q: How long does a firm have to resolve a complaint before the client can go to 
 Q: What is the difference between a service complaint and a conduct issue? | Service complaints (poor service) go to the Legal Ombudsman; conduct issues (breaches of the Principles or Code) go to the SRA.
 M1#law-u15-18-q1@1: Which body handles complaints about poor service by solicitors? | The Legal Ombudsman | The SRA | The Solicitors Disciplinary Tribunal | The Law Society | The court | LeO handles service complaints after the firm's procedure.
 M2#law-u15-18-q2@2: A client complains that their solicitor took months to reply to emails. The firm's final response doesn't resolve it. What should the firm have told the client? | Their right to go to the Legal Ombudsman | That they must sue the firm in court | That they should complain to the SRA only | That the matter is now closed for good | Nothing further needs to be said | Code para 8.4 requires the firm to tell the client in writing, at the end of its complaints process, of their right to complain to the Legal Ombudsman, with its contact details and time limits.
+Q: What is the Legal Ombudsman? | The independent scheme resolving service complaints about lawyers.
+Q: What is a first-tier complaint? | A complaint made first to the firm.
+Q: Under which Act was the Legal Ombudsman established? | The Legal Services Act 2007.
+Q: Name four remedies the Legal Ombudsman can order. | Apologies, capped compensation, fee refunds or reductions, putting right errors, and further work.
+Q: What are the usual time limits for going to the Legal Ombudsman? | Within six months of the firm's final response and within one year of the problem or its discovery.
+Q: Give three examples of service complaints. | Delay, poor communication and costs.
+Q: Give three examples of conduct issues for the SRA. | Dishonesty, breach of confidentiality and misuse of client money.
+Q: What does the Legal Ombudsman do with conduct matters? | It refers them to the SRA.
+Q: What must a firm's complaints procedure be? | Written, explained to clients at the outset, and run promptly, fairly and free of charge.
+Q: How should firms learn from complaints? | Record them, look for patterns, and improve their service.
 
 ## Professional negligence
 S: A solicitor who fails to exercise the reasonable care and skill of a competent solicitor and causes loss may be liable to the client in contract and tort, and sometimes to third parties. Firms must carry indemnity insurance to protect clients.
@@ -546,6 +726,16 @@ Q: What is the minimum indemnity cover for a solicitor's firm that is not an LLP
 Q: What should a solicitor do on discovering a mistake that may cause the client loss? | Tell the client promptly, notify the insurer, and consider whether an own-interest conflict means they must stop acting.
 M1#law-u15-19-q1@1: Which fund may compensate clients for losses caused by a solicitor's dishonesty? | The SRA Compensation Fund | The Legal Aid Fund | The Treasury | The Legal Ombudsman's budget | The Bar Council fund | The Compensation Fund is a discretionary last resort.
 M2#law-u15-19-q2@2: A solicitor misses a limitation deadline, so the client's claim is now statute-barred. The client doesn't know. What should the solicitor do? | Tell the client and notify the insurer | Try to issue the claim anyway and hope | Say nothing and bill the client as usual | Tell the client the claim was weak anyway | Wait for the client to find out alone | Openness and the own-interest conflict require disclosure and independent advice.
+Q: What is professional indemnity insurance? | Insurance covering claims for professional negligence.
+Q: What implied contractual term underpins solicitors' negligence? | To exercise reasonable care and skill (SGSA 1982, s 13; CRA 2015, s 49).
+Q: Which case recognised a concurrent duty of care in tort alongside contract? | Henderson v Merrett.
+Q: Which case allows disappointed beneficiaries to sue a solicitor? | White v Jones [1995].
+Q: What limits the losses recoverable for professional negligence? | Losses must fall within the scope of the duty assumed (Manchester Building Society v Grant Thornton; Meadows v Khan).
+Q: What did Hedley Byrne v Heller decide? | A duty of care can arise for advice where there is an assumption of responsibility.
+Q: What is the SRA Compensation Fund? | A discretionary fund of last resort, mainly for losses from dishonesty or failure to account for client money.
+Q: What does Code para 7.11 require when things go wrong? | Be honest and open with clients.
+Q: What are the SRA minimum terms? | The SRA's required minimum cover and conditions for indemnity insurance.
+Q: Why is concealing a mistake worse than the mistake itself? | Concealment is a far bigger problem than the error; admit it promptly and notify the insurer.
 
 ## Regulatory compliance
 S: Firms and individual solicitors must have systems to comply with regulatory requirements, cooperate with the SRA and report serious breaches. The Code for Firms puts duties on compliance officers and managers.
@@ -575,6 +765,16 @@ Q: What must a solicitor report to the SRA under para 7.7? | Facts or matters th
 Q: Who is the COFA? | The compliance officer for finance and administration, responsible for compliance with the Accounts Rules.
 M1#law-u15-20-q1@1: Who is responsible for a firm's systems for complying with the Accounts Rules? | The COFA | The MLRO | The Legal Ombudsman | The firm's receptionist | The client | The compliance officer for finance and administration (COFA) is responsible for the firm's systems for complying with the Accounts Rules and for reporting serious breaches.
 M2#law-u15-20-q2@2: A trainee discovers that a partner appears to have transferred client money to cover office expenses. What should the trainee do? | Report it promptly to the COLP or COFA, or directly to the SRA | Ignore it, as the partner is senior | Confront the partner privately and keep quiet | Tell the client | Tell other trainees | Para 7.7 requires prompt reporting of serious breaches.
+Q: Who is the COLP? | The compliance officer for legal practice, responsible for compliance systems and reporting serious breaches.
+Q: Does the reporting duty in para 7.7 cover the solicitor's own breaches? | Yes; it covers any regulated person, including yourself.
+Q: How can a solicitor satisfy their reporting obligations under para 7.12? | By telling the firm's COLP or COFA, on the understanding they will report it.
+Q: What do Code paras 7.3 and 7.4 require? | Cooperating with the SRA and other regulators, responding promptly, and providing information and documents.
+Q: What must a solicitor notify the SRA about under para 7.6? | Criminal charges, convictions or cautions, insolvency, and other matters affecting their suitability.
+Q: Name four areas firms need systems for. | Supervision, risk management, file reviews, conflicts, confidentiality, client money, complaints and AML.
+Q: How are whistleblowers protected? | Anyone raising concerns in good faith mustn't be victimised, and employment law protects protected disclosures.
+Q: Is a solicitor required to investigate a suspected serious breach before reporting? | No; reporting is the duty, investigating isn't.
+Q: What should be done if unsure whether something is a serious breach? | Report it to the COLP.
+Q: Which part of the Code for Solicitors deals with reporting? | Section 7, cooperation and accountability.
 
 ## Duties to clients
 S: Solicitors owe clients duties under the SRA Principles and Code, in contract, in tort, and as fiduciaries. These duties shape every stage of a retainer, from taking instructions to ending it.
@@ -606,6 +806,16 @@ Q: Can a solicitor act on instructions from a client's relative? | Only if satis
 Q: When can a solicitor stop acting for a client? | For good reason and on reasonable notice.
 M1#law-u15-21-q1@1: Which is a good reason for a solicitor to stop acting? | The client insists the solicitor mislead the court | The solicitor is busy | The client is rude once | The case is losing | The solicitor wants a holiday | A solicitor must not act improperly; insistence on misleading the court requires withdrawal.
 M3#law-u15-21-q2@2: A daughter phones to instruct a solicitor to sell her elderly father's house, saying he agrees. What should the solicitor do? | Confirm instructions with the father directly | Act on the daughter's instructions alone | Refuse ever to speak to the daughter | Sell the house and tell the father later | Ask the estate agent what the father wants | Instructions must come from the client or someone properly authorised.
+Q: What is a retainer? | The contract between a solicitor and client.
+Q: What is a fiduciary duty? | A duty of loyalty owed by a person in a position of trust.
+Q: Name three fiduciary duties of a solicitor. | Loyalty, not profiting secretly from the position, and not being in a position of conflict.
+Q: What did Bristol and West Building Society v Mothew decide? | Careless failures aren't breaches of fiduciary duty; the distinctive fiduciary obligation is loyalty.
+Q: What warning signs require care when taking instructions? | A third party giving instructions, undue influence, or lack of capacity.
+Q: Which Code paragraph requires identifying the client? | Paragraph 8.1.
+Q: Can a client end the retainer at any time? | Yes.
+Q: Give three good reasons for a solicitor to stop acting. | Conflict, refusal to pay, breakdown of confidence, or being asked to act improperly.
+Q: What rights and duties apply on termination of a retainer? | The solicitor may have a lien over papers for unpaid costs and must return client money promptly.
+Q: When must a solicitor refuse instructions? | Where acting would breach the law or the Code, such as a conflict, lack of competence, or instructions to mislead.
 
 ## Duties to third parties
 S: Solicitors owe duties not only to clients but also to third parties, including the other side, witnesses and others affected by their work. The core duty is not to take unfair advantage (Code para 1.2).
@@ -635,6 +845,16 @@ Q: What does Code para 1.2 prohibit? | Abusing your position by taking unfair ad
 Q: What should a solicitor do with privileged documents obviously sent to them by mistake? | Return them and not use them.
 M1#law-u15-22-q1@1: A solicitor writing to an unrepresented debtor demands an "administration fee" the creditor has no right to claim. What is the breach? | Taking unfair advantage of a third party (para 1.2) | Breach of confidentiality | Breach of competence only | No breach, as it's a negotiation | Breach of the Accounts Rules | Demanding sums not legally recoverable takes unfair advantage.
 M2#law-u15-22-q2@2: During negotiations, the other side's solicitor asks if your client has another buyer. There is none. What may you do? | Decline to answer, but not falsely say there is another buyer | Say there is another buyer to strengthen your position | Invent a higher offer | Tell them your client's minimum price | End the negotiation | You may withhold information but must not lie.
+Q: What is unfair advantage? | Exploiting a third party's lack of legal knowledge or position.
+Q: What is a litigant in person? | A party conducting litigation without a lawyer.
+Q: Give three examples of taking unfair advantage. | Exploiting an unrepresented opponent, demanding things not legally recoverable, or threatening proceedings without proper basis.
+Q: How should a solicitor treat an unrepresented party? | Be courteous, don't advise or mislead them, and suggest independent advice.
+Q: How should a solicitor communicate with a represented party? | Generally through their lawyers.
+Q: What must a solicitor do on discovering their earlier statement was misleading? | Correct it.
+Q: Are undertakings given to the other side binding? | Yes (para 1.3).
+Q: What may a solicitor keep confidential in negotiations, and what must they not do? | They may keep the client's position confidential but must not lie.
+Q: Does a solicitor owe a duty of care to the opposing party in litigation? | Generally no.
+Q: What is the overall approach to third parties for a solicitor? | Advocate firmly for the client, but don't lie, threaten or exploit.
 
 ## Duties to the public
 S: Solicitors serve the public interest: upholding the rule of law and the administration of justice, maintaining public trust in the profession, and protecting the public from harm. These duties shape what solicitors may do for clients and outside practice.
@@ -660,6 +880,16 @@ Q: What is a SLAPP? | A strategic lawsuit against public participation: litigati
 Q: What must an NDA not prevent? | Reporting misconduct to a regulator or law enforcement, or making a protected disclosure.
 M1#law-u15-23-q1@1: Which Principle is engaged when a solicitor posts offensive comments online in a personal capacity? | Public trust and confidence (Principle 2), and possibly integrity and EDI | Independence only | Client's best interests only | None, as it's private | Competence only | Conduct outside practice can damage public trust.
 M3#law-u15-23-q2@2: A wealthy client asks a solicitor to send aggressive letters threatening a journalist with ruinous litigation over an accurate article, mainly to stop publication. What should the solicitor consider? | Whether it would be an abuse of process or a SLAPP | Nothing: the client's instructions are paramount | Only the size of the fee for the letter | Only the law of defamation itself | Only whether the journalist has a lawyer | The SRA has warned against abusive litigation tactics.
+Q: What is public trust in the SRA Principles? | Confidence in the profession and in legal services.
+Q: What is a non-disclosure agreement? | An agreement restricting disclosure, which can't stop reports to regulators or police.
+Q: What does Principle 1 require in relation to crime? | Not facilitating crime, fraud or money laundering.
+Q: What has the SRA issued on SLAPPs and NDAs? | Warning notices.
+Q: Give four examples of conduct that can damage public trust. | Dishonesty, violence, harassment and offensive online posts, inside or outside practice.
+Q: Which statute restricts some NDAs for disclosures to certain persons? | The Victims and Prisoners Act 2024.
+Q: Is misuse of NDAs a regulatory matter? | Yes, under an SRA warning notice.
+Q: How do solicitors support access to justice? | Through pro bono work, legal aid practice and clear information about costs.
+Q: What should a solicitor do if a client's instructions would harm the justice system? | Follow the public interest Principles, which prevail over the client's instructions.
+Q: Which Principle is engaged by abusing court process to silence critics? | Principle 1: upholding the rule of law and the proper administration of justice.
 
 ## Professional boundaries
 S: Professional boundaries keep the relationship between solicitor and client, and between colleagues, appropriate. Crossing them can harm vulnerable people, create conflicts and damage public trust.
@@ -686,6 +916,16 @@ Q: Why should a solicitor not draft a will leaving themselves a significant gift
 Q: Name three boundary issues with clients. | Personal or sexual relationships, significant gifts, financial dealings, informal social media contact (any three).
 M1#law-u15-24-q1@1: A solicitor in a contentious divorce begins a romantic relationship with the client. What is the main concern? | An own-interest conflict and exploitation of a vulnerable client, contrary to the Principles | No concern if the client consents | Only a concern if the case is lost | Only an employment issue | Only a matter of confidentiality | Personal relationships during a retainer can compromise independence and exploit vulnerability.
 M2#law-u15-24-q2@2: A partner repeatedly makes sexual comments to a trainee at work events. What is the likely regulatory view? | A serious breach of integrity and public trust | A private matter outside SRA regulation | Acceptable behaviour at social events | Only an employment issue for the firm | Only a breach if reported to the police | The SRA and SDT treat workplace sexual misconduct seriously.
+Q: What is a professional boundary? | The limit keeping a professional relationship appropriate.
+Q: What is a vulnerable client? | A client at greater risk of harm because of their circumstances.
+Q: In which areas of practice are client relationships especially risky? | Family, criminal and immigration matters.
+Q: Should a solicitor start a personal relationship with a client during the retainer? | Generally no; it can create an own-interest conflict and exploit vulnerability.
+Q: What financial dealings with clients should be avoided? | Borrowing from or lending to clients, or business deals, without independent advice for the client.
+Q: What did Beckwith v SRA decide? | Regulation reaches private life only where conduct realistically touches the practice or standing of the profession.
+Q: What responsibilities do managers have for workplace boundaries? | Workplace culture and protecting junior staff.
+Q: Name four reasons a client may be vulnerable. | Age, illness, disability, distress or circumstances.
+Q: What extra care should be taken with vulnerable clients? | Care with communication, consent and boundaries, and considering safeguarding where there is a risk of harm.
+Q: Who is responsible for maintaining professional boundaries? | Always the professional.
 
 ## Ethical decision-making
 S: Ethical decision-making is a structured way of working out the right course of action when duties, interests and pressures conflict. It is assessed throughout the SQE and is part of everyday practice.
@@ -714,4 +954,14 @@ Q: What is the first step in ethical decision-making? | Identify the ethical iss
 Q: Name two sources of ethics help for solicitors. | The firm's COLP or ethics partner, the SRA's Professional Ethics helpline, the Law Society's practice advice service (any two).
 M1#law-u15-25-q1@1: A trainee's supervisor tells them to alter a date on a document "just this once". Can the trainee rely on the instruction as a defence? | No: individuals are responsible for their own conduct and must not take part in misconduct | Yes: trainees must follow orders | Yes, if the supervisor is a partner | Only if it's a minor date | Yes, if they note it on the file | Following instructions is no defence to clear misconduct.
 M3#law-u15-25-q2@2: A client offers a solicitor a large bonus if the case settles before trial, which might tempt the solicitor to push the client to settle. What should the solicitor do? | Recognise the conflict; put the client first | Accept the bonus and push for settlement | Accept, but hide weak points from the client | Refuse to settle the case under any terms | Pass the bonus on to the client instead | Personal incentives must not compromise independent advice.
+Q: What is an ethical dilemma? | A situation where duties, interests or values conflict.
+Q: What is speaking up? | Raising concerns about wrongdoing internally or with the regulator.
+Q: List the main steps of an ethical decision-making framework. | Identify the issue, the rules and the interests, consider options, apply the hierarchy, decide, act and document, and seek help.
+Q: Whose interests should be identified in an ethical dilemma? | The client, the court, third parties, the public, the firm and yourself.
+Q: What options should be considered in an ethical dilemma? | Declining to act, seeking more information, and getting advice.
+Q: Why should ethical reasoning be documented? | To record the decision and reasoning after deciding and acting.
+Q: Name four pressures that cause ethical failures. | Commercial pressure, long hours, hierarchy and deference, fear of admitting mistakes, and "everyone does it" culture.
+Q: Why is it worth raising ethical concerns early? | It protects clients, colleagues and yourself.
+Q: What test question helps when unsure about an ethical choice? | Would I be comfortable explaining this to the SRA, the court and the client?
+Q: Where is ethical decision-making assessed in the SQE? | Throughout the SQE.
 `;

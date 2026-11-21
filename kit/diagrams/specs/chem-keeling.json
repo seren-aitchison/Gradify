@@ -1,0 +1,141 @@
+{
+ "id": "chem-keeling",
+ "renderer": "graph",
+ "course": "chemistry",
+ "unit": "u17",
+ "lesson": "Climate chemistry",
+ "title": "Atmospheric carbon dioxide at Mauna Loa",
+ "caption": "Annual mean CO₂ has risen from about 317 ppm in 1960 to 414 ppm in 2020, and the rise is accelerating. The yearly wiggle is the Northern Hemisphere's plants taking up CO₂ in summer and releasing it in winter. Fitted to NOAA annual means; seasonal cycle ±3 ppm.",
+ "alt": "CO₂ concentration against year from 1958 to 2023: a curve rising from about 315 to 420 ppm with a small seasonal oscillation.",
+ "description": [
+  "1960: 317 ppm.",
+  "1990: 354 ppm.",
+  "2020: 414 ppm; a seasonal swing of about 6 ppm each year."
+ ],
+ "also": [
+  {
+   "course": "gcse",
+   "unit": "u05",
+   "lesson": "The Earth's atmosphere and climate change"
+  }
+ ],
+ "range": {
+  "x": [
+   1958,
+   2024
+  ],
+  "y": [
+   300,
+   430
+  ]
+ },
+ "ticks": [
+  [
+   1960,
+   1980,
+   2000,
+   2020
+  ],
+  [
+   300,
+   340,
+   380,
+   420
+  ]
+ ],
+ "grid": [
+  10,
+  20
+ ],
+ "axisLabels": [
+  "year",
+  "CO₂ / ppm"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "0.013381*(x-1960)^2+0.80857*(x-1960)+316.862+3*sin(6.283185*x)",
+   "colour": "a2",
+   "samples": 1600
+  }
+ ],
+ "points": [
+  {
+   "x": 1960,
+   "y": 316.9,
+   "colour": "a1"
+  },
+  {
+   "x": 1970,
+   "y": 325.7,
+   "colour": "a1"
+  },
+  {
+   "x": 1980,
+   "y": 338.8,
+   "colour": "a1"
+  },
+  {
+   "x": 1990,
+   "y": 354.4,
+   "colour": "a1"
+  },
+  {
+   "x": 2000,
+   "y": 369.7,
+   "colour": "a1"
+  },
+  {
+   "x": 2010,
+   "y": 389.9,
+   "colour": "a1"
+  },
+  {
+   "x": 2020,
+   "y": 414.2,
+   "colour": "a1"
+  }
+ ],
+ "checks": [
+  {
+   "type": "value",
+   "expr": "0.013381*(x-1960)^2+0.80857*(x-1960)+316.862+3*sin(6.283185*x)",
+   "x": 1960.5,
+   "between": [
+    314.4,
+    319.4
+   ],
+   "name": "1960: within the seasonal swing of the NOAA annual mean 316.9 ppm"
+  },
+  {
+   "type": "value",
+   "expr": "0.013381*(x-1960)^2+0.80857*(x-1960)+316.862+3*sin(6.283185*x)",
+   "x": 1980.5,
+   "between": [
+    336.3,
+    341.3
+   ],
+   "name": "1980: within the seasonal swing of the NOAA annual mean 338.8 ppm"
+  },
+  {
+   "type": "value",
+   "expr": "0.013381*(x-1960)^2+0.80857*(x-1960)+316.862+3*sin(6.283185*x)",
+   "x": 2000.5,
+   "between": [
+    367.2,
+    372.2
+   ],
+   "name": "2000: within the seasonal swing of the NOAA annual mean 369.7 ppm"
+  },
+  {
+   "type": "value",
+   "expr": "0.013381*(x-1960)^2+0.80857*(x-1960)+316.862+3*sin(6.283185*x)",
+   "x": 2020.5,
+   "between": [
+    411.7,
+    416.7
+   ],
+   "name": "2020: within the seasonal swing of the NOAA annual mean 414.2 ppm"
+  }
+ ]
+}

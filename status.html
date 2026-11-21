@@ -30,9 +30,44 @@
     .note { color: var(--mute); font-size: 14px; line-height: 1.5; }
     a { color: inherit; }
   </style>
-</head>
+
+  <!-- module-preload: written by scripts/preload-modules.mjs; run it after changing imports -->
+  <link rel="modulepreload" href="/kit/core/hubnav.js">
+  <link rel="modulepreload" href="/gradify.config.js">
+  <link rel="modulepreload" href="/kit/data/backend-check.js">
+  <link rel="modulepreload" href="/kit/ui/global-nav.js">
+  <link rel="modulepreload" href="/kit/core/menu-set.js">
+  <link rel="modulepreload" href="/kit/ui/store.js">
+  <link rel="modulepreload" href="/kit/ui/icons.js">
+  <link rel="modulepreload" href="/kit/ui/palette.js">
+  <link rel="modulepreload" href="/kit/ui/places.js">
+  <link rel="modulepreload" href="/kit/ui/feedback.js">
+  <link rel="modulepreload" href="/kit/ui/resources.js">
+  <link rel="modulepreload" href="/kit/ui/keys.js">
+  <link rel="modulepreload" href="/kit/core/site.js">
+  <link rel="modulepreload" href="/kit/ui/overlay.js">
+  <link rel="modulepreload" href="/kit/core/sites.js">
+  <link rel="modulepreload" href="/kit/core/colour.js">
+  <link rel="modulepreload" href="/kit/core/subnav.js">
+  <!-- /module-preload --></head>
 <body>
-  <main>
+  <div class="wrap hub-top">
+    <!-- hub-header: written by scripts/sync-headers.mjs; edit it there -->
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="bar glass hub-bar">
+      <a class="brand" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4641ff"/><stop offset=".35" stop-color="#f055dd"/><stop offset=".7" stop-color="#ff5600"/><stop offset="1" stop-color="#ffc002"/></linearGradient></defs><rect x=".75" y=".75" width="30.5" height="30.5" rx="9" fill="#0b0b0b" stroke="rgba(255,255,255,.22)" stroke-width="1.5"/><path d="M22.9 10.9A8.6 8.6 0 1 0 24.6 16H16.4" fill="none" stroke="url(#gg)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Gradify</a>
+      <nav class="sections" aria-label="Gradify"><a href="/explore.html">Explore</a><a href="/#find">Sites</a><a href="/journey.html">Journey</a><a href="/pricing.html">Pricing</a></nav>
+      <div class="right">
+        <a class="link hub-signin" href="/app.html#/account">Sign in</a>
+        <a class="btn btn-primary btn-sm lg hub-open" href="/app.html">Open Gradify</a>
+        <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      </div>
+      <nav class="menu" id="menu" aria-label="Menu" hidden><a href="/explore.html">Explore</a><a href="/#find">Sites</a><a href="/journey.html">Journey</a><a href="/pricing.html">Pricing</a><a class="hub-signin" href="/app.html#/account">Sign in</a><a class="btn btn-primary lg hub-open" href="/app.html">Open Gradify</a></nav>
+    </header>
+    <script type="module" src="/kit/core/hubnav.js"></script>
+    <!-- /hub-header -->
+  </div>
+  <main id="main">
     <h1>System status</h1>
     <p class="lede">This page checks, from your browser on this site, whether each part of Gradify's backend is actually working, not just whether its code exists. It only ever uses the site's public key. Anything it saves while testing is deleted again.</p>
     <div class="actions">
@@ -43,6 +78,18 @@
     <div id="out" aria-live="polite"></div>
     <p class="note" id="foot"></p>
   </main>
+    <div class="wrap hub-bottom">
+    <!-- hub-footer: written by scripts/sync-headers.mjs; edit it there -->
+    <footer class="hub-foot glass">
+      <div class="hub-foot-cols">
+        <div class="hub-foot-brand"><b>Gradify™</b><p>Turn your notes into flashcards checked against what you wrote, and revise them at the right time.</p></div>
+        <nav aria-label="Gradify"><b>Gradify</b><a href="/explore.html">Explore</a><a href="/#find">Sites</a><a href="/journey.html">Journey</a><a href="/pricing.html">Pricing</a><a href="/app.html">Open Gradify</a></nav>
+        <nav aria-label="About Gradify"><b>About</b><a href="/quality.html">Quality</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="mailto:hello@getgradify.com">Contact</a></nav>
+      </div>
+      <div class="hub-foot-base"><p><b>Also from the Gradify team:</b> Seren Aitchison (portfolio blog), BioFrontier, Eirova™, Erya™ and Vizeon™.</p><p>© <span class="hub-year">2026</span> Gradify™</p></div>
+    </footer>
+    <!-- /hub-footer -->
+  </div>
   <script src="kit/vendor/supabase/supabase.js"></script>
   <script type="module">
     import { SUPABASE_URL, SUPABASE_ANON_KEY } from "./gradify.config.js";

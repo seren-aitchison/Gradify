@@ -1,0 +1,31 @@
+{
+ "id": "chem-column",
+ "renderer": "apparatus",
+ "course": "chemistry",
+ "unit": "u19",
+ "lesson": "Column chromatography",
+ "title": "Column chromatography",
+ "caption": "A mixture of a non-polar hydrocarbon and a polar alcohol is loaded on top of a silica column and washed through with a non-polar eluent. The hydrocarbon barely sticks to the silica and comes off first; the alcohol hydrogen-bonds to the silica and comes off later.",
+ "alt": "A silica column with two separating bands: the non-polar compound lower down, the polar compound near the top.",
+ "description": [
+  "Lower band: the non-polar compound, eluting first.",
+  "Upper band: the polar alcohol, held back by the silica."
+ ],
+ "kind": "column",
+ "bands": [
+  {
+   "label": "alcohol",
+   "note": "polar",
+   "polarity": 3,
+   "y": 0.15,
+   "colour": "a2"
+  },
+  {
+   "label": "hydrocarbon",
+   "note": "non-polar",
+   "polarity": 1,
+   "y": 0.75,
+   "colour": "a1"
+  }
+ ]
+}

@@ -28,6 +28,16 @@ SRC: Joint Formulary Committee, British National Formulary | guidance | 2026 | h
 M1#pharmacy-u02-01-q1@1: What does pharmacokinetics describe? | What the body does to a drug | What a drug does to the body | How drugs are manufactured | How drugs are licensed | How drugs are priced | Pharmacokinetics covers absorption, distribution, metabolism and excretion.
 M2#pharmacy-u02-01-q2@2: Why are non-selective β-blockers avoided in asthma? | Blocking β2 receptors can cause bronchospasm | They raise blood glucose sharply | They cause asthma to develop | They block histamine release | They stimulate airway mucus glands | β2 receptors mediate bronchodilation, so blocking them can trigger bronchospasm.
 M2#pharmacy-u02-01-q3@1: Which drug acts by a physical or chemical means, not a protein target? | An antacid | Salbutamol | Omeprazole | Sertraline | Propranolol | Antacids neutralise acid chemically; the others act on receptors, enzymes or transporters.
+Q: Define pharmacokinetics. | What the body does to a drug: absorption, distribution, metabolism and excretion.
+Q: What three questions does pharmacokinetics ask? | How much drug reaches its target, for how long, and how it's removed.
+Q: Name three things that can happen at a drug's target in pharmacodynamics. | A receptor is activated or blocked, an enzyme inhibited, or a channel opened.
+Q: What four aspects of a medicine do pharmacodynamics and pharmacokinetics together explain? | The dose, the timing, the effects and the side effects.
+Q: Why are non-selective beta-blockers avoided in asthma? | Blocking beta-2 receptors can cause bronchospasm.
+Q: How can mechanisms predict an interaction between two QT-prolonging drugs? | Their risks of QT prolongation add together.
+Q: Name three drugs that act by physical or chemical means rather than on proteins. | Antacids, osmotic laxatives and chelating agents.
+Q: How do mechanisms help when counselling people? | They explain adverse reactions, so you can tell people what to expect.
+Q: Why is learning drugs as lists of names and doses a pitfall? | Without mechanisms you can't predict effects, interactions and harms.
+Q: Why does pharmacology sit at the centre of pharmacy? | It connects the chemistry of a molecule to what happens in a patient.
 
 ## Drug targets
 S: Most drugs work by binding to a protein in the body and changing what it does. Knowing the four families of drug target lets you group medicines by mechanism and reason about new ones.
@@ -54,6 +64,16 @@ SRC: Ritter JM and others, Rang and Dale's Pharmacology, 10th edition, Elsevier 
 M1#pharmacy-u02-02-q1@2: Which drug inhibits an enzyme? | Omeprazole | Salbutamol | Amlodipine | Sertraline | Atropine | Omeprazole inhibits the H⁺/K⁺-ATPase (proton pump), an enzyme.
 M2#pharmacy-u02-02-q2@2: Sertraline acts mainly on which kind of target? | A transporter | An ion channel | A nuclear receptor | An enzyme in the gut | A cell-surface antibody | It blocks the serotonin reuptake transporter (SERT).
 M2#pharmacy-u02-02-q3@1: Why can a selective drug cause side effects in other tissues? | Its target exists in those tissues too | Selective drugs have no side effects | It changes into a different drug | It always binds DNA | It's only absorbed by the liver | The same receptor in another tissue produces another effect, such as β2-mediated tremor.
+Q: Define a drug target. | The molecule, usually a protein, a drug binds to in order to produce its effect.
+Q: Define selectivity. | A drug's preference for one target over others; it is relative and often lost at high doses.
+Q: Which receptor does salbutamol activate? | Beta-2 receptors.
+Q: Which enzymes do omeprazole and ibuprofen inhibit? | Omeprazole inhibits the proton pump; ibuprofen inhibits cyclo-oxygenase.
+Q: Which channels do local anaesthetics block? | Sodium channels.
+Q: Which transporter does sertraline block? | The serotonin transporter.
+Q: Which pump does digoxin inhibit? | The Na⁺/K⁺-ATPase pump.
+Q: Why do many side effects appear at higher doses? | No drug is perfectly selective, so at higher doses it binds other targets.
+Q: Name two sources of a drug's side effects. | The same target in another tissue, and other targets reached at higher doses.
+Q: Why is it a mistake to assume a selective drug has no effect on other targets? | Selectivity is a matter of degree.
 
 ## Receptors and receptor families
 S: Receptors are the body's sensors for its own signals, such as hormones and neurotransmitters. Drugs that mimic or block those signals act through four structural families, which differ in how fast and how they work.
@@ -81,6 +101,16 @@ SRC: Alexander SPH and others, The Concise Guide to Pharmacology 2023/24, Britis
 M2#pharmacy-u02-03-q1@1: Which receptor family acts fastest? | Ligand-gated ion channels | G protein-coupled receptors | Kinase-linked receptors | Nuclear receptors | They all act equally fast | Ligand-gated channels open within milliseconds of binding.
 M2#pharmacy-u02-03-q2@2: Opioid receptors belong to which family? | G protein-coupled receptors | Ligand-gated ion channels | Kinase-linked receptors | Nuclear receptors | Transporters | μ, δ and κ opioid receptors are G protein-coupled receptors, signalling mainly through Gi/Go.
 M3#pharmacy-u02-03-q3@1: Why does prednisolone take hours to reduce inflammation? | It acts on nuclear receptors to change gene transcription | It must first be converted to insulin | It only works after it's excreted | It blocks ion channels slowly | It needs to reach the bone marrow first | Nuclear receptor effects depend on new gene transcription and protein synthesis.
+Q: Define a receptor. | A protein that recognises a signalling molecule and converts binding into a cellular response.
+Q: Define a ligand. | Any molecule that binds to a receptor, whether it activates it or not.
+Q: What happens when a ligand binds a ligand-gated ion channel, and how fast? | A channel opens, within milliseconds.
+Q: Name three G protein-coupled receptors. | Beta-adrenoceptors, muscarinic receptors and opioid receptors.
+Q: What do kinase-linked receptors activate when bound, and over what timescale? | Enzyme activity, often tyrosine kinase, over minutes to hours.
+Q: Name two examples of kinase-linked receptors. | Insulin receptors and growth factor receptors.
+Q: Where are nuclear receptors and what do they change? | Inside the cell; they change gene transcription.
+Q: What does knowing a receptor's family predict? | The speed of the response and how drugs can be designed.
+Q: How do kinase inhibitors work in some cancers? | They block the enzyme part of kinase-linked receptors.
+Q: What are the basis of drug selectivity within a receptor family? | Receptor subtypes, such as beta-1, beta-2, beta-3 or M1 to M5.
 
 ## Agonists and antagonists
 S: A drug that binds a receptor either activates it (an agonist) or prevents activation (an antagonist). Partial agonists and inverse agonists sit between, and the kind of antagonism decides whether it can be overcome.
@@ -108,6 +138,16 @@ SRC: Joint Formulary Committee, British National Formulary: naloxone hydrochlori
 M2#pharmacy-u02-04-q1@1: Buprenorphine at μ-opioid receptors is best described as what? | A partial agonist | A full agonist | A competitive antagonist | An inverse agonist | An enzyme inhibitor | It activates μ receptors but with a lower maximum effect than full agonists.
 M2#pharmacy-u02-04-q2@2: Why might naloxone need repeating after an overdose of a long-acting opioid? | Its effect can wear off before the opioid's | It becomes an agonist after an hour | It is excreted unchanged in seconds | It only works on the second dose | It destroys opioid receptors | Naloxone acts for a shorter time than many opioids, so respiratory depression can return.
 M3#pharmacy-u02-04-q3@2: Aspirin's antiplatelet effect lasts for days after a single dose. Why? | It irreversibly inhibits platelet cyclo-oxygenase | It is stored in fat for weeks | It is a competitive antagonist | It is renally cleared slowly | It activates thromboxane receptors | Platelets have no nucleus to make new COX, so the effect lasts their lifespan (about 7 to 10 days).
+Q: Define an agonist. | A drug that binds a receptor and activates it.
+Q: Define an antagonist. | A drug that binds a receptor without activating it, blocking agonists.
+Q: Give an example of a full agonist and its receptor. | Morphine at mu-opioid receptors.
+Q: What effect can a partial agonist have on a full agonist? | It can reduce the full agonist's effect.
+Q: Give an example of a partial agonist. | Buprenorphine at mu receptors.
+Q: What does an inverse agonist do? | Reduces a receptor's background (constitutive) activity.
+Q: How does irreversible antagonism affect the maximum response? | It reduces the maximum response, and more agonist can't overcome it.
+Q: Why does aspirin's antiplatelet effect last the platelet's lifetime? | It irreversibly acetylates cyclo-oxygenase.
+Q: Why may repeated naloxone doses or an infusion be needed after overdose? | Naloxone's action is shorter than many opioids', so opioid effects can return.
+Q: What can naloxone precipitate in opioid-dependent people? | Acute withdrawal.
 
 ## Dose-response relationships
 S: As the dose of a drug increases, the response increases until it reaches a maximum. The shape of this relationship explains why doubling a dose rarely doubles the benefit but can increase harm.
@@ -133,6 +173,16 @@ SRC: Ritter JM and others, Rang and Dale's Pharmacology, 10th edition, Elsevier 
 M1#pharmacy-u02-05-q1@2: Which drug has a narrow therapeutic index? | Lithium | Paracetamol at usual doses | Amoxicillin | Cetirizine | Simvastatin | Lithium's toxic levels are close to its therapeutic range, so levels are monitored.
 M2#pharmacy-u02-05-q2@1: Near the top of a dose-response curve, what does a higher dose mostly add? | Little extra effect but more risk | A proportional extra effect | A completely new effect | Lower toxicity | A shorter half-life | The response is close to its maximum, so extra drug mainly increases side effects.
 M2#pharmacy-u02-05-q3@2: Why is a narrow therapeutic index clinically important? | Small changes in level can cause harm or failure | It means the drug acts very quickly | It means the drug can't be overdosed | It makes the drug safe in pregnancy | It removes the need for monitoring | When toxic and effective levels are close, interactions or kidney changes matter.
+Q: Define therapeutic index. | The ratio between the dose causing toxicity and the dose producing the wanted effect.
+Q: What does a graded dose-response curve plot? | The size of a response against concentration in one person or tissue.
+Q: What shape is a graded curve plotted against log concentration? | S-shaped (sigmoid).
+Q: What does a quantal dose-response curve plot? | The proportion of a population showing an all-or-nothing response against dose.
+Q: Why does doubling a dose rarely double the benefit? | Near the top of the curve the response is close to its maximum, so extra drug adds little effect.
+Q: What does a narrow therapeutic index mean? | The toxic dose and the effective dose are close together.
+Q: What do narrow therapeutic index drugs need? | Careful dosing and often monitoring of levels.
+Q: What three changes can cause toxicity or loss of effect with narrow therapeutic index drugs? | Small changes in absorption, interactions or kidney function.
+Q: Name two narrow therapeutic index drugs other than digoxin, lithium and warfarin. | For example ciclosporin and aminoglycosides (also phenytoin, theophylline).
+Q: What does increasing a dose near the top of the curve add more of? | Harm rather than benefit.
 
 ## Affinity, efficacy and potency
 S: Three terms describe how a drug interacts with its receptor: affinity (how well it binds), efficacy (how well it activates) and potency (how much is needed). They are often confused, and the difference matters when comparing drugs.
@@ -158,6 +208,16 @@ SRC: Ritter JM and others, Rang and Dale's Pharmacology, 10th edition, Elsevier 
 M2#pharmacy-u02-06-q1@1: Antagonists have which property? | Affinity without efficacy | Efficacy without affinity | Both high affinity and efficacy | Neither property | Only potency | They bind the receptor but don't activate it.
 M2#pharmacy-u02-06-q2@2: Drug A needs 1 mg and drug B 10 mg for the same maximum effect. What follows? | A is more potent; both are equally effective | A is more effective than B | B is more potent than A | A has lower affinity than B | B can't reach the maximum | Potency concerns dose, not the size of the maximum effect.
 M3#pharmacy-u02-06-q3@1: Why do loop diuretics produce more diuresis than thiazides at any dose? | Loop diuretics have greater efficacy | Thiazides are more potent | Loop diuretics have lower affinity | Thiazides are partial antagonists | Loop diuretics are taken more often | Their maximum effect (Emax) is higher, which reflects efficacy, not potency.
+Q: Define affinity. | How strongly a drug binds to its receptor.
+Q: Define efficacy. | The ability of a bound drug to activate the receptor and produce a response.
+Q: Define potency. | The amount of drug needed for a given effect, often measured as EC50.
+Q: On which two properties does potency depend? | Affinity and efficacy.
+Q: How do full and partial agonists differ in efficacy? | Full agonists have high efficacy; partial agonists lower.
+Q: Why isn't a more potent drug automatically more effective? | If both reach the same maximum, they're equally effective at appropriate doses.
+Q: Why do loop diuretics produce more diuresis than thiazides at any thiazide dose? | Loop diuretics have a greater maximum effect (Emax), reflecting greater efficacy.
+Q: Why can high potency increase risk? | Doses are small and easily confused, for example fentanyl compared with morphine.
+Q: What is potency about, and what is efficacy about? | Potency is about dose size; efficacy is about the maximum effect.
+Q: Why is it wrong to equate 'stronger' with 'works better'? | A less potent drug at an adequate dose can work just as well.
 
 ## Tolerance, desensitisation and dependence
 S: Repeated exposure to a drug can reduce its effect (tolerance) and lead the body to adapt so that stopping causes withdrawal (dependence). These processes shape how drugs such as opioids, benzodiazepines and nitrates are used.
@@ -185,6 +245,16 @@ SRC: NICE NG215, Medicines associated with dependence or withdrawal symptoms: sa
 M2#pharmacy-u02-07-q1@1: Why do isosorbide mononitrate regimens include a nitrate-free period? | To prevent tolerance | To reduce the cost | To avoid kidney damage | To allow sleep | To improve absorption | Continuous nitrate exposure causes tolerance within about a day.
 M2#pharmacy-u02-07-q2@2: Which statement about dependence is correct? | It can occur without addiction | It always means addiction | It only happens with illegal drugs | It never causes withdrawal | It prevents tolerance | Physical dependence is an adaptation; addiction is compulsive use despite harm.
 M2#pharmacy-u02-07-q3@2: What is the safest way to stop a long-term benzodiazepine? | A gradual, agreed dose reduction | Stopping it immediately | Swapping to alcohol | Doubling the dose then stopping | Missing alternate days | Abrupt withdrawal can cause rebound anxiety, insomnia and seizures; NICE NG215 advises planned tapering.
+Q: Define tolerance. | A reduced response after repeated use, so a higher dose is needed for the same effect.
+Q: Define dependence. | An adaptation in which stopping the drug causes a withdrawal syndrome.
+Q: What is receptor desensitisation? | Receptors become less responsive or are removed from the cell surface after repeated stimulation.
+Q: What is pharmacokinetic tolerance? | The body clears the drug faster, for example through enzyme induction.
+Q: What is physiological adaptation as a tolerance mechanism? | Opposing mechanisms come into play.
+Q: How quickly does nitrate tolerance develop? | Within a day of continuous exposure.
+Q: Name four drug types that can cause physical dependence. | Opioids, benzodiazepines, alcohol and corticosteroids (also some antidepressants).
+Q: Define addiction. | A behavioural pattern of compulsive use despite harm.
+Q: How should dependence-producing drugs be stopped? | With a gradual, agreed reduction plan.
+Q: What is the danger of stopping a benzodiazepine or long-term corticosteroid abruptly? | It can cause dangerous withdrawal.
 
 ## G protein-coupled receptors and second messengers
 S: G protein-coupled receptors (GPCRs) are the largest family of drug targets. Binding switches on a G protein, which changes the level of a second messenger inside the cell and amplifies the signal.
@@ -211,6 +281,16 @@ SRC: Alexander SPH and others, The Concise Guide to Pharmacology 2023/24: G prot
 M2#pharmacy-u02-08-q1@1: Activating β2 receptors in airway muscle raises which second messenger? | cAMP | IP3 | cGMP | Diacylglycerol | Nitric oxide | β2 receptors couple to Gs, which stimulates adenylyl cyclase to make cAMP.
 M2#pharmacy-u02-08-q2@2: M3 muscarinic receptors on glands increase secretion through which G protein? | Gq | Gs | Gi | No G protein | A kinase-linked pathway | M3 receptors couple to Gq, raising calcium via IP3.
 M3#pharmacy-u02-08-q3@1: Opioid receptors reduce neuronal excitability partly by doing what? | Lowering cAMP via Gi | Raising cAMP via Gs | Opening sodium channels | Activating nuclear receptors | Inhibiting the proton pump | Opioid receptors couple to Gi/Go, which inhibit adenylyl cyclase and open potassium channels.
+Q: Define a second messenger. | A small molecule inside the cell, such as cAMP or calcium, that carries a receptor's signal onwards.
+Q: What does Gs do to adenylyl cyclase and cAMP? | Stimulates adenylyl cyclase, raising cAMP.
+Q: Why does beta-adrenoceptor stimulation cause bronchodilation? | Gs raises cAMP in airway smooth muscle, causing relaxation.
+Q: What does Gi do, and which receptors use it? | Inhibits adenylyl cyclase, lowering cAMP; opioid and alpha-2 receptors use it.
+Q: Which enzyme does Gq activate? | Phospholipase C.
+Q: Name two receptors that use Gq, and the response. | Alpha-1 adrenoceptors and M3 muscarinic receptors; smooth muscle contraction and gland secretion.
+Q: How do GPCRs amplify a signal? | One receptor activates many G proteins, and each enzyme makes many second messenger molecules.
+Q: How does sildenafil act downstream of receptors? | As a phosphodiesterase inhibitor, slowing the breakdown of cyclic nucleotides.
+Q: What proportion of medicines act on GPCRs? | Around a third.
+Q: Name three drug groups that act on GPCRs. | Beta-blockers, antihistamines and opioids (also many antipsychotics).
 
 ## Ion channels as drug targets
 S: Ion channels control the electrical activity of nerves, muscle and the heart. Drugs that open, block or modulate them treat epilepsy, arrhythmias, hypertension and pain, and also cause some of the most serious adverse effects.
@@ -237,6 +317,16 @@ SRC: MHRA, Drug Safety Update: citalopram and escitalopram, QT interval prolonga
 M2#pharmacy-u02-09-q1@1: Sulfonylureas increase insulin secretion by acting on which channel? | ATP-sensitive potassium channels | L-type calcium channels | Voltage-gated sodium channels | GABA-A chloride channels | hERG potassium channels | They close K-ATP channels in β cells, depolarising them and releasing insulin.
 M2#pharmacy-u02-09-q2@2: Which combination most raises the risk of QT prolongation? | Clarithromycin with citalopram | Paracetamol with ibuprofen | Amlodipine with atorvastatin | Omeprazole with metformin | Amoxicillin with paracetamol | Both prolong the QT interval, so their effects add.
 M3#pharmacy-u02-09-q3@1: Why do verapamil and amlodipine have different main effects? | Verapamil acts more on the heart; amlodipine on blood vessels | Amlodipine blocks sodium channels | Verapamil is a β-blocker | Amlodipine only acts in the gut | They act on different receptor families | Both block L-type channels, but with different tissue selectivity.
+Q: Define a voltage-gated channel. | An ion channel that opens or closes when the membrane voltage changes.
+Q: Name a local anaesthetic and an antiepileptic that block sodium channels. | Lidocaine and carbamazepine.
+Q: How does amlodipine's calcium channel action differ from verapamil and diltiazem? | Amlodipine acts mainly on vessels; verapamil and diltiazem act on the heart as well.
+Q: How do sulfonylureas release insulin? | They close ATP-sensitive potassium channels in pancreatic beta cells.
+Q: How do benzodiazepines affect GABA-A receptors? | They enhance GABA-A receptor chloride currents.
+Q: What arrhythmia can hERG block cause? | Torsades de pointes.
+Q: Name three drugs that block hERG channels. | For example macrolides, methadone and citalopram (also some antipsychotics).
+Q: Which electrolyte disturbances add to QT risk? | Low potassium or low magnesium.
+Q: Name four conditions treated with ion channel drugs. | Epilepsy, arrhythmias, hypertension and pain.
+Q: Why are ion channel drugs important for safety? | They cause some of the most serious adverse effects, such as QT prolongation.
 
 ## Enzymes as drug targets
 S: Many medicines work by inhibiting an enzyme, stopping the production of a harmful product or the breakdown of a useful one. Whether inhibition is reversible decides how long the effect lasts.
@@ -265,6 +355,16 @@ SRC: Joint Formulary Committee, British National Formulary: omeprazole | guidanc
 M1#pharmacy-u02-10-q1@2: Which enzyme does allopurinol inhibit? | Xanthine oxidase | Cyclo-oxygenase | HMG-CoA reductase | Angiotensin-converting enzyme | Acetylcholinesterase | Inhibiting xanthine oxidase reduces uric acid production.
 M2#pharmacy-u02-10-q2@1: Why does aspirin's effect on platelets outlast the drug? | It irreversibly inhibits COX | It's stored in red cells | It has a half-life of a week | It reversibly blocks receptors | It's converted to warfarin | Irreversible acetylation of COX lasts until new platelets are made.
 M2#pharmacy-u02-10-q3@2: Donepezil helps in Alzheimer's disease by inhibiting which enzyme? | Acetylcholinesterase | Monoamine oxidase | Dopa decarboxylase | Cyclo-oxygenase | Xanthine oxidase | Less acetylcholine breakdown increases cholinergic transmission.
+Q: Define irreversible inhibition. | Permanent inactivation of an enzyme, so the effect lasts until new enzyme is made.
+Q: How do NSAIDs and aspirin differ in their action on COX? | NSAIDs inhibit COX reversibly; aspirin irreversibly acetylates it.
+Q: What do ACE inhibitors block? | Conversion of angiotensin I to angiotensin II.
+Q: Name two ACE inhibitors. | Ramipril and lisinopril.
+Q: Name two acetylcholinesterase inhibitors and their uses. | Donepezil in dementia and pyridostigmine in myasthenia gravis.
+Q: Which enzyme does allopurinol inhibit, and with what effect? | Xanthine oxidase, lowering uric acid.
+Q: How long does a reversible inhibitor work? | While the drug is present.
+Q: Name three risks of long-term PPI use. | Clostridioides difficile infection, low magnesium and fracture risk.
+Q: Through which enzyme does omeprazole interact with clopidogrel? | CYP2C19.
+Q: Why should long-term PPI use be reviewed regularly? | Long-term use has risks, so step down where possible.
 
 ## Transporters as drug targets
 S: Transporters carry ions and molecules across membranes, against gradients if they use energy. Drugs that block them treat depression, heart failure, diabetes and oedema, and transporters also shape how drugs are absorbed and excreted.
@@ -292,6 +392,16 @@ SRC: Joint Formulary Committee, British National Formulary: digoxin and sertrali
 M2#pharmacy-u02-11-q1@1: Dapagliflozin lowers blood glucose by blocking which transporter? | SGLT2 in the kidney | The serotonin transporter | The Na⁺/K⁺-ATPase | GLUT4 in muscle | P-glycoprotein in the gut | It reduces glucose reabsorption so more glucose is excreted in urine.
 M2#pharmacy-u02-11-q2@2: A patient on digoxin starts a loop diuretic. What should you watch for? | Low potassium increasing toxicity | Higher blood sugar | Lower digoxin absorption | Increased appetite | Hair loss | Loop diuretics can lower potassium, which increases digoxin's effect and toxicity.
 M3#pharmacy-u02-11-q3@2: Why can amiodarone raise digoxin levels? | It inhibits P-glycoprotein and reduces digoxin clearance | It induces liver enzymes | It is a potassium supplement | It speeds up kidney excretion | It blocks digoxin absorption | Inhibiting P-gp transport reduces digoxin excretion, so levels rise; the dose may need reducing (check the BNF).
+Q: Define a reuptake transporter. | A transporter that clears a neurotransmitter from the synapse back into the neuron.
+Q: Define the Na⁺/K⁺-ATPase. | The pump that moves sodium out of and potassium into cells, using ATP.
+Q: What are the effects of digoxin's inhibition of the Na⁺/K⁺-ATPase in the heart? | Increased intracellular calcium and contractility, and slowed AV conduction.
+Q: Which transporter do thiazides block? | The Na⁺/Cl⁻ cotransporter.
+Q: What do SGLT2 inhibitors such as dapagliflozin block? | Glucose reabsorption in the kidney.
+Q: What does P-glycoprotein do? | Pumps drugs out of cells, affecting absorption and excretion.
+Q: What happens to digoxin levels when P-glycoprotein is inhibited? | They rise.
+Q: Name four symptoms of digoxin toxicity. | Nausea, visual disturbance, confusion and arrhythmias.
+Q: What are the two main indications for digoxin? | Rate control in atrial fibrillation, and heart failure.
+Q: Name two serious risks of sertraline. | Increased bleeding risk with NSAIDs or anticoagulants, and serotonin syndrome with other serotonergic drugs (also low sodium).
 
 ## Nuclear receptors
 S: Nuclear receptors sit inside the cell and act as transcription factors when a hormone or drug binds. They mediate the effects of corticosteroids, thyroid hormones, sex hormones and some diabetes and lipid drugs.
@@ -322,6 +432,16 @@ SRC: NHS England and Society for Endocrinology, National Patient Safety Alert: s
 M2#pharmacy-u02-12-q1@1: Which drug acts through a nuclear receptor? | Levothyroxine | Salbutamol | Omeprazole | Lidocaine | Sertraline | Thyroid hormone acts on intracellular thyroid receptors that regulate gene transcription.
 M2#pharmacy-u02-12-q2@2: What is the main risk of stopping prednisolone suddenly after months of use? | Adrenal crisis | Low blood glucose only | A rash | Bronchospasm | Raised potassium only | The adrenal glands are suppressed and can't respond to stress at once.
 M3#pharmacy-u02-12-q3@1: Pioglitazone and fibrates have what in common? | Both act on PPAR nuclear receptors | Both block ion channels | Both inhibit HMG-CoA reductase | Both block β-receptors | Both are insulin analogues | Pioglitazone is a PPAR-γ agonist and fibrates are PPAR-α agonists.
+Q: Define a nuclear receptor. | A receptor inside the cell that, when bound, regulates the transcription of genes.
+Q: Define a glucocorticoid. | A steroid such as prednisolone acting on glucocorticoid receptors, with anti-inflammatory and metabolic effects.
+Q: How do ligands reach nuclear receptors? | They are lipid-soluble, cross the cell membrane and bind the receptor in the cytoplasm or nucleus.
+Q: Why can nuclear receptor effects last beyond the drug's presence? | The receptor complex switches genes on or off, which takes time to reverse.
+Q: Name three glucocorticoids. | Prednisolone, hydrocortisone and dexamethasone.
+Q: On which receptors does levothyroxine act? | Thyroid receptors.
+Q: Name three sex hormones or modulators acting on nuclear receptors. | Oestrogens, progestogens and tamoxifen.
+Q: Which PPAR subtype do fibrates act on? | PPAR-alpha.
+Q: Why does stopping long-term steroids suddenly risk adrenal crisis? | Long-term use suppresses the body's own cortisol production.
+Q: What do people on long-term steroids need? | A steroid card and sick-day guidance.
 
 ## The autonomic nervous system
 S: The autonomic nervous system controls involuntary functions: heart rate, blood pressure, airways, gut, bladder and glands. Many common drugs act on its two branches, so knowing its receptors predicts their effects and side effects.
@@ -351,6 +471,16 @@ SRC: Ritter JM and others, Rang and Dale's Pharmacology, 10th edition, Elsevier 
 M1#pharmacy-u02-13-q1@1: Which receptor mediates parasympathetic slowing of the heart? | M2 muscarinic | β1 adrenoceptor | α1 adrenoceptor | Nicotinic | H2 histamine | Acetylcholine acting on M2 receptors in the heart slows the rate.
 M2#pharmacy-u02-13-q2@2: An antimuscarinic drug is given. What happens to heart rate? | It rises | It falls | It stops | No change | It becomes irregular only | Blocking parasympathetic (M2) tone leaves sympathetic drive unopposed.
 M2#pharmacy-u02-13-q3@2: Which receptor relaxes the bladder's detrusor muscle? | β3 adrenoceptor | M3 muscarinic | α1 adrenoceptor | Nicotinic | H1 histamine | Mirabegron, a β3 agonist, relaxes the detrusor in overactive bladder.
+Q: Define the sympathetic nervous system. | The fight or flight branch; its post-ganglionic transmitter is mainly noradrenaline.
+Q: Which receptor and transmitter operate at autonomic ganglia? | Acetylcholine on nicotinic receptors.
+Q: What does the adrenal medulla release into the blood? | Adrenaline.
+Q: Which sympathetic nerves use acetylcholine? | Sympathetic nerves to sweat glands.
+Q: How do beta-2 and M3 receptors affect the airways? | Beta-2 dilates them; M3 constricts them and increases secretions.
+Q: What effect does M2 stimulation have on the heart? | It slows the heart.
+Q: What does alpha-1 stimulation do to most blood vessels? | Constricts them.
+Q: How do the two branches act on the bladder? | Sympathetic: beta-3 relaxes the detrusor and alpha-1 contracts the sphincter; parasympathetic: M3 contracts the detrusor.
+Q: How do alpha-1 and M3 receptors affect the pupil? | Alpha-1 dilates the pupil; M3 constricts it.
+Q: Why does an antimuscarinic cause tachycardia? | Blocking parasympathetic tone leaves sympathetic tone unopposed.
 
 ## Cholinergic pharmacology
 S: Drugs that mimic, block or prolong acetylcholine treat conditions from overactive bladder to myasthenia gravis and dementia. Their side effects follow directly from the muscarinic and nicotinic receptors they affect.
@@ -377,6 +507,16 @@ SRC: NICE NG97, Dementia: assessment, management and support | guidance | 2018 |
 M2#pharmacy-u02-14-q1@1: Which drug is an anticholinesterase used in myasthenia gravis? | Pyridostigmine | Oxybutynin | Atropine | Ipratropium | Hyoscine | Pyridostigmine increases acetylcholine at the neuromuscular junction.
 M2#pharmacy-u02-14-q2@2: Why is anticholinergic burden a concern in older people? | It's linked to confusion, falls and cognitive decline | It only affects heart rate | It lowers blood pressure safely | It improves memory | It causes weight gain only | The combined antimuscarinic effect of several drugs worsens cognition and increases falls.
 M3#pharmacy-u02-14-q3@2: A man with dementia on donepezil starts oxybutynin. What's the problem? | They have opposing actions and burden increases | Oxybutynin increases donepezil absorption | They both cause diarrhoea only | Donepezil blocks oxybutynin's metabolism | There's no concern | Donepezil boosts acetylcholine while oxybutynin blocks it, and antimuscarinics can worsen confusion.
+Q: Define anticholinergic burden. | The cumulative antimuscarinic effect of all a person's medicines, linked to confusion and falls in older people.
+Q: Name two antimuscarinics used for overactive bladder. | Oxybutynin and solifenacin.
+Q: Name two antimuscarinics used for the airways. | Ipratropium and tiotropium.
+Q: For what is hyoscine used? | Reducing secretions and motion sickness.
+Q: Name three anticholinesterases used in dementia. | Donepezil, rivastigmine and galantamine.
+Q: Where do neuromuscular blockers act? | On nicotinic receptors at the neuromuscular junction during anaesthesia.
+Q: What does the phrase 'dry as a bone, red as a beet, blind as a bat, mad as a hatter' describe? | Antimuscarinic effects: dry mouth, flushing, blurred vision and confusion.
+Q: Name three drug classes with antimuscarinic activity. | Tricyclic antidepressants, some antihistamines and antipsychotics.
+Q: Why is an antimuscarinic for overactive bladder a problem with a cholinesterase inhibitor? | The two work against each other and anticholinergic burden rises.
+Q: Name two indications for atropine. | Symptomatic bradycardia and organophosphate poisoning (also reducing secretions).
 
 ## Adrenergic pharmacology
 S: Adrenoceptors (α1, α2, β1, β2, β3) respond to noradrenaline and adrenaline. Drugs that stimulate or block them are used for asthma, hypertension, heart failure, anaphylaxis and prostate symptoms.
@@ -407,6 +547,16 @@ SRC: Joint Formulary Committee, British National Formulary: beta-adrenoceptor bl
 M1#pharmacy-u02-15-q1@1: Which receptor does salbutamol stimulate? | β2 | β1 | α1 | α2 | M3 | Salbutamol is a β2 agonist, relaxing airway smooth muscle.
 M2#pharmacy-u02-15-q2@2: What is a common problem with α1-blockers such as doxazosin? | Postural hypotension | Bronchospasm | Hyperkalaemia | Weight loss | Diarrhoea | Blocking α1 vasoconstriction can cause dizziness on standing, especially after the first dose.
 M3#pharmacy-u02-15-q3@2: A man with asthma is prescribed propranolol for migraine. What should the pharmacist do? | Contact the prescriber: it's contraindicated | Supply it with a spacer | Supply it and advise rest | Halve the dose | Swap to salbutamol | Non-selective β-blockade can cause life-threatening bronchospasm in asthma.
+Q: Define a cardioselective beta-blocker and give two examples. | One relatively selective for beta-1 receptors in the heart, such as bisoprolol and atenolol.
+Q: What side effect can alpha-1 blockers cause? | Postural hypotension.
+Q: What are tamsulosin and doxazosin used for? | Lowering blood pressure or relaxing prostate muscle.
+Q: How does clonidine lower blood pressure? | As an alpha-2 agonist, it inhibits presynaptic noradrenaline release.
+Q: Name three conditions treated by cardioselective beta-blockers such as bisoprolol. | Angina, heart failure and AF.
+Q: Name two beta-2 agonists used in asthma and COPD. | Salbutamol and formoterol.
+Q: What is the first-line treatment of anaphylaxis and by which route? | Adrenaline, given intramuscularly.
+Q: Name three side effects of beta-blockers apart from bronchospasm. | Bradycardia, fatigue and cold extremities.
+Q: Why shouldn't beta-blockers be stopped abruptly in angina? | Rebound can worsen symptoms.
+Q: What does frequent salbutamol use signal? | Poor control needing review.
 
 ## Histamine and its antagonists
 S: Histamine is released from mast cells in allergy and from stomach cells to drive acid secretion. Antihistamines that block H1 receptors treat allergic conditions; H2 antagonists once dominated acid suppression.
@@ -437,6 +587,16 @@ SRC: Resuscitation Council UK, Emergency treatment of anaphylaxis: guidelines fo
 M1#pharmacy-u02-16-q1@1: Which receptor does famotidine block? | H2 | H1 | β2 | M3 | 5-HT3 | Famotidine is an H2 antagonist that reduces gastric acid.
 M2#pharmacy-u02-16-q2@2: Which antihistamine is least likely to cause drowsiness? | Fexofenadine | Chlorphenamine | Promethazine | Hydroxyzine | Diphenhydramine | Fexofenadine is a second-generation antihistamine with little central penetration.
 M2#pharmacy-u02-16-q3@2: What is the first-line drug treatment for anaphylaxis? | Intramuscular adrenaline | Oral cetirizine | IV chlorphenamine | Oral prednisolone | Inhaled salbutamol | Adrenaline reverses the life-threatening features; antihistamines are not first line.
+Q: Define an H1 antihistamine. | A drug that blocks H1 receptors, reducing allergic symptoms.
+Q: From which two sources is histamine released? | From mast cells in allergy and from stomach cells to drive acid secretion.
+Q: Name four effects mediated by H1 receptors. | Itch, sneezing, vasodilation and increased capillary permeability (also bronchoconstriction).
+Q: Where do H3 and H4 receptors have roles? | In the brain and immune cells.
+Q: Name two first-generation H1 antihistamines. | Chlorphenamine and promethazine.
+Q: Name three second-generation H1 antihistamines. | Cetirizine, loratadine and fexofenadine.
+Q: What are second-generation antihistamines first choice for? | Allergic rhinitis and urticaria.
+Q: Name an H2 antagonist and why it's used less now. | Famotidine; PPIs are now used more for acid suppression.
+Q: Why are sedating antihistamines unsuitable for regular use for sleeplessness in older people? | Next-day drowsiness and antimuscarinic effects.
+Q: What should be done if anaphylaxis is suspected? | Give adrenaline and call for help, not an oral antihistamine.
 
 ## Eicosanoids and inflammation
 S: Prostaglandins, thromboxanes and leukotrienes are lipid mediators made from arachidonic acid. They drive pain, fever, inflammation, platelet aggregation and stomach protection, which explains both the benefits and harms of NSAIDs and aspirin.
@@ -466,6 +626,16 @@ SRC: MHRA, Drug Safety Update: high-dose ibuprofen, cardiovascular risk | guidan
 M2#pharmacy-u02-17-q1@1: Why do NSAIDs cause stomach ulcers? | They reduce protective prostaglandins | They increase histamine release | They dissolve the stomach lining directly | They block H2 receptors | They raise stomach pH | COX-1 prostaglandins protect the gastric mucosa.
 M2#pharmacy-u02-17-q2@2: Which drug blocks leukotriene receptors in asthma? | Montelukast | Ibuprofen | Salbutamol | Cetirizine | Celecoxib | Montelukast is a leukotriene receptor antagonist.
 M3#pharmacy-u02-17-q3@2: Why are COX-2 selective NSAIDs not risk-free? | They carry cardiovascular risk | They cause more GI bleeding | They are irreversible | They block thromboxane completely | They can't relieve pain | Fewer GI effects, but cardiovascular events remain a concern.
+Q: From what are eicosanoids made? | Arachidonic acid, released from cell membranes.
+Q: Define leukotriene. | An eicosanoid made by lipoxygenase, causing bronchoconstriction and inflammation.
+Q: How do COX-1 and COX-2 differ? | COX-1 is constitutive; COX-2 is inducible.
+Q: Name four roles of prostaglandins. | Pain, fever, inflammation and gastric protection (also renal blood flow).
+Q: Why do NSAIDs cause ulcers and bleeding? | Blocking COX-1 in the stomach reduces mucosal protection.
+Q: Why can NSAIDs cause acute kidney injury? | Blocking COX-1 in the kidney reduces renal blood flow.
+Q: What advantage and risk do COX-2 selective inhibitors such as celecoxib carry? | Fewer GI problems but cardiovascular risk.
+Q: How does low-dose aspirin produce an antiplatelet effect? | It irreversibly blocks platelet thromboxane.
+Q: In which people can NSAIDs worsen asthma? | A minority of people with NSAID sensitivity.
+Q: What counselling about food applies to ibuprofen? | Take it with or after food.
 
 ## Neurotransmitters in the brain
 S: Psychiatric and neurological medicines act on a handful of brain transmitter systems: dopamine, serotonin, noradrenaline, GABA, glutamate and acetylcholine. Their pathways explain both treatment effects and many side effects.
@@ -493,6 +663,16 @@ SRC: Stahl SM, Stahl's Essential Psychopharmacology, 5th edition, Cambridge Univ
 M2#pharmacy-u02-18-q1@1: Ondansetron prevents vomiting by blocking which receptor? | 5-HT3 | D2 | H1 | M3 | NMDA | It blocks serotonin 5-HT3 receptors in the gut and brainstem.
 M2#pharmacy-u02-18-q2@2: Why should metoclopramide generally be avoided in Parkinson's disease? | It blocks D2 receptors and worsens symptoms | It increases dopamine too much | It causes low blood sugar | It is an opioid | It blocks GABA | Central D2 blockade counteracts dopamine replacement.
 M2#pharmacy-u02-18-q3@1: Which transmitter do benzodiazepines enhance? | GABA | Glutamate | Dopamine | Serotonin | Acetylcholine | They increase GABA-A receptor responses to GABA.
+Q: Name the three dopamine pathways and what each affects. | Mesolimbic (reward), nigrostriatal (movement) and tuberoinfundibular (prolactin).
+Q: Which transmitter is the main excitatory one, and which the main inhibitory? | Glutamate is excitatory; GABA is inhibitory.
+Q: Which receptor do antipsychotics block? | D2 receptors.
+Q: How does levodopa treat Parkinson's disease? | It replaces dopamine.
+Q: Name four functions influenced by serotonin. | Mood, anxiety, sleep and vomiting.
+Q: Which receptor does ondansetron block? | 5-HT3 receptors.
+Q: What does noradrenaline affect in the brain, and which drugs raise it? | Arousal and attention; SNRIs raise it.
+Q: What side effect follows D2 blockade in the tuberoinfundibular pathway? | Raised prolactin.
+Q: Name two side effects of levodopa. | Nausea and hallucinations or impulse control problems.
+Q: Why should metoclopramide be avoided in Parkinson's disease? | Its D2 blockade worsens Parkinson's.
 
 ## Adverse drug reactions
 S: Adverse drug reactions (ADRs) are a major cause of hospital admission. Classifying them helps you predict which are dose-related and preventable, and which are idiosyncratic and need avoiding in future.
@@ -521,6 +701,16 @@ SRC: Pirmohamed M and others, Adverse drug reactions as cause of admission to ho
 M1#pharmacy-u02-19-q1@1: Hypoglycaemia caused by insulin is which type of ADR? | Type A | Type B | Type C | Type D | Type E | It's a predictable, dose-related extension of insulin's action.
 M2#pharmacy-u02-19-q2@2: Which factor most increases ADR risk? | Polypharmacy in older age | Taking medicines with water | Being a non-smoker | Taking once-daily drugs | Having normal kidney function | More drugs and age-related changes increase interactions and sensitivity.
 M3#pharmacy-u02-19-q3@1: Why should nausea from a drug not be recorded as an allergy? | It's a type A side effect, not an immune reaction | Nausea is never caused by drugs | Allergies can't involve the gut | It would make the drug cheaper | It's a type B reaction | Mislabelling side effects as allergies can deny people useful treatment later.
+Q: Define an adverse drug reaction. | A harmful, unintended response to a medicine at normal doses.
+Q: Which type of ADR is the commonest? | Type A (augmented).
+Q: Name two features of type B reactions. | Not predictable or dose-related, and often immune.
+Q: What is a type C reaction? Give an example. | A reaction from long-term use, such as adrenal suppression with steroids.
+Q: What is a type D reaction? Give an example. | A delayed reaction, such as teratogenicity or some cancers.
+Q: What is a type E reaction? Give an example. | An end-of-use withdrawal effect, such as rebound after stopping a beta-blocker.
+Q: Name four risk factors for ADRs. | Older age, polypharmacy, renal or hepatic impairment and previous ADRs (also narrow therapeutic index drugs, pregnancy).
+Q: Name three ways to prevent ADRs. | Dosing for kidney function, checking interactions and allergies, and monitoring (also clear counselling).
+Q: Through which scheme are suspected ADRs reported? | The Yellow Card scheme.
+Q: Why shouldn't nausea be recorded as an allergy? | It's a type A side effect; mislabelling can stop someone getting a useful medicine later.
 
 ## Mechanisms of drug interactions
 S: Drug interactions happen when one drug changes the effect or level of another. Sorting them into pharmacokinetic and pharmacodynamic mechanisms lets you predict them, judge their importance and decide what to do.
@@ -548,6 +738,16 @@ SRC: Preston CL (editor), Stockley's Drug Interactions, Pharmaceutical Press | s
 M2#pharmacy-u02-20-q1@1: Rifampicin is started in someone on a combined oral contraceptive. What's the main risk? | Contraceptive failure from enzyme induction | Increased oestrogen side effects | Rifampicin toxicity | Lower blood pressure | No interaction | Rifampicin induces liver enzymes, lowering hormone levels.
 M2#pharmacy-u02-20-q2@2: An NSAID with warfarin raises bleeding risk mainly by what mechanism? | Pharmacodynamic: antiplatelet and GI effects add to anticoagulation | Increasing warfarin absorption | Inducing warfarin metabolism | Reducing vitamin K intake | Blocking warfarin excretion | NSAIDs impair platelets and the gastric mucosa, adding to bleeding risk.
 M3#pharmacy-u02-20-q3@2: Carbamazepine is stopped in someone also taking a CYP3A4 substrate. What happens over the next two weeks? | The substrate's levels rise as induction wears off | Levels fall immediately | Nothing changes | The substrate becomes inactive | Levels rise within an hour | Enzyme induction declines gradually, so substrate levels climb over one to two weeks.
+Q: Define enzyme inhibition as an interaction mechanism. | Reduced metabolism of a drug by another drug, raising its levels, usually within days.
+Q: Define enzyme induction. | Increased metabolism caused by another drug, lowering levels, developing over one to two weeks.
+Q: Which drugs have reduced absorption with antacids and calcium? | Some antibiotics (tetracyclines, quinolones) and levothyroxine.
+Q: Name three CYP inhibitors. | Clarithromycin, fluconazole and grapefruit juice (for some drugs).
+Q: Name three drugs that reduce lithium clearance. | NSAIDs, ACE inhibitors and thiazides.
+Q: Give an example of a transport-based interaction. | P-glycoprotein inhibitors raising digoxin levels.
+Q: Name three additive pharmacodynamic interactions. | Two sedatives together, two QT-prolonging drugs, and an NSAID with an anticoagulant.
+Q: Give two examples of antagonistic interactions. | An NSAID reducing antihypertensive effect, and a beta-blocker opposing salbutamol.
+Q: Which resource should be used to check interactions? | The BNF interactions appendix.
+Q: What three things should you judge about an interaction? | Its severity, the evidence and the patient's circumstances.
 
 ## Drug toxicity and overdose
 S: Toxicity can follow overdose, accumulation or interactions. Knowing the mechanisms and the antidotes for common poisonings, and where to get expert advice, is part of every pharmacist's role.
@@ -575,6 +775,16 @@ SRC: MHRA, Drug Safety Update: paracetamol overdose, simplification of the use o
 M1#pharmacy-u02-21-q1@2: What is the antidote for opioid overdose? | Naloxone | Flumazenil | Acetylcysteine | Atropine | Vitamin K | Naloxone is a competitive opioid antagonist.
 M2#pharmacy-u02-21-q2@1: Why does paracetamol overdose damage the liver? | A toxic metabolite builds up when glutathione runs out | It blocks bile flow | It kills liver cells directly at any dose | It causes low blood sugar only | It is excreted by the liver unchanged | NAPQI accumulates once glutathione is depleted.
 M2#pharmacy-u02-21-q3@2: Someone says they took 30 paracetamol tablets an hour ago but feel well. What's right? | They need urgent medical assessment now | They can wait to see if symptoms develop | Advise rest and fluids | Suggest an antacid | Ask them to return tomorrow | Early symptoms may be absent while liver damage develops; treatment depends on time and levels.
+Q: Define an antidote. | A treatment that counteracts a specific poison, such as acetylcysteine for paracetamol.
+Q: Name three causes of drug toxicity. | Overdose, accumulation or interactions.
+Q: What causes liver damage in paracetamol poisoning? | The toxic metabolite NAPQI builds up when glutathione is depleted.
+Q: How does acetylcysteine work? | It replenishes glutathione.
+Q: What two factors guide paracetamol treatment decisions? | The time of ingestion and the plasma level.
+Q: Which two effects of opioid poisoning does naloxone reverse? | Respiratory depression and reduced consciousness.
+Q: Why is flumazenil rarely used in benzodiazepine overdose? | It can trigger seizures.
+Q: What makes tricyclic antidepressants dangerous in overdose? | Cardiac arrhythmias and seizures.
+Q: What should a member of the public with a suspected overdose do? | Get urgent medical help: 999 or the emergency department; NHS 111 for advice.
+Q: Why is a well-feeling patient after paracetamol overdose not reassuring? | Liver damage may not show for a day or more.
 
 ## Pharmacogenomics
 S: Genetic differences change how people respond to some medicines, by altering drug-metabolising enzymes or targets, or by increasing the risk of serious reactions. A few tests are already standard in UK practice.
@@ -602,6 +812,16 @@ SRC: MHRA, Drug Safety Update: 5-fluorouracil and capecitabine, DPD testing reco
 M2#pharmacy-u02-22-q1@1: Which enzyme converts codeine to morphine? | CYP2D6 | CYP3A4 | CYP2C19 | TPMT | DPD | CYP2D6 variation explains toxicity in ultra-rapid metabolisers and poor effect in poor metabolisers.
 M2#pharmacy-u02-22-q2@2: What testing is standard before starting capecitabine? | DPD deficiency testing | TPMT testing | HLA-B*57:01 testing | CYP2D6 testing | No testing | DPD deficiency can cause severe fluoropyrimidine toxicity.
 M3#pharmacy-u02-22-q3@2: A breastfeeding mother asks for co-codamol. What's the best response? | Recommend an alternative: codeine is contraindicated in breastfeeding | Supply it with advice to feed after doses | Supply the lowest strength | Supply it for up to a week | Advise she stops feeding while taking it | MHRA advice: codeine is contraindicated in breastfeeding because of the risk to the baby.
+Q: Define a poor or ultra-rapid metaboliser. | A person whose enzyme variant makes them metabolise a drug much more slowly or quickly than usual.
+Q: Name three ways genetic differences change drug response. | Altering drug-metabolising enzymes, altering targets, or increasing the risk of serious reactions.
+Q: What happens to codeine in ultra-rapid and poor CYP2D6 metabolisers? | Ultra-rapid get toxic morphine levels; poor get little pain relief.
+Q: In which groups is codeine contraindicated? | Children under 12, breastfeeding, and ultra-rapid metabolisers.
+Q: How does CYP2C19 status affect clopidogrel? | Poor metabolisers activate less clopidogrel, so get less antiplatelet effect.
+Q: Why is TPMT tested before azathioprine or mercaptopurine? | To reduce the risk of severe bone marrow toxicity.
+Q: Which gene encodes DPD, and which drugs does DPD break down? | DPYD; fluorouracil and capecitabine.
+Q: What does HLA-B*15:02 predict? | Severe skin reactions to carbamazepine, in people of some South-East Asian ancestry.
+Q: What does HLA-B*57:01 testing prevent? | Hypersensitivity reactions to abacavir.
+Q: Why is codeine dangerous for a breastfeeding mother? | Ultra-rapid metabolism can expose the baby to dangerous morphine levels.
 
 ## Drug development and clinical trials
 S: A new medicine takes over a decade to move from discovery to licence, through preclinical studies and phased clinical trials, then regulatory review and post-marketing surveillance. Understanding the process helps you judge the evidence for any medicine.
@@ -629,6 +849,16 @@ SRC: MHRA, Yellow Card scheme and black triangle medicines | guidance | 2026 | h
 M1#pharmacy-u02-23-q1@1: Which trial phase is mainly about dose finding in patients? | Phase II | Phase I | Phase III | Phase IV | Preclinical | Phase II studies dose and early efficacy in people with the condition.
 M2#pharmacy-u02-23-q2@2: What should you report for a black triangle medicine? | All suspected adverse reactions | Only fatal reactions | Only reactions in children | Nothing until it's fully licensed | Only reactions listed in the leaflet | Black triangle medicines are under additional monitoring.
 M2#pharmacy-u02-23-q3@1: In the UK, which body grants marketing authorisations for medicines? | The MHRA | NICE | The GPhC | The BMA | The NHS Business Services Authority | The MHRA licenses medicines; NICE appraises cost-effectiveness.
+Q: Define a phase III trial. | A large randomised trial comparing a new drug with placebo or standard treatment for efficacy and safety.
+Q: Define marketing authorisation. | The licence from a regulator, the MHRA in the UK, to market a medicine for stated uses.
+Q: What happens at the preclinical stage? | Laboratory and animal studies of activity and toxicity.
+Q: Who takes part in phase II trials and what do they establish? | Patients with the condition; dose finding and early efficacy.
+Q: When might phase I involve patients rather than healthy volunteers? | For toxic drugs.
+Q: What three things does the MHRA review before licensing? | Quality, safety and efficacy.
+Q: What document is granted with a marketing authorisation? | The SPC.
+Q: Why is pharmacovigilance needed after licensing? | Rare and long-term effects appear only in large populations.
+Q: Which bodies appraise cost-effectiveness in England, Scotland and Wales? | NICE in England, the SMC in Scotland and AWTTC in Wales.
+Q: How long does a new medicine take from discovery to licence? | Over a decade.
 
 ## Biological medicines and biosimilars
 S: Biological medicines are large, complex molecules made in living cells, such as monoclonal antibodies, insulins and vaccines. Biosimilars are highly similar versions that cost less, and they have changed how many conditions are treated.
@@ -656,4 +886,14 @@ SRC: NHS England, Commissioning framework for biological medicines (including bi
 M1#pharmacy-u02-24-q1@1: Which is a monoclonal antibody? | Adalimumab | Methotrexate | Prednisolone | Omeprazole | Metformin | The -mab suffix denotes a monoclonal antibody (here, anti-TNF).
 M2#pharmacy-u02-24-q2@2: Why are biologicals prescribed by brand name? | For traceability and pharmacovigilance | Because generics are illegal | Because brands are always cheaper | To avoid labelling | Because biosimilars are identical | Biosimilars aren't identical, so the product given must be recorded clearly.
 M2#pharmacy-u02-24-q3@2: What screening is needed before starting an anti-TNF? | Tuberculosis and hepatitis B | Thyroid function only | DPD deficiency | HLA-B*57:01 | Bone density | Anti-TNF treatment can reactivate latent TB and hepatitis B.
+Q: Define a biosimilar. | A biological medicine highly similar to an approved reference biological, with no clinically meaningful differences.
+Q: Define a monoclonal antibody. | A laboratory-made antibody targeting one specific molecule.
+Q: Why are most biologics given by injection? | They would be digested if taken orally.
+Q: Why are biologics variable between batches? | They are made by living cells, so they are large and complex.
+Q: Name two anti-TNF antibodies and two conditions they treat. | Adalimumab and infliximab; rheumatoid arthritis and inflammatory bowel disease.
+Q: Name two problems biologics can cause. | Anti-drug antibodies that reduce effect, and increased infection risk.
+Q: How does a biosimilar differ from a generic small molecule? | It is highly similar to its reference product, not identical.
+Q: What has switching to biosimilars achieved? | Large NHS savings.
+Q: What screening is needed before starting adalimumab? | TB and hepatitis B.
+Q: Which vaccines should be avoided with adalimumab? | Live vaccines.
 `;

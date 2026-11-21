@@ -1,0 +1,17 @@
+{
+ "id": "chem-reflux",
+ "renderer": "apparatus",
+ "course": "chemistry",
+ "unit": "u19",
+ "lesson": "Reflux",
+ "title": "Heating under reflux",
+ "caption": "Vapour rises into the vertical condenser, cools and drips back, so a volatile mixture can be heated at its boiling point for as long as needed without boiling dry. Cooling water enters at the bottom of the condenser so the jacket stays full; the top is open so pressure cannot build up.",
+ "alt": "A round-bottomed flask with anti-bumping granules over heat, with a vertical Liebig condenser: water in at the lower inlet, out at the upper one, open at the top.",
+ "description": [
+  "Heat under the flask; anti-bumping granules for smooth boiling.",
+  "Condenser vertical, open to the air at the top.",
+  "Water in at the bottom, out at the top."
+ ],
+ "kind": "reflux",
+ "mixture": "ethanol + acidified K₂Cr₂O₇"
+}

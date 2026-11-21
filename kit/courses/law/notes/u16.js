@@ -32,6 +32,16 @@ Q: Where can you find official free judgments of the senior courts since 2022? |
 Q: Which law reports should be cited first where available? | The official Law Reports.
 M1#law-u16-01-q1@1: Who publishes the official Law Reports? | The Incorporated Council of Law Reporting | The Ministry of Justice | The National Archives | BAILII | The Law Society | The ICLR publishes the Law Reports (AC, KB, Ch, Fam).
 M2#law-u16-01-q2@2: A case is reported in two series: the official reports and a commercial series. Which should you cite to a court? | The official Law Reports version | The commercial series version | A newspaper report | A blog summary | Either, as courts have no preference | The 2012 Practice Direction gives the official Law Reports priority.
+Q: What is a primary legal source? | The law itself, such as statutes, statutory instruments and judgments.
+Q: What is a neutral citation? | A court-issued citation independent of any law report, used since 2001.
+Q: What is legislation.gov.uk? | The official source for UK legislation, with original and revised versions and warnings about outstanding changes.
+Q: Besides Acts, what can be found on legislation.gov.uk? | Statutory instruments, devolved legislation and explanatory notes.
+Q: What is BAILII? | A long-established free database of judgments.
+Q: Name three series of the official Law Reports. | AC, QB/KB, Ch and Fam.
+Q: Which practice direction introduced neutral citations? | Practice Direction (Judgments: Form and Citation) [2001] 1 WLR 194.
+Q: Which practice direction sets the order of law reports to cite? | Practice Direction (Citation of Authorities) [2012] 1 WLR 780.
+Q: When can Hansard be used to interpret legislation? | In limited circumstances, to interpret ambiguous legislation (Pepper v Hart).
+Q: What is the common mistake in citing cases from the media? | Citing a newspaper report or summary instead of the judgment itself.
 
 ## Finding secondary legal sources
 S: Secondary sources explain, analyse and comment on the law: textbooks, practitioner works, encyclopaedias, journals and law reform reports. They aren't binding, but they help you understand an area quickly and find the primary sources you need.
@@ -65,6 +75,16 @@ Q: Give two examples of practitioner works. | Chitty on Contracts and Clerk and 
 Q: Are secondary sources binding? | No; they can be persuasive.
 M1#law-u16-02-q1@1: Which work is the leading encyclopaedia of the law of England and Wales? | Halsbury's Laws of England | The White Book | Hansard | Erskine May | The Oxford English Dictionary | Halsbury's Laws summarises the whole of the law.
 M2#law-u16-02-q2@2: A trainee is asked about an unfamiliar area of planning law with a tight deadline. What is a sensible first step? | Read a practitioner work or practice note for an overview | Read every planning case since 1947 | Rely on a blog post alone | Guess from first principles | Ask the client what the law is | Secondary sources orient you quickly before checking primary law.
+Q: What is a secondary legal source? | A source that explains or comments on the law, such as a textbook or article.
+Q: What is a practitioner work? | A detailed reference work for practising lawyers, such as Chitty on Contracts.
+Q: Which practitioner work covers criminal law, and which civil procedure? | Archbold covers criminal law; the White Book covers civil procedure.
+Q: Name three leading academic law journals. | The Law Quarterly Review, Cambridge Law Journal and Modern Law Review.
+Q: Which Act created the Law Commission? | The Law Commissions Act 1965.
+Q: What do know-how services provide? | Practice notes and precedents.
+Q: Name three uses of secondary sources. | Getting an overview of an area, finding leading cases and statutes, and understanding debates and arguments.
+Q: How can Law Commission reports help with legislation? | They can help explain legislation that implemented them.
+Q: What should you always do after using a secondary source? | Go back to the primary source and check it is current.
+Q: What is the common mistake in using textbooks? | Quoting a textbook's summary of a case without reading the judgment.
 
 ## Legislation research
 S: Researching legislation means finding the right provision, checking that it is in force and up to date, understanding how it has been amended, and interpreting it correctly using permitted aids.
@@ -97,6 +117,16 @@ Q: What does the Interpretation Act 1978 provide? | Definitions and general rule
 Q: Can explanatory notes be used in interpreting an Act? | Yes, as an aid to understanding context.
 M1#law-u16-03-q1@1: Which statute provides general rules and definitions for interpreting legislation? | Interpretation Act 1978 | Human Rights Act 1998 | Legislative and Regulatory Reform Act 2006 | Statutory Instruments Act 1946 | Law Commissions Act 1965 | The Interpretation Act 1978 applies across most legislation.
 M2#law-u16-03-q2@2: A client's dispute arose in 2021. The statute was amended in 2024. Which version should you apply? | The version in force in 2021 | The current version | Whichever is more favourable | The original 1990s version | The draft bill | Apply the law as it stood when the events occurred, subject to transitional rules.
+Q: What is commencement? | The coming into force of a provision, often by commencement order.
+Q: What is territorial extent? | The parts of the UK where a provision applies.
+Q: Name four checks on the status of a legislative provision. | Commencement, amendment or repeal, territorial extent, and relevant secondary legislation.
+Q: Give an example of a rule in the Interpretation Act 1978. | Words in the singular include the plural.
+Q: Which case allowed explanatory notes to be used to understand context? | R (Westminster City Council) v National Asylum Support Service [2002] UKHL 38.
+Q: Which case sets out the modern contextual and purposive approach to interpretation? | R (O) v Secretary of State for the Home Department [2022] UKSC 3.
+Q: What can explanatory notes help identify? | The context and the mischief the Act addressed.
+Q: What should you record when researching legislation? | The version and the date you consulted.
+Q: When advising on past events, which version of legislation should you use? | The version in force at the relevant date, not today's.
+Q: What is the common mistake about amended legislation? | Relying on an amended provision when the events happened before the amendment came into force.
 
 ## Case law research
 S: Case law research means finding relevant judgments, identifying the binding authorities, and checking that they are still good law. The status of a case can change through appeals, overruling or later statutes.
@@ -129,6 +159,16 @@ Q: What is subsequent history? | What has happened to a case later: appeals, app
 Q: Which case departed from Anns v Merton? | Murphy v Brentwood District Council.
 M1#law-u16-04-q1@1: Which tool shows how a case has been treated by later courts? | A citator | A law dictionary | A precedent bank | Hansard | A statutory instrument | Citators record later treatment of cases.
 M3#law-u16-04-q2@2: A trainee finds a Court of Appeal case directly in point from 1995. What should they check before relying on it? | Whether it was appealed, overruled or affected by statute | Nothing: Court of Appeal cases are permanent | Only its neutral citation | Only the headnote | Whether the judge has retired | A case may have been overruled or superseded since.
+Q: What is a citator? | A tool listing how a case has been cited and treated.
+Q: What is binding authority? | A decision a court must follow under the doctrine of precedent.
+Q: Name three ways to find cases. | By citation or name, by subject through practitioner works and databases, and through other judgments that cite them.
+Q: What can affect whether a case is still good law? | Appeal, being overruled, doubted or distinguished, or later statute.
+Q: Why read later cases rather than relying on citator labels? | Labels alone may not show exactly how a case was treated.
+Q: What should you consider in assessing a case's authority? | Court level, the ratio, the number and composition of judgments, and dissents.
+Q: What limits do practice directions place on citing judgments? | They limit citation of some judgments, such as permission decisions, and require the most authoritative report.
+Q: What must be prepared for citing authorities in court? | Lists of authorities and bundles according to the court's requirements.
+Q: Give an example of a case later departed from. | Anns v Merton LBC, departed from in Murphy v Brentwood DC.
+Q: What is the common mistake about checking cases? | Relying on an overruled case because its subsequent history wasn't checked.
 
 ## Legal databases
 S: Legal research relies on free and subscription databases. Each has strengths, and researchers must understand their coverage, search tools and limits. Generative AI tools can help but can also invent authorities, which courts have warned about.
@@ -164,6 +204,16 @@ Q: What risk do generative AI tools pose in legal research? | They can invent ca
 Q: Name two free legal databases. | legislation.gov.uk and Find Case Law (also BAILII).
 M1#law-u16-05-q1@1: Which tribunal case involved a litigant relying on fictitious cases generated by AI? | Harber v HMRC | Donoghue v Stevenson | Pepper v Hart | Murphy v Brentwood | Salomon v Salomon | Harber [2023] UKFTT 1007 (TC) found the cited cases didn't exist.
 M3#law-u16-05-q2@2: An AI tool suggests three cases supporting a client's argument. What should the solicitor do? | Check each case exists and says what is claimed | Cite them immediately | Cite them with a disclaimer | Ask the AI tool to confirm | Use them only in letters, not court | Verification is essential before relying on any authority.
+Q: What is a Boolean search? | Searching with operators such as AND, OR and NOT to combine terms.
+Q: What is a database's coverage? | The range of materials and dates it includes.
+Q: What is an AI hallucination? | An AI tool's generation of false information, such as non-existent cases.
+Q: Name three subscription legal databases. | Westlaw, Lexis+ and vLex/Justis, plus know-how services such as Practical Law.
+Q: Name three search techniques that improve results. | Precise terms, Boolean operators, phrase searches, proximity connectors, and filtering by court, date and jurisdiction.
+Q: What happened in Harber v Commissioners for HMRC? | A litigant relied on non-existent cases generated by AI.
+Q: What does judicial guidance on AI stress? | Verification and confidentiality.
+Q: What must not be put into public AI tools? | Confidential client information.
+Q: What can generative AI usefully do in legal work? | Summarise and draft, though its output must be verified.
+Q: What is the common mistake with AI-suggested cases? | Citing them without checking they exist and say what is claimed.
 
 ## Westlaw and LexisNexis concepts
 S: Westlaw and LexisNexis are the main subscription legal research platforms in the UK. They share core concepts: full-text primary sources, case analysis and status signals, journal indexes, current awareness and know-how. Understanding these concepts makes research faster and more reliable.
@@ -197,6 +247,16 @@ Q: What does a case analysis page usually show? | Citation, court, headnote, lat
 Q: Should you rely on a status signal alone? | No; read the later cases to see how the case was treated.
 M1#law-u16-06-q1@1: Which service on Westlaw provides practice notes and precedents? | Practical Law | Halsbury's Laws | BAILII | Hansard | Find Case Law | Practical Law is Westlaw's know-how service of practice notes and precedents.
 M2#law-u16-06-q2@2: A case shows a negative status signal. What should you do before deciding not to rely on it? | Read the later case to see what was criticised | Discard it immediately | Ignore the signal | Cite it anyway without comment | Ask the database provider | A negative signal may relate only to one point.
+Q: What is a case analysis page? | A page summarising a case and its later treatment.
+Q: What is a status signal? | A flag showing whether a case has negative or positive treatment.
+Q: What is current awareness? | Updates on new cases, legislation and developments.
+Q: Which practitioner encyclopaedia is on Lexis, and which know-how service is on Westlaw? | Halsbury's Laws on Lexis; Practical Law on Westlaw.
+Q: Can a case doubted on one issue remain good law? | Yes, it may remain good law on another issue.
+Q: Name two ways to research efficiently on legal platforms. | Combine keyword and topic searches, use filters, and save searches and folders.
+Q: Why record research trails? | For supervisors and for costs.
+Q: What should you cite when a case is found on a database? | The official report where it exists, in line with practice directions.
+Q: Give an example of a neutral citation. | Robinson v Chief Constable of West Yorkshire Police [2018] UKSC 4.
+Q: What is the common mistake about a red flag status signal? | Treating it as meaning the whole case is no longer good law.
 
 ## Research methodology
 S: Good legal research follows a method: define the question, identify the issues and facts, plan sources, search systematically, update, record the trail, and know when to stop. A clear method saves time and reduces the risk of missing key law.
@@ -228,6 +288,16 @@ Q: What is a research trail? | A record of the sources, search terms and results
 Q: When can you stop researching? | When further searches keep returning the same sources and no new authorities appear.
 M1#law-u16-07-q1@1: What should be the first step in a research task? | Clarify the question | Search a database with random terms | Write the conclusion | Bill the client | Read every textbook | A precise question shapes the whole research plan.
 M2#law-u16-07-q2@2: A supervisor asks for research by the end of the day, but the issue proves complex. What should the trainee do? | Tell the supervisor and agree how to proceed | Keep researching past the deadline without telling anyone | Give a guess as the answer | Stop and submit nothing | Ask the client to research it | Communicating early allows the supervisor to manage time and cost.
+Q: What is updating in legal research? | Checking that the law found is current.
+Q: What is a stopping point in research? | The point at which further searching is unlikely to change the answer.
+Q: What does clarifying the research question involve? | Working out exactly what the client or supervisor needs, and by when.
+Q: Which Code paragraph underlies the SRA's expectation of competent research? | Paragraph 3.2 of the Code of Conduct.
+Q: How should search terms be generated? | Using synonyms, legal concepts, and broader and narrower terms.
+Q: Why start with secondary sources? | For orientation, before going to the primary law.
+Q: How should research findings be presented? | A clear answer first, with key authorities and uncertainties, distinguishing binding from persuasive authority.
+Q: How should research relate to the matter's value? | It must be proportionate to the matter.
+Q: Why must research time be recorded accurately? | For billing.
+Q: What is the common mistake in starting research? | Running random keyword searches without first defining the question.
 
 ## Case analysis
 S: Case analysis goes beyond reading a single judgment. Lawyers must synthesise lines of authority, work out the ratio of appellate decisions with several judgments, distinguish unhelpful cases and follow how principles develop over time.
@@ -259,6 +329,16 @@ Q: How do you find the ratio of a decision with several judgments? | Identify th
 Q: What did Robinson v Chief Constable emphasise about duty of care? | Established categories and incremental development, rather than applying Caparo as a universal test.
 M1#law-u16-08-q1@1: Is a dissenting judgment binding? | No, though it can be persuasive | Yes, on lower courts | Yes, if longer than the majority | Only in the Supreme Court | Only in criminal cases | Only the ratio supported by the majority binds; dissents can be persuasive later.
 M3#law-u16-08-q2@2: A precedent imposed a duty on police for a positive act injuring a bystander. Your client's case concerns police failing to warn of a third party's attack. What is the key analytical step? | Distinguish acts from omissions | Apply the precedent automatically | Ignore the precedent | Argue the facts are identical | Rely on a dissent | The act/omission distinction is a legally significant difference.
+Q: What is majority reasoning? | The reasoning shared by most judges, which forms the ratio.
+Q: What is a line of authority? | A series of cases developing a legal principle.
+Q: What is distinguishing? | Showing that a precedent's material facts differ from the case at hand.
+Q: Can dissenting judgments be influential? | Yes; they aren't binding but may be influential later.
+Q: Why read cases in order? | To see how a principle developed and which statements were approved, qualified or rejected.
+Q: Trace the main cases in the development of the duty of care. | Donoghue v Stevenson, Anns, Caparo Industries v Dickman, then Robinson v Chief Constable of West Yorkshire.
+Q: How do you decide whether factual differences matter when distinguishing? | Ask whether the differences are legally significant.
+Q: How is analogy used in case analysis? | To argue that a principle extends, or doesn't, to new facts.
+Q: What should a write-up of case analysis include? | The principle, its source and limits, how it applies, and why contrary authority can be distinguished.
+Q: What is the common mistake about concurring judgments? | Treating a single concurring judge's reasoning as the ratio when the majority reasoned differently.
 
 ## Legal memoranda
 S: A legal memorandum is an internal document analysing a legal question for a supervisor or colleague. It must be objective, well organised and properly supported, giving a clear answer and identifying risks.
@@ -291,6 +371,16 @@ Q: What are the main parts of a legal memorandum? | Question presented, short an
 Q: Should a memo be persuasive or objective? | Objective.
 M1#law-u16-09-q1@1: Which part of a memo gives the reader the answer immediately? | The short answer | The facts | The heading | The appendix | The bibliography | The short answer comes near the top so the reader knows the outcome.
 M2#law-u16-09-q2@2: A memo on a limitation issue omits a recent case that undermines the client's position. What is the problem? | The analysis isn't objective or complete | Nothing: memos favour the client | It is too long | It lacks a heading | It should be a letter instead | Supervisors need adverse authority to advise properly.
+Q: What is a question presented in a memo? | A concise statement of the legal issue to be answered.
+Q: What is objective analysis? | Analysis assessing both strengths and weaknesses.
+Q: What goes in the heading of a legal memorandum? | To, from, date, client and matter.
+Q: What should the facts section of a memo include? | The material facts relied on and any assumptions.
+Q: How should a memo's analysis section be organised? | Issue by issue: the law, its application to the facts, and counter-arguments.
+Q: What should a memo's conclusion include? | Next steps, further information needed, and risks.
+Q: Why must a memo be objective rather than persuasive? | The reader needs to know the weaknesses as well as the strengths.
+Q: Which citation style might a memo use? | OSCOLA or the firm's style.
+Q: Which case would support a memo on court-ordered mediation? | Churchill v Merthyr Tydfil County Borough Council [2023] EWCA Civ 1416.
+Q: What is the common mistake in writing a memo? | Arguing only the client's side without identifying weaknesses.
 
 ## Opinion writing
 S: An opinion is a formal written advice, traditionally from counsel, on a client's legal position and prospects. It must answer the questions asked, assess merits and evidence realistically, and advise on next steps.
@@ -323,6 +413,16 @@ Q: What should an opinion's summary contain? | Short answers to the questions as
 Q: Why must prospects be candid? | Clients rely on them to decide whether to litigate or settle, and counsel must be independent.
 M1#law-u16-10-q1@1: Which Core Duty requires barristers to maintain their independence? | Core Duty 4 | Core Duty 1 | Core Duty 2 | Core Duty 7 | Core Duty 10 | BSB Core Duty 4 requires barristers not to compromise their independence.
 M2#law-u16-10-q2@2: Counsel thinks a claim has about a 40% chance of success. The client wants to hear it will win. What should the opinion say? | State the 40% assessment with reasons | Say it will definitely win | Avoid any assessment | Say it is hopeless | Leave prospects to the solicitor | Independence and candour require a realistic assessment.
+Q: What is counsel's opinion? | A barrister's written advice on a legal question.
+Q: What is an assessment of prospects of success? | An assessment of how likely a claim or defence is to succeed.
+Q: What is advice on evidence? | Advice on what evidence is needed to prove a case.
+Q: What does the introduction of an opinion state? | Who instructs and the questions asked.
+Q: How are prospects often expressed in an opinion? | As a percentage or a reasoned range.
+Q: What should the evidence and next steps section cover? | Further evidence, procedural steps and settlement strategy.
+Q: Name three qualities of a good opinion. | Independent and candid, clear and concise, practical, and properly referenced.
+Q: Which case might an opinion cite in clinical negligence? | Bolam v Friern Hospital Management Committee [1957].
+Q: What protects an opinion from disclosure, and how can that be lost? | Legal advice privilege; sharing it with third parties may waive privilege.
+Q: What is the common mistake about prospects in an opinion? | Overstating prospects to please the client.
 
 ## Client letters
 S: Client letters explain the law and options in a way the client understands and can act on. They should answer the client's question first, use plain English, explain costs and risks, and confirm next steps.
@@ -359,6 +459,16 @@ Q: Where should the answer appear in a client letter? | Near the start.
 Q: What must a client letter include about costs? | Clear, up-to-date costs information (SRA Code, para 8.7).
 M1#law-u16-11-q1@1: Which feature best shows plain English? | Short sentences with everyday words | Latin phrases throughout | Long passive constructions | Many case citations | Legal jargon without explanation | Plain English uses short, clear sentences.
 M2#law-u16-11-q2@2: A client asks whether to accept a settlement offer. What should the letter include? | A recommendation with reasons, risks and costs | Only the law of contract | A list of every case on settlement | No recommendation, just the offer | The other side's private information | Clients need a clear recommendation to make an informed decision.
+Q: What does plain English mean in client letters? | Clear, direct language without unnecessary jargon.
+Q: What does a client-focused letter mean? | One organised around the client's concerns and decisions.
+Q: What are next steps in a client letter? | The actions the client and firm will take, with timing.
+Q: What is the usual structure of a client letter? | Reference and greeting, purpose and short answer, facts, advice and options, recommendation and next steps, and an invitation to ask questions.
+Q: How should advice on options be set out in a client letter? | With the pros, cons, costs and risks of each option.
+Q: Name three features of plain English style. | Short sentences, everyday words and active voice.
+Q: What should be avoided in letters to lay clients? | Latin, unexplained legal terms and unnecessary citations.
+Q: What tone should a client letter have? | Professional, empathetic and clear.
+Q: What should a client letter confirm about the retainer? | The instructions and any agreed limits on scope.
+Q: What is the common mistake in writing to lay clients? | Writing as if writing for a judge.
 
 ## Legal drafting
 S: Legal drafting produces documents that create rights and obligations: contracts, wills, deeds and statements of case. Good drafting is precise, consistent and clear, so that the document does exactly what the client intends and is interpreted that way.
@@ -391,6 +501,16 @@ Q: Why use defined terms? | To give words a consistent, precise meaning througho
 Q: What approach did Arnold v Britton take to interpretation? | The natural meaning of the words in their documentary and factual context.
 M1#law-u16-12-q1@1: Which word best signals an obligation in modern drafting? | Must | May | Could | Might | Should perhaps | "Must" clearly imposes an obligation, avoiding the ambiguity of "shall".
 M2#law-u16-12-q2@2: A contract uses "Goods", "Products" and "Items" for the same thing. What is the risk? | A court may think they mean different things | None: synonyms are harmless | The contract is void | It makes the contract clearer | It only matters in wills | Inconsistent terms invite arguments about different meanings.
+Q: What is a defined term in drafting? | A word given a specific meaning throughout a document.
+Q: What is a precedent in drafting? | A model document used as a starting point.
+Q: What is boilerplate? | Standard clauses such as entire agreement and governing law.
+Q: Why should "and/or" and unclear pronouns be avoided in drafting? | They create ambiguity.
+Q: Which words signal obligation and discretion in modern drafting? | "Must" for obligations and "may" for discretions.
+Q: Why use the active voice in legal drafting? | It says who must do what.
+Q: What is the standard structure of a legal document? | Parties, recitals, definitions, operative provisions, boilerplate, schedules and execution clause.
+Q: How should a precedent be adapted? | Carefully to the client's facts, removing irrelevant clauses and checking cross-references.
+Q: What did Wood v Capita say about contractual interpretation? | It is a unitary exercise in which textualism and contextualism are tools used together.
+Q: What is the common mistake in using precedents? | Copying a precedent without removing clauses that don't fit the deal.
 
 ## Negotiation
 S: Negotiation is the most common way legal disputes and transactions are resolved. Effective negotiators prepare thoroughly, understand interests as well as positions, know their alternatives and act within professional duties.
@@ -425,6 +545,16 @@ Q: What is a BATNA? | The best alternative to a negotiated agreement.
 Q: Must a negotiator disclose the client's bottom line? | No, but must not mislead the other side.
 M1#law-u16-13-q1@1: Which book set out principled negotiation? | Getting to Yes | The Concept of Law | Bleak House | The Rule of Law | Leading Change | Fisher and Ury's Getting to Yes (1981) set out principled negotiation.
 M2#law-u16-13-q2@2: The other side asks whether your client would accept £20,000. Your client has authorised you to accept £15,000. What can you properly say? | Decline to disclose the bottom line | Say the client won't go below £25,000 | Say £15,000 is the limit | Lie about the client's finances | End the negotiation | You may keep the figure confidential but mustn't mislead.
+Q: What is principled negotiation? | Negotiation focused on interests, options and objective criteria.
+Q: What does without prejudice mean? | Communications in genuine settlement attempts that aren't admissible as admissions.
+Q: What is positional negotiation? | Each side starts from a position and makes concessions.
+Q: What are the four elements of principled negotiation in Getting to Yes? | Separate people from the problem, focus on interests not positions, generate options for mutual gain, and use objective criteria.
+Q: What should a negotiator know about their own client before negotiating? | The client's objectives, priorities and authority to settle.
+Q: How might a litigant assess their BATNA? | By the likely outcome at trial, including costs.
+Q: Which case confirms that genuine settlement negotiations are without prejudice? | Rush and Tompkins Ltd v Greater London Council [1989].
+Q: How can a negotiated agreement be recorded? | In a settlement agreement, consent order or Tomlin order.
+Q: What should be checked when recording a settlement? | The terms, including costs and timing.
+Q: What is the common mistake about stating a client's minimum? | Saying the client won't accept less than a figure above what they have authorised, which misleads.
 
 ## Advocacy
 S: Advocacy is presenting a client's case persuasively to a court or tribunal. It requires preparation, clear structure, respect for the court and opponents, and strict compliance with the duty not to mislead.
@@ -460,6 +590,16 @@ Q: Can you ask leading questions in examination in chief? | No, except on uncont
 Q: What must an advocate do with relevant adverse authority? | Draw it to the court's attention.
 M1#law-u16-14-q1@1: How should a district judge in the County Court be addressed? | Judge | My Lord | Your Honour only | Sir | Your Worship | District and circuit judges in the County Court are addressed as "Judge".
 M3#law-u16-14-q2@2: You discover a recent Court of Appeal case against your client's argument that the other side hasn't cited. What must you do? | Draw it to the court's attention | Ignore it | Mention it only if asked | Tell the client to settle | Ask the other side not to cite it | Advocates must disclose relevant adverse authority.
+Q: What is a leading question? | A question suggesting the answer, not allowed in examination in chief.
+Q: What are rights of audience? | The right to appear and speak in court.
+Q: What is a skeleton argument? | A written outline of submissions provided before the hearing.
+Q: How should oral submissions begin? | With what you ask the court to do.
+Q: How should a High Court judge be addressed? | "My Lord" or "My Lady".
+Q: What questions are used in cross-examination? | Leading questions, putting your case to the witness.
+Q: What are the limits on re-examination? | Only matters arising, with non-leading questions.
+Q: What rule comes from Browne v Dunn? | If you will say a witness is wrong, put that to them in cross-examination.
+Q: How can solicitors gain higher rights of audience? | Under the Legal Services Act 2007; they have rights in lower courts and can gain higher rights.
+Q: What is the common mistake in examination in chief? | Asking leading questions of your own witness.
 
 ## Interviewing clients
 S: Client interviews gather facts, understand the client's goals and give initial advice. Effective interviewing uses a clear structure, active listening and careful questioning, while dealing with conduct issues and recording what was said.
@@ -496,6 +636,16 @@ Q: What is the T-funnel? | Questioning that begins with open questions and narro
 Q: What should an attendance note record? | The facts, advice given, instructions and next steps.
 M1#law-u16-15-q1@1: Which type of question should usually open the listening phase? | An open question | A leading question | A closed yes/no question | A hypothetical question | A multiple-choice question | Open questions let the client explain in their own words.
 M2#law-u16-15-q2@2: During an interview, the client's adult son keeps answering for her. What should the solicitor do? | Speak to the client alone | Take instructions from the son | End the retainer | Ignore it | Ask the son to sign for her | Seeing the client alone helps check her wishes and guard against influence.
+Q: What is active listening? | Listening attentively and showing understanding.
+Q: What is an attendance note? | A record of the interview, advice and instructions.
+Q: What happens in the greeting stage of a client interview? | Names, roles, purpose, time available and confidentiality are covered.
+Q: Why summarise during a client interview? | To check understanding.
+Q: What is covered at the close of an interview? | Actions, costs and timescales.
+Q: What should an interviewer be alert to about the client? | Vulnerability, capacity and the need for an interpreter.
+Q: What conduct checks should be made at a client interview? | Identify the client, check conflicts, and watch for confidentiality and money laundering concerns.
+Q: What should a solicitor do if undue influence is suspected at an interview? | See the client alone if needed.
+Q: How does the SQE2 assess interviewing? | Together with the attendance note.
+Q: What is the common mistake in interviewing? | Jumping to closed questions before the client has explained the problem.
 
 ## Taking instructions
 S: Taking instructions means confirming who the client is, what they want, the scope of the work and the authority to act. Instructions must come from the client or someone properly authorised, and should be confirmed in writing.
@@ -527,6 +677,16 @@ Q: What is a limited retainer? | A retainer restricted to specific tasks agreed 
 Q: Who can give instructions on behalf of a company? | The board, or persons it has authorised.
 M1#law-u16-16-q1@1: Which SRA Code paragraph requires solicitors to act only on instructions from the client or an authorised person? | Paragraph 3.1 | Paragraph 6.2 | Paragraph 8.6 | Paragraph 2.2 | Paragraph 1.3 | Paragraph 3.1 requires acting only on instructions from the client or an authorised person.
 M2#law-u16-16-q2@2: A daughter phones to instruct the firm to sell her elderly father's house. What must the solicitor check first? | The father's wishes or the daughter's authority | Only the daughter's identity | The house price | The estate agent's fee | Nothing: family can instruct | Instructions must come from the client or someone authorised.
+Q: What is authority in taking instructions? | The legal right of a person to instruct on behalf of the client.
+Q: Who can instruct on behalf of an individual client? | A person with authority, such as an attorney under a lasting power of attorney.
+Q: What should be agreed and confirmed when taking instructions? | What the firm will and won't do, costs and timescales, confirmed in a client care letter.
+Q: What must a client understand under a limited retainer? | Its limits; solicitors may still need to warn of obvious risks outside them.
+Q: What should be done when instructions change? | Record the changes.
+Q: Which provisions govern capacity to give instructions for decisions other than wills? | Mental Capacity Act 2005, ss 1–3.
+Q: Which case sets the test for testamentary capacity? | Banks v Goodfellow (1870).
+Q: Name two vitiating pressures to watch for when taking instructions. | Duress and undue influence.
+Q: When may a solicitor end a retainer? | For good reason on reasonable notice, such as instructions requiring misconduct.
+Q: What is the common mistake about relatives' instructions? | Acting on a relative's instructions without confirming the client's wishes.
 
 ## Legal problem solving
 S: Legal problem solving turns facts into legal answers and practical advice. It means identifying the issues, finding and applying the law, dealing with uncertainty and missing facts, and focusing on what the client actually needs.
@@ -560,6 +720,16 @@ Q: What is issue spotting? | Identifying the legal questions raised by the facts
 Q: What should you do with missing facts? | Identify them and explain how they would affect the answer.
 M1#law-u16-17-q1@1: What should come after stating the relevant law in problem solving? | Applying it to the facts | Stopping there | Listing unrelated cases | Writing the client's bill | Repeating the facts | Application to the facts is the core of problem solving.
 M2#law-u16-17-q2@2: Whether a contract term was incorporated depends on whether the client saw the notice before signing, which isn't clear. What should the answer do? | Identify the missing fact and give both outcomes | Assume the best case for the client | Ignore the issue | Conclude the term is void | Refuse to answer | Explaining how the missing fact affects the outcome is good practice.
+Q: What are missing facts in legal problem solving? | Information needed to reach a firm conclusion.
+Q: What is an alternative argument? | A fallback argument if the main one fails.
+Q: What should you note when reading a problem's facts? | Dates, parties, documents and the client's goal.
+Q: What issues should be spotted in a legal problem? | Causes of action, defences, procedure and remedies.
+Q: Which case is cited for remoteness in contract? | Hadley v Baxendale (1854).
+Q: How should each issue be concluded? | With an answer and a level of confidence.
+Q: When should alternative arguments be given? | Where the law is unclear.
+Q: Name four practical points to consider in advice. | The remedy wanted, costs, evidence, limitation and alternatives such as ADR.
+Q: Is a legally correct answer always good advice? | No; one that ignores the client's goals isn't good advice.
+Q: What is the common mistake in answering problem questions? | Listing every rule in an area instead of applying the relevant ones to the facts.
 
 ## Applying IRAC
 S: IRAC (Issue, Rule, Application, Conclusion) is a simple structure for answering legal problems. Used well, it keeps analysis focused and complete; used mechanically, it can become repetitive. Variations such as CREAC put the conclusion first.
@@ -594,6 +764,16 @@ Q: What does IRAC stand for? | Issue, Rule, Application, Conclusion.
 Q: What is the most common weakness in IRAC answers? | Stating the rule without applying it to the facts.
 M1#law-u16-18-q1@1: In CREAC, what comes first? | The conclusion | The issue | The rule | The application | The facts | CREAC starts with the conclusion, then rule, explanation, application and conclusion.
 M2#law-u16-18-q2@2: A student's answer states the Bolam test accurately but never discusses the expert evidence in the problem. What is missing? | Application of the rule to the facts | The issue | The rule | A conclusion only | Citation format | Applying the rule to the evidence is the key step.
+Q: What does CREAC stand for? | Conclusion, Rule, Explanation, Application, Conclusion.
+Q: What is application in IRAC? | Linking the facts to each element of the rule.
+Q: How should the issue be stated in IRAC? | As a precise legal question, such as "Did D owe C a duty of care?"
+Q: What should the rule step in IRAC include? | The law with authority.
+Q: Where is CREAC especially useful? | In memos and client advice.
+Q: How should IRAC be used in complex problems? | For each sub-issue.
+Q: Name three pitfalls of IRAC. | Not applying the rule, repeating facts without analysis, ignoring counter-arguments, and missing issues through rigid use.
+Q: In an IRAC answer on a nurse's breach of duty, what is the rule? | The Bolam test as qualified by Bolitho.
+Q: What does the conclusion step in IRAC require? | Answering the issue, noting any uncertainty.
+Q: What is the common mistake with IRAC headings? | Writing the headings with no actual application.
 
 ## Legal argumentation
 S: Legal argument persuades a decision-maker using different kinds of reasoning: text, purpose, precedent, principle and policy. Strong arguments anticipate counter-arguments and explain why the preferred reading is better.
@@ -628,6 +808,16 @@ Q: Name three types of legal argument. | Textual, purposive and precedent (also 
 Q: In the Toulmin model, what is the warrant? | The rule or reasoning linking the grounds to the claim.
 M1#law-u16-19-q1@1: Which type of argument relies on a decision's practical consequences? | Policy argument | Textual argument | Precedent argument | Formal logic | Procedural argument | Policy arguments focus on consequences such as floodgates.
 M2#law-u16-19-q2@2: Your opponent's best point is a recent appellate case. How should your argument deal with it? | Address it and explain why it is distinguishable | Ignore it | Say it was wrongly decided without reasons | Hope the judge doesn't notice | Withdraw your argument | Strong advocacy confronts the best counter-argument.
+Q: What is a textual argument? | An argument from the words of a statute or document.
+Q: What is a purposive argument? | An argument from what the provision was meant to achieve.
+Q: Give two examples of principles used in principle-based arguments. | Legality and fairness.
+Q: Give three considerations in policy arguments. | Consequences for society, floodgates and certainty.
+Q: What principle did the majority rely on in R (Miller) [2017]? | That the prerogative can't remove domestic rights.
+Q: What are the six elements of the Toulmin model? | Claim, grounds, warrant, backing, qualifier and rebuttal.
+Q: In the Toulmin model, what are the grounds? | The facts or evidence.
+Q: In the Toulmin model, what do the qualifier and rebuttal do? | State the argument's limits and answer objections.
+Q: Where should your strongest point appear in a persuasive argument? | First; lead with it.
+Q: What is the common mistake in legal argument? | Ignoring the other side's strongest argument.
 
 ## Professional communication
 S: Lawyers communicate constantly by email, letter, phone and in meetings. Professional communication is accurate, courteous, confidential and appropriate to the audience, and follows rules on dealing with the other side, the court and the public.
@@ -664,4 +854,14 @@ Q: Should communications with the court be copied to the other parties? | Yes, n
 Q: Which law governs personal data in client communications? | The Data Protection Act 2018 and UK GDPR.
 M1#law-u16-20-q1@1: Which SRA Code paragraph requires keeping client affairs confidential? | Paragraph 6.3 | Paragraph 1.2 | Paragraph 3.1 | Paragraph 8.7 | Paragraph 2.7 | Paragraph 6.3 sets the duty of confidentiality.
 M2#law-u16-20-q2@2: A trainee accidentally emails a client's medical report to the wrong person. What should happen? | Report it internally at once for breach handling | Ignore it | Ask the recipient to delete it and say nothing | Send a second copy to the right person only | Blame the client | Data breaches must be reported and managed under the firm's procedures.
+Q: What is a represented party? | A party with a lawyer, who shouldn't be contacted directly about the matter.
+Q: Name three standards of professional communication. | Clear, accurate and courteous, with an appropriate tone for the audience.
+Q: What should be checked before sending a sensitive email? | The recipients, and that secure methods are used for sensitive data.
+Q: When should communications be marked "without prejudice"? | For settlement communications, where appropriate.
+Q: Which Code paragraph protects litigants in person from unfair advantage? | Paragraph 1.2.
+Q: What kind of correspondence should be avoided with the other side? | Aggressive or abusive correspondence, especially where it may amount to a SLAPP.
+Q: What should be followed when writing to the court? | Court guides on format and filing.
+Q: What must be done after a data breach? | Report it as required under data protection law.
+Q: What does SRA guidance say about social media? | Online conduct can breach the Principles; avoid discussing clients or cases.
+Q: What is the common mistake in communicating with a judge? | Emailing a judge privately about a case without copying the other side.
 `;

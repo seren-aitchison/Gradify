@@ -34,6 +34,16 @@ Q: What is the difference between incidence and prevalence? | Incidence is the n
 Q: What is the difference between necrosis and apoptosis? | Necrosis is uncontrolled cell death that triggers inflammation; apoptosis is programmed, orderly cell death.
 M1#nursing-u05-01-q1@1: Which term describes the cause of a disease? | Aetiology | Prognosis | Prevalence | Morbidity | Pathogenesis | Aetiology means cause; pathogenesis is how the disease develops.
 M2#nursing-u05-01-q2@2: Why should nurses understand pathophysiology? | To link signs to causes and spot deterioration | To make medical diagnoses independently | To replace the need for investigations | To prescribe all treatments themselves | Only to pass written exams | Knowing the mechanism helps nurses assess and act safely.
+Q: What is pathophysiology? | The study of how normal body functions are disrupted by disease.
+Q: What is aetiology? | The cause or causes of a disease.
+Q: What is pathogenesis? | How a disease develops.
+Q: What does iatrogenic mean? | Caused by treatment.
+Q: What does multifactorial mean for most common diseases? | Genes, environment and behaviour interact to cause them.
+Q: What is the difference between signs and symptoms? | Signs are observed; symptoms are reported by the person.
+Q: What is prognosis? | The likely outcome of a disease.
+Q: Name four ways cells adapt to injury. | Hypertrophy, hyperplasia, atrophy and metaplasia.
+Q: What are the two ways tissues repair? | By regeneration or by scarring (fibrosis).
+Q: Name three factors that affect who gets ill and how they fare. | Deprivation, ethnicity, disability including learning disability, and access to care (any three).
 
 ## Inflammation
 S: Inflammation is the body's protective response to injury or infection. It brings immune cells and fluid to the damaged area to remove the cause and begin repair, but if excessive or prolonged it causes harm.
@@ -63,6 +73,16 @@ Q: Name the five cardinal signs of inflammation. | Redness, heat, swelling, pain
 Q: Which white cells arrive first in acute inflammation? | Neutrophils.
 M1#nursing-u05-02-q1@1: What causes the swelling in acute inflammation? | Leaky capillaries letting fluid into tissues | Deposition of fat in the tissues | Growth of new bone at the site | Reduced blood flow to the area | Dehydration of the local tissues | Inflammatory mediators such as histamine make capillaries leaky, so fluid and proteins move into the tissues and cause swelling (oedema).
 M2#nursing-u05-02-q2@2: A patient's surgical wound is red, warm and swollen, with a rising temperature and heart rate. What should the nurse do? | Assess, consider infection and sepsis, escalate | Assume normal healing and do nothing | Apply heat to reduce the swelling | Remove the dressing and leave it open | Wait for the next routine dressing change | Inflammatory signs with systemic changes may signal infection.
+Q: What is inflammation? | The body's protective response to injury or infection, bringing immune cells and fluid to the area.
+Q: Name four triggers of acute inflammation. | Infection, trauma, burns, chemicals and dead tissue (any four).
+Q: What vascular changes occur in acute inflammation? | Vasodilation and increased capillary permeability, letting fluid and proteins leak into tissues.
+Q: Name three mediators of inflammation. | Histamine, prostaglandins and cytokines.
+Q: What do neutrophils do in acute inflammation? | They migrate to the area and engulf microbes and debris.
+Q: Name four possible outcomes of acute inflammation. | Resolution, repair by scarring, abscess formation or progression to chronic inflammation.
+Q: Name three systemic effects of inflammation. | Fever, raised heart rate, raised white cell count and CRP, and fatigue (any three).
+Q: What is C-reactive protein? | A blood marker that rises with inflammation.
+Q: What is chronic inflammation? | Prolonged inflammation with tissue destruction and repair going on together.
+Q: Give two examples of chronic inflammatory conditions. | Rheumatoid arthritis, inflammatory bowel disease and atherosclerosis (any two).
 
 ## Infection
 S: Infection is the invasion and multiplication of micro-organisms in the body, causing harm. Infection prevention and early recognition are central nursing responsibilities.
@@ -95,6 +115,16 @@ Q: List the six links in the chain of infection. | Infectious agent, reservoir, 
 Q: Why should urinary catheters be reviewed daily? | Because the risk of catheter-associated urinary tract infection rises with every day the catheter remains.
 M1#nursing-u05-03-q1@1: Which is the most effective single measure to prevent healthcare-associated infection? | Hand hygiene | Antibiotics for everyone | Wearing a uniform | Air fresheners | Visiting restrictions alone | Hand hygiene breaks the chain at transmission.
 M2#nursing-u05-03-q2@2: An older patient becomes newly confused with a raised respiratory rate, but no fever. What should the nurse consider? | Infection may present without fever: assess, escalate | Confusion is a normal part of ageing | Fever is required to diagnose infection | Wait until a fever develops before acting | Give a sedative to settle the confusion | Atypical presentations are common in older adults.
+Q: What is infection? | The invasion and multiplication of micro-organisms in the body, causing harm.
+Q: What is a healthcare-associated infection? | An infection acquired as a result of healthcare.
+Q: Name four modes of infection transmission. | Contact, droplet, airborne, faecal-oral and blood-borne (any four).
+Q: Name four ways of breaking the chain of infection. | Hand hygiene, PPE, aseptic technique, cleaning, isolation and vaccination (any four).
+Q: Name four healthcare-associated infections. | Surgical site infection, CAUTI, central line infection, ventilator-associated pneumonia, C. difficile, MRSA and norovirus (any four).
+Q: How may infection present in older or immunosuppressed people? | Subtly or atypically, such as new confusion, falls or reduced eating.
+Q: Name three systemic signs of infection. | Fever or low temperature, raised heart rate and respiratory rate, and confusion.
+Q: When should cultures be taken in suspected infection? | Before antibiotics where possible.
+Q: Which blood tests are taken if sepsis is suspected? | Full blood count, CRP and lactate, alongside cultures.
+Q: What should a nurse do if a person with suspected infection has abnormal observations? | Escalate using NEWS2 and the local sepsis pathway.
 
 ## Immune dysfunction
 S: Immune dysfunction occurs when the immune system is underactive (immunodeficiency), overactive (hypersensitivity), or misdirected against the body (autoimmunity). Each causes different risks and needs different care.
@@ -127,6 +157,16 @@ Q: Give three causes of secondary immunodeficiency. | Chemotherapy, immunosuppre
 Q: Which type of hypersensitivity causes anaphylaxis? | Type I (IgE-mediated) hypersensitivity.
 M1#nursing-u05-04-q1@1: Which is an autoimmune condition? | Type 1 diabetes | Type 2 diabetes | Osteoarthritis | Asthma triggered only by exercise | Iron deficiency anaemia | In type 1 diabetes, the immune system destroys insulin-producing beta cells.
 M3#nursing-u05-04-q2@2: A patient who had chemotherapy 8 days ago phones the ward feeling shivery with a temperature of 38.2°C. What should the nurse advise? | Attend urgently: possible neutropenic sepsis | Take paracetamol and rest at home | Wait 24 hours to see if it settles | Book a routine GP appointment this week | Drink more fluids and stay at home | Neutropenic sepsis can deteriorate rapidly.
+Q: What is immunodeficiency? | Reduced ability of the immune system to fight infection.
+Q: What is autoimmunity? | An immune response directed against the body's own tissues.
+Q: Which is more common, primary or secondary immunodeficiency? | Secondary immunodeficiency; primary is inherited and rare.
+Q: Within what time does NICE recommend antibiotics for neutropenic sepsis? | Within 1 hour of arrival.
+Q: Which type of hypersensitivity causes transfusion reactions? | Type II (antibody-mediated).
+Q: Which type of hypersensitivity causes contact dermatitis? | Type IV (delayed, T-cell mediated).
+Q: Which hypersensitivity type involves immune complexes? | Type III, seen in some forms of vasculitis.
+Q: Name four autoimmune conditions. | Type 1 diabetes, rheumatoid arthritis, coeliac disease, multiple sclerosis, lupus, Graves' disease and Hashimoto's thyroiditis (any four).
+Q: Why do autoimmune treatments raise infection risk? | Treatment often includes immunosuppression.
+Q: Which vaccines may be contraindicated in immunosuppression? | Live vaccines.
 
 ## Cardiovascular disease
 S: Cardiovascular disease (CVD) is a group of conditions affecting the heart and blood vessels, mostly caused by atherosclerosis. It is one of the leading causes of death and disability in the UK.
@@ -158,6 +198,16 @@ Q: Name four modifiable risk factors for cardiovascular disease. | Smoking, high
 Q: What happens when an atherosclerotic plaque ruptures? | A blood clot forms on it and can block the artery, causing myocardial infarction or stroke.
 M1#nursing-u05-05-q1@1: Which is a non-modifiable cardiovascular risk factor? | Age | Smoking | High cholesterol | Obesity | Physical inactivity | Age is a non-modifiable risk factor; smoking, cholesterol, weight and activity can all be changed to reduce cardiovascular risk.
 M2#nursing-u05-05-q2@2: During a routine admission, a patient mentions they smoke 20 a day and would like to stop. What should the nurse do? | Give very brief advice and refer to stop smoking support | Tell them to stop smoking and then move on | Ignore it, as it's not why they were admitted | Advise them to cut down a little, but not stop | Tell them it's too late for stopping to help | Brief advice and referral increase quit rates.
+Q: What is cardiovascular disease? | A group of conditions affecting the heart and blood vessels, mostly caused by atherosclerosis.
+Q: Name four conditions included in cardiovascular disease. | Coronary heart disease, stroke and TIA, peripheral arterial disease and aortic disease.
+Q: What proportion of UK deaths does cardiovascular disease cause? | About a quarter, with higher rates in more deprived areas.
+Q: Name three non-modifiable cardiovascular risk factors. | Age, male sex, family history and ethnicity (any three).
+Q: What is atherosclerosis? | The build-up of fatty plaques in artery walls.
+Q: How does an atherosclerotic plaque form? | LDL cholesterol enters a damaged artery wall; inflammation and foam cells form fatty streaks, then plaques with a fibrous cap.
+Q: How can a narrowed artery cause angina? | The plaque narrows the artery, causing ischaemia.
+Q: Which tool assesses cardiovascular risk in England? | QRISK3.
+Q: Name three medicines used to prevent cardiovascular disease. | Statins, antihypertensives and antiplatelets where indicated.
+Q: What is Making Every Contact Count? | Using everyday contacts to support people to make healthier choices.
 
 ## Hypertension
 S: Hypertension is persistently raised arterial blood pressure. It usually causes no symptoms but greatly increases the risk of stroke, heart attack, heart failure, kidney disease and dementia.
@@ -196,6 +246,16 @@ Q: What clinic reading suggests hypertension under NICE guidance? | 140/90 mmHg 
 Q: Name four complications of untreated hypertension. | Stroke, myocardial infarction, heart failure, chronic kidney disease, retinopathy, vascular dementia (any four).
 M1#nursing-u05-06-q1@1: How is a diagnosis of hypertension usually confirmed? | Ambulatory or home blood pressure monitoring | A single clinic reading | Patient symptoms | A chest X-ray | An ECG alone | NICE recommends confirming a raised clinic reading with ambulatory (ABPM) or home (HBPM) monitoring, because single clinic readings can be misleading.
 M2#nursing-u05-06-q2@2: A patient's BP is 220/130 and they report a severe headache and blurred vision. What should the nurse do? | Escalate now: possible hypertensive emergency | Recheck the blood pressure next week | Give paracetamol for the headache | Advise them to eat less salt | Tell them to rest and leave it | Severe hypertension with symptoms needs urgent medical assessment.
+Q: What is hypertension? | Persistently raised arterial blood pressure.
+Q: What home or ambulatory average confirms hypertension under NICE? | 135/85 mmHg or higher.
+Q: What defines severe hypertension? | Clinic systolic of 180 mmHg or more, or diastolic of 120 mmHg or more.
+Q: Roughly how many adults in England have hypertension? | About a third, many undiagnosed.
+Q: What is primary hypertension? | Raised blood pressure with no single identifiable cause.
+Q: Name three secondary causes of hypertension. | Kidney disease, endocrine disorders, medicines and pregnancy (pre-eclampsia) (any three).
+Q: Why is hypertension called a silent disease? | It usually causes no symptoms.
+Q: Name four lifestyle changes for hypertension. | Less salt, healthy weight, exercise, less alcohol and stopping smoking (any four).
+Q: Why check lying and standing blood pressure in some people on treatment? | To detect postural drops in people at risk of falls.
+Q: What should be monitored in people on ACE inhibitors and diuretics? | Kidney function and potassium.
 
 ## Heart failure
 S: Heart failure is a clinical syndrome in which the heart can't pump enough blood to meet the body's needs, or can only do so at high filling pressures. It causes breathlessness, fatigue and fluid retention, and is a leading cause of hospital admission in older people.
@@ -236,6 +296,16 @@ Q: What is orthopnoea? | Breathlessness when lying flat, relieved by sitting up.
 Q: Which blood test helps diagnose heart failure? | NT-proBNP (natriuretic peptide).
 M1#nursing-u05-07-q1@1: Which sign suggests right-sided heart failure? | Ankle oedema and raised jugular venous pressure | Frothy pink sputum alone | Wheeze only | Low urine sodium | A heart murmur only | Right-sided failure causes systemic congestion.
 M2#nursing-u05-07-q2@2: A patient with heart failure has gained 3 kg in two days and is more breathless lying flat. What should the nurse do? | Fluid overload: sit up, assess and escalate | Encourage them to drink more fluids | Lie them flat so that they can rest | Wait for next week's weight check | Stop all their medicines for now | Rapid weight gain and orthopnoea signal worsening heart failure.
+Q: What is heart failure? | A syndrome in which the heart can't pump enough blood to meet the body's needs, or only at high filling pressures.
+Q: What is ejection fraction? | The percentage of blood pumped out of the left ventricle with each beat.
+Q: How is heart failure classified? | By ejection fraction: reduced, mildly reduced or preserved.
+Q: Name four causes of heart failure. | Coronary heart disease, hypertension, valve disease, cardiomyopathy, atrial fibrillation, alcohol and some medicines (any four).
+Q: Why does compensation make heart failure worse over time? | Sympathetic and RAAS activation cause salt and water retention and vasoconstriction, increasing strain on the heart.
+Q: What are the main features of left-sided heart failure? | Pulmonary congestion, causing breathlessness and orthopnoea.
+Q: Name four medicine groups that improve survival in HFrEF. | ACE inhibitor or ARB (or sacubitril-valsartan), beta-blocker, mineralocorticoid receptor antagonist and SGLT2 inhibitor.
+Q: How should daily weights be done in heart failure? | At the same time, on the same scales, in the same clothing.
+Q: What weight gain should prompt a person with heart failure to seek help? | More than 2 kg in 3 days, or the threshold their team sets.
+Q: What are the signs of acute pulmonary oedema? | Severe breathlessness, frothy sputum, low saturations and anxiety.
 
 ## Ischaemic heart disease
 S: Ischaemic heart disease (coronary heart disease) occurs when the coronary arteries are narrowed by atherosclerosis, reducing blood supply to the heart muscle. It presents as stable angina or as acute coronary syndromes.
@@ -275,6 +345,16 @@ Q: How should a person use GTN for angina? | Sit down, use the spray, repeat aft
 Q: Name three components of secondary prevention in ischaemic heart disease. | Antiplatelet therapy, a statin, blood pressure control, smoking cessation, exercise and diet (any three).
 M1#nursing-u05-08-q1@1: Which feature distinguishes stable angina? | Pain brought on by exertion and relieved by rest or GTN | Pain at rest lasting an hour | Pain worse on breathing in | Pain relieved by antacids | Pain only at night | Stable angina is predictable and exertional.
 M3#nursing-u05-08-q2@2: A patient with known angina has chest pain at rest that hasn't settled after two doses of GTN. What should the nurse do? | Possible ACS: get help and record an ECG | Give a third and fourth GTN dose and wait | Encourage a short walk to ease the pain | Give an antacid for possible indigestion | Document it and review in the morning | Chest pain at rest that persists after GTN suggests unstable angina or myocardial infarction, so it needs an urgent ECG and escalation, not more waiting.
+Q: What is ischaemic heart disease? | Narrowing of the coronary arteries by atherosclerosis, reducing blood supply to the heart muscle.
+Q: What is an acute coronary syndrome? | Unstable angina or myocardial infarction caused by plaque rupture and clot.
+Q: Why does stable angina occur on exertion? | A fixed narrowing means oxygen demand exceeds supply.
+Q: Where may angina pain radiate? | To the arm, neck or jaw.
+Q: Which groups more often have atypical angina presentations? | Women, older people and people with diabetes.
+Q: What is NICE's first-line test for suspected stable angina? | CT coronary angiography.
+Q: Name two types of revascularisation. | Percutaneous coronary intervention (stents) and coronary artery bypass grafting.
+Q: What is a common side effect of GTN? | Headache.
+Q: What chest pain features suggest an acute coronary syndrome? | Pain at rest, lasting more than 15 minutes, or not relieved by GTN.
+Q: Name three complications of ischaemic heart disease. | Acute coronary syndrome, heart failure and arrhythmias.
 
 ## Myocardial infarction
 S: A myocardial infarction (MI, heart attack) is death of heart muscle caused by prolonged ischaemia, usually from a blood clot on a ruptured coronary plaque. Rapid treatment saves heart muscle and lives.
@@ -314,6 +394,16 @@ Q: What is the immediate investigation for suspected MI? | A 12-lead ECG, follow
 Q: What is the preferred treatment for STEMI? | Urgent reperfusion with primary percutaneous coronary intervention (PCI).
 M1#nursing-u05-09-q1@1: Which blood test is used to detect heart muscle damage? | Troponin | Amylase | D-dimer | Ferritin | TSH | Troponin rises when myocardial cells are damaged.
 M2#nursing-u05-09-q2@2: After PCI via the femoral artery, a patient's groin is swelling and their blood pressure falls. What should the nurse do? | Press above the site and get urgent help | Encourage the patient to walk around | Remove the dressing and wait | Give a laxative to reduce straining | Recheck the site in an hour | These signs suggest bleeding from the access site.
+Q: What is a myocardial infarction? | Death of heart muscle caused by prolonged ischaemia, usually from a clot on a ruptured coronary plaque.
+Q: What is the difference between STEMI and NSTEMI? | STEMI is ST-elevation MI, usually from complete occlusion; NSTEMI is MI without ST elevation.
+Q: What is troponin? | A cardiac protein released into the blood when heart muscle is damaged.
+Q: Describe the sequence of events leading to MI. | Plaque rupture, platelet aggregation and thrombus, coronary occlusion, ischaemia, then necrosis within minutes to hours.
+Q: Name two causes of MI besides typical cardiovascular risk factors. | Cocaine use and spontaneous coronary artery dissection, often in younger women.
+Q: How might MI present atypically? | With breathlessness, fatigue, epigastric pain or no pain, especially in women, older people and people with diabetes.
+Q: When should oxygen be given in suspected MI? | Only if saturation is below target.
+Q: What treatment is used for STEMI if PCI isn't available in time? | Thrombolysis.
+Q: What checks are needed at the access site after PCI? | Checks for bleeding and limb perfusion.
+Q: Name three complications of MI. | Arrhythmias including VF, heart failure, cardiogenic shock, recurrent ischaemia, bleeding, pericarditis and mechanical complications (any three).
 
 ## Arrhythmias
 S: An arrhythmia is an abnormal heart rhythm. Some are harmless; others cause poor cardiac output, stroke or sudden death. Atrial fibrillation is the most common.
@@ -354,6 +444,16 @@ Q: Why does atrial fibrillation increase stroke risk? | Blood stagnates in the q
 Q: Name the four adverse features in a tachyarrhythmia or bradyarrhythmia. | Shock, syncope, myocardial ischaemia and heart failure.
 M1#nursing-u05-10-q1@1: What is the characteristic pulse in atrial fibrillation? | Irregularly irregular | Regular and slow | Regularly irregular | Bounding and regular | Absent | In atrial fibrillation, chaotic atrial activity reaches the ventricles irregularly, giving an irregularly irregular pulse; confirm with a 12-lead ECG.
 M3#nursing-u05-10-q2@2: A patient's monitor shows a broad complex tachycardia; they are unresponsive with no pulse. What should the nurse do? | Call the arrest team and start CPR | Record a 12-lead ECG first | Give an oral beta-blocker | Check blood glucose and wait | Ask the next morning's team | Pulseless ventricular tachycardia is a cardiac arrest: start CPR, call the arrest team and defibrillate per the advanced life support algorithm.
+Q: What is an arrhythmia? | An abnormal heart rhythm.
+Q: Name three tachyarrhythmias. | Atrial fibrillation, atrial flutter, SVT, ventricular tachycardia and ventricular fibrillation (any three).
+Q: Name two bradyarrhythmias. | Sinus bradycardia and heart block.
+Q: How common is atrial fibrillation in UK adults? | About 2–3% of adults, rising with age.
+Q: Name four causes of arrhythmias. | Heart disease, hypertension, heart failure, thyroid disease, alcohol, infection, electrolyte imbalance, medicines and age (any four).
+Q: What is the difference between rate control and rhythm control in AF? | Rate control slows the heart with drugs; rhythm control restores normal rhythm with cardioversion, antiarrhythmics or ablation.
+Q: Which score helps guide anticoagulation for stroke prevention in AF? | CHA2DS2-VASc, alongside bleeding risk assessment.
+Q: How is a compromised patient with bradycardia treated? | Treat the cause, with atropine or pacing if compromised.
+Q: How long should a manual pulse be counted when an arrhythmia is suspected? | A full minute.
+Q: How is pulseless VT or VF treated? | As cardiac arrest: start CPR, call the arrest team and defibrillate, following Resuscitation Council UK algorithms.
 
 ## Stroke
 S: A stroke is a sudden loss of brain function caused by an interruption of blood supply: either a blocked artery (ischaemic stroke) or bleeding (haemorrhagic stroke). It is a medical emergency in which every minute counts.
@@ -397,6 +497,16 @@ Q: What does FAST stand for? | Face, Arm, Speech, Time to call 999.
 Q: Why must a swallow screen be done before oral intake after stroke? | Stroke often impairs swallowing, risking aspiration and pneumonia.
 M1#nursing-u05-11-q1@1: What is the most important modifiable risk factor for stroke? | High blood pressure | Hair colour | Height | Shoe size | Blood group | Hypertension is the biggest single modifiable risk.
 M2#nursing-u05-11-q2@2: A patient develops sudden slurred speech and right arm weakness. What should the nurse do first? | Get emergency help, note onset, check glucose | Give a drink to check their swallowing | Wait to see if the symptoms resolve | Lie them flat and recheck in an hour | Give aspirin straight away | Rapid recognition and escalation are critical; aspirin isn't given until haemorrhage is excluded.
+Q: What is a stroke? | A sudden loss of brain function caused by an interruption of blood supply, from a blocked artery or bleeding.
+Q: What proportion of strokes are ischaemic? | About 85%; about 15% are haemorrhagic.
+Q: What is a transient ischaemic attack? | Temporary neurological dysfunction without infarction, warning of high stroke risk.
+Q: What is the ischaemic penumbra? | The at-risk brain around the dead core, which can be saved by rapid reperfusion.
+Q: Name three stroke symptoms beyond FAST. | Sudden visual loss, leg weakness, loss of balance, severe sudden headache and confusion (any three).
+Q: Why is blood glucose checked in suspected stroke? | To exclude hypoglycaemia.
+Q: How is ischaemic stroke treated acutely? | Thrombolysis within a strict time window and/or mechanical thrombectomy, then antiplatelets.
+Q: How is haemorrhagic stroke treated? | Blood pressure control, reversal of anticoagulation and neurosurgical review.
+Q: Name three neurological observations used after stroke. | GCS, limb power and pupils.
+Q: Name four complications of stroke. | Aspiration pneumonia, pressure ulcers, DVT, falls, depression, further stroke, contractures and shoulder pain (any four).
 
 ## Respiratory disease
 S: Respiratory diseases affect the airways, lung tissue, blood vessels or breathing muscles. They are a major cause of illness, hospital admission and death in the UK, especially in winter and in deprived communities.
@@ -428,6 +538,16 @@ Q: What is the difference between type 1 and type 2 respiratory failure? | Type 
 Q: Name three obstructive airway diseases. | Asthma, COPD and bronchiectasis.
 M1#nursing-u05-12-q1@1: Which condition commonly causes type 2 respiratory failure? | Severe COPD | Mild asthma between attacks | Anaemia | Hypertension | Simple anxiety | COPD can impair ventilation and cause CO2 retention.
 M2#nursing-u05-12-q2@2: A patient's respiratory rate rises from 16 to 24 over a few hours while SpO2 stays at 95%. What should the nurse do? | Reassess, calculate NEWS2 and escalate | Ignore it while saturation is normal | Wait for the saturation to drop | Give a sedative to slow the breathing | Recheck the observations tomorrow | Respiratory rate often rises hours before oxygen saturation falls, so a rising rate with normal saturation is an early warning that needs action.
+Q: What is obstructive lung disease? | Disease that limits airflow out of the lungs, such as asthma and COPD.
+Q: What is restrictive lung disease? | Disease that limits lung expansion, such as pulmonary fibrosis.
+Q: What three processes does lung function depend on? | Ventilation, diffusion and perfusion.
+Q: Give two causes of type 1 respiratory failure. | Pneumonia and pulmonary embolism.
+Q: Give three causes of type 2 respiratory failure. | Severe COPD, neuromuscular disease and opioid toxicity.
+Q: Name two pleural conditions. | Pneumothorax and pleural effusion.
+Q: Name two vascular lung conditions. | Pulmonary embolism and pulmonary hypertension.
+Q: Name four risk factors for respiratory disease. | Smoking, air pollution, occupational exposure, infections, genetics and deprivation (any four).
+Q: Which is often the first sign of respiratory deterioration? | A rising respiratory rate, before saturation falls.
+Q: Name four nursing roles in respiratory disease. | Assessment, oxygen to target, positioning, inhaler technique, airway clearance, vaccination, smoking cessation and escalation (any four).
 
 ## Asthma
 S: Asthma is a chronic inflammatory condition of the airways causing variable, reversible airflow obstruction, with symptoms of wheeze, breathlessness, chest tightness and cough. Attacks can be fatal, and many asthma deaths are preventable.
@@ -468,6 +588,16 @@ Q: Name four features of life-threatening asthma. | Peak flow below 33%, SpO2 be
 Q: What should every person with asthma have? | A personalised asthma action plan, with inhaler technique checked regularly.
 M1#nursing-u05-13-q1@1: Which finding indicates acute severe (not yet life-threatening) asthma? | Peak flow 40% of best and unable to complete sentences | Peak flow 80% | Silent chest | Cyanosis | Exhaustion with confusion | Peak flow 33–50% and inability to complete sentences indicate acute severe asthma.
 M2#nursing-u05-13-q2@2: A young woman with asthma has become quiet, drowsy and has a silent chest. What should the nurse do? | Call for emergency help immediately | Reassure her that she is improving | Encourage her to rest quietly | Measure peak flow and then wait | Give oral steroids only and observe | Silent chest and drowsiness indicate a pre-arrest state.
+Q: What is asthma? | A chronic inflammatory airway condition causing variable, reversible airflow obstruction.
+Q: Name four symptoms of asthma. | Wheeze, breathlessness, chest tightness and cough, often at night.
+Q: What is peak expiratory flow? | The maximum speed of breathing out, used to assess asthma.
+Q: Name four asthma triggers. | Viral infections, allergens, exercise, cold air, smoke, pollution and NSAIDs or beta-blockers in some people (any four).
+Q: Name three objective tests for diagnosing asthma. | FeNO, spirometry with bronchodilator reversibility and peak flow variability.
+Q: What peak flow defines moderate asthma? | 50–75% of best or predicted.
+Q: Name three features of acute severe asthma. | Peak flow 33–50%, respiratory rate 25 or more, heart rate 110 or more, and inability to complete sentences (any three).
+Q: What changes occur in the airways in asthma? | Inflammation, hyperresponsiveness, smooth muscle constriction, mucus production and, over time, remodelling.
+Q: When should peak flow be measured during an asthma attack? | Before and after treatment.
+Q: What follow-up is advised after an asthma attack? | Follow-up review, alongside checking inhaler technique, preventer adherence and the action plan.
 
 ## COPD
 S: Chronic obstructive pulmonary disease (COPD) is a common, preventable lung condition with persistent breathlessness and airflow obstruction that is not fully reversible, usually caused by smoking. It is punctuated by exacerbations that often lead to hospital admission.
@@ -503,6 +633,16 @@ Q: What spirometry result confirms airflow obstruction in COPD? | A post-broncho
 Q: What is the single most effective intervention to slow COPD progression? | Stopping smoking.
 M1#nursing-u05-14-q1@1: What is the usual target oxygen saturation for someone with COPD at risk of hypercapnia? | 88–92% | 94–98% | 100% | 80–85% | 92–96% | BTS guidance sets 88–92% for those at risk of hypercapnic failure.
 M3#nursing-u05-14-q2@2: A patient with a COPD exacerbation becomes drowsy with a flapping tremor on 60% oxygen. What should the nurse suspect? | Rising CO2: reduce oxygen to target and escalate | Improvement, as they are now resting | Hypoglycaemia, needing a sugary drink | Anxiety, needing reassurance only | Normal tiredness after a long day | Drowsiness and a flapping tremor on high-flow oxygen suggest hypercapnia; oxygen should be reduced to the prescribed target and blood gases checked urgently.
+Q: What is COPD? | A preventable lung condition with persistent breathlessness and airflow obstruction that is not fully reversible.
+Q: Which two conditions does COPD include? | Chronic bronchitis and emphysema.
+Q: Name three causes of COPD besides smoking. | Occupational dusts and fumes, air pollution, biomass smoke and alpha-1 antitrypsin deficiency (any three).
+Q: What happens to the alveoli in emphysema? | Their walls are destroyed, reducing gas exchange and elastic recoil and trapping air.
+Q: What is cor pulmonale in COPD? | Right heart strain in later COPD, causing ankle oedema.
+Q: What is pulmonary rehabilitation? | A programme of exercise and education for people with lung disease.
+Q: When is non-invasive ventilation used in COPD? | In acute hypercapnic respiratory failure.
+Q: Name three signs of rising CO2. | Drowsiness, confusion, flapping tremor and headache (any three).
+Q: What should a nurse do if a COPD patient on oxygen shows signs of rising CO2? | Reduce oxygen to target, get blood gases and escalate.
+Q: Name three self-management supports for COPD. | Rescue packs and self-management plans, breathing control, energy conservation and inhaler technique (any three).
 
 ## Pneumonia
 S: Pneumonia is infection of the lung tissue, causing inflammation and consolidation of the alveoli. It is common, can be life-threatening, and is a frequent cause of sepsis.
@@ -540,6 +680,16 @@ Q: What does CURB-65 stand for? | Confusion, Urea over 7 mmol/L, Respiratory rat
 Q: What is the commonest bacterial cause of community-acquired pneumonia? | Streptococcus pneumoniae.
 M1#nursing-u05-15-q1@1: Which finding is part of CURB-65? | New confusion | Wheeze | Ankle oedema | Rash | Low blood glucose | CURB-65 scores Confusion, Urea over 7, Respiratory rate 30 or more, low Blood pressure and age 65 or over; new confusion is one point.
 M2#nursing-u05-15-q2@2: A patient with pneumonia has a respiratory rate of 30, BP 88/50 and is newly confused. What should the nurse do? | Possible sepsis: escalate and follow the pathway | Encourage oral fluids and recheck later | Give paracetamol and wait for it to work | Lie them flat to help them rest | Document it for the next ward round | Respiratory rate 30, hypotension and new confusion suggest severe pneumonia with possible sepsis, needing immediate escalation and the sepsis pathway.
+Q: What is pneumonia? | Infection of the lung tissue, causing inflammation and consolidation of the alveoli.
+Q: What is consolidation? | Lung tissue filled with fluid or exudate instead of air.
+Q: What is hospital-acquired pneumonia? | Pneumonia with onset 48 hours or more after admission.
+Q: What is aspiration pneumonia? | Pneumonia caused by inhaling food, fluid or secretions.
+Q: Name four risk factors for pneumonia. | Age, smoking, COPD, immunosuppression, swallowing problems, reduced consciousness and recent hospital stay (any four).
+Q: Why does pneumonia cause hypoxia? | Alveoli fill with fluid and cells, impairing gas exchange.
+Q: How may pneumonia present in older people? | With confusion.
+Q: Name four nursing measures in pneumonia. | Observations, oxygen, fluid balance, nutrition, sitting upright, mobilising, deep breathing and coughing, oral care and sputum samples (any four).
+Q: Name three complications of pneumonia. | Sepsis, respiratory failure, pleural effusion or empyema, lung abscess, AKI and delirium (any three).
+Q: Which vaccinations are advised to prevent pneumonia? | Pneumococcal, influenza and COVID-19 vaccines.
 
 ## Pulmonary embolism
 S: A pulmonary embolism (PE) is a blockage of the pulmonary arteries, usually by a blood clot from a deep vein thrombosis (DVT) in the leg. It can cause sudden death, and many cases are preventable.
@@ -577,6 +727,16 @@ Q: What is Virchow's triad? | Venous stasis, vessel wall damage and hypercoagula
 Q: Which imaging test is commonly used to diagnose PE? | CT pulmonary angiography (CTPA).
 M1#nursing-u05-16-q1@1: Which is a major risk factor for PE? | Recent major orthopaedic surgery | Regular walking | Good hydration | Young age with no illness | Taking vitamin C | Surgery and immobility increase VTE risk.
 M3#nursing-u05-16-q2@2: Three days after hip surgery, a patient becomes suddenly breathless with chest pain and a heart rate of 120. What should the nurse do? | Get help, assess ABCDE, follow the PE pathway | Encourage deep breathing and wait | Give an antacid for the chest pain | Walk them to the toilet to mobilise | Recheck the observations in four hours | Sudden breathlessness, chest pain and tachycardia after surgery suggest pulmonary embolism, which can be fatal; emergency assessment comes before anything else.
+Q: What is a pulmonary embolism? | A blockage of the pulmonary arteries, usually by a clot from a deep vein thrombosis.
+Q: What is venous thromboembolism? | DVT and PE together.
+Q: Name four risk factors for VTE. | Immobility, surgery, cancer, pregnancy, oestrogen-containing medicines, previous VTE, obesity, long-haul travel and dehydration (any four).
+Q: How does a large PE cause shock? | The clot strains the right ventricle, which can cause shock or cardiac arrest.
+Q: Name four signs of PE. | Sudden breathlessness, pleuritic chest pain, tachycardia, tachypnoea, haemoptysis, low saturations and collapse (any four).
+Q: When is a D-dimer test used in suspected PE? | When the Wells score shows low probability.
+Q: When is thrombolysis used for PE? | For massive PE with shock.
+Q: Should anticoagulation wait for confirmed diagnosis in suspected PE? | No, it is started promptly when PE is suspected, unless contraindicated.
+Q: Name three measures for VTE prophylaxis. | LMWH, anti-embolism stockings where appropriate, early mobilisation and hydration.
+Q: Name two long-term complications of PE. | Recurrent VTE and chronic thromboembolic pulmonary hypertension.
 
 ## Diabetes
 S: Diabetes mellitus is a group of conditions in which blood glucose is persistently raised because the body produces too little insulin, responds poorly to it, or both. It is common, serious and largely managed by the person themselves with support.
@@ -622,6 +782,16 @@ Q: Give the HbA1c threshold for diagnosing diabetes. | 48 mmol/mol or above.
 Q: Name three acute complications of diabetes. | Hypoglycaemia, diabetic ketoacidosis and hyperosmolar hyperglycaemic state.
 M1#nursing-u05-17-q1@1: Which type of diabetes is caused by autoimmune destruction of beta cells? | Type 1 | Type 2 | Gestational | Steroid-induced | Monogenic | Type 1 is autoimmune and needs insulin for life.
 M2#nursing-u05-17-q2@2: A person with type 1 diabetes is vomiting, breathing deeply and has blood ketones of 4.2 mmol/L. What should the nurse do? | Escalate urgently for suspected DKA | Stop their insulin straight away | Give them a sugary drink to help | Recheck the ketones tomorrow | Encourage them to sleep it off | These are features of DKA, a medical emergency.
+Q: What is diabetes mellitus? | A group of conditions with persistently raised blood glucose, from too little insulin, a poor response to it, or both.
+Q: What causes type 2 diabetes? | Insulin resistance and relative insulin deficiency.
+Q: What proportion of diabetes is type 2? | About 90%; type 1 is about 8–10%.
+Q: What fasting plasma glucose indicates diabetes? | 7.0 mmol/L or above.
+Q: What random glucose indicates diabetes? | 11.1 mmol/L or above with symptoms.
+Q: Why does DKA develop in absolute insulin deficiency? | Without insulin, fat breakdown produces ketones, causing acidosis.
+Q: Name four symptoms of diabetes. | Thirst, polyuria, weight loss, tiredness, blurred vision and recurrent infections (any four).
+Q: Can type 2 diabetes go into remission? | Yes, for some people, with lifestyle change and weight loss.
+Q: Name four chronic complications of diabetes. | Retinopathy, nephropathy, neuropathy, foot ulcers and amputation, cardiovascular disease and erectile dysfunction (any four).
+Q: What should be escalated for a person with diabetes and a hot, swollen foot? | It may be Charcot foot or infection and needs urgent escalation.
 
 ## Thyroid disease
 S: Thyroid disease is common, especially in women. An underactive thyroid (hypothyroidism) slows body functions; an overactive thyroid (hyperthyroidism) speeds them up. Both are treatable, but extreme forms are emergencies.
@@ -659,6 +829,16 @@ Q: What is the commonest cause of hyperthyroidism in the UK? | Graves' disease.
 Q: What are the TSH and T4 results in primary hypothyroidism? | High TSH and low free T4.
 M1#nursing-u05-18-q1@1: Which symptom suggests hyperthyroidism? | Heat intolerance and weight loss | Cold intolerance | Weight gain | Constipation | Slow pulse | Excess thyroid hormone raises metabolic rate, causing heat intolerance, weight loss, tremor and palpitations; cold intolerance and weight gain suggest hypothyroidism.
 M2#nursing-u05-18-q2@2: After a thyroidectomy, a patient reports tingling around the mouth and in the fingers. What should the nurse suspect and do? | Hypocalcaemia: escalate for urgent calcium check | Normal after-effects of the anaesthetic | Anxiety only, needing reassurance | Thyroid storm from the surgery | Hyperglycaemia from the stress response | Parathyroid injury can cause hypocalcaemia after thyroid surgery.
+Q: What is TSH? | Thyroid-stimulating hormone, the main screening test for thyroid function.
+Q: What is the commonest cause of hypothyroidism in the UK? | Autoimmune Hashimoto's thyroiditis.
+Q: Name two medicines that can cause hypothyroidism. | Amiodarone and lithium.
+Q: What do thyroid hormones control? | Metabolic rate.
+Q: What are the TSH and T4 results in primary hyperthyroidism? | Low TSH with high T4 or T3.
+Q: Name four symptoms of hypothyroidism. | Tiredness, weight gain, cold intolerance, constipation, dry skin, low mood, slow pulse and menstrual changes (any four).
+Q: Name three treatments for hyperthyroidism. | Antithyroid drugs, beta-blockers for symptoms, radioactive iodine and surgery (any three).
+Q: What is myxoedema coma? | Severe hypothyroidism with hypothermia, confusion and bradycardia: an emergency.
+Q: What are the features of thyroid storm? | Fever, tachycardia, agitation and heart failure: an emergency.
+Q: What should be monitored after a thyroidectomy? | Airway, voice, neck swelling and signs of low calcium.
 
 ## Renal disease
 S: The kidneys filter blood, remove waste, balance fluid and electrolytes, regulate acid-base and blood pressure, make erythropoietin and activate vitamin D. Renal disease disrupts all of these, and is common, often silent and frequently made worse by medicines.
@@ -688,6 +868,16 @@ Q: Name four functions of the kidneys. | Filtering waste, fluid and electrolyte 
 Q: What are the features of nephrotic syndrome? | Heavy proteinuria, low serum albumin and oedema (often with high cholesterol).
 M1#nursing-u05-19-q1@1: Which blood test is used to estimate kidney function? | Creatinine, giving eGFR | Troponin | Amylase | TSH | HbA1c | eGFR is calculated from serum creatinine.
 M2#nursing-u05-19-q2@2: A man with an enlarged prostate hasn't passed urine for 8 hours and has lower abdominal pain. What should the nurse do? | Check for retention and escalate | Encourage more oral fluids | Give a diuretic to increase output | Wait until the morning to review | Give a laxative for constipation | Acute urinary retention causes pain and can lead to AKI.
+Q: What is eGFR? | Estimated glomerular filtration rate, a measure of kidney function.
+Q: What is hyperkalaemia? | A raised blood potassium level.
+Q: How does renal colic typically present? | Severe loin-to-groin colicky pain from a kidney stone.
+Q: Name three causes of urinary obstruction. | Enlarged prostate, stones and tumours.
+Q: Name four tests used to assess kidney function. | Creatinine and eGFR, urea, electrolytes, urine dipstick, urine ACR, urine output and imaging (any four).
+Q: Name four common problems caused by kidney disease. | High potassium, fluid overload, acidosis and anaemia.
+Q: At what potassium level should a nurse escalate in kidney disease? | 6.0 mmol/L or above.
+Q: How can urinary retention be checked? | By bladder scanning, per policy.
+Q: Why should nephrotoxic drugs be reviewed in kidney disease? | Renal disease is frequently made worse by medicines.
+Q: What is polycystic kidney disease? | An inherited kidney condition.
 
 ## Acute kidney injury
 S: Acute kidney injury (AKI) is a sudden fall in kidney function over hours to days. It is common in hospital, often preventable, and associated with longer stays and higher mortality.
@@ -729,6 +919,16 @@ Q: State the KDIGO urine output criterion for AKI. | Urine output below 0.5 mL/k
 Q: Name four medicines to review in AKI. | NSAIDs, ACE inhibitors, ARBs, diuretics, metformin, aminoglycosides (any four).
 M1#nursing-u05-20-q1@1: What is the most common category of AKI? | Pre-renal | Post-renal | Glomerulonephritis | Polycystic | Congenital | Reduced perfusion is the commonest cause.
 M2#nursing-u05-20-q2@2: A patient's potassium is reported as 6.8 mmol/L. What should the nurse do? | Inform the team now and arrange an ECG | Recheck the potassium in the morning | Give a banana to replace potassium | Encourage oral fluids only | Ignore it if the patient feels well | Severe hyperkalaemia can cause cardiac arrest.
+Q: What is acute kidney injury? | A sudden fall in kidney function over hours to days.
+Q: What creatinine rise defines AKI within 48 hours? | A rise of 26 µmol/L or more.
+Q: What creatinine rise within 7 days defines AKI? | A rise to 1.5 times baseline or more.
+Q: What is pre-renal AKI? | AKI caused by reduced blood flow to the kidneys, such as from dehydration, bleeding, sepsis or low blood pressure.
+Q: What is post-renal AKI? | AKI caused by obstruction, such as retention, stones or tumours.
+Q: Name three intrinsic (renal) causes of AKI. | Acute tubular injury, nephrotoxic drugs and glomerulonephritis.
+Q: Name four risk factors for AKI. | Age over 65, CKD, heart failure, diabetes, liver disease, sepsis, nephrotoxic medicines and cognitive impairment (any four).
+Q: What is the first principle of treating AKI? | Treat the cause: fluids if hypovolaemic, treat sepsis, relieve obstruction.
+Q: Why is hyperkalaemia dangerous in AKI? | It risks fatal arrhythmias.
+Q: What potassium level in AKI needs urgent escalation? | 6.5 mmol/L or above, or with ECG changes.
 
 ## Chronic kidney disease
 S: Chronic kidney disease (CKD) is long-term reduced kidney function or kidney damage lasting more than 3 months. It is common, usually progresses slowly and greatly increases cardiovascular risk.
@@ -770,6 +970,16 @@ Q: How is CKD defined? | Reduced kidney function (eGFR below 60) or markers of k
 Q: Name the three forms of kidney replacement therapy. | Haemodialysis, peritoneal dialysis and kidney transplantation.
 M1#nursing-u05-21-q1@1: What are the two leading causes of CKD in the UK? | Diabetes and hypertension | Asthma and COPD | Migraine and epilepsy | Gout and psoriasis | Anaemia and obesity | Diabetes and high blood pressure damage the kidneys' small blood vessels and filters over years, and together cause most chronic kidney disease in the UK.
 M2#nursing-u05-21-q2@2: A healthcare assistant is about to take a blood pressure on the arm with a dialysis fistula. What should the nurse do? | Stop them and use the other arm | Allow it, as it's quick and harmless | Use a smaller cuff on the fistula arm | Take blood from the fistula instead | Ask the patient to decide which arm | Pressure on the fistula can damage or block it.
+Q: What is chronic kidney disease? | Long-term reduced kidney function or kidney damage lasting more than 3 months.
+Q: How is CKD classified? | By eGFR (G1–G5) and albuminuria (A1–A3).
+Q: What ACR indicates kidney damage? | 3 mg/mmol or more.
+Q: What is CKD stage G5? | Kidney failure.
+Q: Why does CKD cause anaemia? | Reduced erythropoietin production.
+Q: Name three treatments that slow CKD progression. | Blood pressure control, SGLT2 inhibitors, diabetes control, statins and avoiding nephrotoxins (any three).
+Q: What is an arteriovenous fistula? | A surgically created connection used for haemodialysis access.
+Q: How should a fistula be checked? | By feeling for a thrill (buzz); no thrill may mean a clot.
+Q: What should never be done on a fistula arm? | Blood pressure readings, cannulas or blood tests.
+Q: What dietary factors may be restricted in CKD? | Potassium, phosphate, salt and fluid, with dietitian advice.
 
 ## Liver disease
 S: Liver disease is a growing cause of death in the UK, largely preventable and often diagnosed late. Cirrhosis, the end stage of many liver diseases, causes life-threatening complications.
@@ -806,6 +1016,16 @@ Q: Name three common causes of liver disease in the UK. | Alcohol, MASLD (fatty 
 Q: What is hepatic encephalopathy? | Confusion and reduced consciousness caused by toxins (such as ammonia) that the failing liver can't clear.
 M1#nursing-u05-22-q1@1: Which medicine is commonly used to treat hepatic encephalopathy? | Lactulose | Furosemide alone | Paracetamol | Aspirin | Salbutamol | Lactulose reduces ammonia absorption from the gut.
 M2#nursing-u05-22-q2@2: A patient with cirrhosis vomits a large amount of fresh blood. What should the nurse do first? | Get emergency help, assess ABCDE, follow the pathway | Give an antacid to settle the stomach | Lie them flat and recheck in an hour | Encourage oral fluids to replace losses | Document it and wait for the ward round | Varices from portal hypertension can bleed massively, so vomiting fresh blood in cirrhosis needs an immediate emergency response and the upper GI bleed pathway.
+Q: What is cirrhosis? | Scarring of the liver with nodules, from long-term damage.
+Q: What is MASLD? | Metabolic dysfunction-associated steatotic liver disease, formerly non-alcoholic fatty liver disease, linked to obesity and diabetes.
+Q: What is portal hypertension? | Raised pressure in the portal vein caused by liver scarring.
+Q: Why does cirrhosis cause bruising and low albumin? | The liver loses synthetic function, making less albumin and fewer clotting factors.
+Q: Name four signs of liver disease. | Jaundice, itching, ascites, bruising, spider naevi, palmar erythema, confusion and muscle wasting (any four).
+Q: How is ascites managed? | With diuretics and paracentesis.
+Q: How are varices managed? | With beta-blockers and band ligation.
+Q: What bowel target is used with lactulose in liver disease? | 2–3 soft stools a day, as prescribed.
+Q: Why is thiamine given in alcohol withdrawal? | To prevent Wernicke's encephalopathy.
+Q: What should a nurse monitor in cirrhosis with ascites? | Fluid balance, daily weight and abdominal girth.
 
 ## Gastrointestinal disorders
 S: Gastrointestinal (GI) disorders range from common, mild problems such as reflux and constipation to life-threatening bleeding, obstruction and cancer. Nurses assess bowel function every day and are often first to spot a serious change.
@@ -839,6 +1059,16 @@ Q: What are the two main forms of inflammatory bowel disease? | Crohn's disease 
 Q: Name the two commonest causes of peptic ulcers. | Helicobacter pylori infection and NSAIDs.
 M1#nursing-u05-23-q1@1: Which condition is treated with a lifelong gluten-free diet? | Coeliac disease | Crohn's disease | Diverticulitis | GORD | Appendicitis | Coeliac disease is an autoimmune reaction to gluten.
 M2#nursing-u05-23-q2@2: A patient with ulcerative colitis has ten bloody stools a day, a heart rate of 115 and a temperature of 38.3°C. What should the nurse do? | Possible severe flare: escalate and monitor | Give loperamide and wait for it to settle | Encourage a normal diet only | Recheck the symptoms tomorrow | Reassure them that it's a typical flare | Acute severe colitis is a medical emergency.
+Q: What is the Bristol Stool Chart? | A seven-type scale for describing stool form.
+Q: What is an upper GI bleed? | Bleeding from the oesophagus, stomach or duodenum.
+Q: What are the signs of upper GI bleeding? | Haematemesis (vomiting blood or coffee-ground material) or melaena.
+Q: Which score assesses upper GI bleed risk? | The Glasgow-Blatchford score.
+Q: How does Crohn's disease differ from ulcerative colitis? | Crohn's can affect anywhere in the gut, is transmural and patchy; UC affects the colon, continuous from the rectum.
+Q: What is coeliac disease? | An autoimmune reaction to gluten, treated with a lifelong gluten-free diet.
+Q: What are the signs of bowel obstruction? | Colicky pain, distension, vomiting and absolute constipation.
+Q: How does appendicitis pain typically progress? | It starts around the umbilicus and moves to the right iliac fossa.
+Q: Name three warning signs of colorectal cancer. | Change in bowel habit, rectal bleeding, weight loss and anaemia (any three).
+Q: Why is "bowels fine" an inadequate bowel record? | It doesn't tell the next nurse enough; use the Bristol Stool Chart.
 
 ## Neurological disorders
 S: Neurological disorders affect the brain, spinal cord, nerves or muscles. They range from common headaches to progressive conditions, and acute neurological changes are often emergencies.
@@ -872,6 +1102,16 @@ Q: What are the classic features of meningitis? | Fever, headache, neck stiffnes
 Q: What are the red flags for cauda equina syndrome? | Saddle anaesthesia, bladder or bowel dysfunction, bilateral sciatica or leg weakness.
 M1#nursing-u05-24-q1@1: Which condition causes progressive ascending weakness after an infection? | Guillain-Barré syndrome | Migraine | Parkinson's disease | Alzheimer's disease | Essential tremor | Guillain-Barré is an acute inflammatory neuropathy.
 M2#nursing-u05-24-q2@2: A patient with Guillain-Barré syndrome reports increasing breathlessness and has a weak cough. What should the nurse do? | Escalate urgently: breathing muscles may fail | Encourage rest and recheck later | Give a nebuliser and then wait | Lie them flat to ease breathing | Recheck everything tomorrow | Guillain-Barré can weaken the breathing muscles quickly; breathlessness and a weak cough mean urgent review and breathing measurements are needed.
+Q: What is a thunderclap headache? | A sudden, severe headache that may indicate bleeding.
+Q: What is multiple sclerosis? | An autoimmune demyelinating condition, relapsing or progressive, with visual, sensory, motor and bladder symptoms.
+Q: What is motor neurone disease? | Progressive degeneration of motor neurones causing weakness and swallowing and breathing difficulties.
+Q: What is Guillain-Barré syndrome? | Ascending weakness after infection that can affect breathing.
+Q: What is myasthenia gravis? | A condition causing fatiguable weakness, which some medicines worsen.
+Q: How is breathing monitored in neuromuscular conditions? | By measuring breathing capacity, such as forced vital capacity, as directed.
+Q: Name four parts of a neurological assessment. | GCS, pupils, limb power, swallow, speech, cognition, sensation, continence, pain and mood (any four).
+Q: Name four neurological red flags. | Thunderclap headache, falling GCS, new focal weakness, seizures, fever with neck stiffness or rash and saddle anaesthesia (any four).
+Q: What should be recorded for any acute neurological change? | Exactly when it started.
+Q: Name three safety risks in neurological disorders. | Falls, aspiration and pressure damage.
 
 ## Epilepsy
 S: Epilepsy is a condition of recurrent, unprovoked seizures caused by abnormal electrical activity in the brain. Most people achieve good control with medicines, but seizures, status epilepticus and sudden unexpected death in epilepsy (SUDEP) are serious risks.
@@ -911,6 +1151,16 @@ Q: What should you do during a tonic-clonic seizure? | Keep the person safe, pro
 Q: When is a convulsive seizure an emergency? | When it lasts 5 minutes or more, or seizures repeat without recovery (status epilepticus), among other reasons.
 M1#nursing-u05-25-q1@1: What should never be put in the mouth of a person having a seizure? | Anything at all | A rescue medicine given per buccal route as per care plan | Oxygen mask over the face | A pillow under the head | A blanket | Objects in the mouth can cause injury or obstruction; buccal medicine is given carefully per plan.
 M2#nursing-u05-25-q2@2: A patient's tonic-clonic seizure has lasted 6 minutes. They have a care plan for buccal midazolam. What should the nurse do? | Give rescue medicine and call for help | Wait for the seizure to stop by itself | Restrain the patient to prevent injury | Give their usual oral medicine now | Leave to get help without timing it | Prolonged seizures need rescue treatment and emergency help.
+Q: What is epilepsy? | A condition of recurrent, unprovoked seizures caused by abnormal electrical activity in the brain.
+Q: How common is epilepsy in the UK? | About 1 in 100 people, more common in people with learning disabilities.
+Q: What is status epilepticus? | A prolonged seizure, or repeated seizures without recovery between them.
+Q: What is the difference between focal and generalised seizures? | Focal seizures start in one area and may spread; generalised seizures involve both hemispheres.
+Q: Name three types of generalised seizure. | Tonic-clonic, absence, myoclonic and atonic (any three).
+Q: Name four seizure triggers. | Missed medicines, sleep deprivation, alcohol, illness and flashing lights in some people (any four).
+Q: Why are witness accounts important in epilepsy? | They describe what happened before, during and after the seizure, and its duration.
+Q: Why is an ECG done when investigating seizures? | To exclude cardiac causes of collapse.
+Q: What should be done once convulsions stop? | Place the person in the recovery position, monitor airway and breathing and check blood glucose.
+Q: What is SUDEP? | Sudden unexpected death in epilepsy, a serious risk of the condition.
 
 ## Dementia
 S: Dementia is a syndrome of progressive decline in memory, thinking, behaviour and the ability to perform everyday activities, caused by brain disease. Person-centred care and recognising delirium and pain are central nursing skills.
@@ -954,6 +1204,16 @@ Q: Which type of dementia is very sensitive to antipsychotics? | Dementia with L
 Q: What tool can screen for delirium in a person with dementia? | The 4AT.
 M1#nursing-u05-26-q1@1: What is the commonest cause of dementia? | Alzheimer's disease | Vascular dementia | Lewy body dementia | Frontotemporal dementia | Alcohol-related brain damage | Alzheimer's accounts for the largest share.
 M2#nursing-u05-26-q2@2: A man with dementia becomes agitated and calls out at night, newly over the last two days. What should the nurse do first? | Assess for delirium and physical causes | Request an antipsychotic to calm him | Restrain him for his own safety | Assume his dementia is progressing | Move him to another ward | New behaviour change needs assessment for reversible causes.
+Q: What is dementia? | A progressive syndrome of decline in memory, thinking, behaviour and daily function, caused by brain disease.
+Q: What is delirium? | An acute, fluctuating disturbance of attention and awareness.
+Q: What brain changes occur in Alzheimer's disease? | Amyloid plaques and tau tangles spreading from the hippocampus outwards.
+Q: How does vascular dementia typically progress? | Stepwise decline after strokes or small vessel disease.
+Q: What are the features of dementia with Lewy bodies? | Fluctuating cognition, visual hallucinations and parkinsonism.
+Q: What are the typical features of frontotemporal dementia? | Personality, behaviour or language change, often at a younger age.
+Q: Name two medicine types used for some dementias. | Acetylcholinesterase inhibitors such as donepezil, and memantine.
+Q: Why are antipsychotics used cautiously in dementia? | They increase stroke and death risk, so are used only for severe distress, at low dose, short term, with review.
+Q: Name two pain assessment tools for people with dementia. | PAINAD and Abbey.
+Q: What should people with dementia plan while they still have capacity? | Advance care planning and lasting powers of attorney.
 
 ## Parkinson's disease
 S: Parkinson's disease is a progressive neurological condition caused by loss of dopamine-producing neurones in the brain. It affects movement and many other body functions, and medicine timing is critical.
@@ -994,6 +1254,16 @@ Q: Name the three cardinal motor features of Parkinson's disease. | Bradykinesia
 Q: Name two medicines to avoid in Parkinson's disease. | Haloperidol and metoclopramide (also prochlorperazine and most typical antipsychotics).
 M1#nursing-u05-27-q1@1: Which neurotransmitter is deficient in Parkinson's disease? | Dopamine | Serotonin | Acetylcholine | Insulin | Adrenaline | Parkinson's disease is caused by loss of dopamine-producing neurones in the substantia nigra, which disrupts movement control.
 M2#nursing-u05-27-q2@2: A patient with Parkinson's is nil by mouth before surgery and their levodopa is due. What should the nurse do? | Escalate now so an alternative is prescribed | Omit the dose until after the surgery | Give it later in the day instead | Give metoclopramide instead | Do nothing, as one dose won't matter | Omitting levodopa can cause severe rigidity, swallowing problems and a dangerous withdrawal syndrome, so an alternative route must be arranged straight away.
+Q: What causes Parkinson's disease? | Loss of dopamine-producing neurones in the substantia nigra.
+Q: What is bradykinesia? | Slowness of movement.
+Q: What is the main risk factor for Parkinson's disease? | Age.
+Q: Name four non-motor symptoms of Parkinson's. | Constipation, sleep disorder, depression, hallucinations, cognitive impairment, postural hypotension, swallowing problems and pain (any four).
+Q: How is Parkinson's disease diagnosed? | Clinically by a specialist, with imaging in some cases.
+Q: Why might Parkinson's medicines be due outside drug round times? | They follow the individual's own schedule and must be given on time.
+Q: What should a nurse do if a person with Parkinson's can't swallow their medicines? | Escalate immediately for an alternative, such as a patch or dispersible preparation, per specialist advice.
+Q: What can happen if Parkinson's medicines are stopped suddenly? | Parkinsonism-hyperpyrexia syndrome.
+Q: What side effect of dopamine agonists should people be warned about? | Impulse control disorders.
+Q: Name three professionals in Parkinson's multidisciplinary care. | Parkinson's nurse specialist, physiotherapist, occupational therapist and speech and language therapist (any three).
 
 ## Cancer
 S: Cancer is uncontrolled growth of abnormal cells that can invade nearby tissue and spread (metastasise). About half of people in the UK will get cancer in their lifetime, and early diagnosis greatly improves outcomes.
@@ -1032,6 +1302,16 @@ Q: What does TNM stand for? | Tumour size, lymph node involvement and metastasis
 Q: Name four oncological emergencies. | Neutropenic sepsis, metastatic spinal cord compression, hypercalcaemia, superior vena cava obstruction, tumour lysis syndrome (any four).
 M1#nursing-u05-28-q1@1: What is the biggest preventable cause of cancer in the UK? | Smoking | Mobile phones | Coffee | Cold weather | Stress alone | Smoking causes the largest share of preventable cancers.
 M3#nursing-u05-28-q2@2: A patient with prostate cancer reports new back pain and says his legs feel heavy and numb. What should the nurse do? | Escalate urgently: possible spinal cord compression | Give analgesia and recheck tomorrow | Encourage walking to ease the pain | Book a routine physiotherapy appointment | Reassure them that it's muscle strain | MSCC needs urgent imaging and treatment to prevent paralysis.
+Q: What is cancer? | Uncontrolled growth of abnormal cells that can invade nearby tissue and spread.
+Q: What is metastasis? | Spread of cancer from its original site to other parts of the body.
+Q: Name the four commonest cancers in the UK. | Breast, prostate, lung and bowel cancer.
+Q: Which cancer causes the most deaths in the UK? | Lung cancer.
+Q: Name four risk factors for cancer. | Ageing, smoking, alcohol, obesity, UV exposure, infections such as HPV, radiation and inherited mutations (any four).
+Q: Name four possible warning signs of cancer. | Lumps, unexplained weight loss, bleeding, persistent cough, change in bowel habit, difficulty swallowing and non-healing sores (any four).
+Q: Name four cancer treatments. | Surgery, chemotherapy, radiotherapy, immunotherapy and targeted or hormone therapies (any four).
+Q: What are the signs of metastatic spinal cord compression? | Back pain, leg weakness, sensory changes and bladder or bowel problems.
+Q: What are the signs of hypercalcaemia in cancer? | Confusion, thirst and constipation.
+Q: What are the signs of superior vena cava obstruction? | Facial swelling and breathlessness.
 
 ## Haematological disorders
 S: Haematological disorders affect the blood and blood-forming organs: red cells, white cells, platelets, clotting and the bone marrow. They range from common anaemia to blood cancers.
@@ -1063,6 +1343,16 @@ Q: When should analgesia be given to a person in sickle cell crisis? | Quickly, 
 Q: What should you do if a transfusion reaction is suspected? | Stop the transfusion, keep IV access open, assess ABCDE, call for help and follow the transfusion reaction protocol.
 M1#nursing-u05-29-q1@1: Which is the most common cause of anaemia worldwide? | Iron deficiency | Vitamin C deficiency | Sickle cell disease | Leukaemia | Haemophilia | Iron deficiency, from blood loss, poor intake or malabsorption, is the commonest cause of anaemia in the UK and worldwide.
 M3#nursing-u05-29-q2@2: Ten minutes into a red cell transfusion, a patient develops a fever, rigors and back pain. What should the nurse do? | Stop it, keep the line open, get help | Slow the transfusion right down | Give paracetamol and continue | Finish the unit quickly | Ignore it as anxiety | These signs can indicate a serious reaction, including incompatibility.
+Q: What is anaemia? | A low haemoglobin concentration.
+Q: Name four causes of anaemia. | Iron deficiency, B12 or folate deficiency, chronic disease, kidney disease, haemolysis and bone marrow failure (any four).
+Q: Name four symptoms of anaemia. | Tiredness, breathlessness, pallor, palpitations and headache (any four).
+Q: What should unexplained iron deficiency in adults prompt? | Investigation for gastrointestinal blood loss.
+Q: What is sickle cell disease? | An inherited haemoglobin disorder in which sickle cells block small vessels.
+Q: Name three complications of sickle cell disease. | Painful crises, infection, acute chest syndrome and stroke (any three).
+Q: Name three bleeding or clotting disorders. | Haemophilia, von Willebrand disease and thrombocytopenia.
+Q: Name three blood cancers. | Leukaemias, lymphomas and myeloma.
+Q: When are observations typically taken during a blood transfusion? | Baseline, 15 minutes after starting and at the end, watching closely in the first 15 minutes.
+Q: Which UK scheme receives transfusion incident reports? | The SHOT scheme.
 
 ## Musculoskeletal disease
 S: Musculoskeletal (MSK) conditions affect bones, joints, muscles and connective tissue. They are among the commonest causes of pain and disability, and fractures in older people often mark a turning point in independence.
@@ -1092,6 +1382,16 @@ Q: What does NICE recommend for the timing of hip fracture surgery? | On the day
 Q: What are the components of neurovascular observations? | Colour, warmth, movement, sensation, pulses, capillary refill and pain.
 M1#nursing-u05-30-q1@1: Which condition increases fragility fracture risk? | Osteoporosis | Osteoarthritis only | Gout | Psoriasis | Hypertension | Osteoporosis reduces bone density and quality, so minor falls cause fragility fractures of the hip, spine and wrist.
 M2#nursing-u05-30-q2@2: An older woman admitted with a hip fracture is in severe pain and becoming confused. What should the nurse prioritise? | Analgesia, delirium screening and timely surgery | Withhold analgesia to avoid confusion | Mobilise her on the leg immediately | Wait for her family before doing anything | Restrain her to stop her moving | Pain causes delirium; good analgesia and early surgery improve outcomes.
+Q: What is osteoporosis? | Reduced bone density and quality, raising fracture risk.
+Q: Where do fragility fractures typically occur? | The hip, spine and wrist.
+Q: Name four risk factors for osteoporosis. | Age, female sex, menopause, steroids, low body weight, smoking and alcohol (any four).
+Q: Name two tools for assessing fracture risk. | FRAX and QFracture.
+Q: What is osteoarthritis? | Degeneration of joint cartilage with pain and stiffness.
+Q: How is osteoarthritis managed? | With exercise, weight loss, analgesia and joint replacement.
+Q: What is compartment syndrome? | Raised pressure in a muscle compartment that compromises blood supply.
+Q: What are the signs of compartment syndrome? | Pain out of proportion, pain on passive stretch and tightness.
+Q: Name four care elements after hip fracture. | Early surgery, analgesia including nerve blocks, delirium prevention, early mobilisation and orthogeriatric care (any four).
+Q: Name three red flags in back pain. | Cauda equina syndrome, cancer history, fever or immunosuppression, trauma and significant neurological deficit (any three).
 
 ## Rheumatological conditions
 S: Rheumatological conditions are inflammatory and autoimmune diseases of joints, muscles and connective tissue. Early recognition and treatment prevent permanent damage, and many treatments need careful monitoring.
@@ -1121,6 +1421,16 @@ Q: How often is methotrexate usually taken for rheumatoid arthritis? | Once a we
 Q: Why is giant cell arteritis an emergency? | It can cause sudden permanent loss of vision if not treated promptly with steroids.
 M1#nursing-u05-31-q1@1: Which joint is classically affected first in gout? | The big toe | The knee only | The spine | The jaw | The shoulder | The first metatarsophalangeal joint is typical.
 M2#nursing-u05-31-q2@2: A patient's chart shows methotrexate 10 mg once daily. What should the nurse do? | Don't give it; query urgently (usually weekly) | Give it as charted on the drug chart | Give half the dose as a compromise | Give it with folic acid to be safe | Ask the patient if they want it | Daily methotrexate is a known, potentially fatal error.
+Q: What is a DMARD? | A disease-modifying antirheumatic drug.
+Q: What is rheumatoid arthritis? | An autoimmune, symmetrical inflammatory arthritis of small joints with morning stiffness.
+Q: What is gout? | Urate crystal arthritis causing a very painful, hot, swollen joint.
+Q: How is acute gout treated? | With NSAIDs, colchicine or steroids, then urate-lowering therapy.
+Q: What is systemic lupus erythematosus? | A multisystem autoimmune disease affecting joints, skin, kidneys and blood.
+Q: What is polymyalgia rheumatica? | Shoulder and hip girdle pain and stiffness in older people that responds to steroids.
+Q: Name three symptoms of giant cell arteritis. | Headache, scalp tenderness, jaw pain on chewing and visual disturbance (any three).
+Q: Name three DMARDs. | Methotrexate, sulfasalazine, hydroxychloroquine and leflunomide (any three).
+Q: When is folic acid taken with weekly methotrexate? | On a different day, as prescribed.
+Q: What risks come with DMARDs and biologics? | They need blood monitoring and increase infection risk.
 
 ## Skin conditions
 S: The skin is the largest organ, and skin conditions are common causes of discomfort, distress and infection. Nurses assess skin every day and care for wounds, ulcers and chronic skin disease.
@@ -1150,6 +1460,16 @@ Q: What is the ABCDE of melanoma? | Asymmetry, Border irregularity, Colour varia
 Q: How do venous and arterial leg ulcers differ? | Venous ulcers are usually shallow, around the ankle, with oedema; arterial ulcers are painful, punched out, often on the feet, with cool skin and weak pulses.
 M1#nursing-u05-32-q1@1: What is the first-line treatment for most venous leg ulcers? | Compression therapy, after vascular assessment | High-dose steroids | Antibiotics for all | Leaving uncovered | Heat packs | Compression treats venous hypertension, once arterial disease is excluded.
 M2#nursing-u05-32-q2@2: A patient with cellulitis of the leg develops a temperature of 38.9°C, heart rate 118 and confusion. What should the nurse do? | Recognise possible sepsis: escalate urgently and follow the sepsis pathway | Mark the edge and recheck tomorrow | Elevate the leg only | Apply a cold compress and wait | Give oral fluids only | Systemic signs with cellulitis indicate possible sepsis.
+Q: What is the skin's place among the body's organs? | It is the largest organ.
+Q: What is eczema (atopic dermatitis)? | Dry, itchy, inflamed skin, treated with emollients and topical steroids.
+Q: What does psoriasis look like? | Well-defined red scaly plaques.
+Q: Which conditions are associated with psoriasis? | Arthritis and cardiovascular risk.
+Q: What is cellulitis? | A spreading bacterial infection of the deeper skin and tissues.
+Q: Why mark the edge of cellulitis? | To monitor whether it is spreading.
+Q: What is ABPI used for? | Assessing arterial supply before compression therapy.
+Q: Why is compression contraindicated in arterial leg ulcers? | Arterial disease makes compression dangerous.
+Q: Name three types of skin cancer. | Basal cell carcinoma, squamous cell carcinoma and melanoma.
+Q: Which severe drug reactions of the skin are emergencies? | Stevens-Johnson syndrome and toxic epidermal necrolysis.
 
 ## Sepsis
 S: Sepsis is a life-threatening reaction to an infection in which the body's response damages its own tissues and organs. It can progress quickly to septic shock and death; early recognition and treatment save lives.
@@ -1190,6 +1510,16 @@ Q: What is sepsis (Sepsis-3)? | Life-threatening organ dysfunction caused by a d
 Q: Name the six actions in the Sepsis Six. | Give oxygen to target, take blood cultures, give IV antibiotics, give IV fluids, measure lactate, monitor urine output.
 M1#nursing-u05-33-q1@1: Which observation finding is a red flag for sepsis? | New confusion with a high respiratory rate | Temperature 37.0°C alone | Heart rate 72 | Respiratory rate 16 | Normal blood pressure alone | Altered mental state and tachypnoea suggest organ dysfunction.
 M2#nursing-u05-33-q2@2: A patient with a urinary infection has NEWS2 of 7, BP 85/50 and lactate 4.1. What is the priority? | Escalate now; IV antibiotics within the hour | Start oral antibiotics tomorrow | Encourage drinking water only | Recheck the observations in four hours | Wait for the urine culture results | This is high-risk sepsis needing immediate treatment.
+Q: What is septic shock? | Sepsis with circulatory and metabolic failure needing vasopressors, with raised lactate.
+Q: Name four common sources of sepsis. | Chest, urinary, abdominal, skin, line-related infection and meningitis (any four).
+Q: Name four groups at higher risk of sepsis. | The very young and older people, immunosuppressed people, people with diabetes, recent surgery, indwelling devices, pregnancy and frailty (any four).
+Q: Why does sepsis cause organ dysfunction? | Widespread inflammation causes vasodilation, leaky capillaries, clotting problems and poor oxygen delivery to tissues.
+Q: Name four signs of sepsis. | Raised respiratory rate, low saturation, abnormal temperature, high heart rate, low BP, new confusion, mottled skin and low urine output (any four).
+Q: What might a person with sepsis say about how they feel? | They may say they feel like they are going to die.
+Q: Which NICE guideline sets timeframes for sepsis treatment? | NICE NG51.
+Q: Within what time should the highest-risk people with sepsis get antibiotics? | Within 1 hour.
+Q: What is post-sepsis syndrome? | Long-term physical, cognitive and psychological effects after sepsis.
+Q: Should a nurse wait for test results before acting on suspected sepsis? | No; escalate immediately with SBAR and start the sepsis pathway.
 
 ## Shock
 S: Shock is a life-threatening state of circulatory failure in which tissues don't receive enough oxygen. Without rapid treatment, it leads to organ failure and death.
@@ -1229,6 +1559,16 @@ Q: Name the four main types of shock. | Hypovolaemic, cardiogenic, distributive 
 Q: Why can blood pressure be normal in early shock? | Compensatory mechanisms (tachycardia and vasoconstriction) maintain blood pressure until they fail.
 M1#nursing-u05-34-q1@1: Which type of shock does a tension pneumothorax cause? | Obstructive | Hypovolaemic | Cardiogenic | Neurogenic | Anaphylactic | A tension pneumothorax raises pressure in the chest and blocks blood returning to the heart, causing obstructive shock that needs immediate decompression.
 M3#nursing-u05-34-q2@2: After a fall from a ladder, a man has heart rate 130, respiratory rate 28, cool clammy skin and BP 105/70. What should the nurse conclude? | Possible compensated shock: get emergency help | He is stable because his BP is normal | He is anxious and needs reassurance only | He needs rest and a recheck later | He needs oral fluids and nothing else | Tachycardia, tachypnoea and poor perfusion signal shock before hypotension.
+Q: What is shock? | Acute circulatory failure in which oxygen delivery to tissues is inadequate.
+Q: What is compensated shock? | Shock in which blood pressure is maintained by compensatory mechanisms.
+Q: Which types of shock are most common on wards? | Septic and hypovolaemic shock.
+Q: Name three causes of hypovolaemic shock. | Haemorrhage, burns, and vomiting and diarrhoea.
+Q: Name three types of distributive shock. | Septic, anaphylactic and neurogenic shock.
+Q: Name three causes of obstructive shock. | Massive PE, tension pneumothorax and cardiac tamponade.
+Q: Why does shock raise lactate? | Reduced perfusion leads to anaerobic metabolism.
+Q: Which heart rate change may occur in neurogenic shock? | Bradycardia.
+Q: When should legs not be raised in shock? | In cardiogenic shock with breathlessness.
+Q: Is hypotension an early or late sign of shock? | A late sign; act on rising heart rate, rising respiratory rate and poor perfusion.
 
 ## Multimorbidity
 S: Multimorbidity is the presence of two or more long-term health conditions in one person. It is increasingly common with age and deprivation, and it changes how care should be organised.
@@ -1259,6 +1599,16 @@ Q: What is multimorbidity? | The presence of two or more long-term health condit
 Q: What is treatment burden? | The workload of health care on the person: appointments, tests, medicines and self-management tasks.
 M1#nursing-u05-35-q1@1: Which NICE guideline covers multimorbidity? | NG56 | NG51 | NG5 | NG148 | NG217 | NICE NG56 sets out an approach to multimorbidity.
 M2#nursing-u05-35-q2@2: An older woman with five long-term conditions says she is exhausted by appointments and tablets. What should the nurse do? | Ask what matters most and request a joint review | Add another hospital appointment for her | Tell her all her treatments are essential | Discharge her from all of her services | Ignore it, as burden is to be expected | A tailored, person-centred review can reduce treatment burden.
+Q: Which conditions count towards multimorbidity? | Physical and mental health conditions, learning disability, sensory impairment, frailty and substance misuse.
+Q: Who is most affected by multimorbidity? | Most older adults, and younger people in deprived areas.
+Q: Why can following single-condition guidelines cause problems in multimorbidity? | It can lead to polypharmacy, conflicting advice and heavy treatment burden.
+Q: Name three risks linked to multimorbidity. | Hospital admission, adverse drug events, poorer quality of life, depression and death (any three).
+Q: Which NICE guideline sets the approach to multimorbidity? | NICE NG56.
+Q: Who may benefit from a tailored approach to multimorbidity? | People with frailty, polypharmacy or difficulty managing treatments.
+Q: What should guide treatment decisions in multimorbidity? | What matters most to the person: their goals, values and priorities.
+Q: How should care be coordinated in multimorbidity? | Through an individualised care plan coordinated by a named professional, with one shared record where possible.
+Q: What should a nurse do if medicines seem to be causing falls or confusion? | Report to the prescriber and request a medication review rather than adding medicines to treat side effects.
+Q: Name three nursing roles in multimorbidity. | Holistic assessment, medicines reconciliation, care coordination, supporting self-management, recognising mental health needs and involving carers (any three).
 
 ## Frailty
 S: Frailty is a long-term condition in which reduced reserve across many body systems makes a person vulnerable to sudden, dramatic changes in health after minor events such as an infection or a new medicine.
@@ -1290,6 +1640,16 @@ Q: What scale is commonly used to assess frailty in hospital? | The Clinical Fra
 Q: Name the classic frailty syndromes. | Falls, immobility, delirium, incontinence and susceptibility to medicine side effects.
 M1#nursing-u05-36-q1@1: What is the core intervention for frail older people in hospital? | Comprehensive geriatric assessment | Bed rest | Routine sedation | Discharge without review | Restricted visiting | CGA improves outcomes for frail older people.
 M2#nursing-u05-36-q2@2: A frail 88-year-old is admitted "off legs" with no obvious cause. What should the nurse do? | Look for an underlying cause and escalate | Assume it's just old age | Keep them in bed until they improve | Discharge home with no change | Give a sedative to settle them | "Off legs" is a frailty syndrome often signalling acute illness.
+Q: What is frailty? | A long-term condition of reduced reserve across body systems causing vulnerability to sudden decline after minor events.
+Q: Is frailty the same as ageing? | No; not all older people are frail, and some younger people with multiple conditions are.
+Q: Roughly what proportion of people over 65 live with frailty? | Around 10%, with a much higher proportion of over-85s.
+Q: What does the Clinical Frailty Scale range from? | 1 "very fit" to 9 "terminally ill".
+Q: Which tool identifies frailty in primary care? | The electronic Frailty Index.
+Q: What is sarcopenia? | Loss of muscle mass, which contributes to frailty.
+Q: What is a comprehensive geriatric assessment? | A multidisciplinary assessment of medical, functional, psychological and social needs with a coordinated plan.
+Q: Name four management approaches for frailty. | Strength and balance exercise, nutrition, medication review, falls prevention, continence care and advance care planning (any four).
+Q: Name three delirium prevention measures in frail people. | Orientation, hydration, sleep and sensory aids (any three).
+Q: What may signal serious illness in a frail person? | A fall, new confusion or an "off legs" presentation.
 
 ## Palliative and end-of-life conditions
 S: Palliative care improves quality of life for people with life-limiting illness and their families, through relief of pain and other symptoms and attention to psychological, social and spiritual needs. End-of-life care focuses on the last months, weeks and days of life.
@@ -1324,4 +1684,14 @@ Q: What is a ReSPECT form? | A Recommended Summary Plan for Emergency Care and T
 Q: Name five symptoms commonly covered by anticipatory medicines. | Pain, breathlessness, nausea and vomiting, agitation, respiratory secretions.
 M1#nursing-u05-37-q1@1: Which is a sign that a person may be entering the last days of life? | Increasing drowsiness, reduced intake and mottled peripheries | Improved appetite | Increased mobility | Stable alertness | Rising energy | Increasing drowsiness, reduced intake and cool mottled peripheries are common signs that a person may be in the last days of life, to be agreed by the team.
 M2#nursing-u05-37-q2@2: A dying patient's family ask why he isn't on a drip, as they fear he is thirsty. What should the nurse do? | Listen, explain, offer mouth care and sips, review | Tell them that nothing more can be done | Start a drip without any prescription | Tell them flatly he can't feel thirst | Avoid the conversation and leave the room | Communication and comfort care are central priorities.
+Q: What is palliative care? | Care that improves quality of life for people with life-limiting illness and their families.
+Q: Name four groups who may need palliative care. | People with advanced cancer, organ failure, neurological disease, dementia and frailty (any four).
+Q: What is advance care planning? | Discussions about a person's future wishes, preferences and priorities for care.
+Q: How should DNACPR decisions be made? | With the person or those close to them, and clearly documented.
+Q: Name four signs that a person may be dying. | Weakness and sleepiness, reduced intake, swallowing difficulty, breathing changes, cool mottled peripheries and reduced consciousness (any four).
+Q: Which NICE guideline covers care in the last days of life? | NICE NG31.
+Q: Name three of the Five Priorities of Care. | Recognise dying, communicate sensitively, involve the person, support the family, and agree an individual care plan (any three).
+Q: How are anticipatory medicines often given? | Subcutaneously or by syringe pump, by trained staff.
+Q: How should food and drink be offered at the end of life? | For comfort, as the person wishes; assisted hydration decisions are individual and reviewed.
+Q: What does care after death include? | Verification of death, respectful care of the body respecting cultural and religious wishes, family support and documentation.
 `;

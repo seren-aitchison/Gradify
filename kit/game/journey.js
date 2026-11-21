@@ -1,11 +1,12 @@
 // The Journey page (journey.html): the learner's whole Gradify progress in one place, and what to do next.
 // Reads each course's own progress from this device (kit/course/course.js keeps it under "gradify.course.<slug>"),
 // computes everything with the game engine, and keeps only its own reward ledger ("gradify.game").
+import { toast as uiToast } from "../ui/feedback.js";
 import { gameState, claim, dayKey, weekStart, DAY, unsynced, rewardKind, outsideCourses } from "./engine.js";
 import { quests, nextSteps } from "./quests.js";
 import { achievements, nextAchievement } from "./achievements.js";
 import { dailyChallenge, challengeReward } from "./challenges.js";
-import { COURSES } from "../learning/learner-data.js";
+import { COURSES, LIVE_COURSES } from "../learning/learner-data.js";
 import { startedCourses } from "../learning/course-states.js";
 import { conceptGraph } from "../learning/concepts.js";
 import { weaknessTargets } from "../learning/targets.js";
@@ -105,11 +106,12 @@ export async function mountJourney(root, { embedded = false, store = null } = {}
       <div class="gj-cols">
         <div>
           ${questsHtml("Today's quests", Q.filter((q) => q.kind === "daily"))}
+          ${Q.some((q) => q.kind === "topic") ? questsHtml(`Topic quest: ${Q.find((q) => q.kind === "topic").topic}`, Q.filter((q) => q.kind === "topic")) : ""}
           ${questsHtml("This week", Q.filter((q) => q.kind === "weekly"))}
           <section class="gj-card gj-challenge" id="challenge"></section>
           <section class="gj-card"><h2>Subjects</h2>${s.subjects.length ? s.subjects.map((x) => `<a class="gj-subject" href="${COURSES[x.slug]}"><div><b>${esc(x.name)}</b><span class="gj-sub">${esc(x.site)} · ${esc(x.rank.name)} · level ${x.level.n} · ${fmt(x.xp)} XP</span></div>
             <div class="gj-bar" role="img" aria-label="${x.done} of ${x.lessons} lessons"><i style="width:${x.lessons ? (100 * x.done) / x.lessons : 0}%"></i></div><span class="gj-sub">${x.done} / ${x.lessons} lessons · ${x.unitsDone} complete</span></a>`).join("") : `<p class="gj-sub">No courses started on this device yet.</p>`}
-            <p class="gj-sub gj-more">Explore: ${Object.entries(COURSES).filter(([k]) => !courses.some((c) => c.slug === k)).map(([k, p]) => `<a href="${p}">${esc(k[0].toUpperCase() + k.slice(1))}</a>`).join(" · ")}</p></section>
+            <p class="gj-sub gj-more">Explore: ${Object.entries(LIVE_COURSES).filter(([k]) => !courses.some((c) => c.slug === k)).map(([k, p]) => `<a href="${p}">${esc(k[0].toUpperCase() + k.slice(1))}</a>`).join(" · ")}</p></section>
         </div>
         <div>
           ${nextA ? `<section class="gj-card gj-nexta"><span class="gj-label">Next achievement</span><div class="gj-ach">${badge(nextA)}<div><b>${esc(nextA.name)}</b><span class="gj-sub">${esc(nextA.d)}</span><div class="gj-bar"><i style="width:${(100 * nextA.n) / nextA.of}%"></i></div><span class="gj-sub">${nextA.n} / ${nextA.of}</span></div></div></section>` : ""}
@@ -191,13 +193,8 @@ export async function mountJourney(root, { embedded = false, store = null } = {}
   }
 
   // ---------- celebrations (short, dismissible, and still for reduced motion) ----------
-  function toast(html) {
-    let box = document.querySelector(".gj-toasts");
-    if (!box) { box = document.createElement("div"); box.className = "gj-toasts"; box.setAttribute("role", "status"); box.setAttribute("aria-live", "polite"); document.body.append(box); }
-    if (box.children.length >= 3) box.firstElementChild.remove();
-    const t = document.createElement("div"); t.className = "gj-toast"; t.innerHTML = html;
-    box.append(t); setTimeout(() => t.classList.add("out"), 3200); setTimeout(() => t.remove(), 3800);
-  }
+  // the shared toast (kit/ui/feedback.js): polite, at most three, never in the way
+  const toast = (html) => uiToast({ html }, { timeout: 3800 });
   function celebrate(title, text) {
     const d = document.createElement("div"); d.className = "gj-celebrate"; d.setAttribute("role", "dialog"); d.setAttribute("aria-modal", "true"); d.setAttribute("aria-label", title);
     d.innerHTML = `<div class="gj-cel-card"><div class="gj-burst${reduced() ? " still" : ""}">${ic("trophy")}</div><h2>${title}</h2><p>${text}</p><button class="gj-claim" data-close>Keep going</button></div>`;

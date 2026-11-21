@@ -21,6 +21,8 @@ export const SETTINGS = [
   { k: "links", label: "Links", why: "Underlines every link, so they don't rely on colour.", opts: [["default", "As designed"], ["underline", "Always underline"]] },
   { k: "focus", label: "Focus mode", why: "Hides decoration and moving backgrounds and makes the next thing to do stand out. Useful when attention drifts.", opts: [["default", "Off"], ["on", "On"]] },
   { k: "readaloud", label: "Read aloud", why: "Select any text and a Read aloud button appears beside it, using your device's voice.", opts: [["default", "Off"], ["on", "On"]] },
+  { k: "sound", label: "Sounds", why: "A short, quiet sound for a right answer, a finished lesson or a new level.", opts: [["default", "Off"], ["on", "On"]] },
+  { k: "haptics", label: "Haptics", why: "A small tap you can feel on phones for answers, completions and milestones.", opts: [["default", "On"], ["off", "Off"]] },
   { k: "block", label: "Study block length", why: "How long Gradify makes each study block before a break, when it plans a session for you.", opts: [["default", "25 minutes"], ["10", "10 minutes"], ["15", "15 minutes"], ["45", "45 minutes"]] },
 ];
 // starting points people sometimes find useful: suggestions shown in the panel, never applied automatically

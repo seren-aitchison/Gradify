@@ -38,6 +38,16 @@ M2#history-u08-01-q2@2: Why did Witte's industrialisation create new pressures f
 TF1#history-u08-01-q3@1: Russia had an elected national parliament before 1906. | false | The first Duma met only in 1906, after the 1905 Revolution.
 M3#history-u08-01-q4@3: Which judgement about tsarist rule around 1900 is best supported? | Strong in its means of control, but facing pressures autocracy could not absorb | Weak in every respect and certain to collapse within a year | A democracy with a free press and elected government | A system with no opposition of any kind | Control and pressure existed side by side before 1905.
 SA3#history-u08-01-q5@2,3: How secure was tsarist rule in Russia around 1900? | The tsar ruled as autocrat through ministers, the bureaucracy, the Okhrana and the Orthodox Church, and Russification aimed to unite a multinational empire of about 125 million people (1897). But emancipation (1861) left peasants poor, Witte's industrialisation created a discontented working class, minorities resented Russification and there was no legal outlet for opposition. A strong answer weighs strengths against weaknesses. | Explains the empire ; Explains methods of control ; Explains pressures from change ; Weighs strengths and weaknesses ; Reaches a judgement
+Q: Roughly how many people did the 1897 census count in the Russian Empire? | About 125 million people.
+Q: What share of the Russian Empire's people were Russians in 1897? | Fewer than half.
+Q: Until when did the tsar rule without an elected parliament? | Until 1906.
+Q: What role did the Russian Orthodox Church play in supporting tsarist rule? | It taught loyalty to the tsar.
+Q: Define Russification. | Imposing Russian language and culture on the empire's other peoples, as under Alexander III.
+Q: Which tsar emancipated the serfs, and what happened to him? | Alexander II; he emancipated the serfs in 1861 and was assassinated in 1881.
+Q: How did Witte fund Russia's rapid industrialisation in the 1890s? | With foreign loans and investment.
+Q: What major railway began to be built in 1891? | The Trans-Siberian Railway.
+Q: Name four strengths of tsarist rule around 1900. | The army, the police, the Church and a long tradition of obedience.
+Q: Why could opposition to the tsar around 1900 not be expressed peacefully? | There was no legal outlet for opposition under autocracy.
 
 ## Nicholas II
 LV: GCSE and A level · Application
@@ -75,6 +85,16 @@ M2#history-u08-02-q2@2: Why did rumours about Rasputin damage the monarchy? | Th
 TF1#history-u08-02-q3@1: Alexei's haemophilia was widely known to the Russian public. | false | It was kept secret, which made Rasputin's role harder to explain.
 M3#history-u08-02-q4@3: Which judgement about Nicholas II's responsibility is best supported? | He inherited serious problems, but his choices turned crisis into collapse | He alone created every problem Russia faced | He reformed Russia into a democracy before 1914 | His fall was caused entirely by Rasputin | Structure and personal choice both mattered in 1917.
 SA3#history-u08-02-q5@2,3: How far was Nicholas II responsible for the fall of the Romanov dynasty? | Nicholas (tsar from 1894) was devoted to autocracy ("senseless dreams", 1895), undermined the Duma and took command of the army in 1915; Alexei's haemophilia gave Rasputin influence that damaged the monarchy. But Russia faced deep social problems, defeat by Japan (1905) and a catastrophic war. A strong answer weighs personal responsibility against structural causes. | Explains character and beliefs ; Explains Rasputin ; Explains war ; Weighs structural causes ; Reaches a judgement
+Q: When did Nicholas II reign? | From 1894 to 1917.
+Q: What weaknesses in Nicholas II's character does the lesson identify? | He was indecisive and rigidly committed to autocracy.
+Q: What disaster marred Nicholas II's coronation celebrations in 1896? | Hundreds died in a crush at Khodynka Field.
+Q: Who was Alexandra, Nicholas II's wife? | Alexandra of Hesse-Darmstadt, a granddaughter of Queen Victoria, married in 1894.
+Q: Who was Grigori Rasputin? | A peasant holy man who gained influence over Alexandra by seeming to ease Alexei's suffering.
+Q: Who murdered Rasputin, and when? | Aristocrats, in December 1916.
+Q: When did Nicholas II abdicate? | In March 1917.
+Q: Where and when were Nicholas II and his family shot? | At Ekaterinburg, by Bolsheviks, in July 1918.
+Q: Name three of Nicholas II's choices that critics say brought down the monarchy. | He resisted reform, undermined the Duma and took personal command of the army in 1915.
+Q: How far did Rasputin really control the government? | He influenced Alexandra and some appointments, but rumour exaggerated his power.
 
 ## Russian society and inequality
 LV: GCSE and A level · Application
@@ -115,6 +135,16 @@ M2#history-u08-03-q2@2: Why did the Socialist Revolutionaries win peasant suppor
 TF1#history-u08-03-q3@1: The Kadets were a liberal party wanting a constitution and parliament. | true | They were founded in 1905 and drew support from professionals.
 M3#history-u08-03-q4@3: Which judgement about the opposition before 1905 is best supported? | Small and divided parties, but voicing grievances that could produce revolt | A united movement that controlled most Russian cities | No opposition existed until the First World War | A single party supported by every peasant | Grievance mattered more than organisation.
 SA3#history-u08-03-q5@2,3: Why was Russian society so unequal and unstable around 1900? | Peasants, about four-fifths of the population, lived in communes, paid redemption payments and lacked land; workers endured long hours and crowded housing; the nobility held land and office. The Socialist Revolutionaries, Social Democrats (split 1903) and liberals voiced grievances but were small and divided. A strong answer explains inequality and judges its threat to the regime. | Explains peasant life ; Explains workers ; Explains the elite ; Explains opposition ; Reaches a judgement
+Q: What was the mir? | The peasant village commune that controlled land and shared out strips.
+Q: What conditions did industrial workers face in Russian cities around 1900? | Long hours, low pay, and crowded, dangerous conditions.
+Q: What role did the nobility play in Russia around 1900? | They owned much of the best land and filled senior posts in the army and government.
+Q: Define the intelligentsia. | Educated Russians who debated how Russia should change.
+Q: What did the Socialist Revolutionaries seek, and what method did some use? | Land for the peasants; some used terrorism.
+Q: When were the Socialist Revolutionaries founded? | In 1901.
+Q: When were the Social Democrats founded, and to which group did they look? | In 1898; as Marxists they looked to the workers.
+Q: Who led the Bolsheviks after the 1903 split? | Lenin.
+Q: What did Russian liberals want, and what party did they later form? | A constitution and a parliament; they formed the Kadets in 1905.
+Q: Why was the threat from opposition parties before 1905 limited? | The parties were small, illegal and divided, and many leaders were in exile.
 
 ## The 1905 Revolution
 LV: GCSE and A level · Application
@@ -154,6 +184,16 @@ M2#history-u08-04-q2@2: Why did the October Manifesto help the tsar survive? | I
 TF1#history-u08-04-q3@1: Stolypin combined land reform with harsh repression. | true | Repression was so harsh that the gallows became known as "Stolypin's necktie".
 M3#history-u08-04-q4@3: Which explanation of the tsar's survival in 1905 is best supported? | Concessions and repression together, while the opposition was divided | A complete military victory over Japan in 1905 | The peasants' united support for the tsar | Foreign armies sent to protect Nicholas | Several factors combined to save tsarism.
 SA3#history-u08-04-q5@2,3: Why did Nicholas II survive the 1905 Revolution? | Bloody Sunday (January 1905), defeat by Japan, strikes, peasant risings, the Potemkin mutiny and the St Petersburg Soviet threatened the regime. The October Manifesto split liberals from socialists, the loyal army crushed remaining revolt, and the Fundamental Laws (1906) restored the tsar's power. Stolypin followed with repression and land reform. A strong answer weighs concessions, repression and opposition weakness. | Explains causes ; Explains the October Manifesto ; Explains the army ; Explains opposition weakness ; Reaches a judgement
+Q: Where was Father Gapon's procession marching on Bloody Sunday, and why? | To the Winter Palace in St Petersburg, to present a petition to the tsar.
+Q: How many marchers are estimated to have been killed on Bloody Sunday? | Estimates range from about 100 to over 1,000.
+Q: What belief did Bloody Sunday badly damage? | Belief in the tsar as a protector of his people.
+Q: How did peasants take part in the 1905 Revolution? | They seized land and burned manor houses.
+Q: What paralysed Russia in October 1905? | A general strike.
+Q: Which body organised workers in 1905, and who was prominent in it? | The St Petersburg Soviet, with Leon Trotsky prominent.
+Q: Define a soviet. | A council of elected workers', soldiers' or peasants' representatives.
+Q: What did the Fundamental Laws of April 1906 confirm? | The tsar's supreme power.
+Q: What happened to the first two Dumas? | They were dissolved.
+Q: What was the aim of Stolypin's land reform? | To create a class of independent peasant farmers.
 
 ## The First World War and Russia
 LV: GCSE and A level · Application
@@ -191,6 +231,16 @@ M2#history-u08-05-q2@2: Why did prices rise sharply in Russia during the war? | 
 TF1#history-u08-05-q3@1: The Brusilov Offensive of 1916 had early success against Austria-Hungary. | true | Its early gains came at a terrible cost in Russian lives.
 M3#history-u08-05-q4@3: Which judgement about the war and the fall of the tsar is best supported? | The war was the decisive accelerator of long-standing problems | The war had no effect on the stability of tsarism | The tsar fell only because of one battle in 1914 | The war made the tsar more popular than ever | Long-term weaknesses and wartime crisis combined.
 SA3#history-u08-05-q5@2,3: How far was the First World War responsible for the fall of Nicholas II? | Defeats at Tannenberg (1914) and in 1915, Nicholas's personal command from September 1915, shortages, inflation and transport breakdown, and Alexandra and Rasputin's influence discredited the regime. But unresolved problems from 1905, peasant and worker grievances and autocracy's rigidity preceded the war. A strong answer judges the war as cause or accelerator. | Explains military defeats ; Explains the home front ; Explains government failures ; Weighs long-term causes ; Reaches a judgement
+Q: What happened to Russia's armies in 1915? | German advances drove them out of Poland, with enormous losses.
+Q: When did Nicholas II take personal command of the army? | In September 1915.
+Q: What was the result of the Brusilov Offensive of 1916? | Early success against Austria-Hungary, but at a terrible cost.
+Q: What problems hit Russian cities in the winter of 1916 to 1917? | Sharp price rises, lengthening bread queues and fuel shortages.
+Q: Define inflation. | A general rise in prices.
+Q: Define the home front. | Civilian life and the economy during a war.
+Q: Who influenced appointments in Petrograd while Nicholas was at the front? | Alexandra and Rasputin.
+Q: How did the Duma's leaders respond to the wartime government? | They criticised its incompetence.
+Q: What did many generals and politicians believe by early 1917? | That the tsar had to go.
+Q: Why did the Russian army fail in the war, beyond lack of courage? | Shortages of weapons, supplies, transport and leadership.
 
 ## The February Revolution
 LV: GCSE and A level · Application
@@ -229,6 +279,16 @@ M2#history-u08-06-q2@2: Why was the mutiny of the Petrograd garrison decisive? |
 TF1#history-u08-06-q3@1: Lenin led the February Revolution in Petrograd. | false | Lenin was in exile in Switzerland and returned only in April.
 M3#history-u08-06-q4@3: Which explanation of the monarchy's rapid fall is best supported? | Soldiers mutinied and the elite withdrew support from a discredited tsar | A Bolshevik army invaded Petrograd from Finland | Foreign governments forced Nicholas to abdicate | The peasants marched on Petrograd in their millions | Loss of the army and the elite was fatal.
 SA3#history-u08-06-q5@2,3: Why did the tsarist regime collapse in February 1917? | Bread protests and strikes from 23 February (International Women's Day) grew because of wartime shortages; the garrison's mutiny on 27 February removed the regime's defence; Duma leaders formed a committee and workers the Petrograd Soviet; generals urged abdication, and Nicholas abdicated on 2 March. Long-term weaknesses and wartime scandal had destroyed authority. A strong answer weighs these. | Explains the protests ; Explains the mutiny ; Explains the elite's role ; Explains long-term causes ; Reaches a judgement
+Q: Which day did 23 February 1917 (Old Style) fall on, and who joined the strikers? | International Women's Day; women queuing for bread joined striking workers.
+Q: Why were the soldiers of the Petrograd garrison ordered onto the streets, and what did they do? | They were ordered to fire on the crowds but mutinied and joined them.
+Q: What did Duma leaders form on 27 February 1917? | A Provisional Committee.
+Q: What did workers and soldiers form on 27 February 1917? | The Petrograd Soviet.
+Q: What did the generals advise Nicholas in February 1917? | That only his abdication could save the war effort.
+Q: Who refused the throne after Nicholas II abdicated? | His brother Michael.
+Q: From what body was the Provisional Government mainly drawn? | The Duma.
+Q: Why was Lenin unable to lead the February Revolution? | He and the other main revolutionary leaders were in exile.
+Q: How do most historians characterise the February Revolution? | As a largely spontaneous rising, given direction on the streets by experienced workers and activists.
+Q: Define abdication. | A monarch's giving up of the throne.
 
 ## The Provisional Government
 LV: GCSE and A level · Application
@@ -269,6 +329,16 @@ M2#history-u08-07-q2@2: Why did delaying land reform weaken the Provisional Gove
 TF1#history-u08-07-q3@1: The Provisional Government took Russia out of the war in 1917. | false | It kept Russia in the war, and a June offensive failed.
 M3#history-u08-07-q4@3: Which explanation of the Provisional Government's fall is best supported? | Decisions made in impossible circumstances left it without defenders by October | It was overthrown by the tsar's return in October | It lost an election to the Bolsheviks in September | It handed power to the army in a peaceful ceremony | Its choices and circumstances combined against it.
 SA3#history-u08-07-q5@2,3: Why did the Provisional Government lose power by October 1917? | Dual Power and Order No. 1 meant it never controlled the army; it continued the war (the failed June offensive), delayed land reform and the Constituent Assembly, and lost peasants and soldiers; the July Days and Kornilov affair (August) armed and strengthened the Bolsheviks. A strong answer weighs its decisions against its circumstances. | Explains Dual Power ; Explains the war ; Explains land and elections ; Explains the Kornilov affair ; Reaches a judgement
+Q: Who first led the Provisional Government? | Prince Lvov.
+Q: Define Dual Power. | The sharing of power between the Provisional Government and the Petrograd Soviet in 1917.
+Q: Which body controlled the soldiers and workers under Dual Power? | The Petrograd Soviet.
+Q: What liberal measures did the Provisional Government grant? | Civil liberties and an amnesty for political prisoners.
+Q: What happened to the Provisional Government's offensive in June 1917? | It failed.
+Q: What did the Provisional Government delay until the war ended? | Land reform and elections to a Constituent Assembly.
+Q: How did peasants and soldiers respond to the Provisional Government's delays? | Peasants seized land themselves, and soldiers deserted in large numbers.
+Q: What happened in the July Days of 1917? | Armed protesters demanded the Soviet take power; the government blamed the Bolsheviks and Lenin fled to Finland.
+Q: How did the Kornilov affair help the Bolsheviks? | Kerensky armed the Red Guards to defend Petrograd, so the Bolsheviks gained credit and weapons.
+Q: Define a Constituent Assembly. | An elected assembly to decide Russia's constitution.
 
 ## Lenin and the Bolsheviks
 LV: GCSE and A level · Application
@@ -308,6 +378,16 @@ M2#history-u08-08-q2@2: Why did Germany help Lenin return to Russia in 1917? | I
 TF1#history-u08-08-q3@1: The Bolsheviks won majorities in the Petrograd and Moscow soviets in September 1917. | true | Their support grew sharply after the Kornilov affair.
 M3#history-u08-08-q4@3: Which explanation of the Bolsheviks' growing support is best supported? | Popular discontent created the opportunity, and Bolshevik organisation exploited it | The Bolsheviks were elected by most Russians in early 1917 | The tsar endorsed the Bolsheviks before abdicating | The Bolsheviks supported continuing the war | Opportunity and organisation both mattered.
 SA3#history-u08-08-q5@2,3: Why did support for the Bolsheviks grow in 1917? | Lenin's vanguard party (1902) gave discipline; his April Theses and slogans of peace, land and bread matched popular demands; the Bolsheviks alone rejected the Provisional Government and war; the Kornilov affair (August) made them defenders of the revolution and armed the Red Guards; by September they led the Petrograd and Moscow soviets under Trotsky. A strong answer weighs popular radicalism against organisation. | Explains Lenin's party ; Explains the April Theses ; Explains the Kornilov affair ; Explains Trotsky's role ; Reaches a judgement
+Q: Which split of 1903 followed Lenin's view of the party? | The split between Lenin's Bolsheviks and the Mensheviks, who wanted a broader party.
+Q: How did Lenin return to Russia in April 1917? | From Switzerland, with German help, in a sealed train.
+Q: Which slogans spoke directly to popular demands in 1917? | Peace, land and bread, alongside all power to the soviets.
+Q: Why were the Bolsheviks unusual among the major parties in 1917? | They were the only major party to reject both the Provisional Government and the war.
+Q: How did the Kornilov affair help the Bolsheviks? | It made them look like the defenders of the revolution, and they won majorities in the Petrograd and Moscow soviets in September 1917.
+Q: What roles did Trotsky take in 1917? | He joined the Bolsheviks, became chairman of the Petrograd Soviet and organised its Military Revolutionary Committee.
+Q: Why did the Provisional Government's failures help the Bolsheviks? | The Bolsheviks were untainted by those failures, so discontent turned towards them.
+Q: Where was Bolshevik support strongest in 1917, and what is the common error about it? | Among urban workers and soldiers; it is wrong to think they had majority support across Russia.
+Q: Define a vanguard party. | A disciplined party of professional revolutionaries leading the workers.
+Q: What is the judgement on why Bolshevik support grew? | Popular discontent created the opportunity, and Bolshevik organisation exploited it.
 
 ## The October Revolution
 LV: GCSE and A level · Evaluation
@@ -346,6 +426,16 @@ M2#history-u08-09-q2@2: Why did the Decree on Land matter to the Bolsheviks? | I
 TF1#history-u08-09-q3@1: John Reed's Ten Days That Shook the World is an eyewitness account of October 1917. | true | Reed was an American journalist sympathetic to the Bolsheviks.
 M3#history-u08-09-q4@3: Which judgement about the October Revolution is best supported? | A minority seizure of power in the capital, made possible by popular support there | A mass national uprising supported by most Russians | A restoration of the tsar by the army | An election won by the Bolsheviks across Russia | Planning by a minority and popular radicalism combined.
 SA3#history-u08-09-q5@2,3: Was the October Revolution a popular revolution or a coup? | The Military Revolutionary Committee directed a planned seizure of Petrograd on 24 to 25 October 1917 by relatively few forces, supporting the coup view (Pipes). But the Bolsheviks held majorities in the main soviets, and their decrees on peace and land were popular (Rabinowitch). The Constituent Assembly result and its dissolution (January 1918) show they lacked a national majority. A strong answer weighs these. | Explains the seizure ; Explains popular support ; Explains the Constituent Assembly ; Uses interpretations ; Reaches a judgement
+Q: Which bodies carried out the seizure of Petrograd on 24 to 25 October 1917? | Red Guards and soldiers directed by the Military Revolutionary Committee, who took bridges, stations and the telegraph office.
+Q: What happened at the Winter Palace in October 1917? | It fell early on 26 October, and the Provisional Government that met there lost power; Kerensky escaped.
+Q: Which congress approved the Bolshevik government, and what was the government called? | The Second Congress of Soviets approved the Sovnarkom, led by Lenin.
+Q: What did the Bolsheviks' first decrees do? | Decrees on peace and on land gave land to the peasants and called for peace.
+Q: When and why was the Cheka set up? | In December 1917, as the Bolshevik political police.
+Q: What did the Constituent Assembly elections of November 1917 show? | The Socialist Revolutionaries won most seats and the Bolsheviks about a quarter, showing the Bolsheviks lacked national majority support.
+Q: What did Richard Pipes argue about October 1917? | That it was a coup by a small, conspiratorial party.
+Q: What did Alexander Rabinowitch argue about the Bolsheviks in Petrograd? | That the Bolsheviks won real support among workers and soldiers.
+Q: What judgement do many historians reach on October 1917? | The seizure was planned by a minority but rode on widespread popular radicalism.
+Q: Why is the image of a mass storming of the Winter Palace misleading? | It comes from later films; the seizure involved relatively few people.
 
 ## The Russian Civil War
 LV: GCSE and A level · Application
@@ -386,6 +476,16 @@ M2#history-u08-10-q2@2: Why did many peasants prefer the Reds to the Whites? | T
 TF1#history-u08-10-q3@1: Foreign intervention decided the outcome of the Civil War. | false | Allied forces were limited and had little effect on the result.
 M3#history-u08-10-q4@3: Which explanation of the Red victory is best supported? | Red strengths mattered, but White weaknesses mattered as much | The Whites surrendered without fighting in 1918 | Foreign armies won the war for the Reds | The peasants fought solidly for the Whites | Both sides' qualities explain the outcome.
 SA3#history-u08-10-q5@2,3: Why did the Bolsheviks win the Russian Civil War? | The Reds held the central heartland, railways and industry; Trotsky's Red Army, the Cheka and War Communism mobilised resources; the Whites (Kolchak, Denikin, Yudenich) were divided, far apart and associated with landlords; foreign intervention was limited. A strong answer weighs Red strengths against White weaknesses. | Explains geography ; Explains Red organisation ; Explains White weaknesses ; Explains peasant attitudes ; Reaches a judgement
+Q: Name three causes of the Russian Civil War. | The dissolution of the Constituent Assembly, the Treaty of Brest-Litovsk, and the Czech Legion revolt; former officers, nobles and liberals also formed White armies.
+Q: Why did the Treaty of Brest-Litovsk help cause the Civil War? | It gave up vast territory to Germany in March 1918, enraging patriots.
+Q: What was the effect of the Czech Legion's revolt in May 1918? | It opened a front along the Trans-Siberian Railway.
+Q: Who made up the White armies? | Former officers, nobles and liberals who wanted to overthrow the Bolsheviks.
+Q: Where did Kolchak, Denikin and Yudenich lead White armies? | Kolchak in Siberia, Denikin in the south and Yudenich near Petrograd.
+Q: Which powers sent forces against the Bolsheviks, and how important were they? | Britain, France, the United States and Japan, but in limited numbers with little effect on the outcome.
+Q: What triggered the Red Terror? | An attempt on Lenin's life in August 1918, after which the Cheka launched mass arrests and executions.
+Q: How did Trotsky build the Red Army? | He built a force of millions using former tsarist officers watched by political commissars, with harsh discipline, travelling between fronts in an armoured train.
+Q: Why did peasants tend to support the Reds over the Whites? | Many feared a White victory would return land to the landlords.
+Q: Why did geography favour the Reds? | They held the central heartland, its railways and industry, while the Whites were divided and far apart.
 
 ## War Communism
 LV: GCSE and A level · Application
@@ -423,6 +523,16 @@ M2#history-u08-11-q2@2: Why did peasants plant less under War Communism? | Any s
 TF1#history-u08-11-q3@1: The Kronstadt sailors had supported the Bolsheviks in 1917. | true | Their rebellion therefore shocked the Bolshevik leaders.
 M3#history-u08-11-q4@3: Which judgement about War Communism is best supported? | A response to emergency, shaped and prolonged by ideology until rebellion forced change | A purely economic plan with no link to the Civil War | A successful policy that raised living standards | A policy proposed and run by the Whites | Wartime necessity and Bolshevik ideology both shaped it.
 SA3#history-u08-11-q5@2,3: Was War Communism a success? | Requisitioning, nationalisation, a ban on private trade and labour discipline fed the Red Army and helped win the Civil War. But food and industrial production collapsed, the cities starved, the famine of 1921 to 1922 killed millions, and the Tambov rising and Kronstadt rebellion (March 1921) forced its end. A strong answer weighs military success against economic and human cost, and considers necessity against ideology. | Explains policies ; Explains military success ; Explains economic collapse ; Explains rebellion ; Reaches a judgement
+Q: What was grain requisitioning under War Communism? | Armed detachments seized grain from peasants to feed the towns and the army.
+Q: What happened to money and trade under War Communism? | Private trade was banned and money lost almost all value as prices soared.
+Q: What was labour discipline under War Communism? | Workers could be directed to jobs, and strikes were treated as sabotage.
+Q: How did peasants respond to requisitioning? | They hid grain or planted less, so food production collapsed.
+Q: What happened to the cities under War Communism? | Industrial output fell far below pre-war levels and people fled the starving cities for the countryside.
+Q: What caused the famine of 1921 to 1922? | Drought and requisitioning contributed; millions died.
+Q: Where was the largest peasant rising against War Communism? | In Tambov province, in 1920 to 1921.
+Q: Who were the Kronstadt sailors, and why was their rebellion significant? | Sailors at a naval base once heroes of the revolution; their March 1921 revolt showed even loyal supporters turned against Bolshevik policy. The Red Army crushed it.
+Q: Why did the Bolsheviks adopt War Communism, on the necessity argument? | They had to feed the army and the cities to survive the Civil War.
+Q: What judgement does the lesson give on the origins of War Communism? | It began as a response to emergency but was shaped and prolonged by ideology, until rebellion forced a change.
 
 ## The New Economic Policy
 LV: GCSE and A level · Application
@@ -461,6 +571,16 @@ M2#history-u08-12-q2@2: Why did Lenin introduce the NEP in 1921? | Economic coll
 TF1#history-u08-12-q3@1: Party factions were banned at the same congress that introduced the NEP. | true | Economic retreat came with tighter political control.
 M3#history-u08-12-q4@3: Which judgement about the NEP is best supported? | It saved the regime and revived the economy but left industrialisation unresolved | It failed to raise production at all | It restored capitalism completely, including in heavy industry | It was abolished within months of its introduction | Economic recovery came with unresolved problems for industry.
 SA3#history-u08-12-q5@2,3: Why did Lenin introduce the NEP, and how successful was it? | Economic collapse, famine, the Tambov rising and the Kronstadt rebellion led Lenin to introduce the NEP in March 1921: a tax in kind, private trade and small business, with the state keeping the commanding heights. Production recovered to roughly pre-war levels by the mid-1920s, but the scissors crisis (1923), slow industrial growth and party opposition remained, while factions were banned. A strong answer weighs these. | Explains why it was introduced ; Explains how it worked ; Explains successes ; Explains problems ; Reaches a judgement
+Q: Why did the Bolsheviks change economic policy in 1921? | The economy had collapsed, and the Tambov rising and Kronstadt rebellion showed peasants and even loyal sailors would rebel.
+Q: When and how did Lenin introduce the NEP, and how did he describe it? | At the Tenth Party Congress in March 1921, as a temporary step back to save the revolution.
+Q: How did the tax in kind work? | A fixed share of produce replaced requisitioning, and peasants could sell what remained.
+Q: Who were the Nepmen? | Traders who prospered once small businesses and private trade were allowed again.
+Q: What were the commanding heights of the economy? | Heavy industry, banks, transport and foreign trade, which the state kept.
+Q: What happened to the currency under the NEP? | A new, stable currency was introduced.
+Q: What political change came at the same congress as the NEP? | Factions within the party were banned, so economic retreat came with tighter political control.
+Q: How did Bukharin defend the NEP against critics? | As the way to build socialism gradually with peasant support, against Bolsheviks who disliked it as a return to capitalism.
+Q: What successes did the NEP achieve? | Production recovered, reaching roughly pre-war levels by the mid-1920s, and famine was overcome.
+Q: What were the weaknesses of the NEP? | The 1923 scissors crisis, slow industrial growth, resentment of Nepmen, and no answer on how to industrialise.
 
 ## Stalin's rise to power
 LV: GCSE and A level · Application
@@ -500,6 +620,16 @@ M2#history-u08-13-q2@2: Why did the Lenin Enrolment help Stalin? | It brought in
 TF1#history-u08-13-q3@1: Trotsky was expelled from the Soviet Union in 1929. | true | He was murdered in Mexico in 1940 on Stalin's orders.
 M3#history-u08-13-q4@3: Which explanation of Stalin's victory is best supported? | Organisational power, political skill and his rivals' errors together | Lenin's public choice of Stalin as his successor | A popular election held across the Soviet Union | A military coup led by the Red Army | Party control, skill and his rivals' errors combined in his favour.
 SA3#history-u08-13-q5@2,3: Why did Stalin, rather than Trotsky, become leader of the Soviet Union? | As General Secretary from 1922 Stalin controlled appointments and benefited from the Lenin Enrolment; he presented himself as Lenin's heir, and Socialism in One Country appealed more than permanent revolution. He allied with Zinoviev and Kamenev against Trotsky, then with Bukharin, then turned on the Right (1928 to 1929). Trotsky's arrogance and his rivals' failure to unite helped. A strong answer weighs these. | Explains party control ; Explains policy ; Explains alliances ; Explains rivals' errors ; Reaches a judgement
+Q: Who were the leading contenders to succeed Lenin after January 1924? | Trotsky, Zinoviev, Kamenev, Bukharin and Stalin.
+Q: What post did Stalin hold from 1922, and why did it matter? | General Secretary; he controlled appointments and placed his supporters in key posts.
+Q: What was the Lenin Enrolment? | A drive that brought hundreds of thousands of new members into the party, many loyal to the officials who admitted them.
+Q: How did Stalin present himself after Lenin's death? | As Lenin's loyal disciple, leading the funeral and the cult of Lenin.
+Q: Why did Socialism in One Country appeal more than permanent revolution? | It offered building socialism in the USSR itself, rather than waiting for revolution abroad as Trotsky's idea required.
+Q: Define permanent revolution. | Trotsky's idea that the revolution must spread abroad to survive.
+Q: How did Stalin defeat Trotsky, Zinoviev and Kamenev? | He allied with Zinoviev and Kamenev against Trotsky, then with Bukharin against the United Opposition, expelled from the party in 1927.
+Q: What happened to Bukharin and the Right? | In 1928 to 1929 Stalin turned against them over the NEP.
+Q: What was Trotsky's fate? | Expelled from the USSR in 1929 and murdered in Mexico in 1940 on Stalin's orders.
+Q: Why did Stalin's rivals fail to stop him? | They underestimated him and failed to unite, and Trotsky seemed arrogant and feared as a potential Napoleon.
 
 ## Collectivisation
 LV: GCSE and A level · Evaluation
@@ -539,6 +669,16 @@ M2#history-u08-14-q2@2: Why did many peasants slaughter their livestock? | They 
 TF1#history-u08-14-q3@1: The famine of 1932 to 1933 killed millions of people. | true | Losses were heaviest in Ukraine and Kazakhstan.
 M3#history-u08-14-q4@3: Which judgement about collectivisation is best supported? | It achieved state control of grain at a catastrophic human cost | It made Soviet farming the most productive in the world | It was a voluntary policy welcomed by most peasants | It had no link to industrialisation | Control was achieved at the cost of millions of lives.
 SA3#history-u08-14-q5@2,3: Why did Stalin introduce collectivisation, and what were its consequences? | After the procurement crisis of 1927 to 1928 Stalin wanted grain to feed the cities and export for industrial machinery, and control of the peasantry; from 1929 peasants were forced into kolkhozes and kulaks liquidated. The state gained grain, but livestock was slaughtered, output fell and the famine of 1932 to 1933 killed millions, especially in Ukraine and Kazakhstan. A strong answer weighs aims against consequences and notes the debate on the famine. | Explains aims ; Explains methods ; Explains the famine ; Uses interpretations ; Reaches a judgement
+Q: Why did Stalin want collectivisation? | To secure reliable grain to feed the cities and export for machinery, and to bring the peasantry under state control.
+Q: What was the grain procurement crisis of 1927 to 1928? | Peasants sold less grain to the state at low prices.
+Q: What did Stalin call for in December 1929? | The liquidation of the kulaks as a class.
+Q: What was a kulak, and why is the term problematic? | A supposedly richer peasant; the label was applied loosely to any peasant who resisted.
+Q: What happened to peasants labelled kulaks? | They were shot, sent to labour camps or deported; around 1.8 million were deported in 1930 to 1931.
+Q: How did many peasants resist collectivisation? | They slaughtered their livestock rather than give it up, so cattle and horse numbers fell sharply.
+Q: What was Dizzy with Success? | Stalin's March 1930 article that briefly slowed the pace of collectivisation, though it later resumed.
+Q: Why did the famine of 1932 to 1933 occur? | Grain quotas were enforced even as harvests fell.
+Q: How many died in the famine, and how is it viewed in Ukraine? | Estimates commonly run from about five to eight million for the USSR; Ukraine and other countries recognise the Holodomor as genocide.
+Q: What judgement does the lesson give on collectivisation? | It achieved Stalin's aim of control, at a human cost many historians rank among the twentieth century's greatest crimes.
 
 ## Soviet industrialisation
 LV: GCSE and A level · Application
@@ -576,6 +716,16 @@ M2#history-u08-15-q2@2: Why did Stalin introduce internal passports in 1932? | T
 TF1#history-u08-15-q3@1: Gulag prisoners built canals, railways and mines. | true | Forced labour was a major part of the industrial drive.
 M3#history-u08-15-q4@3: Which judgement about Soviet industrialisation is best supported? | The USSR became an industrial power, but its people paid a terrible price | Industrialisation was achieved without any cost to workers | Industry declined throughout the 1930s | Industrialisation was paid for entirely by foreign loans | Achievement and cost must both be weighed.
 SA3#history-u08-15-q5@2,3: Why did Stalin industrialise the Soviet Union so rapidly, and at what cost? | Stalin feared attack and believed the USSR must catch up "in ten years" (1931); he built Magnitogorsk, the Dnieper dam and the Moscow Metro, and mobilised workers through discipline, internal passports (1932), Stakhanovite propaganda (1935) and Gulag labour. Peasants, workers and prisoners bore the cost. A strong answer weighs motives, achievements and human cost. | Explains motives ; Explains projects ; Explains workers' conditions ; Explains forced labour ; Reaches a judgement
+Q: Why did Stalin push rapid industrialisation, according to the lesson? | He feared the capitalist powers would attack the USSR, and industry would also create a working class to support socialism.
+Q: What big projects were built in the 1930s? | The Dnieper dam and the Moscow Metro, which opened in 1935, as well as new cities such as Magnitogorsk.
+Q: What happened to the urban population during industrialisation? | Millions of peasants moved to the cities and the urban population grew rapidly.
+Q: How was workers' movement controlled from 1932? | By an internal passport system.
+Q: How were workers disciplined? | Harshly; for example, lateness could be punished.
+Q: Who was Alexei Stakhanov? | A miner who reportedly cut 102 tonnes of coal in one shift in August 1935, celebrated as a hero of labour.
+Q: Why should Stakhanov's record not be taken at face value? | It was staged with support from other workers for propaganda.
+Q: What did the Gulag contribute to industrialisation? | Prisoners in the labour camps built canals, railways and mines.
+Q: Who paid the price of Soviet industrialisation? | Peasants through collectivisation and famine, workers through low living standards and harsh discipline, and prisoners through forced labour.
+Q: What judgement does the lesson give on industrialisation? | The USSR became an industrial power, but its people paid a terrible price.
 
 ## The Five-Year Plans
 LV: GCSE and A level · Application
@@ -613,6 +763,16 @@ M2#history-u08-16-q2@2: Why did the plans neglect consumer goods? | They gave pr
 TF1#history-u08-16-q3@1: The first Five-Year Plan was declared complete in four years. | true | It was declared complete at the end of 1932.
 M3#history-u08-16-q4@3: Which judgement about the Five-Year Plans is best supported? | Highly successful for heavy industry and defence, much less so for living standards | A complete failure that reduced industrial output | A success for consumer goods but not heavy industry | Plans that were never actually put into practice | Success depends on which aims are measured.
 SA3#history-u08-16-q5@2,3: How successful were Stalin's Five-Year Plans? | Gosplan set targets prioritising heavy industry; the first plan (1928 to 1932) was declared complete in four years, the second (1933 to 1937) extended industry and transport and the third (from 1938) turned to armaments. By 1941 the USSR was a leading industrial power. But consumer goods were neglected, quality was poor and statistics inflated. A strong answer weighs these by Stalin's aims and by living standards. | Explains planning ; Explains each plan ; Explains achievements ; Explains failures and evidence ; Reaches a judgement
+Q: What did Gosplan do? | It set output targets for each industry, factory and region.
+Q: Why did managers exaggerate results? | Those who missed targets risked punishment.
+Q: Which industries did planning prioritise? | Heavy industry, coal, steel, oil, machinery and electricity, over consumer goods.
+Q: What was claimed about the first Five-Year Plan? | It was declared complete in four years, with huge growth claimed in heavy industry.
+Q: What was the focus of the second Five-Year Plan? | Continued heavy industry, with development of transport and new industries.
+Q: How did the third Five-Year Plan differ, and what ended it? | It shifted towards armaments and was cut short by the German invasion in 1941.
+Q: What had the USSR achieved by 1941? | It was one of the world's leading industrial producers, with factories that would make weapons to defeat Germany.
+Q: What did the plans neglect? | Consumer goods, housing and food, with waste and poor quality common.
+Q: How do historians handle official Soviet figures? | They use revised estimates rather than inflated official figures, which still show rapid growth.
+Q: What judgement does the lesson give on the Five-Year Plans? | Highly successful in Stalin's own terms of heavy industry and defence, much less so for ordinary living standards.
 
 ## The Great Purge
 LV: A level · Evaluation
@@ -653,6 +813,16 @@ M2#history-u08-17-q2@2: Why did NKVD Order No. 00447 increase the scale of the T
 TF1#history-u08-17-q3@1: Archives opened after 1991 show Stalin signing execution lists. | true | They confirm his direct role in setting policy.
 M3#history-u08-17-q4@3: Which judgement about Stalin's role in the Great Purge is best supported? | Stalin initiated and directed it, but the system multiplied its victims | Stalin knew nothing about the arrests and executions | The Terror was organised by foreign governments | Local officials opposed and prevented the Terror | Direction from above and momentum below both mattered.
 SA3#history-u08-17-q5@2,3: Why did the Great Purge take place? | After Kirov's murder (1934) Stalin staged show trials of Zinoviev and Kamenev (1936), Pyatakov and Radek (1937) and Bukharin (1938), purged the army (1937) and, under Yezhov, mass operations with quotas (Order No. 00447) killed about 680,000 people. Conquest stressed Stalin's direction; Getty local pressures; archives confirm Stalin's role. A strong answer weighs Stalin's aims, the NKVD and denunciation. | Explains stages ; Explains Stalin's role ; Explains the system ; Uses interpretations ; Reaches a judgement
+Q: How did Stalin use the Kirov murder? | To justify arrests after Kirov, the Leningrad party leader, was murdered in December 1934.
+Q: Who was tried in the Moscow show trials? | Zinoviev and Kamenev in 1936, Pyatakov and Radek in 1937, and Bukharin in 1938.
+Q: What happened to defendants at the show trials? | They confessed to fantastic crimes and most were shot.
+Q: Who was purged in the army in 1937? | The army's leaders, including Marshal Tukhachevsky, were shot and the officer corps purged.
+Q: What was NKVD Order No. 00447? | The July 1937 order setting regional quotas of arrests and executions under Yezhov.
+Q: How many executions do NKVD records show for 1937 and 1938? | About 680,000.
+Q: Who was arrested in the mass terror? | Party members, officials, managers, national minorities, former kulaks and ordinary citizens, often after denunciations.
+Q: What happened to Yezhov? | He was replaced in 1938 and later shot.
+Q: How do Conquest and Getty differ on the Terror? | Conquest argued Stalin planned and directed it; revisionists such as Getty stressed chaos, local rivalries and pressure from below.
+Q: What do archives opened after 1991 show about the Terror? | Stalin signing execution lists and setting policy, though local officials and denunciations also drove its scale.
 
 ## Soviet propaganda
 LV: GCSE and A level · Application
@@ -692,6 +862,16 @@ M2#history-u08-18-q2@2: Why did the regime alter photographs? | To remove purged
 TF1#history-u08-18-q3@1: The Short Course history of the party was published in 1938. | true | It glorified Stalin's role in the revolution.
 M3#history-u08-18-q4@3: Which judgement about Soviet propaganda is best supported? | It shaped public life thoroughly, but private belief varied | It persuaded every Soviet citizen completely | It had no effect on anyone at all | It was banned by Stalin in 1934 | Public conformity and private belief differed.
 SA3#history-u08-18-q5@2,3: How effective was propaganda in Stalin's Soviet Union? | The regime controlled the press, used posters, film (Eisenstein), Socialist Realism (1934) and rewritten history (the Short Course 1938, altered photographs), and built a cult of Stalin from 1929, while promoting atheism. Many young people believed, but diaries and letters show cynicism, and fear explains much conformity. A strong answer weighs reach against belief, using evidence. | Explains methods ; Explains the cult ; Explains religion ; Weighs evidence of belief ; Reaches a judgement
+Q: Who controlled newspapers and broadcasting in the USSR? | The party, including Pravda and all broadcasting.
+Q: What did posters celebrate? | Workers, collective farmers and Stalin.
+Q: How was film used in Soviet propaganda? | It was promoted as a powerful medium, with directors such as Sergei Eisenstein.
+Q: When was Socialist Realism declared official style? | At the Writers' Congress of 1934.
+Q: How was history rewritten under Stalin? | The Short Course history of the party (1938) glorified Stalin, and photographs were altered to remove purged leaders.
+Q: How was Stalin presented from his fiftieth birthday in 1929? | As the wise father of the people and Lenin's true heir.
+Q: What did the cult of personality give the regime? | A single focus of loyalty; towns were named after Stalin and his portrait was everywhere.
+Q: How did the regime treat religion? | It promoted atheism, closed many churches and supported the League of the Militant Godless.
+Q: What did many believers do about their faith? | Kept it in private.
+Q: Why is it wrong to assume everyone believed Soviet propaganda? | Diaries and letters show cynicism, jokes and quiet resistance, and fear explains much outward conformity.
 
 ## Life under Stalin
 LV: GCSE and A level · Application
@@ -729,6 +909,16 @@ M2#history-u08-19-q2@2: Why did literacy rise sharply under Stalin? | Free educa
 TF1#history-u08-19-q3@1: The 1936 Constitution's promised rights were respected in practice. | false | The Terror of 1937 to 1938 showed they were not respected.
 M3#history-u08-19-q4@3: Which judgement about life under Stalin is best supported? | Opportunities grew for some, but hardship and fear marked life for most | Life improved for every citizen in every respect | Life worsened for everyone without any gains | Life was unaffected by the government | Gains and hardships both appear in the evidence.
 SA3#history-u08-19-q5@2,3: How far did life improve for Soviet citizens under Stalin? | Education, literacy, health care and promotion opened opportunities, and rationing ended in 1935. But housing was overcrowded, goods scarce, the countryside suffered famine, women carried double burdens and lost rights in 1936, and surveillance and terror touched many families. A strong answer weighs these and distinguishes groups. | Explains opportunities ; Explains living conditions ; Explains women and families ; Explains fear ; Reaches a judgement
+Q: What was housing like for many city families under Stalin? | Overcrowded, with many families living in a single room in a communal apartment, sharing kitchens and bathrooms.
+Q: What was the food situation in the 1930s? | Food and goods were scarce; bread rationing ended in 1935, but queues and shortages continued.
+Q: What expanded in education and health under Stalin? | Free education and health care expanded, and literacy rose sharply.
+Q: How were workers who exceeded targets rewarded? | With better pay, housing and privileges.
+Q: What was women's position in the Stalinist economy? | They entered industry and the professions in large numbers, but also kept most domestic work.
+Q: How did the regime's attitude to the family change from the 1920s? | After liberal laws of the 1920s it promoted traditional family life.
+Q: How did fear shape life under Stalin? | Surveillance, denunciation and the threat of arrest touched many families, especially in 1937 to 1938.
+Q: Why should the 1936 Constitution not be taken at face value? | It promised rights that were not respected in practice.
+Q: Define social mobility and give a Soviet example. | Movement between social classes, for example through education for young workers and peasants' children.
+Q: What judgement does the lesson give on life under Stalin? | Opportunities grew for some, but material hardship and fear marked life for most.
 
 ## The Soviet Union in the Second World War
 LV: GCSE and A level · Application
@@ -768,4 +958,14 @@ M2#history-u08-20-q2@2: Why did moving factories east in 1941 matter? | It let t
 TF1#history-u08-20-q3@1: Stalin ignored warnings of a German attack in 1941. | true | The invasion caught Soviet forces unprepared.
 M3#history-u08-20-q4@3: Which judgement about Soviet victory is best supported? | A brutal system proved able to mobilise people and industry for total war | Victory came without heavy losses on the Soviet side | Germany withdrew from the USSR without fighting | Lend-Lease alone won the war in the east | Resources, organisation and sacrifice combined.
 SA3#history-u08-20-q5@2,3: Why did the Soviet Union defeat Germany on the Eastern Front? | After catastrophic losses in Barbarossa (June 1941), the USSR held Moscow (December 1941) and Leningrad, moved factories east and received Lend-Lease; it won at Stalingrad (February 1943) and Kursk (July 1943), and Bagration (1944) led to Berlin (1945). Resources, a command economy, improving commanders such as Zhukov, patriotism and harsh discipline all mattered, at a cost of around 27 million lives. A strong answer weighs these. | Explains survival in 1941 ; Explains resources and industry ; Explains turning points ; Explains the Soviet system ; Reaches a judgement
+Q: What did the Nazi-Soviet Pact of August 1939 do? | It divided eastern Europe between Germany and the USSR.
+Q: What was Operation Barbarossa and what was its early effect? | The German invasion of 22 June 1941; Soviet forces lost millions of men in the first months.
+Q: Why were the early losses of 1941 so severe? | Stalin ignored warnings of attack.
+Q: What happened to Leningrad's civilians? | Hundreds of thousands died, mostly of starvation, during the siege.
+Q: Where were the Germans stopped in December 1941? | Before Moscow.
+Q: How did the USSR keep up production after the invasion? | More than a thousand factories were moved east to the Urals and beyond in 1941.
+Q: What was Lend-Lease? | American supplies of war materials to the Allies; for the USSR, especially trucks and food.
+Q: Which two battles of 1943 turned the tide? | Stalingrad, where the German Sixth Army surrendered on 2 February, and Kursk, won by the Red Army in July.
+Q: What were the USSR's losses in the war? | Around 27 million dead on the commonly cited estimate, the greatest of any nation.
+Q: Name some reasons for Soviet victory. | Resources and relocated industry, a command economy, improved tactics under commanders such as Zhukov, and sacrifice, patriotism and harsh discipline.
 `;

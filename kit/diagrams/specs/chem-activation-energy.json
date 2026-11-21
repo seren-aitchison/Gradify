@@ -1,0 +1,55 @@
+{
+ "id": "chem-activation-energy",
+ "renderer": "energy-profile",
+ "course": "chemistry",
+ "unit": "u07",
+ "lesson": "Activation energy",
+ "title": "Activation energy",
+ "caption": "The activation energy is the minimum energy colliding particles need to react: the height of the barrier from the reactants to the transition state. It is the same whether the reaction is exothermic or endothermic overall.",
+ "alt": "A reaction profile with the activation energy arrow from the reactants up to the transition state.",
+ "description": [
+  "Reactants at the left.",
+  "The curve rises to the transition state; the arrow Ea spans this rise.",
+  "It falls to the products, lower here: exothermic."
+ ],
+ "profiles": [
+  {
+   "title": "an exothermic reaction",
+   "colour": "a1",
+   "points": [
+    {
+     "x": 0,
+     "e": 50,
+     "kind": "start",
+     "label": "reactants"
+    },
+    {
+     "x": 0.5,
+     "e": 120,
+     "kind": "ts",
+     "label": "TS"
+    },
+    {
+     "x": 1,
+     "e": 10,
+     "kind": "end",
+     "label": "products"
+    }
+   ],
+   "expect": {
+    "ts": 1,
+    "int": 0,
+    "dh": "exothermic"
+   },
+   "ea": [
+    {
+     "from": 0,
+     "to": 1,
+     "label": "Ea",
+     "dx": 0,
+     "anchor": "start"
+    }
+   ]
+  }
+ ]
+}

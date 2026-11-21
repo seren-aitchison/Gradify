@@ -30,6 +30,16 @@ SRC: Joint Formulary Committee, British National Formulary: antibacterials, prin
 M1#pharmacy-u11-01-q1@1: Which organism is Gram-positive? | Staphylococcus aureus | Escherichia coli | Pseudomonas aeruginosa | Klebsiella pneumoniae | Haemophilus influenzae | Staphylococci have a thick peptidoglycan wall.
 M2#pharmacy-u11-01-q2@2: Why take a sample before starting antibiotics? | So culture results can guide treatment | To increase the antibiotic's effect | Because samples are always required by law | To reduce the dose needed | It doesn't matter when | Antibiotics can stop organisms growing in the sample.
 M2#pharmacy-u11-01-q3@1: Which drug targets anaerobic bacteria? | Metronidazole | Trimethoprim | Nitrofurantoin | Flucloxacillin | Fosfomycin | Metronidazole is active against anaerobes.
+Q: What does a Gram stain show? | Whether bacteria are Gram-positive, with a thick peptidoglycan wall, or Gram-negative, with a thin wall and an outer membrane.
+Q: What is culture and sensitivity testing? | Growing an organism from a sample and testing which antimicrobials it is susceptible to.
+Q: Name three Gram-positive organisms. | Staphylococci (including MRSA), streptococci, enterococci and clostridia.
+Q: Name three Gram-negative organisms. | E. coli and other coliforms, Pseudomonas, Haemophilus and Neisseria.
+Q: Name three atypical organisms. | Mycoplasma, Chlamydia and Legionella.
+Q: What are anaerobes? | Bacteria, such as Bacteroides and Clostridioides, that live without oxygen.
+Q: What is MRSA? | Meticillin-resistant Staphylococcus aureus.
+Q: What is CPE? | Carbapenemase-producing Enterobacterales, a resistant organism.
+Q: Why can broad-spectrum antibiotics cause C. difficile and thrush? | They disrupt the protective normal flora.
+Q: Which samples may be taken before starting antibiotics? | Blood, urine, sputum and swabs.
 
 ## Antibiotic classes and mechanisms
 S: Antibiotics act on bacterial cell walls, protein synthesis, nucleic acids or metabolism. Each class has a characteristic spectrum, set of adverse effects and interactions that pharmacists must know.
@@ -58,6 +68,16 @@ SRC: MHRA, Drug Safety Update: fluoroquinolone antibiotics, must now only be pre
 M1#pharmacy-u11-02-q1@2: Which antibiotic is a strong CYP3A4 inhibitor? | Clarithromycin | Amoxicillin | Doxycycline | Nitrofurantoin | Gentamicin | Clarithromycin interacts with simvastatin, some DOACs and many others.
 M2#pharmacy-u11-02-q2@1: Which antibiotic should be taken with water, upright, and not with milk? | Doxycycline | Amoxicillin | Metronidazole | Flucloxacillin | Cefalexin | Doxycycline causes oesophageal irritation and is chelated by calcium.
 M2#pharmacy-u11-02-q3@2: Which antibiotic class is linked to tendon rupture? | Fluoroquinolones | Penicillins | Macrolides | Glycopeptides | Nitrofurans | The MHRA restricts fluoroquinolones because of tendon and other disabling effects.
+Q: What is a beta-lactam? | An antibiotic with a beta-lactam ring that blocks cell wall synthesis: penicillins, cephalosporins and carbapenems.
+Q: What does a beta-lactamase inhibitor do? | It protects a beta-lactam from bacterial enzymes, for example clavulanic acid or tazobactam.
+Q: Which penicillin is used for staphylococci? | Flucloxacillin.
+Q: When is meropenem used? | It is reserved for resistant infections.
+Q: What are the adverse effects of macrolides to watch for? | QT prolongation, and clarithromycin strongly inhibits CYP3A4.
+Q: Who should avoid tetracyclines? | Pregnant women and children under 12.
+Q: How is vancomycin used for C. difficile? | Orally.
+Q: Why is trimethoprim avoided in early pregnancy? | It is a folate antagonist.
+Q: What reactions can long-term nitrofurantoin cause? | Lung and liver reactions.
+Q: Which antibiotic carries a high C. difficile risk? | Clindamycin.
 
 ## Antimicrobial resistance
 S: Antimicrobial resistance (AMR) makes infections harder to treat and threatens modern medicine. Every unnecessary antibiotic adds to the problem, so pharmacists have a central role in preventing it.
@@ -87,6 +107,16 @@ SRC: World Health Organization, Global action plan on antimicrobial resistance |
 M1#pharmacy-u11-03-q1@1: What drives antimicrobial resistance most? | Antibiotic use, especially unnecessary use | Vaccination | Hand washing | Healthy diets | Exercise | Use creates selection pressure for resistant organisms.
 M2#pharmacy-u11-03-q2@2: Which approach reduces AMR? | Narrowest effective spectrum for the shortest effective time | Broad-spectrum antibiotics for everything | Longer courses as standard | Antibiotics for colds | Keeping leftovers | Targeted, short courses reduce selection pressure.
 M2#pharmacy-u11-03-q3@1: What does "One Health" mean in AMR? | Human, animal and environmental health are linked | Only one antibiotic should be used | Health care in one country | Each patient has one antibiotic | A single health record | Resistance spreads between people, animals and the environment.
+Q: What is antimicrobial resistance? | The ability of microorganisms to survive medicines that would normally kill them or stop their growth.
+Q: How do bacteria become resistant? | Through mutation and gene transfer, for example on plasmids.
+Q: Name three resistance mechanisms bacteria use. | Producing enzymes such as beta-lactamases, changing targets, pumping drugs out or blocking entry.
+Q: How does resistance spread? | Between people, animals and the environment, through poor infection control and global travel.
+Q: Name three infection prevention measures that reduce AMR. | Hand hygiene, vaccination and sanitation.
+Q: What does the UK national action plan on AMR set? | Targets to reduce antimicrobial use and resistant infections.
+Q: Do antibiotics work for colds? | No; colds and most sore throats are viral.
+Q: Why are antimicrobial guidelines updated? | Resistance patterns change.
+Q: Why shouldn't people keep leftover antibiotics just in case? | It encourages unnecessary use, which drives resistance.
+Q: Why does broad-spectrum use matter for AMR? | It increases selection pressure for resistant organisms.
 
 ## Antimicrobial stewardship
 S: Antimicrobial stewardship is a coordinated programme to use antimicrobials well: the right drug, dose, route and duration, reviewed regularly. Pharmacists lead much of it in hospitals and the community.
@@ -114,6 +144,16 @@ SRC: Royal College of General Practitioners, TARGET antibiotics toolkit | guidan
 M1#pharmacy-u11-04-q1@1: When should an IV antibiotic be reviewed in hospital? | At 48 to 72 hours | After 2 weeks | Only at discharge | Never | Only if the patient complains | Start Smart then Focus sets a review at 48 to 72 hours.
 M2#pharmacy-u11-04-q2@2: What is a back-up antibiotic prescription? | One to use only if symptoms don't improve or worsen | A spare course to keep at home | A double dose | A prescription for a family member | A prescription for animals | Back-up prescriptions reduce unnecessary use.
 M2#pharmacy-u11-04-q3@1: What must an antibiotic prescription in hospital document? | The indication and the duration or review date | The patient's income | The price only | The prescriber's mobile number | Nothing else | Documentation supports review and stewardship.
+Q: What is antimicrobial stewardship? | A coordinated programme to use antimicrobials well: the right drug, dose, route and duration, reviewed regularly.
+Q: What is Start Smart then Focus? | UKHSA's antimicrobial stewardship toolkit for hospitals.
+Q: What does "start smart" involve? | Starting only with evidence of infection, taking cultures, following local guidelines and documenting indication and duration.
+Q: What does de-escalation mean in stewardship? | Changing to a narrower-spectrum antibiotic.
+Q: What do antimicrobial pharmacists do in hospitals? | Audit antimicrobial use and feed back.
+Q: What should be checked on every antibiotic prescription? | Dose, duration and allergy status.
+Q: What should pharmacists do with an unusually long antibiotic course? | Query it.
+Q: What should people be told when antibiotics aren't needed? | Why, what to expect and when to seek help.
+Q: What should happen to unused antibiotics? | They should be returned for safe disposal.
+Q: Why review IV antibiotics at 72 hours? | The person may be able to switch to oral treatment or stop.
 
 ## Choosing an antibiotic
 S: Choosing an antibiotic means matching the likely organism and site of infection with the person's factors: allergy, kidney function, pregnancy, interactions and route. Local guidelines translate this into practical choices.
@@ -141,6 +181,16 @@ SRC: British Society for Allergy and Clinical Immunology, Penicillin allergy de-
 M3#pharmacy-u11-05-q1@2: Which question is most useful when someone reports a penicillin allergy? | What exactly happened and how severe was it? | Which pharmacy did they use? | Do they like the taste? | How much did it cost? | Have they had a flu jab? | The reaction's nature and severity decide whether it's a true allergy.
 M2#pharmacy-u11-05-q2@1: Why do local antibiotic guidelines differ between areas? | They reflect local resistance patterns | National guidance doesn't exist | To increase costs | Because bacteria are identical everywhere | Doctors prefer different colours | Resistance patterns vary by area, so local guidance reflects which antibiotics still work locally.
 M3#pharmacy-u11-05-q3@2: Why does a wrong penicillin allergy label matter? | It leads to broader-spectrum, less effective antibiotics | It has no consequences | It makes penicillin cheaper | It improves outcomes | It prevents all infections | Alternatives are often broader and more likely to cause C. difficile and resistance.
+Q: What is empirical treatment based on? | The likely cause of infection and local resistance.
+Q: What infection factors guide antibiotic choice? | Site, severity, likely organisms and whether antibiotics are needed at all.
+Q: Name four patient factors in choosing an antibiotic. | Allergies, renal and hepatic function, pregnancy and breastfeeding, age, interactions, swallowing and previous cultures.
+Q: Name four drug factors in choosing an antibiotic. | Spectrum, penetration to the site, route, dose, duration and cost.
+Q: About what proportion of people have a penicillin allergy label? | Around 1 in 10.
+Q: What questions make up a penicillin allergy history? | What happened, when, how severe, and whether penicillins have been tolerated since.
+Q: Who must avoid all penicillins? | People with anaphylaxis or severe reactions, who also need care with other beta-lactams.
+Q: Who can be offered penicillin allergy de-labelling? | People with low-risk histories, through specialist services.
+Q: Is nausea or diarrhoea after penicillin a true allergy? | No; it is a side effect, not an allergy.
+Q: Why do penicillin alternatives raise C. difficile and resistance risk? | They are often broader-spectrum.
 
 ## Urinary tract infections
 S: Urinary tract infections are among the commonest infections managed in primary care and pharmacies. Correct diagnosis, the right antibiotic and duration, and knowing who needs referral improve outcomes and limit resistance.
@@ -168,6 +218,16 @@ SRC: NICE NG111, Pyelonephritis (acute): antimicrobial prescribing | guidance | 
 M1#pharmacy-u11-06-q1@1: How long should a man's lower UTI be treated? | 7 days | 1 day | 3 days | 14 days | 28 days | NICE NG109 recommends 7 days for men, with a urine sample sent for culture.
 M3#pharmacy-u11-06-q2@2: A woman with UTI symptoms has fever and loin pain. What's right? | Refer: these suggest pyelonephritis | Supply nitrofurantoin for 3 days | Recommend cranberry juice | Advise more fluids only | Supply trimethoprim for 1 day | Upper UTI needs different treatment and assessment.
 M3#pharmacy-u11-06-q3@1: Which antibiotic should be avoided in the first trimester? | Trimethoprim | Nitrofurantoin early in pregnancy | Amoxicillin | Cefalexin | Pivmecillinam at standard doses | Trimethoprim is a folate antagonist, so it's avoided in the first trimester.
+Q: What is a lower UTI? | Bladder infection (cystitis), causing frequency, urgency and dysuria.
+Q: What is asymptomatic bacteriuria? | Bacteria in urine without symptoms, usually not treated except in pregnancy.
+Q: When is nitrofurantoin used for UTI? | When eGFR is adequate.
+Q: When is trimethoprim chosen for UTI? | When resistance risk is low.
+Q: Name two alternative antibiotics for uncomplicated UTI. | Pivmecillinam and fosfomycin.
+Q: How long is UTI treatment in pregnancy? | 7 days, with a culture sent.
+Q: Is asymptomatic bacteriuria treated in pregnancy? | Yes.
+Q: Who can Pharmacy First treat for uncomplicated UTI? | Women aged 16 to 64 in England.
+Q: Name three UTI features needing referral. | Fever, loin pain, vomiting, sepsis, recurrent infections, symptoms in men or children, or failure to improve.
+Q: Which NICE guideline covers pyelonephritis? | NICE NG111.
 
 ## Respiratory tract infections
 S: Most respiratory tract infections are viral and self-limiting, but pneumonia and some bacterial infections need antibiotics. Scoring tools help decide who benefits.
@@ -195,6 +255,16 @@ SRC: NICE NG138, Pneumonia (community-acquired): antimicrobial prescribing | gui
 M1#pharmacy-u11-07-q1@1: What does the "P" in FeverPAIN stand for? | Purulence | Pain | Pneumonia | Pulse | Penicillin | FeverPAIN: fever, purulence, attend rapidly, inflamed tonsils, no cough.
 M2#pharmacy-u11-07-q2@2: When does NICE suggest antibiotics for sinusitis? | Symptoms lasting more than 10 days or worsening | Any sinus pain on day 1 | Only in summer | Never under any circumstances | Every time the nose is blocked | Most sinusitis is viral and resolves on its own, so antibiotics are reserved for longer or worsening illness.
 M2#pharmacy-u11-07-q3@1: What does the "C" in CRB-65 stand for? | Confusion | Cough | Cyanosis | Chest pain | Culture | Confusion is a marker of severe pneumonia.
+Q: What do the letters of FeverPAIN stand for? | Fever, purulence, attend rapidly, inflamed tonsils, no cough.
+Q: What do the letters of CRB-65 stand for? | Confusion, respiratory rate 30 or more, low blood pressure, age 65 or over.
+Q: What is the antibiotic plan for a FeverPAIN score of 0 to 1? | No antibiotic.
+Q: What is the antibiotic plan for a FeverPAIN score of 4 to 5? | Consider an immediate antibiotic.
+Q: Which antibiotic is used for strep sore throat, and the alternative in allergy? | Phenoxymethylpenicillin, or clarithromycin if allergic.
+Q: How quickly does most otitis media resolve? | In about 3 days.
+Q: Which children with otitis media may need antibiotics? | Some, for example under 2 with infection in both ears.
+Q: What is used for low-severity pneumonia if allergic to amoxicillin? | A macrolide or doxycycline.
+Q: What happens with higher CRB-65 scores? | Hospital assessment is needed.
+Q: Which respiratory infection symptoms need referral? | Breathing difficulty, confusion or worsening symptoms.
 
 ## Skin and soft tissue infections
 S: Skin infections range from impetigo and minor wound infections to cellulitis and bites. Choosing between topical and oral treatment, and recognising severe infection, matter.
@@ -220,6 +290,16 @@ SRC: NICE NG141, Cellulitis and erysipelas: antimicrobial prescribing | guidance
 M1#pharmacy-u11-08-q1@1: Which antibiotic is first line for cellulitis in adults without allergy? | Flucloxacillin | Ciprofloxacin | Trimethoprim | Nitrofurantoin | Metronidazole | Flucloxacillin covers streptococci and staphylococci.
 M2#pharmacy-u11-08-q2@2: Which is first line for an infected dog bite needing antibiotics? | Co-amoxiclav | Trimethoprim | Nitrofurantoin | Fusidic acid cream | Clotrimazole | Co-amoxiclav covers the mixed organisms in bites.
 M2#pharmacy-u11-08-q3@1: Which sign suggests a severe skin infection needing urgent referral? | Pain out of proportion with fever and rapid spread | A small crusted patch | Mild itching | Dry skin | A healed scratch | These suggest necrotising fasciitis or sepsis.
+Q: What is cellulitis? | A bacterial infection of the deeper skin and tissues, usually streptococcal or staphylococcal.
+Q: What is impetigo? | A contagious superficial skin infection with golden crusts, common in children.
+Q: What topical antibiotic is used for impetigo if hydrogen peroxide is unsuitable? | Fusidic acid.
+Q: How is widespread or bullous impetigo treated? | Oral flucloxacillin, or clarithromycin.
+Q: Which oral antibiotics are used for cellulitis in penicillin allergy? | Clarithromycin or doxycycline.
+Q: Why mark the edge of cellulitis? | To monitor spread.
+Q: What should be checked after a bite besides antibiotics? | Tetanus status and, for some bites, rabies risk.
+Q: Which skin infection is in Pharmacy First in England? | Infected insect bites.
+Q: What does severe pain out of proportion with rapid spread suggest? | Possible necrotising fasciitis, needing urgent referral.
+Q: Which skin infection locations or people need urgent referral? | Infection near the eyes, or in people who are immunocompromised.
 
 ## Sepsis
 S: Sepsis is a life-threatening response to infection that damages the body's own organs. Early recognition and urgent treatment save lives, and pharmacists can be the first to spot it.
@@ -246,6 +326,16 @@ SRC: Royal College of Physicians, National Early Warning Score (NEWS) 2 | guidan
 M1#pharmacy-u11-09-q1@1: Which sign could indicate sepsis? | New confusion with an infection | A mild runny nose | A small cold sore | A dry cough for one day | Sneezing | Confusion is a sign of organ dysfunction.
 M2#pharmacy-u11-09-q2@2: How quickly do high-risk adults with sepsis need antibiotics in hospital? | Within 1 hour | Within 24 hours | Within 1 week | After culture results | Only if the fever lasts 3 days | NICE sets a 1-hour target because each hour of delay increases the risk of death.
 M2#pharmacy-u11-09-q3@1: What should a pharmacist do for someone with infection, mottled skin and fast breathing? | Call 999 or direct to emergency care | Supply antibiotics | Recommend paracetamol and rest | Book a GP appointment next week | Suggest vitamin C | Mottled skin and fast breathing with an infection are red flags for sepsis needing emergency care.
+Q: What is sepsis? | Life-threatening organ dysfunction caused by a dysregulated response to infection.
+Q: What is NEWS2? | The National Early Warning Score, used to spot deterioration and sepsis risk in adults.
+Q: Name three signs of sepsis in children. | Fast breathing, fitting, a non-blanching rash, and being very lethargic or hard to wake.
+Q: What urinary sign may indicate sepsis? | Not passing urine.
+Q: When should blood cultures be taken in sepsis? | Before antibiotics, if this doesn't delay them.
+Q: Which measurements are made in hospital sepsis care? | Lactate and urine output, with fluids given.
+Q: Which antibiotics need levels in sepsis treatment? | Gentamicin and vancomycin.
+Q: What should a pharmacist check for sepsis antibiotic doses? | Renal function, allergies and levels where needed.
+Q: Name two temperature or circulation signs of sepsis. | High or low temperature, fast heart rate and low blood pressure.
+Q: Why is a GP appointment next week wrong for infection with new confusion? | It may be sepsis, which needs 999 or emergency care.
 
 ## Clostridioides difficile infection
 S: C. difficile infection causes diarrhoea and colitis, usually after antibiotics disrupt the gut flora. It can be severe or fatal, so prevention through stewardship and correct treatment matter.
@@ -272,6 +362,16 @@ SRC: UK Health Security Agency, Clostridioides difficile: guidance, data and ana
 M1#pharmacy-u11-10-q1@1: Which antibiotic is first line for a first episode of C. difficile infection? | Oral vancomycin | Clindamycin | Ciprofloxacin | Co-amoxiclav | Ceftriaxone | NICE NG199 recommends oral vancomycin for 10 days.
 M2#pharmacy-u11-10-q2@2: Which medicine should be avoided in C. difficile diarrhoea? | Loperamide | Oral rehydration salts | Paracetamol | Oral vancomycin | Fluids | Antimotility drugs may worsen toxin retention and severity.
 M2#pharmacy-u11-10-q3@1: Which antibiotic carries a high risk of C. difficile? | Clindamycin | Nitrofurantoin | Doxycycline | Trimethoprim | Fosfomycin | Clindamycin is one of the highest-risk antibiotics.
+Q: What kind of organism is C. difficile? | A spore-forming anaerobic bacterium.
+Q: Which antibiotics carry high C. difficile risk? | Clindamycin, cephalosporins, co-amoxiclav and quinolones.
+Q: Name three non-antibiotic risk factors for C. difficile. | Older age, hospital stays, PPIs and immunosuppression.
+Q: What should happen to PPIs in C. difficile infection? | They should be reviewed.
+Q: When is fidaxomicin used for C. difficile? | If vancomycin is ineffective.
+Q: Who advises on severe or recurrent C. difficile? | Specialists.
+Q: What infection control measures are used for C. difficile? | Isolation, gloves and aprons, and handwashing with soap and water.
+Q: What should be monitored in C. difficile infection? | Fluids, electrolytes and signs of severe disease.
+Q: Why must future antibiotic choices consider previous C. difficile? | Recurrence is common.
+Q: Which drug groups should be avoided in C. difficile diarrhoea? | Antimotility drugs such as loperamide, and opioids.
 
 ## Tuberculosis
 S: Tuberculosis needs months of combination treatment to cure it and prevent resistance. Adherence support, interaction checks and monitoring for toxicity are central.
@@ -301,6 +401,16 @@ SRC: Joint Formulary Committee, British National Formulary: tuberculosis | guida
 M1#pharmacy-u11-11-q1@1: Which TB drug turns body fluids orange-red? | Rifampicin | Isoniazid | Pyrazinamide | Ethambutol | Streptomycin | Rifampicin discolours urine, tears and sweat.
 M2#pharmacy-u11-11-q2@2: Which TB drug can affect eyesight? | Ethambutol | Rifampicin | Isoniazid | Pyridoxine | Pyrazinamide | Ethambutol can cause optic neuritis, so vision is checked and changes reported promptly.
 M3#pharmacy-u11-11-q3@2: A woman starting TB treatment uses a combined pill. What's the advice? | Use a contraceptive method unaffected by enzyme inducers | Continue the pill as normal | Take two pills a day | Stop all contraception | Use the pill only at weekends | Rifampicin induces enzymes and makes hormonal contraception unreliable.
+Q: Which four drugs are used in the first 2 months of TB treatment? | Rifampicin, isoniazid, pyrazinamide and ethambutol.
+Q: Which drugs continue for the last 4 months of standard TB treatment? | Rifampicin and isoniazid.
+Q: Which TB forms need longer treatment? | Some forms, such as TB affecting the brain.
+Q: Why is latent TB treated in some people? | To prevent active disease.
+Q: What is directly observed therapy? | Watching people take their TB medicines to support adherence.
+Q: Why does rifampicin affect contact lenses? | It turns tears orange-red, staining them.
+Q: Name three drug groups affected by rifampicin induction. | Hormonal contraception, warfarin and many HIV drugs.
+Q: What are the adverse effects of pyrazinamide? | Hepatotoxicity and raised uric acid.
+Q: Which symptoms on TB treatment should be reported? | Jaundice, nausea or vomiting, and any vision changes.
+Q: How does contact tracing help in TB? | It protects others.
 
 ## Fungal infections
 S: Fungal infections range from common skin, nail and vaginal infections to serious systemic infections in immunocompromised people. Many are treated in pharmacies, where interactions with azoles must be checked.
@@ -328,6 +438,16 @@ SRC: MHRA, Drug Safety Update: topical miconazole, including oral gel, reminder 
 M1#pharmacy-u11-12-q1@2: Which antifungal oral gel interacts with warfarin? | Miconazole | Nystatin | Amphotericin lozenges | Terbinafine cream | Clotrimazole cream | Miconazole is absorbed and inhibits warfarin metabolism.
 M2#pharmacy-u11-12-q2@1: Which treatment is most effective for confirmed fungal nail infection? | Oral terbinafine | Topical nystatin | Hydrogen peroxide | Clotrimazole cream for a week | Antibacterial soap | Oral terbinafine has the best cure rates.
 M3#pharmacy-u11-12-q3@2: Which person with vaginal thrush should be referred rather than treated OTC? | Someone who is pregnant wanting oral treatment | A 30-year-old with a first episode | A 25-year-old with typical symptoms | A 40-year-old with itch only | Someone with a first episode after antibiotics | Oral fluconazole isn't used in pregnancy; specialist advice is needed.
+Q: What is a dermatophyte? | A fungus infecting skin, hair or nails, such as the causes of athlete's foot and ringworm.
+Q: How do azole antifungals work? | They inhibit fungal ergosterol synthesis.
+Q: How is athlete's foot treated? | Topical terbinafine or an azole, keeping the area clean and dry.
+Q: What treatment options exist for vaginal candidiasis? | A clotrimazole pessary or cream, or oral fluconazole.
+Q: How is oral candidiasis treated? | Miconazole oral gel or nystatin.
+Q: What should be checked in someone with oral thrush? | Inhaler technique, rinsing after ICS, and denture hygiene.
+Q: What should happen before treating a fungal nail infection? | Confirm the infection.
+Q: Which enzymes does fluconazole inhibit? | CYP2C9 and CYP3A4.
+Q: What cardiac caution applies to itraconazole? | It can worsen heart failure.
+Q: What vaginal thrush treatment is used in pregnancy? | Topical treatment only.
 
 ## Antiviral drugs
 S: Antivirals treat a growing range of infections, including herpes viruses, influenza and COVID-19. Timing matters, and some, especially ritonavir-boosted drugs, have major interactions.
@@ -354,6 +474,16 @@ SRC: University of Liverpool, COVID-19 and HIV drug interaction checkers | secon
 M1#pharmacy-u11-13-q1@1: Which drug treats influenza? | Oseltamivir | Aciclovir | Fluconazole | Amoxicillin | Ritonavir alone | Oseltamivir is a neuraminidase inhibitor.
 M3#pharmacy-u11-13-q2@2: Why must nirmatrelvir with ritonavir be checked carefully? | Ritonavir causes major CYP3A4 interactions | It's always given IV | It has no side effects | It's a vaccine | It's only for children | Ritonavir boosts levels of many co-prescribed drugs.
 M2#pharmacy-u11-13-q3@1: Within what time should antivirals for shingles ideally be started? | 72 hours of the rash | 2 weeks | 1 month | 6 months | Any time | Early treatment reduces symptoms and complications.
+Q: How do neuraminidase inhibitors work? | They stop new virus particles leaving infected cells.
+Q: What is ritonavir boosting? | Using ritonavir to inhibit CYP3A4 and raise levels of another antiviral.
+Q: Which antivirals treat herpes simplex and shingles? | Aciclovir and valaciclovir.
+Q: What advice goes with aciclovir besides renal dosing? | Keep well hydrated.
+Q: Within what time should oseltamivir ideally be started? | Within 48 hours.
+Q: When is oseltamivir used for prophylaxis? | For at-risk groups when flu is circulating, following UKHSA guidance.
+Q: Who is eligible for COVID-19 antivirals such as nirmatrelvir with ritonavir? | Eligible high-risk people early in infection.
+Q: Which drug groups have levels raised by ritonavir? | Some statins, DOACs, antiarrhythmics and sedatives.
+Q: Which interaction checker can be used for antivirals? | Liverpool's interaction checker, alongside the SPC.
+Q: Is shingles included in Pharmacy First in England? | Yes, for adults.
 
 ## HIV
 S: HIV is now a manageable long-term condition: effective antiretroviral therapy (ART) gives a near-normal life expectancy and prevents transmission. Adherence and interactions are where pharmacists help most.
@@ -382,6 +512,16 @@ SRC: University of Liverpool, HIV drug interactions checker | secondary | 2026 |
 M1#pharmacy-u11-14-q1@1: What does PrEP do? | Prevents HIV in people at risk | Cures HIV | Treats influenza | Prevents hepatitis C | Treats TB | Pre-exposure prophylaxis prevents infection.
 M3#pharmacy-u11-14-q2@2: Why check antacids with some HIV medicines? | They can reduce absorption of integrase inhibitors | They cause HIV | They increase viral load directly | They're always contraindicated | They have no effect | Polyvalent cations chelate some integrase inhibitors.
 M2#pharmacy-u11-14-q3@1: Within what time should PEP be started? | 72 hours | 2 weeks | 1 month | 6 months | Any time | PEP is most effective started as soon as possible.
+Q: What is antiretroviral therapy? | Combination treatment that suppresses HIV replication.
+Q: What life expectancy does effective ART give? | A near-normal life expectancy.
+Q: When is ART started and for how long? | Soon after diagnosis, and lifelong.
+Q: What is PEP? | Post-exposure prophylaxis, started as soon as possible after HIV exposure.
+Q: Why does earlier HIV diagnosis matter? | It improves outcomes.
+Q: Which boosters cause many HIV drug interactions? | Ritonavir and cobicistat.
+Q: Which OTC products can interact with some integrase inhibitors? | Antacids and supplements.
+Q: Why does adherence matter in HIV? | Missed doses risk resistance.
+Q: Where should people with possible HIV exposure be referred? | Sexual health services for PEP and testing.
+Q: Whose guidance covers HIV care in the UK? | BHIVA guidance.
 
 ## Viral hepatitis
 S: Hepatitis B and C cause chronic liver disease, but hepatitis C can now be cured with short courses of tablets and hepatitis B is preventable by vaccination. Pharmacies help with testing and treatment.
@@ -411,6 +551,16 @@ SRC: UK Health Security Agency, Immunisation against infectious disease (the Gre
 M1#pharmacy-u11-15-q1@1: Which hepatitis is now curable with short courses of tablets? | Hepatitis C | Hepatitis B in all cases | Hepatitis A only | Hepatitis E only | None | Direct-acting antivirals cure over 95% of hepatitis C infections in 8 to 12 weeks.
 M2#pharmacy-u11-15-q2@2: Why screen for hepatitis B before rituximab? | Reactivation can cause severe hepatitis | It improves rituximab's effect | It's only needed for travellers | To check vaccine response only | It isn't needed | Immunosuppression can reactivate hepatitis B.
 M2#pharmacy-u11-15-q3@1: Which hepatitis is part of the UK childhood vaccination schedule? | Hepatitis B | Hepatitis C | Hepatitis D | Hepatitis E | None | Hepatitis B vaccine is in the routine schedule.
+Q: What are direct-acting antivirals? | Oral hepatitis C treatments that cure over 95% of people in 8 to 12 weeks.
+Q: What is hepatitis B reactivation? | A flare of hepatitis B when people receive immunosuppressive treatment.
+Q: What does NHS England aim to do about hepatitis C? | Eliminate it as a public health threat.
+Q: Where do pharmacies offer hepatitis C testing? | Particularly alongside needle exchange and OST services.
+Q: Who is hepatitis A vaccine for? | Travellers and at-risk groups.
+Q: Which antivirals treat chronic hepatitis B? | Tenofovir or entecavir, under specialists.
+Q: Who prescribes DAA courses? | Specialist services.
+Q: Who should be offered hepatitis C testing? | People who have ever injected drugs, or had UK transfusions before 1991.
+Q: Why is hepatitis C often missed? | It is often silent for years.
+Q: Where should people with abnormal liver tests be referred? | To their GP or specialist services.
 
 ## Vaccines and immunisation
 S: Vaccines prevent serious diseases and pharmacies give millions of doses every year. Safe practice means following the Green Book, maintaining the cold chain, knowing contraindications and being prepared for anaphylaxis.
@@ -438,6 +588,16 @@ SRC: UK Health Security Agency, Vaccine incident guidance: responding to errors 
 M1#pharmacy-u11-16-q1@1: What is the national reference for UK vaccination? | The Green Book | The Orange Guide | The MEP guide only | The BNF index | The Highway Code | The Green Book covers each vaccine in detail.
 M2#pharmacy-u11-16-q2@2: Which vaccine type is generally avoided in pregnancy? | Live vaccines | Inactivated influenza | Pertussis vaccine | Inactivated COVID-19 vaccines | Tetanus toxoid | Live vaccines carry a theoretical risk to the fetus.
 M2#pharmacy-u11-16-q3@1: What should be available whenever vaccines are given? | Adrenaline for anaphylaxis | Antibiotics | Insulin | Paracetamol only | A defibrillator only | Anaphylaxis is rare but must be treated immediately.
+Q: What is a live vaccine? | A vaccine with weakened live organisms, generally avoided in pregnancy and immunosuppression.
+Q: Name four adult vaccines in the UK programme. | Seasonal influenza, COVID-19, shingles, pneumococcal and RSV, for eligible groups.
+Q: Name four diseases the UK childhood schedule protects against. | For example diphtheria, tetanus, pertussis, polio, measles, mumps, rubella and rotavirus.
+Q: Under what authority do pharmacies give vaccines? | National protocols or PGDs.
+Q: Is nasal influenza vaccine live? | Yes.
+Q: Is BCG a live vaccine? | Yes.
+Q: How often should vaccine fridge temperatures be monitored? | Daily, acting on any breaks.
+Q: What must be in place before a vaccine is given? | Valid consent, the correct product and dose, and record keeping.
+Q: What does the Green Book cover for each vaccine? | Eligibility and contraindications.
+Q: Why is a live vaccine dangerous in someone on high-dose immunosuppression? | Live vaccines are contraindicated in significant immunosuppression.
 
 ## Travel health
 S: Travellers may need advice on malaria, vaccines, food and water safety and existing medicines. Pharmacies provide travel clinics and supply antimalarials, so up-to-date, destination-specific advice matters.
@@ -466,4 +626,14 @@ SRC: National Travel Health Network and Centre, TravelHealthPro | guidance | 202
 M1#pharmacy-u11-17-q1@1: How long should doxycycline continue after leaving a malaria area? | 4 weeks | 1 day | 7 days | 6 months | Stop on leaving | Doxycycline is continued for 4 weeks after return.
 M3#pharmacy-u11-17-q2@2: A traveller develops fever 3 months after returning from Kenya. What's right? | Urgent malaria testing | Paracetamol and rest | It's too late to be malaria | Wait two weeks | Start doxycycline again | Malaria can present up to a year after travel.
 M2#pharmacy-u11-17-q3@1: Which antimalarial is linked to neuropsychiatric adverse effects? | Mefloquine | Atovaquone-proguanil | Doxycycline | Chloroquine only in children | None | Mefloquine can cause anxiety, depression and other effects.
+Q: What does ABCD of malaria prevention stand for? | Awareness of risk, Bite prevention, Chemoprophylaxis and prompt Diagnosis.
+Q: What is chemoprophylaxis? | Taking medicines to prevent malaria before, during and after travel.
+Q: Where can current destination-specific malaria advice be found? | UKHSA guidelines and TravelHealthPro.
+Q: Name three bite prevention measures. | DEET-based repellents, covering up and nets.
+Q: When is atovaquone-proguanil started before travel? | 1 to 2 days before.
+Q: When is mefloquine started before travel? | 2 to 3 weeks before.
+Q: What side effect of doxycycline matters for travellers? | Photosensitivity.
+Q: Where must yellow fever vaccine be given? | Only at registered centres, with a certificate.
+Q: How should travellers carry essential medicines? | In hand luggage with a copy of the prescription.
+Q: Which travellers should be referred to a travel clinic? | Complex travellers, such as those who are pregnant or immunosuppressed.
 `;

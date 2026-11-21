@@ -37,6 +37,16 @@ SRC: Chatfield C, Xing H, The Analysis of Time Series: An Introduction with R (7
 NUM1#maths-u22-01-q1@1: A series is recorded every hour with a daily cycle. What is the seasonal period in observations? | 24 | 0 | observations | One day contains 24 hourly observations, so the period is 24.
 M1#maths-u22-01-q2@1: Which component describes a long-run upward movement in a series? | The trend | The seasonal component | The irregular component | The lag | The residual autocorrelation | A trend is a persistent long-term change in level.
 M2#maths-u22-01-q3@2: Why can ordinary regression standard errors mislead with time series data? | Serially correlated errors make the effective sample size smaller than the number of observations | Time series have no random errors, so standard errors are always exactly zero | Regression can't use time as a variable, so its standard errors are undefined | Standard errors are always too large with time series, making tests too cautious | They don't mislead; independence makes no difference to regression inference | Positive autocorrelation means each observation adds less new information.
+Q: What is a time series? | Observations recorded at successive times, usually equally spaced, such as monthly sales or daily temperatures.
+Q: What is serial dependence? | Correlation between observations at different times, which violates the independence many methods assume.
+Q: What is a cycle in a time series? | An irregular, longer fluctuation, such as a business cycle.
+Q: How do cycles differ from seasonality? | Seasonality has a fixed period; cycles are irregular and longer.
+Q: What should always be the first step in time series analysis? | Plot the series against time.
+Q: Which transformations stabilise variance in a time series? | Logs or Box–Cox transformations.
+Q: What can random walks appear to show? | Spurious trends.
+Q: Name four kinds of time series model. | Smoothing, ARIMA, state-space and machine learning models.
+Q: Monthly ice-cream sales peak every July. Which component is that? | Seasonality.
+Q: What is a common mistake when splitting time series for testing? | Splitting randomly, which leaks future information into training.
 
 ## Time Series Decomposition
 S: Decomposition splits a series into trend–cycle, seasonal and remainder components. Seeing each separately helps understand the data, produce seasonally adjusted figures such as official unemployment rates, and build forecasts.
@@ -72,6 +82,16 @@ SRC: Office for National Statistics, Guide to seasonal adjustment | guideline | 
 NUM1#maths-u22-02-q1@1: With a multiplicative seasonal index of 1.25 for December, what is the seasonally adjusted value of December sales of 500? | 400 | 0 |  | Divide by the seasonal index: 500/1.25 = 400.
 M1#maths-u22-02-q2@1: Which decomposition suits a series whose seasonal peaks grow in proportion to its level? | Multiplicative | Additive | Linear trend only | No decomposition | Differencing only | Multiplicative seasonal factors scale with the trend.
 M2#maths-u22-02-q3@2: Why are seasonally adjusted figures at the end of a series often revised? | Trend and seasonal estimates near the end use fewer future observations, so they change as new data arrive | Statisticians change their adjustment methods every month for consistency | The raw data are always wrong when first published, so they're replaced | Revisions are never made to seasonally adjusted figures once released | Seasonality disappears from the latest data, so the adjustment is redone | Centred filters need data on both sides; at the end, forecasts fill in until actual values come.
+Q: What is an additive decomposition? | y_{t} = T_{t} + S_{t} + R_{t}, used when seasonal swings are roughly constant in size.
+Q: What is a multiplicative decomposition? | y_{t} = T_{t} × S_{t} × R_{t}, with the seasonal effect proportional to the level.
+Q: What is a seasonally adjusted series? | The data with the seasonal component removed, y_{t} − S_{t} or y_{t}/S_{t}.
+Q: How can a multiplicative decomposition be made additive? | By taking logs.
+Q: How does classical decomposition estimate the trend? | With a centred moving average, then averaging seasonal deviations.
+Q: Which method do national statistics offices use for seasonal adjustment? | X-11 and X-13ARIMA-SEATS.
+Q: How can decomposition help forecasting? | Forecast each component separately, then recombine them.
+Q: December sales are 150 with trend 105 and additive seasonal +40. What is the remainder? | 5.
+Q: What does changing seasonality require? | Flexible decomposition methods, such as STL.
+Q: What is a common mistake in choosing a decomposition? | Using an additive decomposition when seasonal swings grow with the level.
 
 ## Trend Analysis
 S: Trend analysis estimates the long-run direction of a series and asks whether an apparent trend is real. Linear and nonlinear fits, smoothing filters and tests for unit roots distinguish deterministic trends from random-walk drift.
@@ -107,6 +127,16 @@ SRC: Dickey DA, Fuller WA, Distribution of the estimators for autoregressive tim
 NUM1#maths-u22-03-q1@1: A linear trend is y = 50 + 2.5t. What is the trend value at t = 12? | 80 | 0 |  | 50 + 2.5 × 12 = 50 + 30 = 80.
 M1#maths-u22-03-q2@1: A series follows y_{t} = y_{t−1} + 0.5 + ε_{t}. What kind of trend does it have? | A stochastic trend (random walk with drift) | A deterministic linear trend | No trend | A seasonal trend | A quadratic trend | Accumulated shocks plus drift give a unit-root process.
 M3#maths-u22-03-q3@2: Why do regressions between unrelated random walks often look significant? | Both series wander persistently, so they share apparent trends by chance, inflating R^{2} and t-statistics | Random walks are always related through their shared normal shocks | Regression removes the trends automatically, leaving real relationships | The regression errors are independent, so the tests are valid | They never look significant; random walks have zero correlation | Non-stationary errors invalidate standard inference (spurious regression).
+Q: What is a deterministic trend? | A trend that is a fixed function of time, such as y_{t} = a + bt + ε_{t}.
+Q: What is a stochastic trend? | A trend made by accumulated random shocks, as in a random walk y_{t} = y_{t−1} + δ + ε_{t}.
+Q: How is an exponential trend estimated? | By regressing log(y) on time.
+Q: Name two local smoothing methods for trends. | Moving averages, loess and the Hodrick–Prescott filter.
+Q: How do shocks behave under a deterministic trend? | They fade and the series returns to the trend line.
+Q: Which test has stationarity as its null, as a check on trends? | The KPSS test.
+Q: Who showed that regressing trending series gives spurious correlation? | Granger and Newbold, in 1974.
+Q: Which test checks for monotonic trends in climate data? | The Mann–Kendall test.
+Q: A log-linear trend has slope 0.03 a year. What growth rate is that? | About 3% a year, exactly e^{0.03} − 1 ≈ 3.05%.
+Q: Why is extrapolating trends far ahead risky? | Trends can change or break, and the deterministic or stochastic choice greatly affects forecasts and their uncertainty.
 
 ## Seasonality
 S: Seasonality is regular variation with a fixed period: higher energy use in winter, retail spikes at Christmas, rush-hour traffic. Detecting and modelling it, sometimes with several periods at once, is essential for accurate forecasts.
@@ -143,6 +173,16 @@ SRC: De Livera AM, Hyndman RJ, Snyder RD, Forecasting time series with complex s
 NUM1#maths-u22-04-q1@1: Half-hourly electricity demand has a daily cycle. What is the seasonal period m? | 48 | 0 | observations | 24 hours × 2 observations per hour = 48.
 M1#maths-u22-04-q2@1: Which ACF pattern suggests weekly seasonality in daily data? | Spikes at lags 7, 14 and 21 | A single spike at lag 1 | Spikes at lags 12 and 24 | A slow linear decay only | No spikes at all | With daily data a weekly cycle makes values correlate with those 7, 14 and 21 days earlier, so the ACF spikes at multiples of 7.
 M2#maths-u22-04-q3@2: Why are Fourier terms preferred to dummies for weekly data with yearly seasonality? | A few sine–cosine pairs capture a smooth 52-week pattern with far fewer parameters than 51 dummies | Dummy variables can't model seasonality of any period length | Fourier terms need no data, since sine curves are fixed in advance | Weekly data have no seasonality, so Fourier terms just add noise | They aren't preferred; 51 dummies are always the better choice | Parsimony matters when the period is long.
+Q: What is the seasonal period m? | The number of observations per cycle, such as 12 for monthly data with yearly seasonality.
+Q: What are Fourier terms? | Sine and cosine pairs sin(2πkt/m), cos(2πkt/m) used to represent smooth seasonal patterns.
+Q: Where does seasonality show in a periodogram? | As a peak at frequency 1/m.
+Q: Name two plots that help detect seasonality. | Seasonal plots and subseries plots.
+Q: What is seasonal differencing? | Taking y_{t} − y_{t−m}.
+Q: What is multiple seasonality? | Several seasonal cycles at once, such as daily and weekly cycles in hourly electricity demand.
+Q: Name two calendar complications in seasonality. | Moving holidays such as Easter, and trading-day effects.
+Q: Name three methods for complex seasonality. | TBATS, MSTL and Prophet.
+Q: Monthly data have ACF spikes at lags 12 and 24. What does that suggest? | Yearly seasonality in the monthly data.
+Q: What is a common mistake with seasonal dummies? | Including a dummy for every season as well as an intercept, causing perfect collinearity.
 
 ## Stationarity
 S: A stationary series has statistical properties that don't change over time: constant mean, variance and autocorrelation structure. Most classical models assume stationarity, so checking for it, and transforming the data to achieve it, comes first.
@@ -180,6 +220,16 @@ SRC: Kwiatkowski D, Phillips PCB, Schmidt P, Shin Y, Testing the null hypothesis
 NUM1#maths-u22-05-q1@1: A random walk has shock variance σ^{2} = 4. What is the variance of y₂₅ (with y₀ = 0)? | 100 | 0 |  | Var(y_{t}) = tσ^{2} = 25 × 4 = 100.
 M1#maths-u22-05-q2@1: Which series is weakly stationary? | White noise with constant variance | A random walk | A series with a linear trend | A series whose variance doubles each year | Monthly sales with growing seasonality | White noise has constant mean, variance and zero autocorrelation.
 M3#maths-u22-05-q3@2: Why are the ADF and KPSS tests often used together? | They have opposite null hypotheses, so agreement between them gives stronger evidence | They are identical tests run twice for extra confidence | ADF tests seasonality only, while KPSS tests trends | KPSS can't detect stationarity, so ADF is needed instead | They are never combined, because their results always agree | ADF assumes a unit root and KPSS assumes stationarity; low power makes each alone inconclusive.
+Q: What is weak stationarity? | Constant mean, constant variance and autocovariance depending only on the lag, not on time.
+Q: What is white noise? | A sequence of uncorrelated variables with zero mean and constant variance.
+Q: Name four signs of non-stationarity. | Trends, changing variance, seasonal patterns and a very slowly decaying ACF.
+Q: What is the null hypothesis of the KPSS test? | That the series is stationary.
+Q: What removes stochastic trends? | Differencing.
+Q: How is a deterministic trend removed? | By detrending.
+Q: Why is a random walk not stationary? | Its variance tσ^{2} grows with time.
+Q: What are the first differences of a random walk? | White noise.
+Q: What order of integration does a random walk have? | I(1), integrated of order 1.
+Q: What is a common mistake when fitting ARMA models? | Fitting one to a trending series without differencing.
 
 ## Differencing
 S: Differencing replaces a series by the changes between successive values. It removes stochastic trends and, with seasonal lags, seasonality, turning many non-stationary series into stationary ones ready for ARMA modelling.
@@ -215,6 +265,16 @@ SRC: Hyndman RJ, Athanasopoulos G, Forecasting: Principles and Practice (3rd edn
 NUM1#maths-u22-06-q1@1: Monthly values are 120 in January 2024 and 132 in January 2025. What is the seasonal (lag-12) difference? | 12 | 0 |  | y_{t} − y_{t−12} = 132 − 120 = 12.
 M1#maths-u22-06-q2@1: A series becomes stationary after differencing twice. How is it described? | I(2) | I(1) | I(0) | Seasonal only | White noise | Integrated of order 2 needs two differences.
 M2#maths-u22-06-q3@2: What sign suggests a series has been over-differenced? | A lag-1 autocorrelation near −0.5 in the differenced series | A lag-1 autocorrelation near +1 that decays very slowly | No autocorrelation at any lag in the differenced series | A growing trend that remains after the differencing | A single seasonal spike at lag 12 in the residuals | Differencing white noise gives an MA(1) with θ = −1 and ρ₁ = −0.5.
+Q: What is a first difference? | Δy_{t} = y_{t} − y_{t−1} = (1 − B)y_{t}.
+Q: What does integrated of order d mean? | A series that becomes stationary after d differences.
+Q: What is the second difference formula? | Δ^{2}y_{t} = y_{t} − 2y_{t−1} + y_{t−2}.
+Q: What kind of trend does a second difference remove? | A quadratic trend.
+Q: What values of d do most economic series need? | 0, 1 or 2.
+Q: How does auto.arima choose d? | Automatically, using KPSS-based tests.
+Q: What does over-differencing introduce? | A unit root in the MA part of the model.
+Q: What lag-1 autocorrelation suggests over-differencing? | One near −0.5, along with a larger variance.
+Q: What are the first and second differences of 3, 5, 9, 15, 23? | First 2, 4, 6, 8; second 2, 2, 2.
+Q: What is a common mistake with differencing? | Differencing more than needed, which inflates forecast variance.
 
 ## Autocorrelation
 S: Autocorrelation measures how strongly a series is correlated with its own past values. The autocorrelation function (ACF) summarises this at every lag, revealing trends, seasonality and the structure of MA models, and residual checks use it to test model fit.
@@ -251,6 +311,16 @@ SRC: Brockwell PJ, Davis RA, Introduction to Time Series and Forecasting (3rd ed
 NUM1#maths-u22-07-q1@1: For T = 400, what is the approximate 95% bound for sample autocorrelations of white noise, to 3 decimal places? | 0.098 | 0.001 |  | 1.96/√400 = 1.96/20 = 0.098.
 M1#maths-u22-07-q2@1: Which ACF pattern suggests a non-stationary trending series? | Very slow decay from near 1 | A sharp cut-off after lag 1 | All values within the bounds | Alternating signs decaying fast | A single spike at lag 12 | Trends keep values correlated over many lags.
 M3#maths-u22-07-q3@2: Why might about 1 in 20 ACF spikes cross the 95% bounds even for white noise? | Each bound is a 5% test, so checking many lags produces some false alarms by chance | White noise is always correlated at some lag, so spikes are real | The ±1.96/√T bounds are wrong for every sample size | ACFs are never random, so any spike indicates structure | It never happens with white noise; every spike is meaningful | Multiple testing means joint tests like Ljung–Box are more reliable.
+Q: What is the autocorrelation function? | ρ(k) = Cov(y_{t}, y_{t−k})/Var(y_{t}), the correlation at lag k.
+Q: What is the Ljung–Box test? | A test of whether a group of autocorrelations is jointly zero.
+Q: What is a correlogram? | A plot of sample autocorrelations r_{k} against lag k.
+Q: What does an ACF cut-off after lag q suggest? | An MA(q) process.
+Q: What ACF pattern suggests AR behaviour? | Exponential or damped sine decay.
+Q: Which test checks regression residuals for autocorrelation? | The Durbin–Watson test.
+Q: How does autocorrelation affect standard errors? | It can inflate or deflate them.
+Q: With T = 100, is r₁ = 0.25 significant? | Yes, since it exceeds the bound 1.96/√100 = 0.196.
+Q: What does Ljung–Box on model residuals test? | The overall fit, by checking the residuals for white noise.
+Q: What is a common mistake when checking many ACF lags? | Treating every spike outside the bounds as meaningful.
 
 ## Partial Autocorrelation
 S: The partial autocorrelation at lag k measures the correlation between y_{t} and y_{t−k} after removing the effects of the lags in between. The PACF cuts off for autoregressive models, making it the key tool for choosing AR order.
@@ -287,6 +357,16 @@ SRC: Shumway RH, Stoffer DS, Time Series Analysis and Its Applications (4th edn,
 NUM1#maths-u22-08-q1@1: For an AR(1) with φ = 0.6, what is the partial autocorrelation at lag 2? | 0 | 0 |  | An AR(1) has no direct dependence on y_{t−2} once y_{t−1} is included, so φ₂₂ = 0.
 M1#maths-u22-08-q2@1: A PACF shows significant spikes at lags 1 and 2 only, with a decaying ACF. Which model fits? | AR(2) | MA(2) | AR(1) | MA(1) | White noise | A PACF cut-off after lag 2 indicates two autoregressive terms.
 M2#maths-u22-08-q3@2: Why do analysts compare information criteria after reading ACF and PACF plots? | Sample patterns are noisy and several models may look plausible, so AIC or BIC helps choose | ACF and PACF plots always identify the exact model, so criteria just confirm it | Information criteria replace fitting, so no estimation is needed afterwards | ACF and PACF plots are never useful, so only criteria should be used | They don't compare them; plots alone are the standard Box–Jenkins method | Criteria balance fit and complexity among candidate orders.
+Q: What is the partial autocorrelation at lag k? | φ_{kk}, the coefficient of y_{t−k} in a regression of y_{t} on y_{t−1} to y_{t−k}.
+Q: What is Box–Jenkins identification? | Choosing ARIMA orders by matching sample ACF and PACF patterns to theoretical ones.
+Q: What is the lag-1 partial autocorrelation φ₁₁? | ρ(1), the lag-1 autocorrelation.
+Q: Which recursion computes partial autocorrelations? | The Durbin–Levinson recursion.
+Q: What ACF and PACF pattern does an ARMA model show? | Both decay, with no clear cut-off.
+Q: Where do seasonal ACF and PACF patterns appear? | At lags m, 2m and so on.
+Q: Which criteria compare candidate ARIMA models? | AIC or BIC.
+Q: A PACF spikes only at lag 1 and the ACF decays geometrically. Which model fits? | An AR(1).
+Q: What should you do after fitting an identified model? | Check its residuals.
+Q: What is a common mistake with ACF and PACF patterns? | Reading them too literally from short, noisy samples.
 
 ## Moving Averages
 S: Moving averages smooth a series by averaging neighbouring values, revealing trends and removing noise or seasonality. Centred averages estimate trends, trailing ones support simple forecasts, and weighted versions give more importance to some points.
@@ -323,6 +403,16 @@ SRC: Chatfield C, Xing H, The Analysis of Time Series: An Introduction with R (7
 NUM1#maths-u22-09-q1@1: What is the 4-period trailing moving-average forecast after observations 12, 15, 14 and 19? | 15 | 0 |  | (12 + 15 + 14 + 19)/4 = 60/4 = 15.
 M1#maths-u22-09-q2@1: Why is a 2 × 12 moving average used for monthly data? | It centres the 12-month average on a single month while removing yearly seasonality | It doubles the amount of data available for estimating the trend | It removes all trends, leaving only the seasonal pattern | It needs only two months of data, which makes it quick | It isn't used; a 12-month trailing average is the standard | A 12-term average falls between months, so averaging two neighbours centres it.
 M2#maths-u22-09-q3@2: What is the main drawback of a long trailing moving average for tracking a trend? | It responds slowly, so it lags behind turning points | It is too noisy to show the underlying trend | It removes the trend entirely along with the noise | It needs future data that aren't yet available | It has no drawbacks compared with short windows | Averaging many past values delays the reaction to recent changes.
+Q: What is a centred moving average? | An average of values placed symmetrically around time t, used to estimate the trend at t.
+Q: What is a 2 × m moving average? | A moving average of a moving average, used to centre even-order averages.
+Q: What weights does a 2 × 12 moving average use? | 1/24 at the two ends and 1/12 inside.
+Q: How much does a k-term trailing moving average lag? | By (k − 1)/2 periods.
+Q: What does an m-period moving average remove? | Seasonality of period m.
+Q: How are moving averages used in technical analysis? | Through moving-average crossovers.
+Q: What is the simple moving-average forecast? | The average of the last k values.
+Q: What is the 3-point centred moving average at t = 3 for 4, 7, 10, 7, 4? | 8.
+Q: What is a weighted moving average? | A moving average giving more importance to some points than others.
+Q: What is a common mistake with moving averages? | Confusing moving-average smoothing with MA(q) time series models.
 
 ## Exponential Smoothing
 S: Exponential smoothing forecasts with weighted averages of past observations, with weights falling off exponentially for older data. Holt's and Holt–Winters' extensions add trend and seasonality, and the ETS framework gives these methods a statistical model with prediction intervals.
@@ -357,6 +447,16 @@ SRC: Gardner ES, Exponential smoothing: the state of the art—Part II, Internat
 NUM1#maths-u22-10-q1@1: In simple exponential smoothing with α = 0.2, what weight is given to the observation two periods before the latest (lag 2)? | 0.128 | 0.001 |  | Weight α(1 − α)^{2} = 0.2 × 0.64 = 0.128.
 M1#maths-u22-10-q2@1: Which method suits a series with trend but no seasonality? | Holt's linear (or damped) trend method | Simple exponential smoothing | Holt–Winters seasonal method | A seasonal naive forecast | A 12-month moving average | Holt's method adds a trend component to the level.
 M2#maths-u22-10-q3@2: Why do damped trend methods often forecast better than linear trends? | Trends rarely continue indefinitely, so damping avoids over-extrapolation at long horizons | Damping removes all trends, which is safer for every series | Linear trends are always correct in the long run, so damping only adds bias | Damped methods ignore the data, which avoids over-fitting entirely | They don't; undamped linear trends win every forecasting competition | Empirical studies show damped trends are robust across many series.
+Q: What is the smoothing parameter α? | A value in (0, 1); larger values weight recent observations more heavily.
+Q: What is an ETS model? | An Error, Trend, Seasonal state-space model underlying exponential smoothing methods.
+Q: What is the simple exponential smoothing level equation? | ℓ_{t} = αy_{t} + (1 − α)ℓ_{t−1}.
+Q: What forecasts does simple exponential smoothing give? | Flat forecasts equal to the latest level, ŷ_{t+h} = ℓ_{t}.
+Q: What does Holt's method add? | A trend, with parameter β.
+Q: How are exponential smoothing parameters chosen? | By minimising errors or maximising likelihood.
+Q: What is ETS(A,N,N)? | Simple exponential smoothing.
+Q: What does the ETS framework provide? | Likelihoods, AIC and prediction intervals.
+Q: With α = 0.4, level 50 and new observation 60, what is the new level? | 54.
+Q: What is a common mistake with simple exponential smoothing? | Using it on a trending series, where it lags behind.
 
 ## AR Models
 S: An autoregressive model predicts a value from a linear combination of its own past values plus noise. AR models capture persistence, such as temperatures or economic indicators that stay high or low for a while, and are stationary only when their coefficients satisfy certain conditions.
@@ -393,6 +493,16 @@ SRC: Hamilton JD, Time Series Analysis (Princeton University Press 1994) | textb
 NUM1#maths-u22-11-q1@1: For the AR(1) example (c = 2, φ = 0.6, y_{T} = 10), what is the two-step forecast? | 6.8 | 0.001 |  | ŷ_{T+2} = 2 + 0.6 × 8 = 6.8, continuing towards the mean of 5.
 M1#maths-u22-11-q2@1: Which AR(1) is stationary? | y_{t} = 0.9y_{t−1} + ε_{t} | y_{t} = 1.0y_{t−1} + ε_{t} | y_{t} = 1.2y_{t−1} + ε_{t} | y_{t} = −1.5y_{t−1} + ε_{t} | y_{t} = 2y_{t−1} + ε_{t} | An AR(1) is stationary only when |φ| < 1; φ = 0.9 qualifies, while φ = 1 is a random walk and larger |φ| explodes.
 M2#maths-u22-11-q3@2: Why do AR(1) forecasts converge to the mean at long horizons? | Each step multiplies the deviation from the mean by φ, which shrinks it when |φ| < 1 | Forecasts always equal the last observed value | The noise grows forever, swamping the forecast | AR models have no mean to converge towards | They don't converge; they grow without limit | The forecast deviation obeys ŷ_{T+h} − μ = φʰ(y_{T} − μ), which shrinks to zero geometrically when |φ| < 1.
+Q: What is an AR(p) model? | y_{t} = c + φ₁y_{t−1} + … + φ_{p}y_{t−p} + ε_{t}.
+Q: What is the stationarity condition for AR(1)? | |φ| < 1.
+Q: What is the general AR stationarity condition? | Roots of 1 − φ₁z − … − φ_{p}z^{p} lie outside the unit circle.
+Q: What is the variance of a stationary AR(1)? | σ^{2}/(1 − φ^{2}).
+Q: What is an AR(1) with φ = 1? | A random walk, with a unit root.
+Q: When can an AR(2) produce cycles? | When its characteristic roots are complex.
+Q: What do the Yule–Walker equations link? | The ACF and the AR coefficients.
+Q: What is the one-step AR(1) forecast? | ŷ_{T+1} = c + φy_{T}.
+Q: An AR(1) has c = 2 and φ = 0.6. What is its mean? | 5, since 2/(1 − 0.6) = 5.
+Q: What is a common mistake with AR coefficients? | Fitting an AR model with |φ| ≥ 1 and treating it as stationary.
 
 ## MA Models
 S: A moving-average model expresses each value as a combination of current and past random shocks. MA models have short memory, with autocorrelation that cuts off after q lags, and they describe effects that last only a limited time.
@@ -429,6 +539,16 @@ SRC: Shumway RH, Stoffer DS, Time Series Analysis and Its Applications (4th edn,
 NUM1#maths-u22-12-q1@1: For an MA(1) with θ = −0.8, what is ρ(1), to 3 decimal places? | -0.488 | 0.001 |  | ρ(1) = −0.8/(1 + 0.64) = −0.8/1.64 ≈ −0.488.
 M1#maths-u22-12-q2@1: For an MA(2) model, what is ρ(3)? | 0 | θ₁ | θ₂ | θ₁θ₂ | 1 | MA(q) autocorrelations vanish beyond lag q.
 M3#maths-u22-12-q3@2: Why do MA models with θ and 1/θ need an invertibility condition? | Both give the same autocorrelations, so the data can't tell them apart without a convention | One of the two models is always non-stationary, so it must be excluded | They have different means, so the data distinguish them easily | Only one of them is a valid model, since θ must be below zero | They don't need any condition; θ and 1/θ give different ACFs | ρ(1) = θ/(1 + θ^{2}) is unchanged when θ is replaced by 1/θ.
+Q: What is an MA(q) model? | y_{t} = μ + ε_{t} + θ₁ε_{t−1} + … + θ_{q}ε_{t−q}.
+Q: What is invertibility for an MA model? | The condition, |θ| < 1 for MA(1), under which it can be written as an infinite AR model.
+Q: What is the variance of an MA(1)? | σ^{2}(1 + θ^{2}).
+Q: What is the lag-1 autocorrelation of an MA(1)? | ρ(1) = θ/(1 + θ^{2}).
+Q: Is an MA model always stationary? | Yes, as a finite combination of white noise.
+Q: Why does MA estimation need nonlinear methods? | The shocks aren't observed.
+Q: When do MA(q) forecasts revert to the mean? | After q steps.
+Q: An MA(1) has θ = 0.5 and σ^{2} = 4. What is its variance? | 5.
+Q: Give an example of an MA-type effect. | A one-off promotion, or overlapping survey samples.
+Q: What is a common mistake about MA models? | Confusing them with moving-average smoothing.
 
 ## ARMA Models
 S: ARMA models combine autoregressive and moving-average parts, describing stationary series parsimoniously. A low-order ARMA can capture autocorrelation that would need many AR or MA terms alone, and the Box–Jenkins method fits and checks them.
@@ -465,6 +585,16 @@ SRC: Akaike H, A new look at the statistical model identification, IEEE Transact
 NUM1#maths-u22-13-q1@1: A model has log-likelihood −200 and 4 parameters. What is its AIC? | 408 | 0 |  | AIC = −2(−200) + 2 × 4 = 400 + 8 = 408.
 M1#maths-u22-13-q2@1: What are the AR and MA orders of y_{t} = 0.5y_{t−1} + ε_{t} + 0.3ε_{t−1} + 0.2ε_{t−2}? | AR order 1, MA order 2 | AR order 2, MA order 1 | AR order 1, MA order 1 | AR order 0, MA order 3 | AR order 3, MA order 0 | One lag of y and two lagged shocks make it ARMA(1,2).
 M2#maths-u22-13-q3@2: Why does BIC tend to choose smaller models than AIC? | Its penalty k log T grows with sample size, exceeding AIC's 2k once T > 7 | BIC ignores the likelihood and counts only parameters | AIC penalises parameters more heavily than BIC does | They always agree on the same model order | BIC chooses larger models when samples are big | A heavier complexity penalty favours parsimony.
+Q: What is an ARMA(p, q) model? | φ(B)y_{t} = c + θ(B)ε_{t}, combining an AR polynomial φ and an MA polynomial θ.
+Q: What is the AIC formula? | AIC = −2 log L + 2k, balancing fit against the number of parameters k.
+Q: Write the ARMA(1,1) model. | y_{t} = c + φy_{t−1} + ε_{t} + θε_{t−1}.
+Q: When is an ARMA model invertible? | When the roots of its MA polynomial lie outside the unit circle.
+Q: What happens when φ(B) and θ(B) share a common factor? | The factors cancel, so the model is redundant and should be simplified.
+Q: What are the four stages of the Box–Jenkins cycle? | Identify, estimate, check and forecast, iterating if checks fail.
+Q: How are ARMA models usually estimated? | By maximum likelihood.
+Q: Why use ARMA rather than pure AR or MA models? | A low-order ARMA can capture autocorrelation that would need many AR or MA terms alone.
+Q: ARMA(1,1) and ARMA(2,2) have equal AIC of 246. Which should you choose? | The simpler ARMA(1,1).
+Q: What is a common mistake with ARMA orders? | Over-fitting with high orders that add parameters without improving forecasts.
 
 ## ARIMA Models
 S: ARIMA models extend ARMA to non-stationary series by differencing first: ARIMA(p, d, q) applies an ARMA(p, q) to the d-times differenced data. They're a standard forecasting workhorse for trending series such as sales or prices.
@@ -500,6 +630,16 @@ SRC: Box GEP, Jenkins GM, Reinsel GC, Ljung GM, Time Series Analysis: Forecastin
 NUM1#maths-u22-14-q1@1: A random walk without drift has shock variance 4. What is the standard deviation of its 9-step-ahead forecast error? | 6 | 0 |  | Variance = 9 × 4 = 36, so the SD is 6.
 M1#maths-u22-14-q2@1: Which ARIMA model gives the naive forecast (the last value)? | ARIMA(0,1,0) without a constant | ARIMA(1,0,0) | ARIMA(0,0,1) | ARIMA(0,1,1) with drift | ARIMA(2,0,2) | A random walk forecasts every future value as the last observation.
 M2#maths-u22-14-q3@2: Why do ARIMA prediction intervals for d = 1 keep widening with the horizon? | Shocks accumulate permanently in an integrated series, so uncertainty grows without limit | The model forgets the data after a few steps, so uncertainty grows | Intervals are always constant in width for any ARIMA model | The mean drifts randomly, so intervals must be reset each period | They don't widen; integrated models have bounded forecast variance | Forecast error variance for a random walk is hσ^{2}.
+Q: What is an ARIMA(p, d, q) model? | An ARMA(p, q) model for the d-th difference of the series.
+Q: What is drift in an ARIMA model? | A constant term in a differenced model, producing a linear trend in forecasts.
+Q: What is ARIMA(0,1,0)? | A random walk, giving the naive forecast.
+Q: Which ARIMA model is related to Holt's linear method? | ARIMA(0,2,2).
+Q: What do ARIMA forecasts do with d = 1 and no constant? | They level off.
+Q: How is d chosen in ARIMA fitting? | By unit root tests, then p and q by ACF, PACF and AIC.
+Q: Which algorithm does auto.arima use? | The Hyndman–Khandakar algorithm.
+Q: A random walk with drift 2 is at 100. What is its 3-step forecast? | 106.
+Q: A random walk has shock variance 9. What is its 3-step forecast variance? | 27, growing linearly with the horizon.
+Q: What is a common mistake with constants in ARIMA? | Including a constant with d = 2, which gives a quadratic trend in forecasts.
 
 ## SARIMA Models
 S: Seasonal ARIMA models add seasonal AR, MA and differencing terms at multiples of the seasonal period. The classic airline model, ARIMA(0,1,1)(0,1,1)₁₂, captures trend and yearly seasonality in monthly data with just two parameters.
@@ -535,6 +675,16 @@ SRC: Hyndman RJ, Athanasopoulos G, Forecasting: Principles and Practice (3rd edn
 NUM1#maths-u22-15-q1@1: In SARIMA(1,1,1)(1,1,1)₁₂, how many AR and MA coefficients (regular plus seasonal) are there in total? | 4 | 0 |  | φ, Φ, θ and Θ give four coefficients.
 M1#maths-u22-15-q2@1: Monthly residuals show a significant ACF spike at lag 12 only. Which term is suggested? | A seasonal MA(1) term at lag 12 | A non-seasonal AR(1) term | An extra regular difference | A seasonal AR(5) | No change | An isolated spike at the seasonal lag points to seasonal MA.
 M2#maths-u22-15-q3@2: Why might SARIMA be impractical for hourly data with weekly seasonality? | The period m = 168 makes seasonal polynomials and differencing unwieldy | SARIMA can't handle seasonality of any kind | Hourly data never contain weekly seasonality | SARIMA needs exactly m = 12 to work properly | It's always practical, whatever the period | Fourier terms or TBATS handle long periods more efficiently.
+Q: What is the notation for a seasonal ARIMA model? | ARIMA(p,d,q)(P,D,Q)ₘ, with seasonal orders P, D, Q at period m.
+Q: What is the airline model? | ARIMA(0,1,1)(0,1,1)₁₂, fitted by Box and Jenkins to monthly airline passengers.
+Q: Write the airline model equation. | (1 − B)(1 − B^{12})y_{t} = (1 + θB)(1 + ΘB^{12})ε_{t}.
+Q: How do seasonal and non-seasonal polynomials combine in SARIMA? | They multiply together.
+Q: What do seasonal PACF spikes suggest? | A seasonal AR term.
+Q: What is the usual maximum for the seasonal differencing order D? | D is usually at most 1.
+Q: What should be done before SARIMA if seasonal swings grow with the level? | Take a log transform first.
+Q: How many parameters does the airline model have, excluding the variance? | Two: θ at lag 1 and Θ at lag 12.
+Q: What alternatives suit long or multiple seasonal periods? | Fourier terms with ARIMA errors, or TBATS.
+Q: What is a common mistake with SARIMA differencing? | Using both seasonal and regular differencing when one would suffice.
 
 ## Multivariate Time Series
 S: Multivariate time series track several related variables over time, such as GDP, inflation and interest rates. Modelling them together captures how they influence each other, improves forecasts and allows tests of lead–lag relationships.
@@ -571,6 +721,16 @@ SRC: Lütkepohl H, New Introduction to Multiple Time Series Analysis (Springer 2
 NUM1#maths-u22-16-q1@1: A VAR with 5 variables and 2 lags has how many slope coefficients (excluding intercepts)? | 50 | 0 |  | Each lag has a 5 × 5 matrix, so 2 × 25 = 50 coefficients.
 M1#maths-u22-16-q2@1: Cross-correlation between x_{t} and y_{t−3} is high. What does this suggest? | y leads x by about three periods | x leads y by three periods | They are independent | Both are white noise | x causes y | Past y (three periods earlier) correlates with current x.
 M2#maths-u22-16-q3@2: Why do VAR models with many variables need shrinkage? | The number of parameters grows with the square of the number of variables, risking over-fitting | VARs with many variables have too few parameters to fit the data | Shrinkage makes the VAR non-stationary, which suits macroeconomic data | Data are always plentiful enough to estimate every coefficient freely | They don't need it; least squares works well however many variables there are | Priors pull many small coefficients towards zero, improving forecasts.
+Q: What is a multivariate time series? | Several related variables tracked over time, such as GDP, inflation and interest rates.
+Q: What is the cross-correlation function? | ρ_{xy}(k) = Corr(x_{t}, y_{t−k}), the correlation between one series and lags of another.
+Q: What is Granger causality? | x Granger-causes y if past x improves forecasts of y beyond y's own past.
+Q: Name three multivariate time series models. | VARs, VECMs and dynamic factor models.
+Q: How do VAR parameters grow with the number of series? | With the square of the number of series.
+Q: Which prior is used to shrink Bayesian VARs? | The Minnesota prior.
+Q: What drives many related series in a dynamic factor model? | A few common factors.
+Q: Past inflation improves interest rate forecasts but not vice versa. What does that show? | Inflation Granger-causes interest rates: predictive precedence, not proof of a causal mechanism.
+Q: What models handle series at different frequencies? | Mixed-frequency models.
+Q: What is a common mistake with Granger causality? | Interpreting it as true causation.
 
 ## Vector Autoregression (VAR)
 S: A vector autoregression models several series together, each regressed on lags of all of them. Introduced to macroeconomics by Christopher Sims in 1980, VARs are used for forecasting and, with identifying assumptions, for tracing how shocks spread through an economy.
@@ -607,6 +767,16 @@ SRC: Kilian L, Lütkepohl H, Structural Vector Autoregressive Analysis (Cambridg
 NUM1#maths-u22-17-q1@1: For a VAR(1) with A₁ = [[0.5, 0], [0, 0.8]], what is the larger eigenvalue? | 0.8 | 0 |  | A diagonal matrix has its diagonal entries as eigenvalues: 0.5 and 0.8.
 M1#maths-u22-17-q2@1: What condition makes a VAR(1) stable? | All eigenvalues of A₁ have modulus less than 1 | All entries of A₁ are positive | A₁ is symmetric | The determinant of A₁ is 1 | A₁ is the identity | Stability requires shocks to die out, which needs eigenvalues inside the unit circle.
 M2#maths-u22-17-q3@2: Why can Cholesky-identified impulse responses depend on variable ordering? | The ordering decides which shocks can affect which variables within the same period | Ordering never matters for impulse responses | Cholesky ignores correlations between the shocks | Changing the order changes the underlying data | They don't depend on it under any identification | A lower-triangular factor imposes a recursive contemporaneous structure.
+Q: What is a VAR(p) model? | y_{t} = c + A₁y_{t−1} + … + A_{p}y_{t−p} + ε_{t}, with y_{t} a vector of variables.
+Q: What is an impulse response function? | The path of each variable after a one-time shock to one variable's equation.
+Q: How is each VAR equation estimated? | By OLS, with the same regressors in each equation.
+Q: When is a VAR stable? | When all eigenvalues of the companion matrix lie inside the unit circle.
+Q: Name three ways to identify VAR shocks. | Cholesky ordering, sign restrictions and external instruments.
+Q: What is a structural VAR? | A VAR with identifying assumptions that give its shocks an economic meaning.
+Q: For what work did Sims win the 2011 Nobel prize? | Using VARs to study effects such as monetary policy.
+Q: Name three criteria for choosing VAR lag order. | AIC, BIC and HQ.
+Q: A VAR(1) has eigenvalues 0.6 and 0.3. Is it stable? | Yes, both lie inside the unit circle.
+Q: What is a common mistake with Cholesky impulse responses? | Reporting them without checking sensitivity to variable ordering.
 
 ## Vector Error Correction Models
 S: When non-stationary series share a long-run equilibrium, they're cointegrated, and a vector error correction model describes both their short-run changes and their pull back towards equilibrium. Examples include consumption and income, or prices of the same good in two markets.
@@ -642,6 +812,16 @@ SRC: Johansen S, Statistical analysis of cointegration vectors, Journal of Econo
 NUM1#maths-u22-18-q1@1: With adjustment coefficient −0.2, what fraction of a deviation from equilibrium remains after 3 periods (ignoring shocks), to 3 decimal places? | 0.512 | 0.001 |  | Each period keeps 1 − 0.2 = 0.8 of the gap: 0.8^{3} = 0.512.
 M1#maths-u22-18-q2@1: Two I(1) series x and y have y − 3x stationary. What is the cointegrating vector? | (1, −3) for (y, x) | (1, 1) | (3, 1) | (0, 0) | (1, 3) | The cointegrating vector gives the stationary combination: 1·y − 3·x, written (1, −3) for the ordering (y, x).
 M3#maths-u22-18-q3@2: Why is a VECM preferred to a VAR in differences for cointegrated series? | Differencing alone discards the long-run equilibrium relation, which the error-correction term retains | VARs can't be estimated on differenced data, so a VECM is the only option | VECMs ignore short-run dynamics, which makes them simpler than VARs | Cointegration makes every series stationary, so no differencing is needed | It isn't preferred; a VAR in differences captures everything a VECM does | The Granger representation theorem shows the error-correction term is needed.
+Q: What is cointegration? | When I(1) series have a linear combination that is stationary, a long-run equilibrium.
+Q: What is the error correction term? | The lagged deviation from equilibrium β'y_{t−1}, whose coefficient α sets how quickly variables adjust back.
+Q: What is the Engle–Granger method? | Regress one I(1) series on the others and test the residuals for stationarity.
+Q: What does the Johansen test find? | The number of cointegrating relations, the rank r.
+Q: Write the VECM equation. | Δy_{t} = αβ'y_{t−1} + Γ₁Δy_{t−1} + … + ε_{t}.
+Q: What do β and α represent in a VECM? | β gives the long-run cointegrating vectors; α the short-run adjustment speeds.
+Q: What does the Granger representation theorem state? | Cointegration is equivalent to an error-correction representation.
+Q: Name two applications of cointegration. | Purchasing power parity, money demand, the term structure of interest rates and pairs trading.
+Q: In Δy_{t} = −0.25(y_{t−1} − x_{t−1}) + ε_{t}, y is 4 above x. What happens next? | y is expected to fall by 1 unit, correcting a quarter of the gap.
+Q: What is a common mistake with cointegrated series? | Differencing them and fitting a VAR, which throws away the long-run relationship.
 
 ## State-Space Models
 S: State-space models describe an observed series through an unobserved state that evolves over time. They unify ARIMA, exponential smoothing and structural models, handle missing data naturally, and are estimated with the Kalman filter.
@@ -679,6 +859,16 @@ SRC: Harvey AC, Forecasting, Structural Time Series Models and the Kalman Filter
 NUM1#maths-u22-19-q1@1: In a local level model, the level is 20 and η_{t} = 0.5 this period. What is the next level? | 20.5 | 0.001 |  | μ_{t+1} = μ_{t} + η_{t} = 20 + 0.5 = 20.5.
 M1#maths-u22-19-q2@1: Which model is a state-space model with a random-walk level plus noise? | The local level model | A pure AR(2) without noise | A deterministic linear trend | White noise | A fixed seasonal dummy model | It has state μ_{t} following a random walk and noisy observations.
 M2#maths-u22-19-q3@2: Why do state-space models handle missing observations easily? | The filter predicts the state forward and simply skips the update when no observation arrives | Missing data are filled with zeros before filtering | They need complete data, so gaps must be imputed first | Missing observations are deleted along with their dates | They can't handle missing data without special software | The prediction step needs no observation; only the update uses y_{t}.
+Q: What is the state equation in a state-space model? | α_{t+1} = Tα_{t} + Rη_{t}, describing how the hidden state evolves.
+Q: What is the observation equation? | y_{t} = Zα_{t} + ε_{t}, linking observations to the hidden state.
+Q: What is the local level model? | y_{t} = μ_{t} + ε_{t} with μ_{t+1} = μ_{t} + η_{t}.
+Q: What does the local linear trend model add to the local level model? | A slope state.
+Q: What states does Harvey's basic structural model have? | Level, slope and seasonal states.
+Q: Does every ARIMA model have a state-space form? | Yes.
+Q: How is the likelihood of a state-space model obtained? | From the Kalman filter's prediction errors.
+Q: Which filters handle nonlinear or non-Gaussian state-space models? | Extended and unscented Kalman filters, and particle filters.
+Q: What kind of states does a hidden Markov model have? | Discrete states.
+Q: What is a common mistake when measurement error is large? | Treating the observations themselves as the state.
 
 ## Kalman Filters
 S: The Kalman filter estimates the hidden state of a linear system from noisy measurements, updating its estimate each time a new observation arrives. It is optimal for linear Gaussian models and guided Apollo spacecraft, GPS receivers and economic nowcasts.
@@ -716,6 +906,16 @@ SRC: Simon D, Optimal State Estimation: Kalman, H∞, and Nonlinear Approaches (
 NUM1#maths-u22-20-q1@1: With P⁻ = 3 and R = 1, what is the Kalman gain? | 0.75 | 0.001 |  | K = 3/(3 + 1) = 0.75: the uncertain prediction is outweighed by the precise measurement.
 M1#maths-u22-20-q2@1: A sensor becomes much noisier (R increases). How does the Kalman gain change? | It decreases, giving less weight to measurements | It increases, giving more weight to measurements | It stays the same, since only P⁻ affects it | It becomes negative, reversing the correction | It becomes exactly 1, ignoring the prediction | The gain K = P⁻/(P⁻ + R) falls as R grows, so the filter trusts noisy measurements less and leans on its prediction.
 M3#maths-u22-20-q3@2: Why does a steady-state Kalman filter for the local level model resemble exponential smoothing? | Its constant gain K weights the latest observation by K and the previous estimate by 1 − K, like α | It ignores observations once it reaches steady state, so it's constant | It uses no prediction step, so it becomes a moving average | Exponential smoothing has no parameters, so any filter resembles it | They're unrelated; the Kalman filter is a completely different method | The update x̂_{t} = Ky_{t} + (1 − K)x̂_{t−1} matches SES with α = K.
+Q: What is the Kalman gain in one dimension? | K = P⁻/(P⁻ + R), the weight on the new observation relative to the prediction.
+Q: What is the innovation in a Kalman filter? | v_{t} = y_{t} − ŷ_{t|t−1}, the observation minus its prediction.
+Q: What is the Kalman prediction step for the local level model? | x̂⁻ = x̂_{t−1} and P⁻ = P_{t−1} + Q.
+Q: What is the Kalman update step? | x̂_{t} = x̂⁻ + K(y_{t} − x̂⁻) and P_{t} = (1 − K)P⁻.
+Q: What do Q and R stand for in the Kalman filter? | Q is the process noise variance and R the measurement noise variance.
+Q: What does an uncertain prediction (large P⁻) do to the gain? | It makes K large, so the filter trusts the data more.
+Q: What smoother uses all the data after filtering? | The Rauch–Tung–Striebel smoother.
+Q: Which Kalman variant is used for weather data assimilation? | The ensemble Kalman filter.
+Q: With x̂⁻ = 10, P⁻ = 4, y = 13 and R = 4, what is the updated estimate? | 11.5, with variance 2.
+Q: What is a common mistake in setting a Kalman filter's noise? | Setting the measurement noise R too low, so the filter chases noise.
 
 ## Hidden Markov Models
 S: A hidden Markov model assumes the system switches between unobserved discrete states, each producing observations with its own distribution. HMMs model regime changes in economies and markets, speech sounds, gene sequences and animal behaviour.
@@ -753,6 +953,16 @@ SRC: Hamilton JD, A new approach to the economic analysis of nonstationary time 
 NUM1#maths-u22-21-q1@1: A recession state persists with probability 0.75 each quarter. What is its expected duration in quarters? | 4 | 0 | quarters | 1/(1 − 0.75) = 4 quarters.
 M1#maths-u22-21-q2@1: Which algorithm estimates HMM parameters from unlabelled observations? | Baum–Welch (expectation–maximisation) | Viterbi decoding of the most probable path | The Kalman filter's prediction step | Ordinary least squares on the observations | Bisection on the likelihood function | Baum–Welch iterates forward–backward probabilities and parameter updates.
 M2#maths-u22-21-q3@2: Why can the sequence of individually most probable states differ from the Viterbi path? | Choosing each state separately ignores transition probabilities, so the combined path may even be impossible | They are always identical, by the definition of the Viterbi algorithm | Viterbi ignores the observations and uses only transition probabilities | Individual state probabilities can't be computed for a hidden Markov model | It can't differ, since each state is chosen to maximise the same likelihood | Viterbi maximises the joint probability of the whole path.
+Q: What is a hidden Markov model? | A model where unobserved discrete states switch over time, each producing observations from its own distribution.
+Q: What is a transition matrix? | P with Pᵢⱼ the probability of moving to state j at t + 1 from state i at t.
+Q: What are emission distributions in an HMM? | The distributions of observations in each hidden state.
+Q: What does the forward algorithm compute? | The likelihood of the observations, in O(N^{2}T) time.
+Q: What does the forward–backward algorithm give? | The probability of each state at each time.
+Q: What is the Viterbi algorithm? | Dynamic programming that finds the most probable hidden state sequence.
+Q: Who introduced regime-switching models in economics? | Hamilton, in 1989.
+Q: Give a finance example of an HMM. | Bull and bear market regimes with different return distributions.
+Q: An expansion persists with probability 0.9 each quarter. What is its expected length? | 10 quarters, or 2.5 years.
+Q: What is a common mistake about the most probable states in an HMM? | Assuming the most probable state at each time forms the most probable sequence.
 
 ## Functional Time Series
 S: Functional time series are sequences of curves rather than numbers: a daily electricity demand curve, a yearly mortality-by-age curve, or the yield curve each day. Functional methods reduce each curve to a few components and forecast those.
@@ -789,6 +999,16 @@ SRC: Lee RD, Carter LR, Modeling and forecasting U.S. mortality, Journal of the 
 NUM1#maths-u22-22-q1@1: In Nelson–Siegel yield curve modelling, how many factors describe the curve? | 3 | 0 | factors | Level, slope and curvature factors describe the whole yield curve.
 M1#maths-u22-22-q2@1: Which is a functional time series? | A daily curve of electricity demand by hour | A single daily temperature | A list of share prices on one day | A set of independent surveys | A random sample of heights | Each day contributes a whole curve over the hours.
 M2#maths-u22-22-q3@2: Why is functional PCA useful for forecasting curves? | It reduces each curve to a few scores whose time series can be forecast and recombined | It forecasts each grid point independently of the others | It removes all variation, leaving only the mean curve | It needs no data, since components are fixed in advance | It isn't useful; curves can't be forecast at all | A handful of components often explain most variation.
+Q: What is a functional time series? | A sequence of observations that are each a function, such as daily demand curves or yearly mortality-by-age curves.
+Q: What are functional principal components? | Orthogonal basis functions capturing the main modes of variation of the curves.
+Q: Give three examples of functional time series data. | Intraday demand curves, age-specific mortality curves and daily yield curves.
+Q: How does functional PCA represent a curve? | X_{t}(s) ≈ μ(s) + Σ β_{t,k}φₖ(s).
+Q: How are functional time series forecast? | Forecast the score series with ARIMA or exponential smoothing, then reconstruct the curves.
+Q: What is the Lee–Carter model? | log m_{x,t} = a_{x} + b_{x}k_{t}, forecasting the single time index k_{t}.
+Q: What three factors describe Nelson–Siegel yield curves? | Level, slope and curvature.
+Q: With b₆₅ = 0.02 and k_{t} falling by 2 a year, how does mortality at 65 change? | It falls by about 4% a year.
+Q: How are curves prepared before functional analysis? | Each is observed on a grid and smoothed.
+Q: What is a common mistake when forecasting curves? | Forecasting each grid point separately, ignoring the smooth structure of the curves.
 
 ## ARCH Models
 S: ARCH (autoregressive conditional heteroscedasticity) models let a series' variance depend on recent squared shocks, capturing the clustering of volatility. Robert Engle introduced them in 1982 to model UK inflation uncertainty and won the 2003 Nobel prize.
@@ -825,6 +1045,16 @@ SRC: Tsay RS, Analysis of Financial Time Series (3rd edn, Wiley 2010) | textbook
 NUM1#maths-u22-23-q1@1: An ARCH(1) has ω = 0.1 and α = 0.6. What is its unconditional variance? | 0.25 | 0.001 |  | ω/(1 − α) = 0.1/0.4 = 0.25.
 M1#maths-u22-23-q2@1: Which test checks residuals for ARCH effects? | Engle's Lagrange multiplier test on squared residuals | The Dickey–Fuller unit root test | The Durbin–Watson test on residual levels | A t-test on the mean of the residuals | The Jarque–Bera normality test only | Regressing squared residuals on their lags detects conditional heteroscedasticity.
 M2#maths-u22-23-q3@2: Why does an ARCH model produce fat-tailed returns even with normal z_{t}? | Mixing normals with randomly varying variance gives more extreme values than a single normal | Normal variables are already fat-tailed, so ARCH inherits it | ARCH removes all extreme values from the distribution | The variance is constant, so tails come from the mean | It doesn't produce fat tails with normal innovations | Periods of high variance generate outliers more often than constant variance would.
+Q: What does ARCH stand for? | Autoregressive conditional heteroscedasticity.
+Q: What is an ARCH(q) model? | ε_{t} = σ_{t}z_{t} with σ_{t}^{2} = ω + α₁ε_{t−1}^{2} + … + α_{q}ε_{t−q}^{2}.
+Q: What is conditional heteroscedasticity? | Variance that changes over time depending on past information.
+Q: What parameter conditions ensure ARCH variance stays positive? | ω > 0 and every αᵢ ≥ 0.
+Q: When is an ARCH model stationary? | When Σ αᵢ < 1.
+Q: What did Engle first use ARCH to model? | UK inflation uncertainty.
+Q: How does Engle's LM test work? | Regress squared residuals on their own lags.
+Q: Why is GARCH preferred to ARCH in practice? | ARCH often needs many lags, while GARCH is more parsimonious.
+Q: An ARCH(1) has ω = 0.2, α = 0.5 and yesterday's shock 2. What is today's variance? | 2.2.
+Q: What is a common mistake with heteroscedastic residuals? | Treating them as constant variance when building prediction intervals.
 
 ## GARCH Models
 S: GARCH models generalise ARCH by letting the conditional variance depend on its own past values too. GARCH(1,1), with just three parameters, captures the persistent volatility of most financial returns and is the industry standard.
@@ -862,6 +1092,16 @@ SRC: Glosten LR, Jagannathan R, Runkle DE, On the relation between the expected 
 NUM1#maths-u22-24-q1@1: A GARCH(1,1) has ω = 0.02, α = 0.08 and β = 0.9. What is its long-run variance? | 1 | 0.001 |  | ω/(1 − α − β) = 0.02/0.02 = 1.
 M1#maths-u22-24-q2@1: In GARCH(1,1), what does α + β = 1 imply? | Volatility shocks persist indefinitely (integrated GARCH) | Volatility is constant at its long-run level | The model reduces to ARCH with no lags | Returns become independent and identically distributed | The conditional variance is always exactly zero | The long-run variance is undefined and shocks never decay.
 M3#maths-u22-24-q3@2: Why are asymmetric GARCH models used for equity returns? | Falls in prices tend to raise volatility more than equal rises, which symmetric GARCH can't capture | Equity returns are symmetric, so asymmetric models fit better | Asymmetric models have fewer parameters than standard GARCH | GARCH ignores shocks completely, unlike asymmetric versions | They aren't used for equities, only for currencies | The leverage effect makes negative shocks more volatility-raising.
+Q: What is a GARCH(p, q) model? | σ_{t}^{2} = ω + Σ αᵢε_{t−i}^{2} + Σ βⱼσ_{t−j}^{2}.
+Q: What is variance persistence in GARCH(1,1)? | α + β; values near 1 mean volatility shocks fade slowly.
+Q: What is the long-run variance of GARCH(1,1)? | V_{L} = ω/(1 − α − β).
+Q: What is the h-step GARCH(1,1) variance forecast? | V_{L} + (α + β)^{h−1}(σ_{t+1}^{2} − V_{L}).
+Q: What is the half-life of a GARCH volatility shock? | ln 0.5/ln(α + β).
+Q: What is integrated GARCH? | GARCH with α + β = 1, where shocks persist forever.
+Q: What models time-varying correlations? | Multivariate GARCH, such as DCC.
+Q: What are typical daily equity GARCH estimates? | α about 0.05 to 0.1 and β about 0.85 to 0.93.
+Q: With α + β = 0.95, what is the half-life of a volatility shock? | About 13.5 days.
+Q: What is a common mistake with GARCH errors? | Using normal errors when standardised residuals are clearly fat-tailed.
 
 ## Volatility Modelling
 S: Volatility, the size of typical price fluctuations, is central to risk management and option pricing. It can be estimated from past returns, intraday data or option prices, and each approach answers a different question.
@@ -899,6 +1139,16 @@ SRC: Corsi F, A simple approximate long-memory model of realized volatility, Jou
 NUM1#maths-u22-25-q1@1: Annual volatility is 32%. What is the approximate daily volatility in %, using √256 = 16 as a rule of thumb? | 2 | 0 | % | 32%/16 = 2% a day.
 M1#maths-u22-25-q2@1: Which volatility measure is forward-looking and derived from market prices of options? | Implied volatility | Historical volatility | Realised volatility | EWMA volatility | Range-based volatility | It's backed out from option prices, reflecting expectations and risk premiums.
 M2#maths-u22-25-q3@2: Why does realised volatility from intraday data estimate daily volatility more precisely than daily returns alone? | Summing many squared intraday returns uses far more information about price movement within the day | Intraday prices are less volatile than daily closing prices | Daily returns are always zero, so they carry no information | It uses option prices as well as traded share prices | It isn't more precise than using daily returns alone | More observations of the same path reduce estimation error.
+Q: What is volatility in finance? | The size of typical price fluctuations.
+Q: What is realised volatility? | Volatility estimated from the sum of squared high-frequency intraday returns.
+Q: What is implied volatility? | The volatility that makes an option pricing model match a market price.
+Q: How is historical volatility measured? | As the standard deviation of past returns over a window.
+Q: Name two typical patterns of volatility over time. | It clusters and it mean-reverts.
+Q: Name a stochastic volatility model. | The Heston model.
+Q: What is a HAR model of realised volatility? | A model with daily, weekly and monthly components.
+Q: Why isn't implied volatility a pure forecast? | It includes a risk premium.
+Q: Daily returns have standard deviation 1.2%. What is the annualised volatility? | About 19%, since 1.2% × √252 ≈ 19%.
+Q: What is a common mistake when annualising daily volatility? | Multiplying by 252 instead of √252.
 
 ## Change-Point Detection
 S: Change-point detection finds times when a series' statistical properties shift: its mean, variance or trend. It's used to spot machine faults, climate shifts, changes in disease rates and anomalies in website traffic, either after the fact or in real time.
@@ -936,6 +1186,16 @@ SRC: Killick R, Fearnhead P, Eckley IA, Optimal detection of changepoints with a
 NUM1#maths-u22-26-q1@1: In the CUSUM example (μ₀ = 10, k = 0.5), what is S after observations 13 and 9? | 1.5 | 0.001 |  | S₁ = 13 − 10.5 = 2.5; S₂ = max(0, 2.5 + 9 − 10.5) = 1.5.
 M1#maths-u22-26-q2@1: Which method detects change points in real time as data arrive? | CUSUM | PELT | Binary segmentation | Wild binary segmentation | Offline Bayesian segmentation | CUSUM updates a statistic with each new observation.
 M3#maths-u22-26-q3@2: Why do segmentation methods add a penalty for each change point? | Without it, adding change points always improves the fit, so the method would split at noise | Penalties make detection faster but have no effect on the results | Change points have no cost, so penalties are only a convention | Penalties remove real changes and keep only spurious ones | They don't add penalties; every possible split is accepted | A BIC-style penalty balances fit against the number of segments.
+Q: What is a change point? | A time at which the distribution of a series changes, such as a jump in its mean.
+Q: What is the CUSUM statistic? | S_{t} = max(0, S_{t−1} + x_{t} − μ₀ − k), signalling when it exceeds a threshold h.
+Q: Who introduced CUSUM, and when? | Page, in 1954.
+Q: What kind of shift is CUSUM good at detecting? | Small persistent shifts.
+Q: What are Shewhart control charts suited to? | Detecting large shifts.
+Q: What trade-off governs online change detection? | Detection delay against the false alarm rate, measured by average run length.
+Q: How does binary segmentation work? | Split where a test statistic is largest, then recurse on each part.
+Q: Name three applications of change-point detection. | Manufacturing quality control, climate records and genomics copy-number changes.
+Q: CUSUM with μ₀ = 10, k = 0.5, h = 4 receives 11, 12, 11, 12. When does it signal? | At the fourth observation, when S reaches 4.
+Q: What is a common mistake in change-point segmentation? | Allowing unlimited change points, which fits noise as structure.
 
 ## Structural Break Analysis
 S: Structural breaks are lasting changes in the relationships a model describes, such as a policy change altering how inflation responds to interest rates. Ignoring them biases estimates and ruins forecasts, so econometricians test for breaks and model them.
@@ -971,6 +1231,16 @@ SRC: Bai J, Perron P, Estimating and testing linear models with multiple structu
 NUM1#maths-u22-27-q1@1: A Chow test has pooled RSS 100, sub-sample RSS 30 and 40, k = 3 and n = 46. What is the F statistic, to 2 decimal places? | 5.71 | 0.01 |  | Numerator (100 − 70)/3 = 10 and denominator 70/(46 − 6) = 1.75, so F = 10/1.75 ≈ 5.71.
 M1#maths-u22-27-q2@1: Which test handles a structural break at an unknown date? | Andrews' sup-F test | The Chow test with a guessed date | The Dickey–Fuller test | The Ljung–Box test | A t-test on the mean | Sup-F takes the maximum over candidate dates with adjusted critical values.
 M2#maths-u22-27-q3@2: Why can an unmodelled structural break make a stationary series look like it has a unit root? | A shift in level makes deviations look persistent, so unit root tests lose power | Breaks always create genuine unit roots in the data | Unit root tests ignore the level of the series entirely | Breaks turn stationary series into white noise | It can't: breaks and unit roots are easily told apart | Perron (1989) showed breaks bias tests towards non-rejection of a unit root.
+Q: What is a structural break? | A lasting change in the relationships a model describes, such as after a policy change.
+Q: What is the Chow test? | An F-test of whether regression coefficients differ before and after a known date.
+Q: What is the sup-F test? | A test for a break at an unknown date, taking the maximum Chow statistic over candidate dates.
+Q: What is the Chow F statistic? | F = ((RSS_{pooled} − RSS₁ − RSS₂)/k) / ((RSS₁ + RSS₂)/(n − 2k)).
+Q: How can intercept and slope shifts be modelled at a break? | With dummy variables.
+Q: Which method tests for multiple structural breaks? | Bai–Perron.
+Q: Who showed that breaks can mimic unit roots? | Perron, in 1989.
+Q: How can forecasters cope with breaks? | Use rolling windows or time-varying parameters.
+Q: Pooled RSS is 120, sub-sample RSS 40 and 50, k = 2, n = 64. What is the Chow F? | 10, strong evidence of a break.
+Q: What is a common mistake when testing a break date? | Choosing the date by looking at the data, then using standard Chow critical values.
 
 ## Spectral Analysis
 S: Spectral analysis decomposes a time series into oscillations of different frequencies, showing how much variance each frequency contributes. The periodogram and spectral density reveal hidden cycles, from sunspots to business cycles.
@@ -1008,6 +1278,16 @@ SRC: Priestley MB, Spectral Analysis and Time Series (Academic Press 1981) | tex
 NUM1#maths-u22-28-q1@1: A daily series shows a spectral peak at frequency 1/7 cycles per day. What is the period in days? | 7 | 0 | days | Period = 1/(1/7) = 7 days: a weekly cycle.
 M1#maths-u22-28-q2@1: Where does an AR(1) with φ = 0.9 concentrate its spectral power? | At low frequencies | At high frequencies | Equally at all frequencies | Only at the seasonal frequency | Nowhere | Strong positive persistence means slow fluctuations dominate.
 M3#maths-u22-28-q3@2: Why is the raw periodogram an inconsistent estimator of the spectrum? | Its variance doesn't shrink as the sample grows, so it needs smoothing across neighbouring frequencies | It is biased towards zero at every frequency, however long the series | It ignores the data and depends only on the sample length | It has zero variance, so it can't be smoothed any further | It is consistent; its variance falls as the series gets longer | Each ordinate is roughly a scaled χ^{2}₂ variable no matter how long the series.
+Q: What is the spectral density? | f(ω) = (1/2π) Σ γ(k)e^{−iωk}, the Fourier transform of the autocovariance function.
+Q: What is the periodogram? | A sample estimate of the spectrum at the Fourier frequencies.
+Q: How is total variance related to the spectral density? | Total variance equals the integral of the spectral density.
+Q: Where does a seasonal series show spectral peaks? | At the seasonal frequency and its harmonics.
+Q: Name two ways to smooth a periodogram. | Daniell or Bartlett windows, or Welch's averaging.
+Q: What do multitaper methods reduce? | Spectral leakage.
+Q: What spectral sign indicates long memory? | A spectrum diverging at zero frequency.
+Q: What is the period of the sunspot cycle found by spectral analysis? | About 11 years.
+Q: A monthly periodogram peaks at 1/12 cycles per month. What does it indicate? | A yearly cycle of 12 months.
+Q: What is a common mistake with raw periodograms? | Interpreting single spikes in a raw, unsmoothed periodogram as genuine cycles.
 
 ## Frequency-Domain Analysis
 S: Frequency-domain methods analyse and filter series through their frequency components using the Fourier transform. They describe how linear filters change signals, measure relationships between series at each frequency and complement time-domain models.
@@ -1043,6 +1323,16 @@ SRC: Baxter M, King RG, Measuring business cycles: approximate band-pass filters
 NUM1#maths-u22-29-q1@1: Data are sampled 10 times per second. What is the Nyquist frequency in Hz? | 5 | 0 | Hz | Nyquist = half the sampling rate = 5 Hz.
 M1#maths-u22-29-q2@1: Which kind of filter is a simple moving average? | Low-pass | High-pass | Band-stop only | All-pass | Notch at zero frequency | Averaging suppresses rapid fluctuations and keeps slow ones.
 M2#maths-u22-29-q3@2: What does high coherence at low frequencies between two series indicate? | They move together closely over long cycles, even if short-run movements differ | They are identical series at every frequency | They are unrelated at all frequencies | One of the two series is pure white noise | Nothing about how the series are related | Coherence measures frequency-specific correlation.
+Q: What is the discrete Fourier transform? | Y_{j} = Σ_{t} y_{t}e^{−2πijt/n}, representing a series as sinusoids at Fourier frequencies j/n.
+Q: What is coherence? | The squared correlation between two series at each frequency, between 0 and 1.
+Q: Who developed the FFT algorithm, and when? | Cooley and Tukey, in 1965.
+Q: What does Parseval's theorem state for time series? | Total variance equals the sum of squared Fourier coefficients.
+Q: What is aliasing? | Frequencies above the Nyquist frequency fold back and appear as lower frequencies.
+Q: How does a linear filter act in the frequency domain? | It multiplies each frequency by its transfer function, changing gain and phase.
+Q: What are gain and phase of a filter? | Gain is the amplitude change; phase is the time shift.
+Q: Name two band-pass filters for business cycles. | Baxter–King and Christiano–Fitzgerald.
+Q: What do wavelets add to Fourier analysis? | Time localisation for frequencies that change over time.
+Q: What is a common mistake in sampling cyclical data? | Sampling too slowly and misreading aliased cycles as real ones.
 
 ## Forecast Evaluation
 S: Forecast evaluation measures how good forecasts are and compares methods fairly. Scale-dependent and scaled error measures, rolling-origin evaluation and statistical tests such as Diebold–Mariano guard against choosing methods that only look good by chance.
@@ -1080,6 +1370,16 @@ SRC: Diebold FX, Mariano RS, Comparing predictive accuracy, Journal of Business 
 NUM1#maths-u22-30-q1@1: A method has test MAE 6, and the naive method's in-sample MAE is 8. What is the MASE? | 0.75 | 0.001 |  | MASE = 6/8 = 0.75.
 M1#maths-u22-30-q2@1: Which error measure is undefined when actual values are zero? | MAPE | MAE | RMSE | MASE | Mean error | MAPE divides each error by the actual value, so a zero actual makes the percentage infinite or undefined.
 M2#maths-u22-30-q3@2: Why use rolling-origin evaluation instead of a single train–test split? | Averaging over many forecast origins gives a more reliable estimate of accuracy | It uses future data to improve the accuracy estimates | A single split is always more reliable than many origins | It removes all forecast errors from the evaluation | It isn't used in practice, only in theory | One split depends heavily on the particular test period chosen.
+Q: What is MASE? | MAE divided by the in-sample MAE of a naive or seasonal naive forecast.
+Q: What is the Diebold–Mariano test? | A test of whether two forecasts have equal expected loss.
+Q: How do MAE and RMSE differ? | Both are in the data's units, but RMSE penalises large errors more.
+Q: What is forecast bias? | The mean forecast error.
+Q: What is rolling-origin evaluation? | Time-series cross-validation using many forecast origins.
+Q: How should accuracy be reported across horizons? | Evaluate each horizon separately.
+Q: What compares accuracy across many models at once? | Model confidence sets.
+Q: How are prediction intervals evaluated? | By coverage and the interval score.
+Q: Forecast errors are 2, −3, 1 and −2. What is the MAE? | 2.
+Q: What is a common mistake with MAPE? | Comparing it across series that include values near zero.
 
 ## Prediction Intervals
 S: A prediction interval gives a range in which a future observation is expected to fall with stated probability. Point forecasts alone hide uncertainty; intervals communicate it, and they must widen with the horizon and account for parameter and model uncertainty.
@@ -1115,6 +1415,16 @@ SRC: Hyndman RJ, Athanasopoulos G, Forecasting: Principles and Practice (3rd edn
 NUM1#maths-u22-31-q1@1: A point forecast is 200 with σ_{h} = 10. What is the upper limit of the 95% normal prediction interval? | 219.6 | 0.01 |  | 200 + 1.96 × 10 = 219.6.
 M1#maths-u22-31-q2@1: Intervals labelled 95% contain the outcome only 80% of the time on test data. What does this show? | The intervals are too narrow (under-coverage) | The intervals are too wide (over-coverage) | The forecasts are unbiased and well calibrated | Coverage is perfect for 95% intervals | The data must have been recorded wrongly | Actual coverage below nominal means uncertainty is underestimated.
 M2#maths-u22-31-q3@2: Why are model-based prediction intervals often too narrow? | They usually ignore uncertainty in parameter estimates and in the choice of model | They overstate every source of uncertainty, so they're actually too wide | They use too many simulations, which shrinks the intervals artificially | Future errors are always smaller than past ones, so they can't be too narrow | They aren't too narrow; model-based intervals usually over-cover in practice | Treating the fitted model as exactly true omits important sources of error.
+Q: What is a prediction interval? | A range ŷ_{T+h} ± z σ_{h} expected to contain the future value with stated probability.
+Q: What is coverage of prediction intervals? | The proportion of actual outcomes inside the intervals, ideally close to the nominal level.
+Q: How does a random walk's forecast standard deviation grow? | σ_{h} = σ√h.
+Q: How are intervals built for a log-transformed series? | Compute them in logs and back-transform, giving asymmetric intervals.
+Q: How does the bootstrap build prediction intervals? | By resampling residuals to simulate future paths.
+Q: Name two non-normal ways to build prediction intervals. | Quantile regression and conformal prediction.
+Q: What does the Winkler interval score reward? | Narrow intervals that still cover the outcome.
+Q: A random walk has σ = 5. What is the 95% half-width at h = 4? | 19.6, double the one-step width.
+Q: How should forecast uncertainty be communicated clearly? | With fan charts.
+Q: What is a common mistake in reporting forecasts? | Reporting point forecasts without any interval.
 
 ## Probabilistic Forecasting
 S: Probabilistic forecasting provides a full predictive distribution for future values, not just a point or interval. Weather services, energy markets and epidemic modellers use it, and proper scoring rules judge whether the distributions are both sharp and well calibrated.
@@ -1152,6 +1462,16 @@ SRC: Gneiting T, Katzfuss M, Probabilistic forecasting, Annual Review of Statist
 NUM1#maths-u22-32-q1@1: A forecaster always says 50% chance of rain. What Brier score do they get on every day, whatever happens? | 0.25 | 0.001 |  | (0.5 − 1)^{2} = (0.5 − 0)^{2} = 0.25.
 M1#maths-u22-32-q2@1: Over many days a forecaster said "70% chance of rain", and it rained on 70% of them. What does this show? | The forecasts are well calibrated | The forecasts are always wrong | The forecasts are perfectly sharp | Rain is unpredictable | Nothing at all | Calibration means stated probabilities match observed frequencies.
 M3#maths-u22-32-q3@2: Why must probabilistic forecasts be judged with proper scoring rules? | Improper rules can reward reporting distorted probabilities instead of honest beliefs | Proper rules ignore the outcomes and score only the forecasts | All scoring rules are proper, so the choice doesn't matter | Proper rules only check the median of each forecast | They needn't be; any accuracy measure judges them fairly | Under a proper score, the forecaster's expected score is best when reporting their true distribution.
+Q: What is probabilistic forecasting? | Providing a full predictive distribution for future values, not just a point or interval.
+Q: What is calibration of forecasts? | Agreement between forecast probabilities and observed frequencies.
+Q: Name four forms of probabilistic forecast. | Full densities or samples, quantile forecasts, event probabilities and ensembles.
+Q: What principle did Gneiting state for probabilistic forecasts? | Maximise sharpness subject to calibration.
+Q: What is the Brier score? | The mean of (p − outcome)^{2} for binary events; lower is better.
+Q: Which loss evaluates quantile forecasts? | Pinball loss.
+Q: What does CRPS stand for? | Continuous ranked probability score.
+Q: Why do inventory decisions need quantile forecasts? | Stock levels depend on demand quantiles, as in the newsvendor problem.
+Q: Forecasts of 0.8 on a rainy day and 0.3 on a dry day give what Brier score? | 0.065.
+Q: What is a common mistake in evaluating probabilistic forecasts? | Judging them only by the error of their median.
 
 ## Intermittent Demand Forecasting
 S: Intermittent demand has many periods of zero demand and occasional non-zero values, typical of spare parts and slow-moving stock. Standard methods perform poorly, so specialised approaches such as Croston's method forecast demand size and interval separately.
@@ -1187,6 +1507,16 @@ SRC: Syntetos AA, Boylan JE, The accuracy of intermittent demand estimates, Inte
 NUM1#maths-u22-33-q1@1: Non-zero demands occur in periods 2, 6 and 10 of a 12-period history. What is the average interval between them? | 4 | 0 | periods | The gaps are 4 and 4 periods, giving an average interval of 4.
 M1#maths-u22-33-q2@1: Which method smooths the probability of demand occurring, helping with obsolete items? | TSB (Teunter–Syntetos–Babai) | Croston's original method | Simple exponential smoothing | Holt's linear method | Seasonal naive | TSB updates demand probability every period, so it decays when demand stops.
 M2#maths-u22-33-q3@2: Why can a forecast of zero look accurate on intermittent data yet be useless? | Most periods have zero demand, so errors look small, but holding no stock causes stock-outs when demand comes | Zero forecasts are always optimal for intermittent items, so they're fine | Demand never occurs for intermittent items, so zero is exactly right | Errors can't be measured when demand is zero, so it looks accurate | It isn't useless; a zero forecast is the standard choice for spare parts | Point accuracy measures miss the inventory consequences.
+Q: What is intermittent demand? | Demand with many zero periods and occasional non-zero values, typical of spare parts.
+Q: What is Croston's method? | Separately smoothing non-zero demand sizes and the intervals between them, forecasting size/interval.
+Q: What is the average demand interval? | ADI, the mean number of periods between non-zero demands.
+Q: What ADI often indicates intermittent demand? | ADI above 1.32.
+Q: What are the four Syntetos–Boylan demand categories? | Smooth, erratic, intermittent and lumpy.
+Q: What is the SBA correction? | Multiplying Croston's forecast by (1 − α/2) to reduce bias.
+Q: What is ADIDA? | Temporal aggregation for intermittent demand forecasting.
+Q: How should intermittent demand forecasts ultimately be evaluated? | By inventory outcomes such as service level and stock, and scaled errors.
+Q: Smoothed size is 12 and interval 4. What is Croston's forecast? | 3 units per period.
+Q: What is a common mistake on intermittent data? | Using simple exponential smoothing, which over-reacts after each demand.
 
 ## Causal Forecasting
 S: Causal (explanatory) forecasting predicts a variable from other variables believed to drive it, such as sales from price, advertising and weather. It allows "what if" scenarios but needs forecasts of the drivers and stable relationships.
@@ -1224,4 +1554,14 @@ SRC: Abadie A, Diamond A, Hainmueller J, Synthetic control methods for comparati
 NUM1#maths-u22-34-q1@1: In the sales model, by how many units do forecast sales change if advertising rises by £5k (price unchanged)? | 10 | 0 | units | The advertising coefficient is 2 per £1k, so £5k adds 10 units.
 M1#maths-u22-34-q2@1: What extra uncertainty does an unconditional causal forecast include? | Uncertainty in forecasting the predictor variables themselves | None beyond the model residuals | Only rounding error in calculations | Uncertainty in past data only | Uncertainty in the intercept only | Unknown future predictors must themselves be forecast.
 M2#maths-u22-34-q3@2: Why might a sales–price regression mislead when planning a big price cut? | Past data may not cover such a change, and customers or competitors may respond in new ways | Regressions can't use price as a predictor | Price never affects sales in practice | The coefficient is always exactly right | It wouldn't mislead for any price change | Extrapolating beyond observed conditions risks changed relationships.
+Q: What is causal forecasting? | Predicting a variable from other variables believed to drive it, such as sales from price and advertising.
+Q: What is a regression with ARIMA errors? | y_{t} = β'x_{t} + η_{t}, with η_{t} an ARIMA process.
+Q: How are predictors chosen for causal forecasting? | From theory and domain knowledge.
+Q: Why allow lags in causal forecasting models? | Effects such as advertising persist over time.
+Q: What is an unconditional causal forecast? | One where the predictors must be forecast too, adding uncertainty.
+Q: How do leading indicators help causal forecasting? | They are known in advance, so the predictors needn't be forecast.
+Q: What is nowcasting? | Estimating the present using timely indicators.
+Q: Which methods support claims about scenarios in causal forecasting? | Causal inference methods such as experiments and synthetic controls.
+Q: Sales = 200 − 5 × price + 2 × advertising. What are sales at price £10 and advertising £30k? | 210 units, conditional on those values.
+Q: What is a common mistake with correlational regressions? | Treating them as reliable for scenarios that change how people behave.
 `;

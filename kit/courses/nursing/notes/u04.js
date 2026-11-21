@@ -34,6 +34,16 @@ Q: What is the difference between pharmacokinetics and pharmacodynamics? | Pharm
 Q: What does a narrow therapeutic index mean? | The effective dose is close to the toxic dose, so small changes can cause harm and monitoring is often needed.
 M1#nursing-u04-01-q1@1: Which reference gives UK doses, cautions and interactions? | The British National Formulary (BNF) | The NMC Code | The Mental Capacity Act Code | The Caldicott Principles | NEWS2 chart | The BNF is the standard UK prescribing reference.
 M2#nursing-u04-01-q2@2: A nurse is asked to give a medicine they've never heard of. What should they do first? | Look it up or ask a pharmacist first | Give it, since it has been prescribed | Ask the patient what it's for, then give it | Skip it and document "not given" | Ask a student nurse to give it instead | Nurses must understand what they administer.
+Q: What is pharmacology? | The study of how medicines interact with the body.
+Q: What is the difference between a generic name and a brand name? | The generic (approved) name, such as amoxicillin, is used in prescribing; the brand name is the manufacturer's trade name.
+Q: What is an indication for a medicine? | The condition or reason the medicine is used to treat, prevent or diagnose.
+Q: What does the therapeutic index describe? | The margin between an effective dose of a drug and a toxic one.
+Q: Which reference gives medicines information for children in the UK? | The BNF for Children.
+Q: What is the Summary of Product Characteristics (SmPC)? | The manufacturer's product information for a medicine, used alongside the patient information leaflet as a source of information.
+Q: Name three things a nurse checks to see whether a prescribed medicine is appropriate for a person. | Allergies, interactions, kidney function and pregnancy (any three).
+Q: Besides the BNF, where can a nurse get advice about medicines? | Local formularies, pharmacists and medicines information services.
+Q: What four things should a nurse know about a medicine before giving it? | What it is for, how it works, its usual dose and what to monitor.
+Q: Why does pharmacology knowledge help a nurse support adherence? | It lets the nurse explain treatment and educate people about their medicines.
 
 ## Pharmacokinetics
 S: Pharmacokinetics describes how a drug moves through the body over time: absorption, distribution, metabolism and excretion (ADME). It explains dose timing, routes, interactions and why some people need different doses.
@@ -63,6 +73,16 @@ Q: What is first-pass metabolism? | Metabolism of an orally absorbed drug in the
 Q: How long does it take to reach steady state? | About 4–5 half-lives of regular dosing.
 M1#nursing-u04-02-q1@1: What is the bioavailability of an intravenous dose? | 100% | 50% | 0% | 75% | It depends on food | IV medicines enter the circulation directly.
 M2#nursing-u04-02-q2@2: A patient on gentamicin has a rising creatinine. What is the main concern? | Possible accumulation: check levels, tell prescriber | The drug will now work faster than usual | No concern, as kidneys don't affect gentamicin | The dose should be increased to compensate | The patient should drink less fluid today | Gentamicin is renally cleared and nephrotoxic, with a narrow therapeutic index.
+Q: What does ADME stand for in pharmacokinetics? | Absorption, distribution, metabolism and excretion.
+Q: What is bioavailability? | The proportion of a dose reaching the systemic circulation unchanged.
+Q: Why is oral bioavailability usually lower than intravenous? | Because of incomplete absorption and first-pass metabolism in the liver.
+Q: What is drug half-life? | The time for the plasma concentration of a drug to fall by half; it determines dosing intervals.
+Q: Why are loading doses sometimes used? | To reach effective drug levels sooner than waiting about 4–5 half-lives for steady state.
+Q: What is clearance in pharmacokinetics? | The rate at which the body removes a drug, mainly by the liver and kidneys.
+Q: What is therapeutic drug monitoring? | Measuring blood levels of drugs with narrow therapeutic indices to guide dosing.
+Q: Name three drugs that commonly need therapeutic drug monitoring. | Gentamicin, vancomycin, lithium, digoxin and phenytoin (any three).
+Q: Name four patient factors that can change pharmacokinetics. | Age, body weight and composition, pregnancy, kidney or liver disease, interactions, genetics, critical illness, dehydration and low albumin (any four).
+Q: What should a nurse do if a patient's kidney function has fallen and they show signs of toxicity? | Withhold if unsafe and query the dose with the prescriber or pharmacist before giving it.
 
 ## Pharmacodynamics
 S: Pharmacodynamics is how drugs produce their effects: the targets they act on, how strongly they act and how the response relates to the dose.
@@ -91,6 +111,16 @@ Q: What is an antagonist? | A drug that binds to a receptor and blocks it withou
 Q: What is the difference between potency and efficacy? | Potency is how much drug is needed for an effect; efficacy is the maximum effect it can produce.
 M1#nursing-u04-03-q1@1: Salbutamol relieves bronchospasm by acting as which kind of drug at beta-2 receptors? | An agonist | An antagonist | An enzyme inhibitor | A partial antagonist | An ion channel blocker | Salbutamol stimulates beta-2 receptors, relaxing airway smooth muscle.
 M2#nursing-u04-03-q2@2: Why might a non-selective beta-blocker be dangerous for someone with asthma? | It may block beta-2 receptors, causing bronchospasm | It increases the heart rate dangerously | It causes high blood sugar in asthma | It dilates the airways too much | It blocks histamine and causes wheeze | Non-selective beta-blockers also block beta-2 receptors in the airways, which can trigger bronchospasm in people with asthma.
+Q: What is pharmacodynamics? | How drugs produce their effects: the targets they act on, how strongly they act and how response relates to dose.
+Q: What is an agonist? | A drug that binds a receptor and activates it.
+Q: What is a partial agonist? | A drug that activates a receptor but produces a smaller maximal effect, for example buprenorphine at opioid receptors.
+Q: Name the four main types of drug target. | Receptors, enzymes, ion channels and transporters.
+Q: Give an example of a drug that works by inhibiting an enzyme. | ACE inhibitors, or NSAIDs, which inhibit cyclo-oxygenase.
+Q: How do SSRIs work? | They block the reuptake of serotonin by its transporter.
+Q: What is tolerance? | A reduced response to a drug with repeated use, for example with opioids or nitrates.
+Q: What is dependence? | A physical or psychological need for a drug, with withdrawal effects on stopping.
+Q: How do local anaesthetics work? | They block sodium channels.
+Q: Why does knowing a drug's mechanism help a nurse? | It lets them predict the drug's main effects, side effects and interactions.
 
 ## Absorption
 S: Absorption is the movement of a drug from where it is given into the bloodstream. It determines how quickly and how much of a drug takes effect.
@@ -123,6 +153,16 @@ Q: Why are sublingual medicines fast-acting? | They are absorbed through the mou
 Q: Why must modified-release tablets not be crushed? | Crushing can release the whole dose at once (dose dumping), causing toxicity.
 M1#nursing-u04-04-q1@1: Which route avoids absorption entirely? | Intravenous | Oral | Intramuscular | Transdermal | Rectal | IV medicines go straight into the circulation.
 M2#nursing-u04-04-q2@2: A patient with a fentanyl patch develops a fever of 39°C and becomes drowsy. What should the nurse consider? | Heat may raise absorption: assess and escalate | The patch has stopped working in the heat | The fever is unrelated to the fentanyl patch | A second patch should be applied for cover | A hot water bottle will help the patch work | Fever or external heat increases blood flow to the skin and speeds absorption from the patch, which can cause opioid toxicity; escalate and assess sedation and breathing.
+Q: What is drug absorption? | The movement of a drug from where it is given into the bloodstream.
+Q: Where are most oral drugs absorbed? | Mainly in the small intestine.
+Q: Why is the intravenous route the fastest-acting? | It has no absorption phase, so the effect is immediate.
+Q: Which is faster, intramuscular or subcutaneous absorption? | Intramuscular absorption is faster than subcutaneous.
+Q: Why might IM and SC medicines work poorly in shock? | Poor perfusion reduces absorption from IM and SC sites.
+Q: Give an example of a medicine taken on an empty stomach. | Levothyroxine.
+Q: How do antacids or calcium affect some medicines? | They reduce absorption of some antibiotics, such as tetracyclines and ciprofloxacin, and of levothyroxine.
+Q: Why does heat over a fentanyl patch matter? | Heat increases absorption through the skin and can cause opioid toxicity.
+Q: What should a nurse do about transdermal patches during skin checks? | Check the patches, remove old ones and record the sites.
+Q: What kind of absorption does a transdermal patch give? | Slow, steady absorption through the skin.
 
 ## Distribution
 S: Distribution is the movement of a drug from the bloodstream into tissues. It affects how much drug reaches its target, how long it stays and how it should be dosed.
@@ -148,6 +188,16 @@ Q: Which fraction of a protein-bound drug is active? | The unbound (free) fracti
 Q: Why might benzodiazepines last longer in older people? | Increased body fat stores the fat-soluble drug, prolonging its effect, and clearance may also be reduced.
 M1#nursing-u04-05-q1@1: Which barrier limits many drugs from entering the brain? | The blood-brain barrier | The placenta | The skin | The gut wall | The glomerulus | The blood-brain barrier restricts entry to the central nervous system.
 M2#nursing-u04-05-q2@2: A malnourished patient with low albumin is on phenytoin. Their total phenytoin level is in range, but they are unsteady with nystagmus. What is the best explanation? | Raised free fraction from low albumin | The phenytoin level is far too low | The symptoms are unrelated to phenytoin | Phenytoin isn't bound to plasma proteins | The patient is simply dehydrated | Low albumin raises free phenytoin; levels need interpreting with albumin.
+Q: What is drug distribution? | The movement of a drug from the bloodstream into the body's tissues.
+Q: What is protein binding? | The attachment of a drug to plasma proteins such as albumin.
+Q: Which organs receive a drug quickly because of high blood flow? | Well-perfused organs: the heart, liver, kidneys and brain.
+Q: What effect does low albumin have on a highly protein-bound drug such as phenytoin? | It increases the free, active fraction, raising the risk of toxicity.
+Q: Name three causes of low albumin. | Malnutrition, liver disease and critical illness.
+Q: How does lipid solubility affect distribution? | Fat-soluble drugs cross membranes and enter fat and the brain more readily.
+Q: What is volume of distribution? | A theoretical measure of how widely a drug spreads into body tissues.
+Q: Does the placenta stop drugs reaching the fetus? | No, the placenta allows many drugs to reach the fetus.
+Q: Why can a normal total blood level hide toxicity? | If albumin is low and the drug is highly protein-bound, the free active fraction may be high.
+Q: How are some doses calculated in people with obesity? | On ideal or adjusted body weight.
 
 ## Metabolism
 S: Metabolism (biotransformation) chemically changes drugs, mainly in the liver, usually making them easier to excrete. It can inactivate drugs, activate prodrugs or produce toxic metabolites.
@@ -176,6 +226,16 @@ Q: Name two enzyme inducers. | Rifampicin, carbamazepine, phenytoin, St John's w
 Q: What is a prodrug? | An inactive drug converted to its active form by metabolism (for example, codeine to morphine).
 M1#nursing-u04-06-q1@1: Which is an enzyme inhibitor that can raise levels of other drugs? | Clarithromycin | Rifampicin | St John's wort | Carbamazepine | Phenytoin | Clarithromycin inhibits the liver enzyme CYP3A4, raising levels of drugs it metabolises; rifampicin, St John's wort, carbamazepine and phenytoin are inducers.
 M2#nursing-u04-06-q2@2: A woman on a combined oral contraceptive starts rifampicin. What is the main risk? | Reduced contraceptive effect (enzyme induction) | Increased contraceptive side effects | No interaction between these medicines | Acute liver failure from the combination | A reduced effect of rifampicin itself | Rifampicin induces enzymes that metabolise hormonal contraceptives.
+Q: What is drug metabolism? | The chemical change of drugs, mainly in the liver, usually making them easier to excrete.
+Q: What happens in phase 1 metabolism? | Oxidation, reduction and hydrolysis reactions, largely by cytochrome P450 enzymes.
+Q: What do phase 2 (conjugation) reactions do? | They make drug molecules more water-soluble.
+Q: What is an enzyme inducer? | A substance that increases drug-metabolising enzyme activity, speeding up metabolism and reducing other drugs' effects.
+Q: What effect does an enzyme inhibitor have on other drugs? | It slows their metabolism, increasing levels and the risk of toxicity.
+Q: Name two enzyme inhibitors. | Clarithromycin, fluconazole and grapefruit juice (any two).
+Q: Give an example of a prodrug. | Codeine, converted to morphine, or clopidogrel, converted to its active form.
+Q: Why is codeine contraindicated in children under 12 and breastfeeding mothers? | Some people are ultra-rapid metabolisers of codeine and produce high morphine levels.
+Q: What is the antidote for paracetamol overdose? | Acetylcysteine; timing matters, so treat suspected overdose as an emergency.
+Q: Why does paracetamol overdose damage the liver? | The normal pathways are overwhelmed and a toxic metabolite damages the liver.
 
 ## Excretion
 S: Excretion removes drugs and their metabolites from the body, mainly through the kidneys, but also in bile, faeces, breath, sweat and breast milk. Reduced excretion causes accumulation and toxicity.
@@ -203,6 +263,16 @@ Q: How is kidney function estimated for drug dosing? | Using eGFR or creatinine 
 Q: What is the "triple whammy"? | The combination of an ACE inhibitor or ARB, a diuretic and an NSAID, which increases the risk of acute kidney injury.
 M1#nursing-u04-07-q1@1: Which organ is the main route of excretion for most drugs? | The kidneys | The lungs | The skin | The spleen | The heart | Most drugs and metabolites are excreted in urine.
 M3#nursing-u04-07-q2@2: A patient on ramipril, furosemide and ibuprofen develops vomiting and reduced urine output. What should the nurse do? | Escalate: high risk of AKI; doses may need pausing | Give the next doses as usual and monitor | Increase oral fluids only and continue all | Give extra ibuprofen for the discomfort | Wait for the routine bloods next week | Dehydration with the triple whammy is a recognised cause of AKI.
+Q: What is excretion? | The removal of drugs and their metabolites from the body, mainly through the kidneys.
+Q: Besides the kidneys, name three routes of drug excretion. | Bile and faeces, breath, sweat and breast milk (any three).
+Q: What happens when drug excretion is reduced? | The drug accumulates and can cause toxicity.
+Q: What three processes handle drugs in the kidney? | Filtration at the glomerulus, and secretion and reabsorption in the tubules.
+Q: What does the Cockcroft-Gault creatinine clearance use? | Age, weight, sex and serum creatinine.
+Q: Name four renally cleared drugs that need caution. | Gentamicin, vancomycin, lithium, digoxin, metformin, many DOACs and low molecular weight heparins (any four).
+Q: Name three medicines that may be paused during acute illness under sick day guidance. | ACE inhibitors and ARBs, diuretics, NSAIDs, metformin and SGLT2 inhibitors (any three).
+Q: What is enterohepatic recirculation? | Reabsorption of drugs excreted in bile into the gut.
+Q: Which drugs are excreted through the lungs? | Volatile anaesthetics.
+Q: Which groups need kidney function watched closely on renally cleared medicines? | Older people and people during acute illness.
 
 ## Drug interactions
 S: A drug interaction occurs when one substance changes the effect of another. Interactions can make treatment fail or cause serious harm, and they become more likely as the number of medicines increases.
@@ -233,6 +303,16 @@ Q: Name the two main types of drug interaction. | Pharmacokinetic and pharmacody
 Q: Which herbal remedy interacts with many medicines by inducing liver enzymes? | St John's wort.
 M1#nursing-u04-08-q1@1: Which combination increases the risk of respiratory depression? | An opioid and a benzodiazepine | Paracetamol and a laxative | An emollient and a steroid cream | Vitamin D and calcium | Salbutamol and a spacer | Additive central nervous system depression.
 M2#nursing-u04-08-q2@2: A patient on warfarin is prescribed clarithromycin. What should the nurse expect? | A raised INR, needing closer monitoring | A reduced INR and a higher clot risk | No interaction between the two medicines | Increased clotting and stroke risk | Failure of the antibiotic to work | Clarithromycin can increase warfarin's effect.
+Q: What is a drug interaction? | When one substance changes the effect of another, which can make treatment fail or cause serious harm.
+Q: What is a pharmacokinetic interaction? | One drug changes the absorption, distribution, metabolism or excretion of another.
+Q: What is a pharmacodynamic interaction? | Drugs with similar or opposing effects at their targets, such as two sedatives together causing respiratory depression.
+Q: Why can clarithromycin with a statin cause harm? | Clarithromycin inhibits enzymes, raising statin levels and risking muscle damage.
+Q: Give an example of a drug-food interaction with warfarin. | Vitamin K in leafy greens.
+Q: What is a drug-disease interaction? | A medicine worsening a condition, such as NSAIDs in heart failure or kidney disease, or beta-blockers in asthma.
+Q: Which combinations of serotonergic drugs risk serotonin syndrome? | SSRIs, tramadol, triptans and linezolid taken together.
+Q: Why should potassium-sparing drugs not be combined carelessly? | Together they can cause hyperkalaemia.
+Q: Why do interactions become more likely in some people? | They become more likely as the number of medicines a person takes increases.
+Q: Name three ways to prevent harm from drug interactions. | Check the BNF interactions section, heed electronic prescribing alerts, ask a pharmacist, ask about other substances and monitor for expected changes.
 
 ## Adverse drug reactions
 S: An adverse drug reaction (ADR) is a harmful and unintended response to a medicine. ADRs are a common cause of hospital admission and harm, and many are predictable and preventable.
@@ -260,6 +340,16 @@ Q: What is a Type A adverse drug reaction? | A dose-related, predictable reactio
 Q: What is the Yellow Card scheme? | The MHRA's system for reporting suspected adverse drug reactions in the UK.
 M1#nursing-u04-09-q1@1: What does a black triangle (▼) next to a medicine mean? | It is under additional MHRA monitoring | It is a Schedule 2 controlled drug | It is an unlicensed medicine | It is for hospital use only | It can safely be crushed | The black triangle denotes additional monitoring.
 M3#nursing-u04-09-q2@2: A patient develops a widespread blistering rash and mouth ulcers a week after starting a new medicine. What should the nurse do? | Possible serious ADR: withhold, escalate, report | Apply an emollient and continue the medicine | Wait a day to see whether the rash settles | Give the next dose as prescribed and observe | Document "rash" only and take no other action | Severe skin reactions can be life-threatening.
+Q: What is an adverse drug reaction? | A harmful and unintended response to a medicine.
+Q: What is a Type B adverse drug reaction? | A reaction that is not dose-related and is unpredictable, such as anaphylaxis or Stevens-Johnson syndrome.
+Q: Which type of adverse drug reaction is most common? | Type A (augmented), which is dose-related and predictable.
+Q: Give two examples of Type A adverse drug reactions. | Bleeding with anticoagulants, hypoglycaemia with insulin and constipation with opioids (any two).
+Q: What do adverse drug reaction types C, D, E and F stand for? | Chronic effects, delayed effects, end-of-use or withdrawal effects, and failure of therapy.
+Q: Who can submit a Yellow Card report? | Anyone, including nurses and members of the public.
+Q: Which suspected reactions should be reported via the Yellow Card scheme? | Serious suspected reactions to any medicine, and all suspected reactions to black triangle medicines.
+Q: Which people are at higher risk of adverse drug reactions? | Older people, people with multiple conditions and people on many medicines.
+Q: How should a nurse view a new symptom after a medicine is started or changed? | As a possible adverse drug reaction.
+Q: What should be updated in the record after an adverse drug reaction? | The reaction should be documented and the allergy or ADR status updated.
 
 ## Contraindications
 S: A contraindication is a reason not to use a medicine because the risk of harm outweighs the benefit. A caution means the medicine can be used, but with care, monitoring or a dose change.
@@ -288,6 +378,16 @@ Q: What is the difference between a contraindication and a caution? | A contrain
 Q: Why is aspirin avoided in children under 16 (except under specialist advice)? | Because of the risk of Reye's syndrome.
 M1#nursing-u04-10-q1@1: Which medicine is contraindicated in pregnancy? | Warfarin | Paracetamol at usual doses | Folic acid | Most emollients | Iron supplements at usual doses | Warfarin crosses the placenta and can cause birth defects and fetal bleeding, so it is avoided in pregnancy; heparins are usually used instead.
 M2#nursing-u04-10-q2@2: A patient with Parkinson's disease is prescribed metoclopramide for nausea. What should the nurse do? | Query it with the prescriber, as metoclopramide can worsen Parkinson's symptoms | Give it as prescribed | Give double the dose | Ask the patient to decide | Give it only at night | Metoclopramide blocks dopamine and is generally avoided in Parkinson's disease.
+Q: What is a contraindication? | A reason not to use a medicine because the risk of harm outweighs the benefit.
+Q: What is an absolute contraindication? | A situation where the medicine must not be used, for example a previous anaphylactic reaction to it.
+Q: What is a relative contraindication? | The medicine is used only if benefit outweighs risk, with precautions, for example NSAIDs in mild kidney impairment.
+Q: Name three medicines contraindicated in pregnancy. | ACE inhibitors, warfarin, sodium valproate, isotretinoin and methotrexate (any three).
+Q: Why are many antipsychotics avoided for dementia-related agitation? | They increase the risk of stroke and mortality.
+Q: In which conditions should NSAIDs be avoided? | Active peptic ulcer and severe heart failure.
+Q: Why is codeine avoided in children under 12? | Codeine is listed as contraindicated in children under 12 because of age-related risk.
+Q: What should a nurse do on identifying a possible contraindication? | Not give the medicine, discuss with the prescriber and pharmacist, and document.
+Q: How should a nurse check for contraindications before giving a medicine? | Check the record, ask the person and family, and check the BNF.
+Q: Does a valid prescription remove the nurse's duty to check safety? | No, the nurse remains responsible for checking the medicine is safe for this person.
 
 ## Allergies
 S: A drug allergy is an immune-mediated reaction to a medicine. Recording allergies accurately, checking them before every administration, and recognising anaphylaxis are core nursing responsibilities.
@@ -318,6 +418,16 @@ Q: What should an allergy record include? | The medicine or substance, the react
 Q: What is the first-line drug treatment for anaphylaxis? | Intramuscular adrenaline, given according to the Resuscitation Council UK algorithm.
 M1#nursing-u04-11-q1@1: Which is most likely to be an intolerance rather than an allergy? | Nausea after codeine | Hives and wheeze after penicillin | Swelling of the lips after an injection | Anaphylaxis | A blistering rash with mucosal involvement | Nausea is a common side effect, not an immune reaction.
 M3#nursing-u04-11-q2@2: Minutes after a first dose of IV antibiotic, a patient has stridor, a widespread rash and a blood pressure of 78/40. What should the nurse do first? | Stop it, call for help, give IM adrenaline | Slow the infusion and recheck in 15 minutes | Give an oral antihistamine and wait | Sit the patient up and give a drink of water | Document it and tell the doctor on the round | These are signs of anaphylaxis, a medical emergency.
+Q: What is a drug allergy? | An immune-mediated reaction to a medicine.
+Q: How does a drug intolerance differ from an allergy? | An intolerance or side effect is non-immune, such as nausea with codeine; an allergy is an immune reaction.
+Q: Why does wrongly labelling a side effect as an allergy matter? | It can deny people the best treatment; many people labelled penicillin allergic are not.
+Q: Name three signs of an allergic reaction to a medicine. | Urticaria, angioedema, bronchospasm, anaphylaxis or delayed rashes (any three).
+Q: Name two non-medicine allergies that should be recorded. | Latex, chlorhexidine, food and plasters (any two).
+Q: When can a medicine be given before allergy status is known? | Only in an emergency.
+Q: How should a person with anaphylaxis be positioned? | Lying flat, or sitting if breathing is difficult.
+Q: When is adrenaline repeated in anaphylaxis? | After 5 minutes if there is no improvement.
+Q: What is cross-reactivity? | An allergic reaction to a different drug with a similar structure, such as penicillins and some other beta-lactams.
+Q: When should a nurse check a person's allergies? | Before every administration, not just on admission.
 
 ## Medication reconciliation
 S: Medicines reconciliation is the process of obtaining an accurate, complete list of a person's current medicines and comparing it with what is prescribed at transitions of care: on admission, transfer and discharge. It prevents omissions, duplications and errors.
@@ -343,6 +453,16 @@ Q: Within what time should medicines reconciliation be done on hospital admissio
 Q: Name four sources for a medicines history. | The person or carer, GP record, shared or summary care record, repeat prescriptions, medicines brought in, community pharmacy (any four).
 M1#nursing-u04-12-q1@1: Which medicines are time-critical on admission? | Parkinson's medicines | Most vitamins | Emollients | Occasional antacids | Simple linctus | Delays in Parkinson's medicines can cause serious harm.
 M2#nursing-u04-12-q2@2: On admission, a patient says they have a monthly injection at the GP practice that isn't on the chart. What should the nurse do? | Record it, confirm the source, inform the team | Ignore it, because it isn't due today | Tell the patient to sort it out after discharge | Give an extra dose to make up for it | Assume the medicine was stopped deliberately | Clinic-administered medicines are often missed at reconciliation.
+Q: What is medicines reconciliation? | Obtaining an accurate list of a person's current medicines and comparing it with what is prescribed at transitions of care.
+Q: At which points of care is medicines reconciliation done? | On admission, transfer and discharge.
+Q: What three steps make up medicines reconciliation? | Collect, check and communicate.
+Q: How many sources should be used for a medicines history? | At least two.
+Q: What discrepancies does reconciliation look for? | Omitted, wrong dose, duplicated and stopped medicines.
+Q: What is a time-critical medicine? | A medicine where delay or omission can cause harm.
+Q: Name four time-critical medicines. | Parkinson's medicines, insulin, anticonvulsants, anticoagulants, immunosuppressants and some antimicrobials (any four).
+Q: Name three easily missed items to include in medicines reconciliation. | Over-the-counter and herbal products, eye drops, inhalers, patches, clinic injections and recently stopped medicines (any three).
+Q: How should discrepancies found at reconciliation be resolved? | With the prescriber and pharmacist, documenting the reasons for any changes.
+Q: What problems does medicines reconciliation prevent? | Omissions, duplications and errors at transitions of care.
 
 ## Medicines legislation
 S: Medicines law in the UK controls how medicines are classified, prescribed, supplied, stored and administered. Nurses must work within it, and within professional and local policy.
@@ -375,6 +495,16 @@ Q: What is a patient group direction? | A written instruction allowing named, tr
 Q: What are the three legal categories of medicines? | Prescription-only (POM), pharmacy (P) and general sales list (GSL).
 M1#nursing-u04-13-q1@1: Which regulations govern controlled drugs in Great Britain? | The Misuse of Drugs Regulations 2001 | The Human Rights Act 1998 | The Mental Capacity Act 2005 | The Data Protection Act 2018 | The Equality Act 2010 | The 2001 Regulations set out schedules and requirements for CDs.
 M2#nursing-u04-13-q2@2: A nurse in a clinic wants to give a flu vaccine to a patient with no prescription. What legal authority might allow it? | A valid PGD the nurse is trained under | Verbal agreement from a nursing colleague | The patient's own request for the vaccine | The manufacturer's patient information leaflet | A prescription written for the patient last year | PGDs allow supply or administration to defined groups without a prescription.
+Q: Which regulations govern licensing, prescribing, supply and administration of medicines in the UK? | The Human Medicines Regulations 2012.
+Q: What law did the Human Medicines Regulations 2012 largely replace? | Most of the Medicines Act 1968.
+Q: What is a pharmacy (P) medicine? | A medicine sold under a pharmacist's supervision.
+Q: What is a general sales list (GSL) medicine? | A medicine available from shops.
+Q: What is a patient specific direction? | A prescriber's written instruction to give a medicine to a named patient.
+Q: Which regulations cover accountable officers and controlled drug governance? | The Controlled Drugs (Supervision of Management and Use) Regulations 2013.
+Q: Can anyone give adrenaline for anaphylaxis without a prescription? | Yes, the Regulations allow adrenaline to be given by anyone to save life in an emergency.
+Q: Which part of the NMC Code covers medicines? | Section 18: give medicines within your competence and the law.
+Q: Which guidance sets principles for safe medicines administration? | The RPS and RCN Professional guidance on the administration of medicines in healthcare settings (2019).
+Q: What four types of legal authority can permit a nurse to give a medicine? | A prescription, a patient specific direction, a patient group direction or a legal exemption.
 
 ## Prescribing and administration responsibilities
 S: Prescribers decide which medicine a person should have; those administering medicines are responsible for giving them correctly and safely. Both are accountable, and nurses can be prescribers too with additional qualifications.
@@ -404,6 +534,16 @@ Q: What can a V300 independent nurse prescriber prescribe? | Any medicine within
 Q: What must be checked on a prescription before administering? | Patient details, drug, dose, route, frequency, timing, duration, signature and date, allergies and that the medicine is appropriate.
 M1#nursing-u04-14-q1@1: Which framework sets competencies for all prescribers in the UK? | The RPS Competency Framework for All Prescribers | The NMC Code: professional standards | The NEWS2 national early warning score | The eight Caldicott Principles | The Equality Act 2010 code of practice | The RPS framework applies to all prescribers.
 M2#nursing-u04-14-q2@2: A prescription for morphine has no route written. What should the nurse do? | Not administer; contact the prescriber to complete the prescription | Give it orally as the most common route | Give it subcutaneously | Ask a colleague which route they would choose | Give half the dose by each route | An incomplete prescription isn't valid for administration.
+Q: What is an independent prescriber? | A practitioner responsible for assessment and prescribing decisions.
+Q: What is a supplementary prescriber? | A practitioner who prescribes within an agreed clinical management plan.
+Q: What can V100 and V150 community practitioner nurse prescribers prescribe? | Medicines from a limited formulary.
+Q: What must a nurse complete to become a V300 prescriber? | An NMC-approved prescribing programme.
+Q: Who is accountable when a medicine is given: the prescriber or the nurse? | Both are accountable: the prescriber for the decision and the nurse for giving it correctly and safely.
+Q: When must a nurse document a medicine they have given? | Immediately after administration.
+Q: What should a nurse do about calculations before administering? | Check them independently and get a second check where policy requires.
+Q: Why is prescribing separated from administering where possible? | So that one person's error can be caught by another.
+Q: Should a nurse prescribe and administer for the same person? | Not without a second check, unless local policy allows it in specific situations.
+Q: What should a nurse know about a medicine before giving it? | Its purpose, usual dose, side effects, interactions and monitoring.
 
 ## The medicines administration process
 S: Safe administration follows a consistent process every time: preparation, checking, administration, documentation and monitoring. Interruptions and shortcuts are common causes of error.
@@ -438,6 +578,16 @@ Q: What should you check before giving digoxin? | The person's pulse (rate and r
 M1#nursing-u04-15-q1@1: When should administration be documented? | Immediately after giving it | Before preparing it | At the end of the shift | When the next dose is due | Only if the person asks | Prompt documentation prevents double dosing.
 M2#nursing-u04-15-q2@2: A nurse is interrupted repeatedly during a medicine round and isn't sure whether one patient had their 8am dose. What should they do? | Check the chart and colleagues; don't give until sure | Give it again, just to be safe | Skip all of that patient's medicines today | Ask the patient to decide whether to take it | Sign for it now without giving it | Uncertainty risks a double dose; verify before acting.
 M2#nursing-u04-15-q3@1: A prescription is 500 mg; tablets are 250 mg. How many tablets are given? | 2 | 0.5 | 4 | 1 | Dose required ÷ dose per tablet = 500 ÷ 250 = 2.
+Q: What five stages make up the medicines administration process? | Preparation, checking, administration, documentation and monitoring.
+Q: Why do some wards use "do not disturb" tabards on medicine rounds? | To minimise interruptions, which increase the risk of error.
+Q: What should be checked about the medicine itself before giving it? | The medicine, strength, formulation, expiry date and storage.
+Q: What should be checked before giving insulin? | The person's blood glucose.
+Q: What result is checked before giving warfarin? | The INR.
+Q: Why should a nurse stay with a person while they take oral medicines? | To be sure the medicine has actually been taken before signing for it.
+Q: How should a dose that was not given be documented? | Recorded as not given on the correct chart, with the reason code.
+Q: Give an example of reassessing after giving a medicine. | Reassessing pain after giving analgesia.
+Q: What should a nurse do about refusals, omissions and errors? | Report and act on them.
+Q: What is a medicines administration record? | The chart or electronic record of prescribed and given medicines.
 
 ## The rights of medicines administration
 S: The "rights" of medicines administration are a checklist to prevent errors. The core five are right person, right medicine, right dose, right route and right time; many organisations add more.
@@ -470,6 +620,16 @@ Q: List the five core rights of medicines administration. | Right person, right 
 Q: Name three extended rights. | Right documentation, reason, response, right to refuse, form, expiry (any three).
 M1#nursing-u04-16-q1@1: Which right is checked by asking the person to state their name and date of birth? | Right person | Right route | Right time | Right dose | Right form | Positive identification confirms the right person.
 M2#nursing-u04-16-q2@2: A patient refuses their evening medicine after it was explained. What should the nurse do? | Respect it, explore why, inform and document | Hide the tablet in their food instead | Give it later while they're asleep | Document the medicine as given anyway | Insist repeatedly until they take it | Informed refusal is a right; covert administration needs a capacity assessment and a formal best-interests process.
+Q: What is the purpose of the rights of medicines administration? | They are a checklist to prevent medicines errors.
+Q: What does the right route include besides oral, IV or SC? | The right site.
+Q: What does the right time cover? | The correct time and frequency, with time-critical medicines given on time.
+Q: What does the right response mean? | Monitoring the effect of the medicine after giving it.
+Q: What does the right to refuse mean? | A person can make an informed refusal of a medicine.
+Q: Give an example of the right form. | A prescribed liquid for someone with swallowing problems.
+Q: At which three points should the rights be checked? | When taking the medicine from storage, when preparing it, and at the bedside.
+Q: Why are the rights not a guarantee against error? | Most errors happen when the system makes the wrong thing easy, such as look-alike names, similar packaging, interruptions and unclear prescriptions.
+Q: What should a nurse do if any right cannot be confirmed? | Withhold the medicine, query with the prescriber or pharmacist, and document and report as policy requires.
+Q: What should the rights be used together with? | Professional knowledge and a culture that encourages speaking up.
 
 ## Oral medication
 S: Oral medicines are the most common route. Safe oral administration depends on the right formulation, the person's ability to swallow, and attention to food and timing.
@@ -498,6 +658,16 @@ Q: Why use an oral syringe for liquid medicines? | For accurate measurement, and
 Q: How should bisphosphonate tablets such as alendronic acid be taken? | On an empty stomach with a full glass of water, staying upright for at least 30 minutes.
 M1#nursing-u04-17-q1@1: Which formulation should usually not be crushed? | A modified-release tablet | A standard paracetamol tablet if a pharmacist has advised it's suitable | An orodispersible tablet | A liquid | A soluble tablet | Crushing modified-release tablets can cause dose dumping.
 M2#nursing-u04-17-q2@2: A patient with dementia who lacks capacity keeps spitting out important medicines. Staff suggest hiding them in yoghurt. What must happen first? | A documented best interests decision under capacity law | Nothing, because it is in their interests | The nurse decides alone on each occasion | The family decides alone and tells staff | Covert administration is never allowed | Covert administration needs a formal, lawful process.
+Q: What is the most common route for medicines? | The oral route.
+Q: What should be done before measuring a suspension? | Shake it.
+Q: Why should liquid medicines not be measured with a household spoon? | Spoons are inaccurate; use an oral syringe or medicine pot.
+Q: What risk does dysphagia pose when giving oral medicines? | An increased risk of choking and aspiration.
+Q: Why is crushing tablets potentially unsafe? | Crushing is usually off-label and can be unsafe for modified-release, enteric-coated and cytotoxic medicines.
+Q: Why ask a pharmacist about medicines for people on thickened fluids? | Thickened fluids may change how some medicines work.
+Q: Name two medicines usually taken with food. | NSAIDs and metformin.
+Q: What is covert administration? | Giving medicine disguised in food or drink without the person's knowledge.
+Q: Who is involved in a decision to give medicines covertly? | The prescriber, pharmacist and family or advocate, in a documented, regularly reviewed best interests decision.
+Q: What should a nurse do if a liquid is needed instead of tablets? | Check with the pharmacist and prescriber; a liquid or alternative formulation may be prescribed instead.
 
 ## Topical medication
 S: Topical medicines are applied to the skin or mucous membranes for local or, sometimes, systemic effect. They include creams, ointments, lotions, gels, patches, eye drops, ear drops and nasal sprays.
@@ -528,6 +698,16 @@ Q: What is a fingertip unit? | The amount of cream or ointment squeezed from a t
 Q: Why must people using emollients be warned about naked flames? | Emollient residue on clothing and bedding increases flammability and the risk of serious burns.
 M1#nursing-u04-18-q1@1: Which is correct when applying a new transdermal patch? | Remove the old patch; use a new site; record it | Apply the new patch over the old one | Apply it to broken skin for faster effect | Cover it with a heat pad to help absorption | Cut the patch to reduce the dose without advice | Rotating sites and removing old patches prevents overdose and skin irritation.
 M2#nursing-u04-18-q2@2: A patient using paraffin-based emollients wants to go outside to smoke. What should the nurse advise? | Explain the fire risk of emollient on clothing | Nothing: emollients are never flammable | Smoking is fine once the emollient is dry | Apply more emollient before going out | Only paraffin-free emollients are safe | Both paraffin-based and paraffin-free emollients can build up in fabric and increase fire risk.
+Q: What is an emollient? | A moisturising treatment that softens and protects the skin.
+Q: How should emollients be applied? | Generously, smoothing in the direction of hair growth.
+Q: How should topical corticosteroids be applied? | Thinly as directed, for the shortest time needed.
+Q: What is the risk of overusing topical corticosteroids? | Thinning of the skin.
+Q: Are paraffin-free emollients a fire risk? | Yes; emollients, including paraffin-free ones, soak into fabric and make it flammable.
+Q: Why should each person have their own supply of topical medicine? | To avoid cross-contamination.
+Q: Where should a transdermal patch be applied? | To clean, dry, hairless, intact skin, rotating sites.
+Q: How long should be left between different eye drops? | 5 minutes.
+Q: When different eye preparations are used, which goes first, drops or ointment? | Drops first, then ointment.
+Q: When are most eye drops discarded after opening? | After 28 days, though the product should be checked.
 
 ## Inhaled medication
 S: Inhaled medicines deliver drugs straight to the airways for asthma and COPD. Technique makes the difference between a medicine that works and one that doesn't.
@@ -560,6 +740,16 @@ Q: Why use a spacer with a pMDI? | It improves delivery of the medicine to the l
 Q: Why should people rinse their mouth after an inhaled corticosteroid? | To reduce the risk of oral thrush and hoarseness.
 M1#nursing-u04-19-q1@1: Which device needs a quick, deep inhalation? | A dry powder inhaler | A pMDI | A pMDI with spacer | A nebuliser | A soft mist inhaler | DPIs need a fast, forceful breath to disperse the powder.
 M2#nursing-u04-19-q2@2: A patient says they use their blue inhaler several times a day and still wake at night wheezing. What should the nurse do? | Poor control: check technique; refer for review | Reassure them that this is normal for asthma | Advise using the blue inhaler even more often | Stop the preventer, as it isn't helping | Tell them to avoid all exercise in future | Frequent reliever use and night symptoms indicate poor control.
+Q: Why do inhaled medicines suit asthma and COPD? | They deliver drugs straight to the airways.
+Q: What breathing technique does a pressurised metered-dose inhaler need? | Slow, steady inhalation coordinated with pressing the canister.
+Q: What breathing technique does a dry powder inhaler need? | A quick, deep breath.
+Q: What driving gas is used for nebulisers in people at risk of hypercapnic respiratory failure? | Air, with supplemental oxygen as needed.
+Q: Give an example of a reliever inhaler medicine. | A short-acting beta-2 agonist such as salbutamol.
+Q: Give two examples of inhaled corticosteroid preventers. | Beclometasone and budesonide.
+Q: What is the difference between LABA and LAMA? | Both are long-acting bronchodilators: LABA such as formoterol or salmeterol, LAMA such as tiotropium.
+Q: What does current UK asthma guidance favour at every treatment step? | An inhaled corticosteroid, including combined ICS-formoterol used as an anti-inflammatory reliever in many adults.
+Q: Name three signs of poorly controlled asthma. | Using a reliever more than a few times a week, night waking and reduced activity.
+Q: Which inhalers have a lower carbon footprint? | Dry powder inhalers; pMDIs contain propellants that are potent greenhouse gases.
 
 ## Injectable medication
 S: Injections deliver medicines into the skin (intradermal), fat (subcutaneous) or muscle (intramuscular). Safe practice depends on the right site, needle, technique, asepsis and sharps safety.
@@ -590,6 +780,16 @@ Q: Which IM site avoids the sciatic nerve and is suitable for larger volumes? | 
 Q: Why rotate subcutaneous injection sites? | To prevent lipohypertrophy, which causes unpredictable absorption.
 M1#nursing-u04-20-q1@1: Which regulations require safer sharps in healthcare in Great Britain? | The Health and Safety (Sharp Instruments in Healthcare) Regulations 2013 | The Human Medicines Regulations 2012 | The Misuse of Drugs Regulations 2001 | The Data Protection Act 2018 | The Care Act 2014 | The 2013 Regulations implement sharps safety requirements.
 M2#nursing-u04-20-q2@2: A nurse sustains a needlestick injury from a used needle. What should they do first? | Bleed it, wash it, report it at once | Suck the wound to remove any blood | Scrub with alcohol and carry on working | Report it at the end of the week | Ignore it if the patient seems well | Prompt first aid and reporting allows risk assessment and post-exposure prophylaxis if needed.
+Q: Where does an intradermal injection go? | Into the dermis, forming a small bleb.
+Q: Name three sites for subcutaneous injections. | The abdomen, thigh and upper arm.
+Q: Which IM site is used for small volumes such as vaccines? | The deltoid.
+Q: Why is the dorsogluteal site generally avoided? | It risks sciatic nerve injury.
+Q: What is the Z-track technique used for? | Reducing leakage of irritant medicines after IM injection.
+Q: What should a nurse never do with a used needle? | Resheath it; dispose of it at the point of use in a sharps bin.
+Q: What extra detail is documented when a vaccine is given? | The batch number, along with medicine, dose, site and time.
+Q: What decides needle length and gauge? | The site, the person's size and the medicine.
+Q: Which route are insulin and low molecular weight heparin given by? | Subcutaneously; giving them IM changes their absorption and effect.
+Q: What should be done after a sharps injury? | Report it immediately and follow the local exposure procedure.
 
 ## Intravenous medication principles
 S: Intravenous (IV) medicines act immediately and can't be retrieved once given, so IV administration carries high risk. Nurses give IV medicines only after specific training and competence assessment, following local policy.
@@ -632,6 +832,16 @@ Q: What is the formula for an infusion rate in mL per hour? | Volume (mL) divide
 M1#nursing-u04-21-q1@1: A prescription is for 500 mL over 4 hours via a pump. What is the rate? (Illustrative calculation.) | 125 mL/hour | 100 mL/hour | 200 mL/hour | 250 mL/hour | 50 mL/hour | Rate = volume ÷ time: 500 mL ÷ 4 hours = 125 mL per hour. In practice, the pump setting is checked against the prescription by a second person where policy requires.
 M2#nursing-u04-21-q2@2: During an infusion, the cannula site becomes swollen, cool and painful. What should the nurse do first? | Stop the infusion and assess the site | Increase the rate to finish it quickly | Flush the cannula forcefully to clear it | Apply heat to the area and continue | Ignore it until the infusion has ended | Swelling and pain suggest infiltration; stopping prevents further harm.
 M2#nursing-u04-21-q3@1: 1,000 mL is to be given over 8 hours by pump. What is the rate? | 125 mL/hour | 80 mL/hour | 250 mL/hour | 8 mL/hour | Rate = volume ÷ time = 1,000 ÷ 8 = 125 mL per hour.
+Q: Why does IV administration carry high risk? | IV medicines act immediately and can't be retrieved once given.
+Q: What is an IV bolus? | A dose given directly into a vein over a short time, often 3–5 minutes or as specified.
+Q: What is an intermittent infusion? | An infusion given over a set period at intervals, for example an antibiotic over 30 minutes.
+Q: What resource helps check IV compatibility, dilution and rate? | The local injectable medicines guide, such as the Medusa guide.
+Q: What does the VIP score monitor? | Peripheral cannulas, for signs of phlebitis.
+Q: Why should high-risk infusions use a volumetric pump? | Pumps with dose error reduction software are safer; never rely on gravity for high-risk infusions.
+Q: What is speed shock? | A reaction caused by giving an IV bolus too quickly.
+Q: What is the formula for drops per minute on a gravity set? | Volume (mL) × drop factor (drops/mL) ÷ time (minutes).
+Q: What should a nurse do on suspecting extravasation? | Stop the infusion and follow the local protocol.
+Q: Name four complications of IV therapy. | Phlebitis, infiltration, extravasation, infection, speed shock, fluid overload, air embolism and anaphylaxis (any four).
 
 ## Controlled drugs
 S: Controlled drugs (CDs) are medicines with potential for misuse and harm, controlled under the Misuse of Drugs Act 1971 and its regulations. They have strict rules on prescribing, storage, recording, administration and destruction.
@@ -662,6 +872,16 @@ Q: Give three examples of Schedule 2 controlled drugs. | Morphine, diamorphine, 
 Q: What must a CD register entry include? | Date, time, patient name, drug, dose given, signatures of the administering and witnessing professionals, and the running balance, in ink.
 M1#nursing-u04-22-q1@1: Who normally holds the CD keys on a hospital ward? | The registered nurse in charge (or delegated registrant) | Any healthcare support worker | The ward clerk | The patient's family | The porter | CD keys are held by a registered professional, as policy specifies.
 M2#nursing-u04-22-q2@2: During a CD check, two ampoules of morphine are missing compared with the register. What should the nurse do? | Recount with a witness and report it now | Adjust the balance so that it matches | Wait until the next scheduled CD check | Borrow stock from another ward to cover it | Ignore it if the amount is small | Discrepancies must be investigated and reported without delay.
+Q: What is a controlled drug? | A medicine with potential for misuse and harm, controlled under misuse of drugs legislation.
+Q: What characterises Schedule 1 controlled drugs? | They have no recognised medicinal use, such as LSD, and need a research licence.
+Q: Give three examples of Schedule 3 controlled drugs. | Buprenorphine, midazolam, temazepam, gabapentin, pregabalin and tramadol (any three).
+Q: Which schedule do most benzodiazepines belong to? | Schedule 4, with lighter controls.
+Q: What is in Schedule 5? | Low-strength preparations, such as some codeine products.
+Q: How must entries in a CD register be made? | In ink, in chronological order, with no alterations or crossings out; errors are corrected by annotation.
+Q: Who usually witnesses the giving of a Schedule 2 controlled drug? | A second registered professional, alongside the administering registrant, as local policy requires.
+Q: Who must witness the destruction of unwanted controlled drug stock? | An authorised person.
+Q: What is a Controlled Drugs Accountable Officer? | The person in an organisation responsible for governance of controlled drugs.
+Q: What are the consequences if a nurse diverts controlled drugs? | It is a criminal offence and an NMC fitness to practise matter.
 
 ## Antimicrobials
 S: Antimicrobials (antibiotics, antivirals, antifungals and antiparasitic drugs) treat infections. Using them correctly saves lives; using them poorly causes harm and antimicrobial resistance.
@@ -694,6 +914,16 @@ Q: What does "Start Smart then Focus" involve? | Starting appropriate antimicrob
 Q: Which antibiotic group needs blood level monitoring because of a narrow therapeutic index? | Aminoglycosides (such as gentamicin); glycopeptides such as vancomycin are also monitored.
 M1#nursing-u04-23-q1@1: Which infection risk increases with broad-spectrum antibiotics? | Clostridioides difficile infection | Influenza | Pneumothorax | Hypoglycaemia | Gout | Antibiotics disrupt gut flora, allowing C. difficile to flourish.
 M2#nursing-u04-23-q2@2: A patient on IV antibiotics for 3 days is now eating, has normal observations and is improving. What should the nurse prompt? | A review: switch to oral, change or stop | Continuing IV antibiotics indefinitely | Stopping the antibiotic without any review | Doubling the dose to clear the infection | Adding a second antibiotic for cover | Review at 48–72 hours is a stewardship principle.
+Q: What is an antimicrobial? | A medicine that kills or inhibits microorganisms, including antibiotics, antivirals, antifungals and antiparasitic drugs.
+Q: What is a broad-spectrum antibiotic? | An antibiotic active against many types of bacteria.
+Q: What is the commonest reported drug allergy? | Penicillin allergy.
+Q: Name two safety concerns with macrolides. | Interactions and QT prolongation.
+Q: How should doxycycline be taken? | With water, while upright; avoid it in pregnancy and young children.
+Q: Why is quinolone use restricted? | Because of rare serious effects, including tendon damage.
+Q: Name two antibiotics commonly used for urinary tract infections. | Nitrofurantoin and trimethoprim.
+Q: Should antibiotics be delayed to take cultures in sepsis? | No; take cultures first where possible, but don't delay treatment in sepsis.
+Q: Why must antimicrobial doses be given on time? | Missed or late doses reduce effectiveness.
+Q: What should an antimicrobial prescription always include? | An indication and a duration or review date.
 
 ## Analgesics
 S: Analgesics relieve pain. Choosing the right one, at the right dose and time, and monitoring for effect and harm, are central nursing roles.
@@ -724,6 +954,16 @@ Q: Name four common side effects of opioids. | Nausea and vomiting, constipation
 Q: What reverses opioid toxicity? | Naloxone, which may need repeating because it is shorter-acting than many opioids.
 M1#nursing-u04-24-q1@1: Which is a major risk of NSAIDs? | Gastrointestinal bleeding | Hypoglycaemia | Hair loss | Hearing improvement | Weight gain | NSAIDs inhibit protective prostaglandins in the stomach.
 M2#nursing-u04-24-q2@2: A patient on regular paracetamol asks for a "cold and flu" sachet. What should the nurse check? | Whether it contains paracetamol | Nothing; it's a GSL product | Only the flavour of the medicine | Whether the patient likes the taste | Whether it's best taken with alcohol | Many over-the-counter remedies contain paracetamol.
+Q: What is paracetamol used for? | Mild to moderate pain and fever.
+Q: Who may need a lower maximum daily dose of paracetamol? | People with low body weight, liver disease or other risk factors.
+Q: Name four risks of NSAIDs. | Gastrointestinal bleeding, kidney injury, cardiovascular events and worsening asthma in some people.
+Q: How should NSAIDs be used to reduce harm? | At the lowest effective dose for the shortest time, considering gastroprotection.
+Q: Name two weak and two strong opioids. | Weak: codeine and dihydrocodeine; strong: morphine, oxycodone, fentanyl, diamorphine or buprenorphine.
+Q: What should be prescribed alongside regular opioids? | A laxative, to prevent constipation.
+Q: Why must immediate-release and modified-release opioids not be confused? | Confusing them is a recognised cause of serious harm.
+Q: Name two medicines used for neuropathic pain. | Amitriptyline, duloxetine, gabapentin and pregabalin (any two).
+Q: Which is the earlier warning of opioid toxicity, rising sedation or falling respiratory rate? | Increasing sedation is an earlier warning than a falling respiratory rate.
+Q: Name two non-drug approaches to pain relief. | Positioning, heat, cold and distraction (any two).
 
 ## Cardiovascular medicines
 S: Cardiovascular medicines treat hypertension, heart failure, angina, arrhythmias and high cholesterol, and prevent heart attacks and strokes. Many need monitoring of pulse, blood pressure, kidney function or electrolytes.
@@ -752,6 +992,16 @@ Q: Name two side effects of ACE inhibitors. | Dry cough, hyperkalaemia, kidney i
 Q: Name three signs of digoxin toxicity. | Nausea or vomiting, visual disturbance (yellow-green vision), confusion, bradycardia or arrhythmias (any three).
 M1#nursing-u04-25-q1@1: Which medicine group commonly causes a persistent dry cough? | ACE inhibitors | ARBs | Statins | Calcium channel blockers | Loop diuretics | ACE inhibitors increase bradykinin, causing cough in some people.
 M2#nursing-u04-25-q2@2: Before giving bisoprolol, the nurse finds the pulse is 46 and the patient feels dizzy. What should the nurse do? | Withhold, assess and inform the prescriber | Give the dose exactly as prescribed | Give half the dose as a compromise | Give it and recheck the pulse tomorrow | Ask the patient to walk around first | Bradycardia with symptoms is a reason to withhold a beta-blocker and seek review.
+Q: What is an ACE inhibitor? | A drug that blocks angiotensin-converting enzyme, lowering blood pressure and protecting the heart and kidneys.
+Q: How do ARBs differ from ACE inhibitors? | They have similar effects but without the dry cough.
+Q: Why should beta-blockers not be stopped abruptly? | The lesson warns against abrupt stopping; they slow the heart and lower blood pressure, so changes need prescriber review.
+Q: Name two side effects of calcium channel blockers such as amlodipine. | Ankle swelling and flushing.
+Q: Which calcium channel blockers also slow the heart? | Verapamil and diltiazem.
+Q: What should be monitored in people on diuretics? | Fluid balance, weight, potassium and sodium.
+Q: What should a person on a statin report? | Unexplained muscle pain.
+Q: Which drugs are nitrates contraindicated with? | Sildenafil-type drugs.
+Q: What raises the risk of digoxin toxicity? | Low potassium.
+Q: What monitoring is used in heart failure? | Daily weights, fluid balance, pulse and blood pressure, and urea and electrolytes.
 
 ## Respiratory medicines
 S: Respiratory medicines treat asthma, COPD and other lung conditions, mostly by opening the airways, reducing inflammation, or treating infection. Oxygen is also a medicine and must be prescribed.
@@ -783,6 +1033,16 @@ Q: Why should a LABA never be used alone in asthma? | Using a LABA without an in
 Q: What are the target saturation ranges in BTS guidance? | 94–98% for most acutely ill adults; 88–92% for those at risk of hypercapnic respiratory failure.
 M1#nursing-u04-26-q1@1: Which side effect is common with high-dose salbutamol? | Tremor and tachycardia | Bradycardia | Constipation | Hair loss | Weight gain | Beta-2 stimulation causes tremor and a fast heart rate.
 M3#nursing-u04-26-q2@2: A patient with COPD at risk of hypercapnic respiratory failure has SpO2 97% on 4 L/min oxygen and is becoming drowsy. What should the nurse do? | Reduce oxygen to target and escalate urgently | Increase the oxygen further to be safe | Leave the oxygen, as saturation is good | Remove the oxygen completely right away | Give a sedative to calm the breathing | Over-oxygenation can worsen hypercapnia in at-risk patients.
+Q: What is a bronchodilator? | A medicine that relaxes airway smooth muscle.
+Q: Name two side effects of antimuscarinic inhalers. | Dry mouth and urinary retention.
+Q: Why are theophylline and aminophylline levels monitored? | They have a narrow therapeutic index and many interactions.
+Q: Name three side effects of oral corticosteroids. | Raised blood glucose, mood changes and, with longer courses, adrenal suppression.
+Q: What warning applies to montelukast? | A warning about neuropsychiatric reactions.
+Q: Does oxygen need a prescription? | Yes; oxygen is a medicine and must be prescribed to a target saturation.
+Q: How is the oxygen delivery device chosen? | To meet the prescribed target saturation, then monitored, adjusted and documented.
+Q: Why is oxygen a safety hazard? | It is a fire risk, so no smoking or naked flames near it.
+Q: Name four treatments for an acute respiratory exacerbation. | Nebulised bronchodilators, oxygen to target, oral or IV steroids and antibiotics if infection is suspected.
+Q: Is oxygen prescribed as a fixed number of litres? | No, it is prescribed to a target saturation range.
 
 ## Endocrine medicines
 S: Endocrine medicines replace or modify hormones. Many are taken long term and need careful timing, monitoring and education, and some must never be stopped suddenly.
@@ -813,6 +1073,16 @@ Q: When should levothyroxine be taken? | On an empty stomach, usually 30–60 mi
 Q: Why should a person on carbimazole report a sore throat? | It may signal agranulocytosis, a rare but serious fall in white blood cells.
 M1#nursing-u04-27-q1@1: Which is a common side effect of long-term corticosteroids? | Raised blood glucose | Low blood pressure | Hair growth only | Weight loss | Improved bone density | Steroids raise blood glucose and have many other effects.
 M3#nursing-u04-27-q2@2: A patient on long-term prednisolone is nil by mouth before surgery, and their morning dose has been omitted. What should the nurse do? | Inform the prescriber so steroid cover is given | Leave it until they're eating again | Give double the dose tomorrow instead | Give it orally despite being nil by mouth | Do nothing, as one missed dose is safe | Steroid-dependent patients need cover when they can't take oral doses.
+Q: What is adrenal crisis? | A life-threatening state of acute cortisol deficiency.
+Q: What is a steroid emergency card? | A card identifying people at risk of adrenal crisis.
+Q: How is levothyroxine dosing adjusted? | By thyroid function tests.
+Q: What is carbimazole used for? | Hyperthyroidism.
+Q: Why do long-term corticosteroids need care when stopping? | Long-term use suppresses the body's own cortisol, so stopping suddenly is dangerous.
+Q: What are steroid sick day rules? | Taking extra steroid doses during illness, as advised.
+Q: Name four side effects of corticosteroids. | Raised blood glucose, infection risk, osteoporosis, mood changes, weight gain and thin skin (any four).
+Q: What risk is shared by HRT and hormonal contraception? | Venous thromboembolism, plus interactions with enzyme inducers.
+Q: What are the signs of adrenal crisis? | Severe weakness, vomiting, low blood pressure and confusion.
+Q: How is adrenal crisis treated? | As an emergency with parenteral hydrocortisone.
 
 ## Gastrointestinal medicines
 S: Gastrointestinal medicines treat acid-related disease, nausea and vomiting, constipation, diarrhoea and inflammatory bowel disease. Many are used every day on wards, and each has its own safety points.
@@ -846,6 +1116,16 @@ Q: Name the four main types of laxative. | Bulk-forming, osmotic, stimulant and 
 Q: Why is metoclopramide limited in dose and duration? | Because of the risk of extrapyramidal side effects such as acute dystonia and tardive dyskinesia.
 M1#nursing-u04-28-q1@1: Which antiemetic can prolong the QT interval? | Ondansetron | Cyclizine | Senna | Lactulose | Omeprazole | Ondansetron is associated with QT prolongation.
 M3#nursing-u04-28-q2@2: A patient with new watery diarrhoea who has recently had antibiotics asks for loperamide. What should the nurse do? | Withhold loperamide, isolate and send a sample | Give the loperamide as the patient requested | Give a laxative to clear the bowel | Restrict all fluids to reduce the diarrhoea | Ignore it as a common antibiotic side effect | Loperamide can be dangerous in infective diarrhoea, especially C. difficile.
+Q: What is a proton pump inhibitor? | A drug that reduces stomach acid by blocking the proton pump, for example omeprazole.
+Q: Name three risks of long-term PPI use. | C. difficile infection, low magnesium and fractures.
+Q: Why should antacids be timed carefully with other medicines? | They interact with the absorption of other medicines.
+Q: Name two side effects of cyclizine. | Drowsiness and dry mouth.
+Q: How long is metoclopramide usually limited to? | Up to 5 days.
+Q: In which two conditions should metoclopramide be avoided? | Parkinson's disease and bowel obstruction.
+Q: Which antiemetics are often used in palliative care? | Haloperidol and levomepromazine.
+Q: What do bulk-forming laxatives such as ispaghula need? | Good fluid intake.
+Q: Which laxative type is useful with opioids? | Stimulant laxatives such as senna or bisacodyl.
+Q: What should a nurse do if a patient has signs of bowel obstruction and is prescribed a laxative? | Withhold the laxative and report to the prescriber.
 
 ## Neurological and psychiatric medicines
 S: Medicines for epilepsy, Parkinson's disease, dementia, depression, psychosis, bipolar disorder and anxiety are often long term and some have serious risks. Timing, monitoring and safety warnings are especially important.
@@ -881,6 +1161,16 @@ Q: Why are Parkinson's medicines time-critical? | Late or missed doses can cause
 Q: Name three signs of lithium toxicity. | Vomiting or diarrhoea, coarse tremor, confusion, ataxia, drowsiness (any three).
 M1#nursing-u04-29-q1@1: Which medicine requires regular blood monitoring for neutropenia? | Clozapine | Sertraline | Levetiracetam | Co-careldopa | Lorazepam | Clozapine can cause agranulocytosis (a dangerous fall in neutrophils), so regular full blood counts are required under a monitoring scheme.
 M3#nursing-u04-29-q2@2: A patient on lithium has had vomiting and diarrhoea for two days and now has a coarse tremor and confusion. What should the nurse do? | Possible lithium toxicity: withhold and escalate | Give the next dose as normal and observe | Encourage a large meal to settle the stomach | Add an NSAID to help with the discomfort | Wait for the routine level next month | Dehydration raises lithium levels; toxicity is an emergency.
+Q: Why must antiepileptic doses never be omitted or delayed? | Seizures can result.
+Q: For which antiepileptics does brand consistency matter? | Carbamazepine and phenytoin.
+Q: What is the risk of sodium valproate in pregnancy? | Birth defects and developmental disorders; a pregnancy prevention programme applies.
+Q: Name two side effects of SSRIs. | Nausea, hyponatraemia in older people, bleeding risk with NSAIDs or anticoagulants and serotonin syndrome (any two).
+Q: What should be monitored when starting antidepressants? | Worsening mood or suicidal thoughts, especially in young people.
+Q: Name three side effects of antipsychotics. | Extrapyramidal symptoms, weight gain, diabetes, QT prolongation and sedation (any three).
+Q: Which side effect of clozapine can be life-threatening besides neutropenia? | Constipation.
+Q: What are the signs of neuroleptic malignant syndrome? | Fever, rigidity, confusion and autonomic instability; it is an emergency.
+Q: What increases the risk of lithium toxicity? | Dehydration, NSAIDs, ACE inhibitors and diuretics.
+Q: Name three risks of benzodiazepines and Z-drugs. | Sedation, falls, respiratory depression with opioids, dependence and withdrawal (any three).
 
 ## Anticoagulants
 S: Anticoagulants reduce blood clotting to prevent and treat venous thromboembolism and to prevent stroke in atrial fibrillation. They are high-risk medicines: too much causes bleeding, too little causes clots.
@@ -908,6 +1198,16 @@ Q: Which blood test guides warfarin dosing? | The INR (international normalised 
 Q: Name four DOACs. | Apixaban, rivaroxaban, edoxaban and dabigatran.
 M1#nursing-u04-30-q1@1: Which food can reduce warfarin's effect if intake changes markedly? | Leafy green vegetables high in vitamin K | Bread | Rice | Chicken | Apples | Warfarin works by blocking vitamin K-dependent clotting factors, so a big change in vitamin K intake (for example, leafy greens) changes the INR.
 M3#nursing-u04-30-q2@2: A patient on apixaban falls and hits their head. They seem well. What should the nurse do? | Follow the post-fall policy, given bleeding risk | Help them back to bed and carry on as usual | Give their next apixaban dose a little early | Give vitamin K without any medical review | Document the fall only and take no action | Anticoagulated patients with head injuries need urgent assessment.
+Q: What are anticoagulants used for? | To prevent and treat venous thromboembolism and to prevent stroke in atrial fibrillation.
+Q: Why are anticoagulants high-risk medicines? | Too much causes bleeding and too little causes clots.
+Q: What type of drug is warfarin? | A vitamin K antagonist.
+Q: How is warfarin reversed? | With vitamin K and, in serious bleeding, prothrombin complex concentrate, as directed.
+Q: What are DOAC doses adjusted for? | Kidney function, age and weight.
+Q: How do DOACs compare with warfarin for interactions? | DOACs have fewer interactions.
+Q: How are low molecular weight heparins given and dosed? | Subcutaneously, dosed by weight and kidney function.
+Q: What is a rare risk of heparin? | Heparin-induced thrombocytopenia.
+Q: What should a person starting an anticoagulant be given? | An anticoagulant alert card and information booklet, and teaching on signs of bleeding.
+Q: Name four signs of bleeding in someone on an anticoagulant. | Bruising, blood in urine or stools, black stools, nosebleeds, bleeding gums, vomiting blood, severe headache and confusion after a fall (any four).
 
 ## Insulin and diabetes medicines
 S: Diabetes medicines lower blood glucose. Insulin is a high-alert medicine: errors in type, dose, timing or abbreviation can cause severe hypoglycaemia or diabetic ketoacidosis.
@@ -940,6 +1240,16 @@ Q: What blood glucose level defines hypoglycaemia in people with diabetes? | Bel
 Q: Why must long-acting insulin not be omitted in type 1 diabetes? | Without basal insulin, diabetic ketoacidosis can develop within hours.
 M1#nursing-u04-31-q1@1: Why must "units" be written in full on a prescription? | "U" or "IU" can be misread as a zero or a 10, causing a tenfold overdose | It's quicker to read | Pharmacists prefer it | It's a legal requirement for all drugs | So the patient knows the brand | Abbreviation of units is a recognised cause of serious insulin errors.
 M2#nursing-u04-31-q2@2: A patient with type 2 diabetes on gliclazide is sweaty and confused; capillary glucose is 3.1 mmol/L. They can swallow. What should the nurse do first? | Give 15–20 g fast-acting carbohydrate and recheck | Give their next gliclazide dose now | Give a dose of insulin straight away | Wait an hour and recheck the glucose | Give a low-sugar drink and leave them | Prompt treatment of hypoglycaemia is essential.
+Q: Why is insulin called a high-alert medicine? | Errors in type, dose, timing or abbreviation can cause severe hypoglycaemia or diabetic ketoacidosis.
+Q: What is basal insulin? | Long-acting insulin that provides background cover.
+Q: Give two examples of rapid-acting insulin. | Insulin aspart and lispro.
+Q: Give two examples of long-acting insulin. | Glargine, detemir and degludec (any two).
+Q: Why should insulin never be drawn from a pen into a standard syringe? | Only insulin pens or insulin syringes should be used for insulin, to avoid dosing errors.
+Q: When should metformin be paused? | In acute kidney injury, dehydration and before some contrast procedures, as advised.
+Q: What is the main risk with sulphonylureas such as gliclazide? | Hypoglycaemia.
+Q: What is a particular risk of SGLT2 inhibitors? | Diabetic ketoacidosis, even with near-normal glucose.
+Q: Name four signs of hypoglycaemia. | Sweating, shaking, hunger, confusion, behaviour change, drowsiness and seizures (any four).
+Q: How is hypoglycaemia treated in a conscious person who can swallow? | 15–20 g fast-acting carbohydrate, recheck after 10–15 minutes, repeat if still low, then give longer-acting carbohydrate.
 
 ## Polypharmacy
 S: Polypharmacy is the use of multiple medicines. It is often appropriate, but "problematic polypharmacy" (medicines whose harms outweigh benefits, or that no longer help) increases adverse effects, falls, confusion, hospital admission and treatment burden.
@@ -970,6 +1280,16 @@ Q: What is a prescribing cascade? | When a side effect of one medicine is mistak
 Q: What do STOPP/START criteria help with? | Identifying potentially inappropriate medicines (STOPP) and potentially beneficial omitted medicines (START) in older people.
 M1#nursing-u04-32-q1@1: Which is most likely to be a sign of problematic polypharmacy in an older person? | New falls and confusion after medicine changes | Improved mobility | Stable blood pressure | Better sleep with no side effects | Weight gain from improved appetite | Falls and confusion often relate to medicines.
 M2#nursing-u04-32-q2@2: A patient on 14 medicines says they don't know why they take half of them and feel dizzy. What should the nurse do? | Request a medication review and record the dizziness | Tell them to stop the ones they don't understand | Reassure them that dizziness is normal at their age | Add another medicine to treat the dizziness | Do nothing until they are discharged home | A review can identify medicines to stop or change safely.
+Q: What is polypharmacy? | The use of multiple medicines.
+Q: What is problematic polypharmacy? | Multiple medicines whose harms outweigh benefits or that no longer help.
+Q: Name three harms of problematic polypharmacy. | Adverse effects, falls, confusion, hospital admission and treatment burden (any three).
+Q: Give an example of a prescribing cascade. | Ankle swelling from amlodipine being treated with a diuretic.
+Q: What is deprescribing? | The planned, supervised reduction or stopping of medicines that are no longer appropriate, with monitoring.
+Q: What does a structured medication review cover? | What matters to the person, what each medicine is for, and whether it is still needed.
+Q: Name a tool that measures the anticholinergic load of medicines. | The anticholinergic burden scale.
+Q: Name three reasons polypharmacy happens. | Multiple long-term conditions, prescribing cascades, short-term medicines never stopped and care across many prescribers.
+Q: Which possible adverse effects should a nurse link to medicines? | Falls, confusion, constipation and low blood pressure.
+Q: What should happen if nobody knows why a medicine was started? | Ask for a medication review; every medicine should have a current reason.
 
 ## Medicines safety
 S: Medicines safety is about designing systems and habits that prevent medication harm. Most errors are caused by system weaknesses, not careless individuals, though everyone has a role.
@@ -1006,6 +1326,16 @@ Q: What is tall-man lettering? | Using capital letters to highlight differences 
 M1#nursing-u04-33-q1@1: Which design feature prevents oral liquids being given intravenously? | Oral or enteral syringes that can't connect to IV devices | Coloured labels only | Smaller bottles | Larger print on the chart | Separate drug rounds | Physical barriers prevent wrong-route connection.
 M2#nursing-u04-33-q2@2: A nurse notices two look-alike vials of different strengths stored next to each other. What should they do? | Separate them now and report the risk | Leave them, as staff should read labels | Swap the labels round on the shelf | Remove one vial without telling anyone | Mention it at next month's team meeting | Reporting near misses and risks prevents future errors.
 M2#nursing-u04-33-q3@1: How many micrograms are in 0.5 mg? | 500 micrograms | 50 micrograms | 5 micrograms | 5,000 micrograms | 1 mg = 1,000 micrograms, so 0.5 mg = 500 micrograms.
+Q: What is a high-alert medicine? | A medicine with a heightened risk of significant harm when used in error.
+Q: What is a never event? | A serious, largely preventable incident that shouldn't occur if safeguards are in place.
+Q: Name three extra safeguards for high-alert medicines. | Independent double checks, standard concentrations, restricted storage and dose error reduction software (any three).
+Q: Give two examples of never events involving medicines. | Wrong-route administration, insulin overdose from abbreviations or wrong device, mis-selection of strong potassium and methotrexate overdose (any two).
+Q: Why do most medication errors happen? | Because of system weaknesses, not careless individuals, though everyone has a role.
+Q: Name three system barriers against medication errors. | Electronic prescribing, barcode scanning, tall-man lettering, non-IV oral syringes, separate storage and fewer interruptions (any three).
+Q: What is the WHO's Medication Without Harm challenge? | A global initiative promoting open reporting, learning and a just culture to reduce medication harm.
+Q: What is a just culture? | A culture where people can speak up about risks without fear.
+Q: What should a nurse do if something feels wrong about a medicine? | Stop and check; speaking up is a safety barrier.
+Q: Give an example of a wrong-route never event. | IV administration of an oral liquid, or intrathecal vincristine.
 
 ## Medication errors
 S: A medication error is any preventable event that may cause or lead to inappropriate medicine use or harm. Errors can occur in prescribing, dispensing, preparing, administering or monitoring. How you respond matters as much as preventing them.
@@ -1038,6 +1368,16 @@ Q: What is the first thing to do after discovering a medication error? | Make su
 Q: Why should near misses be reported? | They reveal system weaknesses so they can be fixed before harm occurs.
 M1#nursing-u04-34-q1@1: Which is a near miss? | A wrong dose noticed and corrected before it is given | A medicine given to the wrong person | An omitted dose | A medicine given by the wrong route | An allergic reaction to a correctly given medicine | A near miss is caught before reaching the person.
 M3#nursing-u04-34-q2@2: A nurse realises they gave a patient's 10 mg dose of a medicine as 100 mg an hour ago. What should they do first? | Assess the patient, get help, then inform | Document it at the end of the shift | Wait to see whether the patient is affected | Give another drug to counteract it | Change the chart to read 100 mg | Patient safety comes first; immediate escalation allows treatment.
+Q: What is a medication error? | Any preventable event that may cause or lead to inappropriate medicine use or harm.
+Q: At which stages can medication errors happen? | Prescribing, dispensing, preparing, administering and monitoring.
+Q: What is a near miss? | An error caught before it reaches the person.
+Q: After a medication error, who should be told immediately? | The nurse in charge and the prescriber.
+Q: What does the duty of candour require after a medication error? | Being open with the person: explaining what happened and apologising.
+Q: Where are patient safety incidents reported in England? | Through the local system, such as the national Learn from Patient Safety Events service.
+Q: Which framework guides systems-focused review of incidents in England? | The Patient Safety Incident Response Framework.
+Q: Which contributing factors can a systems review identify? | Staffing, interruptions, packaging and design.
+Q: According to the NMC, which is more serious: making an error or concealing one? | Concealing an error is far more serious professionally than making one.
+Q: What support may follow repeated medication errors? | Supervised practice and support to rebuild competence.
 
 ## Patient education
 S: Educating people about their medicines helps them take them safely and effectively, recognise side effects and make informed choices. Around half of people with long-term conditions don't take medicines as prescribed, often for understandable reasons.
@@ -1073,6 +1413,16 @@ Q: What is teach-back? | Asking the person to explain information in their own w
 Q: Name three reasons people may not take medicines as prescribed. | Side effects, beliefs about the medicine, complexity, forgetting, cost, poor understanding (any three).
 M1#nursing-u04-35-q1@1: Which is the best way to check understanding of new inhaler instructions? | Ask the person to show and explain how they'll use it | Ask "Do you understand?" | Give a leaflet only | Explain twice as quickly | Ask a relative only | Demonstration and teach-back confirm understanding.
 M2#nursing-u04-35-q2@2: A patient says they stopped their statin because of muscle aches. What is the best response? | Acknowledge it and arrange a prescriber review | Tell them to restart without any discussion | Tell them that muscle aches are normal | Report them to the GP for non-adherence | Ignore it, as statins are always safe | Side effects are a valid reason to review the medicine.
+Q: What is adherence? | The extent to which a person takes medicines as agreed.
+Q: Roughly how many people with long-term conditions don't take medicines as prescribed? | Around half.
+Q: Name four topics to cover when teaching someone about a medicine. | Its purpose, how and when to take it, side effects, interactions, duration, missed doses, monitoring and where to get help (any four).
+Q: What should a nurse do with a question about a medicine they can't answer? | Refer it to the prescriber or pharmacist rather than guessing.
+Q: How should information be delivered when teaching about medicines? | In plain language, in small chunks, with accessible written information.
+Q: What should be used when a person needs language support? | Professional interpreters.
+Q: When can carers be involved in medicines education? | With the person's consent.
+Q: What should a nurse do if a person makes an informed choice not to take a medicine? | Respect it and support shared decision-making.
+Q: Name two pharmacy services or aids that support adherence. | Reminders, linking doses to routines, simplified regimens and the new medicine service (any two).
+Q: What should a nurse assess before teaching about a medicine? | What the person already knows and what matters to them.
 
 ## Medicines optimisation
 S: Medicines optimisation is a person-centred approach to safe and effective medicine use, so that people get the best possible outcomes from their medicines. NICE guidance (NG5) sets out how systems and professionals should achieve this.
@@ -1104,6 +1454,16 @@ Q: What NICE guideline covers medicines optimisation? | NICE NG5, Medicines opti
 Q: Name three activities that support medicines optimisation. | Shared decision-making, medicines reconciliation, structured medication review, monitoring, good discharge communication (any three).
 M1#nursing-u04-36-q1@1: Which activity is central to medicines optimisation at discharge? | Explaining changes and informing GP and pharmacy | Giving a week's supply of medicines only | Removing all medicines at discharge | Telling the person to read the leaflets | Ending all monitoring once home | Good transfer of information prevents post-discharge errors.
 M2#nursing-u04-36-q2@2: A patient's blood pressure tablet was stopped in hospital because of low blood pressure. What must happen at discharge? | The change and its reason are clearly communicated to the patient, GP and community pharmacy | Nothing; the GP will notice | The patient restarts at home | The tablet is added back to the discharge list | Only the patient is told | Unclear communication leads to medicines being restarted in error.
+Q: What is medicines optimisation? | A person-centred approach to safe and effective medicine use, so people get the best outcomes.
+Q: Name the four principles of medicines optimisation. | Understand the person's experience, evidence-based choice, safest possible use, and making it routine practice.
+Q: Is medicines optimisation about using fewer medicines? | No; it's about the right medicines for this person now.
+Q: What is a structured medication review? | A clinical review of a person's medicines with them.
+Q: Why does discharge matter for medicines safety? | A large share of medication problems happen after discharge.
+Q: What should a person understand at discharge? | Any medicine changes, that they have a supply, and who to contact.
+Q: Who should receive accurate medicines information at discharge? | The GP and community pharmacy.
+Q: What is a hospital self-administration scheme? | A scheme letting people manage their own medicines in hospital where safe.
+Q: What referral can support people after discharge? | Referral for community pharmacy follow-up, such as discharge medicines services.
+Q: Name four activities within medicines optimisation in practice. | Shared decision-making, reconciliation, structured reviews, discharge communication, self-administration and monitoring (any four).
 
 ## Antimicrobial stewardship
 S: Antimicrobial stewardship is a coordinated approach to using antimicrobials responsibly, so they stay effective. Antimicrobial resistance is one of the greatest threats to health worldwide, and nurses play a key part in stewardship.
@@ -1134,4 +1494,14 @@ Q: What is antimicrobial stewardship? | A coordinated approach to promoting the 
 Q: Name three ways nurses contribute to antimicrobial stewardship. | Infection prevention, timely administration, correct sampling, prompting review at 48–72 hours, clarifying allergy labels, patient education (any three).
 M1#nursing-u04-37-q1@1: How does a wrong penicillin allergy label harm stewardship? | It leads to broader-spectrum or less effective alternatives, increasing resistance and side effects | It has no effect | It reduces C. difficile | It makes penicillin more effective | It only affects the record | Many penicillin allergy labels are inaccurate and drive broader-spectrum use.
 M2#nursing-u04-37-q2@2: A patient with a viral cold asks for antibiotics "to be safe". What is the best response? | Explain antibiotics don't treat viruses; safety-net | Ask the GP to prescribe some antibiotics anyway | Give leftover antibiotics from another patient | Tell them they can buy antibiotics online | Tell them just to come back if they feel worse | Education supports stewardship and patient safety.
+Q: What is antimicrobial resistance? | The ability of microorganisms to survive medicines that once killed them.
+Q: How does inappropriate antimicrobial use cause resistance? | Using the wrong drug, dose or duration, or using them when not needed, selects for resistant organisms.
+Q: Why are resistant infections a problem? | They are harder to treat, more expensive and more deadly.
+Q: Which UK plan sets targets on antimicrobial resistance? | The national action plan for antimicrobial resistance (2024–2029).
+Q: How does infection prevention support stewardship? | Preventing infections reduces the need for antibiotics.
+Q: How should samples be taken in relation to antibiotics? | Take cultures before antibiotics where possible, correctly labelled.
+Q: What question should be asked at 48–72 hours of antimicrobial treatment? | Is it still needed, can it switch to oral, or should it change based on results?
+Q: Why should penicillin allergy labels be clarified? | Wrong labels often lead to broader-spectrum alternatives.
+Q: What resource supports antibiotic prescribing in primary care in England? | The TARGET toolkit.
+Q: How can nurses lead in stewardship? | By becoming Antibiotic Guardians and leading local audits.
 `;

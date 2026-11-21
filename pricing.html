@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Pricing · Gradify</title>
-  <meta name="description" content="Every Gradify course, lesson, lab and quiz is free. Gradify Pro adds generous Gradify AI for £7.99 a month or £63.99 a year.">
+  <meta name="description" content="Every Gradify course, lesson, lab and quiz is free. Gradify Pro organises and manages your learning for £10 a month. Gradify Ultra adds Gradify AI.">
   <meta property="og:title" content="Gradify pricing">
-  <meta property="og:description" content="Learn free. Go further with Gradify Pro.">
+  <meta property="og:description" content="Learn free. Let Gradify Pro organise your learning.">
   <meta name="theme-color" content="#000000">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,6 +25,11 @@
     .notice .ic { flex: none; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font: 700 13px var(--sans); background: rgba(255, 255, 255, .1); }
     .notice.ok { border-color: #5fe3a166; } .notice.ok .ic { background: #5fe3a1; color: #000; }
     .notice.warn { border-color: #ffc00266; } .notice.warn .ic { background: #ffc002; color: #000; }
+    .offer-banner { max-width: 900px; margin: 0 auto 24px; padding: 2px; border-radius: 20px; background: linear-gradient(135deg, #4641ff, #f055dd 35%, #ff5600 70%, #ffc002); }
+    .offer-banner > div { border-radius: 18px; background: #0b0b0e; padding: 20px 22px; display: grid; gap: 6px; }
+    .offer-banner .k { font: 600 12px var(--sans); letter-spacing: 1.5px; text-transform: uppercase; color: #ffc002; }
+    .offer-banner h2 { margin: 0; font-size: 22px; } .offer-banner p { margin: 0; color: var(--mute); line-height: 1.5; }
+    .offer-banner code { font: 700 15px var(--mono, monospace); letter-spacing: 2px; color: #fff; border: 1px dashed #f055dd; border-radius: 8px; padding: 2px 8px; }
 
     .plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; max-width: 1180px; margin: 0 auto; align-items: start; }
     .plan.plus { border: 1px solid transparent; background: linear-gradient(var(--panel-strong), var(--panel-strong)) padding-box, var(--spectrum) border-box; box-shadow: 0 30px 80px -40px rgba(240, 85, 221, .55); }
@@ -68,40 +73,66 @@
     tbody th { font-weight: 500; }
     .faq { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
     .faq details { padding: 16px 18px; border-radius: var(--radius); }
-    .faq summary { cursor: pointer; font-weight: 600; line-height: 1.4; }
+    .faq summary { cursor: pointer; font-weight: 600; line-height: 1.4; padding: 11px 0; }
     .faq details p { color: var(--mute); line-height: 1.55; margin: 10px 0 0; }
     .foot { max-width: 980px; margin: 56px auto 32px; padding-top: 18px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 8px 22px; justify-content: space-between; color: var(--mute); font-size: 14px; }
     .foot a { color: inherit; }
     @media (max-width: 1020px) { .plans { grid-template-columns: 1fr; max-width: 560px; } }
     @media (max-width: 760px) { .faq { grid-template-columns: 1fr; } .plan { padding: 22px; } main { padding-top: 32px; } }
   </style>
-</head>
+
+  <!-- module-preload: written by scripts/preload-modules.mjs; run it after changing imports -->
+  <link rel="modulepreload" href="/kit/core/hubnav.js">
+  <link rel="modulepreload" href="/gradify.config.js">
+  <link rel="modulepreload" href="/kit/data/waitlist.js">
+  <link rel="modulepreload" href="/kit/data/billing.js">
+  <link rel="modulepreload" href="/kit/data/limits.js">
+  <link rel="modulepreload" href="/kit/data/plan.js">
+  <link rel="modulepreload" href="/kit/data/offer.js">
+  <link rel="modulepreload" href="/kit/core/attribution.js">
+  <link rel="modulepreload" href="/kit/core/analytics.js">
+  <link rel="modulepreload" href="/kit/ui/global-nav.js">
+  <link rel="modulepreload" href="/kit/core/menu-set.js">
+  <link rel="modulepreload" href="/kit/data/functions.js">
+  <link rel="modulepreload" href="/kit/ui/store.js">
+  <link rel="modulepreload" href="/kit/ui/icons.js">
+  <link rel="modulepreload" href="/kit/ui/palette.js">
+  <link rel="modulepreload" href="/kit/ui/places.js">
+  <link rel="modulepreload" href="/kit/ui/feedback.js">
+  <link rel="modulepreload" href="/kit/ui/resources.js">
+  <link rel="modulepreload" href="/kit/ui/keys.js">
+  <link rel="modulepreload" href="/kit/core/site.js">
+  <link rel="modulepreload" href="/kit/ui/overlay.js">
+  <link rel="modulepreload" href="/kit/core/sites.js">
+  <link rel="modulepreload" href="/kit/core/colour.js">
+  <link rel="modulepreload" href="/kit/core/subnav.js">
+  <!-- /module-preload --></head>
 <body>
   <div class="aurora" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
   <div class="wrap">
-    <header class="bar glass">
-      <a class="brand" href="/">
-        <svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4641ff"/><stop offset=".35" stop-color="#f055dd"/><stop offset=".7" stop-color="#ff5600"/><stop offset="1" stop-color="#ffc002"/></linearGradient></defs><rect x=".75" y=".75" width="30.5" height="30.5" rx="9" fill="#0b0b0b" stroke="rgba(255,255,255,.22)" stroke-width="1.5"/><path d="M22.9 10.9A8.6 8.6 0 1 0 24.6 16H16.4" fill="none" stroke="url(#gg)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Gradify
-      </a>
-      <nav class="sections" aria-label="Sections">
-        <a href="/#stage">Sites</a>
-        <a href="/#features">Features</a>
-        <a href="/pricing.html" class="active" aria-current="page">Pricing</a>
-      </nav>
+    <!-- hub-header: written by scripts/sync-headers.mjs; edit it there -->
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="bar glass hub-bar">
+      <a class="brand" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4641ff"/><stop offset=".35" stop-color="#f055dd"/><stop offset=".7" stop-color="#ff5600"/><stop offset="1" stop-color="#ffc002"/></linearGradient></defs><rect x=".75" y=".75" width="30.5" height="30.5" rx="9" fill="#0b0b0b" stroke="rgba(255,255,255,.22)" stroke-width="1.5"/><path d="M22.9 10.9A8.6 8.6 0 1 0 24.6 16H16.4" fill="none" stroke="url(#gg)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Gradify</a>
+      <nav class="sections" aria-label="Gradify"><a href="/explore.html">Explore</a><a href="/#find">Sites</a><a href="/journey.html">Journey</a><a href="/pricing.html" class="active" aria-current="page">Pricing</a></nav>
       <div class="right">
-        <a class="link" href="/app.html#/account" id="acct-link">Sign in</a>
-        <a class="btn btn-primary btn-sm lg" href="/app.html">Open Gradify</a>
+        <a class="link hub-signin" href="/app.html#/account">Sign in</a>
+        <a class="btn btn-primary btn-sm lg hub-open" href="/app.html">Open Gradify</a>
+        <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
       </div>
+      <nav class="menu" id="menu" aria-label="Menu" hidden><a href="/explore.html">Explore</a><a href="/#find">Sites</a><a href="/journey.html">Journey</a><a href="/pricing.html" class="active" aria-current="page">Pricing</a><a class="hub-signin" href="/app.html#/account">Sign in</a><a class="btn btn-primary lg hub-open" href="/app.html">Open Gradify</a></nav>
     </header>
+    <script type="module" src="/kit/core/hubnav.js"></script>
+    <!-- /hub-header -->
 
-    <main>
+    <main id="main">
       <div class="hero">
         <span class="badge"><span class="spark"></span> Pricing</span>
         <h1>Learn free.<br><em>Let Gradify run the rest.</em></h1>
-        <p>Free is for learning with Gradify. Gradify Plus organises, optimises and manages your learning. Gradify Pro adds Gradify AI.</p>
+        <p>Free is for learning with Gradify. Gradify Pro organises, optimises and manages your learning. Gradify Ultra adds Gradify AI.</p>
       </div>
 
+      <div id="offer" hidden></div>
       <div id="status" aria-live="polite"></div>
 
       <div class="plans">
@@ -119,7 +150,7 @@
         <article class="plan plus" aria-labelledby="plus-h">
           <div>
             <span class="tag">Gradify organises, optimises and manages your learning</span>
-            <h2 id="plus-h">Gradify Plus <span class="current" id="plus-current" hidden>Your plan</span></h2>
+            <h2 id="plus-h">Gradify Pro <span class="current" id="plus-current" hidden>Your plan</span></h2>
           </div>
           <div class="price"><span class="amt" id="plus-amt"></span><span class="per">a month</span></div>
           <p class="price-note">Everything in Free, plus:</p>
@@ -129,11 +160,11 @@
 
         <article class="plan glass" aria-labelledby="pro-h">
           <div>
-            <span class="tag">Everything in Plus, with Gradify AI</span>
-            <h2 id="pro-h">Gradify Pro <span class="soon" id="pro-soon">Coming soon</span><span class="current" id="pro-current" hidden>Your plan</span></h2>
+            <span class="tag">Everything in Pro, with Gradify AI</span>
+            <h2 id="pro-h">Gradify Ultra <span class="soon" id="pro-soon">Coming soon</span><span class="current" id="pro-current" hidden>Your plan</span></h2>
           </div>
           <div class="price"><span class="amt" id="pro-amt"></span><span class="per">a month</span></div>
-          <p class="price-note">Everything in Plus, plus:</p>
+          <p class="price-note">Everything in Pro, plus:</p>
           <ul id="pro-list"></ul>
           <div class="cta" id="pro-cta"></div>
         </article>
@@ -142,9 +173,9 @@
       <section class="more" aria-labelledby="allow-h">
         <h2 id="allow-h">Gradify AI allowances</h2>
         <p id="allow-lede">Uses a month, once Gradify AI launches. Allowances reset each month and don't roll over. A request that fails doesn't count.</p>
-        <div class="table-wrap">
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Plan comparison, scrolls sideways">
           <table>
-            <thead><tr><th scope="col">Feature</th><th scope="col">Free</th><th scope="col">Gradify Plus</th><th scope="col">Gradify Pro</th></tr></thead>
+            <thead><tr><th scope="col">Feature</th><th scope="col">Free</th><th scope="col">Gradify Pro</th><th scope="col">Gradify Ultra</th></tr></thead>
             <tbody id="allow-rows"></tbody>
           </table>
         </div>
@@ -158,9 +189,18 @@
 
       <div class="foot">
         <span>Prices in pounds sterling (GBP), including VAT.</span>
-        <span><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a> · <a href="/app.html#/account">Account</a> · <a href="/">Gradify</a></span>
       </div>
     </main>
+    <!-- hub-footer: written by scripts/sync-headers.mjs; edit it there -->
+    <footer class="hub-foot glass">
+      <div class="hub-foot-cols">
+        <div class="hub-foot-brand"><b>Gradify™</b><p>Turn your notes into flashcards checked against what you wrote, and revise them at the right time.</p></div>
+        <nav aria-label="Gradify"><b>Gradify</b><a href="/explore.html">Explore</a><a href="/#find">Sites</a><a href="/journey.html">Journey</a><a href="/pricing.html">Pricing</a><a href="/app.html">Open Gradify</a></nav>
+        <nav aria-label="About Gradify"><b>About</b><a href="/quality.html">Quality</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="mailto:hello@getgradify.com">Contact</a></nav>
+      </div>
+      <div class="hub-foot-base"><p><b>Also from the Gradify team:</b> Seren Aitchison (portfolio blog), BioFrontier, Eirova™, Erya™ and Vizeon™.</p><p>© <span class="hub-year">2026</span> Gradify™</p></div>
+    </footer>
+    <!-- /hub-footer -->
   </div>
 
   <script src="/kit/vendor/supabase/supabase.js"></script>
@@ -170,6 +210,9 @@
     import { PLAN_PRICES, PLUS_ON_SALE, PRO_ON_SALE, AI_ALLOWANCES, uses, planOf, describePlan, clientStore, mySubscription, startCheckout, openPortal } from "/kit/data/billing.js";
     import { FREE } from "/kit/data/limits.js";
     import { pounds } from "/kit/data/plan.js";
+    import { OFFER, captureOffer, offerToShow, offerTerms } from "/kit/data/offer.js";
+    import { captureFirstTouch } from "/kit/core/attribution.js";
+    import { trackView } from "/kit/core/analytics.js";
 
     const $ = (s) => document.querySelector(s);
     const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
@@ -178,7 +221,14 @@
     const li = (ic, t, sub) => `<li>${ic}<span>${t}${sub ? `<small>${sub}</small>` : ""}</span></li>`;
     const tester = new URLSearchParams(location.search).has("tester");
     const canBuy = { plus: PLUS_ON_SALE || tester, pro: PRO_ON_SALE || tester };
-    let store = null, sub = null, signedIn = false;
+    let store = null, sub = null, signedIn = false, learner = null;
+    // where this visitor came from (utm_* tags), kept until they make an account (kit/core/attribution.js)
+    captureFirstTouch();
+    // an anonymous page-view count (kit/core/analytics.js): no cookie, no identifier, nothing after ? or #
+    trackView("Gradify");
+    // the Pro launch offer, from the campaign link or kept from an earlier visit (kit/data/offer.js)
+    captureOffer();
+    const offer = () => offerToShow({ plan: planOf(sub), learner, includeDismissed: true });
 
     // ---------- the parts that don't depend on the learner ----------
     $("#plus-amt").textContent = pounds(PLAN_PRICES.plus.month);
@@ -209,10 +259,10 @@
     $("#allow-rows").innerHTML = AI_ALLOWANCES.map((a) => `<tr><th scope="row">${esc(a.label)}</th><td class="n">${a.free}</td><td class="n">${a.free}</td><td class="n">${a.pro}</td></tr>`).join("");
 
     const faq = [
-      ["When am I charged?", `Straight away when you subscribe, then on the same date each month: ${pounds(PLAN_PRICES.plus.month)} a month for Gradify Plus, ${pounds(PLAN_PRICES.pro.month)} a month for Gradify Pro. Your Account page shows the next renewal date.`],
-      ["Can I switch between Plus and Pro?", "Yes, from Manage billing on your Account page, once Gradify Pro opens. Stripe adjusts the price for the time left in your current month."],
+      ["When am I charged?", `Straight away when you subscribe, then on the same date each month: ${pounds(PLAN_PRICES.plus.month)} a month for Gradify Pro, ${pounds(PLAN_PRICES.pro.month)} a month for Gradify Ultra. Your Account page shows the next renewal date.`],
+      ["Can I switch between Pro and Ultra?", "Yes, from Manage billing on your Account page, once Gradify Ultra opens. Stripe adjusts the price for the time left in your current month."],
       ["How do I cancel?", "From Manage billing on your Account page, any time, in two clicks. You keep your plan until the end of the month you've already paid for, then move to Free. Nothing you've made is deleted."],
-      ["What happens when Plus ends?", "You move to Free. Every note, flashcard, mind map and bit of progress stays in your account. You study on one device again, and can choose which; the others can still open everything."],
+      ["What happens when Pro ends?", "You move to Free. Every note, flashcard, mind map and bit of progress stays in your account. You study on one device again, and can choose which; the others can still open everything."],
       ["What if a payment fails?", "Stripe tries your card again over the next few days and emails you. You keep your plan for 3 days after a renewal date while it does. Update your card in Manage billing to keep it going."],
       ["Can I change my mind after subscribing?", "Yes. You can cancel within 14 days of subscribing for a refund. If you've already used your plan in that time, the refund is reduced for the days you used. Ask from Manage billing or email hello@getgradify.com. The terms page has the details."],
       ["Is there a fair-use limit on Gradify AI?", "Yes. As well as the allowances above, each account has a monthly fair-use limit on how much Gradify AI it can use. If you reach it, Gradify AI pauses until your allowance resets; everything else keeps working."],
@@ -226,14 +276,22 @@
 
     const notifyForm = (id, what) => `<form class="notify" data-list="${esc(what)}" novalidate><label for="${id}">Opening soon. Get one email when it does:</label><div class="notify-row"><input id="${id}" type="email" autocomplete="email" placeholder="you@example.com" required><button class="btn btn-primary lg" type="submit">Notify me</button></div><p class="notify-msg" role="status" aria-live="polite">No payment, no account needed. <a href="/privacy.html#launch-lists">What we keep</a>.</p></form>`;
     function ctaFor(plan, current) {
-      const name = plan === "plus" ? "Gradify Plus" : "Gradify Pro";
+      const name = plan === "plus" ? "Gradify Pro" : "Gradify Ultra";
       if (current === plan || (current !== "free" && sub && describePlan(sub).manage)) return `<button class="btn ${plan === "plus" ? "btn-primary" : "btn-ghost"} lg" data-manage type="button">Manage billing</button><p>Change plan, update your card, see invoices or cancel.</p>`;
-      if (current === "pro" && plan === "plus") return `<p>Included in your Gradify Pro.</p>`;
+      if (current === "pro" && plan === "plus") return `<p>Included in your Gradify Ultra.</p>`;
       if (!canBuy[plan]) return notifyForm(`notify-${plan}`, plan === "plus" ? PLUS_LIST : PRO_LIST);
-      if (!signedIn) return `<a class="btn ${plan === "plus" ? "btn-primary" : "btn-ghost"} lg" href="/app.html#/account">Sign in to get ${name}</a><p>Sign in first so ${name} is added to your account.</p>`;
+      const o = plan === "plus" && offer();
+      if (!signedIn) return `<a class="btn ${plan === "plus" ? "btn-primary" : "btn-ghost"} lg" href="/app.html#/account">Sign in to get ${name}</a><p>Sign in first so ${name} is added to your account.${o ? " Your £5 offer stays with you." : ""}</p>`;
+      if (o) return `<button class="btn btn-primary lg" data-buy="plus" data-promo="${OFFER.code}" type="button">Get ${name} · £5 first month</button><p>Code ${OFFER.code} is applied at checkout. Then ${pounds(PLAN_PRICES.plus.month)} a month. Cancel any time.</p>`;
       return `<button class="btn ${plan === "plus" ? "btn-primary" : "btn-ghost"} lg" data-buy="${plan}" type="button">Get ${name} · ${pounds(PLAN_PRICES[plan].month)} a month</button><p>Secure checkout by Stripe. Cancel any time.</p>`;
     }
+    function renderOffer() {
+      const o = canBuy.plus && offer(), box = $("#offer");
+      box.hidden = !o;
+      box.innerHTML = o ? `<div class="offer-banner" role="region" aria-label="Launch offer"><div><span class="k">Launch offer · ends ${esc(OFFER.endsLabel)}</span><h2>Your first month of Gradify Pro for £5</h2><p>${esc(offerTerms(PLAN_PRICES.plus.month))} ${signedIn ? `Choose <b>Get Gradify Pro</b> below: code <code>${OFFER.code}</code> is applied for you, and Stripe shows the £5 total before you pay.` : `Sign in or create your free account first (email link or Google). Your offer is kept, and code <code>${OFFER.code}</code> is applied for you at checkout.`}</p></div></div>` : "";
+    }
     function renderCta() {
+      renderOffer();
       const plan = planOf(sub);
       $("#free-current").hidden = !signedIn || plan !== "free";
       $("#plus-current").hidden = plan !== "plus";
@@ -252,7 +310,7 @@
         catch (err) { msg.textContent = err.invalid ? err.message : "Sorry, that didn't work. Please try again in a moment."; input.focus(); }
         finally { btn.disabled = false; }
       }));
-      document.querySelectorAll("[data-buy]").forEach((b) => b.addEventListener("click", (e) => go(e.currentTarget, () => startCheckout(store, b.dataset.buy, "month", "/pricing.html"))));
+      document.querySelectorAll("[data-buy]").forEach((b) => b.addEventListener("click", (e) => go(e.currentTarget, () => startCheckout(store, b.dataset.buy, "month", "/pricing.html", b.dataset.promo))));
       document.querySelectorAll("[data-manage]").forEach((b) => b.addEventListener("click", (e) => go(e.currentTarget, () => openPortal(store, "/pricing.html"))));
     }
 
@@ -271,8 +329,10 @@
       store = clientStore(client);
       const { data } = await client.auth.getSession();
       signedIn = Boolean(data.session);
-      $("#acct-link").textContent = signedIn ? "Account" : "Sign in";
+      document.querySelectorAll(".hub-signin").forEach((a) => { a.textContent = signedIn ? "Account" : "Sign in"; });
       if (signedIn) sub = await mySubscription(store).catch(() => null);
+      // an offer kept in the account (from another browser or device): the learner's own profile row
+      if (signedIn) learner = (await Promise.resolve(client.from("profiles").select("learner").maybeSingle()).catch(() => ({ data: null }))).data?.learner || null;
     }
 
     // Back from Stripe Checkout. The webhook usually lands within a few seconds; until then the row still says Free.
@@ -287,11 +347,11 @@
       }
       renderCta();
       const plan = planOf(sub);
-      if (plan !== "free") notice("ok", `Welcome to ${plan === "plus" ? "Gradify Plus" : "Gradify Pro"}.`, describePlan(sub).line);
+      if (plan !== "free") notice("ok", `Welcome to ${plan === "plus" ? "Gradify Pro" : "Gradify Ultra"}.`, describePlan(sub).line);
       else notice("warn", "Your payment went through, but your plan isn't showing yet.", "This can take a minute. Refresh this page shortly; if it still says Free, your receipt from Stripe is your proof of payment.");
     }
 
-    if (!canBuy.plus) notice("info", "Gradify Plus opens soon.", "Until then, everything on Gradify is free and open, including what will be part of Plus. Gradify Pro opens when Gradify AI launches. The prices shown are the launch prices.");
+    if (!canBuy.plus) notice("info", "Gradify Pro opens soon.", "Until then, everything on Gradify is free and open, including what will be part of Pro. Gradify Ultra opens when Gradify AI launches. The prices shown are the launch prices.");
     renderCta();
     await loadLearner();
     renderCta();

@@ -46,6 +46,16 @@ M2#dentistry-u03-17-q2@2: A drug used for gout and the vinca alkaloids used in c
 TF1#dentistry-u03-17-q3@3: Inherited Rb loss affects the G2/M checkpoint, not the G1/S checkpoint. | false | Rb holds the E2F transcription factors at the G1/S checkpoint; its phosphorylation releases them and lets the cell enter S phase.
 M3#dentistry-u03-17-q4@2,3: A child inherits a mitochondrial DNA mutation. Which statement about the family is most accurate? | The mother passes it to all her children, but severity varies with the proportion of mutant mitochondria | It passes from father to son only, like a Y-linked gene | Each child of an affected parent has a 50% risk regardless of the parent's sex | It cannot be inherited because mitochondria are made fresh in each cell | Mitochondria come from the egg, so transmission is maternal; heteroplasmy (a mix of normal and mutant copies) explains the variable severity.
 SA3#dentistry-u03-17-q5@2,3: Explain why chemotherapy drugs that act on dividing cells cause hair loss, mouth ulcers and low blood counts. | These drugs target DNA synthesis or the mitotic spindle, so they harm any cell that divides often, not only cancer cells. Hair follicles, the oral and gut mucosa and the bone marrow have the highest turnover, so they show damage first: alopecia, mucositis and myelosuppression (neutropenia, anaemia, thrombocytopenia). Permanent cells such as neurones are spared these effects, though spindle poisons can cause neuropathy by disrupting axonal transport. | Drugs act on DNA synthesis or mitosis ; Not selective for cancer cells ; High-turnover tissues named ; Links each tissue to the effect ; Contrast with permanent cells or neuropathy
+Q: What does the plasma membrane consist of? | A phospholipid bilayer with embedded proteins, such as channels, carriers, pumps and receptors.
+Q: What does the nucleolus make? | Ribosomal RNA.
+Q: What does rough endoplasmic reticulum make? | Secretory and membrane proteins.
+Q: What does smooth ER do in hepatocytes? | It makes lipids and steroids and holds many cytochrome P450 enzymes that metabolise drugs.
+Q: What tag does the Golgi add to send enzymes to lysosomes? | Mannose-6-phosphate.
+Q: What does the absence of peroxisomes cause? | Zellweger spectrum disorders.
+Q: Why do vincristine and taxanes cause peripheral neuropathy? | They act on microtubules, and long axons depend on microtubule transport.
+Q: Why does colchicine cause diarrhoea? | It blocks microtubules needed for mitosis, so rapidly renewing gut epithelium is disrupted first.
+Q: What does the retinoblastoma protein do at the G1/S checkpoint? | It holds the E2F transcription factors until it is phosphorylated.
+Q: Why is loss of neurones and cardiac myocytes replaced by scar? | They are permanent, essentially non-dividing cells.
 
 ## Membranes, transport and the resting potential
 LV: Preclinical · Foundation
@@ -86,6 +96,16 @@ NUM2#dentistry-u03-18-q2@2: Using E = 61.5 × log₁₀([K]out / [K]in), calcula
 M2#dentistry-u03-18-q3@2,3: Why is the resting membrane potential of a neurone close to the K⁺ equilibrium potential rather than the Na⁺ one? | At rest the membrane is far more permeable to K⁺ than to Na⁺ | The Na⁺/K⁺-ATPase moves more K⁺ than Na⁺ | Na⁺ cannot cross membranes under any conditions | Intracellular Na⁺ is higher than extracellular Na⁺ | The membrane potential is a permeability-weighted average of the equilibrium potentials; at rest K⁺ leak channels dominate. The pump moves more Na⁺ (3) than K⁺ (2), and intracellular Na⁺ is low.
 TF1#dentistry-u03-18-q4@1: Local anaesthetics such as lidocaine work by blocking voltage-gated sodium channels in nerve membranes. | true | Without Na⁺ channel opening, the nerve cannot generate an action potential, so pain signals aren't conducted.
 SA3#dentistry-u03-18-q5@3: Explain why severe hyperkalaemia can cause cardiac arrest, and why treatment has more than one step. | Raised plasma K⁺ makes E_K and the resting potential less negative. Sustained depolarisation inactivates voltage-gated Na⁺ channels, slowing conduction (peaked T waves, broad QRS) and leading to ventricular arrhythmia or asystole. Treatment stabilises the membrane first (IV calcium), then shifts K⁺ into cells (insulin with glucose, salbutamol), then removes K⁺ from the body and treats the cause, because shifting doesn't reduce total body potassium. | Nernst or E_K rises (less negative) ; Depolarised resting potential ; Na⁺ channel inactivation and slowed conduction ; ECG changes or arrhythmia ; Stabilise, shift, remove as separate steps
+Q: Which molecules cross the membrane by simple diffusion? | Small or lipid-soluble ones such as O₂, CO₂, steroid hormones and many drugs.
+Q: Which GLUT transporter responds to insulin? | GLUT4, in muscle and fat.
+Q: Which drug inhibits the Na⁺/K⁺-ATPase? | Digoxin.
+Q: What is secondary active transport? | Moving a solute against its gradient powered by the Na⁺ gradient, not directly by ATP.
+Q: What is an equilibrium potential? | The membrane voltage at which there is no net flow of a given ion.
+Q: What is the approximate K⁺ equilibrium potential with plasma K⁺ 4 and intracellular K⁺ 140 mmol/L? | About −95 mV.
+Q: Why is the resting potential close to E_K? | At rest the membrane is far more permeable to K⁺ than to other ions.
+Q: Why does sustained hyperkalaemia depress cardiac conduction? | Depolarisation holds voltage-gated Na⁺ channels inactivated, so fewer are available.
+Q: Name ECG changes of hyperkalaemia. | Peaked T waves, widened QRS and eventually ventricular arrhythmia or asystole.
+Q: How does insulin with glucose help in hyperkalaemia? | It shifts K⁺ into cells.
 
 ## Homeostasis and negative feedback
 LV: Preclinical · Foundation
@@ -122,6 +142,16 @@ M2#dentistry-u03-19-q2@3: A patient's TSH is high and free T4 is low. Where is t
 M2#dentistry-u03-19-q3@2: After standing up quickly, blood pressure falls briefly and the heart rate rises. Which structures sense the fall? | Baroreceptors in the carotid sinus and aortic arch | Peripheral chemoreceptors in the carotid bodies | Osmoreceptors in the hypothalamus | Juxtaglomerular cells sensing tubular sodium | Stretch-sensitive baroreceptors detect the fall in pressure and the brainstem raises heart rate and vascular tone within seconds.
 SEQ1#dentistry-u03-19-q4@1: Put the parts of the glucose-lowering feedback loop in order after a meal. | Plasma glucose rises ; Pancreatic β cells sense the rise ; Insulin is secreted ; Muscle, fat and liver take up and store glucose ; Plasma glucose returns towards normal | Sensor (β cell), signal (insulin) and effectors (insulin-sensitive tissues) oppose the rise: negative feedback.
 SA3#dentistry-u03-19-q5@2,3: A patient on long-term oral prednisolone has a low morning cortisol and a low ACTH. Use feedback logic to explain these results and why stopping the steroid suddenly is dangerous. | Prednisolone acts like cortisol at the hypothalamus and pituitary, suppressing CRH and ACTH by negative feedback. Without ACTH the adrenal cortex atrophies and makes little cortisol of its own, so both are low (an assay may not detect prednisolone as cortisol). If the drug is stopped abruptly, the suppressed axis can't respond quickly, leading to adrenal insufficiency, which may present as an adrenal crisis with hypotension, especially during illness. | Exogenous steroid feeds back on hypothalamus and pituitary ; Low ACTH explained ; Adrenal atrophy or reduced own cortisol ; Abrupt withdrawal causes adrenal insufficiency or crisis ; Links to the need for gradual reduction
+Q: Who named homeostasis and when? | Walter Cannon, in 1932.
+Q: How does negative feedback stabilise a variable? | The response opposes the change, returning the variable towards its set point.
+Q: Which hormones are released when blood glucose falls? | Glucagon, adrenaline, cortisol and growth hormone.
+Q: What is the baroreflex? | Carotid sinus and aortic baroreceptors sense a fall in pressure and the brainstem raises heart rate and vascular tone.
+Q: What is the Ferguson reflex? | Positive feedback between oxytocin and uterine contraction in labour.
+Q: How is positive feedback ended? | By an external event such as delivery, ovulation or clotting inhibitors.
+Q: What do TSH low and free T4 high indicate? | Primary hyperthyroidism, such as Graves' disease.
+Q: What do TSH low and free T4 low indicate? | Secondary (pituitary) or tertiary (hypothalamic) hypothyroidism.
+Q: What is the most common cause of primary hypothyroidism in the UK? | Autoimmune Hashimoto's thyroiditis.
+Q: Why is it wrong to call any loop that ends a process positive feedback? | Positive feedback amplifies the change; the event that stops it lies outside the loop.
 
 ## Body fluids, osmolality and electrolytes
 LV: Preclinical · Foundation
@@ -158,6 +188,16 @@ NUM2#dentistry-u03-20-q2@2: Calculate plasma osmolality (mOsm/kg) for Na⁺ 135,
 M2#dentistry-u03-20-q3@2: A patient has a measured osmolality of 330 and a calculated osmolality of 295 mOsm/kg. What does the gap suggest? | An unmeasured osmotically active substance such as methanol or ethylene glycol | Pseudohyponatraemia from a laboratory error | Diabetes insipidus | Normal variation between laboratories | A gap of 35 is well above the normal of under about 10, implying an unmeasured osmole: alcohols are the classic cause and toxic alcohols need urgent treatment.
 M3#dentistry-u03-20-q4@3: A patient with severe heart failure has a sodium of 126 mmol/L and ankle oedema. Which statement is correct? | Total body sodium is increased but water is retained even more | Total body sodium is reduced, so saline is needed | The low sodium proves the ECF volume is low | Oedema shows that ADH secretion is suppressed | Heart failure retains both sodium (hence oedema) and water; the reduced effective circulating volume drives ADH, so water exceeds sodium and the concentration falls.
 SA3#dentistry-u03-20-q5@2,3: Explain why 5% glucose is a poor fluid for restoring circulating volume in a bleeding patient. | Once infused the glucose is metabolised, leaving free water. Water distributes across total body water in proportion to compartment size, so about two-thirds enters cells and only about one-twelfth stays in plasma. It therefore does little for blood volume and can lower sodium. Sodium-containing crystalloids stay in the ECF (about a quarter in plasma), and blood is needed for major haemorrhage. | Glucose metabolised to free water ; Water distributes across total body water ; Small fraction remains intravascular ; Risk of hyponatraemia ; Better alternatives named
+Q: What is total body water in a 70 kg adult man? | About 60% of body weight, roughly 42 L.
+Q: Why is total body water lower in women and older people? | They have more fat.
+Q: How is extracellular fluid divided? | About three-quarters interstitial fluid and one-quarter plasma.
+Q: What sets the extracellular fluid volume? | The amount of sodium in the body.
+Q: Which Starling forces govern fluid between plasma and interstitium? | Capillary hydrostatic pressure pushes fluid out; plasma oncotic pressure holds it in; lymphatics return the rest.
+Q: What is the normal measured plasma osmolality? | 275–295 mOsm/kg.
+Q: What does a raised osmolar gap suggest? | An unmeasured osmole such as ethanol, methanol or ethylene glycol.
+Q: How does ADH conserve water? | It inserts aquaporin-2 channels in the collecting duct.
+Q: How much of a litre of 0.9% sodium chloride stays in plasma? | About a quarter, roughly 250 mL.
+Q: What does plasma sodium concentration actually tell you? | Water relative to sodium, not how much sodium the body holds.
 
 ## Acid–base physiology
 LV: Preclinical · Application
@@ -201,6 +241,16 @@ NUM2#dentistry-u03-21-q2@2: Calculate the anion gap (mmol/L) for Na⁺ 140, Cl�
 M2#dentistry-u03-21-q3@2: A patient has pH 7.52, PaCO₂ 6.4 kPa and HCO₃⁻ 36 mmol/L after days of vomiting. What is the disorder? | Metabolic alkalosis with partial respiratory compensation | Respiratory alkalosis with renal compensation | Respiratory acidosis with metabolic compensation | Mixed metabolic and respiratory acidosis | High pH with high bicarbonate is a metabolic alkalosis (loss of gastric acid); the mildly raised CO₂ is the expected compensatory hypoventilation.
 M3#dentistry-u03-21-q4@3: A gas shows pH 7.40, PaCO₂ 2.8 kPa and HCO₃⁻ 13 mmol/L. What is the best interpretation? | A mixed disorder, such as metabolic acidosis with a primary respiratory alkalosis | A fully compensated metabolic acidosis, which is common | A normal gas, because the pH is normal | A respiratory acidosis with renal compensation | Compensation rarely restores pH fully, so a normal pH with grossly abnormal values suggests two primary processes: the classic example is salicylate poisoning.
 SA3#dentistry-u03-21-q5@3: A man with type 1 diabetes has pH 7.10, PaCO₂ 2.5 kPa, HCO₃⁻ 6 mmol/L, Na⁺ 136 and Cl⁻ 98 mmol/L. Interpret the gas step by step. | Acidaemia (pH 7.10). Bicarbonate is very low, so the primary process is metabolic acidosis. PaCO₂ is low: respiratory compensation (Kussmaul breathing). Winter's formula predicts 1.5 × 6 + 8 = 17 ± 2 mmHg, about 2.3 kPa, so compensation is roughly appropriate. Anion gap = 136 − (98 + 6) = 32, raised, consistent with ketoacidosis in this context. | Identifies acidaemia ; Primary metabolic acidosis ; Respiratory compensation assessed ; Anion gap calculated as raised ; Links to diabetic ketoacidosis
+Q: How much CO₂ does the body make daily? | About 15,000 mmol, removed by the lungs.
+Q: Which enzyme links CO₂ and bicarbonate? | Carbonic anhydrase.
+Q: What is the normal arterial PaCO₂ range? | 4.7–6.0 kPa.
+Q: What is the normal plasma bicarbonate range? | 22–26 mmol/L.
+Q: How quickly do the lungs and kidneys correct pH? | The lungs adjust CO₂ within minutes; the kidneys adjust bicarbonate over days.
+Q: Name causes of respiratory alkalosis. | Anxiety, pulmonary embolism, early salicylate poisoning and altitude.
+Q: Name causes of metabolic alkalosis. | Vomiting and diuretics.
+Q: What does a normal pH with abnormal CO₂ and bicarbonate suggest? | A mixed disorder.
+Q: What does a normal anion gap metabolic acidosis mean? | Bicarbonate is lost and replaced by chloride, as in diarrhoea, renal tubular acidosis or large volumes of saline.
+Q: In what order should a blood gas be read? | pH, then the primary process, then compensation, then the anion gap for metabolic acidosis.
 
 ## Cell injury, adaptation and death
 LV: Preclinical · Foundation
@@ -244,6 +294,16 @@ M2#dentistry-u03-22-q2@2: A long-term smoker's bronchial biopsy shows stratified
 MS2#dentistry-u03-22-q3@1,3: Which features distinguish apoptosis from necrosis? Choose all that apply. | Cell shrinkage ; No inflammation ; Energy-dependent caspase activation | Cell swelling and membrane rupture ; Leakage of contents provoking inflammation | Apoptosis is a controlled, energy-requiring process in which the cell shrinks and is cleared quietly; swelling, rupture and inflammation are features of necrosis.
 M3#dentistry-u03-22-q4@3: Why does the brain show liquefactive rather than coagulative necrosis after an infarct? | Brain tissue has little supporting stroma and abundant lysosomal enzymes, so it is digested rather than preserved | The brain has a dual blood supply that floods the infarct | Neurones die by apoptosis, which always produces liquid | Microglia secrete coagulation factors that dissolve tissue | Coagulative necrosis needs a framework of denatured proteins to persist; the lipid-rich, stroma-poor brain is broken down by enzymes, leaving a cystic cavity.
 SA3#dentistry-u03-22-q5@2,3: Explain why troponin is used to diagnose myocardial infarction, using what you know about cell injury. | Troponins are structural proteins of cardiac myocytes. In reversible injury the membrane is intact and they stay inside. Once ischaemia causes irreversible injury and coagulative necrosis, the membrane is damaged and troponin leaks into the blood, so a rise above the reference limit with a rising or falling pattern indicates myocyte death. A raised troponin alone isn't specific for a coronary cause: sepsis, pulmonary embolism, myocarditis and renal failure also release it. | Troponin is a myocyte protein ; Released when membranes are damaged in irreversible injury ; Rise and fall pattern ; Indicates necrosis ; Other causes of raised troponin
+Q: What is hypertrophy? | Larger cells, as in the left ventricle in hypertension or aortic stenosis.
+Q: Give an example of hyperplasia. | The endometrium under oestrogen, or benign prostatic hyperplasia.
+Q: Name causes of atrophy. | Disuse, denervation, ischaemia or loss of hormonal stimulation.
+Q: What are the features of reversible cell injury? | Cell swelling from ion pump failure, and fatty change.
+Q: Name the nuclear changes of irreversible cell injury. | Pyknosis (shrinking), karyorrhexis (fragmenting) and karyolysis (dissolving).
+Q: Which type of necrosis occurs in solid organ infarcts except the brain? | Coagulative necrosis.
+Q: What is fat necrosis? | Lipases release fatty acids that bind calcium (saponification), as in acute pancreatitis or breast trauma.
+Q: What is fibrinoid necrosis seen in? | Vasculitis and malignant hypertension.
+Q: Which family controls the intrinsic pathway of apoptosis? | The BCL-2 family, with cytochrome c release.
+Q: How does dysplasia differ from metaplasia? | Dysplasia is disordered growth with atypical cells, pre-malignant; metaplasia is an orderly switch of cell type.
 
 ## Acute inflammation
 LV: Preclinical · Foundation
@@ -286,6 +346,16 @@ M2#dentistry-u03-23-q2@2: Which enzyme do NSAIDs inhibit to reduce pain and feve
 MS2#dentistry-u03-23-q3@2: Which are acute-phase or systemic effects driven by IL-1, IL-6 and TNF? Choose all that apply. | Fever ; Raised CRP ; Neutrophilia | Bronchoconstriction ; Low ESR | Cytokines act on the hypothalamus (fever), liver (CRP, fibrinogen, which raises the ESR) and marrow (neutrophilia). Bronchoconstriction is a leukotriene and histamine effect.
 M3#dentistry-u03-23-q4@3: A patient has pleural fluid with protein 18 g/L, serum protein 72 g/L and a fluid LDH well below the serum limit. Which cause best fits? | Congestive heart failure | Parapneumonic effusion | Malignant mesothelioma | Tuberculous pleurisy | A ratio of 0.25 with low LDH meets none of Light's criteria: a transudate, typical of heart failure. The other three cause exudates.
 SA3#dentistry-u03-23-q5@2,3: Explain the mechanism of the redness, swelling and fever seen in cellulitis. | Bacterial products and tissue damage trigger mast cells and macrophages. Histamine, prostaglandins and nitric oxide dilate arterioles, increasing blood flow (redness and heat). Histamine, bradykinin and leukotrienes make post-capillary venules leaky, so protein-rich exudate accumulates (swelling). Macrophages release IL-1, IL-6 and TNF, which act on the hypothalamus to raise the temperature set point via prostaglandin E₂ (fever) and on the liver to raise CRP. | Vasodilator mediators and redness or heat ; Increased venular permeability and exudate ; Cytokines named ; Hypothalamic set point via PGE₂ ; Acute-phase response
+Q: What causes redness and heat in acute inflammation? | Arteriolar dilation by histamine, prostaglandins and nitric oxide, increasing blood flow.
+Q: What causes swelling in acute inflammation? | Endothelial gaps in post-capillary venules let protein-rich fluid leak into tissue.
+Q: Which molecules make leucocytes roll along the vessel wall? | Selectins.
+Q: What do neutrophil integrins bind on activated endothelium? | ICAM-1.
+Q: Name chemotactic signals for neutrophils. | Bacterial products, C5a, leukotriene B4 and IL-8.
+Q: When do macrophages take over from neutrophils? | By 24–48 hours.
+Q: What do leukotrienes do? | Cause bronchoconstriction, increase permeability and drive chemotaxis.
+Q: What is an abscess? | Pus walled off by fibrin and granulation tissue, needing drainage.
+Q: What is a transudate? | Protein-poor fluid from altered pressures rather than inflammation.
+Q: Why doesn't a raised CRP prove infection? | CRP rises with any significant inflammation or tissue injury, including surgery and autoimmune disease.
 
 ## Chronic inflammation and repair
 LV: Preclinical · Foundation
@@ -329,6 +399,16 @@ M2#dentistry-u03-24-q2@1,2: A lymph node biopsy shows non-caseating granulomas. 
 SEQ1#dentistry-u03-24-q3@2: Put the stages of wound healing in order. | Haemostasis ; Inflammation ; Proliferation with granulation tissue ; Remodelling | Clotting comes first, then neutrophils and macrophages, then granulation tissue and re-epithelialisation, and finally collagen remodelling over months.
 M3#dentistry-u03-24-q4@3: A surgical wound reopens on day 7 in a patient who has been on high-dose corticosteroids. Which explanation is most complete? | Steroids suppress the inflammatory phase and fibroblast collagen synthesis, so the wound is weak when sutures are removed | Steroids increase infection only, which is the sole cause of dehiscence | Steroids prevent haemostasis, so the clot fails to form | Steroids accelerate remodelling, making collagen too stiff | Glucocorticoids blunt macrophage recruitment and growth-factor release and reduce collagen synthesis, so tensile strength at a week is lower than expected. They also raise infection risk.
 SA3#dentistry-u03-24-q5@2,3: Compare healing by primary and secondary intention, with an example of each. | Primary intention: a clean wound with apposed edges, such as a sutured surgical incision, needs little granulation tissue, heals quickly with minimal contraction and leaves a thin scar. Secondary intention: a wound with tissue loss or left open, such as an excised abscess cavity or a pressure ulcer, fills with abundant granulation tissue, contracts through myofibroblasts, heals slowly and leaves a larger scar. Secondary healing is more vulnerable to infection. | Defines primary intention with an example ; Defines secondary intention with an example ; Granulation tissue amount ; Contraction by myofibroblasts ; Scar size and time
+Q: How long does chronic inflammation last? | Weeks to years.
+Q: Name causes of chronic inflammation. | Persistent infection, autoimmune disease and prolonged exposure to irritants such as silica or cigarette smoke.
+Q: What does a granuloma consist of? | Epithelioid macrophages, often with giant cells and a rim of lymphocytes.
+Q: What do caseating granulomas suggest? | Tuberculosis.
+Q: What are labile cells? | Cells that divide continually, such as skin and gut epithelium and bone marrow.
+Q: What are stable cells? | Quiescent cells that can divide when needed, such as hepatocytes and renal tubular cells.
+Q: What fills a wound in the proliferation stage of healing? | Granulation tissue of fibroblasts and new capillaries.
+Q: How strong is a mature scar compared with unwounded skin? | About 70–80% of the strength.
+Q: How does healing by secondary intention differ from primary intention? | Open wounds with tissue loss form more granulation tissue, contract more and leave a bigger scar.
+Q: How do corticosteroids slow wound healing? | They suppress inflammation and fibroblast collagen synthesis.
 
 ## Thrombosis, embolism and infarction
 LV: Preclinical · Application
@@ -372,6 +452,16 @@ M2#dentistry-u03-25-q2@2: Why are anticoagulants, not antiplatelet drugs alone, 
 M2#dentistry-u03-25-q3@3: A man has breathlessness, confusion and a petechial rash 36 hours after a femoral shaft fracture. What is the most likely cause? | Fat embolism | Pulmonary thromboembolism | Air embolism | Septic embolism | The timing after a long-bone fracture with respiratory, neurological and petechial features is classic for fat embolism syndrome.
 MS1#dentistry-u03-25-q4@1,3: Which are acquired risk factors for venous thromboembolism? Choose all that apply. | Active cancer ; Pregnancy ; Major surgery ; Combined hormonal contraception | Factor V Leiden ; Regular exercise | Cancer, pregnancy, surgery and oestrogen all raise risk through hypercoagulability or stasis. Factor V Leiden is inherited, not acquired, and exercise doesn't raise risk.
 SA3#dentistry-u03-25-q5@2,3: Explain why aspirin is used for secondary prevention after a myocardial infarction, whereas a DOAC is used after a pulmonary embolism. | Myocardial infarction results from an arterial thrombus forming on a ruptured plaque under high flow; it is platelet-rich, so inhibiting platelet thromboxane A₂ with aspirin reduces recurrence. A pulmonary embolism comes from a venous thrombus formed in stasis, rich in fibrin and red cells; preventing it requires inhibition of the coagulation cascade, which DOACs do by inhibiting factor Xa or thrombin. | Arterial thrombus forms on plaque under high flow ; Platelet-rich, so antiplatelet ; Venous thrombus forms in stasis ; Fibrin-rich, so anticoagulant ; Mechanism of each drug
+Q: What is a thrombus? | A clot in a living vessel.
+Q: Name inherited causes of hypercoagulability. | Factor V Leiden, prothrombin gene variant, and protein C, protein S or antithrombin deficiency.
+Q: Why are arterial thrombi called white? | They are platelet-rich, forming at high flow on damaged endothelium.
+Q: Which drugs prevent and treat venous thrombi? | Anticoagulants: heparins, direct oral anticoagulants and warfarin.
+Q: What is a paradoxical embolus? | A venous clot that crosses to the arterial side through a patent foramen ovale.
+Q: What are the features of fat embolism? | Breathlessness, confusion and a petechial rash after long-bone fracture.
+Q: Where do white infarcts occur? | In solid organs supplied by end arteries: heart, kidney and spleen.
+Q: What decides the outcome of an infarction? | Speed of occlusion, collateral supply and the tissue's vulnerability.
+Q: Why does a positive D-dimer not confirm a clot? | It is sensitive but not specific, rising after surgery, in infection, pregnancy, cancer and old age.
+Q: Why do orthopaedic patients receive thromboprophylaxis? | Surgery brings all three parts of Virchow's triad together.
 
 ## Neoplasia: benign and malignant tumours
 LV: Preclinical · Foundation
@@ -415,6 +505,16 @@ M2#dentistry-u03-26-q2@2: Which site is the most common first site of haematogen
 TF1#dentistry-u03-26-q3@1: Carcinoma in situ has invaded through the basement membrane. | false | By definition carcinoma in situ is confined above an intact basement membrane, so it cannot yet metastasise.
 M3#dentistry-u03-26-q4@3: Two patients have breast cancer of the same grade. One has a 1 cm tumour and no nodes involved; the other has liver metastases. What best explains their different outlooks? | Stage, which describes spread, predicts outcome more strongly than grade | Grade is the only factor that matters, so their outlook is the same | The smaller tumour must be benign | The larger tumour must be a sarcoma | Equal grade means similar-looking cells; stage (here T1 N0 M0 against M1) captures how far the disease has spread and is the stronger prognostic factor.
 SA3#dentistry-u03-26-q5@2,3: Explain how a carcinoma progresses from dysplasia to distant metastasis, naming the barriers it must cross. | Dysplastic epithelial cells accumulate genetic changes and become carcinoma in situ, still above the basement membrane. Invasion requires breaching the basement membrane by proteolysis and changes in adhesion (loss of E-cadherin). Cells then invade stroma, enter lymphatics or blood vessels (intravasation), survive in the circulation, leave vessels at a distant site (extravasation) and grow there, often helped by angiogenesis. Carcinomas usually spread first to regional lymph nodes. | Dysplasia to carcinoma in situ ; Basement membrane breach ; Loss of adhesion or proteolysis ; Intravasation and extravasation ; Lymphatic spread typical of carcinoma
+Q: How can a benign tumour cause harm? | By its position, hormone production or rarely malignant change.
+Q: What is anaplasia? | Lack of resemblance to the tissue of origin.
+Q: What is carcinoma in situ? | Full-thickness epithelial dysplasia that hasn't breached the basement membrane.
+Q: What is a leiomyoma? | A benign tumour of smooth muscle, such as a uterine fibroid.
+Q: What is a malignant mesenchymal tumour called? | A sarcoma.
+Q: Which way do carcinomas typically spread? | By lymphatics to regional nodes.
+Q: Which cancers often metastasise to bone? | Breast, lung, prostate, kidney and thyroid cancers.
+Q: What is transcoelomic spread? | Spread across body cavities, such as ovarian cancer seeding the peritoneum.
+Q: What does TNM stand for? | Tumour size and local extent, regional nodes, and distant metastasis.
+Q: Which predicts outcome more strongly, grade or stage? | Stage generally does.
 
 ## The hallmarks and genetics of cancer
 LV: Preclinical · Application
@@ -455,6 +555,16 @@ M2#dentistry-u03-27-q2@2: Why are inherited retinoblastomas usually bilateral an
 MS2#dentistry-u03-27-q3@1,2: Which of these are hallmarks of cancer as described by Hanahan and Weinberg? Choose all that apply. | Inducing angiogenesis ; Resisting cell death ; Enabling replicative immortality | Increased cell adhesion ; Dependence on growth signals from neighbouring cells | Cancers sustain their own proliferative signalling and lose adhesion to invade, so those two distractors describe the reverse of what cancer cells do.
 M3#dentistry-u03-27-q4@3: A 35-year-old has colorectal cancer; her mother had endometrial cancer at 45. The tumour shows microsatellite instability. What is the most likely explanation? | Lynch syndrome, an inherited defect in DNA mismatch repair | Familial adenomatous polyposis from an APC mutation | A sporadic KRAS mutation alone | Li–Fraumeni syndrome from TP53 | Early colorectal and endometrial cancers in a family, with microsatellite instability, point to failed mismatch repair: Lynch syndrome, which has implications for screening relatives.
 SA3#dentistry-u03-27-q5@2,3: Explain why imatinib is highly effective in chronic myeloid leukaemia but there is no equivalent single drug for most solid cancers. | CML is driven by one dominant genetic event, the BCR-ABL fusion from t(9;22), which encodes a constitutively active tyrosine kinase. Imatinib inhibits that kinase, removing the main driver. Most solid cancers accumulate many driver mutations across several pathways, show genome instability and heterogeneity between cells, so blocking one pathway allows resistant clones to grow, and some drivers, such as loss of tumour suppressors, can't be directly drugged. | BCR-ABL from the Philadelphia translocation ; Constitutive kinase and imatinib inhibits it ; Single dominant driver ; Solid cancers have multiple drivers and heterogeneity ; Resistance or undruggable tumour suppressor loss
+Q: Who described the hallmarks of cancer? | Hanahan and Weinberg, in 2000, updated in 2011.
+Q: Which hallmarks did the 2011 update add? | Reprogramming energy metabolism and evading immune destruction.
+Q: What are the two enabling characteristics of cancer? | Genome instability and tumour-promoting inflammation.
+Q: How many alleles must change to make an oncogene? | One: a gain-of-function change in one allele.
+Q: What creates BCR-ABL in chronic myeloid leukaemia? | The Philadelphia chromosome, t(9;22).
+Q: Why are inherited cancer syndromes dominant in families but recessive in cells? | One faulty copy is inherited, but both copies must be lost in a cell for cancer.
+Q: How does UV light cause skin cancer? | It forms pyrimidine dimers in DNA.
+Q: Which cancers does Lynch syndrome predispose to? | Colorectal and endometrial cancers, through mismatch repair defects.
+Q: Why is HER2 tested on every invasive breast cancer? | Trastuzumab targets HER2 and works only in HER2-positive tumours.
+Q: Why is it wrong to say people inherit cancer? | They inherit a predisposition; further somatic changes are still needed.
 
 ## Innate immunity
 LV: Preclinical · Foundation
@@ -496,6 +606,16 @@ M2#dentistry-u03-28-q2@2: After splenectomy for trauma, a patient is at particul
 TF1#dentistry-u03-28-q3@1: The classical complement pathway is triggered by antibody bound to antigen. | true | C1q binds the Fc regions of IgG or IgM in immune complexes, linking adaptive antibody responses to complement.
 M3#dentistry-u03-28-q4@3: A child has recurrent liver abscesses and Aspergillus pneumonia; the nitroblue tetrazolium or dihydrorhodamine test is abnormal. Which process is defective? | The respiratory burst by NADPH oxidase in phagocytes | Antibody class switching in B cells | Formation of the membrane attack complex | T-cell development in the thymus | Chronic granulomatous disease abolishes NADPH oxidase, so phagocytes can't make reactive oxygen species; catalase-positive organisms and fungi survive inside them.
 SA3#dentistry-u03-28-q5@2,3: Explain why a patient with chemotherapy-induced neutropenia and a fever is treated as a medical emergency. | Neutrophils are the main phagocytes against bacteria and fungi, so profound neutropenia removes the first line of cellular defence. Infection can progress to sepsis within hours, and the usual signs of inflammation (pus, consolidation, localising features) may be absent because there are few neutrophils to produce them. Fever may be the only sign, so broad-spectrum antibiotics are started promptly after cultures, without waiting for a source. | Neutrophil role against bacteria and fungi ; Rapid progression to sepsis ; Few local signs because no neutrophils ; Fever may be the only sign ; Prompt empirical antibiotics
+Q: Name physical and chemical barriers of innate immunity. | Intact skin, mucus and cilia, stomach acid, lysozyme in tears, defensins and competing commensal bacteria.
+Q: Why are intravenous lines and catheters major infection routes in hospital? | They breach the body's barriers, bypassing them.
+Q: What are PAMPs? | Pathogen-associated molecular patterns, such as lipopolysaccharide, flagellin and viral double-stranded RNA.
+Q: What are DAMPs? | Damage-associated molecular patterns released from injured cells.
+Q: Below what neutrophil count is the risk of severe infection high? | Below 0.5 × 10⁹/L.
+Q: What do dendritic cells do? | Capture antigen in tissues and carry it to lymph nodes to start the adaptive response.
+Q: Name the three complement activation pathways. | Classical (antibody via C1q), lectin (mannose-binding lectin) and alternative (spontaneous on microbial surfaces).
+Q: What does recurrent Neisseria infection suggest? | A defect in the terminal complement components C5–C9, which form the membrane attack complex.
+Q: Why are patients on eculizumab vaccinated against meningococcus? | Eculizumab blocks C5, causing the same vulnerability as terminal complement defects.
+Q: Why is it wrong to call innate immunity unsophisticated? | Its receptors are specific for microbial molecular classes, and its signals decide whether and how adaptive immunity responds.
 
 ## Adaptive immunity
 LV: Preclinical · Foundation
@@ -540,6 +660,16 @@ M2#dentistry-u03-29-q2@2: Why is HIV infection associated with opportunistic inf
 M2#dentistry-u03-29-q3@3: A 6-month-old has a positive HIV antibody test; the mother is HIV-positive. What is the best interpretation? | Maternal IgG may explain it, so viral nucleic acid testing is needed to diagnose the infant | The infant is definitely infected | The test must be a laboratory error | The infant has made IgM, which proves infection | Maternal IgG crosses the placenta and can persist up to about 18 months, so antibody tests can't diagnose infant infection; PCR is used.
 TF1#dentistry-u03-29-q4@2: Passive immunity produces long-lived memory cells. | false | Passive immunity transfers ready-made antibody, which is catabolised over weeks; the recipient's own lymphocytes aren't stimulated, so there is no memory.
 SA3#dentistry-u03-29-q5@2,3: Explain why a booster dose of a vaccine produces a faster and stronger antibody response than the first dose. | The first dose triggers a primary response: naive B and T cells specific for the antigen are activated, proliferate and some become memory cells, with mainly IgM at first and modest IgG after about one to two weeks. On the booster, the larger population of memory cells responds within days, with class-switched, affinity-matured IgG at higher levels. Germinal-centre selection between doses further improves affinity. | Primary response slow and mainly IgM ; Memory cells formed ; Secondary response faster and larger ; Class switching to IgG ; Affinity maturation
+Q: How is lymphocyte receptor diversity generated? | By random rearrangement of gene segments, VDJ recombination.
+Q: What is central tolerance? | Deletion of lymphocytes that recognise self strongly during development.
+Q: What is clonal selection? | A lymphocyte meeting its antigen with co-stimulation proliferates into a clone, some becoming memory cells.
+Q: What does MHC class I present and to which cells? | Peptides from inside the cell to CD8 cytotoxic T cells.
+Q: What do Th2 cells drive? | IgE and eosinophils, against parasites and in allergy.
+Q: Why is HLA-B*57:01 tested before prescribing abacavir? | It is linked to abacavir hypersensitivity.
+Q: Which antibody protects mucosal surfaces? | IgA, in secretions such as gut, airways and breast milk.
+Q: What does T-cell help allow B cells to do? | Class switch from IgM to IgG, IgA or IgE and undergo affinity maturation.
+Q: What does IgM with IgG to rubella in pregnancy suggest? | Recent primary infection, to be confirmed with avidity testing.
+Q: How does passive immunity differ from active immunity? | Passive transfers ready-made antibody, immediate but short-lived with no memory; active is self-made, slower and long-lasting.
 
 ## Hypersensitivity and autoimmunity
 LV: Preclinical · Application
@@ -582,6 +712,16 @@ M2#dentistry-u03-30-q2@2: Graves' disease is caused by antibodies that stimulate
 MS2#dentistry-u03-30-q3@1,2: Which conditions are mediated mainly by immune complex (type III) deposition? Choose all that apply. | Systemic lupus erythematosus ; Post-streptococcal glomerulonephritis ; Serum sickness | Contact dermatitis ; Hay fever | SLE, post-streptococcal GN and serum sickness are immune-complex diseases; contact dermatitis is type IV and hay fever type I.
 M3#dentistry-u03-30-q4@3: A woman has fatigue and a positive ANA at a titre of 1:80, with normal examination, blood count, urine and complement. What is the best conclusion? | A low-titre ANA alone doesn't establish SLE and may occur in healthy people | She has SLE and should start treatment | The ANA proves drug-induced lupus | Anti-dsDNA testing is pointless after a positive ANA | ANA is sensitive but not specific; without clinical or laboratory features, a low titre has a low positive predictive value. More specific antibodies and clinical review help decide.
 SA3#dentistry-u03-30-q5@2,3: Explain why coeliac disease screening uses IgA anti-tissue transglutaminase together with total IgA. | Coeliac disease involves an immune response to gluten in genetically susceptible people (HLA-DQ2 or DQ8), producing IgA antibodies to tissue transglutaminase. Selective IgA deficiency is more common in people with coeliac disease than in the general population; such a person can't make IgA, so the IgA tTG test would be falsely negative. Measuring total IgA identifies them, and IgG-based tests are used instead. The person must be eating gluten for the test to be valid. | Autoantibody to tissue transglutaminase ; IgA class ; IgA deficiency gives a false negative ; IgG-based alternative ; Must be on a gluten-containing diet
+Q: What happens in type I hypersensitivity? | Allergen cross-links IgE on mast cells, releasing histamine within minutes.
+Q: Give examples of type II hypersensitivity. | Autoimmune haemolytic anaemia, ABO transfusion reactions, Goodpasture's disease, Graves' disease and myasthenia gravis.
+Q: How does type III hypersensitivity cause damage? | Immune complexes deposit in vessels, kidneys and joints, fix complement and recruit neutrophils.
+Q: Over what time does type IV hypersensitivity act? | 48–72 hours, mediated by sensitised T cells and macrophages.
+Q: What type is glove contact dermatitis appearing two days after exposure? | Type IV, T-cell contact dermatitis, often to rubber accelerators.
+Q: What does the AIRE gene do? | Makes thymic cells express tissue proteins so self-reactive T cells are deleted.
+Q: How does peripheral tolerance work? | Anergy without co-stimulation and suppression by regulatory T cells (FOXP3).
+Q: What is molecular mimicry? | An immune response to a microbe cross-reacting with a similar self antigen, as in rheumatic fever.
+Q: Which autoantibody tracks SLE activity? | Anti-dsDNA, especially for nephritis.
+Q: Why can't an autoantibody alone diagnose autoimmune disease? | Low-titre ANA occurs in healthy people; antibodies support a diagnosis only with a compatible clinical picture.
 
 ## Patterns of inheritance in clinical genetics
 LV: Preclinical · Application
@@ -623,6 +763,16 @@ NUM2#dentistry-u03-31-q2@2: Two carriers of sickle cell trait have a child. What
 M2#dentistry-u03-31-q3@2,3: A healthy woman's brother has Duchenne muscular dystrophy; neither her parents nor anyone else in the family is affected. Why can't her carrier risk be assumed to be 50%? | Her brother's condition may be a de novo mutation, so her mother may not be a carrier | Duchenne is autosomal dominant, so carrier risk is 0% | Females can't carry X-linked disorders | Her risk is always exactly 2/3 in X-linked disease | About a third of isolated Duchenne cases arise from new mutations; if her mother isn't a carrier, her own risk is much lower. Testing the mother (and her) clarifies it, though germline mosaicism leaves a small residual risk.
 M3#dentistry-u03-31-q4@3: A man with Huntington's disease developed symptoms at 50; his son developed symptoms at 32. What explains this? | Anticipation from expansion of the CAG repeat when passed through the father | Incomplete penetrance in the father | Germline mosaicism in the mother | A second, unrelated mutation in the son | Unstable trinucleotide repeats lengthen between generations, particularly in paternal transmission, and longer repeats cause earlier onset.
 SA3#dentistry-u03-31-q5@2,3: Explain why genetic counselling for an autosomal dominant cancer predisposition, such as a BRCA1 variant, is more complex than a Punnett square suggests. | A Punnett square gives a 50% chance of inheriting the variant, but penetrance is incomplete: not every carrier develops cancer, and risk varies with age, sex and other genetic and lifestyle factors. Expressivity varies (breast, ovarian, other cancers). Testing has consequences for relatives, insurance and screening or risk-reducing surgery decisions, and results may show variants of uncertain significance. Counselling therefore covers risk estimates, options, psychological impact and family communication. | 50% inheritance risk ; Incomplete penetrance and age-dependent risk ; Variable expressivity ; Implications for relatives and decisions ; Variants of uncertain significance or psychological impact
+Q: What are the features of autosomal dominant inheritance? | Both sexes affected, every generation, 50% risk for each child of an affected parent.
+Q: What is the risk for each child of two carriers of an autosomal recessive condition? | 1 in 4.
+Q: Why is there no male-to-male transmission in X-linked recessive disorders? | Fathers pass their Y, not their X, to sons.
+Q: How is mitochondrial disease inherited? | From mothers to all children, with variable severity due to heteroplasmy.
+Q: What is a multifactorial disease? | One caused by many genetic variants of small effect plus environment, such as type 2 diabetes.
+Q: What is the carrier risk of an unaffected sibling of a child with cystic fibrosis? | 2/3.
+Q: What is variable expressivity? | Differing severity among affected relatives, as in neurofibromatosis type 1.
+Q: What causes anticipation? | Expansion of unstable trinucleotide repeats in successive generations.
+Q: What is germline mosaicism? | A parent's gonads carry the variant though blood tests are negative, so recurrence is possible.
+Q: Why is it wrong to say parents who "had their one in four" will have an unaffected next child? | Each pregnancy is independent; the risk stays 1 in 4 every time.
 
 ## Pharmacodynamics: receptors and dose–response
 LV: Preclinical · Application
@@ -663,6 +813,16 @@ M2#dentistry-u03-32-q2@2: In the presence of a competitive reversible antagonist
 TF1#dentistry-u03-32-q3@1: A drug with a higher potency always produces a greater maximum effect. | false | Potency (EC₅₀) and efficacy (Emax) are independent: a highly potent drug may have a lower maximum effect than a less potent one.
 M3#dentistry-u03-32-q4@3: Neostigmine is given at the end of an operation to reverse a non-depolarising neuromuscular blocker such as rocuronium. What is the mechanism? | It inhibits acetylcholinesterase, raising acetylcholine to outcompete the blocker at nicotinic receptors | It irreversibly binds and inactivates the blocker | It blocks voltage-gated calcium channels at the nerve terminal | It activates muscarinic receptors on skeletal muscle | Non-depolarising blockers are competitive antagonists at the nicotinic receptor; raising acetylcholine shifts the competition back. Muscarinic side effects (bradycardia) are why glycopyrronium is given with it.
 SA3#dentistry-u03-32-q5@2,3: Explain why lithium requires plasma level monitoring whereas paracetamol at standard doses does not. | Lithium has a narrow therapeutic index: concentrations that treat bipolar disorder are close to those causing toxicity (tremor, confusion, seizures, renal and thyroid effects). It is cleared by the kidney, so dehydration, renal impairment and interacting drugs (thiazides, ACE inhibitors, NSAIDs) can push levels into the toxic range. Monitoring keeps levels within a target range. Paracetamol at standard doses has a wide margin between effective and toxic exposure, so routine levels aren't needed, though they are vital after overdose. | Narrow therapeutic index defined ; Lithium's toxic effects ; Renal clearance and interacting factors ; Monitoring keeps levels in range ; Contrast with wide margin of paracetamol
+Q: Which is the largest family of drug target receptors? | G protein-coupled receptors.
+Q: How do nuclear receptors act? | Over hours, by altering gene transcription, as with steroid and thyroid hormones.
+Q: What is affinity? | How tightly a drug binds to its receptor.
+Q: What is an antagonist? | A drug with affinity but no efficacy.
+Q: What does EC₅₀ show on a dose–response curve? | Potency: the concentration giving half the maximum effect.
+Q: How does an irreversible antagonist change the agonist curve? | It lowers the maximum response.
+Q: Why may drowsiness return an hour after naloxone reverses morphine? | Naloxone's action is shorter than morphine's, so morphine re-occupies receptors as naloxone clears.
+Q: How is the therapeutic index calculated? | TD₅₀ divided by ED₅₀.
+Q: What is tachyphylaxis? | Rapidly developing tolerance.
+Q: Is fentanyl more efficacious than morphine? | No. It is more potent, but both are full agonists with similar maximal effect.
 
 ## Pharmacokinetics: absorption, distribution, metabolism and excretion
 LV: Preclinical · Application
@@ -702,4 +862,14 @@ NUM2#dentistry-u03-33-q2@2: A hypothetical drug has a half-life of 6 hours. What
 M2#dentistry-u03-33-q3@2: A woman on a combined oral contraceptive starts rifampicin. What is the main concern? | Contraceptive failure, because rifampicin induces the enzymes that metabolise oestrogen and progestogen | Raised oestrogen levels causing thrombosis | Rifampicin toxicity from reduced metabolism | No interaction, because rifampicin is renally excreted | Rifampicin is a potent CYP inducer and lowers contraceptive hormone levels; additional or alternative contraception is needed and the effect persists for weeks after stopping.
 M3#dentistry-u03-33-q4@3: Phenytoin levels rise sharply after a small dose increase. Which explanation is correct? | Its metabolism saturates within the therapeutic range, so elimination becomes zero-order | Its volume of distribution shrinks at higher doses | Its bioavailability falls with increasing dose | It switches to renal excretion at higher concentrations | When hepatic enzymes saturate, a fixed amount rather than a fixed fraction is eliminated per hour, so levels rise disproportionately: hence monitoring.
 SA3#dentistry-u03-33-q5@2,3: Explain why a loading dose may be used for a drug with a long half-life, and why the maintenance dose, not the loading dose, determines the steady-state concentration. | With a long half-life, regular dosing takes 4–5 half-lives to reach steady state, which may be days or weeks. A loading dose, roughly Vd × target concentration, fills the volume of distribution immediately so the target is reached quickly. Thereafter, the steady-state level depends on the balance between the rate of drug input (maintenance dose ÷ interval × F) and clearance; the loading dose has no lasting effect on that balance. | Time to steady state of 4–5 half-lives ; Loading dose fills Vd ; Loading dose formula or concept ; Steady state set by maintenance rate and clearance ; Loading dose doesn't change steady-state level
+Q: What is first-pass metabolism? | Metabolism of an oral drug in the gut wall and liver before it reaches the systemic circulation.
+Q: Which drugs have a very large volume of distribution? | Lipid-soluble drugs that concentrate in tissues, such as amiodarone and digoxin.
+Q: Why does low albumin matter for highly protein-bound drugs? | It raises the free fraction of drugs like warfarin and phenytoin.
+Q: What are phase II metabolic reactions? | Conjugations such as glucuronidation, sulphation and acetylation.
+Q: Name enzyme inhibitors that raise drug levels. | Clarithromycin, erythromycin, azole antifungals, some HIV protease inhibitors and grapefruit juice.
+Q: Give the formula for half-life. | t½ = 0.693 × Vd ÷ CL.
+Q: How is a loading dose calculated? | Vd × target concentration, divided by F if not intravenous.
+Q: What is zero-order kinetics? | Elimination of a constant amount per unit time when enzymes saturate, as with phenytoin and ethanol.
+Q: Does changing the dose change the time to steady state? | No. It changes the steady-state level; only a loading dose gets there faster.
+Q: Why may warfarin needs change weeks after starting rifampicin? | Enzyme induction takes one to two weeks to develop and to wear off.
 `;

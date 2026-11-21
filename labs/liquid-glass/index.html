@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Liquid Glass Material Lab · Gradify</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<!--
+  Gradify — Liquid Glass material lab (research prototype; labs/ is never published: scripts/build-site.mjs).
+  One material, three renderers, four surfaces, five backgrounds:
+    CSS   — the most that compositing alone can do: blur, saturation, a light-driven rim and specular, layered depth.
+    SVG   — CSS plus a real optical edge: a per-surface displacement map (a rounded-rect bevel) fed to
+            backdrop-filter: url(#…), with three slightly different displacements for the colour channels (dispersion).
+            Chromium only (Safari and Firefox don't run SVG filters in backdrop-filter); elsewhere it falls back to CSS.
+    WebGL — the background is drawn into a texture and one fragment shader draws every surface: a signed-distance
+            rounded rect, a circular bevel profile, refraction through the bevel, chromatic dispersion, optional frost,
+            Fresnel brightening at grazing angles, a Blinn-Phong specular from the light, and a soft contact shadow.
+  Light follows the pointer (or a slider). Drag the card, the button and the panel across the background.
+-->
+<style>
+  :root { --sans: "Geist", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif; --mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    --bg: #000; --fg: #fff; --mute: rgba(255, 255, 255, .64); --indigo: #4641ff; --teal: #40d4b1; --line: rgba(255, 255, 255, .12); }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.5 var(--sans); }
+  header.lab { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px 24px; padding: 22px clamp(16px, 3vw, 32px) 14px; }
+  header.lab h1 { margin: 0; font-size: 22px; letter-spacing: -.02em; }
+  header.lab p { margin: 2px 0 0; color: var(--mute); font-size: 13.5px; max-width: 720px; }
+  .controls { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; padding: 0 clamp(16px, 3vw, 32px) 14px; }
+  .seg { display: inline-flex; flex-wrap: wrap; max-width: 100%; gap: 2px; padding: 3px; border-radius: 22px; background: rgba(255, 255, 255, .06); border: 1px solid var(--line); }
+  .seg button { min-height: 34px; padding: 0 14px; border: 0; border-radius: 999px; background: none; color: var(--mute); font: 600 13px var(--sans); cursor: pointer; }
+  .seg button[aria-pressed="true"] { background: #fff; color: #000; }
+  .seg button:disabled { opacity: .35; cursor: not-allowed; }
+  .ctl { display: inline-flex; align-items: center; gap: 8px; font: 500 12px var(--mono); color: var(--mute); letter-spacing: .04em; text-transform: uppercase; }
+  .ctl input[type="range"] { width: 120px; accent-color: var(--teal); }
+  .ctl input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--teal); }
+  .stat { font: 500 12px var(--mono); color: var(--mute); }
+  .stat b { color: var(--fg); font-weight: 500; }
+  .note { margin: 0 clamp(16px, 3vw, 32px) 12px; font-size: 12.5px; color: var(--mute); }
+  .note:empty { display: none; }
+
+  /* ---------- the stage ---------- */
+  .stage { position: relative; height: min(820px, 92vh); min-height: 640px; margin: 0 clamp(8px, 2vw, 24px) 24px; border-radius: 28px; overflow: hidden; touch-action: none; user-select: none; -webkit-user-select: none; }
+  .stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  .stage canvas.gl { display: none; }
+  .stage[data-mode="gl"] canvas.gl { display: block; }
+
+  /* ---------- the material ---------- */
+  .glass {
+    --r: 32px; --frost: 10px; --tint: rgba(12, 12, 18, .22); --ink: #fff; --sub: rgba(255, 255, 255, .7); --rim: 255, 255, 255;
+    position: absolute; z-index: 2; border-radius: var(--r); color: var(--ink); isolation: isolate;
+    background:
+      radial-gradient(120% 70% at calc(50% + var(--lx) * 40%) calc(50% + var(--ly) * 60%), rgba(var(--rim), .16), transparent 60%),
+      linear-gradient(180deg, rgba(var(--rim), .10), rgba(var(--rim), 0) 38%, rgba(var(--rim), 0) 70%, rgba(var(--rim), .06)),
+      var(--tint);
+    -webkit-backdrop-filter: blur(var(--frost)) saturate(185%) brightness(1.04); backdrop-filter: blur(var(--frost)) saturate(185%) brightness(1.04);
+    box-shadow:
+      inset 0 0 0 .5px rgba(var(--rim), .28),
+      inset calc(var(--lx) * -1.5px) calc(var(--ly) * -1.5px) 0 0 rgba(var(--rim), .55),
+      inset calc(var(--lx) * 10px) calc(var(--ly) * 10px) 24px -14px rgba(0, 0, 0, .35),
+      0 1px 1px rgba(0, 0, 0, .12), 0 24px 48px -22px rgba(0, 0, 0, .55);
+  }
+  /* the rim: a 1.5px edge whose brightest point faces the light, with a fainter answer on the far side */
+  .glass::before { content: ""; position: absolute; inset: 0; z-index: 3; border-radius: inherit; padding: 1.5px; pointer-events: none;
+    background: conic-gradient(from calc(var(--la) - 90deg), rgba(var(--rim), .95), rgba(var(--rim), .18) 16%, rgba(var(--rim), .04) 34%, rgba(var(--rim), .3) 50%, rgba(var(--rim), .04) 66%, rgba(var(--rim), .18) 84%, rgba(var(--rim), .95));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0); }
+  /* the specular: a small, hot reflection of the light, near the edge that faces it */
+  .glass::after { content: ""; position: absolute; inset: 1px; z-index: 3; border-radius: inherit; pointer-events: none;
+    background: radial-gradient(90% 60% at calc(50% + var(--lx) * 50%) calc(50% + var(--ly) * 50%), rgba(var(--rim), .2), rgba(var(--rim), .05) 40%, transparent 62%); mix-blend-mode: screen; }
+  .glass > * { position: relative; z-index: 4; }
+
+  /* light backgrounds: white glass, near-black ink */
+  .stage[data-bg="light"] .glass { --tint: rgba(255, 255, 255, .34); --ink: #0d0d18; --sub: rgba(13, 13, 24, .62); }
+  .stage[data-bg="light"] .glass { box-shadow: inset 0 0 0 .5px rgba(255, 255, 255, .9), inset calc(var(--lx) * -1.5px) calc(var(--ly) * -1.5px) 0 0 #fff, inset calc(var(--lx) * 10px) calc(var(--ly) * 10px) 24px -14px rgba(22, 22, 48, .12), 0 1px 1px rgba(22, 22, 48, .06), 0 24px 48px -22px rgba(22, 22, 48, .3); }
+
+  /* the four surfaces, each a different thickness of the same material */
+  .g-nav { --r: 999px; --frost: 3px; left: 50%; top: 22px; translate: -50% 0; display: flex; align-items: center; gap: 4px; padding: 7px; }
+  .g-nav .logo { display: grid; place-items: center; width: 38px; height: 38px; margin-right: 6px; border-radius: 50%; background: linear-gradient(135deg, var(--indigo), var(--teal)); font: 700 15px var(--sans); color: #fff; }
+  .g-nav a { padding: 9px 15px; border-radius: 999px; color: var(--sub); font: 600 14px var(--sans); text-decoration: none; }
+  .g-nav a[aria-current] { color: var(--ink); background: rgba(var(--rim), .16); box-shadow: inset 0 1px 0 rgba(var(--rim), .35); }
+  .stage[data-bg="light"] .g-nav a[aria-current] { background: rgba(255, 255, 255, .7); }
+  .g-nav .search { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; margin-left: 4px; background: rgba(var(--rim), .1); }
+  .g-card { --r: 34px; --frost: 14px; left: 6%; top: 128px; width: min(420px, 86%); padding: 24px 26px; cursor: grab; }
+  .g-card .kick { font: 500 11px var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--sub); }
+  .g-card h2 { margin: 6px 0 4px; font-size: 26px; letter-spacing: -.03em; line-height: 1.15; }
+  .g-card p { margin: 0; color: var(--sub); font-size: 14px; }
+  .g-card .row { display: flex; align-items: center; gap: 16px; margin-top: 20px; }
+  .g-card .ring { --p: .62; width: 58px; height: 58px; border-radius: 50%; background: conic-gradient(var(--teal) calc(var(--p) * 360deg), rgba(var(--rim), .15) 0); -webkit-mask: radial-gradient(farthest-side, transparent 72%, #000 74%); mask: radial-gradient(farthest-side, transparent 72%, #000 74%); }
+  .g-card .go { margin-left: auto; padding: 12px 18px; border: 0; border-radius: 999px; background: #fff; color: #000; font: 600 14px var(--sans); box-shadow: 0 8px 20px -10px rgba(0, 0, 0, .6); }
+  .stage[data-bg="light"] .g-card .go { background: #0d0d18; color: #fff; }
+  .g-fab { --r: 50%; --frost: 0px; left: calc(6% + 360px); top: 380px; width: 84px; height: 84px; padding: 0; border: 0; display: grid; place-items: center; cursor: grab; }
+  .g-fab svg { width: 30px; height: 30px; }
+  .g-panel { --r: 40px; --frost: 22px; --tint: rgba(12, 12, 18, .38); right: 5%; top: 140px; width: min(460px, 88%); padding: 26px; cursor: grab; }
+  .stage[data-bg="light"] .g-panel { --tint: rgba(255, 255, 255, .5); }
+  .g-panel h3 { margin: 0 0 4px; font-size: 20px; letter-spacing: -.02em; }
+  .g-panel p { margin: 0 0 14px; color: var(--sub); font-size: 14px; }
+  .g-panel .card { margin-top: 10px; padding: 14px 16px; border-radius: 22px; background: rgba(var(--rim), .08); box-shadow: inset 0 1px 0 rgba(var(--rim), .25); }
+  .g-panel .card b { display: block; font-size: 15px; }
+  .g-panel .card small { color: var(--sub); }
+  .g-panel .acts { display: flex; gap: 10px; margin-top: 18px; }
+  .g-panel .acts span { flex: 1; text-align: center; padding: 12px; border-radius: 999px; font: 600 14px var(--sans); background: rgba(var(--rim), .12); box-shadow: inset 0 1px 0 rgba(var(--rim), .3); }
+  .g-panel .acts span:last-child { background: linear-gradient(135deg, var(--indigo), var(--teal)); color: #fff; }
+  .dragging { cursor: grabbing !important; }
+
+  /* SVG renderer: the same surfaces, but the backdrop goes through a per-surface lens (set inline by the script) */
+  /* WebGL renderer: the shader draws the glass, so the DOM surfaces keep only their content */
+  .stage[data-mode="gl"] .glass { background: none; -webkit-backdrop-filter: none; backdrop-filter: none; box-shadow: none; }
+  .stage[data-mode="gl"] .glass::before, .stage[data-mode="gl"] .glass::after { display: none; }
+
+  @media (prefers-reduced-transparency: reduce) { .stage .glass { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; --tint: rgba(18, 18, 24, .96); } }
+  @media (max-width: 760px) {
+    .g-card { left: 4%; top: 100px; } .g-panel { right: 4%; top: 420px; } .g-fab { left: 70%; top: 320px; }
+    .g-nav a:nth-of-type(n+3) { display: none; }
+  }
+  footer.lab { padding: 0 clamp(16px, 3vw, 32px) 40px; color: var(--mute); font-size: 13px; max-width: 980px; }
+  footer.lab h2 { color: var(--fg); font-size: 15px; margin: 18px 0 4px; }
+</style>
+</head>
+<body>
+<header class="lab">
+  <div><h1>Liquid Glass material lab</h1><p>One glass material for Gradify, drawn three ways over five backgrounds. Move the pointer to move the light; drag the card, the round button and the panel. Research prototype: not linked from the site and never published.</p></div>
+  <span class="stat">Renderer <b id="s-mode">–</b> · <b id="s-fps">–</b> fps · DPR <b id="s-dpr">–</b></span>
+</header>
+<div class="controls">
+  <div class="seg" role="group" aria-label="Renderer"><button data-mode="css">CSS</button><button data-mode="svg">SVG refraction</button><button data-mode="gl">WebGL shader</button></div>
+  <div class="seg" role="group" aria-label="Background"><button data-bg="dark">Dark</button><button data-bg="light">Light</button><button data-bg="colour">Colourful</button><button data-bg="lesson">Lesson</button><button data-bg="motion">Animated</button></div>
+  <label class="ctl"><input type="checkbox" id="follow" checked> Light follows pointer</label>
+  <label class="ctl">Light <input type="range" id="angle" min="0" max="360" value="225"></label>
+  <label class="ctl">Refraction <input type="range" id="refr" min="0" max="100" value="60"></label>
+</div>
+<p class="note" id="note"></p>
+
+<div class="stage" id="stage" data-mode="css" data-bg="dark">
+  <canvas class="bg" id="bg" aria-hidden="true"></canvas>
+  <canvas class="gl" id="gl" aria-hidden="true"></canvas>
+
+  <nav class="glass g-nav" data-k="nav" aria-label="Prototype navigation bar"><span class="logo">G</span><a href="#" aria-current="page">Learn</a><a href="#">Revise</a><a href="#">Progress</a><a href="#">Explore</a><span class="search" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span></nav>
+
+  <article class="glass g-card drag" data-k="card" aria-label="Prototype dashboard card"><span class="kick">Chemistry · School 13</span><h2>Curly arrow notation</h2><p>Continue where you left off: 3 of 5 sections read.</p>
+    <div class="row"><span class="ring" aria-hidden="true"></span><div><b>62%</b><br><small style="color:var(--sub)">of Mechanism basics</small></div><button class="go" type="button">Continue</button></div></article>
+
+  <button class="glass g-fab drag" data-k="fab" type="button" aria-label="Prototype floating button"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.4-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z"/></svg></button>
+
+  <section class="glass g-panel drag" data-k="panel" aria-label="Prototype overlay panel"><h3>Flashcards · Mechanism basics</h3><p>7 cards due. A few minutes now saves relearning later.</p>
+    <div class="card"><b>What does a half-headed arrow show?</b><small>Tap to reveal</small></div>
+    <div class="card"><b>Where must a curly arrow start?</b><small>Tap to reveal</small></div>
+    <div class="acts"><span>Later</span><span>Start review</span></div></section>
+</div>
+
+<footer class="lab">
+  <h2>What each renderer is</h2>
+  <p><b>CSS</b>: backdrop blur and saturation, a tint, a 1.5px conic rim whose bright point faces the light, a light-positioned specular, inner light and shadow. Works everywhere with backdrop-filter.</p>
+  <p><b>SVG refraction</b>: CSS plus a displacement map made for each surface's exact size and corner radius — a convex bevel that bends the background at the edge — run three times at slightly different strengths for red, green and blue. Chromium only; other browsers fall back to CSS.</p>
+  <p><b>WebGL shader</b>: the background becomes a texture and a single fragment shader draws all four surfaces with true refraction through a circular bevel, dispersion, Fresnel, a specular highlight and a contact shadow. Redraws only while something moves; pixel ratio capped at 1.5.</p>
+</footer>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs id="lenses"></defs></svg>
+
+<script>
+"use strict";
+const stage = document.getElementById("stage"), bgc = document.getElementById("bg"), glc = document.getElementById("gl"), note = document.getElementById("note");
+const bx = bgc.getContext("2d");
+const S = { mode: "css", bg: "dark", angle: 225, follow: true, refr: 0.6, t: 0, moving: false };
+const surfaces = [...stage.querySelectorAll(".glass")];
+const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const DPR = Math.min(devicePixelRatio || 1, 1.5);
+document.getElementById("s-dpr").textContent = DPR.toFixed(1);
+
+// ---------- capabilities ----------
+const chromium = !!navigator.userAgentData?.brands?.some((b) => /Chromium/.test(b.brand));
+const gl = glc.getContext("webgl", { premultipliedAlpha: false, antialias: false }) || null;
+if (!chromium) document.querySelector('[data-mode="svg"]').disabled = true;
+if (!gl) document.querySelector('[data-mode="gl"]').disabled = true;
+const notes = [];
+if (!chromium) notes.push("SVG refraction needs a Chromium browser (Chrome, Edge, Arc, Opera): Safari and Firefox don't run SVG filters inside backdrop-filter, so they'd get the CSS material.");
+if (!gl) notes.push("WebGL isn't available here, so the shader renderer is off.");
+note.textContent = notes.join(" ");
+
+// ---------- backgrounds, painted into a canvas (also the WebGL texture) ----------
+const SPECTRUM = ["#4641ff", "#8c27ca", "#f055dd", "#e52153", "#ff5600", "#ffc002", "#40d4b1"];
+function size() { const r = stage.getBoundingClientRect(); for (const c of [bgc, glc]) { c.width = Math.round(r.width * DPR); c.height = Math.round(r.height * DPR); } return r; }
+let W = 0, H = 0;
+function blob(x, y, r, c, a = 1) { const g = bx.createRadialGradient(x, y, 0, x, y, r); g.addColorStop(0, c); g.addColorStop(1, "transparent"); bx.globalAlpha = a; bx.fillStyle = g; bx.fillRect(x - r, y - r, r * 2, r * 2); bx.globalAlpha = 1; }
+function lessonText(ink, mute, accent, x0, y0, w) {
+  bx.fillStyle = accent; bx.font = `500 ${12 * DPR}px "Geist Mono", monospace`; bx.fillText("STAGE 5 · ORGANIC CHEMISTRY · SCHOOL 13", x0, y0);
+  bx.fillStyle = ink; bx.font = `700 ${46 * DPR}px Geist, sans-serif`; bx.fillText("Curly arrow notation", x0, y0 + 56 * DPR);
+  bx.font = `400 ${17 * DPR}px Geist, sans-serif`;
+  const para = "Curly arrows are the language of organic mechanisms. A full-headed arrow shows the movement of an electron pair; a half-headed arrow shows one electron. Arrows start at a lone pair or a bond and end where the electrons go: an atom, forming a lone pair, or between atoms, forming a bond. Check every step for conservation of charge and valence.";
+  let line = "", y = y0 + 100 * DPR; const lh = 28 * DPR;
+  for (const word of (para + " " + para).split(" ")) { const t = line + word + " "; if (bx.measureText(t).width > w) { bx.fillStyle = mute; bx.fillText(line, x0, y); line = word + " "; y += lh; if (y > H - 40 * DPR) break; } else line = t; }
+  // a few crisp shapes: refraction shows best on edges
+  for (let i = 0; i < 7; i++) { bx.fillStyle = SPECTRUM[i]; bx.beginPath(); bx.arc(x0 + i * 46 * DPR + 16 * DPR, H - 60 * DPR, 14 * DPR, 0, Math.PI * 2); bx.fill(); }
+}
+function paint(t = 0) {
+  W = bgc.width; H = bgc.height; bx.setTransform(1, 0, 0, 1, 0, 0); bx.clearRect(0, 0, W, H);
+  const k = (n) => n * DPR, s = Math.min(W, H);
+  if (S.bg === "dark") {
+    bx.fillStyle = "#050507"; bx.fillRect(0, 0, W, H);
+    blob(W * .18, H * .2, s * .55, "rgba(70,65,255,.55)"); blob(W * .85, H * .75, s * .5, "rgba(64,212,177,.35)");
+    bx.strokeStyle = "rgba(255,255,255,.06)"; bx.lineWidth = 1; for (let x = 0; x < W; x += k(40)) { bx.beginPath(); bx.moveTo(x, 0); bx.lineTo(x, H); bx.stroke(); } for (let y = 0; y < H; y += k(40)) { bx.beginPath(); bx.moveTo(0, y); bx.lineTo(W, y); bx.stroke(); }
+    lessonText("#fff", "rgba(255,255,255,.72)", "#40d4b1", k(60), k(120), W * .5);
+  } else if (S.bg === "light") {
+    bx.fillStyle = "#f6f6fb"; bx.fillRect(0, 0, W, H);
+    blob(0, 0, s * .7, "rgba(255,86,0,.45)"); blob(W, H * .15, s * .6, "rgba(240,85,221,.4)"); blob(W * .1, H, s * .6, "rgba(64,212,177,.45)"); blob(W, H, s * .7, "rgba(70,65,255,.4)");
+    blob(W * .5, H * .5, s * .55, "rgba(255,255,255,.9)");
+    bx.fillStyle = "rgba(22,22,48,.12)"; for (let x = k(12); x < W; x += k(24)) for (let y = k(12); y < H; y += k(24)) { bx.beginPath(); bx.arc(x, y, k(1.4), 0, 7); bx.fill(); }
+    lessonText("#0d0d18", "rgba(13,13,24,.7)", "#c2410c", k(60), k(120), W * .5);
+  } else if (S.bg === "colour") {
+    const g = bx.createLinearGradient(0, 0, W, H); SPECTRUM.forEach((c, i) => g.addColorStop(i / 6, c)); bx.fillStyle = g; bx.fillRect(0, 0, W, H);
+    blob(W * .3, H * .3, s * .6, "rgba(255,255,255,.35)"); blob(W * .7, H * .8, s * .5, "rgba(0,0,0,.35)");
+    bx.fillStyle = "rgba(255,255,255,.9)"; bx.font = `800 ${k(150)}px Geist, sans-serif`; bx.fillText("Gradify", k(40), H * .62);
+  } else if (S.bg === "lesson") {
+    bx.fillStyle = "#0b0b10"; bx.fillRect(0, 0, W, H);
+    // a stripe field and a photo-like gradient: what glass has to sit over in a real lesson
+    for (let i = 0; i < W; i += k(14)) { bx.fillStyle = i / k(14) % 2 ? "#15151d" : "#1d1d28"; bx.fillRect(i, 0, k(7), H); }
+    const g = bx.createRadialGradient(W * .7, H * .4, 0, W * .7, H * .4, s * .5); g.addColorStop(0, "#ffb36b"); g.addColorStop(.5, "#e52153"); g.addColorStop(1, "transparent"); bx.fillStyle = g; bx.fillRect(0, 0, W, H);
+    lessonText("#fff", "rgba(255,255,255,.8)", "#ffc002", k(60), k(120), W * .55);
+  } else {
+    bx.fillStyle = "#06060a"; bx.fillRect(0, 0, W, H);
+    for (let i = 0; i < 6; i++) { const a = t * .00025 * (1 + i * .3) + i; blob(W * (.5 + .4 * Math.cos(a * 1.3 + i)), H * (.5 + .4 * Math.sin(a + i * 2)), s * (.38 + .08 * Math.sin(a * 2)), SPECTRUM[i], .85); }
+    bx.save(); bx.translate(0, -((t * .03) % k(80))); bx.fillStyle = "rgba(255,255,255,.85)"; bx.font = `600 ${k(20)}px Geist, sans-serif`;
+    for (let y = 0, n = 0; y < H + k(160); y += k(40), n++) bx.fillText(["Atoms and moles", "Shape and polarity", "Rates and collisions", "Equilibria", "Organic reactions", "Curly arrows", "Spectroscopy"][n % 7], k(60) + (n % 3) * k(260), y + k(40));
+    bx.restore();
+  }
+}
+
+// ---------- the light ----------
+function setLight(deg) {
+  S.angle = (deg + 360) % 360; const a = S.angle * Math.PI / 180, lx = Math.cos(a), ly = Math.sin(a);
+  stage.style.setProperty("--lx", lx.toFixed(3)); stage.style.setProperty("--ly", ly.toFixed(3)); stage.style.setProperty("--la", `${(S.angle + 90).toFixed(1)}deg`);
+  document.getElementById("angle").value = Math.round(S.angle); kick();
+}
+stage.addEventListener("pointermove", (e) => {
+  if (!S.follow) return; const r = stage.getBoundingClientRect();
+  // the light sits where the pointer is: each surface is lit from that side (one shared direction from the stage centre)
+  setLight(Math.atan2(e.clientY - r.top - r.height / 2, e.clientX - r.left - r.width / 2) * 180 / Math.PI);
+});
+
+// ---------- SVG lenses: a displacement map per surface, at its exact size ----------
+function lensMap(w, h, r, bezel) {
+  const c = document.createElement("canvas"); c.width = w; c.height = h; const x = c.getContext("2d"), img = x.createImageData(w, h), d = img.data;
+  for (let j = 0; j < h; j++) for (let i = 0; i < w; i++) {
+    const px = i + .5 - w / 2, py = j + .5 - h / 2, qx = Math.abs(px) - (w / 2 - r), qy = Math.abs(py) - (h / 2 - r);
+    const out = Math.hypot(Math.max(qx, 0), Math.max(qy, 0)), sdf = out + Math.min(Math.max(qx, qy), 0) - r, dist = -sdf;
+    let nx, ny; if (qx > 0 && qy > 0) { const l = Math.hypot(qx, qy) || 1; nx = qx / l; ny = qy / l; } else if (qx > qy) { nx = 1; ny = 0; } else { nx = 0; ny = 1; }
+    nx *= Math.sign(px) || 1; ny *= Math.sign(py) || 1;
+    const t = Math.min(Math.max(dist / bezel, 0), 1), m = dist < 0 ? 0 : Math.pow(1 - t, 2);   // strongest at the rim, nothing in the flat middle
+    const k = (j * w + i) * 4; d[k] = 128 - nx * m * 127; d[k + 1] = 128 - ny * m * 127; d[k + 2] = 128; d[k + 3] = 255;
+  }
+  x.putImageData(img, 0, 0); return c.toDataURL();
+}
+function buildLenses() {
+  const defs = document.getElementById("lenses"); defs.innerHTML = "";
+  for (const el of surfaces) {
+    el.style.removeProperty("backdrop-filter"); el.style.removeProperty("-webkit-backdrop-filter");
+    if (S.mode !== "svg") continue;
+    const w = Math.round(el.offsetWidth), h = Math.round(el.offsetHeight), cs = getComputedStyle(el);
+    const r = Math.min(parseFloat(cs.borderTopLeftRadius) || 0, w / 2, h / 2), bezel = Math.min(Math.max(r * .55, 12), 26, Math.min(w, h) / 3), sc = (6 + 34 * S.refr) * 2, id = `lens-${el.dataset.k}`;
+    const frost = parseFloat(cs.getPropertyValue("--frost")) || 0;
+    defs.insertAdjacentHTML("beforeend", `<filter id="${id}" x="0" y="0" width="${w}" height="${h}" filterUnits="userSpaceOnUse" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feImage href="${lensMap(w, h, r, bezel)}" x="0" y="0" width="${w}" height="${h}" preserveAspectRatio="none" result="map"/>
+      <feDisplacementMap in="SourceGraphic" in2="map" scale="${sc}" xChannelSelector="R" yChannelSelector="G" result="dr"/>
+      <feDisplacementMap in="SourceGraphic" in2="map" scale="${sc * .97}" xChannelSelector="R" yChannelSelector="G" result="dg"/>
+      <feDisplacementMap in="SourceGraphic" in2="map" scale="${sc * .94}" xChannelSelector="R" yChannelSelector="G" result="db"/>
+      <feColorMatrix in="dr" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result="r"/>
+      <feColorMatrix in="dg" values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0" result="g"/>
+      <feColorMatrix in="db" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" result="b"/>
+      <feBlend in="r" in2="g" mode="screen" result="rg"/><feBlend in="rg" in2="b" mode="screen" result="rgb"/>
+      <feGaussianBlur in="rgb" stdDeviation="${(frost * .5).toFixed(1)}"/></filter>`);
+    const f = `url(#${id}) saturate(185%) brightness(1.04)`;
+    el.style.setProperty("backdrop-filter", f); el.style.setProperty("-webkit-backdrop-filter", f);
+  }
+}
+
+// ---------- WebGL: the background as a texture, the glass in one shader ----------
+let prog, tex, ftex, U = {};
+// the frosted copy of the background: drawn at quarter size through a blur, then stretched (a blur hides the scaling)
+const fzc = document.createElement("canvas"), fzx = fzc.getContext("2d");
+function frostCopy() { fzc.width = Math.max(1, bgc.width >> 2); fzc.height = Math.max(1, bgc.height >> 2); fzx.filter = `blur(${(4.5 * DPR).toFixed(1)}px) saturate(1.5)`; fzx.drawImage(bgc, -fzc.width * .05, -fzc.height * .05, fzc.width * 1.1, fzc.height * 1.1); }
+const VS = `attribute vec2 p; void main(){ gl_Position = vec4(p, 0., 1.); }`;
+const FS = `precision highp float;
+uniform sampler2D bg; uniform sampler2D fz; uniform vec2 res; uniform vec2 light; uniform float refr, lightBg;
+uniform vec4 rects[4]; uniform vec4 props[4];
+float sdBox(vec2 p, vec2 b, float r){ vec2 q = abs(p) - b + r; return length(max(q, 0.)) + min(max(q.x, q.y), 0.) - r; }
+vec3 tap(vec2 px){ return texture2D(bg, clamp(px / res, vec2(0.), vec2(1.))).rgb; }
+vec3 ftap(vec2 px){ return texture2D(fz, clamp(px / res, vec2(0.), vec2(1.))).rgb; }
+void main(){
+  vec2 fc = vec2(gl_FragCoord.x, res.y - gl_FragCoord.y);
+  vec3 col = tap(fc);
+  // contact shadows, under every surface
+  for (int i = 0; i < 4; i++) { vec2 p = fc - rects[i].xy - vec2(0., 18.); float d = sdBox(p, rects[i].zw, props[i].x); col *= 1. - (lightBg > .5 ? .16 : .32) * (1. - smoothstep(-24., 46., d)); }
+  for (int i = 0; i < 4; i++) {
+    vec2 p = fc - rects[i].xy; float r = props[i].x; float d = sdBox(p, rects[i].zw, r);
+    if (d < 1.5) {
+      float aa = 1. - smoothstep(-1., 1., d);
+      float e = 1.; vec2 g = vec2(sdBox(p + vec2(e, 0.), rects[i].zw, r) - sdBox(p - vec2(e, 0.), rects[i].zw, r), sdBox(p + vec2(0., e), rects[i].zw, r) - sdBox(p - vec2(0., e), rects[i].zw, r));
+      vec2 n = normalize(g + 1e-6);
+      float bez = props[i].w; float t = clamp(-d / bez, 0., 1.);
+      float h = sqrt(max(1. - (1. - t) * (1. - t), 0.));            // a circular bevel: 0 at the rim, 1 on the flat top
+      float bend = (1. - h);                                        // how far the surface is tilted
+      vec2 off = -n * bend * bez * (.35 + 1.1 * refr) - p * .05 * refr;   // refraction at the bevel, a slight lens over all
+      vec2 disp = n * bend * (2. + 7. * refr);                      // the colour channels part a little at the edge
+      vec3 sharp = vec3(tap(fc + off - disp).r, tap(fc + off).g, tap(fc + off + disp).b);
+      vec3 frosted = vec3(ftap(fc + off - disp).r, ftap(fc + off).g, ftap(fc + off + disp).b);
+      vec3 c = mix(sharp, frosted, clamp(props[i].y, 0., 1.));     // frost: 0 clear … 1 fully frosted
+      c = mix(c, lightBg > .5 ? vec3(1.) : vec3(.05, .05, .08), props[i].z);     // the tint
+      c = mix(c, c * 1.12 + .02, .5);                                              // a touch brighter, like glass gathering light
+      vec3 N = normalize(vec3(n * bend * 1.8, h + .02)), L = normalize(vec3(light, .75)), V = vec3(0., 0., 1.), Hh = normalize(L + V);
+      float ndh = max(dot(N, Hh), 0.);
+      float spec = pow(ndh, 90.) * 1.6 + pow(ndh, 14.) * .12;
+      float fres = pow(1. - max(dot(N, V), 0.), 3.) * .55;
+      float rim = smoothstep(-2.5, -.5, d) * (1. - smoothstep(-.5, 1., d));        // a hairline at the very edge
+      float lit = .5 + .5 * dot(n, light);
+      vec3 glass = c + fres * (lightBg > .5 ? .5 : .65) + spec + rim * (.25 + .55 * lit);
+      glass *= 1. - .18 * bend * max(dot(n, -light), 0.);                        // the edge away from the light falls into shade
+      col = mix(col, glass, aa);
+    }
+  }
+  gl_FragColor = vec4(col, 1.);
+}`;
+function initGL() {
+  if (!gl || prog) return;
+  const sh = (t, s) => { const o = gl.createShader(t); gl.shaderSource(o, s); gl.compileShader(o); if (!gl.getShaderParameter(o, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(o)); return o; };
+  prog = gl.createProgram(); gl.attachShader(prog, sh(gl.VERTEX_SHADER, VS)); gl.attachShader(prog, sh(gl.FRAGMENT_SHADER, FS)); gl.linkProgram(prog); gl.useProgram(prog);
+  const b = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, b); gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+  const loc = gl.getAttribLocation(prog, "p"); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+  const mk = () => { const t = gl.createTexture(); gl.bindTexture(gl.TEXTURE_2D, t);
+    for (const [k, v] of [[gl.TEXTURE_MIN_FILTER, gl.LINEAR], [gl.TEXTURE_MAG_FILTER, gl.LINEAR], [gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE], [gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE]]) gl.texParameteri(gl.TEXTURE_2D, k, v); return t; };
+  tex = mk(); ftex = mk();
+  for (const n of ["bg", "fz", "res", "light", "refr", "lightBg", "rects", "props"]) U[n] = gl.getUniformLocation(prog, n);
+}
+// each surface's character, as the shader sees it: corner radius, frost (px), tint, bevel width (px)
+const GLPROPS = { nav: [0, .35, .08, 16], card: [34, 1, .16, 22], fab: [0, 0, .04, 30], panel: [40, 1, .3, 26] };   // radius, frost 0–1, tint, bevel
+function drawGL() {
+  const sr = stage.getBoundingClientRect(), rects = [], props = [];
+  for (const el of surfaces) {
+    const r = el.getBoundingClientRect(), p = GLPROPS[el.dataset.k], hw = r.width / 2, hh = r.height / 2;
+    rects.push((r.left - sr.left + hw) * DPR, (r.top - sr.top + hh) * DPR, hw * DPR, hh * DPR);
+    const rad = el.dataset.k === "nav" || el.dataset.k === "fab" ? Math.min(hw, hh) : p[0];
+    props.push(rad * DPR, p[1], p[2], Math.min(p[3], Math.min(hw, hh)) * DPR);
+  }
+  gl.viewport(0, 0, glc.width, glc.height);
+  if (S.texDirty) { frostCopy();
+    gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, tex); gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, bgc);
+    gl.activeTexture(gl.TEXTURE1); gl.bindTexture(gl.TEXTURE_2D, ftex); gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, fzc); S.texDirty = false; }
+  gl.uniform1i(U.bg, 0); gl.uniform1i(U.fz, 1); gl.uniform2f(U.res, glc.width, glc.height);
+  const a = S.angle * Math.PI / 180; gl.uniform2f(U.light, Math.cos(a), Math.sin(a));
+  gl.uniform1f(U.refr, S.refr); gl.uniform1f(U.lightBg, S.bg === "light" ? 1 : 0);
+  gl.uniform4fv(U.rects, new Float32Array(rects)); gl.uniform4fv(U.props, new Float32Array(props));
+  gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+}
+
+// ---------- drawing on demand ----------
+let pending = false, frames = 0, last = performance.now();
+function frame(t) {
+  pending = false; S.t = t;
+  if (S.bg === "motion" || S.dirty) { paint(t); S.dirty = false; S.texDirty = true; }
+  if (S.mode === "gl") drawGL();
+  frames++; if (t - last > 1000) { document.getElementById("s-fps").textContent = frames; frames = 0; last = t; }
+  if ((S.bg === "motion" && !reduced) || S.moving) kick();
+}
+function kick() { if (!pending && !document.hidden) { pending = true; requestAnimationFrame(frame); } }
+document.addEventListener("visibilitychange", () => { if (!document.hidden) kick(); });
+
+// ---------- dragging ----------
+let drag = null;
+stage.addEventListener("pointerdown", (e) => {
+  const el = e.target.closest(".drag"); if (!el) return;
+  const r = el.getBoundingClientRect(), sr = stage.getBoundingClientRect();
+  drag = { el, dx: e.clientX - r.left, dy: e.clientY - r.top, sr }; el.classList.add("dragging"); el.setPointerCapture(e.pointerId); S.moving = true; kick();
+});
+stage.addEventListener("pointermove", (e) => {
+  if (!drag) return; const { el, dx, dy, sr } = drag;
+  el.style.left = `${Math.max(-40, Math.min(sr.width - 40, e.clientX - sr.left - dx))}px`; el.style.top = `${Math.max(0, Math.min(sr.height - 40, e.clientY - sr.top - dy))}px`; el.style.right = "auto";
+});
+const endDrag = () => { if (!drag) return; drag.el.classList.remove("dragging"); drag = null; S.moving = false; kick(); };
+stage.addEventListener("pointerup", endDrag); stage.addEventListener("pointercancel", endDrag);
+
+// ---------- controls ----------
+function setMode(m) {
+  if ((m === "svg" && !chromium) || (m === "gl" && !gl)) m = "css";
+  S.mode = m; stage.dataset.mode = m; document.querySelectorAll("[data-mode]").forEach((b) => b.tagName === "BUTTON" && b.setAttribute("aria-pressed", String(b.dataset.mode === m)));
+  document.getElementById("s-mode").textContent = { css: "CSS", svg: "SVG refraction", gl: "WebGL shader" }[m];
+  if (m === "gl") { S.texDirty = true; try { initGL(); } catch (err) { note.textContent = `WebGL shader failed to compile: ${err.message}`; return setMode("css"); } }
+  buildLenses(); kick();
+}
+function setBg(b) { S.bg = b; stage.dataset.bg = b; document.querySelectorAll("button[data-bg]").forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.bg === b))); S.dirty = true; kick(); }
+document.querySelectorAll("button[data-mode]").forEach((b) => b.addEventListener("click", () => setMode(b.dataset.mode)));
+document.querySelectorAll("button[data-bg]").forEach((b) => b.addEventListener("click", () => setBg(b.dataset.bg)));
+document.getElementById("follow").addEventListener("change", (e) => { S.follow = e.target.checked; });
+document.getElementById("angle").addEventListener("input", (e) => setLight(+e.target.value));
+document.getElementById("refr").addEventListener("input", (e) => { S.refr = e.target.value / 100; if (S.mode === "svg") buildLenses(); kick(); });
+new ResizeObserver(() => { size(); S.dirty = true; if (S.mode === "svg") buildLenses(); kick(); }).observe(stage);
+
+// the URL can choose: ?mode=gl&bg=light&angle=210 (handy for screenshots)
+const q = new URLSearchParams(location.search);
+size(); setLight(+(q.get("angle") || 225)); setBg(q.get("bg") || "dark");
+document.fonts?.ready.then(() => { S.dirty = true; kick(); });
+setMode(q.get("mode") || (gl ? "gl" : "css"));
+</script>
+</body>
+</html>

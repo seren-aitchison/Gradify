@@ -38,6 +38,16 @@ M2#history-u05-01-q2@2: Why did clover matter in the Norfolk rotation? | It rest
 TF1#history-u05-01-q3@1: Agricultural change released labour for towns and industry. | true | A smaller share of workers was needed to feed the population.
 M3#history-u05-01-q4@3: Which judgement about the agricultural revolution is best supported? | A long, gradual transformation that accelerated after 1750 | A sudden change caused by one invention in 1701 | A decline in farm output across the period | A change that had no link to industrialisation | Historians stress gradual change with acceleration after 1750.
 SA3#history-u05-01-q5@2,3: How far was there an agricultural revolution in England between 1700 and 1850? | Enclosure (most acts 1750 to 1830), the Norfolk rotation, the seed drill and Bakewell's selective breeding raised output and productivity, feeding a growing population and releasing labour. Overton sees revolution after 1750; others stress that changes began earlier and spread slowly, and enclosure cost cottagers their rights. A strong answer weighs these. | Explains enclosure ; Explains new methods ; Explains links to industry ; Uses interpretations ; Reaches a judgement
+Q: How did villagers farm under the open-field system? | They farmed scattered strips and shared common land.
+Q: When were most parliamentary enclosure acts passed? | Between 1750 and 1830.
+Q: Why did enclosure make agricultural improvement easier? | It combined strips into compact, hedged farms under single owners.
+Q: What did the Norfolk four-course rotation replace? | Leaving land fallow.
+Q: Why were turnips useful in the Norfolk rotation? | They fed animals over winter.
+Q: Who promoted turnips in the 1730s? | Charles "Turnip" Townshend.
+Q: What did Jethro Tull's seed drill (about 1701) do? | It sowed seed in rows.
+Q: Who spread news of new farming methods in writing? | Arthur Young and other writers.
+Q: How did agricultural change help industry beyond releasing labour? | Farming profits supplied capital and demand for manufactured goods.
+Q: What did Mark Overton argue about the agricultural revolution? | Output rose substantially between 1750 and 1850, and productivity per worker grew.
 
 ## Population growth
 LV: GCSE and A level · Application
@@ -75,6 +85,16 @@ M2#history-u05-02-q2@2: Why did Wrigley and Schofield stress rising fertility? |
 TF1#history-u05-02-q3@1: Malthus's prediction of famine came true in nineteenth-century Britain. | false | Rising output and food imports kept food supply ahead of population.
 M3#history-u05-02-q4@3: Which judgement about population and industrialisation is best supported? | They reinforced each other rather than one simply causing the other | Population growth had nothing to do with industry | Industry caused the population to fall | Population grew only after industrialisation ended | Population growth and industrial change each encouraged the other.
 SA3#history-u05-02-q5@2,3: Why did Britain's population grow so rapidly between 1750 and 1851? | Wrigley and Schofield found that earlier marriage and higher fertility drove most growth, while fewer famines, better food supply and smallpox vaccination (1796) reduced mortality; the population rose from about 10.5 million (1801) to about 21 million (1851). Industrial wages encouraged earlier marriage, and more people supplied labour and demand. A strong answer weighs causes and the link to industry. | Explains the scale of growth ; Explains fertility ; Explains mortality ; Explains links to industry ; Reaches a judgement
+Q: Roughly what was England's population at the start of the eighteenth century? | About 5 million.
+Q: When was the first national census taken? | In 1801.
+Q: What did Wrigley and Schofield use to study population? | Reconstructions of parish registers.
+Q: Why did fertility rise in the eighteenth century? | People married younger and had more children.
+Q: What helped mortality fall in the eighteenth century? | Fewer famines, better food supply, the decline of plague and smallpox vaccination.
+Q: In which work did Malthus set out his population argument? | His Essay on the Principle of Population (1798).
+Q: Why was Malthus proved wrong in Britain in the long run? | Rising farm output and food imports kept pace with population.
+Q: What seemed to support Malthus's fears at the time? | High food prices in the 1790s and 1810s.
+Q: How did industrialisation encourage population growth? | Industrial work and wages encouraged earlier marriage and larger families.
+Q: What is mortality? | The rate at which deaths occur in a population.
 
 ## The factory system
 LV: GCSE and A level · Application
@@ -112,6 +132,16 @@ M2#history-u05-03-q2@2: Why did employers bring workers into factories? | Large,
 TF1#history-u05-03-q3@1: Factory workers were often fined for lateness. | true | Fines enforced the discipline of the clock and the bell.
 M3#history-u05-03-q4@3: Which judgement about the factory system by 1850 is best supported? | The symbol of the age, but for most workers change came more slowly | Every British worker was employed in a factory by 1850 | Factories had disappeared by 1850 | The factory system existed only in London | The factory as symbol and the typical worker's experience differed.
 SA3#history-u05-03-q5@2,3: How far did the factory system transform working life in Britain by 1850? | Arkwright's water frame (1769) and Cromford Mill (1771) set a model of powered, supervised production with shifts, fines and clock discipline, and textiles moved into factories. But in 1851 agriculture, domestic service, workshops and small trades employed more people, and long hours predated factories. A strong answer weighs change against continuity. | Explains the domestic system ; Explains Arkwright's mills ; Explains factory discipline ; Explains continuity ; Reaches a judgement
+Q: Who set the working hours under the domestic system? | The families working at home set their own hours.
+Q: What encouraged employers to bring workers into factories? | Machines too large and expensive for cottages and the need to control quality and output.
+Q: How did Arkwright run Cromford Mill? | With water power, in shifts day and night, and with housing for his workers.
+Q: Where were Arkwright's methods copied? | Across Lancashire, Derbyshire and Scotland.
+Q: What governed factory work? | The clock and the bell.
+Q: Name three things factory workers could be fined for. | Lateness, talking and mistakes.
+Q: What did many workers find hardest about factory work? | The loss of independence, more than the long hours.
+Q: Which industry was largely factory-based by 1850? | Textiles.
+Q: What is the factory system? | Production in a single building with machines, power and supervised workers.
+Q: Where did most workers still work in 1851? | In agriculture, domestic service, workshops and small trades.
 
 ## The textile industry
 LV: GCSE and A level · Application
@@ -151,6 +181,16 @@ M2#history-u05-04-q2@2: Why did cotton concentrate in Lancashire? | Its damp cli
 TF1#history-u05-04-q3@1: Machine breaking was made a capital crime in 1812. | true | The government responded harshly to the Luddites.
 M3#history-u05-04-q4@3: Which judgement about the global connections of British cotton is best supported? | It depended on a global system of trade, empire and slavery | It used only cotton grown in England | It sold its goods only within Britain | It had no effect on other countries' industries | Both its raw materials and its markets were global.
 SA3#history-u05-04-q5@2,3: Why did the cotton industry grow so rapidly in Britain, and how was it connected to the wider world? | Inventions from the flying shuttle (1733) to the mule (1779) and power loom (1785) raised output; Lancashire's climate, water, coal and Liverpool favoured it; cotton became the largest export. Raw cotton came from enslaved labour in the American South, and British goods undercut Indian textiles. The Luddites (1811 to 1816) resisted at home. A strong answer weighs these. | Explains inventions ; Explains Lancashire ; Explains slavery and trade ; Explains resistance ; Reaches a judgement
+Q: Who invented the flying shuttle, and what did it do? | John Kay, in 1733; it speeded up weaving.
+Q: What did the spinning jenny do? | It spun several threads at once.
+Q: Who invented the spinning jenny? | James Hargreaves, about 1764.
+Q: Who invented the power loom, and how quickly did it spread? | Edmund Cartwright, in 1785; it spread slowly.
+Q: Why was Manchester called "Cottonopolis"? | It was the centre of the cotton industry in Lancashire.
+Q: What was Britain's largest export by the early nineteenth century? | Cotton goods.
+Q: What did Eli Whitney's cotton gin (1793) do? | It made cotton growing more profitable.
+Q: When were the Luddite protests? | From 1811 to 1816.
+Q: How did British cotton affect India? | British cotton goods sold in India, whose own textile industry suffered.
+Q: What is spinning? | Twisting fibres into thread.
 
 ## Steam power
 LV: GCSE and A level · Application
@@ -188,6 +228,16 @@ M2#history-u05-05-q2@2: Why did Watt's separate condenser matter? | It greatly r
 TF1#history-u05-05-q3@1: Water power remained important in textiles into the 1830s. | true | Steam's share of power grew gradually.
 M3#history-u05-05-q4@3: Which explanation of Britain's lead in steam power is best supported? | Cheap coal and dear labour created the incentive, and skill made it possible | Britain had no coal, so it had to invent steam | Steam engines were invented in France and copied | The government ordered every mill to use steam in 1769 | Several conditions combined to make steam pay.
 SA3#history-u05-05-q5@2,3: How important was steam power to the Industrial Revolution? | Newcomen's engine (1712) pumped mines; Watt's separate condenser (1769), the partnership with Boulton (1775) and rotary motion (1781) let engines drive mills, freeing industry from rivers; Trevithick's high-pressure engines led to locomotives. But water power stayed important into the 1830s, and steam's main productivity effect came after 1830. Allen links steam to cheap coal and high wages. A strong answer weighs these. | Explains the engines ; Explains uses ; Explains the pace of spread ; Uses interpretations ; Reaches a judgement
+Q: When did Newcomen build his atmospheric engine? | In 1712.
+Q: Why did Newcomen's engine waste fuel? | It heated and cooled the same cylinder.
+Q: When did Watt patent the separate condenser? | In 1769.
+Q: By when had Watt developed rotary motion? | By 1781.
+Q: What were steam engines first used for? | Pumping mines and blowing furnaces.
+Q: How did steam change where mills were built? | From the 1780s mills could be built in towns near coal and workers.
+Q: What did Richard Trevithick's high-pressure engines make possible? | Locomotives, around 1800.
+Q: When did steam make its large contribution to productivity? | After 1830, as engines became more efficient and spread.
+Q: What does Robert Allen argue made steam worthwhile in Britain? | High wages made it worth replacing labour with machines, and coal was cheap.
+Q: Did James Watt invent the steam engine? | No. He greatly improved Newcomen's engine of 1712.
 
 ## Coal and iron
 LV: GCSE and A level · Application
@@ -225,6 +275,16 @@ M2#history-u05-06-q2@2: Why was coal so important to British industrialisation? 
 TF1#history-u05-06-q3@1: Henry Cort patented puddling and rolling in 1784. | true | His methods produced wrought iron in large quantities.
 M3#history-u05-06-q4@3: Which judgement about transport for coal and iron is best supported? | Transport turned local resources into national industries | Transport made no difference to the cost of coal | Coal was always carried cheaply by road | Canals were built only for passenger travel | Cheaper transport widened markets for coal and iron.
 SA3#history-u05-06-q5@2,3: Why were coal and iron so important to the Industrial Revolution? | Darby's coke smelting (1709) and Cort's puddling and rolling (1784) made iron plentiful for machines, bridges (the Iron Bridge 1779) and rails; coal fuelled engines, furnaces and homes, freeing energy from the limits of wood; canals such as the Bridgewater (1761) cut transport costs. Mining remained dangerous despite the Davy lamp (1815). A strong answer explains these and weighs coal against other explanations. | Explains iron innovations ; Explains coal ; Explains canals ; Weighs explanations ; Reaches a judgement
+Q: What fuel did coke replace in iron smelting? | Charcoal.
+Q: Where did Abraham Darby smelt iron with coke? | At Coalbrookdale in Shropshire.
+Q: What did Cort's puddling and rolling produce? | Wrought iron in large quantities.
+Q: Name four uses of iron in the Industrial Revolution. | Machines, engines, bridges, ships and, later, rails.
+Q: Why did coal give Britain an energy advantage? | It supplied energy that did not depend on land for wood.
+Q: What dangers grew as mines went deeper? | Flooding, gas explosions and collapses.
+Q: What did Humphry Davy invent in 1815? | A safety lamp for miners.
+Q: Why was transport important for coal? | Coal was heavy and expensive to carry by road.
+Q: When did the canal-building boom peak? | In the 1790s.
+Q: What is coke? | A fuel made by heating coal, used to smelt iron.
 
 ## Railways
 LV: GCSE and A level · Application
@@ -262,6 +322,16 @@ M2#history-u05-07-q2@2: Why did railways create national markets? | They cut the
 TF1#history-u05-07-q3@1: The Railway Regulation Act of 1844 required cheap third-class trains. | true | These were known as "parliamentary trains".
 M3#history-u05-07-q4@3: Which judgement about railways and society is best supported? | They reshaped the economy and, more gradually, everyday life | They had no effect on British society | They were used only by the poorest people | They ended the use of canals and roads at once | Economic change came faster than social change.
 SA3#history-u05-07-q5@2,3: How did railways change Britain between 1825 and 1850? | The Stockton and Darlington (1825) and Liverpool and Manchester (1830) led to the mania of the 1840s and over 6,000 miles by 1850. Railways cut transport costs, created national markets, boosted iron and coal, created towns such as Crewe and Swindon, enabled seaside travel and imposed railway time; the 1844 Act brought cheap trains. But the poorest travelled little at first. A strong answer weighs these. | Explains development ; Explains economic effects ; Explains social effects ; Explains limits ; Reaches a judgement
+Q: Who was the engineer of the Stockton and Darlington Railway? | George Stephenson.
+Q: Why was the Liverpool and Manchester Railway (1830) a first? | It was the first inter-city line carrying passengers and goods by steam locomotive alone.
+Q: Who was killed at the opening of the Liverpool and Manchester Railway? | The politician William Huskisson, struck by the Rocket.
+Q: What was railway mania? | The speculative boom in railway building in the 1840s.
+Q: When did the railway boom collapse? | In 1847, when many investors lost money.
+Q: Name two leisure or daily changes railways made possible. | Seaside resorts, commuting and national newspapers.
+Q: By when had most railway companies adopted railway time? | By 1848.
+Q: Name two new railway towns. | Crewe and Swindon.
+Q: Why could the poorest not benefit from railways at first? | They could rarely afford regular travel.
+Q: Did railways cause the Industrial Revolution? | No. They came after decades of industrial growth, though they then accelerated it.
 
 ## Urbanisation
 LV: GCSE and A level · Application
@@ -300,6 +370,16 @@ M2#history-u05-08-q2@2: Why did migrants move into industrial towns? | Factories
 TF1#history-u05-08-q3@1: Britain was the first country where more people lived in towns than countryside. | true | The 1851 census showed this for the first time.
 M3#history-u05-08-q4@3: Which judgement about urban problems is best supported? | The speed of growth, not towns themselves, caused the worst problems | Towns were healthier than the countryside throughout | Urban problems were solved by 1835 | Factory owners alone caused every urban problem | Growth outran housing, water, drainage and local government.
 SA3#history-u05-08-q5@2,3: Why did British towns grow so rapidly, and what problems did this create? | Factories, mines and ports created jobs, drawing migrants from the countryside and Ireland, and steam let mills cluster in towns; by 1851 more than half the population lived in towns. Growth outpaced housing, water and drainage, and old town governments lacked powers until the Municipal Corporations Act (1835) and later laws. A strong answer explains causes and weighs problems. | Explains growth ; Explains causes ; Explains housing and health problems ; Explains local government ; Reaches a judgement
+Q: Name four industrial cities that grew rapidly by 1851. | Manchester, Liverpool, Birmingham, Leeds and Glasgow.
+Q: What created jobs that drew migrants to towns? | Factories, mines and ports.
+Q: Where did many migrants to British towns come from in the 1840s? | Ireland, especially after the famine.
+Q: Besides migration, what added to town growth? | Higher birth rates in towns.
+Q: Why did urban problems arise? | Towns grew faster than housing, water supply, drainage and local government.
+Q: Where did waste go in early industrial towns? | Into streets and rivers.
+Q: What is urbanisation? | The growth of towns and the movement of people into them.
+Q: What caused the worst urban problems according to historians? | The speed of growth, not towns themselves.
+Q: How did steam power contribute to urbanisation? | It let mills be built in towns near coal and workers.
+Q: Was factory owners' greed the only cause of urban problems? | No. The speed of growth and weak local government were central.
 
 ## Industrial working conditions
 LV: GCSE and A level · Evaluation
@@ -338,6 +418,16 @@ M2#history-u05-09-q2@2: Why must historians handle the Sadler Committee's eviden
 TF1#history-u05-09-q3@1: Feinstein's estimates suggest little improvement in real wages before the 1830s. | true | His work supports a cautious, largely pessimistic view of the early period.
 M3#history-u05-09-q4@3: Which judgement about living standards is best supported? | For most workers the benefits came late, after decades of hardship | Living standards fell continuously until 1900 | Every worker became wealthy within a generation | Industrialisation had no effect on living standards | The evidence suggests late and uneven gains.
 SA3#history-u05-09-q5@2,3: How far did working people's living standards improve during the Industrial Revolution? | Optimists such as Hartwell point to rising real wages and cheaper goods; pessimists such as Hobsbawm and Thompson to long hours, danger, poor housing, disease and lost independence, as described by Engels (1845) and the Sadler Committee (1832). Feinstein's figures suggest little improvement before the 1830s and faster gains after. A strong answer weighs the evidence and its limits. | Explains working conditions ; Explains the optimist case ; Explains the pessimist case ; Evaluates evidence ; Reaches a judgement
+Q: How long were working days in early mills? | 12 to 14 hours, six days a week.
+Q: What made machines dangerous in early factories? | They had no guards, so accidents caused injury and death.
+Q: How did cotton dust affect workers? | It damaged their lungs.
+Q: What did Engels describe in 1845? | The Condition of the Working Class in England, about Manchester's working class.
+Q: Why was Engels in Manchester? | He worked in his family's Manchester firm.
+Q: Name two pessimist historians of living standards. | Eric Hobsbawm and E. P. Thompson.
+Q: What did the pessimists stress? | Long hours, poor housing, disease and lost independence.
+Q: Name an optimist historian of living standards. | R. M. Hartwell.
+Q: What are real wages? | Wages measured by what they can buy, allowing for prices.
+Q: When did most workers feel the benefits of industrialisation? | Late, after the 1830s and decades of hardship.
 
 ## Child labour
 LV: GCSE and A level · Application
@@ -377,6 +467,16 @@ M2#history-u05-10-q2@2: Why was the 1833 Factory Act hard to enforce? | Four ins
 TF1#history-u05-10-q3@1: Robert Owen ran his New Lanark mills without very young children. | true | Owen used New Lanark to show that reform was workable.
 M3#history-u05-10-q4@3: Which judgement about factory and mines legislation is best supported? | A real beginning, slowly extended and strengthened over the following decades | A complete end to child labour by 1833 | A set of laws that were never enforced at all | Laws that made children's hours longer | Legislation began a long process of protection.
 SA3#history-u05-10-q5@2,3: How effective was legislation in protecting children in industry between 1833 and 1850? | Campaigns by Oastler, Sadler (1832) and Ashley produced the Factory Act of 1833 (no under-nines in textiles, limited hours, schooling, four inspectors), the Mines Act of 1842 and the Ten Hours Act of 1847. Inspection made the 1833 Act the first enforced law, but inspectors were few, the laws covered limited industries and ages were falsified. A strong answer weighs these. | Explains children's work ; Explains the reformers ; Explains the laws ; Explains limits ; Reaches a judgement
+Q: What tasks did children do in mills? | Piecing together broken threads and cleaning under moving machinery.
+Q: What jobs did children do in mines? | Young children opened ventilation doors in the dark; older children hauled coal.
+Q: What were pauper apprentices? | Children from workhouses sent to work for employers, often in mills.
+Q: What did Richard Oastler campaign against from 1830? | "Yorkshire slavery" in the mills.
+Q: Who was Lord Ashley? | The later Earl of Shaftesbury, who led the factory reform campaign in Parliament.
+Q: How many inspectors did the 1833 Factory Act appoint? | Four.
+Q: What prompted the Mines Act of 1842? | A report with shocking illustrations.
+Q: What did the Ten Hours Act of 1847 do? | Limited women and young people in textile mills to ten hours a day.
+Q: How did some parents and employers evade the factory laws? | By lying about children's ages.
+Q: Why was the 1833 Factory Act a milestone? | Its inspectors made it the first factory law to be enforced.
 
 ## Public health
 LV: GCSE and A level · Application
@@ -415,6 +515,16 @@ M2#history-u05-11-q2@2: Why did the Public Health Act of 1848 achieve little? | 
 TF1#history-u05-11-q3@1: John Snow argued that cholera spread through contaminated water. | true | He mapped deaths around the Broad Street pump in 1854.
 M3#history-u05-11-q4@3: Which explanation of slow action on public health is best supported? | Cost and laissez-faire delayed action until crises forced it | Nobody knew that towns were unhealthy before 1900 | Government acted immediately after the first cholera outbreak | Doctors all opposed improvements to water supply | Evidence grew faster than willingness to pay for reform.
 SA3#history-u05-11-q5@2,3: Why did it take so long for governments to improve public health in industrial towns? | Cholera (1831 to 1832, 1848 to 1849, 1853 to 1854) and other diseases killed thousands; Chadwick's report (1842) led to the permissive Act of 1848; Snow linked cholera to water (1854), though miasma theory persisted. Laissez-faire and ratepayers' resistance delayed action until the Great Stink (1858) and the compulsory Act of 1875. A strong answer weighs knowledge, cost and ideology. | Explains disease ; Explains Chadwick and Snow ; Explains laissez-faire and cost ; Explains turning points ; Reaches a judgement
+Q: When did cholera first reach Britain? | In 1831 to 1832.
+Q: When did cholera return to Britain? | In 1848 to 1849 and 1853 to 1854.
+Q: What did Chadwick's report show about the urban poor? | They died far younger.
+Q: What did the Public Health Act of 1848 create? | A General Board of Health.
+Q: When were local boards of health compulsory under the 1848 Act? | Only where death rates were very high.
+Q: Where did John Snow map cholera deaths in 1854? | Around a water pump in Broad Street, London.
+Q: What happened after the Broad Street pump handle was removed? | The cholera outbreak there ended.
+Q: What did the Public Health Act of 1875 require? | Local authorities to provide clean water, drainage and medical officers.
+Q: When was germ theory accepted? | From the 1860s.
+Q: What is laissez-faire? | The belief that government should interfere as little as possible.
 
 ## Housing and sanitation
 LV: GCSE and A level · Application
@@ -453,6 +563,16 @@ M2#history-u05-12-q2@2: Why did builders put up cheap, dense housing? | There we
 TF1#history-u05-12-q3@1: The Artisans' Dwellings Act of 1875 forced every council to clear its slums. | false | It was permissive, so few councils acted at first.
 M3#history-u05-12-q4@3: Which judgement about housing reform before 1880 is best supported? | It pointed the way, but most working families saw little change | It solved the housing problem in every industrial town | It made housing worse for every worker | It was carried out only by the national government | Examples of housing reform were real but few before 1880.
 SA3#history-u05-12-q5@2,3: Why was working-class housing so poor in industrial towns, and how far did it improve before 1880? | Back-to-backs, courts and cellars were built cheaply and densely with few regulations, close to work, with shared privies and standpipes. The Peabody Trust (1862), Saltaire (1851) and the permissive Artisans' Dwellings Act (1875) showed what reform could do, but housed few people, and rents were often too high for the poorest. A strong answer weighs these. | Explains housing types ; Explains causes ; Explains philanthropy ; Explains legislation ; Reaches a judgement
+Q: In which towns were back-to-backs common? | Leeds and other northern towns.
+Q: What was a court in working-class housing? | A narrow yard surrounded by houses, often with one privy for many families.
+Q: Where were cellar dwellings common? | Liverpool and Manchester.
+Q: What did lodging houses offer? | A bed or part of a bed by the night.
+Q: Why did workers live in crowded housing near factories? | They needed to live close to work and could afford little rent.
+Q: How did many working families get water? | From a shared standpipe for a few hours a day.
+Q: Where did waste collect in working-class areas? | In cesspits and middens.
+Q: What did Saltaire provide besides good houses? | A park, and it had no public house.
+Q: Why did model dwellings not help the poorest? | Their rents were often too high.
+Q: Why did the Artisans' Dwellings Act achieve little at first? | It was permissive, so action depended on councils, and few acted.
 
 ## Industrial capitalism
 LV: A level · Evaluation
@@ -492,6 +612,16 @@ M2#history-u05-13-q2@2: Why does Allen argue that high wages helped Britain indu
 TF1#history-u05-13-q3@1: The Communist Manifesto was published in 1848. | true | Marx and Engels wrote it as a programme for revolution.
 M3#history-u05-13-q4@3: Which explanation of Britain's industrial lead is best supported? | Resources, incentives, ideas and institutions combined | Britain alone had any coal in the world | Industrialisation was ordered by the monarch | Britain had the lowest wages in Europe | No single cause explains the British lead.
 SA3#history-u05-13-q5@2,3: Why did Britain become the first industrial nation? | Pomeranz stresses coal and colonies; Allen high wages and cheap energy that made machines profitable; Mokyr an industrial enlightenment and secure institutions; Smith's Wealth of Nations (1776) and laissez-faire, banks and later company law (1844, 1855 to 1856) supported investment. A strong answer weighs these explanations and judges how they combined. | Explains resources ; Explains wages and prices ; Explains ideas and institutions ; Uses historians ; Reaches a judgement
+Q: When was The Wealth of Nations published? | In 1776.
+Q: What did Adam Smith argue about free markets? | Guided by self-interest, they served the public good.
+Q: How were most early industrial firms financed? | As partnerships or family businesses, from profits and local banks.
+Q: When did limited liability follow? | In 1855 to 1856.
+Q: What is limited liability? | Investors risk only the money they put into a company.
+Q: Who were the bourgeoisie and the proletariat in Marx's view? | Owners of capital and the workers whose labour they exploited.
+Q: What does Pomeranz stress about Britain's industrial lead? | Cheap coal and colonies supplying raw materials and markets.
+Q: What does Mokyr stress about Britain's industrial lead? | An industrial enlightenment, secure property rights and Parliament's support for commerce.
+Q: What is capitalism? | An economic system based on private ownership, markets and profit.
+Q: Did Adam Smith write about factories like Arkwright's? | No. The Wealth of Nations appeared in 1776, before factories were widespread.
 
 ## Trade unions
 LV: GCSE and A level · Application
@@ -530,6 +660,16 @@ M2#history-u05-14-q2@2: Why were the Combination Acts passed in 1799 and 1800? |
 TF1#history-u05-14-q3@1: The Grand National Consolidated Trades Union lasted for decades. | false | It collapsed within months of its founding in 1834.
 M3#history-u05-14-q4@3: Which explanation of the new model unions' success is best supported? | Skill, money and moderation secured recognition from employers and Parliament | They organised every unskilled worker in Britain | They led a successful revolution in 1848 | They refused to negotiate with any employer | Their members' position and their methods made them acceptable.
 SA3#history-u05-14-q5@2,3: How did trade unions develop between 1799 and 1875? | The Combination Acts (1799 to 1800) banned unions until 1824; the Tolpuddle Martyrs (1834) and the collapse of Owen's Grand National showed the dangers of general unions. Skilled new model unions from 1851 used high subscriptions, benefits and negotiation; the TUC (1868), the Trade Union Act (1871) and the 1875 Act gave recognition. A strong answer weighs repression against acceptance. | Explains repression ; Explains Tolpuddle ; Explains new model unions ; Explains legal recognition ; Reaches a judgement
+Q: What did the Combination Acts ban? | Workers combining to raise wages.
+Q: When were the Combination Acts repealed? | In 1824.
+Q: What did the Act of 1825 do for unions? | It allowed unions but limited what they could do.
+Q: When were the Tolpuddle Martyrs pardoned? | In 1836, after a protest campaign.
+Q: Where were the Tolpuddle Martyrs sent? | Transported to Australia.
+Q: What did the Grand National Consolidated Trades Union aim to do? | Unite all workers; it collapsed within months.
+Q: What did new model unions provide members? | Sickness and unemployment benefits, funded by high subscriptions.
+Q: What did the Trade Union Act of 1871 do? | It gave unions legal status.
+Q: What did the Act of 1875 allow? | Peaceful picketing.
+Q: When did unskilled workers start joining unions in numbers? | From the 1880s.
 
 ## Chartism
 LV: GCSE and A level · Application
@@ -573,6 +713,16 @@ M2#history-u05-15-q2@2: Why did Chartist support rise and fall? | It grew in yea
 TF1#history-u05-15-q3@1: Feargus O'Connor published the Northern Star. | true | He was associated with the physical force wing of Chartism.
 M3#history-u05-15-q4@3: Which judgement about Chartism is best supported? | It failed in its own time, but five of its six points were later achieved | It won the vote for all men in 1848 | It had no influence on later reforms at all | It was a movement of landowners against workers | Its immediate failure contrasts with its long-term influence.
 SA3#history-u05-15-q5@2,3: Why did Chartism fail to achieve its aims in the 1830s and 1840s? | The Charter (1838) demanded six points; petitions in 1839, 1842 and 1848 were rejected by a Parliament of property owners; the movement split between moral force (Lovett) and physical force (O'Connor); support rose with distress and fell with recovery; the government used troops at Newport (1839) and firmness in 1848. Yet five points were later won. A strong answer weighs these. | Explains the Charter ; Explains the petitions ; Explains divisions ; Explains government and economy ; Reaches a judgement
+Q: When was the People's Charter published? | In 1838.
+Q: In which years did Chartists present national petitions? | 1839, 1842 and 1848.
+Q: How many Chartists were killed at Newport in 1839? | Over twenty, killed by troops.
+Q: Where was the mass Chartist meeting of 10 April 1848? | Kennington Common.
+Q: What was found about the 1848 petition's signatures? | Many were duplicates and false names.
+Q: Who was a leading moral force Chartist? | William Lovett.
+Q: With whom was physical force Chartism associated? | Feargus O'Connor.
+Q: How did the government respond to Chartism? | Firmly, using troops and arrests.
+Q: Why did Parliament reject the Chartist petitions? | It was elected by property owners who refused to give up power.
+Q: When were five of the six Chartist points achieved? | Between 1858 and 1918.
 
 ## The Great Reform Act
 LV: GCSE and A level · Application
@@ -611,6 +761,16 @@ M2#history-u05-16-q2@2: Why did the House of Lords give way in 1832? | William I
 TF1#history-u05-16-q3@1: The 1832 Reform Act gave the vote to most adult men. | false | Only around one adult man in five in England and Wales could vote.
 M3#history-u05-16-q4@3: Which judgement about the Reform Act is best supported? | A limited reform, meant to preserve the system, that opened the way to further change | A revolution that gave power to the working class | A change with no effect on Parliament at all | A law that gave women the vote | It changed enough to survive and to be built on.
 SA3#history-u05-16-q5@2,3: How far did the Reform Act of 1832 change the political system? | Before 1832 rotten and pocket boroughs elected MPs while Manchester and Birmingham had none. After riots (1831) and the Days of May, the Act gave seats to industrial towns and votes to £10 householders, raising the electorate by about half. But only around one man in five could vote, women were excluded, voting stayed public and landowners dominated. A strong answer weighs change against continuity. | Explains the old system ; Explains the crisis ; Explains the Act ; Explains continuity ; Reaches a judgement
+Q: What was a pocket borough? | A constituency controlled by a single landowner.
+Q: Why did public voting allow corruption before 1832? | Voters could be bribed or intimidated.
+Q: Which party came to power in 1830 committed to reform? | The Whigs, under Earl Grey.
+Q: What followed the Lords' rejection of the second Reform Bill in October 1831? | Riots in Bristol, Nottingham and Derby.
+Q: What happened in the Days of May 1832? | William IV agreed to create enough new peers to pass the bill, and the Lords gave way.
+Q: When did the Reform Act become law? | In June 1832.
+Q: By how much did the electorate grow in 1832? | By about half.
+Q: What proportion of adult men could vote after 1832? | Around one in five in England and Wales.
+Q: How did the 1832 Act formally exclude women? | It specified "male persons".
+Q: Who still dominated Parliament after 1832? | Landowners.
 
 ## Early Victorian social reform
 LV: GCSE and A level · Application
@@ -649,6 +809,16 @@ M2#history-u05-17-q2@2: Why was the workhouse so feared? | Families were separat
 TF1#history-u05-17-q3@1: Utilitarians followed the ideas of Jeremy Bentham. | true | They judged laws by the greatest happiness of the greatest number.
 M3#history-u05-17-q4@3: Which judgement about early Victorian reform is best supported? | It expanded the state's role, but often aimed at efficiency and cost as much as welfare | It created a modern welfare state by 1850 | It made no change to the role of government | It was opposed by every utilitarian | Early Victorian reform had mixed motives and mixed effects.
 SA3#history-u05-17-q5@2,3: How far did early Victorian reforms improve the lives of working people? | The New Poor Law (1834) introduced feared workhouses and less eligibility; the Factory Act (1833), Mines Act (1842), Municipal Corporations Act (1835) and Public Health Act (1848) extended protection and government; repeal of the Corn Laws (1846) cheapened bread. Utilitarian, evangelical and practical motives shaped reform. A strong answer weighs improvement against harshness. | Explains the New Poor Law ; Explains other reforms ; Explains Corn Law repeal ; Explains motives ; Reaches a judgement
+Q: What was the main aim of the Poor Law Amendment Act of 1834? | To cut the cost of poor relief.
+Q: What happened to families inside the workhouse? | They were separated.
+Q: What did the repeal of the Corn Laws end? | Tariffs on imported grain.
+Q: What political cost did Peel pay for repealing the Corn Laws? | He split his Conservative party.
+Q: What crisis partly prompted Corn Law repeal? | The famine in Ireland.
+Q: What did utilitarians favour in administration? | Efficient, inspected administration.
+Q: What motivated evangelical reformers like Lord Ashley? | Humanitarian Christian concern.
+Q: Which practical crises prompted reforms? | Cholera and rising poor rates.
+Q: How did repeal of the Corn Laws help workers? | It made bread cheaper after 1846.
+Q: What is a workhouse? | An institution where the poor received relief in return for work under harsh conditions.
 
 ## The changing British economy
 LV: GCSE and A level · Evaluation
@@ -686,4 +856,14 @@ M2#history-u05-18-q2@2: Why did British agriculture enter a depression from the 
 TF1#history-u05-18-q3@1: Britain's total economic output fell after 1870. | false | It kept growing, but more slowly than Germany's and America's.
 M3#history-u05-18-q4@3: Which judgement about the British economy after 1870 is best supported? | Relative decline while continuing to grow, shifting from workshop to banker | Absolute collapse of all British industry by 1880 | Continued dominance of every new industry | An economy closed to world trade after 1870 | Distinguishing relative from absolute decline is essential.
 SA3#history-u05-18-q5@2,3: How far did Britain's economic position change between 1851 and 1900? | In 1851 Britain was the workshop of the world, celebrated at the Great Exhibition, with free trade (1846, 1860) and the City dominating finance. From the 1870s Germany and the United States grew faster and overtook Britain in steel, agriculture suffered from cheap American grain, and Britain lagged in new industries. But Britain stayed wealthy, with the largest empire, fleet and financial centre. A strong answer weighs relative decline against continued strength. | Explains mid-century dominance ; Explains free trade ; Explains competition ; Explains continued strength ; Reaches a judgement
+Q: Where was the Great Exhibition held? | In the Crystal Palace in Hyde Park, in 1851.
+Q: What did Britain dominate in the 1850s and 1860s? | World manufacturing, coal, iron, shipping and finance.
+Q: By when were most remaining British tariffs removed? | By the 1860s.
+Q: What role did the City of London play? | It became the centre of world finance, lending abroad and insuring trade.
+Q: Which countries industrialised rapidly from the 1870s? | Germany and the United States.
+Q: When did rivals overtake Britain in steel output? | By the 1890s.
+Q: In which new industries did Britain lose its lead? | Chemicals and electricity.
+Q: What strengths did Britain keep after 1870? | Great wealth, the largest empire, merchant fleet and financial centre.
+Q: How has Britain's shift after 1870 been described? | From workshop to banker of the world.
+Q: What is free trade? | Trade without tariffs or other barriers.
 `;

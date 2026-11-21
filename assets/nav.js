@@ -1,21 +1,11 @@
-// Top bar search button, the menu on small screens, and the App Store link.
+// Top bar search button and the App Store link (the header itself: kit/core/hubnav.js).
 import { icon, ICONS } from "../kit/core/icons.js";
 import { glassSymbol } from "../kit/core/glass-icons.js";
 import { appStoreUrl, standalone } from "../kit/core/install.js";
 
 const $ = (s) => document.querySelector(s);
 
-const btn = $("#menu-btn");
-const menu = $("#menu");
-function setMenu(open) {
-  menu.hidden = !open;
-  btn.setAttribute("aria-expanded", String(open));
-  btn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
-}
-btn.addEventListener("click", () => setMenu(menu.hidden));
-menu.addEventListener("click", (e) => { if (e.target.closest("a")) setMenu(false); });
-document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !menu.hidden) { setMenu(false); btn.focus(); } });
-document.addEventListener("click", (e) => { if (!menu.hidden && !e.target.closest("#menu, #menu-btn")) setMenu(false); });
+// the menu on small screens: kit/core/hubnav.js, like every hub page
 
 // Search button: go to the directory search and put the cursor in it
 $("#nav-search")?.addEventListener("click", (e) => {

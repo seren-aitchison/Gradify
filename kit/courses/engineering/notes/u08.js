@@ -41,6 +41,16 @@ M2#engineering-u08-01-q2@2: A current of 2 A flows for 30 s. How much charge pas
 NUM2#engineering-u08-01-q3@2: A 60 W lamp runs on a 230 V supply. What current does it draw, in A? | 0.261 | 0.005 | A | I = P ÷ V = 60 ÷ 230 = 0.261 A.
 M3#engineering-u08-01-q4@3: Current of 2 A leaves the positive terminal of a 12 V element. What is happening? | It delivers 24 W | It absorbs 24 W | It absorbs 6 W | It delivers 6 W | Current leaving the positive terminal means the element is a source delivering P = VI = 24 W.
 SA3#engineering-u08-01-q5@2,3: A 2 kW heater runs for 3 hours a day for 30 days at 25p per kWh. Calculate the energy used and the cost, and explain the difference between power and energy in your answer. | Energy = 2 kW × 3 h × 30 = 180 kWh, costing 180 × £0.25 = £45. Power (2 kW) is the rate of energy use; energy is power multiplied by time, which is what the supplier charges for. | Energy 180 kWh ; Cost £45 ; Power is a rate ; Energy = power × time
+Q: How much charge does an electron carry? | −1.602 × 10^{-19} C.
+Q: In which direction does conventional current flow? | From positive to negative, opposite to electron flow.
+Q: What is electric current? | The rate of flow of charge, measured in amperes.
+Q: What is the equation linking power, voltage and current? | P = VI.
+Q: How is energy related to power and time? | W = Pt.
+Q: Under the passive sign convention, when does an element absorb power? | When current enters it at its positive voltage terminal.
+Q: In any circuit, how does total power delivered compare with total power absorbed? | They are equal, by conservation of energy.
+Q: A 3 kW kettle runs from a 230 V supply. What current does it draw? | About 13.0 A, from I = P ÷ V.
+Q: How much energy does a 3 kW kettle use in 5 minutes, in kWh? | 0.25 kWh, which is 900 kJ.
+Q: What is a common mistake about electricity bills and power? | Confusing power with energy; bills charge for energy in kilowatt-hours, not power.
 
 ## Ohm's law and resistor networks
 LV: Year 1 · Foundation
@@ -83,6 +93,16 @@ NUM2#engineering-u08-02-q2@2: What is the equivalent resistance of 10 Ω and 40 
 M2#engineering-u08-02-q3@3: A 12 V supply feeds 2 kΩ and 1 kΩ in series. What is the voltage across the 1 kΩ? | 4 V | 8 V | 6 V | 12 V | By the voltage divider rule, V = 12 × 1 ÷ (2 + 1) = 4 V.
 M3#engineering-u08-02-q4@1: A copper wire is replaced by one twice as long with half the cross-sectional area. How does its resistance change? | It becomes four times larger | It stays the same | It doubles | It halves | R = ρL/A: doubling L doubles R, halving A doubles it again.
 SA3#engineering-u08-02-q5@3: A 9 V supply feeds two 10 kΩ resistors in series, and a 10 kΩ load is connected across the lower resistor. Explain why the load voltage is not 4.5 V and calculate it. | The load is in parallel with the lower resistor, giving 10 × 10 ÷ 20 = 5 kΩ. The divider is now 10 kΩ and 5 kΩ, so the output is 9 × 5 ÷ 15 = 3 V. Loading reduces the output of an unbuffered divider. | Load in parallel ; 5 kΩ equivalent ; 3 V result ; Loading effect
+Q: What is Ohm's law? | V = IR, for a linear (ohmic) resistor.
+Q: How is resistance found from resistivity? | R = ρL ÷ A, with length L and cross-sectional area A.
+Q: What are two formulas for power dissipated in a resistor? | P = I^{2}R and P = V^{2}/R.
+Q: How does the resistance of metals change with temperature? | It rises as temperature rises.
+Q: Give two examples of non-ohmic devices. | A filament lamp and a diode.
+Q: How do resistors in series combine? | They add: R_{eq} = R_{1} + R_{2} + …
+Q: How does the equivalent of parallel resistors compare with the smallest resistor? | It is always less than the smallest of them.
+Q: What is the voltage divider rule for two series resistors? | The voltage across R_{2} is V × R_{2} ÷ (R_{1} + R_{2}).
+Q: What is resistivity? | A material property giving the resistance of a unit cube, in ohm metres.
+Q: What is the equivalent of 12 Ω and 6 Ω in parallel? | 4 Ω, from 12 × 6 ÷ (12 + 6).
 
 ## Kirchhoff's laws
 LV: Year 1 · Intermediate
@@ -126,6 +146,16 @@ NUM2#engineering-u08-03-q2@2: Currents of 3 A and 4 A enter a node, and 1 A leav
 M2#engineering-u08-03-q3@2: A 24 V source drives a loop containing 4 Ω and 8 Ω. What is the drop across the 8 Ω? | 16 V | 8 V | 12 V | 24 V | I = 24 ÷ 12 = 2 A, so the drop is 2 × 8 = 16 V; KVL: 24 − 8 − 16 = 0.
 M3#engineering-u08-03-q4@3: A circuit has 5 branches and 3 nodes. How many independent KVL equations are there? | 3 | 2 | 5 | 8 | Independent loop equations number b − n + 1 = 5 − 3 + 1 = 3.
 SA3#engineering-u08-03-q5@1,3: Explain, with reference to the example, how one source in a parallel pair can absorb power. | When two sources of different voltage are paralleled, the common voltage settles between them. The higher-voltage source drives current into the lower one, which is then charged: current enters its positive terminal, so it absorbs power. In the example the 6 V source carries −1.09 A, meaning current flows into it. | Common terminal voltage ; Higher source drives current ; Current into positive terminal ; Absorbs power
+Q: What does Kirchhoff's current law state? | The algebraic sum of currents at a node is zero: current in equals current out.
+Q: What does Kirchhoff's voltage law state? | Voltages around any closed loop sum to zero: rises equal drops.
+Q: Why does KCL hold at a node? | Charge cannot build up at a node, by conservation of charge.
+Q: What is a mesh in a circuit? | A loop with no other loop inside it.
+Q: When going round a loop, when is a voltage counted as a drop? | When moving from + to − across an element.
+Q: How many independent KCL equations does a circuit with n nodes have? | n − 1.
+Q: Do Kirchhoff's laws apply to non-linear and AC circuits? | Yes, to any circuit, using instantaneous values or phasors for AC.
+Q: What is a common mistake when writing a KVL loop equation? | Mixing sign conventions; choose one direction round the loop and apply rises and drops consistently.
+Q: What is the voltage drop across a resistor in the direction of the assumed current? | IR.
+Q: What are nodal and mesh analysis in relation to Kirchhoff's laws? | Systematic ways of applying Kirchhoff's laws.
 
 ## Nodal and mesh analysis
 LV: Year 1 · Intermediate
@@ -170,6 +200,16 @@ M2#engineering-u08-04-q2@2: In mesh analysis, what current flows in a 5 Ω resis
 NUM3#engineering-u08-04-q3@3: In the nodal example, the 2 Ω resistor is changed to 4 Ω. What is the new V_{A}, in V? | 3.33 | 0.02 | V | (V_{A} − 10) ÷ 4 + V_{A} ÷ 4 + V_{A} ÷ 4 = 0, so 3V_{A} = 10 and V_{A} = 3.33 V.
 MATCH2#engineering-u08-04-q4@3: Match each feature to the better method. | Many current sources = Nodal analysis ; Non-planar circuit = Nodal analysis ; Voltage sources in series with resistors = Mesh analysis ; Fewer meshes than nodes = Mesh analysis | Choose the method with fewer, simpler equations.
 SA3#engineering-u08-04-q5@1,2: Explain how a voltage source between two non-reference nodes is handled in nodal analysis. | The current through the source cannot be written as a voltage difference over a resistance. The two nodes are combined into a supernode: KCL is written for all currents leaving the combined region, and the source gives a constraint equation V_{a} − V_{b} = V_{s}. Together these replace the two separate KCL equations. | Current unknown ; Supernode ; KCL on combined node ; Constraint equation
+Q: Which node is usually chosen as the reference node in nodal analysis? | The one with the most connections.
+Q: In nodal analysis, how is each current expressed? | As a voltage difference divided by resistance.
+Q: In what matrix form are nodal equations often solved? | Gv = i.
+Q: What is a supernode? | Two nodes joined by a voltage source, treated together with KCL plus the source's constraint equation.
+Q: Which law is written round each mesh in mesh analysis? | Kirchhoff's voltage law.
+Q: In what direction are mesh currents usually assigned? | Clockwise.
+Q: How many equations does mesh analysis need? | b − n + 1, for b branches and n nodes.
+Q: When is nodal analysis preferred over mesh analysis? | When there are many current sources or non-planar layouts.
+Q: Which analysis method do circuit simulators such as SPICE use? | A form of nodal analysis.
+Q: What is a common mistake with a resistor shared by two meshes? | Forgetting it carries the difference of the two mesh currents, R(I_{1} − I_{2}).
 
 ## Thévenin and Norton equivalents
 LV: Year 1 · Intermediate
@@ -211,6 +251,16 @@ M2#engineering-u08-05-q2@2: A network has V_{Th} = 10 V and R_{Th} = 2 Ω. What 
 NUM2#engineering-u08-05-q3@2: A 20 V source in series with 10 Ω feeds 10 Ω to ground; the terminals are across the second resistor. What is R_{Th}, in Ω? | 5 | 0.05 | Ω | Shorting the source puts 10 Ω in parallel with 10 Ω: R_{Th} = 5 Ω.
 M3#engineering-u08-05-q4@3: A source reads 12.0 V on open circuit and 10.0 V when supplying 2 A. What is its Thévenin resistance? | 1 Ω | 5 Ω | 6 Ω | 0.17 Ω | The drop of 2 V at 2 A gives R_{Th} = 2 ÷ 2 = 1 Ω.
 SA3#engineering-u08-05-q5@2,3: Explain why a Thévenin equivalent is useful when a designer must test many different loads on the same network. | Once V_{Th} and R_{Th} are found, the load current for any load R_{L} is simply V_{Th} ÷ (R_{Th} + R_{L}), without re-solving the whole network each time. It also shows directly how terminal voltage falls with load, and how much power can be delivered. | One-off calculation ; Simple load formula ; Shows loading ; Power available
+Q: What does Thévenin's theorem state? | A linear two-terminal network can be replaced by a voltage source V_{Th} in series with a resistance R_{Th}.
+Q: What does Norton's theorem state? | A linear two-terminal network can be replaced by a current source I_{N} in parallel with R_{N} = R_{Th}.
+Q: What is the Norton current of a network? | The short-circuit current at its terminals.
+Q: When finding R_{Th}, what replaces an ideal current source? | An open circuit.
+Q: How is R_{Th} found when a network contains dependent sources? | Apply a test voltage or current, or use R_{Th} = V_{oc} ÷ I_{sc}.
+Q: How can R_{Th} be found in the laboratory? | Measure the open-circuit voltage, then load the terminals and measure the drop.
+Q: What is source transformation? | Swapping a voltage source in series with R for a current source V/R in parallel with R, or the reverse.
+Q: Why does a real source's terminal voltage fall as current rises? | Current flows through its internal Thévenin resistance, causing a drop.
+Q: A 12 V source with 4 Ω feeds 12 Ω, with terminals across the 12 Ω. What is V_{Th}? | 9 V, from 12 × 12 ÷ (4 + 12).
+Q: A network has V_{Th} = 9 V and R_{Th} = 3 Ω. What current flows in a 6 Ω load? | 1 A, from 9 ÷ (3 + 6).
 
 ## Maximum power transfer
 LV: Year 1 · Intermediate
@@ -252,6 +302,16 @@ NUM2#engineering-u08-06-q2@2: A source has V_{Th} = 10 V and R_{Th} = 5 Ω. What
 M2#engineering-u08-06-q3@3: Why is a power station not operated at maximum power transfer? | Half the power would be lost in the source | Matching is impossible at 50 Hz | Loads would receive too much voltage | It would make the frequency unstable | Matching gives only 50% efficiency, wasting half the energy as heat in the source.
 M3#engineering-u08-06-q4@2: A source with R_{Th} = 4 Ω supplies a 12 Ω load. What is the efficiency? | 75% | 50% | 25% | 33% | Efficiency = R_{L} ÷ (R_{L} + R_{Th}) = 12 ÷ 16 = 75%.
 SA3#engineering-u08-06-q5@1,3: Explain why maximum power occurs when R_{L} = R_{Th}, without using calculus. | If R_{L} is very small, current is large but almost all the voltage, and so the power, is dropped across R_{Th}; if R_{L} is very large, the current and therefore the power are small. Between these extremes power in the load rises then falls, peaking at the balance point where R_{L} = R_{Th} and the source voltage divides equally. | Small load extreme ; Large load extreme ; Rise and fall ; Equal division of voltage
+Q: What is the power in a load R_{L} fed from a Thévenin equivalent? | P_{L} = V_{Th}^{2} R_{L} ÷ (R_{Th} + R_{L})^{2}.
+Q: What is the maximum power a source can deliver to a resistive load? | P_{max} = V_{Th}^{2} ÷ 4R_{Th}, when R_{L} = R_{Th}.
+Q: Why does a load smaller than R_{Th} receive less than maximum power? | More current flows, but more power is lost in R_{Th}.
+Q: What happens to efficiency as R_{L} becomes much larger than R_{Th}? | It approaches 100%, but the power delivered falls.
+Q: Name circuits where impedance matching is used. | Signal and communication circuits such as antennas, transmission lines and audio amplifiers.
+Q: Besides maximising signal power, why are transmission lines matched? | To prevent reflections.
+Q: Why do generators have very low internal impedance compared with their loads? | It gives high efficiency and a stable voltage.
+Q: What is a common mistake about maximum power transfer? | Thinking it means maximum efficiency; at the matched point half the power is lost in the source.
+Q: A network has V_{Th} = 9 V and R_{Th} = 3 Ω. What is the maximum power? | 6.75 W, with a 3 Ω load.
+Q: What is impedance matching? | Choosing a load impedance to suit the source, for maximum power or minimum reflection.
 
 ## Capacitors and inductors
 LV: Year 1 · Foundation
@@ -297,6 +357,16 @@ M2#engineering-u08-07-q2@2: Two 10 µF capacitors are connected in series. What 
 NUM2#engineering-u08-07-q3@2: How much energy does a 470 µF capacitor store at 10 V, in mJ? | 23.5 | 0.2 | mJ | W = ½ × 470 × 10^{-6} × 10^{2} = 0.0235 J, or 23.5 mJ.
 M3#engineering-u08-07-q4@3: Why is a diode placed across a relay coil driven by a transistor? | To clamp the voltage spike when the coil current is switched off | To increase the coil's inductance permanently | To allow AC to flow through the coil | To reduce the supply voltage at switch-on | Interrupting inductor current causes a large L di/dt spike; the diode gives the current a safe path.
 SA3#engineering-u08-07-q5@1,3: Explain, using the defining equations, why a capacitor smooths voltage and an inductor smooths current. | Since i = C dv/dt, changing a capacitor's voltage quickly needs a large current, so a capacitor resists rapid voltage changes and smooths ripple. Since v = L di/dt, changing an inductor's current quickly needs a large voltage, so an inductor resists rapid current changes and smooths current. | i = C dv/dt ; Resists voltage change ; v = L di/dt ; Resists current change
+Q: What is the equation for charge stored on a capacitor? | Q = CV.
+Q: What is the capacitance of a parallel-plate capacitor? | C = ε_{0}ε_{r}A ÷ d, with plate area A and spacing d.
+Q: What is the current through a capacitor? | i = C dv/dt.
+Q: What energy does a capacitor store? | W = ½CV^{2}, in its electric field.
+Q: What is the voltage across an inductor? | v = L di/dt.
+Q: What energy does an inductor store? | W = ½LI^{2}, in its magnetic field.
+Q: How does an ideal inductor behave in a DC steady state? | As a short circuit, with zero voltage.
+Q: Why is capacitor voltage continuous? | An instant jump would need infinite current, since i = C dv/dt.
+Q: What is a common mistake when combining capacitors? | Combining them like resistors; capacitors in parallel add directly and in series combine as reciprocals.
+Q: How much energy does a 100 µF capacitor store at 12 V? | 7.2 mJ.
 
 ## RC and RL transients
 LV: Year 1 · Intermediate
@@ -340,6 +410,16 @@ NUM2#engineering-u08-08-q2@2: An RL circuit has L = 0.5 H and R = 100 Ω. What i
 M2#engineering-u08-08-q3@3: A capacitor charged to 10 V discharges through a resistor. What is its voltage after two time constants? | 1.35 V | 3.68 V | 5.00 V | 0.07 V | v = 10e^{-2} = 10 × 0.135 = 1.35 V, since e^{-2} is about 0.135.
 M3#engineering-u08-08-q4@2: Immediately after a DC supply is switched onto an uncharged capacitor in series with a resistor, what is the current? | V ÷ R | Zero | V ÷ 2R | Infinite | The capacitor voltage is zero at first (continuity), so all of V appears across R.
 SA3#engineering-u08-08-q5@2,3: A 10 V step is applied to a series RL circuit with R = 20 Ω and L = 0.2 H. Write the current as a function of time and explain each part. | Initial current is 0 (inductor current is continuous). Final current is V/R = 0.5 A (inductor acts as a short at DC). τ = L/R = 0.01 s. So i(t) = 0.5(1 − e^{-100t}) A, reaching 0.316 A after 10 ms and effectively 0.5 A after 50 ms. | Initial value ; Final value ; Time constant ; Expression
+Q: What is the time constant of an RC circuit? | τ = RC, in seconds.
+Q: What is the voltage of a capacitor charging from zero towards V? | v_{C} = V(1 − e^{-t/τ}).
+Q: What is the voltage of a capacitor discharging from V_{0}? | v_{C} = V_{0}e^{-t/τ}.
+Q: After how many time constants is a capacitor treated as fully charged? | About 5τ, when it is within 1%.
+Q: How does the charging current of an RC circuit behave? | It starts at V/R and decays as e^{-t/τ}.
+Q: What is the general first-order transient equation? | x(t) = x_{final} + (x_{initial} − x_{final})e^{-t/τ}.
+Q: How is the final value found for a first-order transient? | From the DC steady state, with capacitors open and inductors short.
+Q: What resistance is used for τ in a first-order circuit? | The Thévenin resistance seen from the capacitor or inductor terminals, with sources zeroed.
+Q: A 100 µF capacitor charges through 10 kΩ from 12 V. What is its voltage after 1 s? | About 7.59 V, since τ = 1 s.
+Q: How does inductor voltage behave after a DC step in an RL circuit? | It starts at V and decays to zero as the current builds to V/R.
 
 ## AC fundamentals
 LV: Year 1 · Foundation
@@ -383,6 +463,16 @@ NUM2#engineering-u08-09-q2@2: What is the peak value of a 12 V RMS sinusoid, in 
 M2#engineering-u08-09-q3@2: What is the angular frequency of a 60 Hz supply? | 377 rad/s | 60 rad/s | 188 rad/s | 3600 rad/s | Angular frequency is 2π times the frequency: ω = 2π × 60 = 377 rad/s.
 M3#engineering-u08-09-q4@3: v_{1} = 10 sin(ωt + 30°) and v_{2} = 10 sin(ωt − 15°). What is the relationship? | v_{1} leads v_{2} by 45° | v_{2} leads v_{1} by 45° | They are in phase | v_{1} lags v_{2} by 15° | The phase difference is 30° − (−15°) = 45°, with v_{1} ahead.
 SA3#engineering-u08-09-q5@1,3: Explain why AC voltages are usually quoted as RMS values and why the RMS of a sinusoid is V_{m}/√2. | Power in a resistor depends on v^{2}, which varies through the cycle. The RMS value is the square root of the mean of v^{2}, so it gives the same average power as a DC voltage of that size. For a sinusoid, the mean of sin^{2} over a cycle is ½, so V_{rms} = V_{m}√(½) = V_{m}/√2. | Power depends on v^{2} ; Mean of square ; Equivalent DC ; Mean of sin^{2} is ½
+Q: What is the general equation of a sinusoidal voltage? | v = V_{m} sin(ωt + φ).
+Q: How is angular frequency related to frequency? | ω = 2πf.
+Q: What is the UK mains supply? | Nominally 230 V RMS at 50 Hz.
+Q: Why is AC used for power distribution? | Transformers can change its voltage efficiently.
+Q: What is the average value of a sinusoid over a half cycle? | 2V_{m}/π, about 0.637V_{m}.
+Q: What is the peak factor of a sinusoid? | 1.414, the ratio V_{m}/V_{rms}.
+Q: What is the form factor of a sinusoid? | 1.11, the ratio V_{rms}/V_{avg}.
+Q: When does one sinusoid lead another? | When it reaches its peak first.
+Q: What is a common mistake in AC power calculations for a resistor? | Using peak values, which gives twice the true power; use P = V_{rms}I_{rms}.
+Q: What current does a 1 kW heater draw on 230 V mains? | About 4.35 A RMS.
 
 ## Impedance and AC circuit analysis
 LV: Year 1 · Intermediate
@@ -426,6 +516,16 @@ NUM2#engineering-u08-10-q2@2: What is the reactance of a 0.1 H inductor at 50 Hz
 M2#engineering-u08-10-q3@3: What is the resonant frequency of L = 10 mH and C = 1 µF? | 1.59 kHz | 159 Hz | 10 kHz | 100 Hz | f_{0} = 1/(2π√(10^{-2} × 10^{-6})) = 1/(2π × 10^{-4}) = 1.59 kHz.
 M3#engineering-u08-10-q4@2: A series circuit has R = 6 Ω and X_{C} = 8 Ω. What is the magnitude of its impedance? | 10 Ω | 14 Ω | 2 Ω | 48 Ω | |Z| = √(6^{2} + 8^{2}) = 10 Ω, since the components are at right angles.
 SA3#engineering-u08-10-q5@1,3: Explain why the voltage across the capacitor in a series RLC circuit at resonance can be larger than the supply voltage. | At resonance X_{L} = X_{C} so the reactive voltages are equal and opposite and cancel in the supply loop, leaving only R to limit the current. The current is therefore large, and each reactive voltage is I × X, which can be Q times the supply voltage, where Q = X_{L}/R. | Reactances cancel ; Current limited only by R ; V_{C} = IX_{C} ; Quality factor
+Q: What is the impedance of an inductor? | Z_{L} = jωL.
+Q: What is the impedance of a capacitor? | Z_{C} = 1 ÷ (jωC) = −j ÷ (ωC).
+Q: What is the formula for inductive reactance? | X_{L} = 2πfL.
+Q: How is the magnitude of an impedance found? | The magnitude of Z is √(R^{2} + X^{2}).
+Q: What does the mnemonic CIVIL mean? | In a capacitor, current leads voltage; in an inductor, voltage leads current.
+Q: What is the resonant frequency of an LC circuit? | f_{0} = 1 ÷ (2π√(LC)).
+Q: What is the quality factor of a resonant circuit? | Q = X_{L}/R, a measure of the sharpness of resonance.
+Q: What is a common mistake when adding AC voltages? | Adding them arithmetically instead of as phasors.
+Q: A coil has R = 30 Ω and X_{L} = 40 Ω on 230 V. What current flows? | 4.6 A, lagging by 53.1°, since the impedance magnitude is 50 Ω.
+Q: What is reactance? | The imaginary part of impedance, from inductance or capacitance.
 
 ## AC power and power factor
 LV: Year 1 · Intermediate
@@ -470,6 +570,16 @@ NUM2#engineering-u08-11-q2@2: A load takes 10 kW at a power factor of 0.8. What 
 M2#engineering-u08-11-q3@3: A motor load has a lagging power factor. What correction is used? | Capacitors in parallel with the load | Inductors in series with the load | Resistors in parallel with the load | A higher supply voltage | Capacitors supply the reactive power that the inductive load needs.
 M3#engineering-u08-11-q4@2: A load draws 10 A at 230 V with a power factor of 0.5. What is its real power? | 1150 W | 2300 W | 460 W | 1992 W | Real power uses the power factor: P = VI cos φ = 230 × 10 × 0.5 = 1150 W.
 SA3#engineering-u08-11-q5@2,3: A factory's supply shows real power 400 kW at power factor 0.7 lagging. Explain the effect of correcting to 0.95 on the supply current and why full correction to 1.0 is not usually chosen. | Apparent power falls from 400/0.7 = 571 kVA to 400/0.95 = 421 kVA, so supply current falls by about a quarter, cutting I^{2}R losses and voltage drop and freeing capacity. Full correction risks over-correction to leading power factor when load falls, and resonance with system inductance, and the last few per cent need disproportionately large capacitors. | 571 to 421 kVA ; Lower current and losses ; Over-correction risk ; Diminishing returns
+Q: What is the formula for real power in an AC circuit? | P = VI cos φ, in watts.
+Q: What is the formula for reactive power? | Q = VI sin φ, in var.
+Q: How are real, reactive and apparent power related? | S^{2} = P^{2} + Q^{2}, forming a power triangle.
+Q: What does reactive power do? | It flows back and forth to charge fields in inductors and capacitors, doing no net work but needing current.
+Q: What is power factor? | The ratio of real to apparent power, cos φ = P/S.
+Q: Is the power factor of motors and transformers leading or lagging? | Lagging, as they are inductive loads.
+Q: How do parallel capacitors correct power factor? | They supply reactive power locally, so the supply current falls.
+Q: What capacitance is needed to supply reactive power Q_{C}? | C = Q_{C} ÷ (ωV^{2}).
+Q: Why is power factor usually corrected to about 0.95 rather than 1? | To avoid over-correction and resonance.
+Q: What is a common mistake about power factor correction? | Thinking it reduces the load's real power; it reduces supply current and losses, while useful power is unchanged.
 
 ## Three-phase systems
 LV: Year 1 · Intermediate
@@ -514,6 +624,16 @@ NUM2#engineering-u08-12-q2@2: A star-connected load is fed from 400 V lines. Wha
 M2#engineering-u08-12-q3@2: In a delta connection the phase current is 10 A. What is the line current? | 17.3 A | 10 A | 5.8 A | 30 A | In delta, I_{L} = √3 × I_{ph} = 1.732 × 10 = 17.3 A.
 M3#engineering-u08-12-q4@3: Three identical resistors are reconnected from star to delta on the same supply. How does the total power change? | It becomes three times larger | It halves | It stays the same | It becomes √3 times larger | Each resistor's voltage rises by √3, so power per resistor rises by 3.
 SA3#engineering-u08-12-q5@1,3: Explain why three-phase supply is preferred to single-phase for large motors and power transmission. | Total instantaneous power in a balanced three-phase system is constant, giving smooth torque and less vibration. Three-phase windings create a rotating magnetic field, so induction motors are self-starting. For the same power, three-phase needs less conductor material than single-phase, reducing transmission cost and losses. | Constant power ; Rotating field ; Self-starting motors ; Less conductor material
+Q: What is the phase sequence of a three-phase supply? | L1, L2, L3, the order in which the voltages reach their maxima.
+Q: Give three advantages of three-phase over single-phase supply. | Less conductor material, constant total power and a natural rotating magnetic field.
+Q: In a star connection, how are line and phase voltage related? | V_{L} = √3 V_{ph}, with I_{L} = I_{ph}.
+Q: In a delta connection, how are line and phase current related? | I_{L} = √3 I_{ph}, with V_{L} = V_{ph}.
+Q: Which three-phase connection provides a neutral? | Star; delta has no neutral.
+Q: How much more power do the same loads draw in delta than in star? | Three times as much.
+Q: What is total real power in a balanced three-phase load? | P = √3 V_{L} I_{L} cos φ.
+Q: What method can measure three-phase power? | The two-wattmeter method.
+Q: A star motor on 400 V lines takes 20 A at power factor 0.85. What is its power? | About 11.8 kW.
+Q: What is a common mistake with P = √3V_{L}I_{L} cos φ? | Using phase values; the formula uses line values, or use 3V_{ph}I_{ph} cos φ.
 
 ## Diodes and rectifiers
 LV: Year 1 · Intermediate
@@ -557,6 +677,16 @@ NUM2#engineering-u08-13-q2@3: An LED with forward voltage 2.1 V is run at 20 mA 
 M2#engineering-u08-13-q3@2: Why does a bridge rectifier output peak at about 1.4 V below the input peak? | Two diodes conduct in series at any time | The capacitor absorbs 1.4 V | Transformers always lose 1.4 V | The load drops half the voltage | In a bridge, current passes through two forward-biased diodes, each dropping about 0.7 V.
 M3#engineering-u08-13-q4@2: How does doubling the reservoir capacitance affect ripple? | It roughly halves the ripple | It doubles the ripple | It has no effect on ripple | It removes ripple entirely | Ripple ΔV ≈ I/(f_{r}C), so it is inversely proportional to C.
 SA3#engineering-u08-13-q5@2,3: Describe how a mains power supply produces a steady 5 V DC output. | A transformer reduces and isolates the mains voltage. A bridge rectifier converts AC to pulsating DC using both halves of the cycle. A reservoir capacitor smooths it, leaving ripple at 100 Hz. A regulator, such as a Zener circuit or integrated linear or switching regulator, then holds the output at 5 V despite ripple and load changes. | Transformer ; Bridge rectifier ; Reservoir capacitor ; Regulator
+Q: What is the forward voltage of a Schottky diode? | Around 0.3 V.
+Q: What is a Zener diode used for? | As a voltage reference, as it breaks down at a precise voltage.
+Q: What is the forward voltage of an LED? | About 1.8 to 3.5 V, depending on colour.
+Q: How is the series resistor for an LED calculated? | R = (V_{s} − V_{f}) ÷ I.
+Q: What is the ripple frequency of a half-wave rectifier? | The supply frequency.
+Q: How many diodes does a full-wave bridge rectifier use? | Four, with two conducting at a time.
+Q: What is the approximate peak-to-peak ripple from a reservoir capacitor? | ΔV ≈ I ÷ (f_{r}C), where f_{r} is the ripple frequency.
+Q: What two ratings must rectifier diodes have? | Peak inverse voltage and the surge current when the reservoir capacitor first charges.
+Q: What is a common mistake when connecting an LED? | Connecting it directly to a supply without a series resistor, which destroys it.
+Q: A bridge rectifier supplies 0.5 A through 2200 µF on 50 Hz. What is the ripple? | About 2.27 V peak to peak.
 
 ## Transistors as switches and amplifiers
 LV: Year 1 · Intermediate
@@ -599,6 +729,16 @@ M2#engineering-u08-14-q2@2: A BJT with β = 200 carries a collector current of 5
 NUM2#engineering-u08-14-q3@2: A 3.3 V logic output must supply 1.5 mA of base current to a BJT switch. What base resistor is needed, in Ω? | 1733 | 20 | Ω | R_{B} = (3.3 − 0.7) ÷ 0.0015 = 1733 Ω; a 1.8 kΩ or 1.5 kΩ resistor would be chosen.
 M3#engineering-u08-14-q4@3: A common-emitter amplifier has R_{C} = 4.7 kΩ and an unbypassed R_{E} = 470 Ω. What is its approximate voltage gain? | −10 | +10 | −100 | −0.1 | Gain ≈ −R_{C} ÷ R_{E} = −4700 ÷ 470 = −10, inverted.
 SA3#engineering-u08-14-q5@1,2: Compare a BJT and a MOSFET as a switch for a 2 A DC motor controlled by a microcontroller. | A BJT needs a continuous base current of at least I_{C}/β, perhaps 20 to 100 mA, more than a microcontroller pin can give, so a driver is needed; it has a saturation voltage drop. A logic-level MOSFET needs only a gate voltage and negligible steady current, and with low R_{DS(on)} dissipates little power. Both need a flyback diode for the motor. The MOSFET is usually preferred. | Base current demand ; Gate voltage drive ; Losses ; Flyback diode ; Choice
+Q: What are the three terminals of a BJT? | Base, collector and emitter.
+Q: How are collector and base current related in a BJT? | I_{C} = βI_{B}, where β is typically 100 or more.
+Q: What are the three terminals of a MOSFET? | Gate, drain and source.
+Q: How does a fully on MOSFET behave? | Like a small resistance, R_{DS(on)}.
+Q: Where do MOSFETs dominate? | Digital chips (CMOS) and power switching.
+Q: What base current is needed to saturate a BJT switch? | I_{B} > I_{C} ÷ β_{min}, usually with a safety factor of 2 to 10.
+Q: When does most power loss occur in a transistor switch? | During switching transitions.
+Q: What is the approximate gain of a common-emitter amplifier with an emitter resistor? | −R_{C} ÷ R_{E}, where the minus sign shows inversion.
+Q: What do coupling capacitors do in a transistor amplifier? | They block DC bias from the signal source and load.
+Q: What is a common mistake in designing a BJT switch? | Using exactly I_{C}/β of base current; β varies, so overdrive the base.
 
 ## Operational amplifiers
 LV: Year 1 · Intermediate
@@ -641,6 +781,16 @@ NUM2#engineering-u08-15-q2@2: A non-inverting amplifier has R_{f} = 47 kΩ and R
 M2#engineering-u08-15-q3@2: An inverting amplifier has R_{in} = 2 kΩ and R_{f} = 20 kΩ. What is the output for a 0.3 V input? | −3 V | +3 V | −6 V | +0.3 V | The gain is −R_{f}/R_{in} = −10, so V_{out} = −10 × 0.3 = −3 V.
 M3#engineering-u08-15-q4@3: An op-amp has a gain-bandwidth product of 1 MHz. Up to what frequency can it give a gain of 50? | About 20 kHz | About 50 MHz | About 1 MHz | About 50 kHz | Bandwidth ≈ GBW ÷ gain = 1 MHz ÷ 50 = 20 kHz.
 SA3#engineering-u08-15-q5@1,3: Explain why a voltage follower is useful between a sensor with high output resistance and a low-resistance load. | Connected directly, the load and sensor resistance form a divider, so most of the signal would be lost. A follower draws almost no input current, so the sensor is not loaded, and its low output impedance can drive the load with the same voltage. Gain is 1, but the signal is preserved. | Loading effect ; High input impedance ; Low output impedance ; Unity gain
+Q: What are the properties of an ideal op-amp? | Very high open-loop gain, very high input impedance and very low output impedance.
+Q: What are the two golden rules of an op-amp with negative feedback? | The input voltages are equal and no current flows into the inputs.
+Q: How does an op-amp behave without feedback? | As a comparator, swinging to the supply depending on which input is higher.
+Q: What is the gain of an inverting amplifier? | −R_{f} ÷ R_{in}.
+Q: What is the gain of a non-inverting amplifier? | 1 + R_{f} ÷ R_{1}.
+Q: What does a summing amplifier produce? | A weighted sum of several inputs fed through resistors to a virtual earth.
+Q: What circuits can be made by adding capacitors to op-amps? | Integrators, differentiators and active filters.
+Q: What is the gain-bandwidth product of an op-amp? | The roughly constant product of closed-loop gain and bandwidth.
+Q: Name three limits of real op-amps besides the supply rails. | Gain-bandwidth product, slew rate, input offset voltage and input bias currents.
+Q: An inverting amplifier has R_{in} = 10 kΩ and R_{f} = 100 kΩ. What is the output for 0.2 V? | −2 V, as the gain is −10.
 
 ## Digital logic
 LV: Year 1 · Foundation
@@ -683,6 +833,16 @@ M2#engineering-u08-16-q2@2: By De Morgan's theorem, what is (A + B)'? | A' · B'
 NUM1#engineering-u08-16-q3@1: What is the binary number 101101 in decimal? | 45 | 0.5 | – | 32 + 0 + 8 + 4 + 0 + 1 = 45.
 M3#engineering-u08-16-q4@3: Which of these is a sequential circuit? | A binary counter | A half adder | A multiplexer | A decoder | A counter must remember its previous state, so it uses flip-flops.
 SA3#engineering-u08-16-q5@2,3: Use Boolean algebra to show that a NOT gate and an AND gate can be made from NAND gates. | NOT: connect both inputs of a NAND together, giving (A · A)' = A'. AND: follow a NAND with a NAND-based NOT, giving ((A · B)')' = A · B. This shows NAND is universal, since OR can then be made using De Morgan: A + B = (A' · B')'. | NAND as NOT ; NAND then NOT gives AND ; De Morgan for OR ; Universality
+Q: What does an AND gate output? | 1 only if all inputs are 1.
+Q: What does an OR gate output? | 1 if any input is 1.
+Q: What is De Morgan's theorem for (A · B)'? | (A · B)' = A' + B'.
+Q: What tool simplifies Boolean functions of up to about four variables visually? | Karnaugh maps.
+Q: What does combinational logic depend on? | Only the current inputs.
+Q: Give three examples of combinational circuits. | Adders, multiplexers and decoders.
+Q: What does a D flip-flop do? | It copies its input to its output on a clock edge.
+Q: What are the outputs of a half adder? | Sum S = A XOR B and carry C = A AND B.
+Q: What is a common mistake when applying De Morgan's theorem? | Not changing the operator; inverting a product gives a sum of inverses, and the reverse.
+Q: What is a truth table? | A table listing the output of a logic circuit for every combination of inputs.
 
 ## Transformers
 LV: Year 1 · Intermediate
@@ -727,6 +887,16 @@ NUM2#engineering-u08-17-q2@2: A transformer has a turns ratio of 20:1 and 230 V 
 M2#engineering-u08-17-q3@2: Which loss is reduced by laminating a transformer core? | Eddy current loss | Copper loss | Hysteresis loss only | Dielectric loss | Laminations break up the paths of eddy currents induced in the core.
 M3#engineering-u08-17-q4@3: Power of 100 MW is sent at 400 kV instead of 100 kV over the same line. How do I^{2}R losses change? | They fall to one sixteenth | They fall to a quarter | They are unchanged | They rise four times | Current falls by a factor of 4, so I^{2}R losses fall by 16.
 SA3#engineering-u08-17-q5@1,3: Explain why electricity is transmitted at very high voltages and then stepped down near users. | For a given power P = VI, raising the voltage reduces the current. Losses in the lines are I^{2}R, so higher voltage greatly reduces losses and allows thinner conductors. Transformers make the change efficiently. High voltages are unsafe for use and need large insulation, so they are stepped down in stages to 230/400 V near consumers. | P = VI ; I^{2}R losses ; Transformer efficiency ; Safety at point of use
+Q: How does a transformer induce a voltage in its secondary? | Alternating flux from the primary links the secondary and induces a voltage by Faraday's law.
+Q: What is the ideal transformer voltage ratio? | V_{1} ÷ V_{2} = N_{1} ÷ N_{2}.
+Q: How does current relate to turns in an ideal transformer? | Inversely: I_{1} ÷ I_{2} = N_{2} ÷ N_{1}.
+Q: How does a load impedance appear when referred to the primary? | Z_{1} = (N_{1} ÷ N_{2})^{2} Z_{2}.
+Q: What are copper losses in a transformer? | I^{2}R heating in the windings, varying with load.
+Q: What are the two iron losses in a transformer? | Hysteresis and eddy currents, roughly constant at fixed voltage.
+Q: How efficient are large power transformers? | Over 99%.
+Q: At what voltages does the transmission network in Great Britain run? | 400 kV and 275 kV, with distribution at 132 kV and below.
+Q: A 230 V to 12 V transformer has 1150 primary turns. How many secondary turns? | 60 turns.
+Q: Besides changing voltage, what does a transformer provide between circuits? | Electrical isolation.
 
 ## Electric motors and generators
 LV: Year 1 · Intermediate
@@ -775,4 +945,14 @@ NUM2#engineering-u08-18-q2@2: A 240 V DC motor has armature resistance 0.5 Ω an
 M2#engineering-u08-18-q3@3: A 6-pole induction motor on a 50 Hz supply has 5% slip. What is its speed? | 950 rpm | 1000 rpm | 1500 rpm | 900 rpm | n_{s} = 120 × 50 ÷ 6 = 1000 rpm; n = 1000 × (1 − 0.05) = 950 rpm.
 M3#engineering-u08-18-q4@2: How do variable speed drives control an induction motor's speed? | By changing the supply frequency | By changing the number of poles while running | By adding resistance in the supply line | By reversing the phase sequence repeatedly | Synchronous speed is proportional to frequency, so an inverter varies frequency to control speed.
 SA3#engineering-u08-18-q5@1,3: Explain why an induction motor cannot produce torque at synchronous speed. | Torque depends on currents induced in the rotor, which need relative motion between the rotating field and the rotor conductors (Faraday's law). At synchronous speed the rotor turns with the field, there is no relative motion, no induced EMF and no rotor current, so no torque. Under load the motor slows slightly, slip appears and torque is produced. | Induction needs relative motion ; Zero slip means zero EMF ; No rotor current ; Slip under load
+Q: What is the force on a current-carrying conductor in a magnetic field? | F = BIL.
+Q: What does Lenz's law say about induced EMF? | It opposes the change that causes it.
+Q: Which rule gives the direction of induced EMF in a generator? | Fleming's right-hand rule.
+Q: What is the DC motor armature equation? | V = E + I_{a}R_{a}.
+Q: What is DC motor torque proportional to? | Flux times armature current.
+Q: Where are brushless DC motors common? | In drones, fans and electric vehicles.
+Q: What is the synchronous speed formula? | n_{s} = 120f ÷ p rpm.
+Q: What is the typical slip of an induction motor? | About 2 to 5%.
+Q: Which machines produce most grid power? | Large synchronous generators.
+Q: A 4-pole induction motor on 50 Hz runs at 1440 rpm. What is its slip? | 4%, as synchronous speed is 1500 rpm.
 `;

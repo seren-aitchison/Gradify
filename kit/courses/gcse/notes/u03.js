@@ -44,6 +44,16 @@ M2#gcse-u03-14-q2@2: Two productions of the same play present one character as c
 M3#gcse-u03-14-q3@3: A student writes, "The reader feels tension as Macbeth looks at his hands." What is the best improvement? | Discuss the audience and how staging, pauses and sound effects create tension | Replace the word "reader" with "narrator" throughout the essay | Remove any reference to tension, since plays can't create it | Summarise the plot of the whole play instead of one moment | Drama analysis should consider the audience and theatrical effects, not just the reader.
 TF1#gcse-u03-14-q4@1: In drama, characters' thoughts are usually explained by a narrator. | false | Plays usually lack a narrator; thoughts are shown through dialogue, soliloquy and action.
 SA2#gcse-u03-14-q5@2,3: Explain how a director's choices could change the effect of a scene you know. | A director can change the effect by casting (age, appearance), delivery (tone, pace, pauses), blocking (where characters stand and move), set and lighting (realistic or symbolic), costume (period or modern), cuts and additions. For example, a menacing or comic delivery of the same line can alter the audience's response and the scene's meaning. | Casting or delivery ; Movement and staging ; Design ; Effect on meaning
+Q: Why does meaning in drama come mainly from what characters say and do? | There is usually no narrator to explain characters' thoughts.
+Q: How does watching a play differ from reading a novel for the audience? | The audience watches together, in real time, with no chance to reread.
+Q: Name four production choices that can change what the same lines mean. | Delivery, casting, set, costume, lighting, cuts and interpretation.
+Q: How can The Merchant of Venice present Shylock differently without changing the words? | A production can present him as a villain or as a victim of prejudice.
+Q: What does the knocking at the gate do in Macbeth Act 2 Scene 2? | It is a sound effect that heightens tension for the audience.
+Q: What is stagecraft? | The skills and techniques of putting a play on stage.
+Q: What is a proscenium arch stage? | A framed "picture" stage, common from the Restoration to the twentieth century.
+Q: What are in-the-round and studio spaces like? | Flexible spaces close to the audience.
+Q: What is the mistake of writing about a play like a novel? | Using phrases like "the reader learns" instead of considering the audience, the stage and how a moment might be played.
+Q: What does interpretation mean in drama? | A production's or reader's choices about the meaning of a play.
 
 ## Tragedy
 LV: Introductory · Application
@@ -86,6 +96,16 @@ M2#gcse-u03-15-q2@2: In Oedipus the King, Oedipus discovers he has killed his fa
 M3#gcse-u03-15-q3@3: A student says Othello's hamartia is simply that he is "evil". What is the best response? | Hamartia means an error of judgement; Othello's trust in Iago and jealousy lead him astray, but he isn't simply evil | The student is right, because tragic heroes are always evil | Othello has no hamartia, because Iago alone is to blame | Hamartia refers only to the villain, not the tragic hero | Aristotle's hero is neither wholly good nor bad; the error brings about the fall.
 MATCH1#gcse-u03-15-q4@1: Match each term to its meaning. | Hamartia = Error or flaw leading to the fall ; Peripeteia = Reversal of fortune ; Anagnorisis = Recognition of the truth ; Catharsis = Release of pity and fear | These are Aristotle's key terms for tragedy.
 SA2#gcse-u03-15-q5@3: Evaluate whether Arthur Miller is right that an ordinary person can be a tragic hero. | Aristotle's tragic heroes were of high status, so their fall carried wide consequences and great distance. Miller argued that tragedy lies in a person's struggle to secure their dignity and sense of self, which ordinary people share; Willy Loman's fall arouses pity and fear in modern audiences. Critics reply that without high status the fall is less grand. The answer depends on whether tragedy is defined by status or by the nature of the struggle. | Aristotle's view ; Miller's argument ; Counter-argument ; Judgement
+Q: In which work did Aristotle describe tragedy, and when? | The Poetics, in the fourth century BC.
+Q: What is catharsis? | The release or clarification of pity and fear that Aristotle saw as the effect of tragedy.
+Q: What is hamartia? | The error or flaw of judgement that leads to the tragic hero's downfall.
+Q: What kind of hero does tragedy usually have? | A figure of high status who is neither wholly good nor wholly bad.
+Q: Why is "fatal flaw" a misleading translation of hamartia? | Aristotle's term suggests an error or misjudgement, which may involve ignorance rather than vice.
+Q: Which Greek tragedy shows a hero discovering he killed his father and married his mother? | Sophocles' Oedipus the King.
+Q: Name three Elizabethan and Jacobean tragedians. | Marlowe, Shakespeare and Webster.
+Q: What did Arthur Miller argue in "Tragedy and the Common Man" (1949)? | That ordinary people can be tragic heroes, as in Death of a Salesman.
+Q: What is Othello's hamartia? | His trust in Iago and his jealousy.
+Q: What is Othello's anagnorisis? | He learns Desdemona was innocent and that Iago deceived him.
 
 ## Comedy
 LV: Introductory · Application
@@ -130,6 +150,16 @@ M2#gcse-u03-16-q2@2: A play features twins mistaken for each other, disguise and
 M3#gcse-u03-16-q3@3: Why do some critics find the ending of Twelfth Night unsettling? | Malvolio's humiliation and bitter exit leave tensions that the marriages don't resolve | Every major character dies in the final scene of the play | There are no marriages or reunions at the end of the play | The play contains no comic elements anywhere in it | Malvolio's vow of revenge darkens the festive resolution.
 TF1#gcse-u03-16-q4@1: Comedy can be used to criticise society. | true | Satire and comedy of manners use humour to expose vice, folly and hypocrisy.
 SA2#gcse-u03-16-q5@2,3: Explain how Wilde uses comedy to criticise society in The Importance of Being Earnest. | Wilde uses epigrams, inversions and absurd situations to mock the Victorian upper classes: their obsession with status, money and appearance, their hypocrisy about marriage and morality, and their trivial values. Lady Bracknell's judgements and the "Bunburying" of Jack and Algernon expose double lives and social pretension. The light tone makes the criticism entertaining but pointed. | Epigrams and inversion ; Targets of satire ; Examples ; Light tone with serious edge
+Q: What is the typical movement of a comic plot? | From confusion or conflict to resolution, often marriage, reunion or festivity.
+Q: Name three plot devices typical of comedy. | Mistaken identity, disguise, misunderstandings and coincidence.
+Q: What is romantic comedy? | Comedy in which lovers overcome obstacles, as in As You Like It and Twelfth Night.
+Q: Which Ben Jonson play is an example of satire? | Volpone (1606).
+Q: What is a comedy of manners? | A comedy satirising the manners and pretensions of fashionable society, as in The Importance of Being Earnest.
+Q: What is farce? | Comedy based on improbable situations, physical humour and fast pace.
+Q: How does Lady Bracknell's "carelessness" epigram work? | It inverts expectations, turning the loss of parents into a social error.
+Q: What does Wilde mock through Lady Bracknell? | The upper classes' obsession with status and appearance.
+Q: Why does Malvolio's treatment in Twelfth Night complicate the comedy? | His humiliation leaves an uneasy note.
+Q: Name two serious purposes comedy can serve. | Criticising social norms and exploring gender and identity, as in cross-dressing plots.
 
 ## Dramatic structure
 LV: Introductory · Application
@@ -176,6 +206,16 @@ M2#gcse-u03-17-q2@2: In King Lear, Gloucester's betrayal by his son mirrors Lear
 M3#gcse-u03-17-q3@3: A modern play begins with the ending and then moves back in time. How does Freytag's pyramid apply? | Only partly: the play uses non-linear structure, so tension comes from how events happened rather than what happens | Exactly, with exposition at the start as in any play | It has no structure at all and can't be analysed | It must be a comedy, since tragedies are always linear | Non-linear plays shift the source of suspense; Freytag's model fits them less well.
 SEQ1#gcse-u03-17-q4@1: Order the parts of Freytag's pyramid. | Exposition ; Rising action ; Climax ; Falling action ; Catastrophe or resolution | Freytag described tension building to a climax and then falling to the conclusion.
 SA2#gcse-u03-17-q5@2,3: Explain how a playwright can use dramatic irony to build tension. | When the audience knows something characters don't, every action takes on extra meaning. In Romeo and Juliet, the audience knows Juliet has taken a sleeping potion, so Romeo's belief that she is dead and his suicide are agonising to watch. The gap between audience and character knowledge creates suspense, pity or humour. | Definition ; Example ; Effect on audience ; Suspense or pity
+Q: What is the difference between acts and scenes? | Acts are large units; scenes are smaller units, often marked by a change of place or time.
+Q: Who divided Shakespeare's plays into five acts? | Later editors, following classical models.
+Q: When did Gustav Freytag describe his five-part structure? | In 1863, for tragedy.
+Q: What is exposition? | The opening section that introduces characters, setting and situation.
+Q: What is the climax of a play? | The turning point or moment of highest tension.
+Q: Where is the climax of Romeo and Juliet, according to Freytag's pyramid? | Romeo's banishment, around Act 3.
+Q: What is foreshadowing? | Hints of what is to come.
+Q: What is a subplot? | A secondary storyline running alongside the main plot, such as Gloucester's story mirroring Lear's.
+Q: Why shouldn't Freytag's pyramid be applied rigidly? | Modern plays often use different shapes, circular structures or fragmented time.
+Q: What is non-linear structure in drama? | Flashbacks or fragmented time, used in modern drama.
 
 ## Character and dialogue in drama
 LV: Introductory · Application
@@ -220,6 +260,16 @@ M2#gcse-u03-18-q2@2: A character says "I'm fine" while turning away and gripping
 M3#gcse-u03-18-q3@3: In a scene, one character's speeches grow longer and more confident while another's shrink to single words. What is the most likely interpretation? | Power is shifting towards the character who speaks more | Both characters are equally powerful throughout | The playwright has made an error | The quieter character must be the protagonist | Patterns of speech length and control often signal shifting power.
 TF1#gcse-u03-18-q4@1: In drama, characters always mean exactly what they say. | false | Characters often lie or hide their feelings; subtext and actions reveal what they really mean.
 SA2#gcse-u03-18-q5@2,3: Explain how dialogue shows the shifting relationship between Macbeth and Lady Macbeth in Act 1 Scene 7. | Macbeth begins by stating firmly that they will not proceed. Lady Macbeth answers with long, scornful speeches questioning his courage and manhood and describing her own resolve. Macbeth's responses become shorter and more uncertain ("If we should fail?"), and by the end he accepts her plan. The dialogue shows power moving from him to her. | Macbeth's opening decision ; Lady Macbeth's persuasion ; Macbeth's shortening replies ; Shift in power
+Q: Name four ways character is revealed in drama. | What characters say, how they speak, what others say about them, and what they do.
+Q: What is a round character? | A complex character who develops and can surprise the audience.
+Q: What is a flat character? | A simple, consistent character.
+Q: Give an example of character types in drama. | Shakespeare's fools or Restoration fops.
+Q: How does Chekhov use subtext? | His characters often talk about trivial things while revealing deep unhappiness.
+Q: What carries menace in Pinter's plays? | Pauses and silences.
+Q: Why do actors work out subtext? | To decide how to play a line.
+Q: Name three features of dialogue that reveal power. | Who speaks most, who interrupts, who asks and answers questions, and forms of address.
+Q: How does Act 1 Scene 7 of Macbeth show power shifting to Lady Macbeth? | She mocks his courage in a long speech, his replies get shorter and more hesitant, and he agrees.
+Q: Why shouldn't characters' words be taken at face value in drama? | Characters lie, hide feelings and say the opposite of what they mean; look for contradictions with actions.
 
 ## Stagecraft and stage directions
 LV: Introductory · Application
@@ -264,6 +314,16 @@ M2#gcse-u03-19-q2@2: Shakespeare writes few explicit stage directions. How do ac
 M3#gcse-u03-19-q3@3: Why is the offstage door slam at the end of A Doll's House so effective? | The sound replaces any final speech, making Nora's departure decisive and shocking | It has no effect, because the audience can't see the door | It shows Nora returning home to her family at the end | It is a comic sound effect that lightens the ending | A single sound carries the climax and leaves the audience to imagine the consequences.
 MATCH1#gcse-u03-19-q4@1: Match each element to its example. | Sound = A door slamming offstage ; Prop = A dagger ; Costume = A crown showing royal status ; Lighting = A blackout between scenes | Each is a different element of stagecraft.
 SA2#gcse-u03-19-q5@2,3: Analyse how a playwright can use a single object or sound to create meaning, with an example. | An object or sound can become a symbol that carries the play's themes without words. In A Doll's House, the slammed door marks Nora's break from her marriage and challenges social expectations. In The Cherry Orchard, the sound of axes cutting the trees signals the loss of the old order. Such effects focus attention, create mood and give endings power. | Symbolic function ; Example one ; Example two or effect ; Impact on audience
+Q: What is a stage direction? | An instruction in a play script about action, setting, sound or delivery.
+Q: What is blocking? | The planned movement and positioning of actors on stage.
+Q: Name three things lighting can do in a play. | Set mood, show time of day, give focus and mark transitions.
+Q: What can costume and props show? | Status, period and character, and they can act as symbolic objects.
+Q: Give an example of an explicit stage direction. | "Enter Ghost", Ibsen's detailed room descriptions, or Beckett's precise timings and pauses.
+Q: What does "Is this a dagger which I see before me" tell the actor? | What to imagine and look at: it is an implicit stage direction.
+Q: How do stage directions differ between early modern and later playwrights? | Early modern plays have few; Ibsen and Shaw wrote long, novelistic ones.
+Q: Why was Nora's final exit in A Doll's House shocking? | The door slam replaces any final speech, making her departure decisive and shocking to the original audience.
+Q: What does the offstage cutting of the cherry trees signal in The Cherry Orchard? | The end of an old way of life.
+Q: Why shouldn't stage directions be ignored? | They are part of the text and often carry key meanings, especially in modern drama.
 
 ## Shakespeare's theatre
 LV: Introductory · Foundation
@@ -308,6 +368,16 @@ M2#gcse-u03-20-q2@2: Why do Shakespeare's characters often describe where they a
 M3#gcse-u03-20-q3@3: How might a boy actor playing Rosalind, disguised as a man, have affected the original audience? | It created layered play with gender, as a boy played a woman pretending to be a man | It had no effect, since audiences ignored casting | It made the play a tragedy rather than a comedy | It meant women in the audience couldn't follow the plot | The layers of disguise highlighted the performance of gender.
 TF1#gcse-u03-20-q4@1: Women acted on the public stage in Shakespeare's lifetime. | false | Women first appeared on the English public stage after the Restoration in 1660.
 SA2#gcse-u03-20-q5@2,3: Explain how the conditions of the Globe Theatre shaped Shakespeare's writing. | The thrust stage put the audience close on three sides, encouraging soliloquies and asides addressed to them. Daylight performance and little scenery meant language had to establish time, place and atmosphere, as in Henry V's Chorus. Fast, continuous action without scene changes shaped scene structure. All-male casts influenced disguise plots. | Thrust stage and direct address ; Language sets scene ; Continuous action ; All-male casting
+Q: When and where was the Globe built? | In 1599, on the south bank of the Thames.
+Q: What were performances at the outdoor Globe like? | Open to the sky, performed in daylight, on a thrust stage with the audience on three sides.
+Q: How much did groundlings pay, and where did they stand? | A penny, to stand in the yard.
+Q: How did the Blackfriars differ from the Globe? | It was indoor, candlelit and smaller, with more expensive audiences and music between acts.
+Q: When did Shakespeare's company start using the Blackfriars? | From about 1608 to 1609.
+Q: What was Shakespeare's company called before 1603? | The Lord Chamberlain's Men, in which Shakespeare was a sharer.
+Q: When did women first act on the public English stage? | In 1660.
+Q: Who played major tragic roles in Shakespeare's company? | Leading actors such as Richard Burbage.
+Q: How does the Prologue of Henry V deal with the stage's limits? | The Chorus admits them and asks the audience to "Piece out our imperfections with your thoughts."
+Q: How did scenes move in Shakespeare's theatre? | In continuous action, flowing quickly without scene changes.
 
 ## Shakespeare's language
 LV: Introductory · Application
@@ -350,6 +420,16 @@ M2#gcse-u03-21-q2@2: Lady Macbeth speaks in prose in the sleepwalking scene afte
 M3#gcse-u03-21-q3@3: Mark Antony repeats "Brutus is an honourable man" several times in his funeral speech. What is the effect? | The repetition becomes ironic, undermining Brutus while appearing to praise him | It sincerely praises Brutus throughout, with no hidden meaning at all | It shows that Antony has forgotten his lines and keeps repeating himself | It has no effect on the crowd, who ignore the speech entirely | Repeated after evidence of Caesar's goodness, the phrase turns to sarcasm and wins the crowd.
 TF1#gcse-u03-21-q4@1: Shakespeare's plays are written entirely in verse. | false | Many scenes are in prose, and Shakespeare uses the choice for dramatic effect.
 SA2#gcse-u03-21-q5@2,3: Analyse how Shakespeare uses imagery in a play you know. | In Macbeth, recurring images of blood (Macbeth's hands, "Out, damned spot!"), darkness ("Stars, hide your fires") and ill-fitting clothes (borrowed robes) build themes of guilt, evil and illegitimate power. The patterns link scenes, intensify mood and track the characters' moral decline. Strong answers quote precisely and explain the effect of each image in context. | Identifies image pattern ; Examples ; Links to themes ; Effect on audience
+Q: What is blank verse? | Unrhymed iambic pentameter.
+Q: When does Shakespeare usually use blank verse? | For noble characters, serious matters and elevated emotion.
+Q: What uses do rhymed couplets have in Shakespeare? | To close scenes, for formal or magical speech, or in early plays.
+Q: Besides comic and lower-status characters, what else is often in prose in Shakespeare? | Letters, madness and informal talk.
+Q: When does Hamlet speak in prose? | When feigning madness.
+Q: What image pattern dominates Othello? | Animal imagery.
+Q: What image pattern dominates Hamlet? | Disease and corruption.
+Q: What is rhetoric? | The art of persuasive speaking or writing.
+Q: What blood imagery returns in Lady Macbeth's sleepwalking? | "Who would have thought the old man to have had so much blood in him?"
+Q: Are Shakespeare's uses of verse and prose fixed rules? | No. They are tendencies, and shifts between them can signal changes in character or mood.
 
 ## Soliloquy and aside
 LV: Introductory · Application
@@ -396,6 +476,16 @@ M2#gcse-u03-22-q2@2: Iago tells the audience his plans while other characters tr
 M3#gcse-u03-22-q3@3: A student says "To be, or not to be" shows Hamlet has decided to kill himself. What is the best response? | The soliloquy weighs life and death without deciding; it shows a mind reasoning and ends by questioning action | The student is right: Hamlet clearly announces his suicide here | The speech is only about revenge on Claudius, not about death | Hamlet speaks the lines directly to Ophelia as a confession | Hamlet reflects on death and fear of the unknown; the speech is exploratory.
 TF1#gcse-u03-22-q4@1: An aside is heard by all the characters on stage. | false | An aside is understood not to be heard by the other characters.
 SA2#gcse-u03-22-q5@2,3: Explain how Shakespeare uses soliloquy to develop Macbeth's character. | Early soliloquies, such as "If it were done when 'tis done", show Macbeth's conscience and fear of consequences. The dagger soliloquy reveals his disturbed imagination. Later, "Tomorrow, and tomorrow, and tomorrow" shows despair and the meaninglessness of life after his crimes. The soliloquies trace his moral decline and keep the audience close to him. | Early conscience ; Imagination and disturbance ; Late despair ; Audience connection
+Q: What is a monologue? | A long speech by one character to other characters.
+Q: Name three functions of soliloquy. | Revealing inner thoughts and motives, creating intimacy with the audience, dramatic irony, and exploring themes.
+Q: How does Hamlet imagine death in "To be, or not to be"? | As sleep, then fears "what dreams may come".
+Q: What does Hamlet conclude in "To be, or not to be"? | "Conscience does make cowards of us all": thinking prevents action.
+Q: Which play theme does "To be, or not to be" show? | Inaction, through Hamlet's reflective mind.
+Q: What should you ask about where a soliloquy occurs? | Where it comes in the play and what has just happened.
+Q: What should you look for in how a soliloquy's argument moves? | Its questions, turns and conclusions.
+Q: What might a breakdown of verse in a soliloquy show? | A troubled or disturbed state of mind.
+Q: Does a soliloquy always show a character's settled view? | No. Many show a mind in motion, testing ideas and changing direction.
+Q: Which Shakespeare villains share their plans with the audience? | Richard III and Iago.
 
 ## Shakespearean tragedy
 LV: Intermediate · Application
@@ -439,6 +529,16 @@ M2#gcse-u03-23-q2@2: A feminist critic examines how Lady Macbeth's power is pres
 M3#gcse-u03-23-q3@3: A New Historicist reads Macbeth in relation to James I's interest in witchcraft and the Gunpowder Plot. What is the main strength of this approach? | It shows how the play engages with the politics and beliefs of its time | It proves Shakespeare's personal opinions about witches | It ignores the historical context completely | It shows the play has no meaning today | Historicist readings reveal how the play connects to its cultural and political moment.
 TF1#gcse-u03-23-q4@1: In Shakespearean tragedy, order is often partly restored at the end. | true | A new figure, such as Malcolm or Fortinbras, often takes power after the catastrophe.
 SA2#gcse-u03-23-q5@3: Evaluate Bradley's view that Shakespearean tragedy is "action issuing from character". | Bradley's view explains much: Macbeth's ambition and Othello's jealousy drive the plots, and the soliloquies invite character study. But external forces also matter: the witches, Iago's manipulation, political conflict, and social expectations of gender and power. Later critics argue Bradley treats characters as real people and neglects history and performance. A balanced view sees tragedy arising from the interaction of character and circumstance. | Support for Bradley ; External forces ; Later critiques ; Balanced conclusion
+Q: Name the flaws or errors of four Shakespearean tragic heroes. | Macbeth's ambition, Othello's jealousy, Lear's pride and Hamlet's delay.
+Q: Why does the fall of a Shakespearean tragic hero matter beyond himself? | He is of high status, so his fall affects a whole society.
+Q: How do Shakespeare's tragedies usually end in terms of order? | Order is partly restored, often at great cost.
+Q: When was A. C. Bradley's Shakespearean Tragedy published? | 1904.
+Q: What fatal tendency did Bradley see in the tragic hero? | A tendency to identify with one interest or passion, leading to a fall producing waste and greatness.
+Q: What is New Historicism? | A critical approach reading literature in relation to the power structures and ideas of its time.
+Q: What does performance criticism focus on? | How the plays work on stage.
+Q: How does Lear's tragedy begin? | He divides his kingdom by testing his daughters' love and banishes the honest Cordelia.
+Q: Who restores order at the end of King Lear? | Edgar, but at terrible cost.
+Q: Which women do feminist critics of the tragedies explore? | Characters such as Lady Macbeth, Desdemona and Cordelia.
 
 ## Shakespearean comedy
 LV: Intermediate · Application
@@ -483,6 +583,16 @@ M2#gcse-u03-24-q2@2: Why are women disguised as men important in Shakespeare's c
 M3#gcse-u03-24-q3@3: Why is The Merchant of Venice sometimes difficult to stage as a light comedy? | Shylock's treatment raises serious issues of prejudice that sit uneasily with the comic ending | The play has no marriages at all | It ends with every character's death | It is written entirely in prose | Modern productions often foreground Shylock's suffering, complicating the comic resolution.
 TF1#gcse-u03-24-q4@1: Feste's final song in Twelfth Night ends the play on a purely joyful note. | false | Its refrain about rain adds melancholy to the festive ending.
 SA2#gcse-u03-24-q5@2,3: Explain how disguise drives the plot and themes of Twelfth Night. | Viola's disguise as Cesario creates a love triangle: she loves Orsino, who loves Olivia, who loves Cesario. The confusion drives comic misunderstanding until Sebastian's arrival resolves it. Disguise also explores gender and desire: Viola can speak to Orsino about love as a man, and Olivia's attraction to Cesario raises questions about identity. The ending restores order but leaves Malvolio outside. | Love triangle ; Comic confusion and resolution ; Gender and desire ; Ending
+Q: What obstacles do young lovers face in Shakespeare's comedies? | Obstacles from parents, law or misunderstanding.
+Q: Name two witty heroines of Shakespearean comedy. | Beatrice and Rosalind.
+Q: What is a wise fool? | A professional fool, such as Feste or Touchstone, who reveals truths through wit.
+Q: When did Northrop Frye describe the green world? | In 1957.
+Q: Give two examples of green worlds in Shakespeare. | The Forest of Arden in As You Like It and the wood near Athens in A Midsummer Night's Dream.
+Q: How does Rosalind use disguise in As You Like It? | As Ganymede, she teaches Orlando about love.
+Q: What is a problem play? | A Shakespearean play mixing comic structure with dark moral questions, such as Measure for Measure.
+Q: What darker note appears in A Midsummer Night's Dream? | The threat of death under Athenian law.
+Q: How is the confusion in Twelfth Night resolved? | Viola's twin Sebastian arrives, and marriages follow.
+Q: What love triangle drives Twelfth Night? | Viola loves Orsino, while Olivia falls for Viola disguised as Cesario.
 
 ## The history plays and the late romances
 LV: Intermediate · Application
@@ -526,6 +636,16 @@ M2#gcse-u03-25-q2@2: A play depicts the deposition of a king and asks whether re
 M3#gcse-u03-25-q3@3: Why is Shakespeare's Richard III not a reliable historical portrait? | Shakespeare followed Tudor sources hostile to Richard and shaped events for dramatic effect | Shakespeare had direct access to Richard's private diaries | The play is based only on Greek legend | Shakespeare wrote it as a comedy with no historical content | The Tudor dynasty benefited from presenting Richard as a villain.
 MATCH1#gcse-u03-25-q4@1: Match each play to its genre. | Henry V = History ; The Winter's Tale = Romance ; Hamlet = Tragedy ; As You Like It = Comedy | Shakespeare's plays are usually grouped into these four genres.
 SA2#gcse-u03-25-q5@2,3: Explain how Shakespeare explores the idea of kingship in the history plays. | The plays ask what makes a king legitimate: inheritance, divine right or ability. Richard II is rightful but weak; Bolingbroke usurps and becomes Henry IV but is haunted by guilt and rebellion. Hal learns from both court and tavern and becomes a successful but calculating Henry V. Richard III shows a ruthless usurper defeated. Together they show the costs of power and rebellion. | Legitimacy question ; Richard II and Bolingbroke ; Hal and Henry V ; Richard III and costs of power
+Q: Which plays make up Shakespeare's first tetralogy? | Henry VI Parts 1 to 3 and Richard III, from the early 1590s.
+Q: What period does the first tetralogy cover? | The Wars of the Roses to the Tudor victory at Bosworth.
+Q: What period does the second tetralogy cover? | From the deposition of Richard II to Agincourt.
+Q: Name three themes of the history plays. | Legitimacy of kingship, rebellion, the divine right of kings, national identity and the price of power.
+Q: What is a tetralogy? | A sequence of four related plays.
+Q: What does Prince Hal reveal in his soliloquy in Henry IV Part 1? | That he will reform at the right moment, so as to shine more brightly.
+Q: What question do the Hal plays raise about kingship? | Whether a good king must also be a calculating politician.
+Q: Name four of Shakespeare's late romances. | Pericles, Cymbeline, The Winter's Tale and The Tempest.
+Q: What features do the late romances share? | Loss and restoration, magic, forgiveness and reconciliation, and a blend of tragedy and comedy.
+Q: Why shouldn't the history plays be read as accurate history? | Shakespeare compressed events, invented scenes and followed Tudor perspectives.
 
 ## Marlowe and Shakespeare's contemporaries
 LV: Intermediate · Application
@@ -564,6 +684,16 @@ M2#gcse-u03-26-q2@2: A play features a ghost demanding revenge, a delaying hero,
 M3#gcse-u03-26-q3@3: How does Jonson's dramatic method differ from Shakespeare's? | Jonson followed classical unities and wrote sharp satire of contemporary London, while Shakespeare mixed genres freely | Jonson wrote only history plays about English kings | Jonson never used comedy or satire in his work | Jonson and Shakespeare wrote in identical styles | Jonson's satirical, classically shaped comedies contrast with Shakespeare's freer forms.
 TF1#gcse-u03-26-q4@1: The New Oxford Shakespeare credited Marlowe as co-author of the Henry VI plays. | true | Its editors proposed Marlowe's collaboration on the three Henry VI plays, though this remains debated.
 SA2#gcse-u03-26-q5@2,3: Compare Marlowe's Faustus with one of Shakespeare's tragic heroes. | Faustus is an overreacher whose desire for knowledge and power leads him to sell his soul; his fall is framed by religious damnation, and his final soliloquy dramatises terror. Macbeth, too, is driven by ambition and falls, but his tragedy focuses on conscience and political violence. Both use soliloquy and powerful blank verse to reveal inner conflict, but Faustus's fate is theological while Macbeth's is moral and political. | Faustus's ambition and fall ; Shakespearean hero ; Shared techniques ; Key difference
+Q: What is an overreacher? | A hero whose ambition drives him beyond human limits, as in Marlowe's plays.
+Q: What does Tamburlaine seek in Marlowe's play? | To conquer the world.
+Q: What does Faustus do in Doctor Faustus? | He sells his soul for knowledge and power.
+Q: How does Faustus's final soliloquy dramatise damnation? | The verse slows and fragments as terror grows, and he offers to burn his books too late.
+Q: What does Faustus plead as midnight approaches? | "Stand still, you ever-moving spheres of heaven, / That time may cease, and midnight never come."
+Q: Name four typical features of revenge tragedy. | A ghost prompting vengeance, delay, madness, a play-within-a-play and a bloody ending.
+Q: Which plays developed Kyd's revenge tragedy form? | Hamlet and Webster's The Duchess of Malfi.
+Q: What is city comedy? | Satirical comedy set in contemporary London, exposing greed and folly, such as Jonson's Volpone and The Alchemist.
+Q: Which classical rules did Ben Jonson favour, unlike Shakespeare? | The unities of time, place and action.
+Q: Why is it a mistake to treat Shakespeare as working in isolation? | He borrowed from, competed with and influenced contemporaries such as Marlowe and Kyd.
 
 ## Restoration and eighteenth-century drama
 LV: Intermediate · Application
@@ -607,6 +737,16 @@ M2#gcse-u03-27-q2@2: A play mocks fashionable Londoners, with witty lovers, a fo
 M3#gcse-u03-27-q3@3: Why did Goldsmith and Sheridan write "laughing comedy"? | To revive wit and humour against the dominant sentimental comedy, which stressed virtue and tears | Because the law banned all sentimental plays | To return to Greek tragedy | Because audiences disliked laughter | They reacted against sentimentalism, restoring satire and comic fun.
 TF1#gcse-u03-27-q4@1: Stage censorship by the Lord Chamberlain ended in 1968. | true | The Theatres Act 1968 abolished the Lord Chamberlain's licensing powers.
 SA2#gcse-u03-27-q5@2,3: Explain how the reopening of the theatres in 1660 changed English drama. | Women acted for the first time, changing how female roles were written and performed. Indoor theatres with proscenium arches and painted scenery replaced open-air playhouses, encouraging spectacle. Audiences were smaller and more aristocratic, favouring witty comedies of manners about fashionable society. Women playwrights such as Aphra Behn emerged. | Actresses ; Indoor staging ; Audience and comedy of manners ; Women playwrights
+Q: When did the English theatres close and reopen? | They closed in 1642 and reopened in 1660 with Charles II's return.
+Q: Which Restoration actress became a celebrity? | Nell Gwyn.
+Q: What were Restoration theatres like? | Indoor, with proscenium arches, painted scenery and candlelight.
+Q: What is Restoration comedy? | Witty, often sexually frank comedy of fashionable London society after 1660, with rakes and fops.
+Q: Name two key Restoration comedies besides Behn's. | Congreve's The Way of the World (1700) and Wycherley's The Country Wife (1675).
+Q: What does Aphra Behn's The Rover (1677) explore? | Sexual politics from a woman's perspective.
+Q: What is sentimental comedy? | Eighteenth-century comedy emphasising virtue and feeling over wit.
+Q: Which plays revived "laughing comedy"? | Goldsmith's She Stoops to Conquer (1773) and Sheridan's The School for Scandal (1777).
+Q: What does Sheridan satirise in The School for Scandal? | A society that values reputation over truth, through gossips such as Lady Sneerwell.
+Q: Why is it wrong to dismiss Restoration comedy as merely bawdy? | Many plays sharply satirise class, marriage and gender, and Behn raises questions about women's freedom.
 
 ## Wilde, Shaw and the Victorian stage
 LV: Intermediate · Application
@@ -647,6 +787,16 @@ M2#gcse-u03-28-q2@2: A play has clear heroes and villains, sensational plot twis
 M3#gcse-u03-28-q3@3: Why does Shaw refuse to end Pygmalion with Eliza marrying Higgins? | A romantic ending would undercut his argument about Eliza's independence and the artificiality of class | Because the Lord Chamberlain banned all marriages on stage | Because Shaw disliked writing endings of any kind | Because Eliza dies in the final act | Shaw wanted Eliza's transformation to lead to independence, not romantic dependence.
 TF1#gcse-u03-28-q4@1: Wilde's comedies use paradox to expose social hypocrisy. | true | His epigrams invert expectations and reveal the gap between appearance and reality.
 SA2#gcse-u03-28-q5@2,3: Compare the ways Wilde and Shaw use comedy to criticise society. | Wilde uses epigrams, paradox and absurd plots to mock the hypocrisy and triviality of the upper classes, keeping a light, elegant surface. Shaw uses comic situations and witty debate to argue openly about social problems such as class, poverty and prostitution, often with long prefaces explaining his views. Both satirise Victorian society, but Wilde exposes through style while Shaw persuades through argument. | Wilde's method ; Shaw's method ; Shared targets ; Key difference
+Q: What is melodrama? | Sensational drama with clear-cut heroes and villains, emotional appeal, spectacle and music.
+Q: What is the well-made play? | A tightly plotted play with secrets revealed at key moments, from the French dramatist Scribe.
+Q: How did Victorian theatres change physically? | They grew larger, and lighting improved with gas and later electricity.
+Q: Name three of Wilde's society comedies. | Lady Windermere's Fan, An Ideal Husband and The Importance of Being Earnest.
+Q: What techniques does Wilde use to expose hypocrisy? | Epigrams and paradox.
+Q: What is a play of ideas? | A drama designed to debate social, political or moral questions.
+Q: Which playwright influenced Shaw's plays of ideas? | Ibsen.
+Q: What does Arms and the Man (1894) debate? | War and heroism.
+Q: What does Eliza's transformation in Pygmalion show? | That class is a matter of speech and manners, not worth.
+Q: How did Shaw set out his arguments beyond the plays themselves? | In long prefaces.
 
 ## Ibsen, Chekhov and modern realism
 LV: Intermediate · Application
@@ -687,6 +837,16 @@ M2#gcse-u03-29-q2@2: In a Chekhov play, characters discuss the weather and tea w
 M3#gcse-u03-29-q3@3: Chekhov called The Cherry Orchard a comedy, but many productions stage it as a tragedy. What is the best explanation? | The play mixes absurd, comic behaviour with loss and sadness, so it can be interpreted either way | Chekhov didn't understand his own play | The play contains no comic moments at all | Comedy and tragedy can't exist in one play | Chekhov's blend of humour and melancholy allows different emphases in performance.
 TF1#gcse-u03-29-q4@1: Ibsen's plays are written in prose and set in everyday middle-class homes. | true | His realist dramas use prose dialogue and domestic settings to examine social issues.
 SA2#gcse-u03-29-q5@2,3: Explain how Ibsen's A Doll's House challenged its original audiences. | It presents a seemingly happy middle-class marriage in which Nora is treated as a child or doll by her husband. Her discovery of his selfishness leads her to leave her husband and children to find herself, ending with a slammed door. This challenged Victorian ideals of marriage, motherhood and women's duty, provoking controversy and debate; Ibsen even wrote an alternative ending for a German production. | Domestic setting and marriage ; Nora's realisation ; Leaving her family ; Controversy and social challenge
+Q: What is realism in drama? | Drama presenting everyday life and believable characters in ordinary settings, with prose dialogue.
+Q: What is naturalism? | A more extreme form of realism, influenced by science and Zola, showing characters shaped by heredity and environment.
+Q: What does Nora realise in A Doll's House? | That her marriage has kept her childlike.
+Q: Why did Ibsen's Ghosts (1881) cause a scandal? | It dealt with inherited disease and hypocrisy.
+Q: What does Hedda Gabler (1890) show? | A woman trapped by convention.
+Q: Name three of Chekhov's plays. | The Seagull, Uncle Vanya, Three Sisters and The Cherry Orchard.
+Q: Where did Stanislavski direct Chekhov's plays? | At the Moscow Art Theatre.
+Q: What modern acting style did Stanislavski's system influence? | "Method" acting.
+Q: How does The Cherry Orchard show the end of an era? | Through quiet action and sound: forgotten Firs lies down alone while axes are heard cutting the trees offstage.
+Q: Why is it wrong to treat Chekhov's plays as pure tragedies? | Chekhov called The Cherry Orchard a comedy; his plays mix humour, absurdity and sadness.
 
 ## Modernist and absurdist drama
 LV: Intermediate · Evaluation
@@ -730,6 +890,16 @@ M2#gcse-u03-30-q2@2: A production uses placards announcing what will happen next
 M3#gcse-u03-30-q3@3: A student says Waiting for Godot is badly written because "nothing happens". What is the best response? | The lack of event is deliberate: the repetitive, circular structure expresses the play's themes of waiting and meaninglessness | The student is right: Beckett forgot to write a plot | The play actually follows Freytag's pyramid exactly | Godot arrives in the final scene, resolving the plot | In absurdist drama, form embodies meaning; repetition and stasis are the point.
 TF1#gcse-u03-30-q4@1: Brecht wanted audiences to identify completely with the characters' emotions. | false | Brecht aimed to distance the audience so they would think critically about society.
 SA2#gcse-u03-30-q5@3: Compare Brecht's epic theatre with naturalistic theatre in their aims and methods. | Naturalistic theatre aims for illusion: a fourth wall, believable characters and emotional identification, so the audience experiences the play as real life. Brecht's epic theatre aims to make audiences think critically about social and political issues, so it breaks illusion through songs, placards, direct address and episodic structure. Naturalism invites empathy; Brecht invites judgement. Both address social issues but in opposite ways. | Naturalist aims and methods ; Brecht's aims ; Brecht's techniques ; Comparison of effect
+Q: What is expressionism in drama? | Early twentieth-century drama showing inner experience through distorted sets, symbolic characters and heightened language.
+Q: Which playwright's later work anticipated expressionism? | Strindberg, in plays such as A Dream Play (1902).
+Q: What is epic theatre? | Brecht's theatre aiming to make audiences think critically about society.
+Q: Name three alienation techniques. | Songs, placards, direct address, visible stage machinery and actors stepping out of role.
+Q: What is Mother Courage and Her Children about? | A woman who profits from war while losing her children.
+Q: Whose idea of the absurd influenced the Theatre of the Absurd? | Albert Camus's.
+Q: What happens in Waiting for Godot? | Two tramps wait for someone who never arrives; little happens and the dialogue is circular.
+Q: What does Ionesco's The Bald Soprano (1950) parody? | Empty language.
+Q: Name three features of absurdist drama. | Circular or static plots, illogical events, repetitive and broken language, and comedy mixed with despair.
+Q: How does the structure of Waiting for Godot express its theme? | The second act largely repeats the first, so the circular form expresses meaningless waiting.
 
 ## Post-war and contemporary British drama
 LV: Intermediate · Evaluation
@@ -773,4 +943,14 @@ M2#gcse-u03-31-q2@2: A play uses long silences and everyday conversation that hi
 M3#gcse-u03-31-q3@3: A historian argues that Look Back in Anger's reputation as a revolution was partly created by critics. What does this suggest? | Theatre history is shaped by how critics frame events, and other writers were also important | Look Back in Anger was never performed | Critics have no influence on theatre history | The play was written in the eighteenth century | Rebellato and others argue the "1956 revolution" narrative oversimplifies British theatre history.
 TF1#gcse-u03-31-q4@1: Caryl Churchill's Top Girls explores women's success in 1980s Britain. | true | The play examines the costs of individual success for women under Thatcherism.
 SA2#gcse-u03-31-q5@3: Evaluate how British drama since 1945 has responded to social and political change. | Osborne and kitchen sink drama gave voice to working-class anger and post-war disillusion. The end of censorship in 1968 allowed political and sexual frankness, as in Churchill's feminist critique of Thatcherism and Hare's state-of-the-nation plays. In the 1990s, in-yer-face theatre confronted violence and despair. Verbatim and diverse contemporary voices respond to current events. But theatre's audiences and access are limited, so its social impact is debated. | 1950s responses ; Post-1968 political theatre ; 1990s and contemporary ; Evaluation of impact
+Q: Where was Look Back in Anger first staged? | At the Royal Court, by the English Stage Company, in 1956.
+Q: Who were the "angry young men"? | A group of writers, including John Osborne, labelled by critics after Look Back in Anger.
+Q: What is kitchen sink drama? | Realistic post-war drama about working-class domestic life, such as A Taste of Honey (1958).
+Q: Name two Pinter plays of the comedy of menace. | The Birthday Party (1958) and The Homecoming (1965).
+Q: What distinction did Pinter make in his stage directions? | Between a "pause" and a "silence".
+Q: What does Caryl Churchill's Top Girls (1982) examine? | Women's success under Thatcherism.
+Q: What is in-yer-face theatre? | Aleks Sierz's term for the shocking, confrontational plays of the 1990s, such as Sarah Kane's Blasted.
+Q: What is verbatim theatre? | Theatre constructed from the words of real people, often from interviews.
+Q: Which subsidised theatres remain important in British drama? | The National Theatre and the Royal Court.
+Q: Why is Look Back in Anger not the single starting point of modern British drama? | Its importance was partly constructed by critics; Beckett, Delaney and others were equally significant.
 `;

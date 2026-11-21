@@ -1,0 +1,52 @@
+{
+ "id": "chem-greenhouse",
+ "renderer": "levels",
+ "course": "chemistry",
+ "unit": "u17",
+ "lesson": "Greenhouse gases",
+ "title": "How CO₂ absorbs infrared",
+ "caption": "Earth radiates infrared. CO₂ molecules absorb photons of about 15 μm, which match the energy of their bending vibration (8.0 kJ mol⁻¹ per photon mole), and re-emit it in all directions, some back down: the greenhouse effect.",
+ "alt": "Vibrational levels of CO₂'s bending mode, v = 0 and v = 1, with an upward arrow for absorption of 15 μm infrared.",
+ "description": [
+  "v = 0: ground vibrational state.",
+  "v = 1: the bend excited.",
+  "Absorption of a 15 μm photon, 8.0 kJ mol⁻¹."
+ ],
+ "kind": "custom",
+ "height": [
+  230,
+  250
+ ],
+ "levels": [
+  {
+   "id": "v0",
+   "label": "v = 0",
+   "E": 0,
+   "x0": 0.25,
+   "x1": 0.6
+  },
+  {
+   "id": "v1",
+   "label": "v = 1 (bend)",
+   "E": 8.0,
+   "x0": 0.25,
+   "x1": 0.6
+  }
+ ],
+ "transitions": [
+  {
+   "from": "v0",
+   "to": "v1",
+   "x": 0.42,
+   "label": "absorbs 15 μm infrared",
+   "colour": "a3"
+  }
+ ],
+ "claims": [
+  {
+   "type": "photon",
+   "nm": 15000,
+   "kj": 7.98
+  }
+ ]
+}

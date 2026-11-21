@@ -217,6 +217,8 @@ export function similarity(a, b) {
 function listItems(back) {
   const t = back.trim().replace(/\.$/, "");
   if (t.split(/\s+/).length > 30 || /[.;:?]/.test(t) || !t.includes(",")) return null;
+  // a quantity with its margin ("about seven items, plus or minus two") or a range is one answer, not a list
+  if (/\b(plus or minus|give or take|more or less)\b|±|\bto within\b/i.test(t)) return null;
   const items = t.split(/,\s*(?:and\s+|or\s+)?|\s+(?:and|or)\s+(?=[^,]*$)/).map((x) => x.trim()).filter(Boolean);
   if (items.length < 3 || items.length > 8 || items.some((x) => x.split(/\s+/).length > 5)) return null;
   return items;
@@ -250,8 +252,12 @@ const CONTRAST = new Set(["why", "apply", "compare", "misconception"]);   // may
 export function reviewCard(card) {
   const issues = [], f = card.front, b = card.back, fw = f.split(/\s+/).length, bw = b.split(/\s+/).length;
   const nb = norm(b);
-  if (!nb || !nb.split(" ").some((w) => w.length > 1 || /\d/.test(w))) issues.push("empty");
+  // empty only when there's nothing to recall: no letter or digit at all. Notation made of single letters and
+  // symbols ("O(n)", "f'(g(x)) g'(x)", "x = y") is a real answer, and maths and computing depend on it.
+  if (!/[\p{L}\p{N}]/u.test(b) || (!nb && !/[=+\-×÷^()'′<>≤≥∑∫√]/.test(b))) issues.push("empty");
   if (card.kind !== "cloze" && nb.length >= 2 && ` ${norm(f)} `.includes(` ${nb} `)) issues.push("leak");
+  // a one-character answer ("C") is usually notation trivia, not an idea: worth a look, not worth deleting
+  if (card.kind !== "cloze" && /^\S$/u.test(b.trim())) issues.push("trivial");
   if (card.kind === "cloze" && !f.includes("_____")) issues.push("no-blank");
   if (/^(it|this|they|these|those|he|she)\b/i.test(f.trim())) issues.push("vague");
   if (fw > 30) issues.push("long-front");
@@ -261,7 +267,7 @@ export function reviewCard(card) {
   return issues;
 }
 // issues that make a card unusable, or that a learner should look at before revising it
-const DROP = new Set(["empty", "no-blank"]), CHECK = new Set(["leak", "vague"]);
+const DROP = new Set(["empty", "no-blank"]), CHECK = new Set(["leak", "vague", "trivial"]);
 
 /** One fact per card, near-duplicates removed (the better-checked copy kept), and each card reviewed.
  * @param {Card[]} cards @param {string} notes @returns {Card[]} */

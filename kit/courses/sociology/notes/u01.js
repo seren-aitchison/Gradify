@@ -39,6 +39,16 @@ M2#sociology-u01-01-q2@2: Drop-out rates are higher among students who work over
 TF2#sociology-u01-01-q3@2: A sociological explanation of a pattern denies that individuals make choices. | false | It explains how choices are shaped and constrained by social conditions; it doesn't deny that people choose.
 M3#sociology-u01-01-q4@3: Which is the strongest reply to the claim that sociology is "just common sense"? | Common sense is contradictory and untested, while sociology checks claims against systematic evidence | Sociology uses longer and more technical words than common sense | Sociologists have degrees, so their views must be correct | Common sense is always wrong about how society works | The difference is method: sociology tests claims and reveals patterns invisible from individual experience.
 SA3#sociology-u01-01-q5@2,3: Using an example, explain how a sociological explanation differs from a personal one. | Example: falling fertility. A personal explanation stresses individual preferences; a sociological one notes the UK rate fell from 2.93 (1964) to 1.55 (2024), a shared change pointing to social causes such as contraception, women's education and work, housing costs and norms. Choices are real but made within social conditions. | Example ; Personal explanation ; Social pattern with evidence ; Social causes ; Choice within conditions
+Q: How does the British Sociological Association describe sociology? | As the study of how society is organised and how we experience life.
+Q: How does the American Sociological Association describe sociology? | As the study of social life, social change and the social causes and consequences of human behaviour.
+Q: What does sociology look for, rather than one-off events? | Patterns, asking how they are shaped by social forces.
+Q: Name four social causes suggested for the fall in UK fertility. | Contraception, women's education and employment, housing costs and changing norms.
+Q: What personal explanation is often given for students dropping out of university? | Lack of motivation or ability.
+Q: Which social factors does a sociological explanation of university drop-out point to? | Financial pressures, unfamiliarity with academic culture (cultural capital) and institutional support.
+Q: What does a sociological explanation show about individual choice? | That choices are made within social conditions, which make some choices easier or more likely than others.
+Q: Why is common sense an unreliable guide to social life? | It says contradictory things, and some "obvious" beliefs fail when tested against evidence.
+Q: Define a social pattern. | A regularity in behaviour across many people, such as a rise or fall in a rate over time.
+Q: What remains contested about the causes of falling fertility? | How much weight to give each cause: economic, cultural or technological.
 
 ## Sociology as a discipline
 LV: Introductory · Foundation
@@ -80,6 +90,16 @@ M2#sociology-u01-02-q2@2: A researcher studies how care leavers, ex-prisoners an
 MATCH1#sociology-u01-02-q3@2: Match each discipline to its usual focus. | Sociology = Social structures and institutions ; Psychology = Individual mind and behaviour ; Economics = Markets, production and exchange ; Anthropology = Cultures through long fieldwork | The disciplines overlap but have different centres of gravity.
 M3#sociology-u01-02-q4@3: Which is the strongest argument that sociology's several competing theories are a strength? | Each theory reveals aspects of social life that others miss | It means any explanation is as good as any other | It prevents sociologists from testing theories | It shows sociology has no shared concepts | Different theories highlight consensus or conflict, structure or meaning; combining them can give a fuller picture, while evidence still decides between specific claims.
 SA3#sociology-u01-02-q5@3: Evaluate the view that sociology's lack of a single theory is a weakness. | Weakness: less agreement and cumulative progress, competing explanations of the same facts. Strength: different theories notice different aspects (structure and meaning, consensus and conflict); synthesis (e.g. Giddens) combines them; evidence still adjudicates specific claims. | Weakness argument ; Strength argument ; Example of theories noticing different things ; Synthesis ; Judgement
+Q: Give three examples of shared concepts in sociology. | Social structure, institution and socialisation (class and identity are others).
+Q: Name four theoretical traditions within sociology. | Functionalism, Marxism, interactionism and feminism.
+Q: Name four research methods sociologists use. | Any four of surveys, interviews, ethnography, documents and statistics.
+Q: When was the British Sociological Association founded? | In 1951.
+Q: How does economic sociology differ from economics? | Economics studies production, markets and exchange, often with formal models; economic sociology studies how markets are embedded in social relations.
+Q: How does anthropology traditionally differ from sociology? | Anthropology studies cultures, often small-scale, through long fieldwork; sociology has focused on modern societies, though the boundary has blurred.
+Q: How would sociology explain homelessness? | Through how class, family breakdown, institutions (care, prisons, the army) and housing policy produce it, and how homeless people are labelled.
+Q: What did Anthony Giddens argue about sociology's competing theories? | That good sociology often combines them.
+Q: Define theoretical pluralism. | The coexistence of several competing theories within one discipline.
+Q: What is wrong with treating sociology as only about "society" in the abstract? | Much sociology studies concrete things: a school, a hospital ward, a workplace, a neighbourhood.
 
 ## The sociological imagination
 LV: Introductory · Foundation
@@ -118,6 +138,16 @@ M2#sociology-u01-03-q2@2: Thousands of graduates in a region can't find jobs aft
 TF1#sociology-u01-03-q3@1: For Mills, a problem only counts as a public issue if it is in the news. | false | A public issue is rooted in social organisation, whether or not it is publicised.
 M3#sociology-u01-03-q4@3: Which is the most accurate criticism of the sociological imagination? | It is a perspective rather than a testable theory, so it needs evidence to apply | It ignores the influence of social structure on people completely | It was developed only to explain crime and deviance | It treats every social problem as the fault of individuals | Mills offers a way of thinking; whether a trouble is really an issue must be shown with evidence.
 SA3#sociology-u01-03-q5@2,3: Apply the sociological imagination to a problem of your choice. | Example: student debt. Personal trouble: one student's anxiety about repayments. Public issue: the shift of university funding onto students through fees and loans, affecting millions, with effects varying by class. Connecting them suggests policy as well as personal responses. A full analysis would need evidence on the scale and distribution of the problem. | Problem ; Personal trouble ; Public issue with structural causes ; Link between biography and history ; Implication
+Q: What did Mills mean by biography and history? | Biography is an individual life; history is the wider society and its changes.
+Q: What problem did Mills think people face with their private problems? | They feel trapped by them without seeing how they connect to history and social structure.
+Q: State Mills's own unemployment example. | One unemployed person in a city of 100,000 is a personal trouble; millions unemployed is a public issue, explained by the economy.
+Q: How can loneliness among older people be seen as a public issue? | Through rising numbers living alone, families living further apart, closures of local services and transport, and changing retirement patterns.
+Q: What responses follow from seeing older people's loneliness as a public issue? | Public responses such as community services, planning and transport, as well as personal support.
+Q: What common mistake is made with the term "public issue"? | Using it to mean a problem in the news; Mills meant a problem rooted in how society is organised.
+Q: Why is the sociological imagination so widely taught? | It makes structural thinking concrete and encourages empathy and critical citizenship.
+Q: What do critics say careless use of the sociological imagination can underplay? | Individual agency.
+Q: Define the sociological imagination. | The ability to see the connection between individual lives and wider social forces and history (Mills).
+Q: Which balance is contested when applying the sociological imagination to problems such as unemployment? | How to balance structural explanations with individual responsibility.
 
 ## Micro and macro sociology
 LV: Introductory · Foundation
@@ -154,6 +184,16 @@ M2#sociology-u01-04-q2@2: A researcher observes how nurses and patients negotiat
 SEQ1#sociology-u01-04-q3@2: Order these studies of education from smallest to largest scale. | A teacher's interaction with one pupil ; A school's setting policy ; A local authority's admissions system ; A national education system | Micro, meso, then increasingly macro levels.
 M3#sociology-u01-04-q4@3: Which best explains why sociologists try to link micro and macro levels? | Structures exist through everyday actions, and actions are shaped by structures | Macro studies are always more accurate than micro studies | Micro studies are needed only when statistics are unavailable | The two levels have nothing to do with each other | The levels are mutually dependent, so explanations often need both, as structuration theory argues.
 SA3#sociology-u01-04-q5@2,3: Using one topic, explain how micro and macro approaches would study it differently, and why combining them helps. | Example: crime. Micro: how police and young people interact and how labels are applied. Macro: how class, inequality and law shape crime rates across society. Combining them shows how everyday labelling produces patterns in official statistics, which in turn shape policing. | Topic ; Micro approach and method ; Macro approach and method ; Link between levels ; Value of combining
+Q: What does macro sociology study? | Large-scale structures and processes such as class systems, the economy, the state and globalisation.
+Q: Which theorists are associated with interactionist micro sociology? | Mead, Blumer and Goffman.
+Q: Which methods are typical of micro sociology? | Observation and interviews.
+Q: Which methods are typical of macro sociology? | Surveys, official statistics and comparative history.
+Q: Define the meso level. | The intermediate level of organisations, communities and networks.
+Q: How would a meso-level study look at education? | By examining how a school's setting and streaming policies sort pupils.
+Q: Why are micro and macro levels connected? | Large structures exist only through everyday actions, but those actions are shaped by structures.
+Q: How can classroom labelling link micro and macro levels? | Labelling in classrooms can add up to class differences in attainment, which in turn shape teachers' expectations.
+Q: What mistake is made in ranking micro against macro sociology? | Assuming micro means unimportant or macro means more scientific; each answers different questions with appropriate methods.
+Q: Which theories are associated with macro sociology? | Structural theories such as functionalism and Marxism.
 
 ## The individual and society
 LV: Introductory · Foundation
@@ -190,6 +230,16 @@ M2#sociology-u01-05-q2@2: Prices in a shop are set before you arrive and you can
 TF2#sociology-u01-05-q3@2: Interactionists argue that institutions persist because people keep acting as though they are real. | true | Society is sustained through ongoing interaction and shared interpretation.
 M3#sociology-u01-05-q4@3: Which is the most balanced sociological view of individuals and society? | Each shapes the other: society constrains individuals, and individuals sustain and change society | Society is nothing more than the sum of individual choices | Individuals are entirely determined by the society around them | Society and individuals exist separately with no real connection | Most sociologists take a two-way view, as in Berger and Luckmann's account or Giddens's structuration.
 SA3#sociology-u01-05-q5@3: Evaluate the claim that "there is no such thing as society". | Against: Durkheim's social facts (law, language, money) exist outside and constrain individuals; patterns such as class differences can't be explained by individual choice. For: society consists only of people and their actions (interactionism), and the remark stressed responsibility. Conclusion: society is real in its effects though made by people. | Social facts ; Patterns not explained by individual choice ; Interactionist point ; Political context ; Judgement
+Q: Give four examples of Durkheim's social facts. | Laws, language, moral rules and money.
+Q: How did Durkheim say social facts must be explained? | By other social facts, not by individual psychology.
+Q: How do interactionists such as Blumer see society? | As existing only through people's ongoing interactions and shared interpretations.
+Q: Why does a banknote buy things, although it is only paper? | Because everyone treats it as valuable.
+Q: What does hyperinflation show about money? | That its value depends on shared belief: when trust collapses, its value disappears.
+Q: What did Margaret Thatcher say in a 1987 magazine interview? | "There is no such thing as society", emphasising individuals and families.
+Q: How do supporters interpret Thatcher's remark about society? | As a call for personal and family responsibility rather than a denial of social life.
+Q: How do sociologists reply to the claim that there is no such thing as society? | Shared institutions, norms and inequalities shape lives in ways no individual chooses.
+Q: What mistake do sociologists avoid when using the word "society"? | Treating it as a thing with a mind of its own; they mean patterned relationships and institutions.
+Q: What does the Thatcher exchange show about views of the individual and society? | That how we see the individual–society relationship has political consequences.
 
 ## Structure and agency
 LV: Intermediate · Application
@@ -229,6 +279,16 @@ M2#sociology-u01-06-q2@2: A working-class student with high grades decides unive
 TF2#sociology-u01-06-q3@3: Saying that social background predicts university entry means individuals have no choice at all. | false | Patterns are probabilistic: structure shapes choices without fully determining them.
 M3#sociology-u01-06-q4@3: What is the main difference between Giddens's and Archer's approaches? | Giddens fuses structure and agency; Archer keeps them separate to study their interplay over time | Giddens ignores agency entirely while Archer ignores structure entirely | Archer denies that social structures exist in any meaningful sense | They agree on every point and differ only in their terminology | Archer criticised structuration for "central conflation" and proposed analytical dualism.
 SA3#sociology-u01-06-q5@2,3: Evaluate the view that individual choices explain educational success. | Agency: individuals choose and some defy the odds. Structure: class background, school resources and cultural capital predict outcomes. Habitus shows choices are shaped by position; structuration shows choices reproduce patterns. Both matter; the question is how they interact. | Agency argument ; Structural evidence ; Habitus ; Structuration or Archer ; Judgement
+Q: Define social structure. | Relatively stable patterns of relationships and institutions that shape people's opportunities and constraints.
+Q: Which approaches stress how structures shape behaviour? | Structural approaches such as functionalism and Marxism.
+Q: Which approaches stress meaning, choice and interaction? | Action or interpretive approaches, such as Weber's and symbolic interactionism.
+Q: Define habitus. | Bourdieu's term for dispositions acquired from social position, which make some choices feel natural.
+Q: How does Archer's realism treat structure and agency? | It keeps them analytically separate to study how each affects the other over time.
+Q: Through what are structures reproduced, according to Giddens? | Through everyday routine.
+Q: What does structuration theory say each university enrolment decision does? | It reproduces, or slightly changes, the pattern of participation.
+Q: What can longitudinal studies show in the structure–agency debate? | How far origins predict destinations.
+Q: What can qualitative studies show in the structure–agency debate? | How people interpret and resist their circumstances.
+Q: Why do both extremes of the structure–agency debate fail? | Neither "structure determines everything" nor "people can choose anything" explains why patterns are strong but not absolute.
 
 ## Social institutions
 LV: Introductory · Foundation
@@ -268,6 +328,16 @@ M2#sociology-u01-07-q2@2: A researcher argues that private schools help wealthy 
 MS2#sociology-u01-07-q3@1: Which are usually classed as major social institutions? Choose all that apply. | The family ; Religion ; The economy | A particular supermarket ; One person's friendship group | Institutions are broad patterns of social life; a specific shop or friendship group is not.
 M3#sociology-u01-07-q4@3: Why do sociologists disagree about the role of institutions? | Different theories ask whom institutions benefit and how they are sustained | Institutions are too small and local to be studied scientifically | There is no research evidence available about any institution | All theories agree that every institution is harmful | Functionalist, conflict, feminist and interactionist theories interpret the same institution through different questions.
 SA3#sociology-u01-07-q5@2,3: Explain how two theories interpret one social institution differently. | Example: education. Functionalists see it as transmitting shared values and sorting people by merit into roles (Durkheim, Parsons). Marxists see it as reproducing class inequality and producing compliant workers. The same evidence (e.g. class gaps in attainment) is read differently: as failure to achieve meritocracy or as the system working for the powerful. | Names institution ; Functionalist view ; Conflict or feminist view ; Comparison ; Use of evidence
+Q: Which central activity does the family organise? | Reproduction and care.
+Q: Which activities do politics and law organise? | Power and order.
+Q: Which activities does religion organise? | Belief and ritual.
+Q: How do functionalists see institutions? | As meeting society's needs and maintaining stability.
+Q: What do feminists examine about institutions? | How institutions such as the family and work are organised around gender inequality.
+Q: How do interactionists study institutions? | By studying how they are sustained in everyday interaction.
+Q: What is the Marxist feminist view of the family? | It reproduces labour power through women's unpaid work.
+Q: How has marriage changed as an institution? | From an economic arrangement towards a partnership based on love and choice.
+Q: From when could same-sex couples marry in England and Wales? | From 2014, under the Marriage (Same Sex Couples) Act 2013.
+Q: How has education changed as an institution? | It expanded from an elite system to mass schooling and university.
 
 ## Social relationships
 LV: Introductory · Foundation
@@ -308,6 +378,16 @@ M2#sociology-u01-08-q2@2: Someone's closest friends are spread across four count
 MATCH1#sociology-u01-08-q3@1: Match each relationship to its type. | Parent and child = Primary ; Customer and call-centre worker = Secondary ; Village neighbours over generations = Gemeinschaft ; Contract between a firm and a supplier = Gesellschaft | Relationships differ in closeness, duration and basis (affection, tradition or contract).
 M3#sociology-u01-08-q4@3: Which is the strongest criticism of the idea that modern life has destroyed community? | Ties have changed form into networks and online communities rather than disappearing | Modern people no longer have any close relationships at all | Close-knit community never existed in any society in history | Online relationships are always stronger than face-to-face ones | Critics argue community has been transformed rather than lost, and warn against romanticising the past.
 SA3#sociology-u01-08-q5@3: Evaluate the claim that social relationships are becoming weaker. | For: Putnam's evidence of declining civic participation and social capital; more people living alone. Against: networked individualism (Wellman); online communities; ties have changed form; traditional communities were also restrictive. Judgement depends on which ties and how they are measured. | Putnam's evidence ; Living alone or other trend ; Networks or online ties ; Romanticisation critique ; Judgement
+Q: Define a primary relationship. | A personal, emotionally close and lasting relationship, such as with family or close friends.
+Q: Who named primary groups, and when? | Cooley, in 1909.
+Q: Name three further ways relationships differ. | Power (equal or hierarchical), formality and reciprocity.
+Q: What type of setting is Gemeinschaft typical of? | Villages, with close-knit ties based on kinship, place and shared tradition.
+Q: What did Tönnies worry modernisation was doing? | Replacing community with association.
+Q: What did Putnam argue in 2000? | That participation in clubs and civic groups declined in the late 20th-century United States, reducing social capital.
+Q: What did Wellman mean by networked individualism? | People maintaining personal networks across places, increasingly through digital media.
+Q: Why should traditional community not be romanticised? | Close-knit communities could also be controlling and exclusionary, especially for women and minorities.
+Q: How can work-team relationships change over time? | They start as secondary relationships but may become friendships.
+Q: What is distinctive about an online community of fellow fans? | It is chosen and sometimes intimate, but without shared place.
 
 ## Norms and values
 LV: Introductory · Foundation
@@ -349,6 +429,16 @@ M2#sociology-u01-09-q2@2: A student is given a detention for using a phone in cl
 MATCH2#sociology-u01-09-q3@1,2: Match each example to its type of sanction. | A medal for bravery = Formal positive ; A friend's eye-roll = Informal negative ; A speeding fine = Formal negative ; A colleague's thanks = Informal positive | Sanctions differ in who applies them (formal or informal) and whether they reward or punish.
 M3#sociology-u01-09-q4@3: Which is the main conflict-theory criticism of the functionalist view of values? | Dominant values may reflect the interests of powerful groups rather than true consensus | Shared values no longer exist at all in modern societies | Values are fixed and never change from one generation to the next | Norms only count when they are written down as formal laws | Conflict theorists argue apparent consensus can be ideology serving those in power.
 SA3#sociology-u01-09-q5@2,3: Explain, with examples, how norms are enforced and how they change. | Norms are enforced through sanctions: formal (fines, detentions) and informal (disapproval, praise), positive and negative. They change as values shift and as deviance becomes accepted; British Social Attitudes data show much more liberal attitudes to same-sex relationships since the 1980s. Different groups may contest which norms should hold. | Formal and informal sanctions ; Positive and negative ; Example of change ; Evidence of change ; Contested norms
+Q: Give three examples of values. | Fairness, individual achievement and respect for elders.
+Q: Which value does queuing express? | Fairness.
+Q: What are folkways? | Everyday customs whose breach brings mild disapproval (Sumner).
+Q: What happens to some mores over time? | They are formalised as laws.
+Q: What are positive sanctions? | Rewards for conformity, such as praise, promotion or awards.
+Q: Who applies formal sanctions? | Official bodies such as courts and schools.
+Q: Give two ways norms vary between cultures. | Any two of greetings, personal space and eye contact.
+Q: Which survey tracked more liberal UK attitudes to same-sex relationships? | The British Social Attitudes survey.
+Q: How does a change in norms often begin? | With deviance that later becomes accepted.
+Q: When do we often notice unwritten norms? | Only when they are broken.
 
 ## Culture
 LV: Introductory · Foundation
@@ -387,6 +477,16 @@ M2#sociology-u01-10-q2@2: A researcher studying a festival in another country de
 TF1#sociology-u01-10-q3@1: Culture is inherited biologically, like eye colour. | false | Culture is learned and transmitted through socialisation.
 M3#sociology-u01-10-q4@3: What is the main problem with strong (moral) cultural relativism? | It implies practices that violate human rights could never be criticised | It encourages researchers to understand other cultures | It makes research less ethnocentric | It treats culture as learned | Methodological relativism aids understanding; strong moral relativism would rule out any criticism, even of serious harms.
 SA3#sociology-u01-10-q5@3: Evaluate cultural relativism as a principle for sociologists. | Strengths: reduces ethnocentrism and misunderstanding, essential for valid research. Limits: strong relativism conflicts with universal human rights; cultures are internally diverse and contested, so "the culture's view" may be the powerful group's view. Distinction between methodological and moral relativism resolves much of the tension. | Value for understanding ; Example ; Conflict with rights ; Internal diversity ; Methodological versus moral relativism
+Q: Define culture. | The learned, shared way of life of a group, including values, norms, language and material objects.
+Q: Give two examples of material culture. | Any two of objects, technology, buildings, clothing and food.
+Q: What is a subculture? | A group whose norms and values differ in some ways from the mainstream, such as a youth music scene.
+Q: What is a counterculture? | A group that opposes dominant values.
+Q: Define cultural relativism. | Understanding practices in terms of the culture and context in which they occur.
+Q: How would a relativist approach eating insects? | By asking what role it plays: nutrition, availability, taste and tradition.
+Q: Why is cultural relativism an essential research stance? | It guards against misunderstanding and prejudice.
+Q: What is the difference between methodological and moral relativism? | Methodological relativism means understand before judging; moral relativism means never judge.
+Q: What is wrong with equating culture with high culture? | Sociologically, everyday life, from football to fast food, is culture, not only opera and art.
+Q: Give an example where strong relativism conflicts with universal human rights. | Forced marriage.
 ## Primary socialisation
 LV: Introductory · Foundation
 S: Primary socialisation is the first and most intensive stage of learning the culture of a society, usually within the family. This lesson explains what is learned, how it is learned and what cases of extreme isolation suggest about the importance of socialisation.
@@ -426,6 +526,16 @@ M2#sociology-u01-11-q2@2: A parent praises their son for not crying when he fall
 TF2#sociology-u01-11-q3@3: Cases of extreme isolation, such as Genie, prove that missing socialisation alone causes lasting difficulties. | false | Such children also suffered abuse and malnutrition, so the cases can't isolate the effect of missing socialisation.
 M3#sociology-u01-11-q4@3: What is the main limitation of using cases of extreme neglect as evidence about socialisation? | Neglect, abuse and malnutrition are confounded with lack of socialisation | The cases are too numerous to analyse in detail | The children were studied with large random samples | The cases show that socialisation has no effect | The cases are rare and involve many harms at once, so causes can't be separated.
 SA3#sociology-u01-11-q5@2,3: Explain how primary socialisation transmits gender roles, and evaluate how fixed its effects are. | Through canalisation and manipulation (Oakley), imitation of role models and play (Mead), children learn gendered expectations that feel natural. But secondary socialisation, cultural change and agency mean gender roles can change across the life course; cross-cultural and historical variation shows they aren't fixed. | Canalisation ; Manipulation or sanctions ; Imitation or play ; Change through secondary socialisation ; Variation across cultures or time
+Q: Define socialisation. | The lifelong process by which people learn the culture of their society and become members of it.
+Q: Name four processes through which primary socialisation happens. | Imitation and role models, reward and punishment, play, and canalisation and manipulation.
+Q: How did Mead describe the stages of children's play? | Children first imitate, then play at being others, learning to take the role of the other, and later understand games involving many roles.
+Q: What did Oakley mean by manipulation? | Encouraging gender-typed behaviour through approval, such as praising boys for bravery and girls for caring.
+Q: Give an example of canalisation. | A parent buying a construction set for a son and a doll for a daughter.
+Q: Who was "Genie"? | A girl in the US discovered in 1970 aged 13 after extreme isolation, who showed lasting difficulties in language and social development.
+Q: What did follow-up studies of Romanian adoptees find? | Many children recovered substantially after adoption, especially if adopted young.
+Q: Why doesn't primary socialisation fix a person for life? | Secondary socialisation, life events and agency mean people continue to change.
+Q: What is contested about early socialisation? | How far it determines adult behaviour, compared with later experience and individual agency.
+Q: How do reward and punishment work in primary socialisation? | Through approval and disapproval, acting as positive and negative sanctions.
 
 ## Secondary socialisation
 LV: Introductory · Foundation
@@ -465,6 +575,16 @@ M2#sociology-u01-12-q2@2: A sixth-former reads about university life and practis
 MATCH1#sociology-u01-12-q3@1: Match each example to its agent of socialisation. | Being teased for unfashionable trainers = Peer group ; Learning professional dress codes in a first job = Workplace ; Seeing influencers model a lifestyle = Media ; Being taught to stand when a teacher enters = Education | Each agent transmits norms through different relationships and sanctions.
 M3#sociology-u01-12-q4@3: Which statement best describes the interactionist view of secondary socialisation? | People interpret and negotiate the messages of different agents rather than simply absorbing them | Socialisation is fully complete by the time children are about five | The media determine people's values directly and completely | Schools teach only the formal curriculum and nothing else | Interactionists stress agency and interpretation: people choose between and reshape the messages they receive.
 SA3#sociology-u01-12-q5@2,3: Explain how two agents of secondary socialisation may conflict, and what this shows. | Example: peers versus school. Peers may reward rule-breaking or anti-school attitudes that schools punish (as in studies of anti-school subcultures). Young people navigate both, showing that socialisation involves choice and negotiation rather than one-way transmission, and that outcomes depend on which agent's sanctions matter most to the person. | Names two agents ; Example of conflicting norms ; How individuals navigate ; Agency or interpretation ; Conclusion
+Q: Define secondary socialisation. | Socialisation that continues beyond the family, through school, peers, media, religion and work.
+Q: When are peer groups especially influential? | In adolescence, when they sanction dress, language and behaviour.
+Q: What do the media provide as an agent of socialisation? | Role models, information and representations of social groups.
+Q: What does religion do as an agent of socialisation? | It transmits moral values and shapes identity for many people.
+Q: How does a new nurse learn the role on the ward? | Formal rules from training and informal norms from colleagues, such as how to talk to senior doctors.
+Q: Name four adult life changes that involve learning new norms and roles. | Becoming a parent, changing career, migrating and retiring.
+Q: Give an example of agents of socialisation conflicting. | Peer groups may value behaviour that schools punish, or media may present values that parents reject.
+Q: What is resocialisation? | The deliberate replacement of earlier norms, as in military training or prisons.
+Q: What did Goffman call settings such as prisons? | Total institutions (1961).
+Q: What is contested about the media as an agent of socialisation? | How much they shape attitudes and behaviour, rather than reflecting existing ones.
 
 ## Roles and status
 LV: Introductory · Foundation
@@ -506,6 +626,16 @@ M2#sociology-u01-13-q2@2: A police officer is called to an incident involving th
 TF1#sociology-u01-13-q3@1: Merton's term "role set" refers to the range of relationships attached to a single status. | true | One status, such as teacher, involves relationships with pupils, parents and colleagues.
 M3#sociology-u01-13-q4@3: Which is the strongest evidence that ascription still matters in modern societies? | Class of origin, sex and ethnicity still predict who reaches high-status positions | Most people hold more than one status at the same time | Roles involve shared expectations about behaviour | Some statuses are achieved through qualifications | If status were purely achieved, background characteristics wouldn't predict outcomes so strongly.
 SA3#sociology-u01-13-q5@2,3: Using examples, explain the difference between role strain and role conflict. | Role strain: tension within one role, e.g. a manager expected to be both supportive and to enforce targets. Role conflict: tension between roles, e.g. a parent whose job requires night shifts. Both show that statuses come with competing expectations that people must negotiate. | Defines role strain ; Example ; Defines role conflict ; Example ; Negotiation or significance
+Q: Define status. | A social position within a group or society.
+Q: Give two examples of ascribed status. | Any two of sex, ethnicity, royalty and age.
+Q: What is a master status? | A status that dominates how others see someone, such as a famous athlete or a person with a criminal record.
+Q: Define a role. | The behaviour expected of someone occupying a particular status.
+Q: How did Linton summarise the link between status and role? | We occupy a status but play a role.
+Q: What is role strain? | Tension between demands within one role, such as a teacher asked to be both supportive and strict.
+Q: Name the relationships in a teacher's role set. | Pupils, parents, colleagues and inspectors.
+Q: What do modern societies claim about how status is allocated? | That they reward achieved status: the idea of meritocracy.
+Q: How do interactionists see roles? | Not as fixed scripts: people interpret, negotiate and improvise them.
+Q: Through which topics do sociologists study how ascription still shapes achievement? | Social mobility and inequality.
 
 ## Identity
 LV: Introductory · Foundation
@@ -543,6 +673,16 @@ M2#sociology-u01-14-q2@2: A pupil repeatedly told they are "a troublemaker" star
 TF2#sociology-u01-14-q3@3: Late modern theorists argue that identities today are more fluid and chosen than in traditional societies. | true | Giddens and Bauman argue identity is increasingly a reflexive project, though critics stress continuing constraints.
 M3#sociology-u01-14-q4@3: Which is the strongest criticism of the claim that identities are freely chosen? | Structures and other people's judgements limit which identities are available and recognised | People in modern societies no longer have any real identity at all | Identity is fixed entirely at birth by a person's biology | Choosing any part of one's identity is impossible in principle | Critics argue class, ethnicity, gender and others' recognition constrain identity, even if there is more choice than in the past.
 SA3#sociology-u01-14-q5@3: Evaluate the view that people today can choose their identities. | For: late modern theory (Giddens, Bauman); consumption and lifestyle; online identities; hybrid identities. Against: class, ethnicity, gender and disability constrain choices; identities are imposed by others (racism, stigma); resources needed for lifestyle identities are unequal. Conclusion: more choice than before, within constraints. | Late modern argument ; Example of chosen identity ; Structural constraints ; Imposed identities ; Judgement
+Q: Define identity. | A person's sense of who they are and how they are seen by others.
+Q: Give four sources of social identity. | Any four of nationality, ethnicity, class, gender, religion, occupation and fan communities.
+Q: State the three steps of Cooley's looking-glass self. | We imagine how we appear to others, imagine their judgement of us, and develop feelings about ourselves as a result.
+Q: How did Mead distinguish the "I" from the "me"? | The "I" is the spontaneous self; the "me" is the self as we think others see us.
+Q: Give an example of the looking-glass self shaping a choice. | A student praised by a teacher for an essay sees themselves as "good at writing", which shapes their subject choices.
+Q: On what were identities based in traditional societies? | Kinship, place and religion, giving fairly fixed identities.
+Q: Which theorists argue that identities are now more fluid? | Giddens (1991) and Bauman (2000).
+Q: Through what do late modern theorists say identities are constructed? | Consumption and lifestyle.
+Q: How can identities be imposed regardless of choice? | Others may impose them, for example through racism.
+Q: What is established about how identity is formed? | It is formed through social interaction, not in isolation.
 
 ## Groups and communities
 LV: Introductory · Foundation
@@ -584,6 +724,16 @@ SEQ2#sociology-u01-15-q3@2: Order these from most to least intimate. | A family 
 M3#sociology-u01-15-q4@3: Which statement best evaluates online communities? | They can offer belonging and support across distance, though ties may be weaker and access unequal | They can never provide any genuine support or belonging | They are identical to face-to-face communities in every respect | They only exist among teenagers | Evidence is mixed: online ties can be meaningful, but differ from local communities and depend on access.
 SA3#sociology-u01-15-q5@2,3: Explain how in-groups and out-groups can both build solidarity and cause conflict. | In-group loyalty strengthens belonging, cooperation and identity (team spirit, community solidarity). But favouring the in-group can lead to stereotyping and discrimination against out-groups, as in rivalry between fans or between ethnic or national groups. Which effect dominates depends on competition, norms and contact between groups. | In-group solidarity ; Example ; Out-group prejudice ; Example ; Conditions
 M2#sociology-u01-15-q6@1: In a social network, what is a broker? | Someone who connects otherwise separate groups | The person with the most connections | Someone with no connections | The leader of a group | Brokers sit on bridges between groups and control the flow between them.
+Q: Define a social group. | Two or more people who interact, share a sense of belonging and have shared expectations.
+Q: What is a social category? | People who share a characteristic, such as all left-handed people, but don't interact or identify with each other.
+Q: What are secondary groups? | Larger, impersonal, goal-oriented groups, such as a workplace or a political party.
+Q: Define an in-group. | A group a person belongs to and feels loyalty towards.
+Q: Who described in-groups and out-groups, and when? | Sumner, in 1906.
+Q: What did Simmel show about moving from a dyad to a triad? | A third person can mediate, take sides or form a coalition.
+Q: What do larger groups need as they grow? | More formal structure, leaders and rules.
+Q: Name three meanings of community. | People sharing a place, people sharing an identity or interest, and a sense of belonging and mutual support.
+Q: What is debated about online communities? | Whether they provide the same support and solidarity as face-to-face communities.
+Q: Why isn't any collection of people a group? | Sharing a characteristic or place isn't enough without interaction and belonging.
 
 ## Social interaction
 LV: Introductory · Foundation
@@ -622,6 +772,16 @@ M2#sociology-u01-16-q2@2: Shop staff are friendly to customers but joke about th
 TF1#sociology-u01-16-q3@2: According to the Thomas theorem, a false belief can't have real effects. | false | The theorem says definitions of situations have real consequences, even if the belief is false.
 M3#sociology-u01-16-q4@3: Which is the main criticism of symbolic interactionism? | It tends to neglect how power and social structure shape interaction | It ignores the meanings people give to their actions | It uses too many large-scale statistics | It claims all behaviour is biologically determined | Interactionism explains micro-level meaning well, but critics argue it underplays structural inequality and power.
 SA3#sociology-u01-16-q5@2,3: Apply Goffman's dramaturgy to a situation and evaluate the approach. | Example: a doctor's appointment. Front stage: the doctor's professional manner and white coat; impression management by both doctor and patient; back stage: staff discussions. Strengths: reveals how everyday order is produced. Limitations: neglects structural power (e.g. why doctors' definitions dominate), harder to generalise. | Situation ; Front stage ; Impression management ; Back stage ; Strength ; Limitation
+Q: State the three claims of symbolic interactionism. | People act on the meanings things have for them; meanings arise from interaction; people interpret and modify them.
+Q: Who named symbolic interactionism, and when? | Herbert Blumer, in 1937.
+Q: Give an example of the Thomas theorem. | A rumour that a bank is failing can cause a run that makes it fail.
+Q: Define impression management. | Controlling how others see us during interaction (Goffman).
+Q: What is front stage in Goffman's dramaturgy? | Where performances are given to an audience, such as a waiter in the restaurant.
+Q: What follows when social performances break down? | Embarrassment.
+Q: What role do teams play in Goffman's dramaturgy? | They cooperate to sustain performances.
+Q: Give two strengths of interactionism. | It shows how social order is actively produced in everyday life, and it underpins labelling theory and qualitative research.
+Q: Which large-scale pattern does interactionism struggle to explain? | Class inequality.
+Q: Why doesn't dramaturgy mean everyone is being fake? | Goffman argued all social life involves performance; there is no "unperformed" self in interaction.
 
 ## Sociological research: an introduction
 LV: Introductory · Foundation
@@ -664,6 +824,16 @@ M2#sociology-u01-17-q2@2: A researcher wants to know how many UK adults use food
 MS2#sociology-u01-17-q3@3: Which factors influence a sociologist's choice of method? Choose all that apply. | Theoretical perspective ; Time and cost ; Ethical issues ; Access to participants | The researcher's favourite colour ; The weather on the first day | Theory, practicality and ethics all shape method choice.
 M3#sociology-u01-17-q4@3: Which is the strongest reason to use mixed methods? | Quantitative and qualitative data can offset each other's weaknesses | It guarantees that the findings are free from bias | It means no ethical approval is needed | It always costs less than using one method | Combining methods gives breadth and depth (triangulation), though it doesn't eliminate bias or cost.
 SA3#sociology-u01-17-q5@2,3: Evaluate the use of quantitative methods in sociology. | Strengths: large, representative samples; reliable, standardised data; patterns and comparisons; generalisable (positivist view). Weaknesses: may miss meaning and context (interpretivist critique); closed questions impose the researcher's categories; official statistics can be social constructions. Often best combined with qualitative methods. | Representativeness and reliability ; Patterns and generalisation ; Interpretivist critique ; Imposed categories or constructed statistics ; Mixed methods
+Q: What do positivists seek? | Objective, measurable social facts and cause-and-effect patterns, modelling sociology on the natural sciences.
+Q: Which kinds of data do interpretivists use? | Qualitative data from unstructured interviews, participant observation and documents.
+Q: What are surveys and questionnaires good for? | Finding patterns and reliability, using standardised questions with large samples.
+Q: What are interviews good for? | Depth and meaning.
+Q: Name the two ways observation can vary. | Participant or non-participant, and overt or covert.
+Q: Why are experiments rare in sociology? | Because of ethics and artificiality, though field experiments are used.
+Q: Name three practical issues affecting the choice of method. | Time, cost and access.
+Q: Name four principles in the BSA Statement of Ethical Practice. | Informed consent, avoiding harm, protecting anonymity and confidentiality, and particular care with vulnerable groups.
+Q: When is covert research allowed under BSA guidance? | Only where it can be strongly justified.
+Q: Define qualitative data. | Non-numerical data, such as words and observations, that convey meaning.
 
 ## Contemporary sociology
 LV: Introductory · Application
@@ -705,6 +875,16 @@ M2#sociology-u01-18-q2@2: A researcher uses millions of social media posts to st
 TF2#sociology-u01-18-q3@2: Contemporary sociology has abandoned the questions of Marx, Durkheim and Weber. | false | Their questions about inequality, solidarity and rationalisation are still central, applied to new contexts.
 M3#sociology-u01-18-q4@3: Why have sociologists criticised the classical canon? | It centred European men's experience and treated Western modernity as universal | It contained too many women and non-Western theorists | It relied only on large statistical surveys | It was written after the year 2000 | Critics argue the canon overlooked other voices and treated one path of development as the norm.
 SA3#sociology-u01-18-q5@2,3: Choose one contemporary theme and explain how a sociologist would study it. | Example: digital society. A sociologist might study how platforms and algorithms shape work (gig economy), identity and politics, using digital trace data, surveys and interviews; they would ask who benefits, how inequalities (class, gender, race) intersect, and what ethical issues arise in using data. Classical questions (power, solidarity, rationalisation) remain relevant. | Theme ; Research question ; Methods ; Inequality or power ; Link to classical concerns
+Q: Name four current themes in contemporary sociology. | Any four of globalisation, digital society, inequality, migration and diversity, environment and health.
+Q: What does global and postcolonial sociology question? | Theories built on European and North American experience, asking how colonialism shaped modern societies.
+Q: What does digital sociology study? | Online life, often using digital trace data.
+Q: What does Burawoy's public sociology argue? | That sociologists should engage wider publics, not just academics.
+Q: Which changes might explain more women in the House of Commons? | Party quotas such as all-women shortlists, and changing norms.
+Q: What would a sociologist ask about women's rising share of Commons seats? | Which women gained seats (by class, ethnicity and party), what changed, and whether representation changes policy and power.
+Q: Name two figures being recovered to broaden the classical canon. | Du Bois and Martineau.
+Q: What questions does big data raise for sociology? | Questions of privacy, representativeness and corporate control.
+Q: Which classical questions remain central in contemporary sociology? | Marx's, Durkheim's and Weber's questions about inequality, solidarity and rationalisation.
+Q: What does the environment theme in contemporary sociology cover? | Climate change, risk and environmental justice.
 
 ## Applying sociology
 LV: Introductory · Application
@@ -744,4 +924,14 @@ M2#sociology-u01-19-q2@2: A council finds few older residents use a new digital 
 TF2#sociology-u01-19-q3@3: Becker argued that sociologists inevitably take sides in their research. | true | In "Whose side are we on?" (1967) he argued neutrality is impossible, so researchers should be clear about whose perspective they represent.
 M3#sociology-u01-19-q4@3: Which is the most balanced position on value freedom? | Values shape topics and interpretations, so researchers should be transparent while keeping evidence rigorous | Research should express the researcher's opinions freely without evidence | Values never influence any part of research | Only research funded by government can be value-free | Most sociologists accept values play a role and aim for reflexivity and rigorous evidence.
 SA3#sociology-u01-19-q5@3: Evaluate the view that sociologists should be value-free. | For: Weber's argument for objective analysis; credibility with policymakers; evidence should decide. Against: values shape topic choice and interpretation; Becker says research inevitably takes sides; feminist and public sociology argue for explicit commitment. Conclusion: transparency (reflexivity) plus rigorous methods. | Weber's argument ; Credibility ; Becker or feminist critique ; Public sociology ; Reflexivity and rigour conclusion
+Q: Whose research on relative poverty shaped policy debates for decades? | Peter Townsend's.
+Q: What did the Black Report (1980) document? | Class inequalities in health in Britain.
+Q: How does sociology help public services? | Understanding how class, culture and family shape service use helps the NHS, schools and social care reach people.
+Q: Which questions might explain low screening uptake in deprived areas? | Whether the service is accessible by public transport and outside working hours, whether materials fit language and literacy, and whether there is distrust.
+Q: What applied response follows from studying low screening uptake? | Redesigning the service with communities rather than blaming individuals for not attending.
+Q: Which questions of power does applied sociology raise? | Who commissions research, who sets the questions, and whether findings are acted on or ignored.
+Q: What did Weber accept still shapes research despite value freedom? | Values inevitably shape which topics are studied.
+Q: What do Becker and feminist researchers see as the best response to research taking sides? | Being explicit about values.
+Q: Define applied sociology. | Using sociological knowledge and methods to address practical problems.
+Q: Why should applied research not be less rigorous? | It must meet the same standards of evidence, and its usefulness depends on it.
 `;

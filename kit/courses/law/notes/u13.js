@@ -35,6 +35,16 @@ Q: Give an example of an absolute Convention right. | Article 3: prohibition of 
 Q: What did Bentham call natural rights? | "Nonsense upon stilts".
 M1#law-u13-01-q1@2: Which category of right may be restricted if prescribed by law, for a legitimate aim and necessary in a democratic society? | Qualified rights | Absolute rights | Limited rights only | Non-derogable rights | Jus cogens norms | Articles 8–11 are qualified rights subject to this test.
 M2#law-u13-01-q2@1: Which theory holds that rights exist only when created by law? | Legal positivism | Natural rights | Interest theory | Cultural relativism | Universalism | Positivists such as Bentham deny rights without legal recognition.
+Q: What rights did Locke treat as natural rights? | Rights to life, liberty and property, which pre-exist government.
+Q: How does the interest theory of rights explain what a right is? | Rights protect important interests of the right-holder.
+Q: How does the will theory of rights explain what a right is? | Rights give holders control over the duties others owe them.
+Q: What debate do universalism and cultural relativism represent in rights theory? | Whether rights are the same everywhere or shaped by culture.
+Q: What kinds of rights belong to the first generation of human rights? | Civil and political rights, such as free speech and a fair trial.
+Q: What kinds of rights belong to the second generation of human rights? | Economic, social and cultural rights, such as health and education.
+Q: What kinds of rights belong to the third generation of human rights? | Collective rights, such as self-determination, development and the environment.
+Q: What is a limited Convention right, with an example? | A right restricted only in defined circumstances, such as liberty under Article 5.
+Q: What positive duty did Osman v United Kingdom recognise? | A duty on the state to protect life where there is a known risk.
+Q: What is the common mistake about the balancing of Convention rights? | Treating all Convention rights as qualified; absolute rights such as Article 3 allow no balancing.
 
 ## Universal human rights
 S: International human rights law began with the Universal Declaration of Human Rights in 1948. Binding treaties followed, monitored by UN bodies. The UK is party to many treaties, but as a dualist state they don't form part of domestic law unless incorporated.
@@ -66,6 +76,16 @@ Q: What three instruments form the International Bill of Rights? | The UDHR, the
 Q: What does dualism mean for the UK? | Treaties need domestic legislation to take effect in UK law.
 M1#law-u13-02-q1@1: Which body monitors the International Covenant on Civil and Political Rights? | The UN Human Rights Committee | The European Court of Human Rights | The International Court of Justice | The Security Council | The Council of Europe | The Human Rights Committee reviews ICCPR compliance.
 M2#law-u13-02-q2@2: A claimant argues that a UK benefit rule breaches the CRC, which the UK hasn't incorporated. What is the likely approach? | The treaty isn't directly enforceable | The rule is void | The court applies the CRC directly | Parliament must repeal the rule | The claim goes to the UN court automatically | SC confirmed the limited role of unincorporated treaties.
+Q: Is the Universal Declaration of Human Rights a treaty? | No. It is a declaration, but influential and partly reflecting customary law.
+Q: Which body made the Universal Declaration of Human Rights, and when? | The UN General Assembly, in 1948.
+Q: What does the ICESCR protect? | Economic, social and cultural rights.
+Q: Name two thematic UN human rights treaties. | Any two of the Convention against Torture, the Convention on the Rights of the Child, CEDAW and the CRPD.
+Q: How do UN treaty bodies monitor human rights treaties? | They review state reports and, where states accept, hear individual complaints.
+Q: What does the Universal Periodic Review do? | Under the Human Rights Council, it examines the human rights record of every UN member state.
+Q: What did JH Rayner v Department of Trade and Industry establish about treaties? | Unincorporated treaties don't create rights enforceable in domestic courts.
+Q: How may UK courts still use an unincorporated treaty? | To interpret ambiguous law, and possibly as relevant to proportionality, though their role is limited.
+Q: What is the common mistake about the UN Convention on the Rights of the Child in England? | Arguing it is directly enforceable in English courts; it is unincorporated, so it isn't.
+Q: What did R (SC) v Secretary of State for Work and Pensions stress about unincorporated treaties? | Their role in domestic law is limited, even as an aid to interpretation or proportionality.
 
 ## European Convention on Human Rights
 S: The ECHR protects civil and political rights across 46 Council of Europe states. Its rights are found in Articles 2 to 14 and the Protocols. The Strasbourg court interprets them as practical and effective, using autonomous concepts that don't depend on national labels.
@@ -97,6 +117,16 @@ Q: What does Article 1 ECHR require? | States must secure Convention rights to e
 Q: What are the Engel criteria used for? | Deciding whether proceedings involve a "criminal charge" under Article 6.
 M1#law-u13-03-q1@1: Which Protocol abolishes the death penalty in all circumstances? | Protocol 13 | Protocol 1 | Protocol 6 | Protocol 15 | Protocol 12 | Protocol 13 abolishes it in all circumstances.
 M2#law-u13-03-q2@2: UK soldiers detain a civilian at a base abroad under their control. Is the detainee within UK jurisdiction under Article 1? | Yes, through authority and control | No: jurisdiction is purely territorial | Only if the detainee is British | Only in wartime | No, because the HRA doesn't apply abroad | Al-Skeini recognised jurisdiction based on authority and control.
+Q: How many states does the ECHR protect rights across? | 46 Council of Europe states.
+Q: What is an autonomous concept in ECHR law? | A Convention term with its own meaning, independent of national law, such as "criminal charge".
+Q: What does it mean that Convention rights must be practical and effective? | Rights must be real in practice, not merely theoretical.
+Q: What did Airey v Ireland show about practical and effective rights? | Legal aid may be needed for effective access to court.
+Q: Which case established that the Convention is a living instrument? | Tyrer v United Kingdom (1978).
+Q: What does Protocol 1 to the ECHR add? | Rights to property, education and free elections.
+Q: What do Articles 15, 17 and 18 ECHR deal with? | Derogation, abuse of rights, and limits on restrictions of rights.
+Q: What is a Protocol to the ECHR? | An additional treaty adding rights or changing procedure.
+Q: When does Article 1 jurisdiction extend outside a state's territory? | Where the state exercises effective control or authority over people abroad (Al-Skeini v United Kingdom).
+Q: What is the common mistake about "criminal charge" under the ECHR? | Assuming national labels decide it; it is an autonomous concept judged by the Engel criteria.
 
 ## Human Rights Act 1998
 S: The Human Rights Act 1998 brings Convention rights into UK law. This lesson focuses on how claimants use the Act: the rights it covers, the time limit for claims, damages, and special rules on expression and religion.
@@ -131,6 +161,16 @@ Q: What is the time limit for a standalone HRA claim? | One year, or a longer pe
 Q: Why isn't Article 13 in Schedule 1? | Because the HRA itself is intended to provide an effective remedy.
 M1#law-u13-04-q1@1: Which section of the HRA protects freedom of expression when a court considers an injunction? | Section 12 | Section 3 | Section 4 | Section 6 | Section 19 | Section 12 requires particular regard to expression.
 M2#law-u13-04-q2@2: A celebrity seeks an interim injunction to stop a newspaper publishing private photos. What must she generally show? | She is likely to succeed at trial | Only a serious issue to be tried | Nothing: privacy always prevails | That the newspaper is a public authority | That damages are adequate | Cream Holdings: s 12(3) requires likely success at trial.
+Q: What does Schedule 1 to the Human Rights Act 1998 contain? | The Convention rights given effect: Articles 2–12 and 14, Protocol 1 Articles 1–3 and Protocol 13 Article 1.
+Q: When are damages awarded under s 8 Human Rights Act 1998? | Only where necessary to afford just satisfaction.
+Q: How are judicial acts challenged under the Human Rights Act 1998? | By appeal or judicial review (s 9).
+Q: What does s 13 Human Rights Act 1998 require? | Courts must have particular regard to freedom of religion where a religious organisation is affected.
+Q: What did Cream Holdings v Banerjee decide on pre-trial injunctions restraining publication? | The applicant must generally be likely to succeed at trial.
+Q: What is indirect horizontal effect under the Human Rights Act? | Courts, as public authorities, develop private law compatibly with Convention rights.
+Q: Does the Human Rights Act directly bind private parties? | No, but courts develop the common law compatibly with Convention rights.
+Q: Which tort developed through indirect horizontal effect in Campbell v MGN? | Misuse of private information.
+Q: What two-stage test for misuse of private information came from Campbell v MGN? | A reasonable expectation of privacy, then a balance between Articles 8 and 10.
+Q: What does s 2 Human Rights Act 1998 require courts to do with Strasbourg judgments? | Take them into account so far as relevant; they are not binding.
 
 ## Convention rights
 S: The Convention protects a set of core civil and political rights. Each has its own structure: some are absolute, some limited, some qualified. Understanding the overall map helps identify which rights are engaged in a problem and what test applies.
@@ -166,6 +206,16 @@ Q: Which Convention article prohibits punishment without law? | Article 7.
 Q: How do courts resolve conflicts between Article 8 and Article 10? | By an intense focus on the comparative importance of the rights in the specific case.
 M1#law-u13-05-q1@1: Which Convention article protects the right to marry? | Article 12 | Article 8 | Article 9 | Article 14 | Article 11 | Article 12 protects the right to marry and found a family.
 M2#law-u13-05-q2@2: A newspaper wants to name a child involved in a criminal case; the child's family objects. Which rights must be balanced? | Article 8 and Article 10 | Article 3 and Article 5 | Article 2 and Article 6 | Article 11 and Article 14 | Article 4 and Article 7 | Re S required balancing privacy against expression.
+Q: In Convention analysis, what does engagement mean? | Whether the facts fall within the scope of a right.
+Q: In Convention analysis, what is an interference? | An act or omission restricting the enjoyment of a right.
+Q: What are the three stages of analysing a Convention rights problem? | Is the right engaged, has there been an interference, and is it justified under the right's terms?
+Q: What three conditions must an interference with a qualified right meet? | Prescribed by law, a legitimate aim, and necessary in a democratic society (proportionate).
+Q: Which Convention articles are qualified rights? | Articles 8–11: private and family life, religion, expression and assembly.
+Q: What does Article 14 ECHR prohibit? | Discrimination in the enjoyment of Convention rights.
+Q: Is Article 6 ECHR absolute, limited or qualified? | Limited, with implied rights.
+Q: What does Article 4 ECHR prohibit? | Slavery, servitude and forced labour.
+Q: Besides an act of interference, what else can engage a Convention right? | A failure to meet a positive duty.
+Q: What is the common mistake about justifying interference with Article 3? | Applying a proportionality justification to it; Article 3 is absolute.
 
 ## Article 2: the right to life
 S: Article 2 protects the right to life. It forbids intentional killing by the state except in narrowly defined circumstances, and imposes positive duties to protect life and to investigate deaths.
@@ -198,6 +248,16 @@ Q: What is the Osman test? | Whether the authorities knew or ought to have known
 Q: Does Article 2 include a right to die? | No (Pretty v UK).
 M1#law-u13-06-q1@1: Which case concerned the shooting of suspected terrorists in Gibraltar? | McCann v United Kingdom | Osman v United Kingdom | Pretty v United Kingdom | Rabone | Middleton | McCann found a breach because of the planning of the operation.
 M3#law-u13-06-q2@2: A hospital lets a voluntary mental health patient at high, known suicide risk go home on leave, and she dies. Is Article 2 engaged? | Yes: the operational duty may apply | No: she was a voluntary patient | Only if she was detained | Only if staff intended harm | No: Article 2 covers only police | Rabone extended the operational duty to voluntary patients.
+Q: What is the operational duty under Article 2? | To take reasonable steps against a real and immediate risk to life the state knew or ought to have known about.
+Q: What is the investigative duty under Article 2? | To carry out an effective official investigation into deaths.
+Q: What test governs lethal force by the state under Article 2(2)? | The force must be absolutely necessary.
+Q: For what purposes may force resulting in death be permitted under Article 2(2)? | Defending a person from unlawful violence, effecting a lawful arrest or preventing escape, or quelling a riot.
+Q: What did McCann v United Kingdom require of security operations? | They must be planned to minimise the risk to life.
+Q: What is the systemic duty under Article 2? | To have effective laws and systems to protect life.
+Q: What did R (Middleton) v West Somerset Coroner decide about inquests? | Inquests may need to consider "in what circumstances" a person died, to meet Article 2.
+Q: Who decides on assisted dying, according to the Article 2 case law? | Parliament; Pretty v UK held Article 2 creates no right to die.
+Q: What did Rabone v Pennine Care decide about voluntary psychiatric patients? | The operational duty can extend to them where there is a real and immediate risk of suicide.
+Q: What is the common mistake in applying the Osman duty? | Applying it where the risk wasn't real and immediate or wasn't known to the authorities.
 
 ## Article 3: prohibition of torture
 S: Article 3 prohibits torture and inhuman or degrading treatment or punishment. It is absolute: no derogation, no balancing against public interest. It also prevents removing people to countries where they face a real risk of such treatment, and imposes positive duties.
@@ -231,6 +291,16 @@ Q: Can an Article 3 risk be balanced against national security? | No (Chahal; Sa
 Q: What did DSD decide? | Serious failures in the police investigation of serious violence can breach Article 3.
 M1#law-u13-07-q1@1: Which case first applied Article 3 to extradition to face the "death row phenomenon"? | Soering v United Kingdom | Chahal v United Kingdom | Ireland v United Kingdom | Saadi v Italy | Selmouni v France | Soering [1989] concerned extradition to the USA.
 M3#law-u13-07-q2@2: The government wants to deport a suspected terrorist to a state where he faces a real risk of torture, citing public safety. What is the position? | Deportation is prohibited by Article 3 | Deportation is lawful if proportionate | Only Parliament can decide | It is lawful with diplomatic assurances in all cases | It depends on the margin of appreciation | Chahal and Saadi: Article 3 risk can't be weighed against security.
+Q: What is the minimum level of severity under Article 3? | The threshold ill-treatment must reach to fall within Article 3, assessed in context.
+Q: How is torture defined under Article 3? | Deliberate inhuman treatment causing very serious and cruel suffering.
+Q: What did Selmouni v France say about the torture threshold? | The threshold can lower over time.
+Q: How do inhuman and degrading treatment differ under Article 3? | Inhuman treatment causes intense physical or mental suffering; degrading treatment humiliates or debases a person.
+Q: What is non-refoulement? | The prohibition on returning people to face a real risk of serious harm.
+Q: What test bars removing a person under Article 3? | Substantial grounds for believing they face a real risk of Article 3 treatment.
+Q: What did Saadi v Italy confirm? | The risk of Article 3 treatment on removal can't be balanced against national security.
+Q: What did Z v United Kingdom decide? | The state has a positive duty to protect people, here neglected children, from ill-treatment by private individuals.
+Q: Which case set the minimum level of severity for Article 3? | Ireland v United Kingdom (1978).
+Q: Can a state derogate from Article 3? | No. It is absolute: no derogation and no balancing against public interest.
 
 ## Article 4: slavery and forced labour
 S: Article 4 prohibits slavery and servitude absolutely, and forbids forced or compulsory labour, subject to listed exceptions. It imposes positive obligations to criminalise and combat trafficking and exploitation, reflected in the Modern Slavery Act 2015.
@@ -260,6 +330,16 @@ Q: What did Rantsev v Cyprus and Russia decide? | Trafficking falls within Artic
 Q: What does s 45 Modern Slavery Act 2015 provide? | A defence for some slavery or trafficking victims compelled to commit offences.
 M1#law-u13-08-q1@1: Which UK statute creates the main modern slavery offences? | Modern Slavery Act 2015 | Human Rights Act 1998 | Equality Act 2010 | Immigration Act 1971 | Sexual Offences Act 2003 | The 2015 Act consolidated slavery and trafficking offences.
 M2#law-u13-08-q2@2: Police receive credible information that a woman is being trafficked into domestic servitude but take no action. What Article 4 duty may be breached? | The positive duty to protect | No duty: private actors are responsible | Only Article 8 | Only a duty to prosecute later | No duty unless she complains | Rantsev requires protective measures where there is a credible risk.
+Q: What is servitude under Article 4? | A particularly serious denial of freedom, including an obligation to live on another's property.
+Q: What is forced labour under Article 4? | Work exacted under threat of a penalty and not offered voluntarily.
+Q: Which parts of Article 4 are absolute? | The prohibitions on slavery and servitude in Article 4(1).
+Q: What exceptions to forced labour does Article 4(3) list? | Work in detention, military service, emergencies and normal civic obligations.
+Q: What did Siliadin v France decide? | States must criminalise and effectively prosecute servitude; here, a domestic worker held in servitude.
+Q: What is trafficking? | Recruiting or moving people for exploitation by coercion or deception.
+Q: Why did the UK breach Article 4 in CN v United Kingdom? | Its law didn't clearly criminalise domestic servitude before 2010.
+Q: What duty does s 54 Modern Slavery Act 2015 impose? | Transparency duties for large businesses.
+Q: What offences does the Modern Slavery Act 2015 create? | Slavery, servitude, forced labour and trafficking.
+Q: What is the common mistake about prison work under Article 4? | Treating compulsory work in detention as forced labour; it is a listed exception.
 
 ## Article 5: liberty and security
 S: Article 5 protects against arbitrary detention. A deprivation of liberty is lawful only if it falls within one of the exhaustive grounds in Article 5(1) and follows a procedure prescribed by law, with procedural safeguards in Article 5(2) to (5).
@@ -291,6 +371,16 @@ Q: What is the acid test for deprivation of liberty? | Continuous supervision an
 Q: Are the Article 5(1) grounds exhaustive? | Yes.
 M1#law-u13-09-q1@1: Which case concerned police kettling of protesters in London? | Austin v United Kingdom | Guzzardi v Italy | Cheshire West | Soering | McCann | The ECtHR found no deprivation of liberty in Austin.
 M3#law-u13-09-q2@2: A woman with severe learning disabilities lives in a pleasant care home, is supervised at all times and isn't allowed to leave alone. Is she deprived of liberty? | Yes, under the acid test | No: the home is comfortable | No: she doesn't object | Only if she's locked in | Only if she lacks family | Cheshire West: comfort doesn't prevent a deprivation of liberty.
+Q: What does Article 5 ECHR protect against? | Arbitrary detention.
+Q: How does a deprivation of liberty differ from a restriction on movement? | A deprivation is confinement going beyond a mere restriction, judged by type, duration, effects and manner (Guzzardi v Italy).
+Q: What did Austin v United Kingdom decide about kettling? | Kettling protesters for about seven hours wasn't a deprivation of liberty in the circumstances.
+Q: Name three grounds for lawful detention in Article 5(1). | Any three of: after conviction, non-compliance with a court order, reasonable suspicion of an offence, educational supervision of minors, unsound mind or disease, immigration and extradition.
+Q: What does Article 5(2) require on arrest? | That the person is given reasons for the arrest.
+Q: What does Article 5(3) guarantee? | Prompt production before a judge and trial within a reasonable time.
+Q: What right does Article 5(4) give, also known as habeas corpus? | A speedy decision by a court on the lawfulness of detention.
+Q: What does Article 5(5) provide? | Compensation for unlawful detention.
+Q: How is detention of people lacking capacity in care settings currently authorised in England? | Through the Deprivation of Liberty Safeguards under the Mental Capacity Act 2005; reform to Liberty Protection Safeguards is delayed.
+Q: What is the common mistake about comfortable care home placements under Article 5? | Assuming they can't be a deprivation of liberty; the acid test applies whatever the comfort of the setting.
 
 ## Article 6: fair trial
 S: Article 6 guarantees a fair and public hearing within a reasonable time by an independent and impartial tribunal, in the determination of civil rights and obligations or criminal charges. It contains express and implied rights, with extra guarantees in criminal cases.
@@ -322,6 +412,16 @@ Q: Which case recognised an implied right of access to court? | Golder v United 
 Q: What does Article 6(2) protect? | The presumption of innocence.
 M1#law-u13-10-q1@1: Which case found a breach of Article 6 where compelled answers to DTI inspectors were used at trial? | Saunders v United Kingdom | Golder v United Kingdom | John Murray v United Kingdom | Al-Khawaja | Engel | Saunders [1996] concerned the privilege against self-incrimination.
 M2#law-u13-10-q2@2: A key prosecution witness has died, and their statement is the main evidence. What does Article 6 require? | Good reason and sufficient counterbalancing safeguards | Automatic exclusion | Automatic admission | A retrial abroad | That the defendant confesses | Al-Khawaja and Horncastle allow such evidence with safeguards.
+Q: What does equality of arms mean under Article 6? | Each party must have a reasonable chance to present their case without substantial disadvantage.
+Q: To which two kinds of proceedings does Article 6 apply? | The determination of civil rights and obligations, and criminal charges.
+Q: What kind of tribunal does Article 6 require? | An independent and impartial tribunal established by law.
+Q: Name three implied rights under Article 6. | Access to court, equality of arms, reasoned judgments, and the right to silence and privilege against self-incrimination.
+Q: Which case concerned the right to silence under Article 6? | John Murray v United Kingdom.
+Q: Name three guarantees in Article 6(3) for criminal defendants. | Being informed of the charge, adequate time and facilities, legal assistance, examining witnesses, and an interpreter.
+Q: When must free legal assistance be provided under Article 6(3)? | When needed in the interests of justice.
+Q: When is admitting an absent witness's statement compatible with Article 6? | Where there is good reason for absence and sufficient counterbalancing safeguards (Al-Khawaja and Tahery; Horncastle).
+Q: What principle did Saunders v UK establish? | The privilege against self-incrimination is part of the right to a fair trial.
+Q: What is the common mistake about hearsay and Article 6? | Assuming any reliance on an absent witness's hearsay breaches Article 6.
 
 ## Article 8: private and family life
 S: Article 8 protects respect for private and family life, home and correspondence. It is a qualified right: interference must be in accordance with the law, pursue a legitimate aim and be necessary in a democratic society. It covers areas from privacy and data to immigration and family relationships.
@@ -354,6 +454,16 @@ Q: What did S and Marper v UK decide? | Blanket, indefinite retention of DNA fro
 Q: What three requirements must an interference with Article 8 meet? | In accordance with the law, a legitimate aim, and necessary in a democratic society.
 M1#law-u13-11-q1@1: Which case developed the tort of misuse of private information? | Campbell v MGN | S and Marper | Huang | Big Brother Watch | Golder | Campbell [2004] UKHL 22 developed misuse of private information from Articles 8 and 10.
 M2#law-u13-11-q2@2: Police keep the fingerprints and DNA of everyone arrested, including those never charged, indefinitely. What is the likely Article 8 problem? | Disproportionate blanket retention | No problem: crime prevention justifies it | Only an Article 6 issue | Only a data protection issue | Only if the data is leaked | S and Marper found such blanket retention disproportionate.
+Q: What does Article 8 ECHR protect? | Respect for private and family life, home and correspondence.
+Q: Name three aspects of private life under Article 8. | Identity, personal autonomy, sexual life, reputation in some cases, and personal data.
+Q: What counts as family life under Article 8? | Close family ties in fact, not just legal relationships.
+Q: What does "in accordance with the law" mean under Article 8(2)? | A basis in clear, accessible, foreseeable domestic law with safeguards against arbitrariness.
+Q: Name three legitimate aims under Article 8(2). | National security, public safety, economic well-being, prevention of crime, health or morals, and the rights of others.
+Q: What did Big Brother Watch v UK decide about bulk interception? | It isn't unlawful in itself, but the UK regime breached Articles 8 and 10 for lack of end-to-end safeguards.
+Q: Which case concerned weighing family life against public interest in immigration? | Huang v Secretary of State for the Home Department.
+Q: Does Article 8 cover electronic communications? | Yes; correspondence includes electronic communications.
+Q: What does "necessary" mean in Article 8(2)? | The interference must be proportionate, striking a fair balance.
+Q: What is the common mistake about "in accordance with the law" under Article 8? | Assuming any authorising law is enough, without asking whether it has adequate safeguards.
 
 ## Article 9: thought, conscience and religion
 S: Article 9 protects freedom of thought, conscience and religion. Holding a belief is absolutely protected, but manifesting it in worship, teaching, practice and observance can be limited under Article 9(2). Courts consider whether there has been an interference and whether it is justified.
@@ -384,6 +494,16 @@ Q: Is the freedom to hold a belief qualified? | No; only its manifestation can b
 Q: What did Eweida v UK decide about the cross? | Preventing the BA employee wearing a cross violated Article 9.
 M1#law-u13-12-q1@1: Which case upheld France's ban on face coverings in public? | SAS v France | Eweida v UK | Begum | Campbell and Cosans | Kokkinakis | SAS [2014] allowed a wide margin of appreciation.
 M2#law-u13-12-q2@2: A hospital bans a nurse from wearing a necklace with a cross on wards for infection control. Is this likely lawful? | Likely yes: a justified health and safety restriction | No: religious symbols are absolutely protected | No: it is discrimination per se | Only if the nurse agrees | Only in private hospitals | In Eweida, the nurse's (Chaplin's) restriction was justified on health grounds.
+Q: What is the forum internum under Article 9? | The inner realm of belief, which is absolutely protected.
+Q: What is manifestation of belief under Article 9? | Expressing belief through worship, teaching, practice or observance.
+Q: What threshold must a belief meet to be protected by Article 9? | A level of cogency, seriousness, cohesion and importance (Campbell and Cosans v UK).
+Q: Are non-religious beliefs protected by Article 9? | Yes, if they attain cogency, seriousness, cohesion and importance.
+Q: What must a restriction on manifesting belief satisfy under Article 9(2)? | It must be prescribed by law, pursue a legitimate aim and be necessary.
+Q: What did Eweida v UK decide about the registrar Ladele? | Restrictions on a registrar refusing to conduct civil partnerships were justified.
+Q: Why was there no violation in R (Begum) v Denbigh High School? | The pupil could attend other schools allowing her dress, so she could manifest her religion elsewhere without undue hardship.
+Q: On what basis was France's face-covering ban upheld in SAS v France? | It was within the margin of appreciation, based on "living together".
+Q: How does the Equality Act 2010 relate to Article 9? | It protects religion or belief as a characteristic, giving domestic remedies in employment and services.
+Q: What is the common mistake about workplace dress rules and Article 9? | Treating every dress rule affecting religious symbols as a violation; many are justified.
 
 ## Article 10: freedom of expression
 S: Article 10 protects freedom of expression, including the press and the right to receive information. It covers speech that offends, shocks or disturbs. Restrictions must be prescribed by law, for a legitimate aim and necessary; political speech gets the strongest protection.
@@ -416,6 +536,16 @@ Q: What did Handyside v UK say about expression? | It protects ideas that offend
 Q: Which type of expression gets the strongest protection? | Political expression and debate on matters of public interest.
 M1#law-u13-13-q1@1: Which case held that politicians must tolerate wider criticism than private individuals? | Lingens v Austria | Handyside v UK | Sunday Times v UK | Campbell v MGN | Eweida | Lingens [1986] concerned criticism of the Austrian Chancellor.
 M2#law-u13-13-q2@2: A government obtains an injunction stopping a newspaper reporting on a public health scandal, citing the risk of public alarm. How will Article 10 apply? | Strict scrutiny: prior restraint of public interest speech | No issue: alarm justifies it | Only if the story is false | Only Article 8 applies | The injunction is automatically lawful | Prior restraints on public interest reporting require compelling justification.
+Q: What is prior restraint? | Restricting publication before it happens.
+Q: What is a chilling effect on expression? | Deterring legitimate expression through the threat of sanctions.
+Q: What role does the press have under Article 10? | A vital "public watchdog" role.
+Q: Does Article 10 include a right to receive information? | Yes.
+Q: Name three legitimate aims for restricting expression under Article 10(2). | National security, preventing disorder or crime, health, morals, others' reputation or rights, and maintaining the authority of the judiciary.
+Q: What did Sunday Times v UK decide about the thalidomide injunction? | Contempt law was foreseeable enough, but the injunction was disproportionate and violated Article 10.
+Q: How does Article 17 ECHR affect expression? | It removes protection for speech aimed at destroying Convention rights.
+Q: Can hate speech be restricted under Article 10? | Yes; hate speech and incitement to violence may be restricted.
+Q: Which section of the Defamation Act 2013 provides a public interest defence? | Section 4.
+Q: What is the common mistake about offensive speech and Article 10? | Assuming it is automatically outside Article 10; Handyside protects ideas that offend, shock or disturb.
 
 ## Article 11: assembly and association
 S: Article 11 protects peaceful assembly and freedom of association, including forming and joining trade unions. It is qualified, and the state has positive duties to protect peaceful protest. Recent UK cases and legislation have narrowed protection for disruptive protest.
@@ -446,6 +576,16 @@ Q: What did DPP v Ziegler decide? | Courts must consider the proportionality of 
 Q: What did the Colston statue reference decide? | Protest doesn't provide a defence to significant criminal damage.
 M1#law-u13-14-q1@1: Which case concerned the state's duty to protect demonstrators from counter-demonstrators? | Plattform "Ärzte für das Leben" v Austria | DPP v Ziegler | RMT v UK | Handyside | Lingens | Plattform [1988] recognised positive duties under Article 11.
 M2#law-u13-14-q2@2: Protesters peacefully block a road briefly; police arrest them for obstruction. What must the court consider at trial? | Whether conviction is proportionate | Nothing: obstruction is strict liability | Only whether they were noisy | Only the views of drivers | Whether the protest was registered | Ziegler requires a proportionality assessment for this offence.
+Q: What is a peaceful assembly under Article 11? | A gathering not intended to be violent, even if it is disruptive.
+Q: What does freedom of association include under Article 11? | The right to form and join associations, including trade unions.
+Q: Is violent protest protected by Article 11? | No; violence or incitement to violence isn't protected.
+Q: What did RMT v United Kingdom decide about trade union rights? | States have a margin on matters such as secondary action.
+Q: What is lawful excuse in protest cases? | A defence in some public order offences, linked to the proportionality of interfering with protest rights.
+Q: Which case limited Ziegler, alongside the Colston statue case? | Reference by the Attorney General for Northern Ireland [2022] UKSC 32.
+Q: Which statutes expanded police protest powers and created offences such as locking on? | The Police, Crime, Sentencing and Courts Act 2022 and the Public Order Act 2023.
+Q: In DPP v Ziegler, what had the protesters done? | Blocked a road to an arms fair by locking themselves to equipment.
+Q: Why should protest law points be checked before relying on them? | Protest law is changing frequently, so current legislation and case law must be checked.
+Q: What is the common mistake about crimes committed during protests? | Assuming any criminal act during a protest is protected by Article 11.
 
 ## Article 14: discrimination
 S: Article 14 prohibits discrimination in the enjoyment of Convention rights. It isn't freestanding: the facts must fall within the ambit of another right. Differential treatment is discriminatory unless it has an objective and reasonable justification.
@@ -477,6 +617,16 @@ Q: Is Article 14 a freestanding right? | No; the facts must fall within the ambi
 Q: Has the UK ratified Protocol 12? | No.
 M1#law-u13-15-q1@1: Which case held that denying a widowed parent's allowance to an unmarried partner was discriminatory? | In re McLaughlin | R (SC) v SSWP | Ghaidan | Eweida | Handyside | McLaughlin [2018] UKSC 48 found the difference in treatment unjustified for the children.
 M2#law-u13-15-q2@2: A benefit is paid to married but not cohabiting parents with children, with no justification related to the children's needs. Which Convention provisions are engaged? | Article 14 with Article 8 or Protocol 1 Article 1 | Article 14 alone | Article 3 only | Article 6 only | No Convention right | Article 14 needs another right's ambit; McLaughlin used Article 8.
+Q: What is the ambit in an Article 14 claim? | The scope of another Convention right, which the facts must fall within.
+Q: What does "other status" mean in Article 14? | Grounds of discrimination beyond those listed, such as disability or marital status.
+Q: What four questions structure an Article 14 claim? | Within another right's ambit? Difference in treatment on a status ground? Analogous situations? Objective and reasonable justification?
+Q: Can a failure to treat people differently breach Article 14? | Yes; a failure to treat differently can count, as well as differential treatment.
+Q: What makes differential treatment justified under Article 14? | An objective and reasonable justification: a legitimate aim pursued by proportionate means.
+Q: What level of justification is needed for discrimination on sex, race or sexual orientation? | Very weighty reasons.
+Q: What test is often used for discrimination in welfare and economic policy? | Whether the policy is "manifestly without reasonable foundation".
+Q: What did R (SC) v Secretary of State for Work and Pensions decide about the two-child limit? | It was justified and not unlawful discrimination.
+Q: What does Protocol 12 add to the ECHR? | A freestanding right to non-discrimination.
+Q: What is the common mistake in bringing Article 14 claims? | Bringing a claim that isn't within the ambit of another Convention right.
 
 ## Protocol 1 Article 1: property
 S: Article 1 of Protocol 1 protects the peaceful enjoyment of possessions. The state may deprive people of property or control its use in the public interest, subject to conditions, and states have a wide margin of appreciation in economic and social policy.
@@ -508,6 +658,16 @@ Q: What are the three rules in Protocol 1 Article 1? | Peaceful enjoyment; depri
 Q: Can welfare benefits be possessions? | Yes, in some circumstances (Stec v UK).
 M1#law-u13-16-q1@1: Which case upheld UK leasehold enfranchisement law under Protocol 1 Article 1? | James v United Kingdom | Sporrong and Lönnroth | Stec | AXA | Handyside | James [1986] allowed a wide margin in social policy.
 M2#law-u13-16-q2@2: A new planning rule restricts the use of a landowner's field without taking ownership. How is this classified? | Control of use | Deprivation of property | No interference | A breach of Article 8 only | Expropriation needing full compensation | Regulating use is control of use, judged by fair balance.
+Q: What does Protocol 1 Article 1 protect? | The peaceful enjoyment of possessions.
+Q: What are possessions under Protocol 1 Article 1? | An autonomous concept including property, contractual rights and some welfare benefits.
+Q: Which case set out the three rules of Protocol 1 Article 1? | Sporrong and Lönnroth v Sweden (1982).
+Q: Name three kinds of possessions under Protocol 1 Article 1. | Land, goods, shares, intellectual property, claims with a legitimate expectation of realisation, and some social security benefits.
+Q: How does deprivation of property differ from control of use? | Deprivation takes the property and normally needs compensation; control of use regulates how it is used.
+Q: What balance must interference with possessions strike? | A fair balance between the general interest and the individual's rights.
+Q: Must compensation for deprivation always be full value? | No; it must be reasonably related to value, though not always full value (James v UK).
+Q: Which case recognised a wide margin of appreciation in economic policy on property? | AXA General Insurance Ltd v HM Advocate [2011] UKSC 46.
+Q: Whose estate brought the challenge in James v United Kingdom? | Trustees of the Duke of Westminster's estate.
+Q: What is the common mistake about regulating property use? | Assuming any control of use requires compensation.
 
 ## Positive obligations
 S: Convention rights don't just stop the state interfering; they can require it to act. Positive obligations require states to put in place legal frameworks, take operational measures to protect people, and investigate serious violations, including those by private individuals.
@@ -538,6 +698,16 @@ Q: What did A v United Kingdom decide? | The "reasonable chastisement" defence f
 Q: What limits positive obligations? | They mustn't impose an impossible or disproportionate burden.
 M1#law-u13-17-q1@1: Which case held that a gap in criminal law protecting a disabled young woman breached Article 8? | X and Y v Netherlands | A v United Kingdom | Osman v UK | DSD | Rabone | X and Y [1985] established framework duties.
 M3#law-u13-17-q2@2: A stepfather beats a child and is acquitted because the law allowed "reasonable chastisement". What Convention issue arises? | Failure of the state's positive duty under Article 3 | No issue: the stepfather is a private person | Only an Article 6 issue | Only an Article 14 issue | A margin of appreciation always applies | A v UK found the law gave inadequate protection.
+Q: What is a positive obligation under the ECHR? | A duty on the state to take action to secure a right.
+Q: What is a framework duty? | The duty to have effective laws and systems that protect rights.
+Q: What is horizontal protection in the context of positive obligations? | Protecting individuals from violations by other private persons.
+Q: Name the four types of positive obligation. | Framework duties, operational duties, investigative duties, and protection from private violence.
+Q: Under which Articles do investigative duties arise? | Articles 2, 3 and 4.
+Q: What did X and Y v Netherlands decide? | Having no way to prosecute sexual abuse of a disabled young woman breached Article 8.
+Q: Which cases illustrate the operational duty to protect individuals at known risk? | Osman v United Kingdom and Rabone v Pennine Care.
+Q: Do states have discretion in how they meet positive obligations? | Yes; they have a margin of appreciation in choosing how to meet them.
+Q: How did DSD apply positive obligations domestically? | The police were liable for investigative failures under Article 3 in a claim against a public authority.
+Q: What is the common mistake about harm by private individuals? | Assuming states can never be responsible for it; positive obligations can make them responsible.
 
 ## Proportionality
 S: Proportionality is central to qualified rights. This lesson focuses on how courts decide whether an interference is "necessary in a democratic society", including the role of the court, the weight given to decision-makers, and the margin of appreciation at Strasbourg.
@@ -570,6 +740,16 @@ Q: What does "necessary in a democratic society" require? | A pressing social ne
 Q: Do UK courts review only the decision-making process in HRA cases? | No; they decide whether rights were actually violated.
 M1#law-u13-18-q1@1: Which case confirmed that domestic courts decide proportionality for themselves in immigration cases? | Huang v SSHD | Handyside v UK | Bank Mellat | Lingens | Sunday Times v UK | Huang [2007] UKHL 11: the appellate authority decides proportionality itself.
 M3#law-u13-18-q2@2: A school had a thoughtful uniform policy but didn't consider Article 9 explicitly. The pupil could attend nearby schools allowing her dress. What is the likely result? | No violation: the outcome was proportionate | A violation because rights weren't considered | A violation because uniforms are unlawful | The policy is void | Only damages are available | Begum: the question is whether rights were violated, not whether they were considered.
+Q: What is a pressing social need? | The requirement that an interference respond to a real need, not merely be useful or desirable.
+Q: What must the reasons for an interference be under the necessity test? | Relevant and sufficient, with a measure proportionate to the aim.
+Q: What is the discretionary area of judgment? | The domestic equivalent of deference to the decision-maker.
+Q: What are the four stages of the Bank Mellat proportionality test? | An important aim, a rational connection, no less intrusive means, and a fair balance.
+Q: What is the fair balance stage of proportionality? | The final stage weighing the measure's benefits against its effect on rights.
+Q: Why do courts give weight to decision-makers in proportionality? | Because of their expertise and democratic legitimacy, especially on social and economic policy.
+Q: When is the Strasbourg margin of appreciation wider? | Where there is no European consensus or moral or social policy is sensitive.
+Q: When is the Strasbourg margin of appreciation narrower? | For intimate aspects of identity.
+Q: Do domestic courts apply the margin of appreciation? | Not as such, though similar considerations inform the weight they give.
+Q: What is the common mistake about proportionality review? | Treating it as asking whether the decision-maker considered rights, rather than whether rights were actually violated.
 
 ## Derogations
 S: Article 15 allows states to derogate from some Convention obligations in time of war or other public emergency threatening the life of the nation, to the extent strictly required. Some rights can never be derogated from, and derogations are subject to judicial scrutiny.
@@ -603,6 +783,16 @@ Q: Which Convention rights are non-derogable? | Article 2 (except lawful acts of
 Q: Why was the UK's post-9/11 derogation quashed? | The measures were disproportionate and discriminated against foreign nationals.
 M1#law-u13-19-q1@1: Which article of the ECHR permits derogation? | Article 15 | Article 17 | Article 18 | Article 13 | Article 1 | Article 15 sets out the conditions for derogation.
 M2#law-u13-19-q2@2: During a pandemic, a state wants to suspend Article 3 protections for detainees. Is this permitted? | No: Article 3 is non-derogable | Yes, if notified | Yes, if strictly required | Yes, with Parliament's approval | Only for six months | Article 15(2) makes Article 3 non-derogable, even in an emergency.
+Q: What is a derogation under the ECHR? | A temporary suspension of certain Convention obligations in an emergency.
+Q: What counts as a public emergency for Article 15? | An exceptional crisis affecting the whole population and threatening organised life (Lawless v Ireland).
+Q: What are the four conditions for derogation under Article 15? | War or emergency threatening the nation, measures strictly required, consistency with international law, and notification to the Council of Europe Secretary General.
+Q: What does "strictly required" mean for derogating measures? | It is the proportionality requirement: measures only to the extent the situation demands.
+Q: What did the UK derogate from after 9/11, and why? | Article 5, to allow indefinite detention of foreign terror suspects.
+Q: Which case quashed the UK's post-9/11 derogation order? | A v Secretary of State for the Home Department [2004] UKHL 56.
+Q: Which sections of the HRA deal with designated derogations? | Sections 14–16.
+Q: How do courts review derogations? | They give weight to the government's view of an emergency but scrutinise closely whether measures are strictly required and non-discriminatory.
+Q: Can a state derogate from Article 7 ECHR? | No; Article 7 is non-derogable.
+Q: What is the common mistake about Article 3 in emergencies? | Believing a state can derogate from it; Article 3 is non-derogable.
 
 ## Remedies
 S: Remedies for breaches of Convention rights include declarations of incompatibility, damages under the HRA, quashing unlawful decisions, and, at Strasbourg, findings of violation and just satisfaction. Remedies are often modest in money terms but can drive legal change.
@@ -636,6 +826,16 @@ Q: What is the test for damages under s 8 HRA? | Whether an award is necessary t
 Q: What are Rule 39 interim measures? | Urgent measures indicated by the Strasbourg court to prevent irreparable harm.
 M1#law-u13-20-q1@1: Which body supervises the execution of Strasbourg judgments? | The Committee of Ministers | The European Parliament | The UN Security Council | The UK Supreme Court | The Venice Commission | Article 46 gives the Committee of Ministers this role.
 M2#law-u13-20-q2@2: A prisoner's Article 6 rights were breached in a disciplinary hearing, but the outcome would likely have been the same. What remedy is likely? | A declaration, with little or no damages | Substantial damages | Automatic release | A new criminal trial | Nothing at all | Greenfield: a finding of violation is often enough.
+Q: What is just satisfaction? | Compensation awarded under Article 41 ECHR or HRA s 8.
+Q: What is execution of judgments in the Strasbourg system? | Implementing Strasbourg judgments, supervised by the Committee of Ministers.
+Q: Which cases show HRA damages are usually modest? | R (Greenfield) v Secretary of State for the Home Department and Anufrijeva v Southwark LBC.
+Q: Which HRA sections provide declarations of incompatibility and remedial orders? | Section 4 for declarations and s 10 for remedial orders.
+Q: Can a finding of violation itself be just satisfaction at Strasbourg? | Yes.
+Q: Which Article of the ECHR makes Strasbourg judgments binding on the state? | Article 46.
+Q: Give an example of Rule 39 interim measures being used. | Blocking removals, such as the Rwanda flight in 2022.
+Q: What guides the level of HRA damages? | Strasbourg awards and principles.
+Q: How can human rights remedies drive wider legal change? | Declarations of incompatibility and Strasbourg judgments often lead to new legislation.
+Q: What is the common mistake about HRA damages? | Expecting substantial damages for most breaches; awards are modest and discretionary.
 
 ## Public authorities
 S: Section 6 of the HRA makes it unlawful for a public authority to act incompatibly with Convention rights. This lesson focuses on the defences, omissions, the position of courts and Parliament, and how private parties are affected indirectly.
@@ -668,6 +868,16 @@ Q: Are courts public authorities under s 6? | Yes (s 6(3)(a)).
 Q: Is Parliament a public authority under the HRA? | No.
 M1#law-u13-21-q1@1: Which subsection protects a public authority that had no choice because of primary legislation? | Section 6(2) | Section 6(1) | Section 6(3) | Section 6(5) | Section 7(1) | Section 6(2) protects authorities bound to act by incompatible primary legislation.
 M2#law-u13-21-q2@2: A singer sues a former friend for publishing a book revealing her private life. How do Convention rights apply? | Indirectly, through the misuse of private information tort | Directly under s 6 against the friend | Not at all: it's a private dispute | Only through Strasbourg | Only through criminal law | McKennitt v Ash applied Articles 8 and 10 in a private claim.
+Q: What does s 6(1) HRA make unlawful? | A public authority acting incompatibly with Convention rights.
+Q: Can a failure to act be unlawful under s 6 HRA? | Yes; an omission can be unlawful under s 6(6).
+Q: What does the s 6(2) defence protect? | An authority that couldn't have acted differently because primary legislation required it or can't be read compatibly.
+Q: Is a failure to introduce legislation an "act" under s 6? | No (s 6(6)).
+Q: How are hybrid bodies bound by s 6 HRA? | Only in respect of their public functions (s 6(3)(b) and (5)).
+Q: Does s 3 HRA interpretation apply in disputes between private parties? | Yes (Ghaidan v Godin-Mendoza).
+Q: What did Ghaidan v Godin-Mendoza decide? | The Rent Act was read under s 3 so a same-sex partner could take a statutory tenancy.
+Q: What limit on s 3 did Ghaidan set? | Words can be read in only if this goes with the grain of the legislation.
+Q: Which case, besides Campbell, developed misuse of private information? | McKennitt v Ash [2006] EWCA Civ 1714.
+Q: What is the common mistake about suing private companies under the HRA? | Suing them directly under s 6 for breach of privacy; the HRA doesn't create direct claims against private parties.
 
 ## Human rights litigation
 S: Human rights claims can be brought as standalone HRA claims, through judicial review, or raised in other proceedings. Claimants must be victims, meet time limits and choose the right forum. Strategic litigation by NGOs and interveners plays a significant role.
@@ -698,6 +908,16 @@ Q: What are two ways of raising Convention rights domestically? | A standalone s
 Q: What must an applicant do before applying to Strasbourg? | Exhaust domestic remedies.
 M1#law-u13-22-q1@1: Which article of the ECHR allows individual applications to Strasbourg? | Article 34 | Article 13 | Article 46 | Article 41 | Article 15 | Article 34 provides the right of individual petition.
 M2#law-u13-22-q2@2: A tenant facing eviction by a council believes it breaches Article 8. How can she raise the issue? | As a defence in the possession proceedings | Only by applying to Strasbourg first | Only by a separate claim after eviction | She can't: tenancy is private | Only through Parliament | Section 7(1)(b) allows reliance on rights in other proceedings.
+Q: Who is a victim for HRA and ECHR purposes? | A person directly affected by the act complained of (HRA s 7; ECHR art 34).
+Q: What is an intervener? | A third party permitted to make submissions in a case.
+Q: How can Convention rights be relied on in other proceedings? | Under s 7(1)(b), for example as a defence to criminal charges or a possession claim.
+Q: How does the time limit for judicial review compare with a standalone HRA claim? | Judicial review has a shorter time limit than the one year for a standalone claim.
+Q: Can interest groups bring HRA claims? | Only victims can; interest groups can intervene or support claimants.
+Q: What is the time limit for applying to Strasbourg? | Four months from the final domestic decision.
+Q: Name the four Strasbourg admissibility requirements. | Exhaustion of domestic remedies, within four months, significant disadvantage, and not manifestly ill-founded.
+Q: How many Strasbourg applications are admitted? | Only a small proportion.
+Q: Name three practical points in human rights litigation. | Legal aid, costs risks, protective costs orders in public interest cases, and evidence to prove a breach.
+Q: Which body is given as an example of an influential intervener? | The Equality and Human Rights Commission.
 
 ## International human rights frameworks
 S: Beyond the ECHR, human rights are protected by the UN system, regional systems in the Americas and Africa, international criminal law, and customary international law. These frameworks influence UK law and practice, even where not directly enforceable.
@@ -730,4 +950,14 @@ Q: What is jus cogens? | A peremptory norm of international law from which no de
 Q: Which Act gave effect to the Rome Statute in the UK? | The International Criminal Court Act 2001.
 M1#law-u13-23-q1@1: Which court tries individuals for genocide and crimes against humanity? | The International Criminal Court | The International Court of Justice | The European Court of Human Rights | The UN Human Rights Committee | The Court of Justice of the EU | The ICC tries individuals under the Rome Statute.
 M2#law-u13-23-q2@2: A former foreign head of state visiting London is accused of torture. Can he claim immunity from extradition? | Not for torture, following Pinochet (No 3) | Yes: heads of state are always immune | Only if he is still in office | Yes, unless the UN agrees | Only under the ECHR | Pinochet held immunity didn't cover torture after the UK incorporated CAT.
+Q: What is a Special Rapporteur? | An independent UN expert reporting on human rights themes or countries.
+Q: Which crimes does the International Criminal Court try? | Genocide, crimes against humanity, war crimes and aggression.
+Q: Which treaty created the International Criminal Court, and when? | The Rome Statute, in 1998.
+Q: What are the three pillars of the UN Guiding Principles on Business and Human Rights? | The state duty to protect, corporate responsibility to respect, and access to remedy.
+Q: When were the UN Guiding Principles on Business and Human Rights adopted? | 2011.
+Q: What instruments make up the Inter-American human rights system? | The American Convention on Human Rights, with a Commission and Court.
+Q: What instrument underpins the African human rights system? | The African Charter on Human and Peoples' Rights, with a Commission and Court.
+Q: Name two Council of Europe human rights mechanisms beyond the ECHR. | The European Social Charter and the Committee for the Prevention of Torture.
+Q: Give an example of a jus cogens norm. | The prohibition of torture.
+Q: What is the common mistake about international human rights systems relevant to the UK? | Assuming the ECHR is the only one; UN, regional, criminal and customary frameworks also influence UK law.
 `;

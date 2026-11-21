@@ -1,0 +1,117 @@
+{
+ "id": "chem-indicator-ranges",
+ "renderer": "titration",
+ "course": "chemistry",
+ "unit": "u09",
+ "lesson": "Indicators",
+ "title": "Choosing an indicator",
+ "caption": "An indicator changes colour over about two pH units around its pKin. It works if that change falls within the steep part of the curve. Phenolphthalein (8.3–10.0) suits a weak acid with a strong base; methyl orange (3.1–4.4) does not, because it would change colour too early.",
+ "alt": "Two titration curves, strong acid–strong base and weak acid–strong base, with the colour-change ranges of methyl orange and phenolphthalein as shaded bands.",
+ "description": [
+  "Methyl orange band, pH 3.1 to 4.4.",
+  "Phenolphthalein band, pH 8.3 to 10.0.",
+  "The strong–strong curve passes through both bands in its vertical section.",
+  "The weak acid curve's vertical section starts above the methyl orange band."
+ ],
+ "flask": {
+  "acids": [
+   {
+    "c": 0.1,
+    "strong": true
+   }
+  ],
+  "V": 25
+ },
+ "titrant": {
+  "base": true,
+  "strong": true,
+  "c": 0.1
+ },
+ "vmax": 50,
+ "curves": [
+  {
+   "label": "HCl + NaOH",
+   "flask": {
+    "acids": [
+     {
+      "c": 0.1,
+      "strong": true
+     }
+    ],
+    "V": 25
+   },
+   "titrant": {
+    "base": true,
+    "strong": true,
+    "c": 0.1
+   },
+   "colour": "a1",
+   "labelDy": -8
+  },
+  {
+   "label": "CH₃COOH + NaOH",
+   "flask": {
+    "acids": [
+     {
+      "c": 0.1,
+      "pKa": [
+       4.76
+      ]
+     }
+    ],
+    "V": 25
+   },
+   "titrant": {
+    "base": true,
+    "strong": true,
+    "c": 0.1
+   },
+   "colour": "a4",
+   "labelDy": 10
+  }
+ ],
+ "indicators": [
+  {
+   "name": "methyl orange",
+   "range": [
+    3.1,
+    4.4
+   ],
+   "colour": "a3"
+  },
+  {
+   "name": "phenolphthalein",
+   "range": [
+    8.3,
+    10.0
+   ],
+   "colour": "a2"
+  }
+ ],
+ "claims": [
+  {
+   "type": "suitable",
+   "curve": 0,
+   "indicator": "phenolphthalein",
+   "ok": true
+  },
+  {
+   "type": "suitable",
+   "curve": 0,
+   "indicator": "methyl orange",
+   "ok": true
+  },
+  {
+   "type": "suitable",
+   "curve": 1,
+   "indicator": "phenolphthalein",
+   "ok": true
+  },
+  {
+   "type": "suitable",
+   "curve": 1,
+   "indicator": "methyl orange",
+   "ok": false
+  }
+ ]
+}

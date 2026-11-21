@@ -42,6 +42,16 @@ M2#medicine-u04-01-q2@2: In lobar pneumonia, consolidated alveoli are perfused b
 M3#medicine-u04-01-q3@3: A patient on 60% oxygen has a PaO_{2} of 12 kPa. What is the best interpretation? | Severe impairment of gas exchange, as this value is far below what 60% oxygen should give | A normal result, since 12 kPa is within the normal range | Hyperoxia needing the oxygen to be stopped | An error, because PaO_{2} can't be measured on oxygen | On high inspired oxygen, PaO_{2} should be much higher; the result shows a large A–a gradient.
 TF1#medicine-u04-01-q4@1: Pulse oximetry can overestimate oxygen saturation in people with darker skin. | true | Studies have shown occult hypoxaemia is more often missed in people with darker skin.
 SA2#medicine-u04-01-q5@2,3: Explain why V/Q mismatch usually causes hypoxaemia without a raised PaCO_{2}. | Carbon dioxide diffuses much more readily than oxygen and its content in blood is nearly linear with partial pressure, so increased ventilation of normal alveoli can remove extra CO_{2}. Oxygen saturation in well-ventilated alveoli is already near maximal on the flat part of the curve, so extra ventilation can't compensate for blood from poorly ventilated areas. The result is low PaO_{2} with normal or low PaCO_{2}. | CO2 diffusion and linear content ; Hyperventilation clears CO2 ; Flat top of oxygen curve ; Resulting pattern
+Q: What is the difference between dead space and shunt? | Dead space is ventilated but not perfused, as in pulmonary embolism. Shunt is perfused but not ventilated, as in pneumonia or collapse.
+Q: What does hypoxic pulmonary vasoconstriction do? | It diverts blood away from poorly ventilated areas of lung, which improves ventilation–perfusion matching.
+Q: About what proportion of oxygen in blood is bound to haemoglobin? | About 98%.
+Q: Describe the shape of the oxygen–haemoglobin dissociation curve and what its flat and steep parts mean. | It is sigmoid. On the flat upper part saturations stay high despite falls in PaO_{2}; on the steep part small falls in PaO_{2} cause large falls in saturation.
+Q: What is the Bohr effect and what does it help to do? | It is the right shift of the dissociation curve caused by raised CO_{2} and acidity, which helps unload oxygen in active tissues.
+Q: Which factors cause a left shift of the oxygen dissociation curve? | The opposite of the right-shift factors (lower CO_{2}, H^{+}, temperature and 2,3-DPG), and also fetal haemoglobin and carbon monoxide.
+Q: What is the normal arterial pH range? | 7.35–7.45.
+Q: What are the normal PaCO_{2} and bicarbonate ranges on a blood gas? | PaCO_{2} about 4.7–6.0 kPa and bicarbonate about 22–26 mmol/L.
+Q: Why does V/Q mismatch lower PaO_{2} before PaCO_{2} rises? | CO_{2} diffuses about 20 times more readily than oxygen, so increased breathing can blow off CO_{2} but cannot fully correct hypoxaemia from shunt.
+Q: Why must the inspired oxygen be known when interpreting a PaO_{2}? | A PaO_{2} of 12 kPa is normal on air but shows a large gas exchange defect on 60% oxygen.
 
 ## Lung function tests
 LV: Clinical · Foundation
@@ -84,6 +94,16 @@ M2#medicine-u04-02-q2@2: A patient has FEV_{1} 2.0 L, FVC 2.4 L and a reduced TL
 M3#medicine-u04-02-q3@3: An 80-year-old never-smoker without symptoms has an FEV_{1}/FVC of 0.68. What is the most appropriate interpretation? | The fixed 0.7 cut-off may over-diagnose obstruction with ageing; compare with the lower limit of normal and clinical context | This definitely confirms COPD and needs inhalers | The result is impossible in a never-smoker | Spirometry is invalid in people over 75 | The ratio falls with age; using the lower limit of normal and the clinical picture avoids over-diagnosis.
 MATCH1#medicine-u04-02-q4@1: Match each result to its likely meaning. | Ratio 0.5 = Obstruction ; Low FVC with ratio 0.9 = Possible restriction ; Large rise in FEV_{1} after salbutamol = Reversibility suggesting asthma ; Low TLCO with normal spirometry = Possible pulmonary vascular disease or anaemia | Each pattern points towards a different group of conditions.
 SA2#medicine-u04-02-q5@2,3: Explain how spirometry distinguishes obstructive from restrictive lung disease. | In obstruction, narrowed airways slow expiration, so FEV_{1} falls more than FVC and the ratio drops below 0.7, as in COPD and asthma. In restriction, the lungs or chest wall can't expand fully, so both FEV_{1} and FVC fall in proportion and the ratio is normal or high, as in fibrosis. Lung volumes and gas transfer help confirm the type. | Obstruction mechanism ; Obstruction values ; Restriction mechanism and values ; Further tests
+Q: Define FEV_{1} and FVC. | FEV_{1} is the volume forcibly exhaled in the first second; FVC is the total volume forcibly exhaled.
+Q: What spirometry pattern defines a restrictive picture? | Reduced FVC with a normal or high FEV_{1}/FVC ratio.
+Q: Name three conditions that give a restrictive spirometry pattern. | Interstitial lung disease, chest wall disease and obesity.
+Q: How is peak expiratory flow used in asthma? | It is a quick measure of airflow; serial readings show the variability typical of asthma.
+Q: What does bronchodilator reversibility testing show? | A significant rise in FEV_{1} after a bronchodilator supports a diagnosis of asthma.
+Q: What does gas transfer (TLCO or DLCO) measure? | How well gas crosses from the alveoli into the blood.
+Q: Name conditions in which gas transfer is reduced. | Emphysema, interstitial lung disease, pulmonary vascular disease and anaemia.
+Q: Why can the fixed 0.7 ratio mislead in older people? | Lower limits of the normal ratio fall with age, so a fixed 0.7 cut-off can over-diagnose obstruction.
+Q: What additional tests does a restrictive pattern need? | Gas transfer and imaging, to look for interstitial lung disease.
+Q: Why is a restrictive spirometry pattern not proof of restrictive lung disease? | Spirometry only suggests restriction; full lung volumes, including total lung capacity, are needed to confirm it.
 
 ## Respiratory failure: type 1 and type 2
 LV: Clinical · Application
@@ -128,6 +148,16 @@ M2#medicine-u04-03-q2@2: A blood gas shows pH 7.38, PaCO_{2} 7.2 kPa, bicarbonat
 M3#medicine-u04-03-q3@3: An acutely breathless woman with no lung disease has saturations of 85% on air. What is the immediate oxygen target? | 94–98% | 88–92% | 100% for every patient | No oxygen until a blood gas is available | Without risk factors for hypercapnia, the BTS target is 94–98%; start oxygen and escalate.
 TF1#medicine-u04-03-q4@1: Oxygen should be prescribed with a target saturation range. | true | BTS guidance treats oxygen as a drug with a prescribed target range.
 SA2#medicine-u04-03-q5@2,3: Explain why patients with COPD can develop worsening hypercapnia when given uncontrolled high-flow oxygen. | High oxygen releases hypoxic pulmonary vasoconstriction, worsening V/Q mismatch and increasing dead space; the Haldane effect reduces CO_{2} carriage by haemoglobin; and in some patients reduced respiratory drive contributes. CO_{2} rises, causing acidosis and drowsiness. Controlled oxygen to 88–92% avoids this while treating hypoxaemia. | V/Q mismatch from loss of vasoconstriction ; Haldane effect ; Reduced drive ; Controlled oxygen target
+Q: Define type 1 respiratory failure and give its mechanism. | PaO_{2} below 8 kPa with normal or low PaCO_{2}, caused by V/Q mismatch or shunt.
+Q: Name three causes of type 1 respiratory failure. | Any three of: pneumonia, pulmonary oedema, pulmonary embolism, asthma, ARDS, fibrosis.
+Q: What causes type 2 respiratory failure? | Alveolar hypoventilation, for example in COPD, neuromuscular disease, chest wall deformity, obesity hypoventilation or opioid overdose.
+Q: How can pH and bicarbonate distinguish acute from chronic type 2 failure? | A low pH shows acute or acute-on-chronic failure; a normal pH with raised bicarbonate suggests chronic, compensated failure.
+Q: Why is oxygen described as a drug in the BTS guideline? | It should be prescribed with a target saturation range.
+Q: What target saturation range is used for most acutely ill patients? | 94–98%.
+Q: Which patients are given the 88–92% oxygen target? | Those at risk of hypercapnic respiratory failure, such as COPD, obesity hypoventilation and neuromuscular disease, adjusted by blood gas results.
+Q: How should oxygen be given in critical illness such as cardiac arrest or shock? | Give high-concentration oxygen immediately and seek senior help.
+Q: When is NIV recommended in COPD with acute hypercapnic respiratory failure? | When respiratory acidosis (pH below 7.35 and PaCO_{2} above 6.5 kPa) persists despite optimal initial treatment.
+Q: Why should oxygen not be withheld from a hypoxic patient with COPD? | Hypoxaemia kills; give controlled oxygen to the 88–92% target and monitor with blood gases.
 
 ## Asthma
 LV: Clinical · Application
@@ -176,6 +206,16 @@ M2#medicine-u04-04-q2@2: Why does current guidance advise against treating asthm
 M3#medicine-u04-04-q3@3: A man in a severe asthma attack has a PaCO_{2} of 5.8 kPa and appears tired. What is the most important interpretation? | A normal PaCO_{2} in a severe attack suggests exhaustion and possible near-fatal asthma; escalate immediately | A normal PaCO_{2} shows the attack is mild | It shows he is hyperventilating normally | It means no further treatment is needed | In severe asthma, CO_{2} should be low; normal or rising CO_{2} with fatigue warns of respiratory failure.
 SEQ1#medicine-u04-04-q4@2: Order the steps in confirming asthma in an adult under the 2024 guideline. | Clinical history suggesting asthma ; Blood eosinophils or FeNO ; Spirometry with bronchodilator reversibility ; Peak flow variability or challenge test if still unclear | Objective tests are used in sequence to confirm the diagnosis.
 SA2#medicine-u04-04-q5@2,3: Describe the recognition and initial management of acute severe asthma in an adult. | Recognise acute severe asthma from PEF 33–50%, respiratory rate 25 or more, heart rate 110 or more, or inability to complete sentences, and check for life-threatening features. Give oxygen to 94–98%, nebulised short-acting bronchodilators and systemic corticosteroids, add nebulised ipratropium and consider IV magnesium as per protocol. Seek senior help, monitor closely with repeat PEF, saturations and blood gases, and escalate to critical care if features worsen. | Recognition criteria ; Oxygen and bronchodilators ; Steroids and additional therapy ; Monitoring and escalation
+Q: Describe the typical symptoms and pattern of asthma. | Wheeze, breathlessness, chest tightness and cough, variable over time and often worse at night or with triggers.
+Q: Name common triggers of asthma. | Allergens, exercise, cold air and infections.
+Q: Which tests are used to diagnose asthma in adults in the 2024 guideline? | Blood eosinophils or FeNO, then bronchodilator reversibility with spirometry, and peak flow variability or bronchial challenge if needed.
+Q: What is MART? | Maintenance and reliever therapy with a single ICS–formoterol inhaler, used if symptoms are not controlled.
+Q: What further steps are available in asthma beyond MART? | Higher-dose MART, adding other agents, and specialist referral for biologics in severe asthma.
+Q: What else should be checked and provided at asthma review? | Inhaler technique, adherence and triggers, and a personalised action plan.
+Q: What PEF defines moderate acute asthma? | 50–75% of best or predicted.
+Q: Name the features of acute severe asthma. | PEF 33–50%, respiratory rate 25 or more, heart rate 110 or more, and inability to complete sentences.
+Q: What defines near-fatal asthma? | Raised PaCO_{2} or the need for ventilation.
+Q: Name the drugs used in initial treatment of acute asthma. | Oxygen to 94–98%, nebulised short-acting bronchodilators, systemic corticosteroids, nebulised ipratropium in severe attacks, and IV magnesium for acute severe or life-threatening asthma.
 
 ## Chronic obstructive pulmonary disease (COPD)
 LV: Clinical · Application
@@ -218,6 +258,16 @@ M2#medicine-u04-05-q2@2: A man with COPD has no asthmatic features and ongoing b
 M3#medicine-u04-05-q3@3: A woman with COPD who still smokes 15 cigarettes a day has a resting PaO_{2} of 7.0 kPa. What is the most appropriate step regarding long-term oxygen? | Support her to stop smoking first, as oxygen isn't offered to people who smoke because of fire risk | Prescribe home oxygen immediately regardless of smoking | Prescribe oxygen only at night while she continues smoking | Refuse all treatment until she stops | NICE advises not offering long-term oxygen to people who smoke, because of fire risk and reduced benefit; smoking cessation is the priority.
 TF1#medicine-u04-05-q4@1: Inhaled corticosteroids increase the risk of pneumonia in people with COPD. | true | This risk is why ICS is reserved for people with asthmatic features or frequent exacerbations.
 SA2#medicine-u04-05-q5@2,3: Describe the management of an acute exacerbation of COPD in hospital. | Assess using ABCDE and blood gases; give controlled oxygen to target 88–92%; nebulised bronchodilators; oral corticosteroids; antibiotics if sputum is purulent or there is pneumonia; chest X-ray to look for pneumonia or pneumothorax. If respiratory acidosis persists after initial treatment, start NIV with a ceiling of treatment agreed. Plan rehabilitation and follow-up on recovery. | Assessment and controlled oxygen ; Bronchodilators and steroids ; Antibiotics if indicated ; NIV and escalation or follow-up
+Q: Name the causes of COPD. | Smoking (the main cause in the UK), occupational dusts and fumes, biomass smoke, and rarely alpha-1 antitrypsin deficiency.
+Q: Describe the typical clinical features of COPD. | Progressive exertional breathlessness, chronic cough, sputum and frequent winter bronchitis.
+Q: How is COPD diagnosed? | Post-bronchodilator spirometry showing FEV_{1}/FVC below 0.7 in someone with symptoms and risk factors.
+Q: What does the MRC dyspnoea scale measure? | It grades how breathlessness limits activity, on a five-point scale.
+Q: Name the fundamental measures offered to all people with COPD. | Stopping smoking, influenza and pneumococcal vaccination, pulmonary rehabilitation if limited, self-management plans and treatment of comorbidities.
+Q: Which inhaled therapy follows a short-acting bronchodilator in COPD with asthmatic features? | LABA plus ICS.
+Q: When is triple therapy used in COPD? | LAMA + LABA + ICS is used for ongoing symptoms or exacerbations.
+Q: Who is assessed for long-term oxygen therapy in COPD? | Non-smokers with a stable PaO_{2} below 7.3 kPa, or below 8 kPa with polycythaemia, peripheral oedema or pulmonary hypertension.
+Q: Define an exacerbation of COPD and name its common triggers. | A sustained worsening of breathlessness, cough or sputum, commonly triggered by viral and bacterial infections.
+Q: Why should inhaled corticosteroids not be started routinely in COPD? | They increase pneumonia risk, so are reserved for asthmatic or steroid-responsive features or frequent exacerbations.
 
 ## Bronchiectasis and cystic fibrosis
 LV: Clinical · Application
@@ -262,6 +312,16 @@ M2#medicine-u04-06-q2@2: Two parents are both carriers of a CFTR mutation. What 
 M3#medicine-u04-06-q3@3: A non-smoker with daily large-volume purulent sputum and recurrent infections is labelled as having COPD. What is the best next step? | Arrange HRCT to look for bronchiectasis and test for underlying causes | Start inhaled steroids for COPD without further tests | Reassure, as this is normal for older adults | Stop all antibiotics to reduce resistance | This pattern suggests bronchiectasis, which needs HRCT and cause-finding.
 TF1#medicine-u04-06-q4@1: Newborn screening for cystic fibrosis in the UK uses the heel-prick blood test. | true | Immunoreactive trypsinogen is measured in the newborn blood spot, followed by confirmatory tests.
 SA2#medicine-u04-06-q5@2,3: Explain how cystic fibrosis causes lung disease and how CFTR modulators help. | Defective CFTR reduces chloride and water secretion on airway surfaces, making mucus thick and sticky. Mucociliary clearance fails, so bacteria such as *Staphylococcus aureus* and *Pseudomonas* colonise the airways, causing chronic infection, inflammation and bronchiectasis. CFTR modulators improve the folding, trafficking or opening of the faulty channel, restoring some function, improving lung function and reducing exacerbations. | Chloride and water transport ; Thick mucus and failed clearance ; Infection and inflammation ; Modulator mechanism
+Q: What is the pathology of bronchiectasis? | Damaged, permanently widened bronchi that clear mucus poorly, causing a cycle of infection and inflammation.
+Q: Name causes of bronchiectasis. | Previous severe infection (whooping cough, measles, TB), cystic fibrosis, immune deficiency, allergic bronchopulmonary aspergillosis, primary ciliary dyskinesia, rheumatoid arthritis and inflammatory bowel disease; often none is found.
+Q: Describe the typical features of bronchiectasis. | Daily productive cough with large sputum volumes, recurrent chest infections, haemoptysis, coarse crackles and clubbing in some.
+Q: What HRCT findings support bronchiectasis? | Airways wider than the accompanying arteries and a lack of tapering.
+Q: Outline the BTS 2019 management of bronchiectasis. | Airway clearance physiotherapy, antibiotics for exacerbations guided by sputum cultures, vaccination, and long-term macrolides for frequent exacerbations in selected patients.
+Q: Why should a history of daily sputum and frequent infections prompt imaging? | Bronchiectasis is often under-recognised and mislabelled as recurrent chest infections or COPD.
+Q: Which gene and which common mutation cause cystic fibrosis? | The CFTR gene, which codes for a chloride channel; the most common mutation is F508del.
+Q: Which organs does cystic fibrosis affect? | Lungs, pancreas (malabsorption, diabetes), liver, gut and reproductive tract, through thick secretions.
+Q: How is cystic fibrosis diagnosed? | Newborn heel-prick screening (immunoreactive trypsinogen), followed by a sweat chloride test and genetic testing.
+Q: What treatments are used in cystic fibrosis? | Specialist centre care, airway clearance, antibiotics, pancreatic enzyme replacement, nutrition and CFTR modulators such as elexacaftor–tezacaftor–ivacaftor.
 
 ## Community-acquired pneumonia
 LV: Clinical · Application
@@ -310,6 +370,16 @@ M2#medicine-u04-07-q2@2: A 70-year-old with pneumonia has a respiratory rate of 
 M3#medicine-u04-07-q3@3: A 30-year-old with pneumonia has a CURB-65 of 0 but saturations of 87% on air. What is the best action? | Arrange hospital assessment and oxygen, as hypoxaemia overrides the low score | Treat at home because the score is 0 | Prescribe antibiotics and review in two weeks | Repeat the score tomorrow | Scores support judgement; significant hypoxaemia needs hospital care.
 NUM1#medicine-u04-07-q4@1: A patient with pneumonia is 82, confused, has urea 8.5 mmol/L, respiratory rate 22 and BP 132/80. What is the CURB-65 score? | 3 | 0 | points | Confusion 1, urea over 7 1, age 65 or over 1: a total of 3.
 SA2#medicine-u04-07-q5@2,3: Describe the hospital management of high-severity community-acquired pneumonia. | Assess with ABCDE and NEWS2; give oxygen to target saturations; take blood cultures, sputum cultures and urinary antigens; start antibiotics within 4 hours following local guidance for high severity; give fluids and follow the sepsis pathway if indicated; seek senior review and consider critical care involvement; monitor closely and review antibiotics with culture results. | Assessment and oxygen ; Cultures and investigations ; Antibiotics within 4 hours ; Escalation and monitoring
+Q: Name the organisms that cause community-acquired pneumonia. | Streptococcus pneumoniae (most common), Haemophilus influenzae, Mycoplasma, Staphylococcus aureus after influenza, Legionella, and viruses including influenza and SARS-CoV-2.
+Q: Describe the typical symptoms of pneumonia. | Cough, fever, breathlessness, pleuritic chest pain and purulent sputum; in older people confusion or falls may be the main sign.
+Q: What examination signs suggest consolidation in pneumonia? | Raised respiratory rate, crackles, bronchial breathing and dullness to percussion.
+Q: What do CURB-65 scores of 0–1, 2 and 3–5 indicate? | 0–1 low severity, consider home treatment; 2 moderate, consider hospital care; 3–5 high severity, urgent admission and consider critical care.
+Q: What is CRB-65 and where is it used? | CURB-65 without urea, used in the community.
+Q: Why must CURB-65 not be relied on alone? | Scores support but do not replace judgement; a young patient with a low score but low saturation or sepsis needs urgent hospital care.
+Q: What investigations are done in hospital for pneumonia? | Chest X-ray for consolidation, blood tests including CRP and urea and electrolytes, and cultures and urinary antigens for moderate or high severity.
+Q: What is the antibiotic timing target in hospital pneumonia? | Within 4 hours of presentation to hospital.
+Q: What other supportive treatment is given in pneumonia? | Oxygen to target saturations, fluids, analgesia and the sepsis pathway if indicated.
+Q: What recovery advice is given after pneumonia? | Cough may last 6 weeks; explain expected recovery and safety-net.
 
 ## Tuberculosis
 LV: Clinical · Application
@@ -356,6 +426,16 @@ M2#medicine-u04-08-q2@2: A woman taking rifampicin for TB uses the combined oral
 M3#medicine-u04-08-q3@3: A patient on isoniazid develops tingling in his feet. What is the most likely cause and prevention? | Peripheral neuropathy from isoniazid, prevented with pyridoxine | Optic neuritis from ethambutol, prevented with eye drops | Gout from pyrazinamide, prevented by stopping fluids | Orange urine from rifampicin, which is harmless | Isoniazid interferes with pyridoxine metabolism; pyridoxine is given to prevent neuropathy.
 TF1#medicine-u04-08-q4@1: Tuberculosis is a notifiable disease in the UK. | true | Clinicians must notify cases so UKHSA can organise contact tracing.
 SA2#medicine-u04-08-q5@2,3: Explain why adherence is so important in TB treatment and how it is supported. | Incomplete treatment risks relapse and the development of drug-resistant TB, which is harder, longer and more toxic to treat, and continued transmission to others. Treatment lasts at least 6 months and people often feel better early. Support includes clear explanation, TB nurse case management, directly observed therapy for those at risk, help with housing or other social needs, and managing side effects. | Relapse and resistance ; Transmission ; Long treatment and early improvement ; Support measures
+Q: How is tuberculosis spread and what is latent TB infection? | TB spreads by airborne droplets from people with active pulmonary disease. Latent infection is controlled, with no symptoms and no infectiousness.
+Q: What proportion of infected people develop active TB, and when? | About 5–10% over their lifetime, most often in the first two years.
+Q: Name risk factors for TB. | Birth in or travel to high-incidence countries, close contact, HIV, diabetes, immunosuppression, homelessness, prison, and alcohol or drug dependence.
+Q: What are the features of pulmonary TB? | Persistent cough over 3 weeks, haemoptysis, fever, night sweats and weight loss.
+Q: Name sites of extrapulmonary TB. | Lymph nodes, spine (Pott's disease), meninges, abdomen and others.
+Q: What chest X-ray changes suggest TB? | Upper lobe consolidation or cavitation.
+Q: What sputum tests are used to diagnose TB? | Three samples for microscopy (Ziehl–Neelsen), culture (the gold standard), and rapid nucleic acid amplification tests that also detect rifampicin resistance.
+Q: How is latent TB tested for? | Interferon-gamma release assay (IGRA) or tuberculin skin test.
+Q: Name the main adverse effects of each first-line TB drug. | Rifampicin: orange fluids, enzyme induction; isoniazid: neuropathy, hepatitis; pyrazinamide: hepatitis, gout; ethambutol: optic neuritis.
+Q: How is TB managed from a public health viewpoint? | It is notifiable in the UK, UKHSA organises contact tracing, and directly observed therapy supports those at risk of not completing treatment.
 
 ## Pleural effusion
 LV: Clinical · Application
@@ -404,6 +484,16 @@ M2#medicine-u04-09-q2@2: A patient with pneumonia has an effusion with pH 7.05. 
 M3#medicine-u04-09-q3@3: A man with known heart failure has small bilateral effusions with no fever or pain. What is the most appropriate management? | Optimise heart failure treatment, including diuretics, without routine aspiration | Aspirate both sides immediately | Insert bilateral chest drains | Start antibiotics for empyema | Typical bilateral transudates in heart failure respond to treating the cause; aspirate only if atypical.
 TF1#medicine-u04-09-q4@1: Thoracic ultrasound is more sensitive than chest X-ray for detecting small pleural effusions. | true | Ultrasound detects smaller volumes and guides safe aspiration.
 SA2#medicine-u04-09-q5@2,3: Explain how to investigate a new unilateral pleural effusion in an adult. | Take a history and examine; confirm with chest X-ray and thoracic ultrasound. Perform ultrasound-guided aspiration and send fluid for protein, LDH, pH, glucose, cytology and microbiology, with paired serum protein and LDH to apply Light's criteria. Further tests such as CT, pleural biopsy or TB testing depend on results. Refer to a pleural or respiratory team, especially if malignancy is suspected. | Imaging ; Aspiration and fluid tests ; Light's criteria ; Further tests and referral
+Q: What are the examination signs of a pleural effusion? | Reduced chest expansion, stony dull percussion, and reduced breath sounds and vocal resonance over the fluid.
+Q: What does a chest X-ray show in pleural effusion? | Blunting of the costophrenic angle and a meniscus; large effusions may push the mediastinum away.
+Q: Why is thoracic ultrasound used in effusions? | It is more sensitive than X-ray and guides aspiration.
+Q: State Light's criteria for an exudate. | Fluid is an exudate if any one applies: fluid to serum protein above 0.5, fluid to serum LDH above 0.6, or fluid LDH above two-thirds of the upper limit of normal serum LDH.
+Q: Name causes of transudative effusions. | Heart failure (most common), cirrhosis, nephrotic syndrome and hypoalbuminaemia.
+Q: Name causes of exudative effusions. | Pneumonia (parapneumonic), malignancy, TB, pulmonary embolism and rheumatoid arthritis.
+Q: What mechanism distinguishes transudates from exudates? | Transudates arise from altered pressure; exudates from inflammation or leaky capillaries.
+Q: What tests are sent on pleural fluid? | Cytology, microbiology, pH, glucose and protein.
+Q: When is a chest drain needed for a parapneumonic effusion? | With pH below 7.2, frank pus (empyema) or a positive Gram stain.
+Q: How are recurrent malignant effusions managed? | With an indwelling pleural catheter or pleurodesis, alongside treating the cause.
 
 ## Pneumothorax
 LV: Clinical · Application
@@ -455,6 +545,16 @@ M2#medicine-u04-10-q2@2: A young woman with a small primary pneumothorax is bare
 M3#medicine-u04-10-q3@3: A ventilated trauma patient becomes suddenly hypotensive and hypoxic, with absent breath sounds on the right and a raised JVP. What is the priority? | Immediate decompression for suspected tension pneumothorax, then a chest drain | Arrange a chest X-ray before any intervention | Give a fluid bolus and wait | Increase the ventilator pressure | Tension pneumothorax is a clinical diagnosis; decompression must not wait for imaging.
 TF1#medicine-u04-10-q4@1: Stopping smoking reduces the risk of pneumothorax recurrence. | true | Smoking is a major risk factor for primary pneumothorax and recurrence.
 SA2#medicine-u04-10-q5@2,3: Explain why tension pneumothorax is life-threatening and how it is recognised. | A one-way valve effect lets air enter the pleural space but not leave, so pressure rises, collapsing the lung, shifting the mediastinum and kinking the great veins, which reduces venous return and cardiac output. It presents with severe distress, hypoxia, tachycardia, hypotension, raised JVP, absent breath sounds and late tracheal deviation. It needs immediate decompression without waiting for imaging. | One-way valve and rising pressure ; Reduced venous return ; Clinical signs ; Immediate decompression
+Q: What is a primary spontaneous pneumothorax and who typically gets it? | Pneumothorax with no known lung disease, typically in tall, young adults, especially smokers.
+Q: Why is secondary spontaneous pneumothorax more dangerous? | Underlying lung disease such as COPD, cystic fibrosis or interstitial lung disease means lower respiratory reserve.
+Q: Name two other types of pneumothorax besides spontaneous. | Traumatic, and iatrogenic (for example after central line insertion).
+Q: Define tension pneumothorax. | Air enters the pleural space but cannot leave, raising pressure, pushing the mediastinum across and impairing venous return.
+Q: What are the usual symptoms and signs of a pneumothorax? | Sudden pleuritic chest pain and breathlessness, with reduced breath sounds and hyper-resonance on the affected side.
+Q: Which signs suggest tension pneumothorax? | Severe distress, hypoxia, tachycardia, hypotension, raised JVP and late tracheal deviation away from the affected side.
+Q: What does the BTS 2023 guideline base management on? | Mainly symptoms and risk rather than size alone.
+Q: How is a symptomatic primary pneumothorax treated? | Needle aspiration, an ambulatory device or a chest drain, depending on the case and local practice.
+Q: How is tension pneumothorax treated? | Call for help and perform emergency decompression without waiting for an X-ray, then insert a chest drain.
+Q: What advice is given after recovery from a pneumothorax? | Stop smoking, avoid flying until resolution is confirmed, and avoid diving permanently unless definitive surgery has been done.
 
 ## Interstitial lung disease
 LV: Clinical · Application
@@ -503,6 +603,16 @@ M2#medicine-u04-11-q2@2: A pigeon breeder has breathlessness and ILD features on
 M3#medicine-u04-11-q3@3: A man on long-term amiodarone develops progressive breathlessness and new ILD on CT. What is the most important step? | Consider amiodarone toxicity and seek specialist advice about stopping or changing it | Increase the amiodarone dose | Start antifibrotics without reviewing medicines | Reassure, as amiodarone never affects the lungs | Amiodarone is a recognised cause of pulmonary toxicity; removing the culprit is key.
 TF1#medicine-u04-11-q4@1: Finger clubbing is a recognised feature of idiopathic pulmonary fibrosis. | true | Clubbing occurs in many people with IPF.
 SA2#medicine-u04-11-q5@2,3: Describe how idiopathic pulmonary fibrosis is diagnosed. | Clinical features of progressive breathlessness, dry cough, velcro crackles and clubbing in an older adult raise suspicion. Spirometry shows restriction and TLCO is reduced. HRCT shows a UIP pattern of basal subpleural reticulation and honeycombing. Other causes such as drugs, exposures and connective tissue disease are excluded, and the diagnosis is confirmed at a specialist ILD multidisciplinary meeting. | Clinical features ; Lung function ; HRCT pattern ; Exclusion of causes and MDT
+Q: Who typically develops idiopathic pulmonary fibrosis? | People over 60, more often men, often ex-smokers.
+Q: Describe the clinical features of IPF. | Progressive exertional breathlessness, dry cough, fine end-inspiratory velcro crackles at the bases and finger clubbing.
+Q: What HRCT pattern is typical of IPF? | Usual interstitial pneumonia (UIP), with basal, subpleural reticulation and honeycombing.
+Q: What is the prognosis of IPF? | Poor, with a median survival of about 3–5 years from diagnosis, though variable.
+Q: What causes hypersensitivity pneumonitis? | An immune reaction to inhaled antigens such as bird proteins or mould.
+Q: Name the connective tissue diseases associated with ILD. | Rheumatoid arthritis, systemic sclerosis and myositis.
+Q: Name occupational causes of ILD. | Asbestosis and silicosis.
+Q: What lung function findings are expected in ILD? | A restrictive spirometry pattern, reduced TLCO and desaturation on walking tests.
+Q: Which drugs slow decline in IPF? | Antifibrotics, pirfenidone or nintedanib, which slow decline in lung function in IPF and some other progressive fibrosing ILDs.
+Q: What other management is offered in ILD? | Removing exposures or culprit drugs, pulmonary rehabilitation, oxygen, vaccination, palliative care and symptom control, and lung transplantation for selected patients.
 
 ## Sarcoidosis
 LV: Clinical · Application
@@ -548,6 +658,16 @@ M2#medicine-u04-12-q2@2: Which electrolyte abnormality is associated with sarcoi
 M3#medicine-u04-12-q3@3: A patient with sarcoidosis develops palpitations and a new heart block on ECG. What is the priority? | Urgent specialist assessment for cardiac sarcoidosis, which can cause sudden death | Reassure, since sarcoidosis never affects the heart | Wait for the lung disease to resolve | Start antibiotics for endocarditis | Cardiac involvement is organ-threatening and needs urgent investigation and treatment.
 TF1#medicine-u04-12-q4@1: A raised serum ACE level alone confirms sarcoidosis. | false | ACE is neither sensitive nor specific; diagnosis needs clinical features, imaging, usually biopsy, and exclusion of other causes.
 SA2#medicine-u04-12-q5@2,3: Explain why many people with sarcoidosis are not treated with corticosteroids. | Many cases, especially stage I lung disease and Löfgren syndrome, resolve spontaneously. Corticosteroids have significant side effects, including weight gain, diabetes, osteoporosis and infection, and may be associated with relapse when stopped. Treatment is reserved for organ-threatening disease, such as cardiac, neurological or ocular involvement, progressive lung disease or hypercalcaemia. | Spontaneous resolution ; Steroid side effects ; Indications for treatment ; Monitoring
+Q: What is the characteristic pathology of sarcoidosis? | Non-caseating granulomas in affected organs.
+Q: Who most often develops sarcoidosis? | Adults aged 20–40; it is more common and often more severe in people of Black African and Caribbean heritage.
+Q: How does sarcoidosis affect the lungs? | Bilateral hilar lymphadenopathy, cough and breathlessness, or it is found incidentally on X-ray.
+Q: Name the skin and eye manifestations of sarcoidosis. | Skin: erythema nodosum and lupus pernio; eyes: uveitis.
+Q: Which other organs and metabolic problem can sarcoidosis involve? | Heart (arrhythmias, heart block), nervous system, liver, kidneys, and hypercalcaemia.
+Q: Describe the Scadding chest X-ray stages. | 0 normal; I bilateral hilar lymphadenopathy; II lymphadenopathy with lung infiltrates; III infiltrates without lymphadenopathy; IV fibrosis.
+Q: What is the prognosis of Löfgren syndrome? | Good, as it usually resolves spontaneously.
+Q: Which investigations are used in suspected sarcoidosis? | Calcium, serum ACE, HRCT, lung function, ECG, eye examination and tissue biopsy showing non-caseating granulomas, excluding TB and lymphoma.
+Q: Why is serum ACE of limited diagnostic value? | It is raised in many but not specific, so it cannot diagnose sarcoidosis alone.
+Q: When are corticosteroids used in sarcoidosis? | For organ-threatening disease (cardiac, neurological, ocular, severe or progressive lung) or hypercalcaemia; methotrexate may follow as a steroid-sparing drug.
 
 ## Pulmonary embolism
 LV: Clinical · Application
@@ -593,6 +713,16 @@ M2#medicine-u04-13-q2@2: A patient with confirmed PE is normotensive but has a d
 M3#medicine-u04-13-q3@3: A woman with a large PE becomes hypotensive and confused. What is the priority after calling for senior help? | Systemic thrombolysis, unless contraindicated | Outpatient anticoagulation and review in a week | A repeat CT scan before any treatment | Oral aspirin alone | Shock indicates high-risk PE; thrombolysis is recommended to restore flow.
 TF1#medicine-u04-13-q4@1: A normal ECG rules out pulmonary embolism. | false | Many patients with PE have a normal ECG or only sinus tachycardia.
 SA2#medicine-u04-13-q5@2,3: Explain how a large pulmonary embolism can cause shock. | A large clot blocks the pulmonary arteries, sharply raising pulmonary vascular resistance. The right ventricle, which is thin-walled, dilates and fails as it can't generate enough pressure. The dilated right ventricle pushes the septum into the left ventricle, reducing left ventricular filling and cardiac output. Reduced coronary perfusion of the strained right ventricle worsens failure, producing hypotension and shock. | Raised pulmonary resistance ; Right ventricular failure ; Reduced left ventricular filling ; Spiral to shock
+Q: Where does the thrombus causing pulmonary embolism usually come from? | The deep veins of the legs.
+Q: What blood gas changes occur in PE and why? | Dead space and V/Q mismatch cause hypoxaemia, often with low PaCO_{2} from hyperventilation.
+Q: How does a large PE affect the heart? | It raises pulmonary vascular resistance, straining and dilating the right ventricle; in massive PE this reduces left ventricular filling and causes shock.
+Q: What ECG signs of right heart strain can occur in PE? | Right bundle branch block, right axis deviation and T-wave inversion in V1–V4.
+Q: Why should the S1Q3T3 pattern not be relied on? | It is uncommon and non-specific; sinus tachycardia is far more common and a normal ECG does not exclude PE.
+Q: Which investigations show right ventricular strain in PE? | CTPA can show right ventricular dilatation, echocardiography shows strain, and troponin and BNP may be raised.
+Q: Define high-risk PE and its treatment. | Hypotension or shock; call for senior help and give systemic thrombolysis unless contraindicated.
+Q: Define intermediate-risk PE and how it is managed. | Normal blood pressure with right ventricular dysfunction and/or raised troponin; admit and monitor closely for deterioration.
+Q: Which PE patients may be treated as outpatients? | Low-risk patients on a validated tool such as PESI or simplified PESI, with follow-up, per NICE NG158.
+Q: What safety-netting advice is given to a PE patient treated at home? | Return immediately with worsening breathlessness, chest pain, collapse or bleeding.
 
 ## Pulmonary hypertension
 LV: Clinical · Application
@@ -642,6 +772,16 @@ M2#medicine-u04-14-q2@2: A patient with severe COPD and chronic hypoxaemia devel
 M3#medicine-u04-14-q3@3: Six months after a PE, a man remains breathless despite anticoagulation. What should be considered? | Chronic thromboembolic pulmonary hypertension, with echo and specialist referral | Normal recovery that needs no further investigation | Asthma, treated with a salbutamol inhaler only | Anxiety alone | Persistent breathlessness after PE should prompt assessment for CTEPH, which can be treated surgically.
 TF1#medicine-u04-14-q4@1: A loud pulmonary component of the second heart sound can be a sign of pulmonary hypertension. | true | Raised pulmonary pressure makes pulmonary valve closure louder.
 SA2#medicine-u04-14-q5@2,3: Explain why treatment of pulmonary hypertension depends on its cause. | Groups differ in mechanism. In group 2, the problem is raised left heart pressure, so treatment targets heart failure or valve disease; PAH drugs may be harmful. In group 3, treating lung disease and hypoxia helps. In group 1 PAH, specific vasodilator drugs target the pulmonary vessels. In group 4 CTEPH, anticoagulation and surgery remove the clot burden. Correct classification at a specialist centre is therefore essential. | Group 2 treatment ; Group 3 treatment ; Group 1 specific drugs ; Group 4 surgery or anticoagulation
+Q: How is pulmonary hypertension defined? | Mean pulmonary arterial pressure above 20 mmHg at rest, measured by right heart catheterisation (2022 ESC/ERS).
+Q: What is group 1 pulmonary hypertension and what are its causes? | Pulmonary arterial hypertension: idiopathic, heritable, drug-induced, or associated with connective tissue disease, HIV or congenital heart disease.
+Q: What do groups 3, 4 and 5 pulmonary hypertension represent? | Group 3: lung disease or hypoxia; group 4: chronic thromboembolic (CTEPH) after PE; group 5: unclear or multifactorial mechanisms.
+Q: Name the symptoms of pulmonary hypertension. | Progressive exertional breathlessness, fatigue, chest pain, syncope on exertion and leg swelling.
+Q: Name the signs of pulmonary hypertension. | Loud pulmonary component of S2, right ventricular heave, raised JVP and peripheral oedema.
+Q: What is the role of echocardiography in pulmonary hypertension? | It estimates pulmonary pressure and shows right ventricular function; it is the key screening test.
+Q: Which tests look for the cause of pulmonary hypertension? | Lung function, CT, V/Q scan (for CTEPH), sleep studies and autoimmune tests.
+Q: How is group 2 and group 3 pulmonary hypertension managed? | Treat the underlying cause: heart failure in group 2, oxygen for hypoxic lung disease in group 3.
+Q: How is group 1 PAH treated and where? | With specific drugs such as endothelin receptor antagonists and PDE5 inhibitors, prescribed in designated specialist centres.
+Q: How is CTEPH treated? | Lifelong anticoagulation, with pulmonary endarterectomy potentially curative in suitable patients.
 
 ## Lung cancer
 LV: Clinical · Application
@@ -693,6 +833,16 @@ M2#medicine-u04-15-q2@2: A 55-year-old non-smoker has an unexplained cough and f
 M3#medicine-u04-15-q3@3: A man with lung cancer develops facial swelling, distended neck veins and breathlessness lying flat. What is the most likely diagnosis? | Superior vena cava obstruction needing urgent oncology referral | Anaphylaxis to his chemotherapy | Heart failure from fluid overload alone | A simple allergic reaction to pollen | These are classic features of SVC obstruction, an oncological emergency.
 TF1#medicine-u04-15-q4@1: Low-dose CT screening of high-risk smokers reduces lung cancer deaths. | true | Trials such as NLST and NELSON showed reduced lung cancer mortality.
 SA2#medicine-u04-15-q5@2,3: Explain why molecular testing is important in non-small cell lung cancer. | Some NSCLCs, especially adenocarcinomas in never-smokers, carry driver mutations such as EGFR or ALK rearrangements that can be treated with targeted tablets, often with better response and fewer side effects than chemotherapy. PD-L1 expression helps predict response to immunotherapy. Testing guides the choice of first-line treatment and improves outcomes. | Driver mutations ; Targeted therapy ; PD-L1 and immunotherapy ; Guides treatment choice
+Q: What proportion of lung cancers are non-small cell, and what are its types? | About 85%: adenocarcinoma, squamous cell carcinoma and large cell.
+Q: Describe small cell lung cancer. | About 15% of cases, strongly linked to smoking, fast-growing and often spread at diagnosis.
+Q: Name risk factors for lung cancer. | Smoking (most cases), second-hand smoke, radon, asbestos, air pollution and family history.
+Q: List symptoms of lung cancer. | Persistent cough, haemoptysis, breathlessness, chest pain, weight loss, appetite loss, hoarseness, recurrent chest infections and finger clubbing.
+Q: Who should have an urgent chest X-ray under NICE NG12? | People aged 40 and over with two or more unexplained symptoms, or one if they have ever smoked, within 2 weeks.
+Q: Which paraneoplastic syndromes occur with small cell lung cancer? | SIADH, Cushing's syndrome (ectopic ACTH) and Lambert–Eaton myasthenic syndrome.
+Q: Which lung cancer type causes hypercalcaemia and by what mechanism? | Mainly squamous cell carcinoma, through PTH-related peptide.
+Q: What is the presentation of metastatic spinal cord compression? | Back pain with neurological signs, needing emergency assessment.
+Q: Which investigations diagnose lung cancer? | CT chest, abdomen and pelvis, PET-CT, tissue biopsy (bronchoscopy, EBUS or CT-guided) and molecular testing.
+Q: Who is targeted for lung cancer screening in England? | People aged 55–74 with a history of smoking, using low-dose CT.
 
 ## Obstructive sleep apnoea
 LV: Clinical · Application
@@ -740,4 +890,14 @@ M2#medicine-u04-16-q2@2: A sleep study shows an AHI of 22 events an hour. How is
 M3#medicine-u04-16-q3@3: A taxi driver has moderate OSA with excessive daytime sleepiness. What is the correct advice? | Stop driving and inform the DVLA until symptoms are controlled with treatment | Continue driving but drink coffee on long shifts | Drive only at night when roads are quieter | There is no need to inform anyone | Excessive sleepiness from moderate or severe OSA is a legal reporting duty and a road safety risk.
 TF1#medicine-u04-16-q4@1: An Epworth Sleepiness Scale score above 10 suggests excessive daytime sleepiness. | true | Scores above 10 indicate more sleepiness than normal.
 SA2#medicine-u04-16-q5@2,3: Describe the assessment of a patient with suspected obstructive sleep apnoea. | Take a history of snoring, witnessed apnoeas, choking, unrefreshing sleep and daytime sleepiness, ideally with a bed partner's account, plus alcohol, sedatives and occupation, especially driving. Measure BMI, neck circumference and blood pressure. Use the Epworth Sleepiness Scale and STOP-Bang. Refer for a sleep study to measure the AHI. Advise on driving and the DVLA. | History including partner ; Examination ; Questionnaires ; Sleep study and driving advice
+Q: What is the mechanism of obstructive sleep apnoea? | The upper airway narrows or closes during sleep, causing apnoeas or hypopnoeas, oxygen drops and repeated arousals.
+Q: List the symptoms of OSA. | Loud snoring, witnessed pauses in breathing, choking at night, unrefreshing sleep, excessive daytime sleepiness, morning headaches and poor concentration.
+Q: Name risk factors for OSA. | Obesity (especially neck circumference), male sex, older age, alcohol and sedatives, nasal obstruction, enlarged tonsils and retrognathia.
+Q: Name conditions associated with OSA. | Hypertension, atrial fibrillation, type 2 diabetes and road traffic collisions.
+Q: What does the Epworth Sleepiness Scale measure? | The likelihood of dozing in eight situations; scores above 10 suggest excessive sleepiness.
+Q: What is STOP-Bang used for? | A questionnaire to estimate the risk of OSA.
+Q: What tests measure the apnoea–hypopnoea index? | Sleep studies: home respiratory polygraphy or polysomnography.
+Q: State the AHI bands for OSA severity. | 5–14 events an hour mild, 15–29 moderate, 30 or more severe.
+Q: What lifestyle measures help OSA? | Weight loss, reducing alcohol, avoiding sedatives and changing sleeping position.
+Q: Who is offered mandibular advancement devices? | Some people with mild OSA, or those who cannot tolerate CPAP.
 `;

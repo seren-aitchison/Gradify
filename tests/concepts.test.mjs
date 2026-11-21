@@ -60,3 +60,36 @@ test("MathGradify's graph: every reference resolves, no cycles, every module pla
   assert.ok(ancestors(g, "u13/Hypothesis testing").some((a) => a.key === "u12/Random variables"));
   assert.ok(descendants(g, "u03/Foundations").length > 100);
 });
+
+// Every course with a module-level concept graph: valid, and (where its chapter links are written by hand rather than
+// derived from the graph) in agreement with them, so a lesson's "Builds on" and the mastery map never contradict.
+for (const slug of ["maths", "biology", "chemistry", "computing"]) {
+  test(`${slug}'s concept graph: references resolve, no cycles, no stranded modules, agrees with its chapter links`, async () => {
+    const cfg = (await import(`../kit/courses/${slug}/course.js`)).default;
+    const { CHAPTER_PREREQS } = await import("../kit/learning/chapter-map.js");
+    assert.ok(cfg.concepts, `${slug} has a concept graph`);
+    const g = conceptGraph(cfg.units, cfg.concepts), v = validateGraph(g);
+    assert.deepEqual(v.unknown, []);
+    assert.deepEqual(v.cycles, []);
+    assert.deepEqual(v.isolated, []);
+    assert.equal(g.nodes.size, cfg.units.reduce((a, u) => a + new Set(u.lessons.map((l) => l.module)).size, 0), "every module is in the graph");
+    const pre = CHAPTER_PREREQS[slug];
+    if (!pre) return;   // chapter links derived from this graph (kit/learning/chapter-map.js), so they agree by construction
+    const n = new Map(cfg.units.map((u) => [u.id, u.n]));
+    const below = (c, seen = new Set()) => { for (const p of pre[c] || []) if (!seen.has(p)) { seen.add(p); below(p, seen); } return seen; };
+    const missing = [];
+    for (const [k, ps] of g.prereq) for (const p of ps) {
+      const a = n.get(k.split("/")[0]), b = n.get(p.split("/")[0]);
+      if (a !== b && !below(a).has(b)) missing.push(`${k} needs ${p}, but chapter ${a} doesn't build on chapter ${b}`);
+    }
+    assert.deepEqual(missing, []);
+  });
+}
+
+test("a lesson in a course with a concept graph lists what it builds on", async () => {
+  const cfg = (await import("../kit/courses/chemistry/course.js")).default;
+  const g = conceptGraph(cfg.units, cfg.concepts);
+  const pre = prerequisitesOfLesson(g, "u13-01");   // Curly arrow notation, the first lesson in Mechanism basics
+  assert.deepEqual(pre.modules.sort(), ["u04/Shape and polarity", "u07/Rates and collisions", "u12/Organic reactions"]);
+  assert.deepEqual(pre.earlier, []);
+});

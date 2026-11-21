@@ -25,7 +25,7 @@ Deno.serve(async (req) => {
   for (const s of subs ?? []) if (prefsOf(s.prefs).on) (byUser.get(s.user_id) || byUser.set(s.user_id, []).get(s.user_id)!).push(s);
   let sent = 0, gone = 0;
   for (const [userId, devices] of byUser) {
-    // reminders when Gradify is closed are Gradify Plus (supabase/migrations/20261117120000_plus_plan.sql: true for
+    // reminders when Gradify is closed are Gradify Pro (supabase/migrations/20261117120000_plus_plan.sql: true for
     // everyone until plans are enforced; before that migration, the function doesn't exist and nobody is held back)
     const { data: allowed, error: planError } = await db.rpc("plus_allowed_for", { uid: userId });
     if (!planError && allowed === false) continue;

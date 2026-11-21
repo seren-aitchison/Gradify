@@ -1,0 +1,64 @@
+{
+ "id": "chem-fractionating-column",
+ "renderer": "apparatus",
+ "course": "chemistry",
+ "unit": "u17",
+ "lesson": "Petroleum chemistry",
+ "title": "Fractional distillation of crude oil",
+ "caption": "Crude oil is vaporised and enters near the bottom of a column that is hot at the bottom and cooler at the top. Each fraction condenses where the temperature falls below its boiling range: the shortest molecules, with the lowest boiling points, rise furthest.",
+ "alt": "A tall column with outlets at different heights: refinery gases at the top, then petrol, naphtha, kerosene, diesel, fuel oil, and bitumen at the bottom.",
+ "description": [
+  "refinery gases: below 25 °C.",
+  "petrol: 40–110 °C.",
+  "naphtha: 110–180 °C.",
+  "kerosene: 180–260 °C.",
+  "diesel: 260–340 °C.",
+  "fuel oil: 340–400 °C.",
+  "bitumen: above 400 °C."
+ ],
+ "also": [
+  {
+   "course": "gcse",
+   "unit": "u05",
+   "lesson": "Crude oil and hydrocarbons"
+  }
+ ],
+ "kind": "fractionating",
+ "fractions": [
+  {
+   "name": "refinery gases",
+   "bp": "below 25",
+   "order": 0
+  },
+  {
+   "name": "petrol",
+   "bp": "40–110",
+   "order": 1
+  },
+  {
+   "name": "naphtha",
+   "bp": "110–180",
+   "order": 2
+  },
+  {
+   "name": "kerosene",
+   "bp": "180–260",
+   "order": 3
+  },
+  {
+   "name": "diesel",
+   "bp": "260–340",
+   "order": 4
+  },
+  {
+   "name": "fuel oil",
+   "bp": "340–400",
+   "order": 5
+  },
+  {
+   "name": "bitumen",
+   "bp": "above 400",
+   "order": 6
+  }
+ ]
+}

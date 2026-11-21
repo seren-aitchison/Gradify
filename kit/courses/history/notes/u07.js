@@ -35,6 +35,16 @@ M2#history-u07-01-q2@2: Why did Bismarck try to keep France isolated? | To preve
 TF1#history-u07-01-q3@1: Wilhelm II dismissed Bismarck in 1890. | true | Wilhelm dismissed Bismarck in 1890 and soon changed Germany's foreign policy.
 M3#history-u07-01-q4@3: Which judgement about Weltpolitik is best supported? | It helped create the encirclement that Germany's leaders came to fear | It made Germany more secure by isolating Russia | It had no effect on Britain's attitude to Germany | It was abandoned well before 1900 | Its effects on Russia and Britain made Germany's position worse.
 SA3#history-u07-01-q5@2,3: How far did Great Power rivalry make a European war likely by 1914? | German unification in 1871 created a dominant continental power and a French grievance over Alsace-Lorraine. Bismarck managed the risks, but after 1890 Wilhelm II's Weltpolitik, the lapse of the Reinsurance Treaty and the naval programme pushed Russia and Britain towards France. Rivalry made crises more dangerous, though war still depended on decisions in 1914. A strong answer weighs structure against choice. | Explains the impact of unification ; Explains Bismarck's system ; Explains Weltpolitik and its effects ; Weighs rivalry against later decisions ; Reaches a judgement
+Q: Name the six Great Powers of Europe in 1914. | Britain, France, Russia, Germany, Austria-Hungary and Italy.
+Q: Define the balance of power. | The idea that no single state should dominate, so that power is spread to keep the peace.
+Q: How was Germany unified in 1871? | Prussia defeated France in the Franco-Prussian War, and the new German empire followed.
+Q: Which declining empire sat on the edge of the Great Powers' rivalries? | The Ottoman Empire.
+Q: What happened to Bismarck's treaty with Russia in 1890, and with what result? | It was allowed to lapse, and Russia allied with France in 1894.
+Q: How did Germany's naval programme change Britain's attitude to Germany? | It turned Britain from a possible partner into a rival.
+Q: What was the aim of Weltpolitik? | To win Germany a world role equal to Britain's.
+Q: What misconception about the alliance camps does the lesson warn against? | That the powers sat in two fixed camps for decades; alignments formed gradually, and in the 1890s Britain was at odds with France and Russia.
+Q: What is debated about German policy after 1890? | How far it was deliberately aggressive, rather than clumsy and defensive.
+Q: What position did the new German empire hold on the continent? | It became the strongest military and industrial power on the continent.
 
 ## Militarism
 LV: GCSE and A level · Application
@@ -72,6 +82,16 @@ M2#history-u07-02-q2@2: Why did the Schlieffen Plan make British involvement mor
 TF1#history-u07-02-q3@1: By 1912 Germany had begun to shift spending from its navy back to its army. | true | Germany could not match Britain's building and refocused on the army.
 M3#history-u07-02-q4@3: Which judgement about war plans in 1914 is best supported? | They constrained leaders' choices and sped escalation, but leaders still chose war | They made war automatic, so no leader made any real choice | They had no effect on events in July 1914 | They were abandoned before the July Crisis began | Plans mattered but did not remove decisions.
 SA3#history-u07-02-q5@2,3: How important was militarism as a cause of the First World War? | The Anglo-German naval race, from the Navy Laws of 1898 and 1900 to Dreadnought in 1906, turned Britain against Germany. Mass conscript armies and rigid railway timetables made mobilisation hard to stop, and the Schlieffen Plan turned a crisis with Russia into an attack on France through Belgium. But militarism worked with alliances and decisions in July 1914. A strong answer explains its role and weighs it against other causes. | Explains the naval race ; Explains mass armies and mobilisation ; Explains the Schlieffen Plan ; Weighs militarism against other causes ; Reaches a judgement
+Q: What did Germany's Navy Laws of 1898 and 1900 aim to build? | A fleet strong enough to challenge Britain.
+Q: How did Britain respond to the German naval challenge? | It launched HMS Dreadnought in 1906 and began a building programme Germany could not match.
+Q: What had the naval race achieved for Germany by 1912? | Not command of the sea, but it had convinced Britain that Germany was its main rival.
+Q: How did continental powers build mass armies? | Through conscription, training millions of reservists who could be mobilised in days.
+Q: Why were mobilisation plans so rigid? | Railway timetables governed mobilisation, so plans were hard to change once begun.
+Q: Who drew up the Schlieffen Plan, and who revised it? | Alfred von Schlieffen drew it up; Helmuth von Moltke revised it.
+Q: What assumption made the Schlieffen Plan turn an eastern crisis into a western attack? | It assumed that war with Russia meant war with France.
+Q: Define mobilisation. | Calling up reservists and moving armies to their war positions.
+Q: What does militarism mean beyond simply having armies? | The arms race, the influence of military planning on policy, and plans that left little time for diplomacy.
+Q: What has Terence Zuber argued about the Schlieffen Plan? | That the plan, as usually described, never existed as a fixed plan.
 
 ## Alliances
 LV: GCSE and A level · Foundation
@@ -109,6 +129,16 @@ M2#history-u07-03-q2@2: Why did Italy not join the war on Germany's side in 1914
 TF1#history-u07-03-q3@1: Britain had a formal military alliance obliging it to fight for France in 1914. | false | The Entente Cordiale was an understanding; Britain entered over Belgium.
 M3#history-u07-03-q4@3: Which is the best judgement about alliances and the outbreak of war? | They explain how a Balkan crisis spread, but not why war began | They made war automatic once Franz Ferdinand was killed | They played no part in the July Crisis | They obliged every power to declare war on the same day | Alliances spread the war; decisions began it.
 SA3#history-u07-03-q5@2,3: How far did the alliance system cause the First World War? | The Dual Alliance (1879), Triple Alliance (1882), Franco-Russian Alliance (1894) and the ententes of 1904 and 1907 linked the Great Powers, so a quarrel between Austria-Hungary and Serbia drew in Russia, Germany and France. But the alliances were defensive, Italy stayed out, and Britain entered over Belgium. A strong answer argues that alliances explain the spread of war more than its cause. | Describes the alliances accurately ; Explains how they spread the conflict ; Explains their limits ; Uses Italy or Britain as evidence ; Reaches a judgement
+Q: Which countries formed the Dual Alliance of 1879? | Germany and Austria-Hungary.
+Q: Which country joined Germany and Austria-Hungary in 1882 to form the Triple Alliance? | Italy.
+Q: What did the Franco-Russian Alliance of 1894 promise? | Mutual support between France and Russia against Germany.
+Q: Which disputes did the Anglo-Russian Convention of 1907 settle? | Disputes between Britain and Russia over Persia, Afghanistan and Tibet.
+Q: Define an entente. | A friendly understanding between states, short of a binding alliance.
+Q: What contact had Britain had with France short of a formal obligation to fight? | Military conversations with France had taken place.
+Q: When did Italy join the Entente? | In 1915.
+Q: How did the alliances link a quarrel between Austria-Hungary and Serbia to other powers? | They drew in Russia, then Germany, then France.
+Q: Why did Britain enter the war in 1914, according to the lesson? | Over the invasion of Belgium, rather than because of an alliance duty.
+Q: What is debated about the alliance system? | How far it made war inevitable, rather than more dangerous.
 
 ## Imperial rivalry
 LV: GCSE and A level · Application
@@ -145,6 +175,16 @@ M2#history-u07-04-q2@2: What was the main effect of the two Moroccan crises? | T
 TF1#history-u07-04-q3@1: The Balkan Wars of 1912–1913 increased Serbia's territory. | true | Serbia roughly doubled in size, alarming Austria-Hungary.
 M3#history-u07-04-q4@3: Why did the Bosnian crisis of 1908 make war in 1914 more likely? | Russia resolved not to back down again, while Serb anger at Austria-Hungary grew | It made Austria-Hungary give Bosnia to Serbia | It ended the rivalry between Russia and Austria-Hungary | It turned Serbia into a firm ally of Germany | Humiliation shaped Russian decisions in 1914.
 SA3#history-u07-04-q5@2,3: How far did imperial rivalry cause the First World War? | The Moroccan crises of 1905 and 1911 drew Britain and France together against Germany, and Ottoman decline turned the Balkans into a flashpoint: the 1908 annexation of Bosnia humiliated Russia and enraged Serbia, and the Balkan Wars strengthened Serbia. These made Austria-Hungary and Russia less willing to compromise in 1914. But rivalry worked through alliances, militarism and nationalism. A strong answer weighs these. | Explains the Moroccan crises ; Explains Balkan rivalry ; Links rivalry to decisions in 1914 ; Weighs against other causes ; Reaches a judgement
+Q: What did Wilhelm II do at Tangier in 1905? | He declared support for Moroccan independence, challenging France's influence there.
+Q: What was Germany's position at the end of the Algeciras Conference of 1906? | Britain had backed France, and Germany was left almost isolated.
+Q: What did Germany accept as compensation in the 1911 Moroccan crisis? | Land in the Congo.
+Q: Why did Ottoman decline make the Balkans dangerous? | It left a power vacuum that Austria-Hungary and Russia both sought to fill.
+Q: Which territory did Austria-Hungary annex in 1908? | Bosnia-Herzegovina.
+Q: Why did Serb nationalists resent the 1908 annexation? | They saw Bosnia as Serb land.
+Q: Why was Russia weak during the Bosnian crisis of 1908? | It had been defeated by Japan in 1905.
+Q: What did Russian leaders resolve after the Bosnian crisis? | Not to be humiliated again.
+Q: Where was the most dangerous imperial rivalry, according to the lesson? | In the Balkans, on Europe's own doorstep, not overseas.
+Q: What is debated about imperialism as a cause of war? | How much economic imperialism, rather than strategic rivalry, drove the Great Powers towards war.
 
 ## Nationalism
 LV: GCSE and A level · Application
@@ -181,6 +221,16 @@ M2#history-u07-05-q2@2: Why was nationalism a particular danger to Austria-Hunga
 TF1#history-u07-05-q3@1: Nationalism took the same form in every European country before 1914. | false | It ranged from Great Power pride to Pan-Slavism and Serbian unification.
 M3#history-u07-05-q4@3: Which judgement about nationalism and the war is best supported? | It turned a Balkan quarrel into a matter of survival and prestige for several powers | It was the only cause of the war, making everything else irrelevant | It had no effect on decisions taken in July 1914 | It mattered only to the Serbian government | It raised the stakes for several powers at once.
 SA3#history-u07-05-q5@2,3: How far was nationalism the main cause of the First World War? | Serbian nationalism, organised by groups such as the Black Hand, threatened multinational Austria-Hungary, which came to see war on Serbia as self-defence; Pan-Slav feeling made Russia reluctant to abandon Serbia; and Great Power nationalism made retreat look humiliating. But nationalism acted through alliances, military plans and the decisions of July 1914. A strong answer weighs nationalism against these. | Explains different forms of nationalism ; Explains the threat to Austria-Hungary ; Links nationalism to 1914 ; Weighs against other causes ; Reaches a judgement
+Q: Define nationalism. | The belief that each nation should have its own state and that loyalty to it comes first.
+Q: Name two examples of Great Power nationalism given in the lesson. | French resentment over Alsace-Lorraine and German demands for a "place in the sun".
+Q: What encouraged Great Power nationalism? | The popular press.
+Q: What was the aim of Serbian nationalism? | To unite all Serbs, many of whom lived inside Austria-Hungary.
+Q: Which Austro-Hungarian chief of staff urged war on Serbia well before 1914? | Conrad von Hötzendorf.
+Q: Who led the Black Hand? | Dragutin Dimitrijević.
+Q: What did the Black Hand do for nationalist groups? | It trained and armed them, including the young Bosnians who would act in Sarajevo.
+Q: Why did Vienna see a war with Serbia as self-defence? | Serbian nationalism threatened Austria-Hungary's existence.
+Q: How did Great Power nationalism affect governments in a crisis? | It made backing down look like humiliation for every government.
+Q: What is debated about popular nationalism and the war? | How far it pushed governments towards war, rather than governments using it.
 
 ## The assassination of Archduke Franz Ferdinand
 LV: GCSE · Foundation
@@ -217,6 +267,16 @@ M2#history-u07-06-q2@2: Which group helped arm the Sarajevo assassins? | The Bla
 TF1#history-u07-06-q3@1: The first attack that morning, a bomb, failed to kill the Archduke. | true | Čabrinović's bomb bounced off the car and injured others.
 M3#history-u07-06-q4@3: Why did this assassination lead to a general war? | Decisions in Vienna, Berlin and St Petersburg in the following weeks turned it into one | Every assassination of a royal heir led to war in that period | Princip declared war on Austria-Hungary on behalf of Serbia | The Archduke's death left no one to rule Austria-Hungary | The trigger worked through later choices.
 SA3#history-u07-06-q5@2,3: Why did the assassination of Franz Ferdinand lead to war? | The assassination by Princip, armed with Black Hand help, convinced Austria-Hungary that Serbia threatened its survival, and Vienna decided to settle the matter by force. Germany's blank cheque encouraged it, and Russia, determined not to repeat its 1908 humiliation, backed Serbia. Alliances and war plans then spread the conflict. A strong answer explains that the assassination was a trigger whose consequences depended on decisions. | Describes the assassination accurately ; Explains Austria-Hungary's response ; Explains German and Russian decisions ; Distinguishes trigger from cause ; Reaches a judgement
+Q: Who was Archduke Franz Ferdinand? | The heir to the Austro-Hungarian throne.
+Q: Who accompanied Franz Ferdinand to Sarajevo and was also killed? | His wife Sophie.
+Q: To which movement did the Sarajevo assassins belong? | Young Bosnia, a movement of young South Slav nationalists in Bosnia.
+Q: Who threw a bomb at the Archduke's car in the morning? | Nedeljko Čabrinović.
+Q: How did the Archduke's car come to stop near Princip? | On the way to visit the wounded, his driver took a wrong turn and stopped to reverse.
+Q: How did Gavrilo Princip die? | Of tuberculosis in prison in 1918.
+Q: How did Austria-Hungary interpret the assassination? | As proof that Serbia threatened its existence, so it decided to settle the matter by force.
+Q: What did Germany promise Austria-Hungary in early July 1914? | Its support, known as the blank cheque.
+Q: Define a trigger, as used in this lesson. | The event that sets an outcome in motion.
+Q: What is debated about the Serbian government and the plot? | How far it knew about or bore responsibility for the plot.
 
 ## The July Crisis
 LV: GCSE and A level · Application
@@ -260,6 +320,16 @@ TF1#history-u07-07-q3@1: Serbia rejected every demand in the Austro-Hungarian ul
 M3#history-u07-07-q4@3: Which judgement about responsibility is best supported by the July Crisis? | Several powers' decisions mattered, and historians debate where most responsibility lies | Serbia alone was responsible because the assassin was a Serb | Britain was mainly responsible for the war breaking out | No power took any decision that affected the outcome | The sequence shows shared but contested responsibility.
 SA3#history-u07-07-q5@2,3: Which country was most responsible for the outbreak of war in 1914? | Germany's blank cheque encouraged Austria-Hungary, whose ultimatum of 23 July was meant to be rejected and which declared war on Serbia on 28 July. Russia's general mobilisation on 30 July triggered German war plans, which invaded Belgium and brought Britain in on 4 August. Fischer stressed German responsibility; Clark spread it more widely. A strong answer weighs these decisions and reaches a supported judgement. | Explains the sequence of decisions ; Assesses Germany ; Assesses at least one other power ; Uses historians' interpretations ; Reaches a judgement
 M2#history-u07-07-q6@1: Which was the trigger of the July Crisis of 1914? | The assassination of Franz Ferdinand | The alliance system | The naval race | Imperial rivalry in Africa | The assassination on 28 June 1914 set off the crisis.
+Q: What did Austria-Hungary send Serbia on 23 July 1914? | An ultimatum with a 48-hour deadline, designed to be rejected.
+Q: Define an ultimatum. | A final set of demands with a deadline, backed by a threat.
+Q: When did Russia order general mobilisation? | On 30 July 1914.
+Q: On which dates did Germany declare war on Russia and on France? | On Russia on 1 August and on France on 3 August 1914.
+Q: What did Germany do on 4 August 1914? | It invaded Belgium.
+Q: What did Sir Edward Grey propose during the July Crisis? | A conference of the powers.
+Q: What did Wilhelm II briefly suggest to Austria-Hungary in July 1914? | That Austria-Hungary halt in Belgrade.
+Q: How did Russian leaders view their general mobilisation? | As a precaution, not an act of war.
+Q: What part did France play in the July Crisis, according to the lesson? | France backed Russia.
+Q: How do Fischer and Clark differ on responsibility for the war? | Fischer emphasises Germany's responsibility; Clark spreads responsibility more widely.
 
 ## The outbreak of war
 LV: GCSE · Foundation
@@ -300,6 +370,16 @@ TF1#history-u07-08-q3@1: Every European responded to the outbreak of war with en
 M3#history-u07-08-q4@3: Which judgement about public reactions to war in 1914 is best supported? | Reactions were mixed, and the image of universal enthusiasm is exaggerated | Everyone opposed the war from the first day | Enthusiasm was universal in every country and class | Public opinion had no link to volunteering | The evidence shows enthusiasm alongside anxiety and reluctance.
 SA3#history-u07-08-q5@2,3: Why did the Schlieffen Plan fail in 1914? | Belgian resistance and destroyed railways slowed the advance; the BEF arrived sooner than expected and fought at Mons; Russia mobilised faster, so troops went east; and exhausted German armies turned east of Paris, opening a gap exploited at the Marne in September 1914. A strong answer links these and judges which mattered most. | Explains Belgian resistance ; Explains the role of the BEF or France ; Explains Russian mobilisation ; Explains the Marne ; Reaches a judgement
 M2#history-u07-08-q6@1: Why did the assassination of Franz Ferdinand lead to a general European war? | Alliances and war plans drew in the great powers one after another | Serbia declared war on every European power at once | Britain invaded Austria-Hungary immediately | The assassination happened in Berlin | The trigger worked through the alliance system and mobilisation plans.
+Q: Where did the BEF fight delaying actions in August 1914? | At Mons and Le Cateau.
+Q: How close had the Germans come to Paris by early September 1914? | They were close to Paris.
+Q: To which river were the Germans driven back after the Marne? | The river Aisne.
+Q: Which battle of October–November 1914 came before the continuous trench line? | The First Battle of Ypres.
+Q: Where did the trench line run by the end of 1914? | From the Channel to Switzerland.
+Q: How did Belgium slow the German advance? | Through resistance and the destruction of railways.
+Q: Why were German troops moved east in 1914? | Russia mobilised more quickly than planned.
+Q: What evidence supports the image of enthusiasm for war in 1914? | Crowds cheered in capital cities, and in Britain hundreds of thousands volunteered in the first weeks.
+Q: Name four motives for volunteering given in the lesson. | Duty, local pressure, unemployment and adventure.
+Q: Which British leader expected a long war? | Kitchener.
 
 ## Trench warfare
 LV: GCSE · Foundation
@@ -338,6 +418,16 @@ M2#history-u07-09-q2@2: Why was defence stronger than attack on the Western Fron
 TF1#history-u07-09-q3@1: Soldiers on the Western Front usually spent months at a time in the front line. | false | Units rotated between front, support, reserve and rest.
 M3#history-u07-09-q4@3: Which judgement about new weapons is best supported? | No single weapon broke the stalemate; combining them with new tactics did | Gas alone won the war for the Allies in 1915 | Tanks were useless throughout the war | Machine guns were abandoned after 1915 | Combined arms, not one invention, changed the war.
 SA3#history-u07-09-q5@2,3: Why was it so hard to break the stalemate on the Western Front? | Trench systems with wire, machine guns and artillery made attacks across no man's land very costly, and defenders could bring up reserves by railway faster than attackers could advance over shell-torn ground. Gas (from April 1915) and tanks (from September 1916) were countered or unreliable at first. Only by 1918 did combined artillery, infantry, tanks and aircraft restore movement. A strong answer explains these and judges what changed. | Explains trench defences ; Explains logistics and reserves ; Explains the limits of new weapons ; Explains what changed by 1918 ; Reaches a judgement
+Q: Name the three lines of trenches in a trench system. | Front, support and reserve trenches.
+Q: What linked the lines of trenches together? | Communication trenches.
+Q: What caused trench foot? | Standing in cold water and mud.
+Q: Name four features of daily life in the trenches. | Routine, boredom, rats and lice.
+Q: How did artillery bombardments hinder attackers? | They warned of attacks and churned the ground into mud.
+Q: Which gas did Germany release at the Second Battle of Ypres? | Chlorine.
+Q: Which gases were used later in the war? | Phosgene and mustard gas.
+Q: What soon reduced the effect of gas? | Gas masks.
+Q: At which two battles did massed tanks help? | Cambrai in 1917 and Amiens in 1918.
+Q: How reliable were the first tanks? | Unreliable at first, breaking down often, but more effective by 1918.
 
 ## The Western Front
 LV: GCSE and A level · Application
@@ -375,6 +465,16 @@ M2#history-u07-10-q2@2: Why did Britain launch the Somme offensive in July 1916?
 TF1#history-u07-10-q3@1: Alan Clark's The Donkeys portrayed British generals as incompetent. | true | Clark's 1961 book helped popularise the "lions led by donkeys" view.
 M3#history-u07-10-q4@3: Which judgement about Haig is best supported? | He made costly misjudgements, but the army he led improved and helped win in 1918 | He was a brilliant general who made no mistakes | He refused to fight any offensive battles | He commanded only the navy | The evidence supports a balanced view: costly misjudgements, but real improvement by 1918.
 SA3#history-u07-10-q5@2,3: "British generals were lions led by donkeys." How far do you agree? | The Somme (about 57,000 British casualties on 1 July 1916) and Passchendaele show costly offensives for little ground, and Alan Clark portrayed generals such as Haig as careless of lives. But generals faced unprecedented problems; the Somme relieved Verdun and wore down Germany; and historians such as Sheffield argue for a learning curve that produced victory in 1918. A strong answer weighs these. | Uses evidence of costly offensives ; Explains the donkeys interpretation ; Explains the learning-curve argument ; Considers context ; Reaches a judgement
+Q: When was the Battle of Verdun fought? | From February to December 1916.
+Q: How many British casualties were there on the first day of the Somme? | About 57,000, including about 19,000 killed.
+Q: When did the Somme offensive end? | On 18 November 1916.
+Q: By what other name is Passchendaele known? | Third Ypres.
+Q: What conditions and gains marked Passchendaele? | It was fought in deep mud and gained a few miles at great cost.
+Q: Name three things the Somme achieved. | It relieved Verdun, inflicted heavy losses on the German army and taught the British army lessons.
+Q: What did Ludendorff later write about the Somme? | That the German army had been worn down by it.
+Q: Define attrition. | Wearing down the enemy by continuous losses.
+Q: Which historian argued for a British learning curve? | Gary Sheffield.
+Q: Which successful campaign of 1918 did the British army lead? | The Hundred Days.
 
 ## Gallipoli
 LV: GCSE and A level · Application
@@ -412,6 +512,16 @@ M2#history-u07-11-q2@2: Why did the naval attack of 18 March 1915 make the landi
 TF1#history-u07-11-q3@1: Mustafa Kemal, who defended Gallipoli, later led the Turkish Republic. | true | He became the Turkish Republic's first president in 1923.
 M3#history-u07-11-q4@3: Which judgement about Gallipoli's significance is best supported? | A military failure with lasting importance for national memory in several countries | A decisive Allied victory that ended the war in the east | An event remembered only in Britain | A campaign with no effect on anyone's career | Its significance lies in memory as much as in military results.
 SA3#history-u07-11-q5@2,3: Why did the Gallipoli campaign fail? | The naval attack of 18 March 1915 failed on mines and warned the Ottomans, who strengthened their defences. The landings of 25 April were poorly coordinated, leaving troops on narrow beaches below high ground; Ottoman forces under commanders such as Mustafa Kemal fought skilfully; and disease, heat and supply problems weakened the Allies until evacuation by January 1916. A strong answer weighs planning failures against Ottoman defence. | Explains the naval failure ; Explains problems with the landings ; Explains Ottoman defence ; Explains conditions ; Reaches a judgement
+Q: When did the Ottoman Empire join the Central Powers? | In late 1914.
+Q: What office did Winston Churchill hold when he backed the Dardanelles plan? | First Lord of the Admiralty.
+Q: Why did the naval attack of 18 March 1915 fail? | Several ships struck mines.
+Q: Which troops landed on the Gallipoli peninsula on 25 April 1915? | British, French, Australian and New Zealand troops.
+Q: Why were the troops who landed in a poor position? | The landings were poorly coordinated, pinning troops on narrow beaches below high ground.
+Q: Name three conditions that weakened the Allied forces at Gallipoli. | Disease, heat and supply problems.
+Q: By when had the Allied forces been evacuated from Gallipoli? | By January 1916.
+Q: What effect did the failure at Gallipoli have on Churchill? | It damaged his career for a time.
+Q: What does Anzac stand for? | The Australian and New Zealand Army Corps.
+Q: What are the Dardanelles? | The narrow straits between the Mediterranean and Constantinople.
 
 ## The Eastern Front, 1914–1917
 LV: GCSE and A level · Application
@@ -449,6 +559,16 @@ M2#history-u07-12-q2@2: Why was the Eastern Front more mobile than the Western F
 TF1#history-u07-12-q3@1: The 1915 breakthrough at Gorlice–Tarnów forced Russia to retreat from Poland. | true | It began the Great Retreat, in which Russia lost Poland in 1915.
 M3#history-u07-12-q4@3: Which judgement about the war and the Russian Revolution is best supported? | The war decisively accelerated long-standing problems | The war had no connection to the revolution | The revolution happened before the war began | Only events in 1905 mattered | Long-term problems plus wartime strain produced 1917.
 SA3#history-u07-12-q5@2,3: How far did the Eastern Front cause the collapse of Tsarist Russia? | Defeats at Tannenberg and the Great Retreat of 1915, the enormous cost of the Brusilov Offensive and millions of casualties discredited the regime, especially once Nicholas II took command in 1915; shortages of food and fuel fed unrest in the cities. But autocracy, land hunger and urban grievances dated back long before, as 1905 showed. A strong answer judges the war an accelerator rather than the only cause. | Explains defeats and losses ; Explains the Tsar's role ; Explains home-front shortages ; Considers long-term causes ; Reaches a judgement
+Q: What happened at Tannenberg in August 1914? | German forces destroyed a Russian army in East Prussia.
+Q: What was the Great Retreat? | Russia's withdrawal from Poland after the 1915 breakthrough.
+Q: Which powers broke through at Gorlice–Tarnów in May 1915? | Germany and Austria-Hungary.
+Q: What did the Brusilov Offensive achieve, and at what price? | It nearly broke Austria-Hungary, but at enormous cost.
+Q: Which shortages undermined the Tsarist regime? | Shortages of weapons in 1915, and food and fuel crises in the cities.
+Q: Name three long-term causes of the Russian Revolution given in the lesson. | Autocracy, peasant land hunger and poor working conditions.
+Q: What triggered the February Revolution of 1917? | Bread queues and strikes in Petrograd, when soldiers joined the protesters.
+Q: What misconception about the Eastern Front does the lesson warn against? | That it was a trench stalemate like the west; huge advances and retreats were common.
+Q: What scale of losses did Russia suffer in the war? | Millions of men killed, wounded or captured.
+Q: What is debated about the war and the Russian Revolution? | Whether the war caused it or only accelerated a collapse that was already coming.
 
 ## The British Home Front, 1914–1918
 LV: GCSE · Application
@@ -488,6 +608,16 @@ M2#history-u07-13-q2@2: Why did the government introduce conscription in 1916? |
 TF1#history-u07-13-q3@1: German airships bombed British towns during the First World War. | true | Zeppelin raids on British towns began in 1915; Gotha bombers followed in 1917.
 M3#history-u07-13-q4@3: Which judgement about the state and the people is best supported? | A dramatic temporary expansion of state power, with some lasting effects | No change at all in the role of government | A permanent dictatorship replacing Parliament | A war fought without any involvement of civilians | Controls grew sharply, many ended, some effects lasted.
 SA3#history-u07-13-q5@2,3: How far did the First World War change life on the British Home Front? | DORA (1914) gave the state power over industry, the press and pubs; conscription from January 1916 replaced volunteering; rationing came in 1918; and Zeppelins and Gothas bombed civilians. Many controls ended after 1918, but the vote was extended and expectations of the state rose. A strong answer weighs dramatic wartime change against its limits. | Explains state control ; Explains conscription ; Explains rationing or air raids ; Considers what lasted ; Reaches a judgement
+Q: Name three powers that DORA gave the government. | To take over land and factories, censor the press and restrict pub opening hours.
+Q: What role did Lloyd George take after the shell crisis of 1915? | Minister of Munitions, expanding production.
+Q: Why was British Summer Time introduced in 1916? | To make the most of daylight.
+Q: Who was first conscripted under the Military Service Act of 1916? | Single men aged 18 to 41.
+Q: How was conscription extended later in 1916? | It was extended to married men.
+Q: What happened to conscientious objectors? | They appeared before tribunals; some did non-combatant service and some were imprisoned.
+Q: Why was compulsory rationing needed by 1918? | German submarines sank food imports.
+Q: Which foods were rationed in 1918? | Sugar, meat and butter.
+Q: Which towns did German warships shell in December 1914? | Scarborough, Hartlepool and Whitby.
+Q: What attacked London in 1917? | German Gotha bombers.
 
 ## Total war
 LV: GCSE and A level · Application
@@ -524,6 +654,16 @@ M2#history-u07-14-q2@2: How did the British blockade affect Germany? | It cut im
 TF1#history-u07-14-q3@1: In total war the line between soldiers and civilians becomes blurred. | true | Civilian work and morale become part of the war effort and targets.
 M3#history-u07-14-q4@3: Which judgement about total war in 1914–1918 is best supported? | It moved decisively towards total war, which the Second World War took further | It was a limited war fought only by professional armies | It was more total than any later war in history | It never involved civilians in any country | The evidence supports a strong move towards total war.
 SA3#history-u07-14-q5@2,3: How far was the First World War a total war? | States mobilised manpower through conscription, took control of industry, labour and food, and used propaganda; the British blockade caused shortages such as the turnip winter, and unrestricted submarine warfare from February 1917 targeted merchant shipping. But much civilian life continued and deliberate bombing of cities was limited compared with 1939–1945. A strong answer judges how far the war met the definition. | Defines total war ; Explains mobilisation ; Explains economic warfare ; Explains limits ; Reaches a judgement
+Q: Name the resources a state mobilises in total war. | Manpower, industry, agriculture, finance and opinion.
+Q: Why do civilians become targets in total war? | Their work and morale become military targets.
+Q: Define a blockade. | Using naval power to cut off an enemy's imports.
+Q: Define unrestricted submarine warfare. | Sinking merchant ships without warning.
+Q: What major consequence did unrestricted submarine warfare have? | It helped bring the United States into the war.
+Q: Name three things governments took control of in total war. | Industry, labour and food distribution.
+Q: What did the British royal family change its name from and to in 1917? | From Saxe-Coburg and Gotha to Windsor.
+Q: Besides changing the royal name, name two ways total war reached into ideas and identity. | Governments rationed news and interned enemy aliens.
+Q: Name two limits to calling the First World War a total war. | Much civilian life continued, and there was little deliberate mass bombing of cities compared with 1939–1945.
+Q: What is debated about the British blockade? | How many German civilian deaths it caused.
 
 ## Propaganda in the First World War
 LV: GCSE and A level · Application
@@ -561,6 +701,16 @@ M2#history-u07-15-q2@2: What was a main aim of British pamphlets produced at Wel
 TF1#history-u07-15-q3@1: Some scenes in the 1916 film The Battle of the Somme were staged. | true | Scenes such as men going over the top were filmed behind the lines.
 M3#history-u07-15-q4@3: Which judgement about wartime propaganda as evidence is best supported? | It is strong evidence of aims and methods but must be checked as evidence of events | It is always completely false and useless | It is always completely accurate | It tells historians nothing about public opinion | Usefulness depends on the question asked.
 SA3#history-u07-15-q5@2,3: How useful is wartime propaganda to historians of the First World War? | Propaganda such as recruitment posters, the Bryce Report and the 1916 Somme film shows what governments wanted people to believe and how they tried to persuade them, and audiences' response hints at public mood. But it was one-sided: atrocity reports were partly unverified and the Somme film staged some scenes and hid the scale of losses. A strong answer judges propaganda highly useful for aims and methods but limited as evidence of events. | Gives examples of propaganda ; Explains its aims ; Explains its usefulness ; Explains its limits ; Reaches a judgement
+Q: Name three aims of British wartime propaganda. | To recruit soldiers, sustain morale and win neutral opinion.
+Q: Whom did the War Propaganda Bureau recruit? | Well-known writers, to produce pamphlets and books.
+Q: What did the Bryce Report of 1915 describe? | German atrocities in Belgium.
+Q: Why must the Bryce Report be treated with caution? | Some atrocities had happened, but many of its sensational accounts were never verified.
+Q: To which feelings did recruitment posters appeal? | Duty, guilt and patriotism.
+Q: Which question did a 1915 recruitment poster ask? | "Daddy, what did YOU do in the Great War?"
+Q: What did DORA allow the government to censor? | Newspapers and soldiers' letters.
+Q: How was the enemy portrayed in British propaganda? | Germans were portrayed as brutal "Huns".
+Q: What makes the 1916 Somme film valuable evidence? | It has genuine footage of men, equipment and the wounded, and shows what the government wanted the public to see.
+Q: Define propaganda. | Information, often one-sided, spread to influence opinion.
 
 ## Women's wartime roles
 LV: GCSE and A level · Application
@@ -599,6 +749,16 @@ M2#history-u07-16-q2@2: Why did many women lose wartime jobs after 1918? | Men r
 TF1#history-u07-16-q3@1: Many younger women who had done war work did not qualify for the vote in 1918. | true | The Act set an age limit of 30 for women.
 M3#history-u07-16-q4@3: Which judgement about the war and women's position is best supported? | Important but partial change: lasting political effects, limited economic ones | Complete and permanent equality by 1919 | No change at all in women's work or rights | Women's position got worse in every respect | The evidence supports partial change: the vote for some women, but many jobs lost after 1918.
 SA3#history-u07-16-q5@2,3: How far did the First World War change the position of women in Britain? | Women worked in munitions, nursing, the services and many civilian jobs, gaining wages and confidence, and the 1918 Act gave women over 30 with a property qualification the vote. But many lost jobs as men returned and the 1919 Act restored exclusionary union rules, younger war workers lacked the vote until 1928, and the suffrage campaign predated the war. A strong answer weighs change against continuity. | Explains women's war work ; Explains the 1918 Act ; Explains what did not last ; Considers the pre-war campaign ; Reaches a judgement
+Q: Who were VADs? | Voluntary Aid Detachment volunteers, usually providing nursing care.
+Q: Where did nurses and VADs work? | In hospitals at home and near the front.
+Q: Name two women's services formed in 1917. | The Women's Army Auxiliary Corps and the Women's Land Army.
+Q: Name two civilian jobs in which women replaced men. | Bus conductors and clerks.
+Q: Which men gained the vote under the 1918 Act? | Almost all men over 21.
+Q: Why can the 1918 vote not be credited to the war alone? | The campaign for the vote long predated the war.
+Q: What did the Restoration of Pre-War Practices Act 1919 do? | It restored trade union rules that excluded women from many skilled jobs.
+Q: Define a munitionette. | A woman working in a munitions factory during the war.
+Q: Name two gains many women made at work during the war. | Higher wages and new confidence.
+Q: What is debated about women gaining the vote in 1918? | How far women's war work, rather than the pre-war suffrage campaign, explains it.
 
 ## Russia leaves the war
 LV: GCSE and A level · Application
@@ -636,6 +796,16 @@ M2#history-u07-17-q2@2: Why did the Bolshevik slogan "peace, land and bread" win
 TF1#history-u07-17-q3@1: Russia gave up Ukraine and the Baltic lands under the Treaty of Brest-Litovsk. | true | It also lost Poland and Finland, with much of its population and industry.
 M3#history-u07-17-q4@3: Which is the best explanation of why Lenin accepted Brest-Litovsk? | The army had collapsed and the Bolsheviks needed peace to survive in power | Lenin wanted Germany to win the war in the west | The terms were generous to Russia | The Allies ordered Russia to sign | Survival of the regime outweighed the losses.
 SA3#history-u07-17-q5@2,3: What were the consequences of Russia leaving the war? | Brest-Litovsk (March 1918) cost Russia Poland, the Baltic lands, Finland and Ukraine but secured the Bolsheviks. Germany moved troops west for the Spring Offensive of 21 March 1918, hoping to win before American forces arrived; it failed, and occupying the east tied down many troops. The harshness of the treaty also weakened later German complaints about Versailles. A strong answer weighs consequences for Russia, Germany and the Allies. | Explains the terms ; Explains effects on Russia ; Explains effects on the war in the west ; Considers limits of German gains ; Reaches a judgement
+Q: What happened to the Kerensky Offensive of July 1917? | It collapsed, and desertion spread.
+Q: When did the Bolsheviks seize power? | In the October Revolution of 1917.
+Q: When did the Bolsheviks agree an armistice with Germany? | In December 1917.
+Q: What did Germany do when the peace negotiations stalled? | It advanced further into Russia.
+Q: Name the four territories Russia gave up at Brest-Litovsk. | Poland, the Baltic lands, Finland and Ukraine.
+Q: By what other name was the Spring Offensive known? | Operation Michael.
+Q: What did Ludendorff hope the Spring Offensive would achieve? | Victory before American troops arrived in strength.
+Q: How did Brest-Litovsk affect later German complaints about Versailles? | Its harshness weakened them.
+Q: What did Lenin expect would make the treaty irrelevant? | Revolution spreading to Germany.
+Q: Define the Provisional Government. | The government that ruled Russia between the February and October Revolutions of 1917.
 
 ## The United States enters the war
 LV: GCSE and A level · Application
@@ -673,6 +843,16 @@ M2#history-u07-18-q2@2: Why did Germany resume unrestricted submarine warfare in
 TF1#history-u07-18-q3@1: The Zimmermann Telegram was intercepted by British intelligence. | true | British codebreakers intercepted and decoded it.
 M3#history-u07-18-q4@3: Which judgement about American entry is best supported? | It was decisive for resources and morale, though Britain and France did most of the fighting | It had no effect at all on the war's outcome | American troops won the war alone in 1917 | It made the Allies more likely to lose | The evidence supports a significant but not sole role.
 SA3#history-u07-18-q5@2,3: Why did the United States enter the First World War in 1917? | Wilson declared neutrality in 1914, but American trade and loans tied the US to Britain and France, and the sinking of the Lusitania in 1915 turned opinion against Germany. Germany's resumption of unrestricted submarine warfare on 1 February 1917 and the Zimmermann Telegram, published in March, led Congress to declare war on 6 April 1917. A strong answer explains long-term and immediate causes. | Explains neutrality ; Explains economic ties ; Explains submarine warfare ; Explains the Zimmermann Telegram ; Reaches a judgement
+Q: Who declared American neutrality in 1914? | President Woodrow Wilson.
+Q: Why did few Americans want to fight in 1914? | Many Americans had European roots on both sides.
+Q: How was the United States tied economically to Britain and France? | It traded heavily with them and lent them large sums.
+Q: How many people died on the Lusitania, and how many were American? | Nearly 1,200, including 128 Americans.
+Q: How did Germany respond to American anger over the Lusitania? | It restricted submarine attacks.
+Q: On what date did Germany resume unrestricted submarine warfare? | On 1 February 1917.
+Q: When was the Zimmermann Telegram published? | In March 1917.
+Q: Why did American troops arrive slowly? | The American army was small in 1917.
+Q: How many American soldiers were in France by November 1918? | About two million.
+Q: Where did American troops fight in 1918? | At Saint-Mihiel and in the Meuse-Argonne.
 
 ## The Armistice
 LV: GCSE and A level · Application
@@ -711,6 +891,16 @@ M2#history-u07-19-q2@2: Why did the Spring Offensive of 1918 fail? | It won grou
 TF1#history-u07-19-q3@1: Wilhelm II abdicated before the Armistice was signed. | true | He abdicated on 9 November 1918, two days before the Armistice.
 M3#history-u07-19-q4@3: Which judgement about the stab-in-the-back myth is best supported? | It denied a military defeat that Germany's own commanders had recognised | It accurately explained why Germany lost the war | It was invented by the Allies at Versailles | It blamed the German army for losing | Commanders asked for the armistice because the army was beaten.
 SA3#history-u07-19-q5@2,3: Why did Germany agree to an armistice in November 1918? | The Spring Offensive from 21 March failed and exhausted Germany's best troops; from Amiens on 8 August the Allied Hundred Days drove the army back and broke the Hindenburg Line. Bulgaria, the Ottoman Empire and Austria-Hungary collapsed, while blockade, hunger, strikes and the Kiel mutiny undermined the home front, and Wilhelm II abdicated on 9 November. A strong answer judges military defeat decisive. | Explains the failure of the Spring Offensive ; Explains the Hundred Days ; Explains the collapse of Germany's allies ; Explains the home front ; Reaches a judgement
+Q: How did Allied forces break through at Amiens? | By using tanks, aircraft and artillery together.
+Q: What was the Hundred Days Offensive? | The Allies' continuous advance in 1918, which broke the Hindenburg Line in late September.
+Q: When did each of Germany's allies collapse in 1918? | Bulgaria in September, the Ottoman Empire on 30 October and Austria-Hungary on 3 November.
+Q: Where did German sailors mutiny? | At Kiel.
+Q: What was declared in Germany after Wilhelm II abdicated? | A republic.
+Q: Where was the Armistice signed? | In a railway carriage at Compiègne.
+Q: Whom did the stab-in-the-back myth blame for Germany's defeat? | Socialists, Jews and politicians at home.
+Q: Name two people who spread the stab-in-the-back myth. | Hindenburg and, later, Hitler.
+Q: Name three home-front problems that undermined Germany's war effort. | Blockade, hunger and strikes.
+Q: How does the lesson relate Germany's home-front collapse to its military defeat? | Military defeat was decisive; the home-front collapse followed it rather than causing it.
 
 ## The Treaty of Versailles
 LV: GCSE and A level · Application
@@ -750,6 +940,16 @@ M2#history-u07-20-q2@2: Which peacemaker most wanted security against a future G
 TF1#history-u07-20-q3@1: Keynes criticised the Treaty of Versailles as too harsh. | true | In 1919 he called it a Carthaginian peace.
 M3#history-u07-20-q4@3: Which judgement about the treaty is best supported? | Harsh enough to humiliate Germany but not to stop its recovery | So lenient that Germany had no grievances at all | The single cause of the Second World War | Fully accepted by the German people | Historians argue it fell between punishment and compromise.
 SA3#history-u07-20-q5@2,3: Was the Treaty of Versailles a fair settlement? | Germany lost Alsace-Lorraine, land to Poland and its colonies, was limited to an army of 100,000 with no air force, accepted war guilt under Article 231 and faced reparations of 132 billion gold marks from 1921, which Germans called a diktat and Keynes criticised. But Germany remained united and economically strong, the terms were milder than Brest-Litovsk, and MacMillan argues it was a compromise under pressure. A strong answer judges fairness from different viewpoints. | Explains the peacemakers' aims ; Explains the main terms ; Uses criticisms ; Uses defences or historians ; Reaches a judgement
+Q: What was Wilson's peace plan of January 1918 called? | The Fourteen Points.
+Q: Name two features of the Fourteen Points. | Self-determination and a League of Nations.
+Q: Besides security, what did Clemenceau want? | Compensation for the damage done to France.
+Q: What did Lloyd George want from the peace? | Germany punished, but not so weakened that it could not trade or that resentment would cause another war.
+Q: What happened to the Saar under the treaty? | It was run by the League of Nations for 15 years.
+Q: What happened to Germany's colonies? | They became League mandates.
+Q: What limits did the treaty place on Germany's navy and the Rhineland? | A navy of six battleships and a demilitarised Rhineland.
+Q: At what figure were reparations set in 1921? | 132 billion gold marks.
+Q: What did Germans call the treaty? | A diktat, a dictated peace.
+Q: How has Margaret MacMillan judged the treaty? | As a compromise reached under great pressure, whose failures owed much to how it was enforced afterwards.
 
 ## The consequences of the First World War
 LV: GCSE and A level · Evaluation
@@ -789,4 +989,14 @@ M2#history-u07-21-q2@2: What happened to former Ottoman lands in the Middle East
 TF1#history-u07-21-q3@1: Britain and its empire lost about 900,000 dead in the First World War. | true | Commonly cited figures for British and Empire military dead are around 900,000.
 M3#history-u07-21-q4@3: Which judgement about the war's long-term consequences is best supported? | It created conditions for instability, which later events turned into crisis | It made the Second World War completely inevitable | It had no effect after the Armistice | It strengthened all four old empires | Conditions, not inevitability, best describes the link.
 SA3#history-u07-21-q5@2,3: How far did the First World War shape Europe in the 1920s and 1930s? | The war killed millions and destroyed the German, Austro-Hungarian, Russian and Ottoman empires, creating fragile new states and disputed borders; war debts, reparations and inflation strained economies; the Russian Revolution and Italian Fascism grew from it; and remembrance became central to public life. But the Depression and political choices in the 1930s also mattered. A strong answer weighs the war's role against later causes. | Explains human cost ; Explains political change ; Explains economic effects ; Considers later causes ; Reaches a judgement
+Q: Roughly how many soldiers died in the First World War? | Roughly nine to ten million.
+Q: How did the war help spread the influenza pandemic of 1918–1919? | Troop movements helped spread it, and it killed millions more worldwide.
+Q: Name four new or restored states created after the war. | Poland, Czechoslovakia, Yugoslavia and the Baltic states.
+Q: Why was the League of Nations created? | To keep the peace.
+Q: Define a mandate. | Territory governed by a member of the League of Nations on its behalf.
+Q: Where is the Cenotaph? | In Whitehall.
+Q: Name three economic strains the war left behind. | War debts, inflation and reparations.
+Q: Which crisis of 1923 did post-war economic strain contribute to? | German hyperinflation.
+Q: Which ideological changes grew out of the war? | The Russian Revolution and Fascism in Italy.
+Q: Why can the war not alone explain the crises of the 1930s? | The Great Depression from 1929 had its own causes, and choices in the 1930s were not determined by 1918.
 `;

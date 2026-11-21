@@ -1,0 +1,63 @@
+{
+ "id": "chem-diastereomers",
+ "renderer": "structures",
+ "course": "chemistry",
+ "unit": "u12",
+ "lesson": "Diastereomers",
+ "title": "The stereoisomers of 2,3-dibromobutane",
+ "caption": "Two stereocentres allow up to 2² = 4 stereoisomers, but here there are three. (2R,3R) and (2S,3S) are enantiomers. The (2R,3S) form has a mirror plane, so it is meso and achiral, and it is a diastereomer of each of the others.",
+ "alt": "(2R,3R)-, (2S,3S)- and meso-2,3-dibromobutane.",
+ "description": [
+  "(2R,3R)-2,3-dibromobutane.",
+  "(2S,3S)-2,3-dibromobutane, its mirror image.",
+  "meso-(2R,3S)-2,3-dibromobutane, identical to its own mirror image."
+ ],
+ "panels": [
+  {
+   "smiles": "C[C@@H:1](Br)[C@@H:2](C)Br",
+   "label": "(2R,3R)",
+   "cip": {
+    "1": "R",
+    "2": "R"
+   }
+  },
+  {
+   "smiles": "C[C@H:1](Br)[C@H:2](C)Br",
+   "label": "(2S,3S)",
+   "cip": {
+    "1": "S",
+    "2": "S"
+   }
+  },
+  {
+   "smiles": "C[C@@H:1](Br)[C@H:2](C)Br",
+   "label": "meso (2R,3S)",
+   "cip": {
+    "1": "R",
+    "2": "S"
+   }
+  }
+ ],
+ "claims": [
+  {
+   "type": "enantiomers",
+   "panels": [
+    0,
+    1
+   ]
+  },
+  {
+   "type": "diastereomers",
+   "panels": [
+    0,
+    2
+   ]
+  },
+  {
+   "type": "meso",
+   "panels": [
+    2
+   ]
+  }
+ ]
+}

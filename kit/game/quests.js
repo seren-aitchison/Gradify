@@ -50,6 +50,50 @@ export const WEEKLY = {
   mock: (x) => x.hasExams ? { title: "Complete a mock exam", of: 1, n: Math.min(1, count(x.week, "mock")), xp: 80, why: "Practise under exam conditions." } : null,
 };
 
+// the topic quest: one topic (the module the learner is in), three steps that each need real learning evidence:
+// Understand (finish a lesson in it), Remember (recall its flashcards correctly) and Apply (get its questions right).
+// Nothing pays for time spent or pages opened. One topic a day; each step pays once (its key holds the day).
+export const TOPIC_STEPS = [
+  { id: "understand", label: "Understand", xp: 25 },
+  { id: "remember", label: "Remember", xp: 35, of: 10 },
+  { id: "apply", label: "Apply", xp: 40, of: 5, mean: 0.8 },
+];
+// the lessons worked on today (an answer, a card, a lesson finished), most recent first
+const workedToday = (x, courses) => [
+  ...x.attemptsToday.map((a) => ({ course: a.course, id: a.lesson, t: a.ms || 0 })),
+  ...courses.flatMap((c) => Object.entries(c.S?.done || {}).filter(([, t]) => dayKey(t) === x.day).map(([id, t]) => ({ course: c.slug, id, t }))),
+].filter((w) => w.id).sort((a, b) => b.t - a.t);
+
+/**
+ * The topic quest for today's topic: the one worked on most recently today, so finishing its last lesson keeps it;
+ * before anything today, the next open lesson's topic. `at` picks a particular lesson's topic instead.
+ */
+export function topicQuest(x, courses, at = null) {
+  const l0 = at || workedToday(x, courses)[0] || x.open[0]; if (!l0) return null;
+  const l = { ...l0 };
+  const c = courses.find((y) => y.slug === l.course), u = (c?.units || []).find((y) => y.lessons.some((z) => z.id === l.id)); if (!u) return null;
+  l.module = u.lessons.find((z) => z.id === l.id).module;
+  const lessons = u.lessons.filter((z) => (z.module || null) === (l.module || null)), ids = new Set(lessons.map((z) => z.id));
+  const topic = l.module || u.title, today = x.attemptsToday.filter((a) => a.course === c.slug && ids.has(a.lesson));
+  // distinct cards and questions, first tries only: repeating one question, or trying options until right, fills nothing
+  // first tries only, and only scored answers (an unfinished lab challenge, "attempted", is engagement, not an answer)
+  const firstTries = today.filter((a) => (a.attempt ?? 1) === 1 && a.response?.outcome !== "attempted"), key = (a) => a.question?.id || a.id;
+  const cards = new Set(firstTries.filter((a) => a.question?.type === "card" && a.correct).map(key)).size;
+  const latest = new Map(); for (const a of firstTries.filter((x) => x.question?.type !== "card")) latest.set(key(a), Number(a.score) || 0);
+  const qs = [...latest.values()], mean = qs.length ? qs.reduce((t, s) => t + s, 0) / qs.length : 0;
+  const finished = lessons.filter((z) => c.S?.done?.[z.id] && dayKey(c.S.done[z.id]) === x.day).length;
+  const allDone = lessons.every((z) => c.S?.done?.[z.id]);
+  // Remember asks for 2 distinct cards per lesson in the topic, up to 10: every written lesson has at least 2 cards,
+  // so it can always be done (a flat 10 couldn't in topics with fewer cards)
+  const remember = Math.min(TOPIC_STEPS[1].of, 2 * lessons.length);
+  const steps = [
+    { ...TOPIC_STEPS[0], title: `Understand: ${allDone ? "revisit" : "finish"} a lesson in ${topic}`, of: 1, n: Math.min(1, finished + (allDone && today.length ? 1 : 0)), why: "Read it, try the interactive, answer as you go." },
+    { ...TOPIC_STEPS[1], of: remember, title: `Remember: recall ${remember} of its flashcards correctly`, n: Math.min(remember, cards), why: "Recall without looking: that's what makes it stay." },
+    { ...TOPIC_STEPS[2], title: `Apply: ${Math.round(TOPIC_STEPS[2].mean * 100)}% or more across ${TOPIC_STEPS[2].of} of its questions`, n: qs.length >= TOPIC_STEPS[2].of && mean >= TOPIC_STEPS[2].mean ? TOPIC_STEPS[2].of : Math.min(TOPIC_STEPS[2].of - 1, qs.length), why: qs.length ? `${qs.length} answered today, ${Math.round(mean * 100)}% right.` : "Questions you haven't seen, answered from memory." },
+  ];
+  return { topic, course: c.slug, unit: u.id, lesson: l.id, lessons: [...ids], steps, xp: steps.reduce((t, q) => t + q.xp, 0) };
+}
+
 export function quests(state, opts = {}) {
   const x = questContext(state, opts), out = [];
   const mk = (kind, period, id, q) => q && out.push({ ...q, n: q.fill ? Math.min(q.of, q.fill(x)) : q.n, id, kind, key: `quest:${period}:${id}`, done: (q.fill ? q.fill(x) : q.n) >= q.of });
@@ -59,6 +103,21 @@ export function quests(state, opts = {}) {
   if (out.filter((q) => q.kind === "daily").length < 3) for (const id of ["questions", "goal"]) if (!out.some((q) => q.id === id) && out.filter((q) => q.kind === "daily").length < 3) mk("daily", x.day, id, DAILY[id](x));
   const wk = dayKey(x.ws);
   for (const id of ["days", "xp", "turnaround", "module", "mock"]) { if (out.filter((q) => q.kind === "weekly").length >= 3) break; mk("weekly", wk, id, WEEKLY[id](x)); }
+  // the topic quest's three steps, keyed by day, course, chapter, topic and step (two topics in one chapter never
+  // share a reward). Steps already earned today in an earlier topic stay listed until they're claimed, so moving on
+  // to another topic or course never loses a reward.
+  const courses = state.courses || [], tq = topicQuest(x, courses);
+  const topicKey = (q) => `${x.day}:${q.course}:${q.unit}:${q.topic}`;
+  if (tq) for (const st of tq.steps) mk("topic", topicKey(tq), `topic-${st.id}`, { ...st, topic: tq.topic, lesson: { lesson: tq.lesson, course: tq.course }, quest: tq });
+  const seen = new Set(tq ? [topicKey(tq)] : []);
+  for (const w of workedToday(x, courses)) {
+    const q = topicQuest(x, courses, w); if (!q || seen.has(topicKey(q))) continue;
+    seen.add(topicKey(q));
+    for (const st of q.steps) {
+      const key = `quest:${topicKey(q)}:topic-${st.id}`;
+      if (st.n >= st.of && !state.game.paid?.[key]) mk("topic", topicKey(q), `topic-${st.id}`, { ...st, title: `${st.title} · ${q.topic}`, earlier: true, topic: q.topic, lesson: { lesson: q.lesson, course: q.course }, quest: q });
+    }
+  }
   return out.map((q) => ({ ...q, paid: !!state.game.paid?.[q.key] }));
 }
 

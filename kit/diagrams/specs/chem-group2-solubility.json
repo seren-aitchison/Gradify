@@ -1,0 +1,50 @@
+{
+ "id": "chem-group2-solubility",
+ "renderer": "trend",
+ "course": "chemistry",
+ "unit": "u11",
+ "lesson": "s-block chemistry",
+ "title": "Group 2 sulfates become less soluble",
+ "caption": "Down group 2 the sulfates become less soluble: Ksp falls from 4.9 × 10⁻⁵ for CaSO₄ to 1.1 × 10⁻¹⁰ for BaSO₄, which is why acidified BaCl₂ is the test for sulfate. The hydroxides show the opposite trend.",
+ "alt": "Bar chart of log₁₀ Ksp for calcium, strontium and barium sulfates, falling from −4.31 to −9.97.",
+ "description": [
+  "CaSO₄: log Ksp −4.31.",
+  "SrSO₄: −6.46.",
+  "BaSO₄: −9.97, the least soluble."
+ ],
+ "kind": "bars",
+ "dataset": "logKspSulfate",
+ "range": [
+  -11,
+  0
+ ],
+ "ticks": [
+  -10,
+  -8,
+  -6,
+  -4,
+  -2,
+  0
+ ],
+ "yLabel": "log₁₀ Ksp",
+ "colour": "a5",
+ "items": [
+  {
+   "key": "CaSO4",
+   "value": -4.31
+  },
+  {
+   "key": "SrSO4",
+   "value": -6.46
+  },
+  {
+   "key": "BaSO4",
+   "value": -9.97
+  }
+ ],
+ "claims": [
+  {
+   "type": "decreasing"
+  }
+ ]
+}

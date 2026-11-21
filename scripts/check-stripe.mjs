@@ -21,7 +21,9 @@ const rows = [], check = (what, ok, detail = "") => rows.push({ what, ok: Boolea
 const account = await stripe("/account");
 check("Stripe account", account.charges_enabled, `${account.country}, default currency ${account.default_currency}, charges ${account.charges_enabled ? "enabled" : "DISABLED"}`);
 // what the site sells (kit/data/billing.js: PLAN_PRICES), found by lookup key
-const LOOKUP = { plus: "gradify_plus_month", pro: "gradify_pro_month_1500" }, NAME = { plus: "Gradify Plus", pro: "Gradify Pro" };
+// the names buyers see on Checkout, invoices and receipts: the plans were renamed (Plus → Pro, Pro → Ultra); rename the
+// live products in the Stripe Dashboard to match, or Checkout still says "Gradify Plus"
+const LOOKUP = { plus: "gradify_plus_month", pro: "gradify_pro_month_1500" }, NAME = { plus: "Gradify Pro", pro: "Gradify Ultra" };
 const prices = {};
 for (const plan of ["plus", "pro"]) prices[plan] = (await stripe(`/prices?lookup_keys[]=${LOOKUP[plan]}&expand[]=data.product`)).data[0];
 const live = (prices.plus || prices.pro)?.livemode;
@@ -33,7 +35,7 @@ for (const plan of ["plus", "pro"]) {
     `${p.id}: ${p.currency.toUpperCase()} ${(p.unit_amount / 100).toFixed(2)} every ${p.recurring?.interval_count} ${p.recurring?.interval}, ${p.tax_behavior} of tax, ${p.active ? "active" : "INACTIVE"}; product "${p.product?.name}" ${p.product?.active ? "active" : "INACTIVE"}; site sells ${(want / 100).toFixed(2)}`);
 }
 const products = (await stripe("/products?active=true&limit=100")).data.filter((p) => /gradify/i.test(p.name));
-check("One product per plan", products.length === 2 && ["Gradify Plus", "Gradify Pro"].every((n) => products.some((p) => p.name === n)), products.map((p) => `${p.id} "${p.name}"`).join(", "));
+check("One product per plan", products.length === 2 && Object.values(NAME).every((n) => products.some((p) => p.name === n)), products.map((p) => `${p.id} "${p.name}"`).join(", "));
 const old = (await stripe("/prices?lookup_keys[]=gradify_pro_month&lookup_keys[]=gradify_pro_year")).data.filter((p) => p.active);
 check("Original Pro prices (£7.99 / £63.99)", true, old.length ? `${old.length} still active: existing subscribers keep them; archive them in Stripe once nobody is on them, so the portal offers only the new prices` : "archived");
 

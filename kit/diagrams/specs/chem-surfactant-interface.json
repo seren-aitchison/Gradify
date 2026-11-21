@@ -1,0 +1,29 @@
+{
+ "id": "chem-surfactant-interface",
+ "renderer": "structures",
+ "course": "chemistry",
+ "unit": "u16",
+ "lesson": "Interfaces",
+ "title": "A surfactant",
+ "caption": "Sodium dodecyl sulfate has a long non-polar hydrocarbon tail that dissolves in oil and an ionic sulfate head that dissolves in water. At an oil–water interface the molecules line up with heads in the water and tails in the oil, lowering the interfacial tension; in water they form micelles.",
+ "alt": "The structure of sodium dodecyl sulfate with its ionic head shaded.",
+ "description": [
+  "A twelve-carbon chain: the hydrophobic tail.",
+  "OSO₃⁻ Na⁺: the hydrophilic head."
+ ],
+ "panels": [
+  {
+   "smiles": "CCCCCCCCCCCCOS(=O)(=O)[O-].[Na+]",
+   "label": "sodium dodecyl sulfate",
+   "formula": "C12H25NaO4S",
+   "sub": "tail: hydrophobic · head: hydrophilic",
+   "highlight": [
+    {
+     "group": "S(=O)(=O)[O-]",
+     "colour": "a2",
+     "check": false
+    }
+   ]
+  }
+ ]
+}

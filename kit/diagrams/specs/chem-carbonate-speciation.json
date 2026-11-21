@@ -1,0 +1,117 @@
+{
+ "id": "chem-carbonate-speciation",
+ "renderer": "graph",
+ "course": "chemistry",
+ "unit": "u17",
+ "lesson": "Aquatic chemistry",
+ "title": "Carbon dioxide in natural water",
+ "caption": "Dissolved CO₂ exists as CO₂(aq), HCO₃⁻ and CO₃²⁻ in proportions set by pH. They cross at pKa₁ = 6.35 and pKa₂ = 10.33. At seawater's pH of about 8.1, hydrogencarbonate dominates; as the ocean acidifies, carbonate falls, which harms shell-building organisms.",
+ "alt": "Fractions of CO₂(aq), HCO₃⁻ and CO₃²⁻ against pH: CO₂ falls, HCO₃⁻ peaks around pH 8.3, CO₃²⁻ rises; crossings at pH 6.35 and 10.33.",
+ "description": [
+  "Below pH 6: mostly CO₂(aq).",
+  "pH 6.35: CO₂ = HCO₃⁻.",
+  "Around 8: mostly HCO₃⁻ (seawater 8.1).",
+  "pH 10.33: HCO₃⁻ = CO₃²⁻."
+ ],
+ "range": {
+  "x": [
+   4,
+   13
+  ],
+  "y": [
+   0,
+   1.05
+  ]
+ },
+ "ticks": [
+  [
+   4,
+   6,
+   8,
+   10,
+   12
+  ],
+  [
+   0.5,
+   1
+  ]
+ ],
+ "grid": [
+  1,
+  0.25
+ ],
+ "axisLabels": [
+  "pH",
+  "fraction"
+ ],
+ "xLabelBelow": true,
+ "curves": [
+  {
+   "expr": "1/(1+10^(x-6.35)+10^(2*x-6.35-10.33))",
+   "colour": "a1",
+   "label": "CO₂(aq)",
+   "labelAt": [
+    4.3,
+    0.92
+   ]
+  },
+  {
+   "expr": "10^(x-6.35)/(1+10^(x-6.35)+10^(2*x-6.35-10.33))",
+   "colour": "a4",
+   "label": "HCO₃⁻",
+   "labelAt": [
+    7.6,
+    1.0
+   ]
+  },
+  {
+   "expr": "10^(2*x-6.35-10.33)/(1+10^(x-6.35)+10^(2*x-6.35-10.33))",
+   "colour": "a2",
+   "label": "CO₃²⁻",
+   "labelAt": [
+    11.6,
+    0.92
+   ]
+  }
+ ],
+ "marks": [
+  {
+   "x": 8.1,
+   "label": "seawater",
+   "to": 1
+  }
+ ],
+ "checks": [
+  {
+   "type": "value",
+   "expr": "(1/(1+10^(x-6.35)+10^(2*x-6.35-10.33)))-(10^(x-6.35)/(1+10^(x-6.35)+10^(2*x-6.35-10.33)))",
+   "x": 6.35,
+   "between": [
+    -0.001,
+    0.001
+   ],
+   "name": "CO₂ and HCO₃⁻ are equal at pH = pKa₁ = 6.35"
+  },
+  {
+   "type": "value",
+   "expr": "(10^(x-6.35)/(1+10^(x-6.35)+10^(2*x-6.35-10.33)))-(10^(2*x-6.35-10.33)/(1+10^(x-6.35)+10^(2*x-6.35-10.33)))",
+   "x": 10.33,
+   "between": [
+    -0.001,
+    0.001
+   ],
+   "name": "HCO₃⁻ and CO₃²⁻ are equal at pH = pKa₂ = 10.33"
+  },
+  {
+   "type": "max",
+   "expr": "10^(x-6.35)/(1+10^(x-6.35)+10^(2*x-6.35-10.33))",
+   "domain": [
+    5,
+    12
+   ],
+   "x": 8.34,
+   "y": 0.97994,
+   "name": "HCO₃⁻ peaks halfway between, at pH 8.34, at 98% of the total"
+  }
+ ]
+}

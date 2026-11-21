@@ -1,0 +1,77 @@
+{
+ "id": "chem-anhydride-acylation",
+ "renderer": "structures",
+ "course": "chemistry",
+ "unit": "u14",
+ "lesson": "Acid anhydrides",
+ "title": "Making aspirin with an acid anhydride",
+ "caption": "Ethanoic anhydride acylates the phenol –OH of salicylic acid, forming the ester in aspirin and ethanoic acid. Industry uses the anhydride rather than ethanoyl chloride because it is cheaper, less corrosive, reacts less violently and gives no HCl.",
+ "alt": "Salicylic acid plus ethanoic anhydride gives aspirin plus ethanoic acid.",
+ "description": [
+  "Salicylic acid: a phenol and a carboxylic acid on a benzene ring.",
+  "Ethanoic anhydride.",
+  "Aspirin (2-ethanoyloxybenzoic acid): the phenol is now an ester.",
+  "Ethanoic acid."
+ ],
+ "between": [
+  "+",
+  "→",
+  "+"
+ ],
+ "bond": [
+  28,
+  24
+ ],
+ "perRow": [
+  4,
+  2
+ ],
+ "panels": [
+  {
+   "smiles": "OC(=O)c1ccccc1O",
+   "label": "salicylic acid",
+   "groups": [
+    "phenol",
+    "carboxylic acid"
+   ]
+  },
+  {
+   "smiles": "CC(=O)OC(C)=O",
+   "label": "ethanoic anhydride",
+   "groups": [
+    "acid anhydride"
+   ]
+  },
+  {
+   "smiles": "CC(=O)Oc1ccccc1C(=O)O",
+   "label": "aspirin",
+   "groups": [
+    "ester",
+    "carboxylic acid"
+   ],
+   "highlight": [
+    {
+     "group": "ester",
+     "colour": "a5"
+    }
+   ]
+  },
+  {
+   "smiles": "CC(=O)O",
+   "label": "ethanoic acid"
+  }
+ ],
+ "claims": [
+  {
+   "type": "reaction",
+   "left": [
+    0,
+    1
+   ],
+   "right": [
+    2,
+    3
+   ]
+  }
+ ]
+}

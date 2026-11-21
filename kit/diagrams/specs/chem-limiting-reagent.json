@@ -1,0 +1,90 @@
+{
+ "id": "chem-limiting-reagent",
+ "renderer": "particles",
+ "course": "chemistry",
+ "unit": "u01",
+ "lesson": "Limiting reagents",
+ "title": "The limiting reagent",
+ "caption": "Six H₂ molecules and two O₂ molecules: by 2H₂ + O₂ → 2H₂O the two O₂ can use only four H₂, making four H₂O. Oxygen runs out first, so it is limiting; two H₂ are left over.",
+ "alt": "Before: six hydrogen molecules and two oxygen molecules. After: four water molecules and two leftover hydrogen molecules.",
+ "description": [
+  "Before: 6 H₂ and 2 O₂.",
+  "After: 4 H₂O and 2 unreacted H₂. Oxygen was used up, so it was the limiting reagent."
+ ],
+ "species": {
+  "H2": {
+   "atoms": [
+    "H",
+    "H"
+   ]
+  },
+  "O2": {
+   "atoms": [
+    "O",
+    "O"
+   ]
+  },
+  "H2O": {
+   "atoms": [
+    "O",
+    "H",
+    "H"
+   ],
+   "shape": "bent"
+  }
+ },
+ "steps": [
+  "react"
+ ],
+ "panelHeight": 160,
+ "panels": [
+  {
+   "title": "6H₂ + 2O₂",
+   "arrangement": "gas",
+   "contents": [
+    [
+     "H2",
+     6
+    ],
+    [
+     "O2",
+     2
+    ]
+   ]
+  },
+  {
+   "title": "4H₂O + 2H₂ left over",
+   "arrangement": "gas",
+   "contents": [
+    [
+     "H2O",
+     4
+    ],
+    [
+     "H2",
+     2
+    ]
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "type": "conserved",
+   "panels": [
+    0,
+    1
+   ]
+  },
+  {
+   "type": "equation",
+   "eq": "2H2 + O2 → 2H2O",
+   "panels": [
+    0,
+    1
+   ],
+   "leftover": {
+    "H2": 2
+   }
+  }
+ ]
+}

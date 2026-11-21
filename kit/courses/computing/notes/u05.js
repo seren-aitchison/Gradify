@@ -39,6 +39,16 @@ M2#computing-u05-01-q2@2: A team replaces the array inside its stack with a link
 TF1#computing-u05-01-q3@1: A stack is an example of an abstract data type. | true | A stack is defined by its operations (push, pop, peek, is_empty), and can be implemented with an array or a linked list.
 M3#computing-u05-01-q4@3: Why is it risky for code to read a stack's internal array directly instead of calling pop and peek? | The code breaks if the stack's implementation changes, and it may bypass rules such as last in, first out | Arrays can't be read once they are inside a stack | It makes the stack hold items in the wrong data type | Reading an array always causes a syntax error | Depending on internals ties code to one implementation and can violate the ADT's behaviour.
 SA3#computing-u05-01-q5@2,3: Explain the difference between an abstract data type and a data structure, using a queue as an example, and evaluate why the distinction matters. | A queue ADT is defined by enqueue, dequeue, is_empty and size, with first-in, first-out behaviour. It can be implemented with data structures such as a Python list, a circular array or a linked list. The distinction matters because code using only the operations doesn't depend on the implementation, so a slow implementation (list with removal from the front, O(n)) can be replaced by a faster one (a deque or circular array, O(1)) without changing the rest of the program. It also makes the code easier to understand and test. | Defines ADT by operations ; Lists queue operations ; Names implementations ; Explains replaceable implementation ; Gives a concrete benefit such as speed or testing
+Q: Which operations does a stack ADT offer? | Push, pop, peek and is_empty.
+Q: Who introduced the idea that programs should use data only through its operations, and when? | Barbara Liskov and Stephen Zilles, in 1974.
+Q: What is an interface in the context of abstract data types? | The set of operations through which other code uses an ADT or module.
+Q: Why can an ADT's implementation change without breaking the code that uses it? | That code relies only on the operations and their behaviour, not on how the data is stored.
+Q: What is the common mistake of treating "stack" and "array" as the same kind of thing? | A stack is an ADT; an array is one data structure that can implement it.
+Q: Which ADT orders items last in, first out? | The stack.
+Q: How is a dictionary (map) ADT usually implemented? | As a hash table, with values looked up by key.
+Q: What operations would a queue ADT for a printer provide? | Enqueue to add a job at the back, dequeue to remove the front job, plus is_empty and size.
+Q: Name two data structures that could implement a list ADT. | An array or a linked list.
+Q: Which ADT models vertices joined by edges? | The graph.
 
 ## Arrays and records
 LV: A level · Foundation
@@ -78,6 +88,16 @@ M2#computing-u05-02-q2@3: An array of 4-byte integers starts at address 1000. Wh
 TF1#computing-u05-02-q3@2: Inserting a new item at the start of an array of n items requires shifting the existing items. | true | Every existing item must move one place along, which takes O(n) time.
 M3#computing-u05-02-q4@3: A program stores each customer's name, phone number and balance. Which structure best represents all the customers? | An array of records, one record per customer | Three unrelated arrays, sorted separately | One string joining all the data | A single integer variable per customer | Records keep each customer's fields together; parallel arrays sorted separately would lose which values belong together.
 SA3#computing-u05-02-q5@2,3: Compare arrays and linked lists for storing a list of names that is read often but rarely changed. | An array stores names contiguously, so any name is reached by index in O(1), and it uses little extra memory; but inserting or deleting in the middle needs shifting, O(n), and the size is fixed. A linked list grows easily and inserts in O(1) once the position is found, but reaching item i means following i pointers, O(n), and each node stores a pointer. For data read often and rarely changed, an array is better. | Array O(1) access ; Array costly insertion or fixed size ; Linked list easy insertion ; Linked list O(n) access or pointer overhead ; Chooses array with justification
+Q: What does it mean that an array is stored contiguously? | Its elements sit side by side in one block of memory.
+Q: Give the formula for the address of element i in an array. | Address = base address + i × element size.
+Q: Why does inserting an item in the middle of an array take O(n) time? | Every later item must be shifted along one place to make room.
+Q: What must happen when an array needs to grow beyond its size? | A new, larger array is allocated and the items are copied into it.
+Q: In an array of records representing a table, what do records and fields correspond to? | Each record is a row and each field is a column.
+Q: Name ways a record can be represented in Python. | As a tuple, a dictionary, a dataclass or an object.
+Q: What is a field? | One named item of data within a record.
+Q: Why is it a mistake to assume Python lists are arrays of values? | A list holds references to objects anywhere in memory, which lets it mix types and grow, at some memory cost.
+Q: How can a file of records store data permanently? | It keeps the same record structure on disk, for example as a CSV file.
+Q: Give an example of a record's fields with different types. | A student record with name (string), age (integer) and fees_paid (Boolean).
 
 ## Stacks
 LV: A level · Application
@@ -117,6 +137,16 @@ M2#computing-u05-03-q2@2: Starting empty, a stack does push(A), push(B), push(C)
 TF1#computing-u05-03-q3@1: Peek removes the top item from a stack. | false | Peek returns the top item without removing it; pop removes it.
 M3#computing-u05-03-q4@3: Which application needs a stack rather than a queue? | Checking that every opening bracket in an expression has a matching closing bracket | Serving customers in the order they arrive | Sending print jobs to a printer in order | Buffering keystrokes before they are processed | The most recent unclosed bracket must be matched first, which is last in, first out.
 SA3#computing-u05-03-q5@2,3: Explain how a stack can check whether the brackets in an expression such as ( [ ] ) are balanced. | Read the expression from left to right. Push each opening bracket. For each closing bracket, if the stack is empty or the popped bracket isn't the matching opening type, the expression is unbalanced. At the end, the stack must be empty; otherwise some brackets weren't closed. A stack suits this because the most recently opened bracket must be closed first (LIFO). | Pushes opening brackets ; Pops and compares on a closing bracket ; Handles empty stack on a closing bracket ; Checks the stack is empty at the end ; Explains why LIFO fits
+Q: What does the peek operation on a stack do? | Returns the top item without removing it.
+Q: What is stack overflow? | Pushing onto a full fixed-size stack.
+Q: In an array-based stack, what value does the top pointer hold when the stack is empty? | −1.
+Q: Describe how push works in an array-based stack. | Increment the top pointer, then store the item at that index.
+Q: Describe how pop works in an array-based stack. | Read the item at the top pointer, then decrement the pointer.
+Q: What is the time complexity of push and pop on a stack? | O(1), constant time.
+Q: How does a call stack use a stack? | It stores return addresses and local variables of active subroutines.
+Q: How does undo in an editor use a stack? | Each action is pushed; undo pops the most recent action.
+Q: Why must a program check for underflow before popping a stack? | Popping an empty stack otherwise reads invalid data or crashes the program.
+Q: Which Python list methods give stack behaviour? | append to push and pop to pop.
 
 ## Queues
 LV: A level · Application
@@ -156,6 +186,16 @@ M2#computing-u05-04-q2@2: An empty queue does enqueue(P), enqueue(Q), dequeue(),
 TF1#computing-u05-04-q3@3: In a linear array queue, positions freed by dequeue are automatically reused for new items. | false | The rear only moves forward, so freed positions at the front are wasted; a circular queue wraps round to reuse them.
 M3#computing-u05-04-q4@3: Why does an operating system use a queue for print jobs? | Jobs should be printed in the order they were submitted | The most recent job should always print first | Jobs must be sorted by size before printing | Queues use no memory at all | Fairness requires first come, first served, which is FIFO.
 SA3#computing-u05-04-q5@2,3: Compare stacks and queues, giving one application of each and explaining why that structure suits it. | A stack is LIFO: items are added and removed at the top. It suits undo in a word processor, because the most recent action must be undone first. A queue is FIFO: items join at the rear and leave from the front. It suits a print queue, because jobs should be printed in submission order. Both have O(1) operations when implemented properly. | Defines a stack as LIFO ; Gives a stack application with reason ; Defines a queue as FIFO ; Gives a queue application with reason ; Notes O(1) operations or implementation
+Q: At which end of a queue are items removed? | The front.
+Q: Describe enqueue in a linear array queue. | Increment the rear pointer and store the item at that position.
+Q: Describe dequeue in a linear array queue. | Read the item at the front pointer, then increment the front pointer.
+Q: What is the main drawback of a linear array queue? | Space at the front is wasted as items are dequeued, so it can report full while slots are free.
+Q: Why is list.pop(0) slow for a large queue in Python? | Every remaining item shifts along, so each dequeue is O(n).
+Q: Name two uses of queues in an operating system. | Print queues and task scheduling.
+Q: Which graph search algorithm uses a queue? | Breadth-first search.
+Q: What kinds of buffer use queues? | Keyboard buffers and network packet buffers.
+Q: Why are enqueue and dequeue O(1) in a linear array queue? | Items never move; only the pointers change.
+Q: What fixes the wasted space problem of a linear array queue? | A circular queue or a deque.
 
 ## Circular and priority queues
 LV: A level · Application
@@ -195,6 +235,16 @@ M2#computing-u05-05-q2@3: A circular queue has size 6 and rear = 5. Where is the
 TF1#computing-u05-05-q3@2: In a priority queue, an item that arrives later can leave before items that arrived earlier. | true | Removal order depends on priority, not only on arrival time.
 M3#computing-u05-05-q4@3: A hospital system stores waiting patients in a sorted list and inserts each new patient in priority order. What is the cost and a better option? | Each insertion is O(n); a binary heap makes insertion and removal O(log n) | Each insertion is O(1), so no improvement is possible | Removal is O(n²), so a stack would be better | Sorted lists can't store priorities, so a queue must be used | A heap balances insertion and removal at O(log n), better than O(n) inserts for large queues.
 SA3#computing-u05-05-q5@2,3: Explain how a circular queue overcomes the problem of a linear queue, and how it tells when it is full. | In a linear array queue the front pointer moves forward as items are dequeued, so positions at the start can't be reused and the queue reports full early. A circular queue wraps both pointers round with (pointer + 1) MOD size, so after the last position the next item goes into position 0 if it is free. To tell full from empty, keep a count of items (full when count equals size), or leave one slot always empty so that full is when (rear + 1) MOD size equals front. | Describes wasted space in a linear queue ; Explains wrapping with MOD ; Shows reuse of freed positions ; Explains a full test with a count or spare slot ; Distinguishes full from empty
+Q: How does a circular queue reuse freed space? | It treats the array as a ring, wrapping pointers back to position 0 after the last position.
+Q: How does a circular queue advance its front pointer? | front = (front + 1) MOD size.
+Q: What is the simplest way for a circular queue to tell full from empty? | Keep a count of items: full when count equals size, empty when count is 0.
+Q: Why is testing front == rear alone unreliable for a circular queue? | With wrapping, the same condition can mean full as well as empty.
+Q: What is the cost of a sorted-list priority queue? | O(n) insert and O(1) remove.
+Q: What time does a binary heap give for priority queue operations? | O(log n) for both insert and remove.
+Q: Which Python module provides a binary heap? | heapq.
+Q: How are items of equal priority usually handled in a priority queue? | They leave in arrival order.
+Q: What is a binary heap? | A complete binary tree stored in an array, used to implement priority queues efficiently.
+Q: Give two uses of priority queues. | Operating system schedulers running high-priority processes first, and A&E triage seeing the most urgent patients first.
 
 ## Linked lists
 LV: A level · Application
@@ -234,6 +284,16 @@ M2#computing-u05-06-q2@2: List: head → 3 → 8 → 12 → null. Node 8 is dele
 TF1#computing-u05-06-q3@1: Accessing the 500th item of a linked list takes the same time as accessing the 1st. | false | You must follow pointers from the head, so the 500th item needs about 500 steps.
 M3#computing-u05-06-q4@3: Which task most favours a linked list over an array? | Frequently inserting and deleting items in the middle of a long sequence | Repeatedly reading items by their position | Storing a fixed set of values that never changes | Binary searching a sorted sequence | Linked lists change pointers instead of shifting items; arrays are better for indexed access and binary search.
 SA3#computing-u05-06-q5@2,3: Describe how to insert a new item into the middle of a linked list, and explain why the order of the pointer changes matters. | Create a node for the new item. Traverse from the head to the node after which it belongs (the previous node). Set the new node's pointer to the previous node's next node, then set the previous node's pointer to the new node. If the previous node's pointer were changed first, the reference to the rest of the list would be lost, cutting off every later node. The insertion is O(1) once the position is found, but finding it is O(n). | Creates a new node ; Traverses to the previous node ; Sets new node's pointer first ; Then updates the previous node ; Explains loss of the rest of the list in the wrong order
+Q: What is the head pointer of a linked list? | The pointer that gives the first node of the list.
+Q: How do you traverse a linked list? | Start at the head and follow each node's pointer until reaching null.
+Q: What is the time complexity of accessing the ith item of a linked list? | O(n), because i pointers must be followed.
+Q: Why can a linked list grow without moving existing items? | Nodes can be anywhere in memory, so new nodes are added one at a time by linking pointers.
+Q: What is a doubly linked list? | A linked list where each node also points to the previous node, allowing backward traversal.
+Q: What is a circular linked list? | A linked list in which the last node points back to the first.
+Q: Name costs of using a linked list instead of an array. | Extra memory for pointers, no direct indexing and poor cache performance.
+Q: What goes wrong if B's pointer is set to the new node C before C copies B's old next? | The rest of the list after B is lost.
+Q: How are linked lists often stored in exam questions? | In arrays, with a "next" index as the pointer and a free list of unused nodes.
+Q: What is a null pointer? | A pointer that refers to nothing, marking the end of a linked list.
 
 ## Trees
 LV: A level · Foundation
@@ -273,6 +333,16 @@ M2#computing-u05-07-q2@2: A tree's root has three children, and one of those chi
 TF1#computing-u05-07-q3@1: A tree can contain a cycle. | false | By definition a tree has no cycles; a structure with a cycle is a general graph.
 M3#computing-u05-07-q4@3: Why is an operating system's folder structure modelled as a tree? | Each folder or file is inside exactly one parent folder, with a single top-level root | Files must be sorted alphabetically | Folders can contain each other in a loop | Trees use less disk space than lists | One parent per item and a single root is exactly the definition of a rooted tree.
 SA3#computing-u05-07-q5@2,3: Explain the terms root, parent, child, leaf and height using an example tree, and describe one use of trees in computing. | Example: root A has children B and C; B has children D and E. A is the root (no parent); B is the parent of D and E, which are its children; C, D and E are leaves (no children); the height is 2 (A to B to D). Use: a file system, where each folder is a node whose children are the files and folders inside it, so paths are routes from the root. | Defines root and parent correctly ; Defines child and leaf correctly ; Calculates height ; Uses a consistent example ; Describes a real use
+Q: How many parents does each non-root node in a rooted tree have? | Exactly one.
+Q: What is a subtree? | Any node together with all its descendants.
+Q: How is the height of a tree defined? | The number of edges on the longest path from the root to a leaf.
+Q: What does each node in a binary tree hold? | Data, a left pointer and a right pointer, null where there is no child.
+Q: How is a binary tree often stored in exam questions? | In three arrays, data, left and right, with indexes as pointers.
+Q: Is it true that every node in a binary tree must have two children? | No. Binary means at most two children; leaves have none.
+Q: Name two uses of trees in computing. | File systems and syntax trees produced by compilers.
+Q: What structure is the HTML DOM? | A tree of elements.
+Q: Which tree is used in compression? | The Huffman tree.
+Q: In the tree CS with children Theory and Systems, where Systems has OS and Networks, what is the height? | 2 edges, from CS to Systems to OS.
 
 ## Binary search trees
 LV: A level · Application
@@ -311,6 +381,16 @@ M2#computing-u05-08-q2@2: Values 40, 25, 60, 30 are inserted in that order into 
 TF1#computing-u05-08-q3@2: An in-order traversal of a binary search tree visits its values in ascending order. | true | Left subtree, node, right subtree visits smaller values, then the node, then larger values.
 M3#computing-u05-08-q4@3: A BST built from 1, 2, 3, …, 1000 inserted in order is searched for 1000. How many comparisons are needed? | About 1,000, because the tree is a chain | About 10, because BST search is O(log n) | Exactly 1, because 1000 is the largest | About 500, because it searches half the tree | Sorted insertion gives a degenerate tree of height 999, so search is linear.
 SA3#computing-u05-08-q5@2,3: Explain why a binary search tree can be searched efficiently, and evaluate what can go wrong. | At each node the search compares the target and goes left or right, discarding the other subtree, so the number of comparisons is at most the height. In a balanced tree the height is about log₂ n: 20 comparisons for a million items. But the shape depends on insertion order: sorted or nearly sorted input produces a tall, chain-like tree, making search O(n). Self-balancing trees such as AVL or red-black trees fix this by rotating nodes after insertions and deletions, keeping operations O(log n). | Explains discarding a subtree per comparison ; Relates comparisons to height ; States O(log n) when balanced ; Explains degeneration with sorted input ; Mentions self-balancing trees
+Q: How do you search a binary search tree? | Start at the root; go left if the target is smaller, right if larger, until found or a null pointer is reached.
+Q: How is a new value inserted into a BST? | Search for it and attach a new leaf where the search reaches a null pointer.
+Q: What decides the shape of a binary search tree? | The order in which values are inserted.
+Q: What is the time complexity of operations in a balanced BST? | O(log n) for search, insertion and deletion.
+Q: Name two kinds of self-balancing tree. | AVL trees and red-black trees.
+Q: How do you delete a BST node that has one child? | Link the child directly to the deleted node's parent.
+Q: How do you delete a BST node that has two children? | Replace its value with its in-order successor, then delete that successor node.
+Q: What is the in-order successor in a BST? | The smallest value in a node's right subtree.
+Q: What is wrong with checking only a node's immediate children for the BST property? | Every value in the whole left subtree must be smaller, and every value in the right subtree larger, not just the children.
+Q: After inserting 50, 30, 70, 20, 40, 60, how many comparisons find 40? | 3 comparisons: 50, then 30, then 40.
 
 ## Tree traversal
 LV: A level · Application
@@ -352,6 +432,16 @@ M2#computing-u05-09-q2@2: Tree: root A with left B and right C; B has left D. Wh
 TF1#computing-u05-09-q3@3: Post-order traversal is suitable for deleting every node in a tree. | true | Each node's children are visited (deleted) before the node itself, so no node is deleted while its children still need it.
 M3#computing-u05-09-q4@3: An expression tree has root ×, left child + (with children 2 and 5) and right child 3. What does a post-order traversal produce? | 2 5 + 3 × | × + 2 5 3 | 2 + 5 × 3 | 3 × 5 + 2 | Post-order gives Reverse Polish notation: 2 5 + 3 ×, which evaluates to 21.
 SA3#computing-u05-09-q5@2,3: Explain the difference between in-order and pre-order traversal using a small binary search tree, and give a use for each. | For a BST with root 5, left 2 and right 9: in-order (left, node, right) gives 2, 5, 9, the values in ascending order, so it is used to output a BST sorted. Pre-order (node, left, right) gives 5, 2, 9; reinserting values in that order rebuilds the same tree shape, so it is used to copy or save a tree. Both are recursive and O(n). | Defines in-order ; Defines pre-order ; Traces a consistent example correctly ; Gives a use of in-order ; Gives a use of pre-order
+Q: In what order does a pre-order traversal visit nodes? | The node, then the left subtree, then the right subtree.
+Q: In what order does an in-order traversal visit nodes? | Left subtree, then the node, then the right subtree.
+Q: Which data structure does a level-order traversal use? | A queue.
+Q: Which traversal is used to copy a tree? | Pre-order.
+Q: Which traversal produces Reverse Polish notation from an expression tree? | Post-order.
+Q: Why is post-order traversal suited to deleting a tree? | It deletes children before their parent.
+Q: What does pre-order traversal of the expression tree for 3 + 4 give? | + 3 4.
+Q: Describe the dot method for working out traversals by hand. | Dot each node on the left for pre-order, underneath for in-order, right for post-order, then trace anticlockwise from the root.
+Q: What is level-order traversal useful for? | Printing a tree level by level and finding the shallowest node with a property.
+Q: Which traversal produces infix notation from an expression tree? | In-order.
 
 ## Graphs
 LV: A level · Foundation
@@ -390,6 +480,16 @@ M2#computing-u05-10-q2@2: Which situation is best modelled by a directed graph? 
 TF1#computing-u05-10-q3@3: In any undirected graph, the sum of the degrees of all vertices is even. | true | Each edge adds 1 to the degree of each of its two ends, so the total is twice the number of edges.
 M3#computing-u05-10-q4@3: A graph has 5 vertices and is connected with no cycles. How many edges does it have? | 4 | 5 | 10 | 3 | A connected graph with no cycles is a tree, and a tree with n vertices has n − 1 edges.
 SA3#computing-u05-10-q5@2,3: Explain how the world wide web could be modelled as a graph and what kind of graph it would be. | Each web page is a vertex and each hyperlink an edge from the page containing it to the page it links to. Links go one way, so the graph is directed; it is usually unweighted, though weights could represent link importance. It contains cycles (pages linking to each other) and may be disconnected. Algorithms such as PageRank and web crawlers' traversals operate on this graph. | Pages as vertices ; Links as edges ; Identifies it as directed with reason ; Comments on weights or cycles ; Names an algorithm or use
+Q: When are two vertices neighbours? | When they are joined by an edge, making them adjacent.
+Q: What is a path in a graph? | A sequence of vertices joined by edges.
+Q: What is a cycle in a graph? | A path that returns to its start.
+Q: When is a graph connected? | When there is a path between every pair of vertices.
+Q: How does a tree relate to a graph? | A tree is a special case: a connected graph with no cycles.
+Q: Give an example of a directed graph. | Following on social media, one-way streets or links between web pages.
+Q: Give an example of an undirected graph. | Friendships on Facebook.
+Q: In a train network graph, what would the vertices, edges and weights be? | Stations, direct lines between them, and journey times in minutes.
+Q: Does the layout of a graph drawing carry meaning? | No. Only which vertices are connected and the weights matter.
+Q: What graph problem is finding the fastest route? | A shortest-path problem.
 
 ## Adjacency matrices and adjacency lists
 LV: A level · Application
@@ -429,6 +529,16 @@ M2#computing-u05-11-q2@2: A graph has 10,000 vertices and about 30,000 edges. Wh
 TF1#computing-u05-11-q3@2: Checking whether an edge exists between two given vertices is faster in an adjacency matrix than in an adjacency list. | true | The matrix is indexed directly in O(1); the list must be scanned.
 M3#computing-u05-11-q4@3: For a graph with 6 vertices and 15 edges (every pair connected), which representation is reasonable and why? | An adjacency matrix: the graph is dense, so few entries are wasted and edge checks are O(1) | An adjacency list, because matrices can't store complete graphs | Neither, because complete graphs can't be stored | An adjacency list, because it always uses less memory | A complete graph uses every matrix entry, so the matrix wastes nothing and is simple and fast.
 SA3#computing-u05-11-q5@2,3: Compare adjacency matrices and adjacency lists for storing a social network of 2 million users, each with about 200 friends. | A matrix would need (2 × 10^{6})^{2} = 4 × 10^{12} entries, almost all zero: impossible to store. An adjacency list stores each user's friends: about 2 × 10^{6} × 200 = 4 × 10^{8} entries, which is manageable. Lists also make listing a user's friends and running BFS (O(V + E)) efficient. A matrix's only advantage, O(1) edge checks, can be recovered by storing each friend list as a hash set. So an adjacency list is clearly the right choice for this sparse graph. | Calculates matrix size ; Calculates list size ; Identifies the graph as sparse ; Notes traversal or neighbour listing benefits ; Addresses the edge-check trade-off and concludes
+Q: What does an adjacency matrix contain? | A 2D array with a row and column per vertex; entry [i][j] is 1 or the weight if there is an edge, else 0.
+Q: What does an adjacency list store? | For each vertex, a list of its neighbours, with weights if needed.
+Q: How much memory does an adjacency list use? | Memory proportional to V + E.
+Q: How long does checking whether two vertices are adjacent take in an adjacency matrix? | O(1).
+Q: How is an adjacency list naturally represented in Python? | As a dictionary of lists.
+Q: How fast do BFS and DFS run with adjacency lists compared with matrices? | O(V + E) with lists and O(V^{2}) with matrices.
+Q: What is a sparse graph? | A graph with relatively few edges compared with the maximum possible.
+Q: What common mistake is made with undirected edges in adjacency lists? | Forgetting that each undirected edge must appear twice, once in each vertex's list.
+Q: Which representation makes adding a vertex easy? | The adjacency list; a matrix must be resized.
+Q: In a weighted adjacency matrix, what marks the absence of an edge? | Infinity, or 0 in an unweighted matrix.
 
 ## Hash tables
 LV: A level · Application
@@ -469,6 +579,16 @@ M2#computing-u05-12-q2@3: Using index = key MOD 11, in which slot is the key 50 
 TF1#computing-u05-12-q3@1: A hash function must always return the same index for the same key. | true | Otherwise an item stored under one index couldn't be found again.
 M3#computing-u05-12-q4@3: A hash function for surnames returns the code of the first letter only. What is the main problem? | Many names share a first letter, so keys cluster in a few slots and collisions are frequent | It is too slow to compute for long names | It returns different indexes for the same name | It can't handle names longer than ten letters | A good hash spreads keys uniformly; first letters are unevenly distributed and give at most 26 slots.
 SA3#computing-u05-12-q5@2,3: Explain how a hash table achieves fast lookups and evaluate when its performance can degrade. | Each key is passed through a hash function that computes an array index, so storing and finding a key needs only that calculation and one access, O(1) on average, regardless of size. Performance degrades when many keys hash to the same slot (a poor hash function or adversarial keys), making operations approach O(n), and as the load factor rises, collisions increase. Tables are resized and rehashed when the load factor passes a threshold, which is costly but rare, giving amortised O(1). Hash tables also don't keep keys in order, so ordered queries need another structure. | Explains index computation by the hash function ; States O(1) average ; Explains collisions and poor hash functions ; Explains load factor and resizing ; Notes lack of ordering or worst case O(n)
+Q: What is a simple hash function for integer keys? | index = key MOD table size.
+Q: Why does a hash table give O(1) average operations? | The index is computed directly from the key, so no search is needed.
+Q: Name three properties of a good hash function. | Deterministic, fast to compute and uniform in spreading keys.
+Q: Why does a prime table size help? | It helps MOD spread keys that have patterns.
+Q: Above what load factor should a hash table be resized? | About 0.7; then the table is resized and every item rehashed.
+Q: Why are mutable objects such as lists bad hash keys? | If the contents change, the hash changes and the item can't be found again.
+Q: Why is summing character codes a weak string hash? | It is weak compared with a polynomial such as h = h × 31 + code for each character.
+Q: Using index = key MOD 7, where is key 27 stored? | Slot 6.
+Q: Which Python types use hash tables? | Dictionaries and sets.
+Q: What two things does hash table performance depend on? | Spreading keys evenly and keeping the table from getting too full.
 
 ## Collision resolution
 LV: A level · Application
@@ -506,6 +626,16 @@ M2#computing-u05-13-q2@2: Table size 5, index = key MOD 5, linear probing. Keys 
 TF1#computing-u05-13-q3@3: In a linear-probing table, simply emptying a deleted item's slot can make other keys impossible to find. | true | A search stops at an empty slot, so keys stored further along the probe sequence would be missed; tombstones prevent this.
 M3#computing-u05-13-q4@3: A linear-probing table is 95% full and lookups have become slow. What is the best fix? | Resize to a larger table and rehash every item | Switch to searching the table from the start each time | Remove the hash function and use the key as the index | Increase the key sizes so they spread out | At high load factors clusters make probe sequences long; rehashing into a bigger table lowers the load factor.
 SA3#computing-u05-13-q5@2,3: Compare linear probing and chaining as methods of resolving collisions. | Linear probing stores colliding items in the next free slots of the same array: it uses no extra memory and has good cache performance, but clusters of filled slots form and lengthen probes, it degrades badly as the table fills, and deletion needs tombstones. Chaining stores colliding items in a list at their slot: the table never fills, deletion is simple and performance degrades gradually with load, but the lists use extra memory and pointers. Both give O(1) average operations if the load factor is kept moderate by rehashing. | Describes linear probing ; Gives probing's clustering or deletion problem ; Describes chaining ; Gives chaining's memory cost or advantages ; Notes load factor or rehashing for both
+Q: Why are collisions in hash tables unavoidable? | There are usually far more possible keys than slots: the pigeonhole principle.
+Q: What does the birthday paradox say about a table of 365 slots? | A collision is likely once about 23 keys are stored.
+Q: How does a linear probing search proceed? | Probe the same sequence of slots until the key or an empty slot is found.
+Q: What is primary clustering? | In linear probing, runs of filled slots grow and lengthen every probe.
+Q: Why is deletion awkward with linear probing? | Emptying a slot breaks the probe sequence for later keys, so a tombstone marker is left instead.
+Q: What advantages does chaining have over linear probing? | It handles high load factors gracefully and deletes easily.
+Q: What is a drawback of chaining? | It uses extra memory for the lists.
+Q: What is an advantage of linear probing over chaining? | Everything stays in one array, giving good cache use.
+Q: What restores performance in both probing and chaining? | Rehashing into a larger table.
+Q: With table size 7 and linear probing, where do 10, 17 and 24 go? | Slots 3, 4 and 5 respectively, since all hash to 3.
 
 ## Static and dynamic data structures
 LV: A level · Application
@@ -543,6 +673,16 @@ M2#computing-u05-14-q2@2: A program stores the 64 squares of a chessboard. Which
 TF1#computing-u05-14-q3@3: Appending to a Python list occasionally takes O(n) time, but O(1) on average. | true | Occasionally the list must be copied into a larger block, but the copies are rare enough that the amortised cost is constant.
 M3#computing-u05-14-q4@3: An embedded heart monitor must never pause unexpectedly. Why might its designers prefer static structures? | Static allocation avoids run-time allocation failures and garbage-collection pauses | Static structures always use less memory | Dynamic structures can't store numbers | Static structures grow automatically when needed | Predictable timing and guaranteed memory matter more than flexibility in safety-critical systems.
 SA3#computing-u05-14-q5@2,3: Evaluate the use of static and dynamic data structures for an online shop's basket and for its list of the seven days' delivery slots. | A basket's size is unpredictable and changes as items are added and removed, so a dynamic structure (a list) fits: it uses only the memory needed and has no fixed limit, at the cost of allocation overhead. The delivery slots are always seven days, so a static array of size 7 fits: simple, fast and predictable, with no wasted or missing space. Using a static array for the basket would either waste memory or refuse items; a dynamic structure for the slots would add overhead for no benefit. | Chooses dynamic for the basket with reason ; Chooses static for the slots with reason ; Gives a dynamic disadvantage ; Gives a static disadvantage ; Explains why the alternative is worse
+Q: What is a static data structure? | A data structure whose size is fixed when it is created.
+Q: What is a dynamic data structure? | A data structure that can grow and shrink while a program runs.
+Q: How is dynamic memory released in Python? | Automatically, by garbage collection.
+Q: Name advantages of static data structures. | Fast, simple, predictable and cache-friendly access, with no risk of running out once allocated.
+Q: Name disadvantages of dynamic data structures. | Allocation costs time, pointers use extra memory, and memory can run out or fragment at run time.
+Q: What happens when a Python list runs out of spare space? | A proportionally larger block is allocated and every item is copied, an O(n) step.
+Q: What does amortised constant time mean for Python list appends? | Occasional copies are rare enough that the average cost per append is still O(1).
+Q: Why is it wrong to think dynamic structures have no limit? | They are limited by available heap memory and can exhaust it.
+Q: Give an example of data that suits a static structure. | Data of known, fixed size, such as days of the week or a chessboard.
+Q: Give an example of data that suits a dynamic structure. | Data of unpredictable size, such as a shopping basket or a social network.
 
 ## Comparing data structures
 LV: A level · Evaluation
@@ -583,4 +723,14 @@ M2#computing-u05-15-q2@2: A browser needs to return to the previous page each ti
 MATCH2#computing-u05-15-q3@2: Match each requirement to the most suitable structure. | Undo the last action = stack ; Serve customers in arrival order = queue ; Find a product by its barcode = hash table ; List words in alphabetical order as they are added = binary search tree | Each structure makes the required operation cheapest.
 M3#computing-u05-15-q4@3: A leaderboard must add new scores frequently and often show the top 10 in order. Which structure is most suitable? | A balanced binary search tree or heap keyed on score | An unsorted linked list | A hash table keyed on player name only | A fixed array re-sorted with bubble sort after every insert | A balanced tree keeps scores ordered with O(log n) inserts; a hash table can't give the top scores, and re-sorting each time is wasteful.
 SA3#computing-u05-15-q5@2,3: A library system must find books by ISBN, list books by title in alphabetical order, and handle reservations in the order they were made. Choose and justify data structures. | Find by ISBN: a hash table keyed on ISBN, giving O(1) average lookups. Alphabetical listing: a balanced binary search tree keyed on title, kept ordered as books are added, with in-order traversal producing the list (O(log n) inserts). Reservations: a queue for each book, so the earliest reservation is served first (O(1) operations). Using one structure for everything would make at least one operation slow: a hash table can't list in order, a tree is slower for exact lookups. | Hash table for ISBN with reason ; Ordered structure for titles with reason ; Queue for reservations with reason ; States operation costs ; Explains why one structure wouldn't suffice
+Q: What is the cost of searching a sorted array? | O(log n).
+Q: What is the cost of inserting or deleting at a known node in a linked list? | O(1).
+Q: What is a range query? | A request for all items whose keys lie between two values.
+Q: Why can't hash tables answer range queries efficiently? | They keep no ordering of keys.
+Q: Where should you start when choosing a data structure? | From the operations the program needs most, then pick the structure that makes them cheapest.
+Q: In a ride-hailing app, which structure suits looking up drivers by ID? | A hash table.
+Q: How would a ride-hailing app store its road network? | As a weighted graph in an adjacency list, searched with Dijkstra or A* search.
+Q: Why is the simplest structure often fastest for small data? | Constant factors dominate when data is small.
+Q: What is the mistake of choosing a structure for one operation only? | Other needs are ignored; for example, a hash table looks up fast but can't list items in order.
+Q: What do faster operations often cost? | Memory, as with hash tables and adjacency matrices, or complexity, as with self-balancing trees.
 `;

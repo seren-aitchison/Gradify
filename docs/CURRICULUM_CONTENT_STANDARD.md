@@ -1,5 +1,7 @@
 # Curriculum content standard
 
+_Standard 3, November 2026: the fixed lesson shape is retired; size follows the topic. See "Size follows the topic" below._
+
 The rules every lesson in a Gradify course follows. `tests/course.test.mjs` (physics) and `tests/courses.test.mjs` (law, nursing) enforce the mechanical parts; reviewers enforce the rest.
 
 ## The notes format
@@ -25,14 +27,36 @@ Inline: `**bold**`, `*italic*`, `` `code` ``, `x^{2}`, `v_{0}`. Don't use `|` in
 
 **Important:** the last field of an `M` line is the explanation **only when there are at least four fields after the right answer**. Always write at least three wrong answers and an explanation, and the parser can't mistake a distractor for the explanation.
 
-## Minimum per lesson
+## Size follows the topic (standard 3)
 
-- A lead (`S:`).
-- At least four blocks, in at least two sections (`H:`).
-- At least two flashcards and two check questions, each check question with an explanation.
-- At least one `K:` key point; a `!:` common mistake where there is a well-known one.
+There is no lesson template. Each lesson is as long as the topic needs, with as many worked examples, diagrams and flashcards as the topic needs. Lessons that all have the same shape are a warning sign, not a standard: `npm run qa` reports how much of each course shares one skeleton (see *Shape report* below).
 
-Target: physics lessons average about 2.5 KB. Aim for 1.5–3 KB per lesson: dense, exam-relevant, no padding.
+**Floors** (enforced by `npm run qa` and the tests, unchanged): a lead (`S:`) over 60 characters; at least four blocks in at least two sections (`H:`); at least one `K:` key point; at least two flashcards and two check questions, each check question with an explanation. Floors stop a lesson being empty. They are not targets.
+
+**Sizing guide.** Decide what kind of topic it is first, then write to that:
+
+| Kind of topic | Teaching text | Worked examples | Diagrams (`D:`) | Flashcards |
+|---|---|---|---|---|
+| A definition or a single fact with context | 150–300 words | 0–1 | rarely | 2–4 |
+| A concept to understand (why something happens) | 300–600 words | 1–2, chosen to show the idea working | where a picture explains it | one per idea worth recalling, usually 3–6 |
+| A method or calculation | 250–500 words | 2–3 of rising difficulty; as many steps as the method really has | a graph or construction where it helps | the method's decisive steps and its traps |
+| A process, mechanism or structure | 300–700 words | one traced example | **required**: the mechanism, cycle, circuit or structure | the stages, and what drives each |
+| A core, heavily examined topic | 600–1,200 words, or split into two lessons | 2–4, including an exam-style one | as many as the distinct ideas need | 6–12 |
+| A legal test or clinical decision | 300–700 words | a scenario applied step by step | a decision tree, legally or clinically reviewed | the elements of the test and their authorities |
+
+**Rules that replace the old template**
+- **Worked examples** have as many steps as the solution has. Don't split or merge steps to reach a number.
+- **Flashcards** test one thing each, and something worth remembering: a definition, a relationship, a decision, a common confusion. Not dates or names for their own sake, unless knowing them is the point.
+- **Summaries (`SUM:`)** are full sentences a learner could revise from ("SN2 inverts the configuration at carbon"), not labels ("Inversion.").
+- **Leads** say what the topic is and why it matters. Don't start with "This lesson…".
+- **Diagrams.** Where the topic is a mechanism, process, structure, circuit, graph, force system, cycle or decision, add a checked teaching diagram (`D:`, `docs/VISUAL-LEARNING-ENGINE.md`) beside the text it explains.
+
+**Check-question options must not give the answer away**
+- The right answer is no longer than the longest wrong option by more than about 20%, and is not always the longest. Lengthen the wrong options with real content, or tighten the right one.
+- Every wrong option is a misconception a real learner holds: a confusion between related ideas, a reversed relationship, a step missed or a rule misapplied. Never write an obviously absurd option ("always zero", "is magic", "has no effect on anything").
+- `npm run qa` reports any question where the right answer is more than 30% longer than every wrong option. For a school with `standard: 3` in `qa.js` it is a hard failure.
+
+**Shape report.** `npm run qa` lists, per course, the share of lessons with the most common skeleton (sections, worked examples and their step counts, flashcards, questions). Above 25%, the course is being written to a template; review it.
 
 ## Accuracy and sources
 

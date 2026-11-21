@@ -43,9 +43,9 @@ test("checkout maps a plan to its configured price, and refuses anything else", 
   assert.equal(priceFor("plus", "month", env), "price_plus");
   assert.equal(priceFor("pro", "month", env), "price_pro");
   assert.throws(() => priceFor("plus", "week", env), /monthly/);
-  assert.throws(() => priceFor("gold", "month", env), /Plus or Gradify Pro/);
+  assert.throws(() => priceFor("gold", "month", env), /Pro or Gradify Ultra/);
   assert.throws(() => priceFor("plus", "year", env), /isn't on sale yet/, "no yearly price is configured");
-  assert.throws(() => priceFor("plus", "month", {}), /Gradify Plus isn't on sale yet/);
+  assert.throws(() => priceFor("plus", "month", {}), /Gradify Pro isn't on sale yet/);
 });
 
 test("a subscription's plan comes from its price: Plus by its price, Pro by its own or the original Pro prices", () => {

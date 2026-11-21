@@ -37,6 +37,16 @@ M2#careers-u03-01-q2@2: Why is work shadowing common in medicine and law courts?
 TF1#careers-u03-01-q3@1: Some work experience in health and care settings requires checks such as a DBS check before you start. | true | Settings with vulnerable people often require background checks, health questionnaires or training first.
 M3#careers-u03-01-q4@3: Which description of work experience would most impress an admissions tutor or employer? | What the student observed, a task they did and what it taught them | A list of five organisations with dates but no further details | A statement that the student completed over two hundred hours in total | A description of the building and the size of the organisation | Reflection on specific observations and learning shows insight and motivation; lists and hours don't show what was gained.
 SA3#careers-u03-01-q5@2,3: Evaluate the usefulness of short work experience for a student deciding on a career. | Useful: it gives first-hand, qualitative insight into daily work, tests interest cheaply, builds confidence, provides contacts and gives material for applications when reflected on. Limits: a few days may show an unrepresentative slice of the job; shadowing gives little hands-on practice; access depends on contacts and location; and effects on long-term outcomes appear modest without reflection. Most valuable when chosen to test a specific question, followed by reflection and further research. | Identifies insight into real work ; Mentions testing interest or application material ; Notes short duration or unrepresentative slice ; Notes unequal access ; Stresses reflection and reaches a judgement
+Q: How long does work experience usually last? | From a few days to a few weeks.
+Q: How do work experience and shadowing compare with internships or placements? | They are shorter and less formal.
+Q: By what ages does Gatsby Benchmark 6 expect pupils to have had workplace experiences? | By 16 and again by 18.
+Q: In which fields is work shadowing especially common? | Medicine, dentistry, veterinary practice, law courts and teaching.
+Q: Name three ways to find work experience. | School or university schemes, contacts, alumni, local employers, hospital and council programmes, and speculative emails.
+Q: What should you agree before starting work experience? | Dates, hours, dress and any checks, such as DBS checks or health questionnaires.
+Q: How should you behave during work experience? | Be punctual, ask questions at sensible moments, take notes, volunteer for tasks and ask how people got into their roles.
+Q: What should you do after work experience? | Thank your host, reflect on what you learned, and record skills and contacts.
+Q: What did Aiden write about in his personal statement? | A consultation where the GP explained a diagnosis simply, and what it taught him about communication.
+Q: What are "micro-internship" schemes? | Short placement schemes run by many universities.
 
 ## Internships
 LV: Introductory · Application
@@ -76,6 +86,16 @@ M2#careers-u03-02-q2@2: An employer calls a role an "unpaid internship" but the 
 TF1#careers-u03-02-q3@2: In some sectors, a summer internship can lead directly to a graduate job offer before the final year of university. | true | Many large employers use internships as extended assessment and make graduate offers to strong interns.
 M3#careers-u03-02-q4@3: Which is the strongest fairness concern about internships as a route into graduate jobs? | Unpaid or London-based roles favour those who can afford them | Internships give students too much real experience of work | Interns are always paid more than permanent graduate staff | Employers can't assess interns' skills during the placement | When internships are unpaid or costly to take, students from poorer backgrounds are excluded from a key route into graduate work.
 SA3#careers-u03-02-q5@2,3: Explain why internships matter in graduate recruitment and how a student without contacts can improve their chances of getting one. | Internships give real experience, skills and contacts, and many large employers fill graduate roles with former interns, so they act as extended interviews. A student without contacts can research employers early, attend insight days and diversity programmes, use the university careers service and job board, apply early to paid schemes, use speculative applications for SMEs, and build evidence through part-time work and societies. Paid internships and access schemes help reduce the advantage of family networks. | Explains internships as a recruitment route ; Notes skills and contacts gained ; Recommends early research and application ; Mentions access schemes or careers service ; Addresses lack of contacts specifically
+Q: How long does a typical internship last? | Typically 6 to 12 weeks.
+Q: In which sectors are summer internships the classic form? | Finance, law, consulting, technology and engineering.
+Q: How do large employers often use summer internships? | As an extended assessment, offering strong interns graduate scheme places before their final year.
+Q: What are graduate internships? | Internships for recent graduates, often offered by SMEs and university schemes.
+Q: When do SMEs and charities usually recruit interns? | Closer to the start date.
+Q: Does calling someone an intern or volunteer change their right to the minimum wage? | No; if they count as a worker they are entitled to at least the National Minimum Wage.
+Q: What did the Sutton Trust find about unpaid internships? | They favour those who can afford to work for free, especially in London.
+Q: What three things should you check about an internship offer? | Whether it is paid and at what rate, whether it has defined tasks and supervision, and whether it leads to a graduate offer.
+Q: When did Sana plan to sit tests and assessment centres for her internship? | January to March of her second year.
+Q: How should an intern treat a summer internship at a large firm? | As a long interview.
 
 ## Placement years and sandwich degrees
 LV: Intermediate · Application
@@ -115,6 +135,16 @@ M2#careers-u03-03-q2@2: Leila can't find a placement by the summer of her second
 TF1#careers-u03-03-q3@2: Placements that are a required part of a UK higher education course and last up to a year are exempt from the National Minimum Wage. | true | This exemption exists, although many employers still pay placement students a salary.
 M3#careers-u03-03-q4@3: Which is the strongest evaluation of the claim that "placement years improve graduate outcomes"? | Evidence is positive, but part may reflect who chooses placements | Placements are proven to cause all better graduate outcomes | Placements make no difference whatsoever to graduate outcomes | The evidence comes only from employers' own adverts | Studies find consistent positive associations that persist when controlling for prior attainment, but selection means the true causal effect is likely smaller than raw comparisons suggest.
 SA3#careers-u03-03-q5@2,3: A student asks whether she should take a placement year. Explain the factors she should weigh and reach a recommendation for a stated goal. | Benefits: a year of paid, substantial experience; strong application evidence; possible return offer; testing whether the field suits her; links with higher final grades and better outcomes, though partly through selection. Costs: an extra year, relocation, application effort while studying, risk of not finding one, reduced fee to pay. If her goal is a graduate job in industry, a placement is usually strongly worthwhile; if she plans a research master's, a shorter internship might suffice. | Lists benefits including experience and return offers ; Lists costs including extra year ; Mentions evidence and selection caveat ; Links decision to a stated goal ; Reaches a recommendation
+Q: How long does a placement year typically last? | 9 to 12 months.
+Q: When do students usually apply for placements? | During their second year, with support from a university placements team.
+Q: How does the university stay involved during a placement year? | Reduced fee enrolment, a placement tutor, and often a reflective report or portfolio.
+Q: How may a placement be recorded on a degree? | As "with professional placement" or "with industrial experience".
+Q: Name four benefits of a placement year. | A year of real experience, possible return offers, clarity about the field and better final-year performance.
+Q: What are the costs of a placement year? | An extra year before graduating, possibly moving city, and the effort of applying while studying.
+Q: What should students who may not find a placement know? | The university's deadline for switching back, and have a back-up.
+Q: What is a return offer? | A job offer made to a placement student or intern for after graduation.
+Q: What salary did Owen's Derby placement offer? | About £22,000.
+Q: Who might weigh a placement year differently from Owen? | A student set on a postgraduate academic route.
 
 ## Insight days and spring weeks
 LV: Introductory · Application
@@ -154,6 +184,16 @@ M2#careers-u03-04-q2@2: Which first-year student is best placed to benefit from 
 TF1#careers-u03-04-q3@1: Some spring weeks include an assessment that can give a fast-track to a summer internship. | true | Many firms assess spring week participants and offer the best a shortened route into the next year's internship process.
 M3#careers-u03-04-q4@3: Which is the strongest criticism of early-stage programmes for widening access? | Deadlines come so early that students without prior knowledge may miss them | They give first-year students too much information about careers in general | Employers never offer any places to students from state schools at all | They take place after most graduate recruitment has already finished | Very early deadlines favour students who already know about these careers, which is why targeted access programmes and early careers education matter.
 SA3#careers-u03-04-q5@2,3: Evaluate whether early-stage programmes such as spring weeks help or hinder social mobility into competitive careers. | Help: they introduce sectors to students without contacts, access programmes target under-represented groups, and fast-tracks give a concrete advantage. Hinder: deadlines in the first term favour students with prior knowledge and networks, they add another stage at which advantage compounds, and places are limited. Overall impact depends on targeted outreach, early careers education and employers' own selection practices. | Explains benefits for students without contacts ; Mentions targeted access programmes ; Identifies early deadlines as a barrier ; Notes compounding advantage or limited places ; Reaches a balanced judgement
+Q: How long are insight days? | One or two days.
+Q: In which sectors are spring weeks common? | Banking, law, consulting, accountancy and technology.
+Q: What activities do spring weeks typically include? | Presentations, workshops, office tours, networking and short tasks.
+Q: What are diversity and access programmes? | Schemes for students from under-represented groups, such as lower-income backgrounds or disabled students.
+Q: Name three organisations that link under-represented students with employers. | upReach, the Social Mobility Foundation and Rare.
+Q: When do some spring weeks open for applications? | In the autumn of first year, only weeks after starting university.
+Q: How should you prepare for a spring week? | Research the firm and sector, and prepare a short introduction and questions.
+Q: What should you do after a spring week? | Thank contacts, connect on LinkedIn and use what you learned in internship applications.
+Q: What did Jacob learn about bank divisions during his spring week? | The difference between markets, investment banking and operations, and that operations and technology appealed most.
+Q: Why should you engage actively in an insight day? | Tasks and group exercises may be assessed even if this isn't stated.
 
 ## Volunteering
 LV: Introductory · Application
@@ -192,6 +232,16 @@ M2#careers-u03-05-q2@2: A student wants a career in charity fundraising. Which v
 TF1#careers-u03-05-q3@2: The minimum wage exemption for voluntary workers applies to any business that calls its staff volunteers. | false | It applies only to charities, voluntary organisations, associated fundraising bodies and statutory bodies, not to ordinary businesses.
 M3#careers-u03-05-q4@3: Which is the strongest way to present volunteering in an application? | A specific achievement with its outcome and the skills it shows | A list of every charity the applicant has ever helped at | A statement that volunteering shows the applicant is a good person | The total number of hours volunteered across the past five years | Recruiters look for evidence: what you did, what changed and which skills it shows, not breadth or hours alone.
 SA3#careers-u03-05-q5@2,3: Evaluate volunteering as a way for a student to improve their employability. | Strengths: open to most students, builds transferable skills, gives sector entry in charity, heritage and care, shows motivation and gives achievements for applications; it can also be flexible around study. Limits: unpaid time is harder for students with jobs or caring duties; some roles offer little development; evidence of direct employment benefit is mixed; and recruiters value what was achieved, not just participation. Best used purposefully, in a role that develops relevant skills and is reflected on. | Identifies skills and sector entry benefits ; Notes evidence of motivation ; Identifies access or time constraints ; Notes mixed evidence or variable quality ; Reaches a judgement stressing purposeful choice
+Q: What is volunteering? | Giving time freely, without pay, to benefit others, an organisation or the environment.
+Q: Name two platforms for finding volunteering roles. | Student union and university volunteering services, Do-it and the NCVO's resources.
+Q: What do NCVO Time Well Spent surveys find about volunteers' motivation? | Most want to help and improve things, and many also gain skills and confidence.
+Q: What makes someone legally a volunteer? | No contract, no obligation to work set hours and no payment beyond genuine expenses.
+Q: Which organisations can use the voluntary worker exemption? | Charities, voluntary organisations, associated fundraising bodies and statutory bodies.
+Q: Name four skills volunteering can build. | Leadership, organisation, communication, teamwork, fundraising, digital skills and working with vulnerable people.
+Q: In which sectors is volunteering a common entry route? | Charity, social care, heritage, museums, sport and conservation.
+Q: Why does volunteering matter for public service, health and charity careers? | It shows commitment to a cause.
+Q: Why choose a volunteering role you enjoy? | You can sustain it, and volunteering for the cause comes across more convincingly than for the CV.
+Q: What achievement did Freya use from her museum volunteering? | She ran a new trail for children with special educational needs that attracted 200 families.
 
 ## Part-time work and its value
 LV: Introductory · Application
@@ -230,6 +280,16 @@ M2#careers-u03-06-q2@2: Which CV entry for a bar job is strongest? | Trained fou
 TF1#careers-u03-06-q3@1: Students working part-time are entitled to the National Minimum Wage and paid holiday. | true | Students who are workers have the same rights to the minimum wage, holiday pay and rest breaks as other workers.
 M3#careers-u03-06-q4@3: A student works 30 hours a week in term and her grades are slipping. What is the most balanced advice? | Explore reducing hours, financial support and adjusting shifts around deadlines | Quit the job immediately since part-time work has no value at all | Increase her hours further, because experience is worth more than grades | Ignore the grades, since employers only care about work experience | Her job has value, but very long hours can harm study; financial support such as hardship funds, fewer hours and planning around deadlines can protect both.
 SA3#careers-u03-06-q5@2,3: Evaluate the impact of part-time work on a student's employability. | Positive: builds transferable skills (customer service, teamwork, reliability, working under pressure), commercial awareness and references, and recruiters value it as evidence, especially when described with achievements. It also reduces debt. Negative: long hours may reduce study time and grades, limit time for internships, societies or volunteering, and add stress; some jobs offer little development. Overall positive at moderate hours if well described, but students should manage hours and seek financial support where needed. | Identifies transferable skills ; Mentions commercial awareness or references ; Notes risk to study from long hours ; Notes trade-offs with other experience ; Reaches a balanced judgement
+Q: What does the Student Academic Experience Survey report about term-time work? | A majority of full-time UK undergraduates work for pay in term, many over ten hours a week.
+Q: Why do many students work during term? | Often because of living costs.
+Q: Name four skills recruiters see in part-time jobs. | Customer service, reliability, working under pressure, teamwork, handling complaints and commercial awareness.
+Q: How many hours of paid work a week do universities often recommend in term? | No more than 15 to 20.
+Q: What rights do working students have? | The National Minimum Wage, paid holiday and rest breaks like any other worker.
+Q: What should a working student discuss with their employer? | Exam periods.
+Q: What should a student do if work is affecting their studies? | Use the university's support and review their hours.
+Q: What commercial insight did Kwame show at the coffee chain? | Slow 8am service lost customers, so he suggested a pre-order station that cut queues.
+Q: Why is "served customers" a weak CV entry? | It describes duties only, not achievements or what you learned about the business.
+Q: Who is the Student Academic Experience Survey run by? | HEPI and Advance HE.
 
 ## Finding opportunities: advertised and speculative
 LV: Intermediate · Application
@@ -270,6 +330,16 @@ M2#careers-u03-07-q2@2: Which speculative email opening is strongest? | Dear Ms 
 TF1#careers-u03-07-q3@1: Employment agencies can generally charge work-seekers a fee for finding them a job in the UK. | false | The 2003 Conduct Regulations generally prohibit agencies from charging work-seekers for finding work, with limited exceptions such as some entertainment and modelling roles.
 M3#careers-u03-07-q4@3: Which job search strategy is most effective for a student targeting creative SMEs? | Targeted speculative approaches and networking alongside job alerts | Applying only to adverts on the largest national graduate job sites | Waiting for creative SMEs to contact them through their LinkedIn | Using one generic CV and email for every employer to save time | Creative SMEs often recruit informally, so direct, tailored approaches and networking reach roles that big sites miss.
 SA3#careers-u03-07-q5@2,3: Evaluate the use of speculative applications to find work experience. | Strengths: reaches the hidden job market, especially SMEs and creative or research organisations; shows initiative; less competition than advertised schemes; can be tailored to exactly what you want. Limits: low response rates; requires research to find named contacts; can feel uncomfortable; untargeted mass emails rarely work; and informal routes can favour those with networks. Most effective when targeted, specific and followed up, alongside advertised applications. | Explains access to unadvertised roles ; Notes reduced competition or initiative ; Identifies low response rates or effort ; Stresses targeting and follow-up ; Reaches a balanced judgement
+Q: Name three graduate and student job sites. | Prospects, TARGETjobs, Bright Network, RateMyPlacement and Gradcracker.
+Q: Which job site specialises in engineering and technology students? | Gradcracker.
+Q: Name three sector-specific job sites. | Civil Service Jobs, NHS Jobs, CharityJob, the Guardian Jobs and professional bodies' boards.
+Q: What are LinkedIn Jobs and general boards useful for? | SMEs and graduate-level roles outside schemes.
+Q: Why should you check employers' own careers pages? | They sometimes list roles not posted elsewhere.
+Q: How should you organise a job search? | Set alerts with several title variants and filters, and track applications and deadlines in a spreadsheet.
+Q: In which sectors is the hidden job market especially large? | SMEs, creative industries, research and the third sector.
+Q: How long should you wait before following up a speculative application? | About a week.
+Q: What did Zainab include in each speculative email? | A named project, what she could offer, a request for paid summer work or shadowing, a short CV and portfolio link.
+Q: Why does sending a generic speculative email to many employers fail? | Untargeted messages are easily ignored.
 
 ## Unpaid internships and the National Minimum Wage
 LV: Intermediate · Evaluation
@@ -309,6 +379,16 @@ M2#careers-u03-08-q2@2: A graduate works set hours for a small business doing re
 TF1#careers-u03-08-q3@2: A student completing a required six-month placement as part of a UK degree is exempt from the minimum wage. | true | Required placements on UK further or higher education courses lasting up to a year are exempt, although many employers still pay.
 M3#careers-u03-08-q4@3: Which is the strongest argument for banning unpaid internships altogether? | They exclude those who can't afford to work for free, entrenching advantage | Interns always do less valuable work than other staff in an organisation | Unpaid internships are already the main route into every profession | Employers would definitely create more internships if they had to pay | Unpaid internships restrict access by wealth, a social mobility concern; the other claims are inaccurate or unsupported.
 SA3#careers-u03-08-q5@2,3: Evaluate whether the current law on unpaid internships protects young people adequately. | The law already requires workers to be paid regardless of label, with HMRC enforcement and penalties. However, exemptions (required placements, shadowing, voluntary work) can be used to justify unpaid roles; the worker test is unclear to interns; many won't complain for fear of harming their careers; and enforcement depends on complaints. Advertised unpaid roles still exist. Proposals to ban unpaid internships over a set length aim to clarify the law but might reduce short opportunities. Judgement: the law is sound in principle but weak in practice. | Explains the worker test ; Notes exemptions ; Identifies enforcement or awareness problems ; Discusses reform proposals ; Reaches a supported judgement
+Q: Which act sets the National Minimum Wage? | The National Minimum Wage Act 1998.
+Q: What was the minimum wage from April 2025 for workers aged 21 and over? | £12.21 an hour.
+Q: How often do minimum wage rates change? | Every April.
+Q: What features make a person likely to be a worker? | A contract or arrangement to do work personally, for reward, with obligations such as set hours or duties.
+Q: Besides money, what can count as reward when deciding whether someone is a worker? | A promise of future work.
+Q: Which school pupils doing work experience are not entitled to the minimum wage? | Those below compulsory school leaving age.
+Q: Where can an intern get free advice about unpaid wages? | ACAS.
+Q: What can HMRC do about minimum wage underpayment? | Order arrears and penalties.
+Q: What can happen publicly to employers who underpay? | They can be named by the government.
+Q: Why is Maya, who only observed editors, not entitled to pay? | She was work shadowing, without doing work.
 
 ## Making the most of a placement
 LV: Intermediate · Application
@@ -350,6 +430,16 @@ M2#careers-u03-09-q2@2: An intern finishes her tasks early on a quiet afternoon.
 TF1#careers-u03-09-q3@1: Interns should follow their employer's confidentiality and social media policies. | true | Interns have the same duties of confidentiality as staff; posting about clients or internal matters can cause serious problems.
 M3#careers-u03-09-q4@3: An intern's objective was to learn data visualisation, but the team mainly needs help with admin. What is the best approach? | Do the admin well and negotiate a small visualisation task that meets a team need | Refuse the admin work because it doesn't match the agreed objectives | Do only admin and drop the learning objective for the whole placement | Complain to the university that the placement doesn't match the advert | Meeting the team's needs builds trust, while proposing a useful task that develops her skill serves both sides.
 SA3#careers-u03-09-q5@2,3: Explain how a placement student could maximise their chances of a return offer. | Set and agree clear objectives early; learn processes and keep notes; be reliable and meet deadlines; show initiative by asking for more work and suggesting improvements; seek feedback, especially at a mid-point review, and visibly act on it; build relationships across the organisation; make achievements visible, for example by presenting work; behave professionally; and towards the end, ask directly about graduate roles and references. | Sets objectives early ; Shows reliability and initiative ; Seeks and acts on feedback ; Builds relationships and visibility ; Asks about offers and references
+Q: What should you confirm before starting a placement? | Start date, hours, dress code and IT access.
+Q: How many learning objectives should you write before a placement? | Three or four.
+Q: Give an example of a placement learning objective. | Lead one client meeting, or learn Power BI to an intermediate level.
+Q: Why should you keep notes early in a placement? | Early questions are expected but repeated ones are not.
+Q: How should you show reliability on a placement? | Be on time, meet deadlines and flag problems early.
+Q: How should you build relationships during a placement? | Talk to people beyond your team, attend social and networking events and learn about other roles.
+Q: What professional conduct rules apply to interns? | Confidentiality, data protection and social media policies; don't post about clients or internal matters.
+Q: What feedback did Ravi receive at his mid-point review? | His work was accurate but he should speak up more in meetings.
+Q: How did Ravi act on his feedback? | He prepared a point for each meeting and presented analysis at a team briefing.
+Q: What should you do at the very end of a placement? | Thank people personally and stay in touch.
 
 ## Virtual and remote experience
 LV: Introductory · Application
@@ -388,6 +478,16 @@ M2#careers-u03-10-q2@2: How should a student present a completed virtual program
 TF1#careers-u03-10-q3@2: Virtual work experience programmes are usually open to students wherever they live. | true | Most are free and online, so they can be taken from anywhere, which widens access.
 M3#careers-u03-10-q4@3: Which is the most balanced evaluation of virtual experience? | Good for accessible insight, weaker for responsibility and networking | Equivalent in every way to a full in-person internship or placement | Worthless, because employers never value online programmes at all | Only useful for students who are studying computing-related degrees | Virtual experience widens access and gives insight, but self-paced simulations give little real responsibility, feedback or relationships.
 SA3#careers-u03-10-q5@2,3: Evaluate the role of virtual work experience in improving access to careers. | Benefits: free, flexible and location-independent, so accessible to students with caring duties, jobs, disabilities or no local employers; gives insight into tasks and sectors; may give an application advantage. Limits: simulations involve no real responsibility or manager feedback; networking is limited; widespread completion means certificates don't differentiate; and digital access is needed. Best seen as a complement to, not a replacement for, in-person experience, with reflection to turn it into evidence. | Explains accessibility benefits ; Notes insight into tasks ; Identifies limited responsibility or networking ; Notes lack of differentiation ; Reaches a balanced judgement
+Q: Name three platforms hosting virtual work experience programmes. | Forage, Springpod and Bright Network.
+Q: Give an example task in a virtual work experience programme. | Analysing a data set, drafting a client email or reviewing a contract.
+Q: What are live virtual programmes? | Online insight days and webinars with employers, including breakouts and Q&As.
+Q: What is a remote internship? | Real paid work done from home, with online supervision and team meetings.
+Q: Why do virtual programmes widen access? | They are free, open and flexible, helping students who can't travel or have caring or work commitments.
+Q: Why do employers run virtual programmes? | To promote their brand, sometimes giving completers an application advantage.
+Q: Why does a completion certificate alone not stand out? | Many students complete the same simulations.
+Q: What do self-paced simulations lack? | Real responsibility, team working and feedback from a manager.
+Q: What is the main drawback of remote internships? | Fewer chances for informal learning and networking.
+Q: Why did Ella use virtual programmes instead of a vacation scheme? | Her caring responsibilities stopped her going away from home.
 
 ## Reflecting on and recording experience
 LV: Intermediate · Application
@@ -427,6 +527,16 @@ M2#careers-u03-11-q2@2: Which log entry will be most useful for a future intervi
 TF1#careers-u03-11-q3@1: In Rolfe's model, "So what?" asks what an experience means and what you learned from it. | true | "So what?" moves from description to the significance of the experience and the learning it brings.
 M3#careers-u03-11-q4@3: Which statement best evaluates employability awards? | Useful for structuring reflection, but employers value the evidence you present more than the award | Essential, since employers now reject any applicant without such an award | Useless, because employers never look at any extra-curricular activity | Valuable only because the certificate looks impressive on a CV page | Awards help students reflect and articulate skills; recruiters assess the evidence and examples rather than the award itself.
 SA3#careers-u03-11-q5@2,3: Explain how a student could build a system for recording and reflecting on experience during university, and how it would help them later. | Keep a log, updated weekly during placements and after key events, recording dates, situation, actions, results with numbers, skills, feedback and contacts; keep a portfolio of work samples. Use a reflective model such as What? So what? Now what? to draw learning. Register achievements for the HEAR and consider an employability award. Later, the log provides ready-made STAR examples for applications and interviews, evidence for skills audits, and accurate details for CVs. | Describes a log with key fields ; Includes a reflective model ; Mentions portfolio, HEAR or awards ; Explains use in applications and interviews ; Stresses regular recording
+Q: What should an experience log record? | Dates, situation, what you did, result, skills used, feedback and contacts.
+Q: How often should you update an experience log during a placement? | Weekly, and after significant events.
+Q: What does a portfolio add to an experience log? | Examples of work such as reports, designs, code or campaign results, where confidentiality allows.
+Q: What are university employability awards? | Awards recognising extra-curricular activities combined with reflection.
+Q: Who devised the What? So what? Now what? model, and when? | Rolfe, Freshwater and Jasper, in 2001.
+Q: What does "Now what?" ask in Rolfe's model? | What you'll do differently or develop next.
+Q: When does Gibbs's cycle suit better than Rolfe's model? | For longer reflections.
+Q: What did Abi do after volunteers failed to turn up? | Created a reserve volunteer list and a one-page rota guide.
+Q: How was Abi's log entry later used? | As her answer to an interview question about working under pressure.
+Q: Why shouldn't you rely on memory for experience details? | Details and figures are easily forgotten.
 
 ## Turning experience into evidence
 LV: Intermediate · Evaluation
@@ -467,4 +577,14 @@ M2#careers-u03-12-q2@2: In a STAR answer, which part should usually be the longe
 TF1#careers-u03-12-q3@1: In a team example, recruiters want to know what you personally did. | true | Recruiters assess the candidate's contribution, so describe your own actions rather than the team's.
 M3#careers-u03-12-q4@3: Which example best evidences problem solving? | Found why orders were failing, tested a fix and cut errors by a third | Was part of a team that solved a lot of problems at a summer job | Am naturally good at solving problems, as my friends often tell me | Solved many maths problems in my exams and got good marks overall | It is specific, personal, relevant and shows a measurable result; the others are vague, collective or claims without evidence.
 SA3#careers-u03-12-q5@2,3: A student has worked in a supermarket, captained a hockey team and completed a dissertation. Explain how she should decide which experiences to use as evidence in a graduate application asking about teamwork, resilience and analysis. | Build an evidence bank: for each criterion, list possible examples from all three settings. Teamwork: the hockey captaincy, if she can show her own actions in leading the team through a challenge. Resilience: perhaps a setback in the dissertation such as failed data collection, and how she adapted. Analysis: the dissertation's data analysis, or spotting a stock problem at work. Choose examples that are specific, personal, relevant and have results, vary settings across questions, and structure each with STAR, focusing on actions. | Uses an evidence bank approach ; Matches each criterion to a suitable example ; Applies the specific personal relevant results test ; Varies settings ; Structures with STAR focusing on actions
+Q: What are selection criteria? | The competencies, strengths, values and requirements recruiters assess candidates against.
+Q: How do recruiters often assess evidence? | Against each criterion, often with a scoring guide.
+Q: What does "specific" mean for evidence? | One real situation, not "I usually".
+Q: What should an evidence bank contain? | The main criteria with two or three examples for each from different settings.
+Q: What does STARR add to STAR? | Reflection.
+Q: What does CARL stand for? | Context, Action, Result, Learning.
+Q: Why vary the settings of examples across an application? | So you don't use the same example for every question.
+Q: How should you choose examples for an application? | Recent, substantial examples where you played a key role and that show the criterion asked for.
+Q: Why was Ben's loyalty card example best for "influencing others"? | It was specific, his own idea, in a work setting and had a measurable result.
+Q: Why was Ben's example of persuading friends where to go out weak? | It was too trivial and general.
 `;

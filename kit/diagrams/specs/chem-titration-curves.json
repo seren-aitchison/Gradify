@@ -1,0 +1,142 @@
+{
+ "id": "chem-titration-curves",
+ "renderer": "titration",
+ "course": "chemistry",
+ "unit": "u09",
+ "lesson": "Acid-base titrations",
+ "title": "The four titration curves",
+ "caption": "25.0 cm³ of 0.100 mol dm⁻³ acid titrated with 0.100 mol dm⁻³ base. Every curve reaches equivalence at 25.0 cm³, but where the pH jumps, and by how much, depends on whether acid and base are strong or weak. A weak acid with a weak base gives no sharp jump.",
+ "alt": "Four titration curves: strong–strong jumps from about 3 to 11; weak acid–strong base from about 7 to 11; strong acid–weak base from about 3 to 7; weak–weak rises gradually through 7.",
+ "description": [
+  "Strong acid + strong base: starts at pH 1, vertical section from about 3.4 to 10.6, equivalence at pH 7.",
+  "Weak acid + strong base: starts near pH 3, vertical section from about 7 to 10.6, equivalence about pH 8.7.",
+  "Strong acid + weak base: starts at pH 1, vertical section from about 3.4 to 6.6, equivalence about pH 5.3.",
+  "Weak acid + weak base: no vertical section."
+ ],
+ "flask": {
+  "acids": [
+   {
+    "c": 0.1,
+    "strong": true
+   }
+  ],
+  "V": 25
+ },
+ "titrant": {
+  "base": true,
+  "strong": true,
+  "c": 0.1
+ },
+ "vmax": 50,
+ "curves": [
+  {
+   "label": "strong acid + strong base",
+   "flask": {
+    "acids": [
+     {
+      "c": 0.1,
+      "strong": true
+     }
+    ],
+    "V": 25
+   },
+   "titrant": {
+    "base": true,
+    "strong": true,
+    "c": 0.1
+   },
+   "colour": "a1",
+   "labelDy": -8
+  },
+  {
+   "label": "weak acid + strong base",
+   "flask": {
+    "acids": [
+     {
+      "c": 0.1,
+      "pKa": [
+       4.76
+      ]
+     }
+    ],
+    "V": 25
+   },
+   "titrant": {
+    "base": true,
+    "strong": true,
+    "c": 0.1
+   },
+   "colour": "a4",
+   "labelDy": 8
+  },
+  {
+   "label": "strong acid + weak base",
+   "flask": {
+    "acids": [
+     {
+      "c": 0.1,
+      "strong": true
+     }
+    ],
+    "V": 25
+   },
+   "titrant": {
+    "base": true,
+    "pKb": 4.75,
+    "c": 0.1
+   },
+   "colour": "a3",
+   "labelDy": 6
+  },
+  {
+   "label": "weak acid + weak base",
+   "flask": {
+    "acids": [
+     {
+      "c": 0.1,
+      "pKa": [
+       4.76
+      ]
+     }
+    ],
+    "V": 25
+   },
+   "titrant": {
+    "base": true,
+    "pKb": 4.75,
+    "c": 0.1
+   },
+   "colour": "a5",
+   "labelDy": -6
+  }
+ ],
+ "marks": {
+  "eq": true
+ },
+ "panels": true,
+ "claims": [
+  {
+   "type": "veq",
+   "curve": 0,
+   "value": 25
+  },
+  {
+   "type": "phEq",
+   "curve": 0,
+   "rel": "=",
+   "value": 7
+  },
+  {
+   "type": "phEq",
+   "curve": 1,
+   "rel": ">",
+   "value": 7
+  },
+  {
+   "type": "phEq",
+   "curve": 2,
+   "rel": "<",
+   "value": 7
+  }
+ ]
+}

@@ -29,6 +29,16 @@ SRC: NHS England, Community pharmacy hypertension case-finding service: specific
 M1#pharmacy-u07-01-q1@1: What confirms a diagnosis of hypertension after a raised clinic reading? | Ambulatory or home blood pressure monitoring | A second clinic reading the same day | A blood test | An ECG alone | A urine dipstick | NICE NG136 recommends ABPM or HBPM to confirm.
 M2#pharmacy-u07-01-q2@2: What is the NICE clinic blood pressure target for an 84-year-old? | Below 150/90 mmHg | Below 120/80 mmHg | Below 130/80 mmHg | Below 140/90 mmHg | Below 160/100 mmHg | NICE sets a less strict target at 80 and over, adjusted for frailty.
 M2#pharmacy-u07-01-q3@1: Which change most directly lowers blood pressure for many people? | Reducing salt intake | Taking vitamin C | Avoiding all fruit | Drinking more coffee | Sleeping longer only | Salt reduction is a key lifestyle measure.
+Q: Why are raised clinic blood pressure readings confirmed outside the clinic? | Clinic readings can be raised by anxiety, the "white coat" effect, so ABPM or HBPM gives a truer picture.
+Q: What ABPM or HBPM average defines stage 2 hypertension? | 150/95 mmHg or higher.
+Q: What clinic readings define severe hypertension? | Clinic systolic 180 mmHg or higher, or diastolic 120 mmHg or higher.
+Q: When does severe hypertension need same-day assessment? | When there are signs of target organ damage.
+Q: How do home or ambulatory blood pressure targets compare with clinic targets? | They are 5 mmHg lower than the clinic targets.
+Q: Which tool is used to assess cardiovascular risk when hypertension is diagnosed? | QRISK3.
+Q: Which checks look for target organ damage in hypertension? | Kidney function, urine albumin, an ECG and the eyes.
+Q: Name four lifestyle changes that help lower blood pressure. | Less salt, weight loss, regular exercise, less alcohol, stopping smoking and a healthy diet.
+Q: Which people with stage 1 hypertension under 80 are offered drug treatment? | Those with target organ damage, cardiovascular disease, diabetes, kidney disease or a 10-year risk of 10% or more.
+Q: What is the mistake in starting long-term antihypertensives after one high clinic reading? | The diagnosis hasn't been confirmed with ambulatory or home readings, so the person may not have hypertension.
 
 ## Antihypertensive drugs
 S: NICE's step-wise approach chooses the first drug by age, ethnicity and diabetes, then adds drugs from the main classes. Knowing each class's effects and monitoring makes the pathway safe.
@@ -58,6 +68,16 @@ SRC: Joint Formulary Committee, British National Formulary: hypertension | guida
 M2#pharmacy-u07-02-q1@1: What is NICE's first step for a 62-year-old woman with hypertension and no diabetes? | A calcium channel blocker | An ACE inhibitor | A beta-blocker | A loop diuretic | Spironolactone | A CCB is first line at 55 and over without type 2 diabetes.
 M2#pharmacy-u07-02-q2@2: Which check is needed after starting an ACE inhibitor? | Renal function and potassium | Liver function only | INR | Thyroid function | Blood glucose only | ACE inhibitors can cause AKI and hyperkalaemia.
 M3#pharmacy-u07-02-q3@2: Someone on amlodipine develops ankle swelling. A diuretic is suggested. What's best? | Review the amlodipine first | Add the diuretic straight away | Double the amlodipine | Add a second CCB | Add a potassium supplement | CCB oedema doesn't respond well to diuretics; adding one risks a prescribing cascade.
+Q: What is first-line antihypertensive for someone with type 2 diabetes? | An ACE inhibitor or an angiotensin receptor blocker (ARB).
+Q: What is first-line antihypertensive for a person of Black African family origin without diabetes? | A calcium channel blocker.
+Q: What is step 3 of the NICE hypertension pathway? | An ACE inhibitor or ARB plus a CCB plus a thiazide-like diuretic.
+Q: When is spironolactone considered at step 4 of hypertension treatment? | When adherence and resistant hypertension are confirmed and potassium is 4.5 mmol/L or less.
+Q: How do ARBs differ from ACE inhibitors in side effects? | They are similar but don't cause the dry cough.
+Q: Which CCBs also slow the heart? | Verapamil and diltiazem.
+Q: What electrolyte and metabolic effects do thiazide-like diuretics have? | Low sodium and potassium, and raised uric acid (gout) and glucose.
+Q: How does ramipril work? | It blocks angiotensin-converting enzyme, stopping angiotensin I becoming angiotensin II.
+Q: Why is adding a diuretic for amlodipine ankle swelling a poor choice? | The swelling isn't from heart failure and responds poorly to diuretics; adding one risks a prescribing cascade.
+Q: What advice goes with ramipril during a dehydrating illness? | Sick day guidance, as dehydration with an ACE inhibitor risks acute kidney injury.
 
 ## Lipid management
 S: Lowering cholesterol, especially LDL and non-HDL cholesterol, reduces heart attacks and strokes. Statins are the foundation, with other drugs added when targets aren't met.
@@ -86,6 +106,16 @@ SRC: MHRA, Drug Safety Update: statins, benefits and risks | guidance | 2014 | h
 M1#pharmacy-u07-03-q1@1: Which enzyme do statins inhibit? | HMG-CoA reductase | Cyclo-oxygenase | ACE | Xanthine oxidase | Lipoprotein lipase | Statins reduce cholesterol synthesis in the liver.
 M2#pharmacy-u07-03-q2@2: A patient on atorvastatin hasn't reached the LDL target despite good adherence at the maximum tolerated dose. What's next? | Add ezetimibe | Stop the statin | Switch to aspirin | Add a fibrate first | Increase fish intake only | When the maximum tolerated statin dose doesn't reach the target, NICE NG238 recommends adding ezetimibe.
 M2#pharmacy-u07-03-q3@1: Which is a contraindicated combination? | Simvastatin with clarithromycin | Atorvastatin with paracetamol | Rosuvastatin with ramipril | Atorvastatin with amlodipine at standard doses | Simvastatin with omeprazole | Strong CYP3A4 inhibitors raise simvastatin levels and the risk of rhabdomyolysis.
+Q: How is non-HDL cholesterol calculated? | Total cholesterol minus HDL cholesterol.
+Q: What defines a high-intensity statin? | A statin regimen that lowers LDL cholesterol by 40% or more, such as atorvastatin 20 mg or more.
+Q: Which statin is the usual first choice for primary prevention? | Atorvastatin.
+Q: What is the NICE non-HDL target in secondary prevention? | 2.6 mmol/L or less.
+Q: What are the steps if lipid targets aren't met on a statin? | Check adherence, increase the statin if possible, then add ezetimibe.
+Q: When should creatine kinase be checked in someone on a statin? | If muscle symptoms are severe or unexplained.
+Q: When is liver function checked with statins? | Before starting, then at 3 and 12 months.
+Q: What symptoms should someone on atorvastatin report? | Unexplained muscle pain, weakness or dark urine.
+Q: What happens to statins in pregnancy? | They are stopped.
+Q: What is the mistake in stopping a statin at the first mention of aches? | The symptoms should be assessed and another statin or dose tried first.
 
 ## Cardiovascular risk assessment
 S: Risk tools estimate a person's chance of a heart attack or stroke over 10 years, helping decide who benefits from treatment. Pharmacists use them in health checks and conversations about statins.
@@ -113,6 +143,16 @@ SRC: Hippisley-Cox J and others, Development and validation of QRISK3, BMJ 357: 
 M1#pharmacy-u07-04-q1@2: Which group shouldn't have QRISK3 used to decide on statins? | People who have had a stroke | People aged 50 | People who smoke | People with high blood pressure | People with a family history | Established cardiovascular disease means secondary prevention.
 M2#pharmacy-u07-04-q2@1: What does QRISK3 estimate? | 10-year risk of heart attack or stroke | Lifetime risk of cancer | Current blood pressure | Risk of diabetes next year | Cholesterol level | It estimates 10-year cardiovascular risk.
 M2#pharmacy-u07-04-q3@2: Which explanation of statin benefit is clearest? | "Of 100 people like you, about 3 or 4 fewer will have a heart attack or stroke" | "It cuts your risk by a third" | "It's very effective" | "Everyone should take one" | "It removes your risk" | Absolute numbers help people weigh benefits.
+Q: Name five factors included in QRISK3. | Age, sex, ethnicity, smoking, blood pressure, cholesterol ratio, BMI, diabetes, family history and kidney disease, among others.
+Q: Why isn't QRISK3 used for someone with eGFR below 60? | People with CKD are managed directly rather than by a risk score.
+Q: In which groups may QRISK3 underestimate risk? | Some groups, such as people with HIV or on antipsychotics; use clinical judgement.
+Q: Why explain cardiovascular risk in absolute numbers? | It makes the real size of the benefit clear, helping people weigh treatment.
+Q: What tool besides a percentage can help people understand cardiovascular risk? | Heart age tools.
+Q: Who benefits from lifestyle change, whatever their risk score? | Everyone.
+Q: Who should be referred for assessment for familial hypercholesterolaemia? | People with very high cholesterol or a family history of early heart disease.
+Q: Should QRISK3 be calculated for someone who has had a heart attack? | No; they need secondary prevention regardless of a score.
+Q: What does an NHS Health Check aim to do? | Assess and reduce cardiovascular risk in adults aged 40 to 74 in England.
+Q: Is QRISK3 used for people with type 1 diabetes? | No; they are managed directly.
 
 ## Stable angina
 S: Stable angina is chest pain on exertion from narrowed coronary arteries. Treatment relieves symptoms, prevents attacks and reduces the risk of heart attack, and people need clear advice on using their GTN spray.
@@ -141,6 +181,16 @@ SRC: Joint Formulary Committee, British National Formulary: glyceryl trinitrate 
 M1#pharmacy-u07-05-q1@2: Which drug must never be combined with GTN? | Sildenafil | Aspirin | Atorvastatin | Bisoprolol | Paracetamol | PDE5 inhibitors with nitrates cause dangerous hypotension.
 M2#pharmacy-u07-05-q2@1: Which is a first-line preventive drug for stable angina? | A beta-blocker | A loop diuretic | An ACE inhibitor alone | Digoxin | Warfarin | NICE recommends a beta-blocker or a CCB first line.
 M2#pharmacy-u07-05-q3@2: What should someone do before using their GTN spray? | Sit down | Stand up quickly | Drink water | Eat something | Lie flat on their front | GTN dilates blood vessels and can cause dizziness and fainting, so sit down first.
+Q: What is stable angina? | Predictable chest pain on exertion or stress, relieved by rest or GTN.
+Q: When can GTN be used apart from during an attack? | Before exertion, to prevent an attack.
+Q: What are the first-line preventive drugs for stable angina? | A beta-blocker or a calcium channel blocker, chosen by comorbidities and preference.
+Q: Which CCB is combined with a beta-blocker if angina persists? | A dihydropyridine CCB, not verapamil.
+Q: Name two drugs that can be added if angina symptoms persist. | A long-acting nitrate, ivabradine, nicorandil or ranolazine.
+Q: What secondary prevention does someone with angina need? | An antiplatelet (usually aspirin), a statin, blood pressure control and an ACE inhibitor if they have diabetes.
+Q: How is a GTN spray used? | Sitting down, sprayed under the tongue.
+Q: What common side effect of GTN should people expect? | Headache.
+Q: Why is a nitrate-free period allowed with long-acting nitrates? | To avoid tolerance.
+Q: When is someone with angina referred for revascularisation? | If symptoms aren't controlled.
 
 ## Acute coronary syndromes
 S: Acute coronary syndromes (ACS) are emergencies: unstable angina and heart attacks (NSTEMI and STEMI). Rapid recognition, emergency care and the right antithrombotic treatment save lives.
@@ -167,6 +217,16 @@ SRC: Joint Formulary Committee, British National Formulary: acute coronary syndr
 M1#pharmacy-u07-06-q1@1: What should someone with crushing chest pain do? | Call 999 | Book a GP appointment | Take an antacid | Rest at home overnight | Visit the pharmacy next day | A suspected heart attack is an emergency: call 999 for urgent assessment and reperfusion.
 M2#pharmacy-u07-06-q2@2: How long is DAPT usually continued after ACS? | Up to 12 months | 1 week | Lifelong | 3 days | 5 years | NICE recommends DAPT for up to 12 months in most people.
 M3#pharmacy-u07-06-q3@2: A person on clopidogrel needs a PPI. Which is the best choice? | Lansoprazole | Omeprazole | Esomeprazole | Either omeprazole or esomeprazole | None can be used | Omeprazole and esomeprazole reduce clopidogrel activation via CYP2C19.
+Q: Which conditions make up acute coronary syndromes? | Unstable angina and heart attacks (NSTEMI and STEMI).
+Q: What is a STEMI? | An ST-elevation heart attack with complete coronary occlusion, needing urgent reperfusion.
+Q: What is the reperfusion treatment for STEMI? | Primary PCI, or thrombolysis if PCI can't be done in time.
+Q: When is oxygen given in a suspected heart attack? | Only if oxygen saturations are low.
+Q: What score helps assess risk in NSTEMI and unstable angina? | The GRACE score.
+Q: What antiplatelet continues lifelong after DAPT ends? | Aspirin alone.
+Q: When is clopidogrel chosen as the P2Y12 inhibitor after ACS? | Where bleeding risk is high.
+Q: Why should omeprazole be avoided with clopidogrel? | It reduces clopidogrel's activation via CYP2C19.
+Q: What secondary prevention follows ACS besides antiplatelets? | An ACE inhibitor, beta-blocker, high-intensity statin and cardiac rehabilitation.
+Q: What is wrong with advising someone with crushing chest pain to see their GP tomorrow? | It could be a heart attack, a 999 emergency needing urgent care.
 
 ## Secondary prevention after a heart attack
 S: After a heart attack, a set of medicines and lifestyle changes greatly reduces the risk of another event. Pharmacists help people understand, start and keep taking them.
@@ -195,6 +255,16 @@ SRC: Driver and Vehicle Licensing Agency, Assessing fitness to drive: guide for 
 M1#pharmacy-u07-07-q1@1: Which is part of secondary prevention after a heart attack? | A high-intensity statin | A short course of antibiotics | A sedating antihistamine | An oral corticosteroid | A decongestant | Statins reduce further cardiovascular events.
 M2#pharmacy-u07-07-q2@2: Why might someone stop secondary prevention medicines? | They feel well and don't see the benefit | They are always unaffordable | They work only for one week | They cause immediate harm in everyone | They're not available | Explaining preventive benefit supports adherence.
 M2#pharmacy-u07-07-q3@1: Which service supports people starting a new cardiovascular medicine in England? | The New Medicine Service | Pharmacy First | The Yellow Card scheme | NHS 111 only | The Healthy Start scheme | NMS supports people with new medicines for long-term conditions.
+Q: What is secondary prevention? | Measures to prevent further events in people who already have cardiovascular disease.
+Q: When is a beta-blocker particularly important after a heart attack? | When there is reduced ejection fraction.
+Q: When is an MRA such as eplerenone added after a heart attack? | When there is heart failure with reduced ejection fraction.
+Q: Why must ACE inhibitors be monitored after a heart attack? | They are titrated up with renal monitoring.
+Q: When might SGLT2 inhibitors be used after a heart attack? | For heart failure or diabetes.
+Q: Why is explaining each medicine important after a heart attack? | Several are for prevention, not symptoms, so people who feel well may stop them.
+Q: Name three lifestyle measures after a heart attack. | Stopping smoking, diet, exercise, weight, alcohol and blood pressure control.
+Q: What practical topics should be covered with someone after a heart attack? | Driving (DVLA rules), return to work and sexual activity.
+Q: Why mention PDE5 inhibitors when discussing sexual activity after a heart attack? | They must be avoided with nitrates.
+Q: What antiplatelet plan follows a heart attack? | DAPT, then aspirin lifelong, or an alternative if intolerant.
 
 ## Chronic heart failure
 S: In heart failure the heart can't pump enough blood for the body's needs. For heart failure with reduced ejection fraction, several drug classes each reduce deaths and admissions, so getting people onto all of them matters.
@@ -224,6 +294,16 @@ SRC: NICE TA679, Dapagliflozin for treating chronic heart failure with reduced e
 M2#pharmacy-u07-08-q1@1: Which drug relieves breathlessness in heart failure but doesn't improve survival? | Furosemide | Bisoprolol | Ramipril | Spironolactone | Dapagliflozin | Loop diuretics relieve fluid congestion and breathlessness but, unlike the others, don't improve survival.
 M2#pharmacy-u07-08-q2@2: Which combination needs close potassium monitoring? | Ramipril with spironolactone | Furosemide with paracetamol | Bisoprolol with atorvastatin | Aspirin with lansoprazole | Dapagliflozin with metformin | ACE inhibitors and MRAs both raise potassium.
 M3#pharmacy-u07-08-q3@1: Someone with heart failure gains 2.5 kg in three days. What should they do? | Contact their heart failure team or GP promptly | Stop all their medicines | Drink more fluid | Wait for their annual review | Take extra salt | Rapid weight gain suggests fluid retention needing review.
+Q: What ejection fraction defines HFrEF? | A left ventricular ejection fraction of 40% or less.
+Q: What are the first-line drugs for HFrEF? | An ACE inhibitor (or ARB) and a beta-blocker licensed for heart failure.
+Q: Which beta-blockers are licensed for heart failure? | Bisoprolol, carvedilol and nebivolol.
+Q: What can replace an ACE inhibitor or ARB in HFrEF under specialist advice? | Sacubitril-valsartan.
+Q: Which SGLT2 inhibitors are used in heart failure? | Dapagliflozin and empagliflozin.
+Q: What treatment is used in heart failure with preserved ejection fraction? | SGLT2 inhibitors, and diuretics for symptoms.
+Q: Name three drugs to avoid or use with caution in heart failure. | NSAIDs, verapamil and diltiazem, pioglitazone and some antiarrhythmics.
+Q: What weight change in heart failure needs review? | A rise of about 2 kg in 3 days.
+Q: How is bisoprolol started in heart failure? | Low and titrated slowly, monitoring pulse and blood pressure.
+Q: Why is ibuprofen a problem in heart failure? | NSAIDs cause fluid retention and worsen heart failure and kidney function.
 
 ## Atrial fibrillation
 S: Atrial fibrillation (AF) is the commonest heart rhythm disorder and a major cause of stroke. Treatment controls the heart rate or rhythm and, for most people, prevents stroke with anticoagulation.
@@ -251,6 +331,16 @@ SRC: Joint Formulary Committee, British National Formulary: arrhythmias | guidan
 M1#pharmacy-u07-09-q1@1: Which drug is commonly first line for AF rate control? | Bisoprolol | Amiodarone | Flecainide | Aspirin | Furosemide | A beta-blocker or rate-limiting CCB is first line.
 M2#pharmacy-u07-09-q2@2: A 78-year-old woman with AF and hypertension: what's her CHA₂DS₂-VASc score? | 4 | 2 | 3 | 1 | 5 | Age 75 or over (2) + hypertension (1) + female (1) = 4.
 M2#pharmacy-u07-09-q3@1: Which anticoagulant is first choice for most people with AF? | A DOAC | Aspirin | Warfarin always | Heparin by injection | Clopidogrel | NICE NG196 recommends a DOAC first for most people; aspirin and clopidogrel aren't for AF stroke prevention.
+Q: What does the ORBIT score estimate? | Bleeding risk in people on anticoagulants.
+Q: What is first-line for most people with AF: rate or rhythm control? | Rate control.
+Q: When is digoxin used for AF rate control? | For sedentary people or as an add-on.
+Q: Why aren't diltiazem or verapamil given with a beta-blocker? | Both slow the heart, so combining them is avoided.
+Q: Who might be offered rhythm control in AF? | People with new-onset AF, a reversible cause, or symptoms despite rate control.
+Q: Which CHA₂DS₂-VASc factors score 2 points? | Age 75 or over, and previous stroke or TIA.
+Q: When is warfarin used instead of a DOAC in AF? | When DOACs are unsuitable, such as with mechanical heart valves or moderate to severe mitral stenosis.
+Q: Should high bleeding risk alone stop anticoagulation in AF? | No; address modifiable bleeding risks instead.
+Q: Why is AF clinically important? | It is the commonest rhythm disorder and a major cause of stroke.
+Q: A man with AF has a CHA₂DS₂-VASc score of 1. What does NICE suggest? | Consider anticoagulation.
 
 ## Antiarrhythmic drugs
 S: Antiarrhythmic drugs restore or maintain a normal rhythm, but many can also cause arrhythmias and have serious adverse effects. Amiodarone in particular needs careful monitoring.
@@ -281,6 +371,16 @@ SRC: NICE NG196, Atrial fibrillation: rhythm control | guidance | 2021 | https:/
 M2#pharmacy-u07-10-q1@1: Which monitoring is needed for amiodarone? | Thyroid and liver function every 6 months | INR weekly | Lithium levels | Blood glucose daily | Bone density yearly | Amiodarone affects the thyroid and liver.
 M2#pharmacy-u07-10-q2@2: Amiodarone is started in someone on warfarin. What's expected? | The INR rises, so monitor and reduce warfarin | The INR falls sharply | No interaction | Warfarin must be stopped | Amiodarone becomes inactive | Amiodarone inhibits warfarin metabolism, raising the INR for weeks to months: monitor and reduce warfarin.
 M3#pharmacy-u07-10-q3@1: Which antiarrhythmic should be avoided in someone with a previous heart attack? | Flecainide | Bisoprolol | Digoxin | Amiodarone under specialist care | Diltiazem in rate control | Class Ic drugs increase mortality in structural heart disease.
+Q: What is proarrhythmia? | An arrhythmia caused or worsened by an antiarrhythmic drug.
+Q: What does the Vaughan Williams classification group? | Antiarrhythmic drugs by their main mechanism, in classes I to IV.
+Q: Which Vaughan Williams class are sodium channel blockers such as flecainide? | Class I.
+Q: Which antiarrhythmics are class III? | Potassium channel blockers such as amiodarone and sotalol.
+Q: What is adenosine used for? | Terminating supraventricular tachycardia, given rapidly IV in hospital.
+Q: Which thyroid effects can amiodarone cause? | Both hypothyroidism and hyperthyroidism.
+Q: What baseline imaging is done before amiodarone? | A chest X-ray.
+Q: Why do amiodarone's interactions persist after stopping it? | Its very long half-life keeps its effects going for months.
+Q: What skin advice goes with amiodarone? | Protect the skin from the sun, as it causes photosensitivity.
+Q: What happens to digoxin levels when amiodarone is started? | They rise, so the digoxin dose is reduced.
 
 ## Venous thromboembolism
 S: Venous thromboembolism (VTE), meaning deep vein thrombosis and pulmonary embolism, is common and can be fatal. Prevention in hospital and prompt anticoagulant treatment both save lives.
@@ -308,6 +408,16 @@ SRC: NICE NG89, Venous thromboembolism in over 16s: reducing the risk of hospita
 M1#pharmacy-u07-11-q1@1: What is the minimum usual anticoagulation for a provoked DVT? | 3 months | 1 week | 2 weeks | Lifelong | 10 years | NICE NG158 recommends at least 3 months of anticoagulation, then review.
 M2#pharmacy-u07-11-q2@2: Which is first-line treatment for most people with VTE? | Apixaban or rivaroxaban | Aspirin | Clopidogrel | Ibuprofen | Unfractionated heparin long term | NICE NG158 recommends a DOAC (apixaban or rivaroxaban) first line for most people.
 M2#pharmacy-u07-11-q3@1: What must happen for everyone admitted to hospital? | VTE and bleeding risk assessment | Routine LMWH for all | Routine warfarin | A chest X-ray | Leg ultrasound | NICE NG89 requires risk assessment on admission.
+Q: What is a deep vein thrombosis? | A clot in a deep vein, usually of the leg.
+Q: What is a pulmonary embolism? | A clot blocking a pulmonary artery, often from a DVT.
+Q: Which tools assess suspected DVT or PE? | The Wells score, D-dimer and imaging.
+Q: When is a PE an emergency? | When there is severe breathlessness or collapse.
+Q: When is VTE treatment continued beyond 3 months? | For unprovoked VTE or ongoing risk, after assessing bleeding risk.
+Q: What are alternatives to apixaban or rivaroxaban for VTE treatment? | LMWH followed by warfarin, dabigatran or edoxaban.
+Q: Are DOACs used for VTE in people with cancer? | Yes, a DOAC is first line for many people with cancer.
+Q: What forms of VTE prophylaxis are used in hospital? | LMWH, renally adjusted, or mechanical methods where appropriate.
+Q: After which surgery is VTE prophylaxis typically given? | Some surgery, such as hip and knee replacement.
+Q: Which symptoms should people be told need urgent assessment for VTE? | Leg swelling, chest pain or breathlessness.
 
 ## Anticoagulants
 S: Anticoagulants prevent and treat clots by acting on the clotting cascade. Each class works differently, needs different monitoring and has different reversal options, and all carry a bleeding risk.
@@ -335,6 +445,16 @@ SRC: National Patient Safety Agency, Patient Safety Alert 18: actions that can m
 M1#pharmacy-u07-12-q1@2: Which anticoagulant is monitored with the INR? | Warfarin | Apixaban | Rivaroxaban | Dabigatran | Enoxaparin | The INR measures warfarin's effect on clotting; DOACs and heparins don't use it.
 M2#pharmacy-u07-12-q2@1: Which drug reverses dabigatran? | Idarucizumab | Vitamin K | Protamine | Naloxone | Flumazenil | Idarucizumab binds dabigatran specifically.
 M2#pharmacy-u07-12-q3@2: Which symptom on an anticoagulant needs urgent medical attention? | Black, tarry stools | Mild bruising after a knock | A short nosebleed that stops | Slight gum bleeding when brushing | Feeling a little tired | Black, tarry stools suggest bleeding from the upper GI tract, which is urgent on an anticoagulant.
+Q: Which clotting factors does warfarin reduce? | Factors II, VII, IX and X.
+Q: What is a vitamin K antagonist? | An anticoagulant, such as warfarin, that reduces production of vitamin K-dependent clotting factors.
+Q: Which DOACs are factor Xa inhibitors? | Apixaban, rivaroxaban and edoxaban.
+Q: Do DOACs need routine INR monitoring? | No; they have fixed doses but depend on renal function.
+Q: What reversal agent is used for factor Xa inhibitors in specific situations? | Andexanet alfa.
+Q: How is unfractionated heparin monitored and reversed? | Monitored by APTT and reversed by protamine.
+Q: Name two low molecular weight heparins. | Enoxaparin and dalteparin.
+Q: What should someone on an anticoagulant carry? | An anticoagulant alert card, and tell all health professionals they take it.
+Q: Name four bleeding signs to watch for on an anticoagulant. | Blood in urine or stools, black stools, vomiting blood, severe headache or prolonged bleeding.
+Q: Why is giving an NSAID for a sprain to someone on an anticoagulant risky? | It raises the risk of GI bleeding.
 
 ## Warfarin management
 S: Warfarin has a narrow therapeutic range, many interactions and is affected by diet and illness, so it needs regular INR monitoring and careful counselling. Pharmacists check doses, interactions and understanding at every supply.
@@ -362,6 +482,16 @@ SRC: Keeling D and others, Guidelines on oral anticoagulation with warfarin, Bri
 M1#pharmacy-u07-13-q1@1: What is the usual target INR for VTE treatment? | 2.5 | 1.0 | 3.5 | 5.0 | 1.5 | Most indications target 2.5 (range 2.0 to 3.0).
 M2#pharmacy-u07-13-q2@2: What dietary advice is right for warfarin? | Keep vitamin K intake consistent | Avoid all green vegetables | Eat as many greens as possible | Avoid all fruit | Drink cranberry juice daily | Keeping vitamin K intake consistent keeps the INR stable; cutting greens out isn't needed.
 M3#pharmacy-u07-13-q3@2: Someone on warfarin starts St John's wort. What's the likely effect? | The INR falls as warfarin metabolism is induced | The INR rises sharply | No change | Warfarin becomes toxic immediately | St John's wort replaces warfarin | St John's wort induces enzymes, reducing warfarin's effect.
+Q: What does the INR measure? | How long blood takes to clot, used to monitor warfarin.
+Q: Which warfarin indications may target a higher INR? | Some, such as recurrent VTE on warfarin or some mechanical valves, as specialists advise.
+Q: What colour is a 5 mg warfarin tablet? | Pink.
+Q: What colour is a 1 mg warfarin tablet? | Brown.
+Q: Why check warfarin doses in milligrams rather than tablet counts? | Tablets come in different strengths and colours, so counts alone can mislead.
+Q: What should be checked before supplying warfarin? | That the INR is recent and in range, using the yellow book or record.
+Q: Name three things that raise the INR on warfarin. | Many antibiotics, azole antifungals, amiodarone, some SSRIs, alcohol binges and illness.
+Q: Which enzyme inducers lower the INR? | Rifampicin, carbamazepine and St John's wort.
+Q: Which juices should be avoided in large amounts with warfarin? | Cranberry and grapefruit juice.
+Q: What should happen when clarithromycin is supplied to someone on warfarin? | An extra INR check should be arranged.
 
 ## Direct oral anticoagulants
 S: DOACs have largely replaced warfarin for atrial fibrillation and VTE. They're simpler to use but still need correct dosing for renal function, weight and age, attention to interactions, and good adherence.
@@ -390,6 +520,16 @@ SRC: Joint Formulary Committee, British National Formulary: apixaban | guidance 
 M1#pharmacy-u07-14-q1@1: Which DOAC is taken with food at treatment doses? | Rivaroxaban | Apixaban | Dabigatran | Edoxaban | None of them | Rivaroxaban's absorption at higher doses is improved by food.
 M2#pharmacy-u07-14-q2@2: Why is adherence especially important with DOACs? | Their short half-lives mean protection is lost quickly | They need weekly injections | Missed doses cause toxicity | They're only taken monthly | They work for weeks after stopping | Missing doses quickly removes anticoagulant effect.
 M3#pharmacy-u07-14-q3@2: A person with a mechanical mitral valve asks about switching to apixaban. What's right? | DOACs aren't suitable for mechanical valves | Switch them straight away | Switch if they prefer | Switch at half the dose | Add apixaban to warfarin | Warfarin remains the anticoagulant for mechanical valves.
+Q: Which factors determine a DOAC dose? | Indication, renal function (CrCl), age and weight, against the SPC criteria.
+Q: Which blood tests are checked for people on DOACs? | Renal function, full blood count and liver function at baseline and regularly.
+Q: Who needs more frequent DOAC monitoring? | Older people and those with renal impairment.
+Q: Why are DOACs avoided in antiphospholipid syndrome? | MHRA advice, particularly for triple-positive antiphospholipid syndrome.
+Q: Which interacting drug types make DOACs unsuitable? | Strong CYP3A4 and P-glycoprotein inhibitors or inducers, such as rifampicin and carbamazepine.
+Q: Are DOACs used in pregnancy and breastfeeding? | No; they aren't suitable.
+Q: How often is apixaban taken? | Twice daily.
+Q: Which valve condition besides mechanical valves rules out DOACs? | Moderate to severe mitral stenosis.
+Q: What is a factor Xa inhibitor? | A DOAC that inhibits activated factor X, such as apixaban, rivaroxaban and edoxaban.
+Q: What does the MHRA advise for calculating renal function for DOAC dosing? | Use creatinine clearance by Cockcroft-Gault.
 
 ## Antiplatelet drugs
 S: Antiplatelet drugs reduce arterial clots, which cause heart attacks and strokes. They're the backbone of secondary prevention but increase bleeding, especially in the gut.
@@ -420,6 +560,16 @@ SRC: NICE NG128, Stroke and transient ischaemic attack in over 16s: diagnosis an
 M1#pharmacy-u07-15-q1@2: Which antiplatelet is a prodrug activated partly by CYP2C19? | Clopidogrel | Aspirin | Ticagrelor | Dipyridamole | Prasugrel only after hydrolysis | Clopidogrel is a prodrug that needs hepatic activation, partly by CYP2C19.
 M2#pharmacy-u07-15-q2@1: Which side effect is characteristic of ticagrelor? | Breathlessness | Hair loss | Weight gain | Cough from ACE inhibition | Ankle swelling | Dyspnoea is a recognised effect of ticagrelor.
 M2#pharmacy-u07-15-q3@2: Why isn't aspirin recommended for primary prevention in most people? | Bleeding risk outweighs benefit | It doesn't affect platelets | It raises cholesterol | It causes heart attacks | It interacts with all foods | For people without vascular disease, harms tend to exceed benefits.
+Q: How does aspirin work as an antiplatelet? | It irreversibly inhibits platelet COX-1, reducing thromboxane.
+Q: When is clopidogrel the antiplatelet of first choice? | After stroke and in peripheral arterial disease.
+Q: How does ticagrelor differ from clopidogrel at the receptor? | Ticagrelor is a reversible P2Y12 inhibitor; clopidogrel is irreversible.
+Q: When is prasugrel used? | In ACS with PCI in selected people.
+Q: Which PPIs are preferred with clopidogrel? | Lansoprazole or pantoprazole.
+Q: Name three factors that raise GI bleeding risk on antiplatelets. | Older age, previous ulcer, combined antithrombotics, steroids and NSAIDs.
+Q: Are antiplatelets usually stopped before dental procedures? | No; they are usually continued, with specialist or surgical advice deciding any interruption.
+Q: What is a rare serious adverse effect of clopidogrel? | Thrombotic thrombocytopenic purpura.
+Q: Why shouldn't clopidogrel be stopped early after a coronary stent for minor bruising? | It risks stent thrombosis.
+Q: What is a P2Y12 inhibitor? | An antiplatelet blocking the platelet ADP receptor P2Y12, such as clopidogrel, prasugrel or ticagrelor.
 
 ## Stroke and transient ischaemic attack
 S: Stroke is a medical emergency: rapid recognition and treatment limit brain damage. After a stroke or TIA, secondary prevention greatly lowers the risk of another.
@@ -448,6 +598,16 @@ SRC: Intercollegiate Stroke Working Party, National clinical guideline for strok
 M1#pharmacy-u07-16-q1@1: What does the "T" in FAST stand for? | Time to call 999 | Temperature | Tablets | Tiredness | Tingling | Time: call 999 at once, because the speed of treatment decides how much brain can be saved.
 M2#pharmacy-u07-16-q2@2: What's the usual long-term antiplatelet after an ischaemic stroke? | Clopidogrel | Ticagrelor | Prasugrel | No antiplatelet | Aspirin plus warfarin | NICE NG128 recommends clopidogrel first for long-term prevention after ischaemic stroke.
 M2#pharmacy-u07-16-q3@1: How soon should someone with a suspected TIA be assessed by a specialist? | Within 24 hours | Within 4 weeks | Within 3 months | Only if it recurs | At their next GP review | NICE NG128 recommends specialist assessment within 24 hours.
+Q: What is a TIA? | Stroke-like symptoms that resolve within 24 hours, signalling high stroke risk.
+Q: Why does suspected stroke need immediate brain imaging? | To separate ischaemic stroke from haemorrhage.
+Q: Within what time of onset can thrombolysis be given for ischaemic stroke? | Within 4.5 hours.
+Q: What is given straight away for a suspected TIA? | Aspirin, unless contraindicated.
+Q: What is used if clopidogrel isn't tolerated after ischaemic stroke? | Aspirin with modified-release dipyridamole.
+Q: Who decides when anticoagulation starts after AF-related stroke? | The stroke team.
+Q: When may short-term dual antiplatelets be used after stroke? | After minor stroke or TIA in some people.
+Q: How can pharmacists help stroke survivors with swallowing difficulties? | By finding alternative formulations.
+Q: What is wrong with telling someone with sudden facial droop to wait and see? | It may be a stroke, an emergency needing a 999 call.
+Q: Which treatment is offered to selected people with ischaemic stroke besides thrombolysis? | Thrombectomy.
 
 ## Peripheral arterial disease
 S: Peripheral arterial disease (PAD) narrows the arteries to the legs, causing pain on walking and, in severe cases, threatening the limb. It also signals high risk of heart attack and stroke.
@@ -476,6 +636,16 @@ SRC: Joint Formulary Committee, British National Formulary: naftidrofuryl | guid
 M1#pharmacy-u07-17-q1@1: What is intermittent claudication? | Leg pain on walking, relieved by rest | Pain only at night in bed | Chest pain on exertion | Numbness from diabetes | Muscle cramps after statins | It reflects reduced blood flow to the leg muscles during exercise.
 M2#pharmacy-u07-17-q2@2: A person with PAD develops pain at rest and a toe ulcer. What's needed? | Urgent vascular referral | A stronger analgesic only | Exercise programme | Routine review in 6 months | Topical antibiotic only | These suggest chronic limb-threatening ischaemia.
 M2#pharmacy-u07-17-q3@1: Which intervention has most impact on PAD progression? | Stopping smoking | Taking vitamin E | Wearing compression stockings | Avoiding walking | Taking aspirin and warfarin together | Smoking cessation is the key modifiable factor.
+Q: What is chronic limb-threatening ischaemia? | Severe PAD with rest pain, ulcers or gangrene, needing urgent referral.
+Q: Why does PAD matter beyond leg symptoms? | It signals high risk of heart attack and stroke.
+Q: What non-drug treatment is offered for claudication? | A supervised exercise programme.
+Q: When may naftidrofuryl be considered in PAD? | If exercise hasn't helped and the person doesn't want revascularisation, reviewing after 3 to 6 months.
+Q: What cardiovascular risk reduction does everyone with PAD need? | Stopping smoking, clopidogrel, a high-intensity statin, and blood pressure and diabetes control.
+Q: Are beta-blockers contraindicated in PAD? | No; they can be used when another condition needs them.
+Q: What leg presentation in PAD is an emergency? | A cold, pale, painful leg, suggesting an acutely ischaemic limb.
+Q: Why is foot care important in PAD? | Checking for injuries matters, especially in people with diabetes.
+Q: How can pharmacists help people with PAD? | By supporting stopping smoking and checking secondary prevention medicines are prescribed and taken.
+Q: Why is new rest pain in a smoker with PAD not just cramp? | It may signal chronic limb-threatening ischaemia, needing urgent referral.
 
 ## Cardiovascular adverse drug reactions
 S: Many drugs affect the heart and circulation: slowing the heart, prolonging the QT interval, causing fluid retention or raising potassium. Pharmacists spot these risks when checking prescriptions and combinations.
@@ -504,4 +674,14 @@ SRC: CredibleMeds, QTdrugs list | secondary | 2026 | https://crediblemeds.org/
 M2#pharmacy-u07-18-q1@1: Which combination risks severe bradycardia? | Bisoprolol with verapamil | Ramipril with amlodipine | Atorvastatin with ezetimibe | Aspirin with lansoprazole | Furosemide with paracetamol | Beta-blockers and verapamil both slow heart rate and AV conduction, risking heart block.
 M2#pharmacy-u07-18-q2@2: Which drug group can worsen heart failure through fluid retention? | NSAIDs | Statins | Proton pump inhibitors | Inhaled corticosteroids | Laxatives | NSAIDs cause sodium and water retention and reduce diuretic effect, worsening heart failure.
 M3#pharmacy-u07-18-q3@1: Which factor increases the risk from QT-prolonging drugs? | Low potassium | High vitamin D | Low cholesterol | High HDL | Low blood glucose only | Hypokalaemia and hypomagnesaemia increase torsades risk.
+Q: What is the danger of QT prolongation? | It increases the risk of torsades de pointes.
+Q: Why is hyperkalaemia dangerous? | It can cause dangerous arrhythmias.
+Q: Name two drugs that can cause bradycardia apart from beta-blockers. | Verapamil, diltiazem, digoxin and donepezil.
+Q: Which antidepressants are noted for QT prolongation? | Citalopram and escitalopram.
+Q: Name three drugs that raise potassium. | ACE inhibitors, ARBs, MRAs, potassium supplements and trimethoprim.
+Q: What makes drug-induced hyperkalaemia more likely? | Renal impairment.
+Q: Name two drugs that cause fluid retention and can worsen heart failure. | NSAIDs, pioglitazone and some CCBs.
+Q: Which drugs commonly cause postural hypotension and falls? | Alpha-blockers, nitrates, diuretics and antihypertensive combinations in older people.
+Q: How should serious suspected cardiovascular drug reactions be reported? | Through the Yellow Card scheme.
+Q: Why review older people on several blood pressure-lowering drugs? | To check for dizziness and falls.
 `;

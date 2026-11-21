@@ -41,6 +41,16 @@ TF1#gcse-u01-01-q2@2: According to the forgetting curve, most forgetting happens
 M2#gcse-u01-01-q3@2: A student says, "I read my notes three times and they looked really familiar, so I'm ready." What is the problem? | Familiarity is recognition, but the exam needs recall from memory | Reading notes three times is always too many for one topic | Notes should be read only once, otherwise you get confused | Familiar notes prove the topic is already in long-term memory | Recognising material on a page is easier than recalling it without prompts. The student should test themselves before deciding they are ready.
 M3#gcse-u01-01-q4@3: Which revision plan best fits what is known about memory? | Short self-tests on each topic spread across several weeks | Rereading all notes the night before each exam | Highlighting every textbook page in a different colour | Copying out notes neatly once, then never looking again | Spaced, active retrieval slows forgetting. Cramming, highlighting and copying feel productive but give weaker long-term recall.
 SA3#gcse-u01-01-q5@1,2,3: Explain how an understanding of memory should change the way a student revises. | Working memory is small, so new material should be learned in chunks and linked to existing knowledge. Forgetting is fast at first, so topics must be revisited over days and weeks rather than once. Because retrieving strengthens memory, the student should test themselves rather than reread, and should sleep properly so memories consolidate. | Working memory limited, so chunk material ; Link to prior knowledge ; Forgetting curve, so revisit over time ; Retrieval strengthens memory, so self-test ; Sleep consolidates memory
+Q: What is long-term memory? | The large, lasting store of knowledge and skills, whose capacity seems practically unlimited.
+Q: How do working memory and long-term memory work together when you learn a new idea? | Working memory links the new idea to things already stored in long-term memory.
+Q: Why are new facts easier to learn on a topic you already know well? | They have existing knowledge in long-term memory to attach to.
+Q: Who first showed the forgetting curve, and how? | Hermann Ebbinghaus in the 1880s, by testing his own memory for lists of nonsense syllables.
+Q: Is forgetting usually a total loss of the memory? | No. It is usually a failure to retrieve it; the memory is there but the route to it cannot be found.
+Q: What does a "tip of the tongue" moment show about forgetting? | The memory is still stored, but you cannot find the route to retrieve it.
+Q: Why is feeling familiar with your notes a poor sign that you know them? | Recognising information is much easier than recalling it from a blank page, which is what the exam asks.
+Q: Why does an all-night cram work against you? | Memories are strengthened during sleep, so losing sleep undermines what you have learned.
+Q: How should you plan to revisit a topic to slow forgetting? | Return to it after a day, a week and a month rather than studying it only once.
+Q: Why is the exact capacity of working memory contested? | Estimates such as about four chunks or seven plus or minus two depend on how chunks are defined and measured.
 
 ## Retrieval practice
 LV: GCSE · Foundation
@@ -81,6 +91,16 @@ M2#gcse-u01-02-q2@2: In Roediger and Karpicke's study, what happened one week af
 SEQ2#gcse-u01-02-q3@2: Put the steps of a brain dump in order. | Close your notes ; Write down everything you remember ; Check against your notes ; Add missing points in another colour ; Start the next session with the gaps | Recall comes first and checking second, so the gaps you find are real.
 M3#gcse-u01-02-q4@3: Why do many students prefer rereading even though retrieval practice works better? | Rereading feels fluent and easy, which is mistaken for learning | Rereading is proven to be better for science subjects | Retrieval practice only works for students who are already good | Teachers forbid self-testing outside of real exams | Rereading creates a feeling of fluency. Retrieval feels harder, but that difficulty is what makes it effective; it is a "desirable difficulty".
 SA3#gcse-u01-02-q5@1,3: Evaluate the claim that "testing is for measuring learning, not for learning". | The claim is wrong for most material. The testing effect shows that recalling information strengthens memory: Roediger and Karpicke found students who practised retrieval remembered much more a week later than students who reread. Dunlosky's review rated practice testing as high utility. Testing also shows gaps. However, its benefit for complex extended tasks is less well studied, and high-stakes tests can cause anxiety, so low-stakes practice is best. | Testing effect defined ; Roediger and Karpicke evidence ; Dunlosky high utility ; Reveals gaps in knowledge ; Limitation or condition (low stakes, complex tasks) ; Judgement
+Q: What is retrieval practice? | Recalling information from memory without looking, such as by testing yourself, and checking afterwards.
+Q: Why does effort matter in retrieval practice? | Pulling information out of memory changes the memory, making it stronger and easier to find later.
+Q: In Roediger and Karpicke's 2006 study, which group did better after five minutes? | The rereaders did slightly better at five minutes, though the retrieval group remembered much more a week later.
+Q: Which two techniques did Dunlosky and colleagues rate as "high utility"? | Practice testing and spaced practice.
+Q: What is a brain dump? | Writing down everything you can remember about a topic from memory, then checking your notes.
+Q: After a brain dump, why add missing points in a different colour? | The coloured additions show exactly what you don't yet know, so you can start your next session with them.
+Q: What is the mistake of looking at the answer too soon? | Checking notes the moment you hesitate skips the effortful recall that strengthens memory; struggle first, then check.
+Q: Why does retrieval practice work best when it is low stakes? | When mistakes don't matter you can see your gaps without worry.
+Q: How can teaching a topic count as retrieval practice? | Explaining it aloud from memory, to a friend, a parent or an empty room, forces you to recall it.
+Q: What is still being researched about retrieval practice? | How much it helps with complex, open-ended tasks such as extended essays, compared with factual recall.
 
 ## Spaced practice and revision timetables
 LV: GCSE · Application
@@ -120,6 +140,16 @@ TF1#gcse-u01-03-q2@1: Cramming the night before can help on the next day's test 
 M2#gcse-u01-03-q3@2: A student has four weeks until a chemistry mock. Which plan uses spacing best? | Visit each topic in week 1, again in week 2 and again in week 4 | Revise topic 1 in week 1, topic 2 in week 2, and so on | Revise every topic in one long session the day before | Revise each topic once, in whatever order feels easiest | Revisiting topics across the four weeks interrupts forgetting. Doing each once, or all at the end, is massed practice.
 M3#gcse-u01-03-q4@3: Which is the weakest feature of this plan: "Every evening, 5pm to 11pm, revise one subject, no breaks"? | Six hours without breaks is unrealistic and will soon be abandoned | It only gives each subject one evening, which is too spaced out | It starts too early in the evening to be useful for memory | It includes too many different subjects across the week | Overlong sessions with no rest cause fatigue and poor concentration. Shorter focused sessions with breaks are more effective and more sustainable.
 SA2#gcse-u01-03-q5@2,3: Describe how you would build a revision timetable for the eight weeks before your GCSE mocks, and justify each feature. | List all topics per subject and rate each red, amber or green. Plan realistic 30 to 45 minute sessions with breaks, around school and rest. Give each session one topic and a self-test, and schedule each topic to come back after a few days, a week and several weeks, so revision is spaced. Put weak topics in more often but keep strong ones returning. Review the plan weekly. | Audit topics with a confidence rating ; Realistic short sessions with breaks ; Spacing with planned return visits ; Retrieval task in each session ; Priority to weak topics ; Weekly review
+Q: What is spaced practice? | Spreading study of a topic over several sessions with gaps in between, instead of cramming it all at once.
+Q: What is the spacing effect? | The same total study time gives better long-term memory when split into spread-out sessions than when done in one block.
+Q: What did Cepeda and colleagues find in 2006? | Reviewing hundreds of experiments, they found the spacing effect almost everywhere.
+Q: What happens to learning from cramming? | It produces fast learning that also fades fast.
+Q: What is a rough rule for revisiting a topic before an exam months away? | Revisit after one day, then a few days, then a week or two, then a month.
+Q: How should red, amber and green topics be treated in a revision timetable? | Put red topics in more often, but keep green topics coming round so they aren't forgotten.
+Q: What is a common mistake when making a revision timetable? | Packing it so full it collapses in the first week; a plan with time for meals, exercise, friends and sleep gets followed.
+Q: How long should a focused revision session be? | About 25 to 45 minutes of focused work, followed by a short break.
+Q: Why should you start revising early, such as in the spring term? | Spacing needs time, so starting early makes it far easier than starting two weeks before the exams.
+Q: Why put your phone in another room while revising? | Doing one thing at a time matters, because multitasking slows learning.
 
 ## Interleaving and worked examples
 LV: GCSE · Application
@@ -160,6 +190,16 @@ M2#gcse-u01-04-q2@2: A student is meeting the moles equation for the first time.
 TF2#gcse-u01-04-q3@1: In Rohrer and Taylor's study, students who interleaved made more mistakes during practice but did better on the later test. | true | This is a "desirable difficulty": harder practice, better long-term results.
 M3#gcse-u01-04-q4@3: Why might worked examples become less helpful as a student becomes expert? | Experts already know the steps, so reading them adds load without benefit | Worked examples always contain more errors at the higher grades | Experts are not allowed to use worked examples in their exams | Worked examples only work for students below grade 4 | This is the expertise reversal effect: guidance that helps novices becomes redundant for experienced learners, who gain more from solving problems.
 SA3#gcse-u01-04-q5@1,2,3: A student revises physics by doing 20 speed questions, then 20 acceleration questions, then 20 density questions. Evaluate this method and suggest improvements. | This is blocked practice. It builds fluency in each method and is reasonable when a method is new, but it doesn't train the student to choose which equation fits a question, which a mixed exam paper requires. Once each method is secure, the student should interleave the three types (and older topics), and use worked or faded examples only for any method that is still shaky. | Identifies blocked practice ; Strength: fluency with a new method ; Weakness: no practice choosing the method ; Recommends interleaving ; Worked examples for weak methods ; Judgement
+Q: What is blocked practice? | Doing many questions of one type, then many of another, such as AAA BBB CCC.
+Q: Why does blocked practice feel smoother than interleaving? | You already know which method to use, so you never have to choose.
+Q: What did Rohrer and Taylor find in 2007? | Students who practised maths problems interleaved scored far higher on a later test than those who practised blocked.
+Q: What is a worked example? | A solved problem showing each step and the reason for it.
+Q: Why are worked examples useful for beginners? | Solving new problems from scratch can overload working memory; studying worked examples first reduces that load.
+Q: What is cognitive load? | The demand a task places on working memory.
+Q: What is the expertise reversal effect? | Once you are fluent, worked examples become less useful than solving problems yourself.
+Q: What is the kinetic energy of a 2 kg ball moving at 3 m/s? | Ek = 0.5 × 2 × 3² = 9 J.
+Q: What is the danger of staying on blocked practice because it feels good? | Getting every same-type question right can hide that you couldn't pick the method on a mixed paper.
+Q: What order should worked examples and interleaving come in when learning a method? | Worked and faded examples while the method is new, then interleaved practice with older topics.
 
 ## Flashcards and the Leitner system
 LV: GCSE · Application
@@ -199,6 +239,16 @@ M2#gcse-u01-05-q2@2: A card in Box 3 is answered wrongly. Where should it go? | 
 MS2#gcse-u01-05-q3@1,2: Which of these are good flashcard habits? Choose all that apply. | Answer aloud before turning over ; Keep one idea per card ; Make cards for key terms in both directions | Put a whole topic on one card ; Read the answer side first to save time | Cards work when they force genuine retrieval of a single idea; reading the back first removes the retrieval.
 M3#gcse-u01-05-q4@3: For which GCSE task are flashcards least useful on their own? | Writing a 40-mark descriptive writing answer | Learning the symbol equation for respiration | Remembering the meaning of "onomatopoeia" | Recalling the date of a named earthquake | Flashcards suit facts and definitions; extended writing is a skill built by planning and practising whole answers.
 SA2#gcse-u01-05-q5@1,2,3: Describe how you would use flashcards and the Leitner system to learn the key terms for a Geography unit, and explain one limitation. | Write one card per term, with the question "What is …?" on the front and a definition plus a case-study example on the back, and a reverse card for the most important ones. Put all cards in Box 1, review Box 1 daily and higher boxes less often, moving correct cards up and wrong ones back to Box 1. A limitation is that cards don't practise applying terms in extended answers, so I would also do past-paper questions. | One idea per card, question on the front ; Example on the back ; Leitner movement rules ; Review frequency per box ; Limitation for extended answers
+Q: Why is "Photosynthesis" on its own a poor flashcard front? | It is a label, not a question; headings invite glancing instead of making you retrieve.
+Q: Why write key-term flashcards in both directions? | So you practise going from term to definition and from definition to term.
+Q: Why write flashcards in your own words? | Making the cards is itself useful thinking.
+Q: Who described the Leitner system, and when? | Sebastian Leitner, in 1972.
+Q: In the Leitner system, what happens to a card you answer correctly? | It moves up a box, so it is reviewed less often.
+Q: How often is Box 1 reviewed in the Leitner system? | Every day; Box 2 every few days and Box 3 weekly.
+Q: Why does the Leitner system add spacing automatically? | Well-known cards come round less often while cards you struggle with come round constantly.
+Q: What is the common mistake when using flashcards? | Turning over before really trying, or saying "I knew that" after reading the back; answer first, then check honestly.
+Q: What kinds of content suit flashcards best? | Facts, definitions, equations, key quotations and case-study figures.
+Q: What do apps such as Anki have in common with the Leitner system? | They use the same spacing idea, scheduling cards with an algorithm.
 
 ## Mind maps, dual coding and summaries
 LV: GCSE · Application
@@ -236,6 +286,16 @@ M2#gcse-u01-06-q2@2: Which mind-map method is most effective for revision? | Dra
 TF1#gcse-u01-06-q3@3: Dunlosky and colleagues rated highlighting as a high-utility revision technique. | false | Highlighting was rated low utility. Practice testing and spaced practice were rated high.
 M3#gcse-u01-06-q4@3: Why is a summary made from memory more useful than one copied from a revision guide? | Making it from memory requires retrieval and choosing what matters | Copied summaries always contain more mistakes than your own | Revision guides are not allowed to be used for GCSE revision | Summaries made from memory are always shorter and so faster | The value of a summary lies in the thinking it forces: recalling, selecting and connecting ideas.
 SA3#gcse-u01-06-q5@1,2,3: Evaluate highlighting, mind maps and dual-coded diagrams as revision methods for GCSE Biology. | Highlighting is low value: it is passive and rarely improves recall. Mind maps can be useful because they show connections between ideas, but only when drawn from memory and checked. Dual-coded diagrams, such as a labelled heart showing blood flow, give a visual route to memory and suit biology's processes, if they show meaning rather than decoration. All should be combined with self-testing and past-paper questions. | Highlighting low value with reason ; Mind maps useful if from memory ; Dual coding explained with a biology example ; Visual must show meaning ; Combine with self-testing ; Judgement
+Q: Which theory is dual coding based on? | Allan Paivio's dual-coding theory of 1971: words and images are processed in partly separate systems.
+Q: Why does dual coding help memory? | Having both words and images gives two routes back to the memory.
+Q: Give an example of good dual coding. | A labelled heart diagram showing blood flow, a flow chart of tropical storm stages, or a timeline of a story's structure.
+Q: Do decorative doodles count as dual coding? | No. The picture must show the idea, not just decorate the page.
+Q: What is a summary, as a revision tool? | A condensed version of a topic in fewer words, which makes you choose what matters.
+Q: Why are mind maps and summaries useful? | They make you choose what matters and how ideas link together.
+Q: Why is highlighting a weak revision method? | It feels productive but rarely improves later recall, and can make you focus on isolated facts.
+Q: Which revision methods are rated low value? | Highlighting, rereading and copying notes out neatly.
+Q: Which revision methods are rated moderate value? | Summaries and mind maps made from memory, self-explanation and dual-coded diagrams.
+Q: What should you do a week after making a mind map from memory? | Redraw it from memory without looking at the first version, then compare.
 
 ## Past papers and mark schemes
 LV: GCSE · Application
@@ -277,6 +337,16 @@ M2#gcse-u01-07-q2@2: After marking a past-paper answer, what is the most useful 
 M2#gcse-u01-07-q3@1,2: Where would you find comments such as "many candidates did not use data from the graph"? | An examiner report | A specification | A mark scheme | A formula sheet | Examiner reports summarise how candidates performed and the common errors that year.
 M3#gcse-u01-07-q4@3: Why is reading the mark scheme before attempting a question a weak strategy? | It removes the retrieval that makes practice effective | Mark schemes are only meant for teachers to read | It makes the question take too long to answer | Mark schemes change after every exam series | Reading the answer first creates false familiarity. Attempting, then checking, gives real retrieval practice and honest feedback.
 SA2#gcse-u01-07-q5@2,3: Explain how you would use past papers over the last three months before your GCSEs. | Early on, do single questions on topics as I finish revising them, mark strictly and rewrite answers. Then use topic packs to practise one question type. In the final weeks do full papers under timed conditions to practise timing. After each, list lost marks by cause, add missing knowledge to flashcards and retry similar questions. Use examiner reports to avoid common errors. | Single questions early ; Strict self-marking ; Rewrite to full marks ; Full timed papers later ; Diagnose causes of lost marks ; Examiner reports
+Q: Which exam boards publish past papers, mark schemes and examiner reports? | AQA, Pearson Edexcel and OCR, on their websites.
+Q: What is a rough guide to timing on a GCSE paper? | Spend about one minute per mark.
+Q: What is a points-based mark scheme? | A scheme listing creditworthy points, one mark each, used for short answers.
+Q: What is a mark scheme? | The guidance examiners use to award marks for each question.
+Q: How should you mark your own past-paper answer? | Strictly, crediting only points that are actually written.
+Q: After marking an answer, what reasons for lost marks should you note? | Whether you didn't know it, misread the question or ran out of time.
+Q: What should you do with knowledge you were missing on a past-paper question? | Rewrite the answer to full marks and add the missing knowledge to your flashcards.
+Q: What is a topic pack of past-paper questions? | The same type of question collected from several years.
+Q: When are full past papers under timed conditions most useful? | Especially in the last months before the exams.
+Q: What does reverse engineering a model answer mean? | Studying high-scoring answers to see what a top-level answer does.
 
 ## Command words
 LV: GCSE · Application
@@ -317,6 +387,16 @@ M2#gcse-u01-08-q2@2: "Explain why the population of the city grew." Which answer
 M2#gcse-u01-08-q3@2: Which command word expects you to apply knowledge to an unfamiliar situation, with several possible answers? | Suggest | State | Calculate | Name | "Suggest" means apply your understanding to something new; examiners credit any sensible answer.
 M3#gcse-u01-08-q4@3: An "evaluate" answer lists three strengths and three weaknesses of a flood defence but has no conclusion. Why will it probably not reach the top level? | The command word requires a supported judgement | Six points is too many for any evaluate question | Weaknesses should never be included in evaluation | The answer should have described the defence instead | Without a judgement the answer only partly does what "evaluate" asks.
 SA3#gcse-u01-08-q5@1,2,3: Explain why command words matter in GCSE exams, using two examples of how an answer should change depending on the command word. | Command words tell you what kind of answer earns marks, and examiners mark against that. For a graph, "describe" needs the pattern with data, while "explain" needs the causes. For a coastal defence, "describe" says what it is, but "evaluate" needs strengths, weaknesses and a supported judgement. Ignoring the command word, such as describing when asked to explain, loses most of the marks even when the facts are right. | Command words define the type of answer ; Describe versus explain example ; Evaluate needs a judgement ; Misreading loses marks even with correct facts ; Clear examples
+Q: What is a command word? | The instruction word in a question that tells you what kind of answer is needed.
+Q: What kind of answer do "state", "name", "give" and "identify" ask for? | A short answer, often one word or phrase, with no explanation needed.
+Q: What does the command word "compare" ask you to do? | Identify similarities and differences between two things, referring to both.
+Q: What does the command word "calculate" require? | Working out a value, showing working and units.
+Q: What does the command word "suggest" ask you to do? | Apply your knowledge to an unfamiliar situation; there may be several acceptable answers.
+Q: Which words help show you are explaining rather than describing? | Words such as "because" and "so", which give reasons.
+Q: What should you do with the command word before answering? | Underline it, so you know what kind of answer is needed.
+Q: Why do many Geography and Science answers lose most of their marks? | They describe the pattern accurately but never give the reasons when the question says "explain".
+Q: Where would an "evaluate" answer with no conclusion usually be placed? | In the middle levels, because it lacks a judgement.
+Q: Give an example of a judgement in an evaluation answer. | "On balance, the hard engineering was more effective because…"
 
 ## Planning extended answers
 LV: GCSE · Application
@@ -356,6 +436,16 @@ M2#gcse-u01-09-q2@2: A six-mark science question asks you to describe a method. 
 SEQ2#gcse-u01-09-q3@2: Put the steps of a one-minute plan in order. | Underline the command word and focus ; Jot your main points ; Add an example to each point ; Decide your judgement ; Write in linked paragraphs | Deciding the conclusion before writing keeps every paragraph pointed at it.
 M3#gcse-u01-09-q4@3: An answer gives eight correct facts about tectonic hazards but none are explained or linked. Which level is it most likely to reach? | A middle level, because knowledge isn't developed | The top level, because every fact is accurate | No marks, because none of the facts are linked | The top level, because it includes eight facts | Accurate knowledge earns some credit, but without development and links it rarely reaches the top level.
 SA3#gcse-u01-09-q5@1,2,3: Plan and explain how you would answer "Explain how the body responds to a rise in blood glucose" (6 marks). | Plan the chain: blood glucose rises after a meal; this is detected by the pancreas; the pancreas releases insulin into the blood; insulin causes cells (especially liver and muscle) to take up glucose; the liver converts glucose to glycogen for storage; so blood glucose falls back to normal. Write it as linked sentences using "which", "so" and "this causes". | Identifies command word explain ; Pancreas detects rise ; Insulin released into blood ; Cells take up glucose ; Liver stores glycogen ; Linked chain of reasoning
+Q: What is an extended response? | A longer answer, usually 6 marks or more, marked by levels of quality.
+Q: What is linked reasoning in an extended answer? | Each point leads to the next, using phrases like "this means that…" or "as a result…".
+Q: Where does a long list of disconnected facts usually sit in a levels mark scheme? | In the middle level.
+Q: What do examiners want in a six-mark question describing a method? | Logical steps detailed enough to follow: equipment, what to measure, how to control variables and how to make it safe.
+Q: How long should a plan for a 6- or 9-mark answer take? | About a minute, as a few key words in the margin; it is a map, not a draft.
+Q: What is a chain of reasoning? | A sequence of linked explanations, each step leading to the next, such as "because… which means… so…".
+Q: Why decide your judgement before writing an evaluation answer? | So the answer stays focused and builds towards a clear conclusion.
+Q: What does SPaG stand for, and when does it matter? | Spelling, punctuation and grammar; some Geography questions add marks for it and for specialist terms.
+Q: In a coastal hard engineering answer, what is a drawback of groynes? | They trap sand but starve beaches further along the coast.
+Q: What should numbered method steps for a practical include? | The independent, dependent and control variables.
 
 ## Timing and exam technique
 LV: GCSE · Application
@@ -395,6 +485,16 @@ M2#gcse-u01-10-q2@2: A 1 hour 30 minute paper has 90 marks. About how long shoul
 TF1#gcse-u01-10-q3@1: In GCSE multiple-choice questions you usually lose marks for a wrong answer, so leave it blank if unsure. | false | GCSE papers don't deduct marks for wrong answers, so a sensible guess is better than a blank.
 M3#gcse-u01-10-q4@3: You are stuck on a 6-mark question halfway through a paper. What is the best strategy? | Write what you know, mark it, move on and return if time allows | Keep working on it until you get it, however long it takes | Leave the rest of the paper and spend all remaining time on it | Skip it without writing anything and never return | Partial answers earn credit, and moving on protects time for the marks you can definitely get.
 SA2#gcse-u01-10-q5@2,3: Describe a timing plan for a GCSE paper of your choice and explain how you would deal with a question you can't answer. | Divide the time by the marks to get minutes per mark, write a finish time beside each question and keep 5 to 10 minutes to check. Plan longer answers briefly first. If stuck, re-read, use clues in the data, write what I know for partial credit, mark the question and move on, returning at the end. Guess multiple-choice answers rather than leave them blank. | Minutes per mark calculation ; Finish times written down ; Checking time kept ; Partial credit for stuck questions ; Move on and return ; No blanks in multiple choice
+Q: What should you check on the front cover of an exam paper? | The number of questions, the total marks and any choices.
+Q: How many points does a 2-mark question usually need? | Two points.
+Q: What are method marks? | Marks awarded for correct working even when the final answer is wrong.
+Q: What kit should you bring to a GCSE exam? | Black pen, spare pens, pencil, ruler, rubber and, for science and geography, a calculator.
+Q: In a 1 hour 45 minute paper with 80 marks, how long should a 40-mark question get? | About 45 minutes, including planning.
+Q: Why allocate exam time by marks rather than by how much you know? | Leaving a high-mark question unfinished costs far more than a slightly shorter answer to a low-mark one.
+Q: Should you leave a multiple-choice question blank if unsure? | No. There is no penalty for a wrong answer.
+Q: What should you do if you are stuck on a question? | Re-read it, look for clues in the data or source, write what you know for partial credit, and move on.
+Q: What should you check in the final minutes of an exam? | Units, significant figures, that you answered the right number of questions, and spelling of key words.
+Q: How can writing finish times on the paper help? | Writing each question's finish time at the top helps you stick to your timing plan.
 
 ## Exam stress and wellbeing
 LV: GCSE · Foundation
@@ -433,6 +533,16 @@ M2#gcse-u01-11-q2@2: A student feels panic rising at the start of an exam. What 
 TF1#gcse-u01-11-q3@3: Feeling nervous before an exam means you are going to do badly. | false | Some nerves are normal and can help focus; it is very high, prolonged anxiety that tends to impair performance.
 M3#gcse-u01-11-q4@3: Which is the strongest sign that a student needs extra support, not just better revision habits? | Weeks of poor sleep and feeling hopeless about everything | Feeling butterflies on the morning of the exam | Finding one topic harder than the others | Being slightly tired after a long revision session | Prolonged sleep problems and hopelessness go beyond normal exam nerves and should be shared with a trusted adult, the school or a GP.
 SA3#gcse-u01-11-q5@1,2,3: Evaluate the claim that "exam stress is always bad for you". | The claim is too strong. Moderate stress releases adrenaline, which raises alertness and can improve focus. But intense or long-lasting stress disrupts sleep, eating and concentration and makes recall harder. Stress is best managed by steady preparation, sleep, food, exercise and talking to people. If it becomes overwhelming, a student should seek help from a trusted adult, school, GP or Childline. | Moderate stress can help ; Adrenaline and alertness ; Prolonged or intense stress harms ; Management strategies ; When and where to get help ; Judgement
+Q: What is the stress response? | The body's reaction to a challenge, involving hormones such as adrenaline that speed up heart and breathing.
+Q: How can a small amount of stress help in an exam? | It sharpens attention and can help you focus.
+Q: What can intense or prolonged stress do? | Disrupt sleep, appetite and concentration, and make it harder to recall what you know.
+Q: Name three mental signs of stress. | Worrying thoughts, irritability, feeling overwhelmed, or finding it hard to start work.
+Q: What is the most reliable way to reduce exam worry? | Preparation you can see working: a plan, regular self-testing and evidence of progress.
+Q: How much sleep do teenagers need? | 8 to 10 hours.
+Q: What breathing technique can help if panic rises in an exam? | Put the pen down and breathe slowly, in for four counts and out for six, a few times.
+Q: Why start with a question you can answer? | It builds momentum and confidence.
+Q: What are access arrangements? | Approved adjustments, such as extra time or a separate room, for students who meet the JCQ criteria.
+Q: Why should you ask about access arrangements early? | They can't be arranged on the day; ask your school's SENCo in advance.
 
 ## Making a revision plan
 LV: GCSE · Evaluation
@@ -474,4 +584,14 @@ M2#gcse-u01-12-q2@2: Which week of revision best uses the evidence? | Mixed topi
 TF2#gcse-u01-12-q3@3: The Education Endowment Foundation rates metacognition and self-regulation as low impact and high cost. | false | The EEF rates them as high impact for relatively low cost.
 M3#gcse-u01-12-q4@3: A student's weekly review shows full marks on green topics and no progress on red ones. What is the best change? | Give red topics more sessions with worked examples and self-tests | Keep revising the green topics to protect the full marks | Drop the red topics because they are clearly too hard | Stop reviewing the plan since it is not helping | Progress comes from targeting weaknesses while keeping strong topics in occasional retrieval.
 SA3#gcse-u01-12-q5@1,2,3: Evaluate this plan and suggest improvements: "I'll reread my notes for each subject in the order they appear, then do all the past papers in the last week." | The plan uses rereading, which is low value, and covers each topic once in order, which is massed and blocked. Leaving past papers to the last week gives no time to act on feedback. Better: audit topics from the specification with RAG ratings, use retrieval every session, space topics and interleave them, start past-paper questions early and full papers later, and review weekly. | Rereading is low value ; Topics covered once, not spaced ; No interleaving ; Past papers too late for feedback ; Improved plan with RAG audit, retrieval, spacing ; Weekly review
+Q: What is a specification? | The exam board's official list of the content and skills that can be assessed.
+Q: What is a RAG rating? | A red, amber or green rating of your confidence in each topic.
+Q: How should you decide a topic's RAG rating? | Ideally after a quick self-test rather than a guess.
+Q: How should red topics be learned or re-learned? | With notes, videos such as BBC Bitesize or Oak National Academy, and worked examples.
+Q: When should you interleave topics within a subject? | Once each topic is secure.
+Q: How should past papers be used across a revision plan? | Single questions early, full papers later.
+Q: What is the mistake of only revising topics you like? | It feels better, but the marks are hiding in red topics, which need more sessions.
+Q: What should you do at the end of each revision week? | Look at self-test and past-paper scores, move topics between red, amber and green, and change next week's plan.
+Q: What does the Education Endowment Foundation say about metacognition? | It rates metacognition and self-regulation among the highest-impact, lowest-cost approaches in schools.
+Q: What feedback is very valuable each week during revision? | Asking a teacher for feedback on one extended answer a week.
 `;

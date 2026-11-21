@@ -1,0 +1,112 @@
+{
+ "id": "chem-raman",
+ "renderer": "levels",
+ "course": "chemistry",
+ "unit": "u15",
+ "lesson": "Raman spectroscopy",
+ "title": "Rayleigh and Raman scattering",
+ "caption": "Light briefly lifts a molecule to a short-lived virtual state. Most photons scatter with unchanged energy (Rayleigh). A few leave the molecule one vibrational level higher and come out with less energy (Stokes), or take a level's energy away and come out with more (anti-Stokes). The shifts measure vibrational energies.",
+ "alt": "Energy diagram: v = 0 and v = 1 levels and a dashed virtual level; arrows for Rayleigh, Stokes and anti-Stokes scattering.",
+ "description": [
+  "Rayleigh: up from v = 0 and back to v = 0, same energy.",
+  "Stokes: up from v = 0, down to v = 1: scattered light of lower energy.",
+  "Anti-Stokes: up from v = 1, down to v = 0: higher energy."
+ ],
+ "kind": "custom",
+ "height": [
+  300,
+  320
+ ],
+ "levels": [
+  {
+   "id": "v0",
+   "label": "v = 0",
+   "E": 0,
+   "x0": 0.1,
+   "x1": 0.95
+  },
+  {
+   "id": "v1",
+   "label": "v = 1",
+   "E": 1,
+   "x0": 0.1,
+   "x1": 0.95
+  },
+  {
+   "id": "virt",
+   "label": "virtual state",
+   "E": 6,
+   "x0": 0.1,
+   "x1": 0.95,
+   "dash": true,
+   "thin": true
+  }
+ ],
+ "transitions": [
+  {
+   "from": "v0",
+   "to": "virt",
+   "x": 0.2,
+   "colour": "a1"
+  },
+  {
+   "from": "virt",
+   "to": "v0",
+   "x": 0.26,
+   "colour": "a1",
+   "label": "Rayleigh"
+  },
+  {
+   "from": "v0",
+   "to": "virt",
+   "x": 0.5,
+   "colour": "a3"
+  },
+  {
+   "from": "virt",
+   "to": "v1",
+   "x": 0.56,
+   "colour": "a3",
+   "label": "Stokes"
+  },
+  {
+   "from": "v1",
+   "to": "virt",
+   "x": 0.78,
+   "colour": "a4"
+  },
+  {
+   "from": "virt",
+   "to": "v0",
+   "x": 0.84,
+   "colour": "a4",
+   "label": "anti-Stokes"
+  }
+ ],
+ "claims": [
+  {
+   "type": "lower",
+   "transitions": [
+    3,
+    2
+   ],
+   "name": "Stokes light has less energy than the incident light"
+  },
+  {
+   "type": "lower",
+   "transitions": [
+    4,
+    5
+   ],
+   "name": "anti-Stokes light has more energy than the incident light"
+  },
+  {
+   "type": "equal",
+   "transitions": [
+    0,
+    1
+   ],
+   "name": "Rayleigh light has the same energy as the incident light"
+  }
+ ]
+}

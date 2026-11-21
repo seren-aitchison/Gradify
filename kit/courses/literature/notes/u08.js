@@ -41,6 +41,16 @@ M2#literature-u08-01-q2@2: How does the play show disorder in nature after Dunca
 M3#literature-u08-01-q3@3: Which change to Holinshed best reflects Shakespeare's audience? | Making Banquo innocent of Duncan's murder | Setting the play in Scotland | Including witches at the start | Giving Macbeth a wife | In Holinshed Banquo is an accomplice; James I's ancestor had to be innocent.
 MATCH2#literature-u08-01-q4@2: Match each contextual factor to its link in the play. | Daemonologie = The witches ; Gunpowder Plot = Treason and equivocation ; Divine right = Duncan's murder as sacrilege ; Holinshed = Main source of the plot | Each factor illuminates part of the play.
 SA3#literature-u08-01-q5@2,3: Explain how an awareness of the Great Chain of Being affects a reading of Macbeth's murder of Duncan. | A Jacobean audience would see Duncan as God's anointed king at the top of the human order. Killing him violates divine as well as human law, so the play shows nature itself in disorder: darkness by day, a falcon killed by an owl, horses eating each other. Macbeth's later sleeplessness and Scotland's suffering show the cost of breaking the chain, and order returns only with Malcolm's legitimate rule. | King as God's deputy ; Sacrilege ; Natural disorder imagery ; Restoration of order
+Q: When did James VI of Scotland become James I of England? | In 1603, when he also became patron of Shakespeare's company, renamed the King's Men.
+Q: What was Daemonologie and why does it matter for Macbeth? | A 1597 book on witchcraft by James I; it shows the king's fascination with witches, which the play's witches would speak to.
+Q: What was the Gunpowder Plot? | A failed attempt in November 1605 to blow up the king and Parliament, which made regicide and treachery urgent topics.
+Q: Which joke in Macbeth is often linked to the trial of the Jesuit Henry Garnet? | The Porter's joke about an "equivocator".
+Q: What did the divine right of kings mean for the crime of regicide? | Because monarchs were appointed by God, killing a king was a sin against God as well as a crime.
+Q: How does the Great Chain of Being explain the unnatural events after Duncan's murder? | Disrupting the God-given hierarchy was thought to cause disorder in nature, so horses eat each other and darkness covers the day.
+Q: How is Duncan presented differently in Holinshed's Chronicles from Shakespeare's play? | In Holinshed, Duncan is a weaker king and Banquo helps to kill him.
+Q: What is the only surviving text of Macbeth? | The First Folio of 1623.
+Q: Which scenes of Macbeth may have been added by Thomas Middleton? | Scenes involving Hecate.
+Q: What is the common mistake when writing about the context of Macbeth? | Bolting on paragraphs of history instead of tying each contextual point to a specific moment, character or quotation.
 
 ## Macbeth: ambition and power
 LV: Intermediate · Application
@@ -85,6 +95,16 @@ M2#literature-u08-02-q2@2: What does "I am in blood / Stepped in so far" suggest
 M3#literature-u08-02-q3@3: How does Banquo's response to the prophecies affect our view of Macbeth? | It shows Macbeth chose to act where Banquo did not | It proves the witches controlled both men | It shows Banquo is more ambitious than Macbeth | It suggests the prophecies were false | Banquo receives prophecies too but does not murder, highlighting Macbeth's agency.
 SEQ1#literature-u08-02-q4@1: Put Macbeth's crimes in order. | Murder of Duncan ; Murder of the grooms ; Murder of Banquo ; Murder of Macduff's family | Each crime leads to the next as he tries to secure his power.
 SA3#literature-u08-02-q5@2,3: How far is Macbeth responsible for his own downfall? | The witches plant the idea and Lady Macbeth persuades him to kill Duncan, so external forces play a part. But Macbeth's "black and deep desires" exist before persuasion, he admits "vaulting ambition" is his only motive, and he orders the later murders alone. Banquo's restraint shows choice was possible. A balanced answer finds Macbeth largely responsible, while recognising the play's interest in temptation and fate. | Witches and Lady Macbeth ; Desires pre-exist ; Knowing choice ; Later murders his own ; Balanced judgement
+Q: How is Macbeth's violence in battle described in Act 1? | He "unseamed" a rebel "from the nave to th' chops", showing him as a ferocious, loyal warrior.
+Q: What does "Stars, hide your fires; / Let not light see my black and deep desires" reveal about Macbeth? | The witches' prophecy awakens desires he already half has and wants to keep hidden.
+Q: What does "O, full of scorpions is my mind, dear wife!" show about Macbeth after Duncan's murder? | Power brings him fear and torment rather than security.
+Q: What does "vaulting ambition" tell us about Macbeth's motive? | He admits ambition is his only motive, so he acts with full knowledge, making his fall tragic rather than accidental.
+Q: How does Shakespeare show that ambition is self-destroying in Macbeth? | Each crime requires another, power leaves Macbeth fearful and isolated, and by Act 5 life seems meaningless to him.
+Q: Do the witches command Macbeth to commit murder? | No. They predict the future but do not command him to act.
+Q: Whose idea are Macbeth's later murders? | His own; Lady Macbeth goads him to kill Duncan, but the later murders, such as Banquo's, are Macbeth's own decisions.
+Q: What is hamartia? | The error or flaw that leads to a tragic hero's downfall; many critics see Macbeth's as ambition.
+Q: What is a tyrant? | A ruler who uses power cruelly and illegitimately, as Macbeth becomes after ordering the murders of Banquo and Macduff's family.
+Q: What mistake should be avoided when judging Macbeth's responsibility? | Blaming the witches or Lady Macbeth entirely, since the text gives Macbeth knowledge and choice, especially in the later murders.
 
 ## Macbeth: the supernatural
 LV: Intermediate · Application
@@ -127,6 +147,16 @@ M2#literature-u08-03-q2@2: Why is Macbeth's first line, "So foul and fair a day 
 M3#literature-u08-03-q3@3: Which reading of Banquo's ghost is best supported by the feast scene? | It may be a manifestation of Macbeth's guilt, since only he sees it | It is clearly visible to all the guests | It is a trick by Lady Macbeth | It is a dream Macbeth has in bed | Only Macbeth sees the ghost, which supports a psychological reading.
 MATCH2#literature-u08-03-q4@1: Match each supernatural moment to its act. | Witches' first meeting = Act 1 ; The dagger = Act 2 ; Banquo's ghost = Act 3 ; The apparitions = Act 4 | The supernatural recurs through each stage of Macbeth's rise and fall.
 SA3#literature-u08-03-q5@2,3: How does Shakespeare use the supernatural to explore the theme of appearance and reality? | The witches' "Fair is foul" establishes a world where things are not what they seem. Their prophecies are equivocal, true in words but false in meaning, as with Birnam Wood and "none of woman born". The dagger and ghost may be real or imagined, so the audience, like Macbeth, cannot be sure what is real. This mirrors Lady Macbeth's advice to "look like th' innocent flower, / But be the serpent under 't". | Paradox ; Equivocal prophecies ; Ambiguous visions ; Link to deception
+Q: What does the witches' paradox "Fair is foul, and foul is fair" set up? | A world where appearances deceive.
+Q: What is equivocation? | Deliberately ambiguous language that is true in one sense but misleading.
+Q: What is a paradox? | A statement that seems self-contradictory but conveys a truth.
+Q: How might the dagger Macbeth sees be read as psychological rather than supernatural? | As a "dagger of the mind", a product of a "heat-oppressèd brain".
+Q: Why does it matter that only Macbeth sees Banquo's ghost at the feast? | It suggests the ghost may be a projection of his guilt.
+Q: What three apparitions appear to Macbeth in Act 4? | An armed head, a bloody child, and a crowned child holding a tree.
+Q: What effect do the Act 4 apparitions have on Macbeth? | They make him over-confident.
+Q: What does Banquo warn about the "instruments of darkness"? | That they "tell us truths" to "betray's / In deepest consequence".
+Q: How might a Jacobean audience familiar with Daemonologie view the witches? | As agents of the devil who tempt rather than compel.
+Q: Why is it wrong to say the witches make Macbeth kill Duncan? | They never instruct him to murder; they predict, and he interprets.
 
 ## Macbeth: gender and Lady Macbeth
 LV: Intermediate · Evaluation
@@ -170,6 +200,16 @@ M2#literature-u08-04-q2@2: How does Lady Macbeth persuade Macbeth to kill Duncan
 M3#literature-u08-04-q3@3: What does Macduff's response to his family's murder suggest about manhood? | True manhood includes feeling as well as courage | Real men never show emotion | Grief makes men unfit to fight | Revenge is unmanly | He insists he "must also feel it as a man", challenging the play's violent idea of masculinity.
 MATCH2#literature-u08-04-q4@3: Match each quotation to its speaker. | "Unsex me here" = Lady Macbeth ; "But I must also feel it as a man" = Macduff ; "This dead butcher and his fiend-like queen" = Malcolm ; "Out, damned spot!" = Lady Macbeth | Quotations reveal different views of gender and guilt.
 SA3#literature-u08-04-q5@1,3: "Lady Macbeth is more powerful than her husband in Act 1 but weaker by Act 5." How far do you agree? | In Act 1 she dominates, calling on spirits, questioning his manhood and planning the murder. After Duncan's death, Macbeth acts alone, excluding her from the plan to kill Banquo ("Be innocent of the knowledge"), and she is sidelined. By Act 5 her sleepwalking reveals guilt she cannot control, and she dies offstage. The reversal suggests that suppressed feeling returns. Some argue her early power was always fragile, relying on his ambition. | Act 1 dominance ; Exclusion after Banquo ; Sleepwalking and guilt ; Reversal ; Alternative view
+Q: What does Lady Macbeth mean by asking for her milk to be replaced with "gall"? | She turns a symbol of motherhood and nurture into poison, rejecting traditional femininity.
+Q: How does Lady Macbeth show her own resolve with the image of her nursing baby? | She claims she would have "dashed the brains out" of her baby rather than break such a promise.
+Q: What does Lady Macbeth's sleepwalking suggest about her attempt to "unsex" herself? | The feelings she tried to suppress return, so the unnatural transformation fails.
+Q: How does Lady Macbeth react practically after Duncan's murder? | She says "A little water clears us of this deed".
+Q: How does Lady Macbeth die? | Offstage, reportedly by suicide.
+Q: How does Macbeth use manhood to persuade the murderers of Banquo? | He tells them they are men only "in the catalogue", defining manhood as the capacity for violence.
+Q: How do feminist critics read Lady Macbeth's power? | She gains power only by rejecting femininity and is then broken by guilt and removed, which may reinforce or expose anxieties about powerful women.
+Q: How does Janet Adelman read gender in Macbeth? | As a psychoanalytic critic, she sees the play as shaped by fears of maternal power, with the witches and Lady Macbeth as threatening women.
+Q: What is a foil? | A character who contrasts with another to highlight their qualities, as Macduff does with Macbeth's idea of manhood.
+Q: Why is calling Lady Macbeth simply a "fiend-like queen" a weak reading? | That is Malcolm's verdict; her guilt, breakdown and death make her a more complex character.
 
 ## Macbeth: language and imagery
 LV: Intermediate · Application
@@ -214,6 +254,16 @@ M2#literature-u08-05-q2@2: What does the hyperbole of "great Neptune's ocean" em
 M3#literature-u08-05-q3@3: How is Lady Macbeth's line "A little water clears us of this deed" later made ironic? | In her sleepwalking she cannot wash away imagined blood | Macbeth drowns in the next scene | She never mentions blood again | The Porter repeats it as a joke | Her early confidence is reversed when guilt overwhelms her.
 SEQ2#literature-u08-05-q4@2: Order these blood images as they appear in the play. | "What bloody man is that?" ; "Will all great Neptune's ocean wash this blood" ; "I am in blood / Stepped in so far" ; "Out, damned spot!" | The image moves from battle to guilt to commitment to madness.
 SA3#literature-u08-05-q5@1,3: Trace the development of blood imagery in Macbeth and explain what it shows. | It begins with heroism, the "bloody man" reporting Macbeth's brave fighting. After Duncan's murder it becomes guilt: Macbeth fears an ocean cannot clean his hands, while Lady Macbeth thinks a little water will. Macbeth later feels "in blood / Stepped in so far" that he cannot return. Finally Lady Macbeth's "Out, damned spot!" shows guilt as madness. The image charts the moral collapse of both characters. | Heroic blood ; Guilt after murder ; Commitment ; Madness ; Moral collapse
+Q: How does blood imagery change across Macbeth? | It moves from heroism ("What bloody man is that?") to guilt after the murder and finally to madness ("Out, damned spot!").
+Q: How do Macbeth and Lady Macbeth use darkness imagery? | They call on night to hide their deeds, as in "Stars, hide your fires".
+Q: What does the voice crying "Macbeth does murder sleep" foreshadow? | That Macbeth and Lady Macbeth will lose peaceful sleep, and she will sleepwalk.
+Q: Which phrase first shows Macbeth's titles fitting him poorly? | "Borrowed robes".
+Q: What is blank verse? | Unrhymed iambic pentameter, the usual verse of Shakespeare's nobles; its breakdown signals disorder.
+Q: What two functions does the Porter's comic prose serve? | It gives comic relief while echoing the theme of hell through "hell-gate".
+Q: What is the effect of the repeated knocking after Duncan's murder? | It creates tension and dramatic irony.
+Q: What does Macbeth mean by "the multitudinous seas incarnadine, / Making the green one red"? | His bloody hand would stain the seas red: his guilt will stain the whole world.
+Q: Which two critics traced patterns of imagery across Macbeth? | Caroline Spurgeon (1935) and Cleanth Brooks, in "The Naked Babe and the Cloak of Manliness" (1947).
+Q: What is the common mistake when writing about imagery in Macbeth? | Spotting an image without showing how its meaning develops through the play.
 
 ## Frankenstein: context and form
 LV: Intermediate · Application
@@ -259,6 +309,16 @@ M2#literature-u08-06-q2@2: What is the effect of placing the creature's narrativ
 M3#literature-u08-06-q3@3: How does Walton's decision to turn back affect the novel's meaning? | It offers an alternative to Victor's fatal pursuit of glory | It proves exploration is always wrong | It shows Walton has learned nothing | It makes Victor the hero of the novel | Walton heeds the warning, contrasting with Victor's refusal to stop.
 MATCH2#literature-u08-06-q4@1: Match each context to its link in the novel. | Galvanism = Animating the creature ; Prometheus myth = Overreaching creator ; Romanticism = Sublime nature and feeling ; Year without a summer = The 1816 ghost-story contest | Context illuminates the novel's concerns.
 SA3#literature-u08-06-q5@2,3: Explain how the frame narrative affects the reader's response to Victor Frankenstein. | Victor tells his story to Walton to warn him, so he shapes events to present himself as a victim of fate and the creature as a fiend. But the creature's own narrative, placed at the centre, shows he was abandoned and rejected, which exposes Victor's failures. Walton's frame then shows ambition being restrained. The reader must weigh competing accounts and is led to question Victor's self-justification. | Victor's purpose ; Creature's counter-narrative ; Unreliability ; Walton's contrast
+Q: Why was 1816 called the "year without a summer"? | It was cold and wet after the eruption of Tambora.
+Q: Who agreed to write ghost stories near Geneva in 1816? | Mary Godwin (later Shelley), Percy Shelley, Lord Byron and John Polidori.
+Q: When was Frankenstein first published, and how? | Anonymously, in 1818.
+Q: What did Mary Shelley add in the 1831 edition of Frankenstein? | An introduction describing a "waking dream" that inspired the novel.
+Q: Who were Mary Shelley's parents? | The radical thinkers Mary Wollstonecraft and William Godwin.
+Q: What is galvanism? | The use of electric current to stimulate muscle contraction, which raised questions about the spark of life.
+Q: What did Romanticism value? | Feeling, nature and the sublime; it was wary of reason and industry.
+Q: To whom does Robert Walton write his letters? | His sister, Margaret Saville.
+Q: What is an epistolary novel, and what does the form add to Frankenstein? | A novel told through letters or documents; Walton's letters give the story an air of truth.
+Q: Why should Victor not be treated as a reliable narrator? | He tells the story from his own point of view, minimising his responsibility and seeking sympathy.
 
 ## Frankenstein: creation and responsibility
 LV: Intermediate · Application
@@ -300,6 +360,16 @@ M2#literature-u08-07-q2@2: What does Victor do immediately after bringing the cr
 M3#literature-u08-07-q3@3: Which reading of the novel's warning is best supported? | The danger lies in creating without taking responsibility | All scientific research is evil | The creature was always destined to be wicked | Knowledge should be shared freely without limits | Victor's failure is abandonment and refusal of care, as much as creation itself.
 TF1#literature-u08-07-q4@2: Victor tells the court that the creature killed William and so saves Justine. | false | Victor stays silent, fearing he will not be believed, and Justine is executed.
 SA3#literature-u08-07-q5@2,3: "Victor Frankenstein is a victim of his own ambition." How far do you agree? | Victor is driven by an ambition that "far exceeded moderation", isolating himself and destroying his health, and he warns Walton against such knowledge, presenting himself as a victim. However, his suffering follows from choices: abandoning the creature, staying silent at Justine's trial, and destroying the female. The losses of William, Justine, Clerval and Elizabeth make others the true victims. He is as much a perpetrator as a victim. | Ambition and isolation ; Self-presentation as victim ; Choices and abandonment ; True victims ; Judgement
+Q: What does Victor read as a young man before studying modern chemistry? | Outdated alchemists.
+Q: What secret does Victor become obsessed with discovering at Ingolstadt? | "The cause of generation and life".
+Q: Where does Victor collect materials for the creature? | From "the dissecting room and the slaughter-house".
+Q: How does the pathetic fallacy work in Victor's creation scene? | The "dreary night of November" helps turn the moment of triumph into horror.
+Q: What does "the beauty of the dream vanished" show about Victor's ambition? | That it was an idealised fantasy which collapses into horror once it is achieved.
+Q: On what basis does Victor first judge the creature? | On its appearance, before it has done anything.
+Q: What happens to the female companion Victor agrees to make? | He destroys the half-made female.
+Q: According to the novel, where does Victor's real crime lie? | Less in creating life than in abandoning it: he never names, teaches or cares for the creature.
+Q: What is hubris? | Excessive pride or ambition that leads to downfall.
+Q: What mistake do people make with the name "Frankenstein"? | Calling the creature Frankenstein; Victor is Frankenstein and the creature is never given a name.
 
 ## Frankenstein: the creature and sympathy
 LV: Intermediate · Evaluation
@@ -344,6 +414,16 @@ M2#literature-u08-08-q2@2: How do the De Laceys react when the creature reveals 
 M3#literature-u08-08-q3@3: What is the effect of the creature's eloquence on the reader? | It challenges assumptions that he is a mindless monster | It proves he is lying about his past | It makes his crimes seem justified | It shows he is human by birth | His articulate reasoning forces readers to separate appearance from nature.
 SEQ1#literature-u08-08-q4@1: Order the creature's victims. | William ; Justine (framed) ; Henry Clerval ; Elizabeth | His violence escalates after each rejection by Victor.
 SA3#literature-u08-08-q5@2,3: Is the creature a victim or a monster? | He is created and immediately abandoned, rejected by Victor, the De Laceys and the villagers, and attacked even after saving a girl; "misery made me a fiend". These make him a victim. But he chooses to murder William, frame Justine and kill Clerval and Elizabeth, which are monstrous acts. Shelley makes him both, showing how cruelty can create cruelty, and his final remorse adds tragedy. | Abandonment ; Repeated rejection ; Chosen crimes ; Both ; Remorse
+Q: How does the creature first learn about the world after being abandoned? | Through his senses: light, warmth, cold and the moon.
+Q: How does the creature secretly help the De Lacey family? | By gathering wood for them.
+Q: Which three books does the creature read? | Paradise Lost, Plutarch's Lives and Goethe's The Sorrows of Young Werther.
+Q: Which De Lacey attacks the creature when he reveals himself? | Felix.
+Q: What does the creature mean by "I ought to be thy Adam; but I am rather the fallen angel"? | Instead of being cherished like God's first creation, he has been rejected and driven to evil like Satan.
+Q: What happens when the creature saves a drowning girl? | His kindness is met with violence, as every attempt at kindness is.
+Q: What threat does the creature make after Victor destroys the female companion? | "I shall be with you on your wedding-night."
+Q: How does the creature respond to Victor's death at the end of the novel? | He mourns Victor, expresses remorse and resolves to destroy himself.
+Q: What is the nature versus nurture debate, and how does it apply to the creature? | Whether character is innate or shaped by experience; the creature claims misery, not his nature, made him a fiend.
+Q: What mistake about the creature does the novel's argument warn against? | Equating his appearance with his nature; the novel depends on the gap between the two.
 
 ## Frankenstein: nature, science and the sublime
 LV: Intermediate · Application
@@ -386,6 +466,16 @@ M2#literature-u08-09-q2@2: How does Clerval contrast with Victor? | He loves poe
 M3#literature-u08-09-q3@3: Why is the creature's encounter with Victor set on a glacier? | The sublime setting magnifies the confrontation between creator and creation | It is the only place the creature can survive | Victor works in a laboratory there | Glaciers were symbols of romance | The vast, terrifying landscape matches the scale of the conflict.
 MATCH2#literature-u08-09-q4@1: Match each setting to its significance. | Mont Blanc glacier = Sublime confrontation ; The Arctic = Isolation and the frame ; Ingolstadt = Scientific ambition ; Orkney = Destroying the female creature | Settings reflect stages of the story.
 SA3#literature-u08-09-q5@2,3: How does Shelley use nature to explore the consequences of Victor's actions? | Nature at first heals Victor, but, following Waldman's praise of scientists who "penetrate into the recesses of nature", he violates it. Afterwards nature becomes a stage for judgement: the creature confronts him on the sublime glacier, and the chase ends in the desolate Arctic, showing isolation and destruction. Storms and dreary weather mirror his guilt. The creature's innocent joy in nature contrasts with what society teaches him. | Healing nature ; Violation ; Sublime confrontation ; Arctic desolation ; Creature's view of nature
+Q: Who defined the sublime in 1757? | Edmund Burke.
+Q: Why does Victor climb to the glacier below Mont Blanc? | To find relief from his grief in the sublime scenery.
+Q: How does the creature's appearance on the glacier change the scene? | It turns the sublime landscape from awe and joy into terror and judgement.
+Q: What restores Victor after his fever? | Spring and his friend Clerval.
+Q: What event in Victor's youth uses the weather to foreshadow destruction? | Lightning destroying an oak.
+Q: How does the creature first experience nature? | With innocent wonder, finding joy in birdsong and moonlight, before society teaches him hatred.
+Q: Which professor inspires Victor, and what does he praise? | Waldman, who praises modern scientists who "penetrate into the recesses of nature".
+Q: How does Victor's science contrast with the Romantic ideal of nature? | He tries to master and violate nature's secrets rather than engage with nature reverently and through feeling.
+Q: How do some critics apply Frankenstein to modern debates? | As an early warning about technology outrunning ethics, echoed in debates on genetic engineering and artificial intelligence.
+Q: What is the common mistake in using the word "sublime" about Frankenstein? | Using it to mean simply beautiful or excellent; in Romantic writing it means awe mixed with terror before overwhelming nature.
 
 ## A Christmas Carol: context
 LV: Intermediate · Application
@@ -429,6 +519,16 @@ M2#literature-u08-10-q2@2: Which idea is Scrooge echoing when he speaks of the "
 M3#literature-u08-10-q3@3: Why did Dickens choose to write a story rather than a pamphlet? | A story could move readers' feelings and reach far more people | Pamphlets were illegal in 1843 | He had no factual evidence | Stories paid less than pamphlets | Dickens believed fiction would have a far greater impact on public attitudes.
 MATCH2#literature-u08-10-q4@1: Match each context to its link in the novella. | Poor Law 1834 = "Are there no prisons? ... And the Union workhouses?" ; Malthus = "decrease the surplus population" ; Child labour = Ignorance and Want ; Marshalsea = Dickens's own childhood poverty | Context explains Dickens's targets.
 SA3#literature-u08-10-q5@1,3: How does knowledge of the 1840s deepen a reading of Scrooge's first appearance? | Scrooge's refusal to donate and his questions about prisons and workhouses repeat the official responses of the 1834 Poor Law; his "surplus population" echoes Malthusian thinking. Readers in 1843 would recognise these as current attitudes, not just one miser's. Dickens makes Scrooge a type of the comfortable classes, so his transformation becomes a call for society to change. | Poor Law echo ; Malthus ; Contemporary recognition ; Scrooge as a type ; Call to change
+Q: Why are the early 1840s called the "hungry forties"? | They saw economic depression, unemployment and high food prices.
+Q: Why were workhouses made deliberately harsh? | So that they were worse than the lowest paid work.
+Q: What shocked Dickens in 1843 before writing A Christmas Carol? | A government report on child labour in mines and factories.
+Q: What kind of school did Dickens visit in London in 1843? | A Ragged School for poor children.
+Q: What did Thomas Malthus argue? | That population would outgrow food, which some took to mean that helping the poor only increased poverty.
+Q: Besides Malthusian thinking, which attitudes does A Christmas Carol attack? | Utilitarian and laissez-faire attitudes that saw people only in economic terms.
+Q: What work did Dickens do in the blacking factory as a child? | He pasted labels on pots of boot polish.
+Q: How successful was A Christmas Carol on publication? | It sold out its first edition within days and helped shape the modern idea of a family Christmas.
+Q: What do Scrooge's questions "Are there no prisons? ... And the Union workhouses?" echo? | The 1834 Poor Law, which offered the poor only the workhouse.
+Q: Why is calling A Christmas Carol a simple Christmas story a mistake? | It is a deliberate piece of social criticism with a political purpose.
 
 ## A Christmas Carol: Scrooge's transformation
 LV: Intermediate · Application
@@ -471,6 +571,16 @@ M2#literature-u08-11-q2@2: What does the list "squeezing, wrenching, grasping, s
 M3#literature-u08-11-q3@3: Why is the structure of five staves significant? | It frames the story as a carol moving from cold to warmth | It copies the five acts of a tragedy | It makes the novella longer | It hides the ending from the reader | Calling chapters staves makes the book a song of celebration and redemption.
 SEQ1#literature-u08-11-q4@1: Order Scrooge's visitors. | Marley's ghost ; Ghost of Christmas Past ; Ghost of Christmas Present ; Ghost of Christmas Yet to Come | The visits move from past through present to future.
 SA3#literature-u08-11-q5@2,3: Is Scrooge's transformation convincing? | Some find it too sudden, achieved in one night. But Dickens prepares it: Scrooge weeps at his boyhood, regrets his treatment of Fezziwig's example and Belle, asks whether Tiny Tim will live, and is shamed by his own words about surplus population. Fear in Stave 4 completes a change already begun. As a fable, the story values moral clarity over realism, so its speed suits its purpose. | Sudden change ; Gradual preparation ; Regret and pity ; Fear completes ; Fable form
+Q: What do the similes "Hard and sharp as flint" and "solitary as an oyster" show about Scrooge? | His hardness and isolation at the start of the novella.
+Q: How does Scrooge treat his nephew and his clerk in Stave 1? | He refuses Fred's invitation and keeps Bob Cratchit cold.
+Q: What is Marley's ghost bound by? | "The chain I forged in life".
+Q: Which kindly employer does the Ghost of Christmas Past show Scrooge? | Fezziwig.
+Q: What does Scrooge begin to feel during the Ghost of Christmas Present's visit? | Concern for others.
+Q: How is the Ghost of Christmas Yet to Come presented, and what does it show? | Silent and hooded; it shows Scrooge's unmourned death and Tiny Tim's death.
+Q: What three things does Scrooge do for the Cratchits in Stave 5? | He sends a prize turkey, raises Bob's salary and becomes "a second father" to Tiny Tim.
+Q: What is a stave? | A verse of a song; Dickens uses it for the novella's five chapters.
+Q: What is redemption? | Being saved from sin or error and restored to goodness.
+Q: Why is it wrong to say Scrooge changes only from fear of death? | His change begins with regret and pity in Staves 2 and 3, before the final ghost appears.
 
 ## A Christmas Carol: social responsibility
 LV: Intermediate · Evaluation
@@ -515,6 +625,16 @@ M2#literature-u08-12-q2@2: What does Marley mean by "Mankind was my business"? |
 M3#literature-u08-12-q3@3: Why does the ghost warn "most of all beware this boy"? | Ignorance threatens society's ruin more than poverty alone | The boy is dangerous and violent | The girl will grow up rich | Scrooge is afraid of children | Dickens saw lack of education as the root danger, linking to his support for ragged schools.
 MATCH2#literature-u08-12-q4@2: Match each character to the message they represent. | Fezziwig = Kind employer ; Fred = Christmas spirit of generosity ; Tiny Tim = Innocent victim of poverty ; Marley = Warning of greed's cost | Each character carries part of Dickens's social message.
 SA3#literature-u08-12-q5@1,3: "Dickens's answer to poverty is charity, not change." How far do you agree? | Scrooge's redemption is individual: he gives to charity, raises Bob's wage and helps Tiny Tim, not changing laws. But the novella attacks the Poor Law and Malthusian thinking, and Ignorance and Want are presented as society's ("Man's") creations, calling for wider responsibility such as education. Its huge readership changed attitudes. A balanced answer sees individual change as Dickens's model for social change. | Individual charity ; Attacks on Poor Law ; Ignorance and Want as social ; Influence on attitudes ; Balanced view
+Q: How do the Cratchits celebrate Christmas despite their poverty? | Lovingly and gratefully, making the most of a small goose and pudding.
+Q: What does Tiny Tim embody? | Innocence and the human cost of poverty.
+Q: How does the Ghost of Christmas Present use Scrooge's own words against him? | It throws his phrase "surplus population" back at him when warning that Tiny Tim will die.
+Q: How do the Cratchits challenge the idea that the poor are idle? | They show that poverty affects real, deserving families with dignity, love and gratitude.
+Q: Where are the children Ignorance and Want found? | Beneath the robe of the Ghost of Christmas Present.
+Q: Whose creations are Ignorance and Want said to be? | Man's: Dickens presents poverty and lack of education as society's creations.
+Q: What does Fezziwig show about employers? | That an employer can use his power to make others happy at little cost.
+Q: Why do some critics say Dickens's solution to poverty is limited? | It is mainly individual generosity and avoids calling for structural change, such as reform of the Poor Law or wages.
+Q: What is an allegory? | A story in which characters stand for ideas, as Ignorance and Want do.
+Q: What is philanthropy? | Generous action to promote the welfare of others.
 
 ## Jane Eyre: context
 LV: Intermediate · Application
@@ -559,6 +679,16 @@ M2#literature-u08-13-q2@2: Why was the governess's position especially difficult
 M3#literature-u08-13-q3@3: What is the main effect of "Reader, I married him"? | It makes Jane the active agent of her own marriage | It shows Jane regrets her marriage | It hides the outcome from the reader | It suggests Rochester proposed again | Jane is the subject of the verb, stressing her choice and control of her story.
 MATCH2#literature-u08-13-q4@1: Match each place to its stage in Jane's life. | Gateshead = Unhappy childhood with the Reeds ; Lowood = School and Helen Burns ; Thornfield = Governess and love for Rochester ; Moor House = Independence and family with the Rivers | Each setting marks a stage in Jane's development.
 SA3#literature-u08-13-q5@2,3: Explain how the role of the governess shapes Jane's relationship with Rochester. | As a governess Jane is paid and dependent, socially below Rochester but educated, so their relationship crosses class lines. She insists on equality of soul ("I have as much soul as you"), resisting being treated as a dependent or plaything. She refuses to become his mistress and leaves. Only when she has her own inheritance and he is humbled can they marry as equals. | Class and dependence ; Equality of soul ; Refusal ; Inheritance and equality
+Q: Where did Charlotte Brontë grow up? | At Haworth parsonage in Yorkshire, with her sisters Emily and Anne and her brother Branwell.
+Q: Which character in Jane Eyre is based on Charlotte Brontë's sister Maria? | Helen Burns.
+Q: Why did the Brontë sisters publish under male-sounding pseudonyms? | To be judged fairly; they used the names Currer, Ellis and Acton Bell.
+Q: What was coverture? | The legal doctrine by which a married woman's property and legal identity passed to her husband.
+Q: Why is Jane's insistence on marrying for love radical for its time? | Marriage was often an economic necessity for women, yet Jane insists on marrying for love, as an equal.
+Q: How did Elizabeth Rigby react to Jane Eyre in 1848? | She called it "pre-eminently an anti-Christian composition" because of its rebellious heroine.
+Q: What is a Bildungsroman? | A novel tracing a character's growth from youth to maturity, as Jane Eyre traces Jane's.
+Q: What Gothic elements appear in Jane Eyre? | The red-room, mysterious laughter, fire and a secret in the attic.
+Q: Why does "Reader, I married him" matter grammatically? | Jane is the active subject: she marries him, rather than being married.
+Q: Why is it a mistake to treat Jane Eyre as Brontë's autobiography? | It draws on her life but is a constructed fiction with Gothic and romantic elements.
 
 ## Jane Eyre: independence and identity
 LV: Intermediate · Evaluation
@@ -601,6 +731,16 @@ M2#literature-u08-14-q2@2: What does Jane's speech "women feel just as men feel"
 M3#literature-u08-14-q3@3: Why is Jane's inheritance important to the ending? | It lets her return to Rochester as an independent equal | It allows her to buy Thornfield Hall | It means she no longer needs to marry | It is given to St John for his mission | Economic independence lets her choose freely, not out of need.
 MATCH2#literature-u08-14-q4@3: Match each quotation to its context. | "I am no bird" = Thornfield, resisting Rochester ; "I care for myself" = Leaving after the wedding is stopped ; "I scorn your idea of love" = Rejecting St John ; "Reader, I married him" = The final chapter | Each speech marks a stage in Jane's assertion of self.
 SA3#literature-u08-14-q5@2,3: How does Brontë present the conflict between passion and principle in Jane? | Jane loves Rochester passionately, but when she discovers Bertha, principle and self-respect make her leave rather than become his mistress, though it causes her great suffering. With St John, principle without passion would destroy her, so she refuses. The novel resolves the conflict only when passion and principle align: Rochester is free, she is independent, and they marry as equals. | Love for Rochester ; Leaving on principle ; St John's duty ; Resolution in equality
+Q: What is the opening line of Jane Eyre? | "There was no possibility of taking a walk that day."
+Q: What does the red-room symbolise? | Confinement and injustice.
+Q: What does Jane learn from Helen Burns and Miss Temple at Lowood? | Patience from Helen Burns and self-control from Miss Temple.
+Q: Whose hypocrisy does Jane resist at Lowood? | Mr Brocklehurst's.
+Q: What does Jane's speech "Do you think, because I am poor, obscure, plain, and little, I am soulless and heartless?" assert? | That she has a soul and heart equal to anyone's, whatever her poverty, rank or looks.
+Q: Why does Jane leave Rochester after discovering Bertha? | She refuses to stay as his mistress, choosing self-respect: "I care for myself."
+Q: What two extremes do Rochester and St John Rivers offer Jane? | Rochester offers passion without legitimacy; St John offers a loveless marriage of duty as a missionary in India.
+Q: What does Jane do with her inheritance from her uncle? | She shares it with her cousins; it gives her economic independence.
+Q: Why do some readers have reservations about the ending of Jane Eyre? | The union of love and equality seems to depend on Rochester's injury.
+Q: Why is it wrong to read the ending as Jane giving up her independence? | She returns with her own fortune, by her own choice, to a humbled Rochester.
 
 ## Jane Eyre: Bertha Mason and critical readings
 LV: Intermediate · Evaluation
@@ -644,6 +784,16 @@ M2#literature-u08-15-q2@2: What does Bertha do the night before Jane's wedding? 
 M3#literature-u08-15-q3@3: What is Spivak's main criticism of the novel? | Jane's feminist freedom depends on silencing a colonial woman | It is too sympathetic to Rochester | It ignores class entirely | It is not Gothic enough | Spivak argues the colonial woman is sacrificed so the English heroine can rise.
 MATCH2#literature-u08-15-q4@2: Match each reading to its critic or writer. | Bertha as Jane's dark double = Gilbert and Gubar ; Critique of imperialism = Spivak ; Bertha's story retold = Jean Rhys ; Pre-eminently anti-Christian = Elizabeth Rigby | Readings of the novel have changed greatly since 1847.
 SA3#literature-u08-15-q5@1,3: "Bertha Mason is the most important character in Jane Eyre." How far do you agree? | Bertha appears briefly and speaks no words, so in plot terms she is an obstacle. But she drives the Gothic mystery, stops the wedding, and her death frees Rochester. Feminist critics see her as Jane's double, expressing her suppressed rage; postcolonial critics see her as the silenced cost of Jane's freedom. She is arguably central to the novel's meaning, if not its narrative. | Brief presence ; Plot function ; Feminist double ; Postcolonial cost ; Judgement
+Q: Why did Rochester marry Bertha Mason? | For her fortune.
+Q: Who guards Bertha in the attic at Thornfield? | Grace Poole.
+Q: What Gothic events signal Bertha's hidden presence at Thornfield? | Her laugh, the fire in Rochester's bed and the torn wedding veil.
+Q: How is Bertha described when she is revealed? | In animal terms: it was hard to tell "whether beast or human being", and she "grovelled, seemingly, on all fours".
+Q: How does Bertha die? | She burns Thornfield and dies falling from the roof.
+Q: How does Bertha's confinement parallel Jane's childhood? | Both are confined women whose passion is treated as dangerous: Jane in the red-room, Bertha in the attic.
+Q: How does the novel's wealth link to empire? | Rochester's fortune and Jane's inheritance come from the Caribbean and Madeira.
+Q: What name does Jean Rhys give Bertha in Wide Sargasso Sea? | Antoinette.
+Q: What did "Creole" mean in this period? | A person of European descent born in the Caribbean.
+Q: What is the common mistake when writing about readings of Bertha Mason? | Choosing a single correct reading instead of weighing Brontë's presentation against feminist and postcolonial interpretations.
 
 ## Jekyll and Hyde: context
 LV: Intermediate · Application
@@ -687,6 +837,16 @@ M2#literature-u08-16-q2@2: How do Darwin's ideas shape the presentation of Hyde?
 M3#literature-u08-16-q3@3: Why are most of the main characters respectable bachelors? | Their concern with reputation makes secrecy and repression central | Stevenson disliked writing about marriage | Victorian law forbade doctors to marry | It makes the plot more romantic | Their guarded, male world of reputation creates the silence in which Hyde operates.
 MATCH2#literature-u08-16-q4@1: Match each context to its link in the novella. | Darwin = Hyde as ape-like ; Deacon Brodie = A respectable man with a criminal double life ; Victorian respectability = Utterson's fear of scandal ; Edinburgh's divided city = Contrasts of streets and buildings | Context explains the novella's concerns.
 SA3#literature-u08-16-q5@2,3: How does the late-Victorian fear of degeneration shape the presentation of Hyde? | After Darwin, Victorians feared a primitive, animal nature beneath civilised behaviour, and degeneration theory suggested individuals could revert. Hyde is "ape-like", "troglodytic" and "dwarfish", his violence is instinctive, and witnesses feel instinctive disgust. He embodies the fear that respectable men like Jekyll contain this primitive self, which can be released and can take over. | Darwin ; Degeneration ; Animal imagery ; Instinctive violence ; Hidden within the respectable
+Q: What did respectability demand of middle-class Victorian men? | Self-control, moral seriousness and privacy.
+Q: Why were hidden vices a source of anxiety for Victorian gentlemen? | They could lead to scandal and blackmail.
+Q: What did Darwin's On the Origin of Species and The Descent of Man suggest? | That humans evolved from animals.
+Q: What is degeneration? | The idea that individuals or societies could decline to a more primitive state.
+Q: What did Cesare Lombroso claim about criminals? | That they could be identified by primitive physical features.
+Q: What does "troglodytic" mean, and why is it used of Hyde? | Like a cave-dweller; it suggests Hyde is a throwback to a primitive stage of human development.
+Q: How was Edinburgh a divided city? | It was split between the respectable New Town and the poor Old Town.
+Q: Where is the story of Jekyll and Hyde set? | In a foggy London.
+Q: What kind of popular publication was Jekyll and Hyde? | A "shilling shocker" that became an immediate success.
+Q: Why is linking Jekyll and Hyde to Jack the Ripper as a source a mistake? | The Whitechapel murders happened in 1888, two years after the novella was published.
 
 ## Jekyll and Hyde: duality
 LV: Intermediate · Evaluation
@@ -729,6 +889,16 @@ M2#literature-u08-17-q2@2: What does Jekyll's claim "the moment I choose, I can 
 M3#literature-u08-17-q3@3: Which reading of Hyde is best supported by Jekyll's statement? | Hyde is a part of Jekyll released by his own choices | Hyde is an entirely separate person | Hyde was created by Utterson | Hyde is a ghost haunting Jekyll | Jekyll admits to a "duplicity of life" before the experiment and repeatedly chooses to become Hyde.
 SEQ2#literature-u08-17-q4@2: Order the stages of Jekyll's decline. | Jekyll takes the potion willingly ; Hyde murders Carew ; Jekyll transforms without the potion ; The salt runs out and Hyde takes over | Hyde grows stronger as Jekyll loses control.
 SA3#literature-u08-17-q5@2,3: Is Hyde a separate being or a part of Jekyll? | Jekyll calls Hyde "he" and says he is "pure evil", which suggests separation, and Hyde looks and acts differently. But Jekyll admits a hidden "duplicity of life" before the potion, takes it repeatedly by choice, and finds himself "incorporated" with Hyde. Hyde is the evil within Jekyll, released and strengthened, not a stranger. The novella warns that denying responsibility for one's darker self is itself dangerous. | Jekyll's distancing ; Pure evil ; Prior duplicity ; Repeated choice ; Moral warning
+Q: What did Jekyll hope to achieve by separating good and evil? | That each side could live without the restraint of the other.
+Q: What does Jekyll admit about his life before the experiment? | He hid pleasures he felt were shameful, living a "profound duplicity of life".
+Q: How does Hyde compare with Jekyll after the transformation? | Hyde is "pure evil", while Jekyll remains a mixture of good and evil.
+Q: What sign shows Hyde growing stronger? | Hyde grows physically larger and Jekyll begins to transform without the potion.
+Q: What does Jekyll mean by "becoming slowly incorporated with my second and worse"? | He is losing hold of his better self and being absorbed into Hyde.
+Q: Why does Jekyll refer to Hyde as "he"? | To distance himself from Hyde's crimes.
+Q: How might Hyde be read as a product of Victorian respectability? | As the repressed self, made monstrous by repression rather than by nature.
+Q: Where else, besides Jekyll, does duality appear in the novella? | In Utterson's restrained life, in respectable streets beside sordid ones, and in the doors of Jekyll's house.
+Q: What is duplicity? | Deceitfulness; living a double life.
+Q: What is repression? | Pushing unacceptable desires or thoughts out of conscious awareness.
 
 ## Jekyll and Hyde: narrative and setting
 LV: Intermediate · Application
@@ -772,4 +942,14 @@ M2#literature-u08-18-q2@2: What does the fog in the Carew murder chapter suggest
 M3#literature-u08-18-q3@3: Why does Stevenson reveal the truth only in the final documents? | To sustain mystery and make readers share Utterson's uncertainty | Because Utterson writes the ending | To make the story shorter | Because the documents were added later by another writer | Delayed revelation creates suspense and mirrors the secrecy of respectable society.
 MATCH2#literature-u08-18-q4@1: Match each setting to its significance. | The neglected back door = Hyde's secret entrance ; The handsome front entrance = Jekyll's respectable face ; Fog = Concealment ; Soho = Urban nightmare of vice | Settings mirror the novella's concerns.
 SA3#literature-u08-18-q5@2,3: How does Stevenson use setting to present the theme of duality? | Jekyll's house has a respectable front and a neglected back door to the laboratory used by Hyde, a divided building like its owner. London's fog hides crime and secrets, and Soho is "like a district of some city in a nightmare", squalor beside prosperous streets. Respectable surfaces conceal hidden lives. Setting therefore externalises the duality within Jekyll and Victorian society. | Two-faced house ; Fog and concealment ; Soho nightmare ; Respectable surfaces ; Social duality
+Q: Why does Utterson's discretion delay the truth? | He investigates to protect his friend's reputation, so he avoids scandal rather than exposing it.
+Q: How is the story of Jekyll and Hyde pieced together? | From testimony and documents: Enfield's story, the maid's account of the Carew murder, letters, Lanyon's Narrative and Jekyll's Full Statement.
+Q: How does the structure make the reader experience Jekyll and Hyde? | As a mystery, like a detective case, because the explanation comes only in the last two chapters.
+Q: How is the London fog described? | As "a great chocolate-coloured pall lowered over heaven", obscuring sight as the truth is obscured.
+Q: How is Soho described in Jekyll and Hyde? | "Like a district of some city in a nightmare", with squalor near respectable streets.
+Q: What is urban Gothic? | Gothic fiction set in a modern city, finding horror in its streets and buildings.
+Q: What does the back of Jekyll's house lead to? | A neglected back door to the old dissecting theatre, used by Hyde.
+Q: What are the possible meanings of "I bring the life of that unhappy Henry Jekyll to an end"? | His death, his loss to Hyde, or simply the end of his writing.
+Q: What is the effect of ending the novella with Jekyll's statement? | It gives him the last word, but his voice is confessional and partial, and Utterson gives no final judgement.
+Q: Why is it wrong to call Utterson the narrator? | The story is told in the third person, mainly following his viewpoint, with first-person documents at the end.
 `;

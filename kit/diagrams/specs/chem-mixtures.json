@@ -1,0 +1,70 @@
+{
+ "id": "chem-mixtures",
+ "renderer": "particles",
+ "course": "chemistry",
+ "unit": "u01",
+ "lesson": "Mixtures",
+ "title": "A mixture keeps its components",
+ "caption": "Mixing hydrogen, oxygen and water vapour makes a mixture: each substance keeps its own particles and properties, the proportions can vary, and they can be separated by physical means.",
+ "alt": "One box containing H₂ molecules, O₂ molecules and H₂O molecules mixed together.",
+ "description": [
+  "Hydrogen molecules (H₂), oxygen molecules (O₂) and water molecules (H₂O) moving freely among each other.",
+  "No new substance has formed."
+ ],
+ "species": {
+  "H2": {
+   "atoms": [
+    "H",
+    "H"
+   ]
+  },
+  "O2": {
+   "atoms": [
+    "O",
+    "O"
+   ]
+  },
+  "H2O": {
+   "atoms": [
+    "O",
+    "H",
+    "H"
+   ],
+   "shape": "bent"
+  }
+ },
+ "panelHeight": 200,
+ "panels": [
+  {
+   "title": "a mixture of three substances",
+   "arrangement": "gas",
+   "contents": [
+    [
+     "H2",
+     5
+    ],
+    [
+     "O2",
+     4
+    ],
+    [
+     "H2O",
+     4
+    ]
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "type": "classify",
+   "panel": 0,
+   "as": "mixture"
+  },
+  {
+   "type": "count",
+   "panel": 0,
+   "species": "H2O",
+   "n": 4
+  }
+ ]
+}

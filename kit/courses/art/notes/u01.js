@@ -40,6 +40,16 @@ M2#art-u01-01-q2@2: Why is Duchamp's Fountain (1917) often used to discuss the d
 TF1#art-u01-01-q3@1: Exam specifications in England treat photography and textiles as part of art and design. | true | GCSE and A level Art and Design include titles such as Photography and Textile Design alongside Fine Art.
 M3#art-u01-01-q4@3: A critic argues that a pile of bricks in a gallery is art only because the gallery shows it. Which theory is the critic using? | The institutional theory of art | Formalism | The imitation (mimesis) theory | Expression theory | The institutional theory (Dickie) defines art by its acceptance within the art world; formalism looks at visual form, mimesis at likeness, expression at feeling conveyed.
 SA3#art-u01-01-q5@2,3: Evaluate the claim that "art is anything an artist says is art". | The claim fits the institutional and intentional views and explains works like Duchamp's Fountain. But it risks circularity (who counts as an artist?) and ignores the role of audiences, skill and visual qualities. A balanced view accepts that context matters while arguing that interpretation still depends on what the work looks like and does. | Links the claim to Duchamp or readymades ; Names the institutional or intentional definition ; Identifies the circularity or audience problem ; Considers a counter-definition such as formalism ; Reaches a justified judgement
+Q: What is fine art? | Work made chiefly to be looked at and thought about, such as painting, sculpture, drawing, printmaking, installation, performance and lens-based work.
+Q: What does craft emphasise compared with fine art and design? | Skilled making in a material, such as ceramics, textiles, glass, furniture or metalwork, where function and handwork are often central.
+Q: How did William Morris and the Arts and Crafts movement challenge the boundary between art and craft? | They rejected the idea that a wallpaper was lesser than a painting.
+Q: How did the Bauhaus (1919–1933) blur the line between art and design? | It trained students in workshops for both fine art and design.
+Q: What did the word art mean for most of European history? | Skill, from the Latin ars.
+Q: When was the idea of the "fine arts" as a special group set out? | In the 18th century, grouping painting, sculpture, architecture, music and poetry.
+Q: What does a formalist definition of art say, and why does it struggle with Duchamp's Fountain? | Art is defined by its visual form; Fountain's form is that of any factory urinal.
+Q: What is the institutional definition of art? | George Dickie's view (1974) that art is what the art world presents as art.
+Q: What common mistake do students make about what counts as art? | Treating art as only painting and sculpture, when specifications and galleries include photography, film, installation, performance, textiles, ceramics and digital work.
+Q: What does studying art and design involve? | Making and thinking together: investigating sources, experimenting with media, recording ideas, presenting a resolved outcome, and understanding the contexts in which work is made and seen.
 
 ## How art and design are assessed: the four assessment objectives
 LV: Introductory · Foundation
@@ -80,6 +90,16 @@ MATCH1#art-u01-02-q2@1: Match each objective to its verb. | AO1 = Develop ; AO2 
 M2#art-u01-02-q3@2: A student photographs a derelict building, annotates the photos with notes on texture, and makes rubbings of its brickwork. Which objective does this most directly evidence? | AO3, recording observations relevant to intentions | AO4, presenting a final response | AO1, critical understanding of sources | No objective, because photography is not drawing | First-hand photographs, rubbings and annotation record observations; recording is not limited to drawing.
 M3#art-u01-02-q4@2,3: A student's final piece is excellent but the portfolio shows no trials of media. What is the most accurate judgement? | AO4 may be strong but AO2 is weak, which limits the overall mark | The final piece earns full marks because only the outcome is assessed | The work fails because every objective must be equally strong | Experiments are only needed at A level | Marks are awarded across all four objectives, each 25%; missing experimentation weakens AO2 however good the outcome is.
 SA3#art-u01-02-q5@2,3: A student's project on the sea contains copies of Hokusai's Great Wave, photographs of a local beach and one painted final piece. Explain how the student could strengthen each assessment objective. | AO1: annotate the Hokusai studies to analyse line and composition and explain how they inform the student's idea, and add a contrasting source. AO2: trial different media (ink, collage, print) and compositions, and explain choices. AO3: add observational drawings and annotated notes alongside the photographs throughout. AO4: show how the final piece grows from the trials, with a clear intention. | Addresses AO1 with analysis rather than copying ; Addresses AO2 with media trials or alternatives ; Addresses AO3 with ongoing recording ; Addresses AO4 with a link from journey to outcome ; Uses the example specifically
+Q: What does AO1 (Develop) reward in Art and Design? | Developing ideas through investigations that demonstrate critical understanding of sources.
+Q: What does AO3 (Record) reward? | Recording ideas, observations and insights relevant to your intentions as work progresses.
+Q: What does AO4 (Present) reward? | A personal and meaningful response that realises intentions and, where appropriate, connects visual, written, oral or other elements.
+Q: How much is each Art and Design assessment objective worth? | 25% of the marks each, at both GCSE and A level.
+Q: How is GCSE Art and Design split between components? | 60% portfolio (non-exam assessment) and 40% externally set assignment.
+Q: How is A level Art and Design split between components? | 60% personal investigation and 40% externally set assignment.
+Q: How long must AQA's A level related study be? | Between 1,000 and 3,000 words.
+Q: Why can a strong final piece not carry an Art and Design project on its own? | The four objectives are assessed together across the whole submission, so missing development, experimentation or recording loses marks.
+Q: What is the mistake in thinking AO3 means only drawing? | Recording also includes photography, written annotation, digital capture, maquettes and notes that record observations relevant to intentions.
+Q: Why is annotation that explains decisions useful in a sketchbook? | It evidences several assessment objectives at once, showing the reasoning behind choices.
 
 ## Looking closely: an approach to visual analysis
 LV: Introductory · Application
@@ -119,6 +139,16 @@ SEQ1#art-u01-03-q2@1: Put Feldman's stages of art criticism in order. | Describe
 M2#art-u01-03-q3@1,2: Which sentence is the best example of formal analysis? | The diagonal counter leads the eye from the lower left into the lit interior | The painting is about loneliness in the city | Hopper was born in 1882 in New York State | It is the finest American painting of its decade | Formal analysis explains how visual elements are organised; the others are interpretation, context and judgement.
 M3#art-u01-03-q4@3: A student writes that a still life "symbolises death" because the artist died a year later. What is the main weakness? | The claim relies on a coincidence of biography rather than visual or contextual evidence in the work | It should have described the frame first | Still lifes cannot carry symbolic meaning | Biographical information is never relevant to art | Context helps only when it connects to what is visible; a symbol of death (a skull, a snuffed candle) would be evidence, a later date of death is not.
 SA3#art-u01-03-q5@1,3: Using the four stages, outline how you would analyse a painting you know, and explain what would make your interpretation convincing. | A response names the work and describes it factually, analyses its formal organisation using the elements and principles, offers an interpretation linked to specific visible features and relevant context, and states the criteria of any judgement. Convincing interpretation cites evidence, considers an alternative reading and avoids relying only on biography or stated intention. | Factual description of a named work ; Formal analysis using elements and principles ; Interpretation tied to visible features ; Uses context as evidence ; Considers an alternative reading or criteria
+Q: Who set out the describe, analyse, interpret, judge sequence of art criticism? | The American art educator Edmund Feldman, in Becoming Human Through Art (1970).
+Q: What happens at the describe stage of visual analysis? | You list what is there, such as title, artist, date, medium, size and subject, without opinion.
+Q: What does the interpret stage of visual analysis ask? | What the work means: its subject matter, symbols, the artist's intentions and its historical and cultural context.
+Q: What does the judge stage of visual analysis ask? | How successful or significant the work is, and by what criteria.
+Q: What should every interpretive claim about a work point to? | Something visible in the work, such as placement, colour or space.
+Q: What common mistake do students make in visual analysis? | Jumping straight to meaning without describing and analysing first; examiners reward interpretations built on visual evidence.
+Q: In Hopper's Nighthawks, which features are often read as urban isolation? | The absence of a door and the lack of eye contact between the figures.
+Q: What did Wimsatt and Beardsley (1946) call relying on an artist's stated intention? | The "intentional fallacy".
+Q: When should context be used in a visual analysis? | When it changes how the visual features are read; context is evidence, not decoration.
+Q: Why should you note a work's actual size and treat reproductions with care? | Photographs alter colour and scale, so a reproduction can mislead.
 
 ## Line
 LV: Introductory · Foundation
@@ -162,6 +192,16 @@ TF1#art-u01-04-q3@1: An implied line can be created by the direction in which a 
 MS2#art-u01-04-q4@2: Which of these are aspects of line quality? | Weight ; Speed ; Variation in pressure | Hue ; Saturation | Line quality describes the character of a mark; hue and saturation are properties of colour.
 M3#art-u01-04-q5@3: Comparing an Ingres pencil portrait with an Egon Schiele figure drawing, which statement is best supported? | Both use contour, but Ingres's controlled line conveys refinement while Schiele's angular, broken line conveys tension | Schiele uses no contour line at all | Ingres uses line only to build tone by hatching | Line quality makes no difference to the mood of a drawing | Both artists rely on contour; the difference lies in line quality, which carries much of each drawing's expressive effect.
 SA2#art-u01-04-q6@2,3: Explain how line is used in Hokusai's The Great Wave and what it contributes to the work. | The wave is defined by sweeping curves and claw-like broken lines at the crest, creating energy and threat; the boats' diagonals oppose the wave, adding tension; the small, stable triangle of Mount Fuji contrasts with the dynamic curves. Line both describes forms and expresses the force of nature against human fragility. | Identifies curved and broken line in the wave ; Notes diagonals of the boats or tension ; Notes contrast with Mount Fuji ; Explains expressive effect ; Uses accurate vocabulary
+Q: What is a line? | A path made by a moving point: a mark longer than it is wide.
+Q: How did Paul Klee describe drawing? | As "taking a line for a walk", in his Pedagogical Sketchbook (1925).
+Q: What is the difference between a contour line and an outline? | A contour line describes the edges of a form including internal edges such as folds; an outline is the outer silhouette only.
+Q: What is hatching? | Parallel lines that build up tone.
+Q: What is a gesture line? | A fast line that captures movement and pose.
+Q: What does a line that swells and tapers suggest? | A form turning in light.
+Q: What associations do horizontal, vertical and diagonal lines conventionally carry? | Horizontals suggest calm and rest, verticals stability or aspiration, diagonals movement and tension.
+Q: Why is relying on a single even outline a mistake in drawing? | It flattens a form; expressive drawing uses varied, broken and internal contour lines.
+Q: How does line in East Asian ink painting differ from Egon Schiele's line? | Ink painting values the single confident brushstroke showing speed and pressure; Schiele uses angular, nervous line to express tension.
+Q: What jobs does line do in design? | It divides space, directs the eye and organises information in grids and diagrams.
 
 ## Shape and form
 LV: Introductory · Foundation
@@ -201,6 +241,16 @@ M2#art-u01-05-q2@2: A student's drawing of a cylinder looks flat. Which change w
 TF2#art-u01-05-q3@1,2: Matisse's paper cut-outs rely mainly on tonal modelling to create form. | false | The cut-outs use flat, unmodelled shapes of painted colour; their effect comes from shape, colour and arrangement.
 M3#art-u01-05-q4@3: Why are Barbara Hepworth's pierced forms significant for the idea of form in sculpture? | They treat the void as a positive element of the sculpture, so space becomes part of the form | They were the first sculptures to be painted | They removed the need to view sculpture in the round | They returned sculpture to strict realism | Piercing a form made the hole an active element, shifting attention to the relation of solid and void.
 SA2#art-u01-05-q5@1,3: Compare how shape is used in a Matisse cut-out with how form is used in a Henry Moore reclining figure. | Matisse uses flat, mainly organic shapes of saturated colour arranged on a ground, with no modelling, so the effect depends on silhouette, colour and the negative spaces between shapes. Moore's figure has actual three-dimensional form, with mass and openings through the body; it changes as the viewer walks around it, and solid and void work together. | Identifies flat shape in Matisse ; Notes absence of modelling or role of negative space ; Identifies actual form in Moore ; Discusses mass, void or viewpoint ; Makes a clear comparison
+Q: What is the difference between geometric and organic shapes? | Geometric shapes are regular and suggest order and the made world; organic shapes are irregular and flowing, associated with nature.
+Q: What is positive shape? | The subject of a composition, as opposed to the space around it.
+Q: What is form in art? | Something with three dimensions: height, width and depth.
+Q: Where is form actual and where is it implied? | Actual in sculpture, ceramics and architecture; implied in painting and drawing through an illusion of volume.
+Q: Name four ways painters and drawers imply form. | Tonal modelling, overlapping, foreshortening and contour lines that wrap around a surface.
+Q: What is modelling? | Using gradations of tone or colour to create the illusion of three-dimensional form.
+Q: In drawing a sphere lit from the upper left, where does the cast shadow go and where is it darkest? | On the ground beside the sphere, darkest where the sphere touches it.
+Q: What is the difference between mass and volume in sculpture? | Mass is the bulk of a form; volume is the space it occupies or encloses.
+Q: What does viewing a sculpture "in the round" mean? | Walking around it, since there is no single correct view.
+Q: How do Piet Mondrian's grid paintings use shape? | They use only rectangles and lines, reducing composition to geometric shape.
 
 ## Tone and value
 LV: Introductory · Foundation
@@ -242,6 +292,16 @@ SEQ1#art-u01-06-q2@1: Order these parts of light on a form from lightest to dark
 M2#art-u01-06-q3@2: You want the viewer to look first at a figure's face in a portrait. What tonal decision helps most? | Place the strongest light-dark contrast at the face | Make the whole canvas an even mid-tone | Put the darkest tones in the corners only | Use the most saturated colour in the background | The eye goes first to the area of greatest tonal contrast; placing it at the face makes it the focal point.
 M3#art-u01-06-q4@3: A student says two colours "don't match" in a painting, but in a greyscale photograph they look identical. What does this show? | The colours share the same tonal value although they differ in hue | The photograph is faulty | Tone and hue are the same thing | Greyscale photographs show saturation, not tone | Greyscale removes hue and saturation and leaves value; identical greys mean equal tone, which artists check this way.
 SA3#art-u01-06-q5@2,3: Explain how Joseph Wright of Derby uses tone in An Experiment on a Bird in the Air Pump, and evaluate its effect. | The painting is low-key, lit by a single concealed candle, with deep surrounding shadow. The brightest tones fall on the faces, making the varied human reactions the subject, and the strongest contrast centres the vessel and bird. Chiaroscuro gives a scientific demonstration the gravity of a religious scene, raising questions about wonder and cruelty. | Identifies low-key range and single light source ; Explains how contrast creates a focal point ; Uses the term chiaroscuro accurately ; Links tone to mood or meaning ; Evaluates the effect
+Q: What is tone (value) in art? | How light or dark something is, independent of its hue.
+Q: Where is the highlight on a lit form? | At the brightest point, where light strikes most directly.
+Q: What is a cast shadow? | The shadow an object throws onto other surfaces, darkest near the contact point.
+Q: What is a high-key image and how does it feel? | One made mostly of light tones; it feels airy or gentle.
+Q: What is tonal contrast and what does it do? | The difference between the lightest and darkest areas; it draws the eye and often marks the focal point.
+Q: What is tenebrism? | The extreme form of chiaroscuro, with very strong light-dark contrast, associated with Caravaggio.
+Q: How can you see tone separately from colour? | Squint at the subject or convert a photograph to greyscale.
+Q: What is notan? | A Japanese term, used by Arthur Wesley Dow, for the design of light and dark masses.
+Q: How many zones did Ansel Adams's zone system divide the tonal range into? | Eleven.
+Q: Why does a drawing in a single colour still read correctly? | The eye reads form and space mostly from tonal relationships, so correct tones are enough.
 
 ## Colour as a visual element
 LV: Introductory · Foundation
@@ -281,6 +341,16 @@ M2#art-u01-07-q2@2: A painter wants a distant mountain range to recede. Which co
 TF1#art-u01-07-q3@1: Adding white to a hue produces a tint. | true | A tint is a hue plus white; a shade adds black; a tone (in colour mixing) adds grey.
 M3#art-u01-07-q4@3: Which statement best describes Van Gogh's colour in The Starry Night? | Expressive colour, using near-complementary yellow and blue to heighten intensity | Strictly local colour recorded from nature | A monochrome study in grey | A limited palette of earth colours | The colours express feeling and energy; the yellow-blue contrast makes the stars blaze rather than recording the night sky literally.
 SA2#art-u01-07-q5@2,3: Explain how warm and cool colour can create space and mood in a landscape painting. | Warm, saturated colours tend to advance and cool, paler, greyer colours recede, so a painter can push distance back with blues and bring the foreground forward with warm earths and oranges. Mood follows: a cool, blue-dominated scene can feel calm or melancholy, a warm one energetic, though such associations depend on context. | Explains warm advancing and cool receding ; Links to saturation or value ; Applies to a landscape ; Discusses mood ; Notes associations are not fixed
+Q: What is hue? | The name of a colour family, such as red, blue or yellow-green.
+Q: What is the difference between a tint and a shade? | A tint adds white to a hue; a shade adds black.
+Q: What are the secondary colours on the traditional painter's colour wheel? | Orange, green and violet, each made by mixing two primaries.
+Q: How is a tertiary colour made? | By mixing a primary with a neighbouring secondary, giving colours such as yellow-green.
+Q: What are the additive primaries of light and the subtractive primaries of printing? | Additive (screens): red, green and blue. Subtractive (printing): cyan, magenta and yellow, with black (CMYK).
+Q: What are analogous colours and what effect do they create? | Colours next to each other on the wheel; they create harmony.
+Q: Why do distant hills often look blue? | Cool colours such as blue tend to appear to recede, while warm colours tend to advance.
+Q: Why do the stars seem to blaze in Van Gogh's The Starry Night? | Yellow is set against blue, a near-complementary contrast that intensifies both.
+Q: Why is it a mistake to assume colours carry fixed meanings? | Colour symbolism depends on culture: white is linked with weddings in much of Europe and with mourning in parts of East Asia.
+Q: What is expressive or arbitrary colour? | Colour chosen for feeling or design rather than description, as in Fauvism.
 
 ## Texture
 LV: Introductory · Foundation
@@ -317,6 +387,16 @@ M2#art-u01-08-q2@2: A student wants to record the texture of a weathered wooden 
 TF2#art-u01-08-q3@2: Texture in a painting can change appearance as the lighting changes. | true | Thick paint throws small shadows, so raking or moving light alters how textured the surface looks.
 M3#art-u01-08-q4@3: Why is Oppenheim's fur-covered teacup (1936) unsettling to many viewers? | It combines a soft animal texture with an object meant to touch the lips, provoking an imagined bodily response | It is too fragile to be displayed | The colour scheme is aggressive | It was the first sculpture made of fur | The meaning lies in the clash between texture and function, which calls on memories of touch.
 SA2#art-u01-08-q5@2,3: Describe three ways an artist can create texture in two-dimensional work, and explain why texture matters to meaning. | Examples: impasto or dry-brush painting; frottage rubbings; stippling, scumbling or cross-hatching; collage of real materials; aquatint in print. Texture matters because it engages touch and memory (rough, soft, cold), adds energy or calm through the visible handling, and can contradict expectations, as in Surrealist objects. | Gives three valid techniques ; Distinguishes actual or implied texture ; Explains link to touch or memory ; Gives an example of meaning ; Uses accurate vocabulary
+Q: What is texture in art? | The surface quality of a work: how it feels, or looks as if it would feel.
+Q: What is actual texture? | Tactile texture that can be touched, such as thick paint, carved stone, woven fibre or collage.
+Q: Why does impasto change appearance as the light moves? | Thick paint throws small shadows that shift with the direction of the light.
+Q: What is impasto? | Paint applied thickly so it stands up from the surface.
+Q: What is sgraffito in painting? | Scraping into paint to create texture.
+Q: Name two ways of creating texture in printmaking. | Woodgrain in a woodcut and aquatint's granular tone in etching.
+Q: How is texture created in sculpture and 3D work? | Through tool marks, polish, patina and contrasting materials.
+Q: How does Oppenheim's Object (1936) use texture to create meaning? | It applies fur to a normally smooth, hard teacup, so the clash of texture and function becomes the work's meaning.
+Q: What is the common mistake of describing every surface as "textured"? | It is vague; name the kind of texture, such as rough, gritty, glossy, matte or woven, and how it was made.
+Q: How is texture used in design? | It adds tactile quality to packaging and printed matter, and background textures add depth to flat digital layouts.
 
 ## Space
 LV: Introductory · Application
@@ -357,6 +437,16 @@ M2#art-u01-09-q2@2: A student's still life looks flat because all the objects si
 TF1#art-u01-09-q3@1: In graphic design, negative space can be used to create emphasis. | true | White or empty space isolates elements and creates clarity and hierarchy.
 M3#art-u01-09-q4@3: Why might Matisse choose shallow space in an interior painting? | To emphasise flat colour and pattern across the surface of the picture | Because he did not know linear perspective | Because shallow space always looks more realistic | To make the room appear larger | Matisse was a skilled draughtsman; shallow space was a choice that emphasised decorative surface over illusion.
 SA3#art-u01-09-q5@2,3: Evaluate the claim that linear perspective is the most accurate way to show space. | Perspective systematically reproduces how a single fixed eye sees parallel lines converge, so it is powerful for some purposes. But real vision uses two moving eyes; other traditions (Japanese prints, Byzantine icons, Cubism) use overlap, placement or multiple viewpoints to convey space or meaning. Panofsky argued perspective is partly a cultural convention. Accuracy depends on purpose. | Explains what perspective does well ; Notes the single fixed viewpoint limitation ; Gives an alternative tradition ; Refers to the convention debate ; Reaches a judgement about purpose
+Q: What is space in art? | The area around, between and within forms, real in sculpture and architecture and illusory in pictures.
+Q: What is pictorial space? | An illusion of depth behind the picture plane in painting, drawing and photography.
+Q: How does overlap work as a depth cue? | A form that covers another appears to be in front of it.
+Q: What is atmospheric perspective? | A depth cue in which distant forms appear paler, bluer and less detailed.
+Q: How does vertical placement signal depth in a picture? | Forms placed lower in the picture usually read as nearer.
+Q: How does Raphael's School of Athens create deep space? | With one-point perspective, the architecture converging on the central figures.
+Q: How do Hiroshige's landscapes create depth differently from Renaissance perspective? | With high viewpoints, overlap and cropped foreground objects, using flatter colour areas.
+Q: Why is it a mistake to treat flat space as a failure? | Byzantine icons, Matisse and much modern design choose shallow space deliberately to emphasise surface, pattern or the spiritual.
+Q: What effect does deep space have compared with shallow space? | Deep space invites the viewer into a world; shallow space presses forms against the surface, drawing attention to the picture as a made object.
+Q: Why does white space matter in graphic design? | It gives clarity and emphasis; crowded layouts lose hierarchy.
 
 ## Pattern
 LV: Introductory · Foundation
@@ -397,6 +487,16 @@ M2#art-u01-10-q2@2: A textile designer finds that the grid of a wallpaper repeat
 TF2#art-u01-10-q3@2: Islamic geometric patterns can be constructed with only a compass and a straight edge. | true | Traditional construction starts from circles divided into equal parts, joined with straight lines.
 M3#art-u01-10-q4@3: Which statement about pattern in Bridget Riley's Op art is best supported? | Repeated lines and shapes are used to produce optical effects such as vibration and movement | Pattern is used only to decorate a figurative scene | Riley's patterns are irregular and organic | Riley avoids repetition altogether | Op art exploits the eye's response to repeated high-contrast elements, producing apparent movement.
 SA2#art-u01-10-q5@1,2: Explain how a surface designer builds a repeat pattern, and how the choice of repeat affects the result. | The designer creates a motif on a tile that fits a grid, then repeats it by a rule: block (rows and columns), half-drop (columns offset by half), brick (rows offset) or mirror (reflected). Edges are adjusted so motifs cross the joins seamlessly. Block repeats look ordered and grid-like; half-drop and brick hide the grid and feel more natural; mirror repeats create symmetry. | Describes motif and tile ; Names at least two repeat types ; Explains seamless joins ; Explains effect of each repeat ; Uses accurate vocabulary
+Q: What is a pattern? | The regular repetition of a motif across a surface according to a rule.
+Q: What is the difference between regular and irregular pattern? | Regular pattern repeats exactly; irregular pattern is varied or organic.
+Q: What is a block (straight) repeat? | A repeat in which the motif repeats in rows and columns.
+Q: What is a brick repeat? | A repeat in which each row shifts horizontally by half a motif.
+Q: What is a mirror repeat? | A repeat in which the motif is reflected.
+Q: How does William Morris's Strawberry Thief (1883) hide the joins in its pattern? | It uses stylised plants and birds in interlocking repeats.
+Q: How are Islamic geometric star patterns, such as those at the Alhambra, constructed? | From circles and grids drawn with a compass and straight edge.
+Q: How do you make an eight-point star from a divided circle? | Divide the circle into eight, join every third point to make two overlapping squares, and the overlap forms the star.
+Q: Why is it a mistake to treat pattern as mere decoration? | In many traditions pattern carries meaning, such as order and infinity in Islamic design, or identity and status in textiles.
+Q: How does Bridget Riley use pattern? | She uses repeated lines and shapes to produce optical vibration in Op art.
 
 ## Balance and symmetry
 LV: Introductory · Foundation
@@ -435,6 +535,16 @@ M2#art-u01-11-q2@2: A poster has a large pale photograph on the left. What could
 TF1#art-u01-11-q3@1: Leonardo's Last Supper is organised with symmetrical balance around Christ at the centre. | true | The architecture and the groups of apostles mirror each other about the central figure.
 M3#art-u01-11-q4@3: A painter places a lone figure tight against the right edge with empty space to the left. What is the most likely intended effect? | Tension or unease from deliberate imbalance | Calm, formal stability | Radial harmony | A neutral effect, since balance does not affect meaning | Pushing visual weight to one edge without a counterweight creates imbalance, often used for tension, isolation or movement.
 SA2#art-u01-11-q5@2,3: Explain the difference between symmetrical and asymmetrical balance, using an example of each, and say why an artist might choose one rather than the other. | Symmetrical balance mirrors elements about an axis, as in the Last Supper, giving stability, formality and authority. Asymmetrical balance uses unlike elements of equal visual weight, as in many Japanese prints or a small boat balancing a large sea, giving movement and naturalness. The choice depends on intended mood: order and solemnity, or dynamism. | Defines symmetrical balance with example ; Defines asymmetrical balance with example ; Explains visual weight ; Links choice to mood or meaning ; Clear comparison
+Q: What is balance in a composition? | The distribution of visual weight across the work.
+Q: What does symmetrical balance suggest? | Stability, order and formality.
+Q: How does asymmetrical balance work? | Unlike elements balance through visual weight, like a heavy child near a seesaw's pivot and a light child far from it.
+Q: What is approximate symmetry and why is it used? | Halves that are similar but not identical; it avoids stiffness.
+Q: How does position affect visual weight? | Elements far from the centre or near the top exert more pull.
+Q: Who analysed the forces of visual weight in Art and Visual Perception (1954)? | Rudolf Arnheim.
+Q: How can a small red boat balance a large grey sea and sky? | The boat is saturated, high in contrast and of human interest, and placed off centre like a small weight far from a pivot.
+Q: Why is it a mistake to think asymmetry means imbalance? | Asymmetrical compositions can be perfectly balanced; imbalance is visual weight pulling to one side without a counterweight.
+Q: Why do religious and civic art often use symmetry? | To convey authority and calm.
+Q: What effect can deliberate imbalance create? | Unease, as when figures are pushed to an edge of the composition.
 
 ## Contrast and emphasis
 LV: Introductory · Application
@@ -478,6 +588,16 @@ M2#art-u01-12-q2@2: On a busy poster, the event date is being missed. What is th
 TF2#art-u01-12-q3@2: A red item among grey items is found quickly however many grey items there are. | true | A target differing by a single feature pops out in visual search, so search time stays roughly flat.
 M3#art-u01-12-q4@3: In The Calling of Saint Matthew, which combination creates the focal point most effectively? | A diagonal of light reinforced by Christ's pointing gesture towards the lit figures at the table | The bright red of the background wall | The large scale of the window | The detailed pattern of the floor tiles | Tonal contrast from the light and the implied line of the gesture converge on Matthew; the other options are not the main devices.
 SA3#art-u01-12-q5@2,3: Analyse how emphasis is created in a painting or design you know, and evaluate how well the hierarchy works. | The answer names a work and identifies the focal point and the contrasts creating it (tone, colour, size, isolation), how lines or gazes lead to it, and the secondary and subordinate areas. It judges whether competing accents distract and whether the hierarchy fits the work's purpose or meaning. | Names a work and its focal point ; Identifies at least two kinds of contrast ; Notes directional devices ; Describes secondary hierarchy ; Evaluates effectiveness
+Q: What is emphasis in a composition? | The principle that gives one element dominance over others.
+Q: What happens to a work with no emphasis, or with too many focal points? | Without emphasis it can feel monotonous; with too many competing focal points it feels chaotic.
+Q: What is the strongest single kind of contrast for creating emphasis? | Tonal contrast: light against dark.
+Q: How does isolation create emphasis? | An element set apart in empty space draws the eye.
+Q: Where does the eye go first in a composition? | To the place of greatest difference from its surroundings.
+Q: How does Caravaggio create the focal point in The Calling of Saint Matthew? | A diagonal shaft of light and Christ's pointing gesture both lead to Matthew, combining tonal contrast and implied line.
+Q: What does the visual search experiment show about contrast? | An item differing in one feature, such as colour, pops out at once; one differing only in a combination of features must be searched for.
+Q: Why is making everything emphatic a mistake? | Bold colour, large type and heavy outlines everywhere cancel each other out; emphasis needs quiet areas around it.
+Q: How is hierarchy typically ordered on a printed page? | A headline, then a subheading, then body text, ordered by size, weight, colour and position.
+Q: How can a designer check which elements dominate a layout? | Squint at it or blur it.
 
 ## Rhythm, repetition and movement
 LV: Introductory · Application
@@ -517,6 +637,16 @@ M2#art-u01-13-q2@2: A designer wants a sequence of circles to suggest something 
 SEQ2#art-u01-13-q3@2: Order these rhythm types from most mechanical to most organic. | Regular ; Alternating ; Progressive ; Flowing | Regular repetition is the most mechanical; flowing, curving rhythm is the most organic.
 M3#art-u01-13-q4@3: A painting of a sprinter feels static. Which diagnosis is most likely correct? | The figure's lines are mainly horizontal and vertical, with no diagonals or repeated positions | The colours are too saturated | The canvas is too small | The subject is not moving fast enough | Motion is suggested by diagonals, blur and repetition; a subject in action can still look frozen without them.
 SA2#art-u01-13-q5@2,3: Explain how an artist can create the illusion of movement in a still image, with examples. | Devices include diagonal lines and unstable poses, repeated or overlapping positions (Duchamp, Balla, influenced by Muybridge's sequences), blur and directional brushstrokes, lines of force, and compositional paths that carry the eye. Futurists aimed to show speed; Hokusai's flowing rhythm keeps the eye moving. | Names diagonals or unstable poses ; Names repetition of positions with example ; Names blur or directional mark-making ; Distinguishes eye movement and depicted motion ; Uses examples accurately
+Q: What is rhythm in art? | A visual beat created by repeating elements at intervals.
+Q: What is regular rhythm? | The same element repeated at equal intervals, like columns in a colonnade.
+Q: What is alternating rhythm? | Two or more elements taking turns, like a chequerboard.
+Q: What is flowing rhythm? | Curving, organic repetition, like waves.
+Q: How does rhythm differ from pattern? | Pattern is about the repeated unit across a surface; rhythm is about the felt beat and the movement it creates.
+Q: What is compositional movement? | The path the eye follows through a work, steered by lines, edges, gazes, colour and contrast.
+Q: Name three ways artists suggest depicted motion. | Any three: diagonals, blur, repeated positions and lines of force.
+Q: What did Eadweard Muybridge's photographic sequences of the 1870s–1880s show? | The successive phases of a horse's gallop.
+Q: Why is it a mistake to confuse movement with action in the subject? | A still life can have strong compositional movement, while a picture of a runner can feel static if its lines are horizontal and forms evenly spaced.
+Q: How can an architect use a break in rhythm on a façade? | A break, such as a larger central entrance among regular bays, creates emphasis.
 
 ## Proportion and scale
 LV: Introductory · Application
@@ -552,6 +682,16 @@ M2#art-u01-14-q2@2: In a medieval altarpiece, a saint is shown much larger than 
 TF1#art-u01-14-q3@1: Polykleitos's Doryphoros survives as Roman copies of the lost original. | true | The bronze original is lost; marble Roman copies, such as the one in Naples, preserve its composition.
 M3#art-u01-14-q4@3: Why might an artist like Ron Mueck make a lifelike figure far larger than life? | Changing scale makes the familiar strange and alters the viewer's bodily relationship to the figure | Large sculptures are easier to make | Galleries require large works | Larger scale always makes a work more realistic | Mueck's realism plus unexpected scale unsettles the viewer; scale is an expressive choice.
 SA3#art-u01-14-q5@2,3: Evaluate the view that good art should follow correct proportions. | Classical canons (Polykleitos, Vitruvius) and academic training valued ideal proportion and it underpins convincing figure drawing. But many traditions use hierarchical scale (Egypt, medieval altarpieces) and many artists distort deliberately (Parmigianino, Giacometti, Modigliani) for elegance, spirituality or emotion. "Correct" depends on the purpose and conventions; the judgement should consider intent and effect. | Explains classical canons ; Gives hierarchical scale example ; Gives deliberate distortion example ; Considers purpose or convention ; Reaches a justified judgement
+Q: What is proportion? | The size relationship of parts to each other and to the whole.
+Q: What is scale? | Size relative to a standard, usually the human body or the viewer.
+Q: What is a canon of proportion? | A rule or set of rules defining ideal proportions, especially of the human figure.
+Q: Which sculpture embodied Polykleitos's lost Canon? | The Doryphoros (Spear Bearer, c.440 BCE), known from Roman copies.
+Q: How many heads tall is an adult often measured as in figure drawing? | About seven and a half to eight heads.
+Q: How tall is Michelangelo's David, and what effect does its scale have? | About 5.17 m, so the viewer looks up at it.
+Q: Why are figures different sizes in an ancient Egyptian tomb painting? | Size shows status, not distance: it is hierarchical scale, a deliberate convention.
+Q: Why is calling elongated figures "out of proportion" often a mistake? | Artists such as Parmigianino and Giacometti distorted proportion deliberately.
+Q: How did Oldenburg and van Bruggen use scale? | They enlarged everyday objects such as a clothes peg or spoon to monumental size.
+Q: What kind of looking do miniatures invite? | Close, intimate looking.
 
 ## Unity and variety
 LV: Introductory · Application
@@ -592,6 +732,16 @@ MS2#art-u01-15-q2@2: Which changes would add variety to a monotonous grid of ide
 M2#art-u01-15-q3@1,2: A magazine spread uses five fonts, eight colours and no grid. What is the most likely problem? | Too much variety and too little unity | Too much unity | Too little contrast | Too much negative space | Many unrelated typefaces and colours without a grid fragment the layout; limiting them restores unity.
 M3#art-u01-15-q4@3: Which statement best evaluates a project of varied media experiments with no clear theme? | It shows variety but lacks the conceptual unity that links experiments to a personal outcome | It is ideal because variety is always rewarded | It should remove all experiments but one | Unity only applies to single images, not projects | Conceptual unity, a clear intention, connects experiments and outcome; variety alone is not enough.
 SA2#art-u01-15-q5@1,3: Explain how an artist can achieve unity in variety, using an example of a work or design. | Unity comes from repetition of colour, shape or mark, proximity and grouping, limited palette, continuation and consistent handling; variety from differences of scale, colour, shape and texture. Example: a Matisse cut-out unifies varied organic shapes through saturated colour and consistent paper technique; a well-designed magazine unifies varied content with a grid and two typefaces. | Defines unity and variety ; Names at least two unity devices ; Names sources of variety ; Applies to a specific example ; Explains why both are needed
+Q: What is unity in a work of art? | The sense that all parts of the work belong together as a whole.
+Q: What is variety in a work of art? | Differences of size, colour, shape, texture or direction that keep the eye engaged.
+Q: What happens with too much unity or too much variety? | Too much unity becomes monotonous; too much variety becomes chaos.
+Q: How does proximity create unity? | Grouping elements close together so they read as one.
+Q: How does continuation create unity? | Lines or edges carry from one element to another, linking them.
+Q: Which philosopher discussed "unity in variety" as a source of beauty in 1725? | Francis Hutcheson.
+Q: How could you restore unity to a chaotic collage without losing energy? | Limit to two or three colours, repeat one shape in several places, group fragments into larger masses and keep one focal point.
+Q: Why is it a mistake to think unity means sameness? | A unified work can contain great variety, held together by repetition, structure or a dominant theme.
+Q: What is conceptual unity? | Unity of idea, where a subject, process or theme connects varied work such as a photo series or installation.
+Q: How does unity of idea help in an exam project? | A clear intention connects varied experiments to the final outcome, supporting AO4.
 
 ## Composition and the picture plane
 LV: Intermediate · Application
@@ -632,6 +782,16 @@ M2#art-u01-16-q2@2: A painter wants a group portrait to feel stable and monument
 TF2#art-u01-16-q3@2: A low (worm's-eye) viewpoint tends to make a subject look larger and more powerful. | true | Looking up at a subject increases its apparent dominance, a device used in monuments and film.
 M3#art-u01-16-q4@3: In Géricault's The Raft of the Medusa, why does the composition rise to a figure waving at the top right? | The rising triangle carries the eye from the dead at the bottom to hope at the apex | It shows the boat sinking to the right | The figure is placed there for symmetry | The format required it | The pyramid of bodies moves from despair to the hope of rescue: structure carries narrative.
 SA2#art-u01-16-q5@1,3: Describe how you would use thumbnails to plan a composition, and explain what you would compare. | Make several small sketches in the chosen format, trying different viewpoints, croppings and structures (triangle, diagonal, S-curve), simplified to three tones. Compare them for the clarity of the focal point, the balance of visual weight, the interest of negative shapes and how the eye moves. Annotate the choice to evidence refinement and recording. | Describes multiple small sketches ; Varies viewpoint, cropping or structure ; Simplifies to tone ; Names criteria for comparison ; Links to annotation or assessment objectives
+Q: What is composition? | The arrangement of elements within the format of a work.
+Q: What is a work's format? | The shape of the support, such as portrait, landscape, square, tondo or panoramic.
+Q: What does cropping a subject at the edge suggest? | A world beyond the frame.
+Q: What influenced Degas's cropping and off-centre compositions? | Photography and Japanese prints.
+Q: What does viewpoint set in a composition? | The viewer's relationship to the subject, for example eye level, bird's-eye or worm's-eye.
+Q: What effect does a diagonal compositional structure create? | A dynamic, dramatic effect, typical of the Baroque.
+Q: What does an S-curve or zigzag structure do in a landscape? | It leads the eye gently into depth.
+Q: Why is centring the subject in every work a common mistake? | Without a reason, centring with equal space all round often gives static, predictable compositions.
+Q: How should thumbnails be compared when planning a composition? | Reduce each to three tones and squint, choosing the clearest focal point and most interesting negative shapes, then annotate why.
+Q: What did Clement Greenberg argue in "Modernist Painting" (1960)? | That flatness was painting's essential quality.
 
 ## The rule of thirds and the golden ratio
 LV: Intermediate · Evaluation
@@ -668,6 +828,16 @@ M2#art-u01-17-q2@2: A photographer wants a landscape to emphasise a dramatic sky
 NUM2#art-u01-17-q3@1,2: A canvas is 81 cm wide. To the nearest centimetre, how far from the left edge is the larger golden section? | 50 | 1 | cm | 81 ÷ 1.618 ≈ 50 cm, so the golden section line lies about 50 cm from one edge and 31 cm from the other.
 M3#art-u01-17-q4@3: Which is the best evaluation of the claim that the Parthenon was designed on the golden ratio? | It is doubtful: measurements depend on chosen points and no ancient source records such a design | It is proven by Euclid's Elements | It is proven because the façade looks beautiful | It is certain because Pacioli measured it in 1509 | Markowsky and Livio show that such claims rely on selective measurement, and there is no ancient documentary evidence.
 SA3#art-u01-17-q5@1,3: Evaluate the usefulness of the rule of thirds and the golden ratio for an artist planning a composition. | Both encourage off-centre placement and asymmetrical balance, are easy to apply with grids and help beginners avoid static centres; the rule of thirds approximates the golden section. But they are guidelines: many great works are centred or break them, claims of universal beauty for the golden ratio are weakly supported, and composition depends on the subject, focal point and meaning. Use them as tools for thumbnails, not rules. | Explains each system ; Notes off-centre placement benefit ; Notes thirds approximate the golden section ; Cites weak evidence or counterexamples ; Reaches a judgement
+Q: How does the rule of thirds divide a format? | Into nine equal parts with two horizontal and two vertical lines.
+Q: Why does the rule of thirds tend to help a composition? | Placing key elements on the lines or intersections gives asymmetrical balance and avoids a static centre.
+Q: Where should a horizon go to emphasise the land rather than the sky? | On the upper third line.
+Q: What is a golden rectangle? | A rectangle with sides in the ratio 1 : 1.618; removing a square leaves a smaller golden rectangle.
+Q: Who called the golden ratio the "divine proportion"? | Luca Pacioli, in De divina proportione (1509), illustrated by Leonardo.
+Q: How do golden section lines compare with thirds lines on a canvas? | The golden lines lie slightly closer to the centre; the rule of thirds is a simple approximation.
+Q: Why is it a mistake to cite nautilus shells as proof of the golden ratio? | They are logarithmic spirals that are generally not golden.
+Q: Which 20th-century architect based a system on the golden ratio? | Le Corbusier, in his Modulor system (1948).
+Q: What have experiments since Fechner (1876) found about preference for golden rectangles? | Mixed results; later studies found preferences vary and are weak.
+Q: Why are many claimed golden ratio attributions to famous works unreliable? | They often depend on choosing measurement points to fit the ratio.
 
 ## Gestalt principles in art and design
 LV: Intermediate · Application
@@ -712,4 +882,14 @@ TF1#art-u01-18-q3@1: In Rubin's vase, the image can be seen as either a vase or 
 MATCH2#art-u01-18-q4@1,2: Match each example to the Gestalt principle it shows. | The arrow between E and x in the FedEx logo = Figure-ground ; The WWF panda completed from separate shapes = Closure ; Red dots grouped among blue dots = Similarity ; A row of birds flying the same way = Common fate | Each example shows the named tendency of perceptual grouping.
 M3#art-u01-18-q5@3: Why does the middle band of Escher's Sky and Water I seem to flicker between birds and fish? | Figure and ground are equally balanced there, so perception alternates between two organisations | The print is damaged in the centre | The colours change in the middle band | Proximity groups the birds with the fish | When neither region dominates as figure, the visual system switches between readings, which Escher exploits.
 SA2#art-u01-18-q6@2,3: Explain how a logo designer might use two Gestalt principles, and why this makes a logo effective. | Figure-ground can hide a second image in negative space (the FedEx arrow), rewarding attention and suggesting meaning; closure lets a viewer complete a shape from separate parts (the WWF panda), so the mark is simple, memorable and works at small sizes. Proximity and similarity can unify letters and symbol. Effective because perception does the work, giving clarity and a moment of discovery. | Names and explains two principles ; Gives an example of each ; Explains memorability or simplicity ; Explains engagement of the viewer ; Accurate vocabulary
+Q: Who founded Gestalt psychology? | Max Wertheimer, Wolfgang Köhler and Kurt Koffka, in the 1910s.
+Q: What is the law of Prägnanz? | The mind organises parts into the simplest, most stable wholes.
+Q: What is the Gestalt principle of similarity? | Items alike in colour, shape or size are seen as a group.
+Q: What is the Gestalt principle of continuity? | The eye follows smooth lines and curves.
+Q: What is common fate? | Items moving together are perceived as a group.
+Q: How does the FedEx wordmark use Gestalt principles? | It hides an arrow in the negative space between the E and the x, using figure-ground.
+Q: How does the WWF panda logo use closure? | The viewer completes the panda from separate black shapes.
+Q: Why does the middle band of Escher's Sky and Water I flip between birds and fish? | Figure and ground shapes are equally balanced there, so either can be seen as figure.
+Q: Why is it a mistake to treat Gestalt principles as rules for making art? | They describe tendencies of perception, which artists use, break for ambiguity or combine.
+Q: What does the Müller-Lyer illusion show? | Perceived length depends on the whole configuration, not only the line: context changes what we see.
 `;

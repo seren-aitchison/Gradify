@@ -1,0 +1,91 @@
+{
+ "id": "chem-ionic-nacl",
+ "renderer": "dotcross",
+ "course": "chemistry",
+ "unit": "u04",
+ "lesson": "Ionic bonding",
+ "title": "Ionic bonding in sodium chloride",
+ "caption": "Sodium's single outer electron (cross) transfers to chlorine, which has seven (dots). Both ions end with full outer shells: Na⁺ (2, 8) and Cl⁻ (2, 8, 8). Only the outer shells are drawn.",
+ "alt": "Dot-and-cross diagram: a sodium atom with one outer electron and a chlorine atom with seven, then the ions in brackets: Na⁺ with an empty outer shell, Cl⁻ with eight outer electrons, one of them a cross.",
+ "description": [
+  "Before: Na with one cross in its outer shell; Cl with seven dots.",
+  "After: [Na]⁺ with no outer electrons shown, and [Cl]⁻ with eight, seven dots and one cross."
+ ],
+ "also": [
+  {
+   "course": "gcse",
+   "unit": "u05",
+   "lesson": "Ionic, covalent and metallic bonding"
+  }
+ ],
+ "perRow": 2,
+ "arrowBetween": true,
+ "keyDot": "chlorine electron",
+ "keyCross": "sodium electron",
+ "molecules": [
+  {
+   "label": "Na + Cl",
+   "atoms": [
+    {
+     "id": "na",
+     "el": "Na",
+     "x": -0.9,
+     "y": 0,
+     "single": true,
+     "singleAt": [
+      0
+     ],
+     "mark": "cross",
+     "incomplete": true
+    },
+    {
+     "id": "cl",
+     "el": "Cl",
+     "x": 0.9,
+     "y": 0,
+     "lone": 3,
+     "single": true,
+     "singleAt": [
+      180
+     ],
+     "loneAt": [
+      -90,
+      0,
+      90
+     ],
+     "incomplete": true
+    }
+   ]
+  },
+  {
+   "label": "Na⁺ Cl⁻",
+   "atoms": [
+    {
+     "id": "na",
+     "el": "Na",
+     "x": -1.0,
+     "y": 0,
+     "charge": 1,
+     "bracket": true,
+     "mark": "cross"
+    },
+    {
+     "id": "cl",
+     "el": "Cl",
+     "x": 1.1,
+     "y": 0,
+     "lone": 4,
+     "charge": -1,
+     "bracket": true,
+     "gained": true,
+     "loneAt": [
+      -90,
+      0,
+      90,
+      180
+     ]
+    }
+   ]
+  }
+ ]
+}

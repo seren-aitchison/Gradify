@@ -1,0 +1,125 @@
+{
+ "id": "chem-dipole-dipole",
+ "renderer": "dotcross",
+ "course": "chemistry",
+ "unit": "u04",
+ "lesson": "Dipole-dipole interactions",
+ "title": "Permanent dipole–dipole forces",
+ "caption": "Each HCl molecule has a permanent dipole, H δ+ and Cl δ−. Neighbouring molecules line up so the δ+ end of one is near the δ− end of the next, an attraction on top of the London forces.",
+ "alt": "Three HCl molecules in a row, δ+ hydrogen next to δ− chlorine of the next, joined by dashed attractions.",
+ "description": [
+  "Three H–Cl molecules, each with δ+ on H and δ− on Cl.",
+  "Dashed lines between the H of one and the Cl of the next."
+ ],
+ "rowHeight": [
+  150,
+  150
+ ],
+ "scale": [
+  1,
+  0.62
+ ],
+ "molecules": [
+  {
+   "label": "",
+   "style": "lewis",
+   "atoms": [
+    {
+     "id": "h1",
+     "el": "H",
+     "x": -2.6,
+     "y": 0,
+     "delta": "+"
+    },
+    {
+     "id": "c1",
+     "el": "Cl",
+     "x": -1.6,
+     "y": 0,
+     "lone": 3,
+     "loneAt": [
+      -90,
+      0,
+      90
+     ],
+     "delta": "-"
+    },
+    {
+     "id": "h2",
+     "el": "H",
+     "x": -0.4,
+     "y": 0,
+     "delta": "+"
+    },
+    {
+     "id": "c2",
+     "el": "Cl",
+     "x": 0.6,
+     "y": 0,
+     "lone": 3,
+     "loneAt": [
+      -90,
+      0,
+      90
+     ],
+     "delta": "-"
+    },
+    {
+     "id": "h3",
+     "el": "H",
+     "x": 1.8,
+     "y": 0,
+     "delta": "+"
+    },
+    {
+     "id": "c3",
+     "el": "Cl",
+     "x": 2.8,
+     "y": 0,
+     "lone": 3,
+     "loneAt": [
+      -90,
+      0,
+      90
+     ],
+     "delta": "-"
+    }
+   ],
+   "bonds": [
+    {
+     "a": "h1",
+     "b": "c1",
+     "order": 1
+    },
+    {
+     "a": "h2",
+     "b": "c2",
+     "order": 1
+    },
+    {
+     "a": "h3",
+     "b": "c3",
+     "order": 1
+    }
+   ],
+   "links": [
+    {
+     "a": "c1",
+     "b": "h2",
+     "dy": 18
+    },
+    {
+     "a": "c2",
+     "b": "h3",
+     "dy": 18
+    }
+   ],
+   "claims": {
+    "delta": {
+     "h1": "+",
+     "c1": "-"
+    }
+   }
+  }
+ ]
+}

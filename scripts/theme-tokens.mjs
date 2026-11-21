@@ -14,12 +14,13 @@
 import { readFileSync, writeFileSync } from "node:fs";
 
 export const FILES = ["kit/styles/base.css", "kit/styles/body.css", "kit/styles/components.css", "kit/styles/course.css", "kit/styles/game.css", "kit/styles/labs.css",
-  "kit/styles/maths-labs.css", "kit/styles/model.css", "kit/styles/social-labs.css", "kit/styles/subsite.css", "kit/app/app.css", "assets/styles.css"];
-// the glass diagrams (.gd) and the Plus banner (.lim-) are drawn on their own coloured glass, like the icons
-const SKIP_SEL = /g3d|\.gd\b|\.gd-|\.lim-|aurora|theme-tokens-skip|:root|\[data-theme/;
+  "kit/styles/maths-labs.css", "kit/styles/model.css", "kit/styles/social-labs.css", "kit/styles/subsite.css", "kit/styles/ui.css", "kit/app/app.css", "assets/styles.css"];
+// the glass diagrams (.gd) and the Plus banner (.lim-) are drawn on their own coloured glass, like the icons, and the
+// teaching diagram cards (.vx, .vx-full) are white glass in both themes
+const SKIP_SEL = /g3d|\.gd\b|\.gd-|\.lim-|\.vx\b|\.vx-full|aurora|theme-tokens-skip|:root|\[data-theme/;
 // things that stay dark in light mode too (a 3D stage, a map at night, a lab canvas, the app pictured on the homepage):
 // their colours are left alone and base.css gives them the dark tokens ("dark islands")
-export const ISLANDS = [".earth-map", ".tree-wrap", ".isle3d", ".isle-tag", ".forest", ".fs-key", ".mv-stage", ".mv-studio", ".sm-3d-art", ".lab-3d", ".lab-cv", ".lab-svg", ".co-lab", ".tablet", ".shot-frame", ".vc-", ".holo", ".sphere", ".spotlight", ".bi-stage", ".mv-labels", ".mv-tip", ".mv-controls", ".mv-info", ".gj-ring"];
+export const ISLANDS = [".earth-map", ".tree-wrap", ".isle3d", ".isle-tag", ".forest", ".fs-key", ".mv-stage", ".mv-studio", ".sm-3d-art", ".lab-3d", ".lab-cv", ".lab-svg", ".co-lab", ".tablet", ".shot-frame", ".vc-", ".holo", ".sphere", ".spotlight", ".bi-stage", ".mv-labels", ".mv-tip", ".mv-controls", ".mv-info", ".gj-ring", ".cx-fcard", ".cx-bcover", ".cx-rings", ".cx-wok"];
 const islandSel = (sel) => ISLANDS.some((x) => sel.includes(x));
 const SHADOW = /^(box-shadow|text-shadow|filter|-webkit-filter|backdrop-filter|-webkit-backdrop-filter|mask|-webkit-mask)/;
 

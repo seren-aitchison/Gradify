@@ -1,0 +1,64 @@
+{
+ "id": "chem-alkanes-series",
+ "renderer": "structures",
+ "course": "chemistry",
+ "unit": "u12",
+ "lesson": "Alkanes",
+ "title": "The first four alkanes",
+ "caption": "Each alkane has one more CH₂ than the last, and every one fits CₙH₂ₙ₊₂. Methane to butane are gases at room temperature; boiling points rise with chain length.",
+ "alt": "Displayed formulae of methane, ethane, propane and butane with their molecular formulae.",
+ "description": [
+  "Methane, CH₄: one carbon with four hydrogens.",
+  "Ethane, C₂H₆.",
+  "Propane, C₃H₈.",
+  "Butane, C₄H₁₀."
+ ],
+ "perRow": [
+  4,
+  2
+ ],
+ "bond": [
+  30,
+  28
+ ],
+ "panels": [
+  {
+   "smiles": "C",
+   "label": "methane",
+   "displayed": true,
+   "sub": "CH₄",
+   "formula": "CH4"
+  },
+  {
+   "smiles": "CC",
+   "label": "ethane",
+   "displayed": true,
+   "sub": "C₂H₆",
+   "formula": "C2H6"
+  },
+  {
+   "smiles": "CCC",
+   "label": "propane",
+   "displayed": true,
+   "sub": "C₃H₈",
+   "formula": "C3H8"
+  },
+  {
+   "smiles": "CCCC",
+   "label": "butane",
+   "displayed": true,
+   "sub": "C₄H₁₀",
+   "formula": "C4H10"
+  }
+ ],
+ "claims": [
+  {
+   "type": "series"
+  },
+  {
+   "type": "general",
+   "formula": "CₙH₂ₙ₊₂",
+   "hOffset": 2
+  }
+ ]
+}
