@@ -1,0 +1,71 @@
+{
+ "id": "bio-u01-levels-of-organisation",
+ "renderer": "bio-levels",
+ "course": "biology",
+ "unit": "u01",
+ "lesson": "Levels of biological organisation",
+ "title": "Levels of biological organisation",
+ "caption": "Each level is built from the one above it in this list and has properties the parts alone lack: a heart muscle cell contracts, but only the organised organ pumps blood.",
+ "alt": "A ladder of levels from atom to biosphere, each with an example, with an arrow from simplest to most inclusive.",
+ "description": [
+  "Twelve levels are listed from top to bottom, with an arrow down the left from simplest to most inclusive.",
+  "Atom (carbon, oxygen), molecule (haemoglobin, DNA), organelle (a mitochondrion) and cell (a heart muscle cell).",
+  "Tissue (muscle tissue), organ (the heart), organ system (the circulatory system) and organism (an individual living thing).",
+  "Population (individuals of one species in an area), community (all the populations in an area), ecosystem (a community plus its non-living environment) and biosphere (all ecosystems on Earth)."
+ ],
+ "scale": "organisation",
+ "ends": [
+  "simplest",
+  "most inclusive"
+ ],
+ "levels": [
+  {
+   "name": "Atom",
+   "example": "carbon, hydrogen, oxygen, nitrogen"
+  },
+  {
+   "name": "Molecule",
+   "example": "proteins such as haemoglobin; DNA"
+  },
+  {
+   "name": "Organelle",
+   "example": "a mitochondrion"
+  },
+  {
+   "name": "Cell",
+   "example": "a heart muscle cell"
+  },
+  {
+   "name": "Tissue",
+   "example": "muscle tissue"
+  },
+  {
+   "name": "Organ",
+   "example": "the heart"
+  },
+  {
+   "name": "Organ system",
+   "example": "the circulatory system"
+  },
+  {
+   "name": "Organism",
+   "example": "an individual living thing"
+  },
+  {
+   "name": "Population",
+   "example": "individuals of one species in an area"
+  },
+  {
+   "name": "Community",
+   "example": "all the populations in an area"
+  },
+  {
+   "name": "Ecosystem",
+   "example": "a community plus its non-living environment"
+  },
+  {
+   "name": "Biosphere",
+   "example": "all ecosystems on Earth"
+  }
+ ]
+}

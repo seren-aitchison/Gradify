@@ -24709,5 +24709,487 @@
     "detail": "660px wide, shown at 107% (labels 16.1px)"
    }
   ]
+ },
+ "bio-u01-accuracy-precision": {
+  "title": "Accuracy and precision in repeated measurements",
+  "caption": "Set A is accurate and precise. Set B is precise but not accurate: a systematic error shifts every reading. Set C is accurate on average but imprecise: random error spreads the readings.",
+  "alt": "Three sets of five readings, labelled A, B and C, plotted against a dashed true-value line at 42: A tightly clustered on the line, B tightly clustered above it, C spread widely around it.",
+  "description": [
+   "The vertical axis is the measured value; a dashed line marks the true value, 42.",
+   "Set A: five readings between 41.8 and 42.2, close together and centred on the true value: accurate and precise.",
+   "Set B: five readings between 44.8 and 45.2, close together but all about 3 too high: precise, not accurate (a systematic error).",
+   "Set C: readings from 39 to 45 whose mean is 42: accurate on average but imprecise (random error)."
+  ],
+  "course": "biology",
+  "lesson": "Accuracy and precision",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u01.js: Accuracy and precision"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "set A is accurate and precise (mean within 0.5 of 42, standard deviation under 0.5)",
+    "ok": true,
+    "detail": "mean 42.000, standard deviation 0.158"
+   },
+   {
+    "name": "set B is precise but not accurate",
+    "ok": true,
+    "detail": "mean 45.000, standard deviation 0.158"
+   },
+   {
+    "name": "set C is accurate on average but not precise",
+    "ok": true,
+    "detail": "mean 42.000, standard deviation 2.449"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "bio-u01-levels-of-organisation": {
+  "title": "Levels of biological organisation",
+  "caption": "Each level is built from the one above it in this list and has properties the parts alone lack: a heart muscle cell contracts, but only the organised organ pumps blood.",
+  "alt": "A ladder of levels from atom to biosphere, each with an example, with an arrow from simplest to most inclusive.",
+  "description": [
+   "Twelve levels are listed from top to bottom, with an arrow down the left from simplest to most inclusive.",
+   "Atom (carbon, oxygen), molecule (haemoglobin, DNA), organelle (a mitochondrion) and cell (a heart muscle cell).",
+   "Tissue (muscle tissue), organ (the heart), organ system (the circulatory system) and organism (an individual living thing).",
+   "Population (individuals of one species in an area), community (all the populations in an area), ecosystem (a community plus its non-living environment) and biosphere (all ecosystems on Earth)."
+  ],
+  "course": "biology",
+  "lesson": "Levels of biological organisation",
+  "also": [],
+  "renderer": "bio-levels",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u01.js: Levels of biological organisation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every level is a organisation level",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "levels in the correct organisation order",
+    "ok": true,
+    "detail": "Atom → Molecule → Organelle → Cell → Tissue → Organ → Organ system → Organism → Population → Community → Ecosystem → Biosphere"
+   },
+   {
+    "name": "every level is named in the lesson",
+    "ok": true,
+    "detail": "12 named"
+   },
+   {
+    "name": "every label inside the picture, wide (680px)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "no two labels overprint, wide (680px)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every label inside the picture, narrow (380px)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "no two labels overprint, narrow (380px)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "bio-u01-normal-distribution": {
+  "title": "The normal distribution",
+  "caption": "About 68% of values lie within one standard deviation of the mean and about 95% within two, which is why the standard deviation is a useful measure of spread.",
+  "alt": "A bell-shaped curve centred on the mean, with the region within one standard deviation shaded darker and within two standard deviations shaded lighter.",
+  "description": [
+   "The horizontal axis is the distance from the mean in standard deviations, from −3 to +3. The curve is bell-shaped and symmetrical about the mean.",
+   "The darker band between −1 and +1 standard deviations holds about 68% of the values.",
+   "The lighter band out to −2 and +2 standard deviations brings the total to about 95%."
+  ],
+  "course": "biology",
+  "lesson": "Statistical foundations",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u01.js: Statistical foundations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "68% of values lie within one standard deviation of the mean",
+    "ok": true,
+    "detail": "area 0.6827"
+   },
+   {
+    "name": "95% of values lie within two standard deviations",
+    "ok": true,
+    "detail": "area 0.9545"
+   },
+   {
+    "name": "the curve is a normalised distribution (area 1)",
+    "ok": true,
+    "detail": "area 1.0000"
+   },
+   {
+    "name": "the peak is at the mean",
+    "ok": true,
+    "detail": "found (0, 0.399)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "bio-u01-scales": {
+  "title": "The sizes of biological objects",
+  "caption": "Each step on the scale is ten times the last. Light microscopes resolve down to about 0.2 µm, enough for cells and bacteria; viruses and proteins need an electron microscope.",
+  "alt": "A logarithmic size scale from 1 nanometre to 100 micrometres with bars for proteins, viruses, the light microscope limit, bacteria and eukaryotic cells.",
+  "description": [
+   "A logarithmic scale runs from 1 nm to 100 µm; each tick is ten times the one before.",
+   "Proteins are about 2–10 nm across and viruses 20–300 nm.",
+   "The light microscope's resolution, about 0.2 µm, falls between viruses and bacteria, which are about 1–5 µm.",
+   "Eukaryotic cells are about 10–100 µm.",
+   "Worked example from the lesson: an image 15 mm long at ×10,000 is 15,000 µm ÷ 10,000 = 1.5 µm long."
+  ],
+  "course": "biology",
+  "lesson": "Biological measurements",
+  "also": [],
+  "renderer": "bio-scale",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u01.js: Biological measurements"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every item has a vetted size range",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every size lies inside its vetted range (units converted)",
+    "ok": true,
+    "detail": "5 sizes"
+   },
+   {
+    "name": "magnification = image size ÷ actual size",
+    "ok": true,
+    "detail": "10000.0"
+   },
+   {
+    "name": "every item is named in the lesson",
+    "ok": true,
+    "detail": "5 named"
+   },
+   {
+    "name": "every label inside the picture, wide (720px)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "no two labels overprint, wide (720px)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every label inside the picture, narrow (380px)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "no two labels overprint, narrow (380px)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "720px wide, shown at 98% (labels 14.7px)"
+   }
+  ]
+ },
+ "bio-u01-scientific-method": {
+  "title": "The scientific method as a cycle",
+  "caption": "Results usually raise new questions, so the method loops back on itself rather than ending at a conclusion.",
+  "alt": "Six stages in a loop: observation, question and hypothesis, prediction, experiment, analysis and conclusion, communication and peer review, back to observation.",
+  "description": [
+   "Six stages are joined by arrows in a loop.",
+   "Observation leads to a question and a testable hypothesis, then a prediction of what should happen if the hypothesis is right.",
+   "An experiment or observation collects data under controlled conditions; analysis decides whether the data support or refute the hypothesis.",
+   "Communication and peer review let other scientists scrutinise and repeat the work, which leads to new observations and the cycle begins again."
+  ],
+  "course": "biology",
+  "lesson": "Scientific method",
+  "also": [],
+  "renderer": "bio-pathway",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u01.js: Scientific method"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every step is named in the lesson",
+    "ok": true,
+    "detail": "6 named"
+   },
+   {
+    "name": "every label inside the picture, wide (760px)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "no two labels overprint, wide (760px)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every label inside the picture, narrow (380px)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "no two labels overprint, narrow (380px)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "760px wide, shown at 93% (labels 14.0px)"
+   }
+  ]
+ },
+ "bio-u01-taxonomic-ranks": {
+  "title": "The taxonomic ranks, with the classification of humans",
+  "caption": "Each rank sits inside the one above it: many species share a genus, many genera a family, up to the three domains. Humans are one species in each of the nested groups.",
+  "alt": "The eight taxonomic ranks from domain to species, each with the human group at that rank, from Eukarya to Homo sapiens.",
+  "description": [
+   "The ranks are listed from broadest at the top to narrowest at the bottom: domain, kingdom, phylum, class, order, family, genus, species.",
+   "Beside each rank is the group humans belong to: domain Eukarya, kingdom Animalia, phylum Chordata, class Mammalia.",
+   "Then order Primates, family Hominidae, genus Homo and species Homo sapiens. The two-part species name is the genus plus the specific epithet."
+  ],
+  "course": "biology",
+  "lesson": "Classification and taxonomy",
+  "also": [],
+  "renderer": "bio-levels",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u01.js: Classification and taxonomy"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every level is a taxonomy level",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "levels in the correct taxonomy order",
+    "ok": true,
+    "detail": "Domain → Kingdom → Phylum → Class → Order → Family → Genus → Species"
+   },
+   {
+    "name": "no level skipped",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every level is named in the lesson",
+    "ok": true,
+    "detail": "8 named"
+   },
+   {
+    "name": "every label inside the picture, wide (680px)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "no two labels overprint, wide (680px)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every label inside the picture, narrow (380px)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "no two labels overprint, narrow (380px)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "bio-u01-three-domains": {
+  "title": "The three domains of life",
+  "caption": "Ribosomal RNA sequences split life into three deep groups. Archaea look like bacteria (no nucleus) but share a more recent common ancestor with eukaryotes.",
+  "alt": "A tree with the root splitting into Bacteria and a branch that splits into Archaea and Eukarya.",
+  "description": [
+   "The tree starts from a single root at the left: the common ancestor of all life.",
+   "The first split separates Bacteria from a lineage that later splits again into Archaea and Eukarya.",
+   "So Archaea and Eukarya are each other's closest relatives, even though archaea, like bacteria, have no nucleus."
+  ],
+  "course": "biology",
+  "lesson": "The three domains of life",
+  "also": [],
+  "renderer": "bio-phylo",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u01.js: The three domains of life"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every leaf appears once",
+    "ok": true,
+    "detail": "Bacteria, Archaea, Eukarya"
+   },
+   {
+    "name": "every branching node has at least two descendants",
+    "ok": true,
+    "detail": "a node with one child"
+   },
+   {
+    "name": "Archaea, Eukarya form a clade (a common ancestor and all its descendants)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Archaea and Eukarya share a more recent common ancestor than Archaea and Bacteria",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Eukarya and Archaea share a more recent common ancestor than Eukarya and Bacteria",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every group in the tree is named in the lesson",
+    "ok": true,
+    "detail": "3 named"
+   },
+   {
+    "name": "every label inside the picture, wide (640px)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "no two labels overprint, wide (640px)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every label inside the picture, narrow (380px)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "no two labels overprint, narrow (380px)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
  }
 }

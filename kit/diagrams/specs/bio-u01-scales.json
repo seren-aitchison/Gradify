@@ -1,0 +1,68 @@
+{
+ "id": "bio-u01-scales",
+ "renderer": "bio-scale",
+ "course": "biology",
+ "unit": "u01",
+ "lesson": "Biological measurements",
+ "title": "The sizes of biological objects",
+ "caption": "Each step on the scale is ten times the last. Light microscopes resolve down to about 0.2 µm, enough for cells and bacteria; viruses and proteins need an electron microscope.",
+ "alt": "A logarithmic size scale from 1 nanometre to 100 micrometres with bars for proteins, viruses, the light microscope limit, bacteria and eukaryotic cells.",
+ "description": [
+  "A logarithmic scale runs from 1 nm to 100 µm; each tick is ten times the one before.",
+  "Proteins are about 2–10 nm across and viruses 20–300 nm.",
+  "The light microscope's resolution, about 0.2 µm, falls between viruses and bacteria, which are about 1–5 µm.",
+  "Eukaryotic cells are about 10–100 µm.",
+  "Worked example from the lesson: an image 15 mm long at ×10,000 is 15,000 µm ÷ 10,000 = 1.5 µm long."
+ ],
+ "items": [
+  {
+   "name": "protein",
+   "from": 2,
+   "to": 10,
+   "unit": "nm"
+  },
+  {
+   "name": "virus",
+   "from": 20,
+   "to": 300,
+   "unit": "nm",
+   "aka": [
+    "viruses"
+   ]
+  },
+  {
+   "name": "light microscope resolution",
+   "size": 0.2,
+   "unit": "µm",
+   "aka": [
+    "light microscopes resolve"
+   ]
+  },
+  {
+   "name": "bacterium",
+   "from": 1,
+   "to": 5,
+   "unit": "µm",
+   "aka": [
+    "bacteria"
+   ]
+  },
+  {
+   "name": "eukaryotic cell",
+   "from": 10,
+   "to": 100,
+   "unit": "µm"
+  }
+ ],
+ "magnification": {
+  "image": [
+   15,
+   "mm"
+  ],
+  "actual": [
+   1.5,
+   "µm"
+  ],
+  "M": 10000
+ }
+}

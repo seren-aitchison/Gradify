@@ -1,0 +1,46 @@
+{
+ "id": "bio-u01-three-domains",
+ "renderer": "bio-phylo",
+ "course": "biology",
+ "unit": "u01",
+ "lesson": "The three domains of life",
+ "title": "The three domains of life",
+ "caption": "Ribosomal RNA sequences split life into three deep groups. Archaea look like bacteria (no nucleus) but share a more recent common ancestor with eukaryotes.",
+ "alt": "A tree with the root splitting into Bacteria and a branch that splits into Archaea and Eukarya.",
+ "description": [
+  "The tree starts from a single root at the left: the common ancestor of all life.",
+  "The first split separates Bacteria from a lineage that later splits again into Archaea and Eukarya.",
+  "So Archaea and Eukarya are each other's closest relatives, even though archaea, like bacteria, have no nucleus."
+ ],
+ "tree": [
+  "Bacteria",
+  [
+   "Archaea",
+   "Eukarya"
+  ]
+ ],
+ "clades": [
+  [
+   "Archaea",
+   "Eukarya"
+  ]
+ ],
+ "closer": [
+  [
+   "Archaea",
+   "Eukarya",
+   "Bacteria"
+  ],
+  [
+   "Eukarya",
+   "Archaea",
+   "Bacteria"
+  ]
+ ],
+ "root": "common ancestor",
+ "highlight": {
+  "Bacteria": "a1",
+  "Archaea": "a3",
+  "Eukarya": "a4"
+ }
+}

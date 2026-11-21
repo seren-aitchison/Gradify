@@ -1,0 +1,38 @@
+{
+ "id": "bio-u01-scientific-method",
+ "renderer": "bio-pathway",
+ "course": "biology",
+ "unit": "u01",
+ "lesson": "Scientific method",
+ "title": "The scientific method as a cycle",
+ "caption": "Results usually raise new questions, so the method loops back on itself rather than ending at a conclusion.",
+ "alt": "Six stages in a loop: observation, question and hypothesis, prediction, experiment, analysis and conclusion, communication and peer review, back to observation.",
+ "description": [
+  "Six stages are joined by arrows in a loop.",
+  "Observation leads to a question and a testable hypothesis, then a prediction of what should happen if the hypothesis is right.",
+  "An experiment or observation collects data under controlled conditions; analysis decides whether the data support or refute the hypothesis.",
+  "Communication and peer review let other scientists scrutinise and repeat the work, which leads to new observations and the cycle begins again."
+ ],
+ "kind": "cycle",
+ "radius": 160,
+ "steps": [
+  {
+   "name": "Observation"
+  },
+  {
+   "name": "Question and hypothesis"
+  },
+  {
+   "name": "Prediction"
+  },
+  {
+   "name": "Experiment"
+  },
+  {
+   "name": "Analysis and conclusion"
+  },
+  {
+   "name": "Communication and peer review"
+  }
+ ]
+}

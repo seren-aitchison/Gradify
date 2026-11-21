@@ -309,6 +309,7 @@ function foot(p, spec, y, W, narrow) {
     lines.forEach((s, i) => p.t(16, y + i * 19, s, { size: 13, weight: 700, anchor: "start" }));
     y += lines.length * 19;
   }
+  if (!spec.steps.some((s) => sideLines(s).length)) return p.done(y);
   p.t(16, y + 4, narrow ? "+ taken in, → given out" : "+ taken in, → given out at each step", { size: 11.5, anchor: "start", fill: C.soft, italic: true });
   return p.done(y + 18);
 }

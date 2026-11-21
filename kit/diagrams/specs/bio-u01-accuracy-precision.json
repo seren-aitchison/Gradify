@@ -1,0 +1,208 @@
+{
+ "id": "bio-u01-accuracy-precision",
+ "renderer": "graph",
+ "course": "biology",
+ "unit": "u01",
+ "lesson": "Accuracy and precision",
+ "title": "Accuracy and precision in repeated measurements",
+ "caption": "Set A is accurate and precise. Set B is precise but not accurate: a systematic error shifts every reading. Set C is accurate on average but imprecise: random error spreads the readings.",
+ "alt": "Three sets of five readings, labelled A, B and C, plotted against a dashed true-value line at 42: A tightly clustered on the line, B tightly clustered above it, C spread widely around it.",
+ "description": [
+  "The vertical axis is the measured value; a dashed line marks the true value, 42.",
+  "Set A: five readings between 41.8 and 42.2, close together and centred on the true value: accurate and precise.",
+  "Set B: five readings between 44.8 and 45.2, close together but all about 3 too high: precise, not accurate (a systematic error).",
+  "Set C: readings from 39 to 45 whose mean is 42: accurate on average but imprecise (random error)."
+ ],
+ "range": {
+  "x": [
+   0,
+   3.6
+  ],
+  "y": [
+   37,
+   47
+  ]
+ },
+ "ticks": [
+  [],
+  [
+   38,
+   40,
+   42,
+   44,
+   46
+  ]
+ ],
+ "grid": [
+  10,
+  2
+ ],
+ "height": [
+  380,
+  340
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "three sets of five repeat readings",
+  "measured value"
+ ],
+ "marks": [
+  {
+   "y": 42,
+   "label": "true value"
+  }
+ ],
+ "bands": [
+  {
+   "x": [
+    0.3,
+    1.08
+   ],
+   "label": "A",
+   "colour": "a4"
+  },
+  {
+   "x": [
+    1.45,
+    2.23
+   ],
+   "label": "B",
+   "colour": "a2"
+  },
+  {
+   "x": [
+    2.6,
+    3.38
+   ],
+   "label": "C",
+   "colour": "a1"
+  }
+ ],
+ "points": [
+  {
+   "x": 0.45,
+   "y": 41.8,
+   "colour": "a4"
+  },
+  {
+   "x": 0.5700000000000001,
+   "y": 42.1,
+   "colour": "a4"
+  },
+  {
+   "x": 0.69,
+   "y": 42,
+   "colour": "a4"
+  },
+  {
+   "x": 0.81,
+   "y": 41.9,
+   "colour": "a4"
+  },
+  {
+   "x": 0.9299999999999999,
+   "y": 42.2,
+   "colour": "a4"
+  },
+  {
+   "x": 1.6,
+   "y": 45,
+   "colour": "a2"
+  },
+  {
+   "x": 1.7200000000000002,
+   "y": 45.2,
+   "colour": "a2"
+  },
+  {
+   "x": 1.84,
+   "y": 44.9,
+   "colour": "a2"
+  },
+  {
+   "x": 1.96,
+   "y": 45.1,
+   "colour": "a2"
+  },
+  {
+   "x": 2.08,
+   "y": 44.8,
+   "colour": "a2"
+  },
+  {
+   "x": 2.75,
+   "y": 39,
+   "colour": "a1"
+  },
+  {
+   "x": 2.87,
+   "y": 45,
+   "colour": "a1"
+  },
+  {
+   "x": 2.99,
+   "y": 41,
+   "colour": "a1"
+  },
+  {
+   "x": 3.11,
+   "y": 44,
+   "colour": "a1"
+  },
+  {
+   "x": 3.23,
+   "y": 41,
+   "colour": "a1"
+  }
+ ],
+ "checks": [
+  {
+   "type": "stats",
+   "values": [
+    41.8,
+    42.1,
+    42,
+    41.9,
+    42.2
+   ],
+   "truth": 42,
+   "tolMean": 0.5,
+   "tolSd": 0.5,
+   "accurate": true,
+   "precise": true,
+   "name": "set A is accurate and precise (mean within 0.5 of 42, standard deviation under 0.5)"
+  },
+  {
+   "type": "stats",
+   "values": [
+    45,
+    45.2,
+    44.9,
+    45.1,
+    44.8
+   ],
+   "truth": 42,
+   "tolMean": 0.5,
+   "tolSd": 0.5,
+   "accurate": false,
+   "precise": true,
+   "name": "set B is precise but not accurate"
+  },
+  {
+   "type": "stats",
+   "values": [
+    39,
+    45,
+    41,
+    44,
+    41
+   ],
+   "truth": 42,
+   "tolMean": 0.5,
+   "tolSd": 0.5,
+   "accurate": true,
+   "precise": false,
+   "name": "set C is accurate on average but not precise"
+  }
+ ]
+}

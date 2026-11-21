@@ -324,7 +324,7 @@ function mrcaDepth(t, a, b, d = 0) { if (!Array.isArray(t)) return -1; for (cons
 const depth = (t) => (Array.isArray(t) ? 1 + Math.max(...t.map(depth)) : 0);
 function phylo(spec, W, narrow) {
   const p = new Pic(W), L = leaves(spec.tree), row = narrow ? 30 : 34, size = narrow ? 13 : 14, D = depth(spec.tree);
-  const lw = Math.max(...L.map((l) => textWidth(l, size, 600))), x0 = 30, xl = W - 16 - lw - 10, top = 24;
+  const lw = Math.max(...L.map((l) => textWidth(l, size, 600))), x0 = 30 + (spec.root ? textWidth(spec.root, 12, 600) + 10 : 0), xl = W - 16 - lw - 10, top = 24;
   let k = 0; const step = (xl - x0) / D;
   const draw = (t, d) => {
     if (!Array.isArray(t)) { const y = top + k++ * row; p.t(xl + 8, y, t, { size, weight: 600, anchor: "start", fill: col(spec.highlight?.[t] || "ink") }); return { y, x: xl }; }
@@ -335,8 +335,8 @@ function phylo(spec, W, narrow) {
   };
   const r = draw(spec.tree, 0);
   p.add(line(x0 - 18, r.y, x0, r.y, { stroke: C.ink, w: 2.2 }) + dot(x0, r.y, 4.5, "a2"));
-  if (spec.root) p.t(x0 - 18, r.y + 18, spec.root, { size: 12, weight: 600, anchor: "start", fill: C.soft });
-  const H = top + (L.length - 1) * row + (spec.root ? 40 : 24);
+  if (spec.root) p.t(x0 - 24, r.y, spec.root, { size: 12, weight: 600, anchor: "end", fill: C.soft });
+  const H = top + (L.length - 1) * row + 24;
   if (spec.axis) p.t(W / 2, H + 4, spec.axis, { size: 12, fill: C.soft, italic: true });
   return p.done(H + (spec.axis ? 18 : 0));
 }

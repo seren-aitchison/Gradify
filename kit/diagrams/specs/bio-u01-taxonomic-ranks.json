@@ -1,0 +1,55 @@
+{
+ "id": "bio-u01-taxonomic-ranks",
+ "renderer": "bio-levels",
+ "course": "biology",
+ "unit": "u01",
+ "lesson": "Classification and taxonomy",
+ "title": "The taxonomic ranks, with the classification of humans",
+ "caption": "Each rank sits inside the one above it: many species share a genus, many genera a family, up to the three domains. Humans are one species in each of the nested groups.",
+ "alt": "The eight taxonomic ranks from domain to species, each with the human group at that rank, from Eukarya to Homo sapiens.",
+ "description": [
+  "The ranks are listed from broadest at the top to narrowest at the bottom: domain, kingdom, phylum, class, order, family, genus, species.",
+  "Beside each rank is the group humans belong to: domain Eukarya, kingdom Animalia, phylum Chordata, class Mammalia.",
+  "Then order Primates, family Hominidae, genus Homo and species Homo sapiens. The two-part species name is the genus plus the specific epithet."
+ ],
+ "scale": "taxonomy",
+ "complete": true,
+ "ends": [
+  "broadest",
+  "narrowest"
+ ],
+ "levels": [
+  {
+   "name": "Domain",
+   "example": "Eukarya"
+  },
+  {
+   "name": "Kingdom",
+   "example": "Animalia"
+  },
+  {
+   "name": "Phylum",
+   "example": "Chordata"
+  },
+  {
+   "name": "Class",
+   "example": "Mammalia"
+  },
+  {
+   "name": "Order",
+   "example": "Primates"
+  },
+  {
+   "name": "Family",
+   "example": "Hominidae"
+  },
+  {
+   "name": "Genus",
+   "example": "Homo"
+  },
+  {
+   "name": "Species",
+   "example": "Homo sapiens"
+  }
+ ]
+}

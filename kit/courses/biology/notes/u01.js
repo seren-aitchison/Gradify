@@ -89,6 +89,7 @@ H: The hierarchy
 - **Communities**: all the populations in an area.
 - **Ecosystems**: a community plus its non-living environment.
 - **The biosphere**: all ecosystems on Earth.
+D: bio-u01-levels-of-organisation
 H: Emergent properties
 P: New properties emerge as parts are combined. A single heart muscle cell contracts, but only the organised tissue of the heart pumps blood; a single neurone fires, but thought emerges from networks of billions. Studying parts alone (reductionism) can't explain everything, so biologists also study whole systems.
 X: Trace oxygen transport through the levels of organisation.
@@ -156,6 +157,7 @@ O: Explain why modern classification is based on evolutionary relationships
 PRE: Characteristics of living organisms
 H: The hierarchy of ranks
 P: The ranks, from broadest to narrowest, are domain, kingdom, phylum, class, order, family, genus and species. Humans are domain Eukarya, kingdom Animalia, phylum Chordata, class Mammalia, order Primates, family Hominidae, genus *Homo*, species *Homo sapiens*.
+D: bio-u01-taxonomic-ranks
 H: Binomial nomenclature
 P: Carl Linnaeus (1707–1778) introduced two-part Latin names: the genus (capitalised) and the specific epithet (lower case), written in italics, or underlined when handwritten. Names are governed by international codes so that every species has one valid scientific name, avoiding confusion between common names (a "robin" is a different bird in Britain and North America).
 H: Classification and evolution
@@ -189,6 +191,7 @@ H: The three domains
 - **Bacteria**: prokaryotes with cell walls of peptidoglycan; include *Escherichia coli*, cyanobacteria and many pathogens.
 - **Archaea**: prokaryotes with no peptidoglycan, unusual membrane lipids (ether-linked) and many features shared with eukaryotes in how they copy and read DNA; many live in extreme environments, but they are also common in soils, oceans and the human gut.
 - **Eukarya**: organisms whose cells have a nucleus and membrane-bound organelles: animals, plants, fungi and protists.
+D: bio-u01-three-domains
 H: The evidence
 P: Woese compared the sequence of the small-subunit ribosomal RNA (16S in prokaryotes, 18S in eukaryotes), a molecule present in every cell that changes slowly. The sequences fell into three deep groups. Archaea, though prokaryotic in structure, are in some ways closer to eukaryotes: their RNA polymerase and some histone-like proteins resemble those of eukaryotes.
 H: Ongoing debate
@@ -259,6 +262,7 @@ H: The cycle
 - **Experiment or observation**: collecting data under controlled conditions.
 - **Analysis and conclusion**: do the data support or refute the hypothesis?
 - **Communication and peer review**: other scientists scrutinise and try to repeat the work.
+D: bio-u01-scientific-method
 P: Results often raise new questions, so the process is a cycle rather than a straight line. Real research also involves creativity, chance discoveries and revision.
 H: Hypotheses, theories and laws
 P: A hypothesis is a tentative explanation that can be tested. A scientific theory is a broad, well-tested explanation supported by many lines of evidence, such as cell theory or the theory of evolution. In science "theory" doesn't mean a guess. Laws describe patterns (often mathematically) without necessarily explaining them.
@@ -406,6 +410,7 @@ H: Definitions
 - **Precision**: closeness of repeated measurements to each other (low spread).
 - **Resolution**: the smallest change an instrument can show (a ruler marked in mm has a resolution of 1 mm).
 P: Picture darts: a tight cluster away from the bullseye is precise but not accurate; darts spread evenly around the bullseye are accurate on average but imprecise.
+D: bio-u01-accuracy-precision
 H: Errors
 - **Random errors** vary unpredictably from one measurement to the next (reaction time with a stopwatch, small fluctuations in temperature). They reduce precision and are reduced by taking more repeats and calculating a mean.
 - **Systematic errors** shift every measurement in the same direction (a balance that reads 0.5 g too high, parallax from always reading a scale from above). They reduce accuracy and are not reduced by repeating; they must be found and corrected, for example by calibration.
@@ -478,6 +483,7 @@ H: Scales in biology
 - Viruses: 20–300 nm. Bacteria: about 1–5 micrometres (µm).
 - Eukaryotic cells: about 10–100 µm. Organisms: millimetres to metres.
 P: Light microscopes resolve detail down to about 0.2 µm; electron microscopes resolve down to about 0.1–1 nm in practice for biological samples.
+D: bio-u01-scales
 H: Magnification
 E: magnification = image size / actual size
 P: Use the same units for both sizes before dividing. Rearranging: actual size = image size ÷ magnification.
@@ -623,6 +629,7 @@ H: Averages and spread
 E: s = √( Σ(x − x̄)² / (n − 1) ) :: sample standard deviation
 H: The normal distribution
 P: Many continuous biological variables (heights, leaf lengths) follow a roughly bell-shaped normal distribution. About 68% of values lie within one standard deviation of the mean and about 95% within two.
+D: bio-u01-normal-distribution
 H: Choosing a test
 - **Student's t-test**: compare the means of two groups of normally distributed data.
 - **Chi-squared test**: compare observed counts in categories with expected counts (for example genetic ratios).

@@ -1,0 +1,150 @@
+{
+ "id": "bio-u01-normal-distribution",
+ "renderer": "graph",
+ "course": "biology",
+ "unit": "u01",
+ "lesson": "Statistical foundations",
+ "title": "The normal distribution",
+ "caption": "About 68% of values lie within one standard deviation of the mean and about 95% within two, which is why the standard deviation is a useful measure of spread.",
+ "alt": "A bell-shaped curve centred on the mean, with the region within one standard deviation shaded darker and within two standard deviations shaded lighter.",
+ "description": [
+  "The horizontal axis is the distance from the mean in standard deviations, from −3 to +3. The curve is bell-shaped and symmetrical about the mean.",
+  "The darker band between −1 and +1 standard deviations holds about 68% of the values.",
+  "The lighter band out to −2 and +2 standard deviations brings the total to about 95%."
+ ],
+ "range": {
+  "x": [
+   -3.5,
+   3.5
+  ],
+  "y": [
+   0,
+   0.48
+  ]
+ },
+ "ticks": [
+  [
+   -3,
+   -2,
+   -1,
+   0,
+   1,
+   2,
+   3
+  ],
+  []
+ ],
+ "grid": [
+  1,
+  1
+ ],
+ "height": [
+  340,
+  300
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "standard deviations from the mean",
+  "frequency"
+ ],
+ "areas": [
+  {
+   "expr": "exp(-x^2/2)/sqrt(2*3.14159265)",
+   "from": -2,
+   "to": 2,
+   "colour": "a1",
+   "opacity": 0.14
+  },
+  {
+   "expr": "exp(-x^2/2)/sqrt(2*3.14159265)",
+   "from": -1,
+   "to": 1,
+   "colour": "a1",
+   "opacity": 0.28
+  }
+ ],
+ "curves": [
+  {
+   "expr": "exp(-x^2/2)/sqrt(2*3.14159265)",
+   "colour": "a1"
+  }
+ ],
+ "arrows": [
+  {
+   "from": [
+    -1,
+    0.3
+   ],
+   "to": [
+    1,
+    0.3
+   ],
+   "both": true,
+   "colour": "ink",
+   "label": "about 68%",
+   "labelAt": [
+    0,
+    0.33
+   ],
+   "anchor": "middle"
+  },
+  {
+   "from": [
+    -2,
+    0.08
+   ],
+   "to": [
+    2,
+    0.08
+   ],
+   "both": true,
+   "colour": "soft",
+   "label": "about 95%",
+   "labelAt": [
+    0,
+    0.11
+   ],
+   "anchor": "middle"
+  }
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "expr": "exp(-x^2/2)/sqrt(2*3.14159265)",
+   "from": -1,
+   "to": 1,
+   "value": 0.6827,
+   "tol": 0.002,
+   "name": "68% of values lie within one standard deviation of the mean"
+  },
+  {
+   "type": "area",
+   "expr": "exp(-x^2/2)/sqrt(2*3.14159265)",
+   "from": -2,
+   "to": 2,
+   "value": 0.9545,
+   "tol": 0.002,
+   "name": "95% of values lie within two standard deviations"
+  },
+  {
+   "type": "area",
+   "expr": "exp(-x^2/2)/sqrt(2*3.14159265)",
+   "from": -6,
+   "to": 6,
+   "value": 1,
+   "tol": 0.001,
+   "name": "the curve is a normalised distribution (area 1)"
+  },
+  {
+   "type": "max",
+   "expr": "exp(-x^2/2)/sqrt(2*3.14159265)",
+   "domain": [
+    -3,
+    3
+   ],
+   "x": 0,
+   "y": 0.398942,
+   "name": "the peak is at the mean"
+  }
+ ]
+}
