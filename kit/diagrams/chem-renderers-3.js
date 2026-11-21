@@ -365,10 +365,21 @@ function condenser(x1, y1, x2, y2, inlet, outlet) {
   s += tube(inlet.f, inlet.side, "in", "water in") + tube(outlet.f, outlet.side, "out", "water out");
   return { s, inY: pIn[1], outY: pOut[1] };
 }
+// how far the drawing's labels reach left and right of the 460-wide canvas, estimated from each <text>'s position,
+// anchor, size and length (labels such as 'expanded polystyrene cup' run past the glassware)
+function extent(svg) {
+  let lo = 0, hi = 460;
+  for (const m of svg.matchAll(/<text x="([-\d.]+)"[^>]*?font-size="([\d.]+)"[^>]*?text-anchor="(\w+)"[^>]*>(.*?)<\/text>/g)) {
+    const x = +m[1], w = m[4].replace(/<[^>]+>/g, "").replace(/&\w+;/g, "x").length * +m[2] * 0.55, a = m[3];
+    lo = Math.min(lo, a === "start" ? x : a === "end" ? x - w : x - w / 2); hi = Math.max(hi, a === "start" ? x + w : a === "end" ? x : x + w / 2);
+  }
+  return [lo - 4, hi + 4];
+}
 function apparatus(spec, W, narrow) {
-  const k = spec.kind, d = APP[k] ? APP[k](spec) : { s: text(230, 40, `no drawing for ${k}`), H: 80 };
-  const sc = narrow ? W / 470 : 1, dx = narrow ? 0 : (W - 460) / 2;
-  return { s: `<g transform="translate(${f1(dx)} 0) scale(${f1(sc)})">${d.s}</g>`, H: d.H * sc, geom: d.geom };
+  const k = spec.kind, d = APP[k] ? APP[k](spec, narrow) : { s: text(230, 40, `no drawing for ${k}`), H: 80 };
+  // fitted to the width with its labels, centred, never enlarged
+  const [lo, hi] = extent(d.s), sc = Math.min(1, W / (hi - lo)), dx = (W - (hi - lo) * sc) / 2 - lo * sc;
+  return { s: `<g transform="translate(${f1(dx)} 0) scale(${sc.toFixed(3)})">${d.s}</g>`, H: d.H * sc, geom: d.geom };
 }
 const APP = {
   reflux(spec) {
@@ -438,17 +449,19 @@ const APP = {
     s += `<path d="M206 368 h48 v40 h-48 Z" fill="${col(bands.at(-1).colour)}" fill-opacity=".35" stroke="${C.ink}" stroke-width="1.8"/>` + lab(262, 392, `first to elute: ${bands.at(-1).label}`);
     return { s, H: 420 };
   },
-  titration(spec) {
+  titration(spec, narrow) {
     let s = `<rect x="214" y="20" width="22" height="250" fill="#fff" stroke="${C.ink}" stroke-width="2"/>`;
     s += `<rect x="216" y="${20 + 250 * (spec.initial / 50)}" width="18" height="${250 - 250 * (spec.initial / 50)}" fill="#dbeafe" fill-opacity=".9"/>`;
     for (let v = 0; v <= 50; v += 5) s += line(236, 20 + v * 5, 244, 20 + v * 5, { w: 1 }) + (v % 10 ? "" : text(250, 20 + v * 5, String(v), { size: 10, anchor: "start", fill: C.soft }));
     s += `<path d="M219 270 h12 v10 h-12 Z" fill="#94a3b8" stroke="${C.ink}" stroke-width="1.4"/><path d="M222 280 v26 h6 v-26" fill="none" stroke="${C.ink}" stroke-width="1.6"/>`;
     s += `<path d="M205 320 h40 v20 l40 60 h-120 l40 -60 Z" fill="none" stroke="${C.ink}" stroke-width="2"/><path d="M178 375 l-13 25 h120 l-13 -25 Z" fill="${spec.colour || "#fbcfe8"}" fill-opacity=".9"/>`;
     s += lbl(214, 60, 120, 50, "burette: titrant", "end") + text(225, 420, `conical flask: ${spec.analyte || "analyte + indicator"}`, { size: 12.5, weight: 600, fill: C.ink });
-    s += lab(300, 120, `initial reading ${spec.initial.toFixed(2)} cm³`) + lab(300, 142, `final reading ${spec.final.toFixed(2)} cm³`) + lab(300, 168, `titre ${spec.titre.toFixed(2)} cm³`, { fill: col("a2") });
-    s += lab(300, 196, "read the bottom of the meniscus at eye level", { fill: C.soft });
+    // the readings beside the burette, or under the flask on a phone, where there is no room beside it
+    const [rx, ry] = narrow ? [40, 456] : [300, 120];
+    s += lab(rx, ry, `initial reading ${spec.initial.toFixed(2)} cm³`) + lab(rx, ry + 22, `final reading ${spec.final.toFixed(2)} cm³`) + lab(rx, ry + 48, `titre ${spec.titre.toFixed(2)} cm³`, { fill: col("a2") });
+    s += lab(rx, ry + 76, "read the bottom of the meniscus at eye level", { fill: C.soft });
     s += `<rect x="0" y="0" width="0" height="0"/>`;
-    return { s, H: 432 };
+    return { s, H: narrow ? ry + 92 : 432 };
   },
   filtration(spec) {
     let s = `<path d="M70 60 h120 l-50 70 v60 h-20 v-60 Z" fill="none" stroke="${C.ink}" stroke-width="2"/><path d="M80 66 h100 l-50 62 Z" fill="#f8fafc" stroke="${C.soft}" stroke-width="1.2"/><path d="M98 90 h64 l-32 38 Z" fill="${spec.residueColour || "#d6c7a1"}"/>`;
@@ -460,16 +473,18 @@ const APP = {
     s += line(395, 180, 440, 180, { w: 5, stroke: "#9fb4cc" }) + arrow(420, 165, 455, 165, { stroke: col("a1"), w: 2, head: 8 }) + lab(400, 155, "to vacuum", { fill: col("a1") }) + text(355, 40, "Büchner (suction)", { size: 12.5, weight: 700 });
     return { s, H: 330 };
   },
-  calorimeter(spec) {
+  calorimeter(spec, narrow) {
     let s = `<path d="M150 120 l12 200 h136 l12 -200" fill="#fff" stroke="${C.ink}" stroke-width="2"/><path d="M155 170 l7 150 h136 l7 -150 Z" fill="#dbeafe" fill-opacity=".8"/>`;
     s += `<rect x="140" y="104" width="180" height="16" rx="4" fill="#e2e8f0" stroke="${C.ink}" stroke-width="1.6"/>`;
     s += `<rect x="226" y="30" width="8" height="250" rx="3" fill="#fff" stroke="${C.ink}" stroke-width="1.6"/><circle cx="230" cy="284" r="6" fill="#ef4444" stroke="${C.ink}"/>`;
-    s += lbl(150, 220, 70, 220, "expanded polystyrene cup", "end") + lbl(140, 112, 70, 112, "lid", "end") + lbl(234, 60, 300, 50, "thermometer (±0.1 °C)");
-    s += lab(330, 150, spec.mixture || "acid + alkali");
+    s += lbl(150, 220, 70, 220, narrow ? "polystyrene cup" : "expanded polystyrene cup", "end") + lbl(140, 112, 70, 112, "lid", "end") + lbl(234, 60, 300, 50, "thermometer (±0.1 °C)");
+    // the mixture and the working beside the cup, or under it on a phone
+    const [cx, cy] = narrow ? [60, 356] : [330, 150];
+    s += lab(cx, cy, spec.mixture || "acid + alkali");
     const q = spec.mass * 4.18 * spec.dT;
-    s += lab(330, 190, `m = ${spec.mass} g, ΔT = ${spec.dT} °C`) + lab(330, 212, `q = mcΔT = ${spec.mass} × 4.18 × ${spec.dT}`) + lab(330, 234, `= ${Math.round(q)} J`, { fill: col("a2") });
-    if (spec.moles) s += lab(330, 262, `ΔH = −${(q / 1000).toFixed(2)} ÷ ${spec.moles}`) + lab(330, 284, `= −${(q / 1000 / spec.moles).toFixed(1)} kJ mol⁻¹`, { fill: col("a2") });
-    return { s, H: 340 };
+    s += lab(cx, cy + 40, `m = ${spec.mass} g, ΔT = ${spec.dT} °C`) + lab(cx, cy + 62, `q = mcΔT = ${spec.mass} × 4.18 × ${spec.dT}`) + lab(cx, cy + 84, `= ${Math.round(q)} J`, { fill: col("a2") });
+    if (spec.moles) s += lab(cx, cy + 112, `ΔH = −${(q / 1000).toFixed(2)} ÷ ${spec.moles}`) + lab(cx, cy + 134, `= −${(q / 1000 / spec.moles).toFixed(1)} kJ mol⁻¹`, { fill: col("a2") });
+    return { s, H: narrow ? cy + (spec.moles ? 150 : 100) : 340 };
   },
   fractionating(spec) {
     let s = `<path d="M180 30 h100 v300 l30 40 h-160 l30 -40 Z" fill="#f8fafc" stroke="${C.ink}" stroke-width="2"/>`;
