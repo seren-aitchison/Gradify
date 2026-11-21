@@ -159,6 +159,17 @@ def draw_mol(m, bond, opts=None):
     return inner, max(w, 40), max(h, 40), pos
 
 
+def wrap_words(s, n):
+    """Greedy word wrap to lines of at most n characters (a longer word gets a line to itself)."""
+    lines = []
+    for w in s.split():
+        if lines and len(lines[-1]) + 1 + len(w) <= n:
+            lines[-1] += " " + w
+        else:
+            lines.append(w)
+    return lines or [""]
+
+
 def text(x, y, s, size=14, weight=600, anchor="middle", fill=None):
     return f'<text x="{x:.1f}" y="{y:.1f}" font-size="{size}" font-weight="{weight}" text-anchor="{anchor}" dominant-baseline="middle" fill="{fill or INK}">{chem.esc(s)}</text>'
 
@@ -239,7 +250,10 @@ def structures(spec, W, narrow):
             lx += 34 + len(g["label"]) * 7.2
         y += 22
     if spec.get("note"):
-        out.append(text(W / 2, y + 4, spec["note"], 12, 500, fill=SOFT)); y += 22
+        # wrapped to the width (the carbonate note ran off a phone)
+        for line in wrap_words(spec["note"], int((W - 16) / (12 * 0.55))):
+            out.append(text(W / 2, y + 4, line, 12, 500, fill=SOFT)); y += 17
+        y += 5
     return "".join(out), y + 4
 
 
@@ -492,7 +506,9 @@ def ms(spec, W, narrow):
             out.append(text(X(p["mz"]) + p.get("dx", 0), Y(p["rel"]) - 26, p["label"], 11, 600, fill=colr))
     H = base + 44
     for n in spec.get("notes", []):
-        out.append(text(W / 2, H + 4, n, 12, 600, fill=INK)); H += 20
+        for line in wrap_words(n, int((W - 16) / (12 * 0.57))):
+            out.append(text(W / 2, H + 4, line, 12, 600, fill=INK)); H += 18
+        H += 2
     if spec.get("table"):
         for row in spec["table"]:
             out.append(text(W / 2, H + 6, row, 12.5, 600)); H += 20

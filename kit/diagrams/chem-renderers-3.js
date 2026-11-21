@@ -557,19 +557,23 @@ function phase(spec, W, narrow) {
   for (let i = 0; i <= 20; i++) { const t = i / 20, u = tp[0] + (cp[0] - tp[0]) * t; lg.push([u, tp[1] + (cp[1] - tp[1]) * (Math.exp(1.6 * t) - 1) / (Math.exp(1.6) - 1)]); }
   s += curve(sg) + curve(lg) + curve(sl);
   s += `<circle cx="${f1(X(tp[0]))}" cy="${f1(Y(tp[1]))}" r="5" fill="${col("a2")}"/><circle cx="${f1(X(cp[0]))}" cy="${f1(Y(cp[1]))}" r="5" fill="${col("a2")}"/>`;
-  s += text(X(tp[0]) + 8, Y(tp[1]) + 16, `triple point (${d.triple[0]} °C, ${d.triple[1]} atm)`, { size: 11, weight: 700, anchor: "start", fill: col("a2") });
-  s += text(X(cp[0]) - 6, Y(cp[1]) - 12, `critical point (${d.critical[0]} °C, ${d.critical[1]} atm)`, { size: 11, weight: 700, anchor: "end", fill: col("a2") });
+  s += text(X(tp[0]) + 8, Y(tp[1]) + 16, `triple point (${d.triple[0]} °C, ${d.triple[1]} atm)`, { size: 11, weight: 700, anchor: "start", fill: col("a2"), halo: true });
+  s += text(X(cp[0]) - 6, Y(cp[1]) - 12, `critical point (${d.critical[0]} °C, ${d.critical[1]} atm)`, { size: 11, weight: 700, anchor: "end", fill: col("a2"), halo: true });
   s += line(pad.l, Y(atm), W - pad.r, Y(atm), { stroke: C.line, w: 1.2, dash: "5 4" }) + text(pad.l - 4, Y(atm), "1 atm", { size: 11, weight: 600, anchor: "end", fill: C.soft });
   s += text(X(0.12), Y(0.75), "solid", { size: 14, weight: 800, fill: col("a1") }) + text(X(0.55), Y(0.72), "liquid", { size: 14, weight: 800, fill: col("a4") }) + text(X(0.72), Y(0.2), "gas", { size: 14, weight: 800, fill: col("a3") });
   if (water) {
     const mpU = tp[0] + slope * 0.05 * ((atm - tp[1]) / (1 - tp[1])), bpU = lg.find(([, v]) => v >= atm)[0];
     s += `<circle cx="${f1(X(mpU))}" cy="${f1(Y(atm))}" r="4" fill="${C.ink}"/><circle cx="${f1(X(bpU))}" cy="${f1(Y(atm))}" r="4" fill="${C.ink}"/>`;
-    s += text(X(mpU) - 6, Y(atm) - 12, "0 °C", { size: 11, weight: 700, anchor: "end" }) + text(X(bpU) - 8, Y(atm) - 14, "100 °C", { size: 11, weight: 700, anchor: "end" });
+    s += text(X(mpU) + 7, Y(atm) - 12, "0 °C", { size: 11, weight: 700, anchor: "start", halo: true }) + text(X(bpU) - 8, Y(atm) - 14, "100 °C", { size: 11, weight: 700, anchor: "end", halo: true });
     if (spec.solution) {
       const sh = 0.07, lg2 = lg.map(([u, v]) => [u + sh * (0.4 + 0.6 * (v - tp[1]) / (cp[1] - tp[1])), v * 0.97]).filter(([u]) => u <= 0.98), sl2 = [[tp[0] - 0.06, tp[1] * 0.93], [tp[0] - 0.06 + slope * 0.05, 1]];
       s += curve(lg2, col("a2"), 2.2, "7 5") + curve(sl2, col("a2"), 2.2, "7 5");
-      s += text(X(0.98), Y(0.94), "solution (dashed)", { size: 11.5, weight: 700, anchor: "end", fill: col("a2") });
-      s += text(X(0.98), Y(0.94) + 16, `ΔT_{b} = K_{b}m = ${(d.Kb * spec.solution.molality * (spec.solution.i || 1)).toFixed(2)} K; ΔT_{f} = K_{f}m = ${(d.Kf * spec.solution.molality * (spec.solution.i || 1)).toFixed(2)} K`, { size: 11, anchor: "end", fill: C.soft });
+      // the key and the working under the axis, one equation a line (beside the critical point they overprinted it)
+      const m = spec.solution.molality * (spec.solution.i || 1);
+      s += line(pad.l, H + 4, pad.l + 26, H + 4, { stroke: col("a2"), w: 2.2, dash: "7 5" }) + text(pad.l + 32, H + 4, "the solution", { size: 11.5, weight: 700, anchor: "start", fill: col("a2") });
+      s += text(pad.l, H + 24, `ΔT_{b} = K_{b}m = ${(d.Kb * m).toFixed(2)} K (boiling point raised)`, { size: 11.5, anchor: "start", fill: C.soft });
+      s += text(pad.l, H + 42, `ΔT_{f} = K_{f}m = ${(d.Kf * m).toFixed(2)} K (freezing point lowered)`, { size: 11.5, anchor: "start", fill: C.soft });
+      return { s, H: H + 54 };
     }
   } else s += text(X(0.15), Y(atm) - 12, `sublimes at ${d.subl} °C`, { size: 11, weight: 700, anchor: "start" });
   return { s, H };
