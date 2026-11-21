@@ -51,6 +51,14 @@ function trend(spec, W, narrow) {
   const sy = (v) => H - pad.b - ((tr(v) - tr(lo)) / (tr(hi) - tr(lo))) * (H - pad.t - pad.b);
   let s = "";
   if (spec.kind === "ladder") return { s: ladder(spec, W, H, narrow), H };
+  const items = spec.kind === "series" ? spec.xLabels.map((l) => ({ key: l, label: l })) : spec.items;
+  const n = items.length, slot = (W - pad.l - pad.r) / n, sx = (i) => pad.l + slot * (i + 0.5);
+  const lblSize = narrow && n > 10 ? 9.5 : n > 14 ? 10.5 : 12;
+  // category labels: on one line when they fit the slot, else wrapped at spaces, else turned (and then set clear of
+  // each other rather than overprinted: 'stomach acid', 'lemon' and 'vinegar' on a phone), with room made below
+  const raw = items.map((it) => String(it.label ?? it.key)), cwid = (t) => ascii(t).length * lblSize * 0.52, fitN = Math.max(3, Math.floor((slot - 4) / (lblSize * 0.52)));
+  const turn = narrow && n > 12 ? -60 : raw.some((t) => t.split(" ").some((w) => cwid(w) > slot - 4)) ? -40 : 0;
+  if (turn === -40) pad.b = Math.max(pad.b, 26 + Math.max(...raw.map(cwid)) * 0.66 + (spec.xTitle ? 18 : 0));
   // axes and gridlines
   const ticks = spec.ticks || (log ? [] : niceTicks(lo, hi, 5));
   for (const t of ticks) s += line(pad.l, sy(t), W - pad.r, sy(t), { stroke: C.grid, w: 1 }) + text(pad.l - 8, sy(t), fmtNum(t), { size: 11.5, anchor: "end", fill: C.soft });
@@ -58,33 +66,49 @@ function trend(spec, W, narrow) {
   const zeroY = sy(log ? lo : Math.max(lo, Math.min(0, hi)));
   s += line(pad.l, zeroY, W - pad.r, zeroY, { stroke: C.ink, w: 1.6 });
   s += text(pad.l - 4, pad.t - 18, spec.yLabel || "", { size: 12.5, weight: 600, anchor: "start", fill: C.soft });
-  const items = spec.kind === "series" ? spec.xLabels.map((l) => ({ key: l, label: l })) : spec.items;
-  const n = items.length, slot = (W - pad.l - pad.r) / n, sx = (i) => pad.l + slot * (i + 0.5);
-  const lblSize = narrow && n > 10 ? 9.5 : n > 14 ? 10.5 : 12;
+
   items.forEach((it, i) => {
-    const lab = fm(it.label ?? it.key);
-    if (narrow && n > 12) s += text(sx(i), H - pad.b + 14, lab, { size: lblSize, fill: C.ink }).replace("<text", `<text transform="rotate(-60 ${f1(sx(i))} ${f1(H - pad.b + 14)})" text-anchor="end"`).replace(/text-anchor="middle"/, "");
-    else s += text(sx(i), H - pad.b + 16, lab, { size: lblSize, weight: 600, fill: C.ink });
+    const lab = fm(raw[i]);
+    if (turn) s += text(sx(i), H - pad.b + 14, lab, { size: lblSize, weight: narrow && n > 12 ? 500 : 600, fill: C.ink }).replace("<text", `<text transform="rotate(${turn} ${f1(sx(i))} ${f1(H - pad.b + 14)})" text-anchor="end"`).replace(/text-anchor="middle"/, "");
+    else wrap(raw[i], cwid(raw[i]) > slot - 4 ? fitN : 99).forEach((l, k) => { s += text(sx(i), H - pad.b + 16 + k * 14, fm(l), { size: lblSize, weight: 600, fill: C.ink }); });
   });
   if (spec.xTitle) s += text((pad.l + W - pad.r) / 2, H - 14, spec.xTitle, { size: 12.5, weight: 600, fill: C.soft });
+  const pl = []; let keyRow = false;
   if (spec.kind === "bars") {
     const bw = Math.min(46, slot * 0.66);
     items.forEach((it, i) => {
       const v = it.value, y0 = sy(log ? lo : 0), y1 = sy(v);
       const colour = col(spec.highlight?.[it.key] || spec.colour || "a1");
       s += `<rect x="${f1(sx(i) - bw / 2)}" y="${f1(Math.min(y0, y1))}" width="${f1(bw)}" height="${f1(Math.max(1, Math.abs(y1 - y0)))}" rx="4" fill="${colour}" fill-opacity="${spec.highlight?.[it.key] ? 0.95 : 0.78}"/>`;
-      if (spec.showValues !== false && (!narrow || n <= 8)) s += text(sx(i), v >= 0 || log ? y1 - 9 : y1 + 11, fmtNum(v), { size: narrow ? 10.5 : 11.5, weight: 600, fill: C.ink });
+      // a value label that would reach the axis title goes inside the top of its bar
+      const inside = (v >= 0 || log) && y1 - 9 < pad.t + 4 && Math.abs(y1 - y0) > 22;
+      if (spec.showValues !== false && (!narrow || n <= 8)) s += text(sx(i), inside ? y1 + 11 : v >= 0 || log ? y1 - 9 : y1 + 11, fmtNum(v), { size: narrow ? 10.5 : 11.5, weight: 600, fill: inside ? "#fff" : C.ink });
     });
   } else {
     const series = spec.kind === "series" ? spec.series.map((sr) => ({ ...sr, pts: sr.keys.map((k, i) => (k == null ? null : [sx(i), sy(vals[k]), k])) })) : [{ colour: spec.colour || "a1", pts: items.map((it, i) => [sx(i), sy(it.value), it.key]) }];
+    // point labels are set clear of each other within each column, on halos, after every line; with point labels
+    // the series are named in a key under the axis instead of at their ends, where they would pile up
+    keyRow = spec.kind === "series" && spec.pointLabels && series.some((sr) => sr.label);
     for (const sr of series) {
       const pts = sr.pts.filter(Boolean);
       s += `<path d="${pts.map(([x, y], i) => `${i ? "L" : "M"}${f1(x)} ${f1(y)}`).join(" ")}" fill="none" stroke="${col(sr.colour)}" stroke-width="2.6" stroke-linejoin="round"/>`;
       for (const [x, y, k] of pts) {
         s += `<circle cx="${f1(x)}" cy="${f1(y)}" r="${spec.highlight?.[k] ? 6 : 4.5}" fill="${col(spec.highlight?.[k] || sr.colour)}" stroke="#fff" stroke-width="1.5"/>`;
-        if (spec.kind === "series" && spec.pointLabels) s += text(x + 8, y - 9, fm(k), { size: 11, weight: 600, anchor: "start", fill: col(sr.colour) });
+        if (spec.kind === "series" && spec.pointLabels) pl.push({ x, y: y - 9, k, colour: sr.colour });
       }
-      if (sr.label) { const [x, y] = pts.at(-1); s += text(Math.min(x + 10, W - pad.r), y + (sr.labelDy || 0), sr.label, { size: 12, weight: 700, anchor: x + 10 > W - 60 ? "end" : "start", fill: col(sr.colour) }); }
+      if (sr.label && !keyRow) { const [x, y] = pts.at(-1); s += text(Math.min(x + 10, W - pad.r), y + (sr.labelDy || 0), sr.label, { size: 12, weight: 700, anchor: x + 10 > W - 60 ? "end" : "start", fill: col(sr.colour) }); }
+    }
+  }
+  if (spec.kind === "series") {
+    const cols = new Map(); for (const p of pl) cols.set(p.x, [...(cols.get(p.x) || []), p]);
+    for (const c of cols.values()) {
+      c.sort((a, b) => a.y - b.y);
+      for (let i = 1; i < c.length; i++) c[i].y = Math.max(c[i].y, c[i - 1].y + 13);
+      for (const p of c) s += text(p.x + 8, p.y, fm(p.k), { size: 11, weight: 600, anchor: "start", fill: col(p.colour), halo: true });
+    }
+    if (keyRow) {
+      const named = spec.series.filter((sr) => sr.label), kw = (W - pad.l) / named.length;
+      named.forEach((sr, i) => { const x = pad.l + i * kw; s += line(x, H - 16, x + 16, H - 16, { stroke: col(sr.colour), w: 3 }) + text(x + 21, H - 16, sr.label, { size: narrow ? 11 : 12, weight: 700, anchor: "start", fill: col(sr.colour) }); });
     }
   }
   for (const nt of spec.notes || []) {
