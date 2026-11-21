@@ -1,0 +1,166 @@
+{
+ "id": "maths-u01-area-multiplication",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u01",
+ "lesson": "Arithmetic",
+ "title": "37 × 24 as an area",
+ "caption": "Long multiplication is this rectangle cut in two: 37 × 20 = 740 and 37 × 4 = 148, and the whole area is 740 + 148 = 888. Each row of the written method is one strip.",
+ "alt": "A rectangle 37 wide and 24 tall, split into a strip 37 by 20 with area 740 and a strip 37 by 4 with area 148.",
+ "description": [
+  "A rectangle with width 37 and height 24 stands for 37 × 24.",
+  "A line cuts it into a strip 20 tall and a strip 4 tall, because 24 = 20 + 4.",
+  "The large strip is 37 × 20 = 740; the thin strip is 37 × 4 = 148.",
+  "Together they make 740 + 148 = 888, the answer to 37 × 24."
+ ],
+ "points": {
+  "A": [
+   0,
+   0
+  ],
+  "B": [
+   37,
+   0
+  ],
+  "C": [
+   37,
+   4
+  ],
+  "D": [
+   37,
+   24
+  ],
+  "E": [
+   0,
+   24
+  ],
+  "F": [
+   0,
+   4
+  ]
+ },
+ "hide": [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F"
+ ],
+ "polygons": [
+  {
+   "pts": [
+    "F",
+    "C",
+    "D",
+    "E"
+   ],
+   "colour": "a1"
+  },
+  {
+   "pts": [
+    "A",
+    "B",
+    "C",
+    "F"
+   ],
+   "colour": "a2",
+   "opacity": 0.25
+  }
+ ],
+ "lengths": [
+  {
+   "a": "E",
+   "b": "D",
+   "value": 37,
+   "label": "37",
+   "side": -1
+  },
+  {
+   "a": "D",
+   "b": "C",
+   "value": 20,
+   "label": "20"
+  },
+  {
+   "a": "C",
+   "b": "B",
+   "value": 4,
+   "label": "4"
+  }
+ ],
+ "notes": [
+  {
+   "at": [
+    18.5,
+    14
+   ],
+   "text": "37 × 20 = 740",
+   "colour": "a1"
+  },
+  {
+   "at": [
+    18.5,
+    2
+   ],
+   "text": "37 × 4 = 148",
+   "colour": "a2",
+   "size": 13
+  }
+ ],
+ "view": {
+  "x": [
+   -3,
+   42
+  ],
+  "y": [
+   -1.5,
+   27
+  ]
+ },
+ "height": [
+  330,
+  300
+ ],
+ "fromLesson": [
+  "37 × 24",
+  "37 × 20 = 740",
+  "37 × 4 = 148",
+  "148 + 740 = 888"
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "polygon": [
+    "F",
+    "C",
+    "D",
+    "E"
+   ],
+   "value": 740,
+   "note": 0
+  },
+  {
+   "type": "area",
+   "polygon": [
+    "A",
+    "B",
+    "C",
+    "F"
+   ],
+   "value": 148,
+   "note": 1
+  },
+  {
+   "type": "area",
+   "polygon": [
+    "A",
+    "B",
+    "D",
+    "E"
+   ],
+   "value": 888,
+   "name": "the whole rectangle is 37 × 24 = 888"
+  }
+ ]
+}

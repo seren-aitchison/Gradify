@@ -1,0 +1,64 @@
+{
+ "id": "maths-u01-round-21-8",
+ "renderer": "number-line",
+ "course": "maths",
+ "unit": "u01",
+ "lesson": "Rounding and Estimation",
+ "title": "21.8 to 1 significant figure",
+ "caption": "To one significant figure 21.8 rounds to a multiple of 10. It is nearer 20 than 30 (the halfway point is 25), so it rounds to 20, the first step of the estimate (20 × 5) ÷ 0.2.",
+ "alt": "A number line from 10 to 30 with 21.8 marked, closer to 20 than to 30, and the halfway point 25 dashed.",
+ "description": [
+  "The candidates are the multiples of 10 either side: 20 and 30.",
+  "The halfway point between them is 25.",
+  "21.8 is below 25, so it rounds down to 20."
+ ],
+ "range": [
+  10,
+  30
+ ],
+ "ticks": {
+  "step": 5
+ },
+ "minor": 1,
+ "points": [
+  {
+   "value": 21.8,
+   "label": "21.8"
+  }
+ ],
+ "intervals": [
+  {
+   "from": 15,
+   "to": 25,
+   "closed": [
+    true,
+    false
+   ],
+   "label": "rounds to 20",
+   "colour": "a4"
+  }
+ ],
+ "checks": [
+  {
+   "type": "round",
+   "value": 21.8,
+   "sf": 1,
+   "result": 20
+  },
+  {
+   "type": "round",
+   "value": 4.93,
+   "sf": 1,
+   "result": 5
+  },
+  {
+   "type": "round",
+   "value": 0.198,
+   "sf": 1,
+   "result": 0.2
+  }
+ ],
+ "fromLesson": [
+  "(20 × 5) ÷ 0.2"
+ ]
+}

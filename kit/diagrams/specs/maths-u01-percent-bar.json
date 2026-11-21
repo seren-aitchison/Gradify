@@ -1,0 +1,101 @@
+{
+ "id": "maths-u01-percent-bar",
+ "renderer": "bar-model",
+ "course": "maths",
+ "unit": "u01",
+ "lesson": "Percentages",
+ "title": "17.5% of £360 built from 10%, 5% and 2.5%",
+ "caption": "10% of £360 is £36; halve it for 5% (£18) and again for 2.5% (£9). Together 17.5% is £63.",
+ "alt": "Bars on one scale: 10% of £360 is £36, 5% is £18 (half as long), 2.5% is £9 (half again), and 17.5% is the three joined, £63.",
+ "description": [
+  "10% of £360 is £36: divide by 10.",
+  "5% is half of that, £18; 2.5% is half again, £9. Each bar is half the one above.",
+  "Joining the three bars makes 17.5%, bracketed as £63."
+ ],
+ "prefix": "£",
+ "bars": [
+  {
+   "label": "10%",
+   "parts": [
+    {
+     "value": 36,
+     "shade": true
+    }
+   ]
+  },
+  {
+   "label": "5%",
+   "parts": [
+    {
+     "value": 18,
+     "colour": "a4"
+    }
+   ]
+  },
+  {
+   "label": "2.5%",
+   "parts": [
+    {
+     "value": 9,
+     "colour": "a5"
+    }
+   ]
+  },
+  {
+   "label": "17.5%",
+   "parts": [
+    {
+     "value": 36,
+     "shade": true
+    },
+    {
+     "value": 18,
+     "colour": "a4"
+    },
+    {
+     "value": 9,
+     "colour": "a5"
+    }
+   ]
+  }
+ ],
+ "braces": [
+  {
+   "bar": 3,
+   "from": 0,
+   "to": 2,
+   "value": 63,
+   "text": "17.5% = £63"
+  }
+ ],
+ "checks": [
+  {
+   "type": "percent",
+   "of": 360,
+   "percent": 10,
+   "value": 36
+  },
+  {
+   "type": "percent",
+   "of": 360,
+   "percent": 5,
+   "value": 18
+  },
+  {
+   "type": "percent",
+   "of": 360,
+   "percent": 2.5,
+   "value": 9
+  },
+  {
+   "type": "percent",
+   "of": 360,
+   "percent": 17.5,
+   "value": 63
+  }
+ ],
+ "fromLesson": [
+  "10% = £36, 5% = £18, 2.5% = £9",
+  "= £63"
+ ]
+}

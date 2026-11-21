@@ -1,0 +1,64 @@
+{
+ "id": "maths-u01-temperature-jumps",
+ "renderer": "number-line",
+ "course": "maths",
+ "unit": "u01",
+ "lesson": "Integers",
+ "title": "Temperature changes as jumps",
+ "caption": "Adding a positive number moves right and subtracting moves left: from −5 °C, up 9 reaches 4 °C, and down 12 crosses zero to −8 °C.",
+ "alt": "A number line from −10 to 6 with a jump of +9 from −5 to 4, then a jump of −12 from 4 to −8.",
+ "description": [
+  "The number line runs from −10 to 6 in steps of 1, labelled every 2.",
+  "Start at −5, the 06:00 temperature.",
+  "A jump of +9 to the right lands on 4 (14:00).",
+  "A jump of −12 to the left lands on −8, the final temperature."
+ ],
+ "range": [
+  -10,
+  6
+ ],
+ "ticks": {
+  "step": 2
+ },
+ "minor": 1,
+ "narrowTicks": {
+  "step": 2
+ },
+ "jumps": {
+  "from": -5,
+  "steps": [
+   {
+    "by": 9,
+    "label": "+9"
+   },
+   {
+    "by": -12,
+    "label": "−12"
+   }
+  ],
+  "to": -8
+ },
+ "points": [
+  {
+   "value": -5,
+   "label": "−5 °C",
+   "below": true
+  },
+  {
+   "value": 4,
+   "label": "4 °C",
+   "below": true,
+   "colour": "a4"
+  },
+  {
+   "value": -8,
+   "label": "−8 °C",
+   "below": true,
+   "colour": "a1"
+  }
+ ],
+ "fromLesson": [
+  "−5 + 9 = 4",
+  "4 − 12 = −8"
+ ]
+}
