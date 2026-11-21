@@ -2913,6 +2913,26 @@
    "url": "https://getgradify.com/scigradify/chemistry/#/practice/lewis"
   },
   {
+   "id": "organic-notes",
+   "title": "Organic Notes Lab: draw skeletal formulae",
+   "kind": "Tool",
+   "sub": "Draw on hexagon paper (bonds snap to 120° zig-zags, rings fuse onto bonds) and see the IUPAC name with its reasoning, formula, Mr, functional groups, stereocentres and E/Z worked out; save drawings as notes.",
+   "note": "Systematic names for chains with halogens, –OH, C=O, –COOH, C=C and C≡C (A-level chain rules); rings, esters and amines from a library of common compounds. Stereocentres and E/Z from the graph, not 3D.",
+   "tasks": null,
+   "lessons": [
+    "u12-03",
+    "u12-07",
+    "u12-08",
+    "u12-09",
+    "u12-10",
+    "u12-11",
+    "u12-13",
+    "u12-15",
+    "u12-20"
+   ],
+   "url": "https://getgradify.com/scigradify/chemistry/#/practice/organic-notes"
+  },
+  {
    "id": "vsepr",
    "title": "VSEPR molecular geometry",
    "kind": "Explorer",

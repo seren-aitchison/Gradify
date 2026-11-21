@@ -81,3 +81,31 @@
 .hx-num input { width: 7em; margin: 0 8px; }
 @media (max-width: 560px) { .hx-band span { display: none; } }
 .hx-band.tiny span { display: none; }
+/* Organic Notes Lab (kit/labs/chemistry/sketch.js): toolbar, hexagon-paper stage, notebook */
+.osk-tools { display: flex; flex-wrap: wrap; gap: 6px; }
+.osk-group { display: inline-flex; flex-wrap: wrap; gap: 2px; padding: 3px; border-radius: 11px; background: rgba(var(--ink-rgb), .05); border: 1px solid var(--line); }
+.osk-tool { min-width: 34px; height: 32px; padding: 0 8px; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; font: 600 13px var(--sans); color: var(--fg); background: none; border: 0; cursor: pointer; }
+.osk-tool:hover { background: rgba(var(--ink-rgb), .09); }
+.osk-tool[aria-pressed="true"] { color: #000; background: var(--co-accent, #10b981); }
+.osk-tool:focus-visible, .osk-stage:focus-visible { outline: 2px solid var(--co-accent, #10b981); outline-offset: 2px; }
+.osk-stage { position: relative; min-width: 0; border-radius: 14px; }
+.osk-svg { width: 100%; background: #0b0c0e; background: light-dark(#ffffff, #0b0c0e); overflow: hidden; border-radius: 14px; border: 1px solid var(--line); touch-action: none; cursor: crosshair; user-select: none; -webkit-user-select: none; }
+.osk-svg svg { display: block; width: 100%; height: 100%; }
+.osk-hint { margin: 6px 2px 0; font-size: 12px; color: var(--mute); }
+.osk-zoom { position: absolute; right: 8px; top: 8px; display: flex; gap: 4px; }
+.osk-zoom button { width: 30px; height: 30px; border-radius: 8px; font: 600 15px var(--sans); color: var(--fg); background: rgba(var(--sink-rgb), .55); border: 1px solid var(--line-strong); cursor: pointer; }
+.osk-opts { display: flex; flex-direction: column; gap: 4px; }
+.osk-name { font-size: 17px !important; overflow-wrap: anywhere; }
+.osk-aka { margin: 0 0 4px !important; font-size: 12.5px; color: var(--mute); }
+.osk-mono, .osk-smiles code { font-family: var(--mono); font-size: 12.5px; overflow-wrap: anywhere; }
+.osk-groups { margin: 2px 0 8px; } .osk-groups button { font-size: 12px; padding: 4px 9px; }
+.osk-steps { margin-top: 6px; } .osk-steps summary { cursor: pointer; font-weight: 600; } .osk-steps ol { margin: 6px 0 0; padding-left: 18px; }
+.osk-atom { padding: 6px 8px; border-radius: 8px; background: rgba(var(--ink-rgb), .04); }
+.osk-book input[type="text"], .osk-book textarea { width: 100%; box-sizing: border-box; margin: 4px 0; font-family: var(--sans); }
+.osk-pages { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; max-height: 420px; overflow-y: auto; }
+.osk-page { display: grid; grid-template-columns: 132px minmax(0, 1fr); gap: 10px; align-items: start; }
+.osk-page b { display: block; overflow-wrap: anywhere; } .osk-page small { display: block; color: var(--mute); } .osk-page p { margin: 4px 0; font-size: 12.5px; white-space: pre-wrap; }
+.osk-thumb { padding: 0; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: none; cursor: pointer; } .osk-thumb svg { display: block; width: 132px; height: 88px; }
+.osk-prob { display: block; width: 100%; max-width: 100%; min-width: 0; padding: 7px 10px; border-radius: 10px; font: 14px var(--sans); color: var(--fg); background: rgba(var(--ink-rgb), .05); border: 1px solid var(--line-strong); text-overflow: ellipsis; }
+.osk-cols > * { min-width: 0; }
+@media (max-width: 560px) { .osk-tool { min-width: 30px; padding: 0 6px; } .osk-page { grid-template-columns: 96px minmax(0, 1fr); } .osk-thumb svg { width: 96px; height: 64px; } }
