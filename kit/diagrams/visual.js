@@ -16,6 +16,9 @@ import { addPractice } from "./practice.js";
 
 const BASE = new URL("./", import.meta.url);
 let manifest = null;
+// Gradify's ownership mark, on its own line at the foot of every diagram and lab, so it never covers a label
+// or a control. Hidden from screen readers (it would be read out under every diagram) and from pointer events.
+export const MARK = `<small class="gx-mark" aria-hidden="true">© Property of Gradify</small>`;
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
 export function previewMode() {
@@ -57,7 +60,8 @@ export async function hydrateDiagrams(root, { preview = previewMode() } = {}) {
       </button>
       <figcaption><b>${esc(d.title)}${/[.?!]$/.test(d.title) ? "" : "."}</b> ${esc(d.caption)}</figcaption>
       <details class="vx-desc"><summary>The diagram in words</summary><ol>${d.description.map((x) => `<li>${esc(x)}</li>`).join("")}</ol></details>
-      ${preview ? `<details class="vx-checks"><summary>What was checked</summary><ul>${d.checks.map((c) => `<li class="${c.ok ? "ok" : "no"}">${c.ok ? "✓" : "✗"} ${esc(c.name)}${c.detail ? ` <small>${esc(c.detail)}</small>` : ""}</li>`).join("")}</ul>${d.review?.notes ? `<p><b>Review:</b> ${esc(d.review.notes)}</p>` : ""}</details>` : ""}`;
+      ${preview ? `<details class="vx-checks"><summary>What was checked</summary><ul>${d.checks.map((c) => `<li class="${c.ok ? "ok" : "no"}">${c.ok ? "✓" : "✗"} ${esc(c.name)}${c.detail ? ` <small>${esc(c.detail)}</small>` : ""}</li>`).join("")}</ul>${d.review?.notes ? `<p><b>Review:</b> ${esc(d.review.notes)}</p>` : ""}</details>` : ""}
+      ${MARK}`;
     fig.hidden = false;
     fig.querySelector(".vx-art").addEventListener("click", () => openFull(d, wide));
     // ways to practise on it: label it, talk it through (kit/diagrams/practice.js)
@@ -70,7 +74,7 @@ function openFull(d, wide) {
   const dlg = document.createElement("dialog");
   dlg.className = "vx-full";
   dlg.setAttribute("aria-label", d.title);
-  dlg.innerHTML = `<div class="vx-fullart">${uniq(wide)}</div><p><b>${esc(d.title)}${/[.?!]$/.test(d.title) ? "" : "."}</b> ${esc(d.caption)}</p><button type="button" class="vx-close" aria-label="Close">×</button>`;
+  dlg.innerHTML = `<div class="vx-fullart">${uniq(wide)}</div><p><b>${esc(d.title)}${/[.?!]$/.test(d.title) ? "" : "."}</b> ${esc(d.caption)}</p>${MARK}<button type="button" class="vx-close" aria-label="Close">×</button>`;
   const close = () => { dlg.close(); dlg.remove(); };
   dlg.addEventListener("click", (e) => { if (e.target === dlg || e.target.closest(".vx-close")) close(); });
   dlg.addEventListener("cancel", (e) => { e.preventDefault(); close(); });

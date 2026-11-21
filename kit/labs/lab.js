@@ -12,7 +12,8 @@ export const sup = (s) => String(s).replace(/\^\{?(-?[\d+−-]+)\}?/g, "<sup>$1<
 
 // build a lab's DOM: html string → element, returns a lookup function
 export function shell(el, html, cls = "") {
-  el.innerHTML = `<div class="lab ${cls}">${html}</div>`;
+  // the ownership mark is the lab's last line (kit/diagrams/visual.js MARK), clear of its controls
+  el.innerHTML = `<div class="lab ${cls}">${html}<small class="gx-mark" aria-hidden="true">© Property of Gradify</small></div>`;
   const root = el.firstElementChild;
   const $ = (sel) => root.querySelector(sel);
   $.all = (sel) => [...root.querySelectorAll(sel)];
