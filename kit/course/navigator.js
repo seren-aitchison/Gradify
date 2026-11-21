@@ -96,9 +96,10 @@ export function createOutline(api) {
     // left alone, so the browser doesn't restyle it)
     const head = headHtml(), list = v.length >= 2 ? filterHtml(v) : bodyHtml();
     if (head !== el.__head) { el.querySelector(".cx-treehead").innerHTML = head; el.__head = head; }
-    // asked to show the current lesson, it must be there to see: not inside a unit the learner has since closed
+    // asked to show the current lesson, it must be there to see: not inside a unit the learner has since closed (a
+    // filter that leaves it out is left alone: rebuilding wouldn't show it, and would take focus off a result)
     const shown = () => { const h = body.querySelector(".cx-l.here"); return h && !h.closest("details:not([open])"); };
-    if (list !== el.__list || (toHere && !shown())) { body.innerHTML = list; el.__list = list; if (!toHere && el.__top) body.scrollTop = el.__top; }
+    if (list !== el.__list || (toHere && shown() === false)) { body.innerHTML = list; el.__list = list; if (!toHere && el.__top) body.scrollTop = el.__top; }
     if (!toHere || el.__toHere) return;
     // the current lesson in view, without moving the page: once a frame, however many times it was asked for
     el.__toHere = requestAnimationFrame(() => { el.__toHere = 0; const here = body.querySelector(".cx-l.here"); if (!here) return; const b = body.getBoundingClientRect(), h = here.getBoundingClientRect(); if (h.top < b.top || h.bottom > b.bottom - 40) body.scrollTop += h.top - b.top - b.height / 3; });
