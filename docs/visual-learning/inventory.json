@@ -8,10 +8,10 @@
   "lessons": 10112,
   "written": 9979,
   "assessed": 429,
-  "plannedVisual": 372,
-  "plannedDiagram": 372,
+  "plannedVisual": 374,
+  "plannedDiagram": 374,
   "plannedLab": 0,
-  "excluded": 57,
+  "excluded": 55,
   "notAssessed": 9550,
   "withDiagram": 381,
   "withLab": 841,
@@ -30,11 +30,7 @@
   "failing": [],
   "unplaced": []
  },
- "problems": [
-  {"kind":"diagram placed but not in the plan for its lesson","course":"chemistry","detail":"u13-15 Electrophilic addition: chem-br2-bromonium"},
-  {"kind":"plan excludes a lesson that places a diagram","course":"chemistry","detail":"u03-18 Actinides: chem-table-f-block"},
-  {"kind":"plan excludes a lesson that places a diagram","course":"chemistry","detail":"u15-03 Quantitative analysis: chem-titration-setup"}
- ],
+ "problems": [],
  "sites": [
   {
    "name": "UnderGradify",
@@ -527,10 +523,10 @@
     "lessons": 2159,
     "written": 2109,
     "assessed": 410,
-    "plannedVisual": 355,
-    "plannedDiagram": 355,
+    "plannedVisual": 357,
+    "plannedDiagram": 357,
     "plannedLab": 0,
-    "excluded": 55,
+    "excluded": 53,
     "notAssessed": 1699,
     "withDiagram": 361,
     "withLab": 317,
@@ -2922,10 +2918,10 @@
     "lessons": 460,
     "written": 410,
     "assessed": 410,
-    "plannedVisual": 355,
-    "plannedDiagram": 355,
+    "plannedVisual": 357,
+    "plannedDiagram": 357,
     "plannedLab": 0,
-    "excluded": 55,
+    "excluded": 53,
     "notAssessed": 0,
     "withDiagram": 357,
     "withLab": 107,
@@ -3279,10 +3275,10 @@
       "lessons": 25,
       "written": 25,
       "assessed": 25,
-      "plannedVisual": 20,
-      "plannedDiagram": 20,
+      "plannedVisual": 21,
+      "plannedDiagram": 21,
       "plannedLab": 0,
-      "excluded": 5,
+      "excluded": 4,
       "notAssessed": 0,
       "withDiagram": 21,
       "withLab": 6,
@@ -3323,14 +3319,7 @@
        "labs": [],
        "plan": {"verdict":"diagram","diagrams":["chem-lanthanide-contraction"]}
       },
-      {
-       "id": "u03-18",
-       "title": "Actinides",
-       "written": true,
-       "diagrams": [{"id":"chem-table-f-block","status":"validated"}],
-       "labs": [],
-       "plan": {"verdict":"none","reason":"actinide chemistry is carried in the text and the f-block table"}
-      },
+      {"id":"u03-18","title":"Actinides","written":true,"diagrams":[{"id":"chem-table-f-block","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["chem-table-f-block"]}},
       {
        "id": "u03-19",
        "title": "Atomic radius",
@@ -4549,7 +4538,7 @@
        "written": true,
        "diagrams": [{"id":"chem-hbr-propene","status":"approved"},{"id":"chem-br2-bromonium","status":"approved"}],
        "labs": ["curly-arrows"],
-       "plan": {"verdict":"diagram","diagrams":["chem-hbr-propene"]}
+       "plan": {"verdict":"diagram","diagrams":["chem-hbr-propene","chem-br2-bromonium"]}
       },
       {
        "id": "u13-16",
@@ -4723,10 +4712,10 @@
       "lessons": 28,
       "written": 28,
       "assessed": 28,
-      "plannedVisual": 25,
-      "plannedDiagram": 25,
+      "plannedVisual": 26,
+      "plannedDiagram": 26,
       "plannedLab": 0,
-      "excluded": 3,
+      "excluded": 2,
       "notAssessed": 0,
       "withDiagram": 26,
       "withLab": 9,
@@ -4751,7 +4740,7 @@
        "written": true,
        "diagrams": [{"id":"chem-titration-setup","status":"validated"}],
        "labs": [],
-       "plan": {"verdict":"none","reason":"the idea is a definition, convention or calculation method that a picture would not teach"}
+       "plan": {"verdict":"diagram","diagrams":["chem-titration-setup"]}
       },
       {
        "id": "u15-04",
