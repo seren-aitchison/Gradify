@@ -81,6 +81,9 @@ export function createOutline(api) {
         api.setOpen(d.dataset.u, d.open);
         if (d.open && !d.querySelector(".cx-ub")) d.insertAdjacentHTML("beforeend", `<div class="cx-ub">${unitBody(api.units.find((u) => u.id === d.dataset.u), api.current())}</div>`);
       }, true);
+      // where the list is scrolled, kept as it scrolls: reading it back when redrawing would make the browser lay out
+      // the page there and then
+      const tb = el.querySelector(".cx-tb"); el.__top = 0; tb.addEventListener("scroll", () => { el.__top = tb.scrollTop; }, { passive: true });
       input.addEventListener("input", () => redraw(el));
       input.addEventListener("keydown", (e) => { if (e.key === "Escape" && input.value) { e.stopPropagation(); input.value = ""; redraw(el); } });
     }
@@ -88,12 +91,18 @@ export function createOutline(api) {
     return (keep = true) => redraw(el, !keep);
   }
   function redraw(el, toHere = false) {
-    const body = el.querySelector(".cx-tb"), v = el.querySelector(".cx-tf input").value.trim(), top = body.scrollTop;
-    el.querySelector(".cx-treehead").innerHTML = headHtml();
-    body.innerHTML = v.length >= 2 ? filterHtml(v) : bodyHtml();
-    if (!toHere) { body.scrollTop = top; return; }
-    // the current lesson in view, without moving the page
-    requestAnimationFrame(() => { const here = body.querySelector(".cx-l.here"); if (!here) return; const b = body.getBoundingClientRect(), h = here.getBoundingClientRect(); if (h.top < b.top || h.bottom > b.bottom - 40) body.scrollTop += h.top - b.top - b.height / 3; });
+    const body = el.querySelector(".cx-tb"), v = el.querySelector(".cx-tf input").value.trim();
+    // only what changed is replaced (opening a lesson asks for the outline more than once; the same outline again is
+    // left alone, so the browser doesn't restyle it)
+    const head = headHtml(), list = v.length >= 2 ? filterHtml(v) : bodyHtml();
+    if (head !== el.__head) { el.querySelector(".cx-treehead").innerHTML = head; el.__head = head; }
+    // asked to show the current lesson, it must be there to see: not inside a unit the learner has since closed (a
+    // filter that leaves it out is left alone: rebuilding wouldn't show it, and would take focus off a result)
+    const shown = () => { const h = body.querySelector(".cx-l.here"); return h && !h.closest("details:not([open])"); };
+    if (list !== el.__list || (toHere && shown() === false)) { body.innerHTML = list; el.__list = list; if (!toHere && el.__top) body.scrollTop = el.__top; }
+    if (!toHere || el.__toHere) return;
+    // the current lesson in view, without moving the page: once a frame, however many times it was asked for
+    el.__toHere = requestAnimationFrame(() => { el.__toHere = 0; const here = body.querySelector(".cx-l.here"); if (!here) return; const b = body.getBoundingClientRect(), h = here.getBoundingClientRect(); if (h.top < b.top || h.bottom > b.bottom - 40) body.scrollTop += h.top - b.top - b.height / 3; });
   }
   return { mount, unitBody };
 }

@@ -1429,8 +1429,6 @@ html.cx-focus .co.co-reading .co-body, html.cx-focus .co.co-reading .co-body.has
   html.cx-focus .co.cx-split.co-reading .co-body, html.cx-focus .co.cx-split.co-reading .co-body.has-tree { grid-template-columns: minmax(0, 1500px); }
 }
 /* views fade in, so moving around feels continuous */
-.co-main.cx-enter { animation: cx-enter .2s cubic-bezier(.2, .8, .2, 1); }
-@keyframes cx-enter { from { opacity: .4; transform: translateY(4px); } }
 /* Next up: the syllabus, simplified to what to do now */
 .cx-nextgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 14px; align-items: start; }
 .cx-nextup .cx-ll + .cx-ll { margin-top: 4px; }
@@ -1440,8 +1438,7 @@ html.cx-focus .co.co-reading .co-body, html.cx-focus .co.co-reading .co-body.has
 .cx-rn + ul { margin: 0; padding-left: 20px; line-height: 1.55; } .cx-rn + ul li + li { margin-top: 4px; }
 .cx-rnsecs { display: flex; flex-wrap: wrap; gap: 6px; }
 .cx-rnsecs .co-chip { cursor: pointer; border: 1px solid var(--line); font: inherit; font-size: 13px; }
-@media (prefers-reduced-motion: reduce) { .co-main.cx-enter { animation: none; } .cx-seclink { transition: none; } }
-html[data-motion="reduce"] .co-main.cx-enter { animation: none; }
+@media (prefers-reduced-motion: reduce) { .cx-seclink { transition: none; } }
 @media (max-width: 760px) { .cx-secname, .cx-lact .cx-save:not([data-tone="warn"]), .cx-lact [data-revnotes] { display: none; } }
 @media print { .cx-seclink, .cx-secname, .cx-splitpane { display: none !important; } }
 /* explore related topics (a drawer from a lesson) */
@@ -1652,9 +1649,13 @@ html[data-motion="reduce"] .co-main.cx-enter { animation: none; }
   inset: -2px; padding: 2px;
   background: conic-gradient(from var(--lg-ang), var(--la), color-mix(in srgb, var(--la) 40%, #fff) 10%, var(--lb) 22%, #fff 27%, var(--lb) 32%, var(--la) 55%, color-mix(in srgb, var(--lb) 50%, #fff) 70%, #fff 76%, var(--la) 82%, var(--la));
   filter: saturate(1.3); opacity: .95;
-  animation: lg-gleam 14s linear infinite;
+  animation: lg-gleam 14s linear 1s;
 }
+/* one sweep round the rim just after the lesson opens (not while it's loading), ending where it started (480deg is
+   120deg). Turning a gradient's angle repaints the whole page-sized rim every frame, so it doesn't run on for as long
+   as the lesson is open (that took a fifth of a phone's main thread, all the time), and a phone keeps the rim still */
 @keyframes lg-gleam { to { --lg-ang: 480deg; } }
+@media (max-width: 1020px) { .co-reading .co-read .co-notes::before { animation: none; } }
 
 /* ----- clear glass: wet, bright-edged, almost magnified ----- */
 .co-reading :is(.cx-kc, .co-pncard, .cx-w-next, .cx-dock, .co-lhead .mv-chips > *) {
@@ -1988,16 +1989,20 @@ html.cx-focus .cx-rings { display: none !important; }
 
 /* ----- Gradify AI (kit/course/assistant.js): an orb in the corner of every course page, opening a small glass
    assistant. Coloured by the course (--a, --b), above the phone dock, out of the way in focus mode ----- */
-@property --gai-turn { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
-@keyframes gai-turn { to { --gai-turn: 360deg; } }
+/* the orb's colours turn by rotating their own layer: a transform the compositor runs without repainting (turning the
+   gradient's angle instead repainted it every frame, a fifth of a phone's main thread on every course page) */
+@keyframes gai-turn { to { transform: rotate(360deg); } }
 @keyframes gai-in { from { opacity: 0; transform: translateY(14px) scale(.96); } }
 @keyframes gai-dot { 0%, 80%, 100% { opacity: .25; transform: translateY(0); } 40% { opacity: 1; transform: translateY(-3px); } }
 .gai, .gai-fab { --a: #6c63ff; --b: #ff5fd2; }
 .gai-orb { flex: none; position: relative; width: 40px; height: 40px; border-radius: 50%;
-  background: conic-gradient(from var(--gai-turn), var(--a), var(--b), #ffb35c, #39d0ff, var(--a));
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .35), 0 0 18px -2px color-mix(in srgb, var(--a) 70%, transparent);
+  box-shadow: 0 0 18px -2px color-mix(in srgb, var(--a) 70%, transparent); }
+.gai-orb > i { position: absolute; inset: 0; border-radius: 50%;
+  background: conic-gradient(var(--a), var(--b), #ffb35c, #39d0ff, var(--a));
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .35);
   animation: gai-turn 9s linear infinite; }
-/* a glossy cap of light on the orb, and a soft core */
+/* a glossy cap of light on the orb, and a soft core (above the turning colours, which they don't turn with) */
+.gai-orb::before, .gai-orb::after { z-index: 1; }
 .gai-orb::before { content: ""; position: absolute; inset: 18% 18% 18% 18%; border-radius: 50%; background: radial-gradient(circle at 50% 40%, hsl(0 0% 100% / .95), hsl(0 0% 100% / .35) 45%, transparent 70%); filter: blur(1px); }
 .gai-orb::after { content: ""; position: absolute; left: 14%; right: 14%; top: 5%; height: 42%; border-radius: 50%; background: linear-gradient(180deg, hsl(0 0% 100% / .75), hsl(0 0% 100% / 0)); }
 .gai-fab { position: fixed; right: calc(18px + env(safe-area-inset-right)); bottom: calc(18px + env(safe-area-inset-bottom)); z-index: 150; display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 6px 18px 6px 6px; border-radius: 999px; cursor: pointer;
@@ -2080,7 +2085,7 @@ body.has-gai .gx-totop { bottom: calc(84px + env(safe-area-inset-bottom)); }
 }
 .cx-focus .gai-fab, .cx-focus .gai { display: none; }
 @media print { .gai, .gai-fab { display: none !important; } }
-@media (prefers-reduced-motion: reduce) { .gai-orb, .gai, .gai-dots i { animation: none; } .gai-fab, .gai-sugs button { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .gai-orb > i, .gai, .gai-dots i { animation: none; } .gai-fab, .gai-sugs button { transition: none; } }
 @media (prefers-reduced-transparency: reduce) { :root .gai, :root .gai-fab, :root[data-theme] .gai, :root[data-theme] .gai-fab { -webkit-backdrop-filter: none; backdrop-filter: none; background: rgb(var(--surface-rgb)); } }
 :root[data-a-contrast="high"] :is(.gai, .gai-fab, .gai-sugs button, .gai-form) { background: var(--bg); border-color: var(--fg); box-shadow: none; }
 

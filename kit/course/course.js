@@ -58,7 +58,7 @@ import { ICONS } from "../ui/icons.js";
 import { toast as uiToast, mountSaveState } from "../ui/feedback.js";
 import { shortcuts, withKey } from "../ui/keys.js";
 import { emptyState, skeleton } from "../ui/states.js";
-import { mountToTop, copyLink, jumpTo } from "../ui/motion.js";
+import { mountToTop, copyLink, jumpTo, reduced } from "../ui/motion.js";
 import { arriveHere, rememberScroll, backPlace, trail, pin, pinned, pins, setPins, restoreAt, onPlacesChange } from "../ui/places.js";
 import { offerBack, hideBack, restoreScroll } from "../ui/wayfinding.js";
 import { resourceSwitcher, wireActions } from "../ui/resources.js";
@@ -616,7 +616,9 @@ export function mountCourse(root, cfg) {
   // opening, the outline switched back on, focus mode ended, a wider window). The side rail is always drawn: progress,
   // section tracking and resuming read it even where it isn't shown.
   let treeStale = false;
-  const treeShown = () => !treeEl.hidden && treeEl.getClientRects().length > 0 && getComputedStyle(treeEl).visibility !== "hidden";
+  // from the classes and the breakpoint, not the layout: asking the page where the outline is would make it lay out
+  // the lesson just drawn, before it's ready (the drawer below 1281px, kit/styles/course.css)
+  const treeShown = () => !treeEl.hidden && !document.documentElement.classList.contains("cx-focus") && (matchMedia("(min-width: 1281px)").matches ? !root.classList.contains("cx-treeoff") : treeEl.classList.contains("open"));
   const freshTree = (toHere) => { if (treeShown()) { treeStale = false; redrawTree?.(!toHere); } else if (redrawTree) treeStale = true; };
   // a hidden outline isn't built at all until it's first seen (the drawer opening builds it)
   const catchUpTree = () => { if (treeEl.hidden || !treeShown()) return; if (!treeEl.dataset.wired) { redrawTree = outline.mount(treeEl); treeStale = false; } else if (treeStale) freshTree(true); };
@@ -1281,7 +1283,10 @@ export function mountCourse(root, cfg) {
     const mo = new MutationObserver(count); main.querySelectorAll(".co-check").forEach((chk) => mo.observe(chk, { subtree: true, attributes: true, attributeFilter: ["class"] }));
     count();
     // the sidebar is redrawn now and then (XP, sync): its rail picks the reading position and question count back up
-    art.addEventListener("co-rail", () => { pctShown = -1; onScroll(); count(); });
+    // measured once a frame, after whatever changed the page this frame (measuring straight after a redraw would make
+    // the browser lay the page out twice)
+    let raf = 0; const soon = () => { if (!raf) raf = requestAnimationFrame(() => { raf = 0; onScroll(); }); };
+    art.addEventListener("co-rail", () => { pctShown = -1; soon(); count(); });
     // in-page links scroll smoothly, below the sticky top bar, without changing the course's #/lesson route
     const jump = (e) => {
       const a = e.target.closest("[data-jump]"); if (!a) return;
@@ -1322,9 +1327,9 @@ export function mountCourse(root, cfg) {
     // the rail's Complete button does what the lesson's own does
     const railGo = (e) => { if (e.target.closest(".co-railgo")) main.querySelector(".co-finish .co-complete")?.click(); };
     side.addEventListener("click", railGo);
-    addEventListener("scroll", onScroll, { passive: true }); addEventListener("resize", onScroll);
-    requestAnimationFrame(onScroll);
-    readStop = () => { removeEventListener("scroll", onScroll); removeEventListener("resize", onScroll); root.removeEventListener("click", jump); main.removeEventListener("click", secLink); main.removeEventListener("click", zoom); document.querySelector(".gd-zoom")?.remove(); unTerms?.(); side.removeEventListener("click", railGo); mo.disconnect(); bar.remove(); readStop = null; };
+    addEventListener("scroll", soon, { passive: true }); addEventListener("resize", soon);
+    soon();
+    readStop = () => { cancelAnimationFrame(raf); removeEventListener("scroll", soon); removeEventListener("resize", soon); root.removeEventListener("click", jump); main.removeEventListener("click", secLink); main.removeEventListener("click", zoom); document.querySelector(".gd-zoom")?.remove(); unTerms?.(); side.removeEventListener("click", railGo); mo.disconnect(); bar.remove(); readStop = null; };
   }
   // revision notes: the lesson's key ideas on one page (what you can now do, the summary, key terms, its sections),
   // made from the lesson's own notes, so they're never out of step with it
@@ -2573,8 +2578,10 @@ export function mountCourse(root, cfg) {
     // came from "Explore related topics": the way back to the exact spot in the lesson you left
     if (returnTo && view === "lesson" && !location.hash.startsWith(returnTo.href.split("/").slice(0, 3).join("/"))) offerBack(returnTo, { label: "Back to", ms: 30000 });
     returnTo = null;
-    // a subtle entrance, so moving between views feels continuous rather than a jump cut
-    main.classList.remove("cx-enter"); void main.offsetWidth; main.classList.add("cx-enter");
+    // a subtle entrance, so moving between views feels continuous rather than a jump cut. Started as an animation of
+    // its own, not by re-adding a class: restarting a class's animation needs the page laid out there and then, which
+    // made the browser lay out the whole new view before it was ready (the longest part of opening a lesson)
+    if (!reduced()) main.animate?.([{ opacity: 0.4, transform: "translateY(4px)" }, {}], { duration: 200, easing: "cubic-bezier(.2, .8, .2, 1)" });
   }
   // remember how far down each place the learner was (for going back to it)
   let scrollT = null;

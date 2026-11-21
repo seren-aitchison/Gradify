@@ -36,3 +36,21 @@ test("a course page holds the course's space while its scripts load, so the foot
   const base = await read("kit/styles/base.css");
   assert.match(base, /#course:empty \{ min-height: 100vh;/);
 });
+
+test("opening a view doesn't make the browser lay out the page before it's ready", async () => {
+  const course = await read("kit/course/course.js");
+  assert.doesNotMatch(course, /void main\.offsetWidth/);                    // the entrance is its own animation
+  assert.match(course, /main\.animate\?\.\(\[\{ opacity: 0\.4/);
+  assert.doesNotMatch(course, /const treeShown = \(\) => [^\n]*getClientRects/);   // the outline's visibility from its classes
+  assert.match(course, /art\.addEventListener\("co-rail", \(\) => \{ pctShown = -1; soon\(\);/);   // the reading place, once a frame
+});
+
+test("nothing on a course page repaints on every frame for as long as it's open", async () => {
+  const css = await read("kit/styles/course.css");
+  // the assistant's orb turns its own layer (a transform), not its gradient's angle
+  assert.match(css, /@keyframes gai-turn \{ to \{ transform: rotate\(360deg\); \} \}/);
+  assert.doesNotMatch(css, /--gai-turn/);
+  // the lesson's gleaming rim sweeps once, and not on a phone
+  assert.match(css, /animation: lg-gleam 14s linear 1s;/);
+  assert.doesNotMatch(css, /lg-gleam[^;]*infinite/);
+});
