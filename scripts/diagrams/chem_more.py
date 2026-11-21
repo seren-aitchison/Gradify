@@ -470,10 +470,18 @@ def ms(spec, W, narrow):
     out = [f'<path d="M{pl} {base} L{W - pr} {base} M{pl} {base} L{pl} {top - 6}" stroke="{INK}" stroke-width="1.6" fill="none"/>']
     for r in (0, 50, 100):
         out.append(text(pl - 8, Y(r), str(r), 11, 500, "end", SOFT))
+    # ticks by index, not by adding the step (0.01 steps drift: 27.990000000000002), with the step's decimals; on a
+    # narrow axis every k-th label is kept so neighbours never touch
     step = spec.get("tick", 10)
-    t = math.ceil(lo / step) * step
-    while t <= hi:
-        out.append(text(X(t), base + 16, str(t), 11, 500, fill=SOFT)); t += step
+    dec = max(0, -math.floor(math.log10(step) + 1e-9)) if step < 1 else 0
+    first, n = math.ceil(lo / step - 1e-9), math.floor(hi / step + 1e-9)
+    labw = max(len(f"{v * step:.{dec}f}") for v in (first, n)) * 6.6 + 8
+    every = max(1, math.ceil(labw / max(1e-9, X(step) - X(0))))
+    for i in range(first, n + 1):
+        t = i * step
+        out.append(f'<path d="M{X(t):.1f} {base} L{X(t):.1f} {base + 4}" stroke="{INK}" stroke-width="1.2"/>')
+        if (i - first) % every == 0:
+            out.append(text(X(t), base + 16, f"{t:.{dec}f}", 11, 500, fill=SOFT))
     out.append(text(W - pr, base + 34, "m/z", 12, 600, "end", SOFT))
     out.append(text(pl - 4, top - 18, "relative abundance / %", 12, 600, "start", SOFT))
     for p in spec["peaks"]:
