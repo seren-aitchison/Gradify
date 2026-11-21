@@ -57,6 +57,14 @@ jobs:
             exit 1
           }
 
+      - name: The visual learning inventory is up to date
+        # docs/visual-learning/inventory.json and INVENTORY.md follow the lessons, diagrams, labs and visual plans
+        run: |
+          node scripts/visual/inventory.mjs --check || {
+            echo "::error::The visual learning inventory is out of date. Run node scripts/visual/inventory.mjs, then commit."
+            exit 1
+          }
+
   signed-in:
     # The signed-in student journey in a real browser (scripts/check-sync.cjs): the real course pages against a stand-in
     # Supabase, as a signed-in learner. Progress and answers reach the account, a second device sees them, offline work
