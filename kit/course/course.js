@@ -618,16 +618,31 @@ export function mountCourse(root, cfg) {
     nQ: (id) => (curLesson?.id === id ? curN?.items?.length || 0 : 0), nCards: (id) => (curLesson?.id === id ? curN?.cards?.length || 0 : 0),
   });
   let redrawTree = null;
-  const showTree = (on) => { treeEl.hidden = !on; root.querySelector(".co-body").classList.toggle("has-tree", on); if (on) redrawTree = outline.mount(treeEl); else drawer(false); };
+  // the outline is redrawn only when it can be seen: on a phone it's a closed drawer, and rebuilding it on every lesson
+  // cost more than the lesson itself. Out of sight it's marked stale, and drawn when it comes into view (the drawer
+  // opening, the outline switched back on, focus mode ended, a wider window). The side rail is always drawn: progress,
+  // section tracking and resuming read it even where it isn't shown.
+  let treeStale = false;
+  const treeShown = () => !treeEl.hidden && treeEl.getClientRects().length > 0 && getComputedStyle(treeEl).visibility !== "hidden";
+  const freshTree = (toHere) => { if (treeShown()) { treeStale = false; redrawTree?.(!toHere); } else if (redrawTree) treeStale = true; };
+  // a hidden outline isn't built at all until it's first seen (the drawer opening builds it)
+  const catchUpTree = () => { if (treeEl.hidden || !treeShown()) return; if (!treeEl.dataset.wired) { redrawTree = outline.mount(treeEl); treeStale = false; } else if (treeStale) freshTree(true); };
+  const showTree = (on) => {
+    treeEl.hidden = !on; root.querySelector(".co-body").classList.toggle("has-tree", on);
+    if (!on) drawer(false);
+    else if (treeShown()) { redrawTree = outline.mount(treeEl); treeStale = false; }
+    else if (redrawTree) treeStale = true;
+  };
   // below 1280px the outline is a drawer that slides in from the left
   function drawer(open) {
     treeEl.classList.toggle("open", open); scrim.hidden = !open; document.documentElement.classList.toggle("cx-lock", open);
-    if (open) { treeEl.hidden = false; if (!treeEl.dataset.wired) redrawTree = outline.mount(treeEl); else redrawTree?.(); treeEl.querySelector(".cx-l.here, summary")?.focus({ preventScroll: true }); }
+    if (open) { treeEl.hidden = false; if (!treeEl.dataset.wired) redrawTree = outline.mount(treeEl); else { redrawTree?.(!treeStale); treeStale = false; } treeEl.querySelector(".cx-l.here, summary")?.focus({ preventScroll: true }); }
   }
   scrim.addEventListener("click", () => drawer(false));
   // on a wide screen the outline can be put away to give the lesson more room (remembered); smaller screens use the drawer
   const wideScreen = () => matchMedia("(min-width: 1281px)").matches;
-  const setTreeOff = (off) => { root.classList.toggle("cx-treeoff", off); setPref(cfg.slug, "outlineOff", off || null); };
+  const setTreeOff = (off) => { root.classList.toggle("cx-treeoff", off); setPref(cfg.slug, "outlineOff", off || null); if (!off) catchUpTree(); };
+  new ResizeObserver(catchUpTree).observe(root);
   setTreeOff(Boolean(pref(cfg.slug, "outlineOff")));
   const toggleOutline = () => { if (wideScreen()) setTreeOff(!root.classList.contains("cx-treeoff")); else drawer(!treeEl.classList.contains("open")); };
   root.addEventListener("click", (e) => {
@@ -672,6 +687,7 @@ export function mountCourse(root, cfg) {
     document.querySelector(".cx-focusx")?.remove();
     if (on) { const b = Object.assign(document.createElement("button"), { type: "button", className: "cx-focusx", innerHTML: `${ic("expand")}<span>Exit focus</span><kbd>F</kbd>` }); b.addEventListener("click", () => setFocus(false)); document.body.append(b); }
     root.querySelectorAll("[data-focus]").forEach((b) => b.setAttribute("aria-pressed", String(on)));
+    if (!on) catchUpTree();   // the outline comes back without the course changing size
   }
   // the dock along the bottom of a phone: where to go, or, in a lesson, how to move through it
   function paintDock(view, l, prev, next) {
@@ -752,7 +768,7 @@ export function mountCourse(root, cfg) {
 
   function paintSide() {
     paintHud();
-    if (!treeEl.hidden && treeEl.dataset.wired) redrawTree?.();
+    if (!treeEl.hidden && treeEl.dataset.wired) freshTree(false);
     if (side.hidden) return;
     if (lessonRail) { side.innerHTML = lessonRail(); root.querySelector(".co-lesson")?.dispatchEvent(new Event("co-rail")); return; }
     const xp = totalXp(), L = levelOf(xp), st = streak(), tx = todayXp(), nl = nextLesson(), c = challenge(), cw = Math.min(c.n, c.of(week()));
@@ -1552,7 +1568,7 @@ export function mountCourse(root, cfg) {
     main.querySelector("[data-mark]").addEventListener("click", () => toggleMark(id));
     main.querySelector("[data-focus]").addEventListener("click", () => setFocus(!focusOn()));
     paintDock("lesson", l, prev && byId[prev.id], next && byId[next.id]);
-    redrawTree?.(false);
+    freshTree(true);
     wireReading(id, nQ, N, prev && byId[prev.id], next && byId[next.id]);
     setTimeout(() => paintRings({ steps: stepsDone() }), 400);
     if (N) wireMaps(main, N, mapOpts(l));
