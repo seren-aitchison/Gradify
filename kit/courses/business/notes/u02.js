@@ -43,6 +43,16 @@ M2#business-u02-01-q2@2: A team leader on a factory line spends most of the day 
 M3#business-u02-01-q3@3: A chief executive is praised for detailed budgets and tight cost control but staff say the firm has no sense of direction. Using Kotter's distinction, what is missing? | Leadership: setting a direction and aligning people behind it | Management: the firm needs more planning and control | Administration: more record-keeping is needed | Nothing: control is enough for a large firm | Kotter separates management (coping with complexity through plans and control) from leadership (coping with change by setting direction). The CEO shows strong management but weak leadership.
 SEQ1#business-u02-01-q4@1: Put the management functions in the order of the cycle, starting with setting goals. | Planning ; Organising ; Leading ; Controlling | Plans come first, the organisation is arranged to deliver them, people are led to do the work, and control checks results and feeds back into planning.
 SA2#business-u02-01-q5@2,3: Explain how the skills a manager needs change as they move from supervisor to director. | A supervisor relies heavily on technical skill to direct and solve problems in day-to-day work. A director relies more on conceptual skill to see the whole organisation, its environment and strategy. Human skill is needed at every level, though a director increasingly works through other managers. | Supervisor: technical skill most important ; Director: conceptual skill most important ; Human skill needed at all levels ; Links skills to the nature of the job at each level
+Q: Define management. | Achieving an organisation's goals by planning, organising, leading and controlling its people and other resources.
+Q: How did Mary Parker Follett define management? | As the art of getting things done through people.
+Q: What does the organising function of management involve? | Arranging tasks, people and resources into a structure that can carry out the plan.
+Q: What does the leading function of management involve? | Directing, motivating and communicating with people so they work towards the goals.
+Q: Name Fayol's five elements of management. | Planning, organising, commanding, co-ordinating and controlling.
+Q: Why do the management functions form a cycle? | Control shows where plans need revising, so planning starts again.
+Q: What is the role of middle managers? | Turning strategy into departmental plans and co-ordinating between levels.
+Q: Name Katz's three managerial skills. | Technical, human and conceptual skill.
+Q: Which of Katz's skills matters at every level of management? | Human skill: working with and through people.
+Q: According to Kotter, what do management and leadership each cope with? | Management copes with complexity, through plans, budgets and control; leadership copes with change, through direction, alignment and inspiration.
 
 ## Classical management theory: Taylor and Fayol
 LV: Introductory · Foundation
@@ -91,6 +101,16 @@ M2#business-u02-02-q2@2: A burger chain sets exact timings for every step of mak
 M3#business-u02-02-q3@3: A software firm adopts strict unity of command but its projects need staff to work for several project leaders at once. What is the best evaluation? | Fayol's principle assumes stable, simple work and conflicts with project-based structures | Unity of command should be applied more strictly | Fayol's principles only apply to public-sector bodies | The problem is a lack of piece-rate pay | Classical principles assumed one best way for stable conditions. Project work often needs matrix structures, where staff report to more than one manager; contingency theory explains why.
 TF1#business-u02-02-q4@1: Taylor believed workers should plan their own methods of work. | false | Taylor argued planning should be separated from doing: managers and specialists plan, workers carry out the standard method.
 SA2#business-u02-02-q5@3: Evaluate how far scientific management is still relevant to modern businesses. | It remains relevant where work is repetitive and measurable, such as fast food, warehouses and call centres, which use timed tasks, standard methods and performance targets. Its limits are that it treats people as motivated mainly by pay, can deskill work and cause disengagement, and fits poorly with creative or knowledge work. Relevance depends on the type of work. | Examples of modern use ; Productivity benefits ; Human and motivational costs ; Judgement that relevance depends on the type of work
+Q: In which year did Taylor publish The Principles of Scientific Management? | 1911.
+Q: What does a time and motion study do? | Breaks a job into its smallest movements and times them to find the one best way and set a standard.
+Q: How did Taylor divide work between managers and workers? | Managers plan the work; workers carry it out.
+Q: What results did Taylor report from his pig-iron study at Bethlehem Steel? | Daily loading rose from about 12.5 tons to about 47 tons for one selected worker.
+Q: What did Taylor change in the pig-iron study to raise output? | He specified rest breaks and movements and paid a higher piece rate.
+Q: From what perspective did Fayol look at management, compared with Taylor? | From the top down, at the whole organisation, whereas Taylor focused on individual shop-floor tasks.
+Q: What is Fayol's principle of esprit de corps? | Harmony and team spirit within the organisation.
+Q: What assumption did Taylor and Fayol share? | That there was one best way to run work and organisations.
+Q: Name three modern settings where classical management ideas live on. | Fast-food production lines, call-centre scripts and warehouse picking targets (also lean timings).
+Q: State three limitations of classical management theory. | It treats workers as motivated only by money, deskills work causing boredom and conflict, and ignores social needs (also assumes a stable environment).
 
 ## Mintzberg's managerial roles
 LV: Introductory · Application
@@ -137,6 +157,16 @@ M2#business-u02-03-q2@2: A sales director reads industry reports and attends tra
 M3#business-u02-03-q3@3: A student argues that Mintzberg proves Fayol was wrong. What is the best response? | Mintzberg described how managers spend their time; Fayol prescribed what management should achieve, so the views complement each other | Mintzberg proves planning never happens in real organisations | Fayol studied managers more carefully than Mintzberg did | They studied the same thing and reached identical conclusions | Fayol's functions are about purpose; Mintzberg's roles describe observed activity. A manager allocating resources is still planning and controlling, just in fragmented, spoken bursts.
 MATCH1#business-u02-03-q4@2: Match each activity to its role. | Cutting the ribbon at a new branch = Figurehead ; Settling a pay deal with a union = Negotiator ; Launching a process improvement project = Entrepreneur ; Emailing a new policy to staff = Disseminator | Each activity fits the role defined by what the manager is doing: symbolic duty, bargaining, starting change and passing information inside.
 SA2#business-u02-03-q5@2,3: Using Mintzberg's roles, explain why a manager's job is hard to plan. | Managers combine interpersonal, informational and decisional roles, often in the same hour. Disturbance handling and spoken requests interrupt planned work, and much information arrives informally. Work is fragmented into short activities, so long planned tasks are repeatedly broken up. | Names roles from more than one group ; Disturbances and interruptions ; Fragmented, brief activities ; Links this to difficulty planning
+Q: What did Mintzberg do for The Nature of Managerial Work (1973)? | He observed five chief executives for a week each.
+Q: What did Mintzberg find about the length of managers' activities? | Half their activities lasted under nine minutes.
+Q: Name the three interpersonal roles. | Figurehead, leader and liaison.
+Q: What does the figurehead role involve? | Symbolic and ceremonial duties.
+Q: What is the liaison role? | Building contacts outside the manager's unit.
+Q: How does the disseminator role differ from the spokesperson role? | The disseminator passes information inside the organisation; the spokesperson passes it to outsiders.
+Q: Name the four decisional roles. | Entrepreneur, disturbance handler, resource allocator and negotiator.
+Q: What does the entrepreneur role involve? | Starting improvement projects and change.
+Q: Why are Mintzberg's roles not separate jobs? | They form an integrated whole: one meeting can involve several roles at once.
+Q: State two criticisms of Mintzberg's study. | The sample of five CEOs was too small to generalise, and the roles describe activities rather than explain effectiveness.
 
 ## The human relations movement
 LV: Introductory · Foundation
@@ -173,6 +203,16 @@ M2#business-u02-04-q2@2: A warehouse manager finds that a new team keeps output 
 M3#business-u02-04-q3@3: Which is the strongest criticism of using the Hawthorne studies as proof that attention raises productivity? | Many factors changed at once, samples were tiny and re-analysis finds weak effects | The studies were carried out in a factory rather than an office | The researchers didn't measure output | The studies took place too recently to be judged | With small groups, several simultaneous changes and later re-analysis showing weak effects, the studies can't isolate attention as the cause.
 TF1#business-u02-04-q4@1: In the illumination experiments, output rose even when lighting was reduced. | true | This puzzling finding led the researchers to look beyond physical conditions to social and psychological factors.
 SA2#business-u02-04-q5@2,3: Compare the view of workers in scientific management with that of the human relations movement. | Scientific management saw workers as economic beings motivated by pay and best managed through standard methods and close control. Human relations saw them as social beings who need belonging, recognition and involvement, and whose informal groups shape output. The first focused on tasks; the second on people and groups. | Taylor: economic motivation and pay ; Taylor: standardised tasks and control ; Mayo: social needs and recognition ; Mayo: informal group norms
+Q: Where and when were the Hawthorne studies carried out? | At Western Electric's Hawthorne Works near Chicago, between 1924 and 1932.
+Q: What did the illumination experiments suggest? | Output rose whether lighting was raised or lowered, suggesting something other than physical conditions mattered.
+Q: What happened in the relay assembly test room? | Six women given rest breaks and shorter hours raised output and kept it high when conditions returned to the original.
+Q: What social needs does the human relations movement say workers have? | Belonging and recognition, not just money.
+Q: How can informal groups affect management? | They set their own norms, which can support or undermine management.
+Q: According to the human relations movement, what can managers do to raise morale and output? | Give workers attention and involvement.
+Q: Define an informal group. | A group that forms through social relationships rather than the formal structure.
+Q: Name three weaknesses of the Hawthorne studies' evidence. | Tiny samples, changing several things at once, and findings partly reinterpreted to fit Mayo's ideas.
+Q: What did Levitt and List's 2011 re-analysis find? | Little clear evidence of the classic Hawthorne effect in the illumination data.
+Q: How did the human relations movement shift attention compared with classical theory? | From tasks to people: productivity depends on social factors, group norms and recognition as well as pay and conditions.
 
 ## Organisational structure
 LV: Introductory · Foundation
@@ -216,6 +256,16 @@ M2#business-u02-05-q2@2: A consultancy runs client projects that need staff from
 M3#business-u02-05-q3@3: A retailer removes its area manager layer, so 40 store managers now report to two regional directors. What is the most likely problem? | Spans become too wide for the directors to support stores properly | Communication between directors and stores becomes slower | The structure becomes taller | Store managers lose all authority over their stores | Twenty direct reports each is a very wide span. Delayering speeds communication but can overload remaining managers and leave stores with little support.
 SEQ1#business-u02-05-q4@2: Order these structures from the most levels of hierarchy to the fewest, for a firm of the same size. | Span of 3 ; Span of 6 ; Span of 12 | With the same number of staff, narrower spans need more levels to cover everyone, so the span of 3 gives the tallest structure.
 SA2#business-u02-05-q5@2,3: Analyse the advantages and disadvantages to a business of delayering. | Advantages: lower management costs, faster communication between top and bottom, quicker decisions and more empowerment for staff. Disadvantages: remaining managers face wider spans and heavier workloads, experience is lost, fewer promotion opportunities can demotivate, and redundancy can damage morale. | Cost saving ; Faster communication or decisions ; Wider spans and workload ; Morale, experience or promotion effects
+Q: Define hierarchy in an organisation. | The levels of authority in an organisation.
+Q: Define the chain of command. | The line through which instructions pass downward and information passes upward.
+Q: State one advantage and one disadvantage of a tall structure. | It allows close supervision and clear promotion paths, but it slows communication.
+Q: State one advantage and one disadvantage of a flat structure. | It speeds decisions and empowers staff, but loads managers with more direct reports.
+Q: How many levels are needed below a chief executive for 64 staff with a span of 8? | Two levels: 8 + 64.
+Q: State one strength and one weakness of a functional structure. | It builds expertise, but can create silos.
+Q: State one strength and one weakness of a product or divisional structure. | It focuses on markets, but duplicates resources.
+Q: What is the strength of a geographical structure? | It responds to local needs.
+Q: Name three human costs of delayering. | Higher workload and stress for remaining managers, loss of experience and fewer promotion opportunities.
+Q: When are wider spans of control generally workable? | When tasks are routine, staff are skilled and communication technology is good.
 
 ## Centralisation and decentralisation
 LV: Introductory · Application
@@ -259,6 +309,16 @@ M2#business-u02-06-q2@2: A fashion retailer wants every store to look identical 
 M3#business-u02-06-q3@3: A multinational decentralises fully, then finds regional managers using conflicting brand logos and duplicating IT systems. What is the best response? | Centralise brand and IT decisions while leaving local trading decisions decentralised | Centralise every decision immediately | Decentralise further so regions compete | Replace all regional managers | Most firms mix the two. Brand and shared systems benefit from central control; local pricing and marketing benefit from local knowledge.
 TF1#business-u02-06-q4@1: A manager who delegates a task is no longer responsible for its outcome. | false | Delegation passes authority, not ultimate responsibility; the manager remains accountable.
 SA2#business-u02-06-q5@3: Evaluate whether a national chain of coffee shops should centralise or decentralise its decisions. | Centralise the brand, menu core, supply contracts and IT for consistency and scale economies; decentralise staffing, opening hours and local promotions so managers can respond to local demand and stay motivated. The balance depends on how much customers value consistency, how varied local markets are and how skilled store managers are. | Case for central control ; Case for local decisions ; Recommends a mix ; Judgement justified by factors such as brand, market variation or manager skill
+Q: Where are most important decisions made in a centralised organisation? | By senior managers at head office.
+Q: How does decentralisation relate to delegation? | Decentralisation is delegation built into the structure.
+Q: Name three advantages of centralisation. | Consistent policies and brand, tight cost control with buying economies of scale, and quick decisions in a crisis.
+Q: Name two disadvantages of centralisation. | Slower local responses and less motivated local managers.
+Q: Name three advantages of decentralisation. | Faster decisions close to the customer, use of local knowledge, and motivating and developing managers.
+Q: Name three risks of decentralisation. | Inconsistency, duplication and loss of control.
+Q: Why did Chain B's hotel do better during the city festival? | Its manager could set local prices and events, so it raised prices and ran a themed menu within hours; Chain A waited for head office approval.
+Q: What must a manager give a subordinate when delegating, to avoid abdication? | Enough authority, resources and support.
+Q: How do size and geographical spread affect the balance of decision-making? | Large, dispersed firms usually decentralise more.
+Q: Which decisions tend to stay central? | Major strategic and financial decisions, and those where brand consistency or compliance is vital.
 
 ## Bureaucracy and Weber
 LV: Introductory · Foundation
@@ -309,6 +369,16 @@ M2#business-u02-07-q2@2: A council officer refuses an urgent repair because the 
 M3#business-u02-07-q3@3: A start-up founder's authority rests on staff's devotion to her vision. As the firm grows to 2,000 staff, what does Weber's theory predict? | Pressure to routinise authority into rules and offices | Charismatic authority will become stronger with size | Traditional authority will replace it | The firm will need no formal structure | Weber argued charisma is unstable and tends to be routinised into traditional or rational-legal authority as organisations grow.
 MATCH1#business-u02-07-q4@2: Match each leader to the type of authority. | A hereditary chief = Traditional ; A tax inspector applying the law = Rational-legal ; A revolutionary leader followed for their personal qualities = Charismatic | Each is accepted for a different reason: custom, rules and office, or devotion to the individual.
 SA2#business-u02-07-q5@3: Evaluate whether bureaucracy suits a modern technology company. | Bureaucracy suits routine, regulated parts of a tech company such as payroll, data protection, security and compliance, where consistency and records matter. It suits poorly the fast-changing work of product development, where rigid rules and hierarchy slow innovation. A mixed approach, with enabling rules and flexible teams, is likely best. | Benefits for routine or regulated work ; Costs for innovation and speed ; Recognises that rules can enable ; Reasoned judgement
+Q: What is a Weberian ideal type? | A model built from the essential features of a phenomenon, used for comparison rather than as a description of any real organisation.
+Q: Name four features of Weber's ideal-type bureaucracy. | A clear hierarchy of offices, division of labour, written rules applied consistently and impersonality (also merit appointment and written records).
+Q: On what basis are officials appointed and promoted in Weber's bureaucracy? | On merit and technical qualifications, with a career for officials.
+Q: What is traditional authority? | Authority accepted because it has always been so, such as a hereditary monarch.
+Q: What is charismatic authority? | Authority based on followers' devotion to an exceptional individual.
+Q: Which type of authority is the basis of bureaucracy? | Rational-legal authority.
+Q: What does impersonality in a bureaucracy produce, as in passport applications? | Fairness and predictability, since decisions follow rules regardless of who the applicant is.
+Q: How did Weber himself view bureaucracy, unlike its critics? | As a technically superior form of administration; red tape is a dysfunction, not the definition.
+Q: Why can bureaucracy demotivate staff? | It gives narrow jobs and little discretion.
+Q: What was Weber's own fear about bureaucracy? | The 'iron cage' of rationality constraining human freedom.
 
 ## Contingency theory and organisational design
 LV: Introductory · Application
@@ -350,6 +420,16 @@ M2#business-u02-08-q2@2: A video-game studio faces fast-changing technology and 
 M3#business-u02-08-q3@3: A consultant tells a stable, low-cost cement maker to adopt self-managing project teams because "organic structures are modern". What is the best critique? | Contingency theory says structure must fit conditions, and a stable cost-driven business suits a mechanistic design | Organic structures are illegal in heavy industry | Cement makers must use a matrix structure | The firm should copy whatever its largest rival does | Fit is the point: stable, efficiency-driven operations generally perform best with mechanistic structures.
 TF1#business-u02-08-q4@1: Lawrence and Lorsch found that firms in uncertain environments need both more differentiation and stronger integration. | true | Departments facing different sub-environments become more distinct, so they need stronger mechanisms to co-ordinate them.
 SA2#business-u02-08-q5@2,3: Recommend a structure for a hospital, using contingency theory. | A hospital fits Mintzberg's professional bureaucracy: highly trained professionals need autonomy over clinical decisions, while standards come from professional training and regulation. Routine support functions such as payroll and catering can be mechanistic. Emergency and research teams may need organic, adhocratic working. | Identifies professional autonomy ; Uses a named contingency factor ; Different parts may need different structures ; Justified recommendation
+Q: What factors does contingency theory say determine the best structure? | Environment, technology, size and strategy.
+Q: Name three features of a mechanistic structure. | Hierarchy, specialised roles and vertical communication.
+Q: Name three features of an organic structure. | Flexible roles, lateral communication and expertise valued over rank.
+Q: Which firms did Burns and Stalker study? | Scottish and English firms entering electronics.
+Q: What three types of production technology did Woodward identify? | Unit and small-batch, mass, and continuous process production.
+Q: How many firms did Woodward study, and where? | About 100 firms in south-east Essex.
+Q: Why does a firm making standard steel brackets on long-term contracts suit a mechanistic structure? | Demand is predictable, so clear procedures and tight cost control fit.
+Q: Why can an organic structure harm a stable, cost-driven business? | It can waste effort and lose control.
+Q: What is Mintzberg's professional bureaucracy? | A configuration of skilled professionals with autonomy, such as a hospital.
+Q: What is an adhocracy? | Mintzberg's configuration of project teams in innovative firms.
 
 ## Motivation: content theories
 LV: Introductory · Foundation
@@ -393,6 +473,16 @@ M2#business-u02-09-q2@2: A firm gives every worker a 3% pay rise, but motivation
 M3#business-u02-09-q3@3: Which is the strongest criticism of using Herzberg's findings to design jobs for all workers? | His original sample was mainly engineers and accountants, interviewed with a method that may bias the results | He studied only factory workers on piece rates | He ignored the role of the work itself | He found pay was the strongest motivator | The professional sample and the critical-incident method both limit how far the findings generalise.
 SEQ1#business-u02-09-q4@1: Order Maslow's needs from the most basic to the highest. | Physiological ; Safety ; Love and belonging ; Esteem ; Self-actualisation | Maslow argued lower needs must be largely satisfied before higher ones become the main motivators.
 SA2#business-u02-09-q5@2,3: Using Herzberg, explain how a supermarket could motivate its shelf-stacking staff. | First ensure hygiene factors are adequate: fair pay, safe conditions, reasonable supervision and secure contracts, to remove dissatisfaction. Then add motivators through job enrichment: responsibility for a section, recognition for good displays, training and a route to supervisor. Pay alone won't motivate lasting effort. | Hygiene factors first ; Job enrichment or named motivators ; Practical supermarket examples ; Recognises pay prevents dissatisfaction
+Q: Name Maslow's five levels of need. | Physiological, safety, love and belonging, esteem and self-actualisation.
+Q: What happens to a need once it is satisfied, according to Maslow? | It no longer motivates.
+Q: Define self-actualisation. | Maslow's highest need: fulfilling one's potential.
+Q: How does Alderfer's ERG theory differ from Maslow's hierarchy? | Several needs can operate at once, and frustration at a higher level can make people focus on a lower one.
+Q: Whom did Herzberg survey in 1959? | Engineers and accountants, about times they felt good or bad at work.
+Q: Name four of Herzberg's hygiene factors. | Pay, working conditions, company policy and supervision (also job security).
+Q: What do good hygiene factors do, according to Herzberg? | They only prevent dissatisfaction; they don't create motivation.
+Q: Define job enrichment. | Redesigning a job to give more responsibility, variety and meaningful work.
+Q: How could a call centre with adequate pay enrich its staff's jobs? | Let experienced staff resolve complaints end to end and train new starters.
+Q: Name McClelland's three learned needs. | Achievement, affiliation and power.
 
 ## Motivation: process theories
 LV: Introductory · Application
@@ -436,6 +526,16 @@ M2#business-u02-10-q2@2: A nurse discovers a new colleague doing the same job is
 M3#business-u02-10-q3@3: Staff in a warehouse believe they can hit a stretch target and value the bonus, but effort hasn't risen. What does expectancy theory point to? | Low instrumentality: they doubt the target will actually lead to the bonus | Low valence: they don't value money | Low expectancy: they think the target is impossible | High equity: they feel overpaid | With expectancy and valence high, the weak link must be instrumentality, the belief that performance will be rewarded.
 TF1#business-u02-10-q4@1: In Vroom's model, a reward the employee doesn't value can still motivate if effort leads to performance. | false | Motivation is the product of the three factors; zero valence makes the whole product zero.
 SA2#business-u02-10-q5@2,3: Explain how a manager could use goal-setting theory to improve a team's performance. | Set specific, measurable goals rather than "do your best", make them challenging but achievable, involve the team so they accept the goals, give regular feedback on progress and make sure people have the skills and resources to reach them. | Specific goals ; Challenging but achievable ; Acceptance or commitment ; Feedback
+Q: What question do process theories of motivation answer? | How people decide how much effort to put in.
+Q: State Vroom's expectancy formula. | Motivation = Expectancy × Instrumentality × Valence.
+Q: Why does motivation fall to zero in Vroom's model if one factor is zero? | The three factors are multiplied, so any zero makes the product zero.
+Q: Define instrumentality in Vroom's theory. | The belief that good performance will lead to a reward.
+Q: Define valence. | The value a person places on a reward.
+Q: How should a manager fix low instrumentality caused by bonuses cancelled at the last minute? | Make the reward reliable.
+Q: Name four responses to perceived under-reward in equity theory. | Cutting effort, asking for more, changing the comparison or leaving.
+Q: How do people react to perceived over-reward, according to Adams? | It can cause guilt, though people tolerate it more easily than under-reward.
+Q: Name three conditions under which specific, difficult goals raise performance. | People accept the goals, get feedback and have the ability to reach them.
+Q: Why might a reward valued by managers fail to motivate an employee? | Valence belongs to the employee: a reward they don't want has no motivating force.
 
 ## Leadership theories
 LV: Introductory · Application
@@ -478,6 +578,16 @@ M2#business-u02-11-q2@2: Under situational leadership, which style suits an expe
 M3#business-u02-11-q3@3: A CEO turns round a failing airline by setting a vivid vision and making staff feel personally valued. Which is the best analysis? | This is transformational leadership, though success also depended on the crisis making change acceptable | This shows trait theory is correct, since only she could do it | This is transactional leadership because staff were paid | Leadership made no difference; the market recovered | Vision and individual consideration are transformational. A good evaluation also notes the situational factors contingency theory emphasises.
 MATCH1#business-u02-11-q4@1: Match each theorist to their idea. | Fiedler = Leader style is fixed ; Hersey and Blanchard = Style adapts to follower readiness ; Bass = Transformational leadership ; Stogdill = No consistent leadership traits | These are the defining claims of each approach.
 SA2#business-u02-11-q5@3: Evaluate whether leaders are born or made. | Trait research finds some modest links between personality and leadership emergence, suggesting some people are more likely to lead. Behavioural and situational theories show that leadership behaviours can be learned and adapted, and leadership training has measurable effects. Most evidence supports a mix: traits influence who emerges, but effectiveness depends on learned behaviour and fit with the situation. | Trait evidence ; Behaviours can be learned ; Situation matters ; Balanced conclusion
+Q: What did Stogdill's 1948 review find about leadership traits? | No consistent list of traits that set leaders apart.
+Q: Which traits do later meta-analyses link modestly to leadership emergence? | Extraversion and conscientiousness.
+Q: How did the Michigan studies classify leaders? | As job-centred or employee-centred.
+Q: What two dimensions does Blake and Mouton's managerial grid plot? | Concern for production against concern for people.
+Q: Name the three factors that make a situation favourable in Fiedler's model. | Leader-member relations, task structure and position power.
+Q: In which situations do task-oriented leaders do best, according to Fiedler? | In very favourable or very unfavourable situations.
+Q: Name the four styles in Hersey and Blanchard's situational leadership, in order. | Telling, selling, participating and delegating.
+Q: What does a leader do in House's path-goal theory? | Clears the path to goals, choosing directive, supportive, participative or achievement-oriented behaviour to suit followers and tasks.
+Q: Name the four ways transformational leaders inspire followers. | Vision, intellectual stimulation, individual consideration and charisma.
+Q: Trace the sequence of focus in leadership theory. | From who leaders are, to what they do, to what fits the situation, to how leaders transform followers' goals.
 
 ## Leadership styles
 LV: Introductory · Application
@@ -519,6 +629,16 @@ M2#business-u02-12-q2@2: A team of research scientists, all experts, is developi
 M3#business-u02-12-q3@3: After a cyber-attack, an IT director takes every decision herself for 48 hours, then returns to consulting her team. What is the best evaluation? | Appropriate: urgency justified an autocratic style, and returning to consultation protects commitment | Wrong: a leader should never change style | Wrong: she should have used laissez-faire during the crisis | Appropriate only because she is the most senior person | Contingency thinking supports adapting style. Crises favour fast, clear decisions; normal working favours participation.
 TF1#business-u02-12-q4@2: Research generally finds laissez-faire leadership produces the best outcomes for teams. | false | Laissez-faire leadership is consistently linked to role confusion, conflict and lower satisfaction.
 SA2#business-u02-12-q5@2,3: Recommend a leadership style for a manager taking over a demotivated team of experienced call-centre staff, with reasons. | A democratic or consultative style is likely best: experienced staff have useful knowledge about what is going wrong, involving them builds commitment and addresses the causes of demotivation. Some clear direction may be needed early on targets and standards, so the manager may combine consultation with firm decisions where needed. | Recommends a style ; Uses experience of staff ; Links to motivation ; Recognises the situation may need a mix
+Q: State one advantage and one disadvantage of autocratic leadership. | It is fast and clear, useful in crises or with inexperienced staff, but can demotivate skilled staff and lose their ideas.
+Q: State one advantage and one disadvantage of democratic leadership. | It builds commitment and uses expertise, but it is slower.
+Q: When can laissez-faire leadership suit a team? | When members are highly skilled, self-motivated experts.
+Q: State one strength and one weakness of paternalistic leadership. | It builds loyalty, but can feel patronising.
+Q: What did Lewin, Lippitt and White's 1939 experiments find about democratic leadership? | It produced better morale and more creative work than the other styles.
+Q: How did autocratic and laissez-faire groups perform in Lewin's experiments? | Autocratic groups were productive while the leader was present; laissez-faire groups did worst.
+Q: Name the three forces that decide a style on the Tannenbaum-Schmidt continuum. | Forces in the manager, the subordinates and the situation.
+Q: Which style should a restaurant manager use when a fire alarm sounds? | Autocratic, boss-centred: telling everyone to leave.
+Q: How does delegation differ from laissez-faire leadership? | Delegation gives clear authority with support and accountability; laissez-faire is the absence of leadership.
+Q: What should effective leaders adjust their style to? | The urgency, the stakes and the skill and motivation of their team.
 
 ## Teams and group working
 LV: Introductory · Application
@@ -565,6 +685,16 @@ M2#business-u02-13-q2@2: In a student group project, two members contribute litt
 M3#business-u02-13-q3@3: A board unanimously approves a risky acquisition after the CEO states her view first, and no director raises doubts. What would best reduce the risk next time? | Appoint a devil's advocate and have the CEO give her view last | Make the board more cohesive | Use a larger bonus for directors | Let the CEO decide alone | These are classic symptoms of groupthink; Janis's remedies include structured dissent and leaders withholding their view.
 SEQ1#business-u02-13-q4@1: Put Tuckman's stages in order. | Forming ; Storming ; Norming ; Performing ; Adjourning | Groups move from uncertainty through conflict to agreed norms and effective performance, then disband.
 SA2#business-u02-13-q5@2,3: Explain how a manager could help a new project team reach the performing stage quickly. | Set a clear shared goal and roles early to reduce uncertainty in forming; treat storming conflict as normal and manage it openly; agree norms and ways of working; balance team roles so tasks from ideas to completion are covered; make individual contributions visible to avoid social loafing. | Clear goals and roles ; Managing conflict ; Agreeing norms ; Role balance or individual accountability
+Q: Define a group. | Two or more people who interact and see themselves as a unit.
+Q: What did Katzenbach and Smith stress about real teams? | They have a shared purpose and hold themselves jointly accountable.
+Q: Describe Tuckman's forming stage. | Members are polite, uncertain and dependent on the leader.
+Q: What happens in Tuckman's performing stage? | The group focuses on the task, with high trust.
+Q: What stage did Tuckman add in 1977? | Adjourning: the group disbands.
+Q: What did Belbin find about balanced teams? | Balanced teams outperform teams of clever individuals.
+Q: What does the plant contribute to a Belbin team? | Creative ideas.
+Q: Which Belbin role turns ideas into action? | The implementer.
+Q: Name three remedies for groupthink. | A devil's advocate, outside experts and leaders holding back their own view.
+Q: Name three remedies for social loafing. | Identifying individual contributions, smaller teams and meaningful tasks.
 
 ## Communication in organisations
 LV: Introductory · Foundation
@@ -610,6 +740,16 @@ M2#business-u02-14-q2@2: A manager must explain a complicated new bonus scheme t
 M3#business-u02-14-q3@3: Rumours about a takeover spread fast while official news is slow. What is the best managerial response? | Communicate officially and early through trusted managers, so the grapevine isn't the only source | Ban staff from discussing the takeover | Ignore the rumours, since informal communication has no effect | Send more emails on unrelated topics | The grapevine fills gaps left by formal communication. Timely, credible official messages reduce damaging rumour.
 MATCH1#business-u02-14-q4@1: Match each barrier to an example. | Jargon = Finance team uses unexplained acronyms ; Overload = 200 unread emails a day ; Hierarchy = A message passes through six managers ; Trust = Staff discount news from a distrusted director | Each example shows a different source of noise or distortion.
 SA2#business-u02-14-q5@2,3: Analyse how remote working can affect communication in an organisation. | Remote working removes informal face-to-face contact and the grapevine, can isolate staff and slow horizontal communication. Lean channels such as email may be overused for complex messages. Video calls and messaging tools can restore some richness, and clear norms about channels and response times help. | Loss of informal or rich contact ; Channel choice and media richness ; Isolation or slower collaboration ; Ways to reduce the problems
+Q: Name the elements of the Shannon and Weaver-based communication model. | A sender encodes a message, sends it through a channel to a receiver who decodes it, with feedback returning; noise distorts it.
+Q: What is vertical communication? | Communication running up and down the hierarchy.
+Q: How does formal communication differ from the grapevine? | Formal communication follows official channels; the grapevine follows social links.
+Q: Who proposed media richness theory? | Daft and Lengel, in 1986.
+Q: Which kinds of message suit rich and lean channels? | Rich channels suit complex or sensitive messages; lean channels suit routine ones.
+Q: Describe a chain communication network. | Messages pass along a line from person to person.
+Q: Which communication network suits complex problems and builds satisfaction? | The all-channel network, where everyone talks to everyone.
+Q: What is good practice when announcing redundancies? | Brief managers first, then meet affected staff face to face, followed by written details.
+Q: How does a tall hierarchy act as a communication barrier? | Too many levels distort messages as they pass.
+Q: Why is information overload a barrier to communication? | Too many emails and meetings bury the messages that matter.
 
 ## Organisational culture
 LV: Introductory · Application
@@ -656,6 +796,16 @@ M2#business-u02-15-q2@2: A small advertising agency is run entirely by its found
 M3#business-u02-15-q3@3: A firm announces a new culture of innovation but still punishes every failed project. What is most likely? | Staff will keep avoiding risk, because behaviour follows the real assumptions shown by rewards | Innovation will rise because the values have been announced | The firm will become a task culture immediately | Staff will ignore punishments | Espoused values that conflict with rewards don't change underlying assumptions; staff respond to what is actually rewarded.
 MATCH1#business-u02-15-q4@1: Match each organisation to Handy's culture. | A barristers' chambers = Person ; A government tax office = Role ; A film production crew = Task ; A founder-run start-up = Power | These are Handy's standard illustrations of each culture.
 SA2#business-u02-15-q5@3: Evaluate why changing an organisation's culture is difficult. | Culture rests on deep assumptions that staff may not even recognise; long-serving staff and strong subcultures defend them; reward systems, structures and leaders' habits often keep reinforcing the old culture. Change is possible when leaders model new behaviour, rewards and recruitment change, and early successes build new assumptions, but it usually takes years. | Deep or hidden assumptions ; Reinforcement by rewards and structures ; Ways culture can change ; Judgement on time and difficulty
+Q: Define organisational culture. | The shared values, beliefs and assumptions that shape how people in an organisation behave.
+Q: Give three examples of cultural artefacts. | Dress, office layout and stories (also rituals).
+Q: What are basic underlying assumptions in Schein's model? | Taken-for-granted beliefs that truly drive behaviour.
+Q: When espoused values and assumptions differ, which does behaviour follow? | The underlying assumptions.
+Q: Describe Handy's power culture and its weakness. | A central figure controls, like a spider's web; it is fast but dependent on one person.
+Q: What image did Handy use for a task culture, and what is its drawback? | A net; it is flexible and expert-led but costly.
+Q: Give an example of a person culture. | A barristers' chambers, where the organisation exists to serve individuals.
+Q: Why did the bank whose values said 'customers come first' suffer mis-selling? | Staff were paid bonuses on product sales regardless of need, so the real assumption was that sales targets mattered most.
+Q: State one benefit and one risk of a strong culture. | It aligns people and speeds decisions, but can resist change and breed groupthink.
+Q: Through what do leaders shape culture most, according to Schein? | What they pay attention to, reward and model.
 
 ## Power and politics in organisations
 LV: Introductory · Application
@@ -701,6 +851,16 @@ M2#business-u02-16-q2@2: Junior staff follow a well-liked colleague's lead on a 
 M3#business-u02-16-q3@3: A manager relies on threats of disciplinary action to make staff adopt a new system. What outcome is most likely? | Bare compliance and resistance, rather than real commitment | Strong commitment and enthusiasm | Staff will see her as an expert | The new system will be adopted faster and better | Coercive power tends to produce compliance at best and hidden resistance; personal power produces commitment.
 MATCH1#business-u02-16-q4@1: Match each example to the power base. | Granting a bonus = Reward ; Being the only person who understands the payroll system = Expert ; Issuing a formal warning = Coercive ; Controlling the monthly sales figures = Informational | Each example draws on a different source of influence.
 SA2#business-u02-16-q5@2,3: Explain how a middle manager without authority over other departments could get support for a project. | Use expert and informational power by presenting evidence of the benefits; build a coalition with managers who gain from the project; network and consult to address concerns early; use referent power through good relationships; and get a senior sponsor whose legitimate power can back the project. | Expert or informational power ; Coalition-building ; Consulting or networking ; Senior sponsor or legitimate backing
+Q: Who identified the bases of power in 1959? | French and Raven.
+Q: What is reward power? | The ability to give things people value.
+Q: What is informational power? | Power from controlling information others need.
+Q: Which bases of power come from the position, and which from the person? | Legitimate, reward and coercive power come from the position; expert and referent power from the person.
+Q: How do responses to personal power and coercive power differ? | Personal power tends to produce commitment; coercive power tends to produce resistance or bare compliance.
+Q: Define organisational politics. | Activities to acquire and use power to influence outcomes in an organisation.
+Q: Name four political tactics. | Building coalitions, controlling agendas and information, networking and exchanging favours.
+Q: How does functional politics differ from dysfunctional politics? | Functional politics gets good ideas adopted and builds support for change; dysfunctional politics serves self-interest at the organisation's expense.
+Q: How did the IT manager win funding without budget authority? | She used expert power, showing data on time lost, and built a coalition with the finance and operations directors before the board meeting.
+Q: Why can a specialist sometimes have more influence than a senior manager? | They control vital knowledge or information others need.
 
 ## Managing change
 LV: Introductory · Application
@@ -744,6 +904,16 @@ M2#business-u02-17-q2@2: Office staff resist a move to open-plan working because
 M3#business-u02-17-q3@3: A firm launches a restructure, declares victory after three months and moves on; a year later old practices are back. Which step was missed? | Refreezing, or anchoring the changes in the culture | Creating urgency | Forming a coalition | Unfreezing | Without refreezing (Lewin) or anchoring and consolidation (Kotter), behaviour slides back to the old way.
 SEQ1#business-u02-17-q4@1: Put the first four of Kotter's steps in order. | Create urgency ; Form a guiding coalition ; Develop a vision ; Communicate the vision | Kotter argued urgency must come first, then a coalition to drive change, a vision of where it leads, and wide communication of that vision.
 SA2#business-u02-17-q5@3: Evaluate the usefulness of Lewin's three-step model for managing change today. | It is simple and highlights that change needs preparation and embedding, not just implementation, and force-field analysis is a practical tool. But it implies stable states between changes, whereas many organisations now change continuously; refreezing may create rigidity. It remains useful as a framework but needs adapting to continuous change. | Strengths: simplicity and preparation and embedding ; Force-field as a tool ; Weakness: assumes stability ; Reasoned judgement
+Q: What happens in Lewin's unfreezing step? | Making the case for change by challenging the current state.
+Q: What does refreezing involve? | Embedding the new behaviour.
+Q: When does change happen, according to force-field analysis? | When driving forces outweigh restraining forces.
+Q: Why is reducing restraining forces often better than adding pressure? | It moves the balance towards change without provoking more resistance; Lewin's analysis suggests it often works better.
+Q: How could the hospital make its move to electronic records more secure? | Training and protected learning time to reduce the restraining forces of fear of technology and time to learn.
+Q: What did Kotter study to develop his eight steps? | Failed change programmes.
+Q: Name Kotter's last four steps. | Empower others by removing obstacles, create short-term wins, consolidate gains and anchor changes in the culture.
+Q: Name four reasons people resist change. | Self-interest, uncertainty, misunderstanding and lack of trust, and a different assessment of the change (also habit).
+Q: Name the approaches to resistance suggested by Kotter and Schlesinger. | Education and participation, facilitation and support, negotiation, manipulation and explicit coercion.
+Q: What decides the right approach to resistance? | The cause of resistance, the urgency and the power of those resisting.
 
 ## Decision-making in organisations
 LV: Introductory · Application
@@ -788,4 +958,14 @@ M2#business-u02-18-q2@2: An option has a 0.3 chance of £100,000 and a 0.7 chanc
 M3#business-u02-18-q3@3: A council has spent £40 million on a failing IT project and approves £10 million more "so the money isn't wasted". What is the best analysis? | Escalation of commitment: the £40 million is sunk and shouldn't drive the decision | Rational choice, because past spending must be recovered | Satisficing, because the first option was chosen | Anchoring on the £10 million figure | Only future costs and benefits matter. Continuing because of money already spent is the sunk-cost fallacy behind escalation.
 TF1#business-u02-18-q4@1: Expected value tells you the outcome a single decision will actually produce. | false | Expected value is a probability-weighted average; any single decision produces one of the actual outcomes.
 SA2#business-u02-18-q5@3: Evaluate the use of decision trees in business decision-making. | Decision trees make options, risks and outcomes explicit and allow numerical comparison by expected value. But probabilities and payoffs are often estimates, possibly biased; expected value ignores attitude to risk and non-financial factors such as ethics or staff morale; and the future may contain options no one has mapped. They are a useful aid, not a substitute for judgement. | Strengths: structure and comparison ; Weakness: estimated data ; Ignores risk attitude or qualitative factors ; Balanced conclusion
+Q: List the steps of the rational decision model. | Define the problem, identify all options, evaluate each against clear criteria, choose the best and implement it.
+Q: What limits rationality, according to Simon? | Limited information, time and mental capacity.
+Q: What is a non-programmed decision? | A new, complex and important decision, such as entering a new market.
+Q: Define confirmation bias. | Seeking information that supports what we already believe.
+Q: What is the availability bias? | Judging likelihood by how easily examples come to mind.
+Q: Which fallacy underlies escalation of commitment? | The sunk-cost fallacy.
+Q: State the formula for expected value. | The sum of probability × outcome for each branch.
+Q: Why would a risk-averse firm test-market first when expected values were equal? | Testing limits the worst case to an £80,000 loss instead of £200,000.
+Q: What limits the usefulness of decision trees? | Their outputs are only as good as the probabilities put in.
+Q: Why is expected value not the outcome a decision will produce? | It is an average over many repetitions; a single decision produces one of the actual branch outcomes.
 `;
