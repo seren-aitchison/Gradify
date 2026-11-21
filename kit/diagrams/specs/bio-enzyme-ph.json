@@ -1,0 +1,120 @@
+{
+ "id": "bio-enzyme-ph",
+ "renderer": "graph",
+ "course": "biology",
+ "unit": "u03",
+ "lesson": "Factors affecting enzyme activity",
+ "title": "Each enzyme has its own optimum pH",
+ "caption": "pH changes the charges on R groups, so it changes the shape of the active site and how well the substrate binds. Pepsin works in the acid of the stomach (about pH 2), salivary amylase in the mouth (about pH 7) and trypsin in the alkaline small intestine (about pH 8).",
+ "alt": "Three bell-shaped curves of relative activity against pH: pepsin peaking at pH 2, salivary amylase at pH 7 and trypsin at pH 8.",
+ "description": [
+  "Pepsin peaks at about pH 2, in the stomach.",
+  "Salivary amylase peaks at about pH 7, in the mouth.",
+  "Trypsin peaks at about pH 8, in the small intestine.",
+  "Away from its optimum each enzyme loses activity, and at extremes it denatures."
+ ],
+ "range": {
+  "x": [
+   0,
+   14
+  ],
+  "y": [
+   0,
+   1.25
+  ]
+ },
+ "ticks": [
+  [
+   0,
+   2,
+   4,
+   6,
+   8,
+   10,
+   12,
+   14
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1.0
+  ]
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "pH",
+  "relative activity"
+ ],
+ "curves": [
+  {
+   "expr": "exp(-(x-2)^2/(2*1.1^2))",
+   "colour": "a2",
+   "label": "pepsin",
+   "labelAt": [
+    2,
+    1.1
+   ],
+   "anchor": "middle"
+  },
+  {
+   "expr": "exp(-(x-7)^2/(2*1.0^2))",
+   "colour": "a1",
+   "label": "amylase",
+   "labelAt": [
+    5.7,
+    1.1
+   ],
+   "anchor": "end"
+  },
+  {
+   "expr": "exp(-(x-8)^2/(2*1.0^2))",
+   "colour": "a4",
+   "label": "trypsin",
+   "labelAt": [
+    9.3,
+    1.1
+   ],
+   "anchor": "start"
+  }
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "exp(-(x-2)^2/(2*1.1^2))",
+   "domain": [
+    0,
+    14
+   ],
+   "x": 2,
+   "y": 1.0,
+   "name": "pepsin's optimum is pH 2"
+  },
+  {
+   "type": "max",
+   "expr": "exp(-(x-7)^2/(2*1.0^2))",
+   "domain": [
+    0,
+    14
+   ],
+   "x": 7,
+   "y": 1.0,
+   "name": "salivary amylase's optimum is pH 7"
+  },
+  {
+   "type": "max",
+   "expr": "exp(-(x-8)^2/(2*1.0^2))",
+   "domain": [
+    0,
+    14
+   ],
+   "x": 8,
+   "y": 1.0,
+   "name": "trypsin's optimum is pH 8"
+  }
+ ]
+}

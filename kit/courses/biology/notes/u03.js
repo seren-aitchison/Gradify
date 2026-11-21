@@ -217,12 +217,14 @@ H: Classification
 - By carbonyl group: **aldoses** (aldehyde, such as glucose) and **ketoses** (ketone, such as fructose).
 - Examples: glyceraldehyde (triose), ribose and deoxyribose (pentoses), glucose, fructose and galactose (hexoses).
 - Glucose, fructose and galactose share the formula C₆H₁₂O₆ but differ in structure: they are **isomers**.
+D: bio-hexose-isomers
 H: Ring forms and α and β glucose
 - In water, pentoses and hexoses mostly form **rings**.
 - In **α-glucose**, the –OH on carbon 1 is below the ring; in **β-glucose**, it is above.
 - This small difference determines whether glucose forms starch and glycogen (α) or cellulose (β).
 - Ribose and deoxyribose differ at carbon 2: deoxyribose lacks an oxygen.
 P: Monosaccharides are reducing sugars because their free carbonyl group can reduce copper(II) ions, which is the basis of Benedict's test: a positive test turns from blue to green, yellow, orange or brick red, depending on concentration. Glucose is the main respiratory substrate, fructose is found in fruit and combines with glucose in sucrose, and galactose combines with glucose in lactose.
+D: bio-alpha-beta-glucose
 X: Comparing α- and β-glucose.
 > Both have the formula C₆H₁₂O₆ and a six-membered ring.
 > In α-glucose, the hydroxyl on carbon 1 points down; in β-glucose, it points up.
@@ -257,6 +259,7 @@ H: Formation
 - Two monosaccharides join by a **condensation reaction**, releasing water and forming a **glycosidic bond**.
 - An **α-1,4 glycosidic bond** links carbon 1 of one α-glucose to carbon 4 of another.
 - Disaccharides are broken by **hydrolysis**, catalysed by enzymes such as maltase, sucrase and lactase.
+D: bio-condensation-maltose
 H: Examples
 - **Maltose**: glucose + glucose (α-1,4); from starch digestion.
 - **Sucrose**: glucose + fructose (α-1,β-2); transported in phloem; table sugar.
@@ -305,6 +308,7 @@ H: Cellulose
 - Neighbouring chains link by **hydrogen bonds** into **microfibrils** and fibres.
 - Very strong, giving plant cell walls tensile strength.
 P: Storage polysaccharides are insoluble, so they do not affect water potential, and compact, storing much glucose in a small space. Glycogen's greater branching suits animals, which have higher metabolic rates and need rapid release of glucose. Cellulose's straight chains and hydrogen bonding make it strong, but most animals lack cellulase, so it acts as dietary fibre in humans. Ruminants rely on microbes to digest it.
+D: bio-alpha-beta-glucose
 X: Explaining glycogen's structure.
 > Muscle cells may need glucose rapidly during exercise.
 > Glycogen is highly branched, giving many terminal glucose units.
@@ -382,6 +386,7 @@ H: Structure
 - A fatty acid has a **carboxyl group** (–COOH) and a **hydrocarbon tail**.
 - Tails are typically 14–22 carbons long, often an even number.
 - The carboxyl group is polar; the tail is non-polar.
+D: bio-fatty-acids
 H: Saturated and unsaturated
 - **Saturated**: no C=C double bonds; the tail holds as many hydrogen atoms as possible; straight chains.
 - **Unsaturated**: one or more C=C double bonds.
@@ -423,6 +428,7 @@ H: Structure and formation
 - Each fatty acid joins glycerol by a **condensation reaction**, forming an **ester bond** and releasing water.
 - Three ester bonds form, releasing three water molecules.
 - Hydrolysis, catalysed by **lipase**, breaks triglycerides into glycerol and fatty acids.
+D: bio-triglyceride-formation
 H: Why they store energy well
 - High ratio of **C–H bonds** releases much energy when oxidised: about 37 kJ g⁻¹, versus about 17 kJ g⁻¹ for carbohydrates.
 - **Insoluble**, so they do not affect water potential.
@@ -464,6 +470,7 @@ H: Structure
 - The phosphate head is **hydrophilic** (water-loving).
 - The fatty acid tails are **hydrophobic** (water-fearing).
 - So phospholipids are **amphipathic**, with both parts.
+D: bio-phospholipid
 H: Arrangement in water
 - In water, phospholipids form a **bilayer**: heads face the water on both sides, tails face inwards.
 - They can also form **micelles** and closed **vesicles**.
@@ -505,6 +512,7 @@ H: Structure
 - They are hydrophobic and classed as lipids despite having no fatty acids.
 - Different side groups give different steroids.
 - **Cholesterol** has a small hydroxyl group, making it slightly amphipathic.
+D: bio-cholesterol
 H: Cholesterol and hormones
 - **Cholesterol** sits between phospholipids, regulating membrane fluidity.
 - It is the precursor of **steroid hormones**, **vitamin D** and **bile salts**.
@@ -555,6 +563,7 @@ H: Levels of structure and types
 - **Quaternary**: arrangement of more than one chain.
 - **Globular** proteins (enzymes, haemoglobin) are compact and soluble; **fibrous** proteins (collagen, keratin) are long, insoluble and strong.
 P: Protein function depends on shape, and shape depends on the amino acid sequence. A single change in sequence can alter function, as in sickle cell haemoglobin. The biuret test detects proteins: adding biuret reagent (sodium hydroxide and copper(II) sulfate) turns a protein solution from blue to purple, due to peptide bonds.
+D: bio-protein-levels
 X: Globular and fibrous proteins.
 > Haemoglobin is a globular protein: compact, soluble and able to bind oxygen reversibly.
 > Collagen is a fibrous protein: three long chains wound into a strong triple helix.
@@ -590,6 +599,7 @@ H: General structure
 - There are **20** amino acids commonly used in proteins, differing only in their R groups.
 - Glycine has the simplest R group: a hydrogen atom.
 - Most amino acids are **chiral**, and proteins use the L form.
+D: bio-amino-acids
 H: R group classes
 - **Non-polar (hydrophobic)**: such as alanine, valine and leucine.
 - **Polar uncharged**: such as serine and threonine.
@@ -632,6 +642,7 @@ H: Formation and hydrolysis
 - A **condensation reaction** releases water and forms a **peptide bond** (–CO–NH–).
 - Two amino acids make a **dipeptide**; many make a **polypeptide**.
 - **Hydrolysis**, catalysed by proteases such as pepsin and trypsin, breaks peptide bonds.
+D: bio-peptide-bond
 H: The backbone
 - A polypeptide has an **N-terminus** (free amino group) and a **C-terminus** (free carboxyl group).
 - Sequences are written from N to C.
@@ -796,6 +807,7 @@ H: Quaternary structure
 - Held by the same interactions as tertiary structure.
 - Not all proteins have quaternary structure.
 - Subunits can interact so that binding at one affects others (**cooperativity**).
+D: bio-protein-levels
 H: Examples
 - **Haemoglobin**: four subunits (two α and two β), each with a **haem** group containing iron that binds oxygen.
 - **Collagen**: three polypeptides wound into a **triple helix**, with glycine every third residue allowing tight packing.
@@ -1007,6 +1019,7 @@ H: Vmax and Km
 - Michaelis-Menten equation: v = Vmax[S] ÷ (Km + [S]).
 - Vmax depends on enzyme concentration; Km is a property of the enzyme and substrate.
 P: Initial rates are found by drawing a tangent to the start of a product-time graph. Plotting initial rate against substrate concentration gives a hyperbolic curve. Comparing Km values tells us which substrate an enzyme prefers or how isoenzymes differ: hexokinase has a low Km for glucose, while glucokinase in the liver has a higher Km, suiting its role in removing excess glucose after meals.
+D: bio-michaelis-menten
 X: Using the Michaelis-Menten equation.
 > An enzyme has Vmax = 100 µmol min⁻¹ and Km = 2 mM.
 > At [S] = 2 mM, v = 100 × 2 ÷ (2 + 2) = 50 µmol min⁻¹.
@@ -1042,6 +1055,7 @@ H: Reversible inhibition
 - They can be overcome by raising substrate concentration: **Vmax unchanged, Km increased**.
 - **Non-competitive inhibitors** bind elsewhere, at an **allosteric site**, changing the active site's shape.
 - They cannot be overcome by more substrate: **Vmax decreased, Km often unchanged**.
+D: bio-enzyme-inhibition
 H: Irreversible inhibition and control
 - **Irreversible inhibitors** bind permanently, often covalently, such as nerve agents inhibiting acetylcholinesterase.
 - **End-product inhibition**: the final product of a pathway inhibits an early enzyme, providing negative feedback.
@@ -1082,8 +1096,10 @@ H: Temperature and pH
 - Rising temperature increases kinetic energy and collisions, so rate rises up to the **optimum**.
 - Above the optimum, bonds break, the active site changes and the enzyme **denatures**.
 - **Q₁₀**: the rate often roughly doubles for each 10 °C rise below the optimum.
+D: bio-enzyme-temperature
 - Each enzyme has an **optimum pH**: pepsin about pH 2, salivary amylase about pH 7, trypsin about pH 8.
 - pH changes alter R group charges, affecting substrate binding and shape.
+D: bio-enzyme-ph
 H: Concentrations
 - More **substrate** raises rate until active sites are saturated.
 - More **enzyme** raises rate as long as substrate is in excess.
@@ -1124,6 +1140,7 @@ H: Nucleotides
 - DNA nucleotides contain **deoxyribose**; RNA nucleotides contain **ribose**.
 - Bases: **adenine (A)**, **guanine (G)**, **cytosine (C)**, **thymine (T)** in DNA, and **uracil (U)** in RNA instead of thymine.
 - **Purines** (A, G) have two rings; **pyrimidines** (C, T, U) have one ring.
+D: bio-nucleobases
 H: Polynucleotides
 - Nucleotides join by **condensation reactions** forming **phosphodiester bonds** between the phosphate of one and the sugar of the next.
 - This creates a **sugar-phosphate backbone** with bases projecting outward.
@@ -1166,6 +1183,7 @@ H: DNA structure
 - **Complementary base pairing**: A with T (two hydrogen bonds) and G with C (three).
 - A purine always pairs with a pyrimidine, keeping the helix width constant.
 - Chargaff's rules: in DNA, amounts of A equal T, and G equal C.
+D: bio-dna-rna-pairing
 H: RNA and comparison
 - RNA is usually **single stranded**, with **ribose** and **uracil**.
 - Main types: **mRNA** (carries code), **tRNA** (carries amino acids) and **rRNA** (part of ribosomes).
@@ -1207,6 +1225,7 @@ H: Structure and hydrolysis
 - **Hydrolysis** of the terminal phosphate, catalysed by **ATP hydrolase** (ATPase), forms ADP and inorganic phosphate (Pi), releasing about 30.5 kJ mol⁻¹ under standard conditions.
 - The released energy is coupled to energy-requiring reactions.
 - Phosphate can be transferred to other molecules (**phosphorylation**), making them more reactive.
+D: bio-atp-cycle
 H: Uses and resynthesis
 - Uses: **active transport**, **muscle contraction**, **synthesis** of macromolecules, nerve impulses and cell division.
 - ATP is resynthesised from ADP and Pi by **ATP synthase**, in a condensation reaction.

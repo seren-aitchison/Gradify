@@ -1,0 +1,76 @@
+{
+ "id": "bio-hexose-isomers",
+ "renderer": "structures",
+ "course": "biology",
+ "unit": "u03",
+ "lesson": "Monosaccharides",
+ "title": "Three hexoses with the same formula",
+ "caption": "Glucose, galactose and fructose are all C₆H₁₂O₆: isomers. Glucose and galactose are aldoses (a –CHO at the end of the chain) and differ only at carbon 4; fructose is a ketose (a C=O inside the chain).",
+ "alt": "Open-chain structures of glucose, galactose and fructose, each C6H12O6, with the carbonyl group shaded: an aldehyde on glucose and galactose, a ketone on fructose.",
+ "description": [
+  "Glucose: an aldehyde group at carbon 1, so an aldose.",
+  "Galactose: also an aldose; the –OH on carbon 4 points the other way from glucose.",
+  "Fructose: a ketone group at carbon 2, so a ketose.",
+  "All three are C₆H₁₂O₆, so they are isomers."
+ ],
+ "panels": [
+  {
+   "smiles": "O=C[C@H:2](O)[C@@H:3](O)[C@H:4](O)[C@H:5](O)CO",
+   "label": "glucose",
+   "sub": "aldose",
+   "formula": "C6H12O6",
+   "cip": {
+    "2": "R",
+    "3": "S",
+    "4": "R",
+    "5": "R"
+   },
+   "highlight": [
+    {
+     "group": "aldehyde",
+     "colour": "a2"
+    }
+   ]
+  },
+  {
+   "smiles": "O=C[C@H:2](O)[C@@H:3](O)[C@@H:4](O)[C@H:5](O)CO",
+   "label": "galactose",
+   "sub": "aldose",
+   "formula": "C6H12O6",
+   "cip": {
+    "2": "R",
+    "3": "S",
+    "4": "S",
+    "5": "R"
+   },
+   "highlight": [
+    {
+     "group": "aldehyde",
+     "colour": "a2"
+    }
+   ]
+  },
+  {
+   "smiles": "O=C(CO)[C@@H:3](O)[C@H:4](O)[C@H:5](O)CO",
+   "label": "fructose",
+   "sub": "ketose",
+   "formula": "C6H12O6",
+   "cip": {
+    "3": "S",
+    "4": "R",
+    "5": "R"
+   },
+   "highlight": [
+    {
+     "group": "ketone",
+     "colour": "a4"
+    }
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "type": "isomers"
+  }
+ ]
+}

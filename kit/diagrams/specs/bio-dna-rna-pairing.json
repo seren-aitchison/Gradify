@@ -1,0 +1,36 @@
+{
+ "id": "bio-dna-rna-pairing",
+ "renderer": "strand",
+ "course": "biology",
+ "unit": "u03",
+ "lesson": "DNA and RNA",
+ "title": "DNA pairs A–T and G–C; RNA uses U for T",
+ "caption": "The two DNA strands are complementary: A pairs with T by two hydrogen bonds, G with C by three. An RNA copy of the coding strand has the same sequence but with uracil in place of thymine.",
+ "alt": "The coding strand of a short gene, its complementary template strand, and the matching mRNA, with the bases coloured by type.",
+ "description": [
+  "Coding strand: ATGGTGCACCTG.",
+  "Template strand, base-paired to it: TACCACGTGGAC (A–T, G–C).",
+  "mRNA copy: AUGGUGCACCUG, the coding strand with U for T.",
+  "31 hydrogen bonds hold this stretch of the double helix together: 2 for each of 5 A–T pairs and 3 for each of 7 G–C pairs."
+ ],
+ "coding": "ATGGTGCACCTG",
+ "rows": [
+  "coding",
+  "template",
+  "mrna"
+ ],
+ "claims": [
+  {
+   "type": "template",
+   "value": "TACCACGTGGAC"
+  },
+  {
+   "type": "mrna",
+   "value": "AUGGUGCACCUG"
+  },
+  {
+   "type": "hbonds",
+   "value": 31
+  }
+ ]
+}

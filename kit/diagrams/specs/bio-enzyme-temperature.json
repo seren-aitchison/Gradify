@@ -1,0 +1,102 @@
+{
+ "id": "bio-enzyme-temperature",
+ "renderer": "graph",
+ "course": "biology",
+ "unit": "u03",
+ "lesson": "Factors affecting enzyme activity",
+ "title": "Temperature and enzyme activity",
+ "caption": "Below the optimum the rate roughly doubles for every 10 °C rise, as molecules gain kinetic energy and collide more often. Beyond the optimum, about 37 °C for human enzymes, hydrogen bonds break, the active site changes shape and the enzyme denatures: the rate collapses.",
+ "alt": "A curve of relative enzyme activity against temperature that rises steadily from 20 degrees, peaks at 37 degrees and then falls steeply to almost nothing by 50 degrees.",
+ "description": [
+  "From 20 °C to 37 °C the rate rises steadily, roughly doubling for each 10 °C.",
+  "The peak, the optimum, is at about 37 °C for a human enzyme.",
+  "Above the optimum the enzyme denatures and the rate falls steeply.",
+  "By 50 °C almost no active enzyme is left."
+ ],
+ "range": {
+  "x": [
+   15,
+   60
+  ],
+  "y": [
+   0,
+   1.2
+  ]
+ },
+ "ticks": [
+  [
+   20,
+   30,
+   37,
+   40,
+   50,
+   60
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1.0
+  ]
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "temperature / °C",
+  "relative rate of reaction"
+ ],
+ "curves": [
+  {
+   "expr": "1.12478*2^((x-37)/10)/(1+exp((x-40.33)/1.6))",
+   "colour": "a2",
+   "domain": [
+    15,
+    60
+   ]
+  }
+ ],
+ "marks": [
+  {
+   "x": 37,
+   "to": 1.0,
+   "label": "optimum",
+   "dx": -8
+  }
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "1.12478*2^((x-37)/10)/(1+exp((x-40.33)/1.6))",
+   "domain": [
+    20,
+    55
+   ],
+   "x": 37,
+   "y": 1.0,
+   "name": "the rate peaks at the optimum, 37 °C"
+  },
+  {
+   "type": "value",
+   "expr": "1.12478*2^((x-37)/10)/(1+exp((x-40.33)/1.6))",
+   "x": 27,
+   "between": [
+    0.5,
+    0.6
+   ],
+   "name": "10 °C below the optimum the rate is a little over half the maximum: roughly halving for each 10 °C"
+  },
+  {
+   "type": "value",
+   "expr": "1.12478*2^((x-37)/10)/(1+exp((x-40.33)/1.6))",
+   "x": 50,
+   "between": [
+    0,
+    0.1
+   ],
+   "name": "by 50 °C the enzyme has denatured and the rate is almost zero"
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "id": "bio-atp-cycle",
+ "renderer": "flow",
+ "course": "biology",
+ "unit": "u03",
+ "lesson": "ATP and biological energy",
+ "title": "The ATP cycle",
+ "caption": "Hydrolysis of the end phosphate of ATP releases about 30.5 kJ per mole, which powers active transport, muscle contraction and synthesis. ATP synthase rebuilds ATP from ADP and Pi, using energy from respiration or photosynthesis, so the cycle never stops.",
+ "alt": "A cycle between ATP, with three phosphate groups, and ADP plus inorganic phosphate: hydrolysis releases energy, and ATP synthase uses energy from respiration or photosynthesis to rebuild ATP.",
+ "description": [
+  "ATP: adenine, ribose and three phosphate groups.",
+  "ATP hydrolase removes the end phosphate: ADP and inorganic phosphate (Pi), releasing about 30.5 kJ per mole to do work.",
+  "ATP synthase joins ADP and Pi again by condensation, using energy from respiration or photosynthesis."
+ ],
+ "layout": "cycle",
+ "radius": 100,
+ "nodes": [
+  {
+   "id": "atp",
+   "label": "ATP",
+   "sub": "adenine, ribose, three phosphates",
+   "tone": "a2"
+  },
+  {
+   "id": "adp",
+   "label": "ADP + Pi",
+   "sub": "adenine, ribose, two phosphates, and a free phosphate",
+   "tone": "a1"
+  }
+ ],
+ "edges": [
+  {
+   "from": "atp",
+   "to": "adp",
+   "label": "hydrolysis (ATPase): releases about 30.5 kJ per mole",
+   "colour": "a2"
+  },
+  {
+   "from": "adp",
+   "to": "atp",
+   "label": "condensation (ATP synthase): energy from respiration or photosynthesis",
+   "colour": "a4"
+  }
+ ]
+}

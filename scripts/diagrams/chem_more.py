@@ -37,6 +37,11 @@ GROUPS = {
     "amine": "[NX3;!$(NC=O);!$(N=*);!$(N#*);!$([N+])]", "nitrile": "[CX2]#[NX1]", "nitro": "[N+](=O)[O-]",
     "halogenoalkane": "[CX4][F,Cl,Br,I]", "thiol": "[SX2H]", "sulfide": "[#6][SX2][#6]", "disulfide": "[SX2][SX2]",
     "peptide link": "[CX3](=O)[NX3H1]", "C=O": "[CX3]=[OX1]",
+    # biochemistry: an alpha-amino acid, the four fused rings of a steroid (any bond order), the purine and pyrimidine rings
+    "alpha-amino acid": "[NX3;H2][CX4][CX3](=O)[OX2H1]",
+    "steroid nucleus": "[#6]1~[#6]~[#6]~[#6]2~[#6](~[#6]~1)~[#6]~[#6]~[#6]1~[#6]~2~[#6]~[#6]~[#6]2~[#6]~[#6]~[#6]~[#6]~1~2",
+    "purine ring system": "[#6]1~[#7]~[#6]~[#7]~[#6]2~[#6]~1~[#7]~[#6]~[#7]~2",
+    "pyrimidine ring": "[#6]1~[#6]~[#6]~[#7]~[#6]~[#7]~1",
 }
 # the atoms to shade for each group: only the group itself, not the carbon skeleton the full pattern needs to match
 CORE = {"alcohol": "[CX4][OX2H]", "primary alcohol": "[OX2H]", "secondary alcohol": "[OX2H]", "tertiary alcohol": "[OX2H]", "phenol": "[OX2H]",
@@ -230,7 +235,17 @@ def structures(spec, W, narrow):
                 if spec.get("betweenLabels") and i < len(spec["betweenLabels"]) and spec["betweenLabels"][i]:
                     out.append(text(cx, y + hmax / 2 - 22, spec["betweenLabels"][i], 11, 700, fill=A["a2"]))
             x += lw + gap
-        y += hmax + (48 if any(panels[i].get("sub") for i, _ in r) else 30)
+        subbed = any(panels[i].get("sub") for i, _ in r)
+        y += hmax + (48 if subbed else 30)
+        # opt-in (spec.rowBreakSeparators): when a reaction wraps onto a second row, say how the rows connect
+        if spec.get("rowBreakSeparators") and r is not rows[-1] and sep:
+            sym = sep[r[-1][0]] if r[-1][0] < len(sep) else ""
+            cy = y - (48 if subbed else 30) + hmax * 0 + (44 if subbed else 26) + 8
+            if sym in ("→", "⇌", "↔"):
+                out.append(arrow(W / 2, cy - 14, W / 2, cy + 14, both=(sym == "↔")))
+            elif sym:
+                out.append(text(W / 2, cy, sym, 20, 700))
+            y += 26
     if spec.get("legend"):
         lx = 14
         for g in spec["legend"]:
@@ -277,6 +292,9 @@ def structure_checks(spec):
                 out.append(ok(f"{name}: atom {k} is {v}", atoms.get(int(k)) == v, f"RDKit CIP: {atoms.get(int(k))}"))
             for k, v in (p.get("ez") or {}).items():
                 out.append(ok(f"{name}: the double bond {k} is {v}", bonds.get(k) == v, f"RDKit CIP: {bonds.get(k)}"))
+        if p.get("rings") is not None:
+            n = m.GetRingInfo().NumRings()
+            out.append(ok(f"{name}: {p['rings']} ring(s)", n == p["rings"], f"found {n}"))
         if p.get("chiralCentres") is not None:
             n = len(Chem.FindMolChiralCenters(m, includeUnassigned=True, useLegacyImplementation=False))
             out.append(ok(f"{name}: {p['chiralCentres']} chiral centre(s)", n == p["chiralCentres"], f"found {n}"))

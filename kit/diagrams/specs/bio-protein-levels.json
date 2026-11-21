@@ -1,0 +1,65 @@
+{
+ "id": "bio-protein-levels",
+ "renderer": "flow",
+ "course": "biology",
+ "unit": "u03",
+ "lesson": "Proteins",
+ "title": "Four levels of protein structure",
+ "caption": "Each level builds on the one before. The sequence (primary) decides which hydrogen bonds form along the backbone (secondary), how the R groups fold the chain (tertiary), and, for proteins with several chains, how the subunits fit together (quaternary).",
+ "alt": "Four boxes in order: primary, secondary, tertiary and quaternary structure, each with the bonds that hold it.",
+ "description": [
+  "Primary structure: the order of amino acids, joined by peptide bonds, from the amino end to the carboxyl end.",
+  "Secondary structure: α-helices and β-sheets: hydrogen bonds between backbone C=O and N–H groups.",
+  "Tertiary structure: the 3D fold of one chain: hydrogen bonds, ionic bonds, disulfide bridges and hydrophobic interactions between R groups.",
+  "Quaternary structure: two or more chains together, as in haemoglobin (four subunits).",
+  "Not every protein has a quaternary structure: only those made of more than one chain."
+ ],
+ "also": [
+  {
+   "course": "biology",
+   "unit": "u03",
+   "lesson": "Protein quaternary structure"
+  }
+ ],
+ "layout": "line",
+ "nodes": [
+  {
+   "id": "s0",
+   "label": "primary structure",
+   "sub": "the order of amino acids, joined by peptide bonds, from the amino end to the carboxyl end",
+   "tone": "a1"
+  },
+  {
+   "id": "s1",
+   "label": "secondary structure",
+   "sub": "α-helices and β-sheets: hydrogen bonds between backbone C=O and N–H groups",
+   "tone": "a4"
+  },
+  {
+   "id": "s2",
+   "label": "tertiary structure",
+   "sub": "the 3D fold of one chain: hydrogen bonds, ionic bonds, disulfide bridges and hydrophobic interactions between R groups",
+   "tone": "a5"
+  },
+  {
+   "id": "s3",
+   "label": "quaternary structure",
+   "sub": "two or more chains together, as in haemoglobin (four subunits)",
+   "tone": "a2"
+  }
+ ],
+ "edges": [
+  {
+   "from": "s0",
+   "to": "s1"
+  },
+  {
+   "from": "s1",
+   "to": "s2"
+  },
+  {
+   "from": "s2",
+   "to": "s3"
+  }
+ ]
+}

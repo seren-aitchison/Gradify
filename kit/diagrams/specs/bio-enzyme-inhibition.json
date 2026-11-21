@@ -1,0 +1,126 @@
+{
+ "id": "bio-enzyme-inhibition",
+ "renderer": "graph",
+ "course": "biology",
+ "unit": "u03",
+ "lesson": "Enzyme inhibition",
+ "title": "Competitive and non-competitive inhibitors",
+ "caption": "A competitive inhibitor fights the substrate for the active site, so more substrate overcomes it: the curve shifts right (Km up) but reaches the same Vmax. A non-competitive inhibitor binds elsewhere and puts some enzyme out of action, so substrate cannot overcome it: Vmax falls.",
+ "alt": "Three rate curves against substrate concentration: no inhibitor, a competitive inhibitor that shifts the curve right to the same maximum, and a non-competitive inhibitor that lowers the maximum.",
+ "description": [
+  "No inhibitor: Vmax 100, Km 2.",
+  "Competitive inhibitor: Km rises to 6 but the curve still approaches Vmax 100.",
+  "Non-competitive inhibitor: Vmax falls to 60; Km stays at 2.",
+  "Competitive inhibition is overcome by raising the substrate concentration; non-competitive inhibition is not."
+ ],
+ "range": {
+  "x": [
+   0,
+   40
+  ],
+  "y": [
+   0,
+   115
+  ]
+ },
+ "ticks": [
+  [
+   5,
+   10,
+   20,
+   30,
+   40
+  ],
+  [
+   25,
+   50,
+   75,
+   100
+  ]
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "substrate concentration [S] / mmol dm^{−3}",
+  "initial rate v (arbitrary units)"
+ ],
+ "curves": [
+  {
+   "expr": "100*x/(2+x)",
+   "colour": "a1"
+  },
+  {
+   "expr": "100*x/(6+x)",
+   "colour": "a3"
+  },
+  {
+   "expr": "60*x/(2+x)",
+   "colour": "a2"
+  }
+ ],
+ "legend": [
+  [
+   "no inhibitor",
+   "a1"
+  ],
+  [
+   "competitive inhibitor",
+   "a3"
+  ],
+  [
+   "non-competitive inhibitor",
+   "a2"
+  ]
+ ],
+ "legendData": [
+  11,
+  36
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "100*x/(6+x)",
+   "x": 6,
+   "y": 50,
+   "name": "competitive: half of Vmax (50) is reached at [S] = 6, so Km has risen from 2 to 6"
+  },
+  {
+   "type": "value",
+   "expr": "100*x/(6+x)",
+   "x": 400,
+   "between": [
+    97,
+    100
+   ],
+   "name": "competitive: at very high [S] the rate reaches the same Vmax, 100"
+  },
+  {
+   "type": "order",
+   "a": "100*x/(6+x)",
+   "b": "100*x/(2+x)",
+   "x": 5,
+   "rel": "<",
+   "name": "competitive: at the same [S] the rate is lower than with no inhibitor"
+  },
+  {
+   "type": "point",
+   "expr": "60*x/(2+x)",
+   "x": 2,
+   "y": 30,
+   "name": "non-competitive: half of its own Vmax (30) is reached at [S] = 2, so Km is unchanged"
+  },
+  {
+   "type": "value",
+   "expr": "60*x/(2+x)",
+   "x": 400,
+   "between": [
+    58,
+    60
+   ],
+   "name": "non-competitive: Vmax falls to 60, and more substrate cannot restore it"
+  }
+ ]
+}

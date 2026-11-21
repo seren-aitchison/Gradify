@@ -1,0 +1,33 @@
+{
+ "id": "bio-cholesterol",
+ "renderer": "structures",
+ "course": "biology",
+ "unit": "u03",
+ "lesson": "Steroids",
+ "title": "Cholesterol",
+ "caption": "Four fused rings (three six-membered, one five-membered) with a hydrocarbon tail and a single –OH. The rings and tail are hydrophobic, so cholesterol sits among the phospholipid tails of an animal cell membrane, with its small polar –OH near the heads.",
+ "alt": "Structure of cholesterol, C27H46O, with its four fused carbon rings shaded and its single hydroxyl group.",
+ "description": [
+  "Four fused carbon rings: A, B and C are six-membered, D is five-membered.",
+  "A hydrocarbon side chain on ring D, and a small hydroxyl group on ring A.",
+  "Eight chiral centres fix its shape exactly; C₂₇H₄₆O."
+ ],
+ "panels": [
+  {
+   "smiles": "C[C@H](CCCC(C)C)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2CC=C4[C@@]3(CC[C@@H](C4)O)C)C",
+   "label": "cholesterol",
+   "formula": "C27H46O",
+   "rings": 4,
+   "chiralCentres": 8,
+   "groups": [
+    "alcohol"
+   ],
+   "highlight": [
+    {
+     "group": "steroid nucleus",
+     "colour": "a4"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "id": "bio-phospholipid",
+ "renderer": "structures",
+ "course": "biology",
+ "unit": "u03",
+ "lesson": "Phospholipids",
+ "title": "A phospholipid",
+ "caption": "Glycerol carries two fatty acid tails (non-polar, hydrophobic) and a phosphate head with choline (charged, hydrophilic). Having both parts makes the molecule amphipathic, which is why phospholipids assemble into a bilayer in water.",
+ "alt": "Structure of a phosphatidylcholine with a saturated palmitic acid tail, an unsaturated oleic acid tail with a cis double bond, and a phosphate and choline head.",
+ "description": [
+  "Two fatty acid tails joined to glycerol by ester bonds: one saturated, one with a cis double bond.",
+  "A phosphate group on the third carbon of glycerol, linked to choline: the polar head.",
+  "Tails: hydrophobic. Head: hydrophilic. The molecule is amphipathic."
+ ],
+ "panels": [
+  {
+   "smiles": "CCCCCCCCCCCCCCCC(=O)OC[C@H](COP(=O)([O-])OCC[N+](C)(C)C)OC(=O)CCCCCCC/C=C\\CCCCCCCC",
+   "label": "phosphatidylcholine",
+   "sub": "two tails, one phosphate head",
+   "formula": "C42H82NO8P",
+   "groups": [
+    "ester",
+    "quaternary ammonium"
+   ],
+   "highlight": [
+    {
+     "group": "[PX4](=O)([O-])(O)O",
+     "colour": "a1"
+    },
+    {
+     "group": "ester",
+     "colour": "a3"
+    }
+   ]
+  }
+ ]
+}

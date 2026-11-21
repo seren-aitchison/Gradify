@@ -1,0 +1,98 @@
+{
+ "id": "bio-michaelis-menten",
+ "renderer": "graph",
+ "course": "biology",
+ "unit": "u03",
+ "lesson": "Enzyme kinetics",
+ "title": "Rate against substrate concentration",
+ "caption": "At low substrate concentration the rate rises steeply; at high concentration every active site is busy and the rate levels off at Vmax. Km is the substrate concentration at which the rate is half of Vmax: here 2 mmol per dm³.",
+ "alt": "A curve of reaction rate against substrate concentration rising steeply and levelling towards a dashed Vmax of 100, with the rate of 50 marked at a concentration of 2.",
+ "description": [
+  "The curve starts at the origin and rises steeply: more substrate, more collisions with active sites.",
+  "It flattens as the active sites become saturated, approaching Vmax = 100.",
+  "Half of Vmax, 50, is reached at a substrate concentration of 2 mmol per dm³. This is Km.",
+  "The equation is v = Vmax[S] ÷ (Km + [S])."
+ ],
+ "range": {
+  "x": [
+   0,
+   20
+  ],
+  "y": [
+   0,
+   115
+  ]
+ },
+ "ticks": [
+  [
+   2,
+   5,
+   10,
+   15,
+   20
+  ],
+  [
+   25,
+   50,
+   75,
+   100
+  ]
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "substrate concentration [S] / mmol dm^{−3}",
+  "initial rate v (arbitrary units)"
+ ],
+ "curves": [
+  {
+   "expr": "100*x/(2+x)",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "y": 100,
+   "label": "Vmax"
+  },
+  {
+   "x": 2,
+   "to": 50,
+   "label": "Km (½ Vmax)",
+   "dx": 66
+  },
+  {
+   "y": 50,
+   "to": 2
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "100*x/(2+x)",
+   "x": 2,
+   "y": 50,
+   "name": "at [S] = Km = 2 the rate is half of Vmax: v = 50"
+  },
+  {
+   "type": "value",
+   "expr": "100*x/(2+x)",
+   "x": 20,
+   "between": [
+    88,
+    94
+   ],
+   "name": "at [S] = 20, ten times Km, the rate is within 10% of Vmax"
+  },
+  {
+   "type": "slope",
+   "expr": "100*x/(2+x)",
+   "x": 0.001,
+   "value": 50,
+   "name": "at low [S] the rate rises in proportion to [S]: gradient Vmax ÷ Km = 50"
+  }
+ ]
+}

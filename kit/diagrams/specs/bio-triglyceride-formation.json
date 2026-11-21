@@ -1,0 +1,76 @@
+{
+ "id": "bio-triglyceride-formation",
+ "renderer": "structures",
+ "course": "biology",
+ "unit": "u03",
+ "lesson": "Triglycerides",
+ "title": "Making a triglyceride",
+ "caption": "Each of glycerol's three –OH groups condenses with the –COOH of a fatty acid, forming an ester bond and releasing a molecule of water: three ester bonds, three waters. Lipase reverses it. The chains are drawn short (8 carbons) to fit; in fats they are typically 14–22.",
+ "alt": "Glycerol and three molecules of octanoic acid react to give the triglyceride tricaprylin and three molecules of water.",
+ "description": [
+  "Glycerol, C₃H₈O₃, has three –OH groups.",
+  "Three fatty acids (here octanoic acid, C₈H₁₆O₂, a short one for clarity), each with a –COOH group.",
+  "Three condensation reactions form three ester bonds, giving tricaprylin, C₂₇H₅₀O₆.",
+  "Three molecules of water are released: C₃H₈O₃ + 3 C₈H₁₆O₂ = C₂₇H₅₀O₆ + 3 H₂O."
+ ],
+ "panels": [
+  {
+   "smiles": "OCC(O)CO",
+   "label": "glycerol",
+   "formula": "C3H8O3",
+   "groups": [
+    "alcohol"
+   ]
+  },
+  {
+   "smiles": "CCCCCCCC(=O)O",
+   "label": "3 × octanoic acid",
+   "formula": "C8H16O2",
+   "groups": [
+    "carboxylic acid"
+   ]
+  },
+  {
+   "smiles": "CCCCCCCC(=O)OCC(OC(=O)CCCCCCC)COC(=O)CCCCCCC",
+   "label": "triglyceride (tricaprylin)",
+   "formula": "C27H50O6",
+   "highlight": [
+    {
+     "group": "ester",
+     "colour": "a2"
+    }
+   ],
+   "notGroups": [
+    "carboxylic acid"
+   ]
+  },
+  {
+   "smiles": "O",
+   "label": "3 × water",
+   "formula": "H2O"
+  }
+ ],
+ "between": [
+  "+",
+  "→",
+  "+"
+ ],
+ "rowBreakSeparators": true,
+ "claims": [
+  {
+   "type": "reaction",
+   "left": [
+    0,
+    1
+   ],
+   "right": [
+    2,
+    3
+   ],
+   "coef": {
+    "1": 3,
+    "3": 3
+   }
+  }
+ ]
+}

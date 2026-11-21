@@ -1,0 +1,62 @@
+{
+ "id": "bio-fatty-acids",
+ "renderer": "structures",
+ "course": "biology",
+ "unit": "u03",
+ "lesson": "Fatty acids",
+ "title": "Saturated and unsaturated fatty acids",
+ "caption": "All three are 18 carbons long with a –COOH head. Stearic acid has no double bonds and is straight; each cis double bond in oleic and linoleic acid puts a kink in the chain, so they pack loosely and their fats are liquid.",
+ "alt": "Skeletal structures of stearic acid with no double bonds, oleic acid with one cis double bond and linoleic acid with two, each with 18 carbons.",
+ "description": [
+  "Stearic acid, C₁₈H₃₆O₂: saturated, a straight chain.",
+  "Oleic acid, C₁₈H₃₄O₂: monounsaturated, one cis double bond and a kink.",
+  "Linoleic acid, C₁₈H₃₂O₂: polyunsaturated, two cis double bonds and two kinks.",
+  "Kinked chains cannot pack closely, so unsaturated fats are liquid at room temperature."
+ ],
+ "panels": [
+  {
+   "smiles": "CCCCCCCCCCCCCCCCCC(=O)O",
+   "label": "stearic acid",
+   "sub": "saturated",
+   "formula": "C18H36O2",
+   "groups": [
+    "carboxylic acid"
+   ],
+   "notGroups": [
+    "alkene"
+   ]
+  },
+  {
+   "smiles": "CCCCCCCC/C=C\\CCCCCCCC(=O)O",
+   "label": "oleic acid",
+   "sub": "monounsaturated",
+   "formula": "C18H34O2",
+   "groups": [
+    "carboxylic acid",
+    "alkene"
+   ],
+   "highlight": [
+    {
+     "group": "alkene",
+     "colour": "a2"
+    }
+   ]
+  },
+  {
+   "smiles": "CCCCC/C=C\\C/C=C\\CCCCCCCC(=O)O",
+   "label": "linoleic acid",
+   "sub": "polyunsaturated",
+   "formula": "C18H32O2",
+   "groups": [
+    "carboxylic acid",
+    "alkene"
+   ],
+   "highlight": [
+    {
+     "group": "alkene",
+     "colour": "a2"
+    }
+   ]
+  }
+ ]
+}

@@ -21704,5 +21704,1314 @@
     "detail": "760px wide, shown at 93% (labels 14.0px)"
    }
   ]
+ },
+ "bio-alpha-beta-glucose": {
+  "title": "α-glucose and β-glucose",
+  "caption": "The two ring forms differ only in the –OH on carbon 1 (shaded): below the ring in α-glucose, above it in β-glucose. That one change decides whether glucose builds starch and glycogen (α) or cellulose (β).",
+  "alt": "Ring structures of alpha-glucose and beta-glucose, each C6H12O6, with the carbon-1 hydroxyl group shaded.",
+  "description": [
+   "α-glucose: the –OH on carbon 1 is below the ring.",
+   "β-glucose: the –OH on carbon 1 is above the ring.",
+   "Every other carbon is the same, so the two are stereoisomers that are not mirror images (diastereomers)."
+  ],
+  "course": "biology",
+  "lesson": "Monosaccharides",
+  "also": [
+   {
+    "course": "biology",
+    "unit": "u03",
+    "lesson": "Polysaccharides"
+   }
+  ],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u03.js: Monosaccharides"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in biology: Polysaccharides",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u03.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "α-glucose: formula C6H12O6",
+    "ok": true,
+    "detail": "RDKit: C6H12O6"
+   },
+   {
+    "name": "α-glucose: contains [CX4;R]([OX2H1])[O;R]",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "α-glucose: atom 1 is S",
+    "ok": true,
+    "detail": "RDKit CIP: S"
+   },
+   {
+    "name": "β-glucose: formula C6H12O6",
+    "ok": true,
+    "detail": "RDKit: C6H12O6"
+   },
+   {
+    "name": "β-glucose: contains [CX4;R]([OX2H1])[O;R]",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "β-glucose: atom 1 is R",
+    "ok": true,
+    "detail": "RDKit CIP: R"
+   },
+   {
+    "name": "the two are diastereomers: same structure, stereoisomers but not mirror images",
+    "ok": true,
+    "detail": "[(0, 'S'), (1, 'S')] against [(0, 'S'), (1, 'R')]"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "bio-amino-acids": {
+  "title": "Amino acids differ only in the R group",
+  "caption": "Every amino acid has the same backbone, an amino group and a carboxyl group on the α-carbon, shaded here. Only the R group changes, and it decides how the residue behaves in a protein. Proteins use the L form (S in all of these but cysteine, where sulfur changes the priorities).",
+  "alt": "Skeletal structures of glycine, alanine, serine, aspartic acid, lysine and cysteine, each with the amino group, alpha carbon and carboxyl group shaded.",
+  "description": [
+   "Glycine: R is a hydrogen atom, the simplest amino acid, and not chiral.",
+   "Alanine: a methyl group, non-polar.",
+   "Serine: a hydroxyl group, polar but uncharged.",
+   "Aspartic acid: a second carboxyl group, acidic.",
+   "Lysine: a second amino group, basic.",
+   "Cysteine: a thiol (–SH) group, able to form disulfide bridges."
+  ],
+  "course": "biology",
+  "lesson": "Amino acids",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u03.js: Amino acids"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "glycine: formula C2H5NO2",
+    "ok": true,
+    "detail": "RDKit: C2H5NO2"
+   },
+   {
+    "name": "glycine: contains alpha-amino acid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "glycine: contains alpha-amino acid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "alanine: formula C3H7NO2",
+    "ok": true,
+    "detail": "RDKit: C3H7NO2"
+   },
+   {
+    "name": "alanine: contains alpha-amino acid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "alanine: contains alpha-amino acid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "alanine: atom 1 is S",
+    "ok": true,
+    "detail": "RDKit CIP: S"
+   },
+   {
+    "name": "serine: formula C3H7NO3",
+    "ok": true,
+    "detail": "RDKit: C3H7NO3"
+   },
+   {
+    "name": "serine: contains alpha-amino acid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "serine: contains alpha-amino acid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "serine: atom 1 is S",
+    "ok": true,
+    "detail": "RDKit CIP: S"
+   },
+   {
+    "name": "aspartic acid: formula C4H7NO4",
+    "ok": true,
+    "detail": "RDKit: C4H7NO4"
+   },
+   {
+    "name": "aspartic acid: contains alpha-amino acid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "aspartic acid: contains alpha-amino acid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "aspartic acid: atom 1 is S",
+    "ok": true,
+    "detail": "RDKit CIP: S"
+   },
+   {
+    "name": "lysine: formula C6H14N2O2",
+    "ok": true,
+    "detail": "RDKit: C6H14N2O2"
+   },
+   {
+    "name": "lysine: contains alpha-amino acid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "lysine: contains alpha-amino acid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "lysine: atom 1 is S",
+    "ok": true,
+    "detail": "RDKit CIP: S"
+   },
+   {
+    "name": "cysteine: formula C3H7NO2S",
+    "ok": true,
+    "detail": "RDKit: C3H7NO2S"
+   },
+   {
+    "name": "cysteine: contains alpha-amino acid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "cysteine: contains alpha-amino acid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "cysteine: atom 1 is R",
+    "ok": true,
+    "detail": "RDKit CIP: R"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "bio-atp-cycle": {
+  "title": "The ATP cycle",
+  "caption": "Hydrolysis of the end phosphate of ATP releases about 30.5 kJ per mole, which powers active transport, muscle contraction and synthesis. ATP synthase rebuilds ATP from ADP and Pi, using energy from respiration or photosynthesis, so the cycle never stops.",
+  "alt": "A cycle between ATP, with three phosphate groups, and ADP plus inorganic phosphate: hydrolysis releases energy, and ATP synthase uses energy from respiration or photosynthesis to rebuild ATP.",
+  "description": [
+   "ATP: adenine, ribose and three phosphate groups.",
+   "ATP hydrolase removes the end phosphate: ADP and inorganic phosphate (Pi), releasing about 30.5 kJ per mole to do work.",
+   "ATP synthase joins ADP and Pi again by condensation, using energy from respiration or photosynthesis."
+  ],
+  "course": "biology",
+  "lesson": "ATP and biological energy",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u03.js: ATP and biological energy"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every step is linked: no box without an arrow",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-cholesterol": {
+  "title": "Cholesterol",
+  "caption": "Four fused rings (three six-membered, one five-membered) with a hydrocarbon tail and a single –OH. The rings and tail are hydrophobic, so cholesterol sits among the phospholipid tails of an animal cell membrane, with its small polar –OH near the heads.",
+  "alt": "Structure of cholesterol, C27H46O, with its four fused carbon rings shaded and its single hydroxyl group.",
+  "description": [
+   "Four fused carbon rings: A, B and C are six-membered, D is five-membered.",
+   "A hydrocarbon side chain on ring D, and a small hydroxyl group on ring A.",
+   "Eight chiral centres fix its shape exactly; C₂₇H₄₆O."
+  ],
+  "course": "biology",
+  "lesson": "Steroids",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u03.js: Steroids"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "cholesterol: formula C27H46O",
+    "ok": true,
+    "detail": "RDKit: C27H46O"
+   },
+   {
+    "name": "cholesterol: contains alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "cholesterol: contains steroid nucleus",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "cholesterol: 4 ring(s)",
+    "ok": true,
+    "detail": "found 4"
+   },
+   {
+    "name": "cholesterol: 8 chiral centre(s)",
+    "ok": true,
+    "detail": "found 8"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "bio-condensation-maltose": {
+  "title": "Two glucose molecules join to make maltose",
+  "caption": "A condensation reaction links carbon 1 of one α-glucose to carbon 4 of another through an oxygen: the α-1,4 glycosidic bond (shaded). One molecule of water is released, and hydrolysis, catalysed by maltase, reverses it.",
+  "alt": "Two alpha-glucose molecules, C6H12O6, react to give maltose, C12H22O11, and a molecule of water.",
+  "description": [
+   "Two α-glucose molecules, each C₆H₁₂O₆.",
+   "Carbon 1 of one joins to carbon 4 of the other through an oxygen atom: an α-1,4 glycosidic bond.",
+   "A water molecule is released: this is a condensation reaction.",
+   "Atoms balance: C₁₂H₂₄O₁₂ on the left, C₁₂H₂₂O₁₁ + H₂O on the right."
+  ],
+  "course": "biology",
+  "lesson": "Disaccharides",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u03.js: Disaccharides"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "α-glucose: formula C6H12O6",
+    "ok": true,
+    "detail": "RDKit: C6H12O6"
+   },
+   {
+    "name": "α-glucose: formula C6H12O6",
+    "ok": true,
+    "detail": "RDKit: C6H12O6"
+   },
+   {
+    "name": "maltose: formula C12H22O11",
+    "ok": true,
+    "detail": "RDKit: C12H22O11"
+   },
+   {
+    "name": "maltose: contains [CX4;R][OX2;!R][CX4;R]",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "water: formula H2O",
+    "ok": true,
+    "detail": "RDKit: H2O"
+   },
+   {
+    "name": "the equation balances (atoms on both sides)",
+    "ok": true,
+    "detail": "{'C': 12, 'H': 24, 'O': 12} → {'C': 12, 'H': 24, 'O': 12}"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "bio-dna-rna-pairing": {
+  "title": "DNA pairs A–T and G–C; RNA uses U for T",
+  "caption": "The two DNA strands are complementary: A pairs with T by two hydrogen bonds, G with C by three. An RNA copy of the coding strand has the same sequence but with uracil in place of thymine.",
+  "alt": "The coding strand of a short gene, its complementary template strand, and the matching mRNA, with the bases coloured by type.",
+  "description": [
+   "Coding strand: ATGGTGCACCTG.",
+   "Template strand, base-paired to it: TACCACGTGGAC (A–T, G–C).",
+   "mRNA copy: AUGGUGCACCUG, the coding strand with U for T.",
+   "31 hydrogen bonds hold this stretch of the double helix together: 2 for each of 5 A–T pairs and 3 for each of 7 G–C pairs."
+  ],
+  "course": "biology",
+  "lesson": "DNA and RNA",
+  "also": [],
+  "renderer": "strand",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u03.js: DNA and RNA"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the coding strand is DNA (A, T, G, C) in whole codons",
+    "ok": true,
+    "detail": "12 bases"
+   },
+   {
+    "name": "every base pairs with its complement (A–T, G–C)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "template strand TACCACGTGGAC",
+    "ok": true,
+    "detail": "TACCACGTGGAC"
+   },
+   {
+    "name": "mRNA AUGGUGCACCUG",
+    "ok": true,
+    "detail": "AUGGUGCACCUG"
+   },
+   {
+    "name": "31 hydrogen bonds hold the strands together",
+    "ok": true,
+    "detail": "31"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "760px wide, shown at 93% (labels 14.0px)"
+   }
+  ]
+ },
+ "bio-enzyme-inhibition": {
+  "title": "Competitive and non-competitive inhibitors",
+  "caption": "A competitive inhibitor fights the substrate for the active site, so more substrate overcomes it: the curve shifts right (Km up) but reaches the same Vmax. A non-competitive inhibitor binds elsewhere and puts some enzyme out of action, so substrate cannot overcome it: Vmax falls.",
+  "alt": "Three rate curves against substrate concentration: no inhibitor, a competitive inhibitor that shifts the curve right to the same maximum, and a non-competitive inhibitor that lowers the maximum.",
+  "description": [
+   "No inhibitor: Vmax 100, Km 2.",
+   "Competitive inhibitor: Km rises to 6 but the curve still approaches Vmax 100.",
+   "Non-competitive inhibitor: Vmax falls to 60; Km stays at 2.",
+   "Competitive inhibition is overcome by raising the substrate concentration; non-competitive inhibition is not."
+  ],
+  "course": "biology",
+  "lesson": "Enzyme inhibition",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u03.js: Enzyme inhibition"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "competitive: half of Vmax (50) is reached at [S] = 6, so Km has risen from 2 to 6",
+    "ok": true,
+    "detail": "y(6) = 50"
+   },
+   {
+    "name": "competitive: at very high [S] the rate reaches the same Vmax, 100",
+    "ok": true,
+    "detail": "100*x/(6+x) at 400 = 98.52; expected 97–100"
+   },
+   {
+    "name": "competitive: at the same [S] the rate is lower than with no inhibitor",
+    "ok": true,
+    "detail": "45.45 < 71.43"
+   },
+   {
+    "name": "non-competitive: half of its own Vmax (30) is reached at [S] = 2, so Km is unchanged",
+    "ok": true,
+    "detail": "y(2) = 30"
+   },
+   {
+    "name": "non-competitive: Vmax falls to 60, and more substrate cannot restore it",
+    "ok": true,
+    "detail": "60*x/(2+x) at 400 = 59.7; expected 58–60"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "bio-enzyme-ph": {
+  "title": "Each enzyme has its own optimum pH",
+  "caption": "pH changes the charges on R groups, so it changes the shape of the active site and how well the substrate binds. Pepsin works in the acid of the stomach (about pH 2), salivary amylase in the mouth (about pH 7) and trypsin in the alkaline small intestine (about pH 8).",
+  "alt": "Three bell-shaped curves of relative activity against pH: pepsin peaking at pH 2, salivary amylase at pH 7 and trypsin at pH 8.",
+  "description": [
+   "Pepsin peaks at about pH 2, in the stomach.",
+   "Salivary amylase peaks at about pH 7, in the mouth.",
+   "Trypsin peaks at about pH 8, in the small intestine.",
+   "Away from its optimum each enzyme loses activity, and at extremes it denatures."
+  ],
+  "course": "biology",
+  "lesson": "Factors affecting enzyme activity",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u03.js: Factors affecting enzyme activity"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "pepsin's optimum is pH 2",
+    "ok": true,
+    "detail": "found (2, 1)"
+   },
+   {
+    "name": "salivary amylase's optimum is pH 7",
+    "ok": true,
+    "detail": "found (7, 1)"
+   },
+   {
+    "name": "trypsin's optimum is pH 8",
+    "ok": true,
+    "detail": "found (8, 1)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "bio-enzyme-temperature": {
+  "title": "Temperature and enzyme activity",
+  "caption": "Below the optimum the rate roughly doubles for every 10 °C rise, as molecules gain kinetic energy and collide more often. Beyond the optimum, about 37 °C for human enzymes, hydrogen bonds break, the active site changes shape and the enzyme denatures: the rate collapses.",
+  "alt": "A curve of relative enzyme activity against temperature that rises steadily from 20 degrees, peaks at 37 degrees and then falls steeply to almost nothing by 50 degrees.",
+  "description": [
+   "From 20 °C to 37 °C the rate rises steadily, roughly doubling for each 10 °C.",
+   "The peak, the optimum, is at about 37 °C for a human enzyme.",
+   "Above the optimum the enzyme denatures and the rate falls steeply.",
+   "By 50 °C almost no active enzyme is left."
+  ],
+  "course": "biology",
+  "lesson": "Factors affecting enzyme activity",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u03.js: Factors affecting enzyme activity"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the rate peaks at the optimum, 37 °C",
+    "ok": true,
+    "detail": "found (36.999, 1)"
+   },
+   {
+    "name": "10 °C below the optimum the rate is a little over half the maximum: roughly halving for each 10 °C",
+    "ok": true,
+    "detail": "1.12478*2^((x-37)/10)/(1+exp((x-40.33)/1.6)) at 27 = 0.56; expected 0.5–0.6"
+   },
+   {
+    "name": "by 50 °C the enzyme has denatured and the rate is almost zero",
+    "ok": true,
+    "detail": "1.12478*2^((x-37)/10)/(1+exp((x-40.33)/1.6)) at 50 = 0.01; expected 0–0.1"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "bio-fatty-acids": {
+  "title": "Saturated and unsaturated fatty acids",
+  "caption": "All three are 18 carbons long with a –COOH head. Stearic acid has no double bonds and is straight; each cis double bond in oleic and linoleic acid puts a kink in the chain, so they pack loosely and their fats are liquid.",
+  "alt": "Skeletal structures of stearic acid with no double bonds, oleic acid with one cis double bond and linoleic acid with two, each with 18 carbons.",
+  "description": [
+   "Stearic acid, C₁₈H₃₆O₂: saturated, a straight chain.",
+   "Oleic acid, C₁₈H₃₄O₂: monounsaturated, one cis double bond and a kink.",
+   "Linoleic acid, C₁₈H₃₂O₂: polyunsaturated, two cis double bonds and two kinks.",
+   "Kinked chains cannot pack closely, so unsaturated fats are liquid at room temperature."
+  ],
+  "course": "biology",
+  "lesson": "Fatty acids",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u03.js: Fatty acids"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "stearic acid: formula C18H36O2",
+    "ok": true,
+    "detail": "RDKit: C18H36O2"
+   },
+   {
+    "name": "stearic acid: contains carboxylic acid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "stearic acid: has no alkene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "oleic acid: formula C18H34O2",
+    "ok": true,
+    "detail": "RDKit: C18H34O2"
+   },
+   {
+    "name": "oleic acid: contains carboxylic acid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "oleic acid: contains alkene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "oleic acid: contains alkene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "linoleic acid: formula C18H32O2",
+    "ok": true,
+    "detail": "RDKit: C18H32O2"
+   },
+   {
+    "name": "linoleic acid: contains carboxylic acid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "linoleic acid: contains alkene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "linoleic acid: contains alkene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "bio-hexose-isomers": {
+  "title": "Three hexoses with the same formula",
+  "caption": "Glucose, galactose and fructose are all C₆H₁₂O₆: isomers. Glucose and galactose are aldoses (a –CHO at the end of the chain) and differ only at carbon 4; fructose is a ketose (a C=O inside the chain).",
+  "alt": "Open-chain structures of glucose, galactose and fructose, each C6H12O6, with the carbonyl group shaded: an aldehyde on glucose and galactose, a ketone on fructose.",
+  "description": [
+   "Glucose: an aldehyde group at carbon 1, so an aldose.",
+   "Galactose: also an aldose; the –OH on carbon 4 points the other way from glucose.",
+   "Fructose: a ketone group at carbon 2, so a ketose.",
+   "All three are C₆H₁₂O₆, so they are isomers."
+  ],
+  "course": "biology",
+  "lesson": "Monosaccharides",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u03.js: Monosaccharides"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "glucose: formula C6H12O6",
+    "ok": true,
+    "detail": "RDKit: C6H12O6"
+   },
+   {
+    "name": "glucose: contains aldehyde",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "glucose: atom 2 is R",
+    "ok": true,
+    "detail": "RDKit CIP: R"
+   },
+   {
+    "name": "glucose: atom 3 is S",
+    "ok": true,
+    "detail": "RDKit CIP: S"
+   },
+   {
+    "name": "glucose: atom 4 is R",
+    "ok": true,
+    "detail": "RDKit CIP: R"
+   },
+   {
+    "name": "glucose: atom 5 is R",
+    "ok": true,
+    "detail": "RDKit CIP: R"
+   },
+   {
+    "name": "galactose: formula C6H12O6",
+    "ok": true,
+    "detail": "RDKit: C6H12O6"
+   },
+   {
+    "name": "galactose: contains aldehyde",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "galactose: atom 2 is R",
+    "ok": true,
+    "detail": "RDKit CIP: R"
+   },
+   {
+    "name": "galactose: atom 3 is S",
+    "ok": true,
+    "detail": "RDKit CIP: S"
+   },
+   {
+    "name": "galactose: atom 4 is S",
+    "ok": true,
+    "detail": "RDKit CIP: S"
+   },
+   {
+    "name": "galactose: atom 5 is R",
+    "ok": true,
+    "detail": "RDKit CIP: R"
+   },
+   {
+    "name": "fructose: formula C6H12O6",
+    "ok": true,
+    "detail": "RDKit: C6H12O6"
+   },
+   {
+    "name": "fructose: contains ketone",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "fructose: atom 3 is S",
+    "ok": true,
+    "detail": "RDKit CIP: S"
+   },
+   {
+    "name": "fructose: atom 4 is R",
+    "ok": true,
+    "detail": "RDKit CIP: R"
+   },
+   {
+    "name": "fructose: atom 5 is R",
+    "ok": true,
+    "detail": "RDKit CIP: R"
+   },
+   {
+    "name": "glucose, galactose, fructose: same formula, different compounds",
+    "ok": true,
+    "detail": "formulae ['C6H12O6']; 3 distinct structures"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "bio-michaelis-menten": {
+  "title": "Rate against substrate concentration",
+  "caption": "At low substrate concentration the rate rises steeply; at high concentration every active site is busy and the rate levels off at Vmax. Km is the substrate concentration at which the rate is half of Vmax: here 2 mmol per dm³.",
+  "alt": "A curve of reaction rate against substrate concentration rising steeply and levelling towards a dashed Vmax of 100, with the rate of 50 marked at a concentration of 2.",
+  "description": [
+   "The curve starts at the origin and rises steeply: more substrate, more collisions with active sites.",
+   "It flattens as the active sites become saturated, approaching Vmax = 100.",
+   "Half of Vmax, 50, is reached at a substrate concentration of 2 mmol per dm³. This is Km.",
+   "The equation is v = Vmax[S] ÷ (Km + [S])."
+  ],
+  "course": "biology",
+  "lesson": "Enzyme kinetics",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u03.js: Enzyme kinetics"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "at [S] = Km = 2 the rate is half of Vmax: v = 50",
+    "ok": true,
+    "detail": "y(2) = 50"
+   },
+   {
+    "name": "at [S] = 20, ten times Km, the rate is within 10% of Vmax",
+    "ok": true,
+    "detail": "100*x/(2+x) at 20 = 90.91; expected 88–94"
+   },
+   {
+    "name": "at low [S] the rate rises in proportion to [S]: gradient Vmax ÷ Km = 50",
+    "ok": true,
+    "detail": "gradient 49.9500"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "bio-nucleobases": {
+  "title": "The five bases",
+  "caption": "Adenine and guanine are purines, with two rings; cytosine, thymine and uracil are pyrimidines, with one. DNA uses A, G, C and T; RNA uses uracil in place of thymine, which lacks only the methyl group.",
+  "alt": "Structures of adenine and guanine, each with two fused rings, and cytosine, thymine and uracil, each with one ring.",
+  "description": [
+   "Adenine, C₅H₅N₅, and guanine, C₅H₅N₅O: purines, two rings.",
+   "Cytosine, C₄H₅N₃O, thymine, C₅H₆N₂O₂, and uracil, C₄H₄N₂O₂: pyrimidines, one ring.",
+   "Uracil is thymine without its methyl group; RNA uses uracil, DNA uses thymine."
+  ],
+  "course": "biology",
+  "lesson": "Nucleic acids",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u03.js: Nucleic acids"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "adenine (A): formula C5H5N5",
+    "ok": true,
+    "detail": "RDKit: C5H5N5"
+   },
+   {
+    "name": "adenine (A): contains purine ring system",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "adenine (A): contains purine ring system",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "adenine (A): 2 ring(s)",
+    "ok": true,
+    "detail": "found 2"
+   },
+   {
+    "name": "guanine (G): formula C5H5N5O",
+    "ok": true,
+    "detail": "RDKit: C5H5N5O"
+   },
+   {
+    "name": "guanine (G): contains purine ring system",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "guanine (G): contains purine ring system",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "guanine (G): 2 ring(s)",
+    "ok": true,
+    "detail": "found 2"
+   },
+   {
+    "name": "cytosine (C): formula C4H5N3O",
+    "ok": true,
+    "detail": "RDKit: C4H5N3O"
+   },
+   {
+    "name": "cytosine (C): contains pyrimidine ring",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "cytosine (C): contains pyrimidine ring",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "cytosine (C): 1 ring(s)",
+    "ok": true,
+    "detail": "found 1"
+   },
+   {
+    "name": "thymine (T): formula C5H6N2O2",
+    "ok": true,
+    "detail": "RDKit: C5H6N2O2"
+   },
+   {
+    "name": "thymine (T): contains pyrimidine ring",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "thymine (T): contains pyrimidine ring",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "thymine (T): 1 ring(s)",
+    "ok": true,
+    "detail": "found 1"
+   },
+   {
+    "name": "uracil (U): formula C4H4N2O2",
+    "ok": true,
+    "detail": "RDKit: C4H4N2O2"
+   },
+   {
+    "name": "uracil (U): contains pyrimidine ring",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "uracil (U): contains pyrimidine ring",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "uracil (U): 1 ring(s)",
+    "ok": true,
+    "detail": "found 1"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "bio-peptide-bond": {
+  "title": "Forming a peptide bond",
+  "caption": "The carboxyl group of one amino acid condenses with the amino group of the next, releasing water and forming a peptide bond, –CO–NH– (shaded). The new chain has a free amino group at one end (N-terminus) and a free carboxyl group at the other (C-terminus).",
+  "alt": "Glycine and alanine react to give the dipeptide glycylalanine, with the peptide bond shaded, and a molecule of water.",
+  "description": [
+   "Glycine, C₂H₅NO₂, and alanine, C₃H₇NO₂.",
+   "The carboxyl group of glycine joins the amino group of alanine: a peptide bond.",
+   "A molecule of water is released: a condensation reaction.",
+   "The dipeptide has a free –NH₂ (N-terminus) at the glycine end and a free –COOH (C-terminus) at the alanine end."
+  ],
+  "course": "biology",
+  "lesson": "Peptide bonds",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u03.js: Peptide bonds"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "glycine: formula C2H5NO2",
+    "ok": true,
+    "detail": "RDKit: C2H5NO2"
+   },
+   {
+    "name": "alanine: formula C3H7NO2",
+    "ok": true,
+    "detail": "RDKit: C3H7NO2"
+   },
+   {
+    "name": "glycylalanine: formula C5H10N2O3",
+    "ok": true,
+    "detail": "RDKit: C5H10N2O3"
+   },
+   {
+    "name": "glycylalanine: contains peptide link",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "glycylalanine: contains peptide link",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "water: formula H2O",
+    "ok": true,
+    "detail": "RDKit: H2O"
+   },
+   {
+    "name": "the equation balances (atoms on both sides)",
+    "ok": true,
+    "detail": "{'C': 5, 'H': 12, 'N': 2, 'O': 4} → {'C': 5, 'H': 12, 'N': 2, 'O': 4}"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "bio-phospholipid": {
+  "title": "A phospholipid",
+  "caption": "Glycerol carries two fatty acid tails (non-polar, hydrophobic) and a phosphate head with choline (charged, hydrophilic). Having both parts makes the molecule amphipathic, which is why phospholipids assemble into a bilayer in water.",
+  "alt": "Structure of a phosphatidylcholine with a saturated palmitic acid tail, an unsaturated oleic acid tail with a cis double bond, and a phosphate and choline head.",
+  "description": [
+   "Two fatty acid tails joined to glycerol by ester bonds: one saturated, one with a cis double bond.",
+   "A phosphate group on the third carbon of glycerol, linked to choline: the polar head.",
+   "Tails: hydrophobic. Head: hydrophilic. The molecule is amphipathic."
+  ],
+  "course": "biology",
+  "lesson": "Phospholipids",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u03.js: Phospholipids"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "phosphatidylcholine: formula C42H82NO8P",
+    "ok": true,
+    "detail": "RDKit: C42H82NO8P"
+   },
+   {
+    "name": "phosphatidylcholine: contains ester",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "phosphatidylcholine: contains quaternary ammonium",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "phosphatidylcholine: contains [PX4](=O)([O-])(O)O",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "phosphatidylcholine: contains ester",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "bio-protein-levels": {
+  "title": "Four levels of protein structure",
+  "caption": "Each level builds on the one before. The sequence (primary) decides which hydrogen bonds form along the backbone (secondary), how the R groups fold the chain (tertiary), and, for proteins with several chains, how the subunits fit together (quaternary).",
+  "alt": "Four boxes in order: primary, secondary, tertiary and quaternary structure, each with the bonds that hold it.",
+  "description": [
+   "Primary structure: the order of amino acids, joined by peptide bonds, from the amino end to the carboxyl end.",
+   "Secondary structure: α-helices and β-sheets: hydrogen bonds between backbone C=O and N–H groups.",
+   "Tertiary structure: the 3D fold of one chain: hydrogen bonds, ionic bonds, disulfide bridges and hydrophobic interactions between R groups.",
+   "Quaternary structure: two or more chains together, as in haemoglobin (four subunits).",
+   "Not every protein has a quaternary structure: only those made of more than one chain."
+  ],
+  "course": "biology",
+  "lesson": "Proteins",
+  "also": [
+   {
+    "course": "biology",
+    "unit": "u03",
+    "lesson": "Protein quaternary structure"
+   }
+  ],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u03.js: Proteins"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in biology: Protein quaternary structure",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u03.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every step is linked: no box without an arrow",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-triglyceride-formation": {
+  "title": "Making a triglyceride",
+  "caption": "Each of glycerol's three –OH groups condenses with the –COOH of a fatty acid, forming an ester bond and releasing a molecule of water: three ester bonds, three waters. Lipase reverses it. The chains are drawn short (8 carbons) to fit; in fats they are typically 14–22.",
+  "alt": "Glycerol and three molecules of octanoic acid react to give the triglyceride tricaprylin and three molecules of water.",
+  "description": [
+   "Glycerol, C₃H₈O₃, has three –OH groups.",
+   "Three fatty acids (here octanoic acid, C₈H₁₆O₂, a short one for clarity), each with a –COOH group.",
+   "Three condensation reactions form three ester bonds, giving tricaprylin, C₂₇H₅₀O₆.",
+   "Three molecules of water are released: C₃H₈O₃ + 3 C₈H₁₆O₂ = C₂₇H₅₀O₆ + 3 H₂O."
+  ],
+  "course": "biology",
+  "lesson": "Triglycerides",
+  "also": [],
+  "renderer": "structures",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u03.js: Triglycerides"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "glycerol: formula C3H8O3",
+    "ok": true,
+    "detail": "RDKit: C3H8O3"
+   },
+   {
+    "name": "glycerol: contains alcohol",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "3 × octanoic acid: formula C8H16O2",
+    "ok": true,
+    "detail": "RDKit: C8H16O2"
+   },
+   {
+    "name": "3 × octanoic acid: contains carboxylic acid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "triglyceride (tricaprylin): formula C27H50O6",
+    "ok": true,
+    "detail": "RDKit: C27H50O6"
+   },
+   {
+    "name": "triglyceride (tricaprylin): contains ester",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "triglyceride (tricaprylin): has no carboxylic acid",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "3 × water: formula H2O",
+    "ok": true,
+    "detail": "RDKit: H2O"
+   },
+   {
+    "name": "the equation balances (atoms on both sides)",
+    "ok": true,
+    "detail": "{'C': 27, 'H': 56, 'O': 9} → {'C': 27, 'H': 56, 'O': 9}"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
  }
 }

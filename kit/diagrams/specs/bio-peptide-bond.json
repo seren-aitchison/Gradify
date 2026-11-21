@@ -1,0 +1,67 @@
+{
+ "id": "bio-peptide-bond",
+ "renderer": "structures",
+ "course": "biology",
+ "unit": "u03",
+ "lesson": "Peptide bonds",
+ "title": "Forming a peptide bond",
+ "caption": "The carboxyl group of one amino acid condenses with the amino group of the next, releasing water and forming a peptide bond, –CO–NH– (shaded). The new chain has a free amino group at one end (N-terminus) and a free carboxyl group at the other (C-terminus).",
+ "alt": "Glycine and alanine react to give the dipeptide glycylalanine, with the peptide bond shaded, and a molecule of water.",
+ "description": [
+  "Glycine, C₂H₅NO₂, and alanine, C₃H₇NO₂.",
+  "The carboxyl group of glycine joins the amino group of alanine: a peptide bond.",
+  "A molecule of water is released: a condensation reaction.",
+  "The dipeptide has a free –NH₂ (N-terminus) at the glycine end and a free –COOH (C-terminus) at the alanine end."
+ ],
+ "panels": [
+  {
+   "smiles": "NCC(=O)O",
+   "label": "glycine",
+   "formula": "C2H5NO2"
+  },
+  {
+   "smiles": "N[C@@H](C)C(=O)O",
+   "label": "alanine",
+   "formula": "C3H7NO2"
+  },
+  {
+   "smiles": "NCC(=O)N[C@@H](C)C(=O)O",
+   "label": "glycylalanine",
+   "sub": "a dipeptide",
+   "formula": "C5H10N2O3",
+   "groups": [
+    "peptide link"
+   ],
+   "highlight": [
+    {
+     "group": "peptide link",
+     "colour": "a2"
+    }
+   ]
+  },
+  {
+   "smiles": "O",
+   "label": "water",
+   "formula": "H2O"
+  }
+ ],
+ "between": [
+  "+",
+  "→",
+  "+"
+ ],
+ "rowBreakSeparators": true,
+ "claims": [
+  {
+   "type": "reaction",
+   "left": [
+    0,
+    1
+   ],
+   "right": [
+    2,
+    3
+   ]
+  }
+ ]
+}

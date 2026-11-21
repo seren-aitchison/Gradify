@@ -1,0 +1,125 @@
+{
+ "id": "bio-amino-acids",
+ "renderer": "structures",
+ "course": "biology",
+ "unit": "u03",
+ "lesson": "Amino acids",
+ "title": "Amino acids differ only in the R group",
+ "caption": "Every amino acid has the same backbone, an amino group and a carboxyl group on the α-carbon, shaded here. Only the R group changes, and it decides how the residue behaves in a protein. Proteins use the L form (S in all of these but cysteine, where sulfur changes the priorities).",
+ "alt": "Skeletal structures of glycine, alanine, serine, aspartic acid, lysine and cysteine, each with the amino group, alpha carbon and carboxyl group shaded.",
+ "description": [
+  "Glycine: R is a hydrogen atom, the simplest amino acid, and not chiral.",
+  "Alanine: a methyl group, non-polar.",
+  "Serine: a hydroxyl group, polar but uncharged.",
+  "Aspartic acid: a second carboxyl group, acidic.",
+  "Lysine: a second amino group, basic.",
+  "Cysteine: a thiol (–SH) group, able to form disulfide bridges."
+ ],
+ "panels": [
+  {
+   "smiles": "NCC(=O)O",
+   "label": "glycine",
+   "sub": "R = H",
+   "formula": "C2H5NO2",
+   "groups": [
+    "alpha-amino acid"
+   ],
+   "highlight": [
+    {
+     "group": "alpha-amino acid",
+     "colour": "a1"
+    }
+   ]
+  },
+  {
+   "smiles": "C[C@H:1](N)C(=O)O",
+   "label": "alanine",
+   "sub": "non-polar",
+   "formula": "C3H7NO2",
+   "groups": [
+    "alpha-amino acid"
+   ],
+   "highlight": [
+    {
+     "group": "alpha-amino acid",
+     "colour": "a1"
+    }
+   ],
+   "cip": {
+    "1": "S"
+   }
+  },
+  {
+   "smiles": "N[C@@H:1](CO)C(=O)O",
+   "label": "serine",
+   "sub": "polar, uncharged",
+   "formula": "C3H7NO3",
+   "groups": [
+    "alpha-amino acid"
+   ],
+   "highlight": [
+    {
+     "group": "alpha-amino acid",
+     "colour": "a1"
+    }
+   ],
+   "cip": {
+    "1": "S"
+   }
+  },
+  {
+   "smiles": "N[C@@H:1](CC(=O)O)C(=O)O",
+   "label": "aspartic acid",
+   "sub": "acidic",
+   "formula": "C4H7NO4",
+   "groups": [
+    "alpha-amino acid"
+   ],
+   "highlight": [
+    {
+     "group": "alpha-amino acid",
+     "colour": "a1"
+    }
+   ],
+   "cip": {
+    "1": "S"
+   }
+  },
+  {
+   "smiles": "NCCCC[C@H:1](N)C(=O)O",
+   "label": "lysine",
+   "sub": "basic",
+   "formula": "C6H14N2O2",
+   "groups": [
+    "alpha-amino acid"
+   ],
+   "highlight": [
+    {
+     "group": "alpha-amino acid",
+     "colour": "a1"
+    }
+   ],
+   "cip": {
+    "1": "S"
+   }
+  },
+  {
+   "smiles": "N[C@@H:1](CS)C(=O)O",
+   "label": "cysteine",
+   "sub": "thiol: disulfide bridges",
+   "formula": "C3H7NO2S",
+   "groups": [
+    "alpha-amino acid"
+   ],
+   "highlight": [
+    {
+     "group": "alpha-amino acid",
+     "colour": "a1"
+    }
+   ],
+   "cip": {
+    "1": "R"
+   }
+  }
+ ]
+}

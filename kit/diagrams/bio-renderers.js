@@ -134,7 +134,7 @@ export function mutationKind(a, b) {
 }
 const BASE_TONE = { A: "a1", T: "a2", U: "a2", G: "a4", C: "a3" };
 function strandBlock(seq, rows, y, W, narrow, opts = {}) {
-  const bw = narrow ? 24 : 27, gap = 6, labW = narrow ? 0 : 118, perRow = Math.max(1, Math.floor((W - 24 - labW) / (3 * bw + gap)));
+  const bw = narrow ? 24 : 27, gap = 6, labW = narrow ? 0 : 142, perRow = Math.max(1, Math.floor((W - 24 - labW) / (3 * bw + gap)));
   const codons = seq.length / 3, lines = Math.ceil(codons / perRow), rowH = 34, mrna = transcribe(seq), tmpl = complement(seq), prot = translate(mrna);
   const NAME = { coding: "DNA coding 5′→3′", template: "DNA template 3′→5′", mrna: "mRNA 5′→3′", protein: "polypeptide" };
   let s = "";
