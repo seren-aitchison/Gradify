@@ -260,6 +260,18 @@ h1 {
   padding: 20px; text-decoration: none; overflow: hidden; min-height: 168px;
   transition: border-color .2s, transform .2s cubic-bezier(.2, .8, .2, 1);
 }
+/* the site links: the same frosted glass as every glass surface (fill, highlights, shadow), but its tint and edge are the
+   site's own colour (--c) instead of the brand's indigo, pink and orange */
+.card.glass {
+  --gg-tint: linear-gradient(135deg, color-mix(in srgb, var(--c) 26%, transparent), color-mix(in srgb, var(--c) 10%, transparent) 60%, transparent);
+  --gg-rim: linear-gradient(135deg, color-mix(in srgb, var(--c) 80%, #fff 0%), color-mix(in srgb, var(--c) 40%, transparent) 55%, color-mix(in srgb, var(--c) 65%, transparent));
+}
+:root[data-theme="light"] .card.glass {
+  --gg-tint: linear-gradient(135deg, color-mix(in srgb, var(--c) 20%, transparent), color-mix(in srgb, var(--c) 8%, transparent) 60%, transparent);
+  --gg-rim: linear-gradient(135deg, color-mix(in srgb, var(--c) 70%, transparent), color-mix(in srgb, var(--c) 32%, transparent) 55%, color-mix(in srgb, var(--c) 55%, transparent));
+}
+/* the icon's edge ring too: the site's colour, not the rainbow */
+.card .g3d-pane::after { background: linear-gradient(135deg, var(--c), color-mix(in srgb, var(--c) 45%, #fff)); }
 /* faint wash of the site's own colour */
 .card::before {
   content: ""; position: absolute; inset: -45% -25% auto auto; width: 75%; aspect-ratio: 1;
