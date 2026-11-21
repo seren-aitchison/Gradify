@@ -1,0 +1,48 @@
+{
+ "id": "bio-mutation-nonsense",
+ "renderer": "strand",
+ "course": "biology",
+ "unit": "u04",
+ "lesson": "Types of mutation",
+ "title": "A nonsense mutation",
+ "caption": "GAG becomes TAG, a stop codon, so translation ends early and a shortened protein is made.",
+ "alt": "The start of the beta-globin coding strand and the same sequence with the eighth codon changed from GAG to TAG; the protein stops after seven amino acids.",
+ "description": [
+  "GAG codes for glutamate.",
+  "TAG, read as UAG in mRNA, is a stop codon.",
+  "The chain is released after seven amino acids: a shortened protein."
+ ],
+ "coding": "ATGGTGCACCTGACTCCTGAGGAGAAG",
+ "rows": [
+  "coding",
+  "protein"
+ ],
+ "mutant": {
+  "coding": "ATGGTGCACCTGACTCCTGAGTAGAAG",
+  "label": "after the mutation (GAG to TAG)",
+  "rows": [
+   "coding",
+   "protein"
+  ]
+ },
+ "claims": [
+  {
+   "type": "mutation",
+   "kind": "nonsense"
+  },
+  {
+   "type": "protein",
+   "value": [
+    "Met",
+    "Val",
+    "His",
+    "Leu",
+    "Thr",
+    "Pro",
+    "Glu",
+    "Glu",
+    "Lys"
+   ]
+  }
+ ]
+}

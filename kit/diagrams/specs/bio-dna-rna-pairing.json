@@ -13,6 +13,13 @@
   "mRNA copy: AUGGUGCACCUG, the coding strand with U for T.",
   "31 hydrogen bonds hold this stretch of the double helix together: 2 for each of 5 A–T pairs and 3 for each of 7 G–C pairs."
  ],
+ "also": [
+  {
+   "course": "biology",
+   "unit": "u04",
+   "lesson": "DNA structure"
+  }
+ ],
  "coding": "ATGGTGCACCTG",
  "rows": [
   "coding",

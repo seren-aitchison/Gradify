@@ -1,0 +1,57 @@
+{
+ "id": "bio-chromatin-packing",
+ "renderer": "flow",
+ "course": "biology",
+ "unit": "u04",
+ "lesson": "Chromosomes",
+ "title": "Packing two metres of DNA into a nucleus",
+ "caption": "DNA wraps round histone proteins to make nucleosomes, which coil into chromatin fibres that loop and condense, until before division each chromosome is two sister chromatids joined at the centromere. Tight packing also makes DNA harder to transcribe.",
+ "alt": "Four boxes in order: the DNA double helix, nucleosomes, the chromatin fibre and the condensed chromosome.",
+ "description": [
+  "DNA double helix: about 2 metres of it in every human cell.",
+  "Nucleosomes: DNA wound round histone proteins: beads on a string.",
+  "Chromatin fibre: the nucleosomes coil, then loop and condense further.",
+  "Chromosome: before division: two sister chromatids joined at a centromere."
+ ],
+ "layout": "line",
+ "nodes": [
+  {
+   "id": "k0",
+   "label": "DNA double helix",
+   "sub": "about 2 metres of it in every human cell",
+   "tone": "a1"
+  },
+  {
+   "id": "k1",
+   "label": "nucleosomes",
+   "sub": "DNA wound round histone proteins: beads on a string",
+   "tone": "a4"
+  },
+  {
+   "id": "k2",
+   "label": "chromatin fibre",
+   "sub": "the nucleosomes coil, then loop and condense further",
+   "tone": "a5"
+  },
+  {
+   "id": "k3",
+   "label": "chromosome",
+   "sub": "before division: two sister chromatids joined at a centromere",
+   "tone": "a2"
+  }
+ ],
+ "edges": [
+  {
+   "from": "k0",
+   "to": "k1"
+  },
+  {
+   "from": "k1",
+   "to": "k2"
+  },
+  {
+   "from": "k2",
+   "to": "k3"
+  }
+ ]
+}

@@ -1,0 +1,61 @@
+{
+ "id": "bio-xlinked-cross",
+ "renderer": "cross",
+ "course": "biology",
+ "unit": "u04",
+ "lesson": "Sex-linked inheritance",
+ "title": "An X-linked recessive cross: a carrier mother",
+ "caption": "The haemophilia allele Xʰ is on the X chromosome. A carrier mother passes Xʰ to half her gametes, so half her sons are affected and half her daughters are carriers. The father passes his Y to every son and his Xᴴ to every daughter.",
+ "alt": "A Punnett square of a carrier mother and an unaffected father: one unaffected daughter, one carrier daughter, one unaffected son and one son with haemophilia.",
+ "description": [
+  "Mother XᴴXʰ is a carrier; father XᴴY is unaffected.",
+  "Her eggs carry Xᴴ or Xʰ; his sperm carry Xᴴ or Y.",
+  "Daughters: one XᴴXᴴ unaffected, one XᴴXʰ carrier. Sons: one XᴴY unaffected, one XʰY with haemophilia.",
+  "Half of the sons are affected and half of the daughters are carriers."
+ ],
+ "loci": [
+  {
+   "alleles": [
+    "Xᴴ",
+    "Xʰ",
+    "Y"
+   ],
+   "dominance": {
+    "kind": "sexlinked",
+    "disease": "Xʰ",
+    "recessive": true,
+    "trait": "haemophiliac"
+   }
+  }
+ ],
+ "parents": [
+  {
+   "genotype": [
+    "Xᴴ Xʰ"
+   ],
+   "label": "carrier mother"
+  },
+  {
+   "genotype": [
+    "Xᴴ Y"
+   ],
+   "label": "unaffected father"
+  }
+ ],
+ "claims": [
+  {
+   "type": "phenotypes",
+   "ratio": {
+    "unaffected female": 1,
+    "carrier female": 1,
+    "unaffected male": 1,
+    "haemophiliac male": 1
+   }
+  },
+  {
+   "type": "probability",
+   "phenotype": "haemophiliac male",
+   "value": 0.25
+  }
+ ]
+}

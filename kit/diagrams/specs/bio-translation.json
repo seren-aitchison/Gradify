@@ -1,0 +1,37 @@
+{
+ "id": "bio-translation",
+ "renderer": "strand",
+ "course": "biology",
+ "unit": "u04",
+ "lesson": "Translation",
+ "title": "Translation: codons of mRNA specify amino acids",
+ "caption": "The ribosome reads the mRNA three bases at a time. The start codon AUG brings in methionine; each following codon adds one amino acid; the stop codon UAA ends the chain and releases the polypeptide.",
+ "alt": "An mRNA divided into codons with the amino acid each codes for: Met, Gly, Pro, Lys, then the stop codon.",
+ "description": [
+  "mRNA: AUGGGUCCAAAGUAA.",
+  "AUG is the start codon: methionine.",
+  "The next codons give Gly, Pro, Lys.",
+  "UAA is a stop codon: no amino acid, the chain is released."
+ ],
+ "coding": "ATGGGTCCAAAGTAA",
+ "rows": [
+  "mrna",
+  "protein"
+ ],
+ "claims": [
+  {
+   "type": "mrna",
+   "value": "AUGGGUCCAAAGUAA"
+  },
+  {
+   "type": "protein",
+   "value": [
+    "Met",
+    "Gly",
+    "Pro",
+    "Lys",
+    "Stop"
+   ]
+  }
+ ]
+}

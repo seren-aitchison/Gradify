@@ -1,0 +1,52 @@
+{
+ "id": "bio-crossover-linkage",
+ "renderer": "crossover",
+ "course": "biology",
+ "unit": "u04",
+ "lesson": "Genetic linkage",
+ "title": "Crossing over between linked genes",
+ "caption": "Genes A and B are on the same chromosome. A crossover between them swaps the lower ends of two non-sister chromatids, making two recombinant chromatids (Ab and aB) alongside two parental ones (AB and ab). Even then only half the products are recombinant, so the recombination frequency cannot exceed 50%.",
+ "alt": "Four chromatids before and after a crossover between genes A and B: before, two carry AB and two carry ab; after, they carry AB, Ab, aB and ab.",
+ "description": [
+  "Before: two chromatids carry A and B, two carry a and b.",
+  "A crossover between the genes swaps the B and b ends of two non-sister chromatids.",
+  "After: AB and ab are parental; Ab and aB are recombinant.",
+  "Two of four are recombinant: at most 50%, however far apart the genes are."
+ ],
+ "also": [
+  {
+   "course": "biology",
+   "unit": "u04",
+   "lesson": "Recombination"
+  }
+ ],
+ "genes": [
+  {
+   "alleles": [
+    "A",
+    "a"
+   ]
+  },
+  {
+   "alleles": [
+    "B",
+    "b"
+   ]
+  }
+ ],
+ "crossover": "between",
+ "claims": [
+  {
+   "type": "recombinant",
+   "value": 2
+  },
+  {
+   "type": "parental",
+   "value": 2
+  },
+  {
+   "type": "max",
+   "value": 0.5
+  }
+ ]
+}

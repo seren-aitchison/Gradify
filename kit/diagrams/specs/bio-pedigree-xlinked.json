@@ -1,0 +1,102 @@
+{
+ "id": "bio-pedigree-xlinked",
+ "renderer": "pedigree",
+ "course": "biology",
+ "unit": "u04",
+ "lesson": "Pedigree analysis",
+ "title": "A pedigree that shows X-linked recessive inheritance",
+ "caption": "Only males are affected, and the allele reaches them through carrier mothers: I-2 has an affected son and a carrier daughter (II-2), who in turn has an affected son. Unaffected parents with an affected child rule out a dominant allele.",
+ "alt": "A three-generation family tree: carrier mother I-2 has an affected son II-1; her carrier daughter II-2 has an affected son III-1.",
+ "description": [
+  "Squares are males, circles females, filled symbols affected, a dot marks a carrier.",
+  "I-1 and I-2 are unaffected but have an affected son, II-1: not dominant.",
+  "Only males are affected, and each affected male has a carrier mother.",
+  "If the allele is X-linked recessive, I-2 and II-2 must be carriers (XᴬXᵃ)."
+ ],
+ "people": [
+  {
+   "id": "I-1",
+   "sex": "m",
+   "gen": 1,
+   "x": 0
+  },
+  {
+   "id": "I-2",
+   "sex": "f",
+   "gen": 1,
+   "x": 1,
+   "carrier": true
+  },
+  {
+   "id": "II-1",
+   "sex": "m",
+   "gen": 2,
+   "x": 0,
+   "affected": true,
+   "parents": [
+    "I-1",
+    "I-2"
+   ]
+  },
+  {
+   "id": "II-2",
+   "sex": "f",
+   "gen": 2,
+   "x": 1,
+   "carrier": true,
+   "parents": [
+    "I-1",
+    "I-2"
+   ]
+  },
+  {
+   "id": "II-3",
+   "sex": "m",
+   "gen": 2,
+   "x": 2
+  },
+  {
+   "id": "III-1",
+   "sex": "m",
+   "gen": 3,
+   "x": 1,
+   "affected": true,
+   "parents": [
+    "II-2",
+    "II-3"
+   ]
+  },
+  {
+   "id": "III-2",
+   "sex": "f",
+   "gen": 3,
+   "x": 2,
+   "parents": [
+    "II-2",
+    "II-3"
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "type": "consistent",
+   "mode": "XR"
+  },
+  {
+   "type": "excluded",
+   "mode": "AD"
+  },
+  {
+   "type": "genotype",
+   "id": "I-2",
+   "mode": "XR",
+   "value": "XᴬXᵃ"
+  },
+  {
+   "type": "genotype",
+   "id": "II-2",
+   "mode": "XR",
+   "value": "XᴬXᵃ"
+  }
+ ]
+}

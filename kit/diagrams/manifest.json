@@ -22122,7 +22122,13 @@
   ],
   "course": "biology",
   "lesson": "DNA and RNA",
-  "also": [],
+  "also": [
+   {
+    "course": "biology",
+    "unit": "u04",
+    "lesson": "DNA structure"
+   }
+  ],
   "renderer": "strand",
   "status": "validated",
   "review": null,
@@ -22135,6 +22141,11 @@
    {
     "name": "the lesson places this diagram (D: line)",
     "ok": true
+   },
+   {
+    "name": "also placed in biology: DNA structure",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u04.js"
    },
    {
     "name": "has alt text, a caption and a step-by-step description",
@@ -23011,6 +23022,1330 @@
     "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
     "ok": true,
     "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "bio-abo-cross": {
+  "title": "Codominance and multiple alleles: ABO blood groups",
+  "caption": "Iᴬ and Iᴮ are codominant, and both are dominant to Iᴼ. A group A parent (IᴬIᴼ) and a group B parent (IᴮIᴼ) can have a child of any of the four groups, each with probability one quarter.",
+  "alt": "A Punnett square of a group A parent and a group B parent, both heterozygous: one group AB, one group A, one group B and one group O child.",
+  "description": [
+   "Parent 1 is IᴬIᴼ, group A; parent 2 is IᴮIᴼ, group B.",
+   "Gametes: Iᴬ or Iᴼ from one parent, Iᴮ or Iᴼ from the other.",
+   "Offspring: IᴬIᴮ (AB), IᴬIᴼ (A), IᴮIᴼ (B), IᴼIᴼ (O).",
+   "Each blood group has probability 1 in 4."
+  ],
+  "course": "biology",
+  "lesson": "Codominance",
+  "also": [],
+  "renderer": "cross",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u04.js: Codominance"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "parent Iᴬ Iᴼ: alleles Iᴬ and Iᴼ are alleles of this gene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "parent Iᴮ Iᴼ: alleles Iᴮ and Iᴼ are alleles of this gene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "each parent's gametes: Iᴬ, Iᴼ and Iᴮ, Iᴼ",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "phenotype ratio 1 group A : 1 group B : 1 group AB : 1 group O",
+    "ok": true,
+    "detail": "1 group AB : 1 group B : 1 group A : 1 group O"
+   },
+   {
+    "name": "P(group O) = 0.25",
+    "ok": true,
+    "detail": "1 of 4"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "600px wide, shown at 118% (labels 17.7px)"
+   }
+  ]
+ },
+ "bio-carrier-cross": {
+  "title": "Two carriers of an autosomal recessive condition",
+  "caption": "Each carrier (Aa) is unaffected but passes the recessive allele a to half their gametes. In every pregnancy there is a 1 in 4 chance of an affected child (aa), a 1 in 2 chance of a carrier and a 1 in 4 chance of a child with two working copies.",
+  "alt": "A Punnett square of two unaffected carrier parents: one AA, two Aa and one aa child; the aa child is affected.",
+  "description": [
+   "Both parents are Aa: unaffected carriers.",
+   "Each makes A and a gametes.",
+   "The children are AA, Aa, Aa and aa.",
+   "One in four (aa) is affected; three in four are unaffected, and two of those are carriers."
+  ],
+  "course": "biology",
+  "lesson": "Dominant and recessive inheritance",
+  "also": [],
+  "renderer": "cross",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u04.js: Dominant and recessive inheritance"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "parent A a: alleles A and a are alleles of this gene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "parent A a: alleles A and a are alleles of this gene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "each parent's gametes: A, a and A, a",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "genotype ratio 1 AA : 2 Aa : 1 aa",
+    "ok": true,
+    "detail": "1 AA : 2 Aa : 1 aa"
+   },
+   {
+    "name": "P(affected) = 0.25",
+    "ok": true,
+    "detail": "1 of 4"
+   },
+   {
+    "name": "P(Aa) = 0.5",
+    "ok": true,
+    "detail": "2 of 4"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "600px wide, shown at 118% (labels 17.7px)"
+   }
+  ]
+ },
+ "bio-chromatin-packing": {
+  "title": "Packing two metres of DNA into a nucleus",
+  "caption": "DNA wraps round histone proteins to make nucleosomes, which coil into chromatin fibres that loop and condense, until before division each chromosome is two sister chromatids joined at the centromere. Tight packing also makes DNA harder to transcribe.",
+  "alt": "Four boxes in order: the DNA double helix, nucleosomes, the chromatin fibre and the condensed chromosome.",
+  "description": [
+   "DNA double helix: about 2 metres of it in every human cell.",
+   "Nucleosomes: DNA wound round histone proteins: beads on a string.",
+   "Chromatin fibre: the nucleosomes coil, then loop and condense further.",
+   "Chromosome: before division: two sister chromatids joined at a centromere."
+  ],
+  "course": "biology",
+  "lesson": "Chromosomes",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u04.js: Chromosomes"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every step is linked: no box without an arrow",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-crossover-linkage": {
+  "title": "Crossing over between linked genes",
+  "caption": "Genes A and B are on the same chromosome. A crossover between them swaps the lower ends of two non-sister chromatids, making two recombinant chromatids (Ab and aB) alongside two parental ones (AB and ab). Even then only half the products are recombinant, so the recombination frequency cannot exceed 50%.",
+  "alt": "Four chromatids before and after a crossover between genes A and B: before, two carry AB and two carry ab; after, they carry AB, Ab, aB and ab.",
+  "description": [
+   "Before: two chromatids carry A and B, two carry a and b.",
+   "A crossover between the genes swaps the B and b ends of two non-sister chromatids.",
+   "After: AB and ab are parental; Ab and aB are recombinant.",
+   "Two of four are recombinant: at most 50%, however far apart the genes are."
+  ],
+  "course": "biology",
+  "lesson": "Genetic linkage",
+  "also": [
+   {
+    "course": "biology",
+    "unit": "u04",
+    "lesson": "Recombination"
+   }
+  ],
+  "renderer": "crossover",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u04.js: Genetic linkage"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in biology: Recombination",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u04.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "each homologue contributes two identical chromatids before the crossover",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "a crossover swaps the ends of two non-sister chromatids: the allele counts stay the same",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "2 of the 4 chromatids are recombinant",
+    "ok": true,
+    "detail": "2"
+   },
+   {
+    "name": "2 of the 4 chromatids stay parental",
+    "ok": true,
+    "detail": "2"
+   },
+   {
+    "name": "at most 50% of the products are recombinant even with a crossover: the recombination frequency cannot pass 50%",
+    "ok": true,
+    "detail": "50%"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-dihybrid-cross": {
+  "title": "A dihybrid cross: RrYy × RrYy",
+  "caption": "Each parent makes four gamete types, RY, Ry, rY and ry, in equal numbers because the genes assort independently. The 16 squares give the 9 : 3 : 3 : 1 phenotype ratio, and each gene on its own still gives 3 : 1.",
+  "alt": "A four by four Punnett square of two plants heterozygous for seed shape and seed colour, giving nine round yellow, three round green, three wrinkled yellow and one wrinkled green.",
+  "description": [
+   "Each parent is RrYy: round and yellow.",
+   "Gametes: RY, Ry, rY and ry, each one quarter.",
+   "16 combinations in the square.",
+   "Phenotypes 9 round yellow : 3 round green : 3 wrinkled yellow : 1 wrinkled green."
+  ],
+  "course": "biology",
+  "lesson": "Dihybrid crosses",
+  "also": [],
+  "renderer": "cross",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u04.js: Dihybrid crosses"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "parent R r Y y: alleles R and r are alleles of this gene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "parent R r Y y: alleles R and r are alleles of this gene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "parent R r Y y: alleles Y and y are alleles of this gene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "parent R r Y y: alleles Y and y are alleles of this gene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "each parent's gametes: RY, Ry, rY, ry and RY, Ry, rY, ry",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "phenotype ratio 9 round, yellow : 3 round, green : 3 wrinkled, yellow : 1 wrinkled, green",
+    "ok": true,
+    "detail": "9 round, yellow : 3 round, green : 3 wrinkled, yellow : 1 wrinkled, green"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "600px wide, shown at 118% (labels 17.7px)"
+   }
+  ]
+ },
+ "bio-genetic-code": {
+  "title": "The genetic code",
+  "caption": "Sixty-four codons, 61 for amino acids and three stops. The code is degenerate: most amino acids have several codons, often differing only in the third base (all four GGN codons give glycine). Only methionine and tryptophan have one codon each; leucine, serine and arginine have six (shaded).",
+  "alt": "A table of the 64 mRNA codons arranged by first, second and third base, with the amino acid or stop for each; AUG is marked as the start codon and UAA, UAG and UGA as stops.",
+  "description": [
+   "AUG codes for methionine and is the start codon.",
+   "UAA, UAG and UGA are stop codons.",
+   "61 codons code for the 20 amino acids, so most amino acids have more than one.",
+   "Methionine and tryptophan have a single codon each; leucine, serine and arginine have six.",
+   "The third base often does not matter: GGU, GGC, GGA and GGG all code for glycine."
+  ],
+  "course": "biology",
+  "lesson": "Genetic code",
+  "also": [],
+  "renderer": "codontable",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u04.js: Genetic code"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the table has 4³ = 64 codons",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "AUG codes for Met and is the start codon",
+    "ok": true,
+    "detail": "Met"
+   },
+   {
+    "name": "the stop codons are UAA, UAG, UGA",
+    "ok": true,
+    "detail": "UAA, UAG, UGA"
+   },
+   {
+    "name": "61 codons code for amino acids",
+    "ok": true,
+    "detail": "61"
+   },
+   {
+    "name": "20 different amino acids are coded",
+    "ok": true,
+    "detail": "20"
+   },
+   {
+    "name": "Met and Trp have only one codon each",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "Leu has 6 codons",
+    "ok": true,
+    "detail": "6"
+   },
+   {
+    "name": "Ser has 6 codons",
+    "ok": true,
+    "detail": "6"
+   },
+   {
+    "name": "Arg has 6 codons",
+    "ok": true,
+    "detail": "6"
+   },
+   {
+    "name": "all four GGN codons code for Gly: the third base does not matter",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "720px wide, shown at 98% (labels 14.7px)"
+   }
+  ]
+ },
+ "bio-hardy-weinberg": {
+  "title": "Genotype frequencies in Hardy–Weinberg equilibrium",
+  "caption": "With allele frequencies p and q (p + q = 1) the genotype frequencies are p², 2pq and q². Heterozygotes are most common at q = 0.5, but when a recessive allele is rare almost all copies are in carriers: at q = 0.02 (cystic fibrosis, about 1 in 2,500) the carrier frequency 2pq is about 0.039, roughly 1 in 25.",
+  "alt": "Three curves against the frequency q of the recessive allele: AA falling from 1 to 0, Aa rising to 0.5 at q = 0.5 and falling, and aa rising from 0 to 1, with q = 0.02 marked.",
+  "description": [
+   "p² (AA) falls from 1 to 0 as q rises.",
+   "2pq (Aa) peaks at 0.5 when q = 0.5.",
+   "q² (aa) rises from 0 to 1.",
+   "At every q the three frequencies add up to 1.",
+   "At q = 0.02, q² = 0.0004 (1 in 2,500) but 2pq = 0.039, about 1 in 25."
+  ],
+  "course": "biology",
+  "lesson": "Population genetics",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u04.js: Population genetics"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "heterozygotes (2pq) are most frequent at q = 0.5, where 2pq = 0.5",
+    "ok": true,
+    "detail": "found (0.5, 0.5)"
+   },
+   {
+    "name": "p² + 2pq + q² = 1 at q = 0.3",
+    "ok": true,
+    "detail": "y(0.3) = 1"
+   },
+   {
+    "name": "p² + 2pq + q² = 1 at q = 0.02",
+    "ok": true,
+    "detail": "y(0.02) = 1"
+   },
+   {
+    "name": "at q = 0.02, q² = 0.0004: 1 in 2,500 are affected",
+    "ok": true,
+    "detail": "y(0.02) = 0.0004"
+   },
+   {
+    "name": "at q = 0.02 the carrier frequency 2pq is about 0.039, roughly 1 in 25",
+    "ok": true,
+    "detail": "2*x*(1-x) at 0.02 = 0.04; expected 0.0385–0.0395"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "bio-incomplete-dominance": {
+  "title": "Incomplete dominance: pink snapdragons",
+  "caption": "Neither allele is completely dominant, so the heterozygote is intermediate. Two pink plants give 1 red : 2 pink : 1 white, so the genotype ratio and the phenotype ratio are the same, unlike the 3 : 1 of complete dominance.",
+  "alt": "A Punnett square of two pink snapdragons: one red, two pink and one white offspring.",
+  "description": [
+   "Pink plants are CᴿCᵂ.",
+   "Each parent makes Cᴿ and Cᵂ gametes.",
+   "Offspring: CᴿCᴿ red, CᴿCᵂ pink (two squares), CᵂCᵂ white.",
+   "Genotype and phenotype ratios are both 1 : 2 : 1."
+  ],
+  "course": "biology",
+  "lesson": "Incomplete dominance",
+  "also": [],
+  "renderer": "cross",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u04.js: Incomplete dominance"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "parent Cᴿ Cᵂ: alleles Cᴿ and Cᵂ are alleles of this gene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "parent Cᴿ Cᵂ: alleles Cᴿ and Cᵂ are alleles of this gene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "each parent's gametes: Cᴿ, Cᵂ and Cᴿ, Cᵂ",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "genotype ratio 1 CᴿCᴿ : 2 CᴿCᵂ : 1 CᵂCᵂ",
+    "ok": true,
+    "detail": "1 CᴿCᴿ : 2 CᴿCᵂ : 1 CᵂCᵂ"
+   },
+   {
+    "name": "phenotype ratio 1 red : 2 pink : 1 white",
+    "ok": true,
+    "detail": "1 red : 2 pink : 1 white"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "600px wide, shown at 118% (labels 17.7px)"
+   }
+  ]
+ },
+ "bio-lac-operon": {
+  "title": "When is the lac operon on?",
+  "caption": "Two questions predict the lac operon. Without lactose the repressor sits on the operator and the genes are off. With lactose the repressor is freed, but the operon is strongly expressed only when glucose is also absent, because then cAMP rises and the CAP protein helps RNA polymerase bind.",
+  "alt": "A flow chart: no lactose means the operon is off; lactose with glucose gives low expression; lactose without glucose gives high expression.",
+  "description": [
+   "Is lactose present? If not, the repressor stays bound to the operator, blocking RNA polymerase: the genes are off.",
+   "If lactose is present, allolactose binds the repressor, which leaves the operator.",
+   "Is glucose also present? If so, cAMP is low, CAP is inactive and transcription is low.",
+   "If glucose is absent, cAMP binds CAP, which helps RNA polymerase bind the promoter: the operon is strongly expressed."
+  ],
+  "course": "biology",
+  "lesson": "Operons",
+  "also": [],
+  "renderer": "decision-tree",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u04.js: Operons"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every path ends in an outcome",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "no unreachable nodes",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every authority cited on the diagram is in the lesson",
+    "ok": true,
+    "detail": "0 citations found in the lesson text"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "760px wide, shown at 93% (labels 14.0px)"
+   }
+  ]
+ },
+ "bio-meselson-stahl": {
+  "title": "Meselson and Stahl: DNA copies itself semi-conservatively",
+  "caption": "Bacteria grown in heavy nitrogen (¹⁵N) were moved to light nitrogen (¹⁴N). After one generation all the DNA was a single hybrid band; after two, half hybrid and half light. Semi-conservative copying predicts exactly that; conservative copying would have left a heavy band at generation 1.",
+  "alt": "Tubes of DNA bands for generations 0, 1 and 2: semi-conservative copying gives heavy, then all hybrid, then half hybrid and half light, matching the observations; conservative copying predicts a heavy band and a light band at generation 1, which was not seen.",
+  "description": [
+   "Generation 0: all DNA is heavy (¹⁵N).",
+   "Generation 1, observed: one band of intermediate density, so every molecule has one old and one new strand.",
+   "Generation 2, observed: half the DNA hybrid, half light.",
+   "Semi-conservative copying predicts exactly these bands.",
+   "Conservative copying predicts a heavy band and a light band at generation 1, so it is ruled out."
+  ],
+  "course": "biology",
+  "lesson": "DNA replication",
+  "also": [],
+  "renderer": "density",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u04.js: DNA replication"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "semiconservative copying gives the bands that were observed",
+    "ok": true,
+    "detail": "matches every generation"
+   },
+   {
+    "name": "conservative copying does not give the bands that were observed",
+    "ok": true,
+    "detail": "differs at generation 1, generation 2"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-monohybrid-cross": {
+  "title": "A monohybrid cross: Tt × Tt",
+  "caption": "Two heterozygous parents each make T and t gametes in equal numbers. The square gives 1 TT : 2 Tt : 1 tt, and because T is dominant, three tall plants for every short one. These are probabilities: a small family can differ.",
+  "alt": "A Punnett square of two heterozygous tall pea plants: the offspring are one TT, two Tt and one tt.",
+  "description": [
+   "Each parent is Tt and makes T and t gametes.",
+   "The four squares give TT, Tt, Tt and tt.",
+   "Genotype ratio 1 TT : 2 Tt : 1 tt.",
+   "Phenotype ratio 3 tall : 1 short."
+  ],
+  "course": "biology",
+  "lesson": "Monohybrid crosses",
+  "also": [],
+  "renderer": "cross",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u04.js: Monohybrid crosses"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "parent T t: alleles T and t are alleles of this gene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "parent T t: alleles T and t are alleles of this gene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "each parent's gametes: T, t and T, t",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "genotype ratio 1 TT : 2 Tt : 1 tt",
+    "ok": true,
+    "detail": "1 TT : 2 Tt : 1 tt"
+   },
+   {
+    "name": "phenotype ratio 3 tall : 1 short",
+    "ok": true,
+    "detail": "3 tall : 1 short"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "600px wide, shown at 118% (labels 17.7px)"
+   }
+  ]
+ },
+ "bio-mutation-frameshift": {
+  "title": "A frameshift mutation",
+  "caption": "Deleting one base shifts the reading frame, so every codon after it changes. Inserting or deleting three bases would instead add or remove a single amino acid.",
+  "alt": "The start of the beta-globin coding strand and the same sequence with one base deleted from the seventh codon; every later codon is read differently.",
+  "description": [
+   "One G is deleted from the seventh codon.",
+   "The bases after it are read in a new frame, so the amino acids after the deletion all change.",
+   "A deletion of 3 bases would not shift the frame."
+  ],
+  "course": "biology",
+  "lesson": "Types of mutation",
+  "also": [],
+  "renderer": "strand",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u04.js: Types of mutation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the coding strand is DNA (A, T, G, C) in whole codons",
+    "ok": true,
+    "detail": "27 bases"
+   },
+   {
+    "name": "every base pairs with its complement (A–T, G–C)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the mutation is frameshift",
+    "ok": true,
+    "detail": "frameshift"
+   },
+   {
+    "name": "translation gives Met–Val–His–Leu–Thr–Pro–Glu–Glu–Lys",
+    "ok": true,
+    "detail": "Met–Val–His–Leu–Thr–Pro–Glu–Glu–Lys"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "760px wide, shown at 93% (labels 14.0px)"
+   }
+  ]
+ },
+ "bio-mutation-missense": {
+  "title": "A missense mutation: sickle cell",
+  "caption": "GAG becomes GTG at the sixth amino acid of the β-globin chain, replacing glutamate with valine. One different amino acid is enough to make haemoglobin form fibres in low oxygen.",
+  "alt": "The start of the beta-globin coding strand and the same sequence with the seventh codon changed from GAG to GTG; glutamate is replaced by valine.",
+  "description": [
+   "GAG codes for glutamate.",
+   "GTG codes for valine: one amino acid is replaced.",
+   "This is the change in sickle cell anaemia."
+  ],
+  "course": "biology",
+  "lesson": "Types of mutation",
+  "also": [],
+  "renderer": "strand",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u04.js: Types of mutation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the coding strand is DNA (A, T, G, C) in whole codons",
+    "ok": true,
+    "detail": "27 bases"
+   },
+   {
+    "name": "every base pairs with its complement (A–T, G–C)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the mutation is missense",
+    "ok": true,
+    "detail": "missense"
+   },
+   {
+    "name": "translation gives Met–Val–His–Leu–Thr–Pro–Glu–Glu–Lys",
+    "ok": true,
+    "detail": "Met–Val–His–Leu–Thr–Pro–Glu–Glu–Lys"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "760px wide, shown at 93% (labels 14.0px)"
+   }
+  ]
+ },
+ "bio-mutation-nonsense": {
+  "title": "A nonsense mutation",
+  "caption": "GAG becomes TAG, a stop codon, so translation ends early and a shortened protein is made.",
+  "alt": "The start of the beta-globin coding strand and the same sequence with the eighth codon changed from GAG to TAG; the protein stops after seven amino acids.",
+  "description": [
+   "GAG codes for glutamate.",
+   "TAG, read as UAG in mRNA, is a stop codon.",
+   "The chain is released after seven amino acids: a shortened protein."
+  ],
+  "course": "biology",
+  "lesson": "Types of mutation",
+  "also": [],
+  "renderer": "strand",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u04.js: Types of mutation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the coding strand is DNA (A, T, G, C) in whole codons",
+    "ok": true,
+    "detail": "27 bases"
+   },
+   {
+    "name": "every base pairs with its complement (A–T, G–C)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the mutation is nonsense",
+    "ok": true,
+    "detail": "nonsense"
+   },
+   {
+    "name": "translation gives Met–Val–His–Leu–Thr–Pro–Glu–Glu–Lys",
+    "ok": true,
+    "detail": "Met–Val–His–Leu–Thr–Pro–Glu–Glu–Lys"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "760px wide, shown at 93% (labels 14.0px)"
+   }
+  ]
+ },
+ "bio-mutation-silent": {
+  "title": "A silent mutation",
+  "caption": "Changing the last base of the Lys codon from AAG to AAA does not change the amino acid, because the code is degenerate: the protein is unchanged.",
+  "alt": "The start of the beta-globin coding strand and the same sequence with the ninth codon changed from AAG to AAA; the protein is the same.",
+  "description": [
+   "The ninth codon AAG codes for lysine.",
+   "AAA also codes for lysine, so the protein is unchanged."
+  ],
+  "course": "biology",
+  "lesson": "Types of mutation",
+  "also": [],
+  "renderer": "strand",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u04.js: Types of mutation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the coding strand is DNA (A, T, G, C) in whole codons",
+    "ok": true,
+    "detail": "27 bases"
+   },
+   {
+    "name": "every base pairs with its complement (A–T, G–C)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the mutation is silent",
+    "ok": true,
+    "detail": "silent"
+   },
+   {
+    "name": "translation gives Met–Val–His–Leu–Thr–Pro–Glu–Glu–Lys",
+    "ok": true,
+    "detail": "Met–Val–His–Leu–Thr–Pro–Glu–Glu–Lys"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "760px wide, shown at 93% (labels 14.0px)"
+   }
+  ]
+ },
+ "bio-pedigree-recessive": {
+  "title": "A pedigree that shows autosomal recessive inheritance",
+  "caption": "Two unaffected parents (I-1 and I-2) have an affected child (II-2), which rules out a dominant allele. The affected daughter III-2 has an unaffected father, which rules out X-linked recessive inheritance. That leaves autosomal recessive, and forces II-3 and her parents to be carriers.",
+  "alt": "A three-generation family tree: unaffected parents I-1 and I-2 have an affected son II-2; unaffected II-3 and II-4 have an affected daughter III-2.",
+  "description": [
+   "Squares are males, circles females, filled symbols affected.",
+   "I-1 and I-2 are unaffected but have an affected son, II-2: not dominant.",
+   "III-2 is an affected daughter with an unaffected father: not X-linked recessive.",
+   "So the pattern is autosomal recessive: I-1, I-2, II-3 and II-4 are all carriers."
+  ],
+  "course": "biology",
+  "lesson": "Pedigree analysis",
+  "also": [],
+  "renderer": "pedigree",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u04.js: Pedigree analysis"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every child's parents are a female and a male in the generation above",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "autosomal recessive inheritance is consistent with the pedigree",
+    "ok": true,
+    "detail": "some set of genotypes fits"
+   },
+   {
+    "name": "autosomal dominant inheritance is ruled out by the pedigree",
+    "ok": true,
+    "detail": "no set of genotypes fits"
+   },
+   {
+    "name": "X-linked recessive inheritance is ruled out by the pedigree",
+    "ok": true,
+    "detail": "no set of genotypes fits"
+   },
+   {
+    "name": "if autosomal recessive, II-3 must be Aa",
+    "ok": true,
+    "detail": "forced"
+   },
+   {
+    "name": "if autosomal recessive, II-4 must be Aa",
+    "ok": true,
+    "detail": "forced"
+   },
+   {
+    "name": "if autosomal recessive, I-1 must be Aa",
+    "ok": true,
+    "detail": "forced"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "620px wide, shown at 114% (labels 17.1px)"
+   }
+  ]
+ },
+ "bio-pedigree-xlinked": {
+  "title": "A pedigree that shows X-linked recessive inheritance",
+  "caption": "Only males are affected, and the allele reaches them through carrier mothers: I-2 has an affected son and a carrier daughter (II-2), who in turn has an affected son. Unaffected parents with an affected child rule out a dominant allele.",
+  "alt": "A three-generation family tree: carrier mother I-2 has an affected son II-1; her carrier daughter II-2 has an affected son III-1.",
+  "description": [
+   "Squares are males, circles females, filled symbols affected, a dot marks a carrier.",
+   "I-1 and I-2 are unaffected but have an affected son, II-1: not dominant.",
+   "Only males are affected, and each affected male has a carrier mother.",
+   "If the allele is X-linked recessive, I-2 and II-2 must be carriers (XᴬXᵃ)."
+  ],
+  "course": "biology",
+  "lesson": "Pedigree analysis",
+  "also": [],
+  "renderer": "pedigree",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u04.js: Pedigree analysis"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every child's parents are a female and a male in the generation above",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "X-linked recessive inheritance is consistent with the pedigree",
+    "ok": true,
+    "detail": "some set of genotypes fits"
+   },
+   {
+    "name": "autosomal dominant inheritance is ruled out by the pedigree",
+    "ok": true,
+    "detail": "no set of genotypes fits"
+   },
+   {
+    "name": "if X-linked recessive, I-2 must be XᴬXᵃ",
+    "ok": true,
+    "detail": "forced"
+   },
+   {
+    "name": "if X-linked recessive, II-2 must be XᴬXᵃ",
+    "ok": true,
+    "detail": "forced"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "620px wide, shown at 114% (labels 17.1px)"
+   }
+  ]
+ },
+ "bio-rna-processing": {
+  "title": "From pre-mRNA to mature mRNA",
+  "caption": "In eukaryotes the first transcript is processed before it leaves the nucleus: a cap protects the 5′ end, a poly-A tail stabilises the 3′ end, and the spliceosome removes the introns and joins the exons.",
+  "alt": "Five boxes in order: pre-mRNA, 5′ cap, poly-A tail, splicing and mature mRNA.",
+  "description": [
+   "Pre-mRNA: exons and introns, made in the nucleus.",
+   "5′ cap: a modified guanine added to the 5′ end.",
+   "Poly-A tail: many adenines added to the 3′ end.",
+   "Splicing: the spliceosome removes the introns and joins the exons.",
+   "Mature mRNA: leaves through the nuclear pores for translation."
+  ],
+  "course": "biology",
+  "lesson": "RNA processing",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u04.js: RNA processing"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every step is linked: no box without an arrow",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-test-cross": {
+  "title": "A test cross: Tt × tt",
+  "caption": "To find whether a tall plant is TT or Tt, cross it with a short (tt) plant. A TT parent would give only tall offspring; a Tt parent gives tall and short in a 1 : 1 ratio, so any short offspring show it is heterozygous.",
+  "alt": "A Punnett square of a heterozygous tall plant crossed with a short plant: two Tt and two tt offspring.",
+  "description": [
+   "The unknown plant is Tt and the tester is tt.",
+   "The tester only makes t gametes.",
+   "Half the offspring are Tt (tall) and half are tt (short): a 1 : 1 ratio.",
+   "If the unknown plant were TT, all offspring would be tall."
+  ],
+  "course": "biology",
+  "lesson": "Monohybrid crosses",
+  "also": [],
+  "renderer": "cross",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u04.js: Monohybrid crosses"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "parent T t: alleles T and t are alleles of this gene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "parent t t: alleles t and t are alleles of this gene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "each parent's gametes: T, t and t",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "genotype ratio 1 Tt : 1 tt",
+    "ok": true,
+    "detail": "1 Tt : 1 tt"
+   },
+   {
+    "name": "phenotype ratio 1 tall : 1 short",
+    "ok": true,
+    "detail": "1 tall : 1 short"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "600px wide, shown at 118% (labels 17.7px)"
+   }
+  ]
+ },
+ "bio-transcription": {
+  "title": "Transcription: the template strand is copied into mRNA",
+  "caption": "RNA polymerase reads the template strand, adding RNA nucleotides complementary to it, with uracil in place of thymine. The mRNA therefore has the same sequence as the coding strand, with U for T.",
+  "alt": "A short gene shown as its coding strand, its complementary template strand and the mRNA made from the template, with bases coloured by type.",
+  "description": [
+   "Coding strand: ATGAAATTTGGCTGA.",
+   "Template strand: TACTTTAAACCGACT, read by RNA polymerase.",
+   "mRNA: AUGAAAUUUGGCUGA: the coding strand with U in place of T.",
+   "The mRNA is built 5′ to 3′ as the polymerase moves along the template."
+  ],
+  "course": "biology",
+  "lesson": "Transcription",
+  "also": [],
+  "renderer": "strand",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u04.js: Transcription"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the coding strand is DNA (A, T, G, C) in whole codons",
+    "ok": true,
+    "detail": "15 bases"
+   },
+   {
+    "name": "every base pairs with its complement (A–T, G–C)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "template strand TACTTTAAACCGACT",
+    "ok": true,
+    "detail": "TACTTTAAACCGACT"
+   },
+   {
+    "name": "mRNA AUGAAAUUUGGCUGA",
+    "ok": true,
+    "detail": "AUGAAAUUUGGCUGA"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "760px wide, shown at 93% (labels 14.0px)"
+   }
+  ]
+ },
+ "bio-translation": {
+  "title": "Translation: codons of mRNA specify amino acids",
+  "caption": "The ribosome reads the mRNA three bases at a time. The start codon AUG brings in methionine; each following codon adds one amino acid; the stop codon UAA ends the chain and releases the polypeptide.",
+  "alt": "An mRNA divided into codons with the amino acid each codes for: Met, Gly, Pro, Lys, then the stop codon.",
+  "description": [
+   "mRNA: AUGGGUCCAAAGUAA.",
+   "AUG is the start codon: methionine.",
+   "The next codons give Gly, Pro, Lys.",
+   "UAA is a stop codon: no amino acid, the chain is released."
+  ],
+  "course": "biology",
+  "lesson": "Translation",
+  "also": [],
+  "renderer": "strand",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u04.js: Translation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the coding strand is DNA (A, T, G, C) in whole codons",
+    "ok": true,
+    "detail": "15 bases"
+   },
+   {
+    "name": "every base pairs with its complement (A–T, G–C)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "mRNA AUGGGUCCAAAGUAA",
+    "ok": true,
+    "detail": "AUGGGUCCAAAGUAA"
+   },
+   {
+    "name": "translation gives Met–Gly–Pro–Lys–Stop",
+    "ok": true,
+    "detail": "Met–Gly–Pro–Lys–Stop"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "760px wide, shown at 93% (labels 14.0px)"
+   }
+  ]
+ },
+ "bio-xlinked-cross": {
+  "title": "An X-linked recessive cross: a carrier mother",
+  "caption": "The haemophilia allele Xʰ is on the X chromosome. A carrier mother passes Xʰ to half her gametes, so half her sons are affected and half her daughters are carriers. The father passes his Y to every son and his Xᴴ to every daughter.",
+  "alt": "A Punnett square of a carrier mother and an unaffected father: one unaffected daughter, one carrier daughter, one unaffected son and one son with haemophilia.",
+  "description": [
+   "Mother XᴴXʰ is a carrier; father XᴴY is unaffected.",
+   "Her eggs carry Xᴴ or Xʰ; his sperm carry Xᴴ or Y.",
+   "Daughters: one XᴴXᴴ unaffected, one XᴴXʰ carrier. Sons: one XᴴY unaffected, one XʰY with haemophilia.",
+   "Half of the sons are affected and half of the daughters are carriers."
+  ],
+  "course": "biology",
+  "lesson": "Sex-linked inheritance",
+  "also": [],
+  "renderer": "cross",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u04.js: Sex-linked inheritance"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "parent Xᴴ Xʰ: alleles Xᴴ and Xʰ are alleles of this gene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "parent Xᴴ Y: alleles Xᴴ and Y are alleles of this gene",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "each parent's gametes: Xᴴ, Xʰ and Xᴴ, Y",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "phenotype ratio 1 unaffected female : 1 carrier female : 1 unaffected male : 1 haemophiliac male",
+    "ok": true,
+    "detail": "1 unaffected female : 1 carrier female : 1 unaffected male : 1 haemophiliac male"
+   },
+   {
+    "name": "P(haemophiliac male) = 0.25",
+    "ok": true,
+    "detail": "1 of 4"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "600px wide, shown at 118% (labels 17.7px)"
    }
   ]
  }

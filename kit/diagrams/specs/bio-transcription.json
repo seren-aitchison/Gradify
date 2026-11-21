@@ -1,0 +1,32 @@
+{
+ "id": "bio-transcription",
+ "renderer": "strand",
+ "course": "biology",
+ "unit": "u04",
+ "lesson": "Transcription",
+ "title": "Transcription: the template strand is copied into mRNA",
+ "caption": "RNA polymerase reads the template strand, adding RNA nucleotides complementary to it, with uracil in place of thymine. The mRNA therefore has the same sequence as the coding strand, with U for T.",
+ "alt": "A short gene shown as its coding strand, its complementary template strand and the mRNA made from the template, with bases coloured by type.",
+ "description": [
+  "Coding strand: ATGAAATTTGGCTGA.",
+  "Template strand: TACTTTAAACCGACT, read by RNA polymerase.",
+  "mRNA: AUGAAAUUUGGCUGA: the coding strand with U in place of T.",
+  "The mRNA is built 5′ to 3′ as the polymerase moves along the template."
+ ],
+ "coding": "ATGAAATTTGGCTGA",
+ "rows": [
+  "coding",
+  "template",
+  "mrna"
+ ],
+ "claims": [
+  {
+   "type": "template",
+   "value": "TACTTTAAACCGACT"
+  },
+  {
+   "type": "mrna",
+   "value": "AUGAAAUUUGGCUGA"
+  }
+ ]
+}

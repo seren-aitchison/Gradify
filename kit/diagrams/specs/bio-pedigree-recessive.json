@@ -1,0 +1,120 @@
+{
+ "id": "bio-pedigree-recessive",
+ "renderer": "pedigree",
+ "course": "biology",
+ "unit": "u04",
+ "lesson": "Pedigree analysis",
+ "title": "A pedigree that shows autosomal recessive inheritance",
+ "caption": "Two unaffected parents (I-1 and I-2) have an affected child (II-2), which rules out a dominant allele. The affected daughter III-2 has an unaffected father, which rules out X-linked recessive inheritance. That leaves autosomal recessive, and forces II-3 and her parents to be carriers.",
+ "alt": "A three-generation family tree: unaffected parents I-1 and I-2 have an affected son II-2; unaffected II-3 and II-4 have an affected daughter III-2.",
+ "description": [
+  "Squares are males, circles females, filled symbols affected.",
+  "I-1 and I-2 are unaffected but have an affected son, II-2: not dominant.",
+  "III-2 is an affected daughter with an unaffected father: not X-linked recessive.",
+  "So the pattern is autosomal recessive: I-1, I-2, II-3 and II-4 are all carriers."
+ ],
+ "people": [
+  {
+   "id": "I-1",
+   "sex": "m",
+   "gen": 1,
+   "x": 1
+  },
+  {
+   "id": "I-2",
+   "sex": "f",
+   "gen": 1,
+   "x": 2
+  },
+  {
+   "id": "II-1",
+   "sex": "f",
+   "gen": 2,
+   "x": 0,
+   "parents": [
+    "I-1",
+    "I-2"
+   ]
+  },
+  {
+   "id": "II-2",
+   "sex": "m",
+   "gen": 2,
+   "x": 1,
+   "affected": true,
+   "parents": [
+    "I-1",
+    "I-2"
+   ]
+  },
+  {
+   "id": "II-3",
+   "sex": "f",
+   "gen": 2,
+   "x": 2,
+   "parents": [
+    "I-1",
+    "I-2"
+   ]
+  },
+  {
+   "id": "II-4",
+   "sex": "m",
+   "gen": 2,
+   "x": 3
+  },
+  {
+   "id": "III-1",
+   "sex": "m",
+   "gen": 3,
+   "x": 2,
+   "parents": [
+    "II-3",
+    "II-4"
+   ]
+  },
+  {
+   "id": "III-2",
+   "sex": "f",
+   "gen": 3,
+   "x": 3,
+   "affected": true,
+   "parents": [
+    "II-3",
+    "II-4"
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "type": "consistent",
+   "mode": "AR"
+  },
+  {
+   "type": "excluded",
+   "mode": "AD"
+  },
+  {
+   "type": "excluded",
+   "mode": "XR"
+  },
+  {
+   "type": "genotype",
+   "id": "II-3",
+   "mode": "AR",
+   "value": "Aa"
+  },
+  {
+   "type": "genotype",
+   "id": "II-4",
+   "mode": "AR",
+   "value": "Aa"
+  },
+  {
+   "type": "genotype",
+   "id": "I-1",
+   "mode": "AR",
+   "value": "Aa"
+  }
+ ]
+}

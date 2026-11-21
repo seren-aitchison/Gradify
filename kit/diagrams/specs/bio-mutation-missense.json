@@ -1,0 +1,48 @@
+{
+ "id": "bio-mutation-missense",
+ "renderer": "strand",
+ "course": "biology",
+ "unit": "u04",
+ "lesson": "Types of mutation",
+ "title": "A missense mutation: sickle cell",
+ "caption": "GAG becomes GTG at the sixth amino acid of the β-globin chain, replacing glutamate with valine. One different amino acid is enough to make haemoglobin form fibres in low oxygen.",
+ "alt": "The start of the beta-globin coding strand and the same sequence with the seventh codon changed from GAG to GTG; glutamate is replaced by valine.",
+ "description": [
+  "GAG codes for glutamate.",
+  "GTG codes for valine: one amino acid is replaced.",
+  "This is the change in sickle cell anaemia."
+ ],
+ "coding": "ATGGTGCACCTGACTCCTGAGGAGAAG",
+ "rows": [
+  "coding",
+  "protein"
+ ],
+ "mutant": {
+  "coding": "ATGGTGCACCTGACTCCTGTGGAGAAG",
+  "label": "after the mutation (GAG to GTG)",
+  "rows": [
+   "coding",
+   "protein"
+  ]
+ },
+ "claims": [
+  {
+   "type": "mutation",
+   "kind": "missense"
+  },
+  {
+   "type": "protein",
+   "value": [
+    "Met",
+    "Val",
+    "His",
+    "Leu",
+    "Thr",
+    "Pro",
+    "Glu",
+    "Glu",
+    "Lys"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,73 @@
+{
+ "id": "bio-dihybrid-cross",
+ "renderer": "cross",
+ "course": "biology",
+ "unit": "u04",
+ "lesson": "Dihybrid crosses",
+ "title": "A dihybrid cross: RrYy × RrYy",
+ "caption": "Each parent makes four gamete types, RY, Ry, rY and ry, in equal numbers because the genes assort independently. The 16 squares give the 9 : 3 : 3 : 1 phenotype ratio, and each gene on its own still gives 3 : 1.",
+ "alt": "A four by four Punnett square of two plants heterozygous for seed shape and seed colour, giving nine round yellow, three round green, three wrinkled yellow and one wrinkled green.",
+ "description": [
+  "Each parent is RrYy: round and yellow.",
+  "Gametes: RY, Ry, rY and ry, each one quarter.",
+  "16 combinations in the square.",
+  "Phenotypes 9 round yellow : 3 round green : 3 wrinkled yellow : 1 wrinkled green."
+ ],
+ "loci": [
+  {
+   "alleles": [
+    "R",
+    "r"
+   ],
+   "dominance": {
+    "kind": "complete",
+    "dominant": "R",
+    "traits": [
+     "round",
+     "wrinkled"
+    ]
+   }
+  },
+  {
+   "alleles": [
+    "Y",
+    "y"
+   ],
+   "dominance": {
+    "kind": "complete",
+    "dominant": "Y",
+    "traits": [
+     "yellow",
+     "green"
+    ]
+   }
+  }
+ ],
+ "parents": [
+  {
+   "genotype": [
+    "R r",
+    "Y y"
+   ],
+   "label": "round, yellow"
+  },
+  {
+   "genotype": [
+    "R r",
+    "Y y"
+   ],
+   "label": "round, yellow"
+  }
+ ],
+ "claims": [
+  {
+   "type": "phenotypes",
+   "ratio": {
+    "round, yellow": 9,
+    "round, green": 3,
+    "wrinkled, yellow": 3,
+    "wrinkled, green": 1
+   }
+  }
+ ]
+}

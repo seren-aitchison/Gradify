@@ -58,6 +58,7 @@ H: Structure and function
 - **Copying**: complementary base pairing lets each strand act as a template.
 - **Compactness**: long molecules can be coiled and packaged.
 P: The base sequence is inside the helix, protected from chemical attack, while the charged backbone faces outward. Major and minor grooves allow proteins such as transcription factors to read the sequence without unwinding the helix. Hydrogen bonds between bases are weak enough to allow strands to separate for replication and transcription.
+D: bio-dna-rna-pairing
 X: Structure explains copying.
 > Watson and Crick noted that base pairing "immediately suggests a possible copying mechanism".
 > If the strands separate, each can pair with new nucleotides.
@@ -92,6 +93,7 @@ H: Semi-conservative replication
 - Each new DNA molecule contains **one original strand** and **one new strand**.
 - Shown by **Meselson and Stahl** (1958) using bacteria grown in heavy (¹⁵N) and light (¹⁴N) nitrogen.
 - After one generation in ¹⁴N, all DNA was hybrid density; after two, half hybrid and half light.
+D: bio-meselson-stahl
 H: Enzymes and steps
 - **Helicase** unwinds the helix, breaking hydrogen bonds between bases.
 - **Primase** adds short RNA primers.
@@ -175,6 +177,7 @@ H: Eukaryotic packaging
 - Nucleosomes coil into **chromatin** fibres, which loop and condense further.
 - **Euchromatin** is loosely packed and active; **heterochromatin** is tightly packed and mostly inactive.
 - Before division, chromosomes condense and consist of two **sister chromatids** joined at a **centromere**.
+D: bio-chromatin-packing
 H: Chromosome types
 - **Prokaryotes**: usually one circular chromosome, not associated with histones, plus plasmids.
 - **Eukaryotes**: several linear chromosomes in the nucleus, with **telomeres** at the ends.
@@ -345,6 +348,7 @@ H: Template and coding strands
 - In prokaryotes, transcription and translation occur together in the cytoplasm.
 - In eukaryotes, transcription occurs in the nucleus, producing **pre-mRNA** that is processed.
 P: Transcription is a key control point for gene expression: transcription factors and enhancers determine which genes are transcribed in each cell type. RNA polymerase does not need a primer, unlike DNA polymerase. Many RNA polymerases can transcribe a gene at once, producing many copies of mRNA quickly.
+D: bio-transcription
 X: Transcribing a sequence.
 > Template strand: 3′-TACGGA-5′.
 > RNA polymerase pairs complementary bases: A with U, T with A, C with G.
@@ -380,6 +384,7 @@ H: Processing steps
 - **Polyadenylation**: a poly-A tail of many adenine nucleotides is added to the 3′ end, increasing stability.
 - **Splicing**: **introns** (non-coding regions) are removed and **exons** joined together.
 - Splicing is carried out by the **spliceosome**, a complex of proteins and small nuclear RNAs.
+D: bio-rna-processing
 H: Alternative splicing
 - Different combinations of exons can be joined from the same pre-mRNA.
 - One gene can produce several different proteins.
@@ -425,6 +430,7 @@ H: Stages
 - **Elongation**: a tRNA with a matching anticodon enters the A site; a peptide bond forms; the ribosome moves along by one codon.
 - **Termination**: a **stop codon** (UAA, UAG or UGA) enters the A site; a release factor frees the polypeptide.
 P: Several ribosomes can translate one mRNA at the same time, forming a **polysome**, which produces many copies of a protein quickly. Ribosomes free in the cytoplasm make proteins used in the cell, while those on the rough endoplasmic reticulum make proteins for secretion or membranes. Many antibiotics, such as tetracycline and streptomycin, target bacterial 70S ribosomes.
+D: bio-translation
 X: Building a short peptide.
 > mRNA: AUG GCU UGG UAA.
 > AUG brings methionine; GCU brings alanine; UGG brings tryptophan.
@@ -461,6 +467,7 @@ H: Features
 - **Non-overlapping**: each base is part of only one codon.
 - **Universal**: the same codons code for the same amino acids in almost all organisms.
 - **Start and stop**: AUG starts; UAA, UAG and UGA stop.
+D: bio-genetic-code
 H: Reading frames
 - The code is read in a fixed **reading frame** from the start codon.
 - Inserting or deleting a base shifts the frame, changing every following codon (**frameshift**).
@@ -588,6 +595,7 @@ H: Regulation by lactose
 - RNA polymerase transcribes the genes, and enzymes for lactose use are made.
 - This is **inducible** regulation: lactose induces the genes.
 P: The lac operon is also controlled by glucose. When glucose is low, cAMP levels rise and cAMP binds the **catabolite activator protein (CAP)**, which helps RNA polymerase bind the promoter. So the operon is strongly expressed only when lactose is present and glucose is absent, letting bacteria use the best food first. Jacob and Monod described the lac operon in 1961, winning a Nobel Prize in 1965.
+D: bio-lac-operon
 X: Predicting lac operon activity.
 > Medium 1: glucose present, no lactose: repressor bound, genes off.
 > Medium 2: lactose present, glucose present: repressor off, but little CAP-cAMP, so low expression.
@@ -705,12 +713,16 @@ H: Point mutations
 - **Silent**: the codon changes but codes for the same amino acid, because the code is degenerate.
 - **Missense**: a different amino acid is coded, which may or may not affect function, as in sickle cell anaemia.
 - **Nonsense**: a stop codon is created, producing a shortened protein.
+D: bio-mutation-silent
+D: bio-mutation-missense
+D: bio-mutation-nonsense
 H: Insertions, deletions and others
 - **Insertion** or **deletion** of bases not in multiples of three causes a **frameshift**, changing all later codons.
 - Insertions or deletions of three bases add or remove one amino acid without a frameshift.
 - **Expansion of repeats**: such as CAG repeats in Huntington's disease.
 - **Duplication** and **inversion** of sections also occur.
 P: The effect of a mutation depends on its position and type. Changes in the active site of an enzyme are more likely to harm function than changes on the surface. Cystic fibrosis is most commonly caused by ΔF508, a deletion of three bases removing one phenylalanine, which causes the CFTR protein to misfold. Mutations in regulatory regions can change how much protein is made.
+D: bio-mutation-frameshift
 X: Classifying substitutions.
 > Original codon: GAG (glutamate).
 > GAA: still glutamate, so silent.
@@ -834,6 +846,7 @@ H: Human conditions
 - **Autosomal dominant**: Huntington's disease, achondroplasia.
 - An affected person with a dominant condition usually has at least one affected parent.
 P: Recessive alleles often code for non-functional proteins: one working copy can produce enough protein, so heterozygotes are unaffected. Two carrier parents have a 1 in 4 chance of an affected child in each pregnancy. Dominant conditions can result from a toxic protein or from too little product from one working copy. A dominant allele can be rare, as with Huntington's disease.
+D: bio-carrier-cross
 X: Two carriers of cystic fibrosis.
 > Both parents are Ff.
 > Each parent passes F or f with equal probability.
@@ -915,6 +928,8 @@ H: Expected ratios
 - Homozygous dominant × any: all offspring show the dominant phenotype.
 - Ratios are probabilities; small families often differ from them.
 P: A **test cross** determines whether an organism showing a dominant phenotype is homozygous or heterozygous: cross it with a homozygous recessive. If any offspring show the recessive phenotype, the parent is heterozygous. Observed results can be compared with expected ratios using the chi-squared test to see whether differences are due to chance.
+D: bio-monohybrid-cross
+D: bio-test-cross
 X: A test cross.
 > A purple-flowered plant could be PP or Pp.
 > It is crossed with a white-flowered plant (pp).
@@ -950,6 +965,7 @@ H: Gametes and Punnett squares
 - A 4 × 4 Punnett square gives 16 combinations.
 - AaBb × AaBb gives phenotypes in a **9:3:3:1** ratio.
 - AaBb × aabb (a dihybrid test cross) gives **1:1:1:1**.
+D: bio-dihybrid-cross
 H: Deviations
 - **Linked genes** on the same chromosome produce more parental combinations and fewer recombinants.
 - **Epistasis**: one gene affects the expression of another, changing ratios such as 9:3:4.
@@ -995,6 +1011,7 @@ H: Ratios
 - Genotype and phenotype ratios are the same, because each genotype has a distinct phenotype.
 - This differs from the 3:1 ratio of complete dominance.
 P: At the molecular level, incomplete dominance often reflects dosage: one functional allele makes half as much pigment, giving an intermediate colour. Some human traits show partial dominance, such as familial hypercholesterolaemia, where heterozygotes have raised cholesterol and homozygotes much higher levels. Incomplete dominance does not mean the alleles blend permanently: red and white reappear in the F₂.
+D: bio-incomplete-dominance
 X: A snapdragon cross.
 > Two pink snapdragons (CᴿCᵂ) are crossed.
 > Gametes: Cᴿ and Cᵂ from each parent.
@@ -1035,6 +1052,7 @@ H: ABO blood groups
 - Genotypes: IᴬIᴬ or IᴬIᴼ = A; IᴮIᴮ or IᴮIᴼ = B; IᴬIᴮ = AB; IᴼIᴼ = O.
 - Iᴬ and Iᴮ code for enzymes that add different sugars to red cell surface antigens.
 P: Codominance differs from incomplete dominance: in codominance both products are present separately, while in incomplete dominance a single intermediate product appears. Blood group inheritance was once used in paternity questions, as some combinations are impossible: two group O parents cannot have a group A child. Sickle cell trait shows codominance at the molecular level, as heterozygotes make both normal and sickle haemoglobin.
+D: bio-abo-cross
 X: Predicting blood groups.
 > Parents: IᴬIᴼ (group A) and IᴮIᴼ (group B).
 > Gametes: Iᴬ or Iᴼ, and Iᴮ or Iᴼ.
@@ -1076,6 +1094,7 @@ H: X-linked recessive conditions
 - Females are usually **carriers** (XᴴXʰ).
 - Affected males inherit the allele from their mothers; fathers pass X-linked alleles only to daughters.
 P: Because a father passes his Y to sons, there is no father-to-son transmission of X-linked conditions. A carrier mother and an unaffected father have a 1 in 2 chance of an affected son and a 1 in 2 chance of a carrier daughter. Queen Victoria was a carrier of haemophilia, which spread through European royal families.
+D: bio-xlinked-cross
 X: A carrier mother.
 > Mother: XᴴXʰ (carrier). Father: XᴴY (unaffected).
 > Daughters: XᴴXᴴ or XᴴXʰ: unaffected, half are carriers.
@@ -1119,6 +1138,8 @@ H: Recognising patterns
 - **X-linked recessive**: more affected males; no father-to-son transmission; affected males often have carrier mothers.
 - **X-linked dominant**: affected fathers pass the trait to all daughters.
 P: To analyse a pedigree, look for key clues: unaffected parents with an affected child rule out dominant inheritance; an affected father with an affected son rules out X-linked inheritance. Then assign genotypes, starting with affected individuals in recessive patterns. Probabilities are calculated using known genotypes, such as 2/3 for an unaffected child of two carriers being a carrier.
+D: bio-pedigree-recessive
+D: bio-pedigree-xlinked
 X: Analysing a family.
 > Two unaffected parents have an affected daughter.
 > The trait cannot be dominant, because neither parent is affected.
@@ -1154,6 +1175,7 @@ H: Frequencies and Hardy-Weinberg
 - **Allele frequency**: the proportion of all copies of a gene that are a particular allele.
 - For two alleles with frequencies **p** and **q**: **p + q = 1**.
 - **Hardy-Weinberg equation**: **p² + 2pq + q² = 1**, giving frequencies of AA, Aa and aa.
+D: bio-hardy-weinberg
 H: Conditions and uses
 - Equilibrium requires: large population, random mating, no mutation, no migration and no natural selection.
 - Real populations rarely meet these, so changes in frequency indicate evolution.
@@ -1194,6 +1216,7 @@ H: Linkage
 - In a dihybrid test cross, linked genes give mostly **parental** phenotypes and few **recombinant** phenotypes.
 - Recombinants arise from **crossing over** between the genes in meiosis.
 - Completely linked genes give only parental types.
+D: bio-crossover-linkage
 H: Recombination frequency
 - **Recombination frequency** = recombinant offspring ÷ total offspring × 100%.
 - The further apart two genes are, the more often crossing over separates them.
@@ -1235,6 +1258,7 @@ H: Crossing over
 - Non-sister chromatids break and rejoin at **chiasmata**, exchanging sections.
 - This creates chromatids with new combinations of alleles.
 - At least one crossover usually occurs per chromosome pair, helping correct segregation.
+D: bio-crossover-linkage
 H: Independent assortment and fertilisation
 - At **metaphase I**, each homologous pair lines up independently of the others.
 - Humans have 23 pairs, giving 2²³ (about 8.4 million) combinations of chromosomes in gametes, before crossing over.

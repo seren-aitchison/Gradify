@@ -3,7 +3,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { render } from "../kit/diagrams/renderers.js";
-import { gametes, crossOf, translate, transcribe, complement, mutationKind, pedigreeFits, osmoticOutcome, chargeOf } from "../kit/diagrams/bio-renderers.js";
+import { gametes, crossOf, translate, transcribe, complement, mutationKind, pedigreeFits, osmoticOutcome, chargeOf, codonCount, bandFractions, chromatidsAfter } from "../kit/diagrams/bio-renderers.js";
 import "../kit/diagrams/chem-renderers-3.js"; // the shared flow renderer, which route and lineage draw with
 
 const mono = { alleles: ["T", "t"], dominance: { kind: "complete", dominant: "T", traits: ["tall", "short"] } };
@@ -161,4 +161,46 @@ test("Gram walls: thickness, outer membrane and stain must agree", () => {
   pos.stain = "pink"; assert.equal(allPass(spec), false);
   pos.stain = "purple"; pos.example = "E. coli"; assert.equal(allPass(spec), false);
   pos.example = "Staphylococcus"; pos.layers.unshift({ kind: "outer membrane", nm: 8 }); assert.equal(allPass(spec), false);
+});
+
+test("the genetic code: 64 codons, 61 for amino acids, three stops, degeneracy", () => {
+  assert.equal(codonCount("Stop"), 3);
+  assert.equal(codonCount("Met"), 1); assert.equal(codonCount("Trp"), 1);
+  for (const aa of ["Leu", "Ser", "Arg"]) assert.equal(codonCount(aa), 6);
+  const spec = { renderer: "codontable", alt: "x", claims: [{ type: "stops", value: ["UAA", "UAG", "UGA"] }, { type: "sense", value: 61 }, { type: "amino", value: 20 }, { type: "family", prefix: "GG", aa: "Gly" }] };
+  assert.equal(allPass(spec), true);
+  spec.claims = [{ type: "count", aa: "Leu", value: 4 }]; // leucine has six codons, not four
+  assert.equal(allPass(spec), false);
+  spec.claims = [{ type: "family", prefix: "AU", aa: "Ile" }]; // AUG is methionine, so AUN is not one family
+  assert.equal(allPass(spec), false);
+});
+
+test("Meselson and Stahl: only semi-conservative copying gives the bands that were seen", () => {
+  assert.deepEqual(bandFractions("semiconservative", 1), { heavy: 0, hybrid: 1, light: 0 });
+  assert.deepEqual(bandFractions("semiconservative", 2), { heavy: 0, hybrid: 0.5, light: 0.5 });
+  assert.ok(bandFractions("conservative", 1).heavy > 0); // a heavy band would remain at generation 1
+  const observed = { 0: { heavy: 1 }, 1: { hybrid: 1 }, 2: { hybrid: 0.5, light: 0.5 } };
+  const g = (model, agrees) => ({ label: model, model, gens: [0, 1, 2], agrees });
+  assert.equal(allPass({ renderer: "density", alt: "x", observed, groups: [g("semiconservative", true), g("conservative", false)] }), true);
+  assert.equal(allPass({ renderer: "density", alt: "x", observed, groups: [g("conservative", true)] }), false); // claiming a ruled-out model fits
+  assert.equal(allPass({ renderer: "density", alt: "x", observed, groups: [g("semiconservative", false)] }), false);
+});
+
+test("crossing over: a crossover between linked genes makes two recombinant chromatids of four, never more", () => {
+  const genes = [{ alleles: ["A", "a"] }, { alleles: ["B", "b"] }];
+  const between = chromatidsAfter({ genes, crossover: "between" });
+  assert.equal(between.recombinant, 2); assert.equal(between.parental, 2);
+  assert.deepEqual(between.after.map((c) => c.join("")).sort(), ["AB", "Ab", "aB", "ab"]);
+  assert.equal(chromatidsAfter({ genes, crossover: "outside" }).recombinant, 0); // beyond both genes, nothing is reshuffled
+  const spec = { renderer: "crossover", alt: "x", genes, crossover: "between", claims: [{ type: "recombinant", value: 2 }, { type: "max", value: 0.5 }] };
+  assert.equal(allPass(spec), true);
+  spec.claims = [{ type: "recombinant", value: 4 }];
+  assert.equal(allPass(spec), false);
+});
+
+test("pedigrees: the unit 4 families fit their mode of inheritance and rule out the others", () => {
+  const rec = [{ id: "I-1", sex: "m", gen: 1, x: 0 }, { id: "I-2", sex: "f", gen: 1, x: 1 }, { id: "II-1", sex: "m", gen: 2, x: 0, affected: true, parents: ["I-1", "I-2"] }];
+  assert.equal(pedigreeFits({ people: rec }, "AD"), false); // unaffected parents, affected child
+  assert.equal(pedigreeFits({ people: rec }, "AR"), true);
+  assert.equal(pedigreeFits({ people: rec }, "XR"), true);
 });

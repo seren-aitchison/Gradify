@@ -210,6 +210,7 @@ mk("u03-29", "bio-dna-rna-pairing", "strand", "DNA pairs A–T and G–C; RNA us
    "The coding strand of a short gene, its complementary template strand, and the matching mRNA, with the bases coloured by type.",
    ["Coding strand: ATGGTGCACCTG.", "Template strand, base-paired to it: TACCACGTGGAC (A–T, G–C).", "mRNA copy: AUGGUGCACCUG, the coding strand with U for T.",
     "31 hydrogen bonds hold this stretch of the double helix together: 2 for each of 5 A–T pairs and 3 for each of 7 G–C pairs."],
+   also=("u04-02",),
    coding="ATGGTGCACCTG", rows=["coding", "template", "mrna"],
    claims=[{"type": "template", "value": "TACCACGTGGAC"}, {"type": "mrna", "value": "AUGGUGCACCUG"}, {"type": "hbonds", "value": 31}])
 

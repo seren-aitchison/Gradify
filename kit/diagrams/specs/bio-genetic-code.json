@@ -1,0 +1,81 @@
+{
+ "id": "bio-genetic-code",
+ "renderer": "codontable",
+ "course": "biology",
+ "unit": "u04",
+ "lesson": "Genetic code",
+ "title": "The genetic code",
+ "caption": "Sixty-four codons, 61 for amino acids and three stops. The code is degenerate: most amino acids have several codons, often differing only in the third base (all four GGN codons give glycine). Only methionine and tryptophan have one codon each; leucine, serine and arginine have six (shaded).",
+ "alt": "A table of the 64 mRNA codons arranged by first, second and third base, with the amino acid or stop for each; AUG is marked as the start codon and UAA, UAG and UGA as stops.",
+ "description": [
+  "AUG codes for methionine and is the start codon.",
+  "UAA, UAG and UGA are stop codons.",
+  "61 codons code for the 20 amino acids, so most amino acids have more than one.",
+  "Methionine and tryptophan have a single codon each; leucine, serine and arginine have six.",
+  "The third base often does not matter: GGU, GGC, GGA and GGG all code for glycine."
+ ],
+ "highlight": [
+  {
+   "aa": "Leu",
+   "colour": "a1"
+  },
+  {
+   "aa": "Ser",
+   "colour": "a2"
+  },
+  {
+   "aa": "Arg",
+   "colour": "a4"
+  }
+ ],
+ "claims": [
+  {
+   "type": "start",
+   "codon": "AUG",
+   "aa": "Met"
+  },
+  {
+   "type": "stops",
+   "value": [
+    "UAA",
+    "UAG",
+    "UGA"
+   ]
+  },
+  {
+   "type": "sense",
+   "value": 61
+  },
+  {
+   "type": "amino",
+   "value": 20
+  },
+  {
+   "type": "single",
+   "aa": [
+    "Met",
+    "Trp"
+   ]
+  },
+  {
+   "type": "count",
+   "aa": "Leu",
+   "value": 6
+  },
+  {
+   "type": "count",
+   "aa": "Ser",
+   "value": 6
+  },
+  {
+   "type": "count",
+   "aa": "Arg",
+   "value": 6
+  },
+  {
+   "type": "family",
+   "prefix": "GG",
+   "aa": "Gly"
+  }
+ ]
+}

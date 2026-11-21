@@ -1,0 +1,51 @@
+{
+ "id": "bio-meselson-stahl",
+ "renderer": "density",
+ "course": "biology",
+ "unit": "u04",
+ "lesson": "DNA replication",
+ "title": "Meselson and Stahl: DNA copies itself semi-conservatively",
+ "caption": "Bacteria grown in heavy nitrogen (¹⁵N) were moved to light nitrogen (¹⁴N). After one generation all the DNA was a single hybrid band; after two, half hybrid and half light. Semi-conservative copying predicts exactly that; conservative copying would have left a heavy band at generation 1.",
+ "alt": "Tubes of DNA bands for generations 0, 1 and 2: semi-conservative copying gives heavy, then all hybrid, then half hybrid and half light, matching the observations; conservative copying predicts a heavy band and a light band at generation 1, which was not seen.",
+ "description": [
+  "Generation 0: all DNA is heavy (¹⁵N).",
+  "Generation 1, observed: one band of intermediate density, so every molecule has one old and one new strand.",
+  "Generation 2, observed: half the DNA hybrid, half light.",
+  "Semi-conservative copying predicts exactly these bands.",
+  "Conservative copying predicts a heavy band and a light band at generation 1, so it is ruled out."
+ ],
+ "groups": [
+  {
+   "label": "semi-conservative: matches the observed bands",
+   "model": "semiconservative",
+   "gens": [
+    0,
+    1,
+    2
+   ],
+   "agrees": true
+  },
+  {
+   "label": "conservative: predicts a heavy band at generation 1, which was not seen",
+   "model": "conservative",
+   "gens": [
+    0,
+    1,
+    2
+   ],
+   "agrees": false
+  }
+ ],
+ "observed": {
+  "0": {
+   "heavy": 1
+  },
+  "1": {
+   "hybrid": 1
+  },
+  "2": {
+   "hybrid": 0.5,
+   "light": 0.5
+  }
+ }
+}

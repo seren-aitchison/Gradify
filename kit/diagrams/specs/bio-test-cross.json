@@ -1,0 +1,62 @@
+{
+ "id": "bio-test-cross",
+ "renderer": "cross",
+ "course": "biology",
+ "unit": "u04",
+ "lesson": "Monohybrid crosses",
+ "title": "A test cross: Tt × tt",
+ "caption": "To find whether a tall plant is TT or Tt, cross it with a short (tt) plant. A TT parent would give only tall offspring; a Tt parent gives tall and short in a 1 : 1 ratio, so any short offspring show it is heterozygous.",
+ "alt": "A Punnett square of a heterozygous tall plant crossed with a short plant: two Tt and two tt offspring.",
+ "description": [
+  "The unknown plant is Tt and the tester is tt.",
+  "The tester only makes t gametes.",
+  "Half the offspring are Tt (tall) and half are tt (short): a 1 : 1 ratio.",
+  "If the unknown plant were TT, all offspring would be tall."
+ ],
+ "loci": [
+  {
+   "alleles": [
+    "T",
+    "t"
+   ],
+   "dominance": {
+    "kind": "complete",
+    "dominant": "T",
+    "traits": [
+     "tall",
+     "short"
+    ]
+   }
+  }
+ ],
+ "parents": [
+  {
+   "genotype": [
+    "T t"
+   ],
+   "label": "tall"
+  },
+  {
+   "genotype": [
+    "t t"
+   ],
+   "label": "short (tester)"
+  }
+ ],
+ "claims": [
+  {
+   "type": "genotypes",
+   "ratio": {
+    "Tt": 1,
+    "tt": 1
+   }
+  },
+  {
+   "type": "phenotypes",
+   "ratio": {
+    "tall": 1,
+    "short": 1
+   }
+  }
+ ]
+}

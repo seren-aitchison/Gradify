@@ -1,0 +1,64 @@
+{
+ "id": "bio-incomplete-dominance",
+ "renderer": "cross",
+ "course": "biology",
+ "unit": "u04",
+ "lesson": "Incomplete dominance",
+ "title": "Incomplete dominance: pink snapdragons",
+ "caption": "Neither allele is completely dominant, so the heterozygote is intermediate. Two pink plants give 1 red : 2 pink : 1 white, so the genotype ratio and the phenotype ratio are the same, unlike the 3 : 1 of complete dominance.",
+ "alt": "A Punnett square of two pink snapdragons: one red, two pink and one white offspring.",
+ "description": [
+  "Pink plants are CᴿCᵂ.",
+  "Each parent makes Cᴿ and Cᵂ gametes.",
+  "Offspring: CᴿCᴿ red, CᴿCᵂ pink (two squares), CᵂCᵂ white.",
+  "Genotype and phenotype ratios are both 1 : 2 : 1."
+ ],
+ "loci": [
+  {
+   "alleles": [
+    "Cᴿ",
+    "Cᵂ"
+   ],
+   "dominance": {
+    "kind": "map",
+    "map": {
+     "Cᴿ Cᴿ": "red",
+     "Cᴿ Cᵂ": "pink",
+     "Cᵂ Cᵂ": "white"
+    }
+   }
+  }
+ ],
+ "parents": [
+  {
+   "genotype": [
+    "Cᴿ Cᵂ"
+   ],
+   "label": "pink"
+  },
+  {
+   "genotype": [
+    "Cᴿ Cᵂ"
+   ],
+   "label": "pink"
+  }
+ ],
+ "claims": [
+  {
+   "type": "genotypes",
+   "ratio": {
+    "CᴿCᴿ": 1,
+    "CᴿCᵂ": 2,
+    "CᵂCᵂ": 1
+   }
+  },
+  {
+   "type": "phenotypes",
+   "ratio": {
+    "red": 1,
+    "pink": 2,
+    "white": 1
+   }
+  }
+ ]
+}

@@ -1,0 +1,129 @@
+{
+ "id": "bio-hardy-weinberg",
+ "renderer": "graph",
+ "course": "biology",
+ "unit": "u04",
+ "lesson": "Population genetics",
+ "title": "Genotype frequencies in Hardy–Weinberg equilibrium",
+ "caption": "With allele frequencies p and q (p + q = 1) the genotype frequencies are p², 2pq and q². Heterozygotes are most common at q = 0.5, but when a recessive allele is rare almost all copies are in carriers: at q = 0.02 (cystic fibrosis, about 1 in 2,500) the carrier frequency 2pq is about 0.039, roughly 1 in 25.",
+ "alt": "Three curves against the frequency q of the recessive allele: AA falling from 1 to 0, Aa rising to 0.5 at q = 0.5 and falling, and aa rising from 0 to 1, with q = 0.02 marked.",
+ "description": [
+  "p² (AA) falls from 1 to 0 as q rises.",
+  "2pq (Aa) peaks at 0.5 when q = 0.5.",
+  "q² (aa) rises from 0 to 1.",
+  "At every q the three frequencies add up to 1.",
+  "At q = 0.02, q² = 0.0004 (1 in 2,500) but 2pq = 0.039, about 1 in 25."
+ ],
+ "range": {
+  "x": [
+   0,
+   1
+  ],
+  "y": [
+   0,
+   1.08
+  ]
+ },
+ "ticks": [
+  [
+   0,
+   0.2,
+   0.4,
+   0.5,
+   0.6,
+   0.8,
+   1
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "frequency of the recessive allele, q",
+  "genotype frequency"
+ ],
+ "curves": [
+  {
+   "expr": "(1-x)^2",
+   "colour": "a1"
+  },
+  {
+   "expr": "2*x*(1-x)",
+   "colour": "a4"
+  },
+  {
+   "expr": "x^2",
+   "colour": "a2"
+  }
+ ],
+ "legend": [
+  [
+   "AA (p²)",
+   "a1"
+  ],
+  [
+   "Aa (2pq)",
+   "a4"
+  ],
+  [
+   "aa (q²)",
+   "a2"
+  ]
+ ],
+ "legendData": [
+  0.36,
+  1.04
+ ],
+ "checks": [
+  {
+   "type": "max",
+   "expr": "2*x*(1-x)",
+   "domain": [
+    0,
+    1
+   ],
+   "x": 0.5,
+   "y": 0.5,
+   "name": "heterozygotes (2pq) are most frequent at q = 0.5, where 2pq = 0.5"
+  },
+  {
+   "type": "point",
+   "expr": "(1-x)^2+2*x*(1-x)+x^2",
+   "x": 0.3,
+   "y": 1,
+   "name": "p² + 2pq + q² = 1 at q = 0.3"
+  },
+  {
+   "type": "point",
+   "expr": "(1-x)^2+2*x*(1-x)+x^2",
+   "x": 0.02,
+   "y": 1,
+   "name": "p² + 2pq + q² = 1 at q = 0.02"
+  },
+  {
+   "type": "point",
+   "expr": "x^2",
+   "x": 0.02,
+   "y": 0.0004,
+   "name": "at q = 0.02, q² = 0.0004: 1 in 2,500 are affected"
+  },
+  {
+   "type": "value",
+   "expr": "2*x*(1-x)",
+   "x": 0.02,
+   "between": [
+    0.0385,
+    0.0395
+   ],
+   "name": "at q = 0.02 the carrier frequency 2pq is about 0.039, roughly 1 in 25"
+  }
+ ]
+}

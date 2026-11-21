@@ -1,0 +1,66 @@
+{
+ "id": "bio-carrier-cross",
+ "renderer": "cross",
+ "course": "biology",
+ "unit": "u04",
+ "lesson": "Dominant and recessive inheritance",
+ "title": "Two carriers of an autosomal recessive condition",
+ "caption": "Each carrier (Aa) is unaffected but passes the recessive allele a to half their gametes. In every pregnancy there is a 1 in 4 chance of an affected child (aa), a 1 in 2 chance of a carrier and a 1 in 4 chance of a child with two working copies.",
+ "alt": "A Punnett square of two unaffected carrier parents: one AA, two Aa and one aa child; the aa child is affected.",
+ "description": [
+  "Both parents are Aa: unaffected carriers.",
+  "Each makes A and a gametes.",
+  "The children are AA, Aa, Aa and aa.",
+  "One in four (aa) is affected; three in four are unaffected, and two of those are carriers."
+ ],
+ "loci": [
+  {
+   "alleles": [
+    "A",
+    "a"
+   ],
+   "dominance": {
+    "kind": "complete",
+    "dominant": "A",
+    "traits": [
+     "unaffected",
+     "affected"
+    ]
+   }
+  }
+ ],
+ "parents": [
+  {
+   "genotype": [
+    "A a"
+   ],
+   "label": "carrier"
+  },
+  {
+   "genotype": [
+    "A a"
+   ],
+   "label": "carrier"
+  }
+ ],
+ "claims": [
+  {
+   "type": "genotypes",
+   "ratio": {
+    "AA": 1,
+    "Aa": 2,
+    "aa": 1
+   }
+  },
+  {
+   "type": "probability",
+   "phenotype": "affected",
+   "value": 0.25
+  },
+  {
+   "type": "probability",
+   "genotype": "Aa",
+   "value": 0.5
+  }
+ ]
+}

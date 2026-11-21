@@ -12,6 +12,9 @@
 //   route      a path through the endomembrane system (drawn as a flow): every step is one cargo really takes
 //   lineage    stem cell to specialised cell (drawn as a flow): potencies as classified, never widening
 //   envelope   Gram-positive and Gram-negative walls to scale: thickness, outer membrane and the stain agree
+//   codontable the standard genetic code: 64 codons, 61 sense, 3 stop, start AUG, degeneracy claims
+//   density    Meselson–Stahl density bands: each copying model's bands are worked out and compared with what was seen
+//   crossover  a crossover between linked genes: which chromatids are parental and which recombinant
 // Generic biology pictures (graphs, pathways, cycles, bar charts, keys) use the shared graph, flow, trend and
 // decision-tree renderers instead.
 import { register, RENDERERS, text, line, arrow, wrap, textBlock, f1, esc, check, COLOURS as C } from "./renderers.js";
@@ -135,7 +138,7 @@ export function mutationKind(a, b) {
 const BASE_TONE = { A: "a1", T: "a2", U: "a2", G: "a4", C: "a3" };
 function strandBlock(seq, rows, y, W, narrow, opts = {}) {
   const bw = narrow ? 24 : 27, gap = 6, labW = narrow ? 0 : 142, perRow = Math.max(1, Math.floor((W - 24 - labW) / (3 * bw + gap)));
-  const codons = seq.length / 3, lines = Math.ceil(codons / perRow), rowH = 34, mrna = transcribe(seq), tmpl = complement(seq), prot = translate(mrna);
+  const codons = seq.length / 3, lines = Math.ceil(codons / perRow), rowH = narrow ? 48 : 34, mrna = transcribe(seq), tmpl = complement(seq), prot = translate(mrna);
   const NAME = { coding: "DNA coding 5′→3′", template: "DNA template 3′→5′", mrna: "mRNA 5′→3′", protein: "polypeptide" };
   let s = "";
   for (let L = 0; L < lines; L++) {
@@ -161,10 +164,10 @@ function strandBlock(seq, rows, y, W, narrow, opts = {}) {
       // hydrogen bonds between the two DNA strands: two for A–T, three for G–C
       if (r === "template" && rows[ri - 1] === "coding") for (let i = c0 * 3; i < c1 * 3; i++) {
         const bx = x0 + Math.floor((i - c0 * 3) / 3) * (3 * bw + gap) + ((i - c0 * 3) % 3) * bw + bw / 2, n = /[GC]/.test(seq[i]) ? 3 : 2;
-        for (let h = 0; h < n; h++) s += line(bx + (h - (n - 1) / 2) * 5, ry - 7 + (narrow ? 4 : 0), bx + (h - (n - 1) / 2) * 5, ry - 1 + (narrow ? 4 : 0), { stroke: C.soft, w: 1.4, dash: "2 2", cap: "butt" });
+        for (let h = 0; h < n; h++) s += line(bx + (h - (n - 1) / 2) * 5, ry + (narrow ? -18 : -7), bx + (h - (n - 1) / 2) * 5, ry + (narrow ? -10 : -1), { stroke: C.soft, w: 1.4, dash: "2 2", cap: "butt" });
       }
     });
-    y += rows.length * rowH + (narrow ? rows.length * 12 : 0) + 18;
+    y += rows.length * rowH + 18;
   }
   return { s, y };
 }
@@ -762,6 +765,172 @@ function envelopeChecks(spec) {
   return out;
 }
 
+// ======================================================================== codontable
+// The standard genetic code as a table, drawn from the same code the translation checks use.
+// spec: highlight: [{aa: "Leu", colour: "a1"}] shades every codon of that amino acid,
+//   claims: [{type: "start", codon, aa} | {type: "stops", value: ["UAA", …]} | {type: "sense", value: 61}
+//            | {type: "count", aa, value} | {type: "family", prefix: "GG", aa} | {type: "single", aa: ["Met", "Trp"]}]
+const BASES4 = ["U", "C", "A", "G"];
+export const CODONS = BASES4.flatMap((a) => BASES4.flatMap((b) => BASES4.map((c) => a + b + c)));
+export const codonCount = (aa) => CODONS.filter((c) => codonToAA(c) === aa).length;
+function codontableDraw(spec, W, narrow) {
+  const HL = {};
+  for (const h of spec.highlight || []) for (const c of CODONS) if (codonToAA(c) === h.aa) HL[c] = h.colour;
+  const put = (c, x, y, size, aaDx) => {
+    const aa = codonToAA(c), stop = aa === "Stop", start = c === "AUG", fill = stop ? C.bad : start ? C.good : C.ink;
+    let s = HL[c] ? rect(x - 4, y - 9, aaDx + 40, 17, { fill: C[HL[c]], op: 0.2, stroke: "none", rx: 4 }) : "";
+    return s + text(x, y, c, { size, weight: 700, anchor: "start", fill }) + text(x + aaDx, y, aa, { size, weight: stop || start ? 700 : 500, anchor: "start", fill: stop || start ? fill : C.ink });
+  };
+  let s = "";
+  if (!narrow) {
+    const L = 36, T = 40, cw = (W - L - 8) / 4, rh = 76;
+    s += text(L + (4 * cw) / 2, 12, "second base", { size: 12, fill: C.soft }) + text(8, 12, "first base", { size: 12, anchor: "start", fill: C.soft });
+    BASES4.forEach((b, j) => { s += text(L + (j + 0.5) * cw, 30, b, { size: 15, weight: 700 }); });
+    BASES4.forEach((a, i) => {
+      s += text(18, T + i * rh + rh / 2, a, { size: 15, weight: 700 });
+      BASES4.forEach((b, j) => {
+        const x0 = L + j * cw, y0 = T + i * rh;
+        s += rect(x0, y0, cw, rh, { fill: "none", stroke: C.grid, sw: 1.2, rx: 0 });
+        BASES4.forEach((c, k) => { s += put(a + b + c, x0 + 14, y0 + 12 + k * 16.4, 12.5, 48); });
+      });
+    });
+    return { s, H: T + 4 * rh + 10 };
+  }
+  // phone: one block per first base; second base across, third base down
+  const cw = (W - 20) / 4;
+  let y = 8;
+  BASES4.forEach((a) => {
+    s += text(10, y + 8, `first base ${a}`, { size: 13, weight: 700, anchor: "start" });
+    BASES4.forEach((b, j) => { s += text(10 + (j + 0.5) * cw, y + 28, `${a}${b}_`, { size: 12, weight: 700, fill: C.soft }); });
+    BASES4.forEach((b, j) => BASES4.forEach((c, k) => { s += put(a + b + c, 14 + j * cw, y + 48 + k * 17, 11.5, 36); }));
+    s += line(10, y + 48 + 3 * 17 + 14, W - 10, y + 48 + 3 * 17 + 14, { stroke: C.grid, w: 1.2 });
+    y += 48 + 3 * 17 + 26;
+  });
+  return { s, H: y };
+}
+function codontableChecks(spec) {
+  const out = [], sense = CODONS.filter((c) => codonToAA(c) !== "Stop");
+  out.push(check("the table has 4³ = 64 codons", CODONS.length === 64 && new Set(CODONS).size === 64));
+  for (const c of spec.claims || []) {
+    if (c.type === "start") out.push(check(`${c.codon} codes for ${c.aa} and is the start codon`, codonToAA(c.codon) === c.aa, codonToAA(c.codon)));
+    if (c.type === "stops") { const got = CODONS.filter((x) => codonToAA(x) === "Stop"); out.push(check(`the stop codons are ${c.value.join(", ")}`, got.join() === [...c.value].sort((a, b) => CODONS.indexOf(a) - CODONS.indexOf(b)).join(), got.join(", "))); }
+    if (c.type === "sense") out.push(check(`${c.value} codons code for amino acids`, sense.length === c.value, `${sense.length}`));
+    if (c.type === "amino") out.push(check(`${c.value} different amino acids are coded`, new Set(sense.map(codonToAA)).size === c.value, `${new Set(sense.map(codonToAA)).size}`));
+    if (c.type === "count") out.push(check(`${c.aa} has ${c.value} codon${c.value > 1 ? "s" : ""}`, codonCount(c.aa) === c.value, `${codonCount(c.aa)}`));
+    if (c.type === "family") out.push(check(`all four ${c.prefix}N codons code for ${c.aa}: the third base does not matter`, ["U", "C", "A", "G"].every((b) => codonToAA(c.prefix + b) === c.aa)));
+    if (c.type === "single") out.push(check(`${c.aa.join(" and ")} have only one codon each`, c.aa.every((a) => codonCount(a) === 1)));
+  }
+  return out;
+}
+
+// ======================================================================== density
+// Meselson and Stahl: bands of DNA in a density gradient after generations of growth in light nitrogen (¹⁴N) that
+// began in heavy (¹⁵N). spec: groups: [{label, model: "semiconservative" | "conservative" | "dispersive", gens: [0, 1, 2],
+// agrees: true | false}], observed: {"0": {heavy: 1}, "1": {hybrid: 1}, "2": {hybrid: 0.5, light: 0.5}}
+// Each model's bands come from copying the strands: the check compares them with what was observed.
+export function bandFractions(model, n) {
+  if (n === 0) return { heavy: 1, hybrid: 0, light: 0 };
+  if (model === "semiconservative") { const h = 2 / 2 ** n; return { heavy: 0, hybrid: h, light: 1 - h }; }
+  if (model === "conservative") { const h = 1 / 2 ** n; return { heavy: h, hybrid: 0, light: 1 - h }; }
+  return { heavy: 0, hybrid: 1, light: 0 }; // dispersive: every molecule mixed, getting lighter: one hybrid band, moving up
+}
+const BAND = { heavy: ["a2", "heavy (¹⁵N)"], hybrid: ["a5", "hybrid (one old strand, one new)"], light: ["a4", "light (¹⁴N)"] };
+const fracMatch = (p, o) => ["heavy", "hybrid", "light"].every((k) => Math.abs((p[k] || 0) - (o[k] || 0)) < 1e-9);
+function densityDraw(spec, W, narrow) {
+  const th = 124, tw = 34, groups = spec.groups, n = groups.length;
+  const gw = narrow ? W - 20 : (W - 20) / n;
+  let s = "", y0 = 10, H = 0;
+  const wrapAt = narrow ? 44 : Math.floor(gw / 7), maxLines = Math.max(...groups.map((g) => wrap(g.label, wrapAt).length));
+  groups.forEach((g, gi) => {
+    const gx = narrow ? 10 : 10 + gi * gw, gy = narrow ? y0 + gi * (th + 112) : y0;
+    const lb = textBlock(gx + gw / 2, 0, g.label, wrapAt, { size: 13, weight: 700, fill: g.agrees ? C.good : C.bad });
+    s += `<g transform="translate(0 ${f1(gy + 8 + ((lb.lines - 1) * 17) / 2)})">${lb.svg}</g>`;
+    const top = gy + 12 + (narrow ? lb.lines : maxLines) * 17, step = Math.min(96, (gw - 20) / g.gens.length);
+    g.gens.forEach((gen, k) => {
+      const cx = gx + gw / 2 + (k - (g.gens.length - 1) / 2) * step;
+      s += rect(cx - tw / 2, top, tw, th, { fill: "none", stroke: C.line, sw: 2, rx: 14 });
+      const f = bandFractions(g.model, gen);
+      [["light", 0.26], ["hybrid", 0.52], ["heavy", 0.78]].forEach(([key, at]) => {
+        if (!f[key]) return;
+        const bh = 5 + 20 * f[key];
+        s += rect(cx - tw / 2 + 3, top + th * at - bh / 2, tw - 6, bh, { fill: C[BAND[key][0]], op: 0.85, stroke: "none", rx: 3 });
+      });
+      s += text(cx, top + th + 18, `gen ${gen}`, { size: 12, weight: 600, fill: C.soft });
+    });
+    H = Math.max(H, top + th + 30);
+  });
+  const ly = H + (narrow ? (n - 1) * (th + 112) : 0) + 6;
+  Object.entries(BAND).forEach(([k, [t, label]], i) => {
+    const yy = ly + i * 20;
+    s += rect(14, yy - 6, 14, 12, { fill: C[t], op: 0.85, stroke: "none", rx: 3 }) + text(36, yy, label, { size: 12, anchor: "start" });
+  });
+  return { s, H: ly + 3 * 20 + 6 };
+}
+function densityChecks(spec) {
+  const out = [];
+  for (const g of spec.groups) {
+    const bad = Object.entries(spec.observed).filter(([n, o]) => !fracMatch(bandFractions(g.model, +n), o)).map(([n]) => `generation ${n}`);
+    out.push(check(`${g.model} copying ${g.agrees ? "gives the bands that were observed" : "does not give the bands that were observed"}`, (bad.length === 0) === !!g.agrees, bad.length ? `differs at ${bad.join(", ")}` : "matches every generation"));
+  }
+  return out;
+}
+
+// ======================================================================== crossover
+// One crossover in prophase I between the two inner chromatids of a pair of homologues, with two linked genes.
+// spec: genes: [{alleles: ["A", "a"]}, {alleles: ["B", "b"]}], crossover: "between" | "outside",
+//   claims: [{type: "recombinant", value: 2} | {type: "parental", value: 2} | {type: "max", value: 0.5}]
+export function chromatidsAfter(spec) {
+  const [g1, g2] = spec.genes, H1 = [g1.alleles[0], g2.alleles[0]], H2 = [g1.alleles[1], g2.alleles[1]];
+  const before = [H1, H1, H2, H2].map((c) => c.slice());
+  const after = before.map((c) => c.slice());
+  if (spec.crossover === "between") { after[1][1] = before[2][1]; after[2][1] = before[1][1]; }
+  const parental = after.filter((c) => (c.join() === H1.join()) || (c.join() === H2.join())).length;
+  return { before, after, parental, recombinant: 4 - parental, H1, H2 };
+}
+function crossoverDraw(spec, W, narrow) {
+  const X = chromatidsAfter(spec), bh = 130, bw = 15, gap = 14;
+  const stage = (cx, y, chromatids, title, tags) => {
+    let s = textBlock(cx, 0, title, narrow ? 24 : 26, { size: 12.5, weight: 700 });
+    const out = [`<g transform="translate(0 ${f1(y + ((s.lines - 1) * 16) / 2)})">${s.svg}</g>`];
+    const x0 = cx - (4 * bw + 3 * gap) / 2, top = y + 12 + s.lines * 16;
+    chromatids.forEach((c, i) => {
+      const x = x0 + i * (bw + gap);
+      // the top segment keeps the colour of its homologue; the bottom segment is coloured by where its allele came from
+      const top1 = c[0] === X.H1[0] ? "a1" : "a2", bot1 = c[1] === X.H1[1] ? "a1" : "a2";
+      out.push(rect(x, top, bw, bh / 2, { fill: C[top1], op: 0.8, stroke: C[top1], sw: 1, rx: 4 }) + rect(x, top + bh / 2, bw, bh / 2, { fill: C[bot1], op: 0.8, stroke: C[bot1], sw: 1, rx: 4 }));
+      out.push(text(x + bw / 2, top + bh * 0.24, c[0], { size: 13, weight: 800, fill: "#ffffff" }) + text(x + bw / 2, top + bh * 0.76, c[1], { size: 13, weight: 800, fill: "#ffffff" }));
+      if (tags) out.push(text(x + bw / 2, top + bh + 16, tags[i] === "recombinant" ? "R" : "P", { size: 13, weight: 800, fill: tags[i] === "recombinant" ? C.a3 : C.soft }));
+    });
+    return { svg: out.join(""), top, h: bh + (tags ? 34 : 12) + s.lines * 16 + 12 };
+  };
+  const tags = X.after.map((c) => (c.join() === X.H1.join() || c.join() === X.H2.join() ? "parental" : "recombinant"));
+  let s = "", H;
+  if (narrow) {
+    const a = stage(W / 2, 16, X.before, "prophase I: homologues paired, two chromatids each", null);
+    s += a.svg; const y2 = 16 + a.h + 30;
+    s += arrow(W / 2, 16 + a.h - 6, W / 2, y2 - 8, { w: 2, head: 9 }) + text(W / 2 + 12, 16 + a.h + 8, "crossover", { size: 12, weight: 700, anchor: "start", fill: C.a3 });
+    const b = stage(W / 2, y2, X.after, spec.crossover === "between" ? "after a crossover between the genes" : "after a crossover beyond both genes", tags);
+    s += b.svg; H = y2 + b.h;
+  } else {
+    const a = stage(W * 0.25, 16, X.before, "prophase I: homologues paired, two chromatids each", null), b = stage(W * 0.75, 16, X.after, spec.crossover === "between" ? "after a crossover between the genes" : "after a crossover beyond both genes", tags);
+    s += a.svg + b.svg + arrow(W * 0.25 + 90, 16 + 12 + 32 + bh / 2, W * 0.75 - 90, 16 + 12 + 32 + bh / 2, { w: 2, head: 10 }) + text(W / 2, 16 + 12 + 32 + bh / 2 - 12, "crossover", { size: 12.5, weight: 700, fill: C.a3 });
+    H = 16 + Math.max(a.h, b.h);
+  }
+  s += text(W / 2, H + 8, "P = parental chromatid     R = recombinant chromatid", { size: 12, fill: C.soft });
+  return { s, H: H + 26 };
+}
+function crossoverChecks(spec) {
+  const X = chromatidsAfter(spec), out = [];
+  out.push(check("each homologue contributes two identical chromatids before the crossover", X.before[0].join() === X.before[1].join() && X.before[2].join() === X.before[3].join()));
+  out.push(check("a crossover swaps the ends of two non-sister chromatids: the allele counts stay the same", [0, 1].every((i) => X.after.filter((c) => c[i] === spec.genes[i].alleles[0]).length === 2)));
+  for (const c of spec.claims || []) {
+    if (c.type === "recombinant") out.push(check(`${c.value} of the 4 chromatids are recombinant`, X.recombinant === c.value, `${X.recombinant}`));
+    if (c.type === "parental") out.push(check(`${c.value} of the 4 chromatids stay parental`, X.parental === c.value, `${X.parental}`));
+    if (c.type === "max") out.push(check(`at most ${c.value * 100}% of the products are recombinant even with a crossover: the recombination frequency cannot pass 50%`, X.recombinant / 4 <= c.value, `${(X.recombinant / 4) * 100}%`));
+  }
+  return out;
+}
+
 register({
   cross: { draw: crossDraw, checks: crossChecks, widths: [600, 380] },
   strand: { draw: strandDraw, checks: strandChecks, widths: [760, 380] },
@@ -773,4 +942,7 @@ register({
   route: { draw: flowDraw, checks: routeChecks, widths: [700, 380] },
   lineage: { draw: flowDraw, checks: lineageChecks, widths: [700, 380] },
   envelope: { draw: envelopeDraw, checks: envelopeChecks, widths: [700, 380] },
+  codontable: { draw: codontableDraw, checks: codontableChecks, widths: [720, 380] },
+  density: { draw: densityDraw, checks: densityChecks, widths: [700, 380] },
+  crossover: { draw: crossoverDraw, checks: crossoverChecks, widths: [700, 380] },
 });

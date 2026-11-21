@@ -1,0 +1,66 @@
+{
+ "id": "bio-abo-cross",
+ "renderer": "cross",
+ "course": "biology",
+ "unit": "u04",
+ "lesson": "Codominance",
+ "title": "Codominance and multiple alleles: ABO blood groups",
+ "caption": "Iᴬ and Iᴮ are codominant, and both are dominant to Iᴼ. A group A parent (IᴬIᴼ) and a group B parent (IᴮIᴼ) can have a child of any of the four groups, each with probability one quarter.",
+ "alt": "A Punnett square of a group A parent and a group B parent, both heterozygous: one group AB, one group A, one group B and one group O child.",
+ "description": [
+  "Parent 1 is IᴬIᴼ, group A; parent 2 is IᴮIᴼ, group B.",
+  "Gametes: Iᴬ or Iᴼ from one parent, Iᴮ or Iᴼ from the other.",
+  "Offspring: IᴬIᴮ (AB), IᴬIᴼ (A), IᴮIᴼ (B), IᴼIᴼ (O).",
+  "Each blood group has probability 1 in 4."
+ ],
+ "loci": [
+  {
+   "alleles": [
+    "Iᴬ",
+    "Iᴮ",
+    "Iᴼ"
+   ],
+   "dominance": {
+    "kind": "map",
+    "map": {
+     "Iᴬ Iᴬ": "group A",
+     "Iᴬ Iᴼ": "group A",
+     "Iᴬ Iᴮ": "group AB",
+     "Iᴮ Iᴮ": "group B",
+     "Iᴮ Iᴼ": "group B",
+     "Iᴼ Iᴼ": "group O"
+    }
+   }
+  }
+ ],
+ "parents": [
+  {
+   "genotype": [
+    "Iᴬ Iᴼ"
+   ],
+   "label": "group A"
+  },
+  {
+   "genotype": [
+    "Iᴮ Iᴼ"
+   ],
+   "label": "group B"
+  }
+ ],
+ "claims": [
+  {
+   "type": "phenotypes",
+   "ratio": {
+    "group A": 1,
+    "group B": 1,
+    "group AB": 1,
+    "group O": 1
+   }
+  },
+  {
+   "type": "probability",
+   "phenotype": "group O",
+   "value": 0.25
+  }
+ ]
+}

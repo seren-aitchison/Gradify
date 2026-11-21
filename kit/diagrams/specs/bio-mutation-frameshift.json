@@ -1,0 +1,48 @@
+{
+ "id": "bio-mutation-frameshift",
+ "renderer": "strand",
+ "course": "biology",
+ "unit": "u04",
+ "lesson": "Types of mutation",
+ "title": "A frameshift mutation",
+ "caption": "Deleting one base shifts the reading frame, so every codon after it changes. Inserting or deleting three bases would instead add or remove a single amino acid.",
+ "alt": "The start of the beta-globin coding strand and the same sequence with one base deleted from the seventh codon; every later codon is read differently.",
+ "description": [
+  "One G is deleted from the seventh codon.",
+  "The bases after it are read in a new frame, so the amino acids after the deletion all change.",
+  "A deletion of 3 bases would not shift the frame."
+ ],
+ "coding": "ATGGTGCACCTGACTCCTGAGGAGAAG",
+ "rows": [
+  "coding",
+  "protein"
+ ],
+ "mutant": {
+  "coding": "ATGGTGCACCTGACTCCTAGGAGAAG",
+  "label": "after the mutation (one base deleted)",
+  "rows": [
+   "coding",
+   "protein"
+  ]
+ },
+ "claims": [
+  {
+   "type": "mutation",
+   "kind": "frameshift"
+  },
+  {
+   "type": "protein",
+   "value": [
+    "Met",
+    "Val",
+    "His",
+    "Leu",
+    "Thr",
+    "Pro",
+    "Glu",
+    "Glu",
+    "Lys"
+   ]
+  }
+ ]
+}

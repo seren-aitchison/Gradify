@@ -1,0 +1,80 @@
+{
+ "id": "bio-rna-processing",
+ "renderer": "flow",
+ "course": "biology",
+ "unit": "u04",
+ "lesson": "RNA processing",
+ "title": "From pre-mRNA to mature mRNA",
+ "caption": "In eukaryotes the first transcript is processed before it leaves the nucleus: a cap protects the 5′ end, a poly-A tail stabilises the 3′ end, and the spliceosome removes the introns and joins the exons.",
+ "alt": "Five boxes in order: pre-mRNA, 5′ cap, poly-A tail, splicing and mature mRNA.",
+ "description": [
+  "Pre-mRNA: exons and introns, made in the nucleus.",
+  "5′ cap: a modified guanine added to the 5′ end.",
+  "Poly-A tail: many adenines added to the 3′ end.",
+  "Splicing: the spliceosome removes the introns and joins the exons.",
+  "Mature mRNA: leaves through the nuclear pores for translation."
+ ],
+ "layout": "grid",
+ "boxWidth": 118,
+ "rowHeight": 118,
+ "nodes": [
+  {
+   "id": "m0",
+   "label": "pre-mRNA",
+   "sub": "exons and introns, made in the nucleus",
+   "tone": "a1",
+   "col": 0,
+   "row": 0
+  },
+  {
+   "id": "m1",
+   "label": "5′ cap",
+   "sub": "a modified guanine added to the 5′ end",
+   "tone": "a4",
+   "col": 1,
+   "row": 0
+  },
+  {
+   "id": "m2",
+   "label": "poly-A tail",
+   "sub": "many adenines added to the 3′ end",
+   "tone": "a4",
+   "col": 2,
+   "row": 0
+  },
+  {
+   "id": "m3",
+   "label": "splicing",
+   "sub": "the spliceosome removes the introns and joins the exons",
+   "tone": "a5",
+   "col": 1,
+   "row": 1
+  },
+  {
+   "id": "m4",
+   "label": "mature mRNA",
+   "sub": "leaves through the nuclear pores for translation",
+   "tone": "a2",
+   "col": 0,
+   "row": 1
+  }
+ ],
+ "edges": [
+  {
+   "from": "m0",
+   "to": "m1"
+  },
+  {
+   "from": "m1",
+   "to": "m2"
+  },
+  {
+   "from": "m2",
+   "to": "m3"
+  },
+  {
+   "from": "m3",
+   "to": "m4"
+  }
+ ]
+}

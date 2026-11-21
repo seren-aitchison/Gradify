@@ -1,0 +1,47 @@
+{
+ "id": "bio-mutation-silent",
+ "renderer": "strand",
+ "course": "biology",
+ "unit": "u04",
+ "lesson": "Types of mutation",
+ "title": "A silent mutation",
+ "caption": "Changing the last base of the Lys codon from AAG to AAA does not change the amino acid, because the code is degenerate: the protein is unchanged.",
+ "alt": "The start of the beta-globin coding strand and the same sequence with the ninth codon changed from AAG to AAA; the protein is the same.",
+ "description": [
+  "The ninth codon AAG codes for lysine.",
+  "AAA also codes for lysine, so the protein is unchanged."
+ ],
+ "coding": "ATGGTGCACCTGACTCCTGAGGAGAAG",
+ "rows": [
+  "coding",
+  "protein"
+ ],
+ "mutant": {
+  "coding": "ATGGTGCACCTGACTCCTGAGGAGAAA",
+  "label": "after the mutation (AAG to AAA)",
+  "rows": [
+   "coding",
+   "protein"
+  ]
+ },
+ "claims": [
+  {
+   "type": "mutation",
+   "kind": "silent"
+  },
+  {
+   "type": "protein",
+   "value": [
+    "Met",
+    "Val",
+    "His",
+    "Leu",
+    "Thr",
+    "Pro",
+    "Glu",
+    "Glu",
+    "Lys"
+   ]
+  }
+ ]
+}

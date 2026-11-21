@@ -1,0 +1,63 @@
+{
+ "id": "bio-monohybrid-cross",
+ "renderer": "cross",
+ "course": "biology",
+ "unit": "u04",
+ "lesson": "Monohybrid crosses",
+ "title": "A monohybrid cross: Tt × Tt",
+ "caption": "Two heterozygous parents each make T and t gametes in equal numbers. The square gives 1 TT : 2 Tt : 1 tt, and because T is dominant, three tall plants for every short one. These are probabilities: a small family can differ.",
+ "alt": "A Punnett square of two heterozygous tall pea plants: the offspring are one TT, two Tt and one tt.",
+ "description": [
+  "Each parent is Tt and makes T and t gametes.",
+  "The four squares give TT, Tt, Tt and tt.",
+  "Genotype ratio 1 TT : 2 Tt : 1 tt.",
+  "Phenotype ratio 3 tall : 1 short."
+ ],
+ "loci": [
+  {
+   "alleles": [
+    "T",
+    "t"
+   ],
+   "dominance": {
+    "kind": "complete",
+    "dominant": "T",
+    "traits": [
+     "tall",
+     "short"
+    ]
+   }
+  }
+ ],
+ "parents": [
+  {
+   "genotype": [
+    "T t"
+   ],
+   "label": "tall"
+  },
+  {
+   "genotype": [
+    "T t"
+   ],
+   "label": "tall"
+  }
+ ],
+ "claims": [
+  {
+   "type": "genotypes",
+   "ratio": {
+    "TT": 1,
+    "Tt": 2,
+    "tt": 1
+   }
+  },
+  {
+   "type": "phenotypes",
+   "ratio": {
+    "tall": 3,
+    "short": 1
+   }
+  }
+ ]
+}

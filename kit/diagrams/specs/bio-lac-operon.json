@@ -1,0 +1,41 @@
+{
+ "id": "bio-lac-operon",
+ "renderer": "decision-tree",
+ "course": "biology",
+ "unit": "u04",
+ "lesson": "Operons",
+ "title": "When is the lac operon on?",
+ "caption": "Two questions predict the lac operon. Without lactose the repressor sits on the operator and the genes are off. With lactose the repressor is freed, but the operon is strongly expressed only when glucose is also absent, because then cAMP rises and the CAP protein helps RNA polymerase bind.",
+ "alt": "A flow chart: no lactose means the operon is off; lactose with glucose gives low expression; lactose without glucose gives high expression.",
+ "description": [
+  "Is lactose present? If not, the repressor stays bound to the operator, blocking RNA polymerase: the genes are off.",
+  "If lactose is present, allolactose binds the repressor, which leaves the operator.",
+  "Is glucose also present? If so, cAMP is low, CAP is inactive and transcription is low.",
+  "If glucose is absent, cAMP binds CAP, which helps RNA polymerase bind the promoter: the operon is strongly expressed."
+ ],
+ "start": "q1",
+ "nodes": {
+  "q1": {
+   "q": "Is lactose present?",
+   "yes": "q2",
+   "no": "off"
+  },
+  "off": {
+   "outcome": "Off: the repressor binds the operator and blocks RNA polymerase",
+   "tone": "bad"
+  },
+  "q2": {
+   "q": "Is glucose also present?",
+   "yes": "low",
+   "no": "high"
+  },
+  "low": {
+   "outcome": "Low: allolactose frees the repressor, but with glucose present cAMP is low and CAP is inactive",
+   "tone": "warn"
+  },
+  "high": {
+   "outcome": "High: the repressor is off the operator and cAMP–CAP helps RNA polymerase bind",
+   "tone": "good"
+  }
+ }
+}
