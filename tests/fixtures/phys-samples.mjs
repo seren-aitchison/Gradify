@@ -1,0 +1,46 @@
+// One correct spec per physics renderer (kit/diagrams/phys-renderers*.js), used by tests/phys-diagrams.test.mjs,
+// which also breaks each one to check the build would fail.
+const base = (id, renderer, body) => ({ id, renderer, course: "physics", lesson: "x", title: id, caption: "c", alt: "a", description: ["d"], ...body });
+
+export const SAMPLES = {
+  vectors: base("t-vectors", "vectors", {
+    mode: "add", units: "m s^{-1}", compass: true,
+    vectors: [{ label: "v_{boat}", mag: 4, angle: 90, dir: "north", comps: [0, 4] }, { label: "v_{river}", mag: 3, angle: 0, dir: "east", colour: "a4" }],
+    resultant: { label: "v", mag: 5, angle: 53.13, dir: "37° east of north" },
+    claims: [{ type: "angleBetween", a: "v_{boat}", b: "v", value: 36.87 }],
+  }),
+  body: base("t-body", "vectors", {
+    mode: "body", units: "N",
+    vectors: [{ label: "W", mag: 10, angle: 270, source: "Earth's gravity" }, { label: "T_{1}", mag: 10, angle: 45, source: "string 1", comps: [7.07, 7.07] }, { label: "T_{2}", mag: 10, angle: 135, source: "string 2" }],
+    resultant: { label: "net force", mag: 4.142, angle: 90 }, showResultant: true,
+  }),
+  motion: base("t-motion", "motion", {
+    u: 0, segments: [{ dt: 4, a: 2 }, { dt: 6, a: 0 }, { dt: 2, a: -4 }], show: ["x", "v", "a"],
+    claims: [{ type: "v", t: 4, value: 8 }, { type: "displacement", from: 0, to: 10, value: 64 }, { type: "x", t: 12, value: 72 }, { type: "distance", from: 0, to: 12, value: 72 }],
+  }),
+  snapshot: base("t-snapshot", "wave", { kind: "snapshot", A: 0.02, lambda: 0.8, phase: 0, xmax: 2, f: 5, claims: { speed: 4, period: 0.2, phase: { x1: 0, x2: 0.2, value: 90 } } }),
+  superposition: base("t-super", "wave", { kind: "superposition", xmax: 4, waves: [{ A: 1, lambda: 2, phase: 0 }, { A: 0.6, lambda: 2, phase: 180 }], claims: { amplitude: 0.4, interference: "destructive" } }),
+  standing: base("t-standing", "wave", { kind: "standing", L: 1.2, n: [1, 2, 3], ends: "fixed-fixed", v: 240, claims: { harmonics: [{ n: 2, nodes: [0, 0.6, 1.2], antinodes: [0.3, 0.9], lambda: 1.2, f: 200 }, { n: 1, f: 100 }] } }),
+  pipe: base("t-pipe", "wave", { kind: "standing", L: 0.85, n: [1, 3], ends: "closed-open", v: 340, claims: { harmonics: [{ n: 1, lambda: 3.4, f: 100, nodes: [0] }, { n: 3, f: 300 }] } }),
+  longitudinal: base("t-long", "wave", { kind: "longitudinal", A: 0.05, lambda: 1, xmax: 2.5, showLambda: true, claims: { compressions: [0.5, 1.5, 2.5], rarefactions: [0, 1, 2] } }),
+  sankey: base("t-sankey", "sankey", { units: "J", input: { label: "electrical", value: 100 }, outputs: [{ label: "light", value: 20, useful: true }, { label: "heat", value: 75 }, { label: "sound", value: 5 }], efficiency: 0.2 }),
+  fit: base("t-fit", "fit", { points: [[1, 2.1, 0.2], [2, 3.9, 0.2], [3, 6.2, 0.2], [4, 7.9, 0.2], [5, 10.1, 0.2]], axisLabels: ["x / m", "y / N"], fit: { m: 2.0, c: 0.04, withinErrors: true }, showWorst: true, residuals: true }),
+  field: base("t-field", "field", { kind: "electric", range: { x: [-3, 3], y: [-2, 2] }, charges: [{ x: -1, y: 0, q: 1e-9, label: "+" }, { x: 1, y: 0, q: -1e-9, label: "−" }], equipotentials: true,
+    claims: [{ type: "direction", at: [0, 0], angle: 0 }, { type: "E", at: [0, 0], value: 17.975 }, { type: "V", at: [0, 0], value: 0 }] }),
+  gravity: base("t-grav", "field", { kind: "gravitational", range: { x: [-3, 3], y: [-2, 2] }, charges: [{ x: -1, y: 0, q: 4, label: "4m" }, { x: 1, y: 0, q: 1, label: "m" }], linesPerUnit: 3, claims: [{ type: "null", at: [0.3333, 0] }] }),
+  wire: base("t-wire", "field", { kind: "magnetic", range: { x: [-2, 2], y: [-2, 2] }, wires: [{ x: 0, y: 0, I: 5 }], claims: [{ type: "E", at: [0.1, 0], value: 1e-5 }, { type: "direction", at: [1, 0], angle: 90 }] }),
+  plates: base("t-plates", "field", { kind: "electric", range: { x: [0, 0.1], y: [0, 0.05] }, uniform: { V: 500, d: 0.05, plus: "top" }, claims: [{ type: "uniform", value: 10000 }] }),
+  transitions: base("t-levels", "transitions", { atom: "H", scale: "sqrt", spectrum: true, levels: [1, 2, 3, 4, 5].map((n) => ({ n, E: +(-13.6057 / n ** 2).toFixed(3) })),
+    transitions: [{ from: 3, to: 2, lambda: 656.3, kind: "emission", region: "visible" }, { from: 4, to: 2, lambda: 486.1 }, { from: 2, to: 1, lambda: 121.5, region: "ultraviolet" }] }),
+  scale: base("t-scale", "scale", { quantity: "length", units: "m", min: -36, max: 28,
+    regions: [{ label: "quantum", from: 1e-36, to: 1e-8 }, { label: "classical", from: 1e-8, to: 1e8 }, { label: "relativity", from: 1e8, to: 1e28 }],
+    markers: [{ label: "Planck length", value: 1.6e-35 }, { label: "proton", value: 1.7e-15, region: "quantum" }, { label: "atom", value: 1e-10 }, { label: "person", value: 1.7, region: "classical" }, { label: "Earth", value: 1.27e7 }, { label: "observable universe", value: 8.8e26 }],
+    claims: [{ type: "span", value: 61.7 }, { type: "orders", a: "atom", b: "person", value: 10.2 }] }),
+  em: base("t-em", "scale", { kind: "em", quantity: "wavelength", units: "m", min: -13, max: 4,
+    regions: [{ label: "radio", from: 1e-1, to: 1e4 }, { label: "microwave", from: 1e-3, to: 1e-1 }, { label: "infrared", from: 7.5e-7, to: 1e-3 }, { label: "visible", from: 3.8e-7, to: 7.5e-7 }, { label: "ultraviolet", from: 1e-8, to: 3.8e-7 }, { label: "X-rays", from: 1e-11, to: 1e-8 }, { label: "gamma rays", from: 1e-13, to: 1e-11 }],
+    markers: [{ label: "FM radio", value: 3, region: "radio", f: 1e8 }, { label: "green light", value: 5.3e-7, region: "visible" }] }),
+  prefix: base("t-prefix", "scale", { kind: "prefix", quantity: "factor", min: -12, max: 12, markers: [{ label: "pico (p)", value: 1e-12 }, { label: "milli (m)", value: 1e-3 }, { label: "kilo (k)", value: 1e3 }, { label: "tera (T)", value: 1e12 }] }),
+  chain: base("t-chain", "nuclear", { mode: "chain", start: { sym: "U", A: 238, Z: 92 }, steps: [{ decay: "alpha", to: { sym: "Th", A: 234, Z: 90 }, halfLife: "4.5 Gyr" }, { decay: "beta-", to: { sym: "Pa", A: 234, Z: 91 } }, { decay: "beta-", to: { sym: "U", A: 234, Z: 92 } }], counts: { alpha: 1, beta: 2 } }),
+  reaction: base("t-reaction", "nuclear", { mode: "reaction", lhs: [{ sym: "H", A: 2, Z: 1, m: 2.014101778 }, { sym: "H", A: 3, Z: 1, m: 3.016049281 }], rhs: [{ sym: "He", A: 4, Z: 2, m: 4.002603254 }, "n"], Q: 17.59 }),
+  refraction: base("t-refr", "refraction", { panels: [{ n1: 1, n2: 1.5, i: 30, media: ["air", "glass"], expect: { r: 19.47 } }, { n1: 1.5, n2: 1, i: 30, expect: { r: 48.59, critical: 41.81, tir: false } }, { n1: 1.5, n2: 1, i: 50, expect: { tir: true } }] }),
+};

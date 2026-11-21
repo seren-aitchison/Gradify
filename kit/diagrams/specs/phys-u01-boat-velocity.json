@@ -1,0 +1,61 @@
+{
+ "id": "phys-u01-boat-velocity",
+ "renderer": "vectors",
+ "course": "physics",
+ "unit": "u01",
+ "lesson": "Scalar and vector quantities",
+ "title": "Adding perpendicular velocities",
+ "caption": "The boat heads north at 4.0 m s⁻¹ while the river carries it east at 3.0 m s⁻¹. Placed tip to tail, the two velocities give the velocity over the ground: 5.0 m s⁻¹ at 37° east of north, not 7 m s⁻¹, because vectors add by direction as well as size.",
+ "alt": "Vector triangle: a north arrow of 4.0 m/s, an east arrow of 3.0 m/s from its tip, and the resultant of 5.0 m/s from the start to the end, 37 degrees east of north.",
+ "description": [
+  "The boat's own velocity, 4.0 m s⁻¹ north, is drawn up the page from the starting point.",
+  "The river's velocity, 3.0 m s⁻¹ east, is drawn from the tip of the first arrow, to the right.",
+  "The resultant runs from the start of the first arrow to the tip of the second: |v| = √(4.0² + 3.0²) = 5.0 m s⁻¹.",
+  "Its direction: tan φ = 3.0/4.0, so φ = 37° east of north."
+ ],
+ "mode": "add",
+ "units": "m s^{-1}",
+ "compass": true,
+ "vectors": [
+  {
+   "label": "v_{boat}",
+   "mag": 4,
+   "angle": 90,
+   "text": "4.0 m s^{-1}, north",
+   "comps": [
+    0,
+    4
+   ]
+  },
+  {
+   "label": "v_{river}",
+   "mag": 3,
+   "angle": 0,
+   "text": "3.0 m s^{-1}, east",
+   "colour": "a4",
+   "comps": [
+    3,
+    0
+   ]
+  }
+ ],
+ "resultant": {
+  "label": "v",
+  "mag": 5,
+  "angle": 53.13,
+  "text": "5.0 m s^{-1}, 37° east of north"
+ },
+ "notes": [
+  "|v| = √(4.0^{2} + 3.0^{2}) = 5.0 m s^{-1}",
+  "tan φ = 3.0/4.0, φ = 37° east of north"
+ ],
+ "claims": [
+  {
+   "type": "angleBetween",
+   "a": "v_{boat}",
+   "b": "v",
+   "value": 36.9,
+   "name": "the resultant is 36.9° east of north"
+  }
+ ]
+}
