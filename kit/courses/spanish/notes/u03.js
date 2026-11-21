@@ -40,6 +40,16 @@ M2#spanish-u03-01-q2@2: Which sentence correctly says "We're going to get dresse
 TF1#spanish-u03-01-q3@3: *Me duermo en clase* means "I fall asleep in class". | true | *Dormirse* means to fall asleep, while *dormir* is simply to sleep.
 M3#spanish-u03-01-q4@1,3: How do you say "I brush my teeth"? | Me lavo los dientes | Lavo mis dientes | Me lavo mis dientes | Se lava los dientes | With reflexive verbs and body parts Spanish uses the article: *me lavo los dientes*.
 SA3#spanish-u03-01-q5@1,2,3: Explain three features of Spanish reflexive verbs that an English speaker must learn, with an example for each. | Pronoun agreement: the pronoun matches the subject (*me ducho*, *nos duchamos*). Position: before a conjugated verb, attached to an infinitive or gerund (*voy a ducharme*). Body parts take the article (*me lavo el pelo*). Meaning change: *ir* is go, *irse* is leave; *dormir* sleep, *dormirse* fall asleep. | Pronoun agreement with example ; Pronoun position with example ; Article with body parts or meaning change with example ; Accurate Spanish in every example ; Clear explanation
+Q: How is a Spanish reflexive verb recognised in its infinitive form? | It ends in *-se*, for example *levantarse*, *lavarse* or *llamarse*.
+Q: Where does the reflexive pronoun go with a conjugated verb? | Before the conjugated verb, and it changes to match the subject: *me levanto*, *te levantas*, *se levanta*.
+Q: What are the two possible positions of the pronoun in *I'm going to have a shower*? | Attached to the infinitive, *Voy a ducharme*, or before the first verb, *Me voy a duchar*.
+Q: Where does *no* go in a negative reflexive sentence? | Before the pronoun: *No me levanto temprano*.
+Q: How do reflexive verbs treat body parts and clothes, and what is an example? | They use the article, not a possessive: *Me lavo los dientes* (I brush my teeth).
+Q: Give the *yo* forms of *despertarse*, *acostarse* and *vestirse* to show stem changes in reflexive verbs. | *me despierto*, *me acuesto*, *me visto*.
+Q: How does *irse* differ in meaning from *ir*? | *Ir* means to go, while *irse* means to leave: *Me voy* (I'm off).
+Q: What is the difference in meaning between *quedar* and *quedarse*? | *Quedar* means to arrange to meet; *quedarse* means to stay.
+Q: What does *Levanto a las siete* mean, and why is it wrong for getting up? | It means I lift at seven. The pronoun is missing; the reflexive is *Me levanto a las siete*.
+Q: How would you say that you do not get up until half past seven, using the reflexive pattern in the lesson? | *No me levanto hasta las siete y media*, with *no* before the pronoun.
 
 ## Daily routine
 LV: CEFR A2 · GCSE Foundation
@@ -75,6 +85,16 @@ M2#spanish-u03-02-q2@2: Complete: *Antes de ___, me lavo los dientes.* (going to
 TF1#spanish-u03-02-q3@3: A Spanish family having dinner at 9.30 pm is unusual. | false | Dinner between 9 and 10 pm is typical in Spain.
 M3#spanish-u03-02-q4@1,2: Which is the best translation of "First I get dressed, then I have breakfast"? | Primero me visto, luego desayuno | Primero visto, luego me desayuno | Primero me vesto, luego desayuno | Primero me visto, luego desayunarme | *Vestirse* is reflexive and e to i (*me visto*); *desayunar* isn't reflexive.
 SA3#spanish-u03-02-q5@1,2,3: Write a paragraph of five sentences describing your weekday routine, using at least three reflexive verbs, a sequencing word and después de or antes de with an infinitive, and comment on one difference from a Spanish teenager's day. | *Me despierto a las siete. Primero me ducho y me visto. Después de desayunar, voy al instituto en autobús. Por la tarde hago los deberes y ceno a las seis. Me acuesto a las diez y media.* A Spanish teenager would usually have lunch at home around 2 or 3 pm after a jornada continua and dinner around 9 pm, later than in the UK. | Three reflexive verbs correct ; Sequencing word used ; Antes de or después de with infinitive ; Accurate times ; Valid cultural comparison
+Q: How do you say *before going to bed* in Spanish, and what happens to the reflexive pronoun? | *Antes de acostarme*: *antes de* takes an infinitive, which keeps its pronoun.
+Q: What form of the verb follows *antes de* and *después de*, where English uses -ing? | The infinitive, for example *Después de cenar, veo la tele*.
+Q: Why are *después de comiendo* and *después de como* wrong? | Spanish needs the infinitive after *después de*, so the correct form is *después de comer*.
+Q: Name four sequence words used to link a daily routine. | *Primero*, *luego* or *después*, *más tarde*, and *finalmente* or *por último*.
+Q: At what times are lunch and dinner usually eaten in Spain, according to the lesson? | *La comida* is around 2 to 3 pm and *la cena* around 9 to 10 pm, later than in the UK.
+Q: What is the *jornada continua* in Spanish secondary schools? | A continuous school day from about 8.30 am to 2.30 pm, without a long lunch break.
+Q: Name three verbs the lesson gives for the start of the day. | *Despertarse* (wake up), *levantarse* (get up) and *ducharse* (shower); also *vestirse* and *desayunar*.
+Q: What do *volver a casa* and *hacer los deberes* mean? | *Volver a casa* means to return home and *hacer los deberes* means to do homework.
+Q: What explanation for Spain's late hours is widely discussed, and what do others point to? | Spain has used Central European Time since 1940, an hour ahead of its geographical zone; others point to work patterns and climate.
+Q: How would you say that you leave home at quarter past eight after having breakfast? | *Después de desayunar, salgo de casa a las ocho y cuarto.*
 
 ## Frequency and time expressions
 LV: CEFR A2 · GCSE Foundation
@@ -111,6 +131,16 @@ M2#spanish-u03-03-q2@2: Which sentence correctly says "I never eat fish"? | No c
 TF1#spanish-u03-03-q3@3: *Mis padres suelen cenar tarde* describes a habit. | true | *Soler* + infinitive describes what someone usually does.
 M3#spanish-u03-03-q4@2,3: Which answer to *¿Con qué frecuencia haces deporte?* would earn most credit for detail and accuracy? | Suelo jugar al baloncesto dos veces a la semana, pero nunca nado | Hago deporte | Siempre deporte dos vez a la semana | Nunca no hago deporte los lunes | It combines *soler*, a precise frequency phrase and a correct negative; the others are thin or inaccurate.
 SA3#spanish-u03-03-q5@1,2,3: Write four sentences about your free time showing four different ways of expressing frequency, and explain the rule for nunca. | *Siempre veo series los domingos. Juego al tenis una vez a la semana. Suelo leer antes de dormir. No voy nunca al teatro.* Siempre is an adverb, una vez a la semana a phrase, soler + infinitive a habit verb. Nunca can go before the verb on its own (Nunca voy) or after it with no before the verb (No voy nunca); Spanish requires this double negative. | Four different frequency forms ; Correct soler use ; Correct frequency phrase ; Correct nunca sentence ; Explains the double negative rule
+Q: Name four Spanish frequency adverbs from always to never. | *Siempre* (always), *a menudo* (often), *a veces* (sometimes), *casi nunca* (hardly ever), *nunca* (never).
+Q: How do you say *three times a year*? | *Tres veces al año*.
+Q: What does *de vez en cuando* mean? | From time to time.
+Q: Where can frequency words go in a Spanish clause? | At the start or end of the clause, or just before the verb: *A veces voy al cine*, *Voy al cine a veces*.
+Q: How is *nunca* used before the verb, and what changes if it comes after the verb? | Before the verb it stands alone: *Nunca como carne*. After the verb, *no* goes before the verb: *No como nunca carne*.
+Q: Why is *Nunca no voy* wrong, and what are the correct versions? | With *nunca* first, there is no *no*. Use *Nunca voy* or *No voy nunca*.
+Q: What does *soler* + infinitive express, and what is not suitable for it? | It means to usually do something, for habits. It is not used for one-off events.
+Q: Give the present tense forms of *soler*. | *Suelo, sueles, suele, solemos, soléis, suelen* (o to ue stem change).
+Q: How do you say *at weekends* and *every day*? | *Los fines de semana* and *todos los días* (or *cada día*).
+Q: Why do some grammars call *soler* defective, and what should learners do? | It is used mainly in the present and imperfect, and forms like *solí* or *soleré* are disputed, so learners should avoid them.
 
 ## School subjects and opinions
 LV: CEFR A2 · GCSE Foundation
@@ -146,6 +176,16 @@ M2#spanish-u03-04-q2@1,2: Complete: *Me ___ la química porque es ___.* | gusta 
 TF1#spanish-u03-04-q3@3: In Spain, ESO is the stage of schooling from 16 to 18. | false | ESO covers ages 12 to 16; *bachillerato* follows from 16 to 18.
 M3#spanish-u03-04-q4@2: Which sentence correctly says "I'm bad at languages"? | Se me dan mal los idiomas | Me se dan mal los idiomas | Se me da mal los idiomas | Soy malo los idiomas | *Darse* agrees with the plural subject *los idiomas*, and *se* comes before *me*.
 SA3#spanish-u03-04-q5@1,2,3: Write a paragraph giving opinions on three school subjects with a reason each, using at least two different opinion structures and a connective, then explain one difference between school in Spain and the UK. | *Mi asignatura favorita es el inglés porque es útil. También me encanta la música, pero odio la física porque es muy difícil y se me da mal. Creo que la geografía es interesante.* In Spain secondary school (ESO) runs from 12 to 16, marks are out of 10 with 5 a pass, students may repeat a year, and state schools usually have no uniform, unlike most UK schools. | Three subjects with reasons ; Two different opinion structures ; Correct gustar agreement and adjective agreement ; Connective used ; Accurate cultural difference
+Q: Name four ways of giving an opinion about a school subject in Spanish. | *Me gusta(n)*, *me encanta(n)*, *odio*, *prefiero*, or *creo que es...*.
+Q: How do you say *I'm good at science* using the structure from the lesson? | *Se me dan bien las ciencias*.
+Q: What word introduces a reason, and what are two example reasons? | *Porque*: for example *es útil* or *el profesor explica bien*.
+Q: Why is *Me gusta las ciencias* wrong? | A plural subject needs *gustan*: *Me gustan las ciencias*.
+Q: How do adjectives behave after school subjects? | They agree with the subject: *Las matemáticas son difíciles*, *La historia es aburrida*.
+Q: Describe the stages of Spanish schooling and their ages. | *Primaria* from 6 to 12, then *ESO* from 12 to 16, then optional *bachillerato* from 16 to 18 or vocational training.
+Q: What is the PAU? | The national university entrance exam in Spain, formerly EBAU, still called *selectividad*.
+Q: How are marks given in Spain, and what is a pass? | Out of 10, with 5 being a pass (*aprobado*).
+Q: What does *repetir curso* mean, and what did LOMLOE do about it? | To repeat the year; LOMLOE (2020) restricted it to exceptional cases.
+Q: Why does *sin embargo* raise the level of an extended opinion, according to the model answer? | It is a connective meaning *however*, which with two reasons per opinion raises the level.
 
 ## Obligation: tener que, hay que and deber
 LV: CEFR A2 · GCSE Foundation
@@ -182,6 +222,16 @@ M2#spanish-u03-05-q2@2: Which sentence states a general rule with no particular 
 TF1#spanish-u03-05-q3@3: *No tienes que venir* means "You mustn't come". | false | It means "You don't have to come"; "You mustn't come" is *No debes venir*.
 M3#spanish-u03-05-q4@3: A Spanish school sign says *No se puede usar el móvil*. Which English version is closest? | Mobile phones may not be used | You don't need to use your phone | Phones can be used if needed | You should use your phone less | *No se puede* + infinitive states that something isn't allowed.
 SA3#spanish-u03-05-q5@1,2,3: Write four rules for your ideal school using four different structures (tener que, hay que, deber, a prohibition) and explain the difference between no tener que and no deber. | *Los alumnos tienen que llegar a las nueve. Hay que ser amable con todos. No deberíamos tener exámenes los lunes. Está prohibido gritar en la biblioteca.* No tener que means there is no obligation (you don't have to), while no deber expresses a prohibition (you mustn't), so the two negatives have opposite effects. | Correct tener que ; Correct hay que ; Correct deber ; Correct prohibition structure ; Clear explanation of the two negatives
+Q: What does *tener que* + infinitive express, and what is an example? | Personal obligation, someone has to do something: *Tengo que estudiar*.
+Q: What does *hay que* + infinitive express? | General obligation with no named person, one must: *Hay que llevar uniforme*.
+Q: What does *deber* + infinitive express, and which form is softer? | Duty or advice (must, should). *Deberías* (you should) is softer.
+Q: What is the difference between *no tener que* and *no deber*? | *No tener que* means do not have to (no obligation); *no deber* means must not (prohibition).
+Q: What is wrong with *Tengo estudiar*? | *Tener* obligation always needs *que*: *Tengo que estudiar*.
+Q: How do you say *Using your phone is forbidden* in Spanish? | *Está prohibido usar el móvil*.
+Q: How do you say *You can't eat in class* and *You can go out to the playground*? | *No se puede comer en clase* and *Se puede salir al patio*.
+Q: How do you say *You mustn't run in the corridors*? | *No debes correr por los pasillos*.
+Q: What is the difference between *deber* and *deber de* in normative grammar? | *Deber* is obligation; *deber de* is probability: *Debe de tener quince años* (he must be about fifteen).
+Q: What does the RAE now record about *deber* and *deber de*? | Speakers everywhere mix them, and the RAE now records the overlap.
 
 ## Comparatives
 LV: CEFR A2 · GCSE Foundation
@@ -220,6 +270,16 @@ M2#spanish-u03-06-q2@2: How do you say "My cousins are younger than me"? | Mis p
 TF1#spanish-u03-06-q3@3: "There are more than twenty students" is *Hay más que veinte estudiantes*. | false | Before a number Spanish uses *más de*: *Hay más de veinte estudiantes*.
 M3#spanish-u03-06-q4@2,3: Which sentence comparing numbers of classes is correct? | Tengo tantas clases como mi hermana | Tengo tan clases como mi hermana | Tengo tantos clases como mi hermana | Tengo tanto clases que mi hermana | With a noun, use *tanto* agreeing with it (*clases* is feminine plural) and *como*.
 SA3#spanish-u03-06-q5@1,2,3: Compare two towns or two school subjects in four sentences using más que, tan como, an irregular comparative and tanto como, and explain one agreement rule you applied. | *Londres es más grande que Mánchester. El tiempo en Mánchester es tan malo como en Londres. La comida en Londres es mejor. Mánchester no tiene tantos museos como Londres.* Adjectives agree with the first noun compared, and tanto agrees in gender and number with the noun it precedes (tantos museos). | Correct más que ; Correct tan como ; Correct irregular comparative ; Correct tanto como with agreement ; Explains an agreement rule
+Q: What is the structure for *more ... than* with an adjective, and an example? | *Más* + adjective + *que*: *Ana es más alta que Luis*.
+Q: How do you say *as ... as* with an adjective? | *Tan* + adjective + *como*: *Mi casa es tan grande como la tuya*.
+Q: What does the adjective agree with in a comparative sentence? | The first noun: *Las ciencias son más difíciles que el inglés*.
+Q: Which pronouns follow *que* and *como* in comparisons? | Subject pronouns: *más alto que yo*, *tan alta como tú*.
+Q: Give the irregular comparatives of *bueno* and *malo*, with their plurals. | *Mejor* and *peor*, plural *mejores* and *peores*.
+Q: What are *mayor* and *menor* used for? | Age: *Mi hermano es mayor que yo* (older); *menor* means younger.
+Q: How do you say *as many ... as* with a noun? | *Tanto/a/os/as* + noun + *como*: *Tengo tantos libros como tú*.
+Q: Why is *más que diez* wrong for *more than ten*? | Before a number use *más de* or *menos de*: *más de diez*.
+Q: Why is *más bueno* wrong for *better*? | Spanish uses the irregular *mejor*; likewise *peor* for worse.
+Q: How do *más grande* and *mayor* differ in use, and why can *mayor* for size sound formal? | *Más grande* is for size and *mayor* for age and importance; *una ciudad mayor* can sound formal.
 
 ## Superlatives
 LV: CEFR A2 · GCSE Foundation
@@ -253,6 +313,16 @@ M2#spanish-u03-07-q2@2: How do you say "my best friends (female)"? | mis mejores
 TF1#spanish-u03-07-q3@3: The -ísimo form of *rico* is *riquísimo*. | true | The c changes to qu to keep the hard /k/ sound before i.
 M3#spanish-u03-07-q4@1,3: Which superlative sentence about a school subject is correct? | Es la asignatura menos útil del instituto | Es la asignatura más menos útil del instituto | Es la menos útil asignatura en el instituto | Es la asignatura menos útila de instituto | Article + noun + *menos* + adjective + *de* (here *del*); *útil* doesn't change for gender.
 SA3#spanish-u03-07-q5@1,2,3: Write four sentences about your town or school using two relative superlatives, one irregular superlative and one -ísimo form, and explain the structure of each. | *Mi pueblo es el lugar más tranquilo de la región. El parque es la zona menos ruidosa. Tenemos el mejor mercado del condado. La iglesia es antiquísima.* Relative superlatives use the article, the noun, más or menos, the adjective and de. Mejor is irregular and goes before the noun. -ísimo intensifies the adjective (antiguo to antiquísimo, keeping the sound). | Two correct relative superlatives ; Correct irregular superlative before the noun ; Correct -ísimo form ; Uses de, not en ; Explains each structure
+Q: What is the structure of the relative superlative in Spanish? | Definite article + (noun) + *más/menos* + adjective + *de*: *el chico más alto de la clase*.
+Q: Which word translates *in* after a superlative, and what is wrong with *en*? | *De*: *el más alto de la clase*. *El más alto en la clase* is wrong.
+Q: Where do the irregular superlatives *mejor* and *peor* go? | Before the noun: *el mejor restaurante*, *la peor película*, *mis mejores amigos*.
+Q: What do *el mayor* and *el menor* mean? | The oldest and the youngest.
+Q: What does the *-ísimo* ending express? | The absolute superlative, meaning extremely: *altísimo*.
+Q: How is *-ísimo* added to *guapa* and *fácil*? | Drop a final vowel and add the ending: *guapísima*, *facilísimo*.
+Q: Which spelling changes does *-ísimo* trigger? Give examples. | c to qu, g to gu and z to c: *riquísimo*, *larguísimo*, *felicísimo*.
+Q: Why is *calentísima* the form used in the model sentence about the water? | *Caliente* drops its -e before *-ísimo*, and *agua* is feminine despite *el agua*, so it ends *-a*.
+Q: How do you say *It's the prettiest city in Spain*? | *Es la ciudad más bonita de España*.
+Q: What variants exist for *-ísimo* forms of *bueno* and *nuevo*? | *Bonísimo* and *novísimo* are learned Latin variants, but *buenísimo* and *nuevísimo* are now the norm.
 ## Food and meals
 LV: CEFR A2 · GCSE Foundation
 S: Food is a favourite exam topic because it combines vocabulary, opinions and culture. This lesson covers the meals of the day, core food vocabulary, healthy eating, and the regional words that differ between Spain and Latin America.
@@ -288,6 +358,16 @@ M2#spanish-u03-08-q2@2: Which sentence best says "To eat healthily you have to a
 TF1#spanish-u03-08-q3@3: A Mexican who asks for *jugo* and a Spaniard who asks for *zumo* want the same thing. | true | Both mean juice: *jugo* is used in Latin America, *zumo* in Spain.
 M3#spanish-u03-08-q4@2,3: A Spanish friend says *Merendamos a las seis*. What does this tell you? | They have an afternoon snack at six | They have dinner at six | They have lunch at six | They go shopping at six | *Merendar* is to have the *merienda*, the afternoon snack; dinner comes later in Spain.
 SA3#spanish-u03-08-q5@1,2,3: Describe your diet in four sentences, with an opinion and a frequency expression, and comment on one difference between eating habits in Spain and the UK. | *Para el desayuno tomo tostadas y un té. Como un bocadillo en el instituto. Nunca como comida basura entre semana. Creo que mi dieta es bastante sana porque como mucha fruta.* In Spain the main meal (la comida) is at about 2 to 3 pm and dinner at about 9 pm, with a merienda in the afternoon, so meals are later and lunch is bigger than in the UK. | Accurate food vocabulary ; Opinion with reason ; Frequency expression ; Correct meal vocabulary ; Valid cultural comparison
+Q: Name the four meals of the day in Spain. | *El desayuno*, *la comida*, *la merienda* and *la cena*.
+Q: What are *la comida* and *la merienda*? | *La comida* is lunch, the main meal in Spain; *la merienda* is an afternoon snack, often around 5 to 6 pm.
+Q: How do *pez* and *pescado* differ? | *Pez* is a live fish; *pescado* is fish as food.
+Q: Why is *Para el desayuno* with *pez* wrong for a fish dish on your plate? | You eat *pescado*; *pez* is the living animal.
+Q: How do you say *To have a healthy diet, you have to eat lots of fruit and vegetables*? | *Para llevar una dieta sana, hay que comer mucha fruta y verdura*.
+Q: How do you say *I avoid junk food* and *I'm allergic to nuts*? | *Evito la comida basura* and *Soy alérgico/a a los frutos secos*.
+Q: What is the Mediterranean diet, and what recognition did it receive? | A diet rich in olive oil, vegetables, pulses, fish and fruit, added to UNESCO's Intangible Cultural Heritage list in 2010.
+Q: Which food vocabulary differs between Spain and Latin America? Give three pairs. | *Zumo/jugo* (juice), *patata/papa* (potato), *melocotón/durazno* (peach).
+Q: Which terms do UK exam boards mostly use for food words? | Spain's terms.
+Q: Name three drinks in Spanish from the lesson. | *El agua*, *la leche*, *el café*, *el té*, *el zumo* or *los refrescos*.
 
 ## At the restaurant
 LV: CEFR A2 · GCSE Foundation
@@ -326,6 +406,16 @@ M2#spanish-u03-09-q2@1,2: Which is the most polite way to order? | Quisiera el p
 TF1#spanish-u03-09-q3@3: A waiter asking *¿Y de segundo?* wants to know what you'd like for the main course. | true | *De segundo* means for the second course, the main dish.
 M3#spanish-u03-09-q4@3: Your steak arrives cold. What do you say? | Perdone, el filete está frío | Perdone, el filete es frío | Perdone, el filete tiene frío | Perdone, el filete hace frío | The temperature of food at a moment is a state, so *estar*; *tener frío* is for people.
 SA3#spanish-u03-09-q5@1,2,3: Write a role play in a restaurant in which you order two courses and a drink, report a problem and ask for the bill, then explain two language choices you made. | Camarero: *¿Qué desean?* Yo: *De primero quisiera una ensalada mixta y de segundo la paella, por favor.* Camarero: *¿Y de beber?* Yo: *Una limonada.* Later: *Perdone, falta una cuchara. ¿Me trae la cuenta, por favor?* I used quisiera because it is polite with a waiter, and estar or falta to describe a problem; de primero and de segundo name the courses. | Orders two courses correctly ; Orders a drink ; Reports a problem correctly ; Asks for the bill ; Explains two language choices
+Q: What does the polite *quisiera* mean, and from which verb does it come? | I would like; it comes from *querer*.
+Q: Why is *quiero* less suitable than *quisiera* with a waiter? | *Quiero* is more direct and can sound abrupt; *quisiera* or *me gustaría* are polite.
+Q: How do you say the first course, main course and dessert? | *De primero*, *de segundo* and *de postre*.
+Q: What are two customer phrases for ordering other than *quisiera*? | *Para mí...*, *Me pone...* (Spain, informal) or *¿Me trae...?*.
+Q: What does a waiter mean by *¿Qué desean?* and *¿Algo más?* | *What would you like?* and *Anything else?*.
+Q: How do you ask for the bill, and ask whether service is included? | *La cuenta, por favor* and *¿Está incluido el servicio?*.
+Q: What is the *menú del día*? | A fixed-price weekday lunch of first course, main course, dessert or coffee, bread and a drink.
+Q: How are tips in Spain described? | They are smaller than in the US; rounding up or leaving a few euros is usual.
+Q: Why is *La sopa está fría* with *estar* and not *ser*? | *Estar* gives the state now; *ser* describes what a dish is, as in *el gazpacho es una sopa fría*.
+Q: What are the words for waiter in Spain, Mexico and Argentina? | *Camarero* in Spain, *mesero* in Mexico and Central America, *mozo* in Argentina.
 
 ## Shopping for food: quantities and large numbers
 LV: CEFR A2 · GCSE Foundation
@@ -363,6 +453,16 @@ M2#spanish-u03-10-q2@2: How do you write 700? | setecientos | sietecientos | sie
 TF1#spanish-u03-10-q3@2,3: "Two hundred girls" is *doscientos chicas*. | false | Hundreds agree with feminine nouns: *doscientas chicas*.
 M3#spanish-u03-10-q4@2,3: Which correctly says "Madrid has more than three million inhabitants"? | Madrid tiene más de tres millones de habitantes | Madrid tiene más que tres millón habitantes | Madrid tiene más de tres millones habitantes | Madrid tiene más de tres mil millones de habitantes | *Más de* before a number; *millón* is a plural noun here and takes *de*.
 SA3#spanish-u03-10-q5@1,2,3: Write a shopping dialogue at a market buying three items in different quantities, ending with a price over 100 euros or a large number, and explain two rules for numbers above 100. | *Buenos días. ¿Qué le pongo?* — *Póngame un kilo de tomates, una docena de huevos y una botella de aceite.* — *¿Algo más?* — *Nada más, gracias. ¿Cuánto es?* — *Son ciento quince euros* (a big shop for a restaurant). Rules: hundreds from 200 agree with feminine nouns (doscientas botellas); mil is invariable and has no un; millón takes de; 500, 700 and 900 are irregular. | Three correct quantity phrases with de ; Correct shopping phrases ; Correct large number ; First rule explained ; Second rule explained
+Q: What word follows quantity words, and is an article used? Give an example. | *De* with no article: *un kilo de tomates*, *una lata de atún*.
+Q: How do you say *a bottle of*, *a tin of* and *a dozen*? | *Una botella de*, *una lata de* and *una docena de*.
+Q: What does *¿Qué le pongo?* mean, and how might a customer ask for something? | What can I get you? The customer says *Póngame...* (Give me...).
+Q: How do you say 6.50 euros as a shopkeeper would? | *Son seis euros con cincuenta*.
+Q: What is the difference between *cien* and *ciento*? | *Cien* is exactly 100; *ciento* is used in 101 and beyond, such as *ciento cincuenta*.
+Q: Which three hundreds are irregular? | *Quinientos* (500), *setecientos* (700) and *novecientos* (900).
+Q: Why is *cinco cientos* wrong? | The form is *quinientos*; likewise *setecientos*, not *siete cientos*.
+Q: What happens to the hundreds from 200 with feminine nouns? | They agree: *doscientas personas*, *quinientas libras*.
+Q: How does *mil* behave? | It never changes and never takes *un*: *mil euros*, *tres mil personas*.
+Q: What follows *un millón* before a noun, and how does Spain write thousands and decimals? | *De*: *un millón de habitantes*. Thousands use a point or space and decimals a comma: 1.250,50 €.
 
 ## Demonstratives
 LV: CEFR A2 · GCSE Foundation
@@ -399,6 +499,16 @@ M2#spanish-u03-11-q2@1: Which phrase means "those shoes over there"? | aquellos 
 TF1#spanish-u03-11-q3@3: *¿Qué es esto?* uses the neuter because the thing hasn't been identified. | true | The neuter refers to something not yet named as a noun.
 M3#spanish-u03-11-q4@2,3: A shopkeeper shows you two jackets. Which reply means "I prefer that one", pointing to the one near the shopkeeper? | Prefiero esa | Prefiero eso | Prefiero esta | Prefiero aquello | A jacket near the listener is *ese* distance; *chaqueta* is feminine, so *esa*. The neuter can't replace a specific noun.
 SA3#spanish-u03-11-q5@1,2,3: Write three sentences in a clothes shop using este, ese and aquel with different nouns, add one sentence with a neuter form, and explain the system of distance. | *Me gusta esta camiseta. ¿Cuánto cuestan esos vaqueros? Aquellas botas son preciosas. ¡Eso es demasiado caro!* Este marks things near the speaker, ese things near the listener, aquel things far from both; each agrees with its noun. The neuter eso refers to the situation (the price), not a specific noun. | Correct este form with agreement ; Correct ese form with agreement ; Correct aquel form with agreement ; Correct neuter use ; Explains the three distances
+Q: What are the three Spanish demonstratives for masculine singular, and the distance each shows? | *Este* (near me), *ese* (near you or not far), *aquel* (far from both).
+Q: Which adverbs match *este*, *ese* and *aquel*? | *Aquí*, *ahí* and *allí*.
+Q: Where do demonstratives go, and what do they do? | Before the noun, and they agree with it: *esta casa*, *esos zapatos*, *aquellas montañas*.
+Q: What do *este* and *aquel* express in time? | *Este* refers to the present (*esta semana*); *aquel* to the distant past (*en aquella época*).
+Q: How do demonstratives work as pronouns? | They keep the same form without a noun: *Prefiero este*.
+Q: What did the 2010 Ortografía decide about accents on demonstrative pronouns? | They are written without an accent even as pronouns.
+Q: When are *esto*, *eso* and *aquello* used? | For an idea, a situation or an unidentified thing, never a specific noun: *¿Qué es esto?*.
+Q: What does *esto es* with *eso* mean in the phrase *Por eso*, and where is *eso* otherwise used? | *Por eso* means that's why; *eso* is a neuter form, as in *Eso es verdad* (That's true).
+Q: Why does *Este es importante* not mean *This is important* about a situation? | It means *this one* (a masculine noun) is important. For a situation, use *Esto es importante*.
+Q: What is happening to *aquel* in everyday speech in many regions? | It is giving way to *ese* for distant things.
 
 ## My home and my room
 LV: CEFR A2 · GCSE Foundation
@@ -436,6 +546,16 @@ M2#spanish-u03-12-q2@2: Which sentence correctly says "My flat is near the stati
 TF1#spanish-u03-12-q3@3: *Vivo en el segundo piso* can mean "I live on the second floor". | true | *Piso* means both a flat and a storey of a building.
 M3#spanish-u03-12-q4@2,3: Which description is accurate Spanish? | En mi casa hay cuatro dormitorios y un jardín pequeño | En mi casa está cuatro dormitorios y un jardín pequeño | Mi casa hay cuatro dormitorios y un pequeño jardines | En mi casa tiene cuatro dormitorios y jardín pequeña | *Hay* introduces the rooms; *jardín* is masculine singular, so *pequeño*.
 SA3#spanish-u03-12-q5@1,2,3: Describe your home and bedroom in five sentences, using hay, tener and estar correctly, and compare it briefly with a typical home in Spain. | *Vivo en una casa adosada en las afueras de Leicester. Mi casa tiene tres dormitorios y un jardín. Está cerca del parque. En mi dormitorio hay una cama, un armario y un escritorio. Me encanta mi dormitorio porque es tranquilo.* In Spain, especially in cities, most people live in flats (pisos), often with a balcony or terrace, rather than houses with gardens. | Correct hay sentence ; Correct tener sentence ; Correct estar sentence ; Accurate room and furniture vocabulary ; Valid comparison with Spain
+Q: Name four types of home in Spanish. | *Casa*, *piso* (flat), *apartamento*, *chalé* (detached) or *casa adosada*.
+Q: What are the two meanings of *piso*? | A flat in Spain, and a floor or storey: *Vivo en el tercer piso*.
+Q: How do you say ground floor and basement? | *La planta baja* and *el sótano*.
+Q: Name four items of bedroom furniture in Spanish. | *La cama*, *el armario*, *el escritorio*, *la silla*, *la estantería*, *la lámpara*, *la alfombra* or *las cortinas*.
+Q: Which verb describes what a home contains, and which describes location? | *Tener* and *hay* for contents; *estar* for location.
+Q: Why is *Un escritorio está en mi dormitorio* wrong for *There's a desk in my room*? | Use *hay*: *Hay un escritorio en mi dormitorio*.
+Q: How do you say *I share my room with my sister* and *on the outskirts*? | *Comparto mi dormitorio con mi hermana* and *en las afueras*.
+Q: How does housing in Spain differ from the UK? | Most people in Spain live in flats, a far higher share than in the UK, where houses are the norm.
+Q: What are some words for bedroom across Spanish-speaking countries? | *Dormitorio*, *habitación*, *cuarto* and *recámara* (Mexico).
+Q: What word for flat is used in Mexico and Argentina? | *Departamento*.
 
 ## Prepositions of place
 LV: CEFR A2 · GCSE Foundation
@@ -471,6 +591,16 @@ M2#spanish-u03-13-q2@2: Complete: *El cine está al lado ___ banco.* | del | de 
 TF1#spanish-u03-13-q3@3: *¿Quieres venir con mí?* is correct Spanish. | false | With *con*, "me" is *conmigo*: *¿Quieres venir conmigo?*
 M3#spanish-u03-13-q4@1,2: Which sentence correctly says "The chemist's is between the bank and the school"? | La farmacia está entre el banco y el colegio | La farmacia está entre del banco y del colegio | La farmacia es entre el banco y el colegio | La farmacia está entre de el banco y el colegio | *Entre* takes no *de*, and location uses *estar*.
 SA3#spanish-u03-13-q5@1,2,3: Describe the layout of your street or classroom in four sentences using four different prepositions of place, including one contraction and one prepositional pronoun, and explain the contraction rule. | *Mi casa está enfrente del parque. La panadería está al lado de mi casa. El colegio está lejos de la estación. Mi amigo vive cerca de mí.* Prepositions ending in de contract with el to form del (enfrente del parque), but not with la, los or las. After a preposition, the pronoun is mí, not yo. | Four different prepositions used correctly ; Estar used for location ; Correct contraction ; Correct prepositional pronoun ; Explains the contraction rule
+Q: How do you say *in front of* and *behind*? | *Delante de* and *detrás de*.
+Q: How do you say *next to* and *opposite*? | *Al lado de* and *enfrente de*.
+Q: What happens to prepositions ending in *de* before *el*? | *De* contracts with *el* to *del*: *cerca del instituto*; there is no contraction with *la*.
+Q: Why does *entre* differ from other place prepositions? | It takes no *de*: *entre la cama y la ventana*.
+Q: Which pronouns follow prepositions in Spanish? | *Mí*, *ti*, *él*, *ella*, *usted*, *nosotros*, *vosotros*, *ellos*, *ellas*, *ustedes*.
+Q: How do you say *with me* and *with you* (informal)? | *Conmigo* and *contigo*.
+Q: What form follows *con* for third person? | The normal pronoun: *con él*, *con ella*.
+Q: How do you say *between you and me*? | *Entre tú y yo*: *entre* is an exception that takes subject pronouns.
+Q: Why are *con mí* and *cerca de yo* wrong? | Use *conmigo* and *cerca de mí*.
+Q: What does the RAE advise about *delante mío* instead of *delante de mí*? | It is common in speech, but the RAE advises against it in formal use.
 
 ## Household chores and helping at home
 LV: CEFR A2 · GCSE Foundation
@@ -506,4 +636,14 @@ M2#spanish-u03-14-q2@1,2: Which sentence correctly says "I have to wash up every
 TF1#spanish-u03-14-q3@2: *Mi hermana friega los platos* is correctly conjugated. | true | *Fregar* is an e to ie verb: stressed e becomes ie, *friega*.
 M3#spanish-u03-14-q4@3: Which response to *¿Ayudas en casa?* shows the widest range of language? | Sí, a menudo paso la aspiradora, pero creo que mi hermano debería ayudar más | Sí, ayudo en casa | Sí, hago la cama | No, nunca | It combines frequency, a chore, an opinion and the conditional *debería*, and a connective.
 SA3#spanish-u03-14-q5@1,2,3: Write five sentences about how chores are shared in your home, using obligation, frequency and an opinion, and evaluate whether chores are shared fairly. | *En mi casa todos ayudamos. Yo pongo la mesa todos los días y paso la aspiradora los sábados. Mi hermano tiene que sacar la basura. Mi madre cocina más que mi padre, pero mi padre hace la compra. Creo que no es totalmente justo porque mi madre trabaja más en casa.* The evaluation recognises that housework in many homes, and in surveys in Spain, still falls more on women, but that sharing has increased. | At least four chores correct ; Obligation structure ; Frequency expression ; Opinion with reason ; Balanced evaluation
+Q: How do you say *to make the bed*, *to lay the table* and *to clear the table*? | *Hacer la cama*, *poner la mesa* and *quitar la mesa*.
+Q: How do you say *to wash up* and *to vacuum*? | *Fregar los platos* and *pasar la aspiradora*.
+Q: Why are *hacer los platos* and *limpiar la mesa* wrong? | Washing up is *fregar los platos*, laying the table is *poner la mesa*, clearing it is *quitar la mesa*.
+Q: How do you say *to take out the rubbish* and *to do the food shopping*? | *Sacar la basura* and *hacer la compra*.
+Q: How do you ask *Do you help at home?* | *¿Ayudas en casa?*.
+Q: What is *la paga*, and how might you say how much you get? | Pocket money (Spain): *Mis padres me dan diez libras a la semana*.
+Q: How can you express a chore you dislike using obligation? | *Tengo que sacar la basura todos los días, ¡qué rollo!*.
+Q: How do you say *I think it's fair to share the chores*? | *Creo que es justo compartir las tareas*.
+Q: What do time-use surveys in Spain show about housework? | Women spend considerably more time than men on unpaid housework, though the gap has narrowed.
+Q: What is debated about paying children for chores? | Some see pocket money as teaching responsibility; others say helping at home should be part of family life without reward.
 `;
