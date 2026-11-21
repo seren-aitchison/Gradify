@@ -94,15 +94,19 @@ export function classify(files) {
 export async function build(out, { root = REPO, files = tracked(root) } = {}) {
   const { publish, unclassified } = classify(files);
   if (unclassified.length) throw new Error(`not in the allowlist or the exclusions: ${unclassified.join(", ")}. Add each to PUBLISH or EXCLUDE in scripts/build-site.mjs`);
-  const hash = createHash("sha256");
+  const digests = [];
   for (const f of publish) {
     await mkdir(dirname(join(out, f)), { recursive: true });
     await copyFile(join(root, f), join(out, f));
-    if (f !== "sw.js") hash.update(f).update(await readFile(join(out, f)));
+    if (f !== "sw.js") digests.push([f, createHash("sha256").update(await readFile(join(out, f))).digest("hex")]);
   }
-  await stampServiceWorker(out, hash.digest("hex").slice(0, 12));
+  await stampServiceWorker(out, deployVersion(digests));
   return publish;
 }
+
+// the deploy's version: a hash of each published path with its own file's hash, sorted, so no two different sites share one
+export const deployVersion = (digests) =>
+  createHash("sha256").update(JSON.stringify([...digests].sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0)))).digest("hex").slice(0, 12);
 
 // The service worker serves each deploy from its own cache (sw.js): its cache name carries a hash of everything
 // published, so a deploy that changes anything installs a new worker with a fresh, consistent cache, and one that

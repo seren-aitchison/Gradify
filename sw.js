@@ -101,6 +101,9 @@ function warm() {
 // (local development) asks the server first, so edits show at once
 const DEPLOYED = /-[0-9a-f]{12}$/.test(CACHE);
 // a page is cached once, whatever query or hash it was opened with (a sign-in return, a share link): never per query
+// at most once a minute, however many files miss
+let checked = 0;
+const checkForDeploy = () => { if (Date.now() - checked < 60000) return; checked = Date.now(); self.registration.update().catch(() => {}); };
 const pageKey = (req) => { const u = new URL(req.url); u.search = ""; u.hash = ""; return u.href; };
 self.addEventListener("fetch", (e) => {
   const req = e.request;
@@ -119,6 +122,9 @@ self.addEventListener("fetch", (e) => {
       // one importing it), then kept for next time
       const res = await fetch(req, sameOrigin ? { cache: "no-cache" } : undefined);
       if (res.ok || res.type === "opaque") e.waitUntil(cache.put(key, res.clone()).catch(() => {}));
+      // a file this deploy hadn't kept may be from a newer one: look for it, so the next page load is all the new deploy
+      // (this cache, and anything newer that got into it, is dropped when that worker takes over)
+      if (DEPLOYED && sameOrigin) checkForDeploy();
       return res;
     } catch (err) {
       // offline: whatever this deploy has kept, then the home page

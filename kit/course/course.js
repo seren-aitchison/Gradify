@@ -618,12 +618,12 @@ export function mountCourse(root, cfg) {
     nQ: (id) => (curLesson?.id === id ? curN?.items?.length || 0 : 0), nCards: (id) => (curLesson?.id === id ? curN?.cards?.length || 0 : 0),
   });
   let redrawTree = null;
-  // the outline and the side rail are redrawn only when they can be seen: on a phone the outline is a closed drawer and
-  // the rail isn't shown, and rebuilding them on every lesson cost more than the lesson itself. Out of sight they're
-  // marked stale, and drawn when they come into view (the drawer opening, the outline switched back on, a wider window).
-  let treeStale = false, sideStale = false;
+  // the outline is redrawn only when it can be seen: on a phone it's a closed drawer, and rebuilding it on every lesson
+  // cost more than the lesson itself. Out of sight it's marked stale, and drawn when it comes into view (the drawer
+  // opening, the outline switched back on, focus mode ended, a wider window). The side rail is always drawn: progress,
+  // section tracking and resuming read it even where it isn't shown.
+  let treeStale = false;
   const treeShown = () => !treeEl.hidden && treeEl.getClientRects().length > 0 && getComputedStyle(treeEl).visibility !== "hidden";
-  const sideShown = () => side.getClientRects().length > 0;
   const freshTree = (toHere) => { if (treeShown()) { treeStale = false; redrawTree?.(!toHere); } else if (redrawTree) treeStale = true; };
   const showTree = (on) => { treeEl.hidden = !on; root.querySelector(".co-body").classList.toggle("has-tree", on); if (on) redrawTree = outline.mount(treeEl); else drawer(false); };
   // below 1280px the outline is a drawer that slides in from the left
@@ -635,7 +635,7 @@ export function mountCourse(root, cfg) {
   // on a wide screen the outline can be put away to give the lesson more room (remembered); smaller screens use the drawer
   const wideScreen = () => matchMedia("(min-width: 1281px)").matches;
   const setTreeOff = (off) => { root.classList.toggle("cx-treeoff", off); setPref(cfg.slug, "outlineOff", off || null); if (!off && treeStale) freshTree(true); };
-  new ResizeObserver(() => { if (treeStale && treeShown()) freshTree(true); if (sideStale && sideShown()) paintSide(); }).observe(root);
+  new ResizeObserver(() => { if (treeStale && treeShown()) freshTree(true); }).observe(root);
   setTreeOff(Boolean(pref(cfg.slug, "outlineOff")));
   const toggleOutline = () => { if (wideScreen()) setTreeOff(!root.classList.contains("cx-treeoff")); else drawer(!treeEl.classList.contains("open")); };
   root.addEventListener("click", (e) => {
@@ -680,6 +680,7 @@ export function mountCourse(root, cfg) {
     document.querySelector(".cx-focusx")?.remove();
     if (on) { const b = Object.assign(document.createElement("button"), { type: "button", className: "cx-focusx", innerHTML: `${ic("expand")}<span>Exit focus</span><kbd>F</kbd>` }); b.addEventListener("click", () => setFocus(false)); document.body.append(b); }
     root.querySelectorAll("[data-focus]").forEach((b) => b.setAttribute("aria-pressed", String(on)));
+    if (!on && treeStale) freshTree(true);   // the outline comes back without the course changing size
   }
   // the dock along the bottom of a phone: where to go, or, in a lesson, how to move through it
   function paintDock(view, l, prev, next) {
@@ -762,8 +763,6 @@ export function mountCourse(root, cfg) {
     paintHud();
     if (!treeEl.hidden && treeEl.dataset.wired) freshTree(false);
     if (side.hidden) return;
-    if (!sideShown()) { sideStale = true; return; }
-    sideStale = false;
     if (lessonRail) { side.innerHTML = lessonRail(); root.querySelector(".co-lesson")?.dispatchEvent(new Event("co-rail")); return; }
     const xp = totalXp(), L = levelOf(xp), st = streak(), tx = todayXp(), nl = nextLesson(), c = challenge(), cw = Math.min(c.n, c.of(week()));
     const sw = syncText(storeMode), syncWarn = sw?.warn ? sw.text : null;
