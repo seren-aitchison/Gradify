@@ -1,0 +1,53 @@
+{
+ "id": "phys-u01-tennis-ball-30",
+ "renderer": "vectors",
+ "course": "physics",
+ "unit": "u01",
+ "lesson": "Idealisation and simplifying assumptions",
+ "title": "Tennis ball falling at 30 m s⁻¹",
+ "caption": "At 30 m s⁻¹ the same ball's drag, 0.92 N, is bigger than its 0.59 N weight (ratio 1.6): drag grows as v², so the idealisation that worked at 5 m s⁻¹ fails completely here, and the ball slows down.",
+ "alt": "Free-body diagram of a falling tennis ball: weight 0.59 N down and drag 0.92 N up.",
+ "description": [
+  "The ball is shown as a box. Its weight, mg = 0.06 × 9.81 = 0.59 N, acts straight down.",
+  "Drag acts upward, against the motion: ½ρC_dAv² = ½ × 1.2 × 0.5 × 0.0034 × 30² = 0.92 N, drawn to the same scale.",
+  "Drag ÷ weight = 1.56; the net force is 0.33 N upward."
+ ],
+ "mode": "body",
+ "units": "N",
+ "showResultant": true,
+ "vectors": [
+  {
+   "label": "mg",
+   "mag": 0.5886,
+   "angle": 270,
+   "source": "Earth's gravity",
+   "text": "0.59 N, down"
+  },
+  {
+   "label": "drag",
+   "mag": 0.918,
+   "angle": 90,
+   "colour": "a2",
+   "source": "air resistance, opposing the motion",
+   "text": "0.92 N, up"
+  }
+ ],
+ "resultant": {
+  "label": "net force",
+  "mag": 0.3294,
+  "angle": 90,
+  "text": "0.33 N, up"
+ },
+ "notes": [
+  "drag ÷ weight ≈ 1.6: drag cannot be neglected"
+ ],
+ "claims": [
+  {
+   "type": "ratio",
+   "a": "drag",
+   "b": "mg",
+   "value": 1.56,
+   "name": "drag ÷ weight = 1.56 from ½ρC_dAv² and mg"
+  }
+ ]
+}

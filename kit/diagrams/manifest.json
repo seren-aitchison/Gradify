@@ -24249,6 +24249,467 @@
    }
   ]
  },
+ "phys-u01-boat-velocity": {
+  "title": "Adding perpendicular velocities",
+  "caption": "The boat heads north at 4.0 m s⁻¹ while the river carries it east at 3.0 m s⁻¹. Placed tip to tail, the two velocities give the velocity over the ground: 5.0 m s⁻¹ at 37° east of north, not 7 m s⁻¹, because vectors add by direction as well as size.",
+  "alt": "Vector triangle: a north arrow of 4.0 m/s, an east arrow of 3.0 m/s from its tip, and the resultant of 5.0 m/s from the start to the end, 37 degrees east of north.",
+  "description": [
+   "The boat's own velocity, 4.0 m s⁻¹ north, is drawn up the page from the starting point.",
+   "The river's velocity, 3.0 m s⁻¹ east, is drawn from the tip of the first arrow, to the right.",
+   "The resultant runs from the start of the first arrow to the tip of the second: |v| = √(4.0² + 3.0²) = 5.0 m s⁻¹.",
+   "Its direction: tan φ = 3.0/4.0, so φ = 37° east of north."
+  ],
+  "course": "physics",
+  "lesson": "Scalar and vector quantities",
+  "also": [],
+  "renderer": "vectors",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u01.js: Scalar and vector quantities"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "components of v_{boat} are 0, 4",
+    "ok": true,
+    "detail": "|v| cos θ = 2.45 × 10^{-16}, |v| sin θ = 4"
+   },
+   {
+    "name": "components of v_{river} are 3, 0",
+    "ok": true,
+    "detail": "|v| cos θ = 3, |v| sin θ = 0"
+   },
+   {
+    "name": "v = 5 at 53.1° from the summed components",
+    "ok": true,
+    "detail": "Σx = 3, Σy = 4: 5 at 53.1°"
+   },
+   {
+    "name": "the resultant is 36.9° east of north",
+    "ok": true,
+    "detail": "36.9°"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "660px wide, shown at 107% (labels 16.1px)"
+   }
+  ]
+ },
+ "phys-u01-collision-energy": {
+  "title": "Where the kinetic energy goes when trolleys stick",
+  "caption": "Momentum is conserved (2 × 3 = 3 × 2), so the joined trolleys move at 2.0 m s⁻¹. Energy is conserved too, but not as kinetic energy: of the 9.0 J before, 6.0 J is still kinetic and 3.0 J becomes heat and sound.",
+  "alt": "Energy flow diagram: 9.0 J of kinetic energy before the collision splits into 6.0 J of kinetic energy after and 3.0 J of heat and sound.",
+  "description": [
+   "Before: a 2 kg trolley at 3 m s⁻¹ has kinetic energy ½ × 2 × 3² = 9.0 J; the 1 kg trolley is at rest.",
+   "Momentum: 2 × 3 = 3.0 v, so v = 2.0 m s⁻¹ after they stick.",
+   "After: ½ × 3 × 2² = 6.0 J of kinetic energy, the band that carries straight on.",
+   "The other 3.0 J turns down as heat and sound. The widths add up: energy is conserved even though kinetic energy is not."
+  ],
+  "course": "physics",
+  "lesson": "Conservation laws",
+  "also": [],
+  "renderer": "sankey",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u01.js: Conservation laws"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "energy is conserved: the outputs add up to the input",
+    "ok": true,
+    "detail": "in 9, out 9 J"
+   },
+   {
+    "name": "every transfer is positive and something is useful",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u01-decay-fluctuations": {
+  "title": "Ten nuclei against the exponential law",
+  "caption": "N = N₀e^{−λt} is exact for a huge sample: with 10²⁰ nuclei the relative fluctuations are only 1/√N ≈ 10⁻¹⁰. A sample of just 10 nuclei (one random run, drawn as steps) wanders around the curve by about 1/√10 ≈ 30%: each decay is random, and only the average is predictable.",
+  "alt": "Graph of the fraction of nuclei remaining against time in half-lives: a smooth exponential curve halving every half-life, and a jagged step line for a sample of ten nuclei that drops one or two nuclei at a time.",
+  "description": [
+   "The horizontal axis is time in half-lives, from 0 to 4; the vertical axis is the fraction of nuclei left, N/N₀.",
+   "The smooth curve is N/N₀ = e^{−λt}: 0.5 after one half-life, 0.25 after two, 0.125 after three.",
+   "The step line is one simulated sample of 10 nuclei. It drops by 0.1 each time a nucleus decays, at random moments, and strays visibly from the curve.",
+   "For large N the steps become too small to see and the sample follows the curve: the model is deterministic for large samples and probabilistic for single nuclei."
+  ],
+  "course": "physics",
+  "lesson": "Deterministic and probabilistic models",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u01.js: Deterministic and probabilistic models"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the curve halves after one half-life",
+    "ok": true,
+    "detail": "y(1) = 0.5"
+   },
+   {
+    "name": "one eighth is left after three half-lives",
+    "ok": true,
+    "detail": "y(3) = 0.125"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "phys-u01-scales-of-length": {
+  "title": "The scales of physics",
+  "caption": "Lengths in physics run from the Planck length (~10⁻³⁵ m) to the observable universe (~10²⁷ m), about 62 orders of magnitude. Each step on the scale is a factor of 10⁵. Quantum mechanics is needed at atomic scales and below; classical mechanics works for everyday sizes; general relativity takes over for strong gravity and the universe as a whole.",
+  "alt": "A logarithmic length scale from 10^-36 to 10^28 metres with the Planck length, a proton, an atom, a virus, a person, the Earth, the Earth–Sun distance, the Milky Way and the observable universe marked, over bands for quantum, classical and cosmological physics.",
+  "description": [
+   "A horizontal logarithmic scale of length in metres: each tick is 100 000 times the one before.",
+   "Marked from smallest to largest: Planck length 1.6 × 10⁻³⁵ m, proton 1.7 × 10⁻¹⁵ m, hydrogen atom 1.1 × 10⁻¹⁰ m, virus 10⁻⁷ m, person 1.7 m, Earth 1.3 × 10⁷ m, Earth–Sun distance 1.5 × 10¹¹ m, Milky Way 10²¹ m, observable universe 8.8 × 10²⁶ m: about 62 orders of magnitude.",
+   "Bands under the scale show the regime of each theory: quantum mechanics below about 10⁻⁸ m, classical mechanics for everyday sizes, general relativity and cosmology for astronomical sizes. The boundaries are rough: what decides is the situation, not only the size."
+  ],
+  "course": "physics",
+  "lesson": "Scope and aims of physics",
+  "also": [],
+  "renderer": "scale",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u01.js: Scope and aims of physics"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every marker lies on the scale",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "proton is in the quantum mechanics region",
+    "ok": true,
+    "detail": "1.7 × 10^{-15} against 1 × 10^{-36}–1 × 10^{-8}"
+   },
+   {
+    "name": "hydrogen atom is in the quantum mechanics region",
+    "ok": true,
+    "detail": "1.1 × 10^{-10} against 1 × 10^{-36}–1 × 10^{-8}"
+   },
+   {
+    "name": "person is in the classical mechanics region",
+    "ok": true,
+    "detail": "1.7 against 1 × 10^{-8}–1 × 10^{9}"
+   },
+   {
+    "name": "observable universe is in the general relativity, cosmology region",
+    "ok": true,
+    "detail": "8.8 × 10^{26} against 1 × 10^{9}–1 × 10^{28}"
+   },
+   {
+    "name": "the markers span about 60 orders of magnitude (the lesson's figure)",
+    "ok": true,
+    "detail": "61.7 orders"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "900px wide, shown at 79% (labels 11.8px)"
+   }
+  ]
+ },
+ "phys-u01-si-prefixes": {
+  "title": "SI prefixes: a step of 10³ each",
+  "caption": "The SI prefixes step by factors of 1000, from quecto (10⁻³⁰) to quetta (10³⁰). Moving one prefix along multiplies or divides by 10³, so 1 km = 10³ m and 1 μm = 10⁻⁶ m. Centi, deci and hecto break the pattern and are left off.",
+  "alt": "A logarithmic scale from 10^-30 to 10^30 with each SI prefix from quecto to quetta marked at its power of ten.",
+  "description": [
+   "A logarithmic scale of the multiplying factor, from 10⁻³⁰ to 10³⁰.",
+   "Below 1: milli 10⁻³, micro 10⁻⁶, nano 10⁻⁹, pico 10⁻¹², femto 10⁻¹⁵, atto 10⁻¹⁸, zepto 10⁻²¹, yocto 10⁻²⁴, ronto 10⁻²⁷, quecto 10⁻³⁰.",
+   "Above 1: kilo 10³, mega 10⁶, giga 10⁹, tera 10¹², peta 10¹⁵, exa 10¹⁸, zetta 10²¹, yotta 10²⁴, ronna 10²⁷, quetta 10³⁰.",
+   "Each prefix is 1000 times the one before it."
+  ],
+  "course": "physics",
+  "lesson": "Unit conversions and prefixes",
+  "also": [],
+  "renderer": "scale",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u01.js: Unit conversions and prefixes"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every marker lies on the scale",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "quecto = 10^{-30}",
+    "ok": true,
+    "detail": "marker at 1 × 10^{-30}"
+   },
+   {
+    "name": "ronto = 10^{-27}",
+    "ok": true,
+    "detail": "marker at 1 × 10^{-27}"
+   },
+   {
+    "name": "yocto = 10^{-24}",
+    "ok": true,
+    "detail": "marker at 1 × 10^{-24}"
+   },
+   {
+    "name": "zepto = 10^{-21}",
+    "ok": true,
+    "detail": "marker at 1 × 10^{-21}"
+   },
+   {
+    "name": "atto = 10^{-18}",
+    "ok": true,
+    "detail": "marker at 1 × 10^{-18}"
+   },
+   {
+    "name": "femto = 10^{-15}",
+    "ok": true,
+    "detail": "marker at 1 × 10^{-15}"
+   },
+   {
+    "name": "pico = 10^{-12}",
+    "ok": true,
+    "detail": "marker at 1 × 10^{-12}"
+   },
+   {
+    "name": "nano = 10^{-9}",
+    "ok": true,
+    "detail": "marker at 1 × 10^{-9}"
+   },
+   {
+    "name": "micro = 10^{-6}",
+    "ok": true,
+    "detail": "marker at 1 × 10^{-6}"
+   },
+   {
+    "name": "milli = 10^{-3}",
+    "ok": true,
+    "detail": "marker at 0.001"
+   },
+   {
+    "name": "kilo = 10^{3}",
+    "ok": true,
+    "detail": "marker at 1000"
+   },
+   {
+    "name": "mega = 10^{6}",
+    "ok": true,
+    "detail": "marker at 1 × 10^{6}"
+   },
+   {
+    "name": "giga = 10^{9}",
+    "ok": true,
+    "detail": "marker at 1 × 10^{9}"
+   },
+   {
+    "name": "tera = 10^{12}",
+    "ok": true,
+    "detail": "marker at 1 × 10^{12}"
+   },
+   {
+    "name": "peta = 10^{15}",
+    "ok": true,
+    "detail": "marker at 1 × 10^{15}"
+   },
+   {
+    "name": "exa = 10^{18}",
+    "ok": true,
+    "detail": "marker at 1 × 10^{18}"
+   },
+   {
+    "name": "zetta = 10^{21}",
+    "ok": true,
+    "detail": "marker at 1 × 10^{21}"
+   },
+   {
+    "name": "yotta = 10^{24}",
+    "ok": true,
+    "detail": "marker at 1 × 10^{24}"
+   },
+   {
+    "name": "ronna = 10^{27}",
+    "ok": true,
+    "detail": "marker at 1 × 10^{27}"
+   },
+   {
+    "name": "quetta = 10^{30}",
+    "ok": true,
+    "detail": "marker at 1 × 10^{30}"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "900px wide, shown at 79% (labels 11.8px)"
+   }
+  ]
+ },
+ "phys-u01-tennis-ball-30": {
+  "title": "Tennis ball falling at 30 m s⁻¹",
+  "caption": "At 30 m s⁻¹ the same ball's drag, 0.92 N, is bigger than its 0.59 N weight (ratio 1.6): drag grows as v², so the idealisation that worked at 5 m s⁻¹ fails completely here, and the ball slows down.",
+  "alt": "Free-body diagram of a falling tennis ball: weight 0.59 N down and drag 0.92 N up.",
+  "description": [
+   "The ball is shown as a box. Its weight, mg = 0.06 × 9.81 = 0.59 N, acts straight down.",
+   "Drag acts upward, against the motion: ½ρC_dAv² = ½ × 1.2 × 0.5 × 0.0034 × 30² = 0.92 N, drawn to the same scale.",
+   "Drag ÷ weight = 1.56; the net force is 0.33 N upward."
+  ],
+  "course": "physics",
+  "lesson": "Idealisation and simplifying assumptions",
+  "also": [],
+  "renderer": "vectors",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u01.js: Idealisation and simplifying assumptions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "net force = 0.329 at 90° from the summed components",
+    "ok": true,
+    "detail": "Σx = -5.19 × 10^{-17}, Σy = 0.329: 0.329 at 90.0°"
+   },
+   {
+    "name": "every force has a stated source",
+    "ok": true,
+    "detail": "mg: Earth's gravity; drag: air resistance, opposing the motion"
+   },
+   {
+    "name": "drag ÷ weight = 1.56 from ½ρC_dAv² and mg",
+    "ok": true,
+    "detail": "1.56"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "660px wide, shown at 107% (labels 16.1px)"
+   }
+  ]
+ },
+ "phys-u01-tennis-ball-5": {
+  "title": "Tennis ball falling at 5 m s⁻¹",
+  "caption": "At 5 m s⁻¹ the drag on a 0.06 kg tennis ball is 0.025 N against a weight of 0.59 N: a ratio of about 4%. Neglecting air resistance is a controlled approximation here, fine for a rough model.",
+  "alt": "Free-body diagram of a falling tennis ball: weight 0.59 N down and drag 0.025 N up.",
+  "description": [
+   "The ball is shown as a box. Its weight, mg = 0.06 × 9.81 = 0.59 N, acts straight down.",
+   "Drag acts upward, against the motion: ½ρC_dAv² = ½ × 1.2 × 0.5 × 0.0034 × 5² = 0.025 N, drawn to the same scale.",
+   "Drag ÷ weight = 4.3%; the net force is 0.56 N downward."
+  ],
+  "course": "physics",
+  "lesson": "Idealisation and simplifying assumptions",
+  "also": [],
+  "renderer": "vectors",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/physics/notes/u01.js: Idealisation and simplifying assumptions"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "net force = 0.563 at 270° from the summed components",
+    "ok": true,
+    "detail": "Σx = -1.07 × 10^{-16}, Σy = −0.563: 0.563 at 270.0°"
+   },
+   {
+    "name": "every force has a stated source",
+    "ok": true,
+    "detail": "mg: Earth's gravity; drag: air resistance, opposing the motion"
+   },
+   {
+    "name": "drag ÷ weight = 0.043 from ½ρC_dAv² and mg",
+    "ok": true,
+    "detail": "0.0433"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "660px wide, shown at 107% (labels 16.1px)"
+   }
+  ]
+ },
  "bio-abo-cross": {
   "title": "Codominance and multiple alleles: ABO blood groups",
   "caption": "Iᴬ and Iᴮ are codominant, and both are dominant to Iᴼ. A group A parent (IᴬIᴼ) and a group B parent (IᴮIᴼ) can have a child of any of the four groups, each with probability one quarter.",

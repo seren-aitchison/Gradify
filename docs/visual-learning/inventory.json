@@ -4,29 +4,29 @@
   "sites": 32,
   "sitesServingCourses": 31,
   "courses": 34,
-  "coursesWithPlan": 4,
+  "coursesWithPlan": 5,
   "lessons": 10112,
   "written": 9979,
-  "assessed": 788,
-  "plannedVisual": 584,
-  "plannedDiagram": 547,
+  "assessed": 807,
+  "plannedVisual": 590,
+  "plannedDiagram": 553,
   "plannedLab": 77,
-  "excluded": 204,
-  "notAssessed": 9191,
-  "withDiagram": 553,
+  "excluded": 217,
+  "notAssessed": 9172,
+  "withDiagram": 559,
   "withLab": 841,
   "withBoth": 147,
-  "withAny": 1247,
+  "withAny": 1253,
   "plannedNotDelivered": 0,
-  "placements": 572
+  "placements": 579
  },
  "diagrams": {
-  "manifest": 517,
-  "uniquePlaced": 517,
-  "placements": 572,
+  "manifest": 524,
+  "uniquePlaced": 524,
+  "placements": 579,
   "reused": 52,
-  "byStatus": {"ai-reviewed":4,"approved":11,"validated":502},
-  "placedByStatus": {"ai-reviewed":4,"approved":11,"validated":502},
+  "byStatus": {"ai-reviewed":4,"approved":11,"validated":509},
+  "placedByStatus": {"ai-reviewed":4,"approved":11,"validated":509},
   "failing": [],
   "unplaced": []
  },
@@ -522,18 +522,18 @@
    "totals": {
     "lessons": 2159,
     "written": 2109,
-    "assessed": 697,
-    "plannedVisual": 500,
-    "plannedDiagram": 465,
+    "assessed": 716,
+    "plannedVisual": 506,
+    "plannedDiagram": 471,
     "plannedLab": 75,
-    "excluded": 197,
-    "notAssessed": 1412,
-    "withDiagram": 469,
+    "excluded": 210,
+    "notAssessed": 1393,
+    "withDiagram": 475,
     "withLab": 317,
     "withBoth": 146,
-    "withAny": 640,
+    "withAny": 646,
     "plannedNotDelivered": 0,
-    "placements": 484
+    "placements": 491
    }
   },
   {
@@ -17760,23 +17760,23 @@
    "name": "Physics",
    "declaredSite": "SciGradify",
    "servedBy": ["SciGradify"],
-   "plan": null,
+   "plan": ["kit/diagrams/plans/physics.mjs"],
    "labs": 17,
    "totals": {
     "lessons": 1308,
     "written": 1308,
-    "assessed": 0,
-    "plannedVisual": 0,
-    "plannedDiagram": 0,
+    "assessed": 19,
+    "plannedVisual": 6,
+    "plannedDiagram": 6,
     "plannedLab": 0,
-    "excluded": 0,
-    "notAssessed": 1308,
-    "withDiagram": 3,
+    "excluded": 13,
+    "notAssessed": 1289,
+    "withDiagram": 9,
     "withLab": 115,
     "withBoth": 2,
-    "withAny": 116,
+    "withAny": 122,
     "plannedNotDelivered": 0,
-    "placements": 3
+    "placements": 10
    },
    "units": [
     {
@@ -17786,39 +17786,151 @@
      "totals": {
       "lessons": 19,
       "written": 19,
-      "assessed": 0,
-      "plannedVisual": 0,
-      "plannedDiagram": 0,
+      "assessed": 19,
+      "plannedVisual": 6,
+      "plannedDiagram": 6,
       "plannedLab": 0,
-      "excluded": 0,
-      "notAssessed": 19,
-      "withDiagram": 0,
+      "excluded": 13,
+      "notAssessed": 0,
+      "withDiagram": 6,
       "withLab": 0,
       "withBoth": 0,
-      "withAny": 0,
+      "withAny": 6,
       "plannedNotDelivered": 0,
-      "placements": 0
+      "placements": 7
      },
      "lessons": [
-      {"id":"u01-01","title":"Scope and aims of physics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-02","title":"Physical quantities and observables","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-03","title":"SI base and derived units","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-04","title":"Dimensional analysis","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-05","title":"Unit conversions and prefixes","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-06","title":"Scalar and vector quantities","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-07","title":"Significant figures and scientific notation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-08","title":"Estimation and order-of-magnitude calculations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-09","title":"Physical constants","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-10","title":"Mathematical modelling","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-11","title":"Idealisation and simplifying assumptions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-12","title":"Deterministic and probabilistic models","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-13","title":"Conservation laws","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-14","title":"Symmetry and invariance","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-15","title":"Physical laws, principles and theories","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-16","title":"Classical and modern physics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-17","title":"Microscopic and macroscopic descriptions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-18","title":"Uncertainty and measurement limitations","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u01-19","title":"Scientific reasoning and falsifiability","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}}
+      {
+       "id": "u01-01",
+       "title": "Scope and aims of physics",
+       "written": true,
+       "diagrams": [{"id":"phys-u01-scales-of-length","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u01-scales-of-length"]}
+      },
+      {"id":"u01-02","title":"Physical quantities and observables","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a definition or classification that a picture would not teach"}},
+      {
+       "id": "u01-03",
+       "title": "SI base and derived units",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a table of units and their definitions; a picture adds nothing to the table"}
+      },
+      {
+       "id": "u01-04",
+       "title": "Dimensional analysis",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a calculation method or set of rules, taught by worked examples rather than a picture"}
+      },
+      {
+       "id": "u01-05",
+       "title": "Unit conversions and prefixes",
+       "written": true,
+       "diagrams": [{"id":"phys-u01-si-prefixes","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u01-si-prefixes"]}
+      },
+      {
+       "id": "u01-06",
+       "title": "Scalar and vector quantities",
+       "written": true,
+       "diagrams": [{"id":"phys-u01-boat-velocity","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u01-boat-velocity"]}
+      },
+      {
+       "id": "u01-07",
+       "title": "Significant figures and scientific notation",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a calculation method or set of rules, taught by worked examples rather than a picture"}
+      },
+      {
+       "id": "u01-08",
+       "title": "Estimation and order-of-magnitude calculations",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a calculation method or set of rules, taught by worked examples rather than a picture"}
+      },
+      {"id":"u01-09","title":"Physical constants","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"a list of constants and their values"}},
+      {
+       "id": "u01-10",
+       "title": "Mathematical modelling",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"the modelling cycle is a short list of steps; a cycle graphic would only decorate it"}
+      },
+      {
+       "id": "u01-11",
+       "title": "Idealisation and simplifying assumptions",
+       "written": true,
+       "diagrams": [{"id":"phys-u01-tennis-ball-5","status":"validated"},{"id":"phys-u01-tennis-ball-30","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u01-tennis-ball-5","phys-u01-tennis-ball-30"]}
+      },
+      {
+       "id": "u01-12",
+       "title": "Deterministic and probabilistic models",
+       "written": true,
+       "diagrams": [{"id":"phys-u01-decay-fluctuations","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u01-decay-fluctuations"]}
+      },
+      {
+       "id": "u01-13",
+       "title": "Conservation laws",
+       "written": true,
+       "diagrams": [{"id":"phys-u01-collision-energy","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["phys-u01-collision-energy"]}
+      },
+      {
+       "id": "u01-14",
+       "title": "Symmetry and invariance",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"Noether's theorem and kinds of symmetry are abstract correspondences, not pictures"}
+      },
+      {
+       "id": "u01-15",
+       "title": "Physical laws, principles and theories",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a definition or classification that a picture would not teach"}
+      },
+      {
+       "id": "u01-16",
+       "title": "Classical and modern physics",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"a history of the failures of classical physics; each is drawn in its own unit (black body u20, photoelectric u20, spectra u21)"}
+      },
+      {
+       "id": "u01-17",
+       "title": "Microscopic and macroscopic descriptions",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"the micro/macro distinction is conceptual; particle pictures belong to kinetic theory (u12, u13)"}
+      },
+      {
+       "id": "u01-18",
+       "title": "Uncertainty and measurement limitations",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"measurement uncertainty is drawn in u03 (error bars, accuracy and precision)"}
+      },
+      {"id":"u01-19","title":"Scientific reasoning and falsifiability","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"reasoning and falsifiability are argument, not a picture"}}
      ]
     },
     {

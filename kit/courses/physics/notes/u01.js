@@ -9,6 +9,7 @@ H: What physics tries to do
 - **Unify**: show that apparently separate phenomena are one (electricity, magnetism and light in Maxwell's equations; the electroweak theory).
 H: The scales of physics
 P: Physics spans about 60 orders of magnitude in length, from the Planck length (~10^{-35} m) to the observable universe (~10^{27} m). Different theories are accurate in different regimes: classical mechanics for everyday speeds and sizes, relativity near c or in strong gravity, quantum mechanics at atomic scales, quantum field theory where both matter.
+D: phys-u01-scales-of-length
 K: A good physical theory is economical (few assumptions), general (wide range of validity), quantitative and falsifiable.
 H: Branches and links
 - Core branches: mechanics, thermodynamics and statistical physics, electromagnetism, optics, quantum physics, relativity, nuclear and particle physics, condensed matter, astrophysics.
@@ -100,6 +101,7 @@ H: The prefixes to know
 - quecto q 10^{-30}, ronto r 10^{-27}, yocto y 10^{-24}, zepto z 10^{-21}, atto a 10^{-18}, femto f 10^{-15}, pico p 10^{-12}, nano n 10^{-9}, micro μ 10^{-6}, milli m 10^{-3}
 - kilo k 10^{3}, mega M 10^{6}, giga G 10^{9}, tera T 10^{12}, peta P 10^{15}, exa E 10^{18}, zetta Z 10^{21}, yotta Y 10^{24}, ronna R 10^{27}, quetta Q 10^{30}
 - centi (10^{-2}), deci (10^{-1}) and hecto (10^{2}) are used but not in the 10^{3n} pattern.
+D: phys-u01-si-prefixes
 H: Conversion factors
 P: Write the conversion as a fraction equal to one and multiply, cancelling units like algebra.
 X: Convert 72 km h^{-1} to m s^{-1}.
@@ -129,6 +131,7 @@ P: Resolve into perpendicular components and add those: R_{x} = A_{x} + B_{x}, R
 X: A boat heads north at 4.0 m s^{-1} across a river flowing east at 3.0 m s^{-1}. Find its velocity over the ground.
 > Components are perpendicular: |v| = √(4.0^{2} + 3.0^{2}) = 5.0 m s^{-1}
 > Direction: tan φ = 3.0/4.0, φ = 37° east of north
+D: phys-u01-boat-velocity
 H: Beyond vectors
 P: Under rotation of axes, scalars stay the same and vector components mix in a fixed way. Quantities like the stress or the moment of inertia need two indices: they are rank-2 tensors. Pseudovectors (torque, angular momentum, B) behave like vectors under rotation but don't flip under reflection.
 !: Speed and velocity are not interchangeable: average speed over a round trip is positive, but average velocity is zero.
@@ -252,6 +255,8 @@ X: When can air resistance on a falling ball be neglected?
 > Drag ≈ ½ρC_{d}Av^{2}; weight = mg
 > For a 0.06 kg tennis ball at 5 m s^{-1}: drag ≈ ½ × 1.2 × 0.5 × 0.0034 × 25 ≈ 0.026 N; weight ≈ 0.59 N
 > Ratio ~4%: fine for a rough model, not for a precise one; at 30 m s^{-1} drag exceeds the weight
+D: phys-u01-tennis-ball-5
+D: phys-u01-tennis-ball-30
 K: Idealisations are not errors. They are controlled approximations, and a good physicist states them and checks their limits.
 !: An idealisation valid in one regime can fail badly in another (the small-angle pendulum at 60°, ideal gas at high pressure).
 Q: When can an object be treated as a point particle? | When its size is negligible compared with the other distances in the problem, and rotation doesn't matter.
@@ -274,6 +279,7 @@ E: N(t) = N_{0} e^{−λt} :: radioactive decay: deterministic for large N, rand
 X: A sample has 10^{20} nuclei; another has 10. Which follows N_{0}e^{−λt} closely?
 > Fluctuations scale like √N, so relative fluctuations are 1/√N
 > 10^{20}: 10^{-10} (smooth exponential); 10: about 30% (visibly random)
+D: phys-u01-decay-fluctuations
 !: Chaotic does not mean random. A chaotic system follows exact laws; it is unpredictable only because we can't know the initial state perfectly.
 Q: What is the Born rule? | The probability density for finding a particle at x is |ψ(x)|^{2}.
 Q: How do relative fluctuations scale with the number N of independent events? | As 1/√N.
@@ -295,6 +301,7 @@ E: ∂ρ/∂t + ∇·J = 0 :: local conservation of charge (continuity equation)
 X: A 2.0 kg trolley at 3.0 m s^{-1} hits and sticks to a stationary 1.0 kg trolley. Find the final speed and the kinetic energy lost.
 > Momentum: 2.0 × 3.0 = 3.0 v, so v = 2.0 m s^{-1}
 > KE before = ½ × 2 × 9 = 9.0 J; after = ½ × 3 × 4 = 6.0 J; 3.0 J becomes heat and sound
+D: phys-u01-collision-energy
 H: Local vs global
 P: Local conservation is stronger than global: charge can't vanish here and appear on the Moon; it must flow through the space in between. Field theories express this with continuity equations.
 K: Conservation laws let you relate "before" and "after" without knowing the details of what happened in between.

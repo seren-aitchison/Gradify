@@ -1,0 +1,190 @@
+{
+ "id": "phys-u01-decay-fluctuations",
+ "renderer": "graph",
+ "course": "physics",
+ "unit": "u01",
+ "lesson": "Deterministic and probabilistic models",
+ "title": "Ten nuclei against the exponential law",
+ "caption": "N = N₀e^{−λt} is exact for a huge sample: with 10²⁰ nuclei the relative fluctuations are only 1/√N ≈ 10⁻¹⁰. A sample of just 10 nuclei (one random run, drawn as steps) wanders around the curve by about 1/√10 ≈ 30%: each decay is random, and only the average is predictable.",
+ "alt": "Graph of the fraction of nuclei remaining against time in half-lives: a smooth exponential curve halving every half-life, and a jagged step line for a sample of ten nuclei that drops one or two nuclei at a time.",
+ "description": [
+  "The horizontal axis is time in half-lives, from 0 to 4; the vertical axis is the fraction of nuclei left, N/N₀.",
+  "The smooth curve is N/N₀ = e^{−λt}: 0.5 after one half-life, 0.25 after two, 0.125 after three.",
+  "The step line is one simulated sample of 10 nuclei. It drops by 0.1 each time a nucleus decays, at random moments, and strays visibly from the curve.",
+  "For large N the steps become too small to see and the sample follows the curve: the model is deterministic for large samples and probabilistic for single nuclei."
+ ],
+ "range": {
+  "x": [
+   0,
+   4.2
+  ],
+  "y": [
+   0,
+   1.08
+  ]
+ },
+ "ticks": [
+  [
+   1,
+   2,
+   3,
+   4
+  ],
+  [
+   0.25,
+   0.5,
+   0.75,
+   1
+  ]
+ ],
+ "grid": [
+  1,
+  0.25
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "time / half-lives",
+  "N/N₀"
+ ],
+ "curves": [
+  {
+   "expr": "exp(-0.693147*x)",
+   "colour": "a1",
+   "label": "N₀e^{−λt} (large N)",
+   "labelAt": [
+    2.05,
+    0.36
+   ]
+  }
+ ],
+ "series": [
+  {
+   "points": [
+    [
+     0,
+     1
+    ],
+    [
+     0.18,
+     1
+    ],
+    [
+     0.18,
+     0.9
+    ],
+    [
+     0.22,
+     0.9
+    ],
+    [
+     0.22,
+     0.8
+    ],
+    [
+     0.42,
+     0.8
+    ],
+    [
+     0.42,
+     0.7
+    ],
+    [
+     0.5,
+     0.7
+    ],
+    [
+     0.5,
+     0.6
+    ],
+    [
+     0.68,
+     0.6
+    ],
+    [
+     0.68,
+     0.5
+    ],
+    [
+     0.76,
+     0.5
+    ],
+    [
+     0.76,
+     0.4
+    ],
+    [
+     0.92,
+     0.4
+    ],
+    [
+     0.92,
+     0.3
+    ],
+    [
+     1.54,
+     0.3
+    ],
+    [
+     1.54,
+     0.2
+    ],
+    [
+     1.66,
+     0.2
+    ],
+    [
+     1.66,
+     0.1
+    ],
+    [
+     2.58,
+     0.1
+    ],
+    [
+     2.58,
+     0
+    ],
+    [
+     4,
+     0
+    ]
+   ],
+   "colour": "a2",
+   "width": 2.2,
+   "label": "10 nuclei",
+   "labelAt": [
+    1.72,
+    0.16
+   ]
+  }
+ ],
+ "points": [
+  {
+   "x": 1,
+   "y": 0.5,
+   "label": "half-life",
+   "dx": 10,
+   "dy": -10
+  }
+ ],
+ "checks": [
+  {
+   "type": "point",
+   "expr": "exp(-0.693147*x)",
+   "x": 1,
+   "y": 0.5,
+   "name": "the curve halves after one half-life"
+  },
+  {
+   "type": "point",
+   "expr": "exp(-0.693147*x)",
+   "x": 3,
+   "y": 0.125,
+   "name": "one eighth is left after three half-lives"
+  }
+ ]
+}
