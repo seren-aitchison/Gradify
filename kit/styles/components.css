@@ -1598,6 +1598,40 @@ dialog.plus-prompt::backdrop { background: rgba(var(--sink-rgb), .6); -webkit-ba
    the dark page (.mv-cols b, .co-reading .co-notes p); the repeated class only raises specificity above those */
 .vx.vx.vx.vx.vx :is(p, li, b, strong, figcaption) { color: var(--vx-ink); }
 .vx.vx.vx.vx.vx .vx-draft, .vx.vx.vx.vx.vx .vx-draft b { color: #9a3412; }
+/* practice on a checked diagram (kit/diagrams/practice.js): Label it, Talk it through */
+.vx-practice { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin: 10px 0 4px; }
+.vx-pbtn { display: inline-flex; align-items: center; gap: 6px; min-height: 34px; padding: 0 14px; border-radius: 99px; cursor: pointer;
+  font: 650 13px/1 var(--sans, inherit); color: var(--vx-ink); background: color-mix(in srgb, var(--vx-a1) 9%, #fff); border: 1.5px solid color-mix(in srgb, var(--vx-a1) 40%, transparent); transition: background .15s; }
+.vx-pbtn small { font: 700 11px/1 var(--mono, monospace); padding: 2px 6px; border-radius: 99px; background: color-mix(in srgb, var(--vx-a1) 16%, #fff); }
+.vx-pbtn:hover { background: color-mix(in srgb, var(--vx-a1) 16%, #fff); }
+.vx-pbtn:focus-visible, .vx-band:focus-visible { outline: 2px solid var(--vx-ink); outline-offset: 2px; }
+.vx-pbtn.on { color: #fff; border-color: transparent; background: var(--vx-a1); }
+.vx-pbtn.on small { background: rgba(255, 255, 255, .25); }
+.vx-pbtn:disabled { opacity: .4; cursor: default; }
+.vx-badge { display: inline-flex; align-items: center; gap: 5px; margin-left: auto; padding: 3px 10px; border-radius: 99px; font: 700 11.5px/1.4 var(--sans, inherit);
+  color: #15803d; background: color-mix(in srgb, #16a34a 12%, #fff); border: 1px solid color-mix(in srgb, #16a34a 40%, transparent); }
+.vx-badge.vx-fresh { animation: gd-pop .5s cubic-bezier(.2, 1.4, .4, 1); }
+.vx-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.vx.vx.vx.vx.vx .vx-say { flex-basis: 100%; margin: 0; min-height: 1.2em; font-size: 13px; font-weight: 600; color: var(--vx-soft); }
+.vx.vx.vx.vx.vx .vx-say:empty { display: none; }
+/* Label it: each label behind a striped band of the diagram's accent; a tap, Enter or Space shows it */
+.vx-artl { display: block; }
+.vx.vx.vx.vx.vx .vx-held { color: var(--vx-soft); font-style: italic; }
+.vx text.vx-cov { visibility: hidden; }
+.vx-band { cursor: pointer; fill: color-mix(in srgb, var(--vx-a1) 22%, #fff); stroke: color-mix(in srgb, var(--vx-a1) 55%, transparent); stroke-width: 1.2; stroke-dasharray: 3 2; transition: fill .15s; }
+.vx-band:hover { fill: color-mix(in srgb, var(--vx-a1) 34%, #fff); }
+/* Talk it through: the line you're on, the ones before it, and the ones still to come hidden (from screen readers too) */
+.vx-talk { margin: 6px 0 4px; padding: 12px 14px; border-radius: 16px; background: var(--vx-panel); border: 1.5px dashed color-mix(in srgb, var(--vx-a1) 45%, transparent); }
+.vx.vx.vx.vx.vx .vx-talk ol { margin: 0 0 10px; padding-left: 22px; display: grid; gap: 6px; }
+.vx.vx.vx.vx.vx .vx-talk li { line-height: 1.5; }
+.vx-talk li:not(.on):not(.todo) { opacity: .6; }
+.vx-talk li.on { font-weight: 650; }
+.vx-talk li.todo { color: transparent !important; border-radius: 6px; background: repeating-linear-gradient(-45deg, color-mix(in srgb, var(--vx-a1) 20%, #fff) 0 7px, color-mix(in srgb, var(--vx-a1) 8%, #fff) 7px 14px); }
+.vx-talk li.todo { font-size: 0; min-height: 1.4rem; }
+.vx-talkbar { display: flex; gap: 8px; }
+.vx-pbtn.vx-main { border-color: color-mix(in srgb, var(--vx-a1) 70%, transparent); }
+@media print { .vx-practice, .vx-talkbar { display: none !important; } .vx text.vx-cov { visibility: visible !important; } .vx-band { display: none; } .vx-talk li.todo { font-size: inherit; color: inherit !important; background: none; } }
+@media (prefers-reduced-motion: reduce) { .vx-badge.vx-fresh { animation: none; } .vx-band { transition: none; } }
 .vx.vx.vx.vx.vx .vx-checks li.ok { color: var(--vx-good); } .vx.vx.vx.vx.vx .vx-checks li.no { color: var(--vx-bad); }
 .vx-art { display: block; width: 100%; padding: 0; border: 0; background: none; color: inherit; cursor: zoom-in; border-radius: 12px; }
 .vx-art:focus-visible { outline: 3px solid var(--vx-a1); outline-offset: 3px; }

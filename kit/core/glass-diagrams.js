@@ -694,13 +694,22 @@ function score(fig) {
 // { "<course>:<lesson>:<card>": { "<mode>": { clean, n, t } } }; clean: got it all right without a wrong try
 const STORE = "gradify:diagrams:v1";
 const loadAll = () => { try { return JSON.parse(localStorage.getItem(STORE) || "{}") || {}; } catch { return {}; } };
-function done(fig, mode, clean) {
-  const key = fig.dataset.gdKey; if (!key) return;
+/** Note on this device that `key` has been practised one way (`mode`); `clean`: with no wrong tries. Shared with the
+ *  checked teaching diagrams (kit/diagrams/practice.js). */
+export function savePractice(key, mode, clean = false) {
+  if (!key) return null;
   try {
     const all = loadAll(), r = (all[key] ||= {}), was = r[mode];
     r[mode] = { clean: Boolean(clean || was?.clean), n: (was?.n || 0) + 1, t: Date.now() };
     localStorage.setItem(STORE, JSON.stringify(all));
-  } catch { /* private window or storage off: the badge just won't stay */ }
+    return r;
+  } catch { return null; /* private window or storage off: the badge just won't stay */ }
+}
+/** What has been practised on `key`, on this device: { mode: { clean, n, t } }, or null. */
+export const practiceOf = (key) => (key && loadAll()[key]) || null;
+function done(fig, mode, clean) {
+  const key = fig.dataset.gdKey; if (!key) return;
+  savePractice(key, mode, clean);
   showBadge(fig, true);
   // the same card shown elsewhere (the page's copy, when this is the full-size one): its badge too, nothing else
   document.querySelectorAll(".gd[data-gd-key]").forEach((f) => { if (f !== fig && f.dataset.gdKey === key) showBadge(f); });
