@@ -11,6 +11,7 @@ H: Planning
 - Change one **independent variable** and measure one **dependent variable**.
 - Keep **control variables** constant.
 - Choose a suitable range and number of levels for the independent variable.
+D: bio-scientific-method
 H: Reducing bias and error
 - **Replication**: repeat each condition to estimate variation.
 - **Randomisation**: assign samples to treatments at random.
@@ -52,6 +53,7 @@ H: From observation to hypothesis
 - A **hypothesis** proposes an explanation that can be tested.
 - A **prediction** states what should happen if the hypothesis is correct.
 - Good hypotheses are specific, testable and falsifiable.
+D: bio-scientific-method
 H: Null and alternative
 - The **null hypothesis** (H₀) states there is no effect or difference.
 - The **alternative hypothesis** (H₁) states there is an effect.
@@ -181,6 +183,7 @@ H: Using and calibrating
 - An **eyepiece graticule** is calibrated against a **stage micrometer** for each objective.
 - Actual size = number of graticule units × value of one unit.
 P: Calibration is needed because the graticule's divisions represent different real lengths at different magnifications. Biological drawings should use clear lines, no shading, labelled structures and a scale. Fluorescence and confocal microscopy extend light microscopy using fluorescent labels.
+D: bio-scale-of-life
 X: Calibrating a graticule.
 > At ×400, 25 graticule divisions line up with 0.1 mm (100 µm) on the stage micrometer.
 > One division = 100 ÷ 25 = 4 µm.
@@ -339,14 +342,14 @@ H: Primer design
 - GC content around **40–60%**.
 - Forward and reverse primers should have similar **melting temperatures**.
 - Avoid primers that bind each other (**primer dimers**) or fold on themselves.
-D: bio-pcr-amplification
-D: bio-pcr-cycle
 H: Setting up and troubleshooting
 - Use a **master mix** to reduce pipetting errors.
 - Include a **no-template control** and a **positive control**.
 - No product: check template, primers and annealing temperature.
 - Extra bands: raise annealing temperature to increase specificity.
 P: Annealing temperature is often set a few degrees below the primers' melting temperature. Too low an annealing temperature allows primers to bind imperfectly, producing non-specific bands. Separate areas for setting up and analysing PCR reduce contamination.
+D: bio-pcr-cycle
+D: bio-pcr-amplification
 X: Fixing extra bands.
 > A PCR shows the expected band plus two extra bands.
 > The annealing temperature was 50 °C.
@@ -382,13 +385,13 @@ H: Running a gel
 - Samples are mixed with **loading dye** and pipetted into wells.
 - Wells are placed at the **negative** end so DNA runs towards the positive electrode.
 - Gels are stained with a DNA dye; safer alternatives to ethidium bromide are now common.
-D: bio-gel-calibration
 H: Analysis and problems
 - A **calibration curve** plots log(fragment size) against distance travelled for the ladder.
 - Unknown sizes are read from the curve.
 - **Smearing** suggests degraded DNA or overloading.
 - **No bands** suggest failed loading, staining or reaction.
 P: Distance travelled is roughly proportional to the logarithm of fragment size, so plotting log size gives a straight line. Running the gel too fast generates heat, distorting bands. UV light used to view some stains requires eye and skin protection.
+D: bio-gel-calibration
 X: Using a calibration curve.
 > Ladder bands are plotted as log(size) against distance.
 > The points form a straight line.
@@ -425,6 +428,7 @@ H: Steps
 - Proteins are **transferred** to a membrane.
 - The membrane is **blocked** to prevent non-specific binding.
 - A **primary antibody** binds the target protein; a labelled **secondary antibody** binds the primary.
+D: bio-western-blot
 H: Detection and interpretation
 - Detection uses chemiluminescence or fluorescence.
 - A band at the expected size indicates the target protein.
@@ -466,12 +470,14 @@ H: Formats
 - **Indirect ELISA**: a primary antibody binds antigen; a labelled secondary detects it, often used to detect antibodies in serum.
 - **Sandwich ELISA**: a capture antibody and a detection antibody bind the antigen, giving high specificity.
 - The enzyme converts a substrate to a coloured product.
+D: bio-sandwich-elisa
 H: Analysis
 - **Washing** removes unbound reagents between steps.
 - A **standard curve** of known concentrations is plotted against absorbance.
 - Unknown concentrations are read from the curve.
 - **Blank** wells and duplicates improve reliability.
 P: Absorbance is measured with a plate reader. Samples outside the standard curve range should be diluted and re-tested. ELISAs are used in diagnostics, food allergen testing and research.
+D: bio-beer-lambert
 X: Using a standard curve.
 > Standards of 0, 25, 50, 100 and 200 pg/mL are run.
 > Absorbance rises with concentration.
@@ -507,6 +513,7 @@ H: Principle
 - Components separate by how strongly they interact with each phase.
 - **Paper** and **thin-layer chromatography** (TLC) separate small molecules such as pigments and amino acids.
 - **Rf value** = distance moved by spot ÷ distance moved by solvent front.
+D: bio-tlc-rf
 H: Column methods
 - **Size-exclusion**: separates by size.
 - **Ion-exchange**: separates by charge.
@@ -554,6 +561,7 @@ H: Beer-Lambert law
 - **Calibration curves** of known concentrations give unknown values.
 - At high concentrations the relationship becomes non-linear.
 P: Biological uses include measuring nucleic acids at 260 nm, protein assays such as the Bradford assay, bacterial culture density at 600 nm and enzyme reaction rates by following colour change. Cuvettes must be clean and handled by their frosted sides.
+D: bio-beer-lambert
 X: Following bacterial growth.
 > A bacterial culture is measured at 600 nm every 30 minutes.
 > Absorbance rises as cells multiply and scatter light.
@@ -672,6 +680,7 @@ H: Choosing tests
 - **Chi-squared test**: compares observed and expected frequencies.
 - **Correlation** (Pearson or Spearman): tests association between two variables.
 - **Mann-Whitney U**: compares two groups without assuming normal distribution.
+D: bio-choosing-a-test
 H: Interpreting
 - A **p-value** is the probability of results at least this extreme if the null hypothesis were true.
 - p < 0.05 is commonly used as a threshold.

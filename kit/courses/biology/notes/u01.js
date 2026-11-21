@@ -585,6 +585,7 @@ O: Describe and interpret trends, including rates from gradients
 PRE: Variables and experimental design
 H: Results tables
 P: Put the independent variable in the first column and the dependent variable (with repeats and means) in the next columns. Column headings give the quantity and unit, separated by a solidus: "Temperature / °C". Units go in headings, not in the body of the table. Record raw data to the instrument's resolution and means to one more decimal place at most.
+D: bio-choosing-a-test
 H: Which graph?
 - **Line graph**: both variables continuous, showing how the dependent variable changes with the independent variable (rate against temperature).
 - **Bar chart**: the independent variable is categorical (blood group, species).

@@ -1,0 +1,66 @@
+{
+ "id": "bio-choosing-a-test",
+ "renderer": "decision-tree",
+ "course": "biology",
+ "unit": "u14",
+ "lesson": "Statistical analysis",
+ "title": "Choosing a statistical test",
+ "caption": "Match the test to the data and the question. Counts in categories compared with expected counts: chi-squared. An association between two measured variables: correlation. Comparing group means: a t-test for two normally distributed groups, ANOVA for three or more, and Mann–Whitney U for two groups that are not normally distributed.",
+ "alt": "A flow chart from the kind of data and question to chi-squared, correlation, ANOVA, the Mann-Whitney U test or the t-test.",
+ "description": [
+  "Are the data measurements rather than counts in categories? If not, compare the observed and expected counts with a chi-squared test.",
+  "Are you comparing groups? If not, you are testing for an association between two variables: correlation (Pearson or Spearman).",
+  "Are there exactly two groups? If not, compare three or more means with ANOVA.",
+  "Are the data normally distributed? If so, use a t-test; if not, the Mann–Whitney U test."
+ ],
+ "also": [
+  {
+   "course": "biology",
+   "unit": "u01",
+   "lesson": "Graphs and data presentation"
+  }
+ ],
+ "start": "q1",
+ "nodes": {
+  "q1": {
+   "q": "Are the data measurements, not counts in categories?",
+   "yes": "q2",
+   "no": "chi"
+  },
+  "chi": {
+   "outcome": "Chi-squared test: observed against expected frequencies",
+   "tone": "neutral"
+  },
+  "q2": {
+   "q": "Are you comparing groups?",
+   "yes": "q3",
+   "no": "cor"
+  },
+  "cor": {
+   "outcome": "Correlation (Pearson or Spearman): association of two variables",
+   "tone": "neutral"
+  },
+  "q3": {
+   "q": "Are there exactly two groups?",
+   "yes": "q4",
+   "no": "anova"
+  },
+  "anova": {
+   "outcome": "ANOVA: means of three or more groups",
+   "tone": "neutral"
+  },
+  "q4": {
+   "q": "Are the data normally distributed?",
+   "yes": "ttest",
+   "no": "mwu"
+  },
+  "ttest": {
+   "outcome": "t-test: means of two groups",
+   "tone": "good"
+  },
+  "mwu": {
+   "outcome": "Mann–Whitney U: two groups, no normality assumed",
+   "tone": "neutral"
+  }
+ }
+}

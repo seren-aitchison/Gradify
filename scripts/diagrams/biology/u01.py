@@ -34,6 +34,7 @@ mk("u01-08", "bio-scientific-method", "flow", "The scientific method is a cycle"
    "Results feed back into new observations and questions, so investigation is a cycle rather than a straight line. Evidence can support a hypothesis but never prove it; one well-replicated contradictory result can refute it.",
    "Six boxes in a loop: observation, hypothesis, prediction, experiment, analysis and conclusion, communication, and back to observation.",
    [f"{a.capitalize()}: {b}." for a, b in STEPS] + ["Communication leads to new observations, closing the loop."],
+   also=("u14-01", "u14-02"),
    layout="cycle", radius=130,
    nodes=[{"id": f"s{i}", "label": a, "sub": b, "tone": "a1"} for i, (a, b) in enumerate(STEPS)],
    edges=[{"from": f"s{i}", "to": f"s{(i + 1) % len(STEPS)}"} for i in range(len(STEPS))])
@@ -62,7 +63,7 @@ mk("u01-14", "bio-scale-of-life", "trend", "The scale of life, on a logarithmic 
    "Bar chart on a logarithmic scale in micrometres: protein 0.01, virus 0.1, bacterium 2, red blood cell 8, plant cell 60, human egg 120.",
    ["A large protein such as an antibody, about 0.01 µm (10 nm).", "Virus (influenza), about 0.1 µm (100 nm).", "Bacterium (E. coli), about 2 µm.",
     "Red blood cell, about 8 µm.", "Plant leaf cell, about 60 µm.", "Human egg cell, about 120 µm, just visible to the eye."],
-   also=("u09-26",),
+   also=("u09-26", "u14-05"),
    kind="bars", log=True, range=[0.001, 1000], ticks=[0.001, 0.01, 0.1, 1, 10, 100, 1000], yLabel="typical size / µm (log scale)",
    items=[{"key": k, "value": v} for k, v in SIZES], highlight={"protein": "a5", "virus": "a5"},
    claims=[{"type": "increasing"}])

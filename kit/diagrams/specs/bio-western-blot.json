@@ -1,0 +1,93 @@
+{
+ "id": "bio-western-blot",
+ "renderer": "flow",
+ "course": "biology",
+ "unit": "u14",
+ "lesson": "Western blotting",
+ "title": "The steps of a Western blot",
+ "caption": "Proteins are separated by size on an SDS-PAGE gel, transferred to a membrane, and the membrane is blocked. A primary antibody binds the target and a labelled secondary antibody binds the primary; detection shows a band at the expected size, and a loading control such as actin checks that equal amounts were loaded.",
+ "alt": "Six boxes in order: SDS-PAGE, transfer, block, primary antibody, labelled secondary antibody and detection.",
+ "description": [
+  "SDS-PAGE: SDS coats proteins with negative charge, so they separate by size.",
+  "Transfer: proteins move from the gel to a membrane.",
+  "Block: stops antibodies sticking anywhere else.",
+  "Primary antibody: binds the target protein.",
+  "Labelled secondary antibody: binds the primary antibody.",
+  "Detect: a band at the expected size; a loading control checks equal loading."
+ ],
+ "layout": "grid",
+ "boxWidth": 122,
+ "rowHeight": 130,
+ "nodes": [
+  {
+   "id": "w0",
+   "label": "SDS-PAGE",
+   "sub": "SDS coats proteins with negative charge, so they separate by size",
+   "tone": "a1",
+   "col": 0,
+   "row": 0
+  },
+  {
+   "id": "w1",
+   "label": "transfer",
+   "sub": "proteins move from the gel to a membrane",
+   "tone": "a4",
+   "col": 1,
+   "row": 0
+  },
+  {
+   "id": "w2",
+   "label": "block",
+   "sub": "stops antibodies sticking anywhere else",
+   "tone": "a5",
+   "col": 2,
+   "row": 0
+  },
+  {
+   "id": "w3",
+   "label": "primary antibody",
+   "sub": "binds the target protein",
+   "tone": "a3",
+   "col": 2,
+   "row": 1
+  },
+  {
+   "id": "w4",
+   "label": "labelled secondary antibody",
+   "sub": "binds the primary antibody",
+   "tone": "a2",
+   "col": 1,
+   "row": 1
+  },
+  {
+   "id": "w5",
+   "label": "detect",
+   "sub": "a band at the expected size; a loading control checks equal loading",
+   "tone": "a1",
+   "col": 0,
+   "row": 1
+  }
+ ],
+ "edges": [
+  {
+   "from": "w0",
+   "to": "w1"
+  },
+  {
+   "from": "w1",
+   "to": "w2"
+  },
+  {
+   "from": "w2",
+   "to": "w3"
+  },
+  {
+   "from": "w3",
+   "to": "w4"
+  },
+  {
+   "from": "w4",
+   "to": "w5"
+  }
+ ]
+}

@@ -7,30 +7,30 @@
   "coursesWithPlan": 5,
   "lessons": 10112,
   "written": 9979,
-  "assessed": 887,
-  "plannedVisual": 616,
-  "plannedDiagram": 572,
-  "plannedLab": 95,
-  "excluded": 271,
-  "notAssessed": 9092,
-  "withDiagram": 580,
+  "assessed": 911,
+  "plannedVisual": 626,
+  "plannedDiagram": 582,
+  "plannedLab": 97,
+  "excluded": 285,
+  "notAssessed": 9068,
+  "withDiagram": 588,
   "withLab": 841,
   "withBoth": 160,
-  "withAny": 1261,
+  "withAny": 1269,
   "plannedNotDelivered": 0,
-  "placements": 602
+  "placements": 612
  },
  "diagrams": {
-  "manifest": 541,
-  "uniquePlaced": 541,
-  "placements": 602,
-  "reused": 57,
-  "byStatus": {"ai-reviewed":4,"approved":11,"validated":526},
-  "placedByStatus": {"ai-reviewed":4,"approved":11,"validated":526},
+  "manifest": 546,
+  "uniquePlaced": 546,
+  "placements": 612,
+  "reused": 60,
+  "byStatus": {"ai-reviewed":4,"approved":11,"validated":531},
+  "placedByStatus": {"ai-reviewed":4,"approved":11,"validated":531},
   "failing": [],
   "unplaced": []
  },
- "problems": [],
+ "problems": [{"kind":"diagram placed but not in the plan for its lesson","course":"biology","detail":"u01-17 Graphs and data presentation: bio-choosing-a-test"}],
  "sites": [
   {
    "name": "UnderGradify",
@@ -522,18 +522,18 @@
    "totals": {
     "lessons": 2159,
     "written": 2109,
-    "assessed": 796,
-    "plannedVisual": 532,
-    "plannedDiagram": 490,
-    "plannedLab": 93,
-    "excluded": 264,
-    "notAssessed": 1313,
-    "withDiagram": 496,
+    "assessed": 820,
+    "plannedVisual": 542,
+    "plannedDiagram": 500,
+    "plannedLab": 95,
+    "excluded": 278,
+    "notAssessed": 1289,
+    "withDiagram": 504,
     "withLab": 317,
     "withBoth": 159,
-    "withAny": 654,
+    "withAny": 662,
     "plannedNotDelivered": 0,
-    "placements": 514
+    "placements": 524
    }
   },
   {
@@ -1297,18 +1297,18 @@
    "totals": {
     "lessons": 391,
     "written": 391,
-    "assessed": 367,
-    "plannedVisual": 169,
-    "plannedDiagram": 127,
-    "plannedLab": 93,
-    "excluded": 198,
-    "notAssessed": 24,
-    "withDiagram": 130,
+    "assessed": 391,
+    "plannedVisual": 179,
+    "plannedDiagram": 137,
+    "plannedLab": 95,
+    "excluded": 212,
+    "notAssessed": 0,
+    "withDiagram": 138,
     "withLab": 95,
     "withBoth": 54,
-    "withAny": 171,
+    "withAny": 179,
     "plannedNotDelivered": 0,
-    "placements": 146
+    "placements": 156
    },
    "units": [
     {
@@ -1329,7 +1329,7 @@
       "withBoth": 2,
       "withAny": 10,
       "plannedNotDelivered": 0,
-      "placements": 7
+      "placements": 8
      },
      "lessons": [
       {"id":"u01-01","title":"What is biology?","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"an overview of the subject: no single picture carries it"}},
@@ -1411,7 +1411,14 @@
       {"id":"u01-14","title":"Biological measurements","written":true,"diagrams":[{"id":"bio-scale-of-life","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-scale-of-life"]}},
       {"id":"u01-15","title":"Units and conversions","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"the idea is a definition, method or argument that a picture would not teach"}},
       {"id":"u01-16","title":"Scientific notation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"the idea is a definition, method or argument that a picture would not teach"}},
-      {"id":"u01-17","title":"Graphs and data presentation","written":true,"diagrams":[{"id":"bio-which-graph","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-which-graph"]}},
+      {
+       "id": "u01-17",
+       "title": "Graphs and data presentation",
+       "written": true,
+       "diagrams": [{"id":"bio-choosing-a-test","status":"validated"},{"id":"bio-which-graph","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["bio-which-graph"]}
+      },
       {
        "id": "u01-18",
        "title": "Statistical foundations",
@@ -2890,51 +2897,107 @@
      "totals": {
       "lessons": 24,
       "written": 24,
-      "assessed": 0,
-      "plannedVisual": 0,
-      "plannedDiagram": 0,
-      "plannedLab": 0,
-      "excluded": 0,
-      "notAssessed": 24,
-      "withDiagram": 2,
+      "assessed": 24,
+      "plannedVisual": 10,
+      "plannedDiagram": 10,
+      "plannedLab": 2,
+      "excluded": 14,
+      "notAssessed": 0,
+      "withDiagram": 10,
       "withLab": 2,
       "withBoth": 2,
-      "withAny": 2,
+      "withAny": 10,
       "plannedNotDelivered": 0,
-      "placements": 3
+      "placements": 12
      },
      "lessons": [
-      {"id":"u14-01","title":"Experimental design","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-02","title":"Hypothesis development","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-03","title":"Controls","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-04","title":"Sampling","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-05","title":"Microscopy","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-06","title":"Histology","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-07","title":"Cell culture","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-08","title":"Molecular biology techniques","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
+      {
+       "id": "u14-01",
+       "title": "Experimental design",
+       "written": true,
+       "diagrams": [{"id":"bio-scientific-method","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["bio-scientific-method"]}
+      },
+      {
+       "id": "u14-02",
+       "title": "Hypothesis development",
+       "written": true,
+       "diagrams": [{"id":"bio-scientific-method","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["bio-scientific-method"]}
+      },
+      {
+       "id": "u14-03",
+       "title": "Controls",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"the types of control are a classification: carried in the text, with the PCR controls as the worked example"}
+      },
+      {"id":"u14-04","title":"Sampling","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"sampling strategies are a list: carried in the text"}},
+      {"id":"u14-05","title":"Microscopy","written":true,"diagrams":[{"id":"bio-scale-of-life","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-scale-of-life"]}},
+      {"id":"u14-06","title":"Histology","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"histology is a set of stains and sections: carried in the text"}},
+      {"id":"u14-07","title":"Cell culture","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"cell culture is a set of procedures: carried in the text"}},
+      {
+       "id": "u14-08",
+       "title": "Molecular biology techniques",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"molecular biology techniques are introduced here and drawn in the PCR, gel and blotting lessons"}
+      },
       {
        "id": "u14-09",
        "title": "PCR",
        "written": true,
-       "diagrams": [{"id":"bio-pcr-amplification","status":"validated"},{"id":"bio-pcr-cycle","status":"validated"}],
+       "diagrams": [{"id":"bio-pcr-cycle","status":"validated"},{"id":"bio-pcr-amplification","status":"validated"}],
        "labs": ["pcr"],
-       "plan": {"verdict":"not yet assessed"}
+       "plan": {"verdict":"diagram+lab","diagrams":["bio-pcr-cycle","bio-pcr-amplification"],"labs":["pcr"]}
       },
-      {"id":"u14-10","title":"Gel electrophoresis","written":true,"diagrams":[{"id":"bio-gel-calibration","status":"validated"}],"labs":["gel"],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-11","title":"Western blotting","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-12","title":"ELISA","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-13","title":"Chromatography","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-14","title":"Spectrophotometry","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-15","title":"Sequencing","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-16","title":"Flow cytometry","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-17","title":"Statistical analysis","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-18","title":"Data visualisation","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-19","title":"Research ethics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-20","title":"Scientific communication","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-21","title":"Literature reviews","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-22","title":"Reproducibility","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-23","title":"Research integrity","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}},
-      {"id":"u14-24","title":"Laboratory safety","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"not yet assessed"}}
+      {
+       "id": "u14-10",
+       "title": "Gel electrophoresis",
+       "written": true,
+       "diagrams": [{"id":"bio-gel-calibration","status":"validated"}],
+       "labs": ["gel"],
+       "plan": {"verdict":"diagram+lab","diagrams":["bio-gel-calibration"],"labs":["gel"]}
+      },
+      {"id":"u14-11","title":"Western blotting","written":true,"diagrams":[{"id":"bio-western-blot","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-western-blot"]}},
+      {
+       "id": "u14-12",
+       "title": "ELISA",
+       "written": true,
+       "diagrams": [{"id":"bio-sandwich-elisa","status":"validated"},{"id":"bio-beer-lambert","status":"validated"}],
+       "labs": [],
+       "plan": {"verdict":"diagram","diagrams":["bio-sandwich-elisa","bio-beer-lambert"]}
+      },
+      {"id":"u14-13","title":"Chromatography","written":true,"diagrams":[{"id":"bio-tlc-rf","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-tlc-rf"]}},
+      {"id":"u14-14","title":"Spectrophotometry","written":true,"diagrams":[{"id":"bio-beer-lambert","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-beer-lambert"]}},
+      {
+       "id": "u14-15",
+       "title": "Sequencing",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"sequencing is covered by the Sanger diagram and the sequencing lessons in the biotechnology unit"}
+      },
+      {"id":"u14-16","title":"Flow cytometry","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"flow cytometry needs a dot-plot drawing, not yet built"}},
+      {"id":"u14-17","title":"Statistical analysis","written":true,"diagrams":[{"id":"bio-choosing-a-test","status":"validated"}],"labs":[],"plan":{"verdict":"diagram","diagrams":["bio-choosing-a-test"]}},
+      {
+       "id": "u14-18",
+       "title": "Data visualisation",
+       "written": true,
+       "diagrams": [],
+       "labs": [],
+       "plan": {"verdict":"none","reason":"data visualisation is a set of principles, shown by the graphs throughout the course"}
+      },
+      {"id":"u14-19","title":"Research ethics","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"research ethics is an argument: carried in the text"}},
+      {"id":"u14-20","title":"Scientific communication","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"scientific communication is a set of practices: carried in the text"}},
+      {"id":"u14-21","title":"Literature reviews","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"literature reviews are a method described in words"}},
+      {"id":"u14-22","title":"Reproducibility","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"reproducibility is a set of practices: carried in the text"}},
+      {"id":"u14-23","title":"Research integrity","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"research integrity is an argument: carried in the text"}},
+      {"id":"u14-24","title":"Laboratory safety","written":true,"diagrams":[],"labs":[],"plan":{"verdict":"none","reason":"laboratory safety is a set of rules: carried in the text"}}
      ]
     }
    ]

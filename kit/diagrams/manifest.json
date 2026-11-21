@@ -29847,6 +29847,11 @@
     "course": "biology",
     "unit": "u09",
     "lesson": "Microscopy"
+   },
+   {
+    "course": "biology",
+    "unit": "u14",
+    "lesson": "Microscopy"
    }
   ],
   "renderer": "trend",
@@ -29866,6 +29871,11 @@
     "name": "also placed in biology: Microscopy",
     "ok": true,
     "detail": "kit/courses/biology/notes/u09.js"
+   },
+   {
+    "name": "also placed in biology: Microscopy",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u14.js"
    },
    {
     "name": "has alt text, a caption and a step-by-step description",
@@ -29898,7 +29908,18 @@
   ],
   "course": "biology",
   "lesson": "Scientific method",
-  "also": [],
+  "also": [
+   {
+    "course": "biology",
+    "unit": "u14",
+    "lesson": "Experimental design"
+   },
+   {
+    "course": "biology",
+    "unit": "u14",
+    "lesson": "Hypothesis development"
+   }
+  ],
   "renderer": "flow",
   "status": "validated",
   "review": null,
@@ -29911,6 +29932,16 @@
    {
     "name": "the lesson places this diagram (D: line)",
     "ok": true
+   },
+   {
+    "name": "also placed in biology: Experimental design",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u14.js"
+   },
+   {
+    "name": "also placed in biology: Hypothesis development",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u14.js"
    },
    {
     "name": "has alt text, a caption and a step-by-step description",
@@ -32141,6 +32172,292 @@
     "name": "the lesson exists",
     "ok": true,
     "detail": "kit/courses/biology/notes/u13.js: RNA sequencing"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every step is linked: no box without an arrow",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-beer-lambert": {
+  "title": "Absorbance and concentration: the Beer–Lambert law",
+  "caption": "A = εcl: for a fixed path length and wavelength, absorbance is proportional to concentration, so standards of known concentration give a straight calibration line from which an unknown can be read. At high concentrations the real curve flattens below the line, so samples must be diluted into the linear range. Idealised numbers.",
+  "alt": "A dashed straight line of absorbance rising by 0.15 per concentration unit, and a solid curve that follows it at first and then flattens; an unknown absorbance of 0.6 is read off the straight line as a concentration of 4.",
+  "description": [
+   "Absorbance is proportional to concentration over a working range: the straight line.",
+   "Standards of known concentration make the calibration curve.",
+   "An unknown with absorbance 0.6 has concentration 4 on this line.",
+   "At high concentration the real curve falls below the line, so the relationship is no longer proportional: dilute the sample."
+  ],
+  "course": "biology",
+  "lesson": "Spectrophotometry",
+  "also": [
+   {
+    "course": "biology",
+    "unit": "u14",
+    "lesson": "ELISA"
+   }
+  ],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u14.js: Spectrophotometry"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in biology: ELISA",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u14.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "A = εcl: absorbance rises by the same amount for each unit of concentration (0.15)",
+    "ok": true,
+    "detail": "gradient 0.1500"
+   },
+   {
+    "name": "at low concentration the real curve has the same gradient: it is linear in the working range",
+    "ok": true,
+    "detail": "gradient 0.1500"
+   },
+   {
+    "name": "an unknown with absorbance 0.6 has concentration 4 on the calibration line",
+    "ok": true,
+    "detail": "y(4) = 0.6"
+   },
+   {
+    "name": "at concentration 4 the real curve is within about 15% of the line",
+    "ok": true,
+    "detail": "1.5*(1-exp(-0.1*x)) at 4 = 0.49; expected 0.48–0.52"
+   },
+   {
+    "name": "at high concentration the real absorbance (about 1.4) is far below the line's 4.2: dilute the sample",
+    "ok": true,
+    "detail": "1.5*(1-exp(-0.1*x)) at 28 = 1.41; expected 1.3–1.5"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "bio-choosing-a-test": {
+  "title": "Choosing a statistical test",
+  "caption": "Match the test to the data and the question. Counts in categories compared with expected counts: chi-squared. An association between two measured variables: correlation. Comparing group means: a t-test for two normally distributed groups, ANOVA for three or more, and Mann–Whitney U for two groups that are not normally distributed.",
+  "alt": "A flow chart from the kind of data and question to chi-squared, correlation, ANOVA, the Mann-Whitney U test or the t-test.",
+  "description": [
+   "Are the data measurements rather than counts in categories? If not, compare the observed and expected counts with a chi-squared test.",
+   "Are you comparing groups? If not, you are testing for an association between two variables: correlation (Pearson or Spearman).",
+   "Are there exactly two groups? If not, compare three or more means with ANOVA.",
+   "Are the data normally distributed? If so, use a t-test; if not, the Mann–Whitney U test."
+  ],
+  "course": "biology",
+  "lesson": "Statistical analysis",
+  "also": [
+   {
+    "course": "biology",
+    "unit": "u01",
+    "lesson": "Graphs and data presentation"
+   }
+  ],
+  "renderer": "decision-tree",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u14.js: Statistical analysis"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "also placed in biology: Graphs and data presentation",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u01.js"
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every path ends in an outcome",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "no unreachable nodes",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every authority cited on the diagram is in the lesson",
+    "ok": true,
+    "detail": "0 citations found in the lesson text"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "760px wide, shown at 93% (labels 14.0px)"
+   }
+  ]
+ },
+ "bio-sandwich-elisa": {
+  "title": "A sandwich ELISA",
+  "caption": "A capture antibody on the plate binds the antigen from the sample, a second, enzyme-labelled antibody binds it from above, and washing removes everything unbound between steps. The enzyme turns a substrate into a coloured product whose absorbance, read against a standard curve, gives the concentration.",
+  "alt": "Five boxes in order: coat the plate with capture antibody, add the sample, add the enzyme-labelled detection antibody, add the substrate, and read the absorbance.",
+  "description": [
+   "Coat the plate: a capture antibody sticks to the wells.",
+   "Add the sample: the antigen binds the capture antibody; wash.",
+   "Add the detection antibody: an enzyme-labelled antibody binds the antigen; wash.",
+   "Add the substrate: the enzyme turns it into a coloured product.",
+   "Read the absorbance: a plate reader; unknowns are read off a standard curve."
+  ],
+  "course": "biology",
+  "lesson": "ELISA",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u14.js: ELISA"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every step is linked: no box without an arrow",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-tlc-rf": {
+  "title": "Thin-layer chromatography and Rf values",
+  "caption": "Components separate by how strongly they are held by the stationary phase and carried by the mobile phase. Rf is the distance a spot moved divided by the distance the solvent front moved, always between 0 and 1, and characteristic for a substance under stated conditions. Pigment values here are illustrative.",
+  "alt": "A thin-layer plate with the origin at the bottom and a solvent front 80 millimetres above it, with three pigment spots at 72, 40 and 32 millimetres, giving Rf values of 0.90, 0.50 and 0.40.",
+  "description": [
+   "The solvent front moved 80 mm.",
+   "Carotene moved 72 mm: Rf = 72 ÷ 80 = 0.90.",
+   "Chlorophyll a moved 40 mm: Rf = 0.50.",
+   "Chlorophyll b moved 32 mm: Rf = 0.40.",
+   "The Rf value depends on the solvent and the plate, so conditions must be stated."
+  ],
+  "course": "biology",
+  "lesson": "Chromatography",
+  "also": [],
+  "renderer": "tlc",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u14.js: Chromatography"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the solvent front is beyond every spot, and every spot is beyond the origin",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every Rf value lies between 0 and 1",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "carotene has Rf 0.9",
+    "ok": true,
+    "detail": "72 ÷ 80 = 0.900"
+   },
+   {
+    "name": "chlorophyll a has Rf 0.5",
+    "ok": true,
+    "detail": "40 ÷ 80 = 0.500"
+   },
+   {
+    "name": "chlorophyll b has Rf 0.4",
+    "ok": true,
+    "detail": "32 ÷ 80 = 0.400"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "620px wide, shown at 114% (labels 17.1px)"
+   }
+  ]
+ },
+ "bio-western-blot": {
+  "title": "The steps of a Western blot",
+  "caption": "Proteins are separated by size on an SDS-PAGE gel, transferred to a membrane, and the membrane is blocked. A primary antibody binds the target and a labelled secondary antibody binds the primary; detection shows a band at the expected size, and a loading control such as actin checks that equal amounts were loaded.",
+  "alt": "Six boxes in order: SDS-PAGE, transfer, block, primary antibody, labelled secondary antibody and detection.",
+  "description": [
+   "SDS-PAGE: SDS coats proteins with negative charge, so they separate by size.",
+   "Transfer: proteins move from the gel to a membrane.",
+   "Block: stops antibodies sticking anywhere else.",
+   "Primary antibody: binds the target protein.",
+   "Labelled secondary antibody: binds the primary antibody.",
+   "Detect: a band at the expected size; a loading control checks equal loading."
+  ],
+  "course": "biology",
+  "lesson": "Western blotting",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u14.js: Western blotting"
    },
    {
     "name": "the lesson places this diagram (D: line)",

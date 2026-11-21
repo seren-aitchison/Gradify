@@ -1,0 +1,80 @@
+{
+ "id": "bio-sandwich-elisa",
+ "renderer": "flow",
+ "course": "biology",
+ "unit": "u14",
+ "lesson": "ELISA",
+ "title": "A sandwich ELISA",
+ "caption": "A capture antibody on the plate binds the antigen from the sample, a second, enzyme-labelled antibody binds it from above, and washing removes everything unbound between steps. The enzyme turns a substrate into a coloured product whose absorbance, read against a standard curve, gives the concentration.",
+ "alt": "Five boxes in order: coat the plate with capture antibody, add the sample, add the enzyme-labelled detection antibody, add the substrate, and read the absorbance.",
+ "description": [
+  "Coat the plate: a capture antibody sticks to the wells.",
+  "Add the sample: the antigen binds the capture antibody; wash.",
+  "Add the detection antibody: an enzyme-labelled antibody binds the antigen; wash.",
+  "Add the substrate: the enzyme turns it into a coloured product.",
+  "Read the absorbance: a plate reader; unknowns are read off a standard curve."
+ ],
+ "layout": "grid",
+ "boxWidth": 122,
+ "rowHeight": 130,
+ "nodes": [
+  {
+   "id": "e0",
+   "label": "coat the plate",
+   "sub": "a capture antibody sticks to the wells",
+   "tone": "a1",
+   "col": 0,
+   "row": 0
+  },
+  {
+   "id": "e1",
+   "label": "add the sample",
+   "sub": "the antigen binds the capture antibody; wash",
+   "tone": "a4",
+   "col": 1,
+   "row": 0
+  },
+  {
+   "id": "e2",
+   "label": "add the detection antibody",
+   "sub": "an enzyme-labelled antibody binds the antigen; wash",
+   "tone": "a5",
+   "col": 2,
+   "row": 0
+  },
+  {
+   "id": "e3",
+   "label": "add the substrate",
+   "sub": "the enzyme turns it into a coloured product",
+   "tone": "a3",
+   "col": 2,
+   "row": 1
+  },
+  {
+   "id": "e4",
+   "label": "read the absorbance",
+   "sub": "a plate reader; unknowns are read off a standard curve",
+   "tone": "a2",
+   "col": 1,
+   "row": 1
+  }
+ ],
+ "edges": [
+  {
+   "from": "e0",
+   "to": "e1"
+  },
+  {
+   "from": "e1",
+   "to": "e2"
+  },
+  {
+   "from": "e2",
+   "to": "e3"
+  },
+  {
+   "from": "e3",
+   "to": "e4"
+  }
+ ]
+}

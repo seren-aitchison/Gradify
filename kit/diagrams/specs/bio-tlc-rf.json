@@ -1,0 +1,53 @@
+{
+ "id": "bio-tlc-rf",
+ "renderer": "tlc",
+ "course": "biology",
+ "unit": "u14",
+ "lesson": "Chromatography",
+ "title": "Thin-layer chromatography and Rf values",
+ "caption": "Components separate by how strongly they are held by the stationary phase and carried by the mobile phase. Rf is the distance a spot moved divided by the distance the solvent front moved, always between 0 and 1, and characteristic for a substance under stated conditions. Pigment values here are illustrative.",
+ "alt": "A thin-layer plate with the origin at the bottom and a solvent front 80 millimetres above it, with three pigment spots at 72, 40 and 32 millimetres, giving Rf values of 0.90, 0.50 and 0.40.",
+ "description": [
+  "The solvent front moved 80 mm.",
+  "Carotene moved 72 mm: Rf = 72 ÷ 80 = 0.90.",
+  "Chlorophyll a moved 40 mm: Rf = 0.50.",
+  "Chlorophyll b moved 32 mm: Rf = 0.40.",
+  "The Rf value depends on the solvent and the plate, so conditions must be stated."
+ ],
+ "origin": 0,
+ "front": 80,
+ "spots": [
+  {
+   "label": "carotene",
+   "d": 72,
+   "colour": "a3"
+  },
+  {
+   "label": "chlorophyll a",
+   "d": 40,
+   "colour": "good"
+  },
+  {
+   "label": "chlorophyll b",
+   "d": 32,
+   "colour": "a4"
+  }
+ ],
+ "claims": [
+  {
+   "type": "rf",
+   "spot": "carotene",
+   "value": 0.9
+  },
+  {
+   "type": "rf",
+   "spot": "chlorophyll a",
+   "value": 0.5
+  },
+  {
+   "type": "rf",
+   "spot": "chlorophyll b",
+   "value": 0.4
+  }
+ ]
+}

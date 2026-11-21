@@ -3,7 +3,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { render } from "../kit/diagrams/renderers.js";
-import { gametes, crossOf, translate, transcribe, complement, mutationKind, pedigreeFits, osmoticOutcome, chargeOf, codonCount, bandFractions, chromatidsAfter, divide, wrightFisher, bandsOf, cutDna, sangerFragments, needlemanScore, scoreAlignment } from "../kit/diagrams/bio-renderers.js";
+import { gametes, crossOf, translate, transcribe, complement, mutationKind, pedigreeFits, osmoticOutcome, chargeOf, codonCount, bandFractions, chromatidsAfter, divide, wrightFisher, bandsOf, cutDna, sangerFragments, needlemanScore, scoreAlignment, rfOf } from "../kit/diagrams/bio-renderers.js";
 import "../kit/diagrams/chem-renderers-3.js"; // the shared flow renderer, which route and lineage draw with
 
 const mono = { alleles: ["T", "t"], dominance: { kind: "complete", dominant: "T", traits: ["tall", "short"] } };
@@ -292,4 +292,12 @@ test("alignment: the drawn alignment must score the dynamic-programming optimum"
   const pair = (a1, a2) => ({ seq1: "GATTACA", seq2: "GATACA", aligned1: a1, aligned2: a2, label: "x" });
   assert.equal(allPass({ renderer: "align", alt: "x", scoring: sc, pairs: [pair("GATTACA", "GA-TACA")] }), true);
   assert.equal(allPass({ renderer: "align", alt: "x", scoring: sc, pairs: [pair("GATTACA-", "GA-TAC-A")] }), false); // two gaps score worse than the optimum, and the second is not even a valid alignment
+});
+
+test("chromatography: Rf is the spot's distance over the solvent front's, and lies between 0 and 1", () => {
+  assert.equal(rfOf(72, 80), 0.9);
+  const spec = { renderer: "tlc", alt: "x", origin: 0, front: 80, spots: [{ label: "a", d: 72 }, { label: "b", d: 32 }], claims: [{ type: "rf", spot: "a", value: 0.9 }, { type: "rf", spot: "b", value: 0.4 }] };
+  assert.equal(allPass(spec), true);
+  assert.equal(allPass({ ...spec, claims: [{ type: "rf", spot: "b", value: 0.5 }] }), false); // 32 ÷ 80 is 0.4
+  assert.equal(allPass({ ...spec, spots: [{ label: "a", d: 90 }] }), false); // a spot beyond the solvent front
 });

@@ -16,6 +16,18 @@
   "Communication: peer review, repeats.",
   "Communication leads to new observations, closing the loop."
  ],
+ "also": [
+  {
+   "course": "biology",
+   "unit": "u14",
+   "lesson": "Experimental design"
+  },
+  {
+   "course": "biology",
+   "unit": "u14",
+   "lesson": "Hypothesis development"
+  }
+ ],
  "layout": "cycle",
  "radius": 130,
  "nodes": [

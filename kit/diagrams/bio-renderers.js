@@ -18,6 +18,7 @@
 //   ploidy     mitosis and meiosis from one parent cell: the chromosomes in every product are worked out
 //   germlayers the three germ layers and what each becomes, each tissue checked against the layer it comes from
 //   drift      genetic drift from a seeded Wright–Fisher simulation, its spread checked against theory
+//   tlc        a chromatography plate: Rf = distance of the spot ÷ distance of the solvent front, recomputed
 //   align      a pairwise alignment: its score is recomputed and must be the best dynamic programming finds
 //   restriction a restriction enzyme cutting and ligase joining: sites, fragments, sticky ends and the restored site checked
 //   sanger     chain-termination sequencing: a fragment of every length, read back into the sequence
@@ -1400,6 +1401,35 @@ function alignChecks(spec) {
   return out;
 }
 
+// ======================================================================== tlc
+// A chromatography plate: Rf = distance moved by the spot ÷ distance moved by the solvent front, recomputed here.
+// spec: origin: 0, front: distance of the solvent front in mm, spots: [{label, d, colour}] (mm from the origin),
+//   claims: [{type: "rf", spot, value, tol}]
+export const rfOf = (d, front) => d / front;
+function tlcDraw(spec, W, narrow) {
+  const ph = 300, pw = narrow ? 80 : 110, x0 = narrow ? 88 : 110, top = 24, k = (ph - 40) / spec.front;
+  const yAt = (d) => top + 20 + (spec.front - d) * k;
+  let s = rect(x0, top, pw, ph, { fill: C.panel, op: 1, stroke: C.line, sw: 2, rx: 4 });
+  s += line(x0 + 6, yAt(0), x0 + pw - 6, yAt(0), { stroke: C.ink, w: 1.6 }) + text(x0 - 6, yAt(0), "origin", { size: 11.5, anchor: "end", fill: C.soft });
+  s += line(x0 + 6, yAt(spec.front), x0 + pw - 6, yAt(spec.front), { stroke: C.ink, w: 1.6, dash: "5 4" }) + text(x0 - 6, yAt(spec.front), "solvent front", { size: 11.5, anchor: "end", fill: C.soft });
+  const tx = x0 + pw + 22;
+  s += arrow(tx - 8, yAt(0), tx - 8, yAt(spec.front), { w: 1.6, head: 8, stroke: C.soft }) + text(tx + 4, yAt(spec.front * 0.7), `front: ${spec.front} mm`, { size: 11, anchor: "start", fill: C.soft });
+  spec.spots.forEach((p, i) => {
+    const y = yAt(p.d), rf = rfOf(p.d, spec.front);
+    s += `<ellipse cx="${f1(x0 + pw / 2)}" cy="${f1(y)}" rx="${narrow ? 15 : 18}" ry="7" fill="${C[p.colour || "a4"]}" fill-opacity=".75"/>`;
+    s += line(x0 + pw / 2 + 20, y, tx, y, { stroke: C.soft, w: 1 }) + text(tx + 4, y + (i % 2 ? 9 : -2), `${p.label}: ${p.d} mm, Rf ${rf.toFixed(2)}`, { size: 12, anchor: "start", weight: 600 });
+  });
+  const note = textBlock(W / 2, 0, "Rf = distance moved by the spot ÷ distance moved by the solvent front", Math.floor((W - 20) / 6.3), { size: 11.5, fill: C.soft });
+  s += `<g transform="translate(0 ${f1(top + ph + 24 + ((note.lines - 1) * 14.7) / 2)})">${note.svg}</g>`;
+  return { s, H: top + ph + 36 + note.lines * 15 };
+}
+function tlcChecks(spec) {
+  const out = [check("the solvent front is beyond every spot, and every spot is beyond the origin", spec.spots.every((p) => p.d > 0 && p.d < spec.front))];
+  out.push(check("every Rf value lies between 0 and 1", spec.spots.every((p) => rfOf(p.d, spec.front) > 0 && rfOf(p.d, spec.front) < 1)));
+  for (const c of spec.claims || []) if (c.type === "rf") { const p = spec.spots.find((q) => q.label === c.spot); if (!p) { out.push(check(`${c.spot} is on the plate`, false)); continue; } const v = rfOf(p.d, spec.front); out.push(check(`${c.spot} has Rf ${c.value}`, Math.abs(v - c.value) <= (c.tol ?? 0.005), `${p.d} ÷ ${spec.front} = ${v.toFixed(3)}`)); }
+  return out;
+}
+
 register({
   cross: { draw: crossDraw, checks: crossChecks, widths: [600, 380] },
   strand: { draw: strandDraw, checks: strandChecks, widths: [760, 380] },
@@ -1418,6 +1448,7 @@ register({
   germlayers: { draw: layersDraw, checks: layersChecks, widths: [700, 380] },
   drift: { draw: driftDraw, checks: driftChecks, widths: [700, 380] },
   cladogram: { draw: cladogramDraw, checks: cladogramChecks, widths: [620, 380] },
+  tlc: { draw: tlcDraw, checks: tlcChecks, widths: [620, 380] },
   align: { draw: alignDraw, checks: alignChecks, widths: [560, 380] },
   restriction: { draw: restrictionDraw, checks: restrictionChecks, widths: [700, 380] },
   sanger: { draw: sangerDraw, checks: sangerChecks, widths: [660, 380] },
