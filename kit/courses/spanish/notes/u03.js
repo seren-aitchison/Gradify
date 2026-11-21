@@ -361,7 +361,7 @@ SA3#spanish-u03-08-q5@1,2,3: Describe your diet in four sentences, with an opini
 Q: Name the four meals of the day in Spain. | *El desayuno*, *la comida*, *la merienda* and *la cena*.
 Q: What are *la comida* and *la merienda*? | *La comida* is lunch, the main meal in Spain; *la merienda* is an afternoon snack, often around 5 to 6 pm.
 Q: How do *pez* and *pescado* differ? | *Pez* is a live fish; *pescado* is fish as food.
-Q: Why is *Para el desayuno* with *pez* wrong for a fish dish on your plate? | You eat *pescado*; *pez* is the living animal.
+Q: What do *los mariscos* and *el zumo* mean? | *Los mariscos* is seafood and *el zumo* is juice (Spain).
 Q: How do you say *To have a healthy diet, you have to eat lots of fruit and vegetables*? | *Para llevar una dieta sana, hay que comer mucha fruta y verdura*.
 Q: How do you say *I avoid junk food* and *I'm allergic to nuts*? | *Evito la comida basura* and *Soy alérgico/a a los frutos secos*.
 Q: What is the Mediterranean diet, and what recognition did it receive? | A diet rich in olive oil, vegetables, pulses, fish and fruit, added to UNESCO's Intangible Cultural Heritage list in 2010.
@@ -506,7 +506,7 @@ Q: What do *este* and *aquel* express in time? | *Este* refers to the present (*
 Q: How do demonstratives work as pronouns? | They keep the same form without a noun: *Prefiero este*.
 Q: What did the 2010 Ortografía decide about accents on demonstrative pronouns? | They are written without an accent even as pronouns.
 Q: When are *esto*, *eso* and *aquello* used? | For an idea, a situation or an unidentified thing, never a specific noun: *¿Qué es esto?*.
-Q: What does *esto es* with *eso* mean in the phrase *Por eso*, and where is *eso* otherwise used? | *Por eso* means that's why; *eso* is a neuter form, as in *Eso es verdad* (That's true).
+Q: What does *Eso es verdad* mean, and why is *eso* used? | It means that's true; *eso* is a neuter form referring to an idea or situation, not a specific noun.
 Q: Why does *Este es importante* not mean *This is important* about a situation? | It means *this one* (a masculine noun) is important. For a situation, use *Esto es importante*.
 Q: What is happening to *aquel* in everyday speech in many regions? | It is giving way to *ese* for distant things.
 
