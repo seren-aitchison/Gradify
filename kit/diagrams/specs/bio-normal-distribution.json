@@ -1,0 +1,120 @@
+{
+ "id": "bio-normal-distribution",
+ "renderer": "graph",
+ "course": "biology",
+ "unit": "u01",
+ "lesson": "Statistical foundations",
+ "title": "The normal distribution",
+ "caption": "Heights of adult women follow a bell-shaped curve, here with mean 163 cm and standard deviation 7 cm. About 68% of values lie within one standard deviation of the mean (156–170 cm) and about 95% within two (149–177 cm).",
+ "alt": "A bell curve centred on 163 centimetres with the region from 156 to 170 shaded darker and 149 to 177 shaded lighter.",
+ "description": [
+  "The horizontal axis is height in centimetres, from 135 to 191.",
+  "The curve peaks at the mean, 163 cm, and is symmetrical.",
+  "The darker band, 156 to 170 cm (mean ± 1 standard deviation), holds about 68% of the area.",
+  "The lighter band, 149 to 177 cm (± 2 standard deviations), holds about 95%."
+ ],
+ "range": {
+  "x": [
+   135,
+   191
+  ],
+  "y": [
+   0,
+   0.068
+  ]
+ },
+ "ticks": [
+  [
+   142,
+   149,
+   156,
+   163,
+   170,
+   177,
+   184
+  ],
+  [
+   0.02,
+   0.04,
+   0.06
+  ]
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "height / cm",
+  "probability density"
+ ],
+ "areas": [
+  {
+   "expr": "exp(-(x-163)^2/98)/(7*sqrt(2*3.14159265))",
+   "from": 149,
+   "to": 177,
+   "colour": "a1",
+   "opacity": 0.14
+  },
+  {
+   "expr": "exp(-(x-163)^2/98)/(7*sqrt(2*3.14159265))",
+   "from": 156,
+   "to": 170,
+   "colour": "a1",
+   "opacity": 0.26
+  }
+ ],
+ "curves": [
+  {
+   "expr": "exp(-(x-163)^2/98)/(7*sqrt(2*3.14159265))",
+   "colour": "a1"
+  }
+ ],
+ "marks": [
+  {
+   "x": 163,
+   "to": 0.057,
+   "label": "mean"
+  }
+ ],
+ "checks": [
+  {
+   "type": "area",
+   "expr": "exp(-(x-163)^2/98)/(7*sqrt(2*3.14159265))",
+   "from": 156,
+   "to": 170,
+   "value": 0.6827,
+   "tol": 0.002,
+   "name": "about 68% of values lie within one standard deviation"
+  },
+  {
+   "type": "area",
+   "expr": "exp(-(x-163)^2/98)/(7*sqrt(2*3.14159265))",
+   "from": 149,
+   "to": 177,
+   "value": 0.9545,
+   "tol": 0.002,
+   "name": "about 95% lie within two standard deviations"
+  },
+  {
+   "type": "area",
+   "expr": "exp(-(x-163)^2/98)/(7*sqrt(2*3.14159265))",
+   "from": 100,
+   "to": 226,
+   "value": 1,
+   "tol": 0.001,
+   "name": "the whole curve has area 1"
+  },
+  {
+   "type": "max",
+   "expr": "exp(-(x-163)^2/98)/(7*sqrt(2*3.14159265))",
+   "domain": [
+    135,
+    191
+   ],
+   "x": 163,
+   "y": 0.05699,
+   "name": "the peak is at the mean, 163 cm"
+  }
+ ]
+}

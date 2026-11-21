@@ -1,0 +1,69 @@
+{
+ "id": "bio-scale-of-life",
+ "renderer": "trend",
+ "course": "biology",
+ "unit": "u01",
+ "lesson": "Biological measurements",
+ "title": "The scale of life, on a logarithmic axis",
+ "caption": "Each step up the axis is ten times larger. A large protein (about 10 nm) and a virus (about 100 nm) are below the 0.2 µm limit of a light microscope; bacteria (1–5 µm) and eukaryotic cells (10–100 µm) can be seen with one.",
+ "alt": "Bar chart on a logarithmic scale in micrometres: protein 0.01, virus 0.1, bacterium 2, red blood cell 8, plant cell 60, human egg 120.",
+ "description": [
+  "A large protein such as an antibody, about 0.01 µm (10 nm).",
+  "Virus (influenza), about 0.1 µm (100 nm).",
+  "Bacterium (E. coli), about 2 µm.",
+  "Red blood cell, about 8 µm.",
+  "Plant leaf cell, about 60 µm.",
+  "Human egg cell, about 120 µm, just visible to the eye."
+ ],
+ "kind": "bars",
+ "log": true,
+ "range": [
+  0.001,
+  1000
+ ],
+ "ticks": [
+  0.001,
+  0.01,
+  0.1,
+  1,
+  10,
+  100,
+  1000
+ ],
+ "yLabel": "typical size / µm (log scale)",
+ "items": [
+  {
+   "key": "protein",
+   "value": 0.01
+  },
+  {
+   "key": "virus",
+   "value": 0.1
+  },
+  {
+   "key": "E. coli",
+   "value": 2
+  },
+  {
+   "key": "red cell",
+   "value": 8
+  },
+  {
+   "key": "leaf cell",
+   "value": 60
+  },
+  {
+   "key": "egg",
+   "value": 120
+  }
+ ],
+ "highlight": {
+  "protein": "a5",
+  "virus": "a5"
+ },
+ "claims": [
+  {
+   "type": "increasing"
+  }
+ ]
+}

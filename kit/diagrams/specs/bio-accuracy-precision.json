@@ -1,0 +1,218 @@
+{
+ "id": "bio-accuracy-precision",
+ "renderer": "graph",
+ "course": "biology",
+ "unit": "u01",
+ "lesson": "Accuracy and precision",
+ "title": "Accurate, precise, both or neither",
+ "caption": "Four students each measure the same 50.0 µm interval five times. A and C are accurate (their means are close to 50.0); A and B are precise (their repeats agree). B's tight cluster sits too high, the mark of a systematic error such as an uncalibrated graticule.",
+ "alt": "Dot plot of five repeat measurements by each of four students against a dashed true value of 50.0 micrometres.",
+ "description": [
+  "A: values 49.9 to 50.2, mean 50.0: accurate and precise.",
+  "B: values 52.3 to 52.6, mean 52.5: precise but not accurate (systematic error).",
+  "C: values 48.6 to 51.5, mean 50.1: accurate on average but not precise (random error).",
+  "D: values 50.6 to 55.0, mean 53.1: neither."
+ ],
+ "range": {
+  "x": [
+   0.4,
+   4.6
+  ],
+  "y": [
+   47,
+   56
+  ]
+ },
+ "ticks": [
+  [],
+  [
+   48,
+   50,
+   52,
+   54,
+   56
+  ]
+ ],
+ "height": [
+  340,
+  320
+ ],
+ "xLabelBelow": true,
+ "axisLabels": [
+  "student A, B, C, D",
+  "measured length / µm (dashed: true value 50.0)"
+ ],
+ "points": [
+  {
+   "x": 0.84,
+   "y": 50.1,
+   "colour": "a4"
+  },
+  {
+   "x": 0.92,
+   "y": 49.9,
+   "colour": "a4"
+  },
+  {
+   "x": 1.0,
+   "y": 50.0,
+   "colour": "a4"
+  },
+  {
+   "x": 1.08,
+   "y": 50.2,
+   "colour": "a4"
+  },
+  {
+   "x": 1.16,
+   "y": 49.9,
+   "colour": "a4"
+  },
+  {
+   "x": 1.84,
+   "y": 52.4,
+   "colour": "a1"
+  },
+  {
+   "x": 1.92,
+   "y": 52.6,
+   "colour": "a1"
+  },
+  {
+   "x": 2.0,
+   "y": 52.5,
+   "colour": "a1"
+  },
+  {
+   "x": 2.08,
+   "y": 52.3,
+   "colour": "a1"
+  },
+  {
+   "x": 2.16,
+   "y": 52.5,
+   "colour": "a1"
+  },
+  {
+   "x": 2.84,
+   "y": 48.6,
+   "colour": "a3"
+  },
+  {
+   "x": 2.92,
+   "y": 51.5,
+   "colour": "a3"
+  },
+  {
+   "x": 3.0,
+   "y": 49.2,
+   "colour": "a3"
+  },
+  {
+   "x": 3.08,
+   "y": 51.0,
+   "colour": "a3"
+  },
+  {
+   "x": 3.16,
+   "y": 50.1,
+   "colour": "a3"
+  },
+  {
+   "x": 3.84,
+   "y": 53.8,
+   "colour": "a2"
+  },
+  {
+   "x": 3.92,
+   "y": 50.6,
+   "colour": "a2"
+  },
+  {
+   "x": 4.0,
+   "y": 55.0,
+   "colour": "a2"
+  },
+  {
+   "x": 4.08,
+   "y": 51.9,
+   "colour": "a2"
+  },
+  {
+   "x": 4.16,
+   "y": 54.4,
+   "colour": "a2"
+  }
+ ],
+ "marks": [
+  {
+   "y": 50.0
+  }
+ ],
+ "checks": [
+  {
+   "type": "stats",
+   "values": [
+    50.1,
+    49.9,
+    50.0,
+    50.2,
+    49.9
+   ],
+   "truth": 50.0,
+   "tolMean": 0.5,
+   "tolSd": 0.3,
+   "accurate": true,
+   "precise": true,
+   "name": "student A: accurate and precise"
+  },
+  {
+   "type": "stats",
+   "values": [
+    52.4,
+    52.6,
+    52.5,
+    52.3,
+    52.5
+   ],
+   "truth": 50.0,
+   "tolMean": 0.5,
+   "tolSd": 0.3,
+   "accurate": false,
+   "precise": true,
+   "name": "student B: not accurate and precise"
+  },
+  {
+   "type": "stats",
+   "values": [
+    48.6,
+    51.5,
+    49.2,
+    51.0,
+    50.1
+   ],
+   "truth": 50.0,
+   "tolMean": 0.5,
+   "tolSd": 0.3,
+   "accurate": true,
+   "precise": false,
+   "name": "student C: accurate and not precise"
+  },
+  {
+   "type": "stats",
+   "values": [
+    53.8,
+    50.6,
+    55.0,
+    51.9,
+    54.4
+   ],
+   "truth": 50.0,
+   "tolMean": 0.5,
+   "tolSd": 0.3,
+   "accurate": false,
+   "precise": false,
+   "name": "student D: not accurate and not precise"
+  }
+ ]
+}

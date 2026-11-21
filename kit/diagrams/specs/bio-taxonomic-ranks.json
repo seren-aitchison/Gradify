@@ -1,0 +1,120 @@
+{
+ "id": "bio-taxonomic-ranks",
+ "renderer": "flow",
+ "course": "biology",
+ "unit": "u01",
+ "lesson": "Classification and taxonomy",
+ "title": "The ranks of classification, for humans",
+ "caption": "Each rank sits inside the one before it, from the broadest (domain) to the narrowest (species). The scientific name is the last two: the genus and the specific epithet, Homo sapiens.",
+ "alt": "Eight boxes in order: domain Eukarya, kingdom Animalia, phylum Chordata, class Mammalia, order Primates, family Hominidae, genus Homo, species Homo sapiens.",
+ "description": [
+  "Domain: Eukarya.",
+  "Kingdom: Animalia.",
+  "Phylum: Chordata.",
+  "Class: Mammalia.",
+  "Order: Primates.",
+  "Family: Hominidae.",
+  "Genus: Homo.",
+  "Species: Homo sapiens.",
+  "The binomial name is genus plus specific epithet: Homo sapiens."
+ ],
+ "layout": "grid",
+ "boxWidth": 130,
+ "rowHeight": 104,
+ "nodes": [
+  {
+   "id": "domain",
+   "label": "domain",
+   "sub": "Eukarya",
+   "col": 0,
+   "row": 0,
+   "tone": "a1"
+  },
+  {
+   "id": "kingdom",
+   "label": "kingdom",
+   "sub": "Animalia",
+   "col": 1,
+   "row": 0,
+   "tone": "a1"
+  },
+  {
+   "id": "phylum",
+   "label": "phylum",
+   "sub": "Chordata",
+   "col": 2,
+   "row": 0,
+   "tone": "a1"
+  },
+  {
+   "id": "class",
+   "label": "class",
+   "sub": "Mammalia",
+   "col": 3,
+   "row": 0,
+   "tone": "a1"
+  },
+  {
+   "id": "order",
+   "label": "order",
+   "sub": "Primates",
+   "col": 3,
+   "row": 1,
+   "tone": "a1"
+  },
+  {
+   "id": "family",
+   "label": "family",
+   "sub": "Hominidae",
+   "col": 2,
+   "row": 1,
+   "tone": "a1"
+  },
+  {
+   "id": "genus",
+   "label": "genus",
+   "sub": "Homo",
+   "col": 1,
+   "row": 1,
+   "tone": "a5"
+  },
+  {
+   "id": "species",
+   "label": "species",
+   "sub": "Homo sapiens",
+   "col": 0,
+   "row": 1,
+   "tone": "a5"
+  }
+ ],
+ "edges": [
+  {
+   "from": "domain",
+   "to": "kingdom"
+  },
+  {
+   "from": "kingdom",
+   "to": "phylum"
+  },
+  {
+   "from": "phylum",
+   "to": "class"
+  },
+  {
+   "from": "class",
+   "to": "order"
+  },
+  {
+   "from": "order",
+   "to": "family"
+  },
+  {
+   "from": "family",
+   "to": "genus"
+  },
+  {
+   "from": "genus",
+   "to": "species"
+  }
+ ]
+}

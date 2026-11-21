@@ -20273,5 +20273,356 @@
     "detail": "680px wide, shown at 104% (labels 15.6px)"
    }
   ]
+ },
+ "bio-accuracy-precision": {
+  "title": "Accurate, precise, both or neither",
+  "caption": "Four students each measure the same 50.0 µm interval five times. A and C are accurate (their means are close to 50.0); A and B are precise (their repeats agree). B's tight cluster sits too high, the mark of a systematic error such as an uncalibrated graticule.",
+  "alt": "Dot plot of five repeat measurements by each of four students against a dashed true value of 50.0 micrometres.",
+  "description": [
+   "A: values 49.9 to 50.2, mean 50.0: accurate and precise.",
+   "B: values 52.3 to 52.6, mean 52.5: precise but not accurate (systematic error).",
+   "C: values 48.6 to 51.5, mean 50.1: accurate on average but not precise (random error).",
+   "D: values 50.6 to 55.0, mean 53.1: neither."
+  ],
+  "course": "biology",
+  "lesson": "Accuracy and precision",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u01.js: Accuracy and precision"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "student A: accurate and precise",
+    "ok": true,
+    "detail": "mean 50.020, standard deviation 0.130"
+   },
+   {
+    "name": "student B: not accurate and precise",
+    "ok": true,
+    "detail": "mean 52.460, standard deviation 0.114"
+   },
+   {
+    "name": "student C: accurate and not precise",
+    "ok": true,
+    "detail": "mean 50.080, standard deviation 1.207"
+   },
+   {
+    "name": "student D: not accurate and not precise",
+    "ok": true,
+    "detail": "mean 53.140, standard deviation 1.835"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "bio-levels-of-organisation": {
+  "title": "Levels of biological organisation",
+  "caption": "Each level is built from the one before it, from molecules to the whole biosphere. New properties emerge at each step: one heart muscle cell contracts, but only the organised tissue of the heart pumps blood.",
+  "alt": "A chain of eleven boxes from atoms and molecules, through organelles, cells, tissues, organs, organ systems and organisms, to populations, communities, ecosystems and the biosphere.",
+  "description": [
+   "Atoms and molecules: C, H, O, N; proteins, DNA.",
+   "Organelles: mitochondria.",
+   "Cells: smallest living unit.",
+   "Tissues: muscle tissue.",
+   "Organs: the heart.",
+   "Organ systems: circulatory system.",
+   "Organisms: one living thing.",
+   "Populations: one species in an area.",
+   "Communities: all the populations.",
+   "Ecosystems: community + non-living.",
+   "Biosphere: all ecosystems on Earth."
+  ],
+  "course": "biology",
+  "lesson": "Levels of biological organisation",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u01.js: Levels of biological organisation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every step is linked: no box without an arrow",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-normal-distribution": {
+  "title": "The normal distribution",
+  "caption": "Heights of adult women follow a bell-shaped curve, here with mean 163 cm and standard deviation 7 cm. About 68% of values lie within one standard deviation of the mean (156–170 cm) and about 95% within two (149–177 cm).",
+  "alt": "A bell curve centred on 163 centimetres with the region from 156 to 170 shaded darker and 149 to 177 shaded lighter.",
+  "description": [
+   "The horizontal axis is height in centimetres, from 135 to 191.",
+   "The curve peaks at the mean, 163 cm, and is symmetrical.",
+   "The darker band, 156 to 170 cm (mean ± 1 standard deviation), holds about 68% of the area.",
+   "The lighter band, 149 to 177 cm (± 2 standard deviations), holds about 95%."
+  ],
+  "course": "biology",
+  "lesson": "Statistical foundations",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u01.js: Statistical foundations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "about 68% of values lie within one standard deviation",
+    "ok": true,
+    "detail": "area 0.6827"
+   },
+   {
+    "name": "about 95% lie within two standard deviations",
+    "ok": true,
+    "detail": "area 0.9545"
+   },
+   {
+    "name": "the whole curve has area 1",
+    "ok": true,
+    "detail": "area 1.0000"
+   },
+   {
+    "name": "the peak is at the mean, 163 cm",
+    "ok": true,
+    "detail": "found (163, 0.057)"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "bio-scale-of-life": {
+  "title": "The scale of life, on a logarithmic axis",
+  "caption": "Each step up the axis is ten times larger. A large protein (about 10 nm) and a virus (about 100 nm) are below the 0.2 µm limit of a light microscope; bacteria (1–5 µm) and eukaryotic cells (10–100 µm) can be seen with one.",
+  "alt": "Bar chart on a logarithmic scale in micrometres: protein 0.01, virus 0.1, bacterium 2, red blood cell 8, plant cell 60, human egg 120.",
+  "description": [
+   "A large protein such as an antibody, about 0.01 µm (10 nm).",
+   "Virus (influenza), about 0.1 µm (100 nm).",
+   "Bacterium (E. coli), about 2 µm.",
+   "Red blood cell, about 8 µm.",
+   "Plant leaf cell, about 60 µm.",
+   "Human egg cell, about 120 µm, just visible to the eye."
+  ],
+  "course": "biology",
+  "lesson": "Biological measurements",
+  "also": [],
+  "renderer": "trend",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u01.js: Biological measurements"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "protein → egg: increasing",
+    "ok": true,
+    "detail": "protein 0.01, virus 0.1, E. coli 2, red cell 8, leaf cell 60, egg 120"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "bio-scientific-method": {
+  "title": "The scientific method is a cycle",
+  "caption": "Results feed back into new observations and questions, so investigation is a cycle rather than a straight line. Evidence can support a hypothesis but never prove it; one well-replicated contradictory result can refute it.",
+  "alt": "Six boxes in a loop: observation, hypothesis, prediction, experiment, analysis and conclusion, communication, and back to observation.",
+  "description": [
+   "Observation: something needs explaining.",
+   "Hypothesis: a testable explanation.",
+   "Prediction: what should happen if it is right.",
+   "Experiment: controlled data collection.",
+   "Analysis and conclusion: supported or refuted?.",
+   "Communication: peer review, repeats.",
+   "Communication leads to new observations, closing the loop."
+  ],
+  "course": "biology",
+  "lesson": "Scientific method",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u01.js: Scientific method"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every step is linked: no box without an arrow",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-taxonomic-ranks": {
+  "title": "The ranks of classification, for humans",
+  "caption": "Each rank sits inside the one before it, from the broadest (domain) to the narrowest (species). The scientific name is the last two: the genus and the specific epithet, Homo sapiens.",
+  "alt": "Eight boxes in order: domain Eukarya, kingdom Animalia, phylum Chordata, class Mammalia, order Primates, family Hominidae, genus Homo, species Homo sapiens.",
+  "description": [
+   "Domain: Eukarya.",
+   "Kingdom: Animalia.",
+   "Phylum: Chordata.",
+   "Class: Mammalia.",
+   "Order: Primates.",
+   "Family: Hominidae.",
+   "Genus: Homo.",
+   "Species: Homo sapiens.",
+   "The binomial name is genus plus specific epithet: Homo sapiens."
+  ],
+  "course": "biology",
+  "lesson": "Classification and taxonomy",
+  "also": [],
+  "renderer": "flow",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u01.js: Classification and taxonomy"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every step is linked: no box without an arrow",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "700px wide, shown at 101% (labels 15.2px)"
+   }
+  ]
+ },
+ "bio-which-graph": {
+  "title": "Which graph should you draw?",
+  "caption": "Two questions about the variables choose the graph. A categoric independent variable gives a bar chart; one continuous variable counted in classes gives a histogram; two measured variables with nothing controlled give a scatter graph.",
+  "alt": "A flow chart of questions leading to a bar chart, a histogram, a scatter graph or a line graph.",
+  "description": [
+   "Is the independent variable continuous? If not, draw a bar chart.",
+   "Are two different variables plotted against each other? If not, draw a histogram of the frequency of one variable.",
+   "Did you set the independent variable yourself? If not, draw a scatter graph to look for a correlation.",
+   "Otherwise draw a line graph."
+  ],
+  "course": "biology",
+  "lesson": "Graphs and data presentation",
+  "also": [],
+  "renderer": "decision-tree",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/biology/notes/u01.js: Graphs and data presentation"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "every path ends in an outcome",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "no unreachable nodes",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "every authority cited on the diagram is in the lesson",
+    "ok": true,
+    "detail": "0 citations found in the lesson text"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "760px wide, shown at 93% (labels 14.0px)"
+   }
+  ]
  }
 }

@@ -1,0 +1,158 @@
+{
+ "id": "bio-levels-of-organisation",
+ "renderer": "flow",
+ "course": "biology",
+ "unit": "u01",
+ "lesson": "Levels of biological organisation",
+ "title": "Levels of biological organisation",
+ "caption": "Each level is built from the one before it, from molecules to the whole biosphere. New properties emerge at each step: one heart muscle cell contracts, but only the organised tissue of the heart pumps blood.",
+ "alt": "A chain of eleven boxes from atoms and molecules, through organelles, cells, tissues, organs, organ systems and organisms, to populations, communities, ecosystems and the biosphere.",
+ "description": [
+  "Atoms and molecules: C, H, O, N; proteins, DNA.",
+  "Organelles: mitochondria.",
+  "Cells: smallest living unit.",
+  "Tissues: muscle tissue.",
+  "Organs: the heart.",
+  "Organ systems: circulatory system.",
+  "Organisms: one living thing.",
+  "Populations: one species in an area.",
+  "Communities: all the populations.",
+  "Ecosystems: community + non-living.",
+  "Biosphere: all ecosystems on Earth."
+ ],
+ "layout": "grid",
+ "boxWidth": 140,
+ "rowHeight": 104,
+ "nodes": [
+  {
+   "id": "l0",
+   "label": "atoms and molecules",
+   "sub": "C, H, O, N; proteins, DNA",
+   "col": 0,
+   "row": 0,
+   "tone": "a1"
+  },
+  {
+   "id": "l1",
+   "label": "organelles",
+   "sub": "mitochondria",
+   "col": 1,
+   "row": 0,
+   "tone": "a1"
+  },
+  {
+   "id": "l2",
+   "label": "cells",
+   "sub": "smallest living unit",
+   "col": 2,
+   "row": 0,
+   "tone": "a1"
+  },
+  {
+   "id": "l3",
+   "label": "tissues",
+   "sub": "muscle tissue",
+   "col": 3,
+   "row": 0,
+   "tone": "a1"
+  },
+  {
+   "id": "l4",
+   "label": "organs",
+   "sub": "the heart",
+   "col": 3,
+   "row": 1,
+   "tone": "a1"
+  },
+  {
+   "id": "l5",
+   "label": "organ systems",
+   "sub": "circulatory system",
+   "col": 2,
+   "row": 1,
+   "tone": "a1"
+  },
+  {
+   "id": "l6",
+   "label": "organisms",
+   "sub": "one living thing",
+   "col": 1,
+   "row": 1,
+   "tone": "a1"
+  },
+  {
+   "id": "l7",
+   "label": "populations",
+   "sub": "one species in an area",
+   "col": 0,
+   "row": 1,
+   "tone": "a4"
+  },
+  {
+   "id": "l8",
+   "label": "communities",
+   "sub": "all the populations",
+   "col": 0,
+   "row": 2,
+   "tone": "a4"
+  },
+  {
+   "id": "l9",
+   "label": "ecosystems",
+   "sub": "community + non-living",
+   "col": 1,
+   "row": 2,
+   "tone": "a4"
+  },
+  {
+   "id": "l10",
+   "label": "biosphere",
+   "sub": "all ecosystems on Earth",
+   "col": 2,
+   "row": 2,
+   "tone": "a4"
+  }
+ ],
+ "edges": [
+  {
+   "from": "l0",
+   "to": "l1"
+  },
+  {
+   "from": "l1",
+   "to": "l2"
+  },
+  {
+   "from": "l2",
+   "to": "l3"
+  },
+  {
+   "from": "l3",
+   "to": "l4"
+  },
+  {
+   "from": "l4",
+   "to": "l5"
+  },
+  {
+   "from": "l5",
+   "to": "l6"
+  },
+  {
+   "from": "l6",
+   "to": "l7"
+  },
+  {
+   "from": "l7",
+   "to": "l8"
+  },
+  {
+   "from": "l8",
+   "to": "l9"
+  },
+  {
+   "from": "l9",
+   "to": "l10"
+  }
+ ]
+}

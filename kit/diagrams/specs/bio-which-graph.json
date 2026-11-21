@@ -1,0 +1,50 @@
+{
+ "id": "bio-which-graph",
+ "renderer": "decision-tree",
+ "course": "biology",
+ "unit": "u01",
+ "lesson": "Graphs and data presentation",
+ "title": "Which graph should you draw?",
+ "caption": "Two questions about the variables choose the graph. A categoric independent variable gives a bar chart; one continuous variable counted in classes gives a histogram; two measured variables with nothing controlled give a scatter graph.",
+ "alt": "A flow chart of questions leading to a bar chart, a histogram, a scatter graph or a line graph.",
+ "description": [
+  "Is the independent variable continuous? If not, draw a bar chart.",
+  "Are two different variables plotted against each other? If not, draw a histogram of the frequency of one variable.",
+  "Did you set the independent variable yourself? If not, draw a scatter graph to look for a correlation.",
+  "Otherwise draw a line graph."
+ ],
+ "start": "q1",
+ "nodes": {
+  "q1": {
+   "q": "Is the independent variable continuous, measured on a number scale?",
+   "yes": "q2",
+   "no": "bar"
+  },
+  "bar": {
+   "outcome": "Bar chart: the independent variable is categoric (blood group, species)",
+   "tone": "neutral"
+  },
+  "q2": {
+   "q": "Are you plotting two different variables against each other?",
+   "yes": "q3",
+   "no": "hist"
+  },
+  "hist": {
+   "outcome": "Histogram: the frequency of one continuous variable in classes, bars touching",
+   "tone": "neutral"
+  },
+  "q3": {
+   "q": "Did you set the independent variable yourself, in an experiment?",
+   "yes": "line",
+   "no": "scatter"
+  },
+  "scatter": {
+   "outcome": "Scatter graph: look for a correlation between two measured variables",
+   "tone": "neutral"
+  },
+  "line": {
+   "outcome": "Line graph: independent variable on the x-axis, dependent on the y-axis",
+   "tone": "good"
+  }
+ }
+}

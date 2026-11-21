@@ -89,6 +89,7 @@ H: The hierarchy
 - **Communities**: all the populations in an area.
 - **Ecosystems**: a community plus its non-living environment.
 - **The biosphere**: all ecosystems on Earth.
+D: bio-levels-of-organisation
 H: Emergent properties
 P: New properties emerge as parts are combined. A single heart muscle cell contracts, but only the organised tissue of the heart pumps blood; a single neurone fires, but thought emerges from networks of billions. Studying parts alone (reductionism) can't explain everything, so biologists also study whole systems.
 X: Trace oxygen transport through the levels of organisation.
@@ -156,6 +157,7 @@ O: Explain why modern classification is based on evolutionary relationships
 PRE: Characteristics of living organisms
 H: The hierarchy of ranks
 P: The ranks, from broadest to narrowest, are domain, kingdom, phylum, class, order, family, genus and species. Humans are domain Eukarya, kingdom Animalia, phylum Chordata, class Mammalia, order Primates, family Hominidae, genus *Homo*, species *Homo sapiens*.
+D: bio-taxonomic-ranks
 H: Binomial nomenclature
 P: Carl Linnaeus (1707–1778) introduced two-part Latin names: the genus (capitalised) and the specific epithet (lower case), written in italics, or underlined when handwritten. Names are governed by international codes so that every species has one valid scientific name, avoiding confusion between common names (a "robin" is a different bird in Britain and North America).
 H: Classification and evolution
@@ -260,6 +262,7 @@ H: The cycle
 - **Analysis and conclusion**: do the data support or refute the hypothesis?
 - **Communication and peer review**: other scientists scrutinise and try to repeat the work.
 P: Results often raise new questions, so the process is a cycle rather than a straight line. Real research also involves creativity, chance discoveries and revision.
+D: bio-scientific-method
 H: Hypotheses, theories and laws
 P: A hypothesis is a tentative explanation that can be tested. A scientific theory is a broad, well-tested explanation supported by many lines of evidence, such as cell theory or the theory of evolution. In science "theory" doesn't mean a guess. Laws describe patterns (often mathematically) without necessarily explaining them.
 H: Falsifiability
@@ -406,6 +409,7 @@ H: Definitions
 - **Precision**: closeness of repeated measurements to each other (low spread).
 - **Resolution**: the smallest change an instrument can show (a ruler marked in mm has a resolution of 1 mm).
 P: Picture darts: a tight cluster away from the bullseye is precise but not accurate; darts spread evenly around the bullseye are accurate on average but imprecise.
+D: bio-accuracy-precision
 H: Errors
 - **Random errors** vary unpredictably from one measurement to the next (reaction time with a stopwatch, small fluctuations in temperature). They reduce precision and are reduced by taking more repeats and calculating a mean.
 - **Systematic errors** shift every measurement in the same direction (a balance that reads 0.5 g too high, parallax from always reading a scale from above). They reduce accuracy and are not reduced by repeating; they must be found and corrected, for example by calibration.
@@ -478,6 +482,7 @@ H: Scales in biology
 - Viruses: 20–300 nm. Bacteria: about 1–5 micrometres (µm).
 - Eukaryotic cells: about 10–100 µm. Organisms: millimetres to metres.
 P: Light microscopes resolve detail down to about 0.2 µm; electron microscopes resolve down to about 0.1–1 nm in practice for biological samples.
+D: bio-scale-of-life
 H: Magnification
 E: magnification = image size / actual size
 P: Use the same units for both sizes before dividing. Rearranging: actual size = image size ÷ magnification.
@@ -580,6 +585,7 @@ O: Describe and interpret trends, including rates from gradients
 PRE: Variables and experimental design
 H: Results tables
 P: Put the independent variable in the first column and the dependent variable (with repeats and means) in the next columns. Column headings give the quantity and unit, separated by a solidus: "Temperature / °C". Units go in headings, not in the body of the table. Record raw data to the instrument's resolution and means to one more decimal place at most.
+D: bio-which-graph
 H: Which graph?
 - **Line graph**: both variables continuous, showing how the dependent variable changes with the independent variable (rate against temperature).
 - **Bar chart**: the independent variable is categorical (blood group, species).
@@ -621,6 +627,7 @@ H: Averages and spread
 - **Range**: largest minus smallest; sensitive to outliers.
 - **Standard deviation (s)**: the typical distance of values from the mean.
 E: s = √( Σ(x − x̄)² / (n − 1) ) :: sample standard deviation
+D: bio-normal-distribution
 H: The normal distribution
 P: Many continuous biological variables (heights, leaf lengths) follow a roughly bell-shaped normal distribution. About 68% of values lie within one standard deviation of the mean and about 95% within two.
 H: Choosing a test

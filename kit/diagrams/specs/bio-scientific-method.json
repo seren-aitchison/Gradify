@@ -1,0 +1,85 @@
+{
+ "id": "bio-scientific-method",
+ "renderer": "flow",
+ "course": "biology",
+ "unit": "u01",
+ "lesson": "Scientific method",
+ "title": "The scientific method is a cycle",
+ "caption": "Results feed back into new observations and questions, so investigation is a cycle rather than a straight line. Evidence can support a hypothesis but never prove it; one well-replicated contradictory result can refute it.",
+ "alt": "Six boxes in a loop: observation, hypothesis, prediction, experiment, analysis and conclusion, communication, and back to observation.",
+ "description": [
+  "Observation: something needs explaining.",
+  "Hypothesis: a testable explanation.",
+  "Prediction: what should happen if it is right.",
+  "Experiment: controlled data collection.",
+  "Analysis and conclusion: supported or refuted?.",
+  "Communication: peer review, repeats.",
+  "Communication leads to new observations, closing the loop."
+ ],
+ "layout": "cycle",
+ "radius": 130,
+ "nodes": [
+  {
+   "id": "s0",
+   "label": "observation",
+   "sub": "something needs explaining",
+   "tone": "a1"
+  },
+  {
+   "id": "s1",
+   "label": "hypothesis",
+   "sub": "a testable explanation",
+   "tone": "a1"
+  },
+  {
+   "id": "s2",
+   "label": "prediction",
+   "sub": "what should happen if it is right",
+   "tone": "a1"
+  },
+  {
+   "id": "s3",
+   "label": "experiment",
+   "sub": "controlled data collection",
+   "tone": "a1"
+  },
+  {
+   "id": "s4",
+   "label": "analysis and conclusion",
+   "sub": "supported or refuted?",
+   "tone": "a1"
+  },
+  {
+   "id": "s5",
+   "label": "communication",
+   "sub": "peer review, repeats",
+   "tone": "a1"
+  }
+ ],
+ "edges": [
+  {
+   "from": "s0",
+   "to": "s1"
+  },
+  {
+   "from": "s1",
+   "to": "s2"
+  },
+  {
+   "from": "s2",
+   "to": "s3"
+  },
+  {
+   "from": "s3",
+   "to": "s4"
+  },
+  {
+   "from": "s4",
+   "to": "s5"
+  },
+  {
+   "from": "s5",
+   "to": "s0"
+  }
+ ]
+}
