@@ -1,0 +1,143 @@
+{
+ "id": "maths-u11-qr-gram-schmidt",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u11",
+ "lesson": "QR Decomposition",
+ "title": "QR: a₂ = 4q₁ + 3q₂",
+ "caption": "Gram–Schmidt on the columns of A: q₁ = a₁/5 = (0.6, 0.8). The part of a₂ along q₁ is r₁₂q₁ = 4q₁ = (2.4, 3.2); what is left, (−2.4, 1.8), is perpendicular to q₁ and has length 3 = r₂₂.",
+ "alt": "The vector a₂ = (0, 5) split into (2.4, 3.2) along q₁ and the perpendicular remainder (−2.4, 1.8) of length 3.",
+ "description": [
+  "a₁ = (3, 4) has length 5, so q₁ = (0.6, 0.8) and r₁₁ = 5.",
+  "r₁₂ = q₁ · a₂ = 4, so the part of a₂ along q₁ is 4q₁ = (2.4, 3.2).",
+  "a₂ − 4q₁ = (−2.4, 1.8) is perpendicular to q₁ and has length 3 = r₂₂, so q₂ = (−0.8, 0.6)."
+ ],
+ "points": {
+  "O": [
+   0,
+   0
+  ],
+  "P": [
+   2.4,
+   3.2
+  ],
+  "T": [
+   0,
+   5
+  ]
+ },
+ "hide": [
+  "O",
+  "P",
+  "T"
+ ],
+ "grid": {
+  "step": 1,
+  "axes": true,
+  "labels": 1
+ },
+ "view": {
+  "x": [
+   -3.5,
+   4.5
+  ],
+  "y": [
+   -1,
+   6
+  ]
+ },
+ "height": [
+  520,
+  440
+ ],
+ "angles": [
+  {
+   "at": "P",
+   "from": "O",
+   "to": "T",
+   "right": true,
+   "colour": "ink"
+  }
+ ],
+ "vectors": [
+  {
+   "name": "a₁",
+   "v": [
+    3,
+    4
+   ],
+   "colour": "a3",
+   "labelSide": 1
+  },
+  {
+   "name": "4q₁",
+   "v": [
+    2.4,
+    3.2
+   ],
+   "colour": "a1",
+   "labelSide": -1
+  },
+  {
+   "name": "(−2.4, 1.8)",
+   "from": [
+    2.4,
+    3.2
+   ],
+   "v": [
+    -2.4,
+    1.8
+   ],
+   "colour": "a2",
+   "labelSide": 1,
+   "dx": 22,
+   "dy": 6
+  },
+  {
+   "name": "a₂",
+   "v": [
+    0,
+    5
+   ],
+   "colour": "a4",
+   "labelSide": -1
+  }
+ ],
+ "checks": [
+  {
+   "type": "distance",
+   "a": "P",
+   "b": "T",
+   "value": 3,
+   "name": "the remainder has length r₂₂ = 3"
+  },
+  {
+   "type": "vecsum",
+   "vectors": [
+    1,
+    2
+   ],
+   "is": 3
+  },
+  {
+   "type": "perpendicular",
+   "a": [
+    "O",
+    "P"
+   ],
+   "b": [
+    "P",
+    "T"
+   ],
+   "name": "the remainder is perpendicular to q₁"
+  },
+  {
+   "type": "magnitude",
+   "vector": 0,
+   "value": 5
+  }
+ ],
+ "fromLesson": [
+  "r₁₁ = ‖a₁‖ = 5"
+ ]
+}

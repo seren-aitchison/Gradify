@@ -1,0 +1,125 @@
+{
+ "id": "maths-u11-orthonormal-coordinates",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u11",
+ "lesson": "Orthogonality",
+ "title": "Coordinates in an orthonormal basis",
+ "caption": "The coordinates of v = (3, 1) along q₁ and q₂ are just dot products: c₁ = 2√2 and c₂ = √2. The two pieces (2, 2) and (1, −1) are perpendicular, and c₁² + c₂² = 8 + 2 = 10 = ‖v‖².",
+ "alt": "The vector (3, 1) drawn as the sum of (2, 2) along q₁ and (1, −1) along q₂, tip to tail, at a right angle.",
+ "description": [
+  "q₁ = (1, 1)/√2 and q₂ = (1, −1)/√2 are perpendicular unit vectors.",
+  "c₁ = v · q₁ = 2√2 gives the piece (2, 2) along q₁.",
+  "c₂ = v · q₂ = √2 gives the piece (1, −1) along q₂.",
+  "The pieces add to (3, 1), and 8 + 2 = 10 = ‖v‖²."
+ ],
+ "points": {
+  "O": [
+   0,
+   0
+  ],
+  "A": [
+   2,
+   2
+  ],
+  "B": [
+   1,
+   -1
+  ]
+ },
+ "hide": [
+  "O",
+  "A",
+  "B"
+ ],
+ "grid": {
+  "step": 1,
+  "axes": true,
+  "labels": 1
+ },
+ "view": {
+  "x": [
+   -1,
+   4
+  ],
+  "y": [
+   -2,
+   3.2
+  ]
+ },
+ "height": [
+  520,
+  440
+ ],
+ "angles": [
+  {
+   "at": "O",
+   "from": "A",
+   "to": "B",
+   "right": true,
+   "colour": "ink"
+  }
+ ],
+ "vectors": [
+  {
+   "name": "c₁q₁",
+   "v": [
+    2,
+    2
+   ],
+   "colour": "a1",
+   "labelSide": -1
+  },
+  {
+   "name": "c₂q₂",
+   "v": [
+    1,
+    -1
+   ],
+   "from": [
+    2,
+    2
+   ],
+   "colour": "a2",
+   "labelSide": -1
+  },
+  {
+   "name": "v",
+   "v": [
+    3,
+    1
+   ],
+   "colour": "a4",
+   "labelSide": 1
+  }
+ ],
+ "checks": [
+  {
+   "type": "perpendicular",
+   "a": [
+    "O",
+    "A"
+   ],
+   "b": [
+    "O",
+    "B"
+   ]
+  },
+  {
+   "type": "vecsum",
+   "vectors": [
+    0,
+    1
+   ],
+   "is": 2
+  },
+  {
+   "type": "magnitude",
+   "vector": 2,
+   "value": "sqrt(10)"
+  }
+ ],
+ "fromLesson": [
+  "2√2"
+ ]
+}

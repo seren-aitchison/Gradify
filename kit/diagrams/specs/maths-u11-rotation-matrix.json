@@ -1,0 +1,103 @@
+{
+ "id": "maths-u11-rotation-matrix",
+ "renderer": "transform",
+ "course": "maths",
+ "unit": "u11",
+ "lesson": "Linear Transformations",
+ "title": "The matrix of a 90° rotation",
+ "caption": "The columns of the matrix are where e₁ and e₂ land: (1, 0) goes to (0, 1) and (0, 1) goes to (−1, 0), giving [[0, −1], [1, 0]]. The unit square turns a quarter turn about the origin and keeps its area.",
+ "alt": "The unit square in the first quadrant and its image in the second quadrant after an anticlockwise quarter turn about the origin.",
+ "description": [
+  "The unit square has corners (0, 0), (1, 0), (1, 1), (0, 1).",
+  "e₁ = (1, 0) goes to (0, 1) and e₂ = (0, 1) goes to (−1, 0): these are the matrix columns.",
+  "The image has corners (0, 0), (0, 1), (−1, 1), (−1, 0): the square turned 90° anticlockwise."
+ ],
+ "view": {
+  "x": [
+   -2.5,
+   2.5
+  ],
+  "y": [
+   -1,
+   2.5
+  ]
+ },
+ "grid": {
+  "step": 1,
+  "axes": true,
+  "labels": 1
+ },
+ "height": [
+  330,
+  320
+ ],
+ "object": {
+  "name": "square",
+  "pts": [
+   [
+    0,
+    0
+   ],
+   [
+    1,
+    0
+   ],
+   [
+    1,
+    1
+   ],
+   [
+    0,
+    1
+   ]
+  ],
+  "colour": "a1"
+ },
+ "images": [
+  {
+   "name": "image",
+   "t": {
+    "kind": "matrix",
+    "m": [
+     [
+      0,
+      -1
+     ],
+     [
+      1,
+      0
+     ]
+    ]
+   },
+   "pts": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     -1,
+     1
+    ],
+    [
+     -1,
+     0
+    ]
+   ],
+   "colour": "a2"
+  }
+ ],
+ "checks": [
+  {
+   "type": "areaScale",
+   "image": "image",
+   "value": 1
+  }
+ ],
+ "fromLesson": [
+  "Matrix [[0, −1], [1, 0]]"
+ ]
+}

@@ -1,0 +1,108 @@
+{
+ "id": "maths-u11-svd-area",
+ "renderer": "transform",
+ "course": "maths",
+ "unit": "u11",
+ "lesson": "Singular Value Decomposition (SVD)",
+ "title": "Singular values and area: σ₁σ₂ = |det A| = 15",
+ "caption": "A = [[3, 0], [4, 5]] turns the unit square into a parallelogram of area 15. The singular values σ₁ = √45 ≈ 6.708 and σ₂ = √5 ≈ 2.236 are the stretches along its two perpendicular axes, and their product is the area scale factor.",
+ "alt": "The unit square and its image under A, a parallelogram with vertices (0, 0), (3, 4), (3, 9), (0, 5) and area 15.",
+ "description": [
+  "The unit square has area 1.",
+  "A sends (1, 0) to (3, 4) and (0, 1) to (0, 5), so the image has corners (0, 0), (3, 4), (3, 9), (0, 5).",
+  "Its area is |det A| = 15, and σ₁σ₂ = √45 × √5 = √225 = 15."
+ ],
+ "view": {
+  "x": [
+   -1,
+   5
+  ],
+  "y": [
+   -1,
+   10
+  ]
+ },
+ "grid": {
+  "step": 1,
+  "axes": true,
+  "labels": 2
+ },
+ "height": [
+  420,
+  400
+ ],
+ "object": {
+  "name": "square",
+  "pts": [
+   [
+    0,
+    0
+   ],
+   [
+    1,
+    0
+   ],
+   [
+    1,
+    1
+   ],
+   [
+    0,
+    1
+   ]
+  ],
+  "colour": "a1",
+  "labelAt": [
+   0,
+   -4
+  ]
+ },
+ "images": [
+  {
+   "name": "A × square",
+   "t": {
+    "kind": "matrix",
+    "m": [
+     [
+      3,
+      0
+     ],
+     [
+      4,
+      5
+     ]
+    ]
+   },
+   "pts": [
+    [
+     0,
+     0
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     0,
+     5
+    ]
+   ],
+   "colour": "a2"
+  }
+ ],
+ "checks": [
+  {
+   "type": "areaScale",
+   "image": "A × square",
+   "value": 15,
+   "name": "the image has 15 times the area: σ₁σ₂ = √45 × √5 = 15 = |det A|"
+  }
+ ],
+ "fromLesson": [
+  "σ₁σ₂ = √225 = 15 = |det A|"
+ ]
+}

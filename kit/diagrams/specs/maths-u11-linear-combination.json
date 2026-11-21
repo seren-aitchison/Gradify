@@ -1,0 +1,105 @@
+{
+ "id": "maths-u11-linear-combination",
+ "renderer": "geometry",
+ "course": "maths",
+ "unit": "u11",
+ "lesson": "Linear Combinations",
+ "title": "(5, 5) as 2(1, 2) + (3, 1)",
+ "caption": "Walk twice along (1, 2), then once along (3, 1): you arrive at (5, 5). The coefficients 2 and 1 are how many steps of each vector.",
+ "alt": "A grid with a vector from the origin to (2, 4), a vector from (2, 4) to (5, 5), and their sum from the origin to (5, 5).",
+ "description": [
+  "Two steps of (1, 2) from the origin reach (2, 4).",
+  "From there one step of (3, 1) reaches (5, 5).",
+  "The sum 2(1, 2) + (3, 1) = (5, 5) is the vector from the origin straight to (5, 5)."
+ ],
+ "points": {
+  "O": [
+   0,
+   0
+  ]
+ },
+ "hide": [
+  "O"
+ ],
+ "grid": {
+  "step": 1,
+  "axes": true,
+  "labels": 1
+ },
+ "view": {
+  "x": [
+   -1,
+   6.5
+  ],
+  "y": [
+   -1,
+   6
+  ]
+ },
+ "height": [
+  520,
+  440
+ ],
+ "vectors": [
+  {
+   "name": "2(1, 2)",
+   "from": [
+    0,
+    0
+   ],
+   "v": [
+    2,
+    4
+   ],
+   "colour": "a1",
+   "labelSide": 1
+  },
+  {
+   "name": "(3, 1)",
+   "from": [
+    2,
+    4
+   ],
+   "v": [
+    3,
+    1
+   ],
+   "colour": "a2",
+   "labelSide": 1
+  },
+  {
+   "name": "(5, 5)",
+   "from": [
+    0,
+    0
+   ],
+   "v": [
+    5,
+    5
+   ],
+   "colour": "a4",
+   "labelSide": -1
+  }
+ ],
+ "checks": [
+  {
+   "type": "components",
+   "vector": 2,
+   "v": [
+    5,
+    5
+   ]
+  },
+  {
+   "type": "vecsum",
+   "vectors": [
+    0,
+    1
+   ],
+   "is": 2
+  }
+ ],
+ "fromLesson": [
+  "(5, 5) = 2(1, 2) + (3, 1)"
+ ]
+}

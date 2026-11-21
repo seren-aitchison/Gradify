@@ -33271,5 +33271,955 @@
     "detail": "640px wide, shown at 110% (labels 16.6px)"
    }
   ]
+ },
+ "maths-u11-ab-ne-ba": {
+  "title": "AB and BA move the square differently",
+  "caption": "Apply the matrices to the unit square. AB = [[2, 1], [1, 1]] sends it to one parallelogram and BA = [[1, 1], [1, 2]] to another, so AB ≠ BA. Both have determinant 1, so both keep the area.",
+  "alt": "The unit square and its two images: AB gives a parallelogram with vertices (0, 0), (2, 1), (3, 2), (1, 1); BA gives (0, 0), (1, 1), (2, 3), (1, 2).",
+  "description": [
+   "The unit square is the starting shape.",
+   "AB = [[2, 1], [1, 1]] sends the corners to (0, 0), (2, 1), (3, 2), (1, 1).",
+   "BA = [[1, 1], [1, 2]] sends them to (0, 0), (1, 1), (2, 3), (1, 2).",
+   "The two parallelograms are different, so AB ≠ BA, but each has area 1 because det = 1."
+  ],
+  "course": "maths",
+  "lesson": "Matrix Algebra",
+  "also": [],
+  "renderer": "transform",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u11.js: Matrix Algebra"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "AB is the image of square under the matrix",
+    "ok": true,
+    "detail": "(0, 0) (2, 1) (3, 2) (1, 1)"
+   },
+   {
+    "name": "BA is the image of square under the matrix",
+    "ok": true,
+    "detail": "(0, 0) (1, 1) (2, 3) (1, 2)"
+   },
+   {
+    "name": "the area of AB is 1 times the original",
+    "ok": true,
+    "detail": "area ratio 1, |det| = 1"
+   },
+   {
+    "name": "the area of BA is 1 times the original",
+    "ok": true,
+    "detail": "area ratio 1, |det| = 1"
+   },
+   {
+    "name": "the lesson states \"AB = [[2, 1], [1, 1]]\", \"BA = [[1, 1], [1, 2]]\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "13 labels in 640×380"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "13 labels in 380×360"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u11-change-of-basis": {
+  "title": "v = (4, 3) in the basis b₁, b₂",
+  "caption": "In the new basis b₁ = (2, 1), b₂ = (1, 1) the vector v = (4, 3) has coordinates (1, 2): one step of b₁ then two steps of b₂ reach the same point.",
+  "alt": "A grid with b₁ = (2, 1) from the origin, then two copies of b₂ = (1, 1) tip to tail to reach (4, 3), and v drawn straight from the origin to (4, 3).",
+  "description": [
+   "b₁ = (2, 1) takes you from the origin to (2, 1).",
+   "Two steps of b₂ = (1, 1) go from (2, 1) to (4, 3).",
+   "So v = 1·b₁ + 2·b₂, coordinates (1, 2) in the new basis, and (4, 3) in the standard basis."
+  ],
+  "course": "maths",
+  "lesson": "Change of Basis",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u11.js: Change of Basis"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "v = (4, 3) = (4, 3)",
+    "ok": true,
+    "detail": "(4, 3)"
+   },
+   {
+    "name": "b₁ + 2b₂ = v = (4, 3), drawn tip to tail",
+    "ok": true,
+    "detail": "(4, 3) against (4, 3)"
+   },
+   {
+    "name": "the lesson states \"1 × (2, 1) + 2 × (1, 1) = (4, 3)\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "16 labels in 640×520"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "16 labels in 380×330"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u11-column-space-line": {
+  "title": "The column space is the line y = 2x",
+  "caption": "Both columns of [[1, 2], [2, 4]] lie along (1, 2), so col(A) is a line. (3, 6) = 3(1, 2) is on it, so Ax = (3, 6) is solvable; (1, 0) is off it, so Ax = (1, 0) has no solution.",
+  "alt": "A line through the origin with direction (1, 2). Vectors (1, 2), (2, 4) and (3, 6) lie along it; the vector (1, 0) does not.",
+  "description": [
+   "The columns (1, 2) and (2, 4) point the same way, so they span only a line.",
+   "b = (3, 6) = 3(1, 2) lies on that line.",
+   "b = (1, 0) is not a multiple of (1, 2): it is off the line, so no x solves Ax = b."
+  ],
+  "course": "maths",
+  "lesson": "Column Space",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u11.js: Column Space"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(3, 6) = 3(1, 2)",
+    "ok": true,
+    "detail": "(3, 6)"
+   },
+   {
+    "name": "the line through (1, 2) is the column space",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "the lesson states \"(3, 6) = 3(1, 2)\", \"col(A) = span{(1, 2)}\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "22 labels in 640×520"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "22 labels in 380×440"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u11-eigenvectors": {
+  "title": "Eigenvectors stay on their own line",
+  "caption": "A = [[4, 1], [2, 3]] sends (1, 1) to (5, 5) = 5(1, 1) and (1, −2) to (2, −4) = 2(1, −2): each eigenvector is only stretched, by its eigenvalue, and keeps its direction.",
+  "alt": "The vector (1, 1) and its image (5, 5) along the same direction; the vector (1, −2) and its image (2, −4) along the same direction.",
+  "description": [
+   "v = (1, 1) is mapped to Av = (5, 5), five times as long and pointing the same way (λ = 5).",
+   "w = (1, −2) is mapped to Aw = (2, −4), twice as long and pointing the same way (λ = 2).",
+   "Other vectors would be turned off their line; eigenvectors are the exceptions."
+  ],
+  "course": "maths",
+  "lesson": "Eigenvectors",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u11.js: Eigenvectors"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "Av = 5v = 5v",
+    "ok": true,
+    "detail": "(5, 5)"
+   },
+   {
+    "name": "Aw = 2w = 2w",
+    "ok": true,
+    "detail": "(2, −4)"
+   },
+   {
+    "name": "A(1, 1) = (5, 5) recomputed from the matrix",
+    "ok": true,
+    "detail": "(5, 5)"
+   },
+   {
+    "name": "the lesson states \"A(1, 1) = (5, 5)\", \"A(1, −2) = (2, −4)\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "22 labels in 640×520"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "22 labels in 380×440"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u11-inner-product-areas": {
+  "title": "Inner products as areas",
+  "caption": "With ⟨f, g⟩ = ∫₀¹ f g dx, the inner product is an area: ⟨x, x²⟩ is the area under x³, which is ¼, and ‖x‖² = ⟨x, x⟩ is the area under x², which is ⅓, so ‖x‖ = 1/√3 ≈ 0.577.",
+  "alt": "Graphs of y = x³ and y = x² between 0 and 1, with the area under x³ shaded (¼) and the larger area under x² (⅓).",
+  "description": [
+   "The curve y = x² is the product x · x; the area under it from 0 to 1 is ⅓, so ‖x‖² = ⅓.",
+   "The curve y = x³ is the product x · x²; the area under it is ¼, so ⟨x, x²⟩ = ¼.",
+   "‖x‖ = √(⅓) = 1/√3 ≈ 0.577."
+  ],
+  "course": "maths",
+  "lesson": "Inner Product Spaces",
+  "also": [],
+  "renderer": "graph",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u11.js: Inner Product Spaces"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "⟨x, x²⟩ = ∫₀¹ x³ dx = ¼",
+    "ok": true,
+    "detail": "area 0.2500"
+   },
+   {
+    "name": "‖x‖² = ∫₀¹ x² dx = ⅓",
+    "ok": true,
+    "detail": "area 0.3333"
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "680px wide, shown at 104% (labels 15.6px)"
+   }
+  ]
+ },
+ "maths-u11-linear-combination": {
+  "title": "(5, 5) as 2(1, 2) + (3, 1)",
+  "caption": "Walk twice along (1, 2), then once along (3, 1): you arrive at (5, 5). The coefficients 2 and 1 are how many steps of each vector.",
+  "alt": "A grid with a vector from the origin to (2, 4), a vector from (2, 4) to (5, 5), and their sum from the origin to (5, 5).",
+  "description": [
+   "Two steps of (1, 2) from the origin reach (2, 4).",
+   "From there one step of (3, 1) reaches (5, 5).",
+   "The sum 2(1, 2) + (3, 1) = (5, 5) is the vector from the origin straight to (5, 5)."
+  ],
+  "course": "maths",
+  "lesson": "Linear Combinations",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u11.js: Linear Combinations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "(5, 5) = (5, 5)",
+    "ok": true,
+    "detail": "(5, 5)"
+   },
+   {
+    "name": "2(1, 2) + (3, 1) = (5, 5), drawn tip to tail",
+    "ok": true,
+    "detail": "(5, 5) against (5, 5)"
+   },
+   {
+    "name": "the lesson states \"(5, 5) = 2(1, 2) + (3, 1)\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "18 labels in 640×520"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "18 labels in 380×358"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u11-orthonormal-coordinates": {
+  "title": "Coordinates in an orthonormal basis",
+  "caption": "The coordinates of v = (3, 1) along q₁ and q₂ are just dot products: c₁ = 2√2 and c₂ = √2. The two pieces (2, 2) and (1, −1) are perpendicular, and c₁² + c₂² = 8 + 2 = 10 = ‖v‖².",
+  "alt": "The vector (3, 1) drawn as the sum of (2, 2) along q₁ and (1, −1) along q₂, tip to tail, at a right angle.",
+  "description": [
+   "q₁ = (1, 1)/√2 and q₂ = (1, −1)/√2 are perpendicular unit vectors.",
+   "c₁ = v · q₁ = 2√2 gives the piece (2, 2) along q₁.",
+   "c₂ = v · q₂ = √2 gives the piece (1, −1) along q₂.",
+   "The pieces add to (3, 1), and 8 + 2 = 10 = ‖v‖²."
+  ],
+  "course": "maths",
+  "lesson": "Orthogonality",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u11.js: Orthogonality"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the angle at O is a right angle",
+    "ok": true,
+    "detail": "90°"
+   },
+   {
+    "name": "OA is perpendicular to OB",
+    "ok": true,
+    "detail": "0"
+   },
+   {
+    "name": "c₁q₁ + c₂q₂ = v, drawn tip to tail",
+    "ok": true,
+    "detail": "(3, 1) against (3, 1)"
+   },
+   {
+    "name": "|v| = sqrt(10)",
+    "ok": true,
+    "detail": "3.16228"
+   },
+   {
+    "name": "the lesson states \"2√2\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "14 labels in 640×520"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "14 labels in 380×393"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u11-pca-axes": {
+  "title": "Principal axes of the covariance matrix",
+  "caption": "The covariance matrix [[5, 2], [2, 2]] has eigenvalue 6 along (2, 1) and eigenvalue 1 along (−1, 2). The axes are perpendicular, PC1 carries 6 of the total variance 7 (6/7 ≈ 85.7%), and PC2 carries 1.",
+  "alt": "Two perpendicular directions from the origin: PC1 along (2, 1), drawn with length 3 times that of PC2 along (−1, 2), and a right angle between them.",
+  "description": [
+   "C(2, 1) = (12, 6) = 6(2, 1): PC1 is the direction (2, 1) with variance 6.",
+   "C(−1, 2) = (−1, 2) = 1(−1, 2): PC2 is the perpendicular direction with variance 1.",
+   "Variance explained by PC1 is 6/(6 + 1) = 6/7 ≈ 85.7%."
+  ],
+  "course": "maths",
+  "lesson": "Principal Component Analysis (PCA)",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u11.js: Principal Component Analysis (PCA)"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the angle at O is a right angle",
+    "ok": true,
+    "detail": "90°"
+   },
+   {
+    "name": "PC1 and PC2 are perpendicular",
+    "ok": true,
+    "detail": "0"
+   },
+   {
+    "name": "C(2, 1) = 6(2, 1) checked in the batch: variance 6/7 = 85.7%",
+    "ok": true,
+    "detail": "(2, 1)"
+   },
+   {
+    "name": "the lesson states \"6/7 ≈ 85.7%\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "12 labels in 640×448"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "12 labels in 380×271"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u11-qr-gram-schmidt": {
+  "title": "QR: a₂ = 4q₁ + 3q₂",
+  "caption": "Gram–Schmidt on the columns of A: q₁ = a₁/5 = (0.6, 0.8). The part of a₂ along q₁ is r₁₂q₁ = 4q₁ = (2.4, 3.2); what is left, (−2.4, 1.8), is perpendicular to q₁ and has length 3 = r₂₂.",
+  "alt": "The vector a₂ = (0, 5) split into (2.4, 3.2) along q₁ and the perpendicular remainder (−2.4, 1.8) of length 3.",
+  "description": [
+   "a₁ = (3, 4) has length 5, so q₁ = (0.6, 0.8) and r₁₁ = 5.",
+   "r₁₂ = q₁ · a₂ = 4, so the part of a₂ along q₁ is 4q₁ = (2.4, 3.2).",
+   "a₂ − 4q₁ = (−2.4, 1.8) is perpendicular to q₁ and has length 3 = r₂₂, so q₂ = (−0.8, 0.6)."
+  ],
+  "course": "maths",
+  "lesson": "QR Decomposition",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u11.js: QR Decomposition"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the angle at P is a right angle",
+    "ok": true,
+    "detail": "90°"
+   },
+   {
+    "name": "the remainder has length r₂₂ = 3",
+    "ok": true,
+    "detail": "measured 3"
+   },
+   {
+    "name": "4q₁ + (−2.4, 1.8) = a₂, drawn tip to tail",
+    "ok": true,
+    "detail": "(0, 5) against (0, 5)"
+   },
+   {
+    "name": "the remainder is perpendicular to q₁",
+    "ok": true,
+    "detail": "0"
+   },
+   {
+    "name": "|a₁| = 5",
+    "ok": true,
+    "detail": "5"
+   },
+   {
+    "name": "the lesson states \"r₁₁ = ‖a₁‖ = 5\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "19 labels in 640×520"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "19 labels in 380×339"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u11-rotation-matrix": {
+  "title": "The matrix of a 90° rotation",
+  "caption": "The columns of the matrix are where e₁ and e₂ land: (1, 0) goes to (0, 1) and (0, 1) goes to (−1, 0), giving [[0, −1], [1, 0]]. The unit square turns a quarter turn about the origin and keeps its area.",
+  "alt": "The unit square in the first quadrant and its image in the second quadrant after an anticlockwise quarter turn about the origin.",
+  "description": [
+   "The unit square has corners (0, 0), (1, 0), (1, 1), (0, 1).",
+   "e₁ = (1, 0) goes to (0, 1) and e₂ = (0, 1) goes to (−1, 0): these are the matrix columns.",
+   "The image has corners (0, 0), (0, 1), (−1, 1), (−1, 0): the square turned 90° anticlockwise."
+  ],
+  "course": "maths",
+  "lesson": "Linear Transformations",
+  "also": [],
+  "renderer": "transform",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u11.js: Linear Transformations"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "image is the image of square under the matrix",
+    "ok": true,
+    "detail": "(0, 0) (0, 1) (−1, 1) (−1, 0)"
+   },
+   {
+    "name": "the area of image is 1 times the original",
+    "ok": true,
+    "detail": "area ratio 1, |det| = 1"
+   },
+   {
+    "name": "the lesson states \"Matrix [[0, −1], [1, 0]]\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "11 labels in 640×330"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "11 labels in 380×277"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u11-svd-area": {
+  "title": "Singular values and area: σ₁σ₂ = |det A| = 15",
+  "caption": "A = [[3, 0], [4, 5]] turns the unit square into a parallelogram of area 15. The singular values σ₁ = √45 ≈ 6.708 and σ₂ = √5 ≈ 2.236 are the stretches along its two perpendicular axes, and their product is the area scale factor.",
+  "alt": "The unit square and its image under A, a parallelogram with vertices (0, 0), (3, 4), (3, 9), (0, 5) and area 15.",
+  "description": [
+   "The unit square has area 1.",
+   "A sends (1, 0) to (3, 4) and (0, 1) to (0, 5), so the image has corners (0, 0), (3, 4), (3, 9), (0, 5).",
+   "Its area is |det A| = 15, and σ₁σ₂ = √45 × √5 = √225 = 15."
+  ],
+  "course": "maths",
+  "lesson": "Singular Value Decomposition (SVD)",
+  "also": [],
+  "renderer": "transform",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u11.js: Singular Value Decomposition (SVD)"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "A × square is the image of square under the matrix",
+    "ok": true,
+    "detail": "(0, 0) (3, 4) (3, 9) (0, 5)"
+   },
+   {
+    "name": "the image has 15 times the area: σ₁σ₂ = √45 × √5 = 15 = |det A|",
+    "ok": true,
+    "detail": "area ratio 15, |det| = 15"
+   },
+   {
+    "name": "the lesson states \"σ₁σ₂ = √225 = 15 = |det A|\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "10 labels in 640×420"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "10 labels in 380×400"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u11-symmetric-orthogonal": {
+  "title": "Eigenvectors of a symmetric matrix are perpendicular",
+  "caption": "A = [[2, 1], [1, 2]] has eigenvalue 3 along (1, 1) and eigenvalue 1 along (1, −1). The two eigen-directions meet at a right angle, which is why A = QΛQᵀ with Q orthogonal.",
+  "alt": "The vector (1, 1) stretched to (3, 3) and the vector (1, −1) unchanged, meeting at a right angle at the origin.",
+  "description": [
+   "A(1, 1) = (3, 3): the direction (1, 1) is stretched by λ = 3.",
+   "A(1, −1) = (1, −1): the direction (1, −1) is unchanged, λ = 1.",
+   "The two directions are perpendicular, so normalising them gives the orthogonal matrix Q."
+  ],
+  "course": "maths",
+  "lesson": "Symmetric Matrices",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u11.js: Symmetric Matrices"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "the angle at O is a right angle",
+    "ok": true,
+    "detail": "90°"
+   },
+   {
+    "name": "the eigenvectors (1, 1) and (1, −1) are perpendicular",
+    "ok": true,
+    "detail": "0"
+   },
+   {
+    "name": "λ = 3 = 3(1, 1)",
+    "ok": true,
+    "detail": "(3, 3)"
+   },
+   {
+    "name": "λ = 1 = 1λ = 1",
+    "ok": true,
+    "detail": "(1, −1)"
+   },
+   {
+    "name": "the lesson states \"λ = 1 and λ = 3\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "14 labels in 640×520"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "14 labels in 380×440"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
+ },
+ "maths-u11-wedge-area": {
+  "title": "The wedge product is an area",
+  "caption": "(2e₁ + 3e₂) ∧ (e₁ + 4e₂) = (8 − 3) e₁ ∧ e₂ = 5 e₁ ∧ e₂: the coefficient 5 is the area of the parallelogram the two vectors span, which is also det [[2, 1], [3, 4]].",
+  "alt": "A parallelogram with sides (2, 3) and (1, 4) from the origin, vertices (0, 0), (2, 3), (3, 7), (1, 4), and area 5.",
+  "description": [
+   "The vectors a = (2, 3) and b = (1, 4) are two sides from the origin.",
+   "Completing the parallelogram gives the fourth vertex (3, 7).",
+   "Its area is 2 × 4 − 3 × 1 = 5, the coefficient of e₁ ∧ e₂."
+  ],
+  "course": "maths",
+  "lesson": "Exterior Algebra",
+  "also": [],
+  "renderer": "geometry",
+  "status": "validated",
+  "review": null,
+  "checks": [
+   {
+    "name": "the lesson exists",
+    "ok": true,
+    "detail": "kit/courses/maths/notes/u11.js: Exterior Algebra"
+   },
+   {
+    "name": "the lesson places this diagram (D: line)",
+    "ok": true
+   },
+   {
+    "name": "has alt text, a caption and a step-by-step description",
+    "ok": true
+   },
+   {
+    "name": "area of OASB = 5",
+    "ok": true,
+    "detail": "shoelace 5; label \"area 5\""
+   },
+   {
+    "name": "the lesson states \"5e₁ ∧ e₂\"",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide: every label inside the picture",
+    "ok": true,
+    "detail": "18 labels in 640×520"
+   },
+   {
+    "name": "wide: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "narrow: every label inside the picture",
+    "ok": true,
+    "detail": "18 labels in 380×440"
+   },
+   {
+    "name": "narrow: no two labels overprint",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "name": "wide layout legible in the 707px lesson column (at most 960px wide)",
+    "ok": true,
+    "detail": "640px wide, shown at 110% (labels 16.6px)"
+   }
+  ]
  }
 }

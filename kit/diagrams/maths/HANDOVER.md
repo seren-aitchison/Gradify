@@ -45,3 +45,5 @@ design · 0 planned but not placed · 0 failing. 18 placements of 18 ids (17 u01
 ## Unit rows
 
 - u02 (agent maths-a): 36 lessons assessed; 8 diagrams (geometry 6, graph 1, sequence 1), 10 lab rows (modular 8, sieve 3 incl. shared), 18 null with reasons. All checks pass. Needed renderers: none missing (lattice/Argand drawn with geometry+axes).
+- u11 (Linear Algebra): 50 lessons assessed; 13 diagrams (`maths-u11-*`: geometry vectors, transform, graph), lab `matrix` on 6 lessons;
+  rest null with reasons. Lacks: 3D vectors/planes (10 lessons), conics (u11-32).
