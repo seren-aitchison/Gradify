@@ -73,7 +73,7 @@ function trend(spec, W, narrow) {
     else wrap(raw[i], cwid(raw[i]) > slot - 4 ? fitN : 99).forEach((l, k) => { s += text(sx(i), H - pad.b + 16 + k * 14, fm(l), { size: lblSize, weight: 600, fill: C.ink }); });
   });
   if (spec.xTitle) s += text((pad.l + W - pad.r) / 2, H - 14, spec.xTitle, { size: 12.5, weight: 600, fill: C.soft });
-  const pl = []; let keyRow = false;
+  const pl = [], ends = []; let keyRow = false;
   if (spec.kind === "bars") {
     const bw = Math.min(46, slot * 0.66);
     items.forEach((it, i) => {
@@ -96,9 +96,13 @@ function trend(spec, W, narrow) {
         s += `<circle cx="${f1(x)}" cy="${f1(y)}" r="${spec.highlight?.[k] ? 6 : 4.5}" fill="${col(spec.highlight?.[k] || sr.colour)}" stroke="#fff" stroke-width="1.5"/>`;
         if (spec.kind === "series" && spec.pointLabels) pl.push({ x, y: y - 9, k, colour: sr.colour });
       }
-      if (sr.label && !keyRow) { const [x, y] = pts.at(-1); s += text(Math.min(x + 10, W - pad.r), y + (sr.labelDy || 0), sr.label, { size: 12, weight: 700, anchor: x + 10 > W - 60 ? "end" : "start", fill: col(sr.colour) }); }
+      // at the right edge the name goes above and left of the end point, not on it; names are set apart below
+      if (sr.label && !keyRow) { const [x, y] = pts.at(-1), edge = x + 10 > W - 60; ends.push({ x: edge ? x - 8 : x + 10, y: y + (sr.labelDy || 0) - (edge ? 13 : 0), label: sr.label, colour: sr.colour, anchor: edge ? "end" : "start" }); }
     }
   }
+  ends.sort((a, b) => a.y - b.y);
+  for (let i = ends.length - 2; i >= 0; i--) ends[i].y = Math.min(ends[i].y, ends[i + 1].y - 15);
+  for (const e of ends) s += text(e.x, e.y, e.label, { size: 12, weight: 700, anchor: e.anchor, fill: col(e.colour), halo: true });
   if (spec.kind === "series") {
     const cols = new Map(); for (const p of pl) cols.set(p.x, [...(cols.get(p.x) || []), p]);
     for (const c of cols.values()) {
@@ -412,7 +416,9 @@ function particles(spec, W, narrow) {
         items.forEach((k, q) => { list.push(k); pts.push(got[q]); });
       }
     } else {
-      pts = place(list.length, p.arrangement, bx, by, bw, bh, maxR, R, p);
+      // charged particles keep room for their charge labels between them
+      const charged = list.some((k) => spec.species[k].charge);
+      pts = place(list.length, p.arrangement, bx, by, bw, bh, maxR, R, { ...p, spacing: p.spacing ?? (charged ? 14 : 6) });
       if (p.arrangement !== "lattice" && p.arrangement !== "layer") list.sort(() => R() - 0.5);
     }
     list.forEach((k, q) => { if (pts[q]) s += drawSpecies(spec, k, pts[q][0], pts[q][1], (p.scale || 1) * (pts.scale || 1)); });

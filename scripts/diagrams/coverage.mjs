@@ -40,7 +40,13 @@ function report(name, course, plan) {
     else { notPlaced++; missing.push(`${lid} ${title}: planned ${row[2]}, nothing placed`); }
     if (list && ok.length) console.log(`  ${lid} ${title}: ${ok.join(", ")}`);
   }
+  // placements: every D: line in the course's lessons; a diagram placed in more than one lesson is reused
+  const counts = {}; for (const ds of Object.values(placed)) for (const d of ds) counts[d] = (counts[d] || 0) + 1;
+  const placements = Object.values(counts).reduce((t, n) => t + n, 0), reused = Object.entries(counts).filter(([, n]) => n > 1);
+  const reasons = {}; for (const row of plan) if (!row[1]) reasons[row[2]] = (reasons[row[2]] || 0) + 1;
   console.log(`${name}: ${plan.length} lessons · ${covered} with a passing diagram (${distinct.size} distinct diagrams; one can serve several lessons) · ${skipped} without one by design · ${notPlaced} planned but not placed · ${failed} failing`);
+  console.log(`  ${placements} placements of ${Object.keys(counts).length} diagram ids; ${reused.length} reused (${reused.map(([d, n]) => `${d} ×${n}`).join(", ") || "none"})`);
+  console.log(`  skipped by design, by reason: ${Object.entries(reasons).sort((a, b) => b[1] - a[1]).map(([r, n]) => `${n} × ${r}`).join("; ") || "none"}`);
   for (const m of missing) console.log(`  ✗ ${m}`);
   return missing.length;
 }

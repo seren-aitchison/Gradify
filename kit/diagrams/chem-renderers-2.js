@@ -492,12 +492,15 @@ function shellFull(el) { return el === "H" || el === "He" || el === "Li" || el =
 function dotcross(spec, W, narrow) {
   const mols = spec.molecules, n = mols.length, perRow = narrow ? 1 : Math.min(n, spec.perRow || n), cw = (W - 20) / perRow, scale = spec.scale?.[narrow ? 1 : 0] || (narrow ? 0.9 : 1);
   let s = "", H = 0;
+  // on a phone each molecule gets a row as tall as it needs (a fixed row let SO4 2- run into the next panel)
+  const rowH0 = spec.rowHeight?.[narrow ? 1 : 0] || 230 * scale, heights = mols.map((m) => { const ys = m.atoms.map((a) => a.y); return Math.max(rowH0, (Math.max(...ys) - Math.min(...ys)) * 54 * scale + 64 * scale + 70); });
+  const tops = heights.map((_, i) => 20 + heights.slice(0, i).reduce((t, h) => t + h, 0));
   mols.forEach((m, mi) => {
     const R = 32 * scale, step = 54 * scale;
     const xs = m.atoms.map((a) => a.x), ys = m.atoms.map((a) => a.y);
     const mw = (Math.max(...xs) - Math.min(...xs)) * step + 2 * R + 30, mh = (Math.max(...ys) - Math.min(...ys)) * step + 2 * R + 30;
-    const col0 = mi % perRow, row = Math.floor(mi / perRow), rowH = spec.rowHeight?.[narrow ? 1 : 0] || 230 * scale;
-    const ox = 10 + col0 * cw + cw / 2 - ((Math.max(...xs) + Math.min(...xs)) / 2) * step, oy = 20 + row * rowH + rowH / 2 - 20 - ((Math.max(...ys) + Math.min(...ys)) / 2) * step;
+    const col0 = mi % perRow, row = Math.floor(mi / perRow), rowH = narrow ? heights[mi] : rowH0, top = narrow ? tops[mi] : 20 + row * rowH;
+    const ox = 10 + col0 * cw + cw / 2 - ((Math.max(...xs) + Math.min(...xs)) / 2) * step, oy = top + rowH / 2 - 20 - ((Math.max(...ys) + Math.min(...ys)) / 2) * step;
     const P = (a) => [ox + a.x * step, oy + a.y * step];
     const byId = Object.fromEntries(m.atoms.map((a) => [a.id, a]));
     const mark = (x, y, kind) => (kind === "cross" ? `<path d="M${f1(x - 3.6)} ${f1(y - 3.6)} L${f1(x + 3.6)} ${f1(y + 3.6)} M${f1(x - 3.6)} ${f1(y + 3.6)} L${f1(x + 3.6)} ${f1(y - 3.6)}" stroke="${col("a2")}" stroke-width="2"/>` : `<circle cx="${f1(x)}" cy="${f1(y)}" r="3.3" fill="${col("a1")}"/>`);
@@ -545,8 +548,8 @@ function dotcross(spec, W, narrow) {
       if (a.delta) s += text(x, y - (m.style === "lewis" ? 24 : R + 10), a.delta === "+" ? "δ+" : "δ−", { size: 13, weight: 700, fill: a.delta === "+" ? col("a3") : col("a1") });
     }
     if (m.bracket) { const minx = Math.min(...m.atoms.map((a) => P(a)[0])) - (m.style === "lewis" ? 30 : R + 8), maxx = Math.max(...m.atoms.map((a) => P(a)[0])) + (m.style === "lewis" ? 30 : R + 8), miny = Math.min(...m.atoms.map((a) => P(a)[1])) - (m.style === "lewis" ? 30 : R + 6), maxy = Math.max(...m.atoms.map((a) => P(a)[1])) + (m.style === "lewis" ? 30 : R + 6); s += `<path d="M${f1(minx + 6)} ${f1(miny)} h-6 v${f1(maxy - miny)} h6 M${f1(maxx - 6)} ${f1(miny)} h6 v${f1(maxy - miny)} h-6" fill="none" stroke="${C.ink}" stroke-width="2"/>` + text(maxx + 6, miny + 4, m.charge > 0 ? `${m.charge > 1 ? m.charge : ""}+` : `${-m.charge > 1 ? -m.charge : ""}−`, { size: 15, weight: 800, anchor: "start" }); }
-    s += text(10 + col0 * cw + cw / 2, 20 + row * rowH + rowH - 12, fm(m.label || ""), { size: 13, weight: 700 });
-    if (m.sub) s += text(10 + col0 * cw + cw / 2, 20 + row * rowH + rowH + 6, fm(m.sub), { size: 11.5, fill: C.soft });
+    s += text(10 + col0 * cw + cw / 2, top + rowH - 12, fm(m.label || ""), { size: 13, weight: 700 });
+    if (m.sub) s += text(10 + col0 * cw + cw / 2, top + rowH + 6, fm(m.sub), { size: 11.5, fill: C.soft });
     H = Math.max(H, 20 + (row + 1) * rowH + (m.sub ? 20 : 4));
   });
   if (spec.arrowBetween && !narrow) s += arrow(W / 2 - 30, 20 + (spec.rowHeight?.[0] || 230) / 2 - 20, W / 2 + 30, 20 + (spec.rowHeight?.[0] || 230) / 2 - 20, { w: 2.4, head: 10 });

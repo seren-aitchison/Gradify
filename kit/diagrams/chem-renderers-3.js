@@ -613,8 +613,10 @@ function lobes(spec, W, narrow) {
     const { ang, rad } = nodes(o.name);
     s += text(cx, cy + Lm + 47, `${ang} angular, ${rad} radial node${ang + rad === 1 ? "" : "s"}`, { size: 11, fill: C.soft });
   });
-  s += text(W - 12, 14, "colours: opposite signs of ψ", { size: 11, anchor: "end", fill: C.soft });
-  return { s, H: 20 + Math.ceil(n / perRow) * ch };
+  // the colour key under the drawings (at the top right it sat on an axis label)
+  const H0 = 20 + Math.ceil(n / perRow) * ch;
+  s += text(W / 2, H0 + 4, "the two colours: opposite signs of the wavefunction ψ", { size: 11, fill: C.soft });
+  return { s, H: H0 + 16 };
 }
 function nodes(name) { const n = +name[0], l = "spdf".indexOf(name[1]); return { ang: l, rad: n - l - 1 }; }
 function sigmaPi(spec, W, narrow) {
