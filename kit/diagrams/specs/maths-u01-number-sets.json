@@ -1,0 +1,69 @@
+{
+ "id": "maths-u01-number-sets",
+ "renderer": "venn",
+ "course": "maths",
+ "unit": "u01",
+ "lesson": "Real Numbers",
+ "title": "ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ",
+ "caption": "Each set sits inside the next: √9 = 3 is natural (so also an integer, rational and real), −3 is an integer but not natural, 0.75 = 3/4 is rational but not an integer, and √10 and π are irrational: real, but in no smaller set.",
+ "alt": "Four nested rounded boxes: ℕ inside ℤ inside ℚ inside ℝ. √9 is in ℕ; −3 in ℤ only; 0.75 in ℚ only; √10 and π in ℝ only.",
+ "description": [
+  "The innermost box is the natural numbers ℕ and holds √9 = 3.",
+  "Around it, the integers ℤ add −3.",
+  "Around that, the rationals ℚ add 0.75 = 3/4.",
+  "The outer box, the reals ℝ, adds the irrationals √10 and π."
+ ],
+ "nested": [
+  {
+   "name": "N",
+   "label": "ℕ natural",
+   "kind": "natural",
+   "items": [
+    {
+     "text": "√9 = 3",
+     "expr": "sqrt(9)"
+    }
+   ]
+  },
+  {
+   "name": "Z",
+   "label": "ℤ integers",
+   "kind": "integer",
+   "items": [
+    {
+     "text": "−3",
+     "expr": "-3"
+    }
+   ]
+  },
+  {
+   "name": "Q",
+   "label": "ℚ rational",
+   "kind": "rational",
+   "items": [
+    {
+     "text": "0.75",
+     "expr": "0.75"
+    }
+   ]
+  },
+  {
+   "name": "R",
+   "label": "ℝ real",
+   "kind": "real",
+   "items": [
+    {
+     "text": "√10",
+     "expr": "sqrt(10)"
+    },
+    {
+     "text": "π",
+     "expr": "pi"
+    }
+   ]
+  }
+ ],
+ "fromLesson": [
+  "−3, 0.75, √9, √10 and π"
+ ]
+}

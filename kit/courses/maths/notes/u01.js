@@ -21,6 +21,7 @@ X: Work out 37 × 24 using long multiplication.
 > 37 × 4 = 148
 > 37 × 20 = 740
 > 148 + 740 = 888. Check: 37 × 24 ≈ 40 × 25 = 1,000, so 888 is sensible, and it ends in 8 as 7 × 4 ends in 8.
+D: maths-u01-area-multiplication
 K: Use written methods that keep place value, and check every answer with an inverse operation or an estimate.
 !: Treating subtraction as commutative: 3 − 7 isn't the same as 7 − 3.
 Q: Why is 7 × 23 = 7 × 20 + 7 × 3? | Multiplication distributes over addition: 7 × (20 + 3) = 7 × 20 + 7 × 3.
@@ -182,6 +183,7 @@ X: The temperature at 06:00 is −5 °C. By 14:00 it has risen by 9 °C, then it
 > −5 + 9 = 4 °C
 > 4 − 12 = −8 °C
 > The final temperature is −8 °C.
+D: maths-u01-temperature-jumps
 - Zero is neither positive nor negative, and every integer has an opposite (additive inverse): 5 and −5 add to 0.
 - Multiplying by −1 reflects a number in zero on the number line, which is why two negatives multiply to a positive.
 - Integers are closed under addition, subtraction and multiplication, but not division: 7 ÷ 2 isn't an integer.
@@ -223,6 +225,7 @@ X: Write 0.272727… as a fraction in its simplest form.
 > Let x = 0.272727…
 > Then 100x = 27.272727…
 > Subtract: 99x = 27, so x = 27/99 = 3/11
+D: maths-u01-recurring-decimal
 - The rationals aren't complete: there are gaps, such as √2, which the real numbers fill.
 K: Rationals are fractions of integers; their decimals terminate or recur, and recurring decimals convert by multiplying and subtracting.
 !: Thinking 0.999… is less than 1: by the same method, it equals 1.
@@ -262,6 +265,7 @@ X: Is √50 rational or irrational? Simplify it.
 > 50 = 25 × 2, so √50 = √25 × √2 = 5√2
 > 5 is rational and √2 is irrational, and a non-zero rational times an irrational is irrational
 > So √50 = 5√2 is irrational
+D: maths-u01-root50-diagonal
 K: Irrationals can't be written as fractions; their decimals never end or repeat; √2 is irrational by contradiction.
 !: Thinking 22/7 equals π: it's only an approximation (π is irrational).
 Q: Why must p be even if p^{2} is even? | If p were odd, p^{2} would be odd.
@@ -303,6 +307,7 @@ X: Classify each of −3, 0.75, √9, √10 and π as natural, integer, rational
 > 0.75 = 3/4: rational, real
 > √9 = 3: natural, integer, rational, real
 > √10 and π: irrational, real
+D: maths-u01-number-sets
 - The real numbers can be ordered, added, multiplied and divided (except by zero) with all the familiar rules: they form a field.
 K: The reals are every point on the number line: rational and irrational numbers together.
 !: Forgetting that integers and natural numbers are also rational and real.
@@ -515,6 +520,7 @@ X: Write 1,764 as a product of prime factors, and decide whether it's a square n
 > 1,764 ÷ 2 = 882, ÷ 2 = 441
 > 441 ÷ 3 = 147, ÷ 3 = 49, and 49 = 7 × 7
 > 1,764 = 2^{2} × 3^{2} × 7^{2}: every power is even, so it's a square: √1,764 = 2 × 3 × 7 = 42
+D: maths-u01-factor-tree-1764
 - Factorising large numbers is very hard for computers, which is what keeps RSA encryption secure.
 P: **Investigate with the lab.** Use the factoriser to break down 360, then find a number below 200 with at least five prime factors counted with repeats (the lab's challenge). Check each answer multiplies back to the original.
 IX: sieve
@@ -558,6 +564,7 @@ X: Find the HCF of 252 and 198 using prime factors, then check with Euclid's alg
 > 252 = 2^{2} × 3^{2} × 7 and 198 = 2 × 3^{2} × 11
 > Common primes to the lowest powers: 2 × 3^{2} = 18
 > Euclid: 252 = 1 × 198 + 54; 198 = 3 × 54 + 36; 54 = 1 × 36 + 18; 36 = 2 × 18 + 0, so HCF = 18
+D: maths-u01-hcf-venn
 P: **Investigate with the lab.** Choose the HCF and LCM topic and work through 10 problems. For each pair, find the HCF from the prime factors they share; when the question asks for the LCM, check that HCF × LCM equals the product of the two numbers.
 IX: practice
 K: The HCF takes common primes to their lowest powers; Euclid's algorithm finds it by repeated remainders.
@@ -599,6 +606,7 @@ X: Two lighthouses flash every 20 seconds and every 45 seconds. They flash toget
 > 20 = 2^{2} × 5 and 45 = 3^{2} × 5
 > LCM = 2^{2} × 3^{2} × 5 = 180 seconds
 > They next flash together after 3 minutes, at 21:03:00.
+D: maths-u01-lcm-venn
 - The LCM of co-prime numbers is their product: LCM(8, 9) = 72.
 - The LCM of three numbers: take each prime to its highest power across all three.
 P: **Investigate with the lab.** Factorise 12 and 18 with the factoriser, then build their LCM by taking each prime to its highest power in either number.
@@ -644,6 +652,7 @@ X: Put 3/4, 5/7 and 7/10 in order, smallest first.
 > The LCM of 4, 7 and 10 is 140
 > 3/4 = 105/140, 5/7 = 100/140, 7/10 = 98/140
 > Order: 7/10, 5/7, 3/4
+D: maths-u01-fraction-bars
 - A unit fraction has numerator 1, such as 1/5; every fraction is a multiple of a unit fraction: 3/5 = 3 × 1/5.
 - A fraction with denominator 0 is undefined: you can't share into zero parts.
 P: **Investigate with the lab.** Choose the Fractions topic and work through 10 problems, typing answers as fractions. Read the worked method on any you get wrong.
@@ -731,6 +740,7 @@ X: Without a calculator, find 17.5% of £360.
 > 10% = £36, 5% = £18, 2.5% = £9
 > 17.5% = 10% + 5% + 2.5% = £36 + £18 + £9
 > = £63
+D: maths-u01-percent-bar
 - Percentages can exceed 100%: 150% of 40 is 60.
 - A percentage point is a difference between percentages: a rate rising from 4% to 5% is 1 percentage point, but a 25% increase.
 - Percentages of percentages multiply: 50% of 20% is 10%.
@@ -777,6 +787,7 @@ X: A coat costs £68 in a sale with 15% off. What was the original price?
 > The sale price is 85% of the original
 > Original × 0.85 = 68
 > Original = 68 ÷ 0.85 = £80
+D: maths-u01-reverse-percent
 - Compound changes over n periods use the multiplier to the power n: 5% growth for 3 years is × 1.05^{3}.
 - Depreciation (a car losing 15% a year) uses multipliers less than 1: × 0.85^{n}.
 P: **Investigate with the lab.** Alternate between the Percentage change and Reverse percentages topics. In reverse problems, always divide by the multiplier.
@@ -870,6 +881,7 @@ X: Estimate √90 to one decimal place without a calculator.
 > 81 < 90 < 100, so 9 < √90 < 10
 > 9.5^{2} = 90.25, slightly above 90, so √90 is just under 9.5
 > 9.4^{2} = 88.36, so √90 ≈ 9.5 to one decimal place (9.49 to two)
+D: maths-u01-root90
 - √(ab) = √a × √b and √(a/b) = √a ÷ √b, for positive a and b: these simplify surds (School 3).
 - Square numbers end only in 0, 1, 4, 5, 6 or 9, so 7,342 can't be a perfect square.
 - Cube roots and other odd roots keep the sign: ³√−64 = −4, because (−4)^{3} = −64.
@@ -957,6 +969,7 @@ X: Estimate (21.8 × 4.93) ÷ 0.198.
 > Round to 1 significant figure: (20 × 5) ÷ 0.2
 > = 100 ÷ 0.2
 > = 500 (the calculator gives about 542.8)
+D: maths-u01-round-21-8
 - Truncating (chopping off digits) is different from rounding: 3.78 truncated to 1 d.p. is 3.7, but rounded it's 3.8.
 - Rounding to the nearest whole number: 7.5 rounds to 8 (the usual convention rounds halves up).
 K: Round by looking at the next digit; estimate by rounding everything to one significant figure first.
@@ -999,6 +1012,7 @@ X: The area of a circle with radius 7.3 cm is calculated as 167.4154… cm^{2}. 
 > The first three significant figures are 1, 6 and 7
 > The next digit is 4, so round down
 > Area = 167 cm^{2} (3 s.f.)
+D: maths-u01-sig-figs
 - Round only the final answer: keep full accuracy in intermediate steps, or rounding errors build up.
 K: Significant figures start at the first non-zero digit; keep place value with zeros when rounding.
 !: Rounding 48,762 to 2 s.f. as 49 instead of 49,000.
@@ -1040,6 +1054,7 @@ X: Find the nth term of 17, 13, 9, 5, … and its 30th term.
 > The common difference is −4, so the nth term is −4n + c
 > When n = 1: −4 + c = 17, so c = 21
 > nth term = 21 − 4n; the 30th term is 21 − 120 = −99
+D: maths-u01-arithmetic-sequence
 - Geometric sequences multiply by a constant ratio: 3, 6, 12, 24, … has nth term 3 × 2^{n−1}.
 P: **Investigate with the lab.** Choose nth term. Find the common difference first, then the number to add or subtract.
 IX: practice
@@ -1085,6 +1100,7 @@ X: Find the nth term of the quadratic sequence 2, 7, 14, 23, 34, ….
 > First differences: 5, 7, 9, 11; second differences: 2, so the n^{2} coefficient is 2 ÷ 2 = 1
 > Subtract n^{2} (1, 4, 9, 16, 25): 1, 3, 5, 7, 9, which is 2n − 1
 > nth term = n^{2} + 2n − 1 (check: n = 1 gives 2 ✓)
+D: maths-u01-quadratic-sequence
 K: Square, cube, triangular and Fibonacci numbers recur; halve the second difference for a quadratic's n^{2} coefficient; prove patterns, don't just observe them.
 !: Assuming a pattern always continues because it holds for the first few cases.
 Q: What is the 10th triangular number? | 55: 10 × 11 ÷ 2.
@@ -1206,6 +1222,7 @@ X: A recipe for 6 people uses 450 g of flour and 2 eggs. How much of each is nee
 > Scale factor = 15 ÷ 6 = 2.5
 > Flour: 450 × 2.5 = 1,125 g
 > Eggs: 2 × 2.5 = 5
+D: maths-u01-recipe-scale
 K: Simplify ratios with the HCF in the same units; share by finding one part; scale proportions using the unitary method or a scale factor.
 !: Dividing the total by one side of the ratio instead of by the total number of parts.
 Q: Share £84 in the ratio 2 : 5. | £24 and £60.
